@@ -1,4 +1,3 @@
-
 PORTNAME=	mythes
 PORTVERSION=	1.8.0
 CATEGORIES=	ukrainian textproc

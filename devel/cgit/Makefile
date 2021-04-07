@@ -1,4 +1,3 @@
-
 PORTNAME=	cgit
 PORTVERSION=	1.2.3
 CATEGORIES=	devel www

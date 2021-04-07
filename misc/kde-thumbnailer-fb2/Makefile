@@ -1,4 +1,3 @@
-
 PORTNAME=	kde-thumbnailer-fb2
 PORTVERSION=	0.3.1
 DISTVERSIONPREFIX=	v

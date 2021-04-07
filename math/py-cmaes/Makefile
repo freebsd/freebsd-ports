@@ -1,4 +1,3 @@
-
 PORTNAME=	cmaes
 DISTVERSION=	0.7.0
 CATEGORIES=	math # machine-learning

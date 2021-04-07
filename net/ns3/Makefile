@@ -1,4 +1,3 @@
-
 PORTNAME=	ns3
 PORTVERSION=	3.33
 CATEGORIES=	net education

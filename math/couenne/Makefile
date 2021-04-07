@@ -1,4 +1,3 @@
-
 PORTNAME=	couenne
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	0.5.8

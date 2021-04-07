@@ -1,4 +1,3 @@
-
 PORTNAME=	fff
 DISTVERSION=	2.2
 CATEGORIES=	deskutils

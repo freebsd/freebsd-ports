@@ -1,4 +1,3 @@
-
 PORTNAME=	theonionbox
 DISTVERSION=	4.3.1
 PORTREVISION=	2

@@ -1,4 +1,3 @@
-
 PORTNAME=	InterwikiPlugin
 SVNREV=		17303
 

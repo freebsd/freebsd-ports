@@ -1,4 +1,3 @@
-
 PORTNAME=	go-bindata-assetfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1

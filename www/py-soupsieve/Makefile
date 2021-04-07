@@ -1,4 +1,3 @@
-
 PORTNAME=	soupsieve
 PORTVERSION=	2.0.1
 CATEGORIES=	www python

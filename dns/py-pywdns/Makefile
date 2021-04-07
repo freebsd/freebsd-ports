@@ -1,4 +1,3 @@
-
 PORTNAME=	pywdns
 PORTVERSION=	0.10.0
 CATEGORIES=	dns python

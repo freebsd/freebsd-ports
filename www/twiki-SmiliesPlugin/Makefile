@@ -1,4 +1,3 @@
-
 PORTNAME=	SmiliesPlugin
 SVNREV=		16417
 

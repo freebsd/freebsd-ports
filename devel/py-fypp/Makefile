@@ -1,4 +1,3 @@
-
 PORTNAME=	fypp
 DISTVERSION=	3.0
 CATEGORIES=	devel python

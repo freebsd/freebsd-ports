@@ -1,4 +1,3 @@
-
 PORTNAME=	rbnacl-libsodium
 PORTVERSION=	1.0.16
 CATEGORIES=	security rubygems

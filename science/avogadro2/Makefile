@@ -1,4 +1,3 @@
-
 PORTNAME=	avogadro2
 DISTVERSION=	1.93.0
 CATEGORIES=	science

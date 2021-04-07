@@ -1,4 +1,3 @@
-
 PORTNAME=	nosexcover
 PORTVERSION=	1.0.11
 CATEGORIES=	devel python

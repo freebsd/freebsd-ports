@@ -1,4 +1,3 @@
-
 PORTNAME=	strict-rfc3339
 DISTVERSION=	0.7
 CATEGORIES=	devel python

@@ -1,4 +1,3 @@
-
 PORTNAME=	adept
 DISTVERSION=	2.0.8
 CATEGORIES=	math

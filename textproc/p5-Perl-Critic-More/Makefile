@@ -1,4 +1,3 @@
-
 PORTNAME=	Perl-Critic-More
 PORTVERSION=	1.003
 CATEGORIES=	textproc devel perl5

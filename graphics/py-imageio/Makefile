@@ -1,4 +1,3 @@
-
 PORTNAME=	imageio
 PORTVERSION=	2.9.0
 CATEGORIES=	graphics python

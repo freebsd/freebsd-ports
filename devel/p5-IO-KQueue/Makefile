@@ -1,4 +1,3 @@
-
 PORTNAME=	IO-KQueue
 PORTVERSION=	0.39
 CATEGORIES=	devel perl5

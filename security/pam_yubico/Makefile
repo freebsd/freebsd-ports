@@ -1,4 +1,3 @@
-
 PORTNAME=	pam_yubico
 PORTVERSION=	2.26
 CATEGORIES=	security

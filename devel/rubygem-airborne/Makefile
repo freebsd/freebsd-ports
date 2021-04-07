@@ -1,4 +1,3 @@
-
 PORTNAME=	airborne
 PORTVERSION=	0.3.6
 CATEGORIES=	devel rubygems

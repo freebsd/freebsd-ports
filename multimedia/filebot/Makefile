@@ -1,4 +1,3 @@
-
 PORTNAME=	filebot
 DISTVERSION=	4.9.3
 CATEGORIES=	multimedia java

@@ -1,4 +1,3 @@
-
 PORTNAME=	puppet
 PORTVERSION=	7.5.0
 CATEGORIES=	sysutils

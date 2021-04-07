@@ -1,4 +1,3 @@
-
 PORTNAME=	varstack
 PORTVERSION=	g.2015.10.22
 CATEGORIES=	databases python

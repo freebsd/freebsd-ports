@@ -1,4 +1,3 @@
-
 PORTNAME=	akonadi-import-wizard
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	deskutils kde kde-applications

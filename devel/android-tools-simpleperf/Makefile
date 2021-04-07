@@ -1,4 +1,3 @@
-
 PORTNAME=	android-tools-simpleperf
 DISTVERSIONPREFIX=	android-
 DISTVERSION=	7.1.2_r17

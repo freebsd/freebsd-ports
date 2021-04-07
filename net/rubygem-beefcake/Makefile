@@ -1,4 +1,3 @@
-
 PORTNAME=	beefcake
 DISTVERSION=	1.2.0
 CATEGORIES=	net rubygems

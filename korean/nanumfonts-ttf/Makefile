@@ -1,4 +1,3 @@
-
 MASTERDIR=	${.CURDIR}/../nanumfonts-otf
 
 FONTTYPE=	ttf

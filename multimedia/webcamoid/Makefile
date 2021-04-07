@@ -1,4 +1,3 @@
-
 PORTNAME=	webcamoid
 DISTVERSION=	8.8.0
 CATEGORIES=	multimedia

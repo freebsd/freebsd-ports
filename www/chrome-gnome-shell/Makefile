@@ -1,4 +1,3 @@
-
 PORTNAME=	chrome-gnome-shell
 DISTVERSION=	10.1
 CATEGORIES=	www gnome

@@ -1,4 +1,3 @@
-
     COMMENT = Vietnamese support
 
     SUBDIR += aspell

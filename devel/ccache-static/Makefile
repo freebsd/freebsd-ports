@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=	-static
 
 MASTERDIR=	${.CURDIR}/../ccache

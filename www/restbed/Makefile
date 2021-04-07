@@ -1,4 +1,3 @@
-
 PORTNAME=	restbed
 DISTVERSION=	4.7
 CATEGORIES=	www

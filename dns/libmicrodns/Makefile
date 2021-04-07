@@ -1,4 +1,3 @@
-
 PORTNAME=	libmicrodns
 DISTVERSION=	0.2.0
 CATEGORIES=	dns

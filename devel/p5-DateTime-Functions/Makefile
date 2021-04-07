@@ -1,4 +1,3 @@
-
 PORTNAME=	DateTime-Functions
 PORTVERSION=	0.13
 CATEGORIES=	devel perl5

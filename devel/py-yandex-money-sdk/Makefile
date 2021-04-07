@@ -1,4 +1,3 @@
-
 PORTNAME=	yandex-money-sdk
 PORTVERSION=	0.1.3
 CATEGORIES=	devel python

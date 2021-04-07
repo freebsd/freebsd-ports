@@ -1,4 +1,3 @@
-
 CATEGORIES=	www
 
 MASTERDIR=	${.CURDIR}/../../lang/php80

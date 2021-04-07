@@ -1,4 +1,3 @@
-
 PORTNAME=	kteatime
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	x11-clocks kde kde-applications

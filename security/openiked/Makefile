@@ -1,4 +1,3 @@
-
 PORTNAME=	openiked
 PORTVERSION=	2.2
 CATEGORIES=	security net

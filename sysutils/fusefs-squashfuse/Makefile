@@ -1,4 +1,3 @@
-
 PORTNAME=	squashfuse
 PORTVERSION=	0.1.103
 CATEGORIES=	sysutils

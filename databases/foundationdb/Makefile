@@ -1,4 +1,3 @@
-
 PORTNAME=	foundationdb
 DISTVERSION=	6.3.11
 CATEGORIES=	databases

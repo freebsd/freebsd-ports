@@ -1,4 +1,3 @@
-
 PORTNAME=	asterisk
 PORTVERSION=	18.3.0
 CATEGORIES=	net

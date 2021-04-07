@@ -1,4 +1,3 @@
-
 PORTNAME=	fomp
 DISTVERSION=	1.2.2
 CATEGORIES=	audio

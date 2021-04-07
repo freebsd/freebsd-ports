@@ -1,4 +1,3 @@
-
 PORTNAME=	liblingoteach
 PORTVERSION=	0.2.1
 PORTREVISION=	6

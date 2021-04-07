@@ -1,4 +1,3 @@
-
 PORTNAME=	compton-conf
 PORTVERSION=	0.16.0
 CATEGORIES=	x11

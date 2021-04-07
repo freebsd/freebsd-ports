@@ -1,4 +1,3 @@
-
 PORTNAME=	libusb1
 PORTVERSION?=	1.8
 CATEGORIES=	devel python

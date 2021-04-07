@@ -1,4 +1,3 @@
-
 PORTNAME=	docbookrx
 DISTVERSION=	1.0.0.dev
 CATEGORIES=	textproc

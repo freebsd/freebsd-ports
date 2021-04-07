@@ -1,4 +1,3 @@
-
 PORTNAME=	gemojione
 PORTVERSION=	3.2.0
 CATEGORIES=	graphics rubygems

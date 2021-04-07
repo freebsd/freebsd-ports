@@ -1,4 +1,3 @@
-
 PORTNAME=	qdoc
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	devel textproc

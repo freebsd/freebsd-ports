@@ -1,4 +1,3 @@
-
 PORTNAME=	json-yaml
 DISTVERSION=	1.2.1
 CATEGORIES=	textproc

@@ -1,4 +1,3 @@
-
 PORTNAME=	artikulate
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	misc education kde kde-applications

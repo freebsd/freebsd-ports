@@ -1,4 +1,3 @@
-
 PORTNAME=	rails-settings-cached
 PORTVERSION=	0.7.2
 CATEGORIES=	www rubygems

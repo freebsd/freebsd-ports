@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=	-plugins
 
 COMMENT=	Frei0r meta-port

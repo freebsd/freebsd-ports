@@ -1,4 +1,3 @@
-
 PORTNAME=	karchive
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	archivers kde kde-frameworks

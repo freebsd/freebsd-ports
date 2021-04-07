@@ -1,4 +1,3 @@
-
 PORTNAME=	shellingham
 PORTVERSION=	1.4.0
 CATEGORIES=	devel python

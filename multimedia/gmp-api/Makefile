@@ -1,4 +1,3 @@
-
 PORTNAME=	gmp-api
 DISTVERSION=	58 # from config/milestone.txt of mozilla-central commit
 CATEGORIES=	multimedia

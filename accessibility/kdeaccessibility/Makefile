@@ -1,4 +1,3 @@
-
 PORTNAME=	kdeaccessibility
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	accessibility kde

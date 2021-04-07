@@ -1,4 +1,3 @@
-
 PORTNAME=	B-Compiling
 PORTVERSION=	0.06
 CATEGORIES=	devel perl5

@@ -1,4 +1,3 @@
-
 PORTNAME=	XML-Parser
 PORTVERSION=	2.44
 CATEGORIES=	textproc perl5

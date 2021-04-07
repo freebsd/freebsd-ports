@@ -1,4 +1,3 @@
-
 PORTNAME=	titlecase
 PORTVERSION=	0.1.1
 CATEGORIES=	devel rubygems

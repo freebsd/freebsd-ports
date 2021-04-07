@@ -1,4 +1,3 @@
-
 PORTNAME=	warzone2100
 PORTVERSION=	3.4.1
 CATEGORIES=	games

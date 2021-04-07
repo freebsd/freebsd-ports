@@ -1,4 +1,3 @@
-
 PORTNAME=	libdazzle
 DISTVERSION=	3.38.0
 CATEGORIES=	x11-toolkits

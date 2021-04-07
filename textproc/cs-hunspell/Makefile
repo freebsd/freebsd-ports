@@ -1,4 +1,3 @@
-
 PORTNAME=	hunspell
 PORTVERSION=	2.0
 CATEGORIES=	textproc

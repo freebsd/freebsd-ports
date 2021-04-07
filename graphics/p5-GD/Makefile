@@ -1,4 +1,3 @@
-
 PORTNAME=	GD
 PORTVERSION=	2.73
 CATEGORIES=	graphics perl5

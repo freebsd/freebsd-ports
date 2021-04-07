@@ -1,4 +1,3 @@
-
 PORTNAME=	omniauth-twitter
 PORTVERSION=	1.4.0
 CATEGORIES=	net rubygems

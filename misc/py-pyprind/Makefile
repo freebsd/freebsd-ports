@@ -1,4 +1,3 @@
-
 PORTNAME=	pyprind
 PORTVERSION=	2.11.2
 CATEGORIES=	misc

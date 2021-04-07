@@ -1,4 +1,3 @@
-
 PORTNAME=	storcli
 DISTVERSION=	7.1211
 CATEGORIES=	sysutils

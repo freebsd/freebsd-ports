@@ -1,4 +1,3 @@
-
 PORTNAME=	python-jsonrpc-server
 PORTVERSION=	0.4.0
 CATEGORIES=	devel python

@@ -1,4 +1,3 @@
-
 PORTNAME=	Perl-Critic-Pulp
 PORTVERSION=	97
 CATEGORIES=	textproc devel perl5

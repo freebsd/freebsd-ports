@@ -1,4 +1,3 @@
-
 PORTNAME=	cpan-upload-http
 PORTVERSION=	2.4
 PORTREVISION=	1

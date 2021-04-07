@@ -1,4 +1,3 @@
-
 PORTNAME=	filesize
 PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems

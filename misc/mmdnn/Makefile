@@ -1,4 +1,3 @@
-
 PORTNAME=	mmdnn
 DISTVERSION=	0.3.1
 CATEGORIES=	misc python # machine-learning

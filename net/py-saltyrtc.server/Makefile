@@ -1,4 +1,3 @@
-
 PORTNAME=	saltyrtc.server
 PORTVERSION=	5.0.1
 CATEGORIES=	net python

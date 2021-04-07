@@ -1,4 +1,3 @@
-
 PORTNAME=	Horde_Cache
 PORTVERSION=	2.5.5
 CATEGORIES=	devel www pear

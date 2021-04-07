@@ -1,4 +1,3 @@
-
 MASTERDIR=	${.CURDIR}/../bitcoin
 PKGNAMESUFFIX=	-utils
 

@@ -1,4 +1,3 @@
-
 PORTNAME=	intel-media-sdk
 DISTVERSIONPREFIX=	intel-mediasdk-
 DISTVERSION=	21.1.3

@@ -1,4 +1,3 @@
-
 PORTNAME=	pg_array_parser
 PORTVERSION=	0.0.9
 CATEGORIES=	databases rubygems

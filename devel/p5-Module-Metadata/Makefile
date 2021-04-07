@@ -1,4 +1,3 @@
-
 PORTNAME=	Module-Metadata
 PORTVERSION=	1.000033
 CATEGORIES=	devel perl5

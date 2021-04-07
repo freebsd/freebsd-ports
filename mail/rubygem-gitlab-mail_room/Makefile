@@ -1,4 +1,3 @@
-
 PORTNAME=	gitlab-mail_room
 PORTVERSION=	0.0.9
 CATEGORIES=	mail rubygems

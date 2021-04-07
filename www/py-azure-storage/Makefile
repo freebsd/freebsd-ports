@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-storage
 PORTVERSION=	0.36.0
 CATEGORIES=	www python

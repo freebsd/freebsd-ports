@@ -1,4 +1,3 @@
-
 PORTNAME=	pythondialog
 PORTVERSION=	3.5.1
 CATEGORIES=	devel python

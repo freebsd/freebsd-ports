@@ -1,4 +1,3 @@
-
 PORTNAME=	pytest-randomly
 PORTVERSION=	3.5.0
 CATEGORIES=	devel python

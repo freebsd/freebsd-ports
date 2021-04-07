@@ -1,4 +1,3 @@
-
 PORTNAME=	libudisks
 PORTVERSION=	2.9.2
 # Obviates the need to specify GH_TAGNAME and repeat the version number later

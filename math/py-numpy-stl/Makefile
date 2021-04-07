@@ -1,4 +1,3 @@
-
 PORTNAME=	numpy-stl
 DISTVERSION=	2.11.3
 CATEGORIES=	math python

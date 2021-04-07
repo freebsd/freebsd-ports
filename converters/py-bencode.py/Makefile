@@ -1,4 +1,3 @@
-
 PORTNAME=	bencode.py
 PORTVERSION=	4.0.0
 CATEGORIES=	converters devel python

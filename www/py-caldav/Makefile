@@ -1,4 +1,3 @@
-
 PORTNAME=	caldav
 PORTVERSION=	0.7.1
 CATEGORIES=	www python

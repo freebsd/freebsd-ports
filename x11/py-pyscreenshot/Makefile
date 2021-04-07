@@ -1,4 +1,3 @@
-
 PORTNAME=	pyscreenshot
 PORTVERSION=	0.5.1
 PORTREVISION=	2

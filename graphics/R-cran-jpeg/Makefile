@@ -1,4 +1,3 @@
-
 PORTNAME=	jpeg
 DISTVERSION=	0.1-8.1
 CATEGORIES=	graphics

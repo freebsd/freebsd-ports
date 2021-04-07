@@ -1,4 +1,3 @@
-
 PORTNAME=	Paranoid-Log-Email
 PORTVERSION=	2.00
 CATEGORIES=	devel perl5

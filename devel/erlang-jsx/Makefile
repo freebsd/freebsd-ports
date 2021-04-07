@@ -1,4 +1,3 @@
-
 PORTNAME=	jsx
 PORTVERSION=	2.9.0
 CATEGORIES=	devel

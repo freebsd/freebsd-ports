@@ -1,4 +1,3 @@
-
 PORTNAME=	xwayland
 PORTREVISION=	2
 

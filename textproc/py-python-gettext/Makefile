@@ -1,4 +1,3 @@
-
 PORTNAME=	python-gettext
 PORTVERSION=	3.0
 CATEGORIES=	textproc python

@@ -1,4 +1,3 @@
-
 PORTNAME=	qwt
 PORTVERSION=	6.1.6
 CATEGORIES=	x11-toolkits

@@ -1,4 +1,3 @@
-
 PORTNAME=	onscripter
 PORTVERSION=	20200722
 CATEGORIES=	games

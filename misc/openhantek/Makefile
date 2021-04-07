@@ -1,4 +1,3 @@
-
 PORTNAME=	openhantek
 DISTVERSION=	3.2.1
 CATEGORIES=	misc

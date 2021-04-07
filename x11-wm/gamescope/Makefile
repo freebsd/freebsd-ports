@@ -1,4 +1,3 @@
-
 PORTNAME=	gamescope
 DISTVERSION=	3.7.1
 CATEGORIES=	x11-wm

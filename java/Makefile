@@ -1,4 +1,3 @@
-
     COMMENT = Java language support
 
     SUBDIR += apache-bcel

@@ -1,4 +1,3 @@
-
 PORTNAME=	percona-toolkit
 PORTVERSION=	3.2.1
 CATEGORIES=	databases

@@ -1,4 +1,3 @@
-
 PORTNAME=	libzrtpcppcore
 PORTVERSION=	4.6.6
 PORTREVISION=	4

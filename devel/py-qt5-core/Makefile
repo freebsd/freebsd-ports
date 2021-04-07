@@ -1,4 +1,3 @@
-
 PORTNAME=	core
 CATEGORIES=	devel python
 

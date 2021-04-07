@@ -1,4 +1,3 @@
-
 PORTNAME=	dymo-cups-drivers
 PORTVERSION=	1.4.0
 PORTREVISION=	3

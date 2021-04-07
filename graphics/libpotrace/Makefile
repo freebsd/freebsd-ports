@@ -1,4 +1,3 @@
-
 PORTNAME=	libpotrace
 PORTVERSION=	1.16
 CATEGORIES=	graphics

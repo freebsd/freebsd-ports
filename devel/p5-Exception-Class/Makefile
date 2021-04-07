@@ -1,4 +1,3 @@
-
 PORTNAME=	Exception-Class
 PORTVERSION=	1.44
 CATEGORIES=	devel perl5

@@ -1,4 +1,3 @@
-
 PORTNAME=	jo
 PORTVERSION=	1.4
 CATEGORIES=	textproc

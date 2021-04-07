@@ -1,4 +1,3 @@
-
 PORTNAME=	ruby-xz
 PORTVERSION=	1.0.0
 CATEGORIES=	archivers rubygems

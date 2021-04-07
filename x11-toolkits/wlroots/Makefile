@@ -1,4 +1,3 @@
-
 PORTNAME=	wlroots
 DISTVERSION=	0.12.0
 CATEGORIES=	x11-toolkits

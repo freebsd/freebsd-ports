@@ -1,4 +1,3 @@
-
 PORTNAME=	farbfeld
 DISTVERSION=	4
 CATEGORIES=	graphics

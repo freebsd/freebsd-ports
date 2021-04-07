@@ -1,4 +1,3 @@
-
 MASTERDIR=	${.CURDIR}/../atf-master
 
 PLAT=	rk3328

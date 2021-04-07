@@ -1,4 +1,3 @@
-
 PORTNAME=	retroarch-assets
 DISTVERSION=	g20200317
 CATEGORIES=	games

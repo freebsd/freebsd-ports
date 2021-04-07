@@ -1,4 +1,3 @@
-
 PORTNAME=	toybox
 PORTVERSION=	0.8.4
 CATEGORIES=	sysutils

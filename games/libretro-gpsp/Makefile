@@ -1,4 +1,3 @@
-
 PORTNAME=	libretro-gpsp
 PORTVERSION=	0.20210215
 CATEGORIES=	games

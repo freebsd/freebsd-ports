@@ -1,4 +1,3 @@
-
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
 PATCHFILES+=	939129/raw

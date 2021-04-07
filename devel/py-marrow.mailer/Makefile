@@ -1,4 +1,3 @@
-
 PORTNAME=	marrow.mailer
 PORTVERSION=	4.0.3
 CATEGORIES=	devel python

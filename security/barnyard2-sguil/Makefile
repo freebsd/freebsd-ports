@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=	-sguil
 
 MASTERDIR=	${.CURDIR}/../barnyard2

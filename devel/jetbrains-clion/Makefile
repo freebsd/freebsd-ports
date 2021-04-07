@@ -1,4 +1,3 @@
-
 PORTNAME=	clion
 PORTVERSION=	2020.3.3
 CATEGORIES=	devel java

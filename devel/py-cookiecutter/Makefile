@@ -1,4 +1,3 @@
-
 PORTNAME=	cookiecutter
 PORTVERSION=	1.7.2
 PORTREVISION=	1

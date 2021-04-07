@@ -1,4 +1,3 @@
-
 PORTNAME=	Astro
 PORTVERSION=	0.78
 CATEGORIES=	astro perl5

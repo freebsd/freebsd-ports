@@ -1,4 +1,3 @@
-
 PORTNAME=	upt-pypi
 DISTVERSION=	0.5
 CATEGORIES=	sysutils python

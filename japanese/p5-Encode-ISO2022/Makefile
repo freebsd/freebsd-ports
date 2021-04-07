@@ -1,4 +1,3 @@
-
 PORTNAME=	Encode-ISO2022
 PORTVERSION=	0.04
 CATEGORIES=	japanese perl5

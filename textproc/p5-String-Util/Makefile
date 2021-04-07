@@ -1,4 +1,3 @@
-
 PORTNAME=	String-Util
 PORTVERSION=	1.31
 CATEGORIES=	textproc perl5

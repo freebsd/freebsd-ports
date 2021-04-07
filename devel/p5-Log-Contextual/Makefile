@@ -1,4 +1,3 @@
-
 PORTNAME=	Log-Contextual
 PORTVERSION=	0.007000
 CATEGORIES=	devel perl5

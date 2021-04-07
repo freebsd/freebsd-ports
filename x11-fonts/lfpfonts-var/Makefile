@@ -1,4 +1,3 @@
-
 PORTNAME=	lfpfonts-var
 PORTVERSION=	0.83
 PORTREVISION=	5

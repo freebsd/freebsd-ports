@@ -1,4 +1,3 @@
-
 PORTNAME=	ksql
 PORTVERSION=	0.3.5
 CATEGORIES=	devel databases

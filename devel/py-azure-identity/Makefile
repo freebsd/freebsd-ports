@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-identity
 DISTVERSION=	1.5.0
 CATEGORIES=	devel python

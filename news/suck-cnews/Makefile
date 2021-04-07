@@ -1,4 +1,3 @@
-
 CATEGORIES=	news
 
 MAINTAINER=	dinoex@FreeBSD.org

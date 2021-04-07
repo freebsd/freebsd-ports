@@ -1,4 +1,3 @@
-
 PORTNAME=	ykclient
 PORTVERSION=	2.15
 CATEGORIES=	security

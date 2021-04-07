@@ -1,4 +1,3 @@
-
 PORTNAME=	spake2
 PORTVERSION=	0.8
 CATEGORIES=	security

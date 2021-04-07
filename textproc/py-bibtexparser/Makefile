@@ -1,4 +1,3 @@
-
 PORTNAME=	bibtexparser
 DISTVERSION=	1.2.0
 CATEGORIES=	textproc python

@@ -1,4 +1,3 @@
-
 PORTNAME=	k3b
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	sysutils multimedia kde-applications

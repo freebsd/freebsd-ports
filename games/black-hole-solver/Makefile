@@ -1,4 +1,3 @@
-
 PORTNAME=	black-hole-solver
 DISTVERSION=	1.10.1
 CATEGORIES=	games

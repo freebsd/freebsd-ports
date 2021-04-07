@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-core
 DISTVERSION=	1.2.1
 CATEGORIES=	devel python

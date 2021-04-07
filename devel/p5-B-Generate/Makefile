@@ -1,4 +1,3 @@
-
 PORTNAME=	B-Generate
 PORTVERSION=	1.56
 CATEGORIES=	devel perl5

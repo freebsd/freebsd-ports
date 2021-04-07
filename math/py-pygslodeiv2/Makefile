@@ -1,4 +1,3 @@
-
 PORTNAME=	pygslodeiv2
 DISTVERSION=	0.9.4
 CATEGORIES=	math python

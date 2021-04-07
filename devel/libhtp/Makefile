@@ -1,4 +1,3 @@
-
 PORTNAME=	libhtp
 PORTVERSION=	0.5.33
 CATEGORIES=	devel

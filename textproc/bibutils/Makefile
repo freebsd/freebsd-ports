@@ -1,4 +1,3 @@
-
 PORTNAME=	bibutils
 PORTVERSION=	6.10
 CATEGORIES=	textproc

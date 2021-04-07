@@ -1,4 +1,3 @@
-
 PORTNAME=	elixir-paratize
 PORTVERSION=	2.1.5
 DISTVERSIONPREFIX=	v

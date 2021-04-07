@@ -1,4 +1,3 @@
-
 PORTNAME=	msms
 DISTVERSION=	2.6.1
 CATEGORIES=	science

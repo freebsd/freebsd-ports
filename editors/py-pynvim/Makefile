@@ -1,4 +1,3 @@
-
 PORTNAME=	pynvim
 DISTVERSION=	0.4.2
 CATEGORIES=	editors python

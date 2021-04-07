@@ -1,4 +1,3 @@
-
 PORTNAME=	opengl
 CATEGORIES=	x11 devel python
 

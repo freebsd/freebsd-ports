@@ -1,4 +1,3 @@
-
 PORTNAME=	kdev-python
 DISTVERSION=	5.6.2
 CATEGORIES=	devel kde

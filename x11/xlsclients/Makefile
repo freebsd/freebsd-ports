@@ -1,4 +1,3 @@
-
 PORTNAME=	xlsclients
 PORTVERSION=	1.1.4
 CATEGORIES=	x11

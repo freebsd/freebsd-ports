@@ -1,4 +1,3 @@
-
 PORTNAME=	eggtestinfo
 PORTVERSION=	0.3
 PORTREVISION=	1

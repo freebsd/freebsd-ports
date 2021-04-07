@@ -1,4 +1,3 @@
-
 PORTNAME=	puppetserver
 PORTVERSION=	6.15.1
 CATEGORIES=	sysutils java

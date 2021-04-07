@@ -1,4 +1,3 @@
-
 PORTNAME=	moodbar
 PORTVERSION=	1.2.1
 CATEGORIES=	audio

@@ -1,4 +1,3 @@
-
     COMMENT = Hebrew support
 
     SUBDIR += aspell

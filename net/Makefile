@@ -1,4 +1,3 @@
-
     COMMENT = Networking tools
 
     SUBDIR += 3proxy

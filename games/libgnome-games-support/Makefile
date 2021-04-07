@@ -1,4 +1,3 @@
-
 PORTNAME=	libgnome-games-support
 PORTVERSION=	1.8.0
 CATEGORIES=	games gnome

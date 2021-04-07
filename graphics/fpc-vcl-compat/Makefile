@@ -1,4 +1,3 @@
-
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-vcl-compat
 

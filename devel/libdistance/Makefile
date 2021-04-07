@@ -1,4 +1,3 @@
-
 PORTNAME=	libdistance
 PORTVERSION=	0.2.2
 PORTREVISION=	1

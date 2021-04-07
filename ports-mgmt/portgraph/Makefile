@@ -1,4 +1,3 @@
-
 PORTNAME=	portgraph
 PORTVERSION=	0.0.1
 CATEGORIES=	ports-mgmt python

@@ -1,4 +1,3 @@
-
 PORTNAME=	img2pdf
 DISTVERSION=	0.3.5
 CATEGORIES=	graphics python

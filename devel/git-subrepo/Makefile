@@ -1,4 +1,3 @@
-
 PORTNAME=	git-subrepo
 DISTVERSION=	0.4.0
 CATEGORIES=	devel

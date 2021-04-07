@@ -1,4 +1,3 @@
-
 PORTNAME=	pymeeus
 PORTVERSION=	0.3.6
 CATEGORIES=	astro science python

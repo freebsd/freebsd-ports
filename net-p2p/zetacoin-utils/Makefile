@@ -1,4 +1,3 @@
-
 MASTERDIR=	${.CURDIR}/../zetacoin
 PKGNAMESUFFIX=	-utils
 

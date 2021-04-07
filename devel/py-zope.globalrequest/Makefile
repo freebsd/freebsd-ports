@@ -1,4 +1,3 @@
-
 PORTNAME=	zope.globalrequest
 PORTVERSION=	1.1
 CATEGORIES=	devel python zope

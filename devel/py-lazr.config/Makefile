@@ -1,4 +1,3 @@
-
 PORTNAME=	lazr.config
 PORTVERSION=	2.2.2
 CATEGORIES=	devel python

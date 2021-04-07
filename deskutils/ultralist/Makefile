@@ -1,4 +1,3 @@
-
 PORTNAME=	ultralist
 DISTVERSION=	1.7.0
 CATEGORIES=	deskutils

@@ -1,4 +1,3 @@
-
 MASTERDIR=	${.CURDIR}/../../graphics/gd
 CATEGORIES=	russian
 

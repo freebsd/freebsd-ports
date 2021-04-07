@@ -1,4 +1,3 @@
-
 PORTNAME=	gns3-converter
 PORTVERSION=	1.2.4
 CATEGORIES=	emulators

@@ -1,4 +1,3 @@
-
 PORTNAME=	pyfixbuf
 PORTVERSION=	0.8.1
 CATEGORIES=	net python

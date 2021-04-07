@@ -1,4 +1,3 @@
-
 PORTNAME=	wildfly15
 PORTVERSION=	15.0.1
 CATEGORIES=	java www

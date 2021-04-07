@@ -1,4 +1,3 @@
-
 PORTNAME=	cargo-generate
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.3

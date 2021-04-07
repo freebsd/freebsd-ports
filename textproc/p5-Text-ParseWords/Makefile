@@ -1,4 +1,3 @@
-
 PORTNAME=	Text-ParseWords
 PORTVERSION=	3.30
 CATEGORIES=	textproc perl5

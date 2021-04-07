@@ -1,4 +1,3 @@
-
 PORTNAME=	Image-PNG-Libpng
 PORTVERSION=	0.56
 CATEGORIES=	graphics perl5

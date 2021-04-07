@@ -1,4 +1,3 @@
-
 PORTNAME=	bareos
 
 PKGNAMESUFFIX=	18-traymonitor

@@ -1,4 +1,3 @@
-
 PORTNAME=	hpdoc
 DISTVERSION=	3.11.0
 CATEGORIES=	emulators

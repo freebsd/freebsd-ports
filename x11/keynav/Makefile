@@ -1,4 +1,3 @@
-
 PORTNAME=	keynav
 PORTVERSION=	0.20180821.0	# to match the output of `keynav -v'
 PORTEPOCH=	1

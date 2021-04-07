@@ -1,4 +1,3 @@
-
 SUBDIR += accessibility
 SUBDIR += arabic
 SUBDIR += archivers

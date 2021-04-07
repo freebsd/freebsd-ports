@@ -1,4 +1,3 @@
-
 PORTNAME=	lnphost
 PORTVERSION=	1.0a
 CATEGORIES=	devel

@@ -1,4 +1,3 @@
-
 PORTNAME=	bonmin
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	1.8.8

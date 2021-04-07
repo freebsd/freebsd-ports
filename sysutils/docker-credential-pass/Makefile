@@ -1,4 +1,3 @@
-
 PORTNAME=	docker-credential-pass
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.3

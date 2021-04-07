@@ -1,4 +1,3 @@
-
 PORTNAME=	csvkit
 PORTVERSION=	1.0.5
 CATEGORIES=	textproc python

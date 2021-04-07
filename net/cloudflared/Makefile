@@ -1,4 +1,3 @@
-
 PORTNAME=	cloudflared
 DISTVERSION=	2021.3.5
 CATEGORIES=	net www

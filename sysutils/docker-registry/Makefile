@@ -1,4 +1,3 @@
-
 PORTNAME=	docker-registry
 PORTVERSION=	2.7.1
 DISTVERSIONPREFIX=v

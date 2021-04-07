@@ -1,4 +1,3 @@
-
 PORTNAME=	pine-pgp-filters
 PORTVERSION=	1.8
 PORTREVISION=	2

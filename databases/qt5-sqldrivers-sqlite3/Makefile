@@ -1,4 +1,3 @@
-
 PORTNAME=	sqlite3
 
 DB=		SQLite

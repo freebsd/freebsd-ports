@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-advisor
 PORTVERSION=	3.0.0
 CATEGORIES=	devel python

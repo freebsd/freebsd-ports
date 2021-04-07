@@ -1,4 +1,3 @@
-
 PORTNAME=	cloudflare-scrape-js2py
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.3

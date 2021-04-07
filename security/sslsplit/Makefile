@@ -1,4 +1,3 @@
-
 PORTNAME=	sslsplit
 PORTVERSION=	0.5.5
 CATEGORIES=	security

@@ -1,4 +1,3 @@
-
 PORTNAME=	xc3sprog
 PORTVERSION=	r769
 CATEGORIES=	devel

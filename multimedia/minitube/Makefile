@@ -1,4 +1,3 @@
-
 PORTNAME=	minitube
 DISTVERSION=	3.8
 CATEGORIES=	multimedia www

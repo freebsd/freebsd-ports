@@ -1,4 +1,3 @@
-
 PORTNAME=	nextdns
 PORTVERSION=	1.9.4
 CATEGORIES=	dns security

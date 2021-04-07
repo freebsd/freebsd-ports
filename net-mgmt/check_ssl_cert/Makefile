@@ -1,4 +1,3 @@
-
 PORTNAME=	check_ssl_cert
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0

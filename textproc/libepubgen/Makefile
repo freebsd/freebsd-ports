@@ -1,4 +1,3 @@
-
 PORTNAME=	libepubgen
 PORTVERSION=	0.1.1
 CATEGORIES=	textproc

@@ -1,4 +1,3 @@
-
 PORTNAME=	s3transfer
 PORTVERSION=	0.3.6
 CATEGORIES=	net python

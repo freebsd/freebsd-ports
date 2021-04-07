@@ -1,4 +1,3 @@
-
 PORTNAME=	metasploit_data_models
 PORTVERSION=	4.1.1
 PORTEPOCH=	2

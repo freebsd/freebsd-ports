@@ -1,4 +1,3 @@
-
 PORTNAME=	bslizr
 DISTVERSION=	1.2.14
 CATEGORIES=	audio

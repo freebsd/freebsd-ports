@@ -1,4 +1,3 @@
-
 PORTNAME=	libunistring
 PORTVERSION=	0.9.10
 PORTREVISION=	1

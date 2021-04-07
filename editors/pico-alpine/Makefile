@@ -1,4 +1,3 @@
-
 PORTNAME=	pico-alpine
 PORTREVISION=	0
 CATEGORIES=	editors

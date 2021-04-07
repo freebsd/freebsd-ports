@@ -1,4 +1,3 @@
-
 PORTNAME=	ssm
 DISTVERSION=	0.0.1
 CATEGORIES=	math python

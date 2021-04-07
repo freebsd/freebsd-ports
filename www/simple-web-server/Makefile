@@ -1,4 +1,3 @@
-
 PORTNAME=	simple-web-server
 DISTVERSION=	3.0.2
 CATEGORIES=	www devel

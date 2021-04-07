@@ -1,4 +1,3 @@
-
 PORTNAME=	DateTime-Format-Duration
 PORTVERSION=	1.04
 CATEGORIES=	devel perl5

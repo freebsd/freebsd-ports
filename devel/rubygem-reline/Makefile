@@ -1,4 +1,3 @@
-
 PORTNAME=	reline
 PORTVERSION=	0.2.5
 CATEGORIES=	devel rubygems

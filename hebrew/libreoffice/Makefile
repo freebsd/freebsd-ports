@@ -1,4 +1,3 @@
-
 CATEGORIES=	hebrew
 LO_I18N=	he
 LO_HAS_HELPPACK=	yes

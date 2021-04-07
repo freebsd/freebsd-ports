@@ -1,4 +1,3 @@
-
 PORTNAME=	pick
 PORTVERSION=	4.0.0
 CATEGORIES=	sysutils

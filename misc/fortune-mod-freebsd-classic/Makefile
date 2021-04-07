@@ -1,4 +1,3 @@
-
 PORTNAME=	fortune-mod-freebsd-classic
 DISTVERSION=	g20171128
 CATEGORIES=	misc

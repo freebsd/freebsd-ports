@@ -1,4 +1,3 @@
-
 PORTNAME=	argon2-cffi
 PORTVERSION=	19.1.0
 CATEGORIES=	security python

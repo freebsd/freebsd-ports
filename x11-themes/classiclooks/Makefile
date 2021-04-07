@@ -1,4 +1,3 @@
-
 PORTNAME=	classiclooks
 DISTVERSION=	1.4.4
 CATEGORIES=	x11-themes

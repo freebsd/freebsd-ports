@@ -1,4 +1,3 @@
-
 PORTNAME=	wmsystemtray
 PORTVERSION=	1.4
 CATEGORIES=	x11 windowmaker afterstep

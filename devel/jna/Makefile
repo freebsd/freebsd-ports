@@ -1,4 +1,3 @@
-
 PORTNAME=	jna
 PORTVERSION=	5.7.0
 CATEGORIES=	devel java

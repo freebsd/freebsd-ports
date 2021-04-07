@@ -1,4 +1,3 @@
-
 PORTNAME=	pyudev
 PORTVERSION=	0.22.0
 CATEGORIES=	devel python

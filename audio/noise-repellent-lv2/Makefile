@@ -1,4 +1,3 @@
-
 PORTNAME=	noise-repellent
 DISTVERSION=	0.1.5-3
 DISTVERSIONSUFFIX=	-g7f5a8fb

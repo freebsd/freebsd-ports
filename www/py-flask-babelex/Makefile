@@ -1,4 +1,3 @@
-
 PORTNAME=	flask-babelex
 PORTVERSION=	0.9.4
 CATEGORIES=	www devel python

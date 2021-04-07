@@ -1,4 +1,3 @@
-
 PORTNAME=	orange3-associate
 DISTVERSION=	1.1.8
 CATEGORIES=	misc python

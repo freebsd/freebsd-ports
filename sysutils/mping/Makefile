@@ -1,4 +1,3 @@
-
 PORTNAME=	mping
 DISTVERSION=	0.1.4
 CATEGORIES=	sysutils

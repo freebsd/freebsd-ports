@@ -1,4 +1,3 @@
-
 PORTNAME=	gnupg-pkcs11-scd
 DISTVERSION=	0.9.2
 CATEGORIES=	security

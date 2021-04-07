@@ -1,4 +1,3 @@
-
 PORTNAME=		freebsd-sysctl
 PORTVERSION=	0.0.7
 CATEGORIES=		devel python sysutils

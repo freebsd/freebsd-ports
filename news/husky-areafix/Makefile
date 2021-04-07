@@ -1,4 +1,3 @@
-
 PORTNAME=	husky-areafix
 
 COMMENT=	Husky FTN areafix library

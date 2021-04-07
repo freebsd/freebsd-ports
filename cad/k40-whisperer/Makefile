@@ -1,4 +1,3 @@
-
 PORTNAME=	k40-whisperer
 DISTVERSION=	0.55
 CATEGORIES=	cad python

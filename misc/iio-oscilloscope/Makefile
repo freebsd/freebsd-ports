@@ -1,4 +1,3 @@
-
 PORTNAME=	iio-oscilloscope
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14

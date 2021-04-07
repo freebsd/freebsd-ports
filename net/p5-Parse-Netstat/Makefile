@@ -1,4 +1,3 @@
-
 PORTNAME=	Parse-Netstat
 PORTVERSION=	0.14
 CATEGORIES=	net perl5

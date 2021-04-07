@@ -1,4 +1,3 @@
-
 PORTNAME=	sqlalchemy
 PORTVERSION=	1.4.0b3
 CATEGORIES=	databases python

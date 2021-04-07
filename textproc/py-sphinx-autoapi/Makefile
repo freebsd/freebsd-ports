@@ -1,4 +1,3 @@
-
 PORTNAME=	sphinx-autoapi
 PORTVERSION=	1.7.0
 CATEGORIES=	textproc python

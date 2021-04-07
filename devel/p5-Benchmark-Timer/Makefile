@@ -1,4 +1,3 @@
-
 PORTNAME=	Benchmark-Timer
 PORTVERSION=	0.7112
 CATEGORIES=	devel perl5

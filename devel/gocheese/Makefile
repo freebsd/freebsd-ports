@@ -1,4 +1,3 @@
-
 PORTNAME=	gocheese
 PORTVERSION=	2.5.0
 CATEGORIES=	devel python

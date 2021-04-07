@@ -1,4 +1,3 @@
-
 PORTNAME=	transpopy
 PORTVERSION=	0.2.0
 CATEGORIES=	textproc python

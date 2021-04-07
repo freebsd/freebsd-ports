@@ -1,4 +1,3 @@
-
 PORTNAME=	Encode-Base32-GMP
 PORTVERSION=	0.02
 CATEGORIES=	converters perl5

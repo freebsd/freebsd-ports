@@ -1,4 +1,3 @@
-
 PORTNAME=	asciidoctor-diagram
 PORTVERSION=	1.5.19
 CATEGORIES=	textproc rubygems

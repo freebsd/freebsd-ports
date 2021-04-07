@@ -1,4 +1,3 @@
-
 PORTNAME=	Plack-Middleware-AddDefaultCharset
 PORTVERSION=	0.02
 PORTREVISION=	1

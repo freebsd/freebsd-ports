@@ -1,4 +1,3 @@
-
 PORTNAME=	MooX-Thunking
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5

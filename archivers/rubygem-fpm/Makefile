@@ -1,4 +1,3 @@
-
 PORTNAME=	fpm
 PORTVERSION=	1.11.0
 CATEGORIES=	archivers rubygems

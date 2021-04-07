@@ -1,4 +1,3 @@
-
 PORTNAME=	ctpl
 PORTVERSION=	0.3.4
 CATEGORIES=	textproc devel

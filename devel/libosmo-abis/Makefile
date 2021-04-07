@@ -1,4 +1,3 @@
-
 PORTNAME=	libosmo-abis
 PORTVERSION=	0.7.0
 CATEGORIES=	devel

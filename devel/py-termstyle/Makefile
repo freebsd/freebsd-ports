@@ -1,4 +1,3 @@
-
 PORTNAME=	termstyle
 PORTVERSION=	0.1.10
 CATEGORIES=	devel python

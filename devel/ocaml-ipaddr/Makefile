@@ -1,4 +1,3 @@
-
 PORTNAME=	ipaddr
 PORTVERSION=	2.6.1
 CATEGORIES=	devel

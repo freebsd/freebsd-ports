@@ -1,4 +1,3 @@
-
 PORTNAME=	kdemultimedia
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	multimedia kde

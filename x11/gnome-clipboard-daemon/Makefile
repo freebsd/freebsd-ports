@@ -1,4 +1,3 @@
-
 PORTNAME=	gnome-clipboard-daemon
 PORTVERSION=	1.0
 PORTREVISION=	12

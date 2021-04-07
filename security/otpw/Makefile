@@ -1,4 +1,3 @@
-
 PORTNAME=	otpw
 PORTVERSION=	1.5
 CATEGORIES=	security

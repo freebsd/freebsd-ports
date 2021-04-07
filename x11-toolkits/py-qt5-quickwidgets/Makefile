@@ -1,4 +1,3 @@
-
 PORTNAME=	quickwidgets
 CATEGORIES=	x11-toolkits devel python
 

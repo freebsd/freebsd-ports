@@ -1,4 +1,3 @@
-
 PORTNAME=	lazy-object-proxy
 PORTVERSION=	1.5.2
 CATEGORIES=	devel python

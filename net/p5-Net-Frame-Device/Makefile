@@ -1,4 +1,3 @@
-
 PORTNAME=	Net-Frame-Device
 PORTVERSION=	1.12
 CATEGORIES=	net perl5

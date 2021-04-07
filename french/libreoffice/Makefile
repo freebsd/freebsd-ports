@@ -1,4 +1,3 @@
-
 CATEGORIES=	french
 LO_I18N=	fr
 LO_HAS_HELPPACK=	yes

@@ -1,4 +1,3 @@
-
 CATEGORIES=	ftp
 
 MASTERDIR=	${.CURDIR}/../../lang/php80

@@ -1,4 +1,3 @@
-
 PORTNAME=	modsecurity3-nginx
 DISTVERSION=	1.0.1
 PORTREVISION=	1

@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=	-doc
 
 MAINTAINER=	nivit@FreeBSD.org

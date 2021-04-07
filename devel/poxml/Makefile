@@ -1,4 +1,3 @@
-
 PORTNAME=	poxml
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	devel kde kde-applications

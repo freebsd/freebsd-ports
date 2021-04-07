@@ -1,4 +1,3 @@
-
 PORTNAME=	gs_api_client
 PORTVERSION=	1.1.1
 CATEGORIES=	devel net python

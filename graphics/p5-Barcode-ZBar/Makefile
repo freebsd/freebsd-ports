@@ -1,4 +1,3 @@
-
 PORTNAME=	Barcode-ZBar
 PORTVERSION=	0.04
 CATEGORIES=	graphics perl5

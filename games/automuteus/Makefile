@@ -1,4 +1,3 @@
-
 PORTNAME=	automuteus
 DISTVERSION=	6.11.2
 CATEGORIES=	games

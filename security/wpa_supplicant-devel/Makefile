@@ -1,4 +1,3 @@
-
 PORTNAME=	wpa_supplicant
 PORTVERSION=	${COMMIT_DATE}
 CATEGORIES=	security net

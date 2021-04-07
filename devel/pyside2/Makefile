@@ -1,4 +1,3 @@
-
 PORTNAME=	pyside2
 DISTVERSION=	5.15.2
 CATEGORIES=	devel

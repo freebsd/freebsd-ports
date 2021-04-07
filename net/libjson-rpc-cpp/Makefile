@@ -1,4 +1,3 @@
-
 PORTNAME=		libjson-rpc-cpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.1.0

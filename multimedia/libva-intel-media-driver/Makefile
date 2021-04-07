@@ -1,4 +1,3 @@
-
 PORTNAME=	media-driver
 DISTVERSIONPREFIX=	intel-media-
 DISTVERSION=	21.1.3

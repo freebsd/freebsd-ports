@@ -1,4 +1,3 @@
-
 PORTNAME=	Email-Address-Loose
 PORTVERSION=	0.10
 PORTREVISION=	1

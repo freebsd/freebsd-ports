@@ -1,4 +1,3 @@
-
 PORTNAME=	zsh-autosuggestions
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.4

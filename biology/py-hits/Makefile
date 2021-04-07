@@ -1,4 +1,3 @@
-
 PORTNAME=	hits
 PORTVERSION=	0.1
 CATEGORIES=	biology python

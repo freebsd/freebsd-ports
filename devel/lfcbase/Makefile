@@ -1,4 +1,3 @@
-
 PORTNAME=	lfcbase
 PORTVERSION=	1.16.0
 CATEGORIES=	devel

@@ -1,4 +1,3 @@
-
 PORTNAME=	xopen
 DISTVERSION=	1.1.0	# py-cutadapt 3.3 requires 1.1.x
 CATEGORIES=	archivers python

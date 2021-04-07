@@ -1,4 +1,3 @@
-
 CATEGORIES=	graphics
 
 MASTERDIR=	${.CURDIR}/../../lang/php74

@@ -1,4 +1,3 @@
-
 PORTNAME=	Catalyst-Plugin-ConfigLoader
 PORTVERSION=	0.34
 PORTREVISION=	1

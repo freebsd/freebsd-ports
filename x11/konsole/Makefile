@@ -1,4 +1,3 @@
-
 PORTNAME=	konsole
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	x11 kde kde-applications # kde kde-applications-applications

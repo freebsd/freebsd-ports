@@ -1,4 +1,3 @@
-
 PORTNAME=	pulseaudio-qt
 DISTVERSION=	1.2
 PORTREVISION=	1

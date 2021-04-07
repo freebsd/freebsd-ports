@@ -1,4 +1,3 @@
-
 PORTNAME=	valentina
 DISTVERSION=	0.7.45
 CATEGORIES=	misc

@@ -1,4 +1,3 @@
-
 PORTNAME=	pyfcm
 PORTVERSION=	1.5.1
 CATEGORIES=	devel python

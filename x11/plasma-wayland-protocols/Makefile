@@ -1,4 +1,3 @@
-
 PORTNAME=	plasma-wayland-protocols
 DISTVERSION=	1.2.1
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-
 PORTNAME=	r10k
 PORTVERSION=	3.8.0
 CATEGORIES=	sysutils rubygems

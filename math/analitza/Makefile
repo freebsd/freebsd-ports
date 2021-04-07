@@ -1,4 +1,3 @@
-
 PORTNAME=	analitza
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	math education kde kde-applications

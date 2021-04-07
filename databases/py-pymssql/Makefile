@@ -1,4 +1,3 @@
-
 PORTNAME=	pymssql
 PORTVERSION=	2.1.4
 CATEGORIES=	databases python

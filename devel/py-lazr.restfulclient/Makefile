@@ -1,4 +1,3 @@
-
 PORTNAME=	lazr.restfulclient
 PORTVERSION=	0.14.3
 CATEGORIES=	devel python

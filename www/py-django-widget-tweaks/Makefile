@@ -1,4 +1,3 @@
-
 PORTNAME=	django-widget-tweaks
 PORTVERSION=	1.4.8
 CATEGORIES=	www python

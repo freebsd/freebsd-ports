@@ -1,4 +1,3 @@
-
 PORTNAME=	bareos
 PKGNAMESUFFIX=	17-client
 

@@ -1,4 +1,3 @@
-
 PORTNAME=	vrflash
 PORTVERSION=	0.24
 CATEGORIES=	comms

@@ -1,4 +1,3 @@
-
 COMMENT=	Security tool to monitor and check logs and intrusions - server installation
 OSSEC_TYPE=	server
 

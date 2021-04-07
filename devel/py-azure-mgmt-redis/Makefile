@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-redis
 DISTVERSION=	7.0.0rc1
 CATEGORIES=	devel python

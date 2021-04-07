@@ -1,4 +1,3 @@
-
 PORTNAME=	pamqp
 PORTVERSION=	1.6.1
 CATEGORIES=	net python

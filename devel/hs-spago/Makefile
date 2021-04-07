@@ -1,4 +1,3 @@
-
 PORTNAME=	spago
 DISTVERSION=	0.19.1
 CATEGORIES=	devel

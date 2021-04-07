@@ -1,4 +1,3 @@
-
 PORTNAME=	amath
 PORTVERSION=	1.8.5
 CATEGORIES=	math

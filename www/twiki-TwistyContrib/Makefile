@@ -1,4 +1,3 @@
-
 PORTNAME=	TwistyContrib
 SVNREV=		17596
 

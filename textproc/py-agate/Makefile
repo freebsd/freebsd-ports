@@ -1,4 +1,3 @@
-
 PORTNAME=	agate
 PORTVERSION=	1.6.2
 CATEGORIES=	textproc python

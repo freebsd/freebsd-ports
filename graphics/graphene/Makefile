@@ -1,4 +1,3 @@
-
 PORTNAME=	graphene
 DISTVERSION=	1.10.4
 CATEGORIES=	graphics devel

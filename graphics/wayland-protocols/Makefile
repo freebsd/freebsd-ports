@@ -1,4 +1,3 @@
-
 PORTNAME=	wayland-protocols
 PORTVERSION=	1.20
 CATEGORIES=	graphics wayland

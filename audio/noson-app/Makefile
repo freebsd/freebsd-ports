@@ -1,4 +1,3 @@
-
 PORTNAME=	noson-app
 DISTVERSION=	4.4.9
 CATEGORIES=	audio net

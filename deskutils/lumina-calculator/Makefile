@@ -1,4 +1,3 @@
-
 PORTNAME=	lumina-calculator
 DISTVERSION=	1.6.0
 CATEGORIES=	deskutils

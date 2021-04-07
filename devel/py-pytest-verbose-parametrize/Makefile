@@ -1,4 +1,3 @@
-
 PORTNAME=	pytest-verbose-parametrize
 PORTVERSION=	1.7.0
 CATEGORIES=	devel python

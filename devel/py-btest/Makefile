@@ -1,4 +1,3 @@
-
 PORTNAME=	btest
 DISTVERSION=	0.67
 CATEGORIES=	devel python

@@ -1,4 +1,3 @@
-
 PORTNAME=	jupyter_console
 PORTVERSION=	6.2.0
 PORTREVISION=	1

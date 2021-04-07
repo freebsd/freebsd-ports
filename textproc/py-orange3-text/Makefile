@@ -1,4 +1,3 @@
-
 PORTNAME=	orange3-text
 DISTVERSION=	1.3.1
 CATEGORIES=	textproc python

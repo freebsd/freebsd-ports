@@ -1,4 +1,3 @@
-
 PORTNAME=	MooseX-RelatedClassRoles
 PORTVERSION=	0.004
 PORTREVISION=	2

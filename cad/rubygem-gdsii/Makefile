@@ -1,4 +1,3 @@
-
 PORTNAME=	ruby-gdsii
 PORTVERSION=	1.0.0
 CATEGORIES=	cad rubygems

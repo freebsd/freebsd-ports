@@ -1,4 +1,3 @@
-
 PORTNAME=	libsoldout
 DISTVERSION=	1.4
 CATEGORIES=	textproc devel

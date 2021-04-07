@@ -1,4 +1,3 @@
-
 PORTNAME=	gitlab-grit
 PORTVERSION=	2.8.3
 CATEGORIES=	textproc rubygems

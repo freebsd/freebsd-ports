@@ -1,4 +1,3 @@
-
 PORTNAME=	jenkins
 PORTVERSION=	2.263.3
 CATEGORIES=	devel java

@@ -1,4 +1,3 @@
-
 PORTNAME=	geany-plugin-commander
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel

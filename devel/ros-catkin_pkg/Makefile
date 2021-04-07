@@ -1,4 +1,3 @@
-
 PORTNAME=	ros-catkin_pkg
 DISTVERSION=	0.4.14
 CATEGORIES=	devel

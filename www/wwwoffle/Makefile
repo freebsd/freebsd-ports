@@ -1,4 +1,3 @@
-
 PORTNAME=	wwwoffle
 PORTVERSION=	2.9j
 CATEGORIES=	www

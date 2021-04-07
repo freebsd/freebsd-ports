@@ -1,4 +1,3 @@
-
 PORTNAME=	fzy
 DISTVERSION=	1.0
 CATEGORIES=	textproc

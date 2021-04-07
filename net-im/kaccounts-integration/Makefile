@@ -1,4 +1,3 @@
-
 PORTNAME=	kaccounts-integration
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	net-im kde kde-applications

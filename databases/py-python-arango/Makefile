@@ -1,4 +1,3 @@
-
 PORTNAME=	python-arango
 DISTVERSION=	7.1.0
 CATEGORIES=	databases python

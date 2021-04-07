@@ -1,4 +1,3 @@
-
 PORTNAME=	qdirstat
 PORTVERSION=	1.7.1
 CATEGORIES=	sysutils

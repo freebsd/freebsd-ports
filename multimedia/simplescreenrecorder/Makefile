@@ -1,4 +1,3 @@
-
 PORTNAME=	simplescreenrecorder
 DISTVERSION=	0.4.3
 PORTREVISION=	1

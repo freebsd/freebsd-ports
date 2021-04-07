@@ -1,4 +1,3 @@
-
 PORTNAME=	folsom
 PORTVERSION=	0.8.3
 CATEGORIES=	devel

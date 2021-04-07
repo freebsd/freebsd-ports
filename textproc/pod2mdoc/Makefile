@@ -1,4 +1,3 @@
-
 PORTNAME=	pod2mdoc
 PORTVERSION=	0.2
 CATEGORIES=	textproc

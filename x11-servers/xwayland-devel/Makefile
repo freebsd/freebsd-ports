@@ -1,4 +1,3 @@
-
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
 DISTVERSION=	1.20.0-886

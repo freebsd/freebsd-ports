@@ -1,4 +1,3 @@
-
 PORTNAME=	molecule
 PORTVERSION=	2.22
 CATEGORIES=	devel python

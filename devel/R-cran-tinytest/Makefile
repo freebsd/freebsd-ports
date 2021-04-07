@@ -1,4 +1,3 @@
-
 PORTNAME=	tinytest
 DISTVERSION=	1.2.4
 CATEGORIES=	devel

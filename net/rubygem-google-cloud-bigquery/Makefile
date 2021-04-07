@@ -1,4 +1,3 @@
-
 PORTNAME=	google-cloud-bigquery
 PORTVERSION=	1.18.0
 CATEGORIES=	net rubygems

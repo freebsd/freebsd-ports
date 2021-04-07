@@ -1,4 +1,3 @@
-
 PORTNAME=	indexinfo
 PORTVERSION=	0.3.1
 CATEGORIES=	print ports-mgmt

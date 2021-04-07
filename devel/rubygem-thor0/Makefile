@@ -1,4 +1,3 @@
-
 PORTNAME=	thor
 PORTVERSION=	0.20.3
 CATEGORIES=	devel rubygems

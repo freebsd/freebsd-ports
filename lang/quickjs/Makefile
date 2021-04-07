@@ -1,4 +1,3 @@
-
 PORTNAME=	quickjs
 DISTVERSION=	2020.09.06
 CATEGORIES=	lang devel

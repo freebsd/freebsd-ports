@@ -1,4 +1,3 @@
-
 PORTNAME=	mypy_extensions
 PORTVERSION=	0.4.3
 CATEGORIES=	devel python

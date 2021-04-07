@@ -1,4 +1,3 @@
-
 PORTNAME=	argh
 PORTVERSION=	0.26.2
 CATEGORIES=	devel

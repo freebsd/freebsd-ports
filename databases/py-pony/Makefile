@@ -1,4 +1,3 @@
-
 PORTNAME=	pony
 PORTVERSION=	0.7.14
 CATEGORIES=	databases devel python

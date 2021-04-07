@@ -1,4 +1,3 @@
-
 PORTNAME=	libretro-xrick
 PORTVERSION=	0.20201218
 CATEGORIES=	games

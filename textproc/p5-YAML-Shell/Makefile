@@ -1,4 +1,3 @@
-
 PORTNAME=	YAML-Shell
 PORTVERSION=	0.71
 CATEGORIES=	textproc perl5

@@ -1,4 +1,3 @@
-
 PORTNAME=	selection
 PORTVERSION=	0.0.14
 CATEGORIES=	devel python

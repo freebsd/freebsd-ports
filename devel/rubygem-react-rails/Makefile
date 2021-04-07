@@ -1,4 +1,3 @@
-
 PORTNAME=	react-rails
 PORTVERSION=	2.4.7
 CATEGORIES=	devel rubygems

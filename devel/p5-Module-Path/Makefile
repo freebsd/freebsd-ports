@@ -1,4 +1,3 @@
-
 PORTNAME=	Module-Path
 PORTVERSION=	0.19
 CATEGORIES=	devel perl5

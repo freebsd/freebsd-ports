@@ -1,4 +1,3 @@
-
 CATEGORIES=	www lang
 PKGNAMESUFFIX=	-googleapi
 

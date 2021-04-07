@@ -1,4 +1,3 @@
-
 PORTNAME=	xf86-input-evdev
 PORTVERSION=	2.10.6
 PORTREVISION=	6

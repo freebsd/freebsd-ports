@@ -1,4 +1,3 @@
-
 PORTNAME=	yubikey-manager
 PORTVERSION=	4.0.0
 CATEGORIES=	security python

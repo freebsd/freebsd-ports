@@ -1,4 +1,3 @@
-
 PORTNAME=	timex
 PORTVERSION=	3.3.0
 CATEGORIES=	devel

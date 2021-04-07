@@ -1,4 +1,3 @@
-
 PORTNAME=	fmt
 # Make sure to check devel/spdlog consumers too
 PORTVERSION=	7.1.3

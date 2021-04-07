@@ -1,4 +1,3 @@
-
 PORTNAME=	goesimage
 DISTVERSION=	0.1.3
 CATEGORIES=	deskutils

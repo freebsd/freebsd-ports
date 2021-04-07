@@ -1,4 +1,3 @@
-
 PORTNAME=	gmtp
 PORTVERSION=	1.3.11
 CATEGORIES=	audio

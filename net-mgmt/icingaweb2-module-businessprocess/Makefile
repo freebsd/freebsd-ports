@@ -1,4 +1,3 @@
-
 PORTNAME=	icingaweb2-module-businessprocess
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.0

@@ -1,4 +1,3 @@
-
 PORTNAME=	bemenu
 DISTVERSION=	0.5.0
 CATEGORIES=	x11 wayland

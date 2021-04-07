@@ -1,4 +1,3 @@
-
 PORTNAME=	desc
 DISTVERSION=	1.3.0
 CATEGORIES=	devel

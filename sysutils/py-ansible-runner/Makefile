@@ -1,4 +1,3 @@
-
 PORTNAME=	ansible-runner
 DISTVERSION=	1.4.7
 CATEGORIES=	sysutils python

@@ -1,4 +1,3 @@
-
 PORTNAME=	flufl.i18n
 PORTVERSION=	2.0.2
 CATEGORIES=	devel python

@@ -1,4 +1,3 @@
-
 PORTNAME=	chainer-chemistry
 DISTVERSION=	0.7.1
 CATEGORIES=	science biology # machine-learning

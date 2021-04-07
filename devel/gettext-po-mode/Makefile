@@ -1,4 +1,3 @@
-
 PORTNAME=	gettext-po-mode
 PORTREVISION=	1
 

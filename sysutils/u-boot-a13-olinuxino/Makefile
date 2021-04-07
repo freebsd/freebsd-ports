@@ -1,4 +1,3 @@
-
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
 MODEL=		a13-olinuxino

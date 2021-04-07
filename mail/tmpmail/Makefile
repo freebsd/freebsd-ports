@@ -1,4 +1,3 @@
-
 PORTNAME=	tmpmail
 DISTVERSION=	1.0.3
 CATEGORIES=	mail

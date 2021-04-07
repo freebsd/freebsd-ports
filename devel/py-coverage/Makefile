@@ -1,4 +1,3 @@
-
 PORTNAME=	coverage
 PORTVERSION=	4.5.4
 CATEGORIES=	devel python

@@ -1,4 +1,3 @@
-
 PORTNAME=	yamllint
 PORTVERSION=	1.26.0
 CATEGORIES=	devel python

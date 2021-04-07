@@ -1,4 +1,3 @@
-
 PORTNAME=	lua-resty-core
 PORTVERSION=	0.1.21
 PORTREVISION=	1

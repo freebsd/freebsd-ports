@@ -1,4 +1,3 @@
-
 PORTNAME=	kcodecs
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	textproc kde kde-frameworks

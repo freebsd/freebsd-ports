@@ -1,4 +1,3 @@
-
 PORTNAME=	shake
 PORTVERSION=	0.19.4
 CATEGORIES=	devel haskell

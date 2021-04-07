@@ -1,4 +1,3 @@
-
 PORTNAME=	TwistyPlugin
 SVNREV=		17602
 

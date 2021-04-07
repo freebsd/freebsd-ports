@@ -1,4 +1,3 @@
-
 PORTNAME=	phpfpm_exporter
 PORTVERSION=	0.4.1
 DISTVERSIONPREFIX=v

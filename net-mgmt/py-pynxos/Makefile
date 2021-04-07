@@ -1,4 +1,3 @@
-
 PORTNAME=	pynxos
 DISTVERSION=	0.0.5
 CATEGORIES=	net-mgmt python

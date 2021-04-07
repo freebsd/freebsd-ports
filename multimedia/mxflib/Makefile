@@ -1,4 +1,3 @@
-
 PORTNAME=	mxflib
 PORTVERSION=	1.0.1
 CATEGORIES=	multimedia

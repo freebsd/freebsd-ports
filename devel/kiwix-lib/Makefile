@@ -1,4 +1,3 @@
-
 PORTNAME=	kiwix-lib
 DISTVERSION=	9.4.1
 CATEGORIES=	devel

@@ -1,4 +1,3 @@
-
 PORTNAME=	django-debreach
 PORTVERSION=	2.0.1
 CATEGORIES=	www security python

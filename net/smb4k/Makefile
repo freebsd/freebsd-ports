@@ -1,4 +1,3 @@
-
 PORTNAME=	smb4k
 DISTVERSION=	3.0.7
 CATEGORIES=	net kde

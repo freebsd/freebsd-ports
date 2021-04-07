@@ -1,4 +1,3 @@
-
 PORTNAME=	emot
 PORTVERSION=	0.0.4
 CATEGORIES=	textproc rubygems

@@ -1,4 +1,3 @@
-
     COMMENT = Hungarian language support
 
     SUBDIR += aspell

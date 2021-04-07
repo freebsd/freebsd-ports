@@ -1,4 +1,3 @@
-
 PORTNAME=	bacula
 PKGNAMESUFFIX=	11-client-static
 

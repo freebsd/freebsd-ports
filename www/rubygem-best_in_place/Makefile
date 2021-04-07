@@ -1,4 +1,3 @@
-
 PORTNAME=	best_in_place
 PORTVERSION=	3.1.1
 CATEGORIES=	www rubygems

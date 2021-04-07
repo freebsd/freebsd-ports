@@ -1,4 +1,3 @@
-
 PORTNAME=	mkcue
 PORTVERSION=	1
 CATEGORIES=	audio

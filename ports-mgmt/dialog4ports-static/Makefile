@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=	-static
 
 COMMENT=	Console Interface to configure ports (static version for chroots)

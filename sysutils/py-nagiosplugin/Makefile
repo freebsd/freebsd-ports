@@ -1,4 +1,3 @@
-
 PORTNAME=	nagiosplugin
 PORTVERSION=	1.2.4
 CATEGORIES=	sysutils python

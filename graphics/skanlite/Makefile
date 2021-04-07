@@ -1,4 +1,3 @@
-
 PORTNAME=	skanlite
 DISTVERSION=	2.2.0
 CATEGORIES=	graphics kde

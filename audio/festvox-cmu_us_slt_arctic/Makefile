@@ -1,4 +1,3 @@
-
 PORTNAME=	festvox-${VOICE}
 PORTVERSION=	0.95
 CATEGORIES=	audio

@@ -1,4 +1,3 @@
-
 PORTNAME=	fonttosfnt
 PORTVERSION=	1.2.0
 CATEGORIES=	x11-fonts

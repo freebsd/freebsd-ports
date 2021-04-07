@@ -1,4 +1,3 @@
-
 PORTNAME=	redis-rails
 PORTVERSION=	5.0.2
 CATEGORIES=	www rubygems

@@ -1,4 +1,3 @@
-
 PORTNAME=	xdiff
 PORTVERSION=	2.0.1
 CATEGORIES=	textproc pear

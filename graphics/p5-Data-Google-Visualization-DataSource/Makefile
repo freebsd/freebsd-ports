@@ -1,4 +1,3 @@
-
 PORTNAME=	Data-Google-Visualization-DataSource
 PORTVERSION=	0.01
 PORTREVISION=	1

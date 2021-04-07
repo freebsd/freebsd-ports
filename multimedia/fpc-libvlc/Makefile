@@ -1,4 +1,3 @@
-
 CATEGORIES=	multimedia lang
 PKGNAMESUFFIX=	-libvlc
 

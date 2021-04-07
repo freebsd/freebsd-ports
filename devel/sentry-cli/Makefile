@@ -1,4 +1,3 @@
-
 PORTNAME=	sentry-cli
 DISTVERSION=	1.63.2
 CATEGORIES=	devel

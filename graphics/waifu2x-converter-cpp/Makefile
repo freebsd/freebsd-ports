@@ -1,4 +1,3 @@
-
 PORTNAME=	waifu2x-converter-cpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.3.4

@@ -1,4 +1,3 @@
-
 PORTNAME=	pyIOSXR
 DISTVERSION=	0.53
 CATEGORIES=	net-mgmt python

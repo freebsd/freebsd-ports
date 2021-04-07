@@ -1,4 +1,3 @@
-
 PORTNAME=	tpm2-tss
 DISTVERSION=	2.4.5
 CATEGORIES=	security

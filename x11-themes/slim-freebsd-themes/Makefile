@@ -1,4 +1,3 @@
-
 PORTNAME=	slim-freebsd-themes
 PORTVERSION=	1.0
 PORTREVISION=	1

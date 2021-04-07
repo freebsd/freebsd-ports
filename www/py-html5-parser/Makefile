@@ -1,4 +1,3 @@
-
 PORTNAME=	html5-parser
 PORTVERSION=	0.4.9
 CATEGORIES=	www python

@@ -1,4 +1,3 @@
-
 PORTNAME=	smithwaterman
 DISTVERSION=	g20160702
 CATEGORIES=	biology

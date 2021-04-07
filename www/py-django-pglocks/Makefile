@@ -1,4 +1,3 @@
-
 PORTNAME=	django-pglocks
 PORTVERSION=	1.0.4
 CATEGORIES=	www python

@@ -1,4 +1,3 @@
-
 PORTNAME=	libvmod-querystring
 DISTVERSION=	v2.0.2
 CATEGORIES=	www

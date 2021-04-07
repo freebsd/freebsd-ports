@@ -1,4 +1,3 @@
-
 PORTNAME=	jc
 DISTVERSION=	1.14.4
 CATEGORIES=	textproc python

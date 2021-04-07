@@ -1,4 +1,3 @@
-
 PORTNAME=	puppetdb-terminus
 PORTVERSION=	7.2.0
 CATEGORIES=	databases ruby

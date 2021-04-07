@@ -1,4 +1,3 @@
-
 PORTNAME=	aiortc
 PORTVERSION=	1.1.2
 CATEGORIES=	devel multimedia python www

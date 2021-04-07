@@ -1,4 +1,3 @@
-
 PORTNAME=	tesseract
 DISTVERSION=	2014_05_12
 CATEGORIES=	games

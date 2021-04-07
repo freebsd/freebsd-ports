@@ -1,4 +1,3 @@
-
 PORTNAME=	location
 CATEGORIES=	devel python
 

@@ -1,4 +1,3 @@
-
 PORTNAME=	samdrucker
 PORTVERSION=	0.2.6
 CATEGORIES=	www

@@ -1,4 +1,3 @@
-
 PORTNAME=	certbot-dns-cloudflare
 PORTVERSION=	${ACME_VERSION}
 CATEGORIES=	security python

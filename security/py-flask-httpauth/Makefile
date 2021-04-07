@@ -1,4 +1,3 @@
-
 PORTNAME=	Flask-HTTPAuth
 DISTVERSION=	3.3.0
 CATEGORIES=	security python

@@ -1,4 +1,3 @@
-
 PORTNAME=	orange-canvas-core
 DISTVERSION=	0.1.19
 CATEGORIES=	devel python

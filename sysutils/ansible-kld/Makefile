@@ -1,4 +1,3 @@
-
 PORTNAME=	ansible-kld
 DISTVERSION=	0.1
 CATEGORIES=	sysutils

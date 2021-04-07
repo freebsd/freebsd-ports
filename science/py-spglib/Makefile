@@ -1,4 +1,3 @@
-
 PORTNAME=	spglib
 DISTVERSION=	1.16.1
 CATEGORIES=	science python

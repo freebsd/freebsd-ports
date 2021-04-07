@@ -1,4 +1,3 @@
-
 PORTNAME=	Test-Net-RabbitMQ
 PORTVERSION=	0.13
 CATEGORIES=	devel perl5

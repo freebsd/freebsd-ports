@@ -1,4 +1,3 @@
-
 PORTNAME=	minidnn
 DISTVERSION=	g20200330
 CATEGORIES=	misc # machine-learning

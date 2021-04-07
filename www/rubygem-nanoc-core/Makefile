@@ -1,4 +1,3 @@
-
 PORTNAME=	nanoc-core
 PORTVERSION=	4.11.19
 CATEGORIES=	www rubygems

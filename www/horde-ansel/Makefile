@@ -1,4 +1,3 @@
-
 PORTNAME=	ansel
 PORTVERSION=	3.0.10
 CATEGORIES=	www pear graphics

@@ -1,4 +1,3 @@
-
 PORTNAME=	hiawatha-monitor
 PORTVERSION=	1.6
 CATEGORIES=	www

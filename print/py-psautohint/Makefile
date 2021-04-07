@@ -1,4 +1,3 @@
-
 PORTNAME=	psautohint
 DISTVERSION=	2.0.0
 CATEGORIES=	print python

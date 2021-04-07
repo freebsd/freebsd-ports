@@ -1,4 +1,3 @@
-
 PORTNAME=	qtdiag
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	sysutils

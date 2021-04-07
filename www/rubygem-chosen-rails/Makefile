@@ -1,4 +1,3 @@
-
 PORTNAME=	chosen-rails
 PORTVERSION=	1.8.3
 PORTREVISION=	1

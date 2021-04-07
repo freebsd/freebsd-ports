@@ -1,4 +1,3 @@
-
 PORTNAME=	khard
 DISTVERSION=	0.17.0
 CATEGORIES=	deskutils python

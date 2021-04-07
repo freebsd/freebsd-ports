@@ -1,4 +1,3 @@
-
     COMMENT = French support
 
     SUBDIR += aspell

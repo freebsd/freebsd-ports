@@ -1,4 +1,3 @@
-
 PORTNAME=	Horde_Image
 PORTVERSION=	2.6.1
 CATEGORIES=	graphics www pear

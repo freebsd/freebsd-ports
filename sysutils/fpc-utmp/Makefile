@@ -1,4 +1,3 @@
-
 CATEGORIES=	sysutils lang
 PKGNAMESUFFIX=	-utmp
 

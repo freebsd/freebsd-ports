@@ -1,4 +1,3 @@
-
 PORTNAME=	libretro-mame2003_plus
 PORTVERSION=	0.20210214
 CATEGORIES=	games

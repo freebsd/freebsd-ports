@@ -1,4 +1,3 @@
-
 PORTNAME=	svg_path
 PORTVERSION=	4.0.2
 CATEGORIES=	graphics python

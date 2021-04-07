@@ -1,4 +1,3 @@
-
 PORTNAME=	exprtk
 DISTVERSION=	g20210303 # date when change was discovered because the upstream rolls back commit dates to Dec 31
 CATEGORIES=	math

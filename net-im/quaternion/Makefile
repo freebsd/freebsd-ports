@@ -1,4 +1,3 @@
-
 PORTNAME=	Quaternion
 DISTVERSION=	0.0.95-beta3
 PORTREVISION=	1

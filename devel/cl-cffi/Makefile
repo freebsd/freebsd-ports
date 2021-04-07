@@ -1,4 +1,3 @@
-
 PORTNAME=	cffi
 PORTVERSION=	0.16.1
 CATEGORIES=	devel lisp

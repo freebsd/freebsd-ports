@@ -1,4 +1,3 @@
-
 PORTNAME=	signon
 DISTVERSION=	8.60
 CATEGORIES=	sysutils kde

@@ -1,4 +1,3 @@
-
 PORTNAME=	dune-polygongrid
 DISTVERSION=	g20200214
 CATEGORIES=	math

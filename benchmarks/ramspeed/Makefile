@@ -1,4 +1,3 @@
-
 PORTNAME=	ramspeed
 PORTVERSION=	3.5.0
 CATEGORIES=	benchmarks

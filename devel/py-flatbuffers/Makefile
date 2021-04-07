@@ -1,4 +1,3 @@
-
 PORTNAME=	flatbuffers
 PORTVERSION=	1.11
 CATEGORIES=	devel python

@@ -1,4 +1,3 @@
-
 PORTNAME=	django-i18nfield
 PORTVERSION=	1.5.0
 CATEGORIES=	www python

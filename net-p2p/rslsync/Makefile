@@ -1,4 +1,3 @@
-
 PORTNAME=	rslsync
 PORTVERSION=	2.7.1
 CATEGORIES=	net-p2p

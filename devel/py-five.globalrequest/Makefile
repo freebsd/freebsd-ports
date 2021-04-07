@@ -1,4 +1,3 @@
-
 PORTNAME=	five.globalrequest
 PORTVERSION=	1.0
 PORTREVISION=	1

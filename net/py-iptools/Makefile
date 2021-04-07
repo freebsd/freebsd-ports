@@ -1,4 +1,3 @@
-
 PORTNAME=	iptools
 DISTVERSION=	0.7.0
 CATEGORIES=	net

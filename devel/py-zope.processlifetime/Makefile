@@ -1,4 +1,3 @@
-
 PORTNAME=	zope.processlifetime
 PORTVERSION=	1.0
 PORTREVISION=	1

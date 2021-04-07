@@ -1,4 +1,3 @@
-
 PORTNAME=	qrouter
 DISTVERSION=	1.4.84
 CATEGORIES=	cad

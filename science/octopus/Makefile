@@ -1,4 +1,3 @@
-
 PORTNAME=	octopus
 DISTVERSION=	10.3
 CATEGORIES=	science

@@ -1,4 +1,3 @@
-
 PORTNAME=	perl
 # XXX Remove second line, uncomment first
 #DISTVERSION=	${PERL_VERSION}

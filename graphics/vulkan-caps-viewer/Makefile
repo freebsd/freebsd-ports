@@ -1,4 +1,3 @@
-
 PORTNAME=	vulkan-caps-viewer
 DISTVERSION=	3.0
 CATEGORIES=	graphics

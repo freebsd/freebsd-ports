@@ -1,4 +1,3 @@
-
 PORTNAME=	alarm-clock-applet
 PORTVERSION=	0.3.4
 CATEGORIES=	deskutils

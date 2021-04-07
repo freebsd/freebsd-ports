@@ -1,4 +1,3 @@
-
 PORTNAME=	Amon2-Plugin-LogDispatch
 PORTVERSION=	0.01
 PORTREVISION=	2

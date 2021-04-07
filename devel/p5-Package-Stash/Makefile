@@ -1,4 +1,3 @@
-
 PORTNAME=	Package-Stash
 PORTVERSION=	0.39
 CATEGORIES=	devel perl5

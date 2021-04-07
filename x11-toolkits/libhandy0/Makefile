@@ -1,4 +1,3 @@
-
 PORTNAME=	libhandy
 PORTVERSION=	0.0.13
 CATEGORIES=	x11-toolkits gnome

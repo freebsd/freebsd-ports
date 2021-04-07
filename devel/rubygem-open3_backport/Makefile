@@ -1,4 +1,3 @@
-
 PORTNAME=	open3_backport
 PORTVERSION=	0.0.3
 CATEGORIES=	devel rubygems

@@ -1,4 +1,3 @@
-
 PORTNAME=	semantik
 DISTVERSION=	1.2.6
 CATEGORIES=	deskutils kde

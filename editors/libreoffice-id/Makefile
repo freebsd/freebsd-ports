@@ -1,4 +1,3 @@
-
 LO_I18N=	id
 LO_HAS_HELPPACK=	yes
 

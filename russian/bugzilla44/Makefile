@@ -1,4 +1,3 @@
-
 PORTNAME=	bugzilla
 PORTVERSION=	4.4.4
 CATEGORIES=	russian

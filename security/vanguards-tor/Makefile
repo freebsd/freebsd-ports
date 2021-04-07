@@ -1,4 +1,3 @@
-
 PORTNAME=	vanguards
 DISTVERSION=	0.3.1
 CATEGORIES=	security python

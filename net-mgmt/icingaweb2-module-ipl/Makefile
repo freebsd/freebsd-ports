@@ -1,4 +1,3 @@
-
 PORTNAME=	icingaweb2-module-ipl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0

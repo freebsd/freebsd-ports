@@ -1,4 +1,3 @@
-
 PORTNAME=	kdiff3
 DISTVERSION=	1.8.5
 CATEGORIES=	textproc kde

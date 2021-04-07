@@ -1,4 +1,3 @@
-
 PORTNAME=	manuel
 PORTVERSION=	1.9.0
 CATEGORIES=	devel python

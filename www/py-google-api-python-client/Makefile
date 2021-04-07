@@ -1,4 +1,3 @@
-
 PORTNAME=	google-api-python-client
 PORTVERSION=	1.7.6
 PORTREVISION=	1

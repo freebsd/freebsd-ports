@@ -1,4 +1,3 @@
-
     COMMENT = Editors
 
     SUBDIR += 2bsd-vi

@@ -1,4 +1,3 @@
-
 PORTNAME=	leiningen
 PORTVERSION=	2.9.4
 CATEGORIES=	devel lisp java

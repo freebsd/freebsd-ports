@@ -1,4 +1,3 @@
-
 PORTNAME=	sblim-wbemcli
 PORTVERSION=	1.6.1
 PORTREVISION=	5

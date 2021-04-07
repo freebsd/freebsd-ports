@@ -1,4 +1,3 @@
-
 PORTNAME=	cvxopt
 DISTVERSION=	1.2.6
 CATEGORIES=	math python

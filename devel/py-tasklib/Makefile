@@ -1,4 +1,3 @@
-
 PORTNAME=	tasklib
 DISTVERSION=	2.3.0
 CATEGORIES=	devel python

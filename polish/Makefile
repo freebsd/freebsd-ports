@@ -1,4 +1,3 @@
-
     COMMENT = Polish language support
 
     SUBDIR += aspell

@@ -1,4 +1,3 @@
-
 PORTNAME=	stegosaurus
 DISTVERSION=	0.0.3
 CATEGORIES=	audio

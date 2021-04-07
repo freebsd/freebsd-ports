@@ -1,4 +1,3 @@
-
 PORTNAME=	gvm-tools
 DISTVERSION=	21.1.0
 CATEGORIES=	security python

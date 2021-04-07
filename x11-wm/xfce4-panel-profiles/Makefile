@@ -1,4 +1,3 @@
-
 PORTNAME=	xfce4-panel-profiles
 PORTVERSION=	1.0.13
 CATEGORIES=	x11-wm xfce

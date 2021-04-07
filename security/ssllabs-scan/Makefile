@@ -1,4 +1,3 @@
-
 PORTNAME=		ssllabs-scan
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.5.0

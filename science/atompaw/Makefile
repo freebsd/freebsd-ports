@@ -1,4 +1,3 @@
-
 PORTNAME=	atompaw
 DISTVERSION=	4.1.1.0
 CATEGORIES=	science

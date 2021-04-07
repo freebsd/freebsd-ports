@@ -1,4 +1,3 @@
-
 PORTNAME=	pdfpc
 DISTVERSION=	4.5.0
 CATEGORIES=	graphics

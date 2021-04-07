@@ -1,4 +1,3 @@
-
 CATEGORIES=	www devel
 PKGNAMEPREFIX=	mod_
 

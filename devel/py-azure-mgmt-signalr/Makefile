@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-signalr
 PORTVERSION=	0.4.0
 CATEGORIES=	devel python

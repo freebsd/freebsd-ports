@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-recoveryservices
 PORTVERSION=	0.4.0
 CATEGORIES=	devel python

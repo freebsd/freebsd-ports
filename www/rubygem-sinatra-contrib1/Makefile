@@ -1,4 +1,3 @@
-
 PORTNAME=	sinatra-contrib
 PORTVERSION=	1.4.7
 PORTREVISION=	2

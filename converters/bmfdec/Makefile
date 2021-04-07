@@ -1,4 +1,3 @@
-
 PORTNAME=	bmfdec
 DISTVERSION=	g20200512
 CATEGORIES=	converters devel sysutils

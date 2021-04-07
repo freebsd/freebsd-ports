@@ -1,4 +1,3 @@
-
 PORTNAME=	erlang-metrics
 PORTVERSION=	2.4.0
 PORTEPOCH=	1

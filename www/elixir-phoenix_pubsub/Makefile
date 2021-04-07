@@ -1,4 +1,3 @@
-
 PORTNAME=	phoenix_pubsub
 PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=	v

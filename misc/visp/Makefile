@@ -1,4 +1,3 @@
-
 PORTNAME=	visp
 DISTVERSION=	3.4.0
 CATEGORIES=	misc

@@ -1,4 +1,3 @@
-
 PORTNAME=	enchive
 PORTVERSION=	3.5
 CATEGORIES=	security

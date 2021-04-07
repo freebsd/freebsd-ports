@@ -1,4 +1,3 @@
-
 PORTNAME=	kdeedu
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	misc education kde

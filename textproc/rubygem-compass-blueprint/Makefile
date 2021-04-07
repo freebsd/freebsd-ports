@@ -1,4 +1,3 @@
-
 PORTNAME=	compass-blueprint
 PORTVERSION=	1.0.0
 CATEGORIES=	textproc ruby

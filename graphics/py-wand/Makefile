@@ -1,4 +1,3 @@
-
 PORTNAME=	Wand
 PORTVERSION=	0.4.5
 CATEGORIES=	graphics python

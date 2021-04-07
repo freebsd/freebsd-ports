@@ -1,4 +1,3 @@
-
 PORTNAME=	atomicparsley
 PORTVERSION=	20210114.184825.1dbe1be
 CATEGORIES=	multimedia

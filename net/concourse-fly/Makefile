@@ -1,4 +1,3 @@
-
 PORTNAME=	concourse
 PORTVERSION=	6.7.1
 CATEGORIES=	net sysutils

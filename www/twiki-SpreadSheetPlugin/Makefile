@@ -1,4 +1,3 @@
-
 PORTNAME=	SpreadSheetPlugin
 SVNREV=		16417
 

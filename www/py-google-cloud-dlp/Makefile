@@ -1,4 +1,3 @@
-
 PORTNAME=	google-cloud-dlp
 PORTVERSION=	0.9.0
 PORTREVISION=	1

@@ -1,4 +1,3 @@
-
 PORTNAME=	micromachine
 PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems

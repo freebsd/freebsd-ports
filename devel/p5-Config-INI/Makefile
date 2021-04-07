@@ -1,4 +1,3 @@
-
 PORTNAME=	Config-INI
 PORTVERSION=	0.025
 CATEGORIES=	devel perl5

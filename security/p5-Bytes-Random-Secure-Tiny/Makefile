@@ -1,4 +1,3 @@
-
 PORTNAME=	Bytes-Random-Secure-Tiny
 PORTVERSION=	1.008
 CATEGORIES=	security perl5

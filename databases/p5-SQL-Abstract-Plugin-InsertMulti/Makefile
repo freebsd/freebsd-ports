@@ -1,4 +1,3 @@
-
 PORTNAME=	SQL-Abstract-Plugin-InsertMulti
 PORTVERSION=	0.04
 PORTREVISION=	1

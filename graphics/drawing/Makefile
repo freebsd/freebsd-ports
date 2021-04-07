@@ -1,4 +1,3 @@
-
 PORTNAME=	drawing
 DISTVERSION=	0.6.5
 CATEGORIES=	graphics

@@ -1,4 +1,3 @@
-
 PORTNAME=	xephyr
 
 COMMENT=	X server from X.Org based on kdrive

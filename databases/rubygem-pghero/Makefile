@@ -1,4 +1,3 @@
-
 PORTNAME=	pghero
 PORTVERSION=	2.7.0
 CATEGORIES=	databases rubygems

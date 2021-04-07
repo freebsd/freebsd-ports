@@ -1,4 +1,3 @@
-
 PORTNAME=	segyio
 DISTVERSION=	1.9.6
 CATEGORIES=	science python

@@ -1,4 +1,3 @@
-
 PORTNAME=	xcb-util-xrm
 PORTVERSION=	1.3
 CATEGORIES=	x11 devel

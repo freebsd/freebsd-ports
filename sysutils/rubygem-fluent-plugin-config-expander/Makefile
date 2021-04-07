@@ -1,4 +1,3 @@
-
 PORTNAME=	fluent-plugin-config-expander
 PORTVERSION=	0.1.3
 CATEGORIES=	sysutils rubygems

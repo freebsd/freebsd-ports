@@ -1,4 +1,3 @@
-
 PORTNAME=	ffms2
 DISTVERSION=	2.40
 CATEGORIES=	multimedia

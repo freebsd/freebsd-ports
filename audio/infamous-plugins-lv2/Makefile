@@ -1,4 +1,3 @@
-
 PORTNAME=	infamous-plugins
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0-7

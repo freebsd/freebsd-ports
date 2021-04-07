@@ -1,4 +1,3 @@
-
 PORTNAME=	arcanist
 
 MAINTAINER=	grembo@FreeBSD.org

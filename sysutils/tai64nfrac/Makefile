@@ -1,4 +1,3 @@
-
 PORTNAME=	tai64nfrac
 PORTVERSION=	1.4
 CATEGORIES=	sysutils

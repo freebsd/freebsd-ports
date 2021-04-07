@@ -1,4 +1,3 @@
-
 PORTNAME=	yoda
 DISTVERSION=	1.9.0
 CATEGORIES=	science

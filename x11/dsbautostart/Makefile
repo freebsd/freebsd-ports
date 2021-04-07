@@ -1,4 +1,3 @@
-
 PORTNAME=	dsbautostart
 PORTVERSION=	1.2
 CATEGORIES=	x11

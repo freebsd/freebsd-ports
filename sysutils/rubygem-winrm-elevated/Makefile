@@ -1,4 +1,3 @@
-
 PORTNAME=	winrm-elevated
 PORTVERSION=	1.2.3
 CATEGORIES=	sysutils rubygems

@@ -1,4 +1,3 @@
-
 PORTNAME=	tiffgt
 DISTVERSION=	4.2.0
 CATEGORIES=	graphics

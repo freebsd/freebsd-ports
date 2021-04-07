@@ -1,4 +1,3 @@
-
 PORTNAME=	requests-credssp
 PORTVERSION=	1.2.0
 CATEGORIES=	security python

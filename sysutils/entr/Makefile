@@ -1,4 +1,3 @@
-
 PORTNAME=	entr
 PORTVERSION=	4.6
 CATEGORIES=	sysutils

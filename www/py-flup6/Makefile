@@ -1,4 +1,3 @@
-
 PORTNAME=	flup6
 PORTVERSION=	1.1.1
 CATEGORIES=	www python

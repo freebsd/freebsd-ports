@@ -1,4 +1,3 @@
-
 PORTNAME=	anomaly-mono
 DISTVERSION=	g20210310
 CATEGORIES=	x11-fonts

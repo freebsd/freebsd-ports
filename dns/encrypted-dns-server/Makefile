@@ -1,4 +1,3 @@
-
 PORTNAME=	encrypted-dns-server
 DISTVERSION=	0.3.21
 PORTREVISION=	4

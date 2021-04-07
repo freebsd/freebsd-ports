@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=	-srp
 
 COMMENT=	SASL SRP authentication plugin

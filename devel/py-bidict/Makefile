@@ -1,4 +1,3 @@
-
 PORTNAME=	bidict
 PORTVERSION=	0.18.0
 CATEGORIES=	devel python

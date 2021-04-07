@@ -1,4 +1,3 @@
-
 # levmar library (math/levmar) is bundled
 
 PORTNAME=	levmar

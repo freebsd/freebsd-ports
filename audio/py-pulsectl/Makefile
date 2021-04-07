@@ -1,4 +1,3 @@
-
 PORTNAME=	pulsectl
 DISTVERSION=	20.5.1
 CATEGORIES=	audio python

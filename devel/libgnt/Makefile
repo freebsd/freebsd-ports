@@ -1,4 +1,3 @@
-
 PORTNAME=	libgnt
 PORTVERSION=	2.14.1
 CATEGORIES=	devel

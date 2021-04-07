@@ -1,4 +1,3 @@
-
 PORTNAME=	geany-plugin-codenav
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel

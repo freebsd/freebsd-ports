@@ -1,4 +1,3 @@
-
 PORTNAME=	smbclient
 PORTVERSION=	1.0.5
 CATEGORIES=	net pear

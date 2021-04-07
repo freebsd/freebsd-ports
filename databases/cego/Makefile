@@ -1,4 +1,3 @@
-
 PORTNAME=	cego
 PORTVERSION=	2.47.0
 CATEGORIES=	databases

@@ -1,4 +1,3 @@
-
 # This port opens too many files during build, more than the default setting.
 # Its build is known to succeed with MAX_FILES_RStudio=4096 and MAX_FILES_RStudio_server=4096 in poudriere.conf
 

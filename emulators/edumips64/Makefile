@@ -1,4 +1,3 @@
-
 PORTNAME=	edumips64
 DISTVERSION=	1.2.9
 CATEGORIES=	emulators education java

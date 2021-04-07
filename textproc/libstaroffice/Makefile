@@ -1,4 +1,3 @@
-
 PORTNAME=	libstaroffice
 PORTVERSION=	0.0.7
 CATEGORIES=	textproc

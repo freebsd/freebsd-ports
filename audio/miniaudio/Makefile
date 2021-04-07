@@ -1,4 +1,3 @@
-
 PORTNAME=	miniaudio
 PORTVERSION=	0.10.31
 CATEGORIES=	audio devel

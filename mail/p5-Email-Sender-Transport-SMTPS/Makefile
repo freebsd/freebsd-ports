@@ -1,4 +1,3 @@
-
 PORTNAME=	Email-Sender-Transport-SMTPS
 PORTVERSION=	0.03
 PORTREVISION=	1

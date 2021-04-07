@@ -1,4 +1,3 @@
-
 PORTNAME=	prison
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	graphics kde kde-frameworks

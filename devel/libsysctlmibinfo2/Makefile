@@ -1,4 +1,3 @@
-
 PORTNAME=	libsysctlmibinfo2
 DISTVERSION=	2.0.1
 CATEGORIES=	devel

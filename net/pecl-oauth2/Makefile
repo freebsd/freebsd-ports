@@ -1,4 +1,3 @@
-
 PORTNAME=	oauth
 PORTVERSION=	2.0.7
 CATEGORIES=	net pear

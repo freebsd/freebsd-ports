@@ -1,4 +1,3 @@
-
 LO_I18N=	or
 
 .include "${.CURDIR}/../../editors/libreoffice/Makefile.i18n"

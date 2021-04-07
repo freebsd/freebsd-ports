@@ -1,4 +1,3 @@
-
 PORTNAME=	rex-bin_tools
 PORTVERSION=	0.1.7
 CATEGORIES=	security rubygems

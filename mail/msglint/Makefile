@@ -1,4 +1,3 @@
-
 PORTNAME=	msglint
 PORTVERSION=	1.04
 CATEGORIES=	mail

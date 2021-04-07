@@ -1,4 +1,3 @@
-
 PORTNAME=	phing
 PORTVERSION=	2.6.1
 CATEGORIES=	devel pear

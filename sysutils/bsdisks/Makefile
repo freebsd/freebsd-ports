@@ -1,4 +1,3 @@
-
 PORTNAME=	bsdisks
 DISTVERSION=	0.25
 CATEGORIES=	sysutils

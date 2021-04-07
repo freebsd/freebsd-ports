@@ -1,4 +1,3 @@
-
 PORTNAME=	Lingua-JA-Moji
 PORTVERSION=	0.36
 CATEGORIES=	japanese perl5

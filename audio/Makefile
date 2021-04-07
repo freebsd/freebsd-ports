@@ -1,4 +1,3 @@
-
     COMMENT = Audio tools
 
     SUBDIR += GxSwitchlessWah-lv2

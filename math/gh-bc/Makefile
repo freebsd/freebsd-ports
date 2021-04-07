@@ -1,4 +1,3 @@
-
 PORTNAME=	bc
 PORTVERSION=	4.0.0
 CATEGORIES=	math lang

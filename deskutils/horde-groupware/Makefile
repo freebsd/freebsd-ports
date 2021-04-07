@@ -1,4 +1,3 @@
-
 PORTNAME=	groupware
 PORTVERSION=	5.2.22
 CATEGORIES=	deskutils www pear

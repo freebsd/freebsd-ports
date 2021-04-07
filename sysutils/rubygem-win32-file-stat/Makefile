@@ -1,4 +1,3 @@
-
 PORTNAME=	win32-file-stat
 PORTVERSION=	1.5.5
 CATEGORIES=	sysutils rubygems

@@ -1,4 +1,3 @@
-
 PORTNAME=	MooseX-Types-Path-Tiny
 PORTVERSION=	0.012
 CATEGORIES=	devel perl5

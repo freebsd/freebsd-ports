@@ -1,4 +1,3 @@
-
 PORTNAME=	libvdpau
 PORTVERSION=	1.4
 CATEGORIES=	multimedia

@@ -1,4 +1,3 @@
-
 PORTNAME=	libpillowfight
 DISTVERSION=	0.3.0
 CATEGORIES=	graphics python

@@ -1,4 +1,3 @@
-
 PORTNAME=	django-allauth
 PORTVERSION=	0.41.0
 CATEGORIES=	www python

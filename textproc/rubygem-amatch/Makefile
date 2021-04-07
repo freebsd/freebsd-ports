@@ -1,4 +1,3 @@
-
 PORTNAME=	amatch
 PORTVERSION=	0.4.0
 CATEGORIES=	textproc rubygems

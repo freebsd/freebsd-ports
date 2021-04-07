@@ -1,4 +1,3 @@
-
 # XXX ultimaker forked libnest2d, and never upstreamed patches
 # includes commits since tag 0.4
 PORTNAME=	libnest2d-ultimaker

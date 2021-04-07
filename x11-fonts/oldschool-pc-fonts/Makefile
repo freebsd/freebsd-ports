@@ -1,4 +1,3 @@
-
 PORTNAME=	oldschool-pc-fonts
 PORTVERSION=	1.0
 PORTREVISION=	1

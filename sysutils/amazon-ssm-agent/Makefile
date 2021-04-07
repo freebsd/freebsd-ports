@@ -1,4 +1,3 @@
-
 PORTNAME=	amazon-ssm-agent
 PORTVERSION=	2.3.1205.0
 CATEGORIES=	sysutils

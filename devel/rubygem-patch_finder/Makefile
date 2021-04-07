@@ -1,4 +1,3 @@
-
 PORTNAME=	patch_finder
 PORTVERSION=	1.0.2
 CATEGORIES=	devel rubygems

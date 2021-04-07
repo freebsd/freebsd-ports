@@ -1,4 +1,3 @@
-
 PORTREVISION=	0
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	1-plugins-dv

@@ -1,4 +1,3 @@
-
 PORTNAME=	pyocclient
 PORTVERSION=	0.6
 CATEGORIES=	www python

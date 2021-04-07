@@ -1,4 +1,3 @@
-
 PORTNAME=	ps
 DISTVERSION=	1.6.0
 CATEGORIES=	sysutils

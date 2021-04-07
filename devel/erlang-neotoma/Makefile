@@ -1,4 +1,3 @@
-
 PORTNAME=	neotoma
 PORTVERSION=	1.7.4
 CATEGORIES=	devel

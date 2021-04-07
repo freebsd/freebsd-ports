@@ -1,4 +1,3 @@
-
 PORTNAME=	resolve-march-native
 DISTVERSION=	1.0.0
 CATEGORIES=	sysutils python

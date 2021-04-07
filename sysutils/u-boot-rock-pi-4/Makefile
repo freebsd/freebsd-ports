@@ -1,4 +1,3 @@
-
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
 MODEL=		rock-pi-4

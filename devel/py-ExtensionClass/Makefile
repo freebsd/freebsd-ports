@@ -1,4 +1,3 @@
-
 PORTNAME=	ExtensionClass
 PORTVERSION=	4.3.0
 CATEGORIES=	devel python zope

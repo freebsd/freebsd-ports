@@ -1,4 +1,3 @@
-
 PORTNAME=	tachyon
 DISTVERSION=	0.98.9
 CATEGORIES=	graphics science

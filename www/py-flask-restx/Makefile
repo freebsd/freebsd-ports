@@ -1,4 +1,3 @@
-
 PORTNAME=	flask-restx
 PORTVERSION=	0.3.0
 CATEGORIES=	www python

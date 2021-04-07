@@ -1,4 +1,3 @@
-
 PORTNAME=	rgen
 PORTVERSION=	0.8.2
 CATEGORIES=	devel rubygems

@@ -1,4 +1,3 @@
-
 PORTNAME=	flightgear-terragear
 PORTVERSION=	20171007
 PORTREVISION=	13

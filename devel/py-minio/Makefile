@@ -1,4 +1,3 @@
-
 PORTNAME=	minio
 DISTVERSION=	4.0.21
 CATEGORIES=	devel python

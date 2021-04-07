@@ -1,4 +1,3 @@
-
 PORTNAME=	sandboxfs
 DISTVERSIONPREFIX=	sandboxfs-
 DISTVERSION=	0.2.0

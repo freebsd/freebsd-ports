@@ -1,4 +1,3 @@
-
 PORTNAME=	mapdir
 PORTVERSION=	1.2.1
 CATEGORIES=	sysutils

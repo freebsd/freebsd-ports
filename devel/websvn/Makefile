@@ -1,4 +1,3 @@
-
 PORTNAME=	websvn
 PORTVERSION=	2.6.0
 CATEGORIES=	devel www

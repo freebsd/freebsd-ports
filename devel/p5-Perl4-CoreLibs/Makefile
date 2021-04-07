@@ -1,4 +1,3 @@
-
 PORTNAME=	Perl4-CoreLibs
 PORTVERSION=	0.004
 CATEGORIES=	devel

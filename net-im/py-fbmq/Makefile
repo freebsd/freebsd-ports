@@ -1,4 +1,3 @@
-
 PORTNAME=	fbmq
 PORTVERSION=	2.5.0
 CATEGORIES=	net-im devel python

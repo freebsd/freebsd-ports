@@ -1,4 +1,3 @@
-
 PORTNAME=	win32-file
 PORTVERSION=	0.8.2
 CATEGORIES=	sysutils rubygems

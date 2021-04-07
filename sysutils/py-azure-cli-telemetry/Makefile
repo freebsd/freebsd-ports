@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-cli-telemetry
 PORTVERSION=	1.0.6
 CATEGORIES=	sysutils python

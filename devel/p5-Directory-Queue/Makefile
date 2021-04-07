@@ -1,4 +1,3 @@
-
 PORTNAME=	Directory-Queue
 PORTVERSION=	2.0
 CATEGORIES=	devel perl5

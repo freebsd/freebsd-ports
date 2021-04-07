@@ -1,4 +1,3 @@
-
 PORTNAME=	json_tricks
 DISTVERSION=	3.15.4
 CATEGORIES=	devel python

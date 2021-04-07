@@ -1,4 +1,3 @@
-
 PORTNAME=	dio
 DISTVERSION=	0.2.0
 CATEGORIES=	devel pear

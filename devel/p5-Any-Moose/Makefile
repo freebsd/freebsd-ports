@@ -1,4 +1,3 @@
-
 PORTNAME=	Any-Moose
 PORTVERSION=	0.26
 CATEGORIES=	devel perl5

@@ -1,4 +1,3 @@
-
 PORTNAME=	cddlib
 PORTVERSION=	0.94l
 CATEGORIES=	math

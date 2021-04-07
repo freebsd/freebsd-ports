@@ -1,4 +1,3 @@
-
 PORTNAME=	xdr
 PORTVERSION=	3.0.2
 CATEGORIES=	converters rubygems

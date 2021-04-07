@@ -1,4 +1,3 @@
-
 PORTNAME=	qtplugininfo
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	sysutils

@@ -1,4 +1,3 @@
-
 PORTNAME=	husky-smapi
 PORTEPOCH=	1
 

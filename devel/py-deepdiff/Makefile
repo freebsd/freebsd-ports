@@ -1,4 +1,3 @@
-
 PORTNAME=	deepdiff
 DISTVERSION=	5.2.3
 CATEGORIES=	devel python

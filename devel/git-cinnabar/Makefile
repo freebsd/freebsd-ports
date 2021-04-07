@@ -1,4 +1,3 @@
-
 PORTNAME=	git-cinnabar
 DISTVERSION=	0.5.7
 CATEGORIES=	devel

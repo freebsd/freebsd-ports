@@ -1,4 +1,3 @@
-
 PORTNAME=	ffi-win32-extensions
 PORTVERSION=	1.0.3
 CATEGORIES=	devel rubygems

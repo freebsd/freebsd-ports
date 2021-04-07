@@ -1,4 +1,3 @@
-
 PORTNAME=	kde-cli-tools
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	sysutils kde kde-plasma

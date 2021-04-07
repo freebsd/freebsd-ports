@@ -1,4 +1,3 @@
-
 CATEGORIES=	mail
 
 MASTERDIR=	${.CURDIR}/../../lang/php80

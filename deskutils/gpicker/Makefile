@@ -1,4 +1,3 @@
-
 PORTNAME=	gpicker
 DISTVERSION=	2.3
 CATEGORIES=	deskutils

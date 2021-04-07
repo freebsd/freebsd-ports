@@ -1,4 +1,3 @@
-
 PORTNAME=	spectra
 DISTVERSION=	0.0.11
 CATEGORIES=	graphics python

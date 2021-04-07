@@ -1,4 +1,3 @@
-
 PORTNAME=	bindfs
 DISTVERSION=	1.14.8
 CATEGORIES=	sysutils

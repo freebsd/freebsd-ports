@@ -1,4 +1,3 @@
-
 PORTNAME=	DBIx-Class-PassphraseColumn
 PORTVERSION=	0.02
 PORTREVISION=	1

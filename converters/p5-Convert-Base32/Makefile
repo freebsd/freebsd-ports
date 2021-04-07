@@ -1,4 +1,3 @@
-
 PORTNAME=	Convert-Base32
 PORTVERSION=	0.06
 CATEGORIES=	converters perl5

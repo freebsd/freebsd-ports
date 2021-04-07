@@ -1,4 +1,3 @@
-
 PORTNAME=	stardict-dal
 PORTVERSION=	2.4.2
 CATEGORIES=	russian

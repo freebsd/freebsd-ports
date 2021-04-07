@@ -1,4 +1,3 @@
-
 PORTNAME=	acpica
 PORTVERSION=	20210331
 CATEGORIES=	sysutils devel

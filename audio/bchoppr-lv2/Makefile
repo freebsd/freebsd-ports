@@ -1,4 +1,3 @@
-
 PORTNAME=	bchoppr
 DISTVERSION=	1.10.6
 CATEGORIES=	audio

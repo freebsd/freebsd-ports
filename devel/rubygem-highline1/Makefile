@@ -1,4 +1,3 @@
-
 PORTNAME=	highline
 PORTVERSION=	1.7.10
 CATEGORIES=	devel rubygems

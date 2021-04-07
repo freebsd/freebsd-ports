@@ -1,4 +1,3 @@
-
 PORTNAME=	gom
 PORTVERSION=	0.4
 CATEGORIES=	databases gnome

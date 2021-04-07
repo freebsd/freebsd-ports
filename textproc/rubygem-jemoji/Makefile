@@ -1,4 +1,3 @@
-
 PORTNAME=	jemoji
 PORTVERSION=	0.12.0
 CATEGORIES=	textproc rubygems

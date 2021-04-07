@@ -1,4 +1,3 @@
-
 PORTNAME=	slimta
 PORTVERSION=	0.7.8
 CATEGORIES=	mail

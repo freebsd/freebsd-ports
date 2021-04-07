@@ -1,4 +1,3 @@
-
 PORTNAME=	content
 PORTVERSION=	2.0.6
 CATEGORIES=	devel www pear

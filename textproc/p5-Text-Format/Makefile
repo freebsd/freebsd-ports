@@ -1,4 +1,3 @@
-
 PORTNAME=	Text-Format
 PORTVERSION=	0.62
 CATEGORIES=	textproc perl5

@@ -1,4 +1,3 @@
-
 PORTNAME=	libglvnd
 DISTVERSION=	1.3.2
 CATEGORIES=	graphics

@@ -1,4 +1,3 @@
-
 PORTNAME=	puppetdb
 PORTVERSION=	5.2.19
 CATEGORIES=	databases java

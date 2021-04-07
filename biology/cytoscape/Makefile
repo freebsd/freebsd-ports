@@ -1,4 +1,3 @@
-
 PORTNAME=	cytoscape
 DISTVERSION=	3.6.1
 CATEGORIES=	biology java

@@ -1,4 +1,3 @@
-
 PORTNAME=	rex-text
 PORTVERSION=	0.2.29
 CATEGORIES=	security rubygems

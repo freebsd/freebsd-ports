@@ -1,4 +1,3 @@
-
 PORTNAME=	pydantic
 DISTVERSION=	1.8.1
 CATEGORIES=	devel python

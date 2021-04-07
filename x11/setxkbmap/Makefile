@@ -1,4 +1,3 @@
-
 PORTNAME=	setxkbmap
 PORTVERSION=	1.3.2
 CATEGORIES=	x11

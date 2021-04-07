@@ -1,4 +1,3 @@
-
 PORTNAME=	Test-MockDateTime
 PORTVERSION=	0.02
 CATEGORIES=	devel perl5

@@ -1,4 +1,3 @@
-
 PORTNAME=	lua-resty-redis
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.29

@@ -1,4 +1,3 @@
-
 CATEGORIES=	chinese
 LO_I18N=	zh_TW
 LO_HAS_HELPPACK=	yes

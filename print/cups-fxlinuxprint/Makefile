@@ -1,4 +1,3 @@
-
 PORTNAME=	fxlinuxprint
 PORTVERSION=	1.0.1
 PORTREVISION=	3

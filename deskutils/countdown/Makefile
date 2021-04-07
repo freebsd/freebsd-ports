@@ -1,4 +1,3 @@
-
 PORTNAME=	countdown
 PORTVERSION=	20150606
 CATEGORIES=	deskutils

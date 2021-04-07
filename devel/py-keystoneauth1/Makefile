@@ -1,4 +1,3 @@
-
 PORTNAME=	keystoneauth1
 PORTVERSION=	4.3.1
 CATEGORIES=	devel python

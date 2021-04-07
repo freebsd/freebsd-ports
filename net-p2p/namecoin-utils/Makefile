@@ -1,4 +1,3 @@
-
 MASTERDIR=	${.CURDIR}/../namecoin
 
 PKGNAMESUFFIX=	-utils

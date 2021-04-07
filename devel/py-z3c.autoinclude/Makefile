@@ -1,4 +1,3 @@
-
 PORTNAME=	z3c.autoinclude
 PORTVERSION=	0.3.6
 CATEGORIES=	devel python zope

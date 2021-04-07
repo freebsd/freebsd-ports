@@ -1,4 +1,3 @@
-
 PORTNAME=	google-cloud-sdk
 PORTVERSION=	331.0.0
 CATEGORIES=	net

@@ -1,4 +1,3 @@
-
 PORTNAME=	rust-analyzer
 DISTVERSION=	2021-04-05
 CATEGORIES=	devel

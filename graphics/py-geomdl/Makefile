@@ -1,4 +1,3 @@
-
 PORTNAME=	geomdl
 PORTVERSION=	5.2.10
 CATEGORIES=	graphics python

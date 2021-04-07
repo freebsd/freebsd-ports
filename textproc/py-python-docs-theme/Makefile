@@ -1,4 +1,3 @@
-
 PORTNAME=	python-docs-theme
 DISTVERSION=	2018.2
 CATEGORIES=	textproc python

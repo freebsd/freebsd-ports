@@ -1,4 +1,3 @@
-
 PORTNAME=	puppet-resource_api
 PORTVERSION=	1.8.4
 CATEGORIES=	devel rubygems

@@ -1,4 +1,3 @@
-
 PORTNAME=	gnupg
 PORTVERSION=	2.2.27
 CATEGORIES=	security

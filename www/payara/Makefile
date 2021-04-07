@@ -1,4 +1,3 @@
-
 PORTNAME=	payara
 PORTVERSION=	5.2020.4
 CATEGORIES=	www java

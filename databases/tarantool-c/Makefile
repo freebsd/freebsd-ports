@@ -1,4 +1,3 @@
-
 PORTNAME=	tarantool-c
 PORTVERSION=	1.0.1
 PORTREVISION=	4

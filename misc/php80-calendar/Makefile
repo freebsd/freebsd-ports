@@ -1,4 +1,3 @@
-
 CATEGORIES=	misc
 
 MASTERDIR=	${.CURDIR}/../../lang/php80

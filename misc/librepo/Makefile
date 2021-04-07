@@ -1,4 +1,3 @@
-
 PORTNAME=	librepo
 DISTVERSION=	1.13.0
 CATEGORIES=	misc

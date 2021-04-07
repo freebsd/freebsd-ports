@@ -1,4 +1,3 @@
-
 PORTNAME=	Beanstalk-Client
 PORTVERSION=	1.06
 PORTREVISION=	1

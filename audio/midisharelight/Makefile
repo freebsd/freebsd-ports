@@ -1,4 +1,3 @@
-
 PORTNAME=	midisharelight
 DISTVERSION=	g20200204
 CATEGORIES=	audio

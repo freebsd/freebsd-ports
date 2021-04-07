@@ -1,4 +1,3 @@
-
 PORTNAME=	ntlm-auth
 DISTVERSION=	1.5.0
 CATEGORIES=	security python

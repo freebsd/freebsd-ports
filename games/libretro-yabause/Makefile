@@ -1,4 +1,3 @@
-
 PORTNAME=	libretro-yabause
 PORTVERSION=	0.20210204
 CATEGORIES=	games

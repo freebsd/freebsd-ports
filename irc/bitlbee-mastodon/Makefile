@@ -1,4 +1,3 @@
-
 PORTNAME=	bitlbee-mastodon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.4

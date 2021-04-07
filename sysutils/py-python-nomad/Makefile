@@ -1,4 +1,3 @@
-
 PORTNAME=	python-nomad
 PORTVERSION=	1.2.1
 CATEGORIES=	sysutils python

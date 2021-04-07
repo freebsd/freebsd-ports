@@ -1,4 +1,3 @@
-
 PORTNAME=	openssl-ccm
 PORTVERSION=	1.2.2
 CATEGORIES=	security rubygems

@@ -1,4 +1,3 @@
-
 PORTNAME=	latte-dock
 DISTVERSION=	0.9.11
 CATEGORIES=	deskutils kde

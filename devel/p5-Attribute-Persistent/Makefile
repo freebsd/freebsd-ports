@@ -1,4 +1,3 @@
-
 PORTNAME=	Attribute-Persistent
 PORTVERSION=	1.1
 PORTREVISION=	1

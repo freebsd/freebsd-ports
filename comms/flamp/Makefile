@@ -1,4 +1,3 @@
-
 PORTNAME=	flamp
 DISTVERSION=	2.2.05
 CATEGORIES=	comms hamradio

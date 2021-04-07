@@ -1,4 +1,3 @@
-
 PORTNAME=	Dancer-Plugin-Email
 PORTVERSION=	1.0400
 CATEGORIES=	mail perl5

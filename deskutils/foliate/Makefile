@@ -1,4 +1,3 @@
-
 PORTNAME=	foliate
 PORTVERSION=	2.6.3
 CATEGORIES=	deskutils

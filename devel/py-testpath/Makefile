@@ -1,4 +1,3 @@
-
 PORTNAME=	testpath
 PORTVERSION=	0.4.4
 CATEGORIES=	devel python

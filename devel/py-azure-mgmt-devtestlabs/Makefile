@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-devtestlabs
 PORTVERSION=	4.0.0
 CATEGORIES=	devel python

@@ -1,4 +1,3 @@
-
 PORTNAME=		resolv_wrapper
 PORTVERSION=		1.1.5
 CATEGORIES=		devel

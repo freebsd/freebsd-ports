@@ -1,4 +1,3 @@
-
 PORTNAME=	portalocker
 PORTVERSION=	1.7.1
 CATEGORIES=	devel python

@@ -1,4 +1,3 @@
-
 PORTNAME=	flint2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.1	# See note #1

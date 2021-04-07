@@ -1,4 +1,3 @@
-
 PORTNAME=	kde-thumbnailer-epub
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.9b

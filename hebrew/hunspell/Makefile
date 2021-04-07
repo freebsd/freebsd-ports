@@ -1,4 +1,3 @@
-
 PORTNAME=	hunspell
 PORTVERSION=	1.4
 CATEGORIES=	hebrew textproc

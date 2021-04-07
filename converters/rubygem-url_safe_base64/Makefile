@@ -1,4 +1,3 @@
-
 PORTNAME=	url_safe_base64
 PORTVERSION=	0.2.2
 CATEGORIES=	converters rubygems

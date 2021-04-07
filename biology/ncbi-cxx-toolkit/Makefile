@@ -1,4 +1,3 @@
-
 PORTNAME=	ncbi-cxx-toolkit
 DISTVERSION=	22_0_0
 CATEGORIES=	biology science devel

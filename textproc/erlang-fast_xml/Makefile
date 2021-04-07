@@ -1,4 +1,3 @@
-
 PORTNAME=	fast_xml
 PORTVERSION=	1.1.32
 CATEGORIES=	textproc

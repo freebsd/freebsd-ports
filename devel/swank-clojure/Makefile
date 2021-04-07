@@ -1,4 +1,3 @@
-
 PORTNAME=	swank-clojure
 PORTVERSION=	1.2.1
 CATEGORIES=	devel lisp java

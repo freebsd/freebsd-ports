@@ -1,4 +1,3 @@
-
 PORTNAME=	buildbot-grid-view
 PORTVERSION=	2.7.0
 CATEGORIES=	devel python

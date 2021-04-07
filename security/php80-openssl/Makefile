@@ -1,4 +1,3 @@
-
 CATEGORIES=	security
 
 MASTERDIR=	${.CURDIR}/../../lang/php80

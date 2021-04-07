@@ -1,4 +1,3 @@
-
 PORTNAME=	pybix
 PORTVERSION=	0.0.8
 CATEGORIES=	devel python

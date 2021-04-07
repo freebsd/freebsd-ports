@@ -1,4 +1,3 @@
-
 PORTNAME=	chocolate-doom
 PORTVERSION=	3.0.1
 CATEGORIES=	games

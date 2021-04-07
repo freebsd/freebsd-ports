@@ -1,4 +1,3 @@
-
 PORTNAME=	mpv-mpris
 DISTVERSION=	0.5
 CATEGORIES=	multimedia

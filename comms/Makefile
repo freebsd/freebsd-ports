@@ -1,4 +1,3 @@
-
     COMMENT = Communication utilities
 
     SUBDIR += acfax

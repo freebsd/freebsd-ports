@@ -1,4 +1,3 @@
-
 PORTNAME=	google-compute-engine-oslogin
 DISTVERSION=	20191018.00
 PORTREVISION=	1

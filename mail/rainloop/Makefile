@@ -1,4 +1,3 @@
-
 PORTNAME=	rainloop
 PORTVERSION=	1.15.0
 CATEGORIES=	mail www

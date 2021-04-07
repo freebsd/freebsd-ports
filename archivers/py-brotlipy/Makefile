@@ -1,4 +1,3 @@
-
 PORTNAME=	brotlipy
 PORTVERSION=	0.7.0
 CATEGORIES=	archivers python

@@ -1,4 +1,3 @@
-
 PORTNAME=	bazel-buildtools
 DISTVERSION=	3.2.1
 CATEGORIES=	devel

@@ -1,4 +1,3 @@
-
 PORTNAME=	StreetAddress
 PORTVERSION=	1.0.6
 CATEGORIES=	devel rubygems

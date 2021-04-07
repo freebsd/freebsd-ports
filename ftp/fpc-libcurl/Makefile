@@ -1,4 +1,3 @@
-
 CATEGORIES=	ftp lang
 PKGNAMESUFFIX=	-libcurl
 

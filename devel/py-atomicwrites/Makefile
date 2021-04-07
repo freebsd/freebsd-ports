@@ -1,4 +1,3 @@
-
 PORTNAME=	atomicwrites
 DISTVERSION=	1.4.0
 CATEGORIES=	devel python

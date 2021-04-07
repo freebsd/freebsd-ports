@@ -1,4 +1,3 @@
-
 PORTNAME=	mill
 DISTVERSION=	0.9.5
 CATEGORIES=	devel java

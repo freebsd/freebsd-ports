@@ -1,4 +1,3 @@
-
 PORTNAME=	dm-timestamps
 PORTVERSION=	1.2.0
 PORTREVISION=	1

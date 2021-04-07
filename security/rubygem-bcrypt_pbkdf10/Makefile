@@ -1,4 +1,3 @@
-
 PORTNAME=	bcrypt_pbkdf
 PORTVERSION=	1.0.1
 PORTREVISION=	1

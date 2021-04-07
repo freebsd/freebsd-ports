@@ -1,4 +1,3 @@
-
 PORTNAME=	Digest-GOST
 PORTVERSION=	0.06
 CATEGORIES=	security perl5

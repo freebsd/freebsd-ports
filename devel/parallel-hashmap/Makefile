@@ -1,4 +1,3 @@
-
 PORTNAME=	parallel-hashmap
 DISTVERSION=	1.32-74
 DISTVERSIONSUFFIX=	-g2af41f7

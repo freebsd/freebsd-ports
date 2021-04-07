@@ -1,4 +1,3 @@
-
 PORTNAME=	mgba
 DISTVERSION=	0.8.4
 CATEGORIES=	emulators

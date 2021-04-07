@@ -1,4 +1,3 @@
-
 PORTNAME=	aeson-pretty
 PORTVERSION=	0.8.8
 PORTREVISION=	2

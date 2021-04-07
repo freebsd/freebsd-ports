@@ -1,4 +1,3 @@
-
 PORTNAME=	pam_kde
 PORTVERSION=	1.0
 CATEGORIES=	security kde

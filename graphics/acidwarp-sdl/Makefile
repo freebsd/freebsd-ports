@@ -1,4 +1,3 @@
-
 PORTNAME=	acidwarp-sdl
 PORTVERSION=	g2020062101
 CATEGORIES=	graphics

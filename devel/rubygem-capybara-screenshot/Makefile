@@ -1,4 +1,3 @@
-
 PORTNAME=	capybara-screenshot
 PORTVERSION=	1.0.25
 CATEGORIES=	devel rubygems

@@ -1,4 +1,3 @@
-
 PORTNAME=	qemu-powernv
 PORTVERSION=	3.0.50
 PORTREVISION=	2

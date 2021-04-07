@@ -1,4 +1,3 @@
-
 PORTNAME=	liquidsfz
 DISTVERSION=	0.2.3
 CATEGORIES=	audio

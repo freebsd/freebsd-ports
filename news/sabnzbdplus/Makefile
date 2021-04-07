@@ -1,4 +1,3 @@
-
 PORTNAME=	sabnzbdplus
 DISTVERSION=	3.0.2
 PORTEPOCH=	1

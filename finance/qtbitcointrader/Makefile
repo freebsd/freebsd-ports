@@ -1,4 +1,3 @@
-
 PORTNAME=	QtBitcoinTrader
 DISTVERSION=	1.40.52
 CATEGORIES=	finance

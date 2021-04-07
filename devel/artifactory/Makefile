@@ -1,4 +1,3 @@
-
 PORTNAME=	artifactory
 DISTVERSION=	5.8.3
 CATEGORIES=	devel java

@@ -1,4 +1,3 @@
-
 PORTNAME=	pytest-mock
 PORTVERSION=	1.10.4
 CATEGORIES=	devel python

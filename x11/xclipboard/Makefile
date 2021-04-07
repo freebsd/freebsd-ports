@@ -1,4 +1,3 @@
-
 PORTNAME=	xclipboard
 PORTVERSION=	1.1.3
 PORTEPOCH=	1

@@ -1,4 +1,3 @@
-
 PORTNAME=	twitter-text
 DISTVERSION=	1.14.7
 CATEGORIES=	textproc rubygems

@@ -1,4 +1,3 @@
-
 CATEGORIES=	converters
 
 MASTERDIR=	${.CURDIR}/../../lang/php73

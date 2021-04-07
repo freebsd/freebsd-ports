@@ -1,4 +1,3 @@
-
 PORTNAME=	postfix-mta-sts-resolver
 PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=v

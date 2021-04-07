@@ -1,4 +1,3 @@
-
 PORTNAME=	monitorix
 PORTVERSION=	3.10.1
 CATEGORIES=	sysutils

@@ -1,4 +1,3 @@
-
 PORTNAME=	bschaffl
 DISTVERSION=	1.4.6
 CATEGORIES=	audio

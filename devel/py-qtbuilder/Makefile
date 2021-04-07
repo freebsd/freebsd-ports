@@ -1,4 +1,3 @@
-
 PORTNAME=	qtbuilder
 PORTVERSION=	${PYQTBUILDER_VERSION}
 CATEGORIES=	devel python

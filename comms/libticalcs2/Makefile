@@ -1,4 +1,3 @@
-
 PORTNAME=	libticalcs2
 PORTVERSION=	1.1.9
 CATEGORIES=	comms

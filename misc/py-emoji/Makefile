@@ -1,4 +1,3 @@
-
 PORTNAME=	emoji
 PORTVERSION=	0.6.0
 CATEGORIES=	misc python

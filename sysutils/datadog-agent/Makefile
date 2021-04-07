@@ -1,4 +1,3 @@
-
 PORTNAME=	datadog-agent
 DISTVERSION=	7.24.1
 CATEGORIES=	sysutils net www

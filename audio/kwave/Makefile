@@ -1,4 +1,3 @@
-
 PORTNAME=	kwave
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	audio kde kde-applications

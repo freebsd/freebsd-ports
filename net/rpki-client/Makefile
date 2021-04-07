@@ -1,4 +1,3 @@
-
 PORTNAME=	rpki-client
 DISTVERSION=	6.7p1
 CATEGORIES=	net

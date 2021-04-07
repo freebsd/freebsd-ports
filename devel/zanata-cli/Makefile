@@ -1,4 +1,3 @@
-
 PORTNAME=	zanata-cli
 PORTVERSION=	4.6.2
 DISTVERSIONSUFFIX=	-dist

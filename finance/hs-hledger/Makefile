@@ -1,4 +1,3 @@
-
 PORTNAME=	hledger
 DISTVERSION=	1.19
 CATEGORIES=	finance haskell

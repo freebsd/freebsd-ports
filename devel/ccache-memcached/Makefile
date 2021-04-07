@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=	-memcached
 
 MASTERDIR=	${.CURDIR}/../ccache

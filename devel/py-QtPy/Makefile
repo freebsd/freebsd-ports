@@ -1,4 +1,3 @@
-
 PORTNAME=	QtPy
 DISTVERSION=	1.9.0
 CATEGORIES=	devel python

@@ -1,4 +1,3 @@
-
 PORTNAME=	mkdocs-nature
 DISTVERSION=	0.2.1
 CATEGORIES=	textproc python

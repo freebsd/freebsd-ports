@@ -1,4 +1,3 @@
-
 PORTNAME=	django-formset-js-improved
 PORTVERSION=	0.5.0.2
 PORTREVISION=	1

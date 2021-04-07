@@ -1,4 +1,3 @@
-
 PORTNAME=	requests-ftp
 DISTVERSION=	0.3.1
 CATEGORIES=	ftp python

@@ -1,4 +1,3 @@
-
 PORTNAME=	google-fonts
 DISTVERSION=	0.0.0.20210120
 CATEGORIES=	x11-fonts

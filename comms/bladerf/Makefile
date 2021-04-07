@@ -1,4 +1,3 @@
-
 PORTNAME=	bladeRF
 DISTVERSION=	2019.07
 CATEGORIES=	comms hamradio

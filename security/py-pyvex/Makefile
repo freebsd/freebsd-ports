@@ -1,4 +1,3 @@
-
 PORTNAME=	pyvex
 DISTVERSION=	${ANGR_VERSION}
 CATEGORIES=	security devel python

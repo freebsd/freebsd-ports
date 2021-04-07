@@ -1,4 +1,3 @@
-
 PORTNAME=	kdecoration
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	x11-wm kde kde-plasma

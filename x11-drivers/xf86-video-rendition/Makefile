@@ -1,4 +1,3 @@
-
 PORTNAME=	xf86-video-rendition
 PORTVERSION=	4.2.7
 PORTREVISION=	3

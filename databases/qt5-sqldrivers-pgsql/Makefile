@@ -1,4 +1,3 @@
-
 PORTNAME=	pgsql
 
 DB=		PSQL

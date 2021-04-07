@@ -1,4 +1,3 @@
-
 PORTNAME=	TAP-SimpleOutput
 PORTVERSION=	0.009
 CATEGORIES=	devel perl5

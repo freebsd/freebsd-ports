@@ -1,4 +1,3 @@
-
 PKGNAMEPREFIX=	amd64-
 PLIST=	${.CURDIR}/pkg-plist
 

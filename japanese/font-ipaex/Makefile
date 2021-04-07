@@ -1,4 +1,3 @@
-
 PORTNAME=	ipaex
 PORTVERSION=	00401
 CATEGORIES=	japanese x11-fonts

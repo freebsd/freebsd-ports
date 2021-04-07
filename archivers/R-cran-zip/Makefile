@@ -1,4 +1,3 @@
-
 PORTNAME=	zip
 DISTVERSION=	2.1.1
 CATEGORIES=	archivers

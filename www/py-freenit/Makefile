@@ -1,4 +1,3 @@
-
 PORTNAME=	freenit
 PORTVERSION=	0.1.25
 CATEGORIES=	www devel python

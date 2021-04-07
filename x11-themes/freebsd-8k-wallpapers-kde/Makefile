@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=	-kde
 SLAVEPORT=	kde
 

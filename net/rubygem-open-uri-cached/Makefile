@@ -1,4 +1,3 @@
-
 PORTNAME=	open-uri-cached
 PORTVERSION=	0.0.5
 CATEGORIES=	net rubygems

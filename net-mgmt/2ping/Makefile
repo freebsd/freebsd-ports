@@ -1,4 +1,3 @@
-
 PORTNAME=	2ping
 PORTVERSION=	4.5
 CATEGORIES=	net-mgmt perl5

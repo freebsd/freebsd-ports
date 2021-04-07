@@ -1,4 +1,3 @@
-
 PORTNAME=	nanotime
 PORTVERSION=	0.5.2
 CATEGORIES=	devel python

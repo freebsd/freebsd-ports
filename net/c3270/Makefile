@@ -1,4 +1,3 @@
-
 PORTNAME=	c3270
 CATEGORIES=	net
 

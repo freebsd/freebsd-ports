@@ -1,4 +1,3 @@
-
 PORTNAME=	Symbol-Get
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5

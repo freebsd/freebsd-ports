@@ -1,4 +1,3 @@
-
 PORTNAME=	cassandra
 PORTVERSION=	1.3.2
 CATEGORIES=	databases

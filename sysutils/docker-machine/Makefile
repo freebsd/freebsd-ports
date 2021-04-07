@@ -1,4 +1,3 @@
-
 PORTNAME=		docker-machine
 PORTVERSION=		0.16.2
 DISTVERSIONPREFIX=	v

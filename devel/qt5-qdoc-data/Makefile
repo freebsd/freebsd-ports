@@ -1,4 +1,3 @@
-
 # While this port is part of the Qt distribution itself, we do not set
 # QT_DIST=yes because it brings in several patches and targets that are not
 # needed; this port only installs some static files.

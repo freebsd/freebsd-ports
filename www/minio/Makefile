@@ -1,4 +1,3 @@
-
 PORTNAME=	minio
 PORTVERSION=	${GH_TAGNAME:S/RELEASE.//:S/Z//:S/T/-/:S/-/./g}
 CATEGORIES=	www

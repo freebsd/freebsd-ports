@@ -1,4 +1,3 @@
-
 PORTNAME=	kgpg
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	security kde kde-applications

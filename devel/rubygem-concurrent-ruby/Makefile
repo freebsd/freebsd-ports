@@ -1,4 +1,3 @@
-
 PORTNAME=	concurrent-ruby
 PORTVERSION=	1.1.8
 CATEGORIES=	devel rubygems

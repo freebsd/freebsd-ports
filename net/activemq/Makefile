@@ -1,4 +1,3 @@
-
 PORTNAME=	activemq
 PORTVERSION=	5.16.1
 CATEGORIES=	net java

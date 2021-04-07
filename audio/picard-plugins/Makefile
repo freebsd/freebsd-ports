@@ -1,4 +1,3 @@
-
 PORTNAME=	picard-plugins
 PORTVERSION=	2.0.20210119
 CATEGORIES=	audio python

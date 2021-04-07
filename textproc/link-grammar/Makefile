@@ -1,4 +1,3 @@
-
 PORTNAME=	link-grammar
 DISTVERSION=	5.8.0
 CATEGORIES=	textproc

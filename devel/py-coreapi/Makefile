@@ -1,4 +1,3 @@
-
 PORTNAME=	coreapi
 DISTVERSION=	2.3.3
 CATEGORIES=	devel python

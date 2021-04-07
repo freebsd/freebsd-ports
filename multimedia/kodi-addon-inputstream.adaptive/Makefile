@@ -1,4 +1,3 @@
-
 PORTNAME=	inputstream.adaptive
 DISTVERSION=	2.6.8
 DISTVERSIONSUFFIX=	-Matrix

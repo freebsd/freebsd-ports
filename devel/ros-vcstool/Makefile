@@ -1,4 +1,3 @@
-
 PORTNAME=	ros-vcstool
 DISTVERSION=	0.2.15
 CATEGORIES=	devel

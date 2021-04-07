@@ -1,4 +1,3 @@
-
 PORTNAME=	webalizer-geodb
 PORTVERSION=	20210401
 CATEGORIES+=	net

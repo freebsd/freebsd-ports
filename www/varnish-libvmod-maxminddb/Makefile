@@ -1,4 +1,3 @@
-
 PORTNAME=	libvmod-maxminddb
 DISTVERSION=	1.0.1
 CATEGORIES=	www

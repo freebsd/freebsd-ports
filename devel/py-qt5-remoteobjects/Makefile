@@ -1,4 +1,3 @@
-
 PORTNAME=	remoteobjects
 CATEGORIES=	devel python
 

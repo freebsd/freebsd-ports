@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-keyvault-administration
 DISTVERSION=	4.0.0b3
 CATEGORIES=	devel python

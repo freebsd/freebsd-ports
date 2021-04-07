@@ -1,4 +1,3 @@
-
 PORTNAME=	django-solo
 DISTVERSION=	1.1.3-8
 DISTVERSIONSUFFIX=	-g3dcd6ab

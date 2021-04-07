@@ -1,4 +1,3 @@
-
 PORTNAME=	sourcemap
 PORTVERSION=	0.2.1
 CATEGORIES=	devel python

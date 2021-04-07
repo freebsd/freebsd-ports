@@ -1,4 +1,3 @@
-
 PORTNAME=	nbxmpp
 DISTVERSION=	2.0.2
 CATEGORIES=	net-im devel python

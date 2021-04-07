@@ -1,4 +1,3 @@
-
 PORTNAME=	geany-plugin-autoclose
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel

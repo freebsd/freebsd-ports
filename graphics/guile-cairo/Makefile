@@ -1,4 +1,3 @@
-
 PORTNAME=	guile-cairo
 DISTVERSION=	1.11.1
 CATEGORIES=	graphics

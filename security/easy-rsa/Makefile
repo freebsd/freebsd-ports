@@ -1,4 +1,3 @@
-
 PORTNAME=	easy-rsa
 DISTVERSION=	3.0.8
 CATEGORIES=	security net-mgmt

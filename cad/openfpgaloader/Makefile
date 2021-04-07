@@ -1,4 +1,3 @@
-
 PORTNAME=	openfpgaloader
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.5

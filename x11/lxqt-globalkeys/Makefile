@@ -1,4 +1,3 @@
-
 PORTNAME=	lxqt-globalkeys
 PORTVERSION=	0.16.0
 CATEGORIES=	x11

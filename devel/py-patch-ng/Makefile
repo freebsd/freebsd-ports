@@ -1,4 +1,3 @@
-
 PORTNAME=	patch-ng
 DISTVERSION=	1.17.4
 CATEGORIES=	devel python

@@ -1,4 +1,3 @@
-
 PORTNAME=	kodi-platform
 PORTVERSION=	20190726
 CATEGORIES=	devel

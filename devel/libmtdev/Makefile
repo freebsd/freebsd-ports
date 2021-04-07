@@ -1,4 +1,3 @@
-
 PORTNAME=	mtdev
 PORTVERSION=	1.1.6
 CATEGORIES=	devel

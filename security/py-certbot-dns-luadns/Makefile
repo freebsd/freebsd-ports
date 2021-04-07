@@ -1,4 +1,3 @@
-
 PORTNAME=	certbot-dns-luadns
 PORTVERSION=	${ACME_VERSION}
 CATEGORIES=	security python

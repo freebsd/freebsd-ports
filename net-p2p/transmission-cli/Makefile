@@ -1,4 +1,3 @@
-
 PORTNAME=	transmission
 DISTVERSION=	3.00
 PORTREVISION?=	4

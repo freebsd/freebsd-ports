@@ -1,4 +1,3 @@
-
 PORTNAME=	Test-RequiresInternet
 PORTVERSION=	0.05
 CATEGORIES=	devel perl5

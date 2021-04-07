@@ -1,4 +1,3 @@
-
     COMMENT = X11 window managers
 
     SUBDIR += afterstep

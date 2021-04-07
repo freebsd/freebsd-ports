@@ -1,4 +1,3 @@
-
 PORTNAME=	elixir-mongo
 PORTVERSION=	0.5.4
 CATEGORIES=	databases

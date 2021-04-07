@@ -1,4 +1,3 @@
-
 PORTNAME=	krename
 PORTVERSION=	5.0.1
 CATEGORIES=	sysutils kde

@@ -1,4 +1,3 @@
-
 PORTNAME=	django-guardian
 PORTVERSION=	1.4.9
 CATEGORIES=	www python

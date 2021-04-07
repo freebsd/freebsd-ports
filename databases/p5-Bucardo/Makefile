@@ -1,4 +1,3 @@
-
 PORTNAME=	Bucardo
 PORTVERSION=	5.6.0
 CATEGORIES=	databases perl5

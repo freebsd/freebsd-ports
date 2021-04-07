@@ -1,4 +1,3 @@
-
 PORTNAME=		scarab
 DISTVERSIONPREFIX=      v
 DISTVERSION=            0.1.3

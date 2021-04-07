@@ -1,4 +1,3 @@
-
 PORTNAME=	kafka_ex
 PORTVERSION=	0.10.0
 CATEGORIES=	net

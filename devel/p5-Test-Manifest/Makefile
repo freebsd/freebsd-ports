@@ -1,4 +1,3 @@
-
 PORTNAME=	Test-Manifest
 PORTVERSION=	2.022
 CATEGORIES=	devel perl5

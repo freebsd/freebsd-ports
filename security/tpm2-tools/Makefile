@@ -1,4 +1,3 @@
-
 PORTNAME=	tpm2-tools
 DISTVERSION=	4.3.0
 CATEGORIES=	security

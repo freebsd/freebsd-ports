@@ -1,4 +1,3 @@
-
 PORTNAME=	nextcloud
 PORTVERSION=	21.0.0
 CATEGORIES=	www

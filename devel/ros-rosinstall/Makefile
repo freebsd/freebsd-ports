@@ -1,4 +1,3 @@
-
 PORTNAME=	ros-rosinstall
 DISTVERSION=	0.7.8
 CATEGORIES=	devel

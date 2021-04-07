@@ -1,4 +1,3 @@
-
 PORTNAME=	kanagram
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	games education kde kde-applications

@@ -1,4 +1,3 @@
-
 PORTNAME=	Catalyst-View-vCard
 PORTVERSION=	0.04
 CATEGORIES=	www perl5

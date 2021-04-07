@@ -1,4 +1,3 @@
-
 PORTNAME=	filevercmp
 DISTVERSION=	g20151117
 CATEGORIES=	sysutils

@@ -1,4 +1,3 @@
-
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-pastojs
 

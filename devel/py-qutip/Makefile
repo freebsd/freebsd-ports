@@ -1,4 +1,3 @@
-
 PORTNAME=	qutip
 DISTVERSION=	4.5.2
 CATEGORIES=	devel

@@ -1,4 +1,3 @@
-
 PORTNAME=	couchbeam
 PORTVERSION=	1.4.2
 CATEGORIES=	databases

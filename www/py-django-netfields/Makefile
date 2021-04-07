@@ -1,4 +1,3 @@
-
 PORTNAME=	django-netfields
 DISTVERSION=	1.2.2
 CATEGORIES=	www python

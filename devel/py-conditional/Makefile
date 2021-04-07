@@ -1,4 +1,3 @@
-
 PORTNAME=	conditional
 PORTVERSION=	1.0
 CATEGORIES=	devel python

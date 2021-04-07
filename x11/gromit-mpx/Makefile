@@ -1,4 +1,3 @@
-
 PORTNAME=	gromit-mpx
 DISTVERSION=	1.4
 CATEGORIES=	x11

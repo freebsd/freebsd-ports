@@ -1,4 +1,3 @@
-
 PORTNAME=	jetbrains-mono
 PORTVERSION=	2.225
 PORTEPOCH=	1

@@ -1,4 +1,3 @@
-
 PORTNAME=	help
 CATEGORIES=	devel python
 

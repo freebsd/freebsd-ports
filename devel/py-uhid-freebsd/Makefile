@@ -1,4 +1,3 @@
-
 PORTNAME=		uhid-freebsd
 PORTVERSION=		1.2.1
 CATEGORIES=		devel python

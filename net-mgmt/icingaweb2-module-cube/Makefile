@@ -1,4 +1,3 @@
-
 PORTNAME=	icingaweb2-module-cube
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0

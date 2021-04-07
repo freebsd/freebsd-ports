@@ -1,4 +1,3 @@
-
 PORTNAME=	urlwatch
 DISTVERSION=	2.18
 CATEGORIES=	www python

@@ -1,4 +1,3 @@
-
 PORTNAME=	soap4r
 PORTVERSION=	1.5.8
 CATEGORIES=	devel rubygems

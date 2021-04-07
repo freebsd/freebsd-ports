@@ -1,4 +1,3 @@
-
 PORTNAME=	ktp-kded-module
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	net-im kde kde-applications

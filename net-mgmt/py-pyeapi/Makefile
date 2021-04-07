@@ -1,4 +1,3 @@
-
 PORTNAME=	pyeapi
 DISTVERSION=	0.8.4
 CATEGORIES=	net-mgmt python

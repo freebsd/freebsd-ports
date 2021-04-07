@@ -1,4 +1,3 @@
-
 PORTREVISION=	3
 PKGNAMESUFFIX=	-icinga2
 

@@ -1,4 +1,3 @@
-
 PORTNAME=	DBIx-Class-DeploymentHandler
 PORTVERSION=	0.002230
 CATEGORIES=	databases perl5

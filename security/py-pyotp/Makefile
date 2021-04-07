@@ -1,4 +1,3 @@
-
 PORTNAME=	pyotp
 PORTVERSION=	2.6.0
 CATEGORIES=	security

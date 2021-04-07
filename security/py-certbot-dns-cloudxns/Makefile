@@ -1,4 +1,3 @@
-
 PORTNAME=	certbot-dns-cloudxns
 PORTVERSION=	${ACME_VERSION}
 CATEGORIES=	security python

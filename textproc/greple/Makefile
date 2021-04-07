@@ -1,4 +1,3 @@
-
 PORTNAME=	greple
 PORTVERSION=	8.3304
 CATEGORIES=	textproc

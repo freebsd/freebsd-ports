@@ -1,4 +1,3 @@
-
 PORTNAME=	myrescue
 PORTVERSION=	0.9.4
 CATEGORIES=	sysutils

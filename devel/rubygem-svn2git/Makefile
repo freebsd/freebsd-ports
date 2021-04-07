@@ -1,4 +1,3 @@
-
 PORTNAME=	svn2git
 PORTVERSION=	2.4.0
 CATEGORIES=	devel rubygems

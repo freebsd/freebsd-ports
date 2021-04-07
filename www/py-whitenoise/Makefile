@@ -1,4 +1,3 @@
-
 PORTNAME=	whitenoise
 PORTVERSION=	4.1.2
 CATEGORIES=	www python

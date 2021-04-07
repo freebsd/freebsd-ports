@@ -1,4 +1,3 @@
-
 PORTNAME=	pandocfilters
 PORTVERSION=	1.4.3
 CATEGORIES=	textproc python

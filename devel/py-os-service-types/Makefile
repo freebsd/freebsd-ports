@@ -1,4 +1,3 @@
-
 PORTNAME=	os-service-types
 PORTVERSION=	1.7.0
 CATEGORIES=	devel python

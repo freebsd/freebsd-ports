@@ -1,4 +1,3 @@
-
 PORTNAME=	pytest
 PORTVERSION=	4.5.0
 CATEGORIES=	devel python

@@ -1,4 +1,3 @@
-
 PORTNAME=	mattermost-server
 PORTVERSION=	5.32.1
 DISTVERSIONPREFIX=	v

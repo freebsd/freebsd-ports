@@ -1,4 +1,3 @@
-
 PORTNAME=	httpclient
 PORTVERSION=	2.8.3
 CATEGORIES=	www rubygems

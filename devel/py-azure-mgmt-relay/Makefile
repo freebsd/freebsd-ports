@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-relay
 PORTVERSION=	0.2.0
 CATEGORIES=	devel python

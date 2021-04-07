@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-web
 PORTVERSION=	0.48.0
 CATEGORIES=	devel python

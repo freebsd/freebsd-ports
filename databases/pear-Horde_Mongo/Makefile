@@ -1,4 +1,3 @@
-
 PORTNAME=	Horde_Mongo
 PORTVERSION=	1.1.0
 CATEGORIES=	databases www pear

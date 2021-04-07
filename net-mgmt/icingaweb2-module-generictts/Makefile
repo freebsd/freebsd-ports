@@ -1,4 +1,3 @@
-
 PORTNAME=	icingaweb2-module-generictts
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0

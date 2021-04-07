@@ -1,4 +1,3 @@
-
 PORTNAME=	declarative
 PORTVERSION=	0.0.10
 CATEGORIES=	devel rubygems

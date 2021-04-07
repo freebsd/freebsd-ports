@@ -1,4 +1,3 @@
-
 CATEGORIES=	security lang
 PKGNAMESUFFIX=	-gnutls
 

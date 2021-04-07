@@ -1,4 +1,3 @@
-
 PORTNAME=	kjsembed
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	www kde kde-frameworks

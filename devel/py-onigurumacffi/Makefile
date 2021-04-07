@@ -1,4 +1,3 @@
-
 PORTNAME=	onigurumacffi
 PORTVERSION=	0.0.21
 CATEGORIES=	devel python

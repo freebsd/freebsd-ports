@@ -1,4 +1,3 @@
-
 PORTNAME=	Date-Japanese-Holiday
 PORTVERSION=	0.05
 PORTREVISION=	3

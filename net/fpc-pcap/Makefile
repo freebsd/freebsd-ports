@@ -1,4 +1,3 @@
-
 CATEGORIES=	net lang
 PKGNAMESUFFIX=	-pcap
 

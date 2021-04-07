@@ -1,4 +1,3 @@
-
 PORTNAME=	Module-Install-AuthorTests
 PORTVERSION=	0.002
 PORTREVISION=	1

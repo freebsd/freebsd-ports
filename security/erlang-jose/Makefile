@@ -1,4 +1,3 @@
-
 PORTNAME=	jose
 PORTVERSION=	1.10.1
 CATEGORIES=	security

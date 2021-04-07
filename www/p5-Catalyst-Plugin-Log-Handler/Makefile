@@ -1,4 +1,3 @@
-
 PORTNAME=	Catalyst-Plugin-Log-Handler
 PORTVERSION=	0.08
 PORTREVISION=	1

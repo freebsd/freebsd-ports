@@ -1,4 +1,3 @@
-
 PORTNAME=	libretro
 PORTVERSION=	0.2
 CATEGORIES=	games

@@ -1,4 +1,3 @@
-
 PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	1-plugins-v4l2

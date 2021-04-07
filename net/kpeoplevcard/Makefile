@@ -1,4 +1,3 @@
-
 PORTNAME=	kpeoplevcard
 DISTVERSION=	0.1
 CATEGORIES=	net kde

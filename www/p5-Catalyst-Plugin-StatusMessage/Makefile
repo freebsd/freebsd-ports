@@ -1,4 +1,3 @@
-
 PORTNAME=	Catalyst-Plugin-StatusMessage
 PORTVERSION=	1.002000
 PORTREVISION=	1

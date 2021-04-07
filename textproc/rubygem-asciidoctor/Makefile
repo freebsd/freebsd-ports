@@ -1,4 +1,3 @@
-
 PORTNAME=	asciidoctor
 PORTVERSION=	2.0.12
 CATEGORIES=	textproc rubygems

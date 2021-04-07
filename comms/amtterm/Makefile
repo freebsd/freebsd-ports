@@ -1,4 +1,3 @@
-
 PORTNAME=	amtterm
 PORTVERSION=	1.6
 CATEGORIES=	comms

@@ -1,4 +1,3 @@
-
 PORTNAME=	MojoX-Log-Dispatch-Simple
 PORTVERSION=	1.07
 CATEGORIES=	www perl5

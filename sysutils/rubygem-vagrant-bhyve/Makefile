@@ -1,4 +1,3 @@
-
 PORTNAME=	vagrant-bhyve
 PORTVERSION=	0.1.0
 CATEGORIES=	sysutils rubygems

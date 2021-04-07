@@ -1,4 +1,3 @@
-
 PORTNAME=	onlykey
 PORTVERSION=	1.2.2
 CATEGORIES=	security python

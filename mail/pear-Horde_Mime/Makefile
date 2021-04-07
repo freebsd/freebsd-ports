@@ -1,4 +1,3 @@
-
 PORTNAME=	Horde_Mime
 DISTVERSION=	2.11.0
 CATEGORIES=	mail www pear

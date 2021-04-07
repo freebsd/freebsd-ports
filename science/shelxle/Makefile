@@ -1,4 +1,3 @@
-
 PORTNAME=	shelxle
 DISTVERSION=	1.0.1235
 CATEGORIES=	science # chemistry

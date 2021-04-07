@@ -1,4 +1,3 @@
-
 PORTNAME=	patch
 DISTVERSION=	1.16
 CATEGORIES=	devel python

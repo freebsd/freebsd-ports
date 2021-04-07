@@ -1,4 +1,3 @@
-
 PORTNAME=	dbus-sharp-glib
 PORTVERSION=	0.6
 DISTVERSIONPREFIX=v

@@ -1,4 +1,3 @@
-
 PORTNAME=	courier-unicode
 PORTVERSION=	2.2.3
 CATEGORIES=	devel mail

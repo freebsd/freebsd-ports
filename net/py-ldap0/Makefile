@@ -1,4 +1,3 @@
-
 PORTNAME=	ldap0
 PORTVERSION=	1.1.3
 CATEGORIES=	net python

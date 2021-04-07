@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-containerinstance
 PORTVERSION=	1.5.0
 CATEGORIES=	devel python

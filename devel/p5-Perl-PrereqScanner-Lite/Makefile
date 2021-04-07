@@ -1,4 +1,3 @@
-
 PORTNAME=	Perl-PrereqScanner-Lite
 PORTVERSION=	0.26
 CATEGORIES=	devel perl5

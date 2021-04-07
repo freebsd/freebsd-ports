@@ -1,4 +1,3 @@
-
 PORTNAME=	riemann-client
 DISTVERSION=	0.2.6
 PORTREVISION=	1

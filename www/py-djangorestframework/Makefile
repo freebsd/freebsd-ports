@@ -1,4 +1,3 @@
-
 PORTNAME=	djangorestframework
 PORTVERSION=	3.12.4
 PORTEPOCH=	1

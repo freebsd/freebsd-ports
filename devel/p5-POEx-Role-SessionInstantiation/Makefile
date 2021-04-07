@@ -1,4 +1,3 @@
-
 PORTNAME=	POEx-Role-SessionInstantiation
 PORTVERSION=	1.102610
 PORTREVISION=	1

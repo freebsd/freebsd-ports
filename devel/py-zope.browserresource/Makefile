@@ -1,4 +1,3 @@
-
 PORTNAME=	zope.browserresource
 PORTVERSION=	3.10.3
 PORTREVISION=	1

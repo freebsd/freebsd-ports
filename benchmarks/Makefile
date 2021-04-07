@@ -1,4 +1,3 @@
-
     COMMENT = Benchmarking tools
 
     SUBDIR += ali

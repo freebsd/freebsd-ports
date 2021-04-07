@@ -1,4 +1,3 @@
-
 PORTNAME=	icalendar
 PORTVERSION=	2.6.1
 CATEGORIES=	devel rubygems

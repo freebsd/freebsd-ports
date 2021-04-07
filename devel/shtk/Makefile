@@ -1,4 +1,3 @@
-
 PORTNAME=	shtk
 PORTVERSION=	1.6
 CATEGORIES=	devel

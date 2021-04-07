@@ -1,4 +1,3 @@
-
 PORTNAME=	predict
 PORTVERSION=	2.2.7
 CATEGORIES=	comms astro hamradio

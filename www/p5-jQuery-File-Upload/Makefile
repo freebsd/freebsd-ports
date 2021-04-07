@@ -1,4 +1,3 @@
-
 PORTNAME=	jQuery-File-Upload
 PORTVERSION=	0.30
 PORTREVISION=	2

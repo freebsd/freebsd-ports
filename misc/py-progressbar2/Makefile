@@ -1,4 +1,3 @@
-
 PORTNAME=	progressbar2
 PORTVERSION=	3.53.1
 CATEGORIES=	misc python

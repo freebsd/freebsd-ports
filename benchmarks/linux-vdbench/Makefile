@@ -1,4 +1,3 @@
-
 PORTNAME=	vdbench
 PORTVERSION=	5.04.07
 CATEGORIES=	benchmarks linux java

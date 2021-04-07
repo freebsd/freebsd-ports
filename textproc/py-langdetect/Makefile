@@ -1,4 +1,3 @@
-
 PORTNAME=	langdetect
 PORTVERSION=	1.0.7
 CATEGORIES=	textproc python

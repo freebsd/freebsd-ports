@@ -1,4 +1,3 @@
-
 PORTNAME=	fluent-plugin-tail-asis
 PORTVERSION=	0.0.3
 CATEGORIES=	sysutils rubygems

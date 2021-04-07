@@ -1,4 +1,3 @@
-
 PORTNAME=	art
 DISTVERSION=	1.8.3
 CATEGORIES=	graphics

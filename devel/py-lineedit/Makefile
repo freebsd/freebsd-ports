@@ -1,4 +1,3 @@
-
 PORTNAME=	lineedit
 PORTVERSION=	0.1.6
 CATEGORIES=	devel python

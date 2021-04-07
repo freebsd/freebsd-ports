@@ -1,4 +1,3 @@
-
 PORTNAME=	mpvpaper
 DISTVERSION=	1.1
 CATEGORIES=	multimedia

@@ -1,4 +1,3 @@
-
 PORTNAME=	faye-websocket
 PORTVERSION=	0.10.7
 CATEGORIES=	www rubygems

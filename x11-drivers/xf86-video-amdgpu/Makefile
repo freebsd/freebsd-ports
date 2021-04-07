@@ -1,4 +1,3 @@
-
 # this port is for future amdgpu kernel support testing.
 
 PORTNAME=	xf86-video-amdgpu

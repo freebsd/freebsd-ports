@@ -1,4 +1,3 @@
-
 PORTNAME=	mecrisp-stellaris
 DISTVERSION=	2.5.8
 CATEGORIES=	lang

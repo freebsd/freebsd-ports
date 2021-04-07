@@ -1,4 +1,3 @@
-
 PORTNAME=	biom-format
 PORTVERSION=	2.1.10
 CATEGORIES=	biology python

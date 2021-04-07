@@ -1,4 +1,3 @@
-
 PORTNAME=	unqlite
 PORTVERSION=	0.5.3
 CATEGORIES=	databases python

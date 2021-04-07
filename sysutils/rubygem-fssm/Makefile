@@ -1,4 +1,3 @@
-
 PORTNAME=	fssm
 PORTVERSION=	0.2.10
 CATEGORIES=	sysutils ruby

@@ -1,4 +1,3 @@
-
 PORTNAME=	settingslogic
 PORTVERSION=	2.0.9
 CATEGORIES=	devel rubygems

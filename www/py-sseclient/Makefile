@@ -1,4 +1,3 @@
-
 PORTNAME=	sseclient
 DISTVERSION=	0.0.27
 CATEGORIES=	www python

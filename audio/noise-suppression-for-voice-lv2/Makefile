@@ -1,4 +1,3 @@
-
 PORTNAME=	noise-suppression-for-voice
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.91-2

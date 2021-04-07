@@ -1,4 +1,3 @@
-
 PORTNAME=	Test-UNIXSock
 PORTVERSION=	0.4
 CATEGORIES=	devel perl5

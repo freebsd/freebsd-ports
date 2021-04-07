@@ -1,4 +1,3 @@
-
 PORTNAME=		ntfs-compression
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.0

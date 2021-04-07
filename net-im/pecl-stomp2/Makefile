@@ -1,4 +1,3 @@
-
 PORTNAME=	stomp
 PORTVERSION=	2.0.2
 CATEGORIES=	net-im pear

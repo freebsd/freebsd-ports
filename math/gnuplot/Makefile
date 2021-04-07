@@ -1,4 +1,3 @@
-
 PORTNAME=	gnuplot
 PORTVERSION=	5.4.1
 CATEGORIES=	math graphics

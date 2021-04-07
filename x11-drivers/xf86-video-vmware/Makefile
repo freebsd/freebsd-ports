@@ -1,4 +1,3 @@
-
 PORTNAME=	xf86-video-vmware
 PORTVERSION=	13.3.0
 PORTREVISION=	6

@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-storage-common
 PORTVERSION=	2.1.0
 CATEGORIES=	devel python

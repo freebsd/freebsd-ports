@@ -1,4 +1,3 @@
-
 CATEGORIES=	archivers
 
 MASTERDIR=	${.CURDIR}/../../lang/php73

@@ -1,4 +1,3 @@
-
 PORTNAME=	jsonpointer
 PORTVERSION=	2.0
 CATEGORIES=	devel python

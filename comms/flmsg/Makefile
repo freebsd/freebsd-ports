@@ -1,4 +1,3 @@
-
 PORTNAME=	flmsg
 DISTVERSION=	4.0.17
 CATEGORIES=	comms hamradio

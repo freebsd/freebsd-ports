@@ -1,4 +1,3 @@
-
 PORTNAME=	String-Trim
 PORTVERSION=	0.005
 CATEGORIES=	textproc perl5

@@ -1,4 +1,3 @@
-
 PORTREVISION=	2
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-rtl-objpas

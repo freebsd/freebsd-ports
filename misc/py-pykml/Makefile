@@ -1,4 +1,3 @@
-
 PORTNAME=	pykml
 DISTVERSION=	0.2.0
 CATEGORIES=	misc python

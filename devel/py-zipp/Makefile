@@ -1,4 +1,3 @@
-
 PORTNAME=	zipp
 PORTVERSION=	3.4.0
 CATEGORIES=	devel

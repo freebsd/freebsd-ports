@@ -1,4 +1,3 @@
-
 PORTNAME=	apscheduler
 PORTVERSION=	3.6.3
 CATEGORIES=	devel python

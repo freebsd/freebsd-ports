@@ -1,4 +1,3 @@
-
     COMMENT = Multimedia software
 
     SUBDIR += Bento4

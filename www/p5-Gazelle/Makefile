@@ -1,4 +1,3 @@
-
 PORTNAME=	Gazelle
 PORTVERSION=	0.49
 CATEGORIES=	www perl5

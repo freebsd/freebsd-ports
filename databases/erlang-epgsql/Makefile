@@ -1,4 +1,3 @@
-
 PORTNAME=	epgsql
 PORTVERSION=	4.1.0
 CATEGORIES=	databases

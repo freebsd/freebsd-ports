@@ -1,4 +1,3 @@
-
 PORTNAME=	proxy
 DISTVERSION=	0.4-25
 CATEGORIES=	math

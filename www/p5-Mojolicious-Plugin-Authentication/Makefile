@@ -1,4 +1,3 @@
-
 PORTNAME=	Mojolicious-Plugin-Authentication
 PORTVERSION=	1.33
 CATEGORIES=	www perl5

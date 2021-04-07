@@ -1,4 +1,3 @@
-
 PORTNAME=	Flask-Login
 PORTVERSION=	0.5.0
 CATEGORIES=	www python

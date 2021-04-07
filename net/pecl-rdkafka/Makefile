@@ -1,4 +1,3 @@
-
 PORTNAME=	rdkafka
 PORTVERSION=	4.0.4
 CATEGORIES=	net pear

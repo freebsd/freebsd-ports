@@ -1,4 +1,3 @@
-
 PORTNAME=	node-semver # PyPI name
 DISTVERSION=	0.8.0
 CATEGORIES=	devel python

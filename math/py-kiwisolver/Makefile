@@ -1,4 +1,3 @@
-
 PORTNAME=	kiwisolver
 PORTVERSION=	1.1.0
 PORTEPOCH=	1

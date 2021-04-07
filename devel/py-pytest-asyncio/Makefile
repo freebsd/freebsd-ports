@@ -1,4 +1,3 @@
-
 PORTNAME=	pytest-asyncio
 PORTVERSION=	0.10.0
 CATEGORIES=	devel python

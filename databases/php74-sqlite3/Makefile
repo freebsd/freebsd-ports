@@ -1,4 +1,3 @@
-
 CATEGORIES=	databases
 
 MASTERDIR=	${.CURDIR}/../../lang/php74

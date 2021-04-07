@@ -1,4 +1,3 @@
-
 PORTNAME=	symphony
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	5.6.17

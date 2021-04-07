@@ -1,4 +1,3 @@
-
 # Note that this port uses RPMs from openSUSE - CentOS doesn't seem
 # to carry LTP packages.  For future updates, here's the openSUSE
 # package site: https://build.opensuse.org/package/show/benchmark/ltp

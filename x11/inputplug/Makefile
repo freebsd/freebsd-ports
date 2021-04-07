@@ -1,4 +1,3 @@
-
 PORTNAME=	inputplug
 DISTVERSION=	0.3
 CATEGORIES=	x11

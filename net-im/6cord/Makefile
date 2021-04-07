@@ -1,4 +1,3 @@
-
 PORTNAME=	6cord
 DISTVERSION=	9.6
 CATEGORIES=	net-im

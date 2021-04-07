@@ -1,4 +1,3 @@
-
 PORTNAME=	Nagios-Plugins-Memcached
 PORTVERSION=	0.02
 PORTREVISION=	2

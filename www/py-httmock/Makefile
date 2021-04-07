@@ -1,4 +1,3 @@
-
 PORTNAME=	httmock
 PORTVERSION=	1.4.0
 CATEGORIES=	www python

@@ -1,4 +1,3 @@
-
 PORTNAME=	kdesu
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	security kde kde-frameworks

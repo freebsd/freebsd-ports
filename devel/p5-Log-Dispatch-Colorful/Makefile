@@ -1,4 +1,3 @@
-
 PORTNAME=	Log-Dispatch-Colorful
 PORTVERSION=	0.03
 PORTREVISION=	3

@@ -1,4 +1,3 @@
-
 PORTNAME=	kdnssd
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	dns kde kde-frameworks

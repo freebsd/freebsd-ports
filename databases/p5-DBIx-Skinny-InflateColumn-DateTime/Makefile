@@ -1,4 +1,3 @@
-
 PORTNAME=	DBIx-Skinny-InflateColumn-DateTime
 PORTVERSION=	0.06
 PORTREVISION=	1

@@ -1,4 +1,3 @@
-
 PORTNAME=	schematics-patched
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.2-patch

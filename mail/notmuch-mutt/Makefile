@@ -1,4 +1,3 @@
-
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-mutt
 

@@ -1,4 +1,3 @@
-
 PORTNAME=	grape-entity
 PORTVERSION=	0.7.1
 PORTEPOCH=	1

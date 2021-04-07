@@ -1,4 +1,3 @@
-
 CATEGORIES=	german
 
 MAINTAINER=	dinoex@FreeBSD.org

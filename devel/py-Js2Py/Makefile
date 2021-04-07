@@ -1,4 +1,3 @@
-
 PORTNAME=	Js2Py
 DISTVERSION=	0.71
 CATEGORIES=	devel python

@@ -1,4 +1,3 @@
-
 PORTNAME=	pywinrm
 PORTVERSION=	0.4.1
 CATEGORIES=	security python

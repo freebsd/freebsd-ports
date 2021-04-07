@@ -1,4 +1,3 @@
-
 PORTNAME=	keepassxc
 DISTVERSION=	2.6.4
 CATEGORIES=	security

@@ -1,4 +1,3 @@
-
 PORTNAME=	certbot-nginx
 PORTVERSION=	${ACME_VERSION}
 CATEGORIES=	security python

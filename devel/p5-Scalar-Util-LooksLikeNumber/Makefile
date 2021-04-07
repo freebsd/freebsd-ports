@@ -1,4 +1,3 @@
-
 PORTNAME=	Scalar-Util-LooksLikeNumber
 PORTVERSION=	1.39.1
 PORTREVISION=	1

@@ -1,4 +1,3 @@
-
 PORTNAME=	kwayland-integration
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	x11 kde kde-plasma

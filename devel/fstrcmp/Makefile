@@ -1,4 +1,3 @@
-
 PORTNAME=	fstrcmp
 PORTVERSION=	0.7.D001
 CATEGORIES=	devel

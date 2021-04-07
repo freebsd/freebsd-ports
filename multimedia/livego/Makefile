@@ -1,4 +1,3 @@
-
 PORTNAME=	livego
 DISTVERSION=	0.0.15
 CATEGORIES=	multimedia

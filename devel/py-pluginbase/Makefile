@@ -1,4 +1,3 @@
-
 PORTNAME=	pluginbase
 PORTVERSION=	1.0.0
 CATEGORIES=	devel python

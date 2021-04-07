@@ -1,4 +1,3 @@
-
     COMMENT = Japanese support
 
     SUBDIR += ASCIIdates98-fpw

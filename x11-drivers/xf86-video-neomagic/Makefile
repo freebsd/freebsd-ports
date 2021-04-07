@@ -1,4 +1,3 @@
-
 PORTNAME=	xf86-video-neomagic
 PORTVERSION=	1.3.0
 PORTREVISION=	1

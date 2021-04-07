@@ -1,4 +1,3 @@
-
 PORTNAME=	POE-Component-Server-SimpleHTTP
 PORTVERSION=	2.28
 CATEGORIES=	www perl5

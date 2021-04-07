@@ -1,4 +1,3 @@
-
 PORTNAME=	peruse
 DISTVERSION=	1.2-502
 CATEGORIES=	graphics kde

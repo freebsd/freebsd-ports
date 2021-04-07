@@ -1,4 +1,3 @@
-
 PORTREVISION=	0
 PKGNAMEPREFIX=	libretro-
 

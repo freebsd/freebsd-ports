@@ -1,4 +1,3 @@
-
 PORTNAME=	logstash-forwarder
 PORTVERSION=	0.4.0.20150507
 PORTREVISION=	2

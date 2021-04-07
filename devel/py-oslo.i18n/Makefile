@@ -1,4 +1,3 @@
-
 PORTNAME=	oslo.i18n
 PORTVERSION=	5.0.1
 CATEGORIES=	devel python

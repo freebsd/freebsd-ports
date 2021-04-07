@@ -1,4 +1,3 @@
-
 PORTNAME=	MailerContrib
 SVNREV=		17641
 

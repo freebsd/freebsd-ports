@@ -1,4 +1,3 @@
-
 PKGNAMEPREFIX=	aarch64-
 PLIST=	${.CURDIR}/pkg-plist
 

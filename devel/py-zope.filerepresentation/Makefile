@@ -1,4 +1,3 @@
-
 PORTNAME=	zope.filerepresentation
 PORTVERSION=	3.6.1
 PORTREVISION=	1

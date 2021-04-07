@@ -1,4 +1,3 @@
-
 PORTNAME=	asciimatics
 PORTVERSION=	1.13.0
 CATEGORIES=	devel python

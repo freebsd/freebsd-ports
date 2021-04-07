@@ -1,4 +1,3 @@
-
 PORTNAME=	dsbmixer
 PORTVERSION=	1.7
 CATEGORIES=	audio

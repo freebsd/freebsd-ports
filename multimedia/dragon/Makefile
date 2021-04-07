@@ -1,4 +1,3 @@
-
 PORTNAME=	dragon
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	multimedia kde kde-applications

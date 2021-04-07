@@ -1,4 +1,3 @@
-
 PORTNAME=	libkomparediff2
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	textproc kde kde-applications

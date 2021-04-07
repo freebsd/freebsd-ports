@@ -1,4 +1,3 @@
-
 PORTNAME=	CommonMark
 PORTVERSION=	0.9.1
 CATEGORIES=	textproc python

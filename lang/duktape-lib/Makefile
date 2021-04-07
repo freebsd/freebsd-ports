@@ -1,4 +1,3 @@
-
 PORTNAME=	duktape
 DISTVERSION=	2.6.0
 CATEGORIES=	lang devel

@@ -1,4 +1,3 @@
-
 PORTNAME=	nestopia
 DISTVERSION=	1.50
 CATEGORIES=	emulators

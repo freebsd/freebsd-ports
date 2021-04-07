@@ -1,4 +1,3 @@
-
 PORTNAME=	unicorn-worker-killer
 PORTVERSION=	0.4.4
 CATEGORIES=	www rubygems

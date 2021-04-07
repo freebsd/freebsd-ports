@@ -1,4 +1,3 @@
-
 PORTNAME=	png++
 DISTVERSION=	0.2.10
 CATEGORIES=	graphics

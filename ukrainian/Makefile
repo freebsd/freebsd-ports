@@ -1,4 +1,3 @@
-
     COMMENT = Ukrainian support
 
     SUBDIR += aspell

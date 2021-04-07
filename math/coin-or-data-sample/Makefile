@@ -1,4 +1,3 @@
-
 PORTNAME=	Data-Sample
 DISTVERSION=	1.2.12
 CATEGORIES=	math

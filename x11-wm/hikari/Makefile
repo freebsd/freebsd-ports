@@ -1,4 +1,3 @@
-
 PORTNAME=	hikari
 DISTVERSION=	2.2.3
 CATEGORIES=	x11-wm

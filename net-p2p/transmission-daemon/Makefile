@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=	-daemon
 PORTREVISION=	3
 

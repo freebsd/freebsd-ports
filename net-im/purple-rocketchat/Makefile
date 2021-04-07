@@ -1,4 +1,3 @@
-
 PORTNAME=	purple-rocketchat
 PORTVERSION=	0.0.20190416
 CATEGORIES=	net-im

@@ -1,4 +1,3 @@
-
 PORTNAME=	Class-Accessor-Chained
 PORTVERSION=	0.01
 PORTREVISION=	2

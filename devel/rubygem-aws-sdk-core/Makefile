@@ -1,4 +1,3 @@
-
 PORTNAME=	aws-sdk-core
 PORTVERSION=	3.112.0
 CATEGORIES=	devel rubygems

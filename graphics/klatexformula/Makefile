@@ -1,4 +1,3 @@
-
 PORTNAME=	klatexformula
 PORTVERSION=	4.0.0
 PORTREVISION=	2

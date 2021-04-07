@@ -1,4 +1,3 @@
-
 MASTERDIR=	${.CURDIR}/../quassel
 
 PKGNAMESUFFIX=	-core

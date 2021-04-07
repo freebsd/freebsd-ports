@@ -1,4 +1,3 @@
-
 PORTNAME=	netaddr
 PORTVERSION=	2.0.1
 CATEGORIES=	devel rubygems

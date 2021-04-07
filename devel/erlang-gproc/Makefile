@@ -1,4 +1,3 @@
-
 PORTNAME=	gproc
 PORTVERSION=	0.8.0
 CATEGORIES=	devel

@@ -1,4 +1,3 @@
-
 PORTNAME=	bsequencer
 DISTVERSION=	1.8.8
 CATEGORIES=	audio

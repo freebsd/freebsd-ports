@@ -1,4 +1,3 @@
-
 PORTNAME=	icc-profiles-basiccolor
 PORTVERSION=	1.2.0
 CATEGORIES=	graphics

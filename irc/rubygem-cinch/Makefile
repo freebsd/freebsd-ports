@@ -1,4 +1,3 @@
-
 PORTNAME=	cinch
 PORTVERSION=	2.3.4
 CATEGORIES=	irc rubygems

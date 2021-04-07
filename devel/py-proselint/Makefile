@@ -1,4 +1,3 @@
-
 PORTNAME=	proselint
 PORTVERSION=	0.10.2
 CATEGORIES=	devel python

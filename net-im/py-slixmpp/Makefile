@@ -1,4 +1,3 @@
-
 PORTNAME=	slixmpp
 DISTVERSION=	1.7.0
 CATEGORIES=	net-im python

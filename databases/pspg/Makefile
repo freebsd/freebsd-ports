@@ -1,4 +1,3 @@
-
 PORTNAME=	pspg
 DISTVERSION=	4.5.0
 CATEGORIES=	databases

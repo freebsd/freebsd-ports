@@ -1,4 +1,3 @@
-
 PORTNAME=	pydnstable
 PORTVERSION=	0.7.2
 CATEGORIES=	dns python

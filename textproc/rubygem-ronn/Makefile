@@ -1,4 +1,3 @@
-
 PORTNAME=	ronn
 PORTVERSION=	0.7.3
 CATEGORIES=	textproc rubygems

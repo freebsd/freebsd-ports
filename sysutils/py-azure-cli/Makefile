@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-cli
 PORTVERSION=	2.21.0
 CATEGORIES=	sysutils python

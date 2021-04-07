@@ -1,4 +1,3 @@
-
 PORTNAME=	objconv
 DISTVERSION=	2.52
 CATEGORIES=	devel

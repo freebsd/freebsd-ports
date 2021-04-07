@@ -1,4 +1,3 @@
-
 PORTNAME=	jsonpath-rw
 DISTVERSION=	1.4.0
 PORTREVISION=	1

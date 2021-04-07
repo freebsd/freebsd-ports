@@ -1,4 +1,3 @@
-
 PORTNAME=	PyUtilib
 DISTVERSION=	6.0.0
 CATEGORIES=	devel python

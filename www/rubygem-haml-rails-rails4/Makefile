@@ -1,4 +1,3 @@
-
 PORTNAME=	haml-rails
 PORTVERSION=	1.0.0
 CATEGORIES=	www rubygems

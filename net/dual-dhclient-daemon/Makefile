@@ -1,4 +1,3 @@
-
 PORTNAME=	dual-dhclient-daemon
 PORTVERSION=	0.1
 CATEGORIES=	net

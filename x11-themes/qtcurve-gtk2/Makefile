@@ -1,4 +1,3 @@
-
 PORTNAME=	qtcurve
 PORTREVISION=	0
 

@@ -1,4 +1,3 @@
-
 PORTNAME=	libva-intel-driver
 DISTVERSION=	2.4.1
 CATEGORIES=	multimedia

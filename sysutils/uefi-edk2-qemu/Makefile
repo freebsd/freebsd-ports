@@ -1,4 +1,3 @@
-
 PORTNAME=	uefi-edk2-qemu
 DISTVERSION=	g20191122
 CATEGORIES=	sysutils

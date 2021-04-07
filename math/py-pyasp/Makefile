@@ -1,4 +1,3 @@
-
 PORTNAME=	pyasp
 DISTVERSION=	1.4.4
 CATEGORIES=	math python

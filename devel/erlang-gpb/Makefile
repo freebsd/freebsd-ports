@@ -1,4 +1,3 @@
-
 PORTNAME=	gpb
 PORTVERSION=	4.3.3
 CATEGORIES=	devel

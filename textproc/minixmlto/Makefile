@@ -1,4 +1,3 @@
-
 PORTNAME=	minixmlto
 PORTVERSION=	0.0.3
 CATEGORIES=	textproc

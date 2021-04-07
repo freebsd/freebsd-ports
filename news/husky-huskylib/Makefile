@@ -1,4 +1,3 @@
-
 PORTNAME=	husky-huskylib
 
 COMMENT=	Husky generic FTN library

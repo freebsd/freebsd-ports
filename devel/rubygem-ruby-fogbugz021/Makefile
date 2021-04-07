@@ -1,4 +1,3 @@
-
 PORTNAME=	ruby-fogbugz
 PORTVERSION=	0.2.1
 CATEGORIES=	devel rubygems

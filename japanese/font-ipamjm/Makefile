@@ -1,4 +1,3 @@
-
 PORTNAME=	ipamjm
 PORTVERSION=	00601
 CATEGORIES=	japanese x11-fonts

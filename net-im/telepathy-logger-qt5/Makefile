@@ -1,4 +1,3 @@
-
 PORTNAME=	telepathy-logger-qt
 DISTVERSION=	17.09.0
 CATEGORIES=	net-im

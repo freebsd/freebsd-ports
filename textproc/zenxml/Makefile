@@ -1,4 +1,3 @@
-
 PORTNAME=	zenxml
 PORTVERSION=	2.4
 CATEGORIES=	textproc

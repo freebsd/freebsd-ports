@@ -1,4 +1,3 @@
-
 PORTNAME=	zipangu
 PORTVERSION=	0.2.3
 CATEGORIES=	japanese

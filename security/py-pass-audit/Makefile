@@ -1,4 +1,3 @@
-
 PORTNAME=	pass-audit
 PORTVERSION=	1.1
 CATEGORIES=	security

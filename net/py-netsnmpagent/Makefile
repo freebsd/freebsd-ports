@@ -1,4 +1,3 @@
-
 PORTNAME=	netsnmpagent
 PORTVERSION=	0.6.0
 CATEGORIES=	net python

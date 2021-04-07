@@ -1,4 +1,3 @@
-
 PORTNAME=	printsupport
 CATEGORIES=	print python
 

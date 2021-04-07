@@ -1,4 +1,3 @@
-
 PORTNAME=	django-prometheus
 PORTVERSION=	2.1.0
 CATEGORIES=	www python

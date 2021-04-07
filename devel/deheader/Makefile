@@ -1,4 +1,3 @@
-
 PORTNAME=	deheader
 PORTVERSION=	1.6
 CATEGORIES=	devel

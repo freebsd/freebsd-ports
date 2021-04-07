@@ -1,4 +1,3 @@
-
 PORTNAME=	squid
 PORTVERSION=	5.0.5
 CATEGORIES=	www

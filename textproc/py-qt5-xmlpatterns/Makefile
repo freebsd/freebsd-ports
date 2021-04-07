@@ -1,4 +1,3 @@
-
 PORTNAME=	xmlpatterns
 CATEGORIES=	textproc devel python
 

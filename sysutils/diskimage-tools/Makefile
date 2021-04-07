@@ -1,4 +1,3 @@
-
 PORTNAME=	diskimage-tools
 DISTVERSION=	0.2
 CATEGORIES=	sysutils

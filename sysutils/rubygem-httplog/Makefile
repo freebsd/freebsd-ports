@@ -1,4 +1,3 @@
-
 PORTNAME=	httplog
 PORTVERSION=	1.1.1
 CATEGORIES=	sysutils rubygems

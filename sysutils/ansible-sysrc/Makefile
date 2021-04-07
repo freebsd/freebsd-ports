@@ -1,4 +1,3 @@
-
 PORTNAME=	ansible-sysrc
 DISTVERSION=	0.1
 CATEGORIES=	sysutils

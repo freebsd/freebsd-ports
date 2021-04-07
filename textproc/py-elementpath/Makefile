@@ -1,4 +1,3 @@
-
 PORTNAME=	elementpath
 DISTVERSION=	2.1.4
 CATEGORIES=	textproc python

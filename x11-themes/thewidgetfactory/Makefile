@@ -1,4 +1,3 @@
-
 PORTNAME=	thewidgetfactory
 PORTVERSION=	0.2.1
 PORTREVISION=	7

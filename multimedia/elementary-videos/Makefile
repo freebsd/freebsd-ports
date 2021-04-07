@@ -1,4 +1,3 @@
-
 PORTNAME=	elementary-videos
 DISTVERSION=	2.7.2
 CATEGORIES=	multimedia

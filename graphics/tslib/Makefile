@@ -1,4 +1,3 @@
-
 PORTNAME=	tslib
 DISTVERSION=	1.22
 CATEGORIES=	graphics

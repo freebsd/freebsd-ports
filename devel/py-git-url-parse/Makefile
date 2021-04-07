@@ -1,4 +1,3 @@
-
 PORTNAME=	git-url-parse
 PORTVERSION=	1.2.2
 CATEGORIES=	devel python

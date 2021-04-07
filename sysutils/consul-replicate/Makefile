@@ -1,4 +1,3 @@
-
 PORTNAME=	consul-replicate
 PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=	v

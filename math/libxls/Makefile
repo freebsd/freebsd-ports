@@ -1,4 +1,3 @@
-
 PORTNAME=	libxls
 PORTVERSION=	1.6.2
 CATEGORIES=	math devel

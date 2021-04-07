@@ -1,4 +1,3 @@
-
 PORTNAME=	ncnn
 DISTVERSION=	20210322
 CATEGORIES=	misc # machine-learning

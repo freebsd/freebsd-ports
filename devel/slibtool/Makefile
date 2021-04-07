@@ -1,4 +1,3 @@
-
 PORTNAME=	slibtool
 PORTVERSION=	0.5.32
 CATEGORIES=	devel

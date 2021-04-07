@@ -1,4 +1,3 @@
-
 PORTNAME=	laternamagica
 PORTVERSION=	0.5
 PORTREVISION=	4

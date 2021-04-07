@@ -1,4 +1,3 @@
-
 CATEGORIES=	x11-fonts lang
 PKGNAMESUFFIX=	-libfontconfig
 

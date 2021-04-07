@@ -1,4 +1,3 @@
-
 PORTNAME=	virtualmin
 PORTVERSION=	6.15
 PORTEPOCH=	1

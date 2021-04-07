@@ -1,4 +1,3 @@
-
 PORTNAME=	terminaltables
 PORTVERSION=	3.1.0
 CATEGORIES=	textproc python

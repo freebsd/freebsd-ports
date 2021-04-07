@@ -1,4 +1,3 @@
-
 PORTNAME=	cups-filters
 PORTVERSION=	1.28.6
 PORTREVISION=	5

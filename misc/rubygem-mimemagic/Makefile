@@ -1,4 +1,3 @@
-
 PORTNAME=	mimemagic
 PORTVERSION=	0.3.10
 CATEGORIES=	misc rubygems

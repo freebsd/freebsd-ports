@@ -1,4 +1,3 @@
-
 PORTNAME=	GitPython
 DISTVERSION=	3.1.11
 CATEGORIES=	devel python

@@ -1,4 +1,3 @@
-
 PORTNAME=	ghcprofview
 PORTVERSION=	0.1.0.1
 CATEGORIES=	devel haskell

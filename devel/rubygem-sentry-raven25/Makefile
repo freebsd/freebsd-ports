@@ -1,4 +1,3 @@
-
 PORTNAME=	sentry-raven
 PORTVERSION=	2.5.3
 PORTREVISION=	1

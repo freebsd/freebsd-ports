@@ -1,4 +1,3 @@
-
 PORTNAME=	dsbmc-cli
 PORTVERSION=	0.4
 CATEGORIES=	sysutils

@@ -1,4 +1,3 @@
-
 PORTNAME=	DateTime-TimeZone
 PORTVERSION=	2.47
 PORTEPOCH=	1

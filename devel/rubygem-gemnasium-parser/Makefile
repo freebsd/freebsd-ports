@@ -1,4 +1,3 @@
-
 PORTNAME=	gemnasium-parser
 PORTVERSION=	0.1.9
 CATEGORIES=	devel rubygems

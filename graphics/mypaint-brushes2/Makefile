@@ -1,4 +1,3 @@
-
 PORTNAME=	mypaint-brushes
 PORTVERSION=	2.0.2
 DISTVERSIONPREFIX=v

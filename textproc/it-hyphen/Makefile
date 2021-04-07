@@ -1,4 +1,3 @@
-
 PORTNAME=	hyphen
 PORTVERSION=	2016.02.10
 CATEGORIES=	textproc

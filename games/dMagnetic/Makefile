@@ -1,4 +1,3 @@
-
 PORTNAME=	dMagnetic
 PORTVERSION=	0.30
 CATEGORIES=	games

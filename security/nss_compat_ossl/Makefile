@@ -1,4 +1,3 @@
-
 PORTNAME=	nss_compat_ossl
 PORTVERSION=	0.9.6
 PORTREVISION=	1

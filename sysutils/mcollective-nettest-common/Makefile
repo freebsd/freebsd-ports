@@ -1,4 +1,3 @@
-
 PORTNAME?=	mcollective-nettest-common
 PORTVERSION=	3.0.4
 CATEGORIES=	sysutils

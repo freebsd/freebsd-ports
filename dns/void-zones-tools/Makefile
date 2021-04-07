@@ -1,4 +1,3 @@
-
 PORTNAME=	void-zones-tools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.2

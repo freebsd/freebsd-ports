@@ -1,4 +1,3 @@
-
 PORTNAME=	jquerylib
 PORTVERSION=	0.1.3
 CATEGORIES=	www

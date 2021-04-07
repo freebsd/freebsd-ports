@@ -1,4 +1,3 @@
-
 PORTNAME=	breeze-gtk
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	x11-themes kde kde-plasma

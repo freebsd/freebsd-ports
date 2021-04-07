@@ -1,4 +1,3 @@
-
 PORTNAME=	pyblake2
 PORTVERSION=	1.1.2
 CATEGORIES=	security python

@@ -1,4 +1,3 @@
-
 PORTNAME=	opsin
 DISTVERSION=	3.0.20190223
 CATEGORIES=	science java

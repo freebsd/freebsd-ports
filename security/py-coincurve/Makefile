@@ -1,4 +1,3 @@
-
 PORTNAME=	coincurve
 DISTVERSION=	15.0.0
 CATEGORIES=	security python

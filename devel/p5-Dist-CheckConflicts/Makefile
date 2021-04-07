@@ -1,4 +1,3 @@
-
 PORTNAME=	Dist-CheckConflicts
 PORTVERSION=	0.11
 PORTREVISION=	1

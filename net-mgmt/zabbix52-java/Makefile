@@ -1,4 +1,3 @@
-
 PORTNAME=	zabbix52
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-java

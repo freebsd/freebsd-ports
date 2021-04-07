@@ -1,4 +1,3 @@
-
 PORTNAME=	agate-sql
 PORTVERSION=	0.5.6
 CATEGORIES=	databases textproc python

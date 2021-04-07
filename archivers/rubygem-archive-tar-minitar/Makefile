@@ -1,4 +1,3 @@
-
 PORTNAME=	archive-tar-minitar
 PORTVERSION=	0.8
 CATEGORIES=	archivers rubygems

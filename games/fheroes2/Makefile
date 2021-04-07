@@ -1,4 +1,3 @@
-
 PORTNAME=	fheroes2
 PORTVERSION=	0.9.2
 CATEGORIES=	games

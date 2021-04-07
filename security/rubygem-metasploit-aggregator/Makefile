@@ -1,4 +1,3 @@
-
 PORTNAME=	metasploit-aggregator
 PORTVERSION=	1.0.0
 CATEGORIES=	security rubygems

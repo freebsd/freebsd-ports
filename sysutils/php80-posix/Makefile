@@ -1,4 +1,3 @@
-
 CATEGORIES=	sysutils
 
 MASTERDIR=	${.CURDIR}/../../lang/php80

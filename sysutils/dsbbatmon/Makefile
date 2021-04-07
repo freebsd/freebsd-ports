@@ -1,4 +1,3 @@
-
 PORTNAME=	dsbbatmon
 DISTVERSION=	1.0.6
 CATEGORIES=	sysutils

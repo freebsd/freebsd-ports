@@ -1,4 +1,3 @@
-
 PORTNAME=	icingaweb2-module-reporting
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.2

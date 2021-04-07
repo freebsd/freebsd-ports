@@ -1,4 +1,3 @@
-
 PORTNAME=	intbitset
 DISTVERSION=	2.4.1
 CATEGORIES=	devel python

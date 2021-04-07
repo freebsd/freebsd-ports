@@ -1,4 +1,3 @@
-
 PORTNAME=	libfastcommon
 PORTVERSION=	1.0.43
 CATEGORIES=	devel

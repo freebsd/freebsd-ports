@@ -1,4 +1,3 @@
-
 PORTNAME=	inlinestyler
 PORTVERSION=	0.2.5
 CATEGORIES=	www python

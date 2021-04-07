@@ -1,4 +1,3 @@
-
 PORTNAME=	rainloop
 DISTVERSIONPREFIX=	community-
 PKGNAMESUFFIX=	-community${PHP_PKGNAMESUFFIX}

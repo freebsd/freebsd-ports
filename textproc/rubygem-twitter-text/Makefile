@@ -1,4 +1,3 @@
-
 PORTNAME=	twitter-text
 PORTVERSION=	3.0.0
 CATEGORIES=	textproc rubygems

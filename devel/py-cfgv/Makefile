@@ -1,4 +1,3 @@
-
 PORTNAME=	cfgv
 PORTVERSION=	3.2.0
 CATEGORIES=	devel

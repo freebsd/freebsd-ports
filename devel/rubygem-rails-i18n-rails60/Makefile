@@ -1,4 +1,3 @@
-
 PORTNAME=	rails-i18n
 PORTVERSION=	6.0.0
 CATEGORIES=	devel rubygems

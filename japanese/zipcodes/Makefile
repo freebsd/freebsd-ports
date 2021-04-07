@@ -1,4 +1,3 @@
-
 PORTNAME=	zipcodes
 PORTVERSION=	20200831
 CATEGORIES=	japanese

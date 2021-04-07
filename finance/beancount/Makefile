@@ -1,4 +1,3 @@
-
 PORTNAME=	beancount
 PORTVERSION=	2.3.3
 CATEGORIES=	finance

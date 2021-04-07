@@ -1,4 +1,3 @@
-
 PORTNAME=	authheaders
 DISTVERSION=	0.13.0
 CATEGORIES=	mail python

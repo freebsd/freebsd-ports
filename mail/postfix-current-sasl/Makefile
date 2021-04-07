@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX?=	-current-sasl
 
 MAINTAINER=	ohauer@FreeBSD.org

@@ -1,4 +1,3 @@
-
 PORTNAME=	engauge-digitizer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	12.2.2

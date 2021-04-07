@@ -1,4 +1,3 @@
-
 PORTNAME=	Flask-SAML
 PORTVERSION=	0.4.4
 CATEGORIES=	security www python

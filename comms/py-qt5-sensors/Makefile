@@ -1,4 +1,3 @@
-
 PORTNAME=	sensors
 CATEGORIES=	comms devel python
 

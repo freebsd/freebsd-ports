@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=		-activesync
 
 MAINTAINER=		acm@FreeBSD.org

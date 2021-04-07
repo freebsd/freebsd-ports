@@ -1,4 +1,3 @@
-
 PORTNAME=	rouge
 PORTVERSION=	3.25.0
 CATEGORIES=	textproc rubygems

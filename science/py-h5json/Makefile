@@ -1,4 +1,3 @@
-
 PORTNAME=	h5json
 DISTVERSION=	1.1.3
 CATEGORIES=	science python

@@ -1,4 +1,3 @@
-
 PORTNAME=	XML-SemanticDiff
 PORTVERSION=	1.0007
 CATEGORIES=	textproc perl5

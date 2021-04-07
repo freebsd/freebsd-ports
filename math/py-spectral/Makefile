@@ -1,4 +1,3 @@
-
 PORTNAME=	spectral
 DISTVERSION=	0.22.1
 CATEGORIES=	math

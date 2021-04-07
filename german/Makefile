@@ -1,4 +1,3 @@
-
     COMMENT = German support
 
     SUBDIR += BBBike

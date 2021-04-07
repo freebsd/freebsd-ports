@@ -1,4 +1,3 @@
-
 PORTNAME=	pysftp
 DISTVERSION=	0.2.9
 CATEGORIES=	ftp python

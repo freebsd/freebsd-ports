@@ -1,4 +1,3 @@
-
 PORTNAME=	libusrsctp
 DISTVERSION=	0.9.5.0
 CATEGORIES=	net devel

@@ -1,4 +1,3 @@
-
 PORTNAME=	swagger-spec-validator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.3

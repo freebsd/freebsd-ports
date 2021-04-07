@@ -1,4 +1,3 @@
-
 PORTNAME=	hackney
 PORTVERSION=	1.8.6
 CATEGORIES=	www

@@ -1,4 +1,3 @@
-
 PORTNAME=	TinyMCEPlugin
 SVNREV=		17303
 

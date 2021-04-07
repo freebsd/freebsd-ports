@@ -1,4 +1,3 @@
-
 PORTNAME=	random2
 DISTVERSION=	1.0.1
 CATEGORIES=	math python

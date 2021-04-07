@@ -1,4 +1,3 @@
-
 PORTNAME=	libmesode
 PORTVERSION=	0.10.1
 CATEGORIES=	net-im

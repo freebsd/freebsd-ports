@@ -1,4 +1,3 @@
-
 PORTNAME=	hgreviewboard
 PORTVERSION=	1.0
 PORTREVISION=	2

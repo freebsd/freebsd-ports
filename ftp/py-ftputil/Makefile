@@ -1,4 +1,3 @@
-
 PORTNAME=	ftputil
 PORTVERSION=	3.4
 CATEGORIES=	ftp python

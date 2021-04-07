@@ -1,4 +1,3 @@
-
 PORTNAME=	gperf
 PORTVERSION=	3.1
 CATEGORIES=	devel

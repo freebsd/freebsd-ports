@@ -1,4 +1,3 @@
-
 PORTNAME=	recommonmark
 PORTVERSION=	0.5.0
 PORTREVISION=	2

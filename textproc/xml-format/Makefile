@@ -1,4 +1,3 @@
-
 PORTNAME=	xml-format
 PORTVERSION=	0.2
 CATEGORIES=	textproc

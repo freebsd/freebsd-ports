@@ -1,4 +1,3 @@
-
 PORTNAME=	certbot-dns-linode
 PORTVERSION=	${ACME_VERSION}
 CATEGORIES=	security python

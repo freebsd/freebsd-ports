@@ -1,4 +1,3 @@
-
 PORTNAME=	collective.checkdocs
 PORTVERSION=	0.2
 CATEGORIES=	textproc devel python

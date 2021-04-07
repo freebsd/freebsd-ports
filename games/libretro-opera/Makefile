@@ -1,4 +1,3 @@
-
 PORTNAME=	libretro-opera
 PORTVERSION=	0.20210214
 CATEGORIES=	games

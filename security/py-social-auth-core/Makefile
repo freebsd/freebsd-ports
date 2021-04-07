@@ -1,4 +1,3 @@
-
 PORTNAME=	social-auth-core
 DISTVERSION=	3.3.3
 PORTREVISION=	1

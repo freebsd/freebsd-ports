@@ -1,4 +1,3 @@
-
 PORTNAME=	pynmsg
 PORTVERSION=	0.5.0
 CATEGORIES=	net python

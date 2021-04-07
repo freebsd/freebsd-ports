@@ -1,4 +1,3 @@
-
 PORTNAME=	covr
 DISTVERSION=	3.5.1
 CATEGORIES=	devel

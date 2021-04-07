@@ -1,4 +1,3 @@
-
 PORTNAME=	wlc
 PORTVERSION=	1.11
 CATEGORIES=	devel python

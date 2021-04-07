@@ -1,4 +1,3 @@
-
 PORTNAME=	husky-sqpack
 
 COMMENT=	Husky FTN msgbase packer

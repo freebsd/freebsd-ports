@@ -1,4 +1,3 @@
-
 PORTNAME=	scikit-fusion
 DISTVERSION=	0.2.1
 PORTREVISION=	2

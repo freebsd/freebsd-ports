@@ -1,4 +1,3 @@
-
 PORTNAME=	sphinxcontrib-htmlhelp
 PORTVERSION=	1.0.3
 CATEGORIES=	textproc

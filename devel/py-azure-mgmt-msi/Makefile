@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-msi
 PORTVERSION=	1.0.0
 CATEGORIES=	devel python

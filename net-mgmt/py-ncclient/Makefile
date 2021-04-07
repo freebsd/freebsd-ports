@@ -1,4 +1,3 @@
-
 PORTNAME=	ncclient
 DISTVERSION=	0.6.10
 CATEGORIES=	net-mgmt python

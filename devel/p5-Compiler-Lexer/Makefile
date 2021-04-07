@@ -1,4 +1,3 @@
-
 PORTNAME=	Compiler-Lexer
 PORTVERSION=	0.22
 CATEGORIES=	devel perl5

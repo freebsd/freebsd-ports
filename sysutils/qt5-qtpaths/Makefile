@@ -1,4 +1,3 @@
-
 PORTNAME=	qtpaths
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	sysutils

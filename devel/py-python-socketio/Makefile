@@ -1,4 +1,3 @@
-
 PORTNAME=	python-socketio
 PORTVERSION=	4.6.1
 PORTREVISION=	1

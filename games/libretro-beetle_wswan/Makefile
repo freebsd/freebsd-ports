@@ -1,4 +1,3 @@
-
 PORTNAME=	libretro-beetle_wswan
 PORTVERSION=	0.20200504
 CATEGORIES=	games

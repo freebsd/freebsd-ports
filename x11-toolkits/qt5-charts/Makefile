@@ -1,4 +1,3 @@
-
 PORTNAME=	charts
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	x11-toolkits

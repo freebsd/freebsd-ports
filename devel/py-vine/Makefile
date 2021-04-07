@@ -1,4 +1,3 @@
-
 PORTNAME=	vine
 PORTVERSION=	1.3.0
 CATEGORIES=	devel python

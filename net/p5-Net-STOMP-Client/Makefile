@@ -1,4 +1,3 @@
-
 PORTNAME=	Net-STOMP-Client
 PORTVERSION=	2.3
 CATEGORIES=	net perl5

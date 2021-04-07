@@ -1,4 +1,3 @@
-
 PORTNAME=	libtorrent
 PORTVERSION=	0.13.8
 CATEGORIES=	net-p2p

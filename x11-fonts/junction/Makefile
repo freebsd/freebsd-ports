@@ -1,4 +1,3 @@
-
 PORTNAME=	junction
 PORTVERSION=	20140329	# GH_TAGNAME's commit date.
 PORTREVISION=	1

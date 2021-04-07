@@ -1,4 +1,3 @@
-
 PORTNAME=	wallutils
 DISTVERSION=	5.9.0
 CATEGORIES=	x11

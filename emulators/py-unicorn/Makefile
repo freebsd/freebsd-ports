@@ -1,4 +1,3 @@
-
 PORTNAME=	unicorn
 DISTVERSION=	1.0.2
 CATEGORIES=	emulators python

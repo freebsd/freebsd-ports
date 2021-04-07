@@ -1,4 +1,3 @@
-
 PORTNAME=	khotkeys
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	devel kde kde-plasma

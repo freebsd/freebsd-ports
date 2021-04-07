@@ -1,4 +1,3 @@
-
 PORTNAME=	readwritesettings
 PORTVERSION=	3.0.1
 CATEGORIES=	devel rubygems

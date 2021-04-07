@@ -1,4 +1,3 @@
-
 PORTNAME=	hkdf
 PORTVERSION=	0.3.0
 CATEGORIES=	security rubygems

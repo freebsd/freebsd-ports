@@ -1,4 +1,3 @@
-
 PORTNAME=	xf86-video-sunffb
 PORTVERSION=	1.2.2
 PORTREVISION=	11

@@ -1,4 +1,3 @@
-
 PORTNAME=	pyjq
 PORTVERSION=	2.4.0
 CATEGORIES=	devel python

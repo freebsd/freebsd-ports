@@ -1,4 +1,3 @@
-
 PORTNAME=	MooseX-LazyRequire
 PORTVERSION=	0.11
 CATEGORIES=	devel perl5

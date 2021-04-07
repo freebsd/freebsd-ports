@@ -1,4 +1,3 @@
-
 PORTNAME=	innoextract
 PORTVERSION=	1.9
 CATEGORIES=	archivers

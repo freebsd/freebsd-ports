@@ -1,4 +1,3 @@
-
 PORTNAME=	loccount
 DISTVERSION=	2.11
 CATEGORIES=	devel

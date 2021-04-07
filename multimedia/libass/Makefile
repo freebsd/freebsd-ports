@@ -1,4 +1,3 @@
-
 PORTNAME=	libass
 DISTVERSION=	0.15.0
 CATEGORIES=	multimedia devel

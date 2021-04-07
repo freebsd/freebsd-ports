@@ -1,4 +1,3 @@
-
 PORTNAME=	webp-pixbuf-loader
 DISTVERSION=	0.0.1-5
 DISTVERSIONSUFFIX=	-g9a53ad7

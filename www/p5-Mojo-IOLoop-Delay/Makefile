@@ -1,4 +1,3 @@
-
 PORTNAME=	Mojo-IOLoop-Delay
 PORTVERSION=	8.76
 CATEGORIES=	www perl5

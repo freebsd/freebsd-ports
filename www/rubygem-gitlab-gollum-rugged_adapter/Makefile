@@ -1,4 +1,3 @@
-
 PORTNAME=	gitlab-gollum-rugged_adapter
 PORTVERSION=	0.4.4.3.gitlab.1
 PORTREVISION=	0

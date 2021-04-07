@@ -1,4 +1,3 @@
-
 PORTNAME=	Date_Holidays_Japan
 PORTVERSION=	0.1.3
 CATEGORIES=	devel www pear

@@ -1,4 +1,3 @@
-
     COMMENT = X11 drivers
 
     SUBDIR += xf86-input-egalax

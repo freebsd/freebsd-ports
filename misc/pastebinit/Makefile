@@ -1,4 +1,3 @@
-
 PORTNAME=	pastebinit
 PORTVERSION=	1.5.1
 CATEGORIES=	misc python

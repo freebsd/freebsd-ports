@@ -1,4 +1,3 @@
-
 PORTNAME=	turnserver
 PORTVERSION=	4.5.2
 CATEGORIES=	net

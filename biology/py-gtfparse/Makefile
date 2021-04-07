@@ -1,4 +1,3 @@
-
 PORTNAME=	gtfparse
 DISTVERSION=	1.2.1
 CATEGORIES=	biology python

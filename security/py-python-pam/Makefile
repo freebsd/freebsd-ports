@@ -1,4 +1,3 @@
-
 PORTNAME=	python-pam
 DISTVERSION=	1.8.4
 CATEGORIES=	security python

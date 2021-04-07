@@ -1,4 +1,3 @@
-
 PORTNAME=	Thread-Pool-Simple
 PORTVERSION=	0.25
 PORTREVISION=	1

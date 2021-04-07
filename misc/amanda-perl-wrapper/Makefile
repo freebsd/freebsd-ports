@@ -1,4 +1,3 @@
-
 PORTNAME=	amanda-perl-wrapper
 PORTVERSION=	1.01
 CATEGORIES=	misc perl5

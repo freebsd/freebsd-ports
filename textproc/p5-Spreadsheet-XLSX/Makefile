@@ -1,4 +1,3 @@
-
 PORTNAME=	Spreadsheet-XLSX
 PORTVERSION=	0.15
 CATEGORIES=	textproc perl5

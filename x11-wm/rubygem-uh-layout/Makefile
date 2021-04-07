@@ -1,4 +1,3 @@
-
 PORTNAME=	uh-layout
 PORTVERSION=	0.5.2
 CATEGORIES=	x11-wm rubygems

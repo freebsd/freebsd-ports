@@ -1,4 +1,3 @@
-
 PORTNAME=	ctypescrypto
 DISTVERSION=	0.5
 CATEGORIES=	security python

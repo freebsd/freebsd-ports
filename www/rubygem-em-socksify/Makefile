@@ -1,4 +1,3 @@
-
 PORTNAME=	em-socksify
 PORTVERSION=	0.3.2
 CATEGORIES=	www rubygems

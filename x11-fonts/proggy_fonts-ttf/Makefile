@@ -1,4 +1,3 @@
-
 PORTNAME=	proggy_fonts-ttf
 PORTVERSION=	1.0
 PORTREVISION=	3

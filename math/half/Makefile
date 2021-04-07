@@ -1,4 +1,3 @@
-
 PORTNAME=	half
 DISTVERSION=	2.1.0
 CATEGORIES=	math

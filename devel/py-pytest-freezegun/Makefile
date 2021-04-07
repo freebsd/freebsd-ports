@@ -1,4 +1,3 @@
-
 PORTNAME=	pytest-freezegun
 PORTVERSION=	0.4.2
 CATEGORIES=	devel python

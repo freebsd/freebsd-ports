@@ -1,4 +1,3 @@
-
 PORTNAME=	acfgfs
 DISTVERSION=	0.6.0.1
 CATEGORIES=	sysutils

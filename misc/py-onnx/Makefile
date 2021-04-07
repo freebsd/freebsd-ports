@@ -1,4 +1,3 @@
-
 PORTNAME=	onnx
 DISTVERSION=	1.8.1
 CATEGORIES=	misc # machine-learning

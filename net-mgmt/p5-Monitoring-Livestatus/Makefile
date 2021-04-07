@@ -1,4 +1,3 @@
-
 PORTNAME=	Monitoring-Livestatus
 PORTVERSION=	0.84
 CATEGORIES=	net-mgmt perl5

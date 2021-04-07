@@ -1,4 +1,3 @@
-
 PORTNAME=	libyajl2
 PORTVERSION=	1.2.0
 CATEGORIES=	devel rubygems

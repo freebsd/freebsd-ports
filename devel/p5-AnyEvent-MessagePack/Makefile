@@ -1,4 +1,3 @@
-
 PORTNAME=	AnyEvent-MessagePack
 PORTVERSION=	0.19
 PORTREVISION=	1

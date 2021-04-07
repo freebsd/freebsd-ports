@@ -1,4 +1,3 @@
-
 PORTNAME=	homebank
 PORTVERSION=	5.5
 CATEGORIES=	finance

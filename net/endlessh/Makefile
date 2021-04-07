@@ -1,4 +1,3 @@
-
 PORTNAME=	endlessh
 PORTVERSION=	1.1
 CATEGORIES=	net

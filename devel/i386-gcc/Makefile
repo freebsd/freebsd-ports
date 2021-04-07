@@ -1,4 +1,3 @@
-
 PKGNAMEPREFIX=	i386-
 PLIST=	${.CURDIR}/pkg-plist
 

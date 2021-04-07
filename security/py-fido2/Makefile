@@ -1,4 +1,3 @@
-
 PORTNAME=	fido2
 PORTVERSION=	0.9.1
 CATEGORIES=	security python

@@ -1,4 +1,3 @@
-
 PORTNAME=	msoffcrypto-tool
 PORTVERSION=	4.11.0
 CATEGORIES=	security python

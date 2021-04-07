@@ -1,4 +1,3 @@
-
 PORTNAME=	bcel
 PORTVERSION=	6.4.1
 CATEGORIES=	java devel

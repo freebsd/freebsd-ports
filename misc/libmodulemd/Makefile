@@ -1,4 +1,3 @@
-
 PORTNAME=	libmodulemd
 DISTVERSION=	2.12.0
 CATEGORIES=	misc

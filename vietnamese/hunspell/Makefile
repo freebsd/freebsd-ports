@@ -1,4 +1,3 @@
-
 PORTNAME=	hunspell
 PORTVERSION=	20141110
 CATEGORIES=	vietnamese textproc

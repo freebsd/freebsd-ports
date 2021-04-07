@@ -1,4 +1,3 @@
-
 PORTNAME=	sowon
 DISTVERSION=	g20201203
 CATEGORIES=	deskutils

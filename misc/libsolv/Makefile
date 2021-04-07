@@ -1,4 +1,3 @@
-
 PORTNAME=	libsolv
 DISTVERSION=	0.7.17
 CATEGORIES=	misc

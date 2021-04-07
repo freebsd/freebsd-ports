@@ -1,4 +1,3 @@
-
 PORTNAME=	Business-ISMN
 PORTVERSION=	1.13
 CATEGORIES=	misc perl5

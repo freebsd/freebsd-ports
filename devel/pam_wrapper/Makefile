@@ -1,4 +1,3 @@
-
 PORTNAME=		pam_wrapper
 PORTVERSION=		1.0.6
 PORTREVISION=		2

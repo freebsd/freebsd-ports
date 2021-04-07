@@ -1,4 +1,3 @@
-
 PORTNAME=	google-compute-engine
 DISTVERSION=	2.8.16
 CATEGORIES=	sysutils python

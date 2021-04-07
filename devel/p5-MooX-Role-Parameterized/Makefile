@@ -1,4 +1,3 @@
-
 PORTNAME=	MooX-Role-Parameterized
 PORTVERSION=	0.082
 CATEGORIES=	devel perl5

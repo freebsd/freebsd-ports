@@ -1,4 +1,3 @@
-
 PORTNAME=	avidemux
 PORTVERSION=	${AVIDEMUX_VERSION}
 CATEGORIES=	multimedia

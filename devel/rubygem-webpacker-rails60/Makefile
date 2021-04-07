@@ -1,4 +1,3 @@
-
 PORTNAME=	webpacker
 PORTVERSION=	5.2.1
 CATEGORIES=	devel rubygems

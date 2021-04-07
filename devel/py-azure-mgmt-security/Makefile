@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-security
 PORTVERSION=	0.6.0
 CATEGORIES=	devel python

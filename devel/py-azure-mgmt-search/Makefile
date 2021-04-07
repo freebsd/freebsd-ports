@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-search
 PORTVERSION=	8.0.0
 CATEGORIES=	devel python

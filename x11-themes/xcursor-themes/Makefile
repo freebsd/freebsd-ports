@@ -1,4 +1,3 @@
-
 PORTNAME=	xcursor-themes
 PORTVERSION=	1.0.6
 CATEGORIES=	x11-themes

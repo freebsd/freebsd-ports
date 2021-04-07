@@ -1,4 +1,3 @@
-
 PORTNAME=	xfce4-places-plugin
 PORTVERSION=	1.8.1
 PORTREVISION=	1

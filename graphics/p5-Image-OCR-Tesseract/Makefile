@@ -1,4 +1,3 @@
-
 PORTNAME=	Image-OCR-Tesseract
 PORTVERSION=	1.26
 CATEGORIES=	graphics perl5

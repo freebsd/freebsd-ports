@@ -1,4 +1,3 @@
-
     COMMENT = Russian support
 
     SUBDIR += artwiz-ru

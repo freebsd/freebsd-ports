@@ -1,4 +1,3 @@
-
 PORTNAME=	usermin
 PORTVERSION=	1.820
 CATEGORIES=	sysutils

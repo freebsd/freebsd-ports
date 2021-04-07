@@ -1,4 +1,3 @@
-
 PORTNAME=	mcollective-nettest-agent
 
 COMMENT=	MCollective agent to test ICMP and TCP connectivity

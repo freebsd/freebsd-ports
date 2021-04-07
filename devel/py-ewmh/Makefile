@@ -1,4 +1,3 @@
-
 PORTNAME=	ewmh
 DISTVERSION=	0.1.6
 CATEGORIES=	devel python

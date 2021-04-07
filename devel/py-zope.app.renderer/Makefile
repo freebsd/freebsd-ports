@@ -1,4 +1,3 @@
-
 PORTNAME=	zope.app.renderer
 PORTVERSION=	3.5.1
 PORTREVISION=	1

@@ -1,4 +1,3 @@
-
 PORTNAME=	kde-thumbnailer-chm
 PORTVERSION=	0.2.1
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-
 PORTNAME=	Class-C3
 PORTVERSION=	0.35
 CATEGORIES=	devel perl5

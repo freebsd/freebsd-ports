@@ -1,4 +1,3 @@
-
 PORTNAME=	Log-Any-Adapter-Dispatch
 PORTVERSION=	0.06
 PORTREVISION=	2

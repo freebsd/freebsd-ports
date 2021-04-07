@@ -1,4 +1,3 @@
-
 PORTNAME=	certbot-dns-rfc2136
 PORTVERSION=	${ACME_VERSION}
 CATEGORIES=	security python

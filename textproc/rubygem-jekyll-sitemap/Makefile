@@ -1,4 +1,3 @@
-
 PORTNAME=	jekyll-sitemap
 PORTVERSION=	1.4.0
 CATEGORIES=	textproc rubygems

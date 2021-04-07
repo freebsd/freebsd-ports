@@ -1,4 +1,3 @@
-
 PORTNAME=	metasploit-concern
 PORTVERSION=	3.0.1
 CATEGORIES=	security rubygems

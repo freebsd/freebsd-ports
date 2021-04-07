@@ -1,4 +1,3 @@
-
 PORTNAME=	rails_stdout_logging
 PORTVERSION=	0.0.5
 CATEGORIES=	www rubygems

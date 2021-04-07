@@ -1,4 +1,3 @@
-
 PORTNAME=	networkauth
 PORTVERSION=	${PYQT5_VERSION}
 CATEGORIES=	net devel python

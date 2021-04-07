@@ -1,4 +1,3 @@
-
 PORTNAME=	zope.traversing
 PORTVERSION=	3.14.0
 PORTREVISION=	1

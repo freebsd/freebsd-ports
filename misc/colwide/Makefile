@@ -1,4 +1,3 @@
-
 PORTNAME=	colwide
 PORTVERSION=	0.01
 CATEGORIES=	misc perl5

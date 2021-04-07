@@ -1,4 +1,3 @@
-
 PORTNAME=	designerplugin
 CATEGORIES=	devel python
 

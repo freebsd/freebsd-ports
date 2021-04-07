@@ -1,4 +1,3 @@
-
 PORTNAME=	xlennart
 PORTVERSION=	1.1.1
 CATEGORIES=	games

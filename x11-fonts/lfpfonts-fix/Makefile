@@ -1,4 +1,3 @@
-
 PORTNAME=	lfpfonts-fix
 PORTVERSION=	0.82
 PORTREVISION=	5

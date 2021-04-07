@@ -1,4 +1,3 @@
-
 PORTNAME=	create-rb-port
 PORTVERSION=	0.0.3
 CATEGORIES=	ports-mgmt

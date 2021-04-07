@@ -1,4 +1,3 @@
-
 PORTNAME=	algebrick
 PORTVERSION=	0.7.5
 CATEGORIES=	devel rubygems

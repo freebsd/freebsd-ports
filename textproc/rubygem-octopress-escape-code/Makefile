@@ -1,4 +1,3 @@
-
 PORTNAME=	octopress-escape-code
 PORTVERSION=	2.1.1
 PORTREVISION=	1

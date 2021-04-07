@@ -1,4 +1,3 @@
-
 PORTNAME=	libkipi
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	graphics kde kde-applications

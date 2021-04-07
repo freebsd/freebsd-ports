@@ -1,4 +1,3 @@
-
 PORTNAME=	MouseX-AttributeHelpers
 PORTVERSION=	0.07
 PORTREVISION=	2

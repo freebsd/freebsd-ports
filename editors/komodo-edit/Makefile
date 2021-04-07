@@ -1,4 +1,3 @@
-
 PORTNAME=	komodo-edit
 DISTVERSION=	11.0.2
 CATEGORIES=	editors

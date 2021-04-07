@@ -1,4 +1,3 @@
-
 PORTNAME=	libepoxy
 PORTVERSION=	1.5.4
 CATEGORIES=	graphics

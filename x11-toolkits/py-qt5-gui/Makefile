@@ -1,4 +1,3 @@
-
 PORTNAME=	gui
 CATEGORIES=	x11-toolkits devel python
 

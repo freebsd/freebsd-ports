@@ -1,4 +1,3 @@
-
 PORTNAME=	locust
 PORTVERSION=	0.11.0
 CATEGORIES=	benchmarks www python

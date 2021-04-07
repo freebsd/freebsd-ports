@@ -1,4 +1,3 @@
-
 PORTNAME=	graphicaleffects
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	graphics

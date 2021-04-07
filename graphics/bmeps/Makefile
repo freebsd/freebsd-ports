@@ -1,4 +1,3 @@
-
 PORTNAME=	bmpp
 DISTVERSION=	4.30.3
 CATEGORIES=	graphics perl5

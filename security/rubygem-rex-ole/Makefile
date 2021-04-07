@@ -1,4 +1,3 @@
-
 PORTNAME=	rex-ole
 PORTVERSION=	0.1.7
 CATEGORIES=	security rubygems

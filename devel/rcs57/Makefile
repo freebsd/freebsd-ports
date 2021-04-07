@@ -1,4 +1,3 @@
-
 PORTNAME=	rcs
 PORTVERSION=	5.7
 CATEGORIES=	devel

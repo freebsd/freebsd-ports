@@ -1,4 +1,3 @@
-
 PORTNAME=	rollbar
 PORTVERSION=	0.15.1
 CATEGORIES=	www python

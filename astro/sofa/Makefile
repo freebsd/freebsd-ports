@@ -1,4 +1,3 @@
-
 PORTNAME=	sofa
 DISTVERSION=	20210125 # also called Release 17a
 CATEGORIES=	astro devel

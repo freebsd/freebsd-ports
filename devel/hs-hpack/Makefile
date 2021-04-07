@@ -1,4 +1,3 @@
-
 PORTNAME=	hpack
 PORTVERSION=	0.34.4
 CATEGORIES=	devel haskell

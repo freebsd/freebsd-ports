@@ -1,4 +1,3 @@
-
 PORTNAME=	xf86-input-libinput
 PORTVERSION=	0.30.0
 PORTREVISION=	1

@@ -1,4 +1,3 @@
-
 PORTNAME=	cryptominisat
 DISTVERSION=	5.8.0
 CATEGORIES=	math

@@ -1,4 +1,3 @@
-
     COMMENT = Network news
 
     SUBDIR += atp

@@ -1,4 +1,3 @@
-
 PORTNAME=	enum-compat
 PORTVERSION=	0.0.3
 CATEGORIES=	devel python

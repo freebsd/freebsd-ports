@@ -1,4 +1,3 @@
-
 PORTNAME=	oysttyer
 PORTVERSION=	2.10.0
 CATEGORIES=	net-im

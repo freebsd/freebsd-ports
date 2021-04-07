@@ -1,4 +1,3 @@
-
 PORTNAME=	htmlcxx
 PORTVERSION=	0.87
 CATEGORIES=	www textproc

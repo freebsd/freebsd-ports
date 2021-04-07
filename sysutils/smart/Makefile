@@ -1,4 +1,3 @@
-
 PORTNAME=	smart
 DISTVERSION=	0.0.11
 CATEGORIES=	sysutils

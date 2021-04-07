@@ -1,4 +1,3 @@
-
 CATEGORIES=	textproc
 
 MASTERDIR=	${.CURDIR}/../../lang/php74

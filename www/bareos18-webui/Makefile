@@ -1,4 +1,3 @@
-
 PORTNAME=       bareos
 DISTVERSIONPREFIX=      Release/
 DISTVERSION=    18.2.10

@@ -1,4 +1,3 @@
-
 PORTNAME=	dbussupport
 CATEGORIES=	devel python
 

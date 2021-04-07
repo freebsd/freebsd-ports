@@ -1,4 +1,3 @@
-
 CATEGORIES=	converters lang
 PKGNAMESUFFIX=	-iconvenc
 

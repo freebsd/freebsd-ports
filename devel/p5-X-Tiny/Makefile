@@ -1,4 +1,3 @@
-
 PORTNAME=	X-Tiny
 PORTVERSION=	0.20
 CATEGORIES=	devel perl5

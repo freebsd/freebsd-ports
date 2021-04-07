@@ -1,4 +1,3 @@
-
     COMMENT = Domain Name Service tools
 
     SUBDIR += adns

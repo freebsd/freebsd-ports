@@ -1,4 +1,3 @@
-
 PORTNAME=	rex
 DISTVERSION=	1.2.0
 CATEGORIES=	textproc

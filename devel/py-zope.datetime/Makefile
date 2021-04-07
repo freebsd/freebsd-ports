@@ -1,4 +1,3 @@
-
 PORTNAME=	zope.datetime
 PORTVERSION=	3.4.1
 PORTREVISION=	1

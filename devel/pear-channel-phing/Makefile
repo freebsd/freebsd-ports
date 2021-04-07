@@ -1,4 +1,3 @@
-
 PORTNAME=	phing
 PORTVERSION=	20120813
 CATEGORIES=	devel www pear

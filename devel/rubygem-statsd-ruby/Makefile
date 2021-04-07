@@ -1,4 +1,3 @@
-
 PORTNAME=	statsd-ruby
 PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems

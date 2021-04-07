@@ -1,4 +1,3 @@
-
 PORTNAME=	geany-plugin-spellcheck
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel

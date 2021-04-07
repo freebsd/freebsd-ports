@@ -1,4 +1,3 @@
-
 PORTNAME=	PatternSkin
 SVNREV=		17425
 

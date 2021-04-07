@@ -1,4 +1,3 @@
-
 MASTERDIR=	${.CURDIR}/../litecoin
 PKGNAMESUFFIX=	-utils
 

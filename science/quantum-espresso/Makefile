@@ -1,4 +1,3 @@
-
 PORTNAME=	quantum-espresso
 DISTVERSIONPREFIX=	qe-
 DISTVERSION=	6.7.0

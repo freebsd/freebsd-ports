@@ -1,4 +1,3 @@
-
 PORTNAME=	kio-extras
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	devel kde kde-applications # kde kde-applications-plasma

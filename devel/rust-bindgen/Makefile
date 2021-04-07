@@ -1,4 +1,3 @@
-
 PORTNAME=	bindgen
 DISTVERSION=	0.58.1
 CATEGORIES=	devel

@@ -1,4 +1,3 @@
-
 PORTNAME=	TWikiUserMappingContrib
 SVNREV=		17569
 

@@ -1,4 +1,3 @@
-
 PORTNAME=	gcompris-qt
 DISTVERSION=	1.0
 CATEGORIES=	games education kde

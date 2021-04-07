@@ -1,4 +1,3 @@
-
 PORTNAME=	gvm
 PORTVERSION=	20.8.1
 CATEGORIES=	security

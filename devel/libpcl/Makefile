@@ -1,4 +1,3 @@
-
 PORTNAME=	libpcl
 DISTVERSION=	1.12
 CATEGORIES=	devel

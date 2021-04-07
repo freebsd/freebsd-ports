@@ -1,4 +1,3 @@
-
 PORTNAME=	geany-plugin-numberedbookmarks
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel

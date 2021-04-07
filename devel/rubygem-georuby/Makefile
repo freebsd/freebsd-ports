@@ -1,4 +1,3 @@
-
 PORTNAME=	georuby
 PORTVERSION=	2.5.2
 CATEGORIES=	devel rubygems

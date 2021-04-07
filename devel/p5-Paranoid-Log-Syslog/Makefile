@@ -1,4 +1,3 @@
-
 PORTNAME=	Paranoid-Log-Syslog
 PORTVERSION=	2.00
 CATEGORIES=	devel perl5

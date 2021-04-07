@@ -1,4 +1,3 @@
-
 PORTNAME=	jmespath
 PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems

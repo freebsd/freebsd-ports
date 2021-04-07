@@ -1,4 +1,3 @@
-
 PORTNAME=	stmp
 PORTVERSION=	0.0.2
 CATEGORIES=	audio

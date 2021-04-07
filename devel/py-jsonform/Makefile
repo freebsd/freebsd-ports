@@ -1,4 +1,3 @@
-
 PORTNAME=	jsonform
 PORTVERSION=	0.0.2
 CATEGORIES=	devel python

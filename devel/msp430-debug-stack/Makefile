@@ -1,4 +1,3 @@
-
 PORTNAME=	msp430-debug-stack
 PORTVERSION=	3.15.0.1
 #PORTREVISION=	0

@@ -1,4 +1,3 @@
-
 PORTNAME=	Net-LDAP-FilterBuilder
 PORTVERSION=	1.200002
 CATEGORIES=	net perl5

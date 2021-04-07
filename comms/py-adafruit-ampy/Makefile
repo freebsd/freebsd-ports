@@ -1,4 +1,3 @@
-
 PORTNAME=	adafruit-ampy
 PORTVERSION=	1.0.5
 PORTREVISION=	2

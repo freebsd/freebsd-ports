@@ -1,4 +1,3 @@
-
 PORTNAME=	Automat
 PORTVERSION=	20.2.0
 CATEGORIES=	devel python

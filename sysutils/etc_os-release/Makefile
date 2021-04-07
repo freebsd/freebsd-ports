@@ -1,4 +1,3 @@
-
 PORTNAME=	etc_os-release
 PORTVERSION=	0.1
 PORTREVISION=	3

@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=	-utils
 PORTREVISION=	2
 

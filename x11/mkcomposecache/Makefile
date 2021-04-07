@@ -1,4 +1,3 @@
-
 PORTNAME=	mkcomposecache
 PORTVERSION=	1.2.1
 CATEGORIES=	x11

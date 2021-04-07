@@ -1,4 +1,3 @@
-
 PORTNAME=	tzlocal
 DISTVERSION=	1.5.1
 CATEGORIES=	devel python

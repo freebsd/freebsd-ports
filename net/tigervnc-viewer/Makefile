@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=	-viewer
 CATEGORIES=	net
 

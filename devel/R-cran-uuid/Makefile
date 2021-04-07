@@ -1,4 +1,3 @@
-
 PORTNAME=	uuid
 DISTVERSION=	0.1-4
 CATEGORIES=	devel

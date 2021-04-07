@@ -1,4 +1,3 @@
-
 PORTNAME=	Plack-Middleware-IEnosniff
 PORTVERSION=	0.02
 PORTREVISION=	1

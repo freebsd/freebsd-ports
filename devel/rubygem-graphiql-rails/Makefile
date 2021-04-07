@@ -1,4 +1,3 @@
-
 PORTNAME=	graphiql-rails
 PORTVERSION=	1.4.11
 PORTREVISION=	3

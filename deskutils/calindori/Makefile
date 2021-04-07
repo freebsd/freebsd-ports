@@ -1,4 +1,3 @@
-
 PORTNAME=	calindori
 DISTVERSION=	1.4
 CATEGORIES=	deskutils

@@ -1,4 +1,3 @@
-
 CATEGORIES=	textproc lang
 PKGNAMESUFFIX=	-aspell
 

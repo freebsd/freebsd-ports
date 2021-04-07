@@ -1,4 +1,3 @@
-
 PORTNAME=	fldigi
 PORTVERSION=	4.1.18
 CATEGORIES=	comms hamradio

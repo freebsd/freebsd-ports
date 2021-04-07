@@ -1,4 +1,3 @@
-
 PORTNAME=	keycloak
 PORTVERSION=	12.0.4
 CATEGORIES=	net java

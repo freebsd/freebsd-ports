@@ -1,4 +1,3 @@
-
 PORTNAME=	egl-wayland
 DISTVERSION=	1.1.6
 CATEGORIES=	graphics

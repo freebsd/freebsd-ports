@@ -1,4 +1,3 @@
-
 PORTNAME=	libretro-stella2014
 PORTVERSION=	0.20210214
 CATEGORIES=	games

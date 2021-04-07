@@ -1,4 +1,3 @@
-
 PORTNAME=	trivial-features
 PORTVERSION=	2010.01.16
 PORTREVISION=	1

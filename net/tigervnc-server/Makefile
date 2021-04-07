@@ -1,4 +1,3 @@
-
 PORTREVISION=	1
 PKGNAMESUFFIX=	-server
 CATEGORIES=	net x11-servers

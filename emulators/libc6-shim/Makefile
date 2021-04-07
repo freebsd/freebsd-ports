@@ -1,4 +1,3 @@
-
 PORTNAME=	libc6-shim
 DISTVERSION=	20210109
 CATEGORIES=	emulators

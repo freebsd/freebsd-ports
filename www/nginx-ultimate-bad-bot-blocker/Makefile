@@ -1,4 +1,3 @@
-
 PORTNAME=		nginx-ultimate-bad-bot-blocker
 DISTVERSIONPREFIX=	V
 # The config files are updated frequently (not installed by this port,

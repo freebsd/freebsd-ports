@@ -1,4 +1,3 @@
-
 PORTNAME?=	autoconf-wrapper
 PORTVERSION=	20131203
 CATEGORIES=	devel

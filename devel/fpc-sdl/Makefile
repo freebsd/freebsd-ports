@@ -1,4 +1,3 @@
-
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-sdl
 

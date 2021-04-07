@@ -1,4 +1,3 @@
-
 PORTNAME=	mailsuite
 PORTVERSION=	1.6.1
 CATEGORIES=	mail python

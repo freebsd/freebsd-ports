@@ -1,4 +1,3 @@
-
 PORTNAME=	httpbin
 PORTVERSION=	0.7.0
 CATEGORIES=	www python

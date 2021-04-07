@@ -1,4 +1,3 @@
-
 PORTNAME=	Plack-Middleware-MemoryUsage
 PORTVERSION=	0.03
 PORTREVISION=	1

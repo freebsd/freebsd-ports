@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=	-arduino
 MASTERDIR=	${.CURDIR}/../libastylej
 

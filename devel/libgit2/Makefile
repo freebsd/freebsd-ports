@@ -1,4 +1,3 @@
-
 # Also update devel/libgit2-glib, devel/rubygem-rugged, devel/py-pygit2
 # Make sure you bump revision of depending ports, if SONAME changes
 # objdump -p libgit2.so |grep SONAME

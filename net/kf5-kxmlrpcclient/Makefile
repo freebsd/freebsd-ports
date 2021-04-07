@@ -1,4 +1,3 @@
-
 PORTNAME=	kxmlrpcclient
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	net kde kde-frameworks

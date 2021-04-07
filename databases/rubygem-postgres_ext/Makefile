@@ -1,4 +1,3 @@
-
 PORTNAME=	postgres_ext
 PORTVERSION=	3.0.1
 CATEGORIES=	databases rubygems

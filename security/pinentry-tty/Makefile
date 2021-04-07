@@ -1,4 +1,3 @@
-
 PORTNAME=	pinentry
 PORTREVISION=	0
 

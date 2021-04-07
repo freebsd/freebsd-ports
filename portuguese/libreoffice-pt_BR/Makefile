@@ -1,4 +1,3 @@
-
 CATEGORIES=	portuguese
 LO_I18N=	pt_BR
 LO_HAS_HELPPACK=	yes

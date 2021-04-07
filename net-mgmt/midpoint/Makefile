@@ -1,4 +1,3 @@
-
 PORTNAME=	midpoint
 PORTVERSION=	4.0.3
 CATEGORIES=	net-mgmt java

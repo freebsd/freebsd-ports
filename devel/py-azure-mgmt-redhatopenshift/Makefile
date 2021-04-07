@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-redhatopenshift
 DISTVERSION=	0.1.0
 CATEGORIES=	devel python

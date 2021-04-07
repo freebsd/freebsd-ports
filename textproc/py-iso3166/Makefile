@@ -1,4 +1,3 @@
-
 PORTNAME=	iso3166
 PORTVERSION=	1.0.1
 CATEGORIES=	textproc python

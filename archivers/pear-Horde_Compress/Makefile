@@ -1,4 +1,3 @@
-
 PORTNAME=	Horde_Compress
 PORTVERSION=	2.2.3
 CATEGORIES=	archivers www pear

@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-netapp
 PORTVERSION=	0.16.0
 CATEGORIES=	devel python

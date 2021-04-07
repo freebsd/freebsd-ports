@@ -1,4 +1,3 @@
-
 PORTNAME=	botan
 DISTVERSION=	2.17.3
 CATEGORIES=	security

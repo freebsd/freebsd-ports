@@ -1,4 +1,3 @@
-
 PORTNAME=	cson
 DISTVERSION=	0.8
 CATEGORIES=	devel python

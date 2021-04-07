@@ -1,4 +1,3 @@
-
 PORTNAME=	tld
 PORTVERSION=	0.11.11
 CATEGORIES=	dns python

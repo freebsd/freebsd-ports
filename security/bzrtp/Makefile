@@ -1,4 +1,3 @@
-
 PORTNAME=	bzrtp
 PORTVERSION=	1.0.6
 CATEGORIES=	security

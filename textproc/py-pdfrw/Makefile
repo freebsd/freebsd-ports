@@ -1,4 +1,3 @@
-
 PORTNAME=	pdfrw
 PORTVERSION=	0.4
 CATEGORIES=	textproc python

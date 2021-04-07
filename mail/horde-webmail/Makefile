@@ -1,4 +1,3 @@
-
 PORTNAME=	webmail
 PORTVERSION=	5.2.22
 CATEGORIES=	mail www pear

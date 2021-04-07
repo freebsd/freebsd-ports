@@ -1,4 +1,3 @@
-
 PORTNAME=	nsa
 PORTVERSION=	0.2.7
 CATEGORIES=	devel rubygems

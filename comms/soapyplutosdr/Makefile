@@ -1,4 +1,3 @@
-
 PORTNAME=	SoapyPlutoSDR
 DISTVERSIONPREFIX=	soapy-plutosdr-
 DISTVERSION=	0.2.1

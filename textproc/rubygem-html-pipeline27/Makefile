@@ -1,4 +1,3 @@
-
 PORTNAME=	html-pipeline
 PORTVERSION=	2.7.2
 CATEGORIES=	textproc rubygems

@@ -1,4 +1,3 @@
-
     COMMENT = Emulators for other operating systems
 
     SUBDIR += adamem

@@ -1,4 +1,3 @@
-
 PORTNAME=	turbostat
 PORTVERSION=	4.17 # Turbostat itself has a version, but we don't bother
 PORTREVISION=	2

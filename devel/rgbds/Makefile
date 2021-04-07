@@ -1,4 +1,3 @@
-
 PORTNAME=	rgbds
 DISTVERSION=	0.5.0-rc2
 CATEGORIES=	devel games

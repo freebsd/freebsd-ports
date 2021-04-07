@@ -1,4 +1,3 @@
-
     COMMENT = Chinese support
 
     SUBDIR += CJKUnifonts

@@ -1,4 +1,3 @@
-
 PORTNAME=	gitlab-runner
 PORTVERSION=	13.9.0
 CATEGORIES=	devel

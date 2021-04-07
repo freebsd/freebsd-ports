@@ -1,4 +1,3 @@
-
 PORTNAME=	mythes
 PORTVERSION=	2015.12.10
 CATEGORIES=	textproc

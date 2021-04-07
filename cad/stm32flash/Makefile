@@ -1,4 +1,3 @@
-
 PORTNAME=	stm32flash
 DISTVERSION=	0.6
 CATEGORIES=	cad

@@ -1,4 +1,3 @@
-
 PORTNAME=	aphpunit
 DISTVERSION=	2.0
 CATEGORIES=	devel www

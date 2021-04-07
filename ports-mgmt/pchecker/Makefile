@@ -1,4 +1,3 @@
-
 PORTNAME=	pchecker
 PORTVERSION=	1.25
 CATEGORIES=	ports-mgmt

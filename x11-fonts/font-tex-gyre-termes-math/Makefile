@@ -1,4 +1,3 @@
-
 PORTNAME=	font-tex-gyre-termes-math
 DISTVERSION=	1.543
 PORTREVISION=	1

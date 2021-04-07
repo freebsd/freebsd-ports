@@ -1,4 +1,3 @@
-
 PORTNAME=	flex
 DISTVERSION=	6.14.0
 CATEGORIES=	devel python

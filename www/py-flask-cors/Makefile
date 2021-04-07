@@ -1,4 +1,3 @@
-
 PORTNAME=	Flask-Cors
 PORTVERSION=	3.0.8
 CATEGORIES=	www python

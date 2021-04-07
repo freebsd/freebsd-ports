@@ -1,4 +1,3 @@
-
 PORTNAME=	Date_Holidays_Austria
 PORTVERSION=	0.1.6
 CATEGORIES=	devel www pear

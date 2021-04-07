@@ -1,4 +1,3 @@
-
 CATEGORIES=	japanese
 LO_I18N=	ja
 LO_HAS_HELPPACK=	yes

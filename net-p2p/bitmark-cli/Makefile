@@ -1,4 +1,3 @@
-
 MASTERDIR=	${.CURDIR}/../bitmark
 PKGNAMESUFFIX=	-cli
 

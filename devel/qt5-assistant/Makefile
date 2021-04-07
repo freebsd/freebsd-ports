@@ -1,4 +1,3 @@
-
 PORTNAME=	assistant
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	devel

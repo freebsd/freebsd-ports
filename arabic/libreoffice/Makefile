@@ -1,4 +1,3 @@
-
 CATEGORIES=	arabic
 LO_I18N=	ar
 LO_HAS_HELPPACK=	yes

@@ -1,4 +1,3 @@
-
 PORTNAME=	librttopo
 DISTVERSION=	1.1.0
 CATEGORIES=	devel geography

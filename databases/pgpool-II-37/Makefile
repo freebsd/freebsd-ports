@@ -1,4 +1,3 @@
-
 PORTNAME=	pgpool-II
 PORTVERSION=	3.7.14
 CATEGORIES=	databases

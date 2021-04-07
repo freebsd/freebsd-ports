@@ -1,4 +1,3 @@
-
 PORTNAME=	kgeotag
 DISTVERSION=	1.0.0
 CATEGORIES=	graphics

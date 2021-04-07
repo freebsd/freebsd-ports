@@ -1,4 +1,3 @@
-
 PORTNAME=	SlideShowPlugin
 SVNREV=		17261
 

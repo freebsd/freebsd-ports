@@ -1,4 +1,3 @@
-
     COMMENT = Peer-to-peer network applications
 
     SUBDIR += amule

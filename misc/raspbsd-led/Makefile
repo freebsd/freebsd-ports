@@ -1,4 +1,3 @@
-
 PORTNAME=	raspbsd-led
 PORTVERSION=	0.2
 PORTREVISION=	1

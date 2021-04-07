@@ -1,4 +1,3 @@
-
 PORTNAME=	AnyQt
 DISTVERSION=	0.0.11
 CATEGORIES=	x11-toolkits devel python

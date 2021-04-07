@@ -1,4 +1,3 @@
-
 PORTNAME=	music21
 DISTVERSION=	6.7.1
 CATEGORIES=	audio python

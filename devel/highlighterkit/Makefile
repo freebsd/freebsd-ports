@@ -1,4 +1,3 @@
-
 PORTNAME=	highlighterkit
 PORTVERSION=	0.1
 PORTREVISION=	10

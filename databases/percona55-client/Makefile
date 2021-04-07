@@ -1,4 +1,3 @@
-
 PORTNAME=	percona
 PKGNAMESUFFIX=	55-client
 

@@ -1,4 +1,3 @@
-
 PORTNAME=	dictdiffer
 DISTVERSION=	0.8.1
 CATEGORIES=	misc

@@ -1,4 +1,3 @@
-
 PORTNAME=	qtpbfimageplugin
 PORTVERSION=	2.1
 PORTREVISION=	3

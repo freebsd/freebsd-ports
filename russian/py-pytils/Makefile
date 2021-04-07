@@ -1,4 +1,3 @@
-
 PORTNAME=	pytils
 PORTVERSION=	0.3
 CATEGORIES=	russian python

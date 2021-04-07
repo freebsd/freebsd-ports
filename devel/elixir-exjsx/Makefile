@@ -1,4 +1,3 @@
-
 PORTNAME=	exjsx
 PORTVERSION=	4.0.0
 CATEGORIES=	devel

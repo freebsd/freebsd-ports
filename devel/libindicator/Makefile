@@ -1,4 +1,3 @@
-
 PORTNAME=	libindicator
 PORTVERSION=	12.10.1
 CATEGORIES=	devel

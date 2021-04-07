@@ -1,4 +1,3 @@
-
 PORTNAME=	Scope-Container-DBI
 PORTVERSION=	0.09
 CATEGORIES=	databases perl5

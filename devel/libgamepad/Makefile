@@ -1,4 +1,3 @@
-
 PORTNAME=	libgamepad
 PORTVERSION=	0.1.2
 CATEGORIES=	devel games

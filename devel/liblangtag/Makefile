@@ -1,4 +1,3 @@
-
 PORTNAME=	liblangtag
 PORTVERSION=	0.6.2
 CATEGORIES=	devel textproc

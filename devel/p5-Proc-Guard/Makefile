@@ -1,4 +1,3 @@
-
 PORTNAME=	Proc-Guard
 PORTVERSION=	0.07
 CATEGORIES=	devel perl5

@@ -1,4 +1,3 @@
-
 PORTNAME=	arrow
 DISTVERSION=	1.0.1
 CATEGORIES=	databases

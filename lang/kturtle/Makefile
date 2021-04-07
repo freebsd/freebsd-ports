@@ -1,4 +1,3 @@
-
 PORTNAME=	kturtle
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	lang education kde kde-applications

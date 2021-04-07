@@ -1,4 +1,3 @@
-
 PORTNAME=	darts.util.lru
 PORTVERSION=	0.5
 CATEGORIES=	devel python

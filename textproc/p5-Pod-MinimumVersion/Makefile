@@ -1,4 +1,3 @@
-
 PORTNAME=	Pod-MinimumVersion
 PORTVERSION=	50
 CATEGORIES=	textproc devel perl5

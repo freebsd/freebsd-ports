@@ -1,4 +1,3 @@
-
 PORTNAME=	flask-peewee
 PORTVERSION=	3.0.3
 CATEGORIES=	www devel python

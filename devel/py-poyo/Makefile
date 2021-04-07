@@ -1,4 +1,3 @@
-
 PORTNAME=	poyo
 PORTVERSION=	0.5.0
 CATEGORIES=	devel python

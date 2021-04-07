@@ -1,4 +1,3 @@
-
 PORTNAME=	python-utils
 PORTVERSION=	2.5.6
 CATEGORIES=	misc python

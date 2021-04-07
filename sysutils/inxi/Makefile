@@ -1,4 +1,3 @@
-
 PORTNAME=	inxi
 DISTVERSION=	3.3.03-1
 CATEGORIES=	sysutils

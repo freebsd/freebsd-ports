@@ -1,4 +1,3 @@
-
 PORTNAME=	alkimia
 PORTVERSION=	8.1.0
 CATEGORIES=	finance kde

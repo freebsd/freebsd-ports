@@ -1,4 +1,3 @@
-
 PORTNAME=	ruby-termios
 PORTVERSION=	1.0.2
 CATEGORIES=	comms rubygems

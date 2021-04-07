@@ -1,4 +1,3 @@
-
 PORTNAME=	avir
 DISTVERSION=	2.6
 CATEGORIES=	graphics

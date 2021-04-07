@@ -1,4 +1,3 @@
-
 PORTNAME=	pymysql
 PORTVERSION=	0.10.1
 CATEGORIES=	databases python

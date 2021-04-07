@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-resource
 PORTVERSION=	12.0.0
 CATEGORIES=	devel python

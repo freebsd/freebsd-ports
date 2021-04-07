@@ -1,4 +1,3 @@
-
 PORTNAME=	pyshp
 PORTVERSION=	1.2.12
 CATEGORIES=	devel python geography

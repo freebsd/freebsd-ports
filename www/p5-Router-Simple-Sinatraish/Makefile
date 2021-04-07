@@ -1,4 +1,3 @@
-
 PORTNAME=	Router-Simple-Sinatraish
 PORTVERSION=	0.03
 PORTREVISION=	1

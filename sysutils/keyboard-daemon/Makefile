@@ -1,4 +1,3 @@
-
 PORTNAME=	keyboard-daemon
 PORTVERSION=	0.7
 PORTREVISION=	1

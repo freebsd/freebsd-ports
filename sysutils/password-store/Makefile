@@ -1,4 +1,3 @@
-
 PORTNAME=	password-store
 PORTVERSION=	1.7.3
 PORTREVISION=	2

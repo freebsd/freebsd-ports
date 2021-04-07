@@ -1,4 +1,3 @@
-
 PORTNAME=	stdnum
 PORTVERSION=	1.13
 CATEGORIES=	devel python

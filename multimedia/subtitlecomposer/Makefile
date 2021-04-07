@@ -1,4 +1,3 @@
-
 PORTNAME=	subtitlecomposer
 PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	v

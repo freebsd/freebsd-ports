@@ -1,4 +1,3 @@
-
 .include "${.CURDIR}/version.mk"
 
 RUN_DEPENDS=	ossec-hids-${OSSEC_TYPE}>=${PORTVERSION}:security/ossec-hids-${OSSEC_TYPE}

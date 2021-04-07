@@ -1,4 +1,3 @@
-
 PORTNAME=	cvsync
 PORTVERSION=	0.25.0
 CATEGORIES=	net

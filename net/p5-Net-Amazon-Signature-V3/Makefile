@@ -1,4 +1,3 @@
-
 PORTNAME=	Net-Amazon-Signature-V3
 PORTVERSION=	0.001
 CATEGORIES=	net perl5

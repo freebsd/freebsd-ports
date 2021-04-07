@@ -1,4 +1,3 @@
-
 PORTNAME=	libfap
 PORTVERSION=	1.5
 CATEGORIES=	comms hamradio

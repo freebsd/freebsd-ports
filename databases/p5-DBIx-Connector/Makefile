@@ -1,4 +1,3 @@
-
 PORTNAME=	DBIx-Connector
 PORTVERSION=	0.56
 CATEGORIES=	databases perl5

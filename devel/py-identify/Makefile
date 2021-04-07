@@ -1,4 +1,3 @@
-
 PORTNAME=	identify
 PORTVERSION=	1.4.30
 CATEGORIES=	devel

@@ -1,4 +1,3 @@
-
 PORTNAME=	estd
 DISTVERSION=	0.4.0
 CATEGORIES=	devel

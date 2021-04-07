@@ -1,4 +1,3 @@
-
     COMMENT = Arabic language support
 
     SUBDIR += ae_fonts_mono

@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=	-jre
 
 MAINTAINER=	java@FreeBSD.org

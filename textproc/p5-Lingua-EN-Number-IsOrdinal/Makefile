@@ -1,4 +1,3 @@
-
 PORTNAME=	Lingua-EN-Number-IsOrdinal
 PORTVERSION=	0.05
 CATEGORIES=	textproc perl5

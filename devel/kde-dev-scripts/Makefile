@@ -1,4 +1,3 @@
-
 PORTNAME=	kde-dev-scripts
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	devel kde kde-applications

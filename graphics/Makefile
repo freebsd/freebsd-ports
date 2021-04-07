@@ -1,4 +1,3 @@
-
     COMMENT = Graphics tools and libraries
 
     SUBDIR += 4va

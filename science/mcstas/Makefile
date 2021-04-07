@@ -1,4 +1,3 @@
-
 PORTNAME=	mcstas
 PORTVERSION=	2.5
 CATEGORIES=	science

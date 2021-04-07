@@ -1,4 +1,3 @@
-
 PORTNAME=	gtk-layer-shell
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0

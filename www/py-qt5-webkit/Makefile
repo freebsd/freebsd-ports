@@ -1,4 +1,3 @@
-
 PORTNAME=	webkit
 CATEGORIES=	www devel python
 

@@ -1,4 +1,3 @@
-
 PORTNAME=	lordsawar
 PORTVERSION=	0.3.2
 CATEGORIES=	games

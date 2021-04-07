@@ -1,4 +1,3 @@
-
 PORTNAME=	xorg-docs
 PORTVERSION=	1.7.1
 PORTEPOCH=	1

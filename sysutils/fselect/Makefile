@@ -1,4 +1,3 @@
-
 PORTNAME=	fselect
 DISTVERSION=	0.7.4
 CATEGORIES=	sysutils

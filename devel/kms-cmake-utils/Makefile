@@ -1,4 +1,3 @@
-
 PORTNAME=	kms-cmake-utils
 DISTVERSION=	6.16.0
 CATEGORIES=	devel

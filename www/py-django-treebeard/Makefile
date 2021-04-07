@@ -1,4 +1,3 @@
-
 PORTNAME=	django-treebeard
 DISTVERSION=	4.4
 CATEGORIES=	www python

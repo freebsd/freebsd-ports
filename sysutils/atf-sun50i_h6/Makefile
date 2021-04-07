@@ -1,4 +1,3 @@
-
 MASTERDIR=	${.CURDIR}/../atf-master
 
 PLAT=	sun50i_h6

@@ -1,4 +1,3 @@
-
 PORTNAME=	bsdadminscripts2
 PORTVERSION=	0.3.0
 CATEGORIES=	ports-mgmt

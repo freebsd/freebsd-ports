@@ -1,4 +1,3 @@
-
 PORTNAME=	anttweakbar
 DISTVERSION=	1.16
 CATEGORIES=	graphics

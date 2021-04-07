@@ -1,4 +1,3 @@
-
 PORTNAME=	evdev-proto
 PORTVERSION=	5.8
 CATEGORIES=	devel

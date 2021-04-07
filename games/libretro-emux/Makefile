@@ -1,4 +1,3 @@
-
 PORTNAME=	libretro-emux
 PORTVERSION=	0.20200504
 CATEGORIES=	games

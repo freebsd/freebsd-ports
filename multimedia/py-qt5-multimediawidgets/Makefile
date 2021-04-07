@@ -1,4 +1,3 @@
-
 PORTNAME=	multimediawidgets
 CATEGORIES=	multimedia devel python
 

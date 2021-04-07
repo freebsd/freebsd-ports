@@ -1,4 +1,3 @@
-
 PORTNAME=	mcollective-nrpe-client
 
 COMMENT=	MCollective client to interact with the NRPE monitoring system

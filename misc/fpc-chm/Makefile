@@ -1,4 +1,3 @@
-
 CATEGORIES=	misc lang
 PKGNAMESUFFIX=	-chm
 

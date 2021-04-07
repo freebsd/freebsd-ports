@@ -1,4 +1,3 @@
-
 PORTNAME=	libnpupnp
 DISTVERSION=	4.1.1
 CATEGORIES=	net

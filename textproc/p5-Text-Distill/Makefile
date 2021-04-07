@@ -1,4 +1,3 @@
-
 PORTNAME=	Text-Distill
 PORTVERSION=	0.2
 CATEGORIES=	textproc perl5

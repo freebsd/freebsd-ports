@@ -1,4 +1,3 @@
-
 PORTREVISION=	0
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	1-plugins-gdkpixbuf

@@ -1,4 +1,3 @@
-
 PORTNAME=	fontobene
 DISTVERSION=	0.2.0
 CATEGORIES=	x11-fonts

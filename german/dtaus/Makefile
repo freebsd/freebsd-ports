@@ -1,4 +1,3 @@
-
 PORTNAME=	dtaus
 PORTVERSION=	0.9
 CATEGORIES=	german finance

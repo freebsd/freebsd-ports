@@ -1,4 +1,3 @@
-
 PORTNAME=	qasync
 DISTVERSION=	0.15.0
 CATEGORIES=	devel

@@ -1,4 +1,3 @@
-
 PORTNAME=	libretro-beetle_vb
 PORTVERSION=	0.20210214
 CATEGORIES=	games

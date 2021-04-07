@@ -1,4 +1,3 @@
-
 PORTNAME=	packageurl-python
 DISTVERSION=	0.9.3
 CATEGORIES=	textproc python

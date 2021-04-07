@@ -1,4 +1,3 @@
-
 PORTNAME=	smart_proxy_dynflow
 PORTVERSION=	0.2.1
 CATEGORIES=	sysutils ruby

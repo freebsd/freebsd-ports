@@ -1,4 +1,3 @@
-
 PORTNAME=	libCharon
 DISTVERSION=	4.8.0
 CATEGORIES=	net devel cad

@@ -1,4 +1,3 @@
-
 PORTNAME=	BlogAddOn
 SVNREV=		16623
 

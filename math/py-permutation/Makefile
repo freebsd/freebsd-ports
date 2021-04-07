@@ -1,4 +1,3 @@
-
 PORTNAME=	permutation
 DISTVERSION=	0.3.0
 CATEGORIES=	math python

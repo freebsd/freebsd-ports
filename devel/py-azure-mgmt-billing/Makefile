@@ -1,4 +1,3 @@
-
 PORTNAME=	azure-mgmt-billing
 PORTVERSION=	1.0.0
 CATEGORIES=	devel python

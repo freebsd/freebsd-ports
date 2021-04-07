@@ -1,4 +1,3 @@
-
 PORTNAME=	psycogreen
 PORTVERSION=	1.0
 CATEGORIES=	databases python

@@ -1,4 +1,3 @@
-
 PORTNAME=	google-api-client
 PORTVERSION=	0.53.0
 CATEGORIES=	devel rubygems

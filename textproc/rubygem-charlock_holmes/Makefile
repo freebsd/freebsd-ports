@@ -1,4 +1,3 @@
-
 PORTNAME=	charlock_holmes
 DISTVERSION=	0.7.7
 PORTREVISION=	1

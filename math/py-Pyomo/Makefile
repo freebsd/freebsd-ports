@@ -1,4 +1,3 @@
-
 PORTNAME=	Pyomo
 DISTVERSION=	5.7.3
 CATEGORIES=	math python

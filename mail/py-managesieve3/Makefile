@@ -1,4 +1,3 @@
-
 PORTNAME=	managesieve3
 PORTVERSION=	1.1
 CATEGORIES=	mail python

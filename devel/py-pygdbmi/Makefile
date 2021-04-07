@@ -1,4 +1,3 @@
-
 PORTNAME=	pygdbmi
 PORTVERSION=	0.10.0.0
 CATEGORIES=	devel lang python

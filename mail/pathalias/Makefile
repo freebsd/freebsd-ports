@@ -1,4 +1,3 @@
-
 PORTNAME=	pathalias
 PORTVERSION=	9.16
 CATEGORIES=	mail

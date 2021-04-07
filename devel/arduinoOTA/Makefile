@@ -1,4 +1,3 @@
-
 PORTNAME=	arduinoOTA
 PORTVERSION=	1.2.0
 CATEGORIES=	devel

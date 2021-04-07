@@ -1,4 +1,3 @@
-
 PORTNAME=	dosage
 DISTVERSION=	2.17
 CATEGORIES=	deskutils python

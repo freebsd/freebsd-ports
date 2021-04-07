@@ -1,4 +1,3 @@
-
 PORTNAME=	cpeditor
 DISTVERSION=	6.8.1
 CATEGORIES=	editors devel

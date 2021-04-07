@@ -1,4 +1,3 @@
-
 PORTNAME=	mwoauth
 DISTVERSION=	0.3.7
 CATEGORIES=	www python

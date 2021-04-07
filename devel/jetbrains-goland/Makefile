@@ -1,4 +1,3 @@
-
 PORTNAME=	goland
 PORTVERSION=	2020.3.4
 CATEGORIES=	devel java

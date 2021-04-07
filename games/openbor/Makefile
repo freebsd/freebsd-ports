@@ -1,4 +1,3 @@
-
 PORTNAME=	openbor
 # Hint: svn revision is git rev-list --count ${GH_TAGNAME}
 PORTVERSION?=	7103

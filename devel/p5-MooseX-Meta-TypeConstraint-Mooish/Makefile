@@ -1,4 +1,3 @@
-
 PORTNAME=	MooseX-Meta-TypeConstraint-Mooish
 PORTVERSION=	0.001
 CATEGORIES=	devel perl5

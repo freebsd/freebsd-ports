@@ -1,4 +1,3 @@
-
     COMMENT = Text processing utilities (does not include desktop publishing)
 
     SUBDIR += 2bsd-diff

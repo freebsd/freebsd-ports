@@ -1,4 +1,3 @@
-
 PORTNAME=	jsonrpc-glib
 PORTVERSION=	3.38.0
 CATEGORIES=	devel

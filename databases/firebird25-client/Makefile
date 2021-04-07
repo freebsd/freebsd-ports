@@ -1,4 +1,3 @@
-
 PORTNAME=	firebird
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}-client
 

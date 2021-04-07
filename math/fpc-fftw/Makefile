@@ -1,4 +1,3 @@
-
 CATEGORIES=	math lang
 PKGNAMESUFFIX=	-fftw
 

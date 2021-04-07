@@ -1,4 +1,3 @@
-
 PORTNAME=	libticonv
 PORTVERSION=	1.1.5
 CATEGORIES=	converters

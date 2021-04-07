@@ -1,4 +1,3 @@
-
 PORTNAME=	libdiscid
 PORTVERSION=	0.6.2
 CATEGORIES=	audio

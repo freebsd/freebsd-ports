@@ -1,4 +1,3 @@
-
 PORTNAME=	gen_smtp
 PORTVERSION=	0.13
 CATEGORIES=	devel

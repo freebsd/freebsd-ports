@@ -1,4 +1,3 @@
-
 PORTNAME=	libertinus
 DISTVERSION=	7.040
 CATEGORIES=	x11-fonts

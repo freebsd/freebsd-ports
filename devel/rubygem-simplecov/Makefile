@@ -1,4 +1,3 @@
-
 PORTNAME=	simplecov
 PORTVERSION=	0.19.0
 CATEGORIES=	devel rubygems

@@ -1,4 +1,3 @@
-
 PORTNAME=	telepot
 DISTVERSION=	12.7
 CATEGORIES=	net-im python

@@ -1,4 +1,3 @@
-
 PORTNAME=	epson-inkjet-printer-201401w
 PORTVERSION=	1.0.0
 CATEGORIES=	print

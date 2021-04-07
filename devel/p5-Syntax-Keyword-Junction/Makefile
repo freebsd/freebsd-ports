@@ -1,4 +1,3 @@
-
 PORTNAME=	Syntax-Keyword-Junction
 PORTVERSION=	0.003008
 CATEGORIES=	devel perl5

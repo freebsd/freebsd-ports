@@ -1,4 +1,3 @@
-
 PORTNAME=	protobuf-compiler
 DISTVERSION=	1.0.20
 CATEGORIES=	devel python
