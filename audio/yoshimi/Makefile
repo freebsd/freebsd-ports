@@ -2,7 +2,7 @@ PORTNAME=	yoshimi
 DISTVERSION=	1.7.3
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sophisticated software synthesizer
 
 LICENSE=	GPLv2+
