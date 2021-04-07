@@ -30,4 +30,3 @@ CMAKE_ARGS+=	-DSOCI_FOUND=NO
 .endif
 
 .include <bsd.port.mk>
-
