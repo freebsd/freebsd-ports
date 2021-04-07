@@ -608,6 +608,7 @@
     SUBDIR += pms
     SUBDIR += pms-devel
     SUBDIR += pocketsphinx
+    SUBDIR += poly-lv2
     SUBDIR += polyphone
     SUBDIR += portaudio
     SUBDIR += praat
