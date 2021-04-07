@@ -1,6 +1,6 @@
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.12
+DISTVERSION=	3.11.13
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,7 @@ GH_TUPLE=	\
 		caffix:eventbus:9ab42753d12d:caffix_eventbus/vendor/github.com/caffix/eventbus \
 		caffix:pipeline:503915daec5b:caffix_pipeline/vendor/github.com/caffix/pipeline \
 		caffix:queue:6e488abe1004:caffix_queue/vendor/github.com/caffix/queue \
-		caffix:resolvers:a83f323e2b6c:caffix_resolvers/vendor/github.com/caffix/resolvers \
+		caffix:resolve:60a5dffca01a:caffix_resolve/vendor/github.com/caffix/resolve \
 		caffix:service:3819810293b0:caffix_service/vendor/github.com/caffix/service \
 		caffix:stringset:a00bc23f59bc:caffix_stringset/vendor/github.com/caffix/stringset \
 		cayleygraph:cayley:v0.7.7:cayleygraph_cayley/vendor/github.com/cayleygraph/cayley \
@@ -54,7 +54,7 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.3.0:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:61e056675ecf:golang_net/vendor/golang.org/x/net \
+		golang:net:df645c7b52b1:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:08078c50e5b5:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
