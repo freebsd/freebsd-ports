@@ -1,13 +1,8 @@
 PORTNAME=	libxkbcommon
-PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTVERSION=	1.2.1
 CATEGORIES=	x11
 MASTER_SITES=	https://xkbcommon.org/download/
 DIST_SUBDIR=	xorg/lib
-
-PATCH_SITES=	https://github.com/xkbcommon/libxkbcommon/commit/
-PATCHFILES+=	6b65be4c4e78.patch:-p1 # https://github.com/xkbcommon/libxkbcommon/pull/221
-PATCHFILES+=	c14910a0de22.patch:-p1 # 6b65be4c4e78 fixup
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Keymap handling library for toolkits and window systems
@@ -17,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	xkeyboard-config>0:x11/xkeyboard-config
 
-USES=		bison gnome meson pkgconfig tar:xz
+USES=		bison compiler:c11 gnome meson pkgconfig tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Denable-docs=false \
