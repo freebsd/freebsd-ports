@@ -15,7 +15,7 @@ BUILD_DEPENDS=	cmake:devel/cmake \
 		ninja:devel/ninja
 TEST_DEPENDS=	qemu-system-arm:emulators/qemu
 
-USES=		gmake go:modules,run
+USES=		gmake go:modules,run python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tinygo-org
