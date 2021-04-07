@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	libredwg
-PORTVERSION=	0.12.3
+PORTVERSION=	0.12.4
 CATEGORIES=	cad devel
 MASTER_SITES=	GNU
 
@@ -46,6 +46,8 @@ post-patch:
 # which are still based on gcc-4.2.1 (should be no-op elsewhere)
 	@${REINPLACE_CMD} -e '/#include "com/ { x; s/^/#include <stdlib.h>/; \
 		G; }; 24d' ${WRKSRC}/src/common.c
+# Get rid of bashisms
+	@${REINPLACE_CMD} -e '/GPERF_VER/s,:2:1,##*.,' ${WRKSRC}/configure
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
