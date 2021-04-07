@@ -234,6 +234,7 @@
     SUBDIR += minimalist
     SUBDIR += missey
     SUBDIR += mlmmj
+    SUBDIR += mlmmj-webview
     SUBDIR += mls
     SUBDIR += mmh
     SUBDIR += mmr
