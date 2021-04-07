@@ -16,7 +16,9 @@ USES=		bison gnome meson pkgconfig tar:xz
 USE_GNOME=	libxml2
 MESON_ARGS=	-Denable-docs=false \
 		-Denable-wayland=false \
-		-Dx-locale-root="${PREFIX}/lib/X11/locale"
+		-Dx-locale-root="${PREFIX}/lib/X11/locale" \
+		${MESON_ARGS_${OPSYS}_${OSREL:R}}
+MESON_ARGS_FreeBSD_11=	-Ddefault-rules=xorg
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
@@ -26,10 +28,4 @@ X11_USES=	xorg
 X11_USE=	XORG=xcb
 X11_MESON_TRUE=	enable-x11
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1200000
-MESON_ARGS+=	-Ddefault-rules=xorg
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
