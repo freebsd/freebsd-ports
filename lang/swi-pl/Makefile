@@ -2,7 +2,7 @@
 
 PORTNAME=	swi-pl
 DISTVERSION=	8.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	swipl-${DISTVERSION}
@@ -20,8 +20,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libossp-uuid.so:misc/ossp-uuid \
 		libyaml.so:textproc/libyaml
 
-USES=		compiler:c11 libedit cmake libarchive pathfix pkgconfig \
-		shebangfix ssl
+USES=		cmake compiler:c11 libarchive libedit pathfix pkgconfig \
+		readline shebangfix ssl
 USE_XORG=	ice sm x11 xext xft xinerama xpm xt
 
 OPTIONS_DEFINE=		DOCS TCMALLOC EXAMPLES XPCE GMP THREADED ODBC
