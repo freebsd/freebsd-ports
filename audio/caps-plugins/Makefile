@@ -7,7 +7,7 @@ MASTER_SITES=	http://quitte.de/dsp/
 DISTNAME=	caps_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The C* Audio Plugin Suite
+COMMENT=	The C* LADSPA Audio Plugin Suite
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa

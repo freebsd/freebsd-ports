@@ -4,4 +4,7 @@ includes DSP units emulating instrument amplifiers, stomp-box
 classics, versatile 'virtual analogue' oscillators, fractal
 oscillation, reverb, equalization and others.
 
+LADSPA has been superceded by LV2. caps plugins were reimplemented based on
+the LV2 technology and ported to FreeBSD as audio/caps-lv2.
+
 WWW: http://quitte.de/dsp/caps.html
