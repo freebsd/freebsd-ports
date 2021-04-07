@@ -17,7 +17,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS+=	gsed:textproc/gsed \
 		swig:devel/swig \
 		dtc>=1.4.1:sysutils/dtc \
-		mkimage:sysutils/u-boot-tools
+		mkimage:sysutils/u-boot-tools \
+		${PYTHON_PKGNAMEPREFIX}setuptools-pkg>=0:devel/py-setuptools-pkg@${PY_FLAVOR}
 BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 
 USES=		bison gmake python:3.7+,build shebangfix tar:bz2
@@ -110,7 +111,7 @@ UBOOT_PLIST_QEMU=	u-boot.bin
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
 .endif
-UBOOT_VERSION?=	2020.10
+UBOOT_VERSION?=	2021.04
 
 # If a slave port defines a PORTREVISION use it
 .if defined(U_BOOT_SLAVE_PORTREVISION_${UBOOT_VERSION})

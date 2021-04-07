@@ -1,6 +1,6 @@
-TIMESTAMP = 1602419610
-SHA256 (u-boot/u-boot-2020.10.tar.bz2) = 0d481bbdc05c0ee74908ec2f56a6daa53166cc6a78a0e4fac2ac5d025770a622
-SIZE (u-boot/u-boot-2020.10.tar.bz2) = 15784894
+TIMESTAMP = 1617718705
+SHA256 (u-boot/u-boot-2021.04.tar.bz2) = 0d438b1bb5cceb57a18ea2de4a0d51f7be5b05b98717df05938636e0aadfe11a
+SIZE (u-boot/u-boot-2021.04.tar.bz2) = 16673334
 SHA256 (u-boot/939129/raw) = 2a4ebf283aec8e74ec77b3cb071c6883f73807454ca94fea78361c7391187b97
 SIZE (u-boot/939129/raw) = 310
 SHA256 (u-boot/1036621/raw) = 28dbd66d14fab9dc782ce091d3c132a226b8425f6503c329ee8a7031b79b52f7
