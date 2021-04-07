@@ -10,10 +10,10 @@ PKGNAMESUFFIX=	1
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Media applications framework
 
-LICENSE=	LGPL20
+LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		bison gettext gmake gnome libtool pathfix perl5 pkgconfig python tar:xz
+USES=		bison gmake gnome libtool pathfix perl5 pkgconfig python tar:xz
 USE_PERL5=	build
 USE_GNOME=	glib20 introspection:build
 
