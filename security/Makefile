@@ -787,7 +787,6 @@
     SUBDIR += php80-sodium
     SUBDIR += phpsecinfo
     SUBDIR += picosha2
-    SUBDIR += pidentd
     SUBDIR += pidgin-encryption
     SUBDIR += pidgin-otr
     SUBDIR += pinentry
