@@ -1,8 +1,7 @@
 # Created by: Maurice Castro <maurice@serc.rmit.edu.au>
 
 PORTNAME=	R
-DISTVERSION=	4.0.4
-PORTREVISION=	1
+DISTVERSION=	4.0.5
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 

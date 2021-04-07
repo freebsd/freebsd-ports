@@ -352,6 +352,9 @@ lib/R/library/cluster/html/R.css
 lib/R/library/cluster/libs/cluster.so
 %%NLS%%lib/R/library/cluster/po/de/LC_MESSAGES/R-cluster.mo
 %%NLS%%lib/R/library/cluster/po/de/LC_MESSAGES/cluster.mo
+%%NLS%%lib/R/library/cluster/po/fr/LC_MESSAGES/cluster.mo
+%%NLS%%lib/R/library/cluster/po/it/LC_MESSAGES/R-cluster.mo
+%%NLS%%lib/R/library/cluster/po/it/LC_MESSAGES/cluster.mo
 %%NLS%%lib/R/library/cluster/po/en@quot/LC_MESSAGES/R-cluster.mo
 %%NLS%%lib/R/library/cluster/po/en@quot/LC_MESSAGES/cluster.mo
 %%NLS%%lib/R/library/cluster/po/fr/LC_MESSAGES/R-cluster.mo
