@@ -76,6 +76,38 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a7b97d26-9792-11eb-b87a-901b0ef719ab">
+    <topic>FreeBSD -- jail escape possible by mounting over jail root</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>12.2</ge><lt>12.2_6</lt></range>
+	<range><ge>11.4</ge><lt>11.4_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Due to a race condition between lookup of ".." and remounting a filesystem,
+	a process running inside a jail might access filesystem hierarchy outside
+	of jail.</p>
+	<h1>Impact:</h1>
+	<p>A process with superuser privileges running inside a jail configured
+	with the allow.mount permission (not enabled by default) could change the root
+	directory outside of the jail, and thus gain full read and write access
+	to all files and directories in the system.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-25584</cvename>
+      <freebsdsa>SA-21:10.jail_mount</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2021-04-06</discovery>
+      <entry>2021-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f8e1e2a6-9791-11eb-b87a-901b0ef719ab">
     <topic>FreeBSD -- double free in accept_filter(9) socket configuration interface</topic>
     <affects>
