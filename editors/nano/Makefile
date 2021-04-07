@@ -1,7 +1,7 @@
 # Created by: Philippe Lefebvre <nemesis@balistik.net>
 
 PORTNAME=	nano
-DISTVERSION=	5.5
+DISTVERSION=	5.6.1
 CATEGORIES=	editors
 MASTER_SITES=	https://www.nano-editor.org/dist/v${DISTVERSION:R:R}/ GNU
 
@@ -12,8 +12,6 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		charsetfix ncurses pkgconfig tar:xz
-
-CONFLICTS=	nano-devel-2*
 
 GNU_CONFIGURE=	yes
 
