@@ -121,8 +121,8 @@ lib/pinball/libemilia_pin.a
 %%DATADIR%%/tux/tiles.png
 %%DATADIR%%/tux/tiles.png.pcx
 %%DATADIR%%/tux/up.wav
-@sample(,games,664) %%SCOREDIR%%/pinball/professor/highscores
-@sample(,games,664) %%SCOREDIR%%/pinball/tux/highscores
+@sample(,games,664) %%SCOREDIR%%/pinball/professor/highscores.sample
+@sample(,games,664) %%SCOREDIR%%/pinball/tux/highscores.sample
 @dir %%SCOREDIR%%/pinball/professor
 @dir %%SCOREDIR%%/pinball/tux
 @dir %%SCOREDIR%%/pinball
