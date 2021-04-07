@@ -1,5 +1,6 @@
 PORTNAME=	apitrace
 DISTVERSION=	9.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/a17r/${GH_PROJECT}/commit/
