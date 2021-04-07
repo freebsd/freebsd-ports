@@ -1,6 +1,6 @@
 
 PORTNAME=	bchoppr
-DISTVERSION=	1.10.4
+DISTVERSION=	1.10.6
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -16,10 +16,11 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		compiler:c++11-lang gmake gnome pkgconfig xorg
 USE_GITHUB=	yes
-GH_ACCOUNT=	sjaehn
-GH_PROJECT=	BChoppr
 USE_GNOME=	cairo
 USE_XORG=	x11
+
+GH_ACCOUNT=	sjaehn
+GH_PROJECT=	BChoppr
 
 MAKEFILE=	makefile
 
