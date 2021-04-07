@@ -16,7 +16,6 @@
     SUBDIR += filezilla
     SUBDIR += fmirror
     SUBDIR += fpc-libcurl
-    SUBDIR += frox
     SUBDIR += ftpcopy
     SUBDIR += ftpfind
     SUBDIR += ftplib

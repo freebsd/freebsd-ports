@@ -112,7 +112,6 @@
     SUBDIR += vanitygen
     SUBDIR += venice
     SUBDIR += weberp
-    SUBDIR += wmstock
     SUBDIR += xtrader
 
 .include <bsd.port.subdir.mk>
