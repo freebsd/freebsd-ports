@@ -12337,6 +12337,7 @@
 %%WWWDIR%%/data/whats_new/202012160001_13_07.yml
 %%WWWDIR%%/data/whats_new/202101140001_13_08.yml
 %%WWWDIR%%/data/whats_new/202102180001_13_09.yml
+%%WWWDIR%%/data/whats_new/202103220001_13_10.yml
 %%WWWDIR%%/data/whats_new/templates/YYYYMMDD0001_XX_YY.yml
 %%WWWDIR%%/db/fixtures/development/01_admin.rb
 %%WWWDIR%%/db/fixtures/development/02_application_settings.rb
@@ -17846,10 +17847,12 @@
 %%WWWDIR%%/doc/user/group/contribution_analytics/img/group_stats_table.png
 %%WWWDIR%%/doc/user/group/contribution_analytics/index.md
 %%WWWDIR%%/doc/user/group/custom_project_templates.md
+%%WWWDIR%%/doc/user/group/epics/epic_boards.md
 %%WWWDIR%%/doc/user/group/epics/img/button_close_epic.png
 %%WWWDIR%%/doc/user/group/epics/img/button_reopen_epic.png
 %%WWWDIR%%/doc/user/group/epics/img/containing_epic.png
 %%WWWDIR%%/doc/user/group/epics/img/epic_activity_sort_order_v13_2.png
+%%WWWDIR%%/doc/user/group/epics/img/epic_board_v13_10.png
 %%WWWDIR%%/doc/user/group/epics/img/epic_view_roadmap_v12_9.png
 %%WWWDIR%%/doc/user/group/epics/img/epic_view_v13.0.png
 %%WWWDIR%%/doc/user/group/epics/img/epics_search.png
@@ -28607,6 +28610,7 @@
 %%WWWDIR%%/spec/fixtures/api/schemas/public_api/v4/operations/strategy.json
 %%WWWDIR%%/spec/fixtures/api/schemas/public_api/v4/packages/collection_package.json
 %%WWWDIR%%/spec/fixtures/api/schemas/public_api/v4/packages/composer/index.json
+%%WWWDIR%%/spec/fixtures/api/schemas/public_api/v4/packages/composer/index_v2.json
 %%WWWDIR%%/spec/fixtures/api/schemas/public_api/v4/packages/composer/package.json
 %%WWWDIR%%/spec/fixtures/api/schemas/public_api/v4/packages/composer/provider.json
 %%WWWDIR%%/spec/fixtures/api/schemas/public_api/v4/packages/group_package.json
@@ -29652,6 +29656,7 @@
 %%WWWDIR%%/spec/frontend/emoji/components/category_spec.js
 %%WWWDIR%%/spec/frontend/emoji/components/emoji_group_spec.js
 %%WWWDIR%%/spec/frontend/emoji/components/emoji_list_spec.js
+%%WWWDIR%%/spec/frontend/emoji/components/utils_spec.js
 %%WWWDIR%%/spec/frontend/emoji/index_spec.js
 %%WWWDIR%%/spec/frontend/emoji/support/unicode_support_map_spec.js
 %%WWWDIR%%/spec/frontend/environment.js
