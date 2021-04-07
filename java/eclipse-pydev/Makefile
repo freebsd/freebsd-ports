@@ -27,8 +27,6 @@ JAVA_VERSION=	1.8+
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
 
-PLUGINDIR=	share/eclipse/dropins/${PORTNAME}/eclipse/plugins
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJYTHON}

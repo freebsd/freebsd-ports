@@ -12,8 +12,6 @@ MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/ \
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 
-CONFLICTS_INSTALL=	dnsmasq-devel-*
-
 LICENSE=	GPLv2
 
 USES=		cpe shebangfix tar:xz

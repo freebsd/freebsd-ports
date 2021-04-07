@@ -57,9 +57,6 @@ CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB} -lssl -lcrypto
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext
-
 post-patch:
 	@${REINPLACE_CMD} '/CFLAGS/d' \
 		${WRKSRC}//Makefile.defaults

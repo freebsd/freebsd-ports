@@ -35,7 +35,6 @@ OPTIONS_DEFAULT=	MPICH
 NOMPI_DESC=		Build without parallel processing support
 NOMPI_CONFIGURE_ON=	--without-MPI
 
-MPICH_DESC=		Parallel processing support via MPICH
 MPICH_LIB_DEPENDS=	libmpich.so:net/mpich
 MPICH_CONFIGURE_ENV=	CC=${LOCALBASE}/bin/mpicc CXX=${LOCALBASE}/bin/mpicxx
 MPICH_CONFIGURE_WITH=	MPI-include=${LOCALBASE}/include \
