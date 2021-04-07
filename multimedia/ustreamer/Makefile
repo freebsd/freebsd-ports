@@ -26,6 +26,12 @@ PLIST_FILES=	bin/ustreamer \
 		man1/ustreamer-dump.1.gz \
 		man1/ustreamer.1.gz
 
-BROKEN_FreeBSD_11=	error: thread_get_name() not implemented, you can disable it using WITH_PTHREAD_NP=0
+.include <bsd.port.options.mk>
+
+# strerror_l appeared in 12 in r368915 on 2021-01-01, OSVERSION was last changed to 1202505 in r368887 on 2020-12-29
+post-patch:
+.if ${OPSYS} == "FreeBSD" && ${OSVERSION} <= 1202505
+	@${REINPLACE_CMD} -e 's|strerror_l(error, locale)|strerror(error)|' ${WRKSRC}/src/libs/tools.h
+.endif
 
 .include <bsd.port.mk>
