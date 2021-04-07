@@ -1,7 +1,7 @@
 # Created by: Sofian Brabez <sbrabez@gmail.com>
 
 PORTNAME=	bitarray
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,10 +19,10 @@ USE_PYTHON=	distutils autoplist
 GH_ACCOUNT=	ilanschnell
 GH_PROJECT=	bitarray
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
-PORTDOCS=	AUTHORS CHANGE_LOG README.md
+PORTDOCS=	CHANGE_LOG README.rst TODO changelog.rst
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
