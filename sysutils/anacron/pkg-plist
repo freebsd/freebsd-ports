@@ -1,5 +1,7 @@
-sbin/anacron
-@sample etc/anacrontab.sample
-@unexec rmdir /var/spool/anacron 2>/dev/null || echo "If you are permanently removing this port, you should do a 'rm -rf /var/spool/anacron'."
-man/man8/anacron.8.gz
-man/man5/anacrontab.5.gz
+sbin/%%PORTNAME%%
+@sample etc/%%PORTNAME%%tab.sample
+@postexec mkdir -p /var/spool/%%PORTNAME%% 2>/dev/null
+@postunexec rmdir /var/spool/%%PORTNAME%% 2>/dev/null || echo "If you are permanently removing this port, you should do a 'rm -rf /var/spool/%%PORTNAME%%'."
+man/man8/%%PORTNAME%%.8.gz
+man/man5/%%PORTNAME%%tab.5.gz
+@dir /var/spool/%%PORTNAME%%

@@ -9,8 +9,6 @@
 -    int fd, i;
 +    int fd;
 +    char name[] = "/tmp/anacron.XXXXXX";
-+
-+    fd = mkstemp(name);
  
 -    i = 0;
 -    name = NULL;
@@ -25,10 +23,21 @@
 -	/* I'm not sure we actually need to be so persistent here */
 -    } while (fd == -1 && errno == EEXIST && i < max_retries);
 -    
++    fd = mkstemp(name);
++
      if (fd == -1) die_e("Can't open temporary file");
      if (unlink(name)) die_e("Can't unlink temporary file");
 -    free(name);
 +
      fcntl(fd, F_SETFD, 1);    /* set close-on-exec flag */
      return fd;
+ }
+@@ -84,7 +72,7 @@ username()
+ }
+ 
+ static void
+-xputenv(const char *s)
++xputenv(char *s)
+ {
+     if (putenv(s)) die_e("Can't set the environment");
  }

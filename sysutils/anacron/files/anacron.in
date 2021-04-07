@@ -1,21 +1,36 @@
 #!/bin/sh
 
-# PROVIDE: anacron
+# PROVIDE: %%PORTNAME%%
 # REQUIRE: LOGIN
+# KEYWORD: resume
 
 #
-# Add the following line to /etc/rc.conf to enable anacron:
+# Execute one of the following commands as root to enable %%PORTNAME%%:
 #
-# anacron_enable="YES"
+#    service %%PORTNAME%% enable
+#    sysrc %%PORTNAME%%_enable=YES
 #
 
 . /etc/rc.subr
 
-name=anacron
-rcvar=anacron_enable
+name=%%PORTNAME%%
+command="%%PREFIX%%/sbin/%%PORTNAME%%"
+desc="%%COMMENT%%"
+extra_commands=resume
+rcvar=%%PORTNAME%%_enable
+required_vars=syslogd_enable
 
 load_rc_config $name
-: ${anacron_enable:=NO}
-command="%%PREFIX%%/sbin/anacron"
+: ${%%PORTNAME%%_enable:=NO}
 
-run_rc_command "$1"
+if [ $# -gt 0 -a $1 = "resume" ]; then
+   arg=start
+   if checkyesno $rcvar; then
+       info "starting ${name} after resume"
+   fi
+else
+   arg=$1
+fi
+debug "$name: \$1 = $1, arg = $arg"
+
+run_rc_command "$arg"
