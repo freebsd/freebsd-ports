@@ -27,4 +27,6 @@ CMAKE_ARGS=	-DGIT_HASH:STRING=NoGitHashVersion${DISTVERSION}
 
 DATADIR=	${PREFIX}/share/olive-editor
 
+PORTSCOUT=	limit:^.*[1-9]\..* # prevent tags like 20181223
+
 .include <bsd.port.mk>
