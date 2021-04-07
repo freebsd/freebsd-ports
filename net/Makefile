@@ -37,6 +37,7 @@
     SUBDIR += asterisk13
     SUBDIR += asterisk16
     SUBDIR += asterisk18
+    SUBDIR += astron
     SUBDIR += avahi
     SUBDIR += avahi-app
     SUBDIR += avahi-autoipd

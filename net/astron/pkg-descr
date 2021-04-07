@@ -1,0 +1,10 @@
+Astron is an open-source, distributed server suite particularly well-suited
+for powering MMO games. The design is inspired by a similar unrelated project
+developed at the Disney Interactive Media Group, and used in-house from 2001
+until 2013.
+
+The suite consists of many components, which handle separate tasks in order
+to distribute the workload of managing a multi-sharded game/application
+environment with many objects and clients.
+
+WWW: https://astron.github.io/astron

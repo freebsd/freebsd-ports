@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2021-04-06 22:45:16 UTC
++++ CMakeLists.txt
+@@ -92,7 +92,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")	### Windows
+ 	list(APPEND EXTRA_LIBS wsock32 ws2_32)
+ endif()
+ 
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")		### Linux requires pthreads
++if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")		### Linux requires pthreads
+ 	list(APPEND EXTRA_LIBS pthread rt)
+ endif()
+ 
