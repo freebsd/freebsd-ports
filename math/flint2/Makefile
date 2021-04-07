@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libopenblas.so:math/openblas
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++11-lang python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	wbhart
 USE_LDCONFIG=	yes
