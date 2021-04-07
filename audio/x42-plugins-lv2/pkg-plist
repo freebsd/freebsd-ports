@@ -92,6 +92,11 @@ lib/lv2/tuna.lv2/tunaUI_gl.so
 lib/lv2/xfade.lv2/manifest.ttl
 lib/lv2/xfade.lv2/xfade.so
 lib/lv2/xfade.lv2/xfade.ttl
+lib/lv2/zeroconvo.lv2/ir/delta-48k.wav
+lib/lv2/zeroconvo.lv2/manifest.ttl
+lib/lv2/zeroconvo.lv2/presets.ttl
+lib/lv2/zeroconvo.lv2/zeroconvolv.so
+lib/lv2/zeroconvo.lv2/zeroconvolv.ttl
 man/man1/x42-darc.1.gz
 man/man1/x42-dpl.1.gz
 man/man1/x42-fat1.1.gz
