@@ -1,7 +1,7 @@
 # Created by: Eric van Gyzen <vangyzen@stat.duke.edu>
 
 PORTNAME=	libRmath
-DISTVERSION=	4.0.4
+DISTVERSION=	4.0.5
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 DISTNAME=	R-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
