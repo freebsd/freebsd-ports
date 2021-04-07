@@ -76,6 +76,41 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f8e1e2a6-9791-11eb-b87a-901b0ef719ab">
+    <topic>FreeBSD -- double free in accept_filter(9) socket configuration interface</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>12.2</ge><lt>12.2_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>An unprivileged process can configure an accept filter on a listening
+	socket.  This is done using the setsockopt(2) system call.  The process
+	supplies the name of the accept filter which is to be attached to the
+	socket, as well as a string containing filter-specific information.</p>
+	<p>If the filter implements the accf_create callback, the socket option
+	handler attempts to preserve the process-supplied argument string.  A
+	bug in the socket option handler caused this string to be freed
+	prematurely, leaving a dangling pointer.  Additional operations on the
+	socket can turn this into a double free or a use-after-free.</p>
+	<h1>Impact:</h1>
+	<p>The bug may be exploited to trigger local privilege escalation or
+	kernel memory disclosure.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-29627</cvename>
+      <freebsdsa>SA-21:09.accept_filter</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2021-04-06</discovery>
+      <entry>2021-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="13d37672-9791-11eb-b87a-901b0ef719ab">
     <topic>FreeBSD -- Memory disclosure by stale virtual memory mapping</topic>
     <affects>
