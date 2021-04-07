@@ -8,7 +8,7 @@ CATEGORIES=	astro geography
 MAINTAINER=	dev2@heesakkers.info
 COMMENT=	GPS file translating tool
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lang gmake localbase qt:5
