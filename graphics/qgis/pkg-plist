@@ -1603,6 +1603,7 @@ lib/qgis/plugins/libmssqlprovider.so
 lib/qgis/plugins/liboauth2authmethod.so
 lib/qgis/plugins/libofflineeditingplugin.so
 lib/qgis/plugins/libowsprovider.so
+lib/qgis/plugins/libpdalprovider.so
 lib/qgis/plugins/libpkcs12authmethod.so
 lib/qgis/plugins/libpkipathsauthmethod.so
 lib/qgis/plugins/libpostgresprovider.so
@@ -1620,6 +1621,7 @@ lib/qgis/plugins/libwmsprovider.so
 %%SERVER%%lib/qgis/server/libwfs3.so
 %%SERVER%%lib/qgis/server/libwms.so
 %%SERVER%%lib/qgis/server/libwmts.so
+lib/qgis/untwine
 %%QT_PLUGINDIR%%/designer/libqgis_customwidgets.so
 %%QT_PLUGINDIR%%/designer/libqgis_customwidgets.so.%%DISTVERSION%%
 %%SERVER%%%%QT_PLUGINDIR%%/sqldrivers/libqsqlspatialite.so
