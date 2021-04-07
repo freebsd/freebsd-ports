@@ -1,0 +1,18 @@
+B.Schaffl is a groove quantizer LV2 MIDI plugin.
+
+B.Schaffl is a slider/shape-controlled MIDI amp & time stretch plugin to
+vitalize sequencer-controlled MIDI instruments and to produce shuffle/swing
+effects.
+
+Key features:
+* MIDI velocity amplification and timing manipulation plugin
+* Swing and shuffle rhythms
+* Pre-generator dynamics
+* Tempo rubato
+* Pattern (sliders) or shape-controlled
+* MIDI filters
+* Smart quantization
+* Group / link individual instances of B.Schaffl
+* Free and open source
+
+WWW: https://github.com/sjaehn/BSchaffl
