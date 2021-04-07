@@ -4,6 +4,7 @@ PORTNAME=	libunit
 PORTVERSION=	${UNIT_VERSION}
 MASTER_SITES?=	https://unit.nginx.org/download/
 DISTNAME=	unit-${PORTVERSION}
+DISTINFO_FILE=	${.CURDIR}/../../www/unit/distinfo
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Development kit for dynamic web application server
