@@ -1,11 +1,8 @@
---- dsp/v4f_IIR2.h.orig	2019-03-22 09:42:59 UTC
+--- dsp/v4f_IIR2.h.orig	2020-05-30 02:36:39 UTC
 +++ dsp/v4f_IIR2.h
-@@ -32,9 +32,9 @@
+@@ -34,7 +34,7 @@ namespace DSP {
  
- namespace DSP {
- 
--#ifdef __APPLE__
-+#ifdef __FreeBSD__
+ #if defined(__APPLE__) || defined(__FreeBSD__)
  
 -inline float exp10f(float f) {return __exp10f(f);}
 +inline float exp10f(float f) {return powf(10., f);}
