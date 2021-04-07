@@ -1,3 +1,4 @@
+%%TESTS%%bin/drmdevice
 %%TESTS%%bin/kms-steal-crtc
 %%TESTS%%bin/kms-universal-planes
 %%TESTS%%bin/kmstest
