@@ -2,6 +2,7 @@
 
 PORTNAME=	chrony
 DISTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://download.tuxfamily.org/chrony/ \
 		LOCAL/mandree
@@ -27,6 +28,7 @@ CONFIGURE_ARGS=	--chronyvardir=/var/db/${PORTNAME} \
 		--mandir=${MANPREFIX}/man \
 		--prefix=${PREFIX} \
 		--sysconfdir=${PREFIX}/etc \
+		--enable-ntp-signd \
 		--without-tomcrypt
 
 ALL_TARGET=	all
