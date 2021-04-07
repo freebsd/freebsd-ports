@@ -2,6 +2,7 @@
 
 # PROVIDE: kibana
 # REQUIRE: DAEMON
+# BEFORE: LOGIN
 # KEYWORD: shutdown
 
 . /etc/rc.subr
