@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	flake8-import-order
 PORTVERSION=	0.18.1
 PORTREVISION=	1

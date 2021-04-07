@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	scterc
 PORTVERSION=	0.0.1
 CATEGORIES=	sysutils

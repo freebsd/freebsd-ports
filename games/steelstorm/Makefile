@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	steelstorm
 DISTVERSION=	beta-r1591
 PORTREVISION=	3

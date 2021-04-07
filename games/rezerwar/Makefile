@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	rezerwar
 PORTVERSION=	0.4.2
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	interlogic
 PORTVERSION=	0.30
 PORTREVISION=	11

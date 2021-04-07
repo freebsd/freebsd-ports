@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	hoverboard
 PORTVERSION=	0.7.3
 PORTREVISION=	6

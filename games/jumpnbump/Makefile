@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	jumpnbump
 PORTVERSION=	1.61
 PORTREVISION=	1

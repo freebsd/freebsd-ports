@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	i2pd
 PORTVERSION=	2.37.0
 CATEGORIES=	security net-p2p

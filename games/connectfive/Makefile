@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	connectfive
 PORTVERSION=	1.0.2
 PORTREVISION=	8

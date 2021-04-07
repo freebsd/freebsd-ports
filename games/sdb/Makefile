@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	sdb
 PORTVERSION=	1.0.2
 PORTREVISION=	15

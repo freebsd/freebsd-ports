@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	rubymarshal
 PORTVERSION=	1.2.10
 CATEGORIES=	devel python

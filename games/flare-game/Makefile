@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	flare
 PORTVERSION=	1.11
 DISTVERSIONPREFIX=	v

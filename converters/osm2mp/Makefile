@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	osm2mp
 PORTVERSION=	r475
 PORTREVISION=	2

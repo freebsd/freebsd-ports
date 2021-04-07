@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	simplevaders
 PORTVERSION=	0.8.1
 CATEGORIES=	games

@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	oaml
 PORTVERSION=	1.3.4
 PORTREVISION=	2

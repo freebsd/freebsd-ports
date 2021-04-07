@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	pengupop
 PORTVERSION=	2.2.6
 PORTREVISION=	3

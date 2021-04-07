@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	critterding
 DISTVERSION=	beta12
 PORTREVISION=	18

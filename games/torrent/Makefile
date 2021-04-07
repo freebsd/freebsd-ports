@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	torrent
 PORTVERSION=	0.8.2
 PORTREVISION=	12

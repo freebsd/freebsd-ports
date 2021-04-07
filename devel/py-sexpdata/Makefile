@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	sexpdata
 PORTVERSION=	0.0.3
 CATEGORIES=	devel python

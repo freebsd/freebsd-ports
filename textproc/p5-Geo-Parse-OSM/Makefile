@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	Geo-Parse-OSM
 PORTVERSION=	0.42
 PORTREVISION=	2

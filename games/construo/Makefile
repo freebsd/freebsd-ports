@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	construo
 PORTVERSION=	0.2.3
 PORTREVISION=	1

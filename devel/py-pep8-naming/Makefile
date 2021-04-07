@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	pep8-naming
 PORTVERSION=	0.11.1
 CATEGORIES=	devel

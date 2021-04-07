@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	tetzle
 PORTVERSION=	2.1.6
 CATEGORIES=	games

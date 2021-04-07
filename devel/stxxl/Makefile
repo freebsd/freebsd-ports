@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	stxxl
 PORTVERSION=	1.4.1
 CATEGORIES=	devel

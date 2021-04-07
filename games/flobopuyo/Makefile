@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	flobopuyo
 PORTVERSION=	0.20
 PORTREVISION=	16

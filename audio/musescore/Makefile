@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	musescore
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.6.1

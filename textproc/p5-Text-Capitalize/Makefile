@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	Text-Capitalize
 PORTVERSION=	1.5
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	gh
 PORTVERSION=	0.18.0
 CATEGORIES=	devel rubygems

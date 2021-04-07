@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	tanks-of-freedom
 PORTVERSION=	0.7.0
 DISTVERSIONSUFFIX=-beta

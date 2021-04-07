@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	bsod
 PORTVERSION=	0.1
 CATEGORIES=	misc

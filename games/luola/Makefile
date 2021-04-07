@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	luola
 PORTVERSION=	1.3.2
 PORTREVISION=	7

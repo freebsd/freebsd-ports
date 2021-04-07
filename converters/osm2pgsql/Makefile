@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	osm2pgsql
 PORTVERSION=	1.4.1
 CATEGORIES=	converters geography

@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	flake8-docstrings
 PORTVERSION=	1.5.0
 CATEGORIES=	devel

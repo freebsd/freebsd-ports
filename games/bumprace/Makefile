@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	bumprace
 PORTVERSION=	1.5.8
 CATEGORIES=	games

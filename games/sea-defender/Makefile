@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	sea-defender
 PORTVERSION=	0.9
 PORTREVISION=	4

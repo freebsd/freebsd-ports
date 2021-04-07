@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	7kaa
 PORTVERSION=	2.15.4p1
 DISTVERSIONPREFIX=	v

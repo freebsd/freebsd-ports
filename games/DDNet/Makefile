@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	DDNet
 PORTVERSION=	15.4
 CATEGORIES=	games

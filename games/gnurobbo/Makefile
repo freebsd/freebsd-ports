@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	gnurobbo
 PORTVERSION=	0.68
 CATEGORIES=	games

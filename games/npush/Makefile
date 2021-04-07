@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	npush
 PORTVERSION=	0.7
 CATEGORIES=	games

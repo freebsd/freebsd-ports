@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	mkgmap
 PORTVERSION=	r4629
 CATEGORIES=	astro converters java

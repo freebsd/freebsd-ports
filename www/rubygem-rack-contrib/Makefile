@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	rack-contrib
 PORTVERSION=	2.1.0
 CATEGORIES=	www rubygems

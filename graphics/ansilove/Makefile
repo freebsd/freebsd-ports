@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	ansilove
 PORTVERSION=	4.1.5
 CATEGORIES=	graphics textproc

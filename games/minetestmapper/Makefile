@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	minetestmapper
 PORTVERSION=	20200328
 CATEGORIES=	games graphics

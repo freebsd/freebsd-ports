@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	modules
 PORTVERSION=	svn20130912
 PORTREVISION=	4

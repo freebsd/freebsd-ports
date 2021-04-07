@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	blinkensisters
 PORTVERSION=	0.5.3
 PORTREVISION=	17

@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	luabind
 PORTVERSION=	0.9.1
 PORTREVISION=	16

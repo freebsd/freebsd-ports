@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	wordwarvi
 PORTVERSION=	1.0.4
 DISTVERSIONPREFIX=	v

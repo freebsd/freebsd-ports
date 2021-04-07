@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	aioftp
 PORTVERSION=	0.18.1
 CATEGORIES=	ftp python

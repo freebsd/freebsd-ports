@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	gpsprune
 PORTVERSION=	20.3
 CATEGORIES=	astro java

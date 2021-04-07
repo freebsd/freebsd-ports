@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	openlierox
 DISTVERSION=	0.58_rc5
 PORTREVISION=	1

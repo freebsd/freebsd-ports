@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	hexalate
 PORTVERSION=	1.1.6
 CATEGORIES=	games

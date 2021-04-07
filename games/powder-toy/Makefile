@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	powder-toy
 PORTVERSION=	95.0
 DISTVERSIONPREFIX=	v

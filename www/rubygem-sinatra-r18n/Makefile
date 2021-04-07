@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	sinatra-r18n
 PORTVERSION=	4.0.0
 CATEGORIES=	www rubygems

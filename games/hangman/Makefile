@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	hangman
 PORTVERSION=	0.9.2
 PORTREVISION=	12

@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	numptyphysics
 DISTVERSION=	0.3.r20090104
 PORTREVISION=	11

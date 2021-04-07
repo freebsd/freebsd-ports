@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	bruteblock
 PORTVERSION=	0.0.5
 PORTREVISION=	9

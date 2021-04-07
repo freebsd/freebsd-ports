@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	brainworkshop
 PORTVERSION=	5.0.git20191222
 PORTREVISION=	1

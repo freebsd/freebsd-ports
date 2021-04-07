@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	quantumminigolf
 PORTVERSION=	1.1.1
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	pnglite
 PORTVERSION=	0.1.17
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	xorgramana
 PORTVERSION=	0.0.8
 PORTREVISION=	10

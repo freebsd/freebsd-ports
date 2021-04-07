@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	spring
 PORTVERSION=	98.0
 PORTREVISION=	20

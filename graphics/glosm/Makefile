@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	glosm
 PORTVERSION=	0.0.2
 DISTVERSIONPREFIX=	${PORTNAME}-

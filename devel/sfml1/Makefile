@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	sfml
 PORTVERSION=	1.6
 PORTREVISION=	5

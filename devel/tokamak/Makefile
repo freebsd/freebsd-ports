@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	tokamak
 PORTVERSION=	1.0.5a
 CATEGORIES=	devel

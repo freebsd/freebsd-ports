@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	spacejunk
 PORTVERSION=	1.0.5
 PORTREVISION=	3

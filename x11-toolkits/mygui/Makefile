@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	mygui
 PORTVERSION=	3.4.0
 DISTVERSIONPREFIX=	MyGUI

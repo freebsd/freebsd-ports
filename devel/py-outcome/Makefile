@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	outcome
 PORTVERSION=	1.1.0
 CATEGORIES=	devel python

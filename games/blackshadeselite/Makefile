@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	blackshadeselite
 PORTVERSION=	0.0.1
 PORTREVISION=	10

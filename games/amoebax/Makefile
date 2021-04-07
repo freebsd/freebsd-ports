@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	amoebax
 PORTVERSION=	0.2.1
 PORTREVISION=	8

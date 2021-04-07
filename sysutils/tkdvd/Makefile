@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	tkdvd
 PORTVERSION=	4.0.9
 PORTREVISION=	3

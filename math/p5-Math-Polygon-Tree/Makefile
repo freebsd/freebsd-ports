@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	Math-Polygon-Tree
 PORTVERSION=	0.08
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	scramble
 PORTVERSION=	0.9.5
 PORTREVISION=	12

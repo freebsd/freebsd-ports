@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	lpairs
 PORTVERSION=	1.0.5
 CATEGORIES=	games

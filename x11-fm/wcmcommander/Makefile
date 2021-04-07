@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	wcmcommander
 PORTVERSION=	0.20.0
 DISTVERSIONPREFIX=	release-

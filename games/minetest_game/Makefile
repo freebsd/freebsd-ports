@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	minetest_game
 PORTVERSION=	5.4.0
 CATEGORIES=	games

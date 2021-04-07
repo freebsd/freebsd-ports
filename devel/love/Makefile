@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	love
 PORTVERSION=	11.3
 CATEGORIES=	devel games

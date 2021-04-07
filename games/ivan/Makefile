@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	ivan
 PORTVERSION=	0.50
 PORTREVISION=	7

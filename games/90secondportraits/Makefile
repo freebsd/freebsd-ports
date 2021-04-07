@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	90secondportraits
 PORTVERSION=	1.01b
 PORTREVISION=	1

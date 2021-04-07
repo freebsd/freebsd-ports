@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	net-http-pipeline
 PORTVERSION=	1.0.1
 CATEGORIES=	www net rubygems

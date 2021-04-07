@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	powder
 PORTVERSION=	118
 CATEGORIES=	games

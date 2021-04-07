@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	chroma
 PORTVERSION=	1.18
 CATEGORIES=	games

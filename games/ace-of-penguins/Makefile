@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	ace-of-penguins
 PORTVERSION=	1.4
 CATEGORIES=	games

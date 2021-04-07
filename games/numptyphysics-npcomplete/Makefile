@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	npcomplete
 PORTVERSION=	0.0.r20090116
 PORTREVISION=	3

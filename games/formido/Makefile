@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	formido
 PORTVERSION=	1.0.1
 PORTREVISION=	2

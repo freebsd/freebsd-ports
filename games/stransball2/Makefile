@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	stransball2
 PORTVERSION=	1.5
 PORTREVISION=	10

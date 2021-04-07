@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	gnubik
 PORTVERSION=	2.4.3
 PORTREVISION=	4

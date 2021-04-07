@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	eaglemode
 PORTVERSION=	0.95.0
 PORTREVISION=	9

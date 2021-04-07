@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	audiere
 PORTVERSION=	1.9.4
 PORTREVISION=	7

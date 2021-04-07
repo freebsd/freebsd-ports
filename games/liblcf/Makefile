@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	liblcf
 PORTVERSION=	0.6.2
 PORTREVISION=	1

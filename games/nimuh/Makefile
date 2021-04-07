@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	nimuh
 PORTVERSION=	1.02
 PORTREVISION=	11

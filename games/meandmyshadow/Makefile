@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	meandmyshadow
 PORTVERSION=	0.5a
 PORTREVISION=	1

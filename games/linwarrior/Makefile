@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	linwarrior
 PORTVERSION=	20100320
 PORTREVISION=	5

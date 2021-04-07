@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	crrcsim
 PORTVERSION=	0.9.13
 PORTREVISION=	1

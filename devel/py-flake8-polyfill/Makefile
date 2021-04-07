@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	flake8-polyfill
 PORTVERSION=	1.0.2
 CATEGORIES=	devel

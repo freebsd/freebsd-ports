@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	minetest
 PORTVERSION=	5.4.0
 PORTREVISION=	1

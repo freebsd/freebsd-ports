@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	findmaildirs
 PORTVERSION=	0.4
 CATEGORIES=	mail

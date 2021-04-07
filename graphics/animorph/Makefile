@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	animorph
 PORTVERSION=	0.3
 PORTREVISION=	8

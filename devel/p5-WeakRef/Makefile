@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	WeakRef
 PORTVERSION=	0.01
 PORTREVISION=	1

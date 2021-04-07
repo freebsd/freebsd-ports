@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	Math-Geometry-Planar-GPC-PolygonXS
 PORTVERSION=	0.052
 CATEGORIES=	math perl5

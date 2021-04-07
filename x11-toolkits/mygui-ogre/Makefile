@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTREVISION=	1
 PKGNAMESUFFIX=	-ogre
 

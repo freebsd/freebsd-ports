@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	sdl-ball
 PORTVERSION=	1.04
 CATEGORIES=	games

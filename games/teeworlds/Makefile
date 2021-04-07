@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	teeworlds
 PORTVERSION=	0.7.5
 CATEGORIES=	games

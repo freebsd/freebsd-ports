@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	libansilove
 PORTVERSION=	1.2.8
 CATEGORIES=	graphics

@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	hypothesmith
 PORTVERSION=	0.1.8
 CATEGORIES=	devel

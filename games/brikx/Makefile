@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	brikx
 PORTVERSION=	0.4.5
 PORTREVISION=	9

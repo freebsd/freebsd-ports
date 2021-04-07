@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	catesc
 PORTVERSION=	0.6
 CATEGORIES=	games

@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	opencity
 PORTVERSION=	0.0.6.5
 PORTREVISION=	3

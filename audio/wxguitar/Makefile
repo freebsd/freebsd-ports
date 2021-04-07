@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	wxguitar
 PORTVERSION=	1.01
 PORTREVISION=	13

@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	jsonslicer
 PORTVERSION=	0.1.6
 CATEGORIES=	textproc python

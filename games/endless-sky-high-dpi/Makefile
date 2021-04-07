@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	endless-sky-high-dpi
 PORTVERSION=	0.9.12
 DISTVERSIONPREFIX=	v

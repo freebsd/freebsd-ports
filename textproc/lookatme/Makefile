@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	lookatme
 PORTVERSION=	2.3.0
 CATEGORIES=	textproc python

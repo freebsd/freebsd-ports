@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	aklabeth
 PORTVERSION=	1.0
 CATEGORIES=	games

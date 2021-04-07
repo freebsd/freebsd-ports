@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	cultivation
 PORTVERSION=	8
 PORTREVISION=	6

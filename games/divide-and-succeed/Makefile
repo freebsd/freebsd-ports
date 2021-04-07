@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	divide-and-succeed
 PORTVERSION=	0.9.4
 PORTREVISION=	1

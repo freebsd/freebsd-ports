@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	libosmpbf
 PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	v

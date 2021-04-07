@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	springlobby
 PORTVERSION=	0.180
 PORTREVISION=	22

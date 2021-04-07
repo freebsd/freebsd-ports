@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	pldebugger
 PORTVERSION=	1.0.20181016
 PORTEPOCH=	1

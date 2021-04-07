@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	pushover
 PORTVERSION=	0.0.5
 PORTREVISION=	4

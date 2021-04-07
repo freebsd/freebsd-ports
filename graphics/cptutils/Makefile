@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	cptutils
 PORTVERSION=	1.74
 CATEGORIES=	graphics

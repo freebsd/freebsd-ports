@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	pytest-mutagen
 PORTVERSION=	1.3
 CATEGORIES=	devel python

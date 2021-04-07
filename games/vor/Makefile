@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	vor
 PORTVERSION=	0.5.8
 CATEGORIES=	games

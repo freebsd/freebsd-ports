@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-
 PORTNAME=	pachi
 PORTVERSION=	1.0
 PORTREVISION=	8

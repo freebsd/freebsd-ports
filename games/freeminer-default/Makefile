@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	default
 PORTVERSION=	0.4.10.4
 CATEGORIES=	games

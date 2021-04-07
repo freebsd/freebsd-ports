@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	pycodestyle
 PORTVERSION=	2.7.0
 CATEGORIES=	devel python

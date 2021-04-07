@@ -1,5 +1,3 @@
-# Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-
 PORTNAME=	meritous
 PORTVERSION=	1.2
 PORTREVISION=	11
