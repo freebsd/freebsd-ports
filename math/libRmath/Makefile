@@ -44,8 +44,8 @@ OPTIONS_EXCLUDE_armv7=		FLANG
 OPTIONS_EXCLUDE_i386=		FLANG
 
 FLANG_DESC=	Use experimental flang instead of default Fortran compiler
-FLANG_USES_OFF=	fortran
 FLANG_USES=	fortran:flang
+FLANG_USES_OFF=	fortran
 
 _RMATH_SOVERSION=	${DISTVERSION:R}
 
