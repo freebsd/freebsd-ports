@@ -21,7 +21,7 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/plus.png
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/pygments.css
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/searchtools.js
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/underscore-1.3.1.js
+%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/underscore-1.12.0.js
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/underscore.js
 %%PORTDOCS%%%%DOCSDIR%%/en/html/characteristic.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/community.html
@@ -96,7 +96,7 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/plus.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/pygments.css
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/searchtools.js
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/underscore-1.3.1.js
+%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/underscore-1.12.0.js
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/underscore.js
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/characteristic.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/community.html
@@ -216,4 +216,6 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/source/tutorial/wrapper.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/upgrade.rst
 %%DATADIR%%/install.sql
+%%DATADIR%%/rpm/post.sh
+%%DATADIR%%/rpm/preun.sh
 %%DATADIR%%/uninstall.sql
