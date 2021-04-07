@@ -108,15 +108,15 @@ SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
-		gettext-runtime gl gmake gnome jpeg mysql:client perl5 pkgconfig \
-		pkgconfig python:3.6+ shebangfix shared-mime-info ssl tar:xz xorg
+		gettext-runtime gl gmake gnome jpeg perl5 pkgconfig python:3.6+ \
+		shebangfix shared-mime-info ssl tar:xz xorg
 USE_GL=		gl glew glu
 USE_GNOME=	cairo glib20 libxml2 libxslt
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
 
-OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 JAVA KF5 LTO MMEDIA PGSQL QT5 SDK TEST WEBDAV
+OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 JAVA KF5 LTO MMEDIA PGSQL MARIADB QT5 SDK TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS MMEDIA QT5
 
 .if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mssl=*}
@@ -130,6 +130,7 @@ JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
 KF5_DESC=	KF5/Qt5 GUI toolkit support (implies QT5)
 MMEDIA_DESC=	Enable multimedia backend for Impress
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
+MARIADB_DESC=	Build with MariaDB-SDBC driver
 QT5_DESC=	Qt5 GUI toolkit support (default visual style)
 SDK_DESC=	Build with SDK
 TEST_DESC=	Run all regression tests
@@ -207,6 +208,9 @@ MMEDIA_USE=	GSTREAMER1=yes
 PGSQL_CONFIGURE_ENABLE=	postgresql-sdbc
 PGSQL_CONFIGURE_WITH=	gssapi krb5
 PGSQL_USES=	pgsql
+
+MARIADB_CONFIGURE_ENABLE=	mariadb-sdbc
+MARIADB_USES=	mysql:client
 
 QT5_CONFIGURE_ENABLE=	qt5
 QT5_USE=	qt=buildtools_build,core,gui,network,qmake_build,widgets,x11extras
