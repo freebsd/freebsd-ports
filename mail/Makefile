@@ -98,7 +98,6 @@
     SUBDIR += dspam
     SUBDIR += ecartis
     SUBDIR += elm
-    SUBDIR += elmo
     SUBDIR += emailrelay
     SUBDIR += emil
     SUBDIR += enma

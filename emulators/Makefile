@@ -14,7 +14,6 @@
     SUBDIR += bsvc
     SUBDIR += cannonball
     SUBDIR += cemu
-    SUBDIR += cinc
     SUBDIR += cingb
     SUBDIR += citra
     SUBDIR += citra-qt5
@@ -26,9 +25,7 @@
     SUBDIR += dolphin-emu
     SUBDIR += dosbox
     SUBDIR += dosbox-staging
-    SUBDIR += dtcyber
     SUBDIR += dynamips-community
-    SUBDIR += e-uae
     SUBDIR += edumips64
     SUBDIR += elliott-803
     SUBDIR += emu64

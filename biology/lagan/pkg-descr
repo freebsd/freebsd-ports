@@ -1,9 +1,0 @@
-The Lagan Tookit is a set of alignment programs for comparative
-genomics. The three main components are a pairwise aligner (LAGAN), a
-multiple aligner (M-LAGAN), and a glocal aligner (Shuffle-LAGAN). All
-three are based on the CHAOS local alignment tool and combine speed
-(regions up to several megabases can be aligned in minutes) with high
-accuracy. The results of the alignment can be visualized using the VISTA
-visualization tool.
-
-WWW: http://lagan.stanford.edu/

@@ -31,7 +31,6 @@
     SUBDIR += broot
     SUBDIR += bsod
     SUBDIR += buffer
-    SUBDIR += cave
     SUBDIR += cheat
     SUBDIR += chef
     SUBDIR += chmlib

@@ -165,7 +165,6 @@
     SUBDIR += rubygem-ruby-bsdconv
     SUBDIR += rubygem-url_safe_base64
     SUBDIR += rubygem-xdr
-    SUBDIR += shftool
     SUBDIR += showkey
     SUBDIR += ta2as
     SUBDIR += tnef
@@ -174,7 +173,6 @@
     SUBDIR += unix2dos
     SUBDIR += uudeview
     SUBDIR += uulib
-    SUBDIR += vda2fbd
     SUBDIR += wkhtmltopdf
     SUBDIR += xdeview
     SUBDIR += xml2c

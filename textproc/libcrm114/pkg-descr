@@ -1,7 +1,0 @@
-This is the callable library version of CRM114. It has most of the classifiers
-as the standalone language. This version is LGPLed (Library GPL) so you can
-link it with your own code, whether open-source or proprietary.
-You still need TRE. Note that with improvements come costs:
-libcrm114 classifiers are NOT compatible with standalone CRM114 class files.
-
-WWW: http://crm114.sourceforge.net/

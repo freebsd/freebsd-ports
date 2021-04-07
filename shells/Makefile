@@ -15,7 +15,6 @@
     SUBDIR += elvish
     SUBDIR += envy
     SUBDIR += es
-    SUBDIR += esh
     SUBDIR += fd
     SUBDIR += fish
     SUBDIR += git-prompt.zsh

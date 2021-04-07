@@ -26,7 +26,6 @@
     SUBDIR += bgs
     SUBDIR += bitmap
     SUBDIR += bmpanel2
-    SUBDIR += bricons
     SUBDIR += brisk-menu
     SUBDIR += cde
     SUBDIR += cinnamon
@@ -342,7 +341,6 @@
     SUBDIR += tilix
     SUBDIR += tint
     SUBDIR += trayer
-    SUBDIR += tycoon
     SUBDIR += ulauncher
     SUBDIR += urxvt-font-size
     SUBDIR += urxvt-perls
@@ -372,11 +370,9 @@
     SUBDIR += wmctrl
     SUBDIR += wmdrawer
     SUBDIR += wmfocus
-    SUBDIR += wmmatrix
     SUBDIR += wmsystemtray
     SUBDIR += wmutils-core
     SUBDIR += wmutils-opt
-    SUBDIR += wmxss
     SUBDIR += wob
     SUBDIR += wofi
     SUBDIR += workrave
@@ -393,7 +389,6 @@
     SUBDIR += xbacklight
     SUBDIR += xballoon
     SUBDIR += xbanish
-    SUBDIR += xbanner
     SUBDIR += xbiff
     SUBDIR += xbindkeys
     SUBDIR += xbitmaps
@@ -452,7 +447,6 @@
     SUBDIR += xforward
     SUBDIR += xgamma
     SUBDIR += xgc
-    SUBDIR += xgrab
     SUBDIR += xhost
     SUBDIR += xidle
     SUBDIR += xinit
@@ -483,7 +477,6 @@
     SUBDIR += xmessage
     SUBDIR += xmh
     SUBDIR += xmodmap
-    SUBDIR += xmon
     SUBDIR += xmore
     SUBDIR += xmotd
     SUBDIR += xmsg

@@ -1,5 +1,0 @@
-Doorman is a port knocking implementation which allows a server to run
-silently, invisibly, with all TCP ports closed except to those who know...
-the secret knock!
-
-WWW: http://doorman.sourceforge.net/

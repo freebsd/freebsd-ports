@@ -52,7 +52,6 @@
     SUBDIR += gmap
     SUBDIR += gperiodic
     SUBDIR += graphlan
-    SUBDIR += grappa
     SUBDIR += groopm
     SUBDIR += haplohseq
     SUBDIR += hhsuite
@@ -67,7 +66,6 @@
     SUBDIR += jalview
     SUBDIR += jellyfish
     SUBDIR += kallisto
-    SUBDIR += lagan
     SUBDIR += lamarc
     SUBDIR += libbigwig
     SUBDIR += libgtextutils
@@ -114,7 +112,6 @@
     SUBDIR += pear-merger
     SUBDIR += phrap
     SUBDIR += phred
-    SUBDIR += phylip
     SUBDIR += phyml
     SUBDIR += picard-tools
     SUBDIR += plink

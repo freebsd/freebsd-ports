@@ -30,7 +30,6 @@
     SUBDIR += horde-gollem
     SUBDIR += hsftp
     SUBDIR += jftp
-    SUBDIR += jftpgw
     SUBDIR += lftp
     SUBDIR += libfilezilla
     SUBDIR += linux-c7-curl
@@ -66,7 +65,6 @@
     SUBDIR += profxp
     SUBDIR += puf
     SUBDIR += pure-ftpd
-    SUBDIR += pureadmin
     SUBDIR += py-aioftp
     SUBDIR += py-ftputil
     SUBDIR += py-pycurl
@@ -94,7 +92,6 @@
     SUBDIR += wmget
     SUBDIR += wput
     SUBDIR += wxdfast
-    SUBDIR += wzdftpd
     SUBDIR += yafc
 
 .include <bsd.port.subdir.mk>

@@ -36,7 +36,6 @@
     SUBDIR += ebook2cwgui
     SUBDIR += ebusd
     SUBDIR += echolinux
-    SUBDIR += efax
     SUBDIR += ems-flasher
     SUBDIR += fl_moxgen
     SUBDIR += flamp
@@ -163,7 +162,6 @@
     SUBDIR += sdr-wspr
     SUBDIR += ser2net
     SUBDIR += serialoverip
-    SUBDIR += seyon
     SUBDIR += sms_client
     SUBDIR += smstools3
     SUBDIR += snap7

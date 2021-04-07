@@ -77,7 +77,6 @@
     SUBDIR += cd2mp3
     SUBDIR += cddb-bundle
     SUBDIR += cdparanoia
-    SUBDIR += cdplay
     SUBDIR += celt
     SUBDIR += checkmate
     SUBDIR += cheesecutter
@@ -209,9 +208,7 @@
     SUBDIR += gbsplay
     SUBDIR += geonkick-lv2
     SUBDIR += gervill
-    SUBDIR += ghostess
     SUBDIR += giada
-    SUBDIR += gimmix
     SUBDIR += glurp
     SUBDIR += gmpc
     SUBDIR += gmpc-alarm
@@ -324,7 +321,6 @@
     SUBDIR += jacktrip
     SUBDIR += jalv
     SUBDIR += jalv-select
-    SUBDIR += jamin
     SUBDIR += jamulus
     SUBDIR += jid3lib
     SUBDIR += juk
@@ -336,7 +332,6 @@
     SUBDIR += klystrack
     SUBDIR += kmix
     SUBDIR += komposter
-    SUBDIR += ksmp3play
     SUBDIR += kwave
     SUBDIR += ladspa
     SUBDIR += lame
@@ -520,7 +515,6 @@
     SUBDIR += muse-sequencer
     SUBDIR += musepack
     SUBDIR += musescore
-    SUBDIR += musicbox-tag-editor
     SUBDIR += musiccontrol
     SUBDIR += musicpc
     SUBDIR += musicpd
@@ -536,7 +530,6 @@
     SUBDIR += normalize
     SUBDIR += nosefart
     SUBDIR += noson-app
-    SUBDIR += nspmod
     SUBDIR += oaml
     SUBDIR += ocp
     SUBDIR += ogg2mp3
@@ -709,7 +702,6 @@
     SUBDIR += shairport-sync
     SUBDIR += sherlock-lv2
     SUBDIR += shntool
-    SUBDIR += shout
     SUBDIR += sidplay
     SUBDIR += sidplay2
     SUBDIR += sidplayer
@@ -791,7 +783,6 @@
     SUBDIR += timidity++-xskin
     SUBDIR += tkeca
     SUBDIR += toccata-lv2
-    SUBDIR += toolame
     SUBDIR += tosha
     SUBDIR += traverso
     SUBDIR += tse3
@@ -833,7 +824,6 @@
     SUBDIR += wildmidi
     SUBDIR += wmix
     SUBDIR += wmmp
-    SUBDIR += wmrecord
     SUBDIR += wmsmixer
     SUBDIR += wxguitar
     SUBDIR += x42-plugins-lv2
