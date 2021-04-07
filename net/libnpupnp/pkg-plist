@@ -8,5 +8,5 @@ include/npupnp/upnpdescription.h
 include/npupnp/upnptools.h
 lib/libnpupnp.so
 lib/libnpupnp.so.4
-lib/libnpupnp.so.4.1.0
+lib/libnpupnp.so.4.2.0
 libdata/pkgconfig/libnpupnp.pc
