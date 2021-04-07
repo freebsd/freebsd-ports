@@ -48,6 +48,7 @@
     SUBDIR += avldrums-lv2
     SUBDIR += aylet
     SUBDIR += bambootracker
+    SUBDIR += bamp-lv2
     SUBDIR += baresip
     SUBDIR += baudline
     SUBDIR += bcg729
