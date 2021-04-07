@@ -1,7 +1,7 @@
 # Created by: George Hartzell <hartzell@alerce.com>
 
 PORTNAME=	App-Cmd
-PORTVERSION=	0.331
+PORTVERSION=	0.333
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
