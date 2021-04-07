@@ -1,7 +1,7 @@
 # Created by: lesi@FreeBSD.org
 
 PORTNAME=	libdrm
-PORTVERSION=	2.4.105
+PORTVERSION=	2.4.106
 PORTEPOCH=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	https://dri.freedesktop.org/libdrm/
