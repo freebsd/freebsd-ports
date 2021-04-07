@@ -1,7 +1,7 @@
 # Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 
 PORTNAME=	jruby
-PORTVERSION=	9.2.5.0
+PORTVERSION=	9.2.17.0
 DISTVERSIONPREFIX=	bin-
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://jruby.org.s3.amazonaws.com/downloads/${PORTVERSION}/
@@ -36,6 +36,7 @@ PORTEXAMPLES=	*
 post-patch:
 	@${RM} -r \
 		${WRKSRC}/lib/jni/*AIX \
+		${WRKSRC}/lib/jni/*DragonFlyBSD \
 		${WRKSRC}/lib/jni/*Linux \
 		${WRKSRC}/lib/jni/*OpenBSD \
 		${WRKSRC}/lib/jni/*SunOS \
