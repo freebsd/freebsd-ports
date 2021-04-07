@@ -1,5 +1,3 @@
-# $FreeBSD: head/devel/fossil/Makefile 569550 2021-03-30 11:47:01Z gahr $
-
 PORTNAME=	fossil
 PORTVERSION=	2.15
 DISTVERSIONPREFIX=	src-
