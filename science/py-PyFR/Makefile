@@ -1,5 +1,6 @@
 PORTNAME=	PyFR
 DISTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	http://www.pyfr.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:devel/py-appdirs@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}mako>=1.0.0:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mpi4py>=2.0:net/py-mpi4py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytools>=2016.2.1:devel/py-pytools@${PY_FLAVOR} \
-		${NUMPY}
+		${PYNUMPY}
 
 USES=		python:3.3+ shebangfix zip
 SHEBANG_FILES=	setup.py pyfr/__main__.py
