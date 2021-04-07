@@ -9,7 +9,7 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE frontend to the PolicyKit framework
 
-LICENSE=	LGPL20
+LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit \
