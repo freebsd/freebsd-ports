@@ -16,7 +16,7 @@ xwayland: if (build_options.xwayland) *wlr.Xwayland else void,
     var server: Server = undefined;
                          ^
 
---- deps/zig-wlroots/src/backend/session.zig.orig	2020-12-24 11:19:51 UTC
+--- deps/zig-wlroots/src/backend/session.zig.orig	2021-04-07 22:14:45 UTC
 +++ deps/zig-wlroots/src/backend/session.zig
 @@ -5,7 +5,7 @@ const wl = wayland.server.wl;
  
@@ -24,9 +24,9 @@ xwayland: if (build_options.xwayland) *wlr.Xwayland else void,
      fd: c_int,
 -    dev: os.dev_t,
 +    dev: u64,
-     signal: wl.Signal(*Session),
- 
      /// Session.devices
+     link: wl.list.Link,
+ 
 --- deps/zig-wlroots/src/xwayland.zig.orig	2020-12-24 11:19:51 UTC
 +++ deps/zig-wlroots/src/xwayland.zig
 @@ -37,7 +37,7 @@ pub const XwaylandServer = extern struct {
