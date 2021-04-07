@@ -23,6 +23,7 @@ include/simavr/parts/hd44780.h
 include/simavr/parts/hd44780_glut.h
 include/simavr/parts/i2c_eeprom.h
 include/simavr/parts/lcd_font.h
+include/simavr/parts/rotenc.h
 include/simavr/parts/ssd1306_glut.h
 include/simavr/parts/ssd1306_virt.h
 include/simavr/parts/uart_pty.h
@@ -90,6 +91,12 @@ libdata/pkgconfig/simavrparts.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/board_ledramp/atmega48_ledramp.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/board_ledramp/ledramp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/board_ledramp/ledramp.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/board_rotenc/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/board_rotenc/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/board_rotenc/atmega32_rotenc_test.axf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/board_rotenc/atmega32_rotenc_test.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/board_rotenc/rotenc_test
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/board_rotenc/rotenc_test.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/board_simduino/ATmegaBOOT_168_atmega328.ihex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/board_simduino/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/board_simduino/README
@@ -129,6 +136,8 @@ libdata/pkgconfig/simavrparts.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parts/i2c_eeprom.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parts/i2c_eeprom.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parts/lcd_font.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parts/rotenc.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parts/rotenc.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parts/ssd1306_glut.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parts/ssd1306_glut.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parts/ssd1306_virt.c
