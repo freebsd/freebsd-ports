@@ -1,6 +1,6 @@
---- Modules/FindFLEX.cmake.orig	2020-01-19 09:02:30 UTC
+--- Modules/FindFLEX.cmake.orig	2021-03-23 15:43:17 UTC
 +++ Modules/FindFLEX.cmake
-@@ -103,10 +103,15 @@ find_program(FLEX_EXECUTABLE NAMES flex win_flex DOC "
+@@ -112,10 +112,15 @@ find_program(FLEX_EXECUTABLE NAMES flex win-flex win_f
  mark_as_advanced(FLEX_EXECUTABLE)
  
  find_library(FL_LIBRARY NAMES fl
