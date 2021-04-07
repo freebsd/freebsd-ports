@@ -1,8 +1,9 @@
+# $FreeBSD: head/devel/fossil/Makefile 569550 2021-03-30 11:47:01Z gahr $
 
 PORTNAME=	fossil
 PORTVERSION=	2.15
 DISTVERSIONPREFIX=	src-
-#PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel www
 MASTER_SITES=	http://fossil-scm.org/index.html/uv/
@@ -24,16 +25,14 @@ MAKE_JOBS_UNSAFE=yes
 
 PLIST_FILES=	bin/fossil man/man1/fossil.1.gz
 
-OPTIONS_DEFINE=	JSON FUSE SQLITE STATIC TH1HOOKS TCL
+OPTIONS_DEFINE=	JSON FUSE STATIC TH1HOOKS TCL
 OPTIONS_DEFAULT=JSON
 JSON_DESC=	JSON API support
 FUSE_DESC=	Enable fossil fusefs command
-SQLITE_DESC=	Use sqlite3 from ports
 TH1HOOKS_DESC=	Enable TH1 command and web page hooks
 TCL_DESC=	Enable Tcl integration
 
 JSON_CONFIGURE_ON=	--json
-SQLITE_CONFIGURE_ON=	--disable-internal-sqlite
 STATIC_CONFIGURE_ON=	--static
 STATIC_LDFLAGS=		-pthread
 FUSE_CONFIGURE_OFF=	--disable-fusefs
@@ -42,7 +41,6 @@ TCL_CONFIGURE_ON=	--with-tcl-stubs --with-tcl=${TCL_LIBDIR}
 TCL_USES=		tcl
 TCL_CFLAGS=		-DTCL_LIBRARY_NAME=\\\"libtcl${TCL_SHLIB_VER}.so\\\" \
 			-DTCL_MINOR_OFFSET=7
-SQLITE_USES=		sqlite localbase:ldflags
 FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
 FUSE_USES=		localbase:ldflags
 
