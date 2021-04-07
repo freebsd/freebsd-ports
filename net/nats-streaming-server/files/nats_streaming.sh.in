@@ -2,6 +2,7 @@
 #
 # PROVIDE: nats_streaming
 # REQUIRE: DAEMON
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to run the NATS streaming server:
 #
@@ -13,12 +14,12 @@
 
 . /etc/rc.subr
 
-name="nats_streaming"
+name=nats_streaming
 rcvar=`set_rcvar`
 
 load_rc_config ${name}
-: ${nats_streaming_enable="NO"}
-: ${nats_streaming_username="nobody"}
+: ${nats_streaming_enable:=NO}
+: ${nats_streaming_username:=nobody}
 : ${nats_streaming_options="-c %%PREFIX%%/etc/nats_streaming.conf"}
 
 command=/usr/sbin/daemon
