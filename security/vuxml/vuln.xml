@@ -76,6 +76,53 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c0c1834c-9761-11eb-acfd-0022489ad614">
+    <topic>Node.js -- April 2021 Security Releases</topic>
+    <affects>
+      <package>
+	<name>node10</name>
+	<range><lt>10.24.1</lt></range>
+      </package>
+      <package>
+	<name>node12</name>
+	<range><lt>12.22.1</lt></range>
+      </package>
+      <package>
+	<name>node14</name>
+	<range><lt>14.16.1</lt></range>
+      </package>
+      <package>
+	<name>node</name>
+	<range><lt>15.14.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Node.js reports:</p>
+	<blockquote cite="https://nodejs.org/en/blog/vulnerability/april-2021-security-releases/">
+	  <h1>OpenSSL - CA certificate check bypass with X509_V_FLAG_X509_STRICT (High) (CVE-2021-3450)</h1>
+	  <p>This is a vulnerability in OpenSSL which may be exploited through Node.js. You can read more about it in https://www.openssl.org/news/secadv/20210325.txt</p>
+	  <h1>OpenSSL - NULL pointer deref in signature_algorithms processing (High) (CVE-2021-3449)</h1>
+	  <p>This is a vulnerability in OpenSSL which may be exploited through Node.js. You can read more about it in https://www.openssl.org/news/secadv/20210325.txt</p>
+	  <h1>npm upgrade - Update y18n to fix Prototype-Pollution (High) (CVE-2020-7774)</h1>
+	  <p>This is a vulnerability in the y18n npm module which may be exploited by prototype pollution. You can read more about it in https://github.com/advisories/GHSA-c4w7-xm78-47vh</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://nodejs.org/en/blog/vulnerability/april-2021-security-releases/</url>
+      <url>https://www.openssl.org/news/secadv/20210325.txt</url>
+      <url>https://github.com/advisories/GHSA-c4w7-xm78-47vh</url>
+      <cvename>CVE-2021-3450</cvename>
+      <cvename>CVE-2021-3449</cvename>
+      <cvename>CVE-2020-7774</cvename>
+    </references>
+    <dates>
+      <discovery>2021-04-06</discovery>
+      <entry>2021-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a7b97d26-9792-11eb-b87a-901b0ef719ab">
     <topic>FreeBSD -- jail escape possible by mounting over jail root</topic>
     <affects>
