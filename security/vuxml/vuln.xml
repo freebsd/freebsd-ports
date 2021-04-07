@@ -297,6 +297,10 @@ Notes:
 	<name>openssl</name>
 	<range><lt>1.1.1k,1</lt></range>
       </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>12.2</ge><lt>12.2_5</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -321,10 +325,12 @@ Notes:
       <url>https://www.openssl.org/news/secadv/20210325.txt</url>
       <cvename>CVE-2021-3449</cvename>
       <cvename>CVE-2021-3450</cvename>
+      <freebsdsa>SA-21:07.openssl</freebsdsa>
     </references>
     <dates>
       <discovery>2021-03-25</discovery>
       <entry>2021-03-26</entry>
+      <modified>2021-04-07</modified>
     </dates>
   </vuln>
 
