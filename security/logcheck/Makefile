@@ -1,7 +1,7 @@
 # Created by: Dan Langille <dan@freebsddiary.org>
 
 PORTNAME=	logcheck
-PORTVERSION=	1.3.22
+PORTVERSION=	1.3.23
 CATEGORIES=	security
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
