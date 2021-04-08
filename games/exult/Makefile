@@ -1,8 +1,7 @@
 # Created by: Igor Pokrovsky <tiamat@telegraph.spb.ru>
 
 PORTNAME=	exult
-PORTVERSION=	1.5.0.20160514
-PORTREVISION=	9
+PORTVERSION=	1.7.0.20210405
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,50 +11,43 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
-		libpng.so:graphics/png
-
-USE_GITHUB=	yes
-GH_TAGNAME=	b15afba
+		libpng.so:graphics/png \
+		libogg.so:audio/libogg \
+		libfreetype.so:print/freetype2
 
 USES=		autoreconf compiler:c++11-lib gmake libtool localbase pkgconfig \
-		xorg
-USE_CXXSTD=	c++98
-USE_XORG=	xext
+		xorg sdl
+
+USE_GITHUB=	yes
+GH_TAGNAME=	6150ae4
+
+USE_CXXSTD=	c++17
+USE_XORG=	x11 xext
+USE_SDL=	mixer2
+USE_GNOME=	gtk30 cairo gdkpixbuf2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-alsa \
+CONFIGURE_ARGS=	--disable-alsa --with-sdl=sdl2 \
 		--with-icondir=${PREFIX}/share/pixmaps
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		DOCS FLUIDSYNTH GIMP STUDIO THUMBNAILER
-OPTIONS_SINGLE=		SDL
-OPTIONS_SINGLE_SDL=	SDL1 SDL2
-OPTIONS_DEFAULT=	SDL1 STUDIO
+OPTIONS_DEFAULT=	STUDIO
 OPTIONS_SUB=		yes
 
 FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
-FLUIDSYNTH_CONFIGURE_ENABLE=\
-			fluidsynth
+FLUIDSYNTH_CONFIGURE_ENABLE=	fluidsynth
 GIMP_DESC=		GIMP plugin support
 GIMP_LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
 GIMP_CONFIGURE_ENABLE=	gimp-plugin
-SDL1_DESC=		Simple Direct Media Layer 1 support
-SDL1_USES=		sdl
-SDL1_USE=		sdl=mixer
-SDL1_CONFIGURE_ON=	--with-sdl=sdl12
-SDL2_DESC=		Simple Direct Media Layer 2 support
-SDL2_USES=		sdl
-SDL2_USE=		sdl=mixer2
-SDL2_CONFIGURE_ON=	--with-sdl=sdl2
+
 STUDIO_DESC=		Install Exult Studio
-STUDIO_CONFIGURE_ENABLE=\
-			exult-studio exult-studio-support
+STUDIO_CONFIGURE_ENABLE=	exult-studio exult-studio-support
 STUDIO_USES=		gnome
 STUDIO_USE=		gnome=libglade2
 THUMBNAILER_DESC=	Gnome SHP thumbnailer support
 THUMBNAILER_USES=	gnome shared-mime-info
 THUMBNAILER_USE=	gnome=libgnomeui
-THUMBNAILER_CONFIGURE_ENABLE=\
-			gnome-shp-thumbnailer
+THUMBNAILER_CONFIGURE_ENABLE=	gnome-shp-thumbnailer
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
