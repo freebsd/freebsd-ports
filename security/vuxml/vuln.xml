@@ -76,6 +76,41 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9ae2c00f-97d0-11eb-8cd6-080027f515ea">
+    <topic>clamav -- Multiple vulnerabilites</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.103.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Micah Snyder reports:</p>
+	<blockquote cite="https://blog.clamav.net/2021/04/clamav-01032-security-patch-release.html">
+	  <dl>
+	    <dt>CVE-2021-1252</dt>
+	    <dd>Excel XLM parser infinite loop</dd>
+	    <dt>CVE-2021-1404</dt>
+	    <dd>PDF parser buffer over-read; possible crash. </dd>
+	    <dt>CVE-2021-1405</dt>
+	    <dd>Mail parser NULL-dereference crash. </dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-1252</cvename>
+      <cvename>CVE-2021-1404</cvename>
+      <cvename>CVE-2021-1405</cvename>
+      <url>https://blog.clamav.net/2021/04/clamav-01032-security-patch-release.html</url>
+    </references>
+    <dates>
+      <discovery>2021-04-07</discovery>
+      <entry>2021-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9595d002-edeb-4602-be2d-791cd654247e">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
