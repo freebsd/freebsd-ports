@@ -2,7 +2,7 @@
 
 PORTNAME=	AnyEvent-CouchDB
 PORTVERSION=	1.31
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,12 +12,8 @@ COMMENT=	Non-blocking CouchDB client based on jquery.couch.js
 
 LICENSE=	MIT
 
-DEPRECATED=	Uses EOL Python 2.7 via databases/couchdb2
-EXPIRATION_DATE=2021-06-23
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	couchdb2>=0.9.0:databases/couchdb2 \
-		p5-AnyEvent-HTTP>=2.11:www/p5-AnyEvent-HTTP \
+RUN_DEPENDS=	p5-AnyEvent-HTTP>=2.11:www/p5-AnyEvent-HTTP \
 		p5-CouchDB-View>=0:databases/p5-CouchDB-View \
 		p5-Data-Dump-Streamer>=0:devel/p5-Data-Dump-Streamer \
 		p5-Exception-Class>=0:devel/p5-Exception-Class \
