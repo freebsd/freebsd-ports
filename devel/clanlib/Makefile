@@ -12,20 +12,23 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform game SDK
 
 LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_i386=		typedef redefinition with different types ('ptrdiff_t' (aka 'int') vs 'khronos_intptr_t' (aka 'long'))
+BROKEN_i386=	typedef redefinition with different types ('ptrdiff_t' (aka 'int') vs 'khronos_intptr_t' (aka 'long'))
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libmikmod.so:audio/libmikmod \
 		libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libpcre.so:devel/pcre
+		libpcre.so:devel/pcre \
+		libfreetype.so:print/freetype2
 
 USES=		compiler:c++11-lib gl gmake jpeg libtool localbase:ldflags \
 		pathfix pkgconfig sqlite tar:tgz xorg
-USE_XORG=	x11
+USE_XORG=	x11 xrender
 USE_LDCONFIG=	yes
-USE_GL=		yes
+USE_GL=		gl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs \
