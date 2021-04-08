@@ -36,6 +36,11 @@ CONFIGURE_ARGS+=	--prefix ${PREFIX} \
 			--mandir man \
 			--infodir ${INFO_PATH}
 
+# Disable color output.  Meson forces it on by default, Ninja
+# strips it before it goes to the log, but Samurai does not, so we
+# might end up with ANSI escape sequences in the logs.
+CONFIGURE_ARGS+=	-Db_colorout=never
+
 # meson has it own strip mechanic
 INSTALL_TARGET=		install
 
