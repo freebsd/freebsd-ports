@@ -4,12 +4,17 @@ and threading bugs, avoiding hours of frustrating bug-hunting, making your
 programs more stable. You can also perform detailed profiling, to speed up and
 reduce memory use of your programs.
 
-The Valgrind distribution includes five tools: two memory error detectors, a
-thread error detector, a cache profiler and a heap profiler. Several other
-tools have been built with Valgrind.
+The Valgrind distribution includes 10 tools:
+ - memcheck, the primary tool, a memory error detector
+ - helgrind and drd, thread error detectors
+ - callgrind and cachegrind, execution and cache profiling tools
+ - massif, a memory tracker
+ - dhat, a memory content profiler
+ - lackey, an example of using the framework
+ - none, does no instumentation and can check that Valgrind runs correctly
+ - exp-bbv, and experimental profiling tool using sampling
 
-Valgrind was initially ported to FreeBSD by
-Doug Rabson (http://www.rabson.org/).
+Valgrind was initially ported to FreeBSD by Doug Rabson.
 
-WWW: https://bitbucket.org/stass/valgrind-freebsd/overview
+WWW: https://github.com/paulfloyd/freebsd_valgrind
 WWW: http://www.valgrind.org/

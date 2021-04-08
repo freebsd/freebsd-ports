@@ -1,30 +1,40 @@
 # Created by: Simon Barner <barner@gmx.de>
 
 PORTNAME=	valgrind
-PORTVERSION=	3.10.1.20160113
+PORTVERSION=	3.17.0.g20210319
 DISTVERSIONPREFIX=	freebsd-
-PORTREVISION=	8
+#PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/ \
-		http://mirror.shatow.net/freebsd/${PORTNAME}/
+MASTER_SITES=	https://valgrind.org/
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	pjfloyd@wanadoo.fr
 COMMENT=	Memory debugging and profiling tool
 
-BB_COMMIT=	ce1acb28953f
-BB_ACCOUNT=	stass
-BB_PROJECT=	valgrind-freebsd
-
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails at runtime: valgrind: mmap(0x200000, 45056) failed in UME with error 22 (Invalid argument)
+ONLY_FOR_ARCHS=	amd64 i386
 
-CONFLICTS=	valgrind-devel-[0-9]*
+USES=		pathfix pkgconfig gmake perl5 shebangfix autoreconf
+USE_PERL5=	build
 
-ONLY_FOR_ARCHS=	i386 amd64
+GNU_CONFIGURE=	yes
+SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in
+SSP_UNSAFE=	yes
+LIB32_PATH?=	/usr/lib32/libc.so
 
-LIB32_PATH?=	${DESTDIR}/usr/lib32/libc.so
+CONFLICTS=	valgrind-[0-9]*
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	paulfloyd
+GH_PROJECT=	freebsd_valgrind
+GH_TAGNAME=	d333c54
+
+CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
+
+PORTDOCS=	html
 
 OPTIONS_DEFINE=		DOCS MANPAGES MPI
 OPTIONS_DEFINE_amd64=	32BIT
@@ -32,42 +42,21 @@ OPTIONS_DEFAULT=	MANPAGES
 .if exists(${LIB32_PATH})
 OPTIONS_DEFAULT_amd64=	32BIT
 .endif
+OPTIONS_SUB=	yes
+
 32BIT_DESC=	Enable debugging of 32-bit programs (requires lib32)
 MPI_DESC=	Enable build of MPI wrappers
 
-DOCS_BUILD_DEPENDS=    docbook-xsl>=0:textproc/docbook-xsl \
-                       xsltproc:textproc/libxslt
-MANPAGES_BUILD_DEPENDS=        docbook-xsl>=0:textproc/docbook-xsl \
-                       xsltproc:textproc/libxslt
+DOCS_BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
+			xsltproc:textproc/libxslt
+MANPAGES_BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
+			xsltproc:textproc/libxslt
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich
-
-OPTIONS_SUB=	yes
-USES=		pathfix pkgconfig gmake perl5 shebangfix autoreconf
-USE_PERL5=	build
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in
-
-EXTRA_PATCHES=	\
-		${FILESDIR}/accept4_syscall.patch:-p1 \
-		${FILESDIR}/jail_syscalls.patch:-p1 \
-		${FILESDIR}/kldload_syscalls.patch:-p1 \
-		${FILESDIR}/missing_fcntls.patch:-p1
-
-PORTDOCS=	html
-
-WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
-
-CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} > 1200030
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ino64:-p1
-.endif
-
 .if ${ARCH} == "amd64"
-PLIST_SUB+=	AMD64="" ARCH=amd64
+PLIST_SUB+=	AMD64=""
 . if !${PORT_OPTIONS:M32BIT}
 CONFIGURE_ARGS+=	--enable-only64bit
 PLIST_SUB+=	X86="@comment "
@@ -79,8 +68,8 @@ distribution or run 'make config' and uncheck 32BIT option
 PLIST_SUB+=	X86=""
 . endif
 .else
-PLIST_SUB+=	X86="" ARCH=x86
 PLIST_SUB+=	AMD64="@comment "
+PLIST_SUB+=	X86=""
 .endif
 
 .if !${PORT_OPTIONS:MDOCS}
