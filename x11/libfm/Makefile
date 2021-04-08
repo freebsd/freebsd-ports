@@ -1,7 +1,7 @@
 # Created by: Kris Moore <kmoore@FreeBSD.org>
 
 PORTNAME=	libfm
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	x11
 MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/LibFM/
 
