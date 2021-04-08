@@ -2,8 +2,7 @@
 
 PORTNAME=	cimg
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	2.9.6
-PORTREVISION=	1
+DISTVERSION=	2.9.7
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
@@ -51,6 +50,7 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl			\
 		libpng.so:graphics/png			\
 		libtiff.so:graphics/tiff		\
 		libHalf.so:graphics/ilmbase		\
+		libheif.so:graphics/libheif		\
 		libIlmImf.so:graphics/openexr		\
 		libgimp-2.0.so:graphics/gimp-app	\
 		libfftw3.so:math/fftw3			\

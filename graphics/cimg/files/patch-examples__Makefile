@@ -1,4 +1,4 @@
---- examples/Makefile.orig	2020-11-23 20:31:46 UTC
+--- examples/Makefile.orig	2021-04-02 13:11:36 UTC
 +++ examples/Makefile
 @@ -89,7 +89,7 @@ VERSION2 = $(shell grep 'cimg_version\ ' ../CImg.h | t
  VERSION3 = $(shell grep 'cimg_version\ ' ../CImg.h | tail -c2 | head -c1)
@@ -34,8 +34,8 @@
  
  # Flags to enable OpenCV support.
  OPENCV_DEFINE = -Dcimg_use_opencv
--OPENCV_INCDIR = $(shell pkg-config opencv --cflags || echo -I/usr/include/opencv) -I/usr/include/opencv
-+OPENCV_INCDIR = $(shell pkg-config opencv4 --cflags || echo -I/usr/include/opencv) -I/usr/include/opencv
+-OPENCV_INCDIR = $(shell pkg-config opencv --cflags || echo -I/usr/include/opencv) -I/usr/include/opencv -I/usr/include/opencv4
++OPENCV_INCDIR = $(shell pkg-config opencv4 --cflags || echo -I/usr/include/opencv) -I/usr/include/opencv -I/usr/include/opencv4
  OPENCV_CFLAGS = $(OPENCV_DEFINE) $(OPENCV_INCDIR)
 -OPENCV_LIBS = $(shell pkg-config opencv --libs || echo -lopencv_core -lopencv_highgui)
 +OPENCV_LIBS = $(shell pkg-config opencv4 --libs || echo -lopencv_core -lopencv_highgui)
@@ -49,9 +49,9 @@
 -TIFF_LIBS = -ltiff
 +TIFF_LIBS = -ltiff  -ltiffxx
  
- # Flags to enable native support for MINC2 image files, using the MINC2 library.
- # ( http://en.wikibooks.org/wiki/MINC/Reference/MINC2.0_Users_Guide )
-@@ -236,16 +236,16 @@ MINC2_LIBS = -lminc_io -lvolume_io2 -lminc2 -lnetcdf -
+ # Flags to enable native support for loading HEIF image files, using the libheif library.
+ # ( https://github.com/strukturag/libheif )
+@@ -243,16 +243,16 @@ MINC2_LIBS = -lminc_io -lvolume_io2 -lminc2 -lnetcdf -
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
  OPENEXR_DEFINE = -Dcimg_use_openexr
@@ -73,7 +73,7 @@
  
  # Flags to enable native support for compressed .cimgz files, using the Zlib library.
  # ( http://www.zlib.net/ )
-@@ -281,15 +281,15 @@ endif
+@@ -288,15 +288,15 @@ endif
  
  # Flags to enable the use of LAPACK routines for matrix computation
  # ( http://www.netlib.org/lapack/ )
@@ -93,15 +93,15 @@
  BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
  BOARD_LIBS = -lboard
  
-@@ -368,6 +368,7 @@ $(X11_LIBS) \
- $(TIFF_LIBS) \
+@@ -368,6 +368,7 @@ $(TIFF_LIBS) \
+ $(HEIF_LIBS) \
  $(LAPACK_LIBS) \
  $(XSHM_LIBS)" \
 +$(PTHREAD_LIBS)" \
  all $(EXTRA_FILES)
  
  # Linux/BSD/Mac OSX targets, with X11 display.
-@@ -460,8 +461,11 @@ $(ZLIB_CFLAGS) \
+@@ -461,8 +462,11 @@ $(ZLIB_CFLAGS) \
  $(CURL_CFLAGS) \
  $(OPENCV_CFLAGS) \
  $(MAGICK_CFLAGS) \
@@ -113,7 +113,7 @@
  $(X11_LIBS) \
  $(XSHM_LIBS) \
  $(XRANDR_LIBS) \
-@@ -473,6 +477,8 @@ $(ZLIB_LIBS) \
+@@ -475,6 +479,8 @@ $(ZLIB_LIBS) \
  $(CURL_LIBS) \
  $(OPENCV_LIBS) \
  $(MAGICK_LIBS) \
