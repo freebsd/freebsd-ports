@@ -1,7 +1,7 @@
 # Created by: Nicolas Embriz <nbari@tequila.io>
 
 PORTNAME=	galera
-PORTVERSION=	26.4.6
+PORTVERSION=	26.4.8
 DISTVERSIONPREFIX=	release_
 PORTREVISION=	1
 CATEGORIES=	databases
@@ -28,41 +28,22 @@ BUILD_DEPENDS=	checkmk:devel/check \
 		objdump:devel/binutils
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
-USES=		compiler:c++11-lang python:build scons ssl
+USES=		compiler:c++11-lang python:build cmake ssl
 
 USE_GITHUB=	yes
 GH_TUPLE?=	codership:galera:${DISTVERSIONPREFIX}${PORTVERSION}${DISTVERSIONSUFFIX} \
-		codership:wsrep-API:75a5f452f2ba07b0f4a3a9a94825fccc71b27398:dummy/wsrep/src
+		codership:wsrep-API:76cf223c690845bbf561cb820a46e06a18ad80d1:dummy/wsrep/src
+
+CMAKE_ARGS+=	-DGALERA_REVISION=${GH_TAGNAME}
 
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	garb.sh
-
-MAKE_ARGS+=	revno=${GH_TAGNAME} system_asio=0 tests=0
-# Abuse TEST_TARGET to append tests=1 (which is not a target, strictly
-# speaking) at the end of the "scons ..." command so that it overrides
-# tests=0 from ${MAKE_ARGS}. To rerun the tests a second time, remove
-# all *.passed files: find ./work -name *.passed -print -delete
-TEST_TARGET=	deterministic_tests=1 tests=1
-
-LDFLAGS+=	-lboost_program_options -lboost_system
 
 PLIST_FILES=	bin/garbd \
 		lib/libgalera.so \
 		lib/libgalera_smm.so
 
-OPTIONS_DEFINE=	BOOSTPOOL BPOSTATIC DEBUG
-
-BOOSTPOOL_DESC=	Use boost pool allocator
-BPOSTATIC_DESC=	Use static boost_program_options
-
-BOOSTPOOL_MAKE_ARGS=	boost_pool=1
-BPOSTATIC_MAKE_ARGS=	bpostatic=${LOCALBASE}/lib/libboost_program_options.a
-DEBUG_MAKE_ARGS=	debug=0
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/garb/garbd ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_LIB} ${WRKSRC}/libgalera_smm.so ${STAGEDIR}${PREFIX}/lib/
-	@(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libgalera_smm.so \
-		libgalera.so)
+post-install:
+	${RLN} ${STAGEDIR}/${PREFIX}/lib/libgalera_smm.so ${STAGEDIR}/${PREFIX}/lib/libgalera.so
 
 .include <bsd.port.mk>
