@@ -1,5 +1,9 @@
 bin/openttd
 man/man6/openttd.6.gz
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/known-bugs.txt
+%%PORTDOCS%%%%DOCSDIR%%/multiplayer.md
 %%DATADIR%%/ai/compat_0.7.nut
 %%DATADIR%%/ai/compat_1.0.nut
 %%DATADIR%%/ai/compat_1.1.nut
@@ -12,6 +16,7 @@ man/man6/openttd.6.gz
 %%DATADIR%%/ai/compat_1.8.nut
 %%DATADIR%%/ai/compat_1.9.nut
 %%DATADIR%%/ai/compat_1.10.nut
+%%DATADIR%%/ai/compat_1.11.nut
 %%DATADIR%%/baseset/no_music.obm
 %%DATADIR%%/baseset/no_sound.obs
 %%DATADIR%%/baseset/openttd.grf
@@ -34,6 +39,7 @@ man/man6/openttd.6.gz
 %%DATADIR%%/game/compat_1.8.nut
 %%DATADIR%%/game/compat_1.9.nut
 %%DATADIR%%/game/compat_1.10.nut
+%%DATADIR%%/game/compat_1.11.nut
 %%DATADIR%%/lang/afrikaans.lng
 %%DATADIR%%/lang/arabic_egypt.lng
 %%DATADIR%%/lang/basque.lng
@@ -106,3 +112,4 @@ share/icons/hicolor/64x64/apps/openttd.png
 share/icons/hicolor/128x128/apps/openttd.png
 share/icons/hicolor/256x256/apps/openttd.png
 share/pixmaps/openttd.32.xpm
+share/pixmaps/openttd.64.xpm
