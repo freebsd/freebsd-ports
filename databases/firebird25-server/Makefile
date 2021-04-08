@@ -1,5 +1,6 @@
 PORTNAME=	firebird
 PORTVERSION=	2.5.9
+PORTREVISION=	1
 CATEGORIES?=	databases
 MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/R2_5_9/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server

@@ -2,7 +2,7 @@
 
 PORTNAME=	xtrabackup
 PORTVERSION=	8.0.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	https://www.percona.com/downloads/Percona-XtraBackup-${PORTVERSION:R}/Percona-XtraBackup-${PORTVERSION}/source/tarball/ \
 		https://github.com/percona/percona-xtrabackup/archive/

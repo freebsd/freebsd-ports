@@ -1,7 +1,7 @@
 # Created by: Alexander Churanov <churanov.port.maintainer@gmail.com>
 
 PORTNAME=	boost-libs
-PORTREVISION=	5
+PORTREVISION=	6
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 

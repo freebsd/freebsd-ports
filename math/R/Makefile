@@ -2,7 +2,7 @@
 
 PORTNAME=	R
 DISTVERSION=	4.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||} \
 		CRAN/src/contrib/Archive/mgcv:mgcv

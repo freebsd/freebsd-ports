@@ -1,7 +1,7 @@
 # Created by: dwm
 
 PORTNAME=	icu
-DISTVERSION=	69_1
+DISTVERSION=	70_1
 PORTREVISION?=	0 # keep for icu-lx
 PORTEPOCH?=	1
 CATEGORIES?=	devel

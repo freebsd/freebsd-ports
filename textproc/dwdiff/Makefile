@@ -2,7 +2,7 @@
 
 PORTNAME=	dwdiff
 PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://os.ghalkes.nl/dist/ \
 		http://fossies.org/unix/privat/
