@@ -1,8 +1,19 @@
 bin/highlight
+%%GUI%%bin/highlight-gui
 @sample %%ETCDIR%%/filetypes.conf.sample
 @sample %%ETCDIR%%/lsp.conf.sample
 man/man1/highlight.1.gz
 man/man5/filetypes.conf.5.gz
+%%GUI%%share/applications/highlight.desktop
+%%GUI%%share/icons/hicolor/256x256/apps/highlight.png
+%%GUI%%%%DATADIR%%/gui_files/ext/fileopenfilter.conf
+%%GUI%%%%DATADIR%%/gui_files/l10n/highlight_bg_BG.qm
+%%GUI%%%%DATADIR%%/gui_files/l10n/highlight_cs_CZ.qm
+%%GUI%%%%DATADIR%%/gui_files/l10n/highlight_de_DE.qm
+%%GUI%%%%DATADIR%%/gui_files/l10n/highlight_es_ES.qm
+%%GUI%%%%DATADIR%%/gui_files/l10n/highlight_fr_FR.qm
+%%GUI%%%%DATADIR%%/gui_files/l10n/highlight_it_IT.qm
+%%GUI%%%%DATADIR%%/gui_files/l10n/highlight_zh_CN.qm
 %%DATADIR%%/langDefs/abap.lang
 %%DATADIR%%/langDefs/abc.lang
 %%DATADIR%%/langDefs/abnf.lang
