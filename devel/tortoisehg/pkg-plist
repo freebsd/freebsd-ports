@@ -3,5 +3,5 @@
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/config.py
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/tortoisehg/util/config.pyc
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/tortoisehg/util/config.pyo
-share/applications/tortoisehg.desktop
+share/applications/thg.desktop
 %%DATADIR%%/mergetools.rc

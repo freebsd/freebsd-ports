@@ -1,6 +1,6 @@
 PORTNAME=	tortoisehg
 DISTVERSION=	5.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -44,9 +44,6 @@ EXTRACT_AFTER_ARGS=	--exclude ${GL_PROJECT}-${GL_COMMIT}-${GL_HEPTAPOD_COMMIT}/h
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/contrib/tortoisehg.desktop
-
 post-patch-NLS-on:
 	@${REINPLACE_CMD} -e 's/^%%NLS%%//' ${WRKSRC}/${PYSETUP}
 
@@ -62,10 +59,7 @@ post-patch-NAUTILUS-off:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/tortoisehg
+	${INSTALL_DATA} ${WRKSRC}/contrib/thg.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/contrib/mergetools.rc ${STAGEDIR}${PREFIX}/share/tortoisehg/
-	${INSTALL_DATA} ${WRKSRC}/contrib/tortoisehg.desktop ${STAGEDIR}${PREFIX}/share/applications/
-	# workaround bug in python autoplist
-	@${REINPLACE_CMD} -e '/16x16$$/d' -e '/22x22$$/d' -e '/24x24$$/d' -e '/32x32$$/d' -e '/scalable$$/d' \
-		${_PYTHONPKGLIST}
 
 .include <bsd.port.post.mk>
