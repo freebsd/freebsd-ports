@@ -15,8 +15,7 @@ COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 
 LICENSE=	GPLv2
 
-DEPRECATED=	short-lived development branch, to be removed once 2.85 is released
-EXPIRATION_DATE=2021-04-10
+IGNORE=		use dns/dnsmasq instead, it's newer
 
 USES=		cpe shebangfix tar:xz
 CPE_VENDOR=	thekelleys
