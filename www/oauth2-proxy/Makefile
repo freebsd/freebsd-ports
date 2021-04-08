@@ -1,5 +1,5 @@
 PORTNAME=	oauth2-proxy
-PORTVERSION=	7.0.1
+PORTVERSION=	7.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -18,9 +18,10 @@ GH_TUPLE=	\
 		Bose:minisentinel:917c5a9223bb:bose_minisentinel/vendor/github.com/Bose/minisentinel \
 		alicebob:gopher-json:a9ecdc9d1d3a:alicebob_gopher_json/vendor/github.com/alicebob/gopher-json \
 		alicebob:miniredis:v2.13.0:alicebob_miniredis_v2/vendor/github.com/alicebob/miniredis/v2 \
+		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bitly:go-simplejson:v0.5.0:bitly_go_simplejson/vendor/github.com/bitly/go-simplejson \
 		bmizerany:assert:b7ed37b82869:bmizerany_assert/vendor/github.com/bmizerany/assert \
-		census-instrumentation:opencensus-go:v0.21.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		coreos:go-oidc:v2.2.1:coreos_go_oidc/vendor/github.com/coreos/go-oidc \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -37,25 +38,27 @@ GH_TUPLE=	\
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
+		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:ab3426394381:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:ed371f2e16b4:golang_sys/vendor/golang.org/x/sys \
+		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sync:09787c993a3a:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:f9fddec55a1e:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-genproto:cb27e3aa2013:google_go_genproto/vendor/google.golang.org/genproto \
-		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
+		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.20.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.38.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		grpc:grpc-go:v1.27.0:grpc_grpc_go/vendor/google.golang.org/grpc \
-		hashicorp:golang-lru:v0.5.1:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		justinas:alice:v1.2.0:justinas_alice/vendor/github.com/justinas/alice \
 		kubernetes:apimachinery:v0.19.3:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
 		kubernetes:gengo:83324d819ded:kubernetes_gengo/vendor/k8s.io/gengo \
 		kubernetes:klog:v2.4.0:kubernetes_klog/vendor/k8s.io/klog/v2 \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
+		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		mbland:hmacauth:44256dfd4bfa:mbland_hmacauth/vendor/github.com/mbland/hmacauth \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		natefinch:lumberjack:v2.0.0:natefinch_lumberjack/vendor/gopkg.in/natefinch/lumberjack.v2 \
@@ -68,6 +71,10 @@ GH_TUPLE=	\
 		pierrec:lz4:v2.5.2:pierrec_lz4/vendor/github.com/pierrec/lz4 \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pquerna:cachecontrol:1555304b9b35:pquerna_cachecontrol/vendor/github.com/pquerna/cachecontrol \
+		prometheus:client_golang:v1.9.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
+		prometheus:common:v0.15.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.2.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.24.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
