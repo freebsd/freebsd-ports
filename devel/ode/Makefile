@@ -13,28 +13,27 @@ COMMENT=	Articulated rigid body dynamics library
 LICENSE=	LGPL21 BSD3CLAUSE
 LICENSE_COMB=	dual
 
-USES=		gl tar:bzip2 libtool pathfix
-USE_GL=		yes
+USES=		tar:bzip2 libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 TEST_TARGET=	check
+USE_CXXSTD=	c++03
 
-OPTIONS_DEFINE=		GIMPACT DOUBLE OU
+OPTIONS_DEFINE=		GIMPACT DOUBLE OU DEMOS
 
 GIMPACT_DESC=		Enable gimpact instead of opcode support
 DOUBLE_DESC=		Enable double precision (BROKEN with GIMPACT)
 OU_DESC=		Enable Thread-local storage (Experimental)
+DEMOS_DESC=		Build demos (not installed)
 
+GIMPACT_PREVENTS=	DOUBLE
 GIMPACT_CONFIGURE_ON=	--with-trimesh=gimpact
 GIMPACT_CONFIGURE_OFF=	--with-trimesh=opcode
-DOUBLE_CONFIGURE_ENABLE=	double-precision
-OU_CONFIGURE_ENABLE=		ou
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGIMPACT} && ${PORT_OPTIONS:MDOUBLE}
-IGNORE=		currently double precision is not supported by gimpact
-.endif
+DOUBLE_CONFIGURE_ENABLE=double-precision
+OU_CONFIGURE_ENABLE=	ou
+DEMOS_CONFIGURE_ENABLE=	demos
+DEMOS_USES=		gl localbase pkgconfig
+DEMOS_USE=		GL=gl,glu
 
 post-patch:
 	@${REINPLACE_CMD} -e '/if test/ s|==|=|' -e 's|^\( *CFLAGS=\)|#\1|;' \
