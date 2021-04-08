@@ -14,6 +14,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libcurl.so:ftp/curl
 
 BROKEN_FreeBSD_12_i386=	does not build (error: this directive must appear between .cfi_startproc and .cfi_endproc directives)
+BROKEN_i386=	ld: error: cannot preempt symbol: alcOpenDevice
 
 USES=		alias cmake compiler:c++11-lib pkgconfig tar:xz
 CMAKE_OFF=	USE_WIIUSE \
