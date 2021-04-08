@@ -16283,3 +16283,5 @@ dns/credns||2021-04-12|Broken 12+, unmaintained upstream
 www/youtube_dlc|www/yt-dlp|2021-04-12|Upstream have made a complete transition to new project name
 security/netpgp||2021-04-12|Broken 12+, unmaintained upstream
 net/freenet6||2021-04-12|Broken 12+, service discontinued
+devel/sd-mux|devel/sd-mux-ctrl|2021-04-13|Renamed to match upstream naming
+sysutils/sd-mux-ctrl|devel/sd-mux-ctrl|2021-04-13|Remove duplicate port
