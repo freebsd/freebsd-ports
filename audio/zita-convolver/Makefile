@@ -2,7 +2,7 @@
 
 PORTNAME=	zita-convolver
 DISTVERSION=	4.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
+RUN_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 
 USES=		compiler:c++11-lib gmake localbase:ldflags tar:bz2
 USE_LDCONFIG=	yes
