@@ -2,7 +2,7 @@
 
 PORTNAME=	python-language-server
 PORTVERSION=	0.36.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,5 +29,13 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+# Until upstream is merged, do it here
+# https://github.com/palantir/python-language-server/pull/918
+post-patch:
+	@${REINPLACE_CMD} -e 's|<0.18.0,||g' \
+		${WRKSRC}/python_language_server.egg-info/requires.txt
+	@${REINPLACE_CMD} -e 's|,<0.18.0||g' \
+		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
