@@ -1,5 +1,5 @@
 PORTNAME=	miniaudio
-PORTVERSION=	0.10.31
+DISTVERSION=	0.10.33 # upstream doesn't tag the repository
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ LICENSE_COMB=	dual
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mackron
-GH_TAGNAME=	53512c3
+GH_TAGNAME=	fca829edefd8389380f8e3ee26cc4b8c426dd742
 
 NO_BUILD=	yes
 NO_ARCH=	yes
