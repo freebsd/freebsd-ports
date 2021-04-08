@@ -1,6 +1,6 @@
 
 PORTNAME=	clamav
-PORTVERSION=	0.103.1
+PORTVERSION=	0.103.2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.clamav.net/downloads/production/
