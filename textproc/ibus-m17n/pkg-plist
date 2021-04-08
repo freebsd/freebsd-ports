@@ -6,6 +6,7 @@ share/glib-2.0/schemas/org.freedesktop.ibus.engine.m17n.gschema.xml
 %%DATADIR%%/icons/ibus-m17n.svg
 %%DATADIR%%/setup/ibus-m17n-preferences.ui
 share/ibus/component/m17n.xml
+%%NLS%%share/locale/bn/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/de/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/es/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/ibus-m17n.mo
@@ -13,6 +14,7 @@ share/ibus/component/m17n.xml
 %%NLS%%share/locale/id/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ibus-m17n.mo
+%%NLS%%share/locale/si/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-m17n.mo
