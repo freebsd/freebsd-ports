@@ -2,7 +2,7 @@
 
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	23.2.7
+DISTVERSION=	23.2.7.2
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime23
 DIST_SUBDIR=	erlang
@@ -18,7 +18,7 @@ USES=		autoreconf:build gmake ncurses perl5
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	erlang:otp,corba
 GH_PROJECT=	otp:otp corba:corba
-GH_TAGNAME=	5.0:corba
+GH_TAGNAME=	5.0.1:corba
 USE_PERL5=	build
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
@@ -77,6 +77,8 @@ KQUEUE_CONFIGURE_ENABLE=	kernel-poll
 NATIVE_CONFIGURE_ENABLE=	native-libs
 ODBC_CONFIGURE_WITH=		odbc
 ODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
+ODBC_CFLAGS=			-I/usr/local/include
+ODBC_LDFLAGS=			-L/usr/local/lib
 OPENSSL_CONFIGURE_WITH=		ssl=${OPENSSLBASE}
 OPENSSL_USES=			ssl
 SCTP_CONFIGURE_ENABLE=		sctp
@@ -84,8 +86,8 @@ THREADS_CONFIGURE_ENABLE=	threads
 WX_CONFIGURE_WITH=		wx-config=${WX_CONFIG}
 WX_USES=			gl
 WX_VARS=			USE_GL="gl glu" \
-				USE_WX=2.8+ \
-				WX_COMPS="wx contrib"
+				USE_WX=3.1+ \
+				WX_COMPS="wx"
 
 .include <bsd.port.pre.mk>
 
