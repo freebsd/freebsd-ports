@@ -1,5 +1,5 @@
 PORTNAME=	xtensor
-DISTVERSION=	0.23.3
+DISTVERSION=	0.23.4
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ GH_ACCOUNT=	xtensor-stack
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-do-test: # https://github.com/xtensor-stack/xtensor/issues/2220
+do-test: install # https://github.com/xtensor-stack/xtensor/issues/2220
 	@${RLN} ${STAGEDIR}${PREFIX}/include ${WRKSRC}/test/staged-include
 	@cd ${WRKSRC}/test && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} . && \
