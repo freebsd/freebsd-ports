@@ -1,4 +1,4 @@
-TIMESTAMP = 1613643862
+TIMESTAMP = 1617892663
 SHA256 (makeworld-the-better-one-amfora-v1.8.0_GH0.tar.gz) = 2cf95009ee9b70e46f92ea6346d4f615df2c163b27182ec0e62bf67fb9f9544c
 SIZE (makeworld-the-better-one-amfora-v1.8.0_GH0.tar.gz) = 2323219
 SHA256 (PuerkitoBio-goquery-v1.5.1_GH0.tar.gz) = 50b671f7128ac6993b7388d4e8a76901afdcaa7c6889f45687a2acc0d0753ca4
@@ -87,7 +87,7 @@ SHA256 (stretchr-testify-v1.6.1_GH0.tar.gz) = 40fd7204ab72ca9d8759f1cc3604dd17f5
 SIZE (stretchr-testify-v1.6.1_GH0.tar.gz) = 84215
 SHA256 (subosito-gotenv-v1.2.0_GH0.tar.gz) = 5f6826992c11981018c77377f33dbc56d0be932e0d38a2f51e795c99725e7ba5
 SIZE (subosito-gotenv-v1.2.0_GH0.tar.gz) = 7359
-SHA256 (tslocum-cbind-475986e4fda25b9fc3b95ee0b3d286dfa121c816_GL0.tar.gz) = 623c8d8f8fa7e0af577b352eb0f9086a92cf0378ec5e08b2e75aecd9f99a765a
-SIZE (tslocum-cbind-475986e4fda25b9fc3b95ee0b3d286dfa121c816_GL0.tar.gz) = 7393
-SHA256 (tslocum-cview-d776e728ef6d2a9990a5cd86a70b31f0678613e2_GL0.tar.gz) = 4e62757f640a35b03a42b62fcb9d169e3306ddfa53771e3ace86f1102ff5f6d1
-SIZE (tslocum-cview-d776e728ef6d2a9990a5cd86a70b31f0678613e2_GL0.tar.gz) = 714302
+SHA256 (tslocum-cbind-475986e4fda25b9fc3b95ee0b3d286dfa121c816_GL0.tar.gz) = f6272d4bf0f8802948002c3790321bd4f4f29998eccaccfb6860e3b84d07b9ae
+SIZE (tslocum-cbind-475986e4fda25b9fc3b95ee0b3d286dfa121c816_GL0.tar.gz) = 7381
+SHA256 (tslocum-cview-d776e728ef6d2a9990a5cd86a70b31f0678613e2_GL0.tar.gz) = 9add15e2cd5892d3aa1bfd714f3f54148d82dfb750d97aa5df9b37dd94d88998
+SIZE (tslocum-cview-d776e728ef6d2a9990a5cd86a70b31f0678613e2_GL0.tar.gz) = 714433

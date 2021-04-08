@@ -1,4 +1,4 @@
-TIMESTAMP = 1576040549
+TIMESTAMP = 1617890451
 SHA256 (develar-app-builder-v3.4.2_GH0.tar.gz) = f3f4b5dbabf0319d780accc6dab7bb162026d873e38183dd9fb5164384eac4d7
 SIZE (develar-app-builder-v3.4.2_GH0.tar.gz) = 654475
 SHA256 (aclements-go-rabin-d0b643ea1a4c_GH0.tar.gz) = cb8bc66e64788ffd4acf9408aba12d19fb8c51fa428423d83780744cf34ea986
@@ -83,5 +83,5 @@ SHA256 (uber-go-zap-v1.10.0_GH0.tar.gz) = 9122a10e6cca67b5231036b8da73f3ce5c7ba6
 SIZE (uber-go-zap-v1.10.0_GH0.tar.gz) = 112084
 SHA256 (zieckey-goini-0da17d361d26_GH0.tar.gz) = 1b6c6542296e2ae9d193b95279e61fc971c56f5a61013fdf7e7f2e0c2fa4b935
 SIZE (zieckey-goini-0da17d361d26_GH0.tar.gz) = 9393
-SHA256 (go-plist-591f970eefbbeb04d7b37f334a0c4c3256e32876_GL0.tar.gz) = 63bd1d3aedbb0a2e6861f0e78c9defca6805478c00763506864524b6011cc3ac
-SIZE (go-plist-591f970eefbbeb04d7b37f334a0c4c3256e32876_GL0.tar.gz) = 49098
+SHA256 (go-plist-591f970eefbbeb04d7b37f334a0c4c3256e32876_GL0.tar.gz) = 08e833247af19e58496741bd690e2445e2e5fa7ca11b2849db4310f42f26ed64
+SIZE (go-plist-591f970eefbbeb04d7b37f334a0c4c3256e32876_GL0.tar.gz) = 49099

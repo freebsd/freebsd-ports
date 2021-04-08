@@ -56,6 +56,8 @@ GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
 GL_COMMIT=	8556c7f854837facf43a4c57fd03f5d4111b5732
+# This is required till https://gitlab.isc.org is upgraded to newer gitlab version
+WRKSRC=		${WRKDIR}/${GL_PROJECT}-${GL_COMMIT}-${GL_COMMIT}
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
