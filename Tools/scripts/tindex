@@ -42,9 +42,11 @@ fi
 # --------------------------------------------------------
 
 blame() {
-  # Find out who is responsible for current version of file $1
+  # Find out who is responsible for current version of file $1, if not deleted
 
-  git log --no-patch --max-count=1 --format='%ce' $1
+  if [ -e $1 ]; then
+    ${GIT} log --no-patch --max-count=1 --format='%ce' $1
+  fi
 }
 
 indexfail() {
