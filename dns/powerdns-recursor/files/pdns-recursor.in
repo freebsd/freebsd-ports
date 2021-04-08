@@ -25,9 +25,9 @@ pdns_recursor_enable=${pdns_recursor_enable:-"NO"}
 pdns_recursor_conf=${pdns_recursor_conf:-"%%PREFIX%%/etc/pdns/recursor.conf"}
 required_files=${pdns_recursor_conf}
 
-pidfile=/var/run/pdns-recursor/${name}.pid
-
-command=%%PREFIX%%/sbin/${name}
-command_args="--daemon"
+pidfile="/var/run/${name}.pid"
+actual_command="%%PREFIX%%/sbin/${name}"
+command="/usr/sbin/daemon"
+command_args="-c -f -r -P ${pidfile} ${actual_command} --daemon=no --write-pid=no"
 
 run_rc_command "$1"
