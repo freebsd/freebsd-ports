@@ -1,7 +1,7 @@
 # Created by: Qiang Guo <guoqiang_cn@126.com>
 
 PORTNAME=	bvm
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	guoqiang_cn@126.com
