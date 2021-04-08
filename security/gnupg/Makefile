@@ -1,5 +1,5 @@
 PORTNAME=	gnupg
-PORTVERSION=	2.2.27
+PORTVERSION=	2.3.0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -38,7 +38,7 @@ OPTIONS_SUB=	yes
 LARGE_RSA_DESC=	Enable support for 8192-bit RSA keys
 LDAP_DESC=	LDAP keyserver interface
 SCDAEMON_DESC=	Enable Smartcard daemon (with libusb)
-SUID_GPG_DESC=	Install GPG with suid
+SUID_GPG_DESC=	Install GPG as SUID root
 WKS_SERVER_DESC=Install the Web Key Service server
 
 GNUTLS_CONFIGURE_ENABLE=gnutls
