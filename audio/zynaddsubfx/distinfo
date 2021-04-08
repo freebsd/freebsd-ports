@@ -1,9 +1,9 @@
-TIMESTAMP = 1616790785
+TIMESTAMP = 1617869603
 SHA256 (zynaddsubfx-zynaddsubfx-3.0.6-rc3_GH0.tar.gz) = 7be1ee7ae4ebb98fb88e9615fedb807a1b3752261afc0ba10f3a5ca963673eed
 SIZE (zynaddsubfx-zynaddsubfx-3.0.6-rc3_GH0.tar.gz) = 3020508
 SHA256 (DISTRHO-DPF-e0d8e14a14d407648768da7e34bcf31812245387_GH0.tar.gz) = 8ca3a33825d08066867e661b562e6548844c21967ef97805cde77d03171614c0
 SIZE (DISTRHO-DPF-e0d8e14a14d407648768da7e34bcf31812245387_GH0.tar.gz) = 1596130
 SHA256 (fundamental-rtosc-7de244bae04deb5964516ba544e551d95e7f15ce_GH0.tar.gz) = eb48173874c1e59e3a67c49d239487706e07d24b9cf7eadbabd921c720e709d2
 SIZE (fundamental-rtosc-7de244bae04deb5964516ba544e551d95e7f15ce_GH0.tar.gz) = 181942
-SHA256 (zynaddsubfx-instruments-22ea12d55e985eee6b57fcac1cafb7df6ae392f2_GH0.tar.gz) = ef52fe4e3cebb198e33e6312fb112905a877cfd3750850f535f3d8efaf9c7cd2
-SIZE (zynaddsubfx-instruments-22ea12d55e985eee6b57fcac1cafb7df6ae392f2_GH0.tar.gz) = 4815814
+SHA256 (zynaddsubfx-instruments-39e17e1c5c3db56fe9d0308af28be90f172e455e_GH0.tar.gz) = 8184f92e7fbd139f3e1ba257948ca2270e58e7bc2b6ccff41f1ffe8922044a81
+SIZE (zynaddsubfx-instruments-39e17e1c5c3db56fe9d0308af28be90f172e455e_GH0.tar.gz) = 5041225

@@ -497,6 +497,167 @@ share/pixmaps/zynaddsubfx.png
 %%DATADIR%%/banks/Cormi_Sound/0158-patetico.xiz
 %%DATADIR%%/banks/Cormi_Sound/0159-Destino.xiz
 %%DATADIR%%/banks/Cormi_Sound/ReadMe.txt
+%%DATADIR%%/banks/Cris Owl Alvarez/0001-hard fat lead.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0002-hard fat lead 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0003-hard fat lead 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0004-dist lead.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0005-scifi leadbass.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0006-terror leadbass.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0007-terror leadbass 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0008-terror leadbass 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0009-terror leadbass 4.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0010-terror leadbass 5.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0011-synth brass.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0012-synth brass 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0013-fantasy padkeys.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0014-fantasy padkeys 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0015-fantasy padkeys 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0016-fantasy piano.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0017-fantasy piano 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0018-fantasy bells.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0019-fantasy bells 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0020-fantasy organ.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0021-fantasy organ 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0022-ghost soft pad.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0023-goblin music toy.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0024-ambient choirs.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0025-ambient choirs 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0026-ambient choirs 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0027-resonant choirs.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0028-dark ambient choirs.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0029-dark ambient choirs 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0030-ambient pad.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0031-ambient pad 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0032-ambient pad 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0033-synth slow ocarina.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0034-ambient bells.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0035-ambient bells 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0036-ambient bells 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0037-ambient bells 4.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0038-ambient perc.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0039-ambient perc 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0040-ambient perc 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0041-ambient perc 4.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0042-ambient perc 5.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0043-ambient perc 6.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0044-ambient perc 7.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0045-ambient perc 8.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0046-ambient perc 9.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0047-post 80s lead.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0048-post 80s lead 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0049-post 80s lead 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0050-post 80s lead 4.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0051-broken post dx7.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0052-broken post dx7 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0053-broken post dx7 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0054-electric full pad.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0055-electric full pad 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0056-electric full pad 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0057-noisy pad.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0058-noisy pad 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0059-dark atmos pad.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0060-dark atmos pad 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0061-dark atmos pad 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0062-dark atmos pad 4.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0063-dark atmos pad 5.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0064-dark atmos pad 6.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0065-atmos perc.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0066-atmos perc 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0067-atmos perc 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0068-electro tom lead.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0069-electro tom lead 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0070-bell padkeys.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0071-bell padkeys 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0072-bell padkeys 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0073-jazz funk organ.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0074-jazz funk organ 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0075-jazz funk organ 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0076-modern basslead.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0077-modern basslead 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0078-modern basslead 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0079-EDM keys hit ensemble.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0080-EDM keys hit ensemble 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0081-EDM keys hit ensemble 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0082-EDM pluck keys.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0083-EDM pluck keys 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0084-EDM pluck keys 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0085-EDM pluck keys 4.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0086-EDM pluck keys 5.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0087-EDM pluck keys 6.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0088-arp generative pad.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0089-arp generative pad 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0090-arp generative pad 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0091-glass noisy pad.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0092-glass noisy pad 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0093-pad synth brass.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0094-pad synth brass 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0095-pad synth brass 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0096-pad synth brass 4.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0097-env filter pad.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0098-env filter pad 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0099-env filter pad 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0100-env filter pad 4.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0101-env filter pad 5.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0102-room organ.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0103-room organ 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0104-fuzzion synth keypiano.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0105-fuzzion synth keypiano 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0106-fuzzion synth keypiano 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0107-fuzzion synth keypiano 4.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0108-gafapasta snob club e_p_.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0109-gafapasta snob club e_p_ 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0110-gafapasta snob club e_p_ 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0111-gafapasta snob club e_p_ 4.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0112-big synth pad.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0113-big synth pad 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0114-muufeo organ.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0115-muufeo organ 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0116-keypiano synth.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0117-keypiano synth 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0118-post mellotron keychoirs.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0119-post mellotron keychoirs 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0120-funny acid lead.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0121-electric keys.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0122-electric keys 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0123-electric keys 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0124-soft ethereal e_p_.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0125-soft ethereal e_p_ 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0126-slow pad.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0127-slow pad 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0128-slow pad 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0129-FX raining bits.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0130-FX ufo computer_s room.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0131-FX heavy rain.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0132-FX binaural xperience.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0133-FX binaural xperience 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0134-FX dark ambient.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0135-FX dark ambient 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0136-FX dark ambient 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0137-FX flying missile.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0138-FX alien_s water cavern.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0139-FX videogame lasergun.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0140-FX videogame discovering scifi treasure.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0141-FX videogame scifi gate opening.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0142-FX hell_s bell.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0143-FX hell_s bell 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0144-FX videogame retro spaceship scape.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0145-FX thunder.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0146-FX far bomb.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0147-FX gunshot.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0148-FX far gunshot.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0149-FX videogame super item.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0150-FX videogame super item 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0151-FX videogame super item 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0152-FX scifi hit.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0153-FX scifi hit 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0154-FX scifi hit 3.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0155-FX flying motorbike.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0156-FX scifi elevator brake.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0157-FX scifi gong.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0158-FX scifi gong 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0159-DRUMKIT toy drummer.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/0160-DRUMKIT toy drummer 2.xiz
+%%DATADIR%%/banks/Cris Owl Alvarez/readme.txt
 %%DATADIR%%/banks/Drums/0001-Drums Kit1.xiz
 %%DATADIR%%/banks/Dual/0001-Layered1.xiz
 %%DATADIR%%/banks/Dual/0002-Layered2.xiz
@@ -644,6 +805,7 @@ share/pixmaps/zynaddsubfx.png
 %%DATADIR%%/banks/Organ/0010-Organ 10.xiz
 %%DATADIR%%/banks/Organ/0011-Organ 11.xiz
 %%DATADIR%%/banks/Organ/0012-Organ 12.xiz
+%%DATADIR%%/banks/Organ/0013-Organ 13.xiz
 %%DATADIR%%/banks/Organ/0033-Cathedral Organ1.xiz
 %%DATADIR%%/banks/Organ/0034-Cathedral Organ2.xiz
 %%DATADIR%%/banks/Organ/0035-Cathedral Organ3.xiz

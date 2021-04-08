@@ -3,6 +3,7 @@
 PORTNAME=	zynaddsubfx
 DISTVERSION=	3.0.6-rc3
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
@@ -21,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	zynaddsubfx
 GH_TUPLE=	DISTRHO:DPF:e0d8e14a14d407648768da7e34bcf31812245387:d/DPF \
 		fundamental:rtosc:7de244bae04deb5964516ba544e551d95e7f15ce:e/rtosc \
-		zynaddsubfx:instruments:22ea12d55e985eee6b57fcac1cafb7df6ae392f2:f/instruments
+		zynaddsubfx:instruments:39e17e1c5c3db56fe9d0308af28be90f172e455e:f/instruments
 
 OPTIONS_DEFINE=		OSS JACK GUI PORTAUDIO SNDIO LASH DOCS EXAMPLES
 OPTIONS_DEFAULT=	OSS JACK GUI PORTAUDIO
