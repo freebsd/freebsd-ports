@@ -25,11 +25,14 @@ USE_WX=		3.1+
 WX_COMPS=	wx
 
 GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=yes
+MAKE_JOBS_UNSAFE=	yes
 
 WX_APPS=	wx debugger et observer
 
-CONFIGURE_ARGS+=--enable-threads --without-odbc --without-javac --with-wx-config=${WX_CONFIG}
+CONFIGURE_ARGS+=	--enable-threads \
+			--with-wx-config=${WX_CONFIG} \
+			--without-javac \
+			--without-odbc
 
 pre-configure:
 	@cd ${WRKSRC} && ./otp_build autoconf
