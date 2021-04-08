@@ -1,4 +1,3 @@
-SHA256 (egoboo-2.7.5.tar.gz) = 83af95f66b68afdf1b322dffa883f8568ca402f203257315ebacff6fc95ddb2b
-SIZE (egoboo-2.7.5.tar.gz) = 368781
-SHA256 (egoboo-data-2.7.5.tar.gz) = aa1455d285d28c1e7e584fac67438efe57b9dce9495ca860deb8069bed95500e
-SIZE (egoboo-data-2.7.5.tar.gz) = 64254746
+TIMESTAMP = 1611855459
+SHA256 (egoboo-2.8.1.tar.gz) = a2694187d28a7aadf4ca3b9b7a6c6dcd3bb03ec8f145435c744bb77afb5f4c26
+SIZE (egoboo-2.8.1.tar.gz) = 150029960
