@@ -16,6 +16,7 @@
 
 PORTNAME=	v8
 DISTVERSION=	8.7.220.23
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/mikael/v8/:build \
 		LOCAL/mikael/v8/:buildtools \

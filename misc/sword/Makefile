@@ -2,7 +2,7 @@
 
 PORTNAME=	sword
 PORTVERSION=	1.8.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	misc
 MASTER_SITES=	http://crosswire.org/ftpmirror/pub/sword/source/v${PORTVERSION:R}/
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	raptor2
 PORTVERSION=	2.0.15
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/ \
 		SF/librdf/${PORTNAME}/${PORTVERSION}
