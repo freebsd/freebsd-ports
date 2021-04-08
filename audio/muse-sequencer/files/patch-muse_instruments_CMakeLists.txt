@@ -1,0 +1,17 @@
+In file included from muse/instruments/editinstrument.cpp:58:
+muse/components/editevent.h:26:10: fatal error: 'ui_editnotedialogbase.h' file not found
+#include "ui_editnotedialogbase.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+--- muse/instruments/CMakeLists.txt.orig	2021-04-08 11:28:12 UTC
++++ muse/instruments/CMakeLists.txt
+@@ -55,6 +55,8 @@ add_library ( instruments ${MODULES_BUILD}
+    ${instruments_uis}
+    )
+ 
++add_dependencies(instruments components)
++
+ ##
+ ## Append to the list of translations
+ ##
