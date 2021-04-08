@@ -32,6 +32,7 @@
 %%WWWDIR%%/app/controllers/CControllerExportXml.php
 %%WWWDIR%%/app/controllers/CControllerFavouriteCreate.php
 %%WWWDIR%%/app/controllers/CControllerFavouriteDelete.php
+%%WWWDIR%%/app/controllers/CControllerHintBox.php
 %%WWWDIR%%/app/controllers/CControllerMapView.php
 %%WWWDIR%%/app/controllers/CControllerMediatypeCreate.php
 %%WWWDIR%%/app/controllers/CControllerMediatypeDelete.php
@@ -146,6 +147,7 @@
 %%WWWDIR%%/app/views/monitoring.widget.trigover.view.php
 %%WWWDIR%%/app/views/monitoring.widget.url.view.php
 %%WWWDIR%%/app/views/monitoring.widget.web.view.php
+%%WWWDIR%%/app/views/hint.box.php
 %%WWWDIR%%/app/views/popup.generic.php
 %%WWWDIR%%/app/views/popup.httpstep.php
 %%WWWDIR%%/app/views/popup.media.js.php
@@ -317,6 +319,7 @@
 %%WWWDIR%%/include/classes/helpers/CConditionHelper.php
 %%WWWDIR%%/include/classes/helpers/CElasticsearchHelper.php
 %%WWWDIR%%/include/classes/helpers/CHtml.php
+%%WWWDIR%%/include/classes/helpers/CHintBoxHelper.php
 %%WWWDIR%%/include/classes/helpers/CJs.php
 %%WWWDIR%%/include/classes/helpers/CMapHelper.php
 %%WWWDIR%%/include/classes/helpers/CMenuPopupHelper.php
