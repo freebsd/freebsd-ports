@@ -35,7 +35,7 @@ OPTIONS_DEFINE=	CONSOLEKIT LIBSEAT UUID X11
 OPTIONS_DEFAULT=LIBSEAT UUID X11
 OPTIONS_SUB=	yes
 
-CONSOLEKIT_DESC=	DRM sessions without root using ConsoleKit2
+CONSOLEKIT_DESC=	DRM sessions without root via ConsoleKit2 (experimental)
 CONSOLEKIT_PATCH_SITES=	https://github.com/unrelentingtech/${GH_PROJECT}/commit/:ck2
 CONSOLEKIT_PATCHFILES=	fb837ae10b1f.patch:-p1:ck2 # https://github.com/swaywm/wlroots/pull/1467
 CONSOLEKIT_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
@@ -45,7 +45,7 @@ CONSOLEKIT_MESON_ENABLED=	consolekit2
 .MAKEFLAGS:		WITH+=CONSOLEKIT
 .endif
 
-LIBSEAT_DESC=		DRM sessions with/without root via libseat (experimental)
+LIBSEAT_DESC=		DRM sessions with/without root via libseat
 LIBSEAT_LIB_DEPENDS=	libseat.so:sysutils/seatd
 LIBSEAT_MESON_ENABLED=	libseat
 
