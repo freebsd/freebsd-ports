@@ -1,7 +1,7 @@
 # Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 
 PORTNAME=	django
-PORTVERSION=	3.1.7
+PORTVERSION=	3.1.8
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://www.djangoproject.com/m/releases/${PORTVERSION}/
