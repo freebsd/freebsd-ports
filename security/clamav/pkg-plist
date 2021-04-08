@@ -1,8 +1,14 @@
+bin/clamav-config
+bin/clambc
+bin/clamconf
+bin/clamdscan
+bin/clamdtop
+bin/clamscan
 %%JSON%%bin/clamsubmit
-%%JSON%%man/man1/clamsubmit.1.gz
-%%MILTER%%@sample etc/clamav-milter.conf.sample
-%%MILTER%%sbin/clamav-milter
+bin/freshclam
+bin/sigtool
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Contribute.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Installation-Unix.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Installation-Unix/Steps-Debian-Ubuntu.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Installation-Unix/Steps-Redhat-CentOS.html
@@ -11,8 +17,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/OnAccess.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures.html
-%%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/AuthenticodeRules.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/AllowLists.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/AuthenticodeRules.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/BodySignatureFormat.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/BytecodeSignatures.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/ContainerMetadata.html
@@ -34,25 +40,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/development.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/images/demon.png
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/libclamav.html
-%%UNRAR%%lib/libclamunrar.so
-%%UNRAR%%lib/libclamunrar.so.9
-%%UNRAR%%lib/libclamunrar.so.9.0.5
-%%UNRAR%%lib/libclamunrar_iface.so
-%%UNRAR%%lib/libclamunrar_iface.so.9
-%%UNRAR%%lib/libclamunrar_iface.so.9.0.5
-@dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%DBDIR%%
-@dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%LOGDIR%%
-@dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%RUNDIR%%
-@sample etc/clamd.conf.sample
-@sample etc/freshclam.conf.sample
-bin/clamav-config
-bin/clambc
-bin/clamconf
-bin/clamdscan
-bin/clamdtop
-bin/clamscan
-bin/freshclam
-bin/sigtool
 include/clamav-config.h
 include/clamav-types.h
 include/clamav-version.h
@@ -61,6 +48,12 @@ include/libfreshclam.h
 lib/libclamav.so
 lib/libclamav.so.9
 lib/libclamav.so.9.0.5
+%%UNRAR%%lib/libclamunrar.so
+%%UNRAR%%lib/libclamunrar.so.9
+%%UNRAR%%lib/libclamunrar.so.9.0.5
+%%UNRAR%%lib/libclamunrar_iface.so
+%%UNRAR%%lib/libclamunrar_iface.so.9
+%%UNRAR%%lib/libclamunrar_iface.so.9.0.5
 lib/libfreshclam.so
 lib/libfreshclam.so.2
 lib/libfreshclam.so.2.0.1
@@ -70,6 +63,7 @@ man/man1/clamconf.1.gz
 man/man1/clamdscan.1.gz
 man/man1/clamdtop.1.gz
 man/man1/clamscan.1.gz
+%%JSON%%man/man1/clamsubmit.1.gz
 man/man1/freshclam.1.gz
 man/man1/sigtool.1.gz
 man/man5/clamav-milter.conf.5.gz
@@ -77,4 +71,11 @@ man/man5/clamd.conf.5.gz
 man/man5/freshclam.conf.5.gz
 man/man8/clamav-milter.8.gz
 man/man8/clamd.8.gz
+%%MILTER%%sbin/clamav-milter
 sbin/clamd
+@sample etc/clamd.conf.sample
+%%MILTER%%@sample etc/clamav-milter.conf.sample
+@sample etc/freshclam.conf.sample
+@dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%DBDIR%%
+@dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%LOGDIR%%
+@dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%RUNDIR%%
