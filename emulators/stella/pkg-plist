@@ -1,13 +1,13 @@
 bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/R77_readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/basic_settings.png
+%%PORTDOCS%%%%DOCSDIR%%/commandsmenu_r77.png
 %%PORTDOCS%%%%DOCSDIR%%/debugger.html
 %%PORTDOCS%%%%DOCSDIR%%/graphics/Stella_icon.png
-%%PORTDOCS%%%%DOCSDIR%%/graphics/basic_settings.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/cheat.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/chucky_cheese.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/circuit.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/commandmenu.png
-%%PORTDOCS%%%%DOCSDIR%%/graphics/commandsmenu_r77.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/console.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/debugger_audiotab.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/debugger_bankcomplex.png
