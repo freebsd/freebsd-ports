@@ -2,9 +2,8 @@
 
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	21.3.8.21
+DISTVERSION=	21.3.8.22
 PORTREVISION=	0
-# NB when bumping OTP versions also bump PORTREVISION in databases/couchdb2
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime21
 DIST_SUBDIR=	erlang
@@ -80,6 +79,8 @@ KQUEUE_CONFIGURE_ENABLE=	kernel-poll
 NATIVE_CONFIGURE_ENABLE=	native-libs
 ODBC_CONFIGURE_WITH=		odbc
 ODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
+ODBC_CFLAGS=			-I/usr/local/include
+ODBC_LDFLAGS=			-L/usr/local/lib
 OPENSSL_CONFIGURE_WITH=		ssl=${OPENSSLBASE}
 OPENSSL_USES=			ssl
 SCTP_CONFIGURE_ENABLE=		sctp
@@ -87,8 +88,8 @@ THREADS_CONFIGURE_ENABLE=	threads
 WX_CONFIGURE_WITH=		wx-config=${WX_CONFIG}
 WX_USES=			gl
 WX_VARS=			USE_GL="gl glu" \
-				USE_WX=2.8+ \
-				WX_COMPS="wx contrib"
+				USE_WX=3.1+ \
+				WX_COMPS="wx"
 
 .include <bsd.port.pre.mk>
 
