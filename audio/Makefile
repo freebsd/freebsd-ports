@@ -327,6 +327,7 @@
     SUBDIR += juk
     SUBDIR += juke
     SUBDIR += julius
+    SUBDIR += kapitonov-plugins-pack-lv2
     SUBDIR += kexis
     SUBDIR += kid3-kf5
     SUBDIR += kid3-qt5

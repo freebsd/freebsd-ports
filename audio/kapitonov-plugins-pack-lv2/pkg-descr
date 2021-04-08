@@ -1,0 +1,19 @@
+Kapitonov Plugins Pack (KPP) is a set of LV2 plugins for audio processing.
+
+Currently available plugins
+* tubeAmp. Advanced guitar tube amp emulator. Contains preamp, tonestack, power
+  amp with voltage sag, cabinet emulators. Emulation parameters of each
+  component are set by profile files.
+* Bluedream. Booster/Tube Screamer pedal with equalizer (tonestack). Has GUI
+* Distruction. Distortion pedal with equalizer (tonestack). Has GUI.
+* Fuzz. Vintage fuzz pedal. Has GUI.
+* Deadgate. Effective Noise Gate/Dead Zone effect plugin.
+* Octaver. Analog octaver pedal.
+* Single2Humbucker. Plugin for emulation humbucker pickup sound with single coil
+  pickup on the guitar. Useful for playing heavy-metal on Stratocaster guitar
+  with single coil pickups.
+
+tubeAmp is the main and most complex plugin in the set. It can be used to
+emulate the sound of any common models of guitar combo amplifiers.
+
+WWW: https://github.com/olegkapitonov/Kapitonov-Plugins-Pack
