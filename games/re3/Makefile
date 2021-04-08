@@ -27,6 +27,8 @@ GL_ACCOUNT=	Obama
 GL_COMMIT=	9a7fa478578beaba947ea867c15a25e411d641d8
 bash_CMD=	/bin/sh
 USE_XORG=	x11
+# is required till https://git.rip got updated to a newer gitlab version
+WRKSRC=		${WRKDIR}/${GL_PROJECT}-${GL_COMMIT}-${GL_COMMIT}
 
 LDFLAGS_i386=	-Wl,-znotext
 

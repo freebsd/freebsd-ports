@@ -26,7 +26,7 @@ do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GMAKE} loccount loccount.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-${GL_COMMIT}-${GL_COMMIT} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-${GL_COMMIT} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

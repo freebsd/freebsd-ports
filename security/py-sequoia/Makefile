@@ -18,7 +18,7 @@ USES=		python:3.4+
 USE_PYTHON=	distutils autoplist concurrent
 USE_GITLAB=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GL_COMMIT}-${GL_COMMIT}/ffi/lang/python
+WRKSRC_SUBDIR=	ffi/lang/python
 
 GL_ACCOUNT=	sequoia-pgp
 GL_PROJECT=	sequoia
