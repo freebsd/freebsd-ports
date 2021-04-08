@@ -1,0 +1,19 @@
+--- LittleFly/Makefile.orig	2021-04-08 00:24:47 UTC
++++ LittleFly/Makefile
+@@ -3,11 +3,11 @@
+ 	STRIP ?= strip
+ 	# check if user is root
+ 	user = $(shell whoami)
+-	ifeq ($(user),root)
+-	INSTALL_DIR ?= /usr/lib/lv2
+-	else 
+-	INSTALL_DIR ?= ~/.lv2
+-	endif
++	#ifeq ($(user),root)
++	INSTALL_DIR ?= $(PREFIX)/lib/lv2
++	#else 
++	#INSTALL_DIR ?= ~/.lv2
++	#endif
+ 
+ 	# check CPU and supported optimization flags
+ 	ifeq ($(UNAME), Linux)
