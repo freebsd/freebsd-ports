@@ -1,15 +1,22 @@
---- Makefile.orig	2018-07-16 12:17:05 UTC
+--- Makefile.orig	2021-04-06 13:54:58 UTC
 +++ Makefile
-@@ -8,9 +8,9 @@ WARNFLAGS = -Wall -Wextra -std=gnu99 -pe
+@@ -7,18 +7,7 @@ OPTFLAGS = $(shell getconf LFS_CFLAGS) -D_FORTIFY_SOUR
+ WARNFLAGS = -Wall -Wextra -std=gnu99 -pedantic -Wformat -Werror=format-security
  DEBUGFLAGS = -g
  CFLAGS += $(OPTFLAGS) $(WARNFLAGS) $(DEBUGFLAGS)
- OS := $(shell uname)
--ifneq ($(OS), Darwin)
--	LDFLAGS += -Wl,-z,relro
+-
+-# Determine extra LDFLAGS
+-OS := $(shell uname)
+-ifeq ($(findstring Darwin,$(OS)),Darwin)
+-   skip_ldflags = yes
 -endif
-+.if ${OS} != Darwin
+-ifeq ($(findstring CYGWIN,$(OS)),CYGWIN)
+-   skip_ldflags = yes
+-endif
+-ifndef skip_ldflags
+-   LDFLAGS += -Wl,-z,relro
+-endif
 +LDFLAGS += -Wl,-z,relro
-+.endif
  
- 
- 
+ all: pcap pcap_kuznet pcapng
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) pcapfix.c pcap.o pcap_kuznet.o pcapng.o -o pcapfix
