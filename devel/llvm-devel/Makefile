@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-devel
 
@@ -154,8 +154,10 @@ COMMANDS=	${LLVM_COMMANDS}
 FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
 MAN1SRCS+=	bugpoint.1 \
+		clang-tblgen.1 \
 		dsymutil.1 \
 		llc.1 \
+		lldb-tblgen.1 \
 		lli.1 \
 		llvm-addr2line.1 \
 		llvm-ar.1 \
@@ -191,8 +193,9 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-strings.1 \
 		llvm-strip.1 \
 		llvm-symbolizer.1 \
-		opt.1 \
-		xxx-tblgen.1
+		llvm-tblgen.1 \
+		mlir-tblgen.1 \
+		opt.1
 
 STRIP_LIBS=	BugpointPasses.so \
 		LLVMHello.so \
@@ -427,6 +430,7 @@ post-install-DOCS-on:
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/lit.1
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/FileCheck.1
 .endif
+	${RM} "${STAGEDIR}${LLVM_PREFIX}/share/man/man1/tblgen Family.1"
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
 
