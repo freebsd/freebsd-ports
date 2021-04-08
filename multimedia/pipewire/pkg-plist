@@ -3,6 +3,7 @@ bin/pipewire-pulse
 bin/pw-cli
 bin/pw-dot
 bin/pw-dump
+bin/pw-loopback
 bin/pw-metadata
 bin/pw-mididump
 bin/pw-mon
@@ -105,6 +106,8 @@ include/spa-0.2/spa/param/audio/format.h
 include/spa-0.2/spa/param/audio/layout.h
 include/spa-0.2/spa/param/audio/raw.h
 include/spa-0.2/spa/param/audio/type-info.h
+include/spa-0.2/spa/param/bluetooth/audio.h
+include/spa-0.2/spa/param/bluetooth/type-info.h
 include/spa-0.2/spa/param/format-utils.h
 include/spa-0.2/spa/param/format.h
 include/spa-0.2/spa/param/param.h
@@ -149,7 +152,7 @@ include/spa-0.2/spa/utils/type.h
 %%GSTREAMER%%lib/gstreamer-1.0/libgstpipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.323.0
+lib/libpipewire-0.3.so.0.325.0
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
@@ -168,11 +171,14 @@ lib/pipewire-0.3/libpipewire-module-spa-node-factory.so
 lib/pipewire-0.3/libpipewire-module-spa-node.so
 lib/spa-0.2/audioconvert/libspa-audioconvert.so
 lib/spa-0.2/audiomixer/libspa-audiomixer.so
+lib/spa-0.2/audiotestsrc/libspa-audiotestsrc.so
 lib/spa-0.2/control/libspa-control.so
 lib/spa-0.2/support/libspa-dbus.so
 lib/spa-0.2/support/libspa-support.so
 lib/spa-0.2/v4l2/libspa-v4l2.so
 lib/spa-0.2/videoconvert/libspa-videoconvert.so
+lib/spa-0.2/videotestsrc/libspa-videotestsrc.so
+lib/spa-0.2/volume/libspa-volume.so
 %%VULKAN%%lib/spa-0.2/vulkan/libspa-vulkan.so
 libdata/pkgconfig/libpipewire-0.3.pc
 libdata/pkgconfig/libspa-0.2.pc
