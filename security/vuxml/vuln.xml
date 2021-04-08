@@ -76,6 +76,39 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9595d002-edeb-4602-be2d-791cd654247e">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.287</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.277.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2021-04-07/">
+	  <h1>Description</h1>
+	  <h5>(Low) SECURITY-1721 / CVE-2021-21639</h5>
+	  <p>Lack of type validation in agent related REST API</p>
+	  <h5>(Medium) SECURITY-1871 / CVE-2021-21640</h5>
+	  <p>View name validation bypass</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.jenkins.io/security/advisory/2021-04-07/</url>
+    </references>
+    <dates>
+      <discovery>2021-04-07</discovery>
+      <entry>2021-04-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c0c1834c-9761-11eb-acfd-0022489ad614">
     <topic>Node.js -- April 2021 Security Releases</topic>
     <affects>
