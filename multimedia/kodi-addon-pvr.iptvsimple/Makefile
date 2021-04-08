@@ -1,7 +1,7 @@
 # Created by: Bernhard Froehlich <decke@FreeBSD.org>
 
 PORTNAME=	pvr.iptvsimple
-DISTVERSION=	7.5.1
+DISTVERSION=	7.6.0
 DISTVERSIONSUFFIX=	-Matrix
 CATEGORIES=	multimedia
 
