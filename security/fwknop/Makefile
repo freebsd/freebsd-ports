@@ -2,7 +2,7 @@
 
 PORTNAME=	fwknop
 PORTVERSION=	2.6.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.cipherdyne.org/fwknop/download/
 
@@ -10,9 +10,6 @@ MAINTAINER=	sean.greven@gmail.com
 COMMENT=	SPA implementation for Linux and FreeBSD
 
 LICENSE=	GPLv2
-
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: log_level_t
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: log_level_t
 
 BUILD_DEPENDS= wget:ftp/wget
 RUN_DEPENDS=   wget:ftp/wget
