@@ -1,0 +1,9 @@
+--- usr/lib/byobu/trash.orig	2016-04-07 22:05:52 UTC
++++ usr/lib/byobu/trash
+@@ -34,4 +34,4 @@ __trash() {
+ 	printf "%s[%s]" "$ICON_TRASH" "$count"
+ }
+ 
+-# vi: syntax=sh ts=4 noexpandtab
++# vi: syntax=sh ts=4 noexpandtab
+\ No newline at end of file

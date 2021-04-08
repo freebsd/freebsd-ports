@@ -2,6 +2,7 @@
 
 PORTNAME=	byobu
 PORTVERSION=	5.133
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	bash:shells/bash \
 		gsed:textproc/gsed
 
-USES=		autoreconf python shebangfix
+USES=		autoreconf python shebangfix ncurses:port
 
 SHEBANG_FILES=	usr/lib/byobu/include/notify_osd \
 		usr/lib/byobu/include/config.py.in \
@@ -49,7 +50,5 @@ post-patch:
 			-e "s@/usr/bin/python@${PYTHON_CMD}@"
 	${REINPLACE_CMD} -e 's,@sysconfdir@/profile.d,$$(datadir)/@PACKAGE@,' \
 		${WRKSRC}/etc/profile.d/Makefile.am
-	${FIND} ${WRKSRC}/usr/lib/byobu -type f -maxdepth 1 | ${XARGS} \
-		${REINPLACE_CMD} -e 's:/proc:/compat/linux/proc:g'
 
 .include <bsd.port.mk>
