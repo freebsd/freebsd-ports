@@ -1,5 +1,4 @@
 bin/wmbiff
-lib/wmbiff/security.debian.rb
 man/man1/wmbiff.1.gz
 man/man5/wmbiffrc.5.gz
 %%DATADIR%%/sample.wmbiffrc
