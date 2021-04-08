@@ -37,6 +37,7 @@
 %%WWWDIR%%/app/controllers/CControllerHostViewRefresh.php
 %%WWWDIR%%/app/controllers/CControllerHousekeepingEdit.php
 %%WWWDIR%%/app/controllers/CControllerHousekeepingUpdate.php
+%%WWWDIR%%/app/controllers/CControllerHintBox.php
 %%WWWDIR%%/app/controllers/CControllerIconMapCreate.php
 %%WWWDIR%%/app/controllers/CControllerIconMapDelete.php
 %%WWWDIR%%/app/controllers/CControllerIconMapEdit.php
@@ -231,6 +232,7 @@
 %%WWWDIR%%/app/views/dashboard.properties.edit.php
 %%WWWDIR%%/app/views/dashboard.sharing.edit.php
 %%WWWDIR%%/app/views/hostmacros.list.php
+%%WWWDIR%%/app/views/hint.box.php
 %%WWWDIR%%/app/views/js/administration.image.list.js.php
 %%WWWDIR%%/app/views/js/administration.user.list.js.php
 %%WWWDIR%%/app/views/js/administration.authentication.edit.js.php
@@ -501,6 +503,7 @@
 %%WWWDIR%%/include/classes/helpers/CConditionHelper.php
 %%WWWDIR%%/include/classes/helpers/CElasticsearchHelper.php
 %%WWWDIR%%/include/classes/helpers/CHtml.php
+%%WWWDIR%%/include/classes/helpers/CHintBoxHelper.php
 %%WWWDIR%%/include/classes/helpers/CMapHelper.php
 %%WWWDIR%%/include/classes/helpers/CMathHelper.php
 %%WWWDIR%%/include/classes/helpers/CMediatypeHelper.php
