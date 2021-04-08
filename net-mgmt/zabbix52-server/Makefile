@@ -1,7 +1,7 @@
 # Created by: Pakhom Golynga <pg@pakhom.spb.ru>
 
 PORTNAME=	zabbix52
-DISTVERSION=	5.2.5
+DISTVERSION=	5.2.6
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/

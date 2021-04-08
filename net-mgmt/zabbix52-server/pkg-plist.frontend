@@ -18,6 +18,7 @@
 %%WWWDIR%%/app/controllers/CControllerCharts.php
 %%WWWDIR%%/app/controllers/CControllerChartsView.php
 %%WWWDIR%%/app/controllers/CControllerChartsViewJson.php
+%%WWWDIR%%/app/controllers/CControllerHintBox.php
 %%WWWDIR%%/app/controllers/CControllerDashboardDelete.php
 %%WWWDIR%%/app/controllers/CControllerDashboardList.php
 %%WWWDIR%%/app/controllers/CControllerDashboardPropertiesCheck.php
@@ -308,6 +309,7 @@
 %%WWWDIR%%/app/views/layout.json.php
 %%WWWDIR%%/app/views/layout.warning.php
 %%WWWDIR%%/app/views/layout.widget.php
+%%WWWDIR%%/app/views/hint.box.php
 %%WWWDIR%%/app/views/monitoring.charts.view.json.php
 %%WWWDIR%%/app/views/monitoring.charts.view.php
 %%WWWDIR%%/app/views/monitoring.dashboard.list.php
@@ -549,6 +551,7 @@
 %%WWWDIR%%/include/classes/helpers/CElasticsearchHelper.php
 %%WWWDIR%%/include/classes/helpers/CEncryptHelper.php
 %%WWWDIR%%/include/classes/helpers/CHousekeepingHelper.php
+%%WWWDIR%%/include/classes/helpers/CHintBoxHelper.php
 %%WWWDIR%%/include/classes/helpers/CHtml.php
 %%WWWDIR%%/include/classes/helpers/CMapHelper.php
 %%WWWDIR%%/include/classes/helpers/CMathHelper.php
