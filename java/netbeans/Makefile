@@ -1,7 +1,7 @@
 # Created by: olgeni@FreeBSD.org
 
 PORTNAME=	netbeans
-DISTVERSION=	11.3
+DISTVERSION=	12.3
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE/netbeans/netbeans/${PORTVERSION}/
 DISTNAME=	netbeans-${DISTVERSION}-bin
@@ -41,7 +41,7 @@ DESKTOP_ENTRIES="Apache NetBeans" \
 		false
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e '80s|#||;80s|/path/to/jdk|${JAVA_HOME}|' \
+	@${REINPLACE_CMD} -i '' -e '77s|#||;77s|/path/to/jdk|${JAVA_HOME}|' \
 	    ${WRKSRC}/etc/netbeans.conf
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
