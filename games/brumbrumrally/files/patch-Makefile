@@ -1,6 +1,6 @@
 --- Makefile.orig	2016-03-23 12:05:46 UTC
 +++ Makefile
-@@ -1,19 +1,18 @@
+@@ -1,27 +1,18 @@
  OBJS := $(patsubst %.cpp,%.o,$(wildcard src/*.cpp src/hqx/*.cpp))
  
 -DESTDIR = 
@@ -22,7 +22,15 @@
 +CXXFLAGS += -Wall -std=c++98 -pedantic `sdl-config --cflags`
  
 -LDFLAGS = `sdl-config --libs` -lSDL_image -lSDL_net
+-
+-# lto is supported in g++ version 4.5.0 or higher
+-CXX_MAJOR := $(shell $(CXX) -dumpversion | cut -d'.' -f1)
+-CXX_MINOR := $(shell $(CXX) -dumpversion | cut -d'.' -f2)
+-CXX_LTO := $(shell [ $(CXX_MAJOR) -gt 4 -o \( $(CXX_MAJOR) -eq 4 -a $(CXX_MINOR) -ge 5 \) ] && echo true || echo false)
+-ifeq ($(CXX_LTO),true)
+-all : CXXFLAGS += -flto -fwhole-program
+-endif
 +LDFLAGS += `sdl-config --libs` -lSDL_image -lSDL_net
  
- # lto is supported in g++ version 4.5.0 or higher
- CXX_MAJOR := $(shell $(CXX) -dumpversion | cut -d'.' -f1)
+ EXE = brumbrumrally
+ 
