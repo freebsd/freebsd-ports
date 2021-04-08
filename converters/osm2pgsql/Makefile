@@ -1,5 +1,5 @@
 PORTNAME=	osm2pgsql
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -38,6 +38,7 @@ LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUAJIT_USES_OFF=	lua:53
 TEST_CMAKE_BOOL=	BUILD_TESTS
 TEST_TEST_TARGET=	test
+TEST_CMAKE_ON=		-DCMAKE_CTEST_ARGUMENTS="--label-regex;NoDB;--output-on-failure"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|find_package(Lua |&${LUA_VER} EXACT |' \
