@@ -1,3 +1,0 @@
-#!/bin/sh
-
-$PREFIX/bin/b2 toolset=clang "$@"
