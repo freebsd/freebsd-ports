@@ -184,6 +184,7 @@
     SUBDIR += flake
     SUBDIR += flite
     SUBDIR += fluid-soundfont
+    SUBDIR += fluida-lv2
     SUBDIR += fluidplug-lv2
     SUBDIR += fluidsynth
     SUBDIR += fluidsynth-dssi
