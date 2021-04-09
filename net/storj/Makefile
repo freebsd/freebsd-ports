@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	storj
-PORTVERSION=	1.25.2
+PORTVERSION=	1.26.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -15,8 +15,9 @@ USE_GITHUB=	yes
 
 .include "${.CURDIR}/Makefile.deps"
 
-STORJ_CMDS=	certificates identity inspector metric-receiver multinode \
-		satellite segment-reaper storagenode storagenode-updater \
+STORJ_CMDS=	certificates identity inspector metainfo-loop-benchmark \
+		metainfo-migration metainfo-verifier metric-receiver \
+		multinode satellite storagenode storagenode-updater \
 		storj-admin storj-sim uplink versioncontrol
 
 GO_TARGET=	${STORJ_CMDS:S,^,./cmd/,}
