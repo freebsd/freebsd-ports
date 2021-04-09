@@ -1,5 +1,6 @@
 PORTNAME=	ocsinventory
-PORTVERSION=	2.8
+PORTVERSION=	2.8.1
+DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-agent
@@ -10,7 +11,8 @@ COMMENT=	Keep track of the computers configuration and software
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	lspci:sysutils/pciutils \
+RUN_DEPENDS=	dmidecode:sysutils/dmidecode \
+		lspci:sysutils/pciutils \
 		p5-libwww>=0:www/p5-libwww \
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 		p5-Proc-Daemon>=0:devel/p5-Proc-Daemon \
@@ -50,10 +52,4 @@ SNMP_RUN_DEPENDS=	nmap:security/nmap \
 			p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
 			p5-Nmap-Parser>=0:security/p5-Nmap-Parser
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64 || ${ARCH} == i386
-RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
