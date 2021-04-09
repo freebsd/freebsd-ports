@@ -454,6 +454,7 @@
     SUBDIR += mac
     SUBDIR += madfufw
     SUBDIR += madplay
+    SUBDIR += madronalib
     SUBDIR += malint
     SUBDIR += mate-media
     SUBDIR += mclk-lv2

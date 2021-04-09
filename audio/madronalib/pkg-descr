@@ -1,0 +1,5 @@
+Madronalib provides one clear path to writing maintainable audio code without
+sacrificing performance. It enables efficient audio DSP on SIMD processors with
+readable, brief code.
+
+WWW: https://www.madronalabs.com/
