@@ -6,7 +6,7 @@ DISTVERSION=	2.08
 PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	ericbsd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Custom package repository builder for FreeBSD and DragonFly
 
 LICENSE=	ISCL
