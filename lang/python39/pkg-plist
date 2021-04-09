@@ -6225,6 +6225,14 @@ lib/python%%XYDOT%%/test/test_importlib/namespace_pkgs/project3/parent/child/__p
 lib/python%%XYDOT%%/test/test_importlib/namespace_pkgs/project3/parent/child/__pycache__/three.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_importlib/namespace_pkgs/project3/parent/child/three.py
 lib/python%%XYDOT%%/test/test_importlib/namespace_pkgs/top_level_portion1.zip
+lib/python%%XYDOT%%/test/test_importlib/partial/__pycache__/cfimport.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_importlib/partial/__pycache__/cfimport.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_importlib/partial/__pycache__/cfimport.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_importlib/partial/__pycache__/pool_in_threads.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_importlib/partial/__pycache__/pool_in_threads.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_importlib/partial/__pycache__/pool_in_threads.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_importlib/partial/cfimport.py
+lib/python%%XYDOT%%/test/test_importlib/partial/pool_in_threads.py
 lib/python%%XYDOT%%/test/test_importlib/source/__init__.py
 lib/python%%XYDOT%%/test/test_importlib/source/__main__.py
 lib/python%%XYDOT%%/test/test_importlib/source/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
