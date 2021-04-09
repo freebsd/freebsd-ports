@@ -207,6 +207,7 @@
     SUBDIR += libva-vdpau-driver
     SUBDIR += libvdpau
     SUBDIR += libvdpau-va-gl
+    SUBDIR += libvlcpp
     SUBDIR += libvpx
     SUBDIR += libx264
     SUBDIR += libxine
