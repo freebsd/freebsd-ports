@@ -265,6 +265,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/BN_cmp.3.gz
 %%MAN3%%man/man3/BN_copy.3.gz
 %%MAN3%%man/man3/BN_generate_prime.3.gz
+%%MAN3%%man/man3/BN_mod_exp_mont.3.gz
 %%MAN3%%man/man3/BN_mod_inverse.3.gz
 %%MAN3%%man/man3/BN_mod_mul_montgomery.3.gz
 %%MAN3%%man/man3/BN_mod_mul_reciprocal.3.gz
@@ -715,6 +716,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/SSL_state_string.3.gz
 %%MAN3%%man/man3/SSL_want.3.gz
 %%MAN3%%man/man3/SSL_write.3.gz
+%%MAN3%%man/man3/TS_RESP_CTX_new.3.gz
 %%MAN3%%man/man3/TS_VERIFY_CTX_set_certs.3.gz
 %%MAN3%%man/man3/UI_STRING.3.gz
 %%MAN3%%man/man3/UI_UTIL_read_pw.3.gz
@@ -851,6 +853,9 @@ man/man5/x509v3_config.5.gz
 %%MAN3%%man/man7/ct.7.gz
 %%MAN3%%man/man7/des_modes.7.gz
 %%MAN3%%man/man7/evp.7.gz
+%%MAN3%%man/man7/life_cycle-kdf.7.gz
+%%MAN3%%man/man7/life_cycle-mac.7.gz
+%%MAN3%%man/man7/life_cycle-rand.7.gz
 %%MAN3%%man/man7/openssl-core.h.7.gz
 %%MAN3%%man/man7/openssl-core_dispatch.h.7.gz
 %%MAN3%%man/man7/openssl-core_names.h.7.gz
