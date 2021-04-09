@@ -427,6 +427,8 @@ include/wine/windows/errorrep.h
 include/wine/windows/errors.h
 include/wine/windows/errrec.idl
 include/wine/windows/evcode.h
+include/wine/windows/eventtoken.h
+include/wine/windows/eventtoken.idl
 include/wine/windows/evntprov.h
 include/wine/windows/evntrace.h
 include/wine/windows/evr.h
