@@ -337,23 +337,28 @@ _PYTHON_ARGS=	3.6+
 .endif
 
 # Validate Python version whether it meets the version restriction.
-_PYTHON_VERSION_CHECK:=		${_PYTHON_ARGS:C/^([1-9]\.[0-9])$/\1-\1/}
-_PYTHON_VERSION_MINIMUM_TMP:=	${_PYTHON_VERSION_CHECK:C/([1-9]\.[0-9])[-+].*/\1/}
-_PYTHON_VERSION_MINIMUM:=	${_PYTHON_VERSION_MINIMUM_TMP:M[1-9].[0-9]}
-_PYTHON_VERSION_MAXIMUM_TMP:=	${_PYTHON_VERSION_CHECK:C/.*-([1-9]\.[0-9])/\1/}
-_PYTHON_VERSION_MAXIMUM:=	${_PYTHON_VERSION_MAXIMUM_TMP:M[1-9].[0-9]}
+_PYTHON_VERSION_CHECK:=		${_PYTHON_ARGS:C/^([1-9]\.[1-9]?[0-9])$/\1-\1/}
+_PYTHON_VERSION_MINIMUM_TMP:=	${_PYTHON_VERSION_CHECK:C/([1-9]\.[1-9]?[0-9])[-+].*/\1/}
+_PYTHON_VERSION_MINIMUM:=	${_PYTHON_VERSION_MINIMUM_TMP:M[1-9].[0-9]}${_PYTHON_VERSION_MINIMUM_TMP:M[1-9].[1-9][0-9]}
+_PYTHON_VERSION_MAXIMUM_TMP:=	${_PYTHON_VERSION_CHECK:C/.*-([1-9]\.[1-9]?[0-9])/\1/}
+_PYTHON_VERSION_MAXIMUM:=	${_PYTHON_VERSION_MAXIMUM_TMP:M[1-9].[0-9]}${_PYTHON_VERSION_MAXIMUM_TMP:M[1-9].[1-9][0-9]}
 
 # At this point we should have no argument left in ${_PYTHON_ARGS}
 # except a version spec
-_PYTHON_ARGS:=	${_PYTHON_ARGS:N[1-9].[0-9]-[1-9].[0-9]:N[1-9].[0-9]:N[1-9].[0-9]+:N-[1-9].[0-9]}
+_V1=		[1-9].[0-9]
+_V2=		[1-9].[1-9][0-9]
+_PYTHON_ARGS:=	${_PYTHON_ARGS:N${_V1}-${_V1}:N${_V1}-${_V2}:N${_V2}-${_V2}:N${_V1}:N${_V2}:N${_V1}+:N${_V2}+:N-${_V1}:N-${_V2}}
 .if !empty(_PYTHON_ARGS)
 IGNORE=	uses unknown USES=python arguments: ${_PYTHON_ARGS}
 .endif
 
+# Pattern to convert python versions (X.Y or X.YY) to comparable format X.YY
+_VC=		C/^([1-9]\.)([0-9])$$/\10\2/
+
 .undef _PYTHON_VERSION_NONSUPPORTED
-.if !empty(_PYTHON_VERSION_MINIMUM) && (${_PYTHON_VERSION} < ${_PYTHON_VERSION_MINIMUM})
+.if !empty(_PYTHON_VERSION_MINIMUM) && (${_PYTHON_VERSION:${_VC}} < ${_PYTHON_VERSION_MINIMUM:${_VC}})
 _PYTHON_VERSION_NONSUPPORTED=	${_PYTHON_VERSION_MINIMUM} at least
-.elif !empty(_PYTHON_VERSION_MAXIMUM) && (${_PYTHON_VERSION} > ${_PYTHON_VERSION_MAXIMUM})
+.elif !empty(_PYTHON_VERSION_MAXIMUM) && (${_PYTHON_VERSION:${_VC}} > ${_PYTHON_VERSION_MAXIMUM:${_VC}})
 _PYTHON_VERSION_NONSUPPORTED=	${_PYTHON_VERSION_MAXIMUM} at most
 .endif
 
@@ -364,9 +369,9 @@ _PYTHON_VERSION_NONSUPPORTED=	${_PYTHON_VERSION_MAXIMUM} at most
 __VER=		${ver}
 .if !defined(_PYTHON_VERSION) && \
 	!(!empty(_PYTHON_VERSION_MINIMUM) && ( \
-		${__VER} < ${_PYTHON_VERSION_MINIMUM})) && \
+		${__VER:${_VC}} < ${_PYTHON_VERSION_MINIMUM:${_VC}})) && \
 	!(!empty(_PYTHON_VERSION_MAXIMUM) && ( \
-		${__VER} > ${_PYTHON_VERSION_MAXIMUM}))
+		${__VER:${_VC}} > ${_PYTHON_VERSION_MAXIMUM:${_VC}}))
 _PYTHON_VERSION=	${ver}
 .endif
 .endfor
@@ -381,9 +386,9 @@ IGNORE=		needs an unsupported version of Python
 .  for ver in ${PYTHON_DEFAULT} ${PYTHON2_DEFAULT} ${PYTHON3_DEFAULT} ${_PYTHON_VERSIONS}
 __VER=		${ver}
 .    if !(!empty(_PYTHON_VERSION_MINIMUM) && ( \
-		${__VER} < ${_PYTHON_VERSION_MINIMUM})) && \
+		${__VER:${_VC}} < ${_PYTHON_VERSION_MINIMUM:${_VC}})) && \
 	!(!empty(_PYTHON_VERSION_MAXIMUM) && ( \
-		${__VER} > ${_PYTHON_VERSION_MAXIMUM}))
+		${__VER:${_VC}} > ${_PYTHON_VERSION_MAXIMUM:${_VC}}))
 .      if empty(_VALID_PYTHON_VERSIONS:M${ver})
 _VALID_PYTHON_VERSIONS+=	${ver}
 .      endif
@@ -416,7 +421,7 @@ FLAVOR=	${FLAVORS:[1]}
 .  endif
 .endif
 
-.if ${FLAVOR:Mpy[23][0-9]}
+.if ${FLAVOR:Mpy[23][0-9]}${FLAVOR:Mpy[23][1-9][0-9]}
 _PYTHON_VERSION=	${FLAVOR:S/py//:C/(.)/\1./}
 .endif
 
