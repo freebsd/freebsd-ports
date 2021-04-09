@@ -12,6 +12,9 @@ COMMENT=	Makes high quality X/K/S/VCD movies from many formats
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired multimedia/transcode
+EXPIRATION_DATE=2021-05-01
+
 RUN_DEPENDS=	mpeg2enc:multimedia/mjpegtools \
 		bash:shells/bash \
 		mplayer:multimedia/mplayer \
