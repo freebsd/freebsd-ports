@@ -97,6 +97,10 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
 
+post-install:
+	# Empty directory, but check-plist complains
+	@${RMDIR} ${STAGEDIR}${PREFIX}/info || ${TRUE}
+	
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7
