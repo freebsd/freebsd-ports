@@ -14,6 +14,9 @@ bin/mathicsscript
 %%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/version.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/version.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathicsscript/format.py
+%%PYTHON_SITELIBDIR%%/mathicsscript/inputrc-no-unicode
+%%PYTHON_SITELIBDIR%%/mathicsscript/inputrc-unicode
 %%PYTHON_SITELIBDIR%%/mathicsscript/mmalexer.py
+%%PYTHON_SITELIBDIR%%/mathicsscript/settings.m
 %%PYTHON_SITELIBDIR%%/mathicsscript/termshell.py
 %%PYTHON_SITELIBDIR%%/mathicsscript/version.py
