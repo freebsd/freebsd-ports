@@ -1,0 +1,13 @@
+Guppy 3 is a fork of Guppy-PE, a Python Programming Environment & Heap analysis
+toolset, created by Sverker Nilsson for Python 2.
+
+This package contains the following subpackages:
+
+    etc - Support modules. Contains especially the Glue protocol module.
+    gsl - The Guppy Specification Language implementation. This can be used to
+          create documents and tests from a common source.
+    heapy - The heap analysis toolset. It can be used to find information about
+          the objects in the heap and display the information in various ways.
+    sets - Bitsets and 'nodesets' implemented in C.
+
+WWW: https://github.com/zhuyifei1999/guppy3/
