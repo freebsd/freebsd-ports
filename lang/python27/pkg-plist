@@ -1892,7 +1892,7 @@ lib/python2.7/json/tool.pyo
 lib/python2.7/keyword.py
 lib/python2.7/keyword.pyc
 lib/python2.7/keyword.pyo
-lib/python2.7/lib-dynload/Python-%%PORTVERSION%%-py2.7.egg-info
+lib/python2.7/lib-dynload/Python-%%DISTVERSION%%-py2.7.egg-info
 lib/python2.7/lib-dynload/_bisect.so
 lib/python2.7/lib-dynload/_codecs_cn.so
 lib/python2.7/lib-dynload/_codecs_hk.so
@@ -2065,9 +2065,9 @@ lib/python2.7/lib-tk/ttk.pyo
 lib/python2.7/lib-tk/turtle.py
 lib/python2.7/lib-tk/turtle.pyc
 lib/python2.7/lib-tk/turtle.pyo
-lib/python2.7/lib2to3/Grammar%%PORTVERSION%%.final.0.pickle
+lib/python2.7/lib2to3/Grammar%%DISTVERSION%%.final.0.pickle
 lib/python2.7/lib2to3/Grammar.txt
-lib/python2.7/lib2to3/PatternGrammar%%PORTVERSION%%.final.0.pickle
+lib/python2.7/lib2to3/PatternGrammar%%DISTVERSION%%.final.0.pickle
 lib/python2.7/lib2to3/PatternGrammar.txt
 lib/python2.7/lib2to3/__init__.py
 lib/python2.7/lib2to3/__init__.pyc

@@ -1,11 +1,11 @@
 # Created by: Thomas Gellekum <tg@FreeBSD.org>
 
 PORTNAME=	python-doc-${DOCFORMAT}
-PORTVERSION=	${PYTHON_PORTVERSION}
+DISTVERSION=	${PYTHON_DISTVERSION}
 CATEGORIES=	lang python
-MASTER_SITES?=	PYTHON/ftp/python/doc/${PORTVERSION} \
+MASTER_SITES=	PYTHON/ftp/python/doc/${DISTVERSION} \
 		PYTHON/ftp/python/doc/current
-DISTNAME=	python-${PORTVERSION}-docs-${DOCFORMAT}
+DISTNAME=	python-${DISTVERSION}-docs-${DOCFORMAT}
 DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
@@ -37,8 +37,7 @@ _VERS!=		${MAKE} -V _PYTHON_VERSIONS:O
 .endif
 
 all_python_versions:
-.for v in ${_VERS}
-	@${MAKE} -C ${PORTSDIR}/lang/python${v:S/.//} -V PYTHON_PORTVERSION
+	@${MAKE} -C ${PORTSDIR}/lang/python${v:S/.//} -V PYTHON_DISTVERSION
 .endfor
 
 .if make(makesum)

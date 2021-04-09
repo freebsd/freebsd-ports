@@ -1,12 +1,12 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	python
-PORTVERSION=	${PYTHON_PORTVERSION}
+DISTVERSION=	${PYTHON_DISTVERSION}
 PORTREVISION=	1
 CATEGORIES=	lang python
-MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
+MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
-DISTNAME=	Python-${PORTVERSION}
+DISTNAME=	Python-${DISTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
@@ -21,11 +21,11 @@ USES=		cpe ncurses pathfix pkgconfig readline shebangfix ssl tar:xz
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-python_CMD=	${PREFIX}/bin/python${PYTHON_PORTVERSION:R}
+python_CMD=	${PREFIX}/bin/python${PYTHON_DISTVERSION:R}
 SHEBANG_FILES=	Lib/*.py Lib/*/*.py Lib/*/*/*.py Lib/*/*/*/*.py
 
 # Duplicate python.mk variables. TODO: Let lang/python?? ports use python.mk bits.
-PYTHON_VER=		${PYTHON_PORTVERSION:R}
+PYTHON_VER=		${PYTHON_DISTVERSION:R}
 PYTHON_VERSION=		python${PYTHON_VER}
 PYTHON_SUFFIX=		${PYTHON_VER:S/.//g}
 
@@ -46,7 +46,7 @@ SUB_LIST=		PYTHON_SUFFIX=${PYTHON_SUFFIX}
 PLIST_SUB=		ABI=${ABIFLAGS} \
 			XY=${PYTHON_SUFFIX} \
 			XYDOT=${PYTHON_VER} \
-			XYZDOT=${PORTVERSION} \
+			XYZDOT=${DISTVERSION} \
 			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. https://bugs.python.org/issue19554
 
 OPTIONS_DEFINE=		DEBUG IPV6 NLS PYMALLOC
