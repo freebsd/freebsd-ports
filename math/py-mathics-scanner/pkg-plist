@@ -8,8 +8,8 @@ bin/mathics-generate-json-table
 %%PYTHON_SITELIBDIR%%/mathics_scanner/__pycache__/errors.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathics_scanner/__pycache__/feed.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathics_scanner/__pycache__/feed.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/mathics_scanner/__pycache__/load.cpython-37.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/mathics_scanner/__pycache__/load.cpython-37.pyc
+%%PYTHON_SITELIBDIR%%/mathics_scanner/__pycache__/load.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/mathics_scanner/__pycache__/load.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathics_scanner/__pycache__/prescanner.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathics_scanner/__pycache__/prescanner.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathics_scanner/__pycache__/tokeniser.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
