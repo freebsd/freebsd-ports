@@ -506,6 +506,7 @@ bin/afni_system_check.py
 bin/afni_vcheck
 bin/aiv
 bin/align_epi_anat.py
+bin/ap_run_simple_rest.tcsh
 bin/apqc_make_html.py
 bin/apqc_make_tcsh.py
 bin/apsearch
