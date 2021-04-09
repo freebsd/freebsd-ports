@@ -1,5 +1,5 @@
 PORTNAME=	papirus-icon-theme
-PORTVERSION=	20210302
+PORTVERSION=	20210401
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@FreeBSD.org
