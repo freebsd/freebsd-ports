@@ -1,3 +1,3 @@
-TIMESTAMP = 1594844267
-SHA256 (glusterfs-8.0.tar.gz) = bc0215380175a7d94c9ea90e3a7e0ca92a3ac691336e8b43da8a560f8e3c0169
-SIZE (glusterfs-8.0.tar.gz) = 7800370
+TIMESTAMP = 1617918166
+SHA256 (glusterfs-8.4.tar.gz) = 5e0430fabce44c2b461e1d3460d723a746f2b398292282a9095406fa4f6306df
+SIZE (glusterfs-8.4.tar.gz) = 7833014
