@@ -1,3 +1,3 @@
-TIMESTAMP = 1613235749
-SHA256 (gnome/evolution-data-server-3.38.4.tar.xz) = ac53f16b2d51f3e7ff8025f9ca19f4a2d4ce3841d72ae9fe2bb897dc8099d705
-SIZE (gnome/evolution-data-server-3.38.4.tar.xz) = 4663372
+TIMESTAMP = 1617742119
+SHA256 (gnome/evolution-data-server-3.40.0.tar.xz) = ed572f0cb6a2365809943449a8ccbee652681e2d9a1a7f4a54b60cbb53d87445
+SIZE (gnome/evolution-data-server-3.40.0.tar.xz) = 4623568
