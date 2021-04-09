@@ -1,8 +1,9 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
-PORTNAME=	Mathics
-PORTVERSION=	2.0.0
+PORTNAME=	Mathics3
+PORTVERSION=	2.1.0
 CATEGORIES=	math python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -12,7 +13,16 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}cython>0:lang/cython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pint>0:devel/py-pint@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mpmath>0:math/py-mpmath@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}llvmlite>0:devel/py-llvmlite@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}palettable>0:misc/py-palettable@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}word_cloud>0:textproc/py-wordcloud@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-image>0:graphics/py-scikit-image@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Mathics_Scanner>0:math/py-mathics-scanner
 RUN_DEPENDS=	${PYNUMPY}	\
 		bash:shells/bash	\
 		${PYTHON_PKGNAMEPREFIX}py>0:devel/py-py@${PY_FLAVOR} \
@@ -42,25 +52,23 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}pycountry>0:textproc/py-pycountry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}word_cloud>0:textproc/py-wordcloud@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-image>0:graphics/py-scikit-image@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mathics-scanner>0:math/py-mathics-scanner@${PY_FLAVOR}
-TEST_DEPENDS=	gmake:devel/gmake	\
-		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Mathics_Scanner>0:math/py-mathics-scanner
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}guppy3>0:devel/py-guppy3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>0:devel/py-pluggy@${PY_FLAVOR}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME:tl}
+#USE_GITHUB=	yes
+#GH_ACCOUNT=	${PORTNAME:tl}
 
 USES=		python:3.6+ shebangfix
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils noflavors
 SHEBANG_GLOB=	*.py
 
-MAKE_ENV+=	PYTHON=${PYTHON_CMD}
-PLIST_SUB+=	VER=${PORTVERSION}
-TEST_TARGET=	check
-TEST_ENV=	${MAKE_ENV}
+.if !defined(WITH_DEBUG)
+LDFLAGS+=	-s
+.endif
 
 do-test: install
-	(cd ${TEST_WRKSRC} &&	\
-	${SETENV} ${TEST_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${TEST_TARGET})
+	(cd ${TEST_WRKSRC} && py.test)
 
 .include <bsd.port.mk>
