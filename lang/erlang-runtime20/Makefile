@@ -74,6 +74,8 @@ KQUEUE_CONFIGURE_ENABLE=	kernel-poll
 NATIVE_CONFIGURE_ENABLE=	native-libs
 ODBC_CONFIGURE_WITH=		odbc
 ODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
+ODBC_CFLAGS=			-I/usr/local/include
+ODBC_LDFLAGS=			-L/usr/local/lib
 OPENSSL_CONFIGURE_WITH=		ssl=${OPENSSLBASE}
 OPENSSL_USES=			ssl
 SCTP_CONFIGURE_ENABLE=		sctp
