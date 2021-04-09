@@ -29,3 +29,4 @@ include/xlsxwriter/xmlwriter.h
 lib/libxlsxwriter.a
 lib/libxlsxwriter.so
 lib/libxlsxwriter.so.0
+libdata/pkgconfig/xlsxwriter.pc
