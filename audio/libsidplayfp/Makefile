@@ -1,8 +1,8 @@
 PORTNAME=	libsidplayfp
-PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	audio
-MASTER_SITES=	SF/sidplay-residfp/libsidplayfp/${PORTVERSION:R}
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
+		SF/sidplay-residfp/libsidplayfp/${PORTVERSION:R}
 
 MAINTAINER=	liangtai.s16@gmail.com
 COMMENT=	Library to play Commodore 64 music derived from libsidplay2
@@ -18,7 +18,8 @@ USES=		compiler:c++11-lang libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-exsid=no \
+CONFIGURE_ARGS=	--disable-static \
+		--with-exsid=no \
 		--with-gcrypt
 
 INSTALL_TARGET=	install-strip
@@ -38,7 +39,7 @@ DEBUG_CONFIGURE_ON=	--enable-debug=full
 DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_prog_HAVE_DOXYGEN=false
 
-SIDPLAYFP_SHLIB_VERSION=	5.2.15
+SIDPLAYFP_SHLIB_VERSION=	6.2.17
 STILVIEW_SHLIB_VERSION=		0.0.4
 
 post-build-DOXYGEN-on:

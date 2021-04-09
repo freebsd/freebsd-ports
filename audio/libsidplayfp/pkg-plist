@@ -11,11 +11,9 @@ include/sidplayfp/sidplayfp.h
 include/sidplayfp/sidversion.h
 include/stilview/stil.h
 include/stilview/stildefs.h
-lib/libsidplayfp.a
 lib/libsidplayfp.so
 lib/libsidplayfp.so.%%SIDPLAYFP_SHLIB_VER%%
 lib/libsidplayfp.so.%%SIDPLAYFP_SHLIB_VERSION%%
-lib/libstilview.a
 lib/libstilview.so
 lib/libstilview.so.%%STILVIEW_SHLIB_VER%%
 lib/libstilview.so.%%STILVIEW_SHLIB_VERSION%%
