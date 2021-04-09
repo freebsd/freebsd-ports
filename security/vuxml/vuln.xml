@@ -76,6 +76,35 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8ba23a62-997d-11eb-9f0e-0800278d94f0">
+    <topic>gitea -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.13.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea Team reports for release 1.13.7:</p>
+	<blockquote cite="https://blog.gitea.io/2021/04/gitea-1.13.7-is-released/">
+	  <ul>
+	    <li>Update to bluemonday-1.0.6</li>
+	    <li>Clusterfuzz found another way</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.13.7</url>
+      <freebsdpr>ports/254930</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2021-04-07</discovery>
+      <entry>2021-04-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9ae2c00f-97d0-11eb-8cd6-080027f515ea">
     <topic>clamav -- Multiple vulnerabilites</topic>
     <affects>
