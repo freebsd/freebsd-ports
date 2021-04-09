@@ -15,6 +15,7 @@ share/man/man8/greenbone-nvt-sync.8.gz
 share/man/man8/openvas.8.gz
 @dir %%ETCDIR%%/gnupg
 @dir %%DATADIR%%
+@dir /var/lib
 @dir(gvm,gvm,750) /var/lib/openvas/gnupg
 @dir(gvm,gvm,750) /var/lib/openvas/plugins
 @dir(gvm,gvm,750) /var/lib/openvas
