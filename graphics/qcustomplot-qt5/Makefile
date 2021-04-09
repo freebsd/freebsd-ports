@@ -1,7 +1,7 @@
 PORTNAME=	qcustomplot
-DISTVERSION=	2.0.1
+DISTVERSION=	2.1.0
 CATEGORIES=	graphics
-MASTER_SITES=	https://www.qcustomplot.com/release/${PORTVERSION}/
+MASTER_SITES=	https://www.qcustomplot.com/release/${PORTVERSION}fixed/
 PKGNAMESUFFIX=	${SUFFIX}
 DISTNAME=	QCustomPlot
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
