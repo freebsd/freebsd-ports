@@ -7,7 +7,6 @@ DISTVERSIONPREFIX=	freebsd-
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://valgrind.org/
-PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	pjfloyd@wanadoo.fr
 COMMENT=	Memory debugging and profiling tool
