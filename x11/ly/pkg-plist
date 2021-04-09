@@ -1,7 +1,12 @@
 bin/ly
-@sample %%ETCDIR%%/config.ini.sample
+@dir %%ETCDIR%%/lang
 %%ETCDIR%%/lang/en.ini
 %%ETCDIR%%/lang/es.ini
 %%ETCDIR%%/lang/fr.ini
+%%ETCDIR%%/lang/pt.ini
+%%ETCDIR%%/lang/ro.ini
+%%ETCDIR%%/lang/ru.ini
+@sample %%ETCDIR%%/config.ini.sample
 @sample %%ETCDIR%%/wsetup.sh.sample
 @sample %%ETCDIR%%/xsetup.sh.sample
+etc/pam.d/ly
