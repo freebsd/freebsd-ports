@@ -1,8 +1,8 @@
 PORTNAME=	ccls
-DISTVERSION=	0.20201219
+DISTVERSION=	0.20210330
 CATEGORIES=	devel
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	khng@FreeBSD.org
 COMMENT=	C/C++/ObjC language server
 
 LICENSE=	APACHE20
@@ -25,11 +25,32 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_MASTER_SITES=	LOCAL/tobik:docs
-DOCS_DISTFILES=		MaskRay-ccls.wiki-20190903.tar.gz:docs
+DOCS_MASTER_SITES=	LOCAL/khng:docs
+DOCS_DISTFILES=		ccls.wiki-${DISTVERSION}.tar.gz:docs
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/ccls.wiki && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+
+.if defined(MAINTAINER_MODE)
+MAINTAINER_DISTFILE=	\
+	${_DISTDIR:S|/$||}/${DOCS_DISTFILES:Mccls.wiki-*.tar.gz\:*:C|\:.*$||}
+
+maintainer-docs-fetch:
+	@${MAKE} clean
+	@${MKDIR} ${WRKDIR}/ccls.wiki
+	@git clone https://github.com/MaskRay/ccls.wiki.git \
+		${WRKDIR}/ccls.wiki
+	@${TAR} -zcf ${MAINTAINER_DISTFILE} -C ${WRKDIR} \
+		--uid 0 --gid 0 --exclude-vcs ccls.wiki
+	@${MAKE} makesum
+	@${MAKE} clean
+
+${MAINTAINER_DISTFILE}: maintainer-docs-fetch
+
+maintainer-docs-distfiles: ${MAINTAINER_DISTFILE}
+	scp ${MAINTAINER_DISTFILE} \
+	    freefall.freebsd.org:public_distfiles/
+.endif
 
 .include <bsd.port.mk>
