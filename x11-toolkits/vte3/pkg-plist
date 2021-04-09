@@ -14,10 +14,13 @@ include/vte-%%VERSION%%/vte/vteversion.h
 lib/girepository-1.0/Vte-%%VERSION%%.typelib
 lib/libvte-%%VERSION%%.so
 lib/libvte-%%VERSION%%.so.0
-lib/libvte-%%VERSION%%.so.0.6200.1
+lib/libvte-%%VERSION%%.so.0.6400.0
 libdata/pkgconfig/vte-%%VERSION%%.pc
 libexec/vte-urlencode-cwd
 share/gir-1.0/Vte-%%VERSION%%.gir
+share/glade/catalogs/vte-%%VERSION%%.xml
+share/glade/pixmaps/hicolor/16x16/actions/widget-vte-terminal.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-vte-terminal.png
 share/locale/am/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/an/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/ang/LC_MESSAGES/vte-%%VERSION%%.mo
