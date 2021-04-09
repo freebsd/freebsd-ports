@@ -52,10 +52,10 @@ addentries()
 {
 	for ENC in iso8859-1 iso10646-1 jisx0201.1976-0 jisx0208.1983-0 jisx0208.1990-0 jisx0208.1997-0 jisx0213.2004-1
 	do
-		make_xlfd $ENC Nasu-Regular-20141215.ttf adobe "nasu" p medium
-		make_xlfd $ENC Nasu-Bold-20141215.ttf adobe "nasu" p bold
-		make_xlfd $ENC NasuM-Regular-20141215.ttf adobe "nasum" m medium
-		make_xlfd $ENC NasuM-Bold-20141215.ttf adobe "nasum" m bold
+		make_xlfd $ENC Nasu-Regular-%%PORTVERSION%%.ttf adobe "nasu" p medium
+		make_xlfd $ENC Nasu-Bold-%%PORTVERSION%%.ttf adobe "nasu" p bold
+		make_xlfd $ENC NasuM-Regular-%%PORTVERSION%%.ttf adobe "nasum" m medium
+		make_xlfd $ENC NasuM-Bold-%%PORTVERSION%%.ttf adobe "nasum" m bold
 	done
 }
 
