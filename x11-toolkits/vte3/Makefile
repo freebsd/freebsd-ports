@@ -3,7 +3,7 @@
 PORTNAME=	vte
 PORTVERSION=	0.64.0
 CATEGORIES=	x11-toolkits gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	https://gitlab.gnome.org/GNOME/vte/-/archive/${PORTVERSION}/
 PKGNAMESUFFIX=	3
 DIST_SUBDIR=	gnome
 
