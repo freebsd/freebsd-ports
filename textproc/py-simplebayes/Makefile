@@ -5,7 +5,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Memory-based, optional-persistence naïve bayesian text classifier
+COMMENT=	Memory-based, optional-persistence naive bayesian text classifier
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
