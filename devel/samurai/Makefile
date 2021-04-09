@@ -1,6 +1,6 @@
 PORTNAME=	samurai
-DISTVERSION=	1.2-9
-DISTVERSIONSUFFIX=	-g27dde2e
+DISTVERSION=	1.2-15
+DISTVERSIONSUFFIX=	-gaff2085
 CATEGORIES=	devel
 #MASTER_SITES=	https://github.com/michaelforney/samurai/releases/download/${DISTVERSION}/
 
