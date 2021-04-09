@@ -522,6 +522,7 @@
     SUBDIR += musicpc
     SUBDIR += musicpd
     SUBDIR += mythplugin-mythmusic
+    SUBDIR += myxer
     SUBDIR += nas
     SUBDIR += ncmpc
     SUBDIR += ncmpcpp
