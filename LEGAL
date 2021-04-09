@@ -146,6 +146,7 @@ NetComponents-*		java/netcomponents	No redistribution except as part of a substa
 nntpcache-*		news/nntpcache		Free for individuals and non-military, non-profit organisations only
 nttcp-*			benchmarks/nttcp	No commercial use
 nwresources*.tar.gz	games/nwndata		Distribution not allowed
+nyan--xmascot-*		x11/xmascot		Commercial use is prohibited
 oneko-*.tar.gz		games/oneko-sakura	Including derivatives from CARDCAPTOR SAKURA
 OptimFROG*		audio/optimfrog		No commercial use
 oracle/*		databases/jdbc-oracle11g	This software is under license and export controls
