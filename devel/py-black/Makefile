@@ -34,11 +34,11 @@ D_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.6.0:www/py-aiohttp@${PY_FLAVOR
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3700
+.if ${PYTHON_REL} < 30700
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dataclasses>=0.6:devel/py-dataclasses@${PY_FLAVOR}
 .endif
 
-.if ${PYTHON_REL} < 3800
+.if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typed-ast>=1.4.2:devel/py-typed-ast@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4:devel/py-typing-extensions@${PY_FLAVOR}
 .endif

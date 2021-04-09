@@ -29,7 +29,7 @@ TEST_ENV=	USE_REPLAY=1
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3000
+.if ${PYTHON_REL} < 30000
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unittest2>0:devel/py-unittest2@${PY_FLAVOR}
 .endif
 

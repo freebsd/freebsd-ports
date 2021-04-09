@@ -31,7 +31,7 @@ SHEBANG_FILES=	asdf/extern/RangeHTTPServer.py \
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3900
+.if ${PYTHON_REL} < 30900
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=3:devel/py-importlib-resources@${PY_FLAVOR}
 .endif
 

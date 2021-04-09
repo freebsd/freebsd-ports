@@ -19,7 +19,7 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3900
+.if ${PYTHON_REL} < 30900
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pysaml24>=4.0.0<5:security/py-pysaml24@${PY_FLAVOR}
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pysaml2>=5.1.0<6.20:security/py-pysaml2@${PY_FLAVOR}

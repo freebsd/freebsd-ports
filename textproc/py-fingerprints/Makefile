@@ -22,7 +22,7 @@ NO_ARCH=	yes
 .include <bsd.port.pre.mk>
 # Set a locale to avoid build/configure errors.  The UTF-8 mode is enabled by
 # default when the locale is C since Python 3.7.
-.if ${PYTHON_REL} < 3700
+.if ${PYTHON_REL} < 30700
 USE_LOCALE=	en_US.UTF-8
 .endif
 

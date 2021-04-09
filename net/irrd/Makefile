@@ -58,7 +58,7 @@ SUB_LIST=	PYTHON_CMD="${PYTHON_CMD}" \
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3700
+.if ${PYTHON_REL} < 30700
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dataclasses>=0.6:devel/py-dataclasses@${PY_FLAVOR}
 .endif
 

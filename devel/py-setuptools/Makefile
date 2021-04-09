@@ -34,7 +34,7 @@ SUB_LIST+=	PYTHON_VER=${PYTHON_VER}
 # These create dependency loops in redports/poudriere, because setuptools
 # is currently an explicit BUILD & RUN dependency in Uses/python.mk.
 #TEST_DEPENDS=  ${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
-#.if ${PYTHON_REL} < 3300
+#.if ${PYTHON_REL} < 30300
 #TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
 #.endif
 # pkg install -y py36-pytest py36-mock py36-pytest-fixture-config py36-pytest-virtualenv py36-paver

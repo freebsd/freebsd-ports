@@ -174,7 +174,7 @@
 # PYTHON_PORTSDIR	- The port directory of the chosen Python interpreter
 #
 # PYTHON_REL		- The release number of the chosen Python interpreter
-#			  without dots, e.g. 2706, 3401, ...
+#			  without dots, e.g. 20706, 30401, ...
 #
 # PYTHON_SUFFIX		- The major-minor release number of the chosen Python
 #			  interpreter without dots, e.g. 27, 36, ...
@@ -449,24 +449,24 @@ PYTHON_PORTSDIR=	${_PYTHON_RELPORTDIR}${PYTHON_SUFFIX}
 .if !defined(_PORTS_ENV_CHECK) || exists(${PORTSDIR}/${PYTHON_PORTSDIR})
 .include "${PORTSDIR}/${PYTHON_PORTSDIR}/Makefile.version"
 .endif
-# Create a 4 integer version string, prefixing 0 to the last token if
-# it's a single character. Only use the the first 3 tokens of
+# Create a 5 integer version string, prefixing 0 to the minor and patch
+# tokens if it's a single character. Only use the the first 3 tokens of
 # PORTVERSION to support pre-release versions (rc3, alpha4, etc) of
 # any Python port (lang/pythonXY)
-PYTHON_REL=	${PYTHON_PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/:C/\.([0-9]+)$/.0\1/:C/\.0?([0-9][0-9])$/.\1/:S/.//g}
+PYTHON_REL=	${PYTHON_PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/:C/\.([0-9])$/.0\1/:C/\.([0-9]\.[0-9]+)/.0\1/:S/.//g}
 
 # Might be overridden by calling ports
 PYTHON_CMD?=		${_PYTHON_BASECMD}${_PYTHON_VERSION}
 .if ${PYTHON_VER} != 2.7
 .if exists(${PYTHON_CMD}-config)
 PYTHON_ABIVER!=		${PYTHON_CMD}-config --abiflags
-.elif ${PYTHON_REL} < 3800
+.elif ${PYTHON_REL} < 30800
 # Default ABI flags for lang/python3[67] ports
 PYTHON_ABIVER=		m
 .endif
 .endif
 
-.if ${PYTHON_REL} >= 3807
+.if ${PYTHON_REL} >= 30807
 PYTHON_EXT_SUFFIX=	.cpython-${PYTHON_SUFFIX}
 .else
 PYTHON_EXT_SUFFIX=	# empty
@@ -607,7 +607,7 @@ add-plist-pymod:
 		${_PYTHONPKGLIST} | ${SORT} >> ${TMPPLIST}
 
 .else
-.if ${PYTHON_REL} >= 3200 && defined(_PYTHON_FEATURE_PY3KPLIST)
+.if ${PYTHON_REL} >= 30200 && defined(_PYTHON_FEATURE_PY3KPLIST)
 # When Python version is 3.2+ we rewrite all the filenames
 # of TMPPLIST that end with .py[co], so that they conform
 # to PEP 3147 (see https://www.python.org/dev/peps/pep-3147/)
@@ -623,7 +623,7 @@ add-plist-python:
 		pc="__pycache__" mt="$$(${PYMAGICTAG})" pyo="opt-1.pyc" \
 		${TMPPLIST} > ${TMPPLIST}.pyc_tmp
 	@${MV} ${TMPPLIST}.pyc_tmp ${TMPPLIST}
-.endif # ${PYTHON_REL} >= 3200 && defined(_PYTHON_FEATURE_PY3KPLIST)
+.endif # ${PYTHON_REL} >= 30200 && defined(_PYTHON_FEATURE_PY3KPLIST)
 .endif # defined(_PYTHON_FEATURE_AUTOPLIST) && defined(_PYTHON_FEATURE_DISTUTILS)
 
 # Fix for programs that build python from a GNU auto* environment
@@ -638,7 +638,7 @@ PYGAME=		${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${PY_FLAVOR}
 PYNUMPY=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16,1<1.20,1:math/py-numpy@${PY_FLAVOR}
 
 # Common Python modules that can be needed but only for some versions of Python.
-.if ${PYTHON_REL} < 3500
+.if ${PYTHON_REL} < 30500
 PY_PYGMENTS=	${PYTHON_PKGNAMEPREFIX}pygments-25>=2.5.1<3:textproc/py-pygments-25@${PY_FLAVOR}
 .else
 PY_PILLOW=	${PYTHON_PKGNAMEPREFIX}pillow>=7.0.0:graphics/py-pillow@${PY_FLAVOR}
@@ -678,7 +678,7 @@ PLIST_SUB+=	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 		PYTHON_EXT_SUFFIX=${PYTHON_EXT_SUFFIX} \
 		PYTHON_VER=${PYTHON_VER} \
 		PYTHON_VERSION=${PYTHON_VERSION}
-.if ${PYTHON_REL} < 3000
+.if ${PYTHON_REL} < 30000
 PLIST_SUB+=	PYTHON2="" PYTHON3="@comment "
 .else
 PLIST_SUB+=	PYTHON2="@comment " PYTHON3=""

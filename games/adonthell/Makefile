@@ -38,7 +38,7 @@ PLIST_FILES=	bin/adonthell \
 # C extensions are no longer linked to libpython since Python 3.8 and onwards.
 #
 # See also https://bugs.python.org/issue36721 for reference.
-.if ${PYTHON_REL} >= 3800
+.if ${PYTHON_REL} >= 30800
 _PY_EMBED=	--embed
 .endif
 

@@ -27,7 +27,7 @@ PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
 .include <bsd.port.pre.mk>
 
 post-extract:
-.if ${PYTHON_REL} < 3000
+.if ${PYTHON_REL} < 30000
 	@${SED} -e "s|%%TK_VER%%|${TK_VER}|" ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
 .else
 	@${SED} -e "s|%%TK_VER%%|${TK_VER}|" ${FILESDIR}/setup3.py > ${WRKSRC}/setup.py

@@ -10,6 +10,14 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20210525:
+AUTHOR: amdmi3@FreeBSD.org
+
+  PYTHON_REL has been switched from a 4 digits number to a 5 digits number to
+  handle python 3.10.0.  Ports checking for python 3.7.10 should compare
+  PYTHON_REL against 30710 and ports checking for python 3.10.0 should compare
+  PYTHON_REL against 31000.
+
 20201120:
 AUTHOR: gnome@FreeBSD.org
 

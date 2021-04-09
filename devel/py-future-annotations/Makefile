@@ -22,7 +22,7 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} >= 3700
+.if ${PYTHON_REL} >= 30700
 IGNORE=		included in python ${PYTHON_VER}
 .endif
 

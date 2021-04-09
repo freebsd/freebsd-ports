@@ -61,7 +61,7 @@ DOCS_VARS=		PYDISTUTILS_BUILD_TARGET=build_sphinx \
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3700 && ${PORT_OPTIONS:MDOCS}
+.if ${PYTHON_REL} < 30700 && ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}future-annotations>=0:devel/py-future-annotations@${PY_FLAVOR}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-python36
 .endif
