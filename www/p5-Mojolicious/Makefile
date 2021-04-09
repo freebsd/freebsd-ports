@@ -1,7 +1,7 @@
 # Created by: Murilo Opsfelder <mopsfelder@gmail.com>
 
 PORTNAME=	Mojolicious
-PORTVERSION=	9.15
+PORTVERSION=	9.16
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
