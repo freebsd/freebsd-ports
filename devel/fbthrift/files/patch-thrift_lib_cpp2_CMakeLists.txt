@@ -1,0 +1,27 @@
+From 70a25a6f6d24fa8e9d8e7d4421a9e5cacf05a904 Mon Sep 17 00:00:00 2001
+From: Michael Forney <mforney@mforney.org>
+Date: Fri, 9 Apr 2021 18:19:10 -0700
+Subject: [PATCH] Add missing dependency on RocketUpgrade headers to thriftcpp2
+ target
+
+One source file in this target, async/HeaderClientChannel.cpp,
+depends on the generated header RocketUpgradeAsyncClient.h, so it
+needs to depend on the target that generates this header.
+
+This causes a build error with samurai due to an incorrect build
+order, and can be reproduced with ninja as well by building
+thrift/lib/cpp2/CMakeFiles/thriftcpp2.dir/async/HeaderClientChannel.cpp.o
+directly with an empty .ninja_deps.
+
+https://github.com/facebook/fbthrift/pull/422
+
+--- thrift/lib/cpp2/CMakeLists.txt.orig	2021-04-04 11:22:06 UTC
++++ thrift/lib/cpp2/CMakeLists.txt
+@@ -208,6 +208,7 @@ add_dependencies(
+   thriftcpp2
+   rpcmetadata
+   thriftmetadata
++  RocketUpgrade-cpp2-target
+ )
+ target_link_libraries(
+   thriftcpp2
