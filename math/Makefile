@@ -2,6 +2,7 @@
 
     SUBDIR += 4ti2
     SUBDIR += GiNaC
+    SUBDIR += Imath
     SUBDIR += PDL
     SUBDIR += R
     SUBDIR += R-cran-ADGofTest
