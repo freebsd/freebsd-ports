@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2018-09-10 11:03:52 UTC
+--- CMakeLists.txt.orig	2019-11-13 08:52:44 UTC
 +++ CMakeLists.txt
 @@ -27,7 +27,7 @@ message(STATUS "***************************")
  if(CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -9,6 +9,24 @@
  else()
      message(STATUS "*       Debug Build       *")
      add_definitions("-DDEBUG" )
+@@ -250,7 +250,7 @@ set(DISABLE_OPENEXR_SUPPORT "0" CACHE STRING "Disable 
+ if (DISABLE_OPENEXR_SUPPORT EQUAL 0)
+     pkg_check_modules(OPENEXR QUIET OpenEXR)
+     if(OPENEXR_FOUND)
+-        pkg_check_modules(ILMBASE REQUIRED IlmBase)
++        pkg_check_modules(ILMBASE REQUIRED Imath)
+         if(ILMBASE_FOUND)
+             message(STATUS "(+) OpenEXR support enabled")
+             if(VERBOSE_PATHS)
+@@ -261,7 +261,7 @@ if (DISABLE_OPENEXR_SUPPORT EQUAL 0)
+             link_directories(${ILMBASE_LIBRARY_DIRS} ${OPENEXR_LIBRARY_DIRS})
+             include_directories(${ILMBASE_INCLUDE_DIRS} ${OPENEXR_INCLUDE_DIRS})
+         else()
+-            message(STATUS "(-) ILMBase not found")
++            message(STATUS "(-) Imath not found")
+         endif()
+     else()
+         message(STATUS "(-) OpenEXR support dropped")
 @@ -316,7 +316,6 @@ endif()
  message(STATUS "***************************")
  

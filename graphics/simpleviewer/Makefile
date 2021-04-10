@@ -2,7 +2,7 @@
 
 PORTNAME=	simpleviewer
 PORTVERSION=	3.1.7
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/andreyu/simple-viewer-gl/get/
 DISTNAME=	v${PORTVERSION}	# version tag, has no embedded ${PORTNAME}
@@ -56,7 +56,8 @@ LCMS2_CMAKE_OFF=	-DDISABLE_LCMS2_SUPPORT:STRING=1
 LIBEXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
 LIBEXIF_CMAKE_OFF=	-DDISABLE_EXIF_SUPPORT:STRING=1
 
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
+OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
+			libImath.so:math/Imath
 OPENEXR_CMAKE_OFF=	-DDISABLE_OPENEXR_SUPPORT:STRING=1
 
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
