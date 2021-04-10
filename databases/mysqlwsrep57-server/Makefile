@@ -1,9 +1,9 @@
 # Created by: Vasil Dimov <vd@FreeBSD.org>
 
 PORTNAME=	mysqlwsrep
-PORTVERSION?=	5.7.31
+PORTVERSION?=	5.7.33
 DISTVERSIONPREFIX?=	wsrep_
-DISTVERSIONSUFFIX?=	-25.23
+DISTVERSIONSUFFIX?=	-25.25
 PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES+=	SF/boost/boost/1.59.0:boost
@@ -98,7 +98,7 @@ SUB_FILES=	my.cnf.sample
 USERS=		mysql
 GROUPS=		mysql
 
-USE_CXXSTD=     c++11
+USE_CXXSTD=	c++11
 USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
 
 MMAN1=		my_print_defaults.1 \
@@ -152,13 +152,16 @@ OPTIONS_GROUP_FEATURES=	PERFSCHM
 FEATURES_DESC=		Default features knobs
 PERFSCHM_DESC=		Enable "Performance Schema" by default (High RAM usage)
 OPTIONS_DEFAULT+=	PERFSCHM
-
-PERFSCHM_SUB_LIST+=	PERFSCHEMRC=""
-PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
 FEDERATED_SUB_LIST+=	FEDER="--federated"
 FEDERATED_SUB_LIST_OFF+=FEDER=""
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPERFSCHM}
+SUB_LIST+=	PERFSCHEMRC=""
+.else
+SUB_LIST+=	PERFSCHEMRC="--skip-performance-schema"
+.endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
 SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
