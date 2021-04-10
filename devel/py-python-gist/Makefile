@@ -22,7 +22,7 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-do-test:
+do-test: # tests are currently broken and undergoing redesign, see https://github.com/jdowner/gist/issues/100#issuecomment-817039193
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
