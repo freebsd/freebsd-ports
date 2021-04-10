@@ -4,7 +4,7 @@ CATEGORIES=	x11-toolkits
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	7c0e2a271a4c.patch:-p1 # https://github.com/swaywm/wlroots/pull/2064
-PATCHFILES+=	d3b759ac5f08.patch:-p1 # https://github.com/swaywm/wlroots/pull/2064
+PATCHFILES+=	e1b5323f56c3.patch:-p1 # https://github.com/swaywm/wlroots/pull/2064
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library
