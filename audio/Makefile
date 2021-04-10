@@ -456,6 +456,7 @@
     SUBDIR += madplay
     SUBDIR += madronalib
     SUBDIR += malint
+    SUBDIR += mamba
     SUBDIR += mate-media
     SUBDIR += mclk-lv2
     SUBDIR += mctoolame-decoder
