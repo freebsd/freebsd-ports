@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	matcha-gtk-themes
-DISTVERSION=	2021-02-04
+DISTVERSION=	2021-04-09
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
