@@ -644,10 +644,7 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == powerpc64 && ${PORT_OPTIONS:MLTO} && ${CHOSEN_COMPILER_TYPE} == clang
-CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
-CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-LLD_UNSAFE=	yes
+USE_GCC=	yes
 .endif
 
 post-install:
