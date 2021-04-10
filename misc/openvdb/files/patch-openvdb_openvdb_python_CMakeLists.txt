@@ -1,6 +1,6 @@
---- openvdb/openvdb/python/CMakeLists.txt.orig	2020-12-24 17:13:14 UTC
+--- openvdb/openvdb/python/CMakeLists.txt.orig	2021-02-05 19:21:38 UTC
 +++ openvdb/openvdb/python/CMakeLists.txt
-@@ -85,7 +85,7 @@ if(OPENVDB_BUILD_PYTHON_UNITTESTS)
+@@ -81,7 +81,7 @@ if(OPENVDB_BUILD_PYTHON_UNITTESTS)
  endif()
  
  if(${CMAKE_VERSION} VERSION_LESS 3.14)
@@ -9,7 +9,7 @@
    OPENVDB_CHECK_PYTHON_VERSION(${Python_VERSION} ${Python_INCLUDE_DIRS})
  
    if(USE_NUMPY)
-@@ -94,11 +94,11 @@ if(${CMAKE_VERSION} VERSION_LESS 3.14)
+@@ -90,11 +90,11 @@ if(${CMAKE_VERSION} VERSION_LESS 3.14)
      list(APPEND OPENVDB_PYTHON_DEPS Python::NumPy)
    endif()
  else()

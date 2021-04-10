@@ -1,7 +1,7 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
 		libboost_system.so:devel/boost-libs \
-		libHalf.so:graphics/ilmbase \
+		libImath.so:math/Imath \
 		libtbb.so:devel/tbb
 
 USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig
@@ -38,7 +38,7 @@ TOOLS_DESC=		Build CLI tools
 TOOLS_CMAKE_BOOL=	OPENVDB_BUILD_BINARIES OPENVDB_BUILD_VDB_LOD \
 			OPENVDB_BUILD_VDB_RENDER OPENVDB_BUILD_VDB_VIEW
 TOOLS_LIB_DEPENDS=	libglfw.so:graphics/glfw \
-			libIlmImf.so:graphics/openexr
+			libOpenEXR.so:graphics/openexr
 TOOLS_USES=		gl xorg
 TOOLS_USE=		GL=gl,glu XORG=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
 

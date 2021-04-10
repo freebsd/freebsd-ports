@@ -1,0 +1,41 @@
+--- openvdb/openvdb/CMakeLists.txt.orig	2021-02-05 19:21:38 UTC
++++ openvdb/openvdb/CMakeLists.txt
+@@ -45,8 +45,8 @@ message(STATUS "--------------------------------------
+ 
+ # Collect and configure lib dependencies
+ 
++find_package(Imath ${MINIMUM_ILMBASE_VERSION} REQUIRED)
+ if(USE_EXR)
+-  find_package(IlmBase ${MINIMUM_ILMBASE_VERSION} REQUIRED)
+   find_package(OpenEXR ${MINIMUM_OPENEXR_VERSION} REQUIRED)
+   if(OPENVDB_FUTURE_DEPRECATION AND FUTURE_MINIMUM_OPENEXR_VERSION)
+     if(${OpenEXR_VERSION} VERSION_LESS FUTURE_MINIMUM_OPENEXR_VERSION)
+@@ -54,8 +54,6 @@ if(USE_EXR)
+         "is deprecated and will be removed.")
+     endif()
+   endif()
+-else()
+-  find_package(IlmBase ${MINIMUM_ILMBASE_VERSION} REQUIRED COMPONENTS Half)
+ endif()
+ 
+ if(OPENVDB_FUTURE_DEPRECATION AND FUTURE_MINIMUM_ILMBASE_VERSION)
+@@ -129,7 +127,7 @@ endif()
+ set(OPENVDB_CORE_DEPENDENT_LIBS
+   Boost::iostreams
+   Boost::system
+-  IlmBase::Half
++  Imath::Imath
+ )
+ 
+ if(WIN32)
+@@ -147,9 +145,7 @@ endif()
+ 
+ if(USE_EXR)
+   list(APPEND OPENVDB_CORE_DEPENDENT_LIBS
+-    IlmBase::IlmThread
+-    IlmBase::Iex
+-    IlmBase::Imath
++    Imath::Imath
+     OpenEXR::IlmImf
+   )
+ endif()

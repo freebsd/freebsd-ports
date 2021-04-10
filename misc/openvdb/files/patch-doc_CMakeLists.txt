@@ -1,10 +1,10 @@
---- doc/CMakeLists.txt.orig	2020-12-24 17:13:14 UTC
+--- doc/CMakeLists.txt.orig	2021-02-05 19:21:38 UTC
 +++ doc/CMakeLists.txt
-@@ -193,5 +193,5 @@ doxygen_add_docs(doc ${DOXY_FILES}
+@@ -195,5 +195,5 @@ doxygen_add_docs(doc ${DOXY_FILES}
    COMMENT "Generating API documentation with Doxygen")
  
  # Suppress "Installing..." messages for all but one of the hundreds of generated files.
--install(FILES ${CMAKE_CURRENT_BINARY_DIR}/html/index.html DESTINATION doc/html)
--install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/html DESTINATION doc MESSAGE_NEVER)
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/html/index.html DESTINATION ${CMAKE_INSTALL_DOCDIR}/html)
+-install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/html DESTINATION ${CMAKE_INSTALL_DOCDIR} MESSAGE_NEVER)
 +install(FILES ${CMAKE_CURRENT_BINARY_DIR}/openvdb/doc/html/index.html DESTINATION share/doc/openvdb)
 +install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/openvdb/doc/html DESTINATION share/doc/openvdb MESSAGE_NEVER)

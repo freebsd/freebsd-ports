@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2020-12-24 17:13:14 UTC
+--- CMakeLists.txt.orig	2021-02-05 19:21:38 UTC
 +++ CMakeLists.txt
 @@ -199,7 +199,7 @@ mark_as_advanced(
  # @note  Blosc version is currently treated as exception which must be adhered
@@ -9,7 +9,15 @@
  # @note  ABI always enforced so the correct deprecation messages are available.
  # OPENVDB_USE_DEPRECATED_ABI_<VERSION> should be used to circumvent this
  set(MINIMUM_OPENVDB_ABI_VERSION 6)
-@@ -220,7 +220,7 @@ if(NOT DISABLE_DEPENDENCY_VERSION_CHECKS)
+@@ -214,13 +214,13 @@ if(NOT DISABLE_DEPENDENCY_VERSION_CHECKS)
+   set(MINIMUM_MSVC_VERSION 19.10)
+ 
+   set(MINIMUM_BOOST_VERSION 1.61)  # @warning should be 1.66, but H18 ships with 1.61
+-  set(MINIMUM_ILMBASE_VERSION 2.2) # @warning should be 2.3, but H18 ships with 2.2
+-  set(MINIMUM_OPENEXR_VERSION 2.2) # @warning should be 2.3, but H18 ships with 2.2
++  set(MINIMUM_ILMBASE_VERSION 3.0) # @warning should be 2.3, but H18 ships with 2.2
++  set(MINIMUM_OPENEXR_VERSION 3.0) # @warning should be 2.3, but H18 ships with 2.2
+   set(MINIMUM_ZLIB_VERSION 1.2.7)
    set(MINIMUM_TBB_VERSION 2018.0)
    set(MINIMUM_LLVM_VERSION 6.0.0)
  
