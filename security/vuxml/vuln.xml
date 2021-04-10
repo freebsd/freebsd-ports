@@ -76,6 +76,42 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f671c282-95ef-11eb-9c34-080027f515ea">
+    <topic>python -- Information disclosure via pydoc -p: /getfile?key=path allows to read arbitrary file on the filesystem</topic>
+    <affects>
+      <package>
+	<name>python38</name>
+	<range><lt>3.8.9</lt></range>
+      </package>
+      <package>
+	<name>python39</name>
+	<range><lt>3.9.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>David Schwörer reports:</p>
+	<blockquote cite="https://pythoninsider.blogspot.com/2021/04/python-393-and-389-are-now-available.html">
+	  <p>
+	    Remove the getfile feature of the pydoc module which could be
+	    abused to read arbitrary files on the disk (directory traversal
+	    vulnerability). Moreover, even source code of Python modules
+	    can contain sensitive data like passwords.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-3426</cvename>
+      <url>https://pythoninsider.blogspot.com/2021/04/python-393-and-389-are-now-available.html</url>
+      <url>https://bugs.python.org/issue42988</url>
+    </references>
+    <dates>
+      <discovery>2021-01-21</discovery>
+      <entry>2021-04-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d10fc771-958f-11eb-9c34-080027f515ea">
     <topic>curl -- TLS 1.3 session ticket proxy host mixup</topic>
     <affects>
