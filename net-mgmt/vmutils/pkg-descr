@@ -1,0 +1,6 @@
+VictoriaMetrics is fast, cost-effective, and scalable monitoring solution
+and time series database.
+
+This package installs ancillary utilities and agent for VictoriaMetrics.
+
+WWW: https://victoriametrics.github.io/

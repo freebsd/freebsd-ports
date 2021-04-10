@@ -376,6 +376,7 @@
     SUBDIR += unifi6
     SUBDIR += victoria-metrics
     SUBDIR += virt-viewer
+    SUBDIR += vmutils
     SUBDIR += wdiag
     SUBDIR += whatmask
     SUBDIR += wifimgr

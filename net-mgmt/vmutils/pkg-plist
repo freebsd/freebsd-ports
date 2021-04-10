@@ -1,0 +1,17 @@
+bin/vmagent
+bin/vmalert
+bin/vmauth
+bin/vmbackup
+bin/vmctl
+bin/vmrestore
+%%PORTDOCS%%%%DOCSDIR%%/vmagent.md
+%%PORTDOCS%%%%DOCSDIR%%/vmagent.png
+%%PORTDOCS%%%%DOCSDIR%%/vmalert.md
+%%PORTDOCS%%%%DOCSDIR%%/vmauth.md
+%%PORTDOCS%%%%DOCSDIR%%/vmbackup.md
+%%PORTDOCS%%%%DOCSDIR%%/vmctl.md
+%%PORTDOCS%%%%DOCSDIR%%/vmgateway-access-control.jpg
+%%PORTDOCS%%%%DOCSDIR%%/vmgateway-overview.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/vmgateway-rate-limiting.jpg
+%%PORTDOCS%%%%DOCSDIR%%/vmgateway.md
+%%PORTDOCS%%%%DOCSDIR%%/vmrestore.md
