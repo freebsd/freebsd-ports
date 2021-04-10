@@ -1,5 +1,5 @@
 PORTNAME=	inputstream.adaptive
-DISTVERSION=	2.6.8
+DISTVERSION=	2.6.11
 DISTVERSIONSUFFIX=	-Matrix
 CATEGORIES=	multimedia
 
@@ -9,6 +9,7 @@ COMMENT=	Adaptive stream support for Kodi
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
+BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		cmake compiler:c++14-lang kodi
