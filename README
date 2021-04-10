@@ -6,7 +6,7 @@ WEB-based interface to it, please see:
 For general information on the Ports Collection, please see the
 FreeBSD Handbook ports section which is available from:
 
-	https://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/ports.html
+	https://docs.freebsd.org/en/books/handbook/ports/
 		for the latest official version
 	or:
 	The ports(7) manual page (man ports).
@@ -28,7 +28,7 @@ make search also supports wildcards, such as:
 For information about contributing to FreeBSD ports, please see the Porter's
 Handbook, available at:
 
-	https://www.FreeBSD.org/doc/en_US.ISO8859-1/books/porters-handbook/
+	https://docs.freebsd.org/en/books/porters-handbook/
 
 NOTE:  This tree will GROW significantly in size during normal usage!
 The distribution tar files can and do accumulate in /usr/ports/distfiles,
