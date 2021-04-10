@@ -2,12 +2,12 @@
 
 PORTNAME=	openimageio
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	2.2.10.1
+DISTVERSION=	2.2.13.1
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -20,8 +20,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libfmt.so:devel/libfmt \
 		libhdf5.so:science/hdf5 \
 		libheif.so:graphics/libheif \
-		libImath.so:graphics/ilmbase \
-		libIlmImf.so:graphics/openexr \
+		libImath.so:math/Imath \
+		libOpenEXR.so:graphics/openexr \
 		libpng.so:graphics/png \
 		libsquish.so:graphics/squish \
 		libtiff.so:graphics/tiff \
