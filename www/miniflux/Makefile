@@ -12,16 +12,11 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		go:modules
 
-USERS=	miniflux
-GROUPS=	miniflux
-
 WANT_PGSQL=	client
-USE_RC_SUBR=	miniflux
 
 USE_GITHUB=	yes
 GH_PROJECT=	v2
-GH_TUPLE=	\
-		PuerkitoBio:goquery:v1.6.1:puerkitobio_goquery/vendor/github.com/PuerkitoBio/goquery \
+GH_TUPLE=	PuerkitoBio:goquery:v1.6.1:puerkitobio_goquery/vendor/github.com/PuerkitoBio/goquery \
 		andybalholm:cascadia:v1.1.0:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
@@ -52,10 +47,15 @@ GH_TUPLE=	\
 		tdewolff:minify:v2.9.13:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
 		tdewolff:parse:v2.5.10:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2
 
+USE_RC_SUBR=	miniflux
+
 GO_PKGNAME=	miniflux.app
 GO_TARGET=	:${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-X miniflux.app/version.Version=${DISTVERSION} \
 		-X miniflux.app/version.BuildDate=$$(date +'%Y-%m-%dT%H:%M:%SZ')"
+
+USERS=		miniflux
+GROUPS=		miniflux
 
 OPTIONS_DEFINE=		PGSQL_SERVER
 PGSQL_SERVER_DESC=	Install the PostgreSQL Server Component
