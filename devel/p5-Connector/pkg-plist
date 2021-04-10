@@ -23,6 +23,8 @@
 %%PERL5_MAN3%%/Connector::Proxy::Net::LDAP::Single.3.gz
 %%PERL5_MAN3%%/Connector::Proxy::Proc::SafeExec.3.gz
 %%PERL5_MAN3%%/Connector::Proxy::SOAP::Lite.3.gz
+%%PERL5_MAN3%%/Connector::Role::LocalPath.3.gz
+%%PERL5_MAN3%%/Connector::Role::SSLUserAgent.3.gz
 %%PERL5_MAN3%%/Connector::Tee.3.gz
 %%PERL5_MAN3%%/Connector::Wrapper.3.gz
 %%SITE_PERL%%/Connector.pm
@@ -55,6 +57,8 @@
 %%SITE_PERL%%/Connector/Proxy/Proc/SafeExec.pm
 %%SITE_PERL%%/Connector/Proxy/SOAP/Lite.pm
 %%SITE_PERL%%/Connector/Proxy/YAML.pm
+%%SITE_PERL%%/Connector/Role/LocalPath.pm
+%%SITE_PERL%%/Connector/Role/SSLUserAgent.pm
 %%SITE_PERL%%/Connector/Tee.pm
 %%SITE_PERL%%/Connector/Types.pm
 %%SITE_PERL%%/Connector/Wrapper.pm

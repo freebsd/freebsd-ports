@@ -1,7 +1,7 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
 
 PORTNAME=	Connector
-PORTVERSION=	1.36
+PORTVERSION=	1.37
 CATEGORIES=	devel perl5
 PKGNAMEPREFIX=	p5-
 
