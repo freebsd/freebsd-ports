@@ -1,6 +1,6 @@
 PORTNAME=	ocp
 DISTVERSION=	7.4-RC2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 # Direct access to github is needed because the release added an extra archive which
 # we need to build from, rather than the initial release.
@@ -10,6 +10,8 @@ DISTNAME=	OCP_src_Linux
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Python wrapper for OCCT generated using pywrap
+
+BROKEN=		Mismatch between OpenCascase (7.5) and py-ocp (7.4)
 
 LICENSE=	APACHE20
 
@@ -32,11 +34,6 @@ CMAKE_ARGS=	-DOPENCASCADE_INCLUDE_DIR=${OCCT} \
 USE_PYTHON=	flavors
 
 PLIST_FILES=	${PYTHON_SITELIBDIR}/OCP.so
-
-pre-patch:
-# Copy and patch a header file with a troublesome C++ standard mismatch.
-	${MKDIR} ${OCCT_LOCAL}
-	${CP} ${OCCT}/OpenGl_HaltonSampler.hxx ${OCCT_LOCAL}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/
