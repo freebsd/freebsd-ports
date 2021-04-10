@@ -4,6 +4,8 @@
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/__main__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/__main__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/__pycache__/_compatibility.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/__pycache__/_compatibility.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/almanac.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/almanac.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/almanac_east_asia.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -16,6 +18,8 @@
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/constants.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/constellationlib.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/constellationlib.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/__pycache__/curvelib.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/__pycache__/curvelib.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/descriptorlib.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/descriptorlib.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/earthlib.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -74,13 +78,14 @@
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/units.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/vectorlib.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/__pycache__/vectorlib.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/_compatibility.py
 %%PYTHON_SITELIBDIR%%/skyfield/almanac.py
 %%PYTHON_SITELIBDIR%%/skyfield/almanac_east_asia.py
 %%PYTHON_SITELIBDIR%%/skyfield/api.py
 %%PYTHON_SITELIBDIR%%/skyfield/charting.py
 %%PYTHON_SITELIBDIR%%/skyfield/constants.py
 %%PYTHON_SITELIBDIR%%/skyfield/constellationlib.py
-%%PYTHON_SITELIBDIR%%/skyfield/data/Leap_Second.dat
+%%PYTHON_SITELIBDIR%%/skyfield/curvelib.py
 %%PYTHON_SITELIBDIR%%/skyfield/data/__init__.py
 %%PYTHON_SITELIBDIR%%/skyfield/data/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/data/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -102,8 +107,7 @@
 %%PYTHON_SITELIBDIR%%/skyfield/data/__pycache__/stellarium.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/data/constellations.gz
 %%PYTHON_SITELIBDIR%%/skyfield/data/constellations.npz
-%%PYTHON_SITELIBDIR%%/skyfield/data/deltat.data
-%%PYTHON_SITELIBDIR%%/skyfield/data/deltat.preds
+%%PYTHON_SITELIBDIR%%/skyfield/data/delta_t.npz
 %%PYTHON_SITELIBDIR%%/skyfield/data/earth_orientation.py
 %%PYTHON_SITELIBDIR%%/skyfield/data/gravitational_parameters.py
 %%PYTHON_SITELIBDIR%%/skyfield/data/hipparcos.py
@@ -178,8 +182,6 @@
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/deprecations.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/deprecations.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/fixes.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/fixes.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_against_horizons.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -198,6 +200,10 @@
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_broadcastability.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_constellations.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_constellations.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_curves.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_curves.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_data_iers.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_data_iers.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_earth_deflection.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_earth_deflection.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_earth_satellites.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -245,7 +251,6 @@
 %%PYTHON_SITELIBDIR%%/skyfield/tests/data/de430-2015-03-02.bsp
 %%PYTHON_SITELIBDIR%%/skyfield/tests/data/jup310-2015-03-02.bsp
 %%PYTHON_SITELIBDIR%%/skyfield/tests/data/jup310-2053-10-08.bsp
-%%PYTHON_SITELIBDIR%%/skyfield/tests/deprecations.py
 %%PYTHON_SITELIBDIR%%/skyfield/tests/fixes.py
 %%PYTHON_SITELIBDIR%%/skyfield/tests/test_against_horizons.py
 %%PYTHON_SITELIBDIR%%/skyfield/tests/test_against_novas.py
@@ -255,6 +260,8 @@
 %%PYTHON_SITELIBDIR%%/skyfield/tests/test_api.py
 %%PYTHON_SITELIBDIR%%/skyfield/tests/test_broadcastability.py
 %%PYTHON_SITELIBDIR%%/skyfield/tests/test_constellations.py
+%%PYTHON_SITELIBDIR%%/skyfield/tests/test_curves.py
+%%PYTHON_SITELIBDIR%%/skyfield/tests/test_data_iers.py
 %%PYTHON_SITELIBDIR%%/skyfield/tests/test_earth_deflection.py
 %%PYTHON_SITELIBDIR%%/skyfield/tests/test_earth_satellites.py
 %%PYTHON_SITELIBDIR%%/skyfield/tests/test_earthlib.py
