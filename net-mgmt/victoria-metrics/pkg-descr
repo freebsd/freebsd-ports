@@ -1,0 +1,8 @@
+VictoriaMetrics is fast, cost-effective, and scalable monitoring solution
+and time series database.
+
+VictoriaMetrics can be used as long-term storage for Prometheus or for
+vmagent.  It also supports Prometheus querying API so it can be used as
+Prometheus drop-in replacement in Grafana.
+
+WWW: https://victoriametrics.github.io/

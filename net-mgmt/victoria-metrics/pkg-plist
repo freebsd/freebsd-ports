@@ -1,0 +1,15 @@
+bin/victoria-metrics
+%%PORTDOCS%%%%DOCSDIR%%/Articles.md
+%%PORTDOCS%%%%DOCSDIR%%/BestPractices.md
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/CaseStudies.md
+%%PORTDOCS%%%%DOCSDIR%%/Cluster-VictoriaMetrics.md
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.md
+%%PORTDOCS%%%%DOCSDIR%%/Home.md
+%%PORTDOCS%%%%DOCSDIR%%/MetricsQL.md
+%%PORTDOCS%%%%DOCSDIR%%/Quick-Start.md
+%%PORTDOCS%%%%DOCSDIR%%/Release-Guide.md
+%%PORTDOCS%%%%DOCSDIR%%/SampleSizeCalculations.md
+%%PORTDOCS%%%%DOCSDIR%%/Single-server-VictoriaMetrics.md
+%%PORTDOCS%%%%DOCSDIR%%/logo.png
+@dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%

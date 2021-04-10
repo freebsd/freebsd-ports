@@ -374,6 +374,7 @@
     SUBDIR += unifi-poller
     SUBDIR += unifi5
     SUBDIR += unifi6
+    SUBDIR += victoria-metrics
     SUBDIR += virt-viewer
     SUBDIR += wdiag
     SUBDIR += whatmask
