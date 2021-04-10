@@ -1,6 +1,6 @@
 PORTNAME=	influxdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
+DISTVERSION=	1.8.4
 CATEGORIES=	databases net-mgmt
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -37,7 +37,8 @@ GH_TUPLE=	\
 		eclipse:paho.mqtt.golang:v1.2.0:eclipse_paho_mqtt_golang/vendor/github.com/eclipse/paho.mqtt.golang \
 		glycerine:go-unsnap-stream:9f0cb55181dd:glycerine_go_unsnap_stream/vendor/github.com/glycerine/go-unsnap-stream \
 		go-sql-driver:mysql:v1.4.1:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
-		gogo:protobuf:v1.1.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		gofrs:uuid:v3.3.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
+		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:87dc89f01550:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:da58074b4299:golang_exp/vendor/golang.org/x/exp \
@@ -62,8 +63,8 @@ GH_TUPLE=	\
 		googleapis:google-cloud-go:bigtable/v1.2.0:googleapis_google_cloud_go_bigtable \
 		googleapis:google-cloud-go:v0.51.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		grpc:grpc-go:v1.26.0:grpc_grpc_go/vendor/google.golang.org/grpc \
-		influxdata:flux:v0.65.0:influxdata_flux/vendor/github.com/influxdata/flux \
-		influxdata:influxql:v1.1.0:influxdata_influxql/vendor/github.com/influxdata/influxql \
+		influxdata:flux:v0.65.1:influxdata_flux/vendor/github.com/influxdata/flux \
+		influxdata:influxql:65d3ef77d385:influxdata_influxql/vendor/github.com/influxdata/influxql \
 		influxdata:line-protocol:32c6aa80de5e:influxdata_line_protocol/vendor/github.com/influxdata/line-protocol \
 		influxdata:roaring:fc520f41fab6:influxdata_roaring/vendor/github.com/influxdata/roaring \
 		influxdata:tdigest:bf2b5ad3c0a9:influxdata_tdigest/vendor/github.com/influxdata/tdigest \
@@ -93,7 +94,6 @@ GH_TUPLE=	\
 		prometheus:common:v0.6.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.0.2:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		retailnext:hllpp:101a6d2f8b52:retailnext_hllpp/vendor/github.com/retailnext/hllpp \
-		satori:go.uuid:b2ce2384e17b:satori_go_uuid/vendor/github.com/satori/go.uuid \
 		segmentio:kafka-go:v0.2.0:segmentio_kafka_go/vendor/github.com/segmentio/kafka-go \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
 		tinylib:msgp:v1.0.2:tinylib_msgp/vendor/github.com/tinylib/msgp \
