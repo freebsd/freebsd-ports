@@ -15,7 +15,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		liblo.so:audio/liblo \
 		libsmf.so:audio/libsmf
 
-USES=		compiler:c++11-lang desktop-file-utils gmake pkgconfig xorg
+USES=		compiler:c++11-lang desktop-file-utils gmake gnome pkgconfig xorg
 USE_GNOME=	cairo glib20 libsigc++20
 USE_XORG=	x11
 USE_BINUTILS=	yes # linking needs some GNU features, fails on 12 without this, see https://github.com/brummer10/GxPlugins.lv2/issues/9
