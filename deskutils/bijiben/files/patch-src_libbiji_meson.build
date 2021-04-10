@@ -1,0 +1,56 @@
+From 6dd31c362b264a7d7e5441310ee5baebb3769ac5 Mon Sep 17 00:00:00 2001
+From: Michael Forney <mforney@mforney.org>
+Date: Fri, 9 Apr 2021 21:45:13 -0700
+Subject: [PATCH] Add generated biji-marshalers.h to libbiji dependency sources
+
+The meson manual states that
+
+> Each target that depends on a generated header should add that
+> header to it's sources, as seen above with libfoo and myexe. This
+> is because there is no way for Meson or the backend to know that
+> myexe depends on foo.h just because libfoo does, it could be a
+> private header.
+
+Since biji-marshalers.h is included by the libbiji public header
+libbiji.h, it must be added as a source to all targets that depend
+on libbiji. This can be done by adding it to the sources of
+libbiji_dep.
+
+Fixes #157.
+
+https://gitlab.gnome.org/GNOME/gnome-notes/-/merge_requests/116
+
+--- src/libbiji/meson.build.orig	2020-09-20 21:32:11 UTC
++++ src/libbiji/meson.build
+@@ -27,11 +27,9 @@ sources = files(
+   '../bjb-utils.c',
+ )
+ 
+-marshalers = 'biji-marshalers'
+-
+-sources += gnome.genmarshal(
+-  marshalers,
+-  sources: marshalers + '.list',
++marshalers = gnome.genmarshal(
++  'biji-marshalers',
++  sources: 'biji-marshalers.list',
+   prefix: '_biji_marshal'
+ )
+ 
+@@ -48,7 +46,7 @@ endif
+ 
+ libbiji = static_library(
+   'biji',
+-  sources: sources,
++  sources: sources + marshalers,
+   include_directories: top_inc,
+   dependencies: deps,
+   c_args: cflags
+@@ -57,5 +55,6 @@ libbiji = static_library(
+ libbiji_dep = declare_dependency(
+   link_with: libbiji,
+   include_directories: include_directories('.'),
+-  dependencies: deps
++  dependencies: deps,
++  sources: marshalers[1],
+ )
