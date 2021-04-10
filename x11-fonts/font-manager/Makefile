@@ -1,7 +1,7 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
 
 PORTNAME=	font-manager
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	x11-fonts gnome
 
 MAINTAINER=	ehaupt@FreeBSD.org
