@@ -2,11 +2,10 @@
 
 PORTNAME=	synth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.08
-PORTREVISION=	1
+DISTVERSION=	2.10
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Custom package repository builder for FreeBSD and DragonFly
 
 LICENSE=	ISCL
