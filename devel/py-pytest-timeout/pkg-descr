@@ -3,4 +3,4 @@ When doing so it will show a stack dump of all threads running at the
 time. This is useful when running tests under a continuous integration
 server or simply if you don't know why the test suite hangs.
 
-WWW: https://bitbucket.org/pytest-dev/pytest-timeout
+WWW: https://github.com/pytest-dev/pytest-timeout
