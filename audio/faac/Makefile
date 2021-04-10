@@ -1,10 +1,8 @@
 # Created by: Michael Johnson <ahze@ahze.net>
 
 PORTNAME=	faac
-PORTVERSION=	1.29.9.2
-PORTREVISION=	3
+PORTVERSION=	1.30
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-${PORTVERSION:R:R}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio encoder
@@ -16,9 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_FILE_ISO=	${WRKSRC}/README
 LICENSE_PERMS_ISO=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		compiler:c11 gmake libtool
+USES=		autoreconf compiler:c11 gmake libtool
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	knik0
+GH_TAGNAME=	78d8e01
 
 .include <bsd.port.mk>
