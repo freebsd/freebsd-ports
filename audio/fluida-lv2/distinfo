@@ -1,5 +1,5 @@
-TIMESTAMP = 1617838917
-SHA256 (fluida/brummer10-Fluida.lv2-v0.6_GH0.tar.gz) = 333079c7c4ad27630e53b3c57004cf44db181485c44be9392cf95b47629e13ff
-SIZE (fluida/brummer10-Fluida.lv2-v0.6_GH0.tar.gz) = 65035
-SHA256 (fluida/brummer10-libxputty-7769d2f_GH0.tar.gz) = f3e34717e217705f667d794c8085885b1196cfb0da76cf6c501bad75a1a07976
-SIZE (fluida/brummer10-libxputty-7769d2f_GH0.tar.gz) = 326400
+TIMESTAMP = 1618043784
+SHA256 (fluida/brummer10-Fluida.lv2-v0.6-2-gc203190_GH0.tar.gz) = b0a7ab317d8d1e73daa58dc9f3d7c825609e1885a45f1089cdf24a8d3342749e
+SIZE (fluida/brummer10-Fluida.lv2-v0.6-2-gc203190_GH0.tar.gz) = 65074
+SHA256 (fluida/brummer10-libxputty-5c69824_GH0.tar.gz) = 00913a9c3c18efba6b596ef1d9f891e9259ed94794c3f1d7e79aca1fb1bb002e
+SIZE (fluida/brummer10-libxputty-5c69824_GH0.tar.gz) = 523105

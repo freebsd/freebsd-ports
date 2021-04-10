@@ -1,6 +1,7 @@
 PORTNAME=	fluida
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6
+DISTVERSION=	0.6-2
+DISTVERSIONSUFFIX=	-gc203190
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 DIST_SUBDIR=	${PORTNAME}
@@ -11,7 +12,8 @@ COMMENT=	Fluidsynth as LV2 plugin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	lv2>0:audio/lv2
+BUILD_DEPENDS=	lv2>0:audio/lv2 \
+		xxd:editors/vim-console
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 
 USES=		compiler:c++11-lang gettext-runtime gmake gnome localbase pkgconfig xorg
@@ -22,7 +24,7 @@ USE_BINUTILS=	yes # linking needs some GNU features, fails on 12 without this, s
 USE_GITHUB=	yes
 GH_ACCOUNT=	brummer10
 GH_PROJECT=	Fluida.lv2
-GH_TUPLE=	brummer10:libxputty:7769d2f:libxputty/libxputty
+GH_TUPLE=	brummer10:libxputty:5c69824:libxputty/libxputty
 
 PLIST_FILES=	lib/lv2/Fluida.lv2/Fluida.so \
 		lib/lv2/Fluida.lv2/Fluida.ttl \
