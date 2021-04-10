@@ -1,9 +1,9 @@
 # Created by: Philip Stoev <philip.stoev@galeracluster.com>
 
 PORTNAME=	mysqlwsrep
-PORTVERSION?=	5.6.49
+PORTVERSION?=	5.6.51
 DISTVERSIONPREFIX?=	wsrep_
-DISTVERSIONSUFFIX?=	-25.31
+DISTVERSIONSUFFIX?=	-25.33
 PORTREVISION?=	0
 CATEGORIES=	databases
 PKGNAMESUFFIX=	56-server
@@ -21,12 +21,6 @@ RUN_DEPENDS=	bash:shells/bash \
 		socat:net/socat
 LIB_DEPENDS=	libevent.so:devel/libevent liblz4.so:archivers/liblz4
 
-#BROKEN_SSL=	openssl111
-#BROKEN_SSL_REASON_openssl111=	incomplete definition of type 'struct dh_st'
-
-DATADIR=	${PREFIX}/share/mysql
-ETCDIR=		${PREFIX}/etc/mysql
-
 USES=		bison \
 		cmake:noninja \
 		compiler:c++11-lib \
@@ -36,6 +30,9 @@ USES=		bison \
 		perl5 \
 		shebangfix \
 		ssl
+
+DATADIR=	${PREFIX}/share/mysql
+ETCDIR=		${PREFIX}/etc/mysql
 
 USE_PERL5=	run
 USE_LDCONFIG=	yes
