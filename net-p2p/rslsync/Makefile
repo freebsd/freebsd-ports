@@ -1,5 +1,5 @@
 PORTNAME=	rslsync
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://download-cdn.resilio.com/${PORTVERSION}/FreeBSD-${CONFIG_ARCH}/ \
 		http://download-cdn.resilio.com/${PORTVERSION}/FreeBSD-${CONFIG_ARCH}/
