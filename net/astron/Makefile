@@ -6,7 +6,7 @@ MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Server Technology for Realtime Object Networking
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKDIR}/LICENSE.md
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libuv.so:devel/libuv \
 		libyaml-cpp.so:devel/yaml-cpp
