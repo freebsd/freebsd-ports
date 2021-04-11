@@ -1,6 +1,5 @@
 PORTNAME=	lsd
-DISTVERSION=	0.17.0
-PORTREVISION=	10
+DISTVERSION=	0.20.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	andoriyu@gmail.com
@@ -13,84 +12,103 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	Peltoche
 
-CARGO_CRATES=	aho-corasick-0.7.6 \
+CARGO_CRATES=   aho-corasick-0.7.13 \
 		ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
-		assert_cmd-0.11.1 \
-		assert_fs-0.11.3 \
-		atty-0.2.13 \
-		autocfg-0.1.7 \
+		arrayref-0.3.6 \
+		arrayvec-0.5.1 \
+		assert_cmd-1.0.1 \
+		assert_fs-1.0.0 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		base64-0.12.3 \
 		bitflags-1.2.1 \
-		bstr-0.2.8 \
-		c2-chacha-0.2.3 \
+		blake2b_simd-0.5.10 \
+		bstr-0.2.13 \
 		cfg-if-0.1.10 \
-		chrono-0.4.9 \
-		chrono-humanize-0.0.11 \
-		clap-2.33.0 \
-		crossbeam-channel-0.3.9 \
-		crossbeam-utils-0.6.6 \
+		cfg-if-1.0.0 \
+		chrono-0.4.15 \
+		chrono-humanize-0.1.1 \
+		clap-2.33.3 \
+		constant_time_eq-0.1.5 \
+		crossbeam-utils-0.7.2 \
 		difference-2.0.0 \
-		escargot-0.4.0 \
-		float-cmp-0.4.0 \
-		fnv-1.0.6 \
-		getrandom-0.1.12 \
+		dirs-3.0.1 \
+		dirs-sys-0.3.5 \
+		doc-comment-0.3.3 \
+		dtoa-0.4.6 \
+		float-cmp-0.8.0 \
+		fnv-1.0.7 \
+		getrandom-0.1.15 \
 		glob-0.3.0 \
-		globset-0.4.4 \
-		globwalk-0.5.0 \
-		ignore-0.4.10 \
-		itoa-0.4.4 \
-		kernel32-sys-0.2.2 \
+		globset-0.4.5 \
+		globwalk-0.7.3 \
+		hermit-abi-0.1.16 \
+		human-sort-0.2.2 \
+		ignore-0.4.16 \
+		instant-0.1.9 \
 		lazy_static-1.4.0 \
-		libc-0.2.65 \
-		log-0.4.8 \
-		lscolors-0.6.0 \
-		memchr-2.2.1 \
-		normalize-line-endings-0.2.2 \
-		num-integer-0.1.41 \
-		num-traits-0.2.8 \
-		ppv-lite86-0.2.6 \
-		predicates-1.0.1 \
+		libc-0.2.77 \
+		linked-hash-map-0.5.3 \
+		lock_api-0.4.2 \
+		log-0.4.11 \
+		lscolors-0.7.1 \
+		memchr-2.3.3 \
+		normalize-line-endings-0.3.0 \
+		num-integer-0.1.43 \
+		num-traits-0.2.12 \
+		parking_lot-0.11.1 \
+		parking_lot_core-0.8.2 \
+		ppv-lite86-0.2.9 \
+		predicates-1.0.5 \
 		predicates-core-1.0.0 \
 		predicates-tree-1.0.0 \
-		proc-macro2-1.0.6 \
-		quote-1.0.2 \
-		rand-0.7.2 \
-		rand_chacha-0.2.1 \
+		proc-macro2-1.0.24 \
+		quote-1.0.7 \
+		rand-0.7.3 \
+		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
-		redox_syscall-0.1.56 \
-		regex-1.3.1 \
-		regex-syntax-0.6.12 \
-		remove_dir_all-0.5.2 \
-		ryu-1.0.2 \
-		same-file-1.0.5 \
-		serde-1.0.101 \
-		serde_derive-1.0.101 \
-		serde_json-1.0.41 \
+		redox_syscall-0.1.57 \
+		redox_users-0.3.5 \
+		regex-1.3.9 \
+		regex-syntax-0.6.18 \
+		remove_dir_all-0.5.3 \
+		rust-argon2-0.8.2 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		serde-1.0.117 \
+		serde_derive-1.0.117 \
+		serde_yaml-0.8.13 \
+		serial_test-0.5.1 \
+		serial_test_derive-0.5.1 \
+		smallvec-1.6.1 \
 		strsim-0.8.0 \
-		syn-1.0.5 \
+		syn-1.0.48 \
 		tempfile-3.1.0 \
 		term_grid-0.1.7 \
-		term_size-0.3.1 \
-		terminal_size-0.1.8 \
+		term_size-0.3.2 \
+		terminal_size-0.1.13 \
 		textwrap-0.11.0 \
-		thread_local-0.3.6 \
-		time-0.1.42 \
+		thread_local-1.0.1 \
+		time-0.1.44 \
 		treeline-0.1.0 \
-		unicode-width-0.1.6 \
-		unicode-xid-0.2.0 \
-		users-0.9.1 \
-		vec_map-0.8.1 \
-		version_check-0.9.1 \
-		walkdir-2.2.9 \
-		wasi-0.7.0 \
-		wild-2.0.2 \
-		winapi-0.2.8 \
-		winapi-0.3.8 \
-		winapi-build-0.1.1 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		users-0.11.0 \
+		vec_map-0.8.2 \
+		version_check-0.9.2 \
+		wait-timeout-0.2.0 \
+		walkdir-2.3.1 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wild-2.0.4 \
+		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.2 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		xdg-2.1.0 \
+		yaml-rust-0.4.4
 
 PLIST_FILES=	bin/lsd
 
