@@ -13,7 +13,20 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/battles/intro.battle
 %%DATADIR%%/battles/sample.battle
 %%DATADIR%%/compilers/CompilerTest.java
-%%DATADIR%%/compilers/ecj.jar
+%%DATADIR%%/compilers/org.eclipse.core.commands-3.9.800.jar
+%%DATADIR%%/compilers/org.eclipse.core.contenttype-3.7.900.jar
+%%DATADIR%%/compilers/org.eclipse.core.expressions-3.7.100.jar
+%%DATADIR%%/compilers/org.eclipse.core.filesystem-1.7.700.jar
+%%DATADIR%%/compilers/org.eclipse.core.jobs-3.10.1100.jar
+%%DATADIR%%/compilers/org.eclipse.core.resources-3.14.0.jar
+%%DATADIR%%/compilers/org.eclipse.core.runtime-3.20.100.jar
+%%DATADIR%%/compilers/org.eclipse.equinox.app-1.5.100.jar
+%%DATADIR%%/compilers/org.eclipse.equinox.common-3.14.100.jar
+%%DATADIR%%/compilers/org.eclipse.equinox.preferences-3.8.200.jar
+%%DATADIR%%/compilers/org.eclipse.equinox.registry-3.10.100.jar
+%%DATADIR%%/compilers/org.eclipse.jdt.core-3.24.0.jar
+%%DATADIR%%/compilers/org.eclipse.osgi-3.16.200.jar
+%%DATADIR%%/compilers/org.eclipse.text-3.11.0.jar
 %%DATADIR%%/javadoc/allclasses-frame.html
 %%DATADIR%%/javadoc/allclasses-noframe.html
 %%DATADIR%%/javadoc/constant-values.html
@@ -93,6 +106,7 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/javadoc/robocode/control/RobotResults.html
 %%DATADIR%%/javadoc/robocode/control/RobotSetup.html
 %%DATADIR%%/javadoc/robocode/control/RobotSpecification.html
+%%DATADIR%%/javadoc/robocode/control/RobotTestBed.html
 %%DATADIR%%/javadoc/robocode/control/events/BattleAdaptor.html
 %%DATADIR%%/javadoc/robocode/control/events/BattleCompletedEvent.html
 %%DATADIR%%/javadoc/robocode/control/events/BattleErrorEvent.html
@@ -157,8 +171,11 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/javadoc/script.js
 %%DATADIR%%/javadoc/serialized-form.html
 %%DATADIR%%/javadoc/stylesheet.css
+%%DATADIR%%/libs/annotations-13.0.jar
 %%DATADIR%%/libs/bcel-6.2.jar
 %%DATADIR%%/libs/codesize-1.2.jar
+%%DATADIR%%/libs/kotlin-stdlib-1.4.30.jar
+%%DATADIR%%/libs/kotlin-stdlib-common-1.4.30.jar
 %%DATADIR%%/libs/picocontainer-2.14.2.jar
 %%DATADIR%%/libs/robocode.battle-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/robocode.core-%%PORTVERSION%%.jar
@@ -181,7 +198,6 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/roborumble/roborumble.txt
 %%DATADIR%%/roborumble/teamrumble.txt
 %%DATADIR%%/roborumble/twinduel.txt
-%%DATADIR%%/robots/META-INF/MANIFEST.MF
 %%DATADIR%%/robots/sample/Corners.class
 %%DATADIR%%/robots/sample/Corners.java
 %%DATADIR%%/robots/sample/Corners.properties
@@ -211,6 +227,7 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/robots/sample/RamFire.java
 %%DATADIR%%/robots/sample/RamFire.properties
 %%DATADIR%%/robots/sample/SittingDuck.class
+%%DATADIR%%/robots/sample/SittingDuck.html
 %%DATADIR%%/robots/sample/SittingDuck.java
 %%DATADIR%%/robots/sample/SittingDuck.properties
 %%DATADIR%%/robots/sample/SpinBot.class
