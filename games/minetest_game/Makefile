@@ -1,5 +1,5 @@
 PORTNAME=	minetest_game
-PORTVERSION=	5.4.0
+PORTVERSION=	5.4.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
