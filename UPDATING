@@ -6,6 +6,30 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20210411:
+  AFFECTS: users of graphics/OpenEXR or graphics/ilmbase
+  AUTHOR: mandree@FreeBSD.org
+
+  graphics/ilmbase was removed in favor of math/Imath 3.0.1,
+  and graphics/OpenEXR was updated to 3.0.1. Ports that depend on
+  OpenEXR and/or ilmbase according to INDEX were patched,
+  for ports where OpenEXR is an option that defaults to off, these
+  typical items needs to be changed - file bug reports in that case,
+  preferably with tested patches:
+
+  - The IlmImf library is now called OpenEXR
+  - The IlmBase library is now called Imath
+  - The Half library was folded into Imath and is no longer separate
+  - Some header files are now in the "other" include file path,
+    ${LOCALBASE}/include/OpenEXR vs. ${LOCALBASE}/include/Imath
+  - Some code needs a few #include statements added, often
+    #include <ImfHeader.h> or #include <ImfFrameBuffer.h>
+  - Some code needs Int64 in some namespace replaced by [std::]int64_t
+    and SInt64 by [std::]int64_t.
+
+  In some cases, the upstream maintainers have (beta) releases
+  for OpenEXR 3.0/Imath 3.0 support already.
+
+20210411:
   AFFECTS: users or devel/py-RPyC
   AUTHOR: skozlov@FreeBSD.org
 
