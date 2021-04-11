@@ -2,7 +2,7 @@
 
 PORTNAME=	luminance-hdr
 DISTVERSION=	2.5.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION}
 PKGNAMESUFFIX=	-qt5
@@ -17,7 +17,7 @@ EXPIRATION_DATE=2021-06-23
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
-		libHalf.so:graphics/ilmbase \
+		libImath.so:math/Imath \
 		libtiff.so:graphics/tiff \
 		libraw_r.so:graphics/libraw \
 		libfftw3f.so:math/fftw3-float \
@@ -25,8 +25,10 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libexiv2.so:graphics/exiv2 \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
-		libIlmImf.so:graphics/openexr \
+		libOpenEXR.so:graphics/openexr \
 		libboost_date_time.so:devel/boost-libs
+
+CFLAGS+=	-I${LOCALBASE}/include/Imath
 
 USES=		cmake desktop-file-utils jpeg pkgconfig qt:5 tar:bzip2
 USE_QT=		concurrent core declarative gui location network printsupport \
