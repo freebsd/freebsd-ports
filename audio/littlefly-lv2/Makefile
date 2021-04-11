@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
-USES=		gmake gnome localbase pkgconfig xorg
+USES=		compiler:c11 gmake gnome localbase pkgconfig xorg
 USE_GNOME=	cairo
 USE_XORG=	x11
 USE_BINUTILS=	yes # linking needs some GNU features, fails on 12 without this, see https://github.com/brummer10/GxPlugins.lv2/issues/9
