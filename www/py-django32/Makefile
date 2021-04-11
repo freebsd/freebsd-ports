@@ -1,12 +1,12 @@
 # Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 
 PORTNAME=	django
-PORTVERSION=	3.1.8
+PORTVERSION=	3.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://www.djangoproject.com/m/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	31
+PKGNAMESUFFIX=	32
 DISTNAME=	Django-${PORTVERSION}
 DIST_SUBDIR=	python
 
@@ -34,7 +34,7 @@ SHEBANG_FILES=	django/bin/django-admin.py \
 		django/conf/project_template/manage.py-tpl
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django111 ${PYTHON_PKGNAMEPREFIX}django22 \
-			${PYTHON_PKGNAMEPREFIX}django30 ${PYTHON_PKGNAMEPREFIX}django32
+			${PYTHON_PKGNAMEPREFIX}django30 ${PYTHON_PKGNAMEPREFIX}django31
 
 CPE_VENDOR=	djangoproject
 

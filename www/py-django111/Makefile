@@ -29,7 +29,7 @@ USE_PYTHON=	autoplist distutils
 SHEBANG_FILES=	django/bin/django-admin.py \
 		django/conf/project_template/manage.py-tpl
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django2[0-2] ${PYTHON_PKGNAMEPREFIX}django3[0-1]
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django22 ${PYTHON_PKGNAMEPREFIX}django3[0-2]
 CPE_VENDOR=		djangoproject
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
