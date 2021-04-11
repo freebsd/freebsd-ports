@@ -17,7 +17,7 @@ LIB_DEPENDS=	libzita-convolver.so:audio/zita-convolver \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-util.so:x11/xcb-util
 
-USES=		gnome localbase:ldflags meson pkgconfig xorg
+USES=		compiler:c11 gnome localbase:ldflags meson pkgconfig xorg
 USE_GNOME=	cairo
 USE_XORG=	xcb
 
