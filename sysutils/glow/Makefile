@@ -1,6 +1,6 @@
 PORTNAME=	glow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -17,9 +17,9 @@ GH_TUPLE=	alecthomas:chroma:v0.8.2:alecthomas_chroma/vendor/github.com/alecthoma
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
 		calmh:randomart:v1.1.0:calmh_randomart/vendor/github.com/calmh/randomart \
 		charmbracelet:bubbles:v0.7.6:charmbracelet_bubbles/vendor/github.com/charmbracelet/bubbles \
-		charmbracelet:bubbletea:v0.13.1:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
+		charmbracelet:bubbletea:v0.13.2:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
 		charmbracelet:charm:v0.8.6:charmbracelet_charm/vendor/github.com/charmbracelet/charm \
-		charmbracelet:glamour:2b8307dcb400:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
+		charmbracelet:glamour:abe9cda419ba:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		chris-ramon:douceur:v0.2.0:chris_ramon_douceur \
 		containerd:console:v1.0.1:containerd_console/vendor/github.com/containerd/console \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
@@ -41,7 +41,7 @@ GH_TUPLE=	alecthomas:chroma:v0.8.2:alecthomas_chroma/vendor/github.com/alecthoma
 		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.10:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-runewidth:v0.0.12:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		meowgorithm:babyenv:v1.3.1:meowgorithm_babyenv/vendor/github.com/meowgorithm/babyenv \
 		microcosm-cc:bluemonday:v1.0.4:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		mikesmitty:edkey:3356ea4e686a:mikesmitty_edkey/vendor/github.com/mikesmitty/edkey \
@@ -51,7 +51,7 @@ GH_TUPLE=	alecthomas:chroma:v0.8.2:alecthomas_chroma/vendor/github.com/alecthoma
 		muesli:go-app-paths:v0.2.1:muesli_go_app_paths/vendor/github.com/muesli/go-app-paths \
 		muesli:reflow:9e1d0d53df68:muesli_reflow/vendor/github.com/muesli/reflow \
 		muesli:sasquatch:66979d92330a:muesli_sasquatch/vendor/github.com/muesli/sasquatch \
-		muesli:termenv:v0.8.0:muesli_termenv/vendor/github.com/muesli/termenv \
+		muesli:termenv:v0.8.1:muesli_termenv/vendor/github.com/muesli/termenv \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -70,7 +70,7 @@ GH_TUPLE=	alecthomas:chroma:v0.8.2:alecthomas_chroma/vendor/github.com/alecthoma
 		yuin:goldmark:v1.3.1:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_SHA=	4f9ad67
+_BUILD_SHA=	4863f57
 
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
