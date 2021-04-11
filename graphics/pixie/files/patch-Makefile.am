@@ -1,0 +1,12 @@
+--- Makefile.am.orig	2021-04-11 03:59:19 UTC
++++ Makefile.am
+@@ -1,8 +1,6 @@
+-SUBDIRS = src doc
++SUBDIRS = src
+ 
+ man_MANS = man/rndr.1 man/sdrc.1 man/sdrinfo.1 man/texmake.1
+-
+-nobase_doc_DATA = AUTHORS ChangeLog COPYING DEVNOTES LICENSE NEWS README
+ 
+ shader_DATA = shaders/*
+ 
