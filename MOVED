@@ -16276,3 +16276,5 @@ databases/couchdb2|databases/couchdb3|2021-04-07|No longer supported upstream, u
 security/pidentd||2021-04-07|Removed: Unmaintained, abandoned, does not build with recent OS versions
 dns/dnsmasq-devel|dns/dnsmasq|2021-04-08|Has expired: use dns/dnsmasq instead, which is newer
 net/coturn|net/turnserver|2021-04-09|Remove duplicate port: coturn is another name for turnserver
+databases/percona55-server||2021-04-11|EOL upstream
+databases/percona55-client||2021-04-11|EOL upstream

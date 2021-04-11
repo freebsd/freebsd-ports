@@ -1,9 +1,0 @@
-[
-{ type: upgrade
-  message: <<EOM
-Remember to run mysql_upgrade (with the optional --datadir=<dbdir> flag)
-the first time you start the MySQL server after an upgrade from an
-earlier version.
-EOM
-}
-]

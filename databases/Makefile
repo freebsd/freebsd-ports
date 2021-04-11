@@ -552,8 +552,6 @@
     SUBDIR += pecl-rrd
     SUBDIR += percona-pam-for-mysql
     SUBDIR += percona-toolkit
-    SUBDIR += percona55-client
-    SUBDIR += percona55-server
     SUBDIR += percona56-client
     SUBDIR += percona56-server
     SUBDIR += percona57-client
