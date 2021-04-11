@@ -384,8 +384,7 @@ gst_opencv_PLIST_FILES=		#
 gst_opencv_USES=	compiler:c++11-lib
 
 # openexr
-gst_openexr_LIB_DEPENDS=libImath.so:graphics/ilmbase \
-			libIlmImf.so:graphics/openexr
+gst_openexr_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
 
 # openjpeg
 gst_openjpeg_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
