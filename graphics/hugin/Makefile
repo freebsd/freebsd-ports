@@ -24,6 +24,8 @@ RUN_DEPENDS=	enblend>=4.1.4:graphics/enblend \
 		exiftool:graphics/p5-Image-ExifTool \
 		gmake:devel/gmake
 
+LICENSE=	GPLv2
+
 BROKEN_i386=	Fails to build: ld: error: src/hugin_base/libhuginbase.so.0.0: undefined reference to __atomic_load
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl gnome \
