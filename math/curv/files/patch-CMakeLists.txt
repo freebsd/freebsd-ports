@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2019-10-15 23:21:21 UTC
+--- CMakeLists.txt.orig	2019-12-08 04:12:07 UTC
 +++ CMakeLists.txt
 @@ -10,18 +10,14 @@ execute_process(COMMAND sh -c "${CMAKE_SOURCE_DIR}/cma
  
@@ -48,7 +48,7 @@
  file(GLOB Src "curv/*.c" "curv/*.cc")
  add_executable(curv ${Src})
 -target_link_libraries(curv PUBLIC libcurv_geom libcurv imgui glfw glad ${LibOpenGL} replxx double-conversion boost_iostreams boost_filesystem boost_system openvdb_static Half tbb dl pthread)
-+target_link_libraries(curv PUBLIC libcurv_geom libcurv imgui glfw glad ${LibOpenGL} replxx double-conversion boost_iostreams boost_filesystem boost_system openvdb Half tbb dl pthread)
++target_link_libraries(curv PUBLIC libcurv_geom libcurv imgui glfw glad ${LibOpenGL} replxx double-conversion boost_iostreams boost_filesystem boost_system openvdb Imath tbb dl pthread)
  
  file(GLOB CurvcSrc "curvc/*.cc")
  add_executable(curvc EXCLUDE_FROM_ALL ${CurvcSrc})
