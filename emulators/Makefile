@@ -183,6 +183,7 @@
     SUBDIR += xzx
     SUBDIR += yuzu
     SUBDIR += yuzu-qt5
+    SUBDIR += z80pack
     SUBDIR += zsnes
 
 .include <bsd.port.subdir.mk>
