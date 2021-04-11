@@ -2,15 +2,15 @@
 
 PORTNAME=	hugin
 PORTVERSION=	2019.2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	GUI for Panorama Tools, to stitch panoramic images
 
-LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
-		libImath.so:graphics/ilmbase \
+LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
+		libImath.so:math/Imath \
 		libboost_thread.so:devel/boost-libs \
 		liblcms2.so:graphics/lcms2 \
 		libexiv2.so:graphics/exiv2 \
@@ -26,13 +26,17 @@ RUN_DEPENDS=	enblend>=4.1.4:graphics/enblend \
 
 LICENSE=	GPLv2
 
+CFLAGS+=	-I${LOCALBASE}/include/Imath
+
 BROKEN_i386=	Fails to build: ld: error: src/hugin_base/libhuginbase.so.0.0: undefined reference to __atomic_load
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl gnome \
-	jpeg pkgconfig shared-mime-info shebangfix sqlite tar:bzip2
+	jpeg pkgconfig shared-mime-info shebangfix sqlite tar:bzip2 xorg
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
+USE_GL=		gl glew glu glut
 USE_WX=		3.0+
-USE_GL=		glew glut
+USE_XORG=	x11
+
 INSTALLS_ICONS=	yes
 
 SHEBANG_FILES=	src/hugin_script_interface/hpi.py \
