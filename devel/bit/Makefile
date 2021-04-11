@@ -1,6 +1,6 @@
 PORTNAME=	bit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.5
+DISTVERSION=	1.0.6
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -16,7 +16,7 @@ GH_TUPLE=	\
 		AlecAivazis:survey:v2.2.9:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
 		apex:log:v1.9.0:apex_log/vendor/github.com/apex/log \
 		bradfitz:iter:e8f45d346db8:bradfitz_iter/vendor/github.com/bradfitz/iter \
-		c-bata:go-prompt:v0.2.6:c_bata_go_prompt/vendor/github.com/c-bata/go-prompt \
+		c-bata:go-prompt:v0.2.5:c_bata_go_prompt/vendor/github.com/c-bata/go-prompt \
 		c4milo:unpackit:4ed373e9ef1c:c4milo_unpackit/vendor/github.com/c4milo/unpackit \
 		chriswalz:complete:v3.0.13:chriswalz_complete_v3/vendor/github.com/chriswalz/complete/v3 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -46,7 +46,7 @@ GH_TUPLE=	\
 		mattn:go-tty:v0.0.3:mattn_go_tty/vendor/github.com/mattn/go-tty \
 		mgutz:ansi:9520e82c474b:mgutz_ansi/vendor/github.com/mgutz/ansi \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		pkg:term:v1.2.0-beta.2:pkg_term/vendor/github.com/pkg/term \
+		pkg:term:v1.1.0:pkg_term/vendor/github.com/pkg/term \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		posener:script:v1.1.5:posener_script/vendor/github.com/posener/script \
 		rs:zerolog:v1.20.0:rs_zerolog/vendor/github.com/rs/zerolog \
