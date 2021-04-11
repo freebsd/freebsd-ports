@@ -1,7 +1,7 @@
 PORTNAME=	povray
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.7.0.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	37
 
@@ -78,8 +78,8 @@ CONFIGURE_ARGS+=--without-libtiff
 .if ${PORT_OPTIONS:MSTATIC}
 BUILD_DEPENDS+=	openexr>=1.6:graphics/openexr
 .else
-LIB_DEPENDS+=	libIlmImf.so:graphics/openexr
-CPPFLAGS+=	-I${LOCALBASE}/include/OpenEXR
+LIB_DEPENDS+=	libOpenEXR.so:graphics/openexr libImath.so:math/Imath
+CPPFLAGS+=	-I${LOCALBASE}/include/OpenEXR -I${LOCALBASE}/include/Imath -DInt64=uint64_t
 .endif
 .else
 CONFIGURE_ARGS+=--without-openexr
