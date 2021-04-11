@@ -1,7 +1,7 @@
 # Created by: Mikolaj Golub <to.my.trociny@gmail.com>
 
 PORTNAME=	bmake
-PORTVERSION=	20210206
+PORTVERSION=	20210314
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/sjg/
 
