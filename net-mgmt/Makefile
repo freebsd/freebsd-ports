@@ -52,6 +52,7 @@
     SUBDIR += coovachilli
     SUBDIR += cowpatty
     SUBDIR += cricket
+    SUBDIR += crmsh
     SUBDIR += darkstat
     SUBDIR += devmon
     SUBDIR += devmon-templates

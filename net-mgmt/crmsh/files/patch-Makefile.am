@@ -1,0 +1,21 @@
+--- Makefile.am.orig	2017-01-31 14:52:10 UTC
++++ Makefile.am
+@@ -51,7 +51,8 @@ endif
+ install-data-hook:
+ 	mkdir -p $(DESTDIR)$(datadir)/@PACKAGE@/; \
+ 	for d in $$(cat data-manifest); do \
+-	install -D -m $$(test -x $$d && echo 0755 || echo 0644) $$d $(DESTDIR)$(datadir)/@PACKAGE@/$$d; done; \
++	mkdir -p 755 $(DESTDIR)$(datadir)/@PACKAGE@/$$(dirname $$d); \
++	install -m $$(test -x $$d && echo 0755 || echo 0644) $$d $(DESTDIR)$(datadir)/@PACKAGE@/$$d; done; \
+ 	mv $(DESTDIR)$(datadir)/@PACKAGE@/test $(DESTDIR)$(datadir)/@PACKAGE@/tests; \
+ 	cp test/testcases/xmlonly.sh $(DESTDIR)$(datadir)/@PACKAGE@/tests/testcases/configbasic-xml.filter
+ 
+@@ -66,7 +67,7 @@ all-local:
+ 		--build-base $(shell readlink -f $(builddir))/build \
+ 		--verbose)
+ 
+-python_prefix = --prefix=$(prefix)
++python_prefix = --prefix=$(prefix) --root=$(DESTDIR)
+ 
+ install-exec-local:
+ 	-mkdir -p $(DESTDIR)$(pkgpythondir)
