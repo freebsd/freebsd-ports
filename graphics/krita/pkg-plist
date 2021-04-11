@@ -1038,3 +1038,6 @@ share/locale/xh/LC_MESSAGES/krita.mo
 share/locale/zh_CN/LC_MESSAGES/krita.mo
 share/locale/zh_TW/LC_MESSAGES/krita.mo
 share/metainfo/org.kde.krita.appdata.xml
+lib/kritaplugins/kritaheifexport.so
+lib/kritaplugins/kritaheifimport.so
+share/applications/krita_heif.desktop

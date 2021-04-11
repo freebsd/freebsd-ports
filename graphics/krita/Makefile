@@ -1,6 +1,6 @@
 PORTNAME=	krita
 DISTVERSION=	4.4.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -11,7 +11,7 @@ COMMENT=	Sketching and painting program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libImath.so:graphics/ilmbase \
+LIB_DEPENDS=	libImath.so:math/Imath \
 		libOpenColorIO.so:graphics/opencolorio \
 		libX11.so:x11/libX11 \
 		libboost_system.so:devel/boost-libs \
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 		libcurl.so:ftp/curl \
 		libgif.so:graphics/giflib \
 		libgsl.so:math/gsl \
+		libheif.so:graphics/libheif \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
@@ -50,7 +51,7 @@ OPTIONS_SUB=		yes
 GMIC_DESC=		Depend on the G'Mic plugin #'
 GMIC_RUN_DEPENDS=	gmic_krita_qt:graphics/gmic-qt@krita
 
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
+OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
 			libSeExpr2.so:graphics/seexpr
 OPENEXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
 
@@ -59,6 +60,7 @@ CONFLICTS_INSTALL=	calligra-2*
 PLIST_SUB=	SHLIB_VER=20.0.0 \
 		SHLIB_SHVER=20
 
-LDFLAGS=	-lpthread
+CFLAGS+=	-I${LOCALBASE}/include/Imath
+LDFLAGS+=	-lpthread
 
 .include <bsd.port.mk>
