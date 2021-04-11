@@ -1,7 +1,7 @@
 PORTNAME=	PrusaSlicer
 DISTVERSIONPREFIX=version_
 DISTVERSION=	2.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 
 MAINTAINER=	teodorsigaev@gmail.com
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libtbb.so:devel/tbb \
 		libboost_log.so:devel/boost-libs \
-		libHalf.so:graphics/ilmbase \
+		libImath.so:math/Imath \
 		libnlopt.so:math/nlopt \
 		libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \

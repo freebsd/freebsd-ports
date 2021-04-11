@@ -2,7 +2,7 @@
 
 PORTNAME=	vips
 PORTVERSION=	8.10.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
@@ -65,8 +65,8 @@ LCMS2_CONFIGURE_WITH=	lcms
 LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 
 OPENEXR_CONFIGURE_WITH=	OpenEXR
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
-			libImath.so:graphics/ilmbase
+OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
+			libImath.so:math/Imath
 
 HEIF_DESC=		HEIF image format support
 HEIF_CONFIGURE_WITH=	heif

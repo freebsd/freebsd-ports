@@ -3,7 +3,7 @@
 PORTNAME=	synfig
 PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=v
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	devel graphics multimedia
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -13,8 +13,8 @@ LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	etl>=1.2.2:devel/etl \
 		gsed:textproc/gsed
-LIB_DEPENDS=	libHalf.so:graphics/ilmbase \
-		libIlmImf.so:graphics/openexr \
+LIB_DEPENDS=	libImath.so:math/Imath \
+		libOpenEXR.so:graphics/openexr \
 		libMagickWand-6.so:graphics/ImageMagick6 \
 		libavcodec.so:multimedia/ffmpeg \
 		libboost_program_options.so:devel/boost-libs \

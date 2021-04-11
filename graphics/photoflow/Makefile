@@ -1,6 +1,6 @@
 PORTNAME=	photoflow
 DISTVERSION=	0.2.8.20200828
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,8 +15,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libiptcdata.so:graphics/libiptcdata \
-		libIex.so:graphics/ilmbase \
-		libIlmImf.so:graphics/openexr \
+		libOpenEXR.so:graphics/openexr \
 		liblcms2.so:graphics/lcms2 \
 		liblensfun.so:graphics/lensfun \
 		libtiff.so:graphics/tiff \

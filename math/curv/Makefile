@@ -14,7 +14,7 @@ BUILD_DEPENDS=	glm>0:math/glm
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libdouble-conversion.so:devel/double-conversion \
 		libglfw.so:graphics/glfw \
-		libHalf.so:graphics/ilmbase \
+		libImath.so:math/Imath \
 		libopenvdb.so:misc/openvdb \
 		libtbb.so:devel/tbb
 

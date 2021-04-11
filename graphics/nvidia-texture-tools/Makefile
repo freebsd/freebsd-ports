@@ -1,6 +1,6 @@
 PORTNAME=	nvidia-texture-tools
 PORTVERSION=	2.0.8.1 # needed to not bump PORTEPOCH; remove on next update
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=		amd64 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
-		libIlmImf.so:graphics/openexr
+		libOpenEXR.so:graphics/openexr
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	castano

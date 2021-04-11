@@ -1,6 +1,6 @@
 PORTNAME=	calligra
 DISTVERSION=	3.2.1
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -11,7 +11,7 @@ COMMENT=	KDE office suite
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libImath.so:graphics/ilmbase \
+LIB_DEPENDS=	libImath.so:math/Imath \
 		libKPropertyCore3.so:x11-toolkits/kproperty \
 		libKReport3.so:textproc/kreport \
 		libboost_thread.so:devel/boost-libs \
@@ -56,7 +56,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	OPENEXR
 OPTIONS_DEFAULT=	OPENEXR
 
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
+OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
 OPENEXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
 
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include" \

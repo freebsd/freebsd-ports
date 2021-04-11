@@ -2,7 +2,7 @@
 
 PORTNAME=	enblend
 PORTVERSION=	4.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
 MASTER_SITES=	SF/enblend/enblend-enfuse/enblend-enfuse-${PORTVERSION}
 DISTNAME=	enblend-enfuse-${PORTVERSION}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libtiff.so:graphics/tiff \
 		libvigraimpex.so:graphics/vigra \
 		libgsl.so:math/gsl \
-		libIlmImf.so:graphics/openexr \
+		libOpenEXR.so:graphics/openexr \
 		libpng.so:graphics/png
 
 USES=		compiler:features gmake jpeg localbase pkgconfig
