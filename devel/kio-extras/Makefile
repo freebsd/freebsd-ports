@@ -1,12 +1,13 @@
 PORTNAME=	kio-extras
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications # kde kde-applications-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 library to increase the functionality of KIO
 
 LIB_DEPENDS=	libtag.so:audio/taglib \
-		libHalf.so:graphics/ilmbase \
+		libImath.so:math/Imath \
 		libkdsoap.so:www/kdsoap
 
 USES=		cmake compiler:c++11-lib gettext gperf kde:5 \
@@ -40,7 +41,7 @@ MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 
 EXR_DESC=		Provides support for OpenEXR formatted images in the thumbnail kioslave
 EXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
-EXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
+EXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
 
 EXIV_DESC=		Provides support for automatic rotation of JPEGs in the thumbnail kioslave
 EXIV_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Exiv2
