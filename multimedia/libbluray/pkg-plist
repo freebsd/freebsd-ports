@@ -12,7 +12,7 @@ include/libbluray/overlay.h
 include/libbluray/player_settings.h
 lib/libbluray.so
 lib/libbluray.so.2
-lib/libbluray.so.2.3.0
+lib/libbluray.so.2.4.0
 libdata/pkgconfig/libbluray.pc
-%%JAVA%%%%JAVASHAREDIR%%/libbluray-j2se-1.2.1.jar
-%%JAVA%%%%JAVASHAREDIR%%/libbluray-awt-j2se-1.2.1.jar
+%%JAVA%%%%JAVASHAREDIR%%/libbluray-j2se-1.3.0.jar
+%%JAVA%%%%JAVASHAREDIR%%/libbluray-awt-j2se-1.3.0.jar
