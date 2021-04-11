@@ -3,7 +3,7 @@
 PORTNAME=	osg
 PORTVERSION=	3.6.5
 DISTVERSIONPREFIX=	OpenSceneGraph-
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -27,6 +27,8 @@ USES=		alias cmake compiler:c11 jpeg gl pkgconfig xorg
 USE_GL=		gl
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+
+CFLAGS+=	-I${LOCALBASE}/include/Imath -DInt64=uint64_t
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
 		OSG_SHLIBVER=161 \
@@ -87,7 +89,7 @@ LUA_VARS_OFF=		FORCE_IGNORE+="Lua51 Lua52"
 NVTT_LIB_DEPENDS=	libnvtt.so:graphics/nvidia-texture-tools
 NVTT_VARS=		FORCE_REQUIRE+=NVTT
 NVTT_VARS_OFF=		FORCE_IGNORE+=NVTT
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
+OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr libImath.so:math/Imath
 OPENEXR_VARS=		FORCE_REQUIRE+=OpenEXR
 OPENEXR_VARS_OFF=	FORCE_IGNORE+=OpenEXR
 PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
