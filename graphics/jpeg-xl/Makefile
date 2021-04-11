@@ -1,6 +1,7 @@
 PORTNAME=	jpeg-xl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -57,8 +58,8 @@ MANPAGES_BUILD_DEPENDS=	a2x:textproc/asciidoc
 MANPAGES_USES=		python:build
 MANPAGES_CMAKE_BOOL_OFF=CMAKE_DISABLE_FIND_PACKAGE_Python
 
-OPENEXR_LIB_DEPENDS=	libHalf.so:graphics/ilmbase \
-			libIlmImf.so:graphics/openexr
+OPENEXR_LIB_DEPENDS=	libImath.so:math/Imath \
+			libOpenEXR.so:graphics/openexr
 OPENEXR_CMAKE_BOOL=	JPEGXL_ENABLE_OPENEXR
 
 PIXBUF_USES=		gnome
@@ -75,6 +76,8 @@ TEST_TEST_TARGET=	test
 post-patch:
 	@${REINPLACE_CMD} 's,/usr,${LOCALBASE},' \
 		${WRKSRC}/plugins/gdk-pixbuf/jxl.thumbnailer
+	${REINPLACE_CMD} 's,OpenEXR::Int64,uint64_t,' \
+		${WRKSRC}/lib/extras/codec_exr.cc
 
 # pkg_check_modules doesn't support CMAKE_DISABLE_*
 post-patch-GIMP-off:
