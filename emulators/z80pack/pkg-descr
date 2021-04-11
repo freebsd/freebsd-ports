@@ -1,0 +1,6 @@
+z80pack emulates an 8080 or Z80 CPU and provides CP/M-80 and UCSD-Pascal
+environments. Besides emulation of a generic CP/M system, support for
+full emulation of typical ALTAIR or IMSAI systems and their specific
+hardware is possible, including a graphical front-panel.
+
+WWW: https://www.autometer.de/unix4fun/z80pack/

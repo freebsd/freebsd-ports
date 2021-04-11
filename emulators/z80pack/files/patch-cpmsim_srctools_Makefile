@@ -1,0 +1,30 @@
+--- cpmsim/srctools/Makefile.orig	2021-01-06 16:07:39 UTC
++++ cpmsim/srctools/Makefile
+@@ -1,19 +1,19 @@
+ #
+ # some places where the tools usually are installed
+ #
+-INSTALLDIR=${HOME}/bin
++#INSTALLDIR=${HOME}/bin
+ #INSTALLDIR=/usr/local/bin
+ 
+ #CC = cc
+-CC = gcc
++#CC = gcc
+ 
+-CFLAGS= -O3 -Wall
++#CFLAGS= -O3 -Wall
+ 
+-all: test mkdskimg bin2hex send receive ptp2bin
+-	@echo
+-	@echo "Done."
+-	@echo "Now run make install"
+-	@echo
++all: mkdskimg bin2hex send receive ptp2bin
++#	@echo
++#	@echo "Done."
++#	@echo "Now run make install"
++#	@echo
+ 
+ test:
+ 	@test -d ${INSTALLDIR} || (echo "${INSTALLDIR} doesn't exist, fix INSTALLDIR"; exit 1)
