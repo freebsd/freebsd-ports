@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	vlc>0:multimedia/vlc
 RUN_DEPENDS=	${LOCALBASE}/include/vlc/vlc.h:multimedia/vlc
 
-USES=		autoreconf gmake pkgconfig
+USES=		autoreconf compiler:c++11-lang gmake pkgconfig
 USE_GITLAB=	yes
 
 GL_SITE=	https://code.videolan.org
