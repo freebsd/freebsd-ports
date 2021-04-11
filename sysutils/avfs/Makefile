@@ -1,7 +1,7 @@
 # Created by: Evgeny Zhirnov <jirnov@gmail.com>
 
 PORTNAME=	avfs
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/avf/${PORTNAME}/${PORTVERSION}
 
