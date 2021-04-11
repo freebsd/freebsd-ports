@@ -1,5 +1,6 @@
 PORTNAME=	threema-web
 PORTVERSION=	2.3.7
+PORTREVISION=	1
 CATEGORIES=	www net-im
 MASTER_SITES=	https://github.com/threema-ch/${PORTNAME}/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-gh
@@ -26,11 +27,11 @@ post-patch:
 	  ${WRKSRC}/*.bundle.js
 	${REINPLACE_CMD} "s/${THREEMA_PUBLICTURNS}/${THREEMA_ICE_SERVER}/g" \
 	  ${WRKSRC}/*.bundle.js
-	${REINPLACE_CMD} "s/SALTYRTC_HOST:\s*\"[^\"]*\",/SALTYRTC_HOST:\"${THREEMA_SALTYRTC_HOST}\",/g" \
+	${REINPLACE_CMD} "s/SALTYRTC_HOST:[[:space:]]*\"[^\"]*\",/SALTYRTC_HOST:\"${THREEMA_SALTYRTC_HOST}\",/g" \
 	  ${WRKSRC}/*.bundle.js
-	${REINPLACE_CMD} "s/SALTYRTC_PORT:\s*[^,]*,/SALTYRTC_PORT:${THREEMA_SALTYRTC_PORT},/g" \
+	${REINPLACE_CMD} "s/SALTYRTC_PORT:[[:space:]]*[^,]*,/SALTYRTC_PORT:${THREEMA_SALTYRTC_PORT},/g" \
 	  ${WRKSRC}/*.bundle.js
-	${REINPLACE_CMD} "s/SALTYRTC_SERVER_KEY:\s*\"[^\"]*\",/SALTYRTC_SERVER_KEY:\"${THREEMA_SALTYRTC_KEY}\",/g" \
+	${REINPLACE_CMD} "s/SALTYRTC_SERVER_KEY:[[:space:]]*\"[^\"]*\",/SALTYRTC_SERVER_KEY:\"${THREEMA_SALTYRTC_KEY}\",/g" \
 	  ${WRKSRC}/*.bundle.js
 
 do-install:
