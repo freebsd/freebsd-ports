@@ -1,0 +1,11 @@
+--- lib/IlmImfCtl/CMakeLists.txt.orig	2021-04-11 04:27:51 UTC
++++ lib/IlmImfCtl/CMakeLists.txt
+@@ -7,7 +7,7 @@ add_library( IlmImfCtl ${DO_SHARED}
+   ImfCtlCopyFunctionArg.cpp
+ )
+ 
+-target_link_libraries( IlmImfCtl IlmCtl IlmImf Iex IlmThread Half )
++target_link_libraries( IlmImfCtl IlmCtl OpenEXR Iex IlmThread Imath )
+ 
+ install( FILES ImfCtlApplyTransforms.h DESTINATION include/OpenEXR )
+ 

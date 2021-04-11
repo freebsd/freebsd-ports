@@ -2,7 +2,7 @@
 
 PORTNAME=	ampasCTL
 PORTVERSION=	1.5.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,8 +13,8 @@ LICENSE_NAME=	AMPAS
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libImath.so:graphics/ilmbase \
-		libIlmImf.so:graphics/openexr \
+LIB_DEPENDS=	libImath.so:math/Imath \
+		libOpenEXR.so:graphics/openexr \
 		libtiff.so:graphics/tiff \
 		libAcesContainer.so:graphics/ampasACES-container
 
@@ -25,6 +25,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ampas
 GH_PROJECT=	CTL
 GH_TAGNAME=	57b48a2
+
+CFLAGS+=	-I${LOCALBASE}/include/OpenEXR -I${LOCALBASE}/include/Imath
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
 
