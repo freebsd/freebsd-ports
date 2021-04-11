@@ -1,6 +1,6 @@
 PORTNAME=	ImageMagick
 DISTVERSION=	6.9.11-6
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://www.imagemagick.org/download/ \
@@ -245,8 +245,8 @@ CONFIGURE_ARGS+=	--with-windows-font-dir=${WITH_WINDOWS_FONT_DIR}
 . if ${_IMAGEMAGICK_THREADS} == "no"
 IGNORE=OpenEXR requires threads. ${_IMAGEMAGICK_THREADS_IGNORE_MSG}
 . else
-LIB_DEPENDS+=		libIlmImf.so:graphics/openexr \
-			libImath.so:graphics/ilmbase
+LIB_DEPENDS+=		libOpenEXR.so:graphics/openexr \
+			libImath.so:math/Imath
 PLIST_SUB+=		OPENEXR=""
 . endif
 .else
