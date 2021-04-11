@@ -3,7 +3,7 @@
 PORTNAME=	osg
 PORTVERSION=	3.4.1
 DISTVERSIONPREFIX=	OpenSceneGraph-
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	34
 
@@ -29,7 +29,7 @@ USE_GL=		gl glu
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 # needed to ensure build on gcc-based archs; harmless otherwise
-CXXFLAGS+=	-Wno-narrowing
+CXXFLAGS+=	-Wno-narrowing -I${LOCALBASE}/include/Imath -DInt64=uint64_t
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
 		OSG_SHLIBVER=131 \
@@ -87,7 +87,7 @@ LUA_VARS_OFF=		FORCE_IGNORE+="Lua51 Lua52"
 NVTT_LIB_DEPENDS=	libnvtt.so:graphics/nvidia-texture-tools
 NVTT_VARS=		FORCE_REQUIRE+=NVTT
 NVTT_VARS_OFF=		FORCE_IGNORE+=NVTT
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
+OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr libImath.so:math/Imath
 OPENEXR_VARS=		FORCE_REQUIRE+=OpenEXR
 OPENEXR_VARS_OFF=	FORCE_IGNORE+=OpenEXR
 PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
