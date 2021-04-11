@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210411:
+  AFFECTS: users or devel/py-RPyC
+  AUTHOR: skozlov@FreeBSD.org
+
+  devel/py-RPyC has been updated to version 5.0.1, which have some
+  incompatibilities with 4.x branch. Be sure to check them out before
+  upgrading:
+  https://rpyc.readthedocs.io/en/latest/changelog.html#backwards-incompatible
+
 20210406:
   AFFECTS: users of www/phpvirtualbox
   AUTHOR: dereks@lifeofadishwasher.com
