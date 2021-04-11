@@ -1,8 +1,8 @@
 # Created by: Torsten Blum <torstenb@FreeBSD.org>
 
 PORTNAME=	postfix
-DISTVERSION=	3.6-20210224
-PORTREVISION?=	1
+DISTVERSION=	3.6-20210410
+PORTREVISION?=	0
 PORTEPOCH=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.porcupine.org/mirrors/postfix-release/ \
