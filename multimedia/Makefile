@@ -281,6 +281,7 @@
     SUBDIR += omxplayer
     SUBDIR += openh264
     SUBDIR += openshot
+    SUBDIR += opentoonz
     SUBDIR += oscam
     SUBDIR += p5-Audio-M4P
     SUBDIR += p5-FFmpeg-Command

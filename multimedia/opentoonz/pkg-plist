@@ -1,0 +1,1535 @@
+bin/OpenToonz
+bin/lzocompress
+bin/lzodecompress
+bin/opentoonz
+bin/tcleanup
+bin/tcomposer
+bin/tconverter
+bin/tfarmcontroller
+bin/tfarmserver
+lib/opentoonz/libcolorfx.so
+lib/opentoonz/libimage.so
+lib/opentoonz/libsound.so
+lib/opentoonz/libtfarm.so
+lib/opentoonz/libtnzbase.so
+lib/opentoonz/libtnzcore.so
+lib/opentoonz/libtnzext.so
+lib/opentoonz/libtnzstdfx.so
+lib/opentoonz/libtnztools.so
+lib/opentoonz/libtoonzlib.so
+lib/opentoonz/libtoonzqt.so
+share/applications/io.github.OpenToonz.desktop
+share/icons/hicolor/256x256/apps/io.github.OpenToonz.png
+share/metainfo/io.github.OpenToonz.appdata.xml
+%%DATADIR%%/stuff/config/batches.xml
+%%DATADIR%%/stuff/config/brush.txt
+%%DATADIR%%/stuff/config/cleanupreslist.txt
+%%DATADIR%%/stuff/config/current.txt
+%%DATADIR%%/stuff/config/export-toonz.lua
+%%DATADIR%%/stuff/config/fdg/fld_10_4mm_acme.fdg
+%%DATADIR%%/stuff/config/fdg/fld_12_4mm_acme.fdg
+%%DATADIR%%/stuff/config/fdg/fld_12_acme.fdg
+%%DATADIR%%/stuff/config/fdg/fld_12_oxbry.fdg
+%%DATADIR%%/stuff/config/fdg/fld_15_4mm_acme.fdg
+%%DATADIR%%/stuff/config/fdg/fld_16_acme.fdg
+%%DATADIR%%/stuff/config/fdg/fld_16_oxbry.fdg
+%%DATADIR%%/stuff/config/fdg/jpn_cel_film.fdg
+%%DATADIR%%/stuff/config/fdg/jpn_cel_tv.fdg
+%%DATADIR%%/stuff/config/loc/Deutsch/colorfx.qm
+%%DATADIR%%/stuff/config/loc/Deutsch/tnzcore.qm
+%%DATADIR%%/stuff/config/loc/Deutsch/tnztools.qm
+%%DATADIR%%/stuff/config/loc/Deutsch/toonz.qm
+%%DATADIR%%/stuff/config/loc/Deutsch/toonzlib.qm
+%%DATADIR%%/stuff/config/loc/Deutsch/toonzqt.qm
+%%DATADIR%%/stuff/config/loc/Español/colorfx.qm
+%%DATADIR%%/stuff/config/loc/Español/image.qm
+%%DATADIR%%/stuff/config/loc/Español/tnzcore.qm
+%%DATADIR%%/stuff/config/loc/Español/tnztools.qm
+%%DATADIR%%/stuff/config/loc/Español/toonz.qm
+%%DATADIR%%/stuff/config/loc/Español/toonzlib.qm
+%%DATADIR%%/stuff/config/loc/Español/toonzqt.qm
+%%DATADIR%%/stuff/config/loc/Français/colorfx.qm
+%%DATADIR%%/stuff/config/loc/Français/tnzcore.qm
+%%DATADIR%%/stuff/config/loc/Français/tnztools.qm
+%%DATADIR%%/stuff/config/loc/Français/toonz.qm
+%%DATADIR%%/stuff/config/loc/Français/toonzlib.qm
+%%DATADIR%%/stuff/config/loc/Français/toonzqt.qm
+%%DATADIR%%/stuff/config/loc/Italiano/colorfx.qm
+%%DATADIR%%/stuff/config/loc/Italiano/tnzcore.qm
+%%DATADIR%%/stuff/config/loc/Italiano/tnztools.qm
+%%DATADIR%%/stuff/config/loc/Italiano/toonz.qm
+%%DATADIR%%/stuff/config/loc/Italiano/toonzlib.qm
+%%DATADIR%%/stuff/config/loc/Italiano/toonzqt.qm
+%%DATADIR%%/stuff/config/loc/Čeština/colorfx.qm
+%%DATADIR%%/stuff/config/loc/Čeština/image.qm
+%%DATADIR%%/stuff/config/loc/Čeština/tnzcore.qm
+%%DATADIR%%/stuff/config/loc/Čeština/tnztools.qm
+%%DATADIR%%/stuff/config/loc/Čeština/toonz.qm
+%%DATADIR%%/stuff/config/loc/Čeština/toonzlib.qm
+%%DATADIR%%/stuff/config/loc/Čeština/toonzqt.qm
+%%DATADIR%%/stuff/config/loc/Русский/colorfx.qm
+%%DATADIR%%/stuff/config/loc/Русский/image.qm
+%%DATADIR%%/stuff/config/loc/Русский/tnzcore.qm
+%%DATADIR%%/stuff/config/loc/Русский/tnztools.qm
+%%DATADIR%%/stuff/config/loc/Русский/toonz.qm
+%%DATADIR%%/stuff/config/loc/Русский/toonzlib.qm
+%%DATADIR%%/stuff/config/loc/Русский/toonzqt.qm
+%%DATADIR%%/stuff/config/loc/中文/colorfx.qm
+%%DATADIR%%/stuff/config/loc/中文/image.qm
+%%DATADIR%%/stuff/config/loc/中文/tnzcore.qm
+%%DATADIR%%/stuff/config/loc/中文/tnztools.qm
+%%DATADIR%%/stuff/config/loc/中文/toonz.qm
+%%DATADIR%%/stuff/config/loc/中文/toonzlib.qm
+%%DATADIR%%/stuff/config/loc/中文/toonzqt.qm
+%%DATADIR%%/stuff/config/loc/日本語/colorfx.qm
+%%DATADIR%%/stuff/config/loc/日本語/image.qm
+%%DATADIR%%/stuff/config/loc/日本語/tnzcore.qm
+%%DATADIR%%/stuff/config/loc/日本語/tnztools.qm
+%%DATADIR%%/stuff/config/loc/日本語/toonz.qm
+%%DATADIR%%/stuff/config/loc/日本語/toonzlib.qm
+%%DATADIR%%/stuff/config/loc/日本語/toonzqt.qm
+%%DATADIR%%/stuff/config/loc/한국어/colorfx.qm
+%%DATADIR%%/stuff/config/loc/한국어/image.qm
+%%DATADIR%%/stuff/config/loc/한국어/tnzcore.qm
+%%DATADIR%%/stuff/config/loc/한국어/tnztools.qm
+%%DATADIR%%/stuff/config/loc/한국어/toonz.qm
+%%DATADIR%%/stuff/config/loc/한국어/toonzlib.qm
+%%DATADIR%%/stuff/config/loc/한국어/toonzqt.qm
+%%DATADIR%%/stuff/config/pap/a3.pap
+%%DATADIR%%/stuff/config/pap/a4.pap
+%%DATADIR%%/stuff/config/pap/b4.pap
+%%DATADIR%%/stuff/config/pap/fld_10.pap
+%%DATADIR%%/stuff/config/pap/fld_12_a.pap
+%%DATADIR%%/stuff/config/pap/fld_12_b.pap
+%%DATADIR%%/stuff/config/pap/fld_15.pap
+%%DATADIR%%/stuff/config/pap/fld_16_a.pap
+%%DATADIR%%/stuff/config/pap/fld_16_b.pap
+%%DATADIR%%/stuff/config/pap/jpn_cel_film.pap
+%%DATADIR%%/stuff/config/pap/jpn_cel_tv.pap
+%%DATADIR%%/stuff/config/permissions.xml
+%%DATADIR%%/stuff/config/qss/Blue/Blue.qss
+%%DATADIR%%/stuff/config/qss/Dark/Dark.qss
+%%DATADIR%%/stuff/config/qss/Default/Default.qss
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/checkmark.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/checkmark_black.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/checkmark_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/checkmark_disabled_black.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/checkpartially.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/checkpartially_black.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/checkpartially_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/checkpartially_disabled_black.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/combo_downarrow.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/combo_downarrow_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/flipmarker.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/flipmarker_light.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/flipslider.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/flipslider_light.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/layer_header_prev_eye.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/layer_header_prev_eye_over.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/layer_header_table_view.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/layer_header_table_view_over.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/layer_lock_on.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/layer_lock_on_over.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/liveview.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/lock.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/lock_on.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/lock_on_over.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/lock_on_small.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/lock_over.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/preview_small.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/radiobutton_checked.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/radiobutton_checked_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/radiobutton_unchecked.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/radiobutton_unchecked_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/radiobutton_unchecked_hover.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/schematic_preview_off.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/schematic_preview_on.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/schematic_table_off.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/schematic_table_on.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/schematic_table_transp.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/scroll-down.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/scroll-left.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/scroll-right.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/scroll-up.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/slider-groove.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/slider-groove_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/slider-groove_disabled_light.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/slider-groove_light.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/slider-handle.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/slider-handle_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/slider-handle_disabled_light.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/slider-handle_light.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/table_small.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/timeline_config.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/toolbar_extension_horizontal.png
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/toolbar_extension_vertical.png
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/trans_small.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/transparent_16x16.png
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/treebranch-closed.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/treebranch-open.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/x_config.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/x_lock_off.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/x_lock_on.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/x_lock_on_small.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/x_prev_eye_off.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/x_prev_eye_on.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/x_table_view_off.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/x_table_view_on.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/black/x_table_view_transp.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/checkmark.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/checkmark_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/checkpartially.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/checkpartially_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/combo_downarrow.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/combo_downarrow_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/flipmarker.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/flipmarker_dark.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/flipslider.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/flipslider_dark.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/layer_header_prev_eye.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/layer_header_prev_eye_over.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/layer_header_table_view.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/layer_header_table_view_over.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/layer_lock_on.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/layer_lock_on_over.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/liveview.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/lock.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/lock_on.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/lock_on_small.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/lock_over.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/preview_small.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/radiobutton-dark_unchecked.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/radiobutton-dark_unchecked_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/radiobutton-dark_unchecked_hover.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/radiobutton_checked.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/radiobutton_checked_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/radiobutton_unchecked.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/radiobutton_unchecked_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/radiobutton_unchecked_hover.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/schematic_preview_off.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/schematic_preview_on.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/schematic_table_off.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/schematic_table_on.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/schematic_table_transp.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/scroll-down.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/scroll-left.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/scroll-right.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/scroll-up.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/slider-groove.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/slider-groove_dark.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/slider-groove_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/slider-groove_disabled_dark.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/slider-handle.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/slider-handle_disabled.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/table_small.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/timeline_config.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/toolbar_extension_horizontal.png
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/toolbar_extension_vertical.png
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/trans_small.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/transparent_16x16.png
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/treebranch-closed.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/treebranch-open.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/x_config.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/x_lock_off.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/x_lock_on.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/x_lock_on_white.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/x_prev_eye_off.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/x_prev_eye_on.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/x_table_view_off.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/x_table_view_on.svg
+%%DATADIR%%/stuff/config/qss/Default/imgs/white/x_table_view_transp.svg
+%%DATADIR%%/stuff/config/qss/Default/less/.vscode/settings.json
+%%DATADIR%%/stuff/config/qss/Default/less/Default.less
+%%DATADIR%%/stuff/config/qss/Default/less/base/colors.less
+%%DATADIR%%/stuff/config/qss/Default/less/base/mixins.less
+%%DATADIR%%/stuff/config/qss/Default/less/components/all.less
+%%DATADIR%%/stuff/config/qss/Default/less/components/buttons.less
+%%DATADIR%%/stuff/config/qss/Default/less/components/frames.less
+%%DATADIR%%/stuff/config/qss/Default/less/components/icons.less
+%%DATADIR%%/stuff/config/qss/Default/less/components/tabs.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/all.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/controls.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/filebrowser.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/filmstrip.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/format.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/mainwindow.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/misc.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/palette.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/popups.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/schematic.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/scriptconsole.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/taskviewer.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/toolbar.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/viewer.less
+%%DATADIR%%/stuff/config/qss/Default/less/layouts/xsheet.less
+%%DATADIR%%/stuff/config/qss/Default/less/main.less
+%%DATADIR%%/stuff/config/qss/Default/less/themes/Blue.less
+%%DATADIR%%/stuff/config/qss/Default/less/themes/Dark.less
+%%DATADIR%%/stuff/config/qss/Default/less/themes/Light.less
+%%DATADIR%%/stuff/config/qss/Default/less/themes/Neutral.less
+%%DATADIR%%/stuff/config/qss/Light/Light.qss
+%%DATADIR%%/stuff/config/qss/Neutral/Neutral.qss
+%%DATADIR%%/stuff/config/reslist.txt
+%%DATADIR%%/stuff/config/safearea.ini
+%%DATADIR%%/stuff/config/versioncontrol.xml
+%%DATADIR%%/stuff/doc/AddIno.pdf
+%%DATADIR%%/stuff/doc/BlurIno.pdf
+%%DATADIR%%/stuff/doc/BokehIwa.html
+%%DATADIR%%/stuff/doc/BokehRefIwa.html
+%%DATADIR%%/stuff/doc/ChannelSelectorIno.pdf
+%%DATADIR%%/stuff/doc/ColorBurnIno.pdf
+%%DATADIR%%/stuff/doc/ColorDodgeIno.pdf
+%%DATADIR%%/stuff/doc/CrossDissolveIno.pdf
+%%DATADIR%%/stuff/doc/DarkenIno.pdf
+%%DATADIR%%/stuff/doc/DarkerColorIno.pdf
+%%DATADIR%%/stuff/doc/DensityIno.pdf
+%%DATADIR%%/stuff/doc/DivideIno.pdf
+%%DATADIR%%/stuff/doc/FogIno.pdf
+%%DATADIR%%/stuff/doc/HLSAddIno.pdf
+%%DATADIR%%/stuff/doc/HLSAdjustIno.pdf
+%%DATADIR%%/stuff/doc/HLSNoiseIno.pdf
+%%DATADIR%%/stuff/doc/HSVAddIno.pdf
+%%DATADIR%%/stuff/doc/HSVAdjustIno.pdf
+%%DATADIR%%/stuff/doc/HSVNoiseIno.pdf
+%%DATADIR%%/stuff/doc/HardLightIno.pdf
+%%DATADIR%%/stuff/doc/HardMixIno.pdf
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_boost.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_dwango.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_glew.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_gotoblas.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_kissfft.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_libjpeg-turbo.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_libjpeg.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_libtiff.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_lz4.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_openblas.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_opencv.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_qt.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_superlu.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_tahoma2d.txt
+%%DATADIR%%/stuff/doc/LICENSE/LICENSE_winink.txt
+%%DATADIR%%/stuff/doc/LICENSE/notice_about_modified_qt.txt
+%%DATADIR%%/stuff/doc/LevelAutoIno.pdf
+%%DATADIR%%/stuff/doc/LevelMasterIno.pdf
+%%DATADIR%%/stuff/doc/LevelRGBAIno.pdf
+%%DATADIR%%/stuff/doc/LightenIno.pdf
+%%DATADIR%%/stuff/doc/LighterColorIno.pdf
+%%DATADIR%%/stuff/doc/LinearBurnIno.pdf
+%%DATADIR%%/stuff/doc/LinearDodgeIno.pdf
+%%DATADIR%%/stuff/doc/LinearLightIno.pdf
+%%DATADIR%%/stuff/doc/MaxMinIno.pdf
+%%DATADIR%%/stuff/doc/MedianIno.pdf
+%%DATADIR%%/stuff/doc/MotionBlurIno.pdf
+%%DATADIR%%/stuff/doc/MotionBlurIwa.html
+%%DATADIR%%/stuff/doc/MotionWindIno.pdf
+%%DATADIR%%/stuff/doc/MultiplyIno.pdf
+%%DATADIR%%/stuff/doc/NegateIno.pdf
+%%DATADIR%%/stuff/doc/OverIno.pdf
+%%DATADIR%%/stuff/doc/OverlayIno.pdf
+%%DATADIR%%/stuff/doc/PNCloudsIno.pdf
+%%DATADIR%%/stuff/doc/PNPerspectiveIwa.html
+%%DATADIR%%/stuff/doc/PerspectiveDistortIwa.html
+%%DATADIR%%/stuff/doc/PinLightIno.pdf
+%%DATADIR%%/stuff/doc/RadialBlurIno.pdf
+%%DATADIR%%/stuff/doc/ScreenIno.pdf
+%%DATADIR%%/stuff/doc/SoftLightIno.pdf
+%%DATADIR%%/stuff/doc/SpectrumIwa.html
+%%DATADIR%%/stuff/doc/SpinBlurIno.pdf
+%%DATADIR%%/stuff/doc/SubtractIno.pdf
+%%DATADIR%%/stuff/doc/TileIwa.html
+%%DATADIR%%/stuff/doc/VividLightIno.pdf
+%%DATADIR%%/stuff/doc/WarpHVIno.pdf
+%%DATADIR%%/stuff/doc/español/AddIno.pdf
+%%DATADIR%%/stuff/doc/español/BlurIno.pdf
+%%DATADIR%%/stuff/doc/español/BokehIwa.html
+%%DATADIR%%/stuff/doc/español/BokehRefIwa.html
+%%DATADIR%%/stuff/doc/español/ChannelSelectorIno.pdf
+%%DATADIR%%/stuff/doc/español/ColorBurnIno.pdf
+%%DATADIR%%/stuff/doc/español/ColorDodgeIno.pdf
+%%DATADIR%%/stuff/doc/español/CrossDissolveIno.pdf
+%%DATADIR%%/stuff/doc/español/DarkenIno.pdf
+%%DATADIR%%/stuff/doc/español/DarkerColorIno.pdf
+%%DATADIR%%/stuff/doc/español/DensityIno.pdf
+%%DATADIR%%/stuff/doc/español/DivideIno.pdf
+%%DATADIR%%/stuff/doc/español/FogIno.pdf
+%%DATADIR%%/stuff/doc/español/HLSAddIno.pdf
+%%DATADIR%%/stuff/doc/español/HLSAdjustIno.pdf
+%%DATADIR%%/stuff/doc/español/HLSNoiseIno.pdf
+%%DATADIR%%/stuff/doc/español/HSVAddIno.pdf
+%%DATADIR%%/stuff/doc/español/HSVAdjustIno.pdf
+%%DATADIR%%/stuff/doc/español/HSVNoiseIno.pdf
+%%DATADIR%%/stuff/doc/español/HardLightIno.pdf
+%%DATADIR%%/stuff/doc/español/HardMixIno.pdf
+%%DATADIR%%/stuff/doc/español/LevelAutoIno.pdf
+%%DATADIR%%/stuff/doc/español/LevelMasterIno.pdf
+%%DATADIR%%/stuff/doc/español/LevelRGBAIno.pdf
+%%DATADIR%%/stuff/doc/español/LightenIno.pdf
+%%DATADIR%%/stuff/doc/español/LighterColorIno.pdf
+%%DATADIR%%/stuff/doc/español/LinearBurnIno.pdf
+%%DATADIR%%/stuff/doc/español/LinearDodgeIno.pdf
+%%DATADIR%%/stuff/doc/español/LinearLightIno.pdf
+%%DATADIR%%/stuff/doc/español/MaxMinIno.pdf
+%%DATADIR%%/stuff/doc/español/MedianIno.pdf
+%%DATADIR%%/stuff/doc/español/MotionBlurIno.pdf
+%%DATADIR%%/stuff/doc/español/MotionBlurIwa.html
+%%DATADIR%%/stuff/doc/español/MotionWindIno.pdf
+%%DATADIR%%/stuff/doc/español/MultiplyIno.pdf
+%%DATADIR%%/stuff/doc/español/NegateIno.pdf
+%%DATADIR%%/stuff/doc/español/OverIno.pdf
+%%DATADIR%%/stuff/doc/español/OverlayIno.pdf
+%%DATADIR%%/stuff/doc/español/PNCloudsIno.pdf
+%%DATADIR%%/stuff/doc/español/PNPerspectiveIwa.html
+%%DATADIR%%/stuff/doc/español/PerspectiveDistortIwa.html
+%%DATADIR%%/stuff/doc/español/PinLightIno.pdf
+%%DATADIR%%/stuff/doc/español/RadialBlurIno.pdf
+%%DATADIR%%/stuff/doc/español/ScreenIno.pdf
+%%DATADIR%%/stuff/doc/español/SoftLightIno.pdf
+%%DATADIR%%/stuff/doc/español/SpectrumIwa.html
+%%DATADIR%%/stuff/doc/español/SpinBlurIno.pdf
+%%DATADIR%%/stuff/doc/español/SubtractIno.pdf
+%%DATADIR%%/stuff/doc/español/TileIwa.html
+%%DATADIR%%/stuff/doc/español/VividLightIno.pdf
+%%DATADIR%%/stuff/doc/español/WarpHVIno.pdf
+%%DATADIR%%/stuff/doc/español/img/fx_iwa_bokeh.png
+%%DATADIR%%/stuff/doc/español/img/fx_iwa_bokeh_ref.png
+%%DATADIR%%/stuff/doc/español/img/fx_iwa_motionblur.png
+%%DATADIR%%/stuff/doc/español/img/fx_iwa_perspective_distort.png
+%%DATADIR%%/stuff/doc/español/img/fx_iwa_pn_perspective.png
+%%DATADIR%%/stuff/doc/español/img/fx_iwa_spectrum.png
+%%DATADIR%%/stuff/doc/español/img/fx_iwa_tile.png
+%%DATADIR%%/stuff/doc/español/img/motionblur.png
+%%DATADIR%%/stuff/doc/español/img/perspective_distort.png
+%%DATADIR%%/stuff/doc/español/particlesFx.html
+%%DATADIR%%/stuff/doc/img/fx_iwa_bokeh.png
+%%DATADIR%%/stuff/doc/img/fx_iwa_bokeh_ref.png
+%%DATADIR%%/stuff/doc/img/fx_iwa_motionblur.png
+%%DATADIR%%/stuff/doc/img/fx_iwa_perspective_distort.png
+%%DATADIR%%/stuff/doc/img/fx_iwa_pn_perspective.png
+%%DATADIR%%/stuff/doc/img/fx_iwa_spectrum.png
+%%DATADIR%%/stuff/doc/img/fx_iwa_tile.png
+%%DATADIR%%/stuff/doc/img/motionblur.png
+%%DATADIR%%/stuff/doc/img/perspective_distort.png
+%%DATADIR%%/stuff/doc/particlesFx.html
+%%DATADIR%%/stuff/doc/日本語/AddIno.pdf
+%%DATADIR%%/stuff/doc/日本語/BlurIno.pdf
+%%DATADIR%%/stuff/doc/日本語/BokehIwa.html
+%%DATADIR%%/stuff/doc/日本語/BokehRefIwa.html
+%%DATADIR%%/stuff/doc/日本語/ChannelSelectorIno.pdf
+%%DATADIR%%/stuff/doc/日本語/ColorBurnIno.pdf
+%%DATADIR%%/stuff/doc/日本語/ColorDodgeIno.pdf
+%%DATADIR%%/stuff/doc/日本語/CrossDissolveIno.pdf
+%%DATADIR%%/stuff/doc/日本語/DarkenIno.pdf
+%%DATADIR%%/stuff/doc/日本語/DarkerColorIno.pdf
+%%DATADIR%%/stuff/doc/日本語/DensityIno.pdf
+%%DATADIR%%/stuff/doc/日本語/DivideIno.pdf
+%%DATADIR%%/stuff/doc/日本語/FogIno.pdf
+%%DATADIR%%/stuff/doc/日本語/HLSAddIno.pdf
+%%DATADIR%%/stuff/doc/日本語/HLSAdjustIno.pdf
+%%DATADIR%%/stuff/doc/日本語/HLSNoiseIno.pdf
+%%DATADIR%%/stuff/doc/日本語/HSVAddIno.pdf
+%%DATADIR%%/stuff/doc/日本語/HSVAdjustIno.pdf
+%%DATADIR%%/stuff/doc/日本語/HSVNoiseIno.pdf
+%%DATADIR%%/stuff/doc/日本語/HardLightIno.pdf
+%%DATADIR%%/stuff/doc/日本語/HardMixIno.pdf
+%%DATADIR%%/stuff/doc/日本語/LevelAutoIno.pdf
+%%DATADIR%%/stuff/doc/日本語/LevelMasterIno.pdf
+%%DATADIR%%/stuff/doc/日本語/LevelRGBAIno.pdf
+%%DATADIR%%/stuff/doc/日本語/LightenIno.pdf
+%%DATADIR%%/stuff/doc/日本語/LighterColorIno.pdf
+%%DATADIR%%/stuff/doc/日本語/LinearBurnIno.pdf
+%%DATADIR%%/stuff/doc/日本語/LinearDodgeIno.pdf
+%%DATADIR%%/stuff/doc/日本語/LinearLightIno.pdf
+%%DATADIR%%/stuff/doc/日本語/MaxMinIno.pdf
+%%DATADIR%%/stuff/doc/日本語/MedianIno.pdf
+%%DATADIR%%/stuff/doc/日本語/MotionBlurIno.pdf
+%%DATADIR%%/stuff/doc/日本語/MotionBlurIwa.html
+%%DATADIR%%/stuff/doc/日本語/MotionWindIno.pdf
+%%DATADIR%%/stuff/doc/日本語/MultiplyIno.pdf
+%%DATADIR%%/stuff/doc/日本語/NegateIno.pdf
+%%DATADIR%%/stuff/doc/日本語/OverIno.pdf
+%%DATADIR%%/stuff/doc/日本語/OverlayIno.pdf
+%%DATADIR%%/stuff/doc/日本語/PNCloudsIno.pdf
+%%DATADIR%%/stuff/doc/日本語/PNPerspectiveIwa.html
+%%DATADIR%%/stuff/doc/日本語/PerspectiveDistortIwa.html
+%%DATADIR%%/stuff/doc/日本語/PinLightIno.pdf
+%%DATADIR%%/stuff/doc/日本語/RadialBlurIno.pdf
+%%DATADIR%%/stuff/doc/日本語/ScreenIno.pdf
+%%DATADIR%%/stuff/doc/日本語/SoftLightIno.pdf
+%%DATADIR%%/stuff/doc/日本語/SpectrumIwa.html
+%%DATADIR%%/stuff/doc/日本語/SpinBlurIno.pdf
+%%DATADIR%%/stuff/doc/日本語/SubtractIno.pdf
+%%DATADIR%%/stuff/doc/日本語/TileIwa.html
+%%DATADIR%%/stuff/doc/日本語/VividLightIno.pdf
+%%DATADIR%%/stuff/doc/日本語/WarpHVIno.pdf
+%%DATADIR%%/stuff/doc/日本語/img/fx_iwa_bokeh.png
+%%DATADIR%%/stuff/doc/日本語/img/fx_iwa_bokeh_ref.png
+%%DATADIR%%/stuff/doc/日本語/img/fx_iwa_motionblur.png
+%%DATADIR%%/stuff/doc/日本語/img/fx_iwa_perspective_distort.png
+%%DATADIR%%/stuff/doc/日本語/img/fx_iwa_pn_perspective.png
+%%DATADIR%%/stuff/doc/日本語/img/fx_iwa_spectrum.png
+%%DATADIR%%/stuff/doc/日本語/img/fx_iwa_tile.png
+%%DATADIR%%/stuff/doc/日本語/img/motionblur.png
+%%DATADIR%%/stuff/doc/日本語/img/perspective_distort.png
+%%DATADIR%%/stuff/doc/日本語/particlesFx.html
+%%DATADIR%%/stuff/fxs/presets/STD_particlesFx/Bubbles.fx
+%%DATADIR%%/stuff/fxs/presets/STD_particlesFx/Falling leaves.fx
+%%DATADIR%%/stuff/fxs/presets/STD_particlesFx/Falling snow.fx
+%%DATADIR%%/stuff/fxs/presets/STD_particlesFx/Fireworks.fx
+%%DATADIR%%/stuff/fxs/presets/STD_particlesFx/Flock.fx
+%%DATADIR%%/stuff/fxs/presets/STD_particlesFx/Grass.fx
+%%DATADIR%%/stuff/fxs/presets/STD_particlesFx/Rain.fx
+%%DATADIR%%/stuff/fxs/presets/STD_particlesFx/Smoke.fx
+%%DATADIR%%/stuff/fxs/presets/STD_particlesFx/Spot smoke.fx
+%%DATADIR%%/stuff/fxs/presets/STD_particlesFx/Starfield.fx
+%%DATADIR%%/stuff/fxs/presets/STD_particlesFx/Steam.fx
+%%DATADIR%%/stuff/fxs/presets/STD_particlesFx/Trail smoke.fx
+%%DATADIR%%/stuff/fxs/presets/STD_particlesFx/Water bubbles.fx
+%%DATADIR%%/stuff/library/clapperboards/images/board1.png
+%%DATADIR%%/stuff/library/clapperboards/preset_sample.clapperboard
+%%DATADIR%%/stuff/library/custom styles/Arc.0001.png
+%%DATADIR%%/stuff/library/custom styles/Arc.0002.png
+%%DATADIR%%/stuff/library/custom styles/Arc.0003.png
+%%DATADIR%%/stuff/library/custom styles/Ball.0001.png
+%%DATADIR%%/stuff/library/custom styles/Ball.0002.png
+%%DATADIR%%/stuff/library/custom styles/Ball.0003.png
+%%DATADIR%%/stuff/library/custom styles/Bow.0001.png
+%%DATADIR%%/stuff/library/custom styles/Bow.0002.png
+%%DATADIR%%/stuff/library/custom styles/Bow.0003.png
+%%DATADIR%%/stuff/library/custom styles/Brush.0001.png
+%%DATADIR%%/stuff/library/custom styles/Brush.0002.png
+%%DATADIR%%/stuff/library/custom styles/Brush.0003.png
+%%DATADIR%%/stuff/library/custom styles/Brush2.0001.png
+%%DATADIR%%/stuff/library/custom styles/Brush2.0002.png
+%%DATADIR%%/stuff/library/custom styles/Brush2.0003.png
+%%DATADIR%%/stuff/library/custom styles/Brush2.0004.png
+%%DATADIR%%/stuff/library/custom styles/Candy.0001.png
+%%DATADIR%%/stuff/library/custom styles/Candy.0002.png
+%%DATADIR%%/stuff/library/custom styles/Candy.0003.png
+%%DATADIR%%/stuff/library/custom styles/Chick.0001.png
+%%DATADIR%%/stuff/library/custom styles/Chick.0002.png
+%%DATADIR%%/stuff/library/custom styles/Chick.0003.png
+%%DATADIR%%/stuff/library/custom styles/Dog.0001.png
+%%DATADIR%%/stuff/library/custom styles/Dog.0002.png
+%%DATADIR%%/stuff/library/custom styles/Dog.0003.png
+%%DATADIR%%/stuff/library/custom styles/Dog.0004.png
+%%DATADIR%%/stuff/library/custom styles/Fish2.0001.png
+%%DATADIR%%/stuff/library/custom styles/Fish2.0002.png
+%%DATADIR%%/stuff/library/custom styles/Fish2.0003.png
+%%DATADIR%%/stuff/library/custom styles/Fish3.0001.png
+%%DATADIR%%/stuff/library/custom styles/Fish3.0002.png
+%%DATADIR%%/stuff/library/custom styles/Fish3.0003.png
+%%DATADIR%%/stuff/library/custom styles/Fishbone.0001.png
+%%DATADIR%%/stuff/library/custom styles/Fishbone.0002.png
+%%DATADIR%%/stuff/library/custom styles/Fishbone.0003.png
+%%DATADIR%%/stuff/library/custom styles/Frame.0001.png
+%%DATADIR%%/stuff/library/custom styles/Frame.0002.png
+%%DATADIR%%/stuff/library/custom styles/Frame.0003.png
+%%DATADIR%%/stuff/library/custom styles/Fruit.0001.png
+%%DATADIR%%/stuff/library/custom styles/Fruit.0002.png
+%%DATADIR%%/stuff/library/custom styles/Fruit.0003.png
+%%DATADIR%%/stuff/library/custom styles/Icecream.0001.png
+%%DATADIR%%/stuff/library/custom styles/Icecream.0002.png
+%%DATADIR%%/stuff/library/custom styles/Icecream.0003.png
+%%DATADIR%%/stuff/library/custom styles/Icecream.0004.png
+%%DATADIR%%/stuff/library/custom styles/Ladybird.0001.png
+%%DATADIR%%/stuff/library/custom styles/Ladybird.0002.png
+%%DATADIR%%/stuff/library/custom styles/Ladybird.0003.png
+%%DATADIR%%/stuff/library/custom styles/Leaf2.0001.png
+%%DATADIR%%/stuff/library/custom styles/Leaf2.0002.png
+%%DATADIR%%/stuff/library/custom styles/Leaf2.0003.png
+%%DATADIR%%/stuff/library/custom styles/Leaf2.0004.png
+%%DATADIR%%/stuff/library/custom styles/Nail.0001.png
+%%DATADIR%%/stuff/library/custom styles/Nail.0002.png
+%%DATADIR%%/stuff/library/custom styles/Nail.0003.png
+%%DATADIR%%/stuff/library/custom styles/Orange.0001.png
+%%DATADIR%%/stuff/library/custom styles/Orange.0002.png
+%%DATADIR%%/stuff/library/custom styles/Orange.0003.png
+%%DATADIR%%/stuff/library/custom styles/Orange.0004.png
+%%DATADIR%%/stuff/library/custom styles/Pencil.0001.png
+%%DATADIR%%/stuff/library/custom styles/Pencil.0002.png
+%%DATADIR%%/stuff/library/custom styles/Pencil.0003.png
+%%DATADIR%%/stuff/library/custom styles/Pencil.0004.png
+%%DATADIR%%/stuff/library/custom styles/Spring.0001.png
+%%DATADIR%%/stuff/library/custom styles/Spring.0002.png
+%%DATADIR%%/stuff/library/custom styles/Spring.0003.png
+%%DATADIR%%/stuff/library/custom styles/Spring.0004.png
+%%DATADIR%%/stuff/library/custom styles/Sunflower.0001.png
+%%DATADIR%%/stuff/library/custom styles/Sunflower.0002.png
+%%DATADIR%%/stuff/library/custom styles/Sunflower.0003.png
+%%DATADIR%%/stuff/library/custom styles/Umbrella.0001.png
+%%DATADIR%%/stuff/library/custom styles/Umbrella.0002.png
+%%DATADIR%%/stuff/library/custom styles/Umbrella.0003.png
+%%DATADIR%%/stuff/library/custom styles/Umbrella.0004.png
+%%DATADIR%%/stuff/library/custom styles/ant.pli
+%%DATADIR%%/stuff/library/custom styles/atta.0001.png
+%%DATADIR%%/stuff/library/custom styles/atta.0002.png
+%%DATADIR%%/stuff/library/custom styles/atta.0003.png
+%%DATADIR%%/stuff/library/custom styles/atta.0004.png
+%%DATADIR%%/stuff/library/custom styles/atta.0005.png
+%%DATADIR%%/stuff/library/custom styles/atta.0006.png
+%%DATADIR%%/stuff/library/custom styles/atta.pli
+%%DATADIR%%/stuff/library/custom styles/ball.pli
+%%DATADIR%%/stuff/library/custom styles/bell.pli
+%%DATADIR%%/stuff/library/custom styles/big_.pli
+%%DATADIR%%/stuff/library/custom styles/bubb.pli
+%%DATADIR%%/stuff/library/custom styles/bubb2.0001.png
+%%DATADIR%%/stuff/library/custom styles/bubb2.0002.png
+%%DATADIR%%/stuff/library/custom styles/bubb2.0003.png
+%%DATADIR%%/stuff/library/custom styles/bubb2.0004.png
+%%DATADIR%%/stuff/library/custom styles/bubb2.0005.png
+%%DATADIR%%/stuff/library/custom styles/bubb2.0006.png
+%%DATADIR%%/stuff/library/custom styles/bubb2.0007.png
+%%DATADIR%%/stuff/library/custom styles/bubb2.0008.png
+%%DATADIR%%/stuff/library/custom styles/bubb2.0009.png
+%%DATADIR%%/stuff/library/custom styles/bubb2.0010.png
+%%DATADIR%%/stuff/library/custom styles/bubb2.pli
+%%DATADIR%%/stuff/library/custom styles/clou.pli
+%%DATADIR%%/stuff/library/custom styles/curl.pli
+%%DATADIR%%/stuff/library/custom styles/domino.0001.png
+%%DATADIR%%/stuff/library/custom styles/domino.0002.png
+%%DATADIR%%/stuff/library/custom styles/domino.0003.png
+%%DATADIR%%/stuff/library/custom styles/domino.0004.png
+%%DATADIR%%/stuff/library/custom styles/domino.pli
+%%DATADIR%%/stuff/library/custom styles/dots.pli
+%%DATADIR%%/stuff/library/custom styles/feat.pli
+%%DATADIR%%/stuff/library/custom styles/fish.pli
+%%DATADIR%%/stuff/library/custom styles/flow.0001.png
+%%DATADIR%%/stuff/library/custom styles/flow.0002.png
+%%DATADIR%%/stuff/library/custom styles/flow.0003.png
+%%DATADIR%%/stuff/library/custom styles/flow.0004.png
+%%DATADIR%%/stuff/library/custom styles/flow.pli
+%%DATADIR%%/stuff/library/custom styles/flow3.0001.png
+%%DATADIR%%/stuff/library/custom styles/flow3.0002.png
+%%DATADIR%%/stuff/library/custom styles/flow3.0003.png
+%%DATADIR%%/stuff/library/custom styles/flow3.0004.png
+%%DATADIR%%/stuff/library/custom styles/flow3.pli
+%%DATADIR%%/stuff/library/custom styles/flow4.0001.png
+%%DATADIR%%/stuff/library/custom styles/flow4.0002.png
+%%DATADIR%%/stuff/library/custom styles/flow4.0003.png
+%%DATADIR%%/stuff/library/custom styles/flow4.pli
+%%DATADIR%%/stuff/library/custom styles/flower.pli
+%%DATADIR%%/stuff/library/custom styles/foot.pli
+%%DATADIR%%/stuff/library/custom styles/grai.pli
+%%DATADIR%%/stuff/library/custom styles/gras.pli
+%%DATADIR%%/stuff/library/custom styles/gutt.pli
+%%DATADIR%%/stuff/library/custom styles/half.0001.png
+%%DATADIR%%/stuff/library/custom styles/half.0002.png
+%%DATADIR%%/stuff/library/custom styles/half.pli
+%%DATADIR%%/stuff/library/custom styles/hedg.0001.png
+%%DATADIR%%/stuff/library/custom styles/hedg.0002.png
+%%DATADIR%%/stuff/library/custom styles/hedg.0003.png
+%%DATADIR%%/stuff/library/custom styles/hedg.0004.png
+%%DATADIR%%/stuff/library/custom styles/hedg.0005.png
+%%DATADIR%%/stuff/library/custom styles/hedg.0006.png
+%%DATADIR%%/stuff/library/custom styles/hedg.pli
+%%DATADIR%%/stuff/library/custom styles/hook.pli
+%%DATADIR%%/stuff/library/custom styles/ink.pli
+%%DATADIR%%/stuff/library/custom styles/leaf.pli
+%%DATADIR%%/stuff/library/custom styles/myra.pli
+%%DATADIR%%/stuff/library/custom styles/pansee.pli
+%%DATADIR%%/stuff/library/custom styles/pare.0001.png
+%%DATADIR%%/stuff/library/custom styles/pare.0002.png
+%%DATADIR%%/stuff/library/custom styles/pare.pli
+%%DATADIR%%/stuff/library/custom styles/pare2.0001.png
+%%DATADIR%%/stuff/library/custom styles/pare2.0002.png
+%%DATADIR%%/stuff/library/custom styles/pare2.pli
+%%DATADIR%%/stuff/library/custom styles/plum.pli
+%%DATADIR%%/stuff/library/custom styles/rain.pli
+%%DATADIR%%/stuff/library/custom styles/rice.0001.png
+%%DATADIR%%/stuff/library/custom styles/rice.0002.png
+%%DATADIR%%/stuff/library/custom styles/rice.0003.png
+%%DATADIR%%/stuff/library/custom styles/rice.0004.png
+%%DATADIR%%/stuff/library/custom styles/rice.0005.png
+%%DATADIR%%/stuff/library/custom styles/rice.0006.png
+%%DATADIR%%/stuff/library/custom styles/rice.0007.png
+%%DATADIR%%/stuff/library/custom styles/rice.pli
+%%DATADIR%%/stuff/library/custom styles/sang.pli
+%%DATADIR%%/stuff/library/custom styles/scal.pli
+%%DATADIR%%/stuff/library/custom styles/scho.pli
+%%DATADIR%%/stuff/library/custom styles/sign.pli
+%%DATADIR%%/stuff/library/custom styles/stai.0001.png
+%%DATADIR%%/stuff/library/custom styles/stai.0002.png
+%%DATADIR%%/stuff/library/custom styles/stai.0003.png
+%%DATADIR%%/stuff/library/custom styles/stai.0004.png
+%%DATADIR%%/stuff/library/custom styles/stai.pli
+%%DATADIR%%/stuff/library/custom styles/star.0001.png
+%%DATADIR%%/stuff/library/custom styles/star.0002.png
+%%DATADIR%%/stuff/library/custom styles/star.0003.png
+%%DATADIR%%/stuff/library/custom styles/star.0004.png
+%%DATADIR%%/stuff/library/custom styles/star.0005.png
+%%DATADIR%%/stuff/library/custom styles/star.0006.png
+%%DATADIR%%/stuff/library/custom styles/star.0007.png
+%%DATADIR%%/stuff/library/custom styles/star.0008.png
+%%DATADIR%%/stuff/library/custom styles/star.0009.png
+%%DATADIR%%/stuff/library/custom styles/star.pli
+%%DATADIR%%/stuff/library/custom styles/thor.pli
+%%DATADIR%%/stuff/library/custom styles/thor2.pli
+%%DATADIR%%/stuff/library/custom styles/wave.pli
+%%DATADIR%%/stuff/library/custom styles/wave2.pli
+%%DATADIR%%/stuff/library/mypaint brushes/Licenses.txt
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/001_sketch.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/001_sketch_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/005_ink.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/005_ink_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/009_fill.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/009_fill_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/010_paint.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/010_paint_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/020_water.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/020_water_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/029_watercolor_texture.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/029_watercolor_texture_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/038_crayon.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/038_crayon_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/039_chalk.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/039_chalk_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/040_marker.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/040_marker_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/041_hatch.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/041_hatch_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/042_stipple.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/042_stipple_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/050_clouds.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/050_clouds_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/051_grass.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/051_grass_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/052_leaves.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/052_leaves_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/058_fur.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/058_fur_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/059_fur2.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/059_fur2_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/060_eraser.myb
+%%DATADIR%%/stuff/library/mypaint brushes/aotz/060_eraser_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/blend+paint.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/blend+paint_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/blending_knife.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/blending_knife_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/blur.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/blur_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/brush.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/brush_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/bulk.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/bulk_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/calligraphy.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/calligraphy_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/charcoal.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/charcoal_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/coarse_bulk_1.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/coarse_bulk_1_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/coarse_bulk_2.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/coarse_bulk_2_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/coarse_bulk_3.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/coarse_bulk_3_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/dry_brush.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/dry_brush_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/imp_blending.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/imp_blending_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/imp_details.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/imp_details_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/impressionism.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/impressionism_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/ink_blot.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/ink_blot_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/ink_eraser.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/ink_eraser_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/kabura.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/kabura_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/knife.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/knife_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/long_grass.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/long_grass_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/marker_fat.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/marker_fat_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/marker_small.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/marker_small_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/modelling.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/modelling2.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/modelling2_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/modelling_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/pen.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/pen_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/pencil.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/pencil_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/pointy_ink.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/pointy_ink_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/puantilism.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/puantilism2.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/puantilism2_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/puantilism_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/rounded.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/rounded_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/short_grass.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/short_grass_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/slow_ink.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/slow_ink_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/smudge+paint.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/smudge+paint_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/smudge.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/smudge_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/textured_ink.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/textured_ink_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/classic/wet_knife.myb
+%%DATADIR%%/stuff/library/mypaint brushes/classic/wet_knife_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/2B_pencil.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/2B_pencil_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/4H_pencil.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/4H_pencil_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/airbrush.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/airbrush_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/ballpen.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/ballpen_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/basic_digital_brush.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/basic_digital_brush_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/basic_digital_brush_smudging.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/basic_digital_brush_smudging_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/basic_digital_knife.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/basic_digital_knife_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/basic_digital_knife_smudging.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/basic_digital_knife_smudging_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/blending.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/blending_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/brush.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/brush_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/chalk.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/chalk_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/detail_brush_large.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/detail_brush_large_glazing.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/detail_brush_large_glazing_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/detail_brush_large_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/detail_brush_thin.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/detail_brush_thin_glazing.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/detail_brush_thin_glazing_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/detail_brush_thin_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/fill.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/fill_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/grainy_blending.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/grainy_blending_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/kneaded_eraser.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/kneaded_eraser_large.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/kneaded_eraser_large_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/kneaded_eraser_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/large_hard_eraser.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/large_hard_eraser_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/large_watercolor_fringe.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/large_watercolor_fringe_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/liner.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/liner_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/only_water_fringe.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/only_water_fringe_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/pen-note.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/pen-note_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/pen.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/pen_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/readme.txt
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/rigger_brush.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/rigger_brush_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/rigger_brush_thin.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/rigger_brush_thin_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/rough.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/rough_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/soft-dip-pen.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/soft-dip-pen_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/sponge_smudging.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/sponge_smudging_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/spray.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/spray2.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/spray2_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/spray_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/thin_hard_eraser.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/thin_hard_eraser_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/thin_watercolor.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/thin_watercolor_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/watercolor_expressive.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/watercolor_expressive_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/watercolor_glazing.myb
+%%DATADIR%%/stuff/library/mypaint brushes/deevad/watercolor_glazing_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/1pixel.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/1pixel_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/DNA_brush.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/DNA_brush_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/basic.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/basic_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/bubble.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/bubble_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/fur.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/fur_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/glow.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/glow_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/hard_blot.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/hard_blot_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/hard_sting.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/hard_sting_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/irregular_ink.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/irregular_ink_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/leaves.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/leaves_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/particules_3.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/particules_3_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/particules_eraser.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/particules_eraser_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/pick_and_drag.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/pick_and_drag_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/pixel_hardink.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/pixel_hardink_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/pixelblocking.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/pixelblocking_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/sewing.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/sewing_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/small_blot.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/small_blot_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/soft.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/soft_irregular.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/soft_irregular_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/soft_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/spaced-blot.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/spaced-blot_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/speed_blot.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/speed_blot_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/subtle_pencil.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/subtle_pencil_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/track.myb
+%%DATADIR%%/stuff/library/mypaint brushes/experimental/track_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/Airbrush_a.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/Airbrush_a_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/Dirty_Transparent_sk.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/Dirty_Transparent_sk_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/ReadMe.txt
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/Sketcher2_sk.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/Sketcher2_sk_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/Smear_sm.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/Smear_sm_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/airbruch_press_a.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/airbruch_press_a_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/airsmudge_a.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/airsmudge_a_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/airsmudgeultimate_sk.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/airsmudgeultimate_sk_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/classic_sk.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/classic_sk_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/classicroundblock_static_c.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/classicroundblock_static_c_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/extreme_round_l.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/extreme_round_l_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/fill_c.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/fill_c_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/flat_bar_l.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/flat_bar_l_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/ink-slowline_s.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/ink-slowline_s_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/ink_slow_s.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/ink_slow_s_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/inkster_l.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/inkster_l_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/paint_barrr_sm.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/paint_barrr_sm_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/paint_radius_2_sm.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/paint_radius_2_sm_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/paint_sm.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/paint_sm_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/smudge_ink(0.7)_sm.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/smudge_ink(0.7)_sm_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/wet_paint_sm.myb
+%%DATADIR%%/stuff/library/mypaint brushes/kaerhon_v1/wet_paint_sm_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Bloodline.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Bloodline_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Calligreffects.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Calligreffects_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Grafight.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Grafight_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Hatchling.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Hatchling_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Inker.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Inker_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Kong_Letterer.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Kong_Letterer_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Liner.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Liner_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Mega_Letterer.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Mega_Letterer_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Oneraser.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Oneraser_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Pipe_Dream.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Pipe_Dream_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Stippler_Stickler.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Stippler_Stickler_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Text_Letterer.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Text_Letterer_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Watacolor_Brush.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Watacolor_Brush_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Watacolor_Marker.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Watacolor_Marker_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Watacolor_Pencil.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Watacolor_Pencil_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Watacolor_Swirl.myb
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/Watacolor_Swirl_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/order.conf
+%%DATADIR%%/stuff/library/mypaint brushes/mojo_v1/readme.txt
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/100%_Opaque.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/100%_Opaque_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/2B_pencil.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/2B_pencil_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/B-pencil.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/B-pencil_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Beamlight.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Beamlight_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/BigAirbrush.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/BigAirbrush_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Blur_Fast.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Blur_Fast_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Classic_Paint.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Classic_Paint_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Clouds.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Clouds_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Delayed_.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Delayed__prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Dirty_Noise.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Dirty_Noise_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Glow_Airbrush.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Glow_Airbrush_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Grain.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Grain_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Hard_Eraser.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Hard_Eraser_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Knife.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Knife_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Marker.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Marker_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/P._Shade.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/P._Shade_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Pastel_1.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Pastel_1_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Pen.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/PenBrush.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/PenBrush_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Pen_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/RS_blendOP.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/RS_blendOP_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Round.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Round_Bl.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Round_Bl_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Round_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Sketch_1.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Sketch_1_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Smear.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Smear_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Soft_Eraser.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Soft_Eraser_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Thin_Pen.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Thin_Pen_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Wet_Direction.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/Wet_Direction_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/wet_round.myb
+%%DATADIR%%/stuff/library/mypaint brushes/ramon/wet_round_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-03-only-water.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-03-only-water_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-03-paint.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-03-paint_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-03-with-water.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-03-with-water_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-04-only-water.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-04-only-water_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-04-paint.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-04-paint_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-04-with-water.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-04-with-water_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-05-only-water.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-05-only-water_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-05-paint.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-05-paint_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-05-with-water.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/acrylic-05-with-water_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/charcoal-01.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/charcoal-01_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/charcoal-03.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/charcoal-03_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/charcoal-04.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/charcoal-04_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/charcoal-blur1.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/charcoal-blur1_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/marker-01.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/marker-01_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/marker-05.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/marker-05_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/oil-01-clean.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/oil-01-clean_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/oil-01-paint.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/oil-01-paint_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/oil-03-clean.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/oil-03-clean_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/oil-03-paint.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/oil-03-paint_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/oil-06-clean.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/oil-06-clean_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/oil-06-paint.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/oil-06-paint_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/oil-mop.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/oil-mop_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/pencil-2b.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/pencil-2b_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/pencil-8b.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/pencil-8b_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/splatter-02.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/splatter-02_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/splatter-04.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/splatter-04_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/texture-03.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/texture-03_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/texture-06.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/texture-06_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/texture-12.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/texture-12_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/water-01.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/water-01_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/water-02.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/water-02_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/water-05.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/water-05_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/water-06.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/water-06_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/watercolor-02-paint.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/watercolor-02-paint_prev.png
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/watercolor-02-water.myb
+%%DATADIR%%/stuff/library/mypaint brushes/tanda/watercolor-02-water_prev.png
+%%DATADIR%%/stuff/library/particles/beehive.0001.tif
+%%DATADIR%%/stuff/library/particles/bird.0001.tif
+%%DATADIR%%/stuff/library/particles/bird.0002.tif
+%%DATADIR%%/stuff/library/particles/bird.0003.tif
+%%DATADIR%%/stuff/library/particles/bird.0004.tif
+%%DATADIR%%/stuff/library/particles/bird.0005.tif
+%%DATADIR%%/stuff/library/particles/bird.0006.tif
+%%DATADIR%%/stuff/library/particles/bird.0007.tif
+%%DATADIR%%/stuff/library/particles/bird.0008.tif
+%%DATADIR%%/stuff/library/particles/bird.0009.tif
+%%DATADIR%%/stuff/library/particles/bird.0010.tif
+%%DATADIR%%/stuff/library/particles/bird.0011.tif
+%%DATADIR%%/stuff/library/particles/bird.0012.tif
+%%DATADIR%%/stuff/library/particles/bird2.0001.tif
+%%DATADIR%%/stuff/library/particles/bird2.0002.tif
+%%DATADIR%%/stuff/library/particles/bird2.0003.tif
+%%DATADIR%%/stuff/library/particles/bird2.0004.tif
+%%DATADIR%%/stuff/library/particles/bird2.0005.tif
+%%DATADIR%%/stuff/library/particles/bird2.0006.tif
+%%DATADIR%%/stuff/library/particles/bird2.0007.tif
+%%DATADIR%%/stuff/library/particles/bird2.0008.tif
+%%DATADIR%%/stuff/library/particles/bird2.0009.tif
+%%DATADIR%%/stuff/library/particles/bird2.0010.tif
+%%DATADIR%%/stuff/library/particles/bird2.0011.tif
+%%DATADIR%%/stuff/library/particles/bird2.0012.tif
+%%DATADIR%%/stuff/library/particles/bird2.0013.tif
+%%DATADIR%%/stuff/library/particles/bird2.0014.tif
+%%DATADIR%%/stuff/library/particles/bird2.0015.tif
+%%DATADIR%%/stuff/library/particles/bird2.0016.tif
+%%DATADIR%%/stuff/library/particles/bird2.0017.tif
+%%DATADIR%%/stuff/library/particles/bird2.0018.tif
+%%DATADIR%%/stuff/library/particles/bird2.0019.tif
+%%DATADIR%%/stuff/library/particles/bird2.0020.tif
+%%DATADIR%%/stuff/library/particles/bird2.0021.tif
+%%DATADIR%%/stuff/library/particles/bird2.0022.tif
+%%DATADIR%%/stuff/library/particles/brushstroke.0001.tif
+%%DATADIR%%/stuff/library/particles/bubble.0001.tif
+%%DATADIR%%/stuff/library/particles/coalstroke.0001.tif
+%%DATADIR%%/stuff/library/particles/crater.0001.tif
+%%DATADIR%%/stuff/library/particles/crayon.0001.tif
+%%DATADIR%%/stuff/library/particles/dragonfly.0070.tif
+%%DATADIR%%/stuff/library/particles/dragonfly.0071.tif
+%%DATADIR%%/stuff/library/particles/dragonfly.0072.tif
+%%DATADIR%%/stuff/library/particles/dragonfly.0073.tif
+%%DATADIR%%/stuff/library/particles/dragonfly.0074.tif
+%%DATADIR%%/stuff/library/particles/dragonfly.0075.tif
+%%DATADIR%%/stuff/library/particles/dragonfly.0076.tif
+%%DATADIR%%/stuff/library/particles/drip.0001.tif
+%%DATADIR%%/stuff/library/particles/drop.0001.rgb
+%%DATADIR%%/stuff/library/particles/drop2.0001.tif
+%%DATADIR%%/stuff/library/particles/fire.0001.tif
+%%DATADIR%%/stuff/library/particles/fossil.0001.tif
+%%DATADIR%%/stuff/library/particles/fountainpen.0001.tif
+%%DATADIR%%/stuff/library/particles/grass.0001.rgb
+%%DATADIR%%/stuff/library/particles/grass.0002.rgb
+%%DATADIR%%/stuff/library/particles/grass.0003.rgb
+%%DATADIR%%/stuff/library/particles/grass.0004.rgb
+%%DATADIR%%/stuff/library/particles/grass.0005.rgb
+%%DATADIR%%/stuff/library/particles/grass.0006.rgb
+%%DATADIR%%/stuff/library/particles/grass.0007.rgb
+%%DATADIR%%/stuff/library/particles/grass.0008.rgb
+%%DATADIR%%/stuff/library/particles/grass.0009.rgb
+%%DATADIR%%/stuff/library/particles/grass.0010.rgb
+%%DATADIR%%/stuff/library/particles/grass.0011.rgb
+%%DATADIR%%/stuff/library/particles/grass.0012.rgb
+%%DATADIR%%/stuff/library/particles/grass.0013.rgb
+%%DATADIR%%/stuff/library/particles/grass.0014.rgb
+%%DATADIR%%/stuff/library/particles/grass.0015.rgb
+%%DATADIR%%/stuff/library/particles/grass.0016.rgb
+%%DATADIR%%/stuff/library/particles/leaf.0001.rgb
+%%DATADIR%%/stuff/library/particles/leaf.0002.rgb
+%%DATADIR%%/stuff/library/particles/leaf.0003.rgb
+%%DATADIR%%/stuff/library/particles/leaf.0004.rgb
+%%DATADIR%%/stuff/library/particles/leaf2.0001.rgb
+%%DATADIR%%/stuff/library/particles/leaf2.0002.rgb
+%%DATADIR%%/stuff/library/particles/leaf2.0003.rgb
+%%DATADIR%%/stuff/library/particles/leaf2.0004.rgb
+%%DATADIR%%/stuff/library/particles/leaf2.0005.rgb
+%%DATADIR%%/stuff/library/particles/leaf2.0006.rgb
+%%DATADIR%%/stuff/library/particles/leaf2.0007.rgb
+%%DATADIR%%/stuff/library/particles/opripple.0001.tif
+%%DATADIR%%/stuff/library/particles/opripple.0002.tif
+%%DATADIR%%/stuff/library/particles/opripple.0003.tif
+%%DATADIR%%/stuff/library/particles/opripple.0004.tif
+%%DATADIR%%/stuff/library/particles/opripple.0005.tif
+%%DATADIR%%/stuff/library/particles/opripple.0006.tif
+%%DATADIR%%/stuff/library/particles/opripple.0007.tif
+%%DATADIR%%/stuff/library/particles/opripple.0008.tif
+%%DATADIR%%/stuff/library/particles/opripple.0009.tif
+%%DATADIR%%/stuff/library/particles/opripple.0010.tif
+%%DATADIR%%/stuff/library/particles/opripple.0011.tif
+%%DATADIR%%/stuff/library/particles/opripple.0012.tif
+%%DATADIR%%/stuff/library/particles/opripple.0013.tif
+%%DATADIR%%/stuff/library/particles/opripple.0014.tif
+%%DATADIR%%/stuff/library/particles/opripple.0015.tif
+%%DATADIR%%/stuff/library/particles/opripple.0016.tif
+%%DATADIR%%/stuff/library/particles/point.0001.rgb
+%%DATADIR%%/stuff/library/particles/raindrop.0001.tif
+%%DATADIR%%/stuff/library/particles/scrawl.0001.tif
+%%DATADIR%%/stuff/library/particles/smoke.0001.tif
+%%DATADIR%%/stuff/library/particles/smoke.0002.tif
+%%DATADIR%%/stuff/library/particles/smoke.0003.tif
+%%DATADIR%%/stuff/library/particles/smoke.0004.tif
+%%DATADIR%%/stuff/library/particles/smoke.0005.tif
+%%DATADIR%%/stuff/library/particles/smoke.0006.tif
+%%DATADIR%%/stuff/library/particles/smoke.0007.tif
+%%DATADIR%%/stuff/library/particles/smoke.0008.tif
+%%DATADIR%%/stuff/library/particles/smoke.0009.tif
+%%DATADIR%%/stuff/library/particles/smoke.0010.tif
+%%DATADIR%%/stuff/library/particles/snowflake.0001.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0001.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0002.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0003.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0004.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0005.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0006.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0007.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0008.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0009.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0010.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0011.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0012.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0013.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0014.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0015.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0016.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0017.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0018.tif
+%%DATADIR%%/stuff/library/particles/snowflakerot.0019.tif
+%%DATADIR%%/stuff/library/particles/splash1.0001.rgb
+%%DATADIR%%/stuff/library/particles/splash1.0002.rgb
+%%DATADIR%%/stuff/library/particles/splash1.0003.rgb
+%%DATADIR%%/stuff/library/particles/splash1.0004.rgb
+%%DATADIR%%/stuff/library/particles/splash1.0005.rgb
+%%DATADIR%%/stuff/library/particles/splash1.0006.rgb
+%%DATADIR%%/stuff/library/particles/splash1.0007.rgb
+%%DATADIR%%/stuff/library/particles/splash1.0008.rgb
+%%DATADIR%%/stuff/library/particles/splash2.0001.rgb
+%%DATADIR%%/stuff/library/particles/splash2.0002.rgb
+%%DATADIR%%/stuff/library/particles/splash2.0003.rgb
+%%DATADIR%%/stuff/library/particles/splash2.0004.rgb
+%%DATADIR%%/stuff/library/particles/splash2.0005.rgb
+%%DATADIR%%/stuff/library/particles/splash2.0006.rgb
+%%DATADIR%%/stuff/library/particles/splash2.0007.rgb
+%%DATADIR%%/stuff/library/particles/splash2.0008.rgb
+%%DATADIR%%/stuff/library/particles/stain.0001.tif
+%%DATADIR%%/stuff/library/particles/star.0001.tif
+%%DATADIR%%/stuff/library/particles/star.0002.tif
+%%DATADIR%%/stuff/library/particles/star.0003.tif
+%%DATADIR%%/stuff/library/particles/star.0004.tif
+%%DATADIR%%/stuff/library/particles/star.0005.tif
+%%DATADIR%%/stuff/library/particles/toothpaste.0001.tif
+%%DATADIR%%/stuff/library/shaders/caustics.xml
+%%DATADIR%%/stuff/library/shaders/fireball.xml
+%%DATADIR%%/stuff/library/shaders/glitter.xml
+%%DATADIR%%/stuff/library/shaders/programs/caustics.frag
+%%DATADIR%%/stuff/library/shaders/programs/fireball.frag
+%%DATADIR%%/stuff/library/shaders/programs/glitter.frag
+%%DATADIR%%/stuff/library/shaders/programs/glitter_bbox.vert
+%%DATADIR%%/stuff/library/shaders/programs/glitter_ports.vert
+%%DATADIR%%/stuff/library/shaders/programs/radialblurGPU.frag
+%%DATADIR%%/stuff/library/shaders/programs/radialblurGPU_bbox.vert
+%%DATADIR%%/stuff/library/shaders/programs/radialblurGPU_ports.vert
+%%DATADIR%%/stuff/library/shaders/programs/spinblurGPU.frag
+%%DATADIR%%/stuff/library/shaders/programs/spinblurGPU_bbox.vert
+%%DATADIR%%/stuff/library/shaders/programs/spinblurGPU_ports.vert
+%%DATADIR%%/stuff/library/shaders/programs/starsky.frag
+%%DATADIR%%/stuff/library/shaders/programs/sunflare.frag
+%%DATADIR%%/stuff/library/shaders/programs/wavy.frag
+%%DATADIR%%/stuff/library/shaders/radialblurGPU.xml
+%%DATADIR%%/stuff/library/shaders/readme.txt
+%%DATADIR%%/stuff/library/shaders/spinblurGPU.xml
+%%DATADIR%%/stuff/library/shaders/starsky.xml
+%%DATADIR%%/stuff/library/shaders/sunflare.xml
+%%DATADIR%%/stuff/library/shaders/wavy.xml
+%%DATADIR%%/stuff/library/textures/Denim2_s.bmp
+%%DATADIR%%/stuff/library/textures/Knit_s.bmp
+%%DATADIR%%/stuff/library/textures/Paper 1.BMP
+%%DATADIR%%/stuff/library/textures/Paper 4.BMP
+%%DATADIR%%/stuff/library/textures/arabesque.bmp
+%%DATADIR%%/stuff/library/textures/brickwork.bmp
+%%DATADIR%%/stuff/library/textures/carpet.bmp
+%%DATADIR%%/stuff/library/textures/chessboard.bmp
+%%DATADIR%%/stuff/library/textures/clouds.bmp
+%%DATADIR%%/stuff/library/textures/drystonewall.bmp
+%%DATADIR%%/stuff/library/textures/flame.bmp
+%%DATADIR%%/stuff/library/textures/gold.bmp
+%%DATADIR%%/stuff/library/textures/grass.bmp
+%%DATADIR%%/stuff/library/textures/ironware.bmp
+%%DATADIR%%/stuff/library/textures/kilt.bmp
+%%DATADIR%%/stuff/library/textures/leaves.bmp
+%%DATADIR%%/stuff/library/textures/marble.bmp
+%%DATADIR%%/stuff/library/textures/papercrump.bmp
+%%DATADIR%%/stuff/library/textures/pearl.bmp
+%%DATADIR%%/stuff/library/textures/piastrella.bmp
+%%DATADIR%%/stuff/library/textures/pool.bmp
+%%DATADIR%%/stuff/library/textures/rag_tile_s copy.bmp
+%%DATADIR%%/stuff/library/textures/roughbrickwork.bmp
+%%DATADIR%%/stuff/library/textures/roughcanvas.bmp
+%%DATADIR%%/stuff/library/textures/roughparquet.bmp
+%%DATADIR%%/stuff/library/textures/sea.bmp
+%%DATADIR%%/stuff/library/textures/sil.bmp
+%%DATADIR%%/stuff/library/textures/silver.bmp
+%%DATADIR%%/stuff/library/textures/snakeskin.bmp
+%%DATADIR%%/stuff/library/textures/snakeskinred.bmp
+%%DATADIR%%/stuff/library/textures/snow.bmp
+%%DATADIR%%/stuff/library/textures/steelplates.bmp
+%%DATADIR%%/stuff/library/textures/stucco.bmp
+%%DATADIR%%/stuff/library/textures/wetpebbles.bmp
+%%DATADIR%%/stuff/library/textures/woodgrain.bmp
+%%DATADIR%%/stuff/library/textures/woodplanks.bmp
+%%DATADIR%%/stuff/library/textures/wornleather.bmp
+%%DATADIR%%/stuff/library/vector brushes/branch.pli
+%%DATADIR%%/stuff/library/vector brushes/buttonhole.pli
+%%DATADIR%%/stuff/library/vector brushes/circle.pli
+%%DATADIR%%/stuff/library/vector brushes/greek_frieze.pli
+%%DATADIR%%/stuff/library/vector brushes/intertwined_waves.pli
+%%DATADIR%%/stuff/library/vector brushes/large_brush1.pli
+%%DATADIR%%/stuff/library/vector brushes/large_brush2.pli
+%%DATADIR%%/stuff/library/vector brushes/large_brush3.pli
+%%DATADIR%%/stuff/library/vector brushes/large_brush4.pli
+%%DATADIR%%/stuff/library/vector brushes/logo.pli
+%%DATADIR%%/stuff/library/vector brushes/medium_brush1.pli
+%%DATADIR%%/stuff/library/vector brushes/medium_brush2.pli
+%%DATADIR%%/stuff/library/vector brushes/medium_brush3.pli
+%%DATADIR%%/stuff/library/vector brushes/medium_brush4.pli
+%%DATADIR%%/stuff/library/vector brushes/medium_brush5.pli
+%%DATADIR%%/stuff/library/vector brushes/medium_brush6.pli
+%%DATADIR%%/stuff/library/vector brushes/scratch.pli
+%%DATADIR%%/stuff/library/vector brushes/scribble_chalk.pli
+%%DATADIR%%/stuff/library/vector brushes/simple_lace.pli
+%%DATADIR%%/stuff/library/vector brushes/simple_trail.pli
+%%DATADIR%%/stuff/library/vector brushes/simple_wave.pli
+%%DATADIR%%/stuff/library/vector brushes/small_brush1.pli
+%%DATADIR%%/stuff/library/vector brushes/small_brush2.pli
+%%DATADIR%%/stuff/library/vector brushes/small_brush3.pli
+%%DATADIR%%/stuff/library/vector brushes/small_brush4.pli
+%%DATADIR%%/stuff/library/vector brushes/spiked_chain.pli
+%%DATADIR%%/stuff/library/vector brushes/splashes.pli
+%%DATADIR%%/stuff/library/vector brushes/stencil_flame.pli
+%%DATADIR%%/stuff/library/vector brushes/strange.pli
+%%DATADIR%%/stuff/library/vector brushes/teardrop_flowers1.pli
+%%DATADIR%%/stuff/library/vector brushes/teardrop_flowers2.pli
+%%DATADIR%%/stuff/library/vector brushes/thickening.pli
+%%DATADIR%%/stuff/library/vector brushes/trail_shape1.pli
+%%DATADIR%%/stuff/library/vector brushes/trail_shape2.pli
+%%DATADIR%%/stuff/plugins/.gitkeep
+%%DATADIR%%/stuff/profiles/layouts/check.bmp
+%%DATADIR%%/stuff/profiles/layouts/fxs/SHADER_caustics.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/SHADER_fireball.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/SHADER_glitter.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/SHADER_radialblurGPU.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/SHADER_spinblurGPU.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/SHADER_starsky.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/SHADER_sunflare.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/SHADER_wavy.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_adjustLevelsFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_artContourFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_backlitFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_blendTzFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_blurFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_bodyHighLightFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_brightContFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_calligraphicFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_castShadowFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_channelMixerFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_cloudsFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_colorEmbossFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_colorRaylitFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_cornerPinFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_despeckleFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_diamondGradientFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_directionalBlurFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_dissolveFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_embossFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_erodeDilateFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_fadeFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_fourPointsGradientFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_freeDistortFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_gammaFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_glowFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_hsvKeyFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_hsvScaleFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoAddFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoBlurFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoChannelSelectorFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoColorBurnFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoColorDodgeFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoCrossDissolveFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoDarkenFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoDarkerColorFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoDensityFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoDivideFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoFogFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoHardLightFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoHardMixFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoLevelAutoFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoLevelMasterFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoLevelrgbaFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoLightenFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoLighterColorFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoLineBlurFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoLinearBurnFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoLinearDodgeFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoLinearLightFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoMaxMinFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoMedianFilterFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoMedianFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoMotionBlurFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoMotionWindFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoMultiplyFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoNegateFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoOverFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoOverlayFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoPinLightFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoRadialBlurFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoScreenFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoSoftLightFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoSpinBlurFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoSubtractFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoVividLightFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inoWarphvFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inohlsAddFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inohlsAdjustFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inohlsNoiseFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inohsvAddFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inohsvAdjustFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inohsvNoiseFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_inopnCloudsFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_AdjustExposureFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_BarrelDistortFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_BloomFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_BokehFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_BokehRefFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_CorridorGradientFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_DirectionalBlurFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_FractalNoiseFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_GlareFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_GradientWarpFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_LinearGradientFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_MotionBlurCompFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_PNPerspectiveFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_PerspectiveDistortFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_SoapBubbleFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_SpectrumFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_SpinGradientFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_TextFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_TileFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_TiledParticlesFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_iwa_TimeCodeFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_kaleidoFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_lightSpotFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_linearGradientFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_linearWaveFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_localBlurFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_localTransparencyFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_mosaicFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_motionBlurFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_multiLinearGradientFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_multiRadialGradientFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_multiToneFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_noiseFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_nothingFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_outBorderFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_paletteFilterFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_particlesFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_perlinNoiseFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_posterizeFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_radialBlurFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_radialGradientFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_randomWaveFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_raylitFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_rgbKeyFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_rgbmCutFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_rgbmFadeFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_rgbmScaleFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_rippleFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_rotationalBlurFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_saltpepperNoiseFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_sharpenFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_solarizeFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_spiralFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_squareGradientFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_targetSpotFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_textureFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_tileFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_toneCurveFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_transparencyFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/STD_warpFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/addFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/blendFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/checkboardFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/colorCardFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/fxs.lst
+%%DATADIR%%/stuff/profiles/layouts/fxs/minFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/multFx.xml
+%%DATADIR%%/stuff/profiles/layouts/fxs/subFx.xml
+%%DATADIR%%/stuff/profiles/layouts/menubar.xml
+%%DATADIR%%/stuff/profiles/layouts/rooms/Default/layouts.txt
+%%DATADIR%%/stuff/profiles/layouts/rooms/Default/menubar_template.xml
+%%DATADIR%%/stuff/profiles/layouts/rooms/Default/room1.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/Default/room2.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/Default/room3.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/Default/room4.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/Default/room5.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/Default/room6.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/Default/room7.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/Default/room8.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/Default/room9.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/StudioGhibli/layouts.txt
+%%DATADIR%%/stuff/profiles/layouts/rooms/StudioGhibli/menubar_template.xml
+%%DATADIR%%/stuff/profiles/layouts/rooms/StudioGhibli/room1.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/StudioGhibli/room1_menubar.xml
+%%DATADIR%%/stuff/profiles/layouts/rooms/StudioGhibli/room2.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/StudioGhibli/room2_menubar.xml
+%%DATADIR%%/stuff/profiles/layouts/rooms/StudioGhibli/room3.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/StudioGhibli/room3_menubar.xml
+%%DATADIR%%/stuff/profiles/layouts/rooms/StudioGhibli/room4.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/StudioGhibli/room4_menubar.xml
+%%DATADIR%%/stuff/profiles/layouts/rooms/StudioGhibli/room5.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/StudioGhibli/room5_menubar.xml
+%%DATADIR%%/stuff/profiles/layouts/rooms/StudioGhibli/room6.ini
+%%DATADIR%%/stuff/profiles/layouts/rooms/StudioGhibli/room6_menubar.xml
+%%DATADIR%%/stuff/profiles/layouts/settings/commandbar.xml
+%%DATADIR%%/stuff/profiles/layouts/settings/xsheet.css
+%%DATADIR%%/stuff/profiles/layouts/settings/xsheet_html.xml
+%%DATADIR%%/stuff/profiles/layouts/settings/xsheettoolbar.xml
+%%DATADIR%%/stuff/profiles/layouts/shortcuts/defopentoonz.ini
+%%DATADIR%%/stuff/profiles/layouts/shortcuts/otadobe.ini
+%%DATADIR%%/stuff/profiles/layouts/shortcuts/otanimate.ini
+%%DATADIR%%/stuff/profiles/layouts/shortcuts/otharmony.ini
+%%DATADIR%%/stuff/profiles/layouts/shortcuts/otretas.ini
+%%DATADIR%%/stuff/profiles/layouts/toolbars/maintoolbar.xml
+%%DATADIR%%/stuff/profiles/project_folders.txt
+%%DATADIR%%/stuff/projects/.gitkeep
+%%DATADIR%%/stuff/studiopalette/Global Palettes/basics.tpl
+%%DATADIR%%/stuff/studiopalette/Global Palettes/color_key.tpl
+%%DATADIR%%/stuff/studiopalette/Global Palettes/skin.tpl
+%%DATADIR%%/stuff/studiopalette/Global Palettes/variety.tpl
+%%DATADIR%%/stuff/studiopalette/cleanup_default.tpl
+%%DATADIR%%/stuff/toonzfarm/.gitkeep
