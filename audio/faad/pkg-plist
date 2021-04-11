@@ -1,7 +1,5 @@
 bin/faad
 include/faad.h
-include/mp4ff.h
-include/mp4ffint.h
 include/neaacdec.h
 lib/libfaad.a
 lib/libfaad.so
@@ -11,5 +9,5 @@ lib/libfaad_drm.a
 lib/libfaad_drm.so
 lib/libfaad_drm.so.2
 lib/libfaad_drm.so.2.0.0
-lib/libmp4ff.a
+libdata/pkgconfig/faad2.pc
 man/man1/faad.1.gz
