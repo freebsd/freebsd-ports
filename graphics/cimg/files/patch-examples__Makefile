@@ -58,7 +58,8 @@
 -OPENEXR_INCDIR = -I/usr/include/OpenEXR
 +OPENEXR_INCDIR = -I$(LOCALBASE)/include/OpenEXR
  OPENEXR_CFLAGS = $(OPENEXR_DEFINE) $(OPENEXR_INCDIR)
- OPENEXR_LIBS = -lIlmImf -lHalf
+-OPENEXR_LIBS = -lIlmImf -lHalf
++OPENEXR_LIBS = -lOpenEXR -lImath
  
  # Flags to enable native support for various video files, using the FFMPEG library.
  # ( http://www.ffmpeg.org/ )
