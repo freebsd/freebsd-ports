@@ -1,0 +1,14 @@
+To fix this linker error:
+	ld: error: libsrc/interface/libinterface.so: undefined reference to pthread_create [--no-allow-shlib-undefined]
+bang pthread into the executable. It's not a **good** fix, though.
+
+--- ng/CMakeLists.txt.orig	2021-03-18 07:16:55 UTC
++++ ng/CMakeLists.txt
+@@ -32,6 +32,7 @@ if(USE_GUI)
+     endif(NOT APPLE)
+ 
+     target_link_libraries( netgen nglib gui netgen_python ${MPI_mpi_LIBRARY} ${MPI_CXX_LIBRARIES} ${LIBTOGL} ${ZLIB_LIBRARIES} ${JPEG_LIBRARIES} ${FFMPEG_LIBRARIES} ${X11_Xmu_LIB} ${X11_X11_LIB} ${OCC_LIBRARIES} ${TK_LIBRARY} ${TCL_LIBRARY})
++    target_link_libraries( netgen pthread )
+ 
+     if(NOT WIN32)
+       target_link_libraries( netgen mesh stlvis stl geom2dvis interface geom2d csg stl visual csgvis )
