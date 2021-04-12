@@ -1,0 +1,32 @@
+run-test-proxy-with-scheme requires a web proxy server.
+
+--- test/kns/Makefile.orig	2019-08-20 18:27:10 UTC
++++ test/kns/Makefile
+@@ -25,7 +25,7 @@
+ 
+ default: runtests
+ 
+-runtests: run-tests run-test-proxy-with-scheme
++runtests:
+ 
+ TOP ?= $(abspath ../..)
+ MODULE = test/kns
+@@ -45,6 +45,10 @@ TEST_TOOLS = \
+ 
+ include $(TOP)/build/Makefile.env
+ 
++ifdef MBEDTLS_INCDIR
++	INCDIRS += $(addprefix -I,$(MBEDTLS_INCDIR))
++endif
++
+ EXT_TOOLS = \
+ 	test-proxy \
+ 	test-proxy-with-env \
+@@ -131,6 +135,7 @@ $(TEST_BINDIR)/test-kns: $(KNSTEST_OBJ)
+ 	$(LP) --exe -o $@ $^ $(KNSTEST_LIB)
+ 
+ kns: test-kns
++	if [ ! -d $(HOME)/.ncbi ]; then mkdir $(HOME)/.ncbi; fi
+ 	$(TEST_BINDIR)/test-kns  #-l=all
+ 
+ #----------------------------------------------------------------

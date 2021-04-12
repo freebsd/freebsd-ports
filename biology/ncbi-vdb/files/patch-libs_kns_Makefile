@@ -1,0 +1,13 @@
+--- libs/kns/Makefile.orig	2017-07-14 21:55:36 UTC
++++ libs/kns/Makefile
+@@ -39,6 +39,10 @@ OBJFILES = \
+ 
+ include $(TOP)/build/Makefile.env
+ 
++ifdef MBEDTLS_INCDIR
++	INCDIRS += $(addprefix -I,$(MBEDTLS_INCDIR))
++endif
++
+ RWORKDIR = $(TOP)/$(MODULE)
+ 
+ #-------------------------------------------------------------------------------

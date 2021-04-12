@@ -1,0 +1,40 @@
+--- libs/ncbi-vdb/Makefile.orig	2021-03-15 18:16:43 UTC
++++ libs/ncbi-vdb/Makefile
+@@ -121,15 +121,16 @@ LDFLAGS += -L$(XML2_LIBDIR)
+ endif
+ endif
+ 
++ifneq (,$(MBEDTLS_LIBDIR))
++LDFLAGS += -L$(MBEDTLS_LIBDIR)
++endif
++
+ VDB_LIB_CMN =    \
+ 	align-access \
+ 	ncbi-bam     \
+ 	vfs          \
+ 	cloud                  \
+ 	$(LIBKXML)   \
+-	mbedx509     \
+-	mbedtls      \
+-	mbedcrypto   \
+ 	kns          \
+ 	kfg          \
+ 	krypto       \
+@@ -138,9 +139,7 @@ VDB_LIB_CMN =    \
+ 	klib         \
+ 	kproc        \
+ 	$(LIBKQ)     \
+-	kfc          \
+-	bz2          \
+-	z            \
++	kfc
+ 
+ VDB_LIB_RD =              \
+ 	align-reader          \
+@@ -198,4 +197,4 @@ fuzz:
+ 	$(TOP)/build/ld.sh linux x86_64 gcc --build dbg --ldflags "-g  -m64" --objx o --shlx so --libx a --srcdir $(SRCDIR) --bindir $(BINDIR) --slib -o $(FLIBDIR)/libncbi-vdb.$(LIBX) -L$(FLIBDIR) $(VDB_LIB) $(VDB_NGS_LIB)
+ 
+ cleanfuzz:
+-	rm -rf $(FLIBDIR)/*
+\ No newline at end of file
++	rm -rf $(FLIBDIR)/*

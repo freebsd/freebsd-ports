@@ -1,0 +1,12 @@
+--- libs/search/Makefile.orig	2017-07-14 21:55:36 UTC
++++ libs/search/Makefile
+@@ -39,6 +39,9 @@ OBJFILES = \
+ 
+ include $(TOP)/build/Makefile.env
+ 
++CARCH += -msse2
++# nucstrstr.c requires SSE2
++
+ #-------------------------------------------------------------------------------
+ # outer targets
+ #

@@ -1,0 +1,5 @@
+TIMESTAMP = 1618218620
+SHA256 (ncbi-ncbi-vdb-2.11.0_GH0.tar.gz) = 9a65e3885b9ae1ebecbec871f04ce3162ac3764fb556ecdc8c1e61993e2164aa
+SIZE (ncbi-ncbi-vdb-2.11.0_GH0.tar.gz) = 22277539
+SHA256 (ncbi-ngs-2.11.0_GH0.tar.gz) = 5fde50784760c00b403c2cc42ead15a4e9477697ee439f0a16edb4de3f52dfcc
+SIZE (ncbi-ngs-2.11.0_GH0.tar.gz) = 1100365

@@ -1,0 +1,30 @@
+--- build/Makefile.clang.orig	2021-03-15 18:16:43 UTC
++++ build/Makefile.clang
+@@ -24,23 +24,23 @@
+ 
+ 
+ # compilers
+-CC = @ $(TOP)/build/cc.sh $(OS) 'clang -c' \
++CC = @ $(TOP)/build/cc.sh $(OS) '$(CCNAME) -c' \
+ 	 $(CHECKSUM) --objx $(OBJX) --cflags "$(CFLAGS)" -MD
+-CP = @ $(TOP)/build/cc.sh $(OS) 'clang++ -c' \
++CP = @ $(TOP)/build/cc.sh $(OS) '$(CXXNAME) -c' \
+ 	 $(CHECKSUM) --objx $(OBJX) -stdlib=libc++ --cflags "$(CPFLAGS)" -MD
+ 
+ # C preprocessor
+ PP = gcc -E $(CFLAGS)
+ 
+ # linkers
+-LD = @ $(TOP)/build/ld.sh $(OS) $(ARCH) clang \
++LD = @ $(TOP)/build/ld.sh $(OS) $(ARCH) $(CCNAME) \
+ 	--build $(BUILD) --ldflags "$(LDFLAGS)" $(STATIC) \
+ 	$(STATICSYSLIBS) $(CHECKSUM) --objx $(OBJX) --shlx $(SHLX) --libx $(LIBX) \
+ 	-MD --srcdir $(SRCDIR) --bindir $(BINDIR) -L$(LIBDIR):$(ILIBDIR)
+ 
+ LPFLAGS = $(LDFLAGS)
+ 
+-LP = @ $(TOP)/build/ld.sh $(OS) $(ARCH) clang++ \
++LP = @ $(TOP)/build/ld.sh $(OS) $(ARCH) $(CXXNAME) \
+ 	--build $(BUILD) --ldflags "$(LDFLAGS)" $(STATIC) \
+ 	$(STATICSYSLIBS) $(CHECKSUM) --objx $(OBJX) --shlx $(SHLX) --libx $(LIBX) \
+ 	-MD --srcdir $(SRCDIR) --bindir $(BINDIR) -L$(LIBDIR):$(ILIBDIR)

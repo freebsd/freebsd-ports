@@ -1,0 +1,35 @@
+--- build/Makefile.gcc.orig	2017-07-14 21:55:36 UTC
++++ build/Makefile.gcc
+@@ -22,25 +22,27 @@
+ #
+ # ===========================================================================
+ 
++CCNAME  ?= gcc
++CXXNAME ?= g++
+ 
+ # compilers
+-CC = @ $(TOP)/build/cc.sh $(OS) 'gcc -c' \
++CC = @ $(TOP)/build/cc.sh $(OS) '$(CCNAME) -c' \
+ 	 $(CHECKSUM) --objx $(OBJX) --cflags "$(CFLAGS)" -MD
+-CP = @ $(TOP)/build/cc.sh $(OS) 'g++ -c' \
++CP = @ $(TOP)/build/cc.sh $(OS) '$(CXXNAME) -c' \
+ 	 $(CHECKSUM) --objx $(OBJX) --cflags "$(CPFLAGS)" -MD
+ 
+ # C preprocessor
+-PP = gcc -E $(CFLAGS)
++PP = $(CCNAME) -E $(CFLAGS)
+ 
+ # linkers
+-LD = @ $(TOP)/build/ld.sh $(OS) $(ARCH) gcc \
++LD = @ $(TOP)/build/ld.sh $(OS) $(ARCH) $(CCNAME) \
+ 	--build $(BUILD) --ldflags "$(LDFLAGS)" $(STATIC) \
+ 	$(STATICSYSLIBS) $(CHECKSUM) --objx $(OBJX) --shlx $(SHLX) --libx $(LIBX) \
+ 	-MD --srcdir $(SRCDIR) --bindir $(BINDIR) -L$(LIBDIR):$(ILIBDIR)
+ 
+ LPFLAGS = $(LDFLAGS)
+ 
+-LP = @ $(TOP)/build/ld.sh $(OS) $(ARCH) g++ \
++LP = @ $(TOP)/build/ld.sh $(OS) $(ARCH) $(CXXNAME) \
+ 	--build $(BUILD) --ldflags "$(LPFLAGS)" $(STATIC) \
+ 	$(STATICSYSLIBS) $(CHECKSUM) --objx $(OBJX) --shlx $(SHLX) --libx $(LIBX) \
+ 	-MD --srcdir $(SRCDIR) --bindir $(BINDIR) -L$(LIBDIR):$(ILIBDIR)

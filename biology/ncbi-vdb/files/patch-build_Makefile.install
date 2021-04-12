@@ -1,0 +1,11 @@
+--- build/Makefile.install.orig	2021-03-15 18:16:43 UTC
++++ build/Makefile.install
+@@ -69,7 +69,7 @@ ifeq (1,$(HAVE_HDF5))
+ endif
+ 
+ 
+-LIB_TARGET = $(INST_LIBDIR)$(BITS)
++LIB_TARGET = $(INST_LIBDIR)
+ 
+ LIBRARIES_WITH_PREFIX = \
+ 	$(addprefix $(LIB_TARGET)/$(LPFX),$(LIBRARIES_TO_INSTALL))
