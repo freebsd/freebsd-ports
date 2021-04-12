@@ -2,7 +2,7 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.22
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	graphics
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-extras
-USES=		compiler:c++11-lang gettext gmake jpeg pkgconfig autoreconf gnome
+USES=		compiler:c++11-lang desktop-file-utils gettext gmake jpeg pkgconfig autoreconf gnome
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
