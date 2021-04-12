@@ -11,14 +11,16 @@
 # cloudflared_conf (str)	Config file to use
 #				Default: %%ETCDIR%%/config.yml
 #
-# cloudflared_mode (str)	Mode to run cloudflared as (tunnel, or proxy-dns)
-#				Default: tunnel
+# cloudflared_mode (str)	Mode to run cloudflared as (e.g. 'tunnel', 'tunnel run'
+#				or 'proxy-dns'). Should you use the default, a free
+#				tunnel is set up for you.
+#				Default: "tunnel"
 
 . /etc/rc.subr
 
 name="cloudflared"
 rcvar="cloudflared_enable"
-logfile="/var/log/cloudflared/cloudflared.log"
+logfile="/var/log/cloudflared.log"
 pidfile="/var/run/cloudflared.pid"
 procname="%%PREFIX%%/bin/cloudflared"
 
@@ -29,6 +31,6 @@ load_rc_config $name
 : ${cloudflared_mode:="tunnel"}
 
 command="/usr/sbin/daemon"
-command_args="-o ${logfile} -p ${pidfile} -f ${procname} --cred-file ${cloudflared_conf} ${cloudflared_mode}"
+command_args="-o ${logfile} -p ${pidfile} -f ${procname} --config ${cloudflared_conf} ${cloudflared_mode}"
 
 run_rc_command "$1"
