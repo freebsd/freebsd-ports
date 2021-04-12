@@ -1,5 +1,6 @@
 PORTNAME=	ncbi-vdb
 DISTVERSION=	2.11.0
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	mzaki@niid.go.jp
@@ -57,8 +58,7 @@ post-patch:
 post-configure:
 	@${ECHO} ${CHOSEN_COMPILER_TYPE} > ${WRKSRC}/build/COMP
 
-post-install:
-	# remove static libs built instead of shared libs, see https://github.com/ncbi/ncbi-vdb/issues/36
-	cd ${STAGEDIR}${PREFIX}/lib && ${RM} libkdf5.a* libncbi-ngs-c++.a* libncbi-ngs.a* libncbi-vdb.a* libncbi-wvdb.a*
+# The 'install' target installs broken-looking static libs with symlinks.
+# This is intentional, see comments https://github.com/ncbi/ncbi-vdb/issues/36#issuecomment-817990790 This may change in future versions.
 
 .include <bsd.port.mk>
