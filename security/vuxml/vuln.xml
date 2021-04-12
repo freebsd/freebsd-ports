@@ -76,6 +76,34 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="094fb2ec-9aa3-11eb-83cb-0800278d94f0">
+    <topic>gitea -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.14.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea Team reports for release 1.14.0:</p>
+	<blockquote cite="https://blog.gitea.io/2021/04/gitea-1.14.0-is-released/">
+	  <ul>
+	    <li>Validate email in external authenticator registration form</li>
+	    <li>Ensure validation occurs on clone addresses too</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.14.0</url>
+      <freebsdpr>ports/254976</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2021-03-11</discovery>
+      <entry>2021-04-11</entry>
+    </dates>
+  </vuln>
   <vuln vid="9ee01e60-6045-43df-98e5-a794007e54ef">
     <topic>syncthing -- crash due to malformed relay protocol message</topic>
     <affects>
