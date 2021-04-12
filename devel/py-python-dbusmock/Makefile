@@ -1,5 +1,5 @@
 PORTNAME=	python-dbusmock
-PORTVERSION=	0.22.0
+PORTVERSION=	0.23.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}
 
-USES=		gnome python:3.6+
+USES=		gnome python
 USE_GNOME=	pygobject3
 USE_PYTHON=	autoplist distutils
 
