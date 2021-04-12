@@ -1,6 +1,6 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.3
+DISTVERSION=	4.1.4
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/11/libraries/sources/
 PKGNAMESUFFIX=	-agent
@@ -42,7 +42,8 @@ WAZUHMOD750=	/ /logs/ossec /bin /lib /queue /queue/diff /ruleset /ruleset/sca /w
 		/wodles/oscap /wodles/oscap/content
 
 WAZUHMOD770=	/logs /queue/alerts /queue/fim /queue/fim/db /queue/ossec /etc /etc/shared \
-		/.ssh /var/run /var/upgrade /var/wodles /var/incoming
+		/.ssh /var/run /var/upgrade /var/wodles /var/incoming /queue/ossec/fim \
+		/queue/ossec/fim/db
 
 WAZUHPREFIX=	/var/ossec
 
