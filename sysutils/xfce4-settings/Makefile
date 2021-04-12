@@ -1,8 +1,7 @@
 # Created by: Oliver Lehmann <oliver@FreeBSD.org>
 
 PORTNAME=	xfce4-settings
-PORTVERSION=	4.16.0
-PORTREVISION=	2
+PORTVERSION=	4.16.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
