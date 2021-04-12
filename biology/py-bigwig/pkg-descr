@@ -1,0 +1,5 @@
+A python extension, written in C, for quick access to bigBed files and access
+to and creation of bigWig files. This extension uses libBigWig for local and
+remote file access.
+
+WWW: https://pypi.org/project/pyBigWig/
