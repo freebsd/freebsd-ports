@@ -112,10 +112,6 @@ share/icons/hicolor/scalable/apps/org.xfce.settings.manager.svg
 share/icons/hicolor/scalable/apps/org.xfce.settings.mouse.svg
 share/icons/hicolor/scalable/apps/org.xfce.terminalemulator.svg
 share/icons/hicolor/scalable/apps/org.xfce.webbrowser.svg
-
-share/locale/be@tarask/LC_MESSAGES/xfce4-settings.mo
-share/locale/et/LC_MESSAGES/xfce4-settings.mo
-share/locale/hye/LC_MESSAGES/xfce4-settings.mo
 share/xfce4/helpers/thunar.desktop
 share/xfce4/helpers/aterm.desktop
 share/xfce4/helpers/balsa.desktop
@@ -173,6 +169,7 @@ share/xfce4/helpers/xterm.desktop
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/be/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/be@tarask/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-settings.mo
@@ -184,6 +181,7 @@ share/xfce4/helpers/xterm.desktop
 %%NLS%%share/locale/en_CA/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfce4-settings.mo
@@ -192,11 +190,13 @@ share/xfce4/helpers/xterm.desktop
 %%NLS%%share/locale/hr/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/hy_AM/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/hye/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ie/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/is/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/kab/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/xfce4-settings.mo
@@ -208,8 +208,8 @@ share/xfce4/helpers/xterm.desktop
 %%NLS%%share/locale/oc/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/xfce4-settings.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/si/LC_MESSAGES/xfce4-settings.mo
@@ -223,8 +223,8 @@ share/xfce4/helpers/xterm.desktop
 %%NLS%%share/locale/tr/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xfce4-settings.mo
-%%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-settings.mo
