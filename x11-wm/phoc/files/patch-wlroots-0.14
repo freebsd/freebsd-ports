@@ -1,0 +1,18 @@
+In file included from ../tests/test-xdg-shell.c:7:
+In file included from ../tests/testlib.h:6:
+In file included from ../src/server.h:14:
+../src/desktop.h:11:10: fatal error: 'wlr/types/wlr_gtk_primary_selection.h' file not found
+#include <wlr/types/wlr_gtk_primary_selection.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- src/desktop.h.orig	2021-06-13 11:06:50 UTC
++++ src/desktop.h
+@@ -8,7 +8,7 @@
+ #include <wlr/types/wlr_compositor.h>
+ #include <wlr/types/wlr_foreign_toplevel_management_v1.h>
+ #include <wlr/types/wlr_gamma_control_v1.h>
+-#include <wlr/types/wlr_gtk_primary_selection.h>
++#include <wlr/types/wlr_primary_selection.h>
+ #include <wlr/types/wlr_idle_inhibit_v1.h>
+ #include <wlr/types/wlr_idle.h>
+ #include <wlr/types/wlr_input_inhibitor.h>

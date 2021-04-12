@@ -1,0 +1,419 @@
+https://github.com/ifreund/river/commit/41874b47aef3
+https://github.com/swaywm/zig-wlroots/commit/b72516275fb4
+
+--- deps/zig-wlroots/src/backend.zig.orig	2021-06-06 01:45:21 UTC
++++ deps/zig-wlroots/src/backend.zig
+@@ -13,6 +13,10 @@ pub const Backend = extern struct {
+         new_output: wl.Signal(*wlr.Output),
+     },
+ 
++    // Private state
++    renderer: ?*wlr.Renderer,
++    allocator: ?*wlr.Allocator,
++
+     // backend.h
+ 
+     extern fn wlr_backend_autocreate(server: *wl.Server) ?*Backend;
+@@ -35,6 +39,9 @@ pub const Backend = extern struct {
+ 
+     extern fn wlr_backend_get_session(backend: *Backend) ?*wlr.Session;
+     pub const getSession = wlr_backend_get_session;
++
++    extern fn wlr_backend_get_drm_fd(backend: *Backend) c_int;
++    pub const getDrmFd = wlr_backend_get_drm_fd;
+ 
+     // backend/multi.h
+ 
+--- deps/zig-wlroots/src/backend/session.zig.orig	2021-06-06 01:45:21 UTC
++++ deps/zig-wlroots/src/backend/session.zig
+@@ -5,25 +5,24 @@ const wl = wayland.server.wl;
+ 
+ pub const Device = extern struct {
+     fd: c_int,
++    device_id: c_int,
+     dev: os.dev_t,
+     /// Session.devices
+     link: wl.list.Link,
+ 
+     events: extern struct {
+         change: wl.Signal(void),
++        remove: wl.Signal(void),
+     },
+ };
+ 
+ pub const Session = extern struct {
+-    const Impl = opaque {};
+-
+     pub const event = struct {
+         pub const Add = extern struct {
+             path: [*:0]const u8,
+         };
+     };
+ 
+-    impl: *const Impl,
+     active: bool,
+ 
+     vtnr: c_uint,
+@@ -33,6 +32,9 @@ pub const Session = extern struct {
+     udev: *opaque {},
+     udev_monitor: *opaque {},
+     udev_event: *wl.EventSource,
++
++    seat_handle: *opaque {},
++    libseat_event: *wl.EventSource,
+ 
+     devices: wl.list.Head(Device, "link"),
+ 
+--- deps/zig-wlroots/src/config.zig.orig	2021-06-06 01:45:21 UTC
++++ deps/zig-wlroots/src/config.zig
+@@ -2,17 +2,8 @@ const c = @cImport({
+     @cInclude("wlr/config.h");
+ });
+ 
+-pub const has_eglmesaext_h = c.WLR_HAS_EGLMESAEXT_H != 0;
+-
+-pub const has_systemd = c.WLR_HAS_SYSTEMD != 0;
+-pub const has_elogind = c.WLR_HAS_ELOGIND != 0;
+-
+-pub const has_libseat = c.WLR_HAS_LIBSEAT != 0;
+-
+ pub const has_x11_backend = c.WLR_HAS_X11_BACKEND != 0;
+ 
+-pub const has_xwayland = c.WLR_HAS_XWAYLAND != 0;
++pub const has_gles2_renderer = c.WLR_HAS_GLES2_RENDERER != 0;
+ 
+-pub const has_xcb_errors = c.WLR_HAS_XCB_ERRORS != 0;
+-
+-pub const has_xdg_foreign = c.WLR_HAS_XDG_FOREIGN != 0;
++pub const has_xwayland = c.WLR_HAS_XWAYLAND != 0;
+--- deps/zig-wlroots/src/render/renderer.zig.orig	2021-06-06 01:45:21 UTC
++++ deps/zig-wlroots/src/render/renderer.zig
+@@ -7,7 +7,10 @@ pub const Renderer = extern struct {
+     const Impl = opaque {};
+ 
+     impl: *const Impl,
++
+     rendering: bool,
++    rendering_with_buffer: bool,
++
+     events: extern struct {
+         destroy: wl.Signal(*Renderer),
+     },
+@@ -22,6 +25,9 @@ pub const Renderer = extern struct {
+     extern fn wlr_renderer_begin(renderer: *Renderer, width: u32, height: u32) void;
+     pub const begin = wlr_renderer_begin;
+ 
++    extern fn wlr_renderer_begin_with_buffer(renderer: *Renderer, buffer: *wlr.Buffer) bool;
++    pub const beginWithBuffer = wlr_renderer_begin_with_buffer;
++
+     pub extern fn wlr_renderer_end(renderer: *Renderer) void;
+     pub const end = wlr_renderer_end;
+ 
+@@ -76,13 +82,6 @@ pub const Renderer = extern struct {
+     ) bool;
+     pub const readPixels = wlr_renderer_read_pixels;
+ 
+-    extern fn wlr_renderer_blit_dmabuf(
+-        renderer: *Renderer,
+-        dst: *wlr.DmabufAttributes,
+-        src: *wlr.DmabufAttributes,
+-    ) bool;
+-    pub const blitDmabuf = wlr_renderer_blit_dmabuf;
+-
+     extern fn wlr_renderer_get_drm_fd(renderer: *Renderer) c_int;
+     pub const getDrmFd = wlr_renderer_get_drm_fd;
+ 
+@@ -159,19 +158,4 @@ pub const Renderer = extern struct {
+         matrix: *const [9]f32,
+     ) void;
+     pub const renderQuadWithMatrix = wlr_render_quad_with_matrix;
+-
+-    extern fn wlr_render_ellipse(
+-        renderer: *Renderer,
+-        box: *const wlr.Box,
+-        color: *const [4]f32,
+-        projection: *const [9]f32,
+-    ) void;
+-    pub const renderEllipse = wlr_render_ellipse;
+-
+-    extern fn wlr_render_ellipse_with_matrix(
+-        renderer: *Renderer,
+-        color: *const [4]f32,
+-        matrix: *const [9]f32,
+-    ) void;
+-    pub const renderEllipseWithMatrix = wlr_render_ellipse_with_matrix;
+ };
+--- deps/zig-wlroots/src/render/texture.zig.orig	2021-06-06 01:45:21 UTC
++++ deps/zig-wlroots/src/render/texture.zig
+@@ -19,17 +19,11 @@ pub const Texture = extern struct {
+     extern fn wlr_texture_from_dmabuf(renderer: *wlr.Renderer, attribs: *wlr.DmabufAttributes) ?*Texture;
+     pub const fromDmabuf = wlr_texture_from_dmabuf;
+ 
+-    extern fn wlr_texture_get_size(texture: *Texture, width: *c_int, height: *c_int) void;
+-    pub const getSize = wlr_texture_get_size;
+-
+     extern fn wlr_texture_is_opaque(texture: *Texture) bool;
+     pub const isOpaque = wlr_texture_is_opaque;
+ 
+     extern fn wlr_texture_write_pixels(texture: *Texture, stride: u32, width: u32, height: u32, src_x: u32, src_y: u32, dst_x: u32, dst_y: u32, data: *const c_void) bool;
+     pub const writePixels = wlr_texture_write_pixels;
+-
+-    extern fn wlr_texture_to_dmabuf(texture: *Texture, attribs: *wlr.DmabufAttributes) bool;
+-    pub const toDmabuf = wlr_texture_to_dmabuf;
+ 
+     extern fn wlr_texture_destroy(texture: *Texture) void;
+     pub const destroy = wlr_texture_destroy;
+--- deps/zig-wlroots/src/types/buffer.zig.orig	2021-06-06 01:45:21 UTC
++++ deps/zig-wlroots/src/types/buffer.zig
+@@ -1,13 +1,25 @@
+ const wlr = @import("../wlroots.zig");
+ 
++const os = @import("std").os;
+ const wl = @import("wayland").server.wl;
+-
+ const pixman = @import("pixman");
+ 
++pub const ShmAttributes = extern struct {
++    fd: c_int,
++    format: u32,
++    width: c_int,
++    height: c_int,
++    stride: c_int,
++    offset: os.off_t,
++};
++
+ pub const Buffer = extern struct {
+     pub const Impl = extern struct {
+         destroy: fn (buffer: *Buffer) callconv(.C) void,
+         get_dmabuf: fn (buffer: *Buffer, attribs: *wlr.DmabufAttributes) callconv(.C) bool,
++        get_shm: fn (buffer: *Buffer, attribs: *wlr.ShmAttributes) callconv(.C) bool,
++        begin_data_ptr_access: fn (buffer: *Buffer, data: **c_void, format: *u32, stride: *usize) callconv(.C) bool,
++        end_data_ptr_access: fn (buffer: *Buffer) callconv(.C) void,
+     };
+ 
+     impl: *const Impl,
+@@ -18,6 +30,8 @@ pub const Buffer = extern struct {
+     dropped: bool,
+     n_locks: usize,
+ 
++    accessing_data_ptr: bool,
++
+     events: extern struct {
+         destroy: wl.Signal(void),
+         release: wl.Signal(void),
+@@ -37,6 +51,9 @@ pub const Buffer = extern struct {
+ 
+     extern fn wlr_buffer_get_dmabuf(buffer: *Buffer, attribs: *wlr.DmabufAttributes) bool;
+     pub const getDmabuf = wlr_buffer_get_dmabuf;
++
++    extern fn wlr_buffer_get_shm(buffer: *Buffer, attribs: *wlr.ShmAttributes) bool;
++    pub const getShm = wlr_buffer_get_shm;
+ };
+ 
+ pub const ClientBuffer = extern struct {
+--- deps/zig-wlroots/src/types/linux_dmabuf_v1.zig.orig	2021-06-06 01:45:21 UTC
++++ deps/zig-wlroots/src/types/linux_dmabuf_v1.zig
+@@ -4,20 +4,18 @@ const wayland = @import("wayland");
+ const wl = wayland.server.wl;
+ 
+ pub const DmabufBufferV1 = extern struct {
+-    renderer: *wlr.Renderer,
+-    buffer_resource: *wl.Resource,
+-    params_resource: *wl.Resource,
++    base: wlr.Buffer,
++
++    resource: ?*wl.Resource,
+     attributes: wlr.DmabufAttributes,
+-    has_modifier: bool,
+ 
++    release: wl.Listener(void),
++
+     extern fn wlr_dmabuf_v1_resource_is_buffer(buffer_resource: *wl.Resource) bool;
+     pub const resourceIsBuffer = wlr_dmabuf_v1_resource_is_buffer;
+ 
+     extern fn wlr_dmabuf_v1_buffer_from_buffer_resource(buffer_resource: *wl.Resource) *DmabufBufferV1;
+     pub const fromBufferResource = wlr_dmabuf_v1_buffer_from_buffer_resource;
+-
+-    extern fn wlr_dmabuf_v1_buffer_from_params_resource(params_resource: *wl.Resource) *DmabufBufferV1;
+-    pub const fromParamsResource = wlr_dmabuf_v1_buffer_from_params_resource;
+ };
+ 
+ pub const LinuxDmabufV1 = extern struct {
+@@ -35,7 +33,11 @@ pub const LinuxDmabufV1 = extern struct {
+     pub fn create(server: *wl.Server, renderer: *wlr.Renderer) !*LinuxDmabufV1 {
+         return wlr_linux_dmabuf_v1_create(server, renderer) orelse error.OutOfMemory;
+     }
++};
+ 
+-    extern fn wlr_linux_dmabuf_v1_from_resource(resource: *wl.Resource) *LinuxDmabufV1;
+-    pub const fromResource = wlr_linux_dmabuf_v1_from_resource;
++pub const LinuxDmabufParamsV1 = extern struct {
++    resource: *wl.Resource,
++    linux_dmabuf: *LinuxDmabufV1,
++    attributes: wlr.DmabufAttributes,
++    has_modifier: bool,
+ };
+--- deps/zig-wlroots/src/types/matrix.zig.orig	2021-06-06 01:45:21 UTC
++++ deps/zig-wlroots/src/types/matrix.zig
+@@ -24,8 +24,5 @@ pub const rotate = wlr_matrix_rotate;
+ extern fn wlr_matrix_transform(mat: *[9]f32, transform: wl.Output.Transform) void;
+ pub const transform = wlr_matrix_transform;
+ 
+-extern fn wlr_matrix_projection(mat: *[9]f32, width: c_int, height: c_int, transform: wl.Output.Transform) void;
+-pub const projection = wlr_matrix_projection;
+-
+ extern fn wlr_matrix_project_box(mat: *[9]f32, box: *const wlr.Box, transform: wl.Output.Transform, rotation: f32, projection: *const [9]f32) void;
+ pub const projectBox = wlr_matrix_project_box;
+--- deps/zig-wlroots/src/types/output.zig.orig	2021-06-06 01:45:21 UTC
++++ deps/zig-wlroots/src/types/output.zig
+@@ -175,7 +175,12 @@ pub const Output = extern struct {
+     cursors: wl.list.Head(OutputCursor, "link"),
+ 
+     hardware_cursor: ?*OutputCursor,
++    cursor_swapchain: ?*wlr.Swapchain,
++    cursor_front_buffer: ?*wlr.Buffer,
+     software_cursor_locks: c_int,
++
++    swapchain: ?*wlr.Swapchain,
++    back_buffer: ?*wlr.Buffer,
+ 
+     server_destroy: wl.Listener(*wl.Server),
+ 
+--- deps/zig-wlroots/src/types/surface.zig.orig	2021-06-06 01:45:21 UTC
++++ deps/zig-wlroots/src/types/surface.zig
+@@ -98,8 +98,11 @@ pub const Surface = extern struct {
+         destroy: wl.Signal(*wlr.Surface),
+     },
+ 
+-    subsurfaces: wl.list.Head(Subsurface, "parent_link"),
+-    subsurface_pending_list: wl.list.Head(Subsurface, "parent_pending_link"),
++    subsurfaces_below: wl.list.Head(Subsurface, "parent_link"),
++    subsurfaces_above: wl.list.Head(Subsurface, "parent_link"),
++
++    subsurfaces_pending_below: wl.list.Head(Subsurface, "parent_pending_link"),
++    subsurfaces_pending_above: wl.list.Head(Subsurface, "parent_pending_link"),
+ 
+     current_outputs: wl.list.Head(Surface.Output, "link"),
+ 
+--- deps/zig-wlroots/src/types/xdg_shell.zig.orig	2021-06-06 01:45:21 UTC
++++ deps/zig-wlroots/src/types/xdg_shell.zig
+@@ -97,6 +97,9 @@ pub const XdgPopup = extern struct {
+         wlr_xdg_popup_destroy(popup.base);
+     }
+ 
++    extern fn wlr_xdg_popup_get_position(popup: *XdgPopup, popup_sx: *f64, popup_sy: *f64) void;
++    pub const getPosition = wlr_xdg_popup_get_position;
++
+     extern fn wlr_xdg_popup_get_anchor_point(popup: *XdgPopup, toplevel_sx: *c_int, toplevel_sy: *c_int) void;
+     pub const getAnchorPoint = wlr_xdg_popup_get_anchor_point;
+ 
+--- deps/zig-wlroots/src/wlroots.zig.orig	2021-06-06 01:45:21 UTC
++++ deps/zig-wlroots/src/wlroots.zig
+@@ -6,12 +6,16 @@ pub const Session = @import("backend/session.zig").Ses
+ pub const DmabufAttributes = @import("render/dmabuf.zig").DmabufAttributes;
+ pub const Renderer = @import("render/renderer.zig").Renderer;
+ pub const Texture = @import("render/texture.zig").Texture;
++pub const Allocator = opaque {};
++pub const Swapchain = opaque {};
+ 
++pub const ShmAttributes = @import("types/buffer.zig").ShmAttributes;
+ pub const Buffer = @import("types/buffer.zig").Buffer;
+ pub const ClientBuffer = @import("types/buffer.zig").ClientBuffer;
+ 
+ pub const DmabufBufferV1 = @import("types/linux_dmabuf_v1.zig").DmabufBufferV1;
+ pub const LinuxDmabufV1 = @import("types/linux_dmabuf_v1.zig").LinuxDmabufV1;
++pub const LinuxDmabufParamsV1 = @import("types/linux_dmabuf_v1.zig").LinuxDmabufParamsV1;
+ 
+ pub const Compositor = @import("types/compositor.zig").Compositor;
+ pub const Subcompositor = @import("types/compositor.zig").Subcompositor;
+--- deps/zig-wlroots/src/xwayland.zig.orig	2021-06-06 01:45:21 UTC
++++ deps/zig-wlroots/src/xwayland.zig
+@@ -196,6 +196,7 @@ pub const XwaylandSurface = extern struct {
+     surface_id: u32,
+ 
+     link: wl.list.Link,
++    stack_link: wl.list.Link,
+     unpaired_link: wl.list.Link,
+ 
+     surface: ?*wlr.Surface,
+--- river/DragIcon.zig.orig	2021-06-16 17:42:09 UTC
++++ river/DragIcon.zig
+@@ -47,10 +47,7 @@ pub fn init(drag_icon: *DragIcon, seat: *Seat, wlr_dra
+     wlr_drag_icon.events.unmap.add(&drag_icon.unmap);
+     wlr_drag_icon.surface.events.new_subsurface.add(&drag_icon.new_subsurface);
+ 
+-    // There may already be subsurfaces present on this surface that we
+-    // aren't aware of and won't receive a new_subsurface event for.
+-    var it = wlr_drag_icon.surface.subsurfaces.iterator(.forward);
+-    while (it.next()) |s| Subsurface.create(s, .{ .drag_icon = drag_icon });
++    Subsurface.handleExisting(wlr_drag_icon.surface, .{ .drag_icon = drag_icon });
+ }
+ 
+ fn handleDestroy(listener: *wl.Listener(*wlr.Drag.Icon), wlr_drag_icon: *wlr.Drag.Icon) void {
+--- river/LayerSurface.zig.orig	2021-06-16 17:42:09 UTC
++++ river/LayerSurface.zig
+@@ -70,10 +70,7 @@ pub fn init(self: *Self, output: *Output, wlr_layer_su
+     wlr_layer_surface.events.new_popup.add(&self.new_popup);
+     wlr_layer_surface.surface.events.new_subsurface.add(&self.new_subsurface);
+ 
+-    // There may already be subsurfaces present on this surface that we
+-    // aren't aware of and won't receive a new_subsurface event for.
+-    var it = wlr_layer_surface.surface.subsurfaces.iterator(.forward);
+-    while (it.next()) |s| Subsurface.create(s, .{ .layer_surface = self });
++    Subsurface.handleExisting(wlr_layer_surface.surface, .{ .layer_surface = self });
+ }
+ 
+ fn handleDestroy(listener: *wl.Listener(*wlr.LayerSurfaceV1), wlr_layer_surface: *wlr.LayerSurfaceV1) void {
+--- river/Subsurface.zig.orig	2021-06-16 17:42:09 UTC
++++ river/Subsurface.zig
+@@ -71,10 +71,18 @@ pub fn create(wlr_subsurface: *wlr.Subsurface, parent:
+     wlr_subsurface.events.unmap.add(&subsurface.unmap);
+     wlr_subsurface.surface.events.new_subsurface.add(&subsurface.new_subsurface);
+ 
+-    // There may already be subsurfaces present on this surface that we
+-    // aren't aware of and won't receive a new_subsurface event for.
+-    var it = wlr_subsurface.surface.subsurfaces.iterator(.forward);
+-    while (it.next()) |s| Subsurface.create(s, parent);
++    Subsurface.handleExisting(wlr_subsurface.surface, parent);
++}
++
++/// Create Subsurface structs to track subsurfaces already present on the
++/// given surface when river becomes aware of the surface as we won't
++/// recieve a new_subsurface event for them.
++pub fn handleExisting(surface: *wlr.Surface, parent: Parent) void {
++    var below_it = surface.subsurfaces_below.iterator(.forward);
++    while (below_it.next()) |s| Subsurface.create(s, parent);
++
++    var above_it = surface.subsurfaces_above.iterator(.forward);
++    while (above_it.next()) |s| Subsurface.create(s, parent);
+ }
+ 
+ fn handleDestroy(listener: *wl.Listener(*wlr.Subsurface), wlr_subsurface: *wlr.Subsurface) void {
+--- river/XdgPopup.zig.orig	2021-06-16 17:42:09 UTC
++++ river/XdgPopup.zig
+@@ -77,10 +77,7 @@ pub fn create(wlr_xdg_popup: *wlr.XdgPopup, parent: Pa
+     wlr_xdg_popup.base.events.new_popup.add(&self.new_popup);
+     wlr_xdg_popup.base.surface.events.new_subsurface.add(&self.new_subsurface);
+ 
+-    // There may already be subsurfaces present on this surface that we
+-    // aren't aware of and won't receive a new_subsurface event for.
+-    var it = wlr_xdg_popup.base.surface.subsurfaces.iterator(.forward);
+-    while (it.next()) |s| Subsurface.create(s, parent);
++    Subsurface.handleExisting(wlr_xdg_popup.base.surface, parent);
+ }
+ 
+ fn handleDestroy(listener: *wl.Listener(*wlr.XdgSurface), wlr_xdg_surface: *wlr.XdgSurface) void {
+--- river/XdgToplevel.zig.orig	2021-06-16 17:42:09 UTC
++++ river/XdgToplevel.zig
+@@ -68,10 +68,7 @@ pub fn init(self: *Self, view: *View, xdg_surface: *wl
+     xdg_surface.events.new_popup.add(&self.new_popup);
+     xdg_surface.surface.events.new_subsurface.add(&self.new_subsurface);
+ 
+-    // There may already be subsurfaces present on this surface that we
+-    // aren't aware of and won't receive a new_subsurface event for.
+-    var it = xdg_surface.surface.subsurfaces.iterator(.forward);
+-    while (it.next()) |s| Subsurface.create(s, .{ .view = view });
++    Subsurface.handleExisting(xdg_surface.surface, .{ .view = view });
+ }
+ 
+ pub fn deinit(self: *Self) void {

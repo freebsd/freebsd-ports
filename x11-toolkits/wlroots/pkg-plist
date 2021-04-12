@@ -6,7 +6,6 @@ include/wlr/backend/libinput.h
 include/wlr/backend/multi.h
 include/wlr/backend/noop.h
 include/wlr/backend/session.h
-include/wlr/backend/session/interface.h
 include/wlr/backend/wayland.h
 %%X11%%include/wlr/backend/x11.h
 include/wlr/config.h
@@ -20,9 +19,10 @@ include/wlr/interfaces/wlr_tablet_tool.h
 include/wlr/interfaces/wlr_touch.h
 include/wlr/render/dmabuf.h
 include/wlr/render/drm_format_set.h
-include/wlr/render/egl.h
-include/wlr/render/gles2.h
+%%OPENGL%%include/wlr/render/egl.h
+%%OPENGL%%include/wlr/render/gles2.h
 include/wlr/render/interface.h
+include/wlr/render/pixman.h
 include/wlr/render/wlr_renderer.h
 include/wlr/render/wlr_texture.h
 include/wlr/types/wlr_box.h
@@ -35,7 +35,6 @@ include/wlr/types/wlr_export_dmabuf_v1.h
 include/wlr/types/wlr_foreign_toplevel_management_v1.h
 include/wlr/types/wlr_fullscreen_shell_v1.h
 include/wlr/types/wlr_gamma_control_v1.h
-include/wlr/types/wlr_gtk_primary_selection.h
 include/wlr/types/wlr_idle.h
 include/wlr/types/wlr_idle_inhibit_v1.h
 include/wlr/types/wlr_input_device.h
@@ -75,6 +74,7 @@ include/wlr/types/wlr_viewporter.h
 include/wlr/types/wlr_virtual_keyboard_v1.h
 include/wlr/types/wlr_virtual_pointer_v1.h
 include/wlr/types/wlr_xcursor_manager.h
+include/wlr/types/wlr_xdg_activation_v1.h
 include/wlr/types/wlr_xdg_decoration_v1.h
 include/wlr/types/wlr_xdg_foreign_registry.h
 include/wlr/types/wlr_xdg_foreign_v1.h
@@ -88,5 +88,5 @@ include/wlr/version.h
 include/wlr/xcursor.h
 %%X11%%include/wlr/xwayland.h
 lib/libwlroots.so
-lib/libwlroots.so.8
+lib/libwlroots.so.9
 libdata/pkgconfig/wlroots.pc

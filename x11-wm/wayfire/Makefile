@@ -1,8 +1,12 @@
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	8d4e5ac0801a.patch:-p1 # https://github.com/WayfireWM/wayfire/pull/1152
+PATCHFILES+=	78e88c59373a.patch:-p1 # https://github.com/WayfireWM/wayfire/pull/1205
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	3D Wayland compositor
@@ -15,7 +19,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		${LOCALBASE}/include/xf86drmMode.h:graphics/libdrm \
 		wayland-protocols>=1.12:graphics/wayland-protocols \
 		glm>=0.9.8:math/glm \
-		wlroots>=0.13.0<0.14.0:x11-toolkits/wlroots
+		wlroots>=0.14.0<0.15.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libwf-config.so:devel/wf-config \
 		libpng.so:graphics/png \

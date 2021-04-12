@@ -1,11 +1,18 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	b37bf15194e6.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
+PATCHFILES+=	4912c5a9454b.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
+PATCHFILES+=	00e5da6dd7a2.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
+PATCHFILES+=	b278fd6b4f57.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
+PATCHFILES+=	3f418c11d813.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
+PATCHFILES+=	39da5a00f3b3.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
+PATCHFILES+=	4a688ffec053.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
+PATCHFILES+=	8010e3d9ca00.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
+PATCHFILES+=	8ec2886673d3.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Phone compositor
@@ -13,7 +20,8 @@ COMMENT=	Phone compositor
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		wlroots>=0.14.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
@@ -36,7 +44,7 @@ GLIB_SCHEMAS=	sm.puri.phoc.gschema.xml
 post-extract:
 # Avoid confusing Meson instead of forcing -Dembed-wlroots=disabled
 	@${RMDIR} ${WRKSRC}/subprojects/wlroots
-.if defined(PATCHFILES) && ${PATCHFILES:Mb37bf15194e6*}
+.if defined(PATCHFILES) && ${PATCHFILES:M4912c5a9454b*}
 # Pretend to be a regular file for vendor patch to apply as is
 	@${ECHO_CMD} "Subproject commit 3d227f140e3c4af42d759477fc38e82a4c3dc4ef" \
 		>${WRKSRC}/subprojects/wlroots

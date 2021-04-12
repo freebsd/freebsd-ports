@@ -1,5 +1,6 @@
 PORTNAME=	river
 PORTVERSION=	s20210622
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,7 +10,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols \
-		wlroots>=0.13.0:x11-toolkits/wlroots \
+		wlroots>=0.14.0:x11-toolkits/wlroots \
 		zig>=0.8.0:lang/zig
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwayland-server.so:graphics/wayland \

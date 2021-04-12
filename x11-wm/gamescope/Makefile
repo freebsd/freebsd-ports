@@ -16,6 +16,8 @@ COMMENT=	Micro-compositor from SteamOS
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build after https://github.com/swaywm/wlroots/commit/9ecfa4343a6d
+
 BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 		evdev-proto>0:devel/evdev-proto \
 		vulkan-headers>0:graphics/vulkan-headers \

@@ -1,10 +1,13 @@
 PORTNAME=	cage
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	70ecdcb02ea0.patch:-p1 # https://github.com/Hjdskes/cage/pull/148
+PATCHFILES+=	9a4523d47efe.patch:-p1 # https://github.com/Hjdskes/cage/pull/191
+PATCHFILES+=	7b081cfeee4c.patch:-p1 # https://github.com/Hjdskes/cage/pull/191
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland kiosk
@@ -14,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.14:graphics/wayland-protocols \
-		wlroots>=0.13.0:x11-toolkits/wlroots
+		wlroots>=0.14.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libxkbcommon.so:x11/libxkbcommon
