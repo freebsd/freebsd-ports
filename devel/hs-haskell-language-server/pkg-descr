@@ -1,0 +1,6 @@
+Haskell language server is an implementation of the LSP protocol for Haskell
+programming language. It features code evaluation codelens, type information
+and documentation on hover, integration with retrie, code lenses for explicit
+import lists.
+
+WWW: https://github.com/haskell/haskell-language-server/

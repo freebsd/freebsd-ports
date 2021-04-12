@@ -1,0 +1,10 @@
+--- ghcide/ghcide.cabal.orig	2021-04-13 07:56:15 UTC
++++ ghcide/ghcide.cabal
+@@ -405,7 +405,6 @@ executable ghcide-bench
+         extra,
+         filepath,
+         ghcide,
+-        lsp-test == 0.14.0.0,
+         optparse-applicative,
+         process,
+         safe-exceptions,
