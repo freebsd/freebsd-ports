@@ -2,9 +2,9 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel lang
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
@@ -16,6 +16,10 @@ LICENSE_FILE_LLVM2=	${LICENSE_DIR}/LICENSE.TXT
 LICENSE_NAME_LLVM2= 	Apache License 2.0 with LLVM Exceptions
 LICENSE_PERMS_LLVM2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE:=	${LICENSE:NARM}
+
+FLAVORS=	default lite
+FLAVOR?=	${FLAVORS:[1]}
+lite_PKGNAMESUFFIX=	${LLVM_SUFFIX}-lite
 
 LLVM_SUFFIX=	-devel
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
@@ -71,19 +75,23 @@ GH_TAGNAME=	${LLVM_PROJECT_COMMIT}
 
 .include "Makefile.snapshot"
 
-OPTIONS_DEFINE=	CLANG DOCS EXTRAS FLANG LIT LLD LLDB MLIR
+OPTIONS_DEFINE=		CLANG DOCS LLD STATIC_LIBS
+OPTIONS_DEFAULT=	CLANG LLD
+.if !${FLAVOR:Mlite}
+OPTIONS_DEFINE+=	EXTRAS FLANG LIT LLDB MLIR
 OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
 OPTIONS_DEFINE_powerpc64=	GOLD OPENMP
-OPTIONS_DEFAULT=	CLANG EXTRAS FLANG LIT LLD LLDB MLIR
+OPTIONS_DEFAULT+=	EXTRAS FLANG LIT LLDB MLIR
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
 OPTIONS_DEFAULT_powerpc64=     ${OPTIONS_DEFAULT_powerpc64_${OSREL:R}} OPENMP
 OPTIONS_DEFAULT_powerpc64_13=  GOLD
 OPTIONS_DEFAULT_powerpc64_14=  GOLD
+.endif
 OPTIONS_SUB=	yes
 _ALL_OPTIONS=	CLANG COMPILER_RT DOCS EXTRAS FLANG GOLD LIT LLD LLDB MLIR \
-		OPENMP
+		OPENMP STATIC_LIBS
 
 # Pre-declared for options framework
 LIB_DEPENDS=
@@ -103,8 +111,11 @@ CLANG_SUB_LIST=		XCC=clang${LLVM_SUFFIX} \
 			XCPP=clang-cpp${LLVM_SUFFIX} \
 			XLD=ld.lld${LLVM_SUFFIX} \
 			X_COMPILER_TYPE=clang
+.if ${FLAVOR:Nlite}
+# Required by scan-build.  Users of lite can install by hand.
 CLANG_USES=		perl5
 CLANG_USE=		PERL5=run
+.endif
 COMPILER_RT_DESC=	Sanitizer libraries
 # An unwind.h is require to build.  I think an in-tree one should be used
 # but this seems to work as a workaround...
@@ -143,6 +154,7 @@ OPENMP_PORTDOCS=	openmp
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 OPENMP_USES=		perl5
 OPENMP_USE=		PERL5=build
+STATIC_LIBS_DESC=	Install static libraries (does not effect sanitizers)
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
@@ -453,6 +465,9 @@ post-install-COMPILER_RT-on:
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/clang/${LLVM_RELEASE}/lib/freebsd/libclang_rt*i386*
 .endif
 
+post-install-STATIC_LIBS-off:
+	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/lib*.a
+
 post-install-LIT-on:
 	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/llvm/utils/lit/lit.py \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/lit
@@ -510,6 +525,7 @@ build-plist:
 	    -e 's|${LLVM_MAJOR:C/\./\\./}|%%LLVM_MAJOR%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
 	awk '{ \
+	    if ($$0 ~ /lib.lib[a-zA-Z].*\.a/) {printf "%%%%STATIC_LIBS%%%%"} \
 	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /${OPENMP_PATTERN}|${EXTRAS_PATTERN}|${COMPILER_RT_PATTERN}|libclang_rt/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
 		{printf "%%%%COMPILER_RT%%%%"} \
