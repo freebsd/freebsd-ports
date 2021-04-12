@@ -158,7 +158,6 @@
     SUBDIR += fping
     SUBDIR += freebsd-uucp
     SUBDIR += freediameter
-    SUBDIR += freenet6
     SUBDIR += freeradius-client
     SUBDIR += freeradius3
     SUBDIR += freerdp

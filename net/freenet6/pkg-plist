@@ -1,6 +1,0 @@
-bin/gw6c
-bin/gw6c-freebsd.sh
-etc/freenet6/README
-@sample etc/freenet6/gw6c.conf.sample
-man/man5/gw6c.conf.5.gz
-man/man8/gw6c.8.gz
