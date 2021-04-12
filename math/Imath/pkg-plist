@@ -82,9 +82,9 @@ libdata/pkgconfig/Imath.pc
 %%PYTHON%%include/Imath/PyImathVec4Impl.h
 %%PYTHON%%include/Imath/PyImathVecOperators.h
 %%PYTHON%%lib/cmake/Imath/ImathConfig-%%CMAKE_BUILD_TYPE%%.cmake
-%%PYTHON%%lib/libPyImath_Python3_7-%%MAJORVER%%.so
-%%PYTHON%%lib/libPyImath_Python3_7-%%MAJORVER%%.so.27
-%%PYTHON%%lib/libPyImath_Python3_7-%%MAJORVER%%.so.27.0.0
+%%PYTHON%%lib/libPyImath_Python%%PYVER%%-%%MAJORVER%%.so
+%%PYTHON%%lib/libPyImath_Python%%PYVER%%-%%MAJORVER%%.so.27
+%%PYTHON%%lib/libPyImath_Python%%PYVER%%-%%MAJORVER%%.so.27.0.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/imath.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/imathnumpy.so
 %%PYTHON%%libdata/pkgconfig/PyImath.pc
