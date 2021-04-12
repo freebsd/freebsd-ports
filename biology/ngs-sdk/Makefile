@@ -1,6 +1,6 @@
 PORTNAME=	ngs
 DISTVERSION=	2.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 PKGNAMESUFFIX=	-sdk
 
@@ -36,8 +36,8 @@ do-install: # install target from the project breaks: https://github.com/ncbi/ng
 	${RM} -r ${STAGEDIR}${PREFIX}/include/ngs/win
 	# install libraries
 	cd ${WRKSRC}/build/ngs-sdk/FreeBSD/clang/amd64/rel/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib
-	# remove static libs built instead of shared libs, see https://github.com/ncbi/ngs/issues/33
-	cd ${STAGEDIR}${PREFIX}/lib && ${RM} libngs-c++.a* libngs-adapt-c++.a*
+		# The above command installs broken-looking static libs with symlinks.
+		# This is intentional, see comments https://github.com/ncbi/ncbi-vdb/issues/36#issuecomment-817990790 This may change in future versions.
 	# strip
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libngs-sdk.so.2.11.0
 
