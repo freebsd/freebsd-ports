@@ -1,6 +1,6 @@
 PORTNAME=	step-certificates
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.15.8
+DISTVERSION=	0.15.11
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -78,8 +78,8 @@ GH_TUPLE=	\
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		smallstep:assert:82e2b9b3b262:smallstep_assert/vendor/github.com/smallstep/assert \
-		smallstep:cli-utils:v0.1.0:smallstep_cli_utils/vendor/go.step.sm/cli-utils \
-		smallstep:crypto:v0.7.3:smallstep_crypto/vendor/go.step.sm/crypto \
+		smallstep:cli-utils:v0.2.0:smallstep_cli_utils/vendor/go.step.sm/cli-utils \
+		smallstep:crypto:v0.8.0:smallstep_crypto/vendor/go.step.sm/crypto \
 		smallstep:nosql:v0.3.6:smallstep_nosql/vendor/github.com/smallstep/nosql \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
 		square:go-jose:v2.5.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
