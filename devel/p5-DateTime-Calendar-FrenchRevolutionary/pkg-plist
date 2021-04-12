@@ -1,8 +1,12 @@
 %%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary.pm
 %%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary/Locale.pm
 %%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary/Locale/en.pm
+%%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary/Locale/es.pm
 %%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary/Locale/fr.pm
+%%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary/Locale/it.pm
 %%PERL5_MAN3%%/DateTime::Calendar::FrenchRevolutionary.3.gz
 %%PERL5_MAN3%%/DateTime::Calendar::FrenchRevolutionary::Locale.3.gz
 %%PERL5_MAN3%%/DateTime::Calendar::FrenchRevolutionary::Locale::en.3.gz
+%%PERL5_MAN3%%/DateTime::Calendar::FrenchRevolutionary::Locale::es.3.gz
 %%PERL5_MAN3%%/DateTime::Calendar::FrenchRevolutionary::Locale::fr.3.gz
+%%PERL5_MAN3%%/DateTime::Calendar::FrenchRevolutionary::Locale::it.3.gz
