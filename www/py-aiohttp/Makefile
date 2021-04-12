@@ -2,6 +2,7 @@
 
 PORTNAME=	aiohttp
 PORTVERSION=	3.6.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,7 +36,7 @@ USE_PYTHON=	autoplist distutils cython
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_VER} < 3.7
+.if ${PYTHON_REL} < 3700
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}idna_ssl>=1.0:dns/py-idna_ssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.5:devel/py-typing-extensions@${PY_FLAVOR}
 .endif

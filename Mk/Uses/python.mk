@@ -445,12 +445,6 @@ PYTHON_REL=		# empty
 PYTHON_ABIVER=		# empty
 PYTHON_PORTSDIR=	${_PYTHON_RELPORTDIR}${PYTHON_SUFFIX}
 
-.if ${PYTHON_VER} >= 3.8
-PYTHON_EXT_SUFFIX=	.cpython-${PYTHON_SUFFIX}
-.else
-PYTHON_EXT_SUFFIX=	# empty
-.endif
-
 # Protect partial checkouts from Mk/Scripts/functions.sh:export_ports_env().
 .if !defined(_PORTS_ENV_CHECK) || exists(${PORTSDIR}/${PYTHON_PORTSDIR})
 .include "${PORTSDIR}/${PYTHON_PORTSDIR}/Makefile.version"
@@ -470,6 +464,12 @@ PYTHON_ABIVER!=		${PYTHON_CMD}-config --abiflags
 # Default ABI flags for lang/python3[67] ports
 PYTHON_ABIVER=		m
 .endif
+.endif
+
+.if ${PYTHON_REL} >= 3807
+PYTHON_EXT_SUFFIX=	.cpython-${PYTHON_SUFFIX}
+.else
+PYTHON_EXT_SUFFIX=	# empty
 .endif
 
 .if ${PYTHON_MAJOR_VER} == 2
