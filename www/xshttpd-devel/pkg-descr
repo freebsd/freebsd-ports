@@ -1,9 +1,0 @@
-This port offers the development branch of the XS-HTTPD webserver.
-The stable version of XS-HTTPD is available as well, as www/xshttpd.
-
-Development releases are updated much more often and will contain
-all kinds of nice new features - some of them are even documented.
-
-Read the ChangeLog file for possible issues with backwards compatibility.
-
-WWW: http://www.stack.nl/xs-httpd/

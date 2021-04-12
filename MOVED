@@ -16278,3 +16278,5 @@ net/coturn|net/turnserver|2021-04-09|Remove duplicate port: coturn is another na
 databases/percona55-server||2021-04-11|EOL upstream
 databases/percona55-client||2021-04-11|EOL upstream
 graphics/ilmbase|math/Imath|2021-04-10|Ilmbase was split out into Imath and OpenEXR.
+www/xshttpd||2021-04-12|Unmaintained and dead upstream
+www/xshttpd-devel||2021-04-12|Unmaintained and dead upstream

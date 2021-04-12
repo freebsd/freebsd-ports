@@ -2293,8 +2293,6 @@
     SUBDIR += xfce4-smartbookmark-plugin
     SUBDIR += xist
     SUBDIR += xoops
-    SUBDIR += xshttpd
-    SUBDIR += xshttpd-devel
     SUBDIR += xsp
     SUBDIR += yabb
     SUBDIR += yanopaste
