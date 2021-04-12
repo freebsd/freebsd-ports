@@ -1,6 +1,6 @@
 PORTNAME=	pink-pony
 PORTVERSION=	1.4.1
-PORTREVISION=	28
+PORTREVISION=	29
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -8,15 +8,12 @@ COMMENT=	Tron-like multiplayer racing game
 
 LICENSE=	GPLv3+
 
-BROKEN=		depends on removed port graphics/ilmbase
-
 LIB_DEPENDS=	libIL.so:graphics/devil \
 		libprotobuf.so:devel/protobuf \
-		libglfw.so:graphics/glfw2 \
+		libglfw.so.0:graphics/glfw2 \
 		libftgl.so:graphics/ftgl \
-		libsigc-2.0.so:devel/libsigc++20
-# FIXME: which port has a drop-in replacement of libHalf.so?
-#		libHalf.so:graphics/ilmbase
+		libsigc-2.0.so:devel/libsigc++20 \
+		libImath.so:math/Imath
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ginkgo

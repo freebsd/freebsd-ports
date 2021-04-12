@@ -1,17 +1,20 @@
 --- SConstruct.orig	2014-01-01 01:39:36 UTC
 +++ SConstruct
-@@ -3,11 +3,10 @@ import os
+@@ -3,13 +3,12 @@ import os
  optimization_flags = ['-O3']
  #optimization_flags = ['-O0', '-ggdb']
  
 -env = Environment()
-+env = Environment(ENV=os.environ, **dict((k, v.split()) for k, v in ARGUMENTS.items()))
 -env['CC'] = 'g++'
 -env['CCFLAGS'] = ['-Wall', '-Wextra', '-Wno-reorder', '-Wno-unused-parameter'] + optimization_flags
++env = Environment(ENV=os.environ, **dict((k, v.split()) for k, v in ARGUMENTS.items()))
 +env.Append(CCFLAGS = ['-Wall', '-Wextra', '-Wno-reorder', '-Wno-unused-parameter'])
  env['LIBS'] = ['GLU', 'GL', 'protobuf', 'IL']
 -env['CPPPATH'] = ['#', '#/src', '#/external/tinyXML', '#/external/flextGL/', '/usr/include/OpenEXR']
 +env['CPPPATH'] = ['#', '#/src', '#/external/tinyXML', '#/external/flextGL/']
  
- env.ParseConfig("pkg-config IlmBase --cflags --libs")
+-env.ParseConfig("pkg-config IlmBase --cflags --libs")
++env.ParseConfig("pkg-config Imath --cflags --libs")
  env.ParseConfig("pkg-config libglfw --cflags --libs")
+ env.ParseConfig("pkg-config ftgl --cflags --libs")
+ env.ParseConfig("pkg-config sigc++-2.0 --cflags --libs")
