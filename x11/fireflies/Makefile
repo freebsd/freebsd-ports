@@ -9,11 +9,14 @@ MASTER_SITES=	http://somewhere.fscked.org/proj/fireflies/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension of xscreensaver
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libgfx.so:graphics/libgfx
 
 GNU_CONFIGURE=	yes
 USES=		gl
-USE_GL=		glu
+USE_GL=		gl glu
 EXTRACT_AFTER_ARGS=--exclude '${DISTNAME}/libgfx*'
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/GL
