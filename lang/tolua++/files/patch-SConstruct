@@ -28,7 +28,16 @@
  opts.Add('no_cygwin', 'Use -mno-cygwin to build using the mingw compiler on cygwin', 0)
  opts.Add('LIBS', 'libraries', [])
  opts.Add('LIBPATH', 'library path', [])
-@@ -145,7 +146,9 @@ Files will be installed on <prefix>/bin,
+@@ -65,7 +66,7 @@ def pkg_scan_dep(self, target, source):
+ 	## TODO: detectar si el archivo existe antes de abrirlo asi nomas
+ 	pkg = open(source, "rt")
+ 
+-	for linea in pkg.xreadlines():
++	for linea in pkg:
+ 		dep = re.search("^[\t\w]*\$[cphl]file\s*\"([^\"]+)\"", linea)
+ 		if dep:
+ 			self.Depends(target, '#' + dep.groups()[0]);
+@@ -145,7 +146,9 @@ Files will be installed on <prefix>/bin, <prefix>/lib 
  ########### end of helper builders
  
  env['CPPPATH'] = '#/include'

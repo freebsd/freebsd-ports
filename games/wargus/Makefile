@@ -11,9 +11,6 @@ COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Uses EOL Python 2.7 via games/stratagus
-EXPIRATION_DATE=2021-06-23
-
 RUN_DEPENDS=	stratagus:games/stratagus \
 		ffmpeg2theora:multimedia/ffmpeg2theora \
 		cdparanoia:audio/cdparanoia
