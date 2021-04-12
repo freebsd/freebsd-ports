@@ -1,5 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2021-04-05
+DISTVERSION=	2021-04-12
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -19,7 +19,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		ansi_term-0.12.1 \
 		anyhow-1.0.40 \
 		anymap-0.12.1 \
-		arrayvec-0.6.1 \
+		arrayvec-0.7.0 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		backtrace-0.3.56 \
@@ -74,18 +74,18 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		jemallocator-0.3.2 \
 		jod-thread-0.1.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.92 \
+		libc-0.2.93 \
 		libloading-0.7.0 \
 		libmimalloc-sys-0.1.21 \
 		lock_api-0.4.3 \
 		log-0.4.14 \
 		lsp-server-0.5.0 \
-		lsp-types-0.88.0 \
+		lsp-types-0.89.0 \
 		matchers-0.0.1 \
 		matches-0.1.8 \
 		memchr-2.3.4 \
 		memmap-0.7.0 \
-		memmap2-0.2.1 \
+		memmap2-0.2.2 \
 		memoffset-0.6.3 \
 		mimalloc-0.1.25 \
 		miniz_oxide-0.4.4 \
@@ -121,7 +121,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.23 \
 		rowan-0.13.0-pre.3 \
-		rustc-ap-rustc_lexer-710.0.0 \
+		rustc-ap-rustc_lexer-714.0.0 \
 		rustc-demangle-0.1.18 \
 		rustc-hash-1.1.0 \
 		ryu-1.0.5 \
@@ -141,13 +141,13 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		smallvec-1.6.1 \
 		smol_str-0.1.17 \
 		snap-1.0.4 \
-		syn-1.0.68 \
+		syn-1.0.69 \
 		synstructure-0.12.4 \
 		termcolor-1.1.2 \
 		text-size-1.1.0 \
 		thread_local-1.1.3 \
 		threadpool-1.8.1 \
-		tinyvec-1.1.1 \
+		tinyvec-1.2.0 \
 		tinyvec_macros-0.1.0 \
 		tracing-0.1.25 \
 		tracing-attributes-0.1.15 \
@@ -159,7 +159,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		ucd-trie-0.1.3 \
 		ungrammar-1.13.0 \
 		unicase-2.6.0 \
-		unicode-bidi-0.3.4 \
+		unicode-bidi-0.3.5 \
 		unicode-normalization-0.1.17 \
 		unicode-segmentation-1.7.1 \
 		unicode-xid-0.2.1 \
