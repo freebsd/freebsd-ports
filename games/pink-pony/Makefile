@@ -13,9 +13,10 @@ BROKEN=		depends on removed port graphics/ilmbase
 LIB_DEPENDS=	libIL.so:graphics/devil \
 		libprotobuf.so:devel/protobuf \
 		libglfw.so:graphics/glfw2 \
-		libHalf.so:graphics/ilmbase \
 		libftgl.so:graphics/ftgl \
 		libsigc-2.0.so:devel/libsigc++20
+# FIXME: which port has a drop-in replacement of libHalf.so?
+#		libHalf.so:graphics/ilmbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ginkgo
