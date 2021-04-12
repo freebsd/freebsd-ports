@@ -6,3 +6,5 @@ OpenGL capable visual, rendering to off-screen pixmaps is also supported.
 
 Related project which may interest those who use GTK-- is GtkGLArea--. It is a
 C++ wrapper for gtkglarea written by Karl Nelson <kenelson@ece.ucdavis.edu>.
+
+WWW: https://www.mono-project.com/archived/gtkglarea/

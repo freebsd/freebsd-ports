@@ -11,6 +11,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL widget for the GTK+2 GUI toolkit
 
+LICENSE=	LGPL20+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
