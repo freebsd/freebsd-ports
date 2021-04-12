@@ -10,6 +10,7 @@ share/icons/hicolor/32x32/apps/wesnoth-icon.png
 share/icons/hicolor/512x512/apps/wesnoth-icon.png
 share/icons/hicolor/64x64/apps/wesnoth-icon.png
 %%CAMPAIGN%%bin/campaignd
+%%NLS%%%%SERVER%%man/ca/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/cs/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/de/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/en_GB/man6/wesnothd.6.gz
@@ -37,6 +38,7 @@ share/icons/hicolor/64x64/apps/wesnoth-icon.png
 %%NLS%%%%SERVER%%man/vi/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/zh_CN/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/zh_TW/man6/wesnothd.6.gz
+%%NLS%%man/ca/man6/wesnoth.6.gz
 %%NLS%%man/de/man6/wesnoth.6.gz
 %%NLS%%man/en_GB/man6/wesnoth.6.gz
 %%NLS%%man/es/man6/wesnoth.6.gz
