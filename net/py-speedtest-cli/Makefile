@@ -1,7 +1,7 @@
 # Created by: Nicola Vitale <nivit@FreeBSD.org>
 
 PORTNAME=	speedtest-cli
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Command line interface for testing internet bandwidth
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
