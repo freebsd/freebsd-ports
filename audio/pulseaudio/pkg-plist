@@ -63,13 +63,13 @@ lib/cmake/PulseAudio/PulseAudioConfig.cmake
 lib/cmake/PulseAudio/PulseAudioConfigVersion.cmake
 lib/libpulse-mainloop-glib.so
 lib/libpulse-mainloop-glib.so.0
-lib/libpulse-mainloop-glib.so.0.0.5
+lib/libpulse-mainloop-glib.so.0.0.6
 lib/libpulse-simple.so
 lib/libpulse-simple.so.0
 lib/libpulse-simple.so.0.1.1
 lib/libpulse.so
 lib/libpulse.so.0
-lib/libpulse.so.0.21.1
+lib/libpulse.so.0.23.0
 %%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/libavahi-wrap.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-allow-passthrough.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-device-manager.so
@@ -242,6 +242,7 @@ share/zsh/site-functions/_pulseaudio
 share/locale/af/LC_MESSAGES/pulseaudio.mo
 share/locale/as/LC_MESSAGES/pulseaudio.mo
 share/locale/be/LC_MESSAGES/pulseaudio.mo
+share/locale/bg/LC_MESSAGES/pulseaudio.mo
 share/locale/bn_IN/LC_MESSAGES/pulseaudio.mo
 share/locale/ca/LC_MESSAGES/pulseaudio.mo
 share/locale/cs/LC_MESSAGES/pulseaudio.mo
@@ -261,6 +262,7 @@ share/locale/hu/LC_MESSAGES/pulseaudio.mo
 share/locale/id/LC_MESSAGES/pulseaudio.mo
 share/locale/it/LC_MESSAGES/pulseaudio.mo
 share/locale/ja/LC_MESSAGES/pulseaudio.mo
+share/locale/kk/LC_MESSAGES/pulseaudio.mo
 share/locale/kn/LC_MESSAGES/pulseaudio.mo
 share/locale/ko/LC_MESSAGES/pulseaudio.mo
 share/locale/lt/LC_MESSAGES/pulseaudio.mo

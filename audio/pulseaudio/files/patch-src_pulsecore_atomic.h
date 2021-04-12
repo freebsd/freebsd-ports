@@ -1,18 +1,19 @@
---- src/pulsecore/atomic.h.orig	2019-09-13 13:10:23 UTC
-+++ src/pulsecore/atomic.h
-@@ -117,7 +117,7 @@ static inline void* pa_atomic_ptr_load(c
+--- src/pulsecore/atomic.h.orig	2020-07-17 12:11:11.000000000 +0200
++++ src/pulsecore/atomic.h	2021-01-23 21:16:28.683759000 +0100
+@@ -117,7 +117,7 @@
  }
  
  static inline void pa_atomic_ptr_store(pa_atomic_ptr_t *a, void* p) {
--    __atomic_store_n(&a->value, p, __ATOMIC_SEQ_CST);
-+    __atomic_store_n(&a->value, (uintptr_t)p, __ATOMIC_SEQ_CST);
+-    __atomic_store_n(&a->value, (unsigned long) p, __ATOMIC_SEQ_CST);
++    __atomic_store_n(&a->value, (uintptr_t) p, __ATOMIC_SEQ_CST);
  }
  
  #else
-@@ -218,39 +218,6 @@ static inline bool pa_atomic_ptr_cmpxchg
+@@ -217,39 +217,6 @@
+ #include <sys/types.h>
  #include <sys/param.h>
  #include <machine/atomic.h>
- 
+-
 -#if __FreeBSD_version < 600000
 -#if defined(__i386__) || defined(__amd64__)
 -#if defined(__amd64__)
@@ -45,7 +46,6 @@
 -}
 -#endif
 -#endif
--
+ 
  typedef struct pa_atomic {
      volatile unsigned long value;
- } pa_atomic_t;

@@ -4,10 +4,9 @@
 # PORTREVISION bumps of depending ports.
 
 PORTNAME=	pulseaudio
-PORTVERSION=	13.0
-PORTREVISION=	2
+DISTVERSION=	14.2
 CATEGORIES=	audio
-MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
+MASTER_SITES=	https://freedesktop.org/software/pulseaudio/releases/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Sound server for UNIX
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libltdl.so:devel/libltdl \
 		libck-connector.so:sysutils/consolekit2
 
-USES=		compiler:c11 cpe gettext gmake gnome iconv libtool \
+USES=		compiler:c11 cpe gettext gmake gnome iconv libtool localbase:ldflags \
 		pathfix pkgconfig python:run shebangfix ssl tar:xz xorg
 
 USE_GNOME=	glib20
@@ -35,8 +34,6 @@ CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl" \
 		LIBS="-lm -lintl" \
 		ac_cv_header_linux_input_h=""
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	shell-completion/bash/pulseaudio \
