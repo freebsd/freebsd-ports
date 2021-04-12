@@ -1,5 +1,6 @@
 PORTNAME=	gvmd
 DISTVERSION=	20.8.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -28,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone
 
-USES=		cmake gnome pkgconfig pgsql python samba:run
+USES=		cmake gnome pkgconfig pgsql python samba:run shebangfix
 USE_GNOME=	glib20 libxslt:build
 USE_LDCONFIG=	yes
 
@@ -36,6 +37,12 @@ USERS=		gvm
 GROUPS=		${USERS}
 
 USE_RC_SUBR=	gvmd
+
+SHEBANG_FILES=	tools/gvm-lsc-rpm-creator.sh \
+		tools/gvm-lsc-deb-creator.sh \
+		src/alert_methods/TippingPoint/report-convert.py \
+		src/alert_methods/SCP/alert \
+		src/alert_methods/SMB/alert
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/lib/gvm/gvmd/gnupg
