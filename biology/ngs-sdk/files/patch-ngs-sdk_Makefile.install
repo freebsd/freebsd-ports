@@ -1,0 +1,11 @@
+--- ngs-sdk/Makefile.install.orig	2021-04-12 08:00:01 UTC
++++ ngs-sdk/Makefile.install
+@@ -37,7 +37,7 @@ LIBRARIES_TO_INSTALL = \
+     ngs-c++.$(VERSION_LIBX) \
+     ngs-adapt-c++.$(VERSION_LIBX) \
+ 
+-LIB_TARGET = $(INST_LIBDIR)$(BITS)
++LIB_TARGET = $(INST_LIBDIR)
+ 
+ LIBRARIES_WITH_PREFIX = \
+ 	$(addprefix $(LIB_TARGET)/$(LPFX),$(LIBRARIES_TO_INSTALL))
