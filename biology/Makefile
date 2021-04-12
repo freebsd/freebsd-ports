@@ -127,6 +127,7 @@
     SUBDIR += py-biom-format
     SUBDIR += py-biopython
     SUBDIR += py-bx-python
+    SUBDIR += py-crossmap
     SUBDIR += py-cutadapt
     SUBDIR += py-dnaio
     SUBDIR += py-ete3
