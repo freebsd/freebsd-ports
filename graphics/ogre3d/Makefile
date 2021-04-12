@@ -3,7 +3,7 @@
 PORTNAME=	ogre3d
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.11.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 
 MAINTAINER=	oliver@FreeBSD.org
@@ -54,10 +54,8 @@ FREEIMAGE_LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
 
 OPENEXR_USE=		XORG=ice
 OPENEXR_CMAKE_BOOL=	OGRE_BUILD_PLUGIN_EXRCODEC
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
-			libIlmThread-2_3.so:graphics/ilmbase \
-			libHalf.so:graphics/ilmbase \
-			libIex-2_3.so:graphics/ilmbase
+OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
+			libImath.so:math/Imath
 
 OPENGL_CMAKE_BOOL=	OGRE_BUILD_RENDERSYSTEM_GL3PLUS \
 			OGRE_BUILD_RENDERSYSTEM_GL \
@@ -80,7 +78,7 @@ PYTHON_CMAKE_BOOL=	OGRE_BUILD_COMPONENT_PYTHON
 PYTHON_BUILD_DEPENDS=	swig:devel/swig
 PYTHON_USES=		python
 
-CXXFLAGS+=		-DNDEBUG -I${LOCALBASE}/include
+CXXFLAGS+=		-DNDEBUG -I${LOCALBASE}/include -I${LOCALBASE}/include/Imath
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
