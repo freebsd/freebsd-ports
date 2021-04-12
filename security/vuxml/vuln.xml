@@ -76,6 +76,35 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9ee01e60-6045-43df-98e5-a794007e54ef">
+    <topic>syncthing -- crash due to malformed relay protocol message</topic>
+    <affects>
+      <package>
+	<name>syncthing</name>
+	<range><lt>1.15.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>syncthing developers report:</p>
+	<blockquote cite="https://github.com/syncthing/syncthing/security/advisories/GHSA-x462-89pf-6r5h">
+	  <p>syncthing can be caused to crash and exit if sent a malformed relay protocol
+	    message message with a negative length field.</p>
+	  <p>The relay server strelaysrv can be caused to crash and exit if sent a malformed
+	    relay protocol message with a negative length field.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-21404</cvename>
+      <url>https://github.com/syncthing/syncthing/security/advisories/GHSA-x462-89pf-6r5h</url>
+    </references>
+    <dates>
+      <discovery>2021-04-06</discovery>
+      <entry>2021-04-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f671c282-95ef-11eb-9c34-080027f515ea">
     <topic>python -- Information disclosure via pydoc -p: /getfile?key=path allows to read arbitrary file on the filesystem</topic>
     <affects>
