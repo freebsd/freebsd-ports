@@ -1,7 +1,7 @@
 # Created by: Mathieu Arnold <m@absolight.net>
 
 PORTNAME=	DateTime-Calendar-Julian
-PORTVERSION=	0.103
+PORTVERSION=	0.104
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
