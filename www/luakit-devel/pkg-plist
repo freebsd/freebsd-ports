@@ -81,6 +81,7 @@ share/doc/luakit/modules/lousy.widget.ssl.html
 share/doc/luakit/modules/lousy.widget.tab.html
 share/doc/luakit/modules/lousy.widget.tabi.html
 share/doc/luakit/modules/lousy.widget.tablist.html
+share/doc/luakit/modules/lousy.widget.tgname.html
 share/doc/luakit/modules/lousy.widget.uri.html
 share/doc/luakit/modules/lousy.widget.zoom.html
 share/doc/luakit/modules/luakit.html
@@ -103,6 +104,7 @@ share/doc/luakit/modules/settings_chrome.html
 share/doc/luakit/modules/soup.html
 share/doc/luakit/modules/styles.html
 share/doc/luakit/modules/tab_favicons.html
+share/doc/luakit/modules/tabgroups.html
 share/doc/luakit/modules/tabhistory.html
 share/doc/luakit/modules/tabmenu.html
 share/doc/luakit/modules/taborder.html
@@ -182,6 +184,7 @@ share/luakit/lib/lousy/widget/ssl.lua
 share/luakit/lib/lousy/widget/tab.lua
 share/luakit/lib/lousy/widget/tabi.lua
 share/luakit/lib/lousy/widget/tablist.lua
+share/luakit/lib/lousy/widget/tgname.lua
 share/luakit/lib/lousy/widget/uri.lua
 share/luakit/lib/lousy/widget/zoom.lua
 share/luakit/lib/markdown.lua
@@ -201,6 +204,7 @@ share/luakit/lib/settings.lua
 share/luakit/lib/settings_chrome.lua
 share/luakit/lib/styles.lua
 share/luakit/lib/tab_favicons.lua
+share/luakit/lib/tabgroups.lua
 share/luakit/lib/tabhistory.lua
 share/luakit/lib/tabmenu.lua
 share/luakit/lib/taborder.lua
