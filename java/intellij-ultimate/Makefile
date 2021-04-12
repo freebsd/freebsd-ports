@@ -3,8 +3,7 @@
 # Based on the java/intellij port
 
 PORTNAME=	intellij-ultimate
-PORTVERSION=	2020.3.2
-PORTREVISION=	1
+PORTVERSION=	2021.1
 CATEGORIES=	java devel
 MASTER_SITES=	https://download-cf.jetbrains.com/idea/
 DISTNAME=	ideaIU-${PORTVERSION}-no-jbr
@@ -39,9 +38,10 @@ NO_ARCH_IGNORE=	libjansi.so
 NO_BUILD=	yes
 SUB_FILES=	idea idea.desktop pkg-message
 
-WRKSRC=		${WRKDIR}/idea-IU-203.7148.57
+WRKSRC=		${WRKDIR}/idea-IU-211.6693.111
 
-do-install:
+post-patch:
+	@${REINPLACE_CMD} 's/x86_64/amd64/g' ${WRKSRC}/bin/idea.sh
 # Initial JDK 15+ support
 	@${REINPLACE_CMD} '/UseConcMarkSweepGC/d' ${WRKSRC}/bin/idea.vmoptions
 	@${REINPLACE_CMD} '/UseConcMarkSweepGC/d' ${WRKSRC}/bin/idea64.vmoptions
@@ -50,6 +50,7 @@ do-install:
 		${WRKSRC}/bin/fsnotifier \
 		${WRKSRC}/bin/fsnotifier64 \
 		${WRKSRC}/lib/pty4j-native/ \
+		${WRKSRC}/plugins/cwm-plugin/quiche-native/ \
 		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/linux32/ \
 		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/linux64/ \
 		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/osx/ \
@@ -57,6 +58,8 @@ do-install:
 		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/windows64/ \
 		${WRKSRC}/plugins/performanceTesting/bin/ \
 		${WRKSRC}/plugins/webp/lib/libwebp/
+
+do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
 		"! -name *\.bak ! -name *\.so ! -name *\.dll ! -name *\.dylib ! -name *\.pdb ! -name *\.sh")
