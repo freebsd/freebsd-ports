@@ -2,7 +2,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	3.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -108,7 +108,8 @@ ECW_LIB_DEPENDS=	libNCSEcw.so:graphics/libecwj2
 EXPAT_CONFIGURE_WITH=	expat
 EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
 EXR_CONFIGURE_ON=	--with-exr
-EXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
+EXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr libImath.so:math/Imath
+EXR_CFLAGS=		-DInt64=uint64_t
 FREEXL_CONFIGURE_WITH=	freexl
 FREEXL_LIB_DEPENDS=	libfreexl.so:textproc/freexl
 GEOS_CONFIGURE_OFF=	--with-geos=no
@@ -163,7 +164,7 @@ ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 post-patch:
 	@${REINPLACE_CMD} -e '/^#GDAL_SLIB_SONAME/ s|^#||' ${WRKSRC}/GDALmake.opt.in
 	@${REINPLACE_CMD} -e 's|$$(INST_LIB)/pkgconfig|${PREFIX}/libdata/pkgconfig|; s| LICENSE.TXT||' ${WRKSRC}/GNUmakefile
-	@${REINPLACE_CMD} -e 's|-lminizip|-lkmlminizip|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lminizip|-lkmlminizip|' -e 's|IlmImf|OpenEXR|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|getCString()|c_str()|' ${WRKSRC}/frmts/pdf/pdfdataset.cpp ${WRKSRC}/frmts/pdf/pdfobject.cpp
 # Clean up bundled libraries
 	@${RM} -r ${WRKSRC}/alg/internal_libqhull/
