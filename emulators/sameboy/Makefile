@@ -30,7 +30,8 @@ OPTIONS_SUB=		yes
 
 LIBRETRO_DESC=	Build libretro core
 
-LIBRETRO_ALL_TARGET=	libretro
+post-build-LIBRETRO-on:
+	@${DO_MAKE_BUILD} -C ${WRKSRC} libretro
 
 post-install-LIBRETRO-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/libretro
