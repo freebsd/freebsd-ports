@@ -16280,3 +16280,4 @@ databases/percona55-client||2021-04-11|EOL upstream
 graphics/ilmbase|math/Imath|2021-04-10|Ilmbase was split out into Imath and OpenEXR.
 www/xshttpd||2021-04-12|Unmaintained and dead upstream
 www/xshttpd-devel||2021-04-12|Unmaintained and dead upstream
+dns/credns||2021-04-12|Broken 12+, unmaintained upstream
