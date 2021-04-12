@@ -11,9 +11,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	godot2:devel/godot2
 
-DEPRECATED=	Uses EOL Python 2.7 via devel/godot2
-EXPIRATION_DATE=2021-06-23
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	w84death
 GH_PROJECT=	Tanks-of-Freedom
