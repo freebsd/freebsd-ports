@@ -2304,7 +2304,6 @@
     SUBDIR += you-get
     SUBDIR += yourls
     SUBDIR += youtube_dl
-    SUBDIR += youtube_dlc
     SUBDIR += yt-dlp
     SUBDIR += ytdl
     SUBDIR += yuicompressor
