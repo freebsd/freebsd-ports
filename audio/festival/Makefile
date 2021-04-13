@@ -20,7 +20,7 @@ PATCHFILES=	src_modules_diphone_diphone.h.diff?id=b58a836:debian	\
 		languagespatch.diff?id=b58a836:debian	\
 		${SPT_PATCHES:C/.*/patch-speech__tools_\0:netbsd/}
 PATCH_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/audio/festival/patches/:netbsd	\
-		http://anonscm.debian.org/cgit/tts/festival.git/plain/debian/patches/:debian
+		https://salsa.debian.org/tts-team/festival/-/raw/b58a836b84ff9a9afa82eb0283bac19bf9c22e71/debian/patches/:debian
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
