@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	pillar
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -17,7 +17,7 @@ CRAN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle \
 		R-cran-rlang>=0.3.0:devel/R-cran-rlang \
 		R-cran-utf8>=1.1.0:textproc/R-cran-utf8 \
-		R-cran-vctrs>0.2.0:devel/R-cran-vctrs
+		R-cran-vctrs>=0.2.0:devel/R-cran-vctrs
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
