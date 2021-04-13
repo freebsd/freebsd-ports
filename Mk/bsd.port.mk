@@ -4513,9 +4513,8 @@ pretty-print-run-depends-list:
 .endif
 
 _SUB_LIST_TEMP=	${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
-.if !target(apply-slist)
+.if !target(apply-slist) && defined(SUB_FILES)
 apply-slist:
-.if defined(SUB_FILES)
 .for file in ${SUB_FILES}
 .if !exists(${FILESDIR}/${file}.in)
 	@${ECHO_MSG} "** Missing ${FILESDIR}/${file}.in for ${PKGNAME}."; exit 1
@@ -4528,7 +4527,6 @@ apply-slist:
 ${i:S/-//:tu}=	${WRKDIR}/${SUB_FILES:M${i}*}
 .endif
 .endfor
-.endif
 .endif
 
 # Generate packing list.  Also tests to make sure all required package
