@@ -28,8 +28,6 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-pre-build: apply-slist
-
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/fonts.alias ${STAGEDIR}${FONTSDIR}
 

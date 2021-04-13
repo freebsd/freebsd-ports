@@ -31,8 +31,6 @@ PORTDOCS=	elisa100.doc elisat10.doc elisat10.html
 
 OPTIONS_DEFINE=	DOCS
 
-pre-build: apply-slist
-
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/fonts.alias ${STAGEDIR}${FONTSDIR}
 

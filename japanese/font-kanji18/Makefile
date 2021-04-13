@@ -50,8 +50,6 @@ post-extract:
 	    ${SED} -f ${RESIZESED_FILE} < ${PORTNAME}${PKGNAMESUFFIX}.bdf \
 	    > ${PORTNAME}${RESIZESED_FILE:R:C/^[0-9][0-9]to//}.bdf
 
-pre-build: apply-slist
-
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/fonts.alias.${PKGNAMESUFFIX} \
 	    ${STAGEDIR}${FONTSDIR}/fonts.alias.${PKGNAMESUFFIX}

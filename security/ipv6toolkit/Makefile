@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS
 post-extract:
 	@cd ${WRKSRC} && ${MKDIR} ${PROGDIRS} ${LIBDIRS}
 
-post-patch: apply-slist
+pre-build:
 	${INSTALL_DATA} ${WRKDIR}/BSDMakefile ${WRKSRC}
 	for D in ${PROGDIRS}; do \
 		${INSTALL_DATA} ${WRKDIR}/Makefile ${WRKSRC}/$$D; \

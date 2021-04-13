@@ -31,8 +31,6 @@ PLIST_FILES=	${FONTSDIR:S,^${PREFIX}/,,}/elisau10.pcf.gz \
 
 OPTIONS_DEFINE=	DOCS
 
-pre-build: apply-slist
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/fonts.alias ${STAGEDIR}${FONTSDIR}
 

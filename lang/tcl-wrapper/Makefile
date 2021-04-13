@@ -55,7 +55,7 @@ SUB_LIST+=	ECHO_CMD="${ECHO_CMD}" GREP="${GREP}" LS="${LS}" \
 		TX_CAT="${TX_CAT}" TX_VER="${TX_VER}" TX_CONF="${TX_CONF}" \
 		TX_CONF_FULL="${TX_CONF_FULL:S/${STAGEDIR}//}"
 
-do-build: apply-slist
+do-build:
 	${MAKE_ENV} ${LOCALBASE}/bin/shc -r -f ${WRKDIR}/wrapper
 
 do-install:

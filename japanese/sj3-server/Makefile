@@ -54,7 +54,7 @@ post-patch:
 	cd ${WRKSRC} && ${CAT} ${POSTPATCHES.nodocports} | ${PATCH}
 .endif
 
-pre-configure: apply-slist
+pre-configure:
 	${INSTALL_DATA} ${WRKDIR}/sj3_freebsd.tmpl ${WRKSRC}/sj3_freebsd.tmpl
 
 post-install:

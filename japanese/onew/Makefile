@@ -51,8 +51,6 @@ RK_DIR+=	${RK_DIR.${I}}
 .endif
 .endfor
 
-pre-build: apply-slist
-
 do-build:
 .for I in ${INPUT_METHOD}
 	${INSTALL_DATA} ${WRKDIR}/ONEW_CONF-for-${I} ${WRKSRC}/ONEW_CONF

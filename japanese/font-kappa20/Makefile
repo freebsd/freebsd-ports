@@ -26,7 +26,7 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-pre-build: apply-slist
+pre-build:
 	cd ${WRKSRC} && ${SH} makebdf.sh
 
 post-install-DOCS-on:

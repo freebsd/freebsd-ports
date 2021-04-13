@@ -33,7 +33,7 @@ POSTPATCHES=	${FILESDIR}/post-patch-Imakefile \
 post-patch:
 	cd ${WRKSRC} && ${CAT} ${POSTPATCHES} | ${PATCH}
 
-pre-configure: apply-slist
+pre-configure:
 	${INSTALL_DATA} ${WRKDIR}/sj3_freebsd.tmpl ${WRKSRC}/sj3_freebsd.tmpl
 
 .include <bsd.port.mk>

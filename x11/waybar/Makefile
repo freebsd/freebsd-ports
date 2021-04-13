@@ -29,7 +29,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 .if exists(${.CURDIR}/files/date.pc.in)
 CONFIGURE_ENV+=	PKG_CONFIG_PATH="${WRKDIR}"
 SUB_FILES+=	date.pc
-post-patch:	apply-slist
 .endif
 
 OPTIONS_DEFINE=	DBUS GLS ICONSFONT MANPAGES MPD PULSEAUDIO SNDIO UDEV

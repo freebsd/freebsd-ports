@@ -25,8 +25,6 @@ PORTDOCS=	README.txt
 
 OPTIONS_DEFINE=	DOCS
 
-pre-build: apply-slist
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}

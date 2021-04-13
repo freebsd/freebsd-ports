@@ -87,7 +87,7 @@ CONF+=		${${I}_CONF}
 CONF+=	TRANSPORTDEFS="-DNO_TCP_TRANSPORT"
 .endif
 
-pre-configure: apply-slist
+pre-configure:
 	${INSTALL_DATA} ${WRKDIR}/Kinput2.conf ${WRKSRC}/Kinput2.conf
 	${PRINTF} "%s\n" ${CONF} > ${WRKSRC}/Kinput2_im.conf
 

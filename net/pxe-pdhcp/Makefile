@@ -19,7 +19,7 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-post-extract: apply-slist
+pre-build:
 	@${INSTALL_DATA} ${WRKDIR}/Makefile ${FILESDIR}/${PORTNAME}.8 ${WRKSRC}
 
 .include <bsd.port.mk>
