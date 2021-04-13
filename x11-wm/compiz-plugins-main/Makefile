@@ -21,10 +21,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gl gmake gnome jpeg libtool:keepla pathfix pkgconfig tar:bzip2 \
-		xorg
+USES=		gettext-tools gl gmake gnome jpeg libtool:keepla localbase:ldflags pathfix \
+		pkgconfig tar:bzip2 xorg
 USE_CSTD=	gnu89
-USE_GL=		yes
+USE_GL=		glu
 USE_GNOME=	gconf2 intltool libxslt
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xinerama xorgproto xrandr xrender
 USE_LDCONFIG=	yes
@@ -58,14 +58,11 @@ GCONF_SCHEMAS=	compiz-animation.schemas \
 		compiz-vpswitch.schemas \
 		compiz-shift.schemas
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-schemas
 
 OPTIONS_DEFINE=		NLS
-OPTIONS_DEFAULT=	NLS
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext-runtime gettext-tools
+NLS_USES=		gettext-runtime
 
 .include <bsd.port.mk>
