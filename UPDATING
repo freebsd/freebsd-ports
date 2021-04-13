@@ -5,7 +5,7 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20210411:
+20210414:
   AFFECTS: users of graphics/OpenEXR or graphics/ilmbase
   AUTHOR: mandree@FreeBSD.org
 
@@ -16,18 +16,18 @@ you update your ports collection, before attempting any port upgrades.
   typical items needs to be changed - file bug reports in that case,
   preferably with tested patches:
 
-  - The IlmImf library is now called OpenEXR
-  - The IlmBase library is now called Imath
-  - The Half library was folded into Imath and is no longer separate
-  - Some header files are now in the "other" include file path,
+  - The IlmBase parts Imath and half are now repackaged as Imath
+  - The IlmThread and Iex libraries are now part of OpenEXR
+  - Some header files were rearranged accordingly, into
     ${LOCALBASE}/include/OpenEXR vs. ${LOCALBASE}/include/Imath
   - Some code needs a few #include statements added, often
     #include <ImfHeader.h> or #include <ImfFrameBuffer.h>
-  - Some code needs Int64 in some namespace replaced by [std::]int64_t
-    and SInt64 by [std::]int64_t.
+  - Some classes were removed, and the C++11 standard library
+    features need to be used, f. i. std::numeric_limits.
+  - Some code used Int64 or SInt64 should use uint64_t or int64_t.
 
-  In some cases, the upstream maintainers have (beta) releases
-  for OpenEXR 3.0/Imath 3.0 support already.
+  Detailed porting hints are available here:
+  https://github.com/AcademySoftwareFoundation/Imath/blob/v3.0.1/docs/PortingGuide2-3.md
 
 20210411:
   AFFECTS: users or devel/py-RPyC
