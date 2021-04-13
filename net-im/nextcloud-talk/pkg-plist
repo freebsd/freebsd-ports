@@ -144,8 +144,6 @@
 %%WWWDIR%%/l10n/hr.json
 %%WWWDIR%%/l10n/hu.js
 %%WWWDIR%%/l10n/hu.json
-%%WWWDIR%%/l10n/ia.js
-%%WWWDIR%%/l10n/ia.json
 %%WWWDIR%%/l10n/id.js
 %%WWWDIR%%/l10n/id.json
 %%WWWDIR%%/l10n/is.js
@@ -180,6 +178,8 @@
 %%WWWDIR%%/l10n/ro.json
 %%WWWDIR%%/l10n/ru.js
 %%WWWDIR%%/l10n/ru.json
+%%WWWDIR%%/l10n/sc.js
+%%WWWDIR%%/l10n/sc.json
 %%WWWDIR%%/l10n/sk.js
 %%WWWDIR%%/l10n/sk.json
 %%WWWDIR%%/l10n/sl.js
