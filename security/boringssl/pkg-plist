@@ -70,6 +70,7 @@ include/openssl/ssl3.h
 include/openssl/stack.h
 include/openssl/thread.h
 include/openssl/tls1.h
+include/openssl/trust_token.h
 include/openssl/type_check.h
 include/openssl/x509.h
 include/openssl/x509_vfy.h
