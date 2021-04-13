@@ -1,0 +1,69 @@
+From a707db8193b30b6cc4a3d10ee946f7f245e07097 Mon Sep 17 00:00:00 2001
+From: Christopher Kohlhoff <chris@kohlhoff.com>
+Date: Tue, 7 Apr 2020 11:18:31 +1000
+Subject: [PATCH] Support C++20 concept syntax.
+
+---
+ include/boost/asio/async_result.hpp  | 18 +++++++++++-------
+ include/boost/asio/detail/config.hpp | 10 +++++++---
+ 2 files changed, 18 insertions(+), 10 deletions(-)
+
+diff --git a/include/boost/asio/async_result.hpp b/include/boost/asio/async_result.hpp
+index 2f4b337d1..0eea0f471 100644
+--- boost/asio/async_result.hpp
++++ boost/asio/async_result.hpp
+@@ -66,9 +66,10 @@ BOOST_ASIO_CONCEPT completion_signature =
+ #define BOOST_ASIO_COMPLETION_SIGNATURE \
+   ::boost::asio::completion_signature
+ 
+-template <typename T, completion_signature Signature>
++template <typename T, typename Signature>
+ BOOST_ASIO_CONCEPT completion_handler_for =
+-  detail::is_completion_handler_for<T, Signature>::value;
++  detail::is_completion_signature<Signature>::value
++    && detail::is_completion_handler_for<T, Signature>::value;
+ 
+ #define BOOST_ASIO_COMPLETION_HANDLER_FOR(s) \
+   ::boost::asio::completion_handler_for<s>
+@@ -488,11 +489,14 @@ struct initiation_archetype
+ 
+ } // namespace detail
+ 
+-template <typename T, completion_signature Signature>
+-BOOST_ASIO_CONCEPT completion_token_for = requires(T&& t)
+-{
+-  async_initiate<T, Signature>(detail::initiation_archetype<Signature>{}, t);
+-};
++template <typename T, typename Signature>
++BOOST_ASIO_CONCEPT completion_token_for =
++  detail::is_completion_signature<Signature>::value
++  &&
++  requires(T&& t)
++  {
++    async_initiate<T, Signature>(detail::initiation_archetype<Signature>{}, t);
++  };
+ 
+ #define BOOST_ASIO_COMPLETION_TOKEN_FOR(s) \
+   ::boost::asio::completion_token_for<s>
+diff --git a/include/boost/asio/detail/config.hpp b/include/boost/asio/detail/config.hpp
+index 27d1d6753..6b85cccea 100644
+--- boost/asio/detail/config.hpp
++++ boost/asio/detail/config.hpp
+@@ -343,10 +343,14 @@
+ // Support concepts on compilers known to allow them.
+ #if !defined(BOOST_ASIO_HAS_CONCEPTS)
+ # if !defined(BOOST_ASIO_DISABLE_CONCEPTS)
+-#  if __cpp_concepts
++#  if defined(__cpp_concepts)
+ #   define BOOST_ASIO_HAS_CONCEPTS 1
+-#   define BOOST_ASIO_CONCEPT concept bool
+-#  endif // __cpp_concepts
++#   if (__cpp_concepts >= 201707)
++#    define BOOST_ASIO_CONCEPT concept
++#   else // (__cpp_concepts >= 201707)
++#    define BOOST_ASIO_CONCEPT concept bool
++#   endif // (__cpp_concepts >= 201707)
++#  endif // defined(__cpp_concepts)
+ # endif // !defined(BOOST_ASIO_DISABLE_CONCEPTS)
+ #endif // !defined(BOOST_ASIO_HAS_CONCEPTS)
+ 
