@@ -17,67 +17,7 @@
 
 if [ -n "$new_host_name" ] && [ -n "$new_ip_address" ]; then
   # Delete entries with new_host_name or new_ip_address in /etc/hosts.
-  sed -i '/Added by Google/d' /etc/hosts
-
-  # Add an entry for our new_host_name/new_ip_address in /etc/hosts.
-  echo "${new_ip_address} ${new_host_name} ${new_host_name%%.*}  # Added by Google" >> /etc/hosts
-
-  # Add an entry for reaching the metadata server in /etc/hosts.
-  echo "169.254.169.254 metadata.google.internal  # Added by Google" >> /etc/hosts
-fi
-
-# /sbin/dhclient-scripts in both ubuntu and centos have some problems for us:
-#  1) BOUND doesn't always set hostname (e.g. if old_host_name is unset in
-#     precise pangolin)
-#  2) Using too long of a FQDN as a hostname causes some tools to break in
-#     some distros (e.g. ssh-keygen) and hostname tool complains when given
-#     a FQDN that is > 64 bytes.
-#
-# As a result, we set the host name in all circumstances here, to the truncated
-# unqualified domain name.
-
-if [ -n "$new_host_name" ]; then
-  hostname "${new_host_name%%.*}"
-
-  # If NetworkManager is installed set the hostname with nmcli.
-  # to resolve issues with NetworkManager resetting the hostname
-  # to the FQDN on DHCP renew.
-  nmcli=$(which nmcli 2> /dev/null)
-  if [ -x "$nmcli" ]; then
-    nmcli general hostname "${new_host_name%%.*}"
-  fi
-
-  # Restart rsyslog to update the hostname.
-  systemctl=$(which systemctl 2> /dev/null)
-  if [ -x "$systemctl" ]; then
-    hasrsyslog=$($systemctl | grep rsyslog | cut -f1 -d' ')
-    if [ ! -z "$hasrsyslog" ]; then
-      $systemctl -q --no-block restart "$hasrsyslog"
-    fi
-  else
-    pkill -HUP syslogd
-  fi
-fi
-#!/bin/sh
-# Copyright 2016 Google Inc. All Rights Reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-# Deal with a new hostname assignment.
-
-if [ -n "$new_host_name" ] && [ -n "$new_ip_address" ]; then
-  # Delete entries with new_host_name or new_ip_address in /etc/hosts.
-  sed -i '/Added by Google/d' /etc/hosts
+  sed -i "" '/Added by Google/d' /etc/hosts
 
   # Add an entry for our new_host_name/new_ip_address in /etc/hosts.
   echo "${new_ip_address} ${new_host_name} ${new_host_name%%.*}  # Added by Google" >> /etc/hosts
