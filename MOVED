@@ -16191,7 +16191,6 @@ net-p2p/sonarr-devel|net-p2p/sonarr|2021-03-23|Removed, use net-p2p/sonarr inste
 www/py-django-jsonfield||2021-03-24|Removed: This port will be deleted in the future, please switch to use www/py-jsonfield or www/py-jsonfield2
 devel/hs-c2hs||2021-03-27|Has expired: Was used as BUILD_DEPENDS, not useful on its own
 x11-toolkits/tile||2021-03-27|Has expired: The Tile widget set is part of Tk 8.5 and above, see TIP 248
-security/apg||2021-03-28|Has expired: Abandonware. Please try security/makepasswd or security/rndpassw instead
 lang/Gofer||2021-03-28|Has expired: Old, unmaintained language
 net/libsignal|net/libsignal-protocol-c|2021-03-30|Rename to match upstream naming
 databases/redis4|databases/redis|2021-04-06|Has expired: End of life, please use modern version

@@ -26,6 +26,7 @@
     SUBDIR += amavisd-milter
     SUBDIR += amavisd-new
     SUBDIR += apache-xml-security-c
+    SUBDIR += apg
     SUBDIR += apkid
     SUBDIR += arirang
     SUBDIR += arpCounterattack
