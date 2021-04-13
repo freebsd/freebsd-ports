@@ -15,7 +15,6 @@ bin/timelimit
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-gfapi.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.sample
 %%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-rados.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupCatalog.conf.sample
 %%CEPHFS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupCephfs.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupGFAPI.conf.sample
