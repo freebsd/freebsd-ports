@@ -9,10 +9,13 @@ MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GUI binding for using Open Inventor with Xt/Motif
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
+
 LIB_DEPENDS=	libCoin.so:graphics/Coin
 
 USES=		gl libtool motif pathfix perl5 shebangfix xorg
-USE_GL=		yes
+USE_GL=		gl
 USE_PERL5=	build
 SHEBANG_FILES=	cfg/doxy4win.pl
 USE_XORG=	xi
