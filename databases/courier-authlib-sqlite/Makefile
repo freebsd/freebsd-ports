@@ -1,6 +1,6 @@
 # Created by: Yarema <yds@CoolRat.org>
 
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	-sqlite
 
 COMMENT=	SQLite support for the Courier authentication library
