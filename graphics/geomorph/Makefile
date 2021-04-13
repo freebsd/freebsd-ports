@@ -13,7 +13,7 @@ LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 USES=		compiler:c++11-lang desktop-file-utils gl gmake pkgconfig \
 		shebangfix
 SHEBANG_FILES=	update-rc
-USE_GL=		yes
+USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libintl-prefix="${LOCALBASE}"
 USE_GCC=	any # lots of severely broken code
