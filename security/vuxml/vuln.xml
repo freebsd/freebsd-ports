@@ -76,6 +76,42 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="465db5b6-9c6d-11eb-8e8a-bc542f4bd1dd">
+    <topic>xorg-server -- Input validation failures in X server XInput extension</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<range><lt>1.20.11,1</lt></range>
+      </package>
+      <package>
+	<name>xwayland</name>
+	<range><lt>1.20.11,1</lt></range>
+      </package>
+      <package>
+	<name>xwayland-devel</name>
+	<range><le>1.20.0.877</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>X.Org server security reports for release 1.20.11:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg/2021-April/060678.html">
+	  <ul>
+	    <li>Fix XChangeFeedbackControl() request underflow</li>
+	  </ul>
+	  <p>.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://gitlab.freedesktop.org/xorg/xserver/-/tags/xorg-server-1.20.11</url>
+    </references>
+    <dates>
+      <discovery>2021-04-13</discovery>
+      <entry>2021-04-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="094fb2ec-9aa3-11eb-83cb-0800278d94f0">
     <topic>gitea -- multiple vulnerabilities</topic>
     <affects>
