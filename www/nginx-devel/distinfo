@@ -1,6 +1,6 @@
-TIMESTAMP = 1617711524
-SHA256 (nginx-1.19.9.tar.gz) = 2e35dff06a9826e8aca940e9e8be46b7e4b12c19a48d55bfc2dc28fc9cc7d841
-SIZE (nginx-1.19.9.tar.gz) = 1060580
+TIMESTAMP = 1618328707
+SHA256 (nginx-1.19.10.tar.gz) = e8d0290ff561986ad7cd6c33307e12e11b137186c4403a6a5ccdb4914c082d88
+SIZE (nginx-1.19.10.tar.gz) = 1061062
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
 SIZE (nginx_mogilefs_module-1.0.4.tar.gz) = 11208
 SHA256 (nginx_mod_h264_streaming-2.2.7.tar.gz) = 6d974ba630cef59de1f60996c66b401264a345d25988a76037c2856cec756c19
