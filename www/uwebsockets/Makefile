@@ -1,6 +1,6 @@
 PORTNAME=	uwebsockets
 DISTVERSIONPREFIX=	v
-DISTVERSION=	19.0.0a5
+DISTVERSION=	19.1.0
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +22,7 @@ GH_PROJECT=	uWebSockets
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-post-install: # https://github.com/uNetworking/uWebSockets/issues/1221
-	${RMDIR} ${STAGEDIR}${PREFIX}/include/uWebSockets/f2
+pre-install: # workaround for https://github.com/uNetworking/uWebSockets/issues/1236
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/uWebSockets
 
 .include <bsd.port.mk>
