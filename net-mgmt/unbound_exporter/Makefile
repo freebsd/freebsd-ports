@@ -1,9 +1,8 @@
 # Created by: Athanasios Douitsis <aduitsis@cpan.org>
 
 PORTNAME=		unbound_exporter
-PORTVERSION=		0.1
+PORTVERSION=		0.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=		4
 CATEGORIES=		net-mgmt
 
 MAINTAINER=		aduitsis@cpan.org
@@ -16,7 +15,6 @@ USE_GITHUB=		yes
 USE_RC_SUBR=		unbound_exporter
 
 GH_ACCOUNT=		kumina
-GH_TAGNAME=		b7e842d893d29200a5108eab717f5ab01d783c0c
 GH_TUPLE=		prometheus:client_golang:3fb53d:client_golang/vendor/github.com/prometheus/client_golang \
 			prometheus:client_model:6f38060:client_model/vendor/github.com/prometheus/client_model \
 			prometheus:common:49fee29:common/vendor/github.com/prometheus/common \

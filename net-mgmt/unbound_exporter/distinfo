@@ -1,6 +1,6 @@
-TIMESTAMP = 1575293880
-SHA256 (kumina-unbound_exporter-v0.1-b7e842d893d29200a5108eab717f5ab01d783c0c_GH0.tar.gz) = 315e38fe24b822b9e24ab17d336ff1b5108e8931a646cc962c9b96d70824b9a9
-SIZE (kumina-unbound_exporter-v0.1-b7e842d893d29200a5108eab717f5ab01d783c0c_GH0.tar.gz) = 8215
+TIMESTAMP = 1618353057
+SHA256 (kumina-unbound_exporter-v0.3_GH0.tar.gz) = 6fee9aa7c0d1f6310832dcd2d41240f0c198e67a863f1b239c286cc1fd523d0e
+SIZE (kumina-unbound_exporter-v0.3_GH0.tar.gz) = 12018
 SHA256 (prometheus-client_golang-3fb53d_GH0.tar.gz) = 778ce90fdb4610cfc7c6382db9455ba15ca63c48c3f0e21cff9f1d0efeef98d3
 SIZE (prometheus-client_golang-3fb53d_GH0.tar.gz) = 129739
 SHA256 (prometheus-client_model-6f38060_GH0.tar.gz) = 6b4cc049a4588d8e93b7acf6cffa6a53034d5410128ae3752263f2bacf9e606c
