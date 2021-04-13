@@ -12,17 +12,21 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls
 
+USES=		autoreconf libtool makeinfo pathfix pkgconfig
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	meduketto
 GH_TAGNAME=	978b733
 
-USES=		autoreconf libtool makeinfo pathfix pkgconfig
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gnutls=yes \
+		--without-openssl \
 		--disable-python
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_LDCONFIG=	yes
+
 INSTALL_TARGET=	install-strip
 
 INFO=		iksemel
