@@ -21,6 +21,8 @@ GH_PROJECT=	otp
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-smp-support
+
 MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
@@ -59,8 +61,6 @@ OPENSSL_VARS=	BROKEN_SSL=openssl
 # If you run Erlang and get a message resembling "WARNING: number of
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
-
-CONFIGURE_ENABLE=	smp-support
 
 DIRTY_CONFIGURE_ENABLE=		dirty-schedulers
 DTRACE_CFLAGS=			-fno-omit-frame-pointer
