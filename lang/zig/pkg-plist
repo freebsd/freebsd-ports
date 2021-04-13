@@ -4949,7 +4949,6 @@ lib/zig/libc/mingw/lib-common/xinput1_4.def
 lib/zig/libc/mingw/lib32/wldap32.def
 lib/zig/libc/mingw/lib32/xinput1_4.def
 lib/zig/libc/musl/libc.s
-lib/zig/std/segmented_list.zig
 lib/zig/libc/mingw/COPYING
 lib/zig/libc/mingw/complex/_cabs.c
 lib/zig/libc/mingw/complex/cabs.c
@@ -8608,6 +8607,7 @@ lib/zig/std/meta.zig
 lib/zig/std/meta/trailer_flags.zig
 lib/zig/std/meta/trait.zig
 lib/zig/std/mutex.zig
+@dir lib/zig/std/net
 lib/zig/std/net.zig
 lib/zig/std/once.zig
 lib/zig/std/os.zig
@@ -8714,6 +8714,7 @@ lib/zig/std/progress.zig
 lib/zig/std/rand.zig
 lib/zig/std/rand/ziggurat.zig
 lib/zig/std/reset_event.zig
+lib/zig/std/segmented_list.zig
 lib/zig/std/sort.zig
 lib/zig/std/special/build_runner.zig
 lib/zig/std/special/c.zig
@@ -8815,6 +8816,7 @@ lib/zig/std/testing/failing_allocator.zig
 lib/zig/std/thread.zig
 lib/zig/std/time.zig
 lib/zig/std/time/epoch.zig
+@dir lib/zig/std/unicode
 lib/zig/std/unicode.zig
 lib/zig/std/valgrind.zig
 lib/zig/std/valgrind/callgrind.zig
