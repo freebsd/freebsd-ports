@@ -60,7 +60,7 @@ MESON_ARGS=	--buildtype=release \
 		--prefix=${LOCALBASE} \
 		-Duser=${USERS} \
 		-Dgroup=${GROUPS} \
-		-Dinstall_kresd_conf=enabled \
+		-Dinstall_kresd_conf=disabled \
 		-Dclient=enabled \
 		-Dutils=enabled \
 		-Dkeyfile_default=${ETCDIR}/root.keys \
@@ -153,5 +153,7 @@ post-install:
 	  ${STRIP_CMD} ${STAGEDIR}${PREFIX}/${STRIP_TGT}; \
 	fi
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/etc/config/config.personal \
+			${STAGEDIR}${ETCDIR}/kresd.conf.sample
 
 .include <bsd.port.mk>

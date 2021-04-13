@@ -1,4 +1,4 @@
-@sample %%ETCDIR%%/kresd.conf
+@sample %%ETCDIR%%/kresd.conf.sample
 %%ETCDIR%%/icann-ca.pem
 %%ETCDIR%%/root.hints
 include/libkres/api.h
