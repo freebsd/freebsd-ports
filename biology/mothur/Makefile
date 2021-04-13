@@ -1,6 +1,6 @@
 PORTNAME=	mothur
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.43.0
+DISTVERSION=	1.45.2
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,8 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++11-lang gmake localbase readline shebangfix
-SHEBANG_FILES=	source/uchime_src/mk
+USES=		compiler:c++11-lang gmake localbase readline
 USE_GITHUB=	yes
 ALL_TARGET=	${PORTNAME}
 
