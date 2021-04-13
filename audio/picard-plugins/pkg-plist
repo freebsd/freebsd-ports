@@ -14,8 +14,6 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/albumartistextension.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/amazon.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/amazon.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/apiseeds_lyrics.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/apiseeds_lyrics.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/classicdiscnumber.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/classicdiscnumber.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/collect_artists.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -38,6 +36,8 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/fix_tracknums.cpython-%%PYTHON_SUFFIX%%.pyc
 @comment %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/haikuattrs.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 @comment %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/haikuattrs.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/happidev_lyrics.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/happidev_lyrics.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/hyphen_unicode.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/hyphen_unicode.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/instruments.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -58,6 +58,8 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/playlist.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/release_type.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/release_type.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/releasetag_aggregations.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/releasetag_aggregations.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/remove_perfect_albums.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/remove_perfect_albums.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/reorder_sides.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -85,15 +87,11 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/abbreviate_artistsort.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/acousticbrainz.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/acousticbrainz_tonal-rhythm.py
-%%ALBUM_COLUMN%%%%PYTHON_SITELIBDIR%%/picard/plugins/add_album_column/__init__.py
-%%ALBUM_COLUMN%%%%PYTHON_SITELIBDIR%%/picard/plugins/add_album_column/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%ALBUM_COLUMN%%%%PYTHON_SITELIBDIR%%/picard/plugins/add_album_column/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/additional_artists_variables.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/addrelease.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/albumartist_website.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/albumartistextension.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/amazon.py
-%%PYTHON_SITELIBDIR%%/picard/plugins/apiseeds_lyrics.py
 %%BPM%%%%PYTHON_SITELIBDIR%%/picard/plugins/bpm/__init__.py
 %%BPM%%%%PYTHON_SITELIBDIR%%/picard/plugins/bpm/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%BPM%%%%PYTHON_SITELIBDIR%%/picard/plugins/bpm/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -162,6 +160,7 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/options_format_performer_tags.ui
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/ui_options_format_performer_tags.py
 @comment %%PYTHON_SITELIBDIR%%/picard/plugins/haikuattrs.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/happidev_lyrics.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/hyphen_unicode.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/instruments.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/keep.py
@@ -193,6 +192,7 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/papercdcase.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/playlist.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/release_type.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/releasetag_aggregations.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/remove_perfect_albums.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/reorder_sides.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/replace_forbidden_symbols.py
