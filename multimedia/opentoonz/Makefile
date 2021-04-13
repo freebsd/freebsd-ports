@@ -19,7 +19,8 @@ LIB_DEPENDS=	libgslcblas.so:math/gsl \
 		libsuperlu.so:math/superlu \
 		libturbojpeg.so:graphics/libjpeg-turbo
 
-USES=		cmake:noninja gettext-runtime gl gnome jpeg pkgconfig qt:5
+USES=		cmake:noninja compiler:c++11-lang gettext-runtime gl \
+		gnome jpeg pkgconfig qt:5
 USE_GITHUB=	yes
 USE_GL=		gl glew glu glut
 USE_GNOME=	glib20
