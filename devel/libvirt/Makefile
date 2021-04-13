@@ -16,6 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgnutls.so:security/gnutls \
 		libxml2.so:textproc/libxml2
 BUILD_DEPENDS=	dnsmasq:dns/dnsmasq \
+		${LOCALBASE}/bin/grep:textproc/gnugrep \
 		rst2html-${PYTHON_VER}:textproc/py-docutils@${PY_FLAVOR} \
 		xsltproc:textproc/libxslt
 RUN_DEPENDS=	dnsmasq:dns/dnsmasq
