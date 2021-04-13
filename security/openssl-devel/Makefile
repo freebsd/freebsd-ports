@@ -163,13 +163,13 @@ post-configure:
 
 post-configure-MAN3-off:
 	${REINPLACE_CMD} \
-		-e 's|^build_man_docs:.*|build_man_docs: $$(MANDOCS1) $$(MANDOCS7)|' \
-		-e 's|dummy $$(MANDOCS[37]); do |dummy; do continue |' \
+		-e 's|^build_man_docs:.*|build_man_docs: $$(MANDOCS1) $$(MANDOCS5)|' \
+		-e 's|dummy $$(MANDOCS[37]); do |dummy; do |' \
 		${WRKSRC}/Makefile
 
 post-install-SHARED-on:
 .for i in ${SHLIBS}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/$i
+	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/$i
 .endfor
 
 post-install-SHARED-off:
