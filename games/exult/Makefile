@@ -1,52 +1,65 @@
 # Created by: Igor Pokrovsky <tiamat@telegraph.spb.ru>
 
 PORTNAME=	exult
-PORTVERSION=	1.7.0.20210405
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.7.0.20210410
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Ultima VII engine
+COMMENT=	Engine for Ultima VII (BG, FOV, SI, SS)
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
-		libpng.so:graphics/png \
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libogg.so:audio/libogg \
-		libfreetype.so:print/freetype2
+		libpng.so:graphics/png \
+		libvorbis.so:audio/libvorbis
 
-USES=		autoreconf compiler:c++11-lib gmake libtool localbase pkgconfig \
-		xorg sdl
+USES=		autoreconf compiler:c++17-lang gmake libtool localbase \
+		pkgconfig sdl xorg
 
 USE_GITHUB=	yes
-GH_TAGNAME=	6150ae4
+GH_TAGNAME=	snapshot-${DISTVERSIONPREFIX}${DISTVERSION}
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_SDL=	mixer2 sdl2
+USE_XORG=	xext x11
 
-USE_CXXSTD=	c++17
-USE_XORG=	x11 xext
-USE_SDL=	mixer2
-USE_GNOME=	gtk30 cairo gdkpixbuf2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-alsa --with-sdl=sdl2 \
+
+CONFIGURE_ARGS=	--disable-static \
+		--enable-shared \
 		--with-icondir=${PREFIX}/share/pixmaps
+
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		DOCS FLUIDSYNTH GIMP STUDIO THUMBNAILER
+OPTIONS_DEFINE=		ALSA DOCS DEBUG FLUIDSYNTH GIMP STUDIO THUMBNAILER
 OPTIONS_DEFAULT=	STUDIO
 OPTIONS_SUB=		yes
 
-FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
-FLUIDSYNTH_CONFIGURE_ENABLE=	fluidsynth
 GIMP_DESC=		GIMP plugin support
-GIMP_LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
-GIMP_CONFIGURE_ENABLE=	gimp-plugin
-
 STUDIO_DESC=		Install Exult Studio
-STUDIO_CONFIGURE_ENABLE=	exult-studio exult-studio-support
-STUDIO_USES=		gnome
-STUDIO_USE=		gnome=libglade2
 THUMBNAILER_DESC=	Gnome SHP thumbnailer support
-THUMBNAILER_USES=	gnome shared-mime-info
-THUMBNAILER_USE=	gnome=libgnomeui
+
+ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
+ALSA_CONFIGURE_ENABLE=		alsa
+
+DEBUG_CONFIGURE_OFF=		--with-debug=no
+DEBUG_CONFIGURE_ON=		--with-debug=full --with-optimization=none
+
+FLUIDSYNTH_LIB_DEPENDS=		libfluidsynth.so:audio/fluidsynth
+FLUIDSYNTH_CONFIGURE_ENABLE=	fluidsynth
+
+GIMP_LIB_DEPENDS=		libgimp-2.0.so:graphics/gimp-app
+GIMP_CONFIGURE_ENABLE=		gimp-plugin
+
+STUDIO_CONFIGURE_ENABLE=	exult-studio exult-studio-support
+STUDIO_USES=			gnome
+STUDIO_USE=			gnome=libglade2
+
+THUMBNAILER_USES=		gnome shared-mime-info
+THUMBNAILER_USE=		gnome=libgnomeui
 THUMBNAILER_CONFIGURE_ENABLE=	gnome-shp-thumbnailer
 
 post-install-DOCS-on:
