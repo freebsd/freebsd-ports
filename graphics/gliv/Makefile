@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 USES=		compiler:c11 desktop-file-utils gettext gl gmake gnome \
 		localbase:ldflags pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix gtk20
-USE_GL=		yes
+USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
