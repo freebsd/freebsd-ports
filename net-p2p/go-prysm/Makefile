@@ -2,7 +2,7 @@
 
 PORTNAME=	go-prysm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.3
+DISTVERSION=	1.3.7
 CATEGORIES=	net-p2p
 
 MAINTAINER=	zi@FreeBSD.org
@@ -50,10 +50,11 @@ GH_TUPLE=	\
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		davidlazar:go-crypto:b73af7476f6c:davidlazar_go_crypto/vendor/github.com/davidlazar/go-crypto \
 		deckarep:golang-set:v1.7.1:deckarep_golang_set/vendor/github.com/deckarep/golang-set \
-		dgraph-io:ristretto:v0.0.3:dgraph_io_ristretto/vendor/github.com/dgraph-io/ristretto \
+		dgraph-io:ristretto:74754f61e018:dgraph_io_ristretto/vendor/github.com/dgraph-io/ristretto \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dop251:goja:a695b0cdd498:dop251_goja/vendor/github.com/dop251/goja \
+		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		edsrzf:mmap-go:v1.0.0:edsrzf_mmap_go/vendor/github.com/edsrzf/mmap-go \
 		emicklei:dot:v0.11.0:emicklei_dot/vendor/github.com/emicklei/dot \
 		etcd-io:bbolt:v1.3.5:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
@@ -103,8 +104,8 @@ GH_TUPLE=	\
 		graph-gophers:graphql-go:dae41bde9ef9:graph_gophers_graphql_go/vendor/github.com/graph-gophers/graphql-go \
 		grpc-ecosystem:go-grpc-middleware:v1.2.2:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:go-grpc-prometheus:v1.2.0:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
-		grpc-ecosystem:grpc-gateway:v1.14.6:grpc_ecosystem_grpc_gateway/vendor/github.com/grpc-ecosystem/grpc-gateway \
-		grpc:grpc-go:v1.33.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc-ecosystem:grpc-gateway:v1.16.0:grpc_ecosystem_grpc_gateway/vendor/github.com/grpc-ecosystem/grpc-gateway \
+		grpc:grpc-go:v1.36.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		herumi:bls-eth-go-binary:57372fb27371:herumi_bls_eth_go_binary/vendor/github.com/herumi/bls-eth-go-binary \
 		holiman:uint256:v1.1.1:holiman_uint256/vendor/github.com/holiman/uint256 \
@@ -219,9 +220,9 @@ GH_TUPLE=	\
 		prometheus:procfs:v0.3.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		prometheus:tsdb:v0.10.0:prometheus_tsdb/vendor/github.com/prometheus/tsdb \
 		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
-		prysmaticlabs:bazel-go-ethereum:71d15f72c132:prysmaticlabs_bazel_go_ethereum/vendor/github.com/ethereum/go-ethereum \
+		prysmaticlabs:bazel-go-ethereum:b9c0d847ae7b:prysmaticlabs_bazel_go_ethereum/vendor/github.com/ethereum/go-ethereum \
 		prysmaticlabs:eth2-types:1da477c09a06:prysmaticlabs_eth2_types/vendor/github.com/prysmaticlabs/eth2-types \
-		prysmaticlabs:ethereumapis:663cc605c7d9:prysmaticlabs_ethereumapis/vendor/github.com/prysmaticlabs/ethereumapis \
+		prysmaticlabs:ethereumapis:cf9f64632dd4:prysmaticlabs_ethereumapis/vendor/github.com/prysmaticlabs/ethereumapis \
 		prysmaticlabs:go-bitfield:7fcea7c45dc8:prysmaticlabs_go_bitfield/vendor/github.com/prysmaticlabs/go-bitfield \
 		prysmaticlabs:prombbolt:9b7adba6db7c:prysmaticlabs_prombbolt/vendor/github.com/prysmaticlabs/prombbolt \
 		rs:cors:v1.7.0:rs_cors/vendor/github.com/rs/cors \
@@ -236,7 +237,7 @@ GH_TUPLE=	\
 		steakknife:bloomfilter:6819c0d2a570:steakknife_bloomfilter/vendor/github.com/steakknife/bloomfilter \
 		steakknife:hamming:c99c65617cd3:steakknife_hamming/vendor/github.com/steakknife/hamming \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
-		supranational:blst:v0.3.2:supranational_blst/vendor/github.com/supranational/blst \
+		supranational:blst:v0.3.4:supranational_blst/vendor/github.com/supranational/blst \
 		syndtr:goleveldb:5c35d600f0ca:syndtr_goleveldb/vendor/github.com/syndtr/goleveldb \
 		trailofbits:go-mutexasserts:19999e7d3cef:trailofbits_go_mutexasserts/vendor/github.com/trailofbits/go-mutexasserts \
 		tyler-smith:go-bip39:v1.0.2:tyler_smith_go_bip39/vendor/github.com/tyler-smith/go-bip39 \
