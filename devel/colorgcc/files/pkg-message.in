@@ -4,8 +4,8 @@
 colorgcc is installed.
 
 For a quick start:
-    - cp ${EXAMPLESDIR}/colorgccrc ${HOME}/.colorgcc
-    - export CC=${PREFIX}/bin/colorgcc
+    - cp %%EXAMPLESDIR%%/colorgccrc ${HOME}/.colorgcc
+    - export CC=%%PREFIX%%/bin/colorgcc
 EOM
 }
 ]
