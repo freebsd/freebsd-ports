@@ -1,6 +1,5 @@
 
 PORTNAME=	xwayland
-PORTREVISION=	2
 
 COMMENT=	X Clients under Wayland
 

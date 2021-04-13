@@ -1,8 +1,7 @@
 # Created by: Eric Anholt <anholt@FreeBSD.org>
 
 PORTNAME?=	xorg-server
-PORTVERSION?=	1.20.9
-PORTREVISION?=	3
+PORTVERSION?=	1.20.11
 PORTEPOCH?=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -10,10 +9,6 @@ DISTNAME=	xorg-server-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT?=	X.Org X server and related programs
-
-PATCH_SITES=	https://gitlab.freedesktop.org/xorg/xserver/-/commit/
-PATCHFILES+=	06d1a032ee491547f7037c3ff042065dc2aeaa99.diff:-p1
-PATCHFILES+=	7ccb3b0eabb4658daf0ecb2c78a53609ae2c263b.diff:-p1
 
 LICENSE=	MIT
 
