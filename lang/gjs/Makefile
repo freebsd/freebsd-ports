@@ -1,7 +1,7 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
 
 PORTNAME=	gjs
-PORTVERSION=	1.66.0
+PORTVERSION=	1.68.0
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -11,8 +11,8 @@ COMMENT=	GNOME Javascript binding
 
 LICENSE=	MPL11 LGPL20+ GPLv2+
 LICENSE_COMB=	multi
-LICENSE_FILE_MPL11=	${WRKSRC}/COPYING
-LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING.LGPL
+LICENSE_FILE_MPL11=	${WRKSRC}/LICENSES/MPL-1.1.txt
+LICENSE_FILE_LGPL20+ =	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 
 LIB_DEPENDS=	libmozjs-78.so:lang/spidermonkey78 \
 		libffi.so:devel/libffi
