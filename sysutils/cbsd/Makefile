@@ -1,5 +1,5 @@
 PORTNAME=	cbsd
-DISTVERSION=	13.0.3
+DISTVERSION=	13.0.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -8,27 +8,26 @@ COMMENT=	Yet another FreeBSD Jail, XEN and Bhyve Management Utility
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rsync:net/rsync \
-		sudo:security/sudo \
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
+		libssh2.so:security/libssh2
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
+		rsync:net/rsync \
 		sqlite3:databases/sqlite3 \
-		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
-LIB_DEPENDS=	libssh2.so:security/libssh2 \
-		libsqlite3.so:databases/sqlite3
+		sudo:security/sudo
 
 USES=		compiler:c++11-lang libedit pkgconfig:both
 USE_GITHUB=	yes
-USE_RC_SUBR=	cbsdd cbsdrsyncd cbsd-statsd-bhyve cbsd-statsd-hoster cbsd-statsd-jail
+USE_RC_SUBR=	cbsdd cbsdrsyncd cbsd-statsd-bhyve cbsd-statsd-hoster \
+		cbsd-statsd-jail
 
-SUB_FILES=	pkg-message pkg-deinstall
+SUB_FILES=	pkg-deinstall pkg-message
+
+USERS=		${PORTNAME}
+GROUPS=		${PORTNAME}
+
+BIN_FILES=	bin/cbsdsh/mknodes bin/cbsdsh/mksyntax
 
 CBSD_HOME?=	${PREFIX}/cbsd
-
-USERS=	${PORTNAME}
-GROUPS=	${PORTNAME}
-
-BIN_FILES=	\
-		bin/cbsdsh/mknodes \
-		bin/cbsdsh/mksyntax
 
 .include <bsd.port.options.mk>
 
