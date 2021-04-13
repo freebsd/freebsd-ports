@@ -277,6 +277,7 @@ cargo-configure:
 	@${CARGO_CARGO_RUN} update \
 		--manifest-path ${CARGO_CARGOTOML} \
 		--verbose \
+		--verbose \
 		${CARGO_UPDATE_ARGS}
 .endif
 
@@ -284,6 +285,7 @@ cargo-configure:
 do-build:
 	@${CARGO_CARGO_RUN} build \
 		--manifest-path ${CARGO_CARGOTOML} \
+		--verbose \
 		--verbose \
 		${CARGO_BUILD_ARGS}
 .endif
@@ -296,6 +298,7 @@ do-install:
 		--path "${path}" \
 		--root "${STAGEDIR}${PREFIX}" \
 		--verbose \
+		--verbose \
 		${CARGO_INSTALL_ARGS}
 .  endfor
 .endif
@@ -304,6 +307,7 @@ do-install:
 do-test:
 	@${CARGO_CARGO_RUN} test \
 		--manifest-path ${CARGO_CARGOTOML} \
+		--verbose \
 		--verbose \
 		${CARGO_TEST_ARGS}
 .endif
