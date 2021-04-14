@@ -1,12 +1,12 @@
-TIMESTAMP = 1614989167
-SHA256 (gokcehan-lf-r21_GH0.tar.gz) = 088510cc1f86084c02353d55e56a8c44576b5dbfc37327daabaa86ae6b287a20
-SIZE (gokcehan-lf-r21_GH0.tar.gz) = 102289
+TIMESTAMP = 1618371461
+SHA256 (gokcehan-lf-r22_GH0.tar.gz) = 2da82d8c6108b14ce866f49a308d2c7afc0d79bc4254a395e5b4cf07f3fe2c97
+SIZE (gokcehan-lf-r22_GH0.tar.gz) = 102883
 SHA256 (djherbis-times-v1.2.0_GH0.tar.gz) = d6740b3968043f2ac14bd6a80d69242969feec29d70a7281e1ce54cd4d667a86
 SIZE (djherbis-times-v1.2.0_GH0.tar.gz) = 6941
 SHA256 (gdamore-encoding-v1.0.0_GH0.tar.gz) = 8fb8593a69cd86f16233d63dd6d74181136ec8f22900c509e961a25eb4b2e013
 SIZE (gdamore-encoding-v1.0.0_GH0.tar.gz) = 10886
-SHA256 (gdamore-tcell-v2.2.0_GH0.tar.gz) = 644d13591983668b8163d1eaf3747344f090dfabc39add2b734e73d099b753a5
-SIZE (gdamore-tcell-v2.2.0_GH0.tar.gz) = 150294
+SHA256 (gokcehan-tcell-4dd2d52e83ef_GH0.tar.gz) = 556f721b736d4a9bcc93efcfc611072c700b2497df133f52ce9f790c0bb8f061
+SIZE (gokcehan-tcell-4dd2d52e83ef_GH0.tar.gz) = 150353
 SHA256 (golang-sys-f84b799fce68_GH0.tar.gz) = 460f5326b83bac46e12e1fd6ec1fed7ddba3756cdc9c9de7ba3f3226c588fa81
 SIZE (golang-sys-f84b799fce68_GH0.tar.gz) = 1087830
 SHA256 (golang-term-6a3ed077a48d_GH0.tar.gz) = 6760076add528b90a5e07ad357eef6f11ec03e19eebe66d1b1ef383fd9214e9a

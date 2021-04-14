@@ -1,6 +1,6 @@
 PORTNAME=	lf
 DISTVERSIONPREFIX=	r
-DISTVERSION=	21
+DISTVERSION=	22
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ GH_ACCOUNT=	gokcehan
 GH_TUPLE=	\
 		djherbis:times:v1.2.0:djherbis_times/vendor/gopkg.in/djherbis/times.v1 \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
-		gdamore:tcell:v2.2.0:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
+		gokcehan:tcell:4dd2d52e83ef:gokcehan_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
 		golang:sys:f84b799fce68:golang_sys/vendor/golang.org/x/sys \
 		golang:term:6a3ed077a48d:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
