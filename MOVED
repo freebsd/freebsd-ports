@@ -16285,3 +16285,4 @@ security/netpgp||2021-04-12|Broken 12+, unmaintained upstream
 net/freenet6||2021-04-12|Broken 12+, service discontinued
 devel/sd-mux|devel/sd-mux-ctrl|2021-04-13|Renamed to match upstream naming
 sysutils/sd-mux-ctrl|devel/sd-mux-ctrl|2021-04-13|Remove duplicate port
+net/traefik2|net/traefik|2021-04-14|Superseded by net/traefik update
