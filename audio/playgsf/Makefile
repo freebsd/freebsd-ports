@@ -10,9 +10,9 @@ MASTER_SITES=	http://projects.raphnet.net/playgsf/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line player for gsf audio files
 
-#LICENSE=	GPLv2+ LGPL21 NONE
-#LICENSE_COMB=	multi
-#LICENSE_FILE_LGPL21=	${WRKSRC}/libresample-0.1.3/LICENSE.txt
+LICENSE=	GPLv2+ LGPL21 NONE
+LICENSE_COMB=	multi
+LICENSE_FILE_LGPL21=	${WRKSRC}/libresample-0.1.3/LICENSE.txt
 
 LIB_DEPENDS=	libao.so:audio/libao
 
