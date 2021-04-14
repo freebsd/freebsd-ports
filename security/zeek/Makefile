@@ -97,11 +97,6 @@ USE_RC_SUBR=	zeek
 post-patch:
 	${REINPLACE_CMD} -e '\|/usr/local/|s|$$| ${STAGEDIR}${PREFIX}/|' \
 	    ${WRKSRC_zeek_netmap}/cmake/FindNetmap.cmake
-	
-
-#	# Silence the "use ZeekControl.plugin instead of BroControl.plugin" nag
-#	@${REINPLACE_CMD} -e 's/^print/#&/' \
-#	    ${WRKSRC}/auxil/zeekctl/BroControl/__init__.py
 
 post-install-ZEEKCTL-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/logs
@@ -128,11 +123,10 @@ post-install-NETMAP-on:
 	${REINPLACE_CMD} -e 's|=/usr/local|=${STAGEDIR}${PREFIX}|' \
 	    -e '/^include_dir=/s|:/usr/local|:${STAGEDIR}${PREFIX}|' \
 	    ${WRKDIR}/zeek-bin/zeek-config
-	cd ${WRKSRC_zeek_netmap} && env PATH=${WRKDIR}/zeek-bin:${PATH} \
+	cd ${WRKSRC_zeek_netmap} && ${SETENV} PATH=${WRKDIR}/zeek-bin:${PATH} \
 	    ./configure --with-netmap=/usr \
 	    --install-root=${STAGEDIR}${PREFIX}/lib/zeek/plugins
 	cd ${WRKSRC_zeek_netmap}/build && make && make install
-
 
 .include <bsd.port.pre.mk>
 
