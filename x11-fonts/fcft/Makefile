@@ -1,12 +1,7 @@
 PORTNAME=	fcft
-DISTVERSION=	2.3.2
-PORTREVISION=	1
+DISTVERSION=	2.3.3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
-
-PATCH_SITES=	https://codeberg.org/dnkl/${PORTNAME}/commit/
-PATCHFILES+=	0b330d7ff91f.patch:-p1 # avoid patch conflict
-PATCHFILES+=	e30e9f295b79.patch:-p1 # fnottctl quit crashfix
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple library for font loading and glyph rasterization
