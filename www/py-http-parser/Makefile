@@ -1,22 +1,16 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-# $FreeBSD$
-
 PORTNAME=	http-parser
-PORTVERSION=	0.8.3
+PORTVERSION=	0.9.0
 CATEGORIES=	www
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	HTTP request/response parser for python in C
-
-DEPRECATED=	Unmaintained, uses EOLed python27
-EXPIRATION_DATE=	2020-01-27
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:-3.6
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 post-install:
