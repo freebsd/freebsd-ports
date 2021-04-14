@@ -15,7 +15,7 @@ IGNORE+=	USES=cargo takes no arguments
 .endif
 
 # List of static dependencies.  The format is cratename-version.
-# CARGO_CRATES will be downloaded from MASTER_SITES_CRATESIO.
+# CARGO_CRATES will be downloaded from MASTER_SITE_CRATESIO.
 CARGO_CRATES?=
 
 # List of features to build (space separated list).
@@ -35,7 +35,8 @@ CARGO_DIST_SUBDIR?=	rust/crates
 
 # Generate list of DISTFILES.
 .for _crate in ${CARGO_CRATES}
-MASTER_SITES+=	CRATESIO/${_crate:C/^([-_a-zA-Z0-9]+)-[0-9].*/\1/}/${_crate:C/^[-_a-zA-Z0-9]+-([0-9].*)/\1/}:cargo_${_crate:C/[^a-zA-Z0-9_]//g}
+# Resolving CRATESIO alias is very inefficient with many MASTER_SITES, consume MASTER_SITE_CRATESIO directly
+MASTER_SITES+=	${MASTER_SITE_CRATESIO:S,%SUBDIR%,${_crate:C/^([-_a-zA-Z0-9]+)-[0-9].*/\1/}/${_crate:C/^[-_a-zA-Z0-9]+-([0-9].*)/\1/},:S,$,:cargo_${_crate:C/[^a-zA-Z0-9_]//g},}
 DISTFILES+=	${CARGO_DIST_SUBDIR}/${_crate}.tar.gz:cargo_${_crate:C/[^a-zA-Z0-9_]//g}
 .endfor
 
