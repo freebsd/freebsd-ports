@@ -28,4 +28,6 @@ PLIST_FILES=	bin/OpenHantek \
 		share/icons/hicolor/48x48/apps/OpenHantek.png \
 		share/icons/hicolor/scalable/apps/OpenHantek.svg
 
+PORTSCOUT=	limit:^.*[1-9]\. # prevent words like 'unstable'
+
 .include <bsd.port.mk>
