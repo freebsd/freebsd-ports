@@ -1,7 +1,7 @@
 # Created by: Doug Barton <dougb@FreeBSD.org>
 
 PORTNAME=	libtorrent-rasterbar
-DISTVERSION=	1.2.12
+DISTVERSION=	1.2.13
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/
