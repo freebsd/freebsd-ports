@@ -1,0 +1,11 @@
+--- modules/filter/modes/perl.amf.orig	2019-10-08 00:15:21 UTC
++++ modules/filter/modes/perl.amf
+@@ -2,7 +2,7 @@ MODE perl
+ 
+ ASPELL >=0.60.1
+ 
+-MAGIC /0:256:^[ \t]*\#!((\/\w*)+)\/perl/pl/pm
++MAGIC /0:256:^[ \t]*\#!((\/[[:alnum:]_]*)+)\/perl/pl/pm
+ MAGIC /<noregex>/pl/pm
+ 
+ DESCRIPTION mode for checking Perl comments and string literals
