@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2018-07-21 08:36:33 UTC
+--- CMakeLists.txt.orig	2021-04-12 16:09:58 UTC
 +++ CMakeLists.txt
-@@ -50,7 +50,7 @@ if(HAVE_OPEN_MEMSTREAM)
+@@ -58,7 +58,7 @@ if(HAVE_OPEN_MEMSTREAM)
  endif()
  
  # Configure the library source
@@ -9,11 +9,17 @@
  
  # Configure the headers
  add_subdirectory(include)
-@@ -61,6 +61,6 @@ if(LIBPOLY_BUILD_PYTHON_API)
+@@ -72,11 +72,11 @@ if(LIBPOLY_BUILD_PYTHON_API)
    add_subdirectory(python)
  
-   # Configure the tests
--  add_subdirectory(test)
-+  #add_subdirectory(test)
+   # Configure the Python tests
+-  add_subdirectory(test/python)
++  #add_subdirectory(test/python)
  
  endif()
+ 
+ # Configure the C++ tests
+ enable_testing()
+-add_subdirectory(test/polyxx)
++#add_subdirectory(test/polyxx)
+ 
