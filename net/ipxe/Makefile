@@ -1,7 +1,7 @@
 # Created by: Guerkan Karaman <gk.freebsd@googlemail.com>
 
 PORTNAME=	ipxe
-DISTVERSION=	g20201129
+DISTVERSION=	g20210413
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -17,9 +17,8 @@ USES=		gmake perl5 shebangfix
 USE_BINUTILS=	yes
 USE_GCC=	yes:build
 USE_GITHUB=	yes
-GH_TAGNAME=	13a6d17
+GH_TAGNAME=	8ca43cc
 USE_PERL5=	build
-SHEBANG_FILES=	util/geniso util/gensdsk
 MAKE_ARGS=	AR=${AR} \
 		ARCH=${ARCH:S/amd64/i386/} \
 		AS=${AS} \
@@ -34,6 +33,7 @@ MAKE_ARGS=	AR=${AR} \
 		RANLIB=${RANLIB} \
 		SIZE=${SIZE} \
 		V=1
+
 # Append user-settable build args from make.conf
 MAKE_ARGS+=	${IPXE_MAKE_ARGS}
 ALL_TARGET=	bin/ipxe.dsk bin/ipxe.lkrn bin/ipxe.pxe bin/ipxe.usb \
