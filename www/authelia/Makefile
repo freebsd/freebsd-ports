@@ -1,6 +1,6 @@
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.27.4
+DISTVERSION=	4.28.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/authelia/authelia/releases/download/v${DISTVERSION}/:public_html
 DISTFILES=	authelia-public_html${EXTRACT_SUFX}:public_html # html root directory needs to be built in a special way
@@ -30,20 +30,20 @@ GH_TUPLE=	\
 		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
 		duosecurity:duo_api_golang:0e07e9f869e3:duosecurity_duo_api_golang/vendor/github.com/duosecurity/duo_api_golang \
 		facebookgo:stack:751773369052:facebookgo_stack/vendor/github.com/facebookgo/stack \
-		fasthttp:router:v1.3.10:fasthttp_router/vendor/github.com/fasthttp/router \
-		fasthttp:session:v2.3.0:fasthttp_session_v2/vendor/github.com/fasthttp/session/v2 \
+		fasthttp:router:v1.3.11:fasthttp_router/vendor/github.com/fasthttp/router \
+		fasthttp:session:v2.3.1:fasthttp_session_v2/vendor/github.com/fasthttp/session/v2 \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-asn1-ber:asn1-ber:v1.5.1:go_asn1_ber_asn1_ber/vendor/github.com/go-asn1-ber/asn1-ber \
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
-		go-ldap:ldap:v3.2.4:go_ldap_ldap_v3/vendor/github.com/go-ldap/ldap \
+		go-ldap:ldap:v3.3.0:go_ldap_ldap_v3/vendor/github.com/go-ldap/ldap \
 		go-redis:redis:v8.3.4:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
-		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
+		go-sql-driver:mysql:v1.6.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
 		golang:mock:v1.5.0:golang_mock/vendor/github.com/golang/mock \
 		golang:sys:a50acf3fe073:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jackc:chunkreader:v2.0.1:jackc_chunkreader_v2/vendor/github.com/jackc/chunkreader/v2 \
@@ -59,13 +59,13 @@ GH_TUPLE=	\
 		mattn:go-sqlite3:v1.14.6:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		open-telemetry:opentelemetry-go:v0.13.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
-		otiai10:copy:v1.5.0:otiai10_copy/vendor/github.com/otiai10/copy \
+		otiai10:copy:v1.5.1:otiai10_copy/vendor/github.com/otiai10/copy \
 		pelletier:go-toml:v1.4.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		philhofer:fwd:v1.1.1:philhofer_fwd/vendor/github.com/philhofer/fwd \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pquerna:otp:v1.3.0:pquerna_otp/vendor/github.com/pquerna/otp \
-		savsgio:dictpool:85d3b37fb239:savsgio_dictpool/vendor/github.com/savsgio/dictpool \
-		savsgio:gotils:595c7e5a8a7a:savsgio_gotils/vendor/github.com/savsgio/gotils \
+		savsgio:dictpool:6de1ea7c0e13:savsgio_dictpool/vendor/github.com/savsgio/dictpool \
+		savsgio:gotils:c54912823645:savsgio_gotils/vendor/github.com/savsgio/gotils \
 		simia-tech:crypt:v0.4.3:simia_tech_crypt/vendor/github.com/simia-tech/crypt \
 		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
