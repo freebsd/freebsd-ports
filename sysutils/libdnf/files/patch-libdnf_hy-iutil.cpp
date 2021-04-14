@@ -1,12 +1,11 @@
---- libdnf/hy-iutil.cpp.orig	2020-09-20 22:51:04 UTC
+--- libdnf/hy-iutil.cpp.orig	2021-04-12 15:10:19 UTC
 +++ libdnf/hy-iutil.cpp
-@@ -22,7 +22,9 @@
+@@ -22,7 +22,7 @@
  #include <errno.h>
  #include <dirent.h>
  #include <fcntl.h>
-+#if !defined(__FreeBSD__)
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+ #include <limits.h>
+ #else
  #include <linux/limits.h>
-+#endif
- #include <pwd.h>
- #include <unistd.h>
- #include <stdio.h>
