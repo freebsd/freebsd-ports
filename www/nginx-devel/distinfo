@@ -1,4 +1,4 @@
-TIMESTAMP = 1618328707
+TIMESTAMP = 1618433091
 SHA256 (nginx-1.19.10.tar.gz) = e8d0290ff561986ad7cd6c33307e12e11b137186c4403a6a5ccdb4914c082d88
 SIZE (nginx-1.19.10.tar.gz) = 1061062
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -137,8 +137,8 @@ SHA256 (kawakibi-ngx_small_light-2f5e1d0_GH0.tar.gz) = bb7b4943a2db89a6a7020850d
 SIZE (kawakibi-ngx_small_light-2f5e1d0_GH0.tar.gz) = 57160
 SHA256 (openresty-srcache-nginx-module-v0.32_GH0.tar.gz) = fd80e59b672e4ff3b4e943740b3facab421c6965226b5934aed16a514baacf47
 SIZE (openresty-srcache-nginx-module-v0.32_GH0.tar.gz) = 49891
-SHA256 (kaltura-nginx-vod-module-1.25_GH0.tar.gz) = 42fd3b7f5bd4e13a7e27fcbd830153e285544c8cce37bfaea87cfce549f636d7
-SIZE (kaltura-nginx-vod-module-1.25_GH0.tar.gz) = 446830
+SHA256 (kaltura-nginx-vod-module-1.27_GH0.tar.gz) = b7f0e2eecbcdb8ed1f8c90eb86c756f563fc5d21768a351abe4de63f3ddf01d6
+SIZE (kaltura-nginx-vod-module-1.27_GH0.tar.gz) = 450777
 SHA256 (vozlt-nginx-module-vts-v0.1.18_GH0.tar.gz) = 17ea41d4083f6d1ab1ab83dad9160eeca66867abe16c5a0421f85a39d7c84b65
 SIZE (vozlt-nginx-module-vts-v0.1.18_GH0.tar.gz) = 380327
 SHA256 (tg123-websockify-nginx-module-c11bc9a_GH0.tar.gz) = aca454bffcee2476dc92682ebfb8c0378a271fda178be7e945d648419d220758
