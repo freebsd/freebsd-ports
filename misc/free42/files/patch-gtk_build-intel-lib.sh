@@ -1,4 +1,4 @@
---- gtk/build-intel-lib.sh.orig	2021-03-05 01:52:42 UTC
+--- gtk/build-intel-lib.sh.orig	2021-03-30 03:08:43 UTC
 +++ gtk/build-intel-lib.sh
 @@ -43,6 +43,8 @@ fi
  
@@ -9,14 +9,14 @@
  patch -p0 <../intel-lib-linux.patch
  
  # When building for architectures other than x86 or x86_64, I remove the
-@@ -55,11 +58,11 @@ patch -p0 <../intel-lib-linux.patch
+@@ -55,11 +57,11 @@ patch -p0 <../intel-lib-linux.patch
  # it to x86_64 works when targeting arm64, a 64-bit platform.
  # Of course, proceed with caution. Your mileage may vary.
  
 -case `uname -m` in
--  armv7|armv7l|ppc)
+-  armv7|armv7l|i386|ppc)
 +case `uname -p` in
-+  armv6|armv7|armv7l|ppc|powerpc|powerpcspe|mips)
++  armv6|armv7|armv7l|i386|ppc|powerpc|powerpcspe|mips)
      patch -p0 <../intel-lib-unknown-32bit.patch
      ;;
 -  aarch64|arm64|i86pc)

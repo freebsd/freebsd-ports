@@ -1,5 +1,5 @@
 PORTNAME=	free42
-DISTVERSION=	3.0.1
+DISTVERSION=	3.0.2
 CATEGORIES=	misc
 MASTER_SITES=	http://thomasokken.com/free42/upstream/
 DISTNAME=	${PORTNAME}-nologo-${DISTVERSION}
@@ -9,8 +9,6 @@ COMMENT=	Simulation of the HP-42S scientific calculator and HP-82240 printer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_i386=	Broken until the fix is released after 3.0.1
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
