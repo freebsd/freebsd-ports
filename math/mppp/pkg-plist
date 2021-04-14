@@ -30,5 +30,5 @@ lib/cmake/mp++/mp++-config.cmake
 lib/cmake/mp++/mp++_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mp++/mp++_export.cmake
 lib/libmp++.so
-lib/libmp++.so.8
-lib/libmp++.so.8.0
+lib/libmp++.so.9
+lib/libmp++.so.9.0
