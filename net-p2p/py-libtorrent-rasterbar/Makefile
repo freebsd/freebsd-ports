@@ -1,8 +1,8 @@
 # Created by: Doug Barton <dougb@FreeBSD.org>
 
 PORTNAME=	libtorrent-rasterbar
-DISTVERSIONPREFIX=	libtorrent-
-DISTVERSION=	1.2.10
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2.13
 PORTEPOCH=	1
 CATEGORIES=	net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,14 +13,17 @@ COMMENT=	Python bindings for libtorrent-rasterbar
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../COPYING
 
+BUILD_DEPENDS=	b2:devel/boost_build
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		${PY_BOOST}
 
-USES=		compiler:c11 iconv localbase python:3.6+
+USES=		compiler:c11 iconv localbase:ldflags python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	arvidn
 GH_PROJECT=	libtorrent
 USE_PYTHON=	distutils autoplist
+
+BINARY_ALIAS=	b2=${FILESDIR}/b2
 
 CFLAGS+=	-DTORRENT_DISABLE_LOGGING # undefined symbol: https://github.com/arvidn/libtorrent/issues/3331
 LDFLAGS+=	${LOCALBASE}/lib/libboost_python${PYTHON_SUFFIX}.so ${LOCALBASE}/lib/libiconv.so # fails to link libs: https://github.com/arvidn/libtorrent/issues/3330
