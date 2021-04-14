@@ -1,6 +1,7 @@
 PORTNAME=	ntk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.1001
+MASTER_SITES=	https://git.kx.studio/non/ntk/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/ # was at GH_ACCOUNT=original-male
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,18 +10,16 @@ COMMENT=	Fork of FLTK 1.3.0 which adds graphics rendering via Cairo, etc
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		the upstream based on the 'non' project is gone along with this GH project for it, 3 depending ports' upstreams have been notified via GH issues
-
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 
 USES=		gnome jpeg localbase:ldflags pkgconfig waf xorg
-USE_GITHUB=	yes
-GH_ACCOUNT=	original-male
 USE_GNOME=	cairo
 USE_XORG=	x11 xft
 USE_LDCONFIG=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_SUB=	SHLIB_VER=${PORTVERSION:R}
 
