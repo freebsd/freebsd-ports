@@ -1,6 +1,6 @@
---- configure.orig	2019-07-29 06:38:03 UTC
+--- configure.orig	2019-10-12 22:20:32 UTC
 +++ configure
-@@ -18289,7 +18289,7 @@ _ACEOF
+@@ -18309,7 +18309,7 @@ _ACEOF
  if ac_fn_cxx_try_link "$LINENO"; then :
    CURSES_LIB=-lncurses
  
@@ -9,7 +9,7 @@
  
  
  $as_echo "#define TERM_HEADER <ncurses/term.h>" >>confdefs.h
-@@ -18401,8 +18401,8 @@ $as_echo "#define TERM_HEADER <term.h>" >>confdefs.h
+@@ -18421,8 +18421,8 @@ $as_echo "#define TERM_HEADER <term.h>" >>confdefs.h
       if test "$enable_wide_curses" != "no"
       then
  

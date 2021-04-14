@@ -1,8 +1,8 @@
---- prog/checker_string.cpp.orig	Thu Jul 17 19:39:02 2003
-+++ prog/checker_string.cpp	Thu Jul 17 19:39:09 2003
-@@ -4,6 +4,7 @@
- // license along with this library if you did not you can find
- // it at http://www.gnu.org/.
+--- prog/checker_string.cpp.orig	2019-10-08 00:15:21 UTC
++++ prog/checker_string.cpp
+@@ -6,6 +6,7 @@
+ 
+ #include <assert.h>
  
 +#include <assert.h>
  #include "checker_string.hpp"

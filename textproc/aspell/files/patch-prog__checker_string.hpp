@@ -1,5 +1,5 @@
---- prog/hecker_string.hpp.orig	2011-07-02 23:09:09.000000000 +0200
-+++ prog/checker_string.hpp	2014-02-11 22:42:24.000000000 +0100
+--- prog/checker_string.hpp.orig	2019-10-08 00:15:21 UTC
++++ prog/checker_string.hpp
 @@ -6,6 +6,7 @@
  
  #include <stdio.h>
