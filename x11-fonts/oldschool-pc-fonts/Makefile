@@ -1,11 +1,10 @@
 PORTNAME=	oldschool-pc-fonts
-PORTVERSION=	1.0
-PORTREVISION=	1
+DISTVERSION=	2.2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://int10h.org/${PORTNAME}/download/
-DISTNAME=	ultimate_oldschool_pc_font_pack_v${DISTVERSION}
+MASTER_SITES=	https://int10h.org/${PORTNAME}/download/
+DISTNAME=	oldschool_pc_font_pack_v${DISTVERSION}_linux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	evgeniy@khramtsov.org
 COMMENT=	Ultimate Oldschool PC Font Pack
 
 LICENSE=	CC-BY-SA-4.0
@@ -18,9 +17,9 @@ NO_WRKSUBDIR=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	(cd ${WRKSRC}/'Px437 (TrueType - DOS charset)' && \
-		${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR})
-	(cd ${WRKSRC}/'PxPlus (TrueType - extended charset)' && \
-		${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR})
+	${INSTALL_DATA} ${WRKSRC}/*Bm*/*.otb ${STAGEDIR}${FONTSDIR}
+.for i in Ac Mx Px
+	${INSTALL_DATA} ${WRKSRC}/*${i}*/*.ttf ${STAGEDIR}${FONTSDIR}
+.endfor
 
 .include <bsd.port.mk>

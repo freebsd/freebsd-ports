@@ -38,6 +38,15 @@ you update your ports collection, before attempting any port upgrades.
   upgrading:
   https://rpyc.readthedocs.io/en/latest/changelog.html#backwards-incompatible
 
+20210414:
+  AFFECTS: users of x11-fonts/oldschool-pc-fonts
+  AUTHOR: evgeniy@khramtsov.org
+
+  x11-fonts/oldschool-pc-fonts has been upgraded to 2.2. This version
+  changed names of many fonts. If you have configuration files with
+  specific font names set, you need to update your configurations
+  after upgrade.
+
 20210406:
   AFFECTS: users of www/phpvirtualbox
   AUTHOR: dereks@lifeofadishwasher.com
