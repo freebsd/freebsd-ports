@@ -10,6 +10,8 @@ include/xtensor/xbroadcast.hpp
 include/xtensor/xbuffer_adaptor.hpp
 include/xtensor/xbuilder.hpp
 include/xtensor/xchunked_array.hpp
+include/xtensor/xchunked_assign.hpp
+include/xtensor/xchunked_view.hpp
 include/xtensor/xcomplex.hpp
 include/xtensor/xcontainer.hpp
 include/xtensor/xcsv.hpp
