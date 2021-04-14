@@ -12,6 +12,8 @@ COMMENT=	Distributed version control system
 
 LICENSE=	GPLv2
 
+BROKEN=		unfechtable
+
 BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libnettle.so:security/nettle \
