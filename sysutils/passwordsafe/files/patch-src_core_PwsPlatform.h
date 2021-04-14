@@ -1,10 +1,13 @@
---- src/core/PwsPlatform.h.orig	2019-03-26 09:46:50 UTC
+--- src/core/PwsPlatform.h.orig	2020-10-28 19:48:24 UTC
 +++ src/core/PwsPlatform.h
-@@ -140,6 +140,8 @@
- #define LTC_NO_ROLC
- #if defined(__i386__) || defined(__amd64__)
+@@ -116,8 +116,10 @@
+ // * FreeBSD on Intel                           *
+ // **********************************************
+ #elif defined(__FreeBSD) || defined(__FreeBSD__)
+-#if defined(__i386__) || defined(__amd64__)
++#if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
  #define PWS_LITTLE_ENDIAN
-+#elif defined(__ppc__)
++#else
 +#define PWS_BIG_ENDIAN
  #endif
  // **********************************************
