@@ -76,6 +76,41 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7c0d71a9-9d48-11eb-97a0-e09467587c17">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>89.0.4389.128</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/04/stable-channel-update-for-desktop.html">
+	  <p>This release contains two security fixes:</p>
+	  <ul>
+	    <li>[1196781] High CVE-2021-21206: Use after free in Blink. Reported
+	      by Anonymous on 2021-04-07</li>
+	    <li>[1196683] High CVE-2021-21220: Insufficient validation of
+	      untrusted input in V8 for x86_64. Reported by Bruno Keith (@bkth_)
+	      and Niklas Baumstark (@_niklasb) of Dataflow Security (@dfsec_it)
+	      via ZDI (ZDI-CAN-13569) on 2021-04-07></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-21206</cvename>
+      <cvename>CVE-2021-21220</cvename>
+      <url>https://chromereleases.googleblog.com/2021/04/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2021-04-13</discovery>
+      <entry>2021-04-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="465db5b6-9c6d-11eb-8e8a-bc542f4bd1dd">
     <topic>xorg-server -- Input validation failures in X server XInput extension</topic>
     <affects>
@@ -140,6 +175,7 @@ Notes:
       <entry>2021-04-11</entry>
     </dates>
   </vuln>
+
   <vuln vid="9ee01e60-6045-43df-98e5-a794007e54ef">
     <topic>syncthing -- crash due to malformed relay protocol message</topic>
     <affects>
