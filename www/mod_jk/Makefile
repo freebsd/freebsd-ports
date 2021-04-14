@@ -1,7 +1,7 @@
 # Created by: Dirk Froemberg <dirk@FreeBSD.org>
 
 PORTNAME=	mod_jk
-PORTVERSION=	1.2.46
+PORTVERSION=	1.2.48
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	APACHE/tomcat/tomcat-connectors/jk/
