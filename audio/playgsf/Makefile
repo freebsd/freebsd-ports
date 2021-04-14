@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--enable-ccore \
 
 PLIST_FILES=	bin/playgsf
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc64le
+ONLY_FOR_ARCHS=	i386 amd64 powerpc64le powerpc64 powerpc
 
 PORTSCOUT=	skipv:0.7.2
 
