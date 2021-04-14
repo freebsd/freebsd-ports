@@ -687,6 +687,8 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Plugins/Texture.Dds.dll.config
 %%DATADIR%%/Data/Plugins/Texture.Tga.dll
 %%DATADIR%%/Data/Plugins/Texture.Tga.dll.config
+%%DATADIR%%/Data/Plugins/Train.OpenBve.dll
+%%DATADIR%%/Data/Plugins/Train.OpenBve.pdb
 %%DATADIR%%/Data/RouteViewer/background.png
 %%DATADIR%%/Data/RouteViewer/brightness.png
 %%DATADIR%%/Data/RouteViewer/buffer.png

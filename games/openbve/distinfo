@@ -43,5 +43,5 @@ SHA256 (system.valuetuple.4.5.0.nupkg) = 9e21fa9767d4e76bc0cee065c1d40cc34384a11
 SIZE (system.valuetuple.4.5.0.nupkg) = 204904
 SHA256 (ude.netstandard.1.2.0.nupkg) = f43abb504e4e8aebdc89445057c01ad777a5a25b757f30e1bc5f1cf18c739e1c
 SIZE (ude.netstandard.1.2.0.nupkg) = 389990
-SHA256 (leezer3-OpenBVE-1.7.2.4_GH0.tar.gz) = 476fd3f19a67f0bf305b9745120c85c64d3b7d693ddb521ebcd10c8a662de8ab
-SIZE (leezer3-OpenBVE-1.7.2.4_GH0.tar.gz) = 10097665
+SHA256 (leezer3-OpenBVE-1.7.3.0_GH0.tar.gz) = 178b7cf7162bea8fa06ee6721724c2be4778164e2a93a7b05b698d08e00212f1
+SIZE (leezer3-OpenBVE-1.7.3.0_GH0.tar.gz) = 10245352
