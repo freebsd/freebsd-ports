@@ -1,7 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.3
-PORTREVISION=	2
+DISTVERSION=	2.9.4
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +16,7 @@ GH_ACCOUNT=	yamafaktory
 
 CARGO_CRATES=	ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.38 \
+		anyhow-1.0.40 \
 		arrayref-0.3.5 \
 		async-attributes-1.1.1 \
 		async-channel-1.5.1 \
