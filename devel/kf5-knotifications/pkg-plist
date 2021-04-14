@@ -1,6 +1,7 @@
 include/KF5/KNotifications/KNotification
 include/KF5/KNotifications/KNotificationJobUiDelegate
 include/KF5/KNotifications/KNotificationPlugin
+include/KF5/KNotifications/KNotificationReplyAction
 include/KF5/KNotifications/KNotificationRestrictions
 include/KF5/KNotifications/KNotifyConfig
 include/KF5/KNotifications/KPassivePopup
@@ -8,6 +9,7 @@ include/KF5/KNotifications/KStatusNotifierItem
 include/KF5/KNotifications/knotification.h
 include/KF5/KNotifications/knotificationjobuidelegate.h
 include/KF5/KNotifications/knotificationplugin.h
+include/KF5/KNotifications/knotificationreplyaction.h
 include/KF5/KNotifications/knotificationrestrictions.h
 include/KF5/KNotifications/knotifications_export.h
 include/KF5/KNotifications/knotifyconfig.h

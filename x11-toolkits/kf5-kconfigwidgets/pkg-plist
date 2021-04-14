@@ -6,6 +6,7 @@ include/KF5/KConfigWidgets/KColorSchemeManager
 include/KF5/KConfigWidgets/KConfigDialog
 include/KF5/KConfigWidgets/KConfigDialogManager
 include/KF5/KConfigWidgets/KConfigViewStateSaver
+include/KF5/KConfigWidgets/KHamburgerMenu
 include/KF5/KConfigWidgets/KHelpClient
 include/KF5/KConfigWidgets/KLanguageButton
 include/KF5/KConfigWidgets/KLanguageName
@@ -22,6 +23,7 @@ include/KF5/KConfigWidgets/kconfigdialog.h
 include/KF5/KConfigWidgets/kconfigdialogmanager.h
 include/KF5/KConfigWidgets/kconfigviewstatesaver.h
 include/KF5/KConfigWidgets/kconfigwidgets_export.h
+include/KF5/KConfigWidgets/khamburgermenu.h
 include/KF5/KConfigWidgets/khelpclient.h
 include/KF5/KConfigWidgets/klanguagebutton.h
 include/KF5/KConfigWidgets/klanguagename.h

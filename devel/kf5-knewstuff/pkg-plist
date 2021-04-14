@@ -76,6 +76,7 @@ lib/libKF5NewStuffCore.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KNewStuff.pri
 %%QT_MKSPECDIR%%/modules/qt_KNewStuffCore.pri
 %%QT_QMLDIR%%/org/kde/newstuff/libnewstuffqmlplugin.so
+%%QT_QMLDIR%%/org/kde/newstuff/qml/Action.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qml/Button.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qml/Dialog.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qml/DialogContent.qml

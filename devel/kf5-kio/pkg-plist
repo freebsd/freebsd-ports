@@ -677,8 +677,12 @@ share/doc/HTML/pt_BR/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/webdav/index.docbook
 share/doc/HTML/ru/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/ru/kcontrol5/cookies/index.docbook
+share/doc/HTML/ru/kcontrol5/netpref/index.cache.bz2
+share/doc/HTML/ru/kcontrol5/netpref/index.docbook
 share/doc/HTML/ru/kcontrol5/proxy/index.cache.bz2
 share/doc/HTML/ru/kcontrol5/proxy/index.docbook
+share/doc/HTML/ru/kcontrol5/trash/index.cache.bz2
+share/doc/HTML/ru/kcontrol5/trash/index.docbook
 share/doc/HTML/ru/kioslave5/data/index.cache.bz2
 share/doc/HTML/ru/kioslave5/data/index.docbook
 share/doc/HTML/ru/kioslave5/file/index.cache.bz2
@@ -689,6 +693,8 @@ share/doc/HTML/ru/kioslave5/help/documentationnotfound/index.cache.bz2
 share/doc/HTML/ru/kioslave5/help/documentationnotfound/index.docbook
 share/doc/HTML/ru/kioslave5/help/index.cache.bz2
 share/doc/HTML/ru/kioslave5/help/index.docbook
+share/doc/HTML/ru/kioslave5/http/index.cache.bz2
+share/doc/HTML/ru/kioslave5/http/index.docbook
 share/doc/HTML/ru/kioslave5/telnet/index.cache.bz2
 share/doc/HTML/ru/kioslave5/telnet/index.docbook
 share/doc/HTML/ru/kioslave5/webdav/index.cache.bz2

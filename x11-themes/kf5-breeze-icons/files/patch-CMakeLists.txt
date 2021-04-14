@@ -1,7 +1,7 @@
---- CMakeLists.txt.orig	2020-11-07 11:32:04 UTC
+--- CMakeLists.txt.orig	2021-04-03 09:27:50 UTC
 +++ CMakeLists.txt
-@@ -25,13 +25,13 @@ include(GtkUpdateIconCache)
- set(REQUIRED_QT_VERSION 5.12.0)
+@@ -26,13 +26,13 @@ include(GtkUpdateIconCache)
+ set(REQUIRED_QT_VERSION 5.14.0)
  
  # Find Python 3
 -find_package (Python 3 COMPONENTS Interpreter)
@@ -14,6 +14,6 @@
      # Find lxml Python 3 module
 -    exec_program(${Python_EXECUTABLE}
 +    exec_program(${Python3_EXECUTABLE}
-         ARGS "-c \"import lxml; print(lxml.get_include())\""
+         ARGS "-c \"import lxml; from lxml import etree; print(lxml.get_include())\""
          RETURN_VALUE LXML_NOT_FOUND # Returns 0 or false if successful
      )
