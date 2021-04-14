@@ -18,14 +18,14 @@ BUILD_DEPENDS=	bash:shells/bash \
 		lua51-cqueues>=20200726_1:devel/lua-cqueues@lua51 \
 		luacheck:devel/lua-luacheck
 
-LIB_DEPENDS=	libknot.so:dns/knot3-lib \
-		libdnssec.so:dns/knot3-lib \
-		libzscanner.so:dns/knot3-lib \
+LIB_DEPENDS=	libdnssec.so:dns/knot3-lib \
 		libgnutls.so:security/gnutls \
+		libknot.so:dns/knot3-lib \
 		liblmdb.so:databases/lmdb \
 		libluajit-5.1.so:lang/luajit-openresty \
 		libnghttp2.so:www/libnghttp2 \
-		libuv.so:devel/libuv
+		libuv.so:devel/libuv \
+		libzscanner.so:dns/knot3-lib
 
 RUN_DEPENDS=	lua51-cqueues>=20200726_1:devel/lua-cqueues@lua51
 
@@ -58,13 +58,14 @@ MESON_ARGS=	--buildtype=release \
 		--libdir=${PREFIX}/lib \
 		--pkg-config-path=${PREFIX}/libdata/pkgconfig \
 		--prefix=${LOCALBASE} \
+		-Dclient=enabled \
 		-Duser=${USERS} \
 		-Dgroup=${GROUPS} \
-		-Dinstall_kresd_conf=disabled \
-		-Dclient=enabled \
-		-Dutils=enabled \
+		-Dinstall_kresd_conf=enabled \
 		-Dkeyfile_default=${ETCDIR}/root.keys \
-		-Droot_hints=${ETCDIR}/root.hints
+		-Droot_hints=${ETCDIR}/root.hints \
+		-Duser=${USERS} \
+		-Dutils=enabled
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -113,8 +114,7 @@ TESTCONF_MESON_OFF=	-Dconfig_tests=disabled
 TESTEXTRA_BROKEN=		CMake Error: The source directory misses CMakeLists.txt
 TESTEXTRA_BUILD_DEPENDS=	git:devel/git
 TESTEXTRA_USES=			cmake python:3
-TESTEXTRA_MESON_ON=		-Dextra_tests=enabled \
-				-Dsendmmsg=disabled
+TESTEXTRA_MESON_ON=		-Dextra_tests=enabled -Dsendmmsg=disabled
 TESTEXTRA_MESON_OFF=		-Dextra_tests=disabled
 
 TESTUNIT_BUILD_DEPENDS=	cmocka>=1.1.1:sysutils/cmocka
@@ -147,13 +147,12 @@ pre-install:
 pre-install-TEST-on: do-test
 
 post-install:
+	${MV} ${STAGEDIR}${ETCDIR}/kresd.conf ${STAGEDIR}${ETCDIR}/kresd.conf.sample
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .for STRIP_TGT in ${STRIP_TARGETS}
 	if [ -f ${STAGEDIR}${PREFIX}/${STRIP_TGT} ]; then \
 	  ${STRIP_CMD} ${STAGEDIR}${PREFIX}/${STRIP_TGT}; \
 	fi
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/etc/config/config.personal \
-			${STAGEDIR}${ETCDIR}/kresd.conf.sample
 
 .include <bsd.port.mk>
