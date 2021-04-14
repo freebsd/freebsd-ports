@@ -2,7 +2,7 @@
 
 PORTNAME=	tmux
 PORTVERSION=	3.1c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -10,13 +10,17 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Terminal Multiplexer
 
-LICENSE=	ISCL
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	ISCL GPLv2
+LICENSE_COMB=	multi
+LICENSE_FILE_ISCL=	${WRKSRC}/COPYING
+LICENSE_FILE_GPLv2=	${WRKSRC_bash}/COPYING
+LICENSE_DISTFILES_ISCL=	${DISTNAME}${EXTRACT_SUFX}
+LICENSE_DISTFILES_GPLv2=	${DISTFILE_bash}
 
 USES=		ncurses pkgconfig
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	imomaliev:tmux-bash-completion:ef56d3e:bash
+GH_TUPLE=	imomaliev:tmux-bash-completion:f5d5323:bash
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-utempter \
