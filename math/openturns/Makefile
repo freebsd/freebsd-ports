@@ -4,6 +4,9 @@ DISTVERSION=	1.16
 PORTREVISION=	3
 CATEGORIES=	math
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	aff0d223b2bf21b1dbab72a50b591e0028385f5d.patch:-p1 # unbreak with the latest dlib-cpp-19.22
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Uncertainty treatment library
 
@@ -27,7 +30,7 @@ LIB_DEPENDS=	libbonmin.so:math/bonmin \
 		libsz.so:science/szip \
 		libtbb.so:devel/onetbb
 
-USES=		bison blaslapack:openblas cmake compiler:c++11-lang eigen:3 gnome localbase:ldflags pkgconfig
+USES=		bison blaslapack:openblas cmake compiler:c++14-lang eigen:3 gnome localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes

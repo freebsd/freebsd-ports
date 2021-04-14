@@ -1,3 +1,5 @@
-TIMESTAMP = 1606698955
+TIMESTAMP = 1618417585
 SHA256 (openturns-openturns-v1.16_GH0.tar.gz) = 9ab4c0d8f68d54a87df1cc19975f78cf0a16d6401afa83459eed9613695995dc
 SIZE (openturns-openturns-v1.16_GH0.tar.gz) = 11231480
+SHA256 (aff0d223b2bf21b1dbab72a50b591e0028385f5d.patch) = 269a96da67d7dfd72e294e038039f3c1da2b4a6dd82db72162dde7b94a4de4c3
+SIZE (aff0d223b2bf21b1dbab72a50b591e0028385f5d.patch) = 4005
