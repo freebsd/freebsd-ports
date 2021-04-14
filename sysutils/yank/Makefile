@@ -3,7 +3,7 @@ DISTVERSION=	1.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/mptre/yank/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Yank terminal output to clipboard
 
 LICENSE=	MIT

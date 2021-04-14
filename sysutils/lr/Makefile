@@ -6,7 +6,7 @@ DISTVERSION=	1.5.1
 PORTREVISION=	2
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	List files, recursively
 
 LICENSE=	MIT
