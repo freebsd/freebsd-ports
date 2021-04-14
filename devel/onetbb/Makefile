@@ -1,7 +1,7 @@
 # Created by: Arun Sharma <arun@sharma-home.net>
 
 PORTNAME=	onetbb
-PORTVERSION=	2021.1.1
+PORTVERSION=	2021.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -14,7 +14,10 @@ LIB_DEPENDS=	libhwloc.so.15:devel/hwloc2
 
 USES=		cmake compiler:c++11-lang tar:tgz
 
-CMAKE_ARGS+=	-DTBB_STRICT:BOOL=FALSE
+CMAKE_ARGS+=	-DTBB_STRICT:BOOL=FALSE \
+		-DCMAKE_INSTALL_DOCDIR:PATH="${DOCSDIR}" \
+		-DCMAKE_HWLOC_2_4_LIBRARY_PATH:PATH="${LOCALBASE}/lib/libhwloc.so" \
+		-DCMAKE_HWLOC_2_4_INCLUDE_PATH:PATH="${LOCALBASE}/include"
 
 CONFLICTS=	tbb-[0-9]*
 
@@ -29,6 +32,10 @@ SUB_LIST=	prefix="${PREFIX}" \
 		version="${PORTVERSION}"
 
 USE_LDCONFIG=	yes
+
+PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
