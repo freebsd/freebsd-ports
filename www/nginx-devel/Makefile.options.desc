@@ -109,6 +109,7 @@ STREAM_REALIP_DESC=		Enable stream_realip module
 STREAM_SSL_DESC=		Enable stream_ssl module (SSL req.)
 STREAM_SSL_PREREAD_DESC=	Enable stream_ssl_preread module (SSL req.)
 THREADS_DESC=			Enable threads support
+THIRDPARTYGRP_DESC=		Third-party modules
 VOD_DESC=			3rd party vod module
 VTS_DESC=			3rd party vts module
 WWW_DESC=			Enable html sample files
