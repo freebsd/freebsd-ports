@@ -1459,7 +1459,6 @@
 %%DATADIR%%/templates/dcim/inc/cabletermination.html
 %%DATADIR%%/templates/dcim/inc/device_component_table.html
 %%DATADIR%%/templates/dcim/inc/device_import_header.html
-%%DATADIR%%/templates/dcim/inc/device_napalm_tabs.html
 %%DATADIR%%/templates/dcim/inc/devicetype_component_table.html
 %%DATADIR%%/templates/dcim/inc/endpoint_connection.html
 %%DATADIR%%/templates/dcim/inc/interface_vlans_table.html
