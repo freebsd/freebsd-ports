@@ -2,7 +2,7 @@ PORTNAME=	ansible-sshjail
 DISTVERSION=	1.1.0-g20210107
 CATEGORIES=	sysutils
 
-MAINTAINER=	mad@madpilot.net
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Ansible connector for remote jails
 
 LICENSE=	MIT
