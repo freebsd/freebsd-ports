@@ -2,6 +2,7 @@
 
 PORTNAME=	feedparser
 PORTVERSION=	6.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -32,6 +33,9 @@ PLIST_FILES+=	${PYTHON_SITELIBDIR}/sgmllib.py
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/sgmllib.py ${STAGEDIR}/${PYTHON_SITELIBDIR}/sgmllib.py
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} '/sgmllib3k/d' ${WRKSRC}/setup.py
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
