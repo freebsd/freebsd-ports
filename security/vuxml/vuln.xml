@@ -76,6 +76,41 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="75aae50b-9e3c-11eb-9bc3-8c164582fbac">
+    <topic>AccountService -- Insufficient path check in user_change_icon_file_authorized_cb()</topic>
+    <affects>
+      <package>
+	<name>accountsservice</name>
+	<range><lt>0.6.50</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2018-14036">
+	  <p>
+	    Directory Traversal with ../ sequences occurs in AccountsService
+	    before 0.6.50 because of an insufficient path check in
+	    user_change_icon_file_authorized_cb() in user.c.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2018/07/02/2</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2018-14036</url>
+      <url>https://www.securityfocus.com/bid/104757</url>
+      <url>https://bugs.freedesktop.org/show_bug.cgi?id=107085</url>
+      <url>https://bugzilla.suse.com/show_bug.cgi?id=1099699</url>
+      <url>https://cgit.freedesktop.org/accountsservice/commit/?id=f9abd359f71a5bce421b9ae23432f539a067847a</url>
+      <cvename>CVE-2018-14036</cvename>
+    </references>
+    <dates>
+      <discovery>2018-07-13</discovery>
+      <entry>2021-04-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="40b481a9-9df7-11eb-9bc3-8c164582fbac">
     <topic>mdbook -- XSS in mdBook's search page</topic>
     <affects>
