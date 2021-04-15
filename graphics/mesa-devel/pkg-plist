@@ -25,7 +25,6 @@
 %%NO_GLVND%%%%NO_COINST%%include/GLES3/gl3platform.h
 %%NO_GLVND%%%%NO_COINST%%include/KHR/khrplatform.h
 %%NO_COINST%%include/gbm.h
-%%anv%%%%NO_COINST%%include/vulkan/vulkan_intel.h
 %%i965%%lib/dri%%SUFFIX%%/i965_dri.so
 %%iris%%lib/dri%%SUFFIX%%/iris_dri.so
 %%r600%%lib/dri%%SUFFIX%%/r600_dri.so
