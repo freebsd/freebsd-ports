@@ -43,6 +43,7 @@
     SUBDIR += ansible
     SUBDIR += ansible-iocage
     SUBDIR += ansible-kld
+    SUBDIR += ansible-sshjail
     SUBDIR += ansible-sysrc
     SUBDIR += ansible27
     SUBDIR += ansible28
