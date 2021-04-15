@@ -1,7 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	skyfield
-PORTVERSION=	1.38
+PORTVERSION=	1.39
 CATEGORIES=	astro python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
