@@ -117,7 +117,6 @@ _OPENAL_LDFLAGS_i386=		-Wl,-znotext
 OPENGL_USES=			gl
 OPENGL_USE=			GL=egl,gbm
 OPENGL_CONFIGURE_OFF=		--disable-gl
-OPENGL_IMPLIES=			X11
 
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
@@ -147,7 +146,6 @@ VULKAN_BUILD_DEPENDS=		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-head
 VULKAN_LIB_DEPENDS=		libplacebo.so:graphics/libplacebo \
 				libvulkan.so:graphics/vulkan-loader
 VULKAN_CONFIGURE_OFF=		--disable-vulkan --disable-libplacebo
-VULKAN_IMPLIES=			X11
 
 WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.14:graphics/wayland-protocols \
 				${LOCALBASE}/include/linux/input-event-codes.h:devel/evdev-proto
@@ -155,6 +153,7 @@ WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland \
 				libwayland-cursor.so:graphics/wayland \
 				libxkbcommon.so:x11/libxkbcommon
 WAYLAND_CONFIGURE_OFF=		--disable-wayland
+WAYLAND_IMPLIES=		OPENGL
 
 X11_USES=			gnome xorg
 X11_USE=			XORG=x11,xext,xinerama,xorgproto,xrandr,xscrnsaver,xv,xxf86vm
