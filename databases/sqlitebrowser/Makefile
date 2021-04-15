@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 
 INSTALLS_ICONS=	yes
 
-PORTSCOUT=	ignore:continuous
+PORTSCOUT=	ignore:1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \

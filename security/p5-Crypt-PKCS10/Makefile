@@ -22,8 +22,6 @@ RUN_DEPENDS=	p5-Convert-ASN1>=0.27:converters/p5-Convert-ASN1 \
 		p5-Digest-MD4>0:security/p5-Digest-MD4
 TEST_DEPENDS=	p5-Module-Signature>0:security/p5-Module-Signature
 
-PORTSCOUT=	ignore:1.800201,1.8002
-
 USES=		perl5
 USE_PERL5=	modbuildtiny
 USE_GITHUB=	yes

@@ -18,6 +18,4 @@ USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
-PORTSCOUT=	ignore:3.1.3
-
 .include <bsd.port.mk>

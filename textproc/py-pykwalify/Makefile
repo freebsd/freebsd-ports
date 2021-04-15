@@ -22,7 +22,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-PORTSCOUT=	ignore:15.01,14.12,14.08,14.06.1,14.06
+PORTSCOUT=	skipv:15.01,14.12,14.08,14.06.1,14.06
 
 PORTEXAMPLES=	utf8-data.yml utf8-schema.yml
 
