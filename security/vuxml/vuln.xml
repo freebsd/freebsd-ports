@@ -76,6 +76,46 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="40b481a9-9df7-11eb-9bc3-8c164582fbac">
+    <topic>mdbook -- XSS in mdBook's search page</topic>
+    <affects>
+      <package>
+	<name>mdbook</name>
+	<range><lt>0.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Rust Security Response Working Group reports:</p>
+	<blockquote cite="https://github.com/rust-lang/mdBook/security/advisories/GHSA-gx5w-rrhp-f436">
+	  <p>
+	    The search feature of mdBook (introduced in version 0.1.4) was
+	    affected by a cross site scripting vulnerability that allowed an
+	    attacker to execute arbitrary JavaScript code on an user's browser
+	    by tricking the user into typing a malicious search query, or
+	    tricking the user into clicking a link to the search page with the
+	    malicious search query prefilled.
+
+	    mdBook 0.4.5 fixes the vulnerability by properly escaping the search
+	    query.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/rust-lang/mdBook/blob/master/CHANGELOG.md#mdbook-045</url>
+      <url>https://github.com/rust-lang/mdBook/commit/32abeef088e98327ca0dfccdad92e84afa9d2e9b</url>
+      <url>https://github.com/rust-lang/mdBook/security/advisories/GHSA-gx5w-rrhp-f436</url>
+      <url>https://groups.google.com/g/rustlang-security-announcements/c/3-sO6of29O0?pli=1</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2020-26297</url>
+      <cvename>CVE-2020-26297</cvename>
+    </references>
+    <dates>
+      <discovery>2021-04-01</discovery>
+      <entry>2021-04-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fb6e53ae-9df6-11eb-ba8c-001b217b3468">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
