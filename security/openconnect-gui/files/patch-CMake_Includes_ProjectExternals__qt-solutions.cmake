@@ -1,6 +1,6 @@
 --- CMake/Includes/ProjectExternals_qt-solutions.cmake.orig	2018-03-25 21:49:15 UTC
 +++ CMake/Includes/ProjectExternals_qt-solutions.cmake
-@@ -9,10 +9,7 @@ ExternalProject_Add(qt-solutions-${qt-solutions-TAG}
+@@ -9,11 +9,9 @@ ExternalProject_Add(qt-solutions-${qt-solutions-TAG}
      UPDATE_DISCONNECTED 0
      UPDATE_COMMAND ""
      
@@ -10,9 +10,11 @@
 -    
 +    SOURCE_DIR ${CMAKE_BINARY_DIR}/external/src/qt-solutions-master
      BUILD_IN_SOURCE 1
++    BUILD_COMMAND ${CMAKE_COMMAND} --build .
          
      PATCH_COMMAND ${CMAKE_COMMAND} -E copy_if_different
-@@ -21,14 +18,14 @@ ExternalProject_Add(qt-solutions-${qt-solutions-TAG}
+         ${CMAKE_SOURCE_DIR}/CMake/Includes/CMakeLists_qt-solutions.cmake.in
+@@ -21,14 +19,14 @@ ExternalProject_Add(qt-solutions-${qt-solutions-TAG}
          CMAKE_COMMAND ${CMAKE_CROSS_COMMAND} -DCMAKE_OSX_DEPLOYMENT_TARGET=${CMAKE_OSX_DEPLOYMENT_TARGET}
  
      # Note: ninja-1.8.2 & cmake-3.10.2 failed in find/install this dependency wo next 2 lines :(
