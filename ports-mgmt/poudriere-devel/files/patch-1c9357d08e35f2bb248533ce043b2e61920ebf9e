@@ -1,0 +1,29 @@
+commit 1c9357d08e35f2bb248533ce043b2e61920ebf9e
+Author: Bryan Drewery <bryan@shatow.net>
+Date:   Tue Mar 23 16:06:36 2021 -0700
+
+    Partially revert #844 for createfs; still use -p.
+    
+    This restores the -p and atime/mountpoint/compression setting
+    for /jails and /ports.
+    
+    It changes compression=lz4 to compression=on as well.
+    
+    Fixes #844
+
+diff --git src/share/poudriere/include/fs.sh src/share/poudriere/include/fs.sh
+index fed4a5b08..cad0aa69d 100644
+--- src/share/poudriere/include/fs.sh
++++ src/share/poudriere/include/fs.sh
+@@ -34,7 +34,10 @@ createfs() {
+ 
+ 	if [ -n "${fs}" -a "${fs}" != "none" ]; then
+ 		msg_n "Creating ${name} fs at ${mnt}..."
+-		if ! zfs create ${fs}; then
++		if ! zfs create -p \
++			-o compression=on \
++			-o atime=off \
++			-o mountpoint=${mnt} ${fs}; then
+ 			echo " fail"
+ 			err 1 "Failed to create FS ${fs}"
+ 		fi
