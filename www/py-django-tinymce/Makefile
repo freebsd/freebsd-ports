@@ -1,7 +1,7 @@
 # Created by: Kozlov Sergey <kozlov.sergey.404@gmail.com>
 
 PORTNAME=	django-tinymce
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
