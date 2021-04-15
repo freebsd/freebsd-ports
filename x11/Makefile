@@ -493,6 +493,7 @@
     SUBDIR += xorgproto
     SUBDIR += xpr
     SUBDIR += xpra
+    SUBDIR += xpra-html5
     SUBDIR += xprintidle
     SUBDIR += xprompt
     SUBDIR += xprop

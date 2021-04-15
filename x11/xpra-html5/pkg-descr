@@ -1,0 +1,6 @@
+Xpra gives you persistent remote applications for X. So basically it is a
+screen for remote X apps.
+
+This package contains Xpra HTML5 client that runs in the browser window.
+
+WWW: https://xpra.org/
