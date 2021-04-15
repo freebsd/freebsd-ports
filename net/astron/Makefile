@@ -24,9 +24,6 @@ OPTIONS_DEFAULT=	SOCI
 
 SOCI_DESC=		Database support via Soci
 SOCI_LIB_DEPENDS=	libsoci_core.so:databases/soci
-
-.if !empty(VARIABLE:MSOCI)
-CMAKE_ARGS+=	-DSOCI_FOUND=NO
-.endif
+SOCI_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Soci
 
 .include <bsd.port.mk>
