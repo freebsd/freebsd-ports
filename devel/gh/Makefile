@@ -1,6 +1,6 @@
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.1
+DISTVERSION=	1.9.1
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -63,6 +63,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.2.7:alecaivazis_survey_v2/vendor/github.com/Alec
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		spf13:cobra:v1.1.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
+		stretchr:objx:v0.1.1:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		yuin:goldmark:v1.2.0:yuin_goldmark/vendor/github.com/yuin/goldmark
 
