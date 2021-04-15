@@ -1,5 +1,5 @@
 PORTNAME=	mill
-DISTVERSION=	0.9.5
+DISTVERSION=	0.9.6
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/lihaoyi/mill/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTVERSION}-assembly
