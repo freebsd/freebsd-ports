@@ -1,5 +1,5 @@
 PORTNAME=	qmk
-PORTVERSION=	0.0.40
+PORTVERSION=	0.0.45
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dotty-dict>=0:devel/py-dotty-dict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8>=0:devel/py-flake8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hjson>=0:textproc/py-hjson@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}milc>=1.0.8:devel/py-milc@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>=3:devel/py-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}milc>=1.3.0:devel/py-milc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose2>=0:devel/py-nose2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yapf>=0:textproc/py-yapf@${PY_FLAVOR} \
@@ -37,5 +37,8 @@ NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
+
+do-test:
+	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/qmk config)
 
 .include <bsd.port.mk>
