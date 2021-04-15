@@ -1,0 +1,102 @@
+--- Makefile.orig	2020-04-06 10:43:29 UTC
++++ Makefile
+@@ -7,17 +7,13 @@ datarootdir=$(prefix)/share
+ datadir=$(datarootdir)/gettext-tiny
+ acdir=$(datarootdir)/aclocal
+ 
+-ifeq ($(LIBINTL), MUSL)
+-	LIBSRC = libintl/libintl-musl.c
+-	HEADERS =
+-else ifeq ($(LIBINTL), NONE)
+-	LIBSRC =
+-	HEADERS =
+-else
+-	LIBSRC = libintl/libintl.c
+-	HEADERS = libintl.h
+-endif
+-PROGSRC = $(sort $(wildcard src/*.c))
++LIBSRC =
++HEADERS =
++PROGSRC = \
++	  src/StringEscape.c \
++	  src/msgfmt.c       \
++	  src/msgmerge.c     \
++	  src/poparser.c
+ 
+ PARSEROBJS = src/poparser.o src/StringEscape.o
+ PROGOBJS = $(PROGSRC:.c=.o)
+@@ -25,25 +21,56 @@ LIBOBJS = $(LIBSRC:.c=.o)
+ OBJS = $(PROGOBJS) $(LIBOBJS)
+ 
+ ALL_INCLUDES = $(HEADERS)
+-ifneq ($(LIBINTL), NONE)
+-ALL_LIBS=libintl.a
+-endif
+ ALL_TOOLS=msgfmt msgmerge xgettext autopoint
+-ALL_M4S=$(sort $(wildcard m4/*.m4))
+-ALL_DATA=$(sort $(wildcard data/*))
++ALL_M4S= \
++	m4/ansi-c++.m4 \
++	m4/codeset.m4 \
++	m4/configheader.m4 \
++	m4/fcntl-o.m4 \
++	m4/gettext.m4 \
++	m4/glibc2.m4 \
++	m4/glibc21.m4 \
++	m4/iconv.m4 \
++	m4/intdiv0.m4 \
++	m4/intl.m4 \
++	m4/intldir.m4 \
++	m4/intlmacosx.m4 \
++	m4/intmax.m4 \
++	m4/inttypes-pri.m4 \
++	m4/inttypes_h.m4 \
++	m4/lcmessage.m4 \
++	m4/lib-ld.m4 \
++	m4/lib-link.m4 \
++	m4/lib-prefix.m4 \
++	m4/lock.m4 \
++	m4/longlong.m4 \
++	m4/nls.m4 \
++	m4/po.m4 \
++	m4/printf-posix.m4 \
++	m4/progtest.m4 \
++	m4/size_max.m4 \
++	m4/stdint_h.m4 \
++	m4/threadlib.m4 \
++	m4/uintmax_t.m4 \
++	m4/visibility.m4 \
++	m4/wchar_t.m4 \
++	m4/wint_t.m4 \
++	m4/xsize.m4
+ 
+-CFLAGS=-O0 -fPIC
++ALL_DATA= \
++	  data/Makevars.template \
++	  data/autopoint_Makefile.in
+ 
++CFLAGS	?=-O0 -fPIC
++
+ AR      ?= $(CROSS_COMPILE)ar
+ RANLIB  ?= $(CROSS_COMPILE)ranlib
+ CC      ?= $(CROSS_COMPILE)cc
+ 
+ INSTALL ?= ./install.sh
+ 
+--include config.mak
++LDLIBS=
+ 
+-LDLIBS:=$(shell echo "int main(){}" | $(CC) -liconv -x c - >/dev/null 2>&1 && printf %s -liconv)
+-
+ BUILDCFLAGS=$(CFLAGS)
+ 
+ all: $(ALL_LIBS) $(ALL_TOOLS)
+@@ -73,7 +100,7 @@ xgettext:
+ 	cp src/xgettext.sh ./xgettext
+ 
+ autopoint: src/autopoint.in
+-	cat $< | sed 's,@datadir@,$(datadir),' > $@
++	cat $> | sed 's,@datadir@,$(datadir),' > $@
+ 
+ $(DESTDIR)$(libdir)/%.a: %.a
+ 	$(INSTALL) -D -m 755 $< $@
