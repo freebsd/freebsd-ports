@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}16d_i386_freebsd42
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to convert VCDs from cue/bin format to mpeg
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 powerpc64 powerpc
 
 WRKSRC=		${WRKDIR}/vcdgear16
 NO_BUILD=	yes
