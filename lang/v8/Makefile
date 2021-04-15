@@ -52,7 +52,7 @@ USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 
 # new release every minutes
-PORTSCOUT=	ignore
+PORTSCOUT=	ignore:1
 
 # egrep "build.git|buildtools.git|clang.git|common.git|googletest.git|icu.git|zlib.git" ${WRKSRC}/DEPS
 BUILD_HASH=	38a49c12ded01dd8c4628b432cb7eebfb29e77f1
