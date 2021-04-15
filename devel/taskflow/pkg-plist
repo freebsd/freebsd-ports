@@ -24,7 +24,6 @@ include/taskflow/cuda/cublas/cublas_helper.hpp
 include/taskflow/cuda/cublas/cublas_level1.hpp
 include/taskflow/cuda/cublas/cublas_level2.hpp
 include/taskflow/cuda/cublas/cublas_level3.hpp
-include/taskflow/cuda/cuda_algorithm/cuda_blaf.hpp
 include/taskflow/cuda/cuda_algorithm/cuda_for_each.hpp
 include/taskflow/cuda/cuda_algorithm/cuda_matmul.hpp
 include/taskflow/cuda/cuda_algorithm/cuda_reduce.hpp
@@ -49,6 +48,13 @@ include/taskflow/dsl/task_dsl.hpp
 include/taskflow/dsl/task_trait.hpp
 include/taskflow/dsl/tuple_utils.hpp
 include/taskflow/dsl/type_list.hpp
+include/taskflow/sycl/sycl_algorithm/sycl_for_each.hpp
+include/taskflow/sycl/sycl_algorithm/sycl_reduce.hpp
+include/taskflow/sycl/sycl_algorithm/sycl_transform.hpp
+include/taskflow/sycl/sycl_flow.hpp
+include/taskflow/sycl/sycl_graph.hpp
+include/taskflow/sycl/sycl_task.hpp
+include/taskflow/syclflow.hpp
 include/taskflow/taskflow.hpp
 include/taskflow/tensorframe/tensor.hpp
 include/taskflow/tensorframe/tensor_expr.hpp
