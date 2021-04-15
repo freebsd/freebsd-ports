@@ -1,7 +1,6 @@
 PORTNAME=	mdbook
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.4
-PORTREVISION=	4
+DISTVERSION=	0.4.7
 CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -145,7 +144,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		serde_json-1.0.52 \
 		serde_urlencoded-0.6.1 \
 		sha-1-0.8.2 \
-		shlex-0.1.1 \
+		shlex-1.0.0 \
 		siphasher-0.3.2 \
 		slab-0.4.2 \
 		smallvec-1.3.0 \
