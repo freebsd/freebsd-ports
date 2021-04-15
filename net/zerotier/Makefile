@@ -2,6 +2,7 @@
 
 PORTNAME=	zerotier
 DISTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/zerotier/zerotierone/pull/
