@@ -585,6 +585,7 @@
     SUBDIR += embb
     SUBDIR += emscripten
     SUBDIR += entt
+    SUBDIR += envsubst
     SUBDIR += epl.el
     SUBDIR += epm
     SUBDIR += eric6
