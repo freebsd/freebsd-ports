@@ -2,16 +2,17 @@
 
 PORTNAME=	feedparser
 PORTVERSION=	6.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Universal feed parser written in Python
 
-LICENSE=	BSD2CLAUSE PSFL
-LICENSE_COMB=	multi
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sgmllib3k>=0:devel/py-sgmllib3k@${PY_FLAVOR}
 
 USES=		python:3.6+ tar:bzip2
 USE_PYTHON=	autoplist distutils
@@ -25,18 +26,6 @@ PORTDOCS=	NEWS README.rst
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} > 3700
-PLIST_FILES+=	${PYTHON_SITELIBDIR}/sgmllib.py
-
-post-install:
-	${INSTALL_DATA} ${FILESDIR}/sgmllib.py ${STAGEDIR}/${PYTHON_SITELIBDIR}/sgmllib.py
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} '/sgmllib3k/d' ${WRKSRC}/setup.py
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
@@ -44,4 +33,4 @@ post-install-DOCS-on:
 do-test:
 	@(cd ${WRKSRC}; ${PYTHON_CMD} tests/runtests.py)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
