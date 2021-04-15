@@ -6,3 +6,5 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/regex.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/regex.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/regexpr.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/regexpr.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/uregexpr.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/uregexpr.ppu

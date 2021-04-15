@@ -1,5 +1,6 @@
 # Created by: John Merryweather Cooper et al
 
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-regexpr
 
