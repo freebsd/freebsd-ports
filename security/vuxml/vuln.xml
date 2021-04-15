@@ -76,6 +76,104 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f3d86439-9def-11eb-97a0-e09467587c17">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>90.0.4430.72</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/04/stable-channel-update-for-desktop_14.html">
+	  <p>This release contains 37 security fixes, including:</p>
+	  <ul>
+	    <li>[1025683] High CVE-2021-21201: Use after free in permissions.
+	      Reported by Gengming Liu, Jianyu Chen at Tencent Keen Security
+	      Lab on 2019-11-18</li>
+	    <li>[1188889] High CVE-2021-21202: Use after free in extensions.
+	      Reported by David Erceg on 2021-03-16</li>
+	    <li>[1192054] High CVE-2021-21203: Use after free in Blink.
+	      Reported by asnine on 2021-03-24</li>
+	    <li>[1189926] High CVE-2021-21204: Use after free in Blink.
+	      Reported by Chelse Tsai-Simek, Jeanette Ulloa, and Emily
+	      Voigtlander of Seesaw on 2021-03-19</li>
+	    <li>[1165654] High CVE-2021-21205: Insufficient policy enforcement
+	     in navigation. Reported by Alison Huffman, Microsoft Browser
+	      Vulnerability Research on 2021-01-12</li>
+	    <li>[1195333] High CVE-2021-21221: Insufficient validation of
+	      untrusted input in Mojo. Reported by Guang Gong of Alpha Lab,
+	      Qihoo 360 on 2021-04-02</li>
+	    <li>[1185732] Medium CVE-2021-21207: Use after free in IndexedDB.
+	      Reported by koocola (@alo_cook) and Nan Wang (@eternalsakura13)
+	      of 360 Alpha Lab on 2021-03-08</li>
+	    <li>[1039539] Medium CVE-2021-21208: Insufficient data validation
+	      in QR scanner. Reported by Ahmed Elsobky (@0xsobky) on
+	      2020-01-07</li>
+	    <li>[1143526] Medium CVE-2021-21209: Inappropriate implementation
+	      in storage. Reported by Tom Van Goethem (@tomvangoethem) on
+	      2020-10-29</li>
+	    <li>[1184562] Medium CVE-2021-21210: Inappropriate implementation
+	      in Network. Reported by @bananabr on 2021-03-04</li>
+	    <li>[1103119] Medium CVE-2021-21211: Inappropriate implementation
+	      in Navigation. Reported by Akash Labade (m0ns7er) on
+	      2020-07-08</li>
+	    <li>[1145024] Medium CVE-2021-21212: Incorrect security UI in
+	      Network Config UI. Reported by Hugo Hue and Sze Yiu Chau of the
+	      Chinese University of Hong Kong on 2020-11-03</li>
+	    <li>[1161806] Medium CVE-2021-21213: Use after free in WebMIDI.
+	      Reported by raven (@raid_akame) on 2020-12-25</li>
+	    <li>[1170148] Medium CVE-2021-21214: Use after free in Network API.
+	      Reported by Anonymous on 2021-01-24</li>
+	    <li>[1172533] Medium CVE-2021-21215: Inappropriate implementation
+	      in Autofill. Reported by Abdulrahman Alqabandi, Microsoft Browser
+	      Vulnerability Research on 2021-01-30</li>
+	    <li>[1173297] Medium CVE-2021-21216: Inappropriate implementation
+	      in Autofill. Reported by Abdulrahman Alqabandi, Microsoft Browser
+	      Vulnerability Research on 2021-02-02</li>
+	    <li>[1166462] Low CVE-2021-21217: Uninitialized Use in PDFium.
+	      Reported by Zhou Aiting (@zhouat1) of Qihoo 360 Vulcan Team on
+	      2021-01-14</li>
+	    <li>[1166478] Low CVE-2021-21218: Uninitialized Use in PDFium.
+	      Reported by Zhou Aiting (@zhouat1) of Qihoo 360 Vulcan Team on
+	      2021-01-14</li>
+	    <li>[1166972] Low CVE-2021-21219: Uninitialized Use in PDFium.
+	      Reported by Zhou Aiting (@zhouat1) of Qihoo 360 Vulcan Team on
+	      2021-01-15</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-21201</cvename>
+      <cvename>CVE-2021-21202</cvename>
+      <cvename>CVE-2021-21203</cvename>
+      <cvename>CVE-2021-21204</cvename>
+      <cvename>CVE-2021-21205</cvename>
+      <cvename>CVE-2021-21221</cvename>
+      <cvename>CVE-2021-21207</cvename>
+      <cvename>CVE-2021-21208</cvename>
+      <cvename>CVE-2021-21209</cvename>
+      <cvename>CVE-2021-21210</cvename>
+      <cvename>CVE-2021-21211</cvename>
+      <cvename>CVE-2021-21212</cvename>
+      <cvename>CVE-2021-21213</cvename>
+      <cvename>CVE-2021-21214</cvename>
+      <cvename>CVE-2021-21215</cvename>
+      <cvename>CVE-2021-21216</cvename>
+      <cvename>CVE-2021-21217</cvename>
+      <cvename>CVE-2021-21218</cvename>
+      <cvename>CVE-2021-21219</cvename>
+      <url>https://chromereleases.googleblog.com/2021/04/stable-channel-update-for-desktop_14.html</url>
+    </references>
+    <dates>
+      <discovery>2021-04-14</discovery>
+      <entry>2021-04-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7c0d71a9-9d48-11eb-97a0-e09467587c17">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
