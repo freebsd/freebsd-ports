@@ -1292,6 +1292,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/grammar-wy.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/grammar.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/grammar.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/grm-wy-boot.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/grm-wy-boot.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/html.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/html.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/ia-sb.el.gz
