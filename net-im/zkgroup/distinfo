@@ -1,4 +1,4 @@
-TIMESTAMP = 1608687621
+TIMESTAMP = 1618486904
 SHA256 (rust/crates/aead-0.2.0.tar.gz) = 4cf01b9b56e767bb57b94ebf91a58b338002963785cdd7013e21c0d4679471e4
 SIZE (rust/crates/aead-0.2.0.tar.gz) = 8646
 SHA256 (rust/crates/aes-0.3.2.tar.gz) = 54eb1d8fe354e5fc611daf4f2ea97dd45a765f4f1e4512306ec183ae2e8f20c9
@@ -201,8 +201,8 @@ SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SHA256 (rust/crates/zeroize-1.1.0.tar.gz) = 3cbac2ed2ba24cc90f5e06485ac8c7c1e5449fe8911aef4d8877218af021a5b8
 SIZE (rust/crates/zeroize-1.1.0.tar.gz) = 10316
-SHA256 (signalapp-zkgroup-v0.7.1_GH0.tar.gz) = 6f9a0d46632c8a44f1d47cfd9c861f9a7673664360a82eee75edd582ab2f2bdb
-SIZE (signalapp-zkgroup-v0.7.1_GH0.tar.gz) = 265186
+SHA256 (signalapp-zkgroup-v0.7.2_GH0.tar.gz) = fdd03bbf584533963d1be40ab238d4e6199b379e8112f6aaf5cd9493b7f1fb47
+SIZE (signalapp-zkgroup-v0.7.2_GH0.tar.gz) = 279599
 SHA256 (signalapp-curve25519-dalek-477356e017c7cc2aa168f956786b34690870768f_GH0.tar.gz) = df72210a25f199e6da980c0ee13bd5cfdcfcea6f203a8ac3cb7c9f3c9c0a5511
 SIZE (signalapp-curve25519-dalek-477356e017c7cc2aa168f956786b34690870768f_GH0.tar.gz) = 517253
 SHA256 (signalapp-poksho-v0.7.0_GH0.tar.gz) = 83dae66d1f55a7c7cdec534b61befd1937a79416d96bdba35f37c3ab76bba2e4
