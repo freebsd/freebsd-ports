@@ -1,13 +1,9 @@
 PORTNAME=	labwc
-DISTVERSION=	0.1.0
-PORTREVISION=	1
+DISTVERSION=	0.2.0
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	2ee21e9a82d8.patch:-p1 # https://github.com/johanmalm/labwc/pull/26
-PATCHFILES+=	ad07acc13cee.patch:-p1 # https://github.com/johanmalm/labwc/pull/26
-PATCHFILES+=	c9023dd2c6af.patch:-p1 # https://github.com/johanmalm/labwc/pull/26
-PATCHFILES+=	0ca3eb8f790c.patch:-p1 # https://github.com/johanmalm/labwc/pull/26
+PATCHFILES+=	8ab89211e4dd.patch:-p1 # https://github.com/johanmalm/labwc/pull/30
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Openbox alternative for Wayland
@@ -15,7 +11,7 @@ COMMENT=	Openbox alternative for Wayland
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols \
-		wlroots>=0.11.0:x11-toolkits/wlroots
+		wlroots>=0.13.0<0.14.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
@@ -36,6 +32,8 @@ MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
 			man/man5/${PORTNAME}-actions.5.gz \
 			man/man5/${PORTNAME}-config.5.gz \
+			man/man5/${PORTNAME}-environment.5.gz \
+			man/man5/${PORTNAME}-menu.5.gz \
 			man/man5/${PORTNAME}-theme.5.gz
 
 SUID_DESC=		setuid bit on "${PORTNAME}" binary (to claim DRM without seatd/console-kit-daemon)
