@@ -1,0 +1,91 @@
+object User "pagerduty" {
+  pager = "YOUR-INTEGRATION-KEY-HERE"
+  groups = [ "icingaadmins" ]
+  display_name = "PagerDuty Notification User"
+  states = [ OK, Warning, Critical, Unknown, Up, Down ]
+  types = [ Problem, Acknowledgement, Recovery ]
+}
+
+object NotificationCommand "notify-service-by-pagerduty" {
+  import "plugin-notification-command"
+  command = [ "%%PREFIX%%/bin/pd-nagios" ]
+  arguments = {
+    "-n" = {
+      order = 0
+      value = "service"
+    }
+    "-k" = {
+      order = 1
+      value = "$user.pager$"
+    }
+    "-t" = {
+      order = 2
+      value = "$notification.type$"
+    }
+    "-f" = {
+      order = 3
+      repeat_key = true
+      value = "$f_args$"
+    }
+  }
+  
+  vars.f_args = [
+    "SERVICEDESC=$service.name$",
+    "SERVICEDISPLAYNAME=$service.display_name$",
+    "HOSTNAME=$host.name$",
+    "HOSTSTATE=$host.state$",
+    "HOSTDISPLAYNAME=$host.display_name$",
+    "SERVICESTATE=$service.state$",
+    "SERVICEPROBLEMID=$service.state_id$",
+    "SERVICEOUTPUT=$service.output$" 
+  ]
+}
+
+object NotificationCommand "notify-host-by-pagerduty" {
+  import "plugin-notification-command"
+  command = [ "%%PREFIX%%/bin/pd-nagios" ]
+  arguments = {
+    "-n" = {
+      order = 0
+      value = "host"
+    }
+    "-k" = {
+      order = 1
+      value = "$user.pager$"
+    }
+    "-t" = {
+      order = 2
+      value = "$notification.type$"
+    }
+    "-f" = {
+      order = 3
+      repeat_key = true
+      value = "$f_args$"
+    }
+  }
+
+  vars.f_args = [
+    "HOSTNAME=$host.name$",
+    "HOSTSTATE=$host.state$",
+    "HOSTPROBLEMID=$host.state_id$",
+    "HOSTOUTPUT=$host.output$"
+  ]
+}
+
+apply Notification "pagerduty-service" to Service {
+  command = "notify-service-by-pagerduty"
+  states = [ OK, Warning, Critical, Unknown ]
+  types = [ Problem, Acknowledgement, Recovery ]
+  period = "24x7"
+  users = [ "pagerduty" ]
+  assign where service.vars.enable_pagerduty == true
+}
+
+apply Notification "pagerduty-host" to Host {
+  command = "notify-host-by-pagerduty"
+  states = [ Up, Down ]
+  types = [ Problem, Acknowledgement, Recovery ]
+  period = "24x7" 
+  users = [ "pagerduty" ]
+  assign where host.vars.enable_pagerduty == true
+}

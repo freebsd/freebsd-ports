@@ -1,0 +1,5 @@
+bin/pd-nagios
+bin/pd-sensu
+bin/pd-zabbix
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pagerduty_nagios.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sensu_pagerduty_handler.json
