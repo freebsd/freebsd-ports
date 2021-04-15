@@ -1,6 +1,6 @@
---- doc/CMakeLists.txt.orig	2019-03-05 00:29:38 UTC
+--- doc/CMakeLists.txt.orig	2021-04-15 19:26:54 UTC
 +++ doc/CMakeLists.txt
-@@ -225,12 +225,12 @@ install(
+@@ -221,12 +221,12 @@ install(
  		${CMAKE_INSTALL_MANDIR}/man4
  )
  
@@ -18,4 +18,4 @@
 +#)
  
  #
- # Editor modelines  -  http://www.wireshark.org/tools/modelines.html
+ # Editor modelines  -  https://www.wireshark.org/tools/modelines.html
