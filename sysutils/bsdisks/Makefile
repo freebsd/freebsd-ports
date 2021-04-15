@@ -1,5 +1,5 @@
 PORTNAME=	bsdisks
-DISTVERSION=	0.25
+DISTVERSION=	0.26
 CATEGORIES=	sysutils
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -14,8 +14,8 @@ USE_QT=		qmake_build buildtools_build core dbus
 USE_GITLAB=		yes
 GL_SITE=		https://foss.heptapod.net
 GL_ACCOUNT=		bsdutils
-GL_COMMIT=		dd9da45ed4b779d782b9a0b4f35cd029c0c0db25
-GL_HEPTAPOD_COMMIT=	c3a040afa0d0f01116917e50d16b0cdd383334bd
+GL_COMMIT=		e0e705f78ff9ae710eb022941e5e4032619ffcbb
+GL_HEPTAPOD_COMMIT=	e1d6cc627e5371f26a3350f19e19f0d1d017b1f2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GL_COMMIT}-${GL_HEPTAPOD_COMMIT}
 
