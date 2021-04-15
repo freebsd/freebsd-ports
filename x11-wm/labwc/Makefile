@@ -6,7 +6,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	8ab89211e4dd.patch:-p1 # https://github.com/johanmalm/labwc/pull/30
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Openbox alternative for Wayland
+COMMENT=	Wayland stacking compositor
 
 LICENSE=	GPLv2
 
