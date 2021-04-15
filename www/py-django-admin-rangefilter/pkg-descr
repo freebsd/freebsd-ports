@@ -1,0 +1,6 @@
+django-admin-rangefilter app,
+add the filter by a custom date / datetime range on the admin UI.
+For Django 1.8+, if django-csp is installed,
+ nonces will be added to style and script tags.
+
+WWW: https://github.com/silentsokolov/django-admin-rangefilter
