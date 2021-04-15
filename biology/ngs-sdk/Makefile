@@ -35,7 +35,7 @@ do-install: # install target from the project breaks: https://github.com/ncbi/ng
 	cd ${WRKSRC}/ngs-sdk && ${COPYTREE_SHARE} ngs ${STAGEDIR}${PREFIX}/include
 	${RM} -r ${STAGEDIR}${PREFIX}/include/ngs/win
 	# install libraries
-	cd ${WRKSRC}/build/ngs-sdk/FreeBSD/clang/amd64/rel/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib
+	cd ${WRKSRC}/build/ngs-sdk/FreeBSD/clang/${ARCH}/rel/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib
 		# The above command installs broken-looking static libs with symlinks.
 		# This is intentional, see comments https://github.com/ncbi/ncbi-vdb/issues/36#issuecomment-817990790 This may change in future versions.
 	# strip
