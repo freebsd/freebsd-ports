@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PHP_DESTDIR=	lib/php/arcanist
-USES=		php:flavors python:env shebangfix
+USES=		php:cli,flavors python:env shebangfix
 SHEBANG_FILES=	bin/arc \
 		bin/phage \
 		scripts/*.php \
