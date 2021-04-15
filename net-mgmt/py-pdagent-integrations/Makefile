@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	PagerDuty integrations for monitoring monitoring tools
 
 LICENSE=	BSD3CLAUSE
