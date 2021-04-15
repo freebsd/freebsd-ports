@@ -1,4 +1,4 @@
-TIMESTAMP = 1617730613
+TIMESTAMP = 1618521769
 SHA256 (rust/crates/addr2line-0.14.0.tar.gz) = 7c0929d69e78dd9bf5408269919fcbcaeb2e35e5d43e5815517cdc6a8e11a423
 SIZE (rust/crates/addr2line-0.14.0.tar.gz) = 30065
 SHA256 (rust/crates/adler-0.2.3.tar.gz) = ee2a4ec343196209d6594e19543ae87a39f96d5534d7174822a3ad825dd6ed7e
@@ -589,5 +589,5 @@ SHA256 (rust/crates/yaml-rust-0.4.4.tar.gz) = 39f0c922f1a334134dc2f7a8b67dc5d25f
 SIZE (rust/crates/yaml-rust-0.4.4.tar.gz) = 48359
 SHA256 (rust/crates/zip-0.5.6.tar.gz) = 58287c28d78507f5f91f2a4cf1e8310e2c76fd4c6932f93ac60fd1ceb402db7d
 SIZE (rust/crates/zip-0.5.6.tar.gz) = 33064
-SHA256 (getsentry-sentry-cli-1.63.2_GH0.tar.gz) = dac62aea74a67d85b3ef3d6e285c913258ef2f595a5c533e976cb8f0ef69dd56
-SIZE (getsentry-sentry-cli-1.63.2_GH0.tar.gz) = 240535
+SHA256 (getsentry-sentry-cli-1.64.0_GH0.tar.gz) = b8db56ddb9a821bda4902e599bd53d7bdeb285f610411ffa694b2ff6d4a3c8c5
+SIZE (getsentry-sentry-cli-1.64.0_GH0.tar.gz) = 241225
