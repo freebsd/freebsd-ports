@@ -11,7 +11,7 @@ COMMENT=	Intel(R) Intelligent Storage Acceleration Libray
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc
+ONLY_FOR_ARCHS=	amd64 powerpc64le powerpc64 powerpc
 
 BUILD_DEPENDS=	yasm:devel/yasm
 
