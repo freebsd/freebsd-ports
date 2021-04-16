@@ -53,8 +53,8 @@
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-fbc.so.1
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-fbc.so.%%SHLIB_VERSION%%
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-glcore.so.%%SHLIB_VERSION%%
-%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-glvkspirv.so.%%SHLIB_VERSION%%
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-glsi.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-glvkspirv.so.%%SHLIB_VERSION%%
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ifr.so
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ifr.so.1
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ifr.so.%%SHLIB_VERSION%%
@@ -124,8 +124,8 @@
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-fbc.so.1
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-fbc.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-glcore.so.%%SHLIB_VERSION%%
-%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-glvkspirv.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-glsi.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-glvkspirv.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-gtk2.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-gtk3.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ifr.so
@@ -136,10 +136,10 @@
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ml.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-opencl.so.1
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-opencl.so.%%SHLIB_VERSION%%
-%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-rtcore.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ptxjitcompiler.so
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ptxjitcompiler.so.1
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ptxjitcompiler.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-rtcore.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-tls.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libvdpau_nvidia.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/tls/libnvidia-tls.so.%%SHLIB_VERSION%%

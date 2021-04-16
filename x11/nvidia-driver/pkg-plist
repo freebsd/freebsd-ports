@@ -75,6 +75,8 @@ lib32/libnvidia-glcore.so
 lib32/libnvidia-glcore.so.1
 lib32/libnvidia-glsi.so
 lib32/libnvidia-glsi.so.1
+lib32/libnvidia-glvkspirv.so
+lib32/libnvidia-glvkspirv.so.1
 lib32/libnvidia-tls.so
 lib32/libnvidia-tls.so.1
 lib32/vdpau/libvdpau_nvidia.so.1
