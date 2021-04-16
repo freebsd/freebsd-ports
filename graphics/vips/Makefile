@@ -2,7 +2,7 @@
 
 PORTNAME=	vips
 PORTVERSION=	8.10.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
