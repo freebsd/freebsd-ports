@@ -1,13 +1,12 @@
 # Created by: Andre Rikkert de Koe - ARK-ICT <andre@ark-ict.nl>
 
 PORTNAME=	gitlist
-DISTVERSION=	1.0.1
-PORTREVISION=	1
+DISTVERSION=	1.0.2
 CATEGORIES=	devel www
 MASTER_SITES=	https://github.com/klaussilveira/gitlist/releases/download/${DISTVERSION}/ \
-		http://freebsd.ark-ict.nl/ports/
+		https://freebsd.ark-ict.nl/ports/
 
-MAINTAINER=	andre@ark-ict.nl
+MAINTAINER=	freebsd-ports@misc.ark-ict.nl
 COMMENT=	Web based Git repository browser written in PHP
 
 LICENSE=	BSD3CLAUSE
@@ -15,20 +14,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	git:devel/git
 
-PLIST=		${WRKDIR}/plist
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 NO_BUILD=	yes
 USES=		php:web
-USE_PHP=	ctype hash simplexml
+USE_PHP=	ctype hash json simplexml
+
+PLIST=		${WRKDIR}/plist
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USERS?=		${WWWOWN}
 GROUPS?=	${WWWGRP}
 SUB_FILES=	pkg-message
 
 post-patch:
-	${FIND} ${WRKSRC}/vendor/klaussilveira/gitter/lib/Gitter/Model/ -name \*.php -exec ${SED} -i '' 's/Object/Objekt/g' {} \;
-	${MV} ${WRKSRC}/vendor/klaussilveira/gitter/lib/Gitter/Model/Object.php ${WRKSRC}/vendor/klaussilveira/gitter/lib/Gitter/Model/Objekt.php
 	${MKDIR} ${WRKSRC}/cache
 	cd ${WRKSRC}; \
 	${REINPLACE_CMD} -e 's|/usr/bin/git|/usr/local/bin/git|g' config.ini-example; \
@@ -46,5 +43,6 @@ do-install:
 			${INSTALL_DATA} "$$src" "$$dst"; \
 		fi \
 	done
+	${RM} -r "${WWWDIR}/cache/views"
 
 .include <bsd.port.mk>

@@ -6,6 +6,8 @@ Copy %%WWWDIR%%/config.ini-example
 to %%WWWDIR%%/config.ini and
 edit it to make it use your git repositories.
 Then configure your webserver to use the htdocs directory.
+Make sure mod_rewrite is enabled in your webserver,
+else the url-rewrite will not work and result in a 404 when accessing a repository.
 EOM
 }
 ]
