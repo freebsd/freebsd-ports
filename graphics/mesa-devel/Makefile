@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	21.1-branchpoint-21
-DISTVERSIONSUFFIX=	-g9b71154353d
+DISTVERSION=	21.1-branchpoint-176
+DISTVERSIONSUFFIX=	-gc74d93cf018
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -92,7 +92,7 @@ anv_DESC=		Haswell and newer
 radv_DESC=		Southern Islands and newer (implies LLVM)
 
 COINST_DESC=		Allow co-installation with another Mesa port
-COINST_VARS=		LLVM_DEFAULT=10 # chase mesa-dri
+COINST_VARS=		LLVM_DEFAULT=11 # chase intel-compute-runtime
 COINST_MESON_ON=	-Degl-lib-suffix=${PKGNAMESUFFIX}
 COINST_PLIST_SUB=	SUFFIX=${PKGNAMESUFFIX}
 COINST_SUB_FILES=	libmap.conf
