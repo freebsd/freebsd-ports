@@ -13,7 +13,7 @@
  # configure script add FORCE32BITFLAGS=-m32
  
 -DO_CFLAGS		=	${CFLAGS} -Wall -pipe -pthread -funsigned-char -DUSE_PR2 -D${BYTE_ORDER}Q__ ${FORCE32BITFLAGS}
-+BYTE_ORDER!=	${CC} -x c -dM -E /usr/include/machine/endian.h | sed -n 's,\#define _BYTE_ORDER \(.*\),_\1__,p'
++BYTE_ORDER!=	${CC} -x c -dM -E /usr/include/machine/endian.h | sed -n 's,\#define __BYTE_ORDER__ __ORDER\(.*_ENDIAN__\),_\1,p'
 +DO_CFLAGS		=	${CFLAGS} -Wall -pipe -funsigned-char -DSERVERONLY -D${BYTE_ORDER}Q__ ${FORCE32BITFLAGS}
  
 -.if !defined(NOKQUEUE) && (${UNAME} == "FreeBSD" || ${UNAME} == "DragonFly")
