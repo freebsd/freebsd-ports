@@ -1,3 +1,3 @@
-TIMESTAMP = 1569326545
-SHA256 (dlundgren-ansible-freebsd-modules-0.1-cf37fc1e16fc03852abc8933e7959b22b51a5c90_GH0.tar.gz) = 168013ef470d93eeb2a103c1613aaadceb84e6202cb9bff91166a5047a77898f
-SIZE (dlundgren-ansible-freebsd-modules-0.1-cf37fc1e16fc03852abc8933e7959b22b51a5c90_GH0.tar.gz) = 9310
+TIMESTAMP = 1618563565
+SHA256 (dlundgren-ansible-freebsd-modules-g20200803-537984b53018e36c2511132c3c66ac762f8b36dd_GH0.tar.gz) = 84c808ce8d90e93446c9320369afd3a362e8f4c363c9be9c734e6b1b92f6f53b
+SIZE (dlundgren-ansible-freebsd-modules-g20200803-537984b53018e36c2511132c3c66ac762f8b36dd_GH0.tar.gz) = 9341
