@@ -79,7 +79,7 @@ lib/vst/ZynReverb.so
 %%GUI%%share/applications/zynaddsubfx-jack-multi.desktop
 %%GUI%%share/applications/zynaddsubfx-alsa.desktop
 %%GUI%%share/applications/zynaddsubfx-oss.desktop
-share/bash-completion/completions/zynaddsubfx
+%%BASH%%share/bash-completion/completions/zynaddsubfx
 share/pixmaps/zynaddsubfx.svg
 share/pixmaps/zynaddsubfx.png
 %%DATADIR%%/banks/Arpeggios/0001-Arpeggio1.xiz
