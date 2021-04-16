@@ -1,0 +1,4 @@
+Smartypants translates plain ASCII punctuation characters into smart
+typographic punctuation HTML entities.
+
+WWW: https://github.com/leohemsted/smartypants.py
