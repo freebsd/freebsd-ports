@@ -3,7 +3,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		4
 PORTVERSION=		5.1.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES=		shells
 MASTER_SITES=		GNU
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -93,6 +93,9 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e "s|\(/etc/profile\)|${LOCALBASE}\1|" \
 		${WRKSRC}/pathnames.h.in
+	@${REINPLACE_CMD} -e "s|/etc/[iI]nputrc|${LOCALBASE}/etc/inputrc|g" \
+		${WRKSRC}/doc/*.info ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.1 \
+		${WRKSRC}/lib/readline/rlconf.h
 
 post-patch-SYSBASHRC-on:
 	@${REINPLACE_CMD} \

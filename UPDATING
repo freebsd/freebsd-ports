@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210416:
+  AFFECTS: Users of shells/bash, shells/bash-static with PORTS_READLINE=off
+  AUTHOR: olce.freebsd@certner.fr
+
+  Bundled readline now will use LOCALBASE/etc/inputrc as its ultimate default
+  inputrc file (instead of /etc/inputrc). This puts these ports in line with
+  what devel/readline has been doing recently (since 20210103).
+
 20210414:
   AFFECTS: users of graphics/OpenEXR or graphics/ilmbase
   AUTHOR: mandree@FreeBSD.org
