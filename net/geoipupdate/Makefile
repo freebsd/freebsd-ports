@@ -1,7 +1,7 @@
 # Created by: adamw
 
 PORTNAME=	geoipupdate
-PORTVERSION=	4.6.0
+PORTVERSION=	4.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
@@ -24,17 +24,9 @@ MAKE_ENV+=	${GO_ENV} \
 		DATADIR=${PREFIX}/share/GeoIP \
 		VERSION=${DISTVERSIONFULL}
 
-GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		go-check:check:038fdea0a05b:go_check_check/vendor/gopkg.in/check.v1 \
-		go-yaml:yaml:eeeca48fe776:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		gofrs:flock:v0.8.0:gofrs_flock/vendor/github.com/gofrs/flock \
-		golang:sys:119d4633e4d1:golang_sys/vendor/golang.org/x/sys \
-		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
-		niemeyer:pretty:a10e7caefd8e:niemeyer_pretty/vendor/github.com/niemeyer/pretty \
+GH_TUPLE=	gofrs:flock:v0.8.0:gofrs_flock/vendor/github.com/gofrs/flock \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
-		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify
+		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag
 
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
