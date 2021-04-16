@@ -1,6 +1,6 @@
 PORTNAME=	oneshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1
+DISTVERSION=	1.5.0
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -18,6 +18,7 @@ GH_TUPLE=	cenkalti:backoff:v2.2.1:cenkalti_backoff/vendor/github.com/cenkalti/ba
 		golang:crypto:87dc89f01550:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:627f9648deb9:golang_net/vendor/golang.org/x/net \
 		golang:sys:85ca7c5b95cd:golang_sys/vendor/golang.org/x/sys \
+		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:mux:v1.7.4:gorilla_mux/vendor/github.com/gorilla/mux \
 		grandcat:zeroconf:v1.0.0:grandcat_zeroconf/vendor/github.com/grandcat/zeroconf \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
