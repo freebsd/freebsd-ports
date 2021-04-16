@@ -1,0 +1,58 @@
+--- amdgpukmsfw/Makefile.orig	2021-03-30 18:15:09 UTC
++++ amdgpukmsfw/Makefile
+@@ -36,17 +36,6 @@ SUBDIR=									\
+ 	fiji_smc							\
+ 	fiji_uvd							\
+ 	fiji_vce							\
+-	green_sardine_asd						\
+-	green_sardine_ce						\
+-	green_sardine_dmcub						\
+-	green_sardine_me						\
+-	green_sardine_mec						\
+-	green_sardine_mec2						\
+-	green_sardine_pfp						\
+-	green_sardine_rlc						\
+-	green_sardine_sdma						\
+-	green_sardine_ta						\
+-	green_sardine_vcn						\
+ 	hainan_ce							\
+ 	hainan_k_smc							\
+ 	hainan_mc							\
+@@ -142,18 +131,6 @@ SUBDIR=									\
+ 	navi14_sos							\
+ 	navi14_ta							\
+ 	navi14_vcn							\
+-	navy_flounder_ce						\
+-	navy_flounder_dmcub						\
+-	navy_flounder_me						\
+-	navy_flounder_mec						\
+-	navy_flounder_mec2						\
+-	navy_flounder_pfp						\
+-	navy_flounder_rlc						\
+-	navy_flounder_sdma						\
+-	navy_flounder_smc						\
+-	navy_flounder_sos						\
+-	navy_flounder_ta						\
+-	navy_flounder_vcn						\
+ 	oland_ce							\
+ 	oland_k_smc							\
+ 	oland_mc							\
+@@ -280,18 +257,6 @@ SUBDIR=									\
+ 	renoir_ta							\
+ 	renoir_vcn							\
+ 	si58_mc								\
+-	sienna_cichlid_ce						\
+-	sienna_cichlid_dmcub						\
+-	sienna_cichlid_me						\
+-	sienna_cichlid_mec						\
+-	sienna_cichlid_mec2						\
+-	sienna_cichlid_pfp						\
+-	sienna_cichlid_rlc						\
+-	sienna_cichlid_sdma						\
+-	sienna_cichlid_smc						\
+-	sienna_cichlid_sos						\
+-	sienna_cichlid_ta						\
+-	sienna_cichlid_vcn						\
+ 	stoney_ce							\
+ 	stoney_me							\
+ 	stoney_mec							\
