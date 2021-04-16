@@ -3,8 +3,8 @@
   message: <<EOM
 You installed BSDstats: script reporting statistics about your machine.
 
-To disable monthly reporting, add this line to /etc/periodic.conf:
-	monthly_statistics_enable="NO"
+To enable monthly reporting, add this line to /etc/periodic.conf:
+	monthly_statistics_enable="YES"
 
 To disable parts of reporting, add these lines to /etc/periodic.conf:
 	monthly_statistics_report_devices="NO"
@@ -28,6 +28,14 @@ To view current statistics, go to:
 	http://www.bsdstats.org/
 
 @@TOR_MESSAGE@@
+EOM
+}
+{ type: upgrade
+  maximum_version: "7.0"
+  message: <<EOM
+BSDstats is now disabled by default, to enable monthly reporting, add
+this line to /etc/periodic.conf:
+	monthly_statistics_enable="YES"
 EOM
 }
 ]

@@ -67,6 +67,9 @@ fi
 #
 # global values
 #
+monthly_statistics_enable=${monthly_statistics_enable:-"NO"}
+monthly_statistics_report_devices=${$monthly_statistics_report_devices:-"YES"}
+monthly_statistics_report_ports=${monthly_statistics_report_ports:-"YES"}
 checkin_server=${monthly_statistics_checkin_server:-"rpt.bsdstats.org"}
 bsdstats_log=${monthly_statistics_logfile:-"/var/log/bsdstats"}
 id_token_file='/var/db/bsdstats'
@@ -531,27 +534,14 @@ report_all() {
        report_devices
        report_cpu
        ;;
-    [Nn][Oo])
-       echo "Posting monthly device/CPU statistics disabled"
-       echo "    set monthly_statistics_report_devices=\"YES\" in $periodic_conf"
-       ;;
     *)
-       # opt-out for devices
-       report_devices
-       report_cpu
        ;;
   esac
   case "$monthly_statistics_report_ports" in
     [Yy][Ee][Ss])
       report_ports
       ;;
-    [Nn][Oo])
-      echo "Posting monthly ports statistics disabled"
-      echo "    set monthly_statistics_report_ports=\"YES\" in $periodic_conf"
-      ;;
     *)
-      # opt-out for ports
-      report_ports
       ;;
   esac
   # end
@@ -569,14 +559,7 @@ case "$monthly_statistics_enable" in
     # explicitly enabled: report it
     report_all "$1"
     ;;
-  [Nn][Oo])
-    echo "Posting monthly OS statistics disabled"
-    echo "    set monthly_statistics_enable=\"YES\" in $periodic_conf"
-    rc=1
-    ;;
   *)
-    # opt-out: we report when user has BSDstats installed, and user didn't say "NO"
-    report_all "$1"
     ;;
 esac
 
