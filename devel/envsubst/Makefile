@@ -10,6 +10,7 @@ COMMENT=	Perform variable substitutions on input
 LICENSE=	ISCL
 
 USES=		tar:xz
+USE_CSTD=	c99
 
 ALL_TARGET=	${PORTNAME}
 
