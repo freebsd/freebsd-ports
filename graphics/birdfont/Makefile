@@ -1,7 +1,7 @@
 PORTNAME=	birdfont
-DISTVERSION=	2.29.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.29.4
 CATEGORIES=	graphics x11-fonts
-MASTER_SITES=	http://birdfont.org/releases/
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Editor for vector graphics and TTF, OTF, EOT and SVG fonts
@@ -22,6 +22,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		compiler:c++11-lang gettext-tools gnome pkgconfig \
 		python:3.7+,build shared-mime-info shebangfix sqlite:3 \
 		tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	johanmattssonm
 USE_GNOME=	cairo glib20 gtk30
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
@@ -39,7 +41,7 @@ _STRIPPABLE=	bin/birdfont bin/birdfont-autotrace bin/birdfont-export \
 		lib/libbirdgems.so.0.0
 
 do-build:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/doit)
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} build.py)
 
 do-install:
 	(cd ${WRKSRC} && ./install.py \
