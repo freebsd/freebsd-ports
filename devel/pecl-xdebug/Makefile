@@ -1,7 +1,7 @@
 # Created by: Luca Pizzamiglio <luca.pizzamiglio@trivago.com>
 
 PORTNAME=	xdebug
-DISTVERSION=	3.0.3
+DISTVERSION=	3.0.4
 CATEGORIES=	devel pear
 
 MAINTAINER=	pizzamig@FreeBSD.org
