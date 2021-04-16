@@ -1,6 +1,6 @@
-TIMESTAMP = 1620734938
-SHA256 (mirror-xserver-xorg-server-1.20.0-933-g012350e3d_GH0.tar.gz) = fad9b5598f2d0f71c19b5d7e99738ce2058d65f60b21113554d030a270a580fa
-SIZE (mirror-xserver-xorg-server-1.20.0-933-g012350e3d_GH0.tar.gz) = 5850307
+TIMESTAMP = 1621351195
+SHA256 (mirror-xserver-xorg-server-1.20.0-935-gf3eb1684f_GH0.tar.gz) = cdfd1797c3087eb8ca9a54a447fdc22f36e61d73e12321efc8db1f197668391b
+SIZE (mirror-xserver-xorg-server-1.20.0-935-gf3eb1684f_GH0.tar.gz) = 5851312
 SHA256 (231720f8b212.patch) = ed3db053b86e5c7492cefb9dbb3dd373609f9318a5b848382aac59da322188f0
 SIZE (231720f8b212.patch) = 10714
 SHA256 (48a7bfeb4687.patch) = ae284622227b317085360f61553bae7fc21a57f4d2b6d4133a6ead0c93b47cee
