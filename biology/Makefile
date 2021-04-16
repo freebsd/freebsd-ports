@@ -161,6 +161,7 @@
     SUBDIR += seqan-apps
     SUBDIR += seqan1
     SUBDIR += seqio
+    SUBDIR += seqkit
     SUBDIR += seqtk
     SUBDIR += sim4
     SUBDIR += slclust

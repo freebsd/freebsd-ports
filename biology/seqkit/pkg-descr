@@ -1,0 +1,17 @@
+FASTA and FASTQ are basic and ubiquitous formats for storing nucleotide and
+protein sequences. Common manipulations of FASTA/Q file include converting,
+searching, filtering, deduplication, splitting, shuffling, and sampling.
+Existing tools only implement some of these manipulations, and not particularly
+efficiently, and some are only available for certain operating systems.
+Furthermore, the complicated installation process of required packages and
+running environments can render these programs less user friendly.
+
+SeqKit is a cross-platform ultrafast comprehensive toolkit for FASTA/Q
+processing. SeqKit provides executable binary files for all major operating
+systems, including Windows, Linux, and Mac OS X, and can be directly used
+without any dependencies or pre-configurations. SeqKit demonstrates competitive
+performance in execution time and memory usage compared to similar tools. The
+efficiency and usability of SeqKit enable researchers to rapidly accomplish
+common FASTA/Q file manipulations.
+
+WWW: https://github.com/shenwei356/seqkit
