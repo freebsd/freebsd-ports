@@ -1,6 +1,6 @@
---- Makefile.in.orig	2019-01-08 06:06:39.654833000 +0100
-+++ Makefile.in	2019-01-08 06:06:53.077532000 +0100
-@@ -188,11 +188,7 @@
+--- Makefile.in.orig	2021-03-21 22:29:42 UTC
++++ Makefile.in
+@@ -206,11 +206,7 @@ install: all
  	for BIN in bird @CLIENT@ ; do								\
  		$(INSTALL_PROGRAM) $(exedir)/$$BIN $(DESTDIR)/$(sbindir)/$$BIN ;		\
  	done
