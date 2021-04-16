@@ -172,7 +172,7 @@ post-patch:
 
 post-configure:
 # Needed when devel/libsysinfo is installed:
-	${REINPLACE_CMD} -e '/#define HAVE_SYSINFO 1/ d' ${WRKSRC}/src/auto/config.h
+	${REINPLACE_CMD} -e '/^#define HAVE_SYSINFO/ d' ${WRKSRC}/src/auto/config.h
 
 post-install-DEFAULT_VIMRC-on:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
