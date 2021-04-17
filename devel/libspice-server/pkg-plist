@@ -1,5 +1,4 @@
 libdata/pkgconfig/spice-server.pc
-include/spice-server/spice-experimental.h
 include/spice-server/spice-server.h
 include/spice-server/spice-replay.h
 include/spice-server/spice-char.h
@@ -10,6 +9,6 @@ include/spice-server/spice.h
 include/spice-server/spice-audio.h
 include/spice-server/spice-version.h
 include/spice-server/spice-qxl.h
-lib/libspice-server.so.1.12.4
+lib/libspice-server.so.1.14.1
 lib/libspice-server.so
 lib/libspice-server.so.1

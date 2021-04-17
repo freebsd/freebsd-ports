@@ -1,10 +1,9 @@
 # Created by: olevole@olevole.ru
 
 PORTNAME=	libspice-server
-DISTVERSION=	0.14.0
-PORTREVISION=	4
+DISTVERSION=	0.15.0
 CATEGORIES=	devel
-MASTER_SITES=	https://www.spice-space.org/download/releases/
+MASTER_SITES=	https://www.spice-space.org/download/releases/spice-server/
 DISTNAME=	spice-${PORTVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -13,7 +12,8 @@ COMMENT=	Implements the server side of the SPICE protocol
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libopus.so:audio/opus
-BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
+BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive \
+		spice-protocol>=0.12.10:devel/spice-protocol
 
 OPTIONS_DEFINE=		GSTREAMER LZ4 SASL STATISTICS
 OPTIONS_DEFAULT=	GSTREAMER LZ4 SASL
