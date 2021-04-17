@@ -17,7 +17,7 @@ CONFLICTS_INSTALL=	${PKGNAMEPREFIX}phalcon
 RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/psr.so:devel/pecl-psr@${PHP_FLAVOR}
 
 USES=		localbase php:ext
-USE_PHP=	hash:build json:build pdo:build session
+USE_PHP=	hash:build json:build mbstring pdo:build session
 IGNORE_WITH_PHP=80
 PHP_MOD_PRIO=	30
 
