@@ -1,29 +1,25 @@
---- CMakeLists.txt.orig	2020-01-24 07:28:45 UTC
+--- CMakeLists.txt.orig	2020-11-04 10:00:35 UTC
 +++ CMakeLists.txt
-@@ -1347,7 +1347,7 @@ endif()
- # Install alsoft.conf configuration file
- IF(ALSOFT_CONFIG)
-     INSTALL(FILES alsoftrc.sample
+@@ -1394,19 +1394,19 @@ endif()
+ 
+ if(ALSOFT_INSTALL_CONFIG)
+     install(FILES alsoftrc.sample
 -        DESTINATION ${CMAKE_INSTALL_DATADIR}/openal)
 +        DESTINATION ${CMAKE_INSTALL_DATADIR}/openal-soft)
-     MESSAGE(STATUS "Installing sample configuration")
-     MESSAGE(STATUS "")
- ENDIF()
-@@ -1355,7 +1355,7 @@ ENDIF()
- # Install HRTF definitions
- IF(ALSOFT_HRTF_DEFS)
-     INSTALL(FILES "hrtf/Default HRTF.mhr"
--        DESTINATION ${CMAKE_INSTALL_DATADIR}/openal/hrtf)
-+        DESTINATION ${CMAKE_INSTALL_DATADIR}/openal-soft/hrtf)
-     MESSAGE(STATUS "Installing HRTF definitions")
-     MESSAGE(STATUS "")
- ENDIF()
-@@ -1370,7 +1370,7 @@ IF(ALSOFT_AMBDEC_PRESETS)
-         presets/rectangle.ambdec
-         presets/square.ambdec
-         presets/presets.txt
--        DESTINATION ${CMAKE_INSTALL_DATADIR}/openal/presets)
-+        DESTINATION ${CMAKE_INSTALL_DATADIR}/openal-soft/presets)
-     MESSAGE(STATUS "Installing AmbDec presets")
-     MESSAGE(STATUS "")
- ENDIF()
+     message(STATUS "Installing sample configuration")
+ endif()
+ 
+ if(ALSOFT_INSTALL_HRTF_DATA)
+     install(DIRECTORY hrtf
+-        DESTINATION ${CMAKE_INSTALL_DATADIR}/openal)
++        DESTINATION ${CMAKE_INSTALL_DATADIR}/openal-soft)
+     message(STATUS "Installing HRTF data files")
+ endif()
+ 
+ if(ALSOFT_INSTALL_AMBDEC_PRESETS)
+     install(DIRECTORY presets
+-        DESTINATION ${CMAKE_INSTALL_DATADIR}/openal)
++        DESTINATION ${CMAKE_INSTALL_DATADIR}/openal-soft)
+     message(STATUS "Installing AmbDec presets")
+ endif()
+ message(STATUS "")
