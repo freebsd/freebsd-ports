@@ -1,6 +1,10 @@
---- Makefile.orig	2019-03-15 16:38:36 UTC
+Patch contains 2 changes:
+- enable readline on FreeBSD (upstream never accepted this PR)
+- use -O3 on FreeBSD
+
+--- Makefile.orig	2021-04-13 02:22:04 UTC
 +++ Makefile
-@@ -15,7 +15,8 @@ endif
+@@ -17,7 +17,8 @@ endif
  
  # Compiler flags for various configurations:
  
@@ -10,12 +14,23 @@
  
  ifeq "$(CC)" "clang"
    CFLAGS += -Wunreachable-code
-@@ -31,7 +32,7 @@ else ifeq "$(build)" "sanitize"
+@@ -27,13 +28,18 @@ ifeq "$(shell uname)" "Linux"
+   HAVE_READLINE := yes
+ endif
+ 
++ifeq "$(shell uname)" "FreeBSD"
++  HAVE_READLINE := yes
++  CFLAGS += -I$(prefix)/include
++endif
++
+ ifeq "$(build)" "debug"
+   CFLAGS += -g
+ else ifeq "$(build)" "sanitize"
    CFLAGS += -pipe -g -fsanitize=address -fno-omit-frame-pointer
    LDFLAGS += -fsanitize=address
- else
--  CFLAGS += -Os
-+  CFLAGS += -O3 # use -O3 on FreeBSD instead of -Os because this isn't an embedded platform
+ else ifeq "$(build)" "release"
+-  CFLAGS += -O2
++  CFLAGS += -O3
    LDFLAGS += -Wl,-s
  endif
  
