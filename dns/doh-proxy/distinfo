@@ -1,6 +1,6 @@
 TIMESTAMP = 1614607864
-SHA256 (doh-proxy-0.3.8.tar.gz) = a92c4c48f6fdc42e8248669677b7378655a3f6629b23d086a18735879b638740
-SIZE (doh-proxy-0.3.8.tar.gz) = 16999
+SHA256 (rust/crates/doh-proxy-0.3.8.tar.gz) = a92c4c48f6fdc42e8248669677b7378655a3f6629b23d086a18735879b638740
+SIZE (rust/crates/doh-proxy-0.3.8.tar.gz) = 16999
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
 SIZE (rust/crates/ansi_term-0.11.0.tar.gz) = 17087
 SHA256 (rust/crates/anyhow-1.0.38.tar.gz) = afddf7f520a80dbf76e6f50a35bca42a2331ef227a28b3b6dc5c2e2338d114b1
