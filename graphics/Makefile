@@ -898,6 +898,7 @@
     SUBDIR += py-tifffile
     SUBDIR += py-toyplot
     SUBDIR += py-traitsui
+    SUBDIR += py-ueberzug
     SUBDIR += py-urbanaccess
     SUBDIR += py-urbansim
     SUBDIR += py-utm
