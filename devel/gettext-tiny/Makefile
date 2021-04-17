@@ -8,7 +8,7 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Replacements for tools typically used from the GNU gettext suite
 
 LICENSE=	MIT
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=	tar:xz
 TOOLS=	msgfmt msgmerge

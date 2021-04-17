@@ -1449,8 +1449,8 @@
     SUBDIR += py-dj31-djangorestframework
     SUBDIR += py-dj31-drf-yasg
     SUBDIR += py-django
-    SUBDIR += py-django-advanced-filters
     SUBDIR += py-django-admin-rangefilter
+    SUBDIR += py-django-advanced-filters
     SUBDIR += py-django-allauth
     SUBDIR += py-django-annoying
     SUBDIR += py-django-appconf

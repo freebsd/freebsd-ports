@@ -14,7 +14,7 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	UniFi Controller v5
 
 DEPRECATED=	Upstream EoL the hardware supported by this release
-EXPIRES=	2021-07-16
+EXPIRATION_DATE=	2021-07-16
 
 RUN_DEPENDS=	mongodb36>0:databases/mongodb36 \
 		snappyjava>0:archivers/snappy-java

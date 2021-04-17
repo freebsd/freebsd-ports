@@ -19,7 +19,7 @@ LICENSE_TEXT=	${RESTRICTED}
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell no-auto-accept
 
 DEPRECATED=	Use net-mgmt/unifi6 instead
-EXPIRES=	2021-05-16
+EXPIRATION_DATE=	2021-05-16
 
 RESTRICTED=	License restrictions, see https://www.ubnt.com/eula/
 

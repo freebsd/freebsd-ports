@@ -17,7 +17,7 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	UniFi Controller v5
 
 DEPRECATED=	Use net-mgmt/unifi6 instead
-EXPIRES=	2021-10-16
+EXPIRATION_DATE=	2021-10-16
 
 RUN_DEPENDS=	mongodb36>0:databases/mongodb36 \
 		snappyjava>0:archivers/snappy-java
