@@ -2,6 +2,7 @@
 
 PORTNAME=	lldpd
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://media.luffy.cx/files/${PORTNAME}/ \
 		http://mirror.1labs.ch/${PORTNAME}/
@@ -54,10 +55,7 @@ JSON_CONFIGURE_WITH=		json
 PIE_CONFIGURE_ENABLE=		pie
 PROPRIETARY_CONFIGURE_ENABLE=	cdp edp fdp sonmp
 READLINE_CONFIGURE_WITH=	readline
-SNMP_LIB_DEPENDS=		libnetsnmp.so:net-mgmt/net-snmp \
-				libpcre.so:devel/pcre \
-				libpkg.so:ports-mgmt/pkg \
-				librpm.so:archivers/rpm4
+SNMP_LIB_DEPENDS=		libnetsnmp.so:net-mgmt/net-snmp
 SNMP_USES=			ssl
 SNMP_CONFIGURE_WITH=		snmp
 XML_LIB_DEPENDS=		libxml2.so:textproc/libxml2
