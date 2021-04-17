@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	13.10.2
+PORTVERSION=	13.10.3
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -38,6 +38,8 @@ MY_DEPENDS=	git>=2.29:devel/git \
 	rubygem-bcrypt>=3.1.14<3.2:security/rubygem-bcrypt \
 	rubygem-doorkeeper>=5.5.0.rc2<5.6:security/rubygem-doorkeeper \
 	rubygem-doorkeeper-openid_connect>=1.7.5<1.8:security/rubygem-doorkeeper-openid_connect \
+	rubygem-rexml>=3.2.5<3.3:textproc/rubygem-rexml \
+	rubygem-ruby-saml>=1.12.1<1.13:security/rubygem-ruby-saml \
 	rubygem-omniauth>=1.8<2.0:security/rubygem-omniauth \
 	rubygem-omniauth-auth0>=2.0.0<2.1.0:net/rubygem-omniauth-auth0 \
 	rubygem-omniauth-azure-activedirectory-v2>=0.1<1:net/rubygem-omniauth-azure-activedirectory-v2 \
@@ -269,7 +271,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 GL_PROJECT?=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT?=	7efd19e3716ab6f9146052da76d1bd59ec815f2d
+GL_COMMIT?=	b1774ad36a965ba5077db6db11e13f2837284158
 
 USERS=	git
 GROUPS=	git
