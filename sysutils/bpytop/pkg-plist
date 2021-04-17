@@ -1,4 +1,5 @@
 bin/bpytop
+%%DATADIR%%/themes/adapta.theme
 %%DATADIR%%/themes/default_black.theme
 %%DATADIR%%/themes/dracula.theme
 %%DATADIR%%/themes/dusklight.theme
