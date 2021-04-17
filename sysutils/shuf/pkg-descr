@@ -1,3 +1,6 @@
 shuf is a utility that outputs a random permutation of its input lines.
 
-WWW: https://devio.us/~bcallah/shuf/
+It is an ISC licensed reimplementation of the shuf(1) utility
+from GNU coreutils.
+
+WWW: https://github.com/ibara/shuf

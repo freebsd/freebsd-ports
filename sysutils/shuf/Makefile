@@ -1,21 +1,25 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 PORTNAME=	shuf
-PORTVERSION=	1.8
+DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	3.0
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL/swills
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Randomly permute input lines
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	ibara
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/shuf man/man1/shuf.1.gz
+PLIST_FILES=	bin/shuf \
+		share/man/man1/shuf.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/shuf ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/shuf.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/shuf.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
