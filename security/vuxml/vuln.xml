@@ -76,6 +76,35 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="093a6baf-9f99-11eb-b150-000c292ee6b8">
+    <topic>Consul -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>consul</name>
+	<range><lt>1.9.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hashicorp reports:</p>
+	<blockquote cite="https://github.com/hashicorp/consul/releases/tag/v1.9.5">
+	  <p>Add content-type headers to raw KV responses to prevent XSS attacks
+	  (CVE-2020-25864).  audit-logging: Parse endpoint URL to prevent
+	  requests from bypassing the audit log (CVE-2021-28156).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/hashicorp/consul/releases/tag/v1.9.5</url>
+      <cvename>CVE-2020-25864</cvename>
+      <cvename>CVE-2021-28156</cvename>
+    </references>
+    <dates>
+      <discovery>2021-04-15</discovery>
+      <entry>2021-04-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="75aae50b-9e3c-11eb-9bc3-8c164582fbac">
     <topic>AccountService -- Insufficient path check in user_change_icon_file_authorized_cb()</topic>
     <affects>
