@@ -2,7 +2,7 @@
 
 PORTNAME=	sfcgal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.8
+DISTVERSION=	1.3.10
 CATEGORIES=	databases math graphics
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -17,9 +17,10 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libmpfr.so:math/mpfr
 
 USES=		cmake compiler:c++14-lang
-USE_GITHUB=	yes
-GH_ACCOUNT=	Oslandia
-GH_PROJECT=	SFCGAL
+USE_GITLAB=	yes
+GL_ACCOUNT=	Oslandia
+GL_PROJECT=	SFCGAL
+GL_COMMIT=	8ec8641f0750e0fa78d70ffb5a90c3cab94e03d9
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	SHL3=${PORTVERSION} SHL1=${PORTVERSION:R:R}
