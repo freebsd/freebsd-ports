@@ -1,3 +1,3 @@
-TIMESTAMP = 1618337453
-SHA256 (wireguard-freebsd-0.0.20210412.tar.xz) = eff7fdff89949ea294177fe9b18fde99a016fc4ad44aaa0f31ba6c2cff5ac506
-SIZE (wireguard-freebsd-0.0.20210412.tar.xz) = 47708
+TIMESTAMP = 1618638847
+SHA256 (wireguard-freebsd-0.0.20210415.tar.xz) = 40dae82e27b37e236f761a2e84f892fe10ee183227287e7affdd5be571a1e612
+SIZE (wireguard-freebsd-0.0.20210415.tar.xz) = 46640
