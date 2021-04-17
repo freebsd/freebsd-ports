@@ -210,8 +210,6 @@
     SUBDIR += gotty
     SUBDIR += gpx2map
     SUBDIR += grafana
-    SUBDIR += grafana4
-    SUBDIR += grafana5
     SUBDIR += grafana6
     SUBDIR += grafana7
     SUBDIR += grails

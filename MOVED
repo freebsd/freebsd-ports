@@ -16285,3 +16285,7 @@ devel/sd-mux|devel/sd-mux-ctrl|2021-04-13|Renamed to match upstream naming
 sysutils/sd-mux-ctrl|devel/sd-mux-ctrl|2021-04-13|Remove duplicate port
 net/traefik2|net/traefik|2021-04-14|Superseded by net/traefik update
 net-mgmt/pdagent-integrations|net-mgmt/py-pdagent-integrations|2021-04-15|Restored and renamed
+www/grafana4|www/grafana6|2021-04-17|Has expired: Upstream end of life
+www/grafana5|www/grafana6|2021-04-17|Has expired: Upstream end of life
+comms/py-lirc||2021-04-17|Has expired: No longer maintained and not compatible with Python 3
+x11-toolkits/qt5-gtkplatform||2021-04-17|Has expired: Archived upstream

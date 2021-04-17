@@ -174,7 +174,6 @@
     SUBDIR += qt5-datavis3d
     SUBDIR += qt5-declarative
     SUBDIR += qt5-gamepad
-    SUBDIR += qt5-gtkplatform
     SUBDIR += qt5-gui
     SUBDIR += qt5-quick3d
     SUBDIR += qt5-quickcontrols
