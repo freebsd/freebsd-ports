@@ -23,5 +23,6 @@ SOCKETS_CONFIGURE_ON=	--enable-sockets
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_ON=	--enable-swoole-curl
 JSON_CONFIGURE_ON=	--enable-swoole-json
+JSON_USE=	PHP=json:build
 
 .include <bsd.port.mk>
