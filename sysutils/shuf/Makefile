@@ -1,9 +1,9 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 PORTNAME=	shuf
-DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	3.0
 CATEGORIES=	sysutils
+MASTER_SITES=	https://github.com/ibara/shuf/releases/download/${PORTNAME}-${DISTVERSION}/
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Randomly permute input lines
@@ -11,9 +11,7 @@ COMMENT=	Randomly permute input lines
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	ibara
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 
 PLIST_FILES=	bin/shuf \
 		share/man/man1/shuf.1.gz
