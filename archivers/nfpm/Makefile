@@ -1,6 +1,6 @@
 PORTNAME=	nfpm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.1
+DISTVERSION=	2.4.0
 CATEGORIES=	archivers
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,13 +14,15 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	goreleaser
 GH_TUPLE=	\
-		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
-		Djarvur:go-err113:v0.1.0:djarvur_go_err113/vendor/github.com/Djarvur/go-err113 \
-		Masterminds:goutils:v1.1.0:masterminds_goutils/vendor/github.com/Masterminds/goutils \
+		AlekSi:pointer:v1.1.0:aleksi_pointer/vendor/github.com/AlekSi/pointer \
+		Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Masterminds/goutils \
 		Masterminds:semver:v1.5.0:masterminds_semver/vendor/github.com/Masterminds/semver \
 		Masterminds:semver:v3.1.1:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		Masterminds:sprig:v2.22.0:masterminds_sprig/vendor/github.com/Masterminds/sprig \
 		Microsoft:go-winio:v0.4.16:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
+		ProtonMail:go-crypto:bf0c5240ed99:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
+		ProtonMail:go-mime:9b5a4261663a:protonmail_go_mime/vendor/github.com/ProtonMail/go-mime \
+		ProtonMail:gopenpgp:v2.1.7:protonmail_gopenpgp_v2/vendor/github.com/ProtonMail/gopenpgp/v2 \
 		alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/github.com/alecthomas/kingpin \
 		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
 		alecthomas:units:f65c72e2690d:alecthomas_units/vendor/github.com/alecthomas/units \
@@ -29,32 +31,35 @@ GH_TUPLE=	\
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
 		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
-		go-git:go-billy:v5.0.0:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
-		go-git:go-git:v5.2.0:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
+		go-git:go-billy:v5.1.0:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
+		go-git:go-git:v5.3.0:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
-		go-yaml:yaml:eeeca48fe776:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
+		go-yaml:yaml:496545a6307b:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
-		golang:crypto:5f87f3452ae9:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:ac852fbbde11:golang_net/vendor/golang.org/x/net \
-		golang:sys:d4d67f95c62d:golang_sys/vendor/golang.org/x/sys \
+		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:afb366fc7cd1:golang_net/vendor/golang.org/x/net \
+		golang:sys:f1c623a9e750:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.5.4:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:rpmpack:0a97c2c4b688:google_rpmpack/vendor/github.com/google/rpmpack \
-		google:uuid:v1.1.2:google_uuid/vendor/github.com/google/uuid \
+		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
 		goreleaser:chglog:v0.1.2:goreleaser_chglog/vendor/github.com/goreleaser/chglog \
 		goreleaser:fileglob:v1.2.0:goreleaser_fileglob/vendor/github.com/goreleaser/fileglob \
 		huandu:xstrings:v1.3.2:huandu_xstrings/vendor/github.com/huandu/xstrings \
-		imdario:mergo:v0.3.11:imdario_mergo/vendor/github.com/imdario/mergo \
+		imdario:mergo:v0.3.12:imdario_mergo/vendor/github.com/imdario/mergo \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
-		kevinburke:ssh_config:4977a11b4351:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
-		mitchellh:copystructure:v1.0.0:mitchellh_copystructure/vendor/github.com/mitchellh/copystructure \
+		kevinburke:ssh_config:v1.1.0:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
+		konsorten:go-windows-terminal-sequences:v1.0.1:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
+		mitchellh:copystructure:v1.1.2:mitchellh_copystructure/vendor/github.com/mitchellh/copystructure \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:reflectwalk:v1.0.1:mitchellh_reflectwalk/vendor/github.com/mitchellh/reflectwalk \
 		op:go-logging:970db520ece7:op_go_logging/vendor/github.com/op/go-logging \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		sassoftware:go-rpmutils:a8f1baeba37b:sassoftware_go_rpmutils/vendor/github.com/sassoftware/go-rpmutils \
-		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
+		sergi:go-diff:v1.2.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
+		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		ulikunitz:xz:v0.5.9:ulikunitz_xz/vendor/github.com/ulikunitz/xz \
 		xanzy:ssh-agent:v0.3.0:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
