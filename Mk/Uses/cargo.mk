@@ -34,10 +34,20 @@ CARGO_CARGOLOCK?=	${WRKSRC}/Cargo.lock
 CARGO_DIST_SUBDIR?=	rust/crates
 
 # Generate list of DISTFILES.
+# Prefer canonical file extension .crate going forward
+.if make(makesum)
+CARGO_CRATE_EXT=	.crate
+.else
+# If there is a rust/crates/*.tar.gz in distinfo keep using the old
+# extension.  We need to delay eval until the last moment for
+# DISTINFO_FILE.  We cache the command output to avoid multiple
+# slow grep runs for every CARGO_CRATE_EXT access.
+CARGO_CRATE_EXT=	${defined(_CARGO_CRATE_EXT_CACHE):?${_CARGO_CRATE_EXT_CACHE}:${:!if ${GREP} -q '\(${CARGO_DIST_SUBDIR}/.*\.tar\.gz\)' "${DISTINFO_FILE}" 2>/dev/null; then ${ECHO_CMD} .tar.gz; else ${ECHO_CMD} .crate; fi!:_=_CARGO_CRATE_EXT_CACHE}}
+.endif
 .for _crate in ${CARGO_CRATES}
 # Resolving CRATESIO alias is very inefficient with many MASTER_SITES, consume MASTER_SITE_CRATESIO directly
 MASTER_SITES+=	${MASTER_SITE_CRATESIO:S,%SUBDIR%,${_crate:C/^([-_a-zA-Z0-9]+)-[0-9].*/\1/}/${_crate:C/^[-_a-zA-Z0-9]+-([0-9].*)/\1/},:S,$,:cargo_${_crate:C/[^a-zA-Z0-9_]//g},}
-DISTFILES+=	${CARGO_DIST_SUBDIR}/${_crate}.tar.gz:cargo_${_crate:C/[^a-zA-Z0-9_]//g}
+DISTFILES+=	${CARGO_DIST_SUBDIR}/${_crate}${CARGO_CRATE_EXT}:cargo_${_crate:C/[^a-zA-Z0-9_]//g}
 .endfor
 
 # Build dependencies.
@@ -211,7 +221,7 @@ cargo-extract:
 .for _crate in ${CARGO_CRATES}
 	@${MV} ${WRKDIR}/${_crate} ${CARGO_VENDOR_DIR}/${_crate}
 	@${PRINTF} '{"package":"%s","files":{}}' \
-		$$(${SHA256} -q ${DISTDIR}/${CARGO_DIST_SUBDIR}/${_crate}.tar.gz) \
+		$$(${SHA256} -q ${DISTDIR}/${CARGO_DIST_SUBDIR}/${_crate}${CARGO_CRATE_EXT}) \
 		> ${CARGO_VENDOR_DIR}/${_crate}/.cargo-checksum.json
 	@if [ -r ${CARGO_VENDOR_DIR}/${_crate}/Cargo.toml.orig ]; then \
 		${MV} ${CARGO_VENDOR_DIR}/${_crate}/Cargo.toml.orig \
