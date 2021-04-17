@@ -1,7 +1,7 @@
 # Created by: Melvyn Sopacua <melvyn@magemana.nl>
 
 PORTNAME=	snappy
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
