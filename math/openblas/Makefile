@@ -92,32 +92,32 @@ post-extract:
 	${CP} ${LARGE_FILE} ${TIMING_FILE} ${WRKSRC}
 
 post-patch:
-	@${ECHO} MAKE_NB_JOBS=-1 >> ${WRKSRC}/Makefile.rule
-	@${ECHO} NUM_THREADS=${MAXTHREADS} >> ${WRKSRC}/Makefile.rule
-	@${ECHO} USE_THREAD=1 >> ${WRKSRC}/Makefile.rule
+	@${ECHO_CMD} MAKE_NB_JOBS=-1 >> ${WRKSRC}/Makefile.rule
+	@${ECHO_CMD} NUM_THREADS=${MAXTHREADS} >> ${WRKSRC}/Makefile.rule
+	@${ECHO_CMD} USE_THREAD=1 >> ${WRKSRC}/Makefile.rule
 .if ! ${PORT_OPTIONS:MAVX}
-	@${ECHO} NO_AVX=1 >> ${WRKSRC}/Makefile.rule
+	@${ECHO_CMD} NO_AVX=1 >> ${WRKSRC}/Makefile.rule
 .endif
 .if ! ${PORT_OPTIONS:MAVX2}
-	@${ECHO} NO_AVX2=1 >> ${WRKSRC}/Makefile.rule
+	@${ECHO_CMD} NO_AVX2=1 >> ${WRKSRC}/Makefile.rule
 .endif
 .if ${PORT_OPTIONS:MDYNAMIC_ARCH}
-	@${ECHO} DYNAMIC_ARCH=1 >> ${WRKSRC}/Makefile.rule
-	@${ECHO} DYNAMIC_OLDER=1 >> ${WRKSRC}/Makefile.rule
+	@${ECHO_CMD} DYNAMIC_ARCH=1 >> ${WRKSRC}/Makefile.rule
+	@${ECHO_CMD} DYNAMIC_OLDER=1 >> ${WRKSRC}/Makefile.rule
 .endif
 .if defined(TARGET_CPU_ARCH)
-	@${ECHO} TARGET=${TARGET_CPU_ARCH} >> ${WRKSRC}/Makefile.rule
+	@${ECHO_CMD} TARGET=${TARGET_CPU_ARCH} >> ${WRKSRC}/Makefile.rule
 .endif
 .if ${PORT_OPTIONS:MINTERFACE64}
-	@${ECHO} INTERFACE64=1 >> ${WRKSRC}/Makefile.rule
+	@${ECHO_CMD} INTERFACE64=1 >> ${WRKSRC}/Makefile.rule
 .endif
 .if ${PORT_OPTIONS:MOPENMP}
-	@${ECHO} USE_OPENMP=1 >> ${WRKSRC}/Makefile.rule
+	@${ECHO_CMD} USE_OPENMP=1 >> ${WRKSRC}/Makefile.rule
 .endif
 .if ${ARCH:M*64*} == ""
-	@${ECHO} BINARY=32 >> ${WRKSRC}/Makefile.rule
+	@${ECHO_CMD} BINARY=32 >> ${WRKSRC}/Makefile.rule
 .else
-	@${ECHO} BINARY=64 >> ${WRKSRC}/Makefile.rule
+	@${ECHO_CMD} BINARY=64 >> ${WRKSRC}/Makefile.rule
 .endif
 
 post-patch-OPENMP-on:
