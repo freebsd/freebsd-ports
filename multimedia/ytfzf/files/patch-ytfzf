@@ -1,0 +1,11 @@
+--- ytfzf.orig	2021-04-17 13:32:28 UTC
++++ ytfzf
+@@ -861,7 +861,7 @@ play_url () {
+ delete_thumbnails () {
+ 	session_count=0
+ 	while read -r pid; do
+-		[ -d /proc/"$pid" ] && session_count=$(( session_count + 1 ))
++		kill -0 "$pid" 2>/dev/null && session_count=$(( session_count + 1 ))
+ 	done < "$pid_file"
+ 	if [ $session_count -eq 1 ] ; then
+ 		[ -d "$thumb_dir" ] && rm -r "$thumb_dir"

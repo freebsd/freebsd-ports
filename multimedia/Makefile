@@ -443,6 +443,7 @@
     SUBDIR += xporthdmv
     SUBDIR += xvid
     SUBDIR += yamdi
+    SUBDIR += ytfzf
     SUBDIR += zart
     SUBDIR += zoneminder
 
