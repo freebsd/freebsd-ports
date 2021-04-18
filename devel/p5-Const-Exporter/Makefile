@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Const-Exporter
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Const-Fast>=0:devel/p5-Const-Fast \
 		p5-List-AllUtils>=0.10:devel/p5-List-AllUtils \
+		p5-List-SomeUtils-XS>=0:devel/p5-List-SomeUtils-XS \
 		p5-Package-Stash>=0:devel/p5-Package-Stash \
 		p5-Ref-Util>=0:devel/p5-Ref-Util \
 		p5-Sub-Identify>=0.06:devel/p5-Sub-Identify
