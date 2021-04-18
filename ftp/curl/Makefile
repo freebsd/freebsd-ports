@@ -1,7 +1,7 @@
 # Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 
 PORTNAME=	curl
-PORTVERSION=	7.75.0
+PORTVERSION=	7.76.0
 CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.haxx.se/download/ \
 		LOCAL/sunpoet
