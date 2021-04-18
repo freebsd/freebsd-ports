@@ -19,6 +19,8 @@ LIB_DEPENDS=	libgtest.so:devel/googletest
 USES=		cmake compiler:c++11-lang localbase ssl
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CXXFLAGS_powerpc64=	-mcpu=power7
+USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	google
 GH_PROJECT=	s2geometry
@@ -34,8 +36,6 @@ GFLAGS_CMAKE_BOOL=	WITH_GFLAGS
 GFLAGS_LIB_DEPENDS=	libgflags.so:devel/gflags
 GLOG_CMAKE_BOOL=	WITH_GLOG
 GLOG_LIB_DEPENDS=	libglog.so:devel/glog
-
-CXXFLAGS_powerpc64=	-mcpu=power7
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
