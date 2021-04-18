@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	azure_sdk
-PORTVERSION=	0.70.0
+PORTVERSION=	0.71.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -38,7 +38,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_cognitiveservices_websearch>=0.18.2<0.19:devel/rubygem-azure_cognitiveservices_websearch \
 		rubygem-azure_event_grid>=0.18.1<0.19:devel/rubygem-azure_event_grid \
 		rubygem-azure_graph_rbac>=0.17.2<0.18:devel/rubygem-azure_graph_rbac \
-		rubygem-azure_key_vault>=0.18.0<0.19:devel/rubygem-azure_key_vault \
+		rubygem-azure_key_vault>=0.18.1<0.19:devel/rubygem-azure_key_vault \
 		rubygem-azure_mgmt_adhybridhealth_service>=0.17.1<0.18:devel/rubygem-azure_mgmt_adhybridhealth_service \
 		rubygem-azure_mgmt_advisor>=0.17.2<0.18:devel/rubygem-azure_mgmt_advisor \
 		rubygem-azure_mgmt_alerts_management>=0.17.1<0.18:devel/rubygem-azure_mgmt_alerts_management \
@@ -55,7 +55,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_batchai>=0.17.1<0.18:devel/rubygem-azure_mgmt_batchai \
 		rubygem-azure_mgmt_billing>=0.17.3<0.18:devel/rubygem-azure_mgmt_billing \
 		rubygem-azure_mgmt_bot_service>=0.17.1<0.18:devel/rubygem-azure_mgmt_bot_service \
-		rubygem-azure_mgmt_cdn>=0.18.1<0.19:devel/rubygem-azure_mgmt_cdn \
+		rubygem-azure_mgmt_cdn>=0.18.2<0.19:devel/rubygem-azure_mgmt_cdn \
 		rubygem-azure_mgmt_cognitive_services>=0.19.3<0.20:devel/rubygem-azure_mgmt_cognitive_services \
 		rubygem-azure_mgmt_commerce>=0.17.2<0.18:devel/rubygem-azure_mgmt_commerce \
 		rubygem-azure_mgmt_compute>=0.22.0<0.23:devel/rubygem-azure_mgmt_compute \
@@ -80,7 +80,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_edgegateway>=0.18.1<0.19:devel/rubygem-azure_mgmt_edgegateway \
 		rubygem-azure_mgmt_event_grid>=0.21.0<0.22:devel/rubygem-azure_mgmt_event_grid \
 		rubygem-azure_mgmt_event_hub>=0.18.2<0.19:devel/rubygem-azure_mgmt_event_hub \
-		rubygem-azure_mgmt_features>=0.17.4<0.18:devel/rubygem-azure_mgmt_features \
+		rubygem-azure_mgmt_features>=0.17.5<0.18:devel/rubygem-azure_mgmt_features \
 		rubygem-azure_mgmt_hanaonazure>=0.18.1<0.19:devel/rubygem-azure_mgmt_hanaonazure \
 		rubygem-azure_mgmt_hdinsight>=0.18.5<0.19:devel/rubygem-azure_mgmt_hdinsight \
 		rubygem-azure_mgmt_hybrid_compute>=0.17.0<0.18:devel/rubygem-azure_mgmt_hybrid_compute \
@@ -93,7 +93,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_labservices>=0.17.2<0.18:devel/rubygem-azure_mgmt_labservices \
 		rubygem-azure_mgmt_links>=0.17.3<0.18:devel/rubygem-azure_mgmt_links \
 		rubygem-azure_mgmt_locks>=0.17.4<0.18:devel/rubygem-azure_mgmt_locks \
-		rubygem-azure_mgmt_logic>=0.18.2<0.19:devel/rubygem-azure_mgmt_logic \
+		rubygem-azure_mgmt_logic>=0.18.3<0.19:devel/rubygem-azure_mgmt_logic \
 		rubygem-azure_mgmt_machine_learning>=0.17.3<0.18:devel/rubygem-azure_mgmt_machine_learning \
 		rubygem-azure_mgmt_machine_learning_services>=0.17.3<0.18:devel/rubygem-azure_mgmt_machine_learning_services \
 		rubygem-azure_mgmt_maintenance>=0.17.1<0.18:devel/rubygem-azure_mgmt_maintenance \
@@ -107,7 +107,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_msi>=0.17.2<0.18:devel/rubygem-azure_mgmt_msi \
 		rubygem-azure_mgmt_mysql>=0.17.2<0.18:devel/rubygem-azure_mgmt_mysql \
 		rubygem-azure_mgmt_netapp>=0.23.0<0.24:devel/rubygem-azure_mgmt_netapp \
-		rubygem-azure_mgmt_network>=0.26.0<0.27:devel/rubygem-azure_mgmt_network \
+		rubygem-azure_mgmt_network>=0.26.1<0.27:devel/rubygem-azure_mgmt_network \
 		rubygem-azure_mgmt_notification_hubs>=0.17.3<0.18:devel/rubygem-azure_mgmt_notification_hubs \
 		rubygem-azure_mgmt_operational_insights>=0.20.0<0.21:devel/rubygem-azure_mgmt_operational_insights \
 		rubygem-azure_mgmt_operations_management>=0.17.1<0.18:devel/rubygem-azure_mgmt_operations_management \
@@ -149,7 +149,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_time_series_insights>=0.17.1<0.18:devel/rubygem-azure_mgmt_time_series_insights \
 		rubygem-azure_mgmt_traffic_manager>=0.17.4<0.18:devel/rubygem-azure_mgmt_traffic_manager \
 		rubygem-azure_mgmt_vmware_cloudsimple>=0.17.1<0.18:devel/rubygem-azure_mgmt_vmware_cloudsimple \
-		rubygem-azure_mgmt_web>=0.18.0<0.19:devel/rubygem-azure_mgmt_web \
+		rubygem-azure_mgmt_web>=0.18.1<0.19:devel/rubygem-azure_mgmt_web \
 		rubygem-azure_service_fabric>=0.18.1<0.19:devel/rubygem-azure_service_fabric
 
 USES=		gem
