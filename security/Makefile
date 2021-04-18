@@ -768,6 +768,7 @@
     SUBDIR += pecl-libsodium
     SUBDIR += pecl-mcrypt
     SUBDIR += pecl-pam
+    SUBDIR += pecl-pkcs11
     SUBDIR += pecl-scrypt
     SUBDIR += pecl-ssh2
     SUBDIR += peda
