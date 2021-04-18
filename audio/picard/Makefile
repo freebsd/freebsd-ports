@@ -1,7 +1,7 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 
 PORTNAME=	picard
-PORTVERSION=	2.6
+PORTVERSION=	2.6.1
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
