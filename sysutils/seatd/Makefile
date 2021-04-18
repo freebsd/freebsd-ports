@@ -25,11 +25,11 @@ OPTIONS_DEFINE=	MANPAGES SUID
 # XXX enable SUID after wlroots removes direct session
 OPTIONS_DEFAULT=MANPAGES
 
-SUID_DESC=		Fall back to builtin server when running as root
-SUID_MESON_ENABLED=	builtin
-
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
+
+SUID_DESC=		Fall back to builtin server when running as root
+SUID_MESON_ENABLED=	builtin
 
 .include <bsd.port.mk>
