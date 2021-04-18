@@ -1,5 +1,5 @@
 PORTNAME=	hunspell
-PORTVERSION=	20210112
+PORTVERSION=	20210303
 CATEGORIES=	portuguese textproc
 MASTER_SITES=	https://natura.di.uminho.pt/download/sources/Dictionaries/hunspell/:PT \
 		https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/:BR \
