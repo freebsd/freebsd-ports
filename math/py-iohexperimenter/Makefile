@@ -14,13 +14,12 @@ COMMENT=	Experimenter for Iterative Optimization Heuristic
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang dos2unix python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 USE_CXXSTD=	c++14
-
 WRKSRC=		${WRKDIR}/IOHexperimenter-${PORTVERSION}
 
 post-patch:
