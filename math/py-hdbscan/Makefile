@@ -2,6 +2,7 @@
 
 PORTNAME=	hdbscan
 PORTVERSION=	0.8.27
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +21,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}joblib>=1.0:devel/py-joblib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
 USES=		python:3.5+
-USE_PYTHON=	autoplist cython distutils
+USE_PYTHON=	autoplist concurrent cython distutils
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/hdbscan/*.so
 
 .include <bsd.port.mk>
