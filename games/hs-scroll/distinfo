@@ -1,4 +1,4 @@
-TIMESTAMP = 1590224192
+TIMESTAMP = 1618775964
 SHA256 (cabal/scroll-1.20180421.tar.gz) = 9203353457c53550524d40216d069129389dbb94a7d8ba1a9153e794dcceff2a
 SIZE (cabal/scroll-1.20180421.tar.gz) = 266900
 SHA256 (cabal/IfElse-0.85/IfElse-0.85.tar.gz) = 8ad3bfc3e2c867e6330d9bff874b3105476c35b2e1638fd448f233e9f80addcd
@@ -11,8 +11,8 @@ SHA256 (cabal/ansi-wl-pprint-0.6.9/ansi-wl-pprint-0.6.9.tar.gz) = a7b2e8e7cd3f02
 SIZE (cabal/ansi-wl-pprint-0.6.9/ansi-wl-pprint-0.6.9.tar.gz) = 16723
 SHA256 (cabal/ansi-wl-pprint-0.6.9/revision/1.cabal) = f6fd6dbd4adcad0432bf75e5f5b19bb1deda00a1d8056faf18090026e577652d
 SIZE (cabal/ansi-wl-pprint-0.6.9/revision/1.cabal) = 2388
-SHA256 (cabal/c2hs-0.28.6/c2hs-0.28.6.tar.gz) = 91dd121ac565009f2fc215c50f3365ed66705071a698a545e869041b5d7ff4da
-SIZE (cabal/c2hs-0.28.6/c2hs-0.28.6.tar.gz) = 204988
+SHA256 (cabal/c2hs-0.28.7/c2hs-0.28.7.tar.gz) = e1146a80006b24bede1947612bdbd81da1285a7fa48370aad5799e619d576745
+SIZE (cabal/c2hs-0.28.7/c2hs-0.28.7.tar.gz) = 207782
 SHA256 (cabal/case-insensitive-1.2.1.0/case-insensitive-1.2.1.0.tar.gz) = 296dc17e0c5f3dfb3d82ced83e4c9c44c338ecde749b278b6eae512f1d04e406
 SIZE (cabal/case-insensitive-1.2.1.0/case-insensitive-1.2.1.0.tar.gz) = 53609
 SHA256 (cabal/colour-2.3.5/colour-2.3.5.tar.gz) = 3b8d471979617dce7c193523743c9782df63433d8e87e3ef6d97922e0da104e7
