@@ -1,0 +1,6 @@
+Nyquist is a sound synthesis and composition language offering a Lisp syntax as
+well as an imperative language syntax (SAL) and a powerful integrated
+development environment. Nyquist is an elegant and powerful system based on
+functional programming.
+
+WWW: http://www.cs.cmu.edu/~music/music.software.html

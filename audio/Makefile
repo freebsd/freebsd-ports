@@ -537,6 +537,7 @@
     SUBDIR += normalize
     SUBDIR += nosefart
     SUBDIR += noson-app
+    SUBDIR += nyquist
     SUBDIR += oaml
     SUBDIR += ocp
     SUBDIR += ogg2mp3
