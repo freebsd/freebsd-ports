@@ -1,0 +1,4 @@
+sphinx-copybutton is a small sphinx extension to add a "copy" button to code
+blocks.
+
+WWW: https://github.com/executablebooks/sphinx-copybutton
