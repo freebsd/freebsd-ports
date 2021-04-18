@@ -20,11 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 3800
-LDFLAGS+=	-lpython${PYTHON_VER}
-.endif
+LDFLAGS+=	-lpython${PYTHON_VER}${PYTHON_ABIVER}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/src/python/ots/__init__.py
@@ -36,4 +32,4 @@ post-install:
 do-test:
 	cd ${WRKSRC}/ && ${PYTHON_CMD} -m pytest -v
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
