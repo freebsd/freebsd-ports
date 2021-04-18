@@ -15,7 +15,7 @@ include/qb/qbutil.h
 lib/libqb.a
 lib/libqb.so
 lib/libqb.so.100
-lib/libqb.so.100.0.0
+lib/libqb.so.100.2.0
 libdata/pkgconfig/libqb.pc
 %%DOXYGEN%%man/man3/qbarray.h.3.gz
 %%DOXYGEN%%man/man3/qbatomic.h.3.gz
