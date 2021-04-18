@@ -3,6 +3,7 @@
 PORTNAME=	stack
 PORTVERSION=	2.5.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -187,7 +188,13 @@ USE_CABAL=	Glob-0.10.1 \
 		zip-archive-0.4.1_1 \
 		zlib-0.6.2.2
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1300078 && ${ARCH} != powerpc64
+LIB_DEPENDS+=	libncursesw.so.8:misc/compat12x
+.endif
+
 #PLIST_FILES=	etc/bash_completion.d/_stack.bash \
 #		share/zsh/site-functions/_stack
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
