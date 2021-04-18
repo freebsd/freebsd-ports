@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	signet
-PORTVERSION=	0.14.1
+PORTVERSION=	0.15.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
