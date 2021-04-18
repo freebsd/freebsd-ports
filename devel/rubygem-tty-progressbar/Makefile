@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	tty-progressbar
-PORTVERSION=	0.18.1
+PORTVERSION=	0.18.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
