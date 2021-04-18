@@ -6,6 +6,7 @@
     SUBDIR += avida
     SUBDIR += babel
     SUBDIR += bamtools
+    SUBDIR += bbmap
     SUBDIR += bcftools
     SUBDIR += bedtools
     SUBDIR += bioawk
