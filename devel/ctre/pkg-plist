@@ -10,6 +10,7 @@ include/ctre.hpp
 include/ctre/actions/asserts.inc.hpp
 include/ctre/actions/atomic_group.inc.hpp
 include/ctre/actions/backreference.inc.hpp
+include/ctre/actions/boundaries.inc.hpp
 include/ctre/actions/capture.inc.hpp
 include/ctre/actions/characters.inc.hpp
 include/ctre/actions/class.inc.hpp
@@ -28,6 +29,7 @@ include/ctre/atoms_unicode.hpp
 include/ctre/evaluation.hpp
 include/ctre/find_captures.hpp
 include/ctre/first.hpp
+include/ctre/flags_and_modes.hpp
 include/ctre/functions.hpp
 include/ctre/id.hpp
 include/ctre/iterators.hpp
