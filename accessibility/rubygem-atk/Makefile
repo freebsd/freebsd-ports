@@ -4,7 +4,7 @@ CATEGORIES=	accessibility rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Ruby binding for ATK
+COMMENT=	Ruby binding of ATK
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
