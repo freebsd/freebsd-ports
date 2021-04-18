@@ -1,5 +1,3 @@
-#
-
     COMMENT = Character code converters
 
     SUBDIR += R-cran-RJSONIO
