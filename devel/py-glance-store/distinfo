@@ -1,3 +1,3 @@
-TIMESTAMP = 1607539711
-SHA256 (glance_store-2.4.0.tar.gz) = 82acededa0cd0a162209c2b26afb38044292bf82bc5b5979615d45f9af62a195
-SIZE (glance_store-2.4.0.tar.gz) = 221159
+TIMESTAMP = 1618320140
+SHA256 (glance_store-2.5.0.tar.gz) = 4dd8e1c41d45cf32345ab17388a72e4beaa1c87523530635292722562306bd76
+SIZE (glance_store-2.5.0.tar.gz) = 222828
