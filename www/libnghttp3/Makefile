@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	nghttp3
-PORTVERSION=	0.1.0.g20210222
+PORTVERSION=	0.1.0.g20210315
 CATEGORIES=	www net
 PKGNAMEPREFIX=	lib
 
