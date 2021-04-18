@@ -14,26 +14,25 @@ RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 
 USES=		tar:tgz
 
+NO_ARCH=	yes
+NO_BUILD=	yes
+NO_MTREE=	yes
+
+SUB_FILES=	catalog.xml
+WRKSRC=		${WRKDIR}/${PORTNAME}-${RECDATE}
+
 RECDATE=	20010410
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-SUB_FILES=	catalog.xml
-NO_ARCH=	yes
-NO_BUILD=	yes
-NO_MTREE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${RECDATE}
-
-dir_DTD=	share/xml/dtd/xhtml-modularization
-
 .include "${.CURDIR}/contents.inc"
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${dir_DTD}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/xml/dtd/xhtml-modularization
 .for f in ${contents_DTD}
-	${INSTALL_DATA} ${WRKSRC}/DTD/${f} ${STAGEDIR}${PREFIX}/${dir_DTD}/${f}
+	${INSTALL_DATA} ${WRKSRC}/DTD/${f} ${STAGEDIR}${PREFIX}/share/xml/dtd/xhtml-modularization/${f}
 .endfor
-	${INSTALL_DATA} ${WRKDIR}/catalog.xml ${STAGEDIR}${PREFIX}/${dir_DTD}/catalog.xml
+	${INSTALL_DATA} ${WRKDIR}/catalog.xml ${STAGEDIR}${PREFIX}/share/xml/dtd/xhtml-modularization/catalog.xml
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/images
@@ -44,13 +43,11 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${contents_EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/DTD/examples/${f} \
-	    ${STAGEDIR}${EXAMPLESDIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/DTD/examples/${f} ${STAGEDIR}${EXAMPLESDIR}/${f}
 .endfor
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/templates
 .for f in ${contents_TEMPLATES}
-	${INSTALL_DATA} ${WRKSRC}/DTD/templates/${f} \
-	    ${STAGEDIR}${EXAMPLESDIR}/templates/${f}
+	${INSTALL_DATA} ${WRKSRC}/DTD/templates/${f} ${STAGEDIR}${EXAMPLESDIR}/templates/${f}
 .endfor
 
 .include <bsd.port.mk>
