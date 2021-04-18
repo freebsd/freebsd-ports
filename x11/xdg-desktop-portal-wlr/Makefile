@@ -31,4 +31,8 @@ MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}.5.gz
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
+		${WRKSRC}/${PORTNAME}.5.scd
+
 .include <bsd.port.mk>
