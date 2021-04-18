@@ -11,6 +11,8 @@ LICENSE=	BSD2CLAUSE
 
 USES=		pear
 
+NO_ARCH=	yes
+
 post-extract:
 .for file in ${FILES}
 	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" ${WRKSRC}/${file}
