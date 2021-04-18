@@ -1,5 +1,6 @@
 PORTNAME=	ansible-lint
 PORTVERSION=	5.0.7
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible>=2.8:sysutils/ansible@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=9.5.1:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}enrich>=1.2.6:textproc/py-enrich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wcmatch>=7.0:textproc/py-wcmatch@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wcmatch>=7.0:textproc/py-wcmatch@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tenacity>=7.0.0:devel/py-tenacity@${PY_FLAVOR}
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm_git_archive>=1.0:devel/py-setuptools_scm_git_archive@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.6.6:devel/py-pytest@${PY_FLAVOR} \
