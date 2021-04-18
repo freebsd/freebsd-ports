@@ -2,7 +2,7 @@
 
 PORTNAME=	nettle
 PORTVERSION=	3.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	GNU \
 		https://www.lysator.liu.se/~nisse/archive/
@@ -37,6 +37,10 @@ EXAMPLES_USES=		ssl
 
 .if ${ARCH} == "sparc64"
 CONFIGURE_ENV+=	CCPIC=-fPIC
+.endif
+
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-powerpc64_machine.m4
 .endif
 
 post-patch:
