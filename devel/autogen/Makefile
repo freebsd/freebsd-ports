@@ -24,6 +24,7 @@ USES=		gmake gnome libtool pathfix perl5 pkgconfig shebangfix tar:xz
 USE_GNOME=	libxml2
 USE_PERL5=	build
 
+BINARY_ALIAS=	mktemp=gmktemp
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share \
 		--disable-dependency-tracking \
 		--with-libguile=yes --with-libxml2=yes
