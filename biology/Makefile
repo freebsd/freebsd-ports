@@ -148,6 +148,7 @@
     SUBDIR += python-nexus
     SUBDIR += rainbow
     SUBDIR += rampler
+    SUBDIR += readseq
     SUBDIR += recombine
     SUBDIR += ruby-bio
     SUBDIR += rubygem-bio

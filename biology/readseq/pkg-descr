@@ -1,0 +1,5 @@
+Sequence reading library developed by the Ribosomal Database Project.  It can
+handle genbank, embl, fasta, fastq, sff and sto files, can read from files or
+streams, and can handle indexing files.
+
+WWW: https://sourceforge.net/projects/readseq
