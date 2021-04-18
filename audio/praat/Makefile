@@ -1,6 +1,6 @@
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v
-DISTVERSION=		6.1.40
+DISTVERSION=		6.1.42
 CATEGORIES=		audio science
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -12,8 +12,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libasound.so:audio/alsa-lib
 # These are recommended but I can't tell the difference
-# RUN_DEPENDS=	CharisSIL>=0:x11-fonts/charis \
-#		DoulosSIL>=0:x11-fonts/doulos
+RUN_DEPENDS=	CharisSIL>=0:x11-fonts/charis \
+		DoulosSIL>=0:x11-fonts/doulos
 
 USES=		compiler:c++11-lang dos2unix gnome iconv pkgconfig xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30
