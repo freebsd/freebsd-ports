@@ -36,7 +36,7 @@ SAMPLES_DESC=	Install sample programs
 TAB8_DESC=	Use a tabstop of 8 (default is 4)
 
 EXTRA_CONFIGURE_ON=	--with-dl=both --with-fenced-code --with-github-tags --with-id-anchor
-SAMPLES_INSTALL_TARGET=	install install.samples
+SAMPLES_INSTALL_TARGET=	install.samples
 TAB8_CONFIGURE_ON=	--with-tabstops=8
 
 post-configure:
