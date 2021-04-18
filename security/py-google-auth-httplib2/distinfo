@@ -1,3 +1,3 @@
-TIMESTAMP = 1594308046
-SHA256 (google-auth-httplib2-0.0.4.tar.gz) = 8d092cc60fb16517b12057ec0bba9185a96e3b7169d86ae12eae98e645b7bc39
-SIZE (google-auth-httplib2-0.0.4.tar.gz) = 10287
+TIMESTAMP = 1618320264
+SHA256 (google-auth-httplib2-0.1.0.tar.gz) = a07c39fd632becacd3f07718dfd6021bf396978f03ad3ce4321d060015cc30ac
+SIZE (google-auth-httplib2-0.1.0.tar.gz) = 10895
