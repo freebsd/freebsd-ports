@@ -1,8 +1,7 @@
 # Created by: Julien Laffaye <kimelto@gmail.com>
 
 PORTNAME=	re2
-PORTVERSION=	20210202
-PORTREVISION=	1
+PORTVERSION=	20210401
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
