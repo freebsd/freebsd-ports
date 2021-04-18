@@ -2,6 +2,7 @@
 
 PORTNAME=	twitter
 PORTVERSION=	7.0.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-addressable>=2.3<3:www/rubygem-addressable \
-		rubygem-buftok>=0.2.0<0.3:devel/rubygem-buftok \
+		rubygem-buftok>=0.2.0<1:devel/rubygem-buftok \
 		rubygem-equalizer>=0.0.11<0.1:devel/rubygem-equalizer \
 		rubygem-http>=4.0<5:www/rubygem-http \
 		rubygem-http-form_data>=2.0<3:www/rubygem-http-form_data \
