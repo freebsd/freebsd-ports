@@ -1,7 +1,7 @@
 # Created by: James FitzGibbon <jfitz@FreeBSD.org>
 
 PORTNAME=	Net-DNS
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 PORTEPOCH=	1
 CATEGORIES=	dns net perl5
 MASTER_SITES=	CPAN
