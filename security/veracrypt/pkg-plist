@@ -51,6 +51,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/Disclaimers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_Bank.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_BitcoinCash.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Bitcoin_small.png
@@ -172,6 +173,8 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/flag-eu.png
 %%PORTDOCS%%%%DOCSDIR%%/html/flag-gb-small.png
 %%PORTDOCS%%%%DOCSDIR%%/html/flag-gb.png
+%%PORTDOCS%%%%DOCSDIR%%/html/flag-nz-small.png
+%%PORTDOCS%%%%DOCSDIR%%/html/flag-nz.png
 %%PORTDOCS%%%%DOCSDIR%%/html/flag-us-small.png
 %%PORTDOCS%%%%DOCSDIR%%/html/flag-us.png
 %%PORTDOCS%%%%DOCSDIR%%/html/flattr-badge-large.png
