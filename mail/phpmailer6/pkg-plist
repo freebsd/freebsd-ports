@@ -46,6 +46,7 @@
 %%DATADIR%%/language/phpmailer.lang-sk.php
 %%DATADIR%%/language/phpmailer.lang-sl.php
 %%DATADIR%%/language/phpmailer.lang-sr.php
+%%DATADIR%%/language/phpmailer.lang-sr_latn.php
 %%DATADIR%%/language/phpmailer.lang-sv.php
 %%DATADIR%%/language/phpmailer.lang-tl.php
 %%DATADIR%%/language/phpmailer.lang-tr.php
