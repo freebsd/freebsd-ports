@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	readseq
 DISTVERSION=	2.1.19
 CATEGORIES=	biology java
