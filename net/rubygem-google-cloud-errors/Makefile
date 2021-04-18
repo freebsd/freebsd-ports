@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-cloud-errors
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
