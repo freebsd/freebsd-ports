@@ -1,7 +1,7 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	pkgload
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -13,7 +13,6 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-crayon>0:devel/R-cran-crayon \
 		R-cran-desc>0:devel/R-cran-desc \
-		R-cran-pkgbuild>0:devel/R-cran-pkgbuild \
 		R-cran-rlang>0:devel/R-cran-rlang \
 		R-cran-rprojroot>0:devel/R-cran-rprojroot \
 		R-cran-rstudioapi>0:devel/R-cran-rstudioapi \
@@ -21,6 +20,7 @@ RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 TEST_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp \
 		R-cran-bitops>0:devel/R-cran-bitops \
 		R-cran-covr>0:devel/R-cran-covr \
+		R-cran-pkgbuild>0:devel/R-cran-pkgbuild \
 		R-cran-testthat>0:devel/R-cran-testthat
 
 USES=		cran:auto-plist,compiles
