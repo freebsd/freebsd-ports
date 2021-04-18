@@ -1,6 +1,6 @@
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.28.1
+DISTVERSION=	4.28.2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/authelia/authelia/releases/download/v${DISTVERSION}/:public_html
 DISTFILES=	authelia-${DISTVERSIONFULL}-public_html${EXTRACT_SUFX}:public_html # html root directory needs to be built in a special way
@@ -55,7 +55,7 @@ GH_TUPLE=	\
 		jackc:pgx:v4.11.0:jackc_pgx_v4/vendor/github.com/jackc/pgx/v4 \
 		klauspost:compress:v1.11.8:klauspost_compress/vendor/github.com/klauspost/compress \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
-		mattn:go-sqlite3:v1.14.6:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
+		mattn:go-sqlite3:v1.14.7:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		open-telemetry:opentelemetry-go:v0.13.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
 		otiai10:copy:v1.5.1:otiai10_copy/vendor/github.com/otiai10/copy \
