@@ -1,7 +1,7 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	scrypt
-DISTVERSION=	0.8.17
+DISTVERSION=	0.8.18
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
