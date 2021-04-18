@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-cloud-dns
-PORTVERSION=	0.34.0
+PORTVERSION=	0.35.0
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
