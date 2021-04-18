@@ -1,8 +1,7 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 
 PORTNAME=	flask-sqlalchemy
-PORTVERSION=	2.4.4
-PORTREVISION=	1
+PORTVERSION=	2.5.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
