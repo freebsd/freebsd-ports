@@ -1,7 +1,7 @@
 # Created by: TAOKA Fumiyoshi
 
 PORTNAME=	h5py
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,14 +12,14 @@ COMMENT=	General-purpose Python interface to the HDF5 library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/licenses/license.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.14:lang/cython@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.15:lang/cython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pkgconfig>=0:devel/py-pkgconfig@${PY_FLAVOR} \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	libhdf5.so:science/hdf5
 RUN_DEPENDS=	${PYNUMPY}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		localbase pkgconfig python:3.6+
+USES=		localbase pkgconfig python:3.7+
 USE_PYTHON=	autoplist concurrent cython distutils
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

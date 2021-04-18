@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 		${LOCALBASE}/include/lapacke.h:math/lapacke
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		blaslapack:openblas fortran localbase python:3.6+
+USES=		blaslapack:openblas fortran localbase python:3.7+
 USE_PYTHON=	distutils cython autoplist
 
 .include <bsd.port.mk>
