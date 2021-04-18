@@ -19,18 +19,17 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rene0
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOXYGEN DOCS
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOXYGEN_ALL_TARGET=	all doxygen
+INSTALL_TARGET=	install-strip
 
 PATCH_STRIP=	-p1
 PORTDOCS=	CHANGELOG.md README.md receiver.svg
 
+OPTIONS_DEFINE=	DOXYGEN DOCS
 DOXYGEN_IMPLIES=	DOCS
-DOXYGEN_PORTDOCS=	html/*
-
-INSTALL_TARGET=	install-strip
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_ALL_TARGET=	all doxygen
 DOXYGEN_INSTALL_TARGET=	install-doxygen
+DOXYGEN_PORTDOCS=	html/*
 
 post-install:
 	@${RM} ${STAGEDIR}${DOCSDIR}/LICENSE.md # do not install twice
