@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	typeprof
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
