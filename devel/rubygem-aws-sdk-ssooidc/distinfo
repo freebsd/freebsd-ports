@@ -1,3 +1,3 @@
-TIMESTAMP = 1612519635
-SHA256 (rubygem/aws-sdk-ssooidc-1.9.0.gem) = 958b85f1098963515082a30a096d3c5dc9fd9018622bce68c30169fdda60fa87
-SIZE (rubygem/aws-sdk-ssooidc-1.9.0.gem) = 15872
+TIMESTAMP = 1618320810
+SHA256 (rubygem/aws-sdk-ssooidc-1.10.0.gem) = f9988322d33e4265e76e7e49f93ff890286b08b094e3cee041d781130a70b5ea
+SIZE (rubygem/aws-sdk-ssooidc-1.10.0.gem) = 19968
