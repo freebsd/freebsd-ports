@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	h3
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.2
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	cmake:devel/cmake \
-		h3>=${PORTVERSION}:graphics/h3 \
+		h3>=${PORTVERSION:R}:graphics/h3 \
 		ninja:devel/ninja \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>=0:devel/py-scikit-build@${PY_FLAVOR}
 LIB_DEPENDS=	libh3.so:graphics/h3
