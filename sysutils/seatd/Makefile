@@ -1,5 +1,6 @@
 PORTNAME=	seatd
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -22,8 +23,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		libdata/pkgconfig/libseat.pc
 
 OPTIONS_DEFINE=	MANPAGES SUID
-# XXX enable SUID after wlroots removes direct session
-OPTIONS_DEFAULT=MANPAGES
+OPTIONS_DEFAULT=MANPAGES SUID
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages

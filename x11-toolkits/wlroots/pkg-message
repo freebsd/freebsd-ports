@@ -5,17 +5,6 @@ Known issues:
 - On FreeBSD 11.* kernel needs to be rebuilt with EVDEV_SUPPORT
 - On FreeBSD 11.* drm-kmod needs https://github.com/FreeBSDDesktop/kms-drm/pull/213
 - NVIDIA may be affected by https://github.com/aritger/eglstreams-kms-example/issues/7
-
-When built with LIBSEAT enabled you may see the following:
-
-    [ERROR] [libseat] [libseat/libseat.c:73] libseat_open_seat: No backend was able to open a seat
-    [ERROR] [backend/session/libseat.c:102] Unable to create seat: Function not implemented
-
-Possible solutions (select one):
-- Ignore libseat errors to let wlroots use direct session
-- Start seatd (e.g., `service seatd onestart`) and optionally
-  prevent compositor from using SUID (e.g., `chmod u-s $(which sway)`)
-- Rebuild sysutils/seatd with SUID enabled
 EOM
 }
 ]
