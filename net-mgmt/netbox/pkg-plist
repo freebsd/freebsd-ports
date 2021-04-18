@@ -542,6 +542,7 @@
 %%DATADIR%%/ipam/migrations/__init__.py
 %%DATADIR%%/ipam/models.py
 %%DATADIR%%/ipam/querysets.py
+%%DATADIR%%/ipam/signals.py
 %%DATADIR%%/ipam/tables.py
 %%DATADIR%%/ipam/tests/__init__.py
 %%DATADIR%%/ipam/tests/test_api.py
