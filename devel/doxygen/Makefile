@@ -1,12 +1,11 @@
 # Created by: Joep Grooten <joep@di.nl>
 
 PORTNAME=	doxygen
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/rel-${PORTVERSION} \
 		http://doxygen.nl/files/
-
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -15,7 +14,8 @@ COMMENT=	Documentation system for C, C++, and other languages
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		bison cmake:noninja compiler:c++14-lang iconv python shebangfix
+USES=		bison cmake:noninja compiler:c++14-lang dos2unix \
+		iconv python shebangfix
 
 ALL_TARGET=	all
 CMAKE_ARGS+=	-DDOC_INSTALL_DIR:PATH=${DOCSDIR_REL}
@@ -24,6 +24,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 EXTRACT_AFTER_ARGS=	--exclude '*/libmd5'
 
+DOS2UNIX_FILES=	doc/translator.py
 PLIST_FILES=	bin/doxygen
 
 OPTIONS_DEFINE=	DOCS GRAPHVIZ LATEX SEARCH QT5

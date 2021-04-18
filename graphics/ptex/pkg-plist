@@ -116,10 +116,6 @@ include/ptex/PtexWriter.h
 %%PORTDOCS%%%%DOCSDIR%%/classPtexHashMap.html
 %%PORTDOCS%%%%DOCSDIR%%/classPtexHashMap_1_1Entry-members.html
 %%PORTDOCS%%%%DOCSDIR%%/classPtexHashMap_1_1Entry.html
-%%PORTDOCS%%%%DOCSDIR%%/classPtexHashMap_3_01ReductionKey_00_01FaceData_01_5_01_4_1_1Entry-members.html
-%%PORTDOCS%%%%DOCSDIR%%/classPtexHashMap_3_01ReductionKey_00_01FaceData_01_5_01_4_1_1Entry.html
-%%PORTDOCS%%%%DOCSDIR%%/classPtexHashMap_3_01StringKey_00_01PtexCachedReader_01_5_01_4_1_1Entry-members.html
-%%PORTDOCS%%%%DOCSDIR%%/classPtexHashMap_3_01StringKey_00_01PtexCachedReader_01_5_01_4_1_1Entry.html
 %%PORTDOCS%%%%DOCSDIR%%/classPtexIncrWriter-members.html
 %%PORTDOCS%%%%DOCSDIR%%/classPtexIncrWriter.html
 %%PORTDOCS%%%%DOCSDIR%%/classPtexIncrWriter.png
