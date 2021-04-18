@@ -12,6 +12,8 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	${PEARDIR}/PEAR/PackageFileManager/Plugins.php:devel/pear-PEAR_PackageFileManager_Plugins@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEARDIR}/PEAR/PackageFileManager/Plugins.php:devel/pear-PEAR_PackageFileManager_Plugins@${PHP_FLAVOR}
 
-USES=	pear
+USES=		pear
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
