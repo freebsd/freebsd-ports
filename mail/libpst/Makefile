@@ -1,8 +1,7 @@
 # Created by: Nate Underwood <natey@natey.com>
 
 PORTNAME=	libpst
-PORTVERSION=	0.6.75
-PORTREVISION=	1
+PORTVERSION=	0.6.76
 CATEGORIES=	mail converters
 MASTER_SITES=	https://www.five-ten-sg.com/libpst/packages/ \
 		https://fossies.org/unix/privat/ \
