@@ -9,6 +9,8 @@ COMMENT=	PHP class that makes it easy to build console style tables
 
 LICENSE=	BSD3CLAUSE
 
-USES=	pear
+USES=		pear
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
