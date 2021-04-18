@@ -1,13 +1,17 @@
+bin/bprintf
 @sample etc/buildflags.conf.sample
+man/man1/bprintf.1.gz
 man/man1/buildflags.awk.1.gz
 man/man1/buildflags.conf.1.gz
 man/man1/buildflags.mk.1.gz
 man/man1/pkg_libchk.1.gz
 man/man1/pkg_validate.1.gz
 man/man8/distviper.8.gz
+man/man8/loaderupdate.8.gz
 man/man8/makeplist.8.gz
 man/man8/pkg_trim.8.gz
 sbin/distviper
+sbin/loaderupdate
 sbin/makeplist
 sbin/pkg_libchk
 sbin/pkg_trim
@@ -16,7 +20,10 @@ sbin/pkg_validate
 %%DATADIR%%/bsda_bsdmake.sh
 %%DATADIR%%/bsda_container.sh
 %%DATADIR%%/bsda_dialog.sh
+%%DATADIR%%/bsda_elf.sh
+%%DATADIR%%/bsda_err.sh
 %%DATADIR%%/bsda_fifo.sh
+%%DATADIR%%/bsda_fmt.sh
 %%DATADIR%%/bsda_obj.sh
 %%DATADIR%%/bsda_opts.sh
 %%DATADIR%%/bsda_tty.sh
@@ -25,7 +32,10 @@ sbin/pkg_validate
 %%DATADIR%%/buildflags.mk
 %%DATADIR%%/distviper.sh
 %%DATADIR%%/interrupt.mk
+%%DATADIR%%/loaderupdate.sh
 %%DATADIR%%/makeplist.sh
+%%DATADIR%%/makeplist_filter.awk
+%%DATADIR%%/makeplist_keywords.awk
 %%DATADIR%%/options.mk
 %%DATADIR%%/pkg_info.sh
 %%DATADIR%%/pkg_libchk.sh
@@ -33,6 +43,9 @@ sbin/pkg_validate
 %%DATADIR%%/pkg_query.sh
 %%DATADIR%%/pkg_trim.sh
 %%DATADIR%%/pkg_validate.sh
+%%DATADIR%%/type.sh
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/bsda_obj.md
+%%PORTDOCS%%%%DOCSDIR%%/ref/bsda_err.md
+%%PORTDOCS%%%%DOCSDIR%%/ref/bsda_obj.md
+%%PORTDOCS%%%%DOCSDIR%%/ref/type.md
