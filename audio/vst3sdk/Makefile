@@ -37,6 +37,8 @@ GH_TUPLE=	\
 
 SHEBANG_FILES=	vstgui4/vstgui/uidescription/editing/createuidescdata.sh
 
+PORTSCOUT=	limit:^.*\d\.\d # prevent tags like vstsdk370_31_07_2020_build_116
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 .for dir in base pluginterfaces public.sdk
