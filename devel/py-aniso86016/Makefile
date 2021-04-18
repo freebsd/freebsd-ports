@@ -18,4 +18,7 @@ NO_ARCH=	yes
 
 PORTSCOUT=	limit:^6\.
 
+do-test:
+	cd ${WRKSRC} && ${PYTHON_CMD} -m unittest -v
+
 .include <bsd.port.mk>
