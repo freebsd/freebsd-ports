@@ -1,7 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.3
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
