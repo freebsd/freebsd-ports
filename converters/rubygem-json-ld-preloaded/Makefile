@@ -1,5 +1,5 @@
 PORTNAME=	json-ld-preloaded
-PORTVERSION=	3.1.4
+PORTVERSION=	3.1.5
 CATEGORIES=	converters rubygems
 MASTER_SITES=	RG
 
