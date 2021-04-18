@@ -4,7 +4,7 @@ CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Ruby binding for GdkPixbuf2
+COMMENT=	Ruby binding of GdkPixbuf 2.x
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
