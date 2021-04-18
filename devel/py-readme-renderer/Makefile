@@ -23,4 +23,9 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	MD
+MD_DESC=	Markdown support
+
+MD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cmarkgfm>=0.5.0<0.6.0:textproc/py-cmarkgfm@${PY_FLAVOR}
+
 .include <bsd.port.mk>
