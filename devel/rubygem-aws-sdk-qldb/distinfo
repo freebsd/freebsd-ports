@@ -1,3 +1,3 @@
-TIMESTAMP = 1612519553
-SHA256 (rubygem/aws-sdk-qldb-1.12.0.gem) = ce70661c7040f90415c57fc967ac6528bb531ca63b2834dcfbb666e17ba204d6
-SIZE (rubygem/aws-sdk-qldb-1.12.0.gem) = 26624
+TIMESTAMP = 1618320724
+SHA256 (rubygem/aws-sdk-qldb-1.13.0.gem) = c8877b050bf66f9c17e5b2b699db4afe1dc611a0517699955a4dcbfd50d41bff
+SIZE (rubygem/aws-sdk-qldb-1.13.0.gem) = 30720
