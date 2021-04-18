@@ -1,6 +1,6 @@
 
 PORTNAME=	libsidplayfp
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.1
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/sidplay-residfp/libsidplayfp/${PORTVERSION:R}
