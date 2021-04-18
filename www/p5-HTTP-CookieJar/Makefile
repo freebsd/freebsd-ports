@@ -20,8 +20,9 @@ TEST_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-Test-Requires>=0:devel/p5-Test-Requires \
 		p5-Test-Simple>=0.96:devel/p5-Test-Simple
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
