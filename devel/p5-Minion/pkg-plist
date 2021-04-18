@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Minion/Command/minion.pm
 %%SITE_PERL%%/Minion/Command/minion/job.pm
 %%SITE_PERL%%/Minion/Command/minion/worker.pm
+%%SITE_PERL%%/Minion/Guide.pod
 %%SITE_PERL%%/Minion/Iterator.pm
 %%SITE_PERL%%/Minion/Job.pm
 %%SITE_PERL%%/Minion/Worker.pm
@@ -21,6 +22,7 @@
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/logo-black-2x.png
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/logo-black.png
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/moment/moment.js
+%%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/pinstripe-light.png
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/popper/popper.js
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-brands-400.eot
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-brands-400.svg
@@ -51,6 +53,7 @@
 %%PERL5_MAN3%%/Minion::Command::minion.3.gz
 %%PERL5_MAN3%%/Minion::Command::minion::job.3.gz
 %%PERL5_MAN3%%/Minion::Command::minion::worker.3.gz
+%%PERL5_MAN3%%/Minion::Guide.3.gz
 %%PERL5_MAN3%%/Minion::Iterator.3.gz
 %%PERL5_MAN3%%/Minion::Job.3.gz
 %%PERL5_MAN3%%/Minion::Worker.3.gz

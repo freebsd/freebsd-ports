@@ -1,7 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 
 PORTNAME=	Minion
-PORTVERSION=	10.16
+PORTVERSION=	10.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SRI
@@ -14,7 +14,8 @@ LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Mojolicious>=8.50:www/p5-Mojolicious
+RUN_DEPENDS=	p5-Mojolicious>=9.0:www/p5-Mojolicious \
+		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML
 
 USES=		perl5
 USE_PERL5=	configure
