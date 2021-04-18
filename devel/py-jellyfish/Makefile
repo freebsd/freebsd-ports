@@ -1,5 +1,6 @@
 PORTNAME=	jellyfish
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,5 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/jellyfish/cjellyfish*.so
 
 .include <bsd.port.mk>
