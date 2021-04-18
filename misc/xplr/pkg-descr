@@ -1,0 +1,8 @@
+Hackable, minimal, fast TUI file explorer, stealing
+ideas from nnn and fzf. XLPR strives to be fast and
+minimalist, it's speciality is it's hackability. You
+can configure the key bindings, different run modes,
+the way it looks, and much more by modifying one single
+configuration file.
+
+WWW: https://github.com/sayanarijit/xplr/wiki/Quickstart
