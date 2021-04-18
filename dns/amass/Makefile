@@ -1,6 +1,6 @@
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.13
+DISTVERSION=	3.12.0
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,17 +20,19 @@ GH_TUPLE=	\
 		VividCortex:gohistogram:v1.0.0:vividcortex_gohistogram/vendor/github.com/VividCortex/gohistogram \
 		andres-erbsen:clock:9e14626cd129:andres_erbsen_clock/vendor/github.com/andres-erbsen/clock \
 		andybalholm:cascadia:v1.1.0:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
-		beorn7:perks:v1.0.0:beorn7_perks/vendor/github.com/beorn7/perks \
+		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
 		caffix:eventbus:9ab42753d12d:caffix_eventbus/vendor/github.com/caffix/eventbus \
-		caffix:pipeline:503915daec5b:caffix_pipeline/vendor/github.com/caffix/pipeline \
+		caffix:netmap:5aec13909475:caffix_netmap/vendor/github.com/caffix/netmap \
+		caffix:pipeline:cd7a519dd0e6:caffix_pipeline/vendor/github.com/caffix/pipeline \
 		caffix:queue:6e488abe1004:caffix_queue/vendor/github.com/caffix/queue \
-		caffix:resolve:60a5dffca01a:caffix_resolve/vendor/github.com/caffix/resolve \
+		caffix:resolve:f3697cc77395:caffix_resolve/vendor/github.com/caffix/resolve \
 		caffix:service:3819810293b0:caffix_service/vendor/github.com/caffix/service \
 		caffix:stringset:a00bc23f59bc:caffix_stringset/vendor/github.com/caffix/stringset \
 		cayleygraph:cayley:v0.7.7:cayleygraph_cayley/vendor/github.com/cayleygraph/cayley \
 		cayleygraph:quad:v1.2.4:cayleygraph_quad/vendor/github.com/cayleygraph/quad \
-		cenkalti:backoff:v2.1.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
+		cenkalti:backoff:v2.2.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
+		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		chromedp:cdproto:6626966fbae4:chromedp_cdproto/vendor/github.com/chromedp/cdproto \
 		chromedp:chromedp:97580065bae3:chromedp_chromedp/vendor/github.com/chromedp/chromedp \
 		chromedp:sysutil:v1.0.0:chromedp_sysutil/vendor/github.com/knq/sysutil \
@@ -42,55 +44,57 @@ GH_TUPLE=	\
 		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
 		geziyor:geziyor:cfb16fe1ee0e:geziyor_geziyor/vendor/github.com/geziyor/geziyor \
 		go-ini:ini:v1.62.0:go_ini_ini/vendor/github.com/go-ini/ini \
-		go-kit:kit:v0.8.0:go_kit_kit/vendor/github.com/go-kit/kit \
-		go-sql-driver:mysql:v1.4.1:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
-		gobuffalo:envy:v1.7.1:gobuffalo_envy/vendor/github.com/gobuffalo/envy \
-		gobuffalo:logger:v1.0.1:gobuffalo_logger/vendor/github.com/gobuffalo/logger \
-		gobuffalo:packd:v0.3.0:gobuffalo_packd/vendor/github.com/gobuffalo/packd \
-		gobuffalo:packr:v2.7.1:gobuffalo_packr_v2/vendor/github.com/gobuffalo/packr \
+		go-kit:kit:v0.10.0:go_kit_kit/vendor/github.com/go-kit/kit \
+		go-sql-driver:mysql:v1.6.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
+		gobuffalo:logger:v1.0.3:gobuffalo_logger/vendor/github.com/gobuffalo/logger \
+		gobuffalo:packd:v1.0.0:gobuffalo_packd/vendor/github.com/gobuffalo/packd \
+		gobuffalo:packr:v2.8.1:gobuffalo_packr_v2/vendor/github.com/gobuffalo/packr \
 		gobwas:httphead:2c6c146eadee:gobwas_httphead/vendor/github.com/gobwas/httphead \
 		gobwas:pool:v0.2.0:gobwas_pool/vendor/github.com/gobwas/pool \
 		gobwas:ws:v1.0.2:gobwas_ws/vendor/github.com/gobwas/ws \
-		gogo:protobuf:v1.3.0:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:df645c7b52b1:golang_net/vendor/golang.org/x/net \
+		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
+		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:afb366fc7cd1:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:08078c50e5b5:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:49726bf1d181:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
+		golang:sys:5e06dd20ab57:golang_sys/vendor/golang.org/x/sys \
+		golang:term:72f3dc4e9b72:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
-		google:go-cmp:v0.5.4:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:uuid:v1.1.3:google_uuid/vendor/github.com/google/uuid \
 		hashicorp:errwrap:v1.1.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
-		hashicorp:go-multierror:v1.1.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
-		hidal-go:hidalgo:42e03f3b5eaa:hidal_go_hidalgo/vendor/github.com/hidal-go/hidalgo \
+		hashicorp:go-multierror:v1.1.1:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
+		hidal-go:hidalgo:05749a6d73df:hidal_go_hidalgo/vendor/github.com/hidal-go/hidalgo \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
-		joho:godotenv:v1.3.0:joho_godotenv/vendor/github.com/joho/godotenv \
+		karrick:godirwalk:v1.16.1:karrick_godirwalk/vendor/github.com/karrick/godirwalk \
 		knq:sysutil:15668db23d08:knq_sysutil \
 		layeh:gopher-json:552bb3c4c3bf:layeh_gopher_json/vendor/layeh.com/gopher-json \
-		lib:pq:v1.9.0:lib_pq/vendor/github.com/lib/pq \
+		lib:pq:v1.10.0:lib_pq/vendor/github.com/lib/pq \
 		mailru:easyjson:v0.7.0:mailru_easyjson/vendor/github.com/mailru/easyjson \
+		markbates:errx:v1.1.0:markbates_errx/vendor/github.com/markbates/errx \
+		markbates:oncer:v1.0.0:markbates_oncer/vendor/github.com/markbates/oncer \
+		markbates:safe:v1.0.1:markbates_safe/vendor/github.com/markbates/safe \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		miekg:dns:v1.1.41:miekg_dns/vendor/github.com/miekg/dns \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		prometheus:client_golang:v1.0.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
-		prometheus:client_model:14fe0d1b01d4:prometheus_client_model/vendor/github.com/prometheus/client_model \
-		prometheus:common:v0.4.1:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:procfs:v0.0.2:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		prometheus:client_golang:v1.10.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
+		prometheus:common:v0.20.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.6.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rakyll:statik:v0.1.7:rakyll_statik/vendor/github.com/rakyll/statik \
-		rogpeppe:go-internal:v1.6.2:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
-		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		rogpeppe:go-internal:v1.8.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
+		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:cobra:v1.1.3:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		temoto:robotstxt:v1.1.1:temoto_robotstxt/vendor/github.com/temoto/robotstxt \
-		tylertreat:BoomFilters:611b3dbe80e8:tylertreat_boomfilters/vendor/github.com/tylertreat/BoomFilters \
+		tylertreat:BoomFilters:1a82519a3e43:tylertreat_boomfilters/vendor/github.com/tylertreat/BoomFilters \
 		uber-go:ratelimit:v0.2.0:uber_go_ratelimit/vendor/go.uber.org/ratelimit \
 		yl2chen:cidranger:v1.0.2:yl2chen_cidranger/vendor/github.com/yl2chen/cidranger \
 		yuin:gopher-lua:ee81675732da:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua
