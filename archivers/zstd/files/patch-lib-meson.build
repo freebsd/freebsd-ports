@@ -1,0 +1,12 @@
+Obtained from:	https://github.com/facebook/zstd/commit/edf2b1176df9302f6023d129e6379ffbe781885c
+
+--- lib/meson.build.orig	2021-03-02 22:20:57 UTC
++++ lib/meson.build
+@@ -22,6 +22,7 @@ libzstd_sources = [join_paths(zstd_rootdir, 'lib/commo
+   join_paths(zstd_rootdir, 'lib/common/threading.c'),
+   join_paths(zstd_rootdir, 'lib/common/pool.c'),
+   join_paths(zstd_rootdir, 'lib/common/zstd_common.c'),
++  join_paths(zstd_rootdir, 'lib/common/zstd_trace.c'),
+   join_paths(zstd_rootdir, 'lib/common/error_private.c'),
+   join_paths(zstd_rootdir, 'lib/common/xxhash.c'),
+   join_paths(zstd_rootdir, 'lib/compress/hist.c'),
