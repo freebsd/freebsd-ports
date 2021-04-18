@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	imv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.1.0

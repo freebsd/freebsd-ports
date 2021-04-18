@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	kore
 PORTVERSION=	4.1.0
 CATEGORIES=	devel www

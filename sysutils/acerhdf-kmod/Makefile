@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <tobias.kortkamp@gmail.com>
-
 PORTNAME=	acerhdf-kmod
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.3

@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	stagit
 PORTVERSION=	0.9.5
 PORTREVISION=	1

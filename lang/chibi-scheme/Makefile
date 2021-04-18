@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <tobias.kortkamp@gmail.com>
-
 PORTNAME=	chibi-scheme
 DISTVERSION=	0.9.1
 CATEGORIES=	lang

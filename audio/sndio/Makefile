@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	sndio
 PORTVERSION=	1.7.0
 CATEGORIES=	audio

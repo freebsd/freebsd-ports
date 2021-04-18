@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	pulseaudio-module-sndio
 DISTVERSION=	13.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	terminus-ttf
 PORTVERSION=	4.47.0
 PORTREVISION=	2

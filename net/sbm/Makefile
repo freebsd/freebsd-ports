@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	sbm
 PORTVERSION=	0.8
 CATEGORIES=	net

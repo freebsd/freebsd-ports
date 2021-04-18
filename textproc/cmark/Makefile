@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	cmark
 DISTVERSION=	0.29.0
 CATEGORIES=	textproc

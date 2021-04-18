@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	iortcw
 PORTVERSION=	1.51c
 PORTEPOCH=	1

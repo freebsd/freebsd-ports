@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	okc321
 PORTVERSION=	1.1
 CATEGORIES=	print
