@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libreadline.so:devel/readline
 
-USE_CSTD=	c11
+USES=		compiler:c11
 
 MAKEFILE=	Makefile_freebsd
 MAKE_ENV=	BINDIR=${PREFIX}/bin \
