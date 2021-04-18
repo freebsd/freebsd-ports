@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4<5:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=2<4:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0<1:devel/py-future@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=5<6:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2<3:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tldextract>=2<3:dns/py-tldextract@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=5<6:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tldextract>=2<3:dns/py-tldextract@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
