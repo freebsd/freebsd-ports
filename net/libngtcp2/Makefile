@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	ngtcp2
-PORTVERSION=	0.1.0.g20210227
+PORTVERSION=	0.1.0.g20210331
 CATEGORIES=	net
 PKGNAMEPREFIX=	lib
 
@@ -19,7 +19,7 @@ INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 
-GH_TAGNAME=	7f10d53
+GH_TAGNAME=	2fd9ce1
 USE_GITHUB=	yes
 
 post-patch:
