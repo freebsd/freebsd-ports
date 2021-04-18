@@ -4,7 +4,7 @@ CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Ruby binding for Clutter
+COMMENT=	Ruby binding of Clutter
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
