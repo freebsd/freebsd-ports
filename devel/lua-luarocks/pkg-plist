@@ -65,6 +65,7 @@ bin/luarocks-admin
 %%LUA_MODSHAREDIR%%/luarocks/fs/linux.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/lua.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/macosx.lua
+%%LUA_MODSHAREDIR%%/luarocks/fs/netbsd.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/tools.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/unix.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/unix/tools.lua
