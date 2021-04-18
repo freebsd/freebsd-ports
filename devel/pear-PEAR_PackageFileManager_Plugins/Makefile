@@ -12,6 +12,8 @@ RUN_DEPENDS=	${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer@${PHP_FLAVO
 
 LICENSE=	BSD2CLAUSE
 
-USES=	pear
+USES=		pear
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
