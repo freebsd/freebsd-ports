@@ -539,6 +539,7 @@
     SUBDIR += xiphos
     SUBDIR += xless
     SUBDIR += xosd
+    SUBDIR += xplr
     SUBDIR += xtail
     SUBDIR += xtar
     SUBDIR += ytree
