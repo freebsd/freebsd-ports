@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Text-Table-Any
-PORTVERSION=	0.101
+PORTVERSION=	0.102
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Text-Table-Tiny>=0:textproc/p5-Text-Table-Tiny
+RUN_DEPENDS=	p5-Text-Table-Sprintf>=0:textproc/p5-Text-Table-Sprintf
 
 USES=		perl5
 USE_PERL5=	configure
