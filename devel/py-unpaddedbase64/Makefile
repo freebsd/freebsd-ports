@@ -1,9 +1,9 @@
 # Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
 
 PORTNAME=	unpaddedbase64
-PORTVERSION=	1.1.0
-DISTVERSIONPREFIX=	v
+PORTVERSION=	2.0.0
 CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,10 +16,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	matrix-org
-GH_PROJECT=	python-unpaddedbase64
 
 NO_ARCH=	yes
 
