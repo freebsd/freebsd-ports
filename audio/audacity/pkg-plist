@@ -49,8 +49,6 @@ share/applications/audacity.desktop
 %%DATADIR%%/nyquist/velocity.lsp
 %%DATADIR%%/nyquist/xlinit.lsp
 %%DATADIR%%/nyquist/xm.lsp
-%%DATADIR%%/plug-ins/SilenceMarker.ny
-%%DATADIR%%/plug-ins/SoundFinder.ny
 %%DATADIR%%/plug-ins/SpectralEditMulti.ny
 %%DATADIR%%/plug-ins/SpectralEditParametricEQ.ny
 %%DATADIR%%/plug-ins/SpectralEditShelves.ny
@@ -64,6 +62,7 @@ share/applications/audacity.desktop
 %%DATADIR%%/plug-ins/eq-xml-to-txt-converter.ny
 %%DATADIR%%/plug-ins/equalabel.ny
 %%DATADIR%%/plug-ins/highpass.ny
+%%DATADIR%%/plug-ins/label-sounds.ny
 %%DATADIR%%/plug-ins/limiter.ny
 %%DATADIR%%/plug-ins/lowpass.ny
 %%DATADIR%%/plug-ins/noisegate.ny
@@ -93,6 +92,7 @@ share/icons/hicolor/scalable/apps/audacity.svg
 %%NLS%%share/locale/bs/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/audacity.mo
+%%NLS%%share/locale/co/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/cy/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/da/LC_MESSAGES/audacity.mo
@@ -119,6 +119,7 @@ share/icons/hicolor/scalable/apps/audacity.svg
 %%NLS%%share/locale/ko/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/audacity.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/my/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/audacity.mo

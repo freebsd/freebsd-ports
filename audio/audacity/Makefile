@@ -1,10 +1,10 @@
 # Created by: Marc van Woerkom <3d@FreeBSD.org>
 
 PORTNAME=	audacity
-PORTVERSION=	2.4.2
-PORTREVISION=	4
-DISTVERSIONPREFIX=	Audacity-
+DISTVERSIONPREFIX=	minsrc-
+DISTVERSION=	3.0.0
 CATEGORIES=	audio
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/Audacity-${PORTVERSION}/
 
 MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	GUI editor for digital audio waveforms
@@ -16,11 +16,11 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libexpat.so:textproc/expat2 \
 		libportaudio.so:audio/portaudio \
 		libsndfile.so:audio/libsndfile \
-		libsoxr.so:audio/libsoxr
+		libsoxr.so:audio/libsoxr \
+		libsqlite3.so:databases/sqlite3
 
-USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext \
-		gnome libtool python:build pkgconfig shared-mime-info
-USE_GITHUB=	yes
+USES=		cmake compiler:c++14-lang cpe desktop-file-utils gettext \
+		gnome libtool python:build pkgconfig shared-mime-info tar:xz
 USE_GNOME=	cairo gtk30
 USE_WX=		3.1+
 WX_COMPS=	wx
@@ -40,7 +40,7 @@ CMAKE_OFF=	audacity_use_pch
 OPTIONS_DEFINE=		DEBUG DOCS FFMPEG FLAC ID3TAG LADSPA LAME LV2 MAD \
 			MIDI OGG SBSMS SOUNDTOUCH TWOLAME VAMP \
 			VORBIS VST
-OPTIONS_DEFAULT=	FLAC ID3TAG LADSPA MAD MIDI OGG SBSMS \
+OPTIONS_DEFAULT=	FLAC ID3TAG LV2 MAD MIDI OGG SBSMS \
 			SOUNDTOUCH TWOLAME VAMP VORBIS VST
 OPTIONS_EXCLUDE_i386=	SBSMS
 
@@ -134,13 +134,13 @@ CMAKE_ARGS+=	-DHAVE_MMX:BOOL=OFF \
 		-DHAVE_SSE2:BOOL=OFF
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,Python2,Python${PYTHON_MAJOR_VER}, ; \
-		/CMAKE_CXX_STANDARD/s,14,11,' ${WRKSRC}/CMakeLists.txt
-
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} \
+		bin/${PORTNAME} \
+		share/audacity/modules/mod-script-pipe.so
 	@${RM} ${STAGEDIR}${DOCSDIR}/LICENSE.txt
+	# delete empty directories: https://github.com/audacity/audacity/issues/808
+	@${FIND} ${STAGEDIR} -type d -empty -delete
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

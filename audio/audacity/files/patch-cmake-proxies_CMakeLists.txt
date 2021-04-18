@@ -1,4 +1,4 @@
---- cmake-proxies/CMakeLists.txt.orig	2020-06-19 15:16:47 UTC
+--- cmake-proxies/CMakeLists.txt.orig	2021-02-04 18:52:51 UTC
 +++ cmake-proxies/CMakeLists.txt
 @@ -132,7 +132,7 @@ addlib( expat              expat       EXPAT       YES
  addlib( lame               lame        LAME        YES   YES   "lame >= 3.100" )
@@ -6,6 +6,6 @@
  addlib( libsoxr            soxr        SOXR        YES   YES   "soxr >= 0.1.1" )
 -addlib( portaudio-v19      portaudio   PORTAUDIO   YES   YES   "" )
 +addlib( portaudio-v19      portaudio   PORTAUDIO   YES   YES   "portaudio-2.0 >= 19" )
+ addlib( sqlite             sqlite      SQLITE      YES   YES   "sqlite3 >= 3.32.0" )
  
  # Optional libraries
- #

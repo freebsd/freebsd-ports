@@ -1,0 +1,20 @@
+--- cmake-proxies/wxWidgets/CMakeLists.txt.orig	2020-08-05 16:32:53 UTC
++++ cmake-proxies/wxWidgets/CMakeLists.txt
+@@ -237,17 +237,6 @@ file(
+       "^#define +wxVERSION_STRING +"
+ )
+ 
+-string( REGEX MATCHALL "\".+(Audacity).+\"" ours "${output}")
+-if( NOT ours )
+-   message( FATAL_ERROR
+-      "\n########################################################################\n"
+-      "Audacity version 3.0.0 or higher requires use of a customized version of "
+-      "wxWidgets.  For details:\n"
+-      "  https://wiki.audacityteam.org/wiki/Building_for_Distros\n"
+-      "########################################################################\n"
+-   )
+-endif()
+-
+ target_include_directories( ${TARGET} INTERFACE ${INCLUDES} )
+ target_compile_definitions( ${TARGET} INTERFACE ${DEFINES} )
+ target_compile_options( ${TARGET} INTERFACE ${COPTS} )
