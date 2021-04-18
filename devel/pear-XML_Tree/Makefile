@@ -13,4 +13,6 @@ RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser@${PHP_FLAVOR}
 
 USES=		pear
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
