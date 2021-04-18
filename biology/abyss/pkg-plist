@@ -44,6 +44,7 @@ bin/abyss-mergepairs
 bin/abyss-overlap
 bin/abyss-paired-dbg
 bin/abyss-pe
+bin/abyss-rresolver-short
 bin/abyss-samtoafg
 bin/abyss-scaffold
 bin/abyss-sealer
