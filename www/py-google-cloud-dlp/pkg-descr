@@ -1,7 +1,5 @@
-Cloud Data Loss Prevention (DLP) API: Provides
-methods for detection, risk analysis, and
-de-identification of privacy-sensitive fragments
-in text, images, and Google Cloud Platform
-storage repositories.
+Cloud Data Loss Prevention (DLP) API: Provides methods for detection, risk
+analysis, and de-identification of privacy-sensitive fragments in text, images,
+and Google Cloud Platform storage repositories.
 
-WWW: https://pypi.org/project/google-cloud-dlp/
+WWW: https://github.com/googleapis/python-dlp
