@@ -1,6 +1,6 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.13.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -32,19 +32,9 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	swaywm
 MESON_ARGS=	-Dexamples=false
 
-OPTIONS_DEFINE=	CONSOLEKIT LIBSEAT NVIDIA UUID X11
+OPTIONS_DEFINE=	LIBSEAT NVIDIA UUID X11
 OPTIONS_DEFAULT=LIBSEAT UUID X11
 OPTIONS_SUB=	yes
-
-CONSOLEKIT_DESC=	DRM sessions without root via ConsoleKit2 (experimental)
-CONSOLEKIT_PATCH_SITES=	https://github.com/unrelentingtech/${GH_PROJECT}/commit/:ck2
-CONSOLEKIT_PATCHFILES=	fb837ae10b1f.patch:-p1:ck2 # https://github.com/swaywm/wlroots/pull/1467
-CONSOLEKIT_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-			libconsolekit.so:sysutils/consolekit2
-CONSOLEKIT_MESON_ENABLED=	consolekit2
-.if make(makesum)
-.MAKEFLAGS:		WITH+=CONSOLEKIT
-.endif
 
 LIBSEAT_DESC=		DRM sessions with/without root via libseat
 LIBSEAT_LIB_DEPENDS=	libseat.so:sysutils/seatd

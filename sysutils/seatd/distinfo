@@ -3,3 +3,7 @@ SHA256 (seatd-0.5.0.tar.gz) = 274b56324fc81ca6002bc1cdd387668dee34a6e1063e5f3896
 SIZE (seatd-0.5.0.tar.gz) = 34762
 SHA256 (5ad91ae9dad2.patch) = 496825a9f6c1b3e501a6446934229e9e3ff82a8c07a07f6d8cc649886a16ae3f
 SIZE (5ad91ae9dad2.patch) = 910
+SHA256 (7bfae6ecb3bb.patch) = d5e09414c822880e2c20604a502bab2f2d3eb732a63922359ca8a53ee6e71dc7
+SIZE (7bfae6ecb3bb.patch) = 1470
+SHA256 (a7f1269a883b.patch) = b3e5216b1f5cfe0124a89c2e2b8499b12aad1766609cb5ba1c29ba9c632263c7
+SIZE (a7f1269a883b.patch) = 19925

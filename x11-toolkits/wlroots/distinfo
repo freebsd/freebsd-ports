@@ -5,7 +5,5 @@ SHA256 (7c0e2a271a4c.patch) = 2b92d3dde7640061ed85ab1690031f7627bebc2366e8c4da21
 SIZE (7c0e2a271a4c.patch) = 5729
 SHA256 (e1b5323f56c3.patch) = 13145323caf9e56412ee3766fb9eacca9c6e4ca7088a320e79bc1512c0afe522
 SIZE (e1b5323f56c3.patch) = 4028
-SHA256 (fb837ae10b1f.patch) = ecf07d813ae796eca946e909a35434a93b07fc349d6ca8b48d7834cb2dfb4071
-SIZE (fb837ae10b1f.patch) = 27075
 SHA256 (eba4b66f92ca.patch) = a271c30c414fb2ae2cb6e0cbca77c37c1e15a3b160097f6e78298bfcec8df352
 SIZE (eba4b66f92ca.patch) = 96009
