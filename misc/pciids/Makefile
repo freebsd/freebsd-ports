@@ -1,7 +1,7 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 
 PORTNAME=	pciids
-PORTVERSION=	20210223
+PORTVERSION=	20210322
 CATEGORIES=	misc
 
 MAINTAINER=	sunpoet@FreeBSD.org
