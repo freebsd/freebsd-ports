@@ -51,7 +51,7 @@ if [ -n "$(command -v git 2>/dev/null)" ]; then
 	GIT=git
 else
 	echo "git(1) not found.  Please install devel/git."
-	exit 1
+	exit 66
 fi
 
 log()
@@ -103,7 +103,7 @@ find_catport()
 		echo ${category}/${port}
 	else
 		echo "What do you mean by '${arg}'?" >&2
-		exit 1
+		exit 64
 	fi
 }
 
@@ -213,7 +213,7 @@ get_PRs()
 
 	if [ -z "${raw}" ] ; then
 		log "${catport}: empty result from URL: ${url}"
-		exit 1
+		exit 67
 	fi
 
 	printf "%s" "${raw}" \
@@ -378,11 +378,11 @@ usage()
 
 if ! ${GIT} diff --exit-code remotes/origin/main ; then
 	echo "you have local commits, exiting" >&2
-	exit
+	exit 65
 fi
 if [ ! -r ${INDEX} ] ; then
 	echo "${INDEX} not readable, exiting" >&2
-	exit
+	exit 66
 fi
 
 git_dir="$(${GIT} rev-parse --git-dir)"
