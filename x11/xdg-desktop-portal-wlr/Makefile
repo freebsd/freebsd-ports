@@ -1,7 +1,11 @@
 PORTNAME=	xdg-desktop-portal-wlr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	x11
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	ebb50839a560.patch:-p1 # https://github.com/emersion/xdg-desktop-portal-wlr/pull/114
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	xdg-desktop-portal backend for wlroots

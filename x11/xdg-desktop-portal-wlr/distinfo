@@ -1,3 +1,5 @@
 TIMESTAMP = 1618759033
 SHA256 (emersion-xdg-desktop-portal-wlr-v0.3.0_GH0.tar.gz) = 5c80469b04c4e5d22689f755d61adcf92758bc1c85f0747ae1f586b4bcd7873c
 SIZE (emersion-xdg-desktop-portal-wlr-v0.3.0_GH0.tar.gz) = 29340
+SHA256 (ebb50839a560.patch) = a3e6b6cdac2458395abcc30d4d2a1d19971c1671860bd8c4619ab787cea1cf3d
+SIZE (ebb50839a560.patch) = 721
