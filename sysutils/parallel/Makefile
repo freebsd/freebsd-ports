@@ -1,7 +1,7 @@
 # Created by: Chris Howey <howeyc@gmail.com>
 
 PORTNAME=	parallel
-PORTVERSION=	20210222
+PORTVERSION=	20210322
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -9,7 +9,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Shell tool for executing jobs in parallel
 
 LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
 USES=		perl5 shebangfix tar:bzip2
 
