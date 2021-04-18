@@ -1,7 +1,7 @@
 # Created by: Frederic Culot <culot@FreeBSD.org>
 
 PORTNAME=	Net-HTTP
-PORTVERSION=	6.20
+PORTVERSION=	6.21
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
