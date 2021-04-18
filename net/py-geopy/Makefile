@@ -23,6 +23,16 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	AIOHTTP REQUESTS TIMEZONE
+AIOHTTP_DESC=	Async HTTP adapter support
+REQUESTS_DESC=	Requests adapter support
+TIMEZONE_DESC=	Locate timezones
+
+AIOHTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=0:www/py-aiohttp@${PY_FLAVOR}
+REQUESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.16.2:www/py-requests@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}urllib3>=1.24.2,1:net/py-urllib3@${PY_FLAVOR}
+TIMEZONE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR}
+
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
 
