@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	marcel
-PORTVERSION=	0.3.3
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,6 @@ COMMENT=	Simple mime type detection
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
-
-RUN_DEPENDS=	rubygem-mimemagic>=0.3.2<0.4:misc/rubygem-mimemagic
 
 USES=		gem
 USE_RUBY=	yes
