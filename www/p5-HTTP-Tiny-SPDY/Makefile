@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-IO-Socket-SSL>=1.560:security/p5-IO-Socket-SSL \
 		p5-Net-SSLeay>=1.49:security/p5-Net-SSLeay
 TEST_DEPENDS=	p5-Mozilla-CA>=0:www/p5-Mozilla-CA
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
