@@ -61,7 +61,7 @@ lib/libbareosfind.so.%%LIB_VERSION%%
 lib/libbareoslmdb.so
 lib/libbareoslmdb.so.20
 lib/libbareoslmdb.so.%%LIB_VERSION%%
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosfd.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosfd%%PYTHON_EXT_SUFFIX%%.so
 man/man1/bconsole.1.gz
 man/man8/bareos-fd.8.gz
 man/man8/bareos.8.gz
@@ -75,6 +75,7 @@ sbin/bconsole
 sbin/btraceback
 @group bareos
 @dir(,bareos,750) %%ETCDIR%%/python-ldap-conf.d/bareos-dir.d/fileset
+@dir(,bareos,750) %%ETCDIR%%/python-ldap-conf.d/bareos-dir.d/job
 @group bareos
 @dir(bareos,bareos,)  %%BAREOS_DIR%%
 @dir(bareos,bareos,) /var/log/bareos
