@@ -1,0 +1,14 @@
+Genetic variant annotation and functional effect prediction toolbox. It
+annotates and predicts the effects of genetic variants on genes and proteins
+(such as amino acid changes).
+
+Features:
+
+    Supports over 38,000 genomes
+    Standard ANN annotation format
+    Cancer variants analysis
+    GATK compatible (-o gatk)
+    HGVS notation
+    Sequence Ontology standardized terms
+
+WWW: http://snpeff.sourceforge.net/
