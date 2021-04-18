@@ -1,7 +1,7 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 
 PORTNAME=	usbids
-PORTVERSION=	20210219
+PORTVERSION=	20210331
 CATEGORIES=	misc
 
 MAINTAINER=	sunpoet@FreeBSD.org
