@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.94.0
+PORTVERSION=	3.95.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -7,6 +7,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	AWS SDK for Ruby Resources
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessanalyzer \
 		rubygem-aws-sdk-acm>=1<2:devel/rubygem-aws-sdk-acm \
@@ -105,6 +106,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-emrcontainers>=1<2:devel/rubygem-aws-sdk-emrcontainers \
 		rubygem-aws-sdk-eventbridge>=1<2:devel/rubygem-aws-sdk-eventbridge \
 		rubygem-aws-sdk-firehose>=1<2:devel/rubygem-aws-sdk-firehose \
+		rubygem-aws-sdk-fis>=1<2:devel/rubygem-aws-sdk-fis \
 		rubygem-aws-sdk-fms>=1<2:devel/rubygem-aws-sdk-fms \
 		rubygem-aws-sdk-forecastqueryservice>=1<2:devel/rubygem-aws-sdk-forecastqueryservice \
 		rubygem-aws-sdk-forecastservice>=1<2:devel/rubygem-aws-sdk-forecastservice \
