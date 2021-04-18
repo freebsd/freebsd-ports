@@ -1,5 +1,5 @@
 PORTNAME=	timg
-PORTVERSION=	1.2.0
+PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -23,7 +23,7 @@ GH_ACCOUNT=	hzeller
 # timg requires libavutil, contained in multimedia/ffmpeg
 # isn't splitted libavcodec, libavutil, etc.
 CMAKE_ON+=	WITH_VIDEO_DECODING WITH_VIDEO_DEVICE
-CMAKE_OFF+=	TIMG_VERSION_FROM_GIT
+CMAKE_OFF+=	TIMG_VERSION_FROM_GIT WITH_OPENSLIDE_SUPPORT
 
 PLIST_FILES=	bin/timg man/man1/timg.1.gz
 
