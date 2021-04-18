@@ -1,4 +1,4 @@
---- Makefile.orig	2020-11-05 23:04:50 UTC
+--- Makefile.orig	2020-10-06 03:46:41 UTC
 +++ Makefile
 @@ -24,7 +24,7 @@
  PREFIX := /usr/local
@@ -33,7 +33,7 @@
    CPPFLAGS += -Ithird_party/simde
    SANITIZER_FLAGS :=
 -else ifeq (ppc64le,$(shell uname -m))
-+else ifeq (ppc64le,$(shell uname -p))
++else ifeq (powerpc64le,$(shell uname -p))
    BITS := 64
    SSE_FLAG :=
    CXXFLAGS += -fopenmp-simd
