@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Term-App-Util-Color
-PORTVERSION=	0.001
+PORTVERSION=	0.002
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Term-App-Util-Interactive>=0:devel/p5-Term-App-Util-Interactive \
+RUN_DEPENDS=	p5-Term-App-Util-Interactive>=0.002:devel/p5-Term-App-Util-Interactive \
 		p5-Term-Detect-Software>=0:devel/p5-Term-Detect-Software
 
 USES=		perl5
