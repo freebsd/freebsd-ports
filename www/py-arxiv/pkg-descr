@@ -12,5 +12,4 @@ This is where arxiv.py comes it: it constructs requests for arXiv and gets ATOM
 feeds via a simple handful of methods, and parses the results into an intuitive
 format.
 
-WWW: https://pypi.org/project/arxiv/
 WWW: https://github.com/lukasschwab/arxiv.py
