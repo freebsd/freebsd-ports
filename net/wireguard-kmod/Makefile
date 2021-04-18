@@ -8,13 +8,13 @@ MAINTAINER=	decke@FreeBSD.org
 COMMENT=	WireGuard implementation for the FreeBSD kernel
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKDIR}/${DISTNAME}/COPYING
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 IGNORE_FreeBSD_11=	only for FreeBSD 12.1 and newer
 
 USES=		kmod tar:xz uidfix
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC_SUBDIR=	src
 
 PLIST_FILES=	${KMODDIR}/if_wg.ko
 
