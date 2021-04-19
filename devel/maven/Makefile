@@ -1,7 +1,7 @@
 # Created by: JonathanChen <jonc@chen.org.nz>
 
 PORTNAME=	maven
-DISTVERSION=	3.6.3
+DISTVERSION=	3.8.1
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/maven/maven-3/${DISTVERSION}/binaries
 DISTNAME=	apache-maven-${DISTVERSION}-bin
