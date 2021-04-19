@@ -501,10 +501,6 @@ CARGO_USE_GITHUB=	yes
 # XXX https://github.com/rust-lang/cargo/issues/4101
 CARGO_INSTALL_PATH=	${PLIST_FILES:Mbin/*:T}
 
-pre-patch:
-# Adjust whitespace for CARGO_USE_GITHUB regex
-	@${REINPLACE_CMD} 's/git="/git = "/' ${WRKSRC}/window/Cargo.toml
-
 post-patch:
 # Extract (snapshot) version from the port instead of .tag file
 	@${ECHO_CMD} '${DISTVERSIONFULL}' >${WRKSRC}/.tag
