@@ -4,6 +4,10 @@ include/spatialite/debug.h
 include/spatialite/gaia_network.h
 include/spatialite/gaia_topology.h
 include/spatialite/gaiaaux.h
+include/spatialite/gaiaconfig-msvc.h
+include/spatialite/gaiaconfig-msvc.h.in
+include/spatialite/gaiaconfig.h
+include/spatialite/gaiaconfig.h.in
 include/spatialite/gaiaexif.h
 include/spatialite/gaiageo.h
 include/spatialite/gaiamatrix.h
@@ -20,13 +24,13 @@ include/spatialite/gg_sequence.h
 include/spatialite/gg_structs.h
 include/spatialite/gg_wfs.h
 include/spatialite/gg_xml.h
-include/spatialite/spatialite.h
+include/spatialite/spatialite_ext.h
 include/spatialite/sqlite.h
 include/spatialite/stored_procedures.h
 lib/libspatialite.a
 lib/libspatialite.so
 lib/libspatialite.so.7
-lib/libspatialite.so.7.1.1
+lib/libspatialite.so.7.1.2
 lib/mod_spatialite.so
 lib/mod_spatialite.so.7
 lib/mod_spatialite.so.7.1.1
