@@ -1,6 +1,6 @@
 PORTNAME=	qmcpack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.10.0
+DISTVERSION=	3.11.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,6 +23,8 @@ USES=		cmake compiler:c++11-lang fortran gnome localbase:ldflags pkgconfig pytho
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 USE_GNOME=	libxml2
+
+CMAKE_OFF=	BUILD_UNIT_TESTS
 
 CXXFLAGS+=	-I${LOCALBASE}/include/catch2
 
