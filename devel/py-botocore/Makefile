@@ -1,7 +1,7 @@
 # Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
 
 PORTNAME=	botocore
-PORTVERSION=	1.20.53
+PORTVERSION=	1.20.54
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
