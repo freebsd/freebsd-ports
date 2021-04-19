@@ -1,6 +1,6 @@
 PORTNAME=	onednn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2
+DISTVERSION=	2.2.1
 CATEGORIES=	math # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,10 +16,11 @@ TEST_DEPENDS=	bash:shells/bash \
 		libsysinfo>0:devel/libsysinfo
 
 USES=		cmake compiler:c++11-lang localbase:ldflags
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	oneapi-src
 GH_PROJECT=	oneDNN
-USE_LDCONFIG=	yes
 
 CMAKE_OFF=	DNNL_BUILD_TESTS DNNL_BUILD_EXAMPLES
 
