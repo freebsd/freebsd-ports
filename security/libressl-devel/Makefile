@@ -1,7 +1,7 @@
 # Created by: Bernard Spil <brnrd@FreeBSD.org>
 
 PORTNAME=	libressl
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.2
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 PKGNAMESUFFIX=	-devel
@@ -12,18 +12,34 @@ COMMENT=	Free version of the SSL/TLS protocol forked from OpenSSL
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+FLAVORS=	default libtls
+FLAVOR?=	${FLAVORS:[1]}
+#libtls_DESCR=	pkg-descr-libtls
+libtls_PKGNAMESUFFIX=	-devel-libtls
+libtls_PLIST=	pkg-plist-libtls
+
 CPE_VENDOR=	openbsd
 
 OPTIONS_DEFINE=	MAN3 NC
 OPTIONS_DEFAULT=	MAN3 NC
+LIBTLS_DESC=	Only install libtls (no libcrypto/libssl)
 MAN3_DESC=	Install API manpages (section 3)
 NC_DESC=	Install TLS-enabled netcat
 
-CONFLICTS_INSTALL=	libressl-[0-9]* \
-			openssl-[0-9]* \
-			openssl-devel-[0-9]*
+CONFLICTS_INSTALL=		libressl-[0-9]* \
+				libretls-[0-9]*
+default_CONFLICTS_INSTALL=	openssl-[0-9]* \
+				openssl-devel-[0-9]*
 
-NC_CONFIGURE_ENABLE=	nc
+.if ${FLAVOR:U} == default
+OPTIONS_EXCLUDE=	LIBTLS
+.elif ${FLAVOR:U} == libtls
+OPTIONS_SLAVE=		LIBTLS
+OPTIONS_EXCLUDE=	MAN3
+.endif
+
+LIBTLS_CONFIGURE_ENABLE=	libtls-only
+NC_CONFIGURE_ENABLE=		nc
 
 GNU_CONFIGURE=	yes
 USES=		cpe libtool pathfix pkgconfig
