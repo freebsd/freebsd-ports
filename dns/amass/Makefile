@@ -1,6 +1,6 @@
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.12.0
+DISTVERSION=	3.12.1
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ GH_TUPLE=	\
 		boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
 		caffix:eventbus:9ab42753d12d:caffix_eventbus/vendor/github.com/caffix/eventbus \
 		caffix:netmap:5aec13909475:caffix_netmap/vendor/github.com/caffix/netmap \
-		caffix:pipeline:cd7a519dd0e6:caffix_pipeline/vendor/github.com/caffix/pipeline \
+		caffix:pipeline:d5f7558afa54:caffix_pipeline/vendor/github.com/caffix/pipeline \
 		caffix:queue:6e488abe1004:caffix_queue/vendor/github.com/caffix/queue \
 		caffix:resolve:f3697cc77395:caffix_resolve/vendor/github.com/caffix/resolve \
 		caffix:service:3819810293b0:caffix_service/vendor/github.com/caffix/service \
