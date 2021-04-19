@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2020-06-22 03:08:46 UTC
++++ Makefile.in
+@@ -2348,7 +2348,7 @@ com_err_et_libcyrus_com_err_la_CFLAGS = $(AM_CFLAGS) $
+ # MD5 algorithms, without needing SSL.  Currently we have no way of
+ # minimally linking such code.
+ LD_BASIC_ADD = lib/libcyrus.la lib/libcyrus_min.la ${LIBS} \
+-	${LIB_SASL} $(SSL_LIBS) $(GCOV_LIBS)
++	${LIB_SASL} $(SSL_LIBS) $(GCOV_LIBS) -lm
+ 
+ 
+ # UTILITY is the libraries that utility programs which use Cyrus'
