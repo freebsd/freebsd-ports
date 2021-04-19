@@ -50,6 +50,7 @@
     SUBDIR += dmenu-wayland
     SUBDIR += docker-tray
     SUBDIR += dsbautostart
+    SUBDIR += dsbxinput
     SUBDIR += dxpc
     SUBDIR += dzen2
     SUBDIR += eaglemode
