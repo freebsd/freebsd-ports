@@ -1,5 +1,6 @@
 PORTNAME=	musikcube
 DISTVERSION=	0.96.6
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +18,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libmicrohttpd.so:www/libmicrohttpd \
 		libmp3lame.so:audio/lame \
 		libogg.so:audio/libogg \
+		libopenmpt.so:audio/libopenmpt \
 		libsndio.so:audio/sndio \
 		libtag.so:audio/taglib \
 		libvorbis.so:audio/libvorbis
