@@ -13,11 +13,20 @@ BROKEN_i386=	error: always_inline function '_mm_load_ps' requires target feature
 
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		cmake compiler:c++11-lib localbase:ldflags perl5
+USES=		cmake localbase:ldflags perl5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	madronalabs
 
 CMAKE_ON=	LINUX_JACK
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le
+CXXFLAGS+=	-DNO_WARN_X86_INTRINSICS
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lib
+.endif
 
 .include <bsd.port.mk>
