@@ -1,9 +1,9 @@
 PORTNAME=	cyrus-imapd
-PORTVERSION=	3.2.6
-PORTREVISION=	2
+PORTVERSION=	3.4.0
+#PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
-PKGNAMESUFFIX=	32
+PKGNAMESUFFIX=	34
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Cyrus mail server, supporting POP3 and IMAP4 protocols
@@ -38,7 +38,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
 USES+=		shebangfix
-SHEBANG_FILES=	imap/promdatagen snmp/snmpgen tools/config2header \
+SHEBANG_FILES=	imap/promdatagen tools/config2header \
 		tools/masssievec tools/mkimap tools/translatesieve \
 		perl/sieve/scripts/*.pl
 
@@ -46,7 +46,7 @@ CPE_VENDOR=	cmu
 CPE_PRODUCT=	cyrus_imap_server
 
 OPTIONS_DEFINE=		AUTOCREATE BACKUP CLAMAV HTTP IDLED LDAP MURDER \
-			MYSQL NNTP PGSQL REPLICATION SNMP SQLITE SQUAT SRS \
+			MYSQL NNTP PGSQL REPLICATION SQLITE SQUAT SRS \
 			XAPIAN DOCS
 OPTIONS_DEFAULT=	AUTOCREATE IDLED SQLITE SQUAT SRS
 OPTIONS_SUB=		yes
@@ -57,6 +57,15 @@ BACKUP_CONFIGURE_ENABLE=backup
 CLAMAV_DESC=		Use ClamAV
 CLAMAV_CONFIGURE_WITH=	clamav
 CLAMAV_LIB_DEPENDS=	libclamav.so:security/clamav
+
+# OPTIONS_DEFINE+=	CLD2
+# OPTIONS_DEFAULT+=	CLD2
+# CLD2_DESC=		Use CLD2
+# CLD2_CONFIGURE_WITH=	cld2
+# CLD2_CONFIGURE_ENV=	CLD2_CFLAGS="-I${LOCALBASE}/include" \
+# 			CLD2_LIBS="-L${LOCALBASE}/lib -lcld2"
+# CLD2_LIB_DEPENDS=	libcld2.so:devel/cld2
+
 HTTP_DESC=		Enable HTTP support
 HTTP_CONFIGURE_ENABLE=	http
 HTTP_LIB_DEPENDS=	libical.so:devel/libical \
@@ -87,9 +96,6 @@ REPLICATION_CONFIGURE_ENABLE=replication
 SRS_DESC=		Enable Sender Rewriting Scheme support
 SRS_CONFIGURE_ENABLE=	srs
 SRS_LIB_DEPENDS=	libsrs2.so:mail/libsrs2
-SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
-SNMP_CONFIGURE_ON=	--with-snmp=${LOCALBASE}
-SNMP_CONFIGURE_OFF=	--with-snmp=no
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 SQLITE_BROKEN_OFF=	SQLITE is required
 SQUAT_DESC=		Enable Squat support

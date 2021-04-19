@@ -110,6 +110,7 @@ include/cyrus/mpool.h
 include/cyrus/murmurhash2.h
 include/cyrus/nonblock.h
 include/cyrus/parseaddr.h
+include/cyrus/procinfo.h
 include/cyrus/retry.h
 include/cyrus/rfc822tok.h
 include/cyrus/sieve/sieve_err.h
