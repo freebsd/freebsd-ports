@@ -76,6 +76,73 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="20006b5f-a0bc-11eb-8ae6-fc4dd43e2b6a">
+    <topic>Apache Maven -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>maven</name>
+	<range><lt>3.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Maven project reports:</p>
+	<blockquote cite="http://maven.apache.org/docs/3.8.1/release-notes.html#cve-2021-26291">
+	  <p>We received a report from Jonathan Leitschuh about a vulnerability
+	    of custom repositories in dependency POMs. We've split this up
+	    into three separate issues:</p>
+	  <ul>
+	    <li>Possible Man-In-The-Middle-Attack due to custom repositories
+	    using HTTP.
+
+	    More and more repositories use HTTPS nowadays, but this
+	    hasn't always been the case. This means that Maven Central contains
+	    POMs with custom repositories that refer to a URL over HTTP. This
+	    makes downloads via such repository a target for a MITM attack. At
+	    the same time, developers are probably not aware that for some
+	    downloads an insecure URL is being used. Because uploaded POMs to
+	    Maven Central are immutable, a change for Maven was required. To
+	    solve this, we extended the mirror configuration with blocked
+	    parameter, and we added a new external:http:* mirror selector (like
+	    existing external:*), meaning "any external URL using HTTP".
+
+	    The decision was made to block such external HTTP repositories by default:
+	    this is done by providing a mirror in the conf/settings.xml blocking
+	    insecure HTTP external URLs.</li>
+	    <li>Possible Domain Hijacking due to custom repositories using abandoned
+	    domains
+
+	    Sonatype has analyzed which domains were abandoned and has claimed these
+	    domains.</li>
+	    <li>Possible hijacking of downloads by redirecting to custom repositories
+
+	    This one was the hardest to analyze and explain. The short story is:
+	    you're safe, dependencies are only downloaded from repositories within
+	    their context. So there are two main questions: what is the context and
+	    what is the order? The order is described on the Repository Order page.
+	    The first group of repositories are defined in the settings.xml (both user
+	    and global). The second group of repositories are based on inheritence,
+	    with ultimately the super POM containing the URL to Maven Central. The
+	    third group is the most complex one but is important to understand the
+	    term context: repositories from the effective POMs from the dependency
+	    path to the artifact. So if a dependency was defined by another dependency
+	    or by a Maven project, it will also include their repositories. In the end
+	    this is not a bug, but a design feature.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://maven.apache.org/docs/3.8.1/release-notes.html#cve-2021-26291</url>
+	<cvename>CVE-2021-26291</cvename>
+	<cvename>CVE-2020-13956</cvename>
+    </references>
+    <dates>
+      <discovery>2021-04-04</discovery>
+      <entry>2021-04-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="093a6baf-9f99-11eb-b150-000c292ee6b8">
     <topic>Consul -- Multiple vulnerabilities</topic>
     <affects>
