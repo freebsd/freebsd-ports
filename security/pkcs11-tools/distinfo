@@ -1,0 +1,7 @@
+TIMESTAMP = 1618241897
+SHA256 (Mastercard-pkcs11-tools-v2.3.0_GH0.tar.gz) = a5a54b7e0cb4d2f94410e5de3246b3eed8db6c24561bc1e67672cc14017f3246
+SIZE (Mastercard-pkcs11-tools-v2.3.0_GH0.tar.gz) = 227365
+SHA256 (coreutils-gnulib-5b3a6f94f_GH0.tar.gz) = 93ab4c723fc482a531dc55a28c9da5d7907a3402bcef4e99f4d8168415ae3a71
+SIZE (coreutils-gnulib-5b3a6f94f_GH0.tar.gz) = 7293249
+SHA256 (oasis-tcs-pkcs11-df530bf_GH0.tar.gz) = a1e9203c463fe1187d89d2f29b5453f9bda84c55f31a91c12638d113fc2214cb
+SIZE (oasis-tcs-pkcs11-df530bf_GH0.tar.gz) = 119448

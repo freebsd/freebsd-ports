@@ -803,6 +803,7 @@
     SUBDIR += pkcs11-dump
     SUBDIR += pkcs11-gateway
     SUBDIR += pkcs11-helper
+    SUBDIR += pkcs11-tools
     SUBDIR += pkesh
     SUBDIR += pks
     SUBDIR += pktsuckers

@@ -1,0 +1,56 @@
+--- configure.ac.orig	2021-04-12 12:06:48 UTC
++++ configure.ac
+@@ -75,24 +75,24 @@ PKG_PROG_PKG_CONFIG
+ dnl for libcrypto, we are first detecting libcrypo11,
+ dnl as older distros may still run on top of openssl 1.0,
+ dnl but have v1.1.x accessible through libcrypto11.pc file
+-PKG_CHECK_MODULES([LIBCRYPTO],
+-	          [libcrypto11 >= 1.1.1e],
+-		  [ ac_save_CPPFLAGS=$CPPFLAGS
+-		    CPPFLAGS="${CPPFLAGS} ${LIBCRYPTO_CFLAGS}"
+-		    AC_CHECK_DECLS([OPENSSL_NO_RSA, OPENSSL_NO_DSA, OPENSSL_NO_DH, OPENSSL_NO_EC],
+-		                  [AC_MSG_FAILURE([The OpenSSL crypto library is missing features/algorithm to allow compilation])],
+-    				  [],
+-				  [[ #include <openssl/opensslconf.h> ]])
+-		    CPPFLAGS=${ac_save_CPPFLAGS} ],
+-		    [ PKG_CHECK_MODULES([LIBCRYPTO],
+-					[libcrypto >= 1.1.1e],
+-				    	[ ac_save_CPPFLAGS=$CPPFLAGS
+-				      	  CPPFLAGS="${CPPFLAGS} ${LIBCRYPTO_CFLAGS}"
+-				      	  AC_CHECK_DECLS([OPENSSL_NO_RSA, OPENSSL_NO_DSA, OPENSSL_NO_DH, OPENSSL_NO_EC],
+-		                      	  	     	 [AC_MSG_FAILURE([The OpenSSL crypto library is missing features/algorithm to allow compilation])],
+-						     	 [],
+-						     	 [[ #include <openssl/opensslconf.h> ]])
+-					  CPPFLAGS=${ac_save_CPPFLAGS} ])])
++#PKG_CHECK_MODULES([LIBCRYPTO],
++#	          [libcrypto11 >= 1.1.1e],
++#		  [ ac_save_CPPFLAGS=$CPPFLAGS
++#		    CPPFLAGS="${CPPFLAGS} ${LIBCRYPTO_CFLAGS}"
++#		    AC_CHECK_DECLS([OPENSSL_NO_RSA, OPENSSL_NO_DSA, OPENSSL_NO_DH, OPENSSL_NO_EC],
++#		                  [AC_MSG_FAILURE([The OpenSSL crypto library is missing features/algorithm to allow compilation])],
++#    				  [],
++#				  [[ #include <openssl/opensslconf.h> ]])
++#		    CPPFLAGS=${ac_save_CPPFLAGS} ],
++#		    [ PKG_CHECK_MODULES([LIBCRYPTO],
++#					[libcrypto >= 1.1.1e],
++#				    	[ ac_save_CPPFLAGS=$CPPFLAGS
++#				      	  CPPFLAGS="${CPPFLAGS} ${LIBCRYPTO_CFLAGS}"
++#				      	  AC_CHECK_DECLS([OPENSSL_NO_RSA, OPENSSL_NO_DSA, OPENSSL_NO_DH, OPENSSL_NO_EC],
++#		                      	  	     	 [AC_MSG_FAILURE([The OpenSSL crypto library is missing features/algorithm to allow compilation])],
++#						     	 [],
++#						     	 [[ #include <openssl/opensslconf.h> ]])
++#					  CPPFLAGS=${ac_save_CPPFLAGS} ])])
+ 
+ dnl on UNIX platforms, check for dynamic loader lib
+ AM_COND_IF( [TARGET_OS_MINGW32],
+@@ -152,8 +152,8 @@ AS_IF([test "x$with_luna" != xno],
+ 
+ dnl check if a specific rpath is provided when linking.
+ dnl this option is needed when openssl is not deployed to a system-wide location
+-AC_ARG_VAR([LIBCRYPTO_RPATH], 	[provide RPATH to LIBCRYPTO, e.g. LIBCRYPTO_RPATH=/usr/local/ssl/lib (useful when openssl is not deployed to a system-wide location)])
+-AM_CONDITIONAL([HAS_LIBCRYPTO_RPATH], [test "x$LIBCRYPTO_RPATH" != "x"])
++#AC_ARG_VAR([LIBCRYPTO_RPATH], 	[provide RPATH to LIBCRYPTO, e.g. LIBCRYPTO_RPATH=/usr/local/ssl/lib (useful when openssl is not deployed to a system-wide location)])
++AM_CONDITIONAL([HAS_LIBCRYPTO_RPATH], [test "xx" != "x"])
+ 
+ 
+ #### TODO HERE
