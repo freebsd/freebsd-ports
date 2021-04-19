@@ -1,5 +1,6 @@
 PORTNAME=	quiche
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	junho.choi@gmail.com
@@ -7,8 +8,6 @@ COMMENT=	Savoury implementation of the QUIC transport protocol and HTTP/3
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BUILD_DEPENDS=	${LOCALBASE}/include/laz-perf/las.hpp:archivers/lazperf
 
 USES=		cargo
 USE_GITHUB=	yes
