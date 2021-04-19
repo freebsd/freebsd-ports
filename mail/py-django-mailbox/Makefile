@@ -8,7 +8,6 @@ MAINTAINER=	gettoknowmi@yahoo.com
 COMMENT=	Easily ingest messages from POP3, IMAP, or local mailboxes
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.6.1:devel/py-six@${PY_FLAVOR}
 
