@@ -224,11 +224,11 @@ _CARGO_GIT_PATCH_CARGOTOML=
 .  for _group in ${GH_TUPLE:C@^[^:]*:[^:]*:[^:]*:(([^:/]*)?)((/.*)?)@\2@}
 .    if empty(CARGO_GIT_SUBDIR:M${_group}\:*)
 _CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
-	-e "s@git = ['\"](https|http|git)://github.com/${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}(\.git)?/?[\"']@path = \"${WRKSRC_${_group}}\"@"
+	-e "s@git *= *['\"](https|http|git)://github.com/${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}(\.git)?/?[\"']@path = \"${WRKSRC_${_group}}\"@"
 .    else
 .      for _group2 _crate _subdir in ${CARGO_GIT_SUBDIR:M${_group}\:*:S,:, ,g}
 _CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
-	-e "/^${_crate} =/ s@git = ['\"](https|http|git)://github.com/${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}(\.git)?/?[\"']@path = \"${WRKSRC_${_group}}/${_subdir}\"@"
+	-e "/^${_crate} =/ s@git *= *['\"](https|http|git)://github.com/${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}(\.git)?/?[\"']@path = \"${WRKSRC_${_group}}/${_subdir}\"@"
 .	endfor
 .    endif
 .  endfor
@@ -237,11 +237,11 @@ _CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
 .  for _group in ${GL_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\8@:S/^://}
 .    if empty(CARGO_GIT_SUBDIR:M${_group}\:*)
 _CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
-	-e "s@git = ['\"]${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}(\.git)?/?['\"]@path = \"${WRKSRC_${_group}}\"@"
+	-e "s@git *= *['\"]${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}(\.git)?/?['\"]@path = \"${WRKSRC_${_group}}\"@"
 .    else
 .      for _group2 _crate _subdir in ${CARGO_GIT_SUBDIR:M${_group}\:*:S,:, ,g}
 _CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
-	-e "/^${_crate} = / s@git = ['\"]${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}(\.git)?/?['\"]@path = \"${WRKSRC_${_group}}/${_subdir}\"@"
+	-e "/^${_crate} = / s@git *= *['\"]${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}(\.git)?/?['\"]@path = \"${WRKSRC_${_group}}/${_subdir}\"@"
 .      endfor
 .    endif
 .  endfor
