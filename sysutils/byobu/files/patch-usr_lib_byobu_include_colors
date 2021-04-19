@@ -1,0 +1,20 @@
+--- usr/lib/byobu/include/colors.orig	2021-04-18 17:01:25 UTC
++++ usr/lib/byobu/include/colors
+@@ -22,13 +22,13 @@
+ # Inspired by http://design.ubuntu.com/brand/colour-palette
+ 
+ # Cool grey
+-export BYOBU_DARK="\#333333"
++export BYOBU_DARK="#333333"
+ 
+ # Warm white
+-export BYOBU_LIGHT="\#EEEEEE"
++export BYOBU_LIGHT="#EEEEEE"
+ 
+ # Aubergine
+-export BYOBU_ACCENT="\#75507B"
++export BYOBU_ACCENT="#75507B"
+ 
+ # Ubuntu orange
+-export BYOBU_HIGHLIGHT="\#DD4814"
++export BYOBU_HIGHLIGHT="#DD4814"
