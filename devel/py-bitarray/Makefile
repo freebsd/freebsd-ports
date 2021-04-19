@@ -1,7 +1,7 @@
 # Created by: Sofian Brabez <sbrabez@gmail.com>
 
 PORTNAME=	bitarray
-PORTVERSION=	1.9.2
+PORTVERSION=	2.0.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		python:3.6+
 
 USE_GITHUB=	yes
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 GH_ACCOUNT=	ilanschnell
 GH_PROJECT=	bitarray
@@ -26,6 +26,10 @@ PORTDOCS=	CHANGE_LOG README.rst TODO changelog.rst
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/bitarray/_bitarray.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/bitarray/_util.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
