@@ -1,4 +1,4 @@
---- setup.py.orig	2020-03-16 15:55:20 UTC
+--- setup.py.orig	2021-04-19 05:24:42 UTC
 +++ setup.py
 @@ -39,10 +39,6 @@ else:
          cf.add_section('install')
@@ -16,7 +16,7 @@
  storage_dirs = []
  
 -for subdir in ('whisper/dummy.txt', 'ceres/dummy.txt', 'rrd/dummy.txt', 'log/dummy.txt', 'log/webapp/dummy.txt'):
--  storage_dirs.append( ('storage/%s' % subdir, []) )
+-    storage_dirs.append( ('storage/%s' % subdir, []) )
 +for subdir in ('whisper', 'ceres', 'rrd', 'log', 'log/webapp'):
 +  storage_dirs.append( ('graphite/storage/%s' % subdir, []) )
  
@@ -24,9 +24,9 @@
  
 -for root, dirs, files in os.walk('webapp/content'):
 +for root, dirs, files in os.walk('graphite/webapp/content'):
-   for filename in files:
-     filepath = os.path.join(root, filename)
-     webapp_content[root].append(filepath)
+     for filename in files:
+         filepath = os.path.join(root, filename)
+         webapp_content[root].append(filepath)
  
 -conf_files = [ ('conf', glob('conf/*.example')) ]
 +conf_files = [ ('%%PREFIX%%/etc/graphite', glob('conf/*.example')) ]
