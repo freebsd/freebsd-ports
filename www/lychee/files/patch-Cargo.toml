@@ -1,9 +1,0 @@
---- Cargo.toml.orig	2021-01-09 01:06:05 UTC
-+++ Cargo.toml
-@@ -56,6 +56,3 @@ assert_cmd = "1.0.2"
- predicates = "1.0.6"
- uuid = { version = "0.8.1", features = ["v4"] }
- tempfile = "3.1.0"
--
--[features]
--vendored-openssl = ["openssl-sys/vendored"]
