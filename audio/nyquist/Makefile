@@ -10,6 +10,7 @@ COMMENT=	Language for sound synthesis and music composition (sound is broken) # 
 LICENSE=	BSD3CLAUSE
 
 USES=		cmake zip
+USE_CSTD=	c99
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
