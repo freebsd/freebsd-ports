@@ -1,6 +1,6 @@
-TIMESTAMP = 1618593374
-SHA256 (maxmind-geoipupdate-v4.7.0_GH0.tar.gz) = 5ce7dfd6ca99339dd8cb42ef5a2ba2070df8c4e5ae6b9bc1e9cbccca1fb94cf7
-SIZE (maxmind-geoipupdate-v4.7.0_GH0.tar.gz) = 33270
+TIMESTAMP = 1618859168
+SHA256 (maxmind-geoipupdate-v4.7.1_GH0.tar.gz) = e3176325f916571244562a2fec58e0c9ce624f84dbf946616921be8521cbfd94
+SIZE (maxmind-geoipupdate-v4.7.1_GH0.tar.gz) = 33334
 SHA256 (gofrs-flock-v0.8.0_GH0.tar.gz) = 64aa198aee88a6b560e2eb9a87794594e0b57c08a784dcb4bd8a0825b9ec5de6
 SIZE (gofrs-flock-v0.8.0_GH0.tar.gz) = 8978
 SHA256 (pkg-errors-v0.9.1_GH0.tar.gz) = 56bfd893023daa498508bfe161de1be83299fcf15376035e7df79cbd7d6fa608
