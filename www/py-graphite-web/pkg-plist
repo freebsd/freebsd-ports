@@ -575,8 +575,8 @@ bin/build-index.sh
 %%PYTHON_SITELIBDIR%%/graphite/render/__pycache__/glyph.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/graphite/render/__pycache__/grammar.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/graphite/render/__pycache__/grammar.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/graphite/render/__pycache__/grammar_unsafe.cpython-37.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/graphite/render/__pycache__/grammar_unsafe.cpython-37.pyc
+%%PYTHON_SITELIBDIR%%/graphite/render/__pycache__/grammar_unsafe.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/graphite/render/__pycache__/grammar_unsafe.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/graphite/render/__pycache__/hashing.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/graphite/render/__pycache__/hashing.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/graphite/render/__pycache__/urls.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
