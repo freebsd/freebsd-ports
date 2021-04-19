@@ -2,7 +2,7 @@
 
 PORTNAME=	sage
 PORTVERSION=	9.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	math
 MASTER_SITES=	https://mirrors.xmission.com/sage/src/		\
 		http://mirrors.xmission.com/sage/src/		\
@@ -500,6 +500,8 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|/var/lib/sage|/share/libdata/${PORTNAME}|'	\
 		${WRKSRC}/${f}
 .endfor
+	# Bug with py-docutils > 0.16
+	${RM} -r ${WRKSRC}/src/doc/hu
 	(cd ${WRKSRC} && ./bootstrap)
 	${MKDIR} ${BLDDIR}${PREFIX}/lib/pkgconfig	# Removed thereafter
 
