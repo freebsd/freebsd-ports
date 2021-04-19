@@ -481,6 +481,7 @@
     SUBDIR += heirloom
     SUBDIR += helm
     SUBDIR += helmfile
+    SUBDIR += herbe
     SUBDIR += hexpeek
     SUBDIR += hextools
     SUBDIR += hexyl

@@ -1,0 +1,13 @@
+herbe provides daemon-less notifications without D-Bus. It's meant to be
+minimal and lightweight.
+
+Some of its features are:
+
+- Under 200 lines of code
+- Doesn't run in the background, just displays the notification and exits
+- No external dependencies except Xlib and Xft
+- Configurable through config.h or Xresources
+- Actions support
+- Extensible through patches
+
+WWW: https://github.com/dudik/herbe
