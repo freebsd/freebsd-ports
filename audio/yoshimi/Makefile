@@ -25,7 +25,6 @@ GH_ACCOUNT=	Yoshimi
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 LDFLAGS+=		-Wl,--as-needed
-LDFLAGS+=		-largp # workaround for https://github.com/Yoshimi/yoshimi/issues/135
 
 INSTALLS_ICONS=	yes
 
