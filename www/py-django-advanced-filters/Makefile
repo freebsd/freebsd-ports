@@ -8,7 +8,6 @@ MAINTAINER=	gettoknowmi@yahoo.com
 COMMENT=	Django ModelAdmin mixin
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-braces>=1.14.0:www/py-django-braces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=3.6.5:devel/py-simplejson@${PY_FLAVOR}
