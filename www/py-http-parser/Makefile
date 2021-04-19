@@ -14,6 +14,6 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/http_parser/parser.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/http_parser/parser*.so
 
 .include <bsd.port.mk>
