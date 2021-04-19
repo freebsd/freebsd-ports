@@ -1,0 +1,52 @@
+commit 415d519e825a6b8b64d2ef5f9a8e9bf7a458d1d0 (HEAD -> master, origin/master, origin/HEAD)
+Author: Adriaan de Groot <groot@kde.org>
+Date:   Mon Apr 19 22:39:44 2021 +0200
+
+    Fix crash-on-exit on FreeBSD
+    
+    Scenario:
+    - start krusader
+    - close the application (alt-f4, or click the window-close button)
+    - SEGV, with this (edited) backtrace:
+      #0  KUrlNavigator::editor (this=0x80a562400)
+      #1  0x000000000031e20e in ListPanel::eventFilter (this=0x80c2309c0, watched=0x80a6980d0, e=0x7fffffffc278)
+      #6  0x00000008018c3c0c in QWidget::~QWidget() () from /usr/local/lib/qt5/libQt5Widgets.so.5
+      #7  0x0000000800a26c4e in KUrlComboBox::~KUrlComboBox (this=0x80a6980d0)
+      #11 0x00000008005de60b in KUrlNavigator::~KUrlNavigator (this=0x80a562400)
+      #13 0x000000000031d5a5 in ListPanel::~ListPanel (this=0x80c2309c0)
+    
+    Analysis:
+    - During the destructor, events are triggered, which hit the
+      event-filter function in the object that is undergoing destruction.
+      Since some of the objects referred to via pointer in the event-filter
+      are dead or being-destroyed, this is UB (so be glad it crashes!).
+    - This is very similar to the problem and backtrace in KIO commit
+      a8a2c08014484145a4bd2a541a1cbeb8be856bf1.
+    
+    Fix:
+    - Uninstall the event-filter before carrying on with destruction.
+    - While here, add an extra nullptr check for the combobox in
+      the event-filter.
+
+diff --git krusader/Panel/listpanel.cpp krusader/Panel/listpanel.cpp
+index 6f57c321..6a0914c6 100644
+--- krusader/Panel/listpanel.cpp
++++ krusader/Panel/listpanel.cpp
+@@ -380,6 +380,8 @@ ListPanel::ListPanel(QWidget *parent, AbstractPanelManager *manager, const KConf
+ 
+ ListPanel::~ListPanel()
+ {
++    view->widget()->removeEventFilter(this);
++    urlNavigator->editor()->removeEventFilter(this);
+     cancelProgress();
+     delete view;
+     view = nullptr;
+@@ -527,7 +529,7 @@ bool ListPanel::eventFilter(QObject * watched, QEvent * e)
+         }
+     }
+     // handle URL navigator key events
+-    else if(watched == urlNavigator->editor()) {
++    else if(urlNavigator && watched == urlNavigator->editor()) {
+         // override default shortcut for panel focus
+         if(e->type() == QEvent::ShortcutOverride) {
+             auto *ke = dynamic_cast<QKeyEvent *>(e);
