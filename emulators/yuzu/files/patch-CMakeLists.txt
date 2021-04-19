@@ -1,25 +1,26 @@
 yuzu (Qt) currently needs SDL for input
 
---- CMakeLists.txt.orig	2021-04-16 17:36:48 UTC
+--- CMakeLists.txt.orig	2021-04-19 21:30:36 UTC
 +++ CMakeLists.txt
-@@ -274,8 +274,12 @@ if (ENABLE_SDL2)
+@@ -273,9 +273,10 @@ if (ENABLE_SDL2)
+         add_library(SDL2 INTERFACE)
          target_link_libraries(SDL2 INTERFACE "${SDL2_LIBRARY}")
          target_include_directories(SDL2 INTERFACE "${SDL2_INCLUDE_DIR}")
-     else()
--        find_package(SDL2 REQUIRED)
-+        find_package(SDL2)
+-    else()
+-        find_package(SDL2 2.0.12)
+-
 +    endif()
 +endif()
- 
-+if(SDL2_FOUND)
-+    if(NOT YUZU_USE_BUNDLED_SDL2)
-         # Some installations don't set SDL2_LIBRARIES
-         if("${SDL2_LIBRARIES}" STREQUAL "")
-             message(WARNING "SDL2_LIBRARIES wasn't set, manually setting to SDL2::SDL2")
-@@ -286,8 +290,6 @@ if (ENABLE_SDL2)
-         add_library(SDL2 INTERFACE)
-         target_link_libraries(SDL2 INTERFACE "${SDL2_LIBRARIES}")
-     endif()
++if (NOT YUZU_USE_BUNDLED_SDL2)
++    find_package(SDL2 2.0.12)
+         if(SDL2_FOUND)
+             # Some installations don't set SDL2_LIBRARIES
+             if("${SDL2_LIBRARIES}" STREQUAL "")
+@@ -287,9 +288,6 @@ if (ENABLE_SDL2)
+             add_library(SDL2 INTERFACE)
+             target_link_libraries(SDL2 INTERFACE "${SDL2_LIBRARIES}")
+         endif()
+-    endif()
 -else()
 -    set(SDL2_FOUND NO)
  endif()
