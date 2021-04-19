@@ -2,7 +2,7 @@
 
 PORTNAME=	socket
 PORTVERSION=	1.2
-#PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	sysutils net
 MASTER_SITES=	https://wolfram.schneider.org/src/ LOCAL/wosch
 

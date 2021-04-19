@@ -1,6 +1,6 @@
 PORTNAME=	msp430-debug-stack
 PORTVERSION=	3.15.0.1
-#PORTREVISION=	0
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPDS/3_15_0_000/export/ \
 		http://www.ti.com/lit/ug/slau320ai/:doc1 \

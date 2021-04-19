@@ -2,7 +2,7 @@
 
 PORTNAME=	terminator
 PORTVERSION=	2.1.0
-#PORTREVISION=	0
+PORTREVISION=	0
 CATEGORIES=	x11 python
 MASTER_SITES=	https://github.com/gnome-terminator/terminator/archive/
 DISTNAME=	v${PORTVERSION}
