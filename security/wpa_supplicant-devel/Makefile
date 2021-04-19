@@ -9,8 +9,8 @@ COMMENT=	Supplicant (client) for WPA/802.1x protocols
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	hostap
-GH_TAGNAME=	f91680c15
-COMMIT_DATE=	2021.04.07
+GH_TAGNAME=	d961326f1
+COMMIT_DATE=	2021.04.13
 
 BROKEN_FreeBSD_11=	Does not support OpenSSL 1.0.2
 
