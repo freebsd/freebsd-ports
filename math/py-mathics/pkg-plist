@@ -138,7 +138,7 @@ bin/mathics
 %%PYTHON_SITELIBDIR%%/mathics/builtin/__pycache__/xmlformat.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathics/builtin/algebra.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/arithmetic.py
-%%PYTHON_SITELIBDIR%%/mathics/builtin/arithmetic.so
+%%PYTHON_SITELIBDIR%%/mathics/builtin/arithmetic%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/mathics/builtin/assignment.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/attributes.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/base.py
@@ -175,7 +175,7 @@ bin/mathics
 %%PYTHON_SITELIBDIR%%/mathics/builtin/files.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/functional.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/graphics.py
-%%PYTHON_SITELIBDIR%%/mathics/builtin/graphics.so
+%%PYTHON_SITELIBDIR%%/mathics/builtin/graphics%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/mathics/builtin/graphics3d.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/image.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/importexport.py
@@ -188,7 +188,7 @@ bin/mathics
 %%PYTHON_SITELIBDIR%%/mathics/builtin/manipulate.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/numbertheory.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/numeric.py
-%%PYTHON_SITELIBDIR%%/mathics/builtin/numeric.so
+%%PYTHON_SITELIBDIR%%/mathics/builtin/numeric%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/mathics/builtin/numpy_utils/__init__.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/numpy_utils/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathics/builtin/numpy_utils/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -201,7 +201,7 @@ bin/mathics
 %%PYTHON_SITELIBDIR%%/mathics/builtin/optimization.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/options.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/patterns.py
-%%PYTHON_SITELIBDIR%%/mathics/builtin/patterns.so
+%%PYTHON_SITELIBDIR%%/mathics/builtin/patterns%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/mathics/builtin/physchemdata.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/plot.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/pymimesniffer/__init__.py
@@ -250,9 +250,9 @@ bin/mathics
 %%PYTHON_SITELIBDIR%%/mathics/core/definitions.py
 %%PYTHON_SITELIBDIR%%/mathics/core/evaluation.py
 %%PYTHON_SITELIBDIR%%/mathics/core/expression.py
-%%PYTHON_SITELIBDIR%%/mathics/core/expression.so
+%%PYTHON_SITELIBDIR%%/mathics/core/expression%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/mathics/core/numbers.py
-%%PYTHON_SITELIBDIR%%/mathics/core/numbers.so
+%%PYTHON_SITELIBDIR%%/mathics/core/numbers%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/mathics/core/parser/__init__.py
 %%PYTHON_SITELIBDIR%%/mathics/core/parser/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathics/core/parser/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -275,9 +275,9 @@ bin/mathics
 %%PYTHON_SITELIBDIR%%/mathics/core/parser/parser.py
 %%PYTHON_SITELIBDIR%%/mathics/core/parser/util.py
 %%PYTHON_SITELIBDIR%%/mathics/core/pattern.py
-%%PYTHON_SITELIBDIR%%/mathics/core/pattern.so
+%%PYTHON_SITELIBDIR%%/mathics/core/pattern%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/mathics/core/rules.py
-%%PYTHON_SITELIBDIR%%/mathics/core/rules.so
+%%PYTHON_SITELIBDIR%%/mathics/core/rules%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/mathics/core/util.py
 %%PYTHON_SITELIBDIR%%/mathics/data/ExampleData/BloodToilTearsSweat.txt
 %%PYTHON_SITELIBDIR%%/mathics/data/ExampleData/Einstein.jpg
