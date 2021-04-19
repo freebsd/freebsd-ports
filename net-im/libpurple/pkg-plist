@@ -85,10 +85,6 @@ lib/purple-2/idle.a
 lib/purple-2/idle.so
 lib/purple-2/joinpart.a
 lib/purple-2/joinpart.so
-%%OSCAR%%lib/purple-2/libaim.a
-%%OSCAR%%lib/purple-2/libaim.so
-%%OSCAR%%lib/purple-2/libicq.a
-%%OSCAR%%lib/purple-2/libicq.so
 %%BONJOUR%%lib/purple-2/libbonjour.a
 %%BONJOUR%%lib/purple-2/libbonjour.so
 %%GG%%lib/purple-2/libgg.a
@@ -101,10 +97,6 @@ lib/purple-2/joinpart.so
 %%JABBER%%lib/purple-2/libjabber.so.0.0.0
 %%NOVELL%%lib/purple-2/libnovell.a
 %%NOVELL%%lib/purple-2/libnovell.so
-%%OSCAR%%lib/purple-2/liboscar.a
-%%OSCAR%%lib/purple-2/liboscar.so
-%%OSCAR%%lib/purple-2/liboscar.so.0
-%%OSCAR%%lib/purple-2/liboscar.so.0.0.0
 %%SILC%%lib/purple-2/libsilcpurple.a
 %%SILC%%lib/purple-2/libsilcpurple.so
 %%SAMETIME%%lib/purple-2/libsametime.a
@@ -144,11 +136,11 @@ lib/purple-2/statenotify.so
 %%DBUS%%lib/libpurple-client.a
 %%DBUS%%lib/libpurple-client.so
 %%DBUS%%lib/libpurple-client.so.0
-%%DBUS%%lib/libpurple-client.so.0.14.1
+%%DBUS%%lib/libpurple-client.so.0.14.3
 lib/libpurple.a
 lib/libpurple.so
 lib/libpurple.so.0
-lib/libpurple.so.0.14.1
+lib/libpurple.so.0.14.3
 libdata/pkgconfig/purple.pc
 %%CONSOLEUI%%man/man1/finch.1.gz
 %%GTKUI%%man/man1/pidgin.1.gz
