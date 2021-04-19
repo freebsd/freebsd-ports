@@ -1,5 +1,5 @@
 PORTNAME=	toil
-DISTVERSION=	5.2.0
+DISTVERSION=	5.3.0
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}addict>=2.2.1:devel/py-addict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}enlighten>=1.5.2:devel/py-enlighten@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=3.0.1:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2012:devel/py-pytz@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2:www/py-requests@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests>=2:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=5:devel/py-yaml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR}
 
