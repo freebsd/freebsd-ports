@@ -1,5 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2021-04-12
+DISTVERSION=	2021-04-19
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -38,7 +38,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		countme-2.0.4 \
 		cov-mark-1.1.0 \
 		crc32fast-1.2.1 \
-		crossbeam-channel-0.5.0 \
+		crossbeam-channel-0.5.1 \
 		crossbeam-deque-0.8.0 \
 		crossbeam-epoch-0.9.3 \
 		crossbeam-utils-0.8.3 \
@@ -91,7 +91,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		miniz_oxide-0.4.4 \
 		mio-0.7.11 \
 		miow-0.3.7 \
-		notify-5.0.0-pre.6 \
+		notify-5.0.0-pre.7 \
 		ntapi-0.3.6 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
