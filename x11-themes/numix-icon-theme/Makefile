@@ -2,7 +2,7 @@ PORTNAME=	numix-icon-theme
 PORTVERSION=	20.06.07
 CATEGORIES=	x11-themes
 
-MAINTAINER=	20.100@defert.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official base icon theme from the Numix Project
 
 LICENSE=	GPLv3+

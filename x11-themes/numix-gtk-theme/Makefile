@@ -5,7 +5,7 @@ PORTVERSION=	2.6.7
 PORTREVISION=	1
 CATEGORIES=	x11-themes xfce
 
-MAINTAINER=	20.100@defert.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk flat themes
 
 LICENSE=	GPLv3
