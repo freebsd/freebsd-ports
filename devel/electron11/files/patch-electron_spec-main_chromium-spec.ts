@@ -1,6 +1,6 @@
---- electron/spec-main/chromium-spec.ts.orig	2021-01-22 23:55:24 UTC
+--- electron/spec-main/chromium-spec.ts.orig	2021-04-13 20:38:27 UTC
 +++ electron/spec-main/chromium-spec.ts
-@@ -321,13 +321,13 @@ describe('command line switches', () => {
+@@ -392,13 +392,13 @@ describe('command line switches', () => {
      it('should not set an invalid locale', async () => testLocale('asdfkl', currentLocale));
  
      const lcAll = String(process.env.LC_ALL);
@@ -18,7 +18,7 @@
    });
  
    describe('--remote-debugging-pipe switch', () => {
-@@ -1384,10 +1384,10 @@ describe('font fallback', () => {
+@@ -1455,10 +1455,10 @@ describe('font fallback', () => {
      const fonts = await getRenderedFonts(html);
      expect(fonts).to.be.an('array');
      expect(fonts).to.have.length(1);

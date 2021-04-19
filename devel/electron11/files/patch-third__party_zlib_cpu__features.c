@@ -23,7 +23,7 @@
  #include <cpu-features.h>
  #elif defined(ARMV8_OS_LINUX)
  #include <asm/hwcap.h>
-@@ -65,7 +65,7 @@ int ZLIB_INTERNAL x86_cpu_enable_simd = 0;
+@@ -56,7 +65,7 @@ int ZLIB_INTERNAL x86_cpu_enable_simd = 0;
  static void _cpu_check_features(void);
  #endif
  

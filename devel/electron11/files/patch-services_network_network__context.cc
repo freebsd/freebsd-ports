@@ -1,15 +1,6 @@
---- services/network/network_context.cc.orig	2021-01-25 12:36:59 UTC
+--- services/network/network_context.cc.orig	2021-04-18 07:12:19 UTC
 +++ services/network/network_context.cc
-@@ -1962,7 +1962,7 @@ URLRequestContextOwner NetworkContext::MakeURLRequestC
-     temp_verifier = base::WrapUnique(cert_verifier_with_trust_anchors_);
- #endif  // defined(OS_CHROMEOS)
-     if (!temp_verifier) {
--#if !defined(OS_LINUX)
-+#if !defined(OS_LINUX) && !defined(OS_BSD)
-       temp_verifier = std::make_unique<net::MultiThreadedCertVerifier>(
-           net::CertVerifyProc::CreateSystemVerifyProc(std::move(cert_net_fetcher_)));
- #else
-@@ -2023,7 +2023,7 @@ URLRequestContextOwner NetworkContext::MakeURLRequestC
+@@ -2012,7 +2012,7 @@ URLRequestContextOwner NetworkContext::MakeURLRequestC
  
      net::CookieCryptoDelegate* crypto_delegate = nullptr;
      if (params_->enable_encrypted_cookies) {
