@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/freetype2/ft2build.h:print/freetype2
 
 USES=		localbase xorg
+USE_CSTD=	c99
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dudik
