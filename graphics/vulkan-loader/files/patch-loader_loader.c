@@ -1,11 +1,11 @@
---- loader/loader.c.orig	2020-11-23 16:19:03 UTC
+--- loader/loader.c.orig	2021-04-20 16:45:05 UTC
 +++ loader/loader.c
 @@ -253,7 +253,7 @@ void *loader_device_heap_realloc(const struct loader_d
  }
  
  // Environment variables
--#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__)
-+#if defined(__unix__) || defined(__APPLE__) || defined(__Fuchsia__)
+-#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__)
++#if defined(__unix__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__)
  
  static inline bool IsHighIntegrity() {
      return geteuid() != getuid() || getegid() != getgid();
