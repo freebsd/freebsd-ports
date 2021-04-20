@@ -23,8 +23,6 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dmlc
-xGH_TUPLE=	\
-		dmlc:rabit:f307ace:dmlc_rabit/../rabit
 
 WRKSRC_SUBDIR=	python-package
 
