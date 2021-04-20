@@ -23,7 +23,7 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 USES=		compiler:c11 gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo gtk30
-GH_ACCOUNT=	cyclopsian
+GH_ACCOUNT=	artizirk
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/network.cycles.${PORTNAME}.desktop \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg
