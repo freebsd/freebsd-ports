@@ -13,8 +13,6 @@ USE_QT=		concurrent core dbus gui network testlib widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS
-
 # Override shared library version
 KDE_APPLICATIONS_SHLIB_VER=${KDE_APPLICATIONS_VERSION}
 
