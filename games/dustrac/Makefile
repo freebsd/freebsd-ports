@@ -1,5 +1,5 @@
 PORTNAME=	dustrac
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -9,16 +9,19 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	juzzlin
 GH_PROJECT=	DustRacing2D
+GH_TAGNAME=	ae380b8  # includes crash fix
 
 USES=		compiler:c++11-lib cmake gl openal pkgconfig qt:5
 USE_GL=		gl glu
-USE_QT=		core gui opengl xml widgets testlib \
+USE_QT=		core gui opengl xml widgets testlib sql \
 		buildtools_build linguisttools_build qmake_build
 CMAKE_ARGS=	-DReleaseBuild=on \
+		-DSystemFonts=on \
 		-DDATA_PATH=${DATADIR} \
 		-DDOC_PATH=${DOCSDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -28,10 +31,7 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-STRIP_FILES=	bin/dustrac-game \
-		bin/dustrac-editor
-
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dustrac-*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dustrac-editor
 
 .include <bsd.port.mk>
