@@ -47,6 +47,7 @@ include/igc/cif/cif/os/lin/lin_library_handle.h
 include/igc/cif/cif/os/win/win_library_handle.cpp
 include/igc/cif/cif/os/win/win_library_handle.h
 include/igc/cif/readme.txt
+include/igc/common/StateSaveAreaHeader.h
 include/igc/igc.opencl.h
 include/igc/ocl_igc_interface/code_type.h
 include/igc/ocl_igc_interface/fcl_ocl_device_ctx.h

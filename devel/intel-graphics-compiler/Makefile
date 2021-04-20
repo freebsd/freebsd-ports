@@ -1,7 +1,12 @@
 PORTNAME=	intel-graphics-compiler
 DISTVERSIONPREFIX=	igc-
-DISTVERSION=	1.0.7041
+DISTVERSION=	1.0.8173
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	b7f29ee948b9.patch:-p1 # https://github.com/intel/intel-graphics-compiler/pull/189
+PATCHFILES+=	a69ee09275fe.patch:-p1 # https://github.com/intel/intel-graphics-compiler/pull/189
+PATCHFILES+=	12c4fbc2b511.patch:-p1 # https://github.com/intel/intel-graphics-compiler/pull/189
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Intel Graphics Compiler for OpenCL
@@ -18,7 +23,7 @@ USES=		bison cmake compiler:c++17-lang python:build
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	intel
-GH_TUPLE=	intel:vc-intrinsics:069ced1:vcintrin/../vc-intrinsics
+GH_TUPLE=	intel:vc-intrinsics:05d3f3d:vcintrin/../vc-intrinsics
 CMAKE_OFF=	INSTALL_SPIRVDLL
 CFLAGS+=	-Wno-macro-redefined # __fastcall
 PLIST_SUB=	ARCH_SUFX=${ARCH:S/i386/32/:S/amd//:S/x86_//}
@@ -32,6 +37,8 @@ post-patch:
 		${WRKSRC}/IGC/BiFModule/linux/CMakeLists.txt
 # devel/llvm* have different naming from upstream under PATH
 	@${REINPLACE_CMD} -e '/clang-\$$/s//clang$$/' \
+		-e '/llvm-\$$/s//llvm$$/' \
+		${WRKSRC}/IGC/cmake/igc_find_liblldELF.cmake \
 		${WRKSRC}/IGC/cmake/igc_find_opencl_clang.cmake
 # No need to abort on every benign warning enabled by default
 	@${REINPLACE_CMD} -e 's/"-Werror"//; /-Werror/d' \

@@ -184,9 +184,9 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
          if (!FCL_IGC_IS_FLAG_ENABLED(DumpToCurrentDir) && g_shaderOutputFolder == "" && !FCL_IGC_IS_FLAG_ENABLED(DumpToCustomDir))
          {
              bool needMkdir = true;
---- IGC/VectorCompiler/lib/GenXCodeGen/SPIRVWrapper.cpp.orig	2021-03-08 06:23:56 UTC
-+++ IGC/VectorCompiler/lib/GenXCodeGen/SPIRVWrapper.cpp
-@@ -48,7 +48,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+--- IGC/VectorCompiler/lib/Driver/SPIRVWrapper.cpp.orig	2021-04-20 09:14:00 UTC
++++ IGC/VectorCompiler/lib/Driver/SPIRVWrapper.cpp
+@@ -47,7 +47,7 @@ IN THE SOFTWARE.
  #include "llvm/Support/DynamicLibrary.h"
  #include "llvm/Support/Path.h"
  #include "llvm/Support/Process.h"
@@ -195,7 +195,7 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
  #include <dlfcn.h>
  #endif // __linux__
  #if defined(_WIN32)
-@@ -172,7 +172,7 @@ Expected<SpirvReadVerifyType *> getSpirvReadVerifyFunc
+@@ -171,7 +171,7 @@ Expected<SpirvReadVerifyType *> getSpirvReadVerifyFunc
    constexpr char *SpirvReadVerifyName = "spirv_read_verify_module";
  
    const std::string SpirvLibPath = findSpirvDLL();
@@ -204,9 +204,9 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
    // Hack to workaround cmoc crashes during loading of SPIRV library
    static auto DeepBindHack =
        dlopen(SpirvLibPath.c_str(), RTLD_NOW | RTLD_DEEPBIND);
---- IGC/common/LLVMWarningsPop.hpp.orig	2019-11-27 01:05:20 UTC
+--- IGC/common/LLVMWarningsPop.hpp.orig	2021-05-12 10:04:39 UTC
 +++ IGC/common/LLVMWarningsPop.hpp
-@@ -58,6 +58,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+@@ -41,6 +41,6 @@ SPDX-License-Identifier: MIT
  #   pragma  warning( pop )
  #endif
  
@@ -236,23 +236,23 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
      subFile + ".csv";
  #else
      std::string("c:\\Intel\\") + subFile + ".csv";
---- IGC/common/igc_regkeys.hpp.orig	2019-11-27 01:05:20 UTC
+--- IGC/common/igc_regkeys.hpp.orig	2021-07-18 10:00:28 UTC
 +++ IGC/common/igc_regkeys.hpp
-@@ -39,7 +39,7 @@ typedef char debugString[256];
+@@ -22,7 +22,7 @@ typedef char debugString[256];
  #define IGC_DEBUG_VARIABLES
  #endif
  
--#if defined( __linux__ )
-+#if !defined( __APPLE__ ) && !defined( _WIN32 )
+-#if defined(__linux__)
++#if !defined(__APPLE__) && !defined(_WIN32)
  #define IGC_DEBUG_VARIABLES
  #endif
  
-@@ -67,7 +67,7 @@ struct SRegKeyVariableMetaData
+@@ -52,7 +52,7 @@ struct SRegKeyVariableMetaData
      }
  };
  
--#if defined ( __linux__ ) && !defined( _DEBUG ) && !defined( _INTERNAL )
-+#if !defined ( _WIN32 ) && !defined( _DEBUG ) && !defined( _INTERNAL )
+-#if defined (__linux__) && !defined(_DEBUG) && !defined(_INTERNAL)
++#if !defined(_WIN32) && !defined(_DEBUG) && !defined(_INTERNAL)
  #define LINUX_RELEASE_MODE
  #endif
  
