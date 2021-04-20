@@ -1322,7 +1322,7 @@ Notes:
 	<name>openssh-portable</name>
 	<name>openssh-portable-hpn</name>
 	<name>openssh-portable-gssapi</name>
-	<range><ge>8.2p1,1</ge><lt>8.4p1,1_4</lt></range>
+	<range><ge>8.2p1,1</ge><lt>8.4p1_4,1</lt></range>
       </package>
     </affects>
     <description>
@@ -1358,6 +1358,7 @@ Notes:
     <dates>
       <discovery>2021-03-03</discovery>
       <entry>2021-03-13</entry>
+      <modified>2021-04-20</modified>
     </dates>
   </vuln>
 
