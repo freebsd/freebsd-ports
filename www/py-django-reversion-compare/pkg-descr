@@ -1,0 +1,4 @@
+An extension to django-reversion that provides a history compare view to compare
+two versions of a model which is under reversion.
+
+WWW: https://github.com/jedie/django-reversion-compare
