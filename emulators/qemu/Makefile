@@ -2,6 +2,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -19,7 +20,8 @@ LIB_DEPENDS?=	libnettle.so:security/nettle \
 		libfreetype.so:print/freetype2 \
 		libepoxy.so:graphics/libepoxy \
 		libpcre2-8.so:devel/pcre2 \
-		libzstd.so:archivers/zstd
+		libzstd.so:archivers/zstd \
+		libfdt.so:sysutils/dtc
 
 PATCHFILES+=	55765822804f.patch:-p1
 PATCHFILES+=	aa4d30f6618d.patch:-p1
@@ -112,6 +114,7 @@ X11_USES=	sdl
 X86_TARGETS_USE_OFF=	XORG=pixman,x11
 X86_TARGETS_USES_OFF=	xorg
 INSTALLS_ICONS=		yes
+X86_TARGETS_CONFIGURE_ON=	--target-list='i386-softmmu i386-bsd-user x86_64-softmmu x86_64-bsd-user'
 .endif
 
 PORTDOCS?=	docs index.html interop/.buildinfo interop/* qemu-ga-ref.html qemu-ga-ref.txt \
@@ -122,7 +125,7 @@ WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CFLAGS_amd64+=	-fPIC
 CONFIGURE_ARGS?=--localstatedir=/var \
-		--extra-ldflags=-L\"${LOCALBASE}/lib\" --disable-libssh \
+		--extra-ldflags=-L${LOCALBASE}/lib --disable-libssh \
 		--prefix=${PREFIX} --cc=${CC} --enable-netmap --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--python=${PYTHON_CMD} \
@@ -148,6 +151,12 @@ MAKE_ARGS+=	ARCH=ppc64
 
 .if ${ARCH} == "sparc64"
 CONFIGURE_ARGS+=	--sparc_cpu=v9
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300000
+PLIST_SUB+=	IVSHMEM=""
+.else
+PLIST_SUB+=	IVSHMEM="@comment "
 .endif
 
 PLIST_SUB+=	LINUXBOOT_DMA=""

@@ -1,4 +1,6 @@
-bin/elf2dmp
+%%CURL%%bin/elf2dmp
+%%IVSHMEM%%bin/ivshmem-client
+%%IVSHMEM%%bin/ivshmem-server
 bin/qemu-edid
 bin/qemu-ga
 bin/qemu-i386
@@ -30,7 +32,7 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-ppc64
 %%NO_X86_TARGETS%%bin/qemu-system-riscv32
 %%NO_X86_TARGETS%%bin/qemu-system-riscv64
-bin/qemu-system-rx
+%%NO_X86_TARGETS%%bin/qemu-system-rx
 %%NO_X86_TARGETS%%bin/qemu-system-s390x
 %%NO_X86_TARGETS%%bin/qemu-system-sh4
 %%NO_X86_TARGETS%%bin/qemu-system-sh4eb
