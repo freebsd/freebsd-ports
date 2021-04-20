@@ -76,6 +76,40 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="56ba4513-a1be-11eb-9072-d4c9ef517024">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql57-server</name>
+	<range><lt>5.7.34</lt></range>
+      </package>
+      <package>
+	<name>mysql80-server</name>
+	<range><lt>8.0.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpuapr2021.html">
+	  <p>This Critical Patch Update contains 49 new security patches for
+	    Oracle MySQL.  10 of these vulnerabilities may be remotely exploitable
+	    without authentication, i.e., may be exploited over a network without
+	    requiring user credentials.<br/>
+	    The highest CVSS v3.1 Base Score of vulnerabilities affecting Oracle
+	    MySQL is 9.8.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.oracle.com/security-alerts/cpuapr2021.html</url>
+    </references>
+    <dates>
+      <discovery>2021-04-20</discovery>
+      <entry>2021-04-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e87c2647-a188-11eb-8806-1c1b0d9ea7e6">
     <topic>All versions of Apache OpenOffice through 4.1.9 can open non-http(s) hyperlinks. If the link is specifically crafted this could lead to untrusted code execution.</topic>
     <affects>
