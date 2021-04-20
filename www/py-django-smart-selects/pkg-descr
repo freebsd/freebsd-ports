@@ -1,0 +1,5 @@
+This package allows you to quickly filter or group "chained" models
+by adding a custom foreign key or many to many field to your models
+This will use an AJAX query to load only the applicable chained objects.
+
+WWW: https://github.com/jazzband/django-smart-selects
