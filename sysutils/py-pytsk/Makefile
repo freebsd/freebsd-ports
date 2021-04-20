@@ -1,10 +1,10 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 
 PORTNAME=	pytsk
-PORTVERSION=	20200117
+PORTVERSION=	20210327
 CATEGORIES=	sysutils security devel python
-MASTER_SITES=	CHEESESHOP
-#		https://github.com/py4n6/pytsk/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/py4n6/pytsk/releases/download/${PORTVERSION}/ \
+		LOCAL/antoine
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}3-${PORTVERSION}
 
@@ -14,16 +14,11 @@ COMMENT=	Python bindings for the Sleuthkit
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libtalloc.so:devel/talloc \
-		libtsk.so:sysutils/sleuthkit
-
-USES=		python:3.5+
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
-post-extract:
-	${RM} ${WRKSRC}/pytsk3.c
-
-post-patch:
-	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/setup.py
+DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD} run_tests.py
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_TARGET=	# empty
 
 .include <bsd.port.mk>
