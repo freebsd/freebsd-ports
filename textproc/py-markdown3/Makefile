@@ -1,14 +1,12 @@
-# Created by: Graham Todd <gtodd@bellanet.org>
-
 PORTNAME=	markdown
-PORTVERSION=	2.6.11
-PORTREVISION=	1
+PORTVERSION=	3.3.4
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	3
 DISTNAME=	Markdown-${PORTVERSION}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Python implementation of Markdown
 
 LICENSE=	BSD3CLAUSE
