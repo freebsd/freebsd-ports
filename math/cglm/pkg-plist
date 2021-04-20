@@ -91,4 +91,4 @@ lib/cmake/cglm/cglmConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cglm/cglmConfig.cmake
 lib/libcglm.so
 lib/libcglm.so.0
-lib/libcglm.so.0.8.0
+lib/libcglm.so.0.8.1
