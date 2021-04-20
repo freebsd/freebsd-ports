@@ -1,7 +1,7 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 
 PORTNAME=	libbde
-DISTVERSION=	alpha-20200724
+DISTVERSION=	alpha-20210327
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libbde/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
