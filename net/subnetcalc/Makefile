@@ -1,7 +1,7 @@
 # Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
 
 PORTNAME=	subnetcalc
-PORTVERSION=	2.4.15
+PORTVERSION=	2.4.18
 CATEGORIES=	net
 MASTER_SITES=	https://www.uni-due.de/~be0001/subnetcalc/download/
 
