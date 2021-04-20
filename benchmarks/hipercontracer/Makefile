@@ -1,7 +1,7 @@
 # Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
 
 PORTNAME=	hipercontracer
-PORTVERSION=	1.4.8
+PORTVERSION=	1.5.0
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://www.uni-due.de/~be0001/hipercontracer/download/
 
