@@ -1,7 +1,7 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 
 PORTNAME=	dfvfs
-PORTVERSION=	20201219
+PORTVERSION=	20210213
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -30,6 +30,7 @@ RUN_DEPENDS=	libbde>=a:devel/libbde \
 		libvhdi>=e:devel/libvhdi \
 		libvmdk>=e:devel/libvmdk \
 		libvshadow>=0:devel/libvshadow \
+		libvsgpt>=e:devel/libvsgpt \
 		libvslvm>=e:devel/libvslvm \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dfdatetime>=0:security/py-dfdatetime@${PY_FLAVOR} \
