@@ -2,12 +2,15 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.14.3
+PORTREVISION?=	1
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
 
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT?=	Backend library for the Pidgin multi-protocol messaging client
+
+LICENSE=	GPL3
 
 USES+=		cpe gettext gmake gnome libtool localbase pathfix pkgconfig \
 		tar:bzip2
@@ -45,7 +48,7 @@ OPTIONS_RADIO_TLS=	NSS GNUTLS
 OPTIONS_GROUP_PROTOCOLS=BONJOUR GG SAMETIME SILC IRC JABBER \
 			NOVELL QQ SIMPLE ZEPHYR
 OPTIONS_DEFAULT=	BONJOUR DBUS NSS GSTREAMER VV IDN GG IRC JABBER \
-			NOVELL QQ SIMPLE ZEPHYR
+			NOVELL QQ SASL SIMPLE ZEPHYR
 BONJOUR_DESC=	mDNS support and Bonjour protocol
 GNUTLS_DESC=	Use GNUTLS for encryption support
 NSS_DESC=	Use Mozilla NSS for encryption support
@@ -179,6 +182,8 @@ PLIST_SUB+=		NSS="@comment "
 .if ${PORT_OPTIONS:MSASL}
 LIB_DEPENDS+=		libsasl2.so:security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-cyrus-sasl
+.else
+CONFIGURE_ARGS+=	--disable-cyrus-sasl
 .endif
 
 .if ${PORT_OPTIONS:MBONJOUR}
