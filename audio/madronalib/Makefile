@@ -22,8 +22,8 @@ CMAKE_ON=	LINUX_JACK
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64le
-CXXFLAGS+=	-DNO_WARN_X86_INTRINSICS
+.if ${ARCH:Mpowerpc64*}
+CXXFLAGS+=	-DNO_WARN_X86_INTRINSICS -maltivec -mvsx
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c++11-lib
