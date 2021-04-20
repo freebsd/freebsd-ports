@@ -8,6 +8,9 @@ COMMENT=	Tools for managing PKCS11 cryptographic tokens
 
 LICENSE=	APACHE20
 
+BROKEN_SSL=	libressl
+BROKEN_SSL_REASON_libressl=	error: use of undeclared identifier 'EVP_PKEY_X25519' (LibreSSL has no support for Edwards curves)
+
 BUILD_DEPENDS=	autoconf>0:devel/autoconf \
 		autoconf-archive>0:devel/autoconf-archive \
 		automake>0:devel/automake \
