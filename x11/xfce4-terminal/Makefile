@@ -2,7 +2,7 @@
 
 PORTNAME=	xfce4-terminal
 PORTVERSION=	0.8.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -22,7 +22,8 @@ USE_XORG=	ice sm x11
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-message
-CONFIGURE_ARGS=	--without-gnome-default-appsdir
+CONFIGURE_ARGS=	--without-gnome-default-appsdir \
+		--with-utempter
 
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
