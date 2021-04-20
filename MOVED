@@ -16290,3 +16290,4 @@ www/grafana4|www/grafana6|2021-04-17|Has expired: Upstream end of life
 www/grafana5|www/grafana6|2021-04-17|Has expired: Upstream end of life
 comms/py-lirc||2021-04-17|Has expired: No longer maintained and not compatible with Python 3
 x11-toolkits/qt5-gtkplatform||2021-04-17|Has expired: Archived upstream
+textproc/py-markdown3|textproc/py-markdown|2021-04-20|markdown3 confilicts with too many ports
