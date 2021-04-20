@@ -4314,6 +4314,7 @@
     SUBDIR += py-curio
     SUBDIR += py-cursive
     SUBDIR += py-curtsies
+    SUBDIR += py-cvss
     SUBDIR += py-cwcwidth
     SUBDIR += py-cxx
     SUBDIR += py-cycler
