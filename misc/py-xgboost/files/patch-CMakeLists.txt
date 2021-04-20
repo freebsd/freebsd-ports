@@ -17,27 +17,3 @@
  if (MSVC)
    target_compile_options(dmlc PRIVATE
                           -D_CRT_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_DEPRECATE)
-@@ -144,10 +144,10 @@ if (MSVC)
-                            -D_CRT_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_DEPRECATE)
-   endif (TARGET dmlc_unit_tests)
- endif (MSVC)
--if (ENABLE_ALL_WARNINGS)
--  target_compile_options(dmlc PRIVATE -Wall -Wextra)
--endif (ENABLE_ALL_WARNINGS)
--target_link_libraries(objxgboost PUBLIC dmlc)
-+#if (ENABLE_ALL_WARNINGS)
-+#  target_compile_options(dmlc PRIVATE -Wall -Wextra)
-+#endif (ENABLE_ALL_WARNINGS)
-+#target_link_libraries(objxgboost PUBLIC dmlc)
- 
- # rabit
- set(RABIT_BUILD_DMLC OFF)
-@@ -202,7 +202,7 @@
- 
- #-- Hide all C++ symbols
- if (HIDE_CXX_SYMBOLS)
--  foreach(target objxgboost xgboost dmlc rabit rabit_mock_static)
-+  foreach(target objxgboost xgboost rabit rabit_mock_static)
-     set_target_properties(${target} PROPERTIES CXX_VISIBILITY_PRESET hidden)
-   endforeach()
- endif (HIDE_CXX_SYMBOLS)
