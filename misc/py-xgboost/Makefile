@@ -33,7 +33,7 @@ NO_ARCH=	yes
 POST_PLIST=	fix-plist
 
 fix-plist: # https://github.com/dmlc/xgboost/issues/5705
-	@${REINPLACE_CMD} 's|.*libxgboost.so$$||' ${TMPPLIST}
+	@${REINPLACE_CMD} 's|.*libxgboost${PYTHON_EXT_SUFFIX}.so$$||' ${TMPPLIST}
 
 do-test: # tests fail w/out CUDA: https://github.com/dmlc/xgboost/issues/6881
 	@cd ${WRKSRC}/.. && ${PYTHON_CMD} -m pytest
