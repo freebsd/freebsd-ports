@@ -76,6 +76,37 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e358b470-b37d-4e47-bc8a-2cd9adbeb63c">
+    <topic>jenkins -- Denial of service vulnerability in bundled Jetty</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.286</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.277.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2021-04-20/">
+	  <h1>Description</h1>
+	  <h5>(High) JENKINS-65280 / CVE-2021-28165</h5>
+	  <p>Denial of service vulnerability in bundled Jetty</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.jenkins.io/security/advisory/2021-04-20/</url>
+    </references>
+    <dates>
+      <discovery>2021-04-20</discovery>
+      <entry>2021-04-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="56ba4513-a1be-11eb-9072-d4c9ef517024">
     <topic>MySQL -- Multiple vulnerabilities</topic>
     <affects>
