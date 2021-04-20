@@ -131,6 +131,7 @@ include/snort/network_inspectors/appid/tp_appid_types.h
 include/snort/network_inspectors/packet_tracer/packet_tracer.h
 include/snort/network_inspectors/reputation/reputation_common.h
 include/snort/network_inspectors/rna/rna_fingerprint.h
+include/snort/network_inspectors/rna/rna_fingerprint_smb.h
 include/snort/network_inspectors/rna/rna_fingerprint_tcp.h
 include/snort/network_inspectors/rna/rna_fingerprint_udp.h
 include/snort/network_inspectors/rna/rna_fingerprint_ua.h
@@ -187,6 +188,7 @@ include/snort/pub_sub/finalize_packet_event.h
 include/snort/pub_sub/http_events.h
 include/snort/pub_sub/opportunistic_tls_event.h
 include/snort/pub_sub/sip_events.h
+include/snort/pub_sub/smb_events.h
 include/snort/search_engines/search_common.h
 include/snort/search_engines/search_tool.h
 include/snort/sfip/sf_cidr.h
@@ -217,7 +219,6 @@ include/snort/utils/sflsq.h
 include/snort/utils/stats.h
 include/snort/utils/util.h
 include/snort/utils/util_cstring.h
-include/snort/utils/util_jsnorm.h
 include/snort/utils/util_unfold.h
 include/snort/utils/util_utf.h
 lib/snort/daqs/daq_file.so
@@ -250,6 +251,7 @@ libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/high_availability.txt
 %%PORTDOCS%%%%DOCSDIR%%/http_inspect.txt
 %%PORTDOCS%%%%DOCSDIR%%/http2_inspect.txt
+%%PORTDOCS%%%%DOCSDIR%%/iec104.txt
 %%PORTDOCS%%%%DOCSDIR%%/overview.txt
 %%PORTDOCS%%%%DOCSDIR%%/params.txt
 %%PORTDOCS%%%%DOCSDIR%%/perf_monitor.txt

@@ -1,7 +1,7 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 PORTNAME=	snort
-DISTVERSION=	3.1.1.0
+DISTVERSION=	3.1.3.0
 PORTEPOCH=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	3
@@ -11,6 +11,9 @@ COMMENT=	Lightweight network intrusion detection system
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_FreeBSD_11=	fails to detect flex from ports
+BROKEN_FreeBSD_12=	fails to detect flex from ports
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libdnet.so:net/libdnet \
@@ -44,14 +47,15 @@ TSC_DESC=		Use timestamp counter register clock (x86 only)
 ADDRESSSANITIZER_CMAKE_BOOL=	ENABLE_ADDRESS_SANITIZER
 DEBUG_CMAKE_BOOL=	ENABLE_COREFILES ENABLE_GDB
 DOCS_CMAKE_BOOL=	MAKE_HTML_DOC MAKE_PDF_DOC MAKE_TEXT_DOC
+FLATBUFFERS_LIB_DEPENDS=libflatbuffers.so:devel/flatbuffers
+HYPERSCAN_LIB_DEPENDS=	libhs.so:devel/hyperscan
+HYPERSCAN_PLIST_SUB=	HYPERSCAN=""
+HYPERSCAN_PLIST_SUB_OFF=HYPERSCAN="@comment "
 LARGEPCAP_CMAKE_BOOL=	ENABLE_LARGE_PCAP
 PIE_CMAKE_BOOL=		ENABLE_PIE
 STATICDAQ_CMAKE_BOOL=	ENABLE_STATIC_DAQ
 THREADSANITIZER_CMAKE_BOOL=	ENABLE_THREAD_SANITIZER
 TSC_CMAKE_BOOL=		ENABLE_TSC_CLOCK
-
-FLATBUFFERS_LIB_DEPENDS=libflatbuffers.so:devel/flatbuffers
-HYPERSCAN_LIB_DEPENDS=	libhs.so:devel/hyperscan
 
 CONFLICTS=	snort-2*
 
@@ -61,12 +65,6 @@ CONFLICTS=	snort-2*
 LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit-openresty
 .else
 LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
-.endif
-
-.if ${PORT_OPTIONS:MHYPERSCAN}
-PLIST_SUB+=	HYPERSCAN=""
-.else
-PLIST_SUB+=	HYPERSCAN="@comment "
 .endif
 
 post-patch:
