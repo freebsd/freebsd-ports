@@ -10,7 +10,7 @@ DISTNAME=	pidgin-${PORTVERSION}
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT?=	Backend library for the Pidgin multi-protocol messaging client
 
-LICENSE=	GPL3
+LICENSE=	GPLv3
 
 USES+=		cpe gettext gmake gnome libtool localbase pathfix pkgconfig \
 		tar:bzip2
