@@ -1,5 +1,5 @@
 PORTNAME=	gnupg
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -56,6 +56,14 @@ NLS_USES=		gettext
 SCDAEMON_CONFIGURE_ENABLE=	scdaemon
 
 WKS_SERVER_CONFIGURE_ENABLE=	wks-tools
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGNUTLS} && ${PORT_OPTIONS:MLDAP}
+PLIST_SUB+=	DIRMNGRLDAP=""
+.else
+PLIST_SUB+=	DIRMNGRLDAP="@comment "
+.endif
 
 # Touch the texinfo files to force makeinfo to run.  This fixes Linuxisms in
 # the paths in the man pages.

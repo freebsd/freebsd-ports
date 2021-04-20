@@ -1,12 +1,12 @@
 [
 { type: install
   message: <<EOM
-GnuPG, when run on hosts without IPv6 connectivity, may fail to connect to
-dual-stack hkp servers [1].  As a workaround, add
+When run on hosts without IPv6 connectivity, GnuPG may fail to connect to
+dual-stack hkp servers [1]. As a workaround, add:
 
 disable-ipv6
 
-to
+to:
 
 %%PREFIX%%/etc/dirmngr.conf
 
