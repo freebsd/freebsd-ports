@@ -8,7 +8,7 @@ MAINTAINER=	gettoknowmi@yahoo.com
 COMMENT=	MIME types are used in MIME-compliant communications
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${FILESDIR}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 

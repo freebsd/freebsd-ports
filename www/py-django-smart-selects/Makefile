@@ -7,8 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gatemken@cisco.com
 COMMENT= 	Quickly filter or group "chained" models
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${FILESDIR}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django22>0:www/py-django22@${PY_FLAVOR}
