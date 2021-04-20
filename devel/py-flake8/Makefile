@@ -1,7 +1,7 @@
 # Created by: William Grzybowski <william88@gmail.com>
 
 PORTNAME=	flake8
-PORTVERSION=	3.9.0
+PORTVERSION=	3.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
