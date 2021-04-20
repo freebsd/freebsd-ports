@@ -1,7 +1,7 @@
 # Created by: Leo Vandewoestijne <freebsd@dns.company>
 
 PORTNAME=		fstrm
-PORTVERSION=		0.6.0
+PORTVERSION=		0.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=		devel
 
