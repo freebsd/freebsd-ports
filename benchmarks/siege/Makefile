@@ -1,7 +1,7 @@
 # Created by: Mark Pulford <mark@kyne.com.au>
 
 PORTNAME=	siege
-PORTVERSION=	4.0.8
+PORTVERSION=	4.0.9
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://download.joedog.org/siege/ \
 		http://fossies.org/linux/www/
