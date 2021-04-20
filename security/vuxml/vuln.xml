@@ -76,6 +76,36 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e87c2647-a188-11eb-8806-1c1b0d9ea7e6">
+    <topic>All versions of Apache OpenOffice through 4.1.9 can open non-http(s) hyperlinks. If the link is specifically crafted this could lead to untrusted code execution.</topic>
+    <affects>
+      <package>
+       <name>apache-openoffice</name>
+       <range><lt>4.1.10</lt></range>
+      </package>
+      <package>
+       <name>apache-openoffice-devel</name>
+       <range><lt>4.2.1612022694,4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Openofffice project reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-30245">
+	  <p>The project received a report that all versions of Apache OpenOffice through 4.1.8 can open non-http(s) hyperlinks. The problem has existed since about 2006 and the issue is also in 4.1.9. If the link is specifically crafted this could lead to untrusted code execution. It is always best practice to be careful opening documents from unknown and unverified sources. The mitigation in Apache OpenOffice 4.1.10 (unreleased) assures that a security warning is displayed giving the user the option of continuing to open the hyperlink.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-30245</url>
+      <cvename>CVE-2021-30245</cvename>
+    </references>
+    <dates>
+      <discovery>2021-01-25</discovery>
+      <entry>2021-04-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="20006b5f-a0bc-11eb-8ae6-fc4dd43e2b6a">
     <topic>Apache Maven -- multiple vulnerabilities</topic>
     <affects>
