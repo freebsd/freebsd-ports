@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	yaze-ag
 DISTVERSION=	2.51.0-rc1
 CATEGORIES=	emulators

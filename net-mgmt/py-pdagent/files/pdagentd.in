@@ -1,9 +1,6 @@
 #!/bin/sh
 #
 # Author: Mark Felder <feld@FreeBSD.org>
-#
-# $FreeBSD: head/net-mgmt/py-pdagent/files/pdagentd.in 466572 2018-04-05 17:11:39Z feld $
-#
 
 # PROVIDE: pdagentd
 # REQUIRE: LOGIN
