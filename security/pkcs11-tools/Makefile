@@ -8,7 +8,9 @@ COMMENT=	Tools for managing PKCS11 cryptographic tokens
 
 LICENSE=	APACHE20
 
-BROKEN_SSL=	libressl
+BROKEN_SSL_11=			base
+BROKEN_SSL_11_REASON_base=	OpenSSL version is too old, lacks symbols: error: use of undeclared identifier 'EVP_PKEY_X25519', etc.
+BROKEN_SSL=			libressl
 BROKEN_SSL_REASON_libressl=	error: use of undeclared identifier 'EVP_PKEY_X25519' (LibreSSL has no support for Edwards curves)
 
 BUILD_DEPENDS=	autoconf>0:devel/autoconf \
@@ -28,6 +30,7 @@ GNU_CONFIGURE=	yes
 
 MAKE_ENV=	LIBCRYPTO_RPATH=${OPENSSLBASE}/lib
 
+# workaround for Bug#255277:
 LDFLAGS+=	${OPENSSLBASE}/lib/libcrypto.a # -lcrypto # fails to find symbol in the shared library: ld: error: undefined symbol: EVP_PKEY_meth_get_digestsign
 
 INSTALL_TARGET=	install-strip
