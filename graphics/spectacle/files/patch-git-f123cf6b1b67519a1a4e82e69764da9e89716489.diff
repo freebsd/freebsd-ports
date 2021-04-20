@@ -1,0 +1,52 @@
+commit f123cf6b1b67519a1a4e82e69764da9e89716489
+Author: Adriaan de Groot <groot@kde.org>
+Date:   Tue Apr 20 14:28:33 2021 +0200
+
+    Fix crash in all(?) KIPI export plugins
+    
+    Scenario:
+    - start spectacle, take a screenshot, click *export* drop-down
+      and pick *imageshack* or *remote storage* (or most of the
+      others)
+    - spectacle crashes
+    
+    Valgrind:
+    ==60783== Invalid read of size 8
+    ==60783==    at 0x48A149A: KIPI::PluginLoader::interface() const (invent/libkipi/src/pluginloader.cpp:385)
+    ==60783==    by 0x14DB111A: KIPIRemoteStoragePlugin::Plugin_RemoteStorage::slotActivateExport() (invent/kipi-plugins/remotestorage/plugin_remotestorage.cpp:122)
+    ==60783==  Address 0xc6d28b0 is 16 bytes inside a block of size 24 free'd
+    ==60783==    at 0x484CBAC: operator delete(void*) (in /usr/local/lib/valgrind/vgpreload_memcheck-amd64-freebsd.so)
+    ==60783==    by 0x247CAB: ExportMenu::getKipiItems() (invent/spectacle/src/Gui/ExportMenu.cpp:164)
+diff --git src/Gui/ExportMenu.cpp src/Gui/ExportMenu.cpp
+index 66490dc..92eafa0 100644
+--- src/Gui/ExportMenu.cpp
++++ src/Gui/ExportMenu.cpp
+@@ -120,7 +120,19 @@ void ExportMenu::getKipiItems()
+     mKipiMenu->clear();
+ 
+     mKipiInterface = new KSGKipiInterface(this);
+-    KIPI::PluginLoader *loader = new KIPI::PluginLoader;
++    
++    KIPI::PluginLoader *loader = KIPI::PluginLoader::instance();
++    if (!loader)
++    {
++        // The loader needs to live at least as long as the plugins
++        // loaded through it, since the plugins use the loader's
++        // interface() call to get the KIPI interface they conform to.
++        //
++        // ASAN may complain about a leak here, because this loader
++        // pointer goes out of scope, but it is kept around in
++        // the PluginLoader's static instance()
++        loader = new KIPI::PluginLoader;
++    }
+ 
+     loader->setInterface(mKipiInterface);
+     loader->init();
+@@ -161,7 +173,6 @@ void ExportMenu::getKipiItems()
+     if (mKipiMenu->isEmpty()) {
+         mKipiMenu->addAction(i18n("No KIPI plugins available"))->setEnabled(false);
+     }
+-    delete loader;
+ }
+ #endif
+ 
