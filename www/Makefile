@@ -1468,8 +1468,8 @@
     SUBDIR += py-django-braces
     SUBDIR += py-django-bulk-update
     SUBDIR += py-django-cacheops
-    SUBDIR += py-django-classy-tags
     SUBDIR += py-django-ckeditor-5
+    SUBDIR += py-django-classy-tags
     SUBDIR += py-django-cms
     SUBDIR += py-django-common-helpers
     SUBDIR += py-django-compat
