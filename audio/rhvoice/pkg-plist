@@ -12,6 +12,7 @@ lib/libRHVoice_audio.so.2.0.0
 lib/libRHVoice_core.so
 lib/libRHVoice_core.so.4
 lib/libRHVoice_core.so.4.0.0
+lib/speech-dispatcher-modules/sd_rhvoice
 %%DATADIR%%/languages/Brazilian-Portuguese/downcase.fst
 %%DATADIR%%/languages/Brazilian-Portuguese/dur-mod.dt
 %%DATADIR%%/languages/Brazilian-Portuguese/emoji.fst
