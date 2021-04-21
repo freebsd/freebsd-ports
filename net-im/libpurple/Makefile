@@ -2,7 +2,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.14.3
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -202,12 +202,12 @@ CONFIGURE_ARGS+=	--disable-gtkspell
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-USES+=			python
+USES+=			python:3.5+
 LIB_DEPENDS+=		libdbus-glib-1.so:devel/dbus-glib
 .if !defined(PIDGIN_SLAVE)
 RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR}
 .endif
-CONFIGURE_ARGS+=	--enable-dbus --with-python=${PYTHON_CMD}
+CONFIGURE_ARGS+=	--enable-dbus --with-python3=${PYTHON_CMD}
 PLIST_SUB+=		DBUS=""
 .else
 CONFIGURE_ARGS+=	--disable-dbus
