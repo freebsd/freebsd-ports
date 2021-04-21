@@ -1,7 +1,7 @@
 # Created by: Matthias Andree <mandree@FreeBSD.org>
 
 PORTNAME=		openvpn
-DISTVERSION=		2.5.1
+DISTVERSION=		2.5.2
 PORTREVISION?=		0
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
@@ -34,11 +34,8 @@ SUB_FILES=		pkg-message openvpn-client
 PORTDOCS=		*
 PORTEXAMPLES=		*
 
-# avoid picking up CMAKE, we don't have cmocka in the tarballs.
-CONFIGURE_ENV+=		ac_cv_prog_CMAKE= CMAKE=
-
 OPTIONS_DEFINE=		PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME \
-			TEST LZ4 LZO SMALL TUNNELBLICK ASYNC_PUSH
+			TEST LZ4 LZO SMALL TUNNELBLICK ASYNC_PUSH UNITTESTS
 OPTIONS_DEFAULT=	EASYRSA OPENSSL TEST LZ4 LZO
 OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	OPENSSL MBEDTLS
@@ -48,6 +45,7 @@ MBEDTLS_DESC=		SSL/TLS via mbedTLS (lacks TLS v1.3)
 PKCS11_DESC=		Use security/pkcs11-helper (OpenSSL only)
 SMALL_DESC=		Build a smaller executable with fewer features
 TUNNELBLICK_DESC=	Tunnelblick XOR scramble patch (READ HELP!)
+UNITTESTS_DESC=		Enable unit tests
 X509ALTUSERNAME_DESC=	Enable --x509-username-field (OpenSSL only)
 
 ASYNC_PUSH_LIB_DEPENDS=	libinotify.so:devel/libinotify
@@ -78,6 +76,9 @@ TEST_ALL_TARGET=	check
 TEST_TEST_TARGET_OFF=	check
 
 TUNNELBLICK_EXTRA_PATCHES=	${FILESDIR}/extra-tunnelblick-openvpn_xorpatch:-p1
+
+UNITTESTS_BUILD_DEPENDS=	cmocka>=0:sysutils/cmocka
+UNITTESTS_CONFIGURE_ENABLE=	unit-tests
 
 X509ALTUSERNAME_PREVENTS=	MBEDTLS
 X509ALTUSERNAME_PREVENTS_MSG=	OpenVPN ${DISTVERSION} cannot use --x509-username-field with mbedTLS. Disable X509ALTUSERNAME, or use OpenSSL instead
