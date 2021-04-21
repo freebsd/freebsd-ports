@@ -8,8 +8,6 @@ COMMENT=	Tools for managing PKCS11 cryptographic tokens
 
 LICENSE=	APACHE20
 
-BROKEN_SSL_11=			base
-BROKEN_SSL_11_REASON_base=	OpenSSL version is too old, lacks symbols: error: use of undeclared identifier 'EVP_PKEY_X25519', etc.
 BROKEN_SSL=			libressl
 BROKEN_SSL_REASON_libressl=	error: use of undeclared identifier 'EVP_PKEY_X25519' (LibreSSL has no support for Edwards curves)
 
@@ -34,6 +32,12 @@ MAKE_ENV=	LIBCRYPTO_RPATH=${OPENSSLBASE}/lib
 LDFLAGS+=	${OPENSSLBASE}/lib/libcrypto.a # -lcrypto # fails to find symbol in the shared library: ld: error: undefined symbol: EVP_PKEY_meth_get_digestsign
 
 INSTALL_TARGET=	install-strip
+
+.include <bsd.port.options.mk>
+
+.if ${SSL_DEFAULT} == base && ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085
+BROKEN=	OpenSSL version is too old, lacks symbols: error: use of undeclared identifier 'EVP_PKEY_X25519', etc.
+.endif
 
 post-extract:
 	@${RMDIR} ${WRKSRC}/.gnulib ${WRKSRC}/include/oasis-pkcs11
