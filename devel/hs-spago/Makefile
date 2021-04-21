@@ -1,5 +1,6 @@
 PORTNAME=	spago
 DISTVERSION=	0.19.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/spacchetti/purescript-docs-search/releases/download/v${PURESCRIPT_DOCS_SEARCH_VERSION}/:docs_search_app \
 		https://github.com/spacchetti/purescript-docs-search/releases/download/v${PURESCRIPT_DOCS_SEARCH_VERSION}/:purescript_docs_search

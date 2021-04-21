@@ -1,6 +1,6 @@
 PORTNAME=	profiteur
 PORTVERSION=	0.4.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

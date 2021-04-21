@@ -1,6 +1,6 @@
 PORTNAME=	DAV
 PORTVERSION=	1.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -104,7 +104,6 @@ USE_CABAL=	StateVar-1.2 \
 		xml-hamlet-0.5.0.1 \
 		xml-types-0.3.7 \
 		zlib-0.6.2.1_1
-
 
 EXECUTABLES=	hdav
 
