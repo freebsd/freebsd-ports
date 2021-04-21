@@ -1,7 +1,7 @@
 # These variables are used in port makefiles to define the options for a port.
 #
-# OPTIONS_DEFINE		- List of options this ports accept
-# OPTIONS_DEFINE_${ARCH}	- List of options this ports accept and are
+# OPTIONS_DEFINE		- List of options this port accepts
+# OPTIONS_DEFINE_${ARCH}	- List of options this port accepts and are
 #				  specific to ${ARCH}
 # OPTIONS_DEFAULT		- List of options activated by default
 # OPTIONS_DEFAULT_${ARCH}	- List of options activated by default for a
