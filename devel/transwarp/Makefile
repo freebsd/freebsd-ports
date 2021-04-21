@@ -1,6 +1,5 @@
 PORTNAME=	transwarp
-DISTVERSION=	2.2.1-4
-DISTVERSIONSUFFIX=	-ge5ce19e
+DISTVERSION=	2.2.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,11 +18,9 @@ NO_ARCH=	yes
 
 PLIST_FILES=	include/transwarp.h
 
-do-install: # https://github.com/bloomen/transwarp/issues/32
-	${INSTALL_DATA} ${WRKSRC}/src/transwarp.h ${STAGEDIR}${PREFIX}/include
-
 do-test:
 	@cd ${BUILD_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -Dtranswarp_build_tests:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
