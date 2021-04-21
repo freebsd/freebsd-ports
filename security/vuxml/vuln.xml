@@ -76,6 +76,42 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="efb965be-a2c0-11eb-8956-1951a8617e30">
+    <topic>openvpn -- deferred authentication can be bypassed in specific circumstances</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><lt>2.5.2</lt></range>
+      </package>
+      <package>
+	<name>openvpn-mbedtls</name>
+	<range><lt>2.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gert Döring reports:</p>
+	<blockquote cite="https://community.openvpn.net/openvpn/wiki/CVE-2020-15078">
+	  <p>
+	    OpenVPN 2.5.1 and earlier versions allows a remote attackers to
+	    bypass authentication and access control channel data on servers
+	    configured with deferred authentication, which can be used to
+	    potentially trigger further information leaks.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://community.openvpn.net/openvpn/wiki/CVE-2020-15078</url>
+      <url>https://github.com/OpenVPN/openvpn/blob/release/2.5/Changes.rst#overview-of-changes-in-252</url>
+      <cvename>CVE-2020-15078</cvename>
+    </references>
+    <dates>
+      <discovery>2021-03-02</discovery>
+      <entry>2021-04-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cb13a765-a277-11eb-97a0-e09467587c17">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
