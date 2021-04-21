@@ -76,6 +76,35 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bc83cfc9-42cf-4b00-97ad-d352ba0c5e2b">
+    <topic>zeek -- null-pointer dereference vulnerability</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>4.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jon Siwek of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v4.0.1">
+	  <p>Fix null-pointer dereference when encountering an
+	  invalid enum name in a config/input file that tries to
+	  read it into a set[enum].  For those that have such an
+	  input feed whose contents may come from external/remote
+	  sources, this is a potential DoS vulnerability. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v4.0.1</url>
+    </references>
+    <dates>
+      <discovery>2021-04-01</discovery>
+      <entry>2021-04-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="efb965be-a2c0-11eb-8956-1951a8617e30">
     <topic>openvpn -- deferred authentication can be bypassed in specific circumstances</topic>
     <affects>
