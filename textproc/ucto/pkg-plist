@@ -3,8 +3,8 @@ include/ucto/my_textcat.h
 include/ucto/setting.h
 include/ucto/tokenize.h
 lib/libucto.so
-lib/libucto.so.3
-lib/libucto.so.%%GTK3_VERSION%%
+lib/libucto.so.5
+lib/libucto.so.5.0.0
 libdata/pkgconfig/ucto.pc
 man/man1/ucto.1.gz
 %%DATADIR%%/textcat.cfg
