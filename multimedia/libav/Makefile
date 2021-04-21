@@ -9,6 +9,9 @@ COMMENT=	Realtime audio/video conversion library
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Unmaintained upstream, use multimedia/ffmpeg instead
+EXPIRATION_DATE=2021-05-31
+
 BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ABS64 against local symbol in readonly segment
 BROKEN_armv6=		fails to compile: cc: warning: joined argument expects additional value: -mcpu=
 
