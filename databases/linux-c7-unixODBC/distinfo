@@ -1,0 +1,6 @@
+SHA256 (centos/unixODBC-2.3.1-14.el7.i686.rpm) = b77c1d3e9e0e2228529be1624ab63bf9f14a929bf2688735517366c00df96b87
+SIZE (centos/unixODBC-2.3.1-14.el7.i686.rpm) = 420992
+SHA256 (centos/unixODBC-2.3.1-14.el7.x86_64.rpm) = a54857e37a6c08567828ffd39c81be455019611b9675b1310a597b23e22e0e91
+SIZE (centos/unixODBC-2.3.1-14.el7.x86_64.rpm) = 423152
+SHA256 (centos/unixODBC-2.3.1-14.el7.src.rpm) = 57cf2f246f50a739d54f2476290d22bf9ab2f132315e9b2f55cf4f065bf496f8
+SIZE (centos/unixODBC-2.3.1-14.el7.src.rpm) = 1850776
