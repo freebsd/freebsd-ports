@@ -1,7 +1,6 @@
 PORTNAME=	ticcutils
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20
-PORTREVISION=	13
+DISTVERSION=	0.26
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,10 +17,11 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 USES=		autoreconf compiler:c++11-lib gmake gnome libtool localbase:ldflags pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
-USE_GITHUB=	yes
-GH_ACCOUNT=	LanguageMachines
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	LanguageMachines
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check

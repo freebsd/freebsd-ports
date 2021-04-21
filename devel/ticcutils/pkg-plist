@@ -18,10 +18,11 @@ include/ticcutils/Version.h
 include/ticcutils/XMLtools.h
 include/ticcutils/bz2stream.h
 include/ticcutils/gzstream.h
+include/ticcutils/json.hpp
 include/ticcutils/zipper.h
 lib/libticcutils.so
-lib/libticcutils.so.5
-lib/libticcutils.so.5.0.0
+lib/libticcutils.so.9
+lib/libticcutils.so.9.0.0
 libdata/pkgconfig/ticcutils.pc
 man/man1/ticc_commandline.1.gz
 man/man1/ticc_configuration.1.gz
