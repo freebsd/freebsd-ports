@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
-USES=		go:modules
+USES=		go:modules pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	augmentable-dev
 GH_TUPLE=	DATA-DOG:go-sqlmock:v1.5.0:data_dog_go_sqlmock/vendor/github.com/DATA-DOG/go-sqlmock \
