@@ -1,5 +1,6 @@
 PORTNAME=	kwallet
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
-		doctools ecm i18n iconthemes notifications service \
+		doctools_build ecm i18n iconthemes notifications service \
 		widgetsaddons windowsystem
 USE_QT=		buildtools_build core dbus gui qmake_build widgets xml
 
