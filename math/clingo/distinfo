@@ -1,7 +1,7 @@
-TIMESTAMP = 1607489618
-SHA256 (potassco-clingo-v5.4.1_GH0.tar.gz) = ac6606388abfe2482167ce8fd4eb0737ef6abeeb35a9d3ac3016c6f715bfee02
-SIZE (potassco-clingo-v5.4.1_GH0.tar.gz) = 2822845
-SHA256 (potassco-clasp-b089aa1509511ab403c0b9abd0d13eb9e873af44_GH0.tar.gz) = ab2ac6601292619f94831065ee5c009f3168e14be52a65df7b9abdc20a1fc33f
-SIZE (potassco-clasp-b089aa1509511ab403c0b9abd0d13eb9e873af44_GH0.tar.gz) = 627136
+TIMESTAMP = 1619035809
+SHA256 (potassco-clingo-v5.5.0_GH0.tar.gz) = c9d7004a0caec61b636ad1c1960fbf339ef8fdee9719321fc1b6b210613a8499
+SIZE (potassco-clingo-v5.5.0_GH0.tar.gz) = 3027366
+SHA256 (potassco-clasp-a8dfc0a_GH0.tar.gz) = f96cf2baf9522e7a69a58cfe20f41aecf59b9509129e0ee4f6cb674ca89bd358
+SIZE (potassco-clasp-a8dfc0a_GH0.tar.gz) = 627911
 SHA256 (potassco-libpotassco-2f9fb7ca2c202f1b47643aa414054f2f4f9c1821_GH0.tar.gz) = 41eb8b7d87ecea48392de4ada455cda179cbd62fd63496355dea87e1e44b599f
 SIZE (potassco-libpotassco-2f9fb7ca2c202f1b47643aa414054f2f4f9c1821_GH0.tar.gz) = 210177
