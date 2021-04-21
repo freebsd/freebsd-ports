@@ -76,6 +76,50 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cb13a765-a277-11eb-97a0-e09467587c17">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>90.0.4430.85</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Reelases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/04/stable-channel-update-for-desktop_20.html">
+	  <p>This release includes 7 security fixes, including:</p>
+	  <ul>
+	    <li>1194046] High CVE-2021-21222: Heap buffer overflow in V8.
+	     Reported by Guang Gong of Alpha Lab, Qihoo 360 on 2021-03-30</li>
+	    <li>[1195308] High CVE-2021-21223: Integer overflow in Mojo.
+	      Reported by Guang Gong of Alpha Lab, Qihoo 360 on 2021-04-02</li>
+	    <li>[1195777] High CVE-2021-21224: Type Confusion in V8. Reported
+	      by Jose Martinez (tr0y4) from VerSprite Inc. on 2021-04-05</li>
+	    <li>[1195977] High CVE-2021-21225: Out of bounds memory access in
+	      V8. Reported by Brendon Tiszka (@btiszka) supporting the EFF on
+	      2021-04-05</li>
+	    <li>[1197904] High CVE-2021-21226: Use after free in navigation.
+	      Reported by Brendon Tiszka (@btiszka) supporting the EFF on
+	      2021-04-11</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-21222</cvename>
+      <cvename>CVE-2021-21223</cvename>
+      <cvename>CVE-2021-21224</cvename>
+      <cvename>CVE-2021-21225</cvename>
+      <cvename>CVE-2021-21226</cvename>
+      <url>https://chromereleases.googleblog.com/2021/04/stable-channel-update-for-desktop_20.html</url>
+    </references>
+    <dates>
+      <discovery>2021-04-20</discovery>
+      <entry>2021-04-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e358b470-b37d-4e47-bc8a-2cd9adbeb63c">
     <topic>jenkins -- Denial of service vulnerability in bundled Jetty</topic>
     <affects>
