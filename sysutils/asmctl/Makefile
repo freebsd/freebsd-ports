@@ -1,7 +1,7 @@
 # Created by: Yuichiro NAITO <naito.yuichiro@gmail.com>
 
 PORTNAME=	asmctl
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	naito.yuichiro@gmail.com
