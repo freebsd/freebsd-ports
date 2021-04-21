@@ -1,5 +1,6 @@
 PORTNAME=	speech
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	accessibility
 PKGNAMEPREFIX=	qt5-
 
@@ -11,6 +12,7 @@ USES=		compiler:c++11-lang gl pkgconfig qmake:outsource,norecursive \
 USE_GL=		gl
 USE_QT=		core gui buildtools_build qmake_build
 
+OPTIONS_DEFINE=		ALSA
 OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	SPEECHD FLITE
 OPTIONS_DEFAULT=	SPEECHD
@@ -27,6 +29,11 @@ FLITE_DESC=		Festival Lite Backend
 FLITE_LIB_DEPENDS=	libflite.so:audio/flite
 FLITE_USE=		QT=multimedia,network
 FLITE_VARS=		QMAKE_CONFIGURE_ARGS+=--feature-flite
-FLITE_VARS_OFF=		QMAKE_CONFIGURE_ARGS+=--no-feature-flite
+FLITE_VARS_OFF=		QMAKE_CONFIGURE_ARGS+=--no-feature-flite --no-feature-flite_alsa
+
+ALSA_IMPLIES=		FLITE
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_VARS=		QMAKE_CONFIGURE_ARGS+=--feature-flite_alsa
+ALSA_VARS_OFF=		QMAKE_CONFIGURE_ARGS+=--no-feature-flite_alsa
 
 .include <bsd.port.mk>
