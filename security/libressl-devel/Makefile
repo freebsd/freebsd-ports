@@ -20,7 +20,7 @@ libtls_PLIST=	pkg-plist-libtls
 
 CPE_VENDOR=	openbsd
 
-OPTIONS_DEFINE=	MAN3 NC
+OPTIONS_DEFINE=	LIBTLS MAN3 NC
 OPTIONS_DEFAULT=	MAN3 NC
 LIBTLS_DESC=	Only install libtls (no libcrypto/libssl)
 MAN3_DESC=	Install API manpages (section 3)
