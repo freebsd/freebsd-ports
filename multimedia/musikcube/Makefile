@@ -34,10 +34,12 @@ GH_ACCOUNT=	clangen
 .if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1300079
 USES+=		ncurses
 CMAKE_ARGS=	-DNCURSES_DISABLE_LIB_SUFFIXES=false
+CMAKE_ON=	FREEBSD_USE_BASE_NCURSES
 .else
 USES+=		ncurses:port
 CFLAGS+=	-I${LOCALBASE}/include/ncurses
 CMAKE_ARGS=	-DNCURSES_DISABLE_LIB_SUFFIXES=true
+CMAKE_OFF=	FREEBSD_USE_BASE_NCURSES
 .endif
 
 .include <bsd.port.mk>
