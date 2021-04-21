@@ -1,5 +1,6 @@
 PORTNAME=	RHVoice
 DISTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +15,6 @@ BROKEN_FreeBSD_12_powerpc64=	fails to configure: The C++ compiler is not working
 
 USES=		compiler:c++0x pkgconfig scons
 USE_GITHUB=	yes
-GH_ACCOUNT=	Olga-Yakovleva
 USE_LDCONFIG=	yes
 
 OPTIONS_RADIO=			AUDIO
@@ -35,7 +35,12 @@ post-patch-PORTAUDIO-off:
 	@${REINPLACE_CMD} 's|conf.CheckPKG("portaudio-2.0")|False|' ${WRKSRC}/SConstruct
 
 post-install:
+	# create config file
 	${MV} ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
+	# strip binaries
 	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/RHVoice-test bin/sd_rhvoice lib/libRHVoice.so lib/libRHVoice_audio.so lib/libRHVoice_core.so
+	# install accessibility/speech-dispatcher module
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/speech-dispatcher-modules
+	${RLN} ${STAGEDIR}${PREFIX}/bin/sd_rhvoice ${STAGEDIR}${PREFIX}/lib/speech-dispatcher-modules
 
 .include <bsd.port.mk>
