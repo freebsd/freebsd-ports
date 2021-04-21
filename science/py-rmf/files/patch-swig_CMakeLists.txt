@@ -1,6 +1,6 @@
---- swig/CMakeLists.txt.orig	2018-06-15 00:56:51 UTC
+--- swig/CMakeLists.txt.orig	2021-04-19 19:25:22 UTC
 +++ swig/CMakeLists.txt
-@@ -59,7 +59,7 @@ set_target_properties("${SWIG_MODULE_RMF
+@@ -43,7 +43,7 @@ set_target_properties("${SWIG_MODULE_RMF_REAL_NAME}" P
  IF(WIN32)
    SWIG_LINK_LIBRARIES(RMF ${PYTHON_LIBRARIES} RMF-lib)
  ELSE(WIN32)
@@ -9,7 +9,7 @@
  ENDIF(WIN32)
  
  INSTALL(TARGETS ${SWIG_MODULE_RMF_REAL_NAME} DESTINATION ${CMAKE_INSTALL_PYTHONDIR})
-@@ -95,7 +95,7 @@ set_target_properties("${SWIG_MODULE_RMF
+@@ -79,7 +79,7 @@ set_target_properties("${SWIG_MODULE_RMF_HDF5_REAL_NAM
  set(RMF_SWIG _RMF CACHE INTERNAL "" FORCE)
  
  
@@ -18,7 +18,7 @@
  
  
  # Don't link in libpython (that prevents the extension from being used in
-@@ -104,7 +104,7 @@ INSTALL(FILES "RMF.i" ${SWIG_INCLUDES} D
+@@ -88,7 +88,7 @@ INSTALL(FILES "RMF.i" ${SWIG_INCLUDES} DESTINATION "${
  IF(WIN32)
    SWIG_LINK_LIBRARIES(RMF_HDF5 ${PYTHON_LIBRARIES} RMF-lib)
  ELSE(WIN32)
@@ -27,7 +27,7 @@
  ENDIF(WIN32)
  # Apple linkers complain by default if there are undefined symbols
  IF(APPLE)
-@@ -116,6 +116,6 @@ INSTALL(TARGETS ${SWIG_MODULE_RMF_HDF5_R
+@@ -100,6 +100,6 @@ INSTALL(TARGETS ${SWIG_MODULE_RMF_HDF5_REAL_NAME} DEST
  INSTALL(FILES "${CMAKE_BINARY_DIR}/lib/RMF_HDF5.py" DESTINATION ${CMAKE_INSTALL_PYTHONDIR})
  
  set(RMF_SWIG _RMF _RMF_HDF5 CACHE INTERNAL "" FORCE)
