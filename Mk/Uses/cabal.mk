@@ -189,14 +189,14 @@ do-install:
 	${INSTALL_PROGRAM} \
 		$$(find ${WRKSRC}/dist-newstyle -name ${exe} -type f -perm +111) \
 		${STAGEDIR}${PREFIX}/${CABAL_LIBEXEC}/${exe}
-	${ECHO} '#!/bin/sh' > ${STAGEDIR}${PREFIX}/bin/${exe}
-	${ECHO} '' >> ${STAGEDIR}${PREFIX}/bin/${exe}
-	${ECHO} 'export ${exe:S/-/_/}_datadir=${DATADIR}' >> ${STAGEDIR}${PREFIX}/bin/${exe}
+	${ECHO_CMD} '#!/bin/sh' > ${STAGEDIR}${PREFIX}/bin/${exe}
+	${ECHO_CMD} '' >> ${STAGEDIR}${PREFIX}/bin/${exe}
+	${ECHO_CMD} 'export ${exe:S/-/_/}_datadir=${DATADIR}' >> ${STAGEDIR}${PREFIX}/bin/${exe}
 .         for dep in ${${exe}_DATADIR_VARS}
-	${ECHO} 'export ${dep:S/-/_/}_datadir=${DATADIR}' >> ${STAGEDIR}${PREFIX}/bin/${exe}
+	${ECHO_CMD} 'export ${dep:S/-/_/}_datadir=${DATADIR}' >> ${STAGEDIR}${PREFIX}/bin/${exe}
 .         endfor
-	${ECHO} '' >> ${STAGEDIR}${PREFIX}/bin/${exe}
-	${ECHO} '${PREFIX}/${CABAL_LIBEXEC}/${exe} "$$@"' >> ${STAGEDIR}${PREFIX}/bin/${exe}
+	${ECHO_CMD} '' >> ${STAGEDIR}${PREFIX}/bin/${exe}
+	${ECHO_CMD} '${PREFIX}/${CABAL_LIBEXEC}/${exe} "$$@"' >> ${STAGEDIR}${PREFIX}/bin/${exe}
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${exe}
 .      endfor
 .    endif
