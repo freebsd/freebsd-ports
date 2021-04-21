@@ -1,6 +1,0 @@
-This a BSD-licensed version of the well-known sort utility that has been
-rewritten from scratch by Gabor Kovesdan <gabor@FreeBSD.org> and later
-developed by Oleg Moskalenko <oleg.moskalenko@citrix.com>.  This
-implementation is meant to be a replacement of GNU sort for FreeBSD.
-Currently, it seems to be quite feature-complete but performance needs
-some improvements.

@@ -16293,3 +16293,4 @@ x11-toolkits/qt5-gtkplatform||2021-04-17|Has expired: Archived upstream
 textproc/py-markdown3|textproc/py-markdown|2021-04-20|markdown3 confilicts with too many ports
 security/fbopenssl||2021-04-20|Unmaintained, abandoned, does not build with recent OS versions
 devel/gearmand-devel||2021-04-20|Unmaintained, abandoned, has not built for over half a year
+textproc/bsdsort||2021-04-21|Old version of sort(1)
