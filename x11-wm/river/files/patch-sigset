@@ -18,14 +18,14 @@ https://github.com/ziglang/zig/issues/5892
  
          const pid2 = std.os.fork() catch c._exit(1);
          if (pid2 == 0) std.os.execveZ("/bin/sh", &child_args, std.c.environ) catch c._exit(1);
---- river/main.zig.orig	2020-11-04 14:30:50 UTC
+--- river/main.zig.orig	2021-04-21 14:51:53 UTC
 +++ river/main.zig
-@@ -79,7 +79,7 @@ pub fn main() anyerror!void {
-         const child_args = [_:null]?[*:0]const u8{ "/bin/sh", "-c", cmd, null };
-         const pid = try std.os.fork();
+@@ -146,7 +146,7 @@ pub fn main() anyerror!void {
+         const pid = try os.fork();
          if (pid == 0) {
--            if (std.os.system.sigprocmask(std.os.SIG_SETMASK, &std.os.empty_sigset, null) < 0) unreachable;
-+            if (std.os.system.sigprocmask(std.os.SIG_SETMASK, &std.os.sigset_t{ .__bits = [_]u32{0} ** std.os._SIG_WORDS }, null) < 0) unreachable;
-             std.os.execveZ("/bin/sh", &child_args, std.c.environ) catch c._exit(1);
+             if (c.setsid() < 0) unreachable;
+-            if (os.system.sigprocmask(os.SIG_SETMASK, &os.empty_sigset, null) < 0) unreachable;
++            if (os.system.sigprocmask(os.SIG_SETMASK, &os.sigset_t{ .__bits = [_]u32{0} ** std.os._SIG_WORDS }, null) < 0) unreachable;
+             os.execveZ("/bin/sh", &child_args, std.c.environ) catch c._exit(1);
          }
-         break :blk pid;
+         util.gpa.free(cmd);
