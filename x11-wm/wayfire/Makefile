@@ -1,12 +1,7 @@
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
-PORTREVISION=	2
+DISTVERSION=	0.7.2
 CATEGORIES=	x11-wm
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	8d4e5ac0801a.patch:-p1 # https://github.com/WayfireWM/wayfire/pull/1152
-PATCHFILES+=	78e88c59373a.patch:-p1 # https://github.com/WayfireWM/wayfire/pull/1205
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	3D Wayland compositor
@@ -35,7 +30,7 @@ USE_GNOME=	cairo
 USE_XORG=	pixman
 GH_ACCOUNT=	WayfireWM
 GH_TUPLE=	WayfireWM:wf-touch:8974eb0:wftouch/subprojects/wf-touch \
-		WayfireWM:wf-utils:f45641b:wfutils/subprojects/wf-utils
+		WayfireWM:wf-utils:889fdaf:wfutils/subprojects/wf-utils
 
 OPTIONS_DEFINE=	SUID X11
 OPTIONS_DEFAULT=SUID X11
