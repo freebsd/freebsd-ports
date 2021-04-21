@@ -17,11 +17,16 @@
 # To simplify the ports, also:
 # CATEGORIES	If the port is part of one of the KDE Software distribution,
 #		it can add, in addition to 'kde' one of the following:
-#			kde-application:	part of applications release
+#			kde-applications:	part of applications release
 #			kde-frameworks:		part of frameworks release
 #			kde-plasma:		part of plasma release
 #		this will then set default values for MASTER_SITES and DIST_SUBDIR
 #		as well as CPE_VENDOR and LICENSE.
+#
+# option DOCS	If the port is part of kde-applications (see CATEGORIES,
+#		above) and has an option defined for DOCS then a dependency
+#		for doctools_build is added. The option itself doesn't
+#		have to do anything -- the dependency is always there.
 #
 # KDE_INVENT	If the port does not have a regular release, and should
 #		be fetched from KDE Invent (a GitLab instance) it can set
@@ -162,6 +167,7 @@ _KDE_OPTIONS=		bogus ${OPTIONS_DEFINE}
 .          if ${_KDE_OPTIONS:MDOCS}
 DOCSDIR=		${PREFIX}/share/doc
 PORTDOCS?=		HTML/*
+USE_KDE+=		doctools_build
 .          endif
 # Further pass along a SHLIB_VER PLIST_SUB
 PLIST_SUB+=		KDE_APPLICATIONS_SHLIB_VER=${KDE_APPLICATIONS_SHLIB_VER} \

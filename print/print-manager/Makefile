@@ -15,8 +15,6 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 USE_QT=		concurrent core dbus declarative gui network widgets xml \
 		buildtools_build qmake_build
 
-OPTIONS_DEFINE=	DOCS
-
 post-patch:
 	${REINPLACE_CMD} '/CUPS_DATADIR/s|/usr/share/cups|${LOCALBASE}/share/cups|' \
                ${PATCH_WRKSRC}/libkcups/KCupsRequest.cpp

@@ -21,6 +21,4 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DWITH_OpenMP:BOOL=False \
 		-DENABLE_RAWSPEED=True
 
-OPTIONS_DEFINE=	DOCS
-
 .include <bsd.port.mk>
