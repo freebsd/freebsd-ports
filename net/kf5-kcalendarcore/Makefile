@@ -1,6 +1,6 @@
 PORTNAME=	kcalendarcore
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net kde kde-frameworks
 
@@ -18,9 +18,5 @@ USE_QT=		core gui \
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
-
-OPTIONS_DEFINE=	DOCS
-
-CONFLICTS_INSTALL=	kcalcore-1*
 
 .include <bsd.port.mk>

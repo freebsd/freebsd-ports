@@ -1,5 +1,6 @@
 PORTNAME=	kdav
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net kde kde-frameworks
 
@@ -13,7 +14,5 @@ USE_QT=		concurrent core dbus gui network xml xmlpatterns \
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
