@@ -6,8 +6,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Wayland Server Components built on KDE Frameworks
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
+LIB_DEPENDS=	libwayland-server.so:graphics/wayland
 BUILD_DEPENDS=	plasma-wayland-protocols>=0:x11/plasma-wayland-protocols \
 		wayland-protocols>=1.14:graphics/wayland-protocols
 RUN_DEPENDS=	plasma-wayland-protocols>=0:x11/plasma-wayland-protocols

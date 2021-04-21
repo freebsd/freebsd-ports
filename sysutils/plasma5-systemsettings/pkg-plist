@@ -1,15 +1,8 @@
 bin/systemsettings5
-include/systemsettingsview/BaseData.h
-include/systemsettingsview/BaseMode.h
-include/systemsettingsview/MenuItem.h
-include/systemsettingsview/MenuModel.h
-include/systemsettingsview/MenuProxyModel.h
-include/systemsettingsview/ModuleView.h
-include/systemsettingsview/systemsettingsview_export.h
 lib/libsystemsettingsview.so
 lib/libsystemsettingsview.so.3
-%%QT_PLUGINDIR%%/icon_mode.so
-%%QT_PLUGINDIR%%/systemsettings_sidebar_mode.so
+%%QT_PLUGINDIR%%/systemsettingsview/icon_mode.so
+%%QT_PLUGINDIR%%/systemsettingsview/systemsettings_sidebar_mode.so
 share/applications/kdesystemsettings.desktop
 share/applications/systemsettings.desktop
 share/doc/HTML/ca/systemsettings/index.cache.bz2
@@ -24,8 +17,6 @@ share/doc/HTML/id/systemsettings/index.cache.bz2
 share/doc/HTML/id/systemsettings/index.docbook
 share/doc/HTML/it/systemsettings/index.cache.bz2
 share/doc/HTML/it/systemsettings/index.docbook
-share/doc/HTML/ko/systemsettings/index.cache.bz2
-share/doc/HTML/ko/systemsettings/index.docbook
 share/doc/HTML/nl/systemsettings/index.cache.bz2
 share/doc/HTML/nl/systemsettings/index.docbook
 share/doc/HTML/pt/systemsettings/index.cache.bz2
@@ -34,6 +25,8 @@ share/doc/HTML/pt_BR/systemsettings/index.cache.bz2
 share/doc/HTML/pt_BR/systemsettings/index.docbook
 share/doc/HTML/ru/systemsettings/index.cache.bz2
 share/doc/HTML/ru/systemsettings/index.docbook
+share/doc/HTML/sv/systemsettings/index.cache.bz2
+share/doc/HTML/sv/systemsettings/index.docbook
 share/doc/HTML/uk/systemsettings/index.cache.bz2
 share/doc/HTML/uk/systemsettings/index.docbook
 share/kglobalaccel/systemsettings.desktop
@@ -45,7 +38,6 @@ share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/SubCategory
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/introPage.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/main.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/metadata.desktop
-share/kservices5/settings-appearance-applicationstyle.desktop
 share/kservices5/settings-appearance-color.desktop
 share/kservices5/settings-appearance-font.desktop
 share/kservices5/settings-appearance-icons.desktop
@@ -57,7 +49,6 @@ share/kservices5/settings-hardware-peripherals.desktop
 share/kservices5/settings-hardware-powermanagement.desktop
 share/kservices5/settings-hardware-removable-storage.desktop
 share/kservices5/settings-hardware.desktop
-share/kservices5/settings-icon-view.desktop
 share/kservices5/settings-network-bluetooth.desktop
 share/kservices5/settings-network-connectivity.desktop
 share/kservices5/settings-network-networksettings.desktop
@@ -68,7 +59,7 @@ share/kservices5/settings-personalization-applications.desktop
 share/kservices5/settings-personalization-notification.desktop
 share/kservices5/settings-personalization-regionalsettings.desktop
 share/kservices5/settings-personalization.desktop
-share/kservices5/settings-sidebar-view.desktop
+share/kservices5/settings-root-category.desktop
 share/kservices5/settings-system-administration.desktop
 share/kservices5/settings-workspace-desktopbehavior.desktop
 share/kservices5/settings-workspace-search.desktop
@@ -81,6 +72,7 @@ share/kservicetypes5/systemsettingsexternalapp.desktop
 share/kservicetypes5/systemsettingsview.desktop
 share/kxmlgui5/systemsettings/systemsettingsui.rc
 share/locale/ar/LC_MESSAGES/systemsettings.mo
+share/locale/ast/LC_MESSAGES/systemsettings.mo
 share/locale/az/LC_MESSAGES/systemsettings.mo
 share/locale/be/LC_MESSAGES/systemsettings.mo
 share/locale/be@latin/LC_MESSAGES/systemsettings.mo

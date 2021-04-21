@@ -41,7 +41,7 @@ USE_KDE=	activities activities-stats activitymanagerd attica archive auth baloo 
 		kded_run milou_run
 USE_QT=		concurrent core declarative dbus graphicaleffects gui network phonon4 \
 		printsupport qdbus quickcontrols_run script svg sql \
-		testlib webkit widgets x11extras xml \
+		testlib wayland webkit widgets x11extras xml \
 		paths_run \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xau xcb xcomposite xcursor xext xfixes xft xkbfile xrender xtst

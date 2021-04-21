@@ -12,6 +12,7 @@ lib/libpowerdevilcore.so.2.0.0
 lib/libpowerdevilui.so
 lib/libpowerdevilui.so.5
 lib/libpowerdevilui.so.%%KDE_PLASMA_VERSION%%
+lib/systemd/user/plasma-powerdevil.service
 %%QT_PLUGINDIR%%/kcm_powerdevilactivitiesconfig.so
 %%QT_PLUGINDIR%%/kcm_powerdevilglobalconfig.so
 %%QT_PLUGINDIR%%/kcm_powerdevilprofilesconfig.so
@@ -58,6 +59,8 @@ share/doc/HTML/ru/kcontrol/powerdevil/advanced.png
 share/doc/HTML/ru/kcontrol/powerdevil/energy.png
 share/doc/HTML/ru/kcontrol/powerdevil/index.cache.bz2
 share/doc/HTML/ru/kcontrol/powerdevil/index.docbook
+share/doc/HTML/sv/kcontrol/powerdevil/index.cache.bz2
+share/doc/HTML/sv/kcontrol/powerdevil/index.docbook
 share/doc/HTML/uk/kcontrol/powerdevil/activity.png
 share/doc/HTML/uk/kcontrol/powerdevil/advanced.png
 share/doc/HTML/uk/kcontrol/powerdevil/energy.png
@@ -85,6 +88,11 @@ share/locale/ast/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/ast/LC_MESSAGES/powerdevil.mo
 share/locale/ast/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/ast/LC_MESSAGES/powerdevilprofilesconfig.mo
+share/locale/az/LC_MESSAGES/libpowerdevilcommonconfig.mo
+share/locale/az/LC_MESSAGES/powerdevil.mo
+share/locale/az/LC_MESSAGES/powerdevilactivitiesconfig.mo
+share/locale/az/LC_MESSAGES/powerdevilglobalconfig.mo
+share/locale/az/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/be@latin/LC_MESSAGES/powerdevil.mo
 share/locale/bg/LC_MESSAGES/powerdevil.mo
 share/locale/bg/LC_MESSAGES/powerdevilactivitiesconfig.mo

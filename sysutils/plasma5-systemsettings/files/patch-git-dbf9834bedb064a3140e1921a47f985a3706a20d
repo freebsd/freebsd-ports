@@ -1,0 +1,178 @@
+commit dbf9834bedb064a3140e1921a47f985a3706a20d
+Author: Nicolas Fella <nicolas.fella@gmx.de>
+Date:   Sun Mar 7 11:33:10 2021 +0100
+
+    Make systemsettingsview shared again
+    
+    2b61b00dd33f9363c39a8d93642187b8759b621c made it static but that causes
+    symbols to be loaded into the app twice, which is brittle.
+    
+    Partially reverts 2b61b00dd33f9363c39a8d93642187b8759b621c.
+    
+    BUG: 434045
+diff --git CMakeLists.txt CMakeLists.txt
+index d8237ccd..96d7d21a 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -13,6 +13,7 @@ include(KDEInstallDirs)
+ include(KDECMakeSettings)
+ include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
+ include(KDEClangFormat)
++include(GenerateExportHeader)
+ include(ECMQMLModules)
+ include(ECMQtDeclareLoggingCategory)
+ if(ECM_VERSION VERSION_GREATER_EQUAL 5.79)
+diff --git core/BaseData.h core/BaseData.h
+index 727ab3e1..13903bd9 100644
+--- core/BaseData.h
++++ core/BaseData.h
+@@ -22,6 +22,8 @@
+ 
+ #include <QObject>
+ 
++#include "systemsettingsview_export.h"
++
+ class QString;
+ class MenuItem;
+ class KConfigGroup;
+@@ -34,7 +36,7 @@ class KConfigGroup;
+  *
+  * @author Ben Cooksley <bcooksley@kde.org>
+  */
+-class BaseData : public QObject
++class SYSTEMSETTINGSVIEW_EXPORT BaseData : public QObject
+ {
+     Q_OBJECT
+     Q_DISABLE_COPY(BaseData)
+diff --git core/BaseMode.h core/BaseMode.h
+index 920b04d6..1c12af9a 100644
+--- core/BaseMode.h
++++ core/BaseMode.h
+@@ -24,6 +24,8 @@
+ 
+ #include <KPluginMetaData>
+ 
++#include "systemsettingsview_export.h"
++
+ class QAction;
+ class MenuItem;
+ class ModuleView;
+@@ -45,7 +47,7 @@ template<typename T> class QList;
+  * @author Ben Cooksley <bcooksley@kde.org>
+  * @author Mathias Soeken <msoeken@informatik.uni-bremen.de>
+  */
+-class Q_DECL_EXPORT BaseMode : public QObject
++class SYSTEMSETTINGSVIEW_EXPORT BaseMode : public QObject
+ {
+     Q_OBJECT
+ 
+diff --git core/CMakeLists.txt core/CMakeLists.txt
+index fd91ce00..8cb53827 100644
+--- core/CMakeLists.txt
++++ core/CMakeLists.txt
+@@ -10,7 +10,8 @@ set(systemsettingsview_LIB_SRCS
+ 
+ ki18n_wrap_ui( systemsettingsview_LIB_SRCS externalModule.ui )
+ 
+-add_library( systemsettingsview STATIC ${systemsettingsview_LIB_SRCS} )
++add_library( systemsettingsview ${systemsettingsview_LIB_SRCS} )
++generate_export_header(systemsettingsview)
+ 
+ target_link_libraries( systemsettingsview
+     KF5::ItemViews
+@@ -22,4 +23,7 @@ target_link_libraries( systemsettingsview
+     KF5::Activities
+  )
+ 
++set_target_properties( systemsettingsview PROPERTIES SOVERSION 3 )
++
++install( TARGETS systemsettingsview  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
+ install( FILES systemsettingsview.desktop systemsettingsexternalapp.desktop DESTINATION ${KDE_INSTALL_KSERVICETYPES5DIR} )
+diff --git core/MenuItem.h core/MenuItem.h
+index d1aa7624..9bcff52d 100644
+--- core/MenuItem.h
++++ core/MenuItem.h
+@@ -24,6 +24,8 @@
+ 
+ #include <KService>
+ 
++#include "systemsettingsview_export.h"
++
+ class QString;
+ class KCModuleInfo;
+ template<typename T> class QList;
+@@ -45,7 +47,7 @@ template<typename T> class QList;
+  * @author Ben Cooksley <bcooksley@kde.org>
+  * @author Will Stephenson <wstephenson@kde.org>
+  */
+-class MenuItem
++class SYSTEMSETTINGSVIEW_EXPORT MenuItem
+ {
+ public:
+     /**
+diff --git core/MenuModel.h core/MenuModel.h
+index d8b00a5e..a84b6abf 100644
+--- core/MenuModel.h
++++ core/MenuModel.h
+@@ -23,6 +23,8 @@
+ 
+ #include <QAbstractItemModel>
+ 
++#include "systemsettingsview_export.h"
++
+ class MenuItem;
+ 
+ /**
+@@ -35,7 +37,7 @@ class MenuItem;
+  * @author Ben Cooksley <bcooksley@kde.org>
+  * @author Will Stephenson <wstephenson@kde.org>
+  */
+-class MenuModel : public QAbstractItemModel
++class SYSTEMSETTINGSVIEW_EXPORT MenuModel : public QAbstractItemModel
+ {
+     Q_OBJECT
+ 
+diff --git core/MenuProxyModel.h core/MenuProxyModel.h
+index 6f867826..dbe0fca4 100644
+--- core/MenuProxyModel.h
++++ core/MenuProxyModel.h
+@@ -23,6 +23,8 @@
+ 
+ #include <KCategorizedSortFilterProxyModel>
+ 
++#include "systemsettingsview_export.h"
++
+ /**
+  * @brief Provides a filter model for MenuModel
+  *
+@@ -35,7 +37,7 @@
+  * @author Will Stephenson <wstephenson@kde.org>
+  * @author Ben Cooksley <bcooksley@kde.org>
+  */
+-class MenuProxyModel : public KCategorizedSortFilterProxyModel
++class SYSTEMSETTINGSVIEW_EXPORT MenuProxyModel : public KCategorizedSortFilterProxyModel
+ {
+     Q_OBJECT
+ 
+diff --git core/ModuleView.h core/ModuleView.h
+index a456cf5e..699b1135 100644
+--- core/ModuleView.h
++++ core/ModuleView.h
+@@ -25,6 +25,8 @@
+ #include <QModelIndex>
+ #include <QWidget>
+ 
++#include "systemsettingsview_export.h"
++
+ class KAboutData;
+ class KCModuleInfo;
+ class KCModuleProxy;
+@@ -46,7 +48,7 @@ class KPageWidgetItem;
+  * @author Mathias Soeken <msoeken@informatik.uni-bremen.de>
+  * @author Ben Cooksley <bcooksley@kde.org>
+  */
+-class ModuleView : public QWidget
++class SYSTEMSETTINGSVIEW_EXPORT ModuleView : public QWidget
+ {
+     Q_OBJECT
+ 

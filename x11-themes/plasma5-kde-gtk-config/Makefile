@@ -3,9 +3,6 @@ DISTVERSION=	${KDE_PLASMA_VERSION}
 PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-plasma
 
-PATCH_SITES=	https://invent.kde.org/plasma/kde-gtk-config/-/commit/
-PATCHFILES=	62e272df848d6848482ceb534d14bf36c9fde241.diff:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 GTK2 and GTK3 configurator
 

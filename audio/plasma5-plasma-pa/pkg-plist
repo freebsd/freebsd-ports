@@ -22,6 +22,8 @@ share/doc/HTML/pt_BR/kcontrol/plasma-pa/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/plasma-pa/index.docbook
 share/doc/HTML/ru/kcontrol/plasma-pa/index.cache.bz2
 share/doc/HTML/ru/kcontrol/plasma-pa/index.docbook
+share/doc/HTML/sv/kcontrol/plasma-pa/index.cache.bz2
+share/doc/HTML/sv/kcontrol/plasma-pa/index.docbook
 share/doc/HTML/uk/kcontrol/plasma-pa/index.cache.bz2
 share/doc/HTML/uk/kcontrol/plasma-pa/index.docbook
 share/kconf_update/disable_kmix.upd
@@ -30,13 +32,9 @@ share/kde4/apps/kconf_update/disable_kmix.upd
 share/kde4/apps/kconf_update/plasmaVolumeDisableKMixAutostart.pl
 share/kpackage/kcms/kcm_pulseaudio/contents/code/icon.js
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/Advanced.qml
-share/kpackage/kcms/kcm_pulseaudio/contents/ui/Applications.qml
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/CardListItem.qml
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/DeviceComboBox.qml
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/DeviceListItem.qml
-share/kpackage/kcms/kcm_pulseaudio/contents/ui/Devices.qml
-share/kpackage/kcms/kcm_pulseaudio/contents/ui/Header.qml
-share/kpackage/kcms/kcm_pulseaudio/contents/ui/ListItemSeperator.qml
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/MuteButton.qml
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/StreamListItem.qml
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/VolumeSlider.qml

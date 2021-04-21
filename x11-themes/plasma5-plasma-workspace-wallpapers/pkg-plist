@@ -197,6 +197,10 @@ share/wallpapers/Path/metadata.desktop
 share/wallpapers/SafeLanding/contents/images/5120x2880.jpg
 share/wallpapers/SafeLanding/contents/screenshot.jpg
 share/wallpapers/SafeLanding/metadata.desktop
+share/wallpapers/Shell/contents/images/5120x2880.jpg
+share/wallpapers/Shell/contents/images/720x1440.jpg
+share/wallpapers/Shell/contents/screenshot.png
+share/wallpapers/Shell/metadata.desktop
 share/wallpapers/Volna/contents/images/5120x2880.jpg
 share/wallpapers/Volna/contents/screenshot.png
 share/wallpapers/Volna/metadata.desktop

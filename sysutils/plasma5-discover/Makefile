@@ -11,7 +11,7 @@ COMMENT=	Plasma5 package management tools
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils \
 		gettext kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	archive attica auth codecs completion config configwidgets \
-		coreaddons crash dbusaddons ecm i18n iconthemes itemmodels \
+		coreaddons crash dbusaddons ecm i18n iconthemes idletime itemmodels \
 		itemviews jobwidgets kdeclarative kio kirigami2 newstuff \
 		notifications package plasma-framework service solid \
 		textwidgets wallet windowsystem widgetsaddons xmlgui
