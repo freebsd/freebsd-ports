@@ -1,0 +1,5 @@
+usr/lib/libltdl.so.7
+usr/lib/libltdl.so.7.3.0
+usr/lib64/libltdl.so.7
+usr/lib64/libltdl.so.7.3.0
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.LIB
