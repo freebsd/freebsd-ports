@@ -307,6 +307,7 @@
     SUBDIR += setlayout
     SUBDIR += setxkbmap
     SUBDIR += showkeys
+    SUBDIR += showmethekey
     SUBDIR += simdock
     SUBDIR += simplestroke
     SUBDIR += slick-greeter

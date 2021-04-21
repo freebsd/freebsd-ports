@@ -1,0 +1,13 @@
+Show keys you typed on screen, so your audiences can see what you do
+clearly while you are streaming or recording. A screenkey alternative
+that works on both X11 and Wayland.
+
+Features:
+- Key events reading via libinput
+- Configurable floating window size
+- Click-through but dragable floating window
+- Temporary hiding support
+- Keymap handling via xkbcommon
+- Mouse button support
+
+WWW: https://showmethekey.alynx.one/
