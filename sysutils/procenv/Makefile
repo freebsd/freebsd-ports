@@ -1,23 +1,23 @@
 # Created by: James Hunt <james.hunt@ubuntu.com>
 
 PORTNAME=	procenv
-PORTVERSION=	0.51
+DISTVERSION=	0.55
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Utility to show process environment
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xmlwf:textproc/expat2
+LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
-#USES=		autoreconf gmake perl5
-USES=		autoreconf perl5
-USE_PERL5=	build
+USES=		autoreconf localbase perl5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jamesodhunt
+USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check
