@@ -1,8 +1,7 @@
 # Created by: Sergey Kozlov <skozlov@FreeBSD.org>
 
 PORTNAME=	ix
-PORTVERSION=	3.3.14
-PORTREVISION=	1
+PORTVERSION=	3.3.24
 PORTEPOCH=	0
 MASTER_SITES?=	https://downloadmirror.intel.com/14688/eng/ \
 		http://downloadmirror.intel.com/14688/eng/ \
