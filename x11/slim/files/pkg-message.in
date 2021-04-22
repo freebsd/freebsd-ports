@@ -8,6 +8,11 @@ Alternatively, just put the following entry in /etc/rc.conf:
 
 slim_enable=yes
 
+slim requires a dbus session bus to connect to. Add the following entry in
+/etc/rc.conf:
+
+dbus_enable="YES"
+
 *** Option "sessions" is no longer supported. ***
 
 Now you need to put session files in the directory specified by option
