@@ -1,0 +1,7 @@
+--- rts/Game/CMakeLists.txt.orig	2021-01-01 16:12:22 UTC
++++ rts/Game/CMakeLists.txt
+@@ -1,3 +1,4 @@
++set_source_files_properties(GameSetup.cpp PROPERTIES CXX_STANDARD 14)
+ 
+ # This list was created using this *nix shell command:
+ # > find . -name "*.cpp" | sort

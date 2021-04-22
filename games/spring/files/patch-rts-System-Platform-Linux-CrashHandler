@@ -1,8 +1,0 @@
-+++ rts/System/Platform/Linux/CrashHandler.cpp	2015-04-08 20:09:33 -0400
-@@ -344,5 +344,5 @@
- 	boost::this_thread::sleep(boost::posix_time::seconds(10));
- #if defined(__GNUC__)
--	std::_Exit(-1);
-+	_Exit(-1);
- #else
- 	std::quick_exit(-1);

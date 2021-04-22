@@ -1,0 +1,11 @@
+--- rts/System/CMakeLists.txt.orig	2020-12-26 12:45:43 UTC
++++ rts/System/CMakeLists.txt
+@@ -140,7 +140,7 @@ set(sources_engine_System_Threading_Mac
+ 		"${CMAKE_CURRENT_SOURCE_DIR}/Platform/Mac/Signal.cpp"
+ 	)
+ set(sources_engine_System_Threading_Linux
+-		"${CMAKE_CURRENT_SOURCE_DIR}/Platform/Linux/Futex.cpp"
++		"${CMAKE_CURRENT_SOURCE_DIR}/Platform/Mac/Signal.cpp"
+ 		"${CMAKE_CURRENT_SOURCE_DIR}/Platform/Linux/ThreadSupport.cpp"
+ 	)
+ set(sources_engine_System_Threading_Windows
