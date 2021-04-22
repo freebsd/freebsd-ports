@@ -40,6 +40,8 @@
 %%PYTHON_SITELIBDIR%%/ortools/sat/boolean_problem_pb2.pyi
 %%PYTHON_SITELIBDIR%%/ortools/sat/cp_model_pb2.py
 %%PYTHON_SITELIBDIR%%/ortools/sat/cp_model_pb2.pyi
+%%PYTHON_SITELIBDIR%%/ortools/sat/cp_model_service_pb2.py
+%%PYTHON_SITELIBDIR%%/ortools/sat/cp_model_service_pb2.pyi
 %%PYTHON_SITELIBDIR%%/ortools/sat/python/__init__.py
 %%PYTHON_SITELIBDIR%%/ortools/sat/python/cp_model.py
 %%PYTHON_SITELIBDIR%%/ortools/sat/python/cp_model_helper.py
