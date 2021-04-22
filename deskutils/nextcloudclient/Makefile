@@ -1,7 +1,7 @@
 # Created by: Mathieu Arnold
 
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.1.3
+PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -16,7 +16,7 @@ EXPIRATION_DATE=2021-06-23
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libqt5keychain.so:security/qtkeychain
 
-USES=		cmake:noninja compiler:c++11-lib gmake gnome iconv \
+USES=		cmake:noninja compiler:c++14-lang gmake gnome iconv \
 		localbase:ldflags pkgconfig qt:5 sqlite ssl
 USE_QT=		buildtools_build concurrent core dbus declarative graphicaleffects \
 		gui linguist_build location network printsupport qmake_build \

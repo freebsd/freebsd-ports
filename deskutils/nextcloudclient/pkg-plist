@@ -1,6 +1,6 @@
 bin/nextcloud
 bin/nextcloudcmd
-@sample etc/Nextcloud/sync-exclude.lst.sample
+etc/Nextcloud/sync-exclude.lst.sample
 include/nextcloudsync/creds/abstractcredentials.h
 include/nextcloudsync/creds/httpcredentials.h
 include/nextcloudsync/mirall/account.h
@@ -10,12 +10,12 @@ include/nextcloudsync/mirall/progressdispatcher.h
 include/nextcloudsync/mirall/syncengine.h
 include/nextcloudsync/mirall/syncfileitem.h
 include/nextcloudsync/mirall/syncresult.h
+lib/libnextcloud_csync.so
+lib/libnextcloud_csync.so.0
+lib/libnextcloud_csync.so.%%VERSION%%
 lib/libnextcloudsync.so
 lib/libnextcloudsync.so.0
 lib/libnextcloudsync.so.%%VERSION%%
-lib/nextcloud/libocsync.so
-lib/nextcloud/libocsync.so.0
-lib/nextcloud/libocsync.so.%%VERSION%%
 share/applications/com.nextcloud.desktopclient.nextcloud.desktop
 share/caja-python/extensions/syncstate-Nextcloud.py
 share/icons/hicolor/1024x1024/apps/Nextcloud.png
@@ -83,6 +83,7 @@ share/icons/hicolor/72x72/apps/Nextcloud_sync.png
 share/icons/hicolor/72x72/apps/Nextcloud_sync_shared.png
 share/icons/hicolor/72x72/apps/Nextcloud_warn.png
 share/icons/hicolor/72x72/apps/Nextcloud_warn_shared.png
+share/mime/packages/nextcloud.xml
 share/nautilus-python/extensions/syncstate-Nextcloud.py
 share/nemo-python/extensions/syncstate-Nextcloud.py
 share/nextcloud/i18n/client_TW.qm
@@ -133,6 +134,7 @@ share/nextcloud/i18n/client_pt.qm
 share/nextcloud/i18n/client_pt_BR.qm
 share/nextcloud/i18n/client_ro.qm
 share/nextcloud/i18n/client_ru.qm
+share/nextcloud/i18n/client_sc.qm
 share/nextcloud/i18n/client_sk.qm
 share/nextcloud/i18n/client_sl.qm
 share/nextcloud/i18n/client_sr.qm
