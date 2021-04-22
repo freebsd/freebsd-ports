@@ -13,7 +13,6 @@ share/icons/hicolor/128x128/apps/bomber.png
 share/icons/hicolor/32x32/apps/bomber.png
 share/icons/hicolor/48x48/apps/bomber.png
 share/icons/hicolor/64x64/apps/bomber.png
-share/kxmlgui5/bomber/bomberui.rc
 share/locale/ar/LC_MESSAGES/bomber.mo
 share/locale/bg/LC_MESSAGES/bomber.mo
 share/locale/bs/LC_MESSAGES/bomber.mo

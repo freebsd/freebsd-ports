@@ -11,7 +11,6 @@ share/icons/hicolor/64x64/apps/katomic.png
 share/kconf_update/katomic-levelset-upd.pl
 share/kconf_update/katomic-levelset.upd
 share/knsrcfiles/katomic.knsrc
-share/kxmlgui5/katomic/katomicui.rc
 share/locale/ar/LC_MESSAGES/katomic.mo
 share/locale/bg/LC_MESSAGES/katomic.mo
 share/locale/bs/LC_MESSAGES/katomic.mo

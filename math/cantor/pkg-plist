@@ -174,3 +174,4 @@ share/locale/uk/LC_MESSAGES/cantor.mo
 share/locale/zh_CN/LC_MESSAGES/cantor.mo
 share/locale/zh_TW/LC_MESSAGES/cantor.mo
 share/metainfo/org.kde.cantor.appdata.xml
+share/mime/packages/cantor.xml

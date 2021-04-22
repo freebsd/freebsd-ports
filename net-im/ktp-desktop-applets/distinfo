@@ -1,3 +1,3 @@
-TIMESTAMP = 1614706328
-SHA256 (KDE/release-service/20.12.3/ktp-desktop-applets-20.12.3.tar.xz) = d0c4806627de8176420c170f1f83efd439596ae0139889b42f249ef5d48f96d4
-SIZE (KDE/release-service/20.12.3/ktp-desktop-applets-20.12.3.tar.xz) = 43704
+TIMESTAMP = 1618579200
+SHA256 (KDE/release-service/21.04.0/ktp-desktop-applets-21.04.0.tar.xz) = bc08e0b73be57cf7f12c6658737c4fee77d94065d2d971381c83b67c117d90a9
+SIZE (KDE/release-service/21.04.0/ktp-desktop-applets-21.04.0.tar.xz) = 43656

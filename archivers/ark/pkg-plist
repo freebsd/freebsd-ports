@@ -37,8 +37,8 @@ share/icons/hicolor/64x64/apps/ark.png
 share/icons/hicolor/scalable/apps/ark.svgz
 share/kservices5/ark_part.desktop
 share/kservicetypes5/kerfufflePlugin.desktop
-share/kxmlgui5/ark/ark_viewer.rc
 share/locale/ar/LC_MESSAGES/ark.mo
+share/locale/ast/LC_MESSAGES/ark.mo
 share/locale/bg/LC_MESSAGES/ark.mo
 share/locale/bs/LC_MESSAGES/ark.mo
 share/locale/ca/LC_MESSAGES/ark.mo

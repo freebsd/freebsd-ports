@@ -105,7 +105,9 @@ share/locale/ar/LC_MESSAGES/kio5_sftp.mo
 share/locale/ar/LC_MESSAGES/kio5_smb.mo
 share/locale/ar/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/ast/LC_MESSAGES/kio5_fish.mo
+share/locale/ast/LC_MESSAGES/kio5_info.mo
 share/locale/ast/LC_MESSAGES/kio5_mtp.mo
+share/locale/ast/LC_MESSAGES/kio5_network.mo
 share/locale/ast/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/bg/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/bg/LC_MESSAGES/kio5_activities.mo
@@ -389,6 +391,7 @@ share/locale/hu/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/hu/LC_MESSAGES/kio5_fish.mo
 share/locale/hu/LC_MESSAGES/kio5_info.mo
 share/locale/hu/LC_MESSAGES/kio5_man.mo
+share/locale/hu/LC_MESSAGES/kio5_network.mo
 share/locale/hu/LC_MESSAGES/kio5_nfs.mo
 share/locale/hu/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/hu/LC_MESSAGES/kio5_sftp.mo

@@ -2,6 +2,7 @@ bin/gwenview
 bin/gwenview_importer
 lib/libgwenviewlib.so.4.97.0
 lib/libgwenviewlib.so.5
+%%QT_PLUGINDIR%%/kf5/kfileitemaction/slideshowfileitemaction.so
 %%QT_PLUGINDIR%%/kf5/parts/gvpart.so
 share/applications/org.kde.gwenview.desktop
 %%DATADIR%%/color-schemes/fullscreen.colors
@@ -21,9 +22,7 @@ share/icons/hicolor/64x64/actions/document-share.png
 share/icons/hicolor/64x64/apps/gwenview.png
 share/kconf_update/gwenview-imageview-alphabackgroundmode-update.pl
 share/kconf_update/gwenview.upd
-share/kservices5/ServiceMenus/slideshow.desktop
 share/kservices5/gvpart.desktop
-share/kxmlgui5/gvpart/gvpart.rc
 share/locale/ar/LC_MESSAGES/gwenview.mo
 share/locale/bg/LC_MESSAGES/gwenview.mo
 share/locale/bs/LC_MESSAGES/gwenview.mo

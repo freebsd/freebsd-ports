@@ -25,7 +25,6 @@ share/knotifications5/konsole.notifyrc
 %%DATADIR%%/macos.keytab
 %%DATADIR%%/solaris.keytab
 share/knsrcfiles/konsole.knsrc
-share/kservices5/ServiceMenus/konsolehere.desktop
 share/kservices5/ServiceMenus/konsolerun.desktop
 share/kservices5/konsolepart.desktop
 share/kservicetypes5/terminalemulator.desktop

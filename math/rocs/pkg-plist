@@ -6,6 +6,7 @@ lib/librocsgraphtheory.so
 lib/librocsgraphtheory.so.0
 %%QT_PLUGINDIR%%/rocs/editorplugins/assignvaluesplugin.so
 %%QT_PLUGINDIR%%/rocs/editorplugins/generategraphplugin.so
+%%QT_PLUGINDIR%%/rocs/editorplugins/graphlayoutplugin.so
 %%QT_PLUGINDIR%%/rocs/editorplugins/transformedgesplugin.so
 %%QT_PLUGINDIR%%/rocs/fileformats/dotfileformat.so
 %%QT_PLUGINDIR%%/rocs/fileformats/gmlfileformat.so

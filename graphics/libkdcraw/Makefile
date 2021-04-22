@@ -6,7 +6,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	LibRaw interface for KDE
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjasper.so:graphics/jasper \
 		liblcms.so:graphics/lcms \

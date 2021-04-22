@@ -2,6 +2,7 @@ bin/kdebugsettings
 lib/libkdebugsettings.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libkdebugsettings.so.5
 share/applications/org.kde.kdebugsettings.desktop
+%%DATADIR%%/groups/Full Debug Ruqola
 share/locale/ar/LC_MESSAGES/kdebugsettings.mo
 share/locale/ca/LC_MESSAGES/kdebugsettings.mo
 share/locale/ca@valencia/LC_MESSAGES/kdebugsettings.mo

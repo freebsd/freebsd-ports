@@ -34,3 +34,4 @@ share/locale/uk/LC_MESSAGES/ffmpegthumbs.mo
 share/locale/zh_CN/LC_MESSAGES/ffmpegthumbs.mo
 share/locale/zh_TW/LC_MESSAGES/ffmpegthumbs.mo
 share/metainfo/org.kde.ffmpegthumbs.metainfo.xml
+share/qlogging-categories5/ffmpegthumbs.categories

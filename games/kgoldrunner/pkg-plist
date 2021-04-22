@@ -72,7 +72,6 @@ share/icons/hicolor/64x64/apps/kgoldrunner.png
 %%DATADIR%%/themes/nostalgia/nostalgia.png
 %%DATADIR%%/themes/nostalgia/set.svg
 share/knsrcfiles/kgoldrunner.knsrc
-share/kxmlgui5/kgoldrunner/kgoldrunnerui.rc
 share/locale/ar/LC_MESSAGES/kgoldrunner.mo
 share/locale/bg/LC_MESSAGES/kgoldrunner.mo
 share/locale/bs/LC_MESSAGES/kgoldrunner.mo

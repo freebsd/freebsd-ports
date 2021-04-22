@@ -4,10 +4,10 @@ bin/kmixremote
 etc/xdg/autostart/kmix_autostart.desktop
 etc/xdg/autostart/restore_kmix_volumes.desktop
 lib/libkmixcore.so.5
-lib/libkmixcore.so.5.13.80
+lib/libkmixcore.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kf5/kded/kmixd.so
-%%QT_PLUGINDIR%%/plasma/dataengine/plasma_engine_mixer.so
 share/applications/org.kde.kmix.desktop
+share/config.kcfg/kmixsettings.kcfg
 share/dbus-1/interfaces/org.kde.kmix.control.xml
 share/dbus-1/interfaces/org.kde.kmix.mixer.xml
 share/dbus-1/interfaces/org.kde.kmix.mixset.xml
@@ -96,6 +96,5 @@ share/locale/zh_TW/LC_MESSAGES/kmix.mo
 %%DATADIR%%/profiles/SUNAudio.default.xml
 share/metainfo/org.kde.kmix.appdata.xml
 share/kservices5/kmixctrl_restore.desktop
-share/kservices5/plasma-dataengine-mixer.desktop
 share/kxmlgui5/kmix/kmixui.rc
-share/plasma/services/mixer.operations
+share/qlogging-categories5/kmix.categories

@@ -245,9 +245,9 @@ lib/plugins/designer/LatLonEditPlugin.so
 lib/plugins/designer/MarbleNavigatorPlugin.so
 lib/plugins/designer/MarbleWidgetPlugin.so
 %%QT_MKSPECDIR%%/modules/qt_Marble.pri
+%%QT_PLUGINDIR%%/kf5/krunner/plasma_runner_marble.so
 %%QT_PLUGINDIR%%/libmarble_part.so
 %%QT_PLUGINDIR%%/marblethumbnail.so
-%%QT_PLUGINDIR%%/plasma_runner_marble.so
 %%QT_QMLDIR%%/org/kde/marble/private/plasma/libmarblequick.so
 %%QT_QMLDIR%%/org/kde/marble/private/plasma/qmldir
 share/applications/marble_geo.desktop
@@ -273,7 +273,6 @@ share/kservices5/marble_thumbnail_kml.desktop
 share/kservices5/marble_thumbnail_kmz.desktop
 share/kservices5/marble_thumbnail_osm.desktop
 share/kservices5/plasma-applet-org.kde.plasma.worldclock.desktop
-share/kservices5/plasma-runner-marble.desktop
 share/kservices5/plasma-wallpaper-org.kde.plasma.worldmap.desktop
 share/kxmlgui5/marble/marble_part.rc
 share/kxmlgui5/marble/marbleui.rc
@@ -414,6 +413,7 @@ share/locale/nn/LC_MESSAGES/plasma_runner_marble.mo
 share/locale/nn/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/pa/LC_MESSAGES/marble.mo
 share/locale/pa/LC_MESSAGES/marble_qt.qm
+share/locale/pa/LC_MESSAGES/plasma_runner_marble.mo
 share/locale/pl/LC_MESSAGES/marble.mo
 share/locale/pl/LC_MESSAGES/marble_qt.qm
 share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo

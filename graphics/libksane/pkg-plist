@@ -8,7 +8,7 @@ lib/cmake/KF5Sane/KF5SaneTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5Sane/KF5SaneTargets.cmake
 lib/libKF5Sane.so
 lib/libKF5Sane.so.5
-lib/libKF5Sane.so.5.55.0
+lib/libKF5Sane.so.%%KDE_APPLICATIONS_VERSION%%
 share/icons/hicolor/16x16/actions/black-white.png
 share/icons/hicolor/16x16/actions/color.png
 share/icons/hicolor/16x16/actions/gray-scale.png

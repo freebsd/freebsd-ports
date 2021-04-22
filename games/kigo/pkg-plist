@@ -17,7 +17,6 @@ share/icons/hicolor/64x64/apps/kigo.png
 %%DATADIR%%/themes/plain.desktop
 share/knsrcfiles/kigo-games.knsrc
 share/knsrcfiles/kigo.knsrc
-share/kxmlgui5/kigo/kigoui.rc
 share/locale/bs/LC_MESSAGES/kigo.mo
 share/locale/ca/LC_MESSAGES/kigo.mo
 share/locale/ca@valencia/LC_MESSAGES/kigo.mo

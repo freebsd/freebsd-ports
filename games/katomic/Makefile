@@ -11,7 +11,7 @@ USE_KDE=	attica auth codecs config configwidgets coreaddons crash \
 		libkdegames newstuff notifyconfig service widgetsaddons xmlgui
 USE_QT=		core dbus declarative gui network widgets xml \
 		buildtools_build qmake_build
-SHEBANG_FILES=	katomic-levelset-upd.pl
+SHEBANG_FILES=	src/katomic-levelset-upd.pl
 
 OPTIONS_DEFINE=	DOCS
 

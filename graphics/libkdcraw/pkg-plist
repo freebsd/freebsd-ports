@@ -15,3 +15,4 @@ lib/cmake/KF5KDcraw/KF5KDcrawTargets.cmake
 lib/libKF5KDcraw.so
 lib/libKF5KDcraw.so.5
 lib/libKF5KDcraw.so.5.0.0
+share/qlogging-categories5/libkdcraw.categories

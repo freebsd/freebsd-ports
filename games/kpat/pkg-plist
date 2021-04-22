@@ -29,6 +29,7 @@ share/icons/hicolor/64x64/apps/kpat.png
 %%DATADIR%%/previews/12.png
 %%DATADIR%%/previews/17.png
 %%DATADIR%%/previews/18.png
+%%DATADIR%%/previews/19.png
 %%DATADIR%%/previews/2.png
 %%DATADIR%%/previews/3.png
 %%DATADIR%%/previews/5.png
@@ -51,7 +52,6 @@ share/icons/hicolor/64x64/apps/kpat.png
 %%DATADIR%%/themes/oldertheme.svgz
 share/knsrcfiles/kcardtheme.knsrc
 share/knsrcfiles/kpat.knsrc
-share/kxmlgui5/kpat/kpatui.rc
 share/locale/ar/LC_MESSAGES/kpat.mo
 share/locale/bg/LC_MESSAGES/kpat.mo
 share/locale/bs/LC_MESSAGES/kpat.mo

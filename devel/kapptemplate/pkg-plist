@@ -52,3 +52,4 @@ share/locale/uk/LC_MESSAGES/kapptemplate.mo
 share/locale/zh_CN/LC_MESSAGES/kapptemplate.mo
 share/locale/zh_TW/LC_MESSAGES/kapptemplate.mo
 share/metainfo/org.kde.kapptemplate.appdata.xml
+share/qlogging-categories5/kapptemplate.categories

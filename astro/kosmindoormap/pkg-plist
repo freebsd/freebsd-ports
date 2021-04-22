@@ -1,5 +1,6 @@
 include/KOSM/Datatypes
 include/KOSM/Element
+include/KOSMIndoorMap/EquipmentModel
 include/KOSMIndoorMap/FloorLevelModel
 include/KOSMIndoorMap/GateModel
 include/KOSMIndoorMap/HitDetector
@@ -19,6 +20,7 @@ include/kosm/datatypes.h
 include/kosm/element.h
 include/kosm/internal.h
 include/kosm/kosm_export.h
+include/kosmindoormap/equipmentmodel.h
 include/kosmindoormap/floorlevelmodel.h
 include/kosmindoormap/gatemodel.h
 include/kosmindoormap/hitdetector.h
@@ -42,10 +44,10 @@ lib/cmake/KOSMIndoorMap/KOSMIndoorMapTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KOSMIndoorMap/KOSMIndoorMapTargets.cmake
 lib/libKOSM.so
 lib/libKOSM.so.1
-lib/libKOSM.so.%%KDE_APPLICATIONS_VERSION%%
+lib/libKOSM.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libKOSMIndoorMap.so
 lib/libKOSMIndoorMap.so.1
-lib/libKOSMIndoorMap.so.%%KDE_APPLICATIONS_VERSION%%
+lib/libKOSMIndoorMap.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_QMLDIR%%/org/kde/kosmindoormap/IndoorMap.qml
 %%QT_QMLDIR%%/org/kde/kosmindoormap/IndoorMapAttributionLabel.qml
 %%QT_QMLDIR%%/org/kde/kosmindoormap/IndoorMapScale.qml

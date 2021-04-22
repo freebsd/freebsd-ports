@@ -22,7 +22,6 @@ include/KAccounts/kaccountsuiplugin.h
 include/KAccounts/providersmodel.h
 include/KAccounts/removeaccountjob.h
 include/KAccounts/servicesmodel.h
-lib/cmake/KAccounts/FindAccountsFileDir.cmake
 lib/cmake/KAccounts/KAccountsConfig.cmake
 lib/cmake/KAccounts/KAccountsConfigVersion.cmake
 lib/cmake/KAccounts/KAccountsMacros.cmake
@@ -47,6 +46,7 @@ share/kpackage/kcms/kcm_kaccounts/metadata.desktop
 share/kpackage/kcms/kcm_kaccounts/metadata.json
 share/kservices5/kcm_kaccounts.desktop
 share/locale/ar/LC_MESSAGES/kaccounts-integration.mo
+share/locale/ast/LC_MESSAGES/kaccounts-integration.mo
 share/locale/bs/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ca/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ca@valencia/LC_MESSAGES/kaccounts-integration.mo

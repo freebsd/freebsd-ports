@@ -58,9 +58,6 @@ share/icons/hicolor/scalable/apps/korg-journal.svgz
 share/icons/hicolor/scalable/apps/korg-todo.svg
 share/icons/hicolor/scalable/apps/korganizer.svg
 share/icons/hicolor/scalable/apps/quickview.svgz
-share/icons/oxygen/16x16/actions/smallclock.png
-share/icons/oxygen/16x16/actions/upindicator.png
-share/icons/oxygen/22x22/actions/checkmark.png
 share/kconf_update/korganizer-15.08-kickoff.sh
 share/kconf_update/korganizer.upd
 share/knsrcfiles/korganizer.knsrc

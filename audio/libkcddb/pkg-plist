@@ -129,3 +129,4 @@ share/locale/zh_CN/LC_MESSAGES/kcmcddb.mo
 share/locale/zh_CN/LC_MESSAGES/libkcddb.mo
 share/locale/zh_TW/LC_MESSAGES/kcmcddb.mo
 share/locale/zh_TW/LC_MESSAGES/libkcddb.mo
+share/qlogging-categories5/libkcddb.categories

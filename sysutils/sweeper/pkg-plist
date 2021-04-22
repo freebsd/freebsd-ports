@@ -56,3 +56,4 @@ share/locale/uk/LC_MESSAGES/sweeper.mo
 share/locale/zh_CN/LC_MESSAGES/sweeper.mo
 share/locale/zh_TW/LC_MESSAGES/sweeper.mo
 share/metainfo/org.kde.sweeper.appdata.xml
+share/qlogging-categories5/sweeper.categories

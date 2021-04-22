@@ -8,6 +8,7 @@ include/KPublicTransport/DepartureQueryModel
 include/KPublicTransport/DepartureReply
 include/KPublicTransport/DepartureRequest
 include/KPublicTransport/Disruption
+include/KPublicTransport/Equipment
 include/KPublicTransport/Journey
 include/KPublicTransport/JourneyQueryModel
 include/KPublicTransport/JourneyReply
@@ -19,6 +20,7 @@ include/KPublicTransport/LocationQueryModel
 include/KPublicTransport/LocationReply
 include/KPublicTransport/LocationRequest
 include/KPublicTransport/Manager
+include/KPublicTransport/Path
 include/KPublicTransport/Platform
 include/KPublicTransport/RentalVehicle
 include/KPublicTransport/Reply
@@ -40,6 +42,7 @@ include/kpublictransport/departurequerymodel.h
 include/kpublictransport/departurereply.h
 include/kpublictransport/departurerequest.h
 include/kpublictransport/disruption.h
+include/kpublictransport/equipment.h
 include/kpublictransport/journey.h
 include/kpublictransport/journeyquerymodel.h
 include/kpublictransport/journeyreply.h
@@ -52,6 +55,7 @@ include/kpublictransport/locationquerymodel.h
 include/kpublictransport/locationreply.h
 include/kpublictransport/locationrequest.h
 include/kpublictransport/manager.h
+include/kpublictransport/path.h
 include/kpublictransport/platform.h
 include/kpublictransport/rentalvehicle.h
 include/kpublictransport/reply.h
@@ -70,7 +74,7 @@ lib/cmake/KPublicTransport/KPublicTransportTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KPublicTransport/KPublicTransportTargets.cmake
 lib/libKPublicTransport.so
 lib/libKPublicTransport.so.1
-lib/libKPublicTransport.so.%%KDE_APPLICATIONS_VERSION%%
+lib/libKPublicTransport.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_QMLDIR%%/org/kde/kpublictransport/libkpublictransportqmlplugin.so
 %%QT_QMLDIR%%/org/kde/kpublictransport/qmldir
 %%QT_QMLDIR%%/org/kde/kpublictransport/ui/VehicleSectionItem.qml

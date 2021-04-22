@@ -3,6 +3,7 @@
 share/kservices5/camera.protocol
 share/kservices5/kamera.desktop
 share/locale/ar/LC_MESSAGES/kcmkamera.mo
+share/locale/ast/LC_MESSAGES/kio5_kamera.mo
 share/locale/bg/LC_MESSAGES/kcmkamera.mo
 share/locale/bs/LC_MESSAGES/kcmkamera.mo
 share/locale/ca/LC_MESSAGES/kcmkamera.mo

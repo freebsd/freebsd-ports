@@ -1,3 +1,3 @@
-TIMESTAMP = 1614706308
-SHA256 (KDE/release-service/20.12.3/mailcommon-20.12.3.tar.xz) = 9568a0de8ca61d0af950ba7c407d5fede2c89eb245976e2224c596e8cdbe177c
-SIZE (KDE/release-service/20.12.3/mailcommon-20.12.3.tar.xz) = 723876
+TIMESTAMP = 1618579229
+SHA256 (KDE/release-service/21.04.0/mailcommon-21.04.0.tar.xz) = fd8137c4991f578dae0fdaf29e44330654b4fdff9adf9ce5fbd44e9bdd844cd2
+SIZE (KDE/release-service/21.04.0/mailcommon-21.04.0.tar.xz) = 727228

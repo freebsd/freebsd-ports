@@ -19,8 +19,8 @@ share/kconf_update/konversation-0.19-custombrowser.pl
 share/kconf_update/konversation-0.19-notifylists.pl
 share/kconf_update/konversation-0.19-sortorder.pl
 share/kconf_update/konversation-0.19-tabplacement.pl
-share/kconf_update/konversation-0.%%KDE_APPLICATIONS_VERSION_SHORT%%-customfonts.pl
-share/kconf_update/konversation-0.%%KDE_APPLICATIONS_VERSION_SHORT%%-quickbuttons.pl
+share/kconf_update/konversation-0.20-customfonts.pl
+share/kconf_update/konversation-0.20-quickbuttons.pl
 share/kconf_update/konversation.upd
 share/knotifications5/konversation.notifyrc
 share/knsrcfiles/konversation_nicklist_theme.knsrc

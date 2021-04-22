@@ -3,6 +3,8 @@ include/KF5/KLDAP/KLDAP/Ber
 include/KF5/KLDAP/KLDAP/LdapClient
 include/KF5/KLDAP/KLDAP/LdapClientSearch
 include/KF5/KLDAP/KLDAP/LdapClientSearchConfig
+include/KF5/KLDAP/KLDAP/LdapClientSearchConfigReadConfigJob
+include/KF5/KLDAP/KLDAP/LdapClientSearchConfigWriteConfigJob
 include/KF5/KLDAP/KLDAP/LdapConfigWidget
 include/KF5/KLDAP/KLDAP/LdapConfigureWidget
 include/KF5/KLDAP/KLDAP/LdapConnection
@@ -12,6 +14,7 @@ include/KF5/KLDAP/KLDAP/LdapDefs
 include/KF5/KLDAP/KLDAP/LdapObject
 include/KF5/KLDAP/KLDAP/LdapOperation
 include/KF5/KLDAP/KLDAP/LdapSearch
+include/KF5/KLDAP/KLDAP/LdapSearchClientReadConfigServerJob
 include/KF5/KLDAP/KLDAP/LdapServer
 include/KF5/KLDAP/KLDAP/LdapUrl
 include/KF5/KLDAP/KLDAP/Ldif
@@ -21,6 +24,8 @@ include/KF5/KLDAP/kldap/kldap_export.h
 include/KF5/KLDAP/kldap/ldapclient.h
 include/KF5/KLDAP/kldap/ldapclientsearch.h
 include/KF5/KLDAP/kldap/ldapclientsearchconfig.h
+include/KF5/KLDAP/kldap/ldapclientsearchconfigreadconfigjob.h
+include/KF5/KLDAP/kldap/ldapclientsearchconfigwriteconfigjob.h
 include/KF5/KLDAP/kldap/ldapconfigurewidget.h
 include/KF5/KLDAP/kldap/ldapconfigwidget.h
 include/KF5/KLDAP/kldap/ldapconnection.h
@@ -30,6 +35,7 @@ include/KF5/KLDAP/kldap/ldapdn.h
 include/KF5/KLDAP/kldap/ldapobject.h
 include/KF5/KLDAP/kldap/ldapoperation.h
 include/KF5/KLDAP/kldap/ldapsearch.h
+include/KF5/KLDAP/kldap/ldapsearchclientreadconfigserverjob.h
 include/KF5/KLDAP/kldap/ldapserver.h
 include/KF5/KLDAP/kldap/ldapurl.h
 include/KF5/KLDAP/kldap/ldif.h

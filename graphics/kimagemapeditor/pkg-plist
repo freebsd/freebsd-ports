@@ -1,6 +1,6 @@
 bin/kimagemapeditor
 share/qlogging-categories5/kimagemapeditor.categories
-%%QT_PLUGINDIR%%/kimagemapeditor.so
+%%QT_PLUGINDIR%%/kf5/parts/kimagemapeditorpart.so
 share/applications/org.kde.kimagemapeditor.desktop
 share/icons/hicolor/128x128/apps/kimagemapeditor.png
 share/icons/hicolor/16x16/apps/kimagemapeditor.png

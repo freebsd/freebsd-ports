@@ -16,6 +16,7 @@ lib/libkdeconnectpluginkcm.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_battery.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_bigscreen.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_clipboard.so
+%%QT_PLUGINDIR%%/kdeconnect/kdeconnect_connectivity_report.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_contacts.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_findmyphone.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_findthisdevice.so
@@ -49,11 +50,6 @@ lib/libkdeconnectpluginkcm.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 %%QT_PLUGINDIR%%/kf5/kio/kdeconnect.so
 %%QT_QMLDIR%%/org/kde/kdeconnect/libkdeconnectdeclarativeplugin.so
 %%QT_QMLDIR%%/org/kde/kdeconnect/qmldir
-share/kdeconnect/kdeconnect_findthisdevice_config.qml
-share/kdeconnect/kdeconnect_pausemusic_config.qml
-share/kdeconnect/kdeconnect_runcommand_config.qml
-share/kdeconnect/kdeconnect_sendnotifications_config.qml
-share/kdeconnect/kdeconnect_share_config.qml
 share/Thunar/sendto/kdeconnect-thunar.desktop
 share/applications/org.kde.kdeconnect.app.desktop
 share/applications/org.kde.kdeconnect.daemon.desktop
@@ -104,6 +100,11 @@ share/icons/hicolor/32x32/status/tvtrusted.svg
 share/icons/hicolor/scalable/apps/kdeconnect.svg
 share/icons/hicolor/scalable/apps/kdeconnectindicator.svg
 share/icons/hicolor/scalable/apps/kdeconnectindicatordark.svg
+share/kdeconnect/kdeconnect_findthisdevice_config.qml
+share/kdeconnect/kdeconnect_pausemusic_config.qml
+share/kdeconnect/kdeconnect_runcommand_config.qml
+share/kdeconnect/kdeconnect_sendnotifications_config.qml
+share/kdeconnect/kdeconnect_share_config.qml
 share/knotifications5/kdeconnect.notifyrc
 share/kservices5/kcm_kdeconnect.desktop
 share/kservices5/kdeconnect_findthisdevice_config.desktop
@@ -112,7 +113,6 @@ share/kservices5/kdeconnect_runcommand_config.desktop
 share/kservices5/kdeconnect_sendnotifications_config.desktop
 share/kservices5/kdeconnect_share_config.desktop
 share/kservices5/plasma-kdeconnect.desktop
-share/kservicetypes5/kdeconnect_plugin.desktop
 share/locale/ar/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/ar/LC_MESSAGES/kdeconnect-core.mo
 share/locale/ar/LC_MESSAGES/kdeconnect-kcm.mo
@@ -202,14 +202,19 @@ share/locale/da/LC_MESSAGES/kdeconnect-settings.mo
 share/locale/da/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/da/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
+share/locale/de/LC_MESSAGES/kdeconnect-app.mo
 share/locale/de/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/de/LC_MESSAGES/kdeconnect-core.mo
 share/locale/de/LC_MESSAGES/kdeconnect-fileitemaction.mo
+share/locale/de/LC_MESSAGES/kdeconnect-indicator.mo
+share/locale/de/LC_MESSAGES/kdeconnect-interfaces.mo
 share/locale/de/LC_MESSAGES/kdeconnect-kcm.mo
 share/locale/de/LC_MESSAGES/kdeconnect-kded.mo
 share/locale/de/LC_MESSAGES/kdeconnect-kio.mo
 share/locale/de/LC_MESSAGES/kdeconnect-nautilus-extension.mo
 share/locale/de/LC_MESSAGES/kdeconnect-plugins.mo
+share/locale/de/LC_MESSAGES/kdeconnect-settings.mo
+share/locale/de/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/de/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
 share/locale/el/LC_MESSAGES/kdeconnect-app.mo
@@ -663,6 +668,7 @@ share/metainfo/org.kde.kdeconnect.kcm.appdata.xml
 share/nautilus-python/extensions/kdeconnect-share.py
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Battery.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/CompactRepresentation.qml
+share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Connectivity.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/DeviceDelegate.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/FindMyPhone.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/FullRepresentation.qml

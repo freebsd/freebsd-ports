@@ -1,6 +1,7 @@
 bin/akonadi_archivemail_agent
 bin/akonadi_followupreminder_agent
 bin/akonadi_mailfilter_agent
+bin/akonadi_mailmerge_agent
 bin/akonadi_sendlater_agent
 bin/akonadi_unifiedmailbox_agent
 bin/kmail
@@ -22,12 +23,13 @@ lib/libkmailprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/akonadi/agents/archivemailagent.desktop
 share/akonadi/agents/followupreminder.desktop
 share/akonadi/agents/mailfilteragent.desktop
+share/akonadi/agents/mailmergeagent.desktop
 share/akonadi/agents/sendlateragent.desktop
 share/akonadi/agents/unifiedmailboxagent.desktop
 share/applications/kmail_view.desktop
+share/applications/org.kde.kmail-refresh-settings.desktop
 share/applications/org.kde.kmail2.desktop
 share/applications/org.kde.ktnef.desktop
-share/applications/org.kde.kmail-refresh-settings.desktop
 share/config.kcfg/archivemailagentsettings.kcfg
 share/config.kcfg/kmail.kcfg
 share/dbus-1/interfaces/org.kde.kmail.kmail.xml
@@ -80,6 +82,7 @@ share/kconf_update/kmail2.upd
 share/knotifications5/akonadi_archivemail_agent.notifyrc
 share/knotifications5/akonadi_followupreminder_agent.notifyrc
 share/knotifications5/akonadi_mailfilter_agent.notifyrc
+share/knotifications5/akonadi_mailmerge_agent.notifyrc
 share/knotifications5/akonadi_sendlater_agent.notifyrc
 share/knotifications5/kmail2.notifyrc
 share/kontact/ksettingsdialog/kmail.setdlg

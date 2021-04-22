@@ -7,6 +7,7 @@ include/KF5/MessageComposer/AttachmentFromPublicKeyJob
 include/KF5/MessageComposer/AttachmentJob
 include/KF5/MessageComposer/AttachmentModel
 include/KF5/MessageComposer/AttachmentVcardFromAddressBookJob
+include/KF5/MessageComposer/AutocryptHeadersJob
 include/KF5/MessageComposer/Composer
 include/KF5/MessageComposer/ComposerAttachmentInterface
 include/KF5/MessageComposer/ComposerLineEdit
@@ -36,6 +37,7 @@ include/KF5/MessageComposer/MultipartJob
 include/KF5/MessageComposer/PluginActionType
 include/KF5/MessageComposer/PluginComposerInterface
 include/KF5/MessageComposer/PluginEditor
+include/KF5/MessageComposer/PluginEditorBase
 include/KF5/MessageComposer/PluginEditorCheckBeforeSend
 include/KF5/MessageComposer/PluginEditorCheckBeforeSendConfigureWidget
 include/KF5/MessageComposer/PluginEditorCheckBeforeSendInterface
@@ -83,12 +85,16 @@ include/KF5/MessageCore/AttachmentLoadJob
 include/KF5/MessageCore/AttachmentPart
 include/KF5/MessageCore/AttachmentPropertiesDialog
 include/KF5/MessageCore/AttachmentUpdateJob
+include/KF5/MessageCore/AutocryptRecipient
+include/KF5/MessageCore/AutocryptStorage
+include/KF5/MessageCore/AutocryptUtils
+include/KF5/MessageCore/ColorUtil
 include/KF5/MessageCore/ImageCollector
 include/KF5/MessageCore/MailingList
 include/KF5/MessageCore/MessageCoreSettings
-include/KF5/MessageCore/MessageCoreUtil
 include/KF5/MessageCore/NodeHelper
 include/KF5/MessageCore/StringUtil
+include/KF5/MessageCore/Util
 include/KF5/MessageList/AggregationComboBox
 include/KF5/MessageList/AggregationConfigButton
 include/KF5/MessageList/Enums
@@ -155,6 +161,8 @@ include/KF5/MessageViewer/MimeType
 include/KF5/MessageViewer/ObjectTreeEmptySource
 include/KF5/MessageViewer/PlainHeaderStyle
 include/KF5/MessageViewer/PrintingSettings
+include/KF5/MessageViewer/RemoteContentConfigureDialog
+include/KF5/MessageViewer/RemoteContentMenu
 include/KF5/MessageViewer/RichHeaderStrategy
 include/KF5/MessageViewer/ScamCheckShortUrl
 include/KF5/MessageViewer/ScamCheckShortUrlManager
@@ -228,6 +236,7 @@ include/KF5/messagecomposer/attachmentfrompublickeyjob.h
 include/KF5/messagecomposer/attachmentjob.h
 include/KF5/messagecomposer/attachmentmodel.h
 include/KF5/messagecomposer/attachmentvcardfromaddressbookjob.h
+include/KF5/messagecomposer/autocryptheadersjob.h
 include/KF5/messagecomposer/composer.h
 include/KF5/messagecomposer/composerattachmentinterface.h
 include/KF5/messagecomposer/composerlineedit.h
@@ -260,6 +269,7 @@ include/KF5/messagecomposer/multipartjob.h
 include/KF5/messagecomposer/pluginactiontype.h
 include/KF5/messagecomposer/plugincomposerinterface.h
 include/KF5/messagecomposer/plugineditor.h
+include/KF5/messagecomposer/plugineditorbase.h
 include/KF5/messagecomposer/plugineditorcheckbeforesend.h
 include/KF5/messagecomposer/plugineditorcheckbeforesendconfigurewidget.h
 include/KF5/messagecomposer/plugineditorcheckbeforesendinterface.h
@@ -308,14 +318,18 @@ include/KF5/messagecore/attachmentloadjob.h
 include/KF5/messagecore/attachmentpart.h
 include/KF5/messagecore/attachmentpropertiesdialog.h
 include/KF5/messagecore/attachmentupdatejob.h
+include/KF5/messagecore/autocryptrecipient.h
+include/KF5/messagecore/autocryptstorage.h
+include/KF5/messagecore/autocryptutils.h
+include/KF5/messagecore/colorutil.h
 include/KF5/messagecore/globalsettings_messagecore.h
 include/KF5/messagecore/imagecollector.h
 include/KF5/messagecore/mailinglist.h
 include/KF5/messagecore/messagecore_export.h
 include/KF5/messagecore/messagecoresettings.h
-include/KF5/messagecore/messagecoreutil.h
 include/KF5/messagecore/nodehelper.h
 include/KF5/messagecore/stringutil.h
+include/KF5/messagecore/util.h
 include/KF5/messagecore_version.h
 include/KF5/messagelist/aggregationcombobox.h
 include/KF5/messagelist/aggregationconfigbutton.h
@@ -390,6 +404,8 @@ include/KF5/messageviewer/mimetype.h
 include/KF5/messageviewer/objecttreeemptysource.h
 include/KF5/messageviewer/plainheaderstyle.h
 include/KF5/messageviewer/printingsettings.h
+include/KF5/messageviewer/remotecontentconfiguredialog.h
+include/KF5/messageviewer/remotecontentmenu.h
 include/KF5/messageviewer/richheaderstrategy.h
 include/KF5/messageviewer/scamcheckshorturl.h
 include/KF5/messageviewer/scamcheckshorturlmanager.h
@@ -678,6 +694,7 @@ share/locale/hu/LC_MESSAGES/libmessagelist.mo
 share/locale/hu/LC_MESSAGES/libmessageviewer.mo
 share/locale/hu/LC_MESSAGES/libmimetreeparser.mo
 share/locale/hu/LC_MESSAGES/libtemplateparser.mo
+share/locale/hu/LC_MESSAGES/libwebengineviewer.mo
 share/locale/ia/LC_MESSAGES/libmessagecomposer.mo
 share/locale/ia/LC_MESSAGES/libmessagecore.mo
 share/locale/ia/LC_MESSAGES/libmessagelist.mo

@@ -15,13 +15,14 @@ lib/libdolphinvcs.so
 lib/libdolphinvcs.so.%%SHLIB_SHVER%%
 lib/libdolphinvcs.so.%%SHLIB_VER%%
 lib/libkdeinit%%SHLIB_SHVER%%_dolphin.so
-%%QT_PLUGINDIR%%/dolphinpart.so
 %%QT_PLUGINDIR%%/kcm_dolphingeneral.so
 %%QT_PLUGINDIR%%/kcm_dolphinnavigation.so
-%%QT_PLUGINDIR%%/kcm_dolphinservices.so
 %%QT_PLUGINDIR%%/kcm_dolphinviewmodes.so
+%%QT_PLUGINDIR%%/kf%%SHLIB_SHVER%%/parts/dolphinpart.so
+lib/systemd/user/plasma-dolphin.service
 share/applications/org.kde.dolphin.desktop
 share/config.kcfg/dolphin_compactmodesettings.kcfg
+share/config.kcfg/dolphin_contextmenusettings.kcfg
 share/config.kcfg/dolphin_detailsmodesettings.kcfg
 share/config.kcfg/dolphin_directoryviewpropertysettings.kcfg
 share/config.kcfg/dolphin_generalsettings.kcfg
@@ -34,7 +35,6 @@ share/knsrcfiles/servicemenu.knsrc
 share/kservices5/dolphinpart.desktop
 share/kservices5/kcmdolphingeneral.desktop
 share/kservices5/kcmdolphinnavigation.desktop
-share/kservices5/kcmdolphinservices.desktop
 share/kservices5/kcmdolphinviewmodes.desktop
 share/kservicetypes5/fileviewversioncontrolplugin.desktop
 share/locale/ar/LC_MESSAGES/dolphin.mo
@@ -122,6 +122,7 @@ share/locale/sr/LC_MESSAGES/dolphin.mo
 share/locale/sv/LC_MESSAGES/dolphin.mo
 share/locale/sv/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/tr/LC_MESSAGES/dolphin.mo
+share/locale/tr/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/ug/LC_MESSAGES/dolphin.mo
 share/locale/uk/LC_MESSAGES/dolphin.mo
 share/locale/uk/LC_MESSAGES/dolphin_servicemenuinstaller.mo

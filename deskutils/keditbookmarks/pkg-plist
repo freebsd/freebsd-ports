@@ -23,8 +23,6 @@ man/sv/man1/kbookmarkmerger.1.gz
 man/uk/man1/kbookmarkmerger.1.gz
 share/applications/org.kde.keditbookmarks.desktop
 share/config.kcfg/keditbookmarks.kcfg
-share/kxmlgui5/keditbookmarks/keditbookmarks-genui.rc
-share/kxmlgui5/keditbookmarks/keditbookmarksui.rc
 share/locale/ar/LC_MESSAGES/keditbookmarks.mo
 share/locale/ast/LC_MESSAGES/keditbookmarks.mo
 share/locale/bg/LC_MESSAGES/keditbookmarks.mo

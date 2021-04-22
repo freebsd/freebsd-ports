@@ -3,9 +3,11 @@ share/qlogging-categories5/libkleo.renamecategories
 etc/xdg/libkleopatrarc
 include/KF5/Libkleo/ChecksumDefinition
 include/KF5/Libkleo/Classify
+include/KF5/Libkleo/Compat
 include/KF5/Libkleo/CryptoConfigDialog
 include/KF5/Libkleo/CryptoConfigModule
 include/KF5/Libkleo/DNAttributeOrderConfigWidget
+include/KF5/Libkleo/Debug
 include/KF5/Libkleo/DefaultKeyFilter
 include/KF5/Libkleo/DefaultKeyGenerationJob
 include/KF5/Libkleo/DirectoryServicesWidget
@@ -21,6 +23,8 @@ include/KF5/Libkleo/KeyApprovalDialog
 include/KF5/Libkleo/KeyCache
 include/KF5/Libkleo/KeyFilter
 include/KF5/Libkleo/KeyFilterManager
+include/KF5/Libkleo/KeyGroup
+include/KF5/Libkleo/KeyList
 include/KF5/Libkleo/KeyListModel
 include/KF5/Libkleo/KeyListModelInterface
 include/KF5/Libkleo/KeyListSortFilterProxyModel
@@ -40,8 +44,10 @@ include/KF5/Libkleo/SubkeyListModel
 include/KF5/Libkleo/UserIDListModel
 include/KF5/libkleo/checksumdefinition.h
 include/KF5/libkleo/classify.h
+include/KF5/libkleo/compat.h
 include/KF5/libkleo/cryptoconfigdialog.h
 include/KF5/libkleo/cryptoconfigmodule.h
+include/KF5/libkleo/debug.h
 include/KF5/libkleo/defaultkeyfilter.h
 include/KF5/libkleo/defaultkeygenerationjob.h
 include/KF5/libkleo/directoryserviceswidget.h
@@ -58,6 +64,8 @@ include/KF5/libkleo/keyapprovaldialog.h
 include/KF5/libkleo/keycache.h
 include/KF5/libkleo/keyfilter.h
 include/KF5/libkleo/keyfiltermanager.h
+include/KF5/libkleo/keygroup.h
+include/KF5/libkleo/keylist.h
 include/KF5/libkleo/keylistmodel.h
 include/KF5/libkleo/keylistmodelinterface.h
 include/KF5/libkleo/keylistsortfilterproxymodel.h
