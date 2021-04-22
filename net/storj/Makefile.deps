@@ -11,7 +11,7 @@ GH_TUPLE=	\
 		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v2.1.1:cespare_xxhash/vendor/github.com/cespare/xxhash/v2 \
 		cheekybits:genny:v1.0.0:cheekybits_genny/vendor/github.com/cheekybits/genny \
-		cheggaaa:pb:v3.0.5:cheggaaa_pb/vendor/github.com/cheggaaa/pb/v3 \
+		cheggaaa:pb:v3.0.5:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
 		cloudfoundry:gosigar:v1.1.0:cloudfoundry_gosigar/vendor/github.com/cloudfoundry/gosigar \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
@@ -21,7 +21,7 @@ GH_TUPLE=	\
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-redis:redis:v8.7.1:go_redis_redis/vendor/github.com/go-redis/redis/v8 \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		go-yaml:yaml:v2.3.0:go_yaml_yaml_1/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-migrate:migrate:v4.7.0:golang_migrate_migrate/vendor/github.com/golang-migrate/migrate/v4 \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
@@ -64,7 +64,7 @@ GH_TUPLE=	\
 		jtolds:tracetagger:v2.0.0-rc5:jtolds_tracetagger/vendor/github.com/jtolds/tracetagger/v2 \
 		lib:pq:v1.3.0:lib_pq/vendor/github.com/lib/pq \
 		loov:hrtime:v1.0.3:loov_hrtime/vendor/github.com/loov/hrtime \
-		lucas-clemente:quic-go:v0.20.0:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
+		lucas-clemente:quic-go:v0.20.1:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		marten-seemann:qtls-go1-15:v0.1.4:marten_seemann_qtls_go1_15/vendor/github.com/marten-seemann/qtls-go1-15 \
 		marten-seemann:qtls-go1-16:v0.1.3:marten_seemann_qtls_go1_16/vendor/github.com/marten-seemann/qtls-go1-16 \
@@ -91,11 +91,11 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:6cd9934a276a:storj_common/vendor/storj.io/common \
+		storj:common:ad3ee05f6339:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.20:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:66fb37637bf6:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:private:48b617cbe817:storj_private/vendor/storj.io/private \
-		storj:uplink:c1403fdd9e35:storj_uplink/vendor/storj.io/uplink \
+		storj:private:5fd57695864c:storj_private/vendor/storj.io/private \
+		storj:uplink:ad6bc2e5b2ee:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v70.15.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
