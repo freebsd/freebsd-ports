@@ -1,0 +1,20 @@
+doggo is a modern command-line DNS client (like dig) written in Golang. It
+outputs information in a neat concise manner and supports protocols like DoH,
+DoT as well.
+
+Features:
+* Human readable output - supports colors and tabular format.
+* Supports JSON format - can be useful while writing scripts.
+* Has support for multiple transport protocols:
+     DNS over HTTPS (DoH)
+     DNS over TLS (DoT)
+     DNS over TCP
+     DNS over UDP
+* Supports ndots and search configurations from resolv.conf or command-line
+  arguments.
+* Supports multiple resolvers at once.
+* Supports IPv4 and IPv6 both.
+* Available as a web tool as well: https://doggo.mrkaran.dev.
+* Shell completions for zsh and fish.
+
+WWW: https://github.com/mr-karan/doggo

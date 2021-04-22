@@ -57,6 +57,7 @@
     SUBDIR += dnswall
     SUBDIR += doc
     SUBDIR += dog
+    SUBDIR += doggo
     SUBDIR += doh-proxy
     SUBDIR += dq
     SUBDIR += drool
