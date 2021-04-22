@@ -25,6 +25,7 @@ include/mtx/events/messages/image.hpp
 include/mtx/events/messages/notice.hpp
 include/mtx/events/messages/text.hpp
 include/mtx/events/messages/video.hpp
+include/mtx/events/mscs/image_packs.hpp
 include/mtx/events/name.hpp
 include/mtx/events/nheko_extensions/hidden_events.hpp
 include/mtx/events/pinned_events.hpp
@@ -66,6 +67,7 @@ include/mtxclient/crypto/client.hpp
 include/mtxclient/crypto/objects.hpp
 include/mtxclient/crypto/types.hpp
 include/mtxclient/crypto/utils.hpp
+include/mtxclient/http/asio_overrides.hpp
 include/mtxclient/http/client.hpp
 include/mtxclient/http/client_impl.hpp
 include/mtxclient/http/errors.hpp
