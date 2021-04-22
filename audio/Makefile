@@ -808,6 +808,7 @@
     SUBDIR += vimpc
     SUBDIR += virtual_oss
     SUBDIR += virtual_oss_ctl
+    SUBDIR += visp-go
     SUBDIR += vitunes
     SUBDIR += vm-lv2
     SUBDIR += vmpk
