@@ -1,6 +1,5 @@
 PORTNAME=	interactive_rebase_tool
-DISTVERSION=	2.0.0
-PORTREVISION=	2
+DISTVERSION=	2.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -16,7 +15,7 @@ GH_ACCOUNT=	MitMaro
 GH_PROJECT=	git-interactive-rebase-tool
 
 CARGO_CRATES=	ansi_term-0.11.0 \
-		anyhow-1.0.38 \
+		anyhow-1.0.40 \
 		arrayvec-0.4.12 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
@@ -31,7 +30,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		crossterm_winapi-0.7.0 \
 		form_urlencoded-1.0.0 \
 		getrandom-0.2.2 \
-		git2-0.13.17 \
+		git2-0.13.18 \
 		hermit-abi-0.1.18 \
 		idna-0.2.0 \
 		instant-0.1.9 \
@@ -39,7 +38,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		jobserver-0.1.21 \
 		lazy_static-1.4.0 \
 		libc-0.2.82 \
-		libgit2-sys-0.12.18+1.1.0 \
+		libgit2-sys-0.12.19+1.1.0 \
 		libz-sys-1.1.2 \
 		lock_api-0.4.2 \
 		log-0.4.14 \
