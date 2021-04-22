@@ -1,0 +1,11 @@
+Visp is an interactive console client for Spotify, written in Go.
+Its interface is similar to Vim, and aims to be fast, configurable,
+and practical. Visp means whisk, and just like the simple mechanical
+tool it makes it easy to create that smooth and perfect mixture through
+the power of manual control, and without any unfortunate lumps.
+
+This interface has many features that involve sorting, searching, and
+navigating. It's designed to let you navigate your music collection
+effectively and efficiently.
+
+WWW: https://visp.site
