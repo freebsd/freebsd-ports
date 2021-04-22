@@ -2,6 +2,7 @@
 
 PORTNAME=	gnome-control-center
 PORTVERSION=	3.38.3
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -72,9 +73,7 @@ LDFLAGS+=      -fuse-ld=lld
 .endif
 
 .include <bsd.port.pre.mk>
-# FreeBSD base gained /etc/os-release in r354922, which
-# corresponds to __FreeBSD_version 1300060
-.if ${OSVERSION} < 1300060
+.if !exists(/etc/rc.d/os-release)
 RUN_DEPENDS+=	etc_os-release>0:sysutils/etc_os-release
 post-patch:
 	@${REINPLACE_CMD}  -e 's|/etc/os-release|${LOCALBASE}/etc/os-release|g' \
