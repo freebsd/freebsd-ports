@@ -55,7 +55,7 @@ REDIS_VARS=			LIB_DEPENDS+=libhiredis.so:databases/hiredis
 REDIS_CONFIGURE_ENABLE=		redis
 
 KAFKA_VARS=			LIB_DEPENDS+=librdkafka.so:net/librdkafka
-KAFKA_CONFIGURE_ENABLE==	kafka
+KAFKA_CONFIGURE_ENABLE=		kafka
 
 AVRO_VARS=			LIB_DEPENDS+=libavro.so:devel/avro-c
 AVRO_CONFIGURE_ENABLE=		avro
@@ -72,12 +72,6 @@ LIB_DEPENDS+=	libjansson.so:devel/jansson
 CONFIGURE_ARGS+=--enable-jansson
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-CONFIGURE_ARGS+=--enable-64bit
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
 
@@ -91,4 +85,4 @@ post-install:
 .endfor
 	${MKDIR} ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
