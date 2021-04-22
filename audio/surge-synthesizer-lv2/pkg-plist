@@ -447,6 +447,62 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Scratchy Throat.fxp
 %%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Simple Pipe.fxp
 %%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Tenor Sax.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Bass/Crystal Rip.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Bass/Cure.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Bass/Dirty Grime.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Bass/Moognt.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Bass/Wadded Beef.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Bass/Wandering Tremors.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/2 Glitched.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Bata Dending.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Chaos Bits.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Chaos Grips.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Dead MT.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Depletion.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Dleeped.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Emerald Caverns.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Generative Greebles.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Kick.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Modularesque.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Noninit.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Rezdrop.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Soupbell.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Tears Of....fxp
+%%DATADIR%%/patches_3rdparty/Databroth/FX/Throwing Glass In A Stone House.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Basic Pad.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Bright Strings.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Crangellis.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Document.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Drifting Bodies.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Drying.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Ember.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Emulation Realtor.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Feed.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Grains Of Filth.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Hollow Code.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Languid Slide.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Meld.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Melting Bells.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Polished Cheese.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Quiet Lung.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Run The Blades.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Shining Broth.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Slewing Glass.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Spectration.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Tape Magic.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Vintaged.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Warmbo.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Pad/Yom Thork.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Sequence/City Windows.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Sequence/Deviations.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Sequence/Ghoul In The Machine.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Sequence/Irrelevant Number.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Sequence/Metric Complications.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Sequence/Obsoletion.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Sequence/Psybending.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Sequence/Risk Detention.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Sequence/Truncated Deviations.fxp
+%%DATADIR%%/patches_3rdparty/Databroth/Sequence/Truncating Deviant.fxp
 %%DATADIR%%/patches_3rdparty/Emu/Basses/Acidy FM Boy.fxp
 %%DATADIR%%/patches_3rdparty/Emu/Basses/Barfy Beauty.fxp
 %%DATADIR%%/patches_3rdparty/Emu/Basses/Beefy Boi.fxp
@@ -866,54 +922,108 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Inigo Kennedy/Rhythms/Three Way 3.fxp
 %%DATADIR%%/patches_3rdparty/Inigo Kennedy/Winds/Flat Oboe.fxp
 %%DATADIR%%/patches_3rdparty/Inigo Kennedy/Winds/Mountain Pipe.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Above.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Brass Swells.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Bright Hybrid.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Brightly.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Circles Squared.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Divaesque.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/FMiscellanea 1.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/FMiscellanea 2.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Fade To Black.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Faded Polaroids.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Harold Budd (1936-2020) Remembrance.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/First Light (1-3-7).fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/First Light (Variant).fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Harold Budd (1936-2020).fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Iso Pad.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Life In Major Keys (1-3-7).fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Life In Major Keys (Variant).fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Mod Sixteen (1-61-19).fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Mod Sixteen (Variant).fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Next Spring.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Other Bright Themes.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Renewal Loops.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Soft Brass Pad.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/ReSurgence.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Stringish.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Swirling.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/That Morning (1-3-7).fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/That Morning (Variant).fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/TransHarmonics (1-3-5).fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Unbearable Lightness.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Warm Theme.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Whispering Waves.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/X-Fade Ensemble.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/X-Fade Sines 1.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/X-Fade Sines 2.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Ambiance/Y87 (Variant).fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Anticipation.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Beginnings (1-3-7).fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Beginnings (Variant).fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Duality.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Ensemble.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/New Waves.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Orchestral.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Planet Surge.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/ReSines.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Reflective States.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Sympathetic Vibes.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Wave Sequencing.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Renewal Loops.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/When Soaring.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Written In Tone.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Basses/BackWord.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Basses/FM Sub.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Basses/Monohuge.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Basses/Play Low.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Basses/Pulse.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Basses/ResamplEmu.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Basses/Scraper.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Bass/BackWord.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Bass/FM Sub.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Bass/ModBass.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Bass/Monohuge.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Bass/Play Low.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Bass/Pulse.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Bass/ResamplEmu.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Bass/Scraper.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/80s Futures Pasts.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Afterglow.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Arpsychord.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Bell Keys 1 (1-3-5).fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Bell Keys 2 (1-5-6).fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Bell Keys 3 (1-3-5).fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Bell Song.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Bore Excitations.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Brass Nostalgia.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Corporealities.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/EPad.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/EPleasantries.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Experiminimalism.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Golden Mallets.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM EPiano 1, 10, 19.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM EPiano 1, 11, 21.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM EPiano 1, 12, 23.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM EPiano 1, 13, 25.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM EPiano 1, 14, 27.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM EPiano 1, 15, 29.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM EPiano 1, 16, 31.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM EPiano 1, 3, 5.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM EPiano 1, 4, 7.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM EPiano 1, 5, 9.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM EPiano 1, 6, 11.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM EPiano 1, 7, 13.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM EPiano 1, 8, 15.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM EPiano 1, 9, 17.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM Swirlscapes.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/FM3 Deiified.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Fiftyish.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Harmonic Dimensions.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Harmonicscape.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Iso EP.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Lighter Still.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Midnight Retrospections.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Midnightly.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Min-Triad Me.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Open Windows.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Our Stories.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Palm Mute Pi.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Pluckstring.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Rediscoveries (1-3-6).fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Rediscoveries (Variant).fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Saw Things.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Slow Waves.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Sunny.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/TransHarmonics (1-3-5).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/X-Wave Minimalism.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Through Open Windows.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/X-Fade Keys.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Y87 (1-3-9).fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Freerunaway.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Hammer-On Hammer-Off.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Journey To The Center Of The Surge.fxp
@@ -930,6 +1040,51 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Stories In One Voice.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Warm One.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/With One Voice.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Mallets/Bass Marimba 1.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Mallets/Bass Marimba 2.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Mallets/Chimes 1.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Mallets/Cymbell 1.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Mallets/Cymbell 2.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Mallets/Golden Mallets.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Mallets/Lithovibes.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Mallets/Square Metallophone .fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Mallets/Toy Piano.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Modelled/Bowed Psaltery.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Modelled/Clavichord.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Modelled/Hammered Dulcimer.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Modelled/Piano Fictions.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Modelled/Santoor.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Modelled/Stringed Traditions.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/8-Bit Singing.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/Aliascape.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/Aliaspace.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/Bright Drone.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/Ensemble Modern.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/Glitch Choir.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/Modern XFS 1.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/Now And Then.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/Open Spaces.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/Planetarium.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/Pulse Glitcher.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/Smooth Chorus.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/String Machine 1.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/String Machine 10.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/String Machine 11.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/String Machine 2.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/String Machine 3.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/String Machine 4.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/String Machine 5.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/String Machine 6.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/String Machine 7.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/String Machine 8.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Pads/String Machine 9.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Percussion/Bell Drum.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Percussion/Dunun With Bell.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Percussion/Membranophone 1.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Percussion/Membranophone 2.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Percussion/Membranophone 3.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Percussion/Membranophone Dum-Tek.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Percussion/Tarang.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Bass Sawari.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Bright Attack.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Bright Pizzicato.fxp
@@ -945,21 +1100,27 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Short Glide Res Body.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Short Glide.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Wooden Pizz.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Sequences/Chaoseq.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Sequences/End Credits X-Fade.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Sequences/Quartertone And The Pitch.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Sequences/Silk Sequences.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Sequences/Still Motions.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Sequences/Stranger Surges.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Above.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Brightly.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Divaesque.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/AlterHarp.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Baconscapes.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Experiminimalism.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Gliding.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/ReSurgence.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Glissabout.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Moire 1.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Moire 2.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Outerscapes.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Parting Skies.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Returning.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Stringish.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Swirling.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Warm Theme.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Sympathetic Vibes.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Twisted Nimbus.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Wave Sequencing.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Whale Communion.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/X-Wave Minimalism.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Splits/Bass Pad + Chorus Pad.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Splits/Bass Seq + Synth Pad.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Splits/Bright Pad + Slow String.fxp
@@ -967,58 +1128,17 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Splits/Reverse Pad + Swirl Pad.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Splits/Soft Bass Pad + Saw Pad.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Splits/String Bass + Resonant Pad.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/String Machines/String Machine 1.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/String Machines/String Machine 10.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/String Machines/String Machine 2.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/String Machines/String Machine 3.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/String Machines/String Machine 4.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/String Machines/String Machine 5.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/String Machines/String Machine 6.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/String Machines/String Machine 7.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/String Machines/String Machine 8.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/String Machines/String Machine 9.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge 1.8.1 JL Presets Update Notes.txt
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-3X81Z/Beginnings (1-3-7).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-3X81Z/Bell Keys 1 (1-3-5).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-3X81Z/Bell Keys 2 (1-5-6).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-3X81Z/Bell Keys 3 (1-3-5).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-3X81Z/First Light (1-3-7).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-3X81Z/Life In Major Keys (1-3-7).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-3X81Z/Mod Sixteen (1-61-19).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-3X81Z/Rediscoveries (1-3-6).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-3X81Z/That Morning (1-3-7).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-3X81Z/Y87 (1-3-9).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-D/80s Futures Pasts.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-D/Baconscapes.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-D/Bore Excitations.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-D/Brass Nostalgia.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-D/Corporealities.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-D/FM Swirlscapes.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-D/FM3 Deiified.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-D/Fiftyish.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-D/Midnight Retrospections.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-D/Pluckstring.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-D/Saw Things.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-D/Slow Waves.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-D/Through Open Windows.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/1x Sine, 2x WT.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/3x Sines 1.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/3x Sines 2.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/3x Sines 3.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/Beginnings (Variant).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/First Light (Variant).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/Life In Major Keys (Variant).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/Mod-Sixteen (Variant).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/Rediscoveries (Variant).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/Sine-Classic-WT.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/That Morning (Variant).fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/Y87 (Variant).fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge 1.9 patches by Jacky Ligon.txt
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/Alias.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/Classic.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/FM2.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/FM3.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/Modern.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/S&H Noise.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/Sine.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/WT.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/String.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/Twist.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/Wavetable.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/Window.fxp
 %%DATADIR%%/patches_3rdparty/Kuniklo/Arps/Calc.fxp
 %%DATADIR%%/patches_3rdparty/Kuniklo/Arps/Chording.fxp
@@ -1462,6 +1582,55 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Vincent Zauhar/Pads/Triad Expert.fxp
 %%DATADIR%%/patches_3rdparty/Vincent Zauhar/Sequences/Acid Buzz.fxp
 %%DATADIR%%/patches_3rdparty/Vincent Zauhar/Sequences/Chord Me.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Basses/808 Builder A.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Basses/But Clean The DC.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Basses/Capitalize On Older WTs.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Basses/FM Frog.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Basses/Floored.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Basses/Garage Depth.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Basses/I Can Kinda Be Chordish.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Basses/Low Problems.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Basses/Morphable Donk.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Basses/Primitive Reese.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Basses/RETRO HAKKOO.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Basses/Uuu-waaaa.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Chords/Beautiful Nightmare.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Chords/Bemasaw.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Chords/If You Don't Need Me Then Let Me Go.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Chords/Simple Emotional Reeds.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Chords/VHS Organ.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Chords/You Are Incompatible.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Drums/Hakko Kick.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Drums/Modular Drum.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Drums/Nice Clicks Perc.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Drums/Proper Kick.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Drums/Simple Snare.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/FX/Atonal Computers.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/FX/White Noise Flutter.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Keys/Beauty Organ.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Keys/EP Forest.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Keys/EP Middle.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Keys/Found In A Closet.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Keys/Picked Driven Synth.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Keys/Spectacularly Simple Brass.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Keys/Starchild.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Keys/The Softest.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Keys/Truly A Background.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Leads/Mystique Power.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Leads/Nice And Elegant Retro.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Leads/Open Retro Lead.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Pads/CPU Hog.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Pads/Hold A Lot Of Notes.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Pads/Moving World.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Pads/Stillness In Time.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Plucks/Come Closer.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Plucks/Flat Computer Marimba.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Plucks/Popcorn Pluck.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Sequences/Harmony Chords + Synth Top.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Sequences/Harmony Chords.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Sequences/Retrochords.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Sequences/Retrovictory.fxp
+%%DATADIR%%/patches_3rdparty/Vospi/Sequences/Works As A Reesey String Motive.fxp
 %%DATADIR%%/patches_3rdparty/Zoozither/Atmospheres/Brain Stem.fxp
 %%DATADIR%%/patches_3rdparty/Zoozither/Atmospheres/Chewsy.fxp
 %%DATADIR%%/patches_3rdparty/Zoozither/Atmospheres/Crossover.fxp
@@ -2170,7 +2339,7 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_factory/Templates/Init Emu.fxp
 %%DATADIR%%/patches_factory/Templates/Init Env Per Osc.fxp
 %%DATADIR%%/patches_factory/Templates/Init FM2.fxp
-%%DATADIR%%/patches_factory/Templates/Init Karplus+Strong.fxp
+%%DATADIR%%/patches_factory/Templates/Init Karplus-Strong.fxp
 %%DATADIR%%/patches_factory/Templates/Init Saw.fxp
 %%DATADIR%%/patches_factory/Templates/Init Sine.fxp
 %%DATADIR%%/patches_factory/Vocoder/Noise.fxp
@@ -2196,6 +2365,7 @@ lib/vst/Surge.so
 %%DATADIR%%/skins/Tutorial/04 Control Classes and User Controls.surge-skin/SVG/loudPrevNext.svg
 %%DATADIR%%/skins/Tutorial/04 Control Classes and User Controls.surge-skin/SVG/loudPrevNextHover.svg
 %%DATADIR%%/skins/Tutorial/04 Control Classes and User Controls.surge-skin/skin.xml
+%%DATADIR%%/skins/Tutorial/05 Labels And Modulators.surge-skin/SVG/ramen.svg
 %%DATADIR%%/skins/Tutorial/05 Labels And Modulators.surge-skin/skin.xml
 %%DATADIR%%/skins/Tutorial/06 Using PNG.surge-skin/PNG/fracbg_100.png
 %%DATADIR%%/skins/Tutorial/06 Using PNG.surge-skin/PNG/fracbg_125.png
@@ -2211,6 +2381,11 @@ lib/vst/Surge.so
 %%DATADIR%%/skins/Tutorial/06 Using PNG.surge-skin/skin.xml
 %%DATADIR%%/skins/Tutorial/07 The FX Section.surge-skin/skin.xml
 %%DATADIR%%/skins/Tutorial/08 Hiding Controls.surge-skin/skin.xml
+%%DATADIR%%/skins/Tutorial/09 Skin Version 2 Expansion.surge-skin/SVG/BigFilterGlyph.svg
+%%DATADIR%%/skins/Tutorial/09 Skin Version 2 Expansion.surge-skin/SVG/BigFilterGlyphHover.svg
+%%DATADIR%%/skins/Tutorial/09 Skin Version 2 Expansion.surge-skin/SVG/widerFilterBG.svg
+%%DATADIR%%/skins/Tutorial/09 Skin Version 2 Expansion.surge-skin/SVG/widerFilterBGHover.svg
+%%DATADIR%%/skins/Tutorial/09 Skin Version 2 Expansion.surge-skin/skin.xml
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00102.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00105.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00112.svg
@@ -2228,7 +2403,6 @@ lib/vst/Surge.so
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00126.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00132.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00134.svg
-%%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00136.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00137.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00140.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00143.svg
@@ -2251,6 +2425,7 @@ lib/vst/Surge.so
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00167.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00168.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00169.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00170.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00171.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00172.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00173.svg
@@ -2260,7 +2435,9 @@ lib/vst/Surge.so
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00177.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00178.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00179.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00180.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00181.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00182.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00301.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00302.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00303.svg
@@ -2415,8 +2592,43 @@ lib/vst/Surge.so
 %%DATADIR%%/skins/default.surge-skin/SVG/hoverTS00153.svg
 %%DATADIR%%/skins/default.surge-skin/SVG/hoverTS00157.svg
 %%DATADIR%%/skins/default.surge-skin/skin.xml
+%%DATADIR%%/tuning-library/Documentation.txt
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/689.362 ED2-47 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/690.000 ED2-40 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/690.909 ED2-33 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/692.308 ED2-26 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/693.333 ED2-45 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/69%%PYTHON_VER%%50 ED2-64 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/694.737 ED2-19 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/695.652 ED2-69 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/696.000 ED2-50 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/696.774 ED2-31 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/697.674 ED2-43 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/698.182 ED2-55 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/698.507 ED2-67 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/701.538 ED2-65 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/701.887 ED2-53 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/702.439 ED2-41 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/702.857 ED2-70 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/703.448 ED2-29 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/704.348 ED2-46 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/704.762 ED2-63 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/705.882 ED2-17 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/707.143 ED2-56 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/707.692 ED2-39 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/708.197 ED2-61 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/709.091 ED2-22 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/709.859 ED2-71 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/710.204 ED2-49 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/711.111 ED2-27 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/711.864 ED2-59 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/712.500 ED2-32 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/713.514 ED2-37 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/714.286 ED2-42 ELT-12.scl
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/A collection of Equal Linear-Temperaments 17-71 - Notes.pdf
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/Equal Linear Temperaments 17-71.pdf
+%%DATADIR%%/tuning-library/Equal Linear Temperaments 17-71 (SCL-KBM)/Halberstadt 60-440-69.kbm
 %%DATADIR%%/tuning-library/KBM Concert Pitch/60-262-60 Concert C.kbm
-%%DATADIR%%/tuning-library/KBM Concert Pitch/60-440-69 Concert A C.kbm
 %%DATADIR%%/tuning-library/KBM Concert Pitch/61-277-61 Concert C#, Db.kbm
 %%DATADIR%%/tuning-library/KBM Concert Pitch/62-294-62 Concert D.kbm
 %%DATADIR%%/tuning-library/KBM Concert Pitch/63-311-63 Concert D#, Eb.kbm
@@ -2428,8 +2640,8 @@ lib/vst/Surge.so
 %%DATADIR%%/tuning-library/KBM Concert Pitch/69-440-69 Concert A.kbm
 %%DATADIR%%/tuning-library/KBM Concert Pitch/70-466-70 Concert A#, Bb.kbm
 %%DATADIR%%/tuning-library/KBM Concert Pitch/71-494-71 Concert B.kbm
+%%DATADIR%%/tuning-library/KBM Concert Pitch/Halberstadt 60-440-69.kbm
 %%DATADIR%%/tuning-library/KBM Concert Pitch/KBM Notes.txt
-%%DATADIR%%/tuning-library/README.txt
 %%DATADIR%%/tuning-library/SCL/12 Tone Equal Temperament.scl
 %%DATADIR%%/tuning-library/SCL/35.1 CET - Wendy Carlos - Gamma.scl
 %%DATADIR%%/tuning-library/SCL/63.8 CET - Wendy Carlos - Beta.scl
@@ -2579,7 +2791,6 @@ lib/vst/Surge.so
 %%DATADIR%%/tuning-library/SCL/SD4 56-14.scl
 %%DATADIR%%/tuning-library/SCL/SD4 60-15.scl
 %%DATADIR%%/tuning-library/SCL/SD4 64-16.scl
-%%DATADIR%%/tuning-library/Surge Virtual Instrument Microtuning Library Documentation.txt
 %%DATADIR%%/wavetables/Basic/Sine HQ.wav
 %%DATADIR%%/wavetables/Basic/Sine Octaves HQ.wav
 %%DATADIR%%/wavetables/Basic/Sine Octaves.wt
@@ -2717,6 +2928,7 @@ lib/vst/Surge.so
 %%DATADIR%%/wavetables/Sampled/Vocal O Formant 2.wt
 %%DATADIR%%/wavetables/Sampled/Vocal O.wt
 %%DATADIR%%/wavetables/Sampled/Wonky.wt
+%%DATADIR%%/wavetables/WT fileformat.txt
 %%DATADIR%%/wavetables/Waldorf/B3Waves.wt
 %%DATADIR%%/wavetables/Waldorf/BELLTR.wt
 %%DATADIR%%/wavetables/Waldorf/BELTREE2.wt
@@ -2768,7 +2980,6 @@ lib/vst/Surge.so
 %%DATADIR%%/wavetables/Waldorf/sine swee.wt
 %%DATADIR%%/wavetables/Waldorf/vs1.wt
 %%DATADIR%%/wavetables/Waldorf/vs2.wt
-%%DATADIR%%/wavetables/wt fileformat.txt
 %%DATADIR%%/wavetables_3rdparty/Damon Armani/Damon Armani 1.WT
 %%DATADIR%%/wavetables_3rdparty/Damon Armani/Damon Armani 10.WT
 %%DATADIR%%/wavetables_3rdparty/Damon Armani/Damon Armani 11.wt

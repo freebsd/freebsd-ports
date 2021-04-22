@@ -1,23 +1,37 @@
---- CMakeLists.txt.orig	2021-01-17 13:26:30 UTC
+--- CMakeLists.txt.orig	2021-04-20 20:34:06 UTC
 +++ CMakeLists.txt
-@@ -143,7 +143,7 @@ add_dependencies( surge-shared git-info )
+@@ -128,7 +128,7 @@ add_subdirectory(libs/filesystem)
+ add_subdirectory(libs/tinyxml)
+ add_subdirectory(libs/escape-from-vstgui)
+ add_subdirectory(libs/oddsound-mts)
+-add_subdirectory(libs/libsamplerate EXCLUDE_FROM_ALL)
++#add_subdirectory(libs/libsamplerate EXCLUDE_FROM_ALL)
+ 
+ target_link_libraries(surge-shared PUBLIC
+   surge::airwindows
+@@ -166,7 +166,8 @@ add_dependencies( surge-shared git-info )
  
  # Set up external packages
  list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
 -find_package(LibMidiFile ${PACKAGE_OPTIONS})
++# #find_package(LibMidiFile) only looks for bundled library, see https://github.com/surge-synthesizer/surge/issues/4358
 +#find_package(LibMidiFile ${PACKAGE_OPTIONS})
  
- # Things we can build
- set( BUILD_HEADLESS true )
-@@ -1486,9 +1486,9 @@ endif()
- # become linters and stuff. The code will run on macos in the pipeline. I suppose
- # you could run it locally to, but really, you should know what you are doing if you
- # do that. And I'll document it so you can know that when I use it earnest in 1.9
--add_custom_target(code-quality-pipeline-checks)
-+#add_custom_target(code-quality-pipeline-checks)
- 
- # Check 1: The extra content is properly specified.
--add_dependencies(code-quality-pipeline-checks download-extra-content)
-+#add_dependencies(code-quality-pipeline-checks download-extra-content)
- 
- # Coming in 1.9: CLang Format checks and others
+ if( BUILD_SURGE_JUCE_PLUGINS )
+   set( BUILD_SURGE_EFFECTS_BANK TRUE )
+@@ -1765,9 +1766,9 @@ foreach(dir ${CLANG_FORMAT_DIRS})
+     list(APPEND CLANG_FORMAT_GLOBS "':(glob)${dir}/**/*.${ext}'")
+   endforeach()
+ endforeach()
+-add_custom_command(TARGET code-quality-pipeline-checks
+-  POST_BUILD
+-  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+-  COMMAND ${CMAKE_COMMAND} -E echo About to check clang-format
+-  COMMAND git ls-files -- ${CLANG_FORMAT_GLOBS} | xargs clang-format --dry-run --Werror
+-)
++#add_custom_command(TARGET code-quality-pipeline-checks
++#  POST_BUILD
++#  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
++#  COMMAND ${CMAKE_COMMAND} -E echo About to check clang-format
++#  COMMAND git ls-files -- ${CLANG_FORMAT_GLOBS} | xargs clang-format --dry-run --Werror
++#)
