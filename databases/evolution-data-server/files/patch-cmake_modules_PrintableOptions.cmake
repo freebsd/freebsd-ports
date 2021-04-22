@@ -1,0 +1,53 @@
+--- cmake/modules/PrintableOptions.cmake.orig	2021-04-22 19:58:13 UTC
++++ cmake/modules/PrintableOptions.cmake
+@@ -19,40 +19,40 @@
+ #    prints all the build options previously added with the above functions
+ 
+ macro(add_printable_variable_bare _name)
+-	if(_name STREQUAL "")
++	if("${_name}" STREQUAL "")
+ 		message(FATAL_ERROR "variable name cannot be empty")
+-	endif(_name STREQUAL "")
++	endif()
+ 	list(APPEND _printable_options ${_name})
+ endmacro()
+ 
+ macro(add_printable_option _name _description _default_value)
+-	if(_name STREQUAL "")
++	if("${_name}" STREQUAL "")
+ 		message(FATAL_ERROR "option name cannot be empty")
+-	endif(_name STREQUAL "")
++	endif()
+ 	option(${_name} ${_description} ${_default_value})
+ 	add_printable_variable_bare(${_name})
+ endmacro()
+ 
+ macro(add_printable_variable _name _description _default_value)
+-	if(_name STREQUAL "")
++	if("${_name}" STREQUAL "")
+ 		message(FATAL_ERROR "variable name cannot be empty")
+-	endif(_name STREQUAL "")
++	endif()
+ 	set(${_name} ${_default_value} CACHE STRING ${_description})
+ 	add_printable_variable_bare(${_name})
+ endmacro()
+ 
+ macro(add_printable_variable_path _name _description _default_value)
+-	if(_name STREQUAL "")
++	if("${_name}" STREQUAL "")
+ 		message(FATAL_ERROR "path variable name cannot be empty")
+-	endif(_name STREQUAL "")
++	endif()
+ 	set(${_name} ${_default_value} CACHE PATH ${_description})
+ 	add_printable_variable_bare(${_name})
+ endmacro()
+ 
+ macro(add_printable_variable_filepath _name _description _default_value)
+-	if(_name STREQUAL "")
++	if("${_name}" STREQUAL "")
+ 		message(FATAL_ERROR "filepath variable name cannot be empty")
+-	endif(_name STREQUAL "")
++	endif()
+ 	set(${_name} ${_default_value} CACHE FILEPATH ${_description})
+ 	add_printable_variable_bare(${_name})
+ endmacro()
