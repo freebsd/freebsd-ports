@@ -10,7 +10,10 @@ COMMENT=	Qt graphical user interface module
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
 		${LOCALBASE}/include/xf86drm.h:graphics/libdrm \
-		at-spi2-core>=0:accessibility/at-spi2-core
+		at-spi2-core>=0:accessibility/at-spi2-core \
+		${BUILD_DEPENDS_${ARCH}}
+BUILD_DEPENDS_armv6=	as:devel/binutils
+BUILD_DEPENDS_armv7=	as:devel/binutils
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libevdev.so:devel/libevdev \
 		libfontconfig.so:x11-fonts/fontconfig \
