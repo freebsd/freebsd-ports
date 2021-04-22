@@ -1,5 +1,5 @@
 PORTNAME=	puzzles
-PORTVERSION=	20210409
+PORTVERSION=	20210420
 CATEGORIES=	games
 MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/puzzles/ \
 		https://mirror.amdmi3.ru/distfiles/
@@ -12,13 +12,12 @@ COMMENT=	Simon Tatham's Portable Puzzle Collection
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-COMMITHASH=	69b5e75
+COMMITHASH=	3cf0a3b
 
 BUILD_DEPENDS=	convert:graphics/ImageMagick6-nox11
 
-USES=		cmake gnome perl5 pkgconfig shebangfix
+USES=		cmake gnome perl5 pkgconfig
 USE_PERL5=	build
-SHEBANG_FILES=	icons/square.pl icons/cicon.pl
 CMAKE_ARGS=	-DNAME_PREFIX:STRING=sgt-
 
 OPTIONS_SINGLE=	GTK
