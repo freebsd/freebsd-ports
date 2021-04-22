@@ -1,8 +1,8 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME=	nginx
-PORTVERSION=	1.18.0
-PORTREVISION?=	51
+PORTVERSION=	1.20.0
+PORTREVISION?=	0
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
@@ -21,7 +21,7 @@ BROKEN_mips64=	error ngx_spinlock() or ngx_atomic_cmp_set() are not defined
 
 CONFLICTS_INSTALL=	nginx-devel
 
-PORTSCOUT=	limit:^1\.18\.[0-9]*
+PORTSCOUT=	limit:^1\.20\.[0-9]*
 
 USES=		compiler:c11 cpe
 
