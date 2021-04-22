@@ -1,6 +1,7 @@
 PORTNAME=	ktechlab
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.50.0
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +20,8 @@ USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons \
 		crash guiaddons i18n iconthemes init itemviews jobwidgets js \
 		kdelibs4support khtml kio notifications parts service solid \
-		sonnet texteditor textwidgets unitconversion widgetsaddons windowsystem xmlgui
+		sonnet texteditor textwidgets unitconversion widgetsaddons windowsystem xmlgui \
+		doctools_build
 USE_GNOME=	glib20
 
 CXXFLAGS+=	-I${LOCALBASE}/lib/glib-2.0/include

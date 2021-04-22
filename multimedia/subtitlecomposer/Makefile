@@ -1,7 +1,7 @@
 PORTNAME=	subtitlecomposer
 PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia kde
 
 MAINTAINER=	makc@FreeBSD.org
@@ -16,7 +16,8 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 USES=		compiler:c++11-lang cmake desktop-file-utils gettext \
 		kde:5 pkgconfig qt:5 shared-mime-info
 USE_KDE=	auth codecs config configwidgets coreaddons ecm_build i18n \
-		kio kross sonnet textwidgets widgetsaddons xmlgui
+		kio kross sonnet textwidgets widgetsaddons xmlgui \
+		doctools_build
 USE_QT=		buildtools_build qmake_build core gui widgets
 
 USE_GITHUB=	yes

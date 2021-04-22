@@ -2,7 +2,7 @@
 
 PORTNAME=	kmplayer
 PORTVERSION=	0.12.0b
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio kde
 
@@ -38,7 +38,8 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash ecm guiaddons i18n iconthemes init itemviews \
 		jobwidgets mediaplayer notifications parts service \
 		textwidgets unitconversion widgetsaddons windowsystem \
-		xmlgui kdelibs4support kio solid sonnet
+		xmlgui kdelibs4support kio solid sonnet \
+		doctools_build
 USE_XORG=	x11 xcb
 USE_GITHUB=	yes
 GH_ACCOUNT=	KDE
