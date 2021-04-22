@@ -429,6 +429,8 @@ libdata/pkgconfig/absl_bits.pc
 libdata/pkgconfig/absl_btree.pc
 libdata/pkgconfig/absl_city.pc
 libdata/pkgconfig/absl_civil_time.pc
+libdata/pkgconfig/absl_cleanup.pc
+libdata/pkgconfig/absl_cleanup_internal.pc
 libdata/pkgconfig/absl_compare.pc
 libdata/pkgconfig/absl_compressed_tuple.pc
 libdata/pkgconfig/absl_config.pc
