@@ -1,9 +1,8 @@
 PORTNAME=	spago
-DISTVERSION=	0.19.1
-PORTREVISION=	1
+DISTVERSION=	0.19.2
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/spacchetti/purescript-docs-search/releases/download/v${PURESCRIPT_DOCS_SEARCH_VERSION}/:docs_search_app \
-		https://github.com/spacchetti/purescript-docs-search/releases/download/v${PURESCRIPT_DOCS_SEARCH_VERSION}/:purescript_docs_search
+MASTER_SITES=	https://github.com/purescript/purescript-docs-search/releases/download/v${PURESCRIPT_DOCS_SEARCH_VERSION}/:docs_search_app \
+		https://github.com/purescript/purescript-docs-search/releases/download/v${PURESCRIPT_DOCS_SEARCH_VERSION}/:purescript_docs_search
 DISTFILES=	docs-search-app.js:docs_search_app \
 		purescript-docs-search:purescript_docs_search
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -206,7 +205,7 @@ USE_CABAL=	Diff-0.4.0 \
 		x509-validation-1.6.11 \
 		zlib-0.6.2.3
 
-PURESCRIPT_DOCS_SEARCH_VERSION=	0.0.10
+PURESCRIPT_DOCS_SEARCH_VERSION=	0.0.11
 
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/docs-search-app.js ${WRKSRC}/templates/
