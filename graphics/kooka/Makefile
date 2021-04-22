@@ -1,5 +1,6 @@
 PORTNAME=	kooka
 DISTVERSION=	0.61-323
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 
@@ -15,7 +16,8 @@ LIB_DEPENDS=	libpaper.so:print/libpaper \
 USES=		cmake compiler:c++11-lang kde:5 pkgconfig qt:5
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons \
 		ecm i18n iconthemes itemviews jobwidgets kio service solid sonnet \
-		textwidgets widgetsaddons xmlgui
+		textwidgets widgetsaddons xmlgui \
+		doctools_build
 USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build
 

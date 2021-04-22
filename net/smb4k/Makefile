@@ -1,5 +1,6 @@
 PORTNAME=	smb4k
 DISTVERSION=	3.0.7
+PORTREVISION=	1
 CATEGORIES=	net kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,7 +15,8 @@ USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 samba tar:bzip2
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons ecm i18n iconthemes jobwidgets kio notifications \
 		plasma-framework service solid wallet widgetsaddons \
-		windowsystem xmlgui
+		windowsystem xmlgui \
+		doctools_build
 USE_QT=		concurrent core dbus declarative gui network printsupport \
 		testlib widgets xml \
 		buildtools_build qmake_build

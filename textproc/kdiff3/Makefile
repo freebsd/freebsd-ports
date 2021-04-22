@@ -1,5 +1,6 @@
 PORTNAME=	kdiff3
 DISTVERSION=	1.8.5
+PORTREVISION=	1
 CATEGORIES=	textproc kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 
@@ -13,7 +14,8 @@ USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash ecm i18n iconthemes jobwidgets kio \
 		parts service sonnet textwidgets widgetsaddons windowsystem \
-		xmlgui
+		xmlgui \
+		doctools_build
 USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build
 

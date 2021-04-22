@@ -2,7 +2,7 @@
 
 PORTNAME=	labplot
 DISTVERSION=	2.8.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 
@@ -23,7 +23,8 @@ USE_KDE=	archive attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash ecm_build guiaddons i18n iconthemes itemviews \
 		jobwidgets kdelibs4support kio newstuff notifications parts \
 		service solid sonnet syntaxhighlighting textwidgets unitconversion \
-		widgetsaddons windowsystem xmlgui
+		widgetsaddons windowsystem xmlgui \
+		doctools_build
 USE_QT=		concurrent core dbus gui network printsupport serialport \
 		sql svg widgets xml \
 		buildtools_build qmake_build

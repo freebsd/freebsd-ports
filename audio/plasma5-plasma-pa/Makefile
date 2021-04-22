@@ -12,7 +12,8 @@ USES=		cmake compiler:c++11-lib cpe gettext gnome kde:5 pkgconfig qt:5 \
 		shebangfix tar:xz
 USE_GNOME=	gconf2
 USE_KDE=	config configwidgets coreaddons ecm globalaccel i18n \
-		kdeclarative notifications package plasma-framework
+		kdeclarative notifications package plasma-framework \
+		doctools_build
 USE_QT=		core dbus declarative gui network widgets \
 		buildtools_build qmake_build
 

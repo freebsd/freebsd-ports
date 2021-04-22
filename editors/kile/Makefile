@@ -1,7 +1,7 @@
 PORTNAME=	kile
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0b3
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	editors kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,7 +19,8 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons ecm guiaddons i18n iconthemes \
 		init itemviews jobwidgets js khtml kio parts service solid \
 		sonnet texteditor textwidgets widgetsaddons windowsystem xmlgui \
-		okular
+		okular \
+		doctools_build
 USE_QT=		concurrent core dbus gui network script widgets xml \
 		buildtools_build qmake_build
 SHEBANG_FILES=	*.pl

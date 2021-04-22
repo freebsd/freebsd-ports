@@ -1,6 +1,6 @@
 PORTNAME=	kgraphviewer
 DISTVERSION=	2.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics kde
 MASTER_SITES=   KDE/stable/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=    KDE/${PORTNAME}
@@ -18,7 +18,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 tar:xz \
 USE_KDE=	auth codecs completion config configwidgets \
 		coreaddons i18n iconthemes jobwidgets kio parts service \
 		sonnet textwidgets widgetsaddons xmlgui \
-		ecm_build
+		ecm_build doctools_build
 USE_QT=		concurrent core dbus gui network printsupport svg widgets xml \
 		buildtools_build qmake_build
 

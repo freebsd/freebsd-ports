@@ -1,6 +1,7 @@
 PORTNAME=	amarok
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9.71
+PORTREVISION=	1
 CATEGORIES=	audio kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -31,7 +32,7 @@ USE_KDE=	archive auth attica bookmarks codecs config configwidgets \
 		kcmutils kio kirigami2 newstuff notifications notifyconfig \
 		package parts service solid sonnet texteditor textwidgets \
 		threadweaver wallet widgetsaddons windowsystem xmlgui \
-		ecm_build
+		ecm_build doctools_build
 USE_XORG=	ice sm x11 xext
 USE_LDCONFIG=	yes
 
