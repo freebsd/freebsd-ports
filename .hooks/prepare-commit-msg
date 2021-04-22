@@ -44,6 +44,9 @@ $(awk '1;/^#$/{exit}' "$1")
 # <then a blank line>
 #                                                         72 columns --|
 #
+# Do not add a Submitted by line.  If someone besides the committer sent in the
+# change, the commit author should be set using \`git commit --author\`.
+#
 # Uncomment and complete these metadata fields, as appropriate:
 #
 # PR:		<If and which Problem Report is related.>
@@ -61,8 +64,7 @@ $(awk '1;/^#$/{exit}' "$1")
 # Differential Revision:	<https://reviews.freebsd.org/D###>
 #
 # "Pull Request" and "Differential Revision" require the *full* GitHub or
-# Phabricator URL.  The commit author should be set appropriately, using
-# \`git commit --author\` if someone besides the committer sent in the change.
+# Phabricator URL.
 $(awk '/^#$/,EOF' "$1")
 EOF
 
