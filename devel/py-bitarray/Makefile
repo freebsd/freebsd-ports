@@ -28,8 +28,8 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/bitarray/_bitarray.so
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/bitarray/_util.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/bitarray/_bitarray*.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/bitarray/_util*.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
