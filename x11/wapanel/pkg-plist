@@ -1,0 +1,17 @@
+bin/wapanel
+include/wapanel-appletapi/appletapi.h
+lib/libwapanel-appletapi.a
+lib/wapanel/applets/libwapanel-applet-activator.so
+lib/wapanel/applets/libwapanel-applet-app-finder.so
+lib/wapanel/applets/libwapanel-applet-clock.so
+lib/wapanel/applets/libwapanel-applet-separator.so
+lib/wapanel/applets/libwapanel-applet-task-switcher.so
+%%PULSEAUDIO%%lib/wapanel/applets/libwapanel-applet-volume-control.so
+libdata/pkgconfig/wapanel-appletapi.pc
+%%DATADIR%%/3RD_PARTY_LICENSES
+%%DATADIR%%/icons/hicolor/scalable/actions/wapa-account.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/wapa-cog.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/wapa-folder.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/wapa-logo-nocolor-dark.svg
+%%DATADIR%%/wapanel.css
+%%DATADIR%%/wapanel.toml

@@ -369,6 +369,7 @@
     SUBDIR += virtboard
     SUBDIR += virtualgl
     SUBDIR += wallutils
+    SUBDIR += wapanel
     SUBDIR += waybar
     SUBDIR += wayland-logout
     SUBDIR += wbar
