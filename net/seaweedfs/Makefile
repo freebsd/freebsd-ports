@@ -1,5 +1,5 @@
 PORTNAME=	seaweedfs
-DISTVERSION=	2.35
+DISTVERSION=	2.40
 CATEGORIES=	net sysutils
 
 MAINTAINER=	dch@FreeBSD.org
