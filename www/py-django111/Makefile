@@ -20,6 +20,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Django 1.11 is End-of-Life since April 2020. Switch to Django 2.2+ as soon as possible.
+EXPIRATION_DATE=	2021-04-30
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
 
