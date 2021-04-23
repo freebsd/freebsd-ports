@@ -1,3 +1,5 @@
-TIMESTAMP = 1542569562
-SHA256 (ecos-2.0.7.post1.tar.gz) = 83e90f42b3f32e2a93f255c3cfad2da78dbd859119e93844c45d2fca20bdc758
-SIZE (ecos-2.0.7.post1.tar.gz) = 126583
+TIMESTAMP = 1619208483
+SHA256 (embotech-ecos-python-2.0.8_GH0.tar.gz) = 4715d97fa728c1446e2a68a3009f73325c79c509b25ad745d3756a397193d884
+SIZE (embotech-ecos-python-2.0.8_GH0.tar.gz) = 30898
+SHA256 (embotech-ecos-v2.0.8_GH0.tar.gz) = d905d16599efd927a75b29852c3476ff1ffd0b97ab27d5b8ad63bb4ff2ad8130
+SIZE (embotech-ecos-v2.0.8_GH0.tar.gz) = 1283274
