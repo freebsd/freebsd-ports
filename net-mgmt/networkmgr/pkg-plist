@@ -1,5 +1,7 @@
 bin/netcardmgr
 bin/networkmgr
+bin/setup-nic
+etc/devd/setupnic.conf
 etc/sudoers.d/networkmgr
 etc/xdg/autostart/networkmgr.desktop
 share/icons/hicolor/128x128/apps/nm-adhoc.png
