@@ -18,6 +18,8 @@ BROKEN_powerpc64=	fails to compile: uart.h: No such file or directory
 BROKEN_powerpc64le=	fails to compile: uart.h: No such file or directory
 BROKEN_riscv64=		fails to compile: uartlirc_core.c:273:19: expected expression
 BROKEN_sparc64=		fails to build
+BROKEN_FreeBSD_13=	fails to compile: uartlirc_bus_scc.c:101:7: use of undeclared identifier 'SCC_CLASS_SAB82532'
+BROKEN_FreeBSD_14=	fails to compile: uartlirc_bus_scc.c:101:7: use of undeclared identifier 'SCC_CLASS_SAB82532'
 
 USES=		kmod
 
