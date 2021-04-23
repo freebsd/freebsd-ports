@@ -12,6 +12,9 @@ COMMENT=	Detect and block DoS/DDoS attacks
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained upstream, uses EOL Python 2.7
+EXPIRATION_DATE=2021-06-23
+
 LIB_DEPENDS=	libccgnu2.so:devel/commoncpp
 
 GNU_CONFIGURE=	yes
