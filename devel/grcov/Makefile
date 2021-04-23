@@ -1,7 +1,6 @@
 PORTNAME=	grcov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
-PORTREVISION=	2
+DISTVERSION=	0.8.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,6 +20,7 @@ CARGO_CRATES=	\
 		adler32-1.2.0 \
 		aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
+		ansi_term-0.12.1 \
 		anyhow-1.0.38 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
@@ -52,7 +52,7 @@ CARGO_CRATES=	\
 		ctor-0.1.18 \
 		debugid-0.7.2 \
 		deunicode-0.4.3 \
-		difference-2.0.0 \
+		diff-0.1.12 \
 		digest-0.8.1 \
 		digest-0.9.0 \
 		either-1.6.1 \
@@ -72,12 +72,12 @@ CARGO_CRATES=	\
 		hermit-abi-0.1.18 \
 		humansize-1.1.0 \
 		ignore-0.4.17 \
-		is_executable-1.0.0 \
+		is_executable-1.0.1 \
 		itoa-0.4.7 \
 		lazy_static-1.4.0 \
 		libc-0.2.82 \
 		libz-sys-1.1.2 \
-		log-0.4.13 \
+		log-0.4.14 \
 		maplit-1.0.2 \
 		md-5-0.9.1 \
 		memchr-2.3.4 \
@@ -101,9 +101,9 @@ CARGO_CRATES=	\
 		pest_meta-2.1.3 \
 		pkg-config-0.3.19 \
 		ppv-lite86-0.2.10 \
-		pretty_assertions-0.6.1 \
+		pretty_assertions-0.7.2 \
 		proc-macro2-1.0.24 \
-		quick-xml-0.20.0 \
+		quick-xml-0.22.0 \
 		quote-1.0.8 \
 		rand-0.8.2 \
 		rand_chacha-0.3.0 \
@@ -112,7 +112,7 @@ CARGO_CRATES=	\
 		rayon-1.5.0 \
 		rayon-core-1.9.0 \
 		redox_syscall-0.2.4 \
-		regex-1.4.3 \
+		regex-1.4.5 \
 		regex-syntax-0.6.22 \
 		remove_dir_all-0.5.3 \
 		rustc-cfg-0.4.0 \
@@ -127,22 +127,22 @@ CARGO_CRATES=	\
 		semver-0.11.0 \
 		semver-parser-0.7.0 \
 		semver-parser-0.10.2 \
-		serde-1.0.120 \
-		serde_derive-1.0.120 \
-		serde_json-1.0.61 \
+		serde-1.0.125 \
+		serde_derive-1.0.125 \
+		serde_json-1.0.64 \
 		sha-1-0.8.2 \
-		simplelog-0.9.0 \
+		simplelog-0.10.0 \
 		slug-0.1.4 \
 		smallvec-1.6.1 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.8.0 \
-		symbolic-common-7.5.0 \
-		symbolic-demangle-7.5.0 \
-		syn-1.0.58 \
+		symbolic-common-8.0.5 \
+		symbolic-demangle-8.0.5 \
+		syn-1.0.60 \
 		synstructure-0.12.4 \
 		tcmalloc-0.3.0 \
 		tempfile-3.2.0 \
-		tera-1.6.1 \
+		tera-1.7.1 \
 		termcolor-1.1.2 \
 		textwrap-0.11.0 \
 		thiserror-1.0.23 \
@@ -164,13 +164,13 @@ CARGO_CRATES=	\
 		vcpkg-0.2.11 \
 		vec_map-0.8.2 \
 		version_check-0.9.2 \
-		walkdir-2.3.1 \
+		walkdir-2.3.2 \
 		wasi-0.10.1+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		zip-0.5.9
+		zip-0.5.12
 
 PLIST_FILES=	bin/grcov
 
