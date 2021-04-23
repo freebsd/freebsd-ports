@@ -2,13 +2,9 @@
 
 PORTNAME=	gnurobots
 PORTVERSION=	1.2.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	games
-MASTER_SITES=	GNU \
-		SF/nemysisfreebsdp/${CATEGORIES}/:icons
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}.png:icons
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU diversion wherein Scheme-coded robots explore a world
@@ -16,33 +12,32 @@ COMMENT=	GNU diversion wherein Scheme-coded robots explore a world
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libguile.so:lang/guile
+LIB_DEPENDS=	libguile.so:lang/guile1
 
-USES=		gnome pkgconfig readline
+USES=		autoreconf gnome localbase:ldflags pkgconfig readline
 USE_GNOME=	vte
 GNU_CONFIGURE=	yes
 
-CFLAGS+=	-O0
-CPPFLAGS+=	-I${LOCALBASE}/include -w
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
-
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
+CFLAGS+=	-O0
 
 SUB_FILES=	pkg-install pkg-message
 
-DESKTOP_ENTRIES="GNU Robots" "" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" ""
+DESKTOP_ENTRIES="GNU Robots" \
+		"" \
+		"${PORTNAME}" \
+		"${PORTNAME}" \
+		"Game;ArcadeGame;" \
+		""
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|#include <pty.h>||g' ${WRKSRC}/src/ui-cmdwin.c
-	@${REINPLACE_CMD} -E 's,(readline.h|history.h),readline/\1,' ${WRKSRC}/src/ui-cmdwin.c
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/xpm/robot.xpm \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.xpm
+
+post-install-DOCS-on:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "AUTHORS ChangeLog NEWS README THANKS \
 		doc/Robots-HOWTO doc/contrib" ${STAGEDIR}${DOCSDIR}
 
