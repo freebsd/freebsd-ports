@@ -16275,7 +16275,7 @@ dns/dnsmasq-devel|dns/dnsmasq|2021-04-08|Has expired: use dns/dnsmasq instead, w
 net/coturn|net/turnserver|2021-04-09|Remove duplicate port: coturn is another name for turnserver
 databases/percona55-server||2021-04-11|EOL upstream
 databases/percona55-client||2021-04-11|EOL upstream
-graphics/ilmbase|math/Imath|2021-04-10|Ilmbase was split out into Imath and OpenEXR.
+graphics/ilmbase|math/Imath|2021-04-11|Ilmbase was split out into Imath and OpenEXR
 www/xshttpd||2021-04-12|Unmaintained and dead upstream
 www/xshttpd-devel||2021-04-12|Unmaintained and dead upstream
 dns/credns||2021-04-12|Broken 12+, unmaintained upstream
@@ -16295,3 +16295,4 @@ security/fbopenssl||2021-04-20|Unmaintained, abandoned, does not build with rece
 devel/gearmand-devel||2021-04-20|Unmaintained, abandoned, has not built for over half a year
 textproc/bsdsort||2021-04-21|Old version of sort(1)
 www/py-django-mezzanine||2021-04-23|Depends on expired www/py-django111, not compatible with newer versions of Django
+devel/py-enum34||2021-04-23|No longer needed with python 3

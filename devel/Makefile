@@ -4380,7 +4380,6 @@
     SUBDIR += py-enlighten
     SUBDIR += py-entrypoints
     SUBDIR += py-enum-compat
-    SUBDIR += py-enum34
     SUBDIR += py-envisage
     SUBDIR += py-epdb
     SUBDIR += py-epsilon

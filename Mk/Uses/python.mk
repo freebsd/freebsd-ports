@@ -645,12 +645,6 @@ PY_PILLOW=	${PYTHON_PKGNAMEPREFIX}pillow>=7.0.0:graphics/py-pillow@${PY_FLAVOR}
 PY_PYGMENTS=	${PYTHON_PKGNAMEPREFIX}pygments>=2.5.1<3:textproc/py-pygments@${PY_FLAVOR}
 .endif
 
-.if ${PYTHON_REL} < 3400
-PY_ENUM34=	${PYTHON_PKGNAMEPREFIX}enum34>=1.1<2.0:devel/py-enum34@${PY_FLAVOR}
-.else
-PY_ENUM34=
-.endif
-
 .if ${PYTHON_VER} != ${PYTHON_DEFAULT}
 PY_MERCURIAL=	${PYTHON_PKGNAMEPREFIX}mercurial>=5.5:devel/mercurial@${PY_FLAVOR}
 .else
