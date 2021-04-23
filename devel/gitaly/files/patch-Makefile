@@ -1,15 +1,6 @@
---- Makefile.orig	2021-03-17 18:58:25 UTC
+--- Makefile.orig	2021-04-22 21:08:06 UTC
 +++ Makefile
-@@ -51,7 +51,7 @@ GOLANGCI_LINT_OPTIONS ?=
- GOLANGCI_LINT_CONFIG  ?= ${SOURCE_DIR}/.golangci.yml
- 
- # Build information
--BUNDLE_FLAGS    ?= $(shell test -f ${SOURCE_DIR}/../.gdk-install-root && echo --no-deployment || echo --deployment)
-+BUNDLE_FLAGS    ?= $(shell test -f ${SOURCE_DIR}/../.gdk-install-root && echo --no-deployment || echo --local)
- GITALY_PACKAGE  := gitlab.com/gitlab-org/gitaly
- BUILD_TIME      := $(shell date +"%Y%m%d.%H%M%S")
- GITALY_VERSION  := $(shell git describe --match v* 2>/dev/null | sed 's/^v//' || cat ${SOURCE_DIR}/VERSION 2>/dev/null || echo unknown)
-@@ -190,7 +190,7 @@ all: INSTALL_DEST_DIR = ${SOURCE_DIR}
+@@ -197,7 +197,7 @@ all: INSTALL_DEST_DIR = ${SOURCE_DIR}
  all: install
  
  .PHONY: build
@@ -18,7 +9,7 @@
  	go install ${GO_LDFLAGS} -tags "${GO_BUILD_TAGS}" $(addprefix ${GITALY_PACKAGE}/cmd/, $(call find_commands))
  
  .PHONY: install
-@@ -228,7 +228,7 @@ assemble-ruby:
+@@ -235,7 +235,7 @@ assemble-ruby:
  .PHONY: binaries
  binaries: assemble
  	${Q}if [ ${ARCH} != 'x86_64' ]; then echo Incorrect architecture for build: ${ARCH}; exit 1; fi
@@ -27,17 +18,18 @@
  
  .PHONY: prepare-tests
  prepare-tests: git libgit2 prepare-test-repos ${SOURCE_DIR}/.ruby-bundle
-@@ -381,8 +381,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
+@@ -388,9 +388,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile
+-	${Q}cd ${GITALY_RUBY_DIR} && bundle config set --local deployment "${BUNDLE_DEPLOYMENT}"
 -	${Q}cd ${GITALY_RUBY_DIR} && bundle config # for debugging
--	${Q}cd ${GITALY_RUBY_DIR} && bundle install ${BUNDLE_FLAGS}
-+	${Q}cd ${GITALY_RUBY_DIR} && rm -f Gemfile.lock && bundle install ${BUNDLE_FLAGS}
+-	${Q}cd ${GITALY_RUBY_DIR} && bundle install
++	${Q}cd ${GITALY_RUBY_DIR} && rm -f Gemfile.lock && bundle install --local
  	${Q}touch $@
  
  ${SOURCE_DIR}/NOTICE: ${BUILD_DIR}/NOTICE
-@@ -445,7 +444,7 @@ ${GIT_INSTALL_DIR}/bin/git: ${DEPENDENCY_DIR}/git.vers
+@@ -457,7 +455,7 @@ endif
  else
  ${DEPENDENCY_DIR}/git_full_bins.tgz: ${DEPENDENCY_DIR}/git.version
  	curl -o $@.tmp --silent --show-error -L ${GIT_BINARIES_URL}
@@ -46,7 +38,7 @@
  	${Q}mv $@.tmp $@
  
  ${GIT_INSTALL_DIR}/bin/git: ${DEPENDENCY_DIR}/git_full_bins.tgz
-@@ -458,7 +457,7 @@ ${TOOLS_DIR}/protoc.zip: TOOL_VERSION = ${PROTOC_VERSI
+@@ -470,7 +468,7 @@ ${TOOLS_DIR}/protoc.zip: TOOL_VERSION = ${PROTOC_VERSI
  ${TOOLS_DIR}/protoc.zip: ${TOOLS_DIR}/protoc.version
  	${Q}if [ -z "${PROTOC_URL}" ]; then echo "Cannot generate protos on unsupported platform ${OS}" && exit 1; fi
  	curl -o $@.tmp --silent --show-error -L ${PROTOC_URL}

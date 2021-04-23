@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	13.10.3
+DISTVERSION=	13.11.1
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -10,22 +10,22 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # define dependencies that are required for build and run under MY_DEPENDS
-MY_DEPENDS=	git>=2.29:devel/git \
+MY_DEPENDS=	git>=2.31.1:devel/git \
 		rubygem-bundler>=2.1.4:sysutils/rubygem-bundler \
 		rubygem-rugged>=1.1<2:devel/rubygem-rugged \
 		rubygem-github-linguist>=7.12.1<8:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.7.1<1.8.0:textproc/rubygem-gitlab-markup \
-		rubygem-activesupport60>=6.0.3.4<6.0.4:devel/rubygem-activesupport60 \
+		rubygem-activesupport60>=6.0.3.6<6.0.4:devel/rubygem-activesupport60 \
 		rubygem-rdoc>=6.1<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.1<4.2.8:www/rubygem-gitlab-gollum-lib \
-		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.3.gitlab.1<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
+		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.4.gitlab.1<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
 		rubygem-grpc130>=1.30.2<1.31:net/rubygem-grpc130 \
 		rubygem-sentry-raven>=3.0<4:devel/rubygem-sentry-raven \
 		rubygem-faraday>=1.0.1<2:www/rubygem-faraday \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
-		rubygem-gitlab-labkit>=0.16.1<0.17:devel/rubygem-gitlab-labkit \
+		rubygem-gitlab-labkit>=0.16.2<0.17:devel/rubygem-gitlab-labkit \
 		rubygem-licensee>=9.14.1<9.15:devel/rubygem-licensee \
-		rubygem-google-protobuf314>=3.12.0<3.15:devel/rubygem-google-protobuf314
+		rubygem-google-protobuf314>=3.14.0<3.15:devel/rubygem-google-protobuf314
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 		bash>0:shells/bash \
 		${MY_DEPENDS}
@@ -43,12 +43,12 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	80796c538e2c8f45d311914c3d7a6b22866a0758
+GL_COMMIT=	538266fbaefe35385130e0f3c7b1865cec2a57b0
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 85dd
+# 89dd
 GH_TUPLE=	\
 		DataDog:dd-trace-go:v1.7.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
 		alexbrainman:sspi:909beea2cc74:alexbrainman_sspi/vendor/github.com/alexbrainman/sspi \
@@ -56,7 +56,7 @@ GH_TUPLE=	\
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		client9:reopen:v1.0.0:client9_reopen/vendor/github.com/client9/reopen \
-		cloudflare:tableflip:4baec9811f2b:cloudflare_tableflip/vendor/github.com/cloudflare/tableflip \
+		cloudflare:tableflip:v1.2.2:cloudflare_tableflip/vendor/github.com/cloudflare/tableflip \
 		HdrHistogram:hdrhistogram-go:3a0bb77429bd:codahale_hdrhistogram_go/vendor/github.com/codahale/hdrhistogram \
 		containerd:cgroups:2819c83ced99:containerd_cgroups/vendor/github.com/containerd/cgroups \
 		coreos:go-systemd:v22.0.0:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
@@ -77,12 +77,14 @@ GH_TUPLE=	\
 		golang:crypto:be400aefbc4c:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:e8c3332aa8e5:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:lint:fdd1cda4f05f:golang_lint/vendor/golang.org/x/lint \
 		golang:net:5f4716e94777:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:6e8e738ad208:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:ed752295db88:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:b64e53b001e4:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
+		golang:tools:b753a1ba74fa:golang_tools/vendor/golang.org/x/tools \
 		google:go-cmp:v0.4.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:7949de9c1215:google_go_genproto/vendor/google.golang.org/genproto \
 		google:pprof:d4f498aebedc:google_pprof/vendor/github.com/google/pprof \
@@ -95,6 +97,7 @@ GH_TUPLE=	\
 		grpc:grpc-go:v1.29.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:go-uuid:v1.0.2:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
 		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
+		hashicorp:yamux:a95892c5f864:hashicorp_yamux/vendor/github.com/hashicorp/yamux \
 		jcmturner:aescts:v1.0.1:jcmturner_aescts/vendor/gopkg.in/jcmturner/aescts.v1 \
 		jcmturner:dnsutils:v1.0.1:jcmturner_dnsutils/vendor/gopkg.in/jcmturner/dnsutils.v1 \
 		jcmturner:gofork:v1.0.0:jcmturner_gofork/vendor/github.com/jcmturner/gofork \
@@ -129,6 +132,7 @@ GH_TUPLE=	\
 		stretchr:objx:v0.1.1:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		tinylib:msgp:v1.1.0:tinylib_msgp/vendor/github.com/tinylib/msgp \
+		uber-go:goleak:v1.1.10:uber_go_goleak/vendor/go.uber.org/goleak \
 		uber:jaeger-client-go:v2.15.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
 		uber:jaeger-lib:v1.5.0:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
 
