@@ -11,6 +11,8 @@ COMMENT=	Tools for running commands at particular times
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to link: ld: error: undefined symbol: pathexec_env
+
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
 
 USES=		tar:bzip2
