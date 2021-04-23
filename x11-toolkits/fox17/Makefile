@@ -1,7 +1,7 @@
 # Created by: gahr
 
 PORTNAME=	fox
-PORTVERSION=	1.7.76
+PORTVERSION=	1.7.77
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/
