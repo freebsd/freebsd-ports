@@ -22,8 +22,16 @@ GH_TAGNAME=	a3e65b8
 
 PLIST_FILES=	lib/libretro/snes9x2010_libretro.so
 
-do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/snes9x2010_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
+MAKE_ENV=	LTO=
+.else
+MAKE_ENV=	LTO=-flto  # may drop this branch on next port update
+.endif
+
+do-install:
+	@${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/snes9x2010_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
+
+.include <bsd.port.post.mk>
