@@ -1,9 +1,8 @@
 PORTNAME=	foundationdb-devel
-DISTVERSION=	7.0.0.a.20210224
+DISTVERSION=	7.0.0.a.20210423
 CATEGORIES=	databases
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
-PATCHFILES+=	4373.patch:-p1 # https://github.com/apple/foundationdb/pull/4373
+# PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Distributed, transactional key-value store
@@ -27,7 +26,7 @@ USES=		compiler:c++17-lang cmake mono:build python:build shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	apple
 GH_PROJECT=	foundationdb
-GH_TAGNAME=	8580250
+GH_TAGNAME=	c62a798
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	foundationdb
 
