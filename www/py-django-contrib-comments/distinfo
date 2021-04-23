@@ -1,3 +1,3 @@
-TIMESTAMP = 1557842354
-SHA256 (django-contrib-comments-1.9.1.tar.gz) = 61b051d7bc3ff593e86b41a1ed5e969423cf55cc92768598af3315e2528e0890
-SIZE (django-contrib-comments-1.9.1.tar.gz) = 862465
+TIMESTAMP = 1619172521
+SHA256 (django-contrib-comments-2.1.0.tar.gz) = d82f1d04690550df026553053903deec0c52dc54212e1b79241b08f0355cff2c
+SIZE (django-contrib-comments-2.1.0.tar.gz) = 189916
