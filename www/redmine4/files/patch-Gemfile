@@ -1,13 +1,17 @@
---- Gemfile.orig	2021-03-21 09:40:24.000000000 +0100
-+++ Gemfile	2021-03-29 08:41:04.325888000 +0200
-@@ -1,6 +1,6 @@
+--- Gemfile.orig	2021-04-22 10:46:10 UTC
++++ Gemfile
+@@ -1,9 +1,9 @@
  source 'https://rubygems.org'
  
 -ruby '>= 2.3.0', '< 2.7.0' if Bundler::VERSION >= '1.12.0'
 +ruby '>= 2.3.0', '< 2.8.0' if Bundler::VERSION >= '1.12.0'
  gem "bundler", ">= 1.5.0"
  
- gem 'rails', '5.2.4.5'
+-gem 'rails', '5.2.4.5'
++gem 'rails', '5.2.5'
+ gem 'sprockets', '~> 3.7.2' if RUBY_VERSION < '2.5'
+ gem "rouge", "~> 3.12.0"
+ gem "request_store", "~> 1.4.1"
 @@ -14,7 +14,7 @@ gem "mimemagic"
  gem "mail", "~> 2.7.1"
  gem 'csv', (RUBY_VERSION < '2.5' ? ['>= 3.1.1', '<= 3.1.5'] : '~> 3.1.1')
