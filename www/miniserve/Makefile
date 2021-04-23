@@ -1,6 +1,6 @@
 PORTNAME=	miniserve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.0
+DISTVERSION=	0.14.0
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -14,6 +14,7 @@ USES=		cargo ssl:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	svenstaro
 
+GH_TUPLE=	svenstaro:mime_guess:ac76840e14bc6f2f7cbbb347052ec7e4de7e3043:mime_guess
 CARGO_CRATES=	actix-codec-0.3.0 \
 		actix-connect-2.0.0 \
 		actix-files-0.5.0 \
@@ -31,6 +32,7 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		actix-web-3.3.2 \
 		actix-web-codegen-0.4.0 \
 		actix-web-httpauth-0.5.1 \
+		adler-1.0.2 \
 		adler32-1.2.0 \
 		ahash-0.3.8 \
 		aho-corasick-0.7.15 \
@@ -39,9 +41,8 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		ansi_term-0.12.1 \
 		assert_cmd-1.0.3 \
 		assert_fs-1.0.1 \
-		async-trait-0.1.48 \
+		async-trait-0.1.50 \
 		atty-0.2.14 \
-		autocfg-0.1.7 \
 		autocfg-1.0.1 \
 		awc-2.0.3 \
 		base-x-0.2.8 \
@@ -69,9 +70,8 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		chrono-0.4.19 \
 		chrono-humanize-0.1.2 \
 		clap-2.33.3 \
-		cloudabi-0.0.3 \
 		codemap-0.1.3 \
-		const_fn-0.4.6 \
+		const_fn-0.4.7 \
 		convert_case-0.4.0 \
 		cookie-0.14.4 \
 		copyless-0.1.5 \
@@ -89,23 +89,22 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		encoding_rs-0.8.28 \
 		enum-as-inner-0.3.3 \
 		filetime-0.2.14 \
-		flate2-1.0.14 \
+		flate2-1.0.20 \
 		float-cmp-0.8.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
-		fuchsia-cprng-0.1.1 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		futf-0.1.4 \
-		futures-0.3.13 \
-		futures-channel-0.3.13 \
-		futures-core-0.3.13 \
-		futures-executor-0.3.13 \
-		futures-io-0.3.13 \
-		futures-macro-0.3.13 \
-		futures-sink-0.3.13 \
-		futures-task-0.3.13 \
-		futures-util-0.3.13 \
+		futures-0.3.14 \
+		futures-channel-0.3.14 \
+		futures-core-0.3.14 \
+		futures-executor-0.3.14 \
+		futures-io-0.3.14 \
+		futures-macro-0.3.14 \
+		futures-sink-0.3.14 \
+		futures-task-0.3.14 \
+		futures-util-0.3.14 \
 		fxhash-0.2.1 \
 		generic-array-0.14.4 \
 		getrandom-0.1.16 \
@@ -122,13 +121,13 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		hex-0.4.3 \
 		hostname-0.3.1 \
 		html5ever-0.25.1 \
-		http-0.2.3 \
+		http-0.2.4 \
 		http-body-0.4.1 \
-		httparse-1.3.5 \
+		httparse-1.4.0 \
 		httpdate-0.3.2 \
 		hyper-0.14.5 \
 		hyper-rustls-0.22.1 \
-		idna-0.2.2 \
+		idna-0.2.3 \
 		ignore-0.4.17 \
 		indexmap-1.6.2 \
 		instant-0.1.9 \
@@ -136,16 +135,16 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		ipconfig-0.2.2 \
 		ipnet-2.3.0 \
 		itoa-0.4.7 \
-		js-sys-0.3.49 \
+		js-sys-0.3.50 \
 		kernel32-sys-0.2.2 \
 		language-tags-0.2.2 \
 		lasso-0.3.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.91 \
-		libflate-1.0.4 \
-		libflate_lz77-1.0.0 \
+		libc-0.2.93 \
+		libflate-1.1.0 \
+		libflate_lz77-1.1.0 \
 		linked-hash-map-0.5.4 \
-		lock_api-0.4.2 \
+		lock_api-0.4.3 \
 		log-0.4.14 \
 		lru-cache-0.1.2 \
 		mac-0.1.1 \
@@ -158,14 +157,13 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		maud_macros-0.22.2 \
 		memchr-2.3.4 \
 		mime-0.3.16 \
-		mime_guess-2.0.3 \
-		miniz_oxide-0.3.7 \
+		miniz_oxide-0.4.4 \
 		mio-0.6.23 \
 		mio-0.7.11 \
 		mio-uds-0.6.8 \
 		miow-0.2.2 \
 		miow-0.3.7 \
-		nanoid-0.3.0 \
+		nanoid-0.4.0 \
 		net2-0.2.37 \
 		new_debug_unreachable-1.0.4 \
 		nom-4.2.3 \
@@ -190,9 +188,9 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		phf_macros-0.8.0 \
 		phf_shared-0.8.0 \
 		pin-project-0.4.28 \
-		pin-project-1.0.6 \
+		pin-project-1.0.7 \
 		pin-project-internal-0.4.28 \
-		pin-project-internal-1.0.6 \
+		pin-project-internal-1.0.7 \
 		pin-project-lite-0.1.12 \
 		pin-project-lite-0.2.6 \
 		pin-utils-0.1.0 \
@@ -203,52 +201,41 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		predicates-1.0.7 \
 		predicates-core-1.0.2 \
 		predicates-tree-1.0.2 \
-		pretty_assertions-0.7.1 \
+		pretty_assertions-0.7.2 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
-		proc-macro2-1.0.24 \
+		proc-macro2-1.0.26 \
 		qrcodegen-1.6.0 \
 		quick-error-1.2.3 \
 		quote-1.0.9 \
-		rand-0.6.5 \
 		rand-0.7.3 \
 		rand-0.8.3 \
-		rand_chacha-0.1.1 \
 		rand_chacha-0.2.2 \
 		rand_chacha-0.3.0 \
-		rand_core-0.3.1 \
-		rand_core-0.4.2 \
 		rand_core-0.5.1 \
 		rand_core-0.6.2 \
-		rand_hc-0.1.0 \
 		rand_hc-0.2.0 \
 		rand_hc-0.3.0 \
-		rand_isaac-0.1.1 \
-		rand_jitter-0.1.4 \
-		rand_os-0.1.3 \
-		rand_pcg-0.1.2 \
 		rand_pcg-0.2.1 \
-		rand_xorshift-0.1.1 \
-		rdrand-0.4.0 \
-		redox_syscall-0.2.5 \
+		redox_syscall-0.2.6 \
 		regex-1.4.5 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.23 \
 		remove_dir_all-0.5.3 \
-		reqwest-0.11.2 \
+		reqwest-0.11.3 \
 		resolv-conf-0.7.0 \
 		ring-0.16.20 \
 		rle-decode-fast-1.0.1 \
 		rstest-0.7.0 \
 		rustc_version-0.2.3 \
 		rustc_version-0.3.3 \
-		rustls-0.19.0 \
+		rustls-0.19.1 \
 		ryu-1.0.5 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		sct-0.6.0 \
+		sct-0.6.1 \
 		select-0.5.0 \
 		semver-0.9.0 \
 		semver-0.11.0 \
@@ -281,7 +268,7 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		structopt-derive-0.4.14 \
 		strum-0.20.0 \
 		strum_macros-0.20.1 \
-		syn-1.0.65 \
+		syn-1.0.69 \
 		tar-0.4.33 \
 		tempfile-3.2.0 \
 		tendril-0.4.2 \
@@ -295,13 +282,13 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		time-0.2.26 \
 		time-macros-0.1.1 \
 		time-macros-impl-0.1.1 \
-		tinyvec-1.1.1 \
+		tinyvec-1.2.0 \
 		tinyvec_macros-0.1.0 \
 		tokio-0.2.25 \
-		tokio-1.4.0 \
+		tokio-1.5.0 \
 		tokio-rustls-0.22.0 \
 		tokio-util-0.3.1 \
-		tokio-util-0.6.5 \
+		tokio-util-0.6.6 \
 		tower-service-0.3.1 \
 		tracing-0.1.25 \
 		tracing-core-0.1.17 \
@@ -315,14 +302,14 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		ucd-trie-0.1.3 \
 		unchecked-index-0.2.2 \
 		unicase-2.6.0 \
-		unicode-bidi-0.3.4 \
+		unicode-bidi-0.3.5 \
 		unicode-normalization-0.1.17 \
 		unicode-segmentation-1.7.1 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
 		untrusted-0.7.1 \
 		url-2.2.1 \
-		utf-8-0.7.5 \
+		utf-8-0.7.6 \
 		v_escape-0.15.0 \
 		v_escape_derive-0.8.4 \
 		v_htmlescape-0.12.0 \
@@ -334,15 +321,15 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.72 \
-		wasm-bindgen-backend-0.2.72 \
-		wasm-bindgen-futures-0.4.22 \
-		wasm-bindgen-macro-0.2.72 \
-		wasm-bindgen-macro-support-0.2.72 \
-		wasm-bindgen-shared-0.2.72 \
-		web-sys-0.3.49 \
+		wasm-bindgen-0.2.73 \
+		wasm-bindgen-backend-0.2.73 \
+		wasm-bindgen-futures-0.4.23 \
+		wasm-bindgen-macro-0.2.73 \
+		wasm-bindgen-macro-support-0.2.73 \
+		wasm-bindgen-shared-0.2.73 \
+		web-sys-0.3.50 \
 		webpki-0.21.4 \
-		webpki-roots-0.21.0 \
+		webpki-roots-0.21.1 \
 		widestring-0.4.3 \
 		winapi-0.2.8 \
 		winapi-0.3.9 \
@@ -356,7 +343,8 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		xattr-0.2.2 \
 		xml5ever-0.16.1 \
 		yansi-0.5.0 \
-		zip-0.5.11
+		zip-0.5.12
+CARGO_USE_GITHUB=	yes
 
 # maud_macros uses feature(proc_macro)
 MAKE_ENV=	RUSTC_BOOTSTRAP=1
