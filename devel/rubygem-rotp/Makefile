@@ -1,7 +1,7 @@
 # Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
 
 PORTNAME=	rotp
-PORTVERSION=	3.3.1
+PORTVERSION=	6.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,9 +10,10 @@ COMMENT=	Ruby library for generating one time passwords
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/rotp
 
