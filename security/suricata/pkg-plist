@@ -75,8 +75,6 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/disablesource.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/enablesource.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/enablesource.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/listenabledsources.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/listenabledsources.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/listsources.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/listsources.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/removesource.py
@@ -131,7 +129,7 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/util.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.1.3-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.2.1-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.pyc
 %%DATADIR%%/rules/app-layer-events.rules
