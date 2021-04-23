@@ -179,7 +179,6 @@ share/icons/hicolor/64x64/apps/QtProject-qtcreator.png
 %%DATADIR%%/debugger/cdbbridge.py
 %%DATADIR%%/debugger/creatortypes.py
 %%DATADIR%%/debugger/dumper.py
-%%DATADIR%%/debugger/dumper.py.bak
 %%DATADIR%%/debugger/gdbbridge.py
 %%DATADIR%%/debugger/lldbbridge.py
 %%DATADIR%%/debugger/misctypes.py
