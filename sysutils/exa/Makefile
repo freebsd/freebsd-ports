@@ -1,6 +1,6 @@
 PORTNAME=	exa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
+DISTVERSION=	0.10.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -18,27 +18,28 @@ GH_ACCOUNT=	ogham
 CARGO_CRATES=	ansi_term-0.12.1 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
-		byteorder-1.3.4 \
-		cc-1.0.61 \
-		cfg-if-0.1.10 \
+		byteorder-1.4.3 \
+		cc-1.0.67 \
+		cfg-if-1.0.0 \
 		datetime-0.5.2 \
-		git2-0.13.11 \
+		form_urlencoded-1.0.1 \
+		git2-0.13.17 \
 		glob-0.3.0 \
-		hermit-abi-0.1.17 \
-		idna-0.2.0 \
+		hermit-abi-0.1.18 \
+		idna-0.2.2 \
 		jobserver-0.1.21 \
 		lazy_static-1.4.0 \
-		libc-0.2.79 \
-		libgit2-sys-0.12.14+1.1.0 \
+		libc-0.2.93 \
+		libgit2-sys-0.12.18+1.1.0 \
 		libz-sys-1.1.2 \
 		locale-0.2.2 \
-		log-0.4.11 \
+		log-0.4.14 \
 		matches-0.1.8 \
 		natord-1.0.9 \
 		num_cpus-1.13.0 \
 		number_prefix-0.4.0 \
-		openssl-src-111.12.0+1.1.1h \
-		openssl-sys-0.9.58 \
+		openssl-src-111.15.0+1.1.1k \
+		openssl-sys-0.9.61 \
 		pad-0.1.6 \
 		percent-encoding-2.1.0 \
 		pkg-config-0.3.19 \
@@ -46,13 +47,14 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		scoped_threadpool-0.1.9 \
 		term_grid-0.1.7 \
 		term_size-0.3.2 \
-		tinyvec-0.3.4 \
-		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.13 \
+		tinyvec-1.2.0 \
+		tinyvec_macros-0.1.0 \
+		unicode-bidi-0.3.5 \
+		unicode-normalization-0.1.17 \
 		unicode-width-0.1.8 \
-		url-2.1.1 \
+		url-2.2.1 \
 		users-0.11.0 \
-		vcpkg-0.2.10 \
+		vcpkg-0.2.11 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
