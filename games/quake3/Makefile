@@ -13,6 +13,9 @@ DISTNAME=	${PORTNAME}-${REALVERSION}-source
 MAINTAINER=	shirshegsm@gmail.com
 COMMENT=	Quake III Arena -- first person shooter (native build)
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: re
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: re
+
 USES=		dos2unix gmake zip
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	does not run properly; try games/ioquake3
