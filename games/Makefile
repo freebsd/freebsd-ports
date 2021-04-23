@@ -627,6 +627,7 @@
     SUBDIR += naev-data
     SUBDIR += narcissu2
     SUBDIR += nazghul
+    SUBDIR += nbsdgames
     SUBDIR += nehquake
     SUBDIR += neo-cowsay
     SUBDIR += nethack32
