@@ -26,8 +26,8 @@ MC=	${PORTNAME}
 .endif
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2021-03-23T05-46-11Z
-COMMIT_ID=	c3cae160b35d53056e454386c09850a158c049ec
+GHTAG=		RELEASE.2021-04-22T17-40-00Z
+COMMIT_ID=	4eae7ec7ed254d425be1a72151f9a1f60707f273
 GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
@@ -46,11 +46,11 @@ GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		go-ini:ini:v1.57.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-ole:go-ole:v1.2.4:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:crypto:c8d3bf9c5392:golang_crypto/vendor/golang.org/x/crypto \
+		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		golang:crypto:5ea612d1eb83:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:986b41b23924:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:b64e53b001e4:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:a50acf3fe073:golang_sys/vendor/golang.org/x/sys \
 		golang:term:7de9c90e9dd1:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		google:go-genproto:24fa4b261c55:google_go_genproto/vendor/google.golang.org/genproto \
@@ -72,8 +72,8 @@ GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:md5-simd:v1.1.1:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:5a0d16291a2e:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
-		minio:minio:0eb146e1b27c:minio_minio/vendor/github.com/minio/minio \
+		minio:minio-go:ba867dba7ee1:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:minio:38a9f87a560e:minio_minio/vendor/github.com/minio/minio \
 		minio:sha256-simd:v1.0.0:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
@@ -87,7 +87,7 @@ GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		prometheus:client_golang:v1.8.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.14.0:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:procfs:v0.2.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		prometheus:procfs:v0.6.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.23.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rjeczalik:notify:v0.9.2:rjeczalik_notify/vendor/github.com/rjeczalik/notify \
 		rs:xid:v1.2.1:rs_xid/vendor/github.com/rs/xid \
