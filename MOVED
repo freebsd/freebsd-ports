@@ -16296,3 +16296,5 @@ devel/gearmand-devel||2021-04-20|Unmaintained, abandoned, has not built for over
 textproc/bsdsort||2021-04-21|Old version of sort(1)
 www/py-django-mezzanine||2021-04-23|Depends on expired www/py-django111, not compatible with newer versions of Django
 devel/py-enum34||2021-04-23|No longer needed with python 3
+multimedia/gmimms||2021-04-23|Unmaintained, uses EOL'd Python 2.7
+multimedia/mimms||2021-04-23|Unmaintained, uses EOL'd Python 2.7
