@@ -1,0 +1,8 @@
+This port is written in ARM32 assembly.  On ARM64 systems, it only runs
+on those that support the AArch32 execution state in EL0.  If the port
+does not run, check dmesg for a line like
+
+    Processor Features 0 = <AdvSIMD,FP,EL3 32,EL2 32,EL1 32,EL0 32>
+
+If the feature string "EL0 32" does not occur, your processor cannot
+run ARM32 binaries and thus will not be able to run this port either.
