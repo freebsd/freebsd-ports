@@ -5,13 +5,13 @@ CATEGORIES=	security lang haskell
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Language of cryptography
 
-RUN_DEPENDS=	z3:math/z3
-
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # https://github.com/GaloisInc/libBF-hs/issues/2
 BROKEN_i386=	One of dependencies doesn't build on i386
+
+RUN_DEPENDS=	z3:math/z3
 
 USES=		cabal
 
