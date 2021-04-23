@@ -1,0 +1,10 @@
+Simple panel/status bar/task bar for your custom stacking
+Wayland-based desktop.
+
+Features:
+- Good configurability
+- Config hot reload
+- Exposed API for writing custom applets
+- Custom themes with CSS
+
+WWW: https://firstbober.github.io/wapanel/
