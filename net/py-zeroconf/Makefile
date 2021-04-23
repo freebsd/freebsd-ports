@@ -1,7 +1,7 @@
 # Created by: John Hixson <jhixson@gmail.com>
 
 PORTNAME=	zeroconf
-PORTVERSION=	0.28.8
+PORTVERSION=	0.29.0
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
