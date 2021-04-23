@@ -38,7 +38,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		liblog4cxx.so:devel/log4cxx \
 		libmpfr.so:math/mpfr \
 		libmspack.so:archivers/libmspack \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libpopt.so:devel/popt \
 		liburiparser.so:net/uriparser \
 		libzzip.so:devel/zziplib

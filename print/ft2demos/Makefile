@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${NONEXISTENT}:print/freetype2:build
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		gmake tar:xz xorg
 USE_XORG=	x11

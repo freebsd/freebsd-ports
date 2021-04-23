@@ -63,7 +63,7 @@ OSS_CONFIGURE_WITH=	oss
 SDL_IMPLIES=		X11
 SDL_BUILD_DEPENDS=	${LOCALBASE}/share/fonts/gnu-unifont-ttf/unifont.ttf:x11-fonts/gnu-unifont-ttf
 SDL_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-			libpng16.so:graphics/png
+			libpng.so:graphics/png
 SDL_RUN_DEPENDS=	${LOCALBASE}/share/fonts/gnu-unifont-ttf/unifont.ttf:x11-fonts/gnu-unifont-ttf
 SDL_USES=		desktop-file-utils jpeg sdl
 SDL_USE=		SDL=sdl2
@@ -74,7 +74,7 @@ SDL_PLIST_SUB_OFF=	DESKTOP='@comment '
 
 X11_BUILD_DEPENDS=	${LOCALBASE}/share/fonts/gnu-unifont-ttf/unifont.ttf:x11-fonts/gnu-unifont-ttf
 X11_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-			libpng16.so:graphics/png
+			libpng.so:graphics/png
 X11_RUN_DEPENDS=	${LOCALBASE}/share/fonts/gnu-unifont-ttf/unifont.ttf:x11-fonts/gnu-unifont-ttf
 X11_USES=		desktop-file-utils jpeg xorg
 X11_USE=		XORG=x11,xext,xpm,xxf86dga,xxf86vm

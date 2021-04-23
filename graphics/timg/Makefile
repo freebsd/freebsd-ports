@@ -13,7 +13,7 @@ BUILD_DEPENDS=	pkgconf>0:devel/pkgconf \
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libexif.so:graphics/libexif \
 		libGraphicsMagick.so:graphics/GraphicsMagick \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libturbojpeg.so:graphics/libjpeg-turbo
 
 USES=		cmake compiler:c++11-lang

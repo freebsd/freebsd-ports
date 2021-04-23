@@ -33,7 +33,7 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpodofo.so:graphics/podofo \
 		libharfbuzz.so:print/harfbuzz \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libicuuc.so:devel/icu \
 		libqxp-0.0.so:textproc/libqxp \
 		libzmf-0.0.so:graphics/libzmf

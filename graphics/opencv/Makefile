@@ -22,7 +22,7 @@ LIB_DEPENDS=	\
 		libharfbuzz.so:print/harfbuzz \
 		libhdf5.so:science/hdf5 \
 		libopenblas.so:math/openblas \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp
 #		libtbb.so:devel/tbb

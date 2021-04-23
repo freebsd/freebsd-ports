@@ -22,7 +22,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libfftw3f.so:math/fftw3-float \
 		liblensfun.so:graphics/lensfun \
 		liblcms2.so:graphics/lcms2 \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gnome jpeg pkgconfig tar:xz xorg

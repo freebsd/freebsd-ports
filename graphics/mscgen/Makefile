@@ -32,6 +32,6 @@ FREETYPE_LIB_DEPENDS=		libfreetype.so:print/freetype2
 
 PNG_CONFIGURE_WITH=		png
 PNG_LIB_DEPENDS=		libgd.so:graphics/gd \
-				libpng16.so:graphics/png
+				libpng.so:graphics/png
 
 .include <bsd.port.mk>

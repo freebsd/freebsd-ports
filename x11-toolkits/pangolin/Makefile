@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		liblz4.so:archivers/liblz4 \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libzstd.so:archivers/zstd
 

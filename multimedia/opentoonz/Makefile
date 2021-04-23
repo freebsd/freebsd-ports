@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgslcblas.so:math/gsl \
 		liblzo2.so:archivers/lzo2 \
 		libmypaint.so:graphics/libmypaint \
 		libopencv_core.so:graphics/opencv \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libsuperlu.so:math/superlu \
 		libturbojpeg.so:graphics/libjpeg-turbo
 

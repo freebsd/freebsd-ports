@@ -41,7 +41,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libre2.so:devel/re2 \
 		liblcms2.so:graphics/lcms2 \
 		libdrm.so:graphics/libdrm \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libwebp.so:graphics/webp \
 		libavcodec.so:multimedia/ffmpeg \
 		libvpx.so:multimedia/libvpx \

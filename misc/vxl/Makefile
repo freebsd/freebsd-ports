@@ -7,7 +7,7 @@ CATEGORIES=	misc science
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ libraries for computer vision and image understanding
 
-LIB_DEPENDS=	libpng16.so:graphics/png \
+LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
 USES=		cmake compiler:c++11-lang jpeg

@@ -21,7 +21,7 @@ GH_PROJECT=	LimeReport
 
 USE_LDCONFIG=	yes
 
-LIB_DEPENDS+=	libpng16.so:graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 
 OPTIONS_DEFINE=	DEBUG DOCS ZINT
 OPTIONS_DEFAULT=	ZINT

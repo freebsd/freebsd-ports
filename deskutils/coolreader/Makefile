@@ -12,7 +12,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libfribidi.so:converters/fribidi \
 		libunibreak.so:textproc/libunibreak \
 		libfontconfig.so:x11-fonts/fontconfig

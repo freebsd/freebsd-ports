@@ -34,7 +34,7 @@ CUPS_LIB_DEPENDS=	libcups.so:print/cups
 MOTIF_LIB_DEPENDS=	libplot.so:graphics/plotutils \
 			libXbae.so:x11-toolkits/xbae \
 			libXmHTML.so:x11-toolkits/xmhtml \
-			libpng16.so:graphics/png \
+			libpng.so:graphics/png \
 			libXft.so:x11-fonts/libXft \
 			libfontconfig.so:x11-fonts/fontconfig
 MOTIF_USES=		jpeg motif xorg
