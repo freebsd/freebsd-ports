@@ -1,4 +1,4 @@
---- config/initializers/1_settings.rb.orig	2021-02-19 09:35:35 UTC
+--- config/initializers/1_settings.rb.orig	2021-04-22 21:13:23 UTC
 +++ config/initializers/1_settings.rb
 @@ -182,11 +182,7 @@ Settings.gitlab['url'] ||= Settings.__send__(:build_gi
  Settings.gitlab['user'] ||= 'git'
@@ -6,8 +6,8 @@
  Settings.gitlab['ssh_user'] ||= Settings.gitlab.user
 -Settings.gitlab['user_home'] ||= begin
 -  Etc.getpwnam(Settings.gitlab['user']).dir
--                                 rescue ArgumentError # no user configured
--                                   '/home/' + Settings.gitlab['user']
+-rescue ArgumentError # no user configured
+-  '/home/' + Settings.gitlab['user']
 -end
 +Settings.gitlab['user_home'] ||= '/usr/local/git'
  Settings.gitlab['time_zone'] ||= nil

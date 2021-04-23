@@ -1,4 +1,4 @@
---- config/unicorn.rb.example.orig	2020-02-21 15:14:12 UTC
+--- config/unicorn.rb.example.orig	2021-04-22 21:13:23 UTC
 +++ config/unicorn.rb.example
 @@ -33,12 +33,12 @@ worker_processes 3
  
@@ -14,7 +14,7 @@
 +listen "%%PREFIX%%/www/gitlab-ce/tmp/sockets/gitlab.socket", :backlog => 1024
  listen "127.0.0.1:8080", :tcp_nopush => true
  
- # nuke workers after 30 seconds instead of 60 seconds (the default)
+ # destroy workers after 30 seconds instead of 60 seconds (the default)
 @@ -59,13 +59,13 @@ listen "127.0.0.1:8080", :tcp_nopush => true
  timeout 60
  
