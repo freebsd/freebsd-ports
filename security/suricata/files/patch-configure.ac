@@ -1,7 +1,7 @@
---- configure.ac.orig	2017-02-15 07:54:17 UTC
+--- configure.ac.orig	2021-03-01 16:13:22 UTC
 +++ configure.ac
-@@ -935,8 +935,10 @@
-             AS_HELP_STRING([--enable-prelude], [Enable Prelude support for alerts]),,[enable_prelude=no])
+@@ -1186,8 +1186,10 @@
+             AS_HELP_STRING([--enable-prelude], [Enable Prelude support for alerts]),[enable_prelude=$enableval],[enable_prelude=no])
      # Prelude doesn't work with -Werror
      STORECFLAGS="${CFLAGS}"
 -    CFLAGS="${CFLAGS} -Wno-error=unused-result"
