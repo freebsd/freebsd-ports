@@ -6529,6 +6529,7 @@
     SUBDIR += rubygem-ruby-fogbugz021
     SUBDIR += rubygem-ruby-libvirt
     SUBDIR += rubygem-ruby-macho
+    SUBDIR += rubygem-ruby-magic
     SUBDIR += rubygem-ruby-magic-static
     SUBDIR += rubygem-ruby-ole
     SUBDIR += rubygem-ruby-prof
