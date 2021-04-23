@@ -16294,3 +16294,4 @@ textproc/py-markdown3|textproc/py-markdown|2021-04-20|markdown3 confilicts with 
 security/fbopenssl||2021-04-20|Unmaintained, abandoned, does not build with recent OS versions
 devel/gearmand-devel||2021-04-20|Unmaintained, abandoned, has not built for over half a year
 textproc/bsdsort||2021-04-21|Old version of sort(1)
+www/py-django-mezzanine||2021-04-23|Depends on expired www/py-django111, not compatible with newer versions of Django

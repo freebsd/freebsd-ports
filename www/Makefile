@@ -1506,7 +1506,6 @@
     SUBDIR += py-django-libsass
     SUBDIR += py-django-markdownx
     SUBDIR += py-django-markwhat
-    SUBDIR += py-django-mezzanine
     SUBDIR += py-django-mezzanine-filebrowser
     SUBDIR += py-django-mezzanine-grappelli
     SUBDIR += py-django-model-utils
