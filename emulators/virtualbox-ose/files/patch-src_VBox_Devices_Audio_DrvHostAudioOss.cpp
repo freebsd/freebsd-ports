@@ -1,5 +1,5 @@
---- src/VBox/Devices/Audio/DrvHostOSSAudio.cpp.orig	2021-01-07 15:37:12 UTC
-+++ src/VBox/Devices/Audio/DrvHostOSSAudio.cpp
+--- src/VBox/Devices/Audio/DrvHostAudioOss.cpp.orig	2021-04-20 04:27:52 UTC
++++ src/VBox/Devices/Audio/DrvHostAudioOss.cpp
 @@ -253,10 +253,11 @@ static int ossStreamOpen(const char *pszDev, int fOpen
  
              default:
@@ -17,7 +17,7 @@
  
                  pCfgAcq->Backend.cFramesPeriod     = PDMAUDIOSTREAMCFG_B2F(pCfgAcq, ossAcq.cbFragmentSize);
                  pCfgAcq->Backend.cFramesBufferSize = pCfgAcq->Backend.cFramesPeriod * 2; /* Use "double buffering". */
-+                pCfgAcq->Backend.cFramesPreBuffering     = pCfgAcq->Backend.cFramesBufferSize;                
++                pCfgAcq->Backend.cFramesPreBuffering = pCfgAcq->Backend.cFramesBufferSize;
                  /** @todo Pre-buffering required? */
              }
          }
@@ -25,7 +25,7 @@
  #endif
              pCfgAcq->Backend.cFramesPeriod     = PDMAUDIOSTREAMCFG_B2F(pCfgAcq, obtStream.cbFragmentSize);
              pCfgAcq->Backend.cFramesBufferSize = pCfgAcq->Backend.cFramesPeriod * 2; /* Use "double buffering" */
-+            pCfgAcq->Backend.cFramesPreBuffering     = pCfgAcq->Backend.cFramesBufferSize;            
++            pCfgAcq->Backend.cFramesPreBuffering = pCfgAcq->Backend.cFramesBufferSize;
          }
  
      } while (0);

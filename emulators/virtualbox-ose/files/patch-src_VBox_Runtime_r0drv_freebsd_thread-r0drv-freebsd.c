@@ -1,4 +1,4 @@
---- src/VBox/Runtime/r0drv/freebsd/thread-r0drv-freebsd.c.orig	2018-10-15 14:31:31 UTC
+--- src/VBox/Runtime/r0drv/freebsd/thread-r0drv-freebsd.c.orig	2021-04-20 04:32:44 UTC
 +++ src/VBox/Runtime/r0drv/freebsd/thread-r0drv-freebsd.c
 @@ -49,7 +49,6 @@ RTDECL(RTNATIVETHREAD) RTThreadNativeSelf(void)
  static int rtR0ThreadFbsdSleepCommon(RTMSINTERVAL cMillies)
@@ -8,7 +8,7 @@
  
      /*
       * 0 ms sleep -> yield.
-@@ -60,11 +59,28 @@ static int rtR0ThreadFbsdSleepCommon(RTMSINTERVAL cMil
+@@ -60,30 +59,34 @@ static int rtR0ThreadFbsdSleepCommon(RTMSINTERVAL cMil
          return VINF_SUCCESS;
      }
  
@@ -19,7 +19,17 @@
       */
      if (cMillies != RT_INDEFINITE_WAIT)
      {
-+#if __FreeBSD_version >= 1000029
+-        if (hz == 1000)
+-            cTicks = cMillies;
+-        else if (hz == 100)
+-            cTicks = cMillies / 10;
+-        else
+-        {
+-            int64_t cTicks64 = ((uint64_t)cMillies * hz) / 1000;
+-            cTicks = (int)cTicks64;
+-            if (cTicks != cTicks64)
+-                cTicks = INT_MAX;
+-        }
 +        struct timeval tv;
 +
 +        tv.tv_sec = cMillies / 1000;
@@ -31,24 +41,6 @@
 +                        tvtosbt(tv),
 +                        0,
 +                        C_ABSOLUTE);
-+#else
-+        int cTicks;
-+
-         if (hz == 1000)
-             cTicks = cMillies;
-         else if (hz == 100)
-@@ -76,14 +92,24 @@ static int rtR0ThreadFbsdSleepCommon(RTMSINTERVAL cMil
-             if (cTicks != cTicks64)
-                 cTicks = INT_MAX;
-         }
-+        if (!cTicks)
-+            cTicks = 1;
-+
-+        rc = tsleep((void *)RTThreadSleep,
-+                    PZERO | PCATCH,
-+                    "iprtsl",           /* max 6 chars */
-+                    cTicks);
-+#endif
      }
      else
 -        cTicks = 0;     /* requires giant lock! */
@@ -68,7 +60,7 @@
      switch (rc)
      {
          case 0:
-@@ -114,11 +140,13 @@ RTDECL(int) RTThreadSleepNoLog(RTMSINTERVAL cMillies)
+@@ -114,11 +117,13 @@ RTDECL(int) RTThreadSleepNoLog(RTMSINTERVAL cMillies)
  
  RTDECL(bool) RTThreadYield(void)
  {
@@ -82,7 +74,7 @@
      return false; /** @todo figure this one ... */
  }
  
-@@ -167,12 +195,14 @@ RTDECL(void) RTThreadPreemptDisable(PRTTHREADPREEMPTST
+@@ -167,12 +172,14 @@ RTDECL(void) RTThreadPreemptDisable(PRTTHREADPREEMPTST
  
  RTDECL(void) RTThreadPreemptRestore(PRTTHREADPREEMPTSTATE pState)
  {

@@ -1,4 +1,4 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c.orig	2021-01-07 15:34:22 UTC
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c.orig	2021-04-20 04:24:19 UTC
 +++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c
 @@ -1,8 +1,3 @@
 -/* $Id: vboxvfs_vfsops.c $ */
@@ -9,7 +9,7 @@
  /*
   * Copyright (C) 2008-2020 Oracle Corporation
   *
-@@ -14,245 +9,478 @@
+@@ -14,245 +9,474 @@
   * VirtualBox OSE distribution. VirtualBox OSE is distributed in the
   * hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
   */
@@ -456,12 +456,8 @@
 +	mp->mnt_flag |= MNT_LOCAL;
 +	if (readonly != 0)
 +		mp->mnt_flag |= MNT_RDONLY;
-+#if __FreeBSD_version >= 1000021
++
 +	mp->mnt_kern_flag |= MNTK_LOOKUP_SHARED | MNTK_EXTENDED_SHARED;
-+#else
-+	mp->mnt_kern_flag |= MNTK_MPSAFE | MNTK_LOOKUP_SHARED |
-+	    MNTK_EXTENDED_SHARED;
-+#endif
 +	MNT_IUNLOCK(mp);
 +	vfs_mountedfrom(mp, share_name);
 +
