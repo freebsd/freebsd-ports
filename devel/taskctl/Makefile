@@ -1,5 +1,5 @@
 PORTNAME=	taskctl
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
