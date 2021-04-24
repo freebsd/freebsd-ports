@@ -1197,6 +1197,7 @@
     SUBDIR += softether-devel
     SUBDIR += softether5
     SUBDIR += softhsm2
+    SUBDIR += solana
     SUBDIR += sops
     SUBDIR += spass
     SUBDIR += spass-qt5
