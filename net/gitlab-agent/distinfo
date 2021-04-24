@@ -1,4 +1,4 @@
-TIMESTAMP = 1619181378
+TIMESTAMP = 1619247254
 SHA256 (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = ee1ebe2efef498be1c558bf71e143289db2d21e2d42592503ad2d4a989006821
 SIZE (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = 20946
 SHA256 (DataDog-dd-trace-go-v1.7.0_GH0.tar.gz) = d81bd47683ef9cbd228691b077373d3e15ca5fa5b9e7919099c4e87779040e84
@@ -231,7 +231,7 @@ SHA256 (kubernetes-kubectl-v0.20.5_GH0.tar.gz) = 52f3e6b2a13d61c6a05ed03f766edb7
 SIZE (kubernetes-kubectl-v0.20.5_GH0.tar.gz) = 2850411
 SHA256 (kubernetes-kubelet-v0.20.5_GH0.tar.gz) = 875c6aaac5af50f37388e53e58609404742793ce7160f8edcb781f995e71b13b
 SIZE (kubernetes-kubelet-v0.20.5_GH0.tar.gz) = 105058
-SHA256 (kubernetes-kubernetes-v1.20.5_GH0.tar.gz) = d237e3c986288366f5f27e0142028c65fe6b1663484b5ea2a669427ed3c6d97c
+SHA256 (kubernetes-kubernetes-v1.20.5_GH0.tar.gz) = 5525ffdf29cbf298656c6418a062175b85586c5bfc2a6b36e64e05547fe1a81d
 SIZE (kubernetes-kubernetes-v1.20.5_GH0.tar.gz) = 34438218
 SHA256 (kubernetes-legacy-cloud-providers-v0.20.5_GH0.tar.gz) = 0091f45b263d71628dabaaede42be4db868fc88a8384d30cf9751d2a0edccea5
 SIZE (kubernetes-legacy-cloud-providers-v0.20.5_GH0.tar.gz) = 606734
