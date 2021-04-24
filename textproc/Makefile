@@ -103,6 +103,7 @@
     SUBDIR += confetti
     SUBDIR += confget
     SUBDIR += consul-template
+    SUBDIR += cpp-peglib
     SUBDIR += crex
     SUBDIR += crimson
     SUBDIR += crunch

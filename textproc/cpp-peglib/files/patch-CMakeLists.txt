@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2021-03-31 01:03:42 UTC
++++ CMakeLists.txt
+@@ -17,10 +17,16 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+   set(add_link_deps Threads::Threads)
+ endif()
+ 
++if (FREEBSD_BUILD_EXAMPLES)
+ add_subdirectory(example)
++endif()
++if (FREEBSD_BUILD_LINT)
+ add_subdirectory(lint)
++endif()
+ 
++if (FREEBSD_BUILD_TESTS)
+ add_subdirectory(test)
+ enable_testing()
++endif()
+ 
+ install(FILES peglib.h DESTINATION include)
