@@ -1,23 +1,14 @@
---- CMakeLists.txt.orig	2020-10-15 09:55:17 UTC
+--- CMakeLists.txt.orig	2021-04-08 06:20:26 UTC
 +++ CMakeLists.txt
-@@ -513,7 +513,7 @@ if(WIN32)
-   endif()
- endif()
- 
--if(NOT WIN32 AND NOT APPLE)
-+if(NOT WIN32 AND NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} STREQUAL FreeBSD)
-   # Enable POSIX extensions such as `readlink` and `ftruncate`.
-   add_definitions(-D_POSIX_C_SOURCE=200809L)
- endif()
-@@ -651,6 +651,11 @@ if(CPACK)
-     set(CPACK_STRIP_FILES TRUE)
+@@ -873,6 +873,11 @@ if(CPACK)
      set(CPACK_GENERATOR "DragNDrop")
    endif()
-+
+ 
 +install(TARGETS devilutionx 				DESTINATION ${CMAKE_INSTALL_BINDIR})
 +install(FILES   Packaging/fedora/devilutionx.desktop 	DESTINATION ${CMAKE_INSTALL_SHAREDIR}/applications)
 +install(FILES   Packaging/resources/icon.png 		DESTINATION ${CMAKE_INSTALL_SHAREDIR}/icons/hicolor/512x512/apps RENAME devilutionx.png)
 +install(FILES   Packaging/resources/icon_solid.png 	DESTINATION ${CMAKE_INSTALL_SHAREDIR}/icons/hicolor/512x512/apps RENAME devilutionx_solid.png)
- 
++
    set(CPACK_PACKAGE_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
    set(CPACK_PACKAGE_VERSION_MINOR ${PROJECT_VERSION_MINOR})
+   set(CPACK_PACKAGE_VERSION_PATCH ${PROJECT_VERSION_PATCH})

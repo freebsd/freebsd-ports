@@ -11,4 +11,12 @@ If you have any issues with this game, please file a bug report on the GitHub pa
 https://github.com/diasurgical/devilutionX/issues
 EOM
 }
+{
+type: upgrade
+maximum_version: "1.1.0"
+  message: <<EOM
+Upgrading from before 1.1.0 needs to do remove ~/.local/share/diasurgical/devilution/diablo.ini
+so devilutionX runs correctly
+EOM
+}
 ]
