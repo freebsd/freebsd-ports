@@ -1,0 +1,33 @@
+# eutils v0.0.0-00010101000000-000000000000 => ../eutils
+## explicit
+eutils
+# github.com/fatih/color v1.10.0
+## explicit
+github.com/fatih/color
+# github.com/fiam/gounidecode v0.0.0-20150629112515-8deddbd03fec
+## explicit
+github.com/fiam/gounidecode/unidecode
+# github.com/gedex/inflector v0.0.0-20170307190818-16278e9db813
+github.com/gedex/inflector
+# github.com/klauspost/cpuid v1.3.1
+github.com/klauspost/cpuid
+# github.com/mattn/go-colorable v0.1.8
+github.com/mattn/go-colorable
+# github.com/mattn/go-isatty v0.0.12
+github.com/mattn/go-isatty
+# github.com/pbnjay/memory v0.0.0-20201129165224-b12e5d931931
+github.com/pbnjay/memory
+# github.com/stretchr/testify v1.7.0
+## explicit
+# github.com/surge/glog v0.0.0-20141108051140-2578deb2b95c
+## explicit
+# github.com/surgebase/porter2 v0.0.0-20150829210152-56e4718818e8
+## explicit
+github.com/surgebase/porter2
+# golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae
+golang.org/x/sys/unix
+# golang.org/x/text v0.3.5
+golang.org/x/text/runes
+golang.org/x/text/transform
+golang.org/x/text/unicode/norm
+# eutils => ../eutils

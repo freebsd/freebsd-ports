@@ -84,6 +84,7 @@
     SUBDIR += muscle
     SUBDIR += ncbi-blast+
     SUBDIR += ncbi-cxx-toolkit
+    SUBDIR += ncbi-entrez-direct
     SUBDIR += ncbi-toolkit
     SUBDIR += ncbi-vdb
     SUBDIR += ngs-sdk

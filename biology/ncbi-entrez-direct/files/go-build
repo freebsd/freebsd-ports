@@ -1,0 +1,7 @@
+#!/bin/sh -ex
+
+platform=`uname -s`
+export HOME=$(pwd)
+go build -o xtract."$platform" xtract.go
+go build -o transmute."$platform" transmute.go
+go build -o rchive."$platform" rchive.go
