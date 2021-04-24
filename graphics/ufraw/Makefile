@@ -1,8 +1,7 @@
 # Created by: Mark Murray <markm@FreeBSD.org>
 
 PORTNAME=	ufraw
-PORTVERSION=	0.22
-PORTREVISION=	18
+PORTVERSION=	0.22.20210424
 CATEGORIES=	graphics
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -36,7 +35,7 @@ GIMP_DESC=	Install GIMP plugin
 USE_GITHUB=	yes
 GH_ACCOUNT=	sergiomb2
 GH_PROJECT=	ufraw
-GH_TAGNAME=	6d3259a
+GH_TAGNAME=	f34669b
 
 USE_GNOME+=glib20 gtk20 cairo gdkpixbuf2
 
