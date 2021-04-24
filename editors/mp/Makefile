@@ -1,7 +1,7 @@
 # Created by: Mark Pulford <mark@kyne.com.au>
 
 PORTNAME=	mp
-DISTVERSION=	5.48
+DISTVERSION=	5.49
 CATEGORIES=	editors
 
 MAINTAINER=	jhale@FreeBSD.org
