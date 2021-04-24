@@ -1,6 +1,5 @@
 PORTNAME=	pyneqsys
-DISTVERSION=	0.5.6
-PORTREVISION=	2
+DISTVERSION=	0.5.7
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +10,6 @@ COMMENT=	Solver of symbolically defined systems of non-linear equations
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}fastcache>0:devel/py-fastcache@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sym>=0.3.1:math/py-sym@${PY_FLAVOR} \
@@ -19,6 +17,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
