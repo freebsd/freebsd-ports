@@ -8,8 +8,7 @@
 %%DOCSDIR%%/ANNOUNCE
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/README
-%%WINE32%%wine-proton/bin/wine
-%%WINE32%%wine-proton/bin/wine32
+%%WINE32%%wine-proton/bin/wine.bin
 %%WINE32%%wine-proton/bin/wineserver32
 %%WINE32%%wine-proton/lib/wine/avifile.dll16.so
 %%WINE32%%wine-proton/lib/wine/comm.drv16.so
@@ -140,7 +139,9 @@
 %%WINE32%%wine-proton/lib/wine/winsock.dll16.so
 %%WINE32%%wine-proton/lib/wine/wintab.dll16.so
 %%WINE32%%wine-proton/lib/wine/wow32.dll.so
+%%WINE64%%wine-proton/bin/pkg32.sh
 %%WINE64%%wine-proton/bin/wine64
+%%WINE64%%wine-proton/bin/wine64.bin
 %%WINE64%%wine-proton/bin/wineserver
 wine-proton/bin/function_grep.pl
 wine-proton/bin/msidb
@@ -149,6 +150,7 @@ wine-proton/bin/notepad
 wine-proton/bin/regedit
 wine-proton/bin/regsvr32
 wine-proton/bin/widl
+wine-proton/bin/wine
 wine-proton/bin/wineboot
 wine-proton/bin/winebuild
 wine-proton/bin/winecfg
