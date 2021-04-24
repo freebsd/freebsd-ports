@@ -1,7 +1,7 @@
 # Created by: Piotr Kubaj <pkubaj@anongoth.pl>
 
 PORTNAME=	dxx-rebirth
-PORTVERSION=	20210326
+PORTVERSION=	20210422
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	https://www.dxx-rebirth.com/download/dxx/rebirth/
