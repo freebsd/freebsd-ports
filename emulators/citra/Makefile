@@ -1,5 +1,5 @@
 PORTNAME=	citra
-PORTVERSION=	s20210403
+PORTVERSION=	s20210423
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -21,15 +21,15 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	b3cab3c45
+GH_TAGNAME=	9ff97270c
 GH_TUPLE=	citra-emu:ext-boost:36603a1:boost/externals/boost \
 		citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
-		MerryMage:dynarmic:r3-207-gf9d84871:dynarmic/externals/dynarmic \
+		MerryMage:dynarmic:r3-209-g358cf6f0:dynarmic/externals/dynarmic \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		arun11299:cpp-jwt:v1.1.1:cpp_jwt/externals/cpp-jwt \
 		benhoyt:inih:r52:inih/externals/inih/inih \
-		catchorg:Catch2:v2.3.0:catch/externals/catch \
+		catchorg:Catch2:v2.13.4:catch/externals/catch \
 		facebook:zstd:v1.4.8:zstd/externals/zstd \
 		fmtlib:fmt:7.1.2:fmt/externals/fmt \
 		herumi:xbyak:v5.96:xbyak/externals/xbyak \
