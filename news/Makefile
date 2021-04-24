@@ -50,7 +50,6 @@
     SUBDIR += p5-POE-Component-Server-NNTP
     SUBDIR += pan
     SUBDIR += pgpmoose
-    SUBDIR += plor
     SUBDIR += py-pynzb
     SUBDIR += py-sabyenc3
     SUBDIR += rntrack

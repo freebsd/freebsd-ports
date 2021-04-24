@@ -68,7 +68,6 @@
     SUBDIR += cargo-audit
     SUBDIR += ccrypt
     SUBDIR += ccsrch
-    SUBDIR += certificate-transparency
     SUBDIR += cfs
     SUBDIR += cfssl
     SUBDIR += chaosreader

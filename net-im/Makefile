@@ -7,7 +7,6 @@
     SUBDIR += climm
     SUBDIR += coccinella
     SUBDIR += convey
-    SUBDIR += cordless
     SUBDIR += coyim
     SUBDIR += cutegram
     SUBDIR += dendrite

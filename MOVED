@@ -16298,3 +16298,7 @@ www/py-django-mezzanine||2021-04-23|Depends on expired www/py-django111, not com
 devel/py-enum34||2021-04-23|No longer needed with python 3
 multimedia/gmimms||2021-04-23|Unmaintained, uses EOL'd Python 2.7
 multimedia/mimms||2021-04-23|Unmaintained, uses EOL'd Python 2.7
+net/samba411|net/samba412|2021-04-24|Has expired: Security Support ends on 03 Dec 2020
+net-im/cordless||2021-04-24|Has expired: Unmaintained and dead upstream, uses the old Discord API which notably has got users banned
+news/plor||2021-04-24|Has expired: listed as "Alpha-release" but last update in 2001; unmaintained
+security/certificate-transparency||2021-04-24|Has expired: Broken for more than 6 months
