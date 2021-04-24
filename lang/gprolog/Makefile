@@ -12,6 +12,8 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64 i386
 
+BROKEN=		does not build: error trying to execute   -o: No such file or directory
+
 USES=		gmake
 CFLAGS+=	-DUSE_LOCKS=1 -DUSE_RECURSIVE_LOCKS=1 -DUSE_SPIN_LOCKS=0 \
 		-DMMAP_CLEARS=0 -DNO_MACHINE_REG_FOR_REG_BANK
