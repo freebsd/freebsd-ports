@@ -4,4 +4,4 @@ spherical (i.e. an atom) or periodic systems. It is based on SiestaXC.
 The project is based on the SiestaXC code, and eventually will produce a package
 to be included in the Electronic Structure Library.
 
-WWW: https://launchpad.net/libgridxc
+WWW: https://gitlab.com/siesta-project/libraries/libgridxc
