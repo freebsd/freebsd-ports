@@ -13,7 +13,7 @@ LICENSE=	LGPL20 GPLv2
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:devel/abi-compliance-checker
+RUN_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker:devel/abi-compliance-checker
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${PORTNAME}.pl
