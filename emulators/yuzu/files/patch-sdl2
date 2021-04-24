@@ -1,0 +1,22 @@
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=252371
+
+-- SDL2 2.0.14 or newer not found, falling back to externals.
+
+CMake Error at externals/CMakeLists.txt:54 (add_subdirectory):
+  The source directory
+
+    externals/SDL
+
+  does not contain a CMakeLists.txt file.
+
+--- CMakeLists.txt.orig	2021-04-23 22:48:47.000000000 +0000
++++ CMakeLists.txt
+@@ -293,7 +293,7 @@ if (ENABLE_SDL2)
+ endif()
+ 
+ if (NOT YUZU_USE_BUNDLED_SDL2)
+-        find_package(SDL2 2.0.14 QUIET)
++        find_package(SDL2 2.0.12 QUIET)
+ 
+     if (TRUE)
+         if (SDL2_FOUND)
