@@ -2,9 +2,10 @@
 
 PORTNAME=	kmplayer
 PORTVERSION=	0.12.0b
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio kde
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE frontend to Phonon / KDE5
@@ -29,7 +30,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext-runtime \
-		gnome kde:5 pkgconfig qt:5 xorg
+		gnome kde:5 pkgconfig qt:5 tar:bz2 xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_QT=		concurrent core dbus gui network phonon4 printsupport \
 		svg widgets x11extras xml \
@@ -41,7 +42,5 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		xmlgui kdelibs4support kio solid sonnet \
 		doctools_build
 USE_XORG=	x11 xcb
-USE_GITHUB=	yes
-GH_ACCOUNT=	KDE
 
 .include <bsd.port.mk>
