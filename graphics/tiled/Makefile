@@ -1,5 +1,5 @@
 PORTNAME=	tiled
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics editors games
 
@@ -17,20 +17,23 @@ GH_ACCOUNT=	bjorn
 USES=		compiler:c++14-lang desktop-file-utils gl qmake qt:5 \
 		shared-mime-info xorg
 USE_QT=		core gui widgets opengl network declarative \
-		buildtools_build linguisttools_build
+		buildtools_build linguisttools_build dbus
 USE_GL=		gl
 USE_LDCONFIG=	yes
 QMAKE_ARGS=	SYSTEM_ZSTD=yes
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	PYTHON DOCS
-OPTIONS_DEFAULT=PYTHON
+OPTIONS_DEFINE=	PYTHON DBUS DOCS
+OPTIONS_DEFAULT=PYTHON DBUS
 OPTIONS_SUB=	yes
 
 PYTHON_DESC=	Enable python plugin
 PYTHON_USES=	pkgconfig python:3.6+
 PYTHON_QMAKE_OFF=	DISABLE_PYTHON_PLUGIN=yes
+
+DBUS_USE=	QT=dbus
+DBUS_QMAKE_OFF=	DISABLE_DBUS=yes
 
 post-patch-PYTHON-on:
 	@${REINPLACE_CMD} -e 's|python3|python-${PYTHON_VER}|' \
