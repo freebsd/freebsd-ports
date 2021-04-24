@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
+BROKEN_FreeBSD_13=	does not build: error: unknown type name 'sem_t'
+BROKEN_FreeBSD_14=	does not build: error: unknown type name 'sem_t'
+
 USES=		compiler:c++11-lib gmake gnome
 MAKE_ARGS=	CXX="${CXX}" WXCONFIG="${WX_CONFIG}"
 USE_WX=		3.0
