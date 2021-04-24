@@ -1,8 +1,8 @@
 - .git/ is missing in archive, so use version from environment
 
---- build/gen.py.orig	2020-09-21 09:20:32 UTC
+--- build/gen.py.orig	2021-04-24 13:35:05 UTC
 +++ build/gen.py
-@@ -149,25 +149,16 @@ def main(argv):
+@@ -151,25 +151,16 @@ def main(argv):
  
  
  def GenerateLastCommitPosition(host, header):
