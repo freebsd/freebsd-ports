@@ -49,6 +49,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/htx-api.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/initcalls.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/list.fig
+%%PORTDOCS%%%%DOCSDIR%%/internals/list.png
 %%PORTDOCS%%%%DOCSDIR%%/internals/listener-states.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/listener-states.png
 %%PORTDOCS%%%%DOCSDIR%%/internals/lua_socket.fig
