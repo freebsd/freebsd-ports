@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	foreman-proxy
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1.4
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.theforeman.org/foreman-proxy/
 
@@ -63,7 +63,7 @@ post-patch:
 		${WRKSRC}/bin/smart-proxy \
 		${WRKSRC}/extra/migrate_settings.rb \
 		${WRKSRC}/extra/query.rb \
-		${WRKSRC}/extra/register-service.rb
+		${WRKSRC}/extra/register_service.rb
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${WRKSRC}/config/settings.d/*.yml.example \
@@ -80,7 +80,7 @@ do-install:
 	${CP} -r ${WRKSRC}/${file} ${STAGEDIR}${DATADIR}
 .endfor
 	${LN} -s Gemfile ${STAGEDIR}${DATADIR}/Gemfile.in
-.for script in foreman-debug-proxy migrate_settings.rb query.rb register-service.rb
+.for script in foreman-debug-proxy migrate_settings.rb query.rb register_service.rb
 	${INSTALL_SCRIPT} ${WRKSRC}/extra/${script} \
 		${STAGEDIR}${DATADIR}/extra/${script}
 .endfor
