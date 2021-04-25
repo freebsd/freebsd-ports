@@ -1,0 +1,9 @@
+This package includes a scikit-learn-compatible Python implementation of ReBATE,
+a suite of Relief-based feature selection algorithms for Machine Learning. These
+Relief-Based algorithms (RBAs) are designed for feature weighting/selection as
+part of a machine learning pipeline (supervised learning). Presently this
+includes the following core RBAs: ReliefF, SURF, SURF*, MultiSURF*, and
+MultiSURF. Additionally, an implementation of the iterative TuRF mechanism and
+VLSRelief is included.
+
+WWW: https://github.com/EpistasisLab/scikit-rebate

@@ -292,6 +292,7 @@
     SUBDIR += py-scoria
     SUBDIR += py-segregation
     SUBDIR += py-segyio
+    SUBDIR += py-skrebate
     SUBDIR += py-spaghetti
     SUBDIR += py-spglib
     SUBDIR += py-tensorflow
