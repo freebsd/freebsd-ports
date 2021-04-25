@@ -1,4 +1,4 @@
---- requirements/optional.txt.orig	2021-01-04 08:24:44 UTC
+--- requirements/optional.txt.orig	2021-04-02 06:24:50 UTC
 +++ requirements/optional.txt
 @@ -1,25 +1,25 @@
  -r required.txt
@@ -31,7 +31,7 @@
  # Faster matching in e.g. pot2po
  python-Levenshtein>=0.12    # Levenshtein
  # Format support
--ruamel.yaml==0.16.12 # YAML
+-ruamel.yaml==0.17.2 # YAML
 +ruamel.yaml>=0.16.12 # YAML
  # Format support
 -vobject==0.9.6.1     # iCal
