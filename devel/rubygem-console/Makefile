@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	console
-PORTVERSION=	1.10.2
+PORTVERSION=	1.11.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
