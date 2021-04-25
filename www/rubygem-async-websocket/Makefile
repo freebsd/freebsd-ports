@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	async-websocket
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
