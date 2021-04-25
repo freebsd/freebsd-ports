@@ -1,7 +1,7 @@
 PORTNAME=	adguardhome
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.105.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +22,10 @@ GO_MODULE=	github.com/AdguardTeam/AdGuardHome
 #   5. make clean makesum
 
 DEV_UPDATE_MODE=	no
+
+USER=		root # it has to run as root because it listens on the privileged DNS port
+SUB_LIST=	USER=${USER}
+USE_RC_SUBR=	${PORTNAME}
 
 .if (${DEV_UPDATE_MODE} == "yes")
 BUILD_DEPENDS=	npm:www/npm \
