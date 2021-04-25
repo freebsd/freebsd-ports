@@ -3,6 +3,6 @@ include/ksba.h
 lib/libksba.a
 lib/libksba.so
 lib/libksba.so.8
-lib/libksba.so.8.13.0
+lib/libksba.so.8.13.1
 libdata/pkgconfig/ksba.pc
 share/aclocal/ksba.m4
