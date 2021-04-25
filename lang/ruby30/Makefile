@@ -83,13 +83,13 @@ _SUF1=	_${PORTREVISION}
 _SUF2=	,${PORTEPOCH}
 .endif
 
-.if ${OPSYS} == "FreeBSD"
-.if exists(/usr/sbin/dtrace) && (${ARCH} == amd64 || ${ARCH} == i386)
-CONFIGURE_ARGS+=--enable-dtrace
-.else
-CONFIGURE_ARGS+=--disable-dtrace
-.endif
-.endif
+#.if ${OPSYS} == "FreeBSD"
+#.if exists(/usr/sbin/dtrace) && (${ARCH} == amd64 || ${ARCH} == i386)
+#CONFIGURE_ARGS+=--enable-dtrace
+#.else
+#CONFIGURE_ARGS+=--disable-dtrace
+#.endif
+#.endif
 
 # keep in sync with all platforms where libunwind is available
 .if (${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH:Mpowerpc64*})
@@ -108,12 +108,12 @@ CONFIGURE_ENV+=	ac_cv_func__setjmp=yes
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 PLIST_SUB+=	IF_DEFAULT=""
 .else
-PKGNAMESUFFIX=	${RUBY_VER:C/\.//}
+PKGNAMESUFFIX=	${RUBY_SUFFIX}
 PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
 
-INSTALLED_SCRIPTS=	erb ruby
-INSTALLED_MANUALS=	erb ruby
+INSTALLED_SCRIPTS=	ruby
+INSTALLED_MANUALS=	ruby
 
 EXTSAMPLES=	bigdecimal/sample/*.rb
 
@@ -127,11 +127,8 @@ RB_SET_CONF_VAR=${SH} -c '${REINPLACE_CMD} -E -e "s,(CONFIG\[\"$$0\"\][[:space:]
 
 post-patch:
 # We get these from other ports
-.for d in bin/bundle* bin/gem bin/*racc* bin/irb bin/rdoc bin/ri \
-	  lib/bundler* libexec/bundler* \
-	  man/bundle* man/gemfile* man/irb.1 man/ri.1 \
-	  ext/dbm ext/gdbm ext/win32ole
-	  	@${RM} -r ${BUILD_WRKSRC}/${d}
+.for d in bin/* ext/dbm ext/gdbm ext/win32* lib/bundler* libexec/bundler* man/bundle* man/erb.1 man/gemfile* man/irb.1 man/ri.1
+	@${RM} -r ${BUILD_WRKSRC}/${d}
 .endfor
 
 post-build:

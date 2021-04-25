@@ -5,8 +5,10 @@ Some of the standard commands are provided as separate ports for ease
 of upgrading:
 
 	devel/ruby-gems:		gem - RubyGems package manager
+	devel/rubygem-erb:		erb - Templating system for Ruby
 	devel/rubygem-irb:		irb - Interactive Ruby
 	devel/rubygem-rake:		rake - Ruby Make
+	devel/rubygem-rbs:		rbs - Language for type signatures for Ruby and standard library definitions
 	devel/rubygem-rdoc:		rdoc - Ruby Documentation System
 	sysutils/rubygem-bundler:	bundler - Tool that manages gem dependencies for ruby applications
 
