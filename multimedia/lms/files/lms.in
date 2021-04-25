@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# PROVIDE: lms
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable lms:
+# lms_enable : set to "YES" to enable the daemon, default is "NO"
+
+. /etc/rc.subr
+
+name=lms
+rcvar=lms_enable
+
+load_rc_config $name
+
+lms_enable=${lms_enable:-"NO"}
+
+logfile="/var/log/${name}.log"
+
+procname=%%PREFIX%%/bin/lms
+command="/usr/sbin/daemon"
+command_args="-u %%USER%% -o ${logfile} -t ${name} %%PREFIX%%/bin/lms"
+
+run_rc_command "$1"

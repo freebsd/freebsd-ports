@@ -219,6 +219,7 @@
     SUBDIR += livego
     SUBDIR += lives
     SUBDIR += livestreamer
+    SUBDIR += lms
     SUBDIR += lsdvd
     SUBDIR += m2tstoavi
     SUBDIR += m2vrequantiser
