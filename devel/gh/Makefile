@@ -1,6 +1,7 @@
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -101,9 +102,9 @@ post-install-COMPLETIONS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${GO_WRKSRC}/bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
 	${INSTALL_DATA} ${GO_WRKSRC}/fish \
-		${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
+		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/${PORTNAME}.fish
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${GO_WRKSRC}/zsh \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
