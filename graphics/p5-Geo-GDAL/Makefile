@@ -1,8 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Geo-GDAL
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	3.2.2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
