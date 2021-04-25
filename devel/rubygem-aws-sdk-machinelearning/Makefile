@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	aws-sdk-machinelearning
-PORTVERSION=	1.27.0
+PORTVERSION=	1.28.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
