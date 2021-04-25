@@ -7,7 +7,7 @@ CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	matthew@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RT extension to import users from an LDAP store
 
 LICENSE=	ART10 GPLv1+

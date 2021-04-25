@@ -2,11 +2,11 @@
 
 PORTNAME=	RT-Extension-MandatoryOnTransition
 DISTVERSION=	0.20
-PORTREVISION=  2
+PORTREVISION=	2
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 
-MAINTAINER=	matthew@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension to require core and ticket custom fields on status changes
 
 LICENSE=	GPLv2
