@@ -1,0 +1,249 @@
+PORTNAME=	zellij
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5.1
+CATEGORIES=	sysutils
+
+MAINTAINER=	riggs@FreeBSD.org
+COMMENT=	Versatile, extensible terminal multiplexer
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	The wasmer-vm crate currently only supports aarch64 and amd64.
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	zellij-org
+
+PLIST_FILES=	bin/zellij
+
+CARGO_CRATES=	addr2line-0.14.1 \
+		adler-1.0.2 \
+		ansi_term-0.11.0 \
+		ansi_term-0.12.1 \
+		arrayvec-0.5.2 \
+		async-channel-1.6.1 \
+		async-executor-1.4.0 \
+		async-global-executor-2.0.2 \
+		async-io-1.4.0 \
+		async-lock-2.4.0 \
+		async-mutex-1.4.0 \
+		async-process-1.0.2 \
+		async-std-1.9.0 \
+		async-task-4.0.3 \
+		atomic-waker-1.0.0 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		backtrace-0.3.56 \
+		bincode-1.3.3 \
+		bitflags-1.2.1 \
+		bitvec-0.19.5 \
+		blocking-1.0.2 \
+		bumpalo-3.6.1 \
+		byteorder-1.4.3 \
+		cache-padded-1.1.1 \
+		cc-1.0.67 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		clap-2.33.3 \
+		colored-2.0.0 \
+		concurrent-queue-1.2.2 \
+		console-0.14.1 \
+		cranelift-bforest-0.68.0 \
+		cranelift-codegen-0.68.0 \
+		cranelift-codegen-meta-0.68.0 \
+		cranelift-codegen-shared-0.68.0 \
+		cranelift-entity-0.68.0 \
+		cranelift-frontend-0.68.0 \
+		crc32fast-1.2.1 \
+		crossbeam-channel-0.5.1 \
+		crossbeam-deque-0.8.0 \
+		crossbeam-epoch-0.9.3 \
+		crossbeam-utils-0.8.3 \
+		ctor-0.1.20 \
+		darling-0.12.3 \
+		darling_core-0.12.3 \
+		darling_macro-0.12.3 \
+		directories-next-2.0.0 \
+		dirs-sys-next-0.1.2 \
+		dtoa-0.4.8 \
+		either-1.6.1 \
+		encode_unicode-0.3.6 \
+		enumset-1.0.6 \
+		enumset_derive-0.5.4 \
+		erased-serde-0.3.13 \
+		event-listener-2.5.1 \
+		fallible-iterator-0.2.0 \
+		fastrand-1.4.0 \
+		fnv-1.0.7 \
+		funty-1.1.0 \
+		futures-0.3.14 \
+		futures-channel-0.3.14 \
+		futures-core-0.3.14 \
+		futures-executor-0.3.14 \
+		futures-io-0.3.14 \
+		futures-lite-1.11.3 \
+		futures-macro-0.3.14 \
+		futures-sink-0.3.14 \
+		futures-task-0.3.14 \
+		futures-util-0.3.14 \
+		generational-arena-0.2.8 \
+		getopts-0.2.21 \
+		getrandom-0.2.2 \
+		ghost-0.1.2 \
+		gimli-0.22.0 \
+		gimli-0.23.0 \
+		gloo-timers-0.2.1 \
+		hashbrown-0.9.1 \
+		heck-0.3.2 \
+		hermit-abi-0.1.18 \
+		ident_case-1.0.1 \
+		indexmap-1.6.2 \
+		insta-1.7.1 \
+		instant-0.1.9 \
+		interprocess-1.1.1 \
+		intmap-0.7.0 \
+		inventory-0.1.10 \
+		inventory-impl-0.1.10 \
+		itoa-0.4.7 \
+		js-sys-0.3.50 \
+		kv-log-macro-1.0.7 \
+		lazy_static-1.4.0 \
+		leb128-0.2.4 \
+		lexical-core-0.7.5 \
+		libc-0.2.93 \
+		libloading-0.6.7 \
+		linked-hash-map-0.5.4 \
+		lock_api-0.4.3 \
+		log-0.4.14 \
+		mach-0.3.2 \
+		memchr-2.3.4 \
+		memmap2-0.2.2 \
+		memoffset-0.6.3 \
+		miniz_oxide-0.4.4 \
+		more-asserts-0.2.1 \
+		nix-0.19.1 \
+		nom-6.1.2 \
+		num_cpus-1.13.0 \
+		numtoa-0.1.0 \
+		object-0.22.0 \
+		object-0.23.0 \
+		once_cell-1.7.2 \
+		parking-2.0.0 \
+		pin-project-lite-0.2.6 \
+		pin-utils-0.1.0 \
+		polling-2.0.3 \
+		ppv-lite86-0.2.10 \
+		pretty-bytes-0.2.2 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.19 \
+		proc-macro-nested-0.1.7 \
+		proc-macro2-1.0.26 \
+		quote-1.0.9 \
+		radium-0.5.3 \
+		rand-0.8.3 \
+		rand_chacha-0.3.0 \
+		rand_core-0.6.2 \
+		rand_hc-0.3.0 \
+		rayon-1.5.0 \
+		rayon-core-1.9.0 \
+		redox_syscall-0.2.6 \
+		redox_termios-0.1.2 \
+		redox_users-0.4.0 \
+		regalloc-0.0.31 \
+		region-2.2.0 \
+		remove_dir_all-0.5.3 \
+		rustc-demangle-0.1.18 \
+		rustc-hash-1.1.0 \
+		ryu-1.0.5 \
+		scopeguard-1.1.0 \
+		serde-1.0.125 \
+		serde_bytes-0.11.5 \
+		serde_derive-1.0.125 \
+		serde_json-1.0.64 \
+		serde_yaml-0.8.17 \
+		signal-hook-0.3.8 \
+		signal-hook-registry-1.3.0 \
+		similar-1.3.0 \
+		slab-0.4.2 \
+		smallvec-1.6.1 \
+		socket2-0.4.0 \
+		spinning-0.1.0 \
+		stable_deref_trait-1.2.0 \
+		static_assertions-1.1.0 \
+		strip-ansi-escapes-0.1.0 \
+		strsim-0.8.0 \
+		strsim-0.10.0 \
+		structopt-0.3.21 \
+		structopt-derive-0.4.14 \
+		strum-0.20.0 \
+		strum_macros-0.20.1 \
+		syn-1.0.69 \
+		tap-1.0.1 \
+		target-lexicon-0.11.2 \
+		tempfile-3.2.0 \
+		terminal_size-0.1.16 \
+		termion-1.5.6 \
+		termios-0.3.3 \
+		textwrap-0.11.0 \
+		thiserror-1.0.24 \
+		thiserror-impl-1.0.24 \
+		time-0.1.43 \
+		tracing-0.1.25 \
+		tracing-attributes-0.1.15 \
+		tracing-core-0.1.17 \
+		typetag-0.1.7 \
+		typetag-impl-0.1.7 \
+		unicode-segmentation-1.7.1 \
+		unicode-truncate-0.2.0 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		utf8parse-0.1.1 \
+		utf8parse-0.2.0 \
+		uuid-0.8.2 \
+		value-bag-1.0.0-alpha.6 \
+		vec-arena-1.1.0 \
+		vec_map-0.8.2 \
+		version_check-0.9.3 \
+		vte-0.3.3 \
+		vte-0.8.0 \
+		vte_generate_state_changes-0.1.1 \
+		waker-fn-1.1.0 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.73 \
+		wasm-bindgen-backend-0.2.73 \
+		wasm-bindgen-futures-0.4.23 \
+		wasm-bindgen-macro-0.2.73 \
+		wasm-bindgen-macro-support-0.2.73 \
+		wasm-bindgen-shared-0.2.73 \
+		wasmer-1.0.2 \
+		wasmer-compiler-1.0.2 \
+		wasmer-compiler-cranelift-1.0.2 \
+		wasmer-derive-1.0.2 \
+		wasmer-engine-1.0.2 \
+		wasmer-engine-jit-1.0.2 \
+		wasmer-engine-native-1.0.2 \
+		wasmer-object-1.0.2 \
+		wasmer-types-1.0.2 \
+		wasmer-vm-1.0.2 \
+		wasmer-wasi-1.0.2 \
+		wasmparser-0.65.0 \
+		wast-35.0.2 \
+		wat-1.0.37 \
+		web-sys-0.3.50 \
+		wepoll-sys-3.0.1 \
+		which-4.1.0 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		wyz-0.2.0 \
+		yaml-rust-0.4.5
+
+post-configure:
+	${REINPLACE_CMD} -e 's|macos|freebsd|g' \
+		${CARGO_VENDOR_DIR}/interprocess-1.1.1/src/os/unix/*.rs
+
+.include <bsd.port.mk>

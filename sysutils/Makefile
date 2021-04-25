@@ -1544,6 +1544,7 @@
     SUBDIR += zap
     SUBDIR += zbackup
     SUBDIR += zeitgeist
+    SUBDIR += zellij
     SUBDIR += zeroer
     SUBDIR += zetaback
     SUBDIR += zetaback-devel
