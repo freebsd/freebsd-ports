@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Math-GMPz
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 TEST_DEPENDS=	p5-Math-GMP>=0:math/p5-Math-GMP \
-		p5-Test-Pod>=1:devel/p5-Test-Pod
+		p5-Test-Pod>=1:devel/p5-Test-Pod \
+		p5-Test-Warn>=0.36:devel/p5-Test-Warn
 
 USES=		localbase perl5
 USE_PERL5=	configure
