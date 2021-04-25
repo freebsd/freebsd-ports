@@ -4,5 +4,5 @@ include/jwt.h
 lib/libjwt.a
 lib/libjwt.so
 lib/libjwt.so.1
-lib/libjwt.so.1.7.0
+lib/libjwt.so.1.8.0
 libdata/pkgconfig/libjwt.pc

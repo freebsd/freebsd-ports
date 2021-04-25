@@ -1,7 +1,7 @@
 # Created by: Kevin Lo <kevlo@FreeBSD.org>
 
 PORTNAME=	libjwt
-PORTVERSION=	1.12.1
+PORTVERSION=	1.13.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -17,9 +17,6 @@ TEST_DEPENDS=	check>=0.9.4:devel/check
 
 USES=		autoreconf gmake libtool pathfix pkgconfig ssl
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	benmcollins
-
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
 GNU_CONFIGURE=	yes
@@ -27,5 +24,8 @@ INSTALL_TARGET=	install-strip
 TEST_ARGS=	CFLAGS+=-I${LOCALBASE}/include LIBS+="-L${LOCALBASE}/lib -lcheck"
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	benmcollins
 
 .include <bsd.port.mk>
