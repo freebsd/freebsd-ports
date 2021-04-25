@@ -35,6 +35,7 @@ OPTIONS_DEFINE_powerpc=		SIMD
 OPTIONS_DEFINE_powerpc64=	SIMD
 OPTIONS_DEFINE_powerpc64le=	SIMD
 OPTIONS_DEFAULT=	TOOLS
+OPTIONS_DEFAULT_powerpc64le=	SIMD
 OPTIONS_SUB=		yes
 
 # Always compile with -DNDEBUG for release. Otherwise, sensitive
