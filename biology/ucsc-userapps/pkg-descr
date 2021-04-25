@@ -1,0 +1,8 @@
+These are the command-line bioinformatics utilities associated with the UCSC
+genome browser.  Care has been taken to install only the freely available
+tools.  However, the license information at https://genome.ucsc.edu/license/
+is not entirely clear and we may add non-free utilities in the future.
+
+Contact UCSC if you are using this port for commercial purposes.
+
+WWW: http://hgdownload.cse.ucsc.edu/admin/exe/

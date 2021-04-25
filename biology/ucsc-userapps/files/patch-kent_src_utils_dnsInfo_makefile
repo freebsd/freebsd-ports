@@ -1,0 +1,11 @@
+--- kent/src/utils/dnsInfo/makefile.orig	2021-04-18 01:20:21 UTC
++++ kent/src/utils/dnsInfo/makefile
+@@ -1,7 +1,7 @@
+ kentSrc = ../..
+ include ../../inc/common.mk
+ 
+-L += -lm -lresolv
++L += -lm
+ MYLIBDIR = ../../lib/$(MACHTYPE)
+ MYLIBS =  $(MYLIBDIR)/jkweb.a
+ 
