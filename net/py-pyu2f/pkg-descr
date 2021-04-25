@@ -1,0 +1,12 @@
+pyu2f is a python based U2F host library. It provides functionality for
+interacting with a U2F device over USB.
+
+pyu2f uses ctypes to make system calls directly to interface with the USB HID
+device. This means that no platform specific shared libraries need to be
+compiled for pyu2f to work.
+
+By default pyu2f will use its own U2F stack implementation to sign requests. If
+desired, pyu2f can offload signing to a pluggable command line tool. Offloading
+is not yet supported for U2F registration.
+
+WWW: https://github.com/google/pyu2f
