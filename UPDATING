@@ -5,6 +5,33 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210425:
+  AFFECTS: users of python
+  AUTHOR: kai@FreeBSD.org
+
+  The default version of python3 and python was switched to 3.8.
+
+  For ports users wanting to keep version 3.7 as default,
+  add DEFAULT_VERSIONS+= python=3.7 python3=3.7 to make.conf
+
+  Following procedures may ease the upgrade:
+
+  For users of pre-build packages:
+  # sh
+  # for i in $(pkg query -g %n 'py37-*'); do pkg set -yn ${i}:py38-${i#py37-}; done
+  # pkg upgrade
+
+  For portmaster users:
+  # sh
+  # portmaster -o lang/python38 python37
+  # REINSTALL="$(pkg info -o py37-\* | awk '{printf "%s ", $2}')"
+  # pkg delete -f py37-\*
+  # portmaster $REINSTALL
+  # REBUILD=$(pkg query -g "%n:%dn" '*' | grep py3 | grep -v py38 | cut -d : -f 1 | sort -u)
+  # portmaster $REBUILD
+  # REBUILD2=$(pkg list | grep python-37 | xargs pkg which | awk '{print $6}' | sort -u)
+  # portmaster $REBUILD2
+
 20210420:
   AFFECTS: users of www/node
   AUTHOR: bhughes@FreeBSD.org
