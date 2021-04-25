@@ -1,12 +1,12 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	vte3
-PORTVERSION=	3.4.3
+PORTVERSION=	3.4.4
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Ruby binding of VTE
+COMMENT=	Ruby binding of VTE for GTK+ 3
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
