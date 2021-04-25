@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	aws-sdk-databasemigrationservice
-PORTVERSION=	1.52.0
+PORTVERSION=	1.53.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
