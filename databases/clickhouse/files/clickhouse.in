@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# $FreeBSD: head/databases/clickhouse/files/clickhouse.in 475667 2018-07-29 17:49:12Z pi $
+#
 # PROVIDE: clickhouse
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
