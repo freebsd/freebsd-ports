@@ -1,7 +1,7 @@
 # Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 
 PORTNAME=	XML-Compile-SOAP
-PORTVERSION=	3.26
+PORTVERSION=	3.27
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
