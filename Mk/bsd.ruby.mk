@@ -162,8 +162,8 @@ RUBY27=			""	# PLIST_SUB helpers
 #
 # Ruby 3.0
 #
-RUBY_DISTVERSION=	3.0.0-preview1
-RUBY_PORTREVISION=	2
+RUBY_VERSION=		3.0.1
+RUBY_PORTREVISION=	0
 RUBY_PORTEPOCH=		1
 RUBY30=			""	# PLIST_SUB helpers
 
@@ -177,16 +177,6 @@ IGNORE=	Only ruby 2.6, 2.7 and 3.0 are supported
 _INVALID_RUBY_VER=	1
 . endif
 .endif # defined(RUBY_VER)
-
-.if defined(RUBY_DISTVERSION)
-.if !defined(RUBY_VERSION)
-RUBY_VERSION=	${RUBY_DISTVERSION:tl:C/([a-z])[a-z]+/\1/g:C/([0-9])([a-z])/\1.\2/g:C/:(.)/\1/g:C/[^a-z0-9+]+/./g}
-.else
-DEV_ERROR+=     "Defining both RUBY_VERSION and RUBY_DISTVERSION is wrong, only set one"
-.endif
-.else
-RUBY_DISTVERSION=	${RUBY_VERSION}
-.endif
 
 .if !defined(_INVALID_RUBY_VER)
 
@@ -202,7 +192,7 @@ BROKEN=			${BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E}}
 .endif
 .endif
 
-RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
+RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_VERSION}
 
 RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-${RUBY_VER}/" \
 			--with-rubylibprefix="${PREFIX}/lib/ruby" \
@@ -227,7 +217,7 @@ RUBY_DEFAULT_SUFFIX?=	${RUBY_DEFAULT_VER:S/.//}
 
 RUBY_PORTVERSION?=	${RUBY_VERSION}
 MASTER_SITE_SUBDIR_RUBY?=	${RUBY_VER}
-RUBY_DISTNAME?=		ruby-${RUBY_DISTVERSION}
+RUBY_DISTNAME?=		ruby-${RUBY_VERSION}
 
 RUBY_WRKSRC?=		${WRKDIR}/${RUBY_DISTNAME}
 
