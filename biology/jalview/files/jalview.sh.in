@@ -1,4 +1,3 @@
 #!/bin/sh
-# Shell script to launch jalview using our javavm wrapper
 
-"%%LOCALBASE%%/bin/java" -Djava.ext.dirs="%%DATADIR%%" -cp "%%DATADIR%%/jalview.jar" jalview.bin.Jalview
+%%JAVA%% -classpath %%DATADIR%% -jar %%DATADIR%%/jalview.jar jalview.bin.Jalview
