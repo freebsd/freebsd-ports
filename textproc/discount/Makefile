@@ -39,9 +39,6 @@ EXTRA_CONFIGURE_ON=	--with-dl=both --with-fenced-code --with-github-tags --with-
 SAMPLES_INSTALL_TARGET=	install.samples
 TAB8_CONFIGURE_ON=	--with-tabstops=8
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|/sbin/ldconfig|#&|' ${WRKSRC}/librarian.sh
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/libmarkdown.a ${STAGEDIR}${PREFIX}/lib/libmarkdown.a
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmarkdown.so
