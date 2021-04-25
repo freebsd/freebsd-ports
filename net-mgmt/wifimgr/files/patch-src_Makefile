@@ -1,0 +1,20 @@
+--- src/Makefile.orig	2014-05-10 22:54:38 UTC
++++ src/Makefile
+@@ -97,7 +97,7 @@ clean:
+ 		rm -f *.o
+ 		rm -f *.core
+ 
+-install:	${installed} update-icon-cache
++install:	${installed} # update-icon-cache
+ 
+ deinstall:	do-deinstall update-icon-cache
+ 
+@@ -113,7 +113,7 @@ ${DESTDIR}${PREFIX}/bin/wifimgr:	wifimgr
+ 		${INSTALL} $? $@
+ 
+ ${DESTDIR}${PREFIX}/libexec/wifimgrsu:	wifimgrsu
+-		${INSTALL} -o root -g wheel -m 4511 $? $@
++		${INSTALL} -m 511 $? $@
+ 
+ ${DESTDIR}${PREFIX}/share/applications/wifimgr.desktop:	wifimgr.desktop
+ 		${INSTALL} -m 444 $? $@
