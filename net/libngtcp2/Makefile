@@ -6,7 +6,7 @@ CATEGORIES=	net
 PKGNAMEPREFIX=	lib
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	QUIC protocol implementation
+COMMENT=	Implementation of QUIC protocol
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
