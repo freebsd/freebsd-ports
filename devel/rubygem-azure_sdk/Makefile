@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	azure_sdk
-PORTVERSION=	0.71.0
+PORTVERSION=	0.72.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -38,7 +38,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_cognitiveservices_websearch>=0.18.2<0.19:devel/rubygem-azure_cognitiveservices_websearch \
 		rubygem-azure_event_grid>=0.18.1<0.19:devel/rubygem-azure_event_grid \
 		rubygem-azure_graph_rbac>=0.17.2<0.18:devel/rubygem-azure_graph_rbac \
-		rubygem-azure_key_vault>=0.18.1<0.19:devel/rubygem-azure_key_vault \
+		rubygem-azure_key_vault>=0.19.0<0.20:devel/rubygem-azure_key_vault \
 		rubygem-azure_mgmt_adhybridhealth_service>=0.17.1<0.18:devel/rubygem-azure_mgmt_adhybridhealth_service \
 		rubygem-azure_mgmt_advisor>=0.17.2<0.18:devel/rubygem-azure_mgmt_advisor \
 		rubygem-azure_mgmt_alerts_management>=0.17.1<0.18:devel/rubygem-azure_mgmt_alerts_management \
@@ -54,16 +54,16 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_batch>=0.18.1<0.19:devel/rubygem-azure_mgmt_batch \
 		rubygem-azure_mgmt_batchai>=0.17.1<0.18:devel/rubygem-azure_mgmt_batchai \
 		rubygem-azure_mgmt_billing>=0.17.3<0.18:devel/rubygem-azure_mgmt_billing \
-		rubygem-azure_mgmt_bot_service>=0.17.1<0.18:devel/rubygem-azure_mgmt_bot_service \
+		rubygem-azure_mgmt_bot_service>=0.17.2<0.18:devel/rubygem-azure_mgmt_bot_service \
 		rubygem-azure_mgmt_cdn>=0.18.2<0.19:devel/rubygem-azure_mgmt_cdn \
-		rubygem-azure_mgmt_cognitive_services>=0.19.3<0.20:devel/rubygem-azure_mgmt_cognitive_services \
+		rubygem-azure_mgmt_cognitive_services>=0.19.4<0.20:devel/rubygem-azure_mgmt_cognitive_services \
 		rubygem-azure_mgmt_commerce>=0.17.2<0.18:devel/rubygem-azure_mgmt_commerce \
 		rubygem-azure_mgmt_compute>=0.22.0<0.23:devel/rubygem-azure_mgmt_compute \
 		rubygem-azure_mgmt_consumption>=0.18.1<0.19:devel/rubygem-azure_mgmt_consumption \
 		rubygem-azure_mgmt_container_instance>=0.18.0<0.19:devel/rubygem-azure_mgmt_container_instance \
 		rubygem-azure_mgmt_container_registry>=0.18.5<0.19:devel/rubygem-azure_mgmt_container_registry \
 		rubygem-azure_mgmt_container_service>=0.22.0<0.23:devel/rubygem-azure_mgmt_container_service \
-		rubygem-azure_mgmt_cosmosdb>=0.24.0<0.25:devel/rubygem-azure_mgmt_cosmosdb \
+		rubygem-azure_mgmt_cosmosdb>=0.24.1<0.25:devel/rubygem-azure_mgmt_cosmosdb \
 		rubygem-azure_mgmt_cost_management>=0.17.1<0.18:devel/rubygem-azure_mgmt_cost_management \
 		rubygem-azure_mgmt_customer_insights>=0.17.3<0.18:devel/rubygem-azure_mgmt_customer_insights \
 		rubygem-azure_mgmt_data_factory>=0.18.7<0.19:devel/rubygem-azure_mgmt_data_factory \
@@ -127,7 +127,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_reservations>=0.20.0<0.21:devel/rubygem-azure_mgmt_reservations \
 		rubygem-azure_mgmt_resource_health>=0.17.1<0.18:devel/rubygem-azure_mgmt_resource_health \
 		rubygem-azure_mgmt_resourcegraph>=0.17.2<0.18:devel/rubygem-azure_mgmt_resourcegraph \
-		rubygem-azure_mgmt_resources>=0.18.1<0.19:devel/rubygem-azure_mgmt_resources \
+		rubygem-azure_mgmt_resources>=0.18.2<0.19:devel/rubygem-azure_mgmt_resources \
 		rubygem-azure_mgmt_resources_management>=0.17.2<0.18:devel/rubygem-azure_mgmt_resources_management \
 		rubygem-azure_mgmt_scheduler>=0.17.2<0.18:devel/rubygem-azure_mgmt_scheduler \
 		rubygem-azure_mgmt_search>=0.17.3<0.18:devel/rubygem-azure_mgmt_search \
