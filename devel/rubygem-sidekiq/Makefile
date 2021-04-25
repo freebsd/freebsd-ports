@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	sidekiq
-PORTVERSION=	6.2.0
+PORTVERSION=	6.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -20,6 +20,7 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/sidekiq bin/sidekiqmon
+PLIST_FILES=	bin/sidekiq \
+		bin/sidekiqmon
 
 .include <bsd.port.mk>
