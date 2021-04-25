@@ -1,0 +1,52 @@
+From e03bf597383cef7f16c41fa4952a6b04093e9e64 Mon Sep 17 00:00:00 2001
+From: "Jason A. Donenfeld" <Jason@zx2c4.com>
+Date: Sun, 25 Apr 2021 10:45:39 -0400
+Subject: if_wg: re-add epoch tracking to transmit
+
+This was accidentally removed before. We need it to work around v6 core
+bugs.
+
+Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com>
+---
+ src/if_wg.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/src/if_wg.c b/src/if_wg.c
+index 095a4f37f8dc..0c2565ce56c0 100644
+--- if_wg.c
++++ if_wg.c
+@@ -2063,6 +2063,7 @@ error:
+ static int
+ wg_transmit(struct ifnet *ifp, struct mbuf *m)
+ {
++	struct epoch_tracker	 et;
+ 	struct wg_packet	*pkt = m->m_pkthdr.PH_loc.ptr;
+ 	struct wg_softc		*sc = ifp->if_softc;
+ 	struct wg_peer		*peer;
+@@ -2070,6 +2071,7 @@ wg_transmit(struct ifnet *ifp, struct mbuf *m)
+ 	int			 rc = 0;
+ 	sa_family_t		 peer_af;
+ 
++	NET_EPOCH_ENTER(et);
+ 	/* Work around lifetime issue in the ipv6 mld code. */
+ 	if (__predict_false((ifp->if_flags & IFF_DYING) || !sc)) {
+ 		rc = ENXIO;
+@@ -2109,11 +2111,15 @@ wg_transmit(struct ifnet *ifp, struct mbuf *m)
+ 	wg_queue_push_staged(&peer->p_stage_queue, pkt);
+ 	wg_peer_send_staged(peer);
+ 	noise_remote_put(peer->p_remote);
++	NET_EPOCH_EXIT(et);
++
+ 	return (0);
+ err_peer:
+ 	noise_remote_put(peer->p_remote);
+ err:
+ 	if_inc_counter(sc->sc_ifp, IFCOUNTER_OERRORS, 1);
++	NET_EPOCH_EXIT(et);
++	/* TODO: send ICMP unreachable? */
+ 	wg_packet_free(pkt);
+ 	return (rc);
+ }
+-- 
+cgit v1.2.3-11-g984f
+
