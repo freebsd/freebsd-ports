@@ -2,6 +2,7 @@
 
 PORTNAME=	activestorage
 PORTVERSION=	6.1.3.1
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	61
@@ -17,7 +18,7 @@ RUN_DEPENDS=	rubygem-actionpack61>=${PORTVERSION}:www/rubygem-actionpack61 \
 		rubygem-activerecord61>=${PORTVERSION}:databases/rubygem-activerecord61 \
 		rubygem-activesupport61>=${PORTVERSION}:devel/rubygem-activesupport61 \
 		rubygem-marcel>=1.0.0<1.1:devel/rubygem-marcel \
-		rubygem-mini_mime>=1.0.2<1.1:mail/rubygem-mini_mime
+		rubygem-mini_mime>=1.1.0:mail/rubygem-mini_mime
 
 USES=		gem
 USE_RUBY=	yes
