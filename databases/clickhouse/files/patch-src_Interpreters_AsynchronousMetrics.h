@@ -1,6 +1,6 @@
---- src/Interpreters/AsynchronousMetrics.h.orig	2020-08-31 16:22:57 UTC
+--- src/Interpreters/AsynchronousMetrics.h.orig	2021-03-19 11:39:14 UTC
 +++ src/Interpreters/AsynchronousMetrics.h
-@@ -50,7 +50,7 @@ class AsynchronousMetrics (private)
+@@ -78,7 +78,7 @@ class AsynchronousMetrics (private)
      bool quit {false};
      AsynchronousMetricValues values;
  

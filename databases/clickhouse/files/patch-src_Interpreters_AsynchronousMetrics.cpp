@@ -1,7 +1,7 @@
---- src/Interpreters/AsynchronousMetrics.cpp.orig	2020-08-31 16:22:57 UTC
+--- src/Interpreters/AsynchronousMetrics.cpp.orig	2021-03-19 11:39:14 UTC
 +++ src/Interpreters/AsynchronousMetrics.cpp
-@@ -194,7 +194,7 @@ void AsynchronousMetrics::update()
-     new_values["Uptime"] = context.getUptimeSeconds();
+@@ -196,7 +196,7 @@ void AsynchronousMetrics::update()
+     new_values["Uptime"] = global_context.getUptimeSeconds();
  
      /// Process memory usage according to OS
 -#if defined(OS_LINUX)
