@@ -35,7 +35,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/blockmap-1.0.2.jar
 %%DATADIR%%/lib/bootstrap.jar
 %%DATADIR%%/lib/bouncy-castle-provider.jar
-%%DATADIR%%/lib/build-marker-PS-211.6693.120
+%%DATADIR%%/lib/build-marker-PS-211.7036.8
 %%DATADIR%%/lib/byte-buddy-agent-1.10.1.jar
 %%DATADIR%%/lib/caffeine-2.8.8.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
@@ -233,6 +233,11 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/license/yourkit-license-redist.txt
 %%DATADIR%%/plugins/AngularJS/lib/AngularJS.jar
 %%DATADIR%%/plugins/AngularJS/lib/resources_en.jar
+%%DATADIR%%/plugins/AngularJS/ngCli/commands/generate-impl.js
+%%DATADIR%%/plugins/AngularJS/ngCli/commands/generate.json
+%%DATADIR%%/plugins/AngularJS/ngCli/generate.js
+%%DATADIR%%/plugins/AngularJS/ngCli/generateVirtual.js
+%%DATADIR%%/plugins/AngularJS/ngCli/rerouteModulesToProject.js
 %%DATADIR%%/plugins/AngularJS/ngCli/runner.js
 %%DATADIR%%/plugins/AngularJS/ngCli/schematicsInfoProvider.js
 %%DATADIR%%/plugins/AngularJS/ngCli/schematicsProvider.js
@@ -317,8 +322,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-280d17517411.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-280d17517411.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-cc9326c21d47.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-cc9326c21d47.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -574,8 +579,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/php/lib/php-openapi.jar
 %%DATADIR%%/plugins/php/lib/php.jar
 %%DATADIR%%/plugins/php/lib/resources_en.jar
-%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-fd4d8e1ec01b.ijx
-%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-fd4d8e1ec01b.txt
+%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-602935b89c85.ijx
+%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-602935b89c85.txt
 %%DATADIR%%/plugins/phpspec/lib/phpspec.jar
 %%DATADIR%%/plugins/phpspec/lib/resources_en.jar
 %%DATADIR%%/plugins/phpstan/lib/phpstan.jar
