@@ -35,7 +35,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/blockmap-1.0.2.jar
 %%DATADIR%%/lib/bootstrap.jar
 %%DATADIR%%/lib/bouncy-castle-provider.jar
-%%DATADIR%%/lib/build-marker-GO-211.6693.119
+%%DATADIR%%/lib/build-marker-GO-211.7142.13
 %%DATADIR%%/lib/byte-buddy-agent-1.10.1.jar
 %%DATADIR%%/lib/caffeine-2.8.8.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
@@ -262,7 +262,6 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/Docker/lib/docker-java-core-3.2.7.jar
 %%DATADIR%%/plugins/Docker/lib/docker-java-transport-3.2.7.jar
 %%DATADIR%%/plugins/Docker/lib/docker-java-transport-okhttp-3.2.7.jar
-%%DATADIR%%/plugins/Docker/lib/javax.activation-api-1.2.0.jar
 %%DATADIR%%/plugins/Docker/lib/okhttp-3.14.4.jar
 %%DATADIR%%/plugins/Docker/lib/okio-1.17.2.jar
 %%DATADIR%%/plugins/IntelliLang/lib/IntelliLang.jar
@@ -310,8 +309,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-280d17517411.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-280d17517411.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-aacdcbe1a076.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-aacdcbe1a076.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -475,8 +474,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/github/lib/resources_en.jar
 %%DATADIR%%/plugins/go-ide/lib/go-ide.jar
 %%DATADIR%%/plugins/go-ide/lib/resources_en.jar
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d28cf5be65cc-e8dd931ae9c5.ijx
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d28cf5be65cc-e8dd931ae9c5.txt
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d28cf5be65cc-83fee69bb036.ijx
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d28cf5be65cc-83fee69bb036.txt
 %%DATADIR%%/plugins/go-sharedIndexes-bundled/lib/go-sharedIndexes-bundled.jar
 %%DATADIR%%/plugins/go-template/lib/go-template.jar
 %%DATADIR%%/plugins/go-template/lib/go-utils.jar
