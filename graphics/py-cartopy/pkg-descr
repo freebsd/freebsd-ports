@@ -9,5 +9,4 @@ It features:
 - powerful vector data handling by integrating shapefile reading with Shapely
   capabilities
 
-WWW: https://pypi.org/project/Cartopy/
 WWW: https://github.com/SciTools/cartopy
