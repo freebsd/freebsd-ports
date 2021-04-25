@@ -690,6 +690,8 @@ include/mlpack/methods/ann/layer/sequential.hpp
 include/mlpack/methods/ann/layer/sequential_impl.hpp
 include/mlpack/methods/ann/layer/softmax.hpp
 include/mlpack/methods/ann/layer/softmax_impl.hpp
+include/mlpack/methods/ann/layer/softmin.hpp
+include/mlpack/methods/ann/layer/softmin_impl.hpp
 include/mlpack/methods/ann/layer/softshrink.hpp
 include/mlpack/methods/ann/layer/softshrink_impl.hpp
 include/mlpack/methods/ann/layer/spatial_dropout.hpp
@@ -726,6 +728,8 @@ include/mlpack/methods/ann/loss_functions/log_cosh_loss.hpp
 include/mlpack/methods/ann/loss_functions/log_cosh_loss_impl.hpp
 include/mlpack/methods/ann/loss_functions/margin_ranking_loss.hpp
 include/mlpack/methods/ann/loss_functions/margin_ranking_loss_impl.hpp
+include/mlpack/methods/ann/loss_functions/mean_absolute_percentage_error.hpp
+include/mlpack/methods/ann/loss_functions/mean_absolute_percentage_error_impl.hpp
 include/mlpack/methods/ann/loss_functions/mean_bias_error.hpp
 include/mlpack/methods/ann/loss_functions/mean_bias_error_impl.hpp
 include/mlpack/methods/ann/loss_functions/mean_squared_error.hpp
