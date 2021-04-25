@@ -182,6 +182,7 @@
     SUBDIR += treepuzzle
     SUBDIR += trimadap
     SUBDIR += trimmomatic
+    SUBDIR += ucsc-userapps
     SUBDIR += ugene
     SUBDIR += vcf-split
     SUBDIR += vcf2hap
