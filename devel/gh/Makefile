@@ -69,6 +69,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.2.9:alecaivazis_survey_v2/vendor/github.com/Alec
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		yuin:goldmark-emoji:v1.0.1:yuin_goldmark_emoji/vendor/github.com/yuin/goldmark-emoji \
 		yuin:goldmark:v1.3.3:yuin_goldmark/vendor/github.com/yuin/goldmark
+
 _BUILD_VERSION=	${DISTVERSION}
 _BUILD_DATE=	$$(date +%Y-%m-%d)
 
@@ -86,34 +87,38 @@ OPTIONS_DEFINE=		COMPLETIONS DOCS MANPAGES
 OPTIONS_DEFAULT=	COMPLETIONS MANPAGES
 OPTIONS_SUB=		yes
 
-COMPLETIONS_DESC=	Build and install shell completions for bash, fish and zsh
-MANPAGES_DESC=		Build and install auto-generated manpages
+COMPLETIONS_DESC=	Build and install shell completions
 
 do-build-COMPLETIONS-on:
 .for SHELL in bash fish zsh
-	${GO_WRKDIR_BIN}/${PORTNAME} completion -s ${SHELL} > ${GO_WRKSRC}/${SHELL}
+	${GO_WRKDIR_BIN}/${PORTNAME} completion -s ${SHELL} > ${WRKSRC}/${SHELL}
 .endfor
 
 do-build-MANPAGES-on:
-	cd ${GO_WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} run ${GO_BUILDFLAGS} ./cmd/gen-docs --man-page --doc-path docs/man 2>/dev/null
+	(cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} run ${GO_BUILDFLAGS} \
+		./cmd/gen-docs --man-page --doc-path docs/man 2>/dev/null)
 
 post-install-COMPLETIONS-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	${INSTALL_DATA} ${GO_WRKSRC}/bash \
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
+		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions
+
+	${INSTALL_DATA} ${WRKSRC}/bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
-	${INSTALL_DATA} ${GO_WRKSRC}/fish \
+	${INSTALL_DATA} ${WRKSRC}/fish \
 		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/${PORTNAME}.fish
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${GO_WRKSRC}/zsh \
+	${INSTALL_DATA} ${WRKSRC}/zsh \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${GO_WRKSRC} && ${INSTALL_DATA} ${_DOCS} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && \
+		${INSTALL_DATA} ${_DOCS} \
+		${STAGEDIR}${DOCSDIR})
 
 post-install-MANPAGES-on:
-	${INSTALL_MAN} ${GO_WRKSRC}/docs/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/man/*.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
