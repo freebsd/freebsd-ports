@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	minify
-PORTVERSION=	2.9.14
+PORTVERSION=	2.9.15
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc www
 
@@ -23,7 +23,7 @@ GH_TUPLE=	dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/
 		golang:sys:9b0068b:golang_sys/vendor/golang.org/x/sys \
 		matryer:try:9ac251b:matryer_try/vendor/github.com/matryer/try \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
-		tdewolff:parse:v2.5.14:tdewolff_parse/vendor/github.com/tdewolff/parse/v2
+		tdewolff:parse:v2.5.15:tdewolff_parse/vendor/github.com/tdewolff/parse/v2
 USE_GITHUB=	yes
 
 .include <bsd.port.mk>
