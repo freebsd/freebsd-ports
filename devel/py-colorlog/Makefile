@@ -1,13 +1,13 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	colorlog
-PORTVERSION=	4.8.0
+PORTVERSION=	5.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Python module for log formatting with colors
+COMMENT=	Add colours to the output of Python logging module
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
