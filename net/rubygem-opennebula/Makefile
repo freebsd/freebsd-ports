@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	opennebula
-PORTVERSION=	5.12.8
+PORTVERSION=	5.12.9
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
