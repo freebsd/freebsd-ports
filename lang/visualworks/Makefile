@@ -12,6 +12,8 @@ EXTRACT_ONLY=
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		High performance Smalltalk environment
 
+BROKEN=			does not fetch
+
 DIST_SUBDIR=		${SUBDIR}
 SUBDIR=			vwnc${PORTVERSION}
 
