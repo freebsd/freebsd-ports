@@ -1,6 +1,6 @@
-TIMESTAMP = 1618846915
-SHA256 (oragono-oragono-v2.6.0_GH0.tar.gz) = c0fdca73fa39a34166b747c5f556f568edd46d063e9f19d7d4ee066a3803f2ae
-SIZE (oragono-oragono-v2.6.0_GH0.tar.gz) = 3099379
+TIMESTAMP = 1619458963
+SHA256 (oragono-oragono-v2.6.1_GH0.tar.gz) = d123f1aa413bb4541ca0b174286ccb372bf924cec2d635a7cde65791682c41bf
+SIZE (oragono-oragono-v2.6.1_GH0.tar.gz) = 3099750
 SHA256 (GehirnInc-crypt-bb7000b8a962_GH0.tar.gz) = 1a57049bd9c75e5e3f5679f1786e74181da1d2d69b3ccc1a944820d20d6f2699
 SIZE (GehirnInc-crypt-bb7000b8a962_GH0.tar.gz) = 10251
 SHA256 (cloudfoundry-bytefmt-cf55d5288a48_GH0.tar.gz) = d043b0fd4af393e261d0435a5ba593c42b17931c601c01a0c7d117a25e750deb
