@@ -1,0 +1,11 @@
+regather is an LDAP syncrepl consumer which can generate (re-gather) files,
+create or delete directories, etc. based on LDAP syncrepl events.
+
+It uses Net::LDAP(3) to do all LDAP related stuff and Template to generate
+files.  Configuration file is processed with Config::Parser.
+
+For example, regather can re-write each OpenVPN client configuration file
+on changes to client LDAP configured data, or re-write CRL file on update
+in LDAP, or change sieve script for mail user.
+
+WWW: https://metacpan.org/release/App-Regather
