@@ -4,6 +4,7 @@ include/SoapySDR/Config.hpp
 include/SoapySDR/Constants.h
 include/SoapySDR/ConverterPrimitives.hpp
 include/SoapySDR/ConverterRegistry.hpp
+include/SoapySDR/Converters.h
 include/SoapySDR/Device.h
 include/SoapySDR/Device.hpp
 include/SoapySDR/Errors.h
@@ -22,10 +23,12 @@ include/SoapySDR/Types.hpp
 include/SoapySDR/Version.h
 include/SoapySDR/Version.hpp
 lib/libSoapySDR.so
-lib/libSoapySDR.so.0.7
-lib/libSoapySDR.so.0.7.2
+lib/libSoapySDR.so.0.8
+lib/libSoapySDR.so.0.8.0
 libdata/pkgconfig/SoapySDR.pc
 man/man1/SoapySDRUtil.1.gz
 share/cmake/SoapySDR/SoapySDRConfig.cmake
 share/cmake/SoapySDR/SoapySDRConfigVersion.cmake
+share/cmake/SoapySDR/SoapySDRExport-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/SoapySDR/SoapySDRExport.cmake
 share/cmake/SoapySDR/SoapySDRUtil.cmake
