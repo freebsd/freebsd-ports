@@ -1,7 +1,7 @@
 # Created by: Patrice Clement <monsieurp@gentoo.org>
 
 PORTNAME=	prettyprinter
-PORTVERSION=	0.13.2
+PORTVERSION=	0.18.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
