@@ -16,7 +16,7 @@ COMMENT=	GNU diversion wherein Scheme-coded robots explore a world
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libguile.so:lang/guile
+LIB_DEPENDS=	libguile.so:lang/guile1
 
 USES=		gnome pkgconfig readline
 USE_GNOME=	vte
