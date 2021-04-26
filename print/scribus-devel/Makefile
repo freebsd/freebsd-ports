@@ -1,8 +1,7 @@
 # Created by: Piotr Kubaj <pkubaj@anongoth.pl>
 
 PORTNAME=	scribus
-PORTVERSION=	1.5.6.1
-PORTREVISION=	4
+PORTVERSION=	1.5.7
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -39,13 +38,12 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libzmf-0.0.so:graphics/libzmf
 
 USES=		cmake compiler:gcc-c++11-lib desktop-file-utils dos2unix gnome \
-		jpeg pkgconfig python:3.6+ qt:5 shared-mime-info ssl tar:xz
+		jpeg pkgconfig python:3.6+ qt:5 shared-mime-info tar:xz
 USE_QT=		buildtools_build core declarative gui linguisttools_build \
 		network opengl printsupport qmake_build widgets xml
 DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 USE_GNOME=	libxml2
 INSTALLS_ICONS=	yes
-USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DWANT_HUNSPELL=YES -DCMAKE_COLOR_MAKEFILE:BOOL=ON
 
@@ -54,13 +52,5 @@ OPTIONS_DEFINE=	DOCS
 post-install:
 		${LN} -sf ../share/icons/1_5_1/scribus.png \
 			${STAGEDIR}${PREFIX}/share/pixmaps/
-		${MKDIR} ${STAGEDIR}${PREFIX}/man/de/man1 \
-			${STAGEDIR}${PREFIX}/man/pl/man1
-		${MV} ${STAGEDIR}${PREFIX}/share/man/de/man1/scribus.1 \
-			${STAGEDIR}${PREFIX}/man/de/man1/
-		${MV} ${STAGEDIR}${PREFIX}/share/man/man1/scribus.1 \
-			${STAGEDIR}${PREFIX}/man/man1/
-		${MV} ${STAGEDIR}${PREFIX}/share/man/pl/man1/scribus.1 \
-			${STAGEDIR}${PREFIX}/man/pl/man1/
 
 .include <bsd.port.mk>
