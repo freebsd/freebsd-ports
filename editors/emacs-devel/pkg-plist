@@ -1551,6 +1551,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-print.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-seq.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-seq.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/comp-cstr.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/comp.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/copyright.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/copyright.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/crm.el.gz
@@ -3747,6 +3749,7 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/texinfmt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/texinfo.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/texinfo.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/texinfo-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/texnfo-upd.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/texnfo-upd.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/text-mode.el.gz
@@ -3775,6 +3778,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/tool-bar.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tooltip.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/tooltip.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/transient.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/transient.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tree-widget.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/tree-widget.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tutorial.el.gz
@@ -4006,6 +4011,8 @@ share/metainfo/emacs.appdata.xml
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/coding.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/coding.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/commands.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/comp.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/comp.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/composite.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/composite.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/conf_post.h
