@@ -1,5 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2021-04-19
+DISTVERSION=	2021-04-26
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -22,7 +22,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		arrayvec-0.7.0 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
-		backtrace-0.3.56 \
+		backtrace-0.3.57 \
 		bitflags-1.2.1 \
 		byteorder-1.4.3 \
 		camino-1.0.4 \
@@ -30,10 +30,10 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		cargo_metadata-0.13.1 \
 		cc-1.0.67 \
 		cfg-if-1.0.0 \
-		chalk-derive-0.60.0 \
-		chalk-ir-0.60.0 \
-		chalk-recursive-0.60.0 \
-		chalk-solve-0.60.0 \
+		chalk-derive-0.64.0 \
+		chalk-ir-0.64.0 \
+		chalk-recursive-0.64.0 \
+		chalk-solve-0.64.0 \
 		chrono-0.4.19 \
 		countme-2.0.4 \
 		cov-mark-1.1.0 \
@@ -62,7 +62,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		heck-0.3.2 \
 		hermit-abi-0.1.18 \
 		home-0.5.3 \
-		idna-0.2.2 \
+		idna-0.2.3 \
 		indexmap-1.6.2 \
 		inotify-0.9.2 \
 		inotify-sys-0.1.5 \
@@ -116,12 +116,12 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		quote-1.0.9 \
 		rayon-1.5.0 \
 		rayon-core-1.9.0 \
-		redox_syscall-0.2.5 \
-		regex-1.4.5 \
+		redox_syscall-0.2.6 \
+		regex-1.4.6 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.23 \
 		rowan-0.13.0-pre.3 \
-		rustc-ap-rustc_lexer-714.0.0 \
+		rustc-ap-rustc_lexer-716.0.0 \
 		rustc-demangle-0.1.18 \
 		rustc-hash-1.1.0 \
 		ryu-1.0.5 \
@@ -141,7 +141,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		smallvec-1.6.1 \
 		smol_str-0.1.17 \
 		snap-1.0.4 \
-		syn-1.0.69 \
+		syn-1.0.70 \
 		synstructure-0.12.4 \
 		termcolor-1.1.2 \
 		text-size-1.1.0 \
