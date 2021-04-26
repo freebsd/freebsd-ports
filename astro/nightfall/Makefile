@@ -1,16 +1,18 @@
 # Created by: Christian Brueffer <chris@unixpages.org>
 
 PORTNAME=	nightfall
-PORTVERSION=	1.86
-PORTREVISION=	9
+PORTVERSION=	1.92
 CATEGORIES=	astro education
 MASTER_SITES=	http://www.la-samhna.de/nightfall/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive binary star application
 
-USES=		compiler gettext gmake gnome pathfix perl5 pkgconfig
-USE_GNOME=	gtk20
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+USES=		compiler gettext gmake gnome jpeg pathfix perl5 pkgconfig
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -29,7 +31,7 @@ OPENGL_CONFIGURE_ON=	--with-lib-GL
 OPENGL_CONFIGURE_OFF=	--disable-opengl
 OPENGL_LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2
 OPENGL_USES=		gl
-OPENGL_USE=		GL=glut
+OPENGL_USE=		GL=glut,gl,glu
 
 PGPLOT_DESC=		PGPLOT support
 PGPLOT_CONFIGURE_ON=	--with-pgplot-include=${LOCALBASE}/include \
