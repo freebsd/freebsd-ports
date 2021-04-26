@@ -1,8 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: reggae_pf
-# REQUIRE: pf
-# AFTER: NETWORKING local_unbound named nsd unbound
+# REQUIRE: pf local_unbound
 
 # Add the following lines to /etc/rc.conf.local, /etc/rc.conf or
 # /etc/rc.conf.d/reggae_pf to enable this service:
