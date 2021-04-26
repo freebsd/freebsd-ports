@@ -1,0 +1,13 @@
+man/man3/RT::Extension::RepeatTicket.3.gz
+%%RTHOME%%/plugins/RT-Extension-RepeatTicket/bin/rt-repeat-ticket
+%%RTHOME%%/plugins/RT-Extension-RepeatTicket/etc/initialdata
+%%RTHOME%%/plugins/RT-Extension-RepeatTicket/html/Callbacks/RepeatTicket/Elements/Tabs/Privileged
+%%RTHOME%%/plugins/RT-Extension-RepeatTicket/html/Callbacks/RepeatTicket/Ticket/Create.html/AfterBasics
+%%RTHOME%%/plugins/RT-Extension-RepeatTicket/html/Callbacks/RepeatTicket/Ticket/Display.html/BeforeDisplay
+%%RTHOME%%/plugins/RT-Extension-RepeatTicket/html/Callbacks/RepeatTicket/Ticket/Elements/ShowSummary/LeftColumn
+%%RTHOME%%/plugins/RT-Extension-RepeatTicket/html/Ticket/Elements/EditRecurrence
+%%RTHOME%%/plugins/RT-Extension-RepeatTicket/html/Ticket/ModifyRecurrence.html
+%%RTHOME%%/plugins/RT-Extension-RepeatTicket/lib/RT/Extension/RepeatTicket.pm
+%%RTHOME%%/plugins/RT-Extension-RepeatTicket/lib/RT/Extension/RepeatTicket/Test.pm
+%%RTHOME%%/plugins/RT-Extension-RepeatTicket/po/repeatticket.pot
+%%RTHOME%%/plugins/RT-Extension-RepeatTicket/static/css/repeat-ticket.css
