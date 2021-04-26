@@ -76,6 +76,7 @@
     SUBDIR += fasthenry
     SUBDIR += fastjet
     SUBDIR += fisicalab
+    SUBDIR += frontistr
     SUBDIR += fsom
     SUBDIR += fvcom
     SUBDIR += fvcom-mpi
