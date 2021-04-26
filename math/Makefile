@@ -776,6 +776,7 @@
     SUBDIR += py-cyipopt
     SUBDIR += py-cypari2
     SUBDIR += py-deap
+    SUBDIR += py-ducc0
     SUBDIR += py-ecos
     SUBDIR += py-fastcluster
     SUBDIR += py-fastdtw

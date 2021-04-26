@@ -1,0 +1,6 @@
+ducc0 is a collection of basic programming tools for numerical computation,
+including Fast Fourier Transforms, Spherical Harmonic Transforms, non-equispaced
+Fourier transforms, as well as some concrete applications like 4pi convolution
+on the sphere and gridding/degridding of radio interferometry data.
+
+WWW: https://gitlab.mpcdf.mpg.de/mtr/ducc
