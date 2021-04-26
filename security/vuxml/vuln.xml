@@ -76,6 +76,31 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e4403051-a667-11eb-b9c9-6cc21735f730">
+    <topic>sbibboleth-sp -- yet undisclosed vulnerability</topic>
+    <affects>
+      <package>
+	<name>shibboleth-sp</name>
+	<range><lt>3.2.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Shibboleth project reports:</p>
+	<blockquote cite="https://wiki.shibboleth.net/confluence/display/SP3/Home">
+	  <p>A not yet disclosed vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.shibboleth.net/confluence/display/SP3/Home</url>
+    </references>
+    <dates>
+      <discovery>2021-04-23</discovery>
+      <entry>2021-04-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bc83cfc9-42cf-4b00-97ad-d352ba0c5e2b">
     <topic>zeek -- null-pointer dereference vulnerability</topic>
     <affects>
