@@ -77,27 +77,43 @@ Notes:
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="e4403051-a667-11eb-b9c9-6cc21735f730">
-    <topic>sbibboleth-sp -- yet undisclosed vulnerability</topic>
+    <topic>sbibboleth-sp -- denial of service vulnerability</topic>
     <affects>
       <package>
 	<name>shibboleth-sp</name>
-	<range><lt>3.2.1_1</lt></range>
+	<range>
+	  <ge>3.0.0</ge>
+	  <lt>3.2.1_1</lt>
+	</range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Shibboleth project reports:</p>
-	<blockquote cite="https://wiki.shibboleth.net/confluence/display/SP3/Home">
-	  <p>A not yet disclosed vulnerability.</p>
-	</blockquote>
+      <p>Shibboleth project reports:</p>
+      <blockquote cite="https://shibboleth.net/community/advisories/secadv_20210426.txt">
+	<p>Session recovery feature contains a null pointer deference.</p>
+	<p>
+	  The cookie-based session recovery feature added in V3.0 contains a
+	  flaw that is exploitable on systems *not* using the feature if a
+	  specially crafted cookie is supplied.
+	</p>
+	<p>
+	  This manifests as a crash in the shibd daemon/service process.
+	</p>
+	<p>
+	  Because it is very simple to trigger this condition remotely, it
+	  results in a potential denial of service condition exploitable by
+	  a remote, unauthenticated attacker.
+	</p>
+      </blockquote>
       </body>
     </description>
     <references>
-      <url>https://wiki.shibboleth.net/confluence/display/SP3/Home</url>
+      <url>https://shibboleth.net/community/advisories/secadv_20210426.txt</url>
     </references>
     <dates>
       <discovery>2021-04-23</discovery>
-      <entry>2021-04-23</entry>
+      <entry>2021-04-26</entry>
     </dates>
   </vuln>
 
