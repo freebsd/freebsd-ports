@@ -1,13 +1,14 @@
 PORTNAME=	spago
 DISTVERSION=	0.20.1
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/purescript/purescript-docs-search/releases/download/v${PURESCRIPT_DOCS_SEARCH_VERSION}/:docs_search_app \
-		https://github.com/purescript/purescript-docs-search/releases/download/v${PURESCRIPT_DOCS_SEARCH_VERSION}/:purescript_docs_search \
-		https://arrowd.name/:docs10
-DISTFILES=	docs-search-app.js:docs_search_app \
-		purescript-docs-search:purescript_docs_search \
-		docs-search-app-0.0.10.js:docs10 \
-		purescript-docs-search-0.0.10:docs10
+MASTER_SITES=	https://github.com/purescript/purescript-docs-search/releases/download/v0.0.11/docs-search-app.js?dummy=/:dsa11 \
+		https://github.com/purescript/purescript-docs-search/releases/download/v0.0.11/purescript-docs-search?dummy=/:pds11 \
+		https://github.com/purescript/purescript-docs-search/releases/download/v0.0.10/docs-search-app.js?dummy=/:dsa10 \
+		https://github.com/purescript/purescript-docs-search/releases/download/v0.0.10/purescript-docs-search?dummy=/:pds10
+DISTFILES=	docs-search-app-0.0.11.js:dsa11 \
+		purescript-docs-search-0.0.11:pds11 \
+		docs-search-app-0.0.10.js:dsa10 \
+		purescript-docs-search-0.0.10:pds10
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -199,8 +200,8 @@ USE_CABAL=	Diff-0.4.0 \
 PURESCRIPT_DOCS_SEARCH_VERSION=	0.0.11
 
 post-extract:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/docs-search-app.js ${WRKSRC}/templates/docs-search-app-${PURESCRIPT_DOCS_SEARCH_VERSION}.js
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/purescript-docs-search ${WRKSRC}/templates/purescript-docs-search-${PURESCRIPT_DOCS_SEARCH_VERSION}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/docs-search-app-0.0.11.js ${WRKSRC}/templates/
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/purescript-docs-search-0.0.11 ${WRKSRC}/templates/
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/docs-search-app-0.0.10.js ${WRKSRC}/templates/
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/purescript-docs-search-0.0.10 ${WRKSRC}/templates/
 
