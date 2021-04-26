@@ -627,7 +627,6 @@ include/folly/portability/Memory.h
 include/folly/portability/OpenSSL.h
 include/folly/portability/PThread.h
 include/folly/portability/Sched.h
-include/folly/portability/Semaphore.h
 include/folly/portability/Sockets.h
 include/folly/portability/Stdio.h
 include/folly/portability/Stdlib.h
@@ -710,6 +709,7 @@ include/folly/synchronization/HazptrThreadPoolExecutor.h
 include/folly/synchronization/LifoSem.h
 include/folly/synchronization/Lock.h
 include/folly/synchronization/MicroSpinLock.h
+include/folly/synchronization/NativeSemaphore.h
 include/folly/synchronization/ParkingLot.h
 include/folly/synchronization/PicoSpinLock.h
 include/folly/synchronization/RWSpinLock.h
