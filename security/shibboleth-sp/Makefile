@@ -1,8 +1,7 @@
 # Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
 
 PORTNAME=	shibboleth-sp
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	3.2.2
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/service-provider/${PORTVERSION}/
 
