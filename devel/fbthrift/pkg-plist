@@ -222,6 +222,7 @@ include/thrift/lib/cpp2/protocol/TableBasedSerializer.h
 include/thrift/lib/cpp2/protocol/TableBasedSerializerImpl.h
 include/thrift/lib/cpp2/protocol/Traits.h
 include/thrift/lib/cpp2/protocol/VirtualProtocol.h
+include/thrift/lib/cpp2/protocol/detail/index.h
 include/thrift/lib/cpp2/protocol/detail/protocol_methods.h
 include/thrift/lib/cpp2/protocol/nimble/BufferingNimbleDecoder.h
 include/thrift/lib/cpp2/protocol/nimble/BufferingNimbleEncoder.h
@@ -472,8 +473,6 @@ lib/libcompiler_ast.so
 lib/libcompiler_ast.so.1.0.0
 lib/libcompiler_base.so
 lib/libcompiler_base.so.1.0.0
-lib/libcompiler_generators.so
-lib/libcompiler_generators.so.1.0.0
 lib/libcompiler_lib.so
 lib/libcompiler_lib.so.1.0.0
 lib/libconcurrency.so
