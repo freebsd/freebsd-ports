@@ -41,7 +41,6 @@ include/varnish/tbl/params.h
 include/varnish/tbl/req_flags.h
 include/varnish/tbl/sess_attr.h
 include/varnish/tbl/sess_close.h
-include/varnish/tbl/steps.h
 include/varnish/tbl/symbol_kind.h
 include/varnish/tbl/vcl_returns.h
 include/varnish/tbl/vcl_states.h
@@ -71,7 +70,6 @@ include/varnish/vcl.h
 include/varnish/vcli.h
 include/varnish/vcs.h
 include/varnish/vdef.h
-include/varnish/verrno.h
 include/varnish/vmod_abi.h
 include/varnish/vqueue.h
 include/varnish/vre.h
@@ -118,6 +116,9 @@ man/man3/vmod_unix.3.gz
 man/man3/vmod_vtc.3.gz
 man/man7/varnish-cli.7.gz
 man/man7/varnish-counters.7.gz
+man/man7/vcl-backend.7.gz
+man/man7/vcl-probe.7.gz
+man/man7/vcl-var.7.gz
 man/man7/vcl.7.gz
 man/man7/vsl-query.7.gz
 man/man7/vsl.7.gz
