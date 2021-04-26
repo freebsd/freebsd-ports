@@ -383,6 +383,7 @@
     SUBDIR += librdata
     SUBDIR += librsb
     SUBDIR += libsemigroups
+    SUBDIR += libsharp2
     SUBDIR += libtommath
     SUBDIR += libxls
     SUBDIR += libxlsxwriter
