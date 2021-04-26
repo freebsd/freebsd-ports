@@ -37,5 +37,6 @@ share/locale/sk/LC_MESSAGES/plasma_disks.mo
 share/locale/sl/LC_MESSAGES/plasma_disks.mo
 share/locale/sv/LC_MESSAGES/plasma_disks.mo
 share/locale/uk/LC_MESSAGES/plasma_disks.mo
+share/locale/zh_CN/LC_MESSAGES/plasma_disks.mo
 share/metainfo/org.kde.plasma.disks.metainfo.xml
 share/polkit-1/actions/org.kde.kded.smart.policy
