@@ -1,7 +1,7 @@
 # Created by: Krzysztof Stryjek <ports@bsdserwis.com>
 
 PORTNAME=	self-service-password
-DISTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	net www
 MASTER_SITES=	http://ltb-project.org/archives/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
