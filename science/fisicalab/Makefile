@@ -9,7 +9,9 @@ COMMENT=	Physics simulation program for educational use
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS+=	libgsl.so:math/gsl
+BROKEN=		fails to configure: error: C compiler cannot create executables
+
+LIB_DEPENDS=	libgsl.so:math/gsl
 
 USES=		gnustep
 GNU_CONFIGURE=	yes
