@@ -1,6 +1,5 @@
 PORTNAME=	jackett
-PORTVERSION=	0.17.568
-PORTREVISION=	1
+PORTVERSION=	0.17.946
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Jackett/Jackett/releases/download/
 DISTNAME=	v${PORTVERSION}/Jackett.Binaries.Mono
