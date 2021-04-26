@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	openbve
-PORTVERSION=	1.7.3.0
+PORTVERSION=	1.8.0.2
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -23,6 +23,7 @@ ALL_TARGET=	all-release
 
 NUGET_DEPENDS=	CS-Script.lib=3.30.3 \
 		DotNetZip=1.13.8 \
+		Mono.Cecil=0.11.3 \
 		NAudio.Vorbis=1.2.0 \
 		NAudio=1.10.0 \
 		NLayer.NAudioSupport=1.0.0 \
