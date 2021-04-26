@@ -10,6 +10,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Objective Caml interface to GTK+ 2.x
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake gnome pkgconfig
 USE_GNOME=	gtk20
@@ -39,25 +40,14 @@ CONFIGURE_ENV=	CAMLP4O="camlp4 pa_o.cmo pa_op.cmo pr_dump.cmo"
 
 PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	COPYING README
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 PORTEXAMPLES=	*
-.endif
 
-.if ${PORT_OPTIONS:MLIBRSVG2}
-CONFIGURE_ARGS+=	--with-rsvg
-USE_GNOME+=	librsvg2
-EXAMPLES_SUBDIRS+=	rsvg
-.else
-CONFIGURE_ARGS+=	--without-rsvg
-.endif
+LIBRSVG2_CONFIGURE_WITH=rsvg
+LIBRSVG2_USE=		GNOME=librsvg2
+LIBRSVG2_VARS=		EXAMPLES_SUBDIRS+=rsvg
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -69,11 +59,11 @@ post-patch:
 		-e 's,(-ldconf )("\$$\(DESTDIR\)\$$\(OCAMLLDCONF\)"),\1ignore,' \
 		${WRKSRC}/src/Makefile
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \
 	"*.ml *.png *.rgb *.xpm text ${EXAMPLES_SUBDIRS}" \
