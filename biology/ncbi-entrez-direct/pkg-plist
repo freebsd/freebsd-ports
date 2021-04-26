@@ -1,4 +1,5 @@
 bin/accn-at-a-time
+bin/align-columns
 bin/amino-acid-composition
 bin/archive-pubmed
 bin/between-two-genes
@@ -6,7 +7,6 @@ bin/download-ncbi-data
 bin/download-pubmed
 bin/download-sequence
 bin/ecommon.sh
-bin/edirect-test.sh
 bin/edirect.pl
 bin/efetch
 bin/efilter
@@ -21,6 +21,7 @@ bin/expand-current
 bin/fetch-pubmed
 bin/filter-stop-words
 bin/gbf2xml
+bin/hgvs2spdi
 bin/hlp-xtract.txt
 bin/index-extras
 bin/index-pubmed
@@ -36,14 +37,17 @@ bin/pm-prepare
 bin/pm-promote
 bin/pm-refresh
 bin/pm-stash
+bin/print-columns
 bin/rchive
 bin/rchive.FreeBSD
 bin/reorder-columns
 bin/run-ncbi-converter
 bin/skip-if-file-exists
+bin/sort-table
 bin/sort-uniq-count
 bin/sort-uniq-count-rank
 bin/stream-pubmed
+bin/test-edirect
 bin/theme-aliases
 bin/transmute
 bin/transmute.FreeBSD
