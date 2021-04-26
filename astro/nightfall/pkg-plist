@@ -15,6 +15,7 @@ share/locale/it/LC_MESSAGES/nightfall.mo
 %%DATADIR%%/cfg/ty_boo.cfg
 %%DATADIR%%/cfg/v541_cyg.cfg
 %%DATADIR%%/data/51_pegR1.dat
+%%DATADIR%%/data/Filter_OM_UVM2.txt
 %%DATADIR%%/data/bh_virB.dat
 %%DATADIR%%/data/bh_virR1.dat
 %%DATADIR%%/data/bh_virR2.dat
@@ -33,6 +34,7 @@ share/locale/it/LC_MESSAGES/nightfall.mo
 %%DATADIR%%/data/er_vulR2.dat
 %%DATADIR%%/data/er_vulU.dat
 %%DATADIR%%/data/er_vulV.dat
+%%DATADIR%%/data/filtertest
 %%DATADIR%%/data/lz_cenR1.dat
 %%DATADIR%%/data/lz_cenR2.dat
 %%DATADIR%%/data/lz_cenb.dat
