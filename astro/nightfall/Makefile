@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.la-samhna.de/nightfall/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive binary star application
 
+BROKEN_FreeBSD_12=	does not build: multiple definition of 'texture_maxval'
+BROKEN_FreeBSD_13=	does not build: multiple definition of 'texture_maxval'
+
 USES=		compiler gettext gmake gnome pathfix perl5 pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
