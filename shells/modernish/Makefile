@@ -23,7 +23,7 @@ do-install:
 	cd ${WRKSRC} && \
 	${SETENV} ${MAKE_ENV} ${SH} -x ./install.sh -d ${PREFIX} -D ${STAGEDIR} -n -s ${SH}
 
-	${MV} ${WRKDIR}/BUG_DEVTTY.t ${STAGEDIR}${PREFIX}/lib/modernish/cap/BUG_DEVTTY.t
+	${INSTALL_DATA} ${WRKDIR}/BUG_DEVTTY.t ${STAGEDIR}${PREFIX}/lib/modernish/cap/BUG_DEVTTY.t
 
 	${RM} ${STAGEDIR}${DOCSDIR}/LICENSE
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR:H}
