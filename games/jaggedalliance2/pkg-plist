@@ -32,9 +32,16 @@ share/icons/hicolor/scalable/apps/ja2-stracciatella.svg
 %%DATADIR%%/externalized/dealer-inventory-peter-santos.json
 %%DATADIR%%/externalized/dealer-inventory-sam.json
 %%DATADIR%%/externalized/dealer-inventory-tony.json
+%%DATADIR%%/externalized/dealers.json
 %%DATADIR%%/externalized/game.json
 %%DATADIR%%/externalized/imp.json
+%%DATADIR%%/externalized/items.json
+%%DATADIR%%/externalized/loading-screens-mapping.json
+%%DATADIR%%/externalized/loading-screens.json
 %%DATADIR%%/externalized/magazines.json
+%%DATADIR%%/externalized/mercs-MERC-listings.json
+%%DATADIR%%/externalized/mercs-profile-info.json
+%%DATADIR%%/externalized/mercs-rpc-small-faces.json
 %%DATADIR%%/externalized/music.json
 %%DATADIR%%/externalized/readme.txt
 %%DATADIR%%/externalized/resource_packs/gog_jagged_alliance_2.json
@@ -42,17 +49,24 @@ share/icons/hicolor/scalable/apps/ja2-stracciatella.svg
 %%DATADIR%%/externalized/resource_packs/steam_jagged_alliance_2_classic_fr.json
 %%DATADIR%%/externalized/resource_packs/steam_jagged_alliance_2_classic_pl.json
 %%DATADIR%%/externalized/resource_packs/steam_jagged_alliance_2_classic_ru.json
+%%DATADIR%%/externalized/scripts/enums.lua
 %%DATADIR%%/externalized/shipping-destinations.json
-%%DATADIR%%/externalized/sti/interface/LOADSCREENTAB.STI
+%%DATADIR%%/externalized/sti/interface/loadscreentab.sti
 %%DATADIR%%/externalized/sti/laptop/SkillTraitSmallGreyIdent.sti
+%%DATADIR%%/externalized/strategic-ai-policy.json
 %%DATADIR%%/externalized/strategic-bloodcat-placements.json
 %%DATADIR%%/externalized/strategic-bloodcat-spawns.json
 %%DATADIR%%/externalized/strategic-fact-params.json
+%%DATADIR%%/externalized/strategic-map-cache-sectors.json
 %%DATADIR%%/externalized/strategic-map-creature-lairs.json
 %%DATADIR%%/externalized/strategic-map-movement-costs.json
 %%DATADIR%%/externalized/strategic-map-npc-placements.json
+%%DATADIR%%/externalized/strategic-map-sam-sites-air-control.json
 %%DATADIR%%/externalized/strategic-map-sam-sites.json
+%%DATADIR%%/externalized/strategic-map-secrets.json
+%%DATADIR%%/externalized/strategic-map-sectors-descriptions.json
 %%DATADIR%%/externalized/strategic-map-towns.json
+%%DATADIR%%/externalized/strategic-map-traversibility-ratings.json
 %%DATADIR%%/externalized/strategic-map-underground-sectors.json
 %%DATADIR%%/externalized/strategic-mines.json
 %%DATADIR%%/externalized/strings/ammo-calibre-bobbyray-dut.json
@@ -83,6 +97,13 @@ share/icons/hicolor/scalable/apps/ja2-stracciatella.svg
 %%DATADIR%%/externalized/strings/shipping-destinations-it.json
 %%DATADIR%%/externalized/strings/shipping-destinations-pl.json
 %%DATADIR%%/externalized/strings/shipping-destinations-rus.json
+%%DATADIR%%/externalized/strings/strategic-map-land-types-dut.json
+%%DATADIR%%/externalized/strings/strategic-map-land-types-eng.json
+%%DATADIR%%/externalized/strings/strategic-map-land-types-fr.json
+%%DATADIR%%/externalized/strings/strategic-map-land-types-ger.json
+%%DATADIR%%/externalized/strings/strategic-map-land-types-it.json
+%%DATADIR%%/externalized/strings/strategic-map-land-types-pl.json
+%%DATADIR%%/externalized/strings/strategic-map-land-types-rus.json
 %%DATADIR%%/externalized/strings/strategic-map-town-name-locatives-dut.json
 %%DATADIR%%/externalized/strings/strategic-map-town-name-locatives-eng.json
 %%DATADIR%%/externalized/strings/strategic-map-town-name-locatives-fr.json
@@ -103,13 +124,14 @@ share/icons/hicolor/scalable/apps/ja2-stracciatella.svg
 %%DATADIR%%/mods/from-russia-with-love/data/maps/A9.dat
 %%DATADIR%%/mods/from-russia-with-love/license.txt
 %%DATADIR%%/mods/from-russia-with-love/readme.txt
-%%DATADIR%%/mods/generous-rebels/GR mod.jpg
-%%DATADIR%%/mods/generous-rebels/Generous Rebels Mod.txt
 %%DATADIR%%/mods/generous-rebels/data/Maps/A10_b1.dat
-%%DATADIR%%/mods/imp-quiz-honest-answers/IMP quiz honest answers mod.txt
+%%DATADIR%%/mods/generous-rebels/data/scripts/main.lua
+%%DATADIR%%/mods/generous-rebels/Generous Rebels Mod.txt
+%%DATADIR%%/mods/generous-rebels/GR mod.jpg
 %%DATADIR%%/mods/imp-quiz-honest-answers/data/Binarydata/IMPTEXT.EDT
+%%DATADIR%%/mods/imp-quiz-honest-answers/IMP quiz honest answers mod.txt
 %%DATADIR%%/mods/o-fortuna/data/music.json
-%%DATADIR%%/mods/o-fortuna/data/music/o-fortuna.wav
+%%DATADIR%%/mods/o-fortuna/data/music/o-fortuna.mp3
 %%DATADIR%%/mods/o-fortuna/license.txt
 %%DATADIR%%/mods/o-fortuna/readme.txt
 %%DATADIR%%/mods/readme.txt
@@ -122,8 +144,8 @@ share/icons/hicolor/scalable/apps/ja2-stracciatella.svg
 %%DATADIR%%/unittests/find-files/subfolder/file.txt
 %%DATADIR%%/unittests/find-files/uppercase-ext.TXT
 %%DATADIR%%/unittests/saves/strac-linux/SaveGame01.sav
-%%DATADIR%%/unittests/saves/strac-macos/SaveGame09.sav
 %%DATADIR%%/unittests/saves/strac-macos/imp.dat
+%%DATADIR%%/unittests/saves/strac-macos/SaveGame09.sav
 %%DATADIR%%/unittests/saves/strac-win/SaveGame09.sav
 %%DATADIR%%/unittests/saves/vanilla-russian/IMP.dat
 %%DATADIR%%/unittests/saves/vanilla-russian/SaveGame06.sav

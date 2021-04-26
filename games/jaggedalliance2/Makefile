@@ -2,8 +2,7 @@
 
 PORTNAME=	ja2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.0
-PORTREVISION=	6
+DISTVERSION=	0.18.0
 CATEGORIES=	games
 
 MAINTAINER=	timp87@gmail.com
@@ -27,19 +26,24 @@ USES=		cargo cmake compiler:c++11-lang pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ja2-stracciatella
 GH_PROJECT=	ja2-stracciatella
-USE_LDCONFIG=	yes
 USE_SDL=	sdl2
 
 CMAKE_ARGS=	-DEXTRA_DATA_DIR:PATH="${DATADIR}"
 CMAKE_OFF=	LOCAL_STRING_THEORY_LIB WITH_UNITTESTS
 
-CARGO_CRATES=	aho-corasick-0.7.10 \
+CARGO_CRATES=	addr2line-0.13.0 \
+		adler-0.2.3 \
+		aho-corasick-0.7.13 \
+		android_log-sys-0.2.0 \
+		android_logger-0.9.0 \
 		ansi_term-0.11.0 \
 		arrayref-0.3.6 \
 		arrayvec-0.5.1 \
+		ascii-0.9.3 \
 		atty-0.2.14 \
-		autocfg-1.0.0 \
-		base64-0.11.0 \
+		autocfg-1.0.1 \
+		backtrace-0.3.50 \
+		base64-0.12.3 \
 		bitflags-1.2.1 \
 		blake2b_simd-0.5.10 \
 		block-buffer-0.7.3 \
@@ -48,76 +52,103 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		byteorder-1.3.4 \
 		caseless-0.2.1 \
 		cbindgen-0.13.2 \
+		cesu8-1.1.0 \
 		cfg-if-0.1.10 \
-		chrono-0.4.11 \
-		clap-2.33.0 \
+		chrono-0.4.15 \
+		clap-2.33.3 \
+		combine-3.8.1 \
 		constant_time_eq-0.1.5 \
+		crossbeam-channel-0.4.4 \
 		crossbeam-deque-0.7.3 \
 		crossbeam-epoch-0.8.2 \
-		crossbeam-queue-0.2.1 \
 		crossbeam-utils-0.7.2 \
+		derivative-2.1.1 \
 		digest-0.8.1 \
 		dirs-1.0.5 \
-		dunce-1.0.0 \
-		either-1.5.3 \
+		dunce-1.0.1 \
+		either-1.6.1 \
+		env_logger-0.7.1 \
+		error-chain-0.12.4 \
 		generic-array-0.12.3 \
 		getopts-0.2.21 \
-		getrandom-0.1.14 \
-		hermit-abi-0.1.10 \
+		getrandom-0.1.15 \
+		gimli-0.22.0 \
+		hashbrown-0.9.0 \
+		hermit-abi-0.1.15 \
 		hex-0.3.2 \
-		indexmap-1.3.2 \
-		itoa-0.4.5 \
+		indexmap-1.6.0 \
+		itoa-0.4.6 \
+		jni-0.14.0 \
+		jni-sys-0.3.0 \
 		json_comments-0.2.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.68 \
-		log-0.4.8 \
+		libc-0.2.77 \
+		log-0.4.11 \
 		maybe-uninit-2.0.0 \
 		md-5-0.8.0 \
 		memchr-2.3.3 \
-		memoffset-0.5.4 \
-		num-integer-0.1.42 \
-		num-traits-0.2.11 \
-		num_cpus-1.12.0 \
+		memoffset-0.5.5 \
+		miniz_oxide-0.4.2 \
+		ndk-0.2.0 \
+		ndk-sys-0.2.0 \
+		num-integer-0.1.43 \
+		num-traits-0.2.12 \
+		num_cpus-1.13.0 \
+		num_enum-0.4.3 \
+		num_enum_derive-0.4.3 \
+		object-0.20.0 \
 		opaque-debug-0.2.3 \
-		ppv-lite86-0.2.6 \
-		proc-macro2-1.0.10 \
-		quote-1.0.3 \
+		ppv-lite86-0.2.9 \
+		proc-macro-crate-0.1.5 \
+		proc-macro2-1.0.21 \
+		quote-1.0.7 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
-		rayon-1.3.0 \
-		rayon-core-1.7.0 \
-		redox_syscall-0.1.56 \
-		redox_users-0.3.4 \
-		regex-1.3.6 \
-		regex-syntax-0.6.17 \
-		remove_dir_all-0.5.2 \
-		rust-argon2-0.7.0 \
-		ryu-1.0.3 \
+		rayon-1.4.0 \
+		rayon-core-1.8.0 \
+		redox_syscall-0.1.57 \
+		redox_users-0.3.5 \
+		regex-1.3.9 \
+		regex-syntax-0.6.18 \
+		remove_dir_all-0.5.3 \
+		rust-argon2-0.8.2 \
+		rustc-demangle-0.1.16 \
+		ryu-1.0.5 \
+		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.105 \
-		serde_derive-1.0.105 \
-		serde_json-1.0.50 \
+		serde-1.0.116 \
+		serde_derive-1.0.116 \
+		serde_json-1.0.57 \
 		simplelog-0.6.0 \
-		smallvec-1.2.0 \
 		strsim-0.8.0 \
-		syn-1.0.17 \
+		syn-1.0.41 \
 		tempfile-3.1.0 \
 		term-0.5.2 \
 		textwrap-0.11.0 \
+		thiserror-1.0.20 \
+		thiserror-impl-1.0.20 \
 		thread_local-1.0.1 \
-		time-0.1.42 \
+		time-0.1.44 \
+		tinyvec-0.3.4 \
 		toml-0.5.6 \
-		typenum-1.11.2 \
-		unicode-normalization-0.1.12 \
-		unicode-width-0.1.7 \
-		unicode-xid-0.2.0 \
-		vec_map-0.8.1 \
+		typenum-1.12.0 \
+		unicode-normalization-0.1.13 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		unreachable-1.0.0 \
+		vec_map-0.8.2 \
+		version_check-0.9.2 \
+		void-1.0.2 \
+		walkdir-2.3.1 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
-		winapi-0.3.8 \
+		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
+
 CARGO_CARGOLOCK=	${WRKSRC}/rust/Cargo.lock
 CARGO_CARGOTOML=	${WRKSRC}/rust/Cargo.toml
 CARGO_BUILD=		no
