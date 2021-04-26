@@ -101,5 +101,8 @@ include/vexcl/vector.hpp
 include/vexcl/vector_pointer.hpp
 include/vexcl/vector_view.hpp
 include/vexcl/vexcl.hpp
+%%DATADIR%%/cmake/VexCLBoostTargets.cmake
 %%DATADIR%%/cmake/VexCLConfig.cmake
+%%DATADIR%%/cmake/VexCLOpenCLTarget.cmake
 %%DATADIR%%/cmake/VexCLTargets.cmake
+%%DATADIR%%/cmake/VexCLTools.cmake
