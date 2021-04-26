@@ -27,6 +27,7 @@ GSF_LIB_DEPENDS=	libgsf-1.so:devel/libgsf
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	variable has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
 BROKEN_FreeBSD_13=	variable has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
+BROKEN_FreeBSD_14=	variable has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
 .endif
 
 post-patch:
