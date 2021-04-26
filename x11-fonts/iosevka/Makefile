@@ -1,6 +1,6 @@
 PORTNAME=	iosevka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.5
+DISTVERSION=	6.0.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/be5invis/Iosevka/releases/download/${DISTVERSIONFULL}/
 
@@ -19,71 +19,43 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 _STYLES=\
-	DEFAULT		yes	-		Monospace,\ Default\
-	SLAB		yes	-slab-		Monospace,\ Slab\
-	CURLY		yes	-curly-		Monospace,\ Curly\
-	CURLYSLAB	yes	-curly-slab-	Monospace,\ Curly\ Slab\
-	ANDALE		yes	-ss01-		Monospace,\ Andale\ Mono\ Style\
-	ANONYMOUS	yes	-ss02-		Monospace,\ Anonymous\ Pro\ Style\
-	CONSOLAS	yes	-ss03-		Monospace,\ Consolas\ Style\
-	MENLO		yes	-ss04-		Monospace,\ Menlo\ Style\
-	FIRAMONO	yes	-ss05-		Monospace,\ Fira\ Mono\ Style\
-	LIBERATIONMONO	yes	-ss06-		Monospace,\ Liberation\ Mono\ Style\
-	MONACO		yes	-ss07-		Monospace,\ Monaco\ Style\
-	PRAGMATAPRO	yes	-ss08-		Monospace,\ Pragmata\ Pro\ Style\
-	SOURCECODEPRO	yes	-ss09-		Monospace,\ Source\ Code\ Pro\ Style\
-	ENVYCODER	yes	-ss10-		Monospace,\ Envy\ Code\ R\ Style\
-	XWINDOWSFIXED	yes	-ss11-		Monospace,\ X\ Windows\ Fixed\ Style\
-	UBUNTUMONO	yes	-ss12-		Monospace,\ Ubuntu\ Mono\ Style\
-	LUCIDA		yes	-ss13-		Monospace,\ Lucida\ Style\
-	JETBRAINSMONO	yes	-ss14-		Monospace,\ JetBrains\ Mono\ Style\
-	IMBPLEXMONO	yes	-ss15-		Monospace,\ IMB\ Plex\ Mono\ Style\
-	PTMONO		yes	-ss16-		Monospace,\ PT\ Mono\ Style\
-	RECURSIVEMONO	yes	-ss17-		Monospace,\ Recursive\ Mono\ Style\
-	AILE		no	-aile-		Quasi-proportional,\ Sans-serif\ (Aile)\
-	ETOILE		no	-etoile-	Quasi-proportional,\ Slab-serif\ (Etoile)\
+	DEFAULT		-		Monospace,\ Default\
+	SLAB		-slab-		Monospace,\ Slab\
+	CURLY		-curly-		Monospace,\ Curly\
+	CURLYSLAB	-curly-slab-	Monospace,\ Curly\ Slab\
+	ANDALE		-ss01-		Monospace,\ Andale\ Mono\ Style\
+	ANONYMOUS	-ss02-		Monospace,\ Anonymous\ Pro\ Style\
+	CONSOLAS	-ss03-		Monospace,\ Consolas\ Style\
+	MENLO		-ss04-		Monospace,\ Menlo\ Style\
+	FIRAMONO	-ss05-		Monospace,\ Fira\ Mono\ Style\
+	LIBERATIONMONO	-ss06-		Monospace,\ Liberation\ Mono\ Style\
+	MONACO		-ss07-		Monospace,\ Monaco\ Style\
+	PRAGMATAPRO	-ss08-		Monospace,\ Pragmata\ Pro\ Style\
+	SOURCECODEPRO	-ss09-		Monospace,\ Source\ Code\ Pro\ Style\
+	ENVYCODER	-ss10-		Monospace,\ Envy\ Code\ R\ Style\
+	XWINDOWSFIXED	-ss11-		Monospace,\ X\ Windows\ Fixed\ Style\
+	UBUNTUMONO	-ss12-		Monospace,\ Ubuntu\ Mono\ Style\
+	LUCIDA		-ss13-		Monospace,\ Lucida\ Style\
+	JETBRAINSMONO	-ss14-		Monospace,\ JetBrains\ Mono\ Style\
+	IMBPLEXMONO	-ss15-		Monospace,\ IMB\ Plex\ Mono\ Style\
+	PTMONO		-ss16-		Monospace,\ PT\ Mono\ Style\
+	RECURSIVEMONO	-ss17-		Monospace,\ Recursive\ Mono\ Style\
+	AILE		-aile-		Quasi-proportional,\ Sans-serif\ (Aile)\
+	ETOILE		-etoile-	Quasi-proportional,\ Slab-serif\ (Etoile)\
 
-.for name has_spacing_variants variant_id desc in ${_STYLES}
-option_variant_spacing_list:=	${name}_STYLE ${variant_id} default
-.	if ${has_spacing_variants} == yes
-option_variant_spacing_list+=	${name}_FIXED_STYLE -fixed${variant_id} fixed
-option_variant_spacing_list+=	${name}_TERM_STYLE -term${variant_id} terminal
-.	endif
+.for name variant desc in ${_STYLES}
+OPTIONS_DEFINE+=		${name}_STYLE
+OPTIONS_DEFAULT+=		${name}_STYLE
 
-.	for option variant spacing in ${option_variant_spacing_list}
-OPTIONS_DEFINE+=	${option}
-OPTIONS_DEFAULT+=	${option}
+${name}_STYLE_DESC=		${desc:S/\\ / /g}
+${name}_STYLE_DISTFILES=	super-ttc-${PORTNAME}${variant}${DISTVERSION}${EXTRACT_SUFX}
+${name}_STYLE_PLIST_FILES=	${FONTSDIR}/${PORTNAME}${variant:S/-$//}.ttc
 
-${option}_DESC=		${desc:S/\\ / /g}
-.		if ${has_spacing_variants} == yes
-${option}_DESC+=	(${spacing} spacing)
-.		endif
-
-${option}_DISTFILES=	ttf-${PORTNAME}${variant}${DISTVERSION}${EXTRACT_SUFX}
-
-post-install-${option}-on:
-	cd ${WRKSRC} && \
-	${FIND} -E * -regex '${PORTNAME}${variant}[a-z]+[.]ttf' | \
-	${XARGS} -J {} ${INSTALL_DATA} {} ${STAGEDIR}${FONTSDIR}
-
-_regenerate-plist: _regenerate-plist-${option}
-
-_regenerate-plist-${option}: patch _remove-pkg-plist.tmp
-	cd ${WRKSRC} && \
-	${FIND} -E * -regex '${PORTNAME}${variant}[a-z]+[.]ttf' | \
-	${XARGS} ${PRINTF} '%%%%${option}%%%%%%%%FONTSDIR%%%%/%s\n' >> ${WRKDIR}/.pkg-plist.tmp
-.	endfor
+post-install-${name}_STYLE-on:
+	${INSTALL_DATA} ${WRKSRC}/${${name}_STYLE_PLIST_FILES:S|^${FONTSDIR}/||} ${STAGEDIR}${FONTSDIR}
 .endfor
-
-OPTIONS_SUB=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-
-_regenerate-plist:
-	${SORT} -o ${.CURDIR}/pkg-plist ${WRKDIR}/.pkg-plist.tmp
-
-_remove-pkg-plist.tmp:
-	${RM} ${WRKDIR}/.pkg-plist.tmp
 
 .include <bsd.port.mk>
