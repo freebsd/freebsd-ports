@@ -17,8 +17,6 @@ LICENSE_NAME=	commercial
 LICENSE_TEXT=	Commercial software with shareware license to 50 threads
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-RESTRICTED=	Commercial software with shareware license to 50 threads
-
 OPTIONS_DEFINE=	DEPENDACK APACHE PHP PGSQL
 OPTIONS_DEFAULT=DEPENDACK APACHE PHP PGSQL
 DEPENDACK_DESC=	I have read and understood the depends needs

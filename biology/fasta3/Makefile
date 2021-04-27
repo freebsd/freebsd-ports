@@ -13,11 +13,10 @@ COMMENT=	Collection of programs for searching DNA and protein databases
 LICENSE=	Fasta
 LICENSE_NAME=	Fasta program copyright W. Pearson and U.Virginia
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+# May not be sold or incorporated into a commercial product
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-NO_CDROM=	May not be sold or incorporated into a commercial product
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src

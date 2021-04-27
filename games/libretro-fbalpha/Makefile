@@ -5,6 +5,7 @@ CATEGORIES=	games
 MAINTAINER=	menelkir@itroll.org
 COMMENT=	Final Burn Alpha port for libretro
 
+# Commercial users must seek permission from copyright holders.
 LICENSE=	FBA
 LICENSE_NAME=	FBA
 LICENSE_FILE=	${WRKSRC}/src/license.txt
@@ -15,8 +16,6 @@ USE_LDCONFIG=	yes
 USE_GL=		gl
 
 PLIST_FILES=	lib/libretro/fbalpha_libretro.so
-
-NO_CDROM=       Commercial users must seek permission from copyright holders.
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro

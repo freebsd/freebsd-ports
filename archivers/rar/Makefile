@@ -13,10 +13,10 @@ COMMENT=	File archiver (binary port)
 LICENSE=	RAR
 LICENSE_NAME=	RAR license
 LICENSE_FILE=	${WRKSRC}/license.txt
+# Only unmodified original package can be distributed
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
 ONLY_FOR_ARCHS=	amd64 i386
-RESTRICTED=	only unmodified original package can be distributed
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar

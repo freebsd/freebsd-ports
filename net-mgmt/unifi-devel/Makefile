@@ -15,13 +15,11 @@ COMMENT=	UniFi Controller development release
 
 LICENSE=	EULA
 LICENSE_NAME=	End User License Agreement
-LICENSE_TEXT=	${RESTRICTED}
+LICENSE_TEXT=	License restrictions, see https://www.ubnt.com/eula/
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell no-auto-accept
 
 DEPRECATED=	Use net-mgmt/unifi6 instead
 EXPIRATION_DATE=	2021-05-16
-
-RESTRICTED=	License restrictions, see https://www.ubnt.com/eula/
 
 RUN_DEPENDS=	mongodb36>0:databases/mongodb36 \
 		snappyjava>0:archivers/snappy-java

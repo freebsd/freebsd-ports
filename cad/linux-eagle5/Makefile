@@ -15,6 +15,9 @@ COMMENT=	Easy to use, yet powerful tool for designing printed circuit boards
 LICENSE=	Eagle
 LICENSE_NAME=	Eagle End User License Agreement
 LICENSE_FILE=	${WRKSRC}/doc/license_en.txt
+# Usage permitted for non-commercial purposes only
+# Sale for profit is not permitted
+# Copying the software is only allowed for backup by an individual licensee
 LICENSE_PERMS=	auto-accept
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -24,10 +27,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/lin-//}
 EXTRACT_CMD=	${SED}
 EXTRACT_BEFORE_ARGS=	-e '1,/^__DATA__$$/d'
 EXTRACT_AFTER_ARGS=	| ${BZCAT} -c 2>/dev/null | ${TAR} -xf -
-
-RESTRICTED=	Usage permitted for non-commercial purposes only
-NO_CDROM=	Sale for profit is not permitted
-NO_PACKAGE=	Copying the software is only allowed for backup by an individual licensee
 
 EAGLEBASEVERSION=	5.12
 EAGLEBUGFIX=	0

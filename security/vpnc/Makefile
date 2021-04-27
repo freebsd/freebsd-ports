@@ -12,7 +12,11 @@ COMMENT=	Client for Cisco 3000 VPN Concentrator
 
 LICENSE=	BSD2CLAUSE GPLv2+
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_NAME_VPNC=	vpnc
+LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/COPYING
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
+LICENSE_TEXT_VPNC=	Redistribution is not allowed if linked against OpenSSL
+LICENSE_PERMS_VPNC=	auto-accept
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
@@ -21,8 +25,6 @@ RUN_DEPENDS=	vpnc-script:sysutils/vpnc-scripts
 USES=		gmake perl5 shebangfix
 USE_PERL5=	build
 USE_RC_SUBR=	vpnc
-
-LEGAL_TEXT=	Redistribution is not allowed if linked against OpenSSL
 
 ALL_TARGET=	all
 SHEBANG_FILES=	makeman.pl
@@ -41,7 +43,8 @@ CISCOVERSION_CFLAGS=	-DCISCO_PATCH_VERSION
 DECRYPT_DESC=	cisco-decypt password decrypt utility
 DECRYPT_VARS=	EXTRABUILDS+=cisco-decrypt
 
-SSL_VARS=	NO_PACKAGE="binary linked against OpenSSL must not be redistributed"
+SSL_VARS=	NO_PACKAGE="binary linked against OpenSSL must not be redistributed" \
+		LICENSE+=VPNC
 SSL_CFLAGS=	-DOPENSSL_GPL_VIOLATION
 SSL_LDFLAGS=	-lcrypto
 

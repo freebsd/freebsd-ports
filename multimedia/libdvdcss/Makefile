@@ -9,12 +9,14 @@ MASTER_SITES=	https://download.videolan.org/pub/${PORTNAME}/${DISTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable abstraction library for DVD decryption
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2 DMCA
+LICENSE_COMB=	multi
+LICENSE_NAME_DMCA=	DMCA
+LICENSE_TEXT_DMCA=	CSS code may violate the DMCA
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_PERMS_DMCA=	auto-accept
 
 USES=		libtool pathfix tar:bzip2
-
-RESTRICTED=	CSS code may violate the DMCA
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -11,12 +11,14 @@ DISTNAME=	XFrisk-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player networked Risk game for X11
 
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2+ CR
+LICENSE_COMB=	multi
+LICENSE_NAME_CR=	Copyright
+LICENSE_TEXT_CR=	Possible trademark infringement
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
+LICENSE_PERMS_CR=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
-
-NO_CDROM=	Possible trademark infringement
 
 WRKSRC=		${WRKDIR}/XFrisk
 

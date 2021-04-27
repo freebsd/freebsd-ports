@@ -10,12 +10,11 @@ DISTNAME=	doomsrc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DOOM: the game and the sound server
 
+# Redistribution is limited, see license; Requested by id Software
 LICENSE=	IDSOFTWARE
 LICENSE_NAME=	ID SOFTWARE LICENSE
 LICENSE_FILE=	${WRKSRC}/linuxdoom-${PORTVERSION}/DOOMLIC.TXT
 LICENSE_PERMS=	dist-mirror pkg-mirror
-
-NO_CDROM=	Redistribution is limited, see license; Requested by id Software
 
 ONLY_FOR_ARCHS=	i386
 

@@ -31,8 +31,6 @@ RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake localbase:ldflags shebangfix perl5 python:3.6+ ssl tar:tgz
 
-RESTRICTED=	Redistribution is limited, see license
-
 SHEBANG_FILES=	kent/src/checkUmask.sh \
 		kent/src/utils/bigHeat \
 		kent/src/utils/chromToUcsc/chromToUcsc \

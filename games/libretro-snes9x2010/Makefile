@@ -5,6 +5,7 @@ CATEGORIES=	games
 MAINTAINER=	menelkir@itroll.org
 COMMENT=	Snes9x - Portable Super Nintendo emulator (1.52)
 
+# Commercial users must seek permission from copyright holders.
 LICENSE=	PS
 LICENSE_NAME=	PS
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -12,8 +13,6 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		compiler:c++11-lib gmake
 USE_LDCONFIG=	yes
-
-NO_CDROM=	Commercial users must seek permission from copyright holders.
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro

@@ -11,13 +11,12 @@ EXTRACT_SUFX=	.x86_64.rpm
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Folding@home Client
 
+# Distribution without permission is prohibited
 LICENSE=	FAHSL
 LICENSE_NAME=	Folding@home Software License
 LICENSE_FILE=	${WRKSRC}/usr/share/doc/fahclient/copyright
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell \
 		auto-accept
-
-LEGAL_TEXT=	Distribution without permission is prohibited
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	The i386 client has not been ported

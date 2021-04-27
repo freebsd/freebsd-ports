@@ -11,6 +11,7 @@ COMMENT?=	Modern and interactive webmail
 LICENSE=	RainLoop
 LICENSE_NAME=	RainLoop Software License
 LICENSE_TEXT=	License can be found at: http://www.rainloop.net/licensing/
+# Redistribution in any form is prohibited
 LICENSE_PERMS=	auto-accept
 .endif
 
@@ -20,10 +21,6 @@ NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 USE_PHP=	curl dom iconv json openssl pcre simplexml spl xml zlib
 PLIST_SUB=	VER="${PORTVERSION}" WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
-
-.if "${PKGNAMESUFFIX}" == "${PHP_PKGNAMESUFFIX}"
-RESTRICTED=	Redistribution in any form is prohibited
-.endif
 
 OPTIONS_RADIO=		DB
 OPTIONS_RADIO_DB=	MYSQL PGSQL SQLITE

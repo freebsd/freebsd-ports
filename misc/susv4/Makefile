@@ -8,11 +8,10 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Open Group Base Specifications Issue 7/IEEE Std 1003.1, 2018 Edition
 
+# Redistribution of the documents is not permitted
 LICENSE=	NONE
 
 USES=		tar:bzip2
-
-RESTRICTED=	Redistribution of the documents is not permitted
 
 NO_ARCH=	yes
 NO_BUILD=	yes
