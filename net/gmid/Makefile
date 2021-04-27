@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libtls.so:security/libressl
 
-USES=		localbase ssl
+USES=		localbase pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	omar-polo
 USE_RC_SUBR=	gmid
