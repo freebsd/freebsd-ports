@@ -784,6 +784,7 @@
     SUBDIR += ohmu
     SUBDIR += omnibackup
     SUBDIR += onefetch
+    SUBDIR += opa
     SUBDIR += open
     SUBDIR += opencorsairlink
     SUBDIR += openipmi
