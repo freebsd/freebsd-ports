@@ -17,7 +17,7 @@ GH_ACCOUNT=	bjorn
 USES=		compiler:c++14-lang desktop-file-utils gl qmake qt:5 \
 		shared-mime-info xorg
 USE_QT=		core gui widgets opengl network declarative \
-		buildtools_build linguisttools_build dbus
+		buildtools_build linguisttools_build
 USE_GL=		gl
 USE_LDCONFIG=	yes
 QMAKE_ARGS=	SYSTEM_ZSTD=yes
