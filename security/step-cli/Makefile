@@ -1,6 +1,6 @@
 PORTNAME=	step-cli
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.15.14
+DISTVERSION=	0.15.16
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -167,10 +167,10 @@ GH_TUPLE=	\
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		smallstep:assert:82e2b9b3b262:smallstep_assert/vendor/github.com/smallstep/assert \
-		smallstep:certificates:v0.15.7:smallstep_certificates/vendor/github.com/smallstep/certificates \
+		smallstep:certificates:v0.15.14:smallstep_certificates/vendor/github.com/smallstep/certificates \
 		smallstep:certinfo:v1.5.0:smallstep_certinfo/vendor/github.com/smallstep/certinfo \
-		smallstep:cli-utils:v0.1.0:smallstep_cli_utils/vendor/go.step.sm/cli-utils \
-		smallstep:crypto:v0.7.3:smallstep_crypto/vendor/go.step.sm/crypto \
+		smallstep:cli-utils:v0.2.0:smallstep_cli_utils/vendor/go.step.sm/cli-utils \
+		smallstep:crypto:v0.8.0:smallstep_crypto/vendor/go.step.sm/crypto \
 		smallstep:nosql:v0.3.6:smallstep_nosql/vendor/github.com/smallstep/nosql \
 		smallstep:truststore:v0.9.6:smallstep_truststore/vendor/github.com/smallstep/truststore \
 		smallstep:zcrypto:fbc32cf76bce:smallstep_zcrypto/vendor/github.com/smallstep/zcrypto \
@@ -203,6 +203,7 @@ GH_TUPLE=	\
 		sslmate:go-pkcs12:57fc603b7f52:sslmate_pkcs12/vendor/software.sslmate.com/src/go-pkcs12
 
 GL_TUPLE=	https://gitlab.howett.net:go:plist:591f970eefbbeb04d7b37f334a0c4c3256e32876:go_plist/vendor/howett.net/plist
+
 
 SHEBANG_FILES=	autocomplete/bash_autocomplete
 
