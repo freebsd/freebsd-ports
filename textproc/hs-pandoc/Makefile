@@ -155,6 +155,13 @@ EXECUTABLES=	pandoc
 
 OPTIONS_SUB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+# compiler goes out of memory
+CABAL_FLAGS+=	--disable-optimization
+.endif
+
 post-extract:
 	${RM} ${WRKSRC}/cabal.project
 
@@ -163,4 +170,4 @@ post-install-EMBED_DATA-off:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/pandoc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
