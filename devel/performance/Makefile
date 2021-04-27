@@ -13,6 +13,7 @@ LICENSE=	LGPL3
 BROKEN_aarch64=		fails to build: gmake[2]: No rule to make target 'Performance/dependencies', needed by 'internal-doc-all_'.  Stop.
 BROKEN_armv7=		fails to build: gmake[2]: No rule to make target 'Performance/dependencies', needed by 'internal-doc-all_'.  Stop.
 BROKEN_powerpc64=	fails to build: gmake[2]: No rule to make target 'Performance/dependencies', needed by 'internal-doc-all_'.  Stop.
+BROKEN_FreeBSD_11=	fails to build: gmake[2]: No rule to make target 'Performance/dependencies', needed by 'internal-doc-all_'.  Stop.
 
 USES=		gnustep
 USE_GNUSTEP=	base build
