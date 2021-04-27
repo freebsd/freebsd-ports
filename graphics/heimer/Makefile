@@ -1,5 +1,5 @@
 PORTNAME=	heimer
-DISTVERSION=	2.2.0
+DISTVERSION=	2.5.0
 CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org
