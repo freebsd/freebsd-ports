@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Crypt/JWT.pm
+%%SITE_PERL%%/Crypt/KeyWrap.pm
+%%PERL5_MAN3%%/Crypt::JWT.3.gz
+%%PERL5_MAN3%%/Crypt::KeyWrap.3.gz
