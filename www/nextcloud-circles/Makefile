@@ -1,7 +1,7 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	circles
-PORTVERSION=	0.21.0
+PORTVERSION=	0.21.1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
@@ -27,6 +27,9 @@ PLIST_SUB=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
 		NEXTCLOUD_GROUPNAME=${NEXTCLOUD_GROUPNAME}
 
 WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
+
+post-stage:
+	${RM} ${STAGEDIR}${WWWDIR}/Makefile~
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
