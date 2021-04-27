@@ -1,5 +1,5 @@
 PORTNAME=	river
-PORTVERSION=	s20210426
+PORTVERSION=	s20210427
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,9 +20,9 @@ USES=		pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	ifreund
-GH_TAGNAME=	07fd1b8
+GH_TAGNAME=	0c8e718
 GH_TUPLE=	ifreund:zig-pixman:9acac69:zig_pixman/deps/zig-pixman \
-		ifreund:zig-wayland:f170fe0:zig_wayland/deps/zig-wayland \
+		ifreund:zig-wayland:a453b26:zig_wayland/deps/zig-wayland \
 		ifreund:zig-xkbcommon:9e4d41f:zig_xkbcommon/deps/zig-xkbcommon \
 		swaywm:zig-wlroots:6c62568:zig_wlroots/deps/zig-wlroots
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
