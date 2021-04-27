@@ -44,7 +44,7 @@ arcconf-v*		sysutils/arcconf	May not be redistributed in binary form
 cloudflare-cloudflared*	net/cloudflared		Not sure if we are allowed to redistribute it.
 clustalw-*		biology/clustalw	No commercial use
 cos-*			java/cos		Special conditions apply for commercial use
-CrystalSVGforGnomeIcons* x11-themes/gnome-icons-crystal Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
+CrystalSVGforGnomeIcons*	x11-themes/gnome-icons-crystal	Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 cyberbit/*		x11-fonts/cyberbit-ttfonts Not free for commercial use
 dbvis			java/dbvis		Redistribution is not permitted
 dcl-*-C.tar.gz		science/cdcl		No commercial use
@@ -81,12 +81,12 @@ fp-freebsd-ws-*		security/f-prot		Free for personal users on personal workstatio
 fuse-emulator-roms*	emulators/fuse-roms	No explicit permission to redistribute
 Opus-22.rom		emulators/fuse-roms	No explicit permission to redistribute
 freefonts-*		x11-fonts/freefonts	License prohibits redistribution; see individual .license files
-fretsonfire/FretsOnFire-*-linux* games/fretsonfire-data	Only Unreal Voodoo site is allowed to distribute the music
+fretsonfire/FretsOnFire-*-linux*	games/fretsonfire-data	Only Unreal Voodoo site is allowed to distribute the music
 fvcom/sourcecode1.tar.gz	science/fvcom	Requires (free) registration
 fvcom/sourcecode1.tar.gz	science/fvcom-mpi	Requires (free) registration
 giac-*			math/giacxcas		The french documentation is for non commercial only use
 giftool*		graphics/giftool	Do not redistribute for profit
-gnome2/mcitymicrogui-default* x11-themes/metacity-theme-microgui Themes may contain artwork not done by the author.  Keep FreeBSD safe if the theme author violated copyrights
+gnome2/mcitymicrogui-default*	x11-themes/metacity-theme-microgui	Themes may contain artwork not done by the author.  Keep FreeBSD safe if the theme author violated copyrights
 GoogleEarthLinux-*	astro/google-earth	Not really sure about the redistribution terms
 groupoffice-com-*	www/groupoffice		Free for personal use only
 HeroesOfMightAndMagic-*	games/HeroesOfMightAndMagic	Software is commercial
@@ -104,9 +104,8 @@ ICON-Slick.*		x11-themes/gnome-icons-slick Themes may contain artwork not done b
 ICON-Snow-Apple.*	x11-themes/gnome-icons-snow-apple Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 ICON-Stylish.*		x11-themes/gnome-icons-stylish Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 ICON-Ximian-South-*	x11-themes/gnome-icons-ximian-south Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
-jaf-*.zip		java/jaf		See the license
 jai-*-lib-linux-i586.*	java/jai		Redistribution is not permitted
-java3d-sdk-*-linux-i386* java/java3d		License does not allow distribution
+java3d-sdk-*-linux-i386*	java/java3d		License does not allow distribution
 jdk-8*-apidocs.zip	java/jdk8-doc		This documentation is under license and export control
 jdk-8*-i586.tar.gz	java/linux-oracle-jdk18	Redistribution of repackaged binaries not permitted
 jfbuild-*		games/jfsw		Must be distributed only through the Internet and free of charge
@@ -182,7 +181,6 @@ tarsnap-*		sysutils/tarsnap	license restricts redistribution of source and binar
 tcetest_*		games/linux-enemyterritory-tce	Redistribution limited
 teamspeak*		audio/teamspeak3-server	No redistribution
 thundercache		www/thundercache	Commercial software with shareware license to 50 threads
-tinker*			biology/tinker		Distribution is prohibited
 triangle-*/*		math/triangle		No commercial use without prior arrangement with the author
 Tripwire-*-1.tar.gz	security/tripwire-131	Cannot be redistributed for more than the cost of duplication
 TrueCrypt*		security/truecrypt	May not be redistributed.  Must accept license to download.
@@ -216,7 +214,6 @@ yEd*			graphics/yed		Downloading requires acceptance of license agreement
 zh-moettf/*		chinese/moettf		Contact Taiwan's Ministry of Education for commercial use
 UrbanTerror*.zip	games/urbanterror-data	The mod files may not be sold or distributed on physical media unless with permission from id Software.
 gmsh-*			cad/gmsh		Contact appropriate authors for commercial purposes if including Tetgen or Metis
-gmsh-occ-*		cad/gmsh-occ		Contact appropriate authors for commercial purposes if including Tetgen or Metis
 sas2ircu-*		sysutils/sas2ircu	May not be redistributed. Must accept license to download.
 snes9x-*		emulators/snes9x-gtk	Commercial users must seek permission from copyright holders.
 rainloop-1.*.zip	mail/rainloop		Redistribution in any form is prohibited
@@ -228,6 +225,3 @@ msms-*			science/msms		No commercial use, only for use by individuals in scienti
 unifi-devel-*		net-mgmt/unifi-devel	License restrictions, see https://www.ubnt.com/eula/
 netio*			benchmarks/netio	No commercial use: commercial use requires a commercial license
 zerotier-*	net/zerotier	No SaaS or Govt usage: https://github.com/zerotier/ZeroTierOne/blob/master/LICENSE.txt
-libretro-snes9x-*		emulators/libretro-snes9x	Commercial users must seek permission from copyright holders.
-libretro-snes9x-*		emulators/libretro-snes9x2005	Commercial users must seek permission from copyright holders.
-libretro-snes9x-*		emulators/libretro-snes9x2010	Commercial users must seek permission from copyright holders.
