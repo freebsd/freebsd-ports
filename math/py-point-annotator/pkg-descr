@@ -1,0 +1,6 @@
+The point-annotator package provides functionalities to annotate data with
+labels based on the Mann-Whitney U test and Hypergeometric test. Currently, we
+provide examples of the fast annotation of gene expression data with the cell
+types based on marker genes.
+
+WWW: https://fri.uni-lj.si/en/laboratory/biolab

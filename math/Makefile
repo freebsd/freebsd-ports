@@ -832,6 +832,7 @@
     SUBDIR += py-petsc4py
     SUBDIR += py-piranha
     SUBDIR += py-plastex
+    SUBDIR += py-point-annotator
     SUBDIR += py-pplpy
     SUBDIR += py-primme
     SUBDIR += py-pyFFTW
