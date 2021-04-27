@@ -1,0 +1,38 @@
+--- doc/nethack.6.orig	2021-03-22 22:28:14 UTC
++++ doc/nethack.6
+@@ -17,7 +17,7 @@ nethack \- Exploring The Mazes of Menace
+ .SH SYNOPSIS
+ .na
+ .hy 0
+-.B nethack
++.B xnethack
+ [
+ .B \-d
+ .I directory
+@@ -219,7 +219,7 @@ option, which must be the first argument if it appears
+ supplies a directory which is to serve as the playground.
+ It overrides the value from NETHACKDIR, HACKDIR,
+ or the directory specified by the game administrator during compilation
+-(usually /usr/games/lib/nethackdir).
++(usually %%HACKDIR%%).
+ This option is usually only useful to the game administrator.
+ The playground must contain several auxiliary files such as help files,
+ the list of top scorers, and a subdirectory
+@@ -265,7 +265,7 @@ name is '.xnethackrc' in the user's home directory.
+ 
+ .br
+ All other files are in the playground directory,
+-normally /usr/games/lib/nethackdir.
++normally %%HACKDIR%%.
+ If DLB was defined during the compile, the data files and special levels
+ will be inside a larger file, normally nhdat, instead of being separate
+ files.
+@@ -392,7 +392,7 @@ SHOPTYPE and SPLEVTYPE can be used in debugging (wizar
+ DEBUGFILES can be used if the program was built with 'DEBUG' enabled.
+ .SH "SEE ALSO"
+ .PP
+-recover(6)
++recover%%HACKEXT%%(6)
+ .SH BUGS
+ .PP
+ Probably infinite.

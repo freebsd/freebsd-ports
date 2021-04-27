@@ -1,0 +1,39 @@
+--- sys/unix/Makefile.doc.orig	2021-03-22 22:28:14 UTC
++++ sys/unix/Makefile.doc
+@@ -66,15 +66,15 @@ Guidebook.dvi:	Guidebook.tex
+ 	latex Guidebook.tex
+ 
+ 
+-GAME	= nethack
+-MANDIR	= /usr/man/man6
++GAME	= xnethack%%HACKEXT%%
++MANDIR	= ${PREFIX}/man/man6
+ MANEXT	= 6
+ 
+ # manual installation for most BSD-style systems
+-GAMEMANCREATE = cat nethack.6 | $(NHGREP) >
+-RCVRMANCREATE = cat recover.6 | $(NHGREP) >
+-DLBMANCREATE = cat dlb.6 | $(NHGREP) >
+-MDMANCREATE = cat makedefs.6 | $(NHGREP) >
++GAMEMANCREATE = cat nethack.6 | $(NHGREP) > nethack.6.out ; ${BSD_INSTALL_MAN} nethack.6.out
++RCVRMANCREATE = cat recover.6 | $(NHGREP) > recover.6.out ; ${BSD_INSTALL_MAN} recover.6.out
++DLBMANCREATE = cat dlb.6 | $(NHGREP) > dlb.6.out ; ${BSD_INSTALL_MAN} dlb.6.out
++MDMANCREATE = cat makedefs.6 | $(NHGREP) > makedefs.6.out ; ${BSD_INSTALL_MAN} makedefs.6.out
+ # manual installation for most SYSV-style systems
+ # GAMEMANCREATE = cat nethack.6 | $(NHGREP) | nroff -man - >
+ # RCVRMANCREATE = cat recover.6 | $(NHGREP) | nroff -man - >
+@@ -82,10 +82,10 @@ MDMANCREATE = cat makedefs.6 | $(NHGREP) >
+ # MDMANCREATE = cat makedefs.6 | $(NHGREP) | nroff -man - >
+ 
+ manpages:
+-	-$(GAMEMANCREATE) $(MANDIR)/$(GAME).$(MANEXT)
+-	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
+-	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
+-	-$(MDMANCREATE) $(MANDIR)/makedefs.$(MANEXT)
++	-$(GAMEMANCREATE) ${DESTDIR}$(MANDIR)/$(GAME)%%HACKEXT%%.$(MANEXT)
++	-$(RCVRMANCREATE) ${DESTDIR}$(MANDIR)/recover%%HACKEXT%%.$(MANEXT)
++	-$(DLBMANCREATE) ${DESTDIR}$(MANDIR)/dlb%%HACKEXT%%.$(MANEXT)
++	-$(MDMANCREATE) ${DESTDIR}$(MANDIR)/makedefs%%HACKEXT%%.$(MANEXT)
+ 
+ # manual creation for distribution
+ DISTRIB = Guidebook.txt nethack.txt recover.txt \

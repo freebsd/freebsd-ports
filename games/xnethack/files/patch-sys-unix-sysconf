@@ -1,0 +1,11 @@
+--- sys/unix/sysconf.orig	2021-03-22 22:28:14 UTC
++++ sys/unix/sysconf
+@@ -136,7 +136,7 @@ LLC_TURNS=3000
+ #   %D current time, YYYYMMDDhhmmss format
+ #   %n player name
+ #   %N first character of player name
+-DUMPLOGFILE=/tmp/xnethack.%n.%d.log
++DUMPLOGFILE=/tmp/nethack.%v.%u.%n.%D.log
+ 
+ # End of game HTML dump.
+ # Only available if NetHack was compiled with DUMPHTML
