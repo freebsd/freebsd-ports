@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+
+# PROVIDE: gmid
+# REQUIRE: SERVERS
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable gmid:
+# gmid_enable (bool):	Set it to "YES" to enable gmid
+#			Default is "NO".
+# gmid_config (string):	Path to gmid configuration file.
+#			Default is "%%PREFIX%%/etc/gmid.conf"
+#
+#
+
+. /etc/rc.subr
+
+name="gmid"
+rcvar="gmid_enable"
+
+start_precmd="gmid_checkconfig"
+configtest_cmd="gmid_checkconfig"
+extra_commands="configtest"
+
+: ${gmid_enable:="NO"}
+: ${gmid_config:="%%PREFIX%%/etc/gmid.conf"}
+
+load_rc_config $name
+
+command="%%PREFIX%%/bin/${name}"
+command_flags="-c ${gmid_config}"
+
+required_files="${gmid_config}"
+
+gmid_checkconfig()
+{
+	echo "Performing sanity check on gmid configuration:"
+	eval ${command} -n ${command_flags}
+}
+
+run_rc_command "$1"

@@ -1,0 +1,15 @@
+# drop privileges
+user "_gmid"
+
+# it's a good idea to enable chroot, but
+# beware that can make CGI scripting harder
+#
+#chroot "/var/gemini"
+
+# An example of a server block:
+#
+#server "localhost" {
+#	root "/var/gemini/localhost"
+#	cert "/usr/local/etc/ssl/gmid/gmid.crt"
+#	key  "/usr/local/etc/ssl/gmid/gmid.key"
+#}

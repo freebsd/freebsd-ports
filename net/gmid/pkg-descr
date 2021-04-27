@@ -1,0 +1,6 @@
+gmid is a server for the Gemini protocol.  It has various
+features, among which Capsicum support and a "config-less"
+mode akin to "python -m http.server" to quickly serve local
+directories from the shell.
+
+WWW: https://github.com/omar-polo/gmid
