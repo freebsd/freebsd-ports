@@ -1,4 +1,4 @@
---- third_party/crc32c/src/src/crc32c_arm64_linux_check.h.orig	2021-03-13 00:03:32 UTC
+--- third_party/crc32c/src/src/crc32c_arm64_linux_check.h.orig	2021-04-14 18:42:58 UTC
 +++ third_party/crc32c/src/src/crc32c_arm64_linux_check.h
 @@ -7,8 +7,6 @@
  #ifndef CRC32C_CRC32C_ARM_LINUX_CHECK_H_

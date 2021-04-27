@@ -1,4 +1,4 @@
---- chrome/browser/search/search_suggest/search_suggest_service.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/search/search_suggest/search_suggest_service.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/search/search_suggest/search_suggest_service.cc
 @@ -21,7 +21,11 @@
  #include "components/search/ntp_features.h"

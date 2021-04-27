@@ -1,6 +1,6 @@
---- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
-@@ -56,7 +56,9 @@
+@@ -59,7 +59,9 @@
  // of lacros-chrome is complete.
  #if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
  #include <gnu/libc-version.h>
@@ -10,7 +10,7 @@
  #include "base/linux_util.h"
  #include "base/strings/string_split.h"
  #include "base/strings/string_util.h"
-@@ -65,7 +67,7 @@
+@@ -68,7 +70,7 @@
  #include "ui/base/ui_base_features.h"
  #include "ui/base/x/x11_util.h"
  #endif

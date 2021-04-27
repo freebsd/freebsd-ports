@@ -1,15 +1,16 @@
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2021-04-20 18:58:27 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-@@ -242,7 +242,7 @@
- #include "chrome/browser/ui/webui/app_launcher_page_ui.h"
- #endif
- 
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- #include "chrome/browser/ui/webui/webui_js_error/webui_js_error_ui.h"
- #endif
- 
-@@ -263,12 +263,12 @@
+@@ -30,7 +30,9 @@
+ #include "chrome/browser/ui/webui/bluetooth_internals/bluetooth_internals_ui.h"
+ #include "chrome/browser/ui/webui/components/components_ui.h"
+ #include "chrome/browser/ui/webui/constrained_web_dialog_ui.h"
++#if !defined(OS_BSD)
+ #include "chrome/browser/ui/webui/crashes_ui.h"
++#endif
+ #include "chrome/browser/ui/webui/device_log_ui.h"
+ #include "chrome/browser/ui/webui/domain_reliability_internals_ui.h"
+ #include "chrome/browser/ui/webui/download_internals/download_internals_ui.h"
+@@ -266,12 +268,12 @@
  #include "chrome/browser/ui/webui/conflicts/conflicts_ui.h"
  #endif
  
@@ -24,7 +25,7 @@
      defined(OS_ANDROID)
  #include "chrome/browser/ui/webui/sandbox/sandbox_internals_ui.h"
  #endif
-@@ -465,7 +465,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -478,7 +480,7 @@ bool IsAboutUI(const GURL& url) {
  #if !defined(OS_ANDROID)
            || url.host_piece() == chrome::kChromeUITermsHost
  #endif
@@ -33,16 +34,18 @@
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -811,7 +811,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
-   }
- #endif  // !defined(OFFICIAL_BUILD)
- #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   if (url.host_piece() == chrome::kChromeUIWebUIJsErrorHost)
-     return &NewWebUI<WebUIJsErrorUI>;
- #endif
-@@ -873,7 +873,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -527,8 +529,10 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+     return &NewWebUI<ComponentsUI>;
+   if (url.spec() == chrome::kChromeUIConstrainedHTMLTestURL)
+     return &NewWebUI<ConstrainedWebDialogUI>;
++#if !defined(OS_BSD)
+   if (url.host_piece() == chrome::kChromeUICrashesHost)
+     return &NewWebUI<CrashesUI>;
++#endif
+   if (url.host_piece() == chrome::kChromeUIDeviceLogHost)
+     return &NewWebUI<chromeos::DeviceLogUI>;
+   if (url.host_piece() == chrome::kChromeUIDomainReliabilityInternalsHost)
+@@ -892,7 +896,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
@@ -51,7 +54,7 @@
      defined(USE_AURA)
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
      return &NewWebUI<ConstrainedWebDialogUI>;
-@@ -917,13 +917,13 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -936,13 +940,13 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
      return &NewWebUI<media_router::MediaRouterInternalsUI>;
    }
  #endif
@@ -67,7 +70,7 @@
      defined(OS_CHROMEOS)
    if (url.host_piece() == chrome::kChromeUIDiscardsHost)
      return &NewWebUI<DiscardsUI>;
-@@ -931,7 +931,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -950,7 +954,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \
@@ -76,3 +79,14 @@
    if (url.host_piece() == chrome::kChromeUIBrowserSwitchHost)
      return &NewWebUI<BrowserSwitchUI>;
  #endif
+@@ -1153,8 +1157,10 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
+     return ConflictsUI::GetFaviconResourceBytes(scale_factor);
+ #endif
+ 
++#if !defined(OS_BSD)
+   if (page_url.host_piece() == chrome::kChromeUICrashesHost)
+     return CrashesUI::GetFaviconResourceBytes(scale_factor);
++#endif
+ 
+   if (page_url.host_piece() == chrome::kChromeUIFlagsHost)
+     return FlagsUI::GetFaviconResourceBytes(scale_factor);

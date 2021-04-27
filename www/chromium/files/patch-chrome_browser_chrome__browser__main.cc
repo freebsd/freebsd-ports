@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main.cc.orig	2021-03-12 23:57:17 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2021-04-14 18:40:52 UTC
 +++ chrome/browser/chrome_browser_main.cc
-@@ -251,7 +251,7 @@
+@@ -250,7 +250,7 @@
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \
@@ -9,7 +9,7 @@
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
  #include "chrome/browser/metrics/desktop_session_duration/touch_mode_stats_tracker.h"
  #include "chrome/browser/profiles/profile_activity_metrics_recorder.h"
-@@ -935,7 +935,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -932,7 +932,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
        AddFirstRunNewTabs(browser_creator_.get(), master_prefs_->new_tabs);
      }
  
@@ -18,7 +18,7 @@
      // Create directory for user-level Native Messaging manifest files. This
      // makes it less likely that the directory will be created by third-party
      // software with incorrect owner or permission. See crbug.com/725513 .
-@@ -944,7 +944,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -941,7 +941,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
                                   &user_native_messaging_dir));
      if (!base::PathExists(user_native_messaging_dir))
        base::CreateDirectory(user_native_messaging_dir);
@@ -27,7 +27,7 @@
    }
  #endif  // !defined(OS_ANDROID) && !BUILDFLAG(IS_CHROMEOS_ASH)
  
-@@ -968,7 +968,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -965,7 +965,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \

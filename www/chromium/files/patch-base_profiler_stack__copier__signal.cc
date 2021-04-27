@@ -1,4 +1,4 @@
---- base/profiler/stack_copier_signal.cc.orig	2021-03-12 23:57:15 UTC
+--- base/profiler/stack_copier_signal.cc.orig	2021-04-14 18:40:48 UTC
 +++ base/profiler/stack_copier_signal.cc
 @@ -4,7 +4,14 @@
  

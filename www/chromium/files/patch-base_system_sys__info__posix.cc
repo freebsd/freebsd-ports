@@ -1,6 +1,6 @@
---- base/system/sys_info_posix.cc.orig	2021-03-12 23:57:15 UTC
+--- base/system/sys_info_posix.cc.orig	2021-04-14 18:40:48 UTC
 +++ base/system/sys_info_posix.cc
-@@ -25,6 +25,11 @@
+@@ -26,6 +26,11 @@
  #if defined(OS_ANDROID)
  #include <sys/vfs.h>
  #define statvfs statfs  // Android uses a statvfs-like statfs struct and call.
@@ -12,7 +12,7 @@
  #else
  #include <sys/statvfs.h>
  #endif
-@@ -224,6 +229,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -239,6 +244,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

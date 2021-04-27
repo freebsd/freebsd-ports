@@ -1,4 +1,4 @@
---- components/viz/test/fake_output_surface.h.orig	2021-03-12 23:57:23 UTC
+--- components/viz/test/fake_output_surface.h.orig	2021-04-14 18:41:02 UTC
 +++ components/viz/test/fake_output_surface.h
 @@ -89,7 +89,7 @@ class FakeOutputSurface : public OutputSurface {
    gfx::OverlayTransform GetDisplayTransform() override;

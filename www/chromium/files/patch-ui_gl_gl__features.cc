@@ -1,4 +1,4 @@
---- ui/gl/gl_features.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/gl/gl_features.cc.orig	2021-04-14 18:41:39 UTC
 +++ ui/gl/gl_features.cc
 @@ -23,8 +23,8 @@ const base::Feature kGpuVsync{"GpuVsync", base::FEATUR
  // Launched on Windows, still experimental on other platforms.

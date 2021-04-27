@@ -1,4 +1,4 @@
---- net/base/network_change_notifier_posix.cc.orig	2021-03-24 15:19:43 UTC
+--- net/base/network_change_notifier_posix.cc.orig	2021-04-14 18:41:06 UTC
 +++ net/base/network_change_notifier_posix.cc
 @@ -93,7 +93,7 @@ void NetworkChangeNotifierPosix::GetCurrentMaxBandwidt
  NetworkChangeNotifier::NetworkChangeCalculatorParams

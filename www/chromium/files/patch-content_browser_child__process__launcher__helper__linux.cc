@@ -1,4 +1,4 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2021-03-12 23:57:24 UTC
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2021-04-20 18:58:32 UTC
 +++ content/browser/child_process_launcher_helper_linux.cc
 @@ -18,9 +18,12 @@
  #include "content/public/common/content_switches.h"
@@ -57,7 +57,7 @@
      info.status = base::GetKnownDeadTerminationStatus(process.process.Handle(),
                                                        &info.exit_code);
    } else {
-@@ -141,13 +152,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
+@@ -141,21 +152,27 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
    DCHECK(CurrentlyOnProcessLauncherTaskRunner());
    process.process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.
@@ -75,3 +75,13 @@
  }
  
  void ChildProcessLauncherHelper::SetProcessPriorityOnLauncherThread(
+     base::Process process,
+     const ChildProcessLauncherPriority& priority) {
+   DCHECK(CurrentlyOnProcessLauncherTaskRunner());
++#if !defined(OS_BSD)
+   if (process.CanBackgroundProcesses())
+     process.SetProcessBackgrounded(priority.is_background());
++#endif
+ }
+ 
+ // static

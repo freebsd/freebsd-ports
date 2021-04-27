@@ -1,6 +1,6 @@
---- build/config/BUILDCONFIG.gn.orig	2021-03-12 23:57:15 UTC
+--- build/config/BUILDCONFIG.gn.orig	2021-04-14 18:40:48 UTC
 +++ build/config/BUILDCONFIG.gn
-@@ -194,8 +194,8 @@ if (host_toolchain == "") {
+@@ -183,8 +183,8 @@ if (host_toolchain == "") {
    # TODO(dpranke): Add some sort of assert here that verifies that
    # no toolchain omitted host_toolchain from its toolchain_args().
  
@@ -11,7 +11,7 @@
        host_toolchain = "//build/toolchain/linux:clang_$host_cpu"
      } else if (is_clang) {
        host_toolchain = "//build/toolchain/linux:clang_$host_cpu"
-@@ -232,7 +232,7 @@ if (target_os == "android") {
+@@ -221,7 +221,7 @@ if (target_os == "android") {
    assert(host_os == "linux" || host_os == "mac",
           "Android builds are only supported on Linux and Mac hosts.")
    _default_toolchain = "//build/toolchain/android:android_clang_$target_cpu"
@@ -20,7 +20,7 @@
    # See comments in build/toolchain/cros/BUILD.gn about board compiles.
    if (is_clang) {
      _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
-@@ -293,10 +293,11 @@ if (custom_toolchain != "") {
+@@ -282,10 +282,11 @@ if (custom_toolchain != "") {
  # current_os value directly.
  
  is_android = current_os == "android"

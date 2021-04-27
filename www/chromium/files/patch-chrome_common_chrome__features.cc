@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/common/chrome_features.cc.orig	2021-04-14 18:40:56 UTC
 +++ chrome/common/chrome_features.cc
-@@ -92,13 +92,13 @@ const base::Feature kAsyncDns {
+@@ -96,13 +96,13 @@ const base::Feature kAsyncDns {
  #endif
  };
  
@@ -16,7 +16,7 @@
  
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  // Enable Borealis on Chrome OS.
-@@ -348,13 +348,13 @@ const base::Feature kEnableAllSystemWebApps{"EnableAll
+@@ -360,13 +360,13 @@ const base::Feature kEnableAllSystemWebApps{"EnableAll
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

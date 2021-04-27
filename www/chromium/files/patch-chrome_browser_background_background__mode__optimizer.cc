@@ -1,4 +1,4 @@
---- chrome/browser/background/background_mode_optimizer.cc.orig	2021-03-12 23:57:17 UTC
+--- chrome/browser/background/background_mode_optimizer.cc.orig	2021-04-14 18:40:52 UTC
 +++ chrome/browser/background/background_mode_optimizer.cc
 @@ -30,10 +30,10 @@ std::unique_ptr<BackgroundModeOptimizer> BackgroundMod
            switches::kKeepAliveForTest))

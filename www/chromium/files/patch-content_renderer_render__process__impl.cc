@@ -1,4 +1,4 @@
---- content/renderer/render_process_impl.cc.orig	2021-03-12 23:57:24 UTC
+--- content/renderer/render_process_impl.cc.orig	2021-04-14 18:41:03 UTC
 +++ content/renderer/render_process_impl.cc
 @@ -45,7 +45,7 @@
  #if defined(OS_WIN)
@@ -17,4 +17,4 @@
 +#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(ARCH_CPU_X86_64)
    if (base::FeatureList::IsEnabled(features::kWebAssemblyTrapHandler)) {
      base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
-     if (!command_line->HasSwitch(switches::kDisableInProcessStackTraces)) {
+ 

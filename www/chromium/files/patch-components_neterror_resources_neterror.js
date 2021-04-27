@@ -1,4 +1,4 @@
---- components/neterror/resources/neterror.js.orig	2021-03-12 23:57:22 UTC
+--- components/neterror/resources/neterror.js.orig	2021-04-14 18:40:59 UTC
 +++ components/neterror/resources/neterror.js
 @@ -144,7 +144,7 @@ function detailsButtonClick() {
  }

@@ -1,4 +1,4 @@
---- components/sync_device_info/local_device_info_util_linux.cc.orig	2021-03-12 23:57:23 UTC
+--- components/sync_device_info/local_device_info_util_linux.cc.orig	2021-04-14 18:41:01 UTC
 +++ components/sync_device_info/local_device_info_util_linux.cc
 @@ -38,8 +38,9 @@ std::string GetPersonalizableDeviceNameInternal() {
  #if BUILDFLAG(IS_CHROMEOS_ASH)

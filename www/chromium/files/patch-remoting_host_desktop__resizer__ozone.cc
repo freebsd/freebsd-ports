@@ -1,4 +1,4 @@
---- remoting/host/desktop_resizer_ozone.cc.orig	2021-03-12 23:57:28 UTC
+--- remoting/host/desktop_resizer_ozone.cc.orig	2021-04-14 18:41:08 UTC
 +++ remoting/host/desktop_resizer_ozone.cc
 @@ -32,7 +32,7 @@ void DesktopResizerOzone::RestoreResolution(const Scre
  // To avoid multiple definitions when use_x11 && use_ozone is true, disable this

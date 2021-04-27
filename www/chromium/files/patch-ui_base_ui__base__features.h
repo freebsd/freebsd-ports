@@ -1,4 +1,4 @@
---- ui/base/ui_base_features.h.orig	2021-03-12 23:57:48 UTC
+--- ui/base/ui_base_features.h.orig	2021-04-14 18:41:37 UTC
 +++ ui/base/ui_base_features.h
 @@ -63,11 +63,11 @@ COMPONENT_EXPORT(UI_BASE_FEATURES) extern const base::
  COMPONENT_EXPORT(UI_BASE_FEATURES) bool IsUsingWMPointerForTouch();

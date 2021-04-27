@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/html/forms/internal_popup_menu.cc.orig	2021-03-12 23:57:29 UTC
+--- third_party/blink/renderer/core/html/forms/internal_popup_menu.cc.orig	2021-04-14 18:41:09 UTC
 +++ third_party/blink/renderer/core/html/forms/internal_popup_menu.cc
-@@ -155,7 +155,7 @@ class InternalPopupMenu::ItemIterationContext {
+@@ -156,7 +156,7 @@ class InternalPopupMenu::ItemIterationContext {
          is_in_group_(false),
          buffer_(buffer) {
      DCHECK(buffer_);

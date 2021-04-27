@@ -1,6 +1,6 @@
---- content/test/BUILD.gn.orig	2021-03-12 23:57:24 UTC
+--- content/test/BUILD.gn.orig	2021-04-14 18:41:03 UTC
 +++ content/test/BUILD.gn
-@@ -1459,10 +1459,12 @@ test("content_browsertests") {
+@@ -1476,10 +1476,12 @@ test("content_browsertests") {
    }
  
    if (is_linux || is_chromeos) {
@@ -17,7 +17,7 @@
      deps += [ "//ui/gfx:test_support" ]
  
      if (use_atk) {
-@@ -1699,7 +1701,7 @@ static_library("run_all_unittests") {
+@@ -1720,7 +1722,7 @@ static_library("run_all_unittests") {
      ":test_support",
      "//base/test:test_support",
    ]
@@ -26,7 +26,7 @@
      deps += [ "//content/common:set_process_title_linux" ]
    }
  }
-@@ -2532,7 +2534,7 @@ test("content_unittests") {
+@@ -2558,7 +2560,7 @@ test("content_unittests") {
      deps += [ "//ui/gfx/x" ]
    }
  

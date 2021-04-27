@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_alloc_unittest.cc.orig	2021-03-12 23:57:15 UTC
+--- base/allocator/partition_allocator/partition_alloc_unittest.cc.orig	2021-04-14 18:40:48 UTC
 +++ base/allocator/partition_allocator/partition_alloc_unittest.cc
-@@ -1588,7 +1588,7 @@ TEST_F(PartitionAllocTest, LostFreeSlotSpansBug) {
+@@ -1644,7 +1644,7 @@ TEST_F(PartitionAllocTest, LostFreeSlotSpansBug) {
  // cause flake.
  #if !defined(OS_WIN) &&            \
      (!defined(ARCH_CPU_64_BITS) || \
@@ -9,7 +9,7 @@
  
  // The following four tests wrap a called function in an expect death statement
  // to perform their test, because they are non-hermetic. Specifically they are
-@@ -1634,7 +1634,7 @@ TEST_F(PartitionAllocDeathTest, RepeatedTryReallocRetu
+@@ -1695,7 +1695,7 @@ TEST_F(PartitionAllocDeathTest, DISABLED_RepeatedTryRe
  }
  
  #endif  // !defined(ARCH_CPU_64_BITS) || (defined(OS_POSIX) &&

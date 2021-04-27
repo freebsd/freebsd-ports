@@ -1,6 +1,6 @@
---- chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc
-@@ -144,7 +144,7 @@ const struct {
+@@ -190,7 +190,7 @@ const struct {
      {base::DIR_APP_DATA, nullptr, kBlockAllChildren},
      {base::DIR_HOME, FILE_PATH_LITERAL("Library"), kBlockAllChildren},
  #endif

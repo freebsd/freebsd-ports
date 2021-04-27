@@ -1,4 +1,4 @@
---- components/crash/content/browser/BUILD.gn.orig	2021-03-12 23:57:22 UTC
+--- components/crash/content/browser/BUILD.gn.orig	2021-04-14 18:40:59 UTC
 +++ components/crash/content/browser/BUILD.gn
 @@ -37,7 +37,7 @@ source_set("browser") {
  

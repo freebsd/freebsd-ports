@@ -1,4 +1,4 @@
---- chrome/browser/ui/task_manager/task_manager_columns.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/task_manager/task_manager_columns.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/ui/task_manager/task_manager_columns.cc
 @@ -94,10 +94,10 @@ const TableColumnData kColumns[] = {
       base::size("100000") * kCharWidth, -1, true, false, false},

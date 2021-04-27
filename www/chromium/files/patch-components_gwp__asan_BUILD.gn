@@ -1,4 +1,4 @@
---- components/gwp_asan/BUILD.gn.orig	2021-03-12 23:57:22 UTC
+--- components/gwp_asan/BUILD.gn.orig	2021-04-14 18:40:59 UTC
 +++ components/gwp_asan/BUILD.gn
 @@ -20,4 +20,7 @@ test("gwp_asan_unittests") {
        "//components/gwp_asan/crash_handler:unit_tests",

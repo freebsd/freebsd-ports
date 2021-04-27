@@ -1,6 +1,6 @@
---- ui/views/controls/label.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/views/controls/label.cc.orig	2021-04-14 18:41:39 UTC
 +++ ui/views/controls/label.cc
-@@ -806,7 +806,7 @@ bool Label::OnMousePressed(const ui::MouseEvent& event
+@@ -817,7 +817,7 @@ bool Label::OnMousePressed(const ui::MouseEvent& event
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
    if (event.IsOnlyMiddleMouseButton() && GetFocusManager() && !had_focus)
      GetFocusManager()->SetFocusedView(this);
  #endif
-@@ -995,7 +995,7 @@ bool Label::PasteSelectionClipboard() {
+@@ -1006,7 +1006,7 @@ bool Label::PasteSelectionClipboard() {
  void Label::UpdateSelectionClipboard() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

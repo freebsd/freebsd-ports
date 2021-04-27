@@ -1,4 +1,4 @@
---- headless/lib/browser/headless_browser_main_parts.h.orig	2021-03-12 23:57:25 UTC
+--- headless/lib/browser/headless_browser_main_parts.h.orig	2021-04-14 18:41:04 UTC
 +++ headless/lib/browser/headless_browser_main_parts.h
 @@ -37,7 +37,7 @@ class HeadlessBrowserMainParts : public content::Brows
  #if defined(OS_MAC)

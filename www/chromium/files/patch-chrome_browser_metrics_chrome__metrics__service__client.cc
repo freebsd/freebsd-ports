@@ -1,6 +1,6 @@
---- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
-@@ -697,10 +697,10 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -707,10 +707,10 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \
@@ -13,7 +13,7 @@
          // BUILDFLAG(IS_CHROMEOS_LACROS))
  
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -978,7 +978,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
+@@ -998,7 +998,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \

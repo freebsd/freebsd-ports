@@ -1,4 +1,4 @@
---- chrome/browser/media/webrtc/webrtc_logging_controller.h.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/media/webrtc/webrtc_logging_controller.h.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/media/webrtc/webrtc_logging_controller.h
 @@ -129,13 +129,13 @@ class WebRtcLoggingController
                           size_t web_app_id,

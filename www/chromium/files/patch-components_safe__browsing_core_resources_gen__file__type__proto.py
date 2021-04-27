@@ -1,4 +1,4 @@
---- components/safe_browsing/core/resources/gen_file_type_proto.py.orig	2021-03-12 23:57:23 UTC
+--- components/safe_browsing/core/resources/gen_file_type_proto.py.orig	2021-04-14 18:41:00 UTC
 +++ components/safe_browsing/core/resources/gen_file_type_proto.py
 @@ -31,6 +31,7 @@ def PlatformTypes():
      "android": download_file_types_pb2.DownloadFileType.PLATFORM_ANDROID,

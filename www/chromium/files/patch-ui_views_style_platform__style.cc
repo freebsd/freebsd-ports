@@ -1,4 +1,4 @@
---- ui/views/style/platform_style.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/views/style/platform_style.cc.orig	2021-04-14 18:41:39 UTC
 +++ ui/views/style/platform_style.cc
 @@ -58,7 +58,7 @@ const View::FocusBehavior PlatformStyle::kDefaultFocus
  const bool PlatformStyle::kAdjustBubbleIfOffscreen =

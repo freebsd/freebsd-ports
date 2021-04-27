@@ -1,4 +1,4 @@
---- net/url_request/url_fetcher.h.orig	2021-03-12 23:57:27 UTC
+--- net/url_request/url_fetcher.h.orig	2021-04-14 18:41:07 UTC
 +++ net/url_request/url_fetcher.h
 @@ -352,8 +352,8 @@ class NET_EXPORT URLFetcher {
    // annotations on Linux & Windows.

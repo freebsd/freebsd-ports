@@ -1,4 +1,4 @@
---- ui/gfx/mojom/buffer_types_mojom_traits.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/gfx/mojom/buffer_types_mojom_traits.cc.orig	2021-04-14 18:41:39 UTC
 +++ ui/gfx/mojom/buffer_types_mojom_traits.cc
 @@ -33,7 +33,7 @@ gfx::mojom::GpuMemoryBufferPlatformHandlePtr StructTra
        return gfx::mojom::GpuMemoryBufferPlatformHandle::NewSharedMemoryHandle(

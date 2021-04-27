@@ -1,4 +1,4 @@
---- components/viz/host/host_display_client.h.orig	2021-03-12 23:57:23 UTC
+--- components/viz/host/host_display_client.h.orig	2021-04-14 18:41:02 UTC
 +++ components/viz/host/host_display_client.h
 @@ -46,7 +46,7 @@ class VIZ_HOST_EXPORT HostDisplayClient : public mojom
  

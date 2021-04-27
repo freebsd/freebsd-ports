@@ -1,6 +1,6 @@
---- components/download/internal/common/base_file.cc.orig	2021-03-12 23:57:22 UTC
+--- components/download/internal/common/base_file.cc.orig	2021-04-14 18:40:59 UTC
 +++ components/download/internal/common/base_file.cc
-@@ -604,7 +604,7 @@ GURL GetEffectiveAuthorityURL(const GURL& source_url,
+@@ -607,7 +607,7 @@ GURL GetEffectiveAuthorityURL(const GURL& source_url,
  
  }  // namespace
  
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS)
  
  DownloadInterruptReason BaseFile::AnnotateWithSourceInformationSync(
-@@ -623,7 +623,7 @@ DownloadInterruptReason BaseFile::AnnotateWithSourceIn
+@@ -626,7 +626,7 @@ DownloadInterruptReason BaseFile::AnnotateWithSourceIn
  
    return QuarantineFileResultToReason(result);
  }

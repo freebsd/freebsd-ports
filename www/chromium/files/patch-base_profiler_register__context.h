@@ -1,4 +1,4 @@
---- base/profiler/register_context.h.orig	2021-03-12 23:57:15 UTC
+--- base/profiler/register_context.h.orig	2021-04-14 18:40:48 UTC
 +++ base/profiler/register_context.h
 @@ -17,7 +17,7 @@
  #include <windows.h>

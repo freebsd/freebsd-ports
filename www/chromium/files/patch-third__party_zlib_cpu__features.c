@@ -1,4 +1,4 @@
---- third_party/zlib/cpu_features.c.orig	2021-03-12 23:57:47 UTC
+--- third_party/zlib/cpu_features.c.orig	2021-04-14 18:41:36 UTC
 +++ third_party/zlib/cpu_features.c
 @@ -31,11 +31,20 @@ int ZLIB_INTERNAL x86_cpu_enable_simd = 0;
  

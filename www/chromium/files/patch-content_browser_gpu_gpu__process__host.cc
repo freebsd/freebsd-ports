@@ -1,4 +1,4 @@
---- content/browser/gpu/gpu_process_host.cc.orig	2021-03-12 23:57:24 UTC
+--- content/browser/gpu/gpu_process_host.cc.orig	2021-04-14 18:41:02 UTC
 +++ content/browser/gpu/gpu_process_host.cc
 @@ -230,8 +230,8 @@ static const char* const kSwitchNames[] = {
      sandbox::policy::switches::kNoSandbox,
@@ -11,7 +11,7 @@
      switches::kDisableDevShmUsage,
  #endif
  #if defined(OS_WIN)
-@@ -1143,7 +1143,7 @@ bool GpuProcessHost::LaunchGpuProcess() {
+@@ -1157,7 +1157,7 @@ bool GpuProcessHost::LaunchGpuProcess() {
    std::unique_ptr<base::CommandLine> cmd_line =
        std::make_unique<base::CommandLine>(base::CommandLine::NO_PROGRAM);
  #else

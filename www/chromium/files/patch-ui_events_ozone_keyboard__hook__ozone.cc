@@ -1,4 +1,4 @@
---- ui/events/ozone/keyboard_hook_ozone.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/events/ozone/keyboard_hook_ozone.cc.orig	2021-04-14 18:41:39 UTC
 +++ ui/events/ozone/keyboard_hook_ozone.cc
 @@ -29,7 +29,7 @@ bool KeyboardHookOzone::RegisterHook() {
    return true;

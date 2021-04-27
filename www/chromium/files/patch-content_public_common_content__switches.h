@@ -1,6 +1,6 @@
---- content/public/common/content_switches.h.orig	2021-03-12 23:57:24 UTC
+--- content/public/common/content_switches.h.orig	2021-04-14 18:41:03 UTC
 +++ content/public/common/content_switches.h
-@@ -245,7 +245,7 @@ CONTENT_EXPORT extern const char kWebXrRuntimeOrientat
+@@ -246,7 +246,7 @@ CONTENT_EXPORT extern const char kWebXrRuntimeOrientat
  CONTENT_EXPORT extern const char kWebXrRuntimeOpenXr[];
  CONTENT_EXPORT extern const char kWebXrRuntimeWMR[];
  

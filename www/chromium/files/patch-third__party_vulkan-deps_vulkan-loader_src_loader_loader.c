@@ -1,4 +1,4 @@
---- third_party/vulkan-deps/vulkan-loader/src/loader/loader.c.orig	2021-03-13 00:03:46 UTC
+--- third_party/vulkan-deps/vulkan-loader/src/loader/loader.c.orig	2021-04-14 18:43:13 UTC
 +++ third_party/vulkan-deps/vulkan-loader/src/loader/loader.c
 @@ -253,7 +253,7 @@ void *loader_device_heap_realloc(const struct loader_d
  }

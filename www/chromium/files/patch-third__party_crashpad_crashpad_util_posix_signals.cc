@@ -1,4 +1,4 @@
---- third_party/crashpad/crashpad/util/posix/signals.cc.orig	2021-03-12 23:57:45 UTC
+--- third_party/crashpad/crashpad/util/posix/signals.cc.orig	2021-04-14 18:41:34 UTC
 +++ third_party/crashpad/crashpad/util/posix/signals.cc
 @@ -228,8 +228,12 @@ bool Signals::WillSignalReraiseAutonomously(const sigi
           // remains. See 10.12.3 xnu-3789.41.3/bsd/kern/kern_sig.c

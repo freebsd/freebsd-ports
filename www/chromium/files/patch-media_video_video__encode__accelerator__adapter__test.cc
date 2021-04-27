@@ -1,4 +1,4 @@
---- media/video/video_encode_accelerator_adapter_test.cc.orig	2021-03-12 23:57:27 UTC
+--- media/video/video_encode_accelerator_adapter_test.cc.orig	2021-04-14 18:41:06 UTC
 +++ media/video/video_encode_accelerator_adapter_test.cc
 @@ -285,7 +285,7 @@ TEST_P(VideoEncodeAcceleratorAdapterTest, TwoFramesRes
  

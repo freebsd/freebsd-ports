@@ -1,4 +1,4 @@
---- content/browser/renderer_host/pepper/pepper_file_io_host.cc.orig	2021-03-12 23:57:24 UTC
+--- content/browser/renderer_host/pepper/pepper_file_io_host.cc.orig	2021-04-14 18:41:02 UTC
 +++ content/browser/renderer_host/pepper/pepper_file_io_host.cc
 @@ -437,7 +437,7 @@ void PepperFileIOHost::OnLocalFileOpened(
      ppapi::host::ReplyMessageContext reply_context,

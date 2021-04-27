@@ -1,4 +1,4 @@
---- extensions/shell/browser/shell_extensions_api_client.h.orig	2021-03-12 23:57:25 UTC
+--- extensions/shell/browser/shell_extensions_api_client.h.orig	2021-04-14 18:41:04 UTC
 +++ extensions/shell/browser/shell_extensions_api_client.h
 @@ -36,7 +36,7 @@ class ShellExtensionsAPIClient : public ExtensionsAPIC
        const override;

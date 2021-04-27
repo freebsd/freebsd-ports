@@ -1,6 +1,6 @@
---- chrome/app/BUILD.gn.orig	2021-03-12 23:57:16 UTC
+--- chrome/app/BUILD.gn.orig	2021-04-14 18:40:49 UTC
 +++ chrome/app/BUILD.gn
-@@ -143,7 +143,7 @@ static_library("test_support") {
+@@ -140,7 +140,7 @@ static_library("test_support") {
      "//v8:v8_headers",
    ]
  

@@ -1,4 +1,4 @@
---- chrome/browser/ui/browser_view_prefs.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/browser_view_prefs.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/ui/browser_view_prefs.cc
 @@ -29,7 +29,7 @@ const char kTabStripLayoutType[] = "tab_strip_layout_t
  

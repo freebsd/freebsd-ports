@@ -1,4 +1,4 @@
---- mojo/public/js/mojo_bindings_resources.grd.orig	2021-03-12 23:57:27 UTC
+--- mojo/public/js/mojo_bindings_resources.grd.orig	2021-04-14 18:41:06 UTC
 +++ mojo/public/js/mojo_bindings_resources.grd
 @@ -85,7 +85,7 @@
            use_base_dir="false"

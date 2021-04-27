@@ -1,4 +1,4 @@
---- content/renderer/renderer_main_platform_delegate_linux.cc.orig	2021-03-12 23:57:24 UTC
+--- content/renderer/renderer_main_platform_delegate_linux.cc.orig	2021-04-14 18:41:03 UTC
 +++ content/renderer/renderer_main_platform_delegate_linux.cc
 @@ -30,6 +30,7 @@ void RendererMainPlatformDelegate::PlatformUninitializ
  }

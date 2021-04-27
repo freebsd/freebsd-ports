@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/bookmarks/bookmark_bar_view_test.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/views/bookmarks/bookmark_bar_view_test.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/ui/views/bookmarks/bookmark_bar_view_test.cc
 @@ -1856,7 +1856,7 @@ class BookmarkBarViewTest20 : public BookmarkBarViewEv
    }

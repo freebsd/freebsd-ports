@@ -1,6 +1,6 @@
---- ui/strings/app_locale_settings.grd.orig	2021-03-12 23:57:48 UTC
+--- ui/strings/app_locale_settings.grd.orig	2021-04-14 18:41:39 UTC
 +++ ui/strings/app_locale_settings.grd
-@@ -217,7 +217,7 @@
+@@ -223,7 +223,7 @@
            75%
          </message>
        </if>

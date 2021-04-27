@@ -1,4 +1,4 @@
---- components/viz/test/fake_output_surface.cc.orig	2021-03-12 23:57:23 UTC
+--- components/viz/test/fake_output_surface.cc.orig	2021-04-14 18:41:02 UTC
 +++ components/viz/test/fake_output_surface.cc
 @@ -118,7 +118,7 @@ gfx::OverlayTransform FakeOutputSurface::GetDisplayTra
  

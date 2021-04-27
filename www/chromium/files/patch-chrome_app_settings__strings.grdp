@@ -1,4 +1,4 @@
---- chrome/app/settings_strings.grdp.orig	2021-03-12 23:57:17 UTC
+--- chrome/app/settings_strings.grdp.orig	2021-04-14 18:40:52 UTC
 +++ chrome/app/settings_strings.grdp
 @@ -117,7 +117,7 @@
        Theme

@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/ctrl_c_handler.cc.orig	2021-03-15 13:19:30 UTC
+--- third_party/perfetto/src/base/ctrl_c_handler.cc.orig	2021-04-14 18:43:06 UTC
 +++ third_party/perfetto/src/base/ctrl_c_handler.cc
 @@ -51,7 +51,8 @@ void InstallCtrCHandler(CtrlCHandlerFunction handler) 
    ::SetConsoleCtrlHandler(trampoline, true);

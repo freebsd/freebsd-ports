@@ -1,4 +1,4 @@
---- components/security_interstitials/content/utils.cc.orig	2021-03-12 23:57:23 UTC
+--- components/security_interstitials/content/utils.cc.orig	2021-04-14 18:41:00 UTC
 +++ components/security_interstitials/content/utils.cc
 @@ -32,7 +32,7 @@ void LaunchDateAndTimeSettings() {
  #if defined(OS_ANDROID)

@@ -1,4 +1,4 @@
---- base/base_switches.h.orig	2021-03-12 23:57:15 UTC
+--- base/base_switches.h.orig	2021-04-14 18:40:48 UTC
 +++ base/base_switches.h
 @@ -41,8 +41,8 @@ extern const char kDisableUsbKeyboardDetect[];
  
@@ -18,5 +18,5 @@
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  extern const char kEnableThreadInstructionCount[];
- #endif
  
+ // TODO(crbug.com/1176772): Remove kEnableCrashpad and IsCrashpadEnabled() when

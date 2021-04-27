@@ -1,4 +1,4 @@
---- chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc
 @@ -105,6 +105,12 @@ void WiredDisplayMediaRouteProvider::CreateRoute(
      bool off_the_record,

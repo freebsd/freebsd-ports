@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/subprocess_posix.cc.orig	2021-03-15 13:21:33 UTC
+--- third_party/perfetto/src/base/subprocess_posix.cc.orig	2021-04-14 18:43:06 UTC
 +++ third_party/perfetto/src/base/subprocess_posix.cc
 @@ -20,7 +20,8 @@
  

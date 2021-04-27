@@ -1,4 +1,4 @@
---- headless/lib/headless_content_main_delegate.cc.orig	2021-03-12 23:57:25 UTC
+--- headless/lib/headless_content_main_delegate.cc.orig	2021-04-14 18:41:04 UTC
 +++ headless/lib/headless_content_main_delegate.cc
 @@ -326,7 +326,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
      const base::CommandLine& command_line) {

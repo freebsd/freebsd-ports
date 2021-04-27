@@ -1,6 +1,6 @@
---- chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc.orig	2021-04-14 18:40:54 UTC
 +++ chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc
-@@ -43,9 +43,9 @@
+@@ -45,9 +45,9 @@
  #include "chrome/browser/policy/browser_dm_token_storage_mac.h"
  #endif  // defined(OS_MAC)
  
@@ -12,7 +12,7 @@
  
  #if defined(OS_WIN)
  #include "chrome/browser/policy/browser_dm_token_storage_win.h"
-@@ -176,7 +176,7 @@ void ChromeBrowserCloudManagementControllerDesktop::
+@@ -178,7 +178,7 @@ void ChromeBrowserCloudManagementControllerDesktop::
  
  #if defined(OS_MAC)
    storage_delegate = std::make_unique<BrowserDMTokenStorageMac>();

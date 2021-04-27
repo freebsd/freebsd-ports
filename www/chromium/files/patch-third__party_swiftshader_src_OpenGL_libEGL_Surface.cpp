@@ -1,4 +1,4 @@
---- third_party/swiftshader/src/OpenGL/libEGL/Surface.cpp.orig	2021-03-13 00:03:40 UTC
+--- third_party/swiftshader/src/OpenGL/libEGL/Surface.cpp.orig	2021-04-14 18:43:08 UTC
 +++ third_party/swiftshader/src/OpenGL/libEGL/Surface.cpp
 @@ -357,7 +357,7 @@ bool WindowSurface::checkForResize()
  

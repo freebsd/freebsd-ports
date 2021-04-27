@@ -1,4 +1,4 @@
---- chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.js.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.js.orig	2021-04-14 18:40:54 UTC
 +++ chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.js
 @@ -23,7 +23,7 @@ export class AppearanceBrowserProxy {
  

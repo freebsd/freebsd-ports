@@ -1,4 +1,4 @@
---- chrome/app/theme/chrome_unscaled_resources.grd.orig	2021-03-12 23:57:17 UTC
+--- chrome/app/theme/chrome_unscaled_resources.grd.orig	2021-04-14 18:40:52 UTC
 +++ chrome/app/theme/chrome_unscaled_resources.grd
 @@ -18,7 +18,7 @@
          <include name="IDR_PRODUCT_LOGO_64" file="google_chrome/product_logo_64.png" type="BINDATA" />

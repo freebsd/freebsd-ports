@@ -1,4 +1,4 @@
---- ui/base/ime/init/input_method_initializer.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/base/ime/init/input_method_initializer.cc.orig	2021-04-14 18:41:37 UTC
 +++ ui/base/ime/init/input_method_initializer.cc
 @@ -11,7 +11,7 @@
  

@@ -1,6 +1,6 @@
---- chrome/browser/sync/profile_sync_service_factory.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/sync/profile_sync_service_factory.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/sync/profile_sync_service_factory.cc
-@@ -217,7 +217,7 @@ KeyedService* ProfileSyncServiceFactory::BuildServiceI
+@@ -213,7 +213,7 @@ KeyedService* ProfileSyncServiceFactory::BuildServiceI
  // in lacros-chrome once build flag switch of lacros-chrome is
  // complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \
@@ -9,7 +9,7 @@
    syncer::SyncPrefs prefs(profile->GetPrefs());
    local_sync_backend_enabled = prefs.IsLocalSyncEnabled();
    UMA_HISTOGRAM_BOOLEAN("Sync.Local.Enabled", local_sync_backend_enabled);
-@@ -235,7 +235,7 @@ KeyedService* ProfileSyncServiceFactory::BuildServiceI
+@@ -231,7 +231,7 @@ KeyedService* ProfileSyncServiceFactory::BuildServiceI
  
      init_params.start_behavior = syncer::ProfileSyncService::AUTO_START;
    }

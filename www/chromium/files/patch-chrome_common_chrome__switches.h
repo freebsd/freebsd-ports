@@ -1,6 +1,6 @@
---- chrome/common/chrome_switches.h.orig	2021-03-12 23:57:19 UTC
+--- chrome/common/chrome_switches.h.orig	2021-04-14 18:40:56 UTC
 +++ chrome/common/chrome_switches.h
-@@ -255,7 +255,7 @@ extern const char kAllowNaClFileHandleAPI[];
+@@ -254,7 +254,7 @@ extern const char kAllowNaClFileHandleAPI[];
  extern const char kAllowNaClSocketAPI[];
  #endif
  

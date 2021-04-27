@@ -1,6 +1,6 @@
---- headless/lib/browser/headless_content_browser_client.cc.orig	2021-03-12 23:57:25 UTC
+--- headless/lib/browser/headless_content_browser_client.cc.orig	2021-04-14 18:41:04 UTC
 +++ headless/lib/browser/headless_content_browser_client.cc
-@@ -278,7 +278,7 @@ void HeadlessContentBrowserClient::AppendExtraCommandL
+@@ -279,7 +279,7 @@ void HeadlessContentBrowserClient::AppendExtraCommandL
                                              process_type, child_process_id);
    }
  

@@ -1,4 +1,4 @@
---- ui/gfx/gpu_memory_buffer.h.orig	2021-03-12 23:57:48 UTC
+--- ui/gfx/gpu_memory_buffer.h.orig	2021-04-14 18:41:39 UTC
 +++ ui/gfx/gpu_memory_buffer.h
 @@ -16,7 +16,7 @@
  #include "ui/gfx/gfx_export.h"

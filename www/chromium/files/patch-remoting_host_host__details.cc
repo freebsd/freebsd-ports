@@ -1,4 +1,4 @@
---- remoting/host/host_details.cc.orig	2021-03-12 23:57:28 UTC
+--- remoting/host/host_details.cc.orig	2021-04-14 18:41:08 UTC
 +++ remoting/host/host_details.cc
 @@ -25,6 +25,8 @@ std::string GetHostOperatingSystemName() {
    return "ChromeOS";

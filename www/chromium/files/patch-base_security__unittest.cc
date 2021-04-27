@@ -1,4 +1,4 @@
---- base/security_unittest.cc.orig	2021-03-12 23:57:15 UTC
+--- base/security_unittest.cc.orig	2021-04-14 18:40:48 UTC
 +++ base/security_unittest.cc
 @@ -61,7 +61,7 @@ NOINLINE Type HideValueFromCompiler(volatile Type valu
  void OverflowTestsSoftExpectTrue(bool overflow_detected) {

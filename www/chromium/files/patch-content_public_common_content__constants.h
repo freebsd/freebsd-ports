@@ -1,4 +1,4 @@
---- content/public/common/content_constants.h.orig	2021-03-12 23:57:24 UTC
+--- content/public/common/content_constants.h.orig	2021-04-14 18:41:03 UTC
 +++ content/public/common/content_constants.h
 @@ -64,7 +64,7 @@ CONTENT_EXPORT extern const char kCorsExemptPurposeHea
  // it at run time.

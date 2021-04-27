@@ -1,4 +1,4 @@
---- components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h.orig	2021-03-12 23:57:23 UTC
+--- components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h.orig	2021-04-14 18:41:00 UTC
 +++ components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h
 @@ -20,7 +20,7 @@
  #include "mojo/public/cpp/bindings/pending_receiver.h"

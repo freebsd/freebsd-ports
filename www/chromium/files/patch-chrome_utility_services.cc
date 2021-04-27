@@ -1,6 +1,6 @@
---- chrome/utility/services.cc.orig	2021-03-12 23:57:21 UTC
+--- chrome/utility/services.cc.orig	2021-04-14 18:40:58 UTC
 +++ chrome/utility/services.cc
-@@ -76,7 +76,7 @@
+@@ -84,7 +84,7 @@
  #endif
  
  #if BUILDFLAG(ENABLE_PRINTING)
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS)
  #include "chrome/services/printing/print_backend_service_impl.h"
  #include "chrome/services/printing/public/mojom/print_backend_service.mojom.h"
-@@ -227,7 +227,7 @@ auto RunPaintPreviewCompositor(
+@@ -251,7 +251,7 @@ auto RunPaintPreviewCompositor(
  #endif  // BUILDFLAG(ENABLE_PAINT_PREVIEW)
  
  #if BUILDFLAG(ENABLE_PRINTING)
@@ -18,7 +18,7 @@
      defined(OS_CHROMEOS)
  auto RunPrintBackendService(
      mojo::PendingReceiver<printing::mojom::PrintBackendService> receiver) {
-@@ -335,7 +335,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -374,7 +374,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  #endif
  
  #if BUILDFLAG(ENABLE_PRINTING)

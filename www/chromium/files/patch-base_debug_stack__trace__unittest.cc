@@ -1,4 +1,4 @@
---- base/debug/stack_trace_unittest.cc.orig	2021-03-12 23:57:15 UTC
+--- base/debug/stack_trace_unittest.cc.orig	2021-04-14 18:40:48 UTC
 +++ base/debug/stack_trace_unittest.cc
 @@ -88,6 +88,7 @@ TEST_F(StackTraceTest, OutputToStream) {
              std::string::npos)

@@ -1,4 +1,4 @@
---- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2021-03-12 23:57:26 UTC
+--- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2021-04-14 18:41:05 UTC
 +++ media/mojo/mojom/video_frame_mojom_traits.cc
 @@ -21,9 +21,9 @@
  #include "ui/gfx/mojom/color_space_mojom_traits.h"
@@ -21,7 +21,7 @@
    if (input->storage_type() == media::VideoFrame::STORAGE_DMABUFS) {
      std::vector<mojo::PlatformHandle> dmabuf_fds;
  
-@@ -166,7 +166,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
+@@ -167,7 +167,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
          shared_buffer_data.TakeFrameData(),
          shared_buffer_data.frame_data_size(), std::move(offsets),
          std::move(strides), timestamp);

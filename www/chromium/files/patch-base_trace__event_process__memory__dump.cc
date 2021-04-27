@@ -1,4 +1,4 @@
---- base/trace_event/process_memory_dump.cc.orig	2021-03-12 23:57:15 UTC
+--- base/trace_event/process_memory_dump.cc.orig	2021-04-14 18:40:48 UTC
 +++ base/trace_event/process_memory_dump.cc
 @@ -101,7 +101,7 @@ base::Optional<size_t> ProcessMemoryDump::CountResiden
  #if defined(OS_WIN)

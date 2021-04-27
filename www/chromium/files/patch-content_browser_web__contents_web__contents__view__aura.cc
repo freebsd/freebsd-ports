@@ -1,6 +1,6 @@
---- content/browser/web_contents/web_contents_view_aura.cc.orig	2021-03-12 23:57:24 UTC
+--- content/browser/web_contents/web_contents_view_aura.cc.orig	2021-04-14 18:41:02 UTC
 +++ content/browser/web_contents/web_contents_view_aura.cc
-@@ -157,7 +157,7 @@ class WebDragSourceAura : public NotificationObserver 
+@@ -151,7 +151,7 @@ class WebDragSourceAura : public content::WebContentsO
    DISALLOW_COPY_AND_ASSIGN(WebDragSourceAura);
  };
  
@@ -9,7 +9,7 @@
  // Fill out the OSExchangeData with a file contents, synthesizing a name if
  // necessary.
  void PrepareDragForFileContents(const DropData& drop_data,
-@@ -243,7 +243,7 @@ void PrepareDragData(const DropData& drop_data,
+@@ -234,7 +234,7 @@ void PrepareDragData(const DropData& drop_data,
    if (!drop_data.download_metadata.empty())
      PrepareDragForDownload(drop_data, provider, web_contents);
  #endif
@@ -18,7 +18,7 @@
    // We set the file contents before the URL because the URL also sets file
    // contents (to a .URL shortcut).  We want to prefer file content data over
    // a shortcut so we add it first.
-@@ -1213,7 +1213,7 @@ void WebContentsViewAura::OnMouseEvent(ui::MouseEvent*
+@@ -1209,7 +1209,7 @@ void WebContentsViewAura::OnMouseEvent(ui::MouseEvent*
      // Linux window managers like to handle raise-on-click themselves.  If we
      // raise-on-click manually, this may override user settings that prevent
      // focus-stealing.
