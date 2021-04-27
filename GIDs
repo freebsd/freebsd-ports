@@ -238,7 +238,7 @@ victoria-metrics:*:289:
 # free: 296
 # free: 297
 # free: 298
-# free: 299
+owncast:*:299:
 backuppc:*:300:
 # free: 301
 netdata:*:302:

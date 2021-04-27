@@ -1,0 +1,7 @@
+A self-hosted minimalistic streaming service written in Go.
+
+It's designed for a single streamer to host his own streams.
+You can utilize S3 compatible object storage to distribute
+your stream and lower your own bandwidth needs.
+
+WWW: https://owncast.online

@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+You can activate your owncast server by typing
+sysrc owncast_enable="YES"
+service owncast start
+
+Your server is listening via http on port 8080 just point your browser to your
+http://<ip_address>:8080 to configure it.
+
+It is recommended to use a reverse proxy (eg. nginx) to serve your owncast
+instance via https - see https://owncast.online/docs/sslproxies/ for more info
+EOM
+}
+]
