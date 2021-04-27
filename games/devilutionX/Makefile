@@ -1,5 +1,5 @@
 PORTNAME=	devilutionX
-PORTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
