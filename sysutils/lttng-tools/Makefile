@@ -18,8 +18,8 @@ BROKEN_FreeBSD_13=	ld: error: duplicate symbol: mi_lttng_element_load_override_u
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: mi_lttng_element_load_override_url
 
 LIB_DEPENDS=	libpopt.so:devel/popt \
-	    liburcu.so:sysutils/liburcu \
-	    liblttng-ust-ctl.so:sysutils/lttng-ust
+		liburcu.so:sysutils/liburcu \
+		liblttng-ust-ctl.so:sysutils/lttng-ust
 
 USES=		autoreconf bison compiler:c11 gnome libtool localbase pathfix \
 		pkgconfig shebangfix tar:bzip2
@@ -28,7 +28,7 @@ USE_GNOME=	libxml2
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=	--with-lttng-ust-prefix=${LOCALBASE} \
-	    --disable-maintainer-mode
+		--disable-maintainer-mode
 INSTALL_TARGET=		install-strip
 
 OPTIONS_DEFINE=	DOCS
