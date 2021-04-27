@@ -1,6 +1,6 @@
 PORTNAME=	step-certificates
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.15.11
+DISTVERSION=	0.15.14
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
