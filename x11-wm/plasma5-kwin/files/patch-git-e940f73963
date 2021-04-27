@@ -1,0 +1,104 @@
+diff --git libinput/context.cpp libinput/context.cpp
+index 00aa98490..f239c8967 100644
+--- libinput/context.cpp
++++ libinput/context.cpp
+@@ -63,6 +63,13 @@ bool Context::assignSeat(const char *seat)
+     if (!isValid()) {
+         return false;
+     }
++#if defined(Q_OS_FREEBSD)
++    // On FreeBSD, seat-assignment does work; when assigning
++    // to a different seat, no input devices are ever reported.
++    // Using the default seat **does** return devices, so
++    // use that instead.
++    seat = "seat0";
++#endif
+     return libinput_udev_assign_seat(m_libinput, seat) == 0;
+ }
+ 
+diff --git logind.cpp logind.cpp
+index cf5266b68..da77a3a59 100644
+--- logind.cpp
++++ logind.cpp
+@@ -356,6 +356,11 @@ void LogindIntegration::releaseControl()
+     emit hasSessionControlChanged(false);
+ }
+ 
++static QVariantList fromRDev(const dev_t rdev)
++{
++    return QVariantList({quint32(major(rdev)), quint32(minor(rdev))});
++}
++
+ int LogindIntegration::takeDevice(const char *path)
+ {
+     struct stat st;
+@@ -367,7 +372,7 @@ int LogindIntegration::takeDevice(const char *path)
+                                                           m_sessionPath,
+                                                           m_sessionControllerSessionInterface,
+                                                           QStringLiteral("TakeDevice"));
+-    message.setArguments(QVariantList({QVariant(major(st.st_rdev)), QVariant(minor(st.st_rdev))}));
++    message.setArguments(fromRDev(st.st_rdev));
+     // intended to be a blocking call
+     QDBusMessage reply = m_bus.call(message);
+     if (reply.type() == QDBusMessage::ErrorMessage) {
+@@ -389,7 +394,7 @@ void LogindIntegration::releaseDevice(int fd)
+                                                               m_sessionPath,
+                                                               m_sessionControllerSessionInterface,
+                                                               QStringLiteral("ReleaseDevice"));
+-        message.setArguments(QVariantList({QVariant(major(st.st_rdev)), QVariant(minor(st.st_rdev))}));
++        message.setArguments(fromRDev(st.st_rdev));
+         m_bus.asyncCall(message);
+     }
+     close(fd);
+diff --git main_wayland.cpp main_wayland.cpp
+index b73ed09c9..a59dba849 100644
+--- main_wayland.cpp
++++ main_wayland.cpp
+@@ -776,6 +776,15 @@ int main(int argc, char * argv[])
+     a.platform()->setInitialOutputCount(outputCount);
+ 
+     QObject::connect(&a, &KWin::Application::workspaceCreated, server, &KWin::WaylandServer::initWorkspace);
++
++    // If startup doesn't complete within 20 seconds, exit rather than hanging
++    // around forever (e.g. if workspace creation can't happen due to DBus errors)
++    QTimer* startupTimeout = new QTimer;
++    QObject::connect(startupTimeout, &QTimer::timeout, [&](){ a.exit(2); });
++    QObject::connect(&a, &KWin::Application::workspaceCreated, [&](){ startupTimeout->stop(); delete startupTimeout; });
++    startupTimeout->setSingleShot(true);
++    startupTimeout->start(std::chrono::seconds(20));
++
+     if (!server->socketName().isEmpty()) {
+         environment.insert(QStringLiteral("WAYLAND_DISPLAY"), server->socketName());
+     }
+diff --git plugins/platforms/drm/drm_backend.cpp plugins/platforms/drm/drm_backend.cpp
+index cdf4bf689..0eb6d45d3 100644
+--- plugins/platforms/drm/drm_backend.cpp
++++ plugins/platforms/drm/drm_backend.cpp
+@@ -244,7 +244,7 @@ void DrmBackend::pageFlipHandler(int fd, unsigned int frame, unsigned int sec, u
+ 
+     std::chrono::nanoseconds timestamp = convertTimestamp(gpu->presentationClock(),
+                                                           CLOCK_MONOTONIC,
+-                                                          { sec, usec * 1000 });
++                                                          { static_cast<time_t>(sec), static_cast<long>(usec * 1000) });
+     if (timestamp == std::chrono::nanoseconds::zero()) {
+         qCDebug(KWIN_DRM, "Got invalid timestamp (sec: %u, usec: %u) on output %s",
+                 sec, usec, qPrintable(output->name()));
+diff --git tabletmodemanager.cpp tabletmodemanager.cpp
+index e23d91ec0..3b20cc4b2 100644
+--- tabletmodemanager.cpp
++++ tabletmodemanager.cpp
+@@ -60,9 +60,11 @@ public:
+         : QObject(parent)
+         , m_parent(parent)
+     {
+-        auto c = LibInput::Connection::self();
+-        connect(c, &LibInput::Connection::deviceAdded, this, &TabletModeTouchpadRemovedSpy::refresh);
+-        connect(c, &LibInput::Connection::deviceRemoved, this, &TabletModeTouchpadRemovedSpy::refresh);
++        auto c = LibInput::Connection::self(); // May be nullptr
++        if (c) {
++            connect(c, &LibInput::Connection::deviceAdded, this, &TabletModeTouchpadRemovedSpy::refresh);
++            connect(c, &LibInput::Connection::deviceRemoved, this, &TabletModeTouchpadRemovedSpy::refresh);
++        }
+ 
+         check();
+     }
