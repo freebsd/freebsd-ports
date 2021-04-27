@@ -76,6 +76,57 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9fba80e0-a771-11eb-97a0-e09467587c17">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>90.0.4430.93</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/04/stable-channel-update-for-desktop_26.html">
+	  <p>This release contains 9 security fixes, including:</p>
+	  <ul>
+	    <li>[1199345] High CVE-2021-21227: Insufficient data validation in
+	      V8. Reported by Gengming Liu of Singular Security Lab on
+	      2021-04-15</li>
+	    <li>[1175058] High CVE-2021-21232: Use after free in Dev Tools.
+	      Reported by Abdulrahman Alqabandi, Microsoft Browser Vulnerability
+	      Research on 2021-02-05</li>
+	    <li>[1182937] High CVE-2021-21233: Heap buffer overflow in ANGLE.
+	      Reported by Omair on 2021-02-26</li>
+	    <li>[1139156] Medium CVE-2021-21228: Insufficient policy enforcement
+	      in extensions. Reported by Rob Wu on 2020-10-16</li>
+	    <li>[$TBD][1198165] Medium CVE-2021-21229: Incorrect security UI in
+	      downloads. Reported by Mohit Raj (shadow2639) on 2021-04-12</li>
+	    <li>[1198705] Medium CVE-2021-21230: Type Confusion in V8. Reported
+	      by Manfred Paul on 2021-04-13</li>
+	    <li>[1198696] Low CVE-2021-21231: Insufficient data validation in
+	      V8. Reported by Sergei Glazunov of Google Project Zero on
+	      2021-04-13</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-21227</cvename>
+      <cvename>CVE-2021-21228</cvename>
+      <cvename>CVE-2021-21229</cvename>
+      <cvename>CVE-2021-21230</cvename>
+      <cvename>CVE-2021-21231</cvename>
+      <cvename>CVE-2021-21232</cvename>
+      <cvename>CVE-2021-21233</cvename>
+      <url>https://chromereleases.googleblog.com/2021/04/stable-channel-update-for-desktop_26.html</url>
+    </references>
+    <dates>
+      <discovery>2021-04-26</discovery>
+      <entry>2021-04-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e4403051-a667-11eb-b9c9-6cc21735f730">
     <topic>sbibboleth-sp -- denial of service vulnerability</topic>
     <affects>
