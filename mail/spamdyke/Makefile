@@ -46,6 +46,7 @@ PORTDOCS=	Changelog.txt FAQ.html GNUGPL.txt INSTALL.txt \
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	checking for library containing SSL_library_init... no
 BROKEN_FreeBSD_13=	checking for library containing SSL_library_init... no
+BROKEN_FreeBSD_14=	checking for library containing SSL_library_init... no
 .endif
 
 post-patch:
