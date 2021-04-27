@@ -8,7 +8,6 @@ share/icons/hicolor/24x24/apps/homebank.png
 share/icons/hicolor/256x256/apps/homebank.png
 share/icons/hicolor/32x32/apps/homebank.png
 share/icons/hicolor/48x48/apps/homebank.png
-share/locale/af/LC_MESSAGES/homebank.mo
 share/locale/ar/LC_MESSAGES/homebank.mo
 share/locale/ast/LC_MESSAGES/homebank.mo
 share/locale/be/LC_MESSAGES/homebank.mo
@@ -30,6 +29,7 @@ share/locale/eu/LC_MESSAGES/homebank.mo
 share/locale/fa/LC_MESSAGES/homebank.mo
 share/locale/fi/LC_MESSAGES/homebank.mo
 share/locale/fr/LC_MESSAGES/homebank.mo
+share/locale/fr_CA/LC_MESSAGES/homebank.mo
 share/locale/gl/LC_MESSAGES/homebank.mo
 share/locale/he/LC_MESSAGES/homebank.mo
 share/locale/hr/LC_MESSAGES/homebank.mo
@@ -38,7 +38,6 @@ share/locale/id/LC_MESSAGES/homebank.mo
 share/locale/is/LC_MESSAGES/homebank.mo
 share/locale/it/LC_MESSAGES/homebank.mo
 share/locale/ja/LC_MESSAGES/homebank.mo
-share/locale/ka/LC_MESSAGES/homebank.mo
 share/locale/ko/LC_MESSAGES/homebank.mo
 share/locale/lt/LC_MESSAGES/homebank.mo
 share/locale/lv/LC_MESSAGES/homebank.mo
