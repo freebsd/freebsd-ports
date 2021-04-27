@@ -1,4 +1,4 @@
---- ui/aura/test/aura_test_helper.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/aura/test/aura_test_helper.cc.orig	2021-04-14 18:41:37 UTC
 +++ ui/aura/test/aura_test_helper.cc
 @@ -30,7 +30,7 @@
  #include "ui/wm/core/default_activation_client.h"

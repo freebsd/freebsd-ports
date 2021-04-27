@@ -1,4 +1,4 @@
---- content/browser/browser_main_loop.cc.orig	2021-03-12 23:57:24 UTC
+--- content/browser/browser_main_loop.cc.orig	2021-04-14 18:41:02 UTC
 +++ content/browser/browser_main_loop.cc
 @@ -368,7 +368,7 @@ std::unique_ptr<base::MemoryPressureMonitor> CreateMem
    if (chromeos::switches::MemoryPressureHandlingEnabled())
@@ -9,7 +9,7 @@
       !BUILDFLAG(IS_CHROMECAST))
    monitor = std::make_unique<util::MultiSourceMemoryPressureMonitor>();
  #endif
-@@ -566,7 +566,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -562,7 +562,7 @@ int BrowserMainLoop::EarlyInitialization() {
  
    // Up the priority of the UI thread unless it was already high (since Mac
    // and recent versions of Android (O+) do this automatically).
@@ -18,7 +18,7 @@
    if (base::FeatureList::IsEnabled(
            features::kBrowserUseDisplayThreadPriority) &&
        base::PlatformThread::GetCurrentThreadPriority() <
-@@ -576,7 +576,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -572,7 +572,7 @@ int BrowserMainLoop::EarlyInitialization() {
    }
  #endif  // !defined(OS_MAC)
  
@@ -27,7 +27,7 @@
      defined(OS_ANDROID)
    // We use quite a few file descriptors for our IPC as well as disk the disk
    // cache,and the default limit on the Mac is low (256), so bump it up.
-@@ -586,7 +586,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -582,7 +582,7 @@ int BrowserMainLoop::EarlyInitialization() {
    // users can easily hit this limit with many open tabs. Bump up the limit to
    // an arbitrarily high number. See https://crbug.com/539567
    base::IncreaseFdLimitTo(8192);

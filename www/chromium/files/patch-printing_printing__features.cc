@@ -1,6 +1,6 @@
---- printing/printing_features.cc.orig	2021-03-12 23:57:28 UTC
+--- printing/printing_features.cc.orig	2021-04-14 18:41:07 UTC
 +++ printing/printing_features.cc
-@@ -49,13 +49,13 @@ bool ShouldPrintUsingXps(bool source_is_pdf) {
+@@ -43,13 +43,13 @@ bool ShouldPrintUsingXps(bool source_is_pdf) {
  }
  #endif  // defined(OS_WIN)
  

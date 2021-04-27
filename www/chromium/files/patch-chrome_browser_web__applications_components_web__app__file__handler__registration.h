@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/components/web_app_file_handler_registration.h.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/web_applications/components/web_app_file_handler_registration.h.orig	2021-04-14 18:40:56 UTC
 +++ chrome/browser/web_applications/components/web_app_file_handler_registration.h
 @@ -38,7 +38,7 @@ void RegisterFileHandlersWithOs(const AppId& app_id,
  // If a shim app was required, also removes the shim app.

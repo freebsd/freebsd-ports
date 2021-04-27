@@ -1,4 +1,4 @@
---- chrome/browser/ui/test/test_browser_dialog.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/test/test_browser_dialog.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/ui/test/test_browser_dialog.cc
 @@ -117,7 +117,7 @@ bool TestBrowserDialog::VerifyUi() {
  // TODO(https://crbug.com/958242) support Mac for pixel tests.

@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/file_utils.cc.orig	2021-03-15 13:20:04 UTC
+--- third_party/perfetto/src/base/file_utils.cc.orig	2021-04-14 18:43:06 UTC
 +++ third_party/perfetto/src/base/file_utils.cc
 @@ -148,8 +148,9 @@ ssize_t WriteAllHandle(PlatformHandle h, const void* b
  

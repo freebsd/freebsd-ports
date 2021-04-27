@@ -1,4 +1,4 @@
---- components/storage_monitor/removable_device_constants.h.orig	2021-03-12 23:57:23 UTC
+--- components/storage_monitor/removable_device_constants.h.orig	2021-04-14 18:41:00 UTC
 +++ components/storage_monitor/removable_device_constants.h
 @@ -15,7 +15,7 @@ namespace storage_monitor {
  extern const char kFSUniqueIdPrefix[];

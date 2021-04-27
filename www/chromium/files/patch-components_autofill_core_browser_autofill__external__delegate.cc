@@ -1,4 +1,4 @@
---- components/autofill/core/browser/autofill_external_delegate.cc.orig	2021-03-12 23:57:21 UTC
+--- components/autofill/core/browser/autofill_external_delegate.cc.orig	2021-04-14 18:40:58 UTC
 +++ components/autofill/core/browser/autofill_external_delegate.cc
 @@ -128,7 +128,7 @@ void AutofillExternalDelegate::OnSuggestionsReturned(
  

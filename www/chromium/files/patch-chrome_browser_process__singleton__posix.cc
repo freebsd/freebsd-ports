@@ -1,4 +1,4 @@
---- chrome/browser/process_singleton_posix.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/process_singleton_posix.cc.orig	2021-04-14 18:40:54 UTC
 +++ chrome/browser/process_singleton_posix.cc
 @@ -95,12 +95,12 @@
  #include "net/base/network_interfaces.h"

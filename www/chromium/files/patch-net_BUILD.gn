@@ -1,4 +1,4 @@
---- net/BUILD.gn.orig	2021-03-12 23:57:27 UTC
+--- net/BUILD.gn.orig	2021-04-14 18:41:06 UTC
 +++ net/BUILD.gn
 @@ -100,7 +100,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
@@ -9,7 +9,7 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1252,6 +1252,16 @@ component("net") {
+@@ -1241,6 +1241,16 @@ component("net") {
        ]
      }
  
@@ -26,7 +26,7 @@
      if (is_mac) {
        sources += [
          "base/network_notification_thread_mac.cc",
-@@ -1388,7 +1398,7 @@ component("net") {
+@@ -1377,7 +1387,7 @@ component("net") {
        }
      }
  
@@ -35,7 +35,7 @@
        sources += [
          "base/network_change_notifier_posix.cc",
          "base/network_change_notifier_posix.h",
-@@ -1421,7 +1431,7 @@ component("net") {
+@@ -1410,7 +1420,7 @@ component("net") {
      }
  
      # Use getifaddrs() on POSIX platforms, except Linux.
@@ -44,7 +44,7 @@
        sources += [
          "base/network_interfaces_getifaddrs.cc",
          "base/network_interfaces_getifaddrs.h",
-@@ -4755,7 +4765,7 @@ test("net_unittests") {
+@@ -4746,7 +4756,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux and Android.

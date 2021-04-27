@@ -1,4 +1,4 @@
---- gpu/ipc/service/gpu_init.cc.orig	2021-03-12 23:57:25 UTC
+--- gpu/ipc/service/gpu_init.cc.orig	2021-04-14 18:41:04 UTC
 +++ gpu/ipc/service/gpu_init.cc
 @@ -108,7 +108,7 @@ void InitializePlatformOverlaySettings(GPUInfo* gpu_in
  }
@@ -81,7 +81,7 @@
    // The ContentSandboxHelper is currently the only one implementation of
    // GpuSandboxHelper and it has no dependency. Except on Linux where
    // VaapiWrapper checks the GL implementation to determine which display
-@@ -433,7 +433,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -444,7 +444,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
            command_line, gpu_feature_info_,
            gpu_preferences_.disable_software_rasterizer, false);
        if (gl_use_swiftshader_) {
@@ -90,7 +90,7 @@
          VLOG(1) << "Quit GPU process launch to fallback to SwiftShader cleanly "
                  << "on Linux";
          return false;
-@@ -448,7 +448,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -459,7 +459,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
                << "failed";
            return false;
          }
@@ -99,7 +99,7 @@
        }
      } else {  // gl_use_swiftshader_ == true
        switch (gpu_preferences_.use_vulkan) {
-@@ -524,7 +524,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -535,7 +535,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
  
    InitializePlatformOverlaySettings(&gpu_info_, gpu_feature_info_);
  
@@ -108,7 +108,7 @@
    // Driver may create a compatibility profile context when collect graphics
    // information on Linux platform. Try to collect graphics information
    // based on core profile context after disabling platform extensions.
-@@ -543,7 +543,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -554,7 +554,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
        return false;
      }
    }
@@ -117,7 +117,7 @@
  
    if (gl_use_swiftshader_) {
      AdjustInfoToSwiftShader();
-@@ -726,7 +726,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -737,7 +737,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
  
    InitializePlatformOverlaySettings(&gpu_info_, gpu_feature_info_);
  
@@ -126,7 +126,7 @@
    // Driver may create a compatibility profile context when collect graphics
    // information on Linux platform. Try to collect graphics information
    // based on core profile context after disabling platform extensions.
-@@ -747,7 +747,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -758,7 +758,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
        }
      }
    }

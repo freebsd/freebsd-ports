@@ -1,4 +1,4 @@
---- ui/base/x/x11_shm_image_pool.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/base/x/x11_shm_image_pool.cc.orig	2021-04-14 18:41:37 UTC
 +++ ui/base/x/x11_shm_image_pool.cc
 @@ -16,6 +16,7 @@
  #include "base/environment.h"

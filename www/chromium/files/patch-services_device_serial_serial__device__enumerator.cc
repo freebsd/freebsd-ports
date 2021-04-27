@@ -1,4 +1,4 @@
---- services/device/serial/serial_device_enumerator.cc.orig	2021-03-12 23:57:28 UTC
+--- services/device/serial/serial_device_enumerator.cc.orig	2021-04-14 18:41:08 UTC
 +++ services/device/serial/serial_device_enumerator.cc
 @@ -10,7 +10,7 @@
  #include "build/build_config.h"

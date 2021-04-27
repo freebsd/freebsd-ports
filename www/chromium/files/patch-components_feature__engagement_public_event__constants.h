@@ -1,4 +1,4 @@
---- components/feature_engagement/public/event_constants.h.orig	2021-03-12 23:57:22 UTC
+--- components/feature_engagement/public/event_constants.h.orig	2021-04-14 18:40:59 UTC
 +++ components/feature_engagement/public/event_constants.h
 @@ -12,16 +12,16 @@ namespace feature_engagement {
  namespace events {
@@ -20,7 +20,7 @@
      defined(OS_CHROMEOS)
  // A new tab was opened when 5 (or more) tabs were already open.
  extern const char kSixthTabOpened[];
-@@ -57,7 +57,7 @@ extern const char kWebUITabStripOpened[];
+@@ -62,7 +62,7 @@ extern const char kWebUITabStripOpened[];
  // The PWA was installed by the user.
  extern const char kDesktopPwaInstalled[];
  

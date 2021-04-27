@@ -1,6 +1,6 @@
---- chrome/browser/renderer_preferences_util.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/renderer_preferences_util.cc.orig	2021-04-14 18:40:54 UTC
 +++ chrome/browser/renderer_preferences_util.cc
-@@ -35,7 +35,7 @@
+@@ -38,7 +38,7 @@
  #include "ui/base/cocoa/defaults_utils.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/themes/theme_service.h"
  #include "chrome/browser/themes/theme_service_factory.h"
  #include "ui/views/linux_ui/linux_ui.h"
-@@ -154,7 +154,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
+@@ -167,7 +167,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
      prefs->caret_blink_interval = interval;
  #endif
  
@@ -18,7 +18,7 @@
    views::LinuxUI* linux_ui = views::LinuxUI::instance();
    if (linux_ui) {
      if (ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme()) {
-@@ -173,7 +173,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
+@@ -186,7 +186,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
    }
  #endif
  

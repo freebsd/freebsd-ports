@@ -1,4 +1,4 @@
---- third_party/perfetto/src/trace_processor/trace_processor_shell.cc.orig	2021-03-15 13:14:04 UTC
+--- third_party/perfetto/src/trace_processor/trace_processor_shell.cc.orig	2021-04-14 18:43:06 UTC
 +++ third_party/perfetto/src/trace_processor/trace_processor_shell.cc
 @@ -55,7 +55,8 @@
  

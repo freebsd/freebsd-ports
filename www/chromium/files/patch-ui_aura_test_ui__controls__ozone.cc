@@ -1,4 +1,4 @@
---- ui/aura/test/ui_controls_ozone.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/aura/test/ui_controls_ozone.cc.orig	2021-04-14 18:41:37 UTC
 +++ ui/aura/test/ui_controls_ozone.cc
 @@ -349,7 +349,7 @@ bool UIControlsOzone::ScreenDIPToHostPixels(gfx::Point
  // To avoid multiple definitions when use_x11 && use_ozone is true, disable this

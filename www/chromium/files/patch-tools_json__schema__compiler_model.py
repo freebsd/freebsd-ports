@@ -1,4 +1,4 @@
---- tools/json_schema_compiler/model.py.orig	2021-03-12 23:57:47 UTC
+--- tools/json_schema_compiler/model.py.orig	2021-04-14 18:41:36 UTC
 +++ tools/json_schema_compiler/model.py
 @@ -859,7 +859,7 @@ class Platforms(object):
    CHROMEOS = _PlatformInfo("chromeos")

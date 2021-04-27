@@ -1,4 +1,4 @@
---- chrome/browser/themes/theme_service_factory.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/themes/theme_service_factory.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/themes/theme_service_factory.cc
 @@ -25,7 +25,7 @@
  

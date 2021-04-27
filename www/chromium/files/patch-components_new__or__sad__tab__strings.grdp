@@ -1,4 +1,4 @@
---- components/new_or_sad_tab_strings.grdp.orig	2021-03-12 23:57:22 UTC
+--- components/new_or_sad_tab_strings.grdp.orig	2021-04-14 18:40:59 UTC
 +++ components/new_or_sad_tab_strings.grdp
 @@ -51,7 +51,7 @@
            Open page in a new Incognito window (⇧⌘N)

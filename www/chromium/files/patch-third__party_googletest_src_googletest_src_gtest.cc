@@ -1,4 +1,4 @@
---- third_party/googletest/src/googletest/src/gtest.cc.orig	2021-03-13 00:03:34 UTC
+--- third_party/googletest/src/googletest/src/gtest.cc.orig	2021-04-14 18:43:03 UTC
 +++ third_party/googletest/src/googletest/src/gtest.cc
 @@ -117,6 +117,7 @@
  

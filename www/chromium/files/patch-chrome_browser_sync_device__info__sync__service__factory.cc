@@ -1,4 +1,4 @@
---- chrome/browser/sync/device_info_sync_service_factory.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/sync/device_info_sync_service_factory.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/sync/device_info_sync_service_factory.cc
 @@ -47,12 +47,12 @@ class DeviceInfoSyncClient : public syncer::DeviceInfo
  // in lacros-chrome once build flag switch of lacros-chrome is

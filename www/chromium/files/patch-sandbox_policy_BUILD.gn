@@ -1,4 +1,4 @@
---- sandbox/policy/BUILD.gn.orig	2021-03-12 23:57:28 UTC
+--- sandbox/policy/BUILD.gn.orig	2021-04-14 18:41:08 UTC
 +++ sandbox/policy/BUILD.gn
 @@ -29,7 +29,7 @@ component("policy") {
      "//sandbox:common",

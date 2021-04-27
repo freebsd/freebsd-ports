@@ -1,6 +1,6 @@
---- ui/compositor/compositor_observer.h.orig	2021-03-12 23:57:48 UTC
+--- ui/compositor/compositor_observer.h.orig	2021-04-14 18:41:39 UTC
 +++ ui/compositor/compositor_observer.h
-@@ -46,11 +46,11 @@ class COMPOSITOR_EXPORT CompositorObserver {
+@@ -48,11 +48,11 @@ class COMPOSITOR_EXPORT CompositorObserver {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

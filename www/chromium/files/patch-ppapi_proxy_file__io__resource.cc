@@ -1,4 +1,4 @@
---- ppapi/proxy/file_io_resource.cc.orig	2021-03-12 23:57:28 UTC
+--- ppapi/proxy/file_io_resource.cc.orig	2021-04-14 18:41:07 UTC
 +++ ppapi/proxy/file_io_resource.cc
 @@ -284,17 +284,19 @@ int32_t FileIOResource::Write(int64_t offset,
  
@@ -24,7 +24,7 @@
      }
  
      if (increase > 0) {
-@@ -315,7 +317,7 @@ int32_t FileIOResource::Write(int64_t offset,
+@@ -314,7 +316,7 @@ int32_t FileIOResource::Write(int64_t offset,
        if (append)
          append_mode_write_amount_ += bytes_to_write;
        else

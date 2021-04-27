@@ -1,4 +1,4 @@
---- chrome/test/chromedriver/key_converter_unittest.cc.orig	2021-03-12 23:57:20 UTC
+--- chrome/test/chromedriver/key_converter_unittest.cc.orig	2021-04-14 18:40:56 UTC
 +++ chrome/test/chromedriver/key_converter_unittest.cc
 @@ -277,7 +277,7 @@ TEST(KeyConverter, AllShorthandKeys) {
        ->Generate(&key_events);

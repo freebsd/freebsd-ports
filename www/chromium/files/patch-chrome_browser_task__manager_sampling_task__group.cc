@@ -1,4 +1,4 @@
---- chrome/browser/task_manager/sampling/task_group.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/task_manager/sampling/task_group.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/task_manager/sampling/task_group.cc
 @@ -33,9 +33,9 @@ const int kBackgroundRefreshTypesMask =
  #if defined(OS_WIN)

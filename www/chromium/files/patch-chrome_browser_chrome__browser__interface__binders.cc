@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_interface_binders.cc.orig	2021-03-12 23:57:17 UTC
+--- chrome/browser/chrome_browser_interface_binders.cc.orig	2021-04-14 18:40:52 UTC
 +++ chrome/browser/chrome_browser_interface_binders.cc
-@@ -138,7 +138,7 @@
+@@ -144,7 +144,7 @@
  #include "mojo/public/cpp/bindings/self_owned_receiver.h"
  #endif  // defined(OS_ANDROID)
  
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS)
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
-@@ -835,7 +835,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -841,7 +841,7 @@ void PopulateChromeWebUIFrameBinders(
    }
  #endif
  

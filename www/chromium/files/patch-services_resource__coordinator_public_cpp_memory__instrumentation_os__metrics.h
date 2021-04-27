@@ -1,4 +1,4 @@
---- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig	2021-03-12 23:57:28 UTC
+--- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig	2021-04-14 18:41:08 UTC
 +++ services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
 @@ -45,9 +45,9 @@ class COMPONENT_EXPORT(
                                      mojom::RawOSMemDump*);

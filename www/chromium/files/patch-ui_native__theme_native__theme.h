@@ -1,4 +1,4 @@
---- ui/native_theme/native_theme.h.orig	2021-03-12 23:57:48 UTC
+--- ui/native_theme/native_theme.h.orig	2021-04-14 18:41:39 UTC
 +++ ui/native_theme/native_theme.h
 @@ -54,7 +54,7 @@ class NATIVE_THEME_EXPORT NativeTheme {
      kCheckbox,

@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.h.orig	2021-03-12 23:57:19 UTC
+--- chrome/common/chrome_features.h.orig	2021-04-14 18:40:56 UTC
 +++ chrome/common/chrome_features.h
-@@ -78,10 +78,10 @@ extern const base::Feature kAppShimNewCloseBehavior;
+@@ -81,10 +81,10 @@ extern const base::Feature kAppShimNewCloseBehavior;
  
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
  
@@ -13,7 +13,7 @@
  
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kBorealis;
-@@ -230,11 +230,11 @@ extern const base::Feature kEnableAmbientAuthenticatio
+@@ -243,11 +243,11 @@ extern const base::Feature kEnableAmbientAuthenticatio
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

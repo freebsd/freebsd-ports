@@ -1,4 +1,4 @@
---- chrome/browser/ui/task_manager/task_manager_table_model.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/task_manager/task_manager_table_model.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/ui/task_manager/task_manager_table_model.cc
 @@ -450,13 +450,13 @@ base::string16 TaskManagerTableModel::GetText(int row,
            ? stringifier_->backgrounded_string()

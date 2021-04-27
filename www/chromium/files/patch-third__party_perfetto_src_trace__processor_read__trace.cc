@@ -1,4 +1,4 @@
---- third_party/perfetto/src/trace_processor/read_trace.cc.orig	2021-03-15 13:13:26 UTC
+--- third_party/perfetto/src/trace_processor/read_trace.cc.orig	2021-04-14 18:43:06 UTC
 +++ third_party/perfetto/src/trace_processor/read_trace.cc
 @@ -33,7 +33,8 @@
  #include "protos/perfetto/trace/trace_packet.pbzero.h"

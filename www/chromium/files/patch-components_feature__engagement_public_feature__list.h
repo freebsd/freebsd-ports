@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.h.orig	2021-03-12 23:57:22 UTC
+--- components/feature_engagement/public/feature_list.h.orig	2021-04-14 18:40:59 UTC
 +++ components/feature_engagement/public/feature_list.h
-@@ -147,7 +147,7 @@ DEFINE_VARIATION_PARAM(kIPHDiscoverFeedHeaderFeature,
+@@ -148,7 +148,7 @@ DEFINE_VARIATION_PARAM(kIPHDiscoverFeedHeaderFeature,
                         "IPH_DiscoverFeedHeaderMenu");
  #endif  // defined(OS_IOS)
  
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS)
  DEFINE_VARIATION_PARAM(kIPHDesktopTabGroupsNewGroupFeature,
                         "IPH_DesktopTabGroupsNewGroup");
-@@ -159,7 +159,7 @@ DEFINE_VARIATION_PARAM(kIPHPasswordsAccountStorageFeat
+@@ -162,7 +162,7 @@ DEFINE_VARIATION_PARAM(kIPHReadingListDiscoveryFeature
  DEFINE_VARIATION_PARAM(kIPHReopenTabFeature, "IPH_ReopenTab");
  DEFINE_VARIATION_PARAM(kIPHWebUITabStripFeature, "IPH_WebUITabStrip");
  DEFINE_VARIATION_PARAM(kIPHDesktopPwaInstallFeature, "IPH_DesktopPwaInstall");
@@ -18,7 +18,7 @@
          // defined(OS_CHROMEOS)
  
  }  // namespace
-@@ -230,7 +230,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -234,7 +234,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHBadgedReadingListFeature),
          VARIATION_ENTRY(kIPHBadgedTranslateManualTriggerFeature),
          VARIATION_ENTRY(kIPHDiscoverFeedHeaderFeature),
@@ -27,7 +27,7 @@
      defined(OS_CHROMEOS)
          VARIATION_ENTRY(kIPHDesktopTabGroupsNewGroupFeature),
          VARIATION_ENTRY(kIPHFocusModeFeature),
-@@ -240,7 +240,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -245,7 +245,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHReopenTabFeature),
          VARIATION_ENTRY(kIPHWebUITabStripFeature),
          VARIATION_ENTRY(kIPHDesktopPwaInstallFeature),

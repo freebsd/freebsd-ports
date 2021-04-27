@@ -1,6 +1,6 @@
---- chrome/browser/flag_descriptions.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/flag_descriptions.cc.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/flag_descriptions.cc
-@@ -4772,7 +4772,7 @@ const char kEnableNewBadgeOnMenuItemsDescription[] =
+@@ -4949,7 +4949,7 @@ const char kEnableNewBadgeOnMenuItemsDescription[] =
  
  // Random platform combinations -----------------------------------------------
  
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS)
  
  const char kEnableMediaFeedsName[] = "Enables Media Feeds";
-@@ -4816,27 +4816,27 @@ const char kRemoteCopyProgressNotificationDescription[
+@@ -4993,20 +4993,20 @@ const char kRemoteCopyProgressNotificationDescription[
      "Enables progress notifications to be shown for the remote copy feature "
      "when receiving a message.";
  
@@ -26,23 +26,24 @@
      "If enabled, Chrome will scroll web pages on stylus drag.";
  
 -#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
-+#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) ||
++#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
          // defined(OS_CHROMEOS)
  
--#if defined(OS_CHROMEOS) || defined(OS_LINUX)
-+#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
- #if BUILDFLAG(USE_TCMALLOC)
- const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
- const char kDynamicTcmallocDescription[] =
-     "Allows tcmalloc to dynamically adjust tunables based on system resource "
-     "utilization.";
- #endif  // BUILDFLAG(USE_TCMALLOC)
--#endif  // #if defined(OS_CHROMEOS) || defined(OS_LINUX)
-+#endif  // #if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
  
- #if !defined(OS_ANDROID) && !BUILDFLAG(IS_CHROMEOS_ASH)
- const char kUserDataSnapshotName[] = "Enable user data snapshots";
-@@ -4854,13 +4854,13 @@ const char kWebShareDescription[] =
+ const char kCommanderName[] = "Commander";
+ const char kCommanderDescription[] =
+@@ -5022,7 +5022,7 @@ const char kDesktopDetailedLanguageSettingsName[] =
+ const char kDesktopDetailedLanguageSettingsDescription[] =
+     "Enable the new detailed language settings page";
+ 
+-#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+ 
+ #if defined(OS_CHROMEOS) || defined(OS_LINUX)
+ #if BUILDFLAG(USE_TCMALLOC)
+@@ -5049,13 +5049,13 @@ const char kWebShareDescription[] =
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -58,7 +59,7 @@
          // BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_MAC)
  
  // Feature flags --------------------------------------------------------------
-@@ -4953,7 +4953,7 @@ const char kAutofillCreditCardUploadDescription[] =
+@@ -5139,7 +5139,7 @@ const char kAutofillCreditCardUploadDescription[] =
  
  #endif  // defined(TOOLKIT_VIEWS) || defined(OS_ANDROID)
  
@@ -67,3 +68,12 @@
  const char kSendWebUIJavaScriptErrorReportsName[] =
      "Send WebUI JavaScript Error Reports";
  const char kSendWebUIJavaScriptErrorReportsDescription[] =
+@@ -5148,7 +5148,7 @@ const char kSendWebUIJavaScriptErrorReportsDescription
+     "will be sent to Google.";
+ #endif
+ 
+-#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
++#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD) || \
+     defined(OS_MAC)
+ const char kUIDebugToolsName[] = "Debugging tools for UI";
+ const char kUIDebugToolsDescription[] =

@@ -1,0 +1,11 @@
+--- mojo/core/BUILD.gn.orig	2021-04-22 12:39:57 UTC
++++ mojo/core/BUILD.gn
+@@ -126,7 +126,7 @@ template("core_impl_source_set") {
+         ]
+       }
+ 
+-      if ((is_linux || is_chromeos || is_android) && !is_nacl) {
++      if ((is_linux || is_chromeos || is_android) && !is_nacl && !is_bsd) {
+         sources += [
+           "channel_linux.cc",
+           "channel_linux.h",

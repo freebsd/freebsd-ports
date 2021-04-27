@@ -1,4 +1,4 @@
---- chrome/browser/apps/platform_apps/api/media_galleries/media_galleries_apitest.cc.orig	2021-03-12 23:57:17 UTC
+--- chrome/browser/apps/platform_apps/api/media_galleries/media_galleries_apitest.cc.orig	2021-04-14 18:40:52 UTC
 +++ chrome/browser/apps/platform_apps/api/media_galleries/media_galleries_apitest.cc
 @@ -294,7 +294,7 @@ IN_PROC_BROWSER_TEST_F(MediaGalleriesPlatformAppPpapiT
  

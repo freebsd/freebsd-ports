@@ -1,4 +1,4 @@
---- components/feed/core/proto/v2/wire/version.proto.orig	2021-03-12 23:57:22 UTC
+--- components/feed/core/proto/v2/wire/version.proto.orig	2021-04-14 18:40:59 UTC
 +++ components/feed/core/proto/v2/wire/version.proto
 @@ -11,8 +11,8 @@ option optimize_for = LITE_RUNTIME;
  // Specification of an application or OS version.

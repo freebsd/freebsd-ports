@@ -1,4 +1,4 @@
---- components/sync_device_info/local_device_info_util.cc.orig	2021-03-12 23:57:23 UTC
+--- components/sync_device_info/local_device_info_util.cc.orig	2021-04-14 18:41:01 UTC
 +++ components/sync_device_info/local_device_info_util.cc
 @@ -53,7 +53,7 @@ std::string GetPersonalizableDeviceNameInternal();
  sync_pb::SyncEnums::DeviceType GetLocalDeviceType() {

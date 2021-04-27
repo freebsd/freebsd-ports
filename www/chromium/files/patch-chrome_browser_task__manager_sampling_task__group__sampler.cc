@@ -1,4 +1,4 @@
---- chrome/browser/task_manager/sampling/task_group_sampler.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/task_manager/sampling/task_group_sampler.cc.orig	2021-04-20 18:58:27 UTC
 +++ chrome/browser/task_manager/sampling/task_group_sampler.cc
 @@ -44,9 +44,9 @@ TaskGroupSampler::TaskGroupSampler(
      const OnCpuRefreshCallback& on_cpu_refresh,
@@ -54,7 +54,7 @@
  
    if (TaskManagerObserver::IsResourceRefreshEnabled(REFRESH_TYPE_PRIORITY,
                                                      refresh_flags)) {
-@@ -146,13 +146,13 @@ int TaskGroupSampler::RefreshIdleWakeupsPerSecond() {
+@@ -146,19 +146,21 @@ int TaskGroupSampler::RefreshIdleWakeupsPerSecond() {
    return process_metrics_->GetIdleWakeupsPerSecond();
  }
  
@@ -70,3 +70,11 @@
  
  bool TaskGroupSampler::RefreshProcessPriority() {
    DCHECK(worker_pool_sequenced_checker_.CalledOnValidSequence());
+ #if defined(OS_MAC)
+   return process_.IsProcessBackgrounded(
+       content::BrowserChildProcessHost::GetPortProvider());
++#elif defined(OS_BSD)
++  return false;
+ #else
+   return process_.IsProcessBackgrounded();
+ #endif  // defined(OS_MAC)

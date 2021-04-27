@@ -1,4 +1,4 @@
---- chrome/browser/dev_ui_browser_resources.grd.orig	2021-03-12 23:57:17 UTC
+--- chrome/browser/dev_ui_browser_resources.grd.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/dev_ui_browser_resources.grd
 @@ -55,7 +55,7 @@ This file specifies browser resources for developer-fa
        <include name="IDR_MEDIA_SESSION_MOJOM_LITE_JS" file="${root_gen_dir}\services\media_session\public\mojom\media_session.mojom-lite.js" use_base_dir="false" type="BINDATA" />

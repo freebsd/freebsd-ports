@@ -1,7 +1,7 @@
---- sandbox/linux/BUILD.gn.orig	2021-03-12 23:57:28 UTC
+--- sandbox/linux/BUILD.gn.orig	2021-04-14 18:41:08 UTC
 +++ sandbox/linux/BUILD.gn
-@@ -386,7 +386,7 @@ component("sandbox_services") {
-     public_deps += [ ":sandbox_services_headers" ]
+@@ -392,7 +392,7 @@ component("sandbox_services") {
+     deps += [ ":sandbox_services_headers" ]
    }
  
 -  if (is_nacl_nonsfi) {
@@ -9,7 +9,7 @@
      cflags = [ "-fgnu-inline-asm" ]
  
      sources -= [
-@@ -394,6 +394,8 @@ component("sandbox_services") {
+@@ -400,6 +400,8 @@ component("sandbox_services") {
        "services/init_process_reaper.h",
        "services/scoped_process.cc",
        "services/scoped_process.h",

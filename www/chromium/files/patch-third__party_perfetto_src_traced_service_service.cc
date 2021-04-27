@@ -1,4 +1,4 @@
---- third_party/perfetto/src/traced/service/service.cc.orig	2021-03-15 13:08:22 UTC
+--- third_party/perfetto/src/traced/service/service.cc.orig	2021-04-14 18:43:07 UTC
 +++ third_party/perfetto/src/traced/service/service.cc
 @@ -28,7 +28,8 @@
  #include "src/traced/service/builtin_producer.h"

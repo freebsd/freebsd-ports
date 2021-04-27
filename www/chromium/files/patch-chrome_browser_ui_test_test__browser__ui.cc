@@ -1,4 +1,4 @@
---- chrome/browser/ui/test/test_browser_ui.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/test/test_browser_ui.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/ui/test/test_browser_ui.cc
 @@ -13,7 +13,7 @@
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch

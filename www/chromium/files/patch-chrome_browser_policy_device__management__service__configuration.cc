@@ -1,4 +1,4 @@
---- chrome/browser/policy/device_management_service_configuration.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/policy/device_management_service_configuration.cc.orig	2021-04-14 18:40:54 UTC
 +++ chrome/browser/policy/device_management_service_configuration.cc
 @@ -20,7 +20,7 @@
  #endif

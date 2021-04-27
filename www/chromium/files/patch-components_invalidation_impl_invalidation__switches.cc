@@ -1,4 +1,4 @@
---- components/invalidation/impl/invalidation_switches.cc.orig	2021-03-12 23:57:22 UTC
+--- components/invalidation/impl/invalidation_switches.cc.orig	2021-04-14 18:40:59 UTC
 +++ components/invalidation/impl/invalidation_switches.cc
 @@ -28,7 +28,7 @@ const base::Feature kFCMInvalidationsForSyncDontCheckV
  

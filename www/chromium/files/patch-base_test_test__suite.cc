@@ -1,6 +1,6 @@
---- base/test/test_suite.cc.orig	2021-03-12 23:57:15 UTC
+--- base/test/test_suite.cc.orig	2021-04-20 18:58:23 UTC
 +++ base/test/test_suite.cc
-@@ -66,7 +66,7 @@
+@@ -68,7 +68,7 @@
  #include "base/test/test_support_android.h"
  #endif
  
@@ -9,7 +9,16 @@
  #include "base/test/fontconfig_util_linux.h"
  #endif
  
-@@ -382,14 +382,14 @@ void TestSuite::PreInitialize() {
+@@ -214,7 +214,7 @@ class CheckForLeakedGlobals : public testing::EmptyTes
+ };
+ 
+ // base::Process is not available on iOS
+-#if !defined(OS_IOS)
++#if !defined(OS_IOS) && !defined(OS_BSD)
+ class CheckProcessPriority : public testing::EmptyTestEventListener {
+  public:
+   CheckProcessPriority() { CHECK(!IsProcessBackgrounded()); }
+@@ -384,14 +384,14 @@ void TestSuite::PreInitialize() {
    testing::GTEST_FLAG(catch_exceptions) = false;
  #endif
    EnableTerminationOnHeapCorruption();
@@ -26,7 +35,7 @@
  
    // On Android, AtExitManager is created in
    // testing/android/native_test_wrapper.cc before main() is called.
-@@ -650,7 +650,7 @@ void TestSuite::Initialize() {
+@@ -657,7 +657,7 @@ void TestSuite::Initialize() {
    // TODO(jshin): Should we set the locale via an OS X locale API here?
    i18n::SetICUDefaultLocale("en_US");
  
@@ -35,3 +44,12 @@
    SetUpFontconfig();
  #endif
  
+@@ -670,7 +670,7 @@ void TestSuite::Initialize() {
+   if (check_for_leaked_globals_)
+     listeners.Append(new CheckForLeakedGlobals);
+   if (check_for_thread_and_process_priority_) {
+-#if !defined(OS_IOS)
++#if !defined(OS_IOS) && !defined(OS_BSD)
+     listeners.Append(new CheckProcessPriority);
+ #endif
+   }

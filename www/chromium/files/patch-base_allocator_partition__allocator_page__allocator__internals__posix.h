@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2021-03-12 23:57:15 UTC
+--- base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2021-04-14 18:40:48 UTC
 +++ base/allocator/partition_allocator/page_allocator_internals_posix.h
-@@ -27,12 +27,16 @@
+@@ -28,12 +28,16 @@
  #if defined(OS_ANDROID)
  #include <sys/prctl.h>
  #endif
@@ -18,7 +18,7 @@
  #include "base/allocator/partition_allocator/page_allocator.h"
  
  #ifndef MAP_ANONYMOUS
-@@ -168,12 +172,19 @@ void* SystemAllocPagesInternal(void* hint,
+@@ -153,12 +157,19 @@ void* SystemAllocPagesInternal(void* hint,
    PA_DCHECK(PageTag::kFirst <= page_tag);
    PA_DCHECK(PageTag::kLast >= page_tag);
    int fd = VM_MAKE_TAG(static_cast<int>(page_tag));
@@ -38,7 +38,7 @@
  
  #if defined(OS_APPLE)
    // On macOS 10.14 and higher, executables that are code signed with the
-@@ -200,6 +211,8 @@ void* SystemAllocPagesInternal(void* hint,
+@@ -185,6 +196,8 @@ void* SystemAllocPagesInternal(void* hint,
      prctl(PR_SET_VMA, PR_SET_VMA_ANON_NAME, ret, length,
            PageTagToName(page_tag));
    }
@@ -47,7 +47,7 @@
  #endif
  
    return ret;
-@@ -294,6 +307,8 @@ void DiscardSystemPagesInternal(void* address, size_t 
+@@ -317,6 +330,8 @@ void DiscardSystemPagesInternal(void* address, size_t 
      ret = madvise(address, length, MADV_DONTNEED);
    }
    PA_PCHECK(ret == 0);

@@ -1,4 +1,4 @@
---- base/process/internal_linux.h.orig	2021-03-12 23:57:15 UTC
+--- base/process/internal_linux.h.orig	2021-04-14 18:40:48 UTC
 +++ base/process/internal_linux.h
 @@ -18,6 +18,8 @@
  #include "base/strings/string_number_conversions.h"

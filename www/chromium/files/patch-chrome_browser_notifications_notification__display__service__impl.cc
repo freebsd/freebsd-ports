@@ -1,4 +1,4 @@
---- chrome/browser/notifications/notification_display_service_impl.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/notifications/notification_display_service_impl.cc.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/notifications/notification_display_service_impl.cc
 @@ -30,7 +30,7 @@
  #include "chrome/browser/extensions/api/notifications/extension_notification_handler.h"
@@ -16,9 +16,9 @@
 -#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    registry->RegisterBooleanPref(prefs::kAllowNativeNotifications, true);
+   registry->RegisterBooleanPref(prefs::kAllowSystemNotifications, true);
  #endif
- }
-@@ -81,7 +81,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
+@@ -82,7 +82,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
      AddNotificationHandler(NotificationHandler::Type::WEB_PERSISTENT,
                             std::make_unique<PersistentNotificationHandler>());
  

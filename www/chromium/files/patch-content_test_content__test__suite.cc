@@ -1,4 +1,4 @@
---- content/test/content_test_suite.cc.orig	2021-03-12 23:57:24 UTC
+--- content/test/content_test_suite.cc.orig	2021-04-14 18:41:03 UTC
 +++ content/test/content_test_suite.cc
 @@ -83,6 +83,7 @@ void ContentTestSuite::Initialize() {
    // to initialize GL, so don't do it here.

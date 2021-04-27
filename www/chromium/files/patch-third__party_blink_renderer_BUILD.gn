@@ -1,21 +1,15 @@
---- third_party/blink/renderer/BUILD.gn.orig	2021-03-12 23:57:29 UTC
+--- third_party/blink/renderer/BUILD.gn.orig	2021-04-20 18:58:37 UTC
 +++ third_party/blink/renderer/BUILD.gn
-@@ -46,10 +46,16 @@ config("inside_blink") {
-       "-Wconversion",
-       "-Wno-float-conversion",
-       "-Wno-sign-conversion",
--      "-Wno-implicit-float-conversion",
--      "-Wno-implicit-int-conversion",
-       "-Wno-shorten-64-to-32",
+@@ -50,6 +50,12 @@ config("inside_blink") {
+       "-Wno-implicit-int-conversion",
      ]
-+
+ 
 +    if (is_bsd) {
 +      cflags += [
-+        "-Wno-implicit-float-conversion",
-+        "-Wno-implicit-int-conversion",
 +        "-Wno-implicit-int-float-conversion",
 +      ]
 +    }
- 
++
      if (!is_chromeos_ash ||
          default_toolchain != "//build/toolchain/cros:target") {
+       cflags += [ "-Wno-enum-float-conversion" ]

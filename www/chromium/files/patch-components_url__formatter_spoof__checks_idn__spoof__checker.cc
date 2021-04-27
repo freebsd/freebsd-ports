@@ -1,4 +1,4 @@
---- components/url_formatter/spoof_checks/idn_spoof_checker.cc.orig	2021-03-12 23:57:23 UTC
+--- components/url_formatter/spoof_checks/idn_spoof_checker.cc.orig	2021-04-14 18:41:02 UTC
 +++ components/url_formatter/spoof_checks/idn_spoof_checker.cc
 @@ -292,7 +292,7 @@ IDNSpoofChecker::IDNSpoofChecker() {
    // The ideal fix would be to change the omnibox font used for Thai. In

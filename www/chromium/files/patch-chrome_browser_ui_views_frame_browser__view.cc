@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_view.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/views/frame/browser_view.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/ui/views/frame/browser_view.cc
-@@ -1504,7 +1504,7 @@ void BrowserView::TabDraggingStatusChanged(bool is_dra
+@@ -1532,7 +1532,7 @@ void BrowserView::TabDraggingStatusChanged(bool is_dra
    // CrOS cleanup is done.
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
    contents_web_view_->SetFastResize(is_dragging);
    if (!is_dragging) {
      // When tab dragging is ended, we need to make sure the web contents get
-@@ -1886,7 +1886,7 @@ void BrowserView::UserChangedTheme(BrowserThemeChangeT
+@@ -1915,7 +1915,7 @@ void BrowserView::UserChangedTheme(BrowserThemeChangeT
    bool must_regenerate_frame;
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

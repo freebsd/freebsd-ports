@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/extensions/bookmark_app_finalizer_utils.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/web_applications/extensions/bookmark_app_finalizer_utils.cc.orig	2021-04-14 18:40:56 UTC
 +++ chrome/browser/web_applications/extensions/bookmark_app_finalizer_utils.cc
 @@ -18,7 +18,7 @@ namespace {
  bool CanOsAddDesktopShortcuts() {

@@ -1,4 +1,4 @@
---- third_party/perfetto/src/tracing/platform_posix.cc.orig	2021-03-15 13:12:05 UTC
+--- third_party/perfetto/src/tracing/platform_posix.cc.orig	2021-04-14 18:43:07 UTC
 +++ third_party/perfetto/src/tracing/platform_posix.cc
 @@ -18,7 +18,8 @@
  

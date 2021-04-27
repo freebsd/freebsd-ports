@@ -1,4 +1,4 @@
---- services/network/network_sandbox_hook_linux.cc.orig	2021-03-12 23:57:28 UTC
+--- services/network/network_sandbox_hook_linux.cc.orig	2021-04-14 18:41:08 UTC
 +++ services/network/network_sandbox_hook_linux.cc
 @@ -14,6 +14,7 @@ using sandbox::syscall_broker::MakeBrokerCommandSet;
  namespace network {

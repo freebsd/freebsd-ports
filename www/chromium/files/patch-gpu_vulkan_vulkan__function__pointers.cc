@@ -1,6 +1,6 @@
---- gpu/vulkan/vulkan_function_pointers.cc.orig	2021-03-12 23:57:25 UTC
+--- gpu/vulkan/vulkan_function_pointers.cc.orig	2021-04-14 18:41:04 UTC
 +++ gpu/vulkan/vulkan_function_pointers.cc
-@@ -890,7 +890,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -898,7 +898,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
    }
  #endif  // defined(OS_ANDROID)
  
@@ -9,7 +9,7 @@
    if (gfx::HasExtension(enabled_extensions,
                          VK_KHR_EXTERNAL_SEMAPHORE_FD_EXTENSION_NAME)) {
      vkGetSemaphoreFdKHR = reinterpret_cast<PFN_vkGetSemaphoreFdKHR>(
-@@ -909,7 +909,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -917,7 +917,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
        return false;
      }
    }
@@ -18,7 +18,7 @@
  
  #if defined(OS_WIN)
    if (gfx::HasExtension(enabled_extensions,
-@@ -934,7 +934,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -942,7 +942,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
    }
  #endif  // defined(OS_WIN)
  
@@ -27,7 +27,7 @@
    if (gfx::HasExtension(enabled_extensions,
                          VK_KHR_EXTERNAL_MEMORY_FD_EXTENSION_NAME)) {
      vkGetMemoryFdKHR = reinterpret_cast<PFN_vkGetMemoryFdKHR>(
-@@ -954,7 +954,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -962,7 +962,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
        return false;
      }
    }
@@ -36,7 +36,7 @@
  
  #if defined(OS_WIN)
    if (gfx::HasExtension(enabled_extensions,
-@@ -1103,7 +1103,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -1111,7 +1111,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
      }
    }
  
@@ -45,7 +45,7 @@
    if (gfx::HasExtension(enabled_extensions,
                          VK_EXT_IMAGE_DRM_FORMAT_MODIFIER_EXTENSION_NAME)) {
      vkGetImageDrmFormatModifierPropertiesEXT =
-@@ -1116,7 +1116,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -1124,7 +1124,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
        return false;
      }
    }

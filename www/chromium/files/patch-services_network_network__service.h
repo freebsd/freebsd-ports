@@ -1,8 +1,8 @@
---- services/network/network_service.h.orig	2021-03-12 23:57:28 UTC
+--- services/network/network_service.h.orig	2021-04-14 18:41:08 UTC
 +++ services/network/network_service.h
-@@ -197,7 +197,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
-       base::span<const uint8_t> config,
-       mojom::NetworkService::UpdateLegacyTLSConfigCallback callback) override;
+@@ -193,7 +193,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
+       base::span<const uint8_t> crl_set,
+       mojom::NetworkService::UpdateCRLSetCallback callback) override;
    void OnCertDBChanged() override;
 -#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)

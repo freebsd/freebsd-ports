@@ -1,6 +1,6 @@
---- chrome/browser/devtools/devtools_eye_dropper.cc.orig	2021-03-12 23:57:17 UTC
+--- chrome/browser/devtools/devtools_eye_dropper.cc.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/devtools/devtools_eye_dropper.cc
-@@ -165,7 +165,7 @@ void DevToolsEyeDropper::UpdateCursor() {
+@@ -187,7 +187,7 @@ void DevToolsEyeDropper::UpdateCursor() {
  // magnified projection only with centered hotspot.
  // Mac Retina requires cursor to be > 120px in order to render smoothly.
  

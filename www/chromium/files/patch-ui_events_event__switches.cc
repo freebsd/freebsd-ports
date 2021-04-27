@@ -1,4 +1,4 @@
---- ui/events/event_switches.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/events/event_switches.cc.orig	2021-04-14 18:41:39 UTC
 +++ ui/events/event_switches.cc
 @@ -14,7 +14,7 @@ namespace switches {
  const char kCompensateForUnstablePinchZoom[] =

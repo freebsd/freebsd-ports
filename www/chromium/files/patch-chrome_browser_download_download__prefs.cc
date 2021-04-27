@@ -1,4 +1,4 @@
---- chrome/browser/download/download_prefs.cc.orig	2021-03-12 23:57:17 UTC
+--- chrome/browser/download/download_prefs.cc.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/download/download_prefs.cc
 @@ -68,7 +68,7 @@ namespace {
  // Consider downloads 'dangerous' if they go to the home directory on Linux and

@@ -1,4 +1,4 @@
---- remoting/host/remoting_me2me_host.cc.orig	2021-03-12 23:57:28 UTC
+--- remoting/host/remoting_me2me_host.cc.orig	2021-04-14 18:41:08 UTC
 +++ remoting/host/remoting_me2me_host.cc
 @@ -120,14 +120,14 @@
  #include "remoting/host/mac/permission_utils.h"
@@ -76,16 +76,7 @@
    // Cause the global AudioPipeReader to be freed, otherwise the audio
    // thread will remain in-use and prevent the process from exiting.
    // TODO(wez): DesktopEnvironmentFactory should own the pipe reader.
-@@ -1591,7 +1591,7 @@ void HostProcess::StartHost() {
-   host_->AddExtension(std::make_unique<TestEchoExtension>());
- 
-   // TODO(joedow): Remove in M90.
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   host_->SetMaximumSessionDuration(base::TimeDelta::FromHours(20));
- #endif
- 
-@@ -1768,7 +1768,7 @@ void HostProcess::OnCrash(const std::string& function_
+@@ -1763,7 +1763,7 @@ void HostProcess::OnCrash(const std::string& function_
  int HostProcessMain() {
    HOST_LOG << "Starting host process: version " << STRINGIZE(VERSION);
  

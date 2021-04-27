@@ -1,4 +1,4 @@
---- chrome/browser/sharing/sharing_handler_registry_impl.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/sharing/sharing_handler_registry_impl.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/sharing/sharing_handler_registry_impl.cc
 @@ -23,10 +23,10 @@
  #include "chrome/browser/sharing/shared_clipboard/shared_clipboard_message_handler_desktop.h"

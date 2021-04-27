@@ -1,4 +1,4 @@
---- content/browser/compositor/viz_process_transport_factory.cc.orig	2021-03-12 23:57:24 UTC
+--- content/browser/compositor/viz_process_transport_factory.cc.orig	2021-04-14 18:41:02 UTC
 +++ content/browser/compositor/viz_process_transport_factory.cc
 @@ -111,7 +111,7 @@ class HostDisplayClient : public viz::HostDisplayClien
    // viz::HostDisplayClient:

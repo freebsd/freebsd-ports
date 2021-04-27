@@ -1,6 +1,6 @@
---- chrome/browser/ui/BUILD.gn.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/BUILD.gn.orig	2021-04-20 18:58:27 UTC
 +++ chrome/browser/ui/BUILD.gn
-@@ -617,12 +617,15 @@ static_library("ui") {
+@@ -642,11 +642,18 @@ static_library("ui") {
      deps += [ "//components/autofill/content/browser/webauthn" ]
    }
  
@@ -10,10 +10,13 @@
      deps += [
        "//components/crash/core/app",
        "//components/crash/core/browser",
-     ]
++    ]
 +  }
++
 +  if (is_bsd) {
-+    deps += [ "//components/crash/core/browser" ]
++    sources -= [
++      "webui/crashes_ui.cc",
++      "webui/crashes_ui.h",
+     ]
    }
  
-   if (is_win || is_android || is_linux || is_chromeos) {

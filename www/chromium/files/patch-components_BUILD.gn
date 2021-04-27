@@ -1,6 +1,6 @@
---- components/BUILD.gn.orig	2021-03-12 23:57:21 UTC
+--- components/BUILD.gn.orig	2021-04-14 18:40:58 UTC
 +++ components/BUILD.gn
-@@ -324,9 +324,13 @@ test("components_unittests") {
+@@ -337,9 +337,13 @@ test("components_unittests") {
      }
  
      if (!is_fuchsia) {  # !iOS and !Fuchsia

@@ -1,4 +1,4 @@
---- media/mojo/clients/mojo_video_encode_accelerator.cc.orig	2021-03-12 23:57:26 UTC
+--- media/mojo/clients/mojo_video_encode_accelerator.cc.orig	2021-04-14 18:41:05 UTC
 +++ media/mojo/clients/mojo_video_encode_accelerator.cc
 @@ -134,7 +134,7 @@ void MojoVideoEncodeAccelerator::Encode(scoped_refptr<
    DCHECK_EQ(num_planes, frame->layout().num_planes());

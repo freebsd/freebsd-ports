@@ -1,4 +1,4 @@
---- remoting/base/chromoting_event.cc.orig	2021-03-12 23:57:28 UTC
+--- remoting/base/chromoting_event.cc.orig	2021-04-14 18:41:07 UTC
 +++ remoting/base/chromoting_event.cc
 @@ -189,7 +189,7 @@ void ChromotingEvent::AddSystemInfo() {
    SetString(kCpuKey, base::SysInfo::OperatingSystemArchitecture());

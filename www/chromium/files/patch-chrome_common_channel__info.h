@@ -1,4 +1,4 @@
---- chrome/common/channel_info.h.orig	2021-03-12 23:57:19 UTC
+--- chrome/common/channel_info.h.orig	2021-04-14 18:40:56 UTC
 +++ chrome/common/channel_info.h
 @@ -70,7 +70,7 @@ std::string GetChannelSuffixForDataDir();
  

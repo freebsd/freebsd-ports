@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/webui_js_error/webui_js_error_ui.cc.orig	2021-03-16 13:50:34 UTC
+--- chrome/browser/ui/webui/webui_js_error/webui_js_error_ui.cc.orig	2021-04-14 18:40:56 UTC
 +++ chrome/browser/ui/webui/webui_js_error/webui_js_error_ui.cc
 @@ -20,7 +20,7 @@
  

@@ -1,4 +1,4 @@
---- content/browser/scheduler/responsiveness/native_event_observer.h.orig	2021-03-12 23:57:24 UTC
+--- content/browser/scheduler/responsiveness/native_event_observer.h.orig	2021-04-14 18:41:02 UTC
 +++ content/browser/scheduler/responsiveness/native_event_observer.h
 @@ -14,7 +14,7 @@
  #include "content/public/browser/native_event_processor_observer_mac.h"

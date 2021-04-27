@@ -1,4 +1,4 @@
---- third_party/googletest/src/googletest/src/gtest-port.cc.orig	2021-03-13 00:03:34 UTC
+--- third_party/googletest/src/googletest/src/gtest-port.cc.orig	2021-04-14 18:43:03 UTC
 +++ third_party/googletest/src/googletest/src/gtest-port.cc
 @@ -64,6 +64,11 @@
  # endif

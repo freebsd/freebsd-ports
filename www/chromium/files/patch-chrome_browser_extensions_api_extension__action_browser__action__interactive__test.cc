@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/extension_action/browser_action_interactive_test.cc.orig	2021-03-12 23:57:17 UTC
+--- chrome/browser/extensions/api/extension_action/browser_action_interactive_test.cc.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/extensions/api/extension_action/browser_action_interactive_test.cc
 @@ -281,7 +281,7 @@ IN_PROC_BROWSER_TEST_F(BrowserActionInteractiveTest, T
    frame_observer.Wait();

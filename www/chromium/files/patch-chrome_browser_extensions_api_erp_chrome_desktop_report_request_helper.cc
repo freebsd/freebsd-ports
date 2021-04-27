@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/enterprise_reporting_private/chrome_desktop_report_request_helper.cc.orig	2021-03-12 23:57:17 UTC
+--- chrome/browser/extensions/api/enterprise_reporting_private/chrome_desktop_report_request_helper.cc.orig	2021-04-20 18:58:26 UTC
 +++ chrome/browser/extensions/api/enterprise_reporting_private/chrome_desktop_report_request_helper.cc
 @@ -22,7 +22,7 @@
  #include "base/win/registry.h"

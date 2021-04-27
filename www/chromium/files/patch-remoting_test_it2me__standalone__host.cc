@@ -1,4 +1,4 @@
---- remoting/test/it2me_standalone_host.cc.orig	2021-03-12 23:57:28 UTC
+--- remoting/test/it2me_standalone_host.cc.orig	2021-04-14 18:41:08 UTC
 +++ remoting/test/it2me_standalone_host.cc
 @@ -49,7 +49,7 @@ It2MeStandaloneHost::It2MeStandaloneHost()
                 context_->ui_task_runner()),

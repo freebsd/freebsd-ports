@@ -1,4 +1,4 @@
---- components/network_session_configurator/browser/network_session_configurator.cc.orig	2021-03-12 23:57:22 UTC
+--- components/network_session_configurator/browser/network_session_configurator.cc.orig	2021-04-14 18:40:59 UTC
 +++ components/network_session_configurator/browser/network_session_configurator.cc
 @@ -802,7 +802,7 @@ net::URLRequestContextBuilder::HttpCacheParams::Type C
    }

@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.cc.orig	2021-03-12 23:57:22 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2021-04-14 18:40:59 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -78,7 +78,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -79,7 +79,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHBadgedTranslateManualTriggerFeature,
      &kIPHDiscoverFeedHeaderFeature,
  #endif  // defined(OS_IOS)
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS)
      &kIPHDesktopTabGroupsNewGroupFeature,
      &kIPHFocusModeFeature,
-@@ -88,7 +88,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -90,7 +90,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHReopenTabFeature,
      &kIPHWebUITabStripFeature,
      &kIPHDesktopPwaInstallFeature,

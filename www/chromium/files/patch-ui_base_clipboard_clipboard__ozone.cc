@@ -1,6 +1,6 @@
---- ui/base/clipboard/clipboard_ozone.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/base/clipboard/clipboard_ozone.cc.orig	2021-04-14 18:41:37 UTC
 +++ ui/base/clipboard/clipboard_ozone.cc
-@@ -305,7 +305,7 @@ class ClipboardOzone::AsyncClipboardOzone {
+@@ -301,7 +301,7 @@ class ClipboardOzone::AsyncClipboardOzone {
  // of lacros-chrome is complete.
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

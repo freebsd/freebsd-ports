@@ -1,4 +1,4 @@
---- third_party/harfbuzz-ng/harfbuzz.gni.orig	2021-03-19 11:22:27 UTC
+--- third_party/harfbuzz-ng/harfbuzz.gni.orig	2021-04-14 18:41:34 UTC
 +++ third_party/harfbuzz-ng/harfbuzz.gni
 @@ -3,10 +3,11 @@
  # found in the LICENSE file.

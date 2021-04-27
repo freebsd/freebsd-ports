@@ -1,4 +1,4 @@
---- printing/print_settings.cc.orig	2021-03-12 23:57:28 UTC
+--- printing/print_settings.cc.orig	2021-04-14 18:41:07 UTC
 +++ printing/print_settings.cc
 @@ -278,9 +278,9 @@ void PrintSettings::Clear() {
  #endif

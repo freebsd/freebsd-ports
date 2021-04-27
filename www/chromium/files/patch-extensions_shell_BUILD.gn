@@ -1,6 +1,6 @@
---- extensions/shell/BUILD.gn.orig	2021-03-12 23:57:25 UTC
+--- extensions/shell/BUILD.gn.orig	2021-04-14 18:41:04 UTC
 +++ extensions/shell/BUILD.gn
-@@ -205,16 +205,24 @@ source_set("app_shell_lib") {
+@@ -208,16 +208,24 @@ source_set("app_shell_lib") {
    }
  
    if (is_linux || is_chromeos_lacros) {

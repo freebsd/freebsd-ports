@@ -1,4 +1,4 @@
---- chromecast/browser/metrics/cast_browser_metrics.h.orig	2021-03-12 23:57:21 UTC
+--- chromecast/browser/metrics/cast_browser_metrics.h.orig	2021-04-14 18:40:58 UTC
 +++ chromecast/browser/metrics/cast_browser_metrics.h
 @@ -38,10 +38,10 @@ class CastBrowserMetrics {
   private:

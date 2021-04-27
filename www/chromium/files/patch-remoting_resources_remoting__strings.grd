@@ -1,6 +1,6 @@
---- remoting/resources/remoting_strings.grd.orig	2021-03-12 23:57:28 UTC
+--- remoting/resources/remoting_strings.grd.orig	2021-04-14 18:41:08 UTC
 +++ remoting/resources/remoting_strings.grd
-@@ -889,7 +889,7 @@ If '<ph name="SERVICE_SCRIPT_NAME">$3<ex>org.chromium.
+@@ -886,7 +886,7 @@ If '<ph name="SERVICE_SCRIPT_NAME">$3<ex>org.chromium.
            Open Screen Recording Preferences
          </message>
        </if>
@@ -9,7 +9,7 @@
          <message name="IDS_SESSION_DIALOG_MESSAGE" desc="The message to show at the top of the session-selection dialog.">
            Select a session to launch within your Chrome Remote Desktop environment. (Note that some session types may not support running within Chrome Remote Desktop and on the local console simultaneously.)
          </message>
-@@ -905,7 +905,7 @@ If '<ph name="SERVICE_SCRIPT_NAME">$3<ex>org.chromium.
+@@ -902,7 +902,7 @@ If '<ph name="SERVICE_SCRIPT_NAME">$3<ex>org.chromium.
          <message name="IDS_SESSION_DIALOG_DEFAULT_SESSION_COMMENT" desc="The comment for the entry to launch the default session.">
            Launch the default XSession
          </message>

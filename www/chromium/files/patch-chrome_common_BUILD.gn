@@ -1,4 +1,4 @@
---- chrome/common/BUILD.gn.orig	2021-03-12 23:57:19 UTC
+--- chrome/common/BUILD.gn.orig	2021-04-14 18:40:56 UTC
 +++ chrome/common/BUILD.gn
 @@ -251,6 +251,10 @@ static_library("common") {
      public_deps += [ "//ppapi/shared_impl" ]
@@ -11,7 +11,7 @@
    if (enable_extensions) {
      sources += [
        "extensions/api/commands/commands_handler.cc",
-@@ -481,13 +485,21 @@ static_library("common") {
+@@ -482,13 +486,21 @@ static_library("common") {
      public_deps += [ "//chrome/common/safe_browsing" ]
    }
  

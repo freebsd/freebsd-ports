@@ -1,4 +1,4 @@
---- ui/gfx/codec/jpeg_codec.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/gfx/codec/jpeg_codec.cc.orig	2021-04-14 18:41:39 UTC
 +++ ui/gfx/codec/jpeg_codec.cc
 @@ -208,6 +208,7 @@ bool JPEGCodec::Decode(const unsigned char* input, siz
      case JCS_GRAYSCALE:

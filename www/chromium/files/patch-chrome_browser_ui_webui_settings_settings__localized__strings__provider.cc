@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig	2021-04-14 18:40:56 UTC
 +++ chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
-@@ -343,7 +343,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -344,7 +344,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
      {"huge", IDS_SETTINGS_HUGE_FONT_SIZE},
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
      {"systemTheme", IDS_SETTINGS_SYSTEM_THEME},
      {"useSystemTheme", IDS_SETTINGS_USE_SYSTEM_THEME},
      {"classicTheme", IDS_SETTINGS_CLASSIC_THEME},
-@@ -351,7 +351,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -352,7 +352,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
  #else
      {"resetToDefaultTheme", IDS_SETTINGS_RESET_TO_DEFAULT_THEME},
  #endif

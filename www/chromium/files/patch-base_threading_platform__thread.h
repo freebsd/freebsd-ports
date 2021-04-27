@@ -1,4 +1,4 @@
---- base/threading/platform_thread.h.orig	2021-03-12 23:57:15 UTC
+--- base/threading/platform_thread.h.orig	2021-04-14 18:40:48 UTC
 +++ base/threading/platform_thread.h
 @@ -231,7 +231,7 @@ class BASE_EXPORT PlatformThread {
    // Returns a realtime period provided by |delegate|.

@@ -1,4 +1,4 @@
---- third_party/perfetto/src/tracing/ipc/default_socket.cc.orig	2021-03-15 13:10:10 UTC
+--- third_party/perfetto/src/tracing/ipc/default_socket.cc.orig	2021-04-14 18:43:07 UTC
 +++ third_party/perfetto/src/tracing/ipc/default_socket.cc
 @@ -35,7 +35,8 @@ const char* kRunPerfettoBaseDir = "/run/perfetto/";
  bool UseRunPerfettoBaseDir() {

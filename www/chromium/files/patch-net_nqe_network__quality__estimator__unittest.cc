@@ -1,4 +1,4 @@
---- net/nqe/network_quality_estimator_unittest.cc.orig	2021-03-12 23:57:27 UTC
+--- net/nqe/network_quality_estimator_unittest.cc.orig	2021-04-14 18:41:07 UTC
 +++ net/nqe/network_quality_estimator_unittest.cc
 @@ -2180,9 +2180,9 @@ TEST_F(NetworkQualityEstimatorTest, TestGlobalSocketWa
  // ChromeOS is disabled due to crbug.com/986904
