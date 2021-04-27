@@ -16,6 +16,7 @@ LIB_DEPENDS=	libXcursor.so:x11/libXcursor \
 		libfreetype.so:print/freetype2 \
 		libinput.so:x11/libinput \
 		libudev.so:devel/libudev-devd \
+		liblcms2.so:graphics/lcms2 \
 		libwayland-cursor.so:graphics/wayland \
 		libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-icccm.so:x11/xcb-util-wm \
