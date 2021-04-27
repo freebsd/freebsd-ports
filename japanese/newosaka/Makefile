@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translator of Japanese EUC documents into Osaka language
 
 BROKEN_FreeBSD_13=	ld: error: undefined symbol: gets
+BROKEN_FreeBSD_14=	ld: error: undefined symbol: gets
 
 PLIST_FILES=	bin/osaka
 WRKSRC=		${WRKDIR}/${PORTNAME}
