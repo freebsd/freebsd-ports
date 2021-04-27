@@ -68,6 +68,7 @@ share/osinfo/install-script/redhat.com/rhel-kickstart-desktop.xml
 share/osinfo/install-script/redhat.com/rhel-kickstart-jeos.xml
 share/osinfo/install-script/ubuntu.com/ubuntu-preseed-desktop.xml
 share/osinfo/install-script/ubuntu.com/ubuntu-preseed-jeos.xml
+share/osinfo/os/almalinux.org/almalinux-8.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.10.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.11.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.12.xml
@@ -147,6 +148,9 @@ share/osinfo/os/cirros-cloud.net/cirros-0.3.3.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.4.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.5.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.4.0.xml
+share/osinfo/os/cirros-cloud.net/cirros-0.5.0.xml
+share/osinfo/os/cirros-cloud.net/cirros-0.5.1.xml
+share/osinfo/os/cirros-cloud.net/cirros-0.5.2.xml
 share/osinfo/os/clearlinux.org/clearlinux-rolling.xml
 share/osinfo/os/debian.org/debian-1.1.xml
 share/osinfo/os/debian.org/debian-1.2.xml
@@ -303,6 +307,7 @@ share/osinfo/os/freebsd.org/freebsd-11.4.xml
 share/osinfo/os/freebsd.org/freebsd-12.0.xml
 share/osinfo/os/freebsd.org/freebsd-12.1.xml
 share/osinfo/os/freebsd.org/freebsd-12.2.xml
+share/osinfo/os/freebsd.org/freebsd-13.0.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.xml
 share/osinfo/os/freebsd.org/freebsd-2.2.8.xml
@@ -372,6 +377,7 @@ share/osinfo/os/mageia.org/mageia-4.xml
 share/osinfo/os/mageia.org/mageia-5.xml
 share/osinfo/os/mageia.org/mageia-6.xml
 share/osinfo/os/mageia.org/mageia-7.xml
+share/osinfo/os/mageia.org/mageia-8.xml
 share/osinfo/os/mandriva.com/mandrake-10.0.xml
 share/osinfo/os/mandriva.com/mandrake-10.1.xml
 share/osinfo/os/mandriva.com/mandrake-10.2.xml
@@ -512,6 +518,7 @@ share/osinfo/os/opensuse.org/opensuse-13.2.xml
 share/osinfo/os/opensuse.org/opensuse-15.0.xml
 share/osinfo/os/opensuse.org/opensuse-15.1.xml
 share/osinfo/os/opensuse.org/opensuse-15.2.xml
+share/osinfo/os/opensuse.org/opensuse-15.3.xml
 share/osinfo/os/opensuse.org/opensuse-42.1.xml
 share/osinfo/os/opensuse.org/opensuse-42.2.xml
 share/osinfo/os/opensuse.org/opensuse-42.3.xml
