@@ -14,6 +14,7 @@ LICENSE=	BSD3CLAUSE LGPL21 MPL11
 LICENSE_COMB=	multi
 
 BROKEN_FreeBSD_11_aarch64=	components/safe_browsing_db/v4_rice.cc:120:18: use of overloaded operator '&' is ambiguous
+BROKEN_FreeBSD_11_i386=		does not compile
 ONLY_FOR_ARCHS=			aarch64 amd64 i386
 
 BUILD_DEPENDS=	bash:shells/bash \
