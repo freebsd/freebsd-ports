@@ -14,6 +14,9 @@ LICENSE_COMB=		dual
 LICENSE_FILE_LGPL21=	${WRKSRC}/lgpl-2.1.txt
 LICENSE_FILE_GPLv2=	${WRKSRC}/gpl-2.0.txt
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: mi_lttng_element_load_override_url
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: mi_lttng_element_load_override_url
+
 LIB_DEPENDS=	libpopt.so:devel/popt \
 	    liburcu.so:sysutils/liburcu \
 	    liblttng-ust-ctl.so:sysutils/lttng-ust
