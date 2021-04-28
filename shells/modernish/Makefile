@@ -16,14 +16,10 @@ NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-extract:
-	${MV} ${WRKSRC}/lib/modernish/cap/BUG_DEVTTY.t ${WRKDIR}
-
 do-install:
 	cd ${WRKSRC} && \
-	${SETENV} ${MAKE_ENV} ${SH} -x ./install.sh -d ${PREFIX} -D ${STAGEDIR} -n -s ${SH}
-
-	${INSTALL_DATA} ${WRKDIR}/BUG_DEVTTY.t ${STAGEDIR}${PREFIX}/lib/modernish/cap/BUG_DEVTTY.t
+	${SETENV} ${MAKE_ENV} script -q /dev/stdout \
+		${SH} -x ./install.sh -d ${PREFIX} -D ${STAGEDIR} -n -s ${SH}
 
 	${RM} ${STAGEDIR}${DOCSDIR}/LICENSE
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR:H}
