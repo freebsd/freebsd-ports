@@ -4808,6 +4808,7 @@
     SUBDIR += py-phonenumbers
     SUBDIR += py-phply
     SUBDIR += py-phpserialize
+    SUBDIR += py-phx-class-registry
     SUBDIR += py-pid
     SUBDIR += py-pika
     SUBDIR += py-pika-pool
