@@ -131,8 +131,8 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +	 (tasota@gmail.com) an NSF REU grant recipient for 2013. 
 +	 This work was financed, in part, by Cisco System, Inc., the National 
 +         Library of Medicine, and the National Science Foundation. 
---- work/openssh-7.7p1/channels.c.orig	2018-04-01 22:38:28.000000000 -0700
-+++ work/openssh-7.7p1/channels.c	2018-06-27 16:37:07.663857000 -0700
+--- work/openssh/channels.c.orig	2021-04-15 20:55:25.000000000 -0700
++++ work/openssh/channels.c	2021-04-28 14:35:20.732518000 -0700
 @@ -220,6 +220,12 @@ static int rdynamic_connect_finish(struct ssh *, Chann
  /* Setup helper */
  static void channel_handler_init(struct ssh_channels *sc);
@@ -146,7 +146,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  /* -- channel core */
  
  void
-@@ -392,6 +398,9 @@ channel_new(struct ssh *ssh, char *ctype, int type, in
+@@ -395,6 +401,9 @@ channel_new(struct ssh *ssh, char *ctype, int type, in
  	c->local_window = window;
  	c->local_window_max = window;
  	c->local_maxpacket = maxpack;
@@ -156,7 +156,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	c->remote_name = xstrdup(remote_name);
  	c->ctl_chan = -1;
  	c->delayed = 1;		/* prevent call to channel_post handler */
-@@ -1059,6 +1068,30 @@ channel_pre_connecting(struct ssh *ssh, Channel *c,
+@@ -1082,6 +1091,30 @@ channel_pre_connecting(struct ssh *ssh, Channel *c,
  	FD_SET(c->sock, writeset);
  }
  
@@ -187,7 +187,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  static void
  channel_pre_open(struct ssh *ssh, Channel *c,
      fd_set *readset, fd_set *writeset)
-@@ -2158,21 +2191,32 @@ channel_check_window(struct ssh *ssh, Channel *c)
+@@ -2124,18 +2157,29 @@ channel_check_window(struct ssh *ssh, Channel *c)
  	    c->local_maxpacket*3) ||
  	    c->local_window < c->local_window_max/2) &&
  	    c->local_consumed > 0) {
@@ -203,27 +203,24 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +		}
 +#endif
  		if (!c->have_remote_id)
- 			fatal(":%s: channel %d: no remote id",
- 			    __func__, c->self);
+ 			fatal_f("channel %d: no remote id", c->self);
  		if ((r = sshpkt_start(ssh,
  		    SSH2_MSG_CHANNEL_WINDOW_ADJUST)) != 0 ||
  		    (r = sshpkt_put_u32(ssh, c->remote_id)) != 0 ||
 -		    (r = sshpkt_put_u32(ssh, c->local_consumed)) != 0 ||
 +		    (r = sshpkt_put_u32(ssh, c->local_consumed + addition)) != 0 ||
  		    (r = sshpkt_send(ssh)) != 0) {
- 			fatal("%s: channel %i: %s", __func__,
- 			    c->self, ssh_err(r));
+ 			fatal_fr(r, "channel %i", c->self);
  		}
- 		debug2("channel %d: window %d sent adjust %d",
- 		    c->self, c->local_window,
--		    c->local_consumed);
+ 		debug2("channel %d: window %d sent adjust %d", c->self,
+-		    c->local_window, c->local_consumed);
 -		c->local_window += c->local_consumed;
-+		    c->local_consumed + addition);
++		    c->local_window, c->local_consumed + addition);
 +		c->local_window += c->local_consumed + addition;
  		c->local_consumed = 0;
  	}
  	return 1;
-@@ -3354,6 +3398,17 @@ channel_fwd_bind_addr(struct ssh *ssh, const char *lis
+@@ -3302,6 +3346,17 @@ channel_fwd_bind_addr(struct ssh *ssh, const char *lis
  	return addr;
  }
  
@@ -241,7 +238,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  static int
  channel_setup_fwd_listener_tcpip(struct ssh *ssh, int type,
      struct Forward *fwd, int *allocated_listen_port,
-@@ -3494,6 +3549,17 @@ channel_setup_fwd_listener_tcpip(struct ssh *ssh, int 
+@@ -3442,6 +3497,17 @@ channel_setup_fwd_listener_tcpip(struct ssh *ssh, int 
  		}
  
  		/* Allocate a channel number for the socket. */
@@ -259,7 +256,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		c = channel_new(ssh, "port listener", type, sock, sock, -1,
  		    CHAN_TCP_WINDOW_DEFAULT, CHAN_TCP_PACKET_DEFAULT,
  		    0, "port listener", 1);
-@@ -4631,6 +4697,14 @@ x11_create_display_inet(struct ssh *ssh, int x11_displ
+@@ -4610,6 +4676,14 @@ x11_create_display_inet(struct ssh *ssh, int x11_displ
  	*chanids = xcalloc(num_socks + 1, sizeof(**chanids));
  	for (n = 0; n < num_socks; n++) {
  		sock = socks[n];
@@ -358,21 +355,21 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	c = channel_new(ssh, "tun", SSH_CHANNEL_OPENING, fd, fd, -1,
  	    CHAN_TCP_WINDOW_DEFAULT, CHAN_TCP_PACKET_DEFAULT, 0, "tun", 1);
  	c->datagram = 1;
---- work.clean/openssh-6.8p1/compat.c	2015-03-17 00:49:20.000000000 -0500
-+++ work/openssh-6.8p1/compat.c	2015-04-03 16:39:57.665699000 -0500
-@@ -177,6 +177,14 @@
- 			debug("match: %s pat %s compat 0x%08x",
+--- work/openssh/compat.c.orig	2021-04-15 20:55:25.000000000 -0700
++++ work/openssh/compat.c	2021-04-28 14:37:33.129317000 -0700
+@@ -149,6 +149,14 @@ compat_banner(struct ssh *ssh, const char *version)
+ 			debug_f("match: %s pat %s compat 0x%08x",
  			    version, check[i].pat, check[i].bugs);
- 			datafellows = check[i].bugs;	/* XXX for now */
+ 			ssh->compat = check[i].bugs;
 +#ifdef HPN_ENABLED
 +			/* Check to see if the remote side is OpenSSH and not HPN */
 +			if (strstr(version,"OpenSSH") != NULL &&
 +			    strstr(version,"hpn") == NULL) {
-+				datafellows |= SSH_BUG_LARGEWINDOW;
++				ssh->compat |= SSH_BUG_LARGEWINDOW;
 +				debug("Remote is NON-HPN aware");
 +			}
 +#endif
- 			return check[i].bugs;
+ 			return;
  		}
  	}
 --- work/openssh/compat.h.orig	2015-05-29 03:27:21.000000000 -0500
@@ -424,9 +421,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  echo ""
  
---- work.clean/openssh-7.2p1/kex.c.orig	2016-02-25 19:40:04.000000000 -0800
-+++ work.clean/openssh-7.2p1/kex.c	2016-02-29 08:02:25.565288000 -0800
-@@ -907,6 +907,20 @@ kex_choose_conf(struct ssh *ssh)
+--- work/openssh/kex.c.orig	2021-04-15 20:55:25.000000000 -0700
++++ work/openssh/kex.c	2021-04-28 14:38:31.761909000 -0700
+@@ -960,6 +960,20 @@ kex_choose_conf(struct ssh *ssh)
  			peer[ncomp] = NULL;
  			goto out;
  		}
@@ -447,22 +444,22 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		debug("kex: %s cipher: %s MAC: %s compression: %s",
  		    ctos ? "client->server" : "server->client",
  		    newkeys->enc.name,
-@@ -1108,7 +1122,7 @@ send_error(struct ssh *ssh, char *msg)
+@@ -1170,7 +1184,7 @@ send_error(struct ssh *ssh, char *msg)
   */
  int
  kex_exchange_identification(struct ssh *ssh, int timeout_ms,
 -    const char *version_addendum)
 +    const char *version_addendum, int hpn_disabled)
  {
- 	int remote_major, remote_minor, mismatch;
+ 	int remote_major, remote_minor, mismatch, oerrno = 0;
  	size_t len, i, n;
-@@ -1125,8 +1139,13 @@ kex_exchange_identification(struct ssh *ssh, int timeo
+@@ -1187,8 +1201,13 @@ kex_exchange_identification(struct ssh *ssh, int timeo
  	sshbuf_reset(our_version);
  	if (version_addendum != NULL && *version_addendum == '\0')
  		version_addendum = NULL;
 -	if ((r = sshbuf_putf(our_version, "SSH-%d.%d-%.100s%s%s\r\n",
 +	if ((r = sshbuf_putf(our_version, "SSH-%d.%d-%.100s%s%s%s\r\n",
- 	   PROTOCOL_MAJOR_2, PROTOCOL_MINOR_2, SSH_VERSION,
+ 	    PROTOCOL_MAJOR_2, PROTOCOL_MINOR_2, SSH_VERSION,
 +#ifdef HPN_ENABLED
 +	    hpn_disabled ? "" : SSH_HPN,
 +#else
@@ -470,7 +467,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +#endif
  	    version_addendum == NULL ? "" : " ",
  	    version_addendum == NULL ? "" : version_addendum)) != 0) {
- 		error("%s: sshbuf_putf: %s", __func__, ssh_err(r));
+ 		oerrno = errno;
 --- work/openssh-7.7p1/packet.c.orig	2018-04-01 22:38:28.000000000 -0700
 +++ work/openssh-7.7p1/packet.c	2018-06-27 16:42:42.739507000 -0700
 @@ -926,6 +926,24 @@ ssh_set_newkeys(struct ssh *ssh, int mode)
@@ -527,9 +524,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  #if !defined(WITH_OPENSSL)
  # undef BIGNUM
  # undef EC_KEY
---- work/openssh-7.7p1/readconf.c.orig	2018-04-01 22:38:28.000000000 -0700
-+++ work/openssh-7.7p1/readconf.c	2018-06-27 16:58:41.109275000 -0700
-@@ -66,6 +66,9 @@
+--- work/openssh/readconf.c.orig	2021-04-28 13:58:36.413806000 -0700
++++ work/openssh/readconf.c	2021-04-28 14:39:31.145856000 -0700
+@@ -67,6 +67,9 @@
  #include "uidswap.h"
  #include "myproposal.h"
  #include "digest.h"
@@ -539,7 +536,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  /* Format of the configuration file:
  
-@@ -167,6 +170,12 @@ typedef enum {
+@@ -168,6 +171,12 @@ typedef enum {
  	oLocalCommand, oPermitLocalCommand, oRemoteCommand,
  	oVisualHostKey,
  	oKexAlgorithms, oIPQoS, oRequestTTY, oIgnoreUnknown, oProxyUseFdpass,
@@ -552,10 +549,10 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	oCanonicalDomains, oCanonicalizeHostname, oCanonicalizeMaxDots,
  	oCanonicalizeFallbackLocal, oCanonicalizePermittedCNAMEs,
  	oStreamLocalBindMask, oStreamLocalBindUnlink, oRevokedHostKeys,
-@@ -304,6 +313,16 @@ static struct {
- 	{ "updatehostkeys", oUpdateHostkeys },
- 	{ "hostbasedkeytypes", oHostbasedKeyTypes },
- 	{ "pubkeyacceptedkeytypes", oPubkeyAcceptedKeyTypes },
+@@ -312,6 +321,16 @@ static struct {
+ 	{ "hostbasedkeytypes", oHostbasedAcceptedAlgorithms }, /* obsolete */
+ 	{ "pubkeyacceptedalgorithms", oPubkeyAcceptedAlgorithms },
+ 	{ "pubkeyacceptedkeytypes", oPubkeyAcceptedAlgorithms }, /* obsolete */
 +#ifdef NONE_CIPHER_ENABLED
 +	{ "noneenabled", oNoneEnabled },
 +	{ "noneswitch", oNoneSwitch },
@@ -568,8 +565,8 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +#endif
  	{ "ignoreunknown", oIgnoreUnknown },
  	{ "proxyjump", oProxyJump },
- 
-@@ -962,6 +981,44 @@ parse_time:
+ 	{ "securitykeyprovider", oSecurityKeyProvider },
+@@ -1091,6 +1110,44 @@ parse_time:
  		intptr = &options->check_host_ip;
  		goto parse_flag;
  
@@ -614,7 +611,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	case oVerifyHostKeyDNS:
  		intptr = &options->verify_host_key_dns;
  		multistate_ptr = multistate_yesnoask;
-@@ -1833,6 +1890,16 @@ initialize_options(Options * options)
+@@ -2262,6 +2319,16 @@ initialize_options(Options * options)
  	options->ip_qos_interactive = -1;
  	options->ip_qos_bulk = -1;
  	options->request_tty = -1;
@@ -631,7 +628,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	options->proxy_use_fdpass = -1;
  	options->ignored_unknown = NULL;
  	options->num_canonical_domains = 0;
-@@ -1979,6 +2046,34 @@ fill_default_options(Options * options)
+@@ -2432,6 +2499,34 @@ fill_default_options(Options * options)
  		options->server_alive_interval = 0;
  	if (options->server_alive_count_max == -1)
  		options->server_alive_count_max = 3;
@@ -908,23 +905,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  .It Fl r
  Recursively copy entire directories when uploading and downloading.
  Note that
---- work.clean/openssh-6.8p1/sftp.c	2015-03-17 00:49:20.000000000 -0500
-+++ work/openssh-6.8p1/sftp.c	2015-04-03 17:16:00.959795000 -0500
-@@ -71,7 +71,11 @@
- #include "sftp-client.h"
- 
- #define DEFAULT_COPY_BUFLEN	32768	/* Size of buffer for up/download */
-+#ifdef HPN_ENABLED
-+#define DEFAULT_NUM_REQUESTS	256	/* # concurrent outstanding requests */
-+#else
- #define DEFAULT_NUM_REQUESTS	64	/* # concurrent outstanding requests */
-+#endif
- 
- /* File to read commands from */
- FILE* infile;
---- work/openssh-7.7p1/ssh.c.orig	2018-04-01 22:38:28.000000000 -0700
-+++ work/openssh-7.7p1/ssh.c	2018-06-27 17:05:30.011979000 -0700
-@@ -954,6 +954,14 @@ main(int ac, char **av)
+--- work/openssh/ssh.c.orig	2021-04-15 20:55:25.000000000 -0700
++++ work/openssh/ssh.c	2021-04-28 14:51:04.682167000 -0700
+@@ -1027,6 +1027,14 @@ main(int ac, char **av)
  			break;
  		case 'T':
  			options.request_tty = REQUEST_TTY_NO;
@@ -939,12 +922,12 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  			break;
  		case 'o':
  			line = xstrdup(optarg);
-@@ -1833,6 +1841,78 @@ ssh_session2_setup(struct ssh *ssh, int id, int succes
- 	    NULL, fileno(stdin), &command, environ);
+@@ -2056,6 +2064,78 @@ ssh_session2_setup(struct ssh *ssh, int id, int succes
+ 	    NULL, fileno(stdin), command, environ);
  }
  
 +static void
-+hpn_options_init(void)
++hpn_options_init(struct ssh *ssh)
 +{
 +	/*
 +	 * We need to check to see if what they want to do about buffer
@@ -969,7 +952,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +	else
 +		options.hpn_buffer_size = 2 * 1024 * 1024;
 +
-+	if (datafellows & SSH_BUG_LARGEWINDOW) {
++	if (ssh->compat & SSH_BUG_LARGEWINDOW) {
 +		debug("HPN to Non-HPN Connection");
 +	} else {
 +		int sock, socksize;
@@ -1018,7 +1001,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  /* open new channel for a session */
  static int
  ssh_session2_open(struct ssh *ssh)
-@@ -1859,9 +1939,17 @@ ssh_session2_open(struct ssh *ssh)
+@@ -2082,9 +2162,17 @@ ssh_session2_open(struct ssh *ssh)
  	if (!isatty(err))
  		set_nonblock(err);
  
@@ -1036,7 +1019,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		window >>= 1;
  		packetmax >>= 1;
  	}
-@@ -1870,6 +1958,12 @@ ssh_session2_open(struct ssh *ssh)
+@@ -2093,6 +2181,12 @@ ssh_session2_open(struct ssh *ssh)
  	    window, packetmax, CHAN_EXTENDED_WRITE,
  	    "client-session", /*nonblock*/0);
  
@@ -1046,12 +1029,12 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +		debug ("Enabled Dynamic Window Scaling");
 +	}
 +#endif
- 	debug3("%s: channel_new: %d", __func__, c->self);
+ 	debug3_f("channel_new: %d", c->self);
  
  	channel_send_open(ssh, c->self);
-@@ -1885,6 +1979,15 @@ ssh_session2(struct ssh *ssh, struct passwd *pw)
+@@ -2108,6 +2202,15 @@ ssh_session2(struct ssh *ssh, const struct ssh_conn_in
  {
- 	int devnull, id = -1;
+ 	int r, id = -1;
  	char *cp, *tun_fwd_ifname = NULL;
 +
 +#ifdef HPN_ENABLED
@@ -1060,7 +1043,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +	 * might open channels that use the hpn buffer sizes.  We can't send a
 +	 * window of -1 (the default) to the server as it breaks things.
 +	 */
-+	hpn_options_init();
++	hpn_options_init(ssh);
 +#endif
  
  	/* XXX should be pre-session */
@@ -1136,9 +1119,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		sshpkt_fatal(ssh, r, "banner exchange");
  
  	/* Put the connection into non-blocking mode. */
---- sshconnect2.c.orig	2020-02-13 16:40:54.000000000 -0800
-+++ sshconnect2.c	2020-03-22 11:10:01.017282000 -0700
-@@ -83,7 +83,13 @@
+--- work/openssh/sshconnect2.c.orig	2021-04-15 20:55:25.000000000 -0700
++++ work/openssh/sshconnect2.c	2021-04-28 14:51:57.237202000 -0700
+@@ -84,7 +84,13 @@
  extern char *client_version_string;
  extern char *server_version_string;
  extern Options options;
@@ -1152,28 +1135,29 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  /*
   * SSH2 key exchange
   */
-@@ -156,10 +162,11 @@ order_hostkeyalgs(char *host, struct sockaddr *hostadd
+@@ -212,11 +218,12 @@ order_hostkeyalgs(char *host, struct sockaddr *hostadd
  	return ret;
  }
  
 +static char *myproposal[PROPOSAL_MAX];
 +static const char *myproposal_default[PROPOSAL_MAX] = { KEX_CLIENT };
  void
- ssh_kex2(struct ssh *ssh, char *host, struct sockaddr *hostaddr, u_short port)
+ ssh_kex2(struct ssh *ssh, char *host, struct sockaddr *hostaddr, u_short port,
+     const struct ssh_conn_info *cinfo)
  {
 -	char *myproposal[PROPOSAL_MAX] = { KEX_CLIENT };
  	char *s, *all_key;
  	int r, use_known_hosts_order = 0;
  
-@@ -183,6 +190,7 @@ ssh_kex2(struct ssh *ssh, char *host, struct sockaddr 
- 		fatal("%s: kex_assemble_namelist", __func__);
+@@ -241,6 +248,7 @@ ssh_kex2(struct ssh *ssh, char *host, struct sockaddr 
+ 		fatal_fr(r, "kex_assemble_namelist");
  	free(all_key);
  
 +	memcpy(&myproposal, &myproposal_default, sizeof(myproposal));
  	if ((s = kex_names_cat(options.kex_algorithms, "ext-info-c")) == NULL)
- 		fatal("%s: kex_names_cat", __func__);
- 	myproposal[PROPOSAL_KEX_ALGS] = compat_kex_proposal(s);
-@@ -435,6 +443,30 @@ ssh_userauth2(struct ssh *ssh, const char *local_user,
+ 		fatal_f("kex_names_cat");
+ 	myproposal[PROPOSAL_KEX_ALGS] = compat_kex_proposal(ssh, s);
+@@ -489,6 +497,30 @@ ssh_userauth2(struct ssh *ssh, const char *local_user,
  
  	if (!authctxt.success)
  		fatal("Authentication failed.");
