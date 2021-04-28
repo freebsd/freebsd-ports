@@ -76,6 +76,42 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="518a119c-a864-11eb-8ddb-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>13.11.0</ge><lt>13.11.2</lt></range>
+	<range><ge>13.10.0</ge><lt>13.10.4</lt></range>
+	<range><ge>11.6.0</ge><lt>13.9.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2021/04/28/security-release-gitlab-13-11-2-released/">
+	  <p>Read API scoped tokens can execute mutations</p>
+	  <p>Pull mirror credentials were exposed</p>
+	  <p>Denial of Service when querying repository branches API</p>
+	  <p>Non-owners can set system_note_timestamp when creating / updating issues</p>
+	  <p>DeployToken will impersonate a User with the same ID when using Dependency Proxy</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://about.gitlab.com/releases/2021/04/28/security-release-gitlab-13-11-2-released/</url>
+      <cvename>CVE-2021-22209</cvename>
+      <cvename>CVE-2021-22206</cvename>
+      <cvename>CVE-2021-22210</cvename>
+      <cvename>CVE-2021-22208</cvename>
+      <cvename>CVE-2021-22211</cvename>
+    </references>
+    <dates>
+      <discovery>2021-04-28</discovery>
+      <entry>2021-04-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="76a07f31-a860-11eb-8ddb-001b217b3468">
     <topic>Carrierwave -- Multiple vulnerabilities</topic>
     <affects>
