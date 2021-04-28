@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+A sample configuration file is installed at the following location:
+%%PREFIX%%/etc/blocky-config.yml.sample
+
+Default location for configuration file when using rc.d script:
+%%PREFIX%%/etc/blocky-config.yml
+
+Please refer to the documentation located at
+https://0xerr0r.github.io/blocky/ for further information.
+EOM
+}
+]
