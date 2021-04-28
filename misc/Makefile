@@ -465,7 +465,6 @@
     SUBDIR += smssend
     SUBDIR += snakemake
     SUBDIR += soapysdr
-    SUBDIR += soapysdr-rtlsdr
     SUBDIR += solarized
     SUBDIR += sshbuddy
     SUBDIR += sssnips

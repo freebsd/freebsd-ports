@@ -169,6 +169,7 @@
     SUBDIR += soapyplutosdr
     SUBDIR += soapyredpitaya
     SUBDIR += soapyremote
+    SUBDIR += soapysdr-rtlsdr
     SUBDIR += soapysdrhackrf
     SUBDIR += soapyuhd
     SUBDIR += spandsp

@@ -2,7 +2,7 @@ PORTNAME=	SoapyRTLSDR
 DISTVERSIONPREFIX=	soapy-rtl-sdr-
 DISTVERSION=	0.3.2
 PORTREVISION=	1
-CATEGORIES=	misc hamradio
+CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Soapy SDR module for RTLSDR

@@ -16302,3 +16302,4 @@ net/samba411|net/samba412|2021-04-24|Has expired: Security Support ends on 03 De
 net-im/cordless||2021-04-24|Has expired: Unmaintained and dead upstream, uses the old Discord API which notably has got users banned
 news/plor||2021-04-24|Has expired: listed as "Alpha-release" but last update in 2001; unmaintained
 security/certificate-transparency||2021-04-24|Has expired: Broken for more than 6 months
+misc/soapysdr-rtlsdr|comms/soapysdr-rtlsdr|2021-04-28|Move port to a proper category
