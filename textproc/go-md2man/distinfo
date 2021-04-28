@@ -1,0 +1,7 @@
+TIMESTAMP = 1617023117
+SHA256 (cpuguy83-go-md2man-v2.0.0_GH0.tar.gz) = 50537880d42fc28b9c2e9aaa36b137349d43cc73d46436a499f8c928cd2fc576
+SIZE (cpuguy83-go-md2man-v2.0.0_GH0.tar.gz) = 52021
+SHA256 (russross-blackfriday-v2.0.1_GH0.tar.gz) = 5a0f38a36b6f3b2d59b72d713451a895a4d3a4406b3533882483782e37797cff
+SIZE (russross-blackfriday-v2.0.1_GH0.tar.gz) = 79613
+SHA256 (shurcooL-sanitized_anchor_name-v1.0.0_GH0.tar.gz) = 7e11964980f9b8595c17bc8970f0174621afe464920e38df7f8d77e45058388f
+SIZE (shurcooL-sanitized_anchor_name-v1.0.0_GH0.tar.gz) = 2143

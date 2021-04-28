@@ -1,0 +1,5 @@
+go-md2man: Converts Markdown into roff (man pages).
+
+It uses blackfriday to process Markdown.
+
+WWW: https://github.com/cpuguy83/go-md2man
