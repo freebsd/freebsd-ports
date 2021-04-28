@@ -1143,6 +1143,7 @@
     SUBDIR += rubygem-sshkey
     SUBDIR += rubygem-sshkit
     SUBDIR += rubygem-sslshake
+    SUBDIR += rubygem-ssrf_filter
     SUBDIR += rubygem-timfel-krb5
     SUBDIR += rubygem-tpm-key_attestation
     SUBDIR += rubygem-twitter_oauth

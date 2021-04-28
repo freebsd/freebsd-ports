@@ -1,0 +1,3 @@
+A gem that makes it easy to prevent server side request forgery (SSRF) attacks
+
+WWW: https://github.com/arkadiyt/ssrf_filter
