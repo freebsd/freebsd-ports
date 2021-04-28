@@ -53,6 +53,7 @@ USES+=		perl5
 BUILD_DEPENDS+=	libv4l>=${PORTVERSION}:multimedia/libv4l
 LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim \
 		libv4l2.so:multimedia/libv4l
+CPPFLAGS+=	-I${LOCALBASE}/include/libepoll-shim
 LDFLAGS+=	-lepoll-shim
 CONFIGURE_ARGS+= \
 	--enable-v4l-utils \
