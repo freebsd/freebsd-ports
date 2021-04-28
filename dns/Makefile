@@ -10,6 +10,7 @@
     SUBDIR += bind911
     SUBDIR += bind916
     SUBDIR += bindgraph
+    SUBDIR += blocky
     SUBDIR += bundy
     SUBDIR += c-ares
     SUBDIR += cli53
