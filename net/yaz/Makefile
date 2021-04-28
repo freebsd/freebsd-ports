@@ -1,8 +1,7 @@
 # Created by: Dmitry Sivachenko <dima@Chg.RU>
 
 PORTNAME=	yaz
-DISTVERSION=	5.30.3
-PORTREVISION=	2
+DISTVERSION=	5.31.0
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 
 USES=		gnome iconv libtool ncurses pathfix pkgconfig readline \
 		shebangfix tcl
-SHEBANG_FILES=	util/yaz-asncomp
+SHEBANG_FILES=	src/yaz-asncomp
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
