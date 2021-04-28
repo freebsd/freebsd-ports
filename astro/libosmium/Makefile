@@ -1,6 +1,5 @@
 PORTNAME=	libosmium
-PORTVERSION=	2.16.0
-PORTREVISION=	1
+PORTVERSION=	2.17.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro geography devel
 
@@ -27,7 +26,6 @@ CMAKE_ARGS=	-DBUILD_EXAMPLES:BOOL=OFF
 # if/when corresponding port appears in the tree, this will need to
 # be turned into dependency
 CMAKE_ARGS+=	-DINSTALL_GDALCPP:BOOL=ON
-CXXFLAGS+=	"-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1"
 
 # although it builds tests the library itself is header-only
 NO_ARCH=	yes
