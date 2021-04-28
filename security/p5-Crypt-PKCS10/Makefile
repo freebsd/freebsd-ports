@@ -1,7 +1,7 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
 
 PORTNAME=	Crypt-PKCS10
-PORTVERSION=	2.001
+PORTVERSION=	2.002
 PORTEPOCH=	1
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
@@ -23,9 +23,9 @@ RUN_DEPENDS=	p5-Convert-ASN1>=0.27:converters/p5-Convert-ASN1 \
 TEST_DEPENDS=	p5-Module-Signature>0:security/p5-Module-Signature
 
 USES=		perl5
-USE_PERL5=	modbuildtiny
 USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
-NO_ARCH=	yes
+USE_PERL5=	modbuildtiny
 
+NO_ARCH=	yes
 .include <bsd.port.mk>
