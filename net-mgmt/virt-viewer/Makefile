@@ -15,6 +15,7 @@ USES=		cpe desktop-file-utils gettext gettext-tools gmake gnome \
 CPE_VENDOR=	redhat
 USE_GNOME=	gtk30 libxml2
 INSTALLS_ICONS=	yes
+USE_PERL5=	build # pod2man
 USE_XORG=	xorgproto
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
