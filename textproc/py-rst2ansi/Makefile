@@ -8,7 +8,6 @@ MAINTAINER=	PopularMoment@protonmail.com
 COMMENT=	RST converter to ansi-decorated console output
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.14:textproc/py-docutils@${PY_FLAVOR}
 
