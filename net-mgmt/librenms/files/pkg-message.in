@@ -11,6 +11,8 @@ with the following notes:
 NOTE: setting sql-mode="" is no longer required. You can remove
 it from /usr/local/etc/mysql/my.cnf
 
+However, 'lower_case_table_names=0' is required.
+
 HEADS UP
 
 Polling via cron job has been removed.. Please use the Dispatcher.
@@ -27,6 +29,11 @@ sysrc librenms_enable="YES"
 The service will log to /var/log/librems/librenms-service.log
 
 see also https://docs.librenms.org/Extensions/Dispatcher-Service/
+
+For log file rotation
+
+* sample file installed to %%WWWDIR%%/contrib/newsyslog.conf.sample
+* actual file installed, never overwriting, to %%PREFIX%%/etc/newsyslog.conf.d/librenms.conf
 
 When converting from PYPOLLER to the Dispatcher Service (PYSERVICE),
 these steps will help you get started:

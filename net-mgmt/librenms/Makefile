@@ -2,6 +2,7 @@
 
 PORTNAME=	librenms
 PORTVERSION=	21.4.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -193,5 +194,10 @@ post-install:
 .for f in ${OTHER_DIRS}
 	@${ECHO_CMD} "@dir(root,www,0775) ${WWWDIR}/${f}" >> ${TMPPLIST}
 .endfor
+
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+	${INSTALL_DATA} ${FILESDIR}/newsyslog.conf.sample ${STAGEDIR}/${WWWDIR}/contrib/newsyslog.conf.sample
+	@${ECHO_CMD} "@dir etc/newsyslog.conf.d" >> ${TMPPLIST}
+	@${ECHO_CMD} "@sample ${WWWDIR}/contrib/newsyslog.conf.sample etc/newsyslog.conf.d/librenms.conf" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
