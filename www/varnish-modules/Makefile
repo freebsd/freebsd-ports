@@ -1,7 +1,7 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 PORTNAME=	varnish-modules
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.0
 CATEGORIES=	www
 
 MAINTAINER=	zi@FreeBSD.org
@@ -30,8 +30,10 @@ CFLAGS+=	-Wno-error=deprecated-declarations
 pre-configure:
 	cd ${WRKSRC} && ./bootstrap
 
+post-build-DOCS-on:
+	cd ${WRKSRC} && ${MAKE_CMD} rst-docs
+
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} '-not -regex .*.man.rst'
 
 .include <bsd.port.mk>
