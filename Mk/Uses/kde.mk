@@ -437,7 +437,7 @@ kde-kquickcharts_PATH=		${QT_QMLDIR}/org/kde/quickcharts/controls/libchartscontr
 kde-kross_PORT=			lang/kf5-kross
 kde-kross_LIB=			libKF5KrossCore.so
 
-kde-kwayland-protocols_PORT=	x11/plasma-kwayland-protocols
+kde-kwayland-protocols_PORT=	x11/plasma-wayland-protocols
 kde-kwayland-protocols_LIB=	${KDE_PREFIX}/lib/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfig.cmake
 
 kde-kwayland-server_PORT=	x11/plasma5-kwayland-server
