@@ -589,6 +589,7 @@ share/applications/ardour6.desktop
 %%DATADIR%%/patchfiles/MFB_503.midnam
 %%DATADIR%%/patchfiles/MFB_Tanzbar.midnam
 %%DATADIR%%/patchfiles/MIDI.midnam
+%%DATADIR%%/patchfiles/Moog_Grandmother.midnam
 %%DATADIR%%/patchfiles/Moog_MF_104M_Analog_Delay.midnam
 %%DATADIR%%/patchfiles/Moog_MF_108M_Cluster_Flux.midnam
 %%DATADIR%%/patchfiles/Moog_Minitaur.midnam
@@ -714,6 +715,7 @@ share/applications/ardour6.desktop
 %%DATADIR%%/patchfiles/TC_Electronic_M3000.midnam
 %%DATADIR%%/patchfiles/Tascam_TM_D1000.midnam
 %%DATADIR%%/patchfiles/Waldorf_Blofeld.midnam
+%%DATADIR%%/patchfiles/Waldorf_Blofeld_2012.midnam
 %%DATADIR%%/patchfiles/Waldorf_Micro_Q.midnam
 %%DATADIR%%/patchfiles/Waldorf_Pulse.midnam
 %%DATADIR%%/patchfiles/Yamaha_AN1X.midnam
@@ -809,6 +811,7 @@ share/applications/ardour6.desktop
 %%DATADIR%%/scripts/normalize_all_tracks.lua
 %%DATADIR%%/scripts/notch_bank.lua
 %%DATADIR%%/scripts/periodic_backup.lua
+%%DATADIR%%/scripts/pitch_to_mts.lua
 %%DATADIR%%/scripts/post_export_save_hook.lua
 %%DATADIR%%/scripts/preare_record_example.lua
 %%DATADIR%%/scripts/remove_unknown_procs.lua
