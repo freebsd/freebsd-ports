@@ -1,8 +1,7 @@
 # Created by: KIMURA Yasuhiro <yasu@utahime.org>
 
 PORTNAME=	git-modes
-DISTVERSION=	1.2.8
-PORTREVISION=	5
+DISTVERSION=	1.2.9
 PORTEPOCH=	1
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
