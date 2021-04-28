@@ -3,6 +3,8 @@
     SUBDIR += amule
     SUBDIR += amule-devel
     SUBDIR += awgg
+    SUBDIR += bazarr
+    SUBDIR += bazarr-devel
     SUBDIR += bitcoin
     SUBDIR += bitcoin-daemon
     SUBDIR += bitcoin-utils
