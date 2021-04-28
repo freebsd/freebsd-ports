@@ -2,6 +2,7 @@
 
 PORTNAME=	hidraw
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,6 +23,6 @@ IGNORE=		requires FreeBSD 13 or later with hidraw support
 .endif
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/hidraw/_hidraw.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/hidraw/_hidraw*.so
 
 .include <bsd.port.post.mk>
