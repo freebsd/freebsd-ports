@@ -76,6 +76,34 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="76a07f31-a860-11eb-8ddb-001b217b3468">
+    <topic>Carrierwave -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rubygem-carrierwave</name>
+	<range><lt>1.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Community reports:</p>
+	<blockquote cite="https://github.com/carrierwaveuploader/carrierwave/blob/master/CHANGELOG.md#132---2021-02-08">
+	  <p>Fix Code Injection vulnerability in CarrierWave::RMagick</p>
+	  <p>Fix SSRF vulnerability in the remote file download feature</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/carrierwaveuploader/carrierwave/blob/master/CHANGELOG.md#132---2021-02-08</url>
+      <cvename>CVE-2021-21288</cvename>
+      <cvename>CVE-2021-21305</cvename>
+    </references>
+    <dates>
+      <discovery>2021-02-08</discovery>
+      <entry>2021-04-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="31a7ffb1-a80a-11eb-b159-f8b156c2bfe9">
     <topic>sympa -- Inappropriate use of the cookie parameter can be a security threat. This parameter may also not provide sufficient security.</topic>
     <affects>
