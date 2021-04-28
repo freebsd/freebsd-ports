@@ -306,6 +306,7 @@
     SUBDIR += py-napalm-logs
     SUBDIR += py-ncclient
     SUBDIR += py-nxapi-plumbing
+    SUBDIR += py-opn-cli
     SUBDIR += py-pdagent
     SUBDIR += py-pdagent-integrations
     SUBDIR += py-prometheus-client
