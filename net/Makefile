@@ -357,7 +357,6 @@
     SUBDIR += libgweather
     SUBDIR += libilbc
     SUBDIR += libiscsi
-    SUBDIR += libjson-rpc-cpp
     SUBDIR += libkgapi
     SUBDIR += libksieve
     SUBDIR += libkvkontakte
