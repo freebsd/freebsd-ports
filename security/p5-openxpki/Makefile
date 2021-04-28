@@ -1,7 +1,7 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
 
 PORTNAME=	openxpki
-PORTVERSION=	3.8.1
+PORTVERSION=	3.12.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
@@ -26,6 +26,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		p5-Connector>=1.32:devel/p5-Connector \
 		p5-Crypt-Argon2>=0.007:security/p5-Crypt-Argon2 \
 		p5-Crypt-CBC>=2.29:security/p5-Crypt-CBC \
+		p5-Crypt-JWT>=0.032:security/p5-Crypt-JWT \
 		p5-Crypt-LibSCEP>=0.6:security/p5-Crypt-LibSCEP \
 		p5-Crypt-OpenSSL-AES>=0.02:security/p5-Crypt-OpenSSL-AES \
 		p5-Crypt-PKCS10>=2.000:security/p5-Crypt-PKCS10 \
@@ -81,31 +82,31 @@ TEST_DEPENDS=	p5-DBD-SQLite>=1.52:databases/p5-DBD-SQLite \
 		p5-Test-Pod>=1.00:devel/p5-Test-Pod \
 		p5-Test-Prereq>=0:devel/p5-Test-Prereq
 
+USES=		gmake perl5 ssl
+USE_GITHUB=	yes
+GH_PROJECT=	openxpki-config:conf
+GH_TAGNAME=	${DISTVERSIONPREFIX}${_conf_VERSION}:conf
+_conf_VERSION=	3.12
+
+USE_PERL5=	configure
+USE_RC_SUBR=	openxpki
+
 CONFLICTS=	p5-openxpki-client-[0-9]* \
 		p5-openxpki-client-scep-[0-9]* \
 		p5-openxpki-client-deployment-[0-9]* \
 		p5-openxpki-client-html-mason-[0-9]*
 
-USES=		gmake perl5 ssl
-USE_GITHUB=	yes
-GH_PROJECT=	openxpki-config:conf
-conf_VERSION=	3.6
-GH_TAGNAME=	${DISTVERSIONPREFIX}${conf_VERSION}:conf
-
-USE_PERL5=	configure
 NO_ARCH=	yes
-USE_RC_SUBR=	openxpki
-SUB_FILES=	pkg-message
-PORTDOCS=	*
-PORTEXAMPLES=	*
-
 PORTSCOUT=	limitw:1,even # stay with stable versions only
+SUB_FILES=	pkg-message
 
 WRKSRC_SUBDIR=	core/server/
 
 USERS=		openxpki
 GROUPS=		openxpki
 
+PORTDOCS=	*
+PORTEXAMPLES=	*
 OPTIONS_DEFINE=	GRAPHVIZ DOCS EXAMPLES
 
 GRAPHVIZ_DESC=	With graphical visualization of workflows?
@@ -136,13 +137,13 @@ post-install:
 	@${MKDIR} ${STAGEDIR}/var/log/openxpki
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/openxpki
 
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/../../doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/../.. && ${COPYTREE_SHARE} config ${STAGEDIR}${EXAMPLESDIR})
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "htdocs cgi-bin" ${STAGEDIR}${EXAMPLESDIR})
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/../../doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.post.mk>
