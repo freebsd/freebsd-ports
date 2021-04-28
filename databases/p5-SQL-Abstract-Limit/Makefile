@@ -1,7 +1,7 @@
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 
 PORTNAME=	SQL-Abstract-Limit
-PORTVERSION=	0.142
+PORTVERSION=	0.143
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
