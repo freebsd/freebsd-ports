@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.15-12161 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g9609767c5
+DISTVERSION=	0.0.15-12167 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g64a109d28
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,7 +24,7 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-28-g8961cf8:hidapi/3rdparty/hidapi \
-		RPCS3:llvm-mirror:5d8643e8eb3:llvm/llvm \
+		RPCS3:llvm-mirror:4d88105d4a89:llvm/llvm \
 		Cyan4973:xxHash:v0.8.0:xxHash/3rdparty/xxHash \
 		FNA-XNA:FAudio:20.05:FAudio/3rdparty/FAudio \
 		google:flatbuffers:v1.11.0:flatbuffers/3rdparty/flatbuffers \
@@ -82,7 +82,7 @@ post-patch:
 
 # Ignore Mk/bsd.default-versions.mk but respect make.conf(5)
 .if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*}
-LLVM_DEFAULT=	11 # bump if not latest release
+LLVM_DEFAULT=	12 # bump if not latest release
 .endif
 BUILD_DEPENDS+=	clang++${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 USES:=		${USES:Ncompiler*}
