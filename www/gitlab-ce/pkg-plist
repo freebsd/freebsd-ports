@@ -20019,6 +20019,7 @@
 %%WWWDIR%%/lib/gitlab/auth/saml/identity_linker.rb
 %%WWWDIR%%/lib/gitlab/auth/saml/origin_validator.rb
 %%WWWDIR%%/lib/gitlab/auth/saml/user.rb
+%%WWWDIR%%/lib/gitlab/auth/scope_validator.rb
 %%WWWDIR%%/lib/gitlab/auth/too_many_ips.rb
 %%WWWDIR%%/lib/gitlab/auth/two_factor_auth_verifier.rb
 %%WWWDIR%%/lib/gitlab/auth/u2f_webauthn_converter.rb
