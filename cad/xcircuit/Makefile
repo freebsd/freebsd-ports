@@ -1,7 +1,7 @@
 # Created by: Pedro F. Giffuni <giffunip@asme.org>
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.10.29
+PORTVERSION=	3.10.30
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
@@ -38,6 +38,7 @@ post-patch:
 		 s|-fpic|-fPIC|g' ${WRKSRC}/configure
 
 post-install:
+	cd ${STAGEDIR}${PREFIX}/share/xcircuit && ${STRIP_CMD} xcircuit.so xcircexec xcircdnull
 	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/.xcircuitrc ${STAGEDIR}/${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.lgf ${STAGEDIR}/${EXAMPLESDIR}
