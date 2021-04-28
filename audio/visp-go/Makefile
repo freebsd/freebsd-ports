@@ -1,5 +1,5 @@
 PORTNAME=	visp-go
-DISTVERSION=	g20210422
+DISTVERSION=	g20210425
 CATEGORIES=	audio
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -12,7 +12,7 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	ambientsound
 GH_PROJECT=	${PORTNAME:C/-go//}
-GH_TAGNAME=	9bd927e
+GH_TAGNAME=	d2efc0e
 GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
@@ -52,6 +52,7 @@ GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-sp
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		zmb3:spotify:v1.1.2:zmb3_spotify/vendor/github.com/zmb3/spotify
+
 _BUILD_VERSION=	${GH_TAGNAME}
 _BUILD_DATE=	$$(date +%s)
 
