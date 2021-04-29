@@ -3,7 +3,7 @@
 PORTNAME=	sift
 PORTVERSION=	0.9.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,9 +19,9 @@ GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 PLIST_FILES=	bin/sift
 
 GH_ACCOUNT=	svent
-GH_TUPLE=	golang:crypto:eec23a3:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:9b0068b:golang_sys/vendor/golang.org/x/sys \
-		golang:term:2321bbc:golang_term/vendor/golang.org/x/term \
+GH_TUPLE=	golang:crypto:83a5a9b:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sys:d19ff85:golang_sys/vendor/golang.org/x/sys \
+		golang:term:f5beecf:golang_term/vendor/golang.org/x/term \
 		svent:go-flags:4bcbad3:svent_goflags/vendor/github.com/svent/go-flags \
 		svent:go-nbreader:7cef48d:svent_gonbreader/vendor/github.com/svent/go-nbreader
 USE_GITHUB=	yes
