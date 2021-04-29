@@ -1,6 +1,6 @@
---- httptools/parser/parser.c.orig	2019-02-25 19:54:42 UTC
+--- httptools/parser/parser.c.orig	2021-04-26 15:52:02 UTC
 +++ httptools/parser/parser.c
-@@ -609,7 +609,7 @@ static CYTHON_INLINE float __PYX_NAN() {
+@@ -625,7 +625,7 @@ static CYTHON_INLINE float __PYX_NAN() {
  #include <stdio.h>
  #include "pythread.h"
  #include <stdint.h>

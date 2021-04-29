@@ -1,5 +1,14 @@
---- setup.py.orig	2020-02-08 00:30:40 UTC
+--- setup.py.orig	2021-04-26 15:51:55 UTC
 +++ setup.py
+@@ -15,7 +15,7 @@ CFLAGS = ['-O2']
+ 
+ ROOT = pathlib.Path(__file__).parent
+ 
+-CYTHON_DEPENDENCY = 'Cython==0.29.22'
++CYTHON_DEPENDENCY = 'Cython>=0.29.21'
+ 
+ 
+ class httptools_build_ext(build_ext):
 @@ -44,7 +44,7 @@ class httptools_build_ext(build_ext):
              return
  
