@@ -8,7 +8,7 @@
 #
 #  postgresql_enable="YES"
 #  # optional
-#  postgresql_data="/var/db/%%PG_USER%%/data11"
+#  postgresql_data="/var/db/%%PG_USER%%/data12"
 #  postgresql_flags="-w -s -m fast"
 #  postgresql_initdb_flags="--encoding=utf-8 --lc-collate=C"
 #  postgresql_class="default"
