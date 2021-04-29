@@ -1,6 +1,6 @@
 PORTNAME=	litestream
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.3
+DISTVERSION=	0.3.4
 CATEGORIES=	databases
 
 MAINTAINER=	nc@FreeBSD.org
@@ -23,6 +23,7 @@ GH_TUPLE=	\
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:f9fddec55a1e:golang_sys/vendor/golang.org/x/sys \
 		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		mattn:go-sqlite3:v1.14.5:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
