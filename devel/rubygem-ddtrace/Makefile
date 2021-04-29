@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	ddtrace
-PORTVERSION=	0.47.0
+PORTVERSION=	0.48.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,12 +13,15 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.Apache
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE.BSD3
 
-RUN_DEPENDS=	rubygem-msgpack>=0:devel/rubygem-msgpack
+RUN_DEPENDS=	rubygem-ffi>=1.0<2:devel/rubygem-ffi \
+		rubygem-msgpack>=0:devel/rubygem-msgpack
 
 USES=		gem shebangfix
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+PLIST_FILES=	bin/ddtracerb
 
 SHEBANG_FILES=	integration/apps/rack/script/build-images \
 		integration/apps/rack/script/ci \
