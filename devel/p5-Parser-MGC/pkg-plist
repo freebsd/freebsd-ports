@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Parser/MGC.pm
+%%SITE_PERL%%/Parser/MGC/Examples/EvaluateExpression.pm
+%%SITE_PERL%%/Parser/MGC/Tutorial.pod
+%%PERL5_MAN3%%/Parser::MGC.3.gz
+%%PERL5_MAN3%%/Parser::MGC::Examples::EvaluateExpression.3.gz
+%%PERL5_MAN3%%/Parser::MGC::Tutorial.3.gz
