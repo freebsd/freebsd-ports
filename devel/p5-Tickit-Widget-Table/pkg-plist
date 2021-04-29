@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Tickit/Widget/Table.pm
+%%SITE_PERL%%/Tickit/Widget/Table.pod
+%%SITE_PERL%%/Tickit/Widget/Table/FAQ.pod
+%%PERL5_MAN3%%/Tickit::Widget::Table.3.gz
+%%PERL5_MAN3%%/Tickit::Widget::Table::FAQ.3.gz

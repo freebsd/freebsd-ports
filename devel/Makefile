@@ -3527,6 +3527,7 @@
     SUBDIR += p5-Thrift-XS
     SUBDIR += p5-Throwable
     SUBDIR += p5-Tickit
+    SUBDIR += p5-Tickit-Widget-Table
     SUBDIR += p5-Tickit-Widgets
     SUBDIR += p5-Tie-Array-Pack
     SUBDIR += p5-Tie-Array-Sorted
