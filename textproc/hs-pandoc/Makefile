@@ -159,7 +159,7 @@ OPTIONS_SUB=	yes
 
 .if ${ARCH} == i386
 # compiler goes out of memory
-CABAL_FLAGS+=	--disable-optimization
+BUILD_ARGS+=	--disable-optimization
 .endif
 
 post-extract:
