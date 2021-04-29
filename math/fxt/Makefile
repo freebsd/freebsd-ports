@@ -1,8 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	fxt
-DISTVERSION=	2018.07.03
-PORTREVISION=	1
+DISTVERSION=	2021.04.06
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/
 
