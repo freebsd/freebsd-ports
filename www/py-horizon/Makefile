@@ -75,8 +75,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xstatic-term.js>=0.0.7.0:devel/py-xstatic-term.js@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xstatic-tv4>=1.2.7.0:devel/py-xstatic-tv4@${PY_FLAVOR}
 
-USES=		python:3.6+ # Required as devel/py-oslo.upgradecheck supports Python 3.6+ only
-USE_PYTHON=	autoplist distutils
+USES=		python:3.6+
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
@@ -88,12 +88,11 @@ SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
 
 CONFLICTS_INSTALL=	py??-horizon-*
 
-OPTIONS_DEFAULT=	MEMCACHED
-OPTIONS_RADIO=		CACHE
+OPTIONS_RADIO=	CACHE
 OPTIONS_RADIO_CACHE=	MEMCACHED REDIS
-
-MEMCACHED_DESC=		Use memcached as caching backend
-REDIS_DESC=		Use Redis as caching backend
+OPTIONS_DEFAULT=MEMCACHED
+MEMCACHED_DESC=	Use memcached as caching backend
+REDIS_DESC=	Use Redis as caching backend
 
 MEMCACHED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-memcached>0:databases/py-python-memcached@${PY_FLAVOR}
 REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>0:databases/py-redis@${PY_FLAVOR}
