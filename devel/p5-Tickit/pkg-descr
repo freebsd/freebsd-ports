@@ -1,0 +1,12 @@
+Tickit is a high-level toolkit for creating full-screen terminal-based
+interactive programs. It allows programs to be written in an abstracted way,
+working with a tree of widget objects, to represent the layout of the interface
+and implement its behaviours.
+
+Its supported terminal features includes a rich set of rendering attributes
+(bold, underline, italic, 256-colours, etc), support for mouse including wheel
+and position events above the 224th column and arbitrary modified key input via
+libtermkey (all of these will require a supporting terminal as well). It also
+supports having multiple instances and non-blocking or asynchronous control.
+
+WWW: https://metacpan.org/release/Tickit
