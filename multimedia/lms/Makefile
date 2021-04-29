@@ -1,10 +1,7 @@
 PORTNAME=	lms
-DISTVERSION=	3.25.0
+DISTVERSION=	3.25.2
 MASTER_SITES=	https://github.com/epoupon/lms/archive/refs/tags/v${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/epoupon/lms/commit/
-PATCHFILES+=	b45b30ded44bb49865bbce7b43612f36043126ea.patch:-p1 # backport of fix of missing includes: https://github.com/epoupon/lms/commit/b45b30ded44bb49865bbce7b43612f36043126ea
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight Music Server
@@ -15,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libboost_system.so:devel/boost-libs \
 		libconfig++.so:devel/libconfig \
+		libGraphicsMagick.so:graphics/GraphicsMagick \
 		libtag.so:audio/taglib \
 		libwthttp.so:www/wt
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
