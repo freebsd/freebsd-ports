@@ -1,6 +1,20 @@
---- src/CMakeLists.txt.orig	2021-02-03 13:36:49 UTC
+--- src/CMakeLists.txt.orig	2021-04-29 21:04:27 UTC
 +++ src/CMakeLists.txt
-@@ -388,7 +388,7 @@ if(USE_OPENJPEG)
+@@ -321,7 +321,12 @@ if(USE_CAMERA_SUPPORT)
+ endif(USE_CAMERA_SUPPORT)
+ 
+ if(USE_OPENEXR)
+-  find_package(OpenEXR)
++  find_package(OpenEXR 3.0 CONFIG)
++  if(TARGET OpenEXR::OpenEXR)
++    set(OpenEXR_LIBRARIES OpenEXR::OpenEXR)
++  else()
++    find_package(OpenEXR)
++  endif()
+   if(OpenEXR_FOUND)
+     include_directories(SYSTEM ${OpenEXR_INCLUDE_DIRS})
+     list(APPEND LIBS ${OpenEXR_LIBRARIES})
+@@ -388,7 +393,7 @@ if(USE_OPENJPEG)
      add_definitions("-DHAVE_OPENJPEG")
      list(APPEND SOURCES "common/imageio_j2k.c")
  
