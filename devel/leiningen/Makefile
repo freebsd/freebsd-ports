@@ -1,12 +1,9 @@
 PORTNAME=	leiningen
-PORTVERSION=	2.9.4
+PORTVERSION=	2.9.6
 CATEGORIES=	devel lisp java
 MASTER_SITES=	https://github.com/technomancy/leiningen/releases/download/${PORTVERSION}/:standalone
 DISTFILES=	leiningen-${PORTVERSION}-standalone.zip:standalone
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	https://github.com/technomancy/leiningen/commit/
-PATCHFILES=	7677dabea40a2d17a42a718ca8c7e450b09e153c.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automate Clojure projects
