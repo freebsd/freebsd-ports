@@ -1,8 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Text-Table-Any
-PORTVERSION=	0.102
-PORTREVISION=	1
+PORTVERSION=	0.103
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -43,6 +42,7 @@ RECOMMENDED_BUILD_DEPENDS=	p5-Term-TablePrint>=0:devel/p5-Term-TablePrint \
 				p5-Text-Table-Paragraph>=0:textproc/p5-Text-Table-Paragraph \
 				p5-Text-Table-TSV>=0:textproc/p5-Text-Table-TSV \
 				p5-Text-Table-Tiny>=0:textproc/p5-Text-Table-Tiny \
+				p5-Text-Table-TickitWidget>=0:textproc/p5-Text-Table-TickitWidget \
 				p5-Text-Table-TinyBorderStyle>=0:textproc/p5-Text-Table-TinyBorderStyle \
 				p5-Text-Table-TinyColor>=0:textproc/p5-Text-Table-TinyColor \
 				p5-Text-Table-TinyColorWide>=0:textproc/p5-Text-Table-TinyColorWide \
@@ -66,6 +66,7 @@ RECOMMENDED_RUN_DEPENDS=	p5-Term-TablePrint>=0:devel/p5-Term-TablePrint \
 				p5-Text-Table-Org>=0:textproc/p5-Text-Table-Org \
 				p5-Text-Table-Paragraph>=0:textproc/p5-Text-Table-Paragraph \
 				p5-Text-Table-TSV>=0:textproc/p5-Text-Table-TSV \
+				p5-Text-Table-TickitWidget>=0:textproc/p5-Text-Table-TickitWidget \
 				p5-Text-Table-Tiny>=0:textproc/p5-Text-Table-Tiny \
 				p5-Text-Table-TinyBorderStyle>=0:textproc/p5-Text-Table-TinyBorderStyle \
 				p5-Text-Table-TinyColor>=0:textproc/p5-Text-Table-TinyColor \
