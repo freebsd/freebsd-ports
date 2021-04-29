@@ -1,6 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.1
+DISTVERSION=	1.9.2
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -47,11 +47,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		anymap-0.12.1 \
 		arrayvec-0.5.2 \
 		ash-0.31.0 \
-		ast_node-0.7.2 \
+		ast_node-0.7.3 \
 		async-compression-0.3.7 \
-		async-stream-0.3.0 \
-		async-stream-impl-0.3.0 \
-		async-trait-0.1.48 \
+		async-stream-0.3.1 \
+		async-stream-impl-0.3.1 \
+		async-trait-0.1.50 \
 		atty-0.2.14 \
 		auto_impl-0.4.1 \
 		autocfg-1.0.1 \
@@ -65,7 +65,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		block-buffer-0.9.0 \
 		brotli-3.3.0 \
 		brotli-decompressor-2.3.1 \
-		build_const-0.2.1 \
+		build_const-0.2.2 \
 		bumpalo-3.6.1 \
 		byteorder-1.4.3 \
 		bytes-1.0.1 \
@@ -84,7 +84,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cpuid-bool-0.1.2 \
 		crc-1.8.1 \
 		crc32fast-1.2.1 \
-		crossbeam-channel-0.5.0 \
+		crossbeam-channel-0.5.1 \
 		crossbeam-utils-0.8.3 \
 		d3d12-0.3.2 \
 		darling-0.10.2 \
@@ -101,9 +101,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dlopen-0.1.8 \
 		dlopen_derive-0.1.4 \
 		dprint-core-0.35.3 \
+		dprint-core-0.37.0 \
 		dprint-plugin-json-0.10.1 \
 		dprint-plugin-markdown-0.6.2 \
-		dprint-plugin-typescript-0.44.0 \
+		dprint-plugin-typescript-0.44.1 \
 		dprint-swc-ecma-ast-view-0.15.0 \
 		dprint-swc-ecma-ast-view-0.16.0 \
 		either-1.6.1 \
@@ -146,7 +147,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		getrandom-0.2.2 \
 		gfx-auxil-0.8.0 \
 		gfx-backend-dx11-0.7.0 \
-		gfx-backend-dx12-0.7.0 \
+		gfx-backend-dx12-0.7.1 \
 		gfx-backend-empty-0.7.0 \
 		gfx-backend-gl-0.7.1 \
 		gfx-backend-metal-0.7.0 \
@@ -162,15 +163,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		heck-0.3.2 \
 		hermit-abi-0.1.18 \
 		hostname-0.3.1 \
-		http-0.2.3 \
+		http-0.2.4 \
 		http-body-0.4.1 \
-		httparse-1.3.5 \
-		httpdate-0.3.2 \
+		httparse-1.4.0 \
+		httpdate-1.0.0 \
 		humantime-2.1.0 \
-		hyper-0.14.5 \
+		hyper-0.14.7 \
 		hyper-rustls-0.22.1 \
 		ident_case-1.0.1 \
-		idna-0.2.2 \
+		idna-0.2.3 \
 		if_chain-1.0.1 \
 		indexmap-1.6.2 \
 		inotify-0.9.2 \
@@ -182,7 +183,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ipnet-2.3.0 \
 		is-macro-0.1.9 \
 		itoa-0.4.7 \
-		jobserver-0.1.21 \
+		jobserver-0.1.22 \
 		js-sys-0.3.49 \
 		jsonc-parser-0.17.0 \
 		kernel32-sys-0.2.2 \
@@ -231,8 +232,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		phf_generator-0.8.0 \
 		phf_macros-0.8.0 \
 		phf_shared-0.8.0 \
-		pin-project-1.0.6 \
-		pin-project-internal-1.0.6 \
+		pin-project-1.0.7 \
+		pin-project-internal-1.0.7 \
 		pin-project-lite-0.2.6 \
 		pin-utils-0.1.0 \
 		pmutil-0.5.3 \
@@ -262,18 +263,18 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rand_pcg-0.2.1 \
 		range-alloc-0.1.2 \
 		raw-window-handle-0.3.3 \
-		redox_syscall-0.2.5 \
+		redox_syscall-0.2.6 \
 		regex-1.4.3 \
 		regex-syntax-0.6.23 \
 		relative-path-1.3.2 \
 		remove_dir_all-0.5.3 \
-		reqwest-0.11.2 \
+		reqwest-0.11.3 \
 		resolv-conf-0.7.0 \
 		retain_mut-0.1.2 \
 		ring-0.16.20 \
 		ron-0.6.4 \
 		rustc_version-0.2.3 \
-		rustls-0.19.0 \
+		rustls-0.19.1 \
 		rusty_v8-0.22.1 \
 		rustyline-8.0.0 \
 		rustyline-derive-0.4.0 \
@@ -281,7 +282,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
-		sct-0.6.0 \
+		sct-0.6.1 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
 		semver-parser-0.10.2 \
@@ -294,7 +295,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		shell-escape-0.1.5 \
 		signal-hook-registry-1.3.0 \
 		siphasher-0.3.5 \
-		slab-0.4.2 \
+		slab-0.4.3 \
 		slotmap-0.4.0 \
 		smallvec-1.6.1 \
 		socket2-0.3.19 \
@@ -311,20 +312,20 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strsim-0.8.0 \
 		strsim-0.9.3 \
 		swc_atoms-0.2.6 \
-		swc_bundler-0.32.0 \
+		swc_bundler-0.32.5 \
 		swc_common-0.10.17 \
 		swc_ecma_ast-0.43.1 \
 		swc_ecma_codegen-0.52.3 \
 		swc_ecma_codegen_macros-0.5.2 \
 		swc_ecma_dep_graph-0.22.2 \
-		swc_ecma_parser-0.54.3 \
+		swc_ecma_parser-0.54.4 \
 		swc_ecma_transforms-0.45.3 \
 		swc_ecma_transforms_base-0.12.6 \
 		swc_ecma_transforms_optimization-0.15.5 \
 		swc_ecma_transforms_proposal-0.13.4 \
 		swc_ecma_transforms_react-0.14.3 \
 		swc_ecma_transforms_typescript-0.14.4 \
-		swc_ecma_utils-0.34.1 \
+		swc_ecma_utils-0.34.2 \
 		swc_ecma_visit-0.29.1 \
 		swc_ecmascript-0.31.3 \
 		swc_eq_ignore_macros-0.1.0 \
@@ -333,7 +334,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		swc_visit_macros-0.2.3 \
 		syn-0.15.44 \
 		syn-1.0.65 \
-		sys-info-0.8.0 \
+		sys-info-0.9.0 \
 		tempfile-3.2.0 \
 		termcolor-1.1.2 \
 		text-size-1.1.0 \
@@ -345,13 +346,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		time-0.1.44 \
 		tinyvec-1.2.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.4.0 \
+		tokio-1.5.0 \
 		tokio-macros-1.1.0 \
 		tokio-rustls-0.22.0 \
 		tokio-stream-0.1.5 \
 		tokio-test-0.4.1 \
 		tokio-tungstenite-0.14.0 \
-		tokio-util-0.6.5 \
+		tokio-util-0.6.6 \
 		toml-0.5.8 \
 		tower-layer-0.3.1 \
 		tower-service-0.3.1 \
@@ -359,10 +360,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tracing-0.1.25 \
 		tracing-attributes-0.1.15 \
 		tracing-core-0.1.17 \
-		trust-dns-client-0.20.1 \
-		trust-dns-proto-0.20.1 \
-		trust-dns-resolver-0.20.1 \
-		trust-dns-server-0.20.1 \
+		trust-dns-client-0.20.2 \
+		trust-dns-proto-0.20.2 \
+		trust-dns-resolver-0.20.2 \
+		trust-dns-server-0.20.2 \
 		try-lock-0.2.3 \
 		tungstenite-0.13.0 \
 		twoway-0.2.1 \
@@ -378,7 +379,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unicode-xid-0.2.1 \
 		untrusted-0.7.1 \
 		url-2.2.1 \
-		utf-8-0.7.5 \
+		utf-8-0.7.6 \
 		utf8parse-0.2.0 \
 		uuid-0.8.2 \
 		vec_map-0.8.2 \
