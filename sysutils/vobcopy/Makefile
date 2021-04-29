@@ -2,7 +2,7 @@
 
 PORTNAME=	vobcopy
 PORTVERSION=	1.2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vobcopy.org/download/ \
 		LOCAL/ehaupt

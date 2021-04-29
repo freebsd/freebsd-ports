@@ -1,6 +1,6 @@
 PORTNAME=	dvdread
 DISTVERSION=	g20160701
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/silum/dvdread/commit/
