@@ -2,10 +2,11 @@
 
 PORTNAME=	cartopy
 PORTVERSION=	0.19.0
+DISTVERSIONSUFFIX=	.post1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Cartopy-${PORTVERSION}
+DISTNAME=	Cartopy-${DISTVERSIONFULL}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cartographic library with Matplotlib support for visualisation
@@ -28,7 +29,6 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent cython distutils
 
 CPPFLAGS+=	-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H
-MAKE_ENV=	FORCE_CYTHON=1
 
 OPTIONS_DEFINE=	EPSG OWS PLOTTING
 EPSG_DESC=	EPSG database support
