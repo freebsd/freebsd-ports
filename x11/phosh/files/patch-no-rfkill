@@ -1,0 +1,75 @@
+rfkill API differs between Linux and FreeBSD.
+
+src/hks-manager.c:18:10: fatal error: 'linux/rfkill.h' file not found
+#include <linux/rfkill.h>
+         ^~~~~~~~~~~~~~~~
+
+--- src/meson.build.orig	2021-04-29 13:20:40 UTC
++++ src/meson.build
+@@ -63,9 +61,5 @@
+   'end-session-dialog.c',
+   'end-session-dialog.h',
+-  'hks-info.c',
+-  'hks-info.h',
+-  'hks-manager.c',
+-  'hks-manager.h',
+   'docked-info.c',
+   'docked-info.h',
+   'docked-manager.c',
+--- src/shell.c.orig	2021-04-29 13:20:40 UTC
++++ src/shell.c
+@@ -36,7 +36,6 @@
+ #include "feedbackinfo.h"
+ #include "feedback-manager.h"
+ #include "gnome-shell-manager.h"
+-#include "hks-info.h"
+ #include "home.h"
+ #include "idle-manager.h"
+ #include "keyboard-events.h"
+@@ -124,7 +123,6 @@ typedef struct
+   PhoshTorchManager *torch_manager;
+   PhoshModeManager *mode_manager;
+   PhoshDockedManager *docked_manager;
+-  PhoshHksManager *hks_manager;
+   PhoshKeyboardEvents *keyboard_events;
+   PhoshLocationManager *location_manager;
+   PhoshGnomeShellManager *gnome_shell_manager;
+@@ -352,7 +350,6 @@ phosh_shell_dispose (GObject *object)
+   /* dispose managers in opposite order of declaration */
+   g_clear_object (&priv->screenshot_manager);
+   g_clear_object (&priv->location_manager);
+-  g_clear_object (&priv->hks_manager);
+   g_clear_object (&priv->docked_manager);
+   g_clear_object (&priv->mode_manager);
+   g_clear_object (&priv->torch_manager);
+@@ -534,7 +531,6 @@ type_setup (void)
+   g_type_ensure (PHOSH_TYPE_CONNECTIVITY_INFO);
+   g_type_ensure (PHOSH_TYPE_DOCKED_INFO);
+   g_type_ensure (PHOSH_TYPE_FEEDBACK_INFO);
+-  g_type_ensure (PHOSH_TYPE_HKS_INFO);
+   g_type_ensure (PHOSH_TYPE_LOCATION_INFO);
+   g_type_ensure (PHOSH_TYPE_MEDIA_PLAYER);
+   g_type_ensure (PHOSH_TYPE_QUICK_SETTING);
+@@ -1039,22 +1035,6 @@ phosh_shell_get_docked_manager (PhoshShell *self)
+ 
+   g_return_val_if_fail (PHOSH_IS_DOCKED_MANAGER (priv->docked_manager), NULL);
+   return priv->docked_manager;
+-}
+-
+-
+-PhoshHksManager *
+-phosh_shell_get_hks_manager (PhoshShell *self)
+-{
+-  PhoshShellPrivate *priv;
+-
+-  g_return_val_if_fail (PHOSH_IS_SHELL (self), NULL);
+-  priv = phosh_shell_get_instance_private (self);
+-
+-  if (!priv->hks_manager)
+-    priv->hks_manager = phosh_hks_manager_new ();
+-
+-  g_return_val_if_fail (PHOSH_IS_HKS_MANAGER (priv->hks_manager), NULL);
+-  return priv->hks_manager;
+ }
+ 
+ 
