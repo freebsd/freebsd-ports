@@ -1,6 +1,6 @@
 include/LASi.h
 lib/libLASi.so
-lib/libLASi.so.1
+lib/libLASi.so.2
 libdata/pkgconfig/lasi.pc
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/developer/html/LASi_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/developer/html/LASi_8h_source.html
@@ -150,9 +150,10 @@ libdata/pkgconfig/lasi.pc
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/user/html/tab_s.png
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/user/html/tabs.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ComplexTextLayoutExample.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Example_1_Result.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Example_2_Result.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ComplexTextLayoutExample.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/MissingGlyphExample.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MissingGlyphExample.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/SimpleLASiExample.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SimpleLASiExample.png

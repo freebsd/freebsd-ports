@@ -2,8 +2,7 @@
 #    $MCom: ports/devel/lasi/Makefile,v 1.1 2006/10/04 20:25:40 ahze Exp $
 
 PORTNAME=	lasi
-PORTVERSION=	1.1.1
-PORTREVISION=	8
+PORTVERSION=	1.1.3
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 DISTNAME=	libLASi-${PORTVERSION}
@@ -39,8 +38,8 @@ pre-install:
 .endif
 
 post-install:
-	@${MV} ${STAGEDIR}${PREFIX}/lib/libLASi.so.1.0.0 \
-		${STAGEDIR}${PREFIX}/lib/libLASi.so.1
+	@${MV} ${STAGEDIR}${PREFIX}/lib/libLASi.so.2.0.0 \
+		${STAGEDIR}${PREFIX}/lib/libLASi.so.2
 .if ${PORT_OPTIONS:MDOXYGEN}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${MV} ${STAGEDIR}${DATADIR}/doc/* ${STAGEDIR}${DOCSDIR}/

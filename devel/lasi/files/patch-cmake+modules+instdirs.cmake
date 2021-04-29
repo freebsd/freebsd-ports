@@ -1,8 +1,10 @@
---- cmake/modules/instdirs.cmake.orig	2008-12-31 14:43:21.000000000 -0500
-+++ cmake/modules/instdirs.cmake	2008-12-31 14:44:24.000000000 -0500
-@@ -61,4 +61,4 @@
- set(includedir ${CMAKE_INSTALL_INCLUDEDIR})
- set(docdir ${CMAKE_INSTALL_DATADIR}/doc/libLASi-${VERSION})
+--- cmake/modules/instdirs.cmake.orig	2019-01-31 07:34:50 UTC
++++ cmake/modules/instdirs.cmake
+@@ -80,6 +80,6 @@ set(docdir ${CMAKE_INSTALL_DATADIR}/doc/libLASi-${VERS
+ CACHE PATH "install location for documentation"
+ )
  
--set(DATA_DIR ${CMAKE_INSTALL_DATADIR}/${PACKAGE}${VERSION})
-+set(DATA_DIR ${CMAKE_INSTALL_DATADIR})
+-set(DATA_DIR ${CMAKE_INSTALL_DATADIR}/${PACKAGE}${VERSION}
++set(DATA_DIR ${CMAKE_INSTALL_DATADIR}
+ CACHE PATH "install location for architecture-independent data"
+ )
