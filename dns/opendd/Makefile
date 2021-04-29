@@ -13,6 +13,8 @@ COMMENT=	DynDNS client
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2021-05-15
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: saved_attributes
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: saved_attributes
 
