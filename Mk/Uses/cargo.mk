@@ -44,10 +44,14 @@ CARGO_CRATE_EXT=	.crate
 # slow grep runs for every CARGO_CRATE_EXT access.
 CARGO_CRATE_EXT=	${defined(_CARGO_CRATE_EXT_CACHE):?${_CARGO_CRATE_EXT_CACHE}:${:!if ${GREP} -q '\(${CARGO_DIST_SUBDIR}/.*\.tar\.gz\)' "${DISTINFO_FILE}" 2>/dev/null; then ${ECHO_CMD} .tar.gz; else ${ECHO_CMD} .crate; fi!:_=_CARGO_CRATE_EXT_CACHE}}
 .endif
-.for _crate in ${CARGO_CRATES}
+# enumerate crates for unqiue and sane distfile group names
+_CARGO_CRATES:=	${empty(CARGO_CRATES):?:${CARGO_CRATES:range:@i@$i ${CARGO_CRATES:[$i]}@}}
+# split up crates into (index, crate, name, version) 4-tuples
+_CARGO_CRATES:=	${_CARGO_CRATES:C/^([-_a-zA-Z0-9]+)-([0-9].*)/\0 \1 \2/}
+.for _index _crate _name _version in ${_CARGO_CRATES}
 # Resolving CRATESIO alias is very inefficient with many MASTER_SITES, consume MASTER_SITE_CRATESIO directly
-MASTER_SITES+=	${MASTER_SITE_CRATESIO:S,%SUBDIR%,${_crate:C/^([-_a-zA-Z0-9]+)-[0-9].*/\1/}/${_crate:C/^[-_a-zA-Z0-9]+-([0-9].*)/\1/},:S,$,:cargo_${_crate:C/[^a-zA-Z0-9_]//g},}
-DISTFILES+=	${CARGO_DIST_SUBDIR}/${_crate}${CARGO_CRATE_EXT}:cargo_${_crate:C/[^a-zA-Z0-9_]//g}
+MASTER_SITES+=	${MASTER_SITE_CRATESIO:S,%SUBDIR%,${_name}/${_version},:S,$,:_cargo_${_index},}
+DISTFILES+=	${CARGO_DIST_SUBDIR}/${_crate}${CARGO_CRATE_EXT}:_cargo_${_index}
 .endfor
 
 # Build dependencies.
@@ -140,45 +144,31 @@ CARGO_TEST_ARGS+=	--release
 CARGO_INSTALL_ARGS+=	--debug
 .endif
 
-.if ${CARGO_CRATES:Mcmake-[0-9]*}
+.if ${_CARGO_CRATES:Mcmake}
 BUILD_DEPENDS+=	cmake:devel/cmake
 .endif
 
-.if ${CARGO_CRATES:Mgettext-sys-[0-9]*}
+.if ${_CARGO_CRATES:Mgettext-sys}
 CARGO_ENV+=	GETTEXT_BIN_DIR=${LOCALBASE}/bin \
 		GETTEXT_INCLUDE_DIR=${LOCALBASE}/include \
 		GETTEXT_LIB_DIR=${LOCALBASE}/lib
 .endif
 
-.if ${CARGO_CRATES:Mjemalloc-sys-[0-9]*}
+.if ${_CARGO_CRATES:Mjemalloc-sys}
 BUILD_DEPENDS+=	gmake:devel/gmake
 .endif
 
-.for libc in ${CARGO_CRATES:Mlibc-[0-9]*}
-# FreeBSD 12.0 changed ABI: r318736 and r320043
-# https://github.com/rust-lang/libc/commit/78f93220d70e
-# https://github.com/rust-lang/libc/commit/969ad2b73cdc
-_libc_VER=	${libc:C/.*-//}
-. if ${_libc_VER:R:R} == 0 && (${_libc_VER:R:E} < 2 || ${_libc_VER:R:E} == 2 && ${_libc_VER:E} < 38)
-DEV_ERROR+=	"CARGO_CRATES=${libc} may be unstable on FreeBSD 12.0. Consider updating to the latest version \(higher than 0.2.37\)."
-. endif
-. if ${_libc_VER:R:R} == 0 && (${_libc_VER:R:E} < 2 || ${_libc_VER:R:E} == 2 && ${_libc_VER:E} < 49)
-DEV_ERROR+=	"CARGO_CRATES=${libc} may be unstable on aarch64 or not build on armv6, armv7, powerpc64. Consider updating to the latest version \(higher than 0.2.49\)."
-. endif
-.undef _libc_VER
-.endfor
-
-.if ${CARGO_CRATES:Mlibgit2-sys-[0-9]*}
+.if ${_CARGO_CRATES:Mlibgit2-sys}
 # Use the system's libgit2 instead of building the bundled version
 CARGO_ENV+=	LIBGIT2_SYS_USE_PKG_CONFIG=1
 .endif
 
-.if ${CARGO_CRATES:Mlibssh2-sys-[0-9]*}
+.if ${_CARGO_CRATES:Mlibssh2-sys}
 # Use the system's libssh2 instead of building the bundled version
 CARGO_ENV+=	LIBSSH2_SYS_USE_PKG_CONFIG=1
 .endif
 
-.if ${CARGO_CRATES:Monig_sys-[0-9]*}
+.if ${_CARGO_CRATES:Monig_sys}
 # onig_sys always prefers the system library but will try to link
 # statically with it.  Since devel/oniguruma doesn't provide a static
 # library it'll link to libonig.so instead.  Strictly speaking setting
@@ -187,31 +177,42 @@ CARGO_ENV+=	LIBSSH2_SYS_USE_PKG_CONFIG=1
 CARGO_ENV+=	RUSTONIG_SYSTEM_LIBONIG=1
 .endif
 
-.if ${CARGO_CRATES:Mopenssl-0.[0-9].*}
-# FreeBSD 12.0 updated base OpenSSL in r339270:
-# https://github.com/sfackler/rust-openssl/commit/276577553501
-. if !exists(${PATCHDIR}/patch-openssl-1.1.1) # skip if backported
-_openssl_VER=	${CARGO_CRATES:Mopenssl-0.[0-9].*:C/.*-//}
-.  if ${_openssl_VER:R:R} == 0 && (${_openssl_VER:R:E} < 10 || ${_openssl_VER:R:E} == 10 && ${_openssl_VER:E} < 4)
-DEV_WARNING+=	"CARGO_CRATES=openssl-0.10.3 or older do not support OpenSSL 1.1.1. Consider updating to the latest version."
-.  endif
-. endif
-.undef _openssl_VER
-.endif
-
-.if ${CARGO_CRATES:Mopenssl-src-[0-9]*}
+.if ${_CARGO_CRATES:Mopenssl-src}
 DEV_WARNING+=	"Please make sure this port uses the system OpenSSL and consider removing CARGO_CRATES=${CARGO_CRATES:Mopenssl-src-[0-9]*} (a vendored copy of OpenSSL) from the build, e.g., by patching Cargo.toml appropriately."
 .endif
 
-.if ${CARGO_CRATES:Mopenssl-sys-[0-9]*}
+.if ${_CARGO_CRATES:Mopenssl-sys}
 # Make sure that openssl-sys can find the correct version of OpenSSL
 CARGO_ENV+=	OPENSSL_LIB_DIR=${OPENSSLLIB} \
 		OPENSSL_INCLUDE_DIR=${OPENSSLINC}
 .endif
 
-.if ${CARGO_CRATES:Mpkg-config-[0-9]*}
+.if ${_CARGO_CRATES:Mpkg-config}
 .include "${USESDIR}/pkgconfig.mk"
 .endif
+
+.for _index _crate _name _version in ${_CARGO_CRATES}
+# Split up semantic version and try to sanitize it by removing
+# pre-release identifier (-) or build metadata (+)
+.  if ${_version:S/./ /:S/./ /:C/[-+].*//:_:[#]} == 3
+.    for _major _minor _patch in $_
+# FreeBSD 12.0 changed ABI: r318736 and r320043
+# https://github.com/rust-lang/libc/commit/78f93220d70e
+# https://github.com/rust-lang/libc/commit/969ad2b73cdc
+.      if ${_name} == libc && ${_major} == 0 && (${_minor} < 2 || (${_minor} == 2 && ${_patch} < 38))
+DEV_ERROR+=	"CARGO_CRATES=${_crate} may be unstable on FreeBSD 12.0. Consider updating to the latest version \(higher than 0.2.37\)."
+.      endif
+.      if ${_name} == libc && ${_major} == 0 && (${_minor} < 2 || (${_minor} == 2 && ${_patch} < 49))
+DEV_ERROR+=	"CARGO_CRATES=${_crate} may be unstable on aarch64 or not build on armv6, armv7, powerpc64. Consider updating to the latest version \(higher than 0.2.49\)."
+.      endif
+# FreeBSD 12.0 updated base OpenSSL in r339270:
+# https://github.com/sfackler/rust-openssl/commit/276577553501
+.      if ${_name} == openssl && !exists(${PATCHDIR}/patch-openssl-1.1.1) && ${_major} == 0 && (${_minor} < 10 || (${_minor} == 10 && ${_patch} < 4))
+DEV_WARNING+=	"CARGO_CRATES=${_crate} does not support OpenSSL 1.1.1. Consider updating to the latest version \(higher than 0.10.3\)."
+.      endif
+.    endfor
+.  endif
+.endfor
 
 _USES_extract+=	600:cargo-extract
 cargo-extract:
