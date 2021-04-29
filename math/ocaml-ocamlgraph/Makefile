@@ -1,8 +1,7 @@
 # Created by: Joseph Koshy <jkoshy@FreeBSD.org>
 
 PORTNAME=	ocamlgraph
-PORTVERSION=	1.8.7
-PORTREVISION=	3
+PORTVERSION=	1.8.8
 CATEGORIES=	math
 MASTER_SITES=	http://ocamlgraph.lri.fr/download/ \
 		ftp://ftp.stack.nl/pub/users/johans/ocamlgraph/
