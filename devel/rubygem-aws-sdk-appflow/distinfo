@@ -1,3 +1,3 @@
-TIMESTAMP = 1619198625
-SHA256 (rubygem/aws-sdk-appflow-1.9.0.gem) = 5847d7371098f7492af4150557ab6f285d5231ee9d50de2e6775c94bb380ac29
-SIZE (rubygem/aws-sdk-appflow-1.9.0.gem) = 56320
+TIMESTAMP = 1619569509
+SHA256 (rubygem/aws-sdk-appflow-1.10.0.gem) = ba6bc75ba0d7163b8525296e8e9b24fdcfa1ff7cdb2c3bedec2dd893d86bdb81
+SIZE (rubygem/aws-sdk-appflow-1.10.0.gem) = 56832
