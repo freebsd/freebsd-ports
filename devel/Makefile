@@ -2630,6 +2630,7 @@
     SUBDIR += p5-Lingua-JA-Fold
     SUBDIR += p5-Lingua-Translit
     SUBDIR += p5-List-AllUtils
+    SUBDIR += p5-List-BinarySearch
     SUBDIR += p5-List-Cycle
     SUBDIR += p5-List-Flatten
     SUBDIR += p5-List-Gen

@@ -1,0 +1,7 @@
+List::BinarySearch performs a binary search on an array.
+
+The binary search algorithm implemented in this module is known as a Deferred
+Detection variant on the traditional Binary Search. Deferred Detection provides
+stable searches.
+
+WWW: https://metacpan.org/release/List-BinarySearch
