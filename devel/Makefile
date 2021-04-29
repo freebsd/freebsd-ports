@@ -3627,6 +3627,7 @@
     SUBDIR += p5-VCS-CVS
     SUBDIR += p5-VCS-Lite
     SUBDIR += p5-Validation-Class
+    SUBDIR += p5-Variable-Disposition
     SUBDIR += p5-Variable-Eject
     SUBDIR += p5-Variable-Magic
     SUBDIR += p5-Want
