@@ -1,6 +1,6 @@
 PORTNAME=	flexget
 DISTVERSIONPREFIX=	v
-PORTVERSION=	3.1.111
+PORTVERSION=	3.1.113
 CATEGORIES=	www
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -36,7 +36,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy13>=1.3.10:databases/py-sqlalchemy
 		${PYTHON_PKGNAMEPREFIX}Flask-Cors>=2.1.2:www/py-flask-cors@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Login>=0.4.0:www/py-flask-login@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-RESTful>=0.3.3:www/py-flask-restful@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}flask-restx>=0.2.0:www/py-flask-restx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flask-restx>=0.3.0:www/py-flask-restx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.11:www/py-html5lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.20.0:www/py-requests@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.3:devel/py-pytest@${PY_FLAVOR} \
