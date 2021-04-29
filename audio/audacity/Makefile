@@ -2,7 +2,7 @@
 
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	minsrc-
-DISTVERSION=	3.0.0
+DISTVERSION=	3.0.2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/Audacity-${PORTVERSION}/
 
