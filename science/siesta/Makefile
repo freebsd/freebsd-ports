@@ -1,8 +1,7 @@
 PORTNAME=	siesta
-DISTVERSION=	4.0.2
-PORTREVISION=	3
+DISTVERSION=	4.1.5
 CATEGORIES=	science
-MASTER_SITES=	https://launchpad.net/${PORTNAME}/${DISTVERSION:R}/${DISTVERSION}/+download/
+MASTER_SITES=	https://gitlab.com/siesta-project/${PORTNAME}/-/releases/v${DISTVERSION}/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Program to perform efficient electronic structure calculations
@@ -14,25 +13,27 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack
 
 USES=		fortran gmake localbase:ldflags
-GNU_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	../Src/configure
+
 ALL_TARGET=	default
 
 WRKSRC_SUBDIR=	Obj
 
-MAKE_JOBS_UNSAFE=	yes
-
 PLIST_FILES=	bin/${PORTNAME}
+
+BINARY_ALIAS=	gfortran=gfortran${GCC_DEFAULT} gcc=gcc${GCC_DEFAULT}
 
 .include <bsd.port.pre.mk>
 
 .if ${GCC_DEFAULT} >= 10
 # workaround for Type mismatch between actual argument at (1) and actual argument at (2) (COMPLEX(8)/REAL(8)).
-FCFLAGS+=	-fallow-argument-mismatch
+FFLAGS+=	-fallow-argument-mismatch
+MAKE_ARGS=	FFLAGS="${FFLAGS} -O2 -fPIC -ftree-vectorize"
 .endif
 
 pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SH} ../Src/obj_setup.sh
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${SH} ../Src/obj_setup.sh && \
+		${LN} -s gfortran.make arch.make
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
