@@ -1,4 +1,4 @@
---- Makefile.orig	2019-02-17 21:21:56 UTC
+--- Makefile.orig	2021-04-25 14:14:20 UTC
 +++ Makefile
 @@ -24,8 +24,6 @@ mandir = $(datarootdir)/man
  man1dir = $(mandir)/man1
@@ -6,10 +6,10 @@
  
 -.SILENT:
 -
- $(TARGET): $(OBJ)
- 	$(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
+ $(TARGET): $(OBJS)
+ 	$(CC) $(LDFLAGS) $(OBJS) $(LDLIBS) -o $@
  
-@@ -204,6 +202,8 @@ wchar.o: wchar.c wchar.h inttypes.h
+@@ -215,6 +213,8 @@ wchar.o: wchar.c wchar.h inttypes.h
  wctype.o: wctype.c wctype.h
  
  .PHONY: all clean distclean install install-strip uninstall install-man install-doc
@@ -17,4 +17,4 @@
 +all: $(TARGET)
  
  clean:
- 	-rm -f $(OBJ)
+ 	-$(RM) $(OBJS)
