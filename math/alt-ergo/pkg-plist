@@ -5,4 +5,3 @@ lib/ocaml/alt-ergo/altErgo.cmo
 lib/ocaml/alt-ergo/altErgo.cmx
 lib/ocaml/alt-ergo/altErgo.o
 man/man1/alt-ergo.1.gz
-share/gtksourceview-2.0/language-specs/alt-ergo.lang
