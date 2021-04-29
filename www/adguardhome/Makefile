@@ -1,7 +1,6 @@
 PORTNAME=	adguardhome
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.105.2
-PORTREVISION=	2
+DISTVERSION=	0.106.0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,8 +32,8 @@ BUILD_DEPENDS=	npm:www/npm \
 do-build:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} js-deps js-build && \
-		${TAR} czf ${DISTDIR}/${PORTNAME}-html-build-${DISTVERSION}${EXTRACT_SUFX} build && \
-		${TAR} czf ${DISTDIR}/${PORTNAME}-html-build2-${DISTVERSION}${EXTRACT_SUFX} build2 && \
+		${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-html-build-${DISTVERSION}${EXTRACT_SUFX} build && \
+		${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-html-build2-${DISTVERSION}${EXTRACT_SUFX} build2 && \
 		${ECHO} "Please upload files ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-html-build-${DISTVERSION}${EXTRACT_SUFX} and ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-html-build2-${DISTVERSION}${EXTRACT_SUFX}"
 .else
 MASTER_SITES=	LOCAL/yuri/:deps
