@@ -1,7 +1,7 @@
 # Created by: Kevin Lo <kevlo@FreeBSD.org>
 
 PORTNAME=	libjwt
-PORTVERSION=	1.13.0
+PORTVERSION=	1.13.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
