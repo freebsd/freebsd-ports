@@ -15,6 +15,7 @@ USE_CSTD=	c99
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CFLAGS+=	-Dulong=uint32_t -DXL_BIG_ENDIAN -DHAVE_SYS_SOUNDCARD_H
+CFLAGS+=	-fcommon # notified the author vie e-mail on 2021-04-29
 
 USE_JAVA=	yes
 
