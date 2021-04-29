@@ -1,3 +1,3 @@
-TIMESTAMP = 1586890336
-SHA256 (xorg/proto/xorgproto-2020.1.tar.bz2) = 54a153f139035a376c075845dd058049177212da94d7a9707cf9468367b699d2
-SIZE (xorg/proto/xorgproto-2020.1.tar.bz2) = 848072
+TIMESTAMP = 1619740307
+SHA256 (xorg/proto/xorgproto-2021.4.tar.bz2) = 0f5157030162844b398e7ce69b8bb967c2edb8064b0a9c9bb5517eb621459fbf
+SIZE (xorg/proto/xorgproto-2021.4.tar.bz2) = 885414
