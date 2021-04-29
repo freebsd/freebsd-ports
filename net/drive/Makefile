@@ -3,7 +3,7 @@
 PORTNAME=	drive
 PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,22 +21,22 @@ PLIST_FILES=	bin/drive
 
 GH_ACCOUNT=	odeke-em
 GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
-		census-instrumentation:opencensus-go:v0.22.5:census_instrumentation_opencensus/vendor/go.opencensus.io \
-		cheggaaa:pb:v3.0.5:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
-		golang:crypto:eec23a3:golang_crypto/vendor/golang.org/x/crypto \
-		golang:groupcache:8c9f03a:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:5f4716e:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:d3ed898:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:9b0068b:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
-		google:go-genproto:8081c04:google_go_genproto/vendor/google.golang.org/genproto \
-		google:google-api-go-client:v0.36.0:google_googleapigoclient/vendor/google.golang.org/api \
-		googleapis:google-cloud-go:v0.75.0:googleapis_googlecloudgo/vendor/cloud.google.com/go \
+		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus/vendor/go.opencensus.io \
+		cheggaaa:pb:v3.0.8:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
+		golang:crypto:83a5a9b:golang_crypto/vendor/golang.org/x/crypto \
+		golang:groupcache:41bb18b:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:net:85d9c07:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:81ed05c:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:d19ff85:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
+		google:go-genproto:f767ed1:google_go_genproto/vendor/google.golang.org/genproto \
+		googleapis:google-api-go-client:v0.45.0:google_googleapigoclient/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:v0.81.0:googleapis_googlecloudgo/vendor/cloud.google.com/go \
 		googleapis:gax-go:v2.0.5:googleapis_gaxgo/vendor/github.com/googleapis/gax-go \
-		grpc:grpc-go:v1.35.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.37.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		mattn:go-isatty:v0.0.12:mattn_goisatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.10:mattn_gorunewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-runewidth:v0.0.12:mattn_gorunewidth/vendor/github.com/mattn/go-runewidth \
 		mxk:go-flowrate:cca7078:mxk_goflowrate/vendor/github.com/mxk/go-flowrate \
 		odeke-em:cache:baf8e43:odekeem_cache/vendor/github.com/odeke-em/cache \
 		odeke-em:cli-spinner:610063b:odekeem_clispinner/vendor/github.com/odeke-em/cli-spinner \
@@ -51,7 +51,7 @@ GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
 		odeke-em:pretty-words:9d37a7f:odekeem_prettywords/vendor/github.com/odeke-em/pretty-words \
 		odeke-em:semalim:9c88bf5:odekeem_semalim/vendor/github.com/odeke-em/semalim \
 		odeke-em:statos:292960a:odekeem_statos/vendor/github.com/odeke-em/statos \
-		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		skratchdot:open-golang:eef8423:skratchdot_opengolang/vendor/github.com/skratchdot/open-golang
 USE_GITHUB=	yes
