@@ -1,6 +1,7 @@
 PORTNAME=	angr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ANGR_VERSION}
+PORTREVISION=	1
 CATEGORIES=	security devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ailment>=${ANGR_VERSION}:security/py-ailment
 		${PYTHON_PKGNAMEPREFIX}cle>=${ANGR_VERSION}:devel/py-cle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cppheaderparser>=0:devel/py-cppheaderparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dpkt>=0:net/py-dpkt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}GitPython>=0:devel/py-gitpython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gitpython>=0:devel/py-gitpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}itanium_demangler>=0:devel/py-itanium_demangler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mulpyplexer>=0:devel/py-mulpyplexer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.0:math/py-networkx@${PY_FLAVOR} \
