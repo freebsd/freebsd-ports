@@ -18,8 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mrclksr
 GH_PROJECT=	DSBMD
 
-QMAKE_ARGS=	PORTS=1
-
 PLIST_FILES=	"@sample etc/dsbmd.conf.sample" \
 		libexec/dsbmd
 

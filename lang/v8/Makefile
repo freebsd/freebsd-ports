@@ -46,7 +46,7 @@ BUILD_DEPENDS=	binutils>0:devel/binutils \
 		libunwind>0:devel/libunwind
 LIB_DEPENDS=	libicudata.so:devel/icu
 
-USES=		pkgconfig ninja python:3.5+,build tar:xz
+USES=		gnome ninja pkgconfig python:3.5+,build tar:xz
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20

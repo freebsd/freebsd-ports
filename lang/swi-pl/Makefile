@@ -21,7 +21,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libyaml.so:textproc/libyaml
 
 USES=		cmake compiler:c11 libarchive libedit pathfix pkgconfig \
-		readline shebangfix ssl
+		readline shebangfix ssl xorg
 USE_XORG=	ice sm x11 xext xft xinerama xpm xt
 
 OPTIONS_DEFINE=		DOCS TCMALLOC EXAMPLES XPCE GMP THREADED ODBC
@@ -43,9 +43,8 @@ XPCE_DESC=		Install XPCE graphical support
 XPCE_CMAKE_ON=		-DSWIPL_PACKAGES_X=ON
 XPCE_CMAKE_OFF=		-DSWIPL_PACKAGES_X=OFF
 XPCE_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-			libfreetype.so:print/freetype2 \
-			libjpeg.so:graphics/jpeg-turbo
-XCPE_USES=		jpeg xorg
+			libfreetype.so:print/freetype2
+XPCE_USES=		jpeg
 
 GMP_DESC=		Enable bignum and rational numbers
 GMP_CMAKE_ON=		-DUSE_GMP=ON

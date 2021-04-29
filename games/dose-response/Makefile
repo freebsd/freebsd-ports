@@ -10,7 +10,7 @@ COMMENT=	Open-world roguelike game where you play an addict
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		cargo gnome
+USES=		cargo gnome sdl
 USE_SDL=	sdl2
 USE_GITHUB=	yes
 GH_ACCOUNT=	tryjumping

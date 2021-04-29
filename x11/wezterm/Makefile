@@ -17,7 +17,6 @@ LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
 
 USES=		cargo python:3.4+,build ssl xorg
 USE_GITHUB=	yes
-USE_PERL5=	build
 USE_XORG=	x11 xcb
 GH_ACCOUNT=	wez
 GH_TUPLE=	harfbuzz:harfbuzz:2.7.2:harfbuzz/deps/harfbuzz/harfbuzz \

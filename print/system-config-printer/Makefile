@@ -21,8 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 PORTSCOUT=	limitw:1,even
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf desktop-file-utils gettext gmake pathfix pkgconfig python:3.5+ \
-		shebangfix tar:xz
+USES=		autoreconf desktop-file-utils gettext gmake gnome pathfix \
+		pkgconfig python:3.5+ shebangfix tar:xz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenPrinting

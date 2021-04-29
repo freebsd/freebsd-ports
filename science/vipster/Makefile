@@ -15,7 +15,7 @@ BUILD_DEPENDS=	catch>0:devel/catch \
 		libfmt>0:devel/libfmt \
 		nlohmann-json>0:devel/nlohmann-json
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake compiler:c++17-lang gl
 USE_GL=		gl
 USE_LDCONFIG=	yes
 

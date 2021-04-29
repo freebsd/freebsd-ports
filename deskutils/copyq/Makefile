@@ -11,10 +11,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/kf5-extra-cmake-modules
 
-LIB_DEPENDS=	libKF5Notifications.so.5:devel/kf5-knotifications \
-		libwayland-client.so:graphics/wayland
+LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
-USES=		cmake compiler:c++11-lang qt:5 xorg
+USES=		cmake compiler:c++11-lang kde:5 qt:5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	hluk
 GH_PROJECT=	CopyQ

@@ -29,7 +29,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	bash:shells/bash #\
 		#jna>0:devel/jna
 
-USES=		shebangfix zip
+USES=		cpe shebangfix zip
 CPE_VENDOR=	sonarsource
 USE_JAVA=	yes
 

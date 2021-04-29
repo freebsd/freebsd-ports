@@ -26,8 +26,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TUPLE=	grame-cncm:faustlibraries:cde5c7b:grame_cncm_faustlibraries/Resources/Libs
 
-CMAKE_SOURCE_PATH=	${WRKSRC}/package
-
 SHEBANG_GLOB=	build install makelibs
 
 LLVM_VERSION=	11 # llvm version should be the same as in audio/faust

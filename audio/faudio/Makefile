@@ -21,7 +21,7 @@ OPTIONS_DEFAULT=	GSTREAMER
 
 GSTREAMER_DESC=	WMA/XMA support via GStreamer
 
-GSTREAMER_USES=		gettext-runtime pkgconfig
+GSTREAMER_USES=		gettext-runtime gnome pkgconfig
 GSTREAMER_USE=		GNOME=glib20 \
 			GSTREAMER1=yes
 GSTREAMER_CMAKE_BOOL=	GSTREAMER

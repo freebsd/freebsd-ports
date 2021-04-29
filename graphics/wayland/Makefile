@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 
 CFLAGS+=	"-I${LOCALBASE}/include/libepoll-shim"
 
-USES=		meson pkgconfig tar:xz
+USES=		gnome meson pkgconfig tar:xz
 USE_GNOME=	libxslt:build
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Ddocumentation=false

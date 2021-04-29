@@ -12,7 +12,6 @@ RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ryanmjacobs
-SHEBANG_FILES=	c
 
 NO_ARCH=	yes
 NO_BUILD=	yes

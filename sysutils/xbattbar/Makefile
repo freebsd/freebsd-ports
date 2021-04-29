@@ -16,7 +16,7 @@ COMMENT=	Simple battery meter
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/xbattbar-${PORTVERSION}
 PLIST_FILES=	bin/xbattbar \

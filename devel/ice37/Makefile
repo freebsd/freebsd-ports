@@ -33,7 +33,6 @@ OPTIONS_DEFINE?=	DEBUG STATIC TEST
 OPTIONS_SUB=		yes
 
 USES+=			compiler:c++14-lang iconv gmake
-CONFIGS=		shared
 DEBUG_MAKE_ENV=		OPTIMIZE=no
 TEST_ALL_TARGET_OFF=	srcs
 MAKE_ARGS+=		V=1

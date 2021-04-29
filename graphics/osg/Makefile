@@ -93,9 +93,11 @@ OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr libImath.so:math/Imath
 OPENEXR_VARS=		FORCE_REQUIRE+=OpenEXR
 OPENEXR_VARS_OFF=	FORCE_IGNORE+=OpenEXR
 PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
+PDF_USES=		gnome
 PDF_USE=		GNOME=cairo
 PDF_VARS=		FORCE_REQUIRE+=Poppler-glib
 PDF_VARS_OFF=		FORCE_IGNORE+=Poppler-glib
+SDL_USES=		sdl
 SDL_USE=		SDL=sdl
 SDL_VARS=		FORCE_REQUIRE+=SDL
 SDL_VARS_OFF=		FORCE_IGNORE+=SDL

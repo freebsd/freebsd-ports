@@ -25,6 +25,7 @@ ONLINE_M2_DESC=	Download last plugins during build process (into ~/.m2)
 OPTIONS_DEFAULT=	LOCAL_M2
 LOCAL_M2_DISTFILES=	FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
 
+USES=		cpe
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 NO_ARCH=	yes

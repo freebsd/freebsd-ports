@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libxdo.so:x11/xdotool
 
-USES=		gmake gnome pkgconfig
+USES=		gmake gnome pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordansissel
 GH_TAGNAME=	78f9e07

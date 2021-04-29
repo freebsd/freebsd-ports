@@ -124,6 +124,7 @@ PIXBUF_USE=			GNOME=gdkpixbuf2,glib20
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
 SDL_CONFIGURE_WITH=		sdl
+SDL_USES=			sdl
 SDL_USE=			SDL=sdl
 SFTP_LIB_DEPENDS=		libssh2.so:security/libssh2
 SFTP_CONFIGURE_ENABLE=		sftp
