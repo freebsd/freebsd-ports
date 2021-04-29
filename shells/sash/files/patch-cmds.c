@@ -1,10 +1,12 @@
---- cmds.c.orig	Mon Jul 22 00:28:19 2002
-+++ cmds.c	Fri Sep  3 16:35:01 2004
-@@ -17,9 +17,18 @@
+--- cmds.c.orig	2014-03-07 13:06:29 UTC
++++ cmds.c
+@@ -17,9 +17,20 @@
  #include <utime.h>
  #include <errno.h>
  
 +#if __FreeBSD__
++#include <ufs/ufs/extattr.h>
++#include <ufs/ufs/quota.h>
 +#include <ufs/ufs/ufsmount.h>
 +#include <isofs/cd9660/cd9660_mount.h>
 +#include <fs/msdosfs/msdosfsmount.h>
@@ -20,7 +22,7 @@
  
  /* Need to tell loop.h what the actual dev_t type is. */
  #undef dev_t
-@@ -32,6 +41,7 @@
+@@ -32,6 +43,7 @@
  #undef dev_t
  #define dev_t dev_t
  
@@ -28,7 +30,7 @@
  
  int
  do_echo(int argc, const char ** argv)
-@@ -716,6 +726,10 @@
+@@ -716,6 +728,10 @@ do_mount(int argc, const char ** argv)
  				flags |= MNT_RDONLY;
  				break;
  
@@ -39,7 +41,7 @@
  			case 's':
  				flags |= MNT_NOSUID;
  				break;
-@@ -748,46 +762,58 @@
+@@ -748,46 +764,58 @@ do_mount(int argc, const char ** argv)
  #elif	HAVE_BSD_MOUNT
  	{
  		struct	    ufs_args ufs;
@@ -115,3 +117,12 @@
  
  			return 1;
  		}
+@@ -1448,7 +1476,7 @@ do_where(int argc, const char ** argv)
+ 		 */
+ 		dirName = path;
+ 
+-		if (dirName == '\0')
++		if (dirName == NULL)
+ 			dirName = ".";
+ 
+ 		/*
