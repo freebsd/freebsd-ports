@@ -1,5 +1,5 @@
 PORTNAME=	bmpp
-DISTVERSION=	4.30.3
+DISTVERSION=	4.30.8
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
@@ -8,7 +8,7 @@ MAINTAINER=	takefu@airport.fm
 COMMENT=	Convert PNG/JPEG/TIFF to PDF/EPS
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/bsdlic.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
@@ -28,6 +28,6 @@ PLIST_FILES=	bin/bmpp man/man1/bmpp.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bmpp ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/man1/bmpp.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/man/man/man1/bmpp.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
