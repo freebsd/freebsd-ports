@@ -16,6 +16,7 @@ bin/plasma_waitforname
 bin/plasmashell
 bin/plasmawindowed
 bin/startplasma-wayland
+bin/startplasma-wayland.sh
 bin/startplasma-x11
 bin/systemmonitor
 bin/xembedsniproxy

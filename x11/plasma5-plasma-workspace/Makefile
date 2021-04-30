@@ -1,6 +1,6 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -50,5 +50,8 @@ CMAKE_OFF=	BUILD_TESTING
 
 # In 5.15 a file was moved from x11/plasma5-plasma-desktop to x11/plasma5-plasma-workspace:
 CONFLICTS_INSTALL=	plasma5-plasma-desktop-5.14.*
+
+post-stage:
+	${INSTALL_SCRIPT} ${FILESDIR}/startplasma-wayland.sh ${STAGEDIR}/${LOCALBASE}/bin/
 
 .include <bsd.port.mk>
