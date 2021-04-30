@@ -275,6 +275,7 @@
     SUBDIR += flexfloat
     SUBDIR += flint2
     SUBDIR += flintqs
+    SUBDIR += flopc++
     SUBDIR += form
     SUBDIR += fpc-fftw
     SUBDIR += fpc-gmp
