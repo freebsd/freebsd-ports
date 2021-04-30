@@ -14,6 +14,7 @@ lib/librfxencode.so.0
 include/ms-erref.h
 include/ms-fscc.h
 include/ms-rdpbcgr.h
+include/ms-rdpedisp.h
 include/ms-rdpefs.h
 include/ms-rdpegdi.h
 include/ms-rdpele.h
