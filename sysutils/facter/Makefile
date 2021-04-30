@@ -1,5 +1,5 @@
 PORTNAME=	facter
-PORTVERSION=	3.14.16
+PORTVERSION=	3.14.17
 CATEGORIES?=	sysutils
 MASTER_SITES=	https://downloads.puppetlabs.com/facter/
 

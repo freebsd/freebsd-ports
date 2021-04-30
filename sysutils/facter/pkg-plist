@@ -16,6 +16,7 @@ include/facter/facts/value.hpp
 include/facter/facts/vm.hpp
 include/facter/logging/logging.hpp
 include/facter/ruby/ruby.hpp
+include/facter/util/cli.hpp
 include/facter/util/config.hpp
 include/facter/util/string.hpp
 include/facter/version.h
