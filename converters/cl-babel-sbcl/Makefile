@@ -8,6 +8,8 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Charset encoding/decoding library written in Common Lisp
 
+BROKEN=		does not build: depends on file: /usr/local/lib/common-lisp/alexandria/sbclfasl/arrays.fasl - not found
+
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:converters/cl-babel \
 		${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/sbclfasl/arrays.fasl:devel/cl-alexandria-sbcl \
 		${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/sbclfasl/src/tf-sbcl.fasl:devel/cl-trivial-features-sbcl \
