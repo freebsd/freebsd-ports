@@ -29,7 +29,7 @@ some additional setup:
 
 3. Enable "qmk" ruleset:
 
-        # sysrc devfs_system_ruleset+="qmk"
+        # sysrc devfs_set_rulesets+="/dev=qmk"
 
 4. Restart the devfs service to load the new rules:
 
