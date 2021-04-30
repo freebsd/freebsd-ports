@@ -1,6 +1,7 @@
 
 PORTNAME=	miniflux
 DISTVERSION=	2.0.29
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	krion@FreeBSD.org
@@ -12,8 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		go:modules
-
-WANT_PGSQL=	client
 
 USE_GITHUB=	yes
 GH_PROJECT=	v2
@@ -60,7 +59,8 @@ GROUPS=		miniflux
 
 OPTIONS_DEFINE=		PGSQL_SERVER
 PGSQL_SERVER_DESC=	Install the PostgreSQL Server Component
-PGSQL_SERVER_VARS=	WANT_PGSQL=server,contrib
+PGSQL_SERVER_USES=	pgsql
+PGSQL_SERVER_VARS=	WANT_PGSQL+="server contrib"
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/miniflux.1 ${STAGEDIR}${PREFIX}/man/man1/
