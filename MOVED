@@ -16304,3 +16304,5 @@ news/plor||2021-04-24|Has expired: listed as "Alpha-release" but last update in 
 security/certificate-transparency||2021-04-24|Has expired: Broken for more than 6 months
 misc/soapysdr-rtlsdr|comms/soapysdr-rtlsdr|2021-04-28|Move port to a proper category
 net/libjson-rpc-cpp||2021-04-28|Port has been broken since October 2020
+www/py-django111|www/py-django22|2021-04-30|Has expired: Django 1.11 is End-of-Life since April 2020. Switch to Django 2.2+ as soon as possible
+archivers/par2cmdline-tbb|archivers/par2cmdline|2021-04-30|Has expired: Unmaintained upstream, does not build with oneTbb. Use archivers/par2cmdline instead

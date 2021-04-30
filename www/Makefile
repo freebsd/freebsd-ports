@@ -1557,7 +1557,6 @@
     SUBDIR += py-django-voting
     SUBDIR += py-django-webpack-loader
     SUBDIR += py-django-widget-tweaks
-    SUBDIR += py-django111
     SUBDIR += py-django22
     SUBDIR += py-django30
     SUBDIR += py-django31

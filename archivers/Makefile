@@ -131,7 +131,6 @@
     SUBDIR += paq
     SUBDIR += par
     SUBDIR += par2cmdline
-    SUBDIR += par2cmdline-tbb
     SUBDIR += parchive
     SUBDIR += pbzip2
     SUBDIR += pear-File_Archive
