@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	tt-rss
-PORTVERSION=	g20210123
+PORTVERSION=	g20210423
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://git.tt-rss.org/fox/tt-rss/archive/
@@ -13,15 +13,16 @@ COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
 
 LICENSE=	GPLv2
 
+RUN_DEPENDS=	${LOCALBASE}/bin/git:devel/git
+
 USES=		gettext-tools php:cli,web shebangfix
-USE_PHP=	ctype dom fileinfo filter hash iconv intl json mbstring pcntl \
-		posix session xmlrpc
+USE_PHP=	ctype dom exif fileinfo filter hash iconv intl json mbstring \
+		openssl pcntl pdo posix session tokenizer xml xmlrpc zip
 USE_RC_SUBR=	ttrssd
 
-SHEBANG_FILES=	lib/dojo-src/rebuild-dojo.sh update_daemon2.php \
-		utils/extract-i18n-js.pl
+SHEBANG_FILES=	update.php update_daemon2.php
 
-_GIT_TAGNAME=	6c546f37b
+_GIT_TAGNAME=	e8f78181f
 
 REINPLACE_ARGS=	-i ""
 
@@ -51,24 +52,13 @@ PGSQL_VARS_OFF=	PGSQL="\#"
 
 .include <bsd.port.options.mk>
 
-SUB_FILES=	httpd-tt-rss.conf pkg-message
+SUB_FILES=	config.php httpd-tt-rss.conf pkg-message
 SUB_LIST=	DB=${DB} \
 		MYSQL=${MYSQL} \
 		PGSQL=${PGSQL} \
 		WWWOWN=${WWWOWN}
 PLIST_SUB=	WWWGRP=${WWWGRP} \
 		WWWOWN=${WWWOWN}
-
-PHP2FIX=	config.php-dist update.php
-
-SCRIPTS=	update.php update_daemon2.php
-
-pre-configure:
-.for script in ${PHP2FIX}
-	${REINPLACE_CMD} -e 's|/usr/bin/php|${LOCALBASE}/bin/php|'	\
-		-e 's|/usr/bin/env php| ${LOCALBASE}/bin/php|'		\
-		${WRKSRC}/${script}
-.endfor
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${DATADIR}
@@ -78,9 +68,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/httpd-tt-rss.conf ${STAGEDIR}${DATADIR}
 	${ECHO} "${OPSYS}:${PORTVERSION}:${_GIT_TAGNAME}" > \
 		"${STAGEDIR}${WWWDIR}/version_static.txt"
-	${MV} ${STAGEDIR}${WWWDIR}/config.php-dist \
+	${RM} ${STAGEDIR}${WWWDIR}/config.php-dist
+	${INSTALL_DATA} ${WRKDIR}/config.php \
 		${STAGEDIR}${WWWDIR}/config.php.sample
-	${RLN} ${STAGEDIR}${WWWDIR}/config.php.sample \
-		${STAGEDIR}${WWWDIR}/config.php-dist
 
 .include <bsd.port.mk>
