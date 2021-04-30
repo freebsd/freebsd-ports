@@ -1,7 +1,6 @@
 PORTNAME=	hermes
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2.20210322
-PORTREVISION=	1
+DISTVERSION=	0.8.0
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-javascript-engine
 
@@ -15,12 +14,11 @@ LIB_DEPENDS=	libicui18n.so:devel/icu
 TEST_DEPENDS=	googletest>0:devel/googletest \
 		zip:archivers/zip
 
-USES=		cmake compiler:c++11-lang python:build readline
+USES=		cmake compiler:c++14-lang python:build readline
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
-GH_TAGNAME=	1ed8051
 
 CMAKE_OFF=	HERMES_ENABLE_TEST_SUITE
 
