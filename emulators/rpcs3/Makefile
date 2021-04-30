@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.15-12167 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g64a109d28
+DISTVERSION=	0.0.16-12199 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gb8477a470
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,17 +26,17 @@ GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-28-g8961cf8:hidapi/3rdparty/hidapi \
 		RPCS3:llvm-mirror:4d88105d4a89:llvm/llvm \
 		Cyan4973:xxHash:v0.8.0:xxHash/3rdparty/xxHash \
-		FNA-XNA:FAudio:20.05:FAudio/3rdparty/FAudio \
+		FNA-XNA:FAudio:21.04:FAudio/3rdparty/FAudio \
 		google:flatbuffers:v1.11.0:flatbuffers/3rdparty/flatbuffers \
 		jbeder:yaml-cpp:yaml-cpp-0.6.3-30-g6a211f0:yamlcpp/3rdparty/yaml-cpp \
 		kobalicek:asmjit:723f585:asmjit/asmjit \
 		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/Vulkan/spirv-headers \
 		KhronosGroup:SPIRV-Tools:v2020.4:spirv_tools/Vulkan/spirv-tools \
-		KhronosGroup:glslang:8.13.3743-225-g517f39ee:glslang/Vulkan/glslang \
+		KhronosGroup:glslang:11.4.0:glslang/Vulkan/glslang \
 		tcbrindle:span:9d7559a:span/3rdparty/span \
 		USCiLab:cereal:v1.3.0-5-g60c69df9:cereal/3rdparty/cereal \
 		wolfSSL:wolfssl:v4.5.0-stable-80-g39b544860:wolfssl/3rdparty/wolfssl \
-		zeux:pugixml:v1.9-51-g8bf806c:pugixml/3rdparty/pugixml
+		zeux:pugixml:v1.11.4:pugixml/3rdparty/pugixml
 
 USES=		cmake compiler:c++17-lang gl iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig python:3.4+,build qt:5 xorg
