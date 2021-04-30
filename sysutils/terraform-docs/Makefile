@@ -1,5 +1,7 @@
+# $FreeBSD$
+
 PORTNAME=	terraform-docs
-PORTVERSION=	0.11.2
+PORTVERSION=	0.12.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils textproc
 
@@ -21,12 +23,16 @@ GH_TUPLE=	\
 		agext:levenshtein:v1.2.2:agext_levenshtein/vendor/github.com/agext/levenshtein \
 		apparentlymart:go-textseg:v1.0.0:apparentlymart_go_textseg/vendor/github.com/apparentlymart/go-textseg \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		dominikh:go-tools:v0.1.2:dominikh_go_tools/vendor/honnef.co/go/tools \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		go-yaml:yaml:496545a6307b:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:net:3b0461eec859:golang_net/vendor/golang.org/x/net \
+		golang:mod:v0.3.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:f5854403a974:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.4:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:543471e840be:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		golang:sys:b64e53b001e4:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
+		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
+		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.3.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:16a3f7862a1a:google_go_genproto/vendor/google.golang.org/genproto \
 		grpc:grpc-go:v1.27.1:grpc_grpc_go/vendor/google.golang.org/grpc \
@@ -49,7 +55,7 @@ GH_TUPLE=	\
 		spf13:cobra:v1.1.3:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		terraform-docs:plugin-sdk:v0.1.0:terraform_docs_plugin_sdk/vendor/github.com/terraform-docs/plugin-sdk \
+		terraform-docs:plugin-sdk:v0.2.0:terraform_docs_plugin_sdk/vendor/github.com/terraform-docs/plugin-sdk \
 		terraform-docs:terraform-config-inspect:6ef25af8884f:terraform_docs_terraform_config_inspect/vendor/github.com/terraform-docs/terraform-config-inspect \
 		zclconf:go-cty:v1.1.0:zclconf_go_cty/vendor/github.com/zclconf/go-cty
 
