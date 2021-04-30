@@ -5,19 +5,6 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20210428:
-  AFFECTS: users of www/tt-rss
-  AUTHOR: dereks@lifeofadishwasher.com
-
-  tt-rss config.php syntax has changed.  You can find detailed changes
-  here[1] or look at config.php.sample. Expect your config.php to not
-  work with newer www/tt-rss releases.
-
-  Due to changes in ttrssd before updating you should stop ttrssd via
-  otherwise kill the php process running update_daemon2.php.
-
-  [1] https://tt-rss.org/wiki/GlobalConfig
-
 20210426:
   AFFECTS: users of x11-fonts/iosevka
   AUTHOR: 0mp@FreeBSD.org
