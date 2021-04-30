@@ -1,5 +1,5 @@
 PORTNAME=	qutip
-DISTVERSION=	4.5.2
+DISTVERSION=	4.6.0
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
 USES=		python:3.5+
 USE_PYTHON=	distutils cython cython_run autoplist
+
+BINARY_ALIAS=	git=false # https://github.com/qutip/qutip/issues/1514
 
 post-patch: # https://github.com/qutip/qutip/issues/1059
 	@${FIND} ${WRKSRC} -name "*.pyx" -o -name "*.pxd" | ${XARGS} ${REINPLACE_CMD} 's|^#!python|#!${PYTHON_CMD}|'
