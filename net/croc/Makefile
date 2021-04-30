@@ -1,5 +1,5 @@
 PORTNAME=	croc
-PORTVERSION=	9.1.0
+PORTVERSION=	9.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -23,7 +23,7 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		golang:sys:66c3f260301c:golang_sys/vendor/golang.org/x/sys \
 		golang:term:72f3dc4e9b72:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
-		kalafut:imohash:v1.0.0:kalafut_imohash/vendor/github.com/kalafut/imohash \
+		kalafut:imohash:v1.0.2:kalafut_imohash/vendor/github.com/kalafut/imohash \
 		mattn:go-runewidth:v0.0.12:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mitchellh:colorstring:d06e56a500db:mitchellh_colorstring/vendor/github.com/mitchellh/colorstring \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
@@ -35,9 +35,9 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		schollz:pake:v3.0.1:schollz_pake_v3/vendor/github.com/schollz/pake/v3 \
 		schollz:peerdiscovery:v1.6.3:schollz_peerdiscovery/vendor/github.com/schollz/peerdiscovery \
 		schollz:progressbar:v3.7.6:schollz_progressbar_v3/vendor/github.com/schollz/progressbar/v3 \
-		spaolacci:murmur3:v1.1.0:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
-		tscholl2:siec:8da93652b094:tscholl2_siec/vendor/github.com/tscholl2/siec
+		tscholl2:siec:8da93652b094:tscholl2_siec/vendor/github.com/tscholl2/siec \
+		twmb:murmur3:v1.1.5:twmb_murmur3/vendor/github.com/twmb/murmur3
 
 PLIST_FILES=	bin/croc
 
