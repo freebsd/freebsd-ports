@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libtermkey.so:devel/libtermkey
 
-USES=		gmake libtool:build ncurses pathfix pkgconfig
+USES=		compiler:c11 gmake libtool:build ncurses pathfix pkgconfig
 
 MAKE_ARGS=	MANDIR=${PREFIX}/share/man
 PATHFIX_MAKEFILEIN=	Makefile
