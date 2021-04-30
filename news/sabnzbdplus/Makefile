@@ -1,5 +1,6 @@
 PORTNAME=	sabnzbdplus
 DISTVERSION=	3.0.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	news
 MASTER_SITES=	https://github.com/sabnzbd/sabnzbd/releases/download/${DISTVERSION}/
@@ -18,43 +19,43 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>=0:devel/py-cheetah3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}portend>=0:net/py-portend@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sabyenc3>=0:news/py-sabyenc3@${PY_FLAVOR} \
-		par2repair:archivers/par2cmdline-tbb \
+		par2repair:archivers/par2cmdline \
 		unrar:archivers/unrar
 
 USES=		python:3.5+ shebangfix gettext
-WRKSRC=		${WRKDIR}/SABnzbd-${DISTVERSION}
+USE_RC_SUBR=	sabnzbd
 
 SHEBANG_FILES=	SABnzbd.py tools/msgfmt.py
 
 NO_ARCH=	yes
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 SUB_FILES=	pkg-message
-USE_RC_SUBR=	sabnzbd
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
+
+WRKSRC=		${WRKDIR}/SABnzbd-${DISTVERSION}
+
+USERS=		_sabnzbd
+GROUPS=		_sabnzbd
 
 PORTDOCS=	COPYRIGHT.txt \
 		INSTALL.txt \
 		ISSUES.txt \
 		README.mkd
 
-USERS=		_sabnzbd
-GROUPS=		_sabnzbd
-
 OPTIONS_DEFINE=	7ZIP FEEDPARSER SSL DOCS NOTIFY2 DBUS PYGOBJECT
 OPTIONS_DEFAULT=	7ZIP FEEDPARSER SSL
 7ZIP_DESC=	Needed for unpacking 7-Zip posts
+DBUS_DESC=	DBUS support for system power management
 FEEDPARSER_DESC=	RSS feed support
 NOTIFY2_DESC=	Notify2 support
-DBUS_DESC=	DBUS support for system power management
 PYGOBJECT_DESC=	PyGObject support for system tray icon (requires cairo)
 
-FEEDPARSER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=0:textproc/py-feedparser@${PY_FLAVOR}
-SSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR}
 7ZIP_RUN_DEPENDS=	7za:archivers/p7zip
-NOTIFY2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify2>=0:devel/py-notify2@${PY_FLAVOR}
 DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR}
-PYGOBJECT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=3.10.2:devel/py-gobject3@${PY_FLAVOR}
-
+FEEDPARSER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=0:textproc/py-feedparser@${PY_FLAVOR}
 NOTIFY2_IMPLIES=	DBUS
+NOTIFY2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify2>=0:devel/py-notify2@${PY_FLAVOR}
+PYGOBJECT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=3.10.2:devel/py-gobject3@${PY_FLAVOR}
+SSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s:%%DATADIR%%:'${DATADIR}':g" \
