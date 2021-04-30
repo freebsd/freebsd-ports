@@ -3449,15 +3449,6 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 		}
 	}
 
-	# check RESTRICTED/NO_CDROM/NO_PACKAGE
-	print "OK: checking RESTRICTED/NO_CDROM/NO_PACKAGE.\n" if ($verbose);
-	my $lps = $makevar{LICENSE_PERMS} // '';
-	if ($committer && ($tmp =~ /\n(RESTRICTED|NO_CDROM|NO_PACKAGE)[+?]?=/ ||
-		$lps =~ /\bno-\b/)) {
-		&perror("WARN", $file, -1, "Possible restrictive licensing found.  ".
-			"If there are, in fact, limitations to use or distribution, please update ports/LEGAL.");
-	}
-
 	if ($tmp =~ /\nNO_PACKAGE[+?]?=/) {
 		&perror("WARN", $file, -1, "NO_PACKAGE is obsolete.  It should be ".
 			"replaced with \"LICENSE_PERMS=no-pkg-mirror\"");

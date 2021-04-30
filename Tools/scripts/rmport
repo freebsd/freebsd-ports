@@ -245,30 +245,6 @@ check_PRs()
 	return 0
 }
 
-# check if anything about the port is mentioned in ports/LEGAL
-check_LEGAL()
-{
-	catport=${1}
-	pkgname=${2}
-
-	for checkstr in ${pkgname} ${catport} ; do
-		msg="${catport}: checking if ${checkstr} is in ports/LEGAL"
-		log "${msg}"
-		while grep -i ${checkstr} LEGAL ; do
-			echo "" >&2
-			echo "${checkstr} is in ports/LEGAL" >&2
-			echo "remove it and hit <enter> when ready" >&2
-			echo "or hit 's' to skip this issue and continue anyway" >&2
-			read answer
-			if [ "${answer}" = "s" ] ; then
-				break
-			fi
-			log "${msg}"
-		done
-	done
-	${GIT} add LEGAL
-}
-
 # add port's entry to ports/MOVED
 edit_MOVED()
 {
@@ -454,8 +430,6 @@ for catport in $* ; do
 		continue
 	fi
 
-	check_LEGAL ${catport} ${pkgname}
-
 	# everything seems ok, edit the files
 
 	edit_MOVED ${catport}
@@ -483,7 +457,7 @@ while [ "${answer}" = "y" ] ; do
 	echo "you can now edit files by hand" >&2
 	answer=$(ask "do you want to recreate the diff")
 	if [ "${answer}" = "y" ] ; then
-		${GIT} add LEGAL MOVED
+		${GIT} add MOVED
 	fi
 done
 

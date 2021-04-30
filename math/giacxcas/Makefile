@@ -21,6 +21,7 @@ LICENSE_NAME_DOC=	French documentation
 LICENSE_TEXT_DOC=	French documentation is for non-commercial use only
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_PERMS_DOC=	dist-mirror pkg-mirror auto-accept
+LICENSE_DISTFILES_DOC=	giac_${DISTVERSION}${EXTRACT_SUFX}
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libao.so:audio/libao \
