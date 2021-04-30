@@ -788,6 +788,7 @@
     SUBDIR += opa
     SUBDIR += open
     SUBDIR += opencorsairlink
+    SUBDIR += opendircolors
     SUBDIR += openipmi
     SUBDIR += opensbi
     SUBDIR += openseachest
