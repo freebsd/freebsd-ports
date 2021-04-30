@@ -278,6 +278,7 @@
     SUBDIR += fortunate
     SUBDIR += fotaq
     SUBDIR += four-in-a-row
+    SUBDIR += freebee
     SUBDIR += freeblocks
     SUBDIR += freecell-solver
     SUBDIR += freeciv
