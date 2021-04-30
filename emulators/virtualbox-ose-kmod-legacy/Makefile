@@ -40,6 +40,8 @@ CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-* \
 			virtualbox-ose-kmod-*
 
+PORTSCOUT=	limit:^5\.
+
 OPTIONS_DEFINE=	DEBUG VIMAGE
 OPTIONS_DEFAULT=VIMAGE
 OPTIONS_SUB=	yes

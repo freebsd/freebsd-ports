@@ -47,6 +47,8 @@ CONFLICTS_INSTALL=	virtualbox-ose-[0-9]* \
 			virtualbox-ose-lite-[0-9]* \
 			virtualbox-ose-nox11-[0-9]*
 
+PORTSCOUT=	limit:^5\.
+
 OPTIONS_DEFINE=	DBUS DEBUG X11
 OPTIONS_DEFAULT=	DBUS X11
 OPTIONS_SUB=	yes
