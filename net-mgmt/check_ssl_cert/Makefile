@@ -1,11 +1,11 @@
 PORTNAME=	check_ssl_cert
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.1
+DISTVERSION=	2.1.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	cmt@FreeBSD.org
-COMMENT=	Nagios/Icinga plugin for checking SSL/TLS certificates
 
+COMMENT=	Nagios/Icinga plugin for checking SSL/TLS certificates
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	expect:lang/expect \
@@ -17,6 +17,9 @@ NO_ARCH=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	matteocorti
+# release 2.1.2 was not properly tagged
+# https://github.com/matteocorti/check_ssl_cert/releases/tag/untagged-2d84e880500873fc3b86
+GH_TAGNAME=	untagged-2d84e880500873fc3b86
 
 PLIST_FILES=	libexec/nagios/check_ssl_cert \
 		${MANPREFIX}/man/man1/check_ssl_cert.1.gz
