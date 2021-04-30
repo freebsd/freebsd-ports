@@ -14,6 +14,9 @@ COMMENT=	Context Free Design Grammar compiler
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_FreeBSD_13=	does not build: error: conflicting types for 'yyget_leng'
+BROKEN_FreeBSD_14=	does not build: error: conflicting types for 'yyget_leng'
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/${DISTNAME}${EXTRACT_SUFX}
