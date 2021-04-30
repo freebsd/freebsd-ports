@@ -7,6 +7,8 @@ COMMENT=	Database driver for MongoDB written in Elixir
 
 LICENSE=	MIT
 
+BROKEN=		does not build: Compilation error in file lib/mongo.ex
+
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	checkiz
