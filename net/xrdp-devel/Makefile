@@ -2,8 +2,7 @@
 
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.16.p20210223
-PORTREVISION=	1
+DISTVERSION=	0.9.16
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
@@ -31,7 +30,6 @@ USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
 GH_PROJECT=	xrdp
-GH_TAGNAME=	b04fc6f
 GH_TUPLE=	neutrinolabs:librfxcodec:v0.1.5:librfxcodec/librfxcodec \
 		neutrinolabs:libpainter:v0.1.1:libpainter/libpainter
 
@@ -40,7 +38,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --enable-strict-locations \
 		--enable-pam-config=freebsd \
 		--enable-jpeg --enable-pixman --enable-rfxcodec --enable-painter
 LDFLAGS+=	-lssl
-CONFLICTS=	xrdp-devel[0-9]*
+CONFLICTS=	xrdp-[0-9]*
 INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	OPENSSLBASE=${OPENSSLBASE}
