@@ -1,10 +1,11 @@
 PORTNAME=	getmail6
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.15
+PORTREVISION=	1
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	m.bueker@berlin.de
+MAINTAINER=	freebsd@michael-bueker.de
 COMMENT=	POP3/IMAP4 mail retriever (Python3 fork)
 
 LICENSE=	GPLv2
