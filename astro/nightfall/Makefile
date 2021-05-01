@@ -2,6 +2,7 @@
 
 PORTNAME=	nightfall
 PORTVERSION=	1.92
+PORTREVISION=	1
 CATEGORIES=	astro education
 MASTER_SITES=	http://www.la-samhna.de/nightfall/
 
@@ -16,16 +17,12 @@ USE_GNOME=	cairo gdkpixbuf2 gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-locale-prefix=${PREFIX}/share/locale
+CONFIGURE_ARGS=	--with-locale-prefix=${PREFIX}/share/locale \
+		--disable-gome
 
-OPTIONS_DEFINE=		GNOME PGPLOT OPENGL
+OPTIONS_DEFINE=		PGPLOT OPENGL
 OPTIONS_DEFAULT=	PGPLOT OPENGL
 OPTIONS_SUB=		yes
-
-GNOME_CONFIGURE_ON=	--with-gnomedoc-prefix=${PREFIX}/share
-GNOME_CONFIGURE_OFF=	--disable-gnome
-GNOME_USE=		GNOME=gnomeprefix,libgnomeui
-GNOME_VARS=		INSTALLS_OMF=yes
 
 OPENGL_CONFIGURE_ON=	--with-lib-GL
 OPENGL_CONFIGURE_OFF=	--disable-opengl

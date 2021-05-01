@@ -23,7 +23,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	GTK2 GNOME DOCS EXAMPLES
+OPTIONS_DEFINE=	GTK2 DOCS EXAMPLES
+
+CONFIGURE_ARGS=	--without-gnome-app --without-gnome-applet
 
 .include <bsd.port.options.mk>
 
@@ -37,15 +39,7 @@ CONFIGURE_ARGS+=--without-gtk-app
 PLIST_SUB+=	HASGTK="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MGNOME}
-USE_GNOME+=	gnomeprefix libgnomeui
-PLIST_SUB+=	HASGNOME=""
-.else
-CONFIGURE_ARGS+=--without-gnome-app --without-gnome-applet
-PLIST_SUB+=	HASGNOME="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGNOME}
+.if ${PORT_OPTIONS:MGTK2}
 USES+=		gettext
 PLIST_SUB+=	HASGUI=""
 .else

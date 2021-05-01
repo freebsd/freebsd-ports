@@ -3,6 +3,7 @@
 PORTNAME=	exult
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.0.20210429
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -33,13 +34,12 @@ CONFIGURE_ARGS=	--disable-static \
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		ALSA DOCS DEBUG FLUIDSYNTH GIMP STUDIO THUMBNAILER
+OPTIONS_DEFINE=		ALSA DOCS DEBUG FLUIDSYNTH GIMP STUDIO
 OPTIONS_DEFAULT=	STUDIO
 OPTIONS_SUB=		yes
 
 GIMP_DESC=		GIMP plugin support
 STUDIO_DESC=		Install Exult Studio
-THUMBNAILER_DESC=	Gnome SHP thumbnailer support
 
 ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=		alsa
@@ -56,10 +56,6 @@ GIMP_CONFIGURE_ENABLE=		gimp-plugin
 STUDIO_CONFIGURE_ENABLE=	exult-studio exult-studio-support
 STUDIO_USES=			gnome
 STUDIO_USE=			gnome=libglade2
-
-THUMBNAILER_USES=		gnome shared-mime-info
-THUMBNAILER_USE=		gnome=libgnomeui
-THUMBNAILER_CONFIGURE_ENABLE=	gnome-shp-thumbnailer
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -2,7 +2,6 @@ bin/cmanip
 bin/expack
 bin/exult
 %%STUDIO%%bin/exult_studio
-%%THUMBNAILER%%bin/gnome_shp_thumbnailer
 bin/ipack
 bin/mklink
 bin/rip
@@ -71,6 +70,4 @@ share/applications/exult.desktop
 %%DATADIR%%/u7opcodes.data
 %%DATADIR%%/u7sibetaintrinsics.data
 %%DATADIR%%/u7siintrinsics.data
-%%THUMBNAILER%%share/mime/packages/x-shapefile.xml
-%%THUMBNAILER%%share/thumbnailers/gnome_u7shapes.thumbnailer
 share/pixmaps/exult.png

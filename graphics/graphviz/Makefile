@@ -2,7 +2,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.44.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://www2.graphviz.org/Packages/stable/portable_source/
 
@@ -49,7 +49,7 @@ FIX_TK_SCRIPT=	tclpkg/tcldot/demo/doted.tcl \
 		tclpkg/tclpathplan/demo/pathplan.tcl
 
 OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO POPPLER \
-		ANN GTS GTK2 GDK GDK_PIXBUF GNOMEUI SMYRNA DEVIL \
+		ANN GTS GTK2 GDK GDK_PIXBUF SMYRNA DEVIL \
 		GHOSTSCRIPT PERL PHP PYTHON RUBY LUA TCL TK GUILE GO \
 		NVTHREADS DOCS EXAMPLES
 OPTIONS_DEFAULT=	XPM DIGCOLA IPSEPCOLA ICONV PANGOCAIRO NVTHREADS
@@ -63,7 +63,6 @@ GTS_DESC=	GNU Triangulated Surface Library support
 GTK2_DESC=	gtk2 plugin (requires PANGOCAIRO)
 GDK_DESC=	gdk library support (requires GTK2)
 GDK_PIXBUF_DESC=gdk pixbuf support (requires GDK)
-GNOMEUI_DESC=	libgnomeui support
 SMYRNA_DESC=	SMYRNA graph viewer (requires GTK2)
 DEVIL_DESC=	devil plugin
 GHOSTSCRIPT_DESC=ghostscript plugin (requires PANGOCAIRO)
@@ -86,7 +85,6 @@ PANGOCAIRO_USES=gnome xorg
 PANGOCAIRO_USE=	GNOME=pango,cairo XORG=xrender,x11,xau,xdmcp
 GTK2_USES=	gnome xorg
 GTK2_USE=	XORG=sm,ice,xext,xinerama,xi,xrandr,xcursor,xfixes GNOME=gtk20
-GNOMEUI_USE=	GNOME=libgnomeui
 SMYRNA_USES=	gnome gl
 SMYRNA_USE=	GNOME=libglade2,pangox-compat,gdkpixbuf2 GL=glut,glu,gl
 GHOSTSCRIPT_USES=ghostscript
@@ -128,8 +126,6 @@ GTK2_IMPLIES=			PANGOCAIRO
 GDK_CONFIGURE_WITH=		gdk
 GDK_PIXBUF_CONFIGURE_WITH=	gdk-pixbuf
 GDK_PIXBUF_IMPLIES=		GTK2 GDK
-GNOMEUI_CONFIGURE_WITH=		gnomeui
-GNOMEUI_IMPLIES=		GTK2
 SMYRNA_CONFIGURE_OFF=		--with-glut=no
 SMYRNA_CONFIGURE_WITH=		smyrna glade gtkgl gtkglext
 SMYRNA_IMPLIES=			GTK2 GTS
