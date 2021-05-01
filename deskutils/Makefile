@@ -218,7 +218,6 @@
     SUBDIR += rubygem-taskjuggler
     SUBDIR += semantik
     SUBDIR += showdown
-    SUBDIR += shutter
     SUBDIR += simpleagenda
     SUBDIR += sliderule
     SUBDIR += sowon

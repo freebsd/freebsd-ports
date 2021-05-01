@@ -132,7 +132,6 @@
     SUBDIR += frugally-deep
     SUBDIR += ftdi-eeprom
     SUBDIR += fxload
-    SUBDIR += gcstar
     SUBDIR += gedkeeper
     SUBDIR += geekcode
     SUBDIR += getopt

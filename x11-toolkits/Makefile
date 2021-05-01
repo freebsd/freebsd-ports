@@ -102,9 +102,7 @@
     SUBDIR += otk
     SUBDIR += p5-Alien-wxWidgets
     SUBDIR += p5-Glade2
-    SUBDIR += p5-Gnome2
     SUBDIR += p5-Gnome2-Canvas
-    SUBDIR += p5-Gnome2-VFS
     SUBDIR += p5-Gnome2-Wnck
     SUBDIR += p5-Gtk2
     SUBDIR += p5-Gtk2-Chmod

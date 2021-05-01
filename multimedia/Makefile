@@ -50,7 +50,6 @@
     SUBDIR += dvdauthor
     SUBDIR += dvdid
     SUBDIR += dvdread
-    SUBDIR += dvdrip
     SUBDIR += dvdstyler
     SUBDIR += elementary-videos
     SUBDIR += emby-server
@@ -232,7 +231,6 @@
     SUBDIR += mkclean
     SUBDIR += mkvalidator
     SUBDIR += mkvtoolnix
-    SUBDIR += mkxvcd
     SUBDIR += mlt
     SUBDIR += mlt-qt5
     SUBDIR += mmsclient
@@ -370,7 +368,6 @@
     SUBDIR += subsync
     SUBDIR += subtitlecomposer
     SUBDIR += subtitleoffsetmodifier
-    SUBDIR += subtitleripper
     SUBDIR += subtools
     SUBDIR += svt-av1
     SUBDIR += svt-hevc
@@ -384,7 +381,6 @@
     SUBDIR += tivodecode
     SUBDIR += totem
     SUBDIR += totem-pl-parser
-    SUBDIR += transcode
     SUBDIR += tstools
     SUBDIR += tvheadend
     SUBDIR += umph
