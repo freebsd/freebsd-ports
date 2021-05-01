@@ -307,10 +307,6 @@ gnomemenus3_BUILD_DEPENDS=	gnome-menus>=3.2.0:x11/gnome-menus
 gnomemenus3_RUN_DEPENDS=	gnome-menus>=3.2.0:x11/gnome-menus
 gnomemenus3_USE_GNOME_IMPL=	glib20
 
-gtksharp10_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-sharp.pc:x11-toolkits/gtk-sharp10
-gtksharp10_RUN_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/gtk-sharp.pc:x11-toolkits/gtk-sharp10
-gtksharp10_USE_GNOME_IMPL=	gtk20
-
 gtksharp20_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-sharp-2.0.pc:x11-toolkits/gtk-sharp20
 gtksharp20_RUN_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/gtk-sharp-2.0.pc:x11-toolkits/gtk-sharp20
 gtksharp20_USE_GNOME_IMPL=	gtk20
