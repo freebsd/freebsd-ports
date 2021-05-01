@@ -72,7 +72,7 @@ _USE_GNOME_ALL= intlhack intltool introspection \
 _USE_GNOME_ALL+= atk cairo \
 		gdkpixbuf2 gconf2 glib20 \
 		gtk-update-icon-cache gtk20 \
-		gtksharp20 gtksourceview2 gvfs libartlgpl2 libbonobo \
+		gtksharp20 gtksourceview2 gvfs libartlgpl2 \
 		libglade2 libgnomecanvas \
 		libgsf libidl librsvg2 libwnck \
 		libxml2 libxslt \
@@ -203,9 +203,6 @@ libxslt_BUILD_DEPENDS=	xsltproc:textproc/libxslt
 libxslt_LIB_DEPENDS=	libxslt.so:textproc/libxslt
 libxslt_RUN_DEPENDS=	${libxslt_BUILD_DEPENDS}
 libxslt_USE_GNOME_IMPL=	libxml2
-
-libbonobo_LIB_DEPENDS=	libbonobo-2.so:devel/libbonobo
-libbonobo_USE_GNOME_IMPL=libxml2 orbit2
 
 introspection_BUILD_DEPENDS=	g-ir-scanner:devel/gobject-introspection
 introspection_LIB_DEPENDS=	libgirepository-1.0.so:devel/gobject-introspection

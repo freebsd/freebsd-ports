@@ -1114,7 +1114,6 @@
     SUBDIR += libbegemot
     SUBDIR += libbfd
     SUBDIR += libbinio
-    SUBDIR += libbonobo
     SUBDIR += libbpfjit
     SUBDIR += libbson
     SUBDIR += libburn
