@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	azure_sdk
-PORTVERSION=	0.72.0
+PORTVERSION=	0.73.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -38,7 +38,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_cognitiveservices_websearch>=0.18.2<0.19:devel/rubygem-azure_cognitiveservices_websearch \
 		rubygem-azure_event_grid>=0.18.1<0.19:devel/rubygem-azure_event_grid \
 		rubygem-azure_graph_rbac>=0.17.2<0.18:devel/rubygem-azure_graph_rbac \
-		rubygem-azure_key_vault>=0.19.0<0.20:devel/rubygem-azure_key_vault \
+		rubygem-azure_key_vault>=0.19.1<0.20:devel/rubygem-azure_key_vault \
 		rubygem-azure_mgmt_adhybridhealth_service>=0.17.1<0.18:devel/rubygem-azure_mgmt_adhybridhealth_service \
 		rubygem-azure_mgmt_advisor>=0.17.2<0.18:devel/rubygem-azure_mgmt_advisor \
 		rubygem-azure_mgmt_alerts_management>=0.17.1<0.18:devel/rubygem-azure_mgmt_alerts_management \
