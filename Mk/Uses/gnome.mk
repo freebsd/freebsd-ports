@@ -75,7 +75,7 @@ _USE_GNOME_ALL+= atk cairo \
 		gtksharp20 gtksourceview2 gvfs libartlgpl2 libbonobo \
 		libbonoboui libglade2 libgnome \
 		libgnomecanvas \
-		libgnomeui libgsf libidl librsvg2 libwnck \
+		libgsf libidl librsvg2 libwnck \
 		libxml2 libxslt \
 		orbit2 pango pangox-compat \
 		vte
@@ -234,9 +234,6 @@ libgnome_USE_GNOME_IMPL=gnomevfs2 libbonobo
 
 libbonoboui_LIB_DEPENDS=	libbonoboui-2.so:x11-toolkits/libbonoboui
 libbonoboui_USE_GNOME_IMPL=	libgnomecanvas libgnome
-
-libgnomeui_LIB_DEPENDS=		libgnomeui-2.so:x11-toolkits/libgnomeui
-libgnomeui_USE_GNOME_IMPL=	libbonoboui
 
 gnomedesktop3_LIB_DEPENDS=	libgnome-desktop-3.so:x11/gnome-desktop
 gnomedesktop3_USE_GNOME_IMPL=	gtk30

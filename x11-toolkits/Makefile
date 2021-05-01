@@ -69,7 +69,6 @@
     SUBDIR += libbonoboui
     SUBDIR += libdazzle
     SUBDIR += libgdiplus
-    SUBDIR += libgnomeui
     SUBDIR += libhandy
     SUBDIR += libhandy0
     SUBDIR += libsexy
