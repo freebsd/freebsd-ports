@@ -1,5 +1,5 @@
 PORTNAME=	libxkbcommon
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	x11
 MASTER_SITES=	https://xkbcommon.org/download/
 DIST_SUBDIR=	xorg/lib
