@@ -1,5 +1,5 @@
 PORTNAME=	webalizer-geodb
-PORTVERSION=	20210401
+PORTVERSION=	20210501
 CATEGORIES+=	net
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/geodb/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/ \
