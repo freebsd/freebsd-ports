@@ -1,0 +1,6 @@
+xsimd provides a unified means for using SIMD features of the CPU for library
+authors. Namely, it enables manipulation of batches of numbers with the same
+arithmetic operators as for single values. It also provides accelerated
+implementation of common mathematical functions operating on batches.
+
+WWW: https://github.com/xtensor-stack/xsimd
