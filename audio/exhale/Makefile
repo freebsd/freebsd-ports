@@ -1,5 +1,5 @@
 PORTNAME=	exhale
-DISTVERSION=	1.1.4
+DISTVERSION=	1.1.5
 CATEGORIES=	audio
 
 MAINTAINER=	daniel.engberg.lists@pyret.net
@@ -14,7 +14,7 @@ USES=		cmake compiler:c++11-lang
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	ecodis
-GL_COMMIT=	27e9e9e02e1c6429d547d80586a5a13206451be8
+GL_COMMIT=	9a1c4ee39dc05fbbc5db23101f89846a2aff1b35
 
 USE_LDCONFIG=	yes
 
