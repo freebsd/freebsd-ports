@@ -16316,4 +16316,6 @@ deskutils/shutter||2021-05-01|Has expired: Upstream gone, depends on expired x11
 misc/gcstar||2021-05-01|Has expired: Depends on expired x11-toolkits/p5-Gnome2-VFS
 x11/gnome-sharp20||2021-05-01|Dead upstream, no consumers left in the ports tree
 x11-toolkits/libgnomeui||2021-05-01|Dead upstream, no consumers left in the ports tree
-x11-toolkits/libbonoboui||2021-05-01|Dead upstream, no consumers left in the ports tree
+x11-toolkits/p5-Gnome2-Canvas||2021-05-01|Has expired: Deprecated by the Gtk-Perl project. No more security patches and bug fixes
+x11-toolkits/p5-Gnome2-Wnck||2021-05-01|Has expired: Deprecated by the Gtk-Perl project. No more security patches and bug fixes
+devel/p5-Gnome2-GConf||2021-05-01|Has expired: Deprecated by the Gtk-Perl project. No more security patches and bug fixes

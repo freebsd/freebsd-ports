@@ -1,8 +1,0 @@
-This module allows you to use the GConf configuration system in order
-to store/retrieve the configuration of an application. The GConf
-system is a powerful configuration manager based on a user daemon that
-handles a set of key and value pairs, and notifies any changes of the
-value to every program that monitors those keys. GConf is used by
-GNOME 2.x.
-
-WWW: https://metacpan.org/release/Gnome2-GConf
