@@ -1,7 +1,7 @@
 # Created by: Gerhard Häring <gh@ghaering.de>
 
 PORTNAME=	duplicity
-PORTVERSION=	0.8.17
+PORTVERSION=	0.8.19
 CATEGORIES=	sysutils
 MASTER_SITES=	https://code.launchpad.net/duplicity/0.8-series/${PORTVERSION}/+download/
 
