@@ -436,6 +436,7 @@
 %%ANALYZERDIR%%/include/db_update_v10.txt
 %%ANALYZERDIR%%/include/db_update_v11.txt
 %%ANALYZERDIR%%/include/db_update_v12.txt
+%%ANALYZERDIR%%/include/db_update_v13.txt
 %%ANALYZERDIR%%/include/db_update_v2.txt
 %%ANALYZERDIR%%/include/db_update_v3.txt
 %%ANALYZERDIR%%/include/db_update_v4.txt
