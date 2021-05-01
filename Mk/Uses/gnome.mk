@@ -73,7 +73,7 @@ _USE_GNOME_ALL+= atk cairo \
 		gdkpixbuf2 gconf2 glib20 \
 		gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 \
 		gtksharp20 gtksourceview2 gvfs libartlgpl2 libbonobo \
-		libbonoboui libglade2 libgnome \
+		libglade2 libgnome \
 		libgnomecanvas \
 		libgsf libidl librsvg2 libwnck \
 		libxml2 libxslt \
@@ -231,9 +231,6 @@ libartlgpl2_LIB_DEPENDS=	libart_lgpl_2.so:graphics/libart_lgpl
 
 libgnome_LIB_DEPENDS=	libgnome-2.so:x11/libgnome
 libgnome_USE_GNOME_IMPL=gnomevfs2 libbonobo
-
-libbonoboui_LIB_DEPENDS=	libbonoboui-2.so:x11-toolkits/libbonoboui
-libbonoboui_USE_GNOME_IMPL=	libgnomecanvas libgnome
 
 gnomedesktop3_LIB_DEPENDS=	libgnome-desktop-3.so:x11/gnome-desktop
 gnomedesktop3_USE_GNOME_IMPL=	gtk30
