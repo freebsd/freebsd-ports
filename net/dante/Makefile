@@ -1,8 +1,7 @@
 # Created by: Anders Nordby <anders@fix.no>
 
 PORTNAME=	dante
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.3
 CATEGORIES=	net security
 MASTER_SITES=	http://www.inet.no/dante/files/ \
 		ftp://ftp.inet.no/pub/socks/
