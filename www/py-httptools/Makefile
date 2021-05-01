@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	httptools
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,6 @@ USES=		localbase python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
 post-patch:
-	@${RM} -r ${WRKSRC}/vendor/
+	@${RM} -r ${WRKSRC}/vendor/http-parser/
 
 .include <bsd.port.mk>
