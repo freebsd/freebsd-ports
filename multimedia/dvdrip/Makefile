@@ -7,7 +7,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	CPAN http://www.exit1.org/dvdrip/dist/
 MASTER_SITE_SUBDIR=	CPAN:JRED
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	se@FreeBSD.org
 COMMENT=	Perl Gtk+ based dvd-ripper
 
 LICENSE=	ART10 GPLv1 # (ART10 or GPLv1) and CC-BY-SA-2.5

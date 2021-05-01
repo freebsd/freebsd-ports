@@ -6,7 +6,7 @@ PORTREVISION=	13
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/kvcd4nix/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	se@FreeBSD.org
 COMMENT=	Makes high quality X/K/S/VCD movies from many formats
 
 LICENSE=	GPLv2
