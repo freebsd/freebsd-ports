@@ -1,5 +1,5 @@
 PORTNAME=	check_ups_health
-PORTVERSION=	2.9.2.4
+PORTVERSION=	2.9.2.7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://labs.consol.de/assets/downloads/nagios/
 
