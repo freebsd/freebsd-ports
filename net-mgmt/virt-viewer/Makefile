@@ -11,7 +11,8 @@ COMMENT=	Provides a graphical viewer for a guest OS display
 LICENSE=	GPLv2
 
 USES=		cpe desktop-file-utils gettext gettext-tools gmake gnome \
-		libtool meson pkgconfig python:3.6+,build shared-mime-info xorg tar:xz
+		libtool meson perl5 pkgconfig python:3.6+,build \
+		shared-mime-info tar:xz xorg
 CPE_VENDOR=	redhat
 USE_GNOME=	gtk30 libxml2
 INSTALLS_ICONS=	yes
@@ -38,12 +39,7 @@ SPICE_MESON_ENABLED=	spice
 VNC_LIB_DEPENDS=	libgtk-vnc-2.0.so:net/gtk-vnc
 VNC_MESON_ENABLED=	vnc
 
+VTE_USE=		GNOME=vte3
 VTE_MESON_ENABLED=	vte
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MVTE}
-USE_GNOME+=	vte3
-.endif
 
 .include <bsd.port.mk>
