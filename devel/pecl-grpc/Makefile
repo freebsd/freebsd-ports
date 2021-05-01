@@ -1,7 +1,7 @@
 # Created by: vanilla@
 
 PORTNAME=	grpc
-PORTVERSION=	1.37.0
+PORTVERSION=	1.37.1
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
