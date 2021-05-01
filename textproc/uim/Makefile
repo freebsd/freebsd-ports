@@ -44,7 +44,8 @@ CONFIGURE_ARGS+=	--with-x --with-xft
 USES+=		perl5
 USE_GNOME+=	librsvg2:build
 USE_PERL5=	build
-USE_RUBY=	build
+USE_RUBY=	yes
+RUBY_NO_RUN_DEPENDS=	yes
 .if ${PORT_OPTIONS:MX11}
 USE_GNOME+=	cairo gdkpixbuf2 gtk30
 LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
