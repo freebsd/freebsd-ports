@@ -1,0 +1,30 @@
+--- import/v4l/import_v4l.c.orig	2011-11-19 11:50:27.000000000 -0500
++++ import/v4l/import_v4l.c	2013-06-10 14:51:01.000000000 -0400
+@@ -29,7 +29,7 @@
+ #include <sys/ioctl.h>
+ #include <sys/mman.h>
+ 
+-#include "videodev.h"
++#include <linux/videodev.h>
+ 
+ #define MOD_NAME    "import_v4l.so"
+ #define MOD_VERSION "v0.2.0 (2008-10-26)"
+--- import/probe_v4l.c.orig	2011-11-19 11:50:27.000000000 -0500
++++ import/probe_v4l.c	2013-06-10 14:54:28.000000000 -0400
+@@ -31,14 +31,12 @@
+ 
+ #include <sys/ioctl.h>
+ 
+-#include "v4l/videodev.h"
++#include <linux/videodev.h>
+ 
+ #if defined(HAVE_LINUX_VIDEODEV2_H) && defined(HAVE_STRUCT_V4L2_BUFFER)
+ #define _LINUX_TIME_H
+-#include <linux/videodev2.h>
+-#else
+-#include "v4l/videodev2.h"
+ #endif
++#include <linux/videodev2.h>
+ 
+ 
+ void probe_v4l(info_t *ipipe)

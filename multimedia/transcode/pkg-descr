@@ -1,0 +1,21 @@
+transcode is a text-console utility for video stream processing,
+running on a platform that supports shared libraries and threads.
+Decoding and encoding is done by loading modules that are responsible
+for feeding transcode with raw video/audio streams (import modules)
+and encoding the frames (export modules).
+
+It supports elementary video and audio frame transformations,
+including de-interlacing or fast resizing of video frames and loading
+of external filters. A number of modules are included to enable
+import of DVDs on-the-fly, MPEG elementary (ES) or program streams
+(VOB), MPEG video, Digital Video (DV), YUV4MPEG streams, NuppelVideo
+file format and raw or compressed (pass-through) video frames and
+export modules for writing DivX;-), OpenDivX, DivX 4.xx or uncompressed
+AVI files with MPEG, AC3 (pass-through) or PCM audio. Additional
+export modules to write single frames (PPM) or YUV4MPEG streams are
+available, as well as an interface import module to the avifile
+library. Its modular concept is intended to provide flexibility
+and easy user extensibility to include other video/audio codecs or
+file types.
+
+WWW: http://www.transcoding.org/

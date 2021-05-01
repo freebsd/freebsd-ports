@@ -1,0 +1,29 @@
+--- configure.orig	2011-11-19 17:50:37.000000000 +0100
++++ configure	2014-01-17 22:18:16.637476520 +0100
+@@ -5073,7 +5073,7 @@
+   ;;
+ esac
+ fi
+-PATH_TO_AWK=$ac_cv_path_PATH_TO_AWK
++PATH_TO_AWK=$ac_cv_prog_AWK
+ if test -n "$PATH_TO_AWK"; then
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PATH_TO_AWK" >&5
+ $as_echo "$PATH_TO_AWK" >&6; }
+@@ -26196,7 +26196,7 @@
+   for l in $a52_ll ; do
+     case $l in
+       -L*) lpaths="$lpaths $l" ;;
+-      -l*) test x"$l" != x"-la52" && xlibs="$xlibs $l" ;;
++      -l*) test x"$l" != x"-la52  -L%%LOCALBASE%%/lib -lm" && xlibs="$xlibs $l" ;;
+         *) xlf="$xlf $l" ;;
+     esac
+   done
+@@ -26249,7 +26249,7 @@
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_a52_a52_init" >&5
+ $as_echo "$ac_cv_lib_a52_a52_init" >&6; }
+ if test "x$ac_cv_lib_a52_a52_init" = xyes; then :
+-  A52_LIBS="$a52_ll -la52 $A52_EXTRA_LIBS"
++  A52_LIBS="$a52_ll -la52  -L%%LOCALBASE%%/lib -lm $A52_EXTRA_LIBS"
+ else
+ 
+ this_pkg_err="yes"
