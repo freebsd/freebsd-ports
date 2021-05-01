@@ -16319,3 +16319,5 @@ x11-toolkits/libgnomeui||2021-05-01|Dead upstream, no consumers left in the port
 x11-toolkits/p5-Gnome2-Canvas||2021-05-01|Has expired: Deprecated by the Gtk-Perl project. No more security patches and bug fixes
 x11-toolkits/p5-Gnome2-Wnck||2021-05-01|Has expired: Deprecated by the Gtk-Perl project. No more security patches and bug fixes
 devel/p5-Gnome2-GConf||2021-05-01|Has expired: Deprecated by the Gtk-Perl project. No more security patches and bug fixes
+comms/kb||2021-05-01|Abandonware, upstream has disappeared, depends on libgnome
+games/monster-masher||2021-05-01|Abandonware, depends on libgnome

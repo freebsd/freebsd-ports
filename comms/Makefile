@@ -67,7 +67,6 @@
     SUBDIR += inspectrum
     SUBDIR += iwmbt-firmware
     SUBDIR += java-simple-serial-connector
-    SUBDIR += kb
     SUBDIR += kermit
     SUBDIR += klog
     SUBDIR += libconcord

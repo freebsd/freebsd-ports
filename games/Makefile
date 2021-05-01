@@ -610,7 +610,6 @@
     SUBDIR += miscom
     SUBDIR += mkhexgrid
     SUBDIR += moagg
-    SUBDIR += monster-masher
     SUBDIR += monsterz
     SUBDIR += moon-buggy
     SUBDIR += moonlander
