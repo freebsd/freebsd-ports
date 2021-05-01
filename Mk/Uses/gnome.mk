@@ -71,7 +71,7 @@ _USE_GNOME_ALL= intlhack intltool introspection \
 # GNOME 2 components
 _USE_GNOME_ALL+= atk cairo \
 		gdkpixbuf2 gconf2 glib20 \
-		gnomevfs2 gtk-update-icon-cache gtk20 \
+		gtk-update-icon-cache gtk20 \
 		gtksharp20 gtksourceview2 gvfs libartlgpl2 libbonobo \
 		libglade2 libgnomecanvas \
 		libgsf libidl librsvg2 libwnck \
@@ -215,9 +215,6 @@ introspection_MAKE_ENV=		GI_SCANNER_DISABLE_CACHE=1 XDG_CACHE_HOME=${WRKDIR}
 
 gconf2_LIB_DEPENDS=	libgconf-2.so:devel/gconf2
 gconf2_USE_GNOME_IMPL=	orbit2 libxml2 gtk20
-
-gnomevfs2_LIB_DEPENDS=	libgnomevfs-2.so:devel/gnome-vfs
-gnomevfs2_USE_GNOME_IMPL=gconf2 gnomemimedata
 
 libgnomecanvas_LIB_DEPENDS=	libgnomecanvas-2.so:graphics/libgnomecanvas
 libgnomecanvas_USE_GNOME_IMPL=	libglade2 libartlgpl2
