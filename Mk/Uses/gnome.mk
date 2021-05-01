@@ -71,7 +71,6 @@ _USE_GNOME_ALL= intlhack intltool introspection \
 # GNOME 2 components
 _USE_GNOME_ALL+= atk cairo \
 		gdkpixbuf2 gconf2 glib20 \
-		gnomesharp20 \
 		gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 \
 		gtksharp20 gtksourceview2 gvfs libartlgpl2 libbonobo \
 		libbonoboui libglade2 libgnome \
@@ -328,10 +327,6 @@ gtksharp10_USE_GNOME_IMPL=	gtk20
 gtksharp20_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-sharp-2.0.pc:x11-toolkits/gtk-sharp20
 gtksharp20_RUN_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/gtk-sharp-2.0.pc:x11-toolkits/gtk-sharp20
 gtksharp20_USE_GNOME_IMPL=	gtk20
-
-gnomesharp20_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-sharp-2.0.pc:x11-toolkits/gnome-sharp20
-gnomesharp20_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-sharp-2.0.pc:x11-toolkits/gnome-sharp20
-gnomesharp20_USE_GNOME_IMPL=	gnomevfs2 gtkhtml3 gtksharp20 librsvg2 vte
 
 libgnomekbd_LIB_DEPENDS=	libgnomekbd.so:x11/libgnomekbd
 libgnomekbd_USE_GNOME_IMPL=	gtk30 libxml2

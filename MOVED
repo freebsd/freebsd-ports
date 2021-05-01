@@ -16314,3 +16314,4 @@ multimedia/subtitleripper||2021-05-01|Has expired: Depends on expired multimedia
 multimedia/mkxvcd||2021-05-01|Has expired: Depends on expired multimedia/transcode
 deskutils/shutter||2021-05-01|Has expired: Upstream gone, depends on expired x11-toolkits/p5-Gnome2-VFS
 misc/gcstar||2021-05-01|Has expired: Depends on expired x11-toolkits/p5-Gnome2-VFS
+x11/gnome-sharp20||2021-05-01|Dead upstream, no consumers left in the ports tree

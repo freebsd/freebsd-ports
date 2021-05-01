@@ -19,7 +19,6 @@
     SUBDIR += girara
     SUBDIR += gnocl
     SUBDIR += gnome-pty-helper
-    SUBDIR += gnome-sharp20
     SUBDIR += gnustep-back
     SUBDIR += gnustep-gui
     SUBDIR += granite
