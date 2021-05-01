@@ -1,6 +1,6 @@
 PORTNAME=	blocky
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13
+DISTVERSION=	0.14
 CATEGORIES=	dns
 
 MAINTAINER=	gregf@beastie.tech
@@ -61,6 +61,7 @@ GH_TUPLE=	\
 		stretchr:objx:v0.2.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		x-cray:logrus-prefixed-formatter:v0.5.2:x_cray_logrus_prefixed_formatter/vendor/github.com/x-cray/logrus-prefixed-formatter
+
 
 GO_TARGET=	main.go:${PREFIX}/sbin/${PORTNAME}
 
