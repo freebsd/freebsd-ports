@@ -1,8 +1,7 @@
 # Created by: David O'Brien <obrien@cs.ucdavis.edu>
 
 PORTNAME=	vim
-PORTVERSION=	8.2.2725
-PORTREVISION=	1
+PORTVERSION=	8.2.2820
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
