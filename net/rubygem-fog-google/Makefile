@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	fog-google
-PORTVERSION=	1.12.1
+PORTVERSION=	1.13.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
