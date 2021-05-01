@@ -1,6 +1,8 @@
 %%WWWDIR%%/.github/ISSUE_TEMPLATE/bug_report.md
 %%WWWDIR%%/.github/ISSUE_TEMPLATE/feature_request.md
+%%WWWDIR%%/.github/workflows/php.yml
 %%WWWDIR%%/.gitignore
+%%WWWDIR%%/.phpcs.xml
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
 %%WWWDIR%%/application/controllers/HostsController.php
