@@ -373,12 +373,10 @@ proxydeps_suggest_uses() {
 		${pkg} = "audio/gsound" -o \
 		${pkg} = "x11-toolkits/gtk20" -o \
 		${pkg} = "x11-toolkits/gtk30" -o \
-		${pkg} = "www/gtkhtml3" -o \
 		${pkg} = "www/gtkhtml4" -o \
 		${pkg} = "x11-toolkits/gtkmm20" -o \
 		${pkg} = "x11-toolkits/gtkmm24" -o \
 		${pkg} = "x11-toolkits/gtkmm30" -o \
-		${pkg} = "x11-toolkits/gtksourceview" -o \
 		${pkg} = "x11-toolkits/gtksourceview2" -o \
 		${pkg} = "x11-toolkits/gtksourceview3" -o \
 		${pkg} = "x11-toolkits/gtksourceviewmm3" -o \
@@ -391,8 +389,6 @@ proxydeps_suggest_uses() {
 		${pkg} = "graphics/libgnomecanvas" -o \
 		${pkg} = "x11/libgnomekbd" -o \
 		${pkg} = "devel/libgsf" -o \
-		${pkg} = "www/libgtkhtml" -o \
-		${pkg} = "x11-toolkits/libgtksourceviewmm" -o \
 		${pkg} = "graphics/librsvg2" -o \
 		${pkg} = "devel/libsigc++12" -o \
 		${pkg} = "devel/libsigc++20" -o \

@@ -71,7 +71,7 @@ _USE_GNOME_ALL= intlhack intltool introspection \
 # GNOME 2 components
 _USE_GNOME_ALL+= atk cairo \
 		gdkpixbuf2 gconf2 glib20 \
-		gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 \
+		gnomevfs2 gtk-update-icon-cache gtk20 \
 		gtksharp20 gtksourceview2 gvfs libartlgpl2 libbonobo \
 		libglade2 libgnome \
 		libgnomecanvas \
@@ -89,8 +89,7 @@ _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm gtkmm24 \
-		gtkmm30 gtksourceviewmm3 libgdamm5 \
-		libgtksourceviewmm libxml++26 libsigc++20 \
+		gtkmm30 gtksourceviewmm3 libgdamm5 libxml++26 libsigc++20 \
 		pangomm
 
 # glib-mkenums often fails with C locale
@@ -147,9 +146,6 @@ gtksourceviewmm3_USE_GNOME_IMPL=	gtkmm30 gtksourceview3
 
 libgdamm5_LIB_DEPENDS=		libgdamm-5.0.so:databases/libgdamm5
 libgdamm5_USE_GNOME_IMPL=	libgda5 glibmm
-
-libgtksourceviewmm_LIB_DEPENDS=		libgtksourceviewmm-2.0.so:x11-toolkits/libgtksourceviewmm
-libgtksourceviewmm_USE_GNOME_IMPL=	gtksourceview2 gtkmm24
 
 libsigc++20_LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20
 
@@ -300,9 +296,6 @@ intlhack_PRE_PATCH=	${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${FRA
 			${FIND} ${WRKSRC} -name configure | ${XARGS} ${FRAMEWORK_REINPLACE_CMD} \
 			's/DATADIRNAME=lib/DATADIRNAME=share/'
 intlhack_USE_GNOME_IMPL=intltool
-
-gtkhtml3_LIB_DEPENDS=	libgtkhtml-3.14.so:www/gtkhtml3
-gtkhtml3_USE_GNOME_IMPL=libglade2
 
 gtkhtml4_LIB_DEPENDS=	libgtkhtml-4.0.so:www/gtkhtml4
 gtkhtml4_USE_GNOME_IMPL=gtk30 libxml2
