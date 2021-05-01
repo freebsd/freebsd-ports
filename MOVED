@@ -16324,3 +16324,4 @@ games/monster-masher||2021-05-01|Abandonware, depends on libgnome
 x11/libgnome||2021-05-01|Dead upstream, no consumers left in the ports tree
 devel/gnome-vfs||2021-05-01|Dead upstream, no consumers left in the ports tree
 devel/libbonobo||2021-05-01|Dead upstream, no consumers left in the ports tree
+x11-toolkits/p5-Gtk2-Unique||2021-05-01|Dead upstream, no consumers left in the ports tree
