@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	acme-client
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
