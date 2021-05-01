@@ -1,7 +1,7 @@
 # Created by: Hye-Shik Chang
 
 PORTNAME=	pylint
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -12,7 +12,7 @@ COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=2.5.2<2.7:devel/py-astroid@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=2.5.6<2.7:devel/py-astroid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isort>=4.2.5<6:devel/py-isort@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mccabe>=0.6<0.7:devel/py-mccabe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>=0.7.1:textproc/py-toml@${PY_FLAVOR}
