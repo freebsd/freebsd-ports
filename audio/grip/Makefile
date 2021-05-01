@@ -2,6 +2,7 @@
 
 PORTNAME=	grip
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/grip/${PORTVERSION}
 
@@ -14,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libid3.so:audio/id3lib \
-		libpopt.so:devel/popt
+		libid3.so:audio/id3lib
 
 USES=		compiler:c++11-lang gmake gnome libtool localbase \
 		pathfix pkgconfig xorg gnome
