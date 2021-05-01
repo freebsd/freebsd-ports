@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Test2-Harness
-PORTVERSION=	1.000048
+PORTVERSION=	1.000049
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -21,6 +21,7 @@ RUN_DEPENDS=	p5-Data-UUID>=0:devel/p5-Data-UUID \
 		p5-Scope-Guard>=0:devel/p5-Scope-Guard \
 		p5-Term-Table>=0.015:devel/p5-Term-Table \
 		p5-Test-Simple>=1.302170:devel/p5-Test-Simple \
+		p5-Test2-Plugin-Cover>=0.000022:devel/p5-Test2-Plugin-Cover \
 		p5-Test2-Plugin-MemUsage>=0.002002:devel/p5-Test2-Plugin-MemUsage \
 		p5-Test2-Plugin-UUID>=0.002001:devel/p5-Test2-Plugin-UUID \
 		p5-Test2-Suite>=0.000127:devel/p5-Test2-Suite \
