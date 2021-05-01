@@ -15,7 +15,7 @@ NO_BUILD=	yes
 
 PORTDATA=	usb.ids
 
-GH_TAGNAME=	5e14a72
+GH_TAGNAME=	2b801e3
 USE_GITHUB=	yes
 
 do-install:
