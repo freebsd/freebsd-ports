@@ -76,6 +76,43 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6f33d38b-aa18-11eb-b3f1-005056a311d1">
+    <topic>samba -- negative idmap cache entries vulnerability</topic>
+    <affects>
+      <package>
+	<name>samba412</name>
+	<range><lt>4.12.15</lt></range>
+      </package>
+      <package>
+	<name>samba413</name>
+	<range><lt>4.13.8</lt></range>
+      </package>
+      <package>
+	<name>samba414</name>
+	<range><lt>4.14.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Samba Team reports:</p>
+	<blockquote cite="https://www.samba.org/samba/history/security.html">
+	  <ul>
+	  <li>CVE-2021-20254: Negative idmap cache entries can cause incorrect
+	      group entries in the Samba file server process token.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.samba.org/samba/security/CVE-2021-20254.html</url>
+      <cvename>CVE-2021-20254</cvename>
+    </references>
+    <dates>
+      <discovery>2021-04-29</discovery>
+      <entry>2021-05-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="518a119c-a864-11eb-8ddb-001b217b3468">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
