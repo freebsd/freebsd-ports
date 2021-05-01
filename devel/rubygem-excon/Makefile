@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	excon
-PORTVERSION=	0.80.1
+PORTVERSION=	0.81.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
