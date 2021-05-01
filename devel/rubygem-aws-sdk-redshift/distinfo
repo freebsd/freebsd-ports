@@ -1,3 +1,3 @@
-TIMESTAMP = 1619569589
-SHA256 (rubygem/aws-sdk-redshift-1.57.0.gem) = 1da3f67fadf7f626eb93d45afce017314cd1e65aa447274d2dd661e0c07e072e
-SIZE (rubygem/aws-sdk-redshift-1.57.0.gem) = 143872
+TIMESTAMP = 1619725403
+SHA256 (rubygem/aws-sdk-redshift-1.58.0.gem) = 6d1929e0cacf15e8d75c3b9d9cbe9d38237891b03a1b15e109455200b641e1ea
+SIZE (rubygem/aws-sdk-redshift-1.58.0.gem) = 141312
