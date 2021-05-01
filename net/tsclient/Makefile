@@ -18,8 +18,8 @@ USES=		gettext gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gnome
-CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
-LIBS+=		-L${LOCALBASE}/lib `pkg-config --libs libgnomeui-2.0`
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PORTDOCS=	COPYING NEWS README
 
