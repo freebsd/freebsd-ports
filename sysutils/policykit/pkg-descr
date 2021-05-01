@@ -1,4 +1,0 @@
-PolicyKit is a framework for defining policy for system-wide components and
-for desktop pieces to configure it. It is used by HAL.
-
-WWW: https://www.freedesktop.org/wiki/Software/polkit/

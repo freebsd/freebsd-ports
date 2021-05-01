@@ -956,7 +956,6 @@
     SUBDIR += plconfig
     SUBDIR += pmt
     SUBDIR += pnscan
-    SUBDIR += policykit
     SUBDIR += polkit
     SUBDIR += polkit-gnome
     SUBDIR += polkit-qt
