@@ -1,0 +1,12 @@
+--- gtk3/dict/Makefile.am.orig	2021-04-29 13:55:45 UTC
++++ gtk3/dict/Makefile.am
+@@ -19,8 +19,7 @@ uim_dict_gtk3_SOURCES  = ../../gtk2/dict/main-gtk.c \
+ 			../../gtk2/dict/cclass-dialog.c \
+ 			../../gtk2/dict/cclass-dialog.h
+ 						 
+-uim_dict_gtk3_LDADD    = @GTK3_LIBS@ $(top_builddir)/uim/libuim-scm.la \
+-			$(top_builddir)/uim/libuim.la
++uim_dict_gtk3_LDADD    = @GTK3_LIBS@ -luim-scm -luim
+ uim_dict_gtk3_CPPFLAGS = $(helper_defs) -I$(top_srcdir) -I$(top_builddir)
+ uim_dict_gtk3_CFLAGS   = @GTK3_CFLAGS@
+ uim_dict_uidir = $(datadir)/uim/helperdata

@@ -1,0 +1,13 @@
+--- gtk2/pref/Makefile.am.orig	2021-04-29 15:56:45 UTC
++++ gtk2/pref/Makefile.am
+@@ -9,9 +9,7 @@ uim_pref_gtk_SOURCES  = gtk.c \
+ 			gtk-keytab.h \
+ 			../immodule/key-util-gtk.c \
+ 			../immodule/key-util-gtk.h
+-uim_pref_gtk_LDADD    = @GTK2_LIBS@ $(top_builddir)/uim/libuim-custom.la \
+-			$(top_builddir)/uim/libuim-scm.la \
+-			$(top_builddir)/uim/libuim.la
++uim_pref_gtk_LDADD    = @GTK2_LIBS@ -luim-custom -luim-scm -luim
+ if LIBUIM_X_UTIL
+ uim_pref_gtk_LDADD += $(top_builddir)/uim/libuim-x-util.la
+ endif

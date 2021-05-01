@@ -1,0 +1,21 @@
+--- emacs/Makefile.am.orig	2021-04-29 12:52:58 UTC
++++ emacs/Makefile.am
+@@ -1,13 +1,11 @@
+ EXTRA_DIST = README.ja uim-version.el.in
+ 
+-if UIM_EL
+ 
+ uimel_lispdir = $(UIMEL_LISP_DIR)
+ dist_uimel_lisp_DATA = uim.el uim-var.el uim-version.el uim-keymap.el \
+  uim-key.el uim-util.el \
+  uim-candidate.el uim-preedit.el uim-debug.el uim-leim.el uim-helper.el
+ 
+-bin_PROGRAMS = uim-el-agent uim-el-helper-agent
+ 
+ uim_el_agent_SOURCES = uim-el-agent.c debug.c output.c context.c preedit.c \
+  key.c candidate.c encoding.c im.c callback.c commit.c \
+@@ -27,4 +25,3 @@ uim_el_helper_agent_CPPFLAGS = -I$(top_srcdir)
+ uim_el_helper_agent_LDADD = $(top_builddir)/uim/libuim-scm.la \
+ 			    $(top_builddir)/uim/libuim.la
+ 
+-endif

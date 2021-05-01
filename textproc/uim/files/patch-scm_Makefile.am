@@ -1,12 +1,9 @@
---- scm/Makefile.in.orig	2018-07-12 14:16:06 UTC
-+++ scm/Makefile.in
-@@ -869,9 +869,6 @@ installed-modules.scm: $(SCM_FILES)
+--- scm/Makefile.am.orig	2021-04-29 07:47:29 UTC
++++ scm/Makefile.am
+@@ -130,6 +130,3 @@ installed-modules.scm: $(SCM_FILES)
  	    --path $(top_builddir)/scm --register $(module_names)
  
  json-parser-expanded.scm: macro-expander.scm json-parser-expander.scm packrat.scm.in
 -	if test -n "$(CSI)"; then \
 -	    $(CSI) -R syntax-case -q json-parser-expander.scm > json-parser-expanded.scm; \
 -	fi
- 
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.

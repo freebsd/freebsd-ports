@@ -1,0 +1,13 @@
+--- gtk2/immodule/Makefile.am.orig	2021-04-29 16:18:54 UTC
++++ gtk2/immodule/Makefile.am
+@@ -12,9 +12,7 @@ module_LTLIBRARIES = $(im_uim_la)
+ 
+ im_uim_la_SOURCES = $(IM_UIM_SOURCES)
+ im_uim_la_LDFLAGS = -module -avoid-version
+-im_uim_la_LIBADD = $(top_builddir)/uim/libuim-scm.la \
+-		   $(top_builddir)/uim/libuim.la \
+-		   $(top_builddir)/uim/libuim-counted-init.la
++im_uim_la_LIBADD = -luim-scm -luim $(top_builddir)/uim/libuim-counted-init.la
+ if LIBUIM_X_UTIL
+ im_uim_la_LIBADD += $(top_builddir)/uim/libuim-x-util.la
+ endif

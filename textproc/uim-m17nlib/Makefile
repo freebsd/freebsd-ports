@@ -23,8 +23,6 @@ CONFIGURE_ARGS=	--with-m17nlib
 
 UIM_SLAVE=	yes
 
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_Makefile.in
-
 do-build:
 	(cd ${WRKSRC}/uim && ${MAKE_CMD} libuim-m17nlib.la)
 

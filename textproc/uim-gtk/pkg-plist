@@ -4,5 +4,8 @@ bin/uim-pref-gtk
 bin/uim-toolbar-gtk
 bin/uim-toolbar-gtk-systray
 lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-uim.so
+libexec/uim-candwin-gtk
+libexec/uim-candwin-horizontal-gtk
+libexec/uim-candwin-tbl-gtk
 @postexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
 @postunexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache

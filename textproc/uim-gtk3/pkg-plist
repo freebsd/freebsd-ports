@@ -4,8 +4,5 @@ bin/uim-pref-gtk3
 bin/uim-toolbar-gtk3
 bin/uim-toolbar-gtk3-systray
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-uim.so
-libexec/uim-candwin-gtk3
-libexec/uim-candwin-horizontal-gtk3
-libexec/uim-candwin-tbl-gtk3
 @postexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache > /dev/null 2>&1 || /usr/bin/true
 @postunexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache > /dev/null 2>&1 || /usr/bin/true

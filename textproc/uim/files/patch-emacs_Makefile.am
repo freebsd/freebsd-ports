@@ -1,0 +1,12 @@
+--- emacs/Makefile.am.orig	2021-04-29 07:41:09 UTC
++++ emacs/Makefile.am
+@@ -3,9 +3,6 @@ EXTRA_DIST = README.ja uim-version.el.in
+ if UIM_EL
+ 
+ uimel_lispdir = $(UIMEL_LISP_DIR)
+-dist_uimel_lisp_DATA = uim.el uim-var.el uim-version.el uim-keymap.el \
+- uim-key.el uim-util.el \
+- uim-candidate.el uim-preedit.el uim-debug.el uim-leim.el uim-helper.el
+ 
+ bin_PROGRAMS = uim-el-agent uim-el-helper-agent
+ 
