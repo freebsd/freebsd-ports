@@ -1,11 +1,7 @@
---- setup.py.orig	2021-03-15 09:19:02 UTC
+--- setup.py.orig	2021-04-27 14:22:26 UTC
 +++ setup.py
-@@ -59,10 +59,10 @@ setup(
-         "certifi",
-         "sniffio",
-         "rfc3986[idna2008]>=1.3,<2",
--        "httpcore>=0.12.1,<0.13",
-+        "httpcore>=0.12.1,<0.14",
+@@ -63,7 +63,7 @@ setup(
+         "async_generator; python_version < '3.7'"
      ],
      extras_require={
 -        "http2": "h2==3.*",
