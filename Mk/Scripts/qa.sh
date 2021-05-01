@@ -383,7 +383,6 @@ proxydeps_suggest_uses() {
 		${pkg} = "x11-toolkits/gtksourceview3" -o \
 		${pkg} = "x11-toolkits/gtksourceviewmm3" -o \
 		${pkg} = "devel/libbonobo" -o \
-		${pkg} = "x11-toolkits/libbonoboui" -o \
 		${pkg} = "databases/libgda5" -o \
 		${pkg} = "databases/libgda5-ui" -o \
 		${pkg} = "databases/libgdamm5" -o \
@@ -391,7 +390,6 @@ proxydeps_suggest_uses() {
 		${pkg} = "x11/libgnome" -o \
 		${pkg} = "graphics/libgnomecanvas" -o \
 		${pkg} = "x11/libgnomekbd" -o \
-		${pkg} = "x11-toolkits/libgnomeui" -o \
 		${pkg} = "devel/libgsf" -o \
 		${pkg} = "www/libgtkhtml" -o \
 		${pkg} = "x11-toolkits/libgtksourceviewmm" -o \
