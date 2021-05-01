@@ -385,7 +385,6 @@ proxydeps_suggest_uses() {
 		${pkg} = "databases/libgda5-ui" -o \
 		${pkg} = "databases/libgdamm5" -o \
 		${pkg} = "devel/libglade2" -o \
-		${pkg} = "x11/libgnome" -o \
 		${pkg} = "graphics/libgnomecanvas" -o \
 		${pkg} = "x11/libgnomekbd" -o \
 		${pkg} = "devel/libgsf" -o \

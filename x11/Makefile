@@ -166,7 +166,6 @@
     SUBDIR += libfm
     SUBDIR += libfm-extra
     SUBDIR += libfm-qt
-    SUBDIR += libgnome
     SUBDIR += libgnomekbd
     SUBDIR += libinput
     SUBDIR += libmatekbd
