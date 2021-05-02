@@ -23,7 +23,7 @@ MAKE_ENV=	DUCC0_OPTIMIZATION=none
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64le
+.if ${ARCH:Mpowerpc64*}
 CFLAGS+=	-DNO_WARN_X86_INTRINSICS
 USES+=		compiler:gcc-c++11-lib
 .else
