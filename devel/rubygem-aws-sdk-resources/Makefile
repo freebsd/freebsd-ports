@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.98.0
+PORTVERSION=	3.99.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -193,6 +193,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-neptune>=1<2:devel/rubygem-aws-sdk-neptune \
 		rubygem-aws-sdk-networkfirewall>=1<2:devel/rubygem-aws-sdk-networkfirewall \
 		rubygem-aws-sdk-networkmanager>=1<2:devel/rubygem-aws-sdk-networkmanager \
+		rubygem-aws-sdk-nimblestudio>=1<2:devel/rubygem-aws-sdk-nimblestudio \
 		rubygem-aws-sdk-opsworks>=1<2:devel/rubygem-aws-sdk-opsworks \
 		rubygem-aws-sdk-opsworkscm>=1<2:devel/rubygem-aws-sdk-opsworkscm \
 		rubygem-aws-sdk-organizations>=1<2:devel/rubygem-aws-sdk-organizations \
