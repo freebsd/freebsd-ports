@@ -1,3 +1,6 @@
+- Keep graphviz optional with meson >= 0.58 after
+  https://github.com/mesonbuild/meson/commit/80c89a650b6f
+
 --- docs/reference/libnice/meson.build.orig	2020-11-25 16:39:27 UTC
 +++ docs/reference/libnice/meson.build
 @@ -26,7 +26,7 @@ ignore_headers = [
@@ -9,3 +12,17 @@
    fake_makefile = custom_target ('libnice-docs-test-Makefile',
                                   output: 'Makefile',
                                   command: [
+@@ -67,6 +67,8 @@ gnome.gtkdoc('libnice',
+ # If we ever need to regenerate this diagram.
+ # Since it’s not expected to change much, let’s not depend on GraphViz to
+ # build the docs (that's also why we don't use find_program('dot') here)
++dot = find_program('dot', required: false)
++if dot.found()
+ run_target('update-states.png',
+   command: ['dot',
+             '-Tpng',
+@@ -74,3 +76,4 @@ run_target('update-states.png',
+             '-Gsize=9.6,2.9!',
+             '-Gdpi=200',
+             files('states.gv')])
++endif
