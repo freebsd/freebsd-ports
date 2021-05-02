@@ -1,6 +1,6 @@
 PORTNAME=	lemon
 DISTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://lemon.cs.elte.hu/pub/sources/
 PKGNAMEPREFIX=	coin-or-
@@ -11,7 +11,7 @@ COMMENT=	Library for Efficient Modeling and Optimization in Networks
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libCbc.so:math/coinmp
+LIB_DEPENDS=	libCbc.so:math/cbc
 
 USES=		cmake
 USE_LDCONFIG=	yes
