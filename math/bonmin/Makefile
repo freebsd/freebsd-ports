@@ -1,6 +1,7 @@
 PORTNAME=	bonmin
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	1.8.8
+PORTREVISION=	1
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -10,7 +11,7 @@ COMMENT=	Basic Open-source Nonlinear Mixed INteger programming
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Bonmin/LICENSE
 
-LIB_DEPENDS=	libCbc.so:math/coinmp \
+LIB_DEPENDS=	libCbc.so:math/cbc \
 		libipopt.so:math/ipopt
 
 USES=		blaslapack:netlib compiler:c++11-lang gmake libtool pkgconfig
