@@ -17,7 +17,7 @@ LIB_DEPENDS=	libCoinUtils.so:math/coinmp \
 USES=		gmake libtool pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 
-USE_GCC=	any # clang breaks: no matching conversion for functional-style cast from 'const flopc::SUBSETREF' to 'flopc::MP_domain' https://github.com/coin-or/FlopCpp/issues/28
+USE_GCC=	yes # clang breaks: no matching conversion for functional-style cast from 'const flopc::SUBSETREF' to 'flopc::MP_domain' https://github.com/coin-or/FlopCpp/issues/28
 
 GNU_CONFIGURE=	yes
 
