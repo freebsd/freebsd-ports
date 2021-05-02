@@ -1,5 +1,5 @@
 PORTNAME=	FreeCAD
-DISTVERSION=	0.19.1
+DISTVERSION=	0.19.2
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e

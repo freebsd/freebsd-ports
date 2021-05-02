@@ -1053,8 +1053,8 @@ FreeCAD/Mod/Start/StartPage/StartPage.py
 FreeCAD/Mod/Start/StartPage/TranslationTexts.py
 FreeCAD/Mod/Start/StartPage/__init__.py
 FreeCAD/Mod/Start/TestStartGui.py
-FreeCAD/Mod/Start/testStart/TestStartPage.py
-FreeCAD/Mod/Start/testStart/__init__.py
+FreeCAD/Mod/Start/TestStart/TestStartPage.py
+FreeCAD/Mod/Start/TestStart/__init__.py
 FreeCAD/Mod/Surface/Init.py
 FreeCAD/Mod/Surface/InitGui.py
 FreeCAD/Mod/TechDraw/Init.py
