@@ -3,6 +3,7 @@
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/ChangeLog
 %%WWWDIR%%/LICENSE
+%%WWWDIR%%/SECURITY.md
 %%WWWDIR%%/app/.htaccess
 %%WWWDIR%%/app/Action/Base.php
 %%WWWDIR%%/app/Action/CommentCreation.php
@@ -53,6 +54,7 @@
 %%WWWDIR%%/app/Action/TaskUpdateStartDateOnMoveColumn.php
 %%WWWDIR%%/app/Analytic/AverageLeadCycleTimeAnalytic.php
 %%WWWDIR%%/app/Analytic/AverageTimeSpentColumnAnalytic.php
+%%WWWDIR%%/app/Analytic/EstimatedActualColumnAnalytic.php
 %%WWWDIR%%/app/Analytic/EstimatedTimeComparisonAnalytic.php
 %%WWWDIR%%/app/Analytic/TaskDistributionAnalytic.php
 %%WWWDIR%%/app/Analytic/UserDistributionAnalytic.php
@@ -482,6 +484,7 @@
 %%WWWDIR%%/app/Locale/cs_CZ/translations.php
 %%WWWDIR%%/app/Locale/da_DK/translations.php
 %%WWWDIR%%/app/Locale/de_DE/translations.php
+%%WWWDIR%%/app/Locale/de_DE_du/translations.php
 %%WWWDIR%%/app/Locale/el_GR/translations.php
 %%WWWDIR%%/app/Locale/es_ES/translations.php
 %%WWWDIR%%/app/Locale/es_VE/translations.php
@@ -494,6 +497,7 @@
 %%WWWDIR%%/app/Locale/it_IT/translations.php
 %%WWWDIR%%/app/Locale/ja_JP/translations.php
 %%WWWDIR%%/app/Locale/ko_KR/translations.php
+%%WWWDIR%%/app/Locale/mk_MK/translations.php
 %%WWWDIR%%/app/Locale/my_MY/translations.php
 %%WWWDIR%%/app/Locale/nb_NO/translations.php
 %%WWWDIR%%/app/Locale/nl_NL/translations.php
@@ -654,6 +658,7 @@
 %%WWWDIR%%/app/Template/analytic/avg_time_columns.php
 %%WWWDIR%%/app/Template/analytic/burndown.php
 %%WWWDIR%%/app/Template/analytic/cfd.php
+%%WWWDIR%%/app/Template/analytic/estimated_actual_column.php
 %%WWWDIR%%/app/Template/analytic/layout.php
 %%WWWDIR%%/app/Template/analytic/lead_cycle_time.php
 %%WWWDIR%%/app/Template/analytic/sidebar.php
@@ -1639,6 +1644,7 @@
 %%WWWDIR%%/vendor/gregwar/captcha/src/Gregwar/Captcha/ImageFileHandler.php
 %%WWWDIR%%/vendor/gregwar/captcha/src/Gregwar/Captcha/PhraseBuilder.php
 %%WWWDIR%%/vendor/gregwar/captcha/src/Gregwar/Captcha/PhraseBuilderInterface.php
+%%WWWDIR%%/vendor/pimple/pimple/.php_cs.dist
 %%WWWDIR%%/vendor/pimple/pimple/.travis.yml
 %%WWWDIR%%/vendor/pimple/pimple/CHANGELOG
 %%WWWDIR%%/vendor/pimple/pimple/LICENSE
