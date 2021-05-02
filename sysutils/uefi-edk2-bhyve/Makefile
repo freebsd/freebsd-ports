@@ -1,5 +1,5 @@
 PORTNAME=	uefi-edk2-bhyve
-PORTVERSION=	g20210214
+PORTVERSION=	g20210226
 PORTEPOCH=	2
 CATEGORIES=	sysutils
 
@@ -24,7 +24,7 @@ USE_GCC=	yes:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	tianocore
 GH_PROJECT=	edk2
-GH_TAGNAME=	2e1e8c35f3178df95d79da81ac6deec242da74c2
+GH_TAGNAME=	edk2-stable202102
 GH_TUPLE=	ucb-bar:berkeley-softfloat-3:master:softfloat/ArmPkg/Library/ArmSoftFloatLib/berkeley-softfloat-3 \
 		google:brotli:v1.0.7-17-g666c328:brotli/MdeModulePkg/Library/BrotliCustomDecompressLib/brotli \
 		openssl:openssl:OpenSSL_1_1_1g:openssl/CryptoPkg/Library/OpensslLib/openssl \
@@ -55,7 +55,7 @@ HTTP_BOOT_DESC=	Build with HTTP(S) boot support
 
 DEBUG_VARS=	PLAT_TARGET=DEBUG
 DEBUG_VARS_OFF=	PLAT_TARGET=RELEASE
-HTTP_BOOT_VARS=	PLAT_ARGS+=-DHTTP_BOOT_ENABLE=TRUE
+HTTP_BOOT_VARS=	PLAT_ARGS+=-DNETWORK_HTTP_BOOT_ENABLE=TRUE
 
 PLAT_ARGS+=	-DDEBUG_ON_SERIAL_PORT=TRUE
 
