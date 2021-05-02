@@ -76,6 +76,32 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0add6e6b-6883-11eb-b0cb-f8b156c2bfe9">
+    <topic>sympa -- Unauthorised full access via SOAP API due to illegal cookie</topic>
+    <affects>
+      <package>
+	<name>sympa</name>
+	<range><lt>6.2.60</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sympa community reports:</p>
+	<blockquote cite="https://github.com/sympa-community/sympa/issues/1041">
+	  <p>Unauthorised full access via SOAP API due to illegal cookie</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-29668</cvename>
+      <url>https://sympa-community.github.io/security/2020-003.html</url>
+    </references>
+    <dates>
+      <discovery>2020-11-24</discovery>
+      <entry>2021-02-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6f33d38b-aa18-11eb-b3f1-005056a311d1">
     <topic>samba -- negative idmap cache entries vulnerability</topic>
     <affects>
