@@ -2,7 +2,7 @@
 
 PORTNAME=	gtkam
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/${PORTNAME}/${PORTVERSION}
 
@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS GIMP
 OPTIONS_SUB=	yes
 
 GIMP_DESC=		GIMP plugin support
-GIMP_LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp
+GIMP_LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
 GIMP_CONFIGURE_WITH=	gimp
 
 post-patch:
