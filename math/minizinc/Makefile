@@ -1,5 +1,6 @@
 PORTNAME=	minizinc
 DISTVERSION=	2.5.5
+PORTREVISION=	1
 CATEGORIES=	math lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,20 +9,23 @@ COMMENT=	Constraint modeling language
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+CONFLICTS_BUILD=	CoinMP
+
 LIB_DEPENDS=	libCbc.so:math/cbc \
 		libCgl.so:math/cgl \
 		libgecodekernel.so:devel/gecode \
 		libOsiClp.so:math/clp
 
 USES=		bison cmake compiler:c++11-lang
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	MiniZinc
 GH_PROJECT=	libminizinc
-USE_LDCONFIG=	yes
-
-CXXFLAGS+=	-DFREEBSD_MZN_STDLIB_DIR="\\\"${DATADIR}\\\""
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+
+CXXFLAGS+=	-DFREEBSD_MZN_STDLIB_DIR="\\\"${DATADIR}\\\""
 
 OPTIONS_DEFINE=		WITH_SCIP
 
