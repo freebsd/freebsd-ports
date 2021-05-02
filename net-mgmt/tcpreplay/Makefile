@@ -1,7 +1,7 @@
 # Created by: cnh@ivmg.net
 
 PORTNAME=	tcpreplay
-PORTVERSION=	4.3.3
+PORTVERSION=	4.3.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -10,31 +10,29 @@ COMMENT=	Tool to replay saved packet capture files
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libopts.so:devel/autogen \
-		libdnet.so:net/libdnet
 BUILD_DEPENDS=	pcapnav-config:net/libpcapnav
+LIB_DEPENDS=	libdnet.so:net/libdnet \
+		libopts.so:devel/autogen
 
 USES=		autoreconf gmake libtool pkgconfig
 USE_GITHUB=	yes
-
-GNU_CONFIGURE=	yes
-TEST_TARGET=	test
-
 GH_ACCOUNT=	appneta
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name='s|.*\(tcp.*\)|\1|' \
 		--with-pcapnav-config=${LOCALBASE}/bin/pcapnav-config
 
-# required when using autogen
-CONFIGURE_ARGS+=	--disable-local-libopts --disable-libopts-install
+TEST_TARGET=	test
 
-LIBPCAP_BASE_DESC=	Build with libpcap from the base OS
-LIBPCAP_PORTS_DESC=	Build with net/libpcap
-
+OPTIONS_DEFAULT=	LIBPCAP_BASE
 OPTIONS_SINGLE=		LIBPCAP
 OPTIONS_SINGLE_LIBPCAP=	LIBPCAP_BASE LIBPCAP_PORTS
 
-OPTIONS_DEFAULT=	LIBPCAP_BASE
+# required when using autogen
+CONFIGURE_ARGS+=	--disable-libopts-install \
+			--disable-local-libopts
+
+LIBPCAP_BASE_DESC=	Build with libpcap from the base OS
+LIBPCAP_PORTS_DESC=	Build with net/libpcap
 
 LIBPCAP_BASE_CONFIGURE_ON=	--with-libpcap=/usr/lib
 LIBPCAP_PORTS_LIB_DEPENDS=	libpcap.so:net/libpcap
