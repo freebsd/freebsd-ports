@@ -1,4 +1,4 @@
---- electron/shell/browser/native_window_views.cc.orig	2021-04-13 20:38:27 UTC
+--- electron/shell/browser/native_window_views.cc.orig	2021-04-27 14:58:49 UTC
 +++ electron/shell/browser/native_window_views.cc
 @@ -306,7 +306,7 @@ NativeWindowViews::NativeWindowViews(const gin_helper:
      last_window_state_ = ui::SHOW_STATE_NORMAL;
@@ -9,7 +9,7 @@
    // Listen to move events.
    aura::Window* window = GetNativeWindow();
    if (window)
-@@ -322,7 +322,7 @@ NativeWindowViews::~NativeWindowViews() {
+@@ -326,7 +326,7 @@ NativeWindowViews::~NativeWindowViews() {
    SetForwardMouseMessages(false);
  #endif
  
@@ -18,7 +18,7 @@
    aura::Window* window = GetNativeWindow();
    if (window)
      window->RemovePreTargetHandler(this);
-@@ -1387,7 +1387,7 @@ void NativeWindowViews::OnWidgetBoundsChanged(views::W
+@@ -1391,7 +1391,7 @@ void NativeWindowViews::OnWidgetBoundsChanged(views::W
  }
  
  void NativeWindowViews::OnWidgetDestroying(views::Widget* widget) {
@@ -27,7 +27,7 @@
    aura::Window* window = GetNativeWindow();
    if (window)
      window->RemovePreTargetHandler(this);
-@@ -1497,7 +1497,7 @@ void NativeWindowViews::HandleKeyboardEvent(
+@@ -1501,7 +1501,7 @@ void NativeWindowViews::HandleKeyboardEvent(
    if (widget_destroyed_)
      return;
  
@@ -36,7 +36,7 @@
    if (event.windows_key_code == ui::VKEY_BROWSER_BACK)
      NotifyWindowExecuteAppCommand(kBrowserBackward);
    else if (event.windows_key_code == ui::VKEY_BROWSER_FORWARD)
-@@ -1509,7 +1509,7 @@ void NativeWindowViews::HandleKeyboardEvent(
+@@ -1513,7 +1513,7 @@ void NativeWindowViews::HandleKeyboardEvent(
    root_view_->HandleKeyEvent(event);
  }
  
