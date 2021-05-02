@@ -327,6 +327,7 @@
     SUBDIR += gsl
     SUBDIR += half
     SUBDIR += hexcalc
+    SUBDIR += highs
     SUBDIR += hipmcl
     SUBDIR += hmat-oss
     SUBDIR += hpcombi

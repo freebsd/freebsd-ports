@@ -1,0 +1,22 @@
+- workaround for https://github.com/ERGO-Code/HiGHS/issues/503
+
+--- src/CMakeLists.txt.orig	2021-05-02 22:26:02 UTC
++++ src/CMakeLists.txt
+@@ -329,7 +329,7 @@ if (OSI_FOUND)
+     configure_file(${HIGHS_SOURCE_DIR}/osi-highs.pc.in
+         "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/osi-highs.pc" @ONLY)
+     install(FILES "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/osi-highs.pc"
+-        DESTINATION lib/pkg-config)
++        DESTINATION libdata/pkgconfig)
+ endif()
+ 
+ 
+@@ -409,7 +409,7 @@ install(EXPORT highs-targets FILE highs-targets.cmake 
+ install(FILES "${HIGHS_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/highs-config.cmake" 
+     DESTINATION lib/cmake/highs)
+ install(FILES "${HIGHS_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/highs.pc" 
+-    DESTINATION lib/pkg-config)
++    DESTINATION libdata/pkgconfig)
+ 
+ else() 
+ 
