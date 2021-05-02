@@ -1,7 +1,7 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		flex:textproc/flex
 LIB_DEPENDS=	libbonmin.so:math/bonmin \
 		libceres.so:math/ceres-solver \
-		libCbc.so:math/coinmp \
+		libCbc.so:math/cbc \
 		libcminpack.so:math/cminpack \
 		libdlib.so:science/dlib-cpp \
 		libgflags.so:devel/gflags \
