@@ -11,18 +11,17 @@ USES=		cargo ssl:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	m2amedia
 
-CARGO_CRATES=	aho-corasick-0.7.15 \
+CARGO_CRATES=	aho-corasick-0.7.4 \
 		ansi_term-0.11.0 \
-		arrayvec-0.4.12 \
-		arrayvec-0.5.2 \
-		atty-0.2.14 \
+		arrayvec-0.3.25 \
+		arrayvec-0.4.11 \
+		atty-0.2.13 \
 		base64-0.10.1 \
-		bitflags-1.2.1 \
-		bitreader-0.3.3 \
-		byteorder-1.4.3 \
-		cfg-if-0.1.10 \
-		cfg-if-1.0.0 \
-		clap-2.33.3 \
+		bitflags-1.1.0 \
+		bitreader-0.3.1 \
+		byteorder-1.3.2 \
+		cfg-if-0.1.9 \
+		clap-2.33.0 \
 		encoding-0.2.33 \
 		encoding-index-japanese-1.20141219.5 \
 		encoding-index-korean-1.20141219.5 \
@@ -31,71 +30,60 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		encoding-index-tradchinese-1.20141219.5 \
 		encoding_index_tests-0.1.4 \
 		env_logger-0.6.2 \
-		fixedbitset-0.4.0 \
-		form_urlencoded-1.0.1 \
-		four-cc-0.1.0 \
+		fixedbitset-0.1.9 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		hermit-abi-0.1.18 \
 		hex-0.3.2 \
-		hex-slice-0.1.4 \
-		hexdump-0.1.1 \
-		humantime-1.3.0 \
-		idna-0.2.2 \
-		iovec-0.1.4 \
+		hexdump-0.1.0 \
+		humantime-1.2.0 \
+		iovec-0.1.2 \
 		itertools-0.4.19 \
 		kernel32-sys-0.2.2 \
-		libc-0.2.93 \
-		log-0.4.14 \
-		matches-0.1.8 \
-		memchr-2.3.4 \
-		mio-0.6.23 \
-		miow-0.2.2 \
-		mpeg2ts-reader-0.14.0 \
-		net2-0.2.37 \
-		nodrop-0.1.14 \
-		percent-encoding-2.1.0 \
+		lazy_static-1.3.0 \
+		libc-0.2.60 \
+		log-0.4.7 \
+		memchr-2.2.1 \
+		mio-0.6.19 \
+		miow-0.2.1 \
+		mpeg2ts-reader-0.13.0 \
+		net2-0.2.33 \
+		nodrop-0.1.13 \
+		odds-0.2.26 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.26 \
-		quick-error-1.2.3 \
+		quick-error-1.2.2 \
 		quote-0.6.13 \
-		quote-1.0.9 \
-		regex-1.4.5 \
-		regex-syntax-0.6.23 \
+		regex-1.1.9 \
+		regex-syntax-0.6.8 \
 		rtp-rs-0.3.0 \
-		rtp-rs-0.5.0 \
 		rustc_version-0.2.3 \
-		scte35-reader-0.13.0 \
+		scte35-reader-0.11.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.125 \
-		serde_derive-1.0.125 \
+		serde-1.0.97 \
+		serde_derive-1.0.97 \
 		serdebug-1.0.5 \
 		serdebug_derive-1.0.0 \
 		slab-0.4.2 \
 		smpte2022-1-fec-0.2.0 \
 		smpte2022-1-packet-0.4.0 \
-		smptera-format-identifiers-rust-0.3.0 \
 		strsim-0.8.0 \
 		syn-0.14.9 \
-		syn-1.0.69 \
-		termcolor-1.1.2 \
+		syn-0.15.39 \
+		termcolor-1.0.5 \
 		textwrap-0.11.0 \
-		tinyvec-1.2.0 \
-		tinyvec_macros-0.1.0 \
-		unicode-bidi-0.3.5 \
-		unicode-normalization-0.1.17 \
-		unicode-width-0.1.8 \
+		thread_local-0.3.6 \
+		ucd-util-0.1.3 \
+		unicode-width-0.1.5 \
 		unicode-xid-0.1.0 \
-		unicode-xid-0.2.1 \
-		url-2.2.1 \
-		vec_map-0.8.2 \
+		utf8-ranges-1.0.3 \
+		vec_map-0.8.1 \
 		winapi-0.2.8 \
-		winapi-0.3.9 \
+		winapi-0.3.7 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
+		winapi-util-0.1.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		wincolor-1.0.1 \
 		ws2_32-sys-0.2.1
 
 PLIST_FILES=	bin/scte35dump
