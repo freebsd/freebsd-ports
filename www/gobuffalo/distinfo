@@ -1,5 +1,5 @@
-TIMESTAMP = 1619440231
-SHA256 (go/www_gobuffalo/gobuffalo-v0.16.22/v0.16.22.mod) = d00bac1cac3b55d1fb4f083228383ce619085b5efecdc10788a494cdae470312
-SIZE (go/www_gobuffalo/gobuffalo-v0.16.22/v0.16.22.mod) = 1628
-SHA256 (go/www_gobuffalo/gobuffalo-v0.16.22/v0.16.22.zip) = 6612a9cd2cf26ec285edc2e003e2b1b2c5c9dc1c2c2fe12348da495b0246f771
-SIZE (go/www_gobuffalo/gobuffalo-v0.16.22/v0.16.22.zip) = 719078
+TIMESTAMP = 1619962225
+SHA256 (go/www_gobuffalo/gobuffalo-v0.16.23/v0.16.23.mod) = d00bac1cac3b55d1fb4f083228383ce619085b5efecdc10788a494cdae470312
+SIZE (go/www_gobuffalo/gobuffalo-v0.16.23/v0.16.23.mod) = 1628
+SHA256 (go/www_gobuffalo/gobuffalo-v0.16.23/v0.16.23.zip) = b4a49991e39a91b844793875d2c486d6ef9a4e018b669f8effa1c06c08d86738
+SIZE (go/www_gobuffalo/gobuffalo-v0.16.23/v0.16.23.zip) = 718979
