@@ -1,5 +1,5 @@
 PORTNAME=	grpc
-PORTVERSION=	1.37.0
+PORTVERSION=	1.37.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -19,11 +19,9 @@ USE_RUBY=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
-post-extract:
+post-patch:
 	@${RM} ${WRKSRC}/Makefile ${WRKSRC}/.yardopts
 	@${RM} -r ${WRKSRC}/etc ${WRKSRC}/include ${WRKSRC}/third_party ${WRKSRC}/src/boringssl ${WRKSRC}/src/core
-
-post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/src/ruby/lib/grpc.rb
 	@${REINPLACE_CMD} -Ee '/s\.files = /s;, "(Makefile|etc|include|third_party|src/boringssl|src/core)[^"]*"\.freeze;;g' ${WRKSRC}/${GEMSPEC}
 	@${REINPLACE_CMD} -e '/s\.files = /s|"\.yardopts"\.freeze, ||' ${WRKSRC}/${GEMSPEC}
