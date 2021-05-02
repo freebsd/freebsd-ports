@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	openssl
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
