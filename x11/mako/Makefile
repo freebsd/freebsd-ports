@@ -1,15 +1,7 @@
 PORTNAME=	mako
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1
+DISTVERSION=	1.5
 CATEGORIES=	x11
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	67f2ed1862a9.patch:-p1 # https://github.com/emersion/mako/pull/311
-PATCHFILES+=	affb38d8a4c4.patch:-p1 # https://github.com/emersion/mako/pull/311
-PATCHFILES+=	47a1b0b80ca2.patch:-p1
-PATCHFILES+=	88e0263a8481.patch:-p1 # https://github.com/emersion/mako/pull/324
-PATCHFILES+=	0e9bcb06e0c6.patch:-p1 # https://github.com/emersion/mako/pull/324
-PATCHFILES+=	d46e9fd6ced8.patch:-p1 # https://github.com/emersion/mako/pull/345
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Lightweight Wayland notification daemon
