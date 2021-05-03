@@ -1,7 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	redis
-PORTVERSION=	6.0.12
+PORTVERSION=	6.0.13
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 
