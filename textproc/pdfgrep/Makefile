@@ -2,7 +2,7 @@
 
 PORTNAME=	pdfgrep
 PORTVERSION=	2.1.1
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	textproc
 MASTER_SITES=	https://pdfgrep.org/download/
 

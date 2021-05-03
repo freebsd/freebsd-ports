@@ -2,7 +2,7 @@
 
 PORTNAME=	recoll
 PORTVERSION=	1.27.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	deskutils
 MASTER_SITES=	https://www.lesbonscomptes.com/recoll/
 
