@@ -1,6 +1,6 @@
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.12.2
+DISTVERSION=	3.12.3
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,10 +25,10 @@ GH_TUPLE=	\
 		caffix:eventbus:9ab42753d12d:caffix_eventbus/vendor/github.com/caffix/eventbus \
 		caffix:netmap:5aec13909475:caffix_netmap/vendor/github.com/caffix/netmap \
 		caffix:pipeline:d5f7558afa54:caffix_pipeline/vendor/github.com/caffix/pipeline \
-		caffix:queue:6e488abe1004:caffix_queue/vendor/github.com/caffix/queue \
-		caffix:resolve:1ad231ab11f3:caffix_resolve/vendor/github.com/caffix/resolve \
+		caffix:queue:50705a598e3e:caffix_queue/vendor/github.com/caffix/queue \
+		caffix:resolve:99ca50c96458:caffix_resolve/vendor/github.com/caffix/resolve \
 		caffix:service:3819810293b0:caffix_service/vendor/github.com/caffix/service \
-		caffix:stringset:a00bc23f59bc:caffix_stringset/vendor/github.com/caffix/stringset \
+		caffix:stringset:81a3d140a6a2:caffix_stringset/vendor/github.com/caffix/stringset \
 		cayleygraph:cayley:v0.7.7:cayleygraph_cayley/vendor/github.com/cayleygraph/cayley \
 		cayleygraph:quad:v1.2.4:cayleygraph_quad/vendor/github.com/cayleygraph/quad \
 		cenkalti:backoff:v2.2.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
@@ -55,11 +55,11 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:798c2154c571:golang_net/vendor/golang.org/x/net \
+		golang:net:89ef3d95e781:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:08078c50e5b5:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:ac73e9fd8988:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:d19ff857e887:golang_sys/vendor/golang.org/x/sys \
 		golang:term:72f3dc4e9b72:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
