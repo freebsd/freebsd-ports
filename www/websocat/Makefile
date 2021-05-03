@@ -2,8 +2,7 @@
 
 PORTNAME=	websocat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.0
-PORTREVISION=	9
+DISTVERSION=	1.8.0
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -20,7 +19,9 @@ CARGO_FEATURES=	ssl seqpacket
 
 CARGO_CRATES=	anymap-0.12.1 \
 		arc-swap-0.4.3 \
+		atty-0.2.14 \
 		autocfg-0.1.7 \
+		autocfg-1.0.1 \
 		base64-0.9.3 \
 		base64-0.10.1 \
 		bitflags-1.2.1 \
@@ -32,10 +33,11 @@ CARGO_CRATES=	anymap-0.12.1 \
 		c2-chacha-0.2.3 \
 		cc-1.0.41 \
 		cfg-if-0.1.9 \
+		cfg-if-1.0.0 \
 		clap-2.33.0 \
 		cloudabi-0.0.3 \
-		core-foundation-0.6.4 \
-		core-foundation-sys-0.6.2 \
+		core-foundation-0.9.1 \
+		core-foundation-sys-0.8.2 \
 		crossbeam-deque-0.7.2 \
 		crossbeam-epoch-0.8.0 \
 		crossbeam-queue-0.1.2 \
@@ -55,7 +57,8 @@ CARGO_CRATES=	anymap-0.12.1 \
 		generic-array-0.12.3 \
 		getrandom-0.1.13 \
 		heck-0.3.1 \
-		hermit-abi-0.1.3 \
+		hermit-abi-0.1.18 \
+		hex-0.4.2 \
 		http-0.1.19 \
 		http-bytes-0.1.0 \
 		httparse-1.3.4 \
@@ -66,7 +69,7 @@ CARGO_CRATES=	anymap-0.12.1 \
 		kernel32-sys-0.2.2 \
 		language-tags-0.2.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.65 \
+		libc-0.2.93 \
 		lock_api-0.1.5 \
 		log-0.3.9 \
 		log-0.4.8 \
@@ -79,13 +82,15 @@ CARGO_CRATES=	anymap-0.12.1 \
 		mio-uds-0.6.7 \
 		miow-0.2.1 \
 		miow-0.3.3 \
-		native-tls-0.2.3 \
+		native-tls-0.2.7 \
 		net2-0.2.33 \
 		num_cpus-1.11.0 \
+		once_cell-1.7.2 \
 		opaque-debug-0.2.3 \
-		openssl-0.10.25 \
+		openssl-0.10.33 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.52 \
+		openssl-src-111.15.0+1.1.1k \
+		openssl-sys-0.9.61 \
 		owning_ref-0.4.0 \
 		parking_lot-0.7.1 \
 		parking_lot_core-0.4.0 \
@@ -117,8 +122,8 @@ CARGO_CRATES=	anymap-0.12.1 \
 		schannel-0.1.16 \
 		scopeguard-0.3.3 \
 		scopeguard-1.0.0 \
-		security-framework-0.3.3 \
-		security-framework-sys-0.3.3 \
+		security-framework-2.2.0 \
+		security-framework-sys-2.2.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
 		sha-1-0.8.2 \
@@ -144,6 +149,7 @@ CARGO_CRATES=	anymap-0.12.1 \
 		tokio-file-unix-0.5.1 \
 		tokio-fs-0.1.6 \
 		tokio-io-0.1.12 \
+		tokio-named-pipes-0.1.0 \
 		tokio-process-0.2.4 \
 		tokio-reactor-0.1.9 \
 		tokio-signal-0.2.7 \
@@ -165,7 +171,7 @@ CARGO_CRATES=	anymap-0.12.1 \
 		unicode-width-0.1.5 \
 		unicode-xid-0.1.0 \
 		url-1.7.2 \
-		vcpkg-0.2.7 \
+		vcpkg-0.2.11 \
 		version_check-0.1.5 \
 		wasi-0.7.0 \
 		websocket-0.26.2 \
