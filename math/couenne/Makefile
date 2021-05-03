@@ -1,7 +1,7 @@
 PORTNAME=	couenne
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	0.5.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -32,5 +32,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-nauty-incdir=${LOCALBASE}/include/nauty --with-nauty-lib=${LOCALBASE}/lib/libnauty.a
 
 INSTALL_TARGET=	install-strip
+
+SUB_FILES=	${PORTNAME}.msc
+SUB_LIST=	PORTVERSION=${PORTVERSION}
+
+post-install:
+	# install MiniZinc configuration file
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/minizinc/solvers
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.msc ${STAGEDIR}${PREFIX}/share/minizinc/solvers
 
 .include <bsd.port.mk>
