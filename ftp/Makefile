@@ -8,7 +8,6 @@
     SUBDIR += bftpd
     SUBDIR += bsdftpd-ssl
     SUBDIR += cmdftp
-    SUBDIR += cpr
     SUBDIR += curl
     SUBDIR += curlie
     SUBDIR += curlpp
