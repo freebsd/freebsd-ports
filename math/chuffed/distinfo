@@ -1,5 +1,5 @@
-TIMESTAMP = 1620064310
-SHA256 (chuffed-chuffed-0.10.4_GH0.tar.gz) = f7e7028d5a6b0d936f39d33e1e70ff71ccd34e39a5728928699132b213e52fde
-SIZE (chuffed-chuffed-0.10.4_GH0.tar.gz) = 308901
-SHA256 (cp-profiler-cpp-integration-d695d93_GH0.tar.gz) = ff556f0fcbdf4e438226c070bdf41e04b584bd193501b8882c6a1de8d4756ea9
-SIZE (cp-profiler-cpp-integration-d695d93_GH0.tar.gz) = 403484
+TIMESTAMP = 1620084173
+SHA256 (chuffed-chuffed-0.10.4.20210104-e04bedd_GH0.tar.gz) = 42dc36cf0d7a408ccbced3c7c0b1a492898588401ddab435ff2f30580f0293aa
+SIZE (chuffed-chuffed-0.10.4.20210104-e04bedd_GH0.tar.gz) = 321590
+SHA256 (cp-profiler-cpp-integration-f16b313_GH0.tar.gz) = 871b081fbc4ee76077eccd388ff1c6063e0376f365eba2cb9d8ce0ab9a617275
+SIZE (cp-profiler-cpp-integration-f16b313_GH0.tar.gz) = 5214
