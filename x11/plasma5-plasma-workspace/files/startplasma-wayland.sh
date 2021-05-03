@@ -1,16 +1,21 @@
 #! /bin/sh
 #
-# Try to run a Plasma Wayland session; to be invoked from a text console
+# Try to run a Plasma Wayland session; to be invoked from a text console.
+# This script is far longer than it needs to be, because it documents
+# all kinds of settings that you **might** want to set for specific
+# use-cases or testing.
 
 ### TOOLKIT SETTINGS
 #
-# Tell toolkits to use wayland
-export MOZ_ENABLE_WAYLAND=1
-export GDK_BACKEND=wayland
-export QT_QPA_PLATFORM=wayland-egl
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+# Force toolkits to use wayland.
+#  - MOZ is for Firefox
+#  - GDK is for GDK, will crash non-Wayland GDK-users like emacs
+#  - QPA is for Qt, forces EGL, causes graphics glitches
+# export MOZ_ENABLE_WAYLAND=1
+# export GDK_BACKEND=wayland
+# export QT_QPA_PLATFORM=wayland-egl
 
-# Possible settings for drivers
+### DRIVER SETTINGS
 #
 # Some (older) Intel HD iGPU need this:
 #	export LIBVA_DRIVER_NAME=i965
@@ -18,27 +23,27 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 ### XDG SETTINGS
 #
 #
-if test -z "$XDG_RUNTIME_DIR"; then
-	export XDG_RUNTIME_DIR=/tmp/`id -u`-runtime-dir
-	if ! test -d "$XDG_RUNTIME_DIR"; then
-		mkdir "$XDG_RUNTIME_DIR"
-		chmod 0700 "$XDG_RUNTIME_DIR"
-	fi
-fi
-export XDG_SESSION_TYPE=wayland
+# export XDG_SESSION_TYPE=wayland
 
-### KDE / Plasma / Qt settings
+### KDE / Plasma / Qt SETTINGS
 #
 #
 # To switch on software rendering:
 #	export KWIN_COMPOSE=Q
+# Disable client-side-decorations:
+#	export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 # To log debug things:
 #	export QT_LOGGING_RULES="kwin_core.debug=true;kwin_libinput.debug=true"
 # To log to a specific file (recommended if you're using the logging rules
 # and want to debug startup problems):
 #	LOGFILE=/tmp/plasma-wayland.log
 
-# TODO: check if ck-launch-session is needed
+### STARTUP SEQUENCE
+#
+# Plasma needs a DBus session-bus, and it needs to have access to
+# the DRM GPU (e.g. to /dev/dri/card0) which we arrange through
+# ConsoleKit2.
+#
 scaffolding="ck-launch-session"
 if [ -z "$DBUS_SESSION_BUS_ADDRESS" ] ; then
     scaffolding="$scaffolding dbus-run-session"

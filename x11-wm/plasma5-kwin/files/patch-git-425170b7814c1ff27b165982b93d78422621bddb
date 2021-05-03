@@ -1,0 +1,83 @@
+commit 425170b7814c1ff27b165982b93d78422621bddb (origin/work/wayland-fix-focus-follows-mouse)
+Author: Vlad Zahorodnii <vlad.zahorodnii@kde.org>
+Date:   Mon May 3 11:24:22 2021 +0300
+
+    wayland: Fix focus follows mouse policy
+    
+    We want to update the input focus only if the pointer is moved. Due to
+    that, AbstractClient::enterEvent() checks the last seen pointer position
+    to decide whether the window needs to be focused.
+    
+    The issue is that when the pointer moves from a decoration to a surface,
+    the cached pointer position will be updated to the current pointer
+    position, and thus the check in AbstractClient::enterEvent() will fail.
+    
+    We need to update the cached pointer position only if there is a focused
+    decoration.
+
+diff --git src/input.cpp src/input.cpp
+index 9377e9334..b1b961e39 100644
+--- input.cpp
++++ input.cpp
+@@ -2846,6 +2846,7 @@ void InputDeviceHandler::update()
+     setAt(toplevel);
+ 
+     if (focusUpdatesBlocked()) {
++        workspace()->updateFocusMousePosition(position().toPoint());
+         return;
+     }
+ 
+@@ -2860,21 +2861,20 @@ void InputDeviceHandler::update()
+             // went onto or off from decoration, update focus
+             updateFocus();
+         }
+-        return;
+-    }
+-    updateInternalWindow(nullptr);
++    } else {
++        updateInternalWindow(nullptr);
+ 
+-    if (m_focus.focus != m_at.at) {
+-        // focus change
+-        updateDecoration();
+-        updateFocus();
+-        return;
+-    }
+-    // check if switched to/from decoration while staying on the same Toplevel
+-    if (updateDecoration()) {
+-        // went onto or off from decoration, update focus
+-        updateFocus();
++        if (m_focus.focus != m_at.at) {
++            // focus change
++            updateDecoration();
++            updateFocus();
++        } else if (updateDecoration()) {
++            // went onto or off from decoration, update focus
++            updateFocus();
++        }
+     }
++
++    workspace()->updateFocusMousePosition(position().toPoint());
+ }
+ 
+ Toplevel *InputDeviceHandler::at() const
+diff --git src/pointer_input.cpp src/pointer_input.cpp
+index bf59197d3..a93c2cf55 100644
+--- pointer_input.cpp
++++ pointer_input.cpp
+@@ -473,7 +473,6 @@ void PointerInputRedirection::cleanupDecoration(Decoration::DecoratedClientImpl
+ {
+     disconnect(m_decorationGeometryConnection);
+     m_decorationGeometryConnection = QMetaObject::Connection();
+-    workspace()->updateFocusMousePosition(position().toPoint());
+ 
+     if (old) {
+         // send leave event to old decoration
+@@ -524,7 +523,6 @@ void PointerInputRedirection::focusUpdate(Toplevel *focusOld, Toplevel *focusNow
+ 
+     if (AbstractClient *ac = qobject_cast<AbstractClient*>(focusNow)) {
+         ac->enterEvent(m_pos.toPoint());
+-        workspace()->updateFocusMousePosition(m_pos.toPoint());
+     }
+ 
+     if (internalWindow()) {
