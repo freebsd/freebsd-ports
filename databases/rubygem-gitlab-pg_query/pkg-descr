@@ -1,7 +1,0 @@
-This Ruby extension uses the actual PostgreSQL server source
-to parse SQL queries and return the internal PostgreSQL parsetree.
-
-In addition the extension allows you to normalize queries (replacing constant
-values with ?) and parse these normalized queries into a parsetree again.
-
-WWW: https://github.com/lfittl/pg_query
