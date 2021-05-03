@@ -76,6 +76,38 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="57027417-ab7f-11eb-9596-080027f515ea">
+    <topic>RDoc -- command injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>rubygem-rdoc</name>
+	<range><lt>6.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alexandr Savca reports:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2021/05/02/os-command-injection-in-rdoc/">
+	  <p>
+	    RDoc used to call Kernel#open to open a local file. If a Ruby project
+	    has a file whose name starts with | and ends with tags, the command
+	    following the pipe character is executed. A malicious Ruby project
+	    could exploit it to run an arbitrary command execution against a user
+	    who attempts to run rdoc command.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-31799</cvename>
+      <url>https://www.ruby-lang.org/en/news/2021/05/02/os-command-injection-in-rdoc/</url>
+    </references>
+    <dates>
+      <discovery>2021-05-02</discovery>
+      <entry>2021-05-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0add6e6b-6883-11eb-b0cb-f8b156c2bfe9">
     <topic>sympa -- Unauthorised full access via SOAP API due to illegal cookie</topic>
     <affects>
