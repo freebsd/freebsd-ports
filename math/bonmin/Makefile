@@ -1,7 +1,7 @@
 PORTNAME=	bonmin
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	1.8.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -12,14 +12,21 @@ LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Bonmin/LICENSE
 
 LIB_DEPENDS=	libCbc.so:math/cbc \
-		libipopt.so:math/ipopt
+		libCgl.so:math/cgl \
+		libClp.so:math/clp \
+		libcoinasl.so:math/asl \
+		libCoinUtils.so:math/coinutils \
+		libipopt.so:math/ipopt \
+		libopenblas.so:math/openblas
 
-USES=		blaslapack:netlib compiler:c++11-lang gmake libtool pkgconfig
-GNU_CONFIGURE=	yes
+USES=		blaslapack compiler:c++11-lang gmake libtool pkgconfig
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or
 GH_PROJECT=	Bonmin
-USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 
