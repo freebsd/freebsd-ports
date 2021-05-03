@@ -1,7 +1,7 @@
 PORTNAME=	bonmin
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	1.8.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -31,5 +31,13 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 TEST_TARGET=	test
+
+SUB_FILES=	${PORTNAME}.msc
+SUB_LIST=	PORTVERSION=${PORTVERSION}
+
+post-install:
+	# install MiniZinc configuration file
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/minizinc/solvers
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.msc ${STAGEDIR}${PREFIX}/share/minizinc/solvers
 
 .include <bsd.port.mk>

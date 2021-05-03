@@ -73,3 +73,4 @@ libdata/pkgconfig/bonminamplinterface.pc
 share/coin/doc/Bonmin/AUTHORS
 share/coin/doc/Bonmin/LICENSE
 share/coin/doc/Bonmin/README
+share/minizinc/solvers/bonmin.msc
