@@ -1,6 +1,7 @@
 PORTNAME=	alps
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -10,7 +11,8 @@ COMMENT=	Abstract Library for Parallel Search (ALPS)
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Alps/LICENSE
 
-LIB_DEPENDS=	libCoinUtils.so:math/clp
+LIB_DEPENDS=	libCoinUtils.so:math/coinutils \
+		libopenblas.so:math/openblas
 
 USES=		blaslapack gmake libtool pkgconfig
 USE_LDCONFIG=	yes
