@@ -79,7 +79,6 @@ lib/pidgin/xmppdisco.so
 libdata/pkgconfig/pidgin.pc
 man/man1/pidgin.1.gz
 %%PERLMAN:%%man/man3/Pidgin.3.gz
-share/appdata/pidgin.appdata.xml
 share/applications/pidgin.desktop
 share/icons/hicolor/16x16/apps/pidgin.png
 share/icons/hicolor/22x22/apps/pidgin.png
@@ -87,6 +86,7 @@ share/icons/hicolor/24x24/apps/pidgin.png
 share/icons/hicolor/32x32/apps/pidgin.png
 share/icons/hicolor/48x48/apps/pidgin.png
 share/icons/hicolor/scalable/apps/pidgin.svg
+share/metainfo/pidgin.appdata.xml
 share/pixmaps/pidgin/animations/16/connect0.png
 share/pixmaps/pidgin/animations/16/connect1.png
 share/pixmaps/pidgin/animations/16/connect2.png
