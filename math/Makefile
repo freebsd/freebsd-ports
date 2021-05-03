@@ -133,6 +133,7 @@
     SUBDIR += adol-c
     SUBDIR += algae
     SUBDIR += alglib
+    SUBDIR += alps
     SUBDIR += alt-ergo
     SUBDIR += amath
     SUBDIR += ambit
