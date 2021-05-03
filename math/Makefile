@@ -185,6 +185,7 @@
     SUBDIR += cglm
     SUBDIR += chaco
     SUBDIR += chryzodus
+    SUBDIR += chuffed
     SUBDIR += clasp
     SUBDIR += clblas
     SUBDIR += clblast
