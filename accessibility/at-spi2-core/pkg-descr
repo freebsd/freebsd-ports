@@ -7,4 +7,4 @@ This version of at-spi is a major break from previous versions.
 It has been completely rewritten to use D-Bus rather than
 ORBIT / CORBA for its transport protocol.
 
-WWW: http://www.linuxfoundation.org/en/AT-SPI_on_D-Bus
+WWW: https://gitlab.gnome.org/GNOME/at-spi2-core
