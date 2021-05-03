@@ -117,14 +117,14 @@ USE_GNOME+=	gconf2
 GCONF_SCHEMAS=	purple.schemas
 .endif
 
-#.if defined(WITH_GTKUI)
-#USE_GNOME+=		evolutiondataserver
-#PLIST_SUB+=		EVO=""
-#CONFIGURE_ARGS+=	--enable-gevolution
-#.else
+.if defined(WITH_GTKUI)
+USE_GNOME+=		evolutiondataserver3
+PLIST_SUB+=		EVO=""
+CONFIGURE_ARGS+=	--enable-gevolution
+.else
 CONFIGURE_ARGS+=	--disable-gevolution
 PLIST_SUB+=		EVO="@comment not installed: "
-#.endif
+.endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER1+=core good
