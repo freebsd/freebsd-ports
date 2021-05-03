@@ -1,0 +1,4 @@
+libbacktrace is a C library that may be linked into a C/C++ program to produce
+symbolic backtraces.
+
+WWW: https://github.com/ianlancetaylor/libbacktrace

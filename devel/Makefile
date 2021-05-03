@@ -1110,6 +1110,7 @@
     SUBDIR += libaura
     SUBDIR += libavl
     SUBDIR += libb2
+    SUBDIR += libbacktrace
     SUBDIR += libbde
     SUBDIR += libbegemot
     SUBDIR += libbfd
