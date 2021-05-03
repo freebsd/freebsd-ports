@@ -117,6 +117,8 @@ COMPILER_RT_DESC=	Sanitizer libraries
 # but this seems to work as a workaround...
 COMPILER_RT_BUILD_DEPENDS=	libunwind>0:devel/libunwind
 COMPILER_RT_CMAKE_ON=	-DCOMPILER_RT_INSTALL_PATH=${LLVM_PREFIX}/lib/clang/${LLVM_RELEASE}
+# Allow unwind.h to be found reliably
+COMPILER_RT_USES=	localbase
 COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS:S|^|${_CRTLIBDIR}/|} \
 			${_COMPILER_RT_BLACKLISTS:S|^|${_CRTBLDIR}/|}
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
@@ -381,7 +383,6 @@ _COMPILER_RT_LIBS_i386= \
 _COMPILER_RT_BLACKLISTS+=	asan_blacklist.txt
 _COMPILER_RT_BLACKLISTS+=	msan_blacklist.txt
 _COMPILER_RT_LIBS= \
-	${_COMPILER_RT_LIBS_i386} \
 	libclang_rt.asan-preinit-x86_64.a \
 	libclang_rt.asan-x86_64.a \
 	libclang_rt.asan-x86_64.a.syms \
@@ -420,6 +421,9 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.xray-fdr-x86_64.a \
 	libclang_rt.xray-profiling-x86_64.a \
 	libclang_rt.xray-x86_64.a
+.if exists(/usr/lib32/libc.so.7)
+_COMPILER_RT_LIBS+=	${_COMPILER_RT_LIBS_i386}
+.endif
 .endif
 .if ${ARCH} == "i386"
 _COMPILER_RT_BLACKLISTS+=	asan_blacklist.txt
