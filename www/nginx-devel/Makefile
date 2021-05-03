@@ -216,10 +216,6 @@ IGNORE=		requires at least HTTP or MAIL to \
 		be defined.  Please do 'make config' again
 .endif
 
-.if !${PORT_OPTIONS:MHTTP_REWRITE} && !defined(USE_HTTP_REWRITE)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nopcre
-.endif
-
 .if ${PORT_OPTIONS:MPASSENGER} && empty(PORT_OPTIONS:MDEBUG)
 CONFIGURE_ENV+=	OPTIMIZE="yes"
 CFLAGS+=	-DNDEBUG
