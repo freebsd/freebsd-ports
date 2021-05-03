@@ -150,6 +150,7 @@
     SUBDIR += arpack++
     SUBDIR += arpack-ng
     SUBDIR += ascent
+    SUBDIR += asl
     SUBDIR += aspcud
     SUBDIR += asymptote
     SUBDIR += atlas

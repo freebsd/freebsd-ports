@@ -1,0 +1,16 @@
+include/coin/ThirdParty/arith.h
+include/coin/ThirdParty/asl.h
+include/coin/ThirdParty/asl_pfg.h
+include/coin/ThirdParty/asl_pfgh.h
+include/coin/ThirdParty/funcadd.h
+include/coin/ThirdParty/getstub.h
+include/coin/ThirdParty/nlp.h
+include/coin/ThirdParty/nlp2.h
+include/coin/ThirdParty/opcode.hd
+include/coin/ThirdParty/psinfo.h
+include/coin/ThirdParty/r_opn.hd
+include/coin/ThirdParty/stdio1.h
+lib/libcoinasl.so
+lib/libcoinasl.so.1
+lib/libcoinasl.so.1.4.3
+libdata/pkgconfig/coinasl.pc
