@@ -1,0 +1,107 @@
+Idle detection: Fix crash on Wayland
+
+Check for screen saver extension before using it, avoids a crash on
+Wayland (where xcb_screensaver_query_info_reply returns null).
+
+Change-Id: Icecd2f930ed071eff573866784c8c52ccc272253
+Reviewed-on: https://codereview.kdab.com/c/Charm/+/88868
+Reviewed-by: Andras Mantia <andras@kdab.com>
+Tested-by: Continuous Integration <build@kdab.com>
+
+diff --git a/Charm/Idle/IdleDetector.cpp b/Charm/Idle/IdleDetector.cpp
+index 24e0c457..1cc74460 100644
+--- Charm/Idle/IdleDetector.cpp
++++ Charm/Idle/IdleDetector.cpp
+@@ -45,24 +45,22 @@ IdleDetector::IdleDetector(QObject *parent)
+ IdleDetector *IdleDetector::createIdleDetector(QObject *parent)
+ {
+ #ifdef CHARM_IDLE_DETECTION
+-#ifdef Q_OS_OSX
++#if (defined Q_OS_OSX)
+     return new MacIdleDetector(parent);
+-#endif
+-
+-#ifdef Q_OS_WIN
++#elif (defined Q_OS_WIN)
+     return new WindowsIdleDetector(parent);
++#elif (defined CHARM_IDLE_DETECTION_AVAILABLE)
++    return new X11IdleDetector(parent);
++#else
++    auto unavailable = new IdleDetector(parent);
++    unavailable->setAvailable(false);
++    return unavailable;
+ #endif
+-
+-#ifdef CHARM_IDLE_DETECTION_AVAILABLE
+-    X11IdleDetector *detector = new X11IdleDetector(parent);
+-    detector->setAvailable(detector->idleCheckPossible());
+-    return detector;
+-#endif
+-#endif
+-
+-    IdleDetector *unavailable = new IdleDetector(parent);
++#else
++    auto unavailable = new IdleDetector(parent);
+     unavailable->setAvailable(false);
+     return unavailable;
++#endif
+ }
+ 
+ bool IdleDetector::available() const
+diff --git a/Charm/Idle/X11IdleDetector.cpp b/Charm/Idle/X11IdleDetector.cpp
+index 4f03a418..796742a3 100644
+--- Charm/Idle/X11IdleDetector.cpp
++++ Charm/Idle/X11IdleDetector.cpp
+@@ -32,18 +32,20 @@
+ X11IdleDetector::X11IdleDetector(QObject *parent)
+     : IdleDetector(parent)
+ {
++    setAvailable(false);
++    m_connection = xcb_connect(NULL, NULL); // krazy:exclude=null
++    m_screen = xcb_setup_roots_iterator(xcb_get_setup(m_connection)).data;
++    if (!m_screen)
++        return;
++    auto query = xcb_get_extension_data(m_connection, &xcb_screensaver_id);
++    Q_ASSERT(query);
++    if (!query->present)
++        return;
++
+     connect(&m_timer, &QTimer::timeout, this, &X11IdleDetector::checkIdleness);
+     m_timer.start(idlenessDuration() * 1000 / 5);
+     m_heartbeat = QDateTime::currentDateTime();
+-}
+-
+-bool X11IdleDetector::idleCheckPossible()
+-{
+-    m_connection = xcb_connect(NULL, NULL); //krazy:exclude=null
+-    m_screen = xcb_setup_roots_iterator(xcb_get_setup(m_connection)).data;
+-    if (m_screen)
+-        return true;
+-    return false;
++    setAvailable(true);
+ }
+ 
+ void X11IdleDetector::onIdlenessDurationChanged()
+diff --git a/Charm/Idle/X11IdleDetector.h b/Charm/Idle/X11IdleDetector.h
+index 0b0f48ca..45ef9328 100644
+--- Charm/Idle/X11IdleDetector.h
++++ Charm/Idle/X11IdleDetector.h
+@@ -38,7 +38,6 @@ class X11IdleDetector : public IdleDetector
+     Q_OBJECT
+ public:
+     explicit X11IdleDetector(QObject *parent);
+-    bool idleCheckPossible();
+ 
+ protected:
+     void onIdlenessDurationChanged() override;
+@@ -50,8 +49,8 @@ private Q_SLOTS:
+     QDateTime m_heartbeat;
+     QTimer m_timer;
+ #if defined(Q_OS_UNIX) && !defined(Q_OS_OSX)
+-    xcb_connection_t *m_connection;
+-    xcb_screen_t *m_screen;
++    xcb_connection_t *m_connection = nullptr;
++    xcb_screen_t *m_screen = nullptr;
+ #endif
+ };
+ 
