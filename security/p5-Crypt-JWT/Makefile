@@ -1,7 +1,7 @@
 # Created by: Sergei Vyshenski
 
 PORTNAME=	Crypt-JWT
-PORTVERSION=	0.032
+PORTVERSION=	0.033
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
