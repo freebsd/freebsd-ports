@@ -1,5 +1,7 @@
---- GNUmakefile.orig	2016-10-01 16:07:35.000000000 -0700
-+++ GNUmakefile	2017-02-13 11:05:04.236623000 -0800
+diff --git GNUmakefile GNUmakefile
+index 3f3193d..43b1b55 100644
+--- GNUmakefile
++++ GNUmakefile
 @@ -4,10 +4,10 @@
  # in /opt/diet, where they are in the default search path for my diet libc
  # work but don't conflict with anything there.  YMMV.
@@ -14,13 +16,13 @@
  
  LIBS=byte.a fmt.a scan.a str.a uint.a open.a stralloc.a unix.a socket.a \
  buffer.a mmap.a taia.a tai.a dns.a case.a mult.a array.a io.a \
-@@ -15,26 +15,14 @@
- 
- all: ent $(LIBS) libowfat.a libsocket t
+@@ -18,26 +18,14 @@ all: headers ent $(LIBS) libowfat.a libsocket t
+ pic pie:
+ 	$(MAKE) CC="gcc -fPIC" LDFLAGS="-fpie"
  
 -CROSS=
 -#CROSS=i686-mingw-
--CC=gcc
+-CC?=gcc
 -CCC=$(CROSS)$(CC)
 +CCC=${CC}
  WERROR=
@@ -44,12 +46,12 @@
  
  #CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
  
-@@ -205,16 +193,16 @@
- compiletimeassert.h critbit.h
+@@ -217,16 +205,16 @@ libowfat/%.h: %.h
+ 	ln -f $< $@
  
  install-inc:
--	install -d $(DESTDIR)$(INCLUDEDIR)
--	install -m 644 $(INCLUDES) $(DESTDIR)$(INCLUDEDIR)
+-	install -d $(DESTDIR)$(INCLUDEDIR)/libowfat
+-	install -m 644 $(INCLUDES) $(DESTDIR)$(INCLUDEDIR)/libowfat
 +	${INSTALL} -d $(INCLUDEDIR)
 +	${BSD_INSTALL_DATA} -m 644 $(INCLUDES) $(INCLUDEDIR)
  
@@ -65,5 +67,5 @@
 +	${INSTALL} -d $(MAN3DIR)
 +	${BSD_INSTALL_MAN} -m 644 $(wildcard */*.3) $(MAN3DIR)
  
- install: install-inc install-man install-lib
+ install: headers install-inc install-man install-lib
  
