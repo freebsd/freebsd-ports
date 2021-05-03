@@ -1,6 +1,6 @@
 PORTNAME=	xplr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.9
+DISTVERSION=	0.5.12
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -191,24 +191,41 @@ CARGO_CRATES=	anyhow-1.0.40 \
 		ws2_32-sys-0.2.1 \
 		yaml-rust-0.4.5
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/applications/${PORTNAME}.desktop
 PORTDOCS=	CODE_OF_CONDUCT.md README.md RELEASE.md
 _EXAMPLES=	${WRKSRC}/src/config.yml
 PORTEXAMPLES=	${_EXAMPLES:T}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+_ASSETS=	${WRKSRC}/assets
+_ICONS=		${STAGEDIR}${PREFIX}/share/icons/hicolor
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
+
+	${INSTALL_DATA} ${_ASSETS}/desktop/${PORTNAME}.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
+
+	@${MKDIR} ${_ICONS}/scalable/apps
+	${INSTALL_DATA} ${_ASSETS}/icon/${PORTNAME}.svg \
+		${_ICONS}/scalable/apps
+.for res in 16 32 64 128
+	@${MKDIR} ${_ICONS}/${res}x${res}/apps
+.for icon in ico png
+	${INSTALL_DATA} ${_ASSETS}/icon/${PORTNAME}${res}.${icon} \
+		${_ICONS}/${res}x${res}/apps/${PORTNAME}.${icon}
+.endfor
+.endfor
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} \
+		${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${_EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} ${_EXAMPLES} \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
