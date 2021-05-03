@@ -1,0 +1,47 @@
+Disable the build/use of libssp/gets-chk since FreeBSD 12 and later
+do not feature gets() any longer.
+
+--- UTC
+Index: libssp/Makefile.am
+===================================================================
+--- libssp/Makefile.am	(revision 263319)
++++ libssp/Makefile.am	(working copy)
+@@ -42,7 +42,7 @@
+ nobase_libsubinclude_HEADERS = ssp/ssp.h ssp/string.h ssp/stdio.h ssp/unistd.h
+ 
+ libssp_la_SOURCES = \
+-	ssp.c gets-chk.c memcpy-chk.c memmove-chk.c mempcpy-chk.c \
++	ssp.c memcpy-chk.c memmove-chk.c mempcpy-chk.c \
+ 	memset-chk.c snprintf-chk.c sprintf-chk.c stpcpy-chk.c \
+ 	strcat-chk.c strcpy-chk.c strncat-chk.c strncpy-chk.c \
+ 	vsnprintf-chk.c vsprintf-chk.c
+Index: libssp/Makefile.in
+===================================================================
+--- libssp/Makefile.in	(revision 263319)
++++ libssp/Makefile.in	(working copy)
+@@ -108,7 +108,7 @@
+ am__installdirs = "$(DESTDIR)$(toolexeclibdir)" \
+ 	"$(DESTDIR)$(libsubincludedir)"
+ LTLIBRARIES = $(toolexeclib_LTLIBRARIES)
+-am_libssp_la_OBJECTS = ssp.lo gets-chk.lo memcpy-chk.lo memmove-chk.lo \
++am_libssp_la_OBJECTS = ssp.lo memcpy-chk.lo memmove-chk.lo \
+ 	mempcpy-chk.lo memset-chk.lo snprintf-chk.lo sprintf-chk.lo \
+ 	stpcpy-chk.lo strcat-chk.lo strcpy-chk.lo strncat-chk.lo \
+ 	strncpy-chk.lo vsnprintf-chk.lo vsprintf-chk.lo
+@@ -291,7 +291,7 @@
+ libsubincludedir = $(libdir)/gcc/$(target_noncanonical)/$(gcc_version)/include
+ nobase_libsubinclude_HEADERS = ssp/ssp.h ssp/string.h ssp/stdio.h ssp/unistd.h
+ libssp_la_SOURCES = \
+-	ssp.c gets-chk.c memcpy-chk.c memmove-chk.c mempcpy-chk.c \
++	ssp.c memcpy-chk.c memmove-chk.c mempcpy-chk.c \
+ 	memset-chk.c snprintf-chk.c sprintf-chk.c stpcpy-chk.c \
+ 	strcat-chk.c strcpy-chk.c strncat-chk.c strncpy-chk.c \
+ 	vsnprintf-chk.c vsprintf-chk.c
+@@ -452,7 +452,6 @@
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gets-chk.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libssp_nonshared_la-ssp-local.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/memcpy-chk.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/memmove-chk.Plo@am__quote@
