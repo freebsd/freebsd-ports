@@ -10,14 +10,14 @@ Call Stack (most recent call first):
 -- Could NOT find Boost: Found unsuitable version "1.72.0", but required is at least "1.73" (found /usr/local/include)
 -- Packages boost/1.73.0 not found!
 
---- CMakeLists.txt.orig	2021-04-23 22:48:47 UTC
+--- CMakeLists.txt.orig	2021-05-03 19:50:19 UTC
 +++ CMakeLists.txt
 @@ -202,7 +202,7 @@ macro(yuzu_find_packages)
  endmacro()
  
  if (NOT YUZU_USE_BUNDLED_BOOST)
--    find_package(Boost 1.73.0 COMPONENTS context headers QUIET)
-+    find_package(Boost 1.72.0 COMPONENTS context headers QUIET)
+-    find_package(Boost 1.73.0 CONFIG COMPONENTS context headers QUIET)
++    find_package(Boost 1.72.0 CONFIG COMPONENTS context headers QUIET)
  endif()
  if (Boost_FOUND)
      set(Boost_LIBRARIES Boost::boost)
