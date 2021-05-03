@@ -82,6 +82,7 @@ include/coin/CouenneTwoImplied.hpp
 include/coin/CouenneTypes.hpp
 include/coin/CouenneVTObject.hpp
 include/coin/CouenneVarObject.hpp
+include/coin/Nauty.h
 lib/libCouenne.so
 lib/libCouenne.so.1
 lib/libCouenne.so.1.4.8
