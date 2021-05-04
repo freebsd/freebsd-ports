@@ -91,8 +91,6 @@ load_rc_config $name
 : ${webcamd_startup_delay=1}
 : ${webcamd_devd_starts_unspecified=YES}
 
-: ${hald_enable:=NO}
-
 # If invoked automatically by devd, we receive additional arguments
 devd_device=${2}
 devd_interface=${3-0}
