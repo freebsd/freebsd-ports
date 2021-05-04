@@ -16326,3 +16326,4 @@ sysutils/policykit|sysutils/polkit|2021-05-01|Gnome2 component, no consumers lef
 databases/rubygem-gitlab-pg_query|databases/rubygem-pg_query|2021-05-03|Obsolete, please use databases/rubygem-pg_query
 devel/rubygem-licensee8|devel/rubygem-licensee|2021-05-03|Obsolete, please use devel/rubygem-licensee
 devel/rubygem-ruby-magic-static|devel/rubygem-ruby-magic|2021-05-03|Obsolete, please use devel/rubygem-ruby-magic
+devel/gecode|math/gecode|2021-05-04|Move to a proper category

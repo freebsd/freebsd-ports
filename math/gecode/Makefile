@@ -3,7 +3,7 @@
 PORTNAME=	gecode
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	6.2.0
-CATEGORIES=	devel math
+CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
 PATCHFILES=	f08079c5df271869bc7c0799b3eccc52ca2f4d83.patch:-p1 # https://github.com/Gecode/gecode/pull/51
