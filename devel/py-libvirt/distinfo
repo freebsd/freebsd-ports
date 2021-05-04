@@ -1,3 +1,3 @@
-TIMESTAMP = 1617810334
-SHA256 (libvirt-python-7.2.0.tar.gz) = c0c3bac54c55622e17927b09cd9843869600d71842fb072c99491fe2608dcee7
-SIZE (libvirt-python-7.2.0.tar.gz) = 215380
+TIMESTAMP = 1620095111
+SHA256 (libvirt-python-7.3.0.tar.gz) = 676c260ddb365120404e611a38c514045ef1af1a7fede15c1fc02d0f8241f696
+SIZE (libvirt-python-7.3.0.tar.gz) = 216823
