@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 
 PORTNAME=	bgpq4
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	bofh@FreeBSD.org
