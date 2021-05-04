@@ -1,5 +1,5 @@
-TIMESTAMP = 1620103183
-SHA256 (jacop-4.0.0-1162-deps.tar.gz) = 1c4aa41dff58aad875feac6ade8129ffb689b37038eb2c765d81305b58e15868
-SIZE (jacop-4.0.0-1162-deps.tar.gz) = 54183631
-SHA256 (radsz-jacop-v4.0.0-1162-gd37f3c23_GH0.tar.gz) = 3eed60b57e4e3e7e668f8c6d84c98b2fe7a22b8878205086b0c1f1932a4b6db2
-SIZE (radsz-jacop-v4.0.0-1162-gd37f3c23_GH0.tar.gz) = 154140130
+TIMESTAMP = 1620121045
+SHA256 (jacop-4.8.0-deps.tar.gz) = 16d991a74fb21963fccbefe648e54c9083eb5f3408b2af63766ce0acb1a7262c
+SIZE (jacop-4.8.0-deps.tar.gz) = 54180954
+SHA256 (radsz-jacop-v4.8.0_GH0.tar.gz) = bbd4be59be8641d4d13e34f15191f48e894dce02eca441cb9b14982b312a0096
+SIZE (radsz-jacop-v4.8.0_GH0.tar.gz) = 154087127

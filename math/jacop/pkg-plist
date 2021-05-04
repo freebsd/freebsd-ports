@@ -1,5 +1,5 @@
 bin/fzn-jacop
-%%JAVAJARDIR%%/jacop-4.0.0.1162.jar
+%%JAVAJARDIR%%/jacop-%%VERSION%%.jar
 share/minizinc/jacop/GCC.mzn
 share/minizinc/jacop/all_distinct.mzn
 share/minizinc/jacop/among_var.mzn
