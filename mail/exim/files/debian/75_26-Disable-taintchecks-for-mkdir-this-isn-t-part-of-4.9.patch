@@ -1,0 +1,27 @@
+From 1416743e923cacf42955392e92995f5fe7e1c680 Mon Sep 17 00:00:00 2001
+From: "Heiko Schlittermann (HS12-RIPE)" <hs@schlittermann.de>
+Date: Sun, 25 Apr 2021 10:19:32 +0200
+Subject: [PATCH 3/4] Disable taintchecks for mkdir, this isn't part of 4.94
+
+---
+ src/directory.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/directory.c b/src/directory.c
+index 9f88f4141..ece1ee8f3 100644
+--- a/src/directory.c
++++ b/src/directory.c
+@@ -44,8 +44,10 @@ uschar c = 1;
+ struct stat statbuf;
+ uschar * path;
+ 
++/* does not work with 4.94
+ if (is_tainted2(name, LOG_MAIN|LOG_PANIC, "Tainted path '%s' for new directory", name))
+   { p = US"create"; path = US name; errno = EACCES; goto bad; }
++*/
+ 
+ if (parent)
+   {
+-- 
+2.30.2
+

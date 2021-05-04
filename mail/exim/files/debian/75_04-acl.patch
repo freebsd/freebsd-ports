@@ -1,0 +1,67 @@
+From 44fd80ad8abcd885fc1c8dbb294fc2140e4ef481 Mon Sep 17 00:00:00 2001
+From: "Heiko Schlittermann (HS12-RIPE)" <hs@schlittermann.de>
+Date: Sun, 28 Mar 2021 10:50:14 +0200
+Subject: [PATCH 04/23] acl
+Last-Update: 2021-05-01
+
+---
+ src/acl.c | 32 ++++++++++++++++----------------
+ 1 file changed, 16 insertions(+), 16 deletions(-)
+
+--- a/src/acl.c
++++ b/src/acl.c
+@@ -3596,24 +3596,26 @@
+     rc = mime_regex(&arg);
+     break;
+     #endif
+ 
+     case ACLC_QUEUE:
+-    if (is_tainted(arg))
+       {
+-      *log_msgptr = string_sprintf("Tainted name '%s' for queue not permitted",
+-				    arg);
+-      return ERROR;
++      uschar *m;
++      if (m = is_tainted2(arg, 0, "Tainted name '%s' for queue not permitted", arg))
++        {
++        *log_msgptr = m;
++        return ERROR;
++        }
++      if (Ustrchr(arg, '/'))
++        {
++        *log_msgptr = string_sprintf(
++                "Directory separator not permitted in queue name: '%s'", arg);
++        return ERROR;
++        }
++      queue_name = string_copy_perm(arg, FALSE);
++      break;
+       }
+-    if (Ustrchr(arg, '/'))
+-      {
+-      *log_msgptr = string_sprintf(
+-	      "Directory separator not permitted in queue name: '%s'", arg);
+-      return ERROR;
+-      }
+-    queue_name = string_copy_perm(arg, FALSE);
+-    break;
+ 
+     case ACLC_RATELIMIT:
+     rc = acl_ratelimit(arg, where, log_msgptr);
+     break;
+ 
+@@ -4005,14 +4007,12 @@
+     }
+ 
+   else if (*ss == '/')
+     {
+     struct stat statbuf;
+-    if (is_tainted(ss))
++    if (is_tainted2(ss, LOG_MAIN|LOG_PANIC, "Tainted ACL file name '%s'", ss))
+       {
+-      log_write(0, LOG_MAIN|LOG_PANIC,
+-	"attempt to open tainted ACL file name \"%s\"", ss);
+       /* Avoid leaking info to an attacker */
+       *log_msgptr = US"internal configuration error";
+       return ERROR;
+       }
+     if ((fd = Uopen(ss, O_RDONLY, 0)) < 0)
