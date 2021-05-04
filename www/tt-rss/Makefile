@@ -2,7 +2,7 @@
 
 PORTNAME=	tt-rss
 PORTVERSION=	g20210123
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	https://git.tt-rss.org/fox/tt-rss/archive/
 DISTNAME=	${_GIT_TAGNAME}
