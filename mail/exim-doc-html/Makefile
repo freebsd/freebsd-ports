@@ -1,7 +1,7 @@
 # Created by: Johann Visagie <wjv@FreeBSD.org>
 
 PORTNAME=	exim
-PORTVERSION=	4.92
+PORTVERSION=	4.94.2
 CATEGORIES=	mail
 MASTER_SITES=	EXIM
 MASTER_SITE_SUBDIR=	/exim4/ \
@@ -11,7 +11,7 @@ DISTNAME=	exim-${DISTDOCFORMAT}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	exim
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Documentation for the Exim MTA in multiple formats
 
 USES=		tar:bzip2
