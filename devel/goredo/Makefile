@@ -1,5 +1,5 @@
 PORTNAME=	goredo
-DISTVERSION=	1.3.0
+DISTVERSION=	1.4.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.goredo.cypherpunks.ru/download/
 EXTRACT_SUFX=	.tar.zst
