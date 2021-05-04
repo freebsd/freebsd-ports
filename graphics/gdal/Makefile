@@ -105,7 +105,7 @@ ECW_CONFIGURE_WITH=	ecw
 ECW_LIB_DEPENDS=	libNCSEcw.so:graphics/libecwj2
 EXPAT_CONFIGURE_WITH=	expat
 EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
-EXR_CONFIGURE_ON=	--with-exr
+EXR_CONFIGURE_WITH=	exr
 EXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr libImath.so:math/Imath
 EXR_CFLAGS=		-DInt64=uint64_t
 FREEXL_CONFIGURE_WITH=	freexl
