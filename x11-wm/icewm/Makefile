@@ -2,6 +2,7 @@
 
 PORTNAME=	icewm
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		compiler:c++11-lang gmake gnome iconv:translit localbase \
 		perl5 pkgconfig shebangfix tar:lz xorg
-USE_GNOME=	glib20
+USE_GNOME=	cairo gdkpixbuf2 glib20 librsvg2
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xpm xrender
 GNU_CONFIGURE=	yes
@@ -29,7 +30,7 @@ OPTIONS_DEFINE=		BEASTIE DOCS IMLIB2 NLS SVG XFT XINERAMA XRANDR
 OPTIONS_DEFAULT=	BEASTIE IMLIB2 XFT XINERAMA XRANDR
 OPTIONS_SUB=		yes
 
-BEASTIE_DESC=		Use Beastie'fied startup button
+BEASTIE_DESC=		Use Beastie-fied startup button
 BEASTIE_VARS=		STARTUP_PIXMAP=bsd-daemon.xpm
 BEASTIE_VARS_OFF=	STARTUP_PIXMAP=icewm-logo.xpm
 
