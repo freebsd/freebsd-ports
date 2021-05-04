@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	stixfonts
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-fonts
 
