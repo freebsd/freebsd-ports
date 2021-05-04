@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=		1
 CATEGORIES=		sysutils
 
-MAINTAINER=		lifanov@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Open-source application container engine
 
 LICENSE=		APACHE20

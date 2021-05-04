@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=		1
 CATEGORIES=		sysutils
 
-MAINTAINER=		lifanov@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Tool to create Docker hosts
 
 LICENSE=		APACHE20

@@ -5,7 +5,7 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Radically simple IT automation
 
 LICENSE=	GPLv3+

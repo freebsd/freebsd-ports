@@ -4,7 +4,7 @@ DISTVERSION=	1.1.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bash automated testing system
 
 LICENSE=	MIT

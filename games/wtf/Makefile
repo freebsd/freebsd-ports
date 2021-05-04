@@ -5,7 +5,7 @@ PORTVERSION=	20191201
 CATEGORIES=	games
 MASTER_SITES=	SF/bsdwtf
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translates common Internet acronyms
 
 LICENSE=	PD

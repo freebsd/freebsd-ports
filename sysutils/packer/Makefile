@@ -3,7 +3,7 @@ PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for creating machine images
 
 LICENSE=	MPL20

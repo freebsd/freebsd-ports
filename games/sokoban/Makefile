@@ -7,7 +7,7 @@ CATEGORIES=		games
 MASTER_SITES=		SUNSITE/games/strategy
 DISTNAME=		${PORTNAME}-src
 
-MAINTAINER=		lifanov@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Logical game: problems with packets in cave
 
 USES=			ncurses

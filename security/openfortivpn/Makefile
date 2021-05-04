@@ -3,7 +3,7 @@ PORTVERSION=	1.16.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security net-vpn
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for PPP+SSL VPN tunnel services
 
 BUILD_DEPENDS=	gsed:textproc/gsed

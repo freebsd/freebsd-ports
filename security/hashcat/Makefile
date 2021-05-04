@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	security
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced CPU-based password recovery utility
 
 LICENSE=	MIT

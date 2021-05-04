@@ -5,7 +5,7 @@ PORTVERSION=	007
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music pack for endgame-singularity
 
 LICENSE=	CC-BY-SA-3.0
