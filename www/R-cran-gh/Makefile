@@ -1,7 +1,7 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	gh
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3.0
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-gitcreds>0:security/R-cran-gitcreds \
 		R-cran-httr>=1.2:www/R-cran-httr
 TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
+		R-cran-mockery>0:devel/R-cran-mockery \
 		R-cran-rprojroot>0:devel/R-cran-rprojroot \
 		R-cran-testthat>=2.3.2:devel/R-cran-testthat \
 		R-cran-withr>0:devel/R-cran-withr \
