@@ -1,6 +1,6 @@
 PORTNAME=	minizinc
 DISTVERSION=	2.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ CONFLICTS_BUILD=	CoinMP
 
 LIB_DEPENDS=	libCbc.so:math/cbc \
 		libCgl.so:math/cgl \
-		libgecodekernel.so:devel/gecode \
+		libgecodekernel.so:math/gecode \
 		libOsiClp.so:math/clp
 
 USES=		bison cmake compiler:c++11-lang
