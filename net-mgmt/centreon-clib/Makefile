@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
 
 PORTNAME=	centreon-clib
-PORTVERSION=	20.10.0
+PORTVERSION=	21.04.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -19,6 +19,5 @@ CMAKE_ARGS=	-DWITH_PREFIX=${PREFIX} \
 		-DWITH_PREFIX_INC=${PREFIX}/include/centreon \
 		-DWITH_PKGCONFIG_DIR=${PREFIX}/libdata/pkgconfig
 CXXFLAGS+=	-std=c++11
-USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

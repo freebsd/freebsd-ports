@@ -1,12 +1,13 @@
---- src/process_manager.cc.orig	2020-04-24 11:44:54 UTC
+--- src/process_manager.cc.orig	2021-04-01 07:25:04 UTC
 +++ src/process_manager.cc
-@@ -24,6 +24,9 @@
- #include <sys/types.h>
+@@ -19,6 +19,10 @@
+ #include "com/centreon/process_manager.hh"
  #include <sys/wait.h>
  #include <unistd.h>
 +#if defined(__FreeBSD__) || defined (__DragonFly__)
 +#include <signal.h>
++#include <array>
 +#endif
- #include "com/centreon/exceptions/basic.hh"
- #include "com/centreon/logging/logger.hh"
- #include "com/centreon/process.hh"
+ #include <algorithm>
+ #include <cassert>
+ #include <cerrno>
