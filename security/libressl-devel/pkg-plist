@@ -736,6 +736,9 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/DTLS_client_method.3.gz
 %%MAN3%%man/man3/DTLS_method.3.gz
 %%MAN3%%man/man3/DTLS_server_method.3.gz
+%%MAN3%%man/man3/DTLSv1_2_client_method.3.gz
+%%MAN3%%man/man3/DTLSv1_2_method.3.gz
+%%MAN3%%man/man3/DTLSv1_2_server_method.3.gz
 %%MAN3%%man/man3/DTLSv1_client_method.3.gz
 %%MAN3%%man/man3/DTLSv1_listen.3.gz
 %%MAN3%%man/man3/DTLSv1_method.3.gz
@@ -2155,6 +2158,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/SSL_in_connect_init.3.gz
 %%MAN3%%man/man3/SSL_in_init.3.gz
 %%MAN3%%man/man3/SSL_is_init_finished.3.gz
+%%MAN3%%man/man3/SSL_is_dtls.3.gz
 %%MAN3%%man/man3/SSL_is_server.3.gz
 %%MAN3%%man/man3/SSL_library_init.3.gz
 %%MAN3%%man/man3/SSL_load_client_CA_file.3.gz
