@@ -1,6 +1,6 @@
---- Makefile.orig	2006-01-11 11:09:05.000000000 -0200
-+++ Makefile	2014-03-27 15:31:34.000000000 -0300
-@@ -21,8 +21,8 @@
+--- Makefile.orig	2006-01-11 13:09:05 UTC
++++ Makefile
+@@ -21,8 +21,8 @@ MAN=expiretable.1
  all: ${TARGET}
  
  install: ${TARGET}

@@ -1,6 +1,6 @@
---- expiretable.c.orig	2013-01-23 11:56:08.000000000 +0100
-+++ expiretable.c	2013-01-23 11:56:26.000000000 +0100
-@@ -290,6 +290,7 @@
+--- expiretable.c.orig	2006-01-18 22:47:01 UTC
++++ expiretable.c
+@@ -290,6 +290,7 @@ main(int argc, char *const *argv) {
  			for (i = 0; i < astats_count; i++) {
  				if (astats[i].pfras_tzero <= min_timestamp) {
  					del_addrs_list[del_addrs_count] = astats[i].pfras_a;
