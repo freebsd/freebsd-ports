@@ -2,7 +2,7 @@ PORTNAME=	Date_Holidays_Brazil
 PORTVERSION=	0.1.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver based class to calculate holidays in Brazil
 
 LICENSE=	PHP301

@@ -4,7 +4,7 @@ PORTNAME=	PEAR_PackageFileManager
 PORTVERSION=	1.7.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class to maintain PEAR packages
 
 LICENSE=	BSD2CLAUSE

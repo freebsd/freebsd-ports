@@ -4,7 +4,7 @@ PORTNAME=	Net_Ping
 PORTVERSION=	2.4.5
 CATEGORIES=	net pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class to execute ping
 
 USES=		pear

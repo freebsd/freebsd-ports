@@ -4,7 +4,7 @@ PORTNAME=	Validate_US
 PORTVERSION=	0.5.5
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR data validation class for US
 
 BUILD_DEPENDS=	${PEAR_PKGNAMEPREFIX}Validate>=0.5.0:devel/pear-Validate@${PHP_FLAVOR}

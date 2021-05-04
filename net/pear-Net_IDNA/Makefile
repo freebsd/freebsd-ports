@@ -4,7 +4,7 @@ PORTNAME=	Net_IDNA
 PORTVERSION=	0.8.1
 CATEGORIES=	net pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pear Punycode encoding and decoding package
 
 NO_ARCH=	yes

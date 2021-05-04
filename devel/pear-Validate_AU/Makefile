@@ -5,7 +5,7 @@ PORTVERSION=	0.1.4
 PORTREVISION=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR data validation class for Australia
 
 USES=		pear

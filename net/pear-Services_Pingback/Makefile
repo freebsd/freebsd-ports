@@ -4,7 +4,7 @@ PORTNAME=	Services_Pingback
 PORTVERSION=	0.2.2
 CATEGORIES=	net www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pingback user-agent class
 
 USES=		pear

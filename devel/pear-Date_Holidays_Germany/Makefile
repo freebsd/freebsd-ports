@@ -3,7 +3,7 @@ PORTVERSION=	0.1.2
 PORTREVISION=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver based class to calculate holidays in Germany
 
 LICENSE=	PHP301

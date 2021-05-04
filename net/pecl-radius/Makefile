@@ -4,7 +4,7 @@ PORTNAME=	radius
 DISTVERSION=	1.4.0b1
 CATEGORIES=	net security pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Radius client library for PHP
 
 LICENSE=	BSD3CLAUSE

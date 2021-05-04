@@ -4,7 +4,7 @@ PORTNAME=	PHPDoc
 PORTVERSION=	0.1.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to generate documentation from the source
 
 USES=		pear

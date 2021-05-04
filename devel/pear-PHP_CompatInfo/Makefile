@@ -5,7 +5,7 @@ PORTVERSION=	1.9.0
 PORTREVISION=	4
 CATEGORIES=	devel pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class to find out the minimum version and extensions required
 
 RUN_DEPENDS=	${PEARDIR}/Console/Table.php:devel/pear-Console_Table@${PHP_FLAVOR} \

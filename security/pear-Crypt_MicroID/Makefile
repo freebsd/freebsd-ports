@@ -4,7 +4,7 @@ PORTNAME=	Crypt_MicroID
 PORTVERSION=	0.1.0
 CATEGORIES=	security www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP MicroID library
 
 USES=		pear

@@ -5,7 +5,7 @@ PORTVERSION=	1.0.2
 PORTEPOCH=	1
 CATEGORIES=	net pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The PEAR::Net_DIME class implements DIME encoding
 
 USES=		pear

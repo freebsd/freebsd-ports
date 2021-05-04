@@ -4,7 +4,7 @@ PORTNAME=	Config
 PORTVERSION=	1.10.12
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Your configurations swiss-army knife
 
 LICENSE=	PHP301

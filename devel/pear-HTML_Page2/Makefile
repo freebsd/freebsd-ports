@@ -5,7 +5,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	devel www pear
 DISTNAME=	${PORTNAME}-${PORTVERSION}beta
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR base class for XHTML page generation
 
 LICENSE=	PHP30

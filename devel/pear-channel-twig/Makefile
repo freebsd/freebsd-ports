@@ -5,7 +5,7 @@ PORTVERSION=	20140108
 CATEGORIES=	devel www pear
 MASTER_SITES=	#
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
 
 PEAR_CHANNEL_HOST=	pear.twig-project.org

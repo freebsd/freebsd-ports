@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel pear
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}SebastianBergmann_
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple wrapper for Git
 
 LICENSE=	BSD3CLAUSE

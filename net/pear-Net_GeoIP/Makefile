@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	net pear
 DISTNAME=	Net_GeoIP-1.0.0RC1
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to perform geo-location lookups of IP addresses
 
 BUILD_DEPENDS=	${PEARDIR}/Cache.php:sysutils/pear-Cache@${PHP_FLAVOR} \

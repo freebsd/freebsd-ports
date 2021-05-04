@@ -4,7 +4,7 @@ PORTNAME=	HTML_CSS
 PORTVERSION=	1.5.4
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class for generating CSS declarations
 
 LICENSE=	BSD2CLAUSE

@@ -4,7 +4,7 @@ PORTNAME=	HTML_QuickForm
 PORTVERSION=	3.2.16
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide methods for creating, validating, and processing HTML forms
 
 LICENSE=	PHP301

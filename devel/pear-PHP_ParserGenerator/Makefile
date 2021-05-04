@@ -4,7 +4,7 @@ PORTNAME=	PHP_ParserGenerator
 PORTVERSION=	0.1.7
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert files from lemon parser to php5
 
 USES=		pear

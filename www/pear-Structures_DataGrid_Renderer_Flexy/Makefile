@@ -4,7 +4,7 @@ PORTNAME=	Structures_DataGrid_Renderer_Flexy
 PORTVERSION=	0.1.4
 CATEGORIES=	www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Renderer for pear-Structures_DataGrid using HTML_Template_Flexy
 
 RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid@${PHP_FLAVOR} \

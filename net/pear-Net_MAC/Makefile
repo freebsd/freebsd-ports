@@ -5,7 +5,7 @@ PORTVERSION=	0.1.5
 PORTREVISION=	1
 CATEGORIES=	net pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class that validates and formats MAC addresses
 
 USES=		pear

@@ -4,7 +4,7 @@ PORTNAME=	Net_CheckIP
 PORTVERSION=	1.2.2
 CATEGORIES=	net pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check the syntax of IPv4 addresses
 
 USES=		pear

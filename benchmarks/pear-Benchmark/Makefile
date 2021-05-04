@@ -4,7 +4,7 @@ PORTNAME=	Benchmark
 PORTVERSION=	1.2.9
 CATEGORIES=	benchmarks devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR framework to benchmark PHP scripts or function calls
 
 LICENSE=	BSD2CLAUSE

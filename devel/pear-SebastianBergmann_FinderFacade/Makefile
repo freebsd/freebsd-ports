@@ -5,7 +5,7 @@ PORTVERSION=	1.2.3
 CATEGORIES=	devel pear
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}SebastianBergmann_
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convenience wrapper for Symfony Finder component
 
 LICENSE=	BSD3CLAUSE

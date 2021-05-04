@@ -5,7 +5,7 @@ PORTVERSION=	0.4.0
 PORTREVISION=	1
 CATEGORIES=	security www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR user authentication and permission management framework
 
 BUILD_DEPENDS=	${PEARDIR}/LiveUser.php:security/pear-LiveUser@${PHP_FLAVOR}

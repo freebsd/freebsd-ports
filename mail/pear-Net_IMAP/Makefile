@@ -4,7 +4,7 @@ PORTNAME=	Net_IMAP
 PORTVERSION=	1.1.3
 CATEGORIES=	mail net pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class that provides an implementation of the IMAP protocol
 
 LICENSE=	PHP301

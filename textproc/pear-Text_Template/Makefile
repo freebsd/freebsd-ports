@@ -5,7 +5,7 @@ PORTVERSION=	2.0.2
 CATEGORIES=	textproc www pear
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple template engine
 
 USES=	pear:env

@@ -5,7 +5,7 @@ PORTVERSION=	1.1.5
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.pirum-project.org/get/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple PEAR channel server manager
 
 LICENSE=	MIT

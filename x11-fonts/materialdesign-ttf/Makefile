@@ -4,7 +4,7 @@ DISTVERSION=	3.5.95
 CATEGORIES=	x11-fonts
 PKGNAMESUFFIX=	-ttf
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Material Design Webfont
 
 LICENSE=	OFL11

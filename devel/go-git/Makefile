@@ -4,7 +4,7 @@ DISTVERSION=	4.10.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly extensible git implementation in pure Go
 
 LICENSE=	APACHE20

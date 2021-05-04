@@ -4,7 +4,7 @@ PORTNAME=	PHP_UML
 PORTVERSION=	1.6.2
 CATEGORIES=	devel
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Class to Create UML Representation of PHP Code
 
 LICENSE=	LGPL3

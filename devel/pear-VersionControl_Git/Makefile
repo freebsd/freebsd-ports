@@ -4,7 +4,7 @@ PORTNAME=	VersionControl_Git
 PORTVERSION=	0.5.0
 CATEGORIES=	devel pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OO interface to handle Git repository
 
 LICENSE=	APACHE20

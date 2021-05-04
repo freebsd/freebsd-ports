@@ -6,7 +6,7 @@ CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.pdepend.org/get/
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}${PEAR_CHANNEL}_
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	staticReflection package for PHP
 
 LICENSE=	BSD3CLAUSE

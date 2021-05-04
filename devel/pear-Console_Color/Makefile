@@ -4,7 +4,7 @@ PORTNAME=	Console_Color
 PORTVERSION=	1.0.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR use ANSI console colors
 
 LICENSE=	MIT

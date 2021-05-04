@@ -4,7 +4,7 @@ PORTNAME=	MDB2_Schema
 PORTVERSION=	0.8.6
 CATEGORIES=	databases www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR XML based database schema manager
 
 LICENSE=	BSD2CLAUSE

@@ -4,7 +4,7 @@ PORTNAME=	Text_Highlighter
 PORTVERSION=	0.8.0
 CATEGORIES=	textproc pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Syntax highlighting
 
 LICENSE=	PHP301

@@ -4,7 +4,7 @@ PORTNAME=	PHPUnit_MockObject
 PORTVERSION=	4.0.1
 CATEGORIES=	devel pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mock Object library for PHPUnit
 
 LICENSE=	BSD3CLAUSE

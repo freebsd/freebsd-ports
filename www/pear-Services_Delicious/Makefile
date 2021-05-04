@@ -4,7 +4,7 @@ PORTNAME=	Services_Delicious
 PORTVERSION=	0.6.0
 CATEGORIES=	www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Client for the del.icio.us web service
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer@${PHP_FLAVOR} \

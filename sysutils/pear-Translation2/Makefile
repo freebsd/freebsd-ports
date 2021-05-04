@@ -5,7 +5,7 @@ DISTVERSION=	2.0.4
 PORTEPOCH=	1
 CATEGORIES=	sysutils devel pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class for multilingual applications management
 
 USES=		pear shebangfix

@@ -4,7 +4,7 @@ PORTNAME=	XML_DTD
 PORTVERSION=	0.5.2
 CATEGORIES=	textproc devel pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parsing of DTD files and DTD validation of XML files
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser@${PHP_FLAVOR}

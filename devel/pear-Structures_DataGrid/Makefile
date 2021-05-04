@@ -4,7 +4,7 @@ PORTNAME=	Structures_DataGrid
 PORTVERSION=	0.9.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured tabular structured data management package
 
 LICENSE=	BSD3CLAUSE

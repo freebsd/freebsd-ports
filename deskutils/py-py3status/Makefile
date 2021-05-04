@@ -5,7 +5,7 @@ PORTVERSION=	3.18
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible i3status wrapper written in python
 
 LICENSE=	BSD3CLAUSE

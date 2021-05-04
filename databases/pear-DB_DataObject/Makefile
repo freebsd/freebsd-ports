@@ -5,7 +5,7 @@ PORTVERSION=	1.11.5
 PORTREVISION=	1
 CATEGORIES=	databases pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SQL Builder, Object Interface to Database Tables
 
 LICENSE=	PHP301

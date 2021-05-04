@@ -4,7 +4,7 @@ PORTNAME=	Structures_DataGrid_Renderer_Smarty
 PORTVERSION=	0.1.5
 CATEGORIES=	www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smarty Renderer for pear-Structures_DataGrid
 
 RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid@${PHP_FLAVOR} \

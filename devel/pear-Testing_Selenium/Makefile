@@ -4,7 +4,7 @@ PORTNAME=	Testing_Selenium
 PORTVERSION=	0.4.4
 CATEGORIES=	devel pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Binding - Once more unto the breach
 
 USES=		pear

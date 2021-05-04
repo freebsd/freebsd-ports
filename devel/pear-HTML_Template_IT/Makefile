@@ -5,7 +5,7 @@ DISTVERSION=	1.3.1
 PORTEPOCH=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Integrated template API
 
 LICENSE=	BSD3CLAUSE

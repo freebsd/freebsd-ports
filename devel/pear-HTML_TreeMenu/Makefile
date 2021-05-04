@@ -4,7 +4,7 @@ PORTNAME=	HTML_TreeMenu
 PORTVERSION=	1.2.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides an API to create a HTML tree
 
 LICENSE=	BSD2CLAUSE

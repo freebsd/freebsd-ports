@@ -5,7 +5,7 @@ PORTVERSION=	1.0.3
 PORTREVISION=	2
 CATEGORIES=	security pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL classes for PAM integration
 
 LICENSE=	PHP202

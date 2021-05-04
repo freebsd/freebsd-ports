@@ -5,7 +5,7 @@ PORTVERSION=	0.16.14
 PORTREVISION=	1
 CATEGORIES=	security www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR user authentication and permission management framework
 
 BUILD_DEPENDS=	${PEARDIR}/Event/Dispatcher.php:devel/pear-Event_Dispatcher@${PHP_FLAVOR}

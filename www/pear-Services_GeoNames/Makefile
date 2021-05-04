@@ -4,7 +4,7 @@ PORTNAME=	Services_GeoNames
 PORTVERSION=	1.0.1
 CATEGORIES=	www pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP5 Interface to the GeoNames Public API
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP/Request2.php:www/pear-HTTP_Request2@${PHP_FLAVOR}
