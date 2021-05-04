@@ -2,7 +2,7 @@
 
 PORTNAME=	gopass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.5
+DISTVERSION=	1.12.6
 CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -28,18 +28,18 @@ GH_TUPLE=	\
 		cenkalti:backoff:v2.2.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
 		chzyer:readline:2972be24d48e:chzyer_readline/vendor/github.com/chzyer/readline \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
-		davecgh:go-spew:v1.1.0:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
 		go-yaml:yaml:496545a6307b:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		godbus:dbus:8a1682060722:godbus_dbus/vendor/github.com/godbus/dbus \
 		gokyle:twofactor:v1.0.1:gokyle_twofactor/vendor/github.com/gokyle/twofactor \
-		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:6b1517762897:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:cd4f82c27b84:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:47abb6519492:golang_sys/vendor/golang.org/x/sys \
-		golang:term:de623e64d2a6:golang_term/vendor/golang.org/x/term \
+		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
+		golang:crypto:4f45737414dc:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:e915ea6b2b7d:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:5e61552d6c78:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:37df388d1f33:golang_sys/vendor/golang.org/x/sys \
+		golang:term:72f3dc4e9b72:golang_term/vendor/golang.org/x/term \
 		google:go-cmp:v0.5.5:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-github:v17.0.0:google_go_github/vendor/github.com/google/go-github \
 		google:go-github:v33.0.0:google_go_github_v33/vendor/github.com/google/go-github/v33 \
@@ -60,7 +60,7 @@ GH_TUPLE=	\
 		nbutton23:zxcvbn-go:fa2cb2858354:nbutton23_zxcvbn_go/vendor/github.com/nbutton23/zxcvbn-go \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rsc:qr:v0.2.0:rsc_qr/vendor/rsc.io/qr \
 		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		schollz:closestmatch:1fbe626be92e:schollz_closestmatch/vendor/github.com/schollz/closestmatch \
