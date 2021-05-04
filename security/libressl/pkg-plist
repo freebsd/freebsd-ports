@@ -80,15 +80,15 @@ include/tls.h
 lib/libcrypto.a
 lib/libcrypto.so
 lib/libcrypto.so.46
-lib/libcrypto.so.46.0.1
+lib/libcrypto.so.46.0.2
 lib/libssl.a
 lib/libssl.so
 lib/libssl.so.48
-lib/libssl.so.48.0.1
+lib/libssl.so.48.0.2
 lib/libtls.a
 lib/libtls.so
 lib/libtls.so.20
-lib/libtls.so.20.0.1
+lib/libtls.so.20.0.3
 libdata/pkgconfig/libcrypto.pc
 libdata/pkgconfig/libssl.pc
 libdata/pkgconfig/libtls.pc
@@ -736,6 +736,9 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/DTLS_client_method.3.gz
 %%MAN3%%man/man3/DTLS_method.3.gz
 %%MAN3%%man/man3/DTLS_server_method.3.gz
+%%MAN3%%man/man3/DTLSv1_2_client_method.3.gz
+%%MAN3%%man/man3/DTLSv1_2_method.3.gz
+%%MAN3%%man/man3/DTLSv1_2_server_method.3.gz
 %%MAN3%%man/man3/DTLSv1_client_method.3.gz
 %%MAN3%%man/man3/DTLSv1_listen.3.gz
 %%MAN3%%man/man3/DTLSv1_method.3.gz
@@ -1269,6 +1272,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/EVP_PKEY_meth_set_verifyctx.3.gz
 %%MAN3%%man/man3/EVP_PKEY_missing_parameters.3.gz
 %%MAN3%%man/man3/EVP_PKEY_new.3.gz
+%%MAN3%%man/man3/EVP_PKEY_new_CMAC_key.3.gz
 %%MAN3%%man/man3/EVP_PKEY_new_mac_key.3.gz
 %%MAN3%%man/man3/EVP_PKEY_paramgen.3.gz
 %%MAN3%%man/man3/EVP_PKEY_paramgen_init.3.gz
@@ -2087,6 +2091,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/SSL_get0_alpn_selected.3.gz
 %%MAN3%%man/man3/SSL_get0_chain_certs.3.gz
 %%MAN3%%man/man3/SSL_get0_param.3.gz
+%%MAN3%%man/man3/SSL_get0_peername.3.gz
 %%MAN3%%man/man3/SSL_get0_session.3.gz
 %%MAN3%%man/man3/SSL_get1_session.3.gz
 %%MAN3%%man/man3/SSL_get1_supported_ciphers.3.gz
@@ -2109,6 +2114,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/SSL_get_ex_data_X509_STORE_CTX_idx.3.gz
 %%MAN3%%man/man3/SSL_get_ex_new_index.3.gz
 %%MAN3%%man/man3/SSL_get_fd.3.gz
+%%MAN3%%man/man3/SSL_get_finished.3.gz
 %%MAN3%%man/man3/SSL_get_info_callback.3.gz
 %%MAN3%%man/man3/SSL_get_max_cert_list.3.gz
 %%MAN3%%man/man3/SSL_get_max_early_data.3.gz
@@ -2118,6 +2124,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/SSL_get_options.3.gz
 %%MAN3%%man/man3/SSL_get_peer_cert_chain.3.gz
 %%MAN3%%man/man3/SSL_get_peer_certificate.3.gz
+%%MAN3%%man/man3/SSL_get_peer_finished.3.gz
 %%MAN3%%man/man3/SSL_get_privatekey.3.gz
 %%MAN3%%man/man3/SSL_get_quiet_shutdown.3.gz
 %%MAN3%%man/man3/SSL_get_rbio.3.gz
@@ -2151,6 +2158,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/SSL_in_connect_init.3.gz
 %%MAN3%%man/man3/SSL_in_init.3.gz
 %%MAN3%%man/man3/SSL_is_init_finished.3.gz
+%%MAN3%%man/man3/SSL_is_dtls.3.gz
 %%MAN3%%man/man3/SSL_is_server.3.gz
 %%MAN3%%man/man3/SSL_library_init.3.gz
 %%MAN3%%man/man3/SSL_load_client_CA_file.3.gz
@@ -2188,6 +2196,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/SSL_set_ex_data.3.gz
 %%MAN3%%man/man3/SSL_set_fd.3.gz
 %%MAN3%%man/man3/SSL_set_generate_session_id.3.gz
+%%MAN3%%man/man3/SSL_set_hostflags.3.gz
 %%MAN3%%man/man3/SSL_set_info_callback.3.gz
 %%MAN3%%man/man3/SSL_set_max_cert_list.3.gz
 %%MAN3%%man/man3/SSL_set_max_early_data.3.gz
@@ -2235,6 +2244,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/SSL_use_RSAPrivateKey_file.3.gz
 %%MAN3%%man/man3/SSL_use_certificate.3.gz
 %%MAN3%%man/man3/SSL_use_certificate_ASN1.3.gz
+%%MAN3%%man/man3/SSL_use_certificate_chain_file.3.gz
 %%MAN3%%man/man3/SSL_use_certificate_file.3.gz
 %%MAN3%%man/man3/SSL_version.3.gz
 %%MAN3%%man/man3/SSL_want.3.gz
