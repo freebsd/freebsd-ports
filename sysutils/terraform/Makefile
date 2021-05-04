@@ -3,7 +3,7 @@ PORTVERSION=	0.13.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Provides a common configuration to launch infrastructure
 
 LICENSE=	MPL20
