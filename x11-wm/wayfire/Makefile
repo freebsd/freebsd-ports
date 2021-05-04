@@ -29,7 +29,7 @@ USE_GL=		egl glesv2
 USE_GNOME=	cairo
 USE_XORG=	pixman
 GH_ACCOUNT=	WayfireWM
-GH_TUPLE=	WayfireWM:wf-touch:b1075c5:wftouch/subprojects/wf-touch \
+GH_TUPLE=	WayfireWM:wf-touch:8974eb0:wftouch/subprojects/wf-touch \
 		WayfireWM:wf-utils:f45641b:wfutils/subprojects/wf-utils
 
 OPTIONS_DEFINE=	SUID X11
