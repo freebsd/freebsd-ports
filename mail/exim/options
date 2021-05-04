@@ -18,6 +18,7 @@ OPTIONS_DEFINE+=	ALT_CONFIG_PREFIX \
 			PRDR \
 			READLINE \
 			SUID \
+			TAINTWARN \
 			TCP_WRAPPERS \
 			WISHLIST \
 			EVENT \
@@ -125,6 +126,7 @@ SPF_DESC=		Enable Sender Policy Framework checking
 SQLITE_DESC=		Enable SQLite lookups
 SRS_DESC=		Enable Sender Rewriting Scheme
 SUID_DESC=		Install the exim binary suid root
+TAINTWARN_DESC=		Allow insecure tainted data (pre-4.93 config style, deprecated)
 TCP_WRAPPERS_DESC=	Enable /etc/hosts.allow access control
 GNUTLS_DESC=		Use GnuTLS instead of OpenSSL for TLS
 WISHLIST_DESC=		Include the unsupported patches

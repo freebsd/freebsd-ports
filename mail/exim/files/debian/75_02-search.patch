@@ -1,0 +1,39 @@
+From b71d675f695c2cf17357b190476129535d5f446c Mon Sep 17 00:00:00 2001
+From: "Heiko Schlittermann (HS12-RIPE)" <hs@schlittermann.de>
+Date: Thu, 1 Apr 2021 22:45:03 +0200
+Subject: [PATCH 02/23] search
+
+---
+ src/search.c | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+
+diff --git a/src/search.c b/src/search.c
+index f8aaacb04..f6e4d1f5b 100644
+--- a/src/search.c
++++ b/src/search.c
+@@ -343,12 +343,8 @@ lookup_info *lk = lookup_list[search_type];
+ uschar keybuffer[256];
+ int old_pool = store_pool;
+ 
+-if (filename && is_tainted(filename))
+-  {
+-  log_write(0, LOG_MAIN|LOG_PANIC,
+-    "Tainted filename for search: '%s'", filename);
++if (filename && is_tainted2(filename, LOG_MAIN|LOG_PANIC, "Tainted filename for search '%s'", filename))
+   return NULL;
+-  }
+ 
+ /* Change to the search store pool and remember our reset point */
+ 
+@@ -639,7 +635,7 @@ DEBUG(D_lookup)
+ /* Arrange to put this database at the top of the LRU chain if it is a type
+ that opens real files. */
+ 
+-if (  open_top != (tree_node *)handle 
++if (  open_top != (tree_node *)handle
+    && lookup_list[t->name[0]-'0']->type == lookup_absfile)
+   {
+   search_cache *c = (search_cache *)(t->data.ptr);
+-- 
+2.30.2
+

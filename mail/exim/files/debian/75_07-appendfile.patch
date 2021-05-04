@@ -1,0 +1,34 @@
+From c29b50d2fe17cc108d751175ed4f4113c25c1768 Mon Sep 17 00:00:00 2001
+From: "Heiko Schlittermann (HS12-RIPE)" <hs@schlittermann.de>
+Date: Sun, 28 Mar 2021 11:00:06 +0200
+Subject: [PATCH 07/23] appendfile
+
+---
+ src/transports/appendfile.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/src/transports/appendfile.c b/src/transports/appendfile.c
+index 8ab8b6016..7dbbaa2f9 100644
+--- a/src/transports/appendfile.c
++++ b/src/transports/appendfile.c
+@@ -1286,12 +1286,14 @@ if (!(path = expand_string(fdname)))
+     expand_string_message);
+   goto ret_panic;
+   }
+-if (is_tainted(path))
++{ uschar *m;
++if (m = is_tainted2(path, 0, "Tainted '%s' (file or directory "
++          "name for %s transport) not permitted", path, tblock->name))
+   {
+-  addr->message = string_sprintf("Tainted '%s' (file or directory "
+-    "name for %s transport) not permitted", path, tblock->name);
++  addr->message = m;
+   goto ret_panic;
+   }
++}
+ 
+ if (path[0] != '/')
+   {
+-- 
+2.30.2
+
