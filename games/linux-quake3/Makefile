@@ -13,10 +13,14 @@ DIST_SUBDIR=	${Q3PKGNAMEPREFIX}data
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena for Linux
 
+# Converted from RESTRICTED
+LICENSE=	Loki
+LICENSE_NAME=	Loki
+LICENSE_TEXT=	Restrictive license by Loki Software
+LICENSE_PERMS=	auto-accept
+
 USES=		linux zip:infozip
 NO_WRKSUBDIR=	yes
-
-RESTRICTED=	Restrictive license by Loki Software
 
 OPTIONS_MULTI=	TYPE
 OPTIONS_MULTI_TYPE=	CLIENT DEDICATED SMP

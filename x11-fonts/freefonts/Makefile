@@ -13,19 +13,22 @@ MASTER_SITE_SUBDIR=	gimp/fonts
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Collection of ATM fonts (not all free) from the CICA archives
 
-BUILD_DEPENDS=	type1inst:x11-fonts/p5-type1inst
-
-NO_ARCH=	yes
-SUB_FILES=	pkg-message
-USES=		fonts
-
 # Some of the fonts are shareware. Some are freeware. Permission must
 # be obtained before distributing at least four (mazama.license,
 # muriel.license, roosthea.license, shf_____.license). Two have
 # inconsistent licenses (tempofon.license and tempoita.license say
 # "placed into the public domain and may [not be] sold")
+# Converted from RESTRICTED
+LICENSE=	freefont
+LICENSE_NAME=	freefont
+LICENSE_TEXT=	License prohibits redistribution; see individual .license files
+LICENSE_PERMS=	auto-accept
 
-RESTRICTED=	License prohibits redistribution; see individual .license files
+BUILD_DEPENDS=	type1inst:x11-fonts/p5-type1inst
+
+NO_ARCH=	yes
+SUB_FILES=	pkg-message
+USES=		fonts
 
 NO_WRKSUBDIR=	yes
 

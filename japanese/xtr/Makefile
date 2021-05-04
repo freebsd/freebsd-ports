@@ -10,13 +10,17 @@ DISTNAME=	${PORTNAME}1.50e-0.2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese text formatting processor
 
+# Converted from NO_CDROM
+LICENSE=	xtr
+LICENSE_NAME=	xtr
+LICENSE_TEXT=	Need to obtain permission for commercial redistribution
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 USES=		tar:tgz
 USE_CSTD=	c89
 USE_GCC=	yes
 
 GNU_CONFIGURE=	yes
-
-NO_CDROM=	Need to obtain permission for commercial redistribution
 
 OPTIONS_DEFINE=	DOCS
 

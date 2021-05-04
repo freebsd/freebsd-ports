@@ -10,8 +10,12 @@ DISTFILES=	ecw_jpeg_2000_sdk_3_3_source.zip
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Erdas ECW and JPEG2000 support library
 
-RESTRICTED=	Registration required to download sources,\
+# Converted from RESTRICTED
+LICENSE=	libecwj2
+LICENSE_NAME=	libecwj2
+LICENSE_TEXT=	Registration required to download sources,\
 		but sources no longer available on ERDAS website
+LICENSE_PERMS=	auto-accept
 
 USES=		gmake libtool zip
 USE_LDCONFIG=	yes

@@ -8,7 +8,12 @@ MASTER_SITES=	LOCAL/cy
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Web Mirroring Program
 
-RESTRICTED=	This program cannot be distributed if modified in any way.  Don't sell for profit without written permission
+# Converted from RESTRICTED
+LICENSE=	webcopy
+LICENSE_NAME=	webcopy
+LICENSE_TEXT=	This program cannot be distributed if modified in any way.  Don't sell for profit without written permission
+LICENSE_PERMS=	auto-accept
+
 ALL_TARGET=
 
 USES=		perl5

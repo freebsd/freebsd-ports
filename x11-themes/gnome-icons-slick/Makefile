@@ -14,7 +14,11 @@ DISTNAME=	ICON-Slick
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slick Icons for Gnome
 
-RESTRICTED=	${REASON}
+# Converted from RESTRICTED
+LICENSE=	icons
+LICENSE_NAME=	icons
+LICENSE_TEXT=	${REASON}
+LICENSE_PERMS=	auto-accept
 
 USES=	tar:bzip2
 NO_WRKSUBDIR=	yes

@@ -12,11 +12,15 @@ COMMENT=	AacPlus v2 command-line encoder
 
 USES=		gmake
 
+# Converted from RESTRICTED
+LICENSE=	AACPLUSENC
+LICENSE_NAME=	aacplusenc
+LICENSE_TEXT=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
+LICENSE_PERMS=	auto-accept
+
 OPTIONS_DEFINE=	FFTW3
 OPTIONS_DEFAULT=	FFTW3
 FFTW3_DESC=	Use FFTW3 library for performance
-
-RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 
 CONFLICTS=	libaacplus-[0-9]*
 

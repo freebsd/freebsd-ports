@@ -10,9 +10,14 @@ DISTNAME=	CLI-FreeBSD-3.6-1-120913
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	HighPoint storage controllers management CLI
 
+# Converted from RESTRICTED
+LICENSE=	hptcli
+LICENSE_NAME=	hptcli
+LICENSE_TEXT=	Redistribution is not allowed
+LICENSE_PERMS=	auto-accept
+
 EXTRACT_SUFX=	.tgz
 
-RESTRICTED=	Redistribution is not allowed
 ONLY_FOR_ARCHS=	i386 amd64
 
 NO_BUILD=	yes

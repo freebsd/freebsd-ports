@@ -12,13 +12,17 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for passing mail across serial links
 
+# Converted from LEGAL_TEXT
+LICENSE=	djb
+LICENSE_NAME=	djb
+LICENSE_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 RUN_DEPENDS=	tcpserver:sysutils/ucspi-tcp
 UCSPI_SSL_RUN_DEPENDS=	sslclient:sysutils/ucspi-ssl
 
 USES=		qmail:run
 OPTIONS_SUB=	yes
-
-LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
 ALL_TARGET=	it
 

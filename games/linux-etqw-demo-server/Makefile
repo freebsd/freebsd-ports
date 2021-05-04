@@ -12,7 +12,12 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enemy Territory: QUAKE Wars Demo Server for Linux
 
-NO_CDROM=	Redistribution is limited
+# Converted from NO_CDROM
+LICENSE=	IDSOFTWARE
+LICENSE_NAME=	IDSOFTWARE
+LICENSE_TEXT=	Redistribution is limited
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 NO_BUILD=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64

@@ -12,6 +12,12 @@ DISTNAME=	dcl-${PORTVERSION}-C
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Scientific graphic library for geoscience
 
+# Converted from RESTRICTED
+LICENSE=	cdcl
+LICENSE_NAME=	cdcl
+LICENSE_TEXT=	No commercial use
+LICENSE_PERMS=	auto-accept
+
 BROKEN=			fails to fetch from mastersite (newest release is 7.4.0 of 2020611)
 BROKEN_armv6=		fails to link: final link failed: Nonrepresentable section on output
 BROKEN_armv7=		fails to link: final link failed: Nonrepresentable section on output
@@ -33,8 +39,6 @@ BINARIES=	cdclcmap cdclclr cdcldate cdcldbs cdclexec cdclfont \
 		cdclpara cdcltone cdcltrf cdclver
 PORTDOCS=	CHECK CREDITS HISTORY README
 PORTEXAMPLES=	*
-
-RESTRICTED=	No commercial use
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|$$(DCLLANG)dcl$$(DCLVERNUM)|$$(DCLLANG)dcl|' ${WRKSRC}/Mkinclude

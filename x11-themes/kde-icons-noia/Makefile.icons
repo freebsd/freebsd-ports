@@ -7,16 +7,20 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	KDE iconset theme
 
+.ifndef(WITHOUT_RESTRICTIONS)
+# Converted from RESTRICTED
+LICENSE=	theme
+LICENSE_NAME=	theme
+LICENSE_TEXT?=	may contain iconic, visual, graphical or other\
+		elements that may not be distributed without the\
+		consent of either the trademark or the patent holder
+LICENSE_PERMS=	auto-accept
+.endif
+
 NO_BUILD=	yes
 
 # default installation directory
 PORT_SHAREDIR?=	${DISTNAME}
-
-.ifndef(WITHOUT_RESTRICTIONS)
-RESTRICTED?=    It may contain iconic, visual, graphical or other\
-		elements that may not be distributed without the\
-		consent of either the trademark or the patent holder
-.endif
 
 INDEX_FILES=	index.desktop index.theme
 

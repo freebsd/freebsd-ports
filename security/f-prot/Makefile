@@ -10,7 +10,11 @@ DISTNAME=	fp-FreeBSD-x86_32-ws-${PORTVERSION}
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	F-Prot Antivirus for BSD Workstations
 
-RESTRICTED=	Free for personal users on personal workstations only
+# Converted from RESTRICTED
+LICENSE=	f-prot
+LICENSE_NAME=	f-prot
+LICENSE_TEXT=	Free for personal users on personal workstations only
+LICENSE_PERMS=	auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

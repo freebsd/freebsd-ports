@@ -8,10 +8,14 @@ DISTNAME=	jre-${JRE_VERSION}u${JRE_UPDATE_VERSION}-linux-${JAVA_DISTFILE_ARCH}
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JRE_VERSION} Runtime Environment for Linux
 
+# Converted from RESTRICTED
+LICENSE=	jre
+LICENSE_NAME=	jre
+LICENSE_TEXT=	Redistribution of repackaged binaries not permitted
+LICENSE_PERMS=	auto-accept
+
 RUN_DEPENDS=	javavm:java/javavmwrapper
 
-NO_CDROM=	License does not allow distribution with fee
-RESTRICTED=	Redistribution of repackaged binaries not permitted
 PKGNAMESUFFIX=	1${JRE_VERSION}
 
 WRKSRC=		${WRKDIR}/jre${DL_JRE_VERSION}

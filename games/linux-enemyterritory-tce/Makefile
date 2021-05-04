@@ -12,11 +12,16 @@ DISTFILES=	tcetest049.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern tactical Enemy Territory modification
 
+# Converted from RESTRICTED
+LICENSE=	tcetest
+LICENSE_NAME=	tcetest
+LICENSE_TEXT=	Redistribution is limited, see license
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 RUN_DEPENDS=	et:games/linux-enemyterritory
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux zip
-RESTRICTED=	Redistribution is limited, see license
 ETDIR=		${PREFIX}/lib/enemyterritory
 PORTDOCS=	*
 

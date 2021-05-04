@@ -10,11 +10,15 @@ DISTFILES=	xhime151.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resident Himechan for X Window System
 
+# Converted from NO_CDROM
+LICENSE=	xhime
+LICENSE_NAME=	xhime
+LICENSE_TEXT=	Contains commercial character data
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 WRKSRC=		${WRKDIR}/xhime1.51
 USES=		imake xorg
 USE_XORG=	x11 xext
-
-NO_CDROM=	Contains commercial character data
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

@@ -12,6 +12,12 @@ DISTFILES=	${PORTNAME:S|ssam|serious.sam.|}_${PORTVERSION:S|b|beta|}-english-2.r
 MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Serious Sam: The Second Encounter for Linux
 
+# Converted from RESTRICTED
+LICENSE=	ssam
+LICENSE_NAME=	ssam
+LICENSE_TEXT=	Redistribution is limited, see license
+LICENSE_PERMS=	auto-accept
+
 OPTIONS_DEFINE=	VORBIS DOCS
 OPTIONS_DEFAULT=	VORBIS
 
@@ -19,7 +25,6 @@ USES=		linux
 STRIP=
 USE_LINUX=	xorglibs
 NO_BUILD=	yes
-RESTRICTED=	Redistribution is limited, see license
 PORTDOCS=	README.liflg ShellSymbols.txt changes.txt Notes_1_04.txt
 SUB_FILES=	pkg-message
 

@@ -10,10 +10,14 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Lisp macro to read math statements in infix notation
 
+# Converted from NO_CDROM
+LICENSE=	infix
+LICENSE_NAME=	infix
+LICENSE_TEXT=	No fees or compensation can be charged
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/infix/infix.asd:devel/cl-infix
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/infix/infix.asd:devel/cl-infix
-
-NO_CDROM=	No fees or compensation can be charged
 
 USE_ASDF_FASL=	yes
 FASL_TARGET=	sbcl

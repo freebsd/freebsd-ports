@@ -12,11 +12,16 @@ DISTFILES=	${PORTNAME:S|ssam|serious.sam.|}_${PORTVERSION:S|b|beta|}-english-2.r
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serious Sam: The First Encounter
 
+# Converted from RESTRICTED
+LICENSE=	ssam
+LICENSE_NAME=	ssam
+LICENSE_TEXT=	Redistribution is limited, see license
+LICENSE_PERMS=	auto-accept
+
 USES=		linux
 STRIP=
 USE_LINUX=	xorglibs
 NO_BUILD=	yes
-RESTRICTED=	Redistribution is limited, see license
 PORTDOCS=	README.liflg ShellSymbols.txt changes.txt notes.txt
 SUB_FILES=	pkg-message
 

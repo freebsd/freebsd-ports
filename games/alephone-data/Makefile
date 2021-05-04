@@ -12,12 +12,17 @@ DIST_SUBDIR=	alephone
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Released Marathon data files for the Aleph One port
 
+# Converted from NO_CDROM
+LICENSE=	alephone-data
+LICENSE_NAME=	alephone-data
+LICENSE_TEXT=	Bungie/Microsoft do not allow charging for Marathon data files
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 RUN_DEPENDS=	alephone:games/alephone
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-NO_CDROM=	Bungie/Microsoft do not allow charging for Marathon data files
 NO_WRKSUBDIR=	yes
 
 USES=		zip

@@ -14,11 +14,16 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER?=	lx@FreeBSD.org
 COMMENT?=	Collection of secure and reliable DNS tools
 
+# Converted from LEGAL_TEXT
+LICENSE=	djb
+LICENSE_NAME=	djb
+LICENSE_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 RUN_DEPENDS=	setuidgid:sysutils/daemontools \
 		tcpserver:sysutils/ucspi-tcp
 
 CONFLICTS=	djbdns-tools-[0-9]*
-LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
 OPTIONS_DEFINE=	DUMPCACHE IP6 IGNOREIP JUMBO MAN PERSISTENT_MMAP SRV DNSCURVE ADD_USERS
 OPTIONS_DEFAULT=	MAN

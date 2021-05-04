@@ -8,12 +8,17 @@ DISTNAME=	jdk-${JDK_VERSION}u${JDK_UPDATE_VERSION}-linux-${JAVA_DISTFILE_ARCH}
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JDK_VERSION} Development Kit for Linux
 
+# Converted from RESTRICTED
+LICENSE=	jdk
+LICENSE_NAME=	jdk
+LICENSE_TEXT=	Redistribution of repackaged binaries not permitted
+LICENSE_PERMS=	auto-accept
+
 RUN_DEPENDS=	javavm:java/javavmwrapper
 
 OPTIONS_DEFINE=	DEMO
 DEMO_DESC=	Install demos and samples
 
-RESTRICTED=	Redistribution of repackaged binaries not permitted
 PKGNAMESUFFIX=	1${JDK_VERSION}
 
 WRKSRC=		${WRKDIR}/jdk${DL_JDK_VERSION}

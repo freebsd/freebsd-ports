@@ -13,13 +13,18 @@ DIST_SUBDIR=	linux-ut
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Gold for Linux
 
+# Converted from RESTRICTED
+LICENSE=	unreal
+LICENSE_NAME=	unreal
+LICENSE_TEXT=	Redistribution is limited, see license
+LICENSE_PERMS=	auto-accept
+
 BUILD_DEPENDS=	ut:games/linux-ut
 RUN_DEPENDS=	ut:games/linux-ut
 
 USES=		linux
 USE_LINUX=	xorglibs
 NO_BUILD=	yes
-RESTRICTED=	Redistribution is limited, see license
 
 PLIST_SUB+=	UT="" UG=""
 SUB_FILES=	pkg-message

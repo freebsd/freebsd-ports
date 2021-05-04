@@ -9,6 +9,12 @@ MASTER_SITES=	http://cr.yp.to/publicfile/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure, read-only, anonymous HTTP/FTP server
 
+# Converted from LEGAL_TEXT
+LICENSE=	djb
+LICENSE_NAME=	djb
+LICENSE_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 RUN_DEPENDS=	setuidgid:sysutils/daemontools \
 		tcpserver:sysutils/ucspi-tcp
 
@@ -20,7 +26,6 @@ ENV_FILETYPES_DESC=	get mime types from the environment
 SSL_DESC=		provide SSL support through ucspi-ssl
 
 CONFLICTS=	xshttpd-3*
-LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
 .include <bsd.port.options.mk>
 

@@ -9,10 +9,14 @@ DISTNAME=	serverjre-${JRE_VERSION}.${JRE_UPDATE_VERSION}.${JRE_PATCH_VERSION}_li
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JRE_VERSION} Server Runtime Environment for Linux
 
+# Converted from RESTRICTED
+LICENSE=	serverjre
+LICENSE_NAME=	serverjre
+LICENSE_TEXT=	Redistribution of repackaged binaries not permitted
+LICENSE_PERMS=	auto-accept
+
 ONLY_FOR_ARCHS=	amd64
 RUN_DEPENDS=	javavm:java/javavmwrapper
-
-RESTRICTED=	Redistribution of repackaged binaries not permitted
 
 WRKSRC=		${WRKDIR}/jdk-${DL_JRE_VERSION}
 PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}

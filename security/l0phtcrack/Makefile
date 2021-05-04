@@ -12,9 +12,14 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cracks SAMBA or Windows NT passwords
 
+# Converted from RESTRICTED
+LICENSE=	l0phtcrack
+LICENSE_NAME=	l0phtcrack
+LICENSE_TEXT=	uses GNU getopt with BSDish-licensed code from OpenSSL
+LICENSE_PERMS=	auto-accept
+
 USES=		dos2unix perl5 zip
 USE_PERL5=	build
-RESTRICTED=	uses GNU getopt with BSDish-licensed code from OpenSSL
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/lc_CLI

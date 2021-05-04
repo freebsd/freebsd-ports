@@ -9,6 +9,12 @@ DISTNAME=	ib12
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Enables dynamic exchange of data between JavaBeans(TM)
 
+# Converted from NO_CDROM
+LICENSE=	infobus
+LICENSE_NAME=	infobus
+LICENSE_TEXT=	See the license
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 OPTIONS_DEFINE=		DOCS EXAMPLES
 
 USES=		zip
@@ -16,7 +22,6 @@ USE_JAVA=	YES
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-NO_CDROM=	See the license
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

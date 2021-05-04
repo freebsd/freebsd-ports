@@ -14,7 +14,11 @@ DISTNAME=	ICON-Stylish
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stylish Icons for Gnome
 
-RESTRICTED=	${REASON}
+# Converted from RESTRICTED
+LICENSE=	icons
+LICENSE_NAME=	icons
+LICENSE_TEXT=	${REASON}
+LICENSE_PERMS=	auto-accept
 
 NO_WRKSUBDIR=	yes
 

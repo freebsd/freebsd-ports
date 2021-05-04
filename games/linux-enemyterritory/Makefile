@@ -13,10 +13,15 @@ DISTFILES=	et-linux-2.60.x86.run:full ET-2.60b.zip:patch
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
+# Converted from NO_CDROM
+LICENSE=	IDSOFTWARE
+LICENSE_NAME=	IDSOFTWARE
+LICENSE_TEXT=	Redistribution limited
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux zip:infozip
 USE_LINUX=	dri xorglibs
-NO_CDROM=	Redistribution limited
 ETDIR=		${PREFIX}/lib/${PORTNAME}
 PATCH_260B_DIR=	Enemy Territory 2.60b
 

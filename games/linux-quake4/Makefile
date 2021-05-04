@@ -14,10 +14,15 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake 4 for Linux
 
+# Converted from NO_CDROM
+LICENSE=	IDSOFTWARE
+LICENSE_NAME=	IDSOFTWARE
+LICENSE_TEXT=	Redistribution is limited, see license
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 USES=		linux
 USE_LINUX=	sdl12
 NO_WRKSUBDIR=	yes
-NO_CDROM=	Redistribution is limited, see license
 Q4DIR=		lib/${PORTNAME}
 PLIST_SUB+=	Q4DIR="${Q4DIR}" \
 		LINUXBASE="${LINUXBASE}"

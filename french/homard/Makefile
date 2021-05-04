@@ -8,6 +8,14 @@ CATEGORIES=	french cad linux
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Refinement and de-refinement mesh tool
 
+# Converted from RESTRICTED
+LICENSE=	homard
+LICENSE_NAME=	homard
+LICENSE_TEXT=	The free downloading of HOMARD software is only allowed for coupling\
+		with Code_Aster. For any other use, a license agreement is requested.\
+		Please contact HOMARD project: <homard@edf.fr>.
+LICENSE_PERMS=	auto-accept
+
 ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	${LOCALBASE}/aster/${VER}/bin/aster:french/aster
@@ -16,9 +24,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash		\
 
 USES=		linux python:3.6+ shebangfix
 
-RESTRICTED=	The free downloading of HOMARD software is only allowed for coupling\
-		with Code_Aster. For any other use, a license agreement is requested.\
-		Please contact HOMARD project: <homard@edf.fr>.
 SHEBANG_FILES=	${WRKSRC}/ASTER_HOMARD/homard	\
 		${WRKSRC}/homard_base ${WRKSRC}/setup_homard.py
 REINPLACE_ARGS=	-i ""

@@ -15,10 +15,15 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DOOM III demo for Linux
 
+# Converted from NO_CDROM
+LICENSE=	doom3
+LICENSE_NAME=	doom3
+LICENSE_TEXT=	Redistribution is limited, see license; Requested by id Software
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux
 USE_LINUX=	dri xorglibs
-NO_CDROM=	Redistribution is limited, see license; Requested by id Software
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 DOOMDIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}

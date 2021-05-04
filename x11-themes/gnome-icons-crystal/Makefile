@@ -15,7 +15,11 @@ EXTRACT_SUFX=	.bz2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Crystal SVG Icons for Gnome
 
-RESTRICTED=	${REASON}
+# Converted from RESTRICTED
+LICENSE=	icons
+LICENSE_NAME=	icons
+LICENSE_TEXT=	${REASON}
+LICENSE_PERMS=	auto-accept
 
 USES=		tar:bzip2
 NO_WRKSUBDIR=	yes

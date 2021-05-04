@@ -13,7 +13,11 @@ EXTRACT_SUFX=	.gz.sh
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena Demo
 
-RESTRICTED=	Restrictive license by Loki Software
+# Converted from RESTRICTED
+LICENSE=	Loki
+LICENSE_NAME=	Loki
+LICENSE_TEXT=	Restrictive license by Loki Software
+LICENSE_PERMS=	auto-accept
 
 USES=		linux
 USE_LINUX=	dri

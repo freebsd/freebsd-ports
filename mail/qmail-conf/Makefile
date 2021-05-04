@@ -13,12 +13,16 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Configure various qmail services to run under daemontools
 
+# Converted from LEGAL_TEXT
+LICENSE=	djb
+LICENSE_NAME=	djb
+LICENSE_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 USES=		qmail:run
 
 ALL_TARGET=	prog
 INSTALL_TARGET=	setup check
-
-LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
 PREFIX?=	${QMAIL_PREFIX}
 NO_PREFIX_RMDIR=yes

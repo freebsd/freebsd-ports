@@ -9,7 +9,11 @@ MASTER_SITES=	http://cr.yp.to/djbfft/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Extremely fast library for floating-point convolution
 
-LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
+# Converted from LEGAL_TEXT
+LICENSE=	djb
+LICENSE_NAME=	djb
+LICENSE_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 DISABLE_SIZE=	yes
 ALL_TARGET=

@@ -14,7 +14,11 @@ DISTNAME=	ICON-Snow-Apple
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Snow-Apple Icons for Gnome
 
-RESTRICTED=	${REASON}
+# Converted from RESTRICTED
+LICENSE=	icons
+LICENSE_NAME=	icons
+LICENSE_TEXT=	${REASON}
+LICENSE_PERMS=	auto-accept
 
 NO_WRKSUBDIR=	yes
 

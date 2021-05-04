@@ -12,9 +12,13 @@ EXTRACT_SUFX=	.ttf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old German blackletter handwriting (Suetterlin)
 
-USES=		fonts
+# Converted from RESTRICTED
+LICENSE=	manu-gothica
+LICENSE_NAME=	manu-gothica
+LICENSE_TEXT=	The font is free for personal use
+LICENSE_PERMS=	auto-accept
 
-RESTRICTED=	The font is free for personal use
+USES=		fonts
 
 FONTNAME=	TTF
 EXTRACT_CMD=	${CP}

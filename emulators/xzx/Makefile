@@ -11,7 +11,11 @@ DISTNAME=	${PORTNAME}-pro-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZX Spectrum (48K/128K/+3) Emulator for X11
 
-RESTRICTED=	Redistribution forbidden by license
+# Converted from RESTRICTED
+LICENSE=	xzx
+LICENSE_NAME=	xzx
+LICENSE_TEXT=	Redistribution forbidden by license
+LICENSE_PERMS=	auto-accept
 
 USES=		imake:env motif xorg
 USE_XORG=	x11 ice sm xext xpm xt xxf86vm

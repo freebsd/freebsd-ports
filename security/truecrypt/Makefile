@@ -17,20 +17,23 @@ EXTRACT_ONLY=	${TC_SRCFILE} wxWidgets-${WX_VER}.tar.bz2
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Free open-source disk encryption software
 
+# Converted from RESTRICTED
+# May not be redistributed.  Must accept license to download.
+LICENSE=	TRUECRYPT
+LICENSE_NAME=	truecrypt
+LICENSE_FILE=	${WRKSRC}/License.txt
+LICENSE_PERMS=	none
+
 BUILD_DEPENDS=	nasm:devel/nasm
 RUN_DEPENDS=	sudo:security/sudo
 
 WRKSRC=		${WRKDIR}/truecrypt-${PORTVERSION}-source
 
 USES=		fuse iconv pkgconfig gmake
-RESTRICTED=	May not be redistributed.  Must accept license to download.
-NO_CDROM=	May not be redistributed.  Must accept license to download.
 NO_PACKAGE=	May not be redistributed.  Must accept license to download.
 
 TC_SRCFILE=	TrueCrypt_${PORTVERSION}_Source.tar.gz
 WX_VER=		2.8.12
-
-LICENSE_FILE=	${WRKSRC}/License.txt
 
 PLIST_FILES=	bin/truecrypt
 

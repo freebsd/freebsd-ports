@@ -9,6 +9,12 @@ DISTNAME=		VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386
 MAINTAINER=		zi@FreeBSD.org
 COMMENT=		VMware vSphere SDK for Perl with CLI tools
 
+# Converted from RESTRICTED
+LICENSE=	VMware
+LICENSE_NAME=	vmware
+LICENSE_TEXT=	May not be redistributed.  Must accept license to download.
+LICENSE_PERMS=	auto-accept
+
 BUILD_DEPENDS=		p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
 			p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
 			p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
@@ -40,8 +46,6 @@ RUN_DEPENDS=		p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
 
 USES=			perl5 shebangfix
 USE_PERL5=		configure
-RESTRICTED=		May not be redistributed.  Must accept license to download.
-NO_CDROM=		May not be redistributed.  Must accept license to download.
 NO_PACKAGE=		May not be redistributed.  Must accept license to download.
 SHEBANG_FILES=		apps/general/* apps/host/* apps/performance/* apps/session/* apps/vm/* bin/*
 
