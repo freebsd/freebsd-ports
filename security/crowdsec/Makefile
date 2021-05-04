@@ -1,5 +1,5 @@
 PORTNAME=	crowdsec
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -14,7 +14,8 @@ USES=		go:modules
 GO_MODULE=	github.com/crowdsecurity/crowdsec
 
 GO_BUILDFLAGS=	-ldflags "-s -w \
-		-X github.com/crowdsecurity/crowdsec/pkg/cwversion.Version=${PORTVERSION}"
+		-X github.com/crowdsecurity/crowdsec/pkg/cwversion.Version=v${PORTVERSION}\
+		-X github.com/crowdsecurity/crowdsec/pkg/cwversion.System=freebsd"
 
 GO_TARGET=	./cmd/crowdsec \
 		./cmd/crowdsec-cli
