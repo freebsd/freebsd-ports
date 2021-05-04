@@ -54,7 +54,7 @@ DISTFILES+=	${CARGO_DIST_SUBDIR}/${_crate}${CARGO_CRATE_EXT}:cargo_${_crate:C/[^
 
 CARGO_BUILDDEP?=	yes
 .if ${CARGO_BUILDDEP:tl} == "yes"
-BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.51.0:lang/${RUST_DEFAULT}
+BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.52.1:lang/${RUST_DEFAULT}
 .endif
 
 # Location of cargo binary (default to lang/rust's Cargo binary)
@@ -91,6 +91,7 @@ RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
 USE_GCC?=	yes
+STRIP_CMD=	${LOCALBASE}/bin/strip # unsupported e_type with base strip
 .endif
 
 # Helper to shorten cargo calls.
