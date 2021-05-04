@@ -424,6 +424,7 @@
     SUBDIR += minisat
     SUBDIR += minizinc
     SUBDIR += minizinc-ide
+    SUBDIR += minizinc-solvers
     SUBDIR += miracl
     SUBDIR += mlpack
     SUBDIR += moab
