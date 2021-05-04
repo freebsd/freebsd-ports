@@ -346,6 +346,7 @@
     SUBDIR += ipopt
     SUBDIR += ised
     SUBDIR += jacal
+    SUBDIR += jacop
     SUBDIR += jags
     SUBDIR += jama
     SUBDIR += jeuclid
