@@ -1,7 +1,7 @@
 bin/zrythm
 bin/zrythm_gdb
-bin/zrythm_valgrind
 bin/zrythm_launch
+bin/zrythm_valgrind
 etc/bash_completion.d/zrythm
 share/applications/zrythm.desktop
 share/fonts/zrythm/DSEG14-Classic-MINI/DSEG-LICENSE.txt
@@ -46,6 +46,7 @@ share/locale/pt/LC_MESSAGES/zrythm.mo
 share/locale/pt_BR/LC_MESSAGES/zrythm.mo
 share/locale/ru/LC_MESSAGES/zrythm.mo
 share/locale/sv/LC_MESSAGES/zrythm.mo
+share/locale/uk/LC_MESSAGES/zrythm.mo
 share/locale/zh_CN/LC_MESSAGES/zrythm.mo
 share/locale/zh_TW/LC_MESSAGES/zrythm.mo
 share/man/man1/zrythm.1.gz
@@ -147,6 +148,9 @@ share/mime/packages/org.zrythm.Zrythm-mime.xml
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/text-bubble.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/track-inspector.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/unfavorite.svg
+%%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/unlisten.svg
+%%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/unmute.svg
+%%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/unsolo.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/view-media-visualization.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/view-visible.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/waveform.svg
