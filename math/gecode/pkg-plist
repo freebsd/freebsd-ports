@@ -762,3 +762,4 @@ lib/libgecodesupport.so
 %%DATADIR%%/mznlib/table_int.mzn
 %%DATADIR%%/mznlib/value_precede_int.mzn
 %%DATADIR%%/mznlib/value_precede_set.mzn
+share/minizinc/solvers/gecode.msc

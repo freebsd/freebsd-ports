@@ -1,0 +1,9 @@
+{
+  "id" : "gecode",
+  "name" : "Gecode",
+  "executable" : "%%PREFIX%%/bin/fzn-gecode",
+  "version": "%%PORTVERSION%%",
+  "mznlib": "%%DATADIR%%/mznlib",
+  "supportsFzn":true,
+  "supportsNL":false
+}

@@ -3,6 +3,7 @@
 PORTNAME=	gecode
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	6.2.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
@@ -28,6 +29,9 @@ GH_ACCOUNT=	Gecode
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
+SUB_FILES=	${PORTNAME}.msc
+SUB_LIST=	PORTVERSION=${PORTVERSION}
+
 OPTIONS_DEFINE=		GIST
 OPTIONS_SUB=		yes
 
@@ -35,5 +39,10 @@ GIST_DESC=		Enable gist, graphical and interactive search tool
 GIST_CMAKE_BOOL=	ENABLE_GIST
 GIST_USES=		qt:5
 GIST_USE=		qt=core,gui,printsupport,widgets,qmake_build,buildtools_build
+
+post-install: # https://github.com/Gecode/gecode/issues/105
+	# install MiniZinc configuration file
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/minizinc/solvers
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.msc ${STAGEDIR}${PREFIX}/share/minizinc/solvers
 
 .include <bsd.port.mk>
