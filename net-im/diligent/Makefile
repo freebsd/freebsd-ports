@@ -6,7 +6,7 @@ PORTREVISION=	8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial Qt Slack client
 
 LICENSE=	LGPL3
