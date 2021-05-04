@@ -2,7 +2,7 @@
 
 PORTNAME=	gnome-shell
 PORTVERSION=	3.36.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -39,6 +39,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libgraphene-1.0.so:graphics/graphene \
 		libgnome-autoar-0.so:archivers/gnome-autoar
 RUN_DEPENDS=	gnome-control-center:sysutils/gnome-control-center \
+		gkbd-keyboard-display:x11/libgnomekbd \
 		gdm:x11/gdm
 
 PORTSCOUT=	limitw:1,even
