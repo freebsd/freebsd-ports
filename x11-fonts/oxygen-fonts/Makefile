@@ -3,7 +3,7 @@ PORTNAME=	oxygen-fonts
 DISTVERSION=	5.4.3
 CATEGORIES=	x11-fonts kde-plasma
 
-MAINTAINER=	vishwin@vishwin.info
+MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Plasma5 Oxygen font family
 
 LICENSE=	OFL11 GPLv3RLE+
