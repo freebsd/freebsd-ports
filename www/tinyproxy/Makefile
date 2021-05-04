@@ -1,7 +1,7 @@
 # Created by: Mitsuru Yoshida <mitsuru@riken.go.jp>
 
 PORTNAME=	tinyproxy
-PORTVERSION=	1.10.0
+PORTVERSION=	1.11.0
 MASTER_SITES=	https://github.com/tinyproxy/tinyproxy/releases/download/${PORTVERSION}/
 PORTEPOCH=	1
 CATEGORIES=	www
