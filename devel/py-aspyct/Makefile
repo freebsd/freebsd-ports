@@ -12,6 +12,9 @@ COMMENT=	Python library including an aspect-oriented programming (AOP) engine
 
 LICENSE=	LGPL3
 
+DEPRECATED=	Unmaintained upstream, uses old Python
+EXPIRATION_DATE=2021-06-05
+
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
