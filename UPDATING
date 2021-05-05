@@ -9,10 +9,12 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of sysutils/terraform
   AUTHOR: 0mp@FreeBSD.org
 
-  Terraform has been updated to 0.14, which introduces several incompatible
-  changes. Please follow upgrading guide when updating the package.
+  Terraform has been updated from 0.13 to 0.15, which introduces several
+  incompatible changes. Please follow upgrading guide when updating
+  the package.
 
     https://www.terraform.io/upgrade-guides/0-14.html
+    https://www.terraform.io/upgrade-guides/0-15.html
 
 20210426:
   AFFECTS: users of x11-fonts/iosevka
