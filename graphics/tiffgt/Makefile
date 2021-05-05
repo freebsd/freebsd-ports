@@ -1,5 +1,5 @@
 PORTNAME=	tiffgt
-DISTVERSION=	4.2.0
+DISTVERSION=	4.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://download.osgeo.org/libtiff/
 DISTNAME=	tiff-${DISTVERSION}
