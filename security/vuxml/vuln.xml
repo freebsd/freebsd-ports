@@ -76,6 +76,51 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1766359c-ad6e-11eb-b2a4-080027e50e6d">
+    <topic>Django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py36-django22</name>
+	<name>py37-django22</name>
+	<name>py38-django22</name>
+	<name>py39-django22</name>
+	<range><lt>2.2.21</lt></range>
+      </package>
+      <package>
+	<name>py36-django31</name>
+	<name>py37-django31</name>
+	<name>py38-django31</name>
+	<name>py39-django31</name>
+	<range><lt>3.1.9</lt></range>
+      </package>
+      <package>
+	<name>py36-django32</name>
+	<name>py37-django32</name>
+	<name>py38-django32</name>
+	<name>py39-django32</name>
+	<range><lt>3.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Django Release reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2021/may/04/security-releases/">
+	  <p>CVE-2021-31542:Potential directory-traversal via uploaded files.</p>
+	  <p>MultiPartParser, UploadedFile, and FieldFile allowed directory-traversal
+	    via uploaded files with suitably crafted file names.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2021/may/04/security-releases/</url>
+      <cvename>CVE-2021-31542</cvename>
+    </references>
+    <dates>
+      <discovery>2021-04-22</discovery>
+      <entry>2021-05-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bffa40db-ad50-11eb-86b8-080027846a02">
     <topic>Python -- multiple vulnerabilities</topic>
     <affects>
