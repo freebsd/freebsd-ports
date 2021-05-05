@@ -1,6 +1,8 @@
 
 CATEGORIES=	databases
 
+PORTREVISION=	1
+
 MASTERDIR=	${.CURDIR}/../../lang/php80
 
 PKGNAMESUFFIX=	-pdo_pgsql
