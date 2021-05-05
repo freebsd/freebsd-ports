@@ -1,5 +1,5 @@
 PORTNAME=	resdk
-DISTVERSION=	13.1.0
+DISTVERSION=	13.2.0
 CATEGORIES=	biology python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,6 +10,8 @@ COMMENT=	Resolwe SDK to interact with Resolwe server and Resolwe Bioinformatics
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	\
+		${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}chardet<=4.0,>=2.0:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>0:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.0.0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2018.4:devel/py-pytz@${PY_FLAVOR} \
