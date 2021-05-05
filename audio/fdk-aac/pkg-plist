@@ -10,5 +10,5 @@ lib/cmake/fdk-aac/fdk-aac-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/fdk-aac/fdk-aac-targets.cmake
 lib/libfdk-aac.so
 lib/libfdk-aac.so.2
-lib/libfdk-aac.so.2.0.1
+lib/libfdk-aac.so.%%VER%%
 libdata/pkgconfig/fdk-aac.pc

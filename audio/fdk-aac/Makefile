@@ -2,9 +2,7 @@
 
 PORTNAME=	fdk-aac
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.1-568
-DISTVERSIONSUFFIX=	-g77ee4dd
-PORTREVISION=	1
+DISTVERSION=	2.0.2
 CATEGORIES=	audio
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -19,9 +17,11 @@ NOT_FOR_ARCHS=		sparc64
 NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
 
 USES=		cmake
-USE_LDCONFIG=	yes
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+
 GH_ACCOUNT=	mstorsjo
-GH_TAGNAME=	77ee4dd
+
+PLIST_SUB=	VER=${PORTVERSION}
 
 .include <bsd.port.mk>
