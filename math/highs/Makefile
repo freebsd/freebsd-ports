@@ -1,6 +1,7 @@
 PORTNAME=	highs
 DISTVERSION=	g20210408
 CATEGORIES=	math
+PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Solver for large scale sparse linear programming (LP) problems
