@@ -10,6 +10,7 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/database.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/decoder.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/decorators.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/deobfuscate_filenames.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/directunpacker.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/dirscanner.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/downloader.py
@@ -55,9 +56,11 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/rarvolinfo.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/servertests.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/sleepless.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/ssdp.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/systrayiconthread.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/version.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/zconfig.py
+%%DATADIR%%/email/badfetch-cs.tmpl
 %%DATADIR%%/email/badfetch-da.tmpl
 %%DATADIR%%/email/badfetch-de.tmpl
 %%DATADIR%%/email/badfetch-en.tmpl
@@ -74,6 +77,7 @@ bin/SABnzbd.py
 %%DATADIR%%/email/badfetch-sr.tmpl
 %%DATADIR%%/email/badfetch-sv.tmpl
 %%DATADIR%%/email/badfetch-zh_CN.tmpl
+%%DATADIR%%/email/email-cs.tmpl
 %%DATADIR%%/email/email-da.tmpl
 %%DATADIR%%/email/email-de.tmpl
 %%DATADIR%%/email/email-en.tmpl
@@ -90,6 +94,7 @@ bin/SABnzbd.py
 %%DATADIR%%/email/email-sr.tmpl
 %%DATADIR%%/email/email-sv.tmpl
 %%DATADIR%%/email/email-zh_CN.tmpl
+%%DATADIR%%/email/rss-cs.tmpl
 %%DATADIR%%/email/rss-da.tmpl
 %%DATADIR%%/email/rss-de.tmpl
 %%DATADIR%%/email/rss-en.tmpl
@@ -203,7 +208,8 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/sr.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/sv.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/zh-cn.js
-%%DATADIR%%/interfaces/Glitter/templates/static/stylesheets/colorschemes/Default.css
+%%DATADIR%%/interfaces/Glitter/templates/static/stylesheets/colorschemes/Auto.css
+%%DATADIR%%/interfaces/Glitter/templates/static/stylesheets/colorschemes/Light.css
 %%DATADIR%%/interfaces/Glitter/templates/static/stylesheets/colorschemes/Night.css
 %%DATADIR%%/interfaces/Glitter/templates/static/stylesheets/glitter.css
 %%DATADIR%%/interfaces/Glitter/templates/static/stylesheets/glitter.mobile.css
@@ -281,6 +287,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/wizard/static/javascript/checkserver.js
 %%DATADIR%%/interfaces/wizard/static/style.css
 %%DATADIR%%/interfaces/wizard/two.html
+%%DATADIR%%/locale/cs/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/da/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/de/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/en/LC_MESSAGES/SABnzbd.mo
@@ -298,6 +305,7 @@ bin/SABnzbd.py
 %%DATADIR%%/locale/sv/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/zh_CN/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/po/email/SABemail.pot
+%%DATADIR%%/po/email/cs.po
 %%DATADIR%%/po/email/da.po
 %%DATADIR%%/po/email/de.po
 %%DATADIR%%/po/email/en.po
@@ -315,6 +323,7 @@ bin/SABnzbd.py
 %%DATADIR%%/po/email/sv.po
 %%DATADIR%%/po/email/zh_CN.po
 %%DATADIR%%/po/main/SABnzbd.pot
+%%DATADIR%%/po/main/cs.po
 %%DATADIR%%/po/main/da.po
 %%DATADIR%%/po/main/de.po
 %%DATADIR%%/po/main/en.po
@@ -332,6 +341,7 @@ bin/SABnzbd.py
 %%DATADIR%%/po/main/sv.po
 %%DATADIR%%/po/main/zh_CN.po
 %%DATADIR%%/po/nsis/SABnsis.pot
+%%DATADIR%%/po/nsis/cs.po
 %%DATADIR%%/po/nsis/da.po
 %%DATADIR%%/po/nsis/de.po
 %%DATADIR%%/po/nsis/en.po
