@@ -5,7 +5,7 @@ PORTVERSION=	1.0.15
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	d.oriented@gmail.com
 COMMENT=	SysV banner
 
 USES=		gmake
