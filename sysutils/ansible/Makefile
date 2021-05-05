@@ -32,35 +32,7 @@ USES?=		cpe gmake python:3.6+ shebangfix
 CPE_VENDOR=	ansibleworks
 USE_PYTHON=	autoplist concurrent distutils
 
-SHEBANG_FILES?=	test/lib/ansible_test/_data/cli/ansible_test_cli_stub.py \
-		test/lib/ansible_test/_data/injector/python.py \
-		test/lib/ansible_test/_data/sanity/code-smell/action-plugin-docs.py \
-		test/lib/ansible_test/_data/sanity/code-smell/empty-init.py \
-		test/lib/ansible_test/_data/sanity/code-smell/future-import-boilerplate.py \
-		test/lib/ansible_test/_data/sanity/code-smell/line-endings.py \
-		test/lib/ansible_test/_data/sanity/code-smell/metaclass-boilerplate.py \
-		test/lib/ansible_test/_data/sanity/code-smell/no-assert.py \
-		test/lib/ansible_test/_data/sanity/code-smell/no-basestring.py \
-		test/lib/ansible_test/_data/sanity/code-smell/no-dict-iteritems.py \
-		test/lib/ansible_test/_data/sanity/code-smell/no-dict-iterkeys.py \
-		test/lib/ansible_test/_data/sanity/code-smell/no-dict-itervalues.py \
-		test/lib/ansible_test/_data/sanity/code-smell/no-get-exception.py \
-		test/lib/ansible_test/_data/sanity/code-smell/no-illegal-filenames.py \
-		test/lib/ansible_test/_data/sanity/code-smell/no-main-display.py \
-		test/lib/ansible_test/_data/sanity/code-smell/no-smart-quotes.py \
-		test/lib/ansible_test/_data/sanity/code-smell/no-unicode-literals.py \
-		test/lib/ansible_test/_data/sanity/code-smell/replace-urlopen.py \
-		test/lib/ansible_test/_data/sanity/code-smell/shebang.py \
-		test/lib/ansible_test/_data/sanity/code-smell/symlinks.py \
-		test/lib/ansible_test/_data/sanity/code-smell/use-argspec-type-path.py \
-		test/lib/ansible_test/_data/sanity/code-smell/use-compat-six.py \
-		test/lib/ansible_test/_data/sanity/compile/compile.py \
-		test/lib/ansible_test/_data/sanity/import/importer.py \
-		test/lib/ansible_test/_data/sanity/validate-modules/main.py \
-		test/lib/ansible_test/_data/sanity/yamllint/yamllinter.py \
-		test/lib/ansible_test/_data/versions.py \
-		test/lib/ansible_test/_data/virtualenvcheck.py \
-		test/lib/ansible_test/_data/yamlcheck.py
+SHEBANG_REGEX?=	[.]/test/.*[.]py
 
 TEST_ARGS=	VERSION=${PORTVERSION} \
 		PYTHON=${PYTHON_CMD} \
@@ -73,7 +45,6 @@ CONFLICTS_INSTALL=	${_ANSIBLE_PACKAGES:N${PKGBASE}-*}
 EXTRA_PATCHES?=
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
-SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 PLIST_FILES?=	man/man1/ansible-config.1.gz \
 		man/man1/ansible-console.1.gz \
