@@ -469,13 +469,11 @@
     SUBDIR += postfix
     SUBDIR += postfix-current
     SUBDIR += postfix-current-sasl
-    SUBDIR += postfix-ldap-sasl
     SUBDIR += postfix-logwatch
     SUBDIR += postfix-policyd-sf
     SUBDIR += postfix-policyd-spf-perl
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix-postfwd
-    SUBDIR += postfix-sasl
     SUBDIR += postfixadmin
     SUBDIR += postfixadmin-lite
     SUBDIR += postfixadmin33

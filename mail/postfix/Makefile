@@ -15,66 +15,88 @@ MASTER_SITES:=	${MASTER_SITES:S|$|official/|}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	otis@FreeBSD.org
-COMMENT?=	Secure alternative to widely-used Sendmail
+COMMENT=	Secure alternative to widely-used Sendmail ${COMMENT_${FLAVOR}}
 
 LICENSE=	EPL IPL10
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_NAME_IPL10=	IBM PUBLIC LICENSE VERSION 1.0
+LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS_IPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+FLAVORS=			default ldap sasl
+default_CONFLICTS_INSTALL=	postfix-base-ldap-* postfix-base-sasl-* \
+				postfix-ldap-* postfix-sasl-*
+ldap_PKGNAMESUFFIX=		-ldap
+ldap_CONFLICTS_INSTALL=		postfix-[0-9]* postfix-base-[0-9]* \
+				postfix-base-sasl-* postfix-sasl-*
+sasl_PKGNAMESUFFIX=		-sasl
+sasl_CONFLICTS_INSTALL=		postfix-[0-9]* postfix-base-[0-9]* \
+				postfix-base-ldap-* postfix-ldap-*
+
+COMMENT_ldap=	(with OpenLDAP and Cyrus SASL support)
+COMMENT_sasl=	(with Cyrus SASL support)
+
+USES=		cpe shebangfix
+USE_RC_SUBR=	postfix
+USE_SUBMAKE=	yes
+
+SHEBANG_FILES=	auxiliary/qshape/qshape.pl
+
+SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
+
+CONFLICTS_INSTALL=	courier-0.* opensmtpd-[0-9]* opensmtpd-devel-* \
+			postfix-current-* sendmail-[0-9]* sendmail-devel-*
 
 PORTSCOUT=	limit:^3\.6\.
 
-CONFLICTS_INSTALL?=	courier-0.* opensmtpd-[0-9]* sendmail-8.* sendmail+*-8.* \
-		postfix35-* postfix-current-*
-
 USERS=		postfix
 GROUPS=		mail maildrop postfix
-USES=		shebangfix cpe ssl
-SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
-USE_RC_SUBR=	postfix
-USE_SUBMAKE=	yes
-SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
-
-OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	BDB BLACKLISTD CDB DOCS EAI INST_BASE LDAP \
-		LMDB MYSQL NIS PCRE PGSQL SASL SQLITE TEST TLS
-
-OPTIONS_RADIO=		RG1
-OPTIONS_RADIO_RG1=	SASLKRB5 SASLKMIT
+OPTIONS_DEFINE=		BDB BLACKLISTD CDB DOCS EAI INST_BASE LDAP LMDB MYSQL \
+			NIS PCRE PGSQL SASL SQLITE TEST TLS
 OPTIONS_DEFAULT?=	BLACKLISTD EAI PCRE TLS
+OPTIONS_RADIO=		RG1
+OPTIONS_RADIO_RG1=	SASLKMIT SASLKRB5
+.if ${FLAVOR:U} == ldap
+OPTIONS_SLAVE=		LDAP
+.elif ${FLAVOR:U} == sasl
+OPTIONS_SLAVE=		SASL
+.endif
+OPTIONS_SUB=		yes
 
-BDB_USES=		bdb
-BLACKLISTD_EXTRA_PATCHES=	${FILESDIR}/extra-patch-blacklistd
-CDB_LIB_DEPENDS=	libcdb.so:databases/tinycdb
-EAI_LIB_DEPENDS=	libicuuc.so:devel/icu
-LDAP_USE=		OPENLDAP=yes
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
-MYSQL_USES?=		mysql
-PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
-PGSQL_USES=		pgsql
-SASLKMIT_LIB_DEPENDS=	libkrb5.so:security/krb5
-SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
-SQLITE_USES=		sqlite
+.if !empty(FLAVOR) && ${FLAVOR:U} != default
+OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME}/${FLAVOR}-options
+.endif
 
 BLACKLISTD_DESC=	Enable blacklistd support
-CDB_DESC=	CDB maps lookups
-EAI_DESC=	Email Address Internationalization (SMTPUTF8) support
-INST_BASE_DESC=	Install into /usr and /etc/postfix
-LDAP_DESC=	LDAP maps (uses WITH_OPENLDAP_VER)
-LMDB_DESC=	LMDB maps
-TEST_DESC=	SMTP/LMTP test server and generator
+CDB_DESC=		CDB maps lookups
+EAI_DESC=		Email Address Internationalization (SMTPUTF8) support
+INST_BASE_DESC=		Install into /usr and /etc/postfix
+LDAP_DESC=		LDAP maps (uses WITH_OPENLDAP_VER)
+LMDB_DESC=		LMDB maps
+RG1_DESC=		Kerberos network authentication protocol type
+SASLKMIT_DESC=		If your SASL req. MIT Kerberos5, select this
+SASLKRB5_DESC=		If your SASL req. Kerberos5, select this
+SASL_DESC=		Cyrus SASL support (Dovecot SASL is always built in)
+TEST_DESC=		SMTP/LMTP test server and generator
 
-SASL_DESC=	Cyrus SASL support (Dovecot SASL is always built in)
-RG1_DESC=	Kerberos network authentication protocol type
-SASLKRB5_DESC=	If your SASL req. Kerberos5, select this
-SASLKMIT_DESC=	If your SASL req. MIT Kerberos5, select this
+BDB_USES=			bdb
+BLACKLISTD_EXTRA_PATCHES=	${FILESDIR}/extra-patch-blacklistd
+CDB_LIB_DEPENDS=		libcdb.so:databases/tinycdb
+EAI_LIB_DEPENDS=		libicuuc.so:devel/icu
+LDAP_USE=			OPENLDAP=yes
+LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb
+MYSQL_USES?=			mysql
+PCRE_LIB_DEPENDS=		libpcre.so:devel/pcre
+PGSQL_USES=			pgsql
+SASLKMIT_LIB_DEPENDS=		libkrb5.so:security/krb5
+SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
+SQLITE_USES=			sqlite
 
 .include <bsd.port.options.mk>
 
-HTML1=	body_checks.5.html bounce.5.html postfix-power.png \
-	scache.8.html tlsmgr.8.html
+HTML1=		body_checks.5.html bounce.5.html postfix-power.png \
+		scache.8.html tlsmgr.8.html
 
 STRIP_LIBEXEC=	anvil bounce cleanup discard dnsblog error flush lmtp local \
 		master nqmgr oqmgr pickup pipe postlogd postscreen proxymap \
@@ -88,12 +110,13 @@ MAKEFILEFLAGS+=	DEBUG=
 MAKEFILEFLAGS+=	pie=yes CC="${CC}" OPT="${CFLAGS}"
 
 .if ${SSL_DEFAULT} == libressl
-BROKEN=		error: OpenSSL-1.1.1 is the minimum supported version. \
-		LibreSSL is not supported
+BROKEN=		error: OpenSSL-1.1.1 is the minimum supported version. LibreSSL is not supported
 .endif
 
 .if ${PORT_OPTIONS:MINST_BASE}
-.if defined(SASL_SLAVE)
+.if ${FLAVOR:U} == ldap
+PKGNAMESUFFIX=	-base-ldap
+.elif ${FLAVOR:U} == sasl
 PKGNAMESUFFIX=	-base-sasl
 .else
 PKGNAMESUFFIX=	-base
@@ -109,9 +132,11 @@ PLIST_SUB+=	PFETC=${ETCDIR}
 
 # check if mailwrapper supports $LOCALBASE
 .if ${OPSYS} == FreeBSD
-SUB_LIST+=	USE_LOCALBASE_MAILER_CONF="yes" MC_PREFIX="${LOCALBASE}"
+SUB_LIST+=	MC_PREFIX="${LOCALBASE}" \
+		USE_LOCALBASE_MAILER_CONF="yes"
 .else
-SUB_LIST+=	USE_LOCALBASE_MAILER_CONF="no" MC_PREFIX=""
+SUB_LIST+=	MC_PREFIX="" \
+		USE_LOCALBASE_MAILER_CONF="no"
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -122,34 +147,22 @@ READMEDIR=	no
 .endif
 
 # dynamic direcory location
-DAEMONDIR=	${PREFIX}/libexec/postfix
-SHLIB_DIRECTORY=${PREFIX}/lib/postfix
+DAEMONDIR=		${PREFIX}/libexec/postfix
+SHLIB_DIRECTORY=	${PREFIX}/lib/postfix
 # new proposed location is ETCDIR (see README_FILES/INSTALL)
 # keep compatiblity with Postfix 2.6 .. 2.11 and use DAEMOMDIR
-META_DIRECTORY=	${DAEMONDIR}
+META_DIRECTORY=		${DAEMONDIR}
 
-SUB_LIST+=	REQUIRE="${_REQUIRE}" READMEDIR="${READMEDIR}" \
-		DAEMONDIR="${DAEMONDIR}" META_DIRECTORY="${META_DIRECTORY}"
-SUB_FILES+=	pkg-install pkg-message mailer.conf.postfix
+SUB_LIST+=	DAEMONDIR="${DAEMONDIR}" \
+		META_DIRECTORY="${META_DIRECTORY}" \
+		READMEDIR="${READMEDIR}" \
+		REQUIRE="${_REQUIRE}"
+SUB_FILES+=	mailer.conf.postfix pkg-install pkg-message
 
-POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
-			-DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" \
-			-DDEF_META_DIR=\\\"${META_DIRECTORY}\\\" \
-			-DDEF_COMMAND_DIR=\\\"${PREFIX}/sbin\\\" \
-			-DDEF_SENDMAIL_PATH=\\\"${PREFIX}/sbin/sendmail\\\" \
-			-DDEF_NEWALIAS_PATH=\\\"${PREFIX}/bin/newaliases\\\" \
-			-DDEF_MAILQ_PATH=\\\"${PREFIX}/bin/mailq\\\" \
-			-DDEF_MANPAGE_DIR=\\\"${MANPREFIX}/man\\\" \
-			-DDEF_README_DIR=\\\"${READMEDIR}\\\" \
-			-DDEF_HTML_DIR=\\\"${READMEDIR}\\\" \
-			-DDEF_QUEUE_DIR=\\\"/var/spool/postfix\\\" \
-			-DDEF_DATA_DIR=\\\"/var/db/postfix\\\" \
-			-DDEF_MAIL_OWNER=\\\"postfix\\\" \
-			-DDEF_SGID_GROUP=\\\"maildrop\\\" \
-			-Wmissing-prototypes -Wformat -Wno-comment
+POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" -DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" -DDEF_META_DIR=\\\"${META_DIRECTORY}\\\" -DDEF_COMMAND_DIR=\\\"${PREFIX}/sbin\\\" -DDEF_SENDMAIL_PATH=\\\"${PREFIX}/sbin/sendmail\\\" -DDEF_NEWALIAS_PATH=\\\"${PREFIX}/bin/newaliases\\\" -DDEF_MAILQ_PATH=\\\"${PREFIX}/bin/mailq\\\" -DDEF_MANPAGE_DIR=\\\"${MANPREFIX}/man\\\" -DDEF_README_DIR=\\\"${READMEDIR}\\\" -DDEF_HTML_DIR=\\\"${READMEDIR}\\\" -DDEF_QUEUE_DIR=\\\"/var/spool/postfix\\\" -DDEF_DATA_DIR=\\\"/var/db/postfix\\\" -DDEF_MAIL_OWNER=\\\"postfix\\\" -DDEF_SGID_GROUP=\\\"maildrop\\\" -Wmissing-prototypes -Wformat -Wno-comment
 
 # Default requirement for postfix rc script
-_REQUIRE=		LOGIN cleanvar dovecot
+_REQUIRE=	LOGIN cleanvar dovecot
 
 # always build with Dovecot SASL support, Cyrus is optional
 # see Postfix HISTORY 20051222
@@ -172,18 +185,21 @@ POSTFIX_CCARGS+=	-DNO_PCRE
 .endif
 
 .if ${PORT_OPTIONS:MSASL}
-POSTFIX_CCARGS+=	-DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
+POSTFIX_CCARGS+=	-DUSE_CYRUS_SASL -I${LOCALBASE}/include \
+			-I${LOCALBASE}/include/sasl
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 .else
 POSTFIX_CCARGS+=	-DDEF_SERVER_SASL_TYPE=\\\"dovecot\\\"
 .endif
 
 .if ${PORT_OPTIONS:MSASLKRB5}
-POSTFIX_AUXLIBS+=	-lkrb5 -lhx509 -lcrypto -lcrypt -lcom_err -lasn1 -lroken
+POSTFIX_AUXLIBS+=	-lkrb5 -lhx509 -lcrypto -lcrypt -lcom_err -lasn1 \
+			-lroken
 .endif
 
 .if ${PORT_OPTIONS:MSASLKMIT}
-POSTFIX_AUXLIBS+=	-Wl,--rpath,$${KRB5_HOME:-${LOCALBASE}}/lib -lkrb5 -lcrypto -lcrypt -lcom_err
+POSTFIX_AUXLIBS+=	-Wl,--rpath,$${KRB5_HOME:-${LOCALBASE}}/lib -lkrb5 \
+			-lcrypto -lcrypt -lcom_err
 .endif
 
 .if ${PORT_OPTIONS:MTLS}
@@ -203,7 +219,7 @@ POSTFIX_AUXLIBS+=	-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}
 . if ${OPSYS} == FreeBSD
 POSTFIX_AUXLIBS+=	-lblacklist
 . else
-IGNORE=	blacklistd is only supported on FreeBSD
+IGNORE=		blacklistd is only supported on FreeBSD
 . endif
 .endif
 
@@ -232,8 +248,8 @@ DYN_EXT+=		ldap
 . if defined(WITH_OPENLDAP_VER)
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 . endif
-POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
-POSTFIX_CCARGS+=	-I${LOCALBASE}/include/sasl -DUSE_LDAP_SASL
+POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include \
+			-I${LOCALBASE}/include/sasl -DUSE_LDAP_SASL
 POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LDAP=-L${LOCALBASE}/lib -lldap -L${LOCALBASE}/lib -llber"
 _REQUIRE+=		slapd
 .endif
@@ -261,20 +277,19 @@ POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LMDB=-L${LOCALBASE}/lib -llmdb"
 .endif
 
 # sed script for files in ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man
-REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}/sbin!;\
-		s!(_directory = )/usr/!\1${PREFIX}/!g;\
-		s!^(data_directory = /var/)lib/!\1db/!g;\
-		s!^\#(mynetworks_style = host)!\1!g;\
-		s!^(sendmail_path =)!\1 ${PREFIX}/sbin/sendmail!g;\
-		s!^(newaliases_path =)!\1 ${PREFIX}/bin/newaliases!g;\
-		s!^(mailq_path =)!\1 ${PREFIX}/bin/mailq!g;\
-		s!^(setgid_group =)!\1 maildrop!g;\
-		s!^(manpage_directory =)!\1 ${MANPREFIX}/man!g;\
-		s!^((html|readme)_directory =)!\1 ${READMEDIR}!g;\
-		\!^\#alias_database = dbm:/etc/mail/aliases$$!d;\
-		s!(:|= )/etc/postfix!\1$$config_directory!g;\
-		s!/etc/postfix!${ETCDIR}!g;\
-		s!^(sample_directory =)!\1 ${ETCDIR}!g;\
+REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}/sbin!; \
+		s!(_directory = )/usr/!\1${PREFIX}/!g; s!^(data_directory = \
+		/var/)lib/!\1db/!g; s!^\#(mynetworks_style = host)!\1!g; \
+		s!^(sendmail_path =)!\1 ${PREFIX}/sbin/sendmail!g; \
+		s!^(newaliases_path =)!\1 ${PREFIX}/bin/newaliases!g; \
+		s!^(mailq_path =)!\1 ${PREFIX}/bin/mailq!g; s!^(setgid_group \
+		=)!\1 maildrop!g; s!^(manpage_directory =)!\1 \
+		${MANPREFIX}/man!g; s!^((html|readme)_directory =)!\1 \
+		${READMEDIR}!g; \!^\#alias_database = \
+		dbm:/etc/mail/aliases$$!d; s!(:|= \
+		)/etc/postfix!\1$$config_directory!g; \
+		s!/etc/postfix!${ETCDIR}!g; s!^(sample_directory =)!\1 \
+		${ETCDIR}!g; \
 		s!($config_directory/(access|aliases|canonical|generic|header_checks|relocated|transport|virtual):f:root:-:644:)p1!\1o!;
 
 pre-patch:
