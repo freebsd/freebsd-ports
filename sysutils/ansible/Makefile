@@ -20,13 +20,15 @@ RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${P
 TEST_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>0:security/py-passlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
 
-USES?=		cpe python:3.6+ shebangfix
+USES?=		cpe gmake python:3.6+ shebangfix
 CPE_VENDOR=	ansibleworks
 USE_PYTHON=	autoplist concurrent distutils
 
@@ -60,6 +62,12 @@ SHEBANG_FILES?=	test/lib/ansible_test/_data/cli/ansible_test_cli_stub.py \
 		test/lib/ansible_test/_data/virtualenvcheck.py \
 		test/lib/ansible_test/_data/yamlcheck.py
 
+TEST_ARGS=	VERSION=${PORTVERSION} \
+		PYTHON=${PYTHON_CMD} \
+		DATE=
+TEST_ENV=	PYTHON_VERSION=${PYTHON_VER}
+TEST_TARGET=	tests
+
 CONFLICTS?=	ansible1-* ansible23-* ansible24-* ansible25-* ansible26-* \
 		ansible27-* ansible28-*
 
@@ -67,8 +75,6 @@ EXTRA_PATCHES?=
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
-
-TEST_WRKSRC=	${WRKSRC}/test
 
 PLIST_FILES?=	man/man1/ansible-config.1.gz \
 		man/man1/ansible-console.1.gz \
@@ -89,6 +95,8 @@ post-patch:
 		-e 's|/usr/share/ansible|${DATADIR}|g'
 	${FIND} ${WRKSRC} -type f -name "*.bak" -delete
 
+	${REINPLACE_CMD} 's|"/etc"|"${PREFIX}/etc/"|g' ${WRKSRC}/test/units/playbook/test_helpers.py
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/*.1 \
@@ -104,10 +112,5 @@ post-stage:
 		-execdir ${RLN} ansible-${PYTHON_VER} {} \;
 # python autoplist doesn't add this file in plist
 	${RM} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ansible_test/_data/injector/ansible-inventory
-
-do-test:
-#	${PYTHON_CMD} ${TEST_WRKSRC}/runner/ansible-test sanity --python ${PYTHON_VER} -v
-	${RM} ${TEST_WRKSRC}/units/modules/net_tools/test_nmcli.py # not conditional/doesn't work with nose
-	${PYTHON_CMD} ${TEST_WRKSRC}/runner/ansible-test units --python ${PYTHON_VER} -v
 
 .include <bsd.port.mk>
