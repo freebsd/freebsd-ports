@@ -8,7 +8,7 @@ DISTNAME=	texlive-20150523-texmf
 DIST_SUBDIR=	TeX
 EXTRACT_ONLY=
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	freebsd-tex@FreeBSD.org
 COMMENT=	TeX backend for Jade, DSSSL processor for SGML/XML documents
 
 USES=		tar:xz

@@ -1,6 +1,6 @@
 # bsd.tex.mk - Common part for TeX related ports
 #
-TEX_MAINTAINER=	hrs@FreeBSD.org
+TEX_MAINTAINER=	freebsd-tex@FreeBSD.org
 
 #
 # Ports which depend on TeX should use USE_TEX.

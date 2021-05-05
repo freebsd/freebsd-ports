@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	tex-
 DISTFILES=	#empty
 EXTRACT_ONLY=	#empty
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	freebsd-tex@FreeBSD.org
 COMMENT=	Formats for basic TeX engines and the 'latex' command
 
 NO_ARCH=	yes

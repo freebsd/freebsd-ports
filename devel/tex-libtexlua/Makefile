@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-20150521-source
 DIST_SUBDIR=	TeX
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	freebsd-tex@FreeBSD.org
 COMMENT=	Lua library for TeXLive
 
 LICENSE=	MIT
