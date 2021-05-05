@@ -1,3 +1,3 @@
-TIMESTAMP = 1617902771
-SHA256 (ansible-lint-5.0.7.tar.gz) = d63b72df37000c72378cb1ae0f48a5ba6410ce650717d81d818e528208eecf91
-SIZE (ansible-lint-5.0.7.tar.gz) = 340690
+TIMESTAMP = 1620194658
+SHA256 (ansible-lint-5.0.8.tar.gz) = b67b9628407ae9bc15bb0bb71f79871bdf593fefe6b0684c0cc44be5fc90803f
+SIZE (ansible-lint-5.0.8.tar.gz) = 343560
