@@ -8,6 +8,8 @@ COMMENT=	Solver for large scale sparse linear programming (LP) problems
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	undefined reference to fmax, see https://github.com/ERGO-Code/HiGHS/issues/505
+
 LIB_DEPENDS=	libOsi.so:math/clp
 
 USES=		blaslapack cmake compiler:c++11-lang pkgconfig
