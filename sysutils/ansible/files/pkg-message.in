@@ -3,7 +3,7 @@
 message: <<EOD
 To use Ansible, you need at least a host database.
 If you installed examples, you will have a sample
-host database and a sample configuration file:
+inventory and a sample configuration file:
 
   %%EXAMPLESDIR%%/hosts
   %%EXAMPLESDIR%%/ansible.cfg
