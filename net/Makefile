@@ -1456,6 +1456,7 @@
     SUBDIR += tcpwatch
     SUBDIR += tcpxd
     SUBDIR += tcpxtract
+    SUBDIR += td-system-tools
     SUBDIR += tdetect
     SUBDIR += termshark
     SUBDIR += tftpgrab
