@@ -1,5 +1,4 @@
-
-PORTVERSION=	2.8.11
+PORTVERSION=	2.8.20
 PKGNAMESUFFIX=	28
 
 CONFLICTS=	ansible-* \
@@ -12,6 +11,8 @@ CONFLICTS=	ansible-* \
 
 MASTERDIR=	${.CURDIR}/../ansible
 DISTINFO_FILE=	${.CURDIR}/distinfo
+
+DEPRECATED=	Upstream support ended; consider upgrading to sysutils/ansible
 
 USES=		cpe python:3.6+
 EXTRA_PATCHES=
