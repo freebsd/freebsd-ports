@@ -1,6 +1,6 @@
 PORTNAME=	ansible
 PORTVERSION?=	2.9.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -68,8 +68,7 @@ TEST_ARGS=	VERSION=${PORTVERSION} \
 TEST_ENV=	PYTHON_VERSION=${PYTHON_VER}
 TEST_TARGET=	tests
 
-CONFLICTS?=	ansible1-* ansible23-* ansible24-* ansible25-* ansible26-* \
-		ansible27-* ansible28-*
+CONFLICTS_INSTALL=	${_ANSIBLE_PACKAGES:N${PKGBASE}-*}
 
 EXTRA_PATCHES?=
 NO_ARCH=	yes
@@ -86,6 +85,12 @@ PLIST_FILES?=	man/man1/ansible-config.1.gz \
 		man/man1/ansible-vault.1.gz \
 		man/man1/ansible.1.gz
 PORTEXAMPLES=	ansible.cfg hosts
+
+_ANSIBLE_VERSIONS=	1 23 24 25 26 27 28
+_ANSIBLE_PACKAGES=	${PYTHON_PKGNAMEPREFIX}ansible-*
+.for version in ${_ANSIBLE_VERSIONS}
+_ANSIBLE_PACKAGES+=	${PYTHON_PKGNAMEPREFIX}ansible${version}-*
+.endfor
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
