@@ -124,8 +124,6 @@
 %%WWWDIR%%/l10n/hr.json
 %%WWWDIR%%/l10n/hu.js
 %%WWWDIR%%/l10n/hu.json
-%%WWWDIR%%/l10n/ia.js
-%%WWWDIR%%/l10n/ia.json
 %%WWWDIR%%/l10n/id.js
 %%WWWDIR%%/l10n/id.json
 %%WWWDIR%%/l10n/is.js
@@ -174,8 +172,6 @@
 %%WWWDIR%%/l10n/sr.json
 %%WWWDIR%%/l10n/sv.js
 %%WWWDIR%%/l10n/sv.json
-%%WWWDIR%%/l10n/th.js
-%%WWWDIR%%/l10n/th.json
 %%WWWDIR%%/l10n/tr.js
 %%WWWDIR%%/l10n/tr.json
 %%WWWDIR%%/l10n/uk.js
@@ -228,6 +224,7 @@
 %%WWWDIR%%/lib/Controller/LinksController.php
 %%WWWDIR%%/lib/Controller/MembersController.php
 %%WWWDIR%%/lib/Controller/NavigationController.php
+%%WWWDIR%%/lib/Controller/OcsApiController.php
 %%WWWDIR%%/lib/Controller/SettingsController.php
 %%WWWDIR%%/lib/Controller/SharesController.php
 %%WWWDIR%%/lib/Controller/TestController.php
@@ -462,3 +459,4 @@
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/TPathTools.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/TRequest.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/TStringTools.php
+@dir %%WWWDIR%%/vendor/bin
