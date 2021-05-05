@@ -76,6 +76,58 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bffa40db-ad50-11eb-86b8-080027846a02">
+    <topic>Python -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>python38</name>
+	<range><lt>3.8.10</lt></range>
+      </package>
+      <package>
+	<name>python39</name>
+	<range><lt>3.9.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Python reports:</p>
+	<blockquote cite="https://docs.python.org/3/whatsnew/changelog.html#changelog">
+	  <p>bpo-43434: Creating a sqlite3.Connection object now also produces a
+	    sqlite3.connect auditing event. Previously this event was only produced
+	    by sqlite3.connect() calls. Patch by Erlend E. Aasland.</p>
+	  <p>bpo-43882: The presence of newline or tab characters in parts of a URL
+	    could allow some forms of attacks.Following the controlling specification
+	    for URLs defined by WHATWG urllib.parse() now removes A SCII newlines
+	    and tabs from URLs, preventing such attacks.</p>
+	  <p>bpo-43472: Ensures interpreter-level audit hooks receive the cpython.
+	    PyInterpreterState_New event when called through the _xxsubinterpreters
+	    module.</p>
+	  <p>bpo-36384: ipaddress module no longer accepts any leading zeros in IPv4
+	    address strings. Leading zeros are ambiguous and interpreted as octal
+	    notation by some libraries. For example the legacy function socket.inet_aton()
+	    treats leading zeros as octal notatation. glibc implementation of modern
+	    inet_pton() does not accept any leading zeros. For a while the ipaddress
+	    module used to accept ambiguous leading zeros.</p>
+	  <p>bpo-43075: Fix Regular Expression Denial of Service (ReDoS) vulnerability
+	    in urllib.request.AbstractBasicAuthHandler. The ReDoS-vulnerable regex has
+	    quadratic worst-case complexity and it allows cause a denial of service
+	    when identifying crafted invalid RFCs. This ReDoS issue is on the client
+	    side and needs remote attackers to control the HTTP server.</p>
+	  <p>bpo-42800: Audit hooks are now fired for frame.f_code, traceback.tb_frame,
+	    and generator code/frame attribute access.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://docs.python.org/3/whatsnew/changelog.html#changelog</url>
+      <url>https://docs.python.org/3.8/whatsnew/changelog.html#changelog</url>
+    </references>
+    <dates>
+      <discovery>2021-03-08</discovery>
+      <entry>2021-05-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1606b03b-ac57-11eb-9bdd-8c164567ca3c">
     <topic>redis -- multiple vulnerabilities</topic>
     <affects>
