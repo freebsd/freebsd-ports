@@ -76,6 +76,54 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="50ec3a01-ad77-11eb-8528-8c164582fbac">
+    <topic>Ansible -- Insecure Temporary File</topic>
+    <affects>
+      <package>
+	<name>py36-ansible</name>
+	<name>py37-ansible</name>
+	<name>py38-ansible</name>
+	<name>py39-ansible</name>
+	<name>py36-ansible27</name>
+	<range><ge>2.9.0</ge><le>2.9.9</le></range>
+      </package>
+      <package>
+	<name>py37-ansible27</name>
+	<name>py38-ansible27</name>
+	<name>py39-ansible27</name>
+	<range><ge>2.7.0</ge><le>2.7.18</le></range>
+      </package>
+      <package>
+	<name>py36-ansible28</name>
+	<name>py37-ansible28</name>
+	<name>py38-ansible28</name>
+	<name>py39-ansible28</name>
+	<range><ge>2.8.0</ge><le>2.8.12</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2020-10744">
+	<p>
+	  An incomplete fix was found for the fix of the flaw CVE-2020-1733
+	  ansible: insecure temporary directory when running become_user from
+	  become directive. The provided fix is insufficient to prevent the
+	  race condition on systems using ACLs and FUSE filesystems..
+	</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2020-10744</url>
+      <cvename>CVE-2020-10744</cvename>
+    </references>
+    <dates>
+      <discovery>2020-05-15</discovery>
+      <entry>2021-05-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1766359c-ad6e-11eb-b2a4-080027e50e6d">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
