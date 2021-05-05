@@ -224,6 +224,7 @@ lib/guile/%%GUILE_VER%%/ccache/language/cps/cse.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/dce.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/devirtualize-integers.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/effects-analysis.go
+lib/guile/%%GUILE_VER%%/ccache/language/cps/elide-arity-checks.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/graphs.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/intmap.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/intset.go
@@ -344,6 +345,7 @@ lib/guile/%%GUILE_VER%%/ccache/scripts/compile.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/disassemble.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/display-commentary.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/doc-snarf.go
+lib/guile/%%GUILE_VER%%/ccache/system/foreign-library.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/frisk.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/generate-autoload.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/help.go
@@ -464,8 +466,8 @@ lib/guile/%%GUILE_VER%%/extensions/guile-readline.so.0.0.0
 lib/libguile-%%GUILE_VER%%.a
 lib/libguile-%%GUILE_VER%%.so
 lib/libguile-%%GUILE_VER%%.so.1
-lib/libguile-%%GUILE_VER%%.so.1.%%GUILE_VER%%
-lib/libguile-%%GUILE_VER%%.so.1.%%GUILE_VER%%-gdb.scm
+lib/libguile-%%GUILE_VER%%.so.1.4.0
+lib/libguile-%%GUILE_VER%%.so.1.4.0-gdb.scm
 libdata/pkgconfig/guile-%%GUILE_VER%%.pc
 man/man1/guile.1.gz
 share/aclocal/guile.m4
@@ -529,6 +531,7 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/ice-9/r6rs-libraries.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/r7rs-libraries.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/rdelim.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/read.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/readline.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/receive.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/regex.scm
@@ -567,6 +570,7 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/language/cps/dce.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/devirtualize-integers.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/effects-analysis.scm
+%%DATADIR%%/%%GUILE_VER%%/language/cps/elide-arity-checks.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/graphs.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/intmap.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/intset.scm
@@ -769,6 +773,7 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/system/base/syntax.scm
 %%DATADIR%%/%%GUILE_VER%%/system/base/target.scm
 %%DATADIR%%/%%GUILE_VER%%/system/base/types.scm
+%%DATADIR%%/%%GUILE_VER%%/system/foreign-library.scm
 %%DATADIR%%/%%GUILE_VER%%/system/foreign-object.scm
 %%DATADIR%%/%%GUILE_VER%%/system/foreign.scm
 %%DATADIR%%/%%GUILE_VER%%/system/repl/command.scm
