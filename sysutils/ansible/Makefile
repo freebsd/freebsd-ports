@@ -26,21 +26,9 @@ TEST_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
-CONFLICTS?=	ansible1-* \
-		ansible23-* \
-		ansible24-* \
-		ansible25-* \
-		ansible27-* \
-		ansible26-* \
-		ansible27-* \
-		ansible28-*
-
-EXTRA_PATCHES?=
-
-NO_ARCH=	yes
 USES?=		cpe python:3.6+ shebangfix
-USE_PYTHON=	distutils autoplist concurrent
 CPE_VENDOR=	ansibleworks
+USE_PYTHON=	distutils autoplist concurrent
 
 SHEBANG_FILES?=	\
 		test/lib/ansible_test/_data/injector/python.py \
@@ -73,8 +61,21 @@ SHEBANG_FILES?=	\
 		test/lib/ansible_test/_data/sanity/compile/compile.py \
 		test/lib/ansible_test/_data/sanity/validate-modules/main.py
 
+CONFLICTS?=	ansible1-* \
+		ansible23-* \
+		ansible24-* \
+		ansible25-* \
+		ansible27-* \
+		ansible26-* \
+		ansible27-* \
+		ansible28-*
+
+EXTRA_PATCHES?=
+NO_ARCH=	yes
 SUB_FILES=	pkg-message
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
+
+TEST_WRKSRC=	${WRKSRC}/test
 
 PLIST_FILES?=	man/man1/ansible-config.1.gz \
 		man/man1/ansible-console.1.gz \
@@ -85,7 +86,6 @@ PLIST_FILES?=	man/man1/ansible-config.1.gz \
 		man/man1/ansible-pull.1.gz \
 		man/man1/ansible-vault.1.gz \
 		man/man1/ansible.1.gz
-
 PORTEXAMPLES=	ansible.cfg hosts
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
@@ -111,8 +111,6 @@ post-stage:
 		-execdir ${RLN} ansible-${PYTHON_VER} {} \;
 	# python autoplist doesn't add this file in plist
 	${RM} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ansible_test/_data/injector/ansible-inventory
-
-TEST_WRKSRC=${WRKSRC}/test
 
 do-test:
 #	${PYTHON_CMD} ${TEST_WRKSRC}/runner/ansible-test sanity --python ${PYTHON_VER} -v
