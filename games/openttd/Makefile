@@ -1,8 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	openttd
-DISTVERSION=	1.11.0
-PORTREVISION=	1
+DISTVERSION=	1.11.2
 CATEGORIES=	games
 MASTER_SITES=	https://proxy.binaries.openttd.org/openttd-releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
@@ -48,5 +47,8 @@ SERVER_VARS_OFF=	INSTALLS_ICONS=yes
 
 post-install-SERVER-on:
 	@${REINPLACE_CMD} -E '/icons|pixmaps/d' ${TMPPLIST}
+
+do-test:
+	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}
 
 .include <bsd.port.mk>
