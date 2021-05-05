@@ -1,7 +1,7 @@
 # Created by: Udo Schweigert
 
 PORTNAME=	mutt
-DISTVERSION=	2.0.6
+DISTVERSION=	2.0.7
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
@@ -186,12 +186,12 @@ MAILDIR_MTIME_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-maildir-mtime
 GREETING_PATCH_PATCHFILES=	mutt-${GREETING_PATCH_VERSION}.vc.greeting:vc
 
 QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.xz:vvv \
-			patch-${VVV_PATCH_VERSION}.vvv.quote.xz:vvv
+			mutt-${GREETING_PATCH_VERSION}.vvv.quote:vc
 
 .include <bsd.port.options.mk>
 
 VVV_PATCH_VERSION=	1.13.0
-GREETING_PATCH_VERSION=	2.0.5
+GREETING_PATCH_VERSION=	2.0.6
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/mailcap.5 ${STAGEDIR}${MANPREFIX}/man/man5
