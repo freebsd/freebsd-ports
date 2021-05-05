@@ -1,0 +1,39 @@
+commit 106757e8c1e26ad9b8c924c7f304074b79e082c5
+Author: Daniel Cheng <dcheng@google.com>
+Date:   Fri Apr 10 14:52:03 2020 -0700
+
+    Guard new calls to xmlValidatePopElement in xml_reader.c
+    
+    Closes #154.
+
+commit 386fb27654b93d9fb2880e03fb508d618a2e66f1
+Author: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
+Date:   Tue Apr 28 17:00:37 2020 +0200
+
+    Add LIBXML_VALID_ENABLED to xmlreader
+    
+    There are already LIBXML_VALID_ENABLED in this file to guard against
+    "--without-valid" at "./configure" step, but here they were missing.
+diff --git xmlreader.c xmlreader.c
+index 687c8b3c..3fd9aa4c 100644
+--- xmlreader.c
++++ xmlreader.c
+@@ -2260,14 +2260,18 @@ xmlFreeTextReader(xmlTextReaderPtr reader) {
+     if (reader->ctxt != NULL) {
+         if (reader->dict == reader->ctxt->dict)
+ 	    reader->dict = NULL;
++#ifdef LIBXML_VALID_ENABLED
+ 	if ((reader->ctxt->vctxt.vstateTab != NULL) &&
+ 	    (reader->ctxt->vctxt.vstateMax > 0)){
++#ifdef LIBXML_REGEXP_ENABLED
+             while (reader->ctxt->vctxt.vstateNr > 0)
+                 xmlValidatePopElement(&reader->ctxt->vctxt, NULL, NULL, NULL);
++#endif /* LIBXML_REGEXP_ENABLED */
+ 	    xmlFree(reader->ctxt->vctxt.vstateTab);
+ 	    reader->ctxt->vctxt.vstateTab = NULL;
+ 	    reader->ctxt->vctxt.vstateMax = 0;
+ 	}
++#endif /* LIBXML_VALID_ENABLED */
+ 	if (reader->ctxt->myDoc != NULL) {
+ 	    if (reader->preserve == 0)
+ 		xmlTextReaderFreeDoc(reader, reader->ctxt->myDoc);
