@@ -1,10 +1,10 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20210503
+PORTVERSION=	s20210505
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	b9695ab291f5.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/4836
+PATCHFILES+=	419fb3c8f97a.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/4836
 PATCHFILES+=	abdf90282438.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
 PATCHFILES+=	acf3dae05eae.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
 PATCHFILES+=	0b3842759127.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
@@ -42,7 +42,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	df51eb9bd
+GH_TAGNAME=	260b841dc
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-52-geac2416b8:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.145:Vulkan_Headers/externals/Vulkan-Headers \
