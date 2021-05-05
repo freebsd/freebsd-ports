@@ -27,6 +27,11 @@ QT_CONFIG=	openssl
 BROKEN=		Qt5 requires Openssl 1.1.1, upgrade to FreeBSD 12.x/13.x or add DEFAULT_VERSIONS+=ssl=[openssl|libressl*] to /etc/make.conf
 .endif
 
+# LibreSSL does not currently support BIO_ADDR in DTLSv1_listen()
+.if ${SSL_DEFAULT:Mlibressl*}
+CONFIGURE_ARGS+=	-no-feature-dtls
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${BUILD_WRKSRC}/ssl/qsslsocket_openssl.cpp
