@@ -1,7 +1,7 @@
 # Created by: Doug Barton <dougb@FreeBSD.org>
 
 PORTNAME=	qbittorrent
-DISTVERSION=	4.3.4.1
+DISTVERSION=	4.3.5
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
