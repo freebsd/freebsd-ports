@@ -1,6 +1,6 @@
 PORTNAME=	terraform
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.1
+DISTVERSION=	0.15.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -118,11 +118,12 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v52.5.0:azure_azure_sdk_for_go/vendor/github.co
 		hashicorp:go-safetemp:v1.0.0:hashicorp_go_safetemp/vendor/github.com/hashicorp/go-safetemp \
 		hashicorp:go-slug:v0.4.1:hashicorp_go_slug/vendor/github.com/hashicorp/go-slug \
 		hashicorp:go-sockaddr:6d291a969b86:hashicorp_go_sockaddr/vendor/github.com/hashicorp/go-sockaddr \
-		hashicorp:go-tfe:v0.8.1:hashicorp_go_tfe/vendor/github.com/hashicorp/go-tfe \
+		hashicorp:go-tfe:v0.14.0:hashicorp_go_tfe/vendor/github.com/hashicorp/go-tfe \
 		hashicorp:go-uuid:v1.0.1:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
 		hashicorp:go-version:v1.2.1:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
 		hashicorp:hcl:a4b07c25de5f:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
-		hashicorp:hcl:v2.9.1:hashicorp_hcl_v2/vendor/github.com/hashicorp/hcl/v2 \
+		hashicorp:hcl:v2.10.0:hashicorp_hcl_v2/vendor/github.com/hashicorp/hcl/v2 \
+		hashicorp:jsonapi:edf82c9774bf:hashicorp_jsonapi/vendor/github.com/hashicorp/jsonapi \
 		hashicorp:memberlist:v0.1.0:hashicorp_memberlist/vendor/github.com/hashicorp/memberlist \
 		hashicorp:serf:e4ec8cc423bb:hashicorp_serf/vendor/github.com/hashicorp/serf \
 		hashicorp:terraform-config-inspect:4fd17a0faac2:hashicorp_terraform_config_inspect/vendor/github.com/hashicorp/terraform-config-inspect \
@@ -183,7 +184,6 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v52.5.0:azure_azure_sdk_for_go/vendor/github.co
 		soheilhy:cmux:v0.1.4:soheilhy_cmux/vendor/github.com/soheilhy/cmux \
 		spf13:afero:v1.2.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
-		svanharmelen:jsonapi:0c0828c3f16d:svanharmelen_jsonapi/vendor/github.com/svanharmelen/jsonapi \
 		tencentcloud:tencentcloud-sdk-go:v3.0.82:tencentcloud_tencentcloud_sdk_go/vendor/github.com/tencentcloud/tencentcloud-sdk-go \
 		tencentyun:cos-go-sdk-v5:f07404cefc8c:tencentyun_cos_go_sdk_v5/vendor/github.com/tencentyun/cos-go-sdk-v5 \
 		tmc:grpc-websocket-proxy:830351dc03c6:tmc_grpc_websocket_proxy/vendor/github.com/tmc/grpc-websocket-proxy \
@@ -200,7 +200,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v52.5.0:azure_azure_sdk_for_go/vendor/github.co
 		xlab:treeprint:1d6e34225557:xlab_treeprint/vendor/github.com/xlab/treeprint \
 		zclconf:go-cty-debug:b22d67c1ba0b:zclconf_go_cty_debug/vendor/github.com/zclconf/go-cty-debug \
 		zclconf:go-cty-yaml:v1.0.2:zclconf_go_cty_yaml/vendor/github.com/zclconf/go-cty-yaml \
-		zclconf:go-cty:v1.8.2:zclconf_go_cty/vendor/github.com/zclconf/go-cty
+		zclconf:go-cty:v1.8.3:zclconf_go_cty/vendor/github.com/zclconf/go-cty
 
 PLIST_FILES=	bin/${PORTNAME}
 
