@@ -7,9 +7,15 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.md
 %%PORTDOCS%%%%DOCSDIR%%/Home.md
 %%PORTDOCS%%%%DOCSDIR%%/MetricsQL.md
+%%PORTDOCS%%%%DOCSDIR%%/PerTenantStatistic.md
 %%PORTDOCS%%%%DOCSDIR%%/Quick-Start.md
 %%PORTDOCS%%%%DOCSDIR%%/Release-Guide.md
 %%PORTDOCS%%%%DOCSDIR%%/SampleSizeCalculations.md
 %%PORTDOCS%%%%DOCSDIR%%/Single-server-VictoriaMetrics.md
+%%PORTDOCS%%%%DOCSDIR%%/latest.png
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/per-tenant-stats.jpg
+%%PORTDOCS%%%%DOCSDIR%%/root.png
+%%PORTDOCS%%%%DOCSDIR%%/rp_daily_1.png
+%%PORTDOCS%%%%DOCSDIR%%/rp_daily_2.png
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%

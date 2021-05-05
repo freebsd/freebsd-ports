@@ -1,8 +1,8 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME?=	victoria-metrics
+PORTVERSION=	1.59.0
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.58.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -14,12 +14,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gmake go:modules,no_targets
 USE_RC_SUBR?=	${PORTNAME}
 MAKE_ENV=	PKG_TAG=${DISTVERSIONPREFIX}${DISTVERSION} \
-		BUILDINFO_TAG=edd1590 GOOS=${OPSYS:tl}
+		BUILDINFO_TAG=fb097ff GOOS=${OPSYS:tl}
 ALL_TARGET=	${PORTNAME}-pure
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	VictoriaMetrics
 GH_PROJECT=	VictoriaMetrics
+
+.include "${.CURDIR}/../victoria-metrics/Makefile.deps"
 
 USERS=		victoria-metrics
 GROUPS=		victoria-metrics
@@ -34,14 +36,12 @@ PLIST_SUB+=	VICTORIA_DATA=${VICTORIA_DATA} \
 
 OPTIONS_DEFINE=	DOCS
 
-.if !target(do-install)
+.if !defined(MASTERDIR)
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/${PORTNAME}-pure \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${VICTORIA_DATA}
-.endif
 
-.if !target(do-install-DOCS-on)
 do-install-DOCS-on:
 	@cd ${INSTALL_WRKSRC}/docs && ${RM} robots.txt vm*
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -49,5 +49,3 @@ do-install-DOCS-on:
 .endif
 
 .include <bsd.port.mk>
-
-.include "${MASTERDIR}/Makefile.deps"
