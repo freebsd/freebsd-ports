@@ -19,4 +19,10 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_11=	OpenSSL > 1.0 required
+.endif
+
+.include <bsd.port.post.mk>
