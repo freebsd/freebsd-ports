@@ -1,6 +1,7 @@
 PORTNAME=	tailscale
 PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -8,6 +9,8 @@ COMMENT=	Mesh VPN that makes it easy to connect your devices
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
 USES=		go:modules
 
