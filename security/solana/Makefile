@@ -1,6 +1,6 @@
 PORTNAME=	solana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.6
+DISTVERSION=	1.6.7
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -110,6 +110,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crunchy-0.2.2 \
 		crypto-mac-0.7.0 \
 		crypto-mac-0.8.0 \
+		crypto-mac-0.9.1 \
 		crypto-mac-0.10.0 \
 		csv-1.1.3 \
 		csv-core-0.1.10 \
@@ -117,6 +118,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		curve25519-dalek-2.1.0 \
 		curve25519-dalek-3.0.0 \
 		dashmap-4.0.2 \
+		derivation-path-0.1.3 \
 		derivative-2.1.1 \
 		derive_more-0.99.11 \
 		dialoguer-0.6.2 \
@@ -133,6 +135,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dtoa-0.4.5 \
 		ed25519-1.0.1 \
 		ed25519-dalek-1.0.1 \
+		ed25519-dalek-bip32-0.1.1 \
 		educe-0.4.13 \
 		either-1.5.3 \
 		encode_unicode-0.3.6 \
@@ -191,6 +194,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		histogram-0.6.9 \
 		hmac-0.7.1 \
 		hmac-0.8.1 \
+		hmac-0.9.0 \
 		hmac-0.10.1 \
 		hmac-drbg-0.2.0 \
 		http-0.2.1 \
@@ -328,6 +332,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		prost-0.7.0 \
 		prost-derive-0.7.0 \
 		prost-types-0.7.0 \
+		qstring-0.7.2 \
 		quick-error-1.2.3 \
 		quote-0.6.13 \
 		quote-1.0.6 \
@@ -416,7 +421,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		solana-logger-1.6.4 \
 		solana-program-1.6.4 \
 		solana-sdk-macro-1.6.4 \
-		solana_rbpf-0.2.7 \
+		solana_rbpf-0.2.8 \
 		spin-0.5.2 \
 		spl-associated-token-account-1.0.2 \
 		spl-memo-3.0.1 \
