@@ -93,7 +93,11 @@ BROKEN_FreeBSD_11=	error: OpenSSL-1.1.1 is the minimum supported version
 .endif
 
 .if ${PORT_OPTIONS:MINST_BASE}
+.if defined(SASL_SLAVE)
+PKGNAMESUFFIX=	-current-base-sasl
+.else
 PKGNAMESUFFIX=	-current-base
+.endif
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
 PLIST_SUB+=	BMAN="share/"
