@@ -30,7 +30,7 @@
  	HOST_ARCH=$(cat "$DEBOOTSTRAP_DIR/arch")
  fi
  HOST_OS="$HOST_ARCH"
-@@ -542,6 +536,11 @@ if [ -z "$HOST_OS" ]; then
+@@ -542,6 +536,14 @@ if [ -z "$HOST_OS" ]; then
  			HOST_OS=freebsd
  		;;
  	esac
@@ -38,6 +38,9 @@
 +
 +if [ "$HOST_OS" = "freebsd" -a -z "$HOST_ARCH" ]; then
 +	HOST_ARCH=`/sbin/sysctl -n hw.machine_arch`
++	if [ "$HOST_ARCH" = "aarch64" ]; then
++		HOST_ARCH=arm64
++	fi
 +	EXTRACTOR_OVERRIDE=ar
  fi
  
