@@ -610,7 +610,6 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING.GPLv3
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LGPLv3
 
 NONFREE_CONFIGURE_ENABLE=nonfree
-NONFREE_VARS=		RESTRICTED="enabling OPENSSL or FDK_AAC restricts redistribution"
 
 INSTALL_TARGET=	install-progs install-doc install-data \
 		install-libs install-headers install-examples
@@ -640,6 +639,16 @@ DOC_FILES=	Changelog CREDITS INSTALL.md LICENSE.md MAINTAINERS \
 # under doc subdirectory
 DOC_DOCFILES=	APIchanges *.txt
 PORTDOCS=	*
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNONFREE}
+LICENSE+=	NONFREE
+LICENSE_COMB=	multi
+LICENSE_NAME_NONFREE=	Non free code
+LICENSE_TEXT_NONFREE=	enabling OPENSSL or FDK_AAC restricts redistribution
+LICENSE_PERMS_NONFREE=	auto-accept
+.endif
 
 .include <bsd.port.pre.mk>
 
