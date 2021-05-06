@@ -35,7 +35,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/blockmap-1.0.2.jar
 %%DATADIR%%/lib/bootstrap.jar
 %%DATADIR%%/lib/bouncy-castle-provider.jar
-%%DATADIR%%/lib/build-marker-PS-211.7036.8
+%%DATADIR%%/lib/build-marker-PS-211.7142.44
 %%DATADIR%%/lib/byte-buddy-agent-1.10.1.jar
 %%DATADIR%%/lib/caffeine-2.8.8.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
@@ -259,7 +259,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/DatabaseTools/lib/maven-resolver-transport-file-1.3.3.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/maven-resolver-transport-http-1.3.3.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/resources_en.jar
-%%DATADIR%%/plugins/DatabaseTools/lib/tips-database-plugin-211.76.jar
+%%DATADIR%%/plugins/DatabaseTools/lib/tips-database-plugin-211.77.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/unidecode-0.0.7.jar
 %%DATADIR%%/plugins/Docker/lib/Docker-agent-api-rt.jar
 %%DATADIR%%/plugins/Docker/lib/Docker-agent-impl-rt.jar
@@ -274,7 +274,6 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/Docker/lib/docker-java-core-3.2.7.jar
 %%DATADIR%%/plugins/Docker/lib/docker-java-transport-3.2.7.jar
 %%DATADIR%%/plugins/Docker/lib/docker-java-transport-okhttp-3.2.7.jar
-%%DATADIR%%/plugins/Docker/lib/javax.activation-api-1.2.0.jar
 %%DATADIR%%/plugins/Docker/lib/okhttp-3.14.4.jar
 %%DATADIR%%/plugins/Docker/lib/okio-1.17.2.jar
 %%DATADIR%%/plugins/IntelliLang/lib/IntelliLang.jar
@@ -322,8 +321,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-cc9326c21d47.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-cc9326c21d47.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-aacdcbe1a076.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-aacdcbe1a076.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -579,8 +578,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/php/lib/php-openapi.jar
 %%DATADIR%%/plugins/php/lib/php.jar
 %%DATADIR%%/plugins/php/lib/resources_en.jar
-%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-602935b89c85.ijx
-%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-602935b89c85.txt
+%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-b49e8fd532a3.ijx
+%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-b49e8fd532a3.txt
 %%DATADIR%%/plugins/phpspec/lib/phpspec.jar
 %%DATADIR%%/plugins/phpspec/lib/resources_en.jar
 %%DATADIR%%/plugins/phpstan/lib/phpstan.jar
