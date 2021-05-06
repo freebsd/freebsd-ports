@@ -1,0 +1,12 @@
+--- configure.orig	2011-01-28 12:10:11 UTC
++++ configure
+@@ -5354,8 +5354,7 @@ $as_echo_n "checking for snmp-type... " >&6; }
+       if test "x$snmp_prefix" != "x" ; then
+         if test -x "$snmp_prefix/bin/net-snmp-config" ; then
+           SNMP_NET_LIBS=`$snmp_prefix/bin/net-snmp-config --netsnmp-libs`
+-          SNMP_EXT_LIBS=`$snmp_prefix/bin/net-snmp-config --external-libs`
+-          SNMP_LIBS="$SNMP_NET_LIBS $SNMP_EXT_LIBS"
++          SNMP_LIBS="$SNMP_NET_LIBS"
+ 	  SNMP_CFLAGS="$SNMP_CFLAGS -DHAVE_NETSNMP"
+         else
+           guess_type="ucd"
