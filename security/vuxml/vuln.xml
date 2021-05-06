@@ -76,6 +76,36 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7f242313-aea5-11eb-8151-67f74cf7c704">
+    <topic>go -- net/http: ReadRequest can stack overflow due to recursion with very large headers</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><lt>1.16.4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://github.com/golang/go/issues/45710">
+	  <p>http.ReadRequest can stack overflow due to recursion when given a
+	    request with a very large header (~8-10MB depending on the
+	    architecture). A http.Server which overrides the default max header
+	    of 1MB by setting Server.MaxHeaderBytes to a much larger value could
+	    also be vulnerable in the same way.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-31525</cvename>
+      <url>https://github.com/golang/go/issues/45710</url>
+    </references>
+    <dates>
+      <discovery>2021-04-22</discovery>
+      <entry>2021-05-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="50ec3a01-ad77-11eb-8528-8c164582fbac">
     <topic>Ansible -- Insecure Temporary File</topic>
     <affects>
