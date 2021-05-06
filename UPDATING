@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210506:
+  AFFECTS: users of mail/postfix
+  AUTHOR: ohauer@FreeBSD.org
+
+  Postfix 3.6 and higher requires minimum OpenSSL 1.1.1
+  FreeBSD 11 users using base OpenSSL can switch to
+  mail/postfix35
+
+  If you whish to use postfix35 until FreeBSD 11 EoL you might run the
+  following command:
+
+  # pkg set -o mail/postfix:mail/postfix35
+  # pkg upgrade
+
 20210505:
   AFFECTS: users of sysutils/terraform
   AUTHOR: 0mp@FreeBSD.org

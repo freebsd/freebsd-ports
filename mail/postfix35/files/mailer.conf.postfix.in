@@ -1,0 +1,7 @@
+#
+# Execute the Postfix sendmail program, named %%PREFIX%%/sbin/sendmail
+#
+sendmail	%%PREFIX%%/sbin/sendmail
+send-mail	%%PREFIX%%/sbin/sendmail
+mailq		%%PREFIX%%/sbin/sendmail
+newaliases	%%PREFIX%%/sbin/sendmail
