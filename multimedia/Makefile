@@ -128,6 +128,7 @@
     SUBDIR += gtk-youtube-viewer
     SUBDIR += gxine
     SUBDIR += handbrake
+    SUBDIR += haruna
     SUBDIR += harvid
     SUBDIR += hypnotix
     SUBDIR += imagination
