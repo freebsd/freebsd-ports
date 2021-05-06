@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/petef
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Tk based replacement for xfontsel
 
-license=	GPLv2
+LICENSE=	GPLv2
 
 USES+=		tk:run
 RUN_DEPENDS+=	xlsfonts:x11-fonts/xlsfonts
