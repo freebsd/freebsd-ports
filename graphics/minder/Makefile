@@ -1,10 +1,10 @@
 PORTNAME=	minder
-PORTVERSION=	1.12.1
+PORTVERSION=	1.12.2
 CATEGORIES=	graphics
 # avoid PKGBASE collision with net-p2p/minder
 PKGNAMESUFFIX=	-app
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Mind-mapping application
 
 LICENSE=	GPLv3
