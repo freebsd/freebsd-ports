@@ -13,9 +13,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
-# Uncomment when the default Perl is switched to 5.3(X+2)
+# Uncomment when the default Perl is switched to 5.34
 #DEPRECATED=	Support ends three years after .0 release. Please upgrade to a more recent version of Perl
-#EXPIRATION_DATE=<Release date of .0 + 3 years>
+#EXPIRATION_DATE=2023-06-20
 
 USES=		cpe tar:xz
 
