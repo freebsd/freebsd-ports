@@ -271,6 +271,7 @@
     SUBDIR += kripp
     SUBDIR += kstart
     SUBDIR += ktls_isa-l_crypto-kmod
+    SUBDIR += kuku
     SUBDIR += kwalletmanager
     SUBDIR += l0pht-watch
     SUBDIR += l0phtcrack
