@@ -75,6 +75,8 @@ CONFIGURE_ARGS+=--with-system-$L \
 		--with-$L-include=${LOCALBASE}/include \
 		--with-$L-libdir=${LOCALBASE}/lib
 .endfor
+CONFIGURE_ARGS+=CC="${CC}" \
+		CXX="${CXX}"
 CPPFLAGS+=	-I${LOCALBASE}/include/harfbuzz -I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 TEX_FORMATS=	xetex
