@@ -4,7 +4,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	asomers@FreeBSD.org
+MAINTAINER=	contact@evilham.com
 COMMENT=	Requests-like API built on top of twisted.web's Agent
 
 LICENSE=	MIT
