@@ -1,11 +1,14 @@
---- src/CMakeLists.txt.orig	2020-08-14 17:39:26 UTC
+--- src/CMakeLists.txt.orig	2021-08-21 18:23:23 UTC
 +++ src/CMakeLists.txt
-@@ -112,7 +112,7 @@ IF( ENABLE_DEBUG_REPORT )
- 	ENDIF( MINGW )
- ENDIF( ENABLE_DEBUG_REPORT )
+@@ -503,11 +503,6 @@ target_include_directories(springlobby
+ 		PRIVATE ${generated_gui_include}
+ 	)
  
--FIND_PACKAGE( CURL REQUIRED libcurl )
-+FIND_PACKAGE( CURL REQUIRED)
- IF( NOT CURL_FOUND )
- 	MESSAGE( FATAL_ERROR "required library libCURL not found" )
- ENDIF( NOT CURL_FOUND )
+-IF(UNIX)
+-	FIND_PACKAGE(X11 REQUIRED)
+-	TARGET_LINK_LIBRARIES(springlobby ${X11_X11_LIB})
+-ENDIF(UNIX)
+-
+ ENABLE_TESTING()
+ add_subdirectory(tests)
+ 

@@ -1,5 +1,4 @@
 bin/springlobby
-bin/springsettings
 share/applications/springlobby.desktop
 share/icons/hicolor/scalable/apps/springlobby.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/springlobby.mo
@@ -18,3 +17,4 @@ share/icons/hicolor/scalable/apps/springlobby.svg
 %%NLS%%share/locale/sv/LC_MESSAGES/springlobby.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/springlobby.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/springlobby.mo
+share/metainfo/springlobby.appdata.xml
