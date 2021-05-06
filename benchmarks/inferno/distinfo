@@ -1,4 +1,4 @@
-TIMESTAMP = 1620238894
+TIMESTAMP = 1620281985
 SHA256 (rust/crates/adler32-1.2.0.crate) = aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234
 SIZE (rust/crates/adler32-1.2.0.crate) = 6411
 SHA256 (rust/crates/ahash-0.3.8.crate) = e8fd72866655d1904d6b0997d0b07ba561047d070fbe29de039031c641b61217
@@ -249,5 +249,5 @@ SHA256 (rust/crates/winapi-util-0.1.5.crate) = 70ec6ce85bb158151cae5e5c87f95a8e9
 SIZE (rust/crates/winapi-util-0.1.5.crate) = 10164
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 2947998
-SHA256 (jonhoo-inferno-v0.10.4_GH0.tar.gz) = 2101e4136c16c9b8a4f769d07622c9dfca5a891ad977eb2a4d96926947978317
-SIZE (jonhoo-inferno-v0.10.4_GH0.tar.gz) = 595132
+SHA256 (jonhoo-inferno-v0.10.5_GH0.tar.gz) = 30833babd66e6178f40b742af2123d2c4f4b20708e0b439871ce5e500b25ee3d
+SIZE (jonhoo-inferno-v0.10.5_GH0.tar.gz) = 595463
