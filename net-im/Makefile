@@ -149,6 +149,7 @@
     SUBDIR += ssh-chat
     SUBDIR += sshout
     SUBDIR += talkatu
+    SUBDIR += tdlib
     SUBDIR += teamwords
     SUBDIR += telegram-cli
     SUBDIR += telegram-desktop

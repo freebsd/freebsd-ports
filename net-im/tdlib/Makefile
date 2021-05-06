@@ -1,0 +1,25 @@
+PORTNAME=	tdlib
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.7.0-747
+DISTVERSIONSUFFIX=	-gb342ec33
+CATEGORIES=	net-im devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Library for building Telegram clients
+
+LICENSE=	BSL
+
+USES=		cmake compiler:c++14-lang gperf ssl
+
+USE_GITHUB=	yes
+GH_PROJECT=	td
+
+CMAKE_OFF=	FREEBSD_BUILD_TESTING
+
+do-test:
+	@cd ${BUILD_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DFREEBSD_BUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+.include <bsd.port.mk>
