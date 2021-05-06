@@ -5,7 +5,7 @@
  #
  tcltest:	./testfixture$(TEXE)
 -	./testfixture$(TEXE) $(TOP)/test/veryquick.test $(TESTOPTS)
-+	mkdir $(TOP)/testdir && touch $(TOP) test-out.txt && chown nobody $(TOP)/testdir $(TOP) test-out.txt && su -m nobody -c "./testfixture$(TEXE) $(TOP)/test/veryquick.test $(TESTOPTS)"
++	mkdir $(TOP)/testdir && touch $(TOP)/test-out.txt && chown nobody $(TOP)/testdir $(TOP)/test-out.txt && su -m nobody -c "./testfixture$(TEXE) $(TOP)/test/veryquick.test $(TESTOPTS)"
  
  # Minimal testing that runs in less than 3 minutes
  #

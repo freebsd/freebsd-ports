@@ -2,6 +2,7 @@
 
 PORTNAME=	sqlite3
 DISTVERSION=	3.35.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${%Y:L:gmtime}/ https://www2.sqlite.org/${%Y:L:gmtime}/ https://www3.sqlite.org/${%Y:L:gmtime}/
@@ -9,8 +10,21 @@ DISTNAME=	sqlite-src-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
+.if ${FLAVOR:U} == icu
+COMMENT+=	(ICU flavor)
+.endif
+.if ${FLAVOR:U} == tcl
+COMMENT+=	(TCL flavor)
+.endif
 
 LICENSE=	PD
+
+FLAVORS=	default icu tcl
+FLAVOR?=	${FLAVORS:[1]}
+icu_PKGNAMESUFFIX=	-${FLAVOR}	# databases/p5-DBD-SQLite with ICU support
+icu_CONFLICTS_INSTALL=	${PORTNAME} ${PORTNAME}-tcl
+tcl_PKGNAMESUFFIX=	-${FLAVOR}	# lang/tcl* support
+tcl_CONFLICTS_INSTALL=	${PORTNAME} ${PORTNAME}-icu
 
 USES=	libtool pathfix zip
 USE_LDCONFIG=	yes
@@ -56,6 +70,13 @@ OPTIONS_RADIO_RL=	LIBEDIT READLINE
 OPTIONS_RADIO_STAT=	STAT3 STAT4
 OPTIONS_SINGLE=		RAMT
 OPTIONS_SINGLE_RAMT=	TS0 TS1 TS2 TS3
+.if ${FLAVOR:U} == icu
+OPTIONS_EXCLUDE=	UNICODE61
+OPTIONS_SLAVE=		ICU
+.endif
+.if ${FLAVOR:U} == tcl
+OPTIONS_SLAVE=		TCL
+.endif
 OPTIONS_SUB=		yes
 
 ARMOR_DESC=		Detect misuse of the API # https://www.sqlite.org/compile.html#enable_api_armor
