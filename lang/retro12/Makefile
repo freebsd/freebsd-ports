@@ -1,11 +1,11 @@
 PORTNAME=	retro12
-DISTVERSION=	2021.2
+DISTVERSION=	2021.4
 CATEGORIES=	lang
 MASTER_SITES=	http://forthworks.com/retro/r/ \
 		https://forthworks.com/retro/r/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Clean, elegant, and pragmatic dialect of Forth
 
 LICENSE=	ISCL
