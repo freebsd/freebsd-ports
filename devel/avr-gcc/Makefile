@@ -1,6 +1,5 @@
 PORTNAME=	gcc
-PORTVERSION=	9.1.0
-PORTREVISION=	2
+PORTVERSION=	10.2.0
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 PKGNAMEPREFIX=	avr-
@@ -34,9 +33,10 @@ CONFIGURE_ARGS=	--disable-libssp \
 		--enable-languages="c c++" \
 		--target=avr \
 		--with-gmp=${LOCALBASE} \
-		--with-isl=${LOCALBASE}
+		--with-isl=${LOCALBASE} \
+		--without-zstd
 
-MAKE_JOBS_UNSAFE=	yes
+PLIST_SUB=	VERSION=${GCC_VERSION}
 
 WITHOUT_CPU_CFLAGS=	This is a cross-compiler.
 
@@ -72,6 +72,9 @@ post-configure:
 	${MKDIR} ${WRKSRC}/gcc/include
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/gcc/avr/${PORTVERSION}/liblto_plugin.so.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/gcc/avr/${PORTVERSION}/liblto_plugin.so.0 \
+		${STAGEDIR}${PREFIX}/lib/libcc1.so.0.0.0 \
+		${STAGEDIR}${PREFIX}/lib/gcc/avr/${PORTVERSION}/plugin/libcc1plugin.so.0.0.0 \
+		${STAGEDIR}${PREFIX}/lib/gcc/avr/${PORTVERSION}/plugin/libcp1plugin.so.0.0.0
 
 .include <bsd.port.post.mk>
