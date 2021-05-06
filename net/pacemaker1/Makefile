@@ -1,6 +1,7 @@
 # Created by: David Shane Holden <dpejesh@yahoo.com>
 
 PORTVERSION=		1.1.24
+PORTREVISION=		1
 PKGNAMESUFFIX=		1
 
 .include "${.CURDIR}/Makefile.common"
@@ -22,6 +23,10 @@ SHEBANG_FILES+=		cts/cts \
 REPLACE_ARGS_GETOPT=	-e 's,getopt,${LOCALBASE}/bin/getopt,'
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1300000
+BROKEN=	"includes <sys/timeb.h> which is deprecated"
+.endif
 
 .if ${PYTHON_SUFFIX} > 36
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-cts_remote.py \

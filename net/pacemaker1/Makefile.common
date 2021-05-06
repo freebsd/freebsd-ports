@@ -56,15 +56,12 @@ sh_OLD_CMD=		${SH}
 sh_CMD=			${LOCALBASE}/bin/bash
 SHEBANG_FILES=		extra/resources/*
 
-REPLACE_ARGS_OCF=	-e 's,/usr/lib/ocf,${PREFIX}/lib/ocf,'
-
 OPTIONS_DEFINE=		DBUS DOCS MANPAGES SNMP
-
 OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=		yes
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
-DBUS_VARS_OFF=		REPLACE_ARGS+="-e 's/HAVE_dbus=1/HAVE_dbus=0/'"
+DBUS_VARS_OFF=		REPLACE_ARGS_DBUS="-e 's/HAVE_dbus=1/HAVE_dbus=0/'"
 
 DOCS_BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 
@@ -75,6 +72,9 @@ MANPAGES_BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_WITH=	snmp
 SNMP_USES=		ssl
+
+REPLACE_CMD_ARGS=	-e 's,/usr/lib/ocf,${PREFIX}/lib/ocf,' \
+			${REPLACE_ARGS_DBUS}
 
 # python default version must be set to 2.7 to generate a
 # correct pkg-plist
@@ -89,4 +89,4 @@ maintainer-plist: stage
 	> pkg-plist
 
 post-patch-common:
-	@${REINPLACE_CMD} ${REPLACE_ARGS_OCF} ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} ${REPLACE_CMD_ARGS} ${WRKSRC}/configure.ac
