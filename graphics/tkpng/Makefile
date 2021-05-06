@@ -7,7 +7,7 @@ CATEGORIES=	graphics tk
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	PNG support for Tcl/Tk
 
 LICENSE=	TclTk
