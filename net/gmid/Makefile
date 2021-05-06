@@ -1,5 +1,6 @@
 PORTNAME=	gmid
 DISTVERSION=	v1.6.1
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	freebsd@omarpolo.com

@@ -29,14 +29,14 @@ extra_commands="configtest"
 load_rc_config $name
 
 command="%%PREFIX%%/bin/${name}"
-command_flags="-c ${gmid_config}"
+gmid_flags="-c ${gmid_config}"
 
 required_files="${gmid_config}"
 
 gmid_checkconfig()
 {
 	echo "Performing sanity check on gmid configuration:"
-	eval ${command} -n ${command_flags}
+	eval ${command} -n ${gmid_flags}
 }
 
 run_rc_command "$1"
