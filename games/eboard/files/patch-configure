@@ -1,15 +1,15 @@
---- configure.orig	2021-03-13 13:18:59.466284000 -0800
-+++ configure	2021-03-13 13:18:59.474328000 -0800
-@@ -106,7 +106,7 @@
+--- configure.orig	2021-05-06 14:10:24 UTC
++++ configure
+@@ -106,7 +106,7 @@ sub run_cmd {
  }
  
  sub cplusplus_lang {
 -    my @compilers = ( $cxx, 'g++', 'c++' );
-+    my @compilers = ( $cxx, 'g++9', 'c++' );
++    my @compilers = ( $cxx, 'g++10', 'c++' );
      my $x;
      my $program = <<EOF;
  #include <list>
-@@ -357,7 +357,7 @@
+@@ -357,7 +357,7 @@ sub header_check {
  
  	log_file("test.cc");
  
@@ -18,7 +18,7 @@
  	    print ": no\n";
  	    $y = header_def($x);
  	    print CONFIGH "#undef $y\n";
-@@ -511,17 +511,9 @@
+@@ -511,17 +511,9 @@ if (!header_check("stdio.h","stdlib.h","string.h","uni
  #optional headers
  header_check("strings.h");
  
@@ -37,7 +37,7 @@
      cppdef("USE_SOCK_OPTS");
      if ($t1!=0 && $t3!=0) {
  	cppundef("NEED_TCP_H");
-@@ -535,10 +527,10 @@
+@@ -535,10 +527,10 @@ if ($t2 != 0) {
  	print "netinet/tcp.h not required, SOL_TCP present.\n";
      }
  } else {

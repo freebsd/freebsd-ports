@@ -1,10 +1,10 @@
---- network.h.orig	Mon Jan 15 23:59:58 2007
-+++ network.h	Wed Jan 17 19:39:10 2007
-@@ -235,6 +235,7 @@
+--- network.h.orig	2018-07-31 18:02:19 UTC
++++ network.h
+@@ -253,6 +253,7 @@ class PipeConnection : public BufferedConnection,
    int  pid;
    int  toid; // timeout
    string handshake;
 +  int  use_execve;
    double MaxWaitTime; // msecs
- };
  
+ };

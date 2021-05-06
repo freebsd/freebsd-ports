@@ -2,4 +2,4 @@ eboard is a GTK+ chess interface.  It provides a chess board
 interface to ICS (Internet Chess Servers) like FICS and chessd,
 and to chess engines like GNU Chess, Sjeng and Crafty.
 
-WWW: http://www.bergo.eng.br/eboard/
+WWW: https://www.bergo.eng.br/eboard/
