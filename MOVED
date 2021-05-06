@@ -16586,3 +16586,4 @@ devel/google-gdata||2021-10-27|Has expired: Google is no longer using GoogleData
 net/irrd-legacy|net/irrd|2021-10-27|Has expired: Use net/irrd
 mail/postfix-ldap-sasl|mail/postfix@ldap|2021-10-28|Converted to flavor
 mail/postfix-sasl|mail/postfix@sasl|2021-10-28|Converted to flavor
+mail/postfix-current-sasl|mail/postfix-current@sasl|2021-10-28|Converted to flavor
