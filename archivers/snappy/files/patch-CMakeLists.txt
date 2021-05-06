@@ -1,0 +1,61 @@
+--- CMakeLists.txt.orig	2021-05-04 22:53:34 UTC
++++ CMakeLists.txt
+@@ -213,8 +213,7 @@ configure_file(
+   "snappy-stubs-public.h.in"
+   "${PROJECT_BINARY_DIR}/snappy-stubs-public.h")
+ 
+-add_library(snappy "")
+-target_sources(snappy
++set(SNAPPY_SRCS
+   PRIVATE
+     "snappy-internal.h"
+     "snappy-stubs-internal.h"
+@@ -235,20 +234,35 @@ target_sources(snappy
+     $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/snappy-stubs-public.h>
+     $<INSTALL_INTERFACE:include/snappy-stubs-public.h>
+ )
+-target_include_directories(snappy
++set(SNAPPY_INCS
+   PUBLIC
+     $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}>
+     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
+     $<INSTALL_INTERFACE:include>
+ )
++add_library(snappy SHARED)
++target_sources(snappy ${SNAPPY_SRCS})
++target_include_directories(snappy ${SNAPPY_INCS})
+ set_target_properties(snappy
+   PROPERTIES VERSION ${PROJECT_VERSION} SOVERSION ${PROJECT_VERSION_MAJOR})
+ 
+ target_compile_definitions(snappy PRIVATE -DHAVE_CONFIG_H)
+-if(BUILD_SHARED_LIBS)
+-  set_target_properties(snappy PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
+-endif(BUILD_SHARED_LIBS)
++set_target_properties(snappy PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
+ 
++add_library(snappy-static STATIC)
++target_sources(snappy-static ${SNAPPY_SRCS})
++target_include_directories(snappy-static ${SNAPPY_INCS})
++set_target_properties(snappy-static
++  PROPERTIES VERSION ${PROJECT_VERSION} SOVERSION ${PROJECT_VERSION_MAJOR})
++
++target_compile_definitions(snappy-static PRIVATE -DHAVE_CONFIG_H)
++
++if (MSVC)
++    set_target_properties(snappy-static PROPERTIES OUTPUT_NAME snappy-static)
++else()
++    set_target_properties(snappy-static PROPERTIES OUTPUT_NAME snappy)
++endif()
++
+ if(SNAPPY_BUILD_TESTS OR SNAPPY_BUILD_BENCHMARKS)
+   add_library(snappy_test_support "")
+   target_sources(snappy_test_support
+@@ -359,7 +373,7 @@ endif(SNAPPY_FUZZING_BUILD)
+ include(GNUInstallDirs)
+ 
+ if(SNAPPY_INSTALL)
+-  install(TARGETS snappy
++  install(TARGETS snappy snappy-static
+     EXPORT SnappyTargets
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
