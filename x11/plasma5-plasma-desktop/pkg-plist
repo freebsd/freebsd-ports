@@ -168,6 +168,8 @@ share/doc/HTML/de/kcontrol/keys/index.cache.bz2
 share/doc/HTML/de/kcontrol/keys/index.docbook
 share/doc/HTML/de/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/de/kcontrol/mouse/index.docbook
+share/doc/HTML/de/kcontrol/notifications/index.cache.bz2
+share/doc/HTML/de/kcontrol/notifications/index.docbook
 share/doc/HTML/de/kcontrol/paths/index.cache.bz2
 share/doc/HTML/de/kcontrol/paths/index.docbook
 share/doc/HTML/de/kcontrol/solid-actions/index.cache.bz2
@@ -1378,6 +1380,7 @@ share/locale/de/LC_MESSAGES/knetattach5.mo
 share/locale/de/LC_MESSAGES/org.kde.plasma.emojier.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.panel.mo
+share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.kimpanel.mo
@@ -3030,6 +3033,7 @@ share/locale/ro/LC_MESSAGES/knetattach5.mo
 share/locale/ro/LC_MESSAGES/org.kde.plasma.emojier.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.panel.mo
+share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.kimpanel.mo
@@ -3462,7 +3466,6 @@ share/locale/sv/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/ta/LC_MESSAGES/kaccess.mo
 share/locale/ta/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ta/LC_MESSAGES/kcm5_kded.mo
-share/locale/ta/LC_MESSAGES/kcm_autostart.mo
 share/locale/ta/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/ta/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ta/LC_MESSAGES/kcm_launchfeedback.mo

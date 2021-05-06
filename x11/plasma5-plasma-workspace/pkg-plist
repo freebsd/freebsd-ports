@@ -4867,6 +4867,7 @@ share/locale/sv/LC_MESSAGES/plasmashellprivateplugin.mo
 share/locale/sv/LC_MESSAGES/soliduiserver5.mo
 share/locale/sv/LC_MESSAGES/systemmonitor.mo
 share/locale/ta/LC_MESSAGES/kcm5_icons.mo
+share/locale/ta/LC_MESSAGES/kcm_autostart.mo
 share/locale/ta/LC_MESSAGES/kcm_colors.mo
 share/locale/ta/LC_MESSAGES/kcm_cursortheme.mo
 share/locale/ta/LC_MESSAGES/kcm_fonts.mo
