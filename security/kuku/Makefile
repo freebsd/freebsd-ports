@@ -9,7 +9,7 @@ COMMENT=	Cuckoo hashing library written in C++
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake compiler:c++14-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
