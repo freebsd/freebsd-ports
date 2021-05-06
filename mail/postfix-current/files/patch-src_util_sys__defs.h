@@ -1,4 +1,4 @@
---- src/util/sys_defs.h.orig	2020-05-21 13:34:23 UTC
+--- src/util/sys_defs.h.orig	2020-05-21 18:34:23 UTC
 +++ src/util/sys_defs.h
 @@ -30,7 +30,8 @@
  #if defined(FREEBSD2) || defined(FREEBSD3) || defined(FREEBSD4) \

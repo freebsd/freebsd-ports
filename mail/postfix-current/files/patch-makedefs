@@ -1,10 +1,10 @@
---- makedefs.orig	2020-09-30 21:22:49 UTC
+--- makedefs.orig	2021-04-24 20:49:37 UTC
 +++ makedefs
 @@ -309,6 +309,24 @@ case "$SYSTEM.$RELEASE" in
  		: ${SHLIB_ENV="LD_LIBRARY_PATH=`pwd`/lib"}
  		: ${PLUGIN_LD="${CC} -shared"}
  		;;
-+   FreeBSD.13*)	SYSTYPE=FREEBSD13
++  FreeBSD.13*)	SYSTYPE=FREEBSD13
 +		: ${CC=cc}
 +		: ${SHLIB_SUFFIX=.so}
 +		: ${SHLIB_CFLAGS=-fPIC}
@@ -13,7 +13,7 @@
 +		: ${SHLIB_ENV="LD_LIBRARY_PATH=`pwd`/lib"}
 +		: ${PLUGIN_LD="${CC} -shared"}
 +		;;
-+   FreeBSD.14*)	SYSTYPE=FREEBSD14
++  FreeBSD.14*)	SYSTYPE=FREEBSD14
 +		: ${CC=cc}
 +		: ${SHLIB_SUFFIX=.so}
 +		: ${SHLIB_CFLAGS=-fPIC}
