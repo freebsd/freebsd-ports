@@ -13,18 +13,18 @@ type: install
 }
 {
 message: <<EOD
-Ansible has been updated to 2.8. Please follow the porting guide
+Ansible has been updated to %%MAJMINVER%%. Please follow the porting guide
 to update the rulesets:
 
-https://docs.ansible.com/ansible/devel/porting_guides/porting_guide_2.8.html
+  https://docs.ansible.com/ansible/devel/porting_guides/porting_guide_%%MAJMINVER%%.html
 
-If you wish to stay with 2.7 version, you can switch
-to new sysutils/ansible27 port, which tracks stable 2.7 branch:
+In order to stay with an older version instead, e.g., 2.7, use pkg-set(8).
+For example:
 
-# pkg set -n ansible:ansible27
+  # pkg set -n %%PYTHON_PKGNAMEPREFIX%%ansible:%%PYTHON_PKGNAMEPREFIX%%ansible27
 
 EOD
-maximum_version: "2.8"
+maximum_version: "%%MAJMINVER%%"
 type: upgrade
 }
 ]
