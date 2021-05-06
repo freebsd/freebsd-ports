@@ -96,6 +96,7 @@ man/man1/melt.1.gz
 %%DATADIR%%/core/filter_audiowave.yml
 %%DATADIR%%/core/filter_brightness.yml
 %%DATADIR%%/core/filter_channelcopy.yml
+%%DATADIR%%/core/filter_choppy.yml
 %%DATADIR%%/core/filter_crop.yml
 %%DATADIR%%/core/filter_data_show.yml
 %%DATADIR%%/core/filter_fieldorder.yml
@@ -207,9 +208,11 @@ man/man1/melt.1.gz
 %%DATADIR%%/plus/filter_loudness.yml
 %%DATADIR%%/plus/filter_loudness_meter.yml
 %%DATADIR%%/plus/filter_lumakey.yml
+%%DATADIR%%/plus/filter_pillar_echo.yml
 %%DATADIR%%/plus/filter_rgblut.yml
 %%DATADIR%%/plus/filter_sepia.yml
 %%DATADIR%%/plus/filter_spot_remover.yml
+%%DATADIR%%/plus/filter_strobe.yml
 %%DATADIR%%/plus/filter_text.yml
 %%DATADIR%%/plus/filter_timer.yml
 %%DATADIR%%/plus/producer_blipflash.yml
@@ -220,6 +223,7 @@ man/man1/melt.1.gz
 %%DATADIR%%/plusgpl/filter_lumaliftgaingamma.yml
 %%DATADIR%%/plusgpl/filter_rotoscoping.yml
 %%DATADIR%%/presets/consumer/avformat/AAC
+%%DATADIR%%/presets/consumer/avformat/AV1
 %%DATADIR%%/presets/consumer/avformat/Flash
 %%DATADIR%%/presets/consumer/avformat/GIF
 %%DATADIR%%/presets/consumer/avformat/MJPEG

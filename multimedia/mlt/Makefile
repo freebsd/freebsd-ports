@@ -48,7 +48,7 @@ PORTDOCS=	AUTHORS NEWS README docs
 PORTEXAMPLES=	demo
 
 OPTIONS_DEFINE=	DOCS EXAMPLES FFMPEG FREI0R GDK JACK OPENGL \
-		SAMPLERATE SOX VIDSTAB # OPENCV VDPAU
+		SAMPLERATE SOX VIDSTAB
 OPTIONS_DEFAULT=FFMPEG FREI0R GDK OPENGL SAMPLERATE SOX VIDSTAB
 OPTIONS_SUB=	yes
 
@@ -89,11 +89,6 @@ SAMPLERATE_CONFIGURE_ENABLE=resample
 SOX_LIB_DEPENDS=	libsox.so:audio/sox
 SOX_CONFIGURE_ENABLE=	sox
 
-# https://sourceforge.net/p/mlt/bugs/240/
-CONFIGURE_ARGS+=	${VDPAU_CONFIGURE_OFF}
-VDPAU_CONFIGURE_ON=	--avformat-vdpau
-VDPAU_CONFIGURE_OFF=	--avformat-no-vdpau
-
 VIDSTAB_LIB_DEPENDS=	libvidstab.so:multimedia/vid.stab
 VIDSTAB_CONFIGURE_ENABLE=vid.stab
 
@@ -101,7 +96,6 @@ pre-configure:
 	# Remove sdl1 support
 	${RM} -r ${WRKSRC}/src/modules/sdl
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' \
-		${WRKSRC}/src/modules/avformat/vdpau.c \
 		${WRKSRC}/src/modules/frei0r/factory.c \
 		${WRKSRC}/src/modules/jackrack/plugin_mgr.c
 	@${REINPLACE_CMD} -e 's,-lpthread,-pthread,' \
