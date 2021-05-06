@@ -192,7 +192,6 @@ USES+=	compiler:c++11-lang
 # License definitions
 
 .if ${PORT_OPTIONS:MFAAC} || ${PORT_OPTIONS:MFDK_AAC} || ${PORT_OPTIONS:MOPENSSL}
-RESTRICTED=	linking to libfaac or libaacplus or using OpenSSL support restricts redistribution
 CONFIGURE_ARGS+=	--enable-nonfree
 AV_NONFREE=		true
 .endif
@@ -217,6 +216,14 @@ LICENSE=	LGPL3+
 
 .if !defined(AV_NONFREE) && !defined(AV_ISGPL) && !defined(LICENSE)
 LICENSE=	LGPL21+
+.endif
+
+.if defined(AV_NONFREE)
+LICENSE+=	AV
+LICENSE_COMB=	multi
+LICENSE_NAME_AV=	Restricted redistribution
+LICENSE_TEXT_AV=	linking to libfaac or libaacplus or using OpenSSL support restricts redistribution
+LICENSE_PERMS_AV=	auto-accept
 .endif
 
 post-patch:
