@@ -1,7 +1,7 @@
 # Created by: NAKATA Maho <maho@FreeBSD.org>
 
 PORTNAME=	abinit
-DISTVERSION=	9.4.1
+DISTVERSION=	9.4.2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
