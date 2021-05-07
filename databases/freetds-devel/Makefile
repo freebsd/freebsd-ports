@@ -1,7 +1,7 @@
 # Created by: Domas Mituzas <midom@dammit.lt>
 
 PORTNAME=	freetds
-PORTVERSION=	1.2.126
+PORTVERSION=	1.2.130
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/current/ \
@@ -50,6 +50,8 @@ ODBCWIDE_CONFIGURE_ON=	--enable-odbc-wide
 PORTDOCS=	*
 
 CONFLICTS=	freetds-1.*
+
+PORTSCOUT=	limit:^\d+\.\d+\.\d{3}$
 
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MIODBC} || ${PORT_OPTIONS:MUNIXODBC}
