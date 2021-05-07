@@ -1,7 +1,8 @@
 # Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 
 PORTNAME=	radius
-DISTVERSION=	1.4.0b1
+PORTVERSION=	1.4.0b1
+PORTREVISION=	1
 CATEGORIES=	net security pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 USES=		php:pecl
 
 CONFIGURE_ARGS=	--enable-radius
-IGNORE_WITH_PHP=80
 
 OPTIONS_DEFINE=	EXAMPLES
 
