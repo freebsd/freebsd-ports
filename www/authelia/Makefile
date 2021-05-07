@@ -1,6 +1,6 @@
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.29.0
+DISTVERSION=	4.29.1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/authelia/authelia/releases/download/v${DISTVERSION}/:public_html
 DISTFILES=	authelia-${DISTVERSIONFULL}-public_html${EXTRACT_SUFX}:public_html # html root directory needs to be built in a special way
@@ -60,7 +60,7 @@ GH_TUPLE=	\
 		jackc:pgx:v4.11.0:jackc_pgx_v4/vendor/github.com/jackc/pgx/v4 \
 		klauspost:compress:v1.11.8:klauspost_compress/vendor/github.com/klauspost/compress \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
-		mattn:go-sqlite3:v2.0.3:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
+		mattn:go-sqlite3:v1.14.7:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		mattn:goveralls:v0.0.6:mattn_goveralls/vendor/github.com/mattn/goveralls \
 		mitchellh:mapstructure:v1.3.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		mohae:deepcopy:c48cc78d4826:mohae_deepcopy/vendor/github.com/mohae/deepcopy \
