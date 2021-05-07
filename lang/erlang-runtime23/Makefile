@@ -2,7 +2,7 @@
 
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	23.3.2
+DISTVERSION=	23.3.3
 PORTREVISION=	0
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime23
@@ -19,7 +19,7 @@ USES=		autoreconf:build gmake ncurses perl5
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	erlang:otp,corba
 GH_PROJECT=	otp:otp corba:corba
-GH_TAGNAME=	5.0.1:corba
+GH_TAGNAME=	5.0.2:corba
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
