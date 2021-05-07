@@ -1,0 +1,10 @@
+A gemini server written in Rust. It features:
+
+ - Vhosts
+ - CGI
+ - User directories
+ - Reverse proxy
+ - Redirect
+ - SCGI
+
+WWW: https://git.sr.ht/~int80h/gemserv

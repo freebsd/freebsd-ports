@@ -1,0 +1,31 @@
+[
+{ type: install
+  message: <<EOM
+Gemserv gemini server is now installed.
+
+README and UPDATING files from source distribution are installed in:
+
+    /usr/local/share/doc/gemserv/
+
+Example cgi-scripts are installed in:
+
+    /usr/local/share/examples/gemserv/
+
+Quick Start:
+
+1) Check, edit server configuration in /usr/local/etc/gemserv/config.toml
+   (see config.toml-dist for all configuration options)
+2) Generate TLS key and cert, i.e. for domain "gemini.example.net":
+
+    openssl req -newkey rsa:4096 -nodes -keyout /usr/local/etc/gemserv/key.pem  \
+                         -x509 -days 36500 -out /usr/local/etc/gemserv/cert.pem \
+      -subj "/C=FR/ST=FR/L=FR/O=example.net/OU=IT/CN=gemini.example.net/emailAddress=root@example.net"
+
+    chown _gemini /usr/local/etc/gemserv/key.pem
+
+3) sysrc gemserv_enable=YES
+4) service gemserv start
+5) tail /var/log/messages
+EOM
+}
+]

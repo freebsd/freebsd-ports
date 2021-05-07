@@ -817,7 +817,7 @@ bitmark-recorder:*:873:
 librespeed:*:874:
 # free: 875
 # free: 876
-# free: 877
+gemserv:*:877:
 gerbera:*:878:
 _encrypted-dns:*:879:
 pyspf-milter:*:880:

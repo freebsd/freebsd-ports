@@ -170,6 +170,7 @@
     SUBDIR += fspd
     SUBDIR += fsplib
     SUBDIR += gdrive
+    SUBDIR += gemserv
     SUBDIR += geoclue
     SUBDIR += geocode-glib
     SUBDIR += geoipupdate

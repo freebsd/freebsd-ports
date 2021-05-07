@@ -1,0 +1,76 @@
+#!/bin/sh
+
+# PROVIDE: gemserv
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# gemserv_enable (bool):		Set to NO by default.
+#					Set it to YES to enable gemserv.
+# gemserv_user (user):			Set user to run gemserv.
+#					Default: _gemini
+# gemserv_group (group):		Set group to run gemserv.
+#					Default: _gemini
+# gemserv_config (path):		Set to %%ETCDIR%%/config.toml
+#					by default.
+# gemserv_syslog_output_enable:		Set to enable syslog output.
+#					Default: YES
+# gemserv_syslog_output_tag:		Set syslog tag if syslog enabled.
+#					Default: gemserv
+# gemserv_syslog_output_priority:	Set syslog priority if syslog enabled.
+#					Default: notice
+# gemserv_syslog_output_facility:	Set syslog facility if syslog enabled.
+#					Default: daemon
+
+. /etc/rc.subr
+
+name=gemserv
+rcvar=gemserv_enable
+
+load_rc_config $name
+
+: ${gemserv_enable:=NO}
+: ${gemserv_user:="%%GEMSERV_USER%%"}
+: ${gemserv_group:="%%GEMSERV_GROUP%%"}
+: ${gemserv_config="%%ETCDIR%%/config.toml"}
+: ${gemserv_syslog_output_enable:="YES"}
+: ${gemserv_syslog_output_tag:="gemserv"}
+: ${gemserv_syslog_output_priority:="notice"}
+: ${gemserv_syslog_output_facility:="daemon"}
+
+
+if checkyesno gemserv_syslog_output_enable; then
+	if [ -n "${gemserv_syslog_output_tag}" ]; then
+		gemserv_syslog_output_flags="-T ${gemserv_syslog_output_tag}"
+	else
+		gemserv_syslog_output_flags="-T ${name}"
+	fi
+	if [ -n "${gemserv_syslog_output_priority}" ]; then
+		gemserv_syslog_output_flags="${gemserv_syslog_output_flags} -s ${gemserv_syslog_output_priority}"
+	fi
+	if [ -n "${gemserv_syslog_output_facility}" ]; then
+		gemserv_syslog_output_flags="${gemserv_syslog_output_flags} -l ${gemserv_syslog_output_facility}"
+	fi
+fi
+
+pidfile=/var/run/gemserv.pid
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/bin/gemserv
+command_args="-p ${pidfile} ${gemserv_syslog_output_flags} ${procname} ${gemserv_config}"
+
+start_precmd="gemserv_start_precmd"
+stop_postcmd="gemserv_stop_postcmd"
+
+gemserv_start_precmd() {
+	if [ ! -e "${pidfile}" ]; then
+		/usr/bin/install -m 0644 -o ${gemserv_user} -g ${gemserv_group} /dev/null "${pidfile}"
+	fi
+}
+
+gemserv_stop_postcmd() {
+        /bin/rm -f ${pidfile}
+}
+
+run_rc_command "$1"
