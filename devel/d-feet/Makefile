@@ -1,5 +1,5 @@
 PORTNAME=	d-feet
-PORTVERSION=	0.3.15
+PORTVERSION=	0.3.16
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -21,14 +21,8 @@ USE_GNOME=	gtk30 intlhack libwnck3 pygobject3 introspection:build \
 GLIB_SCHEMAS=	org.gnome.dfeet.gschema.xml
 USE_PYTHON=	py3kplist
 
-MESON_ARGS=	-Dtests=false
+MESON_ARGS=	-Dpython="${PYTHON_CMD}" -Dtests=false
 
 NO_ARCH=	yes
-
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
-		-e 's|%%PYTHON_VERSION%%|${PYTHON_VERSION}|' \
-		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
