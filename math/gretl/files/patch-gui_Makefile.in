@@ -1,6 +1,6 @@
---- gui/Makefile.in.orig	2018-12-19 23:19:26 UTC
+--- gui/Makefile.in.orig	2021-05-07 16:11:37 UTC
 +++ gui/Makefile.in
-@@ -154,7 +154,7 @@ else ifeq ($(win32_build),yes)
+@@ -157,7 +157,7 @@ else ifeq ($(win32_build),yes)
    INSTALL_GTKRC = install-gtkrc
  else
    PROG = gretl_x11$(EXEEXT)
@@ -9,7 +9,7 @@
  endif
  
  vpath %.c $(topsrc)/gui
-@@ -269,7 +269,7 @@ NEWS: $(MKNEWS) $(topsrc)/ChangeLog
+@@ -279,7 +279,7 @@ NEWS: $(MKNEWS) $(topsrc)/ChangeLog
  
  .PHONY:
  
@@ -18,7 +18,7 @@
  	install-news $(INSTALL_GTKRC) $(INSTALL_CMDFILE)
  
  install-strip: $(PROG) install-data
-@@ -284,7 +284,7 @@ install-ui: installdirs
+@@ -294,7 +294,7 @@ install-ui: installdirs
  	$(INSTALL_DATA) $(topsrc)/gui/gretlmodel.xml $(DESTDIR)$(uidir)
  
  install-script: installdirs
