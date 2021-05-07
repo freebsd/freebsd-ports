@@ -1,6 +1,7 @@
 PORTNAME=		apg
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.3.1
+PORTEPOCH=		1
 CATEGORIES=		security sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org
