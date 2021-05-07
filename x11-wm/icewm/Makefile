@@ -1,8 +1,7 @@
 # Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 
 PORTNAME=	icewm
-PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTVERSION=	2.3.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		compiler:c++11-lang gmake gnome iconv:translit localbase \
 		perl5 pkgconfig shebangfix tar:lz xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 librsvg2
+USE_GNOME=	glib20
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xpm xrender
 GNU_CONFIGURE=	yes
@@ -30,7 +29,7 @@ OPTIONS_DEFINE=		BEASTIE DOCS IMLIB2 NLS SVG XFT XINERAMA XRANDR
 OPTIONS_DEFAULT=	BEASTIE IMLIB2 XFT XINERAMA XRANDR
 OPTIONS_SUB=		yes
 
-BEASTIE_DESC=		Use Beastie-fied startup button
+BEASTIE_DESC=		Use Beastie'fied startup button
 BEASTIE_VARS=		STARTUP_PIXMAP=bsd-daemon.xpm
 BEASTIE_VARS_OFF=	STARTUP_PIXMAP=icewm-logo.xpm
 
@@ -43,6 +42,7 @@ NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 SVG_USE=		GNOME=librsvg2
+SVG_CONFIGURE_OFF=	--disable-rsvg
 
 XFT_LIB_DEPENDS=	libXft.so:x11-fonts/libXft
 XFT_CONFIGURE_OFF=	--enable-corefonts --disable-xfreetype
