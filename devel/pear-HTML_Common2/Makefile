@@ -1,7 +1,7 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	HTML_Common2
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	bofh@FreeBSD.org
