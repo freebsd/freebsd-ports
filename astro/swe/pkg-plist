@@ -1,14 +1,15 @@
 include/swe/swedate.h
 include/swe/swedll.h
+include/swe/sweephe4.h
 include/swe/swehouse.h
 include/swe/swejpl.h
 include/swe/swemptab.h
 include/swe/swenut2000a.h
 include/swe/sweodef.h
-include/swe/swepcalc.h
 include/swe/sweph.h
 include/swe/swephexp.h
 include/swe/swephlib.h
+include/swe/swevents.h
 lib/libswe.a
 %%PORTDOCS%%%%DOCSDIR%%/sweph.gif
 %%PORTDOCS%%%%DOCSDIR%%/swephin.gif
