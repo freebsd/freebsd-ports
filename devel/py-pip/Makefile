@@ -59,6 +59,13 @@ DOCS_PORTDOCS=		*
 DOCS_VARS=		PYDISTUTILS_BUILD_TARGET=build_sphinx \
 			PYDISTUTILS_BUILDARGS="-n --all-files --fresh-env"
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3700 && ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}future-annotations>=0:devel/py-future-annotations@${PY_FLAVOR}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-python36
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/build/sphinx/html && \
@@ -72,4 +79,4 @@ do-test:
 	${LN} -sf ${LOCALBASE}/bin/pip ${LOCALBASE}/bin/pip3
 	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
