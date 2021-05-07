@@ -174,6 +174,7 @@
     SUBDIR += cfengine317
     SUBDIR += chaoskube
     SUBDIR += checkrestart
+    SUBDIR += chezmoi
     SUBDIR += chgrep
     SUBDIR += choria
     SUBDIR += chyves
