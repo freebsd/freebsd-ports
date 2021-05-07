@@ -15,9 +15,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tokenize-rt>=3:devel/py-tokenize-rt@${PY_FLAVOR}
 
-USES=		python:3.6
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 3700
+IGNORE=		included in python ${PYTHON_VER}
+.endif
+
+.include <bsd.port.post.mk>
