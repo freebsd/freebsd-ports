@@ -1,7 +1,7 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	talk
-PORTVERSION=	11.1.2
+PORTVERSION=	11.2.1
 CATEGORIES=	net-im www
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${DISTNAME:C/-.*//}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-

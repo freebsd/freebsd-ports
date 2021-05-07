@@ -276,6 +276,7 @@
 %%WWWDIR%%/lib/Controller/RoomController.php
 %%WWWDIR%%/lib/Controller/SettingsController.php
 %%WWWDIR%%/lib/Controller/SignalingController.php
+%%WWWDIR%%/lib/Controller/TempAvatarController.php
 %%WWWDIR%%/lib/Dashboard/TalkWidget.php
 %%WWWDIR%%/lib/DataObjects/AccountId.php
 %%WWWDIR%%/lib/DataObjects/RegisterAccountData.php
