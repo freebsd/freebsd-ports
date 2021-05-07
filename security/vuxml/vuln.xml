@@ -76,6 +76,53 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f7a00ad7-ae75-11eb-8113-08002728f74c">
+    <topic>Rails -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rubygem-actionpack52</name>
+	<range><lt>5.2.6</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack60</name>
+	<range><lt>6.0.3.7</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack61</name>
+	<range><lt>6.1.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby on Rails blog:</p>
+	<blockquote cite="https://weblog.rubyonrails.org/2021/5/5/Rails-versions-6-1-3-2-6-0-3-7-5-2-4-6-and-5-2-6-have-been-released/">
+	  <p>Rails versions 6.1.3.2, 6.0.3.7, and 5.2.6 have been released! These
+	    releases contain important security fixes. Here is a list of the issues
+	    fixed:</p>
+	  <p>CVE-2021-22885: Possible Information Disclosure / Unintended Method Execution in Action Pack</p>
+	  <p>CVE-2021-22902: Possible Denial of Service vulnerability in Action Dispatch</p>
+	  <p>CVE-2021-22903: Possible Open Redirect Vulnerability in Action Pack</p>
+	  <p>CVE-2021-22904: Possible DoS Vulnerability in Action Controller Token Authentication</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://weblog.rubyonrails.org/2021/5/5/Rails-versions-6-1-3-2-6-0-3-7-5-2-4-6-and-5-2-6-have-been-released/</url>
+      <url>https://discuss.rubyonrails.org/t/cve-2021-22885-possible-information-disclosure-unintended-method-execution-in-action-pack/77868</url>
+      <url>https://discuss.rubyonrails.org/t/cve-2021-22902-possible-denial-of-service-vulnerability-in-action-dispatch/77866</url>
+      <url>https://discuss.rubyonrails.org/t/cve-2021-22903-possible-open-redirect-vulnerability-in-action-pack/77867</url>
+      <url>https://discuss.rubyonrails.org/t/cve-2021-22904-possible-dos-vulnerability-in-action-controller-token-authentication/77869</url>
+      <cvename>CVE-2021-22885</cvename>
+      <cvename>CVE-2021-22902</cvename>
+      <cvename>CVE-2021-22903</cvename>
+      <cvename>CVE-2021-22904</cvename>
+    </references>
+    <dates>
+      <discovery>2021-05-05</discovery>
+      <entry>2021-05-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7f242313-aea5-11eb-8151-67f74cf7c704">
     <topic>go -- net/http: ReadRequest can stack overflow due to recursion with very large headers</topic>
     <affects>
