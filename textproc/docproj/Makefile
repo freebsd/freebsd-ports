@@ -1,31 +1,33 @@
 # Created by: Nik Clayton <nik@FreeBSD.org>
 
 PORTNAME=	docproj
-PORTVERSION=	2.0
-PORTREVISION=	16
+PORTVERSION=	3.0
 CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Meta-port for the FreeBSD Documentation Project
 
-RUN_DEPENDS=	${LOCALBASE}/share/xml/dtd/xhtml/xhtml.soc:textproc/xhtml \
+RUN_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
+		${LOCALBASE}/share/xml/dtd/xhtml/xhtml.soc:textproc/xhtml \
 		${LOCALBASE}/share/xml/xmlcharent/catalog:textproc/xmlcharent \
 		${LOCALBASE}/share/xsl/iso-schematron/xslt1/iso_schematron_skeleton_for_xslt1.xsl:textproc/iso-schematron-xslt \
 		docbook-xsl-ns>=1.78.1_4:textproc/docbook-xsl-ns \
 		docbook>0:textproc/docbook \
+		hugo:www/gohugo \
 		links:www/links1 \
 		p5-XML-Parser>=2.41:textproc/p5-XML-Parser \
 		peps:graphics/peps \
 		pngtopnm:graphics/netpbm \
+		rougify:textproc/rubygem-rouge \
 		scr2png:graphics/scr2png \
 		scr2txt:textproc/scr2txt \
 		xsltproc:textproc/libxslt \
 		zip:archivers/zip
 
-USES=		ghostscript:run metaport perl5
+USES=		ghostscript:run metaport perl5 python:3.6+,run
 USE_PERL5=	run
 
-OPTIONS_DEFINE=		CJK DBLATEX FOP GIT GROFF IGOR JING TRANSLATOR
+OPTIONS_DEFINE=		CJK DBLATEX FOP GIT GROFF IGOR JING PDF TRANSLATOR
 OPTIONS_DEFAULT=	CJK GIT GROFF IGOR TRANSLATOR
 
 CJK_DESC=		CJK support
@@ -46,8 +48,10 @@ GIT_RUN_DEPENDS=	git:devel/git
 GROFF_USES=		groff:run
 IGOR_RUN_DEPENDS=	igor:textproc/igor
 JING_RUN_DEPENDS=	jing:textproc/jing
+PDF_RUN_DEPENDS=	asciidoctor-pdf:textproc/rubygem-asciidoctor-pdf
 TRANSLATOR_RUN_DEPENDS=	itstool:textproc/itstool \
-			msgcat:devel/gettext-tools
+			msgcat:devel/gettext-tools \
+			po4a>=0.63_1:textproc/po4a
 
 _FONTS=		${LOCALBASE}/share/fonts/dejavu/DejaVuSansMono.ttf:x11-fonts/dejavu \
 		${LOCALBASE}/share/fonts/Droid/DroidSans.ttf:x11-fonts/droid-fonts-ttf \
