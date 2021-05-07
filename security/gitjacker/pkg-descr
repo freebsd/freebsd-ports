@@ -1,0 +1,8 @@
+Gitjacker downloads git repositories and extracts their contents from sites
+where the .git directory has been mistakenly uploaded. It will still manage
+to recover a significant portion of a repository even where directory listings
+are disabled.
+
+For educational/penetration testing use only.
+
+WWW: https://github.com/liamg/gitjacker
