@@ -1,0 +1,3 @@
+future-annotations is a backport of __future__ annotations to python < 3.7.
+
+WWW: https://github.com/asottile/future-annotations
