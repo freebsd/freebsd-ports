@@ -1,7 +1,7 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
 
 PORTNAME=	File-Touch
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
