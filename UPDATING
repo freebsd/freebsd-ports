@@ -57,8 +57,8 @@ you update your ports collection, before attempting any port upgrades.
   For portmaster users:
   # sh
   # portmaster -o lang/python38 python37
-  # REINSTALL="$(pkg info -o py37-\* | awk '{printf "%s ", $2}')"
-  # pkg delete -f py37-\*
+  # REINSTALL="$(pkg info -o "*py37*" | awk '{printf "%s ", $2}')"
+  # pkg delete -f "*py37*"
   # portmaster $REINSTALL
   # REBUILD=$(pkg query -g "%n:%dn" '*' | grep py3 | grep -v py38 | cut -d : -f 1 | sort -u)
   # portmaster $REBUILD
