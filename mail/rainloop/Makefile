@@ -1,5 +1,5 @@
 PORTNAME=	rainloop
-PORTVERSION=	1.15.0
+PORTVERSION=	1.16.0
 CATEGORIES=	mail www
 MASTER_SITES=	https://github.com/RainLoop/rainloop-webmail/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX?=	${PHP_PKGNAMESUFFIX}
