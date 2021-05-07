@@ -2232,11 +2232,11 @@ PKG_SUFX?=	.pkg
 .if defined(PKG_NOCOMPRESS)
 PKG_OLDSUFX?=	.tar
 .else
-.if ${OSVERSION} > 1400000
-PKG_OLDSUFX?=	.tzst
-.else
+#.if ${OSVERSION} > 1400000
+#PKG_OLDSUFX?=	.tzst
+#.else
 PKG_OLDSUFX?=	.txz
-.endif
+#.endif
 .endif
 .else
 .if defined(PKG_NOCOMPRESS)
