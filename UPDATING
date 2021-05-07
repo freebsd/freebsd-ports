@@ -5,6 +5,12 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210508:
+  AFFECTS: users of devel/pycharm-ce
+  AUTHOR: bsam@FreeBSD.org
+
+  Pycharm-ce has switched to the supported java version 11.
+
 20210506:
   AFFECTS: users of mail/postfix
   AUTHOR: ohauer@FreeBSD.org
