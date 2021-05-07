@@ -1,6 +1,6 @@
-TIMESTAMP = 1619569423
-SHA256 (yitsushi-totp-cli-v1.1.9_GH0.tar.gz) = ae54b3342d60fad1a4c681c5506de173d3265248bd0a5b1c81291677aac193aa
-SIZE (yitsushi-totp-cli-v1.1.9_GH0.tar.gz) = 4065105
+TIMESTAMP = 1620298612
+SHA256 (yitsushi-totp-cli-v1.1.13_GH0.tar.gz) = a1d92d37c58e33137a8417c80877fcac0a9de73ad65fd8508822b591c858a194
+SIZE (yitsushi-totp-cli-v1.1.13_GH0.tar.gz) = 13375
 SHA256 (golang-crypto-83a5a9b_GH0.tar.gz) = fb498aed0ab4e0b2545ff843673032e2e0e06f09006adb971cb3d9f69272a775
 SIZE (golang-crypto-83a5a9b_GH0.tar.gz) = 1726698
 SHA256 (golang-sys-d19ff85_GH0.tar.gz) = 20ceed9c85c53bf71b8abe756e2c21509ac2612b51e54ee4ddc7c152061d3699
