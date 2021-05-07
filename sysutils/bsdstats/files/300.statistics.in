@@ -68,7 +68,7 @@ fi
 # global values
 #
 monthly_statistics_enable=${monthly_statistics_enable:-"NO"}
-monthly_statistics_report_devices=${$monthly_statistics_report_devices:-"YES"}
+monthly_statistics_report_devices=${monthly_statistics_report_devices:-"YES"}
 monthly_statistics_report_ports=${monthly_statistics_report_ports:-"YES"}
 checkin_server=${monthly_statistics_checkin_server:-"rpt.bsdstats.org"}
 bsdstats_log=${monthly_statistics_logfile:-"/var/log/bsdstats"}
