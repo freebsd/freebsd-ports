@@ -1,7 +1,7 @@
 # Created by: John Chen <johnpupu@gmail.com>
 
 PORTNAME=	yaconf
-DISTVERSION=	1.1.0
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
