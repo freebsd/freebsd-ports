@@ -38,6 +38,7 @@
     SUBDIR += fluxter
     SUBDIR += flwm
     SUBDIR += fvwm2
+    SUBDIR += fvwm3
     SUBDIR += gamescope
     SUBDIR += gcompmgr
     SUBDIR += herbstluftwm

@@ -2,7 +2,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.6.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm/releases/download/${PORTVERSION}/ \
 		http://fvwm.sourceforge.net/generated/icon_download/ \
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 # Other ports this port cannot coexist with
-CONFLICTS?=	fvwm1-1.* fvwm-2.[457].*
+CONFLICTS_INSTALL=	fvwm3-*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mandoc --without-gnome --disable-gtk \
