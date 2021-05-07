@@ -1,9 +1,9 @@
 # Created by: Oliver Eikemeier
 
 PORTNAME=		bash
-PATCHLEVEL=		4
+PATCHLEVEL=		8
 PORTVERSION=		5.1.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		2
+PORTREVISION?=		0
 CATEGORIES=		shells
 MASTER_SITES=		GNU
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -130,6 +130,6 @@ cklatest:
 	@${MAKE} -V PATCHLEVEL
 	-ncftpls \
 		${PATCH_SITES:Mftp*:Ox:[1]} \
-		| fgrep -v .sig | ${TAIL}
+		| fgrep -v .sig | ${SORT} | ${TAIL}
 
 .include <bsd.port.mk>
