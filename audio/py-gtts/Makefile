@@ -4,7 +4,7 @@ DISTVERSION=	2.2.1
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kai@FreeBSD.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Library/CLI tool to interface with Google Translate text-to-speech API
 
 LICENSE=	MIT
