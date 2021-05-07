@@ -35,7 +35,6 @@ share/zsh/site-functions/_exportfs
 share/zsh/site-functions/_fab
 share/zsh/site-functions/_fail2ban-client
 share/zsh/site-functions/_ffind
-share/zsh/site-functions/_flameshot
 share/zsh/site-functions/_fleetctl
 share/zsh/site-functions/_flutter
 share/zsh/site-functions/_force
@@ -51,6 +50,7 @@ share/zsh/site-functions/_git-wtf
 share/zsh/site-functions/_glances
 share/zsh/site-functions/_golang
 share/zsh/site-functions/_google
+share/zsh/site-functions/_gpgconf
 share/zsh/site-functions/_gtk-launch
 share/zsh/site-functions/_hledger
 share/zsh/site-functions/_homestead
@@ -66,19 +66,23 @@ share/zsh/site-functions/_kak
 share/zsh/site-functions/_kitchen
 share/zsh/site-functions/_knife
 share/zsh/site-functions/_language_codes
+share/zsh/site-functions/_lilypond
 share/zsh/site-functions/_lunchy
 share/zsh/site-functions/_mc
 share/zsh/site-functions/_middleman
 share/zsh/site-functions/_mina
 share/zsh/site-functions/_mix
+share/zsh/site-functions/_mssh
 share/zsh/site-functions/_mussh
 share/zsh/site-functions/_mvn
 share/zsh/site-functions/_nano
+share/zsh/site-functions/_nanoc
 share/zsh/site-functions/_nftables
 share/zsh/site-functions/_node
 share/zsh/site-functions/_nvm
 share/zsh/site-functions/_openssl
 share/zsh/site-functions/_optirun
+share/zsh/site-functions/_opustools
 share/zsh/site-functions/_patool
 share/zsh/site-functions/_perf
 share/zsh/site-functions/_periscope
@@ -107,6 +111,7 @@ share/zsh/site-functions/_sdd
 share/zsh/site-functions/_setcap
 share/zsh/site-functions/_setup.py
 share/zsh/site-functions/_sfdx
+share/zsh/site-functions/_shellcheck
 share/zsh/site-functions/_showoff
 share/zsh/site-functions/_srm
 share/zsh/site-functions/_stack
