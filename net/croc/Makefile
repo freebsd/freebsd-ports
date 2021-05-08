@@ -1,5 +1,5 @@
 PORTNAME=	croc
-PORTVERSION=	9.1.1
+PORTVERSION=	9.1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -18,10 +18,10 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:crypto:4f45737414dc:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:e915ea6b2b7d:golang_net/vendor/golang.org/x/net \
-		golang:sys:66c3f260301c:golang_sys/vendor/golang.org/x/sys \
-		golang:term:72f3dc4e9b72:golang_term/vendor/golang.org/x/term \
+		golang:crypto:38f3c27a63bf:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:0714010a04ed:golang_net/vendor/golang.org/x/net \
+		golang:sys:a76c4d0a0096:golang_sys/vendor/golang.org/x/sys \
+		golang:term:a79de5458b56:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		kalafut:imohash:v1.0.2:kalafut_imohash/vendor/github.com/kalafut/imohash \
 		mattn:go-runewidth:v0.0.12:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
@@ -32,9 +32,9 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		schollz:cli:v2.2.1:schollz_cli_v2/vendor/github.com/schollz/cli/v2 \
 		schollz:logger:v1.2.0:schollz_logger/vendor/github.com/schollz/logger \
 		schollz:mnemonicode:v1.0.1:schollz_mnemonicode/vendor/github.com/schollz/mnemonicode \
-		schollz:pake:v3.0.1:schollz_pake_v3/vendor/github.com/schollz/pake/v3 \
+		schollz:pake:v3.0.2:schollz_pake_v3/vendor/github.com/schollz/pake/v3 \
 		schollz:peerdiscovery:v1.6.3:schollz_peerdiscovery/vendor/github.com/schollz/peerdiscovery \
-		schollz:progressbar:v3.7.6:schollz_progressbar_v3/vendor/github.com/schollz/progressbar/v3 \
+		schollz:progressbar:v3.8.0:schollz_progressbar_v3/vendor/github.com/schollz/progressbar/v3 \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		tscholl2:siec:8da93652b094:tscholl2_siec/vendor/github.com/tscholl2/siec \
 		twmb:murmur3:v1.1.5:twmb_murmur3/vendor/github.com/twmb/murmur3
