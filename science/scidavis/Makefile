@@ -1,6 +1,5 @@
 PORTNAME=	scidavis
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	science
 
 MAINTAINER=	makc@FreeBSD.org
@@ -16,60 +15,31 @@ LIB_DEPENDS=	libgsl.so:math/gsl \
 		libqwtplot3d-qt5.so:math/qwtplot3d \
 		liborigin.so:math/liborigin
 
-USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5 \
-		shared-mime-info
+USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig \
+		qt:5 shared-mime-info
 USE_GL=		gl glu
-USE_QT=		core gui network opengl printsupport svg widgets xml \
-		buildtools_build linguisttools_build
+USE_QT=		core gui opengl printsupport svg widgets xml \
+		buildtools_build linguisttools_build qmake_build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	highperformancecoder
-
-QMAKE_ARGS=	INSTALLBASE=${PREFIX} \
-		CONFIG+=liborigin \
-		LIBS+="-L${LOCALBASE}/${QT_LIBDIR_REL} -L${LOCALBASE}/lib" \
-		LIBS+="-lqwt5-qt5 -lqwtplot3d-qt5" \
-		INCLUDEPATH+=${LOCALBASE}/${QT_INCDIR_REL}/qwt5-qt5 \
-		INCLUDEPATH+=${LOCALBASE}/${QT_INCDIR_REL}/qwtplot3d-qt5
+CMAKE_ON=	ORIGIN_IMPORT
+CMAKE_OFF=	DOWNLOAD_LINKS \
+		SEARCH_FOR_UPDATES
 
 OPTIONS_DEFINE=	DOCS NLS PYTHON
+OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=	yes
 
 PYTHON_DESC=	Python scripting support
-PYTHON_USES=	pyqt:5 python
-PYTHON_USE=	pyqt=core,gui,printsupport,sip,widgets python=py3kplist
-PYTHON_QMAKE_ON=	PYTHON=${PYTHON_CMD} CONFIG+=python \
-			PYQT_SIPDIR=${LOCALBASE}/${_SIPDIR_REL}
-
-post-patch:
-	${REINPLACE_CMD} '/target.path/s,/usr/lib,${PREFIX}/lib,' \
-		${WRKSRC}/fitPlugins/*/*.pro
-	${REINPLACE_CMD} 's,share/man,man,' \
-		${WRKSRC}/config.pri \
-		${WRKSRC}/scidavis/scidavis.pro
-
-post-install-NLS-on:
-	${MKDIR} ${STAGEDIR}${DATADIR}/translations
-	${INSTALL_DATA} ${WRKSRC}/scidavis/translations/*.qm \
-		${STAGEDIR}${DATADIR}/translations
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MPYTHON}
-.if ${PYTHON_REL} < 3200
-PYCACHE_DIR=	# none
-PYCACHE_FILE=	scidavisUtil.pyc
-.else
-PYCACHE_DIR=	__pycache__/
-PYCACHE_FILE=	scidavisUtil.cpython-${PYTHON_SUFFIX}.pyc
-.endif
-.endif
+PYTHON_USES=	pyqt:5 python:3.6+
+PYTHON_USE=	pyqt=core,gui,printsupport,sip,widgets
+PYTHON_CMAKE_ON=	-DPython3_EXECUTABLE=${PYTHON_CMD} \
+			-DSCRIPTING_PYTHON=True
+PYTHON_CMAKE_OFF=	-DSCRIPTING_PYTHON=False
 
 post-install-PYTHON-on:
 	${MV} ${STAGEDIR}${PREFIX}/etc/scidavisrc.py \
 		${STAGEDIR}${PREFIX}/etc/scidavisrc.py.sample
-	${MKDIR} ${STAGEDIR}${DATADIR}/${PYCACHE_DIR}
-	${INSTALL_DATA} ${WRKSRC}/scidavis/${PYCACHE_DIR}${PYCACHE_FILE} \
-		${STAGEDIR}${DATADIR}/${PYCACHE_DIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
