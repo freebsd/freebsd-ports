@@ -1,0 +1,91 @@
+--- CMakeLists.txt.orig	2021-02-10 16:16:17 UTC
++++ CMakeLists.txt
+@@ -73,7 +73,7 @@ set( SRCS
+   "src/qwt3d_io_gl2ps.cpp"
+    )
+ 
+-set( HEADERS
++set( HEADERS_PUBLIC
+   "include/qwt3d_color.h"
+   "include/qwt3d_global.h"
+   "include/qwt3d_types.h"
+@@ -105,50 +105,65 @@ set( HEADERS
+   )
+ configure_file( "include/qwt3d_version.h.in" "qwt3d_version.h" @ONLY )
+ 
+-add_library( qwtplot3d ${SRCS} ${HEADERS} )
++set( QWTPLOT3D "qwtplot3d-qt${QT_VERSION_MAJOR}" )
+ 
+-target_link_libraries( qwtplot3d
++add_library( ${QWTPLOT3D} ${SRCS} ${HEADERS_PUBLIC} )
++set_target_properties( ${QWTPLOT3D} PROPERTIES
++  VERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}
++  SOVERSION ${PROJECT_VERSION_MAJOR}
++  )
++
++target_link_libraries( ${QWTPLOT3D}
+   Qt${QT_VERSION_MAJOR}::Core
+   Qt${QT_VERSION_MAJOR}::Gui
+   OpenGL::GLU
+   )
+ 
+ if( QT_VERSION_MAJOR VERSION_GREATER_EQUAL 6 )
+-  target_link_libraries( qwtplot3d Qt${QT_VERSION_MAJOR}::OpenGLWidgets )
++  target_link_libraries( ${QWTPLOT3D} Qt${QT_VERSION_MAJOR}::OpenGLWidgets )
+ else()
+-  target_link_libraries( qwtplot3d Qt${QT_VERSION_MAJOR}::OpenGL )
++  target_link_libraries( ${QWTPLOT3D} Qt${QT_VERSION_MAJOR}::OpenGL )
+ endif()
+ 
+ 
+-target_include_directories( qwtplot3d PUBLIC include ${CMAKE_CURRENT_BINARY_DIR} )
++target_include_directories( ${QWTPLOT3D} PUBLIC include ${CMAKE_CURRENT_BINARY_DIR} )
+ 
+ if( NOT GL2PS_LIBRARY )
+   enable_language( C )
+-  target_sources( qwtplot3d PRIVATE "3rdparty/gl2ps/gl2ps.c" "3rdparty/gl2ps/gl2ps.h" )
+-  target_include_directories( qwtplot3d PRIVATE "3rdparty/gl2ps" )
++  target_sources( ${QWTPLOT3D} PRIVATE "3rdparty/gl2ps/gl2ps.c" "3rdparty/gl2ps/gl2ps.h" )
++  target_include_directories( ${QWTPLOT3D} PRIVATE "3rdparty/gl2ps" )
+ else()
+-  target_link_libraries( qwtplot3d ${GL2PS_LIBRARY} )
+-  target_include_directories( qwtplot3d PRIVATE ${GL2PS_INCLUDE_DIR} )
++  target_link_libraries( ${QWTPLOT3D} ${GL2PS_LIBRARY} )
++  target_include_directories( ${QWTPLOT3D} PRIVATE ${GL2PS_INCLUDE_DIR} )
+ endif()
+ 
+ if( WIN32 AND BUILD_SHARED_LIBS )
+-  target_compile_definitions( qwtplot3d PRIVATE QWT3D_DLL QWT3D_MAKEDLL )
++  target_compile_definitions( ${QWTPLOT3D} PRIVATE QWT3D_DLL QWT3D_MAKEDLL )
+ endif()
+ 
+ if( ${CMAKE_SOURCE_DIR} STREQUAL ${PROJECT_SOURCE_DIR} )
+-  add_subdirectory( examples )
++#  add_subdirectory( examples )
+ endif()
+ 
++include(GNUInstallDirs)
+ # Don't install qwtplot3d static library and headers if it is built as a subproject
+ if( "${CMAKE_SOURCE_DIR}" STREQUAL "${PROJECT_SOURCE_DIR}" )
+-  install( TARGETS qwtplot3d
++  install( TARGETS ${QWTPLOT3D}
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/qwtplot3d
++    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+     )
++  install(
++    FILES ${HEADERS_PUBLIC}
++    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${QWTPLOT3D}"
++  )
++  install(
++    FILES       "${CMAKE_CURRENT_BINARY_DIR}/qwt3d_version.h"
++    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${QWTPLOT3D}"
++  )
+ elseif( BUILD_SHARED_LIBS )
+-  install( TARGETS qwtplot3d
++  install( TARGETS ${QWTPLOT3D}
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+     )
