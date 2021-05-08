@@ -7,7 +7,7 @@ MASTER_SITES=	https://salsa.debian.org/android-tools-team/android-tools/raw/706e
 DISTFILES=	fastboot.1:manpage
 EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Android Fastboot protocol CLI tool
 
 LICENSE=	APACHE20 BSD2CLAUSE
