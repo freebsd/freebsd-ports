@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	lxqt
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jsm@FreeBSD.org
@@ -13,14 +13,17 @@ RUN_DEPENDS=	startlxqt:x11-wm/lxqt-session \
 	lxqt-about:x11/lxqt-about \
 	lxqt-admin-user:sysutils/lxqt-admin \
 	lxqt-config:sysutils/lxqt-config \
-	lxqt-qtplugin>=0.16.0:sysutils/lxqt-qtplugin \
+	lxqt-qtplugin>=0.17.0:sysutils/lxqt-qtplugin \
 	qterminal:x11/qterminal \
 	obconf-qt:x11-wm/obconf-qt \
 	lximage-qt:graphics/lximage-qt \
 	lxqt-panel:x11-wm/lxqt-panel \
 	lxqt-runner:x11/lxqt-runner \
+	lxqt-powermanagement:sysutils/lxqt-powermanagement \
 	${PREFIX}/share/lxqt/themes/frost/lxqt-panel.qss:x11-themes/lxqt-themes \
 	pcmanfm-qt:x11-fm/pcmanfm-qt \
+	screengrab:x11/screengrab \
+	lxqt-archiver:archivers/lxqt-archiver \
 	lxqt-notificationd:deskutils/lxqt-notificationd \
 	lxqt-panel:x11-wm/lxqt-panel \
 	lxqt-runner:x11/lxqt-runner \
