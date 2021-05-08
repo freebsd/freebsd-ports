@@ -1,14 +1,16 @@
 Revert https://gitlab.com/AOMediaCodec/SVT-AV1/-/commit/fedc119668a4
 due to https://gitlab.com/AOMediaCodec/SVT-AV1/-/issues/1613
 
---- CMakeLists.txt.orig	2020-11-29 07:10:56 UTC
+--- CMakeLists.txt.orig	2021-05-08 09:05:00 UTC
 +++ CMakeLists.txt
-@@ -276,6 +276,5 @@ if(BUILD_TESTING)
- endif()
+@@ -389,8 +389,4 @@ endif()
  
  add_subdirectory(third_party/fastfeat)
--add_subdirectory(third_party/cpuinfo)
  
+-if(NOT COMPILE_C_ONLY AND HAVE_X86_PLATFORM)
+-    add_subdirectory(third_party/cpuinfo)
+-endif()
+-
  install(DIRECTORY ${PROJECT_SOURCE_DIR}/Source/API/ DESTINATION "${CMAKE_INSTALL_FULL_INCLUDEDIR}/svt-av1" FILES_MATCHING PATTERN "*.h")
 --- Source/Lib/Common/Codec/CMakeLists.txt.orig	2020-11-29 07:10:56 UTC
 +++ Source/Lib/Common/Codec/CMakeLists.txt
@@ -31,23 +33,24 @@ due to https://gitlab.com/AOMediaCodec/SVT-AV1/-/issues/1613
  endif ()
  file(GLOB all_files
      "*.h"
---- Source/Lib/Common/Codec/common_dsp_rtcd.c.orig	2020-11-29 07:10:56 UTC
+--- Source/Lib/Common/Codec/common_dsp_rtcd.c.orig	2021-05-08 09:05:00 UTC
 +++ Source/Lib/Common/Codec/common_dsp_rtcd.c
-@@ -17,9 +17,6 @@
+@@ -17,11 +17,6 @@
  #include "EbPackUnPack_C.h"
  #include "EbAvcStyleMcp.h"
  
+-#ifdef ARCH_X86_64
 -// for get_cpu_flags
 -#include "cpuinfo.h"
+-#endif
 -
  /*
   * DSP deprecated flags
   */
-@@ -69,31 +66,121 @@ int64_t svt_av1_block_error_c(const TranLow *coeff, co
- /**************************************
+@@ -72,30 +67,120 @@ int64_t svt_av1_block_error_c(const TranLow *coeff, co
   * Instruction Set Support
   **************************************/
-+#ifdef ARCH_X86_64
+ #ifdef ARCH_X86_64
 +// Helper Functions
 +static INLINE void run_cpuid(int eax, int ecx, int* abcd) {
 +#ifdef _WIN32
@@ -71,7 +74,7 @@ due to https://gitlab.com/AOMediaCodec/SVT-AV1/-/issues/1613
 +    abcd[3] = edx;
 +#endif
 +}
- 
++
 +static INLINE int32_t check_xcr0_ymm() {
 +    uint32_t xcr0;
 +#ifdef _WIN32
@@ -183,38 +186,39 @@ due to https://gitlab.com/AOMediaCodec/SVT-AV1/-/issues/1613
      return flags;
  }
  
-@@ -105,6 +192,7 @@ CPU_FLAGS get_cpu_flags_to_use() {
+@@ -107,7 +192,7 @@ CPU_FLAGS get_cpu_flags_to_use() {
  #endif
      return flags;
  }
+-#endif /*ARCH_X86_64*/
 +#endif
  
  #ifdef ARCH_X86_64
- #ifndef NON_AVX512_SUPPORT
---- Source/Lib/Decoder/CMakeLists.txt.orig	2020-11-29 07:10:56 UTC
+ #if EN_AVX512_SUPPORT
+--- Source/Lib/Decoder/CMakeLists.txt.orig	2021-05-08 09:05:00 UTC
 +++ Source/Lib/Decoder/CMakeLists.txt
-@@ -98,8 +98,7 @@ endif()
- set_target_properties(SvtAv1Dec PROPERTIES VERSION ${DEC_VERSION})
- set_target_properties(SvtAv1Dec PROPERTIES SOVERSION ${DEC_VERSION_MAJOR})
+@@ -100,9 +100,6 @@ set_target_properties(SvtAv1Dec PROPERTIES SOVERSION $
+ set_target_properties(SvtAv1Dec PROPERTIES C_VISIBILITY_PRESET hidden)
  add_dependencies(SvtAv1Dec EbVersionHeaderGen)
--target_link_libraries(SvtAv1Dec PUBLIC ${PLATFORM_LIBS})
--target_link_libraries(SvtAv1Dec PRIVATE cpuinfo_public)
-+target_link_libraries(SvtAv1Dec ${PLATFORM_LIBS})
- install(TARGETS SvtAv1Dec DESTINATION "${CMAKE_INSTALL_LIBDIR}")
+ target_link_libraries(SvtAv1Dec PUBLIC ${PLATFORM_LIBS})
+-if(NOT COMPILE_C_ONLY AND HAVE_X86_PLATFORM)
+-    target_link_libraries(SvtAv1Dec PRIVATE cpuinfo_public)
+-endif()
  
- configure_file(pkg-config.pc.in ${CMAKE_BINARY_DIR}/SvtAv1Dec.pc @ONLY)
---- Source/Lib/Encoder/CMakeLists.txt.orig	2020-11-29 07:10:56 UTC
+ set(DEC_PKG_CONFIG_EXTRA_CFLAGS "")
+ if (BUILD_SHARED_LIBS)
+--- Source/Lib/Encoder/CMakeLists.txt.orig	2021-05-08 09:05:00 UTC
 +++ Source/Lib/Encoder/CMakeLists.txt
-@@ -129,8 +129,7 @@ endif()
- 
- set_target_properties(SvtAv1Enc PROPERTIES VERSION ${ENC_VERSION})
+@@ -131,9 +131,6 @@ set_target_properties(SvtAv1Enc PROPERTIES VERSION ${E
  set_target_properties(SvtAv1Enc PROPERTIES SOVERSION ${ENC_VERSION_MAJOR})
--target_link_libraries(SvtAv1Enc PUBLIC ${PLATFORM_LIBS})
--target_link_libraries(SvtAv1Enc PRIVATE cpuinfo_public)
-+target_link_libraries(SvtAv1Enc ${PLATFORM_LIBS})
- install(TARGETS SvtAv1Enc DESTINATION "${CMAKE_INSTALL_LIBDIR}")
+ set_target_properties(SvtAv1Enc PROPERTIES C_VISIBILITY_PRESET hidden)
+ target_link_libraries(SvtAv1Enc PUBLIC ${PLATFORM_LIBS})
+-if(NOT COMPILE_C_ONLY AND HAVE_X86_PLATFORM)
+-    target_link_libraries(SvtAv1Enc PRIVATE cpuinfo_public)
+-endif()
  
- configure_file(pkg-config.pc.in ${CMAKE_BINARY_DIR}/SvtAv1Enc.pc @ONLY)
+ set(ENC_PKG_CONFIG_EXTRA_CFLAGS "")
+ if (BUILD_SHARED_LIBS)
 --- test/CMakeLists.txt.orig	2020-11-29 07:10:56 UTC
 +++ test/CMakeLists.txt
 @@ -86,7 +86,6 @@ set(lib_list

@@ -7,11 +7,12 @@ include/svt-av1/EbSvtAv1Enc.h
 include/svt-av1/EbSvtAv1ErrorCodes.h
 include/svt-av1/EbSvtAv1ExtFrameBuf.h
 include/svt-av1/EbSvtAv1Formats.h
+include/svt-av1/EbSvtAv1Metadata.h
 lib/libSvtAv1Dec.so
 lib/libSvtAv1Dec.so.0
-lib/libSvtAv1Dec.so.0.8.6
+lib/libSvtAv1Dec.so.0.8.7
 lib/libSvtAv1Enc.so
 lib/libSvtAv1Enc.so.0
-lib/libSvtAv1Enc.so.0.8.6
+lib/libSvtAv1Enc.so.0.8.7
 libdata/pkgconfig/SvtAv1Dec.pc
 libdata/pkgconfig/SvtAv1Enc.pc
