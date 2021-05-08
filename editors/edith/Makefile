@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 GUI editor for binary and plain text files
 
 # Converted from RESTRICTED
-LICENSE=	edith
+LICENSE=	edithlicense
 LICENSE_NAME=	edith
 LICENSE_TEXT=	Redistribution not allowed
 LICENSE_PERMS=	auto-accept
