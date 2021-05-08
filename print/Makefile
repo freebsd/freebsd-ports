@@ -39,6 +39,7 @@
     SUBDIR += epson-inkjet-printer-201401w
     SUBDIR += epson-inkjet-printer-201601w
     SUBDIR += epson-inkjet-printer-escpr
+    SUBDIR += epson-inkjet-printer-escpr2
     SUBDIR += epsonepl
     SUBDIR += fig2dev
     SUBDIR += flpsed

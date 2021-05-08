@@ -1,0 +1,11 @@
+This software is a filter program used with Common UNIX Printing
+System (CUPS) from the Linux. This can supply the high quality print
+with Seiko Epson Color Ink Jet Printers.
+
+This product supports only EPSON ESC/P-R printers. This package can be
+used for all EPSON ESC/P-R printers.
+
+For detail list of supported printer, please refer to below site:
+http://download.ebz.epson.net/dsc/search/01/search/?OSC=LX
+
+WWW: http://download.ebz.epson.net/dsc/search/01/search/?OSC=LX
