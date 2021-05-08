@@ -248,6 +248,7 @@ man/man1/tsget.1ossl.gz
 %%MAN3%%man/man3/BIO_s_accept.3ossl.gz
 %%MAN3%%man/man3/BIO_s_bio.3ossl.gz
 %%MAN3%%man/man3/BIO_s_connect.3ossl.gz
+%%MAN3%%man/man3/BIO_s_core.3ossl.gz
 %%MAN3%%man/man3/BIO_s_fd.3ossl.gz
 %%MAN3%%man/man3/BIO_s_file.3ossl.gz
 %%MAN3%%man/man3/BIO_s_mem.3ossl.gz
@@ -370,6 +371,7 @@ man/man1/tsget.1ossl.gz
 %%MAN3%%man/man3/EVP_MAC.3ossl.gz
 %%MAN3%%man/man3/EVP_MD_meth_new.3ossl.gz
 %%MAN3%%man/man3/EVP_OpenInit.3ossl.gz
+%%MAN3%%man/man3/EVP_PBE_CipherInit.3ossl.gz
 %%MAN3%%man/man3/EVP_PKEY2PKCS8.3ossl.gz
 %%MAN3%%man/man3/EVP_PKEY_ASN1_METHOD.3ossl.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_ctrl.3ossl.gz
@@ -491,6 +493,7 @@ man/man1/tsget.1ossl.gz
 %%MAN3%%man/man3/OSSL_ENCODER_CTX.3ossl.gz
 %%MAN3%%man/man3/OSSL_ENCODER_CTX_new_for_pkey.3ossl.gz
 %%MAN3%%man/man3/OSSL_ENCODER_to_bio.3ossl.gz
+%%MAN3%%man/man3/OSSL_ESS_check_signing_certs.3ossl.gz
 %%MAN3%%man/man3/OSSL_HTTP_REQ_CTX.3ossl.gz
 %%MAN3%%man/man3/OSSL_HTTP_parse_url.3ossl.gz
 %%MAN3%%man/man3/OSSL_HTTP_transfer.3ossl.gz
@@ -522,6 +525,7 @@ man/man1/tsget.1ossl.gz
 %%MAN3%%man/man3/PEM_read_bio_ex.3ossl.gz
 %%MAN3%%man/man3/PEM_write_bio_CMS_stream.3ossl.gz
 %%MAN3%%man/man3/PEM_write_bio_PKCS7_stream.3ossl.gz
+%%MAN3%%man/man3/PKCS12_PBE_keyivgen.3ossl.gz
 %%MAN3%%man/man3/PKCS12_SAFEBAG_create_cert.3ossl.gz
 %%MAN3%%man/man3/PKCS12_SAFEBAG_get0_attrs.3ossl.gz
 %%MAN3%%man/man3/PKCS12_SAFEBAG_get1_cert.3ossl.gz
@@ -532,9 +536,16 @@ man/man1/tsget.1ossl.gz
 %%MAN3%%man/man3/PKCS12_add_localkeyid.3ossl.gz
 %%MAN3%%man/man3/PKCS12_add_safe.3ossl.gz
 %%MAN3%%man/man3/PKCS12_create.3ossl.gz
+%%MAN3%%man/man3/PKCS12_decrypt_skey.3ossl.gz
+%%MAN3%%man/man3/PKCS12_gen_mac.3ossl.gz
 %%MAN3%%man/man3/PKCS12_get_friendlyname.3ossl.gz
+%%MAN3%%man/man3/PKCS12_init.3ossl.gz
+%%MAN3%%man/man3/PKCS12_item_decrypt_d2i.3ossl.gz
+%%MAN3%%man/man3/PKCS12_key_gen_utf8_ex.3ossl.gz
 %%MAN3%%man/man3/PKCS12_newpass.3ossl.gz
+%%MAN3%%man/man3/PKCS12_pack_p7encdata.3ossl.gz
 %%MAN3%%man/man3/PKCS12_parse.3ossl.gz
+%%MAN3%%man/man3/PKCS5_PBE_keyivgen.3ossl.gz
 %%MAN3%%man/man3/PKCS5_PBKDF2_HMAC.3ossl.gz
 %%MAN3%%man/man3/PKCS7_decrypt.3ossl.gz
 %%MAN3%%man/man3/PKCS7_encrypt.3ossl.gz
@@ -543,6 +554,7 @@ man/man1/tsget.1ossl.gz
 %%MAN3%%man/man3/PKCS7_sign_add_signer.3ossl.gz
 %%MAN3%%man/man3/PKCS7_type_is_other.3ossl.gz
 %%MAN3%%man/man3/PKCS7_verify.3ossl.gz
+%%MAN3%%man/man3/PKCS8_encrypt.3ossl.gz
 %%MAN3%%man/man3/PKCS8_pkey_add1_attr.3ossl.gz
 %%MAN3%%man/man3/RAND_add.3ossl.gz
 %%MAN3%%man/man3/RAND_bytes.3ossl.gz
@@ -891,7 +903,8 @@ man/man5/x509v3_config.5ossl.gz
 %%OPENSSLDIR%%/misc/CA.pl
 @comment %%OPENSSLDIR%%/misc/tsget.pl
 %%OPENSSLDIR%%/misc/tsget
-@sample %%OPENSSLDIR%%/openssl.cnf.dist %%OPENSSLDIR%%/openssl.cnf
 @sample %%OPENSSLDIR%%/ct_log_list.cnf.dist %%OPENSSLDIR%%/ct_log_list.cnf
+%%OPENSSLDIR%%/fipsmodule.cnf
+@sample %%OPENSSLDIR%%/openssl.cnf.dist %%OPENSSLDIR%%/openssl.cnf
 @dir %%OPENSSLDIR%%/private
 @dir %%OPENSSLDIR%%/certs

@@ -1,7 +1,7 @@
 # Created by: Dirk Froemberg <dirk@FreeBSD.org>
 
 PORTNAME=	openssl
-DISTVERSION=	3.0.0-alpha15
+DISTVERSION=	3.0.0-alpha16
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
@@ -101,12 +101,12 @@ TLS1_2_DESC=	TLSv1.2
 WEAK-SSL-CIPHERS_DESC=	Weak cipher support (unsafe)
 
 # Upstream default disabled options
-.for _option in md2 ktls rc5 sctp ssl3 weak-ssl-ciphers zlib
+.for _option in fips md2 ktls rc5 sctp ssl3 weak-ssl-ciphers zlib
 ${_option:tu}_CONFIGURE_ON=	enable-${_option}
 .endfor
 
 # Upstream default enabled options
-.for _option in aria asm async ct des fips gost idea md4 mdc2 legacy \
+.for _option in aria asm async ct des gost idea md4 mdc2 legacy \
 	nextprotoneg rc2 rc4 rfc3779 rmd160 shared sm2 sm3 sm4 sse2 \
 	threads tls1 tls1_1 tls1_2
 ${_option:tu}_CONFIGURE_OFF=	no-${_option}
