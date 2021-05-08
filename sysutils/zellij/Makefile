@@ -1,6 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
+DISTVERSION=	0.8.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -49,6 +49,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		cfg-if-1.0.0 \
 		clap-2.33.3 \
 		colored-2.0.0 \
+		colors-transform-0.2.11 \
 		concurrent-queue-1.2.2 \
 		console-0.14.1 \
 		cranelift-bforest-0.68.0 \
@@ -78,6 +79,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		fallible-iterator-0.2.0 \
 		fastrand-1.4.0 \
 		fnv-1.0.7 \
+		fuchsia-cprng-0.1.1 \
 		funty-1.1.0 \
 		futures-0.3.14 \
 		futures-channel-0.3.14 \
@@ -124,6 +126,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		memoffset-0.6.3 \
 		miniz_oxide-0.4.4 \
 		more-asserts-0.2.1 \
+		names-0.11.0 \
 		nix-0.19.1 \
 		nom-6.1.2 \
 		num_cpus-1.13.0 \
@@ -144,12 +147,17 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		proc-macro2-1.0.26 \
 		quote-1.0.9 \
 		radium-0.5.3 \
+		rand-0.3.23 \
+		rand-0.4.6 \
 		rand-0.8.3 \
 		rand_chacha-0.3.0 \
+		rand_core-0.3.1 \
+		rand_core-0.4.2 \
 		rand_core-0.6.2 \
 		rand_hc-0.3.0 \
 		rayon-1.5.0 \
 		rayon-core-1.9.0 \
+		rdrand-0.4.0 \
 		redox_syscall-0.2.6 \
 		redox_termios-0.1.2 \
 		redox_users-0.4.0 \
