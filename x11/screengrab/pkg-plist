@@ -10,12 +10,14 @@ share/icons/hicolor/32x32/apps/screengrab.png
 %%DATADIR%%/screengrab.conf
 %%DATADIR%%/translations/screengrab_arn.qm
 %%DATADIR%%/translations/screengrab_ast.qm
+%%DATADIR%%/translations/screengrab_bg.qm
 %%DATADIR%%/translations/screengrab_ca.qm
 %%DATADIR%%/translations/screengrab_cs.qm
 %%DATADIR%%/translations/screengrab_cy.qm
 %%DATADIR%%/translations/screengrab_de.qm
 %%DATADIR%%/translations/screengrab_el.qm
 %%DATADIR%%/translations/screengrab_es.qm
+%%DATADIR%%/translations/screengrab_et.qm
 %%DATADIR%%/translations/screengrab_fr.qm
 %%DATADIR%%/translations/screengrab_gl.qm
 %%DATADIR%%/translations/screengrab_he.qm
@@ -28,8 +30,10 @@ share/icons/hicolor/32x32/apps/screengrab.png
 %%DATADIR%%/translations/screengrab_pl.qm
 %%DATADIR%%/translations/screengrab_pt.qm
 %%DATADIR%%/translations/screengrab_pt_BR.qm
-%%DATADIR%%/translations/screengrab_pt_PT.qm
 %%DATADIR%%/translations/screengrab_ru.qm
+%%DATADIR%%/translations/screengrab_si.qm
 %%DATADIR%%/translations/screengrab_sv.qm
 %%DATADIR%%/translations/screengrab_tr.qm
 %%DATADIR%%/translations/screengrab_uk.qm
+%%DATADIR%%/translations/screengrab_zh_CN.qm
+%%DATADIR%%/translations/screengrab_zh_TW.qm
