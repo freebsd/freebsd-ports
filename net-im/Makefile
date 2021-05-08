@@ -54,7 +54,6 @@
     SUBDIR += libnice
     SUBDIR += libnice-gst1
     SUBDIR += libpurple
-    SUBDIR += libqmatrixclient
     SUBDIR += libqtelegram-ae
     SUBDIR += libquotient
     SUBDIR += libsignal-client
