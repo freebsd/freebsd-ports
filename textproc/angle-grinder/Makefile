@@ -1,7 +1,7 @@
 PORTNAME=	angle-grinder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -81,7 +81,6 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		getopts-0.2.21 \
 		getrandom-0.1.16 \
 		gimli-0.23.0 \
-		glob-0.2.11 \
 		glob-0.3.0 \
 		globset-0.4.6 \
 		globwalk-0.3.1 \
@@ -102,8 +101,8 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		idna-0.2.0 \
 		ignore-0.4.17 \
 		im-13.0.0 \
-		include_dir-0.2.1 \
-		include_dir_impl-0.2.1 \
+		include_dir-0.4.1 \
+		include_dir_impl-0.4.1 \
 		indexmap-1.6.1 \
 		indicatif-0.13.0 \
 		iovec-0.1.4 \
@@ -163,9 +162,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		predicates-1.0.6 \
 		predicates-core-1.0.1 \
 		predicates-tree-1.0.1 \
-		proc-macro-hack-0.4.2 \
 		proc-macro-hack-0.5.19 \
-		proc-macro-hack-impl-0.4.2 \
 		proc-macro-nested-0.1.6 \
 		proc-macro2-0.4.30 \
 		proc-macro2-1.0.24 \
@@ -214,7 +211,6 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		strsim-0.8.0 \
 		structopt-0.2.18 \
 		structopt-derive-0.2.18 \
-		syn-0.14.9 \
 		syn-0.15.44 \
 		syn-1.0.58 \
 		synstructure-0.12.4 \
