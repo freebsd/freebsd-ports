@@ -4,7 +4,7 @@ PORTNAME=	picocom
 DISTVERSION=	3.1
 CATEGORIES=	comms
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rmm1.bob@gmail.com
 COMMENT=	Dumb Terminal Emulator
 
 LICENSE=	GPLv2
