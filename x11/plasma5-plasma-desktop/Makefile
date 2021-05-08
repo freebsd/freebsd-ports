@@ -1,6 +1,10 @@
 PORTNAME=	plasma-desktop
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
+
+PATCH_SITES=	https://invent.kde.org/plasma/plasma-desktop/commit/
+PATCHFILES=	2f9371f34a2d0af98b4a0a6d6ccde1e85ac9cb39.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 plasma desktop
