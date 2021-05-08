@@ -1,6 +1,6 @@
 PORTNAME=	librespeed-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.8
+DISTVERSION=	1.0.9
 CATEGORIES=	net www
 
 MAINTAINER=	driesm.michiels@gmail.com
