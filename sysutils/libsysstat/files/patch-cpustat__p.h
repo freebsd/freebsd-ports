@@ -1,4 +1,4 @@
---- cpustat_p.h.orig	2020-11-03 14:45:02 UTC
+--- cpustat_p.h.orig	2021-04-07 06:58:34 UTC
 +++ cpustat_p.h
 @@ -27,6 +27,9 @@
  #ifndef LIBSYSSTAT__CPU_STAT__PRIVATE__INCLUDED
@@ -17,7 +17,7 @@
 +#ifdef HAVE_SYSCTL_H
 +    ulong minFreq(const QString &source) const;
 +    ulong maxFreq(const QString &source) const;
-+    ulong CurrentFreq(void);
++    ulong CurrentFreq(const QString);
 +
 +#else
      uint minFreq(const QString &source) const;
@@ -56,7 +56,7 @@
 +    typedef QMap<QString, QPair<ulong, ulong> > Bounds;
 +    int mib0[2];
 +    int mib1[2];
-+    int mib2[4];
++    int mib2[512][4];
 +#else
      typedef QMap<QString, QPair<uint, uint> > Bounds;
 +#endif
