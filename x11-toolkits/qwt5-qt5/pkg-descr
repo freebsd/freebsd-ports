@@ -5,5 +5,5 @@ provides scales, sliders, dials, compasses, thermometers, wheels
 and knobs to control or display values, arrays, or ranges of type
 double.
 
-WWW: https://github.com/gbm19/qwt5-qt5
+WWW: https://github.com/SciDAVis/qwt5-qt5
 WWW: http://qwt.sourceforge.net/

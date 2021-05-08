@@ -1,0 +1,53 @@
+--- src/CMakeLists.txt.orig	2021-02-11 06:01:52 UTC
++++ src/CMakeLists.txt
+@@ -6,11 +6,13 @@ set( HEADERS
+   "qwt_color_map.h"
+   "qwt_clipper.h"
+   "qwt_double_interval.h"
++  "qwt_double_rect.h"
+   "qwt_dyngrid_layout.h"
+   "qwt_global.h"
+   "qwt_layout_metrics.h"
+   "qwt_math.h"
+   "qwt_magnifier.h"
++  "qwt_paint_buffer.h"
+   "qwt_painter.h"
+   "qwt_panner.h"
+   "qwt_picker.h"
+@@ -34,10 +36,12 @@ set( SRCS
+   "qwt_color_map.cpp"
+   "qwt_clipper.cpp"
+   "qwt_double_interval.cpp"
++  "qwt_double_rect.cpp"
+   "qwt_dyngrid_layout.cpp"
+   "qwt_layout_metrics.cpp"
+   "qwt_math.cpp"
+   "qwt_magnifier.cpp"
++  "qwt_paint_buffer.cpp"
+   "qwt_panner.cpp"
+   "qwt_painter.cpp"
+   "qwt_picker.cpp"
+@@ -157,6 +161,12 @@ endif()
+ 
+ add_library( qwt5-qt5 ${SRCS} ${HEADERS} )
+ 
++set_target_properties( qwt5-qt5
++  PROPERTIES
++  VERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}
++  SOVERSION ${PROJECT_VERSION_MAJOR}
++)
++
+ target_link_libraries( qwt5-qt5 Qt5::Core Qt5::Gui Qt5::Widgets Qt5::PrintSupport )
+ 
+ target_include_directories( qwt5-qt5 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} )
+@@ -177,6 +187,10 @@ if( "${CMAKE_SOURCE_DIR}" STREQUAL "${PROJECT_SOURCE_D
+     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/qwt5-qt5
+     )
++  install(
++    FILES ${HEADERS}
++    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/qwt5-qt5"
++  )
+ elseif( BUILD_SHARED_LIBS )
+   install( TARGETS qwt5-qt5
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
