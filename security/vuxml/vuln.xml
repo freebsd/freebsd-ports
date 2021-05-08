@@ -76,6 +76,34 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="49346de2-b015-11eb-9bdf-f8b156b6dcc8">
+    <topic>FLAC -- out-of-bounds read</topic>
+    <affects>
+      <package>
+	<name>flac</name>
+	<range><lt>1.3.3_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oss-Fuzz reports:</p>
+	<blockquote cite="https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=17069">
+	  <p>There is a possible out of bounds read due to a heap
+	    buffer overflow in FLAC__bitreader_read_rice_signed_block
+	    of bitreader.c.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=17069</url>
+      <cvename>CVE-2020-0499</cvename>
+    </references>
+    <dates>
+      <discovery>2019-09-08</discovery>
+      <entry>2021-05-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f7a00ad7-ae75-11eb-8113-08002728f74c">
     <topic>Rails -- multiple vulnerabilities</topic>
     <affects>
