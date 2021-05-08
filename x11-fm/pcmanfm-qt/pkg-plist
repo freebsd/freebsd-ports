@@ -7,6 +7,7 @@ share/man/man1/pcmanfm-qt.1.gz
 %%DATADIR%%/translations/pcmanfm-qt_ar.qm
 %%DATADIR%%/translations/pcmanfm-qt_arn.qm
 %%DATADIR%%/translations/pcmanfm-qt_ast.qm
+%%DATADIR%%/translations/pcmanfm-qt_bg.qm
 %%DATADIR%%/translations/pcmanfm-qt_ca.qm
 %%DATADIR%%/translations/pcmanfm-qt_cs.qm
 %%DATADIR%%/translations/pcmanfm-qt_cy.qm
@@ -30,11 +31,12 @@ share/man/man1/pcmanfm-qt.1.gz
 %%DATADIR%%/translations/pcmanfm-qt_lt.qm
 %%DATADIR%%/translations/pcmanfm-qt_nb_NO.qm
 %%DATADIR%%/translations/pcmanfm-qt_nl.qm
+%%DATADIR%%/translations/pcmanfm-qt_oc.qm
 %%DATADIR%%/translations/pcmanfm-qt_pl.qm
 %%DATADIR%%/translations/pcmanfm-qt_pt.qm
 %%DATADIR%%/translations/pcmanfm-qt_pt_BR.qm
-%%DATADIR%%/translations/pcmanfm-qt_pt_PT.qm
 %%DATADIR%%/translations/pcmanfm-qt_ru.qm
+%%DATADIR%%/translations/pcmanfm-qt_si.qm
 %%DATADIR%%/translations/pcmanfm-qt_sk_SK.qm
 %%DATADIR%%/translations/pcmanfm-qt_sv.qm
 %%DATADIR%%/translations/pcmanfm-qt_tr.qm
