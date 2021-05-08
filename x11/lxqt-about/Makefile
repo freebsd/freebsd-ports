@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	lxqt-about
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	x11
 MASTER_SITES=	LXQT
 DIST_SUBDIR=	lxqt
