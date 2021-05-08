@@ -1,6 +1,5 @@
 PORTNAME=	putty
-PORTVERSION=	0.74
-PORTREVISION=	1
+PORTVERSION=	0.75
 CATEGORIES=	security
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -16,6 +15,7 @@ USES=		cpe gmake pkgconfig
 CPE_VENDOR=	simon_tatham
 
 MAKEFILE=	Makefile.gtk
+MAKE_ARGS+=	"prefix=${PREFIX}"
 
 CONFLICTS_INSTALL?=	pssh-[0-9]* putty-gtk2-[0-9]* putty-nogtk-[0-9]*
 
@@ -35,29 +35,28 @@ OPTIONS_DEFAULT=		GSSAPI_BASE GTK3
 OPTIONS_RADIO=			TOOLKIT
 OPTIONS_RADIO_TOOLKIT=		GTK2 GTK3
 OPTIONS_SINGLE=			GSSAPI_SELECT
-OPTIONS_SINGLE_GSSAPI_SELECT=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL \
-				GSSAPI_MIT
+OPTIONS_SINGLE_GSSAPI_SELECT=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT \
+				GSSAPI_NONE
 
 .include <bsd.port.options.mk>
 
 CFLAGS+=	-DBSD_PTYS -DHAVE_FUTIMES -DIPV6 -DOMIT_UTMP
-LDFLAGS+=	-Wl,--as-needed
+LDFLAGS+=	-lm -Wl,--as-needed
 
 .if (${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3}) && !defined(WITHOUT_X11)
 USES+=		xorg
 USE_XORG=	x11
-.if ${PORT_OPTIONS:MGTK2}
-USES+=		gnome
-USE_GNOME=	cairo gdkpixbuf2 gtk20
-MAKE_ARGS+=	GTK_CONFIG="pkg-config gtk+-2.0 x11 --cflags" \
-		PUTTY_WITH_GTK=yes
-.endif
-.if ${PORT_OPTIONS:MGTK3}
+. if ${PORT_OPTIONS:MGTK3}
 USES+=		gnome
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 MAKE_ARGS+=	GTK_CONFIG="pkg-config gtk+-3.0 x11 --cflags" \
 		PUTTY_WITH_GTK=yes
-.endif
+. elif ${PORT_OPTIONS:MGTK2}
+ USES+=		gnome
+USE_GNOME=	cairo gdkpixbuf2 gtk20
+MAKE_ARGS+=	GTK_CONFIG="pkg-config gtk+-2.0 x11 --cflags" \
+		PUTTY_WITH_GTK=yes
+. endif
 
 PLIST_FILES+=	bin/pageant \
 		bin/pterm \
@@ -99,20 +98,11 @@ XFLAGS=		-DDEBUG
 _COMPAT+=	-DDEBUG
 .endif
 
-# upstream sets -Werror - there are no issues on 9.1-FreeBSD amd64
-# currently, but override it nonetheless.
-XFLAGS+=	-Wno-error
-
 MAKE_ARGS+=	CC="${CC}" \
 		COMPAT="${_COMPAT}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		XFLAGS="${XFLAGS}"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,prefix=/usr/local,prefix=${PREFIX},;\
-			      s,make,${MAKE_CMD},'\
-		${WRKSRC}/${MAKEFILE}
 
 post-install:
 .if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3}
