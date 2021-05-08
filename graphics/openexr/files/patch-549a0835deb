@@ -1,0 +1,46 @@
+From 549a0835deb257f5caf5e54880c2be968e690b83 Mon Sep 17 00:00:00 2001
+From: Larry Gritz <lg@larrygritz.com>
+Date: Thu, 8 Apr 2021 15:33:40 -0700
+Subject: [PATCH] Don't impose C++14 on downstream projects (#995)
+
+We were setting
+
+    target_compile_features(${objlib} PUBLIC cxx_std_${OPENEXR_CXX_STANDARD})
+
+The `PUBLIC` forced downstream projects that consume the
+`OpenEXRConfig*.cmake` exports to use C++ standard at least as recent
+as what OpenEXR used to build (which defaults to 14).
+
+But this is unnecessary. There's nothing in OpenEXR's headers that
+requires anything beyond C++11. So this patch uses a more fine-grained
+setting of target properties to express this more correctly. Now it will
+be fine for a C++11 project to consume OpenEXR (via its exported configs)
+even if that OpenEXR happened to be built with C++14.
+
+Signed-off-by: Larry Gritz <lg@larrygritz.com>
+---
+ cmake/LibraryDefine.cmake | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/cmake/LibraryDefine.cmake b/cmake/LibraryDefine.cmake
+index 640974291..7ed74da9d 100644
+--- a/cmake/LibraryDefine.cmake
++++ b/cmake/LibraryDefine.cmake
+@@ -17,7 +17,16 @@ function(OPENEXR_DEFINE_LIBRARY libname)
+     ${OPENEXR_CURLIB_HEADERS}
+     ${OPENEXR_CURLIB_SOURCES})
+ 
+-  target_compile_features(${objlib} PUBLIC cxx_std_${OPENEXR_CXX_STANDARD})
++  # Use ${OPENEXR_CXX_STANDARD} to determine the standard we use to compile
++  # OpenEXR itself. But the headers only require C++11 features, so that's
++  # all we need to pass on as interface reqirements to downstream projects.
++  # For example, it's fine for an OpenEXR built with C++14 to be called from
++  # an app that is compiled with C++11; OpenEXR needn't force the app to
++  # also use C++14.
++  target_compile_features(${objlib}
++                          PRIVATE cxx_std_${OPENEXR_CXX_STANDARD}
++                          INTERFACE cxx_std_11 )
++
+   if(OPENEXR_CURLIB_PRIV_EXPORT AND BUILD_SHARED_LIBS)
+     target_compile_definitions(${objlib} PRIVATE ${OPENEXR_CURLIB_PRIV_EXPORT})
+     if(WIN32)

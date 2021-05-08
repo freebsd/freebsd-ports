@@ -2,6 +2,7 @@
 
 PORTNAME=	openexr
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	LOCAL/mandree/:test
 DISTFILES=	${PORTNAME}-2.2.0-comp_dwa-test-images.tar.xz:test
@@ -25,12 +26,14 @@ CPPFLAGS+=	-I. -I../IlmImf
 # must be linked with -l{thr|pthread} explicitly
 LDFLAGS+=	-lpthread
 
-MAJORVER=	3_0
+PATCH_STRIP=	-p1
+
+_MAJORVER=	3_0
 _VER=		27
 _MINVER=	0
 _PLVER=		0
 
-PLIST_SUB+=	MAJORVER=${MAJORVER} \
+PLIST_SUB+=	MAJORVER=${_MAJORVER} \
 		VER=${_VER} \
 		MINVER=${_MINVER} \
 		PLVER=${_PLVER}

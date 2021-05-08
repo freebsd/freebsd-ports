@@ -1,0 +1,35 @@
+From 61d209bfd8daefc758735cd20ccff977f98b49a0 Mon Sep 17 00:00:00 2001
+From: peterhillman <peterh@wetafx.co.nz>
+Date: Sat, 8 May 2021 12:02:38 +1200
+Subject: [PATCH] Prevent overflow in getScanlineChunkOffsetTableSize (#1003)
+
+Signed-off-by: Peter Hillman <peterh@wetafx.co.nz>
+---
+ src/lib/OpenEXR/ImfMisc.cpp | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+
+diff --git a/src/lib/OpenEXR/ImfMisc.cpp b/src/lib/OpenEXR/ImfMisc.cpp
+index a65e2a3f4..80c8ce8d2 100644
+--- a/src/lib/OpenEXR/ImfMisc.cpp
++++ b/src/lib/OpenEXR/ImfMisc.cpp
+@@ -1828,12 +1828,17 @@ getScanlineChunkOffsetTableSize(const Header& header)
+ {
+     const Box2i &dataWindow = header.dataWindow();
+ 
+-    int linesInBuffer = numLinesInBuffer ( header.compression() );
+ 
+-    int lineOffsetSize = (dataWindow.max.y - dataWindow.min.y +
++    //
++    // use int64_t types to prevent overflow in lineOffsetSize for images with
++    // extremely high dataWindows
++    //
++    int64_t linesInBuffer = numLinesInBuffer ( header.compression() );
++
++    int64_t lineOffsetSize = (static_cast <int64_t>(dataWindow.max.y) - static_cast <int64_t>(dataWindow.min.y) +
+                           linesInBuffer) / linesInBuffer;
+ 
+-    return lineOffsetSize;
++    return static_cast <int>(lineOffsetSize);
+ }
+ 
+ //
