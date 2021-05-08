@@ -11,7 +11,7 @@ MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	F-Prot Antivirus for BSD Workstations
 
 # Converted from RESTRICTED
-LICENSE=	f-prot
+LICENSE=	f-prot-license
 LICENSE_NAME=	f-prot
 LICENSE_TEXT=	Free for personal users on personal workstations only
 LICENSE_PERMS=	auto-accept
