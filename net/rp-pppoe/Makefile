@@ -1,7 +1,7 @@
 # Created by: Mario Sergio Fujikawa Ferreira <liouxFreeBSD.org>
 
 PORTNAME=	rp-pppoe
-PORTVERSION=	3.14
+PORTVERSION=	3.15
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	https://dianne.skoll.ca/projects/rp-pppoe/download/
@@ -38,7 +38,7 @@ PORTDOCS=	*
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s!/etc/ppp!${PREFIX}/etc/ppp!g" \
+	@${SED} -i '' -e "s!/etc/ppp!${PREFIX}/etc/ppp!g" \
 		${WRKSRC}/man/* \
 		${WRKSRC}/configs/* \
 		${WRKSRC}/doc/HOW-TO-CONNECT
@@ -90,7 +90,5 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 	${RM} ${STAGEDIR}${DOCSDIR}/KERNEL-MODE-PPPOE
-	# cleanup REINPLACE_CMD prefix hack leftovers:
-	${RM} ${STAGEDIR}${DOCSDIR}/*.bak
 
 .include <bsd.port.mk>
