@@ -3,6 +3,7 @@ etc/xdg/autostart/lxqt-policykit-agent.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_ar.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_arn.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_ast.qm
+%%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_bg.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_ca.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_cs.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_cy.qm
