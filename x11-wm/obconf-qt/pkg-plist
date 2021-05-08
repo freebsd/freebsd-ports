@@ -27,6 +27,7 @@ share/icons/hicolor/48x48/apps/obconf-qt.png
 %%DATADIR%%/translations/obconf-qt_pt.qm
 %%DATADIR%%/translations/obconf-qt_pt_BR.qm
 %%DATADIR%%/translations/obconf-qt_ru.qm
+%%DATADIR%%/translations/obconf-qt_si.qm
 %%DATADIR%%/translations/obconf-qt_sk_SK.qm
 %%DATADIR%%/translations/obconf-qt_sv.qm
 %%DATADIR%%/translations/obconf-qt_tr.qm
