@@ -3410,6 +3410,15 @@ raptor_xml_writer_start_element_common.</p>
     </description>
     <references>
       <url>https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v2.5.5</url>
+      <!-- updated 2021-05-08 from https://github.com/AcademySoftwareFoundation/openexr/commit/744cdecc87ff3489cc47204411d7903ceeb80be4 -->
+      <url>https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v2.5.4</url>
+      <cvename>CVE-2021-20296</cvename>
+      <cvename>CVE-2021-3479</cvename>
+      <cvename>CVE-2021-3478</cvename>
+      <cvename>CVE-2021-3477</cvename>
+      <cvename>CVE-2021-3476</cvename>
+      <cvename>CVE-2021-3475</cvename>
+      <cvename>CVE-2021-3474</cvename>
     </references>
     <dates>
       <discovery>2021-02-12</discovery>
