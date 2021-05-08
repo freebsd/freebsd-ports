@@ -1,7 +1,7 @@
 # Created by: Alexander Kojevnikov <alexander@kojevnikov.com>
 
 PORTNAME=	pinta
-PORTVERSION=	1.5
+PORTVERSION=	1.7
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/PintaProject/Pinta/releases/download/${PORTVERSION}/
 
@@ -17,8 +17,7 @@ RUN_DEPENDS=	mono-addins>0:devel/mono-addins
 
 USES=		desktop-file-utils gmake gnome mono pkgconfig gettext-tools:build
 USE_GNOME=	gtksharp20
-
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
