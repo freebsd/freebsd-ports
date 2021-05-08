@@ -7,6 +7,7 @@ share/cmake/lxqt-build-tools/find-modules/FindMenuCache.cmake
 share/cmake/lxqt-build-tools/find-modules/FindUDev.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXCB.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXKBCommon.cmake
+share/cmake/lxqt-build-tools/find-modules/FindXTerm.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXdgEmail.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXdgMime.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXdgOpen.cmake
@@ -26,8 +27,8 @@ share/cmake/lxqt-build-tools/modules/LXQtPluginTranslationLoader.cpp.in
 share/cmake/lxqt-build-tools/modules/LXQtPreventInSourceBuilds.cmake
 share/cmake/lxqt-build-tools/modules/LXQtTranslate.cmake
 share/cmake/lxqt-build-tools/modules/LXQtTranslateDesktop.cmake
+share/cmake/lxqt-build-tools/modules/LXQtTranslateDesktopYaml.pl
 share/cmake/lxqt-build-tools/modules/LXQtTranslateTs.cmake
 share/cmake/lxqt-build-tools/modules/LXQtTranslationLoader.cmake
-share/cmake/lxqt-build-tools/modules/Qt5PatchedLinguistToolsMacros.cmake
 share/cmake/lxqt-build-tools/modules/Qt5TranslationLoader.cmake
 share/cmake/lxqt-build-tools/modules/Qt5TranslationLoader.cpp.in
