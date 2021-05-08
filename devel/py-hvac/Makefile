@@ -1,7 +1,7 @@
 # Created by: Alessando Sagratini <ale_sagra@hotmail.com>
 
 PORTNAME=	hvac
-PORTVERSION=	0.10.10
+PORTVERSION=	0.10.11
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
