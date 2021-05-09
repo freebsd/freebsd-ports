@@ -1,7 +1,7 @@
 # Created by: Valentin Zahariev <curly@e-card.bg>
 
 PORTNAME=	xca
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/xca/releases/download/RELEASE.${PORTVERSION}/
 
@@ -15,8 +15,8 @@ BUILD_DEPENDS=	gsed:textproc/gsed
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		compiler:c++11-lang desktop-file-utils gmake localbase \
-		pkgconfig qt:5 shared-mime-info shebangfix ssl
-USE_QT=		buildtools_build core gui linguist_build sql widgets
+		pkgconfig qt:5 shared-mime-info ssl
+USE_QT=		buildtools_build core gui help linguist_build sql widgets
 USE_CXXSTD=	c++11
 
 GNU_CONFIGURE=	yes
@@ -24,20 +24,15 @@ BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLDIR} \
 		--with-qt=${PREFIX} \
 		--with-qt-version=5
-MAKE_ARGS=	DOCTOOL="${TRUE}"
-SHEBANG_FILES=	doc/code2html
 
 GH_ACCOUNT=	chris2511
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^CFLAGS/s|-O2||' ${WRKSRC}/Local.mak.in
-	@${REINPLACE_CMD} -e \
-		'/install/s|-D|-c|' ${WRKSRC}/img/Makefile
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xca*
+post-patch:
+	@${REINPLACE_CMD} -e '/^CFLAGS/s|-O2 ||' \
+		${WRKSRC}/Local.mak.in
 
 .include <bsd.port.mk>
