@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	httpuv
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
