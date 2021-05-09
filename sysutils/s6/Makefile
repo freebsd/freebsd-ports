@@ -1,7 +1,7 @@
 # Created by: Colin Booth <colin@heliocat.net>
 
 PORTNAME=	s6
-PORTVERSION=	2.10.0.0
+PORTVERSION=	2.10.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 

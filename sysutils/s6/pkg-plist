@@ -69,7 +69,7 @@ include/s6/s6.h
 include/s6/s6lock.h
 lib/libs6.so
 lib/libs6.so.2.10
-lib/libs6.so.2.10.0.0
+lib/libs6.so.2.10.0.3
 lib/s6/libs6.a
 libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
