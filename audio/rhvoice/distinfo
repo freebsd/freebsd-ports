@@ -1,3 +1,13 @@
-TIMESTAMP = 1619041364
-SHA256 (RHVoice-RHVoice-1.2.3_GH0.tar.gz) = d104f20dc75fcd133d21751a6e894d34b423e12e4784350b4b9573c727fb71cd
-SIZE (RHVoice-RHVoice-1.2.3_GH0.tar.gz) = 170715227
+TIMESTAMP = 1620534847
+SHA256 (RHVoice-RHVoice-1.2.4_GH0.tar.gz) = 09114e8abea5646f5767ce87ca7d1f7868661b78467799775181d531d4d7514a
+SIZE (RHVoice-RHVoice-1.2.4_GH0.tar.gz) = 187812264
+SHA256 (arsenm-sanitizers-cmake-99e159e_GH0.tar.gz) = 019d5053cda2ea64d775feffc9ee9393c306667ae61f723d94811c208cea0e46
+SIZE (arsenm-sanitizers-cmake-99e159e_GH0.tar.gz) = 7344
+SHA256 (unicode-org-cldr-d1c59ae_GH0.tar.gz) = 8f1a4a24f7721014a7d78c5e96e3c97456eb468c9e536a324a43925c54ce8b3c
+SIZE (unicode-org-cldr-d1c59ae_GH0.tar.gz) = 45814418
+SHA256 (rhvoice-victoria-rus-e57c82c_GH0.tar.gz) = 1513d58e1f3349ca06d461e80860da7071f3206339a0d52eb8358adba1752c10
+SIZE (rhvoice-victoria-rus-e57c82c_GH0.tar.gz) = 7425640
+SHA256 (rhvoice-evgeniy-rus-dd971ee_GH0.tar.gz) = b865217cf6accb40be2d0c2f29e578d184f903950dd4febdb261df4bf37ad174
+SIZE (rhvoice-evgeniy-rus-dd971ee_GH0.tar.gz) = 9962521
+SHA256 (rhvoice-evgeniy-eng-c483272_GH0.tar.gz) = cb0129451571ea50299341ccf3dd7cf0b430108de042c64927e8746dc5b3daa4
+SIZE (rhvoice-evgeniy-eng-c483272_GH0.tar.gz) = 7338189

@@ -1,6 +1,5 @@
 PORTNAME=	RHVoice
-DISTVERSION=	1.2.3
-PORTREVISION=	1
+DISTVERSION=	1.2.4
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,8 +13,14 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/licenses/gpl-3.0.txt
 BROKEN_FreeBSD_12_powerpc64=	fails to configure: The C++ compiler is not working
 
 USES=		compiler:c++0x pkgconfig scons
-USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_TUPLE=	arsenm:sanitizers-cmake:99e159e:sanitizers/cmake/thirdparty/sanitizers \
+		unicode-org:cldr:d1c59ae:cldr/src/third-party/cldr \
+		rhvoice:victoria-rus:e57c82c:victoria_rus/data/voices/victoria \
+		rhvoice:evgeniy-rus:dd971ee:evgeniy_rus/data/voices/evgeniy-rus \
+		rhvoice:evgeniy-eng:c483272:evgeniy_eng/data/voices/evgeniy-eng
 
 OPTIONS_RADIO=			AUDIO
 OPTIONS_RADIO_AUDIO=		PULSEAUDIO AO PORTAUDIO # only one of them works at a time
