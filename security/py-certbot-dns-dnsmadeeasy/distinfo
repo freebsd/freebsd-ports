@@ -1,3 +1,3 @@
-TIMESTAMP = 1618084128
-SHA256 (certbot-dns-dnsmadeeasy-1.14.0.tar.gz) = 33eca7cb41b3e9714555b86df02916df24243a4ee88966079c4b79c9eb1e2c2b
-SIZE (certbot-dns-dnsmadeeasy-1.14.0.tar.gz) = 12741
+TIMESTAMP = 1620591071
+SHA256 (certbot-dns-dnsmadeeasy-1.15.0.tar.gz) = e337176369aef4455602d8626fef301c47ab991ea707170fce14363ca53fdccd
+SIZE (certbot-dns-dnsmadeeasy-1.15.0.tar.gz) = 12697
