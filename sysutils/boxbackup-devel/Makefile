@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.boxbackup.org/snapshots/201108/
 PKGNAMESUFFIX=	${CLIENT_OR_SERVER}-devel
 DISTNAME=	${PORTNAME}-${SVNVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source, completely automatic on-line backup system
 
 LICENSE=	BSD3CLAUSE GPLv2
