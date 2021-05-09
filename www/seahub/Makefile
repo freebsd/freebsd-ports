@@ -17,7 +17,6 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}django22>=0:www/py-django22@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-statici18n>=0:www/py-django-statici18n@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-post_office>=0:www/py-django-post_office@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-webpack-loader>=0:www/py-django-webpack-loader@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=0:www/py-gunicorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mysqlclient>0:databases/py-mysqlclient@${PY_FLAVOR} \
