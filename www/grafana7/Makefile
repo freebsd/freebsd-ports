@@ -1,5 +1,6 @@
 PORTNAME=	grafana
 PORTVERSION=	7.5.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://dl.grafana.com/oss/release/:public \
@@ -19,6 +20,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
+
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
 USES=		go:modules
 
