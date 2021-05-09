@@ -1,8 +1,7 @@
 # Created by: Kay Lehmann <kay_lehmann@web.de>
 
 PORTNAME=	labplot
-DISTVERSION=	2.8.1
-PORTREVISION=	8
+DISTVERSION=	2.8.2
 CATEGORIES=	math kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 
@@ -30,6 +29,7 @@ USE_QT=		concurrent core dbus gui network printsupport serialport \
 		buildtools_build qmake_build
 
 CMAKE_OFF=	ENABLE_LIBCERF
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_KUserFeedback
 
 DATADIR=	${PREFIX}/share/labplot2
 
