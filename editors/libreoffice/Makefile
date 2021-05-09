@@ -1,4 +1,4 @@
-PORTREVISION=	8
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -130,7 +130,7 @@ JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
 KF5_DESC=	KF5/Qt5 GUI toolkit support (implies QT5)
 MMEDIA_DESC=	Enable multimedia backend for Impress
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
-MARIADB_DESC=	Build with MariaDB-SDBC driver
+MARIADB_DESC=	Build with MariaDB/MySQL-SDBC driver
 QT5_DESC=	Qt5 GUI toolkit support (default visual style)
 SDK_DESC=	Build with SDK
 TEST_DESC=	Run all regression tests
