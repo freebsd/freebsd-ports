@@ -1,8 +1,7 @@
 # Created by: David Thiel <lx@redundancy.redundancy.org>
 
 PORTNAME=	runwhen
-PORTVERSION=	2015.02.24
-PORTREVISION=	2
+PORTVERSION=	2021.04.30
 CATEGORIES=	sysutils
 MASTER_SITES=	http://code.dogmap.org/runwhen/releases/
 
@@ -10,8 +9,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for running commands at particular times
 
 LICENSE=	GPLv2
-
-BROKEN=		fails to link: ld: error: undefined symbol: pathexec_env
 
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
 
