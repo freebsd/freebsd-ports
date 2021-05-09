@@ -1,3 +1,6 @@
+This is a cut-down version of https://bazaar.launchpad.net/~ctwm/ctwm/trunk/revision/558
+which passed through vtwm and Reddit before arriving in FreeBSD ports.
+
 --- src/util.c.orig	2020-06-14 23:58:19 UTC
 +++ src/util.c
 @@ -1033,3 +1033,44 @@ Bell(int type _X_UNUSED, int percent, Window win _X_UN
