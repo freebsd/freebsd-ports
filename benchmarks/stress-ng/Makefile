@@ -1,5 +1,5 @@
 PORTNAME=	stress-ng
-DISTVERSION=	0.12.07
+DISTVERSION=	0.12.08
 PORTREVISION=	0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://kernel.ubuntu.com/~cking/tarballs/stress-ng/
