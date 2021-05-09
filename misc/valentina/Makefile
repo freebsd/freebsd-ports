@@ -1,5 +1,5 @@
 PORTNAME=	valentina
-DISTVERSION=	0.7.45
+DISTVERSION=	0.7.46
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	smart-pattern
-GL_COMMIT=	80b6c97b3a105015b030d3ecac0d5fde7d190858
+GL_COMMIT=	f85c29649bdeac387bf2d5582609a277cf30aad9
 
 DOS2UNIX_FILES=	src/libs/vgeometry/vellipticalarc.cpp
 
@@ -25,6 +25,6 @@ QMAKE_ARGS=	CONFIG+="noTests" CONFIG+="noRunPath"
 QMAKE_ARGS+=	CONFIG+="no_ccache"
 .endif
 
-BINARY_ALIAS=	hg=/usr/bin/true
+BINARY_ALIAS=	hg=/usr/bin/true git=/usr/bin/false
 
 .include <bsd.port.mk>
