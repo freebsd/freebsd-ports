@@ -1,3 +1,3 @@
-TIMESTAMP = 1618084129
-SHA256 (certbot-dns-gehirn-1.14.0.tar.gz) = 290f06131181e1007d83baff851d599d7e427afa0ecd1f72957eefdaa1749f04
-SIZE (certbot-dns-gehirn-1.14.0.tar.gz) = 12575
+TIMESTAMP = 1620591072
+SHA256 (certbot-dns-gehirn-1.15.0.tar.gz) = 6f0d8c99fdd93ae205efc0fa74c88902371944fb93a0870ca947d28d13e365f1
+SIZE (certbot-dns-gehirn-1.15.0.tar.gz) = 12530

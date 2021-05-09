@@ -1,3 +1,3 @@
-TIMESTAMP = 1618084130
-SHA256 (certbot-dns-linode-1.14.0.tar.gz) = 560756e83424f5bf9ff8c02ffa1469a55d0f5686a9a87b27077b5e94f1597759
-SIZE (certbot-dns-linode-1.14.0.tar.gz) = 13061
+TIMESTAMP = 1620591073
+SHA256 (certbot-dns-linode-1.15.0.tar.gz) = 726cfc0e55292487e728c8c10c0c9821b05cafd072573f2b466490afb55d3633
+SIZE (certbot-dns-linode-1.15.0.tar.gz) = 13027
