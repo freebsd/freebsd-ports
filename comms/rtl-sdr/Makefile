@@ -2,7 +2,7 @@
 
 PORTNAME=	rtl-sdr
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
@@ -11,13 +11,12 @@ COMMENT=	Command-line tool that performs SDR with RTL2832-based USB sticks
 
 LICENSE=	GPLv2
 
-USES=		autoreconf gmake pkgconfig libtool pathfix tar:tgz
+USES=		autoreconf pkgconfig libtool pathfix tar:tgz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	steve-m
 GH_PROJECT=	librtlsdr
 
-USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include
