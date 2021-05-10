@@ -505,6 +505,7 @@ include/folly/io/async/TimeoutManager.h
 include/folly/io/async/VirtualEventBase.h
 include/folly/io/async/WriteChainAsyncTransportWrapper.h
 include/folly/io/async/ssl/BasicTransportCertificate.h
+include/folly/io/async/ssl/OpenSSLTransportCertificate.h
 include/folly/io/async/ssl/OpenSSLUtils.h
 include/folly/io/async/ssl/SSLErrors.h
 include/folly/io/async/ssl/TLSDefinitions.h
