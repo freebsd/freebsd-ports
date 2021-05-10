@@ -9,7 +9,7 @@ COMMENT=	Python modules for proteomics data analysis
 
 LICENSE=	APACHE20
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
@@ -20,7 +20,7 @@ DF_DESC=	DataFrame support
 GRAPHICS_DESC=	Graphics support
 TDA_DESC=	Target-decoy approach support
 UNIMOD_DESC=	Unimod database support
-XML_DESC=	XML support	
+XML_DESC=	XML support
 
 DF_RUN_DEPENDS=		${PY_PANDAS}
 GRAPHICS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR}

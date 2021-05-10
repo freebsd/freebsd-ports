@@ -34,7 +34,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		dos2unix compiler:c++11-lib cmake gl eigen:3 fortran jpeg \
-		localbase:ldflags pkgconfig python:3.6+ localbase qt:5 xorg
+		localbase:ldflags pkgconfig python:3.7+ localbase qt:5 xorg
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu

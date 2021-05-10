@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.1.2:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.19.1:science/py-scipy@${PY_FLAVOR}
 
-USES=		localbase:ldflags python:3.6+
+USES=		localbase:ldflags python:3.7+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

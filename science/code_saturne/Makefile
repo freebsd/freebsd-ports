@@ -26,7 +26,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	code-saturne
 
 USES=		autoreconf bison compiler:c11 fortran gettext gnome gmake \
-		iconv libtool pyqt:5 python:3.6+ shebangfix
+		iconv libtool pyqt:5 python:3.7+ shebangfix
 
 USE_GNOME=	libxml2
 USE_PYQT=	core gui sip widgets xml_build

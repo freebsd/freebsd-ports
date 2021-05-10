@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		nwchem:science/nwchem
 # optional dependencies: x11-toolkits/py-tkinter, www/py-flask (see https://wiki.fysik.dtu.dk/ase/install.html)
 
-USES=		python:3.5+
+USES=		python:3.7+
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes
