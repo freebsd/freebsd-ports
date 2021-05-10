@@ -1,6 +1,6 @@
 PORTNAME=	fnccheck
 PORTVERSION=	3.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	FunctionCheck-${PORTVERSION}
@@ -11,6 +11,7 @@ COMMENT=	Profiling library/utilities for C/C++ programs
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BUILD_DEPENDS=  gnulibiberty>=2.19.1:devel/gnulibiberty
 LIB_DEPENDS=	libbfd.so:devel/libbfd
 
 USES=		autoreconf libtool
