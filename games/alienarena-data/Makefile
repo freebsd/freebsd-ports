@@ -2,6 +2,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2013.766
+PORTEEVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://ftp.jeuxlinux.fr/files/ \
@@ -40,12 +41,10 @@ pre-install:
 .	endfor
 
 	@${ECHO_CMD} share/pixmaps/${PORTNAME}.png >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
 
 	@cd ${WRKSRC}/docs && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%PORTDOCS%%%%DOCSDIR%%/|' >> ${PLIST} && \
 		${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|%%PORTDOCS%%@dirrm %%DOCSDIR%%/|' >> ${PLIST}
-	@${ECHO_CMD} "%%PORTDOCS%%@dirrmtry %%DOCSDIR%%" >> ${PLIST}
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "arena botinfo data1" ${STAGEDIR}${DATADIR}
