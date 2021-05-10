@@ -10,6 +10,7 @@
     SUBDIR += audacious-skins
     SUBDIR += canta-gtk-themes
     SUBDIR += canta-icon-theme
+    SUBDIR += chicago95
     SUBDIR += classiclooks
     SUBDIR += claws-mail-themes
     SUBDIR += clearlooks
