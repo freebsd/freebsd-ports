@@ -1245,6 +1245,7 @@
     SUBDIR += swatchdog
     SUBDIR += symbion-sslproxy
     SUBDIR += tailscale
+    SUBDIR += tang
     SUBDIR += tclsasl
     SUBDIR += tcpcrypt
     SUBDIR += teleport
