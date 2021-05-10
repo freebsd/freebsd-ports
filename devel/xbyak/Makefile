@@ -1,6 +1,6 @@
 PORTNAME=	xbyak
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.991
+DISTVERSION=	5.992
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +19,8 @@ NO_ARCH=	yes
 PLIST_FILES=	include/xbyak/xbyak.h \
 		include/xbyak/xbyak_bin2hex.h \
 		include/xbyak/xbyak_mnemonic.h \
-		include/xbyak/xbyak_util.h
+		include/xbyak/xbyak_util.h \
+		lib/cmake/xbyak/xbyak-targets.cmake \
+		lib/cmake/xbyak/xbyakConfig.cmake
 
 .include <bsd.port.mk>
