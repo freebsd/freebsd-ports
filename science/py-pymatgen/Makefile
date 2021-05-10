@@ -1,5 +1,5 @@
 PORTNAME=	pymatgen
-DISTVERSION=	2022.0.7
+DISTVERSION=	2022.0.8
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.9.3:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5:math/py-matplotlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}monty>=2021.3.3:devel/py-monty@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}monty>=3.0.2:devel/py-monty@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.2:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}palettable>=3.1.1:misc/py-palettable@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
