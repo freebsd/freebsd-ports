@@ -1,7 +1,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
-PORTVERSION=	4.14.1
-PORTREVISION=	1
+PORTVERSION=	4.15.0
+PORTREVISION=	0
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -16,8 +16,10 @@ LIB_DEPENDS=	libyajl.so:devel/yajl \
 		libpixman-1.so:x11/pixman \
 		libargp.so:devel/argp-standalone \
 		libxml2.so:textproc/libxml2
-BUILD_DEPENDS=	seabios>0:misc/seabios
-RUN_DEPENDS=	seabios>0:misc/seabios
+BUILD_DEPENDS=	seabios>0:misc/seabios \
+		${LOCALBASE}/share/edk2-xen/XEN_EFI.fd:sysutils/edk2@xen
+RUN_DEPENDS=	seabios>0:misc/seabios \
+		${LOCALBASE}/share/edk2-xen/XEN_EFI.fd:sysutils/edk2@xen
 
 OPTIONS_DEFINE=		DOCS SPICE
 OPTIONS_DEFAULT=	DOCS
@@ -43,6 +45,7 @@ MAKE_ARGS=	clang=y ARCH=x86_64
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 CONFIGURE_ARGS+=	--with-system-seabios=${LOCALBASE}/share/seabios/bios.bin \
+			--with-system-ovmf=${LOCALBASE}/share/edk2-xen/XEN_EFI.fd \
 			--mandir=${MANPREFIX}/man
 
 SHEBANG_FILES=	tools/misc/xencov_split \
