@@ -1,6 +1,6 @@
 --- build.xml.orig	2017-02-01 12:42:14 UTC
 +++ build.xml
-@@ -237,12 +237,6 @@
+@@ -271,12 +271,6 @@
        <fileset dir="build">
          <include name="java3d-1.6/jogl-java3d.jar"/>
        </fileset>
@@ -8,7 +8,7 @@
 -        <include name="java3d-1.6/windows/**/*.dll"/>
 -        <include name="java3d-1.6/linux/**/*.so"/>
 -        <include name="macosx/*.jnilib"/>
--        <include name="java3d-1.6/macosx/*.jnilib"/>
+-        <include name="java3d-1.6/macosx/*.dylib"/>
 -      </fileset>
      </jar>
    </target>
