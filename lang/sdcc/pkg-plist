@@ -238,6 +238,11 @@ bin/sdranlib
 %%DEVLIB%%%%PADAUK%%%%DATADIR%%/lib/pdk14/pdk14.lib
 %%DEVLIB%%%%PADAUK%%%%DATADIR%%/lib/pdk15/pdk15.lib
 %%DEVLIB%%%%PADAUK%%%%DATADIR%%/lib/pdk15-stack-auto/pdk15.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic14/libc.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic14/libce.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic14/libm.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic14/libme.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic14/libsdcc.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/crt0.o
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/crt0i.o
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/crt0iz.o

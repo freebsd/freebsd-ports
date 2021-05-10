@@ -1,7 +1,7 @@
 PORTNAME=	sdcc
 PORTVERSION=	4.0.0
 DISTVERSIONPREFIX=src-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -79,6 +79,7 @@ post-patch:
 		${WRKSRC}/device/lib/pic14/Makefile.common \
 		${WRKSRC}/device/lib/pic14/Makefile.in \
 		${WRKSRC}/device/lib/pic14/configure \
+		${WRKSRC}/device/lib/pic14/configure.ac \
 		${WRKSRC}/device/lib/pic14/libc/Makefile.in \
 		${WRKSRC}/device/lib/pic14/libm/Makefile.in \
 		${WRKSRC}/device/lib/pic14/libsdcc/enhanced/Makefile.in \
