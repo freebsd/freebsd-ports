@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	2.6.1
+DISTVERSION=	2.7.4
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -46,7 +46,7 @@ USE_GITHUB=	nodefault
 GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
 USE_GL=		gl
-USE_GNOME=	glib20
+USE_GNOME=	glib20 glibmm
 INSTALLS_ICONS=	yes
 USE_QT=		core dbus gui imageformats network widgets buildtools_build \
 		qmake_build wayland
