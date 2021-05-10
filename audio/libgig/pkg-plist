@@ -24,8 +24,8 @@ lib/libgig/libakai.so.0
 lib/libgig/libakai.so.0.0.0
 lib/libgig/libgig.a
 lib/libgig/libgig.so
-lib/libgig/libgig.so.9
-lib/libgig/libgig.so.9.0.0
+lib/libgig/libgig.so.10
+lib/libgig/libgig.so.10.0.0
 libdata/pkgconfig/akai.pc
 libdata/pkgconfig/gig.pc
 man/man1/akaidump.1.gz
