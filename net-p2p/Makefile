@@ -11,6 +11,7 @@
     SUBDIR += bitmark-cli
     SUBDIR += bitmark-daemon
     SUBDIR += bitmark-recorder
+    SUBDIR += btcheck
     SUBDIR += btpd
     SUBDIR += c-lightning
     SUBDIR += cpuminer

@@ -1,0 +1,6 @@
+BtCheck can check downloaded data integrity according to the given
+torrent and it can also show the information stored in the torrent
+file: announce trackers, list of files with their size, hash value,
+creation date, comments, etc.
+
+WWW: https://sourceforge.net/projects/btcheck/
