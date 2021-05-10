@@ -1,20 +1,42 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20210509
+PORTVERSION=	s20210512
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	419fb3c8f97a.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/4836
-PATCHFILES+=	abdf90282438.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	acf3dae05eae.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	0b3842759127.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	964339d0ac20.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	1602b9e80410.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	e32b8885b4a3.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	225202534545.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	9d1a5e53149b.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	2f5a562b8c58.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	aa6638d8c01b.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
+PATCHFILES+=	a2686843592e.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/4836 mainline-merge
+PATCHFILES+=	e2d5cff34554.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	5e559324a080.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	3bfdd34ce241.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	234d7ded1c52.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	2caf2f0fe288.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	b9ff77485840.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	26907dfe941c.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	043027f85b64.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	169384b954b9.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	16a67d43d9a4.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	d08bd3e062e6.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	ed25191ee634.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	7a06037c5fd2.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	75f23ad494cc.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	9f44a44f2f6d.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	cfed6936f3c0.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	44c763f9c630.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	c6de9657be71.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	f54ea749a4a5.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	934b2d8842f0.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	41928dfdda96.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	da25a5986666.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	21671d05a362.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	49c4c329f6c8.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	913971417e07.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	2c1e119c4a57.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	343d92a09276.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	b9f543b29f2d.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	f2c26443f85a.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	fc086f93b216.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	12d569e48383.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
+PATCHFILES+=	eee302b9b9fe.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6299 mainline-merge
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger
@@ -42,7 +64,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	ec50a9b5b
+GH_TAGNAME=	5a042bdaa
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-52-geac2416b8:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.145:Vulkan_Headers/externals/Vulkan-Headers \
