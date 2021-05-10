@@ -1,6 +1,5 @@
 PORTNAME=	mpfrcx
-DISTVERSION=	0.6
-PORTREVISION=	1
+DISTVERSION=	0.6.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.multiprecision.org/downloads/
 
@@ -27,6 +26,6 @@ PLIST_FILES=	include/mpfrcx.h \
 		lib/libmpfrcx.a \
 		lib/libmpfrcx.so \
 		lib/libmpfrcx.so.1 \
-		lib/libmpfrcx.so.1.2.0
+		lib/libmpfrcx.so.1.2.1
 
 .include <bsd.port.mk>
