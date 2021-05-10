@@ -1,8 +1,8 @@
 yuzu (Qt) currently needs SDL for input
 
---- CMakeLists.txt.orig	2021-04-21 21:36:33 UTC
+--- CMakeLists.txt.orig	2021-05-10 03:15:00 UTC
 +++ CMakeLists.txt
-@@ -273,9 +273,13 @@ if (ENABLE_SDL2)
+@@ -291,9 +291,13 @@ if (ENABLE_SDL2)
          add_library(SDL2 INTERFACE)
          target_link_libraries(SDL2 INTERFACE "${SDL2_LIBRARY}")
          target_include_directories(SDL2 INTERFACE "${SDL2_INCLUDE_DIR}")
@@ -11,7 +11,7 @@ yuzu (Qt) currently needs SDL for input
 +endif()
 +
 +if (NOT YUZU_USE_BUNDLED_SDL2)
-         find_package(SDL2 2.0.14 QUIET)
+         find_package(SDL2 2.0.15 QUIET)
  
 +    if (TRUE)
          if (SDL2_FOUND)
