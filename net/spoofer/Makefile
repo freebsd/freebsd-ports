@@ -1,8 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	spoofer
-DISTVERSION=	1.4.6
-PORTREVISION=	1
+DISTVERSION=	1.4.7
 CATEGORIES=	net
 MASTER_SITES=	https://www.caida.org/projects/spoofer/downloads/
 
