@@ -1,7 +1,7 @@
 # Created by: peter.thoenen@yahoo.com
 
 PORTNAME=	tor
-DISTVERSION=	0.4.5.7
+DISTVERSION=	0.4.5.8
 CATEGORIES=	security net
 MASTER_SITES=	TOR
 
