@@ -132,6 +132,7 @@
     SUBDIR += predict
     SUBDIR += py-adafruit-ampy
     SUBDIR += py-esptool
+    SUBDIR += py-hid
     SUBDIR += py-hidapi
     SUBDIR += py-libimobiledevice
     SUBDIR += py-pyserial
