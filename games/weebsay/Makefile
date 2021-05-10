@@ -24,4 +24,3 @@ GH_TUPLE=	fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
-
