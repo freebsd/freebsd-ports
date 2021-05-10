@@ -76,6 +76,36 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="12156786-b18a-11eb-8cba-080027b00c2e">
+    <topic>cyrus-imapd -- Remote authenticated users could bypass intended access restrictions on certain server annotations.</topic>
+    <affects>
+      <package>
+	<name>cyrus-imapd34</name>
+	<range><ge>3.4.0</ge><lt>3.4.1</lt></range>
+      </package>
+      <package>
+	<name>cyrus-imapd32</name>
+	<range><ge>3.2.0</ge><lt>3.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cyrus IMAP 3.4.1 Release Notes states:</p>
+	<blockquote cite="https://www.cyrusimap.org/imap/download/release-notes/3.4/x/3.4.1.html">
+	  <p>Fixed CVE-2021-32056: Remote authenticated users could bypass intended access restrictions on certain server annotations. Additionally, a long-standing bug in replication did not allow server annotations to be replicated. Combining these two bugs, a remote authenticated user could stall replication, requiring administrator intervention.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-32056</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32056</url>
+    </references>
+    <dates>
+      <discovery>2021-05-05</discovery>
+      <entry>2021-05-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="49346de2-b015-11eb-9bdf-f8b156b6dcc8">
     <topic>FLAC -- out-of-bounds read</topic>
     <affects>
