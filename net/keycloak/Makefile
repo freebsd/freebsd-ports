@@ -1,5 +1,5 @@
 PORTNAME=	keycloak
-PORTVERSION=	12.0.4
+PORTVERSION=	13.0.0
 CATEGORIES=	net java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -28,13 +28,13 @@ PLIST_SUB+=	POSTGRES=""
 PLIST_SUB+=	POSTGRES="@comment "
 .endif
 
-USE_RC_SUBR=	keycloak
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk oracle
 JAVA_RUN=	yes
+
+USE_RC_SUBR=	keycloak
 
 USER=		www
 GROUP=		www
@@ -43,15 +43,15 @@ VAR_DIR?=	/var
 LOG_DIR?=	${VAR_DIR}/log/${PORTNAME}
 RUN_DIR?=	${VAR_DIR}/run/${PORTNAME}
 
+NO_ARCH=	yes
+NO_BUILD=	yes
+
 SUB_LIST+=	GROUP=${GROUP} \
 		LOG_DIR=${LOG_DIR} \
 		JAVA=${JAVA} \
 		PORTNAME=${PORTNAME} \
 		RUN_DIR=${RUN_DIR} \
 		USER=${USER}
-
-NO_BUILD=	yes
-NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -114,12 +114,12 @@ do-install:
 .endfor
 
 	# Create links for kc* binaries
-	${LN} -sf ${JAVASHAREDIR}/${PORTNAME}/bin/kcadm.sh ${STAGEDIR}${PREFIX}/bin/kcadm
-	${LN} -sf ${JAVASHAREDIR}/${PORTNAME}/bin/kcreg.sh ${STAGEDIR}${PREFIX}/bin/kcreg
+	${LN} -sf ../share/java/${PORTNAME}/bin/kcadm.sh ${STAGEDIR}${PREFIX}/bin/kcadm
+	${LN} -sf ../share/java/${PORTNAME}/bin/kcreg.sh ${STAGEDIR}${PREFIX}/bin/kcreg
 
 	# Create links for log directories
-	${LN} -sf ${LOG_DIR}/domain ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}/domain/log
-	${LN} -sf ${LOG_DIR}/standalone ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}/standalone/log
+	${LN} -sf ../../../../../..${LOG_DIR}/domain ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}/domain/log
+	${LN} -sf ../../../../../..${LOG_DIR}/standalone ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}/standalone/log
 
 .if ${FLAVOR:U} == mysql
 	@${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}/modules/system/layers/keycloak/com/mysql/main
