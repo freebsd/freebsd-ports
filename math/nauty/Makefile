@@ -3,8 +3,7 @@
 PORTNAME=	nauty
 PORTVERSION=	27r1
 CATEGORIES=	math
-MASTER_SITES=	http://pallini.di.uniroma1.it/	\
-		http://cs.anu.edu.au/~bdm/nauty/
+MASTER_SITES=	https://users.cecs.anu.edu.au/~bdm/nauty/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	moritz@schmi.tt
