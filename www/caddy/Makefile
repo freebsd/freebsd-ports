@@ -2,8 +2,7 @@
 
 PORTNAME=	caddy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
-PORTREVISION=	1
+DISTVERSION=	2.4.0
 CATEGORIES=	www
 DIST_SUBDIR=	caddy
 
@@ -36,7 +35,7 @@ GH_TUPLE=	AndreasBriese:bbloom:e2d15f34fcf9:andreasbriese_bbloom/vendor/github.c
 		antlr:antlr4:621b933c7a7f:antlr_antlr4/vendor/github.com/antlr/antlr4 \
 		aryann:difflib:e206f873d14a:aryann_difflib/vendor/github.com/aryann/difflib \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
-		caddyserver:certmagic:201f83a06067:caddyserver_certmagic/vendor/github.com/caddyserver/certmagic \
+		caddyserver:certmagic:v0.13.1:caddyserver_certmagic/vendor/github.com/caddyserver/certmagic \
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		cheekybits:genny:v1.0.0:cheekybits_genny/vendor/github.com/cheekybits/genny \
@@ -57,27 +56,26 @@ GH_TUPLE=	AndreasBriese:bbloom:e2d15f34fcf9:andreasbriese_bbloom/vendor/github.c
 		golang:net:69a78807bb2b:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:f9fddec55a1e:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:2d18734c6014:golang_sys/vendor/golang.org/x/sys \
+		golang:term:de623e64d2a6:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		google:cel-go:v0.6.0:google_cel_go/vendor/github.com/google/cel-go \
 		google:go-genproto:86f49bd18e98:google_go_genproto/vendor/google.golang.org/genproto \
-		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
+		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
 		grpc:grpc-go:v1.27.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		huandu:xstrings:v1.3.1:huandu_xstrings/vendor/github.com/huandu/xstrings \
 		imdario:mergo:v0.3.8:imdario_mergo/vendor/github.com/imdario/mergo \
-		jsternberg:zap-logfmt:v1.2.0:jsternberg_zap_logfmt/vendor/github.com/jsternberg/zap-logfmt \
 		juju:ansiterm:720a0952cc2a:juju_ansiterm/vendor/github.com/juju/ansiterm \
 		klauspost:compress:v1.11.3:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v1.2.5:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
-		klauspost:cpuid:v2.0.1:klauspost_cpuid_v2/vendor/github.com/klauspost/cpuid/v2 \
+		klauspost:cpuid:v2.0.6:klauspost_cpuid_v2/vendor/github.com/klauspost/cpuid/v2 \
 		konsorten:go-windows-terminal-sequences:v1.0.3:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		libdns:libdns:v0.2.0:libdns_libdns/vendor/github.com/libdns/libdns \
-		lucas-clemente:quic-go:v0.19.3:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
+		lucas-clemente:quic-go:v0.20.1:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
 		lunixbochs:vtclean:v1.0.0:lunixbochs_vtclean/vendor/github.com/lunixbochs/vtclean \
 		manifoldco:promptui:v0.3.1:manifoldco_promptui/vendor/github.com/manifoldco/promptui \
 		marten-seemann:qpack:v0.2.1:marten_seemann_qpack/vendor/github.com/marten-seemann/qpack \
-		marten-seemann:qtls-go1-15:v0.1.1:marten_seemann_qtls_go1_15/vendor/github.com/marten-seemann/qtls-go1-15 \
-		marten-seemann:qtls:v0.10.0:marten_seemann_qtls/vendor/github.com/marten-seemann/qtls \
+		marten-seemann:qtls-go1-16:v0.1.3:marten_seemann_qtls_go1_16/vendor/github.com/marten-seemann/qtls-go1-16 \
 		mattn:go-colorable:v0.1.6:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
