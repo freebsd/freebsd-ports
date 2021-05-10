@@ -1006,6 +1006,7 @@
     SUBDIR += wargus
     SUBDIR += warmux
     SUBDIR += warzone2100
+    SUBDIR += weebsay
     SUBDIR += wesnoth
     SUBDIR += whichwayisup
     SUBDIR += widelands
