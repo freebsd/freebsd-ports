@@ -537,6 +537,7 @@
     SUBDIR += egypt
     SUBDIR += eiffelstudio
     SUBDIR += electron12
+    SUBDIR += elf-dissector
     SUBDIR += elf
     SUBDIR += elfio
     SUBDIR += elfkickers
