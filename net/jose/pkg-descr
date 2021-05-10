@@ -1,0 +1,5 @@
+Jose is a command line utility for performing various tasks on JSON
+Object Signing and Encryption (JOSE) objects. Jose provides a full
+crypto stack including key generation, signing and encryption.
+
+WWW: https://github.com/latchset/jose

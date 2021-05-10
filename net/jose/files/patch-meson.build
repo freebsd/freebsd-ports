@@ -1,0 +1,20 @@
+--- meson.build.orig	2021-05-07 13:04:06 UTC
++++ meson.build
+@@ -38,7 +38,7 @@ add_project_arguments(
+ zlib = dependency('zlib')
+ threads = dependency('threads')
+ jansson = dependency('jansson', version: '>=2.10')
+-libcrypto = dependency('libcrypto', version: '>=1.0.2')
++libcrypto = meson.get_compiler('c').find_library('crypto', dirs: [ '/usr/lib/' ])
+ a2x = find_program('a2x', required: false)
+ 
+ mans = []
+@@ -60,7 +60,7 @@ pkg.generate(
+   filebase: meson.project_name(),
+   name: 'José Library',
+ 
+-  requires_private: [ 'zlib', 'libcrypto' ],
++  requires_private: [ 'zlib' ],
+   libraries: libjose,
+   requires: 'jansson',
+ )
