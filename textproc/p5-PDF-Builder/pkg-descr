@@ -1,0 +1,9 @@
+There seem to be a growing plethora of Perl modules for creating and
+manipulating PDF files.
+
+PDF::Builder is a fork of PDF::API2, which is developed with the goal
+of a more aggressive schedule of new features and bug fixes, while
+aiming to keep all internal methods as upwardly compatible with PDF::API2
+as possible.
+
+WWW: https://metacpan.org/release/PDF-Builder
