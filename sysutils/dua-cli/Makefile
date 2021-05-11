@@ -1,7 +1,6 @@
 PORTNAME=	dua-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.2
-PORTREVISION=	1
+DISTVERSION=	2.11.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -14,7 +13,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	Byron
 
-CARGO_CRATES=	ansi_term-0.11.0 \
+CARGO_CRATES=	ansi_term-0.12.1 \
 		anyhow-1.0.40 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
@@ -35,7 +34,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		crossterm_winapi-0.7.0 \
 		crosstermion-0.7.0 \
 		ctor-0.1.20 \
-		difference-2.0.0 \
+		diff-0.1.12 \
 		either-1.6.1 \
 		filesize-0.2.0 \
 		fixedbitset-0.2.0 \
@@ -63,21 +62,21 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.3 \
 		petgraph-0.5.1 \
-		pretty_assertions-0.6.1 \
+		pretty_assertions-0.7.2 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.26 \
 		quote-1.0.9 \
 		rayon-1.5.0 \
 		rayon-core-1.9.0 \
-		redox_syscall-0.2.7 \
+		redox_syscall-0.2.8 \
 		redox_termios-0.1.2 \
 		scopeguard-1.1.0 \
 		signal-hook-0.1.17 \
 		signal-hook-registry-1.3.0 \
 		smallvec-1.6.1 \
 		strsim-0.10.0 \
-		syn-1.0.71 \
+		syn-1.0.72 \
 		termcolor-1.1.2 \
 		termion-1.5.6 \
 		textwrap-0.12.1 \
