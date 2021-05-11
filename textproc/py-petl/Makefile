@@ -2,6 +2,7 @@
 
 PORTNAME=	petl
 PORTVERSION=	1.7.4
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,7 +36,7 @@ XPATH_DESC=	XPath support
 WHOOSH_DESC=	Whoosh support
 
 AVRO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastavro>=0.24.0:textproc/py-fastavro@${PY_FLAVOR}
-DB_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sqlalchemy13>=1.3.6:databases/py-sqlalchemy13@${PY_FLAVOR}
+DB_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.3.6:databases/py-sqlalchemy14@${PY_FLAVOR}
 HDF5_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.13:lang/cython@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}numexpr>=2.6.9:math/py-numexpr@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}numpy>=1.16.4,1:math/py-numpy@${PY_FLAVOR} \
