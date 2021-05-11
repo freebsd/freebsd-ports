@@ -434,7 +434,7 @@ GH_SUBDIR:=	${GH_SUBDIR_DEFAULT}
 GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,g}
 # GitHub silently converts tags starting with v to not have v in the filename
 # and extraction directory.  It also replaces + with -.
-GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:C/^[vV]([0-9])/\1/:S/+/-/g}
+GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:C/^[vV]([0-9])/\1/:S/+/-/g:C/--*/-/g}
 .  endif
 # This new scheme rerolls distfiles. Also ensure they are renamed to avoid
 # conflicts. Use _GITHUB_REV in case github changes their zipping or structure
