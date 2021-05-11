@@ -33,6 +33,6 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|-Ino/include||g; s|-Lno/lib||g' ${WRKSRC}/Makefile ${WRKSRC}/*/Makefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcgribex.so.0.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcgribex.so
 
 .include <bsd.port.mk>
