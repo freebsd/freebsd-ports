@@ -662,6 +662,7 @@
     SUBDIR += p5-Graphics-GnuplotIF
     SUBDIR += p5-Graphics-Primitive
     SUBDIR += p5-Graphics-Primitive-Driver-Cairo
+    SUBDIR += p5-Graphics-TIFF
     SUBDIR += p5-Image-Base
     SUBDIR += p5-Image-Base-SVG
     SUBDIR += p5-Image-Caa
