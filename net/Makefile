@@ -720,6 +720,7 @@
     SUBDIR += p5-Net-NIS-Listgroup
     SUBDIR += p5-Net-NTP
     SUBDIR += p5-Net-Nessus-XMLRPC
+    SUBDIR += p5-Net-Netcat
     SUBDIR += p5-Net-Nmsg
     SUBDIR += p5-Net-OAuth
     SUBDIR += p5-Net-OAuth-Simple
