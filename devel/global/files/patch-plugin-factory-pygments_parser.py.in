@@ -1,0 +1,7 @@
+--- plugin-factory/pygments_parser.py.in.orig	2021-05-02 07:38:53 UTC
++++ plugin-factory/pygments_parser.py.in
+@@ -1,4 +1,3 @@
+-#!/usr/bin/env python
+ #
+ # Copyright (c) 2014
+ #	Yoshitaro Makise
