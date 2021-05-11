@@ -4,13 +4,16 @@ PORTNAME=		openldap
 DISTVERSION=		2.4.58
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
-MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
-			http://repository.linagora.org/OpenLDAP/openldap-release/ \
-			ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/%SUBDIR%/ \
+MASTER_SITES=		https://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/ \
+			http://gpl.savoirfairelinux.net/pub/mirrors/openldap/%SUBDIR%/ \
+			http://repository.linagora.org/OpenLDAP/%SUBDIR%/ \
+			http://mirror.eu.oneandone.net/software/openldap/%SUBDIR%/ \
 			ftp://ftp.ntua.gr/mirror/OpenLDAP/%SUBDIR%/ \
-			ftp://ftp.u-aizu.ac.jp/pub/net/openldap/%SUBDIR%/ \
-			ftp://ftp.nl.uu.net/pub/unix/db/openldap/%SUBDIR%/ \
-			ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/ \
+			https://mirror-hk.koddos.net/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.dti.ad.jp/pub/net/OpenLDAP/%SUBDIR%/ \
+			https://mirror.koddos.net/OpenLDAP/%SUBDIR%/ \
+			https://mirror.lyrahosting.com/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			http://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-release
 .if defined(CLIENT_ONLY)
