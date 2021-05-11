@@ -1,5 +1,5 @@
 PORTNAME=	qmk
-PORTVERSION=	0.0.46
+DISTVERSION=	0.0.48
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,13 +36,12 @@ USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_GLOB=	*.py
 
 TEST_ENV=	PYTHONPATH="${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}"
+TEST_TARGET=	config
+DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/qmk config
 
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
-
-do-test:
-	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/qmk config)
 
 .include <bsd.port.mk>
