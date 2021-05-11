@@ -76,6 +76,41 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="278561d7-b261-11eb-b788-901b0e934d69">
+    <topic>py-matrix-synapse -- malicious push rules may be used for a denial of service attack.</topic>
+    <affects>
+      <package>
+	<name>py36-matrix-synapse</name>
+	<name>py37-matrix-synapse</name>
+	<name>py38-matrix-synapse</name>
+	<name>py39-matrix-synapse</name>
+	<range><lt>1.33.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matrix developers report:</p>
+	<blockquote cite="https://github.com/matrix-org/synapse/security/advisories/GHSA-x345-32rc-8h85">
+	  <p>"Push rules" can specify conditions under which they will match,
+	    including event_match, which matches event content against a
+	    pattern including wildcards.
+	    Certain patterns can cause very poor performance in the matching
+	    engine, leading to a denial-of-service when processing moderate
+	    length events.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-29471</cvename>
+      <url>https://github.com/matrix-org/synapse/security/advisories/GHSA-x345-32rc-8h85</url>
+    </references>
+    <dates>
+      <discovery>2021-05-11</discovery>
+      <entry>2021-05-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="12156786-b18a-11eb-8cba-080027b00c2e">
     <topic>cyrus-imapd -- Remote authenticated users could bypass intended access restrictions on certain server annotations.</topic>
     <affects>
