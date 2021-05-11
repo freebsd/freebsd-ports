@@ -1,5 +1,6 @@
 PORTNAME=	lsd
 DISTVERSION=	0.20.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	andoriyu@gmail.com

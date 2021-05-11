@@ -1,6 +1,6 @@
 PORTNAME=	git-absorb
 DISTVERSION=	0.5.0
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	devel
 
 MAINTAINER=	greg@unrelenting.technology
