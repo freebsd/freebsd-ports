@@ -1652,6 +1652,7 @@
     SUBDIR += rubygem-opml
     SUBDIR += rubygem-org-ruby
     SUBDIR += rubygem-ox
+    SUBDIR += rubygem-parse-cron
     SUBDIR += rubygem-parslet
     SUBDIR += rubygem-parslet1
     SUBDIR += rubygem-phone
