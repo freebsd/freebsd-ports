@@ -1408,6 +1408,7 @@
     SUBDIR += socketpipe
     SUBDIR += socketw
     SUBDIR += sofia-sip
+    SUBDIR += spiritvnc
     SUBDIR += spoofer
     SUBDIR += spread
     SUBDIR += spread-j
