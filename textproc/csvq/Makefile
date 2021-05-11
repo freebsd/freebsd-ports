@@ -1,6 +1,6 @@
 PORTNAME=	csvq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.0
+DISTVERSION=	1.15.1
 CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -12,12 +12,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	mithrandie
-GH_TUPLE=	golang:crypto:3d3f9f413869:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:f43be2a4598c:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
+GH_TUPLE=	golang:crypto:e9a32991a82e:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sys:f84b799fce68:golang_sys/vendor/golang.org/x/sys \
+		golang:term:7de9c90e9dd1:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		mitchellh:go-homedir:v1.0.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mithrandie:go-file:v2.0.2:mithrandie_go_file_v2/vendor/github.com/mithrandie/go-file/v2 \
-		mithrandie:go-text:v1.3.3:mithrandie_go_text/vendor/github.com/mithrandie/go-text \
+		mithrandie:go-text:v1.4.0:mithrandie_go_text/vendor/github.com/mithrandie/go-text \
 		mithrandie:readline-csvq:v1.1.1:mithrandie_readline_csvq/vendor/github.com/mithrandie/readline-csvq \
 		mithrandie:ternary:v1.1.0:mithrandie_ternary/vendor/github.com/mithrandie/ternary \
 		urfave:cli:v1.20.0:urfave_cli/vendor/github.com/urfave/cli
@@ -29,6 +30,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
