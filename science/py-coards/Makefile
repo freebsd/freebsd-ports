@@ -12,8 +12,9 @@ COMMENT=	COARDS compliant time parser
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
