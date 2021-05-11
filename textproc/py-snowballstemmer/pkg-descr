@@ -1,4 +1,11 @@
-This is a pure Python stemming library. If PyStemmer is
-available, this module uses it to accelerate.
+Snowball is a small string processing language for creating stemming algorithms
+for use in Information Retrieval, plus a collection of stemming algorithms
+implemented using it.
 
-WWW: https://pypi.org/project/snowballstemmer/
+Stemming maps different forms of the same word to a common "stem" - for example,
+the English stemmer maps connection, connections, connective, connected, and
+connecting to connect. So a searching for connected would also find documents
+which only have the other forms.
+
+WWW: https://snowballstem.org/
+WWW: https://github.com/snowballstem/snowball
