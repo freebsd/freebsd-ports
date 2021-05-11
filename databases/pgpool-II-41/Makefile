@@ -1,6 +1,6 @@
 
 PORTNAME=	pgpool-II
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 PKGNAMESUFFIX=	41
@@ -14,10 +14,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 PORTSCOUT=	limit:^4.1.[0-9]*
 
 USES=		gmake libtool pgsql:9.6+
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
 USE_RC_SUBR=	pgpool
+
+GNU_CONFIGURE=	yes
+
 CONFLICTS=	pgpool-II-[0-9]*
 
 PORTDOCS=	*
