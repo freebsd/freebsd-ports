@@ -60,7 +60,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++ ||g' ${WRKSRC}/configure ${WRKSRC}/doc/spex.html ${WRKSRC}/example/Makefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libkyototycoon.so.2.19.0 ${STAGEDIR}${PREFIX}/libexec/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libkyototycoon.so ${STAGEDIR}${PREFIX}/libexec/*.so
 
 post-install-DOCS-on:
 	${FIND} ${STAGEDIR}${DOCSDIR}/ -type d -exec ${CHMOD} ${BINMODE} {} +
