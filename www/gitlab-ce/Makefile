@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	13.11.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -177,7 +177,7 @@ MY_DEPENDS=	git>=2.31.0:devel/git \
 	rubygem-gitlab_chronic_duration>=0.10.6.2<0.10.7:devel/rubygem-gitlab_chronic_duration \
 	rubygem-rack-proxy>=0.6.0<0.7.0:www/rubygem-rack-proxy \
 	rubygem-sassc-rails-rails60>=2.1.0<2.2.0:textproc/rubygem-sassc-rails-rails60 \
-	rubygem-autoprefixer-rails>=10.2.0.0<10.2.1:textproc/rubygem-autoprefixer-rails \
+	rubygem-autoprefixer-rails1020>=10.2.0.0<10.2.1:textproc/rubygem-autoprefixer-rails1020 \
 	rubygem-terser>=1.0.2:textproc/rubygem-terser \
 	rubygem-addressable>=2.7<3:www/rubygem-addressable \
 	rubygem-gemojione>=3.3<4.0:graphics/rubygem-gemojione \
