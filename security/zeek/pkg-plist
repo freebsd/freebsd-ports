@@ -1259,7 +1259,7 @@ include/zeek/zeekygen/zeekygen.bif.h
 %%ZEEKCTL%%lib/broctl
 lib/cmake/CAF/CAFConfig.cmake
 lib/cmake/CAF/CAFConfigVersion.cmake
-lib/cmake/CAF/CAFTargets-release.cmake
+lib/cmake/CAF/CAFTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/CAF/CAFTargets.cmake
 lib/libbinpac.so
 lib/libbinpac.so.0
