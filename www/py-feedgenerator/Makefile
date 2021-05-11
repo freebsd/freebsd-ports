@@ -20,7 +20,6 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-USE_LOCALE=	en_US.UTF-8
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
