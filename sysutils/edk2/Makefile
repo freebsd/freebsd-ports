@@ -11,13 +11,12 @@ ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 riscv64
 ONLY_FOR_ARCHS_REASON=	source code is not yet ported to anything other than IA32, X64, ARM, AARCH64, RISCV64 or EBC
 
 PKGNAMESUFFIX=	-${FLAVOR:C/_/-/g}
-FLAVORS=	macchiatobin rpi3 rpi4
+FLAVORS=	macchiatobin rpi3 rpi4 xen
 FLAVOR?=	macchiatobin
 
 USES=	gmake python:3.7+,build
 
-BUILD_DEPENDS+=	aarch64-none-elf-gcc:devel/aarch64-none-elf-gcc \
-		gcc8:lang/gcc8 \
+BUILD_DEPENDS+=	gcc8:lang/gcc8 \
 		dtc>=1.4.1:sysutils/dtc \
 		bash:shells/bash
 
@@ -38,6 +37,7 @@ GH_TUPLE=	tianocore:edk2-platforms:${PLATFORM_TAG}:platforms \
 BINARY_ALIAS=	make=${LOCALBASE}/bin/gmake \
 		dtc=${LOCALBASE}/bin/dtc \
 		gcc=${LOCALBASE}/bin/gcc8 \
+		gcc-ar=${LOCALBASE}/bin/gcc-ar8 \
 		g++=${LOCALBASE}/bin/g++8 \
 		python3=${PYTHON_CMD} python=${PYTHON_CMD}
 
@@ -71,6 +71,15 @@ PLAT_RESULT=	RPi4/${PLAT_TARGET}_GCC5/FV/RPI_EFI.fd
 PLAT_FILENAME=	RPI_EFI.fd
 .endif
 
+.if ${FLAVOR} == xen
+PLAT=		xen
+PLAT_ARCH=	X64
+PLAT_TARGET=	RELEASE
+PLATFILE=	OvmfPkg/OvmfXen.dsc
+PLAT_RESULT=	OvmfXen/${PLAT_TARGET}_GCC5/FV/OVMF.fd
+PLAT_FILENAME=	XEN_EFI.fd
+.endif
+
 PLIST_FILES=	${PREFIX}/share/${PORTNAME}-${PLAT}/${PLAT_FILENAME}
 
 # Emulate source edk2/edksetup.sh
@@ -83,7 +92,12 @@ MAKE_ENV+=	WORKSPACE=${WRKDIR} \
 		PYTHONHASHSEED=1
 
 .if ${PLAT_ARCH} == AARCH64
+BUILD_DEPENDS+=	aarch64-none-elf-gcc:devel/aarch64-none-elf-gcc
 MAKE_ENV+=	GCC5_AARCH64_PREFIX=aarch64-none-elf-
+.endif
+
+.if ${PLAT_ARCH} == X64
+BUILD_DEPENDS+=	nasm:devel/nasm
 .endif
 
 # We can't have two submodule with the same origin in GH_TUPLE
@@ -102,6 +116,6 @@ do-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/
-	${INSTALL_DATA} ${WRKDIR}/Build/${PLAT_RESULT} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/
+	${INSTALL_DATA} ${WRKDIR}/Build/${PLAT_RESULT} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/${PLAT_FILENAME}
 
 .include <bsd.port.mk>
