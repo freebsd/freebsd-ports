@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	iowow
-PORTVERSION=	1.4.10
+PORTVERSION=	1.4.11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -22,6 +22,10 @@ OPTIONS_DEFINE=	DOCS TEST
 
 TEST_BUILD_DEPENDS=	${LOCALBASE}/include/CUnit/Basic.h:devel/cunit
 TEST_CMAKE_ON=	-DBUILD_TESTS:BOOL=ON
+
+post-patch:
+	@${REINPLACE_CMD} -e '/-D_XOPEN_SOURCE=600/d' \
+		${WRKSRC}/src/CMakeLists.txt
 
 do-test-TEST-on:
 	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}

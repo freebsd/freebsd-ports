@@ -17,6 +17,7 @@ include/iowow/iwsha2.h
 include/iowow/iwstree.h
 include/iowow/iwstw.h
 include/iowow/iwth.h
+include/iowow/iwtp.h
 include/iowow/iwutils.h
 include/iowow/iwuuid.h
 include/iowow/iwxstr.h
