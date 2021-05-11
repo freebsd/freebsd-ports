@@ -1,5 +1,5 @@
 PORTNAME=	fossology
-PORTVERSION=	3.9.0
+PORTVERSION=	3.10.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-nomos-standalone
 
@@ -8,9 +8,6 @@ COMMENT=	Standalone Nomos license scanner from fossology project
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: dbErrString
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: dbErrString
 
 BUILD_DEPENDS=	gawk:lang/gawk
 LIB_DEPENDS=	libjson-c.so:devel/json-c
