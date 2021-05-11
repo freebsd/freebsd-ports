@@ -127,6 +127,11 @@ IGNORE=	will not build on 12.x due to old system
 EXTRA_PATCHES+=	${PATCHDIR}/${FLAVOR:S/_/-/}
 .endif
 
+.if make(makesum)
+DISTFILES:=	${DISTFILES:M*\:rust} \
+		${FLAVORS:O:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -V'DISTFILES:N*\:rust'!}@}
+.endif
+
 post-patch:
 # Disable vendor checksums
 	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
@@ -237,17 +242,5 @@ do-install:
 .endif
 	@cd ${STAGEDIR}${PREFIX} && \
 		${FIND} rust-bootstrap -type f >> ${TMPPLIST}
-
-.if !defined(_RUST_MAKESUM_GUARD)
-makesum:
-	${MAKE} -D_RUST_MAKESUM_GUARD makesum FLAVOR=${FLAVORS:O:[1]} DISTINFO_FILE=${DISTINFO_FILE}.tmp
-.for _flavor in ${FLAVORS:O:[2..-1]}
-	${MAKE} -D_RUST_MAKESUM_GUARD makesum FLAVOR=${_flavor} DISTINFO_FILE=${DISTINFO_FILE}.${_flavor}
-	${SED} 1d ${DISTINFO_FILE}.${_flavor} >> ${DISTINFO_FILE}.tmp
-	${RM} ${DISTINFO_FILE}.${_flavor}
-.endfor
-	${AWK} '!seen[$$0]++' ${DISTINFO_FILE}.tmp > ${DISTINFO_FILE}
-	${RM} ${DISTINFO_FILE}.tmp
-.endif
 
 .include <bsd.port.post.mk>

@@ -110,6 +110,12 @@ IGNORE=	fails to run due to a bug in rtld, update to 12.2-RELEASE or newer
 IGNORE=	fails to build with qemu-user-static
 .endif
 
+.if make(makesum)
+DISTFILES:=	${DISTFILES:M*\:src} \
+		${ONLY_FOR_ARCHS:O:@_arch@${:!${MAKE} ARCH=${_arch} PPC_ABI=ELFv1 -V'DISTFILES:N*\:src'!}@} \
+		${ONLY_FOR_ARCHS:Mpowerpc64:@_arch@${:!${MAKE} ARCH=${_arch} PPC_ABI=ELFv2 -V'DISTFILES:N*\:src'!}@}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's,gdb,${LOCALBASE}/bin/gdb,' ${WRKSRC}/src/etc/rust-gdb
 .if defined(NIGHTLY_DATE)
@@ -250,22 +256,5 @@ post-install-SOURCES-on:
 do-test:
 	@cd ${WRKSRC} && \
 		${SETENV} ${TEST_ENV} ${PYTHON_CMD} x.py test --jobs=${MAKE_JOBS_NUMBER}
-
-.if !defined(_RUST_MAKESUM_GUARD)
-makesum:
-	${MAKE} -D_RUST_MAKESUM_GUARD -DTRYBROKEN makesum ARCH=${ONLY_FOR_ARCHS:O:[1]} DISTINFO_FILE=${DISTINFO_FILE}.tmp
-.for arch in ${ONLY_FOR_ARCHS:O:[2..-1]}
-	${MAKE} -D_RUST_MAKESUM_GUARD -DTRYBROKEN makesum PPC_ABI=ELFv1 ARCH=${arch} DISTINFO_FILE=${DISTINFO_FILE}.${arch}
-	${SED} 1d ${DISTINFO_FILE}.${arch} >> ${DISTINFO_FILE}.tmp
-	${RM} ${DISTINFO_FILE}.${arch}
-.endfor
-.if ${ONLY_FOR_ARCHS:Mpowerpc64}
-	${MAKE} -D_RUST_MAKESUM_GUARD -DTRYBROKEN makesum PPC_ABI=ELFv2 ARCH=powerpc64 DISTINFO_FILE=${DISTINFO_FILE}.powerpc64-elfv2
-	${SED} 1d ${DISTINFO_FILE}.powerpc64-elfv2 >> ${DISTINFO_FILE}.tmp
-	${RM} ${DISTINFO_FILE}.powerpc64-elfv2
-.endif
-	${AWK} '!seen[$$0]++' ${DISTINFO_FILE}.tmp > ${DISTINFO_FILE}
-	${RM} ${DISTINFO_FILE}.tmp
-.endif
 
 .include <bsd.port.post.mk>
