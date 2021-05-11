@@ -1,6 +1,6 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.4
+DISTVERSION=	4.1.5
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/11/libraries/sources/
 PKGNAMESUFFIX=	-agent
