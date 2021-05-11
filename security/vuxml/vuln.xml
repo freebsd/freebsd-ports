@@ -76,6 +76,84 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3cac007f-b27e-11eb-97a0-e09467587c17">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>90.0.4430.212</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/05/stable-channel-update-for-desktop.html">
+	  <p>This release contains 19 security fixes, including:</p>
+	  <ul>
+	    <li>[1180126] High CVE-2021-30506: Incorrect security UI in Web App
+	      Installs. Reported by @retsew0x01 on 2021-02-19</li>
+	    <li>[1178202] High CVE-2021-30507: Inappropriate implementation in
+	      Offline. Reported by Alison Huffman, Microsoft Browser
+	      Vulnerability Research on 2021-02-14</li>
+	    <li>[1195340] High CVE-2021-30508: Heap buffer overflow in Media
+	      Feeds. Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2021-04-02</li>
+	    <li>[1196309] High CVE-2021-30509: Out of bounds write in Tab Strip.
+	      Reported by David Erceg on 2021-04-06</li>
+	    <li>[1197436] High CVE-2021-30510: Race in Aura. Reported by Weipeng
+	      Jiang (@Krace) from Codesafe Team of Legendsec at Qi'anxin Group
+	      on 2021-04-09</li>
+	    <li>[1197875] High CVE-2021-30511: Out of bounds read in Tab Groups.
+	      Reported by David Erceg on 2021-04-10</li>
+	    <li>[1200019] High CVE-2021-30512: Use after free in Notifications.
+	      Reported by ZhanJia Song on 2021-04-17</li>
+	    <li>[1200490] High CVE-2021-30513: Type Confusion in V8. Reported by
+	      Man Yue Mo of GitHub Security Lab on 2021-04-19</li>
+	    <li>[1200766] High CVE-2021-30514: Use after free in Autofill.
+	      Reported by koocola (@alo_cook) and Nan Wang (@eternalsakura13) of
+	      360 Alpha Lab on 2021-04-20</li>
+	    <li>[1201073] High CVE-2021-30515: Use after free in File API.
+	      Reported by Rong Jian and Guang Gong of 360 Alpha Lab on
+	      2021-04-21</li>
+	    <li>[1201446] High CVE-2021-30516: Heap buffer overflow in History.
+	      Reported by ZhanJia Song on 2021-04-22</li>
+	    <li>[1203122] High CVE-2021-30517: Type Confusion in V8. Reported by
+	      laural on 2021-04-27</li>
+	    <li>[1203590] High CVE-2021-30518: Heap buffer overflow in Reader
+	      Mode. Reported by Jun Kokatsu, Microsoft Browser Vulnerability
+	      Research on 2021-04-28</li>
+	    <li>[1194058] Medium CVE-2021-30519: Use after free in Payments.
+	      Reported by asnine on 2021-03-30</li>
+	    <li>[1193362] Medium CVE-2021-30520: Use after free in Tab Strip.
+	      Reported by Khalil Zhani on 2021-04-03</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-30506</cvename>
+      <cvename>CVE-2021-30507</cvename>
+      <cvename>CVE-2021-30508</cvename>
+      <cvename>CVE-2021-30509</cvename>
+      <cvename>CVE-2021-30510</cvename>
+      <cvename>CVE-2021-30511</cvename>
+      <cvename>CVE-2021-30512</cvename>
+      <cvename>CVE-2021-30513</cvename>
+      <cvename>CVE-2021-30514</cvename>
+      <cvename>CVE-2021-30515</cvename>
+      <cvename>CVE-2021-30516</cvename>
+      <cvename>CVE-2021-30517</cvename>
+      <cvename>CVE-2021-30518</cvename>
+      <cvename>CVE-2021-30519</cvename>
+      <cvename>CVE-2021-30520</cvename>
+      <url>https://chromereleases.googleblog.com/2021/05/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2021-05-10</discovery>
+      <entry>2021-05-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="278561d7-b261-11eb-b788-901b0e934d69">
     <topic>py-matrix-synapse -- malicious push rules may be used for a denial of service attack.</topic>
     <affects>
