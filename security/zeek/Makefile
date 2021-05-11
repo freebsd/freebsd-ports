@@ -14,13 +14,14 @@ LICENSE=	BSD3CLAUSE
 BROKEN_FreeBSD_11_powerpc64=	Does not build: error: zero-size array 'names'
 BROKEN_FreeBSD_12_powerpc64=	Does not build: error: zero-size array 'names'
 
-USES=		bison cmake compiler:c++11-lang gettext-runtime ninja perl5 python shebangfix ssl
+USES=		bison cmake compiler:c++11-lang gettext-runtime ninja perl5 \
+		python shebangfix ssl
 USE_LDCONFIG=	yes
 
 PORTSCOUT=	limit:0,even
 
 CXXFLAGS_powerpc64=	-mpower8-vector
-CMAKE_ARGS+=	-DPYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
+CMAKE_ARGS+=		-DPYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
 
 SHEBANG_FILES=	auxil/zeekctl/auxil/trace-summary/trace-summary
 
@@ -51,25 +52,32 @@ PLIST_SUB+=	ARCH=${UNAME_M} \
 USERS=		${ZEEKUSER}
 GROUPS=		${ZEEKGROUP}
 
-OPTIONS_DEFINE= BROKER DEBUG GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP \
-		PERFTOOLS ZEEKCTL
-OPTIONS_DEFAULT=BROKER GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP ZEEKCTL
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	BROKER GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP PERFTOOLS ZEEKCTL
 
-BROKER_DESC=	Enable the Broker communication library
-GEOIP2_DESC=	Build with GeoIP2 (MaxMindDB) support
-IPSUMDUMP_DESC=	Enables traffic summaries
-LBL_CF_DESC=	Unix time to formated time/date filter support
-LBL_HF_DESC=	Address to hostname filter support
-NETMAP_DESC=	Native Netmap Packet IOSource for Zeek
-PERFTOOLS_DESC=	Use Perftools to improve memory & CPU usage
-ZEEKCTL_DESC=	ZeekControl support (implies BROKER and IPSUMDUMP)
+OPTIONS_SINGLE=			BUILD_TYPE
+OPTIONS_SINGLE_BUILD_TYPE=	DEBUG MINSIZEREL RELEASE RELWITHDEBINFO
 
-ZEEKCTL_IMPLIES=		BROKER IPSUMDUMP
+OPTIONS_DEFAULT=	BROKER GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP RELEASE \
+			ZEEKCTL
+OPTIONS_SUB=		yes
+
+BROKER_DESC=		Enable the Broker communication library
+DEBUG_DESC=		Optimizations off, debug symbols/flags on
+GEOIP2_DESC=		Build with GeoIP2 (MaxMindDB) support
+IPSUMDUMP_DESC=		Enables traffic summaries
+LBL_CF_DESC=		Unix time to formated time/date filter support
+LBL_HF_DESC=		Address to hostname filter support
+MINSIZEREL_DESC=	Optimizations on, debug symbols/flags off
+NETMAP_DESC=		Native Netmap Packet IOSource for Zeek
+PERFTOOLS_DESC=		Use Perftools to improve memory & CPU usage
+RELEASE_DESC=		Optimizations on, debug symbols/flags off
+RELWITHDEBINFO_DESC=	Optimizations/debug symbols on, debug flags off
+ZEEKCTL_DESC=		ZeekControl support (implies BROKER and IPSUMDUMP)
+
+ZEEKCTL_IMPLIES=	BROKER IPSUMDUMP
 
 BROKER_BUILD_DEPENDS=	swig:devel/swig
 BROKER_CMAKE_BOOL=	ENABLE_BROKER
-DEBUG_CMAKE_BOOL=	ENABLE_DEBUG
 GEOIP2_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 IPSUMDUMP_BUILD_DEPENDS=ipsumdump:net/ipsumdump
 IPSUMDUMP_RUN_DEPENDS=	ipsumdump:net/ipsumdump
@@ -89,6 +97,18 @@ ZEEKCTL_RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDEBUG}
+CMAKE_BUILD_TYPE=	Debug
+STRIP=
+.elif ${PORT_OPTIONS:MMINSIZEREL}
+CMAKE_BUILD_TYPE=	MinSizeRel
+.elif ${PORT_OPTIONS:MRELEASE}
+CMAKE_BUILD_TYPE=	Release
+.elif ${PORT_OPTIONS:MRELWITHDEBINFO}
+CMAKE_BUILD_TYPE=	RelWithDebInfo
+STRIP=
+.endif
 
 .if ${PORT_OPTIONS:MZEEKCTL}
 USE_RC_SUBR=	zeek
