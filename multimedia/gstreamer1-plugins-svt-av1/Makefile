@@ -14,11 +14,12 @@ LICENSE_FILE=	${_LICENSE_STORE}/LGPL21
 LIB_DEPENDS=	libSvtAv1Enc.so:multimedia/svt-av1
 
 USES=		gnome meson pkgconfig
-USE_GITHUB=	yes
+USE_GITLAB=	yes
 USE_GNOME=	glib20
 USE_GSTREAMER1=	yes
-GH_ACCOUNT=	AOMediaCodec
-GH_PROJECT=	SVT-AV1
+GL_ACCOUNT=	AOMediaCodec
+GL_PROJECT=	SVT-AV1
+GL_COMMIT=	a5ec26c0f0bd6e872a0b2bb340b4a777f4847020
 WRKSRC_SUBDIR=	gstreamer-plugin
 PLIST_FILES=	lib/gstreamer-1.0/libgstsvtav1enc.so
 
