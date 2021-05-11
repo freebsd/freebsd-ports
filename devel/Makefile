@@ -4963,6 +4963,7 @@
     SUBDIR += py-pytest-black-multipy
     SUBDIR += py-pytest-cache
     SUBDIR += py-pytest-capturelog
+    SUBDIR += py-pytest-checkdocs
     SUBDIR += py-pytest-cov
     SUBDIR += py-pytest-datadir
     SUBDIR += py-pytest-django
