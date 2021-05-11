@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	autoprefixer-rails
-PORTVERSION=	10.2.0.0
+PORTVERSION=	10.2.4.0
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
