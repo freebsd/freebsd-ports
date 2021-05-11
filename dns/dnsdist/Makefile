@@ -1,18 +1,18 @@
 # Created by: Carlos J Puga Medina <cpm@fbsd.es>
 
 PORTNAME=	dnsdist
-DISTVERSION=	1.5.1
-PORTREVISION=	4
+DISTVERSION=	1.6.0
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 
 MAINTAINER=	tremere@cainites.net
-COMMENT=	Highly DNS-, DoS-, and abuse-aware load balancer
+COMMENT=	Highly DNS-, DoS- and abuse-aware loadbalancer
 
-LICENSE=	GPLv2 UNLICENSE
+LICENSE=	GPLv2 ISCL MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
-LICENSE_FILE_UNLICENSE=	${WRKSRC}/ext/incbin/UNLICENSE
+LICENSE_FILE_ISCL=	${WRKSRC}/ext/ipcrypt/LICENSE
+LICENSE_FILE_MIT=	${WRKSRC}/ext/yahttp/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
