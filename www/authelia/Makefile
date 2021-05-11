@@ -1,6 +1,6 @@
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.29.1
+DISTVERSION=	4.29.2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/authelia/authelia/releases/download/v${DISTVERSION}/:public_html
 DISTFILES=	authelia-${DISTVERSIONFULL}-public_html${EXTRACT_SUFX}:public_html # html root directory needs to be built in a special way
@@ -70,7 +70,7 @@ GH_TUPLE=	\
 		ory:go-convenience:v0.1.0:ory_go_convenience/vendor/github.com/ory/go-convenience \
 		ory:viper:v1.7.5:ory_viper/vendor/github.com/ory/viper \
 		ory:x:v0.0.162:ory_x/vendor/github.com/ory/x \
-		otiai10:copy:v1.5.1:otiai10_copy/vendor/github.com/otiai10/copy \
+		otiai10:copy:v1.6.0:otiai10_copy/vendor/github.com/otiai10/copy \
 		pborman:uuid:v1.2.0:pborman_uuid/vendor/github.com/pborman/uuid \
 		pelletier:go-toml:v1.8.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		philhofer:fwd:v1.1.1:philhofer_fwd/vendor/github.com/philhofer/fwd \
