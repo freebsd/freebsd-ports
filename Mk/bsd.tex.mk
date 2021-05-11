@@ -218,7 +218,7 @@ ${_C}_DEPENDS+=	${TEX_${_C}_DEPENDS:O:u}
 .PHONY:	do-texhash
 do-texhash:
 . if !empty(USE_TEX:Mtexhash-bootstrap)
-	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/mktexlsr " \
+	@${ECHO_CMD} "@postexec ${LOCALBASE}/bin/mktexlsr " \
 		"${TEXHASHDIRS:S,^,%D/,}" >> ${TMPPLIST}
 	@for D in ${TEXHASHDIRS}; do \
 		${ECHO_CMD} "@rmtry $$D/ls-R"; \
