@@ -2186,8 +2186,8 @@ lib/python%%XYDOT%%/ensurepip/_bundled/__init__.py
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/ensurepip/_bundled/pip-20.2.3-py2.py3-none-any.whl
-lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-49.2.1-py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/pip-21.1.1-py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-56.0.0-py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_uninstall.py
 lib/python%%XYDOT%%/enum.py
 lib/python%%XYDOT%%/filecmp.py
@@ -5318,6 +5318,7 @@ lib/python%%XYDOT%%/test/mp_fork_bomb.py
 lib/python%%XYDOT%%/test/mp_preload.py
 lib/python%%XYDOT%%/test/multibytecodec_support.py
 lib/python%%XYDOT%%/test/nokia.pem
+lib/python%%XYDOT%%/test/nosan.pem
 lib/python%%XYDOT%%/test/nullbytecert.pem
 lib/python%%XYDOT%%/test/nullcert.pem
 lib/python%%XYDOT%%/test/pickletester.py
