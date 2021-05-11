@@ -40,7 +40,7 @@ USE_WX=		3.0
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_AVCONV_PATH="" OBJCXX="${CXX}"
-CONFIGURE_ARG=	--without-gnome
+CONFIGURE_ARGS=	--without-gnome
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
