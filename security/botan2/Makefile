@@ -1,5 +1,5 @@
 PORTNAME=	botan
-DISTVERSION=	2.18.0
+DISTVERSION=	2.18.1
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	2
