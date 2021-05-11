@@ -1,0 +1,22 @@
+--- doc/rluserman.info.orig	2020-10-30 14:07:52 UTC
++++ doc/rluserman.info
+@@ -311,7 +311,7 @@ putting commands in an "inputrc" file, conventionally 
+ directory.  The name of this file is taken from the value of the
+ environment variable 'INPUTRC'.  If that variable is unset, the default
+ is '~/.inputrc'.  If that file does not exist or cannot be read, the
+-ultimate default is '/etc/inputrc'.
++ultimate default is '%%PREFIX%%/etc/inputrc'.
+ 
+    When a program which uses the Readline library starts up, the init
+ file is read, and the key bindings are set.
+@@ -851,8 +851,8 @@ four parser directives used.
+ '$include'
+      This directive takes a single filename as an argument and reads
+      commands and bindings from that file.  For example, the following
+-     directive reads from '/etc/inputrc':
+-          $include /etc/inputrc
++     directive reads from '%%PREFIX%%/etc/inputrc':
++          $include %%PREFIX%%/etc/inputrc
+ 
+ 
+ File: rluserman.info,  Node: Sample Init File,  Prev: Conditional Init Constructs,  Up: Readline Init File

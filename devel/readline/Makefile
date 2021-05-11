@@ -2,6 +2,7 @@
 
 PORTNAME=	readline
 PORTVERSION=	8.1.${PATCHLEVEL}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -41,7 +42,7 @@ PATCHLEVEL=	0
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/rlconf.h
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/rlconf.h ${WRKSRC}/doc/readline.3 ${WRKSRC}/doc/readline.info ${WRKSRC}/doc/rluserman.info
 .if exists(/usr/lib/libtermcapw.so)
 	@${REINPLACE_CMD} 's|-ltermcap|-ltermcapw|g' ${WRKSRC}/configure
 .endif

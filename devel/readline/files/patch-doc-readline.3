@@ -1,0 +1,25 @@
+--- doc/readline.3.orig	2020-10-29 20:48:10 UTC
++++ doc/readline.3
+@@ -118,7 +118,7 @@ The name of this file is taken from the value of the
+ environment variable.  If that variable is unset, the default is
+ .IR ~/.inputrc .
+ If that file  does not exist or cannot be read, the ultimate default is
+-.IR /etc/inputrc .
++.IR %%PREFIX%%/etc/inputrc .
+ When a program which uses the readline library starts up, the
+ init file is read, and the key bindings and variables are set.
+ There are only a few basic constructs allowed in the
+@@ -722,11 +722,11 @@ the test fails.
+ .IP \fB$include\fP
+ This directive takes a single filename as an argument and reads commands
+ and bindings from that file.  For example, the following directive
+-would read \fI/etc/inputrc\fP:
++would read \fI%%PREFIX%%/etc/inputrc\fP:
+ .sp 1
+ .RS
+ .nf
+-\fB$include\fP \^ \fI/etc/inputrc\fP
++\fB$include\fP \^ \fI%%PREFIX%%/etc/inputrc\fP
+ .fi 
+ .RE
+ .SH SEARCHING
