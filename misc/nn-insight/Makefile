@@ -1,5 +1,6 @@
 PORTNAME=	nn-insight
 DISTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
