@@ -1,0 +1,15 @@
+--- urbackupclient/backup_scripts/postgresqldump.orig	2021-05-11 19:12:04 UTC
++++ urbackupclient/backup_scripts/postgresqldump
+@@ -31,9 +31,9 @@ alias errcho='>&2 echo'
+ TIME=`date`
+ errcho "Starting dump backup of PostgreSQL at $TIME..."
+ 
+-su postgres -c "pg_dumpall"
++su postgres -c "%%PREFIX%%/bin/pg_dumpall"
+ 
+ TIME=`date`
+ errcho "Backup of PostgreSQL finished at $TIME."
+ 
+-exit 0
+\ No newline at end of file
++exit 0
