@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2020-12-15 09:57:06 UTC
++++ src/CMakeLists.txt
+@@ -24,7 +24,7 @@ add_definitions(-D_DEFAULT_SOURCE)
+ 
+ find_package(FFmpeg 57.83.100 REQUIRED)
+ find_package(OpenAL REQUIRED)
+-find_package(ICU)
++find_package(ICU REQUIRED COMPONENTS i18n uc data)
+ 
+ set(SC_PLUGIN_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/${KDE_INSTALL_LIBDIR}/subtitlecomposer" CACHE STRING EXPORTEDVARIABLE)
+ message(STATUS "Subtitle Composer plugin path: ${SC_PLUGIN_INSTALL_DIR}")

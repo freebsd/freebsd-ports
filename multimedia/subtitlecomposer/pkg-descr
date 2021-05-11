@@ -1,4 +1,6 @@
-Subtitle editor that supports basic operations (text, time, and
-style edition, live preview, spell checking and more.
+Subtitle Composer is a cross-platform subtitle editor with lots of features,
+including live preview in integrated video player, smart language and text
+encoding detection, spell checking, side-by-side subtitle translations,
+timing errors detection in subtitles and more.
 
-WWW: https://github.com/maxrd2/subtitlecomposer
+WWW: https://subtitlecomposer.kde.org
