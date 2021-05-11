@@ -247,6 +247,7 @@ EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
 .if ${PORT_OPTIONS:MDYNAMIC_MODULES} || ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSLAPI}
 LIB_DEPENDS+=		libltdl.so:devel/libltdl
+LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--enable-modules
 PLIST_SUB+=		MODULES=""
 .else
