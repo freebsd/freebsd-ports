@@ -1,4 +1,4 @@
---- train.gemspec.orig	2021-01-27 18:38:37 UTC
+--- train.gemspec.orig	2021-05-08 19:48:46 UTC
 +++ train.gemspec
 @@ -32,8 +32,8 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<azure_mgmt_security>.freeze, ["~> 0.18"])
@@ -9,5 +9,5 @@
 +      s.add_runtime_dependency(%q<google-api-client>.freeze, [">= 0.23.9"])
 +      s.add_runtime_dependency(%q<googleauth>.freeze, [">= 0.6.6"])
      else
-       s.add_dependency(%q<train-core>.freeze, ["= 3.4.7"])
+       s.add_dependency(%q<train-core>.freeze, ["= 3.7.0"])
        s.add_dependency(%q<train-winrm>.freeze, ["~> 0.2"])
