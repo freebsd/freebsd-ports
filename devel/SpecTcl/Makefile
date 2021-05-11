@@ -7,12 +7,17 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Free drag-and-drop GUI builder for Tk and Java from Sun
 
-NO_BUILD=	yes
+LICENSE=	SUN
+LICENSE_NAME=	SUN
+LICENSE_FILE=	${WRKSRC}/license.terms
+LICENSE_PERMS=	auto-accept
 
-USES+=		tk:85
+USES=		tk
+
+NO_BUILD=	yes
 
 post-patch:
 .for file in specJava specTcl
