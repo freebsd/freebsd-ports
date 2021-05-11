@@ -1,6 +1,6 @@
---- src/api/api.cc.orig	2020-05-13 18:41:59 UTC
+--- src/api/api.cc.orig	2021-04-22 15:00:28 UTC
 +++ src/api/api.cc
-@@ -5726,7 +5726,7 @@ bool v8::V8::Initialize() {
+@@ -5694,7 +5694,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  
@@ -8,4 +8,4 @@
 +#if V8_OS_LINUX || V8_OS_MACOSX || V8_OS_OPENBSD || V8_OS_FREEBSD
  bool TryHandleWebAssemblyTrapPosix(int sig_code, siginfo_t* info,
                                     void* context) {
- #if V8_TARGET_ARCH_X64 && !V8_OS_ANDROID
+   // When the target code runs on the V8 arm simulator, the trap handler does

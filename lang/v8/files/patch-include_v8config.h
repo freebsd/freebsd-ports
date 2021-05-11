@@ -1,8 +1,8 @@
---- include/v8config.h.orig	2020-03-03 18:55:34 UTC
+--- include/v8config.h.orig	2021-04-22 15:00:28 UTC
 +++ include/v8config.h
-@@ -273,7 +273,18 @@
- # define V8_HAS_ATTRIBUTE_WARN_UNUSED_RESULT \
-     (__has_attribute(warn_unused_result))
+@@ -293,7 +293,18 @@ path. Add it with -I<path> to the command line
+ 
+ # define V8_HAS_CPP_ATTRIBUTE_NODISCARD (V8_HAS_CPP_ATTRIBUTE(nodiscard))
  
 +// Work around Clang bug present in 9.0.1, at least.
 +//
