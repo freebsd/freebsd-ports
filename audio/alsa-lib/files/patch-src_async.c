@@ -1,8 +1,8 @@
 $NetBSD: patch-bk,v 1.1 2008/12/25 13:18:00 hasso Exp $
 
---- src/async.c.orig	2016-03-31 13:10:39 UTC
+--- src/async.c.orig	2020-02-19 09:35:39 UTC
 +++ src/async.c
-@@ -51,6 +51,15 @@ static LIST_HEAD(snd_async_handlers);
+@@ -54,6 +54,15 @@ static LIST_HEAD(snd_async_handlers);
  
  static void snd_async_handler(int signo ATTRIBUTE_UNUSED, siginfo_t *siginfo, void *context ATTRIBUTE_UNUSED)
  {
@@ -18,7 +18,7 @@ $NetBSD: patch-bk,v 1.1 2008/12/25 13:18:00 hasso Exp $
  	int fd;
  	struct list_head *i;
  	//assert(siginfo->si_code == SI_SIGIO);
-@@ -60,6 +69,7 @@ static void snd_async_handler(int signo 
+@@ -66,6 +75,7 @@ static void snd_async_handler(int signo ATTRIBUTE_UNUS
  		if (h->fd == fd && h->callback)
  			h->callback(h);
  	}

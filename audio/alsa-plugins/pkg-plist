@@ -1,3 +1,10 @@
+@comment etc/alsa/conf.d/50-arcam-av-ctl.conf
+@comment etc/alsa/conf.d/50-oss.conf
+@comment etc/alsa/conf.d/50-pulseaudio.conf
+@comment etc/alsa/conf.d/60-upmix.conf
+@comment etc/alsa/conf.d/60-vdownmix.conf
+@comment etc/alsa/conf.d/98-usb-stream.conf
+@comment etc/alsa/conf.d/99-pulseaudio-default.conf.example
 %%PULSEAUDIO%%lib/alsa-lib/libasound_module_conf_pulse.la
 %%PULSEAUDIO%%lib/alsa-lib/libasound_module_conf_pulse.so
 lib/alsa-lib/libasound_module_ctl_arcam_av.la
@@ -38,5 +45,9 @@ lib/alsa-lib/libasound_module_pcm_vdownmix.so
 %%SPEEX%%lib/alsa-lib/libasound_module_rate_speexrate.so
 %%SPEEX%%lib/alsa-lib/libasound_module_rate_speexrate_best.so
 %%SPEEX%%lib/alsa-lib/libasound_module_rate_speexrate_medium.so
+@comment share/alsa/alsa.conf.d/50-arcam-av-ctl.conf
+@comment share/alsa/alsa.conf.d/50-oss.conf
 %%PULSEAUDIO%%share/alsa/alsa.conf.d/50-pulseaudio.conf
-%%PULSEAUDIO%%share/alsa/alsa.conf.d/99-pulseaudio-default.conf.example
+@comment share/alsa/alsa.conf.d/60-upmix.conf
+@comment share/alsa/alsa.conf.d/60-vdownmix.conf
+@comment share/alsa/alsa.conf.d/98-usb-stream.conf

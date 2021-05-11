@@ -1,0 +1,11 @@
+--- alsactl/Makefile.in.orig	2021-03-12 04:46:51 UTC
++++ alsactl/Makefile.in
+@@ -1110,7 +1110,7 @@ alsa-restore.service: alsa-restore.service.in
+ 	$(edit)
+ 
+ %.7: %.xml
+-	xmlto man $?
++	$(xmlto) man $?
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
