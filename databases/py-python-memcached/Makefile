@@ -13,8 +13,9 @@ LICENSE=	PSFL
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.4.0:devel/py-six@${PY_FLAVOR}
 
-NO_ARCH=	yes
-USE_PYTHON=	autoplist concurrent distutils
 USES=		python:3.6+
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
