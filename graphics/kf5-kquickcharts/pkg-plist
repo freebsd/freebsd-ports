@@ -5,6 +5,7 @@ lib/cmake/KF5QuickCharts/KF5QuickChartsTargets.cmake
 %%QT_QMLDIR%%/org/kde/quickcharts/controls/Legend.qml
 %%QT_QMLDIR%%/org/kde/quickcharts/controls/LegendDelegate.qml
 %%QT_QMLDIR%%/org/kde/quickcharts/controls/LineChartControl.qml
+%%QT_QMLDIR%%/org/kde/quickcharts/controls/Logging.qml
 %%QT_QMLDIR%%/org/kde/quickcharts/controls/PieChartControl.qml
 %%QT_QMLDIR%%/org/kde/quickcharts/controls/Theme.qml
 %%QT_QMLDIR%%/org/kde/quickcharts/controls/libchartscontrolsplugin.so

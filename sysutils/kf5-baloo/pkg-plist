@@ -40,6 +40,9 @@ lib/libKF5BalooEngine.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/baloo/libbalooplugin.so
 %%QT_QMLDIR%%/org/kde/baloo/qmldir
 libdata/pkgconfig/Baloo.pc
+lib/libexec/baloo_file
+lib/libexec/baloo_file_extractor
+lib/systemd/user/kde-baloo.service
 share/dbus-1/interfaces/org.kde.BalooWatcherApplication.xml
 share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
 share/dbus-1/interfaces/org.kde.baloo.fileindexer.xml
