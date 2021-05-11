@@ -1,6 +1,6 @@
 PORTNAME=	dasel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.1
+DISTVERSION=	1.15.0
 CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -22,7 +22,8 @@ GH_TUPLE=	clbanning:mxj:e937bdee5a3e:clbanning_mxj_v2/vendor/github.com/clbannin
 _BUILD_VERSION=	${DISTVERSION}
 
 GO_TARGET=	./cmd/${PORTNAME}
-GO_BUILDFLAGS=	-ldflags "\
+GO_BUILDFLAGS=	-tags noupdater \
+		-ldflags "\
 		-s -w \
 		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/internal.Version=${_BUILD_VERSION}"
 
@@ -33,6 +34,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
