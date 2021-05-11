@@ -43,7 +43,7 @@
 #				"GLIB_SCHEMAS=foo.gschema.xml bar.gschema.xml".
 #
 # INSTALLS_OMF		- If set, bsd.gnome.mk will automatically scan pkg-plist
-#				file and add apropriate @exec/@unexec directives for
+#				file and add apropriate @postexec/@postunexec directives for
 #				each .omf file found to track OMF registration database.
 #
 # INSTALLS_ICONS	- If a GTK+ port installs Freedesktop-style icons to
@@ -425,7 +425,7 @@ gnome-post-gconf-schemas:
 	done
 .endif
 
-# we put the @unexec behind the plist schema entry, because it compiles files 
+# we put the @glib-schemas behind the plist schema entry, because it compiles files 
 # in the directory. So we should remove the port file first before recompiling.
 .if defined(GLIB_SCHEMAS)
 _USES_install+=	690:gnome-post-glib-schemas
