@@ -111,6 +111,7 @@
     SUBDIR += p5-Gtk2-PathButtonBar
     SUBDIR += p5-Gtk2-TrayIcon
     SUBDIR += p5-Gtk3
+    SUBDIR += p5-Gtk3-ImageView
     SUBDIR += p5-Gtk3-SimpleList
     SUBDIR += p5-Pango
     SUBDIR += p5-Prima
