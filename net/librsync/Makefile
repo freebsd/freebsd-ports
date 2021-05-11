@@ -1,7 +1,7 @@
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 
 PORTNAME=	librsync
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	net devel
 MASTER_SITES=	https://github.com/librsync/librsync/releases/download/v${PORTVERSION}/
 
