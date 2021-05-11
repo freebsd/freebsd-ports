@@ -11,13 +11,14 @@ COMMENT=	Analogous to cdb, but faster
 
 LICENSE=	PD
 
+USES=		gmake
+
 ALL_TARGET=	static sharedlib
 INSTALL_TARGET=	install install-sharedlib
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" prefix="${PREFIX}"
 USE_LDCONFIG=	yes
-USES=		gmake
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cdb ${STAGEDIR}${PREFIX}/lib/libcdb.so.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cdb ${STAGEDIR}${PREFIX}/lib/libcdb.so
 
 .include <bsd.port.mk>
