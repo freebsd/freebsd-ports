@@ -13,3 +13,4 @@ raw, DTED, SDTS DEM, JPEG, PNG and Arc/Info Binary/ASCII Grid.
 A full list of supported data formats is available on the official website.
 
 WWW: https://gdal.org/
+WWW: https://github.com/OSGeo/gdal
