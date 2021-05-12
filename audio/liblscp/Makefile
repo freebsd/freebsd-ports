@@ -1,12 +1,12 @@
 # Created by: trasz <trasz@pin.if.uz.zgora.pl>
 
 PORTNAME=	liblscp
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.3
 CATEGORIES=	audio
 MASTER_SITES=	SF/qsampler/${PORTNAME}/${PORTVERSION} \
 		http://download.linuxsampler.org/packages/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Wrapper around the LSCP network protocol
 
 LICENSE=	LGPL21+

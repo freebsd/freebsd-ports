@@ -7,5 +7,5 @@ include/lscp/version.h
 lib/liblscp.a
 lib/liblscp.so
 lib/liblscp.so.6
-lib/liblscp.so.6.0.3
+lib/liblscp.so.6.0.4
 libdata/pkgconfig/lscp.pc
