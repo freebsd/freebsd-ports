@@ -1,6 +1,5 @@
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.11-6
-PORTREVISION=	3
+DISTVERSION=	6.9.12-12
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://www.imagemagick.org/download/ \
@@ -33,7 +32,8 @@ COMMENT=	Image processing tools (legacy version)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libltdl.so:devel/libltdl
+LIB_DEPENDS=	libltdl.so:devel/libltdl	\
+		libavutil.so:multimedia/ffmpeg
 
 TESTS_DEPENDS=	gsfonts>=0:print/gsfonts
 
