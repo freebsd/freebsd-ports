@@ -30,6 +30,7 @@ share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/overview.js
 share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/panel.js
 share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/panelManager.js
 share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/panelPositions.js
+share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/panelSettings.js
 share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/panelStyle.js
 share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/prefs.js
 share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/progress.js
@@ -39,6 +40,5 @@ share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas/org.gnome
 share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/stylesheet.css
 share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/taskbar.js
 share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/transparency.js
-share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/update.js
 share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/utils.js
 share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/windowPreview.js
