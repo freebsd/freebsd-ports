@@ -1,8 +1,8 @@
 PORTVERSION=	2.8.20
-PORTREVISION=	3
+PORTREVISION=	4
 PKGNAMESUFFIX=	28
 
-MASTERDIR=	${.CURDIR}/../ansible
+MASTERDIR=	${.CURDIR}/../ansible2
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
 DEPRECATED=	Upstream support ended; consider upgrading to sysutils/ansible
