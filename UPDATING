@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200512:
+  AFFECTS: users of sysutils/ansible*
+  AUTHOR: 0mp@FreeBSD.org
+
+  Ansible has been updated to 3.3.0. Please follow the porting guide
+  to update the rulesets:
+
+    https://docs.ansible.com/ansible/devel/porting_guides/porting_guide_3.html
+
 20210508:
   AFFECTS: users of devel/pycharm-ce
   AUTHOR: bsam@FreeBSD.org
