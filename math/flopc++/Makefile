@@ -1,10 +1,7 @@
 PORTNAME=	flopc++
-DISTVERSION=	1.2.5
-PORTREVISION=	1
+DISTVERSION=	1.2.5.20200527
 CATEGORIES=	math
-MASTER_SITES=	http://www.coin-or.org/download/pkgsource/FlopC++/
 PKGNAMEPREFIX=	coin-or-
-DISTNAME=	FlopC++-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for solving Linear Optimization Problems in C++
@@ -18,7 +15,10 @@ LIB_DEPENDS=	libCoinUtils.so:math/coinutils \
 USES=		gmake libtool pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 
-USE_GCC=	yes # clang breaks: no matching conversion for functional-style cast from 'const flopc::SUBSETREF' to 'flopc::MP_domain' https://github.com/coin-or/FlopCpp/issues/28
+USE_GITHUB=	yes
+GH_ACCOUNT=	coin-or
+GH_PROJECT=	FlopCpp
+GH_TAGNAME=	d4c1d98 # fix-clang branch
 
 GNU_CONFIGURE=	yes
 
