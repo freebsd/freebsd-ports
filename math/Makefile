@@ -561,6 +561,7 @@
     SUBDIR += or-tools
     SUBDIR += orpie
     SUBDIR += osi
+    SUBDIR += osi-conic
     SUBDIR += osqp
     SUBDIR += p5-AI-DecisionTree
     SUBDIR += p5-AI-Genetic
