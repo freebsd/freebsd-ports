@@ -41,6 +41,7 @@ MAKE_JOBS_UNSAFE=	yes
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	field has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
 BROKEN_FreeBSD_13=	field has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
+BROKEN_FreeBSD_14=	field has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
 .endif
 
 CLIENTDIR=	CLIENT
