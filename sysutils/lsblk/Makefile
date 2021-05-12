@@ -1,5 +1,5 @@
 PORTNAME=	lsblk
-PORTVERSION=	1.1
+PORTVERSION=	3.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/vermaden/lsblk/raw/master/release/
 
@@ -8,8 +8,8 @@ COMMENT=	Lists information about block devices in the system
 
 LICENSE=	BSD2CLAUSE
 
-NO_BUILD=	YES
 NO_ARCH=	YES
+NO_BUILD=	YES
 
 PLIST_FILES=	sbin/${PORTNAME}
 
@@ -18,3 +18,4 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 
 .include <bsd.port.mk>
+
