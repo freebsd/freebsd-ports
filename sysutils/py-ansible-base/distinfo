@@ -1,0 +1,5 @@
+TIMESTAMP = 1620831323
+SHA256 (ansible-base-2.10.9.tar.gz) = 04635d3e08fc29358c76b8e7f1e9db0ce443fb09ce30b2acc6cacaad165f2151
+SIZE (ansible-base-2.10.9.tar.gz) = 6039597
+SHA256 (6459fbb7bcf792aac9208d7851bf1edeb0495295.patch) = cf810efb262b3e50bf64de2d196449d3cfcbaa7a97d60a7d258a1cfbece85eae
+SIZE (6459fbb7bcf792aac9208d7851bf1edeb0495295.patch) = 1918

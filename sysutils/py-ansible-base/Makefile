@@ -1,8 +1,10 @@
-PORTNAME=	ansible-core
-DISTVERSION=	2.11.0
+PORTNAME=	ansible-base
+DISTVERSION=	2.10.9
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PATCH_SITES=	https://github.com/ansible/ansible/commit/
+PATCHFILES=	6459fbb7bcf792aac9208d7851bf1edeb0495295.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Radically simple IT automation
@@ -35,10 +37,11 @@ SHEBANG_REGEX=	[.]/test/.*[.]py
 TEST_ARGS=	VERSION=${DISTVERSION} \
 		PYTHON=${PYTHON_CMD} \
 		DATE=
-TEST_ENV=	PYTHON_VERSION=${PYTHON_VER}
+TEST_ENV=	PYTHON_VERSION=${PYTHON_VER} \
+		TEST_FLAGS=-vv
 TEST_TARGET=	tests
 
-CONFLICTS=	py*-ansible-base
+CONFLICTS=	py*-ansible-core
 
 NO_ARCH=	yes
 
@@ -88,9 +91,10 @@ pre-test:
 # This test constructs a Python script inline and uses an invalid path to it.
 	${REINPLACE_CMD} 's|/usr/bin/python|${PYTHON_CMD}|' \
 		${WRKSRC}/test/units/modules/test_async_wrapper.py
-# Skip the SELinux tests, it's not present on FreeBSD.
+# Disable some tests:
+# - Skip the SELinux tests, it's not present on FreeBSD.
 	${RM} ${WRKSRC}/test/units/module_utils/basic/test_selinux.py
-# Disable some failing tests. They fail to detect that emoji are of width 2 istead of 1.
+# - Failure detecting that emojis are of width 2 instead of 1.
 	${RM} ${WRKSRC}/test/units/utils/test_display.py
 
 .include <bsd.port.mk>
