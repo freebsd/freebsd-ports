@@ -1,0 +1,19 @@
+--- third_party/perfetto/gn/BUILD.gn.orig	2021-04-14 01:15:26 UTC
++++ third_party/perfetto/gn/BUILD.gn
+@@ -48,13 +48,15 @@ action("gen_buildflags") {
+   # we run the tools/gen_xxx generators.
+   if (enable_perfetto_watchdog) {
+     perfetto_watchdog = "PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_ANDROID() || " +
+-                        "PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_LINUX()"
++                        "PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_LINUX() || " +
++                        "PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_FREEBSD()"
+   } else {
+     perfetto_watchdog = "0"
+   }
+   if (enable_perfetto_tools) {
+     perfetto_local_symbolizer =
+         "PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_LINUX() || " +
++        "PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_FREEBSD() || " +
+         "PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_MAC() ||" +
+         "PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_WIN()"
+   } else {

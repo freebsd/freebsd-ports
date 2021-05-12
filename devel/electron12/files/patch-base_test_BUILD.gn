@@ -1,0 +1,15 @@
+--- base/test/BUILD.gn.orig	2021-04-14 01:08:36 UTC
++++ base/test/BUILD.gn
+@@ -428,7 +428,11 @@ if (is_linux || is_chromeos) {
+ 
+   copy("fonts_conf") {
+     sources = [ "fonts.conf" ]
+-    outputs = [ "${root_build_dir}/etc/fonts/{{source_file_part}}" ]
++    if (is_bsd) {
++      outputs = [ "${root_build_dir}/usr/local/etc/fonts/{{source_file_part}}" ]
++    } else {
++      outputs = [ "${root_build_dir}/etc/fonts/{{source_file_part}}" ]
++    }
+   }
+ 
+   if (current_toolchain == host_toolchain) {

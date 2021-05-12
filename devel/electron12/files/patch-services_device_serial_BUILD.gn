@@ -1,0 +1,11 @@
+--- services/device/serial/BUILD.gn.orig	2021-04-14 01:08:53 UTC
++++ services/device/serial/BUILD.gn
+@@ -5,7 +5,7 @@
+ import("//build/config/chromeos/ui_mode.gni")
+ import("//build/config/features.gni")
+ 
+-if (is_win || ((is_linux || is_chromeos) && use_udev) || is_mac) {
++if (is_win || ((is_linux || is_chromeos) && use_udev) || is_mac || is_bsd) {
+   config("platform_support") {
+     visibility = [ ":serial" ]
+     if (is_win) {

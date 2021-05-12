@@ -1,0 +1,19 @@
+--- services/network/BUILD.gn.orig	2021-04-14 01:08:53 UTC
++++ services/network/BUILD.gn
+@@ -273,9 +273,15 @@ component("network_service") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux && !is_bsd) || is_chromeos) {
+     deps += [
+       "//sandbox/linux:sandbox_services",
++      "//sandbox/policy",
++    ]
++  }
++
++  if (is_bsd) {
++    deps += [
+       "//sandbox/policy",
+     ]
+   }
