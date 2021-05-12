@@ -32,6 +32,8 @@ include/fb303/TimeseriesHistogram-inl.h
 include/fb303/TimeseriesHistogram.h
 include/fb303/detail/QuantileStatMap-inl.h
 include/fb303/detail/QuantileStatMap.h
+include/fb303/detail/QuantileStatWrappers-inl.h
+include/fb303/detail/QuantileStatWrappers.h
 include/fb303/thrift/gen-cpp2/BaseService.h
 include/fb303/thrift/gen-cpp2/BaseService.tcc
 include/fb303/thrift/gen-cpp2/BaseServiceAsyncClient.h
