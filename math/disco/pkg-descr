@@ -1,0 +1,5 @@
+DisCO (Discrete Conic Optimization) is a solver for Mixed Integer Second Order
+Conic Optimization (MISOCO) problems. It is developed on top of COIN-OR
+High-Performance Parallel Search (CHiPPS) framework.
+
+WWW: https://github.com/coin-or/DisCO

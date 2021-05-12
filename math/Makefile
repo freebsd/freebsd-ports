@@ -227,6 +227,7 @@
     SUBDIR += dbcsr
     SUBDIR += deal.ii
     SUBDIR += dieharder
+    SUBDIR += disco
     SUBDIR += djbfft
     SUBDIR += drgeo
     SUBDIR += dsdp
