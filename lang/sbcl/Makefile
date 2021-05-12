@@ -26,57 +26,38 @@ RUN_DEPENDS=	cl-asdf>=0:devel/cl-asdf
 
 USES=		gmake makeinfo tar:bzip2
 
-BOOTVERSION=	1.2.7
-SBCL_BOOT_LIST=	${BOOTVERSION}-x86-64-freebsd ${BOOTVERSION}-x86-freebsd \
-		${BOOTVERSION}-x86-64-dragonfly
-
-CONMODULES=	asdf sb-aclrepl sb-bsd-sockets sb-cltl2 sb-concurrency sb-cover \
-		sb-executable sb-gmp sb-grovel sb-introspect sb-md5 sb-mpfr \
-		sb-posix sb-queue sb-rotate-byte sb-rt sb-simple-streams \
-		sb-sprof
+SUB_FILES=	pkg-message sbclrc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAKE_SH_ARGS?=	--prefix="${PREFIX}" --xc-host="${XC_HOST}"
-
-# You can use the DYNAMIC_SPACE_SIZE knob to change the size of SBCL dynamically-allocated memory.
-# Default for arch: i386 = 512Mb, amd64 = 1Gb.
-.if defined(DYNAMIC_SPACE_SIZE)
-MAKE_SH_ARGS+=	--dynamic-space-size=${DYNAMIC_SPACE_SIZE}
-.endif
-
-SUB_FILES=	pkg-message sbclrc
+PORTDOCS=	*
 
 # All options explained into file: ${WRKSRC}/base-target-features.lisp-expr
 OPTIONS_DEFINE=		DOCS QSHOW RENAME SAFEPOINT THREADS UNICODE XREF ZLIB
 OPTIONS_DEFAULT=	RENAME SBCL THREADS UNICODE
 
-QSHOW_DESC=	C runtime with low-level debugging output
-RENAME_DESC=	Rename suffix .core to _core
-SAFEPOINT_DESC=	Using safepoints instead of signals
-XREF_DESC=	XREF data for SBCL internals
-
 OPTIONS_SINGLE=			BOOTSTRAP
 OPTIONS_SINGLE_BOOTSTRAP=	ABCL CCL CMUCL SBCL
+OPTIONS_EXCLUDE=		ABCL CMUCL
 
 ABCL_DESC=	Armed Bear Common Lisp
 BOOTSTRAP_DESC=	Supported languages of the build host
 CCL_DESC=	Clozure Common Lisp
 CMUCL_DESC=	Carnegie Mellon University Common Lisp
+QSHOW_DESC=	C runtime with low-level debugging output
+RENAME_DESC=	Rename suffix .core to _core
+SAFEPOINT_DESC=	Using safepoints instead of signals
 SBCL_DESC=	Steel Bank Common Lisp
+XREF_DESC=	XREF data for SBCL internals
 
-# On this moment CMUCL doesn't builds sbcl correctly
-# ABCL - I haven't tested. Welcome volunteers.
-OPTIONS_EXCLUDE=	ABCL CMUCL
-
-ABCL_VARS=		XC_HOST="abcl"
 ABCL_BUILD_DEPENDS=	abcl:lang/abcl
+ABCL_VARS=		XC_HOST="abcl"
 
-CCL_VARS=		XC_HOST="ccl --no-init --batch --quiet"
 CCL_BUILD_DEPENDS=	ccl:lang/ccl
+CCL_VARS=		XC_HOST="ccl --no-init --batch --quiet"
 
-CMUCL_VARS=		XC_HOST="lisp -nositeinit -noinit -batch -quiet"
 CMUCL_BUILD_DEPENDS=	lisp:lang/cmucl
+CMUCL_VARS=		XC_HOST="lisp -nositeinit -noinit -batch -quiet"
 
 DOCS_VARS=	INFO="asdf sbcl"
 
@@ -86,12 +67,12 @@ QSHOW_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-qshow"
 RENAME_PLIST_SUB=	CORE_SUFFIX="_core"
 RENAME_PLIST_SUB_OFF=	CORE_SUFFIX=".core"
 
+SAFEPOINT_IMPLIES=	THREADS
 SAFEPOINT_VARS=		MAKE_SH_ARGS+="--with-sb-safepoint --with-sb-thruption --with-sb-wtimer"
 SAFEPOINT_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-safepoint --without-sb-thruption --without-sb-wtimer"
-SAFEPOINT_IMPLIES=	THREADS
 
-SBCL_VARS=	XC_HOST="${BOOT_WRKSRC}/src/runtime/sbcl --core ${BOOT_WRKSRC}/output/${CORE} --noinform --disable-debugger --no-sysinit --no-userinit"
 SBCL_DISTFILES=	${PORTNAME}-${SBCL_BOOT_LIST:M${ARCHOS_PATTERN}}-binary${EXTRACT_SUFX}:binaries
+SBCL_VARS=	XC_HOST="${BOOT_WRKSRC}/src/runtime/sbcl --core ${BOOT_WRKSRC}/output/${CORE} --noinform --disable-debugger --no-sysinit --no-userinit"
 
 THREADS_VARS=		MAKE_SH_ARGS+="--with-sb-thread"
 THREADS_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-thread"
@@ -105,7 +86,19 @@ XREF_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-xref-for-internals"
 ZLIB_VARS=	MAKE_SH_ARGS+="--with-sb-core-compression"
 ZLIB_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-core-compression"
 
-PORTDOCS=	*
+BOOTVERSION=	1.2.7
+CONMODULES=	asdf sb-aclrepl sb-bsd-sockets sb-cltl2 sb-concurrency sb-cover \
+		sb-executable sb-gmp sb-grovel sb-introspect sb-md5 sb-mpfr \
+		sb-posix sb-queue sb-rotate-byte sb-rt sb-simple-streams \
+		sb-sprof
+MAKE_SH_ARGS?=	--prefix="${PREFIX}" --xc-host="${XC_HOST}"
+# You can use the DYNAMIC_SPACE_SIZE knob to change the size of SBCL dynamically-allocated memory.
+# Default for arch: i386 = 512Mb, amd64 = 1Gb.
+.if defined(DYNAMIC_SPACE_SIZE)
+MAKE_SH_ARGS+=	--dynamic-space-size=${DYNAMIC_SPACE_SIZE}
+.endif
+SBCL_BOOT_LIST=	${BOOTVERSION}-x86-64-freebsd ${BOOTVERSION}-x86-freebsd \
+		${BOOTVERSION}-x86-64-dragonfly
 
 .include <bsd.port.options.mk>
 
@@ -129,17 +122,20 @@ CORE=		sbcl.core
 CORE=		sbcl_core
 .endif
 
-post-patch-RENAME-on:
-	${GREP} -Frl '.core' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e 's|\.core|_core|g'
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
 		${WRKSRC}/src/code/toplevel.lisp \
 		${WRKSRC}/doc/${PORTNAME}.1 \
 		${WRKSRC}/doc/manual/start-stop.texinfo
 
+post-patch-RENAME-on:
+	${GREP} -Frl '.core' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e 's|\.core|_core|g'
+
 do-build:
 	(cd ${WRKSRC} && ${SH} make.sh ${MAKE_SH_ARGS})
+
+post-build-DOCS-on:
+	${DO_MAKE_BUILD} -C ${WRKSRC}/doc/manual info html
 
 do-install:
 	(cd ${WRKSRC} && ${SETENV} \
@@ -154,9 +150,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${M}/
 .endfor
 	${INSTALL_DATA} ${WRKDIR}/sbclrc ${STAGEDIR}${PREFIX}/etc/sbclrc.sample
-
-post-build-DOCS-on:
-	${DO_MAKE_BUILD} -C ${WRKSRC}/doc/manual info html
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
