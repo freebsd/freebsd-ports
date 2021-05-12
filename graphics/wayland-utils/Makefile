@@ -4,7 +4,7 @@ DISTVERSION=	1.0.0
 CATEGORIES=	graphics
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	d367b894f9c8.diff:-p1 # https://gitlab.freedesktop.org/wayland/wayland-utils/-/merge_requests/1
+PATCHFILES+=	d367b894f9c8.patch:-p1 # https://gitlab.freedesktop.org/wayland/wayland-utils/-/merge_requests/1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Display information about protocols supported by Wayland compositor

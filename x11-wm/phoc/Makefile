@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	b37bf15194e6.diff:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
+PATCHFILES+=	b37bf15194e6.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Phone compositor

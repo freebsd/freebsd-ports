@@ -6,9 +6,9 @@ CATEGORIES=	graphics
 
 # Wayland xdg-shell support (to run on sway/wayfire/etc. that have removed wl-shell)
 PATCH_SITES=	https://gitlab.freedesktop.org/bl4ckb0ne/${PORTNAME}/-/commit/
-PATCHFILES=	39ad2b26f46e90cbae13a9cbc58e1f9df03f0980.diff:-p1 \
-		e4a1e7e9670b77d5b145520d60c4b7570fe3c6ea.diff:-p1 \
-		8c202f88ab4f0f851e3f19dd82bc6b5236120564.diff:-p1
+PATCHFILES=	39ad2b26f46e90cbae13a9cbc58e1f9df03f0980.patch:-p1 \
+		e4a1e7e9670b77d5b145520d60c4b7570fe3c6ea.patch:-p1 \
+		8c202f88ab4f0f851e3f19dd82bc6b5236120564.patch:-p1
 
 
 MAINTAINER=	x11@FreeBSD.org

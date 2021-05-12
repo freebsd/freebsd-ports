@@ -10,7 +10,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Userspace interface to kernel Direct Rendering Module services
 
 PATCH_SITES=	https://gitlab.freedesktop.org/manu/drm/-/commit/
-PATCHFILES+=	e41ca0a00f88ef8.diff:-p1
+PATCHFILES+=	e41ca0a00f88ef8.patch:-p1
 
 LICENSE=	MIT
 
