@@ -327,6 +327,7 @@
     SUBDIR += gp2c
     SUBDIR += grace
     SUBDIR += graphthing
+    SUBDIR += gravity
     SUBDIR += gretl
     SUBDIR += gri
     SUBDIR += gringo
