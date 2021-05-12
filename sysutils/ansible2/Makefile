@@ -30,7 +30,7 @@ TEST_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
 
 USES?=		cpe gmake python:3.6+ shebangfix
-CPE_VENDOR=	ansibleworks
+CPE_VENDOR=	redhat
 USE_PYTHON=	autoplist concurrent distutils
 
 SHEBANG_REGEX?=	[.]/test/.*[.]py

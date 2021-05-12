@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-base>0:sysutils/py-ansible-base@${PY
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
 USES=		cpe gmake python:3.6+ shebangfix
-CPE_VENDOR=	ansibleworks
+CPE_VENDOR=	redhat
 USE_PYTHON=	autoplist concurrent distutils
 
 SHEBANG_FILES=	ansible_collections/community/zabbix/roles/zabbix_proxy/files/install_semodule.bsx \
