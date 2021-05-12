@@ -1,5 +1,6 @@
 PORTNAME=	scidavis
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	makc@FreeBSD.org
