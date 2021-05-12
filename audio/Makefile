@@ -663,6 +663,7 @@
     SUBDIR += qjackctl
     SUBDIR += qmidiarp
     SUBDIR += qmidictl
+    SUBDIR += qmidinet
     SUBDIR += qsampler
     SUBDIR += qsynth
     SUBDIR += quimup
