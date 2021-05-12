@@ -1,7 +1,7 @@
 PORTNAME=	seqan3
 DISTVERSION=	3.0.2-1195
 DISTVERSIONSUFFIX=	-gee0dbcad
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology devel math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,10 +11,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 HPP_DEPENDS=	cereal>0:devel/cereal \
-		coin-or-lemon>0:math/lemon \
 		range-v3>0:devel/range-v3
 BUILD_DEPENDS=	${HPP_DEPENDS}
-RUN_DEPENDS=	${LOCALBASE}/include/lemon/config.h:math/lemon
+RUN_DEPENDS=	${HPP_DEPENDS} \
+		coin-or-lemon>0:math/lemon
 
 USES=		cmake localbase
 
