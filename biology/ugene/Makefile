@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_aarch64=	Fails to build: invokes x86 asm
 BROKEN_riscv64=	Fails to build: invokes x86 asm
+BROKEN=		Does not fetch: size mismatch (expected 23448730, actual 23446282)
 
 RUN_DEPENDS=	bash:shells/bash
 
