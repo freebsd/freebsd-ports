@@ -1,7 +1,7 @@
 PORTNAME=	cgl
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	0.60.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -9,12 +9,15 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of cut generators for COIN-OR packages that use cuts
 
 LICENSE=	EPL
+LICENSE_FILE=	${WRKSRC}/Cgl/LICENSE
 
-LIB_DEPENDS=	libblas.so:math/blas \
+LIB_DEPENDS=	libcoinasl.so:math/asl \
+		libblas.so:math/blas \
 		libcoinmetis.so:math/ipopt \
 		libCoinUtils.so:math/coinutils \
 		libClp.so:math/clp \
-		libopenblas.so:math/openblas
+		libopenblas.so:math/openblas \
+		libOsi.so:math/osi
 
 USES=		compiler:c++11-lang gmake libtool pkgconfig
 USE_LDCONFIG=	yes
