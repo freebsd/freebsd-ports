@@ -1,5 +1,6 @@
 PORTNAME=	highs
 DISTVERSION=	g20210408
+PORTREVISION=	1
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -11,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	undefined reference to fmax, see https://github.com/ERGO-Code/HiGHS/issues/505
 
-LIB_DEPENDS=	libOsi.so:math/clp
+LIB_DEPENDS=	libOsi.so:math/osi
 
 USES=		blaslapack cmake compiler:c++11-lang pkgconfig
 
