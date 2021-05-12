@@ -1,0 +1,9 @@
+SeqAn3 is the new version of the popular SeqAn template library for the analysis
+of biological sequences. It enables the rapid development of high-performance
+solutions by providing generic algorithms and data structures for:
+* sequence representation and transformation
+* full-text indexing and efficient search
+* sequence alignment
+* input/output of common file formats
+
+WWW: https://github.com/seqan/seqan3
