@@ -10,6 +10,7 @@ COMMENT=	Library that encapsulates complex text layout logic
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
 LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libharfbuzz.so:print/harfbuzz \
 		libfreetype.so:print/freetype2
@@ -25,7 +26,6 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 OPTIONS_DEFINE=		DOCS
-DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
 DOCS_CONFIGURE_ENABLE=	gtk-doc
 DOCS_CONFIGURE_ON=	--with-html-dir=${DOCSDIR}
 
