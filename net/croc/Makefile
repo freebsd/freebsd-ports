@@ -1,5 +1,5 @@
 PORTNAME=	croc
-PORTVERSION=	9.1.2
+PORTVERSION=	9.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -19,8 +19,8 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		golang:crypto:38f3c27a63bf:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:0714010a04ed:golang_net/vendor/golang.org/x/net \
-		golang:sys:a76c4d0a0096:golang_sys/vendor/golang.org/x/sys \
+		golang:net:4163338589ed:golang_net/vendor/golang.org/x/net \
+		golang:sys:b0526f3d8744:golang_sys/vendor/golang.org/x/sys \
 		golang:term:a79de5458b56:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		kalafut:imohash:v1.0.2:kalafut_imohash/vendor/github.com/kalafut/imohash \
@@ -33,7 +33,7 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		schollz:logger:v1.2.0:schollz_logger/vendor/github.com/schollz/logger \
 		schollz:mnemonicode:v1.0.1:schollz_mnemonicode/vendor/github.com/schollz/mnemonicode \
 		schollz:pake:v3.0.2:schollz_pake_v3/vendor/github.com/schollz/pake/v3 \
-		schollz:peerdiscovery:v1.6.3:schollz_peerdiscovery/vendor/github.com/schollz/peerdiscovery \
+		schollz:peerdiscovery:v1.6.5:schollz_peerdiscovery/vendor/github.com/schollz/peerdiscovery \
 		schollz:progressbar:v3.8.0:schollz_progressbar_v3/vendor/github.com/schollz/progressbar/v3 \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		tscholl2:siec:8da93652b094:tscholl2_siec/vendor/github.com/tscholl2/siec \
