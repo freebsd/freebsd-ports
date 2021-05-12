@@ -41,7 +41,7 @@ CONFFILES=	mariadbdump.conf mariadbxtrabackup.conf postgresbase.conf \
 
 post-patch:
 	@${SED} -i "" -e "s:%%PREFIX%%:${PREFIX}:g" \
-		${WRKDIR}/urbackupclient/backup_scripts/postgresqldump
+		${WRKSRC}/urbackupclient/backup_scripts/postgresqldump
 
 post-stage:
 	${INSTALL_DATA} ${WRKDIR}/urbackupclient.conf.sample-daemon \
