@@ -16,6 +16,7 @@ LIB_DEPENDS=	libre2.so:devel/re2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
 USES=		localbase python:3.6+
+USE_GCC=	yes
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
