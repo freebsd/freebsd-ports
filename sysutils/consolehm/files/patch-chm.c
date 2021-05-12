@@ -5,7 +5,7 @@
   */
  
 +#include <osreldate.h>
-+#if (defined(__aarch64__) || defined(__powerpc__) || defined(__riscv64__)) && defined(__FreeBSD__)
++#if (defined(__aarch64__) || defined(__powerpc__) || defined(__riscv__)) && defined(__FreeBSD__)
 +#include <sys/types.h>
 +#include <machine/pio.h>
 +#endif
