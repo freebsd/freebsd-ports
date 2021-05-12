@@ -1,5 +1,6 @@
 PORTNAME=	xcrysden
-DISTVERSION=	1.6.2
+PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.xcrysden.org/download/
 
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libTogl2.0.so:graphics/togl
 RUN_DEPENDS=	bwidget>0:x11-toolkits/bwidget \
 		obabel:science/openbabel \
-		convert:graphics/ImageMagick6 \
+		convert:graphics/ImageMagick${IMAGEMAGICK_DEFAULT} \
 		ppmtompeg:graphics/netpbm \
 		xwd:x11/xwd
 
