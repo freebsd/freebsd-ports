@@ -183,6 +183,7 @@
     SUBDIR += ceres-solver
     SUBDIR += cgal
     SUBDIR += cgl
+    SUBDIR += cgl-conic
     SUBDIR += cglm
     SUBDIR += chaco
     SUBDIR += chryzodus

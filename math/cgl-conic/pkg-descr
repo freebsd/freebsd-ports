@@ -1,0 +1,5 @@
+CGL-Conic is library for generation of conic cuts for Mixed Integer Second
+Order Conic Optimization (MISOCO) problems. CGL-Conic can be considered as
+a generalization of COIN-OR's Cut Generation Library (CGL).
+
+WWW: https://github.com/aykutbulut/CGL-CONIC
