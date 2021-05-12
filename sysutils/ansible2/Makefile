@@ -1,9 +1,10 @@
 PORTNAME=	ansible
 PORTVERSION?=	2.9.21
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Radically simple IT automation
@@ -46,7 +47,8 @@ EXTRA_PATCHES?=
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	MAJMINVER=${PORTVERSION:R} \
-		PYTHON_PKGNAMEPREFIX=${PYTHON_PKGNAMEPREFIX}
+		PYTHON_PKGNAMEPREFIX=${PYTHON_PKGNAMEPREFIX} \
+		PKGBASE=${PKGBASE}
 
 PLIST_FILES?=	man/man1/ansible-config.1.gz \
 		man/man1/ansible-console.1.gz \

@@ -1,0 +1,84 @@
+--- lib/ansible/module_utils/facts/virtual/freebsd.py.orig	2020-04-17 14:07:09 UTC
++++ lib/ansible/module_utils/facts/virtual/freebsd.py
+@@ -19,9 +19,11 @@ __metaclass__ = type
+ import os
+ 
+ from ansible.module_utils.facts.virtual.base import Virtual, VirtualCollector
++# Rudimentary detection of the virtual platforms, more through version is coming. Catches VMWare at minimum.
++from ansible.module_utils.facts.virtual.sysctl import VirtualSysctlDetectionMixin
+ 
+ 
+-class FreeBSDVirtual(Virtual):
++class FreeBSDVirtual(Virtual, VirtualSysctlDetectionMixin):
+     """
+     This is a FreeBSD-specific subclass of Virtual.  It defines
+     - virtualization_type
+@@ -34,6 +36,9 @@ class FreeBSDVirtual(Virtual):
+         # Set empty values as default
+         virtual_facts['virtualization_type'] = ''
+         virtual_facts['virtualization_role'] = ''
++
++        virtual_product_facts = self.detect_virt_product('hw.hv_vendor')
++        virtual_facts.update(virtual_product_facts)
+ 
+         if os.path.exists('/dev/xen/xenstore'):
+             virtual_facts['virtualization_type'] = 'xen'
+--- lib/ansible/modules/packaging/os/pkgng.py.orig	2020-04-17 14:07:10 UTC
++++ lib/ansible/modules/packaging/os/pkgng.py
+@@ -201,13 +201,17 @@ def install_packages(module, pkgng_path, packages, cac
+ 
+     # This environment variable skips mid-install prompts,
+     # setting them to their default values.
+-    batch_var = 'env BATCH=yes'
++    # There is at least one case, when upgrading from 11.1 to 11.2 when pkg asks extra 
++    # question about OS version mismatch in the repository. As this isn't handled, playbook
++    # hangs forever. Adding ASSUME_ALWAYS_YES to the environment addresses that, and
++    # possibly other potential issues.
++    batch_var = 'env BATCH=yes ASSUME_ALWAYS_YES=yes'
+ 
+     if not module.check_mode and not cached:
+         if old_pkgng:
+-            rc, out, err = module.run_command("%s %s update" % (pkgsite, pkgng_path))
++            rc, out, err = module.run_command("%s %s %s update" % (batch_var, pkgsite, pkgng_path))
+         else:
+-            rc, out, err = module.run_command("%s %s update" % (pkgng_path, dir_arg))
++            rc, out, err = module.run_command("%s %s %s update" % (batch_var, pkgng_path, dir_arg))
+         if rc != 0:
+             module.fail_json(msg="Could not update catalogue")
+ 
+--- lib/ansible/modules/storage/zfs/zfs.py.orig	2020-04-17 14:07:11 UTC
++++ lib/ansible/modules/storage/zfs/zfs.py
+@@ -102,7 +102,15 @@ class Zfs(object):
+         self.changed = False
+         self.zfs_cmd = module.get_bin_path('zfs', True)
+         self.zpool_cmd = module.get_bin_path('zpool', True)
+-        self.pool = name.split('/')[0]
++        # - name: Create a new file system by cloning a snapshot
++        # zfs:
++        #   name: rpool/cloned_fs
++        #   state: present
++        #   origin: rpool@mysnapshot
++        #
++        # doesn't work properly, as code assumes that there is at least one level of hierarchy
++        # in zpool. But that's not always the case - pool may be dataset as well and have a snapshot.
++        self.pool = name.split('@')[0].split('/')[0]
+         self.is_solaris = os.uname()[0] == 'SunOS'
+         self.is_openzfs = self.check_openzfs()
+         self.enhanced_sharing = self.check_enhanced_sharing()
+--- lib/ansible/playbook/play_context.py.orig	2020-04-17 14:07:10 UTC
++++ lib/ansible/playbook/play_context.py
+@@ -528,8 +528,13 @@ class PlayContext(Base):
+                 becomecmd = cmd
+ 
+             elif self.become_method == 'doas':
++                # `doas` support in ansible is broken ATM, doesn't handle password
++                # authentication properly, cause assumes only challenge-respond auth.
++                # This patch should handle both ways properly.
++                def detect_doas_prompt(b_data):
++                    return re.match(b"[Pp]assword:", b_data)
+ 
+-                prompt = 'doas (%s@' % self.remote_user
++                prompt = detect_doas_prompt
+                 exe = self.become_exe or 'doas'
+ 
+                 if not self.become_pass:
