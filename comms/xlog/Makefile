@@ -1,11 +1,11 @@
 # Created by: Patrick Gardella <patrick@FreeBSD.org>
 
 PORTNAME=	xlog
-PORTVERSION=	2.0.19
+PORTVERSION=	2.0.22
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Amateur Radio logging application
 
 LICENSE=	GPLv3
