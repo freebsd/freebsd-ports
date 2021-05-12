@@ -15,9 +15,9 @@ FLAVORS=	macchiatobin rpi3 rpi4 xen_x64
 FLAVOR?=	macchiatobin
 
 USES=	gmake python:3.7+,build
+USE_GCC=	yes:build
 
-BUILD_DEPENDS+=	gcc8:lang/gcc8 \
-		dtc>=1.4.1:sysutils/dtc \
+BUILD_DEPENDS+=	dtc>=1.4.1:sysutils/dtc \
 		bash:shells/bash
 
 # Both platform and non-osi repository don't have release, use latest known to work tag
@@ -36,9 +36,9 @@ GH_TUPLE=	tianocore:edk2-platforms:${PLATFORM_TAG}:platforms \
 
 BINARY_ALIAS=	make=${LOCALBASE}/bin/gmake \
 		dtc=${LOCALBASE}/bin/dtc \
-		gcc=${LOCALBASE}/bin/gcc8 \
-		gcc-ar=${LOCALBASE}/bin/gcc-ar8 \
-		g++=${LOCALBASE}/bin/g++8 \
+		gcc=${LOCALBASE}/bin/gcc${GCC_DEFAULT} \
+		gcc-ar=${LOCALBASE}/bin/gcc-ar${GCC_DEFAULT} \
+		g++=${LOCALBASE}/bin/g++${GCC_DEFAULT} \
 		python3=${PYTHON_CMD} python=${PYTHON_CMD}
 
 .if ${FLAVOR} == macchiatobin
