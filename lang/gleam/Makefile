@@ -1,11 +1,10 @@
 PORTNAME=	gleam
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.4
-PORTREVISION=	2
+DISTVERSION=	0.15.1
 CATEGORIES=	lang
 
 MAINTAINER=	dch@FreeBSD.org
-COMMENT=	Ml-flavoured type-safe language using Erlang's BEAM runtime
+COMMENT=	ML-flavoured type-safe language using Erlang's BEAM runtime
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENCE
