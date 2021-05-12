@@ -1,6 +1,6 @@
 PORTNAME=	ansible
-PORTVERSION?=	2.9.21
-PORTREVISION?=	1
+DISTVERSION=	2.9.21
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,13 +11,13 @@ COMMENT=	Radically simple IT automation
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jmespath>0:devel/py-jmespath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
-TEST_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
@@ -28,11 +28,11 @@ TEST_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
 
-USES?=		cpe gmake python:3.6+ shebangfix
+USES=		cpe gmake python:3.6+ shebangfix
 CPE_VENDOR=	ansibleworks
 USE_PYTHON=	autoplist concurrent distutils
 
-SHEBANG_REGEX?=	[.]/test/.*[.]py
+SHEBANG_REGEX=	[.]/test/.*[.]py
 
 TEST_ARGS=	VERSION=${PORTVERSION} \
 		PYTHON=${PYTHON_CMD} \
@@ -42,13 +42,12 @@ TEST_TARGET=	tests
 
 CONFLICTS_INSTALL=	${_ANSIBLE_PACKAGES:N${PKGBASE}-*}
 
-EXTRA_PATCHES?=
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	MAJMINVER=${PORTVERSION:R} \
 		PYTHON_PKGNAMEPREFIX=${PYTHON_PKGNAMEPREFIX}
 
-PLIST_FILES?=	man/man1/ansible-config.1.gz \
+PLIST_FILES=	man/man1/ansible-config.1.gz \
 		man/man1/ansible-console.1.gz \
 		man/man1/ansible-doc.1.gz \
 		man/man1/ansible-galaxy.1.gz \
