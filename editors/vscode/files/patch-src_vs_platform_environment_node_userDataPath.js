@@ -1,6 +1,6 @@
---- src/vs/platform/environment/node/userDataPath.js.orig	2021-04-06 08:07:24 UTC
+--- src/vs/platform/environment/node/userDataPath.js.orig	2021-05-04 21:42:00 UTC
 +++ src/vs/platform/environment/node/userDataPath.js
-@@ -64,7 +64,7 @@
+@@ -80,7 +80,7 @@
  					case 'darwin':
  						appDataPath = path.join(os.homedir(), 'Library', 'Application Support');
  						break;
