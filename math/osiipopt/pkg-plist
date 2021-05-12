@@ -1,0 +1,8 @@
+include/coin/OsiIpoptConfig.h
+include/coin/OsiIpoptSolverInterface.hpp
+include/coin/OsiIpoptTNLP.hpp
+lib/libOsiIpopt.so
+lib/libOsiIpopt.so.0
+lib/libOsiIpopt.so.0.0.0
+libdata/pkgconfig/osiipopt.pc
+share/coin/doc/OsiIpopt/osiipopt_addlibs.txt

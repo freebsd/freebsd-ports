@@ -1,0 +1,5 @@
+OsiIpopt is a conic solver interface for COIN-OR's Ipopt solver. OsiIpopt
+implements OsiConic interface, which extends Open Solver Interface (OSI) to
+second order conic optimization problems.
+
+WWW: https://github.com/aykutbulut/OsiIpopt
