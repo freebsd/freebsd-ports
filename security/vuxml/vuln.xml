@@ -76,6 +76,49 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f947aa26-b2f9-11eb-a5f7-a0f3c100ae18">
+    <topic>Pillow -- multiple vulnerabilitie</topic>
+    <affects>
+      <package>
+	<name>py38-pillow</name>
+	<range><lt>8.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>python-pillow reports:</p>
+	<blockquote cite="https://github.com/python-pillow/Pillow/pull/5377/commits/8ec027867f19633d9adfc5c8b7504d9b609fc5f1">
+	  <p>This release fixes several vulnerabilities found with `OSS-Fuzz`.</p>
+	  <ul>
+	    <li>`CVE-2021-25288`: Fix OOB read in Jpeg2KDecode.
+	    This dates to Pillow 2.4.0.</li>
+	    <li>`CVE-2021-28675`: Fix DOS in PsdImagePlugin.
+	    This dates to the PIL fork.</li>
+	    <li>`CVE-2021-28676`: Fix FLI DOS.
+	    This dates to the PIL fork.</li>
+	    <li>`CVE-2021-28677`: Fix EPS DOS on _open.
+	    This dates to the PIL fork.</li>
+	    <li>`CVE-2021-28678`: Fix BLP DOS.
+	    This dates to Pillow 5.1.0.</li>
+	    <li>Fix memory DOS in ImageFont.
+	    This dates to the PIL fork.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-25288</cvename>
+      <cvename>CVE-2021-28675</cvename>
+      <cvename>CVE-2021-28676</cvename>
+      <cvename>CVE-2021-28677</cvename>
+      <cvename>CVE-2021-28678</cvename>
+    </references>
+    <dates>
+      <discovery>2021-04-01</discovery>
+      <entry>2021-05-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3cac007f-b27e-11eb-97a0-e09467587c17">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
