@@ -17,7 +17,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libinotify.so:devel/libinotify
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 
-USES=		autoreconf gmake libtool localbase ncurses shebangfix tar:bzip2 pkgconfig
+USES=		autoreconf gettext-tools gmake libtool localbase ncurses shebangfix \
+		tar:bzip2 pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-udev-rules-dir="\$${prefix}/lib/udev"
 SHEBANG_FILES=	alsa-info/alsa-info.sh alsaconf/alsaconf.in bat/alsabat-test.sh
@@ -40,7 +41,7 @@ MANPAGES_BUILD_DEPENDS=		minixmlto:textproc/minixmlto
 MANPAGES_CONFIGURE_ENV=		ac_cv_prog_xmlto=minixmlto
 MANPAGES_CONFIGURE_ENABLE=	xmlto
 
-NLS_USES=		gettext
+NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 NLS_LIBS=		-lintl
 
