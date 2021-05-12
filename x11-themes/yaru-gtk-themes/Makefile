@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	yaru-gtk-themes
-DISTVERSION=	20.04.10
+DISTVERSION=	20.04.11
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
