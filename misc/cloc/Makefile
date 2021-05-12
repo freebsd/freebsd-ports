@@ -1,10 +1,11 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	cloc
-PORTVERSION=	1.88
+PORTVERSION=	1.90
+DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Counts lines of code
 
 LICENSE=	GPLv2
