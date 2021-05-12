@@ -5072,6 +5072,7 @@
     SUBDIR += py-represent
     SUBDIR += py-requestsexceptions
     SUBDIR += py-requirementslib
+    SUBDIR += py-resolvelib
     SUBDIR += py-resolver
     SUBDIR += py-resource
     SUBDIR += py-responses
