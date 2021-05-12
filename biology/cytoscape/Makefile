@@ -11,9 +11,7 @@ COMMENT=	Software to visualize molecular interaction networks, gene expression
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/api/LICENSE
 
-BROKEN_aarch64=		fails to build: Cytoscape Third-Party Dependencies (third-party): FAILURE
-BROKEN_armv6=		fails to build: Cytoscape Third-Party Dependencies (third-party): FAILURE
-BROKEN_armv7=		fails to build: Cytoscape Third-Party Dependencies (third-party): FAILURE
+BROKEN=		fails to build: Cytoscape Third-Party Dependencies (third-party): FAILURE
 
 BUILD_DEPENDS=	mvn:devel/maven \
 		bash:shells/bash
