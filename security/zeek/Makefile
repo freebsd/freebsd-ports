@@ -140,8 +140,7 @@ pre-install-ZEEKCTL-on:
 post-install-NETMAP-on:
 	${MKDIR} ${WRKDIR}/zeek-bin
 	${CP} ${STAGEDIR}${PREFIX}/bin/zeek-config ${WRKDIR}/zeek-bin
-	${REINPLACE_CMD} -e 's|=/usr/local|=${STAGEDIR}${PREFIX}|' \
-	    -e '/^include_dir=/s|:/usr/local|:${STAGEDIR}${PREFIX}|' \
+	${REINPLACE_CMD} -e 's|${PREFIX}|${STAGEDIR}${PREFIX}|g' \
 	    ${WRKDIR}/zeek-bin/zeek-config
 	cd ${WRKSRC_zeek_netmap} && ${SETENV} PATH=${WRKDIR}/zeek-bin:${PATH} \
 	    ./configure --with-netmap=/usr \
