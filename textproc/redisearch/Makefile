@@ -1,7 +1,8 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME=	redisearch
-DISTVERSION=	2.0.8
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.9
 CATEGORIES=	textproc
 
 MAINTAINER=	osa@FreeBSD.org
