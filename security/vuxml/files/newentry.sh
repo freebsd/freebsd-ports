@@ -39,6 +39,7 @@ cat << EOF >> "${tmp}" || exit 1
       </body>
     </description>
     <references>
+      <cvename>INSERT CVE RECORD IF AVAILABLE</cvename>
       <url>INSERT BLOCKQUOTE URL HERE</url>
     </references>
     <dates>
