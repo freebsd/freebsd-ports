@@ -8,6 +8,8 @@ CATEGORIES=	net-p2p kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
+CONFLICTS_BUILD=	libtorrent
+
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 
 LIB_DEPENDS=	libKF5Torrent.so:net-p2p/libktorrent \
