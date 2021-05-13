@@ -76,8 +76,66 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a7c60af1-b3f1-11eb-a5f7-a0f3c100ae18">
+    <topic>ImageMagick7 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ImageMagick7</name>
+	<name>ImageMagick7-nox11</name>
+	<range><lt>7.0.11-12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=ImageMagick">
+	  <p>Several vulnerabilities have been discovered in ImageMagick:</p>
+	  <ul>
+	    <li>CVE-2021-20313: A flaw was found in ImageMagick in versions before 7.0.11.
+	    A potential cipher leak when the calculate signatures in TransformSignature is possible.</li>
+	    <li>CVE-2021-20312: A flaw was found in ImageMagick in versions 7.0.11,
+	    where an integer overflow in WriteTHUMBNAILImage of coders/thumbnail.c may trigger
+	    undefined behavior via a crafted image file that is submitted by an attacker and
+	    processed by an application using ImageMagick.</li>
+	    <li>CVE-2021-20311: A flaw was found in ImageMagick in versions before 7.0.11,
+	    where a division by zero in sRGBTransformImage() in the MagickCore/colorspace.c
+	    may trigger undefined behavior via a crafted image file that is submitted by an
+	    attacker processed by an application using ImageMagick.</li>
+	    <li>CVE-2021-20310: A flaw was found in ImageMagick in versions before 7.0.11,
+	    where a division by zero ConvertXYZToJzazbz() of MagickCore/colorspace.c may trigger
+	    undefined behavior via a crafted image file that is submitted by an attacker
+	    and processed by an application using ImageMagick.</li>
+	    <li>CVE-2021-20309: A flaw was found in ImageMagick in versions before 7.0.11,
+	    where a division by zero in WaveImage() of MagickCore/visual-effects.c may trigger
+	    undefined behavior via a crafted image file submitted to an application using ImageMagick.</li>
+	    <li>And several others…</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-27829</cvename>
+      <cvename>CVE-2020-29599</cvename>
+      <cvename>CVE-2021-20176</cvename>
+      <cvename>CVE-2021-20241</cvename>
+      <cvename>CVE-2021-20243</cvename>
+      <cvename>CVE-2021-20244</cvename>
+      <cvename>CVE-2021-20245</cvename>
+      <cvename>CVE-2021-20246</cvename>
+      <cvename>CVE-2021-20309</cvename>
+      <cvename>CVE-2021-20310</cvename>
+      <cvename>CVE-2021-20311</cvename>
+      <cvename>CVE-2021-20312</cvename>
+      <cvename>CVE-2021-20313</cvename>
+    </references>
+    <dates>
+      <discovery>2020-10-27</discovery>
+      <entry>2021-05-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f947aa26-b2f9-11eb-a5f7-a0f3c100ae18">
-    <topic>Pillow -- multiple vulnerabilitie</topic>
+    <topic>Pillow -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>py38-pillow</name>
