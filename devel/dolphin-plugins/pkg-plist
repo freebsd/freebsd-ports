@@ -92,6 +92,11 @@ share/locale/ia/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/ia/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/ia/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/ia/LC_MESSAGES/mountisoaction.mo
+share/locale/id/LC_MESSAGES/fileviewbazaarplugin.mo
+share/locale/id/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/id/LC_MESSAGES/fileviewhgplugin.mo
+share/locale/id/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/id/LC_MESSAGES/mountisoaction.mo
 share/locale/it/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/it/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/it/LC_MESSAGES/fileviewhgplugin.mo

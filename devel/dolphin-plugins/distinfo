@@ -1,3 +1,3 @@
-TIMESTAMP = 1618579110
-SHA256 (KDE/release-service/21.04.0/dolphin-plugins-21.04.0.tar.xz) = 9fb395bfc62b726a4feae87b89d97294262cdadbeadf69706d7f314b1ff488d2
-SIZE (KDE/release-service/21.04.0/dolphin-plugins-21.04.0.tar.xz) = 242608
+TIMESTAMP = 1620741442
+SHA256 (KDE/release-service/21.04.1/dolphin-plugins-21.04.1.tar.xz) = cfe900f5c3d34205e60175636e18c1f7982d4029d31e58ff788392235051461c
+SIZE (KDE/release-service/21.04.1/dolphin-plugins-21.04.1.tar.xz) = 247356

@@ -1,5 +1,3 @@
-TIMESTAMP = 1620035138
-SHA256 (KDE/release-service/21.04.0/konsole-21.04.0.tar.xz) = 260a1748a065c22d3bb63ffe57bd4bc79067e24a24f6332e5c91317d0e0799b6
-SIZE (KDE/release-service/21.04.0/konsole-21.04.0.tar.xz) = 1276124
-SHA256 (KDE/release-service/21.04.0/2b441030a745a17f76d8f010a299a74532e3f211.diff) = 443bfdc60fc0b152870fd7878f8ea6d20e9ba628128b4e28ccc66da5905646dc
-SIZE (KDE/release-service/21.04.0/2b441030a745a17f76d8f010a299a74532e3f211.diff) = 2688
+TIMESTAMP = 1620752706
+SHA256 (KDE/release-service/21.04.1/konsole-21.04.1.tar.xz) = 46802bbddca8dd4c264107a411a58c86cc7707c9210ddfbd38d8a971ea735293
+SIZE (KDE/release-service/21.04.1/konsole-21.04.1.tar.xz) = 1277552
