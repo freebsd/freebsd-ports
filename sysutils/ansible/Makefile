@@ -1,7 +1,7 @@
 PORTNAME=	ansible
 DISTVERSION=	3.3.0
 CATEGORIES=	sysutils python
-MASTER_SITES=	http://releases.ansible.com/ansible/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
