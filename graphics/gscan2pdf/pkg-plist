@@ -2,6 +2,8 @@ bin/gscan2pdf
 %%SITE_PERL%%/Gscan2pdf/Bboxtree.pm
 %%SITE_PERL%%/Gscan2pdf/Canvas.pm
 %%SITE_PERL%%/Gscan2pdf/Canvas/Bbox.pm
+%%SITE_PERL%%/Gscan2pdf/Canvas/ListIter.pm
+%%SITE_PERL%%/Gscan2pdf/Canvas/TreeIter.pm
 %%SITE_PERL%%/Gscan2pdf/ComboBoxText.pm
 %%SITE_PERL%%/Gscan2pdf/Config.pm
 %%SITE_PERL%%/Gscan2pdf/Cuneiform.pm
@@ -16,7 +18,6 @@ bin/gscan2pdf
 %%SITE_PERL%%/Gscan2pdf/EntryCompletion.pm
 %%SITE_PERL%%/Gscan2pdf/Frontend/CLI.pm
 %%SITE_PERL%%/Gscan2pdf/Frontend/Image_Sane.pm
-%%SITE_PERL%%/Gscan2pdf/ImageView.pm
 %%SITE_PERL%%/Gscan2pdf/NetPBM.pm
 %%SITE_PERL%%/Gscan2pdf/Ocropus.pm
 %%SITE_PERL%%/Gscan2pdf/Page.pm
@@ -29,6 +30,7 @@ bin/gscan2pdf
 man/man1/gscan2pdf.1.gz
 share/applications/net.sourceforge.gscan2pdf.desktop
 %%DATADIR%%/180_degree.svg
+%%DATADIR%%/crop.svg
 %%DATADIR%%/gscan2pdf-papyrus.svg
 %%DATADIR%%/gscan2pdf.svg
 %%DATADIR%%/hand-tool.svg
@@ -54,6 +56,7 @@ share/locale/eu/LC_MESSAGES/gscan2pdf.mo
 share/locale/fa/LC_MESSAGES/gscan2pdf.mo
 share/locale/fi/LC_MESSAGES/gscan2pdf.mo
 share/locale/fr/LC_MESSAGES/gscan2pdf.mo
+share/locale/gl/LC_MESSAGES/gscan2pdf.mo
 share/locale/gu/LC_MESSAGES/gscan2pdf.mo
 share/locale/he/LC_MESSAGES/gscan2pdf.mo
 share/locale/hr/LC_MESSAGES/gscan2pdf.mo

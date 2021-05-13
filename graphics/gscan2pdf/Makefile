@@ -1,12 +1,11 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTVERSION=	2.12.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce PDF from scanned documents
 
 LICENSE=	GPLv3
@@ -22,8 +21,9 @@ BUILD_DEPENDS=	p5-Config-General>=2.40:devel/p5-Config-General \
 		p5-List-MoreUtils>0:lang/p5-List-MoreUtils \
 		p5-Try-Tiny>0:lang/p5-Try-Tiny \
 		bash:shells/bash \
-		p5-PDF-API2>0.57:textproc/p5-PDF-API2 \
+		p5-PDF-Builder>0:textproc/p5-PDF-Builder \
 		p5-Gtk3>=0.028:x11-toolkits/p5-Gtk3 \
+		p5-Gtk3-ImageView>0:x11-toolkits/p5-Gtk3-ImageView \
 		p5-Gtk3-SimpleList>=0.17:x11-toolkits/p5-Gtk3-SimpleList \
 		p5-Goo-Canvas2>=0.06:devel/p5-Goo-Canvas2
 RUN_DEPENDS:=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
@@ -41,12 +41,15 @@ RUN_DEPENDS:=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
 		p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
 		p5-Log-Log4perl>0:devel/p5-Log-Log4perl \
 		p5-Readonly>0:devel/p5-Readonly \
+		p5-Graphics-TIFF>0:graphics/p5-Graphics-TIFF \
+		p5-Image-PNG-Libpng>0:graphics/p5-Image-PNG-Libpng \
 		p5-Image-Sane>=0.14:graphics/p5-Image-Sane \
 		p5-Set-IntSpan>=1.10:math/p5-Set-IntSpan \
 		p5-List-MoreUtils>0:lang/p5-List-MoreUtils \
 		p5-Try-Tiny>0:lang/p5-Try-Tiny \
-		p5-PDF-API2>0.57:textproc/p5-PDF-API2 \
+		p5-PDF-Builder>0:textproc/p5-PDF-Builder \
 		p5-Gtk3>=0.028:x11-toolkits/p5-Gtk3 \
+		p5-Gtk3-ImageView>0:x11-toolkits/p5-Gtk3-ImageView \
 		p5-Gtk3-SimpleList>=0.17:x11-toolkits/p5-Gtk3-SimpleList \
 		p5-Goo-Canvas2>=0.06:devel/p5-Goo-Canvas2 \
 		p5-Gtk2-Ex-PodViewer>0:x11-toolkits/p5-Gtk2-Ex-PodViewer
@@ -67,6 +70,12 @@ OCR_DESC=		Optical Character Recognition
 TESSERACT_DESC=		OCR engine developed at Google
 TESSERACT_RUN_DEPENDS=	tesseract:graphics/tesseract
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502902
+RUN_DEPENDS+=	p5-Locale-Codes>0:misc/p5-Locale-Codes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$$sharedir/man|$$prefixdir/man| ; \
@@ -74,4 +83,4 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/bin/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
