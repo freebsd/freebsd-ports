@@ -9,6 +9,8 @@ COMMENT=	Program to perform efficient electronic structure calculations
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+BROKEN_aarch64=	Fatal Error: Cannot find an intrinsic module named 'ieee_arithmetic' at (1), see https://gitlab.com/siesta-project/siesta/-/issues/115
+
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack
 
