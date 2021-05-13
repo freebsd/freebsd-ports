@@ -3,7 +3,7 @@ PORTVERSION=	3.8.0.1115
 CATEGORIES=	security
 MASTER_SITES=	https://installer.id.ee/media/sources/
 
-MAINTAINER=	toomas.aas@raad.tartu.ee
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digital signing with Estonian ID card in Firefox
 
 LICENSE=	LGPL21
