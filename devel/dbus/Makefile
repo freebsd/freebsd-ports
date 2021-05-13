@@ -2,7 +2,7 @@
 
 PORTNAME=	dbus
 DISTVERSION=	1.12.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
