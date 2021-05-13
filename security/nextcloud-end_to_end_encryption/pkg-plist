@@ -1,8 +1,5 @@
-@comment %%WWWDIR%%/.DS_Store
-@comment %%WWWDIR%%/.php_cs.dist
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/SECURITY.md
-%%WWWDIR%%/appinfo/app.php
 %%WWWDIR%%/appinfo/info.xml
 %%WWWDIR%%/appinfo/routes.php
 %%WWWDIR%%/img/app.svg
@@ -11,8 +8,6 @@
 %%WWWDIR%%/l10n/ar.json
 %%WWWDIR%%/l10n/ast.js
 %%WWWDIR%%/l10n/ast.json
-%%WWWDIR%%/l10n/bg.js
-%%WWWDIR%%/l10n/bg.json
 %%WWWDIR%%/l10n/ca.js
 %%WWWDIR%%/l10n/ca.json
 %%WWWDIR%%/l10n/cs.js
@@ -105,6 +100,8 @@
 %%WWWDIR%%/l10n/ro.json
 %%WWWDIR%%/l10n/ru.js
 %%WWWDIR%%/l10n/ru.json
+%%WWWDIR%%/l10n/sc.js
+%%WWWDIR%%/l10n/sc.json
 %%WWWDIR%%/l10n/sk.js
 %%WWWDIR%%/l10n/sk.json
 %%WWWDIR%%/l10n/sl.js
@@ -121,6 +118,8 @@
 %%WWWDIR%%/l10n/uk.json
 %%WWWDIR%%/l10n/zh_CN.js
 %%WWWDIR%%/l10n/zh_CN.json
+%%WWWDIR%%/l10n/zh_HK.js
+%%WWWDIR%%/l10n/zh_HK.json
 %%WWWDIR%%/l10n/zh_TW.js
 %%WWWDIR%%/l10n/zh_TW.json
 %%WWWDIR%%/lib/AppInfo/Application.php
@@ -146,6 +145,7 @@
 %%WWWDIR%%/lib/IKeyStorage.php
 %%WWWDIR%%/lib/IMetaDataStorage.php
 %%WWWDIR%%/lib/KeyStorage.php
+%%WWWDIR%%/lib/Listener/UserDeletedListener.php
 %%WWWDIR%%/lib/LockManager.php
 %%WWWDIR%%/lib/MetaDataStorage.php
 %%WWWDIR%%/lib/Middleware/UserAgentCheckMiddleware.php
@@ -154,4 +154,3 @@
 %%WWWDIR%%/lib/RollbackService.php
 %%WWWDIR%%/lib/SignatureHandler.php
 %%WWWDIR%%/lib/UserAgentManager.php
-%%WWWDIR%%/lib/UserManager.php

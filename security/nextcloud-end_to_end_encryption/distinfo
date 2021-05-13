@@ -1,3 +1,3 @@
-TIMESTAMP = 1598090225
-SHA256 (nextcloud/end_to_end_encryption/end_to_end_encryption.tar.gz) = 5d15e832959b57f2c7c8f6228ebabfb744c59611bf4305077418a837d7f16a53
-SIZE (nextcloud/end_to_end_encryption/end_to_end_encryption.tar.gz) = 75778
+TIMESTAMP = 1620934608
+SHA256 (nextcloud/end_to_end_encryption-1.7.1.tar.gz) = 1e78cc32777d05bf933acfa562c7ec38b5123c6e0e616d95094cd6c2b5f145cf
+SIZE (nextcloud/end_to_end_encryption-1.7.1.tar.gz) = 69817
