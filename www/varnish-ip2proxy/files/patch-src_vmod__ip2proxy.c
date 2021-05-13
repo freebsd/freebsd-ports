@@ -1,81 +1,6 @@
-diff --git a/README.rst b/README.rst
-index abe2e2c..3753102 100644
---- README.rst
-+++ README.rst
-@@ -3,7 +3,7 @@ IP2Proxy Varnish Module
- ---------------------------
- 
- :Author: IP2Location
--:Date: 2020-11-24
-+:Date: 202--11-26
- :Version: 1.2.0
- :Manual section: 3
- 
-diff --git a/readme.md b/readme.md
-index 4a4054d..f2fac33 100644
---- readme.md
-+++ readme.md
-@@ -191,8 +191,6 @@ set req.http.X-Usagetype = ip2proxy.as("client.ip");
- set req.http.X-Usagetype = ip2proxy.last_seen("client.ip");
- ```
- 
--
--
- ### threat
- 
- Return security threat reported for this IP.
-@@ -211,31 +209,33 @@ set req.http.X-Threat = ip2proxy.threat("client.ip");
- 
-    Answer: You can get free IP2Proxy LITE databases from [https://lite.ip2location.com](https://lite.ip2location.com/), or purchase an IP2Proxy commercial database from <https://www.ip2location.com/database/ip2proxy>.
- 
--2.  "I can't install the module. Please help me."
-+2. "I can't install the module. Please help me."
- 
-    Answer: Once again, before you install the package, please make sure that you have installed autoconf, libtool and make packages first. Those packages are necessary to compile and install this module.
- 
--3.  "Why am I getting an error message said that Package varnishapi was not found?"
-+3. "Why am I getting an error message said that Package varnishapi was not found?"
- 
-    Answer: In order to use Varnish vmod, you have to install varnishapi package before hand. Please refer to the [Installation](#installation) section first before install this module. 
--   
-+
-  4. "I am getting error message said that You need rst2man installed to make dist. What should I do?"
- 
--​       Answer: If you encounter such message, you can install rst2man by installing python-docutils package than provide rst2man:
-+    Answer: If you encounter such message, you can install rst2man by installing python-docutils package than provide rst2man: 
- 
--```bash
--apt-get install python-docutils
--```
-+    ```
-+    apt-get install python-docutils
-+    ```
- 
-  5. "I am getting Permission denied when running autogen.sh.. What should I do?"
- 
--​       Answer: You can try to edit the permission for autogen.sh by:
-+    Answer: You can try to edit the permission for autogen.sh by:
- 
--```bash
--chmod +x autogen.sh
--```
-+    ```
-+    chmod +x autogen.sh
-+    ```
-+
-+    
- 
- # Support
- 
- Email: [support@ip2location.com](mailto:support@ip2location.com).
--URL: [https://www.ip2location.com](https://www.ip2location.com/)
-+URL: [https://www.ip2location.com](https://www.ip2location.com/)
-\ No newline at end of file
-diff --git a/src/vmod_ip2proxy.c b/src/vmod_ip2proxy.c
-index bb87e82..1960a6f 100644
---- src/vmod_ip2proxy.c
+--- src/vmod_ip2proxy.c.orig	2020-11-23 23:20:35 UTC
 +++ src/vmod_ip2proxy.c
-@@ -1,268 +1,102 @@
+@@ -1,268 +1,109 @@
 +/*
 + * IP2Proxy Varnish library is distributed under LGPL version 3
 + * Copyright (c) 2013-2020 IP2Proxy.com. support at ip2location dot com
@@ -149,16 +74,23 @@ index bb87e82..1960a6f 100644
 -void
 -ip2p_free(void *d)
 +static void
-+ip2proxy_free(void *ptr)
++ip2proxy_free(VRT_CTX, void *ptr)
  {
 -	ip2proxy_data_t *data = d;
 -
 -	if (data->ip2p_handle != NULL) {
 -		IP2Proxy_close(data->ip2p_handle);
 -	}
++	CHECK_OBJ_NOTNULL(ctx, VRT_CTX_MAGIC);
 +	IP2Proxy_close((IP2Proxy *)ptr);
  }
  
++static const struct vmod_priv_methods ip2p_methods[1] = {{
++	.magic = VMOD_PRIV_METHODS_MAGIC,
++	.type = "vmod_std_ip2proxy",
++	.fini = ip2proxy_free
++}};
++
  VCL_VOID
 -VPFX(init_db)(VRT_CTX, struct VPFX(priv) *priv, char *filename, char *memtype)
 +vmod_init_db(VRT_CTX, struct vmod_priv *priv, char *filename, char *memtype)
@@ -177,9 +109,7 @@ index bb87e82..1960a6f 100644
 -		printf("IP2Proxy Database %s is loaded.\n", (char *) filename);
 -
 -		priv->priv = IP2ProxyObj;
-+	IP2Proxy *IP2ProxyObj;
-+	enum IP2Proxy_lookup_mode mtype;
- 
+-
 -		if (strcmp(memtype, "IP2PROXY_FILE_IO") == 0) {
 -			IP2Proxy_set_lookup_mode(priv->priv, IP2PROXY_FILE_IO);
 -		} else if (strcmp(memtype, "IP2PROXY_CACHE_MEMORY") == 0) {
@@ -192,7 +122,9 @@ index bb87e82..1960a6f 100644
 -		priv->free = ip2p_free;
 -	}
 -}
--
++	IP2Proxy *IP2ProxyObj;
++	enum IP2Proxy_lookup_mode mtype;
+ 
 -// Use this function to query result, and then extract the field based on user selection
 -void *
 -query_all(VRT_CTX, struct VPFX(priv) *priv, char * ip, int option)
@@ -204,7 +136,9 @@ index bb87e82..1960a6f 100644
 -	printf("The client IP is %s.\n", (char *) ip);
 -	
  	CHECK_OBJ_NOTNULL(ctx, VRT_CTX_MAGIC);
--
++	AN(priv);
++	AN(memtype);
+ 
 -	if (priv->priv != NULL) {
 -		handle = priv->priv;
 -		r = IP2Proxy_get_all(handle, (char *) ip);
@@ -259,9 +193,6 @@ index bb87e82..1960a6f 100644
 -
 -			return (result);
 -		}
-+	AN(priv);
-+	AN(memtype);
-+
 +	if (strcmp(memtype, "IP2PROXY_FILE_IO") == 0)
 +		mtype = IP2PROXY_FILE_IO;
 +	else if (strcmp(memtype, "IP2PROXY_SHARED_MEMORY") == 0)
@@ -277,9 +208,7 @@ index bb87e82..1960a6f 100644
 -
 -	return WS_Copy(ctx->ws, "????", -1);
 -}
-+	if (priv->priv != NULL)
-+		IP2Proxy_close((IP2Proxy *)priv->priv);
- 
+-
 -VCL_STRING
 -VPFX(country_short)(VRT_CTX, struct VPFX(priv) *priv, char * ip)
 -{
@@ -351,6 +280,16 @@ index bb87e82..1960a6f 100644
 -	result = query_all(ctx, priv, ip, query_ASN);
 -	return (result);
 -}
++	if (priv->priv != NULL)
++		IP2Proxy_close((IP2Proxy *)priv->priv);
+ 
+-VCL_STRING
+-VPFX(as)(VRT_CTX, struct VPFX(priv) *priv, char * ip)
+-{
+-	const char *result = NULL;
+-	result = query_all(ctx, priv, ip, query_AS);
+-	return (result);
+-}
 +	IP2ProxyObj = IP2Proxy_open(filename);
 +	if (!IP2ProxyObj) {
 +		VRT_fail(ctx, "IP2Proxy: can't open database (%s)", filename);
@@ -359,20 +298,20 @@ index bb87e82..1960a6f 100644
 +	IP2Proxy_open_mem(IP2ProxyObj, mtype);
  
 -VCL_STRING
--VPFX(as)(VRT_CTX, struct VPFX(priv) *priv, char * ip)
--{
--	const char *result = NULL;
--	result = query_all(ctx, priv, ip, query_AS);
--	return (result);
-+	priv->priv = IP2ProxyObj;
-+	priv->free = ip2proxy_free;
- }
- 
--VCL_STRING
 -VPFX(last_seen)(VRT_CTX, struct VPFX(priv) *priv, char * ip)
 -{
 -	const char *result = NULL;
 -	result = query_all(ctx, priv, ip, query_LASTSEEN);
+-	return (result);
++	priv->priv = IP2ProxyObj;
++	priv->methods = ip2p_methods;
+ }
+ 
+-VCL_STRING
+-VPFX(is_proxy)(VRT_CTX, struct VPFX(priv) *priv, char * ip)
+-{
+-	const char *result = NULL;
+-	result = query_all(ctx, priv, ip, query_ISPROXY);
 -	return (result);
 +#define FUNC(lower, field)					\
 +VCL_STRING							\
@@ -398,14 +337,6 @@ index bb87e82..1960a6f 100644
  }
  
 -VCL_STRING
--VPFX(is_proxy)(VRT_CTX, struct VPFX(priv) *priv, char * ip)
--{
--	const char *result = NULL;
--	result = query_all(ctx, priv, ip, query_ISPROXY);
--	return (result);
--}
--
--VCL_STRING
 -VPFX(threat)(VRT_CTX, struct VPFX(priv) *priv, char * ip)
 -{
 -	const char *result = NULL;
@@ -426,14 +357,3 @@ index bb87e82..1960a6f 100644
 +FUNC(last_seen,      last_seen)
 +FUNC(is_proxy,       is_proxy)
 +FUNC(threat,         threat)
-diff --git a/src/vmod_ip2proxy.vcc b/src/vmod_ip2proxy.vcc
-index 85558a5..71e6c71 100644
---- src/vmod_ip2proxy.vcc
-+++ src/vmod_ip2proxy.vcc
-@@ -28,4 +28,4 @@ $Function STRING last_seen(PRIV_VCL, STRING)
- 
- $Function STRING is_proxy(PRIV_VCL, STRING)
- 
--$Function STRING threat(PRIV_VCL, STRING)
-\ No newline at end of file
-+$Function STRING threat(PRIV_VCL, STRING)
