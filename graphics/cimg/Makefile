@@ -3,7 +3,7 @@
 PORTNAME=	cimg
 DISTVERSIONPREFIX=	v.
 DISTVERSION=	2.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
@@ -44,7 +44,7 @@ USES+=		blaslapack
 .endif
 
 REINPLACE_ARGS=	-i ""
-LIB_DEPENDS+=	libboard.so:graphics/libboard
+#LIB_DEPENDS+=	libboard.so:graphics/libboard
 
 . if !defined(WITH_DEBUG)
 LIB_DEPENDS+=	libcurl.so:ftp/curl			\
