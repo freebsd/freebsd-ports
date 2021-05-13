@@ -36,6 +36,9 @@ CMAKE_ON=	Boost Ipopt
 LDFLAGS+=	-L${LOCALBASE}/lib/gcc${GCC_DEFAULT}
 
 do-test:
-	@${WRKSRC}/bin/Release/gravity_test
+	@cd ${BUILD_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_EXAMPLES:BOOL=ON ${CMAKE_SOURCE_PATH} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
+		${WRKSRC}/bin/Release/gravity_test
 
 .include <bsd.port.mk>
