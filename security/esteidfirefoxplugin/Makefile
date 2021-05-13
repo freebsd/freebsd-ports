@@ -27,6 +27,7 @@ PLIST_FILES=	lib/npesteid-firefox-plugin.so
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	incomplete definition of type 'struct X509_name_entry_st'
 BROKEN_FreeBSD_13=	incomplete definition of type 'struct X509_name_entry_st'
+BROKEN_FreeBSD_14=	incomplete definition of type 'struct X509_name_entry_st'
 .endif
 
 post-install:
