@@ -3,15 +3,21 @@ PORTVERSION=	3.4.1
 PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
-PKGNAMESUFFIX=	34
+PKGNAMESUFFIX=	${CYRUS_IMAPD_VER}
 
 MAINTAINER=	ume@FreeBSD.org
-COMMENT=	Cyrus mail server, supporting POP3 and IMAP4 protocols
+COMMENT=	Cyrus mail server, supporting POP3 and IMAP4 protocols ${COMMENT_${FLAVOR}}
+COMMENT_http=	(with HTTP)
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_riscv64=		fails to build: lib/chartable.c: Error 1
+
+FLAVORS=	basic http
+http_PKGNAMESUFFIX=	${CYRUS_IMAPD_VER}-http
+
+CYRUS_IMAPD_VER=	34
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libicuuc.so:devel/icu \
@@ -49,6 +55,9 @@ OPTIONS_DEFINE=		AUTOCREATE BACKUP CLAMAV HTTP IDLED LDAP MURDER \
 			MYSQL NNTP PGSQL REPLICATION SQLITE SQUAT SRS \
 			XAPIAN DOCS
 OPTIONS_DEFAULT=	AUTOCREATE IDLED SQLITE SQUAT SRS
+.if ${FLAVOR:U} == http
+OPTIONS_DEFAULT+=	HTTP
+.endif
 OPTIONS_SUB=		yes
 AUTOCREATE_DESC=	Enable autocreate support
 AUTOCREATE_CONFIGURE_ENABLE=	autocreate
