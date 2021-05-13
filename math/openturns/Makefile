@@ -1,11 +1,7 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16
-PORTREVISION=	4
+DISTVERSION=	1.17
 CATEGORIES=	math
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	aff0d223b2bf21b1dbab72a50b591e0028385f5d.patch:-p1 # unbreak with the latest dlib-cpp-19.22
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Uncertainty treatment library
@@ -14,25 +10,35 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
-		flex:textproc/flex
+		flex:textproc/flex \
+		spectra>0:math/spectra
 LIB_DEPENDS=	libbonmin.so:math/bonmin \
 		libceres.so:math/ceres-solver \
 		libCbc.so:math/cbc \
+		libCgl.so:math/cgl \
+		libClp.so:math/clp \
 		libcminpack.so:math/cminpack \
+		libCoinUtils.so:math/coinutils \
 		libdlib.so:science/dlib-cpp \
+		libgif.so:graphics/giflib \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
 		libhdf5_cpp.so:science/hdf5 \
 		libhmat-oss.so:math/hmat-oss \
 		libipopt.so:math/ipopt \
+		libmpc.so:math/mpc \
+		libmpfr.so:math/mpfr \
 		libnlopt.so:math/nlopt \
 		libopt.so:math/optpp \
+		libOsi.so:math/clp \
+		libpng16.so:graphics/png \
 		libsz.so:science/szip \
 		libtbb.so:devel/onetbb
 
-USES=		bison blaslapack:openblas cmake compiler:c++14-lang eigen:3 gnome localbase:ldflags pkgconfig
+USES=		bison blaslapack:openblas cmake compiler:c++14-lang eigen:3 gnome jpeg localbase:ldflags pkgconfig sqlite xorg
 USE_GITHUB=	yes
 USE_GNOME=	libxml2
+USE_XORG=	ice sm x11 xext
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBLAS_LIBRARIES=${LOCALBASE}/lib/libopenblas.so -DLAPACK_LIBRARIES=${LOCALBASE}/lib/libopenblas.so \
