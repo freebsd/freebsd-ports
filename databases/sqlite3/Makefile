@@ -221,7 +221,7 @@ post-install-TCL-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/sqlite3_analyzer ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/autoconf/tea/doc/${PORTNAME}.n ${STAGEDIR}${PREFIX}/man/mann/${PORTNAME}.tcl${TCL_VER:S/.//g}.n
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${INSTALL_SCRIPT} -d ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${SUB_FILES} ${WRKSRC}/contrib/sqlitecon.tcl ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
