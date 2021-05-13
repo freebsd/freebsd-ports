@@ -1,5 +1,5 @@
 PORTNAME=	libretls
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.3
 CATEGORIES=	security devel
 MASTER_SITES=	https://causal.agency/libretls/
 
