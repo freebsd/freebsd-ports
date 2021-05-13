@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Additional packages recommended for new users:
+- wf-shell (default background/launcher/panel)
+- wcm (GUI settings)
+- wayfire-plugins-extra
+EOM
+}
+]
