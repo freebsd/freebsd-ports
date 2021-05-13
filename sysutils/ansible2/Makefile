@@ -4,7 +4,7 @@ PORTREVISION?=	0
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	2
+PKGNAMESUFFIX?=	2
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Radically simple IT automation
