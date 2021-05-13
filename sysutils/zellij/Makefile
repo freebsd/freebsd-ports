@@ -1,7 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
-PORTREVISION=	1
+DISTVERSION=	0.9.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -218,7 +217,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		vec_map-0.8.2 \
 		version_check-0.9.3 \
 		vte-0.3.3 \
-		vte-0.8.0 \
+		vte-0.10.1 \
 		vte_generate_state_changes-0.1.1 \
 		waker-fn-1.1.0 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
