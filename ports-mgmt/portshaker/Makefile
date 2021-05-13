@@ -1,9 +1,9 @@
 # Created by: Romain Tartiere <romain@blogreen.org>
 
 PORTNAME?=	portshaker
-PORTVERSION=	1.0.18
+PORTVERSION=	1.0.19
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	ports-mgmt
 
 MAINTAINER?=	romain@FreeBSD.org
