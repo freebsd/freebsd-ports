@@ -76,6 +76,46 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fc75570a-b417-11eb-a23d-c7ab331fd711">
+    <topic>Prosody -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>prosody</name>
+	<range><lt>0.11.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Prosody security advisory 2021-05-12 reports:</p>
+	<blockquote cite="https://prosody.im/security/advisory_20210512/">
+	  <p>
+	    This advisory details 5 new security vulnerabilities discovered in the
+	    Prosody.im XMPP server software. All issues are fixed in the 0.11.9
+	    release default configuration.
+	  </p>
+	  <ul>
+	    <li>CVE-2021-32918: DoS via insufficient memory consumption controls</li>
+	    <li>CVE-2021-32920: DoS via repeated TLS renegotiation causing excessive CPU consumption</li>
+	    <li>CVE-2021-32921: Use of timing-dependent string comparison with sensitive values</li>
+	    <li>CVE-2021-32917: Use of mod_proxy65 is unrestricted in default configuration</li>
+	    <li>CVE-2021-32919: Undocumented dialback-without-dialback option insecure</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-32918</cvename>
+      <cvename>CVE-2021-32920</cvename>
+      <cvename>CVE-2021-32921</cvename>
+      <cvename>CVE-2021-32917</cvename>
+      <cvename>CVE-2021-32919</cvename>
+    </references>
+    <dates>
+      <discovery>2021-05-12</discovery>
+      <entry>2021-05-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3e0ca488-b3f6-11eb-a5f7-a0f3c100ae18">
     <topic>ImageMagick6 -- multiple vulnerabilities</topic>
     <affects>
