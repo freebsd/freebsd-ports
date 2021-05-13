@@ -76,13 +76,52 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3e0ca488-b3f6-11eb-a5f7-a0f3c100ae18">
+    <topic>ImageMagick6 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ImageMagick6</name>
+	<name>ImageMagick6-nox11</name>
+	<range><lt>6.9.12.12,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=ImageMagick">
+	  <p>Several vulnerabilities have been discovered in ImageMagick:</p>
+	  <ul>
+	    <li>CVE-2021-20309: A flaw was found in ImageMagick in versions before 6.9.12,
+	    where a division by zero in WaveImage() of MagickCore/visual-effects.c may trigger
+	    undefined behavior via a crafted image file submitted to an application using ImageMagick.</li>
+	    <li>CVE-2021-20176: A divide-by-zero flaw was found in ImageMagick 6.9.11-57 in gem.c.
+	    This flaw allows an attacker who submits a crafted file that is processed by ImageMagick
+	    to trigger undefined behavior through a division by zero.</li>
+	    <li>CVE-2020-29599: ImageMagick before 6.9.11-40  mishandles the -authenticate option,
+	    which allows setting a password for password-protected PDF files.</li>
+	    <li>And maybe some others…</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-29599</cvename>
+      <cvename>CVE-2021-20176</cvename>
+      <cvename>CVE-2021-20309</cvename>
+    </references>
+    <dates>
+      <discovery>2020-12-17</discovery>
+      <entry>2021-05-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a7c60af1-b3f1-11eb-a5f7-a0f3c100ae18">
     <topic>ImageMagick7 -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>ImageMagick7</name>
 	<name>ImageMagick7-nox11</name>
-	<range><lt>7.0.11-12</lt></range>
+	<range><lt>7.0.11.12</lt></range>
       </package>
     </affects>
     <description>
