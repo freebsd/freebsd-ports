@@ -1,6 +1,6 @@
 PORTNAME=	gerbera
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
+DISTVERSION=	1.8.1
 CATEGORIES=	net multimedia
 
 MAINTAINER=	daniel.engberg.lists@pyret.net
