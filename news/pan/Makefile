@@ -24,7 +24,7 @@ USES=		compiler:c++11-lang desktop-file-utils gettext-tools:build \
 		gmake gnome iconv localbase pathfix pkgconfig tar:bzip2
 USE_GNOME=	cairo gdkpixbuf2 intlhack
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-lgnuregex ${ICONV_LIB}
+LDFLAGS+=	${ICONV_LIB}
 INSTALLS_ICONS=	yes
 OPTIONS_DEFINE=		GTKSPELL GNUTLS NLS
 OPTIONS_DEFAULT=	GTKSPELL GNUTLS GTK2
