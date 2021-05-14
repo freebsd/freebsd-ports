@@ -1,7 +1,7 @@
 # Created by: gpalmer@FreeBSD.org
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	9.25
+PORTVERSION=	9.26
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -110,6 +110,7 @@ GDK_PIXBUF_CONFIGURE_ENABLE=	pixbuf
 # enable startup notification
 NOTIFY_CONFIGURE_ENABLE=	startup-notification
 NOTIFY_LIB_DEPENDS=		libstartup-notification-1.so:x11/startup-notification
+NOTIFY_USE=			XORG=xcb
 
 # enable support for 256 colors
 256_COLOR_CONFIGURE_ON=	--enable-256-color
