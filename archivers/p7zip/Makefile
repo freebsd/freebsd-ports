@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src_all
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	File archiver with high compression ratio
 
 LICENSE?=	LGPL21
