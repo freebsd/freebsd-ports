@@ -76,6 +76,109 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="62da9702-b4cc-11eb-b9c9-6cc21735f730">
+    <topic>PostgreSQL server -- two security issues</topic>
+    <affects>
+      <package>
+	<name>postgresql13-server</name>
+	<range><lt>13.3</lt></range>
+      </package>
+      <package>
+	<name>postgresql12-server</name>
+	<range><lt>12.7</lt></range>
+      </package>
+      <package>
+	<name>postgresql11-server</name>
+	<range><lt>11.12</lt></range>
+      </package>
+      <package>
+	<name>postgresql10-server</name>
+	<range><lt>10.17</lt></range>
+      </package>
+      <package>
+	<name>postgresql96-server</name>
+	<range><lt>9.6.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PostgreSQL project reports:</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2021-32028/">
+	  <p>Memory disclosure in INSERT ... ON CONFLICT ... DO UPDATE</p>
+	  <p>
+	    Using an INSERT ... ON CONFLICT ... DO UPDATE command on a
+	    purpose-crafted table, an attacker can read arbitrary bytes of
+	    server memory. In the default configuration, any authenticated
+	    database user can create prerequisite objects and complete this
+	    attack at will. A user lacking the CREATE and TEMPORARY privileges
+	    on all databases and the CREATE privilege on all schemas cannot use
+	    this attack at will..
+	  </p>
+	</blockquote>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2021-32027/">
+	  <p>
+	    Buffer overrun from integer overflow in array subscripting
+	    calculations
+	  </p>
+	  <p>
+	    While modifying certain SQL array values, missing bounds checks let
+	    authenticated database users write arbitrary bytes to a wide area of
+	    server memory.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.postgresql.org/support/security/CVE-2021-32027/</url>
+      <url>https://www.postgresql.org/support/security/CVE-2021-32028/</url>
+    </references>
+    <dates>
+      <discovery>2021-05-13</discovery>
+      <entry>2021-05-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="76e0bb86-b4cb-11eb-b9c9-6cc21735f730">
+    <topic>PostgreSQL -- Memory disclosure in partitioned-table UPDATE ... RETURNING</topic>
+    <affects>
+      <package>
+	<name>postgresql13-server</name>
+	<range><lt>13.3</lt></range>
+      </package>
+      <package>
+	<name>postgresql12-server</name>
+	<range><lt>12.7</lt></range>
+      </package>
+      <package>
+	<name>postgresql11-server</name>
+	<range><lt>11.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PostgreSQL project reports:</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2021-32029/">
+	  <p>
+	    Using an UPDATE ... RETURNING on a purpose-crafted partitioned
+	    table, an attacker can read arbitrary bytes of server memory. In the
+	    default configuration, any authenticated database user can create
+	    prerequisite objects and complete this attack at will. A user
+	    lacking the CREATE and TEMPORARY privileges on all databases and the
+	    CREATE privilege on all schemas typically cannot use this attack at
+	    will.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.postgresql.org/support/security/CVE-2021-32029/</url>
+    </references>
+    <dates>
+      <discovery>2021-05-13</discovery>
+      <entry>2021-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc75570a-b417-11eb-a23d-c7ab331fd711">
     <topic>Prosody -- multiple vulnerabilities</topic>
     <affects>
