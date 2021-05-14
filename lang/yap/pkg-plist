@@ -115,6 +115,15 @@ lib/Yap/pl-minisat.so
 lib/libYap.a
 lib/web/css/dirindex.css
 lib/web/css/openid.css
+%%PORTDOCS%%%%DOCSDIR%%/Artistic
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/yap.html
+%%PORTDOCS%%%%DOCSDIR%%/yap.pdf
+%%PORTDOCS%%%%DOCSDIR%%/changes4.3.html
+%%PORTDOCS%%%%DOCSDIR%%/changes-5.0.html
+%%PORTDOCS%%%%DOCSDIR%%/changes-5.1.html
+%%PORTDOCS%%%%DOCSDIR%%/changes-6.0.html
 %%DATADIR%%/pl/arith.yap
 %%DATADIR%%/pl/arrays.yap
 %%DATADIR%%/pl/attributes.yap
