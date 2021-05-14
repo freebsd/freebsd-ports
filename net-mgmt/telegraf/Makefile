@@ -2,7 +2,7 @@
 
 PORTNAME=	telegraf
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.18.1
+DISTVERSION=	1.18.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -167,10 +167,9 @@ GH_TUPLE=	\
 		googleapis:google-cloud-go:v0.53.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gopcua:opcua:v0.1.13:gopcua_opcua/vendor/github.com/gopcua/opcua \
 		rethinkdb:rethinkdb-go:v3.0.5:gorethink_gorethink/vendor/gopkg.in/gorethink/gorethink.v3 \
-		gorilla:context:v1.1.1:gorilla_context/vendor/github.com/gorilla/context \
-		gorilla:mux:v1.6.2:gorilla_mux/vendor/github.com/gorilla/mux \
+		gorilla:mux:v1.7.3:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
-		gosnmp:gosnmp:v1.30.0:gosnmp_gosnmp/vendor/github.com/gosnmp/gosnmp \
+		gosnmp:gosnmp:v1.31.0:gosnmp_gosnmp/vendor/github.com/gosnmp/gosnmp \
 		gotestyourself:gotest.tools:v2.2.0:gotestyourself_gotest_tools/vendor/gotest.tools \
 		grpc-ecosystem:grpc-gateway:v1.16.0:grpc_ecosystem_grpc_gateway/vendor/github.com/grpc-ecosystem/grpc-gateway \
 		grpc:grpc-go:v1.33.1:grpc_grpc_go/vendor/google.golang.org/grpc \
@@ -183,6 +182,7 @@ GH_TUPLE=	\
 		hashicorp:go-uuid:v1.0.2:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
 		hashicorp:memberlist:v0.1.5:hashicorp_memberlist/vendor/github.com/hashicorp/memberlist \
 		hashicorp:serf:v0.8.1:hashicorp_serf/vendor/github.com/hashicorp/serf \
+		influxdata:apcupsd:694d5caead0e:influxdata_apcupsd/vendor/github.com/mdlayher/apcupsd \
 		influxdata:go-syslog:v2.0.1:influxdata_go_syslog_v2/vendor/github.com/influxdata/go-syslog/v2 \
 		influxdata:tail:03a791b270e4:influxdata_tail/vendor/github.com/influxdata/tail \
 		influxdata:toml:270119a8ce65:influxdata_toml/vendor/github.com/influxdata/toml \
@@ -217,7 +217,6 @@ GH_TUPLE=	\
 		mailru:easyjson:b2ccc519800e:mailru_easyjson/vendor/github.com/mailru/easyjson \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
-		mdlayher:apcupsd:2bf01da7bf1b:mdlayher_apcupsd/vendor/github.com/mdlayher/apcupsd \
 		mdlayher:genetlink:v1.0.0:mdlayher_genetlink/vendor/github.com/mdlayher/genetlink \
 		mdlayher:netlink:v1.1.0:mdlayher_netlink/vendor/github.com/mdlayher/netlink \
 		miekg:dns:v1.0.14:miekg_dns/vendor/github.com/miekg/dns \
