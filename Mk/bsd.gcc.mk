@@ -9,9 +9,6 @@
 # your port/system configuration.  This is the preferred use of USE_GCC.
 # It uses the canonical version of GCC defined in bsd.default-versions.mk.
 #
-# USE_GCC=any is similar, except that it also accepts the old GCC 4.2-
-# based system compiler where still present.
-# 
 # If your port needs a specific (minimum) version of GCC, you can easily
 # specify that with a USE_GCC= statement.  Unless absolutely necessary
 # do so by specifying USE_GCC=X+ which requests at least GCC version X.
@@ -24,11 +21,13 @@
 # If no arguments are specified, GCC is added as both a build dependency
 # and a run time dependency.
 #
+# (USE_GCC=any is deprecated, must not be used for new ports, and should
+# be migrated to USE_GCC=yes or completely removed if possible.)
+#
 #
 # Examples:
 #   USE_GCC=	yes			# port requires a current version of GCC
 #							# as defined in bsd.default-versions.mk.
-#   USE_GCC=	any			# port requires GCC 4.2 or later.
 #   USE_GCC=	9+			# port requires GCC 9 or later.
 #   USE_GCC=	8			# port requires GCC 8.
 #   USE_GCC=	yes:build	# port requires a current version of GCC at
