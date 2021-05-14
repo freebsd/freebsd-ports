@@ -1,23 +1,18 @@
 # Created by: Yinghong Liu <relaxbsd@gmail.com>
 
 PORTNAME=	luminance-hdr
-DISTVERSION=	2.5.1
-PORTREVISION=	16
+DISTVERSION=	2.6.1.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION}
-PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	Complete open source solution for HDR photography
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-
-BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
-LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
-		libImath.so:math/Imath \
+BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3 \
+		${LOCALBASE}/include/eigen3/Eigen/Sparse:math/eigen3
+LIB_DEPENDS=	libImath.so:math/Imath \
 		libtiff.so:graphics/tiff \
 		libraw_r.so:graphics/libraw \
 		libfftw3f.so:math/fftw3-float \
@@ -31,23 +26,40 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 CFLAGS+=	-I${LOCALBASE}/include/Imath
 
 USES=		cmake desktop-file-utils jpeg pkgconfig qt:5 tar:bzip2
-USE_QT=		concurrent core declarative gui location network printsupport \
-		sql svg webchannel webengine widgets xml \
+USE_QT=		concurrent core declarative gui location network \
+		printsupport sql svg widgets xml \
 		buildtools_build linguisttools_build qmake_build
 
-CONFLICTS_INSTALL=	luminance-hdr-[0-9]*
+OPTIONS_DEFINE=	CFITSIO DOCS HELPBROWSER
+OPTIONS_DEFAULT=	CFITSIO HELPBROWSER
 
-OPTIONS_DEFINE=	DOCS
+CFITSIO_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
+
+HELPBROWSER_DESC=	Build help browser (requires QtWebEngine)
+HELPBROWSER_USE=	QT=webchannel,webengine
+HELPBROWSER_CMAKE_ON=	-DWITH_HELPBROWSER:BOOL=ON
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MHELPBROWSER}
+DEPRECATED=	Uses EoL Python 2.7 via www/qt5-webengine
+EXPIRATION_DATE=	2021-06-23
+.endif
 
 post-patch:
 # Do not install yet another copy of GPL (we use license framework instead)
 # and fix installation path for docs (but not for internal help files)
 	@${REINPLACE_CMD} -e '/LICENSE/d ; \
-		/#info files/s,share/luminance-hdr,${DOCSDIR_REL},' \
+		/#info files/s,share/luminance-hdr/doc,${DOCSDIR_REL},' \
 			${WRKSRC}/CMakeLists.txt
 # Point to the right location for program where to look for GPL text
 	@${REINPLACE_CMD} -e 's,LICENSE,${LICENSE}, ; \
-		s,share/doc/luminance-hdr,share/licenses/${PKGNAME},' \
+		s,share/luminance-hdr/doc,share/licenses/${PKGNAME},' \
 			${WRKSRC}/src/UI/UMessageBox.cpp
+
+post-patch-HELPBROWSER-off:
+	@${REINPLACE_CMD} -e 's,name="documentationAction">,& \
+		<property name="enabled"><bool>false</bool></property>,' \
+			${WRKSRC}/src/MainWindow/MainWindow.ui
 
 .include <bsd.port.mk>
