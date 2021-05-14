@@ -4,18 +4,21 @@ arm-unknown-linux-gnu-eabhif or aarch64-unknown-linux-gnu.
 This makes sure we are building with the system OpenSSL instead of
 the bundled one.
 
---- Cargo.toml.orig	2021-03-09 15:27:47 UTC
+--- Cargo.toml.orig	2021-05-14 20:19:41 UTC
 +++ Cargo.toml
-@@ -22,12 +22,3 @@ failure = "0.1.8"
- rayon = "1.5.0"
- config = { version = "0.10.1", features = ["yaml", "json", "toml", "hjson", "ini"] }
+@@ -23,15 +23,6 @@ rayon = "1.5.0"
+ config = { version = "0.11.0", features = ["yaml", "json", "toml", "hjson", "ini"] }
  headless_chrome = { git = "https://github.com/Edu4rdSHL/rust-headless-chrome" }
--
+ 
 -[target.arm-unknown-linux-gnueabihf.dependencies]
--openssl = { version = "0.10.32", features = ["vendored"] }
+-openssl = { version = "0.10.34", features = ["vendored"] }
 -
 -[target.aarch64-unknown-linux-gnu.dependencies]
--openssl = { version = "0.10.32", features = ["vendored"] }
+-openssl = { version = "0.10.34", features = ["vendored"] }
 -
 -[target.armv7-unknown-linux-gnueabihf.dependencies]
--openssl = { version = "0.10.32", features = ["vendored"] }
+-openssl = { version = "0.10.34", features = ["vendored"] }
+-
+ [profile.release]
+ opt-level = 'z'
+ lto = true
