@@ -125,6 +125,7 @@ share/metainfo/texstudio.appdata.xml
 %%DATADIR%%/texstudio64x64.png
 %%DATADIR%%/texstudio_ar.qm
 %%DATADIR%%/texstudio_br.qm
+%%DATADIR%%/texstudio_ca.qm
 %%DATADIR%%/texstudio_cs.qm
 %%DATADIR%%/texstudio_de.qm
 %%DATADIR%%/texstudio_el.qm
@@ -133,10 +134,12 @@ share/metainfo/texstudio.appdata.xml
 %%DATADIR%%/texstudio_fr.qm
 %%DATADIR%%/texstudio_hu.qm
 %%DATADIR%%/texstudio_id_ID.qm
+%%DATADIR%%/texstudio_ie.qm
 %%DATADIR%%/texstudio_it.qm
 %%DATADIR%%/texstudio_ja.qm
 %%DATADIR%%/texstudio_ko.qm
 %%DATADIR%%/texstudio_ko_KR.qm
+%%DATADIR%%/texstudio_nb_NO.qm
 %%DATADIR%%/texstudio_nl.qm
 %%DATADIR%%/texstudio_pl.qm
 %%DATADIR%%/texstudio_pt.qm
