@@ -12,6 +12,8 @@ COMMENT=	SSL-capable man-in-the-middle proxy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		incorrect depends: depends on package: py38-hyperframe>=5.1.0<6 - not found
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.2:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}blinker>=1.4:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=2015.11.20.1:security/py-certifi@${PY_FLAVOR} \
