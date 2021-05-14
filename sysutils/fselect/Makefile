@@ -1,6 +1,5 @@
 PORTNAME=	fselect
-DISTVERSION=	0.7.4
-PORTREVISION=	1
+DISTVERSION=	0.7.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -15,11 +14,10 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	jhspetersson
 
-CARGO_CRATES=	adler32-1.2.0 \
+CARGO_CRATES=	adler-1.0.2 \
 		ahash-0.4.7 \
-		aho-corasick-0.7.15 \
+		aho-corasick-0.7.18 \
 		ansi_term-0.12.1 \
-		app_dirs-1.2.1 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		base64-0.13.0 \
@@ -28,7 +26,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		bitstream-io-1.0.0 \
 		block-buffer-0.9.0 \
 		block-padding-0.2.1 \
-		bstr-0.2.15 \
+		bstr-0.2.16 \
 		bytecount-0.6.2 \
 		byteorder-1.4.3 \
 		bzip2-0.3.3 \
@@ -39,19 +37,21 @@ CARGO_CRATES=	adler32-1.2.0 \
 		chrono-0.4.19 \
 		chrono-english-0.1.6 \
 		cloudabi-0.0.3 \
-		cpuid-bool-0.1.2 \
+		cpufeatures-0.1.1 \
 		crc32fast-1.2.1 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
 		digest-0.9.0 \
+		directories-3.0.2 \
 		dirs-next-2.0.0 \
+		dirs-sys-0.3.6 \
 		dirs-sys-next-0.1.2 \
 		either-1.6.1 \
 		endian-type-0.1.2 \
 		env_logger-0.8.3 \
 		fallible_collections-0.3.1 \
 		fixedbitset-0.2.0 \
-		flate2-1.0.14 \
+		flate2-1.0.20 \
 		fnv-1.0.7 \
 		fs2-0.4.3 \
 		generic-array-0.14.4 \
@@ -68,14 +68,14 @@ CARGO_CRATES=	adler32-1.2.0 \
 		kamadak-exif-0.5.4 \
 		keccak-0.1.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.92 \
+		libc-0.2.94 \
 		lock_api-0.3.4 \
 		log-0.4.14 \
 		lscolors-0.7.1 \
 		matroska-0.5.5 \
 		memchr-1.0.2 \
-		memchr-2.3.4 \
-		miniz_oxide-0.3.7 \
+		memchr-2.4.0 \
+		miniz_oxide-0.4.4 \
 		mp3-metadata-0.3.3 \
 		mp4parse-0.11.5 \
 		mutate_once-0.1.1 \
@@ -84,7 +84,6 @@ CARGO_CRATES=	adler32-1.2.0 \
 		nom-3.2.1 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
-		ole32-sys-0.2.0 \
 		opaque-debug-0.3.0 \
 		parking_lot-0.10.2 \
 		parking_lot_core-0.7.2 \
@@ -109,11 +108,11 @@ CARGO_CRATES=	adler32-1.2.0 \
 		rand_hc-0.3.0 \
 		rand_pcg-0.2.1 \
 		redox_syscall-0.1.57 \
-		redox_syscall-0.2.5 \
+		redox_syscall-0.2.8 \
 		redox_users-0.4.0 \
-		regex-1.4.5 \
+		regex-1.5.4 \
 		regex-automata-0.1.9 \
-		regex-syntax-0.6.23 \
+		regex-syntax-0.6.25 \
 		rustyline-8.0.0 \
 		ryu-1.0.5 \
 		scanlex-0.1.4 \
@@ -121,14 +120,13 @@ CARGO_CRATES=	adler32-1.2.0 \
 		serde-1.0.125 \
 		serde_derive-1.0.125 \
 		serde_json-1.0.64 \
-		sha-1-0.9.4 \
-		sha2-0.9.3 \
+		sha-1-0.9.5 \
+		sha2-0.9.4 \
 		sha3-0.9.1 \
-		shell32-sys-0.1.2 \
 		siphasher-0.3.5 \
 		smallvec-1.6.1 \
 		static_assertions-1.1.0 \
-		syn-1.0.68 \
+		syn-1.0.72 \
 		termcolor-1.1.2 \
 		thiserror-1.0.24 \
 		thiserror-impl-1.0.24 \
@@ -138,22 +136,19 @@ CARGO_CRATES=	adler32-1.2.0 \
 		typenum-1.13.0 \
 		unicode-segmentation-1.7.1 \
 		unicode-width-0.1.8 \
-		unicode-xid-0.2.1 \
+		unicode-xid-0.2.2 \
 		users-0.11.0 \
 		utf8parse-0.2.0 \
 		version_check-0.9.3 \
 		wana_kana-2.0.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
-		winapi-0.2.8 \
 		winapi-0.3.9 \
-		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		xattr-0.2.2 \
-		xdg-2.2.0 \
-		zip-0.5.11
+		zip-0.5.12
 CARGO_FEATURES=	--no-default-features
 
 PLIST_FILES=	bin/${PORTNAME} \
