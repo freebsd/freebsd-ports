@@ -9,14 +9,27 @@ CMake Error at externals/CMakeLists.txt:54 (add_subdirectory):
 
   does not contain a CMakeLists.txt file.
 
---- CMakeLists.txt.orig	2021-05-10 03:15:00 UTC
+--- CMakeLists.txt.orig	2021-05-19 22:47:48 UTC
 +++ CMakeLists.txt
-@@ -293,7 +293,7 @@ if (ENABLE_SDL2)
- endif()
+@@ -297,7 +297,7 @@ endif()
  
  if (NOT YUZU_USE_BUNDLED_SDL2)
--        find_package(SDL2 2.0.15 QUIET)
-+        find_package(SDL2 2.0.12 QUIET)
+         if (YUZU_ALLOW_SYSTEM_SDL2)
+-            find_package(SDL2 2.0.15 QUIET)
++            find_package(SDL2 2.0.12 QUIET)
  
-     if (TRUE)
-         if (SDL2_FOUND)
+         if (TRUE)
+             if (SDL2_FOUND)
+--- src/input_common/sdl/sdl_impl.cpp.orig	2021-05-19 22:47:48 UTC
++++ src/input_common/sdl/sdl_impl.cpp
+@@ -796,8 +796,10 @@ SDLState::SDLState() {
+     RegisterFactory<MotionDevice>("sdl", motion_factory);
+ 
+     // Enable HIDAPI rumble. This prevents SDL from disabling motion on PS4 and PS5 controllers
++#ifdef SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE
+     SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_PS4_RUMBLE, "1");
+     SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE, "1");
++#endif
+ 
+     // Tell SDL2 to use the hidapi driver. This will allow joycons to be detected as a
+     // GameController and not a generic one
