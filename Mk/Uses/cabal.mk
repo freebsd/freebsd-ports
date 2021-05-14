@@ -148,9 +148,9 @@ cabal-extract-deps:
 	cd ${WRKSRC} && ${SETENV} HOME=${CABAL_HOME} hpack
 .  endif
 	cd ${WRKSRC} && \
-		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-configure --flags="${CABAL_FLAGS}" ${CONFIGURE_ARGS}
+		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-configure --disable-benchmarks --disable-tests --flags="${CABAL_FLAGS}" ${CONFIGURE_ARGS}
 	cd ${WRKSRC} && \
-		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-build --dependencies-only
+		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-build --disable-benchmarks --disable-tests --dependencies-only ${BUILD_ARGS}
 
 # Generates USE_CABAL= ... line ready to be pasted into the port based on artifacts of cabal-extract-deps.
 make-use-cabal:
