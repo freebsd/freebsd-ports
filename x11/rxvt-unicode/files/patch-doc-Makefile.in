@@ -1,10 +1,13 @@
---- doc/Makefile.in.orig	2010-09-26 22:34:30.000000000 +0200
-+++ doc/Makefile.in	2010-09-26 22:33:53.000000000 +0200
-@@ -94,6 +94,7 @@
+--- doc/Makefile.in.orig	2014-12-31 14:09:25 UTC
++++ doc/Makefile.in
+@@ -96,9 +96,9 @@ install: all
  	$(INSTALL) -d $(DESTDIR)$(man7dir)
  	$(INSTALL_DATA) rxvt.1.man  $(DESTDIR)$(man1dir)/$(RXVTNAME).$(man1ext)
  	$(INSTALL_DATA) rxvtc.1.man $(DESTDIR)$(man1dir)/$(RXVTNAME)c.$(man1ext)
 +	$(INSTALL_DATA) urxvtcd.1.man $(DESTDIR)$(man1dir)/$(RXVTNAME)cd.$(man1ext)
  	$(INSTALL_DATA) rxvtd.1.man $(DESTDIR)$(man1dir)/$(RXVTNAME)d.$(man1ext)
  	$(INSTALL_DATA) rxvt.7.man  $(DESTDIR)$(man7dir)/$(RXVTNAME).$(man7ext)
- @IF_PERL@	$(INSTALL) -d $(DESTDIR)$(man3dir)
+-	@TIC@ $(srcdir)/etc/rxvt-unicode.terminfo
+ 
+ distdepend: alldoc
+ 

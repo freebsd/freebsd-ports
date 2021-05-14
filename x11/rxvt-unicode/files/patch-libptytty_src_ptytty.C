@@ -1,5 +1,5 @@
---- libptytty/src/ptytty.C.orig	2016-07-22 21:10:56.246647000 +0300
-+++ libptytty/src/ptytty.C	2016-07-22 21:33:18.005377000 +0300
+--- libptytty/src/ptytty.C.orig	2015-05-11 22:24:03 UTC
++++ libptytty/src/ptytty.C
 @@ -56,6 +56,11 @@
  # define O_NOCTTY 0
  #endif
@@ -12,7 +12,7 @@
  /////////////////////////////////////////////////////////////////////////////
  
  /* ------------------------------------------------------------------------- *
-@@ -395,7 +400,17 @@
+@@ -395,7 +400,17 @@ ptytty_unix::get ()
    int fd_stdin = dup (STDIN_FILENO);
    dup2 (tty, STDIN_FILENO);
  

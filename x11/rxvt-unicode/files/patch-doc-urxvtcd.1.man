@@ -1,5 +1,5 @@
---- doc/urxvtcd.1.man.orig	2010-09-26 22:16:01.000000000 +0200
-+++ doc/urxvtcd.1.man	2010-09-26 22:16:01.000000000 +0200
+--- doc/urxvtcd.1.man.orig	2021-05-14 16:08:01 UTC
++++ doc/urxvtcd.1.man
 @@ -0,0 +1,23 @@
 +.TH rxvt-unicode 1 "2006-04-27"
 +.SH NAME

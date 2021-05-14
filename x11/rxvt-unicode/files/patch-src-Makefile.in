@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2013-10-28 15:08:32.000000000 +0100
-+++ src/Makefile.in	2013-10-30 22:19:17.000000000 +0100
-@@ -14,7 +14,8 @@
+--- src/Makefile.in.orig	2021-05-14 13:52:29 UTC
++++ src/Makefile.in
+@@ -14,7 +14,8 @@ PODOPTS = quotes => q<"> , center => q<RXVT-UNICODE>, 
  CXX = @CXX@
  PERL = @PERL@
  INSTALL = @INSTALL@
@@ -10,19 +10,19 @@
  INSTALL_DATA = @INSTALL@ -m 644
  CXXFLAGS = @CXXFLAGS@
  CPPFLAGS = @CPPFLAGS@
-@@ -46,6 +47,7 @@
+@@ -46,6 +47,7 @@ COMMON_DAEMON = rxvtdaemon.o
  
  RXVT_BINNAME=$(DESTDIR)$(bindir)/$(RXVTNAME)$(EXEEXT)
  RXVTC_BINNAME=$(DESTDIR)$(bindir)/$(RXVTNAME)c$(EXEEXT)
 +RXVTCD_BINNAME=$(DESTDIR)$(bindir)/$(RXVTNAME)cd$(EXEEXT)
  RXVTD_BINNAME=$(DESTDIR)$(bindir)/$(RXVTNAME)d$(EXEEXT)
+ RCLOCK_BINNAME=$(DESTDIR)$(bindir)/urclock$(EXEEXT)
  
- #
-@@ -128,6 +130,7 @@
+@@ -130,6 +132,7 @@ install-bin: allbin
  	$(INSTALL) -d $(DESTDIR)$(bindir)
  	$(INSTALL_PROGRAM) rxvt  $(RXVT_BINNAME)
  	$(INSTALL_PROGRAM) rxvtc $(RXVTC_BINNAME)
 +	$(INSTALL_SCRIPT) urxvtcd $(RXVTCD_BINNAME)
  	$(INSTALL_PROGRAM) rxvtd $(RXVTD_BINNAME)
+ 	$(INSTALL_PROGRAM) rclock $(RCLOCK_BINNAME)
  
- install: install-bin install-perl

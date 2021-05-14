@@ -1,8 +1,7 @@
 # Created by: gpalmer@FreeBSD.org
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	9.22
-PORTREVISION=	4
+PORTVERSION=	9.25
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -21,7 +20,6 @@ USE_XORG=		x11 xft xmu xpm xrender xt
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
 LIBS+=			-lutil
-CONFIGURE_ENV=		TIC=${LOCALBASE}/bin/tic
 CONFIGURE_ARGS=		--enable-everything --with-term=rxvt
 CPE_VENDOR=		marc_lehmann
 
