@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.55.1
 CATEGORIES=	net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brad@facefault.org
 COMMENT=	Sync files to and from various cloud services
 
 LICENSE=	MIT
