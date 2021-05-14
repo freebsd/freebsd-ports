@@ -5,7 +5,7 @@ PORTVERSION=	2.12.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Produce PDF from scanned documents
 
 LICENSE=	GPLv3
