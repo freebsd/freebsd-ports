@@ -47,6 +47,7 @@ powerpc64_elfv1_BUILD_DEPENDS=	powerpc64-gcc9>0:devel/freebsd-gcc9@powerpc64
 powerpc64_elfv2_PKGNAMEPREFIX=	powerpc64-elfv2-
 powerpc64le_PKGNAMEPREFIX=	powerpc64le-
 powerpc_PKGNAMEPREFIX=		powerpc-
+powerpc_BUILD_DEPENDS=		powerpc-binutils>0:devel/binutils@powerpc
 
 USES=		ninja:build perl5 python:3.6+,build tar:xz
 .if ${FLAVOR} == powerpc64_elfv1
@@ -213,6 +214,12 @@ do-configure:
 		> ${WRKDIR}/${_RUST_TARGET}-cc
 	@${PRINTF} '#!/bin/sh\nexec ${CXX} --sysroot=${WRKDIR} -mabi=elfv2 --target=${_RUST_LLVM_TRIPLE} -stdlib=libc++ "$$@"\n' \
 		> ${WRKDIR}/${_RUST_TARGET}-c++
+.elif ${FLAVOR} == powerpc
+	@bfd="$$(${ECHO_CMD} ${LOCALBASE}/bin/${_RUST_TARGET}*[0-9]-ld.bfd)"; \
+		${PRINTF} '#!/bin/sh\nexec ${CC} --sysroot=${WRKDIR} --target=${_RUST_LLVM_TRIPLE} -Wno-unused-command-line-argument -fuse-ld=%s "$$@"\n' "$${bfd}" \
+			> ${WRKDIR}/${_RUST_TARGET}-cc; \
+		${PRINTF} '#!/bin/sh\nexec ${CXX} --sysroot=${WRKDIR} --target=${_RUST_LLVM_TRIPLE} -Wno-unused-command-line-argument -fuse-ld=%s "$$@"\n' "$${bfd}" \
+			> ${WRKDIR}/${_RUST_TARGET}-c++
 .else
 	@${PRINTF} '#!/bin/sh\nexec ${CC} --sysroot=${WRKDIR} --target=${_RUST_LLVM_TRIPLE} "$$@"\n' \
 		> ${WRKDIR}/${_RUST_TARGET}-cc
