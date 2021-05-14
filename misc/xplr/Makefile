@@ -1,6 +1,6 @@
 PORTNAME=	xplr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.4
+DISTVERSION=	0.9.0
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -18,7 +18,6 @@ CARGO_CRATES=	anyhow-1.0.40 \
 		arrayvec-0.5.2 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
-		base-x-0.2.8 \
 		base64-0.13.0 \
 		bitflags-1.2.1 \
 		blake2b_simd-0.5.11 \
@@ -30,12 +29,9 @@ CARGO_CRATES=	anyhow-1.0.40 \
 		byteorder-1.4.3 \
 		cassowary-0.3.0 \
 		cast-0.2.3 \
-		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		clap-2.33.3 \
-		colored-2.0.0 \
-		const_fn-0.4.6 \
 		constant_time_eq-0.1.5 \
 		criterion-0.3.4 \
 		criterion-plot-0.4.3 \
@@ -47,25 +43,12 @@ CARGO_CRATES=	anyhow-1.0.40 \
 		crossterm_winapi-0.6.2 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
-		darling-0.10.2 \
-		darling_core-0.10.2 \
-		darling_macro-0.10.2 \
-		derive-new-0.5.9 \
-		derive_builder-0.9.0 \
-		derive_builder_core-0.9.0 \
 		digest-0.8.1 \
 		dirs-3.0.1 \
 		dirs-sys-0.3.5 \
-		discard-1.0.4 \
 		dtoa-0.4.8 \
 		either-1.6.1 \
 		fake-simd-0.1.2 \
-		filetime-0.2.14 \
-		fnv-1.0.7 \
-		fsevent-0.4.0 \
-		fsevent-sys-2.0.1 \
-		fuchsia-zircon-0.3.3 \
-		fuchsia-zircon-sys-0.3.3 \
 		generic-array-0.12.4 \
 		getrandom-0.1.16 \
 		half-1.7.1 \
@@ -73,19 +56,13 @@ CARGO_CRATES=	anyhow-1.0.40 \
 		hashbrown-0.9.1 \
 		hermit-abi-0.1.18 \
 		humansize-1.1.0 \
-		ident_case-1.0.1 \
 		indexmap-1.6.2 \
-		inotify-0.7.1 \
-		inotify-sys-0.1.5 \
 		instant-0.1.9 \
-		iovec-0.1.4 \
 		itertools-0.9.0 \
 		itertools-0.10.0 \
 		itoa-0.4.7 \
 		js-sys-0.3.50 \
-		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
-		lazycell-1.3.0 \
 		libc-0.2.92 \
 		linked-hash-map-0.5.4 \
 		lock_api-0.4.2 \
@@ -95,14 +72,9 @@ CARGO_CRATES=	anyhow-1.0.40 \
 		memoffset-0.6.3 \
 		mime-0.3.16 \
 		mime_guess-2.0.3 \
-		mio-0.6.23 \
 		mio-0.7.11 \
-		mio-extras-2.0.6 \
-		miow-0.2.2 \
 		miow-0.3.7 \
 		natord-1.0.9 \
-		net2-0.2.37 \
-		notify-4.0.15 \
 		ntapi-0.3.6 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
@@ -119,7 +91,6 @@ CARGO_CRATES=	anyhow-1.0.40 \
 		plotters-0.3.0 \
 		plotters-backend-0.3.0 \
 		plotters-svg-0.3.0 \
-		proc-macro-hack-0.5.19 \
 		proc-macro2-1.0.26 \
 		quick-error-2.0.0 \
 		quote-1.0.9 \
@@ -132,7 +103,6 @@ CARGO_CRATES=	anyhow-1.0.40 \
 		regex-1.4.5 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.23 \
-		rspec-1.0.0 \
 		rust-argon2-0.8.3 \
 		rustc_version-0.2.3 \
 		ryu-1.0.5 \
@@ -146,24 +116,13 @@ CARGO_CRATES=	anyhow-1.0.40 \
 		serde_json-1.0.64 \
 		serde_yaml-0.8.17 \
 		sha-1-0.8.2 \
-		sha1-0.6.0 \
 		signal-hook-0.1.17 \
 		signal-hook-registry-1.3.0 \
-		slab-0.4.2 \
 		smallvec-1.6.1 \
-		standback-0.2.17 \
-		stdweb-0.4.20 \
-		stdweb-derive-0.5.3 \
-		stdweb-internal-macros-0.2.9 \
-		stdweb-internal-runtime-0.1.5 \
-		strsim-0.9.3 \
 		syn-1.0.68 \
 		termion-1.5.6 \
 		textwrap-0.11.0 \
 		time-0.1.44 \
-		time-0.2.26 \
-		time-macros-0.1.1 \
-		time-macros-impl-0.1.1 \
 		tinytemplate-1.2.1 \
 		tui-0.14.0 \
 		typenum-1.13.0 \
@@ -182,13 +141,10 @@ CARGO_CRATES=	anyhow-1.0.40 \
 		wasm-bindgen-macro-support-0.2.73 \
 		wasm-bindgen-shared-0.2.73 \
 		web-sys-0.3.50 \
-		winapi-0.2.8 \
 		winapi-0.3.9 \
-		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		ws2_32-sys-0.2.1 \
 		yaml-rust-0.4.5
 
 PORTDOCS=	CODE_OF_CONDUCT.md README.md RELEASE.md
