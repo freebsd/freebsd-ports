@@ -1,5 +1,5 @@
 PORTNAME=	gpsprune
-PORTVERSION=	20.3
+PORTVERSION=	20.4
 CATEGORIES=	astro java
 MASTER_SITES=	http://activityworkshop.net/software/${PORTNAME}/ \
 		http://mirror.amdmi3.ru/distfiles/
