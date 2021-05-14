@@ -1913,6 +1913,7 @@
     SUBDIR += xhtml1-xsd
     SUBDIR += xincluder
     SUBDIR += xlhtml
+    SUBDIR += xlnt
     SUBDIR += xlreader
     SUBDIR += xml-commons
     SUBDIR += xml-format
