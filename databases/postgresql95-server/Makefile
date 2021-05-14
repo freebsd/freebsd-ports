@@ -23,5 +23,8 @@ ICU_PATCHFILE=	pg-954-icu-2016-08-10.diff.gz
 PG_USER?=	pgsql
 PG_GROUP?=	pgsql
 PG_UID?=	70
+
+DEPRECATED=	PostgreSQL-9.5 has reached end-of-life
+EXPIRATION_DATE=2021-06-13
  
 .include "${.CURDIR}/../postgresql13-server/Makefile"
