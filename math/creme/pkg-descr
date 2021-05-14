@@ -1,0 +1,10 @@
+Creme is an implementation of the randomized thermal relaxation method to find
+a feasible solution of the Maximum Feasible Subsystem (MaxFS) problem. The MaxFS
+problem consists, given a Linear Programming problem
+
+A x <= b,
+
+generally infeasible, in finding a feasible subsystem containing a maximum
+number of inequalities.
+
+WWW: https://github.com/coin-or/Creme

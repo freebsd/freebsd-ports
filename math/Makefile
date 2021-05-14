@@ -216,6 +216,7 @@
     SUBDIR += couenne
     SUBDIR += coxeter3
     SUBDIR += cppad
+    SUBDIR += creme
     SUBDIR += crlibm
     SUBDIR += cryptominisat
     SUBDIR += csdp
