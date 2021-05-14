@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-locale-prefix=${PREFIX}/share/locale \
-		--disable-gome
+		--disable-gnome
 
 OPTIONS_DEFINE=		PGPLOT OPENGL
 OPTIONS_DEFAULT=	PGPLOT OPENGL
