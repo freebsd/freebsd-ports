@@ -1,7 +1,6 @@
 PORTNAME=	k6
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.1
-PORTREVISION=	1
+DISTVERSION=	0.32.0
 CATEGORIES=	net
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -15,7 +14,7 @@ USES=		go:modules
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
 _BUILD_HASH=	e9d8349
 
-GO_MODULE=	github.com/loadimpact/${PORTNAME}
+GO_MODULE=	github.com/k6io/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
 		-X github.com/${GH_ACCOUNT}/${PORTNAME}/lib/consts.VersionDetails=${_BUILD_DATE}/${_BUILD_HASH}"
