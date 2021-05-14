@@ -140,11 +140,11 @@ post-patch:
 .if ${FLAVOR} == powerpc64_elfv1
 	@${REINPLACE_CMD} -e 's,"c++","stdc++",g' \
 		${WRKSRC}/compiler/rustc_llvm/build.rs
-.endif
 	@${REINPLACE_CMD} -e 's,%CC%,${CC},g' \
 		-e 's,%WRKDIR%,${WRKDIR},g' \
 		${WRKSRC}/compiler/rustc_llvm/build.rs \
 		${WRKSRC}/src/bootstrap/native.rs
+.endif
 
 do-configure:
 # Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64

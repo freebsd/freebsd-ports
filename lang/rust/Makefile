@@ -124,10 +124,15 @@ post-patch:
 # Disable vendor checksums
 	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
 		${CARGO_VENDOR_DIR}/*/.cargo-checksum.json
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1 && ${LOCALBASE} != /usr/local
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
+	@${REINPLACE_CMD} 's,%CC%,${CC},g' \
+		${WRKSRC}/compiler/rustc_llvm/build.rs \
+		${WRKSRC}/src/bootstrap/native.rs
+.if ${LOCALBASE} != /usr/local
 	@${REINPLACE_CMD} 's,/usr/local/,${LOCALBASE}/,g' \
 		${WRKSRC}/compiler/rustc_llvm/build.rs \
 		${WRKSRC}/src/bootstrap/native.rs
+.endif
 .endif
 
 do-configure:
@@ -210,12 +215,6 @@ do-configure:
 # Don't abort if optional tools fail to build
 	@${ECHO_CMD} 'missing-tools=true' >> ${WRKSRC}/config.toml
 .endif
-	@${REINPLACE_CMD} 's,%CC%,${CC},g' \
-		${WRKSRC}/src/bootstrap/native.rs
-# this reinplace_cmd is used for ppc64-elfv1, don't remove it
-# even if sed_checked.sh says it's unused
-	@${REINPLACE_CMD} 's,%CC%,${CC},g' \
-		${WRKSRC}/compiler/rustc_llvm/build.rs
 
 do-build:
 	@cd ${WRKSRC} && \
