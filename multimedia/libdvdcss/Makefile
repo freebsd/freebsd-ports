@@ -1,8 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	libdvdcss
-DISTVERSION=	1.4.2
-PORTREVISION=	2
+DISTVERSION=	1.4.3
 CATEGORIES=	multimedia
 MASTER_SITES=	https://download.videolan.org/pub/${PORTNAME}/${DISTVERSION}/
 
