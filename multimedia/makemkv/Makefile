@@ -32,7 +32,7 @@ LICENSE_PERMS_MAKEMKV=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell \
 LICENSE_PERMS_FDK=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell \
 			auto-accept
 LICENSE_DISTFILES_FDK=	fdk-aac-${FDKAACVERSION}.tar.gz
-LICENSE_DISTFILES_LGPL21+ =	ffmpeg-${FFMPEGVERSION}.tar.bz2
+LICENSE_DISTFILES_LGPL21+=	ffmpeg-${FFMPEGVERSION}.tar.bz2
 LICENSE_DISTFILES_OpenSSL=	openssl-${OPENSSLFULLVER}.tar.gz
 LICENSE_DISTFILES_MAKEMKV=	makemkv-bin-${PORTVERSION}.tar.gz \
 				makemkv-oss-${PORTVERSION}.tar.gz
