@@ -1,0 +1,12 @@
+This project an open-source implementation of VBAN protocol.  VBAN is a
+simple audio over UDP protocol proposed by VB-Audio.  It is composed of
+several command-line tools allowing to stream audio coming from audio
+backend interfaces to VBAN stream (vban_emitter) or play incoming VBAN
+stream to audio backend interfaces (vban_receptor), or send text over
+the VBAN protocol (vban_sendtext).
+
+ALSA, Jack, and PulseAudio audio backends have been implemented.  FIFO
+(pipe) output is also available, to allow chaining command-line tools,
+and a file output too (for writing raw PCM data).
+
+WWW: https://github.com/quiniouben/vban

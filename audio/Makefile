@@ -806,6 +806,7 @@
     SUBDIR += umodplayer
     SUBDIR += umurmur
     SUBDIR += vamp-plugin-sdk
+    SUBDIR += vban
     SUBDIR += vgmplay
     SUBDIR += vimpc
     SUBDIR += virtual_oss
