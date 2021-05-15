@@ -1,6 +1,5 @@
 PORTNAME=	ducc0
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+DISTVERSION=	0.10.0
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,8 +9,6 @@ COMMENT=	Distinctly Useful Code Collection (DUCC)
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_i386=	fatal error: use of undeclared identifier '_pdep_u64'; did you mean '_pdep_u32'? (author notified via e-mail on 2021-05-02)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR}
 
