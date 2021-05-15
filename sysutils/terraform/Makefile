@@ -2,6 +2,7 @@ PORTNAME=	terraform
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.15.3
 CATEGORIES=	sysutils
+MASTER_SITES=	https://people.freebsd.org/~0mp/distfiles/:tencentcloud_tencentcloud_sdk_go
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Provides a common configuration to launch infrastructure
