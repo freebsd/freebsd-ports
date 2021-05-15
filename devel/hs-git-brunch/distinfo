@@ -1,6 +1,6 @@
-TIMESTAMP = 1620124619
-SHA256 (cabal/git-brunch-1.4.4.0.tar.gz) = b1de8be5d51f4bc8b95f26981acb029b6cbf0d9c68f114bacd2dae283a14424e
-SIZE (cabal/git-brunch-1.4.4.0.tar.gz) = 8806
+TIMESTAMP = 1621104982
+SHA256 (cabal/git-brunch-1.5.0.0.tar.gz) = 247bd2dc17ffaaad8bbd62fe5023c99ebf6bfa41c489507397870cc8ca812fd3
+SIZE (cabal/git-brunch-1.5.0.0.tar.gz) = 8949
 SHA256 (cabal/HUnit-1.6.2.0/HUnit-1.6.2.0.tar.gz) = b0b7538871ffc058486fc00740886d2f3172f8fa6869936bfe83a5e10bd744ab
 SIZE (cabal/HUnit-1.6.2.0/HUnit-1.6.2.0.tar.gz) = 21179
 SHA256 (cabal/QuickCheck-2.14.2/QuickCheck-2.14.2.tar.gz) = d87b6c85696b601175274361fa62217894401e401e150c3c5d4013ac53cd36f3

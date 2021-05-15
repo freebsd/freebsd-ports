@@ -1,5 +1,5 @@
 PORTNAME=	git-brunch
-PORTVERSION=	1.4.4.0
+PORTVERSION=	1.5.0.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
