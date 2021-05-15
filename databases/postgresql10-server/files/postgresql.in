@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: postgresql
-# REQUIRE: sshd
+# REQUIRE: SERVERS
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable PostgreSQL:
@@ -11,7 +11,7 @@
 #  postgresql_data="/var/db/%%PG_USER%%/data10"
 #  postgresql_flags="-w -s -m fast"
 #  postgresql_initdb_flags="--encoding=utf-8 --lc-collate=C"
-#  postgresql_class="default"
+#  postgresql_login_class="default"
 #  postgresql_profiles=""
 #
 # See %%PREFIX%%/share/doc/postgresql/README-server for more info
@@ -33,7 +33,7 @@ postgresql_enable=${postgresql_enable:-"NO"}
 postgresql_flags=${postgresql_flags:-"-w -s -m fast"}
 postgresql_user=${postgresql_user:-"%%PG_USER%%"}
 eval postgresql_data=${postgresql_data:-"~${postgresql_user}/data10"}
-postgresql_class=${postgresql_class:-"default"}
+postgresql_login_class=${postgresql_login_class:-"default"}
 postgresql_initdb_flags=${postgresql_initdb_flags:-"--encoding=utf-8 --lc-collate=C"}
 
 name=postgresql
@@ -109,7 +109,7 @@ postgresql_command()
 
 postgresql_initdb()
 {
-    ${su_cmd} -l -c ${postgresql_class} ${postgresql_user} -c "exec %%PREFIX%%/bin/initdb ${postgresql_initdb_flags} -D ${postgresql_data} -U ${postgresql_user}"
+    ${su_cmd} -l -c ${postgresql_login_class} ${postgresql_user} -c "exec %%PREFIX%%/bin/initdb ${postgresql_initdb_flags} -D ${postgresql_data} -U ${postgresql_user}"
 }
 
 run_rc_command "$1"

@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210515:
+  AFFECTS: users of databases/postgresql??-server
+  AUTHOR: girgen@FreeBSD.org
+
+  The rc.conf parameter for the login class of the postgresql daemon has
+  changed name from postgresql_class to postgresql_login_class.
+  rc.subr(8) states that the parameter should be named ${name}_login_class.
+
 20210406:
   AFFECTS: users of www/phpvirtualbox
   AUTHOR: dereks@lifeofadishwasher.com
