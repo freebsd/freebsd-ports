@@ -9,12 +9,20 @@ COMMENT?=	KDE iconset theme
 
 .ifndef(WITHOUT_RESTRICTIONS)
 # Converted from RESTRICTED
+LICENSE_NAME_theme=	theme
+LICENSE_TEXT_theme=	may contain iconic, visual, graphical or other\
+			elements that may not be distributed without the\
+			consent of either the trademark or the patent holder
+LICENSE_PERMS_theme=	auto-accept
+.if defined(LICENSE)
+LICENSE+=	theme
+LICENSE_COMB=	multi
+.else
 LICENSE=	theme
-LICENSE_NAME=	theme
-LICENSE_TEXT?=	may contain iconic, visual, graphical or other\
-		elements that may not be distributed without the\
-		consent of either the trademark or the patent holder
-LICENSE_PERMS=	auto-accept
+LICENSE_NAME=	${LICENSE_NAME_theme}
+LICENSE_TEXT=	${LICENSE_TEXT_theme}
+LICENSE_PERMS=	${LICENSE_PERMS_theme}
+.endif
 .endif
 
 NO_BUILD=	yes
