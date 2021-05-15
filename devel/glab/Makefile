@@ -1,7 +1,6 @@
 PORTNAME=	glab
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16.0
-PORTREVISION=	1
+DISTVERSION=	1.17.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -28,10 +27,6 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
-
-pre-build:
-	${LN} -sf ${WRKSRC}/vendor/github.com/muesli/termenv/termenv_linux.go \
-		${WRKSRC}/vendor/github.com/muesli/termenv/termenv_freebsd.go
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
