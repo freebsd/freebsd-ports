@@ -15,6 +15,7 @@ BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_
 BROKEN_armv7=		fails to compile: /usr/src/sys/sys/bus.h:724:10: fatal error: 'device_if.h' file not found
 BROKEN_FreeBSD_12=	no member named 'tqh_first' in 'struct ifnethead'
 BROKEN_FreeBSD_13=	no member named 'tqh_first' in 'struct ifnethead'
+BROKEN_FreeBSD_14=	no member named 'tqh_first' in 'struct ifnethead'
 
 USES=		kmod uidfix
 SUB_FILES=	pkg-message
