@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Workaround for https://bugs.winehq.org/show_bug.cgi?id=50257
+export LD_32_BIND_NOW=1
+
 TARGET="`realpath $0`"
 
 LOCALBASE=${TARGET%/*}/..
