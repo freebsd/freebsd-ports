@@ -1,5 +1,5 @@
 PORTNAME=	findomain
-DISTVERSION=	4.2.0
+DISTVERSION=	4.2.1
 CATEGORIES=	net security
 
 MAINTAINER=	lcook@FreeBSD.org
