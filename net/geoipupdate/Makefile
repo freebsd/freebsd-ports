@@ -16,17 +16,12 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 RUN_DEPENDS=	ca_root_nss>=3:security/ca_root_nss
 
 USES=		gmake go:modules,no_targets
-USE_GITHUB=	yes
-GH_ACCOUNT=	maxmind
+GO_MODULE=	github.com/maxmind/geoipupdate/v4
 
 MAKE_ENV+=	${GO_ENV} \
 		CONFFILE=${PREFIX}/etc/GeoIP.conf \
 		DATADIR=${PREFIX}/share/GeoIP \
 		VERSION=${DISTVERSIONFULL}
-
-GH_TUPLE=	gofrs:flock:v0.8.0:gofrs_flock/vendor/github.com/gofrs/flock \
-		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag
 
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
