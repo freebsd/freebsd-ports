@@ -7,8 +7,8 @@ COMMENT=	EDK2 Firmware for ${FLAVOR}
 
 LICENSE=	BSD3CLAUSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 riscv64
-ONLY_FOR_ARCHS_REASON=	source code is not yet ported to anything other than IA32, X64, ARM, AARCH64, RISCV64 or EBC
+ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	This port only provides firmware for aarch64 and amd64 machine
 
 PKGNAMESUFFIX=	-${FLAVOR:C/_/-/g}
 FLAVORS=	macchiatobin rpi3 rpi4 xen
