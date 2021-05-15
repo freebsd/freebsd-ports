@@ -1736,6 +1736,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/epa-file.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/epa-hook.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/epa-hook.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/epa-ks.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/epa-ks.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/epa-mail.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/epa-mail.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/epa.el.gz
