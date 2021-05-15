@@ -88,7 +88,7 @@ MAKE_ARGS+=	LTO=0
 # is set.
 _CKSUMFILES=	${ALLFILES:Nduke3d/duke*}
 
-.if !exists(${DISTDIR}/duke3d/duke3d.grp) && !exists(${DISTDIR}/duke3d/duke.rts)
+.if !exists(${DISTDIR}/duke3d/duke3d.grp) || !exists(${DISTDIR}/duke3d/duke.rts)
 IGNORE=	option FULL selected, but duke3d.grp or duke.rts not found in ${DISTDIR}/duke3d
 .endif
 
