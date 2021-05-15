@@ -288,7 +288,7 @@ pre-build:
 do-build:
 	@ cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} symlinks
 	@ for dir in ${BUILD_DIRS}; do \
-		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS}; \
+		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}; \
 	done
 
 .  if exists(${FILESDIR}/pkg-message${COMPONENT}.in)
