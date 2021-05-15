@@ -9,19 +9,17 @@ COMMENT=	Shell script formatter
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	scdoc:textproc/scdoc
+
 USES=		go:modules
 GO_MODULE=	mvdan.cc/sh/v3
 GO_TARGET=	./cmd/shfmt
 GO_BUILDFLAGS=	-ldflags="-s -w -X main.version=${DISTVERSIONFULL}"
 
-PLIST_FILES=	bin/shfmt
+PLIST_FILES=	bin/shfmt \
+		man/man1/shfmt.1.gz
 
-OPTIONS_DEFINE=	MANPAGES
-OPTIONS_DEFAULT=MANPAGES
-MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
-MANPAGES_PLIST_FILES=	man/man1/shfmt.1.gz
-
-do-install-MANPAGES-on:
+post-install:
 	scdoc < ${WRKSRC}/cmd/shfmt/shfmt.1.scd \
 		> ${STAGEDIR}${MAN1PREFIX}/man/man1/shfmt.1
 
