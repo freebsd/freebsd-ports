@@ -1,5 +1,5 @@
 TIMESTAMP = 1620769662
 SHA256 (KhronosGroup-Vulkan-Tools-v1.2.178_GH0.tar.gz) = 70e79d64ef5c5c77b2c85adbb60e1850044f4f56a0549fcc4837404c8e2a7066
 SIZE (KhronosGroup-Vulkan-Tools-v1.2.178_GH0.tar.gz) = 843250
-SHA256 (ea2e75bea224.patch) = 1a2550804a1bd7e66f5d19043dc540ffadc55a1bfe6b8734c353c0bd3a1090d1
-SIZE (ea2e75bea224.patch) = 22460
+SHA256 (c6adbf0af27e.patch) = 2df8225f1cae788347c49afb91b44bf90c154adf4c4f738ad5fa0e15c71b9b9f
+SIZE (c6adbf0af27e.patch) = 22898
