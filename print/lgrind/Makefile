@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce beautiful listings of source code with LaTeX
 
 # Converted from RESTRICTED
-LICENSE=	lgrind
+LICENSE=	lgrind-license
 LICENSE_NAME=	lgrind
 LICENSE_TEXT=	According to the README-file there is a license issue \
 		because of non-free code. Check the README file within \

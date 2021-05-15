@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern tactical Enemy Territory modification
 
 # Converted from RESTRICTED
-LICENSE=	tcetest
+LICENSE=	tcetest-license
 LICENSE_NAME=	tcetest
 LICENSE_TEXT=	Redistribution is limited, see license
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept

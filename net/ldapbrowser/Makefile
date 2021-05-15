@@ -15,7 +15,7 @@ MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Java/Swing-based LDAP browser and editor
 
 # Converted from RESTRICTED
-LICENSE=	ldapbrowser
+LICENSE=	ldapbrowser-license
 LICENSE_NAME=	ldapbrowser
 LICENSE_TEXT=	No reply from author regarding redistribution licensing
 LICENSE_PERMS=	auto-accept
