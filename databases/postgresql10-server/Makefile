@@ -1,9 +1,9 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 
-DISTVERSION?=	10.16
+DISTVERSION?=	10.17
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	1
+PORTREVISION?=	0
 
 MAINTAINER?=	pgsql@FreeBSD.org
 

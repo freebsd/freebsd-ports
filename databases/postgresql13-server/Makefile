@@ -1,10 +1,10 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 
 PORTNAME?=	postgresql
-DISTVERSION?=	13.2
+DISTVERSION?=	13.3
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
@@ -240,26 +240,39 @@ RUN_DEPENDS+=		llvm-config${PG_LLVM_VERSION}:devel/llvm${PG_LLVM_VERSION}
 CONFIGURE_ENV+=		LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${PG_LLVM_VERSION}
 .endif
 
+# Convert LLVM_DEFAULT to COMPILER_VERSION format to make it
+# suitable for version comparison.
+.if ${LLVM_DEFAULT} >= 70 && ${LLVM_DEFAULT} <= 90
+LLVM_DEFAULT_VERSION=	${LLVM_DEFAULT}
+.else
+LLVM_DEFAULT_VERSION=	${LLVM_DEFAULT}0
+.endif
+
+# Convert COMPILER_VERSION to LLVM_DEFAULT format to make it
+# suitable for LLVM port name.
+# All supported FreeBSD versions have Clang 10.0.1 or later.
+LLVM_PORT_SUFFIX=	${COMPILER_VERSION:C/.$//}
+
 # sync LLVM to the preferred compiler if possible
 # or else use a lower version compiler that is compatible
-.if ${COMPILER_VERSION} > ${LLVM_DEFAULT}
+.if ${COMPILER_VERSION} > ${LLVM_DEFAULT_VERSION}
 # Highest LLVM version in ports:
-.  if ${COMPILER_VERSION} <= 11
-PG_LLVM_VERSION=${COMPILER_VERSION}
-PG_COMPILER_VERSION=${COMPILER_VERSION}
+.  if ${LLVM_PORT_SUFFIX} <= 11
+PG_LLVM_VERSION=${LLVM_PORT_SUFFIX}
+PG_COMPILER_VERSION=${LLVM_PORT_SUFFIX}
 .  else
 PG_LLVM_VERSION=11
 PG_COMPILER_VERSION=11
 .  endif
 .else
-PG_COMPILER_VERSION=${COMPILER_VERSION}
 PG_LLVM_VERSION=${LLVM_DEFAULT}
+PG_COMPILER_VERSION=${LLVM_PORT_SUFFIX}
 .endif
 
 .if ${DISTVERSION:C/([0-9]*).*/\1/} >= 11
 .  if defined(SERVER_ONLY) && ${PORT_OPTIONS:MLLVM}
 INSTALL_DIRS+=		src/backend/jit/llvm
-.    if ${COMPILER_VERSION} != ${PG_COMPILER_VERSION}
+.    if ${LLVM_PORT_SUFFIX} != ${PG_COMPILER_VERSION}
 LLVM_CONFIGURE_ARGS?=	CC=${LOCALBASE}/bin/clang${PG_COMPILER_VERSION}
 .    endif
 .  endif
@@ -275,7 +288,7 @@ pre-build:
 do-build:
 	@ cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} symlinks
 	@ for dir in ${BUILD_DIRS}; do \
-		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}; \
+		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS}; \
 	done
 
 .  if exists(${FILESDIR}/pkg-message${COMPONENT}.in)

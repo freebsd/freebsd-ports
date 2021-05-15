@@ -827,6 +827,14 @@ lib/postgresql/utf8_and_win.so
 %%NLS%%share/locale/pl/LC_MESSAGES/pg_test_fsync-13.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pg_test_timing-13.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/plpgsql-13.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/initdb-13.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_archivecleanup-13.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_checksums-13.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_controldata-13.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_ctl-13.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_resetwal-13.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_test_fsync-13.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_test_timing-13.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/plpgsql-13.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/initdb-13.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pg_archivecleanup-13.mo
