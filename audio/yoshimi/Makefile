@@ -17,7 +17,7 @@ LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libjack.so:audio/jack \
 		libmxml.so:textproc/mxml
 
-USES=		cmake compiler:c++11-lang gnome ncurses pkgconfig readline:port
+USES=		cmake compiler:c++11-lang gnome ncurses pkgconfig readline
 USE_GNOME=	cairo
 
 USE_GITHUB=	yes

@@ -13,7 +13,7 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-USES=		compiler:c11 cpe ncurses pathfix pkgconfig readline:port \
+USES=		compiler:c11 cpe ncurses pathfix pkgconfig readline \
 		shebangfix ssl tar:xz
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes

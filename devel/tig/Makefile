@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	git:devel/git
 
-USES=		iconv gmake ncurses readline:port
+USES=		iconv gmake ncurses readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE}
 MAKE_ARGS=	V=1

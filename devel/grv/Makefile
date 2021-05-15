@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
-USES=		go ncurses pkgconfig readline:port
+USES=		go ncurses pkgconfig readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	rgburke
 GH_SUBDIR=	src/github.com/rgburke/grv

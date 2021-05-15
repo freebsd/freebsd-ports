@@ -66,7 +66,7 @@ LIBEDIT_CONFIGURE_ON=	--enable-libedit --with-libedit-dir=${LOCALBASE}
 LIBEDIT_USES=		libedit
 RDOC_CONFIGURE_ENABLE=	install-rdoc
 READLINE_CONFIGURE_ON=	--disable-libedit --with-readline-dir=${LOCALBASE}
-READLINE_USES=		readline:port
+READLINE_USES=		readline
 
 CPE_VENDOR=	ruby-lang
 CPE_VERSION=	${RUBY_RELVERSION}

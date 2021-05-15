@@ -42,7 +42,7 @@ CPE_PRODUCT=		kerberos
 OPTIONS_DEFINE=		EXAMPLES NLS DNS_FOR_REALM LDAP LMDB
 OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML READLINE
 OPTIONS_RADIO=		CMD_LINE_EDITING
-OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE READLINE_PORT LIBEDIT
+OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE LIBEDIT
 CMD_LINE_EDITING_DESC=	Command line editing for kadmin and ktutil
 DNS_FOR_REALM_DESC=	Enable DNS lookups for Kerberos realm names
 DNS_FOR_REALM_CONFIGURE_ENABLE=	dns-for-realm
@@ -55,8 +55,7 @@ LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 LMDB_IMPLIES=		LDAP
 NLS_USES=		gettext
 READLINE_USES=		readline
-READLINE_PORT_DESC=	Command line editing via devel/readline
-READLINE_PORT_USES=	readline:port
+READLINE_CONFIGURE_WITH=readline
 LIBEDIT_USES=		libedit
 LIBEDIT_CONFIGURE_WITH=	libedit
 
@@ -88,13 +87,6 @@ LDFLAGS:=	-Wl,-rpath,${_RPATH}${F:S/-Wl,-rpath,//} \
 
 .if defined(KRB5_HOME) && ${KRB5_HOME} != ${LOCALBASE}
 BROKEN=			LIB_DEPENDS when using KRB5_HOME is broken
-.endif
-
-# OPTIONS helper causes conflicting with/without
-.if ${PORT_OPTIONS:MREADLINE} || ${PORT_OPTIONS:MREADLINE_PORT}
-CONFIGURE_ARGS+=	--with-readline
-.else
-CONFIGURE_ARGS+=	--without-readline
 .endif
 
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""

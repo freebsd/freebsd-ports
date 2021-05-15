@@ -17,7 +17,7 @@ CONFLICTS?=	bacula19*-server bacula18*-server-* bareos17-server-*
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson
 
-USES+=		cmake compiler:c++11-lang localbase perl5 pkgconfig readline:port \
+USES+=		cmake compiler:c++11-lang localbase perl5 pkgconfig readline \
 		shebangfix
 USE_GITHUB=	yes
 USE_PERL5=	run

@@ -101,7 +101,7 @@ OPENGL_USE=		GL=glut XORG=xmu
 POSTGRESQL_USES=	pgsql
 PYTHON_USES=		python:3.3+
 QDBM_LIB_DEPENDS=	libqdbm.so:databases/qdbm
-READLINE_USES=		readline:port
+READLINE_USES=		readline
 REGEX_LIB_DEPENDS=	libpcre.so:devel/pcre
 SQLITE3_USES=		sqlite:3
 SAMPLERATECONVERTER_LIB_DEPENDS=\

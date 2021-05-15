@@ -71,7 +71,7 @@ DEBUG_CFLAGS=		-g
 GUILE_CONFIGURE_WITH=	guile
 GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 NLS_USES=	gettext-runtime
-PORT_READLINE_USES=	readline:port
+PORT_READLINE_USES=	readline
 PORT_ICONV_USES=	iconv:wchar_t
 PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}
 PYTHON_CONFIGURE_OFF=	--without-python

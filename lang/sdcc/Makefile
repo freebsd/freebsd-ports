@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:devel/boost-l
 CONFLICTS_INSTALL=	sdcc-[0-9]* sdcc-devel-[0-9]*
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build bison compiler:c++11-lang gmake \
-		readline:port python shebangfix tar:bzip2
+		readline python shebangfix tar:bzip2
 SHEBANG_FILES=	support/scripts/as2gbmap.py
 TEST_WRKSRC=	${WRKSRC}/support/regression
 TEST_ARGS=	--no-print-directory # tons of them, way too annoying

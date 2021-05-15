@@ -20,7 +20,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		liblz4.so:archivers/liblz4
 
 USES=		compiler:c11 gmake gnome libtool localbase lua pkgconfig \
-		python:build readline:port shebangfix ssl tar:bz2
+		python:build readline shebangfix ssl tar:bz2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	slurmctld slurmd
 

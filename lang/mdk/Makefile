@@ -10,7 +10,7 @@ COMMENT=	Utilities for developing programs using MIX and MIXAL
 
 LICENSE=	GPLv3
 
-USES=		gettext gmake gnome ncurses pkgconfig readline:port
+USES=		gettext gmake gnome ncurses pkgconfig readline
 USE_GNOME=	glib20 gtk30 intltool
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check

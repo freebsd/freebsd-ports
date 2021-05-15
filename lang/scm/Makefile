@@ -70,12 +70,8 @@ EXTRA_PATCHES+=	${FILESDIR}/ia64-patch
 ARCHOBJS=	continue-ia64.S
 .endif
 
-.if "${readline_ARGS}" == "port"
 LIBEDIT_SUB1=	${CPPFLAGS}" "${LDFLAGS:M-L*}
 LIBEDIT_SUB2=	${LDFLAGS:M-L*}
-.else
-LIBEDIT_SUB1=	-I/usr/include/edit" "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include| ; \
