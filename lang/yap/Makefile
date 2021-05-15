@@ -16,7 +16,7 @@ LICENSE_COMB=		dual
 LICENSE_FILE_ART20=	${WRKSRC}/Artistic
 LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING
 
-BROKEN_riscv64=		fails to build: procedure chr_translate/2 is undefined, called from context  prolog:once/1
+#BROKEN_riscv64=		fails to build: procedure chr_translate/2 is undefined, called from context  prolog:once/1
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
