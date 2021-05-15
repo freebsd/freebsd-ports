@@ -4092,6 +4092,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/python/plugins/processing/tests/GuiTest.py
 %%DATADIR%%/python/plugins/processing/tests/ModelerTest.py
 %%DATADIR%%/python/plugins/processing/tests/OtbAlgorithmsTest.py
+%%DATADIR%%/python/plugins/processing/tests/ParametersTest.py
 %%DATADIR%%/python/plugins/processing/tests/ProcessingGeneralTest.py
 %%DATADIR%%/python/plugins/processing/tests/ProjectProvider.py
 %%DATADIR%%/python/plugins/processing/tests/QgisAlgorithmsTest1.py
