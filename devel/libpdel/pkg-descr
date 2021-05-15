@@ -20,5 +20,3 @@ assorted collection of code useful for developing embedded applications:
 -   Digital signature creation/verification
 -   Filesystem mounting/unmounting
 -   String quoting/parsing
-
-WWW: http://www.dellroad.org/pdel/
