@@ -81,10 +81,12 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/CdTe.bop.table
 %%DATADIR%%/potentials/CdTe.sw
 %%DATADIR%%/potentials/CdTeSe.bop.table
+%%DATADIR%%/potentials/CdTeZn.bop.table
 %%DATADIR%%/potentials/CdTeZnSeHgS0.sw
 %%DATADIR%%/potentials/CdZnTe_v1.bop.table
 %%DATADIR%%/potentials/CdZnTe_v2.bop.table
 %%DATADIR%%/potentials/CoAl.eam.alloy
+%%DATADIR%%/potentials/Cu-PBE-core-rep.ace
 %%DATADIR%%/potentials/Cu.meam
 %%DATADIR%%/potentials/Cu.nn.mliap.model
 %%DATADIR%%/potentials/Cu.snap.mliap.descriptor
