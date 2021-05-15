@@ -1,7 +1,7 @@
 # Created by: J. Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	ucsc-userapps
-DISTVERSION=	413
+DISTVERSION=	414
 CATEGORIES=	biology perl5 python
 MASTER_SITES=	http://hgdownload.cse.ucsc.edu/admin/exe/userApps.archive/
 DISTNAME=	userApps.v${PORTVERSION}.src
@@ -11,12 +11,9 @@ COMMENT=	Command line tools from the UCSC Genome Browser project
 
 LICENSE=	UCSC-GB
 LICENSE_NAME=	UCSC Genome Browser License
-LICENSE_TEXT=	To the best of our knowledge, all of the tools installed by\
-		this port are freely available.  However, a license is\
-		required for commercial download and installation of some\
-		binaries and source code in the UCSC Genome Browser\
-		distribution.\n\nContact UCSC directly if you are using these\
-		tools for commercial purposes.\n\nSee\
+LICENSE_TEXT=	Some tools installed by this port require a license for\
+		commercial use.\n\nContact UCSC directly if you are using\
+		these tools for commercial purposes.\n\nSee\
 		https://genome.ucsc.edu/license/ for full terms.
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
@@ -30,6 +27,8 @@ LIB_DEPENDS=	libiconv.so:converters/libiconv \
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake localbase:ldflags shebangfix perl5 python:3.6+ ssl tar:tgz
+
+RESTRICTED=	Redistribution is limited, see license
 
 SHEBANG_FILES=	kent/src/checkUmask.sh \
 		kent/src/utils/bigHeat \
@@ -47,7 +46,9 @@ MAKE_ENV=	BINDIR=${WRKSRC}/bin
 
 SUB_FILES=	ucsc-shell
 
-# Build only non-commercial tools
+# Build mostly non-commercial tools.  There is some leakage of proprietary
+# code from the libraries per conversation with UCSC.  Work to resolve this
+# is ongoing.
 do-build:
 	@${MV} ${WRKSRC}/kent/src/inc/uuid.h ${WRKSRC}/kent/src/inc/my_uuid.h
 	@${MKDIR} ${WRKSRC}/bin

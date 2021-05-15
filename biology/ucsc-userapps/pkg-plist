@@ -55,6 +55,7 @@ userapps/bin/faOneRecord
 userapps/bin/faPolyASizes
 userapps/bin/faRandomize
 userapps/bin/faRc
+userapps/bin/faRenameRecords
 userapps/bin/faSimplify
 userapps/bin/faSize
 userapps/bin/faSomeRecords
