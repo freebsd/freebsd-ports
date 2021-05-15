@@ -1,6 +1,7 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.17
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +31,7 @@ LIB_DEPENDS=	libbonmin.so:math/bonmin \
 		libmpfr.so:math/mpfr \
 		libnlopt.so:math/nlopt \
 		libopt.so:math/optpp \
-		libOsi.so:math/clp \
+		libOsi.so:math/osi \
 		libpng16.so:graphics/png \
 		libsz.so:science/szip \
 		libtbb.so:devel/onetbb
