@@ -1,6 +1,6 @@
 
 PORTNAME=	citra
-PORTVERSION=	s20210513
+PORTVERSION=	s20210516
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	e7671d93b
+GH_TAGNAME=	842031a2e
 GH_TUPLE=	citra-emu:ext-boost:36603a1:boost/externals/boost \
 		citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
