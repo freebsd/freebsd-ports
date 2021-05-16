@@ -170,6 +170,7 @@
     SUBDIR += pstotext
     SUBDIR += psutils
     SUBDIR += py-collidoscope
+    SUBDIR += py-dehinter
     SUBDIR += py-font-v
     SUBDIR += py-fontaine
     SUBDIR += py-fontbakery
