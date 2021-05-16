@@ -3,11 +3,8 @@
 PORTNAME=	gecode
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	6.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	3b86d0dabc371d5976c5dafef0fc7f6c5f92640b.patch:-p1 # https://github.com/Gecode/gecode/pull/102: Fix MOC invocation in gist folder
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Generic Constraint Development Environment
@@ -27,7 +24,7 @@ CONFIGURE_ARGS=	--disable-examples
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Gecode
-GH_TAGNAME=	96ca4cc # 6.3.0 branch is ready for a long time, but hasn't been tagged yet
+GH_TAGNAME=	ad52315 # 6.3.0 branch is ready for a long time, but hasn't been tagged yet
 
 DATADIR=	${PREFIX}/share/minizinc/gecode # it only installs the MiniZinc library into DATADIR
 
