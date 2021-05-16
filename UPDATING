@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20210516:
-  FFECTS: users of security/bitwarden_rs
+  AFFECTS: users of security/bitwarden_rs
   AUTHOR: mr@FreeBSD.org
 
   bitwarden_rs has been renamed to vaultwarden upstream.
