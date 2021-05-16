@@ -1,8 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	libidn2
-PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTVERSION=	2.3.1
 CATEGORIES=	dns
 MASTER_SITES=	GNU/libidn
 
@@ -12,9 +11,10 @@ COMMENT=	Implementation of IDNA2008 internationalized domain names
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libunistring.so:devel/libunistring
 
-USES=		charsetfix iconv libtool localbase pathfix
+USES=		charsetfix iconv libtool localbase makeinfo pathfix
 
 CONFIGURE_ARGS=	--disable-nls \
 		--with-libunistring-prefix=${LOCALBASE} \
