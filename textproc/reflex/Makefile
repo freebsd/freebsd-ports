@@ -1,7 +1,7 @@
 # Created by: bf@FreeBSD.org
 
 PORTNAME=	reflex
-PORTVERSION=	20200715
+PORTVERSION=	20210510
 CATEGORIES=	textproc
 MASTER_SITES=	https://invisible-mirror.net/archives/reflex/ \
 		LOCAL/sunpoet
