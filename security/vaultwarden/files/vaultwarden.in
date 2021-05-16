@@ -1,23 +1,23 @@
 #!/bin/sh
 
-# PROVIDE: bitwarden_rs
+# PROVIDE: vaultwarden
 # REQUIRE: LOGIN DAEMON NETWORKING
 # KEYWORD: rust
 
 # Enable this script by adding:
-# bitwarden_rs_enable="YES"
+# vaultwarden_enable="YES"
 # ... to /etc/rc.conf
 # rc_debug=yes
 
 . /etc/rc.subr
-name=bitwarden_rs
+name=vaultwarden
 
-rcvar=bitwarden_rs_enable
+rcvar=vaultwarden_enable
 load_rc_config ${name}
 
-: ${bitwarden_rs_chdir=%%PREFIX%%/www/bitwarden_rs}
-: ${bitwarden_rs_user:=www}
-: ${bitwarden_rs_group:=www}
+: ${vaultwarden_chdir=%%PREFIX%%/www/vaultwarden}
+: ${vaultwarden_user:=www}
+: ${vaultwarden_group:=www}
 
 # This is the tool init launches
 command="/usr/sbin/daemon"
@@ -33,13 +33,13 @@ start_precmd="start_precmd"
 start_precmd()
 {
         if [ ! -e "/var/run/${name}" ] ; then
-                install -d -o ${bitwarden_rs_user} -g ${bitwarden_rs_group} /var/run/${name};
+                install -d -o ${vaultwarden_user} -g ${vaultwarden_group} /var/run/${name};
         fi
 
         # checkyesno rubywarden_api_signups
         # if [ "$?" -eq 0 ]; then
         #         export ALLOW_SIGNUPS=1
-        #         echo "Bitwarden Signups Enabled"
+        #         echo "Vaultwarden Signups Enabled"
         # fi
 }
 

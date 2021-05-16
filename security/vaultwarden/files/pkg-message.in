@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+
+Setup vaultwarden environment:
+
+Copy %%PREFIX%%/etc/rc.conf.d/vaultwarden.sample to  %%PREFIX%%/etc/rc.conf.d/vaultwarden
+
+Adapt %%PREFIX%%/etc/rc.conf.d/vaultwarden to your needs.
+
+EOM
+}
+]

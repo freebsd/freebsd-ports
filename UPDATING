@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210516:
+  FFECTS: users of security/bitwarden_rs
+  AUTHOR: mr@FreeBSD.org
+
+  bitwarden_rs has been renamed to vaultwarden upstream.
+  So switch to security/vaultwarden instead.
+
 20210515:
   AFFECTS: users of databases/postgresql??-server
   AUTHOR: girgen@FreeBSD.org

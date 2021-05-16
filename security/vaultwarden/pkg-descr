@@ -3,4 +3,4 @@ compatible with upstream Bitwarden clients*,
 perfect for self-hosted deployment
 where running the official resource-heavy service might not be ideal.
 
-WWW: https://github.com/dani-garcia/bitwarden_rs
+WWW: https://github.com/dani-garcia/vaultwarden
