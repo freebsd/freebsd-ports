@@ -57,6 +57,8 @@ share/mime/packages/org.zrythm.Zrythm-mime.xml
 %%DATADIR%%/scripts/hello-world.scm
 %%DATADIR%%/scripts/print-all-tracks.scm
 %%DATADIR%%/sourceview-styles/monokai-extended-zrythm.xml
+%%DATADIR%%/themes/css/fruity-theme.css
+%%DATADIR%%/themes/css/zrythm-theme.css
 %%DATADIR%%/themes/icons/zrythm-dark/index.theme
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/README.md
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/add.svg
@@ -64,6 +66,7 @@ share/mime/packages/org.zrythm.Zrythm-mime.xml
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/arrow-up-small.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/audition.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/audition2.svg
+%%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/auto-scroll-playhead.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/automate.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/bus.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/carousel-horizontal.svg
@@ -207,4 +210,3 @@ share/mime/packages/org.zrythm.Zrythm-mime.xml
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/tracktypes/markers.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/tracktypes/signal-audio.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/tracktypes/signal-midi.svg
-%%DATADIR%%/themes/zrythm-theme.css
