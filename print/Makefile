@@ -195,6 +195,7 @@
     SUBDIR += py-rtf
     SUBDIR += py-ttfautohint-py
     SUBDIR += py-ufolib2
+    SUBDIR += py-uharfbuzz
     SUBDIR += py-weasyprint
     SUBDIR += qpdf
     SUBDIR += qpdfview
