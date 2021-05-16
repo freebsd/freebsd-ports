@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	net-ftp
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	ftp rubygems
 MASTER_SITES=	RG
 
