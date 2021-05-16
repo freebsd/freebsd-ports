@@ -1,0 +1,10 @@
+Patterns are specified in the StringBrewer pattern language, and are made up of
+two parts: a recipe and a set of ingredients. A recipe is essentially a modified
+form of regular expression; whitespace is not significant, and each ingredient
+name is replaced by its definition. An ingredient is a space-separated list of
+items; each item is either a character (specified either as a literal character
+or as a Unicode codepoint in hexadecimal), a range of characters separated by
+hyphens, or a union of items separated by commas. Ingredients may also contain
+references to other ingredients.
+
+WWW: https://github.com/simoncozens/stringbrewer
