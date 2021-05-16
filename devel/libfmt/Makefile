@@ -1,8 +1,8 @@
 PORTNAME=	fmt
 # Make sure to check devel/spdlog consumers too
 PORTVERSION=	7.1.3
-MASTER_SITES=	https://github.com/fmtlib/fmt/releases/download/${PORTVERSION}/
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/fmtlib/fmt/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	lib
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,6 +19,8 @@ CMAKE_OFF=	FMT_DOC FMT_TEST
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+CONFLICTS_INSTALL=	axom
 
 OPTIONS_DEFINE=	FULL_CACHE_DRAGONBOX
 OPTIONS_DEFAULT=FULL_CACHE_DRAGONBOX
