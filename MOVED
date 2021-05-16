@@ -16329,3 +16329,5 @@ devel/gecode|math/gecode|2021-05-04|Move to a proper category
 net-im/libqmatrixclient|net-im/libquotient|2021-05-08|Has expired: Use libQuotient (devel/libquotient) instead
 devel/electron11|devel/electron12|2021-05-12|VSCode update requires a newer major version
 dns/opendd||2021-05-15|Has expired: Abandonware
+www/py-django30|www/py-django31|2021-05-16|Has expired: Has expired: Extended support has expired on April 6th, 2021. Use www/py-django31 or www/py-django32 instead
+net-mgmt/unifi-devel|net-mgmt/unifi6|2021-05-16|Has expired: Use net-mgmt/unifi6 instead

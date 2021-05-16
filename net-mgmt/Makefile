@@ -373,7 +373,6 @@
     SUBDIR += torrus
     SUBDIR += triton-guesttools
     SUBDIR += unbound_exporter
-    SUBDIR += unifi-devel
     SUBDIR += unifi-lts
     SUBDIR += unifi-poller
     SUBDIR += unifi5
