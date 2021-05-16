@@ -169,6 +169,7 @@
     SUBDIR += pslib
     SUBDIR += pstotext
     SUBDIR += psutils
+    SUBDIR += py-collidoscope
     SUBDIR += py-font-v
     SUBDIR += py-fontaine
     SUBDIR += py-fontbakery
