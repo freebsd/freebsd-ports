@@ -48,13 +48,14 @@ PLIST_SUB=		ABI=${ABIFLAGS} \
 			XYZDOT=${PORTVERSION} \
 			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. https://bugs.python.org/issue19554
 
-OPTIONS_DEFINE=		DEBUG IPV6 LIBFFI NLS PYMALLOC
-OPTIONS_DEFAULT=	LIBFFI PYMALLOC
+OPTIONS_DEFINE=		DEBUG IPV6 LIBFFI LIBMPDEC NLS PYMALLOC
+OPTIONS_DEFAULT=	LIBFFI LIBMPDEC PYMALLOC
 OPTIONS_RADIO=		HASH
 OPTIONS_RADIO_HASH=	FNV SIPHASH
 OPTIONS_SUB=		yes
 
 LIBFFI_DESC=		Use libffi from ports instead of bundled version
+LIBMPDEC_DESC=		Use libmpdec from ports instead of bundled version
 NLS_DESC=		Enable gettext support for the locale module
 PYMALLOC_DESC=		Enable specialized mallocs
 
@@ -70,6 +71,9 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 
 LIBFFI_CONFIGURE_ON=	--with-system-ffi
 LIBFFI_LIB_DEPENDS=	libffi.so:devel/libffi
+
+LIBMPDEC_CONFIGURE_ON=	--with-system-libmpdec
+LIBMPDEC_LIB_DEPENDS=	libmpdec.so:math/mpdecimal
 
 # Use CPPFLAGS over CFLAGS due to -I ordering, causing elementtree and pyexpat
 # to break in Python 2.7, or preprocessor complaints in Python >= 3.3
