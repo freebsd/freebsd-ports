@@ -1,11 +1,10 @@
 PORTNAME=	swayidle
-DISTVERSION=	1.6
-PORTREVISION=	2
+DISTVERSION=	1.7
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	4cc31289ee81.patch:-p1 # https://github.com/swaywm/swayidle/pull/89
-PATCHFILES+=	8862b3bad223.patch:-p1 # https://github.com/swaywm/swayidle/pull/89
+PATCHFILES+=	efb226483782.patch:-p1 # https://github.com/swaywm/swayidle/pull/89
 PATCHFILES+=	88bc257f72f6.patch:-p1 # https://github.com/swaywm/swayidle/pull/89
 
 MAINTAINER=	jbeich@FreeBSD.org
