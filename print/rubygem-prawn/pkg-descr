@@ -1,8 +1,5 @@
-Prawn is a new pure Ruby PDF generation library,
-with the long term goal of providing a suitable
-replacement for PDF::Writer. It is being developed
-under the auspices of the Ruby Mendicant project
-with copious help from a number of mighty fine
-contributors.
+Prawn is a pure Ruby PDF generation library that provides a lot of great
+functionality while trying to remain simple and reasonably performant.
 
-WWW: http://prawn.majesticseacreature.com
+WWW: https://prawnpdf.org/
+WWW: https://github.com/prawnpdf/prawn
