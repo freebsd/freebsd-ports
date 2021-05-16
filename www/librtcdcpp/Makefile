@@ -1,6 +1,5 @@
 PORTNAME=	librtcdcpp
-DISTVERSION=	g20180627
-PORTREVISION=	5
+DISTVERSION=	g20210129
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,11 +13,12 @@ LIB_DEPENDS=	libnice.so:net-im/libnice \
 		libusrsctp.so:net/libusrsctp
 
 USES=		cmake compiler:c++14-lang gnome ssl
-USE_GITHUB=	yes
-GH_ACCOUNT=	chadnickbok
-GH_TAGNAME=	49ddb949ed5dd2c8e859097b6723347f52e01645
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	chadnickbok
+GH_TAGNAME=	2fe92c38b48b6acf1217a8a812c2408310dec437
 
 CFLAGS+=	-DSPDLOG_FMT_EXTERNAL
 
