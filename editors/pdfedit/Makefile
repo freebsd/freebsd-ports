@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 
 BROKEN_powerpc64=	fails to configure: error: Could not link against boost_program_options
 BROKEN_sparc64=		fails to configure: error: Could not link against boost_program_options
+BROKEN_FreeBSD_13=	fails to compile: call to 'advance' is ambiguous
+BROKEN_FreeBSD_14=	fails to compile: call to 'advance' is ambiguous
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
