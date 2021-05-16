@@ -1,5 +1,6 @@
 PORTNAME=	ansible
 DISTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -37,7 +38,7 @@ _ANSIBLE_PACKAGES+=	${PYTHON_PKGNAMEPREFIX}ansible${version}-*
 .endfor
 
 post-patch:
-	${FIND} ${WRKSRC} -type f -exec grep --null -El '(/etc/ansible|/usr/share/ansible)' | ${XARGS} -0 ${REINPLACE_CMD} \
+	${FIND} ${WRKSRC} -type f -exec ${GREP} --null -El '(/etc/ansible|/usr/share/ansible)' {} + | ${XARGS} -n 500 -0 ${REINPLACE_CMD} \
 		-e 's|/etc/ansible|${ETCDIR:S/${PY_FLAVOR}-//}|g' \
 		-e 's|/usr/share/ansible|${DATADIR}|g'
 	${FIND} ${WRKSRC} -type f -name "*.bak" -delete
