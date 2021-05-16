@@ -1,7 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	fpylll
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
