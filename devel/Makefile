@@ -6842,6 +6842,7 @@
     SUBDIR += smv
     SUBDIR += soapui
     SUBDIR += socket_wrapper
+    SUBDIR += sol2
     SUBDIR += sonar-scanner-cli
     SUBDIR += sonarqube-ant-task
     SUBDIR += sonarqube-community
