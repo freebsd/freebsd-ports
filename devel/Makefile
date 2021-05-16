@@ -5141,6 +5141,7 @@
     SUBDIR += py-spyder
     SUBDIR += py-spyder-kernels
     SUBDIR += py-squint
+    SUBDIR += py-sre-yield
     SUBDIR += py-srsly
     SUBDIR += py-stackexchange
     SUBDIR += py-statgrab

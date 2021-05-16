@@ -1,0 +1,6 @@
+The goal of sre_yield is to efficiently generate all values that can match a
+given regular expression, or count possible matches efficiently. It uses the
+parsed regular expression, so you get a much more accurate result than trying to
+just split strings.
+
+WWW: https://github.com/google/sre_yield
