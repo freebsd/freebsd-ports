@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2021-05-07 23:05:04 UTC
++++ CMakeLists.txt
+@@ -113,8 +113,6 @@ check_include_file_cxx (unistd.h HAVE_UNISTD_H)
+ check_include_file_cxx ("ext/hash_map" HAVE_EXT_HASH_MAP)
+ check_include_file_cxx ("ext/hash_set" HAVE_EXT_HASH_SET)
+ check_include_file_cxx ("ext/slist" HAVE_EXT_SLIST)
+-check_include_file_cxx ("tr1/unordered_map" HAVE_TR1_UNORDERED_MAP)
+-check_include_file_cxx ("tr1/unordered_set" HAVE_TR1_UNORDERED_SET)
+ check_include_file_cxx ("unordered_map" HAVE_UNORDERED_MAP)
+ check_include_file_cxx ("unordered_set" HAVE_UNORDERED_SET)
+ 
+@@ -678,11 +676,6 @@ if (BUILD_TESTING)
+     target_compile_definitions (stl_logging_unittest PRIVATE
+       GLOG_STL_LOGGING_FOR_UNORDERED)
+   endif (HAVE_UNORDERED_MAP AND HAVE_UNORDERED_SET)
+-
+-  if (HAVE_TR1_UNORDERED_MAP AND HAVE_TR1_UNORDERED_SET)
+-    target_compile_definitions (stl_logging_unittest PRIVATE
+-      GLOG_STL_LOGGING_FOR_TR1_UNORDERED)
+-  endif (HAVE_TR1_UNORDERED_MAP AND HAVE_TR1_UNORDERED_SET)
+ 
+   if (HAVE_EXT_HASH_MAP AND HAVE_EXT_HASH_SET)
+     target_compile_definitions (stl_logging_unittest PRIVATE
