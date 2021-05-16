@@ -1,12 +1,9 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 
 PORTNAME=	consolekit
-PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTVERSION=	1.2.2
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	https://github.com/ConsoleKit2/ConsoleKit2/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	2
-DISTNAME=	ConsoleKit2-${PORTVERSION}
 
 # Support for DRM/evdev
 PATCH_SITES=	https://github.com/unrelentingtech/ConsoleKit2/commit/
@@ -38,8 +35,13 @@ POLKIT_CONFIGURE_ENABLE=	polkit
 
 X11_USES=		xorg
 X11_USE=		XORG=x11
+X11_CONFIGURE_WITH=	x
 
-WRKSRC=		${WRKDIR}/ConsoleKit2-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	ConsoleKit2
+GH_PROJECT=	ConsoleKit2
+GH_TAGNAME=	51c11c1  # v1.2.2
+
 USES=		autoreconf gettext gmake gnome libtool localbase pathfix pkgconfig \
 		tar:bzip2
 USE_CSTD=	gnu99
@@ -54,7 +56,6 @@ CONFIGURE_ARGS=	--with-pid-file=/var/run/${PORTNAME}.pid \
 		--enable-libdrm \
 		--enable-libevdev \
 		--enable-libudev \
-		--without-html-dir \
 		--disable-udev-acl \
 		--disable-libcgmanager \
 		--without-systemdsystemunitdir

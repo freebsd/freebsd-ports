@@ -25,8 +25,8 @@ lib/pam_ck_connector.so
 libdata/pkgconfig/ck-connector.pc
 libdata/pkgconfig/libconsolekit.pc
 libexec/ck-collect-session-info
-@(,,4755) libexec/ck-get-x11-display-device
-libexec/ck-get-x11-server-pid
+%%X11%%@(,,4755) libexec/ck-get-x11-display-device
+%%X11%%libexec/ck-get-x11-server-pid
 libexec/ck-remove-directory
 man/man1/ck-history.1.gz
 man/man1/ck-launch-session.1.gz

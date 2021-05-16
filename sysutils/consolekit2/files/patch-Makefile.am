@@ -1,0 +1,17 @@
+--- Makefile.am.orig	2020-12-07 11:27:30 UTC
++++ Makefile.am
+@@ -27,7 +27,6 @@ EXTRA_DIST = config.rpath \
+ 	NEWS			\
+ 	ChangeLog		\
+ 	m4				\
+-	gtk-doc.make	\
+ 	$(NULL)
+ 
+ DISTCLEANFILES =		\
+@@ -73,5 +72,5 @@ $(srcdir)/ChangeLog:
+ 
+ DISTCHECK_CONFIGURE_FLAGS = \
+ 	--enable-introspection \
+-	--enable-gtk-doc \
++	--disable-gtk-doc \
+ 	--with-systemdsystemunitdir=$$dc_install_base/$(systemdsystemunitdir)
