@@ -2160,6 +2160,7 @@
     SUBDIR += squidpurge
     SUBDIR += squidview
     SUBDIR += srg
+    SUBDIR += srt
     SUBDIR += stagit
     SUBDIR += subsonic-standalone
     SUBDIR += suphp
