@@ -2,9 +2,10 @@
 
 PORTNAME=	iperf
 DISTVERSION=	2.1.1-dev
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	SF/iperf2 \
-		LOCAL/sunpoet/iperf/20210228
+		LOCAL/sunpoet/iperf/20210422
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool to measure maximum TCP and UDP bandwidth
