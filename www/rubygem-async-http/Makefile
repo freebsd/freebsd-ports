@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	async-http
-PORTVERSION=	0.56.1
+PORTVERSION=	0.56.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
