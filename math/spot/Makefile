@@ -1,5 +1,5 @@
 PORTNAME=	spot
-DISTVERSION=	2.9.6
+DISTVERSION=	2.9.7
 CATEGORIES=	math
 MASTER_SITES=	http://www.lrde.epita.fr/dload/${PORTNAME}/
 
@@ -10,14 +10,18 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		charsetfix compiler:c++14-lang gmake libtool
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-python --disable-static
+
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	tl.pdf
+
+TEST_TARGET=	check
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
