@@ -23,7 +23,7 @@ BUILD_DEPENDS=	binutils>=0:devel/binutils \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR}
 LIB_DEPENDS=	libicudata.so:devel/icu
 
-USES=		gnome ninja pkgconfig python:3.5+,build tar:xz
+USES=		cpe gnome ninja pkgconfig python:3.5+,build tar:xz
 USE_GNOME=	glib20
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
@@ -33,6 +33,8 @@ USE_LDCONFIG=	yes
 SUB_FILES=	v8.pc v8_libbase.pc v8_libplatform.pc
 
 USE_GITHUB=	yes
+
+CPE_VENDOR=	google
 
 # We follow the stable channel on https://omahaproxy.appspot.com/
 PORTSCOUT=	ignore:1
