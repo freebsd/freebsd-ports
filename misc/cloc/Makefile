@@ -2,26 +2,28 @@
 
 PORTNAME=	cloc
 PORTVERSION=	1.90
-DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
+MASTER_SITES=	https://github.com/AlDanial/cloc/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Counts lines of code
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Count lines of code
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff
 
-USES=		perl5
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	AlDanial
-
+USES=		perl5 shebangfix
 USE_PERL5=	run
-PLIST_FILES=	bin/${PORTNAME}
+
+NO_ARCH=	yes
 NO_BUILD=	yes
 
+PLIST_FILES=	bin/cloc
+
+SHEBANG_FILES=	cloc
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/cloc ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

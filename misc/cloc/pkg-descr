@@ -1,7 +1,5 @@
-cloc counts blank lines, comment lines, and physical lines of source
-code in many programming languages.
-
-cloc contains code from David Wheeler's SLOCCount and Damian Conway and
-Abigail's Perl module Regexp::Common.
+cloc counts blank lines, comment lines, and physical lines of source code in
+many programming languages. Given two versions of a code base, cloc can compute
+differences in blank, comment, and source lines.
 
 WWW: https://github.com/AlDanial/cloc
