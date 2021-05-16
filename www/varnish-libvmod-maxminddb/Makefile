@@ -8,6 +8,8 @@ COMMENT=	Varnish Module (vmod) for accessing maxminddb geoip data
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		does not compile: no member named 'free' in 'struct vmod_priv'
+
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
