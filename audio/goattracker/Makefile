@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	goattracker
-PORTVERSION=	2.75
+PORTVERSION=	2.76
 CATEGORIES=	audio
 MASTER_SITES=	SF/goattracker2/GoatTracker%202/${PORTVERSION} \
 		LOCAL/ehaupt
@@ -18,16 +18,16 @@ USE_SDL=	sdl
 
 MAKEFILE=	makefile
 
+DESKTOP_ENTRIES=	"GoatTracker 2" \
+			"${COMMENT}" \
+			"${PREFIX}/share/pixmaps/goattrk2.ico" \
+			"goattrk2" \
+			"" \
+			false
+
+NO_WRKSUBDIR=	yes
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-DESKTOP_ENTRIES="GoatTracker 2" \
-		"${COMMENT}" \
-		"${PREFIX}/share/pixmaps/goattrk2.ico" \
-		"goattrk2" \
-		"" \
-		false
-
-WRKSRC=		${WRKDIR}/goattrk2
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.o' -type f -exec ${RM} -f {} \+
