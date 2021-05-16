@@ -1,5 +1,5 @@
-An SVG renderer for the Prawn PDF library.  This will take an SVG file as
-input and render it into your PDF.  prawn-svg is in its infancy and does not
-support the full SVG specifications.
+prawn-svg is an SVG renderer for the Prawn PDF library. This will take an SVG
+document as input and render it into your PDF. prawn-svg supports most but not
+all of the full SVG 1.1 specification.
 
 WWW: https://github.com/mogest/prawn-svg
