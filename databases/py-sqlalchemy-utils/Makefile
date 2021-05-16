@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	sqlalchemy-utils
-PORTVERSION=	0.37.1
+PORTVERSION=	0.37.2
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,14 +21,13 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	ANYJSON ARROW BABEL COLOR ENCRYPTED INTERVALS IPADDRESS PASSWORD PENDULUM PHONE TIMEZONE URL
+OPTIONS_DEFINE=	ANYJSON ARROW BABEL COLOR ENCRYPTED INTERVALS PASSWORD PENDULUM PHONE TIMEZONE URL
 ANYJSON_DESC=	JSON support
 ARROW_DESC=	Arrow type support
 BABEL_DESC=	Babel locale type support
 COLOR_DESC=	Color type support
 ENCRYPTED_DESC=	Encrypted type support
 INTERVALS_DESC=	Interval operators support
-IPADDRESS_DESC=	IP address type support
 PASSWORD_DESC=	Password type support
 PENDULUM_DESC=	Pendulum Date/DateTime support
 PHONE_DESC=	Phone number type support
