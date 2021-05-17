@@ -30,22 +30,21 @@ BUILD_DEPENDS=	gmmlib>=19.3.1:multimedia/gmmlib \
 LIB_DEPENDS=	libigdgmm.so:multimedia/gmmlib \
 		libva.so:multimedia/libva
 
-USES=		cmake compiler:c++11-lib localbase pkgconfig
+USES=		cmake:testing compiler:c++11-lib localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 ARCH_SUFX=	${ARCH:S/i386/32/:S/amd//:S/x86_//}
 CMAKE_OFF=	MEDIA_BUILD_FATAL_WARNINGS BUILD_CMRTLIB
+CMAKE_OFF+=	${CMAKE_TESTING_ON}
+CMAKE_TESTING_ON=	MEDIA_RUN_TEST_SUITE # XXX Unbundle googletest
+CMAKE_TESTING_TARGET=	RunULT
 CMAKE_ARGS=	-DBUILD_TYPE:STRING="${CMAKE_BUILD_TYPE}" \
 		-DARCH:STRING="${ARCH_SUFX}" \
 		-DUFO_MARCH:STRING="${CPUTYPE}"
 PLIST_FILES=	lib/dri/iHD_drv_video.so
 
-OPTIONS_DEFINE=	TEST X11
+OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
-
-# XXX Unbundle googletest
-TEST_CMAKE_BOOL=	MEDIA_RUN_TEST_SUITE
-TEST_TEST_TARGET=	RunULT
 
 X11_LIB_DEPENDS=	libva-x11.so:multimedia/libva
 
