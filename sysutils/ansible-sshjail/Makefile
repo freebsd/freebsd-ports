@@ -9,9 +9,8 @@ COMMENT=	Ansible connector for remote jails
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible>0:sysutils/ansible@${PY_FLAVOR}
-
-USES=		python
+USES=		ansible:plugin python
+ANSIBLE_PLUGIN_TYPE=	connection
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	austinhyde
@@ -19,13 +18,11 @@ GH_ACCOUNT=	austinhyde
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-ANSIBLE_MOD=	share/${PYTHON_PKGNAMEPREFIX}ansible/plugins/connection
-
-PLIST_FILES=	${ANSIBLE_MOD}/sshjail.py
+PLIST_FILES=	${ANSIBLE_PLUGINSDIR}/sshjail.py
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${ANSIBLE_MOD}
+	${MKDIR} ${STAGEDIR}/${ANSIBLE_PLUGINSDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/sshjail.py \
-		${STAGEDIR}${PREFIX}/${ANSIBLE_MOD}/sshjail.py
+		${STAGEDIR}/${ANSIBLE_PLUGINSDIR}/sshjail.py
 
 .include <bsd.port.mk>
