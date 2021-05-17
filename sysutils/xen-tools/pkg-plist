@@ -236,8 +236,8 @@ lib/libxlutil.so.4.15.0
 %%PYTHON_SITELIBDIR%%/xenfsimage%%PYTHON_EXT_SUFFIX%%.so
 lib/xen/bin/convert-legacy-stream
 lib/xen/bin/depriv-fd-checker
-lib/xen/bin/ivshmem-client
-lib/xen/bin/ivshmem-server
+%%IVSHMEM%%lib/xen/bin/ivshmem-client
+%%IVSHMEM%%lib/xen/bin/ivshmem-server
 lib/xen/bin/libxl-save-helper
 lib/xen/bin/lsevtchn
 lib/xen/bin/pygrub

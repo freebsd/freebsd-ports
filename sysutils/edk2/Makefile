@@ -33,7 +33,6 @@ GH_TUPLE=	tianocore:edk2-platforms:${PLATFORM_TAG}:platforms \
 		ucb-bar:berkeley-softfloat-3:master:softfloat/ArmPkg/Library/ArmSoftFloatLib/berkeley-softfloat-3 \
 		kkos:oniguruma:v6.9.4_mark1:oniguruma/MdeModulePkg/Universal/RegularExpressionDxe/oniguruma \
 		google:brotli:v1.0.7-17-g666c328:brotli/MdeModulePkg/Library/BrotliCustomDecompressLib/brotli \
-		akheron:jansson:v2.13.1:jansson/RedfishPkg/Library/JsonLib/jansson
 
 BINARY_ALIAS=	make=${LOCALBASE}/bin/gmake \
 		dtc=${LOCALBASE}/bin/dtc \

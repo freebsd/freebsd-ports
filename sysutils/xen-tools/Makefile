@@ -58,6 +58,12 @@ DOCS_ALL_TARGET=	docs
 INSTALL_TARGET=		install-tools
 DOCS_INSTALL_TARGET=	install-docs
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300000
+PLIST_SUB+=	IVSHMEM=""
+.else
+PLIST_SUB+=	IVSHMEM="@comment "
+.endif
+
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} != FreeBSD
