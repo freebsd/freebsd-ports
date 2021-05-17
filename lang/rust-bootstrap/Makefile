@@ -5,17 +5,15 @@ PORTNAME=	rust
 PORTVERSION=	1.52.1
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	https://static.rust-lang.org/dist/:rust \
-		LOCAL/mikael:armbase \
-		LOCAL/mikael:base \
-		LOCAL/bdragon:ppc64lebase \
-		https://download.freebsd.org/ftp/${_RUST_FBSD_SUBDIR_${FLAVOR}}/:base \
-		LOCAL/mikael:powerpc64_gcc
+MASTER_SITES?=	https://static.rust-lang.org/dist/:rust \
+		LOCAL/tobik/rust:${FLAVOR} \
+		https://download.freebsd.org/ftp/${_RUST_FBSD_SUBDIR_${FLAVOR}}/:${FLAVOR}
 #		http://pkg.freebsd.org/FreeBSD:12:powerpc64/quarterly/All/gcc9-9.3.0_1.txz?dummy=/:powerpc64_gcc
 PKGNAMESUFFIX=	-bootstrap
 DISTNAME=	${PORTNAME}c-${PORTVERSION}-src
-DISTFILES=	rust/${DISTNAME}${EXTRACT_SUFX}:rust \
-		${_RUST_FBSD_DIST_${FLAVOR}}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:rust \
+		${_RUST_FBSD_DIST_${FLAVOR}:@f@bootstrap/$f:${FLAVOR}@}
+DIST_SUBDIR=	rust
 
 MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Create bootstrap compilers for building lang/rust
@@ -63,18 +61,18 @@ PATCHDIR=	${.CURDIR}/../rust/files
 # Resulting packages are not specific to amd64
 NO_ARCH=	yes
 
-_RUST_FBSD_DIST_aarch64=		FreeBSD-${_RUST_FBSD_VER}-arm64${EXTRACT_SUFX}:base
-_RUST_FBSD_DIST_amd64=			FreeBSD-${_RUST_FBSD_VER}-amd64${EXTRACT_SUFX}:base
+_RUST_FBSD_DIST_aarch64=		FreeBSD-${_RUST_FBSD_VER}-arm64${EXTRACT_SUFX}
+_RUST_FBSD_DIST_amd64=			FreeBSD-${_RUST_FBSD_VER}-amd64${EXTRACT_SUFX}
 # base.txz for armv* created from WANDBOARD images as there seem
 # to be no generic base.txz for it.
-_RUST_FBSD_DIST_armv6=			FreeBSD-${_RUST_FBSD_VER}-arm-armv6${EXTRACT_SUFX}:armbase
-_RUST_FBSD_DIST_armv7=			FreeBSD-${_RUST_FBSD_VER}-arm-armv7${EXTRACT_SUFX}:armbase
-_RUST_FBSD_DIST_i386=			FreeBSD-${_RUST_FBSD_VER}-i386${EXTRACT_SUFX}:base
-_RUST_FBSD_DIST_powerpc64_elfv1=	FreeBSD-${_RUST_FBSD_VER}-powerpc64-elfv1${EXTRACT_SUFX}:base \
-					FreeBSD-${_RUST_FBSD_VER}-powerpc64-elfv1-gcc9-9.3.0${EXTRACT_SUFX}:powerpc64_gcc
-_RUST_FBSD_DIST_powerpc64_elfv2=	FreeBSD-${_RUST_FBSD_VER}-powerpc64-elfv2-v1300123${EXTRACT_SUFX}:base
-_RUST_FBSD_DIST_powerpc64le=		FreeBSD-${_RUST_FBSD_VER}-powerpc64le-r366300${EXTRACT_SUFX}:ppc64lebase
-_RUST_FBSD_DIST_powerpc=		FreeBSD-${_RUST_FBSD_VER}-powerpc${EXTRACT_SUFX}:base
+_RUST_FBSD_DIST_armv6=			FreeBSD-${_RUST_FBSD_VER}-arm-armv6${EXTRACT_SUFX}
+_RUST_FBSD_DIST_armv7=			FreeBSD-${_RUST_FBSD_VER}-arm-armv7${EXTRACT_SUFX}
+_RUST_FBSD_DIST_i386=			FreeBSD-${_RUST_FBSD_VER}-i386${EXTRACT_SUFX}
+_RUST_FBSD_DIST_powerpc64_elfv1=	FreeBSD-${_RUST_FBSD_VER}-powerpc64-elfv1${EXTRACT_SUFX} \
+					FreeBSD-${_RUST_FBSD_VER}-powerpc64-elfv1-gcc9-9.3.0${EXTRACT_SUFX}
+_RUST_FBSD_DIST_powerpc64_elfv2=	FreeBSD-${_RUST_FBSD_VER}-powerpc64-elfv2-v1300123${EXTRACT_SUFX}
+_RUST_FBSD_DIST_powerpc64le=		FreeBSD-${_RUST_FBSD_VER}-powerpc64le-r366300${EXTRACT_SUFX}
+_RUST_FBSD_DIST_powerpc=		FreeBSD-${_RUST_FBSD_VER}-powerpc${EXTRACT_SUFX}
 _RUST_FBSD_VER=				${_RUST_FBSD_VER_${FLAVOR}:U11.4-RELEASE}
 _RUST_FBSD_VER_aarch64=			12.2-RELEASE
 _RUST_FBSD_VER_armv7=			12.2-RELEASE
@@ -129,7 +127,9 @@ IGNORE=	will not build on 12.x due to old system
 EXTRA_PATCHES+=	${PATCHDIR}/${FLAVOR:S/_/-/}
 .endif
 
-.if make(makesum)
+.if make(distclean) || make(makesum)
+MASTER_SITES:=	${FLAVORS:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -VMASTER_SITES!}@:O:u}
+.export MASTER_SITES
 DISTFILES:=	${DISTFILES:M*\:rust} \
 		${FLAVORS:O:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -V'DISTFILES:N*\:rust'!}@}
 .endif
