@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake shebangfix ssl
+USES=		cmake compiler:c++11-lang shebangfix ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Haivision
