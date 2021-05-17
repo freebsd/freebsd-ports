@@ -31,7 +31,7 @@
 #			  or "vars").
 #
 # Other information:
-# - USES=ansible implies USES=python:env automatically is no USES=python has
+# - USES=ansible implies USES=python:env automatically if no USES=python has
 #   been specified yet.
 #
 # MAINTAINER: ports@FreeBSD.org
