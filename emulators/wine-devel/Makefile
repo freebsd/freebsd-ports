@@ -1,8 +1,7 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 
 PORTNAME=	wine
-DISTVERSION=	6.7
-PORTREVISION=	1
+DISTVERSION=	6.8
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -148,7 +147,7 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 # --libdir is required since Wine defaults to "${PREFIX}/lib64" on amd64.
 CONFIGURE_ARGS+=	--enable-win64 --libdir=${PREFIX}/lib
-PLIST_SUB+=		WINE32="@comment " WINE64=""
+PLIST_SUB+=		WINE32="@comment " WINE64="" WINEARCH="amd64"
 
 # Wine assumes a WoW64 package is available, which is not the case on
 # FreeBSD yet.
@@ -156,7 +155,7 @@ post-patch:
 	${REINPLACE_CMD} '/Exec/s|wine|wine64|g' ${WRKSRC}/loader/wine.desktop
 
 .else
-PLIST_SUB+=		WINE32="" WINE64="@comment "
+PLIST_SUB+=		WINE32="" WINE64="@comment " WINEARCH="i386"
 .endif
 
 post-extract-STAGING-on: fix-shebang
@@ -167,9 +166,6 @@ pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} depend
 
 post-install:
-	@${MV} -f ${STAGEDIR}${WINELIBDIR}/libwine.so.1.0 \
-	          ${STAGEDIR}${WINELIBDIR}/libwine.so.1
-	@${LN} -sf libwine.so.1 ${STAGEDIR}/${WINELIBDIR}/libwine.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README ANNOUNCE AUTHORS
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
