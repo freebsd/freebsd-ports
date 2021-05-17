@@ -1,4 +1,4 @@
---- GNUmakefile.orig	2018-08-15 15:16:45 UTC
+--- GNUmakefile.orig	2021-01-14 15:45:22 UTC
 +++ GNUmakefile
 @@ -15,9 +15,8 @@ LDLIBS=-liconv
  endif
@@ -11,15 +11,13 @@
  
  ALL = maddr magrep mdate mdeliver mdirs mexport mflag mflow mgenmid mhdr minc mlist mmime mpick mscan msed mseq mshow msort mthread
  SCRIPT = mcolor mcom mless mmkdir mquote museragent
-@@ -58,16 +57,17 @@ install: FRC all
+@@ -57,14 +56,15 @@ install: FRC all
  		$(DESTDIR)$(MANDIR)/man1 \
  		$(DESTDIR)$(MANDIR)/man5 \
  		$(DESTDIR)$(MANDIR)/man7
 -	install -m0755 $(ALL) $(SCRIPT) $(DESTDIR)$(BINDIR)
 +	$(BSD_INSTALL_PROGRAM) $(ALL) $(DESTDIR)$(BINDIR)
 +	$(BSD_INSTALL_SCRIPT) $(SCRIPT) $(DESTDIR)$(BINDIR)
- 	ln -sf mless $(DESTDIR)$(BINDIR)/mnext
- 	ln -sf mless $(DESTDIR)$(BINDIR)/mprev
  	ln -sf mcom $(DESTDIR)$(BINDIR)/mbnc
  	ln -sf mcom $(DESTDIR)$(BINDIR)/mfwd
  	ln -sf mcom $(DESTDIR)$(BINDIR)/mrep

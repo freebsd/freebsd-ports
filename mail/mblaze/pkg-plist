@@ -17,9 +17,7 @@ bin/mless
 bin/mlist
 bin/mmime
 bin/mmkdir
-bin/mnext
 bin/mpick
-bin/mprev
 bin/mquote
 bin/mrefile
 bin/mrep

@@ -1,3 +1,5 @@
-TIMESTAMP = 1534418112
-SHA256 (leahneukirchen-mblaze-v0.4_GH0.tar.gz) = 83dffd7fe74fa871642e97db94e27c04506f746fa4d6ba2f95c1a880638d6e0c
-SIZE (leahneukirchen-mblaze-v0.4_GH0.tar.gz) = 85934
+TIMESTAMP = 1621264311
+SHA256 (leahneukirchen-mblaze-v1.1_GH0.tar.gz) = edd8cb86f667543e703dee58263b81c7e47744339d23ebbb6a43e75059ba93b1
+SIZE (leahneukirchen-mblaze-v1.1_GH0.tar.gz) = 97041
+SHA256 (7d049328136b466a33279ced6e2de46e4a41a3ef.patch) = f7dcc1e87d24783cba852c213ca27e3b36a70c2c50c004355d65ae1d561d912a
+SIZE (7d049328136b466a33279ced6e2de46e4a41a3ef.patch) = 1481
