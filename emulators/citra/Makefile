@@ -40,11 +40,10 @@ GH_TUPLE=	citra-emu:ext-boost:36603a1:boost/externals/boost \
 		weidai11:cryptopp:CRYPTOPP_7_0_0-23-gf320e7d9:cryptopp/externals/cryptopp/cryptopp \
 		wwylele:teakra:3e032a7:teakra/externals/teakra
 
-USES=		cmake compiler:c++17-lang localbase:ldflags sdl
+USES=		cmake:testing compiler:c++17-lang localbase:ldflags sdl
 USE_SDL=	sdl2
 CMAKE_ON=	USE_SYSTEM_BOOST
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
-TEST_TARGET=	test
 
 OPTIONS_DEFINE=	ALSA FFMPEG PULSEAUDIO JACK SNDIO
 OPTIONS_DEFAULT=FFMPEG PULSEAUDIO JACK SNDIO
