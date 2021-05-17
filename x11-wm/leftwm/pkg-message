@@ -1,0 +1,39 @@
+****************************************************************************
+
+- If you want to see more than a black screen when you login, select a
+theme.
+
+With x11/leftwm-theme:
+
+leftwm-theme update
+leftwm-theme install NAME_OF_THEME_YOU_LIKE
+leftwm-theme apply NAME_OF_THEME_YOU_LIKE
+
+Without x11/leftwm-theme:
+
+mkdir -p ~/.config/leftwm/themes
+cd ~/.config/leftwm/themes
+ln -s PATH_TO_THE_THEME_YOU_LIKE current
+
+
+- LeftWM has very few dependencies, this isn't always the case for themes.
+Themes typically require the following to be installed. However, this is up
+to the author of the theme, and could be different.
+
+List of common dependencies for themes:
+
+   graphics/feh
+   sysutils/conky
+   x11/dmenu
+   x11/hs-xmobar
+   x11/polybar
+   x11-wm/compton
+   x11-wm/picom
+
+
+- LeftWM requires that $XDG_RUNTIME_DIR is set in the environment as it
+uses this directory.
+
+Details: https://github.com/leftwm/leftwm/wiki/XDG_RUNTIME_DIR
+
+****************************************************************************

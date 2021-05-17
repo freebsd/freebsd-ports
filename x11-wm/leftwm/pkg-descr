@@ -1,0 +1,10 @@
+LeftWM is a tiling window manager written in Rust that aims to be stable
+and performant. LeftWM is designed to do one thing and to do that one thing
+well: be a window manager. LeftWM therefore follows the following mantra:
+
+- LeftWM is not a compositor.
+- LeftWM is not a lock screen.
+- LeftWM is not a bar. But, there are lots of good bars out there. With
+         themes, picking one is as simple as setting a symlink.
+
+WWW: http://leftwm.org/

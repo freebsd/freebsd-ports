@@ -52,6 +52,7 @@
     SUBDIR += kickshaw
     SUBDIR += labwc
     SUBDIR += larswm
+    SUBDIR += leftwm
     SUBDIR += libcompizconfig
     SUBDIR += libdockapp
     SUBDIR += libwraster
