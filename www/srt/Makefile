@@ -11,11 +11,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake compiler:c++11-lang shebangfix ssl
+USES=		cmake:testing compiler:c++11-lang shebangfix ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Haivision
 
 SHEBANG_FILES=	scripts/srt-ffplay
+
+CMAKE_TESTING_ON=	ENABLE_TESTING ENABLE_UNITTESTS # test TestIPv6.v6_calls_v4 hangs: https://github.com/Haivision/srt/issues/2007
 
 .include <bsd.port.mk>
