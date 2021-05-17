@@ -1,5 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2021-05-10
+DISTVERSION=	2021-05-17
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -44,6 +44,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		crossbeam-utils-0.8.4 \
 		dashmap-4.0.2 \
 		dissimilar-1.0.2 \
+		dot-0.1.4 \
 		drop_bomb-0.1.5 \
 		either-1.6.1 \
 		ena-0.14.0 \
@@ -116,7 +117,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		regex-1.5.3 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.25 \
-		rowan-0.13.0-pre.5 \
+		rowan-0.13.0-pre.6 \
 		rustc-ap-rustc_lexer-716.0.0 \
 		rustc-demangle-0.1.18 \
 		rustc-hash-1.1.0 \
