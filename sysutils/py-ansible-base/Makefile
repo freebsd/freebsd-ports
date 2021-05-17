@@ -1,5 +1,6 @@
 PORTNAME=	ansible-base
 DISTVERSION=	2.10.9
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -99,6 +100,7 @@ pre-test:
 
 .include <bsd.port.mk>
 
-# Make sure that we override the unique ETCDIR name set
+# Make sure that we override the unique DATADIR and ETCDIR set
 # by the implicit USES=uniquefiles.
+DATADIR=	${PREFIX}/share/${PYTHON_PKGNAMEPREFIX}ansible
 ETCDIR=		${PREFIX}/etc/ansible
