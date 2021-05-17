@@ -1,6 +1,6 @@
 PORTNAME=	Pod-Coverage
 PORTVERSION=	0.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,9 +11,10 @@ COMMENT=	Checks if the documentation of a module is comprehensive
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Devel-Symdump>=2.01:devel/p5-Devel-Symdump
-RUN_DEPENDS=	p5-Devel-Symdump>=2.01:devel/p5-Devel-Symdump
-
+BUILD_DEPENDS=	p5-Devel-Symdump>=2.01:devel/p5-Devel-Symdump \
+		p5-Pod-Parser>=1.13:textproc/p5-Pod-Parser
+RUN_DEPENDS=	p5-Devel-Symdump>=2.01:devel/p5-Devel-Symdump \
+		p5-Pod-Parser>=1.13:textproc/p5-Pod-Parser
 TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod
 
 USES=		perl5
