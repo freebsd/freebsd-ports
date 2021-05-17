@@ -2298,6 +2298,7 @@
     SUBDIR += wordpress
     SUBDIR += wpebackend-fdo
     SUBDIR += wsdlpull
+    SUBDIR += wslay
     SUBDIR += wsmake
     SUBDIR += wt
     SUBDIR += wuzz
