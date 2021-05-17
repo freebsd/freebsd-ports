@@ -1,8 +1,8 @@
 PORTNAME=	xpdf
-PORTVERSION=	4.02
+PORTVERSION=	4.03
 PORTEPOCH=	1
 CATEGORIES=	graphics print
-MASTER_SITES=	https://xpdfreader-dl.s3.amazonaws.com/
+MASTER_SITES=	https://dl.xpdfreader.com/
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	4
 .endif

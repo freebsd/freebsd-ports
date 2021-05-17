@@ -8,15 +8,6 @@
  option(NO_FONTCONFIG "disable support for libfontconfig" OFF)
  option(SYSTEM_XPDFRC "full path for system-wide xpdfrc file" "")
  if (SYSTEM_XPDFRC)
-@@ -194,7 +195,7 @@
-   find_package(Qt5Network)
-   find_package(Qt5PrintSupport)
- else ()
--  find_package(Qt4 COMPONENTS QtCore QtGui QtNetwork REQUIRED)
-+  find_package(Qt4 COMPONENTS QtCore QtGui QtNetwork)
- endif ()
- if(Qt5Widgets_FOUND)
-   message(STATUS "Qt5 found")
 @@ -212,7 +213,7 @@
        set(EXTRA_QT_LIBRARIES "-framework ApplicationServices")
      elseif (UNIX)
