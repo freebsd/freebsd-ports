@@ -13,6 +13,8 @@ COMMENT=	Ceph delivers object, block, and file storage in a unified system
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	dual
 
+BROKEN=		does not link: undefined reference to `typeinfo for leveldb::Logger'
+
 # even though i386 will build, it is not really advised.
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
