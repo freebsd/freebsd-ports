@@ -80,11 +80,6 @@ OPTIONS_EXCLUDE+=	KLVANC
 OPTIONS_EXCLUDE+=	OPENVINO
 .endif
 
-.if !exists(${.CURDIR:H:H}/net/srt)
-# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/a2fc8dbae853
-OPTIONS_EXCLUDE+=	SRT
-.endif
-
 .if !exists(${.CURDIR:H:H}/science/tensorflow)
 # https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/d8c0bbb0aa4
 OPTIONS_EXCLUDE+=	TENSORFLOW
@@ -464,7 +459,7 @@ SSH_LIB_DEPENDS=	libssh.so:security/libssh
 SSH_CONFIGURE_ENABLE=	libssh
 
 # srt
-SRT_LIB_DEPENDS=	libsrt.so:net/srt
+SRT_LIB_DEPENDS=	libsrt.so:www/srt
 SRT_CONFIGURE_ENABLE=	libsrt
 
 # svt-av1
