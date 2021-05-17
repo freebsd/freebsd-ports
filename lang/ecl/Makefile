@@ -2,7 +2,7 @@
 
 PORTNAME=	ecl
 PORTVERSION=	20.4.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang lisp
 MASTER_SITES=	https://common-lisp.net/project/ecl/static/files/release/
 
@@ -17,6 +17,7 @@ BROKEN_mips64=	fails to build: qemu: uncaught target signal 11 (Segmentation fau
 BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 LIB_DEPENDS=	libgc.so:devel/boehm-gc \
 		libgmp.so:math/gmp
+RUN_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 
 USES=		autoreconf gmake localbase makeinfo perl5 tar:tgz
 USE_CSTD=	c99
