@@ -5,7 +5,7 @@ PORTVERSION=	1.0
 PORTREVISION=	5
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Collection of useful scripts for DTrace
 
 LICENSE=	CDDL
@@ -17,11 +17,6 @@ GH_ACCOUNT=	opendtrace
 GH_PROJECT=	toolkit
 GH_TAGNAME=	f36d00b
 USE_RUBY=	yes
-SHEBANG_LANG=	sh
-sh_OLD_CMD=	/usr/bin/sh ./sh
-sh_CMD=		${SH}
-perl_OLD_CMD=	\\./perl
-ruby_OLD_CMD=	\\./ruby
 SHEBANG_FILES=	Apps/shellsnoop \
 		Code/Perl/func_abc.pl \
 		Code/Perl/func_malloc.pl \
@@ -73,6 +68,11 @@ SHEBANG_FILES=	Apps/shellsnoop \
 		rwsnoop \
 		rwtop \
 		statsnoop
+SHEBANG_LANG=	sh
+sh_OLD_CMD=	/usr/bin/sh ./sh
+sh_CMD=		${SH}
+perl_OLD_CMD=	\\./perl
+ruby_OLD_CMD=	\\./ruby
 
 NO_BUILD=	yes
 
