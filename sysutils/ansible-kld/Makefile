@@ -1,12 +1,13 @@
 PORTNAME=	ansible
 DISTVERSION=	g20200803
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-${_LIBRARY}
 
 MAINTAINER=	lcook@FreeBSD.org
-COMMENT=	Ansible module to load kernel modules or update /boot/loader.conf
+COMMENT?=	Ansible module to load kernel modules or update /boot/loader.conf
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
