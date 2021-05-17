@@ -2,7 +2,7 @@
 
 PORTNAME=		openvpn
 DISTVERSION=		2.5.2
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 			https://build.openvpn.net/downloads/releases/ \
@@ -145,5 +145,6 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/)
 	${CHMOD} ${BINMODE} ${STAGEDIR}${EXAMPLESDIR}/sample-scripts/*
+	${RM} ${STAGEDIR}${EXAMPLESDIR}/sample-config-files/*.orig
 
 .include <bsd.port.mk>
