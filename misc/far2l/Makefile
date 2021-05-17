@@ -1,6 +1,9 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	far2l
+# Upstream tags (pre-)releases very rarely and irregularly, so keep using
+# the g${DATE} format even for tagged releases to avoid bumping PORTEPOCH
+# in case we'd have to use raw commit hashes again in the future.
 PORTVERSION=	g20210426
 CATEGORIES=	misc
 
