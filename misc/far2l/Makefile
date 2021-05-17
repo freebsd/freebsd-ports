@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	far2l
-PORTVERSION=	g20210222
+PORTVERSION=	g20210426
 CATEGORIES=	misc
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -17,7 +17,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elfmz
-GH_TAGNAME=	3129972
+GH_TAGNAME=	v2021-04-26_alpha
 
 USES=		cmake compiler:c++11-lang libarchive pkgconfig shebangfix ssl
 SHEBANG_FILES=	far2l/bootstrap/view.sh

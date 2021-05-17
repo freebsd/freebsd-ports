@@ -485,6 +485,8 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/multiarc/plug/arceng.lng
 %%DATADIR%%/Plugins/multiarc/plug/arcrus.hlf
 %%DATADIR%%/Plugins/multiarc/plug/arcrus.lng
+%%DATADIR%%/Plugins/multiarc/plug/custom.ini
+%%DATADIR%%/Plugins/multiarc/plug/custom.ini.man.txt
 %%DATADIR%%/Plugins/tmppanel/plug/TmpEng.hlf
 %%DATADIR%%/Plugins/tmppanel/plug/TmpEng.lng
 %%DATADIR%%/Plugins/tmppanel/plug/TmpRus.hlf
