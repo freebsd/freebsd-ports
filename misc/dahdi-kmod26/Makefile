@@ -15,6 +15,8 @@ DISTFILES=	${DISTNAME}.tar.bz2\
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Digium/Asterisk Hardware Device Interface
 
+BROKEN=		does not compile: use of undeclared identifier 'thread_dtor'
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/dahdi_cfg:misc/dahdi
 
 ONLY_FOR_ARCHS=		amd64 i386 powerpc64 sparc64
