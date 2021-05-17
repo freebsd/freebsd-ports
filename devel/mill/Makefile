@@ -1,5 +1,7 @@
+# Created by: Jens Grassel <freebsd-ports@jan0sch.de>
+
 PORTNAME=	mill
-DISTVERSION=	0.9.6
+DISTVERSION=	0.9.7
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/lihaoyi/mill/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTVERSION}-assembly
