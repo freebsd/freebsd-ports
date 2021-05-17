@@ -5,13 +5,15 @@ PORTVERSION=	6.12.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 
+PATCH_SITES=	https://github.com/xmrig/xmrig/commit/
+PATCHFILES=	27ced139a619dcbc6a81de897b1045a3852cbee9.patch:-p1
+
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	High performance Monero (XMR) CPU miner
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	fails to compile: src/common/cpu/BasicCpuInfo_arm.cpp:30:13: fatal error: 'asm/hwcap.h' file not found
 BROKEN_powerpc64=	fails to compile: g++9: error: unrecognized command line option '-maes'; did you mean '-mads'?
 BROKEN_riscv64=		fails to compile: /nxb-bin/usr/lib/clang/11.0.0/include/cpuid.h:11:2: error: this header is for x86 only
 
