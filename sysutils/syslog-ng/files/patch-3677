@@ -1,0 +1,25 @@
+diff --git modules/afmongodb/afmongodb-worker.c.old modules/afmongodb/afmongodb-worker.c
+index d111252ab5..1f65e2ff97 100644
+--- modules/afmongodb/afmongodb-worker.c.old
++++ modules/afmongodb/afmongodb-worker.c
+@@ -34,7 +34,8 @@ _worker_disconnect(LogThreadedDestWorker *s)
+   MongoDBDestWorker *self = (MongoDBDestWorker *)s;
+   MongoDBDestDriver *owner = (MongoDBDestDriver *) self->super.owner;
+ 
+-  mongoc_collection_destroy(self->coll_obj);
++  if (self->coll_obj)
++    mongoc_collection_destroy(self->coll_obj);
+   self->coll_obj = NULL;
+ 
+   if (self->client)
+@@ -63,7 +64,9 @@ _switch_collection(MongoDBDestWorker *self, const gchar *collection)
+   if (!self->client)
+     return FALSE;
+ 
+-  mongoc_collection_destroy(self->coll_obj);
++  if (self->coll_obj)
++    mongoc_collection_destroy(self->coll_obj);
++
+   self->coll_obj = mongoc_client_get_collection(self->client, owner->const_db, collection);
+ 
+   if (!self->coll_obj)
