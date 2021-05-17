@@ -14,6 +14,8 @@ COMMENT=	Columnar in-memory analytics layer for big data
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
+BROKEN_FreeBSD_11=	The OpenSSL must be greater than or equal to 1.1.0
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USES=		cmake compiler:c++11-lang localbase pkgconfig python:build
