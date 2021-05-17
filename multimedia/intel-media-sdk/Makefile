@@ -14,18 +14,20 @@ ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
 
 LIB_DEPENDS=	libva.so:multimedia/libva
 RUN_DEPENDS=	cmrtlib>0:multimedia/cmrtlib
+TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake compiler:c++11-lib pkgconfig
+USES=		cmake:testing compiler:c++11-lib localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	Intel-Media-SDK
 GH_PROJECT=	MediaSDK
 CMAKE_ON=	BUILD_TOOLS
+CMAKE_TESTING_ON=	BUILD_TESTS USE_SYSTEM_GTEST
 PLIST_SUB=	ARCH_SUFX=${ARCH:S/i386/32/:S/amd//:S/x86_//}
 # https://github.com/Intel-Media-SDK/MediaSDK/issues/1844
 LLD_UNSAFE=	yes
 
-OPTIONS_DEFINE=	OPENCL TEST WAYLAND X11
+OPTIONS_DEFINE=	OPENCL WAYLAND X11
 OPTIONS_DEFAULT=OPENCL WAYLAND X11
 OPTIONS_SUB=	yes
 
@@ -41,11 +43,6 @@ WAYLAND_LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm \
 			libwayland-client.so:graphics/wayland
 WAYLAND_CMAKE_BOOL=	ENABLE_WAYLAND
 
-TEST_BUILD_DEPENDS=	googletest>0:devel/googletest
-TEST_USES=		localbase:ldflags
-TEST_CMAKE_BOOL=	BUILD_TESTS USE_SYSTEM_GTEST
-TEST_TEST_TARGET=	test
-
 post-patch:
 # Pick git commit from port and use reproducible time
 	@${REINPLACE_CMD} -e "/COMMAND/s/date/& -r `${AWK} '/TIMESTAMP/ \
@@ -56,7 +53,5 @@ post-patch:
 # Don't assume GCC and glibc libraries are available
 	@${REINPLACE_CMD} -e 's/ -lstdc++ -ldl//' \
 		${WRKSRC}/api/mfx_dispatch/linux/pkg-config*.cmake
-
-pre-install-TEST-on: do-test
 
 .include <bsd.port.mk>
