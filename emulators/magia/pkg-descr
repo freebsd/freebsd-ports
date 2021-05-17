@@ -1,0 +1,5 @@
+Magia is GBA emulator written in golang.
+
+Warning: This emulator is WIP, so many ROMs don't work correctly now.
+
+WWW: https://github.com/pokemium/magia
