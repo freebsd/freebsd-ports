@@ -532,7 +532,16 @@ man/man1/shellsnoop.1.gz
 %%DATADIR%%/FS/fsrw.d
 %%DATADIR%%/FS/rfileio.d
 %%DATADIR%%/FS/rfsio.d
+%%DATADIR%%/FS/rw.d
+%%DATADIR%%/FS/spasync.d
+%%DATADIR%%/FS/vfssnoop.d
 %%DATADIR%%/FS/vopstat
+%%DATADIR%%/FS/zfsasyncwrites.d
+%%DATADIR%%/FS/zfsslower.d
+%%DATADIR%%/FS/zfstxgsyncbytes.d
+%%DATADIR%%/FS/zfstxgsyncduration.d
+%%DATADIR%%/FS/zilstat
+%%DATADIR%%/FS/zilt10k.d
 %%DATADIR%%/Guide
 %%DATADIR%%/Include/Readme
 %%DATADIR%%/Include/test.ksh
