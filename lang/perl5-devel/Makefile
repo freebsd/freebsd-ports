@@ -1,6 +1,6 @@
 PORTNAME=	perl
 # XXX Remove second line, uncomment first
-#DISTVERSION=	${PERL_VERSION}
+#DISTVERSION=	${PERL_VERSION}	# TODO: set EXPIRATION_DATE when .0 is released
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${GH_TAGNAME:C/^v//:C/-g[0-9a-f]*$//}
 DISTVERSIONSUFFIX=	${GH_TAGNAME:C/.*-g/-g/}
@@ -31,7 +31,7 @@ USES=		cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	Perl
 GH_PROJECT=	perl5
-GH_TAGNAME=	v5.34.0-RC1-7-g1e43c13e1f
+GH_TAGNAME=	v5.34.0-RC2-3-gf212efc79f
 
 # Give a hint of where libperl.so can be found.
 USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
