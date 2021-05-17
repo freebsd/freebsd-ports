@@ -1795,6 +1795,7 @@
     SUBDIR += sl-hyphen
     SUBDIR += sl-mythes
     SUBDIR += slides
+    SUBDIR += slowcat
     SUBDIR += smi
     SUBDIR += smu
     SUBDIR += so-hunspell

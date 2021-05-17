@@ -1,0 +1,6 @@
+The "Slowcat" program is intended for use with various VT100 and other
+animations from http://artscene.textfiles.com/vt100/, where a time delay
+not unlike a terminal or modem makes the entire thing actually understandable.
+This program will add an artificial 9600 baud delay while printing a file.
+
+WWW: http://artscene.textfiles.com/viewers/
