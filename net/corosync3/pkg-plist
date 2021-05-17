@@ -1,5 +1,5 @@
 bin/corosync-blackbox
-@sample %%ETCDIR%%/corosync.conf.example
+@sample %%ETCDIR%%/corosync.conf.example %%ETCDIR%%/corosync.conf
 etc/logrotate.d/corosync
 include/corosync/cfg.h
 include/corosync/cmap.h
