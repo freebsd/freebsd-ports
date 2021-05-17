@@ -39,13 +39,17 @@
 .if !defined(_INCLUDE_USES_ANSIBLE_Mk)
 _INCLUDE_USES_ANSIBLE_Mk=	yes
 
+_valid_ARGS=    env module plugin
+.for _arg in ${ansible_ARGS}
+.  if !${_valid_ARGS:M${_arg}}
+IGNORE=	USES=ansible: invalid argument: ${_arg}
+.  endif
+.endfor
+.if ${ansible_ARGS:[#]} != 1
+IGNORE=	USES=ansible: too many arguments: ${ansible_ARGS}
+.endif
 .if empty(ansible_ARGS)
-IGNORE=	no arguments specified to USES=ansible
-.elif ${ansible_ARGS} == "env"
-.elif ${ansible_ARGS} == "module"
-.elif ${ansible_ARGS} == "plugin"
-.else
-IGNORE=	uses unknown USES=ansible arguments: ${ansible_ARGS}
+IGNORE=	USES=ansible: no arguments specified
 .endif
 
 .if !${USES:Mpython*}
