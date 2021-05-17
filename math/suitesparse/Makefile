@@ -1,7 +1,7 @@
 # Created by: Maho Nakata <maho@FreeBSD.org>
 
 PORTNAME=	suitesparse
-PORTVERSION=	5.9.0
+PORTVERSION=	5.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
