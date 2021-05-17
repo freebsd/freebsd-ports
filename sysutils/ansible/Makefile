@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-base>0:sysutils/py-ansible-base@${PY_FLAVOR}
 
-USES=		cpe python:3.6+ shebangfix
+USES=		ansible:env cpe python:3.6+ shebangfix
 CPE_VENDOR=	redhat
 USE_PYTHON=	autoplist concurrent distutils
 
@@ -39,8 +39,13 @@ _ANSIBLE_PACKAGES+=	${PYTHON_PKGNAMEPREFIX}ansible${version}-*
 
 post-patch:
 	${FIND} ${WRKSRC} -type f -exec ${GREP} --null -El '(/etc/ansible|/usr/share/ansible)' {} + | ${XARGS} -n 500 -0 ${REINPLACE_CMD} \
-		-e 's|/etc/ansible|${ETCDIR:S/${PY_FLAVOR}-//}|g' \
+		-e 's|/etc/ansible|${ETCDIR}|g' \
 		-e 's|/usr/share/ansible|${DATADIR}|g'
 	${FIND} ${WRKSRC} -type f -name "*.bak" -delete
 
 .include <bsd.port.mk>
+
+# Make sure that we override the unique DATADIR and ETCDIR set
+# by the implicit USES=uniquefiles.
+DATADIR=	${ANSIBLE_DATADIR}
+ETCDIR=		${ANSIBLE_ETCDIR}
