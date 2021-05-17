@@ -1,39 +1,25 @@
---- Makefile.orig	2020-10-06 03:46:41 UTC
+--- Makefile.orig	2021-05-15 20:10:26 UTC
 +++ Makefile
-@@ -24,7 +24,7 @@
- PREFIX := /usr/local
- bindir := $(PREFIX)/bin
+@@ -32,7 +32,7 @@ BOWTIE_SHARED_MEM :=
  
--ARCH := $(shell uname -m)
-+ARCH := $(shell uname -p)
- LDLIBS := -lz
- GCC_PREFIX := $(shell dirname `which gcc`)
- GCC_SUFFIX :=
-@@ -201,22 +201,22 @@ endif
+ CXXFLAGS += -std=c++11
+ 
+-ARCH = $(shell uname -m)
++ARCH = $(shell uname -p)
+ NGS_VER ?= 2.9.2
+ VDB_VER ?= 2.9.2-1
+ 
+@@ -59,11 +59,11 @@ ifneq (,$(findstring Darwin,$(shell uname)))
+ endif
  
  BITS := 32
- SSE_FLAG := -msse2
--ifeq (x86_64,$(shell uname -m))
-+ifeq (x86_64,$(shell uname -p))
+-ifneq (,$(findstring $(shell uname -m), x86_64 amd64))
++ifneq (,$(findstring $(shell uname -p), x86_64 amd64))
    BITS := 64
--else ifeq (amd64,$(shell uname -m))
-+else ifeq (amd64,$(shell uname -p))
-   BITS := 64
--else ifeq (aarch64,$(shell uname -m))
-+else ifeq (aarch64,$(shell uname -p))
-   BITS := 64
-   SSE_FLAG :=
-   CXXFLAGS += -fopenmp-simd
-   CPPFLAGS += -Ithird_party/simde
--else ifeq (s390x,$(shell uname -m))
-+else ifeq (s390x,$(shell uname -p))
-   BITS := 64
-   SSE_FLAG :=
-   CXXFLAGS += -fopenmp-simd
-   CPPFLAGS += -Ithird_party/simde
-   SANITIZER_FLAGS :=
--else ifeq (ppc64le,$(shell uname -m))
-+else ifeq (powerpc64le,$(shell uname -p))
+   SSE_FLAG := -msse2
+   POPCNT_CAPABILITY ?= 1
+-else ifneq (,$(findstring $(shell uname -m), aarch64 arm64 s390x ppc64 ppc64le))
++else ifneq (,$(findstring $(shell uname -p), aarch64 arm64 s390x powerpc64 powerpc64le))
    BITS := 64
    SSE_FLAG :=
    CXXFLAGS += -fopenmp-simd

@@ -1,5 +1,5 @@
-TIMESTAMP = 1618499065
-SHA256 (BenLangmead-bowtie2-v2.4.2_GH0.tar.gz) = ea33a1562faf759b21b3a905e20b87a3524ac4e53af8cd723d9a9f31ee159c8a
-SIZE (BenLangmead-bowtie2-v2.4.2_GH0.tar.gz) = 10590144
-SHA256 (nemequ-simde-422ed9c_GH0.tar.gz) = 3e7e962b499212cdddcaeca973d1c15d71a4b620afb46113d936ce5c3a8236ba
-SIZE (nemequ-simde-422ed9c_GH0.tar.gz) = 332230
+TIMESTAMP = 1621280053
+SHA256 (BenLangmead-bowtie2-v2.4.3_GH0.tar.gz) = 616017bcc68fc178418575fe39ffde42fff811d0d071bac7b1e7650288e4d166
+SIZE (BenLangmead-bowtie2-v2.4.3_GH0.tar.gz) = 10582150
+SHA256 (simd-everywhere-simde-no-tests-f6a0b3b_GH0.tar.gz) = 9874f22afe8a6cd92770aa194df47db3d0963d80ea233a502b0d557f59763eb8
+SIZE (simd-everywhere-simde-no-tests-f6a0b3b_GH0.tar.gz) = 397743
