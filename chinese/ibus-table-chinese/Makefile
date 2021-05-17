@@ -8,6 +8,8 @@ COMMENT=	Chinese input tables for IBus
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		does not build: TypeError: cannot use a string pattern on a bytes-like object
+
 BUILD_DEPENDS=	${LOCALBASE}/share/cmake/Modules/ManageEnvironment.cmake:devel/cmake-fedora \
 		ibus-daemon:textproc/ibus \
 		${LOCALBASE}/libexec/ibus-engine-table:textproc/ibus-table
