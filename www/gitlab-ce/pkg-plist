@@ -7641,6 +7641,7 @@
 %%WWWDIR%%/app/presenters/ci/pipeline_artifacts/code_quality_mr_diff_presenter.rb
 %%WWWDIR%%/app/presenters/ci/pipeline_presenter.rb
 %%WWWDIR%%/app/presenters/ci/processable_presenter.rb
+%%WWWDIR%%/app/presenters/ci/stage_presenter.rb
 %%WWWDIR%%/app/presenters/ci/trigger_presenter.rb
 %%WWWDIR%%/app/presenters/ci/variable_presenter.rb
 %%WWWDIR%%/app/presenters/clusterable_presenter.rb
@@ -18542,7 +18543,7 @@
 %%WWWDIR%%/doc/user/profile/img/busy_indicator_sidebar_collapsed_v13_9.png
 %%WWWDIR%%/doc/user/profile/img/busy_indicator_sidebar_v13_9.png
 %%WWWDIR%%/doc/user/profile/img/busy_indicator_user_popovers_v13_6.png
-%%WWWDIR%%/doc/user/profile/img/notification_global_settings.png
+%%WWWDIR%%/doc/user/profile/img/notification_global_settings_v13_12.png
 %%WWWDIR%%/doc/user/profile/img/notification_group_settings_v12_8.png
 %%WWWDIR%%/doc/user/profile/img/notification_project_settings_v12_8.png
 %%WWWDIR%%/doc/user/profile/img/profile-preferences-syntax-themes.png
@@ -32264,6 +32265,7 @@
 %%WWWDIR%%/spec/presenters/ci/pipeline_artifacts/code_coverage_presenter_spec.rb
 %%WWWDIR%%/spec/presenters/ci/pipeline_artifacts/code_quality_mr_diff_presenter_spec.rb
 %%WWWDIR%%/spec/presenters/ci/pipeline_presenter_spec.rb
+%%WWWDIR%%/spec/presenters/ci/stage_presenter_spec.rb
 %%WWWDIR%%/spec/presenters/ci/trigger_presenter_spec.rb
 %%WWWDIR%%/spec/presenters/ci/variable_presenter_spec.rb
 %%WWWDIR%%/spec/presenters/clusterable_presenter_spec.rb
