@@ -1,7 +1,6 @@
 PORTNAME=	just
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.2
-PORTREVISION=	1
+DISTVERSION=	0.9.3
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,8 +49,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		rand_chacha-0.3.0 \
 		rand_core-0.6.2 \
 		rand_hc-0.3.0 \
-		redox_syscall-0.2.7 \
-		regex-1.5.3 \
+		redox_syscall-0.2.8 \
+		regex-1.5.4 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
 		snafu-0.6.10 \
@@ -59,7 +58,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		strsim-0.8.0 \
 		strum-0.20.0 \
 		strum_macros-0.20.1 \
-		syn-1.0.71 \
+		syn-1.0.72 \
 		target-1.0.0 \
 		tempfile-3.2.0 \
 		termcolor-1.1.2 \
