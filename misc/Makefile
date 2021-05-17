@@ -482,6 +482,7 @@
     SUBDIR += teseq
     SUBDIR += thefuck
     SUBDIR += thrill
+    SUBDIR += timetrace
     SUBDIR += timezonemap
     SUBDIR += tkcron
     SUBDIR += tkinfo
