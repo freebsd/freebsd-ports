@@ -13,8 +13,9 @@ LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/third_party/skcms/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC}/third_party/lodepng/LICENSE
 
 LIB_DEPENDS=	libbrotlienc.so:archivers/brotli
+TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake compiler:c++11-lib pkgconfig shared-mime-info
+USES=		cmake:testing compiler:c++11-lib localbase:ldflags pkgconfig shared-mime-info
 USE_GITHUB=	nodefault
 USE_GITLAB=	yes
 USE_LDCONFIG=	yes
@@ -28,9 +29,10 @@ GL_COMMIT=	9e9bce86164dc4d01c39eeeb3404d6aed85137b2
 CMAKE_ON=	JPEGXL_ENABLE_PLUGINS
 CMAKE_OFF=	JPEGXL_WARNINGS_AS_ERRORS ${BENCHMARK FUZZERS TCMALLOC:L:S/^/JPEGXL_ENABLE_/}
 CMAKE_OFF+=	${OpenGL GLUT:L:S/^/CMAKE_DISABLE_FIND_PACKAGE_/} # sjpeg
+CMAKE_OFF+=	${CMAKE_TESTING_ON}
 LDFLAGS+=	-Wl,--as-needed # brotlicommon, GIMP/OPENEXR/PNG deps
 
-OPTIONS_DEFINE=	GIF GIMP JPEG LTO MANPAGES OPENEXR PIXBUF PNG TEST
+OPTIONS_DEFINE=	GIF GIMP JPEG LTO MANPAGES OPENEXR PIXBUF PNG
 OPTIONS_DEFAULT=GIF GIMP JPEG LTO MANPAGES OPENEXR PIXBUF PNG
 OPTIONS_EXCLUDE_i386=	LTO # ConvolutionWithTranspose(): JXL_CHECK: out->xsize() == in.ysize()
 OPTIONS_EXCLUDE_powerpc64=	${"${/usr/bin/ld:L:tA}"==/usr/bin/ld.lld:?LTO:} # LLVM bug 47353
@@ -68,11 +70,6 @@ PIXBUF_USE=		GNOME=gdkpixbuf2
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_PNG
 
-TEST_BUILD_DEPENDS=	googletest>0:devel/googletest
-TEST_USES=		localbase:ldflags
-TEST_CMAKE_BOOL=	BUILD_TESTING
-TEST_TEST_TARGET=	test
-
 post-patch:
 	@${REINPLACE_CMD} 's,/usr,${LOCALBASE},' \
 		${WRKSRC}/plugins/gdk-pixbuf/jxl.thumbnailer
@@ -84,7 +81,5 @@ post-patch-GIMP-off:
 	@${REINPLACE_CMD} -i.nogimp '/gimp/d' ${WRKSRC}/plugins/CMakeLists.txt
 post-patch-PIXBUF-off:
 	@${REINPLACE_CMD} -i.nopixbuf '/gdk-pixbuf/d' ${WRKSRC}/plugins/CMakeLists.txt
-
-pre-install-TEST-on:	do-test
 
 .include <bsd.port.mk>
