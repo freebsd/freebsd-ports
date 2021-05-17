@@ -235,7 +235,7 @@ webdis:*:287:287::0:0:webdis daemon user:/nonexistent:/usr/sbin/nologin
 ntopng:*:288:288::0:0:ntopng daemon user:/nonexistent:/usr/sbin/nologin
 victoria-metrics:*:289:289::0:0:VictoriaMetrics user:/nonexistent:/usr/sbin/nologin
 _gmid:*:290:290::0:0:gmid daemon user:/var/empty:/usr/sbin/nologin
-# free: 291
+pydio:*:291:291::0:0:pydio cells user:/var/pydio:/bin/sh
 # free: 292
 # free: 293
 # free: 294

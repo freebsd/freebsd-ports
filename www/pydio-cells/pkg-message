@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+To configure and start Pydio Cells:
+
+1. Enable cells in rc.conf:
+   # sysrc cells_enable=YES
+
+2. (optional) Set the custom working and log directories:
+   # sysrc cells_workingdir=<working_dir>
+   # sysrc cells_logdir=<log_dir>
+
+3. Run the configuration
+   # service cells cli configure --exit_after_install
+
+4. When the configuration master finishes - start the cells
+   # service cells start
+
+To control your installation you can use cells CLI
+with workingdir and logdir set by running:
+# service cells cli ...
+EOM
+}
+]
