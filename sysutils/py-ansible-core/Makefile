@@ -27,7 +27,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=0:security/py-bcrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
 
-USES=		cpe gmake python:3.6+ shebangfix
+USES=		ansible:env cpe gmake python:3.6+ shebangfix
 CPE_VENDOR=	redhat
 USE_PYTHON=	autoplist concurrent distutils
 
@@ -98,5 +98,5 @@ pre-test:
 
 # Make sure that we override the unique DATADIR and ETCDIR set
 # by the implicit USES=uniquefiles.
-DATADIR=	${PREFIX}/share/${PYTHON_PKGNAMEPREFIX}ansible
-ETCDIR=		${PREFIX}/etc/ansible
+DATADIR=	${ANSIBLE_DATADIR}
+ETCDIR=		${ANSIBLE_ETCDIR}
