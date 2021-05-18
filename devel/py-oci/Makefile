@@ -1,7 +1,7 @@
 # Created by: Alessando Sagratini <ale_sagra@hotmail.com>
 
 PORTNAME=	oci
-PORTVERSION=	2.38.2
+PORTVERSION=	2.38.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
