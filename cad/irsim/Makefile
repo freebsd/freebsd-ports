@@ -5,7 +5,7 @@ DISTVERSION=	9.7.110
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/irsim/archive/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Event-driven logic-level simulator for MOS circuis
 
 LICENSE=	GPLv2
