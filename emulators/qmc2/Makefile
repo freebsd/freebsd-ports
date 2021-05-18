@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt based UNIX MAME/MESS frontend
 
 RUN_DEPENDS=	mame>=0.154:emulators/mame \
