@@ -6,7 +6,7 @@ CATEGORIES=	archivers games
 MASTER_SITES=	LOCAL/danilo
 DISTNAME=	hllib${PORTVERSION:S/.//g}
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to extract data from various Half-Life file formats
 
 LICENSE=	GPLv2
