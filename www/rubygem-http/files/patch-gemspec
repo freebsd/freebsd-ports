@@ -1,0 +1,11 @@
+--- http.gemspec.orig	2021-05-17 12:38:25 UTC
++++ http.gemspec
+@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.3"])
+       s.add_runtime_dependency(%q<http-cookie>.freeze, ["~> 1.0"])
+       s.add_runtime_dependency(%q<http-form_data>.freeze, ["~> 2.2"])
+-      s.add_runtime_dependency(%q<llhttp-ffi>.freeze, ["~> 0.0.1"])
++      s.add_runtime_dependency(%q<llhttp-ffi>.freeze, ["~> 0.3.0"])
+       s.add_development_dependency(%q<bundler>.freeze, ["~> 2.0"])
+     else
+       s.add_dependency(%q<addressable>.freeze, ["~> 2.3"])
