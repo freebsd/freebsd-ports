@@ -55,19 +55,14 @@ PLIST_SUB+=	ARCH="${ARCH:C/powerpc64.*/powerpc/}"
 
 WCCP_DESC=	Enable WCCPv2 protocol
 WCCP_CONFIGURE_ENABLE=	wccp
+WCCP_USE=	GCC=yes
 
 MEMCACHED_DESC=		Enable memcache & memcached_remap plugin
+MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
 IMAGEMAGICK_DESC=	Enable ats-magick & webp convert plugin
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MMEMCACHED}
-LIB_DEPENDS+=	libmemcached.so:databases/libmemcached
-PLIST_SUB+=	MEMCACHED=""
-.else
-PLIST_SUB+=	MEMCACHED="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 .if ${PORT_OPTIONS:MX11}
@@ -75,16 +70,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6
 .else
 RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6-nox11
 .endif
-PLIST_SUB+=	IMAGEMAGICK=""
-.else
-PLIST_SUB+=	IMAGEMAGICK="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MWCCP}
-PLIST_SUB+=	WCCP=""
-USE_GCC=	yes
-.else
-PLIST_SUB+=	WCCP="@comment "
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
