@@ -12,6 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_i386=	Broken until the fix is released after 3.0.1
+BROKEN_FreeBSD_11=      error: unknown type name 'cha'; did you mean 'char'?
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
