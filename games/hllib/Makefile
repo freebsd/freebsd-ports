@@ -6,7 +6,7 @@ CATEGORIES=	games devel
 MASTER_SITES=	LOCAL/danilo
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to work with various Half-Life file formats
 
 LICENSE=	LGPL21
