@@ -2,6 +2,7 @@
 
 PORTNAME=	luminance-hdr
 DISTVERSION=	2.6.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION}
 
