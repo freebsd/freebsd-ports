@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	llhttp-ffi
-PORTVERSION=	0.0.1
+PORTVERSION=	0.3.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
