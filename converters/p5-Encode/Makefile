@@ -1,7 +1,7 @@
 # Created by: Rong-En Fan <rafan@infor.org>
 
 PORTNAME=	Encode
-PORTVERSION=	3.08
+PORTVERSION=	3.09
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DANKOGAI
