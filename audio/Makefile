@@ -593,8 +593,8 @@
     SUBDIR += pacpl
     SUBDIR += padthv1-lv2
     SUBDIR += paman
-    SUBDIR += paprefs
     SUBDIR += pamixer
+    SUBDIR += paprefs
     SUBDIR += pavucontrol
     SUBDIR += pavucontrol-qt
     SUBDIR += pavumeter
