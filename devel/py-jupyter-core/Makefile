@@ -1,8 +1,9 @@
-PORTNAME=	jupyter_core
+PORTNAME=	jupyter-core
 PORTVERSION=	4.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	jupyter_core-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Jupyter core package
