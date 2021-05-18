@@ -2,7 +2,7 @@
 
 PORTNAME=	kdiskmark
 PORTVERSION=	2.2.0
-CATEGORIES=	sysutils
+CATEGORIES=	benchmarks
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical HDD/SSD benchmarking tool

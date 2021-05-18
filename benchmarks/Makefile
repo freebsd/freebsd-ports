@@ -36,6 +36,7 @@
     SUBDIR += iozone21
     SUBDIR += iperf
     SUBDIR += iperf3
+    SUBDIR += kdiskmark
     SUBDIR += libcelero
     SUBDIR += libmicro
     SUBDIR += linux-gputest
