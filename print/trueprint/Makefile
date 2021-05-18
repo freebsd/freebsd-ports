@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	GNU
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print program listings on postscript printer
 
 USES=		gettext gmake
