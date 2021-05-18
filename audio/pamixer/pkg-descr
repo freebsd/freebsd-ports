@@ -1,0 +1,18 @@
+Pulseaudio command line mixer.
+
+pamixer is like amixer but for pulseaudio. It can control the
+volume levels of the sinks. Also, this project can provide you
+a small C++ library to control pulseaudio.
+
+Features
+  - Get the current volume of the default sink, the default
+    source or a selected one by his id
+  - Set the volume for the default sink, the default
+    source or any other device
+  - List the sinks
+  - List the sources
+  - Increase / Decrease the volume for a device (using gamma
+    correction optionally)
+  - Mute or unmute a device
+
+WWW: https://github.com/cdemoulins/pamixer
