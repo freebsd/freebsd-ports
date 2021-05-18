@@ -1,7 +1,7 @@
 # Created by: uffe@uffe.org
 
 PORTNAME=	cpuid
-DISTVERSION=	20200127
+DISTVERSION=	20201006
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.etallen.com/cpuid/
