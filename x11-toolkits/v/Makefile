@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	gui
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ GUI development framework for X11 and Microsoft Windows
 
+DEPRECATED=	Dead upstream, unmaintained and no consumers
+EXPIRATION_DATE=2021-06-23
+
 USES=		compiler dos2unix gmake xorg
 USE_XORG=	x11 xt xmu xaw
 MAKE_ENV=	INSTALLDIR=${PREFIX} HOMEV=${WRKSRC}
