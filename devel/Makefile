@@ -1388,6 +1388,7 @@
     SUBDIR += libxalloc
     SUBDIR += libxo
     SUBDIR += libxs
+    SUBDIR += libxtend
     SUBDIR += libzim
     SUBDIR += libzookeeper
     SUBDIR += libzrtpcpp

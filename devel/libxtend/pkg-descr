@@ -1,0 +1,7 @@
+Libxtendc is a library of miscellaneous functions, the likes of which might
+be found in libc or libm.
+
+They provide some convenient functionality lacking in standard library
+functions as well some more esoteric features.
+
+WWW: https://github.com/outpaddling/libxtendc
