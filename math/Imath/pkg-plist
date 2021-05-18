@@ -38,8 +38,8 @@ lib/cmake/Imath/ImathConfigVersion.cmake
 lib/cmake/Imath/ImathTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Imath/ImathTargets.cmake
 lib/libImath-%%MAJORVER%%.so
-lib/libImath-%%MAJORVER%%.so.27
-lib/libImath-%%MAJORVER%%.so.27.0.0
+lib/libImath-%%MAJORVER%%.so.%%VER%%
+lib/libImath-%%MAJORVER%%.so.%%VER%%.0.0
 lib/libImath.so
 libdata/pkgconfig/Imath.pc
 %%PYTHON%%include/Imath/PyImath.h
@@ -83,8 +83,8 @@ libdata/pkgconfig/Imath.pc
 %%PYTHON%%include/Imath/PyImathVecOperators.h
 %%PYTHON%%lib/cmake/Imath/ImathConfig-%%CMAKE_BUILD_TYPE%%.cmake
 %%PYTHON%%lib/libPyImath_Python%%PYVER%%-%%MAJORVER%%.so
-%%PYTHON%%lib/libPyImath_Python%%PYVER%%-%%MAJORVER%%.so.27
-%%PYTHON%%lib/libPyImath_Python%%PYVER%%-%%MAJORVER%%.so.27.0.0
+%%PYTHON%%lib/libPyImath_Python%%PYVER%%-%%MAJORVER%%.so.%%VER%%
+%%PYTHON%%lib/libPyImath_Python%%PYVER%%-%%MAJORVER%%.so.%%VER%%.0.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/imath.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/imathnumpy.so
 %%PYTHON%%libdata/pkgconfig/PyImath.pc
