@@ -6,7 +6,7 @@ PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for generating number sequences and arithmetic evaluation
 
 LICENSE=	GPLv3+
