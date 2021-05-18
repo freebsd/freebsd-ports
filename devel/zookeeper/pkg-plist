@@ -1,40 +1,43 @@
 bin/zkCli.sh
-%%DATADIR%%/audience-annotations-0.5.0.jar
-%%DATADIR%%/commons-cli-1.2.jar
-%%DATADIR%%/commons-lang-2.6.jar
-%%DATADIR%%/jackson-annotations-2.10.3.jar
-%%DATADIR%%/jackson-core-2.10.3.jar
-%%DATADIR%%/jackson-databind-2.10.3.jar
+%%DATADIR%%/audience-annotations-0.12.0.jar
+%%DATADIR%%/commons-cli-1.4.jar
+%%DATADIR%%/jackson-annotations-2.10.5.jar
+%%DATADIR%%/jackson-core-2.10.5.jar
+%%DATADIR%%/jackson-databind-2.10.5.1.jar
 %%DATADIR%%/javax.servlet-api-3.1.0.jar
-%%DATADIR%%/jetty-http-9.4.24.v20191120.jar
-%%DATADIR%%/jetty-io-9.4.24.v20191120.jar
-%%DATADIR%%/jetty-security-9.4.24.v20191120.jar
-%%DATADIR%%/jetty-server-9.4.24.v20191120.jar
-%%DATADIR%%/jetty-servlet-9.4.24.v20191120.jar
-%%DATADIR%%/jetty-util-9.4.24.v20191120.jar
+%%DATADIR%%/jetty-http-9.4.38.v20210224.jar
+%%DATADIR%%/jetty-io-9.4.38.v20210224.jar
+%%DATADIR%%/jetty-security-9.4.38.v20210224.jar
+%%DATADIR%%/jetty-server-9.4.38.v20210224.jar
+%%DATADIR%%/jetty-servlet-9.4.38.v20210224.jar
+%%DATADIR%%/jetty-util-9.4.38.v20210224.jar
+%%DATADIR%%/jetty-util-ajax-9.4.38.v20210224.jar
 %%DATADIR%%/jline-2.14.6.jar
-%%DATADIR%%/json-simple-1.1.1.jar
-%%DATADIR%%/log4j-1.2.17.jar
-%%DATADIR%%/metrics-core-3.2.5.jar
-%%DATADIR%%/netty-buffer-4.1.50.Final.jar
-%%DATADIR%%/netty-codec-4.1.50.Final.jar
-%%DATADIR%%/netty-common-4.1.50.Final.jar
-%%DATADIR%%/netty-handler-4.1.50.Final.jar
-%%DATADIR%%/netty-resolver-4.1.50.Final.jar
-%%DATADIR%%/netty-transport-4.1.50.Final.jar
-%%DATADIR%%/netty-transport-native-epoll-4.1.50.Final.jar
-%%DATADIR%%/netty-transport-native-unix-common-4.1.50.Final.jar
-%%DATADIR%%/simpleclient_common-0.6.0.jar
-%%DATADIR%%/simpleclient_hotspot-0.6.0.jar
-%%DATADIR%%/simpleclient_servlet-0.6.0.jar
-%%DATADIR%%/simpleclient-0.6.0.jar
-%%DATADIR%%/slf4j-api-1.7.25.jar
-%%DATADIR%%/slf4j-log4j12-1.7.25.jar
-%%DATADIR%%/snappy-java-1.1.7.jar
+%%DATADIR%%/metrics-core-4.1.12.1.jar
+%%DATADIR%%/netty-buffer-4.1.59.Final.jar
+%%DATADIR%%/netty-codec-4.1.59.Final.jar
+%%DATADIR%%/netty-common-4.1.59.Final.jar
+%%DATADIR%%/netty-handler-4.1.59.Final.jar
+%%DATADIR%%/netty-resolver-4.1.59.Final.jar
+%%DATADIR%%/netty-transport-4.1.59.Final.jar
+%%DATADIR%%/netty-transport-native-epoll-4.1.59.Final.jar
+%%DATADIR%%/netty-transport-native-unix-common-4.1.59.Final.jar
+%%DATADIR%%/simpleclient-0.9.0.jar
+%%DATADIR%%/simpleclient_common-0.9.0.jar
+%%DATADIR%%/simpleclient_hotspot-0.9.0.jar
+%%DATADIR%%/simpleclient_servlet-0.9.0.jar
+%%DATADIR%%/slf4j-api-1.7.30.jar
+%%DATADIR%%/snappy-java-1.1.7.7.jar
 %%DATADIR%%/zookeeper-%%PORTVERSION%%.jar
 %%DATADIR%%/zookeeper-jute-%%PORTVERSION%%.jar
 %%DATADIR%%/zookeeper-prometheus-metrics-%%PORTVERSION%%.jar
-@sample %%ETCDIR%%/log4j.properties.sample
+%%LOG4J2%%%%DATADIR%%/log4j-api-%%ZOOKEEPER_LOG4J2_VERSION%%.jar
+%%LOG4J2%%%%DATADIR%%/log4j-core-%%ZOOKEEPER_LOG4J2_VERSION%%.jar
+%%LOG4J2%%%%DATADIR%%/log4j-slf4j-impl-%%ZOOKEEPER_LOG4J2_VERSION%%.jar
+%%LOG4J2%%@sample %%ETCDIR%%/log4j2.properties.sample
+%%NO_LOG4J2%%%%DATADIR%%/log4j-1.2.17.jar
+%%NO_LOG4J2%%%%DATADIR%%/slf4j-log4j12-1.7.30.jar
+%%NO_LOG4J2%%@sample %%ETCDIR%%/log4j.properties.sample
 @sample %%ETCDIR%%/configuration.xsl.sample
 @sample %%ETCDIR%%/zoo.cfg.sample
 @dir(%%ZOOKEEPER_USER%%,%%ZOOKEEPER_GROUP%%,755) %%ETCDIR%%
