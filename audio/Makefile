@@ -731,6 +731,7 @@
     SUBDIR += soundgrab
     SUBDIR += soundkonverter
     SUBDIR += soundtouch
+    SUBDIR += soundtracker
     SUBDIR += sox
     SUBDIR += spc2it
     SUBDIR += spectacle-lv2

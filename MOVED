@@ -10752,7 +10752,6 @@ audio/xmms-faad||2018-12-21|Has expired: Uses obsolete glib12
 audio/xmms-scrobbler||2018-12-21|Has expired: Uses obsolete glib12
 audio/mcplay||2018-12-21|Has expired: Uses obsolete glib12
 audio/gmixer||2018-12-21|Has expired: Uses obsolete glib12
-audio/soundtracker||2018-12-21|Has expired: Uses obsolete glib12
 audio/xmms-sapplug||2018-12-21|Has expired: Uses obsolete glib12, use audio/penguinsap instead
 audio/rio500||2018-12-21|Has expired: Uses obsolete glib12
 audio/xmmsctrl||2018-12-21|Has expired: Uses obsolete glib12
