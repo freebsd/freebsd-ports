@@ -1,11 +1,11 @@
 # Created by: Rong-En Fan <rafan@FreeBSD.org>
 
 PORTNAME=	mbuffer
-PORTVERSION=	20200929
+PORTVERSION=	20210328
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Tool for buffering data streams
 
 LICENSE=	GPLv3+
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	gtar:archivers/gtar
 
-USES=		localbase ssl tar:tgz
+USES=		localbase ssl tar:tgz autoreconf gmake
 
 GNU_CONFIGURE=	yes
 
