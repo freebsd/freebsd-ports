@@ -5,7 +5,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	archivers java
 MASTER_SITES=	http://www.jcraft.com/jzlib/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reimplementation of zlib in pure Java
 
 LICENSE=	BSD3CLAUSE
