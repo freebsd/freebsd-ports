@@ -1,7 +1,7 @@
 # Created by: Alfred Perlstein <alfred@FreeBSD.org>
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	1310.80.1
+PORTVERSION=	1310.100.10
 CATEGORIES=	net dns
 MASTER_SITES=	https://opensource.apple.com/tarballs/mDNSResponder/
 
