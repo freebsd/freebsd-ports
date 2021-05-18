@@ -1,8 +1,7 @@
 # Created by: Dean Hollister <dean@odyssey.apana.org.au>
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	2.3.167
-PORTREVISION=	1
+PORTVERSION=	2.3.168
 CATEGORIES=	mail
 MASTER_SITES=	https://www.dcc-servers.net/dcc/source/old/
 DISTNAME=	dcc-${PORTVERSION}
@@ -66,8 +65,6 @@ DCCM_CONFIGURE_ENABLE=		dccm
 IPV6_CONFIGURE_OFF=		--disable-IPv6
 PORTS_MILTER_BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:mail/libmilter
 PORTS_MILTER_CONFIGURE_ON=	--with-sendmail=yes
-
-CFLAGS+=	-fcommon
 
 ## User for DCC files and SUID binaries
 #
