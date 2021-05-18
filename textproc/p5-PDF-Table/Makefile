@@ -1,12 +1,12 @@
 # Created by: scheidell@secnap.net
 
 PORTNAME=	PDF-Table
-DISTVERSION=	0.12
+DISTVERSION=	1.002
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility class for building table layouts in a PDF::API2 object
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
