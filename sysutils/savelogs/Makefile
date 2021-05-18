@@ -7,7 +7,7 @@ CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SCOTTW
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Save log files in a nice way
 
 LICENSE=	ART10 GPLv1+
