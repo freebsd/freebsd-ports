@@ -1,13 +1,13 @@
 # Created by: Seamus Venasse <svenasse@polaris.ca>
 
-PORTNAME=		HTML-FromText
-PORTVERSION=		2.07
+PORTNAME=	HTML-FromText
+PORTVERSION=	2.07
 PORTREVISION=	1
-CATEGORIES=		www perl5
-MASTER_SITES=		CPAN
-PKGNAMEPREFIX=		p5-
+CATEGORIES=	www perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
-MAINTAINER=		danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mark up text as HTML
 
 LICENSE=	ART10 GPLv1+
