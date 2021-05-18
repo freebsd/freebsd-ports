@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/logreporters/${PORTNAME}/release/${PORTVERSION}
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Amavisd-new log parser
 
 LICENSE=	MIT
