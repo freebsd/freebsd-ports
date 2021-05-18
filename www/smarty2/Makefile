@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.smarty.net/files/docs/:manual
 DISTFILES=	manual-en-${PORTVERSION:R}.zip:manual
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP compiling template engine
 
 LICENSE=	LGPL21+
