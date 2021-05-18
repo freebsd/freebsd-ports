@@ -6,7 +6,7 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for the SANE (Scanner Access Now Easy) Project
 
 LICENSE=	ART10 GPLv1+
