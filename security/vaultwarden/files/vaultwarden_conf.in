@@ -1,3 +1,6 @@
+#Warning : Some of these settings may be overridden when changing settings on the admin page or in the config.json file
+#located by default at: /usr/local/www/vaulwarden/data/config.json
+
 ROCKET_ADDRESS=127.0.0.1
 export ROCKET_ADDRESS
 
