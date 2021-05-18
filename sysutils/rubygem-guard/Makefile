@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	guard
-PORTVERSION=	2.16.2
+PORTVERSION=	2.17.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
