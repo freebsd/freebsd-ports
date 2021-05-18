@@ -1,7 +1,7 @@
 # Created by: Sergey Kozlov <kozlov.sergey.404@gmail.com>
 
 PORTNAME=	bokeh
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
