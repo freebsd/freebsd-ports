@@ -6,7 +6,7 @@ PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://www.cafeconleche.org/XOM/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source (LGPL), tree-based API for processing XML with Java
 
 RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:textproc/xerces-j \
