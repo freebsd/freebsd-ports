@@ -25,6 +25,8 @@ BROKEN_aarch64=		Does not compile: error: cacheFlush support is missing on this 
 BROKEN_mips64=		Does not compile: error: const union jsval_layout has no member named word
 BROKEN_riscv64=		Does not compile: jsiter.cpp:270:16: cannot initialize return object of type 'bool' with an rvalue of type 'nullptr_t'
 BROKEN_sparc64=		Does not build: fails to link
+BROKEN_FreeBSD_13=	does not compile: cannot initialize return object of type 'bool' with an rvalue of type 'nullptr_t'
+BROKEN_FreeBSD_14=	does not compile: cannot initialize return object of type 'bool' with an rvalue of type 'nullptr_t'
 
 NOT_FOR_ARCHS=		powerpc powerpc64
 NOT_FOR_ARCHS_REASON=	PowerPC is not supported
