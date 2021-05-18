@@ -17,9 +17,9 @@ LIB_DEPENDS=	libyajl.so:devel/yajl \
 		libargp.so:devel/argp-standalone \
 		libxml2.so:textproc/libxml2
 BUILD_DEPENDS=	seabios>0:misc/seabios \
-		${LOCALBASE}/share/edk2-xen/XEN_EFI.fd:sysutils/edk2@xen
+		${LOCALBASE}/share/edk2-xen/XEN_X64_EFI.fd:sysutils/edk2@xen_x64
 RUN_DEPENDS=	seabios>0:misc/seabios \
-		${LOCALBASE}/share/edk2-xen/XEN_EFI.fd:sysutils/edk2@xen
+		${LOCALBASE}/share/edk2-xen/XEN_X64_EFI.fd:sysutils/edk2@xen_x64
 
 OPTIONS_DEFINE=		DOCS SPICE
 OPTIONS_DEFAULT=	DOCS
@@ -45,7 +45,7 @@ MAKE_ARGS=	clang=y ARCH=x86_64
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 CONFIGURE_ARGS+=	--with-system-seabios=${LOCALBASE}/share/seabios/bios.bin \
-			--with-system-ovmf=${LOCALBASE}/share/edk2-xen/XEN_EFI.fd \
+			--with-system-ovmf=${LOCALBASE}/share/edk2-xen/XEN_X64_EFI.fd \
 			--mandir=${MANPREFIX}/man
 
 SHEBANG_FILES=	tools/misc/xencov_split \

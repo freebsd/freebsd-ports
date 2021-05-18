@@ -11,7 +11,7 @@ ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	This port only provides firmware for aarch64 and amd64 machine
 
 PKGNAMESUFFIX=	-${FLAVOR:C/_/-/g}
-FLAVORS=	macchiatobin rpi3 rpi4 xen
+FLAVORS=	macchiatobin rpi3 rpi4 xen_x64
 FLAVOR?=	macchiatobin
 
 USES=	gmake python:3.7+,build
@@ -71,13 +71,13 @@ PLAT_RESULT=	RPi4/${PLAT_TARGET}_GCC5/FV/RPI_EFI.fd
 PLAT_FILENAME=	RPI_EFI.fd
 .endif
 
-.if ${FLAVOR} == xen
+.if ${FLAVOR} == xen_x64
 PLAT=		xen
 PLAT_ARCH=	X64
 PLAT_TARGET=	RELEASE
 PLATFILE=	OvmfPkg/OvmfXen.dsc
 PLAT_RESULT=	OvmfXen/${PLAT_TARGET}_GCC5/FV/OVMF.fd
-PLAT_FILENAME=	XEN_EFI.fd
+PLAT_FILENAME=	XEN_X64_EFI.fd
 .endif
 
 PLIST_FILES=	${PREFIX}/share/${PORTNAME}-${PLAT}/${PLAT_FILENAME}
