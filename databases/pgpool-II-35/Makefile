@@ -12,6 +12,9 @@ COMMENT=	Connection pool server for PostgreSQL
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	EOL since January 2021, please use one of the other pgpool-II-* ports
+EXPIRATION_DATE=	2021-06-30
+
 PORTSCOUT=	limit:^3.5.[0-9]*
 
 USES=		gmake libtool pgsql:9.3+
