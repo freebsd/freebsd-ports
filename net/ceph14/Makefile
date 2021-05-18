@@ -2,8 +2,7 @@
 
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	14.2.11
-PORTREVISION=	4
+DISTVERSION=	14.2.21
 CATEGORIES=	net
 PKGNAMESUFFIX=	14
 
@@ -12,8 +11,6 @@ COMMENT=	Ceph delivers object, block, and file storage in a unified system
 
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	dual
-
-BROKEN=		does not link: undefined reference to `typeinfo for leveldb::Logger'
 
 # even though i386 will build, it is not really advised.
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
@@ -29,7 +26,6 @@ BUILD_DEPENDS=	\
 LIB_DEPENDS=	\
 	${PY_BOOST} \
 	libboost_thread.so:devel/boost-libs \
-	libleveldb.so:databases/leveldb \
 	libnss3.so:security/nss \
 	libcryptopp.so:security/cryptopp \
 	liboath.so:security/oath-toolkit \
@@ -42,6 +38,7 @@ LIB_DEPENDS=	\
 	libtcmalloc.so:devel/google-perftools \
 	librabbitmq.so:net/rabbitmq-c \
 	libfmt.so:devel/libfmt
+#	libleveldb.so:databases/leveldb \
 RUN_DEPENDS=	\
 	bash:shells/bash \
 	flock:sysutils/flock \
@@ -64,7 +61,7 @@ RUN_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}routes>=0:www/py-routes@${PY_FLAVOR}
 
 USES=		cmake:noninja compiler:c++17-lang dos2unix fuse gettext-runtime gmake ncurses \
-		pkgconfig python:3.7+ shebangfix ssl
+		pkgconfig python:3.7+ readline shebangfix ssl
 USE_PYTHON=	cython py3kplist
 USE_OPENLDAP=	yes
 USE_GITHUB=	yes
@@ -88,19 +85,28 @@ GH_TUPLE+=	ceph:rapidjson:f54b0e4:rapidjson/src/rapidjson
 GH_TUPLE+=	ceph:rocksdb:4c736f1:rocksdb/src/rocksdb
 GH_TUPLE+=	ceph:xxHash:1f40c65:xxHash/src/xxHash
 GH_TUPLE+=	facebook:zstd:f4340f4:zstd/src/zstd
-# GH_TUPLE+=	ceph:seastar:0cf6aa6:seastar/src/seastar
+GH_TUPLE+=	ceph:spawn:5f4742f:spawn/src/spawn
+
+OPTIONS_DEFINE=	TESTS
+OPTIONS_SUB=	yes
 
 CMAKE_BUILD_TYPE=	Release
 CMAKE_ON=	WITH_SYSTEM_BOOST WITH_BOOST_CONTEXT WITH_FUSE WITH_PYTHON3
-CMAKE_OFF=	WITH_LTTNG WITH_BABELTRACE WITH_KRBD WITH_XFS \
+CMAKE_OFF=	WITH_LTTNG WITH_BABELTRACE WITH_KRBD WITH_XFS WITH_LEVELDB \
 		WITH_SPDK WITH_RDMA WITH_MGR_DASHBOARD_FRONTEND WITH_PYTHON2 \
-		WITH_RADOSGW_KAFKA_ENDPOINT
-CMAKE_ARGS=	-D MGR_PYTHON_VERSION=${PYTHON_VER} \
-		-D CEPH_MAN_DIR:STRING=man
+		WITH_RADOSGW_KAFKA_ENDPOINT WITH_LEVELDB
+CMAKE_ARGS=	-DMGR_PYTHON_VERSION=${PYTHON_VER} \
+		-DCEPH_MAN_DIR:STRING=man
 
 SHEBANG_FILES=	src/rbdmap src/ceph-post-file.in src/rbd-replay-many \
 		src/tools/ceph-monstore-update-crush.sh src/mount.fuse.ceph \
 		src/ceph-create-keys
+
+TESTS_DESC=	Build test/debug tools (Broken with Clang)
+TESTS_CMAKE_ON=	-DWITH_TESTS:BOOL=ON
+TESTS_CMAKE_OFF=-DWITH_TESTS:BOOL=OFF
+
+USE_CXXSTD=	gnu++17
 
 USE_RC_SUBR=	ceph
 USE_LDCONFIG=	yes
@@ -125,6 +131,8 @@ pre-configure:
 	${CP} files/file-git_version ${WRKSRC}/src/.git_version
 	# Use the module finders that come with Cmake for Boost and Python
 	${RM} ${WRKSRC}/cmake/modules/FindBoost.cmake || true
+	# Cleanup after patching
+	${RM} ${WRKSRC}/src/pybind/mgr/diskprediction_cloud/common/__init__.py.orig
 
 post-install:
 	# To install a ceph.conf sample
