@@ -87,6 +87,14 @@ USE_GCC=	yes
 PLIST_SUB+=	WCCP="@comment "
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
+# On FreeBSD >= 12 it does find eventfd.h, but it makes it also use
+# sys/epoll.h which is absent on FreeBSD and the build fails. So make
+# it ignore eventfd.h to build as on 11.x. Better solution would probably
+# be to depend on epoll-shim, but that needs testing
+CONFIGURE_ARGS+=	ac_cv_header_sys_eventfd_h=no ac_cv_func_eventfd=no
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '/cachedir:/s,$${localstatedir}+,$${localstatedir}/cache+,' \
