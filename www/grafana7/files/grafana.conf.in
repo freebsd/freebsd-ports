@@ -94,6 +94,12 @@ provisioning = %%GRAFANA_PROVISIONINGDIR%%
 # For "postgres" only, either "disable", "require" or "verify-full"
 ;ssl_mode = disable
 
+# Database drivers may support different transaction isolation levels.
+# Currently, only "mysql" driver supports isolation levels.
+# If the value is empty - driver's default isolation level is applied.
+# For "mysql" use "READ-UNCOMMITTED", "READ-COMMITTED", "REPEATABLE-READ" or "SERIALIZABLE".
+;isolation_level =
+
 ;ca_cert_path =
 ;client_key_path =
 ;client_cert_path =
@@ -303,6 +309,9 @@ provisioning = %%GRAFANA_PROVISIONINGDIR%%
 
 # Default UI theme ("dark" or "light")
 ;default_theme = dark
+
+# Path to a custom home page. Users are only redirected to this if the default home dashboard is used. It should match a frontend route and contain a leading slash.
+; home_page =
 
 # External user management, these options affect the organization users view
 ;external_manage_link_url =
@@ -906,10 +915,6 @@ provisioning = %%GRAFANA_PROVISIONINGDIR%%
 
 # Default timezone for user preferences. Options are 'browser' for the browser local timezone or a timezone name from IANA Time Zone database, e.g. 'UTC' or 'Europe/Amsterdam' etc.
 ;default_timezone = browser
-
-[expressions]
-# Enable or disable the expressions functionality.
-;enabled = true
 
 [expressions]
 # Enable or disable the expressions functionality.

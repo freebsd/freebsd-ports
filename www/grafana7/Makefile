@@ -1,6 +1,5 @@
 PORTNAME=	grafana
-PORTVERSION=	7.5.1
-PORTREVISION=	1
+DISTVERSION=	7.5.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://dl.grafana.com/oss/release/:public \
@@ -113,7 +112,7 @@ GH_TUPLE=	\
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		gosimple:slug:v1.9.0:gosimple_slug/vendor/github.com/gosimple/slug \
-		grafana:grafana-aws-sdk:v0.2.0:grafana_grafana_aws_sdk/vendor/github.com/grafana/grafana-aws-sdk \
+		grafana:grafana-aws-sdk:v0.4.0:grafana_grafana_aws_sdk/vendor/github.com/grafana/grafana-aws-sdk \
 		grafana:grafana-plugin-model:1fc953a61fb4:grafana_grafana_plugin_model/vendor/github.com/grafana/grafana-plugin-model \
 		grafana:grafana-plugin-sdk-go:v0.88.0:grafana_grafana_plugin_sdk_go/vendor/github.com/grafana/grafana-plugin-sdk-go \
 		grafana:loki:6978ee5d7387:grafana_loki/vendor/github.com/grafana/loki \
@@ -207,7 +206,7 @@ GH_TUPLE=	\
 		#	::v0.8.2:group_name/vendor/xorm.io/xorm (from gitea.com/xorm/xorm@v0.8.2)
 
 USE_RC_SUBR=	grafana
-TAG=		4dffb87
+TAG=		5fdad5b
 
 GO_TARGET=	./pkg/cmd/grafana-server \
 		./pkg/cmd/grafana-cli
@@ -220,7 +219,8 @@ SUB_LIST=	GRAFANA_USER=${GRAFANA_USER} \
 		GRAFANA_HOMEDIR=${GRAFANA_HOMEDIR} \
 		GRAFANA_LOGDIR=${GRAFANA_LOGDIR} \
 		GRAFANA_PLUGINDIR=${GRAFANA_PLUGINDIR} \
-		GRAFANA_PROVISIONINGDIR=${GRAFANA_PROVISIONINGDIR}
+		GRAFANA_PROVISIONINGDIR=${GRAFANA_PROVISIONINGDIR} \
+		GRAFANA_BUILDHASH=3817b8b78f33fc1605dc
 
 GRAFANA_USER?=	grafana
 GRAFANA_GROUP?=	grafana
