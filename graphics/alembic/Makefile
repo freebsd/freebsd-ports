@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	alembic
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
