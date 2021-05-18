@@ -13,12 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activemodel4>=4.2.0:databases/rubygem-activemodel4 \
 		rubygem-activesupport4>=4.2.0:devel/rubygem-activesupport4 \
-		rubygem-mimemagic>=0.3.0:misc/rubygem-mimemagic \
+		rubygem-mimemagic>=0.3.0<0.4:misc/rubygem-mimemagic \
 		rubygem-mime-types>=0:misc/rubygem-mime-types \
-		rubygem-terrapin>=0.6.0:devel/rubygem-terrapin
+		rubygem-terrapin>=0.6.0<0.7:devel/rubygem-terrapin
 
-NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
