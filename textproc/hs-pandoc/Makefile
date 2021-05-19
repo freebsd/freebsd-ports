@@ -165,6 +165,7 @@ USE_CABAL=	Diff-0.4.0 \
 		zip-archive-0.4.1_1 \
 		zlib-0.6.2.3
 
+CABAL_PROJECT=	remove
 EXECUTABLES=	pandoc
 
 OPTIONS_SUB=	yes
@@ -175,9 +176,6 @@ OPTIONS_SUB=	yes
 # compiler goes out of memory
 BUILD_ARGS+=	--disable-optimization
 .endif
-
-post-extract:
-	${RM} ${WRKSRC}/cabal.project
 
 post-install-EMBED_DATA-off:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}
