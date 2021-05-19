@@ -1,0 +1,10 @@
+--- cabal.project.haskell-language-server.orig	2021-04-13 07:56:15 UTC
++++ cabal.project.haskell-language-server
+@@ -1,7 +1,6 @@
+ packages:
+          ./
+          ./hie-compat
+-         ./shake-bench
+          ./ghcide
+          ./hls-plugin-api
+          ./hls-test-utils

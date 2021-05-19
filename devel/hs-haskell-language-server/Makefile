@@ -210,6 +210,7 @@ USE_CABAL=	Diff-0.4.0 \
 		zlib-0.6.2.3
 
 SKIP_CABAL_PLIST=	yes
+CABAL_PROJECT=		append
 
 EXECUTABLES=		${PORTNAME} \
 			${PORTNAME}-wrapper
@@ -218,17 +219,6 @@ NOT_FOR_ARCHS=		i386
 PLIST_FILES=		bin/${PORTNAME} \
 			bin/${PORTNAME}-8.10.4 \
 			bin/${PORTNAME}-wrapper
-
-post-extract:
-	${MV} ${WRKSRC}/cabal.project ${WRKSRC}/cabal.project.hls
-
-post-patch:
-	echo "packages: " > ${WRKSRC}/cabal.project.port
-.for package in ${USE_CABAL}
-	echo "  ${package:C/_[0-9]+//}" >> ${WRKSRC}/cabal.project.port
-.endfor
-	${REINPLACE_CMD} '/         .\/shake-bench/d' ${WRKSRC}/cabal.project.hls
-	${CAT} ${WRKSRC}/cabal.project.port ${WRKSRC}/cabal.project.hls > ${WRKSRC}/cabal.project
 
 do-build:
 	cd ${WRKSRC} && \
