@@ -142,7 +142,6 @@ USE_CABAL=	HTTP-4000.3.15_2 \
 		xss-sanitize-0.3.6 \
 		zlib-0.6.2.2
 
-post-extract:
-	${RM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/cabal.project
+CABAL_PROJECT=	remove
 
 .include <bsd.port.mk>
