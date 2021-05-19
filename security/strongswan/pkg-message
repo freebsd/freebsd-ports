@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+The default strongSwan configuration interface have been updated to vici since version 5.9.2_1.
+To use the stroke interface by default either compile the port without the vici option or
+set 'strongswan_interface="stroke"' in your rc.conf file.
+EOM
+}
+{
+  type: upgrade
+  minimum_version: "5.9.2_1"
+  message: <<EOM
+The default strongSwan configuration interface have been updated to vici.
+To use the stroke interface by default either compile the port without the vici option or
+set 'strongswan_interface="stroke"' in your rc.conf file.
+EOM
+}
+]
+
