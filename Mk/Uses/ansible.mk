@@ -60,7 +60,7 @@ _USES_POST+=		python:env
 
 ANSIBLE_CMD?=		${LOCALBASE}/bin/ansible
 ANSIBLE_DOC_CMD?=	${LOCALBASE}/bin/ansible-doc
-ANSIBLE_RUN_DEPENDS?=	${ANSIBLE_CMD}:sysutils/ansible@${PY_FLAVOR}
+ANSIBLE_RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}ansible>0:sysutils/ansible@${PY_FLAVOR}
 
 ANSIBLE_DATADIR?=		${PREFIX}/share/${PYTHON_PKGNAMEPREFIX}ansible
 ANSIBLE_ETCDIR?=		${PREFIX}/etc/ansible
