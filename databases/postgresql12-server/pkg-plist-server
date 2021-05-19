@@ -901,7 +901,7 @@ lib/libpgcommon.a
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_test_fsync-12.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_test_timing-12.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_upgrade-12.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_waldump-12.mo 
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_waldump-12.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/plpgsql-12.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/postgres-12.mo
 %%TZDATA%%%%DATADIR%%/timezone/Africa/Abidjan
