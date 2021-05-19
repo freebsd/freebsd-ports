@@ -11,6 +11,8 @@ PATCHFILES=	6ca1964690afbbc78627d7c868a692401043a584.patch:-p1
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GMIC GUI for video streams
 
+BROKEN=		does not link: undefined reference to google::LogMessage::stream()
+
 LICENSE=	CeCILL
 LICENSE_NAME=	CeCILL
 LICENSE_FILE=	${WRKSRC}/LICENSE
