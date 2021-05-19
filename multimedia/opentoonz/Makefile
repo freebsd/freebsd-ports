@@ -8,6 +8,8 @@ COMMENT=	2D animation software
 
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		does not link: undefined reference to google::LogMessage::stream()
+
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 LIB_DEPENDS=	libgslcblas.so:math/gsl \
 		libjson-c.so:devel/json-c \
