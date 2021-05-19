@@ -1,7 +1,7 @@
 # Created by: Philippe Lefebvre <nemesis@balistik.net>
 
 PORTNAME=	nano
-DISTVERSION=	5.6.1
+DISTVERSION=	5.7
 CATEGORIES=	editors
 MASTER_SITES=	https://www.nano-editor.org/dist/v${DISTVERSION:R:R}/ GNU
 
