@@ -1,5 +1,5 @@
 --- gtk2hs-buildtools-0.13.8.0/c2hs/toplevel/C2HSConfig.hs.orig	1970-01-01 00:00:00 UTC
-+++ gtk2hs-buildtools-0.13.8.0/c2hs/toplevel/C2HSConfig.hs
++++ _cabal_deps/gtk2hs-buildtools-0.13.8.0/c2hs/toplevel/C2HSConfig.hs
 @@ -24,7 +24,7 @@
  --  Configuration options; largely set by `configure'.
  --
