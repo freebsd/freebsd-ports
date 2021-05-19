@@ -28,6 +28,8 @@ BB_COMMIT=	4dc83e28e998
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 
+CFLAGS_powerpc64=	-fPIC
+CFLAGS_powerpc64le=	-fPIC
 LDFLAGS+=	-fPIC # recommended by 13i386 failure messages, it was only failing 
 
 OPTIONS_DEFINE_amd64=	SIMD
