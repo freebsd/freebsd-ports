@@ -1,6 +1,5 @@
 PORTNAME=	ansible
-DISTVERSION=	3.4.0
-PORTREVISION=	1
+DISTVERSION=	4.0.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +10,7 @@ COMMENT=	Radically simple IT automation
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-base>0:sysutils/py-ansible-base@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core>0:sysutils/py-ansible-core@${PY_FLAVOR}
 
 USES=		ansible:env cpe python:3.6+ shebangfix
 CPE_VENDOR=	redhat
