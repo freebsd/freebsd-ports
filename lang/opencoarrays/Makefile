@@ -10,9 +10,9 @@ COMMENT=	Transport layer for coarray Fortran compilers
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=		fails to build: Can't open module file 'ieee_arithmetic.mod' for reading at (1): No such file or directory
-BROKEN_FreeBSD_12_powerpc64=	fails to build: CMake Warning at CMakeLists.txt:280 (message): Could not find all MPI components!
-BROKEN_FreeBSD_13_powerpc64=	fails to build: Can't open module file 'ieee_arithmetic.mod' for reading at (1): No such file or directory
+.for arch in aarch64 powerpc powerpc64 powerpc64le
+BROKEN_${arch}=	Lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug#255890
+.endfor
 
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
