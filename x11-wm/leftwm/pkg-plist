@@ -1,5 +1,6 @@
 bin/leftwm
 bin/leftwm-check
+bin/leftwm-command
 bin/leftwm-state
 bin/leftwm-worker
 %%THEMES%%%%DATADIR%%/themes/README.md
