@@ -1,9 +1,9 @@
 # Created by: chinsan
 
 PORTNAME=	sakura
-PORTVERSION=	3.7.1
+PORTVERSION=	3.8.2
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://launchpadlibrarian.net/478552087/
+MASTER_SITES=	http://launchpadlibrarian.net/535130180/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Terminal emulator based on GTK and VTE
@@ -29,6 +29,6 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
