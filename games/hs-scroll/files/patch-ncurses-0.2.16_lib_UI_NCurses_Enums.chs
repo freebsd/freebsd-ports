@@ -1,5 +1,5 @@
 --- ncurses-0.2.16/lib/UI/NCurses/Enums.chs.orig	2016-08-29 01:09:37 UTC
-+++ ncurses-0.2.16/lib/UI/NCurses/Enums.chs
++++ _cabal_deps/ncurses-0.2.16/lib/UI/NCurses/Enums.chs
 @@ -41,7 +41,7 @@ class Enum a where
  	pred, succ :: a -> a
  	pred = error "ncurses Enum: pred"
