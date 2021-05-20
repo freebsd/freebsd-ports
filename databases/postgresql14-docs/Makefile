@@ -8,7 +8,7 @@ MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The PostgreSQL documentation set
 
 MASTERDIR=	${.CURDIR}/../../databases/postgresql${WANT_PGSQL_VER:S/.//}-server
-WANT_PGSQL_VER?=13
+WANT_PGSQL_VER?=14
 
 DISTV=		${DISTVERSION:R}
 
