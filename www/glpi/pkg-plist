@@ -3533,8 +3533,6 @@
 %%WWWDIR%%/vendor/laminas/laminas-mail/src/Header/Bcc.php
 %%WWWDIR%%/vendor/laminas/laminas-mail/src/Header/Cc.php
 %%WWWDIR%%/vendor/laminas/laminas-mail/src/Header/ContentDisposition.php
-%%WWWDIR%%/vendor/laminas/laminas-mail/src/Header/ContentDisposition.php.orig
-%%WWWDIR%%/vendor/laminas/laminas-mail/src/Header/ContentDisposition.php.rej
 %%WWWDIR%%/vendor/laminas/laminas-mail/src/Header/ContentTransferEncoding.php
 %%WWWDIR%%/vendor/laminas/laminas-mail/src/Header/ContentType.php
 %%WWWDIR%%/vendor/laminas/laminas-mail/src/Header/Date.php
@@ -5966,12 +5964,8 @@
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_filters.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_font_data.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_fonts.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_fonts.php.orig
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_fonts.php.rej
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_images.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_static.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_static.php.orig
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_static.php.rej
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_autoconfig.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_barcodes_1d.php

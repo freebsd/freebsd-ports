@@ -32,10 +32,10 @@ LDAP_USE=	PHP=ldap
 IMAP_USE=	PHP=imap
 
 post-extract:
-	@${FIND} ${WRKSRC} -name '*~' -delete
+	@${FIND} ${WRKSRC} -name '*~' -o -name '*.orig' -o -name '*.rej' -delete
 
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>
