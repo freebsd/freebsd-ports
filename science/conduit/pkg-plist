@@ -17,11 +17,14 @@ include/conduit/conduit_blueprint_mesh.hpp
 include/conduit/conduit_blueprint_mesh_examples.hpp
 include/conduit/conduit_blueprint_mesh_examples_julia.hpp
 include/conduit/conduit_blueprint_mesh_examples_venn.hpp
+include/conduit/conduit_blueprint_mesh_utils.hpp
 include/conduit/conduit_blueprint_o2mrelation.hpp
 include/conduit/conduit_blueprint_o2mrelation_examples.hpp
 include/conduit/conduit_blueprint_o2mrelation_iterator.hpp
+include/conduit/conduit_blueprint_o2mrelation_utils.hpp
 include/conduit/conduit_blueprint_zfparray.hpp
 include/conduit/conduit_config.h
+include/conduit/conduit_config.hpp
 include/conduit/conduit_core.hpp
 include/conduit/conduit_cpp_to_c.hpp
 include/conduit/conduit_data_array.hpp
@@ -31,7 +34,6 @@ include/conduit/conduit_endianness.hpp
 include/conduit/conduit_endianness_types.h
 include/conduit/conduit_error.hpp
 include/conduit/conduit_exports.h
-include/conduit/conduit_config.hpp
 include/conduit/conduit_fmt/chrono.h
 include/conduit/conduit_fmt/color.h
 include/conduit/conduit_fmt/compile.h
@@ -68,8 +70,6 @@ include/conduit/conduit_relay_web_node_viewer_server.hpp
 include/conduit/conduit_schema.hpp
 include/conduit/conduit_utils.h
 include/conduit/conduit_utils.hpp
-lib/cmake/ConduitConfig.cmake
-lib/cmake/ConduitConfigVersion.cmake
 lib/cmake/conduit-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/conduit.cmake
 lib/cmake/conduit/ConduitConfig.cmake
@@ -78,8 +78,6 @@ lib/cmake/conduit/conduit-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/conduit/conduit.cmake
 lib/cmake/conduit/conduit_setup_deps.cmake
 lib/cmake/conduit/conduit_setup_targets.cmake
-lib/cmake/conduit_setup_deps.cmake
-lib/cmake/conduit_setup_targets.cmake
 lib/libconduit.so
 lib/libconduit_blueprint.so
 lib/libconduit_relay.so

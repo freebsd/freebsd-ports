@@ -1,8 +1,8 @@
---- examples/CMakeLists.txt.orig	2020-10-08 19:18:21 UTC
+--- examples/CMakeLists.txt.orig	2021-05-19 20:03:05 UTC
 +++ examples/CMakeLists.txt
-@@ -52,4 +52,4 @@ add_subdirectory(staging)
- 
- # install using and python examples
- install(DIRECTORY using-with-cmake using-with-make python
+@@ -16,4 +16,4 @@ install(DIRECTORY using-with-cmake
+                   using-with-make
+                   python
+                   cpp_fort_and_py
 -        DESTINATION examples/conduit)
 +        DESTINATION ${FREEBSD_EXAMPLESDIR})
