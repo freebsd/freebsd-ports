@@ -318,6 +318,7 @@
     SUBDIR += slurp
     SUBDIR += smproxy
     SUBDIR += sprop
+    SUBDIR += srandrd
     SUBDIR += squeekboard
     SUBDIR += sselp
     SUBDIR += stalonetray

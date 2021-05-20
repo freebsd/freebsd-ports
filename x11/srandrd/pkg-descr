@@ -1,0 +1,5 @@
+srandrd(1) is a tool that executes a command on xrandr output change events,
+i.e., if a monitor is plugged or unplugged. By default srandrd forks to
+background and exits if the xserver exits.
+
+WWW: https://github.com/jceb/srandrd

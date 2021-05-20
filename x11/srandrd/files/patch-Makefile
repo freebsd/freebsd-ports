@@ -1,0 +1,17 @@
+--- Makefile.orig	2021-05-20 13:42:52 UTC
++++ Makefile
+@@ -14,12 +14,12 @@ INSTALLDIR	:= $(DESTDIR)$(PREFIX)
+ MANPREFIX	?= $(PREFIX)/share/man
+ MANPREFIX	:= $(DESTDIR)$(MANPREFIX)
+ 
+-CFLAGS		:= -Wall -g -Os -pedantic -std=c99 #-Werror -Wextra
++CFLAGS		:= -Wall -g -Os -pedantic -std=c99 $(CFLAGS) #-Werror -Wextra
+ CPPFLAGS	+= -D_DEFAULT_SOURCE
+ CPPFLAGS	+= -DNAME=\"$(TARGET)\" -DVERSION=\"$(VERSION)\"
+ CPPFLAGS	+= -DCOPYRIGHT=\"$(COPYRIGHT)\" -DLICENSE=\"$(LICENSE)\"
+ 
+-LDFLAGS		:= -lX11 -lXrandr -lXinerama
++LDFLAGS		:= -lX11 -lXrandr -lXinerama $(LDFLAGS)
+ 
+ all: $(TARGET)
+ 
