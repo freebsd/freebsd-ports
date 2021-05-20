@@ -1,7 +1,7 @@
 # Created by: Eric Anholt <anholt@FreeBSD.org>
 
 PORTNAME=	libX11
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 PORTEPOCH=	1
 CATEGORIES=	x11
 
