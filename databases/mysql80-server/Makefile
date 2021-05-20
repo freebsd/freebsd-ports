@@ -1,8 +1,8 @@
 # Created by: Mahdi Mokhtari <mokhi64@gmail.com>
 
 PORTNAME?=		mysql
-PORTVERSION=		8.0.23
-PORTREVISION?=		1
+PORTVERSION=		8.0.25
+PORTREVISION?=		0
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
 PKGNAMESUFFIX?=		80-server
@@ -48,7 +48,7 @@ BUILD_DEPENDS_powerpc64=	libunwind>0:devel/libunwind
 BUILD_DEPENDS_powerpc64le=	libunwind>0:devel/libunwind
 
 CMAKE_BUILD_TYPE=	Release
-CFLAGS+=		-fPIC
+CFLAGS+=		-fPIC -DNDEBUG -malign-double
 
 CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_LDCONFIGDIR="${LOCALBASE}/libdata/ldconfig" \
@@ -183,13 +183,6 @@ SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300109 || ${ARCH} == "i386"
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
-CPP=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
-CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
-.endif
 
 .if ${ARCH} == "i386" && ${OSVERSION} < 1200000
 # clang 7.x and 8.x do not build properly on 11i386
