@@ -3,6 +3,7 @@
 PORTNAME?=	victoria-metrics
 PORTVERSION=	1.59.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -10,6 +11,8 @@ COMMENT?=	Fast, cost-effective, and scalable time series database
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		gmake go:modules,no_targets
 USE_RC_SUBR?=	${PORTNAME}

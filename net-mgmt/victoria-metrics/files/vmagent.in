@@ -21,6 +21,7 @@ load_rc_config ${name}
 start_cmd="start"
 stop_cmd="stop"
 status_cmd="status"
+extra_commands="reload"
 
 start()
 {
