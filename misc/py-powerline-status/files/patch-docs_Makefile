@@ -1,0 +1,10 @@
+--- docs/Makefile.orig	2021-05-20 16:12:08 UTC
++++ docs/Makefile
+@@ -1,6 +1,6 @@
+ # Makefile for Sphinx documentation
+ SPHINXOPTS    =
+-SPHINXBUILD   = sphinx-build
++SPHINXBUILD   = %%SPHINXBUILD%%
+ PAPER         =
+ BUILDDIR      = _build
+ 

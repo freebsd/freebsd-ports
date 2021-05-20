@@ -12,7 +12,7 @@ To  display  powerline-status  accurately  in  X Window  System
 terminal emulators make sure the following requirements are met:
 
 - A  font  from port x11-fonts/powerline-fonts must be specified
-  in the  X Window Systems  X resource file  ~/.Xdefaults or the 
+  in the  X Window Systems  X resource file  ~/.Xdefaults or the
   terminals preferences
 
 - Locale  must  be  set UTF-8  to  the login shell in the user's
@@ -26,7 +26,7 @@ terminal emulators make sure the following requirements are met:
 		:lang=C.UTF-8:
 
   Execute  "cap_mkdb /etc/login.conf"  to  update the login class
-  capability database. 
+  capability database.
 EOM
 }
 ]

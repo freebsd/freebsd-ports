@@ -1,6 +1,5 @@
 PORTNAME=	powerline-status
-PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTVERSION=	2.8.2
 CATEGORIES=	misc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -9,6 +8,8 @@ COMMENT=	Statusline plugin for vim, zsh, bash, and more
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/source/license-and-credits.rst
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=3.2.0:sysutils/py-psutil@${PY_FLAVOR}
 
 USES=		python:3.6+ shebangfix
 
@@ -29,6 +30,11 @@ GH_ACCOUNT=	powerline
 GH_PROJECT=	powerline
 
 PORTDOCS=	*
+
+SPHINX_BUILD_CMD=	sphinx-build-${PYTHON_VER}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/%%SPHINXBUILD%%/${SPHINX_BUILD_CMD}/g' ${WRKSRC}/docs/Makefile
 
 do-build-DOCS-on:
 	@make -C ${WRKSRC}/docs man html
