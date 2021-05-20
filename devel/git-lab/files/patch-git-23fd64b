@@ -1,0 +1,26 @@
+diff --git lab/repositoryconnection.py lab/repositoryconnection.py
+index c7170de..23fd64b 100644
+--- lab/repositoryconnection.py
++++ lab/repositoryconnection.py
+@@ -71,7 +71,7 @@ class RepositoryConnection:
+ 
+         try:
+             self._remote_project = self._connection.projects.get(
+-                Utils.str_id_for_url(Utils.normalize_url(repository))
++                Utils.str_id_for_url(repository)
+             )
+         except (GitlabHttpError, GitlabGetError):
+             Utils.log(LogType.Error, "The repository could not be found on the GitLab instance.")
+diff --git lab/utils.py lab/utils.py
+index c0490ac..3c4c707 100644
+--- lab/utils.py
++++ lab/utils.py
+@@ -60,7 +60,7 @@ class Utils:
+         """
+         normalized_url: str = Utils.normalize_url(url)
+         repository_url: ParseResult = urlparse(normalized_url.replace(".git", ""))
+-        return quote_plus(repository_url.path[1:])
++        return quote_plus(repository_url.path[1:], safe='/')
+ 
+     @staticmethod
+     def log(log_type: LogType, *message: str) -> None:
