@@ -15,7 +15,7 @@ include/ncpp/NCBox.hh
 include/ncpp/NCKey.hh
 include/ncpp/NCLogLevel.hh
 include/ncpp/NotCurses.hh
-include/ncpp/Palette256.hh
+include/ncpp/Palette.hh
 include/ncpp/Pile.hh
 include/ncpp/Plane.hh
 include/ncpp/Plot.hh
@@ -170,6 +170,7 @@ libdata/pkgconfig/notcurses.pc
 %%DATADIR%%/normal.png
 %%DATADIR%%/notcursesIII.mkv
 %%DATADIR%%/samoa.avi
+%%DATADIR%%/spaceship.png
 %%DATADIR%%/tetris-background.jpg
 %%DATADIR%%/warmech.bmp
 %%DATADIR%%/worldmap.png
