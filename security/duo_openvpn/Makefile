@@ -2,7 +2,7 @@
 
 PORTNAME=	duo_openvpn
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	zi@FreeBSD.org
@@ -12,7 +12,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	openvpn>0:security/openvpn
 
-USES=		gmake
+USES=		gmake shebangfix
+SHEBANG_FILES=	duo_openvpn.pl
 USE_GITHUB=	yes
 GH_ACCOUNT=	duosecurity
 
