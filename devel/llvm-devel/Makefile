@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -82,7 +82,7 @@ OPTIONS_DEFINE+=	EXTRAS FLANG LIT LLDB MLIR
 OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
 OPTIONS_DEFINE_powerpc64=	GOLD OPENMP
-OPTIONS_DEFAULT+=	EXTRAS FLANG LIT LLDB MLIR
+OPTIONS_DEFAULT+=	EXTRAS FLANG LIT LLDB MLIR STATIC_LIBS
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
 OPTIONS_DEFAULT_powerpc64=     ${OPTIONS_DEFAULT_powerpc64_${OSREL:R}} OPENMP
@@ -122,8 +122,10 @@ COMPILER_RT_DESC=	Sanitizer libraries
 # but this seems to work as a workaround...
 COMPILER_RT_BUILD_DEPENDS=	libunwind>0:devel/libunwind
 COMPILER_RT_IMPLIES=	CLANG
+# Allow unwind.h to be found reliably
+COMPILER_RT_USES=	localbase
 COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS:S|^|${_CRTLIBDIR}/|} \
-			${_COMPILER_RT_BLACKLISTS:S|^|${_CRTBLDIR}/|}
+			${_COMPILER_RT_IGNORELISTS:S|^|${_CRTBLDIR}/|}
 DOCS_PORTDOCS=		llvm
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}recommonmark>=0.0.20180530:textproc/py-recommonmark@${PY_FLAVOR}
@@ -195,6 +197,7 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-nm.1 \
 		llvm-objcopy.1 \
 		llvm-objdump.1 \
+		llvm-otool.1 \
 		llvm-pdbutil.1 \
 		llvm-profdata.1 \
 		llvm-profgen.1 \
@@ -208,7 +211,8 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-symbolizer.1 \
 		llvm-tblgen.1 \
 		mlir-tblgen.1 \
-		opt.1
+		opt.1 \
+		tblgen.1
 
 STRIP_LIBS=	BugpointPasses.so \
 		LLVMHello.so \
@@ -332,10 +336,27 @@ STRIP=
 
 _CRTLIBDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 _CRTBLDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/%%LLVM_RELEASE%%/share
-_COMPILER_RT_BLACKLISTS=	cfi_blacklist.txt
+_COMPILER_RT_IGNORELISTS=	cfi_ignorelist.txt
+_COMPILER_RT_LIBS_i386= \
+	libclang_rt.asan-i386.a \
+	libclang_rt.asan-i386.so \
+	libclang_rt.asan-preinit-i386.a \
+	libclang_rt.asan_cxx-i386.a \
+	libclang_rt.builtins-i386.a \
+	libclang_rt.cfi-i386.a \
+	libclang_rt.cfi_diag-i386.a \
+	libclang_rt.profile-i386.a \
+	libclang_rt.safestack-i386.a \
+	libclang_rt.stats-i386.a \
+	libclang_rt.stats_client-i386.a \
+	libclang_rt.ubsan_minimal-i386.a \
+	libclang_rt.ubsan_minimal-i386.so \
+	libclang_rt.ubsan_standalone-i386.a \
+	libclang_rt.ubsan_standalone-i386.so \
+	libclang_rt.ubsan_standalone_cxx-i386.a
 .if ${ARCH} == "amd64"
-_COMPILER_RT_BLACKLISTS+=	asan_blacklist.txt
-_COMPILER_RT_BLACKLISTS+=	msan_blacklist.txt
+_COMPILER_RT_IGNORELISTS+=	asan_ignorelist.txt
+_COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
 _COMPILER_RT_LIBS= \
 	libclang_rt.asan-preinit-x86_64.a \
 	libclang_rt.asan-x86_64.a \
@@ -359,6 +380,7 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.xray-fdr-x86_64.a \
 	libclang_rt.xray-profiling-x86_64.a \
 	libclang_rt.xray-x86_64.a \
+	libclang_rt.orc-x86_64.a \
 	libclang_rt.profile-x86_64.a \
 	libclang_rt.safestack-x86_64.a \
 	libclang_rt.stats-x86_64.a \
@@ -375,26 +397,13 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.ubsan_standalone-x86_64.so \
 	libclang_rt.ubsan_standalone_cxx-x86_64.a \
 	libclang_rt.ubsan_standalone_cxx-x86_64.a.syms
+.if exists(/usr/lib32/libc.so.7)
+_COMPILER_RT_LIBS+=	${_COMPILER_RT_LIBS_i386}
+.endif
 .endif
 .if ${ARCH} == "i386"
-_COMPILER_RT_BLACKLISTS+=	asan_blacklist.txt
-_COMPILER_RT_LIBS+= \
-	libclang_rt.asan-i386.a \
-	libclang_rt.asan-i386.so \
-	libclang_rt.asan-preinit-i386.a \
-	libclang_rt.asan_cxx-i386.a \
-	libclang_rt.builtins-i386.a \
-	libclang_rt.cfi-i386.a \
-	libclang_rt.cfi_diag-i386.a \
-	libclang_rt.profile-i386.a \
-	libclang_rt.safestack-i386.a \
-	libclang_rt.stats-i386.a \
-	libclang_rt.stats_client-i386.a \
-	libclang_rt.ubsan_minimal-i386.a \
-	libclang_rt.ubsan_minimal-i386.so \
-	libclang_rt.ubsan_standalone-i386.a \
-	libclang_rt.ubsan_standalone-i386.so \
-	libclang_rt.ubsan_standalone_cxx-i386.a
+_COMPILER_RT_IGNORELISTS+=	asan_ignorelist.txt
+_COMPILER_RT_LIBS+=	${_COMPILER_RT_LIBS_i386}
 .endif
 
 # Comment out plist entries for unsupported options.
@@ -461,10 +470,12 @@ post-install-CLANG-on:
 	${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
 	    ${STAGEDIR}${PREFIX}/share/toolchains/llvm${LLVM_SUFFIX}.mk
 
-post-install-COMPILER_RT-on:
-.if ${ARCH} == "amd64"
-	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/clang/${LLVM_RELEASE}/lib/freebsd/libclang_rt*i386*
-.endif
+post-install-FLANG-on:
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/CodeGen/CMakeFiles
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/Dialect/CMakeFiles
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/Transforms/CMakeFiles
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/CMakeFiles
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/CMakeFiles
 
 post-install-STATIC_LIBS-off:
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/lib*.a
@@ -510,7 +521,7 @@ build-plist:
 	${ECHO_CMD} %%LIT%%${LLVM_PREFIX:S|${PREFIX}/||}/bin/${command} >> ${PLIST}.tmp
 .endfor
 	${FIND} ${STAGEDIR}${LLVM_PREFIX} -type f -o -type l | \
-	    ${GREP} -v '_blacklist.txt$$' | \
+	    ${GREP} -v '_ignorelist.txt$$' | \
 	    ${GREP} -v '[/-]lit$$' | ${GREP} -v 'FileCheck$$' | \
 	    ${GREP} -v man/man1 | ${SED} -e 's|${STAGEDIR}${PREFIX}/||' \
 	    -e 's|${PYTHON_SITELIBDIR:C|${PREFIX}/||}|%%PYTHON_SITELIBDIR%%|' \
