@@ -1,5 +1,5 @@
 PORTNAME=	athens
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -12,12 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 
 USE_GITHUB=	yes
-BUILD_DATE=	2020-08-17-02:30:50-UTC
+BUILD_DATE=	2021-05-20-00:00:00-UTC
 
 GH_TUPLE=	gomods:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT \
-		Azure:azure-pipeline-go:v0.2.1:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
-		Azure:azure-storage-blob-go:v0.7.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
-		Azure:go-autorest:243e2a3d5e75:azure_go_autorest_adal/vendor/github.com/Azure/go-autorest \
+		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
+		Azure:azure-storage-blob-go:v0.10.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		DataDog:datadog-go:281ae9f2d895:datadog_datadog_go/vendor/github.com/DataDog/datadog-go \
 		DataDog:dd-trace-go:v1.10.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
@@ -53,7 +52,7 @@ GH_TUPLE=	gomods:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT \
 		gobuffalo:httptest:v1.0.4:gobuffalo_httptest/vendor/github.com/gobuffalo/httptest \
 		gogo:protobuf:v1.2.0:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:87dc89f01550:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:e9b2fee46413:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:6cc2880d07d6:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:lint:910be7a94367:golang_lint/vendor/golang.org/x/lint \
@@ -68,7 +67,7 @@ GH_TUPLE=	gomods:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
 		golang:tools:023911ca70b2:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
-		google:go-cmp:v0.4.0:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-cmp:v0.5.1:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:0452cf42e150:google_go_genproto/vendor/google.golang.org/genproto \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
@@ -91,7 +90,7 @@ GH_TUPLE=	gomods:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT \
 		lib:pq:v1.7.0:lib_pq/vendor/github.com/lib/pq \
 		markbates:hmax:v1.0.0:markbates_hmax/vendor/github.com/markbates/hmax \
 		mattn:go-colorable:v0.0.9:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-ieproxy:91bb50d98149:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
+		mattn:go-ieproxy:6dee0af9227d:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
 		mattn:go-isatty:v0.0.4:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		minio:minio-go:v6.0.43:minio_minio_go_v6/vendor/github.com/minio/minio-go/v6 \
