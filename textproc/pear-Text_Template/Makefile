@@ -1,24 +1,24 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	Text_Template
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 CATEGORIES=	textproc www pear
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple template engine
 
-USES=	pear:env
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		pear:env
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastianbergmann
 GH_PROJECT=	php-text-template
 
 NO_ARCH=	yes
-
 NO_BUILD=	yes
-
 PHP_DIR=	share/PHP
-
 PLIST_FILES=	${PHP_DIR}/${PORTNAME}/Template.php
 
 do-install:
