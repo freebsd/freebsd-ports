@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	HTTP_Request2
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.2
 PORTEPOCH=	1
 CATEGORIES=	www pear
 
