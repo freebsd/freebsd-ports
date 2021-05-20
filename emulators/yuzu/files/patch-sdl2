@@ -22,13 +22,86 @@ CMake Error at externals/CMakeLists.txt:54 (add_subdirectory):
              if (SDL2_FOUND)
 --- src/input_common/sdl/sdl_impl.cpp.orig	2021-05-19 22:47:48 UTC
 +++ src/input_common/sdl/sdl_impl.cpp
-@@ -797,7 +797,9 @@ SDLState::SDLState() {
+@@ -74,6 +74,7 @@ class SDLJoystick { (public)
+     }
+ 
+     void EnableMotion() {
++#if SDL_VERSION_ATLEAST(2,0,14)
+         if (sdl_controller) {
+             SDL_GameController* controller = sdl_controller.get();
+             if (SDL_GameControllerHasSensor(controller, SDL_SENSOR_ACCEL) && !has_accel) {
+@@ -85,6 +86,7 @@ class SDLJoystick { (public)
+                 has_gyro = true;
+             }
+         }
++#endif
+     }
+ 
+     void SetButton(int button, bool value) {
+@@ -92,6 +94,7 @@ class SDLJoystick { (public)
+         state.buttons.insert_or_assign(button, value);
+     }
+ 
++#if SDL_VERSION_ATLEAST(2,0,14)
+     void SetMotion(SDL_ControllerSensorEvent event) {
+         constexpr float gravity_constant = 9.80665f;
+         std::lock_guard lock{mutex};
+@@ -119,6 +122,7 @@ class SDLJoystick { (public)
+         motion.UpdateRotation(time_difference * 1000);
+         motion.UpdateOrientation(time_difference * 1000);
+     }
++#endif
+ 
+     bool GetButton(int button) const {
+         std::lock_guard lock{mutex};
+@@ -352,12 +356,14 @@ void SDLState::HandleGameControllerEvent(const SDL_Eve
+         }
+         break;
+     }
++#if SDL_VERSION_ATLEAST(2,0,14)
+     case SDL_CONTROLLERSENSORUPDATE: {
+         if (auto joystick = GetSDLJoystickBySDLID(event.csensor.which)) {
+             joystick->SetMotion(event.csensor);
+         }
+         break;
+     }
++#endif
+     case SDL_JOYDEVICEREMOVED:
+         LOG_DEBUG(Input, "Controller removed with Instance_ID {}", event.jdevice.which);
+         CloseJoystick(SDL_JoystickFromInstanceID(event.jdevice.which));
+@@ -797,7 +803,9 @@ SDLState::SDLState() {
  
      // Enable HIDAPI rumble. This prevents SDL from disabling motion on PS4 and PS5 controllers
      SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_PS4_RUMBLE, "1");
-+#ifdef SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE
++#if SDL_VERSION_ATLEAST(2,0,15)
      SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE, "1");
 +#endif
  
      // Tell SDL2 to use the hidapi driver. This will allow joycons to be detected as a
      // GameController and not a generic one
+@@ -1003,6 +1011,7 @@ Common::ParamPackage SDLEventToMotionParamPackage(SDLS
+         }
+         break;
+     }
++#if SDL_VERSION_ATLEAST(2,0,14)
+     case SDL_CONTROLLERSENSORUPDATE: {
+         bool is_motion_shaking = false;
+         constexpr float gyro_threshold = 5.0f;
+@@ -1032,6 +1041,7 @@ Common::ParamPackage SDLEventToMotionParamPackage(SDLS
+         }
+         break;
+     }
++#endif
+     }
+     return {};
+ }
+@@ -1295,7 +1305,9 @@ class SDLMotionPoller final : public SDLPoller { (publ
+             [[fallthrough]];
+         case SDL_JOYBUTTONUP:
+         case SDL_JOYHATMOTION:
++#if SDL_VERSION_ATLEAST(2,0,14)
+         case SDL_CONTROLLERSENSORUPDATE:
++#endif
+             return {SDLEventToMotionParamPackage(state, event)};
+         }
+         return std::nullopt;
