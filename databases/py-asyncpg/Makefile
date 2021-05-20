@@ -1,7 +1,7 @@
 # Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
 
 PORTNAME=	asyncpg
-PORTVERSION=	0.22.0
+PORTVERSION=	0.23.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
