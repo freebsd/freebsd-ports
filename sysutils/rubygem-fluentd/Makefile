@@ -1,33 +1,34 @@
 PORTNAME=	fluentd
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.12.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Fluent event collector
 
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
-	rubygem-dig_rb>=1.0.0:devel/rubygem-dig_rb \
-	rubygem-msgpack>=0.7.0:devel/rubygem-msgpack \
+	rubygem-bundler>=0:sysutils/rubygem-bundler \
+	rubygem-msgpack>=1.3.1:devel/rubygem-msgpack \
 	rubygem-yajl-ruby>=1.0:devel/rubygem-yajl-ruby \
 	rubygem-cool.io>=1.4.5:devel/rubygem-cool.io \
-	rubygem-serverengine>=2.0.4:net/rubygem-serverengine \
+	rubygem-serverengine>=2.2.2:net/rubygem-serverengine \
 	rubygem-http_parser.rb>=0.5.1:net/rubygem-http_parser.rb \
 	rubygem-sigdump>=0.2.2:devel/rubygem-sigdump \
 	rubygem-strptime>=0.2.2:devel/rubygem-strptime \
 	rubygem-tzinfo1>=1.0:devel/rubygem-tzinfo1 \
-	rubygem-tzinfo-data>=1.0.0:devel/rubygem-tzinfo-data
+	rubygem-tzinfo-data>=1.0.0:devel/rubygem-tzinfo-data \
+	rubygem-webrick>=1.4.2:www/rubygem-webrick
 
-USE_RUBY=	yes
-PLIST_FILES=	bin/fluent-cat bin/fluent-debug bin/fluent-gem bin/fluentd \
+PLIST_FILES=	bin/fluent-cap-ctl bin/fluent-cat bin/fluent-ctl \
+		bin/fluent-debug bin/fluent-gem bin/fluentd \
 		bin/fluent-binlog-reader bin/fluent-ca-generate \
 		bin/fluent-plugin-config-format bin/fluent-plugin-generate \
 		"@sample etc/fluentd/fluent.conf.sample"
 PLIST_DIRS=	etc/fluentd/plugin
 USES=		gem
+USE_RUBY=	yes
 USE_RC_SUBR=	fluentd
 USERS=		fluentd
 GROUPS=		fluentd
