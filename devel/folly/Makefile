@@ -1,7 +1,10 @@
 PORTNAME=	folly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2021.05.10.00
+DISTVERSION=	2021.05.17.00
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	e4cfd54f6bbfa990a0a38223a7540f2aed249a97.patch:-p1 # port exception_ptr_get_object to freebsd
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library developed and used at Facebook
