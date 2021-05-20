@@ -2,6 +2,7 @@
 
 PORTNAME=	duo_openvpn
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	zi@FreeBSD.org
@@ -15,15 +16,16 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	duosecurity
 
-CFLAGS+=	-DPREFIX='\"${DATADIR}\"'
-
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	METHOD
 OPTIONS_SINGLE=	HELPER
 OPTIONS_SINGLE_HELPER=	PERL PYTHON
 OPTIONS_DEFAULT=PERL
 OPTIONS_SUB=	yes
 
+METHOD_DESC=		Force an authentication method (defaults to push, via METHOD)
+METHOD?=		push
 PERL_USES=		perl5
 PERL_VARS=		USE_PERL5=run CFLAGS+=-DUSE_PERL
 PERL_RUN_DEPENDS=	p5-JSON-XS>0:converters/p5-JSON-XS \
@@ -36,6 +38,10 @@ PYTHON_USES=		python:3.7+,run
 
 post-patch:
 	${REINPLACE_CMD} 's|%%SHEBANG%%|${PYTHON_CMD}|' ${WRKSRC}/duo_openvpn.py
+	${REINPLACE_CMD} 's|PREFIX "|"${DATADIR}|' ${WRKSRC}/duo_openvpn.c
+.if ${PORT_OPTIONS:MMETHOD}
+	${REINPLACE_CMD} 's|get_env("password", envp);|"${METHOD}";|' ${WRKSRC}/duo_openvpn.c
+.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
