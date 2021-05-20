@@ -1,7 +1,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.15.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -58,12 +58,6 @@ DOCS_ALL_TARGET=	docs
 INSTALL_TARGET=		install-tools
 DOCS_INSTALL_TARGET=	install-docs
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300000
-PLIST_SUB+=	IVSHMEM=""
-.else
-PLIST_SUB+=	IVSHMEM="@comment "
-.endif
-
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} != FreeBSD
@@ -76,6 +70,13 @@ IGNORE=		only supported on FreeBSD 12.0 or newer
 
 .if ${PORT_OPTIONS:MSPICE} && ${OSVERSION} < 1300008
 BROKEN=	SPICE support requires FreeBSD version 13.0 or higher
+.endif
+
+# ivshmem requires eventfd
+.if ${OSVERSION} >= 1300000
+PLIST_SUB+=	IVSHMEM=""
+.else
+PLIST_SUB+=	IVSHMEM="@comment "
 .endif
 
 post-patch:
