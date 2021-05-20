@@ -1,6 +1,6 @@
-TIMESTAMP = 1621268706
-SHA256 (paullouisageneau-libdatachannel-v0.13.0-8-g5c8d63a_GH0.tar.gz) = 7c072c6093f7b472545a2d8741f6aaf515d51273aba9ed538cae47f6278e17cc
-SIZE (paullouisageneau-libdatachannel-v0.13.0-8-g5c8d63a_GH0.tar.gz) = 52428403
+TIMESTAMP = 1621489992
+SHA256 (paullouisageneau-libdatachannel-v0.13.1_GH0.tar.gz) = 0ccb769086fcc9eaea7e28f615d4e8d800618c2af56dd89a8e464982d313d397
+SIZE (paullouisageneau-libdatachannel-v0.13.1_GH0.tar.gz) = 52428078
 SHA256 (SergiusTheBest-plog-d8461e9_GH0.tar.gz) = 2d30536bc920fc44e6ec90f60244afe9249c79bc618574f7d3e78fbcd1a51ec8
 SIZE (SergiusTheBest-plog-d8461e9_GH0.tar.gz) = 44215
 SHA256 (sctplab-usrsctp-07f871b_GH0.tar.gz) = 1b02f2574e53c8b3dca7c5687172766fe04a0fc8f8f52a0ef8707155ae76cef1
