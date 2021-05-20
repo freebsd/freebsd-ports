@@ -16335,3 +16335,5 @@ security/bitwarden_rs|security/vaultwarden|2021-05-16|Project was renamed
 sysutils/kdiskmark|benchmarks/kdiskmark|2021-05-18|Moved to a more appropriate category
 sysutils/edk2@xen|sysutils/edk2@xen_x64|2021-05-18|Add Xen arch to the flavor name to be futur-proof
 devel/py-jupyter_core|devel/py-jupyter-core|2021-05-18|Rename to match upstream naming
+devel/sope4||2021-05-19|Obsolete, please use devel/sope
+
