@@ -12,7 +12,7 @@ COMMENT=	Highly scalable, fault-tolerant distributed file system
 LICENSE=	APACHE20
 
 BROKEN_aarch64=		Does not compile: fatal error: lzo/lzo1x.h file not found
-NOT_FOR_ARCHS=		powerpc64 powerpc64le riscv64 sparc64
+NOT_FOR_ARCHS=		riscv64 sparc64
 NOT_FOR_ARCHS_REASON=	does not build: error Please implement AtomicPointer for this platform
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang21/bin/erlc:lang/erlang-runtime21 \
@@ -106,6 +106,11 @@ LEOFS_DEPS=	\
 	systemd/erlang-sd_notify=v1.0:sd_notify \
 
 GH_TUPLE=	${LEOFS_DEPS:C,(.*)/(.*)=(.*):(.*),\1:\2:\3:\4/deps/\4,}
+
+CFLAGS_powerpc=	-DLEVELDB_CSTDATOMIC_PRESENT
+CFLAGS_powerpc64=	-DLEVELDB_CSTDATOMIC_PRESENT
+CFLAGS_powerpc64le=	-DLEVELDB_CSTDATOMIC_PRESENT
+CFLAGS_powerpcspe=	-DLEVELDB_CSTDATOMIC_PRESENT
 
 post-extract:
 .for dep in ${LEOFS_DEPS}
