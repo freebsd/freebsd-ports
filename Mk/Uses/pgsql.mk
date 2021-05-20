@@ -39,7 +39,7 @@ _INCLUDE_USES_PGSQL_MK=	yes
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-VALID_PGSQL_VER=	9.5 9.6 10 11 12 13
+VALID_PGSQL_VER=	9.5 9.6 10 11 12 13 14
 
 # Override non-default LIBVERS like this:
 #PGSQL99_LIBVER=6

@@ -27,4 +27,4 @@ PG_UID?=	70
 DEPRECATED=	PostgreSQL-9.5 has reached end-of-life
 EXPIRATION_DATE=2021-06-13
  
-.include "${.CURDIR}/../postgresql13-server/Makefile"
+.include "${.CURDIR}/../postgresql14-server/Makefile"

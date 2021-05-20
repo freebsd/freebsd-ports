@@ -14,6 +14,9 @@ MASTERDIR=	${.CURDIR}/../postgresql95-server
 
 USES=		bison pgsql:${DISTVERSION:C/([0-9]\.?[0-9]).*/\1/g}
 
+# this port fails to build in parallel
+MAKE_JOBS_UNSAFE=	yes
+
 BUILD_DIRS=	src/port src/common contrib
 INSTALL_DIRS=	contrib
 

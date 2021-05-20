@@ -21,4 +21,4 @@ INSTALL_DIRS?=	src/common src/timezone src/backend \
 ICU_PATCHFILE=	pg-96b4-icu-2016-10-02.diff.gz
 OPTIONS_DEFAULT+=ICU
 
-.include "${.CURDIR}/../postgresql13-server/Makefile"
+.include "${.CURDIR}/../postgresql14-server/Makefile"

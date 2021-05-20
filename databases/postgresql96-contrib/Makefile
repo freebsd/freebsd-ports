@@ -14,6 +14,9 @@ USES=		bison pgsql:9.6 ssl
 BUILD_DIRS=	src/port src/include src/common contrib
 INSTALL_DIRS=	contrib
 
+# this port fails to build in parallel
+MAKE_JOBS_UNSAFE=	yes
+
 SLAVE_ONLY=	yes
 COMPONENT=	-contrib
 CONFIGURE_ARGS+=--with-openssl --disable-nls --with-uuid=bsd
