@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	https://os.ghalkes.nl/dist/ \
 		http://fossies.org/unix/privat/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Delimited word diff program
 
 LICENSE=	GPLv3
