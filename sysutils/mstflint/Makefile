@@ -44,6 +44,7 @@ USES+=	ssl
 .if ${PORT_OPTIONS:MADAB}
 CONFIGURE_ARGS+=	--enable-adb-generic-tools
 .if ${PORT_OPTIONS:MSTATIC}
+BROKEN=		does not link: expat2 no longer provides static library
 BUILD_DEPENDS+=	xmlwf:textproc/expat2 \
 		boost-libs>0:devel/boost-libs
 .else
