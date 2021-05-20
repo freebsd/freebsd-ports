@@ -32,7 +32,7 @@ LDAP_USE=	PHP=ldap
 IMAP_USE=	PHP=imap
 
 post-extract:
-	@${FIND} ${WRKSRC} -name '*~' -o -name '*.orig' -o -name '*.rej' -delete
+	${FIND} ${WRKSRC} \( -name '*~' -o -name '*.orig' -o -name '*.rej' \) -delete
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
