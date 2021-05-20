@@ -6852,7 +6852,6 @@
     SUBDIR += sonarqube-community
     SUBDIR += sope
     SUBDIR += sope2
-    SUBDIR += sope4
     SUBDIR += sord
     SUBDIR += sparc64-gcc
     SUBDIR += sparc64-xtoolchain-gcc
