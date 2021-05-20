@@ -1,6 +1,6 @@
 PORTNAME=	ceres-solver
 DISTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +9,7 @@ COMMENT=	Nonlinear least squares minimizer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	glog>=0.5.0:devel/glog
 LIB_DEPENDS=	libglog.so:devel/glog
 RUN_DEPENDS:=	${BUILD_DEPENDS:Meigen*}
 

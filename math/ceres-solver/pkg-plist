@@ -55,7 +55,6 @@ lib/cmake/Ceres/CeresConfig.cmake
 lib/cmake/Ceres/CeresConfigVersion.cmake
 lib/cmake/Ceres/CeresTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Ceres/CeresTargets.cmake
-lib/cmake/Ceres/FindGlog.cmake
 lib/libceres.so
 lib/libceres.so.2
 lib/libceres.so.%%VERSION%%
