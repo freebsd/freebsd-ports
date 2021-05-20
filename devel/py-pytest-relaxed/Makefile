@@ -1,5 +1,6 @@
 PORTNAME=	pytest-relaxed
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3,<5:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1,<2:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}decorator>=4,<5:devel/py-decorator@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}decorator4>=4,<5:devel/py-decorator@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
