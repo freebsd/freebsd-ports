@@ -22,12 +22,11 @@ CMake Error at externals/CMakeLists.txt:54 (add_subdirectory):
              if (SDL2_FOUND)
 --- src/input_common/sdl/sdl_impl.cpp.orig	2021-05-19 22:47:48 UTC
 +++ src/input_common/sdl/sdl_impl.cpp
-@@ -796,8 +796,10 @@ SDLState::SDLState() {
-     RegisterFactory<MotionDevice>("sdl", motion_factory);
+@@ -797,7 +797,9 @@ SDLState::SDLState() {
  
      // Enable HIDAPI rumble. This prevents SDL from disabling motion on PS4 and PS5 controllers
-+#ifdef SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE
      SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_PS4_RUMBLE, "1");
++#ifdef SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE
      SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE, "1");
 +#endif
  
