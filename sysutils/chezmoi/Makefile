@@ -1,6 +1,8 @@
+# Created by: Samir Noir <samir@noir.im>
+
 PORTNAME=	chezmoi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.9
+DISTVERSION=	2.0.12
 CATEGORIES=	sysutils
 
 MAINTAINER=	samir@noir.im
@@ -16,14 +18,13 @@ GH_ACCOUNT=	twpayne
 GH_TUPLE=	Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Masterminds/goutils \
 		Masterminds:semver:v3.1.1:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		Masterminds:sprig:v3.2.2:masterminds_sprig_v3/vendor/github.com/Masterminds/sprig/v3 \
-		Microsoft:go-winio:v0.4.16:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
-		alecthomas:chroma:v0.8.2:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
+		Microsoft:go-winio:v0.5.0:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
+		alecthomas:chroma:v0.9.1:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		alecthomas:colour:v0.1.0:alecthomas_colour/vendor/github.com/alecthomas/colour \
 		alecthomas:repr:bb82daffcca2:alecthomas_repr/vendor/github.com/alecthomas/repr \
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
 		bmatcuk:doublestar:v3.0.0:bmatcuk_doublestar_v3/vendor/github.com/bmatcuk/doublestar/v3 \
-		charmbracelet:glamour:4292a2106d74:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
-		chris-ramon:douceur:v0.2.0:chris_ramon_douceur \
+		charmbracelet:glamour:v0.3.0:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		coreos:go-semver:v0.3.0:coreos_go_semver/vendor/github.com/coreos/go-semver \
 		danieljoos:wincred:v1.1.0:danieljoos_wincred/vendor/github.com/danieljoos/wincred \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
@@ -34,7 +35,7 @@ GH_TUPLE=	Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Maste
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-errgo:errgo:v2.1.0:go_errgo_errgo/vendor/gopkg.in/errgo.v2 \
 		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
-		go-git:go-billy:v5.1.0:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
+		go-git:go-billy:v5.3.1:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
 		go-git:go-git:v5.3.0:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
 		go-ini:ini:v1.62.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
@@ -42,16 +43,16 @@ GH_TUPLE=	Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Maste
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		godbus:dbus:v5.0.4:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:0fccb6fa2b5c:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:2e8d93401602:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:crypto:38f3c27a63bf:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:16afe75a6701:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:81ed05c6b58c:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:5e06dd20ab57:golang_sys/vendor/golang.org/x/sys \
-		golang:term:de623e64d2a6:golang_term/vendor/golang.org/x/term \
+		golang:sys:a76c4d0a0096:golang_sys/vendor/golang.org/x/sys \
+		golang:term:a79de5458b56:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
-		google:go-github:v34.0.0:google_go_github_v34/vendor/github.com/google/go-github/v34 \
+		google:go-github:v35.2.0:google_go_github_v35/vendor/github.com/google/go-github/v35 \
 		google:go-querystring:v1.1.0:google_go_querystring/vendor/github.com/google/go-querystring \
-		google:renameio:v1.0.0:google_renameio/vendor/github.com/google/renameio \
+		google:renameio:v1.0.1:google_renameio/vendor/github.com/google/renameio \
 		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
 		gopherjs:gopherjs:fce0ec30dd00:gopherjs_gopherjs/vendor/github.com/gopherjs/gopherjs \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
@@ -65,16 +66,16 @@ GH_TUPLE=	Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Maste
 		magiconair:properties:v1.8.5:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.12:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		microcosm-cc:bluemonday:v1.0.5:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
-		mitchellh:copystructure:v1.1.1:mitchellh_copystructure/vendor/github.com/mitchellh/copystructure \
+		microcosm-cc:bluemonday:v1.0.9:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
+		mitchellh:copystructure:v1.2.0:mitchellh_copystructure/vendor/github.com/mitchellh/copystructure \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.4.1:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
-		mitchellh:reflectwalk:v1.0.1:mitchellh_reflectwalk/vendor/github.com/mitchellh/reflectwalk \
+		mitchellh:reflectwalk:v1.0.2:mitchellh_reflectwalk/vendor/github.com/mitchellh/reflectwalk \
 		muesli:combinator:v0.3.0:muesli_combinator/vendor/github.com/muesli/combinator \
 		muesli:reflow:v0.2.0:muesli_reflow/vendor/github.com/muesli/reflow \
 		muesli:termenv:v0.8.1:muesli_termenv/vendor/github.com/muesli/termenv \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
-		pelletier:go-toml:v1.8.1:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
+		pelletier:go-toml:v1.9.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:diff:20ebb0f2a09e:pkg_diff/vendor/github.com/pkg/diff \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
@@ -99,10 +100,10 @@ GH_TUPLE=	Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Maste
 		twpayne:go-vfsafero:v2.0.0:twpayne_go_vfsafero_v2/vendor/github.com/twpayne/go-vfsafero/v2 \
 		twpayne:go-xdg:v4.0.0:twpayne_go_xdg_v4/vendor/github.com/twpayne/go-xdg/v4 \
 		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
-		uber-go:multierr:v1.6.0:uber_go_multierr/vendor/go.uber.org/multierr \
+		uber-go:multierr:v1.7.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		xanzy:ssh-agent:v0.3.0:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
 		yuin:goldmark-emoji:v1.0.1:yuin_goldmark_emoji/vendor/github.com/yuin/goldmark-emoji \
-		yuin:goldmark:v1.3.3:yuin_goldmark/vendor/github.com/yuin/goldmark \
+		yuin:goldmark:v1.3.5:yuin_goldmark/vendor/github.com/yuin/goldmark \
 		zalando:go-keyring:v0.1.1:zalando_go_keyring/vendor/github.com/zalando/go-keyring \
 		DHowett:go-plist:1454fab16a06:go_plist/vendor/howett.net/plist
 
