@@ -1,6 +1,6 @@
-TIMESTAMP = 1602063290
-SHA256 (zyedidia-micro-v2.0.8_GH0.tar.gz) = 3e1b7483aa2afffa8afc2c710e22541961ac3de5e026efb4bdddc8ade00d4de0
-SIZE (zyedidia-micro-v2.0.8_GH0.tar.gz) = 802731
+TIMESTAMP = 1621640124
+SHA256 (zyedidia-micro-v2.0.9_GH0.tar.gz) = 59987763ec5edb10db50c136eeb5934b411bd5e6adbd3d785f1d64d3e225ec31
+SIZE (zyedidia-micro-v2.0.9_GH0.tar.gz) = 811560
 SHA256 (blang-semver-v3.5.1_GH0.tar.gz) = 3d9da53f4c2d3169bfa9b25f2f36f301a37556a47259c870881524c643c69c57
 SIZE (blang-semver-v3.5.1_GH0.tar.gz) = 14831
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
