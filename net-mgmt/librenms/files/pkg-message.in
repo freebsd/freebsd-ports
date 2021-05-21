@@ -9,7 +9,7 @@ with the following notes:
 - Installation directory is %%WWWDIR%%
 
 NOTE: setting sql-mode="" is no longer required. You can remove
-it from /usr/local/etc/mysql/my.cnf
+it from %%LOCALBASE%%/etc/mysql/my.cnf
 
 However, 'lower_case_table_names=0' is required.
 

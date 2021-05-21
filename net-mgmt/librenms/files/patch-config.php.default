@@ -47,18 +47,18 @@
 +# These paths are supplied by the FreeBSD port and correct those found in
 +# the code.
 +
-+$config['snmpwalk']       = '/usr/local/bin/snmpwalk';
-+$config['snmpget']        = '/usr/local/bin/snmpget';
-+$config['snmpbulkwalk']   = '/usr/local/bin/snmpbulkwalk';
-+$config['snmptranslate']  = '/usr/local/bin/snmptranslate';
++$config['snmpwalk']       = '%%LOCALBASE%%/bin/snmpwalk';
++$config['snmpget']        = '%%LOCALBASE%%/bin/snmpget';
++$config['snmpbulkwalk']   = '%%LOCALBASE%%/bin/snmpbulkwalk';
++$config['snmptranslate']  = '%%LOCALBASE%%/bin/snmptranslate';
 +
 +$config['ping']           = '/sbin/ping';
-+$config['mtr']            = '/usr/local/bin/mtr';
-+$config['nmap']           = '/usr/local/bin/nmap';
++$config['mtr']            = '%%LOCALBASE%%/bin/mtr';
++$config['nmap']           = '%%LOCALBASE%%/bin/nmap';
 +
-+$config['nagios_plugins'] = '/usr/local/libexec/nagios';
-+$config['ipmitool']       = '/usr/local/bin/ipmitool';
-+$config['virsh']          = '/usr/local/bin/virsh';
-+$config['dot']            = '/usr/local/bin/dot';
-+$config['sfdp']           = '/usr/local/bin/sfdp';
-+$config['nfdump']         = '/usr/local/bin/nfdump';
++$config['nagios_plugins'] = '%%LOCALBASE%%/libexec/nagios';
++$config['ipmitool']       = '%%LOCALBASE%%/bin/ipmitool';
++$config['virsh']          = '%%LOCALBASE%%/bin/virsh';
++$config['dot']            = '%%LOCALBASE%%/bin/dot';
++$config['sfdp']           = '%%LOCALBASE%%/bin/sfdp';
++$config['nfdump']         = '%%LOCALBASE%%/bin/nfdump';

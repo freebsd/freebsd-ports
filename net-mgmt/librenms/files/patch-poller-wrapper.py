@@ -4,7 +4,7 @@
      print('ERROR: %s' % exc)
      sys.exit(2)
  
-+os.environ['PATH'] += ':/usr/local/sbin:/usr/local/bin'
++os.environ['PATH'] += ':%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin'
 +
  
  APP_NAME = "poller_wrapper"

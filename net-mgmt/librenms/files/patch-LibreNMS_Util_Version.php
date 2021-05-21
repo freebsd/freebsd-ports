@@ -5,7 +5,7 @@
      public static function python()
      {
 -        $proc = new Process(['python3', '--version']);
-+        $proc = new Process(['/usr/local/bin/python3', '--version']);
++        $proc = new Process(['%%LOCALBASE%%/bin/python3', '--version']);
          $proc->run();
  
          if ($proc->getExitCode() !== 0) {
