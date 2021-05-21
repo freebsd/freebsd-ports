@@ -1,5 +1,6 @@
 PORTNAME=	spectacle
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -7,7 +8,8 @@ COMMENT=	KDE screen capture program
 
 LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-image.so:x11/xcb-util-image \
-		libxcb-util.so:x11/xcb-util
+		libxcb-util.so:x11/xcb-util \
+		libkImageAnnotator.so:graphics/kimageannotator
 RUN_DEPENDS=	kipi-plugins>=0:graphics/kipi-plugins
 
 USES=		cmake compiler:c++11-lang gettext kde:5 pkgconfig qt:5 tar:xz xorg
