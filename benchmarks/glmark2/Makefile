@@ -2,11 +2,12 @@
 
 PORTNAME=	glmark2
 PORTVERSION=	2021.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	bd2c4ca8360a.patch:-p1 # https://github.com/glmark2/glmark2/issues/147
+PATCHFILES+=	042bbea08fae.patch:-p1 # https://github.com/glmark2/glmark2/issues/155
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Benchmark for OpenGL (ES) 2.0
