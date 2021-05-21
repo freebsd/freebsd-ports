@@ -17,7 +17,7 @@ USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jeanette-c
-GH_TAGNAME=	8e4f205
+GH_TAGNAME=	57290f2
 
 PLIST_FILES=	bin/wavetral \
 		man/man1/wavetral.1.gz
