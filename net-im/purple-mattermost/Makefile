@@ -1,5 +1,6 @@
 PORTNAME=	purple-mattermost
-PORTVERSION=	g20210121
+PORTVERSION=	2.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
 MAINTAINER=	swills@FreeBSD.org
@@ -18,7 +19,6 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	EionRobb
-GH_TAGNAME=	ee430c8
 
 PLIST_FILES=	lib/purple-2/libmattermost.so \
 		share/pixmaps/pidgin/protocols/16/mattermost.png \
