@@ -1,9 +1,9 @@
 PORTNAME=	packer
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brad@facefault.org
 COMMENT=	Tool for creating machine images
 
 LICENSE=	MPL20
