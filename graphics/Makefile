@@ -281,6 +281,7 @@
     SUBDIR += gocr
     SUBDIR += goocanvas
     SUBDIR += goocanvas2
+    SUBDIR += goocanvas3
     SUBDIR += goocanvasmm2
     SUBDIR += goom
     SUBDIR += gource
