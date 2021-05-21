@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2020-07-15 07:03:28 UTC
+--- CMakeLists.txt.orig	2021-01-16 20:50:48 UTC
 +++ CMakeLists.txt
-@@ -464,6 +464,7 @@ if(USE_JEMALLOC)
+@@ -479,6 +479,7 @@ if(USE_JEMALLOC)
    endif()
  endif()
  
@@ -8,7 +8,7 @@
  include(CTest)
  set(GTEST_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/googletest/googletest")
  set(GTEST_INCLUDE_DIR ${GTEST_ROOT}/include)
-@@ -474,6 +475,7 @@ set(GTEST_LIBRARY gtest)
+@@ -489,6 +490,7 @@ set(GTEST_LIBRARY gtest)
  
  add_subdirectory(${GTEST_ROOT})
  find_package(GTest REQUIRED)
@@ -16,16 +16,16 @@
  
  # cudnn detection
  if(USE_CUDNN)
-@@ -865,7 +867,7 @@ install(TARGETS ${MXNET_INSTALL_TARGETS}
- #       https://cmake.org/cmake/help/v3.0/module/GNUInstallDirs.html
- 
+@@ -898,7 +900,7 @@ install(TARGETS ${MXNET_INSTALL_TARGETS}
+   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+ )
  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dlpack/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 -install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dmlc-core/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 +#install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dmlc-core/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
- if(USE_MKLDNN)
-   install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/mkldnn/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
- endif()
-@@ -913,7 +915,9 @@ endif()
+ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/mshadow/mshadow/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/mshadow)
+ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/mxnet/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/mxnet)
+ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/tvm/nnvm/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+@@ -943,7 +945,9 @@ endif()
  if(BUILD_CPP_EXAMPLES)
    add_subdirectory(example/image-classification/predict-cpp)
  endif()
