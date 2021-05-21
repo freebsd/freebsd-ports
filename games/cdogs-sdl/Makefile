@@ -1,6 +1,5 @@
 PORTNAME=	cdogs-sdl
-PORTVERSION=	0.10.2
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	games
 
 MAINTAINER=	swills@FreeBSD.org
@@ -8,6 +7,7 @@ COMMENT=	Classic overhead run-and-gun game
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=3,1:devel/py-protobuf@${PY_FLAVOR} \
 		protoc:devel/protobuf
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		cmake compiler:c++11-lang gl gnome localbase:ldflags pkgconfig \
 		python:3.6+ sdl

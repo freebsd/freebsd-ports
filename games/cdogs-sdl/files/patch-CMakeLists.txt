@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2020-09-21 20:35:03 UTC
+--- CMakeLists.txt.orig	2021-08-28 06:07:16 UTC
 +++ CMakeLists.txt
-@@ -119,7 +119,7 @@ else()
+@@ -126,7 +126,7 @@ else()
  		endif()
  	endif()
  	if(NOT BEOS AND NOT HAIKU)
@@ -9,3 +9,21 @@
  		set(EXTRA_LIBRARIES "m")
  	endif()
  endif()
+@@ -141,6 +141,9 @@ if(NOT DEFINED CDOGS_DATA_DIR)
+ 	endif()
+ endif()
+ message("Data dir is ${CDOGS_DATA_DIR}")
++if(NOT DEFINED DATA_INSTALL_DIR)
++  set(DATA_INSTALL_DIR "${CDOGS_DATA_DIR}")
++endif()
+ if(WIN32)
+ 	set(CDOGS_CFG_DIR "C-Dogs SDL/")
+ else()
+@@ -193,7 +196,6 @@ elseif(APPLE)
+ 	set(INSTALL_PREFIX "cdogs-sdl")
+ else()
+ 	set(LIB_EXTENSION ".so")
+-	set(DATA_INSTALL_DIR ".")
+ endif()
+ 
+ # Since Debian wants games binaries in /usr/games
