@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
-COMMENT=	Canvas widget for GTK+
+COMMENT=	Cairo-based canvas widget for GTK+
 
 LICENSE=	LGPL20
 

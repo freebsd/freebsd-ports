@@ -1,3 +1,4 @@
-Canvas widget for GTK+ via cairo rendering
+GooCanvas is similar in many ways to GnomeCanvas and FooCanvas, but uses
+cairo graphics library for rendering.
 
 WWW: https://sourceforge.net/projects/goocanvas/

@@ -8,14 +8,13 @@ PKGNAMESUFFIX=	2
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Canvas widget for GTK+ 3
+COMMENT=	Cairo-based canvas widget for GTK+ 3
 
 LICENSE=	LGPL20
 
 USES=		gmake gnome libtool pathfix pkgconfig python:build tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 USE_LDCONFIG=	yes
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python=no
 INSTALL_TARGET=	install-strip
