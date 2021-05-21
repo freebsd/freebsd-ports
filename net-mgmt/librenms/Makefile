@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman<bofh@FreeBSD.org>
 
 PORTNAME=	librenms
-PORTVERSION=	21.4.0
+PORTVERSION=	21.5.1
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
@@ -18,7 +18,7 @@ USES=		shebangfix python php
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-RELEASE_TIMESTAMP=	1618718707
+RELEASE_TIMESTAMP=	1621427246
 
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
