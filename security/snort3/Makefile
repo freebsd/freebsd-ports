@@ -1,7 +1,7 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 PORTNAME=	snort
-DISTVERSION=	3.1.3.0
+DISTVERSION=	3.1.5.0
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -12,9 +12,6 @@ COMMENT=	Lightweight network intrusion detection system
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_FreeBSD_11=	fails to detect flex from ports
-BROKEN_FreeBSD_12=	fails to detect flex from ports
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libdnet.so:net/libdnet \
@@ -58,6 +55,8 @@ STATICDAQ_CMAKE_BOOL=	ENABLE_STATIC_DAQ
 THREADSANITIZER_CMAKE_BOOL=	ENABLE_THREAD_SANITIZER
 TSC_CMAKE_BOOL=		ENABLE_TSC_CLOCK
 
+CMAKE_ARGS+=	-DFLEX_INCLUDE_DIR_HINT:PATH=${PREFIX}/include/flex
+
 CONFLICTS=	snort-2*
 
 .include <bsd.port.options.mk>
@@ -66,6 +65,10 @@ CONFLICTS=	snort-2*
 LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit-openresty
 .else
 LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
+BUILD_DEPENDS=	flex>0:textproc/flex
 .endif
 
 post-patch:

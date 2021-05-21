@@ -120,6 +120,7 @@ include/snort/mime/file_mime_paf.h
 include/snort/mime/file_mime_process.h
 include/snort/network_inspectors/appid/appid_api.h
 include/snort/network_inspectors/appid/appid_app_descriptor.h
+include/snort/network_inspectors/appid/appid_debug.h
 include/snort/network_inspectors/appid/appid_dns_session.h
 include/snort/network_inspectors/appid/appid_http_session.h
 include/snort/network_inspectors/appid/appid_session_api.h
@@ -177,6 +178,7 @@ include/snort/protocols/token_ring.h
 include/snort/protocols/udp.h
 include/snort/protocols/vlan.h
 include/snort/protocols/wlan.h
+include/snort/pub_sub/appid_debug_log_event.h
 include/snort/pub_sub/appid_events.h
 include/snort/pub_sub/cip_events.h
 include/snort/pub_sub/daq_message_event.h
@@ -191,6 +193,7 @@ include/snort/pub_sub/sip_events.h
 include/snort/pub_sub/smb_events.h
 include/snort/search_engines/search_common.h
 include/snort/search_engines/search_tool.h
+include/snort/service_inspectors/ssl/ssl_flow_data.h
 include/snort/sfip/sf_cidr.h
 include/snort/sfip/sf_ip.h
 include/snort/sfip/sf_returns.h
