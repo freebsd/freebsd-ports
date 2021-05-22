@@ -1,5 +1,5 @@
 PORTNAME=	pipewire
-DISTVERSION=	0.3.27
+DISTVERSION=	0.3.28
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	PipeWire
 
-OPTIONS_DEFINE=	GSTREAMER MEDIASESSION VULKAN
+OPTIONS_DEFINE=	GSTREAMER MEDIASESSION PULSEAUDIO VULKAN
 OPTIONS_SUB=	yes
 
 GSTREAMER_MESON_ENABLED=gstreamer
@@ -33,6 +33,9 @@ GSTREAMER_LIB_DEPENDS=	libgstreamer-1.0.so:multimedia/gstreamer1 \
 MEDIASESSION_DESC=	Session manager support
 MEDIASESSION_MESON_ENABLED=	alsa pipewire-alsa media-session pw-cat
 MEDIASESSION_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
+
+PULSEAUDIO_MESON_ENABLED=	libpulse
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
 VULKAN_DESC=		Enable Vulkan integration
 VULKAN_MESON_ENABLED=	vulkan
@@ -44,8 +47,5 @@ MESON_ARGS=	-D bluez5=disabled \
 		-D systemd=disabled \
 		-D sdl2=disabled \
 		-D udevrulesdir="${LOCALBASE}/lib/udev/rules.d"
-
-post-install:
-	${MV} ${STAGEDIR}${ETCDIR}/pipewire.conf ${STAGEDIR}${ETCDIR}/pipewire.conf.sample
 
 .include <bsd.port.mk>
