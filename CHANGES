@@ -26,7 +26,7 @@ AUTHOR: gnome@FreeBSD.org
 
   	DEFAULT_VERSIONS+=librsvg2=legacy
 
-20210327;
+20210327:
 AUTHOR: bapt@FreeBSD.org
 
   New @touch keyword
