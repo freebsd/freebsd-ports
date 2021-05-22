@@ -1,10 +1,9 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	56.1.0
-PORTREVISION=	1
+PORTVERSION=	57.0.0
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
+MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
 
 MAINTAINER=	riggs@FreeBSD.org
