@@ -23,6 +23,7 @@ include/avogadro/core/mutex.h
 include/avogadro/core/nameatomtyper.h
 include/avogadro/core/residue.h
 include/avogadro/core/ringperceiver.h
+include/avogadro/core/sharedmutex.h
 include/avogadro/core/slaterset.h
 include/avogadro/core/slatersettools.h
 include/avogadro/core/spacegroups.h
@@ -142,6 +143,7 @@ include/avogadro/quantumio/nwchemlog.h
 %%QT5%%lib/avogadro2/staticplugins/Bonding.a
 %%QT5%%lib/avogadro2/staticplugins/CoordinateEditor.a
 %%QT5%%lib/avogadro2/staticplugins/CopyPaste.a
+%%MOLEQUEUE%%lib/avogadro2/staticplugins/Cp2kInput.a
 %%QT5%%lib/avogadro2/staticplugins/Crystal.a
 %%QT5%%lib/avogadro2/staticplugins/CrystalScene.a
 %%QT5%%lib/avogadro2/staticplugins/CustomElements.a
@@ -161,9 +163,11 @@ include/avogadro/quantumio/nwchemlog.h
 %%QT5%%lib/avogadro2/staticplugins/Navigator.a
 %%QT5%%lib/avogadro2/staticplugins/NetworkDatabases.a
 %%QT5%%lib/avogadro2/staticplugins/OpenBabel.a
+%%QT5%%lib/avogadro2/staticplugins/OpenMMInput.a
 %%QT5%%lib/avogadro2/staticplugins/OverlayAxes.a
 %%QT5%%lib/avogadro2/staticplugins/POVRay.a
 %%QT5%%lib/avogadro2/staticplugins/PlayerTool.a
+%%QT5%%lib/avogadro2/staticplugins/ResetView.a
 %%LIBARCHIVE%%lib/avogadro2/staticplugins/PluginDownloader.a
 %%MOLEQUEUE%%lib/avogadro2/staticplugins/QuantumInput.a
 %%MOLEQUEUE%%lib/avogadro2/staticplugins/ScriptFileFormats.a
@@ -213,4 +217,4 @@ lib/libAvogadroQuantumIO.so.1.93.0
 %%OPENGL%%lib/libAvogadroRendering.so
 %%OPENGL%%lib/libAvogadroRendering.so.1
 %%OPENGL%%lib/libAvogadroRendering.so.1.93.0
-lib/liblibgwavi.a
+%%QT5%%lib/avogadro2/libgwavi.a
