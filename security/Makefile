@@ -310,6 +310,7 @@
     SUBDIR += libpwstor
     SUBDIR += libressl
     SUBDIR += libressl-devel
+    SUBDIR += libreswan
     SUBDIR += libretls
     SUBDIR += libscep
     SUBDIR += libscrypt
