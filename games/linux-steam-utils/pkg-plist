@@ -21,6 +21,7 @@ steam-utils/lib64/monofix/monofix.so
 steam-utils/lib64/pathfix/pathfix.so
 @comment steam-utils/lib64/protonfix/protonfix.so
 steam-utils/lib64/webfix/webfix.so
+steam-utils/lxbin/curl-config
 steam-utils/lxbin/dbus-launch
 steam-utils/lxbin/file
 steam-utils/lxbin/file.rb
