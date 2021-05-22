@@ -1608,6 +1608,7 @@
     SUBDIR += rubygem-hikidoc
     SUBDIR += rubygem-html-pipeline
     SUBDIR += rubygem-html-pipeline27
+    SUBDIR += rubygem-html-proofer
     SUBDIR += rubygem-html2text
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-ini
