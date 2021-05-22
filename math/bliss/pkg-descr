@@ -1,0 +1,5 @@
+bliss is an open source tool for computing automorphism groups and canonical
+forms of graphs. It has both a command line user interface as well as C++ and C
+programming language APIs.
+
+WWW: http://www.tcs.hut.fi/Software/bliss/index.html

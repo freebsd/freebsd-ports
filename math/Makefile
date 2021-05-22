@@ -164,6 +164,7 @@
     SUBDIR += blaze
     SUBDIR += blazeiterative
     SUBDIR += blis
+    SUBDIR += bliss
     SUBDIR += blocksolve95
     SUBDIR += bonmin
     SUBDIR += boolector
