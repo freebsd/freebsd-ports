@@ -7,7 +7,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manages sets of integers
 
 LICENSE=	ART10 GPLv1+
