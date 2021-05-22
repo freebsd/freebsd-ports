@@ -36,6 +36,7 @@ bin/tsxs
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/request#no_host
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/request#scheme_unsupported
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/request#syntax_error
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/request#uri_len_too_long
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/response#bad_response
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/response#bad_version
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/timeout#activity
@@ -44,17 +45,18 @@ bin/tsxs
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/urlrouting#no_mapping
 @sample %%ETCDIR%%/cache.config.sample
 @sample %%ETCDIR%%/hosting.config.sample
-@sample %%ETCDIR%%/ip_allow.config.sample
+@sample %%ETCDIR%%/ip_allow.yaml.sample
 @sample %%ETCDIR%%/logging.yaml.sample
 @sample %%ETCDIR%%/parent.config.sample
 @sample %%ETCDIR%%/plugin.config.sample
 @sample %%ETCDIR%%/records.config.sample
 @sample %%ETCDIR%%/remap.config.sample
+@sample %%ETCDIR%%/sni.yaml.sample
 @sample %%ETCDIR%%/socks.config.sample
 @sample %%ETCDIR%%/splitdns.config.sample
 @sample %%ETCDIR%%/ssl_multicert.config.sample
-@sample %%ETCDIR%%/ssl_server_name.yaml.sample
 @sample %%ETCDIR%%/storage.config.sample
+@sample %%ETCDIR%%/strategies.yaml.sample
 @sample %%ETCDIR%%/volume.config.sample
 include/ts/apidefs.h
 include/ts/experimental.h
@@ -88,38 +90,47 @@ include/tscpp/api/TransformationPlugin.h
 include/tscpp/api/Url.h
 include/tscpp/api/noncopyable.h
 include/tscpp/api/utils.h
+include/tscpp/util/IntrusiveDList.h
+include/tscpp/util/PostScript.h
 include/tscpp/util/TextView.h
-lib/libtsconfig.so
-lib/libtsconfig.so.8
-lib/libtsconfig.so.%%PORTVERSION%%
 lib/libtscore.so
-lib/libtscore.so.8
+lib/libtscore.so.9
 lib/libtscore.so.%%PORTVERSION%%
 lib/libtscppapi.so
-lib/libtscppapi.so.8
+lib/libtscppapi.so.9
 lib/libtscppapi.so.%%PORTVERSION%%
 lib/libtscpputil.so
-lib/libtscpputil.so.8
+lib/libtscpputil.so.9
 lib/libtscpputil.so.%%PORTVERSION%%
 lib/libtsmgmt.so
-lib/libtsmgmt.so.8
+lib/libtsmgmt.so.9
 lib/libtsmgmt.so.%%PORTVERSION%%
+lib/plugin_init_fail.so
+lib/plugin_instinit_fail.so
+lib/plugin_missing_deleteinstance.so
+lib/plugin_missing_doremap.so
+lib/plugin_missing_init.so
+lib/plugin_missing_newinstance.so
+lib/plugin_required_cb.so
+lib/plugin_testing_calls.so
+lib/plugin_v1.so
+lib/plugin_v2.so
 libdata/pkgconfig/trafficserver.pc
 %%IMAGEMAGICK%%libexec/trafficserver/WebpTransform.so
 libexec/trafficserver/access_control.so
 libexec/trafficserver/acme.so
 libexec/trafficserver/authproxy.so
 libexec/trafficserver/background_fetch.so
-libexec/trafficserver/balancer.so
-libexec/trafficserver/buffer_upload.so
 libexec/trafficserver/cache_promote.so
 libexec/trafficserver/cache_range_requests.so
 libexec/trafficserver/cachekey.so
+libexec/trafficserver/cert_reporting_tool.so
 libexec/trafficserver/certifier.so
 libexec/trafficserver/collapsed_forwarding.so
 libexec/trafficserver/combo_handler.so
 libexec/trafficserver/compress.so
 libexec/trafficserver/conf_remap.so
+libexec/trafficserver/cookie_remap.so
 libexec/trafficserver/custom_redirect.so
 libexec/trafficserver/escalate.so
 libexec/trafficserver/esi.so
@@ -127,19 +138,19 @@ libexec/trafficserver/fq_pacing.so
 libexec/trafficserver/generator.so
 libexec/trafficserver/geoip_acl.so
 libexec/trafficserver/header_freq.so
-libexec/trafficserver/header_normalize.so
 libexec/trafficserver/header_rewrite.so
-libexec/trafficserver/hipes.so
 libexec/trafficserver/hook-trace.so
 libexec/trafficserver/inliner.so
+libexec/trafficserver/ja3_fingerprint.so
 libexec/trafficserver/libloader.so
 %%IMAGEMAGICK%%libexec/trafficserver/magick.so
-%%MEMCACHED%%libexec/trafficserver/memcached_remap.so
+libexec/trafficserver/memory_profile.so
 libexec/trafficserver/metalink.so
 libexec/trafficserver/money_trace.so
 libexec/trafficserver/mp4.so
 libexec/trafficserver/multiplexer.so
 libexec/trafficserver/prefetch.so
+libexec/trafficserver/redo_cache_lookup.so
 libexec/trafficserver/regex_remap.so
 libexec/trafficserver/regex_revalidate.so
 libexec/trafficserver/remap_purge.so
@@ -147,14 +158,12 @@ libexec/trafficserver/remap_stats.so
 libexec/trafficserver/s3_auth.so
 libexec/trafficserver/server_push_preload.so
 libexec/trafficserver/slice.so
-libexec/trafficserver/ssl_cert_loader.so
 libexec/trafficserver/sslheaders.so
-libexec/trafficserver/stale_while_revalidate.so
+libexec/trafficserver/statichit.so
 libexec/trafficserver/stats_over_http.so
 libexec/trafficserver/stream_editor.so
 libexec/trafficserver/system_stats.so
 libexec/trafficserver/tcpinfo.so
-libexec/trafficserver/test_cppapi.so
 libexec/trafficserver/tls_bridge.so
 libexec/trafficserver/traffic_dump.so
 libexec/trafficserver/tslua.so

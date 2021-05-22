@@ -1,7 +1,7 @@
 # Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 
 PORTNAME=	trafficserver
-PORTVERSION=	8.1.1
+PORTVERSION=	9.0.1
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -62,6 +62,12 @@ MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
 IMAGEMAGICK_DESC=	Enable ats-magick & webp convert plugin
 
+# Can be removed after 11 EoL'd
+.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
+# --build-id isn't supported by old GNU ld.bfd in base
+LDFLAGS+=	-fuse-ld=lld
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
@@ -72,21 +78,14 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6-nox11
 .endif
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
-# On FreeBSD >= 12 it does find eventfd.h, but it makes it also use
-# sys/epoll.h which is absent on FreeBSD and the build fails. So make
-# it ignore eventfd.h to build as on 11.x. Better solution would probably
-# be to depend on epoll-shim, but that needs testing
-CONFIGURE_ARGS+=	ac_cv_header_sys_eventfd_h=no ac_cv_func_eventfd=no
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '/cachedir:/s,$${localstatedir}+,$${localstatedir}/cache+,' \
 		-e '/runtimedir:/s,$${localstatedir}+,$${localstatedir}/run+,' \
 		${WRKSRC}/config.layout
-	@${REINPLACE_CMD} '/^LUA_LDFLAGS =/s/$$/ @LDFLAGS@/' \
-		${WRKSRC}/lib/Makefile.in
+	@${REINPLACE_CMD} -e 's/#ifdef HAVE_EVENTFD/#if defined(HAVE_EVENTFD) \&\& TS_USE_EPOLL == 1/' \
+		${WRKSRC}/src/tscore/EventNotify.cc \
+		${WRKSRC}/include/tscore/EventNotify.h
 
 post-install:
 	${RMDIR} ${STAGEDIR}${DATADIR}
