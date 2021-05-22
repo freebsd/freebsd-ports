@@ -5,7 +5,7 @@ PORTVERSION=	1.10.0
 PORTEPOCH=	1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR Database Abstraction Layer
 
 LICENSE=	PHP301

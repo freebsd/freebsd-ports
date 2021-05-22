@@ -7,7 +7,7 @@ MASTER_SITES=	http://pear.symfony.com/get/
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}Symfony_Component_
 DIST_SUBDIR=	Symfony2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Symfony2 Finder Component
 
 LICENSE=	MIT

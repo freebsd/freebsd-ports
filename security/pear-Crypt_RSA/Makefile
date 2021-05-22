@@ -5,7 +5,7 @@ PORTVERSION=	1.2.1
 PORTREVISION=	1
 CATEGORIES=	security www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class allows you to use two-key strong cryptography
 
 USES=		pear

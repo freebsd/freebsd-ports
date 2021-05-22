@@ -4,7 +4,7 @@ PORTNAME=	XML_RPC2
 PORTVERSION=	1.1.4
 CATEGORIES=	net devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XML-RPC client/server library
 
 LICENSE=	PHP301

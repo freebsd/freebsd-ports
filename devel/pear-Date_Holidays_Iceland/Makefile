@@ -2,7 +2,7 @@ PORTNAME=	Date_Holidays_Iceland
 PORTVERSION=	0.1.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Driver based class to calculate holidays in Iceland
 
 LICENSE=	PHP301

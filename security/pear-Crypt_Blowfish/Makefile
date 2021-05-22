@@ -4,7 +4,7 @@ PORTNAME=	Crypt_Blowfish
 DISTVERSION=	1.1.0RC2
 CATEGORIES=	security www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class for blowfish encryption
 
 USES=		pear

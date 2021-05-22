@@ -4,7 +4,7 @@ PORTNAME=	Date_Holidays
 PORTVERSION=	0.21.8
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR driver based class to calculate holidays
 
 LICENSE=	PHP301

@@ -4,7 +4,7 @@ PORTNAME=	Net_FTP
 PORTVERSION=	1.4.1
 CATEGORIES=	ftp www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR OO interface to the PHP FTP functions plus some additions
 
 LICENSE=	BSD2CLAUSE

@@ -4,7 +4,7 @@ PORTNAME=	URI_Template
 PORTVERSION=	0.3.3
 CATEGORIES=	net pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parser for URI Templates
 
 NO_ARCH=	yes

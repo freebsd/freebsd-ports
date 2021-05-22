@@ -4,7 +4,7 @@ PORTNAME=	Net_Sieve
 DISTVERSION=	1.4.5
 CATEGORIES=	net www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class to handle talking to timsieved
 
 LICENSE=	BSD3CLAUSE

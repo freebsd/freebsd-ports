@@ -4,7 +4,7 @@ PORTNAME=	Structures_DataGrid_DataSource_CSV
 PORTVERSION=	0.1.6
 CATEGORIES=	databases www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	DataSource driver using CSV files
 
 LICENSE=	BSD2CLAUSE

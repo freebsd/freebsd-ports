@@ -4,7 +4,7 @@ PORTNAME=	Console_Getargs
 DISTVERSION=	1.4.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR command-line arguments parser
 
 LICENSE=	PHP301

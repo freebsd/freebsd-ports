@@ -4,7 +4,7 @@ PORTNAME=	XML_Util
 PORTVERSION=	1.4.4
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR XML utility class
 
 LICENSE=	BSD2CLAUSE

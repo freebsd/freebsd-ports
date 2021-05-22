@@ -4,7 +4,7 @@ PORTNAME=	Pager
 PORTVERSION=	2.5.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR data paging class
 
 LICENSE=	BSD2CLAUSE

@@ -2,7 +2,7 @@ PORTNAME=	Date_Holidays_Denmark
 PORTVERSION=	0.1.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Driver based class to calculate holidays in Denmark
 
 LICENSE=	PHP301

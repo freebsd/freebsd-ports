@@ -4,7 +4,7 @@ PORTNAME=	Services_JSON
 PORTVERSION=	1.0.3
 CATEGORIES=	converters www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP implementation of json_encode/decode
 
 LICENSE=	BSD2CLAUSE

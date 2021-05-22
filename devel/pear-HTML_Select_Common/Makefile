@@ -4,7 +4,7 @@ PORTNAME=	HTML_Select_Common
 PORTVERSION=	1.2.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Some small PEAR classes to handle common <select> lists
 
 LICENSE=	BSD2CLAUSE

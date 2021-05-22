@@ -4,7 +4,7 @@ PORTNAME=	DBA
 PORTVERSION=	1.1.1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Berkely-style database abstraction class
 
 LICENSE=	LGPL3

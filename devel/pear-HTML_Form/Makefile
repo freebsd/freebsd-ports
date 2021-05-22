@@ -4,7 +4,7 @@ PORTNAME=	HTML_Form
 PORTVERSION=	1.3.1
 CATEGORIES=	devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR simple HTML form package
 
 LICENSE=	PHP301

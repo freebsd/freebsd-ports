@@ -5,7 +5,7 @@ PORTVERSION=	2.0.4
 CATEGORIES=	textproc www pear
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple template engine
 
 LICENSE=	BSD3CLAUSE

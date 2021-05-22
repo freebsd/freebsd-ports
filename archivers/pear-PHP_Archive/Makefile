@@ -4,7 +4,7 @@ PORTNAME=	PHP_Archive
 PORTVERSION=	0.14.0
 CATEGORIES=	archivers pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create and Use PHP Archive files
 
 LICENSE=	PHP301
