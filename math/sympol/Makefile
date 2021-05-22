@@ -1,7 +1,7 @@
 PORTNAME=	sympol
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,8 @@ COMMENT=	C++ library and tool to work with symmetric polyhedra
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	permlib>0:math/permlib
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbliss.a:math/bliss \
+		permlib>0:math/permlib
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libcddgmp.so:math/cddlib \
 		libgmp.so:math/gmp
@@ -25,6 +26,7 @@ GH_PROJECT=	SymPol
 
 SHEBANG_GLOB=	*.pl
 
+CMAKE_ARGS=		-DBLISS_INCLUDE_DIR=${LOCALBASE}/include/bliss
 CMAKE_TESTING_ON=	BUILD_TESTS # test 'perltest' fails with 'output format mismatch', see https://github.com/tremlin/SymPol/issues/1
 
 post-install:
