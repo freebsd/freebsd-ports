@@ -1,7 +1,7 @@
 # Created by: Sofian Brabez <sbrabez@gmail.com>
 
 PORTNAME=	bitarray
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
