@@ -6,7 +6,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework to provide start/stop/reload for a daemon
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
