@@ -1,7 +1,7 @@
 # Created by: Yoshisato YANAGISAWA
 
 PORTNAME=	Mail-DKIM
-PORTVERSION=	0.58
+PORTVERSION=	1.20200907
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN \
 		http://jason.long.name/dkimproxy/
