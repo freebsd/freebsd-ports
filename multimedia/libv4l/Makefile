@@ -3,7 +3,7 @@
 
 PORTNAME?=	libv4l
 PORTVERSION=	1.20.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v4l-utils-
 CATEGORIES=	multimedia
 
@@ -19,10 +19,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hselasky
 GH_PROJECT=	v4l-utils
 
-GH_TUPLE=	hselasky:webcamd:v5.10.6.0:webcamd \
-		torvalds:linux:v5.10-rc6:linux
+GH_TUPLE=	hselasky:webcamd:v5.13.2.2:webcamd \
+		torvalds:linux:v5.13-rc2:linux
 
-WEBCAMDDIR=	${WRKDIR}/webcamd-5.10.6.0
+WEBCAMDDIR=	${WRKDIR}/webcamd-5.13.2.2
 LINUXDIR=	${WRKDIR}/linux-*
 
 .if ${PORTNAME} == v4l-utils || ${PORTNAME} == libv4l
