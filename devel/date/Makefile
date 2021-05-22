@@ -1,7 +1,6 @@
 PORTNAME=	date
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
-PORTREVISION=	1
+DISTVERSION=	3.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,9 +13,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 TEST_DEPENDS=	bash:shells/bash
 
 USES=		cmake compiler:c++17-lang
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	HowardHinnant
-USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS BUILD_TZ_LIB
 CMAKE_OFF=	ENABLE_DATE_TESTING
@@ -28,7 +28,8 @@ PLIST_FILES=	include/date/date.h \
 		lib/cmake/date/dateTargets-${CMAKE_BUILD_TYPE:tl}.cmake \
 		lib/cmake/date/dateTargets.cmake \
 		lib/libdate-tz.so \
-		lib/libdate-tz.so.2.4.1
+		lib/libdate-tz.so.3 \
+		lib/libdate-tz.so.3.0.0
 
 do-test:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} 's|!/bin/bash|!${LOCALBASE}/bin/bash|' compile_fail.sh test_fail.sh
