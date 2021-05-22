@@ -1,5 +1,5 @@
---- src/get_myeaddr.h.orig	2015-01-03 11:44:55.000000000 -0500
-+++ src/get_myeaddr.h	2015-01-03 11:45:52.000000000 -0500
+--- src/get_myeaddr.h.orig	2004-10-28 17:34:27 UTC
++++ src/get_myeaddr.h
 @@ -1,6 +1,6 @@
  #ifndef GET_MYEADDR_H
  #define GET_MYEADDR_H
