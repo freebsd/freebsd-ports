@@ -1,6 +1,6 @@
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.29.2
+DISTVERSION=	4.29.3
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/authelia/authelia/releases/download/v${DISTVERSION}/:public_html
 DISTFILES=	authelia-${DISTVERSIONFULL}-public_html${EXTRACT_SUFX}:public_html # html root directory needs to be built in a special way
@@ -18,7 +18,7 @@ GH_TUPLE=	\
 		DATA-DOG:go-sqlmock:v1.5.0:data_dog_go_sqlmock/vendor/github.com/DATA-DOG/go-sqlmock \
 		Gurpartap:logrus-stack:89c00d8a28f4:gurpartap_logrus_stack/vendor/github.com/Gurpartap/logrus-stack \
 		Workiva:go-datastructures:v1.0.53:workiva_go_datastructures/vendor/github.com/Workiva/go-datastructures \
-		andybalholm:brotli:v1.0.1:andybalholm_brotli/vendor/github.com/andybalholm/brotli \
+		andybalholm:brotli:v1.0.2:andybalholm_brotli/vendor/github.com/andybalholm/brotli \
 		asaskevich:govalidator:7a23bdc65eef:asaskevich_govalidator/vendor/github.com/asaskevich/govalidator \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		boombuler:barcode:6c824513bacc:boombuler_barcode/vendor/github.com/boombuler/barcode \
@@ -31,7 +31,7 @@ GH_TUPLE=	\
 		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
 		duosecurity:duo_api_golang:0e07e9f869e3:duosecurity_duo_api_golang/vendor/github.com/duosecurity/duo_api_golang \
 		facebookgo:stack:751773369052:facebookgo_stack/vendor/github.com/facebookgo/stack \
-		fasthttp:router:v1.3.12:fasthttp_router/vendor/github.com/fasthttp/router \
+		fasthttp:router:v1.3.13:fasthttp_router/vendor/github.com/fasthttp/router \
 		fasthttp:session:v2.3.2:fasthttp_session_v2/vendor/github.com/fasthttp/session/v2 \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-asn1-ber:asn1-ber:v1.5.1:go_asn1_ber_asn1_ber/vendor/github.com/go-asn1-ber/asn1-ber \
@@ -41,12 +41,12 @@ GH_TUPLE=	\
 		go-sql-driver:mysql:v1.6.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:c07d793c2f9a:golang_crypto/vendor/golang.org/x/crypto \
 		golang:mock:v1.5.0:golang_mock/vendor/github.com/golang/mock \
-		golang:sys:a50acf3fe073:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:e8d321eab015:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:tools:9cf592e881e9:golang_tools/vendor/golang.org/x/tools \
-		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
+		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
@@ -58,7 +58,7 @@ GH_TUPLE=	\
 		jackc:pgservicefile:2b9c44734f2b:jackc_pgservicefile/vendor/github.com/jackc/pgservicefile \
 		jackc:pgtype:v1.7.0:jackc_pgtype/vendor/github.com/jackc/pgtype \
 		jackc:pgx:v4.11.0:jackc_pgx_v4/vendor/github.com/jackc/pgx/v4 \
-		klauspost:compress:v1.11.8:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.12.2:klauspost_compress/vendor/github.com/klauspost/compress \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-sqlite3:v1.14.7:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		mattn:goveralls:v0.0.6:mattn_goveralls/vendor/github.com/mattn/goveralls \
@@ -71,14 +71,14 @@ GH_TUPLE=	\
 		ory:viper:v1.7.5:ory_viper/vendor/github.com/ory/viper \
 		ory:x:v0.0.162:ory_x/vendor/github.com/ory/x \
 		otiai10:copy:v1.6.0:otiai10_copy/vendor/github.com/otiai10/copy \
-		pborman:uuid:v1.2.0:pborman_uuid/vendor/github.com/pborman/uuid \
+		pborman:uuid:v1.2.1:pborman_uuid/vendor/github.com/pborman/uuid \
 		pelletier:go-toml:v1.8.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		philhofer:fwd:v1.1.1:philhofer_fwd/vendor/github.com/philhofer/fwd \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pquerna:otp:v1.3.0:pquerna_otp/vendor/github.com/pquerna/otp \
 		savsgio:dictpool:6de1ea7c0e13:savsgio_dictpool/vendor/github.com/savsgio/dictpool \
-		savsgio:gotils:c54912823645:savsgio_gotils/vendor/github.com/savsgio/gotils \
+		savsgio:gotils:c57c45b83e0a:savsgio_gotils/vendor/github.com/savsgio/gotils \
 		simia-tech:crypt:v0.5.0:simia_tech_crypt/vendor/github.com/simia-tech/crypt \
 		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:afero:v1.3.2:spf13_afero/vendor/github.com/spf13/afero \
@@ -94,7 +94,7 @@ GH_TUPLE=	\
 		tinylib:msgp:v1.1.5:tinylib_msgp/vendor/github.com/tinylib/msgp \
 		tstranex:u2f:v1.0.0:tstranex_u2f/vendor/github.com/tstranex/u2f \
 		valyala:bytebufferpool:v1.0.0:valyala_bytebufferpool/vendor/github.com/valyala/bytebufferpool \
-		valyala:fasthttp:v1.24.0:valyala_fasthttp/vendor/github.com/valyala/fasthttp
+		valyala:fasthttp:v1.25.0:valyala_fasthttp/vendor/github.com/valyala/fasthttp
 GO_TARGET=	./cmd/${PORTNAME}
 
 USER=		root # 'nobody' doesn't work well because authelia attempts to remove files, etc.
