@@ -1,10 +1,8 @@
 # Created by: nork@FreeBSD.org
 
 PORTNAME=	openexr
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	graphics devel
-MASTER_SITES=	LOCAL/mandree/:test
-DISTFILES=	${PORTNAME}-2.2.0-comp_dwa-test-images.tar.xz:test
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
@@ -21,7 +19,7 @@ GH_TUPLE=	AcademySoftwareFoundation:openexr:v${PORTVERSION}
 
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DCMAKE_DEBUG_POSTFIX=
-CPPFLAGS+=	-I. -I../IlmImf
+CPPFLAGS+=	-I.
 # must be linked with -l{thr|pthread} explicitly
 LDFLAGS+=	-lpthread
 
@@ -64,7 +62,6 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${_DOC_FILES1:S|^|${_DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${_DOC_FILES2:S|^|${_DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR}
-	#${MV} ${STAGEDIR}${DOCSDIR:H}/OpenEXR/[a-df-zA-Z]* ${STAGEDIR}${DOCSDIR}
 
 post-install-DOCS-off:
 	${RM} ${STAGEDIR}${DOCSDIR:H}/OpenEXR/*.pdf
