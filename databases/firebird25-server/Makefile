@@ -1,10 +1,9 @@
 PORTNAME=	firebird
-PORTVERSION=	2.5.8
-PORTREVISION=	8
+PORTVERSION=	2.5.9
 CATEGORIES?=	databases
-MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/R2_5_8/
+MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/R2_5_9/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
-DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.27089-0
+DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.27139-0
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
