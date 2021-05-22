@@ -2,6 +2,7 @@
 
 PORTNAME=	soci
 DISTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
