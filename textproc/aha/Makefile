@@ -2,7 +2,7 @@ PORTNAME=	aha
 DISTVERSION=	0.5.1
 CATEGORIES=	textproc devel
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ansi HTML Adapter
 
 LICENSE=	LGPL20+ MPL11

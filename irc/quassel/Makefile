@@ -5,7 +5,7 @@ PORTVERSION=	0.13.1
 PORTREVISION=	4
 CATEGORIES=	irc
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Qt 5 based distributed IRC client (client and monolithic binary)
 
 LICENSE=	GPLv2+

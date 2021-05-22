@@ -5,7 +5,7 @@ PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	textproc
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved colored diff
 
 LICENSE=	PSFL

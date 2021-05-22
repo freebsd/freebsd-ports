@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=v
 PORTREVISION=	12
 CATEGORIES=	graphics multimedia
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector-based 2D animation software package
 
 LICENSE=	GPLv2+

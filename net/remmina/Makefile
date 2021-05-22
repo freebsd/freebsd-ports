@@ -5,7 +5,7 @@ DISTVERSION=	1.4.11
 PORTREVISION=	1
 CATEGORIES=	net gnome
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ Remote Desktop Client
 
 LICENSE=	GPLv2+

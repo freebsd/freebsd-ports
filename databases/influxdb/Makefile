@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.4
 CATEGORIES=	databases net-mgmt
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source distributed time series database
 
 LICENSE=	MIT

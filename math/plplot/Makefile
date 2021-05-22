@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	math science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scientific plotting package
 
 LICENSE=	LGPL21+

@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=v
 PORTREVISION=	1
 CATEGORIES=	devel lang
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voria Extended Class and Template Library
 
 LICENSE=	GPLv2+

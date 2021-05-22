@@ -6,7 +6,7 @@ PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download and view files from various digital cameras
 
 LICENSE=	GPLv2+

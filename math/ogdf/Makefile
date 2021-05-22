@@ -6,7 +6,7 @@ CATEGORIES=	math
 MASTER_SITES=	https://ogdf.uos.de/wp-content/uploads/2020/02/
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class library for the automatic layout of diagrams
 
 LICENSE=		GPLv2 GPLv3

@@ -6,7 +6,7 @@ CATEGORIES=	net
 MASTER_SITES=	https://roy.marples.name/downloads/dhcpcd/ \
 		https://cflags.cc/roy/dhcpcd/
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DHCP/IPv4LL/IPv6RS/DHCPv6 client
 
 LICENSE=	BSD2CLAUSE

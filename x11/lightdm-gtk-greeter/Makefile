@@ -5,7 +5,7 @@ PORTVERSION=	2.0.8
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/Xubuntu/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ greeter for LightDM
 
 LICENSE=	GPLv3

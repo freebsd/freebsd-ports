@@ -6,7 +6,7 @@ CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		https://ftp.osuosl.org/pub/midnightcommander/
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander Clone
 
 LICENSE=	GPLv3+
