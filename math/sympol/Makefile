@@ -1,6 +1,7 @@
 PORTNAME=	sympol
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,14 +15,24 @@ LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libcddgmp.so:math/cddlib \
 		libgmp.so:math/gmp
 
-USES=		cmake compiler:c++11-lang eigen:3 localbase:ldflags
+USES=		cmake:testing compiler:c++11-lang eigen:3 localbase:ldflags perl5 shebangfix
+USE_PERL5=	test
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tremlin
 GH_PROJECT=	SymPol
 
+SHEBANG_GLOB=	*.pl
+
+CMAKE_TESTING_ON=	BUILD_TESTS # test 'perltest' fails with 'output format mismatch', see https://github.com/tremlin/SymPol/issues/1
+
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/lib/libcddgmp.so
+	# remove subdirectory of logger.h, see https://github.com/tremlin/SymPol/issues/2
+	@${REINPLACE_CMD} -i '' -e 's|#include "yal/|#include "|' ${STAGEDIR}${PREFIX}/include/sympol/*.h
+
+pre-test: # correct the build directory path
+	@${REINPLACE_CMD} -e "s|'\\.\\./build/release'|'${BUILD_WRKSRC}'|" ${WRKSRC}/contrib/test-sympol.pl
 
 .include <bsd.port.mk>
