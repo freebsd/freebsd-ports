@@ -1,5 +1,5 @@
 PORTNAME=	spago
-DISTVERSION=	0.20.1
+DISTVERSION=	0.20.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/purescript/purescript-docs-search/releases/download/v0.0.11/docs-search-app.js?dummy=/:dsa11 \
 		https://github.com/purescript/purescript-docs-search/releases/download/v0.0.11/purescript-docs-search?dummy=/:pds11 \
