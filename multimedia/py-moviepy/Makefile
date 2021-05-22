@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE.txt
 
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
-		${PYTHON_PKGNAMEPREFIX}decorator4>=4.0.2<5.0:devel/py-decorator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}decorator4>=4.0.2<5.0:devel/py-decorator4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}imageio>=2.5<3.0:graphics/py-imageio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}imageio-ffmpeg>=0.2.0:graphics/py-imageio-ffmpeg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
