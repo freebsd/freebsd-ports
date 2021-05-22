@@ -881,6 +881,7 @@
     SUBDIR += py-pyqrcode
     SUBDIR += py-pyqtgraph
     SUBDIR += py-pyrsgis
+    SUBDIR += py-pytesseract
     SUBDIR += py-python-poppler-qt5
     SUBDIR += py-pyvips
     SUBDIR += py-pyx
