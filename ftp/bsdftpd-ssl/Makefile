@@ -32,6 +32,7 @@ LDFLAGS+=	-lpam
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	variable has incomplete type 'X509_STORE_CTX' (aka 'struct x509_store_ctx_st')
 BROKEN_FreeBSD_13=	variable has incomplete type 'X509_STORE_CTX' (aka 'struct x509_store_ctx_st')
+BROKEN_FreeBSD_14=	variable has incomplete type 'X509_STORE_CTX' (aka 'struct x509_store_ctx_st')
 .endif
 
 .if ${PORT_OPTIONS:MSERVER} && ${PORT_OPTIONS:MEXAMPLES}
