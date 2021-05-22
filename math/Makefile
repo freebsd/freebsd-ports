@@ -211,6 +211,7 @@
     SUBDIR += coinmumps
     SUBDIR += coinutils
     SUBDIR += combblas
+    SUBDIR += conauto
     SUBDIR += concorde
     SUBDIR += convertall
     SUBDIR += coq
