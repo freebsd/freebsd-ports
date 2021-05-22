@@ -1,4 +1,4 @@
---- makefile.orig	2020-05-27 03:16:28 UTC
+--- makefile.orig	2021-05-21 23:54:11 UTC
 +++ makefile
 @@ -194,7 +194,7 @@ SHLIBBIN=lrs-shared lrsnash-shared
  # Building (linking) the shared library, and relevant symlinks.
@@ -23,7 +23,14 @@
  
  # build object files for the shared library
  
-@@ -246,13 +246,13 @@ install: all-shared install-common
+@@ -240,19 +240,19 @@ lrslib2-shr.o: lrslib.c lrslib.h
+ # install targets
+ # where to install binaries, libraries, include files
+ prefix ?= /usr/local
+-INSTALL_INCLUDES=lrslib.h lrsdriver.h lrsgmp.h lrslong.h lrsmp.h
++INSTALL_INCLUDES=lrslib.h lrsdriver.h lrsgmp.h lrslong.h lrsmp.h lrsnashlib.h lrsrestart.h mplrs.h
+ 
+ install: all-shared install-common
  	mkdir -p $(DESTDIR)${prefix}/bin
  	for file in ${SHLIBBIN}; do cp $${file} $(DESTDIR)${prefix}/bin/$$(basename $$file -shared); done
  	mkdir -p $(DESTDIR)${prefix}/lib

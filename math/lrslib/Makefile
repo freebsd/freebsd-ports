@@ -1,6 +1,5 @@
 PORTNAME=	lrslib
-DISTVERSION=	071
-PORTREVISION=	1
+PORTVERSION=	071a
 CATEGORIES=	math
 MASTER_SITES=	http://cgm.cs.mcgill.ca/~avis/C/lrslib/archive/
 
