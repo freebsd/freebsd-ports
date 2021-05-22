@@ -1,5 +1,5 @@
 PORTNAME=	mattermost-server
-PORTVERSION=	5.32.1
+PORTVERSION=	5.38.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 
 USES=		go:modules
 
-GO_TARGET=	./cmd/mattermost ./config/config_generator
+GO_TARGET=	./cmd/mattermost ./scripts/config_generator
 GO_BUILDFLAGS=	-ldflags="-X github.com/mattermost/mattermost-server/model.BuildNumber=${PORTVERSION}"
 
 USE_RC_SUBR=	mattermostd
@@ -41,7 +41,8 @@ post-install:
 	${SETENV} OUTPUT_CONFIG=${WRKSRC}/config/default.json ${WRKDIR}/bin/config_generator
 	${INSTALL_DATA} ${WRKSRC}/config/default.json ${STAGEDIR}${PREFIX}/etc/mattermost/config.json.sample
 	${RM} ${STAGEDIR}${PREFIX}/bin/config_generator
-	${MKDIR} ${STAGEDIR}${WWWDIR}
-	cd ${GO_WRKSRC} && ${COPYTREE_SHARE} 'fonts i18n templates' ${STAGEDIR}${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}/templates
+	cd ${GO_WRKSRC} && ${COPYTREE_SHARE} 'fonts i18n' ${STAGEDIR}${WWWDIR}
+	cd ${GO_WRKSRC}/templates && ${CP} *.html *.js ${STAGEDIR}${WWWDIR}/templates
 
 .include <bsd.port.mk>
