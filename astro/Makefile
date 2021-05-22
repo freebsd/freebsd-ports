@@ -110,6 +110,7 @@
     SUBDIR += starplot
     SUBDIR += stars
     SUBDIR += stellarium
+    SUBDIR += stellarsolver
     SUBDIR += sunclock
     SUBDIR += sunwait
     SUBDIR += swe
