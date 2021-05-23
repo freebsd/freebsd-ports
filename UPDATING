@@ -54,7 +54,7 @@ you update your ports collection, before attempting any port upgrades.
   FreeBSD 11 users using base OpenSSL can switch to
   mail/postfix35
 
-  If you whish to use postfix35 until FreeBSD 11 EoL you might run the
+  If you wish to use postfix35 until FreeBSD 11 EoL you might run the
   following command:
 
   # pkg set -o mail/postfix:mail/postfix35
