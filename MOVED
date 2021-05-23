@@ -16337,3 +16337,4 @@ devel/py-jupyter_core|devel/py-jupyter-core|2021-05-18|Rename to match upstream 
 devel/sope4|devel/sope|2021-05-19|Obsolete, please use devel/sope
 sysutils/ansible27|sysutils/ansible|2021-05-21|Has expired: Upstream support ended; consider upgrading to sysutils/ansible
 sysutils/ansible28|sysutils/ansible|2021-05-21|Has expired: Upstream support ended; consider upgrading to sysutils/ansible
+devel/omnisharp-server||2021-05-23|Dead upstream, no depends in ports tree
