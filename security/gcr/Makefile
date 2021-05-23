@@ -1,7 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	gcr
-PORTVERSION=	3.38.1
+PORTVERSION=	3.40.0
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
