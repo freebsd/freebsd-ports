@@ -1,0 +1,5 @@
+This is the agent for the PCP Execution Protocol (PXP), based on the the Puppet
+Communications Protocol (PCP). It enables the execution of actions on remote
+nodes.
+
+WWW: https://github.com/puppetlabs/pxp-agent

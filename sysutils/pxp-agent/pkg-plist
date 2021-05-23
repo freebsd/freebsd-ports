@@ -1,0 +1,6 @@
+bin/PowershellShim-Helper.ps1
+bin/PowershellShim.ps1
+bin/execution_wrapper
+bin/pxp-agent
+lib/libpxp-agent.a
+pxp-agent/modules/pxp-module-puppet
