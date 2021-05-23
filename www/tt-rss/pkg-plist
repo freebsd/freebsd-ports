@@ -1,5 +1,4 @@
 %%DATADIR%%/httpd-tt-rss.conf
-@group %%WWWGRP%%
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/README.md
@@ -8,17 +7,15 @@
 %%WWWDIR%%/classes/api.php
 %%WWWDIR%%/classes/article.php
 %%WWWDIR%%/classes/auth/base.php
-%%WWWDIR%%/classes/backend.php
+%%WWWDIR%%/classes/config.php
 %%WWWDIR%%/classes/counters.php
 %%WWWDIR%%/classes/db.php
-%%WWWDIR%%/classes/db/mysqli.php
-%%WWWDIR%%/classes/db/pgsql.php
+%%WWWDIR%%/classes/db/migrations.php
 %%WWWDIR%%/classes/db/prefs.php
-%%WWWDIR%%/classes/dbupdater.php
 %%WWWDIR%%/classes/debug.php
 %%WWWDIR%%/classes/digest.php
 %%WWWDIR%%/classes/diskcache.php
-%%WWWDIR%%/classes/dlg.php
+%%WWWDIR%%/classes/errors.php
 %%WWWDIR%%/classes/feedenclosure.php
 %%WWWDIR%%/classes/feeditem.php
 %%WWWDIR%%/classes/feeditem/atom.php
@@ -27,13 +24,14 @@
 %%WWWDIR%%/classes/feedparser.php
 %%WWWDIR%%/classes/feeds.php
 %%WWWDIR%%/classes/handler.php
+%%WWWDIR%%/classes/handler/administrative.php
 %%WWWDIR%%/classes/handler/protected.php
 %%WWWDIR%%/classes/handler/public.php
 %%WWWDIR%%/classes/iauthmodule.php
-%%WWWDIR%%/classes/idb.php
 %%WWWDIR%%/classes/ihandler.php
 %%WWWDIR%%/classes/labels.php
 %%WWWDIR%%/classes/logger.php
+%%WWWDIR%%/classes/logger/adapter.php
 %%WWWDIR%%/classes/logger/sql.php
 %%WWWDIR%%/classes/logger/stdout.php
 %%WWWDIR%%/classes/logger/syslog.php
@@ -48,6 +46,7 @@
 %%WWWDIR%%/classes/pref/prefs.php
 %%WWWDIR%%/classes/pref/system.php
 %%WWWDIR%%/classes/pref/users.php
+%%WWWDIR%%/classes/prefs.php
 %%WWWDIR%%/classes/rpc.php
 %%WWWDIR%%/classes/rssutils.php
 %%WWWDIR%%/classes/sanitizer.php
@@ -55,33 +54,30 @@
 %%WWWDIR%%/classes/timehelper.php
 %%WWWDIR%%/classes/urlhelper.php
 %%WWWDIR%%/classes/userhelper.php
-%%WWWDIR%%/errors.php
+%%WWWDIR%%/composer.json
+%%WWWDIR%%/composer.lock
 %%WWWDIR%%/feed-icons/index.html
 %%WWWDIR%%/gulpfile.js
 %%WWWDIR%%/images/blank_icon.gif
+%%WWWDIR%%/images/favicon-512px.png
 %%WWWDIR%%/images/favicon-72px.png
 %%WWWDIR%%/images/favicon.png
 %%WWWDIR%%/images/indicator_tiny.gif
 %%WWWDIR%%/images/indicator_white.gif
 %%WWWDIR%%/images/information.png
-%%WWWDIR%%/images/logo_small.png
+%%WWWDIR%%/images/oval.svg
+%%WWWDIR%%/images/three-dots.svg
 %%WWWDIR%%/include/autoload.php
 %%WWWDIR%%/include/colors.php
 %%WWWDIR%%/include/controls.php
-%%WWWDIR%%/include/db-prefs.php
-%%WWWDIR%%/include/db.php
+%%WWWDIR%%/include/controls_compat.php
 %%WWWDIR%%/include/errorhandler.php
 %%WWWDIR%%/include/functions.php
 %%WWWDIR%%/include/login_form.php
-%%WWWDIR%%/include/sanity_check.php
-%%WWWDIR%%/include/sanity_config.php
 %%WWWDIR%%/include/sessions.php
 %%WWWDIR%%/index.php
-%%WWWDIR%%/install/index.php
 %%WWWDIR%%/js/App.js
 %%WWWDIR%%/js/Article.js
-%%WWWDIR%%/js/form/ComboButton.js
-%%WWWDIR%%/js/form/ValidationTextArea.js
 %%WWWDIR%%/js/CommonDialogs.js
 %%WWWDIR%%/js/CommonFilters.js
 %%WWWDIR%%/js/FeedStoreModel.js
@@ -96,10 +92,14 @@
 %%WWWDIR%%/js/PrefHelpers.js
 %%WWWDIR%%/js/PrefLabelTree.js
 %%WWWDIR%%/js/PrefUsers.js
+%%WWWDIR%%/js/SingleUseDialog.js
 %%WWWDIR%%/js/Toolbar.js
 %%WWWDIR%%/js/common.js
+%%WWWDIR%%/js/form/ComboButton.js
 %%WWWDIR%%/js/form/DropDownButton.js
 %%WWWDIR%%/js/form/Select.js
+%%WWWDIR%%/js/form/ValidationMultiSelect.js
+%%WWWDIR%%/js/form/ValidationTextArea.js
 %%WWWDIR%%/js/index.html
 %%WWWDIR%%/js/prefs.js
 %%WWWDIR%%/js/tt-rss.js
@@ -109,7 +109,6 @@
 %%WWWDIR%%/lib/CheckBoxTree.js
 %%WWWDIR%%/lib/MiniTemplator.class.php
 %%WWWDIR%%/lib/_CheckBoxTreeNode.js
-%%WWWDIR%%/lib/accept-to-gettext.php
 %%WWWDIR%%/lib/dijit/BackgroundIframe.js
 %%WWWDIR%%/lib/dijit/CONTRIBUTING.md
 %%WWWDIR%%/lib/dijit/Calendar.js
@@ -1136,7 +1135,6 @@
 %%WWWDIR%%/lib/dijit/tree/dndSource.js
 %%WWWDIR%%/lib/dijit/tree/model.js
 %%WWWDIR%%/lib/dijit/typematic.js
-%%WWWDIR%%/lib/dojo-src/.gitignore
 %%WWWDIR%%/lib/dojo-src/rebuild-dojo.sh
 %%WWWDIR%%/lib/dojo-src/tt-rss.profile.js
 %%WWWDIR%%/lib/dojo/AdapterRegistry.js
@@ -1819,447 +1817,9 @@
 %%WWWDIR%%/lib/gettext/gettext.php
 %%WWWDIR%%/lib/gettext/plurals.php
 %%WWWDIR%%/lib/gettext/streams.php
-%%WWWDIR%%/lib/iconfont/MaterialIcons-Regular.eot
-%%WWWDIR%%/lib/iconfont/MaterialIcons-Regular.ijmap
-%%WWWDIR%%/lib/iconfont/MaterialIcons-Regular.svg
-%%WWWDIR%%/lib/iconfont/MaterialIcons-Regular.ttf
-%%WWWDIR%%/lib/iconfont/MaterialIcons-Regular.woff
-%%WWWDIR%%/lib/iconfont/MaterialIcons-Regular.woff2
-%%WWWDIR%%/lib/iconfont/README.md
-%%WWWDIR%%/lib/iconfont/codepoints
-%%WWWDIR%%/lib/iconfont/material-icons.css
 %%WWWDIR%%/lib/index.html
 %%WWWDIR%%/lib/jimIcon.php
-%%WWWDIR%%/lib/phpqrcode/CHANGELOG
-%%WWWDIR%%/lib/phpqrcode/INSTALL
-%%WWWDIR%%/lib/phpqrcode/README
-%%WWWDIR%%/lib/phpqrcode/VERSION
-%%WWWDIR%%/lib/phpqrcode/bindings/tcpdf/qrcode.php
-%%WWWDIR%%/lib/phpqrcode/cache/frame_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_1.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_10.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_10.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_11.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_11.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_12.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_12.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_13.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_13.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_14.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_14.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_15.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_15.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_16.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_16.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_17.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_17.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_18.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_18.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_19.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_19.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_2.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_20.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_20.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_21.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_21.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_22.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_22.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_23.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_23.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_24.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_24.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_25.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_25.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_26.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_26.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_27.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_27.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_28.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_28.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_29.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_29.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_3.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_30.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_30.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_31.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_31.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_32.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_32.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_33.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_33.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_34.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_34.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_35.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_35.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_36.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_36.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_37.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_37.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_38.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_38.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_39.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_39.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_4.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_40.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_40.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_5.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_6.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_7.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_8.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_8.png
-%%WWWDIR%%/lib/phpqrcode/cache/frame_9.dat
-%%WWWDIR%%/lib/phpqrcode/cache/frame_9.png
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_101_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_105_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_109_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_113_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_117_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_121_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_125_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_129_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_133_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_137_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_141_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_145_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_149_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_153_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_157_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_161_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_165_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_169_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_173_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_177_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_21_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_25_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_29_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_33_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_37_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_41_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_45_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_49_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_53_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_57_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_61_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_65_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_69_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_73_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_77_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_81_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_85_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_89_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_93_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_0/mask_97_0.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_101_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_105_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_109_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_113_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_117_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_121_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_125_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_129_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_133_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_137_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_141_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_145_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_149_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_153_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_157_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_161_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_165_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_169_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_173_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_177_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_21_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_25_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_29_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_33_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_37_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_41_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_45_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_49_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_53_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_57_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_61_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_65_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_69_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_73_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_77_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_81_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_85_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_89_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_93_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_1/mask_97_1.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_101_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_105_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_109_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_113_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_117_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_121_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_125_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_129_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_133_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_137_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_141_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_145_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_149_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_153_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_157_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_161_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_165_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_169_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_173_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_177_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_21_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_25_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_29_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_33_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_37_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_41_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_45_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_49_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_53_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_57_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_61_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_65_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_69_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_73_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_77_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_81_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_85_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_89_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_93_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_2/mask_97_2.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_101_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_105_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_109_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_113_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_117_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_121_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_125_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_129_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_133_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_137_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_141_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_145_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_149_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_153_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_157_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_161_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_165_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_169_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_173_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_177_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_21_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_25_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_29_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_33_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_37_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_41_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_45_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_49_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_53_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_57_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_61_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_65_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_69_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_73_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_77_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_81_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_85_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_89_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_93_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_3/mask_97_3.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_101_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_105_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_109_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_113_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_117_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_121_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_125_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_129_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_133_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_137_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_141_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_145_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_149_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_153_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_157_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_161_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_165_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_169_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_173_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_177_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_21_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_25_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_29_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_33_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_37_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_41_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_45_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_49_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_53_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_57_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_61_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_65_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_69_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_73_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_77_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_81_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_85_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_89_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_93_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_4/mask_97_4.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_101_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_105_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_109_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_113_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_117_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_121_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_125_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_129_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_133_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_137_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_141_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_145_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_149_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_153_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_157_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_161_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_165_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_169_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_173_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_177_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_21_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_25_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_29_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_33_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_37_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_41_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_45_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_49_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_53_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_57_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_61_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_65_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_69_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_73_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_77_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_81_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_85_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_89_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_93_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_5/mask_97_5.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_101_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_105_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_109_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_113_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_117_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_121_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_125_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_129_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_133_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_137_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_141_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_145_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_149_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_153_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_157_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_161_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_165_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_169_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_173_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_177_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_21_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_25_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_29_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_33_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_37_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_41_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_45_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_49_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_53_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_57_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_61_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_65_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_69_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_73_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_77_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_81_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_85_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_89_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_93_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_6/mask_97_6.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_101_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_105_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_109_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_113_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_117_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_121_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_125_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_129_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_133_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_137_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_141_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_145_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_149_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_153_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_157_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_161_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_165_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_169_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_173_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_177_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_21_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_25_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_29_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_33_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_37_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_41_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_45_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_49_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_53_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_57_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_61_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_65_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_69_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_73_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_77_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_81_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_85_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_89_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_93_7.dat
-%%WWWDIR%%/lib/phpqrcode/cache/mask_7/mask_97_7.dat
-%%WWWDIR%%/lib/phpqrcode/index.php
-%%WWWDIR%%/lib/phpqrcode/phpqrcode.php
-%%WWWDIR%%/lib/phpqrcode/qrbitstream.php
-%%WWWDIR%%/lib/phpqrcode/qrconfig.php
-%%WWWDIR%%/lib/phpqrcode/qrconst.php
-%%WWWDIR%%/lib/phpqrcode/qrencode.php
-%%WWWDIR%%/lib/phpqrcode/qrimage.php
-%%WWWDIR%%/lib/phpqrcode/qrinput.php
-%%WWWDIR%%/lib/phpqrcode/qrlib.php
-%%WWWDIR%%/lib/phpqrcode/qrmask.php
-%%WWWDIR%%/lib/phpqrcode/qrrscode.php
-%%WWWDIR%%/lib/phpqrcode/qrspec.php
-%%WWWDIR%%/lib/phpqrcode/qrsplit.php
-%%WWWDIR%%/lib/phpqrcode/qrtools.php
-%%WWWDIR%%/lib/phpqrcode/tools/merge.bat
-%%WWWDIR%%/lib/phpqrcode/tools/merge.php
-%%WWWDIR%%/lib/phpqrcode/tools/merge.sh
-%%WWWDIR%%/lib/phpqrcode/tools/merged_config.php
-%%WWWDIR%%/lib/phpqrcode/tools/merged_header.php
-%%WWWDIR%%/lib/prototype.js
-%%WWWDIR%%/lib/scriptaculous/controls.js
-%%WWWDIR%%/lib/scriptaculous/effects.js
-%%WWWDIR%%/lib/scriptaculous/scriptaculous.js
 %%WWWDIR%%/lib/timezones.txt
-%%WWWDIR%%/lib/xsl_mop-up.js
 @comment gettext not needed - see %%WWWDIR%%/lib/gettext/README
 %%WWWDIR%%/locale/ar_SA/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/ar_SA/LC_MESSAGES/messages.po
@@ -2321,10 +1881,9 @@
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.po
 %%WWWDIR%%/messages.pot
-%%WWWDIR%%/opml.php
 %%WWWDIR%%/package.json
+%%WWWDIR%%/phpstan.neon
 %%WWWDIR%%/plugins.local/index.html
-%%WWWDIR%%/plugins/af_comics/.gitignore
 %%WWWDIR%%/plugins/af_comics/af_comics_template.php
 %%WWWDIR%%/plugins/af_comics/filter_base.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_cad.php
@@ -2341,38 +1900,439 @@
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_twp.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_whomp.php
 %%WWWDIR%%/plugins/af_comics/init.php
-%%WWWDIR%%/plugins/af_readability/init.js
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Configuration.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMAttr.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMCdataSection.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMCharacterData.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMComment.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMDocument.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMDocumentFragment.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMDocumentType.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMElement.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMEntity.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMEntityReference.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMNode.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMNodeList.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMNotation.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMProcessingInstruction.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMText.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/NodeTrait.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/NodeUtility.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/ParseException.php
-%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Readability.php
-%%WWWDIR%%/plugins/af_fsckportal/init.php
 %%WWWDIR%%/plugins/af_psql_trgm/init.js
 %%WWWDIR%%/plugins/af_psql_trgm/init.php
-%%WWWDIR%%/plugins/af_proxy_http/init.php
+%%WWWDIR%%/plugins/af_readability/composer.json
+%%WWWDIR%%/plugins/af_readability/composer.lock
+%%WWWDIR%%/plugins/af_readability/init.js
 %%WWWDIR%%/plugins/af_readability/init.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/.coveralls.yml
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/.gitattributes
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/.styleci.yml
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/.travis.yml
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/AUTHORS.md
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/CHANGELOG.md
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/CONTRIBUTING.md
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/Makefile
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/README.md
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/composer.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/docker-compose.yml
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/docker/php/Dockerfile
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/phpunit.xml
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Configuration.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMAttr.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMCdataSection.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMCharacterData.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMComment.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMDocument.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMDocumentFragment.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMDocumentType.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMElement.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMEntity.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMEntityReference.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMNode.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMNodeList.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMNotation.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMProcessingInstruction.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/DOM/DOMText.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/NodeTrait.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Nodes/NodeUtility.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/ParseException.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/src/Readability.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/ConfigurationTest.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/ReadabilityTest.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/TestPage.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/001/config.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/001/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/001/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/001/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/001/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/002/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/002/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/002/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/002/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/003-metadata-preferred/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/003-metadata-preferred/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/003-metadata-preferred/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/003-metadata-preferred/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/004-metadata-space-separated-properties/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/004-metadata-space-separated-properties/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/004-metadata-space-separated-properties/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/004-metadata-space-separated-properties/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/aclu/config.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/aclu/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/aclu/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/aclu/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/aclu/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ars-1/config.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ars-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ars-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ars-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ars-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/base-url-base-element-relative/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/base-url-base-element-relative/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/base-url-base-element-relative/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/base-url-base-element-relative/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/base-url-base-element/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/base-url-base-element/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/base-url-base-element/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/base-url-base-element/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/base-url/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/base-url/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/base-url/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/base-url/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/basic-tags-cleaning/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/basic-tags-cleaning/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/basic-tags-cleaning/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/basic-tags-cleaning/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/bbc-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/bbc-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/bbc-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/bbc-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/blogger/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/blogger/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/blogger/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/blogger/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/breitbart/config.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/breitbart/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/breitbart/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/breitbart/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/breitbart/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/bug-1255978/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/bug-1255978/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/bug-1255978/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/bug-1255978/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/buzzfeed-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/buzzfeed-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/buzzfeed-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/buzzfeed-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/challenges/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/challenges/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/challenges/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/challenges/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/clean-links/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/clean-links/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/clean-links/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/clean-links/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/cnet-svg-classes/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/cnet-svg-classes/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/cnet-svg-classes/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/cnet-svg-classes/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/cnet/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/cnet/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/cnet/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/cnet/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/cnn/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/cnn/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/cnn/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/cnn/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/comment-inside-script-parsing/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/comment-inside-script-parsing/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/comment-inside-script-parsing/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/comment-inside-script-parsing/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/daringfireball-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/daringfireball-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/daringfireball-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/daringfireball-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/different-sources-for-images/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/different-sources-for-images/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/different-sources-for-images/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/different-sources-for-images/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ehow-1/config.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ehow-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ehow-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ehow-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ehow-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ehow-2/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ehow-2/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ehow-2/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ehow-2/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/embedded-videos/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/embedded-videos/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/embedded-videos/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/embedded-videos/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/engadget/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/engadget/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/engadget/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/engadget/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/fortressofsolitude/config.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/fortressofsolitude/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/fortressofsolitude/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/fortressofsolitude/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/fortressofsolitude/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/gmw/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/gmw/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/gmw/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/gmw/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/heise/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/heise/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/heise/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/heise/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/herald-sun-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/herald-sun-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/herald-sun-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/herald-sun-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/hidden-nodes/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/hidden-nodes/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/hidden-nodes/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/hidden-nodes/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/hukumusume/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/hukumusume/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/hukumusume/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/hukumusume/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/iab-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/iab-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/iab-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/iab-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ietf-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ietf-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ietf-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/ietf-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/infobae/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/infobae/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/infobae/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/infobae/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/keep-images/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/keep-images/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/keep-images/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/keep-images/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/la-nacion/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/la-nacion/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/la-nacion/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/la-nacion/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lemonde-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lemonde-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lemonde-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lemonde-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lemonde-2/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lemonde-2/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lemonde-2/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lemonde-2/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/liberation-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/liberation-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/liberation-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/liberation-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lifehacker-post-comment-load/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lifehacker-post-comment-load/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lifehacker-post-comment-load/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lifehacker-post-comment-load/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lifehacker-working/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lifehacker-working/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lifehacker-working/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lifehacker-working/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/links-in-tables/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/links-in-tables/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/links-in-tables/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/links-in-tables/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lwn-1/config.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lwn-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lwn-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lwn-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/lwn-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/marketwatch/config.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/marketwatch/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/marketwatch/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/marketwatch/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/marketwatch/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/medium-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/medium-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/medium-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/medium-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/medium-2/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/medium-2/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/medium-2/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/medium-2/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/medium-3/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/medium-3/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/medium-3/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/medium-3/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/missing-paragraphs/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/missing-paragraphs/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/missing-paragraphs/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/missing-paragraphs/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/mozilla-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/mozilla-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/mozilla-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/mozilla-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/mozilla-2/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/mozilla-2/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/mozilla-2/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/mozilla-2/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/msn/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/msn/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/msn/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/msn/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/nytimes-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/nytimes-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/nytimes-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/nytimes-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/nytimes-2/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/nytimes-2/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/nytimes-2/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/nytimes-2/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/pixnet/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/pixnet/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/pixnet/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/pixnet/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/remove-extra-brs/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/remove-extra-brs/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/remove-extra-brs/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/remove-extra-brs/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/remove-extra-paragraphs/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/remove-extra-paragraphs/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/remove-extra-paragraphs/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/remove-extra-paragraphs/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/remove-script-tags/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/remove-script-tags/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/remove-script-tags/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/remove-script-tags/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/reordering-paragraphs/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/reordering-paragraphs/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/reordering-paragraphs/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/reordering-paragraphs/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/replace-brs/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/replace-brs/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/replace-brs/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/replace-brs/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/replace-font-tags/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/replace-font-tags/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/replace-font-tags/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/replace-font-tags/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-2/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-2/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-2/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-2/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-3/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-3/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-3/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-3/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-4/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-4/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-4/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/rtl-4/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/salon-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/salon-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/salon-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/salon-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/simplyfound-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/simplyfound-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/simplyfound-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/simplyfound-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/social-buttons/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/social-buttons/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/social-buttons/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/social-buttons/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/style-tags-removal/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/style-tags-removal/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/style-tags-removal/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/style-tags-removal/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/svg-parsing/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/svg-parsing/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/svg-parsing/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/svg-parsing/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/table-style-attributes/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/table-style-attributes/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/table-style-attributes/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/table-style-attributes/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/telegraph/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/telegraph/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/telegraph/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/telegraph/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/title-and-h1-discrepancy/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/title-and-h1-discrepancy/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/title-and-h1-discrepancy/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/title-and-h1-discrepancy/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/tmz-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/tmz-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/tmz-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/tmz-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/tumblr/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/tumblr/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/tumblr/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/tumblr/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/uses-getfirstelementchild-function/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/uses-getfirstelementchild-function/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/uses-getfirstelementchild-function/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/uses-getfirstelementchild-function/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wapo-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wapo-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wapo-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wapo-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wapo-2/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wapo-2/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wapo-2/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wapo-2/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/webmd-1/config.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/webmd-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/webmd-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/webmd-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/webmd-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/webmd-2/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/webmd-2/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/webmd-2/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/webmd-2/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wikia/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wikia/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wikia/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wikia/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wikipedia/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wikipedia/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wikipedia/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wikipedia/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wordpress/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wordpress/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wordpress/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/wordpress/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-1/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-1/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-1/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-1/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-2/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-2/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-2/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-2/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-3/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-3/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-3/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-3/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-4/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-4/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-4/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/yahoo-4/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/youth/expected-images.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/youth/expected-metadata.json
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/youth/expected.html
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/readability.php/test/test-pages/youth/source.html
+%%WWWDIR%%/plugins/af_readability/vendor/autoload.php
+%%WWWDIR%%/plugins/af_readability/vendor/composer/ClassLoader.php
+%%WWWDIR%%/plugins/af_readability/vendor/composer/InstalledVersions.php
+%%WWWDIR%%/plugins/af_readability/vendor/composer/autoload_classmap.php
+%%WWWDIR%%/plugins/af_readability/vendor/composer/autoload_namespaces.php
+%%WWWDIR%%/plugins/af_readability/vendor/composer/autoload_psr4.php
+%%WWWDIR%%/plugins/af_readability/vendor/composer/autoload_real.php
+%%WWWDIR%%/plugins/af_readability/vendor/composer/autoload_static.php
+%%WWWDIR%%/plugins/af_readability/vendor/composer/installed.json
+%%WWWDIR%%/plugins/af_readability/vendor/composer/installed.php
+%%WWWDIR%%/plugins/af_readability/vendor/composer/platform_check.php
+%%WWWDIR%%/plugins/af_readability/vendor/psr/log/Psr/Log/AbstractLogger.php
+%%WWWDIR%%/plugins/af_readability/vendor/psr/log/Psr/Log/InvalidArgumentException.php
+%%WWWDIR%%/plugins/af_readability/vendor/psr/log/Psr/Log/LogLevel.php
+%%WWWDIR%%/plugins/af_readability/vendor/psr/log/Psr/Log/LoggerAwareInterface.php
+%%WWWDIR%%/plugins/af_readability/vendor/psr/log/Psr/Log/LoggerAwareTrait.php
+%%WWWDIR%%/plugins/af_readability/vendor/psr/log/Psr/Log/LoggerInterface.php
+%%WWWDIR%%/plugins/af_readability/vendor/psr/log/Psr/Log/LoggerTrait.php
+%%WWWDIR%%/plugins/af_readability/vendor/psr/log/Psr/Log/NullLogger.php
+%%WWWDIR%%/plugins/af_readability/vendor/psr/log/Psr/Log/Test/DummyTest.php
+%%WWWDIR%%/plugins/af_readability/vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php
+%%WWWDIR%%/plugins/af_readability/vendor/psr/log/Psr/Log/Test/TestLogger.php
+%%WWWDIR%%/plugins/af_readability/vendor/psr/log/README.md
+%%WWWDIR%%/plugins/af_readability/vendor/psr/log/composer.json
 %%WWWDIR%%/plugins/af_redditimgur/init.php
-%%WWWDIR%%/plugins/af_tumblr_1280/init.php
-%%WWWDIR%%/plugins/af_unburn/init.php
 %%WWWDIR%%/plugins/af_youtube_embed/init.php
-%%WWWDIR%%/plugins/af_zz_noautoplay/init.js
-%%WWWDIR%%/plugins/af_zz_noautoplay/init.php
 %%WWWDIR%%/plugins/af_zz_vidmute/init.js
 %%WWWDIR%%/plugins/af_zz_vidmute/init.php
 %%WWWDIR%%/plugins/auth_internal/init.php
@@ -2380,29 +2340,17 @@
 %%WWWDIR%%/plugins/auto_assign_labels/init.php
 %%WWWDIR%%/plugins/bookmarklets/init.php
 %%WWWDIR%%/plugins/cache_starred_images/init.php
-%%WWWDIR%%/plugins/close_button/init.php
 %%WWWDIR%%/plugins/googlereaderkeys/init.php
 %%WWWDIR%%/plugins/hotkeys_force_top/init.js
 %%WWWDIR%%/plugins/hotkeys_force_top/init.php
 %%WWWDIR%%/plugins/hotkeys_noscroll/init.php
 %%WWWDIR%%/plugins/hotkeys_swap_jk/init.php
 %%WWWDIR%%/plugins/index.html
-%%WWWDIR%%/plugins/mail/init.php
-%%WWWDIR%%/plugins/mail/mail.js
-%%WWWDIR%%/plugins/mail/mail.png
-%%WWWDIR%%/plugins/mailto/init.js
-%%WWWDIR%%/plugins/mailto/init.php
-%%WWWDIR%%/plugins/mailto/mail.png
 %%WWWDIR%%/plugins/no_iframes/init.php
-%%WWWDIR%%/plugins/no_title_counters/init.js
-%%WWWDIR%%/plugins/no_title_counters/init.php
-%%WWWDIR%%/plugins/no_url_hashes/init.js
-%%WWWDIR%%/plugins/no_url_hashes/init.php
 %%WWWDIR%%/plugins/note/init.php
 %%WWWDIR%%/plugins/note/note.js
-%%WWWDIR%%/plugins/nsfw/init.js
 %%WWWDIR%%/plugins/nsfw/init.php
-%%WWWDIR%%/plugins/scored_oldest_first/init.php
+%%WWWDIR%%/plugins/nsfw/nsfw.png
 %%WWWDIR%%/plugins/share/init.php
 %%WWWDIR%%/plugins/share/share.css
 %%WWWDIR%%/plugins/share/share.js
@@ -2412,288 +2360,299 @@
 %%WWWDIR%%/plugins/shorten_expanded/init.php
 %%WWWDIR%%/plugins/toggle_sidebar/init.js
 %%WWWDIR%%/plugins/toggle_sidebar/init.php
-%%WWWDIR%%/plugins/vf_shared/init.php
 %%WWWDIR%%/prefs.php
 %%WWWDIR%%/public.php
-%%WWWDIR%%/register.php
 %%WWWDIR%%/schema/ttrss_schema_mysql.sql
 %%WWWDIR%%/schema/ttrss_schema_pgsql.sql
-%%WWWDIR%%/schema/versions/mysql/3.sql
-%%WWWDIR%%/schema/versions/mysql/4.sql
-%%WWWDIR%%/schema/versions/mysql/5.sql
-%%WWWDIR%%/schema/versions/mysql/6.sql
-%%WWWDIR%%/schema/versions/mysql/7.sql
-%%WWWDIR%%/schema/versions/mysql/8.sql
-%%WWWDIR%%/schema/versions/mysql/9.sql
-%%WWWDIR%%/schema/versions/mysql/10.sql
-%%WWWDIR%%/schema/versions/mysql/11.sql
-%%WWWDIR%%/schema/versions/mysql/12.sql
-%%WWWDIR%%/schema/versions/mysql/13.sql
-%%WWWDIR%%/schema/versions/mysql/14.sql
-%%WWWDIR%%/schema/versions/mysql/15.sql
-%%WWWDIR%%/schema/versions/mysql/16.sql
-%%WWWDIR%%/schema/versions/mysql/17.sql
-%%WWWDIR%%/schema/versions/mysql/18.sql
-%%WWWDIR%%/schema/versions/mysql/19.sql
-%%WWWDIR%%/schema/versions/mysql/20.sql
-%%WWWDIR%%/schema/versions/mysql/21.sql
-%%WWWDIR%%/schema/versions/mysql/22.sql
-%%WWWDIR%%/schema/versions/mysql/23.sql
-%%WWWDIR%%/schema/versions/mysql/24.sql
-%%WWWDIR%%/schema/versions/mysql/25.sql
-%%WWWDIR%%/schema/versions/mysql/26.sql
-%%WWWDIR%%/schema/versions/mysql/27.sql
-%%WWWDIR%%/schema/versions/mysql/28.sql
-%%WWWDIR%%/schema/versions/mysql/29.sql
-%%WWWDIR%%/schema/versions/mysql/30.sql
-%%WWWDIR%%/schema/versions/mysql/31.sql
-%%WWWDIR%%/schema/versions/mysql/32.sql
-%%WWWDIR%%/schema/versions/mysql/33.sql
-%%WWWDIR%%/schema/versions/mysql/34.sql
-%%WWWDIR%%/schema/versions/mysql/35.sql
-%%WWWDIR%%/schema/versions/mysql/36.sql
-%%WWWDIR%%/schema/versions/mysql/37.sql
-%%WWWDIR%%/schema/versions/mysql/38.sql
-%%WWWDIR%%/schema/versions/mysql/39.sql
-%%WWWDIR%%/schema/versions/mysql/40.sql
-%%WWWDIR%%/schema/versions/mysql/41.sql
-%%WWWDIR%%/schema/versions/mysql/42.sql
-%%WWWDIR%%/schema/versions/mysql/43.sql
-%%WWWDIR%%/schema/versions/mysql/44.sql
-%%WWWDIR%%/schema/versions/mysql/45.sql
-%%WWWDIR%%/schema/versions/mysql/46.sql
-%%WWWDIR%%/schema/versions/mysql/47.sql
-%%WWWDIR%%/schema/versions/mysql/48.sql
-%%WWWDIR%%/schema/versions/mysql/49.sql
-%%WWWDIR%%/schema/versions/mysql/50.sql
-%%WWWDIR%%/schema/versions/mysql/51.sql
-%%WWWDIR%%/schema/versions/mysql/52.sql
-%%WWWDIR%%/schema/versions/mysql/53.sql
-%%WWWDIR%%/schema/versions/mysql/54.sql
-%%WWWDIR%%/schema/versions/mysql/55.sql
-%%WWWDIR%%/schema/versions/mysql/56.sql
-%%WWWDIR%%/schema/versions/mysql/57.sql
-%%WWWDIR%%/schema/versions/mysql/58.sql
-%%WWWDIR%%/schema/versions/mysql/59.sql
-%%WWWDIR%%/schema/versions/mysql/60.sql
-%%WWWDIR%%/schema/versions/mysql/61.sql
-%%WWWDIR%%/schema/versions/mysql/62.sql
-%%WWWDIR%%/schema/versions/mysql/63.sql
-%%WWWDIR%%/schema/versions/mysql/64.sql
-%%WWWDIR%%/schema/versions/mysql/65.sql
-%%WWWDIR%%/schema/versions/mysql/66.sql
-%%WWWDIR%%/schema/versions/mysql/67.sql
-%%WWWDIR%%/schema/versions/mysql/68.sql
-%%WWWDIR%%/schema/versions/mysql/69.sql
-%%WWWDIR%%/schema/versions/mysql/70.sql
-%%WWWDIR%%/schema/versions/mysql/71.sql
-%%WWWDIR%%/schema/versions/mysql/72.sql
-%%WWWDIR%%/schema/versions/mysql/73.sql
-%%WWWDIR%%/schema/versions/mysql/74.sql
-%%WWWDIR%%/schema/versions/mysql/75.sql
-%%WWWDIR%%/schema/versions/mysql/76.sql
-%%WWWDIR%%/schema/versions/mysql/77.sql
-%%WWWDIR%%/schema/versions/mysql/78.sql
-%%WWWDIR%%/schema/versions/mysql/79.sql
-%%WWWDIR%%/schema/versions/mysql/80.sql
-%%WWWDIR%%/schema/versions/mysql/81.sql
-%%WWWDIR%%/schema/versions/mysql/82.sql
-%%WWWDIR%%/schema/versions/mysql/83.sql
-%%WWWDIR%%/schema/versions/mysql/84.sql
-%%WWWDIR%%/schema/versions/mysql/85.sql
-%%WWWDIR%%/schema/versions/mysql/86.sql
-%%WWWDIR%%/schema/versions/mysql/87.sql
-%%WWWDIR%%/schema/versions/mysql/88.sql
-%%WWWDIR%%/schema/versions/mysql/89.sql
-%%WWWDIR%%/schema/versions/mysql/90.sql
-%%WWWDIR%%/schema/versions/mysql/91.sql
-%%WWWDIR%%/schema/versions/mysql/92.sql
-%%WWWDIR%%/schema/versions/mysql/93.sql
-%%WWWDIR%%/schema/versions/mysql/94.sql
-%%WWWDIR%%/schema/versions/mysql/95.sql
-%%WWWDIR%%/schema/versions/mysql/96.sql
-%%WWWDIR%%/schema/versions/mysql/97.sql
-%%WWWDIR%%/schema/versions/mysql/98.sql
-%%WWWDIR%%/schema/versions/mysql/99.sql
-%%WWWDIR%%/schema/versions/mysql/100.sql
-%%WWWDIR%%/schema/versions/mysql/101.sql
-%%WWWDIR%%/schema/versions/mysql/102.sql
-%%WWWDIR%%/schema/versions/mysql/103.sql
-%%WWWDIR%%/schema/versions/mysql/104.sql
-%%WWWDIR%%/schema/versions/mysql/105.sql
-%%WWWDIR%%/schema/versions/mysql/106.sql
-%%WWWDIR%%/schema/versions/mysql/107.sql
-%%WWWDIR%%/schema/versions/mysql/108.sql
-%%WWWDIR%%/schema/versions/mysql/109.sql
-%%WWWDIR%%/schema/versions/mysql/110.sql
-%%WWWDIR%%/schema/versions/mysql/111.sql
-%%WWWDIR%%/schema/versions/mysql/112.sql
-%%WWWDIR%%/schema/versions/mysql/113.sql
-%%WWWDIR%%/schema/versions/mysql/114.sql
-%%WWWDIR%%/schema/versions/mysql/115.sql
-%%WWWDIR%%/schema/versions/mysql/116.sql
-%%WWWDIR%%/schema/versions/mysql/117.sql
-%%WWWDIR%%/schema/versions/mysql/118.sql
-%%WWWDIR%%/schema/versions/mysql/119.sql
-%%WWWDIR%%/schema/versions/mysql/120.sql
-%%WWWDIR%%/schema/versions/mysql/121.sql
-%%WWWDIR%%/schema/versions/mysql/122.sql
-%%WWWDIR%%/schema/versions/mysql/123.sql
-%%WWWDIR%%/schema/versions/mysql/124.sql
-%%WWWDIR%%/schema/versions/mysql/125.sql
-%%WWWDIR%%/schema/versions/mysql/126.sql
-%%WWWDIR%%/schema/versions/mysql/127.sql
-%%WWWDIR%%/schema/versions/mysql/128.sql
-%%WWWDIR%%/schema/versions/mysql/129.sql
-%%WWWDIR%%/schema/versions/mysql/130.sql
-%%WWWDIR%%/schema/versions/mysql/131.sql
-%%WWWDIR%%/schema/versions/mysql/132.sql
-%%WWWDIR%%/schema/versions/mysql/133.sql
-%%WWWDIR%%/schema/versions/mysql/134.sql
-%%WWWDIR%%/schema/versions/mysql/135.sql
-%%WWWDIR%%/schema/versions/mysql/136.sql
-%%WWWDIR%%/schema/versions/mysql/137.sql
-%%WWWDIR%%/schema/versions/mysql/138.sql
-%%WWWDIR%%/schema/versions/mysql/139.sql
-%%WWWDIR%%/schema/versions/mysql/140.sql
-%%WWWDIR%%/schema/versions/pgsql/3.sql
-%%WWWDIR%%/schema/versions/pgsql/4.sql
-%%WWWDIR%%/schema/versions/pgsql/5.sql
-%%WWWDIR%%/schema/versions/pgsql/6.sql
-%%WWWDIR%%/schema/versions/pgsql/7.sql
-%%WWWDIR%%/schema/versions/pgsql/8.sql
-%%WWWDIR%%/schema/versions/pgsql/9.sql
-%%WWWDIR%%/schema/versions/pgsql/10.sql
-%%WWWDIR%%/schema/versions/pgsql/11.sql
-%%WWWDIR%%/schema/versions/pgsql/12.sql
-%%WWWDIR%%/schema/versions/pgsql/13.sql
-%%WWWDIR%%/schema/versions/pgsql/14.sql
-%%WWWDIR%%/schema/versions/pgsql/15.sql
-%%WWWDIR%%/schema/versions/pgsql/16.sql
-%%WWWDIR%%/schema/versions/pgsql/17.sql
-%%WWWDIR%%/schema/versions/pgsql/18.sql
-%%WWWDIR%%/schema/versions/pgsql/19.sql
-%%WWWDIR%%/schema/versions/pgsql/20.sql
-%%WWWDIR%%/schema/versions/pgsql/21.sql
-%%WWWDIR%%/schema/versions/pgsql/22.sql
-%%WWWDIR%%/schema/versions/pgsql/23.sql
-%%WWWDIR%%/schema/versions/pgsql/24.sql
-%%WWWDIR%%/schema/versions/pgsql/25.sql
-%%WWWDIR%%/schema/versions/pgsql/26.sql
-%%WWWDIR%%/schema/versions/pgsql/27.sql
-%%WWWDIR%%/schema/versions/pgsql/28.sql
-%%WWWDIR%%/schema/versions/pgsql/29.sql
-%%WWWDIR%%/schema/versions/pgsql/30.sql
-%%WWWDIR%%/schema/versions/pgsql/31.sql
-%%WWWDIR%%/schema/versions/pgsql/32.sql
-%%WWWDIR%%/schema/versions/pgsql/33.sql
-%%WWWDIR%%/schema/versions/pgsql/34.sql
-%%WWWDIR%%/schema/versions/pgsql/35.sql
-%%WWWDIR%%/schema/versions/pgsql/36.sql
-%%WWWDIR%%/schema/versions/pgsql/37.sql
-%%WWWDIR%%/schema/versions/pgsql/38.sql
-%%WWWDIR%%/schema/versions/pgsql/39.sql
-%%WWWDIR%%/schema/versions/pgsql/40.sql
-%%WWWDIR%%/schema/versions/pgsql/41.sql
-%%WWWDIR%%/schema/versions/pgsql/42.sql
-%%WWWDIR%%/schema/versions/pgsql/43.sql
-%%WWWDIR%%/schema/versions/pgsql/44.sql
-%%WWWDIR%%/schema/versions/pgsql/45.sql
-%%WWWDIR%%/schema/versions/pgsql/46.sql
-%%WWWDIR%%/schema/versions/pgsql/47.sql
-%%WWWDIR%%/schema/versions/pgsql/48.sql
-%%WWWDIR%%/schema/versions/pgsql/49.sql
-%%WWWDIR%%/schema/versions/pgsql/50.sql
-%%WWWDIR%%/schema/versions/pgsql/51.sql
-%%WWWDIR%%/schema/versions/pgsql/52.sql
-%%WWWDIR%%/schema/versions/pgsql/53.sql
-%%WWWDIR%%/schema/versions/pgsql/54.sql
-%%WWWDIR%%/schema/versions/pgsql/55.sql
-%%WWWDIR%%/schema/versions/pgsql/56.sql
-%%WWWDIR%%/schema/versions/pgsql/57.sql
-%%WWWDIR%%/schema/versions/pgsql/58.sql
-%%WWWDIR%%/schema/versions/pgsql/59.sql
-%%WWWDIR%%/schema/versions/pgsql/60.sql
-%%WWWDIR%%/schema/versions/pgsql/61.sql
-%%WWWDIR%%/schema/versions/pgsql/62.sql
-%%WWWDIR%%/schema/versions/pgsql/63.sql
-%%WWWDIR%%/schema/versions/pgsql/64.sql
-%%WWWDIR%%/schema/versions/pgsql/65.sql
-%%WWWDIR%%/schema/versions/pgsql/66.sql
-%%WWWDIR%%/schema/versions/pgsql/67.sql
-%%WWWDIR%%/schema/versions/pgsql/68.sql
-%%WWWDIR%%/schema/versions/pgsql/69.sql
-%%WWWDIR%%/schema/versions/pgsql/70.sql
-%%WWWDIR%%/schema/versions/pgsql/71.sql
-%%WWWDIR%%/schema/versions/pgsql/72.sql
-%%WWWDIR%%/schema/versions/pgsql/73.sql
-%%WWWDIR%%/schema/versions/pgsql/74.sql
-%%WWWDIR%%/schema/versions/pgsql/75.sql
-%%WWWDIR%%/schema/versions/pgsql/76.sql
-%%WWWDIR%%/schema/versions/pgsql/77.sql
-%%WWWDIR%%/schema/versions/pgsql/78.sql
-%%WWWDIR%%/schema/versions/pgsql/79.sql
-%%WWWDIR%%/schema/versions/pgsql/80.sql
-%%WWWDIR%%/schema/versions/pgsql/81.sql
-%%WWWDIR%%/schema/versions/pgsql/82.sql
-%%WWWDIR%%/schema/versions/pgsql/83.sql
-%%WWWDIR%%/schema/versions/pgsql/84.sql
-%%WWWDIR%%/schema/versions/pgsql/85.sql
-%%WWWDIR%%/schema/versions/pgsql/86.sql
-%%WWWDIR%%/schema/versions/pgsql/87.sql
-%%WWWDIR%%/schema/versions/pgsql/88.sql
-%%WWWDIR%%/schema/versions/pgsql/89.sql
-%%WWWDIR%%/schema/versions/pgsql/90.sql
-%%WWWDIR%%/schema/versions/pgsql/91.sql
-%%WWWDIR%%/schema/versions/pgsql/92.sql
-%%WWWDIR%%/schema/versions/pgsql/93.sql
-%%WWWDIR%%/schema/versions/pgsql/94.sql
-%%WWWDIR%%/schema/versions/pgsql/95.sql
-%%WWWDIR%%/schema/versions/pgsql/96.sql
-%%WWWDIR%%/schema/versions/pgsql/97.sql
-%%WWWDIR%%/schema/versions/pgsql/98.sql
-%%WWWDIR%%/schema/versions/pgsql/99.sql
-%%WWWDIR%%/schema/versions/pgsql/100.sql
-%%WWWDIR%%/schema/versions/pgsql/101.sql
-%%WWWDIR%%/schema/versions/pgsql/102.sql
-%%WWWDIR%%/schema/versions/pgsql/103.sql
-%%WWWDIR%%/schema/versions/pgsql/104.sql
-%%WWWDIR%%/schema/versions/pgsql/105.sql
-%%WWWDIR%%/schema/versions/pgsql/106.sql
-%%WWWDIR%%/schema/versions/pgsql/107.sql
-%%WWWDIR%%/schema/versions/pgsql/108.sql
-%%WWWDIR%%/schema/versions/pgsql/109.sql
-%%WWWDIR%%/schema/versions/pgsql/110.sql
-%%WWWDIR%%/schema/versions/pgsql/111.sql
-%%WWWDIR%%/schema/versions/pgsql/112.sql
-%%WWWDIR%%/schema/versions/pgsql/113.sql
-%%WWWDIR%%/schema/versions/pgsql/114.sql
-%%WWWDIR%%/schema/versions/pgsql/115.sql
-%%WWWDIR%%/schema/versions/pgsql/116.sql
-%%WWWDIR%%/schema/versions/pgsql/117.sql
-%%WWWDIR%%/schema/versions/pgsql/118.sql
-%%WWWDIR%%/schema/versions/pgsql/119.sql
-%%WWWDIR%%/schema/versions/pgsql/120.sql
-%%WWWDIR%%/schema/versions/pgsql/121.sql
-%%WWWDIR%%/schema/versions/pgsql/122.sql
-%%WWWDIR%%/schema/versions/pgsql/123.sql
-%%WWWDIR%%/schema/versions/pgsql/124.sql
-%%WWWDIR%%/schema/versions/pgsql/125.sql
-%%WWWDIR%%/schema/versions/pgsql/126.sql
-%%WWWDIR%%/schema/versions/pgsql/127.sql
-%%WWWDIR%%/schema/versions/pgsql/128.sql
-%%WWWDIR%%/schema/versions/pgsql/129.sql
-%%WWWDIR%%/schema/versions/pgsql/130.sql
-%%WWWDIR%%/schema/versions/pgsql/131.sql
-%%WWWDIR%%/schema/versions/pgsql/132.sql
-%%WWWDIR%%/schema/versions/pgsql/133.sql
-%%WWWDIR%%/schema/versions/pgsql/134.sql
-%%WWWDIR%%/schema/versions/pgsql/135.sql
-%%WWWDIR%%/schema/versions/pgsql/136.sql
-%%WWWDIR%%/schema/versions/pgsql/137.sql
-%%WWWDIR%%/schema/versions/pgsql/138.sql
-%%WWWDIR%%/schema/versions/pgsql/139.sql
-%%WWWDIR%%/schema/versions/pgsql/140.sql
+%%WWWDIR%%/sql/mysql/schema.sql
+%%WWWDIR%%/sql/mysql/migrations/3.sql
+%%WWWDIR%%/sql/mysql/migrations/4.sql
+%%WWWDIR%%/sql/mysql/migrations/5.sql
+%%WWWDIR%%/sql/mysql/migrations/6.sql
+%%WWWDIR%%/sql/mysql/migrations/7.sql
+%%WWWDIR%%/sql/mysql/migrations/8.sql
+%%WWWDIR%%/sql/mysql/migrations/9.sql
+%%WWWDIR%%/sql/mysql/migrations/10.sql
+%%WWWDIR%%/sql/mysql/migrations/11.sql
+%%WWWDIR%%/sql/mysql/migrations/12.sql
+%%WWWDIR%%/sql/mysql/migrations/13.sql
+%%WWWDIR%%/sql/mysql/migrations/14.sql
+%%WWWDIR%%/sql/mysql/migrations/15.sql
+%%WWWDIR%%/sql/mysql/migrations/16.sql
+%%WWWDIR%%/sql/mysql/migrations/17.sql
+%%WWWDIR%%/sql/mysql/migrations/18.sql
+%%WWWDIR%%/sql/mysql/migrations/19.sql
+%%WWWDIR%%/sql/mysql/migrations/20.sql
+%%WWWDIR%%/sql/mysql/migrations/21.sql
+%%WWWDIR%%/sql/mysql/migrations/22.sql
+%%WWWDIR%%/sql/mysql/migrations/23.sql
+%%WWWDIR%%/sql/mysql/migrations/24.sql
+%%WWWDIR%%/sql/mysql/migrations/25.sql
+%%WWWDIR%%/sql/mysql/migrations/26.sql
+%%WWWDIR%%/sql/mysql/migrations/27.sql
+%%WWWDIR%%/sql/mysql/migrations/28.sql
+%%WWWDIR%%/sql/mysql/migrations/29.sql
+%%WWWDIR%%/sql/mysql/migrations/30.sql
+%%WWWDIR%%/sql/mysql/migrations/31.sql
+%%WWWDIR%%/sql/mysql/migrations/32.sql
+%%WWWDIR%%/sql/mysql/migrations/33.sql
+%%WWWDIR%%/sql/mysql/migrations/34.sql
+%%WWWDIR%%/sql/mysql/migrations/35.sql
+%%WWWDIR%%/sql/mysql/migrations/36.sql
+%%WWWDIR%%/sql/mysql/migrations/37.sql
+%%WWWDIR%%/sql/mysql/migrations/38.sql
+%%WWWDIR%%/sql/mysql/migrations/39.sql
+%%WWWDIR%%/sql/mysql/migrations/40.sql
+%%WWWDIR%%/sql/mysql/migrations/41.sql
+%%WWWDIR%%/sql/mysql/migrations/42.sql
+%%WWWDIR%%/sql/mysql/migrations/43.sql
+%%WWWDIR%%/sql/mysql/migrations/44.sql
+%%WWWDIR%%/sql/mysql/migrations/45.sql
+%%WWWDIR%%/sql/mysql/migrations/46.sql
+%%WWWDIR%%/sql/mysql/migrations/47.sql
+%%WWWDIR%%/sql/mysql/migrations/48.sql
+%%WWWDIR%%/sql/mysql/migrations/49.sql
+%%WWWDIR%%/sql/mysql/migrations/50.sql
+%%WWWDIR%%/sql/mysql/migrations/51.sql
+%%WWWDIR%%/sql/mysql/migrations/52.sql
+%%WWWDIR%%/sql/mysql/migrations/53.sql
+%%WWWDIR%%/sql/mysql/migrations/54.sql
+%%WWWDIR%%/sql/mysql/migrations/55.sql
+%%WWWDIR%%/sql/mysql/migrations/56.sql
+%%WWWDIR%%/sql/mysql/migrations/57.sql
+%%WWWDIR%%/sql/mysql/migrations/58.sql
+%%WWWDIR%%/sql/mysql/migrations/59.sql
+%%WWWDIR%%/sql/mysql/migrations/60.sql
+%%WWWDIR%%/sql/mysql/migrations/61.sql
+%%WWWDIR%%/sql/mysql/migrations/62.sql
+%%WWWDIR%%/sql/mysql/migrations/63.sql
+%%WWWDIR%%/sql/mysql/migrations/64.sql
+%%WWWDIR%%/sql/mysql/migrations/65.sql
+%%WWWDIR%%/sql/mysql/migrations/66.sql
+%%WWWDIR%%/sql/mysql/migrations/67.sql
+%%WWWDIR%%/sql/mysql/migrations/68.sql
+%%WWWDIR%%/sql/mysql/migrations/69.sql
+%%WWWDIR%%/sql/mysql/migrations/70.sql
+%%WWWDIR%%/sql/mysql/migrations/71.sql
+%%WWWDIR%%/sql/mysql/migrations/72.sql
+%%WWWDIR%%/sql/mysql/migrations/73.sql
+%%WWWDIR%%/sql/mysql/migrations/74.sql
+%%WWWDIR%%/sql/mysql/migrations/75.sql
+%%WWWDIR%%/sql/mysql/migrations/76.sql
+%%WWWDIR%%/sql/mysql/migrations/77.sql
+%%WWWDIR%%/sql/mysql/migrations/78.sql
+%%WWWDIR%%/sql/mysql/migrations/79.sql
+%%WWWDIR%%/sql/mysql/migrations/80.sql
+%%WWWDIR%%/sql/mysql/migrations/81.sql
+%%WWWDIR%%/sql/mysql/migrations/82.sql
+%%WWWDIR%%/sql/mysql/migrations/83.sql
+%%WWWDIR%%/sql/mysql/migrations/84.sql
+%%WWWDIR%%/sql/mysql/migrations/85.sql
+%%WWWDIR%%/sql/mysql/migrations/86.sql
+%%WWWDIR%%/sql/mysql/migrations/87.sql
+%%WWWDIR%%/sql/mysql/migrations/88.sql
+%%WWWDIR%%/sql/mysql/migrations/89.sql
+%%WWWDIR%%/sql/mysql/migrations/90.sql
+%%WWWDIR%%/sql/mysql/migrations/91.sql
+%%WWWDIR%%/sql/mysql/migrations/92.sql
+%%WWWDIR%%/sql/mysql/migrations/93.sql
+%%WWWDIR%%/sql/mysql/migrations/94.sql
+%%WWWDIR%%/sql/mysql/migrations/95.sql
+%%WWWDIR%%/sql/mysql/migrations/96.sql
+%%WWWDIR%%/sql/mysql/migrations/97.sql
+%%WWWDIR%%/sql/mysql/migrations/98.sql
+%%WWWDIR%%/sql/mysql/migrations/99.sql
+%%WWWDIR%%/sql/mysql/migrations/100.sql
+%%WWWDIR%%/sql/mysql/migrations/101.sql
+%%WWWDIR%%/sql/mysql/migrations/102.sql
+%%WWWDIR%%/sql/mysql/migrations/103.sql
+%%WWWDIR%%/sql/mysql/migrations/104.sql
+%%WWWDIR%%/sql/mysql/migrations/105.sql
+%%WWWDIR%%/sql/mysql/migrations/106.sql
+%%WWWDIR%%/sql/mysql/migrations/107.sql
+%%WWWDIR%%/sql/mysql/migrations/108.sql
+%%WWWDIR%%/sql/mysql/migrations/109.sql
+%%WWWDIR%%/sql/mysql/migrations/110.sql
+%%WWWDIR%%/sql/mysql/migrations/111.sql
+%%WWWDIR%%/sql/mysql/migrations/112.sql
+%%WWWDIR%%/sql/mysql/migrations/113.sql
+%%WWWDIR%%/sql/mysql/migrations/114.sql
+%%WWWDIR%%/sql/mysql/migrations/115.sql
+%%WWWDIR%%/sql/mysql/migrations/116.sql
+%%WWWDIR%%/sql/mysql/migrations/117.sql
+%%WWWDIR%%/sql/mysql/migrations/118.sql
+%%WWWDIR%%/sql/mysql/migrations/119.sql
+%%WWWDIR%%/sql/mysql/migrations/120.sql
+%%WWWDIR%%/sql/mysql/migrations/121.sql
+%%WWWDIR%%/sql/mysql/migrations/122.sql
+%%WWWDIR%%/sql/mysql/migrations/123.sql
+%%WWWDIR%%/sql/mysql/migrations/124.sql
+%%WWWDIR%%/sql/mysql/migrations/125.sql
+%%WWWDIR%%/sql/mysql/migrations/126.sql
+%%WWWDIR%%/sql/mysql/migrations/127.sql
+%%WWWDIR%%/sql/mysql/migrations/128.sql
+%%WWWDIR%%/sql/mysql/migrations/129.sql
+%%WWWDIR%%/sql/mysql/migrations/130.sql
+%%WWWDIR%%/sql/mysql/migrations/131.sql
+%%WWWDIR%%/sql/mysql/migrations/132.sql
+%%WWWDIR%%/sql/mysql/migrations/133.sql
+%%WWWDIR%%/sql/mysql/migrations/134.sql
+%%WWWDIR%%/sql/mysql/migrations/135.sql
+%%WWWDIR%%/sql/mysql/migrations/136.sql
+%%WWWDIR%%/sql/mysql/migrations/137.sql
+%%WWWDIR%%/sql/mysql/migrations/138.sql
+%%WWWDIR%%/sql/mysql/migrations/139.sql
+%%WWWDIR%%/sql/mysql/migrations/140.sql
+%%WWWDIR%%/sql/mysql/migrations/141.sql
+%%WWWDIR%%/sql/mysql/migrations/142.sql
+%%WWWDIR%%/sql/mysql/migrations/143.sql
+%%WWWDIR%%/sql/mysql/migrations/144.sql
+%%WWWDIR%%/sql/mysql/migrations/145.sql
+%%WWWDIR%%/sql/pgsql/schema.sql
+%%WWWDIR%%/sql/pgsql/migrations/3.sql
+%%WWWDIR%%/sql/pgsql/migrations/4.sql
+%%WWWDIR%%/sql/pgsql/migrations/5.sql
+%%WWWDIR%%/sql/pgsql/migrations/6.sql
+%%WWWDIR%%/sql/pgsql/migrations/7.sql
+%%WWWDIR%%/sql/pgsql/migrations/8.sql
+%%WWWDIR%%/sql/pgsql/migrations/9.sql
+%%WWWDIR%%/sql/pgsql/migrations/10.sql
+%%WWWDIR%%/sql/pgsql/migrations/11.sql
+%%WWWDIR%%/sql/pgsql/migrations/12.sql
+%%WWWDIR%%/sql/pgsql/migrations/13.sql
+%%WWWDIR%%/sql/pgsql/migrations/14.sql
+%%WWWDIR%%/sql/pgsql/migrations/15.sql
+%%WWWDIR%%/sql/pgsql/migrations/16.sql
+%%WWWDIR%%/sql/pgsql/migrations/17.sql
+%%WWWDIR%%/sql/pgsql/migrations/18.sql
+%%WWWDIR%%/sql/pgsql/migrations/19.sql
+%%WWWDIR%%/sql/pgsql/migrations/20.sql
+%%WWWDIR%%/sql/pgsql/migrations/21.sql
+%%WWWDIR%%/sql/pgsql/migrations/22.sql
+%%WWWDIR%%/sql/pgsql/migrations/23.sql
+%%WWWDIR%%/sql/pgsql/migrations/24.sql
+%%WWWDIR%%/sql/pgsql/migrations/25.sql
+%%WWWDIR%%/sql/pgsql/migrations/26.sql
+%%WWWDIR%%/sql/pgsql/migrations/27.sql
+%%WWWDIR%%/sql/pgsql/migrations/28.sql
+%%WWWDIR%%/sql/pgsql/migrations/29.sql
+%%WWWDIR%%/sql/pgsql/migrations/30.sql
+%%WWWDIR%%/sql/pgsql/migrations/31.sql
+%%WWWDIR%%/sql/pgsql/migrations/32.sql
+%%WWWDIR%%/sql/pgsql/migrations/33.sql
+%%WWWDIR%%/sql/pgsql/migrations/34.sql
+%%WWWDIR%%/sql/pgsql/migrations/35.sql
+%%WWWDIR%%/sql/pgsql/migrations/36.sql
+%%WWWDIR%%/sql/pgsql/migrations/37.sql
+%%WWWDIR%%/sql/pgsql/migrations/38.sql
+%%WWWDIR%%/sql/pgsql/migrations/39.sql
+%%WWWDIR%%/sql/pgsql/migrations/40.sql
+%%WWWDIR%%/sql/pgsql/migrations/41.sql
+%%WWWDIR%%/sql/pgsql/migrations/42.sql
+%%WWWDIR%%/sql/pgsql/migrations/43.sql
+%%WWWDIR%%/sql/pgsql/migrations/44.sql
+%%WWWDIR%%/sql/pgsql/migrations/45.sql
+%%WWWDIR%%/sql/pgsql/migrations/46.sql
+%%WWWDIR%%/sql/pgsql/migrations/47.sql
+%%WWWDIR%%/sql/pgsql/migrations/48.sql
+%%WWWDIR%%/sql/pgsql/migrations/49.sql
+%%WWWDIR%%/sql/pgsql/migrations/50.sql
+%%WWWDIR%%/sql/pgsql/migrations/51.sql
+%%WWWDIR%%/sql/pgsql/migrations/52.sql
+%%WWWDIR%%/sql/pgsql/migrations/53.sql
+%%WWWDIR%%/sql/pgsql/migrations/54.sql
+%%WWWDIR%%/sql/pgsql/migrations/55.sql
+%%WWWDIR%%/sql/pgsql/migrations/56.sql
+%%WWWDIR%%/sql/pgsql/migrations/57.sql
+%%WWWDIR%%/sql/pgsql/migrations/58.sql
+%%WWWDIR%%/sql/pgsql/migrations/59.sql
+%%WWWDIR%%/sql/pgsql/migrations/60.sql
+%%WWWDIR%%/sql/pgsql/migrations/61.sql
+%%WWWDIR%%/sql/pgsql/migrations/62.sql
+%%WWWDIR%%/sql/pgsql/migrations/63.sql
+%%WWWDIR%%/sql/pgsql/migrations/64.sql
+%%WWWDIR%%/sql/pgsql/migrations/65.sql
+%%WWWDIR%%/sql/pgsql/migrations/66.sql
+%%WWWDIR%%/sql/pgsql/migrations/67.sql
+%%WWWDIR%%/sql/pgsql/migrations/68.sql
+%%WWWDIR%%/sql/pgsql/migrations/69.sql
+%%WWWDIR%%/sql/pgsql/migrations/70.sql
+%%WWWDIR%%/sql/pgsql/migrations/71.sql
+%%WWWDIR%%/sql/pgsql/migrations/72.sql
+%%WWWDIR%%/sql/pgsql/migrations/73.sql
+%%WWWDIR%%/sql/pgsql/migrations/74.sql
+%%WWWDIR%%/sql/pgsql/migrations/75.sql
+%%WWWDIR%%/sql/pgsql/migrations/76.sql
+%%WWWDIR%%/sql/pgsql/migrations/77.sql
+%%WWWDIR%%/sql/pgsql/migrations/78.sql
+%%WWWDIR%%/sql/pgsql/migrations/79.sql
+%%WWWDIR%%/sql/pgsql/migrations/80.sql
+%%WWWDIR%%/sql/pgsql/migrations/81.sql
+%%WWWDIR%%/sql/pgsql/migrations/82.sql
+%%WWWDIR%%/sql/pgsql/migrations/83.sql
+%%WWWDIR%%/sql/pgsql/migrations/84.sql
+%%WWWDIR%%/sql/pgsql/migrations/85.sql
+%%WWWDIR%%/sql/pgsql/migrations/86.sql
+%%WWWDIR%%/sql/pgsql/migrations/87.sql
+%%WWWDIR%%/sql/pgsql/migrations/88.sql
+%%WWWDIR%%/sql/pgsql/migrations/89.sql
+%%WWWDIR%%/sql/pgsql/migrations/90.sql
+%%WWWDIR%%/sql/pgsql/migrations/91.sql
+%%WWWDIR%%/sql/pgsql/migrations/92.sql
+%%WWWDIR%%/sql/pgsql/migrations/93.sql
+%%WWWDIR%%/sql/pgsql/migrations/94.sql
+%%WWWDIR%%/sql/pgsql/migrations/95.sql
+%%WWWDIR%%/sql/pgsql/migrations/96.sql
+%%WWWDIR%%/sql/pgsql/migrations/97.sql
+%%WWWDIR%%/sql/pgsql/migrations/98.sql
+%%WWWDIR%%/sql/pgsql/migrations/99.sql
+%%WWWDIR%%/sql/pgsql/migrations/100.sql
+%%WWWDIR%%/sql/pgsql/migrations/101.sql
+%%WWWDIR%%/sql/pgsql/migrations/102.sql
+%%WWWDIR%%/sql/pgsql/migrations/103.sql
+%%WWWDIR%%/sql/pgsql/migrations/104.sql
+%%WWWDIR%%/sql/pgsql/migrations/105.sql
+%%WWWDIR%%/sql/pgsql/migrations/106.sql
+%%WWWDIR%%/sql/pgsql/migrations/107.sql
+%%WWWDIR%%/sql/pgsql/migrations/108.sql
+%%WWWDIR%%/sql/pgsql/migrations/109.sql
+%%WWWDIR%%/sql/pgsql/migrations/110.sql
+%%WWWDIR%%/sql/pgsql/migrations/111.sql
+%%WWWDIR%%/sql/pgsql/migrations/112.sql
+%%WWWDIR%%/sql/pgsql/migrations/113.sql
+%%WWWDIR%%/sql/pgsql/migrations/114.sql
+%%WWWDIR%%/sql/pgsql/migrations/115.sql
+%%WWWDIR%%/sql/pgsql/migrations/116.sql
+%%WWWDIR%%/sql/pgsql/migrations/117.sql
+%%WWWDIR%%/sql/pgsql/migrations/118.sql
+%%WWWDIR%%/sql/pgsql/migrations/119.sql
+%%WWWDIR%%/sql/pgsql/migrations/120.sql
+%%WWWDIR%%/sql/pgsql/migrations/121.sql
+%%WWWDIR%%/sql/pgsql/migrations/122.sql
+%%WWWDIR%%/sql/pgsql/migrations/123.sql
+%%WWWDIR%%/sql/pgsql/migrations/124.sql
+%%WWWDIR%%/sql/pgsql/migrations/125.sql
+%%WWWDIR%%/sql/pgsql/migrations/126.sql
+%%WWWDIR%%/sql/pgsql/migrations/127.sql
+%%WWWDIR%%/sql/pgsql/migrations/128.sql
+%%WWWDIR%%/sql/pgsql/migrations/129.sql
+%%WWWDIR%%/sql/pgsql/migrations/130.sql
+%%WWWDIR%%/sql/pgsql/migrations/131.sql
+%%WWWDIR%%/sql/pgsql/migrations/132.sql
+%%WWWDIR%%/sql/pgsql/migrations/133.sql
+%%WWWDIR%%/sql/pgsql/migrations/134.sql
+%%WWWDIR%%/sql/pgsql/migrations/135.sql
+%%WWWDIR%%/sql/pgsql/migrations/136.sql
+%%WWWDIR%%/sql/pgsql/migrations/137.sql
+%%WWWDIR%%/sql/pgsql/migrations/138.sql
+%%WWWDIR%%/sql/pgsql/migrations/139.sql
+%%WWWDIR%%/sql/pgsql/migrations/140.sql
+%%WWWDIR%%/sql/pgsql/migrations/141.sql
+%%WWWDIR%%/sql/pgsql/migrations/142.sql
+%%WWWDIR%%/sql/pgsql/migrations/143.sql
+%%WWWDIR%%/sql/pgsql/migrations/144.sql
+%%WWWDIR%%/sql/pgsql/migrations/145.sql
+%%WWWDIR%%/templates.local/index.html
 %%WWWDIR%%/templates/digest_template.txt
 %%WWWDIR%%/templates/digest_template_html.txt
 %%WWWDIR%%/templates/email_article_template.txt
@@ -2702,12 +2661,14 @@
 %%WWWDIR%%/templates/otp_disabled_template.txt
 %%WWWDIR%%/templates/password_change_template.txt
 %%WWWDIR%%/templates/resetpass_link_template.txt
-%%WWWDIR%%/templates.local/index.html
+%%WWWDIR%%/themes/Makefile
 %%WWWDIR%%/themes/compact.css
 %%WWWDIR%%/themes/compact.less
 %%WWWDIR%%/themes/compact_base.less
 %%WWWDIR%%/themes/compact_night.css
 %%WWWDIR%%/themes/compact_night.less
+%%WWWDIR%%/themes/light-high-contrast.css
+%%WWWDIR%%/themes/light-high-contrast.less
 %%WWWDIR%%/themes/light.css
 %%WWWDIR%%/themes/light.less
 %%WWWDIR%%/themes/light/cdm.less
@@ -2719,451 +2680,418 @@
 %%WWWDIR%%/themes/light/tt-rss.less
 %%WWWDIR%%/themes/light/utility.less
 %%WWWDIR%%/themes/light/zoom.less
-%%WWWDIR%%/themes/Makefile
 %%WWWDIR%%/themes/night.css
 %%WWWDIR%%/themes/night.less
 %%WWWDIR%%/themes/night_base.less
 %%WWWDIR%%/themes/night_blue.css
 %%WWWDIR%%/themes/night_blue.less
-%%WWWDIR%%/version_static.txt
+@group %%WWWGRP%%
 @mode ug=rx
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
-%%WWWDIR%%/utils/extract-i18n-js.pl
+@group
 @mode
-%%WWWDIR%%/utils/localized_schema.txt
-@mode u=rx
-%%WWWDIR%%/utils/regen_config_checks.sh
-%%WWWDIR%%/utils/update-translations.sh
-@mode
-%%WWWDIR%%/vendor/Psr/Log/Test/LoggerInterfaceTest.php
-%%WWWDIR%%/vendor/Psr/Log/NullLogger.php
-%%WWWDIR%%/vendor/Psr/Log/LogLevel.php
-%%WWWDIR%%/vendor/Psr/Log/LoggerTrait.php
-%%WWWDIR%%/vendor/Psr/Log/LoggerInterface.php
-%%WWWDIR%%/vendor/Psr/Log/LoggerAwareTrait.php
-%%WWWDIR%%/vendor/Psr/Log/LoggerAwareInterface.php
-%%WWWDIR%%/vendor/Psr/Log/InvalidArgumentException.php
-%%WWWDIR%%/vendor/Psr/Log/AbstractLogger.php
-%%WWWDIR%%/vendor/OTPHP/TOTP.php
-%%WWWDIR%%/vendor/OTPHP/OTPHP.php
-%%WWWDIR%%/vendor/OTPHP/OTP.php
-%%WWWDIR%%/vendor/OTPHP/LICENCE
-%%WWWDIR%%/vendor/OTPHP/HOTP.php
-%%WWWDIR%%/vendor/OTPHP/Base32.php
-@dir %%WWWDIR%%/vendor/Psr/Log/Test
-@dir %%WWWDIR%%/vendor/Psr/Log
-@dir %%WWWDIR%%/vendor/Psr
-@dir %%WWWDIR%%/vendor/OTPHP
-@dir %%WWWDIR%%/vendor
-@dir %%WWWDIR%%/utils
-@dir %%WWWDIR%%/themes/light
-@dir %%WWWDIR%%/themes.local
-@dir %%WWWDIR%%/themes
-@dir %%WWWDIR%%/templates.local
-@dir %%WWWDIR%%/templates
-@dir %%WWWDIR%%/schema/versions/pgsql
-@dir %%WWWDIR%%/schema/versions/mysql
-@dir %%WWWDIR%%/schema/versions
-@dir %%WWWDIR%%/schema
-@dir %%WWWDIR%%/plugins/vf_shared
-@dir %%WWWDIR%%/plugins/toggle_sidebar
-@dir %%WWWDIR%%/plugins/shorten_expanded
-@dir %%WWWDIR%%/plugins/share
-@dir %%WWWDIR%%/plugins/nsfw
-@dir %%WWWDIR%%/plugins/note
-@dir %%WWWDIR%%/plugins/no_url_hashes
-@dir %%WWWDIR%%/plugins/no_title_counters
-@dir %%WWWDIR%%/plugins/no_iframes
-@dir %%WWWDIR%%/plugins/mailto
-@dir %%WWWDIR%%/plugins/mail
-@dir %%WWWDIR%%/plugins/googlereaderkeys
-@dir %%WWWDIR%%/plugins/close_button
-@dir %%WWWDIR%%/plugins/cache_starred_images
-@dir %%WWWDIR%%/plugins/bookmarklets
-@dir %%WWWDIR%%/plugins/auto_assign_labels
-@dir %%WWWDIR%%/plugins/auth_remote
-@dir %%WWWDIR%%/plugins/auth_internal
-@dir %%WWWDIR%%/plugins/af_zz_vidmute
-@dir %%WWWDIR%%/plugins/af_zz_noautoplay
-@dir %%WWWDIR%%/plugins/af_youtube_embed
-@dir %%WWWDIR%%/plugins/af_unburn
-@dir %%WWWDIR%%/plugins/af_tumblr_1280
-@dir %%WWWDIR%%/plugins/af_redditimgur
-@dir %%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM
-@dir %%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes
-@dir %%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability
-@dir %%WWWDIR%%/plugins/af_readability/vendor/andreskrey
-@dir %%WWWDIR%%/plugins/af_readability/vendor
-@dir %%WWWDIR%%/plugins/af_readability
-@dir %%WWWDIR%%/plugins/af_psql_trgm
-@dir %%WWWDIR%%/plugins/af_fsckportal
-@dir %%WWWDIR%%/plugins/af_comics/filters.local
-@dir %%WWWDIR%%/plugins/af_comics/filters
-@dir %%WWWDIR%%/plugins/af_comics
-@dir %%WWWDIR%%/plugins.local
-@dir %%WWWDIR%%/plugins
-@dir %%WWWDIR%%/plugins/af_proxy_http
-@dir %%WWWDIR%%/plugins/hotkeys_force_top
-@dir %%WWWDIR%%/plugins/hotkeys_noscroll
-@dir %%WWWDIR%%/plugins/hotkeys_swap_jk
-@dir %%WWWDIR%%/locale/zh_TW/LC_MESSAGES
-@dir %%WWWDIR%%/locale/zh_TW
-@dir %%WWWDIR%%/locale/zh_CN/LC_MESSAGES
-@dir %%WWWDIR%%/locale/zh_CN
-@dir %%WWWDIR%%/locale/uk_UA/LC_MESSAGES
-@dir %%WWWDIR%%/locale/uk_UA
-@dir %%WWWDIR%%/locale/tr_TR/LC_MESSAGES
-@dir %%WWWDIR%%/locale/tr_TR
-@dir %%WWWDIR%%/locale/sv_SE/LC_MESSAGES
-@dir %%WWWDIR%%/locale/sv_SE
-@dir %%WWWDIR%%/locale/ru_RU/LC_MESSAGES
-@dir %%WWWDIR%%/locale/ru_RU
-@dir %%WWWDIR%%/locale/pt_PT/LC_MESSAGES
-@dir %%WWWDIR%%/locale/pt_PT
-@dir %%WWWDIR%%/locale/pt_BR/LC_MESSAGES
-@dir %%WWWDIR%%/locale/pt_BR
-@dir %%WWWDIR%%/locale/pl_PL/LC_MESSAGES
-@dir %%WWWDIR%%/locale/pl_PL
-@dir %%WWWDIR%%/locale/nl_NL/LC_MESSAGES
-@dir %%WWWDIR%%/locale/nl_NL
-@dir %%WWWDIR%%/locale/nb_NO/LC_MESSAGES
-@dir %%WWWDIR%%/locale/nb_NO
-@dir %%WWWDIR%%/locale/lv_LV/LC_MESSAGES
-@dir %%WWWDIR%%/locale/lv_LV
-@dir %%WWWDIR%%/locale/ko_KR/LC_MESSAGES
-@dir %%WWWDIR%%/locale/ko_KR
-@dir %%WWWDIR%%/locale/ja_JP/LC_MESSAGES
-@dir %%WWWDIR%%/locale/ja_JP
-@dir %%WWWDIR%%/locale/it_IT/LC_MESSAGES
-@dir %%WWWDIR%%/locale/it_IT
-@dir %%WWWDIR%%/locale/id/LC_MESSAGES
-@dir %%WWWDIR%%/locale/id
-@dir %%WWWDIR%%/locale/hu_HU/LC_MESSAGES
-@dir %%WWWDIR%%/locale/hu_HU
-@dir %%WWWDIR%%/locale/fr_FR/LC_MESSAGES
-@dir %%WWWDIR%%/locale/fr_FR
-@dir %%WWWDIR%%/locale/fi_FI/LC_MESSAGES
-@dir %%WWWDIR%%/locale/fi_FI
-@dir %%WWWDIR%%/locale/es_LA/LC_MESSAGES
-@dir %%WWWDIR%%/locale/es_LA
-@dir %%WWWDIR%%/locale/es_ES/LC_MESSAGES
-@dir %%WWWDIR%%/locale/es_ES
-@dir %%WWWDIR%%/locale/eo/LC_MESSAGES
-@dir %%WWWDIR%%/locale/eo
-@dir %%WWWDIR%%/locale/el_GR/LC_MESSAGES
-@dir %%WWWDIR%%/locale/el_GR
-@dir %%WWWDIR%%/locale/de_DE/LC_MESSAGES
-@dir %%WWWDIR%%/locale/de_DE
-@dir %%WWWDIR%%/locale/da_DK/LC_MESSAGES
-@dir %%WWWDIR%%/locale/da_DK
-@dir %%WWWDIR%%/locale/cs_CZ/LC_MESSAGES
-@dir %%WWWDIR%%/locale/cs_CZ
-@dir %%WWWDIR%%/locale/ca_CA/LC_MESSAGES
-@dir %%WWWDIR%%/locale/ca_CA
-@dir %%WWWDIR%%/locale/bg_BG/LC_MESSAGES
-@dir %%WWWDIR%%/locale/bg_BG
-@dir %%WWWDIR%%/locale/ar_SA/LC_MESSAGES
-@dir %%WWWDIR%%/locale/ar_SA
-@dir %%WWWDIR%%/locale
-@dir %%WWWDIR%%/lib/scriptaculous
-@dir %%WWWDIR%%/lib/phpqrcode/tools
-@dir %%WWWDIR%%/lib/phpqrcode/cache/mask_7
-@dir %%WWWDIR%%/lib/phpqrcode/cache/mask_6
-@dir %%WWWDIR%%/lib/phpqrcode/cache/mask_5
-@dir %%WWWDIR%%/lib/phpqrcode/cache/mask_4
-@dir %%WWWDIR%%/lib/phpqrcode/cache/mask_3
-@dir %%WWWDIR%%/lib/phpqrcode/cache/mask_2
-@dir %%WWWDIR%%/lib/phpqrcode/cache/mask_1
-@dir %%WWWDIR%%/lib/phpqrcode/cache/mask_0
-@dir %%WWWDIR%%/lib/phpqrcode/cache
-@dir %%WWWDIR%%/lib/phpqrcode/bindings/tcpdf
-@dir %%WWWDIR%%/lib/phpqrcode/bindings
-@dir %%WWWDIR%%/lib/phpqrcode
-@dir %%WWWDIR%%/lib/gettext
-@dir %%WWWDIR%%/lib/flat-ttrss
-@dir %%WWWDIR%%/lib/flat-ttrss/fonts
-@dir %%WWWDIR%%/lib/flat-ttrss/images
-@dir %%WWWDIR%%/lib/iconfont
-@dir %%WWWDIR%%/lib/dojo/store/util
-@dir %%WWWDIR%%/lib/dojo/store/api
-@dir %%WWWDIR%%/lib/dojo/store
-@dir %%WWWDIR%%/lib/dojo/selector
-@dir %%WWWDIR%%/lib/dojo/rpc
-@dir %%WWWDIR%%/lib/dojo/router
-@dir %%WWWDIR%%/lib/dojo/resources/images
-@dir %%WWWDIR%%/lib/dojo/resources
-@dir %%WWWDIR%%/lib/dojo/request
-@dir %%WWWDIR%%/lib/dojo/promise
-@dir %%WWWDIR%%/lib/dojo/on
-@dir %%WWWDIR%%/lib/dojo/nls/zh-tw
-@dir %%WWWDIR%%/lib/dojo/nls/zh
-@dir %%WWWDIR%%/lib/dojo/nls/uk
-@dir %%WWWDIR%%/lib/dojo/nls/tr
-@dir %%WWWDIR%%/lib/dojo/nls/th
-@dir %%WWWDIR%%/lib/dojo/nls/sv
-@dir %%WWWDIR%%/lib/dojo/nls/sr
-@dir %%WWWDIR%%/lib/dojo/nls/sl
-@dir %%WWWDIR%%/lib/dojo/nls/sk
-@dir %%WWWDIR%%/lib/dojo/nls/ru
-@dir %%WWWDIR%%/lib/dojo/nls/ro
-@dir %%WWWDIR%%/lib/dojo/nls/pt-pt
-@dir %%WWWDIR%%/lib/dojo/nls/pt
-@dir %%WWWDIR%%/lib/dojo/nls/pl
-@dir %%WWWDIR%%/lib/dojo/nls/nl
-@dir %%WWWDIR%%/lib/dojo/nls/nb
-@dir %%WWWDIR%%/lib/dojo/nls/mk
-@dir %%WWWDIR%%/lib/dojo/nls/ko
-@dir %%WWWDIR%%/lib/dojo/nls/kk
-@dir %%WWWDIR%%/lib/dojo/nls/ja
-@dir %%WWWDIR%%/lib/dojo/nls/it
-@dir %%WWWDIR%%/lib/dojo/nls/id
-@dir %%WWWDIR%%/lib/dojo/nls/hu
-@dir %%WWWDIR%%/lib/dojo/nls/hr
-@dir %%WWWDIR%%/lib/dojo/nls/he
-@dir %%WWWDIR%%/lib/dojo/nls/fr
-@dir %%WWWDIR%%/lib/dojo/nls/fi
-@dir %%WWWDIR%%/lib/dojo/nls/eu
-@dir %%WWWDIR%%/lib/dojo/nls/es
-@dir %%WWWDIR%%/lib/dojo/nls/el
-@dir %%WWWDIR%%/lib/dojo/nls/de
-@dir %%WWWDIR%%/lib/dojo/nls/da
-@dir %%WWWDIR%%/lib/dojo/nls/cs
-@dir %%WWWDIR%%/lib/dojo/nls/ca
-@dir %%WWWDIR%%/lib/dojo/nls/bs
-@dir %%WWWDIR%%/lib/dojo/nls/bg
-@dir %%WWWDIR%%/lib/dojo/nls/az
-@dir %%WWWDIR%%/lib/dojo/nls/ar
-@dir %%WWWDIR%%/lib/dojo/nls
-@dir %%WWWDIR%%/lib/dojo/io
-@dir %%WWWDIR%%/lib/dojo/fx
-@dir %%WWWDIR%%/lib/dojo/errors
-@dir %%WWWDIR%%/lib/dojo/dnd
-@dir %%WWWDIR%%/lib/dojo/date
-@dir %%WWWDIR%%/lib/dojo/data/util
-@dir %%WWWDIR%%/lib/dojo/data/api
-@dir %%WWWDIR%%/lib/dojo/data
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/zh-tw
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/zh-hk
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/zh-hant
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/zh
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/tr
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/th
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/sv
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/sr
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/sl
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/sk
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/ru
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/ro
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/pt-pt
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/pt
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/pl
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/nl
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/nb
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/mk
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/ko
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/ja
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/it
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/id
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/hu
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/hr
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/he
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/fr-ch
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/fr
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/fi
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/es
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/en-gb
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/en-ca
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/en-au
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/en
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/el
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/de
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/da
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/cs
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/ca
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/bs
-@dir %%WWWDIR%%/lib/dojo/cldr/nls/ar
-@dir %%WWWDIR%%/lib/dojo/cldr/nls
-@dir %%WWWDIR%%/lib/dojo/cldr
-@dir %%WWWDIR%%/lib/dojo/_firebug
-@dir %%WWWDIR%%/lib/dojo/_base
-@dir %%WWWDIR%%/lib/dojo-src
-@dir %%WWWDIR%%/lib/dojo
-@dir %%WWWDIR%%/lib/dijit/tree
-@dir %%WWWDIR%%/lib/dijit/themes/tundra/layout
-@dir %%WWWDIR%%/lib/dijit/themes/tundra/images
-@dir %%WWWDIR%%/lib/dijit/themes/tundra/form
-@dir %%WWWDIR%%/lib/dijit/themes/tundra
-@dir %%WWWDIR%%/lib/dijit/themes/soria/layout
-@dir %%WWWDIR%%/lib/dijit/themes/soria/images
-@dir %%WWWDIR%%/lib/dijit/themes/soria/form
-@dir %%WWWDIR%%/lib/dijit/themes/soria
-@dir %%WWWDIR%%/lib/dijit/themes/nihilo/layout
-@dir %%WWWDIR%%/lib/dijit/themes/nihilo/images
-@dir %%WWWDIR%%/lib/dijit/themes/nihilo/form
-@dir %%WWWDIR%%/lib/dijit/themes/nihilo
-@dir %%WWWDIR%%/lib/dijit/themes/claro/layout/images
-@dir %%WWWDIR%%/lib/dijit/themes/claro/layout
-@dir %%WWWDIR%%/lib/dijit/themes/claro/images
-@dir %%WWWDIR%%/lib/dijit/themes/claro/form/images
-@dir %%WWWDIR%%/lib/dijit/themes/claro/form
-@dir %%WWWDIR%%/lib/dijit/themes/claro
-@dir %%WWWDIR%%/lib/dijit/themes/a11y
-@dir %%WWWDIR%%/lib/dijit/themes
-@dir %%WWWDIR%%/lib/dijit/templates
-@dir %%WWWDIR%%/lib/dijit/nls/zh-tw
-@dir %%WWWDIR%%/lib/dijit/nls/zh
-@dir %%WWWDIR%%/lib/dijit/nls/uk
-@dir %%WWWDIR%%/lib/dijit/nls/tr
-@dir %%WWWDIR%%/lib/dijit/nls/th
-@dir %%WWWDIR%%/lib/dijit/nls/sv
-@dir %%WWWDIR%%/lib/dijit/nls/sr
-@dir %%WWWDIR%%/lib/dijit/nls/sl
-@dir %%WWWDIR%%/lib/dijit/nls/sk
-@dir %%WWWDIR%%/lib/dijit/nls/ru
-@dir %%WWWDIR%%/lib/dijit/nls/ro
-@dir %%WWWDIR%%/lib/dijit/nls/pt-pt
-@dir %%WWWDIR%%/lib/dijit/nls/pt
-@dir %%WWWDIR%%/lib/dijit/nls/pl
-@dir %%WWWDIR%%/lib/dijit/nls/nl
-@dir %%WWWDIR%%/lib/dijit/nls/nb
-@dir %%WWWDIR%%/lib/dijit/nls/mk
-@dir %%WWWDIR%%/lib/dijit/nls/ko
-@dir %%WWWDIR%%/lib/dijit/nls/kk
-@dir %%WWWDIR%%/lib/dijit/nls/ja
-@dir %%WWWDIR%%/lib/dijit/nls/it
-@dir %%WWWDIR%%/lib/dijit/nls/id
-@dir %%WWWDIR%%/lib/dijit/nls/hu
-@dir %%WWWDIR%%/lib/dijit/nls/hr
-@dir %%WWWDIR%%/lib/dijit/nls/he
-@dir %%WWWDIR%%/lib/dijit/nls/fr
-@dir %%WWWDIR%%/lib/dijit/nls/fi
-@dir %%WWWDIR%%/lib/dijit/nls/eu
-@dir %%WWWDIR%%/lib/dijit/nls/es
-@dir %%WWWDIR%%/lib/dijit/nls/el
-@dir %%WWWDIR%%/lib/dijit/nls/de
-@dir %%WWWDIR%%/lib/dijit/nls/da
-@dir %%WWWDIR%%/lib/dijit/nls/cs
-@dir %%WWWDIR%%/lib/dijit/nls/ca
-@dir %%WWWDIR%%/lib/dijit/nls/bs
-@dir %%WWWDIR%%/lib/dijit/nls/bg
-@dir %%WWWDIR%%/lib/dijit/nls/az
-@dir %%WWWDIR%%/lib/dijit/nls/ar
-@dir %%WWWDIR%%/lib/dijit/nls
-@dir %%WWWDIR%%/lib/dijit/layout/templates
-@dir %%WWWDIR%%/lib/dijit/layout
-@dir %%WWWDIR%%/lib/dijit/icons/images
-@dir %%WWWDIR%%/lib/dijit/icons
-@dir %%WWWDIR%%/lib/dijit/form/templates
-@dir %%WWWDIR%%/lib/dijit/form/nls/zh-tw
-@dir %%WWWDIR%%/lib/dijit/form/nls/zh
-@dir %%WWWDIR%%/lib/dijit/form/nls/uk
-@dir %%WWWDIR%%/lib/dijit/form/nls/tr
-@dir %%WWWDIR%%/lib/dijit/form/nls/th
-@dir %%WWWDIR%%/lib/dijit/form/nls/sv
-@dir %%WWWDIR%%/lib/dijit/form/nls/sr
-@dir %%WWWDIR%%/lib/dijit/form/nls/sl
-@dir %%WWWDIR%%/lib/dijit/form/nls/sk
-@dir %%WWWDIR%%/lib/dijit/form/nls/ru
-@dir %%WWWDIR%%/lib/dijit/form/nls/ro
-@dir %%WWWDIR%%/lib/dijit/form/nls/pt-pt
-@dir %%WWWDIR%%/lib/dijit/form/nls/pt
-@dir %%WWWDIR%%/lib/dijit/form/nls/pl
-@dir %%WWWDIR%%/lib/dijit/form/nls/nl
-@dir %%WWWDIR%%/lib/dijit/form/nls/nb
-@dir %%WWWDIR%%/lib/dijit/form/nls/mk
-@dir %%WWWDIR%%/lib/dijit/form/nls/ko
-@dir %%WWWDIR%%/lib/dijit/form/nls/kk
-@dir %%WWWDIR%%/lib/dijit/form/nls/ja
-@dir %%WWWDIR%%/lib/dijit/form/nls/it
-@dir %%WWWDIR%%/lib/dijit/form/nls/id
-@dir %%WWWDIR%%/lib/dijit/form/nls/hu
-@dir %%WWWDIR%%/lib/dijit/form/nls/hr
-@dir %%WWWDIR%%/lib/dijit/form/nls/he
-@dir %%WWWDIR%%/lib/dijit/form/nls/fr
-@dir %%WWWDIR%%/lib/dijit/form/nls/fi
-@dir %%WWWDIR%%/lib/dijit/form/nls/eu
-@dir %%WWWDIR%%/lib/dijit/form/nls/es
-@dir %%WWWDIR%%/lib/dijit/form/nls/el
-@dir %%WWWDIR%%/lib/dijit/form/nls/de
-@dir %%WWWDIR%%/lib/dijit/form/nls/da
-@dir %%WWWDIR%%/lib/dijit/form/nls/cs
-@dir %%WWWDIR%%/lib/dijit/form/nls/ca
-@dir %%WWWDIR%%/lib/dijit/form/nls/bs
-@dir %%WWWDIR%%/lib/dijit/form/nls/bg
-@dir %%WWWDIR%%/lib/dijit/form/nls/az
-@dir %%WWWDIR%%/lib/dijit/form/nls/ar
-@dir %%WWWDIR%%/lib/dijit/form/nls
-@dir %%WWWDIR%%/lib/dijit/form
-@dir %%WWWDIR%%/lib/dijit/_tree
-@dir %%WWWDIR%%/lib/dijit/_editor/plugins
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/zh-tw
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/zh
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/uk
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/tr
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/th
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/sv
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/sr
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/sl
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/sk
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/ru
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/ro
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/pt-pt
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/pt
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/pl
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/nl
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/nb
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/mk
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/ko
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/kk
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/ja
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/it
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/id
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/hu
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/hr
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/he
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/fr
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/fi
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/eu
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/es
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/el
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/de
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/da
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/cs
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/ca
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/bs
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/bg
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/az
-@dir %%WWWDIR%%/lib/dijit/_editor/nls/ar
-@dir %%WWWDIR%%/lib/dijit/_editor/nls
-@dir %%WWWDIR%%/lib/dijit/_editor
-@dir %%WWWDIR%%/lib/dijit/_base
-@dir %%WWWDIR%%/lib/dijit
-@dir %%WWWDIR%%/lib
-@dir %%WWWDIR%%/js/form
-@dir %%WWWDIR%%/js
-@dir %%WWWDIR%%/install
-@dir %%WWWDIR%%/include
-@dir %%WWWDIR%%/images
-@dir %%WWWDIR%%/classes/pref
-@dir %%WWWDIR%%/classes/logger
-@dir %%WWWDIR%%/classes/handler
-@dir %%WWWDIR%%/classes/feeditem
-@dir %%WWWDIR%%/classes/db
-@dir %%WWWDIR%%/classes/auth
-@dir %%WWWDIR%%/classes
-@dir %%WWWDIR%%/api
-@dir %%WWWDIR%%
+%%WWWDIR%%/utils/rebase-translations.sh
+%%WWWDIR%%/vendor/autoload.php
+%%WWWDIR%%/vendor/beberlei/assert/composer.json
+%%WWWDIR%%/vendor/beberlei/assert/lib/Assert/Assert.php
+%%WWWDIR%%/vendor/beberlei/assert/lib/Assert/Assertion.php
+%%WWWDIR%%/vendor/beberlei/assert/lib/Assert/AssertionChain.php
+%%WWWDIR%%/vendor/beberlei/assert/lib/Assert/AssertionFailedException.php
+%%WWWDIR%%/vendor/beberlei/assert/lib/Assert/InvalidArgumentException.php
+%%WWWDIR%%/vendor/beberlei/assert/lib/Assert/LazyAssertion.php
+%%WWWDIR%%/vendor/beberlei/assert/lib/Assert/LazyAssertionException.php
+%%WWWDIR%%/vendor/beberlei/assert/lib/Assert/functions.php
+%%WWWDIR%%/vendor/beberlei/assert/phpstan-code.neon
+%%WWWDIR%%/vendor/beberlei/assert/phpstan-tests.neon
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/.github/FUNDING.yml
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/.github/workflows/tests.yml
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/.scrutinizer.yml
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/.travis.yml
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/README.md
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/composer.json
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/MyCustomOutput.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/QRImageWithLogo.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/QRImageWithText.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/custom_output.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/example_image.png
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/example_svg.png
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/fpdf.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/html.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/image.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/imageWithLogo.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/imageWithText.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/imagick.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/octocat.png
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/svg.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/examples/text.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/phpdoc.xml
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/phpmd.xml
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/phpunit.xml
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/public/index.html
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/public/qrcode.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/AlphaNum.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/Byte.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/Kanji.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/MaskPatternTester.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/Number.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/QRCodeDataException.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/QRDataAbstract.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/QRDataInterface.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/QRMatrix.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Helpers/BitBuffer.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Helpers/Polynomial.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Output/QRCodeOutputException.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Output/QRFpdf.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Output/QRImage.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Output/QRImagick.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Output/QRMarkup.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Output/QROutputAbstract.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Output/QROutputInterface.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Output/QRString.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/QRCode.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/QRCodeException.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/QROptions.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/QROptionsTrait.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Data/AlphaNumTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Data/ByteTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Data/DatainterfaceTestAbstract.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Data/KanjiTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Data/MaskPatternTesterTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Data/NumberTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Data/QRMatrixTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Helpers/BitBufferTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Helpers/PolynomialTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Output/QRFpdfTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Output/QRImageTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Output/QRImagickTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Output/QRMarkupTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Output/QROutputTestAbstract.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/Output/QRStringTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/QRCodeTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/QROptionsTest.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/tests/QRTestAbstract.php
+%%WWWDIR%%/vendor/chillerlan/php-settings-container/.scrutinizer.yml
+%%WWWDIR%%/vendor/chillerlan/php-settings-container/.travis.yml
+%%WWWDIR%%/vendor/chillerlan/php-settings-container/README.md
+%%WWWDIR%%/vendor/chillerlan/php-settings-container/composer.json
+%%WWWDIR%%/vendor/chillerlan/php-settings-container/examples/advanced.php
+%%WWWDIR%%/vendor/chillerlan/php-settings-container/examples/simple.php
+%%WWWDIR%%/vendor/chillerlan/php-settings-container/phpmd.xml
+%%WWWDIR%%/vendor/chillerlan/php-settings-container/phpunit.xml
+%%WWWDIR%%/vendor/chillerlan/php-settings-container/src/SettingsContainerAbstract.php
+%%WWWDIR%%/vendor/chillerlan/php-settings-container/src/SettingsContainerInterface.php
+%%WWWDIR%%/vendor/chillerlan/php-settings-container/tests/ContainerTest.php
+%%WWWDIR%%/vendor/chillerlan/php-settings-container/tests/TestContainer.php
+%%WWWDIR%%/vendor/chillerlan/php-settings-container/tests/TestOptionsTrait.php
+%%WWWDIR%%/vendor/composer/ClassLoader.php
+%%WWWDIR%%/vendor/composer/InstalledVersions.php
+%%WWWDIR%%/vendor/composer/autoload_classmap.php
+%%WWWDIR%%/vendor/composer/autoload_files.php
+%%WWWDIR%%/vendor/composer/autoload_namespaces.php
+%%WWWDIR%%/vendor/composer/autoload_psr4.php
+%%WWWDIR%%/vendor/composer/autoload_real.php
+%%WWWDIR%%/vendor/composer/autoload_static.php
+%%WWWDIR%%/vendor/composer/installed.json
+%%WWWDIR%%/vendor/composer/installed.php
+%%WWWDIR%%/vendor/composer/platform_check.php
+%%WWWDIR%%/vendor/j4mie/idiorm/CONTRIBUTING.md
+%%WWWDIR%%/vendor/j4mie/idiorm/README.markdown
+%%WWWDIR%%/vendor/j4mie/idiorm/composer.json
+%%WWWDIR%%/vendor/j4mie/idiorm/demo.php
+%%WWWDIR%%/vendor/j4mie/idiorm/docs/Makefile
+%%WWWDIR%%/vendor/j4mie/idiorm/docs/conf.py
+%%WWWDIR%%/vendor/j4mie/idiorm/docs/configuration.rst
+%%WWWDIR%%/vendor/j4mie/idiorm/docs/connections.rst
+%%WWWDIR%%/vendor/j4mie/idiorm/docs/index.rst
+%%WWWDIR%%/vendor/j4mie/idiorm/docs/installation.rst
+%%WWWDIR%%/vendor/j4mie/idiorm/docs/make.bat
+%%WWWDIR%%/vendor/j4mie/idiorm/docs/models.rst
+%%WWWDIR%%/vendor/j4mie/idiorm/docs/philosophy.rst
+%%WWWDIR%%/vendor/j4mie/idiorm/docs/querying.rst
+%%WWWDIR%%/vendor/j4mie/idiorm/docs/transactions.rst
+%%WWWDIR%%/vendor/j4mie/idiorm/idiorm.php
+%%WWWDIR%%/vendor/mervick/material-design-icons/Gruntfile.js
+%%WWWDIR%%/vendor/mervick/material-design-icons/Gulpfile.js
+%%WWWDIR%%/vendor/mervick/material-design-icons/README.md
+%%WWWDIR%%/vendor/mervick/material-design-icons/bower.json
+%%WWWDIR%%/vendor/mervick/material-design-icons/component.json
+%%WWWDIR%%/vendor/mervick/material-design-icons/composer.json
+%%WWWDIR%%/vendor/mervick/material-design-icons/css/material-icons.css
+%%WWWDIR%%/vendor/mervick/material-design-icons/css/material-icons.min.css
+%%WWWDIR%%/vendor/mervick/material-design-icons/css/material-icons.min.css.map
+%%WWWDIR%%/vendor/mervick/material-design-icons/demo/index.html
+%%WWWDIR%%/vendor/mervick/material-design-icons/demo/js/data.js
+%%WWWDIR%%/vendor/mervick/material-design-icons/demo/js/main.js
+%%WWWDIR%%/vendor/mervick/material-design-icons/demo/style/main.css
+%%WWWDIR%%/vendor/mervick/material-design-icons/demo/style/main.scss
+%%WWWDIR%%/vendor/mervick/material-design-icons/fonts/LICENSE.txt
+%%WWWDIR%%/vendor/mervick/material-design-icons/fonts/MaterialIcons-Regular.eot
+%%WWWDIR%%/vendor/mervick/material-design-icons/fonts/MaterialIcons-Regular.svg
+%%WWWDIR%%/vendor/mervick/material-design-icons/fonts/MaterialIcons-Regular.ttf
+%%WWWDIR%%/vendor/mervick/material-design-icons/fonts/MaterialIcons-Regular.woff
+%%WWWDIR%%/vendor/mervick/material-design-icons/fonts/MaterialIcons-Regular.woff2
+%%WWWDIR%%/vendor/mervick/material-design-icons/fonts/codepoints
+%%WWWDIR%%/vendor/mervick/material-design-icons/index.js
+%%WWWDIR%%/vendor/mervick/material-design-icons/package.json
+%%WWWDIR%%/vendor/mervick/material-design-icons/scripts/codepoints2scss.sh
+%%WWWDIR%%/vendor/mervick/material-design-icons/scripts/updatedemo.php
+%%WWWDIR%%/vendor/mervick/material-design-icons/scss/_animated.scss
+%%WWWDIR%%/vendor/mervick/material-design-icons/scss/_bordered-pulled.scss
+%%WWWDIR%%/vendor/mervick/material-design-icons/scss/_core.scss
+%%WWWDIR%%/vendor/mervick/material-design-icons/scss/_fixed-width.scss
+%%WWWDIR%%/vendor/mervick/material-design-icons/scss/_icons.scss
+%%WWWDIR%%/vendor/mervick/material-design-icons/scss/_larger.scss
+%%WWWDIR%%/vendor/mervick/material-design-icons/scss/_list.scss
+%%WWWDIR%%/vendor/mervick/material-design-icons/scss/_mixins.scss
+%%WWWDIR%%/vendor/mervick/material-design-icons/scss/_path.scss
+%%WWWDIR%%/vendor/mervick/material-design-icons/scss/_rotated-flipped.scss
+%%WWWDIR%%/vendor/mervick/material-design-icons/scss/_stacked.scss
+%%WWWDIR%%/vendor/mervick/material-design-icons/scss/_variables.scss
+%%WWWDIR%%/vendor/mervick/material-design-icons/scss/material-icons.scss
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/.travis.yml
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/LICENSE.txt
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/README.md
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/composer.json
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/phpunit.xml.dist
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/psalm.xml
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/src/Base32.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/src/Base32Hex.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/src/Base64.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/src/Base64DotSlash.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/src/Base64DotSlashOrdered.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/src/Base64UrlSafe.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/src/Binary.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/src/EncoderInterface.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/src/Encoding.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/src/Hex.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/src/RFC4648.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/tests/Base32HexTest.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/tests/Base32Test.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/tests/Base64DotSlashOrderedTest.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/tests/Base64DotSlashTest.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/tests/Base64Test.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/tests/Base64UrlSafeTest.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/tests/EncodingTest.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/tests/HexTest.php
+%%WWWDIR%%/vendor/paragonie/constant_time_encoding/tests/RFC4648Test.php
+%%WWWDIR%%/vendor/spomky-labs/otphp/.github/CONTRIBUTING.md
+%%WWWDIR%%/vendor/spomky-labs/otphp/.github/ISSUE_TEMPLATE.md
+%%WWWDIR%%/vendor/spomky-labs/otphp/.github/PULL_REQUEST_TEMPLATE.md
+%%WWWDIR%%/vendor/spomky-labs/otphp/.github/stale.yml
+%%WWWDIR%%/vendor/spomky-labs/otphp/.php_cs.dist
+%%WWWDIR%%/vendor/spomky-labs/otphp/CODE_OF_CONDUCT.md
+%%WWWDIR%%/vendor/spomky-labs/otphp/composer.json
+%%WWWDIR%%/vendor/spomky-labs/otphp/phpstan.neon
+%%WWWDIR%%/vendor/spomky-labs/otphp/src/Factory.php
+%%WWWDIR%%/vendor/spomky-labs/otphp/src/FactoryInterface.php
+%%WWWDIR%%/vendor/spomky-labs/otphp/src/HOTP.php
+%%WWWDIR%%/vendor/spomky-labs/otphp/src/HOTPInterface.php
+%%WWWDIR%%/vendor/spomky-labs/otphp/src/OTP.php
+%%WWWDIR%%/vendor/spomky-labs/otphp/src/OTPInterface.php
+%%WWWDIR%%/vendor/spomky-labs/otphp/src/ParameterTrait.php
+%%WWWDIR%%/vendor/spomky-labs/otphp/src/TOTP.php
+%%WWWDIR%%/vendor/spomky-labs/otphp/src/TOTPInterface.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/README.md
+%%WWWDIR%%/vendor/thecodingmachine/safe/composer.json
+%%WWWDIR%%/vendor/thecodingmachine/safe/deprecated/Exceptions/ApcException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/deprecated/Exceptions/LibeventException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/deprecated/Exceptions/MssqlException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/deprecated/Exceptions/StatsException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/deprecated/apc.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/deprecated/functionsList.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/deprecated/libevent.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/deprecated/mssql.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/deprecated/stats.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/.gitkeep
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/ApacheException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/ApcuException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/ArrayException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/Bzip2Exception.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/CalendarException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/ClassobjException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/ComException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/CubridException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/DatetimeException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/DirException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/EioException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/ErrorfuncException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/ExecException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/FileinfoException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/FilesystemException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/FilterException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/FpmException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/FtpException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/FunchandException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/GmpException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/GnupgException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/HashException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/IbaseException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/IbmDb2Exception.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/IconvException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/ImageException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/ImapException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/InfoException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/IngresiiException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/InotifyException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/LdapException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/LibxmlException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/LzfException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/MailparseException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/MbstringException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/MiscException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/MsqlException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/MysqlException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/MysqliException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/MysqlndMsException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/MysqlndQcException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/NetworkException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/Oci8Exception.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/OpcacheException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/OutcontrolException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/PasswordException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/PcntlException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/PdfException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/PgsqlException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/PosixException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/PsException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/PspellException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/ReadlineException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/RpminfoException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/RrdException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/SemException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/SessionException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/ShmopException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/SimplexmlException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/SocketsException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/SodiumException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/SolrException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/SplException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/SqlsrvException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/SsdeepException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/Ssh2Exception.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/StreamException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/StringsException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/SwooleException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/UodbcException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/UopzException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/UrlException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/VarException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/XdiffException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/XmlException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/XmlrpcException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/YamlException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/YazException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/ZipException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/Exceptions/ZlibException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/apache.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/apcu.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/array.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/bzip2.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/calendar.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/classobj.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/com.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/cubrid.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/curl.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/datetime.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/dir.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/eio.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/errorfunc.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/exec.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/fileinfo.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/filesystem.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/filter.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/fpm.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/ftp.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/funchand.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/functionsList.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/gmp.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/gnupg.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/hash.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/ibase.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/ibmDb2.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/iconv.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/image.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/imap.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/info.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/ingres-ii.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/inotify.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/json.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/ldap.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/libxml.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/lzf.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/mailparse.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/mbstring.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/misc.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/msql.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/mysql.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/mysqli.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/mysqlndMs.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/mysqlndQc.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/network.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/oci8.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/opcache.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/openssl.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/outcontrol.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/password.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/pcntl.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/pcre.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/pdf.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/pgsql.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/posix.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/ps.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/pspell.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/readline.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/rpminfo.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/rrd.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/sem.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/session.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/shmop.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/simplexml.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/sockets.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/sodium.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/solr.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/spl.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/sqlsrv.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/ssdeep.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/ssh2.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/stream.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/strings.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/swoole.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/uodbc.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/uopz.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/url.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/var.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/xdiff.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/xml.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/xmlrpc.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/yaml.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/yaz.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/zip.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/generated/zlib.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/lib/DateTime.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/lib/DateTimeImmutable.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/lib/Exceptions/CurlException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/lib/Exceptions/JsonException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/lib/Exceptions/OpensslException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/lib/Exceptions/PcreException.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/lib/Exceptions/SafeExceptionInterface.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/lib/special_cases.php
+%%WWWDIR%%/vendor/thecodingmachine/safe/rector-migrate-0.7.php
+%%WWWDIR%%/version_static.txt
 @owner %%WWWOWN%%
 @mode 0400
 @sample %%WWWDIR%%/config.php.sample
-%%WWWDIR%%/config.php-dist
 @mode
-@dir %%WWWDIR%%/lock
-@dir %%WWWDIR%%/feed-icons
-@dir %%WWWDIR%%/cache/upload
-@dir %%WWWDIR%%/cache/feeds
-@dir %%WWWDIR%%/cache/export
-@dir %%WWWDIR%%/cache/images
 @dir %%WWWDIR%%/cache
+@dir %%WWWDIR%%/cache/export
+@dir %%WWWDIR%%/cache/feeds
+@dir %%WWWDIR%%/cache/images
+@dir %%WWWDIR%%/cache/upload
+@dir %%WWWDIR%%/feed-icons
+@dir %%WWWDIR%%/lock
+@dir %%WWWDIR%%/plugins.local
+@dir %%WWWDIR%%/plugins/af_comics/filters.local
+@dir %%WWWDIR%%/templates.local
+@dir %%WWWDIR%%/themes.local
 @owner
