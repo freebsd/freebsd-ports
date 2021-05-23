@@ -1,0 +1,33 @@
+PORTNAME=	phd2
+DISTVERSIONPREFIX=v
+DISTVERSION=	2.6.9dev5
+CATEGORIES=	astro
+
+MAINTAINER=	acm@FreeBSD.org
+COMMENT=	Guiding software inspired by Stark Labs PHD Guiding
+
+LICENSE=	BSD3CLAUSE
+
+LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
+		libgmock.so:devel/googletest \
+		libindidriver.so:devel/indi \
+		libcurl.so:ftp/curl
+RUN_DEPENDS=	indiserver:devel/indi
+
+USES=		cmake eigen:3 gettext ninja pkgconfig xorg
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	OpenPHDGuiding
+
+USE_WX=		3.1+
+USE_XORG=	x11
+
+WX_COMPS=	wx
+
+CMAKE_ARGS+=	-DUSE_SYSTEM_GTEST:BOOL=YES \
+		-DUSE_SYSTEM_CFITSIO:BOOL=YES \
+		-DUSE_SYSTEM_LIBUSB:BOOL=YES \
+		-DUSE_SYSTEM_LIBINDI:BOOL=YES \
+		-DUSE_SYSTEM_EIGEN3:BOOL=YES
+
+.include <bsd.port.mk>
