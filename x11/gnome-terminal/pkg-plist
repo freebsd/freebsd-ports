@@ -103,6 +103,37 @@ share/help/cs/gnome-terminal/txt-copy-paste.page
 share/help/cs/gnome-terminal/txt-links.page
 share/help/cs/gnome-terminal/txt-search.page
 share/help/cs/gnome-terminal/txt-select-text.page
+share/help/da/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/da/gnome-terminal/app-colors.page    
+share/help/da/gnome-terminal/app-cursor.page     
+share/help/da/gnome-terminal/app-fonts.page      
+share/help/da/gnome-terminal/app-fullscreen.page
+share/help/da/gnome-terminal/app-terminal-sizes.page
+share/help/da/gnome-terminal/app-zoom.page
+share/help/da/gnome-terminal/gs-execute-commands.page
+share/help/da/gnome-terminal/gs-tabs.page
+share/help/da/gnome-terminal/index.page
+share/help/da/gnome-terminal/introduction.page
+share/help/da/gnome-terminal/legal.xml
+share/help/da/gnome-terminal/overview.page
+share/help/da/gnome-terminal/pref-bell.page
+share/help/da/gnome-terminal/pref-custom-command.page
+share/help/da/gnome-terminal/pref-custom-exit.page
+share/help/da/gnome-terminal/pref-keyboard-access.page
+share/help/da/gnome-terminal/pref-login-shell.page
+share/help/da/gnome-terminal/pref-menubar.page
+share/help/da/gnome-terminal/pref-profile-char-width.page
+share/help/da/gnome-terminal/pref-profile-encoding.page
+share/help/da/gnome-terminal/pref-profiles.page
+share/help/da/gnome-terminal/pref-scrolling.page
+share/help/da/gnome-terminal/pref-tab-window.page
+share/help/da/gnome-terminal/pref-user-input.page
+share/help/da/gnome-terminal/pref.page
+share/help/da/gnome-terminal/prob-reset.page
+share/help/da/gnome-terminal/txt-copy-paste.page
+share/help/da/gnome-terminal/txt-links.page
+share/help/da/gnome-terminal/txt-search.page
+share/help/da/gnome-terminal/txt-select-text.page
 share/help/de/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/de/gnome-terminal/app-colors.page
 share/help/de/gnome-terminal/app-cursor.page
@@ -670,6 +701,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
 share/metainfo/org.gnome.Terminal.appdata.xml
 @dir share/help/ca/gnome-terminal/figures
 @dir share/help/cs/gnome-terminal/figures
+@dir share/help/da/gnome-terminal/figures
 @dir share/help/de/gnome-terminal/figures
 @dir share/help/el/gnome-terminal/figures
 @dir share/help/es/gnome-terminal/figures
