@@ -18,7 +18,7 @@ USES=		cpe libtool makeinfo tar:bzip2
 CPE_VENDOR=	gnupg
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-drng-support --enable-static=yes
+CONFIGURE_ARGS=	--disable-drng-support
 CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
 CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 USE_LDCONFIG=	yes
@@ -29,7 +29,11 @@ DOCS=		AUTHORS ChangeLog ChangeLog-2011 INSTALL NEWS THANKS TODO \
 INFO=		gcrypt
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS STATIC
+OPTIONS_DEFAULT=	DOCS STATIC
+OPTIONS_SUB=	yes
+
+STATIC_CONFIGURE_ENABLE=	static
 
 .include <bsd.port.options.mk>
 
