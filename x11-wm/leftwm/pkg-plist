@@ -3,6 +3,9 @@ bin/leftwm-check
 bin/leftwm-command
 bin/leftwm-state
 bin/leftwm-worker
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%THEMES%%%%DATADIR%%/themes/README.md
 %%THEMES%%%%DATADIR%%/themes/basic_lemonbar/background.jpg
 %%THEMES%%%%DATADIR%%/themes/basic_lemonbar/change_to_tag

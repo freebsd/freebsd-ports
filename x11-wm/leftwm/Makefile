@@ -1,6 +1,6 @@
 PORTNAME=	leftwm
-DISTVERSION=	0.2.7-37
-DISTVERSIONSUFFIX=	-gb0b14f0
+DISTVERSION=	0.2.7-40
+DISTVERSIONSUFFIX=	-g09ef955
 CATEGORIES=	x11-wm
 
 MAINTAINER=	rigoletto@FreeBSD.org
@@ -9,11 +9,14 @@ COMMENT=	Tiling window manager for Adventurers
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	is currently 64-bit only
+
 USES=		cargo xorg
 USE_XORG=	xinerama xrandr
 
 USE_GITHUB=	yes
-GH_TAGNAME=	b0b14f0cf3e575a9d5c36e13fc5c34204688a8e9
+GH_TAGNAME=	09ef95517b3bd2acef2c91886f92f81b910b8d22
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
@@ -140,23 +143,30 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		x11-dl-2.18.5 \
 		xdg-2.2.0
 
-OPTIONS_DEFINE=	THEMES
-OPTIONS_DEFAULT= THEMES
+OPTIONS_DEFINE=	DOCS THEMES
+OPTIONS_DEFAULT=	THEMES
 OPTIONS_SUB=	yes
 
 THEMES_DESC=	LeftWM Basic Themes
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for l in CHANGELOG CONTRIBUTING.md README.md
+	${INSTALL_MAN} ${WRKSRC}/${l} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 post-install-THEMES-on:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} themes \
 		${STAGEDIR}${DATADIR}
 
 post-install:
-.for l in leftwm-state leftwm-worker leftwm-check leftwm
+.for l in leftwm-state leftwm-worker leftwm-check \
+	leftwm-command leftwm
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${l}
 .endfor
 
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/share/xsessions
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} leftwm.desktop \
+	(cd ${WRKSRC} && ${INSTALL_DATA} leftwm.desktop \
 		${STAGEDIR}${LOCALBASE}/share/xsessions/)
 
 .include <bsd.port.mk>
