@@ -76,6 +76,37 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="524bd03a-bb75-11eb-bf35-080027f515ea">
+    <topic>libxml2 -- Possible denial of service</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.9.10_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Daniel Veillard reports:</p>
+	<blockquote cite="https://ubuntu.com/security/CVE-2021-3541">
+	  <p>
+	    A flaw was found in libxml2. Exponential entity expansion attack
+	    its possible bypassing all existing protection mechanisms and
+	    leading to denial of service.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-3541</cvename>
+      <url>https://ubuntu.com/security/CVE-2021-3541</url>
+      <url>https://gitlab.gnome.org/GNOME/libxml2/-/commit/8598060bacada41a0eb09d95c97744ff4e428f8e</url>
+    </references>
+    <dates>
+      <discovery>2021-05-18</discovery>
+      <entry>2021-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="62da9702-b4cc-11eb-b9c9-6cc21735f730">
     <topic>PostgreSQL server -- two security issues</topic>
     <affects>
