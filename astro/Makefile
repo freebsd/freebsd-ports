@@ -22,6 +22,7 @@
     SUBDIR += gpsprune
     SUBDIR += gpstk
     SUBDIR += gpxloggerd
+    SUBDIR += indiwebmanagerapp
     SUBDIR += jday
     SUBDIR += josm
     SUBDIR += kosmindoormap
