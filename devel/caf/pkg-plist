@@ -107,6 +107,7 @@ include/caf/detail/io_export.hpp
 include/caf/detail/is_complete.hpp
 include/caf/detail/is_one_of.hpp
 include/caf/detail/json.hpp
+include/caf/detail/latch.hpp
 include/caf/detail/limited_vector.hpp
 include/caf/detail/local_group_module.hpp
 include/caf/detail/log_level.hpp
