@@ -1,7 +1,7 @@
 # Created by: Simun Mikecin <numisemis@yahoo.com>
 
 PORTNAME=	Net-SFTP-Foreign
-PORTVERSION=	1.89
+DISTVERSION=	1.93
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
