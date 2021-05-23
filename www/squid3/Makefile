@@ -15,6 +15,9 @@ COMMENT=	HTTP Caching Proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unsupported by upstream
+EXPIRATION_DATE=2021-09-30
+
 CONFLICTS=	squid-* squid-devel-*
 
 BROKEN_powerpc64=	Does not build: error: unrecognizable insn
