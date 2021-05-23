@@ -1,4 +1,4 @@
---- electron/shell/browser/native_window_views.cc.orig	2021-04-30 18:57:27 UTC
+--- electron/shell/browser/native_window_views.cc.orig	2021-05-19 20:52:49 UTC
 +++ electron/shell/browser/native_window_views.cc
 @@ -44,7 +44,7 @@
  #include "ui/wm/core/shadow_types.h"
@@ -9,7 +9,7 @@
  #include "base/strings/string_util.h"
  #include "shell/browser/browser.h"
  #include "shell/browser/linux/unity_service.h"
-@@ -203,7 +203,7 @@ NativeWindowViews::NativeWindowViews(const gin_helper:
+@@ -207,7 +207,7 @@ NativeWindowViews::NativeWindowViews(const gin_helper:
      params.parent = parent->GetNativeWindow();
  
    params.native_widget = new ElectronDesktopNativeWidgetAura(this);
@@ -18,7 +18,7 @@
    std::string name = Browser::Get()->GetName();
    // Set WM_WINDOW_ROLE.
    params.wm_role_name = "browser-window";
-@@ -233,7 +233,7 @@ NativeWindowViews::NativeWindowViews(const gin_helper:
+@@ -237,7 +237,7 @@ NativeWindowViews::NativeWindowViews(const gin_helper:
    }
  #endif
  
@@ -27,7 +27,7 @@
    if (parent)
      SetParentWindow(parent);
  #endif
-@@ -328,7 +328,7 @@ NativeWindowViews::NativeWindowViews(const gin_helper:
+@@ -332,7 +332,7 @@ NativeWindowViews::NativeWindowViews(const gin_helper:
      last_window_state_ = ui::SHOW_STATE_NORMAL;
  #endif
  
@@ -36,7 +36,7 @@
    // Listen to move events.
    aura::Window* window = GetNativeWindow();
    if (window)
-@@ -348,7 +348,7 @@ NativeWindowViews::~NativeWindowViews() {
+@@ -352,7 +352,7 @@ NativeWindowViews::~NativeWindowViews() {
    SetForwardMouseMessages(false);
  #endif
  
@@ -45,7 +45,7 @@
    aura::Window* window = GetNativeWindow();
    if (window)
      window->RemovePreTargetHandler(this);
-@@ -463,7 +463,7 @@ bool NativeWindowViews::IsVisible() {
+@@ -467,7 +467,7 @@ bool NativeWindowViews::IsVisible() {
  bool NativeWindowViews::IsEnabled() {
  #if defined(OS_WIN)
    return ::IsWindowEnabled(GetAcceleratedWidget());
@@ -54,7 +54,7 @@
  #if defined(USE_X11)
    if (!features::IsUsingOzonePlatform()) {
      return !event_disabler_.get();
-@@ -522,7 +522,7 @@ void NativeWindowViews::SetEnabledInternal(bool enable
+@@ -526,7 +526,7 @@ void NativeWindowViews::SetEnabledInternal(bool enable
  #endif
  }
  
@@ -63,7 +63,7 @@
  void NativeWindowViews::Maximize() {
    if (IsVisible())
      widget()->Maximize();
-@@ -638,7 +638,7 @@ bool NativeWindowViews::IsFullscreen() const {
+@@ -642,7 +642,7 @@ bool NativeWindowViews::IsFullscreen() const {
  }
  
  void NativeWindowViews::SetBounds(const gfx::Rect& bounds, bool animate) {
@@ -72,7 +72,7 @@
    // On Linux and Windows the minimum and maximum size should be updated with
    // window size when window is not resizable.
    if (!resizable_) {
-@@ -855,7 +855,7 @@ bool NativeWindowViews::IsClosable() {
+@@ -859,7 +859,7 @@ bool NativeWindowViews::IsClosable() {
      return false;
    }
    return !(info.fState & MFS_DISABLED);
@@ -81,7 +81,7 @@
    return true;
  #endif
  }
-@@ -1231,7 +1231,7 @@ void NativeWindowViews::SetProgressBar(double progress
+@@ -1235,7 +1235,7 @@ void NativeWindowViews::SetProgressBar(double progress
                                         NativeWindow::ProgressState state) {
  #if defined(OS_WIN)
    taskbar_host_.SetProgressBar(GetAcceleratedWidget(), progress, state);
@@ -90,7 +90,7 @@
    if (unity::IsRunning()) {
      unity::SetProgressFraction(progress);
    }
-@@ -1291,7 +1291,7 @@ content::DesktopMediaID NativeWindowViews::GetDesktopM
+@@ -1295,7 +1295,7 @@ content::DesktopMediaID NativeWindowViews::GetDesktopM
  #if defined(OS_WIN)
    window_handle =
        reinterpret_cast<content::DesktopMediaID::Id>(accelerated_widget);
@@ -99,7 +99,7 @@
    window_handle = static_cast<uint32_t>(accelerated_widget);
  #endif
    aura::WindowTreeHost* const host =
-@@ -1394,7 +1394,7 @@ void NativeWindowViews::SetIcon(HICON window_icon, HIC
+@@ -1398,7 +1398,7 @@ void NativeWindowViews::SetIcon(HICON window_icon, HIC
    SendMessage(hwnd, WM_SETICON, ICON_BIG,
                reinterpret_cast<LPARAM>(app_icon_.get()));
  }
@@ -108,7 +108,7 @@
  void NativeWindowViews::SetIcon(const gfx::ImageSkia& icon) {
    auto* tree_host = views::DesktopWindowTreeHostLinux::GetHostForWidget(
        GetAcceleratedWidget());
-@@ -1444,7 +1444,7 @@ void NativeWindowViews::OnWidgetBoundsChanged(views::W
+@@ -1448,7 +1448,7 @@ void NativeWindowViews::OnWidgetBoundsChanged(views::W
  }
  
  void NativeWindowViews::OnWidgetDestroying(views::Widget* widget) {
@@ -117,7 +117,7 @@
    aura::Window* window = GetNativeWindow();
    if (window)
      window->RemovePreTargetHandler(this);
-@@ -1482,7 +1482,7 @@ bool NativeWindowViews::CanMaximize() const {
+@@ -1486,7 +1486,7 @@ bool NativeWindowViews::CanMaximize() const {
  bool NativeWindowViews::CanMinimize() const {
  #if defined(OS_WIN)
    return minimizable_;
@@ -126,7 +126,7 @@
    return true;
  #endif
  }
-@@ -1554,7 +1554,7 @@ void NativeWindowViews::HandleKeyboardEvent(
+@@ -1558,7 +1558,7 @@ void NativeWindowViews::HandleKeyboardEvent(
    if (widget_destroyed_)
      return;
  
@@ -135,7 +135,7 @@
    if (event.windows_key_code == ui::VKEY_BROWSER_BACK)
      NotifyWindowExecuteAppCommand(kBrowserBackward);
    else if (event.windows_key_code == ui::VKEY_BROWSER_FORWARD)
-@@ -1566,7 +1566,7 @@ void NativeWindowViews::HandleKeyboardEvent(
+@@ -1570,7 +1570,7 @@ void NativeWindowViews::HandleKeyboardEvent(
    root_view_->HandleKeyEvent(event);
  }
  

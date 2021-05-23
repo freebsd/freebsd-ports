@@ -1,6 +1,6 @@
---- electron/shell/browser/native_window_views.h.orig	2021-04-20 23:32:33 UTC
+--- electron/shell/browser/native_window_views.h.orig	2021-05-19 20:52:49 UTC
 +++ electron/shell/browser/native_window_views.h
-@@ -159,7 +159,7 @@ class NativeWindowViews : public NativeWindow,
+@@ -163,7 +163,7 @@ class NativeWindowViews : public NativeWindow,
                      LPARAM l_param,
                      LRESULT* result);
    void SetIcon(HICON small_icon, HICON app_icon);
@@ -9,7 +9,7 @@
    void SetIcon(const gfx::ImageSkia& icon);
  #endif
  
-@@ -219,7 +219,7 @@ class NativeWindowViews : public NativeWindow,
+@@ -223,7 +223,7 @@ class NativeWindowViews : public NativeWindow,
        content::WebContents*,
        const content::NativeWebKeyboardEvent& event) override;
  
