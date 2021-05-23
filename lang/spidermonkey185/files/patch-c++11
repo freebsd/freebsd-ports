@@ -123,6 +123,15 @@ jsxml.cpp:434:20: error: cannot initialize return object of type 'JSString *' wi
      JS_ASSERT(!shape->configurable());
 --- jsiter.cpp.orig	2011-03-31 19:08:36 UTC
 +++ jsiter.cpp
+@@ -267,7 +267,7 @@ Snapshot(JSContext *cx, JSObject *obj, uintN flags, Au
+      */
+     IdSet ht(cx);
+     if (!ht.init(32))
+-        return NULL;
++        return false;
+ 
+     JSObject *pobj = obj;
+     do {
 @@ -425,7 +425,7 @@ NewIteratorObject(JSContext *cx, uintN flags)
           */
          JSObject *obj = js_NewGCObject(cx, FINALIZE_OBJECT0);
@@ -134,6 +143,23 @@ jsxml.cpp:434:20: error: cannot initialize return object of type 'JSString *' wi
          return obj;
 --- jsparse.cpp.orig	2011-03-31 19:08:36 UTC
 +++ jsparse.cpp
+@@ -1821,14 +1821,14 @@ Compiler::compileFunctionBody(JSContext *cx, JSFunctio
+ 
+     JSCodeGenerator funcg(&parser, &codePool, &notePool, tokenStream.getLineno());
+     if (!funcg.init())
+-        return NULL;
++        return false;
+ 
+     funcg.flags |= TCF_IN_FUNCTION;
+     funcg.setFunction(fun);
+     funcg.bindings.transfer(cx, bindings);
+     fun->setArgCount(funcg.bindings.countArgs());
+     if (!GenerateBlockId(&funcg, funcg.bodyid))
+-        return NULL;
++        return false;
+ 
+     /* FIXME: make Function format the source for a function definition. */
+     tokenStream.mungeCurrentToken(TOK_NAME);
 @@ -3352,7 +3352,7 @@ Parser::functionDef(JSAtom *funAtom, FunctionType type
      if (!outertc->inFunction() && bodyLevel && funAtom && !lambda && outertc->compiling()) {
          JS_ASSERT(pn->pn_cookie.isFree());
@@ -143,6 +169,15 @@ jsxml.cpp:434:20: error: cannot initialize return object of type 'JSString *' wi
      }
  
      pn->pn_blockid = outertc->blockid();
+@@ -5058,7 +5058,7 @@ RebindLets(JSParseNode *pn, JSTreeContext *tc)
+                 if (!ale) {
+                     ale = MakePlaceholder(pn, tc);
+                     if (!ale)
+-                        return NULL;
++                        return false;
+                 }
+                 LinkUseToDef(pn, ALE_DEFN(ale), tc);
+             }
 --- jsstr.cpp.orig	2011-03-31 19:08:36 UTC
 +++ jsstr.cpp
 @@ -1734,7 +1734,7 @@ class RegExpGuard
@@ -154,6 +189,15 @@ jsxml.cpp:434:20: error: cannot initialize return object of type 'JSString *' wi
          } else {
              patstr = fm.patstr;
          }
+@@ -2276,7 +2276,7 @@ BuildDollarReplacement(JSContext *cx, JSString *textst
+ {
+     JSLinearString *textstr = textstrArg->ensureLinear(cx);
+     if (!textstr)
+-        return NULL;
++        return false;
+ 
+     JS_ASSERT(repstr->chars() <= firstDollar && firstDollar < repstr->chars() + repstr->length());
+     size_t matchStart = fm.match();
 @@ -3400,7 +3400,7 @@ js_InitStringClass(JSContext *cx, JSObject *obj)
                                   UndefinedValue(), NULL, NULL,
                                   JSPROP_READONLY | JSPROP_PERMANENT | JSPROP_SHARED, 0, 0,
