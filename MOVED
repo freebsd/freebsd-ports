@@ -15128,7 +15128,6 @@ net/kblog||2020-08-13|No longer shipped
 www/py-html|www/py-html3|2020-08-13|python3-compatible version is named html3
 audio/py-hsaudiotag|audio/py-hsaudiotag3k|2020-08-13|python3-compatible version is named hsaudiotag3k
 archivers/py-backports.lzma||2020-08-15|Has expired: Uses deprecated version of python
-archivers/py-bup||2020-08-15|Has expired: Uses deprecated version of python
 archivers/py-librtfcomp||2020-08-15|Has expired: Uses deprecated version of python
 audio/blop-lv2||2020-08-15|Has expired: Uses deprecated version of python
 audio/bs2b-lv2||2020-08-15|Has expired: Uses deprecated version of python
