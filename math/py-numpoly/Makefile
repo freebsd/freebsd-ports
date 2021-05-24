@@ -1,5 +1,5 @@
 PORTNAME=	numpoly
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,8 +10,7 @@ COMMENT=	Create/manipulate/evaluate polynomial arrays based on numpy.ndarray
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
