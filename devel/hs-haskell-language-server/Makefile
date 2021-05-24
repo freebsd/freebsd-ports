@@ -230,13 +230,8 @@ do-install:
 .endfor
 	${LN} -s ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-8.10.4
 
-make-use-cabal-hls:
-	${RM} ${WRKSRC}/cabal.project
-	${CP} ${WRKSRC}/cabal.project.hls ${WRKSRC}/cabal.project
-	${RM} -rf ${CABAL_HOME}/.cabal
-	${SETENV} HOME=${CABAL_HOME} cabal new-update
+cabal-extract-deps:
 	cd ${WRKSRC} && \
 		${SETENV} HOME=${CABAL_HOME} hls-install hls
-	${MAKE} make-use-cabal
 
 .include <bsd.port.mk>
