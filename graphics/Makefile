@@ -756,6 +756,7 @@
     SUBDIR += picpuz
     SUBDIR += piddle
     SUBDIR += piglit
+    SUBDIR += pikchr
     SUBDIR += pikopixel
     SUBDIR += pinpoint
     SUBDIR += pinta
