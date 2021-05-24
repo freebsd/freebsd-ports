@@ -1,0 +1,15 @@
+--- SPQR/Demo/Makefile.orig	2021-05-17 01:04:52 UTC
++++ SPQR/Demo/Makefile
+@@ -126,12 +126,6 @@ gpu4: qrdemo_gpu
+ 
+ library: metis
+ 	( cd ../Lib ; $(MAKE) )
+-	( cd ../../AMD ; $(MAKE) library )
+-	( cd ../../SuiteSparse_config ; $(MAKE) library )
+-	- ( cd ../../CHOLMOD && $(MAKE) library )
+-	- ( cd ../../COLAMD && $(MAKE) library )
+-	- ( cd ../../CCOLAMD && $(MAKE) library )
+-	- ( cd ../../CAMD && $(MAKE) library )
+ ifneq ($(GPU_CONFIG),)
+ 	- ( cd ../../SuiteSparse_GPURuntime && $(MAKE) library )
+ 	- ( cd ../../GPUQREngine && $(MAKE) library )
