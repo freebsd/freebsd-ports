@@ -76,6 +76,40 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5fa90ee6-bc9e-11eb-a287-e0d55e2a8bf9">
+    <topic>texproc/expat2 -- billion laugh attack</topic>
+    <affects>
+      <package>
+	<name>expat</name>
+	<range><lt>2.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kurt Seifried reports:</p>
+	<blockquote cite="https://blog.hartwork.org/posts/cve-2013-0340-billion-laughs-fixed-in-expat-2-4-0/">
+	  <p>So here are the CVE's for the two big ones, libxml2 and expat.
+	     Both are affected by the expansion of internal entities
+	     (which can be used to consume resources) and external entities
+	     (which can cause a denial of service against other services, be
+	     used to port scan, etc.).</p>
+	   <p>A billion laughs attack is a type of denial-of-service attack
+	     which is aimed at parsers of XML documents.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0340</cvename>
+	<url>https://www.openwall.com/lists/oss-security/2013/02/22/3</url>
+	<url>https://blog.hartwork.org/posts/cve-2013-0340-billion-laughs-fixed-in-expat-2-4-0/</url>
+	<url>https://nvd.nist.gov/vuln/detail/CVE-2013-0340</url>
+    </references>
+    <dates>
+      <discovery>2013-02-21</discovery>
+      <entry>2021-05-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="524bd03a-bb75-11eb-bf35-080027f515ea">
     <topic>libxml2 -- Possible denial of service</topic>
     <affects>
