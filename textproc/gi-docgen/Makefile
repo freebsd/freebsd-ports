@@ -1,0 +1,30 @@
+PORTNAME=	gi-docgen
+PORTVERSION=	2021.5
+CATEGORIES=	textproc
+MASTER_SITES=	GNOME
+
+MAINTAINER=	desktop@FreeBSD.org
+COMMENT=	Documentation generator for GObject-based libraries
+
+LICENSE=	APACHE20 GPLv3
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSES/Apache-2.0.txt
+LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markupsafe>0:textproc/py-markupsafe@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}smartypants>0:textproc/py-smartypants@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}toml>0:textproc/py-toml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typogrify>0:textproc/py-typogrify@${PY_FLAVOR}
+
+USES=		meson python:3.6+ shebangfix
+
+SHEBANG_FILES=	gi-docgen.py
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>
