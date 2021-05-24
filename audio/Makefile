@@ -841,6 +841,7 @@
     SUBDIR += wmix
     SUBDIR += wmmp
     SUBDIR += wmsmixer
+    SUBDIR += wolf-shaper-lv2
     SUBDIR += wxguitar
     SUBDIR += x42-plugins-lv2
     SUBDIR += xanalyser

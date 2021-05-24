@@ -1,0 +1,7 @@
+TIMESTAMP = 1621810360
+SHA256 (wolf-plugins-wolf-shaper-v0.1.8-33-ge84de58_GH0.tar.gz) = bdb2cf01ee6004313c07f6248d29634266244565b97abf5fde22848bbbc1662e
+SIZE (wolf-plugins-wolf-shaper-v0.1.8-33-ge84de58_GH0.tar.gz) = 286201
+SHA256 (DISTRHO-DPF-d592c24_GH0.tar.gz) = f42ffa15b6c2edba611bf8b5e71b7f93d2bf0b978c4b0c2f0fd68645b86d6614
+SIZE (DISTRHO-DPF-d592c24_GH0.tar.gz) = 3159798
+SHA256 (DISTRHO-pugl-13cd61b_GH0.tar.gz) = 974b296d03e0e281bd24f0ecb50d3f91ccf3ccb4fe35ada3b3fe77a913f5021b
+SIZE (DISTRHO-pugl-13cd61b_GH0.tar.gz) = 189450
