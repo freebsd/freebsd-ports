@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# PROVIDE: crowdsec_firewall
+# REQUIRE: LOGIN DAEMON NETWORKING
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name=crowdsec_firewall
+desc="Crowdsec Firewall"
+rcvar=crowdsec_firewall_enable
+
+load_rc_config $name
+
+: ${crowdsec_firewall_enbable:="NO"}
+: ${crowdsec_firewall_config:="%%PREFIX%%/etc/crowdsec-firewall-bouncer/cs-firewall-bouncer.yaml"}
+
+pidfile=/var/run/$name.pid
+required_files="$crowdsec_firewall_config"
+procname="%%PREFIX%%/bin/cs-firewall-bouncer"
+command=/usr/sbin/daemon
+command_args="-fp $pidfile -t '$desc' -- '$procname' -c '$crowdsec_firewall_config'"
+
+run_rc_command "$1"
