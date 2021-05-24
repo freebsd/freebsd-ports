@@ -1,0 +1,7 @@
+bin/mongoose
+include/suitesparse/Mongoose.hpp
+lib/libmongoose.a
+lib/libmongoose.so
+lib/libmongoose.so.2
+lib/libmongoose.so.2.0.4
+%%PORTDOCS%%%%DOCSDIR%%/Mongoose_UserGuide.pdf

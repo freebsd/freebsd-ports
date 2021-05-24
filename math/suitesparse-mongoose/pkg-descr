@@ -1,0 +1,6 @@
+This port installs the module Mongoose of SuiteSparse.
+
+Mongoose is a graph partitioning library. Currently, Mongoose only supports edge
+partitioning, but in the future a vertex separator extension will be added.
+
+WWW: http://faculty.cse.tamu.edu/davis/suitesparse.html
