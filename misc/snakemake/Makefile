@@ -1,5 +1,5 @@
 PORTNAME=	snakemake
-DISTVERSION=	6.3.0
+DISTVERSION=	6.4.0
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 
@@ -9,6 +9,7 @@ COMMENT=	Workflow management system
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}connection_pool>=0.0.3>0:devel/py-connection_pool@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configargparse>0:devel/py-configargparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}datrie>0:devel/py-datrie@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR} \
