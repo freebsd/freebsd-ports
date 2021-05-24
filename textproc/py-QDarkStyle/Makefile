@@ -1,9 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-#
-# Note: finance/electrum requires this exact version
 
 PORTNAME=	QDarkStyle
-PORTVERSION=	2.8.1
+PORTVERSION=	3.0.2
 CATEGORIES=	textproc devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}helpdev>=0.6.10:devel/py-helpdev@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}QtPy>=1.9:devel/py-QtPy@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
