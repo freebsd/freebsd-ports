@@ -6,7 +6,6 @@
 %%WWWDIR%%/ISSUE_TEMPLATE.md
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
-%%WWWDIR%%/appinfo/app.php
 %%WWWDIR%%/appinfo/autoload.php
 %%WWWDIR%%/appinfo/database.xml
 %%WWWDIR%%/appinfo/info.xml
@@ -1529,6 +1528,7 @@
 %%WWWDIR%%/lib/Service/SettingsService.php
 %%WWWDIR%%/lib/Service/ShareService.php
 %%WWWDIR%%/lib/Service/VaultService.php
+%%WWWDIR%%/lib/Settings/Admin.php
 %%WWWDIR%%/lib/Utility/NotFoundJSONResponse.php
 %%WWWDIR%%/lib/Utility/PermissionEntity.php
 %%WWWDIR%%/lib/Utility/Utils.php
@@ -1537,6 +1537,7 @@
 %%WWWDIR%%/migration/serversideencryption.php
 %%WWWDIR%%/occ
 %%WWWDIR%%/personal.php
+%%WWWDIR%%/templates/admin.php
 %%WWWDIR%%/templates/admin.settings.php
 %%WWWDIR%%/templates/bookmarklet.php
 %%WWWDIR%%/templates/main.php
