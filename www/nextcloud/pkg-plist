@@ -6582,6 +6582,8 @@
 %%WWWDIR%%/apps-pkg/accessibility/l10n/ar.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/bg.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/bg.json
+%%WWWDIR%%/apps-pkg/accessibility/l10n/bn_BD.js
+%%WWWDIR%%/apps-pkg/accessibility/l10n/bn_BD.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/br.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/br.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/bs.js
@@ -6921,16 +6923,12 @@
 %%WWWDIR%%/apps-pkg/activity/l10n/sr@latin.json
 %%WWWDIR%%/apps-pkg/activity/l10n/sv.js
 %%WWWDIR%%/apps-pkg/activity/l10n/sv.json
-%%WWWDIR%%/apps-pkg/activity/l10n/ta.js
-%%WWWDIR%%/apps-pkg/activity/l10n/ta.json
 %%WWWDIR%%/apps-pkg/activity/l10n/th.js
 %%WWWDIR%%/apps-pkg/activity/l10n/th.json
 %%WWWDIR%%/apps-pkg/activity/l10n/tk.js
 %%WWWDIR%%/apps-pkg/activity/l10n/tk.json
 %%WWWDIR%%/apps-pkg/activity/l10n/tr.js
 %%WWWDIR%%/apps-pkg/activity/l10n/tr.json
-%%WWWDIR%%/apps-pkg/activity/l10n/ug.js
-%%WWWDIR%%/apps-pkg/activity/l10n/ug.json
 %%WWWDIR%%/apps-pkg/activity/l10n/uk.js
 %%WWWDIR%%/apps-pkg/activity/l10n/uk.json
 %%WWWDIR%%/apps-pkg/activity/l10n/uz.js
@@ -8197,6 +8195,8 @@
 %%WWWDIR%%/apps-pkg/encryption/l10n/ro.json
 %%WWWDIR%%/apps-pkg/encryption/l10n/ru.js
 %%WWWDIR%%/apps-pkg/encryption/l10n/ru.json
+%%WWWDIR%%/apps-pkg/encryption/l10n/sc.js
+%%WWWDIR%%/apps-pkg/encryption/l10n/sc.json
 %%WWWDIR%%/apps-pkg/encryption/l10n/sk.js
 %%WWWDIR%%/apps-pkg/encryption/l10n/sk.json
 %%WWWDIR%%/apps-pkg/encryption/l10n/sk_SK.js
@@ -8629,7 +8629,6 @@
 %%WWWDIR%%/apps-pkg/federation/lib/DAV/FedAuth.php
 %%WWWDIR%%/apps-pkg/federation/lib/DbHandler.php
 %%WWWDIR%%/apps-pkg/federation/lib/Hooks.php
-%%WWWDIR%%/apps-pkg/federation/lib/Listener/FederatedShareAddedListener.php
 %%WWWDIR%%/apps-pkg/federation/lib/Listener/SabrePluginAuthInitListener.php
 %%WWWDIR%%/apps-pkg/federation/lib/Middleware/AddServerMiddleware.php
 %%WWWDIR%%/apps-pkg/federation/lib/Migration/Version1010Date20200630191302.php
@@ -8924,6 +8923,8 @@
 %%WWWDIR%%/apps-pkg/files/l10n/ro.json
 %%WWWDIR%%/apps-pkg/files/l10n/ru.js
 %%WWWDIR%%/apps-pkg/files/l10n/ru.json
+%%WWWDIR%%/apps-pkg/files/l10n/sc.js
+%%WWWDIR%%/apps-pkg/files/l10n/sc.json
 %%WWWDIR%%/apps-pkg/files/l10n/si_LK.js
 %%WWWDIR%%/apps-pkg/files/l10n/si_LK.json
 %%WWWDIR%%/apps-pkg/files/l10n/sk.js
@@ -10262,6 +10263,8 @@
 %%WWWDIR%%/apps-pkg/files_sharing/l10n/ro.json
 %%WWWDIR%%/apps-pkg/files_sharing/l10n/ru.js
 %%WWWDIR%%/apps-pkg/files_sharing/l10n/ru.json
+%%WWWDIR%%/apps-pkg/files_sharing/l10n/sc.js
+%%WWWDIR%%/apps-pkg/files_sharing/l10n/sc.json
 %%WWWDIR%%/apps-pkg/files_sharing/l10n/si_LK.js
 %%WWWDIR%%/apps-pkg/files_sharing/l10n/si_LK.json
 %%WWWDIR%%/apps-pkg/files_sharing/l10n/sk.js
@@ -12044,6 +12047,8 @@
 %%WWWDIR%%/apps-pkg/password_policy/l10n/pt_PT.json
 %%WWWDIR%%/apps-pkg/password_policy/l10n/ru.js
 %%WWWDIR%%/apps-pkg/password_policy/l10n/ru.json
+%%WWWDIR%%/apps-pkg/password_policy/l10n/sc.js
+%%WWWDIR%%/apps-pkg/password_policy/l10n/sc.json
 %%WWWDIR%%/apps-pkg/password_policy/l10n/sk.js
 %%WWWDIR%%/apps-pkg/password_policy/l10n/sk.json
 %%WWWDIR%%/apps-pkg/password_policy/l10n/sl.js
@@ -12314,6 +12319,8 @@
 %%WWWDIR%%/apps-pkg/photos/l10n/ro.json
 %%WWWDIR%%/apps-pkg/photos/l10n/ru.js
 %%WWWDIR%%/apps-pkg/photos/l10n/ru.json
+%%WWWDIR%%/apps-pkg/photos/l10n/sc.js
+%%WWWDIR%%/apps-pkg/photos/l10n/sc.json
 %%WWWDIR%%/apps-pkg/photos/l10n/si.js
 %%WWWDIR%%/apps-pkg/photos/l10n/si.json
 %%WWWDIR%%/apps-pkg/photos/l10n/sk.js
@@ -12564,12 +12571,16 @@
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/hu.json
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/it.js
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/it.json
+%%WWWDIR%%/apps-pkg/provisioning_api/l10n/ja.js
+%%WWWDIR%%/apps-pkg/provisioning_api/l10n/ja.json
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/nl.js
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/nl.json
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/pl.js
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/pl.json
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/pt_BR.js
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/pt_BR.json
+%%WWWDIR%%/apps-pkg/provisioning_api/l10n/ru.js
+%%WWWDIR%%/apps-pkg/provisioning_api/l10n/ru.json
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/sc.js
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/sc.json
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/sk.js
@@ -12905,9 +12916,11 @@
 %%WWWDIR%%/apps-pkg/serverinfo/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/serverinfo/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/serverinfo/l10n/zh_TW.json
+%%WWWDIR%%/apps-pkg/serverinfo/lib/Commands/UpdateStorageStats.php
 %%WWWDIR%%/apps-pkg/serverinfo/lib/Controller/ApiController.php
 %%WWWDIR%%/apps-pkg/serverinfo/lib/Controller/PageController.php
 %%WWWDIR%%/apps-pkg/serverinfo/lib/DatabaseStatistics.php
+%%WWWDIR%%/apps-pkg/serverinfo/lib/Jobs/UpdateStorageStats.php
 %%WWWDIR%%/apps-pkg/serverinfo/lib/OperatingSystems/DefaultOs.php
 %%WWWDIR%%/apps-pkg/serverinfo/lib/OperatingSystems/FreeBSD.php
 %%WWWDIR%%/apps-pkg/serverinfo/lib/OperatingSystems/IOperatingSystem.php
@@ -15272,6 +15285,7 @@
 %%WWWDIR%%/apps-pkg/user_ldap/lib/Events/UserBackendRegistered.php
 %%WWWDIR%%/apps-pkg/user_ldap/lib/Exceptions/AttributeNotSet.php
 %%WWWDIR%%/apps-pkg/user_ldap/lib/Exceptions/ConstraintViolationException.php
+%%WWWDIR%%/apps-pkg/user_ldap/lib/Exceptions/NoMoreResults.php
 %%WWWDIR%%/apps-pkg/user_ldap/lib/Exceptions/NotOnLDAP.php
 %%WWWDIR%%/apps-pkg/user_ldap/lib/FilesystemHelper.php
 %%WWWDIR%%/apps-pkg/user_ldap/lib/GroupPluginManager.php
@@ -15719,6 +15733,8 @@
 %%WWWDIR%%/apps-pkg/weather_status/l10n/pl.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/pt_BR.js
 %%WWWDIR%%/apps-pkg/weather_status/l10n/pt_BR.json
+%%WWWDIR%%/apps-pkg/weather_status/l10n/pt_PT.js
+%%WWWDIR%%/apps-pkg/weather_status/l10n/pt_PT.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/ru.js
 %%WWWDIR%%/apps-pkg/weather_status/l10n/ru.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/sk.js
@@ -15936,6 +15952,7 @@
 %%WWWDIR%%/core/BackgroundJobs/BackgroundCleanupUpdaterBackupsJob.php
 %%WWWDIR%%/core/BackgroundJobs/CheckForUserCertificates.php
 %%WWWDIR%%/core/BackgroundJobs/CleanupLoginFlowV2.php
+%%WWWDIR%%/core/BackgroundJobs/LookupServerSendCheckBackgroundJob.php
 %%WWWDIR%%/core/Command/App/CheckCode.php
 %%WWWDIR%%/core/Command/App/Disable.php
 %%WWWDIR%%/core/Command/App/Enable.php
@@ -16737,6 +16754,7 @@
 %%WWWDIR%%/core/doc/user/search.html
 %%WWWDIR%%/core/doc/user/searchindex.js
 %%WWWDIR%%/core/doc/user/session_management.html
+%%WWWDIR%%/core/doc/user/universal_access.html
 %%WWWDIR%%/core/doc/user/user_2fa.html
 %%WWWDIR%%/core/doc/user/userpreferences.html
 %%WWWDIR%%/core/doc/user/webinterface.html
@@ -17991,6 +18009,7 @@
 %%WWWDIR%%/lib/private/Repair/NC20/ShippedDashboardEnable.php
 %%WWWDIR%%/lib/private/Repair/NC21/AddCheckForUserCertificatesJob.php
 %%WWWDIR%%/lib/private/Repair/NC21/ValidatePhoneNumber.php
+%%WWWDIR%%/lib/private/Repair/NC22/LookupServerSendCheck.php
 %%WWWDIR%%/lib/private/Repair/OldGroupMembershipShares.php
 %%WWWDIR%%/lib/private/Repair/Owncloud/CleanPreviews.php
 %%WWWDIR%%/lib/private/Repair/Owncloud/CleanPreviewsBackgroundJob.php
