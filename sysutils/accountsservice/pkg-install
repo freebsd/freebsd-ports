@@ -1,9 +1,0 @@
-#!/bin/sh
-
-case $2 in
-POST-INSTALL)
-	/bin/mkdir -p /var/db/AccountsService/users/
-	/bin/mkdir -p /var/db/AccountsService/icons/
-	exit 0
-	;;
-esac
