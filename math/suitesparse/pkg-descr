@@ -1,4 +1,5 @@
 SuiteSparse is a set of sparse matrices libraries.
+
 It contains:
     * AMD: symmetric approximate minimum degree
     * BTF: permutation to block triangular form (beta)
@@ -13,8 +14,9 @@ It contains:
     * LDL: a simple LDL^T factorization
     * Mongoose: graph partitioning
     * RBio: read/write sparse matrices
+    * SLIP_LU : Sparse Left-looking Integer-Preserving LU Factorization
     * SPQR: sparse QR factorization
     * UMFPACK: sparse multifrontal LU factorization
-    * UFconfig: common configuration for all of the above
+    * SuiteSparse_config: common configuration for all of the above
 
 WWW: http://faculty.cse.tamu.edu/davis/suitesparse.html
