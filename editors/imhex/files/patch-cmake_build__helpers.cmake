@@ -1,46 +1,20 @@
---- cmake/build_helpers.cmake.orig	2021-02-18 16:11:50 UTC
+--- cmake/build_helpers.cmake.orig	2021-05-18 19:25:59 UTC
 +++ cmake/build_helpers.cmake
-@@ -188,7 +188,7 @@ macro(createPackage)
+@@ -49,6 +49,8 @@ macro(findLibraries)
+         message(FATAL_ERROR "No valid version of Python 3 was found.")
      endif()
  
-     if (UNIX AND NOT APPLE)
--        install(TARGETS libimhex DESTINATION ${CMAKE_INSTALL_PREFIX})
-+        install(TARGETS libimhex DESTINATION "${CMAKE_INSTALL_PREFIX}/lib")
++    find_package(CURL REQUIRED)
++
+     string(REPLACE "." ";" PYTHON_VERSION_MAJOR_MINOR ${Python_VERSION})
  
-         string(REPLACE ":" ";" EXTRA_MAGICDBS "${EXTRA_MAGICDBS}")
- 
-@@ -199,9 +199,9 @@ macro(createPackage)
- 
-         if (NOT EXTRA_MAGICDBS STREQUAL "NOTFOUND")
-             if (EXTRA_MAGICDBS MATCHES ".*\\.mgc")
--                install(FILES "${EXTRA_MAGICDBS}" DESTINATION magic/)
-+                install(FILES "${EXTRA_MAGICDBS}" DESTINATION share/imhex/magic/)
-             else ()
--                install(FILES "${EXTRA_MAGICDBS}.mgc" DESTINATION magic/)
-+                install(FILES "${EXTRA_MAGICDBS}.mgc" DESTINATION share/imhex/magic/)
-             endif ()
-         endif ()
-     endif ()
-@@ -215,11 +215,11 @@ macro(createPackage)
-             )
- 
+     list(LENGTH PYTHON_VERSION_MAJOR_MINOR PYTHON_VERSION_COMPONENT_COUNT)
+@@ -162,7 +164,7 @@ macro(createPackage)
      foreach (plugin IN LISTS PLUGINS)
--        install(FILES "$<TARGET_FILE:${plugin}>" DESTINATION plugins/)
-+        install(FILES "$<TARGET_FILE:${plugin}>" DESTINATION share/imhex/plugins/)
-     endforeach ()
- 
-     # Install the magicdb files.
--    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/magic_dbs.mgc DESTINATION magic/ RENAME imhex.mgc)
-+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/magic_dbs.mgc DESTINATION share/imhex/magic/ RENAME imhex.mgc)
- 
-     if (CREATE_BUNDLE)
-         include(PostprocessBundle)
-@@ -241,7 +241,7 @@ macro(createPackage)
-         if (WIN32)
-             install(TARGETS imhex RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
-         else ()
--            install(TARGETS imhex RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX})
-+            install(TARGETS imhex RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
-         endif ()
-     endif()
+         add_subdirectory("plugins/${plugin}")
+         set_target_properties(${plugin} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/plugins)
+-        install(TARGETS ${plugin} RUNTIME DESTINATION ${PLUGINS_INSTALL_LOCATION})
++        install(TARGETS ${plugin} LIBRARY DESTINATION ${PLUGINS_INSTALL_LOCATION})
+         add_dependencies(imhex ${plugin})
+     endforeach()
  
