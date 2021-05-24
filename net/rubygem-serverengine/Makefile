@@ -1,7 +1,7 @@
 # Created by: Palle Girgensohn <girgen@FreeBSD.org>
 
 PORTNAME=	serverengine
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
