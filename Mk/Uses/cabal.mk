@@ -156,14 +156,16 @@ cabal-extract: ${WRKDIR}
 
 # Fetches and unpacks dependencies sources for a cabal-extract'ed package.
 # Builds them as side-effect.
+.  if !target(cabal-extract-deps)
 cabal-extract-deps:
-.  if ${cabal_ARGS:Mhpack}
+.    if ${cabal_ARGS:Mhpack}
 	cd ${WRKSRC} && ${SETENV} HOME=${CABAL_HOME} hpack
-.  endif
+.    endif
 	cd ${WRKSRC} && \
 		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-configure --disable-benchmarks --disable-tests --flags="${CABAL_FLAGS}" ${CONFIGURE_ARGS}
 	cd ${WRKSRC} && \
 		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-build --disable-benchmarks --disable-tests --dependencies-only ${BUILD_ARGS}
+.  endif
 
 # Generates USE_CABAL= ... line ready to be pasted into the port based on artifacts of cabal-extract-deps.
 make-use-cabal:
