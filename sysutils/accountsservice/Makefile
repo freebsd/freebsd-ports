@@ -14,15 +14,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	dbus>0:devel/dbus
 LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit
 
-USE_GNOME=	glib20 intltool introspection:build libxslt
-USES=		cpe gettext gnome localbase:ldflags meson \
-		pkgconfig tar:xz
+USES=		cpe gettext gnome localbase:ldflags meson pkgconfig tar:xz
 CPE_VENDOR=	ray_stode
+USE_GNOME=	glib20 intltool libxslt introspection:build
 USE_LDCONFIG=	yes
-MESON_ARGS=	-Dsystemdsystemunitdir=no \
+MESON_ARGS=	-Delogind=false \
 		-Dgdmconffile=${LOCALBASE}/etc/gdm/custom.conf \
+		-Dlocalstatedir=/var \
 		-Dsystemd=false \
-		-Delogind=false \
-		-Dlocalstatedir=/var
+		-Dsystemdsystemunitdir=no
 
 .include <bsd.port.mk>
