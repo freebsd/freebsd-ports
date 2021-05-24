@@ -227,5 +227,6 @@
     SUBDIR += xbae
     SUBDIR += xforms
     SUBDIR += xmhtml
+    SUBDIR += ztoolkit
 
 .include <bsd.port.subdir.mk>
