@@ -1,0 +1,6 @@
+include/suitesparse/camd.h
+lib/libcamd.so
+lib/libcamd.so.2
+lib/libcamd.so.2.4.6
+%%PORTDOCS%%%%DOCSDIR%%/CAMD_README.txt
+%%PORTDOCS%%%%DOCSDIR%%/CAMD_UserGuide.pdf
