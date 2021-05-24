@@ -1,4 +1,3 @@
-%%GLIB%%bin/cairo-sphinx
 bin/cairo-trace
 include/cairo/cairo-deprecated.h
 include/cairo/cairo-features.h
@@ -18,8 +17,6 @@ include/cairo/cairo-version.h
 include/cairo/cairo.h
 lib/cairo/cairo-fdr.a
 lib/cairo/cairo-fdr.so
-%%GLIB%%lib/cairo/cairo-sphinx.a
-%%GLIB%%lib/cairo/cairo-sphinx.so
 lib/cairo/libcairo-trace.a
 lib/cairo/libcairo-trace.so
 %%GLIB%%lib/libcairo-gobject.a
@@ -45,6 +42,7 @@ libdata/pkgconfig/cairo-pdf.pc
 libdata/pkgconfig/cairo-png.pc
 libdata/pkgconfig/cairo-ps.pc
 libdata/pkgconfig/cairo-script.pc
+libdata/pkgconfig/cairo-script-interpreter.pc
 libdata/pkgconfig/cairo-svg.pc
 libdata/pkgconfig/cairo-tee.pc
 %%XCB%%libdata/pkgconfig/cairo-xcb-shm.pc
