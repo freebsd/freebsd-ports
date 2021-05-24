@@ -1,13 +1,15 @@
 PORTNAME=	benford_py
-DISTVERSION=	0.4.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.4.2
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+#MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for testing data sets with Benford's law
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
@@ -15,6 +17,9 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		python:3.7+
 USE_PYTHON=	distutils autoplist
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	milcent
 
 NO_ARCH=	yes
 
