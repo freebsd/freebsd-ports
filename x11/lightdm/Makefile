@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/CanonicalLtd/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Lightweight Display Manager
 
 # library/bindings are LGPLv2 or LGPLv3, the rest GPLv3+
