@@ -235,6 +235,7 @@
     SUBDIR += mxascii
     SUBDIR += mxico
     SUBDIR += nezd
+    SUBDIR += nfy
     SUBDIR += numlockx
     SUBDIR += nvidia-driver
     SUBDIR += nvidia-driver-304
