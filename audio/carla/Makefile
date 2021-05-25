@@ -1,10 +1,11 @@
 PORTNAME=	Carla
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Audio LV2 plugin host for Jack and PulseAudio
+COMMENT=	Audio plugin host for Jack and PulseAudio
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/GPL.txt
@@ -42,15 +43,21 @@ OPTIONS_DEFAULT=	FFMPEG FLUIDSYNTH JACK LINUXSAMPLER
 OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	JACK PULSEAUDIO
 BACKEND_DESC=		Audio backend
-LINUXSAMPLER_DESC=	Use LinuxSampler: a software audio sampler
 
 FFMPEG_LIB_DEPENDS=		libavutil.so:multimedia/ffmpeg
 FFMPEG_MAKE_ARGS_OFF=		HAVE_FFMPEG=false
+
 FLUIDSYNTH_LIB_DEPENDS=		libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_MAKE_ARGS_OFF=	HAVE_FLUIDSYNTH=false
+
+LINUXSAMPLER_DESC=		Use LinuxSampler: a software audio sampler
 LINUXSAMPLER_LIB_DEPENDS=	liblinuxsampler.so:audio/linuxsampler
 LINUXSAMPLER_MAKE_ARGS_OFF=	HAVE_LINUXSAMPLER=false
+
+JACK_BUILD_DEPENDS=		jackit>0:audio/jack
 JACK_RUN_DEPENDS=		${LOCALBASE}/lib/libjack.so:audio/jack
+JACK_MAKE_ARGS_OFF=		HAVE_JACK=false
+
 PULSEAUDIO_LIB_DEPENDS=		libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_MAKE_ARGS_OFF=	HAVE_PULSEAUDIO=false
 
