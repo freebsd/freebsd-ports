@@ -1,6 +1,6 @@
 PORTNAME=	librenms
 PORTVERSION=	21.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -112,10 +112,11 @@ _OTHER_DIRS=		html/js/lang resources/views/overview/custom \
 			vendor/symfony/string/Resources/bin
 
 post-patch:
-	${REINPLACE_CMD}    's|%%PORTVERSION%%|${PORTVERSION}|g'              ${WRKSRC}/includes/common.php
-	${REINPLACE_CMD}    's|%%RELEASE_TIMESTAMP%%|${_RELEASE_TIMESTAMP}|g' ${WRKSRC}/includes/common.php
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/LibreNMS/Util/Version.php
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/LibreNMS/Validations/Php.php
+	${REINPLACE_CMD}    's|%%PORTVERSION%%|${PORTVERSION}|g'              ${WRKSRC}/includes/common.php
+	${REINPLACE_CMD}    's|%%RELEASE_TIMESTAMP%%|${_RELEASE_TIMESTAMP}|g' ${WRKSRC}/includes/common.php
+	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/includes/html/output/capture.inc.php
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/config.php.default
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/poller-wrapper.py
 	${RM} ${WRKSRC}/LibreNMS/Validations/Updates.php
