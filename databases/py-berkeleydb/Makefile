@@ -1,7 +1,7 @@
 # Created by: Hye-Shik Chang <perky@python.or.kr>
 
 PORTNAME=	berkeleydb
-PORTVERSION=	18.1.2
+PORTVERSION=	18.1.4
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +29,7 @@ post-patch:
 		s|%%BDB_INCLUDE_DIR%%|${BDB_INCLUDE_DIR}| ; \
 		s|%%BDB_LIB_NAME%%|${BDB_LIB_NAME}|' \
 		${WRKSRC}/setup3.py
-	@${REINPLACE_CMD} 's|<db\.h>|<${BDB_INCLUDE_DIR}/db.h>|' ${WRKSRC}/src/Modules/berkeleydb.h
+	@${REINPLACE_CMD} 's|<db\.h>|<${BDB_INCLUDE_DIR}/db.h>|' ${WRKSRC}/src/Module/berkeleydb.h
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
