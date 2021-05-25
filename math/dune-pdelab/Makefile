@@ -18,6 +18,7 @@ DUNE_DEPENDS=	dune-common>0:math/dune-common \
 		dune-localfunctions>0:math/dune-localfunctions \
 		dune-typetree>0:math/dune-typetree
 BUILD_DEPENDS=	${DUNE_DEPENDS} \
+		suitesparse>0:math/suitesparse \
 		${LOCALBASE}/mpi/openmpi/lib/libmpi.so:net/openmpi
 LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libdunealugrid.so:math/dune-alugrid \
@@ -25,10 +26,10 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libgmp.so:math/gmp \
 		libmetis.so:math/metis \
 		libopenblas.so:math/openblas \
-		libsuitesparseconfig.so:math/suitesparse \
 		libsuperlu.so:math/superlu \
 		libtbb.so:devel/onetbb
 RUN_DEPENDS=	${DUNE_DEPENDS} \
+		suitesparse>0:math/suitesparse \
 		${LOCALBASE}/mpi/openmpi/lib/libmpi.so:net/openmpi
 
 USES=		cmake compiler:c++17-lang fortran pkgconfig

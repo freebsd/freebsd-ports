@@ -201,7 +201,7 @@ LIB_DEPENDS=	libarb.so:math/arb		\
 		libR.so:math/R			\
 		librw.so:math/rankwidth		\
 		libSingular.so:math/singular	\
-		libamd.so:math/suitesparse	\
+		libumfpack.so:math/suitesparse-umfpack	\
 		libsemigroups.so:math/libsemigroups	\
 		libsymmetrica.so:math/symmetrica\
 		libzmq.so:net/libzmq4		\

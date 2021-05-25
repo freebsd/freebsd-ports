@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libsuperlu.so:math/superlu \
-		libumfpack.so:math/suitesparse
+		libumfpack.so:math/suitesparse-umfpack
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes

@@ -29,7 +29,9 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libpcre.so:devel/pcre \
 		libqhull.so.7:math/qhull \
 		libqrupdate.so:math/qrupdate \
-		libumfpack.so:math/suitesparse \
+		libcxsparse.so:math/suitesparse-cxsparse \
+		libklu.so:math/suitesparse-klu \
+		libumfpack.so:math/suitesparse-umfpack \
 		libglpk.so:math/glpk \
 		libgl2ps.so:print/gl2ps \
 		libfontconfig.so:x11-fonts/fontconfig \

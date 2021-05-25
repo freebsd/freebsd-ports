@@ -22,7 +22,7 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libarpack.so:math/arpack-ng \
 		libfftw3.so:math/fftw3 \
 		libmatio.so:math/matio \
-		libamd.so:math/suitesparse
+		libamd.so:math/suitesparse-amd
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		compiler:c++17-lang cpe desktop-file-utils eigen:3,build \
