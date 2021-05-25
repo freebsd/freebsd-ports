@@ -76,6 +76,40 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0882f019-bd60-11eb-9bdd-8c164567ca3c">
+    <topic>NGINX -- 1-byte memory overwrite in resolver</topic>
+    <affects>
+      <package>
+	<name>nginx</name>
+	<range><lt>1.20.1</lt></range>
+      </package>
+      <package>
+	<name>nginx-devel</name>
+	<range><lt>1.21.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NGINX team reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23017">
+	  <p>1-byte memory overwrite might occur during DNS server response
+	   processing if the "resolver" directive was used, allowing an
+	   attacker who is able to forge UDP packets from the DNS server
+	   to cause worker process crash or, potentially, arbitrary code
+	   execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-23017</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23017</url>
+    </references>
+    <dates>
+      <discovery>2021-05-25</discovery>
+      <entry>2021-05-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="58b22f3a-bc71-11eb-b9c9-6cc21735f730">
     <topic>PG Partition Manager -- arbitrary code execution</topic>
     <affects>
