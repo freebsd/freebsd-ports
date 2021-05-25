@@ -24,7 +24,7 @@ BINARY_ALIAS=	make=${GMAKE}
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc*}
+.if ${ARCH:Mpowerpc*} || ${ARCH} == riscv64
 CFLAGS+=	-DASL_NO_FP_INIT
 .endif
 
