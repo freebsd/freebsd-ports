@@ -189,7 +189,7 @@ update:
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Updating ${.CURDIR} from git repository"
 	@echo "--------------------------------------------------------------"
-	cd ${.CURDIR}; ${GIT} pull
+	cd ${.CURDIR}; ${GIT} pull --rebase
 .  endif
 .elif defined(RSYNC_UPDATE) && defined(PORTS_RSYNC_SOURCE)
 	@echo "--------------------------------------------------------------"
