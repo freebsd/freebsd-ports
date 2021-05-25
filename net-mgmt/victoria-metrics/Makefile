@@ -1,9 +1,8 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME?=	victoria-metrics
-PORTVERSION=	1.59.0
+PORTVERSION=	1.60.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	danfe@FreeBSD.org
