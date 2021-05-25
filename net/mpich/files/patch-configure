@@ -1,6 +1,6 @@
---- configure.orig	2021-01-22 20:23:00 UTC
+--- configure.orig	2021-05-26 20:57:14 UTC
 +++ configure
-@@ -1209,8 +1209,6 @@ HWLOC_top_builddir
+@@ -1217,8 +1217,6 @@ HWLOC_top_builddir
  hwloclib
  hwloclibdir
  hwlocsrcdir
@@ -9,7 +9,7 @@
  VISIBILITY_CFLAGS
  BUILD_PROFILING_LIB_FALSE
  BUILD_PROFILING_LIB_TRUE
-@@ -31185,337 +31183,7 @@ if test "$NEEDSPLIB" = "yes" ; then
+@@ -31276,337 +31274,7 @@ if test "$NEEDSPLIB" = "yes" ; then
      VISIBILITY_CFLAGS=""
  fi
  
@@ -347,7 +347,7 @@
  # ----------------------------------------------------------------------------
  # HWLOC
  # ----------------------------------------------------------------------------
-@@ -45612,18 +45280,8 @@ the same routine with arguments of different types." "
+@@ -46449,18 +46117,8 @@ the same routine with arguments of different types." "
  fi
  
  addarg=$pac_cv_prog_f77_mismatched_args_parm
@@ -367,16 +367,13 @@
      bindings="$bindings f77"
  
  $as_echo "#define HAVE_FORTRAN_BINDING 1" >>confdefs.h
-@@ -51252,7 +50910,11 @@ $as_echo_n "checking alignment of wchar_t... " >&6; }
- if ${ac_cv_alignof_wchar_t+:} false; then :
+@@ -52094,6 +51752,9 @@ if ${ac_cv_alignof_wchar_t+:} false; then :
    $as_echo_n "(cached) " >&6
  else
--  if ac_fn_c_compute_int "$LINENO" "(long int) offsetof (ac__type_alignof_, y)" "ac_cv_alignof_wchar_t"        "0
-+  if ac_fn_c_compute_int "$LINENO" "(long int) offsetof (ac__type_alignof_, y)" "ac_cv_alignof_wchar_t"        "
-+
+   if ac_fn_c_compute_int "$LINENO" "(long int) offsetof (ac__type_alignof_, y)" "ac_cv_alignof_wchar_t"        "$ac_includes_default
 +#ifdef STDC_HEADERS
 +# include <stddef.h>
 +#endif
- 
  #ifndef offsetof
  # define offsetof(type, member) ((char *) &((type *) 0)->member - (char *) 0)
+ #endif
