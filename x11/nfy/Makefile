@@ -10,7 +10,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
-#TEST_DEPENDS=	${LOCALBASE}/libexec/atf-check:devel/kyua
 
 USES=		xorg
 USE_XORG=	x11 xft xrandr
@@ -26,10 +25,10 @@ PLIST_FILES=	bin/nfy \
 		share/man/man1/nfy.1.gz
 
 pre-everything:
-	@${ECHO_MSG} "Build nfy with your own config.h using the NFY_CONF option:"
+	@${ECHO_MSG} "To build nfy with your own config.h use the NFY_CONF make variable:"
 	@${ECHO_MSG} "make NFY_CONF=/path/to/nfy/config.h install clean"
 
-.if exists(${NFY_CONF})
+.if defined(NFY_CONF)
 post-extract:
 	@${ECHO_MSG} "Creating symlink: config.h -> ${NFY_CONF}"
 	${LN} -fs "${NFY_CONF}" ${WRKSRC}/config.h
@@ -44,9 +43,5 @@ post-configure:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nfy
-
-do-test:
-	${LOCALBASE}/libexec/atf-check -s exit:1 -e match:"nfy-${PORTVERSION}" \
-		${STAGEDIR}${PREFIX}/bin/nfy -v
 
 .include <bsd.port.mk>
