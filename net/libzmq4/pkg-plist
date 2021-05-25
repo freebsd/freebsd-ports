@@ -2,7 +2,7 @@ include/zmq_utils.h
 include/zmq.h
 lib/libzmq.so
 lib/libzmq.so.5
-lib/libzmq.so.5.2.1
+lib/libzmq.so.5.2.4
 libdata/pkgconfig/libzmq.pc
 %%MANPAGES%%man/man3/zmq_atomic_counter_dec.3.gz
 %%MANPAGES%%man/man3/zmq_atomic_counter_destroy.3.gz
@@ -13,6 +13,7 @@ libdata/pkgconfig/libzmq.pc
 %%MANPAGES%%man/man3/zmq_bind.3.gz
 %%MANPAGES%%man/man3/zmq_close.3.gz
 %%MANPAGES%%man/man3/zmq_connect.3.gz
+%%MANPAGES%%man/man3/zmq_connect_peer.3.gz
 %%MANPAGES%%man/man3/zmq_ctx_get.3.gz
 %%MANPAGES%%man/man3/zmq_ctx_new.3.gz
 %%MANPAGES%%man/man3/zmq_ctx_set.3.gz
@@ -31,6 +32,7 @@ libdata/pkgconfig/libzmq.pc
 %%MANPAGES%%man/man3/zmq_msg_get.3.gz
 %%MANPAGES%%man/man3/zmq_msg_gets.3.gz
 %%MANPAGES%%man/man3/zmq_msg_init.3.gz
+%%MANPAGES%%man/man3/zmq_msg_init_buffer.3.gz
 %%MANPAGES%%man/man3/zmq_msg_init_data.3.gz
 %%MANPAGES%%man/man3/zmq_msg_init_size.3.gz
 %%MANPAGES%%man/man3/zmq_msg_more.3.gz
@@ -53,6 +55,7 @@ libdata/pkgconfig/libzmq.pc
 %%MANPAGES%%man/man3/zmq_setsockopt.3.gz
 %%MANPAGES%%man/man3/zmq_socket.3.gz
 %%MANPAGES%%man/man3/zmq_socket_monitor.3.gz
+%%MANPAGES%%man/man3/zmq_socket_monitor_versioned.3.gz
 %%MANPAGES%%man/man3/zmq_strerror.3.gz
 %%MANPAGES%%man/man3/zmq_timers.3.gz
 %%MANPAGES%%man/man3/zmq_unbind.3.gz
