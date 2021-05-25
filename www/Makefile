@@ -108,6 +108,7 @@
     SUBDIR += dfileserver
     SUBDIR += dhttpd
     SUBDIR += dillo2
+    SUBDIR += dooble
     SUBDIR += dojo
     SUBDIR += dojo-shrinksafe
     SUBDIR += dokuwiki
