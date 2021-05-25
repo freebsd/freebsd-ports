@@ -1,5 +1,5 @@
 PORTNAME=	ansible
-PORTVERSION?=	2.9.21
+PORTVERSION?=	2.9.22
 PORTREVISION?=	0
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
