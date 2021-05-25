@@ -1,8 +1,8 @@
---- src/qmapshack/map/CMapIMG.cpp.orig	2020-05-21 11:11:11 UTC
+--- src/qmapshack/map/CMapIMG.cpp.orig	2021-05-24 09:18:08 UTC
 +++ src/qmapshack/map/CMapIMG.cpp
-@@ -33,6 +33,7 @@
- #include "units/IUnit.h"
+@@ -34,6 +34,7 @@
  
+ #include <QPainterPath>
  #include <QtWidgets>
 +#include <QPainterPath>
  

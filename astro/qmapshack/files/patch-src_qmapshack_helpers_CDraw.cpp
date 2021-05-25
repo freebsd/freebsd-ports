@@ -1,7 +1,7 @@
---- src/qmapshack/helpers/CDraw.cpp.orig	2020-05-21 11:11:11 UTC
+--- src/qmapshack/helpers/CDraw.cpp.orig	2021-05-24 09:18:08 UTC
 +++ src/qmapshack/helpers/CDraw.cpp
-@@ -24,6 +24,7 @@
- #include <QImage>
+@@ -25,6 +25,7 @@
+ #include <QPainterPath>
  #include <QPointF>
  #include <QtMath>
 +#include <QPainterPath>
