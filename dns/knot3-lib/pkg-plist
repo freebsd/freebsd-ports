@@ -33,6 +33,8 @@ include/libknot/packet/compr.h
 include/libknot/packet/pkt.h
 include/libknot/packet/rrset-wire.h
 include/libknot/packet/wire.h
+include/libknot/probe/data.h
+include/libknot/probe/probe.h
 include/libknot/rdata.h
 include/libknot/rdataset.h
 include/libknot/rrset-dump.h
