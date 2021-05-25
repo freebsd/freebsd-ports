@@ -11,10 +11,12 @@ share/applications/org.ksnip.ksnip.desktop
 %%DATADIR%%/translations/ksnip_fr.qm
 %%DATADIR%%/translations/ksnip_fr_CA.qm
 %%DATADIR%%/translations/ksnip_gl.qm
+%%DATADIR%%/translations/ksnip_hr.qm
 %%DATADIR%%/translations/ksnip_hu.qm
 %%DATADIR%%/translations/ksnip_id.qm
 %%DATADIR%%/translations/ksnip_it.qm
 %%DATADIR%%/translations/ksnip_ja.qm
+%%DATADIR%%/translations/ksnip_ko.qm
 %%DATADIR%%/translations/ksnip_nl.qm
 %%DATADIR%%/translations/ksnip_no.qm
 %%DATADIR%%/translations/ksnip_pl.qm
