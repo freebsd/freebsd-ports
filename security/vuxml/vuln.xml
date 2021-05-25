@@ -76,6 +76,73 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="21ec4428-bdaa-11eb-a04e-641c67a117d8">
+    <topic>libzmq4 -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>libzmq4</name>
+	<range><lt>4.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google's oss-fuzz project reports:</p>
+	<blockquote cite="https://github.com/zeromq/libzmq/releases/tag/v4.3.3">
+	  <p>Denial-of-Service on CURVE/ZAP-protected servers by
+	    unauthenticated clients.
+	    If a raw TCP socket is opened and connected to an endpoint that is fully
+	    configured with CURVE/ZAP, legitimate clients will not be able to exchange
+	    any message. Handshakes complete successfully, and messages are delivered to
+	    the library, but the server application never receives them.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-15166</cvename>
+      <url>https://github.com/zeromq/libzmq/releases/tag/v4.3.3</url>
+      <url>https://github.com/zeromq/libzmq/security/advisories/GHSA-25wp-cf8g-938m</url>
+      <freebsdpr>ports/255102</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2020-09-07</discovery>
+      <entry>2021-05-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6954a2b0-bda8-11eb-a04e-641c67a117d8">
+    <topic>libzmq4 -- Stack overflow</topic>
+    <affects>
+      <package>
+	<name>libzmq4</name>
+	<range><lt>4.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Fang-Pen Lin reports:</p>
+	<blockquote cite="https://github.com/zeromq/libzmq/releases/tag/v4.3.2">
+	  <p>A remote, unauthenticated client connecting to a
+	    libzmq application, running with a socket listening with CURVE
+	    encryption/authentication enabled, may cause a stack overflow and
+	    overwrite the stack with arbitrary data, due to a buffer overflow in
+	    the library. Users running public servers with the above configuration
+	    are highly encouraged to upgrade as soon as possible, as there are no
+	    known mitigations.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2019-13132</cvename>
+      <url>https://github.com/zeromq/libzmq/releases/tag/v4.3.2</url>
+      <url>https://github.com/zeromq/libzmq/issues/3558</url>
+      <freebsdpr>ports/255102</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2019-06-27</discovery>
+      <entry>2021-05-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0882f019-bd60-11eb-9bdd-8c164567ca3c">
     <topic>NGINX -- 1-byte memory overwrite in resolver</topic>
     <affects>
