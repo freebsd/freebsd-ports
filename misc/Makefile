@@ -380,6 +380,7 @@
     SUBDIR += py-gluonnlp
     SUBDIR += py-huepy
     SUBDIR += py-kartograph
+    SUBDIR += py-log_symbols
     SUBDIR += py-mffpy
     SUBDIR += py-molequeue
     SUBDIR += py-mxnet
