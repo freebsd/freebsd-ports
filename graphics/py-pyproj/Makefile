@@ -1,7 +1,7 @@
 # Created by: TAOKA Fumiyoshi
 
 PORTNAME=	pyproj
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.0
 CATEGORIES=	graphics geography python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	proj>=7.2.0,1:graphics/proj
 LIB_DEPENDS=	libproj.so:graphics/proj
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent cython distutils
 
 MAKE_ENV=	PROJ_DIR=${LOCALBASE}
