@@ -3,7 +3,7 @@ DISTVERSION=	0.1
 CATEGORIES=	x11
 MASTER_SITES=	https://ftp.margiolis.net/${PORTNAME}/
 
-MAINTAINER=	christos@christosmarg.xyz
+MAINTAINER=	christos@margiolis.net
 COMMENT=	Minimal and daemonless notification program for X
 
 LICENSE=	MIT
