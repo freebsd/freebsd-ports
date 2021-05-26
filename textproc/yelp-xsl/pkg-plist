@@ -1,6 +1,12 @@
 libdata/pkgconfig/yelp-xsl.pc
 %%DATADIR%%/js/highlight.pack.js
 %%DATADIR%%/xslt/common/color.xsl
+%%DATADIR%%/xslt/common/css/core.css.tmpl
+%%DATADIR%%/xslt/common/css/docbook.css.tmpl
+%%DATADIR%%/xslt/common/css/elements.css.tmpl
+%%DATADIR%%/xslt/common/css/mallard-editor.css.tmpl
+%%DATADIR%%/xslt/common/css/mallard.css.tmpl
+%%DATADIR%%/xslt/common/css/syntax.css.tmpl
 %%DATADIR%%/xslt/common/domains/yelp-xsl.xml
 %%DATADIR%%/xslt/common/html.xsl
 %%DATADIR%%/xslt/common/icons.xsl
@@ -13,6 +19,7 @@ libdata/pkgconfig/yelp-xsl.pc
 %%DATADIR%%/xslt/common/icons/yelp-note-warning.svg
 %%DATADIR%%/xslt/common/l10n-numbers.xsl
 %%DATADIR%%/xslt/common/l10n.xsl
+%%DATADIR%%/xslt/common/tmpl.xsl
 %%DATADIR%%/xslt/common/ttml.xsl
 %%DATADIR%%/xslt/common/utils.xsl
 %%DATADIR%%/xslt/docbook/common/db-chunk.xsl
@@ -26,7 +33,6 @@ libdata/pkgconfig/yelp-xsl.pc
 %%DATADIR%%/xslt/docbook/html/db2html-callout.xsl
 %%DATADIR%%/xslt/docbook/html/db2html-classsynopsis.xsl
 %%DATADIR%%/xslt/docbook/html/db2html-cmdsynopsis.xsl
-%%DATADIR%%/xslt/docbook/html/db2html-css.xsl
 %%DATADIR%%/xslt/docbook/html/db2html-division.xsl
 %%DATADIR%%/xslt/docbook/html/db2html-ebnf.xsl
 %%DATADIR%%/xslt/docbook/html/db2html-footnote.xsl
