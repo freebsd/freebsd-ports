@@ -4,7 +4,6 @@ man/man1/slick-greeter-check-hidpi.1.gz
 man/man1/slick-greeter-set-keyboard-layout.1.gz
 man/man8/slick-greeter.8.gz
 sbin/slick-greeter
-share/glib-2.0/schemas/x.dm.slick-greeter.gschema.xml
 share/locale/af/LC_MESSAGES/slick-greeter.mo
 share/locale/am/LC_MESSAGES/slick-greeter.mo
 share/locale/an/LC_MESSAGES/slick-greeter.mo
