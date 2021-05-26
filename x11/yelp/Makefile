@@ -1,7 +1,7 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 
 PORTNAME=	yelp
-DISTVERSION=	3.38.3
+DISTVERSION=	40.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	yelp-xsl>=0:textproc/yelp-xsl \
 LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
+		libharfbuzz.so:print/harfbuzz \
 		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS=	yelp-xsl>=0:textproc/yelp-xsl
 
