@@ -76,6 +76,106 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="674ed047-be0a-11eb-b927-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>91.0.4472.77</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/05/stable-channel-update-for-desktop_25.html">
+	  <p>This release contains 32 security fixes, including:</p>
+	  <ul>
+	    <li>[1208721] High CVE-2021-30521: Heap buffer overflow in Autofill.
+	      Reported by ZhanJia Song on 2021-05-13</li>
+	    <li>[1176218] High CVE-2021-30522: Use after free in WebAudio.
+	      Reported by Piotr Bania of Cisco Talos on 2021-02-09</li>
+	    <li>[1187797] High CVE-2021-30523: Use after free in WebRTC.
+	      Reported by Tolyan Korniltsev on 2021-03-13</li>
+	    <li>[1197146] High CVE-2021-30524: Use after free in TabStrip.
+	      Reported by David Erceg on 2021-04-08</li>
+	    <li>[1197888] High CVE-2021-30525: Use after free in TabGroups.
+	      Reported by David Erceg on 2021-04-11</li>
+	    <li>[1198717] High CVE-2021-30526: Out of bounds write in
+	      TabStrip. Reported by David Erceg on 2021-04-13</li>
+	    <li>[1199198] High CVE-2021-30527: Use after free in WebUI.
+	      Reported by David Erceg on 2021-04-15</li>
+	    <li>[1206329] High CVE-2021-30528: Use after free in
+	      WebAuthentication. Reported by Man Yue Mo of GitHub Security Lab on
+	      2021-05-06</li>
+	    <li>[1195278] Medium CVE-2021-30529: Use after free in Bookmarks.
+	      Reported by koocola (@alo_cook) and Nan Wang (@eternalsakura13) of
+	      360 Alpha Lab on 2021-04-02</li>
+	    <li>[1201033] Medium CVE-2021-30530: Out of bounds memory access
+	      in WebAudio. Reported by kkwon on 2021-04-21</li>
+	    <li>[1115628] Medium CVE-2021-30531: Insufficient policy
+	      enforcement in Content Security Policy. Reported by Philip Papurt on
+	      2020-08-12</li>
+	    <li>[1117687] Medium CVE-2021-30532: Insufficient policy
+	      enforcement in Content Security Policy. Reported by Philip Papurt on
+	      2020-08-18</li>
+	    <li>[1145553] Medium CVE-2021-30533: Insufficient policy
+	      enforcement in PopupBlocker. Reported by Eliya Stein on
+	      2020-11-04</li>
+	    <li>[1151507] Medium CVE-2021-30534: Insufficient policy
+	      enforcement in iFrameSandbox. Reported by Alesandro Ortiz on
+	      2020-11-20</li>
+	    <li>[1194899] Medium CVE-2021-30535: Double free in ICU. Reported
+	      by nocma, leogan, cheneyxu of WeChat Open Platform Security Team on
+	      2021-04-01</li>
+	    <li>[1145024] Medium CVE-2021-21212: Insufficient data validation
+	      in networking. Reported by Hugo Hue and Sze Yiu Chau of the Chinese
+	      University of Hong Kong on 2020-11-03</li>
+	    <li>[1194358] Low CVE-2021-30536: Out of bounds read in V8.
+	      Reported by Chris Salls (@salls) on 2021-03-31</li>
+	    <li>[830101] Low CVE-2021-30537: Insufficient policy enforcement
+	      in cookies. Reported by Jun Kokatsu (@shhnjk) on 2018-04-06</li>
+	    <li>[1115045] Low CVE-2021-30538: Insufficient policy enforcement
+	      in content security policy. Reported by Tianze Ding (@D1iv3) of
+	      Tencent Security Xuanwu Lab on 2020-08-11</li>
+	    <li>[971231] Low CVE-2021-30539: Insufficient policy enforcement
+	      in content security policy. Reported by unnamed researcher on
+	      2019-06-05</li>
+	    <li>[1184147] Low CVE-2021-30540: Incorrect security UI in
+	      payments. Reported by @retsew0x01 on 2021-03-03</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-30521</cvename>
+      <cvename>CVE-2021-30522</cvename>
+      <cvename>CVE-2021-30523</cvename>
+      <cvename>CVE-2021-30524</cvename>
+      <cvename>CVE-2021-30525</cvename>
+      <cvename>CVE-2021-30526</cvename>
+      <cvename>CVE-2021-30527</cvename>
+      <cvename>CVE-2021-30528</cvename>
+      <cvename>CVE-2021-30529</cvename>
+      <cvename>CVE-2021-30530</cvename>
+      <cvename>CVE-2021-30531</cvename>
+      <cvename>CVE-2021-30532</cvename>
+      <cvename>CVE-2021-30533</cvename>
+      <cvename>CVE-2021-30534</cvename>
+      <cvename>CVE-2021-30535</cvename>
+      <cvename>CVE-2021-21212</cvename>
+      <cvename>CVE-2021-30536</cvename>
+      <cvename>CVE-2021-30537</cvename>
+      <cvename>CVE-2021-30538</cvename>
+      <cvename>CVE-2021-30539</cvename>
+      <cvename>CVE-2021-30540</cvename>
+      <url>https://chromereleases.googleblog.com/2021/05/stable-channel-update-for-desktop_25.html</url>
+    </references>
+    <dates>
+      <discovery>2021-05-25</discovery>
+      <entry>2021-05-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="21ec4428-bdaa-11eb-a04e-641c67a117d8">
     <topic>libzmq4 -- Denial of Service</topic>
     <affects>
