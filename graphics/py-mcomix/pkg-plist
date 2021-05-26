@@ -37,6 +37,7 @@ bin/mcomix
 %%PYTHON_SITELIBDIR%%/mcomix/__pycache__/keybindings.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mcomix/__pycache__/keybindings_editor.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mcomix/__pycache__/keybindings_map.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/mcomix/__pycache__/keyhandler.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mcomix/__pycache__/labels.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mcomix/__pycache__/languages.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mcomix/__pycache__/last_read_page.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -62,6 +63,7 @@ bin/mcomix
 %%PYTHON_SITELIBDIR%%/mcomix/__pycache__/run.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mcomix/__pycache__/scrolling.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mcomix/__pycache__/slideshow.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/mcomix/__pycache__/sqlite3.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mcomix/__pycache__/status.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mcomix/__pycache__/strings.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mcomix/__pycache__/thumbbar.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -165,6 +167,7 @@ bin/mcomix
 %%PYTHON_SITELIBDIR%%/mcomix/keybindings.py
 %%PYTHON_SITELIBDIR%%/mcomix/keybindings_editor.py
 %%PYTHON_SITELIBDIR%%/mcomix/keybindings_map.py
+%%PYTHON_SITELIBDIR%%/mcomix/keyhandler.py
 %%PYTHON_SITELIBDIR%%/mcomix/labels.py
 %%PYTHON_SITELIBDIR%%/mcomix/languages.py
 %%PYTHON_SITELIBDIR%%/mcomix/last_read_page.py
@@ -243,6 +246,7 @@ bin/mcomix
 %%PYTHON_SITELIBDIR%%/mcomix/run.py
 %%PYTHON_SITELIBDIR%%/mcomix/scrolling.py
 %%PYTHON_SITELIBDIR%%/mcomix/slideshow.py
+%%PYTHON_SITELIBDIR%%/mcomix/sqlite3.py
 %%PYTHON_SITELIBDIR%%/mcomix/status.py
 %%PYTHON_SITELIBDIR%%/mcomix/strings.py
 %%PYTHON_SITELIBDIR%%/mcomix/thumbbar.py
