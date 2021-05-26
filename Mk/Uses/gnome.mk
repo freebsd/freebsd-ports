@@ -87,7 +87,7 @@ _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 		pygobject3 vte3
 
 # GNOME 40 components
-_USE_GNOME_ALL+=gtk40
+_USE_GNOME_ALL+=gtk40 libadwaita
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm gtkmm24 \
@@ -239,6 +239,9 @@ vte_USE_GNOME_IMPL=	gtk20
 
 vte3_LIB_DEPENDS=	libvte-2.91.so:x11-toolkits/vte3
 vte3_USE_GNOME_IMPL=	gtk30
+
+libadwaita_LIB_DEPENDS=		libadwaita-1.so:x11-toolkits/libadwaita
+libadwaita_USE_GNOME_IMPL=	gtk40
 
 # Use librsvg2-rust where lang/rust is available
 .if ${LIBRSVG2_DEFAULT:Mrust}
