@@ -1,10 +1,10 @@
-TIMESTAMP = 1621187663
-SHA256 (xyproto-o-2.37.2_GH0.tar.gz) = ec44e7d17bf1211c5331fc39d34d4898d20349b95c3a66f18eec377eabfe36ae
-SIZE (xyproto-o-2.37.2_GH0.tar.gz) = 1111196
+TIMESTAMP = 1622050699
+SHA256 (xyproto-o-2.37.3_GH0.tar.gz) = 8c8d13d0339749183ecfc9ade6662431cd4ca5f722f8a56467d42ebbeb419a4b
+SIZE (xyproto-o-2.37.3_GH0.tar.gz) = 1115390
 SHA256 (atotto-clipboard-v0.1.4_GH0.tar.gz) = cafd64dc78f293c1e774386186f3f817461a1a8940ef86d5d9e9524b58aa791e
 SIZE (atotto-clipboard-v0.1.4_GH0.tar.gz) = 5017
-SHA256 (golang-sys-b0526f3d8744_GH0.tar.gz) = 4a8d7451cf16c5aea139b76a66abdc2f432756c5f69b948e8ff0bfcc2cae54d5
-SIZE (golang-sys-b0526f3d8744_GH0.tar.gz) = 1192375
+SHA256 (golang-sys-35b2ab0089ea_GH0.tar.gz) = ae3263474cd4232035eca625e6382d0bf27ee2367ff683a9722cf38d40fe44ac
+SIZE (golang-sys-35b2ab0089ea_GH0.tar.gz) = 1197183
 SHA256 (jung-kurt-gofpdf-v1.16.2_GH0.tar.gz) = a3139d090d12a13d7020dfbe2097c53f7ba6fa529d72531f600b799aed6375d6
 SIZE (jung-kurt-gofpdf-v1.16.2_GH0.tar.gz) = 2795841
 SHA256 (mattn-go-colorable-v0.1.8_GH0.tar.gz) = 1027954f9abbe06b6e117e3047af70204dd0eb4f8c27fcd459fb2574b279755f
