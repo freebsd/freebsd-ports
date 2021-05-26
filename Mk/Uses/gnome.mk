@@ -86,6 +86,9 @@ _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 		libgda5-ui libgnomekbd libwnck3 metacity nautilus3 \
 		pygobject3 vte3
 
+# GNOME 40 components
+_USE_GNOME_ALL+=gtk40
+
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm gtkmm24 \
 		gtkmm30 gtksourceviewmm3 libgdamm5 libxml++26 libsigc++20 \
@@ -185,6 +188,10 @@ GTK2_VERSION=		2.10.0
 gtk30_LIB_DEPENDS=	libgtk-3.so:x11-toolkits/gtk30
 gtk30_USE_GNOME_IMPL=	atk pango
 GTK3_VERSION=		3.0.0
+
+gtk40_LIB_DEPENDS=	libgtk-4.so:x11-toolkits/gtk40
+gtk40_USE_GNOME_IMPL=	atk pango
+GTK4_VERSION=		4.0.0
 
 libidl_LIB_DEPENDS=	libIDL-2.so:devel/libIDL
 libidl_USE_GNOME_IMPL=	glib20
@@ -336,7 +343,8 @@ _USE_GNOME+=	${${component}_USE_GNOME_IMPL} ${component}
 # Setup the GTK+ API version for pixbuf loaders, input method modules,
 # and theme engines.
 PLIST_SUB+=			GTK2_VERSION="${GTK2_VERSION}" \
-				GTK3_VERSION="${GTK3_VERSION}"
+				GTK3_VERSION="${GTK3_VERSION}" \
+				GTK4_VERSION="${GTK4_VERSION}"
 
 .if defined(_USE_GNOME) && empty(_USE_GNOME:Mglib20:u) && defined(GLIB_SCHEMAS)
 IGNORE=		GLIB_SCHEMAS is set, but needs USE_GNOME=glib20 to work
