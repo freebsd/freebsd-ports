@@ -1,5 +1,5 @@
 diff --git src/mlmmj-process.c src/mlmmj-process.c
-index 82e4d04..c8f4add 100644
+index 82e4d04..0362c7b 100644
 --- src/mlmmj-process.c
 +++ src/mlmmj-process.c
 @@ -473,6 +473,7 @@ int main(int argc, char **argv)
@@ -14,7 +14,7 @@ index 82e4d04..c8f4add 100644
  		{ "Return-Path:", 0, NULL },
  		{ "Delivered-To:", 0, NULL },
  		{ "Subject:", 0, NULL },
-+		{ "X-Original-From", 0, NULL },
++		{ "X-Original-From:", 0, NULL },
  		{ NULL, 0, NULL }
  	};
  
