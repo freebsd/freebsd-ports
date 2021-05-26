@@ -23,7 +23,7 @@ USES=		compiler:c11 python:2.7+ tar:xz
 USE_PYTHON=	autoplist distutils allflavors
 
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
-WRKSRC=		${WRKDIR}/Python-${DISTVERSION}/Modules
+WRKSRC_SUBDIR=	Modules
 
 PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
 
