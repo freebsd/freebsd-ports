@@ -21,4 +21,6 @@ RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 USE_PERL5=	configure
 USES=		perl5
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
