@@ -32,6 +32,7 @@ lib/eog/plugins/reload.plugin
 lib/eog/plugins/statusbar-date.plugin
 libdata/pkgconfig/eog.pc
 share/GConf/gsettings/eog.convert
+share/applications/org.gnome.eog.desktop
 %%DATADIR%%/gir-1.0/Eog-%%VERSION%%.gir
 %%DATADIR%%/icons/hicolor/16x16/actions/eog-plugin.png
 %%DATADIR%%/icons/hicolor/16x16/actions/slideshow-play.png
@@ -44,7 +45,6 @@ share/GConf/gsettings/eog.convert
 %%DATADIR%%/icons/hicolor/scalable/actions/eog-image-gallery-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/eog-plugin.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/slideshow-play.svg
-share/applications/org.gnome.eog.desktop
 share/help/C/eog/bug-filing.page
 share/help/C/eog/commandline.page
 share/help/C/eog/copy-paste.page
@@ -71,7 +71,6 @@ share/help/C/eog/open.page
 share/help/C/eog/plugin-exif-digital.page
 share/help/C/eog/plugin-fullscreen-background.page
 share/help/C/eog/plugin-fullscreen-double-click.page
-share/help/C/eog/plugin-picasa.page
 share/help/C/eog/plugin-python-console.page
 share/help/C/eog/plugin-send-by-mail.page
 share/help/C/eog/plugin-slideshow-shuffle.page
@@ -80,7 +79,6 @@ share/help/C/eog/plugins.page
 share/help/C/eog/preferences.page
 share/help/C/eog/print.page
 share/help/C/eog/rename-multiple.page
-share/help/C/eog/shortcuts.page
 share/help/C/eog/slideshow.page
 share/help/C/eog/translate.page
 share/help/C/eog/view.page
@@ -111,7 +109,6 @@ share/help/ar/eog/open.page
 share/help/ar/eog/plugin-exif-digital.page
 share/help/ar/eog/plugin-fullscreen-background.page
 share/help/ar/eog/plugin-fullscreen-double-click.page
-share/help/ar/eog/plugin-picasa.page
 share/help/ar/eog/plugin-python-console.page
 share/help/ar/eog/plugin-send-by-mail.page
 share/help/ar/eog/plugin-slideshow-shuffle.page
@@ -120,7 +117,6 @@ share/help/ar/eog/plugins.page
 share/help/ar/eog/preferences.page
 share/help/ar/eog/print.page
 share/help/ar/eog/rename-multiple.page
-share/help/ar/eog/shortcuts.page
 share/help/ar/eog/slideshow.page
 share/help/ar/eog/translate.page
 share/help/ar/eog/view.page
@@ -151,7 +147,6 @@ share/help/ca/eog/open.page
 share/help/ca/eog/plugin-exif-digital.page
 share/help/ca/eog/plugin-fullscreen-background.page
 share/help/ca/eog/plugin-fullscreen-double-click.page
-share/help/ca/eog/plugin-picasa.page
 share/help/ca/eog/plugin-python-console.page
 share/help/ca/eog/plugin-send-by-mail.page
 share/help/ca/eog/plugin-slideshow-shuffle.page
@@ -160,7 +155,6 @@ share/help/ca/eog/plugins.page
 share/help/ca/eog/preferences.page
 share/help/ca/eog/print.page
 share/help/ca/eog/rename-multiple.page
-share/help/ca/eog/shortcuts.page
 share/help/ca/eog/slideshow.page
 share/help/ca/eog/translate.page
 share/help/ca/eog/view.page
@@ -191,7 +185,6 @@ share/help/cs/eog/open.page
 share/help/cs/eog/plugin-exif-digital.page
 share/help/cs/eog/plugin-fullscreen-background.page
 share/help/cs/eog/plugin-fullscreen-double-click.page
-share/help/cs/eog/plugin-picasa.page
 share/help/cs/eog/plugin-python-console.page
 share/help/cs/eog/plugin-send-by-mail.page
 share/help/cs/eog/plugin-slideshow-shuffle.page
@@ -200,7 +193,6 @@ share/help/cs/eog/plugins.page
 share/help/cs/eog/preferences.page
 share/help/cs/eog/print.page
 share/help/cs/eog/rename-multiple.page
-share/help/cs/eog/shortcuts.page
 share/help/cs/eog/slideshow.page
 share/help/cs/eog/translate.page
 share/help/cs/eog/view.page
@@ -231,7 +223,6 @@ share/help/da/eog/open.page
 share/help/da/eog/plugin-exif-digital.page
 share/help/da/eog/plugin-fullscreen-background.page
 share/help/da/eog/plugin-fullscreen-double-click.page
-share/help/da/eog/plugin-picasa.page
 share/help/da/eog/plugin-python-console.page
 share/help/da/eog/plugin-send-by-mail.page
 share/help/da/eog/plugin-slideshow-shuffle.page
@@ -240,7 +231,6 @@ share/help/da/eog/plugins.page
 share/help/da/eog/preferences.page
 share/help/da/eog/print.page
 share/help/da/eog/rename-multiple.page
-share/help/da/eog/shortcuts.page
 share/help/da/eog/slideshow.page
 share/help/da/eog/translate.page
 share/help/da/eog/view.page
@@ -271,7 +261,6 @@ share/help/de/eog/open.page
 share/help/de/eog/plugin-exif-digital.page
 share/help/de/eog/plugin-fullscreen-background.page
 share/help/de/eog/plugin-fullscreen-double-click.page
-share/help/de/eog/plugin-picasa.page
 share/help/de/eog/plugin-python-console.page
 share/help/de/eog/plugin-send-by-mail.page
 share/help/de/eog/plugin-slideshow-shuffle.page
@@ -280,7 +269,6 @@ share/help/de/eog/plugins.page
 share/help/de/eog/preferences.page
 share/help/de/eog/print.page
 share/help/de/eog/rename-multiple.page
-share/help/de/eog/shortcuts.page
 share/help/de/eog/slideshow.page
 share/help/de/eog/translate.page
 share/help/de/eog/view.page
@@ -311,7 +299,6 @@ share/help/el/eog/open.page
 share/help/el/eog/plugin-exif-digital.page
 share/help/el/eog/plugin-fullscreen-background.page
 share/help/el/eog/plugin-fullscreen-double-click.page
-share/help/el/eog/plugin-picasa.page
 share/help/el/eog/plugin-python-console.page
 share/help/el/eog/plugin-send-by-mail.page
 share/help/el/eog/plugin-slideshow-shuffle.page
@@ -320,7 +307,6 @@ share/help/el/eog/plugins.page
 share/help/el/eog/preferences.page
 share/help/el/eog/print.page
 share/help/el/eog/rename-multiple.page
-share/help/el/eog/shortcuts.page
 share/help/el/eog/slideshow.page
 share/help/el/eog/translate.page
 share/help/el/eog/view.page
@@ -351,7 +337,6 @@ share/help/en_GB/eog/open.page
 share/help/en_GB/eog/plugin-exif-digital.page
 share/help/en_GB/eog/plugin-fullscreen-background.page
 share/help/en_GB/eog/plugin-fullscreen-double-click.page
-share/help/en_GB/eog/plugin-picasa.page
 share/help/en_GB/eog/plugin-python-console.page
 share/help/en_GB/eog/plugin-send-by-mail.page
 share/help/en_GB/eog/plugin-slideshow-shuffle.page
@@ -360,7 +345,6 @@ share/help/en_GB/eog/plugins.page
 share/help/en_GB/eog/preferences.page
 share/help/en_GB/eog/print.page
 share/help/en_GB/eog/rename-multiple.page
-share/help/en_GB/eog/shortcuts.page
 share/help/en_GB/eog/slideshow.page
 share/help/en_GB/eog/translate.page
 share/help/en_GB/eog/view.page
@@ -391,7 +375,6 @@ share/help/es/eog/open.page
 share/help/es/eog/plugin-exif-digital.page
 share/help/es/eog/plugin-fullscreen-background.page
 share/help/es/eog/plugin-fullscreen-double-click.page
-share/help/es/eog/plugin-picasa.page
 share/help/es/eog/plugin-python-console.page
 share/help/es/eog/plugin-send-by-mail.page
 share/help/es/eog/plugin-slideshow-shuffle.page
@@ -400,7 +383,6 @@ share/help/es/eog/plugins.page
 share/help/es/eog/preferences.page
 share/help/es/eog/print.page
 share/help/es/eog/rename-multiple.page
-share/help/es/eog/shortcuts.page
 share/help/es/eog/slideshow.page
 share/help/es/eog/translate.page
 share/help/es/eog/view.page
@@ -431,7 +413,6 @@ share/help/eu/eog/open.page
 share/help/eu/eog/plugin-exif-digital.page
 share/help/eu/eog/plugin-fullscreen-background.page
 share/help/eu/eog/plugin-fullscreen-double-click.page
-share/help/eu/eog/plugin-picasa.page
 share/help/eu/eog/plugin-python-console.page
 share/help/eu/eog/plugin-send-by-mail.page
 share/help/eu/eog/plugin-slideshow-shuffle.page
@@ -440,7 +421,6 @@ share/help/eu/eog/plugins.page
 share/help/eu/eog/preferences.page
 share/help/eu/eog/print.page
 share/help/eu/eog/rename-multiple.page
-share/help/eu/eog/shortcuts.page
 share/help/eu/eog/slideshow.page
 share/help/eu/eog/translate.page
 share/help/eu/eog/view.page
@@ -471,7 +451,6 @@ share/help/fi/eog/open.page
 share/help/fi/eog/plugin-exif-digital.page
 share/help/fi/eog/plugin-fullscreen-background.page
 share/help/fi/eog/plugin-fullscreen-double-click.page
-share/help/fi/eog/plugin-picasa.page
 share/help/fi/eog/plugin-python-console.page
 share/help/fi/eog/plugin-send-by-mail.page
 share/help/fi/eog/plugin-slideshow-shuffle.page
@@ -480,7 +459,6 @@ share/help/fi/eog/plugins.page
 share/help/fi/eog/preferences.page
 share/help/fi/eog/print.page
 share/help/fi/eog/rename-multiple.page
-share/help/fi/eog/shortcuts.page
 share/help/fi/eog/slideshow.page
 share/help/fi/eog/translate.page
 share/help/fi/eog/view.page
@@ -511,7 +489,6 @@ share/help/fr/eog/open.page
 share/help/fr/eog/plugin-exif-digital.page
 share/help/fr/eog/plugin-fullscreen-background.page
 share/help/fr/eog/plugin-fullscreen-double-click.page
-share/help/fr/eog/plugin-picasa.page
 share/help/fr/eog/plugin-python-console.page
 share/help/fr/eog/plugin-send-by-mail.page
 share/help/fr/eog/plugin-slideshow-shuffle.page
@@ -520,7 +497,6 @@ share/help/fr/eog/plugins.page
 share/help/fr/eog/preferences.page
 share/help/fr/eog/print.page
 share/help/fr/eog/rename-multiple.page
-share/help/fr/eog/shortcuts.page
 share/help/fr/eog/slideshow.page
 share/help/fr/eog/translate.page
 share/help/fr/eog/view.page
@@ -551,7 +527,6 @@ share/help/gl/eog/open.page
 share/help/gl/eog/plugin-exif-digital.page
 share/help/gl/eog/plugin-fullscreen-background.page
 share/help/gl/eog/plugin-fullscreen-double-click.page
-share/help/gl/eog/plugin-picasa.page
 share/help/gl/eog/plugin-python-console.page
 share/help/gl/eog/plugin-send-by-mail.page
 share/help/gl/eog/plugin-slideshow-shuffle.page
@@ -560,7 +535,6 @@ share/help/gl/eog/plugins.page
 share/help/gl/eog/preferences.page
 share/help/gl/eog/print.page
 share/help/gl/eog/rename-multiple.page
-share/help/gl/eog/shortcuts.page
 share/help/gl/eog/slideshow.page
 share/help/gl/eog/translate.page
 share/help/gl/eog/view.page
@@ -591,7 +565,6 @@ share/help/hu/eog/open.page
 share/help/hu/eog/plugin-exif-digital.page
 share/help/hu/eog/plugin-fullscreen-background.page
 share/help/hu/eog/plugin-fullscreen-double-click.page
-share/help/hu/eog/plugin-picasa.page
 share/help/hu/eog/plugin-python-console.page
 share/help/hu/eog/plugin-send-by-mail.page
 share/help/hu/eog/plugin-slideshow-shuffle.page
@@ -600,7 +573,6 @@ share/help/hu/eog/plugins.page
 share/help/hu/eog/preferences.page
 share/help/hu/eog/print.page
 share/help/hu/eog/rename-multiple.page
-share/help/hu/eog/shortcuts.page
 share/help/hu/eog/slideshow.page
 share/help/hu/eog/translate.page
 share/help/hu/eog/view.page
@@ -631,7 +603,6 @@ share/help/id/eog/open.page
 share/help/id/eog/plugin-exif-digital.page
 share/help/id/eog/plugin-fullscreen-background.page
 share/help/id/eog/plugin-fullscreen-double-click.page
-share/help/id/eog/plugin-picasa.page
 share/help/id/eog/plugin-python-console.page
 share/help/id/eog/plugin-send-by-mail.page
 share/help/id/eog/plugin-slideshow-shuffle.page
@@ -640,7 +611,6 @@ share/help/id/eog/plugins.page
 share/help/id/eog/preferences.page
 share/help/id/eog/print.page
 share/help/id/eog/rename-multiple.page
-share/help/id/eog/shortcuts.page
 share/help/id/eog/slideshow.page
 share/help/id/eog/translate.page
 share/help/id/eog/view.page
@@ -671,7 +641,6 @@ share/help/it/eog/open.page
 share/help/it/eog/plugin-exif-digital.page
 share/help/it/eog/plugin-fullscreen-background.page
 share/help/it/eog/plugin-fullscreen-double-click.page
-share/help/it/eog/plugin-picasa.page
 share/help/it/eog/plugin-python-console.page
 share/help/it/eog/plugin-send-by-mail.page
 share/help/it/eog/plugin-slideshow-shuffle.page
@@ -680,7 +649,6 @@ share/help/it/eog/plugins.page
 share/help/it/eog/preferences.page
 share/help/it/eog/print.page
 share/help/it/eog/rename-multiple.page
-share/help/it/eog/shortcuts.page
 share/help/it/eog/slideshow.page
 share/help/it/eog/translate.page
 share/help/it/eog/view.page
@@ -711,7 +679,6 @@ share/help/ja/eog/open.page
 share/help/ja/eog/plugin-exif-digital.page
 share/help/ja/eog/plugin-fullscreen-background.page
 share/help/ja/eog/plugin-fullscreen-double-click.page
-share/help/ja/eog/plugin-picasa.page
 share/help/ja/eog/plugin-python-console.page
 share/help/ja/eog/plugin-send-by-mail.page
 share/help/ja/eog/plugin-slideshow-shuffle.page
@@ -720,7 +687,6 @@ share/help/ja/eog/plugins.page
 share/help/ja/eog/preferences.page
 share/help/ja/eog/print.page
 share/help/ja/eog/rename-multiple.page
-share/help/ja/eog/shortcuts.page
 share/help/ja/eog/slideshow.page
 share/help/ja/eog/translate.page
 share/help/ja/eog/view.page
@@ -751,7 +717,6 @@ share/help/ko/eog/open.page
 share/help/ko/eog/plugin-exif-digital.page
 share/help/ko/eog/plugin-fullscreen-background.page
 share/help/ko/eog/plugin-fullscreen-double-click.page
-share/help/ko/eog/plugin-picasa.page
 share/help/ko/eog/plugin-python-console.page
 share/help/ko/eog/plugin-send-by-mail.page
 share/help/ko/eog/plugin-slideshow-shuffle.page
@@ -760,7 +725,6 @@ share/help/ko/eog/plugins.page
 share/help/ko/eog/preferences.page
 share/help/ko/eog/print.page
 share/help/ko/eog/rename-multiple.page
-share/help/ko/eog/shortcuts.page
 share/help/ko/eog/slideshow.page
 share/help/ko/eog/translate.page
 share/help/ko/eog/view.page
@@ -791,7 +755,6 @@ share/help/lv/eog/open.page
 share/help/lv/eog/plugin-exif-digital.page
 share/help/lv/eog/plugin-fullscreen-background.page
 share/help/lv/eog/plugin-fullscreen-double-click.page
-share/help/lv/eog/plugin-picasa.page
 share/help/lv/eog/plugin-python-console.page
 share/help/lv/eog/plugin-send-by-mail.page
 share/help/lv/eog/plugin-slideshow-shuffle.page
@@ -800,7 +763,6 @@ share/help/lv/eog/plugins.page
 share/help/lv/eog/preferences.page
 share/help/lv/eog/print.page
 share/help/lv/eog/rename-multiple.page
-share/help/lv/eog/shortcuts.page
 share/help/lv/eog/slideshow.page
 share/help/lv/eog/translate.page
 share/help/lv/eog/view.page
@@ -831,7 +793,6 @@ share/help/ne/eog/open.page
 share/help/ne/eog/plugin-exif-digital.page
 share/help/ne/eog/plugin-fullscreen-background.page
 share/help/ne/eog/plugin-fullscreen-double-click.page
-share/help/ne/eog/plugin-picasa.page
 share/help/ne/eog/plugin-python-console.page
 share/help/ne/eog/plugin-send-by-mail.page
 share/help/ne/eog/plugin-slideshow-shuffle.page
@@ -840,7 +801,6 @@ share/help/ne/eog/plugins.page
 share/help/ne/eog/preferences.page
 share/help/ne/eog/print.page
 share/help/ne/eog/rename-multiple.page
-share/help/ne/eog/shortcuts.page
 share/help/ne/eog/slideshow.page
 share/help/ne/eog/translate.page
 share/help/ne/eog/view.page
@@ -871,7 +831,6 @@ share/help/oc/eog/open.page
 share/help/oc/eog/plugin-exif-digital.page
 share/help/oc/eog/plugin-fullscreen-background.page
 share/help/oc/eog/plugin-fullscreen-double-click.page
-share/help/oc/eog/plugin-picasa.page
 share/help/oc/eog/plugin-python-console.page
 share/help/oc/eog/plugin-send-by-mail.page
 share/help/oc/eog/plugin-slideshow-shuffle.page
@@ -880,7 +839,6 @@ share/help/oc/eog/plugins.page
 share/help/oc/eog/preferences.page
 share/help/oc/eog/print.page
 share/help/oc/eog/rename-multiple.page
-share/help/oc/eog/shortcuts.page
 share/help/oc/eog/slideshow.page
 share/help/oc/eog/translate.page
 share/help/oc/eog/view.page
@@ -911,7 +869,6 @@ share/help/pa/eog/open.page
 share/help/pa/eog/plugin-exif-digital.page
 share/help/pa/eog/plugin-fullscreen-background.page
 share/help/pa/eog/plugin-fullscreen-double-click.page
-share/help/pa/eog/plugin-picasa.page
 share/help/pa/eog/plugin-python-console.page
 share/help/pa/eog/plugin-send-by-mail.page
 share/help/pa/eog/plugin-slideshow-shuffle.page
@@ -920,7 +877,6 @@ share/help/pa/eog/plugins.page
 share/help/pa/eog/preferences.page
 share/help/pa/eog/print.page
 share/help/pa/eog/rename-multiple.page
-share/help/pa/eog/shortcuts.page
 share/help/pa/eog/slideshow.page
 share/help/pa/eog/translate.page
 share/help/pa/eog/view.page
@@ -951,7 +907,6 @@ share/help/pl/eog/open.page
 share/help/pl/eog/plugin-exif-digital.page
 share/help/pl/eog/plugin-fullscreen-background.page
 share/help/pl/eog/plugin-fullscreen-double-click.page
-share/help/pl/eog/plugin-picasa.page
 share/help/pl/eog/plugin-python-console.page
 share/help/pl/eog/plugin-send-by-mail.page
 share/help/pl/eog/plugin-slideshow-shuffle.page
@@ -960,7 +915,6 @@ share/help/pl/eog/plugins.page
 share/help/pl/eog/preferences.page
 share/help/pl/eog/print.page
 share/help/pl/eog/rename-multiple.page
-share/help/pl/eog/shortcuts.page
 share/help/pl/eog/slideshow.page
 share/help/pl/eog/translate.page
 share/help/pl/eog/view.page
@@ -991,7 +945,6 @@ share/help/pt_BR/eog/open.page
 share/help/pt_BR/eog/plugin-exif-digital.page
 share/help/pt_BR/eog/plugin-fullscreen-background.page
 share/help/pt_BR/eog/plugin-fullscreen-double-click.page
-share/help/pt_BR/eog/plugin-picasa.page
 share/help/pt_BR/eog/plugin-python-console.page
 share/help/pt_BR/eog/plugin-send-by-mail.page
 share/help/pt_BR/eog/plugin-slideshow-shuffle.page
@@ -1000,7 +953,6 @@ share/help/pt_BR/eog/plugins.page
 share/help/pt_BR/eog/preferences.page
 share/help/pt_BR/eog/print.page
 share/help/pt_BR/eog/rename-multiple.page
-share/help/pt_BR/eog/shortcuts.page
 share/help/pt_BR/eog/slideshow.page
 share/help/pt_BR/eog/translate.page
 share/help/pt_BR/eog/view.page
@@ -1031,7 +983,6 @@ share/help/ro/eog/open.page
 share/help/ro/eog/plugin-exif-digital.page
 share/help/ro/eog/plugin-fullscreen-background.page
 share/help/ro/eog/plugin-fullscreen-double-click.page
-share/help/ro/eog/plugin-picasa.page
 share/help/ro/eog/plugin-python-console.page
 share/help/ro/eog/plugin-send-by-mail.page
 share/help/ro/eog/plugin-slideshow-shuffle.page
@@ -1040,7 +991,6 @@ share/help/ro/eog/plugins.page
 share/help/ro/eog/preferences.page
 share/help/ro/eog/print.page
 share/help/ro/eog/rename-multiple.page
-share/help/ro/eog/shortcuts.page
 share/help/ro/eog/slideshow.page
 share/help/ro/eog/translate.page
 share/help/ro/eog/view.page
@@ -1071,7 +1021,6 @@ share/help/ru/eog/open.page
 share/help/ru/eog/plugin-exif-digital.page
 share/help/ru/eog/plugin-fullscreen-background.page
 share/help/ru/eog/plugin-fullscreen-double-click.page
-share/help/ru/eog/plugin-picasa.page
 share/help/ru/eog/plugin-python-console.page
 share/help/ru/eog/plugin-send-by-mail.page
 share/help/ru/eog/plugin-slideshow-shuffle.page
@@ -1080,7 +1029,6 @@ share/help/ru/eog/plugins.page
 share/help/ru/eog/preferences.page
 share/help/ru/eog/print.page
 share/help/ru/eog/rename-multiple.page
-share/help/ru/eog/shortcuts.page
 share/help/ru/eog/slideshow.page
 share/help/ru/eog/translate.page
 share/help/ru/eog/view.page
@@ -1111,7 +1059,6 @@ share/help/sl/eog/open.page
 share/help/sl/eog/plugin-exif-digital.page
 share/help/sl/eog/plugin-fullscreen-background.page
 share/help/sl/eog/plugin-fullscreen-double-click.page
-share/help/sl/eog/plugin-picasa.page
 share/help/sl/eog/plugin-python-console.page
 share/help/sl/eog/plugin-send-by-mail.page
 share/help/sl/eog/plugin-slideshow-shuffle.page
@@ -1120,7 +1067,6 @@ share/help/sl/eog/plugins.page
 share/help/sl/eog/preferences.page
 share/help/sl/eog/print.page
 share/help/sl/eog/rename-multiple.page
-share/help/sl/eog/shortcuts.page
 share/help/sl/eog/slideshow.page
 share/help/sl/eog/translate.page
 share/help/sl/eog/view.page
@@ -1151,7 +1097,6 @@ share/help/sv/eog/open.page
 share/help/sv/eog/plugin-exif-digital.page
 share/help/sv/eog/plugin-fullscreen-background.page
 share/help/sv/eog/plugin-fullscreen-double-click.page
-share/help/sv/eog/plugin-picasa.page
 share/help/sv/eog/plugin-python-console.page
 share/help/sv/eog/plugin-send-by-mail.page
 share/help/sv/eog/plugin-slideshow-shuffle.page
@@ -1160,7 +1105,6 @@ share/help/sv/eog/plugins.page
 share/help/sv/eog/preferences.page
 share/help/sv/eog/print.page
 share/help/sv/eog/rename-multiple.page
-share/help/sv/eog/shortcuts.page
 share/help/sv/eog/slideshow.page
 share/help/sv/eog/translate.page
 share/help/sv/eog/view.page
@@ -1191,7 +1135,6 @@ share/help/te/eog/open.page
 share/help/te/eog/plugin-exif-digital.page
 share/help/te/eog/plugin-fullscreen-background.page
 share/help/te/eog/plugin-fullscreen-double-click.page
-share/help/te/eog/plugin-picasa.page
 share/help/te/eog/plugin-python-console.page
 share/help/te/eog/plugin-send-by-mail.page
 share/help/te/eog/plugin-slideshow-shuffle.page
@@ -1200,7 +1143,6 @@ share/help/te/eog/plugins.page
 share/help/te/eog/preferences.page
 share/help/te/eog/print.page
 share/help/te/eog/rename-multiple.page
-share/help/te/eog/shortcuts.page
 share/help/te/eog/slideshow.page
 share/help/te/eog/translate.page
 share/help/te/eog/view.page
@@ -1231,7 +1173,6 @@ share/help/th/eog/open.page
 share/help/th/eog/plugin-exif-digital.page
 share/help/th/eog/plugin-fullscreen-background.page
 share/help/th/eog/plugin-fullscreen-double-click.page
-share/help/th/eog/plugin-picasa.page
 share/help/th/eog/plugin-python-console.page
 share/help/th/eog/plugin-send-by-mail.page
 share/help/th/eog/plugin-slideshow-shuffle.page
@@ -1240,7 +1181,6 @@ share/help/th/eog/plugins.page
 share/help/th/eog/preferences.page
 share/help/th/eog/print.page
 share/help/th/eog/rename-multiple.page
-share/help/th/eog/shortcuts.page
 share/help/th/eog/slideshow.page
 share/help/th/eog/translate.page
 share/help/th/eog/view.page
@@ -1271,7 +1211,6 @@ share/help/uk/eog/open.page
 share/help/uk/eog/plugin-exif-digital.page
 share/help/uk/eog/plugin-fullscreen-background.page
 share/help/uk/eog/plugin-fullscreen-double-click.page
-share/help/uk/eog/plugin-picasa.page
 share/help/uk/eog/plugin-python-console.page
 share/help/uk/eog/plugin-send-by-mail.page
 share/help/uk/eog/plugin-slideshow-shuffle.page
@@ -1280,7 +1219,6 @@ share/help/uk/eog/plugins.page
 share/help/uk/eog/preferences.page
 share/help/uk/eog/print.page
 share/help/uk/eog/rename-multiple.page
-share/help/uk/eog/shortcuts.page
 share/help/uk/eog/slideshow.page
 share/help/uk/eog/translate.page
 share/help/uk/eog/view.page
@@ -1311,7 +1249,6 @@ share/help/zh_CN/eog/open.page
 share/help/zh_CN/eog/plugin-exif-digital.page
 share/help/zh_CN/eog/plugin-fullscreen-background.page
 share/help/zh_CN/eog/plugin-fullscreen-double-click.page
-share/help/zh_CN/eog/plugin-picasa.page
 share/help/zh_CN/eog/plugin-python-console.page
 share/help/zh_CN/eog/plugin-send-by-mail.page
 share/help/zh_CN/eog/plugin-slideshow-shuffle.page
@@ -1320,7 +1257,6 @@ share/help/zh_CN/eog/plugins.page
 share/help/zh_CN/eog/preferences.page
 share/help/zh_CN/eog/print.page
 share/help/zh_CN/eog/rename-multiple.page
-share/help/zh_CN/eog/shortcuts.page
 share/help/zh_CN/eog/slideshow.page
 share/help/zh_CN/eog/translate.page
 share/help/zh_CN/eog/view.page
@@ -1351,7 +1287,6 @@ share/help/zh_TW/eog/open.page
 share/help/zh_TW/eog/plugin-exif-digital.page
 share/help/zh_TW/eog/plugin-fullscreen-background.page
 share/help/zh_TW/eog/plugin-fullscreen-double-click.page
-share/help/zh_TW/eog/plugin-picasa.page
 share/help/zh_TW/eog/plugin-python-console.page
 share/help/zh_TW/eog/plugin-send-by-mail.page
 share/help/zh_TW/eog/plugin-slideshow-shuffle.page
@@ -1360,7 +1295,6 @@ share/help/zh_TW/eog/plugins.page
 share/help/zh_TW/eog/preferences.page
 share/help/zh_TW/eog/print.page
 share/help/zh_TW/eog/rename-multiple.page
-share/help/zh_TW/eog/shortcuts.page
 share/help/zh_TW/eog/slideshow.page
 share/help/zh_TW/eog/translate.page
 share/help/zh_TW/eog/view.page
@@ -1368,8 +1302,6 @@ share/help/zh_TW/eog/zoom.page
 share/icons/hicolor/scalable/apps/org.gnome.eog.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.eog.svg
 share/icons/hicolor/symbolic/apps/org.gnome.eog-symbolic.svg
-share/locale/ckb/LC_MESSAGES/eog.mo
-share/locale/mjw/LC_MESSAGES/eog.mo
 share/locale/af/LC_MESSAGES/eog.mo
 share/locale/am/LC_MESSAGES/eog.mo
 share/locale/an/LC_MESSAGES/eog.mo
@@ -1386,6 +1318,7 @@ share/locale/br/LC_MESSAGES/eog.mo
 share/locale/bs/LC_MESSAGES/eog.mo
 share/locale/ca/LC_MESSAGES/eog.mo
 share/locale/ca@valencia/LC_MESSAGES/eog.mo
+share/locale/ckb/LC_MESSAGES/eog.mo
 share/locale/cs/LC_MESSAGES/eog.mo
 share/locale/cy/LC_MESSAGES/eog.mo
 share/locale/da/LC_MESSAGES/eog.mo
@@ -1427,6 +1360,7 @@ share/locale/lt/LC_MESSAGES/eog.mo
 share/locale/lv/LC_MESSAGES/eog.mo
 share/locale/mai/LC_MESSAGES/eog.mo
 share/locale/mg/LC_MESSAGES/eog.mo
+share/locale/mjw/LC_MESSAGES/eog.mo
 share/locale/mk/LC_MESSAGES/eog.mo
 share/locale/ml/LC_MESSAGES/eog.mo
 share/locale/mn/LC_MESSAGES/eog.mo
