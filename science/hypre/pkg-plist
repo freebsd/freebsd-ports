@@ -46,4 +46,4 @@ include/seq_mv.h
 include/temp_multivector.h
 lib/libHYPRE.so
 lib/libHYPRE.so.2
-lib/libHYPRE.so.2.20
+lib/libHYPRE.so.2.21
