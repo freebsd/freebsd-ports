@@ -1,5 +1,14 @@
 --- SConstruct.orig	2016-01-10 04:35:56 UTC
 +++ SConstruct
+@@ -21,7 +21,7 @@ scons_version=(1,2,0)
+ try:
+     EnsureSConsVersion(*scons_version)
+ except TypeError:
+-    print 'SCons %d.%d.%d or greater is required, but you have an older version' % scons_version
++    print('SCons %d.%d.%d or greater is required, but you have an older version' % scons_version)
+     Exit(2)
+ 
+ opts = Variables()
 @@ -38,7 +38,7 @@ opts.AddVariables(
    BoolVariable('libkate', 'enable libkate support', 1),
    BoolVariable('crossmingw', 'Set to 1 for crosscompile with mingw', 0)
@@ -9,6 +18,42 @@
  Help(opts.GenerateHelpText(env))
  
  pkg_flags="--cflags --libs"
+@@ -119,29 +119,29 @@ if env["build_ffmpeg"]:
+ if not env.GetOption('clean'):
+   pkgconfig_version='0.15.0'
+   if not conf.CheckPKGConfig(pkgconfig_version): 
+-     print 'pkg-config >= %s not found.' % pkgconfig_version 
++     print('pkg-config >= %s not found.' % pkgconfig_version )
+      Exit(1)
+ 
+   if not conf.CheckPKG("ogg >= 1.1"): 
+-    print 'ogg >= 1.1 missing'
++    print('ogg >= 1.1 missing')
+     Exit(1) 
+ 
+   if not conf.CheckPKG("vorbis"): 
+-    print 'vorbis missing'
++    print('vorbis missing')
+     Exit(1) 
+ 
+   if not conf.CheckPKG("vorbisenc"): 
+-    print 'vorbisenc missing'
++    print('vorbisenc missing')
+     Exit(1) 
+ 
+   if not conf.CheckPKG("theoraenc >= 1.1.0"): 
+-    print 'theoraenc >= 1.1.0 missing'
++    print('theoraenc >= 1.1.0 missing')
+     Exit(1) 
+ 
+   XIPH_LIBS="ogg >= 1.1 vorbis vorbisenc theoraenc >= 1.1.0"
+ 
+   if not conf.CheckPKG(XIPH_LIBS): 
+-    print 'some xiph libs are missing, ffmpeg2theora depends on %s' % XIPH_LIBS
++    print('some xiph libs are missing, ffmpeg2theora depends on %s' % XIPH_LIBS)
+     Exit(1) 
+   ParsePKGConfig(env, XIPH_LIBS)
+ 
 @@ -152,7 +152,6 @@ if not env.GetOption('clean'):
        "libavcodec >= 52.30.0",
        "libpostproc",
@@ -17,7 +62,35 @@
        "libavutil",
    ]
    if os.path.exists("./ffmpeg"):
-@@ -214,9 +213,8 @@ if not env.GetOption('clean'):
+@@ -177,13 +176,13 @@ if not env.GetOption('clean'):
+     FFMPEG_LIBS.append('libavresample')
+ 
+   if not conf.CheckPKG(' '.join(FFMPEG_LIBS)): 
+-    print """
++    print("""
+         Could not find %s.
+         You can install it via
+          sudo apt-get install %s
+         or update PKG_CONFIG_PATH to point to ffmpeg's source folder
+         or run ./get_ffmpeg.sh (for more information see INSTALL)
+-    """ %(" ".join(FFMPEG_LIBS), " ".join(["%s-dev"%l.split()[0] for l in FFMPEG_LIBS]))
++    """ %(" ".join(FFMPEG_LIBS), " ".join(["%s-dev"%l.split()[0] for l in FFMPEG_LIBS])))
+     Exit(1) 
+ 
+   for lib in FFMPEG_LIBS:
+@@ -204,19 +203,18 @@ if not env.GetOption('clean'):
+       ParsePKGConfig(env, KATE_LIBS)
+       env.Append(CCFLAGS=['-DHAVE_KATE', '-DHAVE_OGGKATE'])
+     else:
+-      print """
++      print("""
+           Could not find libkate. Subtitles support will be disabled.
+           You can also run ./get_libkate.sh (for more information see INSTALL)
+           or update PKG_CONFIG_PATH to point to libkate's source folder
+-      """
++      """)
+ 
+   if conf.CheckCHeader('iconv.h'):
        env.Append(CCFLAGS=[
          '-DHAVE_ICONV'
        ])
