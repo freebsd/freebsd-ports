@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Cython-${PORTVERSION}
 
-MAINTAINER=	vmagerya@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for Writing C Extensions for the Python Language
 
 LICENSE=	APACHE20
