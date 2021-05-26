@@ -179,6 +179,7 @@
     SUBDIR += subread
     SUBDIR += tRNAscan-SE
     SUBDIR += tabixpp
+    SUBDIR += taxonkit
     SUBDIR += treekin
     SUBDIR += treepuzzle
     SUBDIR += trimadap
