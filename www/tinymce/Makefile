@@ -1,7 +1,7 @@
 # Created by: Nick Hilliard <nick@foobar.org>
 
 PORTNAME=	tinymce
-PORTVERSION=	5.8.0
+PORTVERSION=	5.8.1
 CATEGORIES=	www
 MASTER_SITES=	http://download.tiny.cloud/tinymce/community/ \
 		LOCAL/sunpoet
