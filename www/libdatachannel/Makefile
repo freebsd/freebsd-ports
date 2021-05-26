@@ -23,10 +23,16 @@ GH_TUPLE=	\
 
 CMAKE_ON=	USE_SYSTEM_SRTP NO_EXAMPLES NO_TESTS
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_11=	OpenSSL is too old: use of undeclared identifier 'X509_getm_notBefore'
+.endif
+
 do-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DNO_TESTS:BOOL=OFF ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		./tests-${DISTVERSION:C/-.*//}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
