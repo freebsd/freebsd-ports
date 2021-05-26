@@ -1,9 +1,10 @@
-PORTNAME=	jupyter_client
+PORTNAME=	jupyter-client
 PORTVERSION=	6.1.12
 PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	jupyter_client-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Jupyter protocol implementation and client libraries
