@@ -1,7 +1,7 @@
 PORTNAME=	nfy
 DISTVERSION=	0.1
 CATEGORIES=	x11
-MASTER_SITES=	https://ftp.christosmarg.xyz/${PORTNAME}/
+MASTER_SITES=	https://ftp.margiolis.net/${PORTNAME}/
 
 MAINTAINER=	christos@christosmarg.xyz
 COMMENT=	Minimal and daemonless notification program for X
