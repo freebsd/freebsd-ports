@@ -1,6 +1,14 @@
 --- SConstruct.orig	2014-11-14 14:17:48 UTC
 +++ SConstruct
-@@ -215,10 +215,11 @@ def CreateEnvironment():
+@@ -1,6 +1,7 @@
+ import platform
+ import os
+ import sys
++from functools import reduce
+ 
+ 
+ version = "2.0.4"
+@@ -215,10 +216,11 @@ def CreateEnvironment():
          make = 'gmake'
          tar = 'gtar'
      libln_builder = Builder(action='cd ${TARGET.dir} && ln -s ${SOURCE.name} ${TARGET.name}')
@@ -15,7 +23,16 @@
      env.Append(BUILDERS={'InstallAsSymlink': libln_builder})
      env['ENDIANNESS'] = "be" if sys.byteorder == "big" else "le"
      return env
-@@ -375,7 +376,6 @@ def DoConfigure():
+@@ -227,7 +229,7 @@ def CreateEnvironment():
+ def PassVariables(envvar, env):
+     for (x, y) in envvar:
+         if x in os.environ:
+-            print 'Warning: you\'ve set %s in the environmental variable!' % x
++            print('Warning: you\'ve set %s in the environmental variable!' % x)
+             env[y] = os.environ[x]
+ 
+ env = CreateEnvironment()
+@@ -375,7 +377,6 @@ def DoConfigure():
      conf.CheckFunc('getopt_long')
      conf.CheckFunc('getpagesize')
      conf.CheckFunc('get_opt')
@@ -23,7 +40,7 @@
      conf.CheckCHeader('inttypes.h')
      conf.CheckCHeader('locale.h')
      conf.CheckCHeader('libintl.h')
-@@ -463,7 +463,7 @@ def DoInstall():
+@@ -463,7 +464,7 @@ def DoInstall():
                                   lib_target_bin),
              ]
  

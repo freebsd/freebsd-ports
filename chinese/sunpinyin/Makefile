@@ -18,7 +18,7 @@ NOT_FOR_ARCHS_REASON=	./config.h:119:3: can not detect the endianness!
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-USES=		gmake iconv perl5 pkgconfig python:2.7 scons:python2 shebangfix
+USES=		gmake iconv perl5 pkgconfig python:2.7 scons shebangfix
 
 USE_GITHUB=	yes
 GH_TAGNAME=	a8bd811
