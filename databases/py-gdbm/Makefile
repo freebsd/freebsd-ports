@@ -24,7 +24,7 @@ PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHONPREFIX_LIBDIR}/lib-dynload
 
 DIST_SUBDIR=	python
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
-WRKSRC=		${WRKDIR}/Python-${DISTVERSION}/Modules
+WRKSRC_SUBDIR=	Modules
 
 post-extract:
 	@${CP} ${FILESDIR}/setup3.py ${WRKSRC}/setup.py
