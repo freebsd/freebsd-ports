@@ -1,7 +1,7 @@
 # Created by: Alessandro Sagratini <ale_sagra@hotmail.com>
 
 PORTNAME=	oci
-PORTVERSION=	2.13.0
+DISTVERSION=	2.14.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
