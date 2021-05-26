@@ -1,7 +1,7 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 
 PORTNAME=	gnome-sudoku
-PORTVERSION=	3.38.0
+PORTVERSION=	40.1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
