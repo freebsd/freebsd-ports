@@ -1,8 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	Algorithm-Evolutionary
-PORTVERSION=	0.80
-PORTREVISION=	1
+PORTVERSION=	0.82.1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +10,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library for doing evolutionary computation in Perl
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Algorithm-Permute>=0.01:devel/p5-Algorithm-Permute \
@@ -32,5 +32,7 @@ TEST_DEPENDS=	p5-Pod-Escapes>=0:textproc/p5-Pod-Escapes \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
