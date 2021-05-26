@@ -1,7 +1,7 @@
 # Created by: Christoph Kick
 
 PORTNAME=	ffi
-PORTVERSION=	1.15.0
+PORTVERSION=	1.15.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
