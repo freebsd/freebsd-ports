@@ -1,0 +1,9 @@
+Tepl is a library that eases the development of GtkSourceView-based text
+editors and IDEs. Tepl is the acronym for "Text editor product line".
+It serves as an incubator for GtkSourceView.
+
+Tepl was previously named Gtef (GTK+ text editor framework). The project has
+been renamed in June 2017 to have a more beautiful name. The end of Tepl is
+pronounced like in "apple".
+
+WWW: https://wiki.gnome.org/Projects/Tepl

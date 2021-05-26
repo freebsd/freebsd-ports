@@ -200,6 +200,7 @@
     SUBDIR += soqt
     SUBDIR += swt
     SUBDIR += tepl
+    SUBDIR += tepl6
     SUBDIR += termit
     SUBDIR += tix
     SUBDIR += tk-wrapper
