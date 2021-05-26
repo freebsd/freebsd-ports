@@ -1,5 +1,5 @@
 PORTNAME=	imhex
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg
@@ -23,9 +23,10 @@ BUILD_DEPENDS=	glm>0:math/glm \
 		nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libcapstone.so:devel/capstone4 \
 		libcurl.so:ftp/curl \
-		libmbedtls.so:security/mbedtls \
 		libfreetype.so:print/freetype2 \
 		libglfw.so:graphics/glfw \
+		libharfbuzz.so:print/harfbuzz \
+		libmbedtls.so:security/mbedtls \
 		libtre.so:textproc/libtre
 
 USES=		cmake pkgconfig python:3.8+ xorg
@@ -41,6 +42,8 @@ GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledi
 GH_TAG_FMT=	6271406
 GH_TAG_NATIVEFILEDIALOG=	300203a
 GH_TAG_YARA=	1842271
+
+CMAKE_ARGS=	-DUSE_SYSTEM_CURL=ON
 
 PORTDOCS=	README.md
 
