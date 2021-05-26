@@ -1,8 +1,10 @@
 PORTNAME=	setuptools
-PORTVERSION=	57.0.0
+PORTVERSION=	44.0.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	44
 DIST_SUBDIR=	python
 
 # note: before committing to this port, contact portmgr to arrange for an
@@ -14,7 +16,7 @@ COMMENT=	Python packages installer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python:2.7 zip
 USE_PYTHON=	allflavors autoplist concurrent distutils
 
 MAKE_ENV+=	SETUPTOOLS_DISABLE_VERSIONED_EASY_INSTALL_SCRIPT=1
