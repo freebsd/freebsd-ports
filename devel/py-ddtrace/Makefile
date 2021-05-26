@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	ddtrace
-PORTVERSION=	0.48.4
+PORTVERSION=	0.49.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,10 +27,16 @@ OPENTRACING_DESC=	OpenTracing support
 
 OPENTRACING_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}opentracing>=2.0.0:devel/py-opentracing@${PY_FLAVOR}
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 30700
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pep562>=0:devel/py-pep562@${PY_FLAVOR}
+.endif
+
 post-patch:
 	@${RM} ${WRKSRC}/ddtrace/profiling/collector/stack.c
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/ddtrace/vendor/*/*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
