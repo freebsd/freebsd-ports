@@ -90,8 +90,11 @@ pre-build:
 	@${RM} -r ${WRKSRC}/docs/gtk.info*
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-4.0/engines
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-4.0/loaders
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-4.0/modules
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-4.0/${GTK4_VERSION}/engines
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-4.0/${GTK4_VERSION}/loaders
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-4.0/${GTK4_VERSION}/modules
 
 .include <bsd.port.mk>
