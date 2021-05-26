@@ -1,7 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 
 PORTNAME=	faraday
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,9 @@ COMMENT=	HTTP/REST API client library in Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-faraday-excon>=1.1<2:devel/rubygem-faraday-excon \
+RUN_DEPENDS=	rubygem-faraday-em_http>=1.0<2:www/rubygem-faraday-em_http \
+		rubygem-faraday-em_synchrony>=1.0<2:www/rubygem-faraday-em_synchrony \
+		rubygem-faraday-excon>=1.1<2:devel/rubygem-faraday-excon \
 		rubygem-faraday-net_http>=1.0<2:www/rubygem-faraday-net_http \
 		rubygem-faraday-net_http_persistent>=1.1<2:www/rubygem-faraday-net_http_persistent \
 		rubygem-multipart-post>=1.2<3:www/rubygem-multipart-post \
