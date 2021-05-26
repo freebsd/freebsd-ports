@@ -21,7 +21,7 @@ GH_ACCOUNT=	llvm-mirror
 GH_TAGNAME=	9f6204e
 
 # ninja based build is broken since commit 598792bc (16 sep 2016)
-USES=		gmake python:2.7,build gmake
+USES=		gmake python:build
 USE_LDCONFIG=	yes
 MAKE_ENV=	MAKE=${GMAKE} DESTDIR=${STAGEDIR}
 ALL_TARGET=
