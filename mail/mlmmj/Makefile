@@ -2,7 +2,7 @@
 
 PORTNAME=	mlmmj
 PORTVERSION=	1.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://mlmmj.org/releases/
 
