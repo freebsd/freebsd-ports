@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	tins
-PORTVERSION=	1.29.0
+PORTVERSION=	1.29.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
