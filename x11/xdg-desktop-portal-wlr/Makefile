@@ -1,11 +1,7 @@
 PORTNAME=	xdg-desktop-portal-wlr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
-PORTREVISION=	1
+DISTVERSION=	0.4.0
 CATEGORIES=	x11
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	ebb50839a560.patch:-p1 # https://github.com/emersion/xdg-desktop-portal-wlr/pull/114
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	xdg-desktop-portal backend for wlroots
@@ -15,12 +11,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>=1.14:graphics/wayland-protocols
 LIB_DEPENDS=	libbasu.so:devel/basu \
-		libiniparser.so:devel/iniparser \
+		libinih.so:devel/inih \
 		libepoll-shim.so:devel/libepoll-shim \
 		libwayland-client.so:graphics/wayland \
 		libpipewire-0.3.so:multimedia/pipewire
 
-USES=		compiler:c11 localbase:ldflags meson pkgconfig
+USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	emersion
 MESON_ARGS=	-Dsd-bus-provider=basu
