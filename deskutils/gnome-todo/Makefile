@@ -27,7 +27,6 @@ USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
 USE_GNOME=	cairo evolutiondataserver3 gnomedesktop3 gtk40 introspection \
 		libadwaita
 USE_LDCONFIG=	yes
-#INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.gnome.todo.gschema.xml
 
