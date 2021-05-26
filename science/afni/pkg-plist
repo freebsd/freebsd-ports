@@ -574,6 +574,7 @@ bin/imstack
 bin/imstat
 bin/imupsam
 bin/inspec
+bin/lesion_align
 bin/make_pq_script.py
 bin/make_random_timing.py
 bin/make_stim_times.py
