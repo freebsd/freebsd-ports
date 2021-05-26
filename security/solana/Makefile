@@ -1,6 +1,6 @@
 PORTNAME=	solana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.9
+DISTVERSION=	1.6.10
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	Fails on 32-bit systems: https://github.com/solana-labs/solana/issues/16811
 
-BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 LIB_DEPENDS=	libhidapi.so:comms/hidapi
 
 USES=		cargo pkgconfig ssl
@@ -421,7 +421,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		solana-logger-1.6.4 \
 		solana-program-1.6.4 \
 		solana-sdk-macro-1.6.4 \
-		solana_rbpf-0.2.8 \
+		solana_rbpf-0.2.9 \
 		spin-0.5.2 \
 		spl-associated-token-account-1.0.2 \
 		spl-memo-3.0.1 \
@@ -561,7 +561,9 @@ XARCH=		${ARCH:S/amd64/x86_64/:tu}
 MAKE_ENV=	${XARCH}_UNKNOWN_FREEBSD_OPENSSL_INCLUDE_DIR=${OPENSSLINC} \
 		${XARCH}_UNKNOWN_FREEBSD_OPENSSL_LIB_DIR=${OPENSSLLIB}
 
-BINARY_ALIAS=	llvm-config=${PREFIX}/bin/llvm-config${LLVM_DEFAULT}
+LLVM_VERSION=	10
+
+BINARY_ALIAS=	llvm-config=${PREFIX}/bin/llvm-config${LLVM_VERSION}
 
 do-install:
 	for f in ${WRKDIR}/target/release/${PORTNAME}-*; do \
