@@ -2307,6 +2307,7 @@ lib/wine/%%WINEARCH%%-unix/wordpad.exe.so
 %%WINE64%%lib/wine/%%WINEARCH%%-unix/wow64cpu.dll.so
 lib/wine/%%WINEARCH%%-unix/wpc.dll.so
 lib/wine/%%WINEARCH%%-unix/wpcap.dll.so
+lib/wine/%%WINEARCH%%-unix/wpcap.so
 lib/wine/%%WINEARCH%%-unix/write.exe.so
 lib/wine/%%WINEARCH%%-unix/ws2_32.dll.so
 lib/wine/%%WINEARCH%%-unix/wscript.exe.so
