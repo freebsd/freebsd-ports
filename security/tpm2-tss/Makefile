@@ -1,5 +1,5 @@
 PORTNAME=	tpm2-tss
-DISTVERSION=	2.4.5
+DISTVERSION=	3.1.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/tpm2-software/tpm2-tss/releases/download/${DISTVERSION}/
 
@@ -17,7 +17,11 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBCRYPTO_CFLAGS="-I${OPENSSLINC}" LIBCRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto" \
 		EXTRA_CFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ARGS=	--disable-doxygen-doc --disable-dependency-tracking --enable-valgrind=no
+
+KEYDIR=		/var/lib/tpm2-tss/system/keystore
+RUNDIR=		/var/run/tpm2-tss/eventlog
+CONFIGURE_ARGS=	--disable-doxygen-doc --disable-dependency-tracking --enable-valgrind=no \
+		--with-runstatedir=${RUNDIR}
 
 INSTALL_TARGET=	install-strip
 
@@ -25,5 +29,7 @@ post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/lib/udev/rules.d/tpm-udev.rules
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/udev/rules.d
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/udev
+	@${MKDIR} ${STAGEDIR}${RUNDIR}
+	@${MKDIR} ${STAGEDIR}${KEYDIR}
 
 .include <bsd.port.mk>

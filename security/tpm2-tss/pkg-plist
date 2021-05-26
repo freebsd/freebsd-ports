@@ -1,3 +1,9 @@
+@dir /var/lib/tpm2-tss/system/keystore
+@dir /var/lib/tpm2-tss/system
+@dir /var/lib/tpm2-tss
+@dir /var/lib
+@dir /var/run/tpm2-tss/eventlog
+@dir /var/run/tpm2-tss
 etc/sysusers.d/tpm2-tss.conf
 etc/tmpfiles.d/tpm2-tss-fapi.conf
 %%ETCDIR%%/fapi-config.json
@@ -10,8 +16,11 @@ include/tss2/tss2_mu.h
 include/tss2/tss2_rc.h
 include/tss2/tss2_sys.h
 include/tss2/tss2_tcti.h
+include/tss2/tss2_tcti_cmd.h
 include/tss2/tss2_tcti_device.h
 include/tss2/tss2_tcti_mssim.h
+include/tss2/tss2_tcti_pcap.h
+include/tss2/tss2_tcti_swtpm.h
 include/tss2/tss2_tctildr.h
 include/tss2/tss2_tpm2_types.h
 lib/libtss2-esys.a
@@ -20,8 +29,8 @@ lib/libtss2-esys.so.0
 lib/libtss2-esys.so.0.0.0
 lib/libtss2-fapi.a
 lib/libtss2-fapi.so
-lib/libtss2-fapi.so.0
-lib/libtss2-fapi.so.0.0.0
+lib/libtss2-fapi.so.1
+lib/libtss2-fapi.so.1.0.0
 lib/libtss2-mu.a
 lib/libtss2-mu.so
 lib/libtss2-mu.so.0
@@ -32,8 +41,12 @@ lib/libtss2-rc.so.0
 lib/libtss2-rc.so.0.0.0
 lib/libtss2-sys.a
 lib/libtss2-sys.so
-lib/libtss2-sys.so.0
-lib/libtss2-sys.so.0.0.0
+lib/libtss2-sys.so.1
+lib/libtss2-sys.so.1.0.0
+lib/libtss2-tcti-cmd.a
+lib/libtss2-tcti-cmd.so
+lib/libtss2-tcti-cmd.so.0
+lib/libtss2-tcti-cmd.so.0.0.0
 lib/libtss2-tcti-device.a
 lib/libtss2-tcti-device.so
 lib/libtss2-tcti-device.so.0
@@ -42,6 +55,14 @@ lib/libtss2-tcti-mssim.a
 lib/libtss2-tcti-mssim.so
 lib/libtss2-tcti-mssim.so.0
 lib/libtss2-tcti-mssim.so.0.0.0
+lib/libtss2-tcti-pcap.a
+lib/libtss2-tcti-pcap.so
+lib/libtss2-tcti-pcap.so.0
+lib/libtss2-tcti-pcap.so.0.0.0
+lib/libtss2-tcti-swtpm.a
+lib/libtss2-tcti-swtpm.so
+lib/libtss2-tcti-swtpm.so.0
+lib/libtss2-tcti-swtpm.so.0.0.0
 lib/libtss2-tctildr.a
 lib/libtss2-tctildr.so
 lib/libtss2-tctildr.so.0
@@ -51,18 +72,23 @@ libdata/pkgconfig/tss2-fapi.pc
 libdata/pkgconfig/tss2-mu.pc
 libdata/pkgconfig/tss2-rc.pc
 libdata/pkgconfig/tss2-sys.pc
+libdata/pkgconfig/tss2-tcti-cmd.pc
 libdata/pkgconfig/tss2-tcti-device.pc
 libdata/pkgconfig/tss2-tcti-mssim.pc
+libdata/pkgconfig/tss2-tcti-pcap.pc
+libdata/pkgconfig/tss2-tcti-swtpm.pc
 libdata/pkgconfig/tss2-tctildr.pc
 man/man3/Tss2_TctiLdr_Finalize.3.gz
 man/man3/Tss2_TctiLdr_FreeInfo.3.gz
 man/man3/Tss2_TctiLdr_GetInfo.3.gz
 man/man3/Tss2_TctiLdr_Initialize.3.gz
-man/man3/Tss2_TctiLdr_Initialize_Ex.3.gz
+man/man3/Tss2_Tcti_Cmd_Init.3.gz
 man/man3/Tss2_Tcti_Device_Init.3.gz
 man/man3/Tss2_Tcti_Mssim_Init.3.gz
 man/man5/fapi-config.5.gz
 man/man5/fapi-profile.5.gz
+man/man7/tss2-tcti-cmd.7.gz
 man/man7/tss2-tcti-device.7.gz
 man/man7/tss2-tcti-mssim.7.gz
+man/man7/tss2-tcti-swtpm.7.gz
 man/man7/tss2-tctildr.7.gz
