@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	aws-sdk-s3
-PORTVERSION=	1.94.1
+PORTVERSION=	1.95.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
