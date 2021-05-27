@@ -76,6 +76,46 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d1ac6a6a-bea8-11eb-b87a-901b0ef719ab">
+    <topic>FreeBSD-kernel -- SMAP bypass</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.0</ge><lt>13.0_1</lt></range>
+	<range><ge>12.2</ge><lt>12.2_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The FreeBSD kernel enables SMAP during boot when the CPU reports that
+	the SMAP capability is present.  Subroutines such as copyin() and
+	copyout() are responsible for disabling SMAP around the sections of code
+	that perform user memory accesses.</p>
+	<p>Such subroutines must handle page faults triggered when user memory is
+	not mapped.  The kernel's page fault handler checks the validity of the
+	fault, and if it is indeed valid it will map a page and resume copying.
+	If the fault is invalid, the fault handler returns control to a
+	trampoline which aborts the operation and causes an error to be
+	returned.  In this second scenario, a bug in the implementation of SMAP
+	support meant that SMAP would remain disabled until the thread returns
+	to user mode.</p>
+	<h1>Impact:</h1>
+	<p>This bug may be used to bypass the protections provided by SMAP for the
+	duration of a system call.  It could thus be combined with other kernel
+	bugs to craft an exploit.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-29628</cvename>
+      <freebsdsa>SA-21:11.smap</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2021-05-27</discovery>
+      <entry>2021-05-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="674ed047-be0a-11eb-b927-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
