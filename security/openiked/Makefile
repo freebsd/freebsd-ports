@@ -11,6 +11,8 @@ LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		autoreconf libtool ssl
 
+CONFLICTS_INSTALL=		openiked-portable[0-9]*
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	xcllnt
 
