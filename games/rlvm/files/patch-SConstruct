@@ -1,4 +1,4 @@
---- SConstruct.orig	2021-08-10 14:26:06 UTC
+--- SConstruct.orig	2021-05-27 12:59:29 UTC
 +++ SConstruct
 @@ -19,8 +19,13 @@ AddOption('--fullstatic', action='store_true',
  
@@ -14,17 +14,15 @@
    LIBS = ["z"],
  
    LOCAL_LIBS = [],
-@@ -284,7 +289,8 @@ if not config.CheckGuichan():
- 
- # Get the configuration from sdl and freetype
+@@ -286,6 +291,7 @@ if not config.CheckGuichan():
  env.ParseConfig("sdl-config --cflags")
--env.ParseConfig("freetype-config --cflags --libs")
-+env.ParseConfig("pkg-config freetype2 --cflags --libs")
+ env.Append(CFLAGS=["-DFB_USE_FREETYPE"])
+ env.ParseConfig("pkg-config --cflags --libs freetype2")
 +config.CheckLibWithHeader('intl', 'libintl.h', "cpp")
  
- env = config.Finish()
  
-@@ -313,7 +319,6 @@ if GetOption('release'):
+ env = config.Finish()
+@@ -315,7 +321,6 @@ if GetOption('release'):
    # Now add release optimizations to the environment
    env.Append(
      CPPFLAGS = [
@@ -32,7 +30,7 @@
        "-DNDEBUG",
        "-DBOOST_DISABLE_ASSERTS"
      ]
-@@ -359,13 +364,7 @@ elif GetOption('pprof'):
+@@ -361,13 +366,7 @@ elif GetOption('pprof'):
               "profiler"]
    )
  else:
