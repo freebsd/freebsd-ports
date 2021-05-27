@@ -46,6 +46,7 @@ include/apache24/http_log.h
 include/apache24/http_main.h
 include/apache24/http_protocol.h
 include/apache24/http_request.h
+include/apache24/http_ssl.h
 include/apache24/http_vhost.h
 include/apache24/httpd.h
 include/apache24/mod_auth.h
