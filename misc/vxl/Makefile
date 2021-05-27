@@ -1,11 +1,13 @@
 PORTNAME=	vxl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.2-629
-DISTVERSIONSUFFIX=	-g9f915deec4
+DISTVERSION=	3.3.0
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ libraries for computer vision and image understanding
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/core/vxl_copyright.h
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
