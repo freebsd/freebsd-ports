@@ -6855,6 +6855,7 @@
     SUBDIR += smc
     SUBDIR += smv
     SUBDIR += soapui
+    SUBDIR += sobjectizer
     SUBDIR += socket_wrapper
     SUBDIR += sol2
     SUBDIR += sonar-scanner-cli

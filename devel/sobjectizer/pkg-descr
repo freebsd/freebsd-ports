@@ -1,0 +1,12 @@
+SObjectizer is one of the cross-platform and open-source actor frameworks
+for C++, yet it supports not only Actor Model, but also Publish-Subscribe
+Model and CSP-like channels.  The goal of SObjectizer is to significantly
+simplify development of concurrent and multithreaded applications in C++.
+
+SObjectizer allows to create a concurrent application as a set of agent-
+objects which interact with each other through asynchronous messages.
+It handles message dispatching and provides a working context for message
+processing, and allows to tune those things by supplying various ready-
+to-use dispatchers.
+
+WWW: https://stiffstream.com/en/products/sobjectizer.html
