@@ -19,7 +19,7 @@ _DEBUG_KMOD=	yes
 IGNORE=	USES=kmod takes either no arguments or 'debug'
 .endif
 
-.if !exists(${SRC_BASE}/sys/Makefile)
+.if !exists(${SRC_BASE}/sys/Makefile) && target(build)
 IGNORE=	requires kernel source files in SRC_BASE=${SRC_BASE}
 .endif
 
