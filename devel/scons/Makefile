@@ -13,7 +13,7 @@ COMMENT=	Build tool alternative to make
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:2.7+ shebangfix
+USES=		python:3.6+ shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
