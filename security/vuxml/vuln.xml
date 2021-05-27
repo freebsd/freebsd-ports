@@ -76,6 +76,48 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="107c7a76-beaa-11eb-b87a-901b0ef719ab">
+    <topic>FreeBSD -- Missing message validation in libradius(3)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.0</ge><lt>13.0_1</lt></range>
+	<range><ge>12.2</ge><lt>12.2_7</lt></range>
+	<range><ge>11.4</ge><lt>11.4_10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>libradius did not perform sufficient validation of received messages.</p>
+	<p>rad_get_attr(3) did not verify that the attribute length is valid before
+	subtracting the length of the Type and Length fields.  As a result, it
+	could return success while also providing a bogus length of SIZE_T_MAX -
+	2 for the Value field.</p>
+	<p>When processing attributes to find an optional authenticator,
+	is_valid_response() failed to verify that each attribute length is
+	non-zero and could thus enter an infinite loop.</p>
+	<h1>Impact:</h1>
+	<p>A server may use libradius(3) to process messages from RADIUS clients.
+	In this case, a malicious client could trigger a denial-of-service in
+	the server.  A client using libradius(3) to process messages from a
+	server is susceptible to the same problem.</p>
+	<p>The impact of the rad_get_attr(3) bug depends on how the returned length
+	is validated and used by the consumer.  It is possible that libradius(3)
+	applications will crash or enter an infinite loop when calling
+	rad_get_attr(3) on untrusted RADIUS messages.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-29629</cvename>
+      <freebsdsa>SA-21:12.libradius</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2021-05-27</discovery>
+      <entry>2021-05-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d1ac6a6a-bea8-11eb-b87a-901b0ef719ab">
     <topic>FreeBSD-kernel -- SMAP bypass</topic>
     <affects>
