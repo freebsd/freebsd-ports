@@ -1,3 +1,3 @@
-TIMESTAMP = 1596650554
-SHA256 (apache24/httpd-2.4.46.tar.bz2) = 740eddf6e1c641992b22359cabc66e6325868c3c5e2e3f98faf349b61ecf41ea
-SIZE (apache24/httpd-2.4.46.tar.bz2) = 7187805
+TIMESTAMP = 1621950856
+SHA256 (apache24/httpd-2.4.48.tar.bz2) = 1bc826e7b2e88108c7e4bf43c026636f77a41d849cfb667aa7b5c0b86dbf966c
+SIZE (apache24/httpd-2.4.48.tar.bz2) = 7194385
