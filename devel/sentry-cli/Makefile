@@ -1,5 +1,5 @@
 PORTNAME=	sentry-cli
-DISTVERSION=	1.64.2
+DISTVERSION=	1.65.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -168,7 +168,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.7.2 \
 		parking_lot_core-0.8.1 \
-		pdb-0.6.0 \
+		pdb-0.7.0 \
 		percent-encoding-1.0.1 \
 		percent-encoding-2.1.0 \
 		pest-2.1.3 \
@@ -257,9 +257,9 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		stable_deref_trait-1.2.0 \
 		string_cache-0.8.1 \
 		strsim-0.8.0 \
-		symbolic-8.0.5 \
-		symbolic-common-8.0.5 \
-		symbolic-debuginfo-8.0.5 \
+		symbolic-8.1.0 \
+		symbolic-common-8.1.0 \
+		symbolic-debuginfo-8.1.0 \
 		syn-0.15.44 \
 		syn-1.0.54 \
 		synstructure-0.12.4 \
