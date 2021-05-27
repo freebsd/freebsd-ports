@@ -67,6 +67,7 @@
     SUBDIR += libXaw
     SUBDIR += libXmu
     SUBDIR += libXt
+    SUBDIR += libadwaita
     SUBDIR += libdazzle
     SUBDIR += libgdiplus
     SUBDIR += libhandy
