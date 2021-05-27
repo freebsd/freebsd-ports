@@ -841,6 +841,7 @@
     SUBDIR += rocksndiamonds
     SUBDIR += rocksndiamonds-data
     SUBDIR += rottdc
+    SUBDIR += rpg-cli
     SUBDIR += rubix
     SUBDIR += rubygem-fortune_gem
     SUBDIR += rubygem-lolcat
