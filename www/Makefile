@@ -2309,6 +2309,7 @@
     SUBDIR += xapian-omega
     SUBDIR += xapian-omega12
     SUBDIR += xfce4-smartbookmark-plugin
+    SUBDIR += xh
     SUBDIR += xist
     SUBDIR += xoops
     SUBDIR += xsp
