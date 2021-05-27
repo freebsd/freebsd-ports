@@ -1,7 +1,7 @@
 # Created by: Neal Nelson <ports@nicandneal.net>
 
 PORTNAME=	nim
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.8
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
 
