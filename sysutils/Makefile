@@ -1222,6 +1222,7 @@
     SUBDIR += runit-faster
     SUBDIR += runj
     SUBDIR += runwhen
+    SUBDIR += rush
     SUBDIR += rw
     SUBDIR += s-tui
     SUBDIR += s6
