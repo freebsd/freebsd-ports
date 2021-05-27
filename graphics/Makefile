@@ -75,6 +75,7 @@
     SUBDIR += blend2d
     SUBDIR += blender
     SUBDIR += blender-doc
+    SUBDIR += blender-lts28
     SUBDIR += bmeps
     SUBDIR += bmp2html
     SUBDIR += bonzomatic
