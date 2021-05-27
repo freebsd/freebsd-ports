@@ -1,6 +1,7 @@
 PORTNAME=	phosh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +19,8 @@ LIB_DEPENDS=	libfeedback-0.0.so:accessibility/feedbackd \
 		libupower-glib.so:sysutils/upower \
 		libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	phoc:x11-wm/phoc \
-		gnome-session:x11/gnome-session
+		gnome-session:x11/gnome-session \
+		${LOCALBASE}/share/glib-2.0/schemas/org.gnome.shell.gschema.xml:x11/gnome-shell
 
 USES=		compiler:c11 gettext gnome meson pkgconfig python:build shebangfix
 USE_GITLAB=	yes
