@@ -1,7 +1,8 @@
 PORTNAME=	gi-docgen
 PORTVERSION=	2021.5
-CATEGORIES=	textproc
+CATEGORIES=	textproc python
 MASTER_SITES=	GNOME
+PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Documentation generator for GObject-based libraries
@@ -11,7 +12,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSES/Apache-2.0.txt
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markupsafe>0:textproc/py-markupsafe@${PY_FLAVOR} \
@@ -20,10 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>0:textproc/py-toml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typogrify>0:textproc/py-typogrify@${PY_FLAVOR}
 
-USES=		meson python:3.6+ shebangfix
-
-SHEBANG_FILES=	gi-docgen.py
-BINARY_ALIAS=	python3=${PYTHON_CMD}
+USES=		python:3.6+
+USE_PYTHON= 	autoplist distutils
 
 NO_ARCH=	yes
 
