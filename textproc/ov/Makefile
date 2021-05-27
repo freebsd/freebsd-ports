@@ -11,7 +11,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
+_BUILD_VERSION=		${DISTVERSIONFULL}
+_BUILD_REVISION=	5ea83bc
+
 GO_MODULE=	github.com/noborus/${PORTNAME}
+GO_BUILDFLAGS=	-ldflags "\
+		-s -w \
+		-X main.Version=${_BUILD_VERSION} \
+		-X main.Revision=${_BUILD_REVISION}"
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
