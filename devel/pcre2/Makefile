@@ -1,7 +1,7 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 PORTNAME=	pcre2
-PORTVERSION=	10.36
+PORTVERSION=	10.37
 CATEGORIES=	devel
 MASTER_SITES=	SF/pcre/${PORTNAME}/${PORTVERSION}
 
