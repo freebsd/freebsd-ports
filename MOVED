@@ -16338,3 +16338,4 @@ sysutils/ansible27|sysutils/ansible|2021-05-21|Has expired: Upstream support end
 sysutils/ansible28|sysutils/ansible|2021-05-21|Has expired: Upstream support ended; consider upgrading to sysutils/ansible
 devel/omnisharp-server||2021-05-23|Dead upstream, no depends in ports tree
 devel/py-jupyter_client|devel/py-jupyter-client|2021-05-26|Rename to match upstream naming
+textproc/gi-docgen|textproc/py-gi-docgen|2021-05-27|Follow standard python port conventions
