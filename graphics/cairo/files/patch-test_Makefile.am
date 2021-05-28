@@ -1,0 +1,14 @@
+https://gitlab.freedesktop.org/cairo/cairo/-/issues/101
+
+--- test/Makefile.am.orig	2021-05-28 10:52:08 UTC
++++ test/Makefile.am
+@@ -18,7 +18,9 @@ endif
+ endif
+ 
+ if CAIRO_HAS_GL_SURFACE
++if CAIRO_HAS_GLX_FUNCTIONS
+ test_sources += $(gl_surface_test_sources)
++endif
+ endif
+ 
+ if CAIRO_HAS_EGL_FUNCTIONS
