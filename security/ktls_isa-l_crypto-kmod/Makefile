@@ -33,6 +33,10 @@ PLIST_FILES=	${KMODDIR}/ktls_intel-isa-l.ko
 IGNORE=		requires KTLS support
 .endif
 
+.if ${OSVERSION} >= 1400016
+IGNORE=		is only supported on FreeBSD 13
+.endif
+
 post-extract:
 	${CP} ${FILESDIR}/* ${WRKSRC}/
 	${ECHO} "#include <sys/stdint.h>" > ${WRKSRC}/include/stdint.h
