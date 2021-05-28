@@ -1,5 +1,5 @@
 highway is untagged and have no other consumers. Keep it private to
-jpeg-xl package for now.
+libjxl package for now.
 
 --- third_party/CMakeLists.txt.orig	2020-11-14 00:52:03 UTC
 +++ third_party/CMakeLists.txt

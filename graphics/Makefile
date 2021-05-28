@@ -375,7 +375,6 @@
     SUBDIR += jp2a
     SUBDIR += jpatch
     SUBDIR += jpeg-turbo
-    SUBDIR += jpeg-xl
     SUBDIR += jpeginfo
     SUBDIR += jpegoptim
     SUBDIR += jpgtn
@@ -460,6 +459,7 @@
     SUBDIR += libimg
     SUBDIR += libiptcdata
     SUBDIR += libjpeg-turbo
+    SUBDIR += libjxl
     SUBDIR += libjxr
     SUBDIR += libkdcraw
     SUBDIR += libkexiv2
