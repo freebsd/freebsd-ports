@@ -1,5 +1,5 @@
 PORTNAME=	cpp-pcp-client
-PORTVERSION=	1.6.5
+PORTVERSION=	1.7.3
 CATEGORIES=	net
 
 MAINTAINER=	puppet@FreeBSD.org
