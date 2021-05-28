@@ -309,7 +309,7 @@ libexec/gimp/2.2/plug-ins/despeckle/despeckle
 libexec/gimp/2.2/plug-ins/destripe/destripe
 libexec/gimp/2.2/plug-ins/edge-dog/edge-dog
 libexec/gimp/2.2/plug-ins/emboss/emboss
-%%AA%%libexec/gimp/2.2/plug-ins/file-aa/file-aa
+%%AALIB%%libexec/gimp/2.2/plug-ins/file-aa/file-aa
 libexec/gimp/2.2/plug-ins/file-bmp/file-bmp
 libexec/gimp/2.2/plug-ins/file-cel/file-cel
 libexec/gimp/2.2/plug-ins/file-compressor/file-compressor
