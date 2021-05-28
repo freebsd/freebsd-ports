@@ -1,5 +1,6 @@
 bin/PowershellShim-Helper.ps1
 bin/PowershellShim.ps1
+bin/apply_ruby_shim.rb
 bin/execution_wrapper
 bin/pxp-agent
 lib/libpxp-agent.a

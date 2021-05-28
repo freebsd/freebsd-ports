@@ -1,5 +1,5 @@
 PORTNAME=	pxp-agent
-PORTVERSION=	1.15.11
+PORTVERSION=	1.15.12
 CATEGORIES=	sysutils
 
 MAINTAINER=	puppet@FreeBSD.org
@@ -13,12 +13,14 @@ LIB_DEPENDS=	liblibcpp-pcp-client.so:net/cpp-pcp-client \
 		liblibcpp-hocon.so:devel/cpp-hocon \
 		libleatherman_util.so:devel/leatherman
 
-USES=		cmake ssl
+USES=		cmake shebangfix ssl
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	puppetlabs
 
 CMAKE_OFF=	ENABLE_CXX_WERROR
 LDFLAGS+=	-lthr
+SHEBANG_FILES=	exe/apply_ruby_shim.rb
+ruby_OLD_CMD=	/opt/puppetlabs/puppet/bin/ruby
 
 .include <bsd.port.mk>
