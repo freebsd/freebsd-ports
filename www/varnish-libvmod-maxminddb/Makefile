@@ -1,5 +1,5 @@
 PORTNAME=	libvmod-maxminddb
-DISTVERSION=	1.0.1
+DISTVERSION=	v1.0.2
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -7,8 +7,6 @@ MAINTAINER=	allanjude@FreeBSD.org
 COMMENT=	Varnish Module (vmod) for accessing maxminddb geoip data
 
 LICENSE=	BSD2CLAUSE
-
-BROKEN=		does not compile: no member named 'free' in 'struct vmod_priv'
 
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
