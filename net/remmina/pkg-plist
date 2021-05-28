@@ -39,6 +39,7 @@ share/icons/hicolor/32x32/apps/remmina-panel.png
 share/icons/hicolor/48x48/apps/org.remmina.Remmina.png
 share/icons/hicolor/48x48/apps/remmina-panel-inverted.png
 share/icons/hicolor/48x48/apps/remmina-panel.png
+share/icons/hicolor/512x512/apps/org.remmina.Remmina.png
 share/icons/hicolor/64x64/apps/org.remmina.Remmina.png
 share/icons/hicolor/64x64/apps/remmina-panel-inverted.png
 share/icons/hicolor/64x64/apps/remmina-panel.png
@@ -61,6 +62,7 @@ share/icons/hicolor/scalable/actions/remmina-fit-window-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-fullscreen-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-go-bottom-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-keyboard-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-multi-monitor-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-pan-down-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-pan-up-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-pin-down-symbolic.svg
@@ -70,6 +72,7 @@ share/icons/hicolor/scalable/actions/remmina-scale-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-switch-page-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-system-run-symbolic.svg
 share/icons/hicolor/scalable/actions/view-list.svg
+share/icons/hicolor/scalable/apps/org.remmina.Remmina-symbolic.svg
 share/icons/hicolor/scalable/apps/org.remmina.Remmina.svg
 share/icons/hicolor/scalable/apps/remmina-panel-inverted.svg
 share/icons/hicolor/scalable/apps/remmina-panel.svg
@@ -104,6 +107,7 @@ share/icons/hicolor/scalable/panel/remmina-panel.svg
 %%NLS%%share/locale/el/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/en_AU/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/en_US/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/es/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/es_VE/LC_MESSAGES/remmina.mo
@@ -121,6 +125,7 @@ share/icons/hicolor/scalable/panel/remmina-panel.svg
 %%NLS%%share/locale/ie/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/it/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/kab/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/km/LC_MESSAGES/remmina.mo
@@ -221,6 +226,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Django.colors
 %%DATADIR%%/theme/DjangoRebornAgain.colors
 %%DATADIR%%/theme/DjangoSmooth.colors
+%%DATADIR%%/theme/Doom Peacock.colors
 %%DATADIR%%/theme/DoomOne.colors
 %%DATADIR%%/theme/DotGov.colors
 %%DATADIR%%/theme/Dracula+.colors
@@ -310,6 +316,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/OneHalfLight.colors
 %%DATADIR%%/theme/Operator Mono Dark.colors
 %%DATADIR%%/theme/Overnight Slumber.colors
+%%DATADIR%%/theme/PaleNightHC.colors
 %%DATADIR%%/theme/Pandora.colors
 %%DATADIR%%/theme/Paraiso Dark.colors
 %%DATADIR%%/theme/Parasio Dark.colors
@@ -407,14 +414,3 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/shades-of-purple.colors
 %%DATADIR%%/theme/synthwave-everything.colors
 %%DATADIR%%/theme/synthwave.colors
-%%DATADIR%%/ui/remmina_about.glade
-%%DATADIR%%/ui/remmina_key_chooser.glade
-%%DATADIR%%/ui/remmina_main.glade
-%%DATADIR%%/ui/remmina_mpc.glade
-%%DATADIR%%/ui/remmina_news.glade
-%%DATADIR%%/ui/remmina_preferences.glade
-%%DATADIR%%/ui/remmina_search.glade
-%%DATADIR%%/ui/remmina_snap_info_dialog.glade
-%%DATADIR%%/ui/remmina_spinner.glade
-%%DATADIR%%/ui/remmina_string_list.glade
-%%DATADIR%%/ui/remmina_unlock.glade

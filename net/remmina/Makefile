@@ -1,11 +1,10 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
 
 PORTNAME=	remmina
-DISTVERSION=	1.4.11
-PORTREVISION=	1
+DISTVERSION=	1.4.17
 CATEGORIES=	net gnome
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	GTK+ Remote Desktop Client
 
 LICENSE=	GPLv2+
@@ -14,13 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libpcre2-8.so:devel/pcre2 \
 		libsodium.so:security/libsodium \
-		libsoup-2.4.so:devel/libsoup
-
-CONFLICTS_INSTALL=	remmina-plugin*
+		libsoup-2.4.so:devel/libsoup \
+		libwayland-client.so:graphics/wayland
 
 FLAVORS=		default lite
-lite_DESCR=		${.CURDIR}/pkg-descr-lite
 lite_PKGNAMESUFFIX=	-lite
+lite_DESCR=		${.CURDIR}/pkg-descr-lite
 
 USES=		cmake compiler:c11 desktop-file-utils gettext gnome localbase:ldflags pathfix \
 		pkgconfig shared-mime-info ssl shebangfix xorg
@@ -28,21 +26,25 @@ USES=		cmake compiler:c11 desktop-file-utils gettext gnome localbase:ldflags pat
 USE_GITLAB=	yes
 GL_ACCOUNT=	Remmina
 GL_PROJECT=	Remmina
-GL_COMMIT=	d848e92df4d19145a10b7872bf85994d5fbf340d
+GL_COMMIT=	0ef1621b3e16b3168213147a2bfca39da2c2668f
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
-USE_XORG=	ice sm x11 xext xkbfile
-USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-CMAKE_ARGS=	-DWITH_APPINDICATOR:BOOL=false
+
+USE_XORG=	ice sm x11 xext xkbfile
+
 SHEBANG_FILES=	data/desktop/remmina-file-wrapper.in
 bash_CMD=	${SH}
 
+CMAKE_ARGS=	-DWITH_APPINDICATOR:BOOL=false
+
+CONFLICTS_INSTALL=	remmina-plugin*
+
 OPTIONS_DEFINE=		AVAHI CUPS GCRYPT NLS SSH TERM
-OPTIONS_GROUP=		PLUGINS
-OPTIONS_GROUP_PLUGINS=	EXEC KWALLET NX RDP SECRET SPICE ST VNC WWW XDMCP
 OPTIONS_DEFAULT=	AVAHI CUPS GCRYPT NLS SSH TERM \
 			EXEC NX RDP SECRET SPICE ST VNC WWW XDMCP
+OPTIONS_GROUP=		PLUGINS
+OPTIONS_GROUP_PLUGINS=	EXEC KWALLET NX RDP SECRET SPICE ST VNC WWW XDMCP
 OPTIONS_SUB=		yes
 
 .if ${FLAVOR:U} == lite
@@ -92,28 +94,30 @@ SPICE_LIB_DEPENDS=	libspice-client-gtk-3.0.so:deskutils/spice-gtk
 SPICE_CMAKE_BOOL=	WITH_SPICE
 
 SSH_LIB_DEPENDS=	libssh.so:security/libssh
-SSH_LDFLAGS=		-fstack-protector
 SSH_CMAKE_BOOL=		WITH_LIBSSH
+SSH_LDFLAGS=		-fstack-protector
 
 ST_IMPLIES=		EXEC
 
 TERM_USE=		gnome=vte3
 TERM_CMAKE_BOOL=	WITH_VTE
 
-VNC_USES=		jpeg
 VNC_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libvncserver.so:net/libvncserver
+VNC_USES=		jpeg
 VNC_CMAKE_BOOL=		WITH_LIBVNCSERVER
 
-WWW_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
-			libsoup-2.4.so:devel/libsoup
+WWW_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
+			libsoup-2.4.so:devel/libsoup \
+			libwebkit2gtk-4.0.so:www/webkit2-gtk3
+			
+			
 
 XDMCP_RUN_DEPENDS=	Xephyr:x11-servers/xephyr
 
 post-patch:
 	${REINPLACE_CMD} -e 's,FreeBSD,FreeBSD|DragonFly,' \
-		${WRKSRC}/CMakeLists.txt \
-		${WRKSRC}/src/CMakeLists.txt
+		${WRKSRC}/CMakeLists.txt
 
 post-patch-EXEC-off:
 	${REINPLACE_CMD} -e '/add_subdirectory(exec)/d' ${WRKSRC}/plugins/CMakeLists.txt
