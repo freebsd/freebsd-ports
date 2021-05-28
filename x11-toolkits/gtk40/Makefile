@@ -1,5 +1,6 @@
 PORTNAME=	gtk
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -24,11 +25,14 @@ RUN_DEPENDS=	hicolor-icon-theme>=0:misc/hicolor-icon-theme \
 
 USES=		compiler:c11 gettext gnome localbase meson ninja \
 		pathfix perl5 python:3.7+ pkgconfig tar:xz
+USE_LDCONFIG=	yes
 USE_PERL5=	build
-BINARY_ALIAS=	python3=${PYTHON_CMD}
 USE_GNOME=	atk cairo gdkpixbuf2 introspection:build pango \
 		librsvg2:run
-LDFLAGS=	-lexecinfo
+LDFLAGS+=	-lexecinfo
+INSTALLS_ICONS=	yes
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 LIBVERSION=	0.2404.23
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
@@ -40,7 +44,7 @@ GLIB_SCHEMAS=	org.gtk.Demo4.gschema.xml \
 		org.gtk.gtk4.Settings.FileChooser.gschema.xml
 
 OPTIONS_DEFINE=	CUPS CLOUDPRINT COLORD DEBUG BROADWAY FFMPEG \
-		GSTREAMER WAYLAND X11
+		GSTREAMER VULKAN WAYLAND X11
 OPTIONS_DEFAULT=CUPS COLORD BROADWAY WAYLAND X11
 OPTIONS_SUB=	yes
 
@@ -68,8 +72,12 @@ FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 GSTREAMER_DESC=		GStreamer multimedia backend
 GSTREAMER_MESON_ENABLED=media-gstreamer
-GSTREAMER_RUN_DEPENDS=	gstreamer1>0:multimedia/gstreamer1
-GSTREAMER_LIB_DEPENDS=	libgstreamer-1.0.so:multimedia/gstreamer1
+GSTREAMER_USE=		GSTREAMER1=bad,gl
+
+VULKAN_DESC=		GDK Vulkan renderer backend
+VULKAN_BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
+VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
+VULKAN_MESON_ENABLED=	vulkan
 
 WAYLAND_DESC=		GDK Wayland backend
 WAYLAND_MESON_TRUE=	wayland-backend
