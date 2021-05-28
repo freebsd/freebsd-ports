@@ -1,6 +1,5 @@
 PORTNAME=	vmaf
-DISTVERSION=	r6
-PORTREVISION=	3
+DISTVERSION=	r7
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	vapoursynth-
 
@@ -19,7 +18,7 @@ GH_ACCOUNT=	HomeOfVapourSynthEvolution
 GH_PROJECT=	VapourSynth-${PORTNAME:tu}
 DATADIR=	${PREFIX}/lib/vapoursynth
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
-PORTDATA=	lib${PORTNAME}.so model
+PORTDATA=	lib${PORTNAME}.so
 PORTDOCS=	*.md
 
 OPTIONS_DEFINE=	DOCS
