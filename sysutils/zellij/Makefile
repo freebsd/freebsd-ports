@@ -1,6 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
+DISTVERSION=	0.12.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -33,14 +33,15 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		async-process-1.0.2 \
 		async-std-1.9.0 \
 		async-task-4.0.3 \
+		async-trait-0.1.50 \
 		atomic-waker-1.0.0 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		backtrace-0.3.56 \
 		bincode-1.3.3 \
 		bitflags-1.2.1 \
-		bitvec-0.19.5 \
 		blocking-1.0.2 \
+		boxfnonce-0.1.1 \
 		bumpalo-3.6.1 \
 		byteorder-1.4.3 \
 		cache-padded-1.1.1 \
@@ -59,11 +60,16 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		cranelift-entity-0.68.0 \
 		cranelift-frontend-0.68.0 \
 		crc32fast-1.2.1 \
+		crossbeam-0.8.0 \
 		crossbeam-channel-0.5.1 \
 		crossbeam-deque-0.8.0 \
 		crossbeam-epoch-0.9.3 \
+		crossbeam-queue-0.3.1 \
 		crossbeam-utils-0.8.3 \
+		crossterm-0.19.0 \
+		crossterm_winapi-0.7.0 \
 		ctor-0.1.20 \
+		daemonize-0.4.1 \
 		darling-0.12.3 \
 		darling_core-0.12.3 \
 		darling_macro-0.12.3 \
@@ -80,7 +86,6 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		fastrand-1.4.0 \
 		fnv-1.0.7 \
 		fuchsia-cprng-0.1.1 \
-		funty-1.1.0 \
 		futures-0.3.14 \
 		futures-channel-0.3.14 \
 		futures-core-0.3.14 \
@@ -114,27 +119,30 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
 		leb128-0.2.4 \
-		lexical-core-0.7.5 \
 		libc-0.2.93 \
 		libloading-0.6.7 \
 		linked-hash-map-0.5.4 \
-		lock_api-0.4.3 \
+		lock_api-0.4.4 \
 		log-0.4.14 \
 		mach-0.3.2 \
 		memchr-2.3.4 \
 		memmap2-0.2.2 \
 		memoffset-0.6.3 \
 		miniz_oxide-0.4.4 \
+		mio-0.7.11 \
+		miow-0.3.7 \
 		more-asserts-0.2.1 \
 		names-0.11.0 \
 		nix-0.19.1 \
-		nom-6.1.2 \
+		ntapi-0.3.6 \
 		num_cpus-1.13.0 \
 		numtoa-0.1.0 \
 		object-0.22.0 \
 		object-0.23.0 \
 		once_cell-1.7.2 \
 		parking-2.0.0 \
+		parking_lot-0.11.1 \
+		parking_lot_core-0.8.3 \
 		pin-project-lite-0.2.6 \
 		pin-utils-0.1.0 \
 		polling-2.0.3 \
@@ -146,7 +154,6 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		proc-macro-nested-0.1.7 \
 		proc-macro2-1.0.26 \
 		quote-1.0.9 \
-		radium-0.5.3 \
 		rand-0.3.23 \
 		rand-0.4.6 \
 		rand-0.8.3 \
@@ -173,6 +180,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		serde_derive-1.0.125 \
 		serde_json-1.0.64 \
 		serde_yaml-0.8.17 \
+		signal-hook-0.1.17 \
 		signal-hook-0.3.8 \
 		signal-hook-registry-1.3.0 \
 		similar-1.3.0 \
@@ -181,7 +189,6 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		socket2-0.4.0 \
 		spinning-0.1.0 \
 		stable_deref_trait-1.2.0 \
-		static_assertions-1.1.0 \
 		strip-ansi-escapes-0.1.0 \
 		strsim-0.8.0 \
 		strsim-0.10.0 \
@@ -190,12 +197,11 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		strum-0.20.0 \
 		strum_macros-0.20.1 \
 		syn-1.0.69 \
-		tap-1.0.1 \
 		target-lexicon-0.11.2 \
 		tempfile-3.2.0 \
+		termbg-0.2.3 \
 		terminal_size-0.1.16 \
 		termion-1.5.6 \
-		termios-0.3.3 \
 		textwrap-0.11.0 \
 		thiserror-1.0.24 \
 		thiserror-impl-1.0.24 \
@@ -206,7 +212,6 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		typetag-0.1.7 \
 		typetag-impl-0.1.7 \
 		unicode-segmentation-1.7.1 \
-		unicode-truncate-0.2.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
 		utf8parse-0.1.1 \
@@ -247,7 +252,6 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		wyz-0.2.0 \
 		yaml-rust-0.4.5
 
 post-configure:
