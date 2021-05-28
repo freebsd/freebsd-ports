@@ -1,6 +1,7 @@
 PORTNAME=	digital
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.27
+PORTREVISION=	1
 CATEGORIES=	cad java
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +11,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	mvn:devel/maven
+
+USES=		desktop-file-utils
 
 USE_JAVA=	yes
 USE_GITHUB=	yes
@@ -37,10 +40,14 @@ DISTFILES+=	${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}:maven
 MVN_ARGS=	--offline
 .endif
 
-DESKTOP_ENTRIES=	"Digital logic designer" "Digital logic designer and circuit simulator" "" "${PORTNAME}" "Electronics;" ""
+ICON_SIZES=	32 48 64 128
+ICON_NAME=	digital-logic-designer
 
 PLIST_FILES=	bin/${PORTNAME} \
-		${JAVAJARDIR}/Digital.jar
+		${JAVAJARDIR}/Digital.jar \
+		${ICON_SIZES:C/(.*)/share\/icons\/hicolor\/\1x\1\/apps\/${ICON_NAME}.png/} \
+		share/icons/hicolor/scalable/apps/${ICON_NAME}.svg \
+		share/applications/${PORTNAME}.desktop
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
@@ -51,11 +58,26 @@ do-build:
 		-P no-git-rev -Dgit.commit.id.describe=${DISTVERSIONFULL} \
 		package
 do-install:
+	# install jar
 	${INSTALL_DATA} ${WRKSRC}/target/Digital.jar ${STAGEDIR}${JAVAJARDIR}
+	# install shell wrapper
 	@(echo "#!/bin/sh"; \
 	  echo ""; \
 	  echo "${JAVA} -jar ${JAVAJARDIR}/Digital.jar \""$$"@\"" \
 	) > ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	# install desktop file
+	${SED} -e '\
+		s|<EXEC_LOCATION>|${PREFIX}/bin/${PORTNAME}| ; \
+		s|<ICON_LOCATION>|${ICON_NAME}|' \
+		< ${WRKSRC}/distribution/linux/desktop.template \
+		> ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
+	# install icons
+.for SZ in ${ICON_SIZES}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}x${SZ}/apps
+	${INSTALL_DATA} ${WRKSRC}/src/main/resources/icons/icon${SZ}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}x${SZ}/apps/${ICON_NAME}.png
+.endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/src/main/svg/icon.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${ICON_NAME}.svg
 
 .include <bsd.port.mk>
