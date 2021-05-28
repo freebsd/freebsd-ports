@@ -1,5 +1,5 @@
 PORTNAME=	auto-admin
-DISTVERSION=	0.7.3
+DISTVERSION=	0.7.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
