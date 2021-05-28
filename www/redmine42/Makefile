@@ -1,11 +1,10 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
 
 PORTNAME=	redmine
-PORTVERSION=	4.1.2
-PORTREVISION=	1
+PORTVERSION=	4.2.1
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
-PKGNAMESUFFIX=	4
+PKGNAMESUFFIX=	42
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Flexible project management web application
@@ -14,9 +13,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
-		rubygem-rails52>=5.2.5<5.3:www/rubygem-rails52 \
-		rubygem-rouge312>=3.12.0:textproc/rubygem-rouge312 \
-		rubygem-request_store14>=1.0.5:devel/rubygem-request_store14 \
+		rubygem-rails52>=5.2.4.5:www/rubygem-rails52 \
+		rubygem-rouge>=3.26.0:textproc/rubygem-rouge \
+		rubygem-request_store>=1.5.0:devel/rubygem-request_store \
 		rubygem-mini_mime>=1.0.1:mail/rubygem-mini_mime \
 		rubygem-actionpack-xml_parser-rails52>=0:textproc/rubygem-actionpack-xml_parser-rails52 \
 		rubygem-roadie-rails-rails52>=2.1.0:mail/rubygem-roadie-rails-rails52 \
@@ -29,12 +28,14 @@ RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-net-ldap>=0.16:net/rubygem-net-ldap \
 		rubygem-ruby-openid>=2.9.2:net/rubygem-ruby-openid \
 		rubygem-rack-openid>=0:www/rubygem-rack-openid \
-		rubygem-rake>=0:devel/rubygem-rake
+		rubygem-rake>=0:devel/rubygem-rake \
+		rubygem-rotp>0:devel/rubygem-rotp \
+		rubygem-rqrcode>0:www/rubygem-rqrcode
 
 USES=		cpe
 USE_RUBY=	yes
 
-CONFLICTS_INSTALL=	redmine42
+CONFLICTS_INSTALL=	redmine4
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -99,5 +100,7 @@ do-install-THIN-on:
 
 post-install:
 	(cd ${STAGEDIR}${WWWDIR} && ${RM} Gemfile.lock && bundle install --local)
+	${RM} ${STAGEDIR}${WWWDIR}/package.json \
+		${STAGEDIR}${WWWDIR}/yarn.lock
 
 .include <bsd.port.mk>

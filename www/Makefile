@@ -1791,6 +1791,7 @@
     SUBDIR += radicale
     SUBDIR += rearx
     SUBDIR += redmine4
+    SUBDIR += redmine42
     SUBDIR += rejik
     SUBDIR += reportmagic
     SUBDIR += repos-style
