@@ -23,6 +23,7 @@
     SUBDIR += appkonference
     SUBDIR += aprsc
     SUBDIR += aquantia-atlantic-kmod
+    SUBDIR += arataga
     SUBDIR += arp-scan
     SUBDIR += arp-sk
     SUBDIR += arpdig
