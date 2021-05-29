@@ -3,7 +3,7 @@
 PORTNAME=	gnome-calculator
 PORTVERSION=	40.1
 CATEGORIES=	math gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
