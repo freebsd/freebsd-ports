@@ -2,7 +2,7 @@
 
 PORTNAME=	owncast
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.6
+DISTVERSION=	0.0.7
 CATEGORIES=	www
 DIST_SUBDIR=	${PORTNAME}
 
@@ -49,6 +49,5 @@ do-install:
 	${MKDIR} -m 750 ${STAGEDIR}${WWWDIR}/data
 	${MKDIR} -m 750 ${STAGEDIR}${WWWDIR}/hls
 	${MKDIR} -m 750 ${STAGEDIR}${WWWDIR}/webroot/hls
-	${INSTALL_DATA} ${WRKSRC}/data/logo.svg ${STAGEDIR}${WWWDIR}/data
 
 .include <bsd.port.mk>

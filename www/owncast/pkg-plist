@@ -1,16 +1,26 @@
+etc/rc.d/owncast
 sbin/owncast
-@owner %%OWNCAST_USER%%
-@group %%OWNCAST_GROUP%%
-@mode 0640
+@mode 0644
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
 %%WWWDIR%%/VERSION
-%%WWWDIR%%/data/logo.svg
+@owner %%OWNCAST_USER%%
+@group %%OWNCAST_GROUP%%
 %%WWWDIR%%/static/logo.png
 %%WWWDIR%%/static/metadata.html
 %%WWWDIR%%/static/offline.ts
+@owner
+@group
 %%WWWDIR%%/webroot/favicon.ico
 %%WWWDIR%%/webroot/img/airplay.png
+%%WWWDIR%%/webroot/img/emoji/Reaper-gg.png
+%%WWWDIR%%/webroot/img/emoji/Reaper-hi.png
+%%WWWDIR%%/webroot/img/emoji/Reaper-hype.png
+%%WWWDIR%%/webroot/img/emoji/Reaper-lol.png
+%%WWWDIR%%/webroot/img/emoji/Reaper-love.png
+%%WWWDIR%%/webroot/img/emoji/Reaper-rage.png
+%%WWWDIR%%/webroot/img/emoji/Reaper-rip.png
+%%WWWDIR%%/webroot/img/emoji/Reaper-wtf.png
 %%WWWDIR%%/webroot/img/emoji/ac-box.png
 %%WWWDIR%%/webroot/img/emoji/ac-construction.png
 %%WWWDIR%%/webroot/img/emoji/ac-fossil.png
@@ -120,14 +130,6 @@ sbin/owncast
 %%WWWDIR%%/webroot/img/emoji/pumpkinparrot.gif
 %%WWWDIR%%/webroot/img/emoji/quadparrot.gif
 %%WWWDIR%%/webroot/img/emoji/r2d2.png
-%%WWWDIR%%/webroot/img/emoji/Reaper-gg.png
-%%WWWDIR%%/webroot/img/emoji/Reaper-hi.png
-%%WWWDIR%%/webroot/img/emoji/Reaper-hype.png
-%%WWWDIR%%/webroot/img/emoji/Reaper-lol.png
-%%WWWDIR%%/webroot/img/emoji/Reaper-love.png
-%%WWWDIR%%/webroot/img/emoji/Reaper-rage.png
-%%WWWDIR%%/webroot/img/emoji/Reaper-rip.png
-%%WWWDIR%%/webroot/img/emoji/Reaper-wtf.png
 %%WWWDIR%%/webroot/img/emoji/redenvelopeparrot.gif
 %%WWWDIR%%/webroot/img/emoji/ripparrot.gif
 %%WWWDIR%%/webroot/img/emoji/rotatingparrot.gif
@@ -189,6 +191,7 @@ sbin/owncast
 %%WWWDIR%%/webroot/img/favicon/ms-icon-150x150.png
 %%WWWDIR%%/webroot/img/favicon/ms-icon-310x310.png
 %%WWWDIR%%/webroot/img/favicon/ms-icon-70x70.png
+%%WWWDIR%%/webroot/img/loading.gif
 %%WWWDIR%%/webroot/img/logo.png
 %%WWWDIR%%/webroot/img/logo.svg
 %%WWWDIR%%/webroot/img/platformlogos/bandcamp.svg
@@ -203,9 +206,12 @@ sbin/owncast
 %%WWWDIR%%/webroot/img/platformlogos/instagram.svg
 %%WWWDIR%%/webroot/img/platformlogos/keyoxide.png
 %%WWWDIR%%/webroot/img/platformlogos/ko-fi.svg
+%%WWWDIR%%/webroot/img/platformlogos/lbry.svg
+%%WWWDIR%%/webroot/img/platformlogos/liberapay.svg
 %%WWWDIR%%/webroot/img/platformlogos/link.svg
 %%WWWDIR%%/webroot/img/platformlogos/linkedin.svg
 %%WWWDIR%%/webroot/img/platformlogos/mastodon.svg
+%%WWWDIR%%/webroot/img/platformlogos/odysee.svg
 %%WWWDIR%%/webroot/img/platformlogos/patreon.svg
 %%WWWDIR%%/webroot/img/platformlogos/paypal.svg
 %%WWWDIR%%/webroot/img/platformlogos/snapchat.svg
@@ -216,6 +222,7 @@ sbin/owncast
 %%WWWDIR%%/webroot/img/platformlogos/twitter.svg
 %%WWWDIR%%/webroot/img/platformlogos/youtube.svg
 %%WWWDIR%%/webroot/img/smiley.png
+%%WWWDIR%%/webroot/img/video-settings.png
 %%WWWDIR%%/webroot/index-standalone-chat.html
 %%WWWDIR%%/webroot/index-video-only.html
 %%WWWDIR%%/webroot/index.html
@@ -228,6 +235,7 @@ sbin/owncast
 %%WWWDIR%%/webroot/js/components/chat/content-editable.js
 %%WWWDIR%%/webroot/js/components/chat/message.js
 %%WWWDIR%%/webroot/js/components/chat/username.js
+%%WWWDIR%%/webroot/js/components/external-action-modal.js
 %%WWWDIR%%/webroot/js/components/platform-logos-list.js
 %%WWWDIR%%/webroot/js/components/player.js
 %%WWWDIR%%/webroot/js/components/video-poster.js
@@ -241,7 +249,9 @@ sbin/owncast
 %%WWWDIR%%/webroot/js/web_modules/@videojs/http-streaming/dist/videojs-http-streaming.min.js
 %%WWWDIR%%/webroot/js/web_modules/@videojs/themes/fantasy/index.css
 %%WWWDIR%%/webroot/js/web_modules/common/_commonjsHelpers-37fa8da4.js
+%%WWWDIR%%/webroot/js/web_modules/common/core-a6c34bea.js
 %%WWWDIR%%/webroot/js/web_modules/common/core-d14f1e1c.js
+%%WWWDIR%%/webroot/js/web_modules/common/core-f87370e0.js
 %%WWWDIR%%/webroot/js/web_modules/common/core-fed3ccd8.js
 %%WWWDIR%%/webroot/js/web_modules/htm.js
 %%WWWDIR%%/webroot/js/web_modules/import-map.json
@@ -257,10 +267,14 @@ sbin/owncast
 %%WWWDIR%%/webroot/styles/user-content.css
 %%WWWDIR%%/webroot/styles/video-only.css
 %%WWWDIR%%/webroot/styles/video.css
+@owner %%OWNCAST_USER%%
+@group %%OWNCAST_GROUP%%
 @mode 0750
 @dir %%WWWDIR%%
 @dir %%WWWDIR%%/backup
 @dir %%WWWDIR%%/data
 @dir %%WWWDIR%%/hls
+@dir %%WWWDIR%%/static
 @dir %%WWWDIR%%/webroot
+@dir %%WWWDIR%%/webroot/img
 @dir %%WWWDIR%%/webroot/hls
