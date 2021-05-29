@@ -2376,6 +2376,7 @@ lib32/wine/i386-unix/wordpad.exe.so
 lib32/wine/i386-unix/wow32.dll.so
 lib32/wine/i386-unix/wpc.dll.so
 lib32/wine/i386-unix/wpcap.dll.so
+lib32/wine/i386-unix/wpcap.so
 lib32/wine/i386-unix/write.exe.so
 lib32/wine/i386-unix/ws2_32.dll.so
 lib32/wine/i386-unix/wscript.exe.so
