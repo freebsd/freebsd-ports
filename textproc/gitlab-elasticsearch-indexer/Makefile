@@ -1,8 +1,8 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	gitlab-elasticsearch-indexer
-PORTVERSION=	2.9.0
-PORTREVISION=	1
+PORTVERSION=	2.11.0
+PORTREVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -21,38 +21,41 @@ USES=		gmake go:modules pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-elasticsearch-indexer/-/tags
-GL_COMMIT=	b7feed9299684949050f9fa2627e43b25a01403a
+GL_COMMIT=	b2b3cc76f7e0f0b97a0c05c390916727959c48be
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 27dd
+# 30dd
 GH_TUPLE=	\
-		aws:aws-sdk-go:v1.19.6:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.27.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		deoxxa:aws_signing_client:c20ee106809e:deoxxa_aws_signing_client/vendor/github.com/deoxxa/aws_signing_client \
 		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
-		go-yaml:yaml:v2.2.4:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:net:6afb5195e5aa:golang_net/vendor/golang.org/x/net \
-		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:86b910548bc1:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		golang:tools:6fdc5776f4bb:golang_tools/vendor/golang.org/x/tools \
-		google:go-genproto:ca5a22157cba:google_go_genproto/vendor/google.golang.org/genproto \
-		grpc-ecosystem:go-grpc-middleware:v1.0.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
-		grpc:grpc-go:v1.24.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
+		golang:mod:v0.4.1:golang_mod/vendor/golang.org/x/mod \
+		golang:net:5f4716e94777:golang_net/vendor/golang.org/x/net \
+		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:22da62e12c0c:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
+		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
+		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
+		google:go-genproto:e7f2df4ecc2d:google_go_genproto/vendor/google.golang.org/genproto \
+		grpc-ecosystem:go-grpc-middleware:f849b5445de4:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
+		grpc:grpc-go:v1.35.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
-		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
+		magefile:mage:v1.10.0:magefile_mage/vendor/github.com/magefile/mage \
 		mailru:easyjson:1ea4449da983:mailru_easyjson/vendor/github.com/mailru/easyjson \
+		oklog:ulid:v2.0.2:oklog_ulid_v2/vendor/github.com/oklog/ulid/v2 \
 		olivere:elastic:v6.2.24:olivere_elastic/vendor/github.com/olivere/elastic \
-		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		sirupsen:logrus:v1.4.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify
+		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		sirupsen:logrus:v1.7.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify
 
 GL_TUPLE=	gitlab-org:gitaly:aa1ff2a76ac14e1ad3eca35cc05ea86ef59fffbb:gitlab_org_gitaly/vendor/gitlab.com/gitlab-org/gitaly \
-		gitlab-org:labkit:0149780c759d60f61fcfe1648fb882ba7ec41f3f:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit \
+		gitlab-org:labkit:d04f253f79d934e8e3d6872f56fd392df9a934da:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit \
 		lupine:icu:54c89d9b1ef6931b4ff61fa9f4ca645d3b86d6dc:lupine_icu/vendor/gitlab.com/lupine/icu
 
 _BUILD_DATE=	$$(date -u "+%Y-%m-%d-%H%M UTC")
