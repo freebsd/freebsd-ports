@@ -12936,6 +12936,7 @@
 %%WWWDIR%%/data/whats_new/202102180001_13_09.yml
 %%WWWDIR%%/data/whats_new/202103220001_13_10.yml
 %%WWWDIR%%/data/whats_new/202104220001_13_11.yml
+%%WWWDIR%%/data/whats_new/202105220001_13_12.yml
 %%WWWDIR%%/data/whats_new/templates/YYYYMMDD0001_XX_YY.yml
 %%WWWDIR%%/db/fixtures/development/01_admin.rb
 %%WWWDIR%%/db/fixtures/development/02_application_settings.rb
@@ -18652,6 +18653,7 @@
 %%WWWDIR%%/doc/user/admin_area/settings/continuous_integration.md
 %%WWWDIR%%/doc/user/admin_area/settings/email.md
 %%WWWDIR%%/doc/user/admin_area/settings/external_authorization.md
+%%WWWDIR%%/doc/user/admin_area/settings/floc.md
 %%WWWDIR%%/doc/user/admin_area/settings/gitaly_timeouts.md
 %%WWWDIR%%/doc/user/admin_area/settings/help_page.md
 %%WWWDIR%%/doc/user/admin_area/settings/img/admin_package_registry_npm_package_requests_forward.png
@@ -27176,6 +27178,7 @@
 %%WWWDIR%%/spec/fixtures/emails/merge_request_with_patch_and_target_branch.eml
 %%WWWDIR%%/spec/fixtures/emails/newlines.eml
 %%WWWDIR%%/spec/fixtures/emails/no_content_reply.eml
+%%WWWDIR%%/spec/fixtures/emails/no_content_type.eml
 %%WWWDIR%%/spec/fixtures/emails/on_wrote.eml
 %%WWWDIR%%/spec/fixtures/emails/outlook.eml
 %%WWWDIR%%/spec/fixtures/emails/outlook_html.eml
