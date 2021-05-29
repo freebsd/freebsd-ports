@@ -425,6 +425,8 @@ libexec/xpra/xdg-open
 %%PYTHON_SITELIBDIR%%/xpra/codecs/__pycache__/codec_checks.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/codecs/__pycache__/codec_constants.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/codecs/__pycache__/codec_constants.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xpra/codecs/__pycache__/icon_util.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/xpra/codecs/__pycache__/icon_util.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/codecs/__pycache__/image_wrapper.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/codecs/__pycache__/image_wrapper.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/codecs/__pycache__/loader.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -477,6 +479,7 @@ libexec/xpra/xdg-open
 %%X265%%%%PYTHON_SITELIBDIR%%/xpra/codecs/enc_x265/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%X265%%%%PYTHON_SITELIBDIR%%/xpra/codecs/enc_x265/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%X265%%%%PYTHON_SITELIBDIR%%/xpra/codecs/enc_x265/encoder%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/xpra/codecs/icon_util.py
 %%PYTHON_SITELIBDIR%%/xpra/codecs/image_wrapper.py
 %%PYTHON_SITELIBDIR%%/xpra/codecs/loader.py
 %%PYTHON_SITELIBDIR%%/xpra/codecs/pillow/__init__.py
@@ -541,6 +544,8 @@ libexec/xpra/xdg-open
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/__pycache__/gui.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/__pycache__/keymap.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/__pycache__/keymap.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xpra/gtk_common/__pycache__/start_gui.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/xpra/gtk_common/__pycache__/start_gui.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/about.py
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/auth_dialog.py
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/cursor_names.py
@@ -557,6 +562,7 @@ libexec/xpra/xdg-open
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/gtk_view_keyboard.py
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/gui.py
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/keymap.py
+%%PYTHON_SITELIBDIR%%/xpra/gtk_common/start_gui.py
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/gtk3/__init__.py
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/gtk3/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/gtk3/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -593,6 +599,8 @@ libexec/xpra/xdg-open
 %%PYTHON_SITELIBDIR%%/xpra/net/__pycache__/file_transfer.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/net/__pycache__/header.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/net/__pycache__/header.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xpra/net/__pycache__/http_handler.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/xpra/net/__pycache__/http_handler.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/net/__pycache__/mmap_pipe.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/net/__pycache__/mmap_pipe.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/net/__pycache__/net_util.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -635,6 +643,7 @@ libexec/xpra/xdg-open
 %%PYTHON_SITELIBDIR%%/xpra/net/fake_jitter.py
 %%PYTHON_SITELIBDIR%%/xpra/net/file_transfer.py
 %%PYTHON_SITELIBDIR%%/xpra/net/header.py
+%%PYTHON_SITELIBDIR%%/xpra/net/http_handler.py
 %%AVAHI%%%%PYTHON_SITELIBDIR%%/xpra/net/mdns/__init__.py
 %%AVAHI%%%%PYTHON_SITELIBDIR%%/xpra/net/mdns/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%AVAHI%%%%PYTHON_SITELIBDIR%%/xpra/net/mdns/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -840,10 +849,10 @@ libexec/xpra/xdg-open
 %%PYTHON_SITELIBDIR%%/xpra/server/__pycache__/control_command.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/server/__pycache__/gtk_server_base.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/server/__pycache__/gtk_server_base.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/xpra/server/__pycache__/http_handler.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/xpra/server/__pycache__/http_handler.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/server/__pycache__/keyboard_config_base.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/server/__pycache__/keyboard_config_base.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xpra/server/__pycache__/menu_provider.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/xpra/server/__pycache__/menu_provider.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/server/__pycache__/picture_encode.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/server/__pycache__/picture_encode.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/server/__pycache__/server_base.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -961,8 +970,8 @@ libexec/xpra/xdg-open
 %%PYTHON_SITELIBDIR%%/xpra/server/dbus/dbus_source.py
 %%PYTHON_SITELIBDIR%%/xpra/server/dbus/dbus_start.py
 %%PYTHON_SITELIBDIR%%/xpra/server/gtk_server_base.py
-%%PYTHON_SITELIBDIR%%/xpra/server/http_handler.py
 %%PYTHON_SITELIBDIR%%/xpra/server/keyboard_config_base.py
+%%PYTHON_SITELIBDIR%%/xpra/server/menu_provider.py
 %%PYTHON_SITELIBDIR%%/xpra/server/mixins/__init__.py
 %%PYTHON_SITELIBDIR%%/xpra/server/mixins/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/server/mixins/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -1391,7 +1400,9 @@ share/pixmaps/xpra.png
 %%DATADIR%%/icons/close.png
 %%DATADIR%%/icons/compressed.png
 %%DATADIR%%/icons/connect.png
+%%DATADIR%%/icons/device.png
 %%DATADIR%%/icons/disconnected.png
+%%DATADIR%%/icons/display.png
 %%DATADIR%%/icons/download.png
 %%DATADIR%%/icons/empty.png
 %%DATADIR%%/icons/encoding.png
@@ -1414,6 +1425,7 @@ share/pixmaps/xpra.png
 %%DATADIR%%/icons/mdns.png
 %%DATADIR%%/icons/microphone.png
 %%DATADIR%%/icons/minimize.png
+%%DATADIR%%/icons/noicon.png
 %%DATADIR%%/icons/open.png
 %%DATADIR%%/icons/openbox.png
 %%DATADIR%%/icons/openbsd.png
