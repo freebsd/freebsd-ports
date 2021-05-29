@@ -68,16 +68,6 @@ IGNORE=	bad target specification in USE_GCC; only "build" is supported
 
 .if defined(USE_GCC) && !defined(FORCE_BASE_CC_FOR_TESTING)
 
-.if ${USE_GCC} == any && exists(/usr/bin/gcc)
-CC:=		gcc
-CXX:=		g++
-. if exists(/usr/bin/gcpp)
-CPP:=		gcpp
-. else
-CPP:=		cpp
-. endif
-.else # The regular approach, not using the age-old base compiler.
-
 # Handle USE_GCC=yes and USE_GCC=any.
 .if ${USE_GCC} == yes || ${USE_GCC} == any
 USE_GCC=	${GCC_DEFAULT}+
@@ -150,8 +140,6 @@ RUN_DEPENDS+=	${CC}:lang/${_GCC_PORT}
 # leverages this as well.
 USE_BINUTILS=	yes
 .endif
-
-.endif # USE_GCC=any
 
 .endif # defined(_USE_GCC) && !defined(FORCE_BASE_CC_FOR_TESTING)
 
