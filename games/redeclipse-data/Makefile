@@ -6,6 +6,8 @@ CATEGORIES=	games
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Data files for Red Eclipse first-person shooter
 
+CONFLICTS_INSTALL=redeclipse-data16-[0-9]*
+
 USE_GITHUB=	nodefault
 
 .include "${.CURDIR}/Makefile.tuples"

@@ -1,9 +1,10 @@
 # Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 
 PORTNAME=	redeclipse
-PORTVERSION=	2.0.0
+PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
+PKGNAMESUFFIX=	16
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Single-player and multi-player first-person ego-shooter
@@ -11,16 +12,17 @@ COMMENT=	Single-player and multi-player first-person ego-shooter
 LICENSE=	MIT ZLIB
 LICENSE_COMB=	multi
 
-CONFLICTS_INSTALL=redeclipse16-[0-9]*
+CONFLICTS_INSTALL=redeclipse-[0-9]*
 
 BROKEN_sparc64=	does not build on sparc64
 
-RUN_DEPENDS=	redeclipse-data>=${PORTVERSION}:games/redeclipse-data
+RUN_DEPENDS=	redeclipse-data16>=${PORTVERSION}:games/redeclipse-data16
 
 USE_GITHUB=	yes
+GH_ACCOUNT=	red-eclipse
 GH_PROJECT=	base
 
-USES=		gmake pkgconfig
+USES=		gmake
 BUILD_WRKSRC=	${WRKSRC}/src
 
 SUB_FILES=	${PLIST_FILES:Mbin/*:T}
