@@ -53,10 +53,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/#include <sys\/prctl\.h>/d ; \
 		/#include/s,args/,,' ${WRKSRC}/main.cpp
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-
-do-install-DOCS-on:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/../,} ${STAGEDIR}${DOCSDIR}
 

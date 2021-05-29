@@ -1,11 +1,7 @@
-LOCALBASE?=	/usr/local
 CXXFLAGS+=	-std=c++17 -Wall -Wextra
 CPPFLAGS+=	-I. -I.. -I$(LOCALBASE)/include -DSPDLOG_FMT_EXTERNAL
-
 LDFLAGS+=	-pthread $(LOCALBASE)/lib/libso.$(SO5_LIBVER).so \
 		-L$(LOCALBASE)/lib -lfmt -lhttp_parser
-
-CCACHE?=	$(shell command -v ccache)
 
 oess_OBJS=	oess_2/defs/err_code.o \
 		oess_2/defs/ex.o \
@@ -27,7 +23,7 @@ stats_OBJS=	stats/auth/pub.o \
 logging_OBJS=	logging/stats_counters.o \
 		logging/wrap_logging.o
 
-connection_handlers_OBJ=\
+connection_handlers_OBJS=\
 		acl_handler/connection_handler_ifaces.o \
 		acl_handler/handlers/protocol_detection.o \
 		acl_handler/handlers/data_transfer.o \
@@ -55,8 +51,10 @@ misc_OBJS=	admin_http_entry/pub.o \
 		startup_manager/a_manager.o
 
 all_OBJS=	$(oess_OBJS) $(stats_OBJS) config.o $(logging_OBJS) \
-		user_list_auth_data.o $(connection_handlers_OBJ) \
+		user_list_auth_data.o $(connection_handlers_OBJS) \
 		$(misc_OBJS) main.o
+
+CCACHE?=	$(shell command -v ccache)
 
 %.o: %.cpp
 	$(CCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) -o $@ -c $<
@@ -65,5 +63,8 @@ arataga: $(all_OBJS)
 	$(CXX) $(LDFLAGS) -o $@ $^ $(LIBS)
 
 all: arataga
+
+install: arataga
+	$(BSD_INSTALL_PROGRAM) $^ $(DESTDIR)$(PREFIX)/bin
 
 .PHONY: all install
