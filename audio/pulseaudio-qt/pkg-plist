@@ -1,7 +1,9 @@
 include/KF5/KF5PulseAudioQt/PulseAudioQt/Card
+include/KF5/KF5PulseAudioQt/PulseAudioQt/CardPort
 include/KF5/KF5PulseAudioQt/PulseAudioQt/Client
 include/KF5/KF5PulseAudioQt/PulseAudioQt/Context
 include/KF5/KF5PulseAudioQt/PulseAudioQt/Device
+include/KF5/KF5PulseAudioQt/PulseAudioQt/IndexedPulseObject
 include/KF5/KF5PulseAudioQt/PulseAudioQt/Models
 include/KF5/KF5PulseAudioQt/PulseAudioQt/Module
 include/KF5/KF5PulseAudioQt/PulseAudioQt/Port
@@ -16,14 +18,16 @@ include/KF5/KF5PulseAudioQt/PulseAudioQt/Stream
 include/KF5/KF5PulseAudioQt/PulseAudioQt/StreamRestore
 include/KF5/KF5PulseAudioQt/PulseAudioQt/VolumeObject
 include/KF5/KF5PulseAudioQt/PulseAudioQt/card.h
+include/KF5/KF5PulseAudioQt/PulseAudioQt/cardport.h
 include/KF5/KF5PulseAudioQt/PulseAudioQt/client.h
 include/KF5/KF5PulseAudioQt/PulseAudioQt/context.h
 include/KF5/KF5PulseAudioQt/PulseAudioQt/device.h
-include/KF5/KF5PulseAudioQt/PulseAudioQt/kf5pulseaudioqt_export.h
+include/KF5/KF5PulseAudioQt/PulseAudioQt/indexedpulseobject.h
 include/KF5/KF5PulseAudioQt/PulseAudioQt/models.h
 include/KF5/KF5PulseAudioQt/PulseAudioQt/module.h
 include/KF5/KF5PulseAudioQt/PulseAudioQt/port.h
 include/KF5/KF5PulseAudioQt/PulseAudioQt/profile.h
+include/KF5/KF5PulseAudioQt/PulseAudioQt/pulseaudioqt_export.h
 include/KF5/KF5PulseAudioQt/PulseAudioQt/pulseobject.h
 include/KF5/KF5PulseAudioQt/PulseAudioQt/server.h
 include/KF5/KF5PulseAudioQt/PulseAudioQt/sink.h
@@ -39,5 +43,5 @@ lib/cmake/KF5PulseAudioQt/KF5PulseAudioQtConfigVersion.cmake
 lib/cmake/KF5PulseAudioQt/KF5PulseAudioQtTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5PulseAudioQt/KF5PulseAudioQtTargets.cmake
 lib/libKF5PulseAudioQt.so
-lib/libKF5PulseAudioQt.so.2
-lib/libKF5PulseAudioQt.so.1.2.0
+lib/libKF5PulseAudioQt.so.1.3.0
+lib/libKF5PulseAudioQt.so.3
