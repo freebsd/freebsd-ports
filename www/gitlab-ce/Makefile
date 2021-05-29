@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	13.11.4
+PORTVERSION=	13.12.0
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -11,14 +11,14 @@ COMMENT=	Web GUI for managing git repositories
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+#	gitlab-agent>=13.12.0:net/gitlab-agent \
 # the rubygems of RUN_DEPENDS matches the order of the Gemfile
 # which makes maintaining this long list much easier!
 MY_DEPENDS=	git>=2.31.0:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
-	gitlab-elasticsearch-indexer>=2.9.0:textproc/gitlab-elasticsearch-indexer \
-	gitlab-agent>=13.11.1:net/gitlab-agent \
-	gitlab-pages>=1.38.0:www/gitlab-pages \
-	gitlab-shell>=13.17.0:devel/gitlab-shell \
+	gitlab-elasticsearch-indexer>=2.11.0:textproc/gitlab-elasticsearch-indexer \
+	gitlab-pages>=1.39.0:www/gitlab-pages \
+	gitlab-shell>=13.18.0:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
 	redis>=6.0.12:databases/redis \
 	yarn>=1.10.0:www/yarn \
@@ -31,9 +31,10 @@ MY_DEPENDS=	git>=2.31.0:devel/git \
 	rubygem-default_value_for>=3.4.0<3.5.0:devel/rubygem-default_value_for \
 	rubygem-pg>=1.2.3<2:databases/rubygem-pg \
 	rubygem-rugged>=1.1<2:devel/rubygem-rugged \
-	rubygem-grape-path-helpers>=1.6.1<1.7:devel/rubygem-grape-path-helpers \
+	rubygem-grape-path-helpers>=1.6.3<1.7:devel/rubygem-grape-path-helpers \
 	rubygem-faraday>=1.0<2:www/rubygem-faraday \
 	rubygem-marginalia>=1.10.0<1.11:databases/rubygem-marginalia \
+	rubygem-declarative_policy>=1.0.0<1.1:security/rubygem-declarative_policy \
 	rubygem-devise47-rails60>=4.7.2<4.8:devel/rubygem-devise47-rails60 \
 	rubygem-bcrypt>=3.1.14<3.2:security/rubygem-bcrypt \
 	rubygem-doorkeeper>=5.5.0.rc2<5.6:security/rubygem-doorkeeper \
@@ -56,7 +57,7 @@ MY_DEPENDS=	git>=2.31.0:devel/git \
 	rubygem-omniauth-twitter>=1.4<2.0:net/rubygem-omniauth-twitter \
 	rubygem-omniauth_crowd>=2.4.0<2.5:devel/rubygem-omniauth_crowd \
 	rubygem-omniauth-authentiq>=0.3.3<0.4.0:net/rubygem-omniauth-authentiq \
-	rubygem-omniauth_openid_connect>=0.3.5<0.4.0:net/rubygem-omniauth_openid_connect \
+	rubygem-gitlab-omniauth-openid-connect>=0.4.0<0.5.0:net/rubygem-gitlab-omniauth-openid-connect \
 	rubygem-omniauth-ultraauth>=0.0.2<0.1.0:net/rubygem-omniauth-ultraauth \
 	rubygem-omniauth-salesforce>=1.0.5<1.1.0:net/rubygem-omniauth-salesforce \
 	rubygem-omniauth-atlassian-oauth2>=0.2.0<0.3:security/rubygem-omniauth-atlassian-oauth2 \
@@ -79,7 +80,7 @@ MY_DEPENDS=	git>=2.31.0:devel/git \
 	rubygem-gitlab_omniauth-ldap>=2.1.1<2.2.0:net/rubygem-gitlab_omniauth-ldap \
 	rubygem-net-ldap>0.16.3:net/rubygem-net-ldap \
 	rubygem-grape>=1.5.2<1.6:devel/rubygem-grape \
-	rubygem-grape-entity07>=0.7.1<0.8.0,1:devel/rubygem-grape-entity07 \
+	rubygem-grape-entity>=0.9.0<0.10.0,1:devel/rubygem-grape-entity \
 	rubygem-rack-cors>=1.0.6<1.1.0:www/rubygem-rack-cors \
 	rubygem-graphql>=1.11.8<1.12:devel/rubygem-graphql \
 	rubygem-graphiql-rails>=1.4.10<1.5.0:devel/rubygem-graphiql-rails \
@@ -167,7 +168,7 @@ MY_DEPENDS=	git>=2.31.0:devel/git \
 	rubygem-ruby-fogbugz021>=0.2.1<0.3.0:devel/rubygem-ruby-fogbugz021 \
 	rubygem-kubeclient>=4.9.1<4.10.0:www/rubygem-kubeclient \
 	rubygem-sanitize>=5.2.1<6:textproc/rubygem-sanitize \
-	rubygem-babosa>=1.0.2<1.1.0:textproc/rubygem-babosa \
+	rubygem-babosa>=1.0.4<1.1.0:textproc/rubygem-babosa \
 	rubygem-loofah>=2.9.0<3.0:textproc/rubygem-loofah \
 	rubygem-licensee>=9.14.1<9.15:devel/rubygem-licensee \
 	rubygem-charlock_holmes>=0.7.7<0.8.0:textproc/rubygem-charlock_holmes \
@@ -184,12 +185,12 @@ MY_DEPENDS=	git>=2.31.0:devel/git \
 	rubygem-gon-rails60>=6.4.0<6.5:www/rubygem-gon-rails60 \
 	rubygem-request_store>=1.5<2.0:devel/rubygem-request_store \
 	rubygem-base32>=0.3.0<0.4.0:converters/rubygem-base32 \
-	rubygem-gitlab-license>=1.4<2.0:devel/rubygem-gitlab-license \
+	rubygem-gitlab-license>=1.5<2.0:devel/rubygem-gitlab-license \
 	rubygem-rack-attack>=6.3.0<6.4.0:www/rubygem-rack-attack \
 	rubygem-sentry-raven>=3.0<4.0:devel/rubygem-sentry-raven \
-	rubygem-pg_query>=1.3.0<1.4:databases/rubygem-pg_query \
+	rubygem-pg_query>=2.0.3<2.1:databases/rubygem-pg_query \
 	rubygem-premailer-rails-rails60>=1.10.3<1.11.0:mail/rubygem-premailer-rails-rails60 \
-	rubygem-gitlab-labkit>=0.16.2<0.17:devel/rubygem-gitlab-labkit \
+	rubygem-gitlab-labkit>=0.17.1<0.18:devel/rubygem-gitlab-labkit \
 	rubygem-thrift>=0.14.0:devel/rubygem-thrift \
 	rubygem-ruby_parser>=3.15<4.0:devel/rubygem-ruby_parser \
 	rubygem-rails-i18n-rails60>=6.0<7.0:devel/rubygem-rails-i18n-rails60 \
@@ -222,15 +223,16 @@ MY_DEPENDS=	git>=2.31.0:devel/git \
 	rubygem-sshkey>=2.0<3.0:security/rubygem-sshkey \
 	rubygem-ed25519>=1.2<2.0:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0<2.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly>=13.11.0.pre.rc1<13.12.0:net/rubygem-gitaly \
-	rubygem-grpc130>=1.30.2<1.31:net/rubygem-grpc130 \
-	rubygem-google-protobuf314>=3.14.0<3.15:devel/rubygem-google-protobuf314 \
+	rubygem-spamcheck>=0.1.0<0.2:net/rubygem-spamcheck \
+	rubygem-gitaly>=13.12.0.pre.rc1<13.13.0:net/rubygem-gitaly \
+	rubygem-grpc>=1.30.2<2:net/rubygem-grpc \
+	rubygem-google-protobuf315>=3.15.8<3.16:devel/rubygem-google-protobuf315 \
 	rubygem-toml-rb10>=1.0.0<1.1.0:www/rubygem-toml-rb10 \
 	rubygem-flipper017>=0.17.1<0.18.0:devel/rubygem-flipper017 \
 	rubygem-flipper-active_record017>=0.17.1<0.18.0:databases/rubygem-flipper-active_record017 \
 	rubygem-flipper-active_support_cache_store017>=0.17.1<0.18.0:devel/rubygem-flipper-active_support_cache_store017 \
 	rubygem-unleash>=0.1.5<0.2.0:devel/rubygem-unleash \
-	rubygem-gitlab-experiment>=0.5.3<0.6:devel/rubygem-gitlab-experiment \
+	rubygem-gitlab-experiment>=0.5.4<0.6:devel/rubygem-gitlab-experiment \
 	rubygem-lograge-rails60>=0.11.2<1.0:www/rubygem-lograge-rails60 \
 	rubygem-grape_logging>=1.7<2.0:devel/rubygem-grape_logging \
 	rubygem-gitlab-net-dns>=0.9.1<0.10:dns/rubygem-gitlab-net-dns \
@@ -269,7 +271,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 GL_PROJECT?=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT?=	cea3c37b30e6ec5e433248fc0a5549430dcd5864
+GL_COMMIT?=	e1c4542b0f1ad29c1f21bc17de191df99b99b1a3
 
 USERS=	git
 GROUPS=	git
