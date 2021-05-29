@@ -1,5 +1,5 @@
 PORTNAME=	libg15render
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://gitlab.com/menelkir/${PORTNAME}/-/archive/${PORTVERSION}/
 
