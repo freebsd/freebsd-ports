@@ -1,7 +1,7 @@
---- Makefile.orig	2021-04-22 21:08:06 UTC
+--- Makefile.orig	2021-05-19 15:38:40 UTC
 +++ Makefile
-@@ -197,7 +197,7 @@ all: INSTALL_DEST_DIR = ${SOURCE_DIR}
- all: install
+@@ -184,7 +184,7 @@ export CGO_LDFLAGS_ALLOW          = -D_THREAD_SAFE
+ all: build
  
  .PHONY: build
 -build: ${SOURCE_DIR}/.ruby-bundle libgit2
@@ -9,16 +9,7 @@
  	go install ${GO_LDFLAGS} -tags "${GO_BUILD_TAGS}" $(addprefix ${GITALY_PACKAGE}/cmd/, $(call find_commands))
  
  .PHONY: install
-@@ -235,7 +235,7 @@ assemble-ruby:
- .PHONY: binaries
- binaries: assemble
- 	${Q}if [ ${ARCH} != 'x86_64' ]; then echo Incorrect architecture for build: ${ARCH}; exit 1; fi
--	${Q}cd ${ASSEMBLY_ROOT} && sha256sum bin/* | tee checksums.sha256.txt
-+	${Q}cd ${ASSEMBLY_ROOT} && sha256 bin/* | tee checksums.sha256.txt
- 
- .PHONY: prepare-tests
- prepare-tests: git libgit2 prepare-test-repos ${SOURCE_DIR}/.ruby-bundle
-@@ -388,9 +388,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
+@@ -343,9 +343,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile
@@ -29,16 +20,7 @@
  	${Q}touch $@
  
  ${SOURCE_DIR}/NOTICE: ${BUILD_DIR}/NOTICE
-@@ -457,7 +455,7 @@ endif
- else
- ${DEPENDENCY_DIR}/git_full_bins.tgz: ${DEPENDENCY_DIR}/git.version
- 	curl -o $@.tmp --silent --show-error -L ${GIT_BINARIES_URL}
--	${Q}printf '${GIT_BINARIES_HASH}  $@.tmp' | sha256sum -c -
-+	${Q}printf '${GIT_BINARIES_HASH}  $@.tmp' | sha256 -c -
- 	${Q}mv $@.tmp $@
- 
- ${GIT_INSTALL_DIR}/bin/git: ${DEPENDENCY_DIR}/git_full_bins.tgz
-@@ -470,7 +468,7 @@ ${TOOLS_DIR}/protoc.zip: TOOL_VERSION = ${PROTOC_VERSI
+@@ -413,7 +411,7 @@ ${TOOLS_DIR}/protoc.zip: TOOL_VERSION = ${PROTOC_VERSI
  ${TOOLS_DIR}/protoc.zip: ${TOOLS_DIR}/protoc.version
  	${Q}if [ -z "${PROTOC_URL}" ]; then echo "Cannot generate protos on unsupported platform ${OS}" && exit 1; fi
  	curl -o $@.tmp --silent --show-error -L ${PROTOC_URL}

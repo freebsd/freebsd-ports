@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	13.11.4
+DISTVERSION=	13.12.0
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -19,13 +19,13 @@ MY_DEPENDS=	git>=2.31.1:devel/git \
 		rubygem-rdoc>=6.1<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.1<4.2.8:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.4.gitlab.1<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
-		rubygem-grpc130>=1.30.2<1.31:net/rubygem-grpc130 \
+		rubygem-grpc>=1.30.2<2:net/rubygem-grpc \
 		rubygem-sentry-raven>=3.0<4:devel/rubygem-sentry-raven \
 		rubygem-faraday>=1.0.1<2:www/rubygem-faraday \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
-		rubygem-gitlab-labkit>=0.16.2<0.17:devel/rubygem-gitlab-labkit \
+		rubygem-gitlab-labkit>=0.16.2<0.18:devel/rubygem-gitlab-labkit \
 		rubygem-licensee>=9.14.1<9.15:devel/rubygem-licensee \
-		rubygem-google-protobuf314>=3.14.0<3.15:devel/rubygem-google-protobuf314
+		rubygem-google-protobuf315>=3.15.5<3.16:devel/rubygem-google-protobuf315
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 		bash>0:shells/bash \
 		${MY_DEPENDS}
@@ -43,7 +43,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	aa388adb235751f446f3ed9ec54a46e65d8e3901
+GL_COMMIT=	bc0e6dd857ea2a2c3cfdcca10448e5da93ed2aad
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -74,11 +74,11 @@ GH_TUPLE=	\
 		godbus:dbus:v5.0.3:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:be400aefbc4c:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:83a5a9bb288b:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:e8c3332aa8e5:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:lint:fdd1cda4f05f:golang_lint/vendor/golang.org/x/lint \
-		golang:net:5f4716e94777:golang_net/vendor/golang.org/x/net \
+		golang:net:e18ecbb05110:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:6e8e738ad208:golang_sync/vendor/golang.org/x/sync \
