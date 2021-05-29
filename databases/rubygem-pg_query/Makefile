@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	pg_query
-PORTVERSION=	1.3.0
+PORTVERSION=	2.0.3
 PORTREVISION=	0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
@@ -13,8 +13,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MY_DEPENDS=	${LOCALBASE}/lib/libpg_query.a:databases/libpg_query
-BUILD_DEPENDS=	${MY_DEPENDS}
-RUN_DEPENDS=	${MY_DEPENDS}
+BUILD_DEPENDS=	${MY_DEPENDS} \
+		rubygem-pathname>0:devel/rubygem-pathname
+RUN_DEPENDS=	${MY_DEPENDS} \
+		rubygem-google-protobuf315>=3.15.5<3.16:devel/rubygem-google-protobuf315
 
 USES=		gem
 USE_RUBY=	yes
