@@ -3,7 +3,7 @@
 PORTNAME=	seahorse
 PORTVERSION=	40.0
 CATEGORIES=	security gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
