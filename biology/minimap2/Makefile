@@ -1,6 +1,6 @@
 PORTNAME=		minimap2
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.18
+DISTVERSION=		2.20
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -9,15 +9,18 @@ COMMENT=	Pairwise aligner for genomic and spliced nucleotide sequences
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-# Depends on hard-coded SSE instructions
-# There appears to be some support for AARCH64 as well
 ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	Hard-coded SSE instructions
 
 USES=		gmake
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	lh3
 
+MAKE_ARGS+=	CFLAGS+=-Wextra
+ALL_TARGET=	extra
 INSTALL_TARGET=	install-strip
-PLIST_FILES=	bin/minimap2 man/man1/minimap2.1.gz
+
+PLIST_FILES=	bin/minimap2 bin/minimap2-lite bin/sdust man/man1/minimap2.1.gz
 
 .include <bsd.port.mk>
