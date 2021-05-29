@@ -1,6 +1,10 @@
 PORTNAME=	breeze
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-plasma
+
+PATCH_SITES=	https://invent.kde.org/plasma/breeze/commit/
+PATCHFILES=	40d558e96d607419b9bfaa9a706621a906bab3e9.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 artwork, styles and assets for the Breeze visual style
