@@ -1,7 +1,8 @@
 PORTNAME=	lazygit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.27.4
+DISTVERSION=	0.28.1
 CATEGORIES=	devel
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Simple terminal UI for git commands
@@ -36,7 +37,7 @@ GH_TUPLE=	\
 		golang:crypto:7f63de1d35b0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:0a1ea396d57c:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:5e06dd20ab57:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:66c3f260301c:golang_sys/vendor/golang.org/x/sys \
 		golang:term:72f3dc4e9b72:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.3.1:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -45,7 +46,7 @@ GH_TUPLE=	\
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
 		jesseduffield:go-git:341962be15a4:jesseduffield_go_git_v5_1/vendor/github.com/jesseduffield/go-git/v5 \
 		jesseduffield:go-git:v5.1.1:jesseduffield_go_git_v5/vendor/github.com/go-git/go-git/v5 \
-		jesseduffield:gocui:a2bb4baca390:jesseduffield_gocui/vendor/github.com/jesseduffield/gocui \
+		jesseduffield:gocui:37f79434200d:jesseduffield_gocui/vendor/github.com/jesseduffield/gocui \
 		jesseduffield:termbox-go:a2289ed6aafe:jesseduffield_termbox_go/vendor/github.com/jesseduffield/termbox-go \
 		jesseduffield:yaml:v2.1.0:jesseduffield_yaml/vendor/github.com/jesseduffield/yaml \
 		kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardianos/osext \
