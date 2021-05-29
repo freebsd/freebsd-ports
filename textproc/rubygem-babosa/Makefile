@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
 
 PORTNAME=	babosa
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
