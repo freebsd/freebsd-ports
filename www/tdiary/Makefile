@@ -1,7 +1,7 @@
 # Created by: Fumihiko Kimura <jfkimura@yahoo.co.jp>
 
 PORTNAME=	tdiary
-PORTVERSION=	5.1.5
+PORTVERSION=	5.1.6
 CATEGORIES?=	www ruby
 MASTER_SITES=	https://github.com/tdiary/tdiary-core/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -23,48 +23,40 @@ RUN_DEPENDS=	rubygem-bundler>=2.0.2:sysutils/rubygem-bundler \
 USES=		shebangfix
 USE_RUBY=	yes
 
+SHEBANG_FILES=	bin/tdiary index.fcgi index.rb misc/convert2.rb misc/migrate.rb \
+		misc/plugin/xmlrpc/xmlrpc.rb update.fcgi update.rb
+
+DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
+WWWDIR=		${PREFIX}/www/${PKGBASE}
+REINPLACE_ARGS=	-i ''
 NO_ARCH=	yes
 NO_BUILD=	yes
-
-SHEBANG_FILES=	bin/tdiary \
-		index.fcgi \
-		index.rb \
-		misc/convert2.rb \
-		misc/migrate.rb \
-		misc/plugin/xmlrpc/xmlrpc.rb \
-		update.fcgi \
-		update.rb
-
-DOCFILES=	HOWTO-authenticate-in-rack HOWTO-make-io \
-		HOWTO-make-plugin HOWTO-make-theme \
-		HOWTO-testing-tDiary HOWTO-use-plugin \
-		HOWTO-write-tDiary.en HOWTO-write-tDiary \
-		INSTALL-paas INSTALL README.en \
-		README UPGRADE
-HTML=	${DOCFILES:S/$/.html/}
-MD=	${DOCFILES:S/$/.md/}
-PORTDOCS=	ChangeLog doc.css ${HTML} ${MD}
-
-PLIST_SUB=	TDIARY_SCRIPT=${TDIARY_SCRIPT} \
-		WWWOWN=${WWWOWN} \
-		WWWGRP=${WWWGRP}
 SUB_FILES=	pkg-message tdiaryinst.rb
 SUB_LIST+=	TDIARY_LANG=${TDIARY_LANG} \
 		TDIARY_SCRIPT=${TDIARY_SCRIPT}
-WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
-DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
-WWWDIR=		${PREFIX}/www/${PKGBASE}
 
-TDIARY_SCRIPT=	${PKGBASE}-inst.rb
+WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
+PLIST_SUB=	TDIARY_SCRIPT=${TDIARY_SCRIPT} \
+		WWWGRP=${WWWGRP} \
+		WWWOWN=${WWWOWN}
+
+PORTDOCS=	${HTML} ${MD} ChangeLog doc.css
+
+OPTIONS_DEFINE=	DOCS
+
+DOCFILES=	HOWTO-authenticate-in-rack HOWTO-make-io HOWTO-make-plugin \
+		HOWTO-make-theme HOWTO-testing-tDiary HOWTO-use-plugin \
+		HOWTO-write-tDiary.en HOWTO-write-tDiary INSTALL-paas INSTALL \
+		README.en README UPGRADE
+HTML=		${DOCFILES:S/$/.html/}
+MD=		${DOCFILES:S/$/.md/}
 
 #TDIARY_LANG	ja:Japanese en:English
 .if !defined(TDIARY_LANG) || ( defined(TDIARY_LANG) && ${TDIARY_LANG} != ja )
 TDIARY_LANG=	en
 .endif
 
-REINPLACE_ARGS=	-i ''
-
-OPTIONS_DEFINE=	DOCS
+TDIARY_SCRIPT=	${PKGBASE}-inst.rb
 
 pre-patch:
 	@${RM} ${WRKSRC}/.coveralls.yml
@@ -83,7 +75,7 @@ pre-patch:
 	@${RM} -r ${WRKSRC}/.devcontainer
 	@${RM} -r ${WRKSRC}/.github
 	@${RM} -r ${WRKSRC}/.vscode
-	@${RM} -r ${WRKSRC}/misc/lib/bundler-2.2.11
+	@${RM} -r ${WRKSRC}/misc/lib/bundler-2.2.18
 	@${RM} -r ${WRKSRC}/public
 	@${RM} -r ${WRKSRC}/spec
 	@${RM} -r ${WRKSRC}/test
