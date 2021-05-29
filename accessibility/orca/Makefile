@@ -3,7 +3,7 @@
 PORTNAME=	orca
 PORTVERSION=	40.0
 CATEGORIES=	accessibility gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
