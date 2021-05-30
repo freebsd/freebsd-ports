@@ -4,11 +4,11 @@ GH_TUPLE=	\
 		VividCortex:ewma:v1.1.1:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
 		census-instrumentation:opencensus-go:v0.22.3:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cheggaaa:pb:v3.0.5:cheggaaa_pb_v3/vendor/github.com/cheggaaa/pb \
-		containerd:cgroups:8a68de567b68:containerd_cgroups/vendor/github.com/containerd/cgroups \
+		containerd:cgroups:v1.0.1:containerd_cgroups/vendor/github.com/containerd/cgroups \
 		containerd:console:2298a9c8aead:containerd_console/vendor/github.com/containerd/console \
-		containerd:containerd:f0890f9b3a6a:containerd_containerd/vendor/github.com/containerd/containerd \
-		containerd:fifo:115abcc95a1d:containerd_fifo/vendor/github.com/containerd/fifo \
-		containerd:go-runc:16b287bc67d0:containerd_go_runc/vendor/github.com/containerd/go-runc \
+		containerd:containerd:v1.5.2:containerd_containerd/vendor/github.com/containerd/containerd \
+		containerd:fifo:v1.0.0:containerd_fifo/vendor/github.com/containerd/fifo \
+		containerd:go-runc:v1.0.0:containerd_go_runc/vendor/github.com/containerd/go-runc \
 		containerd:ttrpc:v1.0.2:containerd_ttrpc/vendor/github.com/containerd/ttrpc \
 		containerd:typeurl:v1.0.2:containerd_typeurl/vendor/github.com/containerd/typeurl \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
