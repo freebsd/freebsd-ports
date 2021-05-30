@@ -1,8 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 
 PORTNAME=	Crypt-OpenSSL-ECDSA
-PORTVERSION=	0.08
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
