@@ -592,6 +592,7 @@
     SUBDIR += p5-CGI-SpeedyCGI
     SUBDIR += p5-CGI-Struct
     SUBDIR += p5-CGI-Thin
+    SUBDIR += p5-CGI-Tiny
     SUBDIR += p5-CGI-Untaint
     SUBDIR += p5-CGI-Untaint-date
     SUBDIR += p5-CGI-Untaint-email
