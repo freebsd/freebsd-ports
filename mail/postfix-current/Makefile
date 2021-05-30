@@ -16,7 +16,7 @@ MASTER_SITES:=	${MASTER_SITES:S|$|experimental/|}
 PKGNAMESUFFIX?=	-current
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ohauer@FreeBSD.org
+MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Experimental Postfix version
 
 LICENSE=	IPL10 EPL
