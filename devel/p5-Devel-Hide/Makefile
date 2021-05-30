@@ -1,7 +1,7 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
 
 PORTNAME=	Devel-Hide
-PORTVERSION=	0.0013
+PORTVERSION=	0.0014
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
