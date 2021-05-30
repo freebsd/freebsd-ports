@@ -1,0 +1,4 @@
+Protego is a pure-Python robots.txt parser with support for modern conventions.
+It is mainly used by Scrapy application when crawling websites.
+
+WWW: https://pypi.org/project/Protego/

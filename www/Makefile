@@ -1686,6 +1686,7 @@
     SUBDIR += py-praw
     SUBDIR += py-prawcore
     SUBDIR += py-priority
+    SUBDIR += py-protego
     SUBDIR += py-puppetboard
     SUBDIR += py-py-restclient
     SUBDIR += py-pyjwt

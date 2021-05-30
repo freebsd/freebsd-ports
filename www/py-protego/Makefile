@@ -1,0 +1,19 @@
+PORTNAME=	protego
+DISTVERSION=	0.1.16
+CATEGORIES=	www python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Protego-${DISTVERSION}
+
+MAINTAINER=	dbaio@FreeBSD.org
+COMMENT=	Pure-Python robots.txt parser
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+
+USES=		python:3.6+
+USE_PYTHON=	distutils concurrent autoplist
+
+.include <bsd.port.mk>
