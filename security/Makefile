@@ -101,6 +101,7 @@
     SUBDIR += cracklib
     SUBDIR += crackpkcs12
     SUBDIR += create-cert
+    SUBDIR += crlfuzz
     SUBDIR += crowdsec
     SUBDIR += crowdsec-firewall-bouncer
     SUBDIR += cryptlib
