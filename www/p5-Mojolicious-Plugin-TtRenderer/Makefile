@@ -1,7 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 
 PORTNAME=	Mojolicious-Plugin-TtRenderer
-PORTVERSION=	1.61
+PORTVERSION=	1.62
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +17,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Mojolicious>=6.33:www/p5-Mojolicious \
 		p5-Template-Toolkit>=2.18:www/p5-Template-Toolkit
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
