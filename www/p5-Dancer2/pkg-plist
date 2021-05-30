@@ -1,8 +1,8 @@
 bin/dancer2
 %%SITE_PERL%%/Dancer2.pm
 %%SITE_PERL%%/Dancer2/CLI.pm
-%%SITE_PERL%%/Dancer2/CLI/Command/gen.pm
-%%SITE_PERL%%/Dancer2/CLI/Command/version.pm
+%%SITE_PERL%%/Dancer2/CLI/Gen.pm
+%%SITE_PERL%%/Dancer2/CLI/Version.pm
 %%SITE_PERL%%/Dancer2/Config.pod
 %%SITE_PERL%%/Dancer2/Cookbook.pod
 %%SITE_PERL%%/Dancer2/Core.pm
@@ -91,8 +91,8 @@ bin/dancer2
 %%PERL5_MAN1%%/dancer2.1.gz
 %%PERL5_MAN3%%/Dancer2.3.gz
 %%PERL5_MAN3%%/Dancer2::CLI.3.gz
-%%PERL5_MAN3%%/Dancer2::CLI::Command::gen.3.gz
-%%PERL5_MAN3%%/Dancer2::CLI::Command::version.3.gz
+%%PERL5_MAN3%%/Dancer2::CLI::Gen.3.gz
+%%PERL5_MAN3%%/Dancer2::CLI::Version.3.gz
 %%PERL5_MAN3%%/Dancer2::Config.3.gz
 %%PERL5_MAN3%%/Dancer2::Cookbook.3.gz
 %%PERL5_MAN3%%/Dancer2::Core.3.gz
