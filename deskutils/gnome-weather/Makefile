@@ -1,9 +1,9 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 
 PORTNAME=	gnome-weather
-PORTVERSION=	3.36.1
+PORTVERSION=	40.0
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 
 LIB_DEPENDS=	libgweather-3.so:net/libgweather \
 		libgeoclue-2.so:net/geoclue \
-		libgjs.so:lang/gjs
+		libgjs.so:lang/gjs \
+		libhandy-1.so:x11-toolkits/libhandy
 
 PORTSCOUT=	limitw:1,even
 
