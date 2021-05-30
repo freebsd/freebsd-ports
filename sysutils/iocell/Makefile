@@ -3,7 +3,11 @@
 PORTNAME=	iocell
 PORTVERSION=	2.1.2
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	sysutils
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
+PATCHFILES+=	37.patch:-p1 # https://github.com/bartekrutkowski/iocell/pull/37
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Feature rich Jail containers manager (iocage fork)
@@ -19,9 +23,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bartekrutkowski
 
 NO_BUILD=	yes
-NO_ARCH=	yes
 
 post-patch:
+	@${REINPLACE_CMD} -e "s|amd64|${MACHINE}|g" ${WRKSRC}/lib/ioc-*
 	@${REINPLACE_CMD} -e "s|/usr/local/lib/iocell|${PREFIX}/lib/iocell|g" ${WRKSRC}/iocell
 
 pre-install:
