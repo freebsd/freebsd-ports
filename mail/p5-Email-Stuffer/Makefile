@@ -9,6 +9,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	More casual approach to creating and sending Email
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Params-Util>=0.23:devel/p5-Params-Util \
 		p5-File-Type>=0.22:devel/p5-File-Type \
@@ -17,5 +21,7 @@ RUN_DEPENDS=	p5-Params-Util>=0.23:devel/p5-Params-Util \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
