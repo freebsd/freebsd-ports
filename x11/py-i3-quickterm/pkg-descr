@@ -1,0 +1,14 @@
+A small drop-down terminal for i3wm and sway, supporting your preferred
+terminal emulator, is multi-monitor and screen-width aware, and plays
+with dmenu, rofil, and more.
+
+When launched, it will minimize the quickterm on the current screen if
+there is one. Otherwise, it will either prompt the user for the shell to
+open or use the one supplied in argument.
+
+If the requested shell is already opened on another screen, it will be
+moved on the current screen.
+
+It is recommended to map it to an i3 binding. See WWW for user config.
+
+WWW: https://github.com/lbonn/i3-quickterm
