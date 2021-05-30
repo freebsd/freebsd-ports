@@ -1,7 +1,7 @@
 # Created by: trevor
 
 PORTNAME=	GnuPG-Interface
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
