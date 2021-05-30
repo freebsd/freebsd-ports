@@ -1,6 +1,6 @@
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.12.3
+DISTVERSION=	3.13.0
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ GH_TUPLE=	\
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
 		caffix:eventbus:9ab42753d12d:caffix_eventbus/vendor/github.com/caffix/eventbus \
-		caffix:netmap:5aec13909475:caffix_netmap/vendor/github.com/caffix/netmap \
+		caffix:netmap:08737510b185:caffix_netmap/vendor/github.com/caffix/netmap \
 		caffix:pipeline:d5f7558afa54:caffix_pipeline/vendor/github.com/caffix/pipeline \
 		caffix:queue:50705a598e3e:caffix_queue/vendor/github.com/caffix/queue \
 		caffix:resolve:99ca50c96458:caffix_resolve/vendor/github.com/caffix/resolve \
@@ -54,16 +54,16 @@ GH_TUPLE=	\
 		gobwas:ws:v1.0.2:gobwas_ws/vendor/github.com/gobwas/ws \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:89ef3d95e781:golang_net/vendor/golang.org/x/net \
+		golang:crypto:c07d793c2f9a:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:fe42d452be8f:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:08078c50e5b5:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:d19ff857e887:golang_sys/vendor/golang.org/x/sys \
-		golang:term:72f3dc4e9b72:golang_term/vendor/golang.org/x/term \
+		golang:sys:0cec03c779c1:golang_sys/vendor/golang.org/x/sys \
+		golang:term:a79de5458b56:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.1.1:golang_tools/vendor/golang.org/x/tools \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:uuid:v1.1.3:google_uuid/vendor/github.com/google/uuid \
 		hashicorp:errwrap:v1.1.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
@@ -73,7 +73,7 @@ GH_TUPLE=	\
 		karrick:godirwalk:v1.16.1:karrick_godirwalk/vendor/github.com/karrick/godirwalk \
 		knq:sysutil:15668db23d08:knq_sysutil \
 		layeh:gopher-json:552bb3c4c3bf:layeh_gopher_json/vendor/layeh.com/gopher-json \
-		lib:pq:v1.10.0:lib_pq/vendor/github.com/lib/pq \
+		lib:pq:v1.10.2:lib_pq/vendor/github.com/lib/pq \
 		mailru:easyjson:v0.7.0:mailru_easyjson/vendor/github.com/mailru/easyjson \
 		markbates:errx:v1.1.0:markbates_errx/vendor/github.com/markbates/errx \
 		markbates:oncer:v1.0.0:markbates_oncer/vendor/github.com/markbates/oncer \
@@ -85,7 +85,7 @@ GH_TUPLE=	\
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		prometheus:client_golang:v1.10.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
-		prometheus:common:v0.20.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:common:v0.25.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.6.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rakyll:statik:v0.1.7:rakyll_statik/vendor/github.com/rakyll/statik \
