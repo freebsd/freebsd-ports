@@ -1,7 +1,7 @@
 # Created by: Jesse McConnell <jesse@gallup.com>
 
 PORTNAME=	Net-Server
-PORTVERSION=	2.009
+PORTVERSION=	2.010
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,11 +16,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-Multiplex>=1.05:devel/p5-IO-Multiplex
 
-OPTIONS_DEFINE=	IPV6
-
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+OPTIONS_DEFINE=	IPV6
 
 IPV6_BUILD_DEPENDS=	p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6 \
 			p5-Socket6>=0.23:net/p5-Socket6
