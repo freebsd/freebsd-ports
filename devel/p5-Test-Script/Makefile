@@ -1,7 +1,7 @@
 # Created by: lth@FreeBSD.org
 
 PORTNAME=	Test-Script
-PORTVERSION=	1.27
+PORTVERSION=	1.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
