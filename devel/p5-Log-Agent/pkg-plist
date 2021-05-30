@@ -34,12 +34,15 @@
 %%SITE_PERL%%/auto/Log/Agent/inited.al
 %%SITE_PERL%%/auto/Log/Agent/log_default.al
 %%SITE_PERL%%/auto/Log/Agent/logcarp.al
+%%SITE_PERL%%/auto/Log/Agent/logcluck.al
 %%SITE_PERL%%/auto/Log/Agent/logconfess.al
 %%SITE_PERL%%/auto/Log/Agent/logconfig.al
 %%SITE_PERL%%/auto/Log/Agent/logcroak.al
 %%SITE_PERL%%/auto/Log/Agent/logdbg.al
+%%SITE_PERL%%/auto/Log/Agent/logdebug.al
 %%SITE_PERL%%/auto/Log/Agent/logdie.al
 %%SITE_PERL%%/auto/Log/Agent/logerr.al
+%%SITE_PERL%%/auto/Log/Agent/loginfo.al
 %%SITE_PERL%%/auto/Log/Agent/logsay.al
 %%SITE_PERL%%/auto/Log/Agent/logtags.al
 %%SITE_PERL%%/auto/Log/Agent/logtrc.al
