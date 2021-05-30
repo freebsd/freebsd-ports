@@ -396,6 +396,7 @@
     SUBDIR += cppcheck
     SUBDIR += cppcheck-gui
     SUBDIR += cppi
+    SUBDIR += cpplint
     SUBDIR += cpprestsdk
     SUBDIR += cpptest
     SUBDIR += cppunit

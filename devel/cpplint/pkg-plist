@@ -1,0 +1,4 @@
+bin/cpplint
+%%PYTHON_SITELIBDIR%%/__pycache__/cpplint%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/__pycache__/cpplint%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/cpplint.py
