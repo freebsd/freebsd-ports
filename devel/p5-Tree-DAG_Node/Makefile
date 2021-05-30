@@ -1,7 +1,7 @@
 # Created by: Seamus Venasse <svenasse@polaris.ca>
 
 PORTNAME=	Tree-DAG_Node
-PORTVERSION=	1.31
+PORTVERSION=	1.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +16,9 @@ LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Slurp-Tiny>=0.003:devel/p5-File-Slurp-Tiny
 
-NO_ARCH=	yes
 USES=		perl5 tar:tgz
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
