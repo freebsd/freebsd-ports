@@ -1,7 +1,7 @@
 # Created by: Mark Murray <markm@FreeBSD.org>
 
 PORTNAME=	Crypt-CBC
-PORTVERSION=	3.01
+PORTVERSION=	3.04
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ RUN_DEPENDS=	p5-Crypt-PBKDF2>=0:security/p5-Crypt-PBKDF2 \
 
 USES=		perl5
 USE_PERL5=	configure
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
