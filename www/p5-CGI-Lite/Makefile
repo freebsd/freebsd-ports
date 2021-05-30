@@ -1,7 +1,7 @@
 # Created by: James FitzGibbon <jfitz@FreeBSD.org>
 
 PORTNAME=	CGI-Lite
-PORTVERSION=	3.02
+PORTVERSION=	3.03
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,11 +13,13 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5 shebangfix
-SHEBANG_FILES=	examples/*
 USE_PERL5=	configure
+
 NO_ARCH=	yes
 
 PORTEXAMPLES=	cookies file get_post post print reference upload
+
+SHEBANG_FILES=	examples/*
 
 OPTIONS_DEFINE=	EXAMPLES
 
