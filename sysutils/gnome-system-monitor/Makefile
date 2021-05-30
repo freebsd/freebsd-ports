@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	gnome-system-monitor
-PORTVERSION=	3.38.0
-PORTREVISION=	1
+PORTVERSION=	40.1
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -14,7 +13,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop
+LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
+		libhandy-1.so:x11-toolkits/libhandy
 
 PORTSCOUT=	limitw:1,even
 
