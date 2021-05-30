@@ -1,7 +1,7 @@
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 
 PORTNAME=	Moose
-PORTVERSION=	2.2014
+PORTVERSION=	2.2015
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -30,7 +30,7 @@ RUN_DEPENDS=	p5-Class-Load>=0.09:devel/p5-Class-Load \
 		p5-Package-Stash>=0.32:devel/p5-Package-Stash \
 		p5-Package-Stash-XS>=0.24:devel/p5-Package-Stash-XS \
 		p5-Params-Util>=1.00:devel/p5-Params-Util \
-		p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils \
+		p5-Scalar-List-Utils>=1.56,1:lang/p5-Scalar-List-Utils \
 		p5-Sub-Exporter>=0.980:devel/p5-Sub-Exporter \
 		p5-Sub-Name>=0.20,1:devel/p5-Sub-Name \
 		p5-Try-Tiny>=0.17:lang/p5-Try-Tiny
