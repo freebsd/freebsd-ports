@@ -1,7 +1,7 @@
 # Created by: arved
 
 PORTNAME=	Graph-ReadWrite
-PORTVERSION=	2.09
+PORTVERSION=	2.10
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
