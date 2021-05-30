@@ -38,7 +38,6 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Calendar.pm
 %%SITE_ARCH%%/Prima/Classes.pm
 %%SITE_ARCH%%/Prima/Clipboard.pod
-%%SITE_ARCH%%/Prima/ColorDialog.pm
 %%SITE_ARCH%%/Prima/ComboBox.pm
 %%SITE_ARCH%%/Prima/Config.pm
 %%SITE_ARCH%%/Prima/Const.pm
@@ -50,6 +49,12 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Dialog/FontDialog.pm
 %%SITE_ARCH%%/Prima/Dialog/ImageDialog.pm
 %%SITE_ARCH%%/Prima/Dialog/PrintDialog.pm
+%%SITE_ARCH%%/Prima/Dialog/colordlg.png
+%%SITE_ARCH%%/Prima/Dialog/editdlg.gif
+%%SITE_ARCH%%/Prima/Dialog/filedlg.gif
+%%SITE_ARCH%%/Prima/Dialog/fontdlg.gif
+%%SITE_ARCH%%/Prima/Dialog/imagedlg.gif
+%%SITE_ARCH%%/Prima/Dialog/printdialog.gif
 %%SITE_ARCH%%/Prima/DockManager.pm
 %%SITE_ARCH%%/Prima/Docks.pm
 %%SITE_ARCH%%/Prima/Drawable.pod
@@ -62,12 +67,9 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Drawable/Subcanvas.pm
 %%SITE_ARCH%%/Prima/Drawable/TextBlock.pm
 %%SITE_ARCH%%/Prima/Edit.pm
-%%SITE_ARCH%%/Prima/EditDialog.pm
 %%SITE_ARCH%%/Prima/EventHook.pm
 %%SITE_ARCH%%/Prima/ExtLists.pm
 %%SITE_ARCH%%/Prima/File.pod
-%%SITE_ARCH%%/Prima/FileDialog.pm
-%%SITE_ARCH%%/Prima/FontDialog.pm
 %%SITE_ARCH%%/Prima/FrameSet.pm
 %%SITE_ARCH%%/Prima/Gencls.pm
 %%SITE_ARCH%%/Prima/Grids.pm
@@ -83,7 +85,6 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Image/tiff.fm
 %%SITE_ARCH%%/Prima/Image/tiff.pm
 %%SITE_ARCH%%/Prima/Image/webp.pm
-%%SITE_ARCH%%/Prima/ImageDialog.pm
 %%SITE_ARCH%%/Prima/ImageViewer.pm
 %%SITE_ARCH%%/Prima/IniFile.pm
 %%SITE_ARCH%%/Prima/InputLine.pm
@@ -110,7 +111,6 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/PS/Unicode.pm
 %%SITE_ARCH%%/Prima/PS/setup.fm
 %%SITE_ARCH%%/Prima/PodView.pm
-%%SITE_ARCH%%/Prima/PrintDialog.pm
 %%SITE_ARCH%%/Prima/Printer.pod
 %%SITE_ARCH%%/Prima/Region.pod
 %%SITE_ARCH%%/Prima/RubberBand.pm
@@ -120,7 +120,6 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Spinner.pm
 %%SITE_ARCH%%/Prima/StartupWindow.pm
 %%SITE_ARCH%%/Prima/StdBitmap.pm
-%%SITE_ARCH%%/Prima/StdDlg.pm
 %%SITE_ARCH%%/Prima/Stress.pm
 %%SITE_ARCH%%/Prima/Test.pm
 %%SITE_ARCH%%/Prima/TextView.pm
@@ -151,14 +150,12 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/calendar.gif
 %%SITE_ARCH%%/Prima/circularslider.gif
 %%SITE_ARCH%%/Prima/codecs.pod
-%%SITE_ARCH%%/Prima/colordlg.png
 %%SITE_ARCH%%/Prima/combo.gif
 %%SITE_ARCH%%/Prima/conversions.gif
 %%SITE_ARCH%%/Prima/curvedtext.gif
 %%SITE_ARCH%%/Prima/detailedlist.gif
 %%SITE_ARCH%%/Prima/detailedoutline.gif
 %%SITE_ARCH%%/Prima/edit.gif
-%%SITE_ARCH%%/Prima/editdlg.gif
 %%SITE_ARCH%%/Prima/examples/Hand.gif
 %%SITE_ARCH%%/Prima/examples/amba.pl
 %%SITE_ARCH%%/Prima/examples/animate.pl
@@ -173,7 +170,6 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/detailedoutline.pl
 %%SITE_ARCH%%/Prima/examples/dock.pl
 %%SITE_ARCH%%/Prima/examples/drivecombo.pl
-%%SITE_ARCH%%/Prima/examples/dwm_blur.pl
 %%SITE_ARCH%%/Prima/examples/e.pl
 %%SITE_ARCH%%/Prima/examples/edit.pl
 %%SITE_ARCH%%/Prima/examples/editor.pl
@@ -228,17 +224,14 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/triangle.pl
 %%SITE_ARCH%%/Prima/extlist.gif
 %%SITE_ARCH%%/Prima/faq.pod
-%%SITE_ARCH%%/Prima/filedlg.gif
 %%SITE_ARCH%%/Prima/fills.gif
 %%SITE_ARCH%%/Prima/fontabc.gif
-%%SITE_ARCH%%/Prima/fontdlg.gif
 %%SITE_ARCH%%/Prima/gauge.gif
 %%SITE_ARCH%%/Prima/gettextbox.gif
 %%SITE_ARCH%%/Prima/gp-problems.pod
 %%SITE_ARCH%%/Prima/gradient.gif
 %%SITE_ARCH%%/Prima/grid.gif
 %%SITE_ARCH%%/Prima/image-load.pod
-%%SITE_ARCH%%/Prima/imagedlg.gif
 %%SITE_ARCH%%/Prima/imageviewer.gif
 %%SITE_ARCH%%/Prima/inputline.gif
 %%SITE_ARCH%%/Prima/internals.pod
@@ -258,7 +251,6 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/outline.gif
 %%SITE_ARCH%%/Prima/path.gif
 %%SITE_ARCH%%/Prima/podview.gif
-%%SITE_ARCH%%/Prima/printdialog.gif
 %%SITE_ARCH%%/Prima/progressbar.png
 %%SITE_ARCH%%/Prima/rop1.gif
 %%SITE_ARCH%%/Prima/rop2.gif
@@ -268,6 +260,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/spinbutton.gif
 %%SITE_ARCH%%/Prima/spinedit.gif
 %%SITE_ARCH%%/Prima/spinner.gif
+%%SITE_ARCH%%/Prima/sys/FS.pm
 %%SITE_ARCH%%/Prima/sys/XQuartz.pm
 %%SITE_ARCH%%/Prima/sys/gtk/FileDialog.pm
 %%SITE_ARCH%%/Prima/sys/win32/FileDialog.pm
@@ -290,6 +283,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/tutorial/menu3.gif
 %%SITE_ARCH%%/Prima/windings.gif
 %%SITE_ARCH%%/auto/Prima/Prima.so
+%%SITE_ARCH%%/auto/Prima/SlibPrima.a
 %%SITE_ARCH%%/prima-gencls.pod
 %%PERL5_MAN1%%/VB.1.gz
 %%PERL5_MAN1%%/podview.1.gz
@@ -303,7 +297,6 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Buttons.3.gz
 %%PERL5_MAN3%%/Prima::Calendar.3.gz
 %%PERL5_MAN3%%/Prima::Classes.3.gz
-%%PERL5_MAN3%%/Prima::ColorDialog.3.gz
 %%PERL5_MAN3%%/Prima::ComboBox.3.gz
 %%PERL5_MAN3%%/Prima::Config.3.gz
 %%PERL5_MAN3%%/Prima::Const.3.gz
@@ -326,11 +319,8 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Drawable::Subcanvas.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::TextBlock.3.gz
 %%PERL5_MAN3%%/Prima::Edit.3.gz
-%%PERL5_MAN3%%/Prima::EditDialog.3.gz
 %%PERL5_MAN3%%/Prima::EventHook.3.gz
 %%PERL5_MAN3%%/Prima::ExtLists.3.gz
-%%PERL5_MAN3%%/Prima::FileDialog.3.gz
-%%PERL5_MAN3%%/Prima::FontDialog.3.gz
 %%PERL5_MAN3%%/Prima::FrameSet.3.gz
 %%PERL5_MAN3%%/Prima::Gencls.3.gz
 %%PERL5_MAN3%%/Prima::Grids.3.gz
@@ -343,7 +333,6 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Image::png.3.gz
 %%PERL5_MAN3%%/Prima::Image::tiff.3.gz
 %%PERL5_MAN3%%/Prima::Image::webp.3.gz
-%%PERL5_MAN3%%/Prima::ImageDialog.3.gz
 %%PERL5_MAN3%%/Prima::ImageViewer.3.gz
 %%PERL5_MAN3%%/Prima::IniFile.3.gz
 %%PERL5_MAN3%%/Prima::InputLine.3.gz
@@ -367,7 +356,6 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::PS::Type1.3.gz
 %%PERL5_MAN3%%/Prima::PS::Unicode.3.gz
 %%PERL5_MAN3%%/Prima::PodView.3.gz
-%%PERL5_MAN3%%/Prima::PrintDialog.3.gz
 %%PERL5_MAN3%%/Prima::RubberBand.3.gz
 %%PERL5_MAN3%%/Prima::ScrollBar.3.gz
 %%PERL5_MAN3%%/Prima::ScrollWidget.3.gz
@@ -375,7 +363,6 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Spinner.3.gz
 %%PERL5_MAN3%%/Prima::StartupWindow.3.gz
 %%PERL5_MAN3%%/Prima::StdBitmap.3.gz
-%%PERL5_MAN3%%/Prima::StdDlg.3.gz
 %%PERL5_MAN3%%/Prima::Stress.3.gz
 %%PERL5_MAN3%%/Prima::Test.3.gz
 %%PERL5_MAN3%%/Prima::TextView.3.gz
@@ -392,6 +379,7 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Widgets.3.gz
 %%PERL5_MAN3%%/Prima::noARGV.3.gz
 %%PERL5_MAN3%%/Prima::noX11.3.gz
+%%PERL5_MAN3%%/Prima::sys::FS.3.gz
 %%PERL5_MAN3%%/Prima::sys::XQuartz.3.gz
 %%PERL5_MAN3%%/Prima::sys::gtk::FileDialog.3.gz
 %%PERL5_MAN3%%/Prima::sys::win32::FileDialog.3.gz
