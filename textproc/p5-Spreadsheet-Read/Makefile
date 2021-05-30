@@ -1,5 +1,5 @@
 PORTNAME=	Spreadsheet-Read
-PORTVERSION=	0.83
+PORTVERSION=	0.84
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HMBRAND
@@ -12,10 +12,11 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Spreadsheet-ParseExcel>=0.13:textproc/p5-Spreadsheet-ParseExcel \
-		p5-Spreadsheet-ReadSXC>=0.26:textproc/p5-Spreadsheet-ReadSXC \
-		p5-Text-CSV>=1.33:textproc/p5-Text-CSV \
-		p5-Text-CSV_XS>=0.71:textproc/p5-Text-CSV_XS
+RUN_DEPENDS=	p5-Spreadsheet-ParseExcel>=0.65,1:textproc/p5-Spreadsheet-ParseExcel \
+		p5-Spreadsheet-ParseXLSX>=0.27:textproc/p5-Spreadsheet-ParseXLSX \
+		p5-Spreadsheet-ReadSXC>=0.33:textproc/p5-Spreadsheet-ReadSXC \
+		p5-Text-CSV>=2.00:textproc/p5-Text-CSV \
+		p5-Text-CSV_XS>=1.45:textproc/p5-Text-CSV_XS
 TEST_DEPENDS=	p5-Test-NoWarnings>0:devel/p5-Test-NoWarnings
 
 USES=		perl5 tar:tgz
