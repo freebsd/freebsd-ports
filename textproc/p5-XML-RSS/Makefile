@@ -23,4 +23,6 @@ RUN_DEPENDS=	p5-DateTime-Format-Mail>=0:devel/p5-DateTime-Format-Mail \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
