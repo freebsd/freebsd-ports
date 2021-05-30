@@ -19,6 +19,8 @@ include/faiss/IndexIVFPQR.h
 include/faiss/IndexIVFSpectralHash.h
 include/faiss/IndexLSH.h
 include/faiss/IndexLattice.h
+include/faiss/IndexNNDescent.h
+include/faiss/IndexNSG.h
 include/faiss/IndexPQ.h
 include/faiss/IndexPQFastScan.h
 include/faiss/IndexPreTransform.h
@@ -31,13 +33,19 @@ include/faiss/MetaIndexes.h
 include/faiss/MetricType.h
 include/faiss/VectorTransform.h
 include/faiss/clone_index.h
+include/faiss/impl/AdditiveQuantizer.h
 include/faiss/impl/AuxIndexStructures.h
 include/faiss/impl/FaissAssert.h
 include/faiss/impl/FaissException.h
 include/faiss/impl/HNSW.h
+include/faiss/impl/LocalSearchQuantizer.h
+include/faiss/impl/NNDescent.h
+include/faiss/impl/NSG.h
 include/faiss/impl/PolysemousTraining.h
 include/faiss/impl/ProductQuantizer-inl.h
 include/faiss/impl/ProductQuantizer.h
+include/faiss/impl/ResidualQuantizer.h
+include/faiss/impl/ResultHandler.h
 include/faiss/impl/ScalarQuantizer.h
 include/faiss/impl/ThreadedIndex-inl.h
 include/faiss/impl/ThreadedIndex.h
@@ -68,6 +76,7 @@ include/faiss/utils/random.h
 include/faiss/utils/simdlib.h
 include/faiss/utils/simdlib_avx2.h
 include/faiss/utils/simdlib_emulated.h
+include/faiss/utils/simdlib_neon.h
 include/faiss/utils/utils.h
 lib/libfaiss.so
 %%DATADIR%%/faiss-config-version.cmake
