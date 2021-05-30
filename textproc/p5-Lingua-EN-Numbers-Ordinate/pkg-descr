@@ -4,5 +4,3 @@ provides functions for giving the ordinal form of a number,
 given its cardinal value.
 
 WWW: https://metacpan.org/release/Lingua-EN-Numbers-Ordinate
-
-Seamus Venasse <svenasse@polaris.ca>
