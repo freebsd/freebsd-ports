@@ -1,6 +1,5 @@
 PORTNAME=	gnome-builder
-PORTVERSION=	3.38.1
-PORTREVISION=	1
+PORTVERSION=	3.40.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -44,7 +43,8 @@ INSTALLS_ICONS=	yes
 CPE_VENDOR=	gnome
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
-MESON_ARGS=	-Dplugin_flatpak=false \
+MESON_ARGS=	-Dplugin_color_picker=false \
+		-Dplugin_flatpak=false \
 		-Dplugin_sysprof=false \
 		-Dplugin_qemu=false \
 		-Dplugin_jhbuild=false \
@@ -61,7 +61,6 @@ GLIB_SCHEMAS=	org.gnome.builder.build.gschema.xml \
 		org.gnome.builder.gnome-code-assistance.gschema.xml \
 		org.gnome.builder.gschema.xml \
 		org.gnome.builder.plugin.gschema.xml \
-		org.gnome.builder.plugins.color_picker_plugin.gschema.xml \
 		org.gnome.builder.plugins.copyright.gschema.xml \
 		org.gnome.builder.plugins.eslint.gschema.xml \
 		org.gnome.builder.plugins.stylelint.gschema.xml \
