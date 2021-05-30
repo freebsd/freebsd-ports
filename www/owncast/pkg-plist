@@ -1,4 +1,3 @@
-etc/rc.d/owncast
 sbin/owncast
 @mode 0644
 %%WWWDIR%%/LICENSE
