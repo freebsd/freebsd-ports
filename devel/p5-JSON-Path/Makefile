@@ -2,6 +2,7 @@
 
 PORTNAME=	JSON-Path
 PORTVERSION=	0.431
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +21,6 @@ RUN_DEPENDS=	p5-Carp-Assert>=0:devel/p5-Carp-Assert \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-LV>=0:devel/p5-LV \
 		p5-Readonly>=0:devel/p5-Readonly \
-		p5-Scalar-List-Utils>=1.48:lang/p5-Scalar-List-Utils \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 TEST_DEPENDS=	p5-JSON>=0:converters/p5-JSON \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
@@ -28,8 +28,9 @@ TEST_DEPENDS=	p5-JSON>=0:converters/p5-JSON \
 		p5-Test2-Suite>=0:devel/p5-Test2-Suite \
 		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
