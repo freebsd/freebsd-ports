@@ -1,7 +1,7 @@
 # Created by: Aaron Dalton <aaron@daltons.ca>
 
 PORTNAME=	Tree-Simple-View
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-Class-Throwable>=0.10:devel/p5-Class-Throwable \
 TEST_DEPENDS=	p5-Test-Exception>=0.15:devel/p5-Test-Exception \
 		p5-Test-LongString>=0:devel/p5-Test-LongString
 
-NO_ARCH=	yes
 USES=		perl5 tar:tgz
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
