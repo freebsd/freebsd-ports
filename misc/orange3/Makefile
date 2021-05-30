@@ -1,6 +1,5 @@
 PORTNAME=	orange3
-DISTVERSION=	3.28.0
-PORTREVISION=	1
+DISTVERSION=	3.29.0
 CATEGORIES=	misc python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +12,7 @@ EXPIRATION_DATE=2021-06-23
 
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}AnyQt>=0.0.8:x11-toolkits/py-AnyQt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}AnyQt>=0.0.11:x11-toolkits/py-AnyQt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}baycomp>=1.0.2:math/py-baycomp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bottleneck>=1.0.0:math/py-bottleneck@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=3.0.2:textproc/py-chardet@${PY_FLAVOR} \
@@ -24,11 +23,12 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}keyrings.alt>0:security/py-keyrings.alt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.0.0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openTSNE>=0.4.3:math/py-openTSNE@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openTSNE>=0.6.0:math/py-openTSNE@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orange-canvas-core>=0.1.19:devel/py-orange-canvas-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orange-widget-base>=4.12.0:devel/py-orange-widget-base@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>0:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.0.0:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pip>=9.0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-louvain>=0.13:math/py-python-louvain@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyqtgraph>=0.11.0:graphics/py-pyqtgraph@${PY_FLAVOR} \
