@@ -123,6 +123,7 @@ include/seqan3/alphabet/container/bitpacked_sequence.hpp
 include/seqan3/alphabet/container/concatenated_sequences.hpp
 include/seqan3/alphabet/detail/alphabet_proxy.hpp
 include/seqan3/alphabet/detail/convert.hpp
+include/seqan3/alphabet/detail/debug_stream_alphabet.hpp
 include/seqan3/alphabet/exception.hpp
 include/seqan3/alphabet/gap/all.hpp
 include/seqan3/alphabet/gap/gap.hpp
@@ -232,8 +233,15 @@ include/seqan3/core/configuration/detail/concept.hpp
 include/seqan3/core/configuration/detail/configuration_element_debug_mode.hpp
 include/seqan3/core/configuration/detail/configuration_element_parallel_mode.hpp
 include/seqan3/core/configuration/detail/configuration_utility.hpp
+include/seqan3/core/configuration/pipeable_config_element.hpp
 include/seqan3/core/debug_stream.hpp
+include/seqan3/core/debug_stream/byte.hpp
+include/seqan3/core/debug_stream/debug_stream_type.hpp
 include/seqan3/core/debug_stream/detail/to_string.hpp
+include/seqan3/core/debug_stream/optional.hpp
+include/seqan3/core/debug_stream/range.hpp
+include/seqan3/core/debug_stream/tuple.hpp
+include/seqan3/core/debug_stream/variant.hpp
 include/seqan3/core/detail/all.hpp
 include/seqan3/core/detail/customisation_point.hpp
 include/seqan3/core/detail/debug_stream_alphabet.hpp
@@ -265,6 +273,9 @@ include/seqan3/core/parallel/detail/spin_delay.hpp
 include/seqan3/core/parallel/execution.hpp
 include/seqan3/core/platform.hpp
 include/seqan3/core/pod_tuple.hpp
+include/seqan3/core/range/detail/adaptor_base.hpp
+include/seqan3/core/range/detail/adaptor_for_view_without_args.hpp
+include/seqan3/core/range/detail/adaptor_from_functor.hpp
 include/seqan3/core/range/detail/inherited_iterator_base.hpp
 include/seqan3/core/range/detail/misc.hpp
 include/seqan3/core/range/detail/random_access_iterator.hpp
@@ -285,7 +296,6 @@ include/seqan3/core/simd/simd_algorithm.hpp
 include/seqan3/core/simd/simd_traits.hpp
 include/seqan3/core/simd/view_iota_simd.hpp
 include/seqan3/core/simd/view_to_simd.hpp
-include/seqan3/core/tuple/common_tuple.hpp
 include/seqan3/core/tuple_utility.hpp
 include/seqan3/core/type_list/all.hpp
 include/seqan3/core/type_list/traits.hpp
@@ -637,6 +647,7 @@ include/seqan3/utility/simd/simd_traits.hpp
 include/seqan3/utility/simd/views/iota_simd.hpp
 include/seqan3/utility/simd/views/to_simd.hpp
 include/seqan3/utility/tuple/all.hpp
+include/seqan3/utility/tuple/common_tuple.hpp
 include/seqan3/utility/tuple/concept.hpp
 include/seqan3/utility/tuple/pod_tuple.hpp
 include/seqan3/utility/tuple/pop_front.hpp
