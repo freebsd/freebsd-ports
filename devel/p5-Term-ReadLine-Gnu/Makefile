@@ -1,7 +1,7 @@
 # Created by: Matthew Hunt <mph@pobox.com>
 
 PORTNAME=	Term-ReadLine-Gnu
-PORTVERSION=	1.37
+PORTVERSION=	1.42
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
