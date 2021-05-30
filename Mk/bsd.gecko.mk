@@ -79,6 +79,9 @@ BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
 				${RUST_DEFAULT}>=1.52.1:lang/${RUST_DEFAULT} \
 				node:www/node
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
+.if ${MOZILLA_VER:R:R} >= 85
+RUN_DEPENDS+=	${LOCALBASE}/lib/libpci.so:devel/libpci
+.endif
 MOZ_EXPORT+=	${CONFIGURE_ENV} \
 				PERL="${PERL}" \
 				PYTHON3="${PYTHON_CMD}" \
