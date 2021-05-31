@@ -158,7 +158,6 @@
     SUBDIR += l-smash
     SUBDIR += libaacs
     SUBDIR += libass
-    SUBDIR += libav
     SUBDIR += libbdplus
     SUBDIR += libbluray
     SUBDIR += libcec
