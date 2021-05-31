@@ -127,6 +127,10 @@ MESON_ARGS+=	-Dpangocairo=disabled
 PLIST_SUB+=	PANGOCAIRO="@comment "
 .endif
 
+.if defined(WITH_DEBUG)
+LDFLAGS+=	-lexecinfo
+.endif
+
 post-patch:
 .if ${CHOSEN_COMPILER_TYPE} == clang
 	${REINPLACE_CMD} -e '/altivec.h/d' ${WRKSRC}/gegl/opencl/cl_platform.h
