@@ -2,6 +2,7 @@
 
 PORTNAME=	GraphBLAS
 PORTVERSION=	5.0.5
+PORTREVISION=	1
 CATEGORIES=	math
 
 COMMENT=	Graph algorithms in the language of linear algebra
