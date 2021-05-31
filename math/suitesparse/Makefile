@@ -1,8 +1,7 @@
 # Created by: Maho Nakata <maho@FreeBSD.org>
 
 PORTNAME=	suitesparse
-PORTVERSION=	5.10.0
-PORTREVISION=	1
+PORTVERSION=	5.10.1
 CATEGORIES=	math
 
 MAINTAINER=	fortran@FreeBSD.org
