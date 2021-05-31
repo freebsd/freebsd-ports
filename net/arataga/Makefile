@@ -21,11 +21,15 @@ BUILD_DEPENDS=	${LOCALBASE}/include/spdlog/spdlog.h:devel/spdlog \
 LIB_DEPENDS=	libso.${_SO5_LIBVER}.so:devel/sobjectizer \
 		libfmt.so:devel/libfmt \
 		libhttp_parser.so:www/http-parser
+TEST_DEPENDS=	${LOCALBASE}/include/doctest/doctest.h:devel/doctest
 
 USES=		compiler:c++17-lang gmake
 MAKEFILE=	${FILESDIR}/makefile
 MAKE_ENV=	SO5_LIBVER=${_SO5_LIBVER}
 WRKSRC_SUBDIR=	${PORTNAME}
+
+TEST_TARGET=	run_unit_tests
+TEST_WRKSRC=	${WRKSRC}/../tests
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Stiffstream
