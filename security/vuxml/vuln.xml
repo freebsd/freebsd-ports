@@ -76,6 +76,34 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fd24a530-c202-11eb-b217-b42e99639323">
+    <topic>wayland -- integer overflow</topic>
+    <affects>
+      <package>
+	<name>wayland</name>
+	<range><lt>1.19.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tobias Stoeckmann reports:</p>
+	<blockquote
+	  cite="https://gitlab.freedesktop.org/wayland/wayland/-/merge_requests/133">
+	  <p>The libXcursor fix for CVE-2013-2003 has never been imported into wayland, leaving it vulnerable to it.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2003</cvename>
+      <url>https://gitlab.freedesktop.org/wayland/wayland/-/merge_requests/133</url>
+      <freebsdpr>ports/256273</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2021-05-02</discovery>
+      <entry>2021-05-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="107c7a76-beaa-11eb-b87a-901b0ef719ab">
     <topic>FreeBSD -- Missing message validation in libradius(3)</topic>
     <affects>
