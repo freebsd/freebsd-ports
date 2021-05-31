@@ -47,6 +47,7 @@
     SUBDIR += duktape-lib
     SUBDIR += ecl
     SUBDIR += elixir
+    SUBDIR += elixir-devel
     SUBDIR += elixir-mode.el
     SUBDIR += elk
     SUBDIR += elm
