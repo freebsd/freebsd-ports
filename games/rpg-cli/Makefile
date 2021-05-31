@@ -1,5 +1,5 @@
 PORTNAME=	rpg-cli
-DISTVERSION=	0.2.0
+DISTVERSION=	0.3.0
 CATEGORIES=	games
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -23,6 +23,7 @@ CARGO_CRATES=	atty-0.2.14 \
 		ctor-0.1.20 \
 		dirs-3.0.2 \
 		dirs-sys-0.3.6 \
+		dunce-1.0.1 \
 		erased-serde-0.3.15 \
 		getrandom-0.2.3 \
 		ghost-0.1.2 \
