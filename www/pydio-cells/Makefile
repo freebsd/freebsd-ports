@@ -1,7 +1,6 @@
 PORTNAME=	cells
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.7
-PORTREVISION=	1
+DISTVERSION=	2.2.8
 CATEGORIES=	www
 PKGNAMEPREFIX=	pydio-
 
@@ -37,6 +36,9 @@ ZSH_PLIST_FILES=	share/zsh/site-functions/_${PORTNAME}
 post-patch:
 	${REINPLACE_CMD} -e "s|\$${GOPATH}/bin/packr|${LOCALBASE}/bin/pydio-packr|g" \
 		${WRKSRC}/Makefile
+	# Linux keyring code is compatible with FreeBSD
+	cd ${WRKSRC}/vendor/github.com/zalando/go-keyring && \
+		${LN} -s keyring_linux.go keyring_freebsd.go
 
 pre-build:
 	@cd ${WRKSRC} && \
