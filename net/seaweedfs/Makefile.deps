@@ -1,4 +1,5 @@
 GH_TUPLE=	\
+		Azure:azure-amqp-common-go:v2.1.0:azure_azure_amqp_common_go_v2/vendor/github.com/Azure/azure-amqp-common-go/v2 \
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.9.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
@@ -12,7 +13,7 @@ GH_TUPLE=	\
 		census-instrumentation:opencensus-go:v0.22.4:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
-		chrislusf:raft:v1.0.6:chrislusf_raft/vendor/github.com/chrislusf/raft \
+		chrislusf:raft:v1.0.7:chrislusf_raft/vendor/github.com/chrislusf/raft \
 		coreos:go-semver:v0.3.0:coreos_go_semver/vendor/github.com/coreos/go-semver \
 		coreos:go-systemd:v22.0.0:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -26,9 +27,14 @@ GH_TUPLE=	\
 		eapache:queue:v1.1.0:eapache_queue/vendor/github.com/eapache/queue \
 		etcd-io:etcd:262c93980547:etcd_io_etcd/vendor/go.etcd.io/etcd \
 		facebookgo:clock:600d898af40a:facebookgo_clock/vendor/github.com/facebookgo/clock \
+		facebookgo:ensure:63f1cf65ac4c:facebookgo_ensure/vendor/github.com/facebookgo/ensure \
+		facebookgo:stack:751773369052:facebookgo_stack/vendor/github.com/facebookgo/stack \
 		facebookgo:stats:1b76add642e4:facebookgo_stats/vendor/github.com/facebookgo/stats \
+		facebookgo:subset:c811ad88dec4:facebookgo_subset/vendor/github.com/facebookgo/subset \
 		fclairamb:ftpserverlib:v0.8.0:fclairamb_ftpserverlib/vendor/github.com/fclairamb/ftpserverlib \
+		frankban:quicktest:v1.7.2:frankban_quicktest/vendor/github.com/frankban/quicktest \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-errors:errors:v1.1.1:go_errors_errors/vendor/github.com/go-errors/errors \
 		go-inf:inf:v0.9.1:go_inf_inf/vendor/gopkg.in/inf.v0 \
 		go-redis:redis:v8.4.4:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
@@ -49,7 +55,7 @@ GH_TUPLE=	\
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
+		golang:sync:30421366ff76:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:fb209a7c41cd:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:tools:1b747fd94509:golang_tools/vendor/golang.org/x/tools \
@@ -67,7 +73,9 @@ GH_TUPLE=	\
 		googleapis:google-cloud-go:storage/v1.9.0:googleapis_google_cloud_go_storage \
 		googleapis:google-cloud-go:v0.58.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gorilla:mux:v1.7.4:gorilla_mux/vendor/github.com/gorilla/mux \
+		gorilla:websocket:v1.4.1:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		grpc-ecosystem:go-grpc-middleware:f849b5445de4:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
+		grpc-ecosystem:grpc-gateway:v1.11.0:grpc_ecosystem_grpc_gateway/vendor/github.com/grpc-ecosystem/grpc-gateway \
 		grpc:grpc-go:v1.29.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hailocab:go-hostpool:e80d13ce29ed:hailocab_go_hostpool/vendor/github.com/hailocab/go-hostpool \
 		hashicorp:go-uuid:v1.0.1:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
@@ -75,13 +83,16 @@ GH_TUPLE=	\
 		jcmturner:aescts:v1.0.1:jcmturner_aescts/vendor/gopkg.in/jcmturner/aescts.v1 \
 		jcmturner:dnsutils:v1.0.1:jcmturner_dnsutils/vendor/gopkg.in/jcmturner/dnsutils.v1 \
 		jcmturner:gofork:v1.0.0:jcmturner_gofork/vendor/github.com/jcmturner/gofork \
+		jcmturner:goidentity:v3.0.0:jcmturner_goidentity/vendor/gopkg.in/jcmturner/goidentity.v3 \
 		jcmturner:gokrb5:v7.3.0:jcmturner_gokrb5/vendor/gopkg.in/jcmturner/gokrb5.v7 \
 		jcmturner:rpc:v1.1.0:jcmturner_rpc/vendor/gopkg.in/jcmturner/rpc.v1 \
 		jinzhu:copier:v0.2.8:jinzhu_copier/vendor/github.com/jinzhu/copier \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		json-iterator:go:v1.1.10:json_iterator_go/vendor/github.com/json-iterator/go \
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
+		karlseguin:ccache:v2.0.3:karlseguin_ccache/vendor/github.com/karlseguin/ccache \
 		karlseguin:ccache:v2.0.7:karlseguin_ccache_v2/vendor/github.com/karlseguin/ccache/v2 \
+		karlseguin:expect:v1.0.1:karlseguin_expect/vendor/gopkg.in/karlseguin/expect.v1 \
 		klauspost:compress:v1.10.9:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v1.2.1:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
 		klauspost:crc32:v1.2.0:klauspost_crc32/vendor/github.com/klauspost/crc32 \
@@ -89,8 +100,10 @@ GH_TUPLE=	\
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		kurin:blazer:v0.5.3:kurin_blazer/vendor/github.com/kurin/blazer \
 		lib:pq:v1.10.0:lib_pq/vendor/github.com/lib/pq \
+		lunixbochs:vtclean:v1.0.0:lunixbochs_vtclean/vendor/github.com/lunixbochs/vtclean \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		mailru:easyjson:v0.7.1:mailru_easyjson/vendor/github.com/mailru/easyjson \
+		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
 		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
@@ -114,9 +127,8 @@ GH_TUPLE=	\
 		prometheus:common:v0.7.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.0.8:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.24.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
-		rakyll:statik:v0.1.7:rakyll_statik/vendor/github.com/rakyll/statik \
 		rcrowley:go-metrics:cac0b30c2563:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
-		seaweedfs:fuse:v1.1.4:seaweedfs_fuse/vendor/github.com/seaweedfs/fuse \
+		seaweedfs:fuse:v1.1.6:seaweedfs_fuse/vendor/github.com/seaweedfs/fuse \
 		seaweedfs:goexif:v1.0.2:seaweedfs_goexif/vendor/github.com/seaweedfs/goexif \
 		sirupsen:logrus:v1.5.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		skip2:go-qrcode:da1b6568686e:skip2_go_qrcode/vendor/github.com/skip2/go-qrcode \
@@ -138,10 +150,12 @@ GH_TUPLE=	\
 		uber-go:multierr:v1.5.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.14.1:uber_go_zap/vendor/go.uber.org/zap \
 		valyala:bytebufferpool:v1.0.0:valyala_bytebufferpool/vendor/github.com/valyala/bytebufferpool \
+		viant:assertly:v0.5.4:viant_assertly/vendor/github.com/viant/assertly \
 		viant:ptrie:v0.3.0:viant_ptrie/vendor/github.com/viant/ptrie \
 		viant:toolbox:v0.33.2:viant_toolbox/vendor/github.com/viant/toolbox \
 		willf:bitset:v1.1.10:willf_bitset/vendor/github.com/willf/bitset \
 		willf:bloom:v2.0.3:willf_bloom/vendor/github.com/willf/bloom \
+		wsxiaoys:terminal:0940f3fc43a0:wsxiaoys_terminal/vendor/github.com/wsxiaoys/terminal \
 		xdg:scram:7eeb5667e42c:xdg_scram/vendor/github.com/xdg/scram \
 		xdg:stringprep:v1.0.0:xdg_stringprep/vendor/github.com/xdg/stringprep
 
