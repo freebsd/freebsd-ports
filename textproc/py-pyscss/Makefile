@@ -1,8 +1,7 @@
 # Created by: Ilya A. Arkhipov <rum1cro@yandex.ru>
 
 PORTNAME=	pyscss
-PORTVERSION=	1.3.5
-DISTVERSIONPREFIX=	v
+PORTVERSION=	1.3.7
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
