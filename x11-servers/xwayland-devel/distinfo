@@ -1,6 +1,6 @@
-TIMESTAMP = 1622372398
-SHA256 (mirror-xserver-xorg-server-1.20.0-959-gbcb1de600_GH0.tar.gz) = 16fa61c0d6a906c4907ba77c609e3fb32807126c3ee4fbd8a0e25f960bf9bdda
-SIZE (mirror-xserver-xorg-server-1.20.0-959-gbcb1de600_GH0.tar.gz) = 5859751
+TIMESTAMP = 1622449440
+SHA256 (mirror-xserver-xorg-server-1.20.0-963-g34a58d771_GH0.tar.gz) = 0cba5e66365c9102365d01fb73b5ccb272b603f1308e06efc6fefa5361ed1e7a
+SIZE (mirror-xserver-xorg-server-1.20.0-963-g34a58d771_GH0.tar.gz) = 5860281
 SHA256 (freedesktop-xorg-xorgproto-xorgproto-2021.4.99.2_GH0.tar.gz) = ea68fe40cf55247538fd3f0f891ef0ba229b541b56e0874b7efed60688228638
 SIZE (freedesktop-xorg-xorgproto-xorgproto-2021.4.99.2_GH0.tar.gz) = 981510
 SHA256 (231720f8b212.patch) = ed3db053b86e5c7492cefb9dbb3dd373609f9318a5b848382aac59da322188f0
