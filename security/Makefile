@@ -191,6 +191,7 @@
     SUBDIR += govpn
     SUBDIR += gpa
     SUBDIR += gpg-gui
+    SUBDIR += gpg-tui
     SUBDIR += gpgdir
     SUBDIR += gpgme
     SUBDIR += gpgme-cpp
