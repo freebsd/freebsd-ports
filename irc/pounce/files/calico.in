@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: calico
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable calico:
+#
+# calico_enable="YES"
+#
+# The calico socket directory is set by the calico_path variable.
+# The default is calico_path="/var/run/calico".
+
+. /etc/rc.subr
+
+name='calico'
+rcvar='calico_enable'
+
+load_rc_config "${name}"
+
+: ${calico_enable:='NO'}
+: ${calico_path:="/var/run/${name}"}
+calico_flags="${calico_flags} ${calico_path}"
+
+command='/usr/sbin/daemon'
+procname='%%PREFIX%%/bin/calico'
+pidfile="/var/run/${name}.pid"
+required_dirs=$calico_path
+
+child_flags=$calico_flags
+child_user=$calico_user
+unset calico_flags calico_user
+command_args="\
+	-p ${pidfile} -T ${name} ${child_user:+-u ${child_user}} \
+	-- ${procname} ${child_flags}"
+
+run_rc_command "$1"

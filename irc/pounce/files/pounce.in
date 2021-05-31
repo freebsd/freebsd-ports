@@ -1,0 +1,78 @@
+#!/bin/sh
+
+# PROVIDE: pounce
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable pounce:
+#
+# pounce_enable="YES"
+# pounce_user="example"
+# pounce_flags="example.conf"
+#
+# The pounce rc.d script supports multiple profiles. When profiles are
+# specified, the non-profile-specific parameters become defaults.
+# Example:
+#
+# pounce_enable="YES"
+# pounce_user="example"
+# pounce_profiles="server1 server2"
+# pounce_server1_flags="server1.conf"
+# pounce_server2_flags="server2.conf"
+
+. /etc/rc.subr
+
+name='pounce'
+rcvar='pounce_enable'
+extra_commands='reload'
+sig_reload='USR1'
+
+load_rc_config "${name}"
+
+: ${pounce_enable:='NO'}
+
+command='/usr/sbin/daemon'
+pidprefix="/var/run/${name}"
+pidfile="${pidprefix}.pid"
+
+child_command='%%PREFIX%%/bin/pounce'
+child_pidfile="${pidprefix}.child.pid"
+
+if [ -n "$2" ]; then
+	profile=$2
+	if [ -n "${pounce_profiles}" ]; then
+		pidfile="${pidprefix}.${profile}.pid"
+		child_pidfile="${pidprefix}.${profile}.child.pid"
+		eval pounce_enable="\${pounce_${profile}_enable:-${pounce_enable}}"
+		eval pounce_flags="\${pounce_${profile}_flags:-${pounce_flags}}"
+		eval pounce_user="\${pounce_${profile}_user:-${pounce_user}}"
+		eval pounce_env="\${pounce_${profile}_env:-${pounce_env}}"
+		export HOME="$(/usr/bin/getent passwd ${pounce_user} | /usr/bin/cut -d: -f6)"
+	else
+		echo "$0: extra argument ignored"
+	fi
+else
+	if [ -n "${pounce_profiles}" -a -n "$1" ]; then
+		for profile in ${pounce_profiles}; do
+			echo "===> ${name} profile: ${profile}"
+			%%PREFIX%%/etc/rc.d/${name} "$1" "${profile}" || exit "$?"
+		done
+		exit
+	fi
+fi
+
+child_flags=$pounce_flags
+child_user=$pounce_user
+unset pounce_flags pounce_user
+command_args="\
+	-r -P ${pidfile} -p ${child_pidfile} -T ${name}${profile:+/${profile}} \
+	${child_user:+-u ${child_user}} \
+	-- ${child_command} ${child_flags}"
+
+pounce_reload() {
+	rc_pid=$(check_pidfile "$child_pidfile" "$child_command")
+	kill "-$sig_reload" "$rc_pid"
+}
+reload_cmd='pounce_reload'
+
+run_rc_command "$1"
