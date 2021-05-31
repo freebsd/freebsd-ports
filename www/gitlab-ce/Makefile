@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	13.12.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -11,11 +11,11 @@ COMMENT=	Web GUI for managing git repositories
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#	gitlab-agent>=13.12.0:net/gitlab-agent \
 # the rubygems of RUN_DEPENDS matches the order of the Gemfile
 # which makes maintaining this long list much easier!
 MY_DEPENDS=	git>=2.31.0:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
+	gitlab-agent>=13.12.0:net/gitlab-agent \
 	gitlab-elasticsearch-indexer>=2.11.0:textproc/gitlab-elasticsearch-indexer \
 	gitlab-pages>=1.39.0:www/gitlab-pages \
 	gitlab-shell>=13.18.0:devel/gitlab-shell \
