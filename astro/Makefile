@@ -85,6 +85,7 @@
     SUBDIR += py-horoscopegenerator
     SUBDIR += py-indiweb
     SUBDIR += py-jplephem
+    SUBDIR += py-kosmorrolib
     SUBDIR += py-metar
     SUBDIR += py-metpy
     SUBDIR += py-pykep
