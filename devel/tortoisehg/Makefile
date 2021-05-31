@@ -21,8 +21,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://foss.heptapod.net
 GL_ACCOUNT=	mercurial/tortoisehg
 GL_PROJECT=	thg
-GL_COMMIT=	65f0eafe3f398fabe0afbc475e18cd63af81df89
-GL_HEPTAPOD_COMMIT=	9f108b8c92463866721dedda1f3f872e0e2b4344
+GL_COMMIT=	9f108b8c92463866721dedda1f3f872e0e2b4344
 
 OPTIONS_DEFINE=	NAUTILUS NLS
 NAUTILUS_DESC=	Install TortoiseHG Nautilus extension
@@ -30,12 +29,11 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 
-WRKSRC=		${WRKDIR}/${GL_PROJECT}-${GL_COMMIT}-${GL_HEPTAPOD_COMMIT}
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
 
 # Do not conflict with devel/mercurial, which also installs hgext3rd/__init__.py
-EXTRACT_AFTER_ARGS=	--exclude ${GL_PROJECT}-${GL_COMMIT}-${GL_HEPTAPOD_COMMIT}/hgext3rd/__init__.py
+EXTRACT_AFTER_ARGS=	--exclude thg-${GL_COMMIT}/hgext3rd/__init__.py
 
 .include <bsd.port.pre.mk>
 
