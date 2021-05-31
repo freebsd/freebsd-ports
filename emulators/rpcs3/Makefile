@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.16-12330 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g7d8993862
+DISTVERSION=	0.0.16-12351 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-ga7d4da25a
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,7 +10,6 @@ COMMENT=	PS3 emulator/debugger
 LICENSE=	APACHE20 BSD3CLAUSE BSL GPLv2 MIT ZLIB
 LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC_cereal}/LICENSE
-LICENSE_FILE_BSL=	${WRKSRC_span}/LICENSE_1_0.txt
 LICENSE_FILE_MIT=	${WRKSRC_pugixml}/LICENSE.md
 LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
@@ -32,8 +31,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-28-g8961cf8:hidapi/3rdparty/hidapi/hidap
 		jbeder:yaml-cpp:yaml-cpp-0.6.3-30-g6a211f0:yamlcpp/3rdparty/yaml-cpp \
 		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/Vulkan/spirv-headers \
 		KhronosGroup:SPIRV-Tools:v2020.4:spirv_tools/Vulkan/spirv-tools \
-		KhronosGroup:glslang:11.4.0:glslang/Vulkan/glslang \
-		tcbrindle:span:9d7559a:span/3rdparty/span \
+		KhronosGroup:glslang:11.4.0:glslang/3rdparty/glslang/glslang \
 		USCiLab:cereal:v1.3.0-5-g60c69df9:cereal/3rdparty/cereal \
 		wolfSSL:wolfssl:v4.5.0-stable-80-g39b544860:wolfssl/3rdparty/wolfssl \
 		zeux:pugixml:v1.11.4:pugixml/3rdparty/pugixml
@@ -89,5 +87,13 @@ USES:=		${USES:Ncompiler*}
 CC=		clang${LLVM_DEFAULT}
 CXX=		clang++${LLVM_DEFAULT}
 CPP=		clang-cpp${LLVM_DEFAULT}
+
+# XXX Drop after FreeBSD 12.2 EOL
+.if make(makesum) || (!exists(/usr/include/c++/v1/concepts) && exists(/usr/lib/libc++.so))
+MASTER_SITES+=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VER}/:libcxx
+DISTFILES+=	libcxx-${LLVM_VER}.src.tar.xz:libcxx
+CXXFLAGS+=	-nostdinc++ -D_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS -isystem${WRKDIR}/libcxx-${LLVM_VER}.src/include
+LLVM_VER=	12.0.0
+.endif
 
 .include <bsd.port.post.mk>
