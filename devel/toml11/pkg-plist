@@ -9,6 +9,7 @@ include/toml/get.hpp
 include/toml/into.hpp
 include/toml/lexer.hpp
 include/toml/literal.hpp
+include/toml/macros.hpp
 include/toml/parser.hpp
 include/toml/region.hpp
 include/toml/result.hpp
