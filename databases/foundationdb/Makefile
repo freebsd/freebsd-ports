@@ -1,5 +1,5 @@
 PORTNAME=	foundationdb
-DISTVERSION=	6.3.12
+DISTVERSION=	6.3.13
 CATEGORIES=	databases
 
 MAINTAINER=	dch@FreeBSD.org
@@ -9,8 +9,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_FreeBSD_11=	requires newer OpenSSL
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	not yet ported to anything else
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
