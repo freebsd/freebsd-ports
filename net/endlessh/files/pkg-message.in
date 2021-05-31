@@ -11,11 +11,22 @@ To see the connections set LogLevel 1 in endlessh.conf or add "-v" to
 endlessh_args. Sending SIGUSR1 to endlessh (pkill USR1 endlessh) will add
 statistics to the /var/log/endlessh.log file
 
-Neither endlessh nor daemon support rotating the logfile, use periodic or
-cron to copy the logfile and truncate it using
+Link (or copy) endlessh.newsyslog.conf to ${PREFIX}/newsyslog.conf.d/
+to take care of log rotation.
 
-   $ echo -n > /var/log/endlessh.log
+ln -s ${PREFIX}/etc/endlessh.newsyslog.conf $PREFIX}/etc/newsyslog.conf.d/
 
 EOD
 }
+,
+{
+  type: upgrade
+  message: <<EOD
+
+Link (or copy) endlessh.newsyslog.conf to %%PREFIX%%/newsyslog.conf.d/
+to take care of log rotation.
+
+ln -s %%PREFIX%%/etc/endlessh.newsyslog.conf %%PREFIX%%/etc/newsyslog.conf.d/
+
+EOD
 ]
