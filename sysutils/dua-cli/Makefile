@@ -1,6 +1,6 @@
 PORTNAME=	dua-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.3
+DISTVERSION=	2.12.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -18,7 +18,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
-		byte-unit-4.0.11 \
+		byte-unit-4.0.12 \
 		cassowary-0.3.0 \
 		cfg-if-1.0.0 \
 		clap-3.0.0-beta.2 \
@@ -47,10 +47,10 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		itertools-0.10.0 \
 		jwalk-0.6.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.94 \
+		libc-0.2.95 \
 		lock_api-0.4.4 \
 		log-0.4.14 \
-		memoffset-0.6.3 \
+		memoffset-0.6.4 \
 		mio-0.7.11 \
 		miow-0.3.7 \
 		ntapi-0.3.6 \
@@ -65,10 +65,10 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		pretty_assertions-0.7.2 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.26 \
+		proc-macro2-1.0.27 \
 		quote-1.0.9 \
-		rayon-1.5.0 \
-		rayon-core-1.9.0 \
+		rayon-1.5.1 \
+		rayon-core-1.9.1 \
 		redox_syscall-0.2.8 \
 		redox_termios-0.1.2 \
 		scopeguard-1.1.0 \
