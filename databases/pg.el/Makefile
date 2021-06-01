@@ -1,0 +1,39 @@
+PORTNAME=	pg.el
+DISTVERSION=	0.13
+CATEGORIES=	databases elisp
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
+
+MAINTAINER=	yasu@utahime.org
+COMMENT=	PostgreSQL Elisp interface
+
+LICENSE=	GPLv2+
+
+USES=		emacs
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	cbbrowne
+GH_TAGNAME=	4f6516e
+
+NO_ARCH=	yes
+
+PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/pg.el \
+		${EMACS_VERSION_SITE_LISPDIR}/pg.elc
+
+PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS
+
+do-build:
+	(cd ${WRKSRC} \
+	&& ${EMACS_CMD} -Q -batch -L . -f batch-byte-compile *.el)
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.el* \
+	    ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR})
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

@@ -558,6 +558,7 @@
     SUBDIR += percona57-client
     SUBDIR += percona57-pam-for-mysql
     SUBDIR += percona57-server
+    SUBDIR += pg.el
     SUBDIR += pgFormatter
     SUBDIR += pg_activity
     SUBDIR += pg_citus
