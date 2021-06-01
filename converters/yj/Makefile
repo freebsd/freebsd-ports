@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	converters
 DIST_SUBDIR=	yj
 
-MAINTAINER=	ohauer@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert between YAML, TOML, JSON, and HCL
 
 LICENSE=	APACHE20
