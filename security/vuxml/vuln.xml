@@ -76,6 +76,37 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="58d6ed66-c2e8-11eb-9fb0-6451062f0f7a">
+    <topic>libX11 -- Arbitrary code execution</topic>
+    <affects>
+      <package>
+	<name>libX11</name>
+	<range><lt>1.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The X.org project reports:</p>
+	<blockquote cite="https://lists.freedesktop.org/archives/xorg/2021-May/060699.html">
+	  <p>XLookupColor() and other X libraries function lack proper validation
+	    of the length of their string parameters. If those parameters can be
+	    controlled by an external application (for instance a color name that
+	    can be emitted via a terminal control sequence) it can lead to the
+	    emission of extra X protocol requests to the X server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-14363</cvename>
+      <url>https://lists.freedesktop.org/archives/xorg/2021-May/060699.html</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2021-31535</url>
+    </references>
+    <dates>
+      <discovery>2021-05-11</discovery>
+      <entry>2021-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="59ab72fb-bccf-11eb-a38d-6805ca1caf5c">
     <topic>Prometheus -- arbitrary redirects</topic>
     <affects>
