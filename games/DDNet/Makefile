@@ -1,6 +1,6 @@
 PORTNAME=	DDNet
 PORTVERSION=	15.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://ddnet.tw/downloads/
 
@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 USES=		cmake compiler:c++11-lang pkgconfig python sqlite:3 ssl tar:xz
 CMAKE_ARGS=	-DPYTHON_EXECUTABLE="${PYTHON_CMD}"
 CMAKE_OFF=	AUTOUPDATE DOWNLOAD_GTEST PREFER_BUNDLED_LIBS
+
+CXXFLAGS+=	-DBINARY_DIR="\\\"${PREFIX}/bin\\\""
 
 PORTDATA=	*
 DATADIR=	${PREFIX}/share/ddnet
