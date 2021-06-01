@@ -3,4 +3,4 @@ supported packages and extract multiple items from them while maintaining
 their directory structure.  Currently, BSP, GCF, NCF, PAK, SGA, VPK, WAD,
 XZP, and ZIP (store/deflate) package formats are supported.
 
-WWW: http://nemesis.thewavelength.net/index.php?p=35
+WWW: https://developer.valvesoftware.com/wiki/HLLib

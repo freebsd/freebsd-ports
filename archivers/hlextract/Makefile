@@ -1,12 +1,12 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	hlextract
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.6
 CATEGORIES=	archivers games
-MASTER_SITES=	LOCAL/danilo
+MASTER_SITES=	https://github.com/osen/distfiles/raw/main/
 DISTNAME=	hllib${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kpedersen@disroot.org
 COMMENT=	Utility to extract data from various Half-Life file formats
 
 LICENSE=	GPLv2
