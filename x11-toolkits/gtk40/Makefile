@@ -1,6 +1,6 @@
 PORTNAME=	gtk
 PORTVERSION=	4.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -82,6 +82,7 @@ GSTREAMER_USE=		GSTREAMER1=bad,gl
 VULKAN_DESC=		GDK Vulkan renderer backend
 VULKAN_BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
+VULKAN_RUN_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 VULKAN_MESON_ENABLED=	vulkan
 
 WAYLAND_DESC=		GDK Wayland backend
