@@ -1,7 +1,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	24.0.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime24
 DIST_SUBDIR=	erlang
@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--enable-dirty-schedulers \
 		--enable-kernel-poll \
 		--enable-smp-support \
 		--enable-threads
+MAKE_ARGS=	all
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	pkg-message
@@ -34,8 +35,8 @@ WRKSRC=		${WRKSRC_otp}
 
 ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
 
-OPTIONS_DEFINE=		CORBA DTRACE JAVA ODBC OPENSSL SCTP SHARING WX
-OPTIONS_DEFAULT=	CORBA DTRACE OPENSSL SCTP SHARING
+OPTIONS_DEFINE=		CHUNKS CORBA DTRACE JAVA ODBC OPENSSL SCTP SHARING WX
+OPTIONS_DEFAULT=	CHUNKS CORBA DTRACE OPENSSL SCTP SHARING
 
 .if !exists(/usr/sbin/dtrace)
 OPTIONS_EXCLUDE+=	DTRACE
@@ -44,13 +45,13 @@ OPTIONS_EXCLUDE+=	DTRACE
 OPTIONS_EXCLUDE_DragonFly=	SCTP
 # ld(1) fails to link probes: missing __dtrace_erlang___* symbols
 # see also https://reviews.freebsd.org/D22360
-# WX breaks on aarch64, still working on this in BZ256289
-OPTIONS_EXCLUDE_aarch64=	DTRACE WX
+OPTIONS_EXCLUDE_aarch64=	DTRACE
 OPTIONS_EXCLUDE_armv6=	DTRACE
 OPTIONS_EXCLUDE_armv7=	DTRACE
 OPTIONS_EXCLUDE_i386=	DTRACE
 OPTIONS_EXCLUDE_riscv64=	DTRACE
 
+CHUNKS_DESC=	Enable in-line documentation in erlang console
 CORBA_DESC=	Enable Corba support
 SCTP_DESC=	Enable SCTP support
 SHARING_DESC=	Enable term copy-and-share support
@@ -60,6 +61,7 @@ WX_DESC=	Enable WX application
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
 
+CHUNKS_MAKE_ARGS+=		docs DOC_TARGETS=chunks
 DTRACE_CONFIGURE_WITH=		dynamic-trace=dtrace
 DTRACE_CFLAGS=			-fno-omit-frame-pointer
 DTRACE_VARS=			STRIP=""
@@ -68,8 +70,7 @@ JAVA_CONFIGURE_ENV=		ac_cv_prog_JAVAC="${JAVAC}"
 JAVA_VARS=			USE_JAVA=yes
 ODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
 ODBC_CONFIGURE_WITH=		odbc
-ODBC_CFLAGS=			-I/usr/local/include
-ODBC_LDFLAGS=			-L/usr/local/lib
+ODBC_USES=			localbase
 OPENSSL_USES=			ssl
 OPENSSL_CONFIGURE_WITH=		ssl=${OPENSSLBASE}
 SCTP_CONFIGURE_ENABLE=		sctp
