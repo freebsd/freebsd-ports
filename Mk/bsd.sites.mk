@@ -431,6 +431,8 @@ GH_PROJECT:=	${GH_PROJECT_DEFAULT}
 GH_TAGNAME:=	${GH_TAGNAME_DEFAULT}
 GH_SUBDIR:=	${GH_SUBDIR_DEFAULT}
 .  if defined(GH_TAGNAME)
+# If you change either of the _SANITIZED or _EXTRACT variables, please keep the
+# changes in sync with the GH_TAGNAME_${_group}_* variables 50 lines below.
 GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,g}
 # GitHub silently converts tags starting with v to not have v in the filename
 # and extraction directory.  It also replaces + with -.
@@ -476,8 +478,10 @@ post-extract-gh-DEFAULT:
 GH_ACCOUNT_${_group}?=	${GH_ACCOUNT_DEFAULT}
 GH_PROJECT_${_group}?=	${GH_PROJECT_DEFAULT}
 GH_TAGNAME_${_group}?=	${GH_TAGNAME_DEFAULT}
-GH_TAGNAME_${_group}_SANITIZED=	${GH_TAGNAME_${_group}:S,/,-,}
-GH_TAGNAME_${_group}_EXTRACT=	${GH_TAGNAME_${_group}_SANITIZED:C/^[vV]([0-9])/\1/}
+# If you change either of the _SANITIZED or _EXTRACT variables, please keep the
+# changes in sync with the GH_TAGNAME_* variables 50 lines above.
+GH_TAGNAME_${_group}_SANITIZED=	${GH_TAGNAME_${_group}:S,/,-,g}
+GH_TAGNAME_${_group}_EXTRACT=	${GH_TAGNAME_${_group}_SANITIZED:C/^[vV]([0-9])/\1/:S/+/-/g:C/--*/-/g}
 _GH_TUPLE_OUT:=	${_GH_TUPLE_OUT} ${GH_ACCOUNT_${_group}}:${GH_PROJECT_${_group}}:${GH_TAGNAME_${_group}}:${_group}/${GH_SUBDIR_${_group}}
 DISTNAME_${_group}:=	${GH_ACCOUNT_${_group}}-${GH_PROJECT_${_group}}-${GH_TAGNAME_${_group}_SANITIZED}
 DISTFILE_${_group}:=	${DISTNAME_${_group}}_GH${_GITHUB_REV}${_GITHUB_EXTRACT_SUFX}
