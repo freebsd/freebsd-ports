@@ -76,6 +76,44 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5f52d646-c31f-11eb-8dcf-001b217b3468">
+    <topic>Gitlab -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>13.12.0</ge><lt>13.12.2</lt></range>
+	<range><ge>13.11.0</ge><lt>13.11.5</lt></range>
+	<range><ge>7.10.0</ge><lt>13.10.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2021/06/01/security-release-gitlab-13-12-2-released/">
+	  <p>Stealing GitLab OAuth access tokens using XSLeaks in Safari</p>
+	  <p>Denial of service through recursive triggered pipelines</p>
+	  <p>Unauthenticated CI lint API may lead to information disclosure and SSRF</p>
+	  <p>Server-side DoS through rendering crafted Markdown documents</p>
+	  <p>Issue and merge request length limit is not being enforced</p>
+	  <p>Insufficient Expired Password Validation</p>
+	  <p>XSS in blob viewer of notebooks</p>
+	  <p>Logging of Sensitive Information</p>
+	  <p>On-call rotation information exposed when removing a member</p>
+	  <p>Spoofing commit author for signed commits</p>
+	  <p>Enable qsh verification for Atlassian Connect</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-22181</cvename>
+      <url>https://about.gitlab.com/releases/2021/06/01/security-release-gitlab-13-12-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2021-06-01</discovery>
+      <entry>2021-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8eb69cd0-c2ec-11eb-b6e7-8c164567ca3c">
     <topic>redis -- integer overflow</topic>
     <affects>
