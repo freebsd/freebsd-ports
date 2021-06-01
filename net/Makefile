@@ -171,6 +171,7 @@
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fsplib
+    SUBDIR += gamenetworkingsockets
     SUBDIR += gdrive
     SUBDIR += gemserv
     SUBDIR += geoclue
