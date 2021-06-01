@@ -11,6 +11,9 @@ COMMENT=	Define prefix-infix-suffix command combos
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		No consumer in the ports tree any more.
+EXPIRATION_DATE=	2021-08-31
+
 BUILD_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.12.1:devel/dash.el@${EMACS_FLAVOR}
 RUN_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.12.1:devel/dash.el@${EMACS_FLAVOR}
 
