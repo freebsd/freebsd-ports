@@ -1,5 +1,5 @@
 PORTNAME=	hp2100
-DISTVERSION=	3.11-0.29
+DISTVERSION=	3.11-0.31
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/hp/releases/:src \
 		http://simh.trailing-edge.com/hp/docs/:app \
