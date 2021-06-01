@@ -1,9 +1,9 @@
---- setup.py.orig	2020-09-05 06:11:40 UTC
+--- setup.py.orig	2021-06-01 06:43:44 UTC
 +++ setup.py
-@@ -173,12 +173,12 @@ def get_validated_version():  # pragma: no cover
+@@ -158,12 +158,12 @@ def get_validated_version():  # pragma: no cover
      # validate version for sdist
      from contextlib import suppress
-     from subprocess import run, PIPE
+     from subprocess import PIPE, run
 -    try:
 -        tags = run(['git', 'tag'], check=True, stdout=PIPE,
 -                   universal_newlines=True).stdout.splitlines()
