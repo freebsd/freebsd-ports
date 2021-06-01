@@ -1,5 +1,5 @@
 PORTNAME=	ali
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks
 
@@ -30,10 +30,11 @@ GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-sp
 		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		miekg:dns:v1.1.17:miekg_dns/vendor/github.com/miekg/dns \
 		mum4k:termdash:v0.12.2:mum4k_termdash/vendor/github.com/mum4k/termdash \
+		nakabonne:tstorage:v0.1.0:nakabonne_tstorage/vendor/github.com/nakabonne/tstorage \
 		nsf:termbox-go:4d2b513ad8be:nsf_termbox_go/vendor/github.com/nsf/termbox-go \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
-		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		tsenart:vegeta:v12.8.3:tsenart_vegeta_v12/vendor/github.com/tsenart/vegeta/v12 \
 		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:goleak:v1.1.10:uber_go_goleak/vendor/go.uber.org/goleak
