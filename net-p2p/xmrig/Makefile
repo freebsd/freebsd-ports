@@ -1,13 +1,9 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	xmrig
-PORTVERSION=	6.12.1
-PORTREVISION=	1
+PORTVERSION=	6.12.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
-
-PATCH_SITES=	https://github.com/xmrig/xmrig/commit/
-PATCHFILES=	27ced139a619dcbc6a81de897b1045a3852cbee9.patch:-p1
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	High performance Monero (XMR) CPU miner
