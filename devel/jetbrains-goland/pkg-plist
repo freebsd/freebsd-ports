@@ -35,7 +35,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/blockmap-1.0.2.jar
 %%DATADIR%%/lib/bootstrap.jar
 %%DATADIR%%/lib/bouncy-castle-provider.jar
-%%DATADIR%%/lib/build-marker-GO-211.7142.13
+%%DATADIR%%/lib/build-marker-GO-211.7442.27
 %%DATADIR%%/lib/byte-buddy-agent-1.10.1.jar
 %%DATADIR%%/lib/caffeine-2.8.8.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
@@ -144,6 +144,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/markdown-0.1.41.jar
 %%DATADIR%%/lib/markdown4j-2.2-cj-1.1.jar
 %%DATADIR%%/lib/markdownj-core-0.4.2-SNAPSHOT.jar
+%%DATADIR%%/lib/marketplace-zip-signer-0.1.3.jar
 %%DATADIR%%/lib/maven-resolver-provider.jar
 %%DATADIR%%/lib/microba.jar
 %%DATADIR%%/lib/miglayout-swing.jar
@@ -199,7 +200,6 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/xmlrpc-2.0.1.jar
 %%DATADIR%%/lib/xstream.jar
 %%DATADIR%%/lib/xz-1.8.jar
-%%DATADIR%%/lib/zip-signer.jar
 %%DATADIR%%/license/XStream_license.txt
 %%DATADIR%%/license/ant_license.txt
 %%DATADIR%%/license/asm_license.txt
@@ -247,7 +247,7 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/DatabaseTools/lib/maven-resolver-transport-file-1.3.3.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/maven-resolver-transport-http-1.3.3.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/resources_en.jar
-%%DATADIR%%/plugins/DatabaseTools/lib/tips-database-plugin-211.76.jar
+%%DATADIR%%/plugins/DatabaseTools/lib/tips-database-plugin-211.77.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/unidecode-0.0.7.jar
 %%DATADIR%%/plugins/Docker/lib/Docker-agent-api-rt.jar
 %%DATADIR%%/plugins/Docker/lib/Docker-agent-impl-rt.jar
@@ -309,8 +309,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-aacdcbe1a076.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-aacdcbe1a076.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-b21cf67d8133.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-b21cf67d8133.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -474,8 +474,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/github/lib/resources_en.jar
 %%DATADIR%%/plugins/go-ide/lib/go-ide.jar
 %%DATADIR%%/plugins/go-ide/lib/resources_en.jar
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d28cf5be65cc-83fee69bb036.ijx
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d28cf5be65cc-83fee69bb036.txt
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d28cf5be65cc-d27193aea645.ijx
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d28cf5be65cc-d27193aea645.txt
 %%DATADIR%%/plugins/go-sharedIndexes-bundled/lib/go-sharedIndexes-bundled.jar
 %%DATADIR%%/plugins/go-template/lib/go-template.jar
 %%DATADIR%%/plugins/go-template/lib/go-utils.jar
