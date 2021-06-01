@@ -9302,6 +9302,7 @@
 %%WWWDIR%%/app/views/doorkeeper/applications/show.html.haml
 %%WWWDIR%%/app/views/doorkeeper/authorizations/error.html.haml
 %%WWWDIR%%/app/views/doorkeeper/authorizations/new.html.haml
+%%WWWDIR%%/app/views/doorkeeper/authorizations/redirect.html.haml
 %%WWWDIR%%/app/views/doorkeeper/authorizations/show.html.haml
 %%WWWDIR%%/app/views/doorkeeper/authorized_applications/_delete_form.html.haml
 %%WWWDIR%%/app/views/doorkeeper/authorized_applications/index.html.haml
@@ -14611,6 +14612,7 @@
 %%WWWDIR%%/db/migrate/20210512183309_add_body_to_findings_evidences_response.rb
 %%WWWDIR%%/db/migrate/20210512183310_add_limit_to_findings_evidences_response_body.rb
 %%WWWDIR%%/db/migrate/20210513093418_add_draft_column_to_merge_requests.rb
+%%WWWDIR%%/db/migrate/20210519154058_schedule_update_users_where_two_factor_auth_required_from_group.rb
 %%WWWDIR%%/db/optional_migrations/composite_primary_keys.rb
 %%WWWDIR%%/db/post_migrate/20190102152410_delete_inconsistent_internal_id_records2.rb
 %%WWWDIR%%/db/post_migrate/20190115054215_migrate_delete_container_repository_worker.rb
@@ -17179,6 +17181,7 @@
 %%WWWDIR%%/db/schema_migrations/20210513155635
 %%WWWDIR%%/db/schema_migrations/20210517075444
 %%WWWDIR%%/db/schema_migrations/20210518001450
+%%WWWDIR%%/db/schema_migrations/20210519154058
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/db/structure.sql
 %%WWWDIR%%/doc/.markdownlint/markdownlint-no-trailing-spaces.yml
@@ -20595,6 +20598,7 @@
 %%WWWDIR%%/lib/gitlab/background_migration/update_existing_users_that_require_two_factor_auth.rb
 %%WWWDIR%%/lib/gitlab/background_migration/update_location_fingerprint_for_container_scanning_findings.rb
 %%WWWDIR%%/lib/gitlab/background_migration/update_timelogs_project_id.rb
+%%WWWDIR%%/lib/gitlab/background_migration/update_users_where_two_factor_auth_required_from_group.rb
 %%WWWDIR%%/lib/gitlab/background_migration/update_vulnerabilities_from_dismissal_feedback.rb
 %%WWWDIR%%/lib/gitlab/background_migration/update_vulnerabilities_to_dismissed.rb
 %%WWWDIR%%/lib/gitlab/background_migration/update_vulnerability_confidence.rb
@@ -22390,6 +22394,7 @@
 %%WWWDIR%%/lib/gitlab/utils/measuring.rb
 %%WWWDIR%%/lib/gitlab/utils/merge_hash.rb
 %%WWWDIR%%/lib/gitlab/utils/mime_type.rb
+%%WWWDIR%%/lib/gitlab/utils/nokogiri.rb
 %%WWWDIR%%/lib/gitlab/utils/override.rb
 %%WWWDIR%%/lib/gitlab/utils/safe_inline_hash.rb
 %%WWWDIR%%/lib/gitlab/utils/sanitize_node_link.rb
@@ -30751,6 +30756,7 @@
 %%WWWDIR%%/spec/lib/gitlab/background_migration/update_existing_subgroup_to_match_visibility_level_of_parent_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/update_existing_users_that_require_two_factor_auth_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/update_timelogs_project_id_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/background_migration/update_users_where_two_factor_auth_required_from_group_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/user_mentions/create_resource_user_mention_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/wrongfully_confirmed_email_unconfirmer_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration_spec.rb
@@ -32090,6 +32096,7 @@
 %%WWWDIR%%/spec/lib/gitlab/utils/measuring_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/utils/merge_hash_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/utils/mime_type_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/utils/nokogiri_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/utils/override_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/utils/safe_inline_hash_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/utils/sanitize_node_link_spec.rb
@@ -32415,6 +32422,7 @@
 %%WWWDIR%%/spec/migrations/schedule_update_existing_subgroup_to_match_visibility_level_of_parent_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_update_existing_users_that_require_two_factor_auth_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_update_timelogs_project_id_spec.rb
+%%WWWDIR%%/spec/migrations/schedule_update_users_where_two_factor_auth_required_from_group_spec.rb
 %%WWWDIR%%/spec/migrations/seed_merge_trains_enabled_spec.rb
 %%WWWDIR%%/spec/migrations/seed_repository_storages_weighted_spec.rb
 %%WWWDIR%%/spec/migrations/services_remove_temporary_index_on_project_id_spec.rb
