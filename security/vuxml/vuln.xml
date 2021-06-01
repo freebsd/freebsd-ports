@@ -76,6 +76,39 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8eb69cd0-c2ec-11eb-b6e7-8c164567ca3c">
+    <topic>redis -- integer overflow</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><ge>6.0.0</ge><lt>6.0.14</lt></range>
+      </package>
+      <package>
+	<name>redis-devel</name>
+	<range><ge>6.2.0</ge><lt>6.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redis development team reports:</p>
+	<blockquote cite="https://groups.google.com/g/redis-db/c/RLTwi1kKsCI">
+	  <p>An integer overflow bug in Redis version 6.0 or newer can be
+	    exploited using the STRALGO LCS command to corrupt the heap and
+	    potentially result with remote code execution. This is a result
+	    of an incomplete fix by CVE-2021-29477.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-32625</cvename>
+      <url>https://groups.google.com/g/redis-db/c/RLTwi1kKsCI</url>
+    </references>
+    <dates>
+      <discovery>2021-06-01</discovery>
+      <entry>2021-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="58d6ed66-c2e8-11eb-9fb0-6451062f0f7a">
     <topic>libX11 -- Arbitrary code execution</topic>
     <affects>
