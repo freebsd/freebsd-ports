@@ -1,11 +1,11 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 
 PORTNAME=	allegro
-DISTVERSION=	5.2.6.0
+DISTVERSION=	5.2.7.0
 CATEGORIES=	devel games
 PKGNAMESUFFIX=	5
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kpedersen@disroot.org
 COMMENT=	Cross-platform C library for games and multimedia programming
 
 LICENSE=	ZLIB BSD3CLAUSE
@@ -30,10 +30,10 @@ GH_PROJECT=    	allegro5
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga sm ice xi xinerama xrandr \
 		xscrnsaver
 USE_GL=		gl glu
-USE_GNOME=	gtk20 cairo gdkpixbuf2
+USE_GNOME=	gtk30 cairo gdkpixbuf2
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-isystem${LOCALBASE}/include -L${LOCALBASE}/lib
+CFLAGS+=	-isystem${LOCALBASE}/include -L${LOCALBASE}/lib -Wno-unused-command-line-argument
 
 PLIST_SUB=	SHLIB_VER="${PORTVERSION}" SHLIB_VER1="${PORTVERSION:R}"
 

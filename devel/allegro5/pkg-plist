@@ -290,7 +290,8 @@ libdata/pkgconfig/allegro_video-5.pc
 %%DOCS%%man/man3/al_close_video.3.gz
 %%DOCS%%man/man3/al_color_cmyk.3.gz
 %%DOCS%%man/man3/al_color_cmyk_to_rgb.3.gz
-%%DOCS%%man/man3/al_color_distance_ciede2000_lab.3.gz
+%%DOCS%%man/man3/al_get_monitor_refresh_rate.3.gz
+%%DOCS%%man/man3/al_color_distance_ciede2000.3.gz
 %%DOCS%%man/man3/al_color_hsl.3.gz
 %%DOCS%%man/man3/al_color_hsl_to_rgb.3.gz
 %%DOCS%%man/man3/al_color_hsv.3.gz
