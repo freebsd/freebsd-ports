@@ -9,20 +9,21 @@
  # For more information, see the website: http://www.mavetju.org
  #
  
-@@ -34,31 +34,95 @@ use strict;
+@@ -34,31 +34,77 @@ use strict;
  
  use Getopt::Std;
  
 -use vars qw/ $opt_v /;
-+use vars qw/ $opt_b $opt_q $opt_t $opt_v /;
++use vars qw/ $opt_b $opt_q $opt_r $opt_t $opt_v /;
  
  $opt_v=0;
 -getopts("v");
 +$opt_t=0;
 +$opt_b=0;
 +$opt_q=0;
-+getopts("bqtv");
-+
++$opt_r=0;
++getopts("bqrtv");
+ 
 +my @args=@ARGV;
 +my $hasargs=$#ARGV>=0;
 +
@@ -37,59 +38,40 @@
 +if ($child_error_pkg_N == 0) {	# begin pkgng
 +
 +    my $re_trim = qr/^\s+|\s+$/o;
-+    my $re_rtrim = qr/:\s*$/o;
 +    my $re_pkg = qr/^\s+/o;
-+    my $line;
++    my $re_dep = qr/^Depends on     :$/o;
++    my $re_req = qr/^Required by    :$/o;
++    my($line, $r);
 +
-+    $line = `pkg info -r -a`;
++    $line = `pkg info -d -r -a`;
 +    if ($? == 0) {
 +	my @lines = split(/^/, $line);
 +	$pkg = '';
 +	foreach $line (@lines) {
-+	    if ($line !~ $re_pkg) {
-+		$pkg = $line;
-+		$pkg =~ s/$re_rtrim//;
-+		$required{$pkg}[0] = 0;
-+	    } elsif ($pkg ne '') {
++	    if ($line =~ $re_dep) {
++		$r = \%requires;
++	    } elsif ($line =~ $re_req) {
++		$r = \%required;
++	    } elsif ($line =~ $re_pkg) {
 +		$line =~ s/$re_trim//g;
-+		$required{$pkg}[++$required{$pkg}[0]] = $line;
-+	    }
-+	}
-+    }
-+
-+    $line = `pkg info -d -a`;
-+    if ($? == 0) {
-+	my @lines = split(/^/, $line);
-+	$pkg = '';
-+	foreach $line (@lines) {
-+	    if ($line !~ $re_pkg) {
++		${$r}{$pkg}[++${$r}{$pkg}[0]] = $line;
++	    } else {
 +		$pkg = $line;
-+		$pkg =~ s/$re_rtrim//;
-+		$requires{$pkg}[0] = 0;
-+	    } elsif ($pkg ne '') {
-+		$line =~ s/$re_trim//g;
-+		$requires{$pkg}[++$requires{$pkg}[0]] = $line;
-+	    }
-+	}
-+    }
-+
-+    $line = `pkg info -q`;
-+    if ($? == 0) {
-+	@dirs = split(/^/, $line);
-+	foreach $pkg (@dirs) {
-+	    $pkg =~ s/$re_trim//g;
-+	    unless (exists $required{$pkg}) {
-+		$required{$pkg}[0] = 0;
-+	    }
-+	    unless (exists $requires{$pkg}) {
-+		$requires{$pkg}[0] = 0;
++		$pkg =~ s/$re_trim//g;
++		push(@dirs, $pkg);
++		unless (exists $required{$pkg}) {
++		    $required{$pkg}[0] = 0;
++		}
++		unless (exists $requires{$pkg}) {
++		    $requires{$pkg}[0] = 0;
++		}
 +	    }
 +	}
 +    }
 +
 +}	# end pkgng
 +elsif (-e '/usr/sbin/pkg_info') {	# begin pkg_install
- 
++
  my $PKGDIR="/var/db/pkg";
  
  opendir DIR,$PKGDIR or die "Couldn't open $PKGDIR";
@@ -115,7 +97,7 @@
  foreach $pkg (@dirs) {
      $required{$pkg}[0]=0;
      if (open FILE,$PKGDIR."/".$pkg."/+REQUIRED_BY") {
-@@ -101,6 +165,11 @@ foreach $pkg (@dirs) {
+@@ -101,6 +147,10 @@ foreach $pkg (@dirs) {
      }
  }
  
@@ -123,11 +105,22 @@
 +else {
 +	die;
 +}
-+
  
  #
  # Print the dependancies (recursive) of the packages
-@@ -150,8 +219,10 @@ foreach $pkg (@dirs) {
+@@ -141,6 +191,11 @@ sub print_deps {
+ # Print all packages or, if there is a command line argument, the ones which
+ # matches one of the arguments.
+ #
++if ($opt_r) {
++    my %t = %required;
++    %required = %requires;
++    %requires = %t;
++}
+ foreach $pkg (@dirs) {
+     if ($hasargs) {
+ 	my $found=0;
+@@ -150,8 +205,10 @@ foreach $pkg (@dirs) {
  	}
  	next if (!$found);
      }
