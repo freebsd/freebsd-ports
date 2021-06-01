@@ -100,6 +100,7 @@ include/gtk-4.0/gsk/gskrendernode.h
 include/gtk-4.0/gsk/gskroundedrect.h
 include/gtk-4.0/gsk/gsktransform.h
 include/gtk-4.0/gsk/gsktypes.h
+%%VULKAN%%include/gtk-4.0/gsk/vulkan/gskvulkanrenderer.h
 include/gtk-4.0/gtk/css/gtkcss.h
 include/gtk-4.0/gtk/css/gtkcssenums.h
 include/gtk-4.0/gtk/css/gtkcssenumtypes.h
