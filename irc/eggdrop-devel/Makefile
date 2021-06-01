@@ -11,6 +11,9 @@ COMMENT=	Popular Internet Relay Chat (IRC) bot
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Use stable version instead, irc/eggdrop
+EXPIRATION_DATE=	2021-06-25
+
 USES=		tcl ssl
 USE_CSTD=	c99
 
