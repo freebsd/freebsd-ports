@@ -76,6 +76,38 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a550d62c-f78d-4407-97d9-93876b6741b9">
+    <topic>zeek -- several potential DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>4.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v4.0.2">
+	  <p> Fix potential Undefined Behavior in decode_netbios_name()
+	  and decode_netbios_name_type() BIFs. The latter has a
+	  possibility of a remote heap-buffer-overread, making this
+	  a potential DoS vulnerability.</p>
+	  <p> Add some extra length checking when parsing mobile
+	  ipv6 packets. Due to the possibility of reading invalid
+	  headers from remote sources, this is a potential DoS
+	  vulnerability. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v4.0.2</url>
+    </references>
+    <dates>
+      <discovery>2021-04-30</discovery>
+      <entry>2021-06-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c7ec6375-c3cf-11eb-904f-14dae9d5a9d2">
     <topic>PyYAML -- arbitrary code execution</topic>
     <affects>
