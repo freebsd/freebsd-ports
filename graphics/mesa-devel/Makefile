@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	21.1-branchpoint-2123
-DISTVERSIONSUFFIX=	-gd71584aec35
+DISTVERSION=	21.1-branchpoint-2410
+DISTVERSIONSUFFIX=	-g0e2293a52b3
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -9,7 +9,7 @@ PATCHFILES+=	55822330540d.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-
 PATCHFILES+=	f6c7569ad9ea.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
 PATCHFILES+=	cb8f7a253934.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/3568
 PATCHFILES+=	700efacda59c.patch:-p1
-PATCHFILES+=	9f99ac6e45eb.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/issues/966#note_394512
+PATCHFILES+=	e141af3ac859.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/issues/966#note_394512
 PATCHFILES+=	167fa293d7b7.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/5464
 PATCHFILES+=	19e001833ec1.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/7778
 PATCHFILES+=	50433886a3e3.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/6881
