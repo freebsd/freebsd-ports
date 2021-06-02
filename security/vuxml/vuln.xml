@@ -76,6 +76,42 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e24fb8f8-c39a-11eb-9370-b42e99a1b9c3">
+    <topic>isc-dhcp -- remotely exploitable vulnerability</topic>
+    <affects>
+      <package>
+	<name>isc-dhcp44-relay</name>
+	<range><lt>4.4.2-P1</lt></range>
+      </package>
+      <package>
+	<name>isc-dhcp44-server</name>
+	<range><lt>4.4.2-P1</lt></range>
+      </package>
+      <package>
+	<name>isc-dhcp44-client</name>
+	<range><lt>4.4.2-P1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michael McNally reports:</p>
+	<blockquote cite="https://seclists.org/oss-sec/2021/q2/170">
+	  <p>Program code used by the ISC DHCP package to read and parse stored leases</p>
+	  <p>has a defect that can be exploited by an attacker to cause one of several
+	     undesirable outcomes</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-25217</cvename>
+      <url>https://kb.isc.org/docs/cve-2021-25217</url>
+    </references>
+    <dates>
+      <discovery>2021-05-26</discovery>
+      <entry>2021-06-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5f52d646-c31f-11eb-8dcf-001b217b3468">
     <topic>Gitlab -- Multiple Vulnerabilities</topic>
     <affects>
