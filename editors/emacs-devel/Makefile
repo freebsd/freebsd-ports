@@ -1,7 +1,7 @@
 # Created by: Kenneth Vestergaard Schmidt <kvs@pil.dk>
 
 PORTNAME=	emacs
-DISTVERSION=	28.0.50.20210515
+DISTVERSION=	28.0.50.20210602
 PORTEPOCH=	2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -25,7 +25,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	46e4704
+GH_TAGNAME=	87e7390
 
 .if ${FLAVOR:U} != nox
 USES+=		desktop-file-utils gnome xorg
@@ -82,8 +82,8 @@ PLIST_SUB=	EMACS_VER=${DISTVERSION:R} \
 		GNU_HOST=${CONFIGURE_TARGET}
 
 OPTIONS_DEFINE=			ACL DBUS GCONF GNUTLS GSETTINGS HARFBUZZ JSON \
-				LCMS2 M17N MAILUTILS MODULES OTF SCROLLBARS \
-				SOURCES THREADS XFT XIM XML XWIDGETS
+				LCMS2 M17N MAILUTILS MODULES NATIVECOMP OTF \
+				SCROLLBARS SOURCES THREADS XFT XIM XML XWIDGETS
 OPTIONS_DEFAULT=		ACL CAIRO DBUS GIF GNUTLS GSETTINGS GTK3 \
 				HARFBUZZ JPEG JSON KQUEUE LCMS2 M17N MAILUTILS \
 				MODULES OSS OTF PNG SCROLLBARS SOURCES SVG \
@@ -114,6 +114,7 @@ M17N_DESC=		M17N support for text-shaping [implies XFT]
 MAGICK_DESC=		ImageMagick image processing support (deprecated)
 MAILUTILS_DESC=		Mail framework via GNU Mailutils
 MODULES_DESC=		Dynamic modules support
+NATIVECOMP_DESC=	Emacs Lisp native compiler support
 OTF_DESC=		Opentype fonts [implies XFT]
 SCROLLBARS_DESC=	Toolkit scroll-bars
 SOURCES_DESC=		Install sources
@@ -168,6 +169,11 @@ MAILUTILS_CONFIGURE_WITH=	mailutils
 MAILUTILS_CONFIGURE_ENV_OFF=	ac_cv_lib_lockfile_maillock=no \
 				ac_cv_prog_liblockfile=no
 MODULES_CONFIGURE_WITH=		modules
+NATIVECOMP_LIB_DEPENDS=		libgccjit.so:lang/gcc11-devel
+NATIVECOMP_CONFIGURE_WITH=	native-compilation
+NATIVECOMP_MAKE_ARGS=		NATIVE_FULL_AOT=1
+NATIVECOMP_CFLAGS=		-I${LOCALBASE}/include
+NATIVECOMP_LDFLAGS=		-L${LOCALBASE}/lib/gcc11
 OSS_CONFIGURE_ON=		--with-sound=oss
 OTF_IMPLIES=			XFT
 OTF_LIB_DEPENDS=		libotf.so:print/libotf
@@ -234,6 +240,12 @@ post-install:
 post-install-MAILUTILS-on:
 	${LN} -sf ${PREFIX}/bin/movemail \
 		${STAGEDIR}${PREFIX}/libexec/emacs/${DISTVERSION:R}/${CONFIGURE_TARGET}
+
+# Natively compiled elisp files names include build checksum information, so add
+# these files to the plist after the build.
+post-install-NATIVECOMP-on:
+	@(cd ${WRKSRC} && ${FIND} native-lisp -type f | ${SED} -e 's,^,lib/emacs/${DISTVERSION:R}/,') >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/emacs/${DISTVERSION:R}/native-lisp/ -name '*.eln*' -exec ${STRIP_CMD} {} +
 
 post-install-SOURCES-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${DISTVERSION:R}/src
