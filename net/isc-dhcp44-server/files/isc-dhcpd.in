@@ -390,7 +390,10 @@ setup_chroot ()
 			eval "safe_copy \${${name}_devdir} \${_dhcpd_devdir}"
 		fi
 		eval "safe_copy \${${name}_conffile} \${_dhcpd_conffile}"
-		eval "safe_copy \${${name}_etcdir}/\$_hconf \${_dhcpd_etcdir}/\$_hconf"
+		# copy host.conf only if it exists
+		if eval "[ -f \"\${${name}_etcdir}/\$_hconf\" ]"; then
+			eval "safe_copy \${${name}_etcdir}/\$_hconf \${_dhcpd_etcdir}/\$_hconf"
+		fi
 		eval "safe_copy \${${name}_etcdir}/\$_hosts \${_dhcpd_etcdir}/\$_hosts"
 		# copy localtime only if it exists
 		if eval "[ -f \"\${${name}_etcdir}/\$_ltime\" ]"; then
