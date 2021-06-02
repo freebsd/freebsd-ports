@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.16-12351 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-ga7d4da25a
+DISTVERSION=	0.0.16-12361 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g6c44664c1
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -29,8 +29,8 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-28-g8961cf8:hidapi/3rdparty/hidapi/hidap
 		asmjit:asmjit:723f585:asmjit/3rdparty/asmjit/asmjit \
 		google:flatbuffers:v1.11.0:flatbuffers/3rdparty/flatbuffers \
 		jbeder:yaml-cpp:yaml-cpp-0.6.3-30-g6a211f0:yamlcpp/3rdparty/yaml-cpp \
-		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/Vulkan/spirv-headers \
-		KhronosGroup:SPIRV-Tools:v2020.4:spirv_tools/Vulkan/spirv-tools \
+		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
+		KhronosGroup:SPIRV-Tools:v2020.4:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
 		KhronosGroup:glslang:11.4.0:glslang/3rdparty/glslang/glslang \
 		USCiLab:cereal:v1.3.0-5-g60c69df9:cereal/3rdparty/cereal \
 		wolfSSL:wolfssl:v4.5.0-stable-80-g39b544860:wolfssl/3rdparty/wolfssl \
