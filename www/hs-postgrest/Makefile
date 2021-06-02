@@ -1,6 +1,6 @@
 PORTNAME=	postgrest
 PORTVERSION=	7.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www databases haskell
 
 MAINTAINER=	dmitry.wagin@ya.ru
@@ -14,6 +14,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 BUILD_DEPENDS=	pg_config:databases/postgresql${PGSQL_DEFAULT}-client
 
 USES=		cabal pgsql
+USE_RC_SUBR=	postgrest
 
 USE_CABAL=	HTTP-4000.3.14_1 \
 		HUnit-1.6.0.0 \
@@ -82,6 +83,7 @@ USE_CABAL=	HTTP-4000.3.14_1 \
 		free-5.1.3 \
 		generics-sop-0.5.1.0 \
 		gitrev-1.3.1 \
+		happy-1.19.12 \
 		hashable-1.3.0.0_1 \
 		hashtables-1.2.3.4 \
 		haskell-src-exts-1.23.0 \
@@ -91,6 +93,7 @@ USE_CABAL=	HTTP-4000.3.14_1 \
 		hasql-transaction-1.0.0.1 \
 		heredoc-0.2.0.0 \
 		hourglass-0.2.12 \
+		hsc2hs-0.68.7 \
 		http-date-0.0.8 \
 		http-media-0.8.0.0_3 \
 		http-types-0.12.3 \
@@ -191,29 +194,33 @@ USE_CABAL=	HTTP-4000.3.14_1 \
 		warp-3.3.11 \
 		word8-0.1.3 \
 		x509-1.7.5_1 \
-		zlib-0.6.2.1_1 \
-		\
-		happy-1.19.12 \
-		hsc2hs-0.68.7
+		zlib-0.6.2.1_1
+
+SKIP_CABAL_PLIST=	yes
 
 POSTGREST_USER?=	postgrest
 POSTGREST_GROUP?=	postgrest
 
+SUB_FILES=	default.conf
+SUB_LIST=	ETCDIR=${ETCDIR} \
+		POSTGREST_GROUP=${POSTGREST_GROUP} \
+		POSTGREST_USER=${POSTGREST_USER}
+
 USERS=		${POSTGREST_USER}
 GROUPS=		${POSTGREST_GROUP}
 
-SUB_FILES=	default.conf
-SUB_LIST=	ETCDIR=${ETCDIR} \
-		POSTGREST_USER=${POSTGREST_USER} \
-		POSTGREST_GROUP=${POSTGREST_GROUP}
+PLIST_FILES=	"@sample ${ETCDIR}/default.conf.sample" \
+		sbin/postgrest
 
 PLIST_SUB=	ETCDIR=${ETCDIR} \
-		POSTGREST_USER=${POSTGREST_USER} \
-		POSTGREST_GROUP=${POSTGREST_GROUP}
+		POSTGREST_GROUP=${POSTGREST_GROUP} \
+		POSTGREST_USER=${POSTGREST_USER}
 
-USE_RC_SUBR=	postgrest
+OPTIONS_DEFINE=		POOLER
+OPTIONS_DEFAULT=	POOLER
 
-SKIP_CABAL_PLIST=	yes
+POOLER_DESC=		Connection pooler support (disable usage of prepared statements)
+POOLER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-__cabal__deps_hasql-1.4.2_library_Hasql_Private_IO.hs
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}

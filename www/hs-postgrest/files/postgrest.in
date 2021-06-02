@@ -2,6 +2,7 @@
 
 # PROVIDE: postgrest
 # REQUIRE: LOGIN
+# BEFORE: nginx
 # KEYWORD: shutdown
 #
 # Add postgrest_enable="YES" to /etc/rc.conf to enable PostgREST:
