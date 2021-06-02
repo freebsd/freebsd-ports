@@ -1,6 +1,5 @@
 PORTNAME=	dssim
-DISTVERSION=	3.0.2
-PORTREVISION=	1
+DISTVERSION=	3.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
@@ -17,17 +16,23 @@ PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler-1.0.2 \
 		ahash-0.4.7 \
+		aom-decode-0.2.0 \
 		arrayvec-0.5.2 \
 		arrayvec-0.7.0 \
 		autocfg-1.0.1 \
+		avif-parse-0.13.1 \
+		bitreader-0.3.4 \
 		bytemuck-1.5.1 \
-		cc-1.0.67 \
+		byteorder-1.4.3 \
+		cc-1.0.68 \
+		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
+		cmake-0.1.45 \
 		crc32fast-1.2.1 \
 		crossbeam-channel-0.5.1 \
 		crossbeam-deque-0.8.0 \
-		crossbeam-epoch-0.9.4 \
-		crossbeam-utils-0.8.4 \
+		crossbeam-epoch-0.9.5 \
+		crossbeam-utils-0.8.5 \
 		dssim-core-3.1.0 \
 		dunce-1.0.1 \
 		either-1.6.1 \
@@ -45,13 +50,17 @@ CARGO_CRATES=	adler-1.0.2 \
 		lazy_static-1.4.0 \
 		lcms2-5.4.1 \
 		lcms2-sys-3.1.8 \
-		libc-0.2.94 \
-		load_image-2.12.2 \
-		lodepng-3.4.5 \
-		memoffset-0.6.3 \
+		libaom-sys-0.9.1 \
+		libc-0.2.95 \
+		libwebp-0.1.2 \
+		libwebp-sys2-0.1.2 \
+		load_image-2.15.1 \
+		lodepng-3.4.6 \
+		log-0.4.14 \
+		memoffset-0.6.4 \
 		miniz_oxide-0.4.4 \
 		mozjpeg-0.9.0 \
-		mozjpeg-sys-0.12.3 \
+		mozjpeg-sys-0.12.4 \
 		nasm-rs-0.2.0 \
 		num-0.4.0 \
 		num-bigint-0.4.0 \
@@ -62,15 +71,19 @@ CARGO_CRATES=	adler-1.0.2 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
 		pkg-config-0.3.19 \
-		proc-macro2-1.0.26 \
+		proc-macro2-1.0.27 \
+		quick-error-2.0.1 \
 		quote-1.0.9 \
-		rayon-1.5.0 \
-		rayon-core-1.9.0 \
-		rexif-0.7.0 \
+		rayon-1.5.1 \
+		rayon-core-1.9.1 \
+		rexif-0.7.3 \
 		rgb-0.8.27 \
 		scopeguard-1.1.0 \
+		static_assertions-1.1.0 \
 		syn-1.0.72 \
 		unicode-width-0.1.8 \
-		unicode-xid-0.2.2
+		unicode-xid-0.2.2 \
+		vcpkg-0.2.13 \
+		yuv-0.1.4
 
 .include <bsd.port.mk>
