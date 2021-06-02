@@ -1,3 +1,4 @@
+bin/solana
 bin/solana-accounts-bench
 bin/solana-accounts-cluster-bench
 bin/solana-banking-bench

@@ -1,6 +1,7 @@
 PORTNAME=	solana
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -561,7 +562,7 @@ LLVM_VERSION=	10
 BINARY_ALIAS=	llvm-config=${PREFIX}/bin/llvm-config${LLVM_VERSION}
 
 do-install:
-	for f in ${WRKDIR}/target/release/${PORTNAME}-*; do \
+	for f in ${WRKDIR}/target/release/${PORTNAME}*; do \
 		if [ -f $$f -a -x $$f ]; then \
 			${INSTALL_PROGRAM} $$f ${STAGEDIR}${PREFIX}/bin; \
 		fi \
