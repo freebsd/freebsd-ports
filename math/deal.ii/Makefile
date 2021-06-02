@@ -1,6 +1,6 @@
 PORTNAME=	deal.II
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.2.0.20201001 # 9.2.0 breaks with invalid linker flag -l-pthread
+DISTVERSION=	9.3.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,12 +15,12 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libmetis.so:math/metis \
 		libtbb.so:devel/tbb
 
-USES=		blaslapack:gotoblas cmake compiler:c++17-lang localbase:ldflags
+USES=		blaslapack cmake compiler:c++17-lang localbase:ldflags
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tl:S/.//}
 GH_PROJECT=	${PORTNAME:tl:S/.//}
-GH_TAGNAME=	803d21ff957e349b3799cd3ef2c840bc78734305
-USE_LDCONFIG=	yes
 
 CMAKE_OFF=	DEAL_II_ALLOW_BUNDLED DEAL_II_COMPONENT_EXAMPLES \
 		DEAL_II_WITH_P4EST DEAL_II_WITH_TRILINOS DEAL_II_WITH_UMFPACK \
