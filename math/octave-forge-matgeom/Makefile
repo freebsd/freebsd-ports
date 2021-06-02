@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
 
 PORTNAME=	octave-forge-matgeom
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
