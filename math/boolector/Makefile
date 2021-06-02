@@ -1,5 +1,5 @@
 PORTNAME=	boolector
-DISTVERSION=	3.2.1
+DISTVERSION=	3.2.2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,16 +12,18 @@ BUILD_DEPENDS=	cadical>0:math/cadical
 LIB_DEPENDS=	libbtor2parser.so:math/btor2tools \
 		libminisat.so:math/minisat \
 		libpicosat.so:math/picosat
+TEST_DEPENDS=	bash:shells/bash
 
-USES=		cmake:noninja compiler:c++11-lang # ninja fails to build tests
+USES=		cmake:noninja compiler:c++11-lang python:test # ninja fails to build tests
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Boolector
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
-do-test: # tests assume that python-3.7 and bash are installed
+do-test:
 	@${FIND} ${WRKDIR} -name "*.py" \
-		| ${XARGS} ${REINPLACE_CMD} -e 's|#!/usr/bin/env python$$|#!${LOCALBASE}/bin/python3.7| ; s|#!/usr/bin/env python3$$|#!${LOCALBASE}/bin/python3.7|'
+		| ${XARGS} ${REINPLACE_CMD} -e 's|#!/usr/bin/env python$$|#!${PYTHON_CMD}| ; s|#!/usr/bin/env python3$$|#!${PYTHON_CMD}|'
 	@${FIND} ${WRKDIR} -name "*.sh" \
 		| ${XARGS} ${REINPLACE_CMD} 's|#!/bin/bash$$|#!${LOCALBASE}/bin/bash|'
 	@cd ${BUILD_WRKSRC} && \
