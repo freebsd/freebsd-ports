@@ -3,20 +3,14 @@
 export PREFIX=${PKG_PREFIX:-/usr/local}
 export WINE=$1
 
-if [ -d ${PREFIX}/lib32/.libGL-new ]
-then
-    LIBGLDIR=.libGL-new
-else
-    LIBGLDIR=.libGL
-fi
+LIBGLDIR=.libGL
 
 case "$2" in
   DEINSTALL)
     sh ${PREFIX}/share/wine/patch-nvidia.sh -d
-    rm -r ${PREFIX}/lib32/libGL.so.1 ${PREFIX}/lib32/dri
+    rm -r ${PREFIX}/lib32/dri
     ;;
   POST-INSTALL)
-    ln -s ${LIBGLDIR}/libGL.so.1 ${PREFIX}/lib32/libGL.so.1
     mkdir -p ${PREFIX}/lib32/dri
     for dri in $(cd ${PREFIX}/lib32/${LIBGLDIR}/dri/; echo *.so)
     do
