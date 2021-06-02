@@ -65,6 +65,7 @@
     SUBDIR += elixir-mongo
     SUBDIR += elixir-postgrex
     SUBDIR += elixir-timex_ecto
+    SUBDIR += emacsql
     SUBDIR += erlang-couchbeam
     SUBDIR += erlang-epgsql
     SUBDIR += erlang-eredis
