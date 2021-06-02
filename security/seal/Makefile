@@ -1,5 +1,5 @@
 PORTNAME=	seal
-DISTVERSION=	3.6.4
+DISTVERSION=	3.6.5
 CATEGORIES=	security
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -17,6 +17,6 @@ USE_LDCONFIG=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	SEAL_USE_MSGSL SEAL_USE_ZLIB SEAL_USE_ZSTD # project clones repositories instead of using exrernal packages, see https://github.com/microsoft/SEAL/issues/329
 
-PLIST_SUB+=	FILE_VER=${DISTVERSION:R}
+PLIST_SUB+=	VERSION=${DISTVERSION} VER=${DISTVERSION:R}
 
 .include <bsd.port.mk>
