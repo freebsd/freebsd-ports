@@ -1,10 +1,9 @@
 # Created by: Hans Petter Selasky <hselasky@FreeBSD.org>
 
 PORTNAME=	jack_ghero
-PORTVERSION=	1.0.3
+DISTVERSIONPREFIX=	v
+PORTVERSION=		1.0.4
 CATEGORIES=	audio
-MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
-		http://home.selasky.org:8192/distfiles/
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Daemon that converts a GuitarHero device into a JACK MIDI device
@@ -14,6 +13,9 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libjack.so:audio/jack
 
 USES=		tar:bzip2 uidfix
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	hselasky
 
 PLIST_FILES=	sbin/jack_ghero \
 		man/man8/jack_ghero.8.gz
