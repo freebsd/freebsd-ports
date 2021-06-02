@@ -1,14 +1,14 @@
 # Created by: Stefan Wendler <stefan.wendler@tngtech.com>
 
 PORTNAME=	rubymine
-PORTVERSION=	2021.1.1
+PORTVERSION=	2021.1.2
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/ruby/ \
 		http://download.jetbrains.com/ruby/
 PKGNAMEPREFIX=	intellij-
 DISTNAME=	RubyMine-${PORTVERSION}
 
-MAINTAINER=	rene@freeBSD.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Ruby on Rails IDE by JetBrains
 
 LICENSE=	IntelliJ-Rubymine
