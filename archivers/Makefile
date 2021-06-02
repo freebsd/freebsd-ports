@@ -65,6 +65,7 @@
     SUBDIR += libunrar
     SUBDIR += libunrar6
     SUBDIR += libzip
+    SUBDIR += libzippp
     SUBDIR += linux-c7-lz4
     SUBDIR += lizard
     SUBDIR += lrzip

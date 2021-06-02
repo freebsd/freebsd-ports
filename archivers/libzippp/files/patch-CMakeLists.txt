@@ -1,0 +1,26 @@
+--- CMakeLists.txt.orig	2021-06-02 08:25:32 UTC
++++ CMakeLists.txt
+@@ -17,7 +17,7 @@ option(LIBZIPPP_ENABLE_ENCRYPTION "Build with encrypti
+ 
+ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+ 
+-find_package(LIBZIP MODULE REQUIRED)
++find_package(libzip REQUIRED)
+ 
+ add_library(libzippp "src/libzippp.cpp")
+ add_library(libzippp::libzippp ALIAS libzippp) # Convenience alias
+@@ -87,10 +87,10 @@ if(LIBZIPPP_INSTALL)
+     COMPATIBILITY SameMajorVersion
+   )
+ 
+-  install(
+-    FILES ${PROJECT_CONFIG_FILE} ${PROJECT_VERSION_FILE} cmake/FindLIBZIP.cmake
+-    DESTINATION ${configInstallDestination}
+-  )
++  #install(
++  #  FILES ${PROJECT_CONFIG_FILE} ${PROJECT_VERSION_FILE} cmake/FindLIBZIP.cmake
++  #  DESTINATION ${configInstallDestination}
++  #)
+ 
+   install(
+     EXPORT libzipppTargets
