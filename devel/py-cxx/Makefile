@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	cxx
-PORTVERSION=	7.1.4
+PORTVERSION=	7.1.5
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/CXX/PyCXX%20V${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Make it easier to extend Python with C++
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils pythonprefix
 PYDISTUTILS_PKGNAME=	CXX
 
