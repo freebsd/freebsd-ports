@@ -1,0 +1,11 @@
+bin/civetweb
+include/civetweb.h
+lib/cmake/civetweb/FindLibDl.cmake
+lib/cmake/civetweb/FindLibRt.cmake
+lib/cmake/civetweb/FindWinSock.cmake
+lib/cmake/civetweb/civetweb-config-version.cmake
+lib/cmake/civetweb/civetweb-config.cmake
+lib/cmake/civetweb/civetweb-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/civetweb/civetweb-targets.cmake
+lib/libcivetweb.so
+lib/libcivetweb.so.1.14.0
