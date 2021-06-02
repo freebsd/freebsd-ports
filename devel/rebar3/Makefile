@@ -2,14 +2,10 @@ PORTNAME=	rebar3
 PORTVERSION=	3.15.2
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES+=	LOCAL/olgeni:deps \
-		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
-		https://repo.hex.pm/tarballs/:hex
-DISTFILES=	rebar3-cache-${PORTVERSION}${EXTRACT_SUFX}:deps
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		rebar3-cache-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES+=	https://repo.hex.pm/tarballs/:hex
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Build tool for Erlang
 
 LICENSE=	APACHE20
@@ -47,10 +43,6 @@ REBAR_DEPS=	bbmustache-1.10.0 \
 .for _dep in ${REBAR_DEPS}
 DISTFILES+=	${_dep}.tar:hex
 .endfor
-
-# convenience target to rebuild the rebar3 cache file
-build-cache:
-	cd ${WRKDIR} && ${TAR} -c -v -z -f rebar3-cache-${PORTVERSION}${EXTRACT_SUFX} .cache
 
 # The '_checkouts' part is to avoid attempts to fetch files from the
 # network during the build.
