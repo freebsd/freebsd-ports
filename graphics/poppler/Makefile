@@ -1,7 +1,7 @@
 # Created by: marcus@FreeBSD.org
 
 PORTNAME=	poppler
-DISTVERSION=	21.05.0
+DISTVERSION=	21.06.0
 CATEGORIES=	graphics print
 MASTER_SITES=	https://poppler.freedesktop.org/
 
@@ -17,7 +17,8 @@ LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2 \
 		libnss3.so:security/nss \
-		libfontconfig.so:x11-fonts/fontconfig
+		libfontconfig.so:x11-fonts/fontconfig \
+		libboost_system.so:devel/boost-libs
 RUN_DEPENDS=	poppler-data>0:graphics/poppler-data
 
 USES=		compiler:c++11-lang cpe cmake:insource gnome jpeg libtool \
@@ -46,7 +47,7 @@ CMAKE_OFF+=	${_POPPLER_SLAVES:N${_SLAVE_PORT}:tu:S/^/ENABLE_/}
 PORTSCOUT=	limitw:1,even
 USES+=		iconv
 CMAKE_ON+=	ENABLE_CPP
-PLIST_SUB+=	SHLIB_VER=110
+PLIST_SUB+=	SHLIB_VER=111
 
 OPTIONS_DEFINE=		CURL OPENJPEG
 OPTIONS_DEFAULT=	OPENJPEG

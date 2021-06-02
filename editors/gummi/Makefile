@@ -2,6 +2,7 @@
 
 PORTNAME=	gummi
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/alexandervdm/gummi/releases/download/${PORTVERSION}/
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.44.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://www2.graphviz.org/Packages/stable/portable_source/
 
