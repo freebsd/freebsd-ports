@@ -32,3 +32,14 @@ core/elf/writer.cpp:76:5: error:
  
  #include <cstring>
  #include <errno.h>
+--- shared/source/os_interface/linux/drm_neo.cpp.orig	2021-06-02 19:58:38 UTC
++++ shared/source/os_interface/linux/drm_neo.cpp
+@@ -733,7 +733,7 @@ int Drm::queryAdapterBDF() {
+ void Drm::setGmmInputArgs(void *args) {
+     auto gmmInArgs = reinterpret_cast<GMM_INIT_IN_ARGS *>(args);
+     auto adapterBDF = this->getAdapterBDF();
+-#if defined(__linux__)
++#if !defined(_WIN32)
+     gmmInArgs->FileDescriptor = adapterBDF.Data;
+ #endif
+     gmmInArgs->ClientType = GMM_CLIENT::GMM_OCL_VISTA;
