@@ -1,6 +1,5 @@
 PORTNAME=	arrow
-DISTVERSION=	4.0.0
-PORTREVISION=	2
+DISTVERSION=	4.0.1
 CATEGORIES=	databases
 MASTER_SITES=	https://mirrors.advancedhosters.com/apache/${PORTNAME}/${PORTNAME}-${DISTVERSION}/ \
 		https://github.com/apache/orc/archive/rel/:orc
