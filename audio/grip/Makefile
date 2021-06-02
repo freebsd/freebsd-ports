@@ -1,7 +1,7 @@
 # Created by: kbyanc@posi.net
 
 PORTNAME=	grip
-PORTVERSION=	4.1.1
+PORTVERSION=	4.2.1
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/grip/${PORTVERSION}
@@ -19,12 +19,12 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		compiler:c++11-lang gmake gnome libtool localbase \
 		pathfix pkgconfig xorg gnome
-USE_XORG=	ice sm x11 xext
 USE_GNOME=	cairo gdkpixbuf2 gtk20
+INSTALLS_ICONS=	yes
+USE_XORG=	ice sm x11 xext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-werror
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	CDPARANOIA CDDA2WAV LAME VORBIS FAAC FLAC NLS
 OPTIONS_DEFAULT=	CDPARANOIA FLAC VORBIS
@@ -37,7 +37,7 @@ OPTIONS_SUB=	yes
 
 CDPARANOIA_LIB_DEPENDS=	libcdda_paranoia.so:audio/cdparanoia
 CDPARANOIA_CONFIGURE_ENABLE=	cdpar
-CDDA2WAV_RUN_DEPENDS=	cdda2wav:sysutils/cdrtools
+CDDA2WAV_RUN_DEPENDS=  cdda2wav:sysutils/cdrtools
 FAAC_RUN_DEPENDS=	faac:audio/faac
 FLAC_RUN_DEPENDS=	flac:audio/flac
 LAME_RUN_DEPENDS=	lame:audio/lame
