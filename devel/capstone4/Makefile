@@ -1,10 +1,7 @@
 PORTNAME=	capstone
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	devel
 PKGNAMESUFFIX=	4
-
-PATCH_SITES=	https://github.com/aquynh/capstone/pull/1589/commits/
-PATCHFILES=	046846b2ea189142482754c13ee0ed54cb4f4e5b.patch:-p1
 
 MAINTAINER=	oleksii.tsai@gmail.com
 COMMENT=	Multi-platform, multi-architecture disassembly framework
