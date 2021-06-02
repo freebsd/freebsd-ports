@@ -20,10 +20,8 @@ bin/solana-log-analyzer
 bin/solana-merkle-root-bench
 bin/solana-net-shaper
 bin/solana-poh-bench
-bin/solana-ramp-tps
 bin/solana-stake-accounts
 bin/solana-stake-monitor
-bin/solana-stake-o-matic
 bin/solana-store-tool
 bin/solana-sys-tuner
 bin/solana-test-validator
