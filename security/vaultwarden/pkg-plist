@@ -1,5 +1,5 @@
 bin/vaultwarden
-etc/rc.conf.d/vaultwarden.sample
+@sample etc/rc.conf.d/vaultwarden.sample
 etc/rc.d/vaultwarden
 %%WWWDIR%%/web-vault/.nojekyll
 %%WWWDIR%%/web-vault/404.html

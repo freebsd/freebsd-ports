@@ -16,8 +16,8 @@ rcvar=vaultwarden_enable
 load_rc_config ${name}
 
 : ${vaultwarden_chdir=%%PREFIX%%/www/vaultwarden}
-: ${vaultwarden_user:=www}
-: ${vaultwarden_group:=www}
+: ${vaultwarden_user:=%%WWWOWN%%}
+: ${vaultwarden_group:=%%WWWGRP%%}
 
 # This is the tool init launches
 command="/usr/sbin/daemon"
