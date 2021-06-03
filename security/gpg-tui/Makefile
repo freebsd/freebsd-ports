@@ -1,6 +1,6 @@
 PORTNAME=	gpg-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.5
+DISTVERSION=	0.2.0
 CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 RUN_DEPENDS=	gpg:security/gnupg \
 		gpgme>=1.7.0:security/gpgme
 
-USES=		cargo python
+USES=		cargo python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	orhun
 
@@ -149,5 +149,7 @@ PLIST_FILES=	bin/completions \
 
 post-install:
 		${INSTALL_DATA} ${WRKSRC}/man/gpg-tui.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+		${STRIP_CMD} ${STAGEDIR}${MANPREFIX}/bin/completions
+		${STRIP_CMD} ${STAGEDIR}${MANPREFIX}/bin/gpg-tui
 
 .include <bsd.port.mk>
