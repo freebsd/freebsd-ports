@@ -1,0 +1,5 @@
+pgBackRest aims to be a reliable, easy-to-use backup and restore solution for
+PostgreSQL that can seamlessly scale up to the largest databases and workloads
+by utilizing algorithms that are optimized for database-specific requirements.
+
+WWW: https://pgbackrest.org/
