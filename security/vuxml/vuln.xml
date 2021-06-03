@@ -76,6 +76,63 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="079b3641-c4bd-11eb-a22a-693f0544ae52">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><lt>1.16.5,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://github.com/golang/go/issues/45910">
+	  <p>The SetString and UnmarshalText methods of math/big.Rat may cause a
+	    panic or an unrecoverable fatal error if passed inputs with very
+	    large exponents.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/golang/go/issues/46313">
+	  <p>ReverseProxy in net/http/httputil could be made to forward certain
+	    hop-by-hop headers, including Connection. In case the target of the
+	    ReverseProxy was itself a reverse proxy, this would let an attacker
+	    drop arbitrary headers, including those set by the
+	    ReverseProxy.Director.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/golang/go/issues/46241">
+	  <p>The LookupCNAME, LookupSRV, LookupMX, LookupNS, and LookupAddr
+	    functions in net, and their respective methods on the Resolver type
+	    may return arbitrary values retrieved from DNS which do not follow
+	    the established RFC 1035 rules for domain names. If these names are
+	    used without further sanitization, for instance unsafely included in
+	    HTML, they may allow for injection of unexpected content. Note that
+	    LookupTXT may still return arbitrary values that could require
+	    sanitization before further use.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/golang/go/issues/46242">
+	  <p>The NewReader and OpenReader functions in archive/zip can cause a
+	    panic or an unrecoverable fatal error when reading an archive that
+	    claims to contain a large number of files, regardless of its actual
+	    size.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-33198</cvename>
+      <url>https://github.com/golang/go/issues/45910</url>
+      <cvename>CVE-2021-33197</cvename>
+      <url>https://github.com/golang/go/issues/46313</url>
+      <cvename>CVE-2021-33195</cvename>
+      <url>https://github.com/golang/go/issues/46241</url>
+      <cvename>CVE-2021-33196</cvename>
+      <url>https://github.com/golang/go/issues/46242</url>
+    </references>
+    <dates>
+      <discovery>2021-05-01</discovery>
+      <entry>2021-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3000acee-c45d-11eb-904f-14dae9d5a9d2">
     <topic>aiohttp -- open redirect vulnerability</topic>
     <affects>
