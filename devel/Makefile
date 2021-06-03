@@ -670,6 +670,7 @@
     SUBDIR += fmake
     SUBDIR += fnccheck
     SUBDIR += folly
+    SUBDIR += forge
     SUBDIR += fortran-utils
     SUBDIR += fortytwo-encore
     SUBDIR += fossil
