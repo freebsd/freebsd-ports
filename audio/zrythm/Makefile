@@ -1,6 +1,6 @@
 PORTNAME=	zrythm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0-alpha.16.1.1
+DISTVERSION=	1.0.0-alpha.17.1.3
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,6 +37,7 @@ LIB_DEPENDS=	libaudec.so:audio/libaudec \
 		libasound.so:audio/alsa-lib \
 		libsratom-0.so:audio/sratom \
 		libsuil-0.so:audio/suil \
+		libxxhash.so:devel/xxhash \
 		libyaml.so:textproc/libyaml \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \

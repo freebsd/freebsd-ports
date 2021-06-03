@@ -2,7 +2,6 @@ bin/zrythm
 bin/zrythm_gdb
 bin/zrythm_launch
 bin/zrythm_valgrind
-etc/bash_completion.d/zrythm
 share/applications/zrythm.desktop
 share/fonts/zrythm/DSEG14-Classic-MINI/DSEG-LICENSE.txt
 share/fonts/zrythm/DSEG14-Classic-MINI/DSEG14ClassicMini-Bold.ttf
