@@ -1,7 +1,7 @@
 # Created by: Mahlon E. Smith <mahlon@martini.nu>
 
 PORTNAME=	mdbx
-PORTVERSION=	0.9.3
+PORTVERSION=	0.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
@@ -32,7 +32,8 @@ NO_WRKSUBDIR=	yes
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-install:
-	${LN} -sf libmdbx.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmdbx.so
-	${LN} -sf libmdbx.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmdbx.so.0
+	${RLN} libmdbx.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmdbx.so
+	${RLN} libmdbx.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmdbx.so.${PORTVERSION}
+	${RLN} libmdbx.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmdbx.so.0
 
 .include <bsd.port.mk>

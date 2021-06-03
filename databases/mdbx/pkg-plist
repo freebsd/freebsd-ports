@@ -1,6 +1,7 @@
 bin/mdbx_chk
 bin/mdbx_copy
 bin/mdbx_dump
+bin/mdbx_drop
 bin/mdbx_load
 bin/mdbx_stat
 include/mdbx.h
@@ -12,5 +13,6 @@ lib/libmdbx.so.%%VERSION%%
 man/man1/mdbx_chk.1.gz
 man/man1/mdbx_copy.1.gz
 man/man1/mdbx_dump.1.gz
+man/man1/mdbx_drop.1.gz
 man/man1/mdbx_load.1.gz
 man/man1/mdbx_stat.1.gz
