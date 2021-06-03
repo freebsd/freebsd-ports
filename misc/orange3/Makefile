@@ -1,5 +1,5 @@
 PORTNAME=	orange3
-DISTVERSION=	3.29.0
+DISTVERSION=	3.29.1
 CATEGORIES=	misc python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,13 +25,13 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openTSNE>=0.6.0:math/py-openTSNE@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orange-canvas-core>=0.1.19:devel/py-orange-canvas-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}orange-widget-base>=4.12.0:devel/py-orange-widget-base@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}orange-widget-base>=4.13.0:devel/py-orange-widget-base@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>0:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.0.0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>=9.0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-louvain>=0.13:math/py-python-louvain@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyqtgraph>=0.11.0:graphics/py-pyqtgraph@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyqtgraph>=0.11.1:graphics/py-pyqtgraph@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0.22.0:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.16.1:science/py-scipy@${PY_FLAVOR} \
