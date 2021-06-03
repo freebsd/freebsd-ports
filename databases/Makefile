@@ -575,6 +575,7 @@
     SUBDIR += pg_stat_kcache
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
+    SUBDIR += pgbackrest
     SUBDIR += pgbadger
     SUBDIR += pgbarman
     SUBDIR += pgbouncer
