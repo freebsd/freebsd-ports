@@ -1,7 +1,7 @@
 # Created by: Bruce A. Mah <bmah@FreeBSD.org>
 
 PORTNAME=	iperf
-PORTVERSION=	3.9
+PORTVERSION=	3.10.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://downloads.es.net/pub/iperf/
 PKGNAMESUFFIX=	3
