@@ -1,9 +1,9 @@
 # Created by: David O'Brien <obrien@FreeBSD.org>
 
 PORTNAME=	zeek
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	security
-MASTER_SITES=	https://old.zeek.org/downloads/
+MASTER_SITES=	https://download.zeek.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	leres@FreeBSD.org
