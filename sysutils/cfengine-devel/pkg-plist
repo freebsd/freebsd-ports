@@ -243,7 +243,6 @@ libexec/cfengine/libpromises.so.3.0.6
 %%DOCSDIR%%/examples/package_zypper.cf
 %%DOCSDIR%%/examples/packagesmatching.cf
 %%DOCSDIR%%/examples/parallel_exec.cf
-%%DOCSDIR%%/examples/parseintrealstringarray.cf
 %%DOCSDIR%%/examples/parsestringarray.cf
 %%DOCSDIR%%/examples/parsestringarrayidx.cf
 %%DOCSDIR%%/examples/pathtype.cf
