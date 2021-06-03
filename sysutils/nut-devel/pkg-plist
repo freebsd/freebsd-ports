@@ -28,6 +28,7 @@ bin/upssched-cmd
 %%BASH%%etc/bash_completion.d/nut.bash_completion
 include/nut-scan.h
 include/nutclient.h
+include/nutclientmem.h
 include/nutscan-device.h
 include/nutscan-init.h
 include/nutscan-ip.h
@@ -42,9 +43,14 @@ lib/libupsclient.a
 lib/libupsclient.so
 lib/libupsclient.so.5
 lib/libupsclient.so.5.0.0
+lib/libnutclientstub.a
+lib/libnutclientstub.so
+lib/libnutclientstub.so.1
+lib/libnutclientstub.so.1.0.0
 libdata/pkgconfig/libnutclient.pc
 libdata/pkgconfig/libnutscan.pc
 libdata/pkgconfig/libupsclient.pc
+libdata/pkgconfig/libnutclientstub.pc
 %%NUT_SERIAL%%libexec/nut/al175
 %%NUT_SERIAL%%libexec/nut/apcupsd-ups
 %%NUT_USB%%libexec/nut/nutdrv_atcl_usb
