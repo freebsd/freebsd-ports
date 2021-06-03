@@ -1,8 +1,8 @@
-TIMESTAMP = 1618245836
-SHA256 (prometheus-prometheus-v2.26.0_GH0.tar.gz) = d2f5187946198e8d0ef820fb4f7e360d3d1b40587c70f6b7061a3a73b6ce90ab
-SIZE (prometheus-prometheus-v2.26.0_GH0.tar.gz) = 5618384
-SHA256 (ports-assets-net-mgmt_prometheus2-v2.26.0_GH0.tar.gz) = ca2f3c7499880bb22c8fa908ad8c8d3fb7e5f2d3bd15159f5e20e415a3fe88ae
-SIZE (ports-assets-net-mgmt_prometheus2-v2.26.0_GH0.tar.gz) = 6058282
+TIMESTAMP = 1622631327
+SHA256 (prometheus-prometheus-v2.26.1_GH0.tar.gz) = d13750d67aac825f9b213875c586db69533f57bcaf68f6a87592f9e4cea946ac
+SIZE (prometheus-prometheus-v2.26.1_GH0.tar.gz) = 5618446
+SHA256 (ports-assets-net-mgmt_prometheus2-v2.26.1_GH0.tar.gz) = 6613964eb676a29127ef0c1065dcecab671e65c5560e23ae36950397f5dc21a4
+SIZE (ports-assets-net-mgmt_prometheus2-v2.26.1_GH0.tar.gz) = 6058233
 SHA256 (Azure-azure-sdk-for-go-v52.5.0_GH0.tar.gz) = 3d35e23d20a7ad0784166f0e0bf380796a3b10b7e2fd9fe0b3f513148515f8f4
 SIZE (Azure-azure-sdk-for-go-v52.5.0_GH0.tar.gz) = 34900560
 SHA256 (Azure-go-autorest-446f41b7d65b_GH0.tar.gz) = 883e2603529a907a3da25d5e2389ab6473a80e6d79daf0d9ffc6385494e0da0a
