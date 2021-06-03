@@ -76,6 +76,37 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3000acee-c45d-11eb-904f-14dae9d5a9d2">
+    <topic>aiohttp -- open redirect vulnerability</topic>
+    <affects>
+      <package>
+	<name>py36-aiohttp</name>
+	<name>py37-aiohttp</name>
+	<name>py38-aiohttp</name>
+	<name>py39-aiohttp</name>
+	<range><lt>3.7.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sviatoslav Sydorenko reports:</p>
+	<blockquote cite="https://github.com/aio-libs/aiohttp/security/advisories/GHSA-v6wp-4m6f-gcjg">
+	  <p>Open redirect vulnerability — a maliciously crafted link to an aiohttp-based web-server could redirect the browser to a different website.</p>
+	  <p>It is caused by a bug in the <code>aiohttp.web_middlewares.normalize_path_middleware</code> middleware.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-21330</cvename>
+      <url>https://github.com/aio-libs/aiohttp/security/advisories/GHSA-v6wp-4m6f-gcjg</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2021-21330</url>
+    </references>
+    <dates>
+      <discovery>2021-02-25</discovery>
+      <entry>2021-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a550d62c-f78d-4407-97d9-93876b6741b9">
     <topic>zeek -- several potential DoS vulnerabilities</topic>
     <affects>
