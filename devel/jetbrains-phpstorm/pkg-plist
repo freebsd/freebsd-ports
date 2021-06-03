@@ -35,7 +35,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/blockmap-1.0.2.jar
 %%DATADIR%%/lib/bootstrap.jar
 %%DATADIR%%/lib/bouncy-castle-provider.jar
-%%DATADIR%%/lib/build-marker-PS-211.7142.44
+%%DATADIR%%/lib/build-marker-PS-211.7442.50
 %%DATADIR%%/lib/byte-buddy-agent-1.10.1.jar
 %%DATADIR%%/lib/caffeine-2.8.8.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
@@ -143,6 +143,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/markdown-0.1.41.jar
 %%DATADIR%%/lib/markdown4j-2.2-cj-1.1.jar
 %%DATADIR%%/lib/markdownj-core-0.4.2-SNAPSHOT.jar
+%%DATADIR%%/lib/marketplace-zip-signer-0.1.3.jar
 %%DATADIR%%/lib/maven-resolver-provider.jar
 %%DATADIR%%/lib/microba.jar
 %%DATADIR%%/lib/miglayout-swing.jar
@@ -200,7 +201,6 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/xmlrpc-2.0.1.jar
 %%DATADIR%%/lib/xstream.jar
 %%DATADIR%%/lib/xz-1.8.jar
-%%DATADIR%%/lib/zip-signer.jar
 %%DATADIR%%/license/XStream_license.txt
 %%DATADIR%%/license/ant_license.txt
 %%DATADIR%%/license/asm_license.txt
@@ -321,8 +321,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-aacdcbe1a076.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-aacdcbe1a076.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-b21cf67d8133.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-b21cf67d8133.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -578,8 +578,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/php/lib/php-openapi.jar
 %%DATADIR%%/plugins/php/lib/php.jar
 %%DATADIR%%/plugins/php/lib/resources_en.jar
-%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-b49e8fd532a3.ijx
-%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-b49e8fd532a3.txt
+%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-b1365f585109.ijx
+%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-b1365f585109.txt
 %%DATADIR%%/plugins/phpspec/lib/phpspec.jar
 %%DATADIR%%/plugins/phpspec/lib/resources_en.jar
 %%DATADIR%%/plugins/phpstan/lib/phpstan.jar
