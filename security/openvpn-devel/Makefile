@@ -1,7 +1,7 @@
 # Created by: Matthias Andree <mandree@FreeBSD.org>
 
 PORTNAME=	openvpn
-DISTVERSION=	g20210527
+DISTVERSION=	g20210603
 PORTEPOCH=	1
 CATEGORIES=	security net net-vpn
 PKGNAMESUFFIX=	-devel
@@ -21,7 +21,7 @@ LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 USES=		autoreconf cpe libtool pkgconfig shebangfix tar:xz
 IGNORE_SSL=	libressl libressl-devel
 USE_GITLAB=	yes
-GL_COMMIT=	890225c1783d0f11b2092495ff902a46d7d0d4cd
+GL_COMMIT=	0033811e0215af76f469d78912c95a2f59813454
 USE_RC_SUBR=	openvpn
 
 SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl sample/sample-scripts/ucn.pl \
