@@ -1,6 +1,6 @@
 PORTNAME=	frp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.36.2
+DISTVERSION=	0.37.0
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,7 +40,7 @@ GH_TUPLE=	\
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		gorilla:mux:v1.7.3:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.4.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
-		hashicorp:yamux:2f1d1f20f75d:hashicorp_yamux/vendor/github.com/hashicorp/yamux \
+		hashicorp:yamux:a95892c5f864:hashicorp_yamux/vendor/github.com/hashicorp/yamux \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		klauspost:cpuid:v1.2.0:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
 		klauspost:reedsolomon:v1.9.1:klauspost_reedsolomon/vendor/github.com/klauspost/reedsolomon \
