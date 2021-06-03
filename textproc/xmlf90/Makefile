@@ -1,8 +1,7 @@
 PORTNAME=	xmlf90
-DISTVERSION=	1.5.4
-PORTREVISION=	3
+DISTVERSION=	1.5.5
 CATEGORIES=	textproc
-MASTER_SITES=	https://launchpad.net/xmlf90/trunk/1.5/+download/
+MASTER_SITES=	https://gitlab.com/siesta-project/libraries/xmlf90/-/archive/1.5.5/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Suite of light-weight libraries to work with XML in Fortran
@@ -12,10 +11,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS_INSTALL=	fox-xml
 
-USES=		fortran gmake libtool
+USES=		autoreconf fortran gmake libtool
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
-USE_LDCONFIG=	yes
+
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 
