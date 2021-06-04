@@ -5,7 +5,7 @@ PORTNAME=	rust
 PORTVERSION=	1.52.1
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES?=	https://static.rust-lang.org/dist/:rust \
+MASTER_SITES=	https://static.rust-lang.org/dist/:rust \
 		LOCAL/tobik/rust:${FLAVOR} \
 		https://download.freebsd.org/ftp/${_RUST_FBSD_SUBDIR_${FLAVOR}}/:${FLAVOR}
 #		http://pkg.freebsd.org/FreeBSD:12:powerpc64/quarterly/All/gcc9-9.3.0_1.txz?dummy=/:powerpc64_gcc
@@ -128,8 +128,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/${FLAVOR:S/_/-/}
 .endif
 
 .if make(distclean) || make(makesum)
-MASTER_SITES:=	${FLAVORS:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -VMASTER_SITES!}@:O:u}
-.export MASTER_SITES
+.MAKEFLAGS:	MASTER_SITES="${FLAVORS:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -VMASTER_SITES!}@:O:u:q}" # PR 249537
 DISTFILES:=	${DISTFILES:M*\:rust} \
 		${FLAVORS:O:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -V'DISTFILES:N*\:rust'!}@}
 .endif
