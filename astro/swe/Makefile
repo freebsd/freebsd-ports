@@ -1,26 +1,29 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	swe
-PORTVERSION=	2.10.01
+PORTVERSION=	2.10.1
 CATEGORIES=	astro devel
-MASTER_SITES=	ftp://ftp.astro.com/pub/swisseph/
-DISTNAME=	${PORTNAME}_unix_src_${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	High Precision Ephemeris Developed By Astrodienst
 
-LICENSE=	GPLv2
+LICENSE=	AGPLv3
 
 USES=		gmake
+USE_GITHUB=	nodefault
 
-WRKSRC=		${WRKDIR}/src
-ALL_TARGET=	#
-MAKE_ARGS=	CFLAGS="${CFLAGS}"
+GH_ACCOUNT=	aloistr:src,doc
+GH_PROJECT=	swisseph:src swisseph_doc:doc
+GH_TAGNAME=	v${PORTVERSION}:src v${PORTVERSION:S/./,/g}:doc
 
 OPTIONS_DEFINE=	DOCS
 
+WRKSRC=		${WRKDIR}/swisseph-${PORTVERSION}
+ALL_TARGET=	#
+MAKEFILE=	makefile
+
 post-patch:
-	${REINPLACE_CMD} 's|-ldl||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's|-ldl||' ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libswe.a ${STAGEDIR}${PREFIX}/lib
@@ -29,6 +32,6 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/doc/* ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKDIR}/swisseph_doc-${PORTVERSION:S/./-/g}/* ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
