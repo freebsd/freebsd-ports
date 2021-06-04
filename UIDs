@@ -236,7 +236,7 @@ ntopng:*:288:288::0:0:ntopng daemon user:/nonexistent:/usr/sbin/nologin
 victoria-metrics:*:289:289::0:0:VictoriaMetrics user:/nonexistent:/usr/sbin/nologin
 _gmid:*:290:290::0:0:gmid daemon user:/var/empty:/usr/sbin/nologin
 pydio:*:291:291::0:0:pydio cells user:/var/pydio:/bin/sh
-# free: 292
+sftpgo:*:292:292::0:0:SFTPGo user:/nonexistent:/usr/sbin/nologin
 # free: 293
 # free: 294
 # free: 295
