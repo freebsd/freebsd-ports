@@ -1,5 +1,5 @@
 PORTNAME=	findomain
-DISTVERSION=	4.2.1
+DISTVERSION=	4.3.0
 CATEGORIES=	net security
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -12,7 +12,8 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Findomain
 GH_PROJECT=	${GH_ACCOUNT}
-GH_TUPLE=	Edu4rdSHL:rust-headless-chrome:54ae12d9d33ed41f9f4b60b489e706d501d4f58a:headless_chrome
+GH_TUPLE=	Edu4rdSHL:rust-headless-chrome:54ae12d9d33ed41f9f4b60b489e706d501d4f58a:headless_chrome \
+		Edu4rdSHL:trust-dns:3047d95f76d26f5debd8d76e94542db4e47f68b4:dns_resolver
 
 CARGO_CRATES=	addr2line-0.15.1 \
 		adler-1.0.2 \
@@ -40,7 +41,7 @@ CARGO_CRATES=	addr2line-0.15.1 \
 		config-0.11.0 \
 		core-foundation-0.9.1 \
 		core-foundation-sys-0.8.2 \
-		cpufeatures-0.1.1 \
+		cpufeatures-0.1.4 \
 		crc32fast-1.2.1 \
 		crossbeam-channel-0.5.1 \
 		crossbeam-deque-0.8.0 \
@@ -66,15 +67,15 @@ CARGO_CRATES=	addr2line-0.15.1 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.0.1 \
 		fuchsia-cprng-0.1.1 \
-		futures-0.3.14 \
-		futures-channel-0.3.14 \
-		futures-core-0.3.14 \
-		futures-executor-0.3.14 \
-		futures-io-0.3.14 \
-		futures-macro-0.3.14 \
-		futures-sink-0.3.14 \
-		futures-task-0.3.14 \
-		futures-util-0.3.14 \
+		futures-0.3.15 \
+		futures-channel-0.3.15 \
+		futures-core-0.3.15 \
+		futures-executor-0.3.15 \
+		futures-io-0.3.15 \
+		futures-macro-0.3.15 \
+		futures-sink-0.3.15 \
+		futures-task-0.3.15 \
+		futures-util-0.3.15 \
 		generic-array-0.14.4 \
 		getrandom-0.1.16 \
 		getrandom-0.2.2 \
@@ -130,7 +131,7 @@ CARGO_CRATES=	addr2line-0.15.1 \
 		once_cell-1.7.2 \
 		opaque-debug-0.3.0 \
 		openssl-0.10.34 \
-		openssl-probe-0.1.2 \
+		openssl-probe-0.1.4 \
 		openssl-sys-0.9.63 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.3 \
@@ -179,31 +180,27 @@ CARGO_CRATES=	addr2line-0.15.1 \
 		remove_dir_all-0.5.3 \
 		reqwest-0.11.3 \
 		resolv-conf-0.7.0 \
-		ring-0.16.20 \
 		rust-ini-0.13.0 \
 		rustc-demangle-0.1.19 \
-		rustls-0.19.1 \
 		ryu-1.0.5 \
 		safemem-0.3.3 \
 		schannel-0.1.19 \
 		scopeguard-1.1.0 \
-		sct-0.6.1 \
 		security-framework-2.2.0 \
 		security-framework-sys-2.2.0 \
 		serde-0.8.23 \
-		serde-1.0.125 \
+		serde-1.0.126 \
 		serde-hjson-0.9.1 \
-		serde_derive-1.0.125 \
+		serde_derive-1.0.126 \
 		serde_json-1.0.64 \
 		serde_urlencoded-0.7.0 \
 		sha1-0.6.0 \
-		sha2-0.9.4 \
+		sha2-0.9.5 \
 		siphasher-0.3.5 \
 		slab-0.4.3 \
 		smallvec-1.6.1 \
 		socket2-0.3.19 \
 		socket2-0.4.0 \
-		spin-0.5.2 \
 		static_assertions-1.1.0 \
 		stringprep-0.1.2 \
 		strsim-0.8.0 \
@@ -218,19 +215,15 @@ CARGO_CRATES=	addr2line-0.15.1 \
 		time-0.1.43 \
 		tinyvec-1.2.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.5.0 \
+		tokio-1.6.0 \
 		tokio-native-tls-0.3.0 \
 		tokio-postgres-0.7.2 \
-		tokio-rustls-0.22.0 \
-		tokio-util-0.6.6 \
+		tokio-util-0.6.7 \
 		toml-0.5.8 \
 		tower-service-0.3.1 \
 		tracing-0.1.26 \
 		tracing-core-0.1.18 \
 		traitobject-0.1.0 \
-		trust-dns-proto-0.20.2 \
-		trust-dns-resolver-0.20.2 \
-		trust-dns-rustls-0.20.2 \
 		try-lock-0.2.3 \
 		typeable-0.1.2 \
 		typenum-1.13.0 \
@@ -240,7 +233,6 @@ CARGO_CRATES=	addr2line-0.15.1 \
 		unicode-segmentation-1.7.1 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
-		untrusted-0.7.1 \
 		url-1.7.2 \
 		url-2.2.2 \
 		vcpkg-0.2.12 \
@@ -257,8 +249,6 @@ CARGO_CRATES=	addr2line-0.15.1 \
 		wasm-bindgen-macro-support-0.2.74 \
 		wasm-bindgen-shared-0.2.74 \
 		web-sys-0.3.51 \
-		webpki-0.21.4 \
-		webpki-roots-0.21.1 \
 		websocket-0.23.0 \
 		which-3.1.1 \
 		widestring-0.4.3 \
@@ -270,10 +260,12 @@ CARGO_CRATES=	addr2line-0.15.1 \
 		yaml-rust-0.3.5 \
 		yaml-rust-0.4.5
 CARGO_USE_GITHUB=	yes
+CARGO_GIT_SUBDIR=	dns_resolver:trust-dns-resolver:crates/resolver
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
-PORTDOCS=	${DOCS:T}
+_DOCS=		docs/create_telegram_webhook.md README.md
+PORTDOCS=	${_DOCS:T}
 
 OPTIONS_DEFINE=	DOCS PGSQL SCREENSHOT
 
@@ -285,14 +277,15 @@ PGSQL_VARS=	WANT_PGSQL=server
 
 SCREENSHOT_RUN_DEPENDS=	chrome:www/chromium
 
-DOCS=		docs/create_telegram_webhook.md README.md
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} ${_DOCS} \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
