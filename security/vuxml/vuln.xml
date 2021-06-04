@@ -76,6 +76,47 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="69815a1d-c31d-11eb-9633-b42e99a1b9c3">
+    <topic>SOGo -- SAML user authentication impersonation</topic>
+    <affects>
+      <package>
+	<name>sogo</name>
+	<range><lt>5.1.1</lt></range>
+      </package>
+      <package>
+	<name>sogo-activesync</name>
+	<range><lt>5.1.1</lt></range>
+      </package>
+      <package>
+	<name>sogo2</name>
+	<range><lt>2.4.1</lt></range>
+      </package>
+      <package>
+	<name>sogo2-activesync</name>
+	<range><lt>2.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>sogo.nu reports:</p>
+	<blockquote cite="https://www.sogo.nu/news/2021/saml-vulnerability.html">
+	  <p>SOGo was not validating the signatures of any SAML assertions it received.</p>
+	  <p>This means any actor with network access to the deployment could impersonate</p>
+	  <p>users when SAML was the authentication method.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-33054</cvename>
+      <url>https://www.sogo.nu/news/2021/saml-vulnerability.html</url>
+      <url>https://blogs.akamai.com/2021/06/sogo-and-packetfence-impacted-by-saml-implementation-vulnerabilities.html</url>
+    </references>
+    <dates>
+      <discovery>2021-06-01</discovery>
+      <entry>2021-06-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c7855866-c511-11eb-ae1d-b42e991fc52e">
     <topic>tauthon -- Regular Expression Denial of Service</topic>
     <affects>
