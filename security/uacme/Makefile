@@ -1,6 +1,6 @@
 PORTNAME=	uacme
 DISTVERSIONPREFIX=	upstream/
-DISTVERSION=	1.7
+DISTVERSION=	1.7.1
 CATEGORIES=	security www
 
 MAINTAINER=	tobik@FreeBSD.org
