@@ -1,6 +1,6 @@
 PORTNAME=	arcan
 DISTVERSION=	0.6.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -43,7 +43,7 @@ ESPEAK_LIB_DEPENDS=	libespeak.so:audio/espeak
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 MANPAGES_USE=		RUBY=yes
-MANPAGES_VAR=		RUBY_NO_RUN_DEPENDS=yes
+MANPAGES_VARS=		RUBY_NO_RUN_DEPENDS=yes
 
 LUAJIT_DESC=		Use LuaJIT instead of standard Lua
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
