@@ -1,5 +1,6 @@
 PORTNAME=	fheroes2
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -15,8 +16,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ihhub
 USE_SDL=	image2 mixer2 sdl2 ttf2
 
+OPTIONS_DEFINE=	DOCS
+
 PLIST_FILES=	bin/${PORTNAME}
-PORTDOCS=	${DOCSDIR}/README.txt \
-		${DOCSDIR}/changelog.txt
+PORTDOCS=	README.txt \
+		changelog.txt
 
 .include <bsd.port.mk>
