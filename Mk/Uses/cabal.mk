@@ -164,7 +164,7 @@ cabal-extract-deps:
 	cd ${WRKSRC} && \
 		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-configure --disable-benchmarks --disable-tests --flags="${CABAL_FLAGS}" ${CONFIGURE_ARGS}
 	cd ${WRKSRC} && \
-		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-build --disable-benchmarks --disable-tests --dependencies-only ${BUILD_ARGS}
+		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-build --disable-benchmarks --disable-tests --dependencies-only ${BUILD_ARGS} ${BUILD_TARGET}
 .  endif
 
 # Generates USE_CABAL= ... line ready to be pasted into the port based on artifacts of cabal-extract-deps.
@@ -179,8 +179,8 @@ make-use-cabal:
 # Re-generates USE_CABAL items to have revision numbers.
 make-use-cabal-revs:
 .  for package in ${_use_cabal}
-	@(${SETENV} HTTP_ACCEPT="application/json" fetch -q -o - http://hackage.haskell.org/package/${package:C/_[0-9]+//}/revisions/ | sed -Ee 's/.*":([0-9]+)}\]/${package:C/_[0-9]+//}_\1 /' -e 's/_0//')
-	@echo '\'
+	@(${SETENV} HTTP_ACCEPT="application/json" fetch -q -o - http://hackage.haskell.org/package/${package:C/_[0-9]+//}/revisions/ | python3 -c "import sys, json; print('${package:C/_[0-9]+//}_' + str(json.load(sys.stdin)[-1]['number']), end='')")
+	@echo ' \'
 .  endfor
 
 .  if !defined(CABAL_BOOTSTRAP)
