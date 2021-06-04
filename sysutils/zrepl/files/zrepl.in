@@ -54,8 +54,8 @@ extra_commands="configtest"
 zrepl_precmd()
 {
 	if [ ! -d "/var/run/zrepl/stdinserver" ]; then
-		install -d -g ${zrepl_group} -o ${zrepl_user} -m 0700 -- "/var/run/zrepl";
-		install -d -g ${zrepl_group} -o ${zrepl_user} -m 0700 -- "/var/run/zrepl/stdinserver";
+		install -d -g ${zrepl_group} -o ${zrepl_user} -m 0755 -- "/var/run/zrepl";
+		install -d -g ${zrepl_group} -o ${zrepl_user} -m 0755 -- "/var/run/zrepl/stdinserver";
 	fi
 
 	if [ ! -e "${pidfile}" ]; then
