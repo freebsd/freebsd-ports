@@ -41,7 +41,7 @@ ANT_ARCH=	${ARCH:S/amd64/x86-64/:S/i386/x86/:S/powerpc64/ppc64/}
 .include <bsd.port.options.mk>
 
 .if ${ARCH:Mpowerpc64*}
-USE_GCC=	any
+USE_GCC=	yes
 .endif
 
 post-patch:

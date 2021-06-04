@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 USES=		bison gmake pathfix perl5
 PATHFIX_MAKEFILEIN=	Makefile
 USE_CXXSTD=	gnu++98
-USE_GCC=	any
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 
 post-patch:

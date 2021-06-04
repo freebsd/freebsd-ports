@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
 USES=		uidfix
-USE_GCC=	any
+USE_GCC=	yes
 WRKSRC=		${WRKDIR}/tnl/tnl
 USE_LDCONFIG=	yes
 MAKEFILE=	${FILESDIR}/Makefile.bsd

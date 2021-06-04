@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 
 USES=		dos2unix libtool perl5
 USE_CXXSTD=	gnu++98
-USE_GCC=	any
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 INSTALL_TARGET=	install-strip

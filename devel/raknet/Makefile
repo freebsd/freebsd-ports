@@ -30,7 +30,7 @@ NO_WRKSUBDIR=	yes
 USES=		dos2unix cmake:insource zip
 
 USE_LDCONFIG=	yes
-USE_GCC=	any
+USE_GCC=	yes
 
 DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 

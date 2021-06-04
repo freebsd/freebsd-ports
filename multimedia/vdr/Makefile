@@ -68,7 +68,7 @@ IGNORE=		will not work due to lack of driver support
 .endif
 
 .if ${ARCH} == "i386"
-USE_GCC=	any
+USE_GCC=	yes
 .endif
 
 post-patch:

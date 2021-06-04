@@ -15,7 +15,7 @@ BROKEN_sparc64=		does not build: libsenna.so: undefined reference to SEN_ATOMIC_
 
 USES=		compiler:c11 gmake libtool pathfix
 GNU_CONFIGURE=	yes
-USE_GCC=	any
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-sennahome=${SENNA_HOME}
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib

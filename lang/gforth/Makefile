@@ -21,7 +21,7 @@ LIB_DEPENDS=	libavcall.so:devel/libffcall \
 		libltdl.so:devel/libltdl
 
 USES=		gmake libtool:build localbase makeinfo
-USE_GCC=	any
+USE_GCC=	yes
 USE_LDCONFIG=	${PREFIX}/lib/gforth/${PORTVERSION}/libcc-named
 
 GNU_CONFIGURE=	yes

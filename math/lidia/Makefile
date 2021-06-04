@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 USES=		gmake localbase:ldflags tar:bz2 libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --enable-shared --with-extra-libs=${LOCALBASE}/lib
-USE_GCC=	any # doesn't build with clang, no active developers to fix this: https://github.com/mkoeppe/LiDIA/issues/6
+USE_GCC=	yes # doesn't build with clang, no active developers to fix this: https://github.com/mkoeppe/LiDIA/issues/6
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

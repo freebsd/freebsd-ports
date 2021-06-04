@@ -26,7 +26,7 @@ PGSQL_DESC=	Install PostgreSQL (report data storing)
 
 USES=		php shebangfix tar:bzip2 ssl
 SHEBANG_FILES=	sbin/thunderlog.php
-USE_GCC=	any
+USE_GCC=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 

@@ -27,7 +27,7 @@ USE_PERL5=	build
 USE_JAVA=	yes
 JAVA_VERSION=	8
 JAVA_RUN=	yes
-USE_GCC=	any
+USE_GCC=	yes
 NO_CCACHE=	yes
 
 ANT_CMD?=	${LOCALBASE}/bin/ant

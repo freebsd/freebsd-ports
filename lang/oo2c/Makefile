@@ -22,7 +22,7 @@ USES=		gmake libtool:build localbase:ldflags tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
-USE_GCC=	any
+USE_GCC=	yes
 
 OPTIONS_DEFINE=	DOCS THREADS
 OPTIONS_SUB=	yes

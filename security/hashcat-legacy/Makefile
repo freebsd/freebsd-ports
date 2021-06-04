@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hashcat
 
 USES=		gmake
-USE_GCC=	any
+USE_GCC=	yes
 
 ALL_TARGET=	posix64 posixXOP
 

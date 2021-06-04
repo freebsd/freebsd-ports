@@ -11,7 +11,7 @@ COMMENT=	Free VHDL simulator
 
 USES=		gmake pathfix libtool makeinfo perl5 pkgconfig
 USE_LDCONFIG=	yes
-USE_GCC=	any
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	SYSTEM_LIBTOOL=${FALSE}
 INSTALL_TARGET=	install-strip

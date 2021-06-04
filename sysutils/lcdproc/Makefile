@@ -93,7 +93,7 @@ PLIST_SUB+=	X86="@comment "
 .endif
 
 .if ${ARCH:Mpowerpc64*}
-USE_GCC=	any
+USE_GCC=	yes
 .endif
 
 .if ${PORT_OPTIONS:MUSB}

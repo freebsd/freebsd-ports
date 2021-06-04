@@ -20,7 +20,7 @@ PLIST_FILES=	bin/masscan man/man8/masscan.8.gz
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64 || ${ARCH} == powerpc
-USE_GCC=	any
+USE_GCC=	yes
 .endif
 
 do-install:

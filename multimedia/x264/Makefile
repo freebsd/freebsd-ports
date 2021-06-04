@@ -93,7 +93,7 @@ PGO_ALL_TARGET=		fprofiled
 # y4m sample video
 Y4M_VIDEO=		example.y4m
 Y4M_VIDEO_DISTFILE=	example.y4m.bz2
-PGO_VARS=		USE_GCC=any \
+PGO_VARS=		USE_GCC=yes \
 			LICENSE+=PGO LICENSE_COMB=multi
 
 # ${Y4M_VIDEO_DISTFILE} file may not be mirrored

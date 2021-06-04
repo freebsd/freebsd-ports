@@ -33,7 +33,7 @@ GH_ACCOUNT=	rubund
 
 SHEBANG_GLOB=	*.sh
 
-USE_GCC=	any # lots of obviously incorrect C where clang fails, which gcc nevertheless magically finds a way to compile
+USE_GCC=	yes # lots of obviously incorrect C where clang fails, which gcc nevertheless magically finds a way to compile
 
 CFLAGS+=	-fcommon
 

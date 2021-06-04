@@ -17,7 +17,7 @@ BROKEN_FreeBSD_12_powerpc64=	fails to build on powerpc64 elfv1: conflicting type
 
 GNU_CONFIGURE=	yes
 USES=		cpe gmake makeinfo
-USE_GCC=	any
+USE_GCC=	yes
 USERS=		gnats
 
 CPE_VENDOR=	gnu

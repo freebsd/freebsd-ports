@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib
 USES=		apache:2.2+ autoreconf gnome libtool
 USE_GNOME=	libxml2
-USE_GCC=	any
+USE_GCC=	yes
 
 SUB_FILES=	pkg-message zzz_authnz_crowd.conf
 SUB_LIST+=	APACHEETCDIR=${APACHEETCDIR} \

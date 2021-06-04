@@ -24,7 +24,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 USES=		cmake compiler:c++11-lang gettext gnome pkgconfig sqlite ssl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USE_GCC=	any # clang fails: https://github.com/rpm-software-management/libdnf/issues/1038
+USE_GCC=	yes # clang fails: https://github.com/rpm-software-management/libdnf/issues/1038
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rpm-software-management

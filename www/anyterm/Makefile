@@ -18,7 +18,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USE_RC_SUBR=	anytermd
 USES=		compiler:c++11-lang gmake iconv localbase tar:tbz2
-USE_GCC=	any
+USE_GCC=	yes
 ALL_TARGET=	default_target
 PLIST_FILES=	man/man1/anytermd.1.gz \
 		sbin/anytermd
