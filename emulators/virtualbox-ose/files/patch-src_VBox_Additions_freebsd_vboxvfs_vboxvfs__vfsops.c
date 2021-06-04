@@ -539,7 +539,11 @@
 + * Do operation associated with quotas, not supported
 + */
 +static int
-+vboxfs_quotactl(struct mount *mp, int cmd, uid_t uid, void *arg)
++vboxfs_quotactl(struct mount *mp, int cmd, uid_t uid, void *arg
++#if __FreeBSD_version >= 1400018
++	, bool *mp_busy
++#endif
++	)
  {
 -    int rc;
 +	return (EOPNOTSUPP);
