@@ -6,11 +6,11 @@
 # -- Olivier Certner <olce.freebsd.ports@certner.fr>
 PORTNAME=	tauthon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.2
+DISTVERSION=	2.8.3
 CATEGORIES=	lang python
 
 MAINTAINER=	olce.freebsd.ports@certner.fr
-COMMENT=	Backward-compatible fork of Python 2.7 interpreter with Python 3.x features
+COMMENT=	Backwards-compatible fork of CPython 2.7 with Python 3.x features
 
 LICENSE=	PSFL
 
@@ -25,6 +25,7 @@ GH_ACCOUNT=	naftaliharris
 GH_PROJECT=	tauthon
 
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 # Piggyback on Python support in shebangfix
 python_CMD=	${PREFIX}/bin/${NAME_VERSION}
 # Better be safe than sorry
@@ -40,7 +41,6 @@ python_CMD=	${PREFIX}/bin/${NAME_VERSION}
 SHEBANG_FILES+=	${_DIRS}/*.py
 .endfor
 
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ENV+=		ac_cv_opt_olimit_ok=no OPT=""				# Null out OPT to respect user CFLAGS and remove optimizations
 
@@ -52,7 +52,8 @@ TEST_ARGS=		TESTOPTS=-j${MAKE_JOBS_NUMBER}
 MAKE_ARGS+=		INSTALL_SHARED="${INSTALL_LIB}"				# Strip shared library
 
 PLIST_SUB=		ABI=${ABIFLAGS} \
-			PORTVERSION=${PORTVERSION} \
+			DISTVERSION=${DISTVERSION} \
+			VERSION_LONG=${VERSION_LONG} \
 			VERSION_NOMICRO=${VERSION_NOMICRO} \
 			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. https://bugs.python.org/issue19554
 
@@ -98,10 +99,11 @@ THREADS_LDFLAGS=	-lpthread
 UCS2_CONFIGURE_ENABLE=	unicode=ucs2
 UCS4_CONFIGURE_ENABLE=	unicode=ucs4
 
-PYTHON_DISTVERSION=	${DISTVERSION}
-
+VERSION_LONG=		${DISTVERSION:S/a/.alpha./:S/b/.beta./:C/^([^a-z]*)\$/\1.final.0/}
 VERSION_NOMICRO=	${DISTVERSION:R}
 NAME_VERSION=		tauthon${VERSION_NOMICRO}
+
+DISABLED_MODULES=	_bsddb _sqlite3 _tkinter gdbm
 
 .include <bsd.port.options.mk>
 
@@ -134,6 +136,7 @@ CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 # See https://bugs.freebsd.org/115940 and https://bugs.freebsd.org/193650
 .if !exists(/usr/bin/ypcat) || defined(WITHOUT_NIS)
 PLIST_SUB+=	NO_NIS="@comment "
+DISABLED_MODULES+=	nis
 .else
 PLIST_SUB+=	NO_NIS=""
 .endif
@@ -142,10 +145,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/bin/python|${python_CMD}|' \
 		${WRKSRC}/Lib/cgi.py
 
-.if !exists(/usr/bin/ypcat) || defined(WITHOUT_NIS)
-	@${REINPLACE_CMD} -e 's/disabled_module_list =[^]]*/&, "nis"/' \
+	@${REINPLACE_CMD} -e \
+		's/%%DISABLED_MODULES%%/${DISABLED_MODULES:C/^(.*)$/"\1", /g}/g' \
 		${WRKSRC}/setup.py
-.endif
 
 post-install:
 # Create symlink for tauthon executable
