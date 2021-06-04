@@ -1,10 +1,11 @@
 PORTNAME=	konsole
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde kde-applications # kde kde-applications-applications
 
 PATCH_SITES=	https://invent.kde.org/utilities/konsole/-/commit/
-PATCHFILES=	585f9a561a07ec1cf5c20af37229667a3009362a.diff:-p1
+PATCHFILES+=	585f9a561a07ec1cf5c20af37229667a3009362a.diff:-p1
+PATCHFILES+=	34ad14c8cee4ab352481bf2ba190df9f8b744d29.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE terminal emulator
@@ -19,10 +20,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cmake compiler:c++11-lang gettext pkgconfig kde:5 \
 		qt:5 tar:xz
 USE_KDE=	auth attica bookmarks codecs completion config configwidgets \
-		coreaddons crash dbusaddons ecm emoticons globalaccel guiaddons i18n \
-		iconthemes init itemmodels jobwidgets kdelibs4support kio \
+		coreaddons crash dbusaddons emoticons globalaccel guiaddons i18n \
+		iconthemes init itemmodels jobwidgets kio \
 		newstuff notifications notifyconfig parts pty service sonnet \
-		textwidgets widgetsaddons windowsystem xmlgui
+		textwidgets widgetsaddons windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus gui network printsupport script scripttools sql \
 		widgets xml \
 		buildtools_build qmake_build
