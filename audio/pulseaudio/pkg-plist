@@ -8,16 +8,16 @@ bin/paplay
 bin/parec
 bin/parecord
 bin/pasuspender
-bin/pax11publish
+%%X11%%bin/pax11publish
 bin/pulseaudio
 bin/qpaeq
-bin/start-pulseaudio-x11
+%%X11%%bin/start-pulseaudio-x11
 etc/dbus-1/system.d/pulseaudio-system.conf
 @sample etc/pulse/client.conf.sample
 @sample etc/pulse/daemon.conf.sample
 @sample etc/pulse/default.pa.sample
 @sample etc/pulse/system.pa.sample
-etc/xdg/autostart/pulseaudio.desktop
+%%X11%%etc/xdg/autostart/pulseaudio.desktop
 include/pulse/cdecl.h
 include/pulse/channelmap.h
 include/pulse/context.h
@@ -141,10 +141,10 @@ lib/pulse-%%PULSE_VERSION%%/modules/module-virtual-sink.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-virtual-source.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-virtual-surround-sink.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-volume-restore.so
-lib/pulse-%%PULSE_VERSION%%/modules/module-x11-bell.so
-lib/pulse-%%PULSE_VERSION%%/modules/module-x11-cork-request.so
-lib/pulse-%%PULSE_VERSION%%/modules/module-x11-publish.so
-lib/pulse-%%PULSE_VERSION%%/modules/module-x11-xsmp.so
+%%X11%%lib/pulse-%%PULSE_VERSION%%/modules/module-x11-bell.so
+%%X11%%lib/pulse-%%PULSE_VERSION%%/modules/module-x11-cork-request.so
+%%X11%%lib/pulse-%%PULSE_VERSION%%/modules/module-x11-publish.so
+%%X11%%lib/pulse-%%PULSE_VERSION%%/modules/module-x11-xsmp.so
 %%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/module-zeroconf-discover.so
 %%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/module-zeroconf-publish.so
 lib/pulseaudio/libpulsecommon-%%PULSE_VERSION%%.so
@@ -164,9 +164,9 @@ man/man1/paplay.1.gz
 man/man1/parec.1.gz
 man/man1/parecord.1.gz
 man/man1/pasuspender.1.gz
-man/man1/pax11publish.1.gz
+%%X11%%man/man1/pax11publish.1.gz
 man/man1/pulseaudio.1.gz
-man/man1/start-pulseaudio-x11.1.gz
+%%X11%%man/man1/start-pulseaudio-x11.1.gz
 man/man5/default.pa.5.gz
 man/man5/pulse-cli-syntax.5.gz
 man/man5/pulse-client.conf.5.gz
