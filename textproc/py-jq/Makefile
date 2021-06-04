@@ -20,6 +20,6 @@ USES=		localbase python:3.4+
 USE_PYTHON=	autoplist distutils
 
 post-install:
-		${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jq.*.so
+		${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jq*.so
 
 .include <bsd.port.mk>
