@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 
 PORTNAME=	mroonga
-PORTVERSION=	11.02
+PORTVERSION=	11.03
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/mroonga/
 
@@ -34,6 +34,9 @@ post-patch:
 	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
 	@${REINPLACE_CMD} -i .c++20 's,srcdir)/version[[:>:]],&.txt,' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/deb/d' \
+		-e '/rpm/d' \
+		${WRKSRC}/data/Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mysql/plugin/ha_mroonga.so.0.0.0
