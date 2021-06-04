@@ -1,6 +1,6 @@
 PORTNAME=	iosevka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.1.2
+DISTVERSION=	7.0.3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/be5invis/Iosevka/releases/download/${DISTVERSIONFULL}/
 
@@ -40,6 +40,7 @@ _STYLES=\
 	IMBPLEXMONO	-ss15-		Monospace,\ IMB\ Plex\ Mono\ Style\
 	PTMONO		-ss16-		Monospace,\ PT\ Mono\ Style\
 	RECURSIVEMONO	-ss17-		Monospace,\ Recursive\ Mono\ Style\
+	INPUTMONO	-ss18-		Monospace,\ Input\ Mono\ Style\
 	AILE		-aile-		Quasi-proportional,\ Sans-serif\ (Aile)\
 	ETOILE		-etoile-	Quasi-proportional,\ Slab-serif\ (Etoile)\
 
