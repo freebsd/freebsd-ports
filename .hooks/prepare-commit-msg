@@ -28,6 +28,25 @@ esac
 outfile=$(mktemp /tmp/freebsd-git-commit.XXXXXXXX)
 exec 3> "$outfile"
 
+if [ -z "$3" ]
+then
+  what=$(git diff-index --name-only --cached --diff-filter=ACMR HEAD|sed -Ee 's/^([^\/]+\/[^\/]+).*/\1/'|sort -u|xargs)
+
+  case $what in
+    *\ *)
+      # More than one port, do nothing
+      ;;
+    *)
+      # One port, prepare the commit message.
+      {
+	echo "# Uncomment and add a short description of why things changed."
+	echo "# $what: "
+	echo
+      } >&3
+      ;;
+esac
+fi
+
 # Create a commit message template from three parts:
 #
 # 1. The beginning of the git-provided template (up to the first comment-only
