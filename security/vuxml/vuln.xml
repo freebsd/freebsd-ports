@@ -76,6 +76,36 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="417de1e6-c31b-11eb-9633-b42e99a1b9c3">
+    <topic>lasso -- signature checking failure</topic>
+    <affects>
+      <package>
+	<name>lasso</name>
+	<range><lt>2.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>entrouvert reports:</p>
+    <blockquote cite="https://git.entrouvert.org/lasso.git/tree/NEWS?id=v2.7.0">
+      <p>When AuthnResponse messages are not signed (which is
+  permitted by the specifiation), all assertion's signatures should be
+  checked, but currently after the first signed assertion is checked all
+  following assertions are accepted without checking their signature, and
+  the last one is considered the main assertion.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-28091</cvename>
+      <url>https://git.entrouvert.org/lasso.git/tree/NEWS?id=v2.7.0</url>
+    </references>
+    <dates>
+      <discovery>2021-06-01</discovery>
+      <entry>2021-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="079b3641-c4bd-11eb-a22a-693f0544ae52">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
