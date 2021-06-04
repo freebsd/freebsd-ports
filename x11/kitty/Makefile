@@ -21,8 +21,8 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libwayland-cursor.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		gettext-runtime gl gmake ncurses:port pkgconfig python:3.5+ \
-		shebangfix terminfo xorg
+USES=		compiler:c11 gettext-runtime gl gmake ncurses:port pkgconfig \
+		python:3.5+ shebangfix terminfo xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	kovidgoyal
 USE_GL=		gl
