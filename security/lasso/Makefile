@@ -1,7 +1,7 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	lasso
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7.0
 CATEGORIES=	security
 MASTER_SITES=	https://dev.entrouvert.org/releases/lasso/
 
