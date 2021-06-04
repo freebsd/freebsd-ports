@@ -1,34 +1,50 @@
 #!/bin/sh
 
-# PROVIDE: victoria_vmagent
+# PROVIDE: vmagent
 # REQUIRE: NETWORK
 # BEFORE: DAEMON
 
 . /etc/rc.subr
 
-name="victoria_vmagent"
+name="vmagent"
 desc="Fast, cost-effective, and scalable time series database"
-rcvar="victoria_vmagent_enable"
+rcvar="vmagent_enable"
 pidfile="/var/run/${name}.pid"
 daemon_pidfile="/var/run/${name}-daemon.pid"
 logdir="/var/log/${name}"
-logfile="${logdir}/victoria_vmagent.log"
+logfile="${logdir}/vmagent.log"
 command="%%PREFIX%%/bin/vmagent"
-victoria_vmagent_args=${victoria_vmagent_args-"--remoteWrite.tmpDataPath=/tmp --promscrape.config=%%PREFIX%%/etc/prometheus/prometheus.yml --remoteWrite.url=http://127.0.0.1:8429/api/v1/write -httpListenAddr=:9429 --memory.allowedPercent=80"}
-victoria_vmagent_user="%%VICTORIA_USER%%"
+vmagent_args=${vmagent_args-"--remoteWrite.tmpDataPath=/tmp --promscrape.config=%%PREFIX%%/etc/prometheus/prometheus.yml --remoteWrite.url=http://127.0.0.1:8429/api/v1/write -httpListenAddr=:9429 --memory.allowedPercent=80"}
+vmagent_user="%%VICTORIA_USER%%"
 load_rc_config ${name}
 
+restart_precmd="checkconfig"
+start_precmd="checkconfig"
+checkconfig_cmd="checkconfig"
 start_cmd="start"
 stop_cmd="stop"
 status_cmd="status"
-extra_commands="reload"
+extra_commands="checkconfig reload"
+
+checkconfig()
+{
+	local _ret
+
+	/usr/bin/su -m ${vmagent_user} -c "${command} ${vmagent_args} -promscrape.config.dryRun" > /dev/null 2>&1
+	_ret=$?
+	if [ ${_ret} -ne 0 ]; then
+		echo "${name} checkconfig failed:"
+		echo "/usr/bin/su -m ${vmagent_user} -c \"${command} ${vmagent_args} -promscrape.config.dryRun\""
+		exit ${_ret}
+	fi
+}
 
 start()
 {
 	[ ! -d ${logdir} ] && mkdir -p ${logdir}
 	touch ${logfile}
-	chown ${victoria_vmagent_user} ${logdir} ${logfile}
-	/usr/sbin/daemon -u ${victoria_vmagent_user} -f -R5 -p ${pidfile} -P ${daemon_pidfile} -o ${logfile} ${command} ${victoria_vmagent_args}
+	chown ${vmagent_user} ${logdir} ${logfile}
+	/usr/sbin/daemon -u ${vmagent_user} -f -R5 -p ${pidfile} -P ${daemon_pidfile} -o ${logfile} ${command} ${vmagent_args}
 }
 
 stop()
