@@ -344,8 +344,8 @@
     SUBDIR += minio
     SUBDIR += minio-client
     SUBDIR += miniserve
-    SUBDIR += mitmproxy
     SUBDIR += mirrorselect
+    SUBDIR += mitmproxy
     SUBDIR += mknmz-wwwoffle
     SUBDIR += mnogosearch
     SUBDIR += mod_amazon_proxy

@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR}
 
-USES=	pear
-NOARCH=	yes
+USES=		pear
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

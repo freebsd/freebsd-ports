@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYNUMPY}
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
 
-USES=		cmake compiler:c++14-lang gl jpeg python:3.8 shebangfix \
+USES=		cmake compiler:c++14-lang gl gnome jpeg python:3.8 shebangfix \
 		tar:xz xorg
 USE_XORG=	x11 xext xfixes xmu xrender
 USE_GL=		gl glu glew
@@ -57,15 +57,13 @@ OPTIONS_SUB=	yes
 ALEMBIC_CMAKE_BOOL=		WITH_ALEMBIC
 ALEMBIC_LIB_DEPENDS=		libAlembic.so:graphics/alembic
 # note that this needs to be set to match alembics hdf5 option
-ALEMBIC_HDF5_REQUIRES=		ALEMBIC
+ALEMBIC_HDF5_IMPLIES=		ALEMBIC
 ALEMBIC_HDF5_CMAKE_BOOL=	WITH_ALEMBIC_HDF5
 ALEMBIC_HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5
 AVI_CMAKE_BOOL=			WITH_CODEC_AVI
 BULLET_CMAKE_BOOL=		WITH_BULLET
 CAMERATRACK_CMAKE_BOOL=		WITH_LIBMV
 CAMERATRACK_LIB_DEPENDS=	libunwind.so:devel/libunwind
-CAMERATRACK_ONLY_FOR_ARCHS=	i386 amd64 aarch64 powerpc64 powerpc64le
-CAMERATRACK_ONLY_FOR_ARCHS_REASON=	libunwind only supports x86/amd64/aarch64/powerpc64/powerpc64le
 CINEON_CMAKE_BOOL=		WITH_IMAGE_CINEON
 COLLADA_CMAKE_BOOL=		WITH_OPENCOLLADA
 COLLADA_LIB_DEPENDS=		libOpenCOLLADABaseUtils.so:graphics/opencollada \
@@ -79,8 +77,6 @@ CYCLES_LIB_DEPENDS=		libpugixml.so:textproc/pugixml
 CYCLESEMBR_IMPLIES=		CYCLES
 CYCLESEMBR_CMAKE_BOOL=		WITH_CYCLES_EMBREE
 CYCLESEMBR_LIB_DEPENDS=		libembree3.so:graphics/embree
-CYCLESEMBR_ONLY_FOR_ARCHS=	amd64
-CYCLESEMBR_ONLY_FOR_ARCHS_REASON=	embree only supports amd64
 CYCLESOSL_IMPLIES=		CYCLES
 CYCLESOSL_CMAKE_BOOL=		WITH_CYCLES_OSL WITH_LLVM
 CYCLESOSL_CMAKE_ON=		-DLLVM_STATIC:BOOL=OFF \
@@ -138,8 +134,6 @@ OPENIMAGEIO_LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio
 OPENIMAGEDN_IMPLIES=		TBB
 OPENIMAGEDN_CMAKE_BOOL=		WITH_OPENIMAGEDENOISE
 OPENIMAGEDN_LIB_DEPENDS=	libOpenImageDenoise.so:graphics/oidn
-OPENIMAGEDN_ONLY_FOR_ARCHS=	amd64
-OPENIMAGEDN_ONLY_FOR_ARCHS_REASON=	oidn only supports amd64
 # openmp usually works on amd64
 OPENMP_CMAKE_BOOL=		WITH_OPENMP
 OPENSUBDIV_CMAKE_BOOL=		WITH_OPENSUBDIV

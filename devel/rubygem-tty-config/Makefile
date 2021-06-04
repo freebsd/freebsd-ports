@@ -6,7 +6,6 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Define, read and write any Ruby app configurations
 COMMENT=	Highly customisable application configuration interface for terminal tools
 
 LICENSE=	MIT
