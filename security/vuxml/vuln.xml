@@ -76,6 +76,35 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c7855866-c511-11eb-ae1d-b42e991fc52e">
+    <topic>tauthon -- Regular Expression Denial of Service</topic>
+    <affects>
+      <package>
+	<name>tauthon</name>
+	<range><lt>2.8.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p></p>
+	<blockquote cite="https://github.com/naftaliharris/tauthon/blob/master/Misc/NEWS.d/2.8.3.rst">
+	  <p>The :class:`~urllib.request.AbstractBasicAuthHandler` class
+	    of the :mod:`urllib.request` module uses an inefficient
+	    regular expression which can be exploited by an
+	    attacker to cause a denial of service</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-8492</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8492</url>
+    </references>
+    <dates>
+      <discovery>2020-01-30</discovery>
+      <entry>2021-06-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="417de1e6-c31b-11eb-9633-b42e99a1b9c3">
     <topic>lasso -- signature checking failure</topic>
     <affects>
