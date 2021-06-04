@@ -76,6 +76,53 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="36a35d83-c560-11eb-84ab-e0d55e2a8bf9">
+    <topic>polkit -- local privilege escalation using polkit_system_bus_name_get_creds_sync</topic>
+    <affects>
+      <package>
+	<name>polkit</name>
+	<range><lt>0.119</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cedric Buissart reports:</p>
+	<blockquote cite="https://seclists.org/oss-sec/2021/q2/180">
+	  <p>The function <code>polkit_system_bus_name_get_creds_sync</code> is used to get the
+	  uid and pid of the process requesting the action. It does this by
+	  sending the unique bus name of the requesting process, which is
+	  typically something like ":1.96", to <code>dbus-daemon</code>. These unique names
+	  are assigned and managed by <code>dbus-daemon</code> and cannot be forged, so this
+	  is a good way to check the privileges of the requesting process.</p>
+	  <p>The vulnerability happens when the requesting process disconnects from
+	  <code>dbus-daemon</code> just before the call to
+	  <code>polkit_system_bus_name_get_creds_sync</code> starts. In this scenario, the
+	  unique bus name is no longer valid, so <code>dbus-daemon</code> sends back an error
+	  reply. This error case is handled in
+	  <code>polkit_system_bus_name_get_creds_sync</code> by setting the value of the
+	  <code>error</code> parameter, but it still returns <code>TRUE</code>, rather than <code>FALSE</code>.
+	  This behavior means that all callers of
+	  <code>polkit_system_bus_name_get_creds_sync</code> need to carefully check whether
+	  an error was set. If the calling function forgets to check for errors
+	  then it will think that the uid of the requesting process is 0 (because
+	  the <code>AsyncGetBusNameCredsData</code> struct is zero initialized). In other
+	  words, it will think that the action was requested by a root process,
+	  and will therefore allow it.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-3560</cvename>
+      <url>https://seclists.org/oss-sec/2021/q2/180</url>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3560</url>
+      <url>https://gitlab.freedesktop.org/polkit/polkit/-/commit/a04d13a</url>
+    </references>
+    <dates>
+      <discovery>2021-06-03</discovery>
+      <entry>2021-06-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="69815a1d-c31d-11eb-9633-b42e99a1b9c3">
     <topic>SOGo -- SAML user authentication impersonation</topic>
     <affects>
