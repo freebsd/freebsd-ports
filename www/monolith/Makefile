@@ -1,7 +1,6 @@
 PORTNAME=	monolith
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1
-PORTREVISION=	2
+DISTVERSION=	2.5.0
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -15,35 +14,34 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Y2Z
 
 CARGO_CRATES=	adler-1.0.2 \
-		aho-corasick-0.7.15 \
+		aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
-		assert_cmd-1.0.3 \
-		async-compression-0.3.7 \
+		assert_cmd-1.0.4 \
+		async-compression-0.3.8 \
 		atty-0.2.14 \
 		autocfg-0.1.7 \
 		autocfg-1.0.1 \
 		base64-0.13.0 \
 		bitflags-1.2.1 \
 		block-buffer-0.9.0 \
-		bstr-0.2.15 \
-		bumpalo-3.6.1 \
-		byteorder-1.4.2 \
+		bstr-0.2.16 \
+		bumpalo-3.7.0 \
 		bytes-1.0.1 \
-		cc-1.0.67 \
+		cc-1.0.68 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		clap-2.33.3 \
 		cloudabi-0.0.3 \
 		core-foundation-0.9.1 \
 		core-foundation-sys-0.8.2 \
-		cpuid-bool-0.1.2 \
+		cpufeatures-0.1.4 \
 		crc32fast-1.2.1 \
 		cssparser-0.28.1 \
 		cssparser-macros-0.6.0 \
 		difference-2.0.0 \
 		digest-0.9.0 \
 		doc-comment-0.3.3 \
-		dtoa-0.4.7 \
+		dtoa-0.4.8 \
 		dtoa-short-0.3.3 \
 		encoding_rs-0.8.28 \
 		flate2-1.0.20 \
@@ -53,41 +51,41 @@ CARGO_CRATES=	adler-1.0.2 \
 		form_urlencoded-1.0.1 \
 		fuchsia-cprng-0.1.1 \
 		futf-0.1.4 \
-		futures-channel-0.3.13 \
-		futures-core-0.3.13 \
-		futures-io-0.3.13 \
-		futures-sink-0.3.13 \
-		futures-task-0.3.13 \
-		futures-util-0.3.13 \
+		futures-channel-0.3.15 \
+		futures-core-0.3.15 \
+		futures-io-0.3.15 \
+		futures-sink-0.3.15 \
+		futures-task-0.3.15 \
+		futures-util-0.3.15 \
 		generic-array-0.14.4 \
 		getrandom-0.1.16 \
-		getrandom-0.2.2 \
-		h2-0.3.1 \
+		getrandom-0.2.3 \
+		h2-0.3.3 \
 		hashbrown-0.9.1 \
 		hermit-abi-0.1.18 \
 		html5ever-0.24.1 \
-		http-0.2.3 \
-		http-body-0.4.0 \
-		httparse-1.3.5 \
-		httpdate-0.3.2 \
-		hyper-0.14.4 \
+		http-0.2.4 \
+		http-body-0.4.2 \
+		httparse-1.4.1 \
+		httpdate-1.0.1 \
+		hyper-0.14.8 \
 		hyper-tls-0.5.0 \
-		idna-0.2.2 \
+		idna-0.2.3 \
 		indexmap-1.6.2 \
 		ipnet-2.3.0 \
 		itoa-0.4.7 \
-		js-sys-0.3.48 \
+		js-sys-0.3.51 \
 		lazy_static-1.4.0 \
-		libc-0.2.88 \
+		libc-0.2.95 \
 		log-0.4.14 \
 		mac-0.1.1 \
 		markup5ever-0.9.0 \
 		matches-0.1.8 \
-		memchr-2.3.4 \
+		memchr-2.4.0 \
 		mime-0.3.16 \
 		miniz_oxide-0.4.4 \
-		mio-0.7.9 \
-		miow-0.3.6 \
+		mio-0.7.11 \
+		miow-0.3.7 \
 		native-tls-0.2.7 \
 		new_debug_unreachable-1.0.4 \
 		ntapi-0.3.6 \
@@ -96,9 +94,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		num_cpus-1.13.0 \
 		once_cell-1.7.2 \
 		opaque-debug-0.3.0 \
-		openssl-0.10.32 \
-		openssl-probe-0.1.2 \
-		openssl-sys-0.9.60 \
+		openssl-0.10.34 \
+		openssl-probe-0.1.4 \
+		openssl-sys-0.9.63 \
 		percent-encoding-2.1.0 \
 		phf-0.7.24 \
 		phf-0.8.0 \
@@ -108,18 +106,18 @@ CARGO_CRATES=	adler-1.0.2 \
 		phf_macros-0.8.0 \
 		phf_shared-0.7.24 \
 		phf_shared-0.8.0 \
-		pin-project-1.0.5 \
-		pin-project-internal-1.0.5 \
+		pin-project-1.0.7 \
+		pin-project-internal-1.0.7 \
 		pin-project-lite-0.2.6 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.19 \
 		ppv-lite86-0.2.10 \
 		precomputed-hash-0.1.1 \
-		predicates-1.0.7 \
+		predicates-1.0.8 \
 		predicates-core-1.0.2 \
 		predicates-tree-1.0.2 \
 		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.24 \
+		proc-macro2-1.0.27 \
 		quote-1.0.9 \
 		rand-0.6.5 \
 		rand-0.7.3 \
@@ -141,67 +139,66 @@ CARGO_CRATES=	adler-1.0.2 \
 		rand_pcg-0.2.1 \
 		rand_xorshift-0.1.1 \
 		rdrand-0.4.0 \
-		redox_syscall-0.2.5 \
-		regex-1.4.3 \
-		regex-automata-0.1.9 \
-		regex-syntax-0.6.22 \
+		redox_syscall-0.2.8 \
+		regex-1.5.4 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
-		reqwest-0.11.1 \
+		reqwest-0.11.3 \
 		ryu-1.0.5 \
 		schannel-0.1.19 \
-		security-framework-2.1.2 \
-		security-framework-sys-2.1.1 \
-		serde-1.0.124 \
-		serde_derive-1.0.124 \
+		security-framework-2.2.0 \
+		security-framework-sys-2.2.0 \
+		serde-1.0.126 \
+		serde_derive-1.0.126 \
 		serde_json-1.0.64 \
 		serde_urlencoded-0.7.0 \
-		sha2-0.9.3 \
+		sha2-0.9.5 \
 		siphasher-0.2.3 \
-		siphasher-0.3.3 \
-		slab-0.4.2 \
+		siphasher-0.3.5 \
+		slab-0.4.3 \
 		smallvec-1.6.1 \
-		socket2-0.3.19 \
+		socket2-0.4.0 \
 		string_cache-0.7.5 \
 		string_cache_codegen-0.4.4 \
 		string_cache_shared-0.3.0 \
 		strsim-0.8.0 \
-		syn-1.0.62 \
+		syn-1.0.72 \
 		tempfile-3.2.0 \
 		tendril-0.4.2 \
 		textwrap-0.11.0 \
-		thread_local-1.1.3 \
 		time-0.1.44 \
-		tinyvec-1.1.1 \
+		tinyvec-1.2.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.2.0 \
+		tokio-1.6.1 \
 		tokio-native-tls-0.3.0 \
-		tokio-util-0.6.3 \
+		tokio-util-0.6.7 \
 		tower-service-0.3.1 \
-		tracing-0.1.25 \
-		tracing-core-0.1.17 \
+		tracing-0.1.26 \
+		tracing-core-0.1.18 \
 		treeline-0.1.0 \
 		try-lock-0.2.3 \
-		typenum-1.12.0 \
-		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.17 \
+		typenum-1.13.0 \
+		unicode-bidi-0.3.5 \
+		unicode-normalization-0.1.18 \
 		unicode-width-0.1.8 \
-		unicode-xid-0.2.1 \
-		url-2.2.1 \
-		utf-8-0.7.5 \
-		vcpkg-0.2.11 \
+		unicode-xid-0.2.2 \
+		url-2.2.2 \
+		utf-8-0.7.6 \
+		vcpkg-0.2.13 \
 		vec_map-0.8.2 \
-		version_check-0.9.2 \
+		version_check-0.9.3 \
 		wait-timeout-0.2.0 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.71 \
-		wasm-bindgen-backend-0.2.71 \
-		wasm-bindgen-futures-0.4.21 \
-		wasm-bindgen-macro-0.2.71 \
-		wasm-bindgen-macro-support-0.2.71 \
-		wasm-bindgen-shared-0.2.71 \
-		web-sys-0.3.48 \
+		wasm-bindgen-0.2.74 \
+		wasm-bindgen-backend-0.2.74 \
+		wasm-bindgen-futures-0.4.24 \
+		wasm-bindgen-macro-0.2.74 \
+		wasm-bindgen-macro-support-0.2.74 \
+		wasm-bindgen-shared-0.2.74 \
+		web-sys-0.3.51 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
