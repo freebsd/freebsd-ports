@@ -22,6 +22,7 @@ USE_GNOME=	intltool:build gtk30
 USE_GITHUB=	yes
 GH_ACCOUNT=	pdfarranger
 
+NO_ARCH=	yes
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>
