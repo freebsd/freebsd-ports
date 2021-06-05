@@ -14,6 +14,8 @@ COMMENT=	Viewer and editor for multiple sequence alignments
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_11=	gradle daemon systematically fails on 11: The message received from the daemon indicates that the daemon has disappeared.
+
 BUILD_DEPENDS=	gradle:devel/gradle
 
 USE_JAVA=	yes
@@ -38,7 +40,7 @@ NO_ARCH=	yes
 
 DEV_UPDATE_MODE=	no
 
-DEPS_CACHE_DIR= ${WRKDIR}
+DEPS_CACHE_DIR=		${WRKDIR}
 
 .if (${DEV_UPDATE_MODE} == "yes")
 post-build:
