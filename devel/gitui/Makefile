@@ -9,6 +9,8 @@ COMMENT=	Terminal UI for git
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN_i386=	error: conflicting types for 'get_proc_total', see https://github.com/FillZpp/sys-info-rs/issues/80
+
 BUILD_DEPENDS=	bash:shells/bash \
 		gmake:devel/gmake
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
