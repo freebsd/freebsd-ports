@@ -266,10 +266,11 @@ include/gsl/gsl_vector_ushort.h
 include/gsl/gsl_version.h
 include/gsl/gsl_wavelet.h
 include/gsl/gsl_wavelet2d.h
+include/gsl/test_source.c
 lib/libgsl.a
 lib/libgsl.so
 lib/libgsl.so.25
-lib/libgsl.so.25.0.0
+lib/libgsl.so.25.1.0
 lib/libgslcblas.a
 lib/libgslcblas.so
 lib/libgslcblas.so.0
