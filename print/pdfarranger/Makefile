@@ -20,7 +20,6 @@ USES=		python gnome gettext
 USE_PYTHON=	distutils
 USE_GNOME=	intltool:build gtk30
 USE_GITHUB=	yes
-GH_ACCOUNT=	pdfarranger
 
 NO_ARCH=	yes
 INSTALLS_ICONS=	yes
