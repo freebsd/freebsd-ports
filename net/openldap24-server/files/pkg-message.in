@@ -20,6 +20,15 @@ for more information.
 
 slapd runs under a non-privileged user id (by default `ldap'),
 see %%PREFIX%%/etc/rc.d/slapd for more information.
+
+PLEASE NOTE:
+
+As of %%PORTNAME%%%%PKGNAMESUFFIX%% 2.4.58_2, the server is now modularized and
+all overlays are built as dynamic modules instead of being statically linked.
+Previously, statically linked modules do not need an explicit
+moduleload (in slapd.conf(5)) or olcModuleLoad (when using slapd-config(5))
+and you might need to make configuration change accordingly as part of the
+upgrade.
 EOM
 }
 ]
