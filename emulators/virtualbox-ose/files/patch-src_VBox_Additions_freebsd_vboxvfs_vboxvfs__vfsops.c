@@ -9,7 +9,7 @@
  /*
   * Copyright (C) 2008-2020 Oracle Corporation
   *
-@@ -14,245 +9,478 @@
+@@ -14,245 +9,482 @@
   * VirtualBox OSE distribution. VirtualBox OSE is distributed in the
   * hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
   */
