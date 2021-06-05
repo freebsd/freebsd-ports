@@ -10,7 +10,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libopenblas.so:math/openblas
-TEST_DEPENDS=	${PYNUMPY}
+TEST_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}pyscf>0:science/py-pyscf@${PY_FLAVOR}
 
 USES=		cmake blaslapack:openblas python:test
 USE_LDCONFIG=	yes
