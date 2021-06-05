@@ -1,13 +1,13 @@
-
 PORTNAME=	remotes
-DISTVERSION=	2.3.0
+DISTVERSION=	2.4.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	R Package Installation from Remote Repositories, Including 'GitHub'
 
-LICENSE=	GPLv2+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr
 TEST_DEPENDS=	R-cran-callr>0:devel/R-cran-callr \
