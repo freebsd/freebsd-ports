@@ -3,7 +3,7 @@
 PORTNAME=	mirrorselect
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-CATEGORIES=	www
+CATEGORIES=	www ports-mgmt
 
 MAINTAINER=	aly@aaronly.me
 COMMENT=	HTTP service that selects pkg(8) mirrors near to the client
