@@ -1,0 +1,22 @@
+--- pyscf/lib/CMakeLists.txt.orig	2021-06-05 19:22:32 UTC
++++ pyscf/lib/CMakeLists.txt
+@@ -138,7 +138,7 @@ set(C_LINK_TEMPLATE "<CMAKE_C_COMPILER> <CMAKE_SHARED_
+ set(CXX_LINK_TEMPLATE "<CMAKE_CXX_COMPILER> <CMAKE_SHARED_LIBRARY_CXX_FLAGS> <LANGUAGE_COMPILE_FLAGS> <LINK_FLAGS> <CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>")
+ 
+ include(ExternalProject)
+-option(BUILD_LIBCINT "Using libcint for analytical gaussian integral" ON)
++option(BUILD_LIBCINT "Using libcint for analytical gaussian integral" OFF)
+ option(WITH_F12 "Compling F12 integrals" ON)
+ if(BUILD_LIBCINT)
+ if(NOT EXISTS "${PROJECT_SOURCE_DIR}/deps/include/cint.h")
+@@ -164,8 +164,8 @@ endif()
+ 
+ option(ENABLE_LIBXC "Using libxc for XC functional library" ON)
+ option(ENABLE_XCFUN "Using xcfun for XC functional library" ON)
+-option(BUILD_LIBXC "Download and build libxc library" ON)
+-option(BUILD_XCFUN "Download and build xcfun library" ON)
++option(BUILD_LIBXC "Download and build libxc library" OFF)
++option(BUILD_XCFUN "Download and build xcfun library" OFF)
+ 
+ if(NOT DISABLE_DFT)
+ add_subdirectory(dft)
