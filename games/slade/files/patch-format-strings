@@ -1,0 +1,350 @@
+--- src/Application/SLADEWxApp.cpp.orig	2021-06-01 04:32:31 UTC
++++ src/Application/SLADEWxApp.cpp
+@@ -153,15 +153,15 @@ class SLADEStackTrace : public wxStackWalker (public)
+ 	{
+ 		string location = "[unknown location] ";
+ 		if (frame.HasSourceLocation())
+-			location = S_FMT("(%s:%d) ", frame.GetFileName(), frame.GetLine());
++			location = S_FMT("(%s:%ld) ", frame.GetFileName(), frame.GetLine());
+ 
+ 		wxUIntPtr address = wxPtrToUInt(frame.GetAddress());
+ 		string func_name = frame.GetName();
+ 		if (func_name.IsEmpty())
+-			func_name = S_FMT("[unknown:%d]", address);
++			func_name = S_FMT("[unknown:%lu]", address);
+ 
+ 		string line = S_FMT("%s%s", location, func_name);
+-		stack_trace.Append(S_FMT("%d: %s\n", frame.GetLevel(), line));
++		stack_trace.Append(S_FMT("%ld: %s\n", frame.GetLevel(), line));
+ 
+ 		if (frame.GetLevel() == 0)
+ 			top_level = line;
+--- src/Archive/Formats/DatArchive.cpp.orig	2021-06-01 04:32:31 UTC
++++ src/Archive/Formats/DatArchive.cpp
+@@ -142,7 +142,7 @@ bool DatArchive::open(MemChunk& mc)
+ 		}
+ 		else
+ 		{
+-			myname = S_FMT("%s+%d", lastname, ++namecount);
++			myname = S_FMT("%s+%ld", lastname, ++namecount);
+ 		}
+ 
+ 		// Create & setup lump
+--- src/Archive/Formats/ZipArchive.cpp.orig	2021-06-01 04:32:31 UTC
++++ src/Archive/Formats/ZipArchive.cpp
+@@ -167,7 +167,7 @@ bool ZipArchive::open(string filename)
+ 			}
+ 			else
+ 			{
+-				Global::error = S_FMT("Entry too large: %s is %u mb",
++				Global::error = S_FMT("Entry too large: %s is %lu mb",
+ 				                      entry->GetName(wxPATH_UNIX), entry->GetSize() / (1<<20));
+ 				setMuted(false);
+ 				return false;
+--- src/Audio/AudioTags.cpp.orig	2021-06-01 04:32:31 UTC
++++ src/Audio/AudioTags.cpp
+@@ -638,7 +638,7 @@ string parseIFFChunks(MemChunk& mc, size_t s, size_t s
+ 				size_t min = (milsec / 60000) % 60;
+ 				size_t hor = (milsec / 3600000) % 24;
+ 				milsec %= 1000;
+-				bextstr += S_FMT("Time Reference: %d:%02d:%02d.%03d\n", hor, min, sec, milsec);
++				bextstr += S_FMT("Time Reference: %ld:%02ld:%02ld.%03ld\n", hor, min, sec, milsec);
+ 			}
+ 			bextstr += S_FMT("BWFVersion: %d\n", wxUINT16_SWAP_ON_BE(bext->Version));
+ 			if (bext->LoudnessValue)		bextstr += S_FMT("Integrated Loudness: %d\n", wxUINT16_SWAP_ON_BE(bext->LoudnessValue));
+@@ -722,7 +722,7 @@ string parseIFFChunks(MemChunk& mc, size_t s, size_t s
+ 					memset(alreadylisted, false, numcuepoints * sizeof(bool));
+ 					if (cuesize >= 4 + numcuepoints * sizeof(wav_cue_t))
+ 					{
+-						string liststr = S_FMT("Associated Data List:\n%d cue points\n", numcuepoints);
++						string liststr = S_FMT("Associated Data List:\n%ld cue points\n", numcuepoints);
+ 						const wav_cue_t * cuepoints = (const wav_cue_t *)(data + cueofs + 4);
+ 						size_t ioffset = offset + 4;
+ 						while (ioffset < end)
+@@ -742,7 +742,7 @@ string parseIFFChunks(MemChunk& mc, size_t s, size_t s
+ 							}
+ 							if (cpindex >= 0 && !alreadylisted[cpindex])
+ 							{
+-								liststr += S_FMT("Cue point %d: sample %d from %s, offset %d, block offset %d, chunk %d\n",
++								liststr += S_FMT("Cue point %ld: sample %d from %s, offset %d, block offset %d, chunk %d\n",
+ 									cuepoint, wxUINT32_SWAP_ON_BE(cuepoints[cpindex].dwPosition),
+ 									string::From8BitData(cuepoints[cpindex].fccChunk, 4), 
+ 									wxUINT32_SWAP_ON_BE(cuepoints[cpindex].dwSampleOffset), 
+@@ -753,17 +753,17 @@ string parseIFFChunks(MemChunk& mc, size_t s, size_t s
+ 							if (note->id[0] == 'l' && note->id[1] == 'a' && note->id[2] == 'b' && note->id[3] == 'l')
+ 							{
+ 								string content = string::From8BitData(data+ioffset+4, isize-4); content.Trim();
+-								liststr += S_FMT("Cue point %d label: %s\n", cuepoint, content);
++								liststr += S_FMT("Cue point %ld label: %s\n", cuepoint, content);
+ 							}
+ 							else if (note->id[0] == 'l' && note->id[1] == 't' && note->id[2] == 'x' && note->id[3] == 't')
+ 							{
+-								liststr += S_FMT("Cue point %d: sample length %d, purpose %s\n", cuepoint, READ_L32(udata, (ioffset+4)),
++								liststr += S_FMT("Cue point %ld: sample length %d, purpose %s\n", cuepoint, READ_L32(udata, (ioffset+4)),
+ 									string::From8BitData(data+ioffset+8, 4));
+ 							}
+ 							else if (note->id[0] == 'n' && note->id[1] == 'o' && note->id[2] == 't' && note->id[3] == 'e')
+ 							{
+ 								string content = string::From8BitData(data+ioffset+4, isize-4); content.Trim();
+-								liststr += S_FMT("Cue point %d note: %s\n", cuepoint, content);
++								liststr += S_FMT("Cue point %ld note: %s\n", cuepoint, content);
+ 							}
+ 
+ 							ioffset += isize;
+@@ -1169,19 +1169,19 @@ string Audio::getSunInfo(MemChunk& mc)
+ 	case 6:	
+ 	case 7:		format += S_FMT("PCM (float)");					break;
+ 	case 27:	format += S_FMT("a-Law");						break;
+-	default:	format += S_FMT("Unknown (%u)", codec);			break;
++	default:	format += S_FMT("Unknown (%lu)", codec);			break;
+ 	}
+ 	string ret = "Mono";
+ 	if (channels == 2)
+ 		ret = "Stereo";
+ 	else if (channels > 2)
+-		ret = S_FMT("%u channels", channels);
++		ret = S_FMT("%lu channels", channels);
+ 	int bps = 1;
+ 	if (codec > 1 && codec < 6) bps = codec - 1;
+ 	else if (codec == 6 || codec == 7) bps = codec - 2;
+ 	size_t samples = datasize / bps;
+ 	ret += S_FMT(" %u-bit", bps * 8);
+-	ret += S_FMT(" sound with %u samples at %u Hz\n%s\n", samples, samplerate, format);
++	ret += S_FMT(" sound with %lu samples at %lu Hz\n%s\n", samples, samplerate, format);
+ 
+ 	return ret;
+ }
+@@ -1281,7 +1281,7 @@ string Audio::getVocInfo(MemChunk& mc)
+ 		ret = S_FMT("%u channels", fmtchunk.channels);
+ 	size_t samples = datasize / (codec == 4 ? 2 : 1);
+ 	ret += S_FMT(" %u-bit", codec == 4 ? 16 : 8);
+-	ret += S_FMT(" sound with %u samples at %u Hz\n%s\n", samples, fmtchunk.samplerate, format);
++	ret += S_FMT(" sound with %lu samples at %u Hz\n%s\n", samples, fmtchunk.samplerate, format);
+ 	ret += S_FMT("%d blocks\n", blockcount);
+ 	return ret;
+ }
+@@ -1353,7 +1353,7 @@ string Audio::getWavInfo(MemChunk& mc)
+ 	if (channels == 2)
+ 		ret = "Stereo";
+ 	else if (channels > 2)
+-		ret = S_FMT("%u channels", channels);
++		ret = S_FMT("%lu channels", channels);
+ 	size_t smplsize = fmt->blocksize;
+ 	size_t datasize = wdat->size;
+ 	size_t samples = datasize / (smplsize > 0 ? smplsize : 1);
+@@ -1367,9 +1367,9 @@ string Audio::getWavInfo(MemChunk& mc)
+ 		bps = wxUINT16_SWAP_ON_BE(fmt->vbps);
+ 	if (bps == 0)
+ 		ret += S_FMT(" variable bit rate");
+-	else ret += S_FMT(" %u-bit", bps);
++	else ret += S_FMT(" %lu-bit", bps);
+ 	size_t samplerate = wxUINT32_SWAP_ON_BE(fmt->samplerate);
+-	ret += S_FMT(" sound with %u samples at %u Hz\n%s\n", samples, samplerate, format);
++	ret += S_FMT(" sound with %lu samples at %lu Hz\n%s\n", samples, samplerate, format);
+ 	if (tag == 65534 && fmt->channelmask > 0)
+ 	{
+ 		size_t channelmask = wxUINT32_SWAP_ON_BE(fmt->channelmask);
+@@ -1483,14 +1483,14 @@ string Audio::getAiffInfo(MemChunk& mc)
+ 	if (channels == 2)
+ 		ret = "Stereo";
+ 	else if (channels > 2)
+-		ret = S_FMT("%u channels", channels);
++		ret = S_FMT("%lu channels", channels);
+ 	size_t frames = wxUINT32_SWAP_ON_LE(comm->frames);
+ 	size_t samples = frames * channels;
+ 	size_t bps = wxUINT16_SWAP_ON_LE(comm->bitsize);
+-	ret += S_FMT(" %u-bit", bps);
++	ret += S_FMT(" %lu-bit", bps);
+ 	if (channels > 1)
+-		ret += S_FMT(" sound with %u samples in %u frames at %u Hz\n%s\n", samples, frames, samplerate, format);
+-	else 	ret += S_FMT(" sound with %u samples at %u Hz\n%s\n", samples, samplerate, format);
++		ret += S_FMT(" sound with %lu samples in %lu frames at %lu Hz\n%s\n", samples, frames, samplerate, format);
++	else 	ret += S_FMT(" sound with %lu samples at %lu Hz\n%s\n", samples, samplerate, format);
+ 
+ 
+ 	// Find data chunks
+--- src/Audio/MIDIPlayer.cpp.orig	2021-06-01 04:32:31 UTC
++++ src/Audio/MIDIPlayer.cpp
+@@ -598,7 +598,7 @@ string MIDIPlayer::getInfo()
+ 		else if (chunk_name == (size_t)(('M'<<24)|('T'<<16)|('r'<<8)|'k')) // MTrk
+ 		{
+ 			if (format == 2)
+-				ret += S_FMT("\nTrack %u/%u\n", ++track_counter, num_tracks);
++				ret += S_FMT("\nTrack %lu/%u\n", ++track_counter, num_tracks);
+ 			size_t tpos = pos;
+ 			while (tpos + 4 < chunk_end)
+ 			{
+--- src/Dialogs/GfxConvDialog.cpp.orig	2021-06-01 04:32:31 UTC
++++ src/Dialogs/GfxConvDialog.cpp
+@@ -206,7 +206,7 @@ bool GfxConvDialog::nextItem()
+ 
+ 	// Update UI
+ 	updatePreviewGfx();
+-	UI::setSplashProgressMessage(S_FMT("%d of %lu", current_item, items.size()));
++	UI::setSplashProgressMessage(S_FMT("%ld of %lu", current_item, items.size()));
+ 	UI::setSplashProgress((float)current_item / (float)items.size());
+ 
+ 	return ok;
+--- src/Dialogs/MapReplaceDialog.cpp.orig	2021-06-01 04:32:31 UTC
++++ src/Dialogs/MapReplaceDialog.cpp
+@@ -107,7 +107,7 @@ void ThingTypeReplacePanel::doReplace(Archive* archive
+ {
+ 	size_t count = ArchiveOperations::replaceThings(archive, spin_from->GetValue(), spin_to->GetValue());
+ 	wxMessageBox(
+-		S_FMT("Replaced %d occurrences. See console log for more detailed information.", count),
++		S_FMT("Replaced %ld occurrences. See console log for more detailed information.", count),
+ 		"Replace Things"
+ 	);
+ }
+@@ -237,7 +237,7 @@ void SpecialReplacePanel::doReplace(Archive* archive)
+ 	               cb_args[3]->GetValue(), spin_args_from[3]->GetValue(), spin_args_to[3]->GetValue(),
+ 	               cb_args[4]->GetValue(), spin_args_from[4]->GetValue(), spin_args_to[4]->GetValue());
+ 
+-	wxMessageBox(S_FMT("Replaced %d occurrences. See console log for more detailed information.", count), "Replace Specials");
++	wxMessageBox(S_FMT("Replaced %ld occurrences. See console log for more detailed information.", count), "Replace Specials");
+ }
+ 
+ 
+@@ -328,7 +328,7 @@ void TextureReplacePanel::doReplace(Archive* archive)
+ 	               cb_floor->GetValue(), cb_ceiling->GetValue(),
+ 	               cb_lower->GetValue(), cb_middle->GetValue(), cb_upper->GetValue());
+ 
+-	wxMessageBox(S_FMT("Replaced %d occurrences. See console log for more detailed information.", count), "Replace Textures");
++	wxMessageBox(S_FMT("Replaced %ld occurrences. See console log for more detailed information.", count), "Replace Textures");
+ }
+ 
+ 
+--- src/MainEditor/ArchiveOperations.cpp.orig	2021-06-01 04:32:31 UTC
++++ src/MainEditor/ArchiveOperations.cpp
+@@ -285,7 +285,7 @@ void ArchiveOperations::removeEntriesUnchangedFromIWAD
+ 		return;
+ 	}
+ 
+-	string message = S_FMT("The following %d entr%s duplicated from the base resource archive and deleted:",
++	string message = S_FMT("The following %ld entr%s duplicated from the base resource archive and deleted:",
+ 						   count, (count > 1) ? "ies were" : "y was");
+ 
+ 	// Display list of deleted duplicate entries
+--- src/MainEditor/UI/EntryPanel/DataEntryPanel.cpp.orig	2021-06-01 04:32:31 UTC
++++ src/MainEditor/UI/EntryPanel/DataEntryPanel.cpp
+@@ -85,13 +85,13 @@ string DataEntryTable::GetValue(int row, int col)
+ 		{
+ 			int8_t val;
+ 			data_.read(&val, 1);
+-			return S_FMT("%d", val);
++			return S_FMT("%hhd", val);
+ 		}
+ 		else if (columns_[col].size == 2)
+ 		{
+ 			int16_t val;
+ 			data_.read(&val, 2);
+-			return S_FMT("%d", val);
++			return S_FMT("%hd", val);
+ 		}
+ 		else if (columns_[col].size == 4)
+ 		{
+@@ -103,7 +103,7 @@ string DataEntryTable::GetValue(int row, int col)
+ 		{
+ 			int64_t val;
+ 			data_.read(&val, 8);
+-			return S_FMT("%d", val);
++			return S_FMT("%ld", (long)val);
+ 		}
+ 		return "INVALID SIZE";
+ 	}
+@@ -115,13 +115,13 @@ string DataEntryTable::GetValue(int row, int col)
+ 		{
+ 			uint8_t val;
+ 			data_.read(&val, 1);
+-			return S_FMT("%d", val);
++			return S_FMT("%hhd", val);
+ 		}
+ 		else if (columns_[col].size == 2)
+ 		{
+ 			uint16_t val;
+ 			data_.read(&val, 2);
+-			return S_FMT("%d", val);
++			return S_FMT("%hd", val);
+ 		}
+ 		else if (columns_[col].size == 4)
+ 		{
+@@ -133,7 +133,7 @@ string DataEntryTable::GetValue(int row, int col)
+ 		{
+ 			uint64_t val;
+ 			data_.read(&val, 8);
+-			return S_FMT("%d", val);
++			return S_FMT("%ld", (long)val);
+ 		}
+ 		return "INVALID SIZE";
+ 	}
+@@ -785,7 +785,7 @@ bool DataEntryTable::setupDataStructure(ArchiveEntry* 
+ 
+ 		// Voice data
+ 		unsigned offset = 4;
+-		for (size_t i = 1; i < 3; ++i)
++		for (int i = 1; i < 3; ++i)
+ 		{
+ 			columns_.push_back(Column(S_FMT("V%d: Mod Multi", i), IntUnsigned, 1, offset + 0));
+ 			columns_.push_back(Column(S_FMT("V%d: Mod Attack", i), IntUnsigned, 1, offset + 1));
+@@ -1157,7 +1157,7 @@ void DataEntryPanel::changeValue()
+ 
+ 		// Apply value to selected cells
+ 		for (unsigned a = 0; a < selection.size(); a++)
+-			grid_data_->SetCellValue(selection[a].x, selection[a].y, S_FMT("%d", lval));
++			grid_data_->SetCellValue(selection[a].x, selection[a].y, S_FMT("%ld", lval));
+ 		grid_data_->ForceRefresh();
+ 	}
+ }
+--- src/MainEditor/UI/StartPage.cpp.orig	2021-06-01 04:32:31 UTC
++++ src/MainEditor/UI/StartPage.cpp
+@@ -338,7 +338,7 @@ void SStartPage::load(bool new_tip)
+ 
+ 		last_tip_index_ = tipindex;
+ 		tip = tips_[tipindex];
+-		Log::debug(S_FMT("Tip index %d/%lu", last_tip_index_, (int) tips_.size()));
++		Log::debug(S_FMT("Tip index %d/%lu", last_tip_index_, tips_.size()));
+ 	}
+ 
+ 	// Generate recent files string
+--- src/MapEditor/Edit/Edit2D.cpp.orig	2021-06-01 04:32:31 UTC
++++ src/MapEditor/Edit/Edit2D.cpp
+@@ -859,7 +859,7 @@ void Edit2D::createObject(double x, double y)
+ 			context_.endUndoRecord(true);
+ 
+ 			// Editor message
+-			context_.addEditorMessage(S_FMT("Created %lu line(s)", context_.selection().size() - 1));
++			context_.addEditorMessage(S_FMT("Created %u line(s)", context_.selection().size() - 1));
+ 
+ 			// Clear selection
+ 			context_.selection().clear();
+--- src/MapEditor/MapEditContext.cpp.orig	2021-06-01 04:32:31 UTC
++++ src/MapEditor/MapEditContext.cpp
+@@ -1265,7 +1265,7 @@ void MapEditContext::updateStatusText()
+ 
+ 	if (edit_mode_ != Mode::Visual && selection_.size() > 0)
+ 	{
+-		mode += S_FMT(" (%lu selected)", (int) selection_.size());
++		mode += S_FMT(" (%u selected)", selection_.size());
+ 	}
+ 
+ 	MapEditor::setStatusText(mode, 1);
+@@ -2209,7 +2209,7 @@ CONSOLE_COMMAND(mobj_info, 1, false)
+ 	{
+ 		mobj_backup_t bak;
+ 		obj->backup(&bak);
+-		Log::console(S_FMT("Object %d: %s #%lu", id, obj->getTypeName(), obj->getIndex()));
++		Log::console(S_FMT("Object %ld: %s #%u", id, obj->getTypeName(), obj->getIndex()));
+ 		Log::console("Properties:");
+ 		Log::console(bak.properties.toString());
+ 		Log::console("Properties (internal):");
+--- src/Utility/Tokenizer.cpp.orig	2021-06-01 04:32:31 UTC
++++ src/Utility/Tokenizer.cpp
+@@ -1011,7 +1011,7 @@ CONSOLE_COMMAND(test_tokenizer, 0, false)
+ 
+ 	long new_time = App::runTimer() - time;
+ 
+-	Log::info(S_FMT("Tokenize x%d took %dms", num, new_time));
++	Log::info(S_FMT("Tokenize x%ld took %ldms", num, new_time));
+ 
+ 
+ 	// Test old tokenizer also
