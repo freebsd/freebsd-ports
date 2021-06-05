@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	adwaita-qt
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	5
 
