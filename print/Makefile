@@ -143,6 +143,7 @@
     SUBDIR += pdf-renderer
     SUBDIR += pdf-tools
     SUBDIR += pdf4tcl
+    SUBDIR += pdfarranger
     SUBDIR += pdfbox
     SUBDIR += pdfchain
     SUBDIR += pdflib
