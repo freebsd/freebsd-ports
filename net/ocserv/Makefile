@@ -1,7 +1,5 @@
-# Created by: Carlos J Puga Medina <cpm@fbsd.es>
-
 PORTNAME=	ocserv
-DISTVERSION=	1.1.2
+DISTVERSION=	1.1.3
 CATEGORIES=	net net-vpn security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
