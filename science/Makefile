@@ -352,6 +352,7 @@
     SUBDIR += wannier90
     SUBDIR += wwplot
     SUBDIR += wxmacmolplt
+    SUBDIR += xcfun
     SUBDIR += xcrysden
     SUBDIR += xdrawchem
     SUBDIR += xtb
