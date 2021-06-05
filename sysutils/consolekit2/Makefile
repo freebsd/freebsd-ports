@@ -1,7 +1,7 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 
 PORTNAME=	consolekit
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	sysutils gnome
 PKGNAMESUFFIX=	2
 
@@ -40,7 +40,7 @@ X11_CONFIGURE_WITH=	x
 USE_GITHUB=	yes
 GH_ACCOUNT=	ConsoleKit2
 GH_PROJECT=	ConsoleKit2
-GH_TAGNAME=	51c11c1  # v1.2.2
+GH_TAGNAME=	520b862 # v1.2.3
 
 USES=		autoreconf gettext gmake gnome libtool localbase pathfix pkgconfig \
 		tar:bzip2
