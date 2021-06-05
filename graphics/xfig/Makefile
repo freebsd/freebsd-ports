@@ -1,27 +1,32 @@
 # Created by: roberto
 
 PORTNAME=	xfig
-PORTVERSION=	3.2.7a
-PORTREVISION=	1
+PORTVERSION=	3.2.8a
 CATEGORIES=	graphics
 MASTER_SITES=	SF/mcj/
 
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Drawing program for X11
 
-LIB_DEPENDS=	libpng.so:graphics/png \
+LICENSE=	xfig
+LICENSE_NAME=	xfig public license
+LICENSE_FILE=	${FILESDIR}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+LIB_DEPENDS=	libgs.so:print/ghostscript9-agpl-base \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
 		libXaw3d.so:x11-toolkits/Xaw3d
 RUN_DEPENDS=	fig2dev:print/fig2dev
 
-USES=		desktop-file-utils gmake jpeg localbase:ldflags \
-		tar:xz xorg
-
-CONFLICTS=	xfig-[12].* xfig-3.1* xfig-3.2.[1234]*
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-GNU_CONFIGURE=	yes
-USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
+USES=		desktop-file-utils gmake jpeg localbase:ldflags tar:xz xorg
 USE_CSTD=	gnu89
+USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
+
+GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-return-type
+
+CONFLICTS=	xfig-3.1* xfig-3.2.[1234]* xfig-[12].*
 
 OPTIONS_DEFINE=	DOCS
 
