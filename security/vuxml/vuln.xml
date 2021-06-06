@@ -76,6 +76,38 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f70ab05e-be06-11eb-b983-000c294bb613">
+    <topic>drupal7 -- fix possible CSS</topic>
+    <affects>
+      <package>
+	<name>drupal7</name>
+	<range><gt>7.0</gt><lt>7.80</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal Security team reports:</p>
+	<blockquote cite="https://www.drupal.org/sa-core-2021-002">
+	  <p>Drupal core's sanitization API fails to properly filter
+		cross-site scripting under certain circumstances.
+		Not all sites and users are affected, but configuration
+		changes to prevent the exploit might be impractical
+		and will vary between sites. Therefore, we recommend
+		all sites update to this release as soon as
+		possible.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2020-13672</cvename>
+    </references>
+    <dates>
+      <discovery>2021-04-21</discovery>
+      <entry>2021-06-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="36a35d83-c560-11eb-84ab-e0d55e2a8bf9">
     <topic>polkit -- local privilege escalation using polkit_system_bus_name_get_creds_sync</topic>
     <affects>
