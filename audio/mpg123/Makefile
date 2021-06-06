@@ -1,7 +1,7 @@
 # Created by: Carey Jones <mcj@acquiesce.org>
 
 PORTNAME=	mpg123
-PORTVERSION=	1.27.2
+PORTVERSION=	1.28.0
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		https://www.mpg123.de/download/
@@ -33,10 +33,8 @@ TEST_TARGET=		check
 FPU_CONFIGURE_ON=	--with-cpu=arm_fpu
 FPU_CONFIGURE_OFF=	--with-cpu=arm_nofpu
 
-SNDIO_CONFIGURE_ON=	--with-audio=sndio,oss \
-			--with-default-audio=sndio
-SNDIO_CONFIGURE_OFF=	--with-audio=oss \
-			--with-default-audio=oss
+SNDIO_CONFIGURE_ON=	--with-audio=sndio,oss
+SNDIO_CONFIGURE_OFF=	--with-audio=oss
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 
 OPTCPU_CONFIGURE_ON=	--with-cpu=x86
