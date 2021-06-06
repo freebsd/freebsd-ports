@@ -3,7 +3,7 @@
 PORTNAME=	gecode
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	6.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,8 +29,11 @@ GH_TAGNAME=	0916a1a # 6.3.0 branch is ready for a long time, but hasn't been tag
 DATADIR=	${PREFIX}/share/minizinc/gecode # it only installs the MiniZinc library into DATADIR
 
 OPTIONS_DEFINE=		AUDIT CBS FLATZINC GIST PEAKHEAP PROFILE SEARCH
-OPTIONS_DEFAULT=	CBS FLATZINC SEARCH
+OPTIONS_RADIO=		LIBTYPE
+OPTIONS_RADIO_LIBTYPE=	SHARED STATIC
+OPTIONS_DEFAULT=	CBS FLATZINC SEARCH SHARED
 OPTIONS_SUB=		yes
+LIBTYPE_DESC=		Library type
 
 AUDIT_DESC=			Build with auditing code
 AUDIT_CONFIGURE_ENABLE=		audit
@@ -45,6 +48,7 @@ GIST_DESC=			Enable gist, graphical and interactive search tool
 GIST_CONFIGURE_ENABLE=		gist qt
 GIST_USES=			gl qt:5
 GIST_USE=			gl=gl qt=core,gui,printsupport,widgets,qmake_build,buildtools_build
+GIST_IMPLIES=			SHARED # because Qt must be built in a special way: error: "You must build your code with position independent code if Qt was built with -reduce-relocations"
 
 PEAKHEAP_DESC=			Peak heap size tracking
 PEAKHEAP_CONFIGURE_ENABLE=	peakheap
@@ -55,11 +59,18 @@ PROFILE_CONFIGURE_ENABLE=	profile
 SEARCH_DESC=			Build search engines
 SEARCH_CONFIGURE_ENABLE=	search
 
+SHARED_DESC=			Build shared executables and/or libraries
+SHARED_CONFIGURE_ENABLE=	shared
+
+STATIC_CONFIGURE_ENABLE=	static
+
 TEST_TARGET=	check
 
-post-install:
-	${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/lib/lib*.so.*.*
+post-patch-STATIC-on: # workaround for https://github.com/Gecode/gecode/issues/117
+	@${REINPLACE_CMD} -e 's| -fPIC | |; s|"-fPIC|"|' ${WRKSRC}/configure
+
+post-install-SHARED-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*.*
 
 post-install-FLATZINC-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fzn-gecode
