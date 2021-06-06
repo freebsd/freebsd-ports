@@ -276,6 +276,7 @@ share/pixmaps/sigil.png
 %%DATADIR%%/translations/sigil_sr.qm
 %%DATADIR%%/translations/sigil_sv.qm
 %%DATADIR%%/translations/sigil_th.qm
+%%DATADIR%%/translations/sigil_tr.qm
 %%DATADIR%%/translations/sigil_uk_UA.qm
 %%DATADIR%%/translations/sigil_zh_CN.qm
 %%DATADIR%%/translations/sigil_zh_TW.qm
