@@ -16341,3 +16341,5 @@ devel/py-jupyter_client|devel/py-jupyter-client|2021-05-26|Rename to match upstr
 textproc/gi-docgen|textproc/py-gi-docgen|2021-05-27|Follow standard python port conventions
 x11/phosh||2021-05-29|Incomplete
 multimedia/libav|multimedia/ffmpeg|2021-05-31|Has expired: Unmaintained upstream, use multimedia/ffmpeg instead
+devel/py-iterpipes||2021-06-06|Has expired: Unmaintained upstream, uses old Python
+devel/py-aspyct||2021-06-06|Has expired: Unmaintained upstream, uses old Python
