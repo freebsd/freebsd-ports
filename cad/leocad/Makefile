@@ -2,7 +2,7 @@
 
 PORTNAME=	leocad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	21.03
+DISTVERSION=	21.06
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,5 +22,8 @@ USE_GL=		gl
 QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX} MAN_DIR=${PREFIX}/man/man1 LDRAW_LIBRARY_PATH=${PREFIX}/share/ldraw
 
 PORTSCOUT=	limit:^[0-9\.]*$$ # to ignore the 'continuous' tag
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/leocad
 
 .include <bsd.port.mk>
