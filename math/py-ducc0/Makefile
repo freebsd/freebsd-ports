@@ -1,5 +1,5 @@
 PORTNAME=	ducc0
-DISTVERSION=	0.12.0
+DISTVERSION=	0.13.0
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ MAKE_ENV=	DUCC0_OPTIMIZATION=none
 CFLAGS+=	-DNO_WARN_X86_INTRINSICS
 USES+=		compiler:gcc-c++11-lib
 .else
-USES+=		compiler:c++17-lang 
+USES+=		compiler:c++17-lang
 .endif
 
 post-install:
