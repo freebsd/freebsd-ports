@@ -22,8 +22,6 @@ USE_XORG=	ice sm x11 xcursor xext xi xinerama xrandr xxf86vm
 CMAKE_ON=	BUILD_SHARED_LIBS USE_EXTERNAL_GLFW
 CMAKE_OFF=	BUILD_EXAMPLES BUILD_GAMES STATIC
 
-PLIST_SUB=	DISTVERSION=${DISTVERSION}
-
 post-extract:
 # Remove bundled files.
 	${RM} -r ${WRKSRC}/src/external/glfw ${WRKSRC}/src/external/include ${WRKSRC}/src/rglfw.c
