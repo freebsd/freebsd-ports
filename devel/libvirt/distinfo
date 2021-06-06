@@ -1,3 +1,3 @@
-TIMESTAMP = 1620056127
-SHA256 (libvirt-7.3.0.tar.xz) = 27bdbb85c0301475ab1f2ecd185c629ea0bfd5512bef3f6f1817b6c55d1dc1be
-SIZE (libvirt-7.3.0.tar.xz) = 8680468
+TIMESTAMP = 1622959744
+SHA256 (libvirt-7.4.0.tar.xz) = b366d73dee6ce77a226bedef592e0620ceb8e22e5998f60768017f79fc4ead26
+SIZE (libvirt-7.4.0.tar.xz) = 8617788
