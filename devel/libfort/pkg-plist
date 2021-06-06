@@ -1,0 +1,10 @@
+include/fort.h
+include/fort.hpp
+lib/cmake/libfort/libfort-config-version.cmake
+lib/cmake/libfort/libfort-config.cmake
+lib/cmake/libfort/libfort-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libfort/libfort-targets.cmake
+lib/libfort.so
+lib/libfort.so.0.5
+lib/libfort.so.0.5.0
+libdata/pkgconfig/libfort.pc

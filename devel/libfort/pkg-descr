@@ -1,0 +1,12 @@
+ibfort is a simple crossplatform library to create formatted text tables.
+
+Features:
+* Easy to integrate (only 2 files)
+* Customization of appearance (various border styles and row/column/cell
+  properties for indentation, alignment, padding)
+* A number of functions to fill the table (add content by adding separate cells,
+  rows or use printf like functions)
+* Support of multiple lines in cells
+* Support of UTF-8 and wide characters
+
+WWW: https://github.com/seleznevae/libfort

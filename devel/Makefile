@@ -1190,6 +1190,7 @@
     SUBDIR += libfixposix
     SUBDIR += libflatarray
     SUBDIR += libfmt
+    SUBDIR += libfort
     SUBDIR += libfortuna
     SUBDIR += libfreefare
     SUBDIR += libfsapfs
