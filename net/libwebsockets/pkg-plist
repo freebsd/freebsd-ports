@@ -14,14 +14,15 @@ include/libwebsockets/lws-button.h
 include/libwebsockets/lws-callbacks.h
 include/libwebsockets/lws-cgi.h
 include/libwebsockets/lws-client.h
+include/libwebsockets/lws-conmon.h
 include/libwebsockets/lws-context-vhost.h
 include/libwebsockets/lws-dbus.h
-include/libwebsockets/lws-detailed-latency.h
 include/libwebsockets/lws-diskcache.h
 include/libwebsockets/lws-display.h
 include/libwebsockets/lws-dll2.h
 include/libwebsockets/lws-dsh.h
 include/libwebsockets/lws-eventlib-exports.h
+include/libwebsockets/lws-fault-injection.h
 include/libwebsockets/lws-freertos.h
 include/libwebsockets/lws-fts.h
 include/libwebsockets/lws-genaes.h
@@ -41,6 +42,7 @@ include/libwebsockets/lws-led.h
 include/libwebsockets/lws-lejp.h
 include/libwebsockets/lws-logs.h
 include/libwebsockets/lws-lwsac.h
+include/libwebsockets/lws-metrics.h
 include/libwebsockets/lws-misc.h
 include/libwebsockets/lws-mqtt.h
 include/libwebsockets/lws-netdev.h
@@ -63,12 +65,12 @@ include/libwebsockets/lws-spa.h
 include/libwebsockets/lws-spi.h
 include/libwebsockets/lws-ssd1306-i2c.h
 include/libwebsockets/lws-state.h
-include/libwebsockets/lws-stats.h
 include/libwebsockets/lws-struct.h
 include/libwebsockets/lws-system.h
 include/libwebsockets/lws-test-sequencer.h
 include/libwebsockets/lws-threadpool.h
 include/libwebsockets/lws-timeout-timer.h
+include/libwebsockets/lws-tls-sessions.h
 include/libwebsockets/lws-tokenize.h
 include/libwebsockets/lws-vfs.h
 include/libwebsockets/lws-write.h
@@ -89,7 +91,7 @@ lib/cmake/libwebsockets/libwebsockets-config.cmake
 %%LIBUV%%lib/libwebsockets-evlib_uv.so
 lib/libwebsockets.a
 lib/libwebsockets.so
-lib/libwebsockets.so.17
+lib/libwebsockets.so.18
 libdata/pkgconfig/libwebsockets.pc
 libdata/pkgconfig/libwebsockets_static.pc
 %%PLUGINS%%%%DATADIR%%-test-server/deaddrop/deaddrop.css
