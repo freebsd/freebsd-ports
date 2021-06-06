@@ -218,6 +218,10 @@ CONFIGURE_ARGS=		--with-threads=posix \
 			--disable-dependency-tracking \
 			--enable-dynamic
 
+.if ${SSL_DEFAULT:Mlibressl*}
+IGNORE+=		requires OpenSSL 1.1 TLSv1.3 API in a future release of LibreSSL
+.endif
+
 .if ${PORT_OPTIONS:MSASL}
 LIB_DEPENDS+=		libsasl2.so:security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl
