@@ -3,6 +3,7 @@
 PORTNAME=	libwebsockets
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	https://libwebsockets.org/git/libwebsockets/snapshot/
 
@@ -15,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake localbase pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
+CMAKE_ARGS=	-DLWS_BUILD_HASH:STRING="${BUILDINFO}"
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git \
 		LWS_IPV6 LWS_WITH_SSL LWS_WITH_ZLIB \
 		LWS_WITHOUT_TESTAPPS LWS_WITHOUT_TEST_SERVER \
@@ -77,9 +79,5 @@ LIBUV_LIB_DEPENDS=	libuv.so:devel/libuv
 LIBUV_CMAKE_BOOL=	LWS_WITH_LIBUV
 
 BUILDINFO=	${HOSTARCH}-portbld-${OPSYS:tl}-${OSREL:R}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%BUILDINFO%%|${BUILDINFO}|g' \
-	    ${PATCH_WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
