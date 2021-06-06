@@ -2,6 +2,7 @@
 
 PORTNAME=	pointcloud
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases geography
 
@@ -14,7 +15,7 @@ COMMENT=	LIDAR types for PostgreSQL
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-BUILD_DEPENDS=	${LOCALBASE}/include/laz-perf/las.hpp:archivers/lazperf
+BUILD_DEPENDS=	${LOCALBASE}/include/lazperf/lazperf.hpp:archivers/lazperf
 LIB_DEPENDS=	libght.so:devel/libght
 
 USES=		autoreconf compiler:c++0x gmake gnome pgsql
