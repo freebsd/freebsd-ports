@@ -1,6 +1,6 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
-PORTNAME=	BTF
+PORTNAME=	${MPORTNAME:tl}
 PORTVERSION=	1.2.6
 CATEGORIES=	math
 
@@ -11,7 +11,7 @@ LICENSE=	LGPL21+
 USES=		localbase:ldflags
 OMP_NEEDED=	yes
 
-BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
+MPORTNAME=	BTF
 USE_LDCONFIG=	yes
 
 .include "${.CURDIR}/../../math/suitesparse/bsd.suitesparse.mk"

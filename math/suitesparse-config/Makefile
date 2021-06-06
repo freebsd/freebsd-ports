@@ -1,6 +1,6 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
-PORTNAME=	config
+PORTNAME=	${MPORTNAME:tl}
 PORTVERSION=	${SSPVERSION}
 CATEGORIES=	math
 
@@ -10,7 +10,7 @@ LICENSE=	GPLv2+
 
 OMP_NEEDED=	yes
 
-BUILD_WRKSRC=	${WRKSRC}/SuiteSparse_config
+MPORTNAME=	config
 USE_LDCONFIG=	yes
 
 .include "${.CURDIR}/../../math/suitesparse/bsd.suitesparse.mk"

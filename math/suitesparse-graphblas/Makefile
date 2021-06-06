@@ -1,6 +1,6 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
-PORTNAME=	GraphBLAS
+PORTNAME=	${MPORTNAME:tl}
 PORTVERSION=	5.0.5
 PORTREVISION=	1
 CATEGORIES=	math
@@ -11,7 +11,8 @@ LICENSE=	APACHE20
 
 USES=		cmake:insource localbase:ldflags
 OMP_NEEDED=	yes
-BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
+
+MPORTNAME=	GraphBLAS
 USE_LDCONFIG=	yes
 
 PORTDOCS=	CSC20_OpenMP_GraphBLAS.pdf GraphBLAS_API_C_v13.pdf	\

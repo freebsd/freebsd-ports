@@ -1,6 +1,6 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
-PORTNAME=	Mongoose
+PORTNAME=	${MPORTNAME:tl}
 PORTVERSION=	2.0.4
 CATEGORIES=	math
 
@@ -10,7 +10,7 @@ LICENSE=	GPLv3
 
 USES=		cmake:insource localbase:ldflags
 
-BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
+MPORTNAME=	Mongoose
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	mongoose # bin/mongoose

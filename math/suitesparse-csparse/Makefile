@@ -1,6 +1,6 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
-PORTNAME=	CSparse
+PORTNAME=	${MPORTNAME:tl}
 PORTVERSION=	3.2.0
 CATEGORIES=	math
 
@@ -10,7 +10,7 @@ LICENSE=	LGPL21+
 
 USES=		localbase:ldflags
 
-BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
+MPORTNAME=	CSparse
 USE_LDCONFIG=	yes
 PLIST_FILES=	# empty
 

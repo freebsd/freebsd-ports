@@ -1,6 +1,6 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
-PORTNAME=	CHOLMOD
+PORTNAME=	${MPORTNAME:tl}
 PORTVERSION=	3.0.14
 CATEGORIES=	math
 
@@ -17,7 +17,8 @@ LIB_DEPENDS=	libmetis.so:math/metis		\
 USES=		localbase:ldflags
 BLAS_NEEDED=	yes
 OMP_NEEDED=	yes
-BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
+
+MPORTNAME=	CHOLMOD
 USE_LDCONFIG=	yes
 
 .include "${.CURDIR}/../../math/suitesparse/bsd.suitesparse.mk"

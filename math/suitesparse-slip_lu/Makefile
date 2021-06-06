@@ -1,6 +1,6 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
-PORTNAME=	SLIP_LU
+PORTNAME=	${MPORTNAME:tl}
 PORTVERSION=	1.0.2
 CATEGORIES=	math
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp	\
 USES=		localbase:ldflags
 OMP_NEEDED=	yes
 
-BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
+MPORTNAME=	SLIP_LU
 USE_LDCONFIG=	yes
 
 .include "${.CURDIR}/../../math/suitesparse/bsd.suitesparse.mk"

@@ -1,6 +1,6 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
-PORTNAME=	SPQR
+PORTNAME=	${MPORTNAME:tl}
 PORTVERSION=	2.0.9
 CATEGORIES=	math
 
@@ -15,11 +15,11 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd		\
 		libcholmod.so:math/suitesparse-cholmod
 
 USES=		localbase:ldflags
-
-BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
-USE_LDCONFIG=	yes
 BLAS_NEEDED=	yes
 OMP_NEEDED=	yes
+
+MPORTNAME=	SPQR
+USE_LDCONFIG=	yes
 
 # See https://github.com/DrTimothyAldenDavis/SuiteSparse/issues/72 and PR 252651
 #OPTIONS_DEFINE+=	TBB

@@ -1,6 +1,6 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
-PORTNAME=	AMD
+PORTNAME=	${MPORTNAME:tl}
 PORTVERSION=	2.4.6
 CATEGORIES=	math
 
@@ -11,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 USES=		fortran localbase:ldflags
 OMP_NEEDED=	yes
 
-BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
+MPORTNAME=	AMD
 ALL_TARGET+=	fortran
 USE_LDCONFIG=	yes
 

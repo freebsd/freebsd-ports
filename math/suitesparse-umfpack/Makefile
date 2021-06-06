@@ -1,6 +1,6 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
-PORTNAME=	UMFPACK
+PORTNAME=	${MPORTNAME:tl}
 PORTVERSION=	5.7.9
 CATEGORIES=	math
 
@@ -19,7 +19,7 @@ USES=		localbase:ldflags
 BLAS_NEEDED=	yes
 OMP_NEEDED=	yes
 
-BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
+MPORTNAME=	UMFPACK
 USE_LDCONFIG=	yes
 
 .include "${.CURDIR}/../../math/suitesparse/bsd.suitesparse.mk"

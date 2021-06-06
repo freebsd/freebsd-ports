@@ -1,6 +1,6 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
-PORTNAME=	RBio
+PORTNAME=	${MPORTNAME:tl}
 PORTVERSION=	2.2.6
 CATEGORIES=	math
 
@@ -10,7 +10,7 @@ LICENSE=	GPLv2+
 
 USES=		localbase:ldflags
 
-BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
+MPORTNAME=	RBio
 USE_LDCONFIG=	yes
 
 .include "${.CURDIR}/../../math/suitesparse/bsd.suitesparse.mk"

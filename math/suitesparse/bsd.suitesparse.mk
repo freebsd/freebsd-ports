@@ -18,14 +18,20 @@ DISTNAME=	${DISTVERSIONPREFIX}${SSPVERSION}
 DIST_SUBDIR=	${SSPNAME}
 WRKSRC=		${WRKDIR}/${GH_PROJECT}-${SSPVERSION}
 
-.if ${PORTNAME} != config &&	\
-	${PORTNAME} != CSparse &&	\
-	${PORTNAME} != ssget
+.if ${MPORTNAME} != config
+BUILD_WRKSRC=	${WRKSRC}/${MPORTNAME}
+.else
+BUILD_WRKSRC=	${WRKSRC}/SuiteSparse_config
+.endif
+
+.if ${MPORTNAME} != config &&	\
+	${MPORTNAME} != CSparse &&	\
+	${MPORTNAME} != ssget
 LIB_DEPENDS+=	libsuitesparseconfig.so:math/suitesparse-config
 .endif
-.if ${PORTNAME} != config &&	\
-	${PORTNAME} != BTF &&	\
-	${PORTNAME} != ssget
+.if ${MPORTNAME} != config &&	\
+	${MPORTNAME} != BTF &&	\
+	${MPORTNAME} != ssget
 OPTIONS_DEFINE+=DEMOS
 .else
 ALL_TARGET=	library
@@ -80,7 +86,7 @@ OPENMP_VARS=		OPENMP=gcc-
 .endif
 
 DEMOS_DESC=		Build the demonstrations
-.if ${PORTNAME} == Mongoose
+.if ${MPORTNAME} == Mongoose
 DEMOS_ALL_TARGET=	default
 .else
 DEMOS_ALL_TARGET=	all
@@ -95,20 +101,20 @@ LDFLAGS+=	-s
 post-extract:
 	${RM} -r ${WRKSRC}/metis-*
 
-.if ${PORTNAME} == AMD ||	\
-	${PORTNAME} == CAMD ||	\
-	${PORTNAME} == CCOLAMD ||	\
-	${PORTNAME} == CHOLMOD ||	\
-	${PORTNAME} == COLAMD ||	\
-	${PORTNAME} == CSparse ||	\
-	${PORTNAME} == CXSparse_newfiles ||	\
-	${PORTNAME} == CXSparse ||	\
-	${PORTNAME} == GPUQREngine ||	\
-	${PORTNAME} == KLU ||	\
-	${PORTNAME} == LDL ||	\
-	${PORTNAME} == RBio ||	\
-	${PORTNAME} == SPQR ||	\
-	${PORTNAME} == UMFPACK
+.if ${MPORTNAME} == AMD ||	\
+	${MPORTNAME} == CAMD ||	\
+	${MPORTNAME} == CCOLAMD ||	\
+	${MPORTNAME} == CHOLMOD ||	\
+	${MPORTNAME} == COLAMD ||	\
+	${MPORTNAME} == CSparse ||	\
+	${MPORTNAME} == CXSparse_newfiles ||	\
+	${MPORTNAME} == CXSparse ||	\
+	${MPORTNAME} == GPUQREngine ||	\
+	${MPORTNAME} == KLU ||	\
+	${MPORTNAME} == LDL ||	\
+	${MPORTNAME} == RBio ||	\
+	${MPORTNAME} == SPQR ||	\
+	${MPORTNAME} == UMFPACK
 pre-configure:
 	${REINPLACE_CMD} -e 's|-I../../include|-I${STAGEDIR}${PREFIX}/include/suitesparse -I../../SuiteSparse_config -I../../AMD/Include -I../../COLAMD/Include -I../../BTF/Include -I../../CHOLMOD/Include|;\
 		s|-lsuitesparseconfig|-lsuitesparseconfig -L${LOCALBASE}/lib|'	\
@@ -118,7 +124,7 @@ pre-configure:
 do-configure: # skip USES=cmake
 
 post-install:
-.if ! ${PORTNAME} == config
+.if ! ${MPORTNAME} == config
 	 @${RM} ${STAGEDIR}${DOCSDIR}/SUITESPARSECONFIG_README.txt	\
 		${STAGEDIR}${PREFIX}/include/suitesparse/SuiteSparse_config.h
 .endif

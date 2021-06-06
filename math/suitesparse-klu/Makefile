@@ -1,6 +1,6 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
-PORTNAME=	KLU
+PORTNAME=	${MPORTNAME:tl}
 PORTVERSION=	1.3.9
 CATEGORIES=	math
 
@@ -18,7 +18,8 @@ LIB_DEPENDS=	libmetis.so:math/metis		\
 
 USES=		localbase:ldflags
 OMP_NEEDED=	yes
-BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
+
+MPORTNAME=	KLU
 USE_LDCONFIG=	yes
 
 .include "${.CURDIR}/../../math/suitesparse/bsd.suitesparse.mk"
