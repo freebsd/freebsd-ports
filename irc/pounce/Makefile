@@ -9,7 +9,7 @@ COMMENT=	Multi-client IRC bouncer
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		localbase:ldflags ssl
+USES=		compiler:c11 localbase:ldflags ssl
 USE_RC_SUBR=	calico pounce
 
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man
