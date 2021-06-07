@@ -11,7 +11,7 @@ COMMENT=	GUI toolkit heavily inspired by GTK
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gnome meson pkgconfig xorg
+USES=		compiler:c11 gnome meson pkgconfig xorg
 USE_GNOME=	cairo
 USE_XORG=	x11
 
