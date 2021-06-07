@@ -975,6 +975,10 @@ include/wine/windows/windows.media.devices.h
 include/wine/windows/windows.media.devices.idl
 include/wine/windows/windows.media.speechsynthesis.h
 include/wine/windows/windows.media.speechsynthesis.idl
+%%STAGING%%include/wine/windows/windows.networking.connectivity.h
+%%STAGING%%include/wine/windows/windows.networking.connectivity.idl
+%%STAGING%%include/wine/windows/windows.networking.h
+%%STAGING%%include/wine/windows/windows.networking.idl
 include/wine/windows/windows.system.h
 include/wine/windows/windows.system.idl
 include/wine/windows/windows.system.userprofile.h
@@ -2146,6 +2150,7 @@ lib/wine/%%WINEARCH%%-unix/softpub.dll.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/sound.drv16.so
 lib/wine/%%WINEARCH%%-unix/spoolss.dll.so
 lib/wine/%%WINEARCH%%-unix/spoolsv.exe.so
+lib/wine/%%WINEARCH%%-unix/sppc.dll.so
 lib/wine/%%WINEARCH%%-unix/srclient.dll.so
 lib/wine/%%WINEARCH%%-unix/srvcli.dll.so
 lib/wine/%%WINEARCH%%-unix/sspicli.dll.so
@@ -2243,6 +2248,7 @@ lib/wine/%%WINEARCH%%-unix/windows.gaming.input.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.globalization.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.media.devices.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.media.speech.dll.so
+%%STAGING%%lib/wine/%%WINEARCH%%-unix/windows.networking.connectivity.so
 lib/wine/%%WINEARCH%%-unix/windowscodecs.dll.so
 lib/wine/%%WINEARCH%%-unix/windowscodecs.so
 lib/wine/%%WINEARCH%%-unix/windowscodecsext.dll.so
@@ -3163,6 +3169,7 @@ lib/wine/%%WINEARCH%%-windows/softpub.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/sound.drv16
 lib/wine/%%WINEARCH%%-windows/spoolss.dll
 lib/wine/%%WINEARCH%%-windows/spoolsv.exe
+lib/wine/%%WINEARCH%%-windows/sppc.dll
 lib/wine/%%WINEARCH%%-windows/srclient.dll
 lib/wine/%%WINEARCH%%-windows/srvcli.dll
 lib/wine/%%WINEARCH%%-windows/sspicli.dll
@@ -3258,6 +3265,7 @@ lib/wine/%%WINEARCH%%-windows/windows.gaming.input.dll
 lib/wine/%%WINEARCH%%-windows/windows.globalization.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.devices.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.speech.dll
+%%STAGING%%lib/wine/%%WINEARCH%%-windows/windows.networking.connectivity
 lib/wine/%%WINEARCH%%-windows/windowscodecs.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecsext.dll
 lib/wine/%%WINEARCH%%-windows/wineboot.exe
