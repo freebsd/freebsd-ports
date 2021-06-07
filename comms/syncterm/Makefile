@@ -5,7 +5,7 @@ PORTVERSION=	1.0
 CATEGORIES=	comms
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	shurd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ANSI-BBS terminal which supports telnet, rlogin, and SSH
 
 LICENSE=	GPLv2
