@@ -1,5 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2021-05-31
+DISTVERSION=	2021-06-14
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -36,7 +36,7 @@ CARGO_CRATES=	addr2line-0.15.1 \
 		chalk-solve-0.68.0 \
 		chrono-0.4.19 \
 		countme-2.0.4 \
-		cov-mark-1.1.0 \
+		cov-mark-2.0.0-pre.1 \
 		crc32fast-1.2.1 \
 		crossbeam-channel-0.5.1 \
 		crossbeam-deque-0.8.0 \
@@ -71,7 +71,7 @@ CARGO_CRATES=	addr2line-0.15.1 \
 		itoa-0.4.7 \
 		jod-thread-0.1.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.95 \
+		libc-0.2.97 \
 		libloading-0.7.0 \
 		libmimalloc-sys-0.1.21 \
 		lock_api-0.4.4 \
@@ -121,8 +121,8 @@ CARGO_CRATES=	addr2line-0.15.1 \
 		rustc-demangle-0.1.19 \
 		rustc-hash-1.1.0 \
 		ryu-1.0.5 \
-		salsa-0.16.1 \
-		salsa-macros-0.16.0 \
+		salsa-0.17.0-pre.1 \
+		salsa-macros-0.17.0-pre.1 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
@@ -156,7 +156,7 @@ CARGO_CRATES=	addr2line-0.15.1 \
 		tracing-subscriber-0.2.18 \
 		tracing-tree-0.1.9 \
 		ucd-trie-0.1.3 \
-		ungrammar-1.13.0 \
+		ungrammar-1.14.0 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.5 \
 		unicode-normalization-0.1.18 \
