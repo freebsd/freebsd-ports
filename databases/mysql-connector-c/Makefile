@@ -13,9 +13,6 @@ COMMENT=	MySQL database connector for C
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_SSL=	openssl
-BROKEN_SSL_REASON_openssl=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
-
 USES=		cmake compiler:features mysql ssl
 CMAKE_ARGS+=	-DOPENSSL_INCLUDE_DIR="${OPENSSLINC}"
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
@@ -28,9 +25,12 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 CFLAGS+=	-march=i586
 .endif
 
+.if (${OPSYS} == FreeBSD && ${OSVERSION} > 1200085 && ${SSL_DEFAULT} == base) || ${SSL_DEFAULT} == openssl
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-vio_viosslfactories.c \
+		${FILESDIR}/extra-patch-mysys__ssl_my__aes__openssl.cc
+.endif
+
 .if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	incomplete definition of type 'struct dh_st'
-BROKEN_FreeBSD_13=	incomplete definition of type 'struct dh_st'
 CMAKE_ARGS+=	-DWITH_SSL="system"
 .else
 CMAKE_ARGS+=	-DWITH_SSL="${OPENSSLBASE}"
