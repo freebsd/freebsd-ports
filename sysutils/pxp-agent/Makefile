@@ -13,7 +13,7 @@ LIB_DEPENDS=	liblibcpp-pcp-client.so:net/cpp-pcp-client \
 		liblibcpp-hocon.so:devel/cpp-hocon \
 		libleatherman_util.so:devel/leatherman
 
-USES=		cmake shebangfix ssl
+USES=		cmake compiler:c++11-lang shebangfix ssl
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	puppetlabs
