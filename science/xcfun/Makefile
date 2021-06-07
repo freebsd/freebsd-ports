@@ -10,7 +10,7 @@ COMMENT=	Exchange-correlation functionals with arbitrary-order derivatives
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
