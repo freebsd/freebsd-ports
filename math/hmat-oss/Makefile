@@ -1,6 +1,5 @@
 PORTNAME=	hmat-oss
-DISTVERSION=	1.6.1
-PORTREVISION=	1
+DISTVERSION=	1.7.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,12 +11,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LIB_DEPENDS=	libopenblas.so:math/openblas
 
 USES=		cmake compiler:openmp
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jeromerobert
-USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBLAS_LIBRARIES:STRING=${LOCALBASE}/lib/libopenblas.so \
 		-DLAPACK_LIBRARIES:STRING=${LOCALBASE}/lib/libopenblas.so
+CMAKE_OFF=	HMAT_GIT_VERSION
+
+LDFLAGS+=	-lexecinfo
 
 .include <bsd.port.pre.mk>
 
