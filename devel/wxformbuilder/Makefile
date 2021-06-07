@@ -5,7 +5,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-nightly/${DISTVERSION}
 DISTNAME=	wxFormBuilder_v${DISTVERSION}-source
 
-MAINTAINER=	shurd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG GUI Designer and Code Generator for wxWidgets
 
 LICENSE=	GPLv2

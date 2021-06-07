@@ -3,7 +3,7 @@ PORTVERSION=	g2017.08.06
 PORTREVISION=	1
 CATEGORIES=	net
 
-MAINTAINER=	shurd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Packet sink/source using the netmap API
 
 LICENSE=	BSD2CLAUSE

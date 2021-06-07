@@ -7,7 +7,7 @@ CATEGORIES=	comms
 MASTER_SITES=	SF/concordance/concordance/${PORTVERSION}
 DISTNAME=	concordance-${PORTVERSION}
 
-MAINTAINER=	shurd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logitech Harmony configuration library
 
 LICENSE=	GPLv2
