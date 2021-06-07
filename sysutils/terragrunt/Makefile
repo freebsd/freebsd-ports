@@ -1,7 +1,7 @@
 # Created by: Gabriel M. Dutra <0xdutra@gmail.com>
 
 PORTNAME=	terragrunt
-PORTVERSION=	0.29.3
+DISTVERSION=	0.29.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
