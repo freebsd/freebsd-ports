@@ -1,7 +1,8 @@
 # Created by: Markus Brueffer <markus@FreeBSD.org>
 
 PORTNAME=	kchmviewer
-PORTVERSION=	8.0
+DISTVERSIONPREFIX=	RELEASE_
+DISTVERSION=	8_0
 CATEGORIES=	deskutils kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,7 +18,6 @@ USE_XORG=	x11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gyunaev
-GH_TAGNAME=	RELEASE_8_0
 
 DOS2UNIX_GLOB=	*.cpp *.h *.pro *.ui
 
