@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libleatherman_json_container.so:devel/leatherman
 
-USES=		cmake ssl
+USES=		cmake compiler:c++11-lang ssl
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
