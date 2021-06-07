@@ -1,15 +1,14 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.16-12366 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g6ac9e6f9c
+DISTVERSION=	0.0.16-12375 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g2169e8d93
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
 
-LICENSE=	APACHE20 BSD3CLAUSE BSL GPLv2 MIT ZLIB
+LICENSE=	APACHE20 GPLv2 MIT ZLIB
 LICENSE_COMB=	multi
-LICENSE_FILE_BSD3CLAUSE=${WRKSRC_cereal}/LICENSE
 LICENSE_FILE_MIT=	${WRKSRC_pugixml}/LICENSE.md
 LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
@@ -32,7 +31,6 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-28-g8961cf8:hidapi/3rdparty/hidapi/hidap
 		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
 		KhronosGroup:SPIRV-Tools:v2020.4:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
 		KhronosGroup:glslang:11.4.0:glslang/3rdparty/glslang/glslang \
-		USCiLab:cereal:v1.3.0-5-g60c69df9:cereal/3rdparty/cereal \
 		wolfSSL:wolfssl:v4.5.0-stable-80-g39b544860:wolfssl/3rdparty/wolfssl \
 		zeux:pugixml:v1.11.4:pugixml/3rdparty/pugixml
 
