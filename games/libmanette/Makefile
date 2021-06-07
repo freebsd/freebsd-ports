@@ -15,7 +15,7 @@ BUILD_DEPENDS=	vapigen:lang/vala \
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libgudev-1.0.so:devel/libgudev
 
-USES=		gnome meson pkgconfig tar:xz
+USES=		compiler:c11 gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection
 USE_LDCONFIG=	yes
 
