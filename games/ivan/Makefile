@@ -1,44 +1,39 @@
 PORTNAME=	ivan
-PORTVERSION=	0.50
-PORTREVISION=	7
+PORTVERSION=	0.58
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/IVAN/IVAN%20${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical roguelike game
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_armv6=		fails to compile: use of overloaded operator '<<' is ambiguous
-BROKEN_armv7=		fails to compile: use of overloaded operator '<<' is ambiguous
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libpcre.so:devel/pcre
 
-USES=		gmake sdl
-USE_SDL=	sdl
-USE_CXXSTD=	c++98
-GNU_CONFIGURE=	yes
+USES=		cmake pkgconfig sdl
+USE_SDL=	sdl2 mixer2
+USE_GITHUB=	yes
+GH_ACCOUNT=	Attnam
+GH_TAGNAME=	v${PORTVERSION:C/\.//}
 
-CONFIGURE_ARGS=	--localstatedir=/var/games
+CFLAGS+=	-DNOSOUND=1
+CXXFLAGS+=	-DNOSOUND=1
+
+PLIST_FILES=	bin/ivan
 
 PORTSCOUT=	skipv:0.301,0.310,0.311,0.401,0.410,0.420,0.430
 
 PORTDATA=	*
+PORTDOCS=	*
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|IvanSave|.IvanSave|g' ${WRKSRC}/Main/Source/game.cpp
-	@${REINPLACE_CMD} -Ee 's|(fearray<type>::~?fearray)<type>|\1|' \
-		${WRKSRC}/FeLib/Include/fearray.h
-	@${REINPLACE_CMD} -Ee 's|([a-z]+<[a-z ,]+>::~?[a-z]+)<[a-z ,]+>|\1|' \
-		${WRKSRC}/Main/Source/script.cpp
-	@${REINPLACE_CMD} -e 's|truth(|bool(|' ${WRKSRC}/Main/Source/fluid.cpp \
-		${WRKSRC}/Main/Include/char.h ${WRKSRC}/Main/Include/lsquare.h \
-		${WRKSRC}/FeLib/Include/save.h ${WRKSRC}/Main/Include/lsquare.h \
-		${WRKSRC}/Main/Include/human.h ${WRKSRC}/Main/Source/command.cpp \
-		${WRKSRC}/Main/Include/stack.h ${WRKSRC}/Main/Source/lsquare.cpp \
-		${WRKSRC}/Main/Source/lterras.cpp
+OPTIONS_DEFINE=	WIZARD DOCS
 
-post-install:
-	${MKDIR} ${STAGEDIR}/var/games/ivan/Bones
-	${TOUCH} ${STAGEDIR}/var/games/ivan/ivan-highscore.scores.sample
+WIZARD_DESC=	Enable Wizard mode
+WIZARD_CMAKE_BOOL=	WIZARD
+
+post-install-DOCS-on:
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "README.md Doc MANUAL" \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

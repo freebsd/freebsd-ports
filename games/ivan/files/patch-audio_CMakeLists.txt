@@ -1,0 +1,21 @@
+--- audio/CMakeLists.txt.orig	2020-03-16 02:04:05 UTC
++++ audio/CMakeLists.txt
+@@ -10,9 +10,10 @@ if(WIN32)
+ endif()
+ 
+ # Add RtMidi dependencies on Linux
+-if(UNIX AND NOT APPLE)
++if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+   add_definitions(-D__LINUX_ALSA__)
+   find_package(ALSA)
++  set(RTMIDI_INCLUDES ${ALSA_INCLUDE_DIRS})
+   set(RTMIDI_DEPENDENCIES ${ALSA_LIBRARY} pthread)
+ endif()
+ 
+@@ -30,5 +31,5 @@ target_link_libraries(FeAudio ${RTMIDI_DEPENDENCIES})
+ 
+ find_package(SDL2 REQUIRED)
+ 
+-target_include_directories(FeAudio SYSTEM PUBLIC ${SDL2_mixer_INCLUDE_DIR})
++target_include_directories(FeAudio SYSTEM PUBLIC ${SDL2_mixer_INCLUDE_DIR} ${RTMIDI_INCLUDES})
+ target_link_libraries(FeAudio ${SDL2_mixer_LIBRARY})
