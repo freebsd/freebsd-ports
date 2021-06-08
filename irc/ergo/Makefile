@@ -2,6 +2,7 @@ PORTNAME=	ergo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.0
 CATEGORIES=	irc
+PKGNAMESUFFIX=	-irc-server
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern IRC server (daemon/ircd) written in Go
