@@ -76,6 +76,37 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fc1bcbca-c88b-11eb-9120-f02f74d0e4bd">
+    <topic>dino -- Path traversal in Dino file transfers</topic>
+    <affects>
+      <package>
+	<name>dino</name>
+	<range><lt>0.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dino team reports:</p>
+	<blockquote cite="https://dino.im/security/cve-2021-33896/">
+	  <p>It was discovered that when a user receives and downloads
+	  a file in Dino, URI-encoded path separators in the file name
+	  will be decoded, allowing an attacker to traverse
+	  directories and create arbitrary files in the context of the
+	  user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-33896</cvename>
+      <mlist msgid="392f934a-f937-7b29-5f7f-5df3ee60d8a8@.larma.de">https://marc.info/?l=oss-security&amp;m=162308719412719</mlist>
+      <url>https://dino.im/security/cve-2021-33896/</url>
+    </references>
+    <dates>
+      <discovery>2021-06-07</discovery>
+      <entry>2021-06-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="45b8716b-c707-11eb-b9a0-6805ca0b3d42">
     <topic>pglogical -- shell command injection in pglogical.create_subscription()</topic>
     <affects>
