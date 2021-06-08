@@ -434,6 +434,7 @@
     SUBDIR += gconf-editor
     SUBDIR += gdisk
     SUBDIR += gdmap
+    SUBDIR += gdu
     SUBDIR += genisoimage
     SUBDIR += geomWatch
     SUBDIR += getdelta
