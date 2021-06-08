@@ -1,4 +1,4 @@
-TIMESTAMP = 1623167173
+TIMESTAMP = 1623177804
 SHA256 (rust/crates/ansi-to-tui-0.3.0.crate) = 78688ae13e204ce559701516a0198d5fb54530b73eb1b3ecf404b4b79ed48dbf
 SIZE (rust/crates/ansi-to-tui-0.3.0.crate) = 7078
 SHA256 (rust/crates/anyhow-1.0.40.crate) = 28b2cd92db5cbd74e8e5028f7e27dd7aa3090e89e4f2a197cc7c8dfb69c7063b
@@ -245,5 +245,5 @@ SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 712e227841d057c1
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 2947998
 SHA256 (rust/crates/yaml-rust-0.4.5.crate) = 56c1936c4cc7a1c9ab21a1ebb602eb942ba868cbd44a99cb7cdc5892335e1c85
 SIZE (rust/crates/yaml-rust-0.4.5.crate) = 47783
-SHA256 (sayanarijit-xplr-v0.14.0_GH0.tar.gz) = 63d6f85880a8877ef38d4e77aec5ae74e40f96208a12f9d08e43ab19527dac36
-SIZE (sayanarijit-xplr-v0.14.0_GH0.tar.gz) = 79325
+SHA256 (sayanarijit-xplr-v0.14.1_GH0.tar.gz) = 35e76f226ef49057f6f1569c3d9271d1f96377117696a52b086a49de16ce176e
+SIZE (sayanarijit-xplr-v0.14.1_GH0.tar.gz) = 79315
