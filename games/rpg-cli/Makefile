@@ -1,5 +1,5 @@
 PORTNAME=	rpg-cli
-DISTVERSION=	0.3.0
+DISTVERSION=	0.4.0
 CATEGORIES=	games
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -28,13 +28,14 @@ CARGO_CRATES=	atty-0.2.14 \
 		getrandom-0.2.3 \
 		ghost-0.1.2 \
 		hashbrown-0.9.1 \
-		heck-0.3.2 \
+		heck-0.3.3 \
 		hermit-abi-0.1.18 \
 		indexmap-1.6.2 \
 		inventory-0.1.10 \
 		inventory-impl-0.1.10 \
 		lazy_static-1.4.0 \
 		libc-0.2.95 \
+		once_cell-1.7.2 \
 		os_str_bytes-2.4.0 \
 		ppv-lite86-0.2.10 \
 		proc-macro-error-1.0.4 \
