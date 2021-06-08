@@ -2,7 +2,6 @@ bin/certificates
 bin/connect-test
 bin/crashcollect
 bin/inspector
-bin/metabase-createdat-migration
 bin/metabase-verify
 bin/metainfo-loop-benchmark
 bin/metric-receiver
@@ -14,4 +13,5 @@ bin/storj-admin
 bin/storj-identity
 bin/storj-sim
 bin/uplink
+bin/uplinkng
 bin/versioncontrol
