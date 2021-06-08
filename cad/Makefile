@@ -64,6 +64,7 @@
     SUBDIR += klayout
     SUBDIR += ktechlab
     SUBDIR += ldraw
+    SUBDIR += ldview
     SUBDIR += leocad
     SUBDIR += lepton-eda
     SUBDIR += libopencad
