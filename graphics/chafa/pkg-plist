@@ -14,7 +14,7 @@ lib/chafa/include/chafaconfig.h
 lib/libchafa.a
 lib/libchafa.so
 lib/libchafa.so.0
-lib/libchafa.so.0.5.0
+lib/libchafa.so.0.5.1
 libdata/pkgconfig/chafa.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/chafa/api-index-full.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chafa/ch01.html
