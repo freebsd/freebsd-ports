@@ -1,6 +1,6 @@
 PORTNAME=	xplr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.1
+DISTVERSION=	0.14.0
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -9,53 +9,47 @@ COMMENT=	Hackable, minimal, fast TUI file explorer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo desktop-file-utils
+USES=		cargo desktop-file-utils gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	sayanarijit
 
-CARGO_CRATES=	anyhow-1.0.40 \
-		arrayref-0.3.6 \
-		arrayvec-0.5.2 \
+CARGO_CRATES=	ansi-to-tui-0.3.0 \
+		anyhow-1.0.40 \
+		assert_cmd-1.0.5 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
-		base64-0.13.0 \
 		bitflags-1.2.1 \
-		blake2b_simd-0.5.11 \
-		block-buffer-0.7.3 \
-		block-padding-0.1.5 \
 		bstr-0.2.15 \
 		bumpalo-3.6.1 \
-		byte-tools-0.3.1 \
 		byteorder-1.4.3 \
 		cassowary-0.3.0 \
 		cast-0.2.3 \
+		cc-1.0.67 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		clap-2.33.3 \
-		constant_time_eq-0.1.5 \
 		criterion-0.3.4 \
 		criterion-plot-0.4.3 \
 		crossbeam-channel-0.5.0 \
 		crossbeam-deque-0.8.0 \
 		crossbeam-epoch-0.9.3 \
 		crossbeam-utils-0.8.3 \
-		crossterm-0.18.2 \
-		crossterm_winapi-0.6.2 \
+		crossterm-0.19.0 \
+		crossterm_winapi-0.7.0 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
-		digest-0.8.1 \
-		dirs-3.0.1 \
-		dirs-sys-0.3.5 \
+		difference-2.0.0 \
+		dirs-3.0.2 \
+		dirs-sys-0.3.6 \
+		doc-comment-0.3.3 \
 		dtoa-0.4.8 \
 		either-1.6.1 \
-		fake-simd-0.1.2 \
-		generic-array-0.12.4 \
-		getrandom-0.1.16 \
+		erased-serde-0.3.13 \
+		getrandom-0.2.3 \
 		half-1.7.1 \
-		handlebars-3.5.4 \
 		hashbrown-0.9.1 \
 		hermit-abi-0.1.18 \
-		humansize-1.1.0 \
+		humansize-1.1.1 \
 		indexmap-1.6.2 \
 		instant-0.1.9 \
 		itertools-0.9.0 \
@@ -63,17 +57,19 @@ CARGO_CRATES=	anyhow-1.0.40 \
 		itoa-0.4.7 \
 		js-sys-0.3.50 \
 		lazy_static-1.4.0 \
-		libc-0.2.92 \
+		libc-0.2.95 \
 		linked-hash-map-0.5.4 \
 		lock_api-0.4.2 \
 		log-0.4.14 \
-		maplit-1.0.2 \
+		lua-src-543.0.0 \
+		luajit-src-210.1.3+restyfe08842 \
 		memchr-2.3.4 \
 		memoffset-0.6.3 \
 		mime-0.3.16 \
 		mime_guess-2.0.3 \
 		mio-0.7.11 \
 		miow-0.3.7 \
+		mlua-0.5.4 \
 		natord-1.0.9 \
 		ntapi-0.3.6 \
 		num-integer-0.1.44 \
@@ -81,41 +77,36 @@ CARGO_CRATES=	anyhow-1.0.40 \
 		num_cpus-1.13.0 \
 		numtoa-0.1.0 \
 		oorandom-11.1.3 \
-		opaque-debug-0.2.3 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.3 \
-		pest-2.1.3 \
-		pest_derive-2.1.0 \
-		pest_generator-2.1.3 \
-		pest_meta-2.1.3 \
+		pkg-config-0.3.19 \
 		plotters-0.3.0 \
 		plotters-backend-0.3.0 \
 		plotters-svg-0.3.0 \
+		predicates-1.0.8 \
+		predicates-core-1.0.2 \
+		predicates-tree-1.0.2 \
 		proc-macro2-1.0.26 \
-		quick-error-2.0.0 \
 		quote-1.0.9 \
 		rayon-1.5.0 \
 		rayon-core-1.9.0 \
-		redox_syscall-0.1.57 \
 		redox_syscall-0.2.5 \
 		redox_termios-0.1.2 \
-		redox_users-0.3.5 \
+		redox_users-0.4.0 \
 		regex-1.4.5 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.23 \
-		rust-argon2-0.8.3 \
 		rustc_version-0.2.3 \
 		ryu-1.0.5 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.125 \
+		serde-1.0.126 \
 		serde_cbor-0.11.1 \
-		serde_derive-1.0.125 \
+		serde_derive-1.0.126 \
 		serde_json-1.0.64 \
 		serde_yaml-0.8.17 \
-		sha-1-0.8.2 \
 		signal-hook-0.1.17 \
 		signal-hook-registry-1.3.0 \
 		smallvec-1.6.1 \
@@ -124,16 +115,15 @@ CARGO_CRATES=	anyhow-1.0.40 \
 		textwrap-0.11.0 \
 		time-0.1.44 \
 		tinytemplate-1.2.1 \
-		tui-0.14.0 \
-		typenum-1.13.0 \
-		ucd-trie-0.1.3 \
+		treeline-0.1.0 \
+		tui-0.15.0 \
 		unicase-2.6.0 \
 		unicode-segmentation-1.7.1 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
 		version_check-0.9.3 \
+		wait-timeout-0.2.0 \
 		walkdir-2.3.2 \
-		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.73 \
 		wasm-bindgen-backend-0.2.73 \
@@ -148,7 +138,7 @@ CARGO_CRATES=	anyhow-1.0.40 \
 		yaml-rust-0.4.5
 
 PORTDOCS=	CODE_OF_CONDUCT.md README.md RELEASE.md
-_EXAMPLES=	${WRKSRC}/src/config.yml
+_EXAMPLES=	${WRKSRC}/src/init.lua
 PORTEXAMPLES=	${_EXAMPLES:T}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
