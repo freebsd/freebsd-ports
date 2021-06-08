@@ -9,8 +9,8 @@ COMMENT=	Intel(R) Math Kernel Library for Deep Neural Networks
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
 BROKEN_aarch64=	error: sys/prctl.h file not found
-BROKEN_i386=	error: shift count >= width of type (and other errors), see https://github.com/intel/mkl-dnn/issues/315
 
 TEST_DEPENDS=	bash:shells/bash \
 		libsysinfo>0:devel/libsysinfo
