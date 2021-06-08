@@ -10,8 +10,6 @@ COMMENT=	Robust high performance CORBA ORB for C++ and Python
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_13=	posix.cc:605:15: error: no matching function for call to 'pthread_detach'
-BROKEN_FreeBSD_14=	posix.cc:605:15: error: no matching function for call to 'pthread_detach'
 BROKEN_SSL=	openssl
 BROKEN_SSL_REASON_openssl=	member access into incomplete type 'DH' (aka 'dh_st')
 
@@ -39,7 +37,7 @@ SHEBANG_FILES=	src/tool/omniidl/python/scripts/omniidlrun.py \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#g' ${WRKSRC}/mk/beforeauto.mk.in
-	@${REINPLACE_CMD} -e 's#%%STAGEDIR%%%%PREFIX%%#${STAGEDIR}${PREFIX}#g' \
+	@${REINPLACE_CMD} -e 's#$$(INSTALLLIBDIR)/pkgconfig#${STAGEDIR}${PREFIX}/libdata/pkgconfig#g' \
 		${WRKSRC}/contrib/pkgconfig/GNUmakefile.in
 
 post-install:
