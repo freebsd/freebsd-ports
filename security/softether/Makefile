@@ -4,7 +4,6 @@ PORTREVISION=	3
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-rtm-2020.04.05-tree/Source_Code/
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}-rtm
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	SoftEther VPN 4 (RTM version)

@@ -5,7 +5,6 @@ CATEGORIES=	security net-vpn
 MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-2021.06.07-tree/Source_Code/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Softether VPN 4 (stable beta version)
