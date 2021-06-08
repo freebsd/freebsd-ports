@@ -1,6 +1,6 @@
 PORTNAME=	terraform
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.4
+DISTVERSION=	1.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://people.freebsd.org/~0mp/distfiles/:tencentcloud_tencentcloud_sdk_go
 

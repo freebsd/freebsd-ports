@@ -1,6 +1,6 @@
-TIMESTAMP = 1621505715
-SHA256 (hashicorp-terraform-v0.15.4_GH0.tar.gz) = c94add2b677d6cbc2ca88d9eb154bdca0df26cdd397d44953a3ac9cdf7305480
-SIZE (hashicorp-terraform-v0.15.4_GH0.tar.gz) = 2880141
+TIMESTAMP = 1623163803
+SHA256 (hashicorp-terraform-v1.0.0_GH0.tar.gz) = 2eba1281e05021d816f918141e1d6788351838a0d2fb70022ec6706f52da22c4
+SIZE (hashicorp-terraform-v1.0.0_GH0.tar.gz) = 2877484
 SHA256 (Azure-azure-sdk-for-go-v52.5.0_GH0.tar.gz) = 3d35e23d20a7ad0784166f0e0bf380796a3b10b7e2fd9fe0b3f513148515f8f4
 SIZE (Azure-azure-sdk-for-go-v52.5.0_GH0.tar.gz) = 34900560
 SHA256 (Azure-go-autorest-446f41b7d65b_GH0.tar.gz) = 883e2603529a907a3da25d5e2389ab6473a80e6d79daf0d9ffc6385494e0da0a
