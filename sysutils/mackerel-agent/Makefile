@@ -2,7 +2,6 @@ PORTNAME=	mackerel-agent
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.71.2
 CATEGORIES=	sysutils
-DIST_SUBDIR=	${GH_ACCOUNT}
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Agent program to post your hosts' metrics to mackerel.io
