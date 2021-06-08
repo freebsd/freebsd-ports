@@ -652,6 +652,7 @@
     SUBDIR += p5-Parse-ANSIColor-Tiny
     SUBDIR += p5-Parse-BooleanLogic
     SUBDIR += p5-Parse-CSV
+    SUBDIR += p5-Parse-EDID
     SUBDIR += p5-Parse-FixedLength
     SUBDIR += p5-Parse-Flex
     SUBDIR += p5-Parse-PhoneNumber
