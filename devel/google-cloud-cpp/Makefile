@@ -12,7 +12,7 @@ COMMENT=	C++ Idiomatic Clients for Google Cloud Platform services
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS=	i386 powerpc
 
 BUILD_DEPENDS=	grpc>=1.19.1:devel/grpc \
 		nlohmann-json>0:devel/nlohmann-json \
