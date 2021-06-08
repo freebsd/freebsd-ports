@@ -14,6 +14,7 @@ include/xapp/libxapp/xapp-stack-sidebar.h
 include/xapp/libxapp/xapp-status-icon-monitor.h
 include/xapp/libxapp/xapp-status-icon.h
 include/xapp/libxapp/xapp-statusicon-interface.h
+include/xapp/libxapp/xapp-style-manager.h
 include/xapp/libxapp/xapp-util.h
 lib/girepository-1.0/XApp-1.0.typelib
 lib/gtk-3.0/modules/libxapp-gtk3-module.so
