@@ -1,8 +1,9 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	xviewer
-PORTVERSION=	2.8.3
+PORTVERSION=	3.0.0
 CATEGORIES=	graphics gnome
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast and functional image viewer
