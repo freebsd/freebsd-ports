@@ -16343,3 +16343,4 @@ x11/phosh||2021-05-29|Incomplete
 multimedia/libav|multimedia/ffmpeg|2021-05-31|Has expired: Unmaintained upstream, use multimedia/ffmpeg instead
 devel/py-iterpipes||2021-06-06|Has expired: Unmaintained upstream, uses old Python
 devel/py-aspyct||2021-06-06|Has expired: Unmaintained upstream, uses old Python
+irc/oragono|irc/ergo|2021-06-08|Project renamed
