@@ -76,7 +76,6 @@ libdata/pkgconfig/xreader-view-1.5.pc
 man/man1/xreader-previewer.1.gz
 man/man1/xreader-thumbnailer.1.gz
 man/man1/xreader.1.gz
-share/appdata/xreader.appdata.xml
 share/applications/xreader.desktop
 share/dbus-1/services/org.x.reader.Daemon.service
 %%HELP%%share/help/C/xreader/figures/xreader_start_window.png
@@ -258,6 +257,7 @@ share/locale/zgh/LC_MESSAGES/xreader.mo
 share/locale/zh_CN/LC_MESSAGES/xreader.mo
 share/locale/zh_HK/LC_MESSAGES/xreader.mo
 share/locale/zh_TW/LC_MESSAGES/xreader.mo
+share/metainfo/xreader.appdata.xml
 share/thumbnailers/xreader.thumbnailer
 %%DATADIR%%/hand-open.png
 %%DATADIR%%/icons/hicolor/16x16/actions/object-rotate-left.png
