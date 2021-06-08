@@ -120,6 +120,7 @@
     SUBDIR += bsdtris
     SUBDIR += bsp
     SUBDIR += bstone
+    SUBDIR += bubble-chains
     SUBDIR += bugsquish
     SUBDIR += bugsx
     SUBDIR += bumprace
