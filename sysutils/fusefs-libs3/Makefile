@@ -1,7 +1,7 @@
 # Created by: Stefan Esser
 
 PORTNAME=	fusefs-libs3
-DISTVERSION=	3.10.3
+DISTVERSION=	3.10.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/libfuse/libfuse/releases/download/fuse-${DISTVERSION}/
 DISTNAME=	fuse-${DISTVERSION}
