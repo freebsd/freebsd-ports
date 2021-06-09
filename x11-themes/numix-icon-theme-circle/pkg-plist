@@ -211,6 +211,8 @@ share/icons/Numix-Circle/48/apps/Mesen-S.svg
 share/icons/Numix-Circle/48/apps/Micropolis.svg
 share/icons/Numix-Circle/48/apps/MidnightCommander.svg
 share/icons/Numix-Circle/48/apps/Mindustry.svg
+share/icons/Numix-Circle/48/apps/MuWire-48x48.svg
+share/icons/Numix-Circle/48/apps/MuWire.svg
 share/icons/Numix-Circle/48/apps/MultiBrowser.svg
 share/icons/Numix-Circle/48/apps/Multiwinia.svg
 share/icons/Numix-Circle/48/apps/Musescore.svg
@@ -224,6 +226,7 @@ share/icons/Numix-Circle/48/apps/Othman.svg
 share/icons/Numix-Circle/48/apps/PCSX2.svg
 share/icons/Numix-Circle/48/apps/PLOT64.svg
 share/icons/Numix-Circle/48/apps/Pandora-pandora.com.svg
+share/icons/Numix-Circle/48/apps/Passky.svg
 share/icons/Numix-Circle/48/apps/Pencil.svg
 share/icons/Numix-Circle/48/apps/PhotoFiltre-LX.svg
 share/icons/Numix-Circle/48/apps/Pingnoo.svg
@@ -418,6 +421,7 @@ share/icons/Numix-Circle/48/apps/alleyoop.svg
 share/icons/Numix-Circle/48/apps/alligator.svg
 share/icons/Numix-Circle/48/apps/alltomp3.svg
 share/icons/Numix-Circle/48/apps/alltray.svg
+share/icons/Numix-Circle/48/apps/allusion.svg
 share/icons/Numix-Circle/48/apps/almanah.svg
 share/icons/Numix-Circle/48/apps/almond.svg
 share/icons/Numix-Circle/48/apps/alphaplot.svg
@@ -479,6 +483,7 @@ share/icons/Numix-Circle/48/apps/apache-netbeans.svg
 share/icons/Numix-Circle/48/apps/apachedirectorystudio.svg
 share/icons/Numix-Circle/48/apps/apk-editor-studio.svg
 share/icons/Numix-Circle/48/apps/apk-icon-editor.svg
+share/icons/Numix-Circle/48/apps/apostrophe.svg
 share/icons/Numix-Circle/48/apps/app-launcher.svg
 share/icons/Numix-Circle/48/apps/app-outlet.svg
 share/icons/Numix-Circle/48/apps/app.rednotebook.RedNotebook.svg
@@ -624,6 +629,8 @@ share/icons/Numix-Circle/48/apps/atlantikdesigner.svg
 share/icons/Numix-Circle/48/apps/atlas.svg
 share/icons/Numix-Circle/48/apps/atlauncher.svg
 share/icons/Numix-Circle/48/apps/atom-beta.svg
+share/icons/Numix-Circle/48/apps/atom-dev.svg
+share/icons/Numix-Circle/48/apps/atom-nightly.svg
 share/icons/Numix-Circle/48/apps/atom.svg
 share/icons/Numix-Circle/48/apps/atomic.svg
 share/icons/Numix-Circle/48/apps/atomic_menu.svg
@@ -712,6 +719,8 @@ share/icons/Numix-Circle/48/apps/beaker-browser.svg
 share/icons/Numix-Circle/48/apps/beaker.svg
 share/icons/Numix-Circle/48/apps/beast.svg
 share/icons/Numix-Circle/48/apps/beatbox.svg
+share/icons/Numix-Circle/48/apps/beatconnect-client.svg
+share/icons/Numix-Circle/48/apps/beatconnect_client.svg
 share/icons/Numix-Circle/48/apps/beekeeper-studio.svg
 share/icons/Numix-Circle/48/apps/beryl-manager.svg
 share/icons/Numix-Circle/48/apps/beryl-settings.svg
@@ -1356,6 +1365,8 @@ share/icons/Numix-Circle/48/apps/com.calibre_ebook.calibre.svg
 share/icons/Numix-Circle/48/apps/com.chatterino.chatterino.svg
 share/icons/Numix-Circle/48/apps/com.chez.GrafX2.svg
 share/icons/Numix-Circle/48/apps/com.corifeus.onenote.svg
+share/icons/Numix-Circle/48/apps/com.corsixth.CorsixTH.svg
+share/icons/Numix-Circle/48/apps/com.corsixth.corsixth.svg
 share/icons/Numix-Circle/48/apps/com.deepin.Calculator.svg
 share/icons/Numix-Circle/48/apps/com.deepin.Calendar.svg
 share/icons/Numix-Circle/48/apps/com.deepin.ImageViewer.svg
@@ -1386,15 +1397,18 @@ share/icons/Numix-Circle/48/apps/com.gexperts.Tilix.svg
 share/icons/Numix-Circle/48/apps/com.giadamusic.Giada.svg
 share/icons/Numix-Circle/48/apps/com.gigitux.gtkwhats.svg
 share/icons/Numix-Circle/48/apps/com.gigitux.youp.svg
+share/icons/Numix-Circle/48/apps/com.github.AmatCoder.mednaffe.svg
 share/icons/Numix-Circle/48/apps/com.github.Anuken.Mindustry.svg
 share/icons/Numix-Circle/48/apps/com.github.Bleuzen.FFaudioConverter.svg
 share/icons/Numix-Circle/48/apps/com.github.Cogitri.gxi.svg
 share/icons/Numix-Circle/48/apps/com.github.Eloston.ungoogled-chromium.svg
 share/icons/Numix-Circle/48/apps/com.github.Flacon.svg
+share/icons/Numix-Circle/48/apps/com.github.IsmaelMartinez.teams_for_linux.svg
 share/icons/Numix-Circle/48/apps/com.github.JannikHv.Gydl.svg
 share/icons/Numix-Circle/48/apps/com.github.Moeditor.Moeditor.svg
 share/icons/Numix-Circle/48/apps/com.github.PintaProject.Pinta.svg
 share/icons/Numix-Circle/48/apps/com.github.Qv2ray.svg
+share/icons/Numix-Circle/48/apps/com.github.SubhadeepJasu.pebbles.svg
 share/icons/Numix-Circle/48/apps/com.github.ThePowderToy.ThePowderToy.svg
 share/icons/Numix-Circle/48/apps/com.github._4lex4.ScanTailor-Advanced.svg
 share/icons/Numix-Circle/48/apps/com.github.afrantzis.Bless.svg
@@ -1577,11 +1591,14 @@ share/icons/Numix-Circle/48/apps/com.github.unrud.djpdf.svg
 share/icons/Numix-Circle/48/apps/com.github.vladimiry.ElectronMail.svg
 share/icons/Numix-Circle/48/apps/com.github.wjaguar.mtPaint.svg
 share/icons/Numix-Circle/48/apps/com.github.wjaguar.mtpaint.svg
+share/icons/Numix-Circle/48/apps/com.github.wwmm.easyeffects.svg
 share/icons/Numix-Circle/48/apps/com.github.wwmm.pulseeffects.svg
 share/icons/Numix-Circle/48/apps/com.github.xournalpp.xournalpp.svg
 share/icons/Numix-Circle/48/apps/com.github.yucefsourani.albasheer-electronic-quran-browser.svg
+share/icons/Numix-Circle/48/apps/com.github.z.CPod.svg
 share/icons/Numix-Circle/48/apps/com.github.z.Cumulonimbus.svg
 share/icons/Numix-Circle/48/apps/com.github.ztefn.haguichi.svg
+share/icons/Numix-Circle/48/apps/com.github.zyedidia.micro.svg
 share/icons/Numix-Circle/48/apps/com.gitlab.ColinDuquesnoy.MellowPlayer.svg
 share/icons/Numix-Circle/48/apps/com.gitlab.adnan338.Nixwriter.svg
 share/icons/Numix-Circle/48/apps/com.gitlab.azymohliad.Qwertone.svg
@@ -1633,6 +1650,7 @@ share/icons/Numix-Circle/48/apps/com.makemkv.MakeMKV.svg
 share/icons/Numix-Circle/48/apps/com.mandelbulber.Mandelbulber.svg
 share/icons/Numix-Circle/48/apps/com.mattermost.Desktop.svg
 share/icons/Numix-Circle/48/apps/com.meetfranz.Franz.svg
+share/icons/Numix-Circle/48/apps/com.microsoft.Teams.svg
 share/icons/Numix-Circle/48/apps/com.mojang.Minecraft.svg
 share/icons/Numix-Circle/48/apps/com.neatdecisions.Detwinner.svg
 share/icons/Numix-Circle/48/apps/com.netease.CloudMusic.svg
@@ -1652,6 +1670,7 @@ share/icons/Numix-Circle/48/apps/com.raggesilver.Writer.svg
 share/icons/Numix-Circle/48/apps/com.rawtherapee.RawTherapee.svg
 share/icons/Numix-Circle/48/apps/com.remarkable.reMarkable.svg
 share/icons/Numix-Circle/48/apps/com.rosegardenmusic.rosegarden.svg
+share/icons/Numix-Circle/48/apps/com.sayonaraplayer.sayonara.svg
 share/icons/Numix-Circle/48/apps/com.shatteredpixel.shatteredpixeldungeon.svg
 share/icons/Numix-Circle/48/apps/com.sigil_ebook.Sigil.svg
 share/icons/Numix-Circle/48/apps/com.simplenote.Simplenote.svg
@@ -1729,6 +1748,7 @@ share/icons/Numix-Circle/48/apps/copyq.svg
 share/icons/Numix-Circle/48/apps/coquillo.svg
 share/icons/Numix-Circle/48/apps/corebird.svg
 share/icons/Numix-Circle/48/apps/corectl.svg
+share/icons/Numix-Circle/48/apps/corsix-th.svg
 share/icons/Numix-Circle/48/apps/coulr.svg
 share/icons/Numix-Circle/48/apps/covergloobus.svg
 share/icons/Numix-Circle/48/apps/coypu.svg
@@ -1965,6 +1985,7 @@ share/icons/Numix-Circle/48/apps/desktop-environment-tde.svg
 share/icons/Numix-Circle/48/apps/desktop-environment-unity.svg
 share/icons/Numix-Circle/48/apps/desktop-environment-xfce.svg
 share/icons/Numix-Circle/48/apps/desktop.svg
+share/icons/Numix-Circle/48/apps/desmume.svg
 share/icons/Numix-Circle/48/apps/desura.svg
 share/icons/Numix-Circle/48/apps/detwinner.svg
 share/icons/Numix-Circle/48/apps/dev.Cogitri.Health.svg
@@ -2013,6 +2034,7 @@ share/icons/Numix-Circle/48/apps/display.im6.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-absolute.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-aix.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-alpine.svg
+share/icons/Numix-Circle/48/apps/distributor-logo-alt.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-android.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-antergos.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-antix.svg
@@ -2045,6 +2067,7 @@ share/icons/Numix-Circle/48/apps/distributor-logo-ferenos.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-freebsd.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-funtoo.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-furybsd.svg
+share/icons/Numix-Circle/48/apps/distributor-logo-garudalinux.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-gentoo.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-ghostbsd.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-gnu.svg
@@ -2098,12 +2121,15 @@ share/icons/Numix-Circle/48/apps/distributor-logo-pureos.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-qubes.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-quirky.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-raspbian.svg
+share/icons/Numix-Circle/48/apps/distributor-logo-reborn-os.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-redcore.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-rhel.svg
+share/icons/Numix-Circle/48/apps/distributor-logo-rockylinux.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-rosa.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-sabayon.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-salix.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-scientificlinux.svg
+share/icons/Numix-Circle/48/apps/distributor-logo-septor.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-siduction.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-slackware.svg
 share/icons/Numix-Circle/48/apps/distributor-logo-slax.svg
@@ -2135,6 +2161,7 @@ share/icons/Numix-Circle/48/apps/djv.svg
 share/icons/Numix-Circle/48/apps/djv_view.svg
 share/icons/Numix-Circle/48/apps/djvulibre-djview4.svg
 share/icons/Numix-Circle/48/apps/dk.sunsite.foobillard.svg
+share/icons/Numix-Circle/48/apps/dmidiplayer.svg
 share/icons/Numix-Circle/48/apps/dmitry.svg
 share/icons/Numix-Circle/48/apps/dnfdragora.svg
 share/icons/Numix-Circle/48/apps/do.svg
@@ -2152,6 +2179,7 @@ share/icons/Numix-Circle/48/apps/dolphin.svg
 share/icons/Numix-Circle/48/apps/donut.svg
 share/icons/Numix-Circle/48/apps/doom3.svg
 share/icons/Numix-Circle/48/apps/doomseeker.svg
+share/icons/Numix-Circle/48/apps/dopamine.svg
 share/icons/Numix-Circle/48/apps/dopewars-weed.svg
 share/icons/Numix-Circle/48/apps/dopewars.svg
 share/icons/Numix-Circle/48/apps/dosbox-ece.svg
@@ -2201,6 +2229,7 @@ share/icons/Numix-Circle/48/apps/eTube.svg
 share/icons/Numix-Circle/48/apps/eagle.svg
 share/icons/Numix-Circle/48/apps/earth.svg
 share/icons/Numix-Circle/48/apps/easy-tag.svg
+share/icons/Numix-Circle/48/apps/easyeffects.svg
 share/icons/Numix-Circle/48/apps/easylife.svg
 share/icons/Numix-Circle/48/apps/easyrpg.svg
 share/icons/Numix-Circle/48/apps/easyssh.svg
@@ -2404,6 +2433,7 @@ share/icons/Numix-Circle/48/apps/firefox-beta-bin.svg
 share/icons/Numix-Circle/48/apps/firefox-beta.svg
 share/icons/Numix-Circle/48/apps/firefox-bin.svg
 share/icons/Numix-Circle/48/apps/firefox-default.svg
+share/icons/Numix-Circle/48/apps/firefox-dev.svg
 share/icons/Numix-Circle/48/apps/firefox-developer-edition.svg
 share/icons/Numix-Circle/48/apps/firefox-developer-icon.svg
 share/icons/Numix-Circle/48/apps/firefox-esr.svg
@@ -2429,6 +2459,7 @@ share/icons/Numix-Circle/48/apps/fjt.svg
 share/icons/Numix-Circle/48/apps/flacon.svg
 share/icons/Numix-Circle/48/apps/flamerobin.svg
 share/icons/Numix-Circle/48/apps/flameshot.svg
+share/icons/Numix-Circle/48/apps/flappybird.svg
 share/icons/Numix-Circle/48/apps/flare.svg
 share/icons/Numix-Circle/48/apps/flareget.svg
 share/icons/Numix-Circle/48/apps/flash-player-properties.svg
@@ -2452,6 +2483,7 @@ share/icons/Numix-Circle/48/apps/fluendo-dvd-player.svg
 share/icons/Numix-Circle/48/apps/fluffychat.svg
 share/icons/Numix-Circle/48/apps/fluid.svg
 share/icons/Numix-Circle/48/apps/fluxgui.svg
+share/icons/Numix-Circle/48/apps/flycast.svg
 share/icons/Numix-Circle/48/apps/fma-config-tool.svg
 share/icons/Numix-Circle/48/apps/fmit.svg
 share/icons/Numix-Circle/48/apps/focuswriter.svg
@@ -2640,6 +2672,7 @@ share/icons/Numix-Circle/48/apps/gifcurry.svg
 share/icons/Numix-Circle/48/apps/giggle.svg
 share/icons/Numix-Circle/48/apps/gimagereader.svg
 share/icons/Numix-Circle/48/apps/gimp.svg
+share/icons/Numix-Circle/48/apps/ginj.svg
 share/icons/Numix-Circle/48/apps/girens.svg
 share/icons/Numix-Circle/48/apps/girl.svg
 share/icons/Numix-Circle/48/apps/gis-weather.svg
@@ -3007,6 +3040,7 @@ share/icons/Numix-Circle/48/apps/gradle.svg
 share/icons/Numix-Circle/48/apps/grafx2.svg
 share/icons/Numix-Circle/48/apps/gramps.svg
 share/icons/Numix-Circle/48/apps/granatier.svg
+share/icons/Numix-Circle/48/apps/grandorgue.svg
 share/icons/Numix-Circle/48/apps/graphics-image-editor.svg
 share/icons/Numix-Circle/48/apps/graphics-image-viewer.svg
 share/icons/Numix-Circle/48/apps/graphics-viewer-document.svg
@@ -3066,6 +3100,7 @@ share/icons/Numix-Circle/48/apps/gtk4-icon-browser.svg
 share/icons/Numix-Circle/48/apps/gtk4-widget-factory.svg
 share/icons/Numix-Circle/48/apps/gtkam.svg
 share/icons/Numix-Circle/48/apps/gtkatlantic.svg
+share/icons/Numix-Circle/48/apps/gtkcord.svg
 share/icons/Numix-Circle/48/apps/gtkdialog.svg
 share/icons/Numix-Circle/48/apps/gtkhash.svg
 share/icons/Numix-Circle/48/apps/gtklick.svg
@@ -3122,6 +3157,7 @@ share/icons/Numix-Circle/48/apps/hamster-indicator.svg
 share/icons/Numix-Circle/48/apps/hamster-time-tracker.svg
 share/icons/Numix-Circle/48/apps/hamster.svg
 share/icons/Numix-Circle/48/apps/handbrake.svg
+share/icons/Numix-Circle/48/apps/happy-wheels.svg
 share/icons/Numix-Circle/48/apps/harbour-pure-maps.svg
 share/icons/Numix-Circle/48/apps/harbour-puzzle-master.svg
 share/icons/Numix-Circle/48/apps/harddrake2.svg
@@ -3135,6 +3171,7 @@ share/icons/Numix-Circle/48/apps/hatari.svg
 share/icons/Numix-Circle/48/apps/hb-icon.svg
 share/icons/Numix-Circle/48/apps/hdspconf.svg
 share/icons/Numix-Circle/48/apps/hdspmixer.svg
+share/icons/Numix-Circle/48/apps/headlamp.svg
 share/icons/Numix-Circle/48/apps/headset.svg
 share/icons/Numix-Circle/48/apps/heaptrack.svg
 share/icons/Numix-Circle/48/apps/hearthstone.svg
@@ -3348,6 +3385,7 @@ share/icons/Numix-Circle/48/apps/io.github.GnomeMpv.svg
 share/icons/Numix-Circle/48/apps/io.github.Hexchat.svg
 share/icons/Numix-Circle/48/apps/io.github.HotShots.svg
 share/icons/Numix-Circle/48/apps/io.github.ImEditor.svg
+share/icons/Numix-Circle/48/apps/io.github.JaGoLi.ytdl_gui.svg
 share/icons/Numix-Circle/48/apps/io.github.Nheko-Reborn.Nheko.svg
 share/icons/Numix-Circle/48/apps/io.github.OpenToonz.svg
 share/icons/Numix-Circle/48/apps/io.github.Pithos.svg
@@ -3365,12 +3403,15 @@ share/icons/Numix-Circle/48/apps/io.github.dfandrich.gpscorrelate.svg
 share/icons/Numix-Circle/48/apps/io.github.dosbox-staging.svg
 share/icons/Numix-Circle/48/apps/io.github.endless-sky.endless-sky.svg
 share/icons/Numix-Circle/48/apps/io.github.gillesdegottex.FMIT.svg
+share/icons/Numix-Circle/48/apps/io.github.gitahed.Gitahead.svg
 share/icons/Numix-Circle/48/apps/io.github.hakuneko.HakuNeko.svg
 share/icons/Numix-Circle/48/apps/io.github.janbar.noson.svg
 share/icons/Numix-Circle/48/apps/io.github.jeanslack.videomass.svg
 share/icons/Numix-Circle/48/apps/io.github.jkozera.ZevDocs.svg
 share/icons/Numix-Circle/48/apps/io.github.jliljebl.Flowblade.svg
 share/icons/Numix-Circle/48/apps/io.github.kaschpal.timetable.svg
+share/icons/Numix-Circle/48/apps/io.github.kitware.F3D.svg
+share/icons/Numix-Circle/48/apps/io.github.lainsce.Emulsion.svg
 share/icons/Numix-Circle/48/apps/io.github.lainsce.Khronos.svg
 share/icons/Numix-Circle/48/apps/io.github.markummitchell.Engauge_Digitizer.svg
 share/icons/Numix-Circle/48/apps/io.github.martinrotter.textosaurus.svg
@@ -3379,6 +3420,7 @@ share/icons/Numix-Circle/48/apps/io.github.mhogomchungu.SiriKali.svg
 share/icons/Numix-Circle/48/apps/io.github.mirukana.mirage.svg
 share/icons/Numix-Circle/48/apps/io.github.mki1967.mki3dgame.svg
 share/icons/Numix-Circle/48/apps/io.github.mmstick.FontFinder.svg
+share/icons/Numix-Circle/48/apps/io.github.mpobaschnig.Vaults.svg
 share/icons/Numix-Circle/48/apps/io.github.mujx.Nheko.svg
 share/icons/Numix-Circle/48/apps/io.github.narunlifescience.AlphaPlot.svg
 share/icons/Numix-Circle/48/apps/io.github.openWMail.openWMail.svg
@@ -3389,6 +3431,7 @@ share/icons/Numix-Circle/48/apps/io.github.quodlibet.ExFalso.svg
 share/icons/Numix-Circle/48/apps/io.github.quodlibet.QuodLibet.svg
 share/icons/Numix-Circle/48/apps/io.github.seadve.Kooha.svg
 share/icons/Numix-Circle/48/apps/io.github.seadve.Mousai.svg
+share/icons/Numix-Circle/48/apps/io.github.trevorsandy.LPub3D.svg
 share/icons/Numix-Circle/48/apps/io.github.veusz.Veusz.svg
 share/icons/Numix-Circle/48/apps/io.github.wereturtle.ghostwriter.svg
 share/icons/Numix-Circle/48/apps/io.github.wxmaxima_developers.wxMaxima.svg
@@ -3399,6 +3442,7 @@ share/icons/Numix-Circle/48/apps/io.gitlab.Turtlico.svg
 share/icons/Numix-Circle/48/apps/io.gitlab.hamadmarri.gamma.svg
 share/icons/Numix-Circle/48/apps/io.gitlab.jstest_gtk.jstest_gtk.svg
 share/icons/Numix-Circle/48/apps/io.gitlab.leesonwai.Sums.svg
+share/icons/Numix-Circle/48/apps/io.gitlab.librewolf-community.svg
 share/icons/Numix-Circle/48/apps/io.gitlab.osslugaru.Lugaru.svg
 share/icons/Numix-Circle/48/apps/io.gitlab.sdl_jstest.sdl2_jstest.svg
 share/icons/Numix-Circle/48/apps/io.gitlab.sdl_jstest.sdl_jstest.svg
@@ -3408,6 +3452,7 @@ share/icons/Numix-Circle/48/apps/io.itch.azagaya.Laigter.svg
 share/icons/Numix-Circle/48/apps/io.itch.pyLinuxWheel.svg
 share/icons/Numix-Circle/48/apps/io.jamulus.Jamulus.svg
 share/icons/Numix-Circle/48/apps/io.kavan.GUADEC.svg
+share/icons/Numix-Circle/48/apps/io.kinvolk.headlamp.svg
 share/icons/Numix-Circle/48/apps/io.lbry.lbry-app.svg
 share/icons/Numix-Circle/48/apps/io.liri.Browser.svg
 share/icons/Numix-Circle/48/apps/io.liri.Calculator.svg
@@ -3470,6 +3515,7 @@ share/icons/Numix-Circle/48/apps/java11-openjdk.svg
 share/icons/Numix-Circle/48/apps/java12-openjdk.svg
 share/icons/Numix-Circle/48/apps/java13-openjdk.svg
 share/icons/Numix-Circle/48/apps/java14-openjdk.svg
+share/icons/Numix-Circle/48/apps/java15-openjdk.svg
 share/icons/Numix-Circle/48/apps/java8-openjdk.svg
 share/icons/Numix-Circle/48/apps/java9-openjdk.svg
 share/icons/Numix-Circle/48/apps/javaws.svg
@@ -3697,6 +3743,7 @@ share/icons/Numix-Circle/48/apps/knewsticker.svg
 share/icons/Numix-Circle/48/apps/knights.svg
 share/icons/Numix-Circle/48/apps/knotes.svg
 share/icons/Numix-Circle/48/apps/knotify.svg
+share/icons/Numix-Circle/48/apps/knowte.svg
 share/icons/Numix-Circle/48/apps/knowthelist.svg
 share/icons/Numix-Circle/48/apps/koala.svg
 share/icons/Numix-Circle/48/apps/kodi.svg
@@ -4134,7 +4181,9 @@ share/icons/Numix-Circle/48/apps/mediaelch.svg
 share/icons/Numix-Circle/48/apps/mediainfo.svg
 share/icons/Numix-Circle/48/apps/mediathekview.svg
 share/icons/Numix-Circle/48/apps/mediawriter.svg
+share/icons/Numix-Circle/48/apps/medibang-paint.svg
 share/icons/Numix-Circle/48/apps/medit.svg
+share/icons/Numix-Circle/48/apps/mednaffe.svg
 share/icons/Numix-Circle/48/apps/mega.svg
 share/icons/Numix-Circle/48/apps/megaglest.svg
 share/icons/Numix-Circle/48/apps/meld.svg
@@ -4153,6 +4202,7 @@ share/icons/Numix-Circle/48/apps/metronome.svg
 share/icons/Numix-Circle/48/apps/mgba.svg
 share/icons/Numix-Circle/48/apps/mged.svg
 share/icons/Numix-Circle/48/apps/miamplayer.svg
+share/icons/Numix-Circle/48/apps/micro.svg
 share/icons/Numix-Circle/48/apps/micropad.svg
 share/icons/Numix-Circle/48/apps/micropolis.svg
 share/icons/Numix-Circle/48/apps/micropolisj.svg
@@ -4234,6 +4284,7 @@ share/icons/Numix-Circle/48/apps/moe._999eagle.OkunaDesktop.svg
 share/icons/Numix-Circle/48/apps/moeditor.svg
 share/icons/Numix-Circle/48/apps/moinmoin.svg
 share/icons/Numix-Circle/48/apps/molsketch.svg
+share/icons/Numix-Circle/48/apps/monero-gui.svg
 share/icons/Numix-Circle/48/apps/monero-qt.svg
 share/icons/Numix-Circle/48/apps/monero-wallet-gui.svg
 share/icons/Numix-Circle/48/apps/monero.svg
@@ -4250,6 +4301,7 @@ share/icons/Numix-Circle/48/apps/monte-note.svg
 share/icons/Numix-Circle/48/apps/moonplayer.svg
 share/icons/Numix-Circle/48/apps/morpheus.svg
 share/icons/Numix-Circle/48/apps/moserial.svg
+share/icons/Numix-Circle/48/apps/motrix.svg
 share/icons/Numix-Circle/48/apps/mousai.svg
 share/icons/Numix-Circle/48/apps/mouse.svg
 share/icons/Numix-Circle/48/apps/mousepad.svg
@@ -4264,13 +4316,16 @@ share/icons/Numix-Circle/48/apps/mpdevil.svg
 share/icons/Numix-Circle/48/apps/mplayer.svg
 share/icons/Numix-Circle/48/apps/mpv-icon-8bit-64x64.svg
 share/icons/Numix-Circle/48/apps/mpv.svg
+share/icons/Numix-Circle/48/apps/ms-access.svg
 share/icons/Numix-Circle/48/apps/ms-calendar.svg
 share/icons/Numix-Circle/48/apps/ms-excel.svg
 share/icons/Numix-Circle/48/apps/ms-onenote.svg
+share/icons/Numix-Circle/48/apps/ms-outlook-gold.svg
 share/icons/Numix-Circle/48/apps/ms-outlook.svg
 share/icons/Numix-Circle/48/apps/ms-people.svg
 share/icons/Numix-Circle/48/apps/ms-powerpoint.svg
 share/icons/Numix-Circle/48/apps/ms-skype.svg
+share/icons/Numix-Circle/48/apps/ms-teams.svg
 share/icons/Numix-Circle/48/apps/ms-word.svg
 share/icons/Numix-Circle/48/apps/mscore.svg
 share/icons/Numix-Circle/48/apps/msiexec.svg
@@ -4311,14 +4366,17 @@ share/icons/Numix-Circle/48/apps/muondiscover.svg
 share/icons/Numix-Circle/48/apps/mupdf.svg
 share/icons/Numix-Circle/48/apps/mupen64plus-qt.svg
 share/icons/Numix-Circle/48/apps/mupen64plus.svg
+share/icons/Numix-Circle/48/apps/muse4.svg
 share/icons/Numix-Circle/48/apps/muse_icon.svg
 share/icons/Numix-Circle/48/apps/museeks.svg
 share/icons/Numix-Circle/48/apps/museeq.svg
 share/icons/Numix-Circle/48/apps/musescore.svg
+share/icons/Numix-Circle/48/apps/musesequencer.svg
 share/icons/Numix-Circle/48/apps/musictube.svg
 share/icons/Numix-Circle/48/apps/musikcube.svg
 share/icons/Numix-Circle/48/apps/musique.svg
 share/icons/Numix-Circle/48/apps/mutt.svg
+share/icons/Numix-Circle/48/apps/muwire.svg
 share/icons/Numix-Circle/48/apps/mx-update.svg
 share/icons/Numix-Circle/48/apps/mx.pwmc.Svgvi.svg
 share/icons/Numix-Circle/48/apps/mygnuhealth.svg
@@ -4356,6 +4414,7 @@ share/icons/Numix-Circle/48/apps/nero-linux.svg
 share/icons/Numix-Circle/48/apps/nero.svg
 share/icons/Numix-Circle/48/apps/nerolinux.svg
 share/icons/Numix-Circle/48/apps/nestopia.svg
+share/icons/Numix-Circle/48/apps/net.agalwood.Motrix.svg
 share/icons/Numix-Circle/48/apps/net.ankiweb.Anki.svg
 share/icons/Numix-Circle/48/apps/net.bartkessels.SimpleConvert.svg
 share/icons/Numix-Circle/48/apps/net.bartkessels.advancedmetronome.svg
@@ -4399,6 +4458,7 @@ share/icons/Numix-Circle/48/apps/net.sonobus.SonoBus.svg
 share/icons/Numix-Circle/48/apps/net.sourceforge.Chessx.svg
 share/icons/Numix-Circle/48/apps/net.sourceforge.ExtremeTuxRacer.svg
 share/icons/Numix-Circle/48/apps/net.sourceforge.Fillets.svg
+share/icons/Numix-Circle/48/apps/net.sourceforge.GrandOrgue.svg
 share/icons/Numix-Circle/48/apps/net.sourceforge.Hugin.svg
 share/icons/Numix-Circle/48/apps/net.sourceforge.Klavaro.svg
 share/icons/Numix-Circle/48/apps/net.sourceforge.Lifeograph.svg
@@ -4406,6 +4466,7 @@ share/icons/Numix-Circle/48/apps/net.sourceforge.VMPK.svg
 share/icons/Numix-Circle/48/apps/net.sourceforge.atanks.svg
 share/icons/Numix-Circle/48/apps/net.sourceforge.btanks.svg
 share/icons/Numix-Circle/48/apps/net.sourceforge.chromium-bsu.svg
+share/icons/Numix-Circle/48/apps/net.sourceforge.dmidiplayer.svg
 share/icons/Numix-Circle/48/apps/net.sourceforge.liferea.svg
 share/icons/Numix-Circle/48/apps/net.sourceforge.maxima.svg
 share/icons/Numix-Circle/48/apps/net.sourceforge.qtpfsgui.LuminanceHDR.svg
@@ -4413,6 +4474,7 @@ share/icons/Numix-Circle/48/apps/net.sourceforge.scidavis.Scidavis.svg
 share/icons/Numix-Circle/48/apps/net.sourceforge.squirrel_sql.svg
 share/icons/Numix-Circle/48/apps/net.sourceforge.xournal.svg
 share/icons/Numix-Circle/48/apps/net.supertuxkart.SuperTuxKart.svg
+share/icons/Numix-Circle/48/apps/net.veloren.airshipper.svg
 share/icons/Numix-Circle/48/apps/net.veloren.veloren.svg
 share/icons/Numix-Circle/48/apps/net.wz2100.wz2100.svg
 share/icons/Numix-Circle/48/apps/net.xm1math.Texmaker.svg
@@ -4630,6 +4692,7 @@ share/icons/Numix-Circle/48/apps/openjdk-11.svg
 share/icons/Numix-Circle/48/apps/openjdk-12.svg
 share/icons/Numix-Circle/48/apps/openjdk-13.svg
 share/icons/Numix-Circle/48/apps/openjdk-14.svg
+share/icons/Numix-Circle/48/apps/openjdk-15.svg
 share/icons/Numix-Circle/48/apps/openjdk-6.svg
 share/icons/Numix-Circle/48/apps/openjdk-7.svg
 share/icons/Numix-Circle/48/apps/openjdk-8.svg
@@ -4727,6 +4790,7 @@ share/icons/Numix-Circle/48/apps/oracle_java11.svg
 share/icons/Numix-Circle/48/apps/oracle_java12.svg
 share/icons/Numix-Circle/48/apps/oracle_java13.svg
 share/icons/Numix-Circle/48/apps/oracle_java14.svg
+share/icons/Numix-Circle/48/apps/oracle_java15.svg
 share/icons/Numix-Circle/48/apps/oracle_java6.svg
 share/icons/Numix-Circle/48/apps/oracle_java7.svg
 share/icons/Numix-Circle/48/apps/oracle_java8.svg
@@ -4818,6 +4882,7 @@ share/icons/Numix-Circle/48/apps/org.flarerpg.Flare.svg
 share/icons/Numix-Circle/48/apps/org.flatpak.demo.svg
 share/icons/Numix-Circle/48/apps/org.flatpak.qtdemo.svg
 share/icons/Numix-Circle/48/apps/org.flightgear.FlightGear.svg
+share/icons/Numix-Circle/48/apps/org.flycast.Flycast.svg
 share/icons/Numix-Circle/48/apps/org.fontforge.FontForge.svg
 share/icons/Numix-Circle/48/apps/org.freac.freac.svg
 share/icons/Numix-Circle/48/apps/org.free-astro.siril.svg
@@ -4832,6 +4897,7 @@ share/icons/Numix-Circle/48/apps/org.freedesktop.LinuxAudio.Lv2Plugins.Geonkick.
 share/icons/Numix-Circle/48/apps/org.freedesktop.LinuxAudio.Lv2Plugins.Helm.svg
 share/icons/Numix-Circle/48/apps/org.freedesktop.LinuxAudio.Lv2Plugins.LSP.svg
 share/icons/Numix-Circle/48/apps/org.freedesktop.LinuxAudio.Lv2Plugins.setBfree.svg
+share/icons/Numix-Circle/48/apps/org.freedesktop.LinuxAudio.Plugins.Guitarix.svg
 share/icons/Numix-Circle/48/apps/org.freedesktop.LinuxAudio.Plugins.LSP.svg
 share/icons/Numix-Circle/48/apps/org.freedesktop.LinuxAudio.Plugins.Yoshimi.svg
 share/icons/Numix-Circle/48/apps/org.freedesktop.MalcontentControl.svg
@@ -4842,6 +4908,7 @@ share/icons/Numix-Circle/48/apps/org.freedesktop.Sdk.Extension.openjdk11.svg
 share/icons/Numix-Circle/48/apps/org.freedesktop.Sdk.Extension.openjdk12.svg
 share/icons/Numix-Circle/48/apps/org.freedesktop.Sdk.Extension.openjdk13.svg
 share/icons/Numix-Circle/48/apps/org.freedesktop.Sdk.Extension.openjdk14.svg
+share/icons/Numix-Circle/48/apps/org.freedesktop.Sdk.Extension.openjdk15.svg
 share/icons/Numix-Circle/48/apps/org.freedesktop.Sdk.Extension.openjdk8.svg
 share/icons/Numix-Circle/48/apps/org.freedesktop.Sdk.Extension.openjdk9.svg
 share/icons/Numix-Circle/48/apps/org.freedesktop.adriconf.svg
@@ -4861,6 +4928,7 @@ share/icons/Numix-Circle/48/apps/org.gabmus.redditgtk.svg
 share/icons/Numix-Circle/48/apps/org.gabmus.whatip.svg
 share/icons/Numix-Circle/48/apps/org.gajim.Gajim.svg
 share/icons/Numix-Circle/48/apps/org.gaphor.Gaphor.svg
+share/icons/Numix-Circle/48/apps/org.gazebosim.Gazebo.svg
 share/icons/Numix-Circle/48/apps/org.geeqie.Geeqie.svg
 share/icons/Numix-Circle/48/apps/org.geogebra.GeoGebra.svg
 share/icons/Numix-Circle/48/apps/org.getmonero.Monero.svg
@@ -5082,6 +5150,7 @@ share/icons/Numix-Circle/48/apps/org.hedgewars.Hedgewars.svg
 share/icons/Numix-Circle/48/apps/org.holylobster.nuntius.svg
 share/icons/Numix-Circle/48/apps/org.homelinuxserver.vance.biblereader.svg
 share/icons/Numix-Circle/48/apps/org.horizon_eda.HorizonEDA.svg
+share/icons/Numix-Circle/48/apps/org.hydrogenmusic.Hydrogen.svg
 share/icons/Numix-Circle/48/apps/org.hydrogenmusic.hydrogen.svg
 share/icons/Numix-Circle/48/apps/org.inkscape.Inkscape.svg
 share/icons/Numix-Circle/48/apps/org.jabref.jabref.svg
@@ -5324,6 +5393,8 @@ share/icons/Numix-Circle/48/apps/org.megaglest.MegaGlest.svg
 share/icons/Numix-Circle/48/apps/org.midori_browser.Midori.svg
 share/icons/Numix-Circle/48/apps/org.mixxx.Mixxx.svg
 share/icons/Numix-Circle/48/apps/org.mozilla.Firefox.svg
+share/icons/Numix-Circle/48/apps/org.mozilla.FirefoxBeta.svg
+share/icons/Numix-Circle/48/apps/org.mozilla.FirefoxDeveloperEdition.svg
 share/icons/Numix-Circle/48/apps/org.mozilla.FirefoxNightly.svg
 share/icons/Numix-Circle/48/apps/org.mozilla.FirefoxNightlyWayland.svg
 share/icons/Numix-Circle/48/apps/org.mozilla.Thunderbird.svg
@@ -5334,6 +5405,7 @@ share/icons/Numix-Circle/48/apps/org.mume.MMapper.svg
 share/icons/Numix-Circle/48/apps/org.mupen64plus.Mupen64Plus.svg
 share/icons/Numix-Circle/48/apps/org.musescore.MuseScore.svg
 share/icons/Numix-Circle/48/apps/org.musesequencer.Muse3.svg
+share/icons/Numix-Circle/48/apps/org.musesequencer.Muse4.svg
 share/icons/Numix-Circle/48/apps/org.musicbrainz.Picard.svg
 share/icons/Numix-Circle/48/apps/org.mypaint.MyPaint.svg
 share/icons/Numix-Circle/48/apps/org.naev.Naev.svg
@@ -5348,6 +5420,7 @@ share/icons/Numix-Circle/48/apps/org.nxos.softwarecenter.svg
 share/icons/Numix-Circle/48/apps/org.octave.Octave.svg
 share/icons/Numix-Circle/48/apps/org.octave.Octave_64_64.svg
 share/icons/Numix-Circle/48/apps/org.olivevideoeditor.Olive.svg
+share/icons/Numix-Circle/48/apps/org.omegat.OmegaT.svg
 share/icons/Numix-Circle/48/apps/org.onionshare.OnionShare.svg
 share/icons/Numix-Circle/48/apps/org.onlyoffice.desktopeditors.svg
 share/icons/Numix-Circle/48/apps/org.openchemistry.avogadro2.svg
@@ -5373,6 +5446,7 @@ share/icons/Numix-Circle/48/apps/org.processing.processingide.svg
 share/icons/Numix-Circle/48/apps/org.projecthamster.hamster-gtk.svg
 share/icons/Numix-Circle/48/apps/org.pulseaudio.pavucontrol.svg
 share/icons/Numix-Circle/48/apps/org.pwmt.zathura.svg
+share/icons/Numix-Circle/48/apps/org.pymol.PyMOL.svg
 share/icons/Numix-Circle/48/apps/org.pyzo.pyzo.svg
 share/icons/Numix-Circle/48/apps/org.qbittorrent.qBittorrent.svg
 share/icons/Numix-Circle/48/apps/org.qelectrotech.QElectroTech.svg
@@ -5426,6 +5500,7 @@ share/icons/Numix-Circle/48/apps/org.tribler.Tribler.svg
 share/icons/Numix-Circle/48/apps/org.tug.texworks.svg
 share/icons/Numix-Circle/48/apps/org.tuxfamily.StuntRally.svg
 share/icons/Numix-Circle/48/apps/org.tuxfamily.XMoto.svg
+share/icons/Numix-Circle/48/apps/org.tuxfamily.hatari.svg
 share/icons/Numix-Circle/48/apps/org.unknown_horizons.UnknownHorizons.svg
 share/icons/Numix-Circle/48/apps/org.upnproutercontrol.UPnPRouterControl.svg
 share/icons/Numix-Circle/48/apps/org.vergecurrency.verge-qt.svg
@@ -5556,6 +5631,7 @@ share/icons/Numix-Circle/48/apps/partitions.svg
 share/icons/Numix-Circle/48/apps/partner.svg
 share/icons/Numix-Circle/48/apps/pasaffe.svg
 share/icons/Numix-Circle/48/apps/passbook.svg
+share/icons/Numix-Circle/48/apps/passky.svg
 share/icons/Numix-Circle/48/apps/passvault.svg
 share/icons/Numix-Circle/48/apps/password.svg
 share/icons/Numix-Circle/48/apps/passwords.svg
@@ -5685,6 +5761,7 @@ share/icons/Numix-Circle/48/apps/plots.svg
 share/icons/Numix-Circle/48/apps/plt.svg
 share/icons/Numix-Circle/48/apps/plume-creator.svg
 share/icons/Numix-Circle/48/apps/pnmixer.svg
+share/icons/Numix-Circle/48/apps/pocketcasts.svg
 share/icons/Numix-Circle/48/apps/podbrowser.svg
 share/icons/Numix-Circle/48/apps/podcast.svg
 share/icons/Numix-Circle/48/apps/poedit.svg
@@ -6038,6 +6115,7 @@ share/icons/Numix-Circle/48/apps/rdm.svg
 share/icons/Numix-Circle/48/apps/rdplot.svg
 share/icons/Numix-Circle/48/apps/re.chiaki.Chiaki.svg
 share/icons/Numix-Circle/48/apps/re.rizin.cutter.svg
+share/icons/Numix-Circle/48/apps/re.sonny.Commit.svg
 share/icons/Numix-Circle/48/apps/re.sonny.Tangram.svg
 share/icons/Numix-Circle/48/apps/reactotron.svg
 share/icons/Numix-Circle/48/apps/readitlater.svg
@@ -6073,6 +6151,7 @@ share/icons/Numix-Circle/48/apps/relay.svg
 share/icons/Numix-Circle/48/apps/remarkable.svg
 share/icons/Numix-Circle/48/apps/remmina.svg
 share/icons/Numix-Circle/48/apps/remote-desktop.svg
+share/icons/Numix-Circle/48/apps/remote-raspberry.svg
 share/icons/Numix-Circle/48/apps/remote-touchpad.svg
 share/icons/Numix-Circle/48/apps/remotebox.svg
 share/icons/Numix-Circle/48/apps/renku.svg
@@ -6124,6 +6203,7 @@ share/icons/Numix-Circle/48/apps/rpcs3.svg
 share/icons/Numix-Circle/48/apps/rpi-imager.svg
 share/icons/Numix-Circle/48/apps/rpi.svg
 share/icons/Numix-Circle/48/apps/rpmdrake.svg
+share/icons/Numix-Circle/48/apps/rrip_gui.svg
 share/icons/Numix-Circle/48/apps/rsibreak.svg
 share/icons/Numix-Circle/48/apps/rss.svg
 share/icons/Numix-Circle/48/apps/rssguard.svg
@@ -6565,6 +6645,7 @@ share/icons/Numix-Circle/48/apps/steam_icon_241930.svg
 share/icons/Numix-Circle/48/apps/steam_icon_242820.svg
 share/icons/Numix-Circle/48/apps/steam_icon_243780.svg
 share/icons/Numix-Circle/48/apps/steam_icon_244870.svg
+share/icons/Numix-Circle/48/apps/steam_icon_245170.svg
 share/icons/Numix-Circle/48/apps/steam_icon_245470.svg
 share/icons/Numix-Circle/48/apps/steam_icon_246620.svg
 share/icons/Numix-Circle/48/apps/steam_icon_247080.svg
@@ -6702,6 +6783,7 @@ share/icons/Numix-Circle/48/apps/steam_icon_386940.svg
 share/icons/Numix-Circle/48/apps/steam_icon_38700.svg
 share/icons/Numix-Circle/48/apps/steam_icon_38710.svg
 share/icons/Numix-Circle/48/apps/steam_icon_38740.svg
+share/icons/Numix-Circle/48/apps/steam_icon_388210.svg
 share/icons/Numix-Circle/48/apps/steam_icon_391220.svg
 share/icons/Numix-Circle/48/apps/steam_icon_391540.svg
 share/icons/Numix-Circle/48/apps/steam_icon_393500.svg
@@ -6977,10 +7059,13 @@ share/icons/Numix-Circle/48/apps/tc-twitch.svg
 share/icons/Numix-Circle/48/apps/tc.svg
 share/icons/Numix-Circle/48/apps/tde.svg
 share/icons/Numix-Circle/48/apps/tea.svg
+share/icons/Numix-Circle/48/apps/teams-for-linux.svg
+share/icons/Numix-Circle/48/apps/teams.svg
 share/icons/Numix-Circle/48/apps/teamspeak.svg
 share/icons/Numix-Circle/48/apps/teamspeak3.svg
 share/icons/Numix-Circle/48/apps/teamsql.svg
 share/icons/Numix-Circle/48/apps/teamviewer.svg
+share/icons/Numix-Circle/48/apps/tech.feliciano.pocket-casts.svg
 share/icons/Numix-Circle/48/apps/teeworlds.svg
 share/icons/Numix-Circle/48/apps/telegram-classic.svg
 share/icons/Numix-Circle/48/apps/telegram-desktop-bin.svg
@@ -7032,6 +7117,7 @@ share/icons/Numix-Circle/48/apps/thunderbird-bin.svg
 share/icons/Numix-Circle/48/apps/thunderbird-branded.svg
 share/icons/Numix-Circle/48/apps/thunderbird-early-bird.svg
 share/icons/Numix-Circle/48/apps/thunderbird-icon.svg
+share/icons/Numix-Circle/48/apps/thunderbird-nightly.svg
 share/icons/Numix-Circle/48/apps/thunderbird-trunk.svg
 share/icons/Numix-Circle/48/apps/thunderbird.svg
 share/icons/Numix-Circle/48/apps/tictactoe-wood.svg
@@ -7066,6 +7152,7 @@ share/icons/Numix-Circle/48/apps/toggldesktop.svg
 share/icons/Numix-Circle/48/apps/tomahawk.svg
 share/icons/Numix-Circle/48/apps/tomate.svg
 share/icons/Numix-Circle/48/apps/tomato.svg
+share/icons/Numix-Circle/48/apps/tomboy-ng.svg
 share/icons/Numix-Circle/48/apps/tomboy-note.svg
 share/icons/Numix-Circle/48/apps/tomboy.svg
 share/icons/Numix-Circle/48/apps/tools-report-bug.svg
@@ -7076,6 +7163,7 @@ share/icons/Numix-Circle/48/apps/tor-browser.svg
 share/icons/Numix-Circle/48/apps/torbrowser.svg
 share/icons/Numix-Circle/48/apps/torrent-file-editor.svg
 share/icons/Numix-Circle/48/apps/torrential.svg
+share/icons/Numix-Circle/48/apps/torrenttools.svg
 share/icons/Numix-Circle/48/apps/totem.svg
 share/icons/Numix-Circle/48/apps/touche.svg
 share/icons/Numix-Circle/48/apps/touchpad-indicator.svg
@@ -7142,6 +7230,7 @@ share/icons/Numix-Circle/48/apps/uberwriter.svg
 share/icons/Numix-Circle/48/apps/ubinary.svg
 share/icons/Numix-Circle/48/apps/ubuntu-app-test.svg
 share/icons/Numix-Circle/48/apps/ubuntu-cleaner.svg
+share/icons/Numix-Circle/48/apps/ubuntu-first-steps.svg
 share/icons/Numix-Circle/48/apps/ubuntu-kylin-software-center.svg
 share/icons/Numix-Circle/48/apps/ubuntu-mate.svg
 share/icons/Numix-Circle/48/apps/ubuntu-online-tour.svg
@@ -7165,6 +7254,7 @@ share/icons/Numix-Circle/48/apps/uk.co.mrbenshef.Boop-GTK.svg
 share/icons/Numix-Circle/48/apps/uk.co.mrbenshef.TeX-Match.svg
 share/icons/Numix-Circle/48/apps/uk.co.powdertoy.tpt.svg
 share/icons/Numix-Circle/48/apps/uk.jnthn.backgammony.svg
+share/icons/Numix-Circle/48/apps/uk.org.zint.zint-qt.svg
 share/icons/Numix-Circle/48/apps/ukuu.svg
 share/icons/Numix-Circle/48/apps/ulauncher.svg
 share/icons/Numix-Circle/48/apps/ulcc.svg
@@ -7267,6 +7357,7 @@ share/icons/Numix-Circle/48/apps/valyriatear.svg
 share/icons/Numix-Circle/48/apps/varicad-viewer.svg
 share/icons/Numix-Circle/48/apps/variety-slideshow.svg
 share/icons/Numix-Circle/48/apps/variety.svg
+share/icons/Numix-Circle/48/apps/vaults.svg
 share/icons/Numix-Circle/48/apps/vbaexpress.svg
 share/icons/Numix-Circle/48/apps/vbam.svg
 share/icons/Numix-Circle/48/apps/vbox.svg
@@ -7319,6 +7410,7 @@ share/icons/Numix-Circle/48/apps/visual-studio-code.svg
 share/icons/Numix-Circle/48/apps/visualparadigm.svg
 share/icons/Numix-Circle/48/apps/visualstudiocode.svg
 share/icons/Numix-Circle/48/apps/visualvm.svg
+share/icons/Numix-Circle/48/apps/vital.svg
 share/icons/Numix-Circle/48/apps/viva.svg
 share/icons/Numix-Circle/48/apps/vivaldi-beta.svg
 share/icons/Numix-Circle/48/apps/vivaldi-snapshot.svg
@@ -7391,6 +7483,7 @@ share/icons/Numix-Circle/48/apps/web-duckduckgo.svg
 share/icons/Numix-Circle/48/apps/web-evernote.svg
 share/icons/Numix-Circle/48/apps/web-facebook.svg
 share/icons/Numix-Circle/48/apps/web-feedly.svg
+share/icons/Numix-Circle/48/apps/web-flappybird.svg
 share/icons/Numix-Circle/48/apps/web-flickr.svg
 share/icons/Numix-Circle/48/apps/web-friendica.svg
 share/icons/Numix-Circle/48/apps/web-google-apps-script.svg
@@ -7415,6 +7508,7 @@ share/icons/Numix-Circle/48/apps/web-google-slides.svg
 share/icons/Numix-Circle/48/apps/web-google-youtube.svg
 share/icons/Numix-Circle/48/apps/web-google.svg
 share/icons/Numix-Circle/48/apps/web-grooveshark.svg
+share/icons/Numix-Circle/48/apps/web-happy-wheels.svg
 share/icons/Numix-Circle/48/apps/web-hootsuite.svg
 share/icons/Numix-Circle/48/apps/web-hotmail.svg
 share/icons/Numix-Circle/48/apps/web-inbox.svg
@@ -7735,6 +7829,7 @@ share/icons/Numix-Circle/48/apps/youtube-music-desktop-app.svg
 share/icons/Numix-Circle/48/apps/youtube-music-desktop.svg
 share/icons/Numix-Circle/48/apps/youtube-to-mp3.svg
 share/icons/Numix-Circle/48/apps/youtube.svg
+share/icons/Numix-Circle/48/apps/youtubedl-gui.svg
 share/icons/Numix-Circle/48/apps/yt-dl-gtk.svg
 share/icons/Numix-Circle/48/apps/ytmdesktop.svg
 share/icons/Numix-Circle/48/apps/ytop.svg
@@ -7761,6 +7856,8 @@ share/icons/Numix-Circle/48/apps/zeroinstall.svg
 share/icons/Numix-Circle/48/apps/zettlr.svg
 share/icons/Numix-Circle/48/apps/zevdocs.svg
 share/icons/Numix-Circle/48/apps/zim.svg
+share/icons/Numix-Circle/48/apps/zint-qt.svg
+share/icons/Numix-Circle/48/apps/zint.svg
 share/icons/Numix-Circle/48/apps/zmninja.svg
 share/icons/Numix-Circle/48/apps/zoom-desktop.svg
 share/icons/Numix-Circle/48/apps/zoom-icon.svg
