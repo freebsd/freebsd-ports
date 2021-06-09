@@ -27,4 +27,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/libs/luajit
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USES+=		compiler:gcc-c++11-lib
+.endif
+
 .include <bsd.port.mk>
