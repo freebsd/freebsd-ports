@@ -1,5 +1,5 @@
 PORTNAME=	yt-dlp
-DISTVERSION=	2021.06.01
+DISTVERSION=	2021.06.09
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycryptodome>0:security/py-pycryptodome@${PY_FLAVOR}
 
-USES=		gmake python shebangfix
+USES=		gmake python:3.6+ shebangfix
 SHEBANG_GLOB=	devscripts/*.py
 
 USE_GITHUB=	yes
