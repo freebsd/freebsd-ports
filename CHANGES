@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20210604:
+AUTHOR: mat@FreeBSD.org
+
+  The prepare-commit-msg hook was enhanced to auto-fill the first line of the
+  commit with the category/port in case only one port was committed to.
+
 20210525:
 AUTHOR: amdmi3@FreeBSD.org
 
@@ -17,6 +23,16 @@ AUTHOR: amdmi3@FreeBSD.org
   handle python 3.10.0.  Ports checking for python 3.7.10 should compare
   PYTHON_REL against 30710 and ports checking for python 3.10.0 should compare
   PYTHON_REL against 31000.
+
+20210420:
+AUTHOR: mat@FreeBSD.org
+
+  A prepare-commit-msg hook was added to the repository.  This hooks prepares
+  the commit message template for specific ports tree usage.
+
+  To make use of it, the easiest way is to run:
+
+    git config --add core.hooksPath .hooks
 
 20201120:
 AUTHOR: gnome@FreeBSD.org
