@@ -1,5 +1,5 @@
 PORTNAME=	osm2pgsql
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.0
 CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -13,16 +13,18 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libexpat.so:textproc/expat2 \
 		libfmt.so:devel/libfmt
 BUILD_DEPENDS=	${LOCALBASE}/include/osmium/version.hpp:astro/libosmium \
-		${LOCALBASE}/include/protozero/version.hpp:devel/protozero
+		${LOCALBASE}/include/protozero/version.hpp:devel/protozero \
+		${LOCALBASE}/include/rapidjson/stringbuffer.h:devel/rapidjson
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
 
-USES=		cmake compiler:c++11-lang pgsql
+USES=		cmake compiler:c++14-lang pgsql
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git \
 		EXTERNAL_LIBOSMIUM \
 		EXTERNAL_PROTOZERO \
-		EXTERNAL_FMT
+		EXTERNAL_FMT \
+		EXTERNAL_RAPIDJSON
 
 PLIST_FILES=	bin/osm2pgsql \
 		share/man/man1/osm2pgsql.1.gz
