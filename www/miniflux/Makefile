@@ -1,5 +1,5 @@
 PORTNAME=	miniflux
-DISTVERSION=	2.0.30
+DISTVERSION=	2.0.31
 CATEGORIES=	www
 
 MAINTAINER=	krion@FreeBSD.org
@@ -26,10 +26,10 @@ GH_TUPLE=	PuerkitoBio:goquery:v1.6.1:puerkitobio_goquery/vendor/github.com/Puerk
 		golang:net:28c70e62bb1d:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:68d13333faf2:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:977fb7262007:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
-		lib:pq:v1.10.1:lib_pq/vendor/github.com/lib/pq \
+		lib:pq:v1.10.2:lib_pq/vendor/github.com/lib/pq \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		mitchellh:go-server-timing:feb680ab92c2:mitchellh_go_server_timing/vendor/github.com/mitchellh/go-server-timing \
 		mvdan:xurls:v2.2.0:mvdan_xurls/vendor/mvdan.cc/xurls/v2 \
@@ -42,9 +42,7 @@ GH_TUPLE=	PuerkitoBio:goquery:v1.6.1:puerkitobio_goquery/vendor/github.com/Puerk
 		rylans:getlang:4c3188ff8a2d:rylans_getlang/vendor/github.com/rylans/getlang \
 		square:go-jose:v2.5.0:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
-		tdewolff:minify:v2.9.16:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
-		tdewolff:parse:v2.5.14:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2
-
+		tdewolff:minify:v2.9.17:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2
 
 USE_RC_SUBR=	miniflux
 
