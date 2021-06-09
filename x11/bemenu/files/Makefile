@@ -31,9 +31,7 @@ bemenu-renderer-curses.so bemenu-renderer-wayland.so bemenu-renderer-x11.so: ${B
 	${CC} ${LDFLAGS} -fPIC -shared -o $@ $> ${${@:R:S,-, ,g:[3]}_LIBS} ${${@:R:S,-, ,g:[3]}_PC:D`pkg-config --libs ${${@:R:S,-, ,g:[3]}_PC}`} -lm
 
 bemenu.pc: bemenu.pc.in
-	sed -e 's,@LIBDIR@,/lib,' -e 's,@PREFIX@,${PREFIX},' -e 's,@VERSION@,${VERSION},' $> > $@
-	echo 'includedir=$${prefix}/include' >> $@
-	echo 'Cflags: -I$${includedir}' >> $@
+	sed -e 's,@INCLUDEDIR@,/include,' -e 's,@LIBDIR@,/lib,' -e 's,@PREFIX@,${PREFIX},' -e 's,@VERSION@,${VERSION},' $> > $@
 	cat $@
 
 bemenu.1: man/bemenu.1.in
