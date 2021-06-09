@@ -1,6 +1,6 @@
---- configure.orig	2014-05-27 19:52:46 UTC
+--- configure.orig	2021-06-04 03:21:11 UTC
 +++ configure
-@@ -11719,7 +11719,7 @@ if test -z "$GCC"; then
+@@ -12814,7 +12814,7 @@ if test -z "$GCC"; then
  		;;
          *)
                  DEBUG="-g"
@@ -9,12 +9,12 @@
                  PROFILE="-g -p"
  		;;
          esac
-@@ -11742,8 +11742,8 @@ else
+@@ -12837,8 +12837,8 @@ else
  		;;
          *)
                  DEBUG="-g -Wall -fsigned-char"
--                CFLAGS="-O20 -fsigned-char"
--                PROFILE="-O20 -g -pg -fsigned-char"
+-                CFLAGS="-O2 -fsigned-char"
+-                PROFILE="-O2 -g -pg -fsigned-char"
 +                CFLAGS="-fsigned-char"
 +                PROFILE="-g -pg -fsigned-char"
  		;;
