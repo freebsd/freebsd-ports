@@ -31,4 +31,10 @@ CMAKE_ARGS+=	-DUSE_SYSTEM_GTEST:BOOL=YES \
 		-DUSE_SYSTEM_LIBINDI:BOOL=YES \
 		-DUSE_SYSTEM_EIGEN3:BOOL=YES
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != aarch64 && ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != amd64 && ${ARCH} != i386
+CMAKE_ARGS+=	-DOPENSOURCE_ONLY:BOOL=YES
+.endif
+
 .include <bsd.port.mk>
