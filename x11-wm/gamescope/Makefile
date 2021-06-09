@@ -1,11 +1,11 @@
 PORTNAME=	gamescope
-DISTVERSION=	3.8.1
+DISTVERSION=	3.8.3
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	8fae1ff56a62.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
 PATCHFILES+=	f36133f27fbc.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
-PATCHFILES+=	0017b319f7b7.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
+PATCHFILES+=	01ac6a8e2699.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
 PATCHFILES+=	43f743fcfbd0.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
 PATCHFILES+=	9ebb1c16d3ad.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
 PATCHFILES+=	d59836199ebe.patch:-p1 # https://github.com/Plagman/gamescope/issues/120
