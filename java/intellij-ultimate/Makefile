@@ -3,7 +3,7 @@
 # Based on the java/intellij port
 
 PORTNAME=	intellij-ultimate
-PORTVERSION=	2021.1.1
+PORTVERSION=	2021.1.2
 CATEGORIES=	java devel
 MASTER_SITES=	https://download-cf.jetbrains.com/idea/
 DISTNAME=	ideaIU-${PORTVERSION}-no-jbr
@@ -39,16 +39,13 @@ NO_BUILD=	yes
 SUB_FILES=	idea idea.desktop pkg-message
 
 BUILD_TYPE=	IU
-BUILD_VERSION=	211.7142.45
+BUILD_VERSION=	211.7442.40
 BUILD_MARKER=	${BUILD_TYPE}-${BUILD_VERSION}
 PLIST_SUB=	BUILD_MARKER=${BUILD_MARKER}
 WRKSRC=		${WRKDIR}/idea-${BUILD_MARKER}
 
 post-patch:
 	@${REINPLACE_CMD} 's/x86_64/amd64/g' ${WRKSRC}/bin/idea.sh
-# Initial JDK 15+ support
-	@${REINPLACE_CMD} '/UseConcMarkSweepGC/d' ${WRKSRC}/bin/idea.vmoptions
-	@${REINPLACE_CMD} '/UseConcMarkSweepGC/d' ${WRKSRC}/bin/idea64.vmoptions
 # Linux/Windows/OS X only so remove them
 	@${RM} -r \
 		${WRKSRC}/bin/fsnotifier \
