@@ -1,7 +1,7 @@
 # Created by: Anish Mistry
 
 PORTNAME=	sshfs
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.2
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
