@@ -5,7 +5,7 @@ DISTVERSION=	1.2.1
 PORTREVISION=	1
 CATEGORIES=	devel python
 
-MAINTAINER=	ohauer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
 
 CONFLICTS_INSTALL=      py[23][6-8]-viewvc-1.3*
