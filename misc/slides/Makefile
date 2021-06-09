@@ -2,6 +2,7 @@ PORTNAME=	slides
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.2
 CATEGORIES=	misc
+PKGNAMESUFFIX=	-presentation-tool
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Terminal based presentation tool
