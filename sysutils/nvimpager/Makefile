@@ -1,7 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 
 PORTNAME=	nvimpager
-PORTVERSION=	0.10
+PORTVERSION=	0.10.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -21,5 +21,6 @@ GH_ACCOUNT=	lucc
 
 MAKEFILE=	makefile
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
