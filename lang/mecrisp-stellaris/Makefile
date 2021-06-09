@@ -1,6 +1,5 @@
 PORTNAME=	mecrisp-stellaris
-DISTVERSION=	2.5.8
-PORTREVISION=	1
+DISTVERSION=	2.5.9
 CATEGORIES=	lang
 MASTER_SITES=	SF/mecrisp
 
@@ -9,6 +8,8 @@ COMMENT=	Native code Forth system for ARM
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	arm-none-eabi-binutils>2.25:devel/binutils@arm_none_eabi
 
 OPTIONS_DEFINE=		EXTRAS
 OPTIONS_DEFAULT=	EXTRAS
@@ -21,11 +22,16 @@ EXTRAS_VARS_OFF=	PROGRAM=mecrisp-stellaris-freebsd
 .if ${OSVERSION} < 1300000
 ONLY_FOR_ARCHS=	armv6 armv7
 .else
-ONLY_FOR_ARCHS=	armv6 armv7 aarch64
+ONLY_FOR_ARCHS=	aarch64 armv6 armv7
 .endif
 ONLY_FOR_ARCHS_REASON=	written in ARM assembly
 
-BUILD_DEPENDS=	arm-none-eabi-binutils>2.25:devel/binutils@arm_none_eabi
+.if ${ARCH} == "aarch64" && defined(QEMU_EMULATING)
+IGNORE=		fails to build with qemu-user-static: \
+		qemu-aarch64-static cannot execute armv7 binaries
+.endif
+
+PKGMESSAGE=	pkg-message-${ARCH}
 
 AFLAGS.armv6=	-march=armv6 --defsym m0core=1
 MAKE_ENV+=	AFLAGS="${AFLAGS.${ARCH}}"
