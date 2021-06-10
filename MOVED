@@ -16139,7 +16139,7 @@ security/openvas9-scanner|security/openvas|2021-02-08|Has expired: End of life, 
 security/greenbone-security-assistant8|security/greenbone-security-assistant|2021-02-08|Has expired: End of life, please migrate to new version of greenbone-security-assistant
 security/greenbone-security-assistant9|security/greenbone-security-assistant|2021-02-08|Has expired: End of life, please migrate to new version of greenbone-security-assistant
 misc/pnpids|misc/hwdata|2021-02-14|Rename package to upstreams name
-misc/cdcollect||2021-02-14|Has expired: Unmaintained and dead upstream (12+ years) depends on  deprecated libraries as www/gtkhtml3
+misc/cdcollect||2021-02-14|Has expired: Unmaintained and dead upstream (12+ years) depends on deprecated libraries as www/gtkhtml3
 security/krb5-116|security/krb5-118|2021-02-14|Has expired: EOL one year after the release of krb5 1.18
 www/palemoon||2021-02-15|Depends on expired version of python
 www/rtv||2021-02-17|Has expired: Abandoned, use www/py-ttrv or www/py-tuir instead
@@ -16189,7 +16189,7 @@ net/libsignal|net/libsignal-protocol-c|2021-03-30|Rename to match upstream namin
 databases/redis4|databases/redis|2021-04-06|Has expired: End of life, please use modern version
 lang/ruby25|lang/ruby27|2021-04-06|Has expired: Use newer version, e.g. lang/ruby27 or above. Ruby 2.5 is in security maintenance phase and planned for EOL on March 31, 2021
 www/gtkhtml3|www/gtkhtml4|2021-04-06|Has expired: Obsolete by upstream, doesn't build with recent versions of pango
-deskutils/tomboy||2021-04-06|Has expired: Unmaintained and dead upstream, depends on deprecated libraries  such as www/gtkhtml3. Upstream project is now called tomboy-ng
+deskutils/tomboy||2021-04-06|Has expired: Unmaintained and dead upstream, depends on deprecated libraries such as www/gtkhtml3. Upstream project is now called tomboy-ng
 deskutils/tomboy-plugin-reminder||2021-04-06|Removed, part of deskutils/tomboy
 devel/monodevelop||2021-04-06|Has expired: outdated, depends on deprecated library www/gtkhtml3
 sysutils/syslog-ng327|sysutils/syslog-ng|2021-04-06|Has expired: Not officially supported by upstream
