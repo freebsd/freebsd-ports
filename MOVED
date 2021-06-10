@@ -16352,3 +16352,4 @@ devel/py-jaraco.context2|devel/py-jaraco.context|2021-06-10|Remove obsoleted por
 devel/py-jaraco.util13|devel/py-jaraco.util|2021-06-10|Remove obsoleted port. Use devel/py-jaraco.util instead
 devel/py-keystoneauth13|devel/py-keystoneauth1|2021-06-10|Remove obsoleted port. Use devel/py-keystoneauth1 instead
 devel/py-keystonemiddleware8|devel/py-keystonemiddleware|2021-06-10|Remove obsoleted port. Use devel/py-keystonemiddleware instead
+devel/py-openstacksdk043|devel/py-openstacksdk|2021-06-10|Remove obsoleted port. Use devel/py-openstacksdk instead
