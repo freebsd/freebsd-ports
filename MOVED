@@ -16320,6 +16320,7 @@ sysutils/policykit|sysutils/polkit|2021-05-01|Gnome2 component, no consumers lef
 databases/rubygem-gitlab-pg_query|databases/rubygem-pg_query|2021-05-03|Obsolete, please use databases/rubygem-pg_query
 devel/rubygem-licensee8|devel/rubygem-licensee|2021-05-03|Obsolete, please use devel/rubygem-licensee
 devel/rubygem-ruby-magic-static|devel/rubygem-ruby-magic|2021-05-03|Obsolete, please use devel/rubygem-ruby-magic
+ftp/cpr|www/cpr|2021-05-03|Remove duplicate port
 devel/gecode|math/gecode|2021-05-04|Move to a proper category
 net-im/libqmatrixclient|net-im/libquotient|2021-05-08|Has expired: Use libQuotient (devel/libquotient) instead
 devel/electron11|devel/electron12|2021-05-12|VSCode update requires a newer major version
