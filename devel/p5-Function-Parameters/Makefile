@@ -21,10 +21,10 @@ TEST_DEPENDS=	p5-Dir-Self>=0:devel/p5-Dir-Self \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-aliased>=0:devel/p5-aliased
 
-PORTSCOUT=	limit:^[0-9\.]*$$
-
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Function/Parameters/Parameters.so
