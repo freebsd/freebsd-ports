@@ -10,7 +10,7 @@
  BeautifulSoup4>=4.3  # Trados
  # Encoding detection
 -chardet==4.0.0              # chardet
-+chardet>=3.0.4              # chardet
++chardet>=4.0.0              # chardet
  # Tmserver backend
 -cheroot==8.5.2       # tmserver
 +cheroot>=8.5.2       # tmserver
