@@ -184,7 +184,7 @@ sysrc nginx_enable=YES
 service nginx start
 .Ed
 .Pp
-.Em \In a real world setup, nginx should be configured to use TLS
+.Em \&In a real world setup, nginx should be configured to use TLS
 .Em and (potentially) client certificates .
 .Sh SFTP SETUP
 Setting up
