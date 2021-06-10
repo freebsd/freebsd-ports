@@ -19,9 +19,10 @@ RUN_DEPENDS=	p5-Class-ErrorHandler>=0:devel/p5-Class-ErrorHandler \
 		p5-libwww>=0:www/p5-libwww \
 		p5-Module-Install>0:devel/p5-Module-Install
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 post-patch:
 	# Really old M::I code
