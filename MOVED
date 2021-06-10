@@ -16362,3 +16362,4 @@ devel/py-oslo.concurrency3|devel/py-oslo.concurrency|2021-06-10|Remove obsoleted
 devel/py-oslo.config7|devel/py-oslo.config|2021-06-10|Remove obsoleted port. Use devel/py-oslo.config instead
 devel/py-oslo.context2|devel/py-oslo.context|2021-06-10|Remove obsoleted port. Use devel/py-oslo.context instead
 devel/py-oslo.db6|devel/py-oslo.db|2021-06-10|Remove obsoleted port. Use devel/py-oslo.db instead
+devel/py-oslo.i18n3|devel/py-oslo.i18n|2021-06-10|Remove obsoleted port. Use devel/py-oslo.i18n instead
