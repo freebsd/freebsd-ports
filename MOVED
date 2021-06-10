@@ -16378,3 +16378,4 @@ devel/py-oslo.vmware2|devel/py-oslo.vmware|2021-06-10|Remove obsoleted port. Use
 devel/py-pycadf2|devel/py-pycadf|2021-06-10|Remove obsoleted port. Use devel/py-pycadf instead
 devel/py-taskflow3|devel/py-taskflow|2021-06-10|Remove obsoleted port. Use devel/py-taskflow instead
 devel/py-tempora1|devel/py-tempora|2021-06-10|Remove obsoleted port. Use devel/py-tempora instead
+devel/py-tinyrpc0|devel/py-tinyrpc|2021-06-10|Remove obsoleted port. Use devel/py-tinyrpc instead
