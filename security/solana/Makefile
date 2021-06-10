@@ -1,7 +1,6 @@
 PORTNAME=	solana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.0
-PORTREVISION=	1
+DISTVERSION=	1.7.1
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -51,7 +50,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		base64-0.12.3 \
 		base64-0.13.0 \
 		bincode-1.3.1 \
-		bindgen-0.54.0 \
+		bindgen-0.57.0 \
 		bitflags-1.2.1 \
 		blake2b_simd-0.5.10 \
 		blake3-0.3.7 \
@@ -85,7 +84,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		chrono-humanize-0.2.1 \
-		clang-sys-0.29.3 \
+		clang-sys-1.2.0 \
 		clap-2.33.3 \
 		cloudabi-0.0.3 \
 		cloudabi-0.1.0 \
@@ -145,7 +144,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		enum-iterator-0.6.0 \
 		enum-iterator-derive-0.6.0 \
 		enum-ordinalize-3.1.8 \
-		env_logger-0.7.1 \
 		env_logger-0.8.3 \
 		failure-0.1.8 \
 		failure_derive-0.1.8 \
@@ -153,6 +151,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fast-math-0.1.1 \
 		fd-lock-2.0.0 \
 		feature-probe-0.1.1 \
+		filedescriptor-0.8.0 \
 		filetime-0.2.10 \
 		flate2-1.0.14 \
 		fnv-1.0.7 \
@@ -173,7 +172,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		futures-sink-0.3.8 \
 		futures-task-0.3.8 \
 		futures-util-0.3.8 \
-		gag-0.1.10 \
+		gag-1.0.0 \
 		generic-array-0.12.3 \
 		generic-array-0.14.3 \
 		gethostname-0.2.1 \
@@ -204,7 +203,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		http-body-0.4.0 \
 		httparse-1.3.4 \
 		httpdate-0.3.2 \
-		humantime-1.3.0 \
 		humantime-2.0.1 \
 		hyper-0.10.16 \
 		hyper-0.13.10 \
@@ -225,24 +223,24 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		itoa-0.4.5 \
 		jobserver-0.1.21 \
 		js-sys-0.3.47 \
-		jsonrpc-client-transports-17.0.0 \
-		jsonrpc-core-17.0.0 \
-		jsonrpc-core-client-17.0.0 \
-		jsonrpc-derive-17.0.0 \
-		jsonrpc-http-server-17.0.0 \
-		jsonrpc-ipc-server-17.0.1 \
-		jsonrpc-pubsub-17.0.0 \
-		jsonrpc-server-utils-17.0.0 \
-		jsonrpc-ws-server-17.0.0 \
+		jsonrpc-client-transports-17.1.0 \
+		jsonrpc-core-17.1.0 \
+		jsonrpc-core-client-17.1.0 \
+		jsonrpc-derive-17.1.0 \
+		jsonrpc-http-server-17.1.0 \
+		jsonrpc-ipc-server-17.1.0 \
+		jsonrpc-pubsub-17.1.0 \
+		jsonrpc-server-utils-17.1.0 \
+		jsonrpc-ws-server-17.1.0 \
 		keccak-0.1.0 \
 		kernel32-sys-0.2.2 \
 		language-tags-0.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
 		libc-0.2.81 \
-		libloading-0.5.2 \
 		libloading-0.6.2 \
-		librocksdb-sys-6.11.4 \
+		libloading-0.7.0 \
+		librocksdb-sys-6.17.3 \
 		libsecp256k1-0.3.5 \
 		linked-hash-map-0.5.3 \
 		lock_api-0.3.4 \
@@ -330,7 +328,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		prost-derive-0.7.0 \
 		prost-types-0.7.0 \
 		qstring-0.7.2 \
-		quick-error-1.2.3 \
 		quote-0.6.13 \
 		quote-1.0.6 \
 		rand-0.4.6 \
@@ -367,7 +364,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		reqwest-0.11.2 \
 		retain_mut-0.1.2 \
 		ring-0.16.20 \
-		rocksdb-0.15.0 \
+		rocksdb-0.16.0 \
 		rpassword-4.0.5 \
 		rust-argon2-0.7.0 \
 		rustc-demangle-0.1.16 \
@@ -389,10 +386,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		semver-0.11.0 \
 		semver-parser-0.7.0 \
 		semver-parser-0.10.1 \
-		serde-1.0.122 \
+		serde-1.0.126 \
 		serde_bytes-0.11.5 \
 		serde_cbor-0.11.1 \
-		serde_derive-1.0.122 \
+		serde_derive-1.0.126 \
 		serde_json-1.0.62 \
 		serde_urlencoded-0.7.0 \
 		serde_yaml-0.8.13 \
@@ -535,7 +532,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		webpki-roots-0.21.0 \
 		websocket-0.24.0 \
 		websocket-base-0.24.0 \
-		which-3.1.1 \
 		winapi-0.2.8 \
 		winapi-0.3.8 \
 		winapi-build-0.1.1 \
