@@ -16345,3 +16345,4 @@ devel/py-aspyct||2021-06-06|Has expired: Unmaintained upstream, uses old Python
 irc/oragono|irc/ergo|2021-06-08|Project renamed
 devel/py-castellan1|devel/py-castellan|2021-06-10|Remove obsoleted port. Use devel/py-castellan instead
 devel/py-cliff2|devel/py-cliff|2021-06-10|Remove obsoleted port. Use devel/py-cliff instead
+devel/py-cmd208|devel/py-cmd2|2021-06-10|Remove obsoleted port. Use devel/py-cmd2 instead
