@@ -1,7 +1,7 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	thefuck
-DISTVERSION=	3.30
+DISTVERSION=	3.31
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>0:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyte>0:devel/py-pyte@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
-USES=		python:3.4+
+USES=		python
 USE_PYTHON=	autoplist distutils noflavors
 NO_ARCH=	yes
 
