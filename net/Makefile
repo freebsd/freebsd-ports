@@ -1082,7 +1082,6 @@
     SUBDIR += py-python-cinderclient
     SUBDIR += py-python-designateclient
     SUBDIR += py-python-glanceclient
-    SUBDIR += py-python-glanceclient2
     SUBDIR += py-python-heatclient
     SUBDIR += py-python-keystoneclient
     SUBDIR += py-python-keystoneclient3
