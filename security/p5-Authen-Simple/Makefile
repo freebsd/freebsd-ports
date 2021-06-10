@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Crypt-PasswdMD5>=0:security/p5-Crypt-PasswdMD5 \
 		p5-Params-Validate>=0:devel/p5-Params-Validate
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
