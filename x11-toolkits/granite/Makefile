@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	granite
-DISTVERSION=	5.5.0
+DISTVERSION=	6.0.0
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	desktop@FreeBSD.org
