@@ -16347,3 +16347,4 @@ devel/py-castellan1|devel/py-castellan|2021-06-10|Remove obsoleted port. Use dev
 devel/py-cliff2|devel/py-cliff|2021-06-10|Remove obsoleted port. Use devel/py-cliff instead
 devel/py-cmd208|devel/py-cmd2|2021-06-10|Remove obsoleted port. Use devel/py-cmd2 instead
 devel/py-futurist1|devel/py-futurist|2021-06-10|Remove obsoleted port. Use devel/py-futurist instead
+devel/py-google-crc32c0|devel/py-google-crc32c|2021-06-10|Remove obsoleted port. Use devel/py-google-crc32c instead
