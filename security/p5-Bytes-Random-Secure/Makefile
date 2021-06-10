@@ -16,8 +16,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Crypt-Random-Seed>=0:security/p5-Crypt-Random-Seed \
 		p5-Math-Random-ISAAC>=0:math/p5-Math-Random-ISAAC
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
