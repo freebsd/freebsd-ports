@@ -4,7 +4,8 @@ PORTNAME=	libfishsound
 PORTVERSION=	1.0.0
 PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.xiph.org/releases/libfishsound/ \
+MASTER_SITES=	https://downloads.xiph.org/releases/libfishsound/ \
+		https://ftp.osuosl.org/pub/xiph/releases/libfishsound/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org

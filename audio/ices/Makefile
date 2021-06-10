@@ -5,7 +5,7 @@ PORTVERSION=	2.0.3
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	https://downloads.xiph.org/releases/ices/ \
-		https://svn.xiph.org/releases/ices/
+		https://ftp.osuosl.org/pub/xiph/releases/ices/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Vorbis streaming source client for icecast 2

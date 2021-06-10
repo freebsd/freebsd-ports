@@ -2,8 +2,8 @@ PORTNAME=	liboggz
 PORTVERSION=	1.1.1
 PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.xiph.org/releases/liboggz/ \
-		http://wickedmachine.net/mirror/
+MASTER_SITES=	https://downloads.xiph.org/releases/liboggz/ \
+		https://ftp.osuosl.org/pub/xiph/releases/liboggz/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple Ogg API

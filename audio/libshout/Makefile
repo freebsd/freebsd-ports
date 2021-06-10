@@ -4,7 +4,7 @@ PORTNAME=	libshout
 PORTVERSION=	2.4.5
 CATEGORIES=	audio net
 MASTER_SITES=	https://downloads.xiph.org/releases/libshout/ \
-		https://svn.xiph.org/releases/libshout/ \
+		https://ftp.osuosl.org/pub/xiph/releases/libshout/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org

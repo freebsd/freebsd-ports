@@ -5,7 +5,7 @@ PORTVERSION=	2.4.4
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	https://downloads.xiph.org/releases/icecast/:source \
-		https://svn.xiph.org/releases/icecast/:source \
+		https://ftp.osuosl.org/pub/xiph/releases/icecast/:source \
 		LOCAL/sunpoet/icecast:icon,source \
 		https://github.com/xiph/Icecast-Server/raw/master/web/:icon
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source \

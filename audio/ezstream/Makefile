@@ -4,8 +4,8 @@ PORTNAME=	ezstream
 PORTVERSION=	0.5.6
 PORTREVISION=	6
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.xiph.org/releases/ezstream/ \
-		http://svn.xiph.org/releases/ezstream/
+MASTER_SITES=	https://downloads.xiph.org/releases/ezstream/ \
+		https://ftp.osuosl.org/pub/xiph/releases/ezstream/
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Command line utility for streaming to icecast servers

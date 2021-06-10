@@ -1,7 +1,8 @@
 PORTNAME=	opusfile
 PORTVERSION=	0.12
 CATEGORIES=	audio
-MASTER_SITES=	https://downloads.xiph.org/releases/opus/
+MASTER_SITES=	https://downloads.xiph.org/releases/opus/ \
+		https://ftp.osuosl.org/pub/xiph/releases/opus/
 
 MAINTAINER=	liangtai.s16@gmail.com
 COMMENT=	Opus playback library

@@ -5,7 +5,7 @@ PORTVERSION=	1.3.5
 PORTEPOCH=	4
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/ogg/ \
-		https://download.videolan.org/videolan/testing/contrib/ogg/
+		https://ftp.osuosl.org/pub/xiph/releases/ogg/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Ogg bitstream library
