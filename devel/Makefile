@@ -5181,7 +5181,6 @@
     SUBDIR += py-tokenize-rt
     SUBDIR += py-toolz
     SUBDIR += py-tooz
-    SUBDIR += py-tooz1
     SUBDIR += py-toposort
     SUBDIR += py-tox
     SUBDIR += py-traceback2
