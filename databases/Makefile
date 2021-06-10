@@ -1008,6 +1008,7 @@
     SUBDIR += sqlite3
     SUBDIR += sqlitebrowser
     SUBDIR += sqliteconvert
+    SUBDIR += sqlitecpp
     SUBDIR += sqlitemanager
     SUBDIR += sqliteodbc
     SUBDIR += sqlitestudio
