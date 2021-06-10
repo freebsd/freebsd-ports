@@ -16,8 +16,8 @@ LICENSE_COMB=	dual
 TEST_DEPENDS=	p5-Test-LeakTrace>=0:devel/p5-Test-LeakTrace \
 		p5-Test-Requires>=0.03:devel/p5-Test-Requires
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Data/Clone/Clone.so
