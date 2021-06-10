@@ -1076,6 +1076,7 @@
     SUBDIR += urho3d
     SUBDIR += urt
     SUBDIR += vapoursynth-fmtconv
+    SUBDIR += vapoursynth-waifu2x-ncnn-vulkan
     SUBDIR += vapoursynth-waifu2x-w2xc
     SUBDIR += variety
     SUBDIR += vcg
