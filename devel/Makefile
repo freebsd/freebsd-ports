@@ -4253,7 +4253,6 @@
     SUBDIR += py-capturer
     SUBDIR += py-case
     SUBDIR += py-castellan
-    SUBDIR += py-castellan1
     SUBDIR += py-catalogue
     SUBDIR += py-cbor
     SUBDIR += py-cbor2
