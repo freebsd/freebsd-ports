@@ -4464,7 +4464,6 @@
     SUBDIR += py-future
     SUBDIR += py-future-annotations
     SUBDIR += py-futurist
-    SUBDIR += py-futurist1
     SUBDIR += py-fuzzywuzzy
     SUBDIR += py-fypp
     SUBDIR += py-game
