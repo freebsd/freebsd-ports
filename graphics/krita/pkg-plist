@@ -51,6 +51,7 @@ lib/kritaplugins/kritagamutmask.so
 lib/kritaplugins/kritagaussianhighpassfilter.so
 lib/kritaplugins/kritagifexport.so
 lib/kritaplugins/kritagifimport.so
+lib/kritaplugins/kritagradientgenerator.so
 lib/kritaplugins/kritagradientmap.so
 lib/kritaplugins/kritagriddocker.so
 lib/kritaplugins/kritagridpaintop.so
@@ -112,7 +113,6 @@ lib/kritaplugins/kritarotateimage.so
 lib/kritaplugins/kritaroundcornersfilter.so
 lib/kritaplugins/kritaroundmarkerpaintop.so
 lib/kritaplugins/kritascreentonegenerator.so
-%%OPENEXR%%lib/kritaplugins/kritaseexprgenerator.so
 lib/kritaplugins/kritaselectiontools.so
 lib/kritaplugins/kritaseparatechannels.so
 lib/kritaplugins/kritashearimage.so
@@ -353,6 +353,7 @@ share/icons/hicolor/scalable/apps/krita.svgz
 %%DATADIR%%/bundles/Krita_4_Default_Resources.bundle
 %%OPENEXR%%%%DATADIR%%/bundles/Krita_Artists_SeExpr_examples.bundle
 %%DATADIR%%/bundles/README
+%%DATADIR%%/bundles/RGBA_brushes.bundle
 %%DATADIR%%/defaultpresets/colorsmudge.kpp
 %%DATADIR%%/defaultpresets/complex.kpp
 %%DATADIR%%/defaultpresets/curvebrush.kpp
@@ -863,7 +864,6 @@ share/icons/hicolor/scalable/apps/krita.svgz
 %%DATADIR%%/qmlthemes/default/images/shadow.png
 %%DATADIR%%/qmlthemes/default/sizes.js
 %%DATADIR%%/qmlthemes/default/theme.qml
-%%OPENEXR%%%%DATADIR%%/seexpr_scripts/Disney_noisecolor2.kse
 %%DATADIR%%/shortcuts/krita_default.shortcuts
 %%DATADIR%%/shortcuts/paint_tool_sai_compatible.shortcuts
 %%DATADIR%%/shortcuts/photoshop_compatible.shortcuts
