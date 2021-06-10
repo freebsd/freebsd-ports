@@ -16,10 +16,11 @@ RUN_DEPENDS=	figlet:misc/figlet
 TEST_DEPENDS=	p5-Test-Differences>=0:devel/p5-Test-Differences \
 		p5-Test-Pod>=1:devel/p5-Test-Pod
 
+USES=		perl5 tar:tgz
+USE_PERL5=	configure
+
 NO_ARCH=	yes
 REINPLACE_ARGS=	-i ''
-USE_PERL5=	configure
-USES=		perl5 tar:tgz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/games/lib|${PREFIX}/share|' ${WRKSRC}/bin/*.pl ${WRKSRC}/lib/Text/FIGlet.pm ${WRKSRC}/lib/Text/FIGlet/*.pm
