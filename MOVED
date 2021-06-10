@@ -16375,3 +16375,4 @@ devel/py-oslo.service1|devel/py-oslo.service|2021-06-10|Remove obsoleted port. U
 devel/py-oslo.utils3|devel/py-oslo.utils|2021-06-10|Remove obsoleted port. Use devel/py-oslo.utils instead
 devel/py-oslo.versionedobjects1|devel/py-oslo.versionedobjects|2021-06-10|Remove obsoleted port. Use devel/py-oslo.versionedobjects instead
 devel/py-oslo.vmware2|devel/py-oslo.vmware|2021-06-10|Remove obsoleted port. Use devel/py-oslo.vmware instead
+devel/py-pycadf2|devel/py-pycadf|2021-06-10|Remove obsoleted port. Use devel/py-pycadf instead
