@@ -4745,7 +4745,6 @@
     SUBDIR += py-os-service-types
     SUBDIR += py-os-vif
     SUBDIR += py-os-win
-    SUBDIR += py-os-win4
     SUBDIR += py-osc-lib
     SUBDIR += py-osc-lib1
     SUBDIR += py-oslo.cache
