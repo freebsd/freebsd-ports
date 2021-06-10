@@ -1,5 +1,6 @@
 PORTNAME=	mecrisp-stellaris
 DISTVERSION=	2.5.9
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF/mecrisp
 
