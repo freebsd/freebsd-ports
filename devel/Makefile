@@ -4749,7 +4749,6 @@
     SUBDIR += py-oslo.cache
     SUBDIR += py-oslo.concurrency
     SUBDIR += py-oslo.config
-    SUBDIR += py-oslo.config7
     SUBDIR += py-oslo.context
     SUBDIR += py-oslo.context2
     SUBDIR += py-oslo.db
