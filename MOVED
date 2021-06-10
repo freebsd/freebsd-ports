@@ -16358,3 +16358,4 @@ devel/py-os-client-config1|devel/py-os-client-config|2021-06-10|Remove obsoleted
 devel/py-os-win4|devel/py-os-win|2021-06-10|Remove obsoleted port. Use devel/py-os-win instead
 devel/py-osc-lib1|devel/py-osc-lib|2021-06-10|Remove obsoleted port. Use devel/py-osc-lib instead
 devel/py-oslo.cache1|devel/py-oslo.cache|2021-06-10|Remove obsoleted port. Use devel/py-oslo.cache instead
+devel/py-oslo.concurrency3|devel/py-oslo.concurrency|2021-06-10|Remove obsoleted port. Use devel/py-oslo.concurrency instead
