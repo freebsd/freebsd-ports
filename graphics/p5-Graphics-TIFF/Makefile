@@ -1,7 +1,7 @@
 # created by: cmt@FreeBSD.org
 
 PORTNAME=	Graphics-TIFF
-PORTVERSION=	13
+PORTVERSION=	15
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
