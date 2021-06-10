@@ -13,6 +13,7 @@ COMMENT=	Updated Java timezone definitions
 LICENSE=	PD
 
 WRKSRC=		${WRKDIR}
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 JAVASHAREDIR=	${PREFIX}/share/java
