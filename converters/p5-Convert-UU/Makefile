@@ -14,4 +14,6 @@ COMMENT=	Perl5 module for uuencode and uudecode
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
