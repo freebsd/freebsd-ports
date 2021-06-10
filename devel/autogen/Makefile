@@ -17,9 +17,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 RUN_DEPENDS=	bash:shells/bash
 
-# bin/columns
-CONFLICTS_INSTALL=	columns
-
 USES=		gmake gnome libtool pathfix perl5 pkgconfig shebangfix tar:xz
 USE_GNOME=	libxml2
 USE_PERL5=	build
@@ -35,6 +32,9 @@ TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 INFO=		autogen
+
+# bin/columns
+CONFLICTS_INSTALL=	columns
 
 SHEBANG_FILES=	autoopts/tpl/*.pl
 
