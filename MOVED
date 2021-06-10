@@ -16350,3 +16350,4 @@ devel/py-futurist1|devel/py-futurist|2021-06-10|Remove obsoleted port. Use devel
 devel/py-google-crc32c0|devel/py-google-crc32c|2021-06-10|Remove obsoleted port. Use devel/py-google-crc32c instead
 devel/py-jaraco.context2|devel/py-jaraco.context|2021-06-10|Remove obsoleted port. Use devel/py-jaraco.context instead
 devel/py-jaraco.util13|devel/py-jaraco.util|2021-06-10|Remove obsoleted port. Use devel/py-jaraco.util instead
+devel/py-keystoneauth13|devel/py-keystoneauth1|2021-06-10|Remove obsoleted port. Use devel/py-keystoneauth1 instead
