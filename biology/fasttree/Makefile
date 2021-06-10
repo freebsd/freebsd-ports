@@ -16,6 +16,12 @@ BROKEN_armv7=		fails to compile: FastTree-2.1.10.c:305:10: 'omp.h' file not foun
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/FastTree
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USES=		compiler:gcc-c++11-lib
+.endif
+
 do-extract:
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
