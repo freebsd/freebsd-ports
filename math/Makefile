@@ -366,6 +366,7 @@
     SUBDIR += kalgebra
     SUBDIR += kbruch
     SUBDIR += kcalc
+    SUBDIR += kfr
     SUBDIR += kig
     SUBDIR += kktdirect
     SUBDIR += kmplot
