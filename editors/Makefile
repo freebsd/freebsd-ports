@@ -222,6 +222,7 @@
     SUBDIR += py-editorconfig
     SUBDIR += py-pynvim
     SUBDIR += quilter
+    SUBDIR += rehex
     SUBDIR += rubygem-neovim
     SUBDIR += scite
     SUBDIR += se

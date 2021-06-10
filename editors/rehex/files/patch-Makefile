@@ -1,0 +1,27 @@
+--- Makefile.orig	2021-05-03 12:57:27 UTC
++++ Makefile
+@@ -388,18 +388,20 @@ PLUGINS_INSTALL := \
+ 
+ .PHONY: install
+ install: $(EXE)
+-	install -D -m 0755 $(EXE) $(DESTDIR)$(bindir)/$(EXE)
++	$(BSD_INSTALL_PROGRAM) $(EXE) $(DESTDIR)$(bindir)/$(EXE)
+ 	
+ 	for s in 16 32 48 64 128 256 512; \
+ 	do \
+-		install -D -m 0644 res/icon$${s}.png $(DESTDIR)$(datarootdir)/icons/hicolor/$${s}x$${s}/apps/rehex.png; \
++		mkdir -p $(DESTDIR)$(datarootdir)/icons/hicolor/$${s}x$${s}/apps; \
++		$(BSD_INSTALL_DATA) res/icon$${s}.png $(DESTDIR)$(datarootdir)/icons/hicolor/$${s}x$${s}/apps/rehex.png; \
+ 	done
+ 	
+-	install -D -m 0644 res/rehex.desktop $(DESTDIR)$(datarootdir)/applications/rehex.desktop
++	$(BSD_INSTALL_DATA) res/rehex.desktop $(DESTDIR)$(datarootdir)/applications/rehex.desktop
+ 	
++	mkdir -p $(DESTDIR)$(libdir)/rehex/exe
+ 	for f in $(PLUGINS_INSTALL); \
+ 	do \
+-		install -D -m 0644 plugins/$${f} $(DESTDIR)$(libdir)/rehex/$${f}; \
++		$(BSD_INSTALL_DATA) plugins/$${f} $(DESTDIR)$(libdir)/rehex/$${f}; \
+ 	done
+ 
+ .PHONY: uninstall
