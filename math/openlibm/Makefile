@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH:Mpowerpc*}
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c11
