@@ -16354,3 +16354,4 @@ devel/py-keystoneauth13|devel/py-keystoneauth1|2021-06-10|Remove obsoleted port.
 devel/py-keystonemiddleware8|devel/py-keystonemiddleware|2021-06-10|Remove obsoleted port. Use devel/py-keystonemiddleware instead
 devel/py-openstacksdk043|devel/py-openstacksdk|2021-06-10|Remove obsoleted port. Use devel/py-openstacksdk instead
 devel/py-os-brick2|devel/py-os-brick|2021-06-10|Remove obsoleted port. Use devel/py-os-brick instead
+devel/py-os-client-config1|devel/py-os-client-config|2021-06-10|Remove obsoleted port. Use devel/py-os-client-config instead
