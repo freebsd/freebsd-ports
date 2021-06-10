@@ -16374,3 +16374,4 @@ devel/py-oslo.serialization2|devel/py-oslo.serialization|2021-06-10|Remove obsol
 devel/py-oslo.service1|devel/py-oslo.service|2021-06-10|Remove obsoleted port. Use devel/py-oslo.service instead
 devel/py-oslo.utils3|devel/py-oslo.utils|2021-06-10|Remove obsoleted port. Use devel/py-oslo.utils instead
 devel/py-oslo.versionedobjects1|devel/py-oslo.versionedobjects|2021-06-10|Remove obsoleted port. Use devel/py-oslo.versionedobjects instead
+devel/py-oslo.vmware2|devel/py-oslo.vmware|2021-06-10|Remove obsoleted port. Use devel/py-oslo.vmware instead
