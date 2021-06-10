@@ -4764,7 +4764,6 @@
     SUBDIR += py-oslo.service
     SUBDIR += py-oslo.upgradecheck
     SUBDIR += py-oslo.utils
-    SUBDIR += py-oslo.utils3
     SUBDIR += py-oslo.versionedobjects
     SUBDIR += py-oslo.versionedobjects1
     SUBDIR += py-oslo.vmware

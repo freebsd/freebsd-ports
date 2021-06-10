@@ -16372,3 +16372,4 @@ devel/py-oslo.reports1|devel/py-oslo.reports|2021-06-10|Remove obsoleted port. U
 devel/py-oslo.rootwrap5|devel/py-oslo.rootwrap|2021-06-10|Remove obsoleted port. Use devel/py-oslo.rootwrap instead
 devel/py-oslo.serialization2|devel/py-oslo.serialization|2021-06-10|Remove obsoleted port. Use devel/py-oslo.serialization instead
 devel/py-oslo.service1|devel/py-oslo.service|2021-06-10|Remove obsoleted port. Use devel/py-oslo.service instead
+devel/py-oslo.utils3|devel/py-oslo.utils|2021-06-10|Remove obsoleted port. Use devel/py-oslo.utils instead
