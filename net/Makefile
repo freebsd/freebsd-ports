@@ -1080,7 +1080,6 @@
     SUBDIR += py-python-bitcoinrpc
     SUBDIR += py-python-ceilometerclient
     SUBDIR += py-python-cinderclient
-    SUBDIR += py-python-cinderclient5
     SUBDIR += py-python-designateclient
     SUBDIR += py-python-glanceclient
     SUBDIR += py-python-glanceclient2
