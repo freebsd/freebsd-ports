@@ -1,10 +1,10 @@
 - one of the patches is a workaround for access to /proc/{pid}/fd : https://github.com/rstudio/rstudio/issues/8912
 
---- src/cpp/core/system/PosixSystem.cpp.orig	2020-09-17 18:16:48 UTC
+--- src/cpp/core/system/PosixSystem.cpp.orig	2021-05-24 22:22:25 UTC
 +++ src/cpp/core/system/PosixSystem.cpp
-@@ -40,20 +40,25 @@
+@@ -41,20 +41,25 @@
  
- #include <uuid/uuid.h>
+ #include <shared_core/system/PosixSystem.hpp>
  
 -#ifdef __APPLE__
 +#if !defined(__APPLE__) && !defined(__FreeBSD__)
@@ -30,7 +30,7 @@
  #include <boost/thread.hpp>
  #include <boost/format.hpp>
  #include <boost/lexical_cast.hpp>
-@@ -575,6 +580,7 @@ Error getOpenFds(std::vector<uint32_t>* pFds)
+@@ -560,6 +565,7 @@ Error getOpenFds(std::vector<uint32_t>* pFds)
  #ifndef __APPLE__
  Error getOpenFds(pid_t pid, std::vector<uint32_t>* pFds)
  {
@@ -38,7 +38,7 @@
     std::string pidStr = safe_convert::numberToString(pid);
     boost::format fmt("/proc/%1%/fd");
     FilePath filePath(boost::str(fmt % pidStr));
-@@ -601,6 +607,7 @@ Error getOpenFds(pid_t pid, std::vector<uint32_t>* pFd
+@@ -586,6 +592,7 @@ Error getOpenFds(pid_t pid, std::vector<uint32_t>* pFd
           pFds->push_back(fd.get());
        }
     }
@@ -46,7 +46,7 @@
  
     return Success();
  }
-@@ -922,7 +929,7 @@ Error executablePath(const char * argv0,
+@@ -911,7 +918,7 @@ Error executablePath(const char * argv0,
  
  #elif defined(HAVE_PROCSELF)
  
@@ -55,7 +55,7 @@
  
  #else
  
-@@ -1431,7 +1438,7 @@ Error osResourceLimit(ResourceLimit limit, int* pLimit
+@@ -1420,7 +1427,7 @@ Error osResourceLimit(ResourceLimit limit, int* pLimit
        case CpuLimit:
           *pLimit = RLIMIT_CPU;
           break;
@@ -64,7 +64,7 @@
        case NiceLimit:
           *pLimit = RLIMIT_NICE;
           break;
-@@ -1504,7 +1511,7 @@ Error systemInformation(SysInfo* pSysInfo)
+@@ -1493,7 +1500,7 @@ Error systemInformation(SysInfo* pSysInfo)
  {
     pSysInfo->cores = boost::thread::hardware_concurrency();
  
@@ -73,7 +73,7 @@
     struct sysinfo info;
     if (::sysinfo(&info) == -1)
        return systemError(errno, ERROR_LOCATION);
-@@ -1944,7 +1951,7 @@ Error restrictCoreDumps()
+@@ -1897,7 +1904,7 @@ Error restrictCoreDumps()
        return error;
  
     // no ptrace core dumps permitted
@@ -82,16 +82,7 @@
     int res = ::prctl(PR_SET_DUMPABLE, 0);
     if (res == -1)
        return systemError(errno, ERROR_LOCATION);
-@@ -1955,7 +1962,7 @@ Error restrictCoreDumps()
- 
- Error enableCoreDumps()
- {
--#ifndef __APPLE__
-+#if !defined(__APPLE__) && !defined(__FreeBSD__)
-    int res = ::prctl(PR_SET_DUMPABLE, 1);
-    if (res == -1)
-       return systemError(errno, ERROR_LOCATION);
-@@ -1981,7 +1988,7 @@ void printCoreDumpable(const std::string& context)
+@@ -1928,7 +1935,7 @@ void printCoreDumpable(const std::string& context)
     ostr << "  hard limit: " << rLimitHard << std::endl;
  
     // ptrace
