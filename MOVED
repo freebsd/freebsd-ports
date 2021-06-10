@@ -16356,3 +16356,4 @@ devel/py-openstacksdk043|devel/py-openstacksdk|2021-06-10|Remove obsoleted port.
 devel/py-os-brick2|devel/py-os-brick|2021-06-10|Remove obsoleted port. Use devel/py-os-brick instead
 devel/py-os-client-config1|devel/py-os-client-config|2021-06-10|Remove obsoleted port. Use devel/py-os-client-config instead
 devel/py-os-win4|devel/py-os-win|2021-06-10|Remove obsoleted port. Use devel/py-os-win instead
+devel/py-osc-lib1|devel/py-osc-lib|2021-06-10|Remove obsoleted port. Use devel/py-osc-lib instead
