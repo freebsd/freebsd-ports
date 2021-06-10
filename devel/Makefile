@@ -4759,7 +4759,6 @@
     SUBDIR += py-oslo.policy
     SUBDIR += py-oslo.privsep
     SUBDIR += py-oslo.reports
-    SUBDIR += py-oslo.reports1
     SUBDIR += py-oslo.rootwrap
     SUBDIR += py-oslo.rootwrap5
     SUBDIR += py-oslo.serialization
