@@ -6485,6 +6485,7 @@
     SUBDIR += rubygem-power_assert
     SUBDIR += rubygem-powerbar
     SUBDIR += rubygem-powerpack
+    SUBDIR += rubygem-pp
     SUBDIR += rubygem-pqueue
     SUBDIR += rubygem-prettyprint
     SUBDIR += rubygem-progressbar
