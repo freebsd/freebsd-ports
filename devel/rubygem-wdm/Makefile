@@ -10,7 +10,9 @@ COMMENT=	Library for monitoring directories for changes
 
 LICENSE=	MIT
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
