@@ -1,4 +1,0 @@
-@dir %%ETCDIR%%
-@owner root
-@dir %%ETCDIR%%/rootwrap.d
-@sample %%ETCDIR%%/rootwrap.d/os-brick.filters.sample
