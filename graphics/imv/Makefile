@@ -1,6 +1,7 @@
 PORTNAME=	imv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -18,7 +19,7 @@ USES=		compiler:c11 desktop-file-utils gettext-runtime gl gnome \
 		meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	eXeC64
-USE_GL=		gl
+USE_GL=		egl
 USE_GNOME=	cairo glib20 pango
 
 PLIST_FILES=	bin/imv \
@@ -42,7 +43,7 @@ WIN_DESC=	Windowing system
 
 ALL_LIB_DEPENDS+=	libwayland-client.so:graphics/wayland
 ALL_USES=	xorg
-ALL_USE=	gl=egl,glu xorg=x11,xcb
+ALL_USE=	gl=glu xorg=x11,xcb
 ALL_MESON_ON=	-Dwindows=all
 ALL_PLIST_FILES=	bin/imv-wayland \
 			bin/imv-x11
@@ -73,8 +74,6 @@ TIFF_MESON_ENABLED=	libtiff
 
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 			libwayland-egl.so:graphics/wayland
-
-WAYLAND_USE=		gl=egl
 WAYLAND_MESON_ON=	-Dwindows=wayland
 
 X11_USES=	xorg
