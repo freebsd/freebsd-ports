@@ -76,6 +76,69 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="20b3ab21-c9df-11eb-8558-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>91.0.4472.101</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/06/stable-channel-update-for-desktop.html">
+	  <p>This release contains 14 security fixes, including:</p>
+	  <ul>
+	    <li>[1212618] Critical CVE-2021-30544: Use after free in BFCache.
+	      Reported by Rong Jian and Guang Gong of 360 Alpha Lab on
+	      2021-05-24</li>
+	    <li>[1201031] High CVE-2021-30545: Use after free in Extensions.
+	      Reported by kkwon with everpall and kkomdal on 2021-04-21</li>
+	    <li>[1206911] High CVE-2021-30546: Use after free in Autofill.
+	      Reported by Abdulrahman Alqabandi, Microsoft Browser Vulnerability
+	      Research on 2021-05-08</li>
+	    <li>[1210414] High CVE-2021-30547: Out of bounds write in ANGLE.
+	      Reported by Seong-Hwan Park (SeHwa) of SecunologyLab on
+	      2021-05-18</li>
+	    <li>[1210487] High CVE-2021-30548: Use after free in Loader.
+	      Reported by Yangkang(@dnpushme) &amp; Wanglu of Qihoo360 Qex Team
+	      on 2021-05-18</li>
+	    <li>[1212498] High CVE-2021-30549: Use after free in Spell check.
+	      Reported by David Erceg on 2021-05-23</li>
+	    <li>[1212500] High CVE-2021-30550: Use after free in Accessibility.
+	      Reported by David Erceg on 2021-05-23</li>
+	    <li>[1216437] High CVE-2021-30551: Type Confusion in V8. Reported by
+	      Sergei Glazunov of Google Project Zero on 2021-06-04</li>
+	    <li>[1200679] Medium CVE-2021-30552: Use after free in Extensions.
+	      Reported by David Erceg on 2021-04-20</li>
+	    <li>[1209769] Medium CVE-2021-30553: Use after free in Network
+	      service. Reported by Anonymous on 2021-05-17</li>
+	  </ul>
+	  <p>Google is aware that an exploit for CVE-2021-30551 exists in the
+	    wild.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-30544</cvename>
+      <cvename>CVE-2021-30545</cvename>
+      <cvename>CVE-2021-30546</cvename>
+      <cvename>CVE-2021-30547</cvename>
+      <cvename>CVE-2021-30548</cvename>
+      <cvename>CVE-2021-30549</cvename>
+      <cvename>CVE-2021-30550</cvename>
+      <cvename>CVE-2021-30551</cvename>
+      <cvename>CVE-2021-30552</cvename>
+      <cvename>CVE-2021-30553</cvename>
+      <url>https://chromereleases.googleblog.com/2021/06/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2021-06-10</discovery>
+      <entry>2021-06-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc1bcbca-c88b-11eb-9120-f02f74d0e4bd">
     <topic>dino -- Path traversal in Dino file transfers</topic>
     <affects>
