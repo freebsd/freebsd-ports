@@ -16364,3 +16364,4 @@ devel/py-oslo.context2|devel/py-oslo.context|2021-06-10|Remove obsoleted port. U
 devel/py-oslo.db6|devel/py-oslo.db|2021-06-10|Remove obsoleted port. Use devel/py-oslo.db instead
 devel/py-oslo.i18n3|devel/py-oslo.i18n|2021-06-10|Remove obsoleted port. Use devel/py-oslo.i18n instead
 devel/py-oslo.log3|devel/py-oslo.log|2021-06-10|Remove obsoleted port. Use devel/py-oslo.log instead
+devel/py-oslo.messaging10|devel/py-oslo.messaging|2021-06-10|Remove obsoleted port. Use devel/py-oslo.messaging instead
