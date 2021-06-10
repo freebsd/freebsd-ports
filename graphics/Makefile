@@ -421,6 +421,7 @@
     SUBDIR += lensfun
     SUBDIR += lepton
     SUBDIR += leptonica
+    SUBDIR += lerc
     SUBDIR += lfview
     SUBDIR += lib3ds
     SUBDIR += libGLU
