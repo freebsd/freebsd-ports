@@ -13,19 +13,19 @@ COMMENT=	GNU M4
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	LIBSIGSEGV EXAMPLES
-LIBSIGSEGV_DESC=Use alternative page fault handler (GNU libsigsegv)
+USES=		makeinfo tar:xz
 
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
 GNU_CONFIGURE=	yes
-USES=		makeinfo tar:xz
 
 EXAMPLESDIR=	${PREFIX}/share/examples/gm4
 INFO=		m4
 
-LIBSIGSEGV_CONFIGURE_OFF=	--without-libsigsegv-prefix
-LIBSIGSEGV_CONFIGURE_ON=	--with-libsigsegv-prefix=${LOCALBASE}
+OPTIONS_DEFINE=	LIBSIGSEGV EXAMPLES
+LIBSIGSEGV_DESC=Use alternative page fault handler (GNU libsigsegv)
+
+LIBSIGSEGV_CONFIGURE_WITH=	libsigsegv-prefix=${LOCALBASE}
 LIBSIGSEGV_LIB_DEPENDS=		libsigsegv.so:devel/libsigsegv
 
 post-patch:
