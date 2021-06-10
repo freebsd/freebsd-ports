@@ -16383,3 +16383,4 @@ devel/py-tooz1|devel/py-tooz|2021-06-10|Remove obsoleted port. Use devel/py-tooz
 devel/py-twine1|devel/py-twine|2021-06-10|Remove obsoleted port. Use devel/py-twine instead
 net/py-python-cinderclient5|net/py-python-cinderclient|2021-06-10|Remove obsoleted port. Use net/py-python-cinderclient instead
 net/py-python-glanceclient2|net/py-python-glanceclient|2021-06-10|Remove obsoleted port. Use net/py-python-glanceclient instead
+net/py-python-keystoneclient3|net/py-python-keystoneclient|2021-06-10|Remove obsoleted port. Use net/py-python-keystoneclient instead
