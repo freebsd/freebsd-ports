@@ -42,6 +42,7 @@ USE_TEX=	yes
 
 INFO=		info-stnd texinfo
 
+# Use the date on https://ftp.gnu.org/gnu/texinfo/
 HTMLXREF_CNF_RELDATE=	20201020
 TEXI2DVI_RELDATE=	20210216
 TEXINFO_TEX_RELDATE=	20210223
