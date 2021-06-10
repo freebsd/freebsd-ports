@@ -76,6 +76,32 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e4cd0b38-c9f9-11eb-87e1-08002750c711">
+    <topic>cacti -- SQL Injection was possible due to incorrect validation order</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><ge>1.2</ge><lt>1.2.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cati team reports:</p>
+	<blockquote cite="https://github.com/Cacti/cacti/issues/4022">
+	  <p>Due to a lack of validation, data_debug.php can be the source of a SQL injection.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>2020-35701</cvename>
+      <url>https://github.com/Cacti/cacti/issues/4022</url>
+    </references>
+    <dates>
+      <discovery>2020-12-24</discovery>
+      <entry>2021-06-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="20b3ab21-c9df-11eb-8558-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
