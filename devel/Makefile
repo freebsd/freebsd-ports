@@ -4756,7 +4756,6 @@
     SUBDIR += py-oslo.log
     SUBDIR += py-oslo.messaging
     SUBDIR += py-oslo.middleware
-    SUBDIR += py-oslo.middleware3
     SUBDIR += py-oslo.policy
     SUBDIR += py-oslo.policy2
     SUBDIR += py-oslo.privsep
