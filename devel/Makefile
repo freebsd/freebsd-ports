@@ -6560,6 +6560,7 @@
     SUBDIR += rubygem-rgen
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rice
+    SUBDIR += rubygem-rinda
     SUBDIR += rubygem-rodzilla
     SUBDIR += rubygem-rotp
     SUBDIR += rubygem-rr
