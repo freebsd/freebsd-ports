@@ -5159,7 +5159,6 @@
     SUBDIR += py-tasklib
     SUBDIR += py-tblib
     SUBDIR += py-tempora
-    SUBDIR += py-tempora1
     SUBDIR += py-tenacity
     SUBDIR += py-termcolor
     SUBDIR += py-termstyle
