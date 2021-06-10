@@ -162,10 +162,6 @@ ZSTD_CONFIGURE_WITH=	zstd
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^#GDAL_SLIB_SONAME/ s|^#||' ${WRKSRC}/GDALmake.opt.in
-	@${REINPLACE_CMD} -e 's|$$(INST_LIB)/pkgconfig|${PREFIX}/libdata/pkgconfig|; s| LICENSE.TXT||' ${WRKSRC}/GNUmakefile
-	@${REINPLACE_CMD} -e 's|-lminizip|-lkmlminizip|' -e 's|IlmImf|OpenEXR|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|getCString()|c_str()|' ${WRKSRC}/frmts/pdf/pdfdataset.cpp ${WRKSRC}/frmts/pdf/pdfobject.cpp
 # Clean up bundled libraries
 	@${RM} -r ${WRKSRC}/alg/internal_libqhull/
 	@${RM} -r ${WRKSRC}/frmts/gif/giflib/
