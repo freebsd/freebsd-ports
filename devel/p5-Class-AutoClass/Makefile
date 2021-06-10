@@ -20,8 +20,9 @@ TEST_DEPENDS=	p5-IO-Stringy>=2.1:devel/p5-IO-Stringy \
 		p5-Test-Deep>=0.110:devel/p5-Test-Deep \
 		p5-Test-Pod>=1.48:devel/p5-Test-Pod
 
-NO_ARCH=	yes
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
