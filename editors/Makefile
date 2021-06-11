@@ -187,6 +187,7 @@
     SUBDIR += libreoffice6
     SUBDIR += linux-sublime
     SUBDIR += linux-sublime3
+    SUBDIR += linux-wps-office
     SUBDIR += madedit
     SUBDIR += marker
     SUBDIR += mg
