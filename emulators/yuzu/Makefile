@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20210609
+PORTVERSION=	s20210611
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -43,11 +43,11 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	86d832ab9
+GH_TAGNAME=	58180f9fa
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.145:Vulkan_Headers/externals/Vulkan-Headers \
-		MerryMage:dynarmic:r5-68-g828959ca:dynarmic/externals/dynarmic \
+		MerryMage:dynarmic:r5-69-g0c12614d:dynarmic/externals/dynarmic \
 		ReinUsesLisp:sirit:eefca56:sirit/externals/sirit \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
