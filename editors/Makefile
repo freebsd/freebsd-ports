@@ -236,6 +236,7 @@
     SUBDIR += sly-quicklisp
     SUBDIR += ssed
     SUBDIR += sted
+    SUBDIR += sublime-text4
     SUBDIR += tamago
     SUBDIR += tea
     SUBDIR += teco
