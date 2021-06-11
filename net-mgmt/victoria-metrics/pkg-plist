@@ -5,7 +5,6 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/CaseStudies.md
 %%PORTDOCS%%%%DOCSDIR%%/Cluster-VictoriaMetrics.md
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.md
-%%PORTDOCS%%%%DOCSDIR%%/Home.md
 %%PORTDOCS%%%%DOCSDIR%%/MetricsQL.md
 %%PORTDOCS%%%%DOCSDIR%%/PerTenantStatistic.md
 %%PORTDOCS%%%%DOCSDIR%%/Quick-Start.md
