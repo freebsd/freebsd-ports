@@ -1,7 +1,8 @@
 # Created by: Bruce A. Mah <bmah@FreeBSD.org>
 
 PORTNAME=	iperf
-PORTVERSION=	3.10.1
+DISTVERSION=	3.10.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://downloads.es.net/pub/iperf/
 PKGNAMESUFFIX=	3
@@ -12,8 +13,8 @@ COMMENT=	Improved tool to measure TCP and UDP bandwidth
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-GNU_CONFIGURE=	yes
 USES=		libtool ssl
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	README.md RELNOTES.md
@@ -21,7 +22,10 @@ PORTDOCS=	README.md RELNOTES.md
 # Set ${DOCSDIR} to avoid conflict with benchmarks/iperf ${DOCSDIR}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS STATIC
+OPTIONS_SUB=	yes
+
+STATIC_CONFIGURE_ENABLE=	static
 
 post-patch:
 # Don't build stuff that we're not going to install.  Among other
