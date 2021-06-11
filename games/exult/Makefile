@@ -2,8 +2,7 @@
 
 PORTNAME=	exult
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.0.20210429
-PORTREVISION=	1
+DISTVERSION=	1.7.0.20210603
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -44,8 +43,8 @@ STUDIO_DESC=		Install Exult Studio
 ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=		alsa
 
-DEBUG_CONFIGURE_OFF=		--with-debug=no
 DEBUG_CONFIGURE_ON=		--with-debug=full --with-optimization=none
+DEBUG_CONFIGURE_OFF=		--with-debug=no
 
 FLUIDSYNTH_LIB_DEPENDS=		libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_CONFIGURE_ENABLE=	fluidsynth
@@ -53,9 +52,9 @@ FLUIDSYNTH_CONFIGURE_ENABLE=	fluidsynth
 GIMP_LIB_DEPENDS=		libgimp-2.0.so:graphics/gimp-app
 GIMP_CONFIGURE_ENABLE=		gimp-plugin
 
-STUDIO_CONFIGURE_ENABLE=	exult-studio exult-studio-support
 STUDIO_USES=			gnome
 STUDIO_USE=			gnome=libglade2
+STUDIO_CONFIGURE_ENABLE=	exult-studio exult-studio-support
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
