@@ -1,0 +1,13 @@
+- see https://github.com/schrodinger/coordgenlibs/issues/100
+
+--- CMakeLists.txt.orig	2021-06-11 05:40:44 UTC
++++ CMakeLists.txt
+@@ -38,7 +38,7 @@ if(COORDGEN_RIGOROUS_BUILD)
+ if(MSVC)
+     add_definitions(/WX)
+ else(MSVC)
+-    add_definitions(-Wall -Wextra -Werror)
++    add_definitions(-Wall -Wextra)
+ endif(MSVC)
+ endif(COORDGEN_RIGOROUS_BUILD)
+ 
