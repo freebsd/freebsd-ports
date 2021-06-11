@@ -55,7 +55,7 @@
 #
 #
 # The following variables can be read by ports and must not be modified
-# 
+#
 #  APACHE_VERSION		The major-minor release version of the chosen
 #						Apache server, e.g. 2.2 or 2.4
 #
@@ -104,7 +104,7 @@ _APACHE_ARGS:=		${_APACHE_ARGS:Nrun}
 _APACHE_ARGS=		${APACHE_DEFAULT}
 .	endif
 # _APACHE_ARGS must now contain a version(-range)
-.	if !empty(_APACHE_ARGS:C/^2\.[0-9]//:S/^-//:C/^2\.[0-9]//:C/\+$//) 
+.	if !empty(_APACHE_ARGS:C/^2\.[0-9]//:S/^-//:C/^2\.[0-9]//:C/\+$//)
 IGNORE= ${_ERROR_MSG} Illegal use of USES= ${USES:Mapache*}
 # Catch USES= apache:[min]-[max]+
 .	elif ${apache_ARGS:C/[.a-z0-9]//g} == "-+"
@@ -372,7 +372,7 @@ show-modules:
 .for module in ${AVAILABLE_MODULES}
 	@${PRINTF} "%-20s : " ${module}
 .	if ${APACHE_MODULES:M${module}}
-		@${ECHO} -n "enabled "
+		@${ECHO_CMD} -n "enabled "
 .		if !empty(WITH_STATIC_MODULES) && ${WITH_STATIC_MODULES:M${module}}
 			@${ECHO_CMD} " (static)"
 .		else
@@ -404,11 +404,11 @@ _USES_build+=	490:ap-gen-plist
 ap-gen-plist:
 .if defined(AP_GENPLIST)
 .	if !exists(${PLIST})
-	@${ECHO} "===>  Generating apache plist"
-	@${ECHO} "%%APACHEMODDIR%%/%%AP_MODULE%%" >> ${PLIST}
-	@${ECHO} "@postexec %D/sbin/apxs -e ${AP_MOD_EN} -n %%AP_NAME%% %D/%F" >> ${PLIST}
-	@${ECHO} "@postunexec ${SED} -i '' -E '/LoadModule[[:blank:]]+%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf" >> ${PLIST}
-	@${ECHO} "@postunexec echo \"Don't forget to remove all ${MODULENAME}-related directives in your httpd.conf\"">> ${PLIST}
+	@${ECHO_MSG} "===>  Generating apache plist"
+	@${ECHO_CMD} "%%APACHEMODDIR%%/%%AP_MODULE%%" >> ${PLIST}
+	@${ECHO_CMD} "@postexec %D/sbin/apxs -e ${AP_MOD_EN} -n %%AP_NAME%% %D/%F" >> ${PLIST}
+	@${ECHO_CMD} "@postunexec ${SED} -i '' -E '/LoadModule[[:blank:]]+%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf" >> ${PLIST}
+	@${ECHO_CMD} "@postunexec echo \"Don't forget to remove all ${MODULENAME}-related directives in your httpd.conf\"" >> ${PLIST}
 .	endif
 .endif
 .endif

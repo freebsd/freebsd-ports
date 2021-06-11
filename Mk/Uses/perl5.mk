@@ -305,7 +305,7 @@ fix-perl-things:
 	@(if [ -d ${STAGEDIR}${PACKLIST_DIR} ] ; then \
 		${FIND} ${STAGEDIR}${PACKLIST_DIR} -name .packlist | while read f ; do \
 			${SED} -i '' 's|^${STAGEDIR}||' "$$f"; \
-			${ECHO} $$f | ${SED} -e 's|^${STAGEDIR}||' >> ${TMPPLIST}; \
+			${ECHO_CMD} $$f | ${SED} -e 's|^${STAGEDIR}||' >> ${TMPPLIST}; \
 		done \
 	fi) || :
 
