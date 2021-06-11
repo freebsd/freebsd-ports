@@ -16386,3 +16386,4 @@ net/py-python-glanceclient2|net/py-python-glanceclient|2021-06-10|Remove obsolet
 net/py-python-keystoneclient3|net/py-python-keystoneclient|2021-06-10|Remove obsoleted port. Use net/py-python-keystoneclient instead
 net/py-python-novaclient16|net/py-python-novaclient|2021-06-10|Remove obsoleted port. Use net/py-python-novaclient instead
 print/py-pycups1|print/py-pycups|2021-06-10|Remove obsoleted port. Use print/py-pycups instead
+lang/gcc8-devel|lang/gcc8|2021-06-11|GCC 8 reached end of life, use the final release (or a new major version)
