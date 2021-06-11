@@ -76,6 +76,41 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c9e2a1a7-caa1-11eb-904f-14dae9d5a9d2">
+    <topic>dragonfly -- argument injection</topic>
+    <affects>
+      <package>
+	<name>rubygem-dragonfly</name>
+	<range><lt>2.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2021-33564">
+	  <p>An argument injection vulnerability in the Dragonfly
+	  gem before 1.4.0 for Ruby allows remote attackers to read
+	  and write to arbitrary files via a crafted URL when the
+	  verify_url option is disabled. This may lead to code
+	  execution. The problem occurs because the generate and
+	  process features mishandle use of the ImageMagick convert
+	  utility.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-33564</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2021-33564</url>
+      <url>https://github.com/mlr0p/CVE-2021-33564</url>
+      <url>https://zxsecurity.co.nz/research/argunment-injection-ruby-dragonfly/</url>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33564</url>
+    </references>
+    <dates>
+      <discovery>2021-05-24</discovery>
+      <entry>2021-06-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e4cd0b38-c9f9-11eb-87e1-08002750c711">
     <topic>cacti -- SQL Injection was possible due to incorrect validation order</topic>
     <affects>
