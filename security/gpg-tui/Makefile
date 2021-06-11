@@ -1,6 +1,6 @@
 PORTNAME=	gpg-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
@@ -101,6 +101,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
+		shellexpand-2.1.0 \
 		signal-hook-0.1.16 \
 		signal-hook-registry-1.2.2 \
 		smallvec-1.5.1 \
