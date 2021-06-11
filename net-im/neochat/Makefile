@@ -1,5 +1,6 @@
 PORTNAME=	neochat
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 
@@ -22,7 +23,7 @@ USE_QT=		core dbus declarative graphicaleffects gui imageformats \
 		multimedia network quickcontrols quickcontrols2 \
 		svg widgets xml \
 		buildtools_build linguist_build qmake_build
-USE_KDE=	config coreaddons dbusaddons i18n kirigami2 notifications \
+USE_KDE=	config coreaddons dbusaddons i18n itemmodels kirigami2 notifications \
 		qqc2-desktop-style \
 		ecm_build
 
