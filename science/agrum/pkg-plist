@@ -908,6 +908,7 @@ lib/libagrum.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/classifier.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/cn2graph.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/dynamicBN.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/explain.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/id2graph.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/ipython.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/mn2graph.py
