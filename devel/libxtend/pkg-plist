@@ -24,6 +24,7 @@ man/man3/strisreal.3.gz
 man/man3/strlbasecpy.3.gz
 man/man3/strptrcmp.3.gz
 man/man3/strshellcpy.3.gz
+man/man3/strsqueeze.3.gz
 man/man3/va_usage.3.gz
 man/man3/valid_extension.3.gz
 man/man3/viscpy.3.gz
