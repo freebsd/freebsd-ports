@@ -1,5 +1,5 @@
 PORTNAME=	synergy
-DISTVERSION=	1.13.1.41
+DISTVERSION=	1.14.0.4
 DISTVERSIONSUFFIX=	-stable
 PORTEPOCH=	3
 CATEGORIES=	sysutils
@@ -22,7 +22,7 @@ GH_ACCOUNT=	symless
 GH_PROJECT=	synergy-core
 GH_TUPLE=	google:googletest:18f8200e3079b0e54fa00cb7ac55d4c39dcf6da6:google_googletest/ext/googletest
 
-CMAKE_ARGS=	-DSYNERGY_REVISION:STRING=${PORTVERSION:S/.//g}00 # it expects a 8-digit hash
+CMAKE_ARGS=	-DSYNERGY_REVISION:STRING=${PORTVERSION:S/.//g}000 # it expects a 8-digit hash
 CMAKE_OFF=	BUILD_TESTS
 
 PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
