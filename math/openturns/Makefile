@@ -27,7 +27,7 @@ LIB_DEPENDS=	libbonmin.so:math/bonmin \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
 		libhdf5_cpp.so:science/hdf5 \
-		libhmat-oss.so:math/hmat-oss \
+		libhmat.so:math/hmat-oss \
 		libipopt.so:math/ipopt \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
