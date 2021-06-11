@@ -1,9 +1,7 @@
 PORTNAME=	zig
-DISTVERSION=	0.7.1
-PORTREVISION=	2
+DISTVERSION=	0.8.0
 CATEGORIES=	lang
-MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/ \
-		https://ziglang.org/builds/
+MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Language designed for robustness, optimality, and maintainability
@@ -11,18 +9,50 @@ COMMENT=	Language designed for robustness, optimality, and maintainability
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	static_assert failed "static_assert(sizeof(ZigClangAPValue) == sizeof(clang::APValue), "")"
 IGNORE_FreeBSD_11=	expects getrandom(2) which is unavailable on FreeBSD < 12.0
+ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	not yet supported
 
-_LLVM_VER=	11
 BUILD_DEPENDS=	llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
 
-USES=		cmake compiler:c++11-lang tar:xz
+USES=		cmake compiler:c++11-lang localbase:ldflags tar:xz
 
 OPTIONS_DEFINE=		STATIC
 OPTIONS_DEFAULT=	STATIC
 
+STATIC_DESC=	sets ZIG_STATIC to avoid 800MiB LLVM dependencies
+
 STATIC_RUN_DEPENDS_OFF=	llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
 STATIC_CMAKE_BOOL=	CMAKE_SKIP_INSTALL_RPATH ZIG_STATIC
+STATIC_LDFLAGS=		-lz -llzma -lm -lxml2 -lmd
+
+_LLVM_VER=	12
+_ZIG_BIN=	${STAGEDIR}${PREFIX}/bin/zig
+
+post-configure-STATIC-on:
+	@${REINPLACE_CMD} 's/-Wl,-Bdynamic//' ${BUILD_WRKSRC}/build.ninja
+
+post-build:
+	# Produce the experimental std lib documentation.
+	${MKDIR}  ${WRKDIR}/cache ${WRKDIR}/doc
+	${WRKDIR}/.build/zig test ${WRKSRC}/lib/std/std.zig \
+		--cache-dir ${WRKDIR}/cache \
+		--global-cache-dir ${WRKDIR}/cache \
+		--override-lib-dir ${WRKSRC}/lib \
+		-femit-docs=${WRKDIR}/doc \
+		-fno-emit-bin
+	${RM} ${WRKSRC}/lib/zig/std/zig-cache
+
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/std
+	# langref cannot be generated until after install target has run
+	(cd ${WRKSRC} && ${_ZIG_BIN} run \
+		./doc/docgen.zig -- ${_ZIG_BIN} \
+		./doc/langref.html.in ${STAGEDIR}${DOCSDIR}/langref.html \
+		&& ${RM} ${STAGEDIR}/lib/zig/std/zig-cache)
+	${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||' ${STAGEDIR}${DOCSDIR}/langref.html
+.for f in data.js main.js index.html
+	${INSTALL_MAN} ${WRKDIR}/doc/${f} ${STAGEDIR}${DOCSDIR}/std/
+.endfor
 
 .include <bsd.port.mk>
