@@ -1,5 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	ad2vcf
 DISTVERSION=	0.1.3
 CATEGORIES=	biology
