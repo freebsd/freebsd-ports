@@ -1,5 +1,3 @@
-# Created by: J. Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	libxtend
 DISTVERSION=	0.1.2-25
 DISTVERSIONSUFFIX=	-ge629d47
