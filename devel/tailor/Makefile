@@ -1,9 +1,8 @@
 # Created by: Rui Lopes <rgl ruilopes com>
 
 PORTNAME=	tailor
-PORTVERSION=	0.9.36
+DISTVERSION=	0.9.37
 CATEGORIES=	devel python
-MASTER_SITES=	https://BSDforge.com/projects/source/devel/tailor/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Migrates changesets between version control systems
@@ -15,16 +14,22 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 RUN_DEPENDS=	${LOCALBASE}/bin/rsync:net/rsync \
 		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 
-USES=		python:3.7+ tar:txz
+USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
+USE_GITLAB=	yes
+GL_ACCOUNT=	ports1
+GL_PROJECT=	tailor
+GL_COMMIT=	06d9068d84a4e78f30579fbdc46ed22ec9d953c7
+
 OPTIONS_DEFINE=	DOCS
 
-PORTDOCS=	README.*
+PORTDOCS=	README README.* DOC.*
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/DOC* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
