@@ -1,9 +1,11 @@
 bin/ristretto
 share/applications/ristretto.desktop
-share/icons/hicolor/128x128/apps/ristretto.png
-share/icons/hicolor/16x16/apps/ristretto.png
-share/icons/hicolor/48x48/apps/ristretto.png
-share/icons/hicolor/scalable/apps/ristretto.svg
+share/icons/hicolor/128x128/apps/org.xfce.ristretto.png
+share/icons/hicolor/16x16/apps/org.xfce.ristretto.png
+share/icons/hicolor/24x24/apps/org.xfce.ristretto.png
+share/icons/hicolor/32x32/apps/org.xfce.ristretto.png
+share/icons/hicolor/48x48/apps/org.xfce.ristretto.png
+share/icons/hicolor/scalable/apps/org.xfce.ristretto.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/be/LC_MESSAGES/ristretto.mo
@@ -16,6 +18,7 @@ share/icons/hicolor/scalable/apps/ristretto.svg
 %%NLS%%share/locale/en_AU/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/es/LC_MESSAGES/ristretto.mo
+%%NLS%%share/locale/et/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ristretto.mo
@@ -24,6 +27,7 @@ share/icons/hicolor/scalable/apps/ristretto.svg
 %%NLS%%share/locale/hr/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/hy_AM/LC_MESSAGES/ristretto.mo
+%%NLS%%share/locale/hye/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/id/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/ie/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/is/LC_MESSAGES/ristretto.mo
