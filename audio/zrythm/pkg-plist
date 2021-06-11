@@ -2,7 +2,7 @@ bin/zrythm
 bin/zrythm_gdb
 bin/zrythm_launch
 bin/zrythm_valgrind
-share/applications/zrythm.desktop
+share/applications/org.zrythm.Zrythm.desktop
 share/fonts/zrythm/DSEG14-Classic-MINI/DSEG-LICENSE.txt
 share/fonts/zrythm/DSEG14-Classic-MINI/DSEG14ClassicMini-Bold.ttf
 share/fonts/zrythm/DSEG14-Classic-MINI/DSEG14ClassicMini-Bold.woff
