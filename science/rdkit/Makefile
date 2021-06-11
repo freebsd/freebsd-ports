@@ -1,8 +1,10 @@
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	2020_09_5
-PORTREVISION=	1
+DISTVERSION=	2021_03_3
 CATEGORIES=	science
+MASTER_SITES=	https://fonts.google.com/download?family=Comic%20Neue&dummy=/:font
+DISTFILES=	Comic_Neue.zip:font
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of cheminformatics and machine-learning software
@@ -66,6 +68,7 @@ PLIST_SUB+=	LITTLE_ENDIAN="@comment "
 post-extract:
 	@${MKDIR} ${WRKSRC}/External/rapidjson-1.1.0
 	@cd ${WRKSRC}/External/rapidjson-1.1.0 && ${LN} -s ${LOCALBASE}/include/rapidjson include
+	@cd ${WRKSRC}/Data/Fonts && unzip ${DISTDIR}/${DIST_SUBDIR}/Comic_Neue.zip
 
 post-stage: # https://github.com/rdkit/rdkit/issues/2094
 	#@${MKDIR} ${STAGEDIR}${PREFIX}/lib/cmake
