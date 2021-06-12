@@ -8,6 +8,9 @@ COMMENT=	Spherical Geometry Operators Using the S2 Geometry Library
 
 LICENSE=	APACHE20
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	is currently 64-bit only
+
 CRAN_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp \
 		R-cran-wk>0:math/R-cran-wk
 BUILD_DEPENDS=	${CRAN_DEPENDS}
