@@ -1,9 +1,9 @@
 Why is this patch needed?
 
---- UI/window-basic-preview.cpp.orig	2019-09-17 21:29:34 UTC
+--- UI/window-basic-preview.cpp.orig	2021-06-11 14:20:50 UTC
 +++ UI/window-basic-preview.cpp
-@@ -572,8 +572,8 @@ void OBSBasicPreview::mousePressEvent(QMouseEvent *eve
- 	GetStretchHandleData(startPos);
+@@ -577,8 +577,8 @@ void OBSBasicPreview::mousePressEvent(QMouseEvent *eve
+ 	GetStretchHandleData(startPos, false);
  
  	vec2_divf(&startPos, &startPos, main->previewScale / pixelRatio);
 -	startPos.x = std::round(startPos.x);
@@ -13,7 +13,7 @@ Why is this patch needed?
  
  	mouseOverItems = SelectedAtPos(startPos);
  	vec2_zero(&lastMoveOffset);
-@@ -1159,8 +1159,8 @@ void OBSBasicPreview::ClampAspect(vec3 &tl, vec3 &br, 
+@@ -1228,8 +1228,8 @@ void OBSBasicPreview::ClampAspect(vec3 &tl, vec3 &br, 
  			size.y = size.x / baseAspect * -1.0f;
  	}
  
@@ -24,7 +24,7 @@ Why is this patch needed?
  
  	if (stretchFlags & ITEM_LEFT)
  		tl.x = br.x - size.x;
-@@ -1401,7 +1401,7 @@ void OBSBasicPreview::StretchItem(const vec2 &pos)
+@@ -1470,7 +1470,7 @@ void OBSBasicPreview::StretchItem(const vec2 &pos)
  	vec3_transform(&pos3, &pos3, &itemToScreen);
  
  	vec2 newPos;
@@ -33,7 +33,7 @@ Why is this patch needed?
  	obs_sceneitem_set_pos(stretchItem, &newPos);
  }
  
-@@ -1428,8 +1428,8 @@ void OBSBasicPreview::mouseMoveEvent(QMouseEvent *even
+@@ -1501,8 +1501,8 @@ void OBSBasicPreview::mouseMoveEvent(QMouseEvent *even
  			mouseOverItems = SelectedAtPos(startPos);
  		}
  
