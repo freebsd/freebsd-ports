@@ -179,7 +179,7 @@ make-use-cabal:
 # Re-generates USE_CABAL items to have revision numbers.
 make-use-cabal-revs:
 .  for package in ${_use_cabal}
-	@(${SETENV} HTTP_ACCEPT="application/json" fetch -q -o - http://hackage.haskell.org/package/${package:C/_[0-9]+//}/revisions/ | python3 -c "import sys, json; print('${package:C/_[0-9]+//}_' + str(json.load(sys.stdin)[-1]['number']), end='')")
+	@(${SETENV} HTTP_ACCEPT="application/json" fetch -q -o - http://hackage.haskell.org/package/${package:C/_[0-9]+//}/revisions/ | python3 -c "import sys, json; print(('${package:C/_[0-9]+//}_' + str(json.load(sys.stdin)[-1]['number'])).replace('_0',''), end='')")
 	@echo ' \'
 .  endfor
 
