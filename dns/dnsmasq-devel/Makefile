@@ -1,12 +1,14 @@
 # Created by: Steven Honson
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.85rc2
+DISTVERSION=	2.86test1
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
 PORTREVISION=	0
 PORTEPOCH=	3 # attn - different between -devel and dnsmasq ports!
 CATEGORIES=	dns
-MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/release-candidates/ \
+#MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/release-candidates/ \
+		LOCAL/mandree/
+MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/test-releases/ \
 		LOCAL/mandree/
 PKGNAMESUFFIX=	-devel
 
@@ -15,7 +17,7 @@ COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 
 LICENSE=	GPLv2
 
-IGNORE=		use dns/dnsmasq instead, it's newer
+DEPRECATED=	Short-lived test branch, to be removed after v2.86 release
 
 USES=		cpe shebangfix tar:xz
 CPE_VENDOR=	thekelleys
@@ -34,8 +36,8 @@ CFLAGS+=	-Wall -Wno-unused-function -Wno-unused-parameter \
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 CONFLICTS_INSTALL=	dnsmasq-2*
-PATCH_STRIP=	-p1
-SUB_FILES=	pkg-message
+PATCH_STRIP=		-p1
+SUB_FILES=		pkg-message
 
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 
