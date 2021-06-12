@@ -11,8 +11,13 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/nut.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/opensips.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/sensors.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/ebpf.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/ebpf_kernel_reject_list.txt.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/ebpf.d.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/ebpf.d/cachestat.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/ebpf.d/dcstat.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/ebpf.d/ebpf_kernel_reject_list.txt.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/ebpf.d/network.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/ebpf.d/process.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/ebpf.d/sync.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/exporting.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/fping.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/adaptec_raid.conf.sample
@@ -20,7 +25,6 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/anomalies.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/apache.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/apcupsd.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/apps_plugin.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/backend.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/bcache.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/beanstalkd.conf.sample
@@ -82,6 +86,8 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/squid.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/stiebeleltron.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/swap.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/synchronization.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/systemdunits.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_conn.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_listen.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_mem.conf.sample
@@ -113,6 +119,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/bind_rndc.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/boinc.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/ceph.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/changefinder.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/chrony.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/couchdb.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/dns_query_time.conf.sample
@@ -174,7 +181,9 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/varnish.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/w1sensor.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/web_log.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/zscores.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/example.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/k6.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/stream.conf.sample
 libexec/netdata/charts.d/ap.chart.sh
 libexec/netdata/charts.d/apcupsd.chart.sh
@@ -232,6 +241,7 @@ libexec/netdata/python.d/beanstalk.chart.py
 libexec/netdata/python.d/bind_rndc.chart.py
 libexec/netdata/python.d/boinc.chart.py
 libexec/netdata/python.d/ceph.chart.py
+libexec/netdata/python.d/changefinder.chart.py
 libexec/netdata/python.d/chrony.chart.py
 libexec/netdata/python.d/couchdb.chart.py
 libexec/netdata/python.d/dns_query_time.chart.py
@@ -313,6 +323,7 @@ libexec/netdata/python.d/uwsgi.chart.py
 libexec/netdata/python.d/varnish.chart.py
 libexec/netdata/python.d/w1sensor.chart.py
 libexec/netdata/python.d/web_log.chart.py
+libexec/netdata/python.d/zscores.chart.py
 sbin/netdata
 sbin/netdata-claim.sh
 sbin/netdatacli
@@ -320,6 +331,7 @@ sbin/netdatacli
 @owner netdata
 @group netdata
 %%DATADIR%%/web/.well-known/dnt/cookies
+%%DATADIR%%/web/asset-manifest.json
 %%DATADIR%%/web/console.html
 %%DATADIR%%/web/css/bootstrap-3.3.7.css
 %%DATADIR%%/web/css/bootstrap-slate-flat-3.3.7.css
@@ -327,8 +339,11 @@ sbin/netdatacli
 %%DATADIR%%/web/css/bootstrap-theme-3.3.7.min.css
 %%DATADIR%%/web/css/bootstrap-toggle-2.2.2.min.css
 %%DATADIR%%/web/css/c3-0.4.18.min.css
+%%DATADIR%%/web/css/dashboard.css
+%%DATADIR%%/web/css/dashboard.slate.css
 %%DATADIR%%/web/css/morris-0.5.1.css
 %%DATADIR%%/web/dash-example.html
+%%DATADIR%%/web/dashboard-react.js
 %%DATADIR%%/web/dashboard.css
 %%DATADIR%%/web/dashboard.html
 %%DATADIR%%/web/dashboard.js
@@ -371,17 +386,24 @@ sbin/netdatacli
 %%DATADIR%%/web/images/banner-icon-144x144.png
 %%DATADIR%%/web/images/check-mark-2-128-green.png
 %%DATADIR%%/web/images/check-mark-2-multi-size-green.ico
+%%DATADIR%%/web/images/favicon-128.png
 %%DATADIR%%/web/images/favicon-16x16.png
+%%DATADIR%%/web/images/favicon-196x196.png
 %%DATADIR%%/web/images/favicon-32x32.png
 %%DATADIR%%/web/images/favicon-96x96.png
 %%DATADIR%%/web/images/favicon.ico
 %%DATADIR%%/web/images/ms-icon-144x144.png
 %%DATADIR%%/web/images/ms-icon-150x150.png
+%%DATADIR%%/web/images/ms-icon-310x150.png
 %%DATADIR%%/web/images/ms-icon-310x310.png
+%%DATADIR%%/web/images/ms-icon-36x36.png
 %%DATADIR%%/web/images/ms-icon-70x70.png
 %%DATADIR%%/web/images/netdata-logomark.svg
 %%DATADIR%%/web/images/netdata.svg
+%%DATADIR%%/web/images/packaging-beta-tag.svg
 %%DATADIR%%/web/images/post.png
+%%DATADIR%%/web/images/seo-performance-128.png
+%%DATADIR%%/web/index-node-view.html
 %%DATADIR%%/web/index.html
 %%DATADIR%%/web/infographic.html
 %%DATADIR%%/web/lib/bootstrap-3.3.7.min.js
@@ -406,13 +428,103 @@ sbin/netdatacli
 %%DATADIR%%/web/lib/tableExport-1.6.0.min.js
 %%DATADIR%%/web/main.css
 %%DATADIR%%/web/main.js
+%%DATADIR%%/web/manifest.json
 %%DATADIR%%/web/netdata-swagger.json
 %%DATADIR%%/web/netdata-swagger.yaml
 %%DATADIR%%/web/old/index.html
+%%NO_CLOUD%%%%DATADIR%%/web/precache-manifest.0ba08ca00eb913966c9d8338a6b2793e.js
+%%CLOUD%%%%DATADIR%%/web/precache-manifest.1a96c027aec7f2d07341fa69aa6b82fa.js
 %%DATADIR%%/web/refresh-badges.js
 %%DATADIR%%/web/robots.txt
+%%DATADIR%%/web/service-worker.js
 %%DATADIR%%/web/sitemap.xml
+%%DATADIR%%/web/static/css/2.6b842ba1.chunk.css
+%%DATADIR%%/web/static/css/2.6b842ba1.chunk.css.map
+%%DATADIR%%/web/static/css/4.a36e3b73.chunk.css
+%%DATADIR%%/web/static/css/4.a36e3b73.chunk.css.map
+%%DATADIR%%/web/static/css/main.d931154a.chunk.css
+%%DATADIR%%/web/static/css/main.d931154a.chunk.css.map
 %%DATADIR%%/web/static/img/netdata-logomark.svg
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/10.0d9f9d3b.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/10.0d9f9d3b.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/10.db7e8e19.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/10.db7e8e19.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/2.11500c94.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/2.11500c94.chunk.js.LICENSE
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/2.11500c94.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/2.252b3a57.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/2.252b3a57.chunk.js.LICENSE
+%%CLOUD%%%%DATADIR%%/web/static/js/2.252b3a57.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/3.99238dcb.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/3.99238dcb.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/3.abbffb94.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/3.abbffb94.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/4.6ef9bdcb.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/4.6ef9bdcb.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/4.ffbaf2f6.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/4.ffbaf2f6.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/5.96a698ab.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/5.96a698ab.chunk.js.LICENSE
+%%CLOUD%%%%DATADIR%%/web/static/js/5.96a698ab.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/5.c3d5572b.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/5.c3d5572b.chunk.js.LICENSE
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/5.c3d5572b.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/6.c3d81a93.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/6.c3d81a93.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/6.d9713eb9.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/6.d9713eb9.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/7.12e939e5.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/7.12e939e5.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/7.2db7502f.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/7.2db7502f.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/8.3e19cdc5.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/8.3e19cdc5.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/8.91852cf4.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/8.91852cf4.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/9.e3a9ce26.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/9.e3a9ce26.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/9.e808f67e.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/9.e808f67e.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/main.18a52ff6.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/main.18a52ff6.chunk.js.LICENSE
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/main.18a52ff6.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/main.8aa70c75.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/main.8aa70c75.chunk.js.LICENSE
+%%CLOUD%%%%DATADIR%%/web/static/js/main.8aa70c75.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/runtime-main.164db7ab.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/runtime-main.164db7ab.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/runtime-main.6c7b39cd.js
+%%CLOUD%%%%DATADIR%%/web/static/js/runtime-main.6c7b39cd.js.map
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-100.245539db.woff2
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-100.9a582f3a.woff
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-100italic.1ea7c5d2.woff
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-100italic.3c34cf08.woff2
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-200.67524c36.woff
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-200.bf72c841.woff2
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-200italic.52df2560.woff
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-200italic.bbc2d552.woff2
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-300.10bb6a0a.woff
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-300.9e1c48af.woff2
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-300italic.c76f2ab5.woff2
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-300italic.d3566d5b.woff
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-400.263d6267.woff2
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-400.a2c56f94.woff
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-400italic.272f8611.woff
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-400italic.89a93a1b.woff2
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-500.0866c244.woff2
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-500.f6d5c5d5.woff
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-500italic.ccd41bd1.woff
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-500italic.ffd12d59.woff2
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-600.337b1651.woff
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-600.7852d4dc.woff2
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-600italic.17e5379f.woff2
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-600italic.6f4ba6aa.woff
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-700.b8809d61.woff
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-700.c9983d3d.woff2
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-700italic.02954bee.woff2
+%%DATADIR%%/web/static/media/ibm-plex-sans-latin-700italic.72e9af40.woff
+%%DATADIR%%/web/static/media/material-icons.0509ab09.woff2
+%%DATADIR%%/web/tv-react.html
 %%DATADIR%%/web/tv.html
 %%DATADIR%%/web/version.txt
 @mode
@@ -420,6 +532,7 @@ sbin/netdatacli
 @group
 @dir(netdata,netdata,0750) %%ETCDIR%%/charts.d
 @dir(netdata,netdata,0750) %%ETCDIR%%/custom-plugins.d
+@dir(netdata,netdata,0750) %%ETCDIR%%/ebpf.d
 @dir(netdata,netdata,0750) %%ETCDIR%%/go.d
 @dir(netdata,netdata,0750) %%ETCDIR%%/health.d
 @dir(netdata,netdata,0750) %%ETCDIR%%/node.d
