@@ -14,12 +14,12 @@ COMMENT=	Spam filter for Usenet news servers
 FLAVORS=                        inn inncurrent
 FLAVOR?=                        ${FLAVORS:[1]}
 
-inn_CONFLICTS_INSTALL=		cleanfeed-CURRENT
+inn_CONFLICTS_INSTALL=		cleanfeed-current
 inn_RUN_DEPENDS=		${LOCALBASE}/news/bin/innd:news/inn
 
-inncurrent_PKGNAMESUFFIX=	-CURRENT
+inncurrent_PKGNAMESUFFIX=	-current
 inncurrent_CONFLICTS_INSTALL=	cleanfeed
-inncurrent_RUN_DEPENDS=		${LOCALBASE}/news/bin/innd:news/inn-CURRENT
+inncurrent_RUN_DEPENDS=		${LOCALBASE}/news/bin/innd:news/inn-current
 
 NO_ARCH=	yes
 NO_BUILD=	yes
