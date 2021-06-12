@@ -58,6 +58,7 @@
     SUBDIR += bjumblr-lv2
     SUBDIR += bliss
     SUBDIR += blop
+    SUBDIR += boca
     SUBDIR += boops-lv2
     SUBDIR += bristol
     SUBDIR += bschaffl-lv2
