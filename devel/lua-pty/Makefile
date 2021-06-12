@@ -3,6 +3,7 @@
 PORTNAME=	pty
 DISTVERSION=	1.26
 CATEGORIES=	devel
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Pty (pseudo-terminal) bindings for Lua 5+
