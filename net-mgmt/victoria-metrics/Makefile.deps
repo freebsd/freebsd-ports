@@ -5,7 +5,7 @@ GH_TUPLE=	\
 		VictoriaMetrics:metrics:v1.17.2:victoriametrics_metrics/vendor/github.com/VictoriaMetrics/metrics \
 		VictoriaMetrics:metricsql:v0.15.0:victoriametrics_metricsql/vendor/github.com/VictoriaMetrics/metricsql \
 		VividCortex:ewma:v1.2.0:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
-		aws:aws-sdk-go:v1.38.56:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.38.57:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v2.1.1:cespare_xxhash/vendor/github.com/cespare/xxhash/v2 \
@@ -28,13 +28,13 @@ GH_TUPLE=	\
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:tools:v0.1.2:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
-		google:go-genproto:00d4fb20b1ae:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:b6d2f5bf0d7d:google_go_genproto/vendor/google.golang.org/genproto \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.48.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:storage/v1.15.0:googleapis_google_cloud_go_storage \
-		googleapis:google-cloud-go:v0.83.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
+		googleapis:google-cloud-go:v0.84.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		grpc:grpc-go:v1.38.0:grpc_grpc_go/vendor/google.golang.org/grpc \
-		influxdata:influxdb:v1.9.1:influxdata_influxdb/vendor/github.com/influxdata/influxdb \
+		influxdata:influxdb:v1.9.2:influxdata_influxdb/vendor/github.com/influxdata/influxdb \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
 		klauspost:compress:v1.13.0:klauspost_compress/vendor/github.com/klauspost/compress \
@@ -52,7 +52,7 @@ GH_TUPLE=	\
 		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		russross:blackfriday:v2.1.0:russross_blackfriday/vendor/github.com/russross/blackfriday/v2 \
-		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
+		uber-go:atomic:v1.8.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		urfave:cli:v2.3.0:urfave_cli/vendor/github.com/urfave/cli/v2 \
 		valyala:bytebufferpool:v1.0.0:valyala_bytebufferpool/vendor/github.com/valyala/bytebufferpool \
 		valyala:fastjson:v1.6.3:valyala_fastjson/vendor/github.com/valyala/fastjson \

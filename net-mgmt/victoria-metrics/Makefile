@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME?=	victoria-metrics
-PORTVERSION=	1.61.0
+PORTVERSION=	1.61.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 USES=		gmake go:modules,no_targets
 USE_RC_SUBR?=	${PORTNAME}
 MAKE_ENV=	PKG_TAG=${DISTVERSIONPREFIX}${DISTVERSION} \
-		BUILDINFO_TAG=fb097ff GOOS=${OPSYS:tl}
+		BUILDINFO_TAG=2ef2e3d GOOS=${OPSYS:tl}
 ALL_TARGET=	${PORTNAME}-pure
 
 USE_GITHUB=	yes
