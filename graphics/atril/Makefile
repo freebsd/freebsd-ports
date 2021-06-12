@@ -3,8 +3,7 @@
 # Please update update atril-lite also
 
 PORTNAME=	atril
-PORTVERSION=	1.22.3
-PORTREVISION=	18
+PORTVERSION=	1.25.1
 CATEGORIES=	graphics print mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -34,11 +33,11 @@ USE_GNOME=	cairo gtk30 intlhack libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
-		--with-gtk=3.0
+		--disable-synctex
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALL_TARGET=	install-strip
+# INSTALL_TARGET=	install-strip
 
 .if ${SLAVEPORT} == lite
 CONFIGURE_ARGS+=--disable-thumbnailer \
