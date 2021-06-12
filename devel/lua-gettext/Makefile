@@ -3,6 +3,7 @@
 PORTNAME=	gettext
 DISTVERSION=	1.6
 CATEGORIES=	devel
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Lua 5+ bindings for Gettext
