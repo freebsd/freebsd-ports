@@ -1,1 +1,3 @@
-Lua 5.0.x bindings for ptys (pseudo-terminals.)
+Lua 5.0.x bindings for ptys (pseudo-terminals).
+
+WWW: https://gitlab.com/ports1/lua-pty/
