@@ -89,7 +89,7 @@ PORTDOCS=		*
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
 .endif
 
-.if ${ARCH} == powerpc64
+.if ${ARCH} == powerpc64 || ${OSVERSION} >= 1400018
 CONFIGURE_ARGS+=	--enable-dtrace=0
 .endif
 
