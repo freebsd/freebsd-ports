@@ -2,7 +2,6 @@
 
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot \
@@ -19,13 +18,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386 aarch64 armv6 armv7 powerpc64
 
-USES=			autoreconf compiler:c11 gmake iconv:translit \
+USES=			autoreconf compiler:c11 gmake iconv:build \
 			localbase:ldflags ncurses perl5 tar:xz
 USE_LOCALE=		en_US.UTF-8
 USE_PERL5=		build
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-iconv-includes=${LOCALBASE}/include \
-			--with-iconv-libraries=${LOCALBASE}/lib
 CONFIGURE_ENV=		CC=${CC} LD=${LD} PATH=${SLAVES_PREFIX}/bin:${PATH}
 MAKE_ENV=		PATH=${SLAVES_PREFIX}/bin:${PATH}
 
@@ -74,7 +71,7 @@ BOOT_SUB_LIST_OFF=	HSC2HS=${BOOT_HSC2HS}
 PROFILE_SUB_LIST=	WITH_PROFILE="YES"
 PROFILE_SUB_LIST_OFF=	WITH_PROFILE="NO"
 
-GHC_VERSION=		8.10.4
+GHC_VERSION=		8.10.5
 CABAL_VERSION=		3.2.1.0
 HSCOLOUR_VERSION=	1.24.4
 LLVM_VERSION=		90
