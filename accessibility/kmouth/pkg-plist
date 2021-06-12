@@ -47,6 +47,7 @@ share/icons/hicolor/48x48/apps/kmouth.png
 share/kxmlgui5/kmouth/kmouthui.rc
 share/kxmlgui5/kmouth/phrasebookdialogui.rc
 share/locale/ar/LC_MESSAGES/kmouth.mo
+share/locale/be/LC_MESSAGES/kmouth.mo
 share/locale/bg/LC_MESSAGES/kmouth.mo
 share/locale/bs/LC_MESSAGES/kmouth.mo
 share/locale/ca/LC_MESSAGES/kmouth.mo
@@ -90,13 +91,18 @@ share/locale/pt/LC_MESSAGES/kmouth.mo
 share/locale/pt_BR/LC_MESSAGES/kmouth.mo
 share/locale/ro/LC_MESSAGES/kmouth.mo
 share/locale/ru/LC_MESSAGES/kmouth.mo
+share/locale/se/LC_MESSAGES/kmouth.mo
 share/locale/sk/LC_MESSAGES/kmouth.mo
 share/locale/sl/LC_MESSAGES/kmouth.mo
+share/locale/sq/LC_MESSAGES/kmouth.mo
 share/locale/sr/LC_MESSAGES/kmouth.mo
 share/locale/sv/LC_MESSAGES/kmouth.mo
+share/locale/ta/LC_MESSAGES/kmouth.mo
+share/locale/tg/LC_MESSAGES/kmouth.mo
 share/locale/tr/LC_MESSAGES/kmouth.mo
 share/locale/ug/LC_MESSAGES/kmouth.mo
 share/locale/uk/LC_MESSAGES/kmouth.mo
+share/locale/vi/LC_MESSAGES/kmouth.mo
 share/locale/zh_CN/LC_MESSAGES/kmouth.mo
 share/locale/zh_TW/LC_MESSAGES/kmouth.mo
 share/metainfo/org.kde.kmouth.appdata.xml

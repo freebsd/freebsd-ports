@@ -1,6 +1,7 @@
 bin/kcharselect
 share/applications/org.kde.kcharselect.desktop
 share/locale/ar/LC_MESSAGES/kcharselect.mo
+share/locale/be/LC_MESSAGES/kcharselect.mo
 share/locale/bg/LC_MESSAGES/kcharselect.mo
 share/locale/bs/LC_MESSAGES/kcharselect.mo
 share/locale/ca/LC_MESSAGES/kcharselect.mo
@@ -44,10 +45,14 @@ share/locale/pt/LC_MESSAGES/kcharselect.mo
 share/locale/pt_BR/LC_MESSAGES/kcharselect.mo
 share/locale/ro/LC_MESSAGES/kcharselect.mo
 share/locale/ru/LC_MESSAGES/kcharselect.mo
+share/locale/se/LC_MESSAGES/kcharselect.mo
 share/locale/sk/LC_MESSAGES/kcharselect.mo
 share/locale/sl/LC_MESSAGES/kcharselect.mo
+share/locale/sq/LC_MESSAGES/kcharselect.mo
 share/locale/sr/LC_MESSAGES/kcharselect.mo
 share/locale/sv/LC_MESSAGES/kcharselect.mo
+share/locale/ta/LC_MESSAGES/kcharselect.mo
+share/locale/tg/LC_MESSAGES/kcharselect.mo
 share/locale/tr/LC_MESSAGES/kcharselect.mo
 share/locale/ug/LC_MESSAGES/kcharselect.mo
 share/locale/uk/LC_MESSAGES/kcharselect.mo

@@ -9,6 +9,7 @@ share/icons/hicolor/32x32/apps/kshisen.png
 share/icons/hicolor/48x48/apps/kshisen.png
 share/icons/hicolor/64x64/apps/kshisen.png
 share/locale/ar/LC_MESSAGES/kshisen.mo
+share/locale/be/LC_MESSAGES/kshisen.mo
 share/locale/bg/LC_MESSAGES/kshisen.mo
 share/locale/bs/LC_MESSAGES/kshisen.mo
 share/locale/ca/LC_MESSAGES/kshisen.mo
@@ -52,10 +53,14 @@ share/locale/pt/LC_MESSAGES/kshisen.mo
 share/locale/pt_BR/LC_MESSAGES/kshisen.mo
 share/locale/ro/LC_MESSAGES/kshisen.mo
 share/locale/ru/LC_MESSAGES/kshisen.mo
+share/locale/se/LC_MESSAGES/kshisen.mo
 share/locale/sk/LC_MESSAGES/kshisen.mo
 share/locale/sl/LC_MESSAGES/kshisen.mo
+share/locale/sq/LC_MESSAGES/kshisen.mo
 share/locale/sr/LC_MESSAGES/kshisen.mo
 share/locale/sv/LC_MESSAGES/kshisen.mo
+share/locale/ta/LC_MESSAGES/kshisen.mo
+share/locale/tg/LC_MESSAGES/kshisen.mo
 share/locale/tr/LC_MESSAGES/kshisen.mo
 share/locale/ug/LC_MESSAGES/kshisen.mo
 share/locale/uk/LC_MESSAGES/kshisen.mo

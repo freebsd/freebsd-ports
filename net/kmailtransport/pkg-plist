@@ -62,6 +62,7 @@ lib/libKF5MailTransportAkonadi.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/config.kcfg/mailtransport.kcfg
 share/kservices5/kcm_mailtransport.desktop
 share/locale/ar/LC_MESSAGES/libmailtransport5.mo
+share/locale/be/LC_MESSAGES/libmailtransport5.mo
 share/locale/bs/LC_MESSAGES/libmailtransport5.mo
 share/locale/ca/LC_MESSAGES/libmailtransport5.mo
 share/locale/ca@valencia/LC_MESSAGES/libmailtransport5.mo
@@ -98,6 +99,7 @@ share/locale/pt/LC_MESSAGES/libmailtransport5.mo
 share/locale/pt_BR/LC_MESSAGES/libmailtransport5.mo
 share/locale/ro/LC_MESSAGES/libmailtransport5.mo
 share/locale/ru/LC_MESSAGES/libmailtransport5.mo
+share/locale/se/LC_MESSAGES/libmailtransport5.mo
 share/locale/sk/LC_MESSAGES/libmailtransport5.mo
 share/locale/sl/LC_MESSAGES/libmailtransport5.mo
 share/locale/sr/LC_MESSAGES/libmailtransport5.mo

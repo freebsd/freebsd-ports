@@ -37,6 +37,7 @@ share/kxmlgui5/kbruch/AppMenuWidgetui.rc
 share/kxmlgui5/kbruch/FractionRingWidgetui.rc
 share/kxmlgui5/kbruch/kbruchui.rc
 share/locale/ar/LC_MESSAGES/kbruch.mo
+share/locale/be/LC_MESSAGES/kbruch.mo
 share/locale/bg/LC_MESSAGES/kbruch.mo
 share/locale/bs/LC_MESSAGES/kbruch.mo
 share/locale/ca/LC_MESSAGES/kbruch.mo
@@ -64,6 +65,7 @@ share/locale/it/LC_MESSAGES/kbruch.mo
 share/locale/ja/LC_MESSAGES/kbruch.mo
 share/locale/kk/LC_MESSAGES/kbruch.mo
 share/locale/km/LC_MESSAGES/kbruch.mo
+share/locale/ko/LC_MESSAGES/kbruch.mo
 share/locale/lt/LC_MESSAGES/kbruch.mo
 share/locale/lv/LC_MESSAGES/kbruch.mo
 share/locale/ml/LC_MESSAGES/kbruch.mo
@@ -78,9 +80,13 @@ share/locale/pt/LC_MESSAGES/kbruch.mo
 share/locale/pt_BR/LC_MESSAGES/kbruch.mo
 share/locale/ro/LC_MESSAGES/kbruch.mo
 share/locale/ru/LC_MESSAGES/kbruch.mo
+share/locale/se/LC_MESSAGES/kbruch.mo
 share/locale/sk/LC_MESSAGES/kbruch.mo
 share/locale/sl/LC_MESSAGES/kbruch.mo
+share/locale/sq/LC_MESSAGES/kbruch.mo
 share/locale/sv/LC_MESSAGES/kbruch.mo
+share/locale/ta/LC_MESSAGES/kbruch.mo
+share/locale/tg/LC_MESSAGES/kbruch.mo
 share/locale/tr/LC_MESSAGES/kbruch.mo
 share/locale/ug/LC_MESSAGES/kbruch.mo
 share/locale/uk/LC_MESSAGES/kbruch.mo

@@ -5,6 +5,7 @@ share/icons/hicolor/16x16/apps/ktimer.png
 share/icons/hicolor/32x32/apps/ktimer.png
 share/icons/hicolor/48x48/apps/ktimer.png
 share/locale/ar/LC_MESSAGES/ktimer.mo
+share/locale/be/LC_MESSAGES/ktimer.mo
 share/locale/bg/LC_MESSAGES/ktimer.mo
 share/locale/bs/LC_MESSAGES/ktimer.mo
 share/locale/ca/LC_MESSAGES/ktimer.mo
@@ -48,10 +49,14 @@ share/locale/pt/LC_MESSAGES/ktimer.mo
 share/locale/pt_BR/LC_MESSAGES/ktimer.mo
 share/locale/ro/LC_MESSAGES/ktimer.mo
 share/locale/ru/LC_MESSAGES/ktimer.mo
+share/locale/se/LC_MESSAGES/ktimer.mo
 share/locale/sk/LC_MESSAGES/ktimer.mo
 share/locale/sl/LC_MESSAGES/ktimer.mo
+share/locale/sq/LC_MESSAGES/ktimer.mo
 share/locale/sr/LC_MESSAGES/ktimer.mo
 share/locale/sv/LC_MESSAGES/ktimer.mo
+share/locale/ta/LC_MESSAGES/ktimer.mo
+share/locale/tg/LC_MESSAGES/ktimer.mo
 share/locale/tr/LC_MESSAGES/ktimer.mo
 share/locale/ug/LC_MESSAGES/ktimer.mo
 share/locale/uk/LC_MESSAGES/ktimer.mo

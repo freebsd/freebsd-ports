@@ -24,6 +24,7 @@ lib/libKF5IdentityManagement.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KIdentityManagement.pri
 share/dbus-1/interfaces/kf5_org.kde.pim.IdentityManager.xml
 share/locale/ar/LC_MESSAGES/libkpimidentities5.mo
+share/locale/be/LC_MESSAGES/libkpimidentities5.mo
 share/locale/bs/LC_MESSAGES/libkpimidentities5.mo
 share/locale/ca/LC_MESSAGES/libkpimidentities5.mo
 share/locale/ca@valencia/LC_MESSAGES/libkpimidentities5.mo
@@ -61,8 +62,10 @@ share/locale/pt/LC_MESSAGES/libkpimidentities5.mo
 share/locale/pt_BR/LC_MESSAGES/libkpimidentities5.mo
 share/locale/ro/LC_MESSAGES/libkpimidentities5.mo
 share/locale/ru/LC_MESSAGES/libkpimidentities5.mo
+share/locale/se/LC_MESSAGES/libkpimidentities5.mo
 share/locale/sk/LC_MESSAGES/libkpimidentities5.mo
 share/locale/sl/LC_MESSAGES/libkpimidentities5.mo
+share/locale/sq/LC_MESSAGES/libkpimidentities5.mo
 share/locale/sr/LC_MESSAGES/libkpimidentities5.mo
 share/locale/sv/LC_MESSAGES/libkpimidentities5.mo
 share/locale/tr/LC_MESSAGES/libkpimidentities5.mo

@@ -80,6 +80,8 @@ share/locale/ja/LC_MESSAGES/libgraphtheory.mo
 share/locale/ja/LC_MESSAGES/rocs.mo
 share/locale/kk/LC_MESSAGES/libgraphtheory.mo
 share/locale/kk/LC_MESSAGES/rocs.mo
+share/locale/ko/LC_MESSAGES/libgraphtheory.mo
+share/locale/ko/LC_MESSAGES/rocs.mo
 share/locale/lt/LC_MESSAGES/libgraphtheory.mo
 share/locale/lt/LC_MESSAGES/rocs.mo
 share/locale/lv/LC_MESSAGES/libgraphtheory.mo

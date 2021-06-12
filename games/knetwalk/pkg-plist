@@ -23,6 +23,7 @@ share/icons/hicolor/64x64/apps/knetwalk.png
 %%DATADIR%%/themes/electronic.svgz
 %%DATADIR%%/themes/electronic_preview.png
 share/locale/ar/LC_MESSAGES/knetwalk.mo
+share/locale/be/LC_MESSAGES/knetwalk.mo
 share/locale/bg/LC_MESSAGES/knetwalk.mo
 share/locale/bs/LC_MESSAGES/knetwalk.mo
 share/locale/ca/LC_MESSAGES/knetwalk.mo
@@ -66,8 +67,10 @@ share/locale/pt/LC_MESSAGES/knetwalk.mo
 share/locale/pt_BR/LC_MESSAGES/knetwalk.mo
 share/locale/ro/LC_MESSAGES/knetwalk.mo
 share/locale/ru/LC_MESSAGES/knetwalk.mo
+share/locale/se/LC_MESSAGES/knetwalk.mo
 share/locale/sk/LC_MESSAGES/knetwalk.mo
 share/locale/sl/LC_MESSAGES/knetwalk.mo
+share/locale/sq/LC_MESSAGES/knetwalk.mo
 share/locale/sr/LC_MESSAGES/knetwalk.mo
 share/locale/sv/LC_MESSAGES/knetwalk.mo
 share/locale/tr/LC_MESSAGES/knetwalk.mo

@@ -53,6 +53,7 @@ share/icons/hicolor/64x64/apps/kpat.png
 share/knsrcfiles/kcardtheme.knsrc
 share/knsrcfiles/kpat.knsrc
 share/locale/ar/LC_MESSAGES/kpat.mo
+share/locale/be/LC_MESSAGES/kpat.mo
 share/locale/bg/LC_MESSAGES/kpat.mo
 share/locale/bs/LC_MESSAGES/kpat.mo
 share/locale/ca/LC_MESSAGES/kpat.mo
@@ -96,10 +97,14 @@ share/locale/pt/LC_MESSAGES/kpat.mo
 share/locale/pt_BR/LC_MESSAGES/kpat.mo
 share/locale/ro/LC_MESSAGES/kpat.mo
 share/locale/ru/LC_MESSAGES/kpat.mo
+share/locale/se/LC_MESSAGES/kpat.mo
 share/locale/sk/LC_MESSAGES/kpat.mo
 share/locale/sl/LC_MESSAGES/kpat.mo
+share/locale/sq/LC_MESSAGES/kpat.mo
 share/locale/sr/LC_MESSAGES/kpat.mo
 share/locale/sv/LC_MESSAGES/kpat.mo
+share/locale/ta/LC_MESSAGES/kpat.mo
+share/locale/tg/LC_MESSAGES/kpat.mo
 share/locale/tr/LC_MESSAGES/kpat.mo
 share/locale/ug/LC_MESSAGES/kpat.mo
 share/locale/uk/LC_MESSAGES/kpat.mo

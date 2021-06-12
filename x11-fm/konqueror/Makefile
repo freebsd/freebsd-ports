@@ -1,10 +1,6 @@
 PORTNAME=	konqueror
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-fm www kde kde-applications
-
-PATCH_SITES=	https://invent.kde.org/network/konqueror/-/commit/
-PATCHFILES=	1003724180b3a758f7f4f42b247261ac95234e1b.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE system log application

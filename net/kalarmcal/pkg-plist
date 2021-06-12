@@ -38,6 +38,7 @@ lib/libKF5AlarmCalendar.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/akonadi/plugins/serializer/akonadi_serializer_kalarm.desktop
 share/locale/ar/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/ar/LC_MESSAGES/libkalarmcal5.mo
+share/locale/be/LC_MESSAGES/libkalarmcal5.mo
 share/locale/bg/LC_MESSAGES/libkalarmcal5.mo
 share/locale/bs/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/bs/LC_MESSAGES/libkalarmcal5.mo
@@ -114,14 +115,18 @@ share/locale/ro/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/ro/LC_MESSAGES/libkalarmcal5.mo
 share/locale/ru/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/ru/LC_MESSAGES/libkalarmcal5.mo
+share/locale/se/LC_MESSAGES/libkalarmcal5.mo
 share/locale/sk/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/sk/LC_MESSAGES/libkalarmcal5.mo
 share/locale/sl/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/sl/LC_MESSAGES/libkalarmcal5.mo
+share/locale/sq/LC_MESSAGES/libkalarmcal5.mo
 share/locale/sr/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/sr/LC_MESSAGES/libkalarmcal5.mo
 share/locale/sv/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/sv/LC_MESSAGES/libkalarmcal5.mo
+share/locale/ta/LC_MESSAGES/libkalarmcal5.mo
+share/locale/tg/LC_MESSAGES/libkalarmcal5.mo
 share/locale/tr/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/tr/LC_MESSAGES/libkalarmcal5.mo
 share/locale/ug/LC_MESSAGES/libkalarmcal5-serializer.mo

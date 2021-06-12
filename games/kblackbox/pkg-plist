@@ -8,6 +8,7 @@ share/icons/hicolor/48x48/apps/kblackbox.png
 share/icons/hicolor/64x64/apps/kblackbox.png
 %%DATADIR%%/pics/kblackbox.svgz
 share/locale/ar/LC_MESSAGES/kblackbox.mo
+share/locale/be/LC_MESSAGES/kblackbox.mo
 share/locale/bg/LC_MESSAGES/kblackbox.mo
 share/locale/bs/LC_MESSAGES/kblackbox.mo
 share/locale/ca/LC_MESSAGES/kblackbox.mo
@@ -51,13 +52,18 @@ share/locale/pt/LC_MESSAGES/kblackbox.mo
 share/locale/pt_BR/LC_MESSAGES/kblackbox.mo
 share/locale/ro/LC_MESSAGES/kblackbox.mo
 share/locale/ru/LC_MESSAGES/kblackbox.mo
+share/locale/se/LC_MESSAGES/kblackbox.mo
 share/locale/sk/LC_MESSAGES/kblackbox.mo
 share/locale/sl/LC_MESSAGES/kblackbox.mo
+share/locale/sq/LC_MESSAGES/kblackbox.mo
 share/locale/sr/LC_MESSAGES/kblackbox.mo
 share/locale/sv/LC_MESSAGES/kblackbox.mo
+share/locale/ta/LC_MESSAGES/kblackbox.mo
+share/locale/tg/LC_MESSAGES/kblackbox.mo
 share/locale/tr/LC_MESSAGES/kblackbox.mo
 share/locale/ug/LC_MESSAGES/kblackbox.mo
 share/locale/uk/LC_MESSAGES/kblackbox.mo
+share/locale/vi/LC_MESSAGES/kblackbox.mo
 share/locale/zh_CN/LC_MESSAGES/kblackbox.mo
 share/locale/zh_TW/LC_MESSAGES/kblackbox.mo
 share/metainfo/org.kde.kblackbox.appdata.xml

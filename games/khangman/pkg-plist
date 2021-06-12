@@ -82,6 +82,7 @@ share/icons/hicolor/scalable/apps/khangman.svgz
 %%DATADIR%%/sk.txt
 %%DATADIR%%/sl.txt
 %%DATADIR%%/sv.txt
+%%DATADIR%%/tg.txt
 %%DATADIR%%/themes/khangman_bees.svg
 %%DATADIR%%/themes/khangman_desert.svg
 %%DATADIR%%/themes/khangman_notes.png
@@ -90,6 +91,7 @@ share/icons/hicolor/scalable/apps/khangman.svgz
 %%DATADIR%%/themes/standardthemes.xml
 %%DATADIR%%/tr.txt
 share/locale/ar/LC_MESSAGES/khangman.mo
+share/locale/be/LC_MESSAGES/khangman.mo
 share/locale/bg/LC_MESSAGES/khangman.mo
 share/locale/bs/LC_MESSAGES/khangman.mo
 share/locale/ca/LC_MESSAGES/khangman.mo
@@ -117,6 +119,7 @@ share/locale/it/LC_MESSAGES/khangman.mo
 share/locale/ja/LC_MESSAGES/khangman.mo
 share/locale/kk/LC_MESSAGES/khangman.mo
 share/locale/km/LC_MESSAGES/khangman.mo
+share/locale/ko/LC_MESSAGES/khangman.mo
 share/locale/lt/LC_MESSAGES/khangman.mo
 share/locale/lv/LC_MESSAGES/khangman.mo
 share/locale/ml/LC_MESSAGES/khangman.mo
@@ -131,9 +134,13 @@ share/locale/pt/LC_MESSAGES/khangman.mo
 share/locale/pt_BR/LC_MESSAGES/khangman.mo
 share/locale/ro/LC_MESSAGES/khangman.mo
 share/locale/ru/LC_MESSAGES/khangman.mo
+share/locale/se/LC_MESSAGES/khangman.mo
 share/locale/sk/LC_MESSAGES/khangman.mo
 share/locale/sl/LC_MESSAGES/khangman.mo
+share/locale/sq/LC_MESSAGES/khangman.mo
 share/locale/sv/LC_MESSAGES/khangman.mo
+share/locale/ta/LC_MESSAGES/khangman.mo
+share/locale/tg/LC_MESSAGES/khangman.mo
 share/locale/tr/LC_MESSAGES/khangman.mo
 share/locale/ug/LC_MESSAGES/khangman.mo
 share/locale/uk/LC_MESSAGES/khangman.mo

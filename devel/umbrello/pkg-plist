@@ -12,6 +12,7 @@ share/icons/hicolor/48x48/apps/umbrello.png
 share/icons/hicolor/64x64/apps/umbrello.png
 share/icons/hicolor/scalable/apps/umbrello.svgz
 share/locale/ar/LC_MESSAGES/umbrello.mo
+share/locale/be/LC_MESSAGES/umbrello.mo
 share/locale/bg/LC_MESSAGES/umbrello.mo
 share/locale/bs/LC_MESSAGES/umbrello.mo
 share/locale/bs/LC_MESSAGES/umbrello_kdevphp5.mo
@@ -105,15 +106,19 @@ share/locale/ro/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/ru/LC_MESSAGES/umbrello.mo
 share/locale/ru/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/ru/LC_MESSAGES/umbrello_kdevphp5.mo
+share/locale/se/LC_MESSAGES/umbrello.mo
 share/locale/sk/LC_MESSAGES/umbrello.mo
 share/locale/sk/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/sk/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/sl/LC_MESSAGES/umbrello.mo
 share/locale/sl/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/sl/LC_MESSAGES/umbrello_kdevphp5.mo
+share/locale/sq/LC_MESSAGES/umbrello.mo
 share/locale/sv/LC_MESSAGES/umbrello.mo
 share/locale/sv/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/sv/LC_MESSAGES/umbrello_kdevphp5.mo
+share/locale/ta/LC_MESSAGES/umbrello.mo
+share/locale/tg/LC_MESSAGES/umbrello.mo
 share/locale/tr/LC_MESSAGES/umbrello.mo
 share/locale/tr/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/tr/LC_MESSAGES/umbrello_kdevphp5.mo

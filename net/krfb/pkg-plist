@@ -11,6 +11,7 @@ share/icons/hicolor/scalable/apps/krfb.svgz
 share/kservicetypes5/krfb-framebuffer.desktop
 share/kservicetypes5/krfb-events.desktop
 share/locale/ar/LC_MESSAGES/krfb.mo
+share/locale/be/LC_MESSAGES/krfb.mo
 share/locale/bg/LC_MESSAGES/krfb.mo
 share/locale/bs/LC_MESSAGES/krfb.mo
 share/locale/ca/LC_MESSAGES/krfb.mo
@@ -55,13 +56,18 @@ share/locale/pt/LC_MESSAGES/krfb.mo
 share/locale/pt_BR/LC_MESSAGES/krfb.mo
 share/locale/ro/LC_MESSAGES/krfb.mo
 share/locale/ru/LC_MESSAGES/krfb.mo
+share/locale/se/LC_MESSAGES/krfb.mo
 share/locale/sk/LC_MESSAGES/krfb.mo
 share/locale/sl/LC_MESSAGES/krfb.mo
+share/locale/sq/LC_MESSAGES/krfb.mo
 share/locale/sr/LC_MESSAGES/krfb.mo
 share/locale/sv/LC_MESSAGES/krfb.mo
+share/locale/ta/LC_MESSAGES/krfb.mo
+share/locale/tg/LC_MESSAGES/krfb.mo
 share/locale/tr/LC_MESSAGES/krfb.mo
 share/locale/ug/LC_MESSAGES/krfb.mo
 share/locale/uk/LC_MESSAGES/krfb.mo
+share/locale/vi/LC_MESSAGES/krfb.mo
 share/locale/zh_CN/LC_MESSAGES/krfb.mo
 share/locale/zh_TW/LC_MESSAGES/krfb.mo
 share/metainfo/org.kde.krfb.appdata.xml

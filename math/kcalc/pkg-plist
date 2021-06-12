@@ -6,6 +6,7 @@ share/config.kcfg/kcalc.kcfg
 share/kconf_update/kcalcrc.upd
 share/kxmlgui5/kcalc/kcalcui.rc
 share/locale/ar/LC_MESSAGES/kcalc.mo
+share/locale/be/LC_MESSAGES/kcalc.mo
 share/locale/bg/LC_MESSAGES/kcalc.mo
 share/locale/bs/LC_MESSAGES/kcalc.mo
 share/locale/ca/LC_MESSAGES/kcalc.mo
@@ -49,10 +50,14 @@ share/locale/pt/LC_MESSAGES/kcalc.mo
 share/locale/pt_BR/LC_MESSAGES/kcalc.mo
 share/locale/ro/LC_MESSAGES/kcalc.mo
 share/locale/ru/LC_MESSAGES/kcalc.mo
+share/locale/se/LC_MESSAGES/kcalc.mo
 share/locale/sk/LC_MESSAGES/kcalc.mo
 share/locale/sl/LC_MESSAGES/kcalc.mo
+share/locale/sq/LC_MESSAGES/kcalc.mo
 share/locale/sr/LC_MESSAGES/kcalc.mo
 share/locale/sv/LC_MESSAGES/kcalc.mo
+share/locale/ta/LC_MESSAGES/kcalc.mo
+share/locale/tg/LC_MESSAGES/kcalc.mo
 share/locale/tr/LC_MESSAGES/kcalc.mo
 share/locale/ug/LC_MESSAGES/kcalc.mo
 share/locale/uk/LC_MESSAGES/kcalc.mo

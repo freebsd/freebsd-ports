@@ -8,6 +8,7 @@ share/icons/hicolor/scalable/apps/kalgebra.svgz
 %%WEBENGINE%%share/katepart5/syntax/kalgebra.xml
 %%WEBENGINE%%share/kservices5/graphsplasmoid.desktop
 share/locale/ar/LC_MESSAGES/kalgebra.mo
+share/locale/be/LC_MESSAGES/kalgebra.mo
 share/locale/bg/LC_MESSAGES/kalgebra.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/bs/LC_MESSAGES/kalgebra.mo
@@ -104,15 +105,18 @@ share/locale/ro/LC_MESSAGES/kalgebra.mo
 share/locale/ru/LC_MESSAGES/kalgebra.mo
 share/locale/ru/LC_MESSAGES/kalgebramobile.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
+share/locale/se/LC_MESSAGES/kalgebra.mo
 share/locale/sk/LC_MESSAGES/kalgebra.mo
 share/locale/sk/LC_MESSAGES/kalgebramobile.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/sl/LC_MESSAGES/kalgebra.mo
 share/locale/sl/LC_MESSAGES/kalgebramobile.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
+share/locale/sq/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/sv/LC_MESSAGES/kalgebra.mo
 share/locale/sv/LC_MESSAGES/kalgebramobile.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
+share/locale/tg/LC_MESSAGES/kalgebra.mo
 share/locale/tr/LC_MESSAGES/kalgebra.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/ug/LC_MESSAGES/kalgebra.mo

@@ -376,6 +376,9 @@ share/kf5/akonadi/kcfg2dbus.xsl
 share/kf5/akonadi_knut_resource/knut-template.xml
 share/locale/ar/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/ar/LC_MESSAGES/libakonadi5.mo
+share/locale/az/LC_MESSAGES/akonadi_knut_resource.mo
+share/locale/az/LC_MESSAGES/libakonadi5.mo
+share/locale/be/LC_MESSAGES/libakonadi5.mo
 share/locale/bs/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/bs/LC_MESSAGES/libakonadi5.mo
 share/locale/ca/LC_MESSAGES/akonadi_knut_resource.mo
@@ -385,6 +388,8 @@ share/locale/ca@valencia/LC_MESSAGES/libakonadi5.mo
 share/locale/cs/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/cs/LC_MESSAGES/libakonadi5.mo
 share/locale/da/LC_MESSAGES/akonadi_knut_resource.mo
+share/locale/se/LC_MESSAGES/libakonadi5.mo
+share/locale/sq/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/da/LC_MESSAGES/libakonadi5.mo
 share/locale/de/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/de/LC_MESSAGES/libakonadi5.mo

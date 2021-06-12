@@ -30,6 +30,7 @@ lib/libKF5Mime.so.5
 lib/libKF5Mime.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KMime.pri
 share/locale/ar/LC_MESSAGES/libkmime5.mo
+share/locale/be/LC_MESSAGES/libkmime5.mo
 share/locale/bg/LC_MESSAGES/libkmime5.mo
 share/locale/bs/LC_MESSAGES/libkmime5.mo
 share/locale/ca/LC_MESSAGES/libkmime5.mo
@@ -69,10 +70,13 @@ share/locale/pt/LC_MESSAGES/libkmime5.mo
 share/locale/pt_BR/LC_MESSAGES/libkmime5.mo
 share/locale/ro/LC_MESSAGES/libkmime5.mo
 share/locale/ru/LC_MESSAGES/libkmime5.mo
+share/locale/se/LC_MESSAGES/libkmime5.mo
 share/locale/sk/LC_MESSAGES/libkmime5.mo
 share/locale/sl/LC_MESSAGES/libkmime5.mo
+share/locale/sq/LC_MESSAGES/libkmime5.mo
 share/locale/sr/LC_MESSAGES/libkmime5.mo
 share/locale/sv/LC_MESSAGES/libkmime5.mo
+share/locale/ta/LC_MESSAGES/libkmime5.mo
 share/locale/tr/LC_MESSAGES/libkmime5.mo
 share/locale/ug/LC_MESSAGES/libkmime5.mo
 share/locale/uk/LC_MESSAGES/libkmime5.mo

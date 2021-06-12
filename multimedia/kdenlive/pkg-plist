@@ -264,6 +264,7 @@ share/knsrcfiles/kdenlive_luts.knsrc
 %%DATADIR%%/effects/frei0r_facebl0r.xml
 %%DATADIR%%/effects/frei0r_facedetect.xml
 %%DATADIR%%/effects/frei0r_flippo.xml
+%%DATADIR%%/effects/frei0r_glitch0r.xml
 %%DATADIR%%/effects/frei0r_glow.xml
 %%DATADIR%%/effects/frei0r_hqdn3d.xml
 %%DATADIR%%/effects/frei0r_hueshift0r.xml
@@ -314,6 +315,7 @@ share/knsrcfiles/kdenlive_luts.knsrc
 %%DATADIR%%/effects/lightshow.xml
 %%DATADIR%%/effects/loudness.xml
 %%DATADIR%%/effects/luma.xml
+%%DATADIR%%/effects/lumaliftgaingamma.xml
 %%DATADIR%%/effects/mirror.xml
 %%DATADIR%%/effects/mono.xml
 %%DATADIR%%/effects/movit_blur.xml
@@ -462,6 +464,7 @@ share/kservices5/mltpreview.desktop
 share/kxmlgui5/kdenlive/kdenliveui.rc
 share/locale/ar/LC_MESSAGES/kdenlive.mo
 share/locale/ast/LC_MESSAGES/kdenlive.mo
+share/locale/az/LC_MESSAGES/kdenlive.mo
 share/locale/bs/LC_MESSAGES/kdenlive.mo
 share/locale/ca/LC_MESSAGES/kdenlive.mo
 share/locale/ca@valencia/LC_MESSAGES/kdenlive.mo

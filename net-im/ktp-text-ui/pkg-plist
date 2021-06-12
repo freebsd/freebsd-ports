@@ -583,6 +583,8 @@ share/locale/uk/LC_MESSAGES/ktp-filters.mo
 share/locale/uk/LC_MESSAGES/ktp-log-viewer.mo
 share/locale/uk/LC_MESSAGES/ktp-text-ui.mo
 share/locale/uk/LC_MESSAGES/ktpchat.mo
+share/locale/vi/LC_MESSAGES/ktp-text-ui.mo
+share/locale/vi/LC_MESSAGES/ktpchat.mo
 share/locale/wa/LC_MESSAGES/kcm_ktp_chat_behavior.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_ktp_chat_appearance.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_ktp_chat_behavior.mo

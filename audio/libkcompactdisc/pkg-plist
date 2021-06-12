@@ -33,6 +33,7 @@ share/locale/hi/LC_MESSAGES/libkcompactdisc.mo
 share/locale/hr/LC_MESSAGES/libkcompactdisc.mo
 share/locale/hu/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ia/LC_MESSAGES/libkcompactdisc.mo
+share/locale/be/LC_MESSAGES/libkcompactdisc.mo
 share/locale/is/LC_MESSAGES/libkcompactdisc.mo
 share/locale/it/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ja/LC_MESSAGES/libkcompactdisc.mo
@@ -52,8 +53,10 @@ share/locale/pt/LC_MESSAGES/libkcompactdisc.mo
 share/locale/pt_BR/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ro/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ru/LC_MESSAGES/libkcompactdisc.mo
+share/locale/se/LC_MESSAGES/libkcompactdisc.mo
 share/locale/sk/LC_MESSAGES/libkcompactdisc.mo
 share/locale/sl/LC_MESSAGES/libkcompactdisc.mo
+share/locale/sq/LC_MESSAGES/libkcompactdisc.mo
 share/locale/sr/LC_MESSAGES/libkcompactdisc.mo
 share/locale/sv/LC_MESSAGES/libkcompactdisc.mo
 share/locale/tr/LC_MESSAGES/libkcompactdisc.mo

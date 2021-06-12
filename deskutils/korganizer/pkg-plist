@@ -95,6 +95,7 @@ share/kservices5/webcal.protocol
 share/kservicetypes5/korganizerpart.desktop
 share/locale/ar/LC_MESSAGES/korgac.mo
 share/locale/ar/LC_MESSAGES/korganizer.mo
+share/locale/be/LC_MESSAGES/korganizer.mo
 share/locale/bg/LC_MESSAGES/korganizer.mo
 share/locale/bs/LC_MESSAGES/korgac.mo
 share/locale/bs/LC_MESSAGES/korganizer.mo
@@ -166,12 +167,16 @@ share/locale/ro/LC_MESSAGES/korgac.mo
 share/locale/ro/LC_MESSAGES/korganizer.mo
 share/locale/ru/LC_MESSAGES/korgac.mo
 share/locale/ru/LC_MESSAGES/korganizer.mo
+share/locale/se/LC_MESSAGES/korganizer.mo
 share/locale/sk/LC_MESSAGES/korgac.mo
 share/locale/sk/LC_MESSAGES/korganizer.mo
 share/locale/sl/LC_MESSAGES/korgac.mo
 share/locale/sl/LC_MESSAGES/korganizer.mo
+share/locale/sq/LC_MESSAGES/korganizer.mo
 share/locale/sv/LC_MESSAGES/korgac.mo
 share/locale/sv/LC_MESSAGES/korganizer.mo
+share/locale/ta/LC_MESSAGES/korganizer.mo
+share/locale/tg/LC_MESSAGES/korganizer.mo
 share/locale/tr/LC_MESSAGES/korgac.mo
 share/locale/tr/LC_MESSAGES/korganizer.mo
 share/locale/ug/LC_MESSAGES/korganizer.mo

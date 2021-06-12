@@ -30,6 +30,8 @@ share/kservices5/konsolepart.desktop
 share/kservicetypes5/terminalemulator.desktop
 share/locale/ar/LC_MESSAGES/konsole.mo
 share/locale/ast/LC_MESSAGES/konsole.mo
+share/locale/az/LC_MESSAGES/konsole.mo
+share/locale/be/LC_MESSAGES/konsole.mo
 share/locale/bg/LC_MESSAGES/konsole.mo
 share/locale/bs/LC_MESSAGES/konsole.mo
 share/locale/ca/LC_MESSAGES/konsole.mo
@@ -74,13 +76,18 @@ share/locale/pt/LC_MESSAGES/konsole.mo
 share/locale/pt_BR/LC_MESSAGES/konsole.mo
 share/locale/ro/LC_MESSAGES/konsole.mo
 share/locale/ru/LC_MESSAGES/konsole.mo
+share/locale/se/LC_MESSAGES/konsole.mo
 share/locale/sk/LC_MESSAGES/konsole.mo
 share/locale/sl/LC_MESSAGES/konsole.mo
+share/locale/sq/LC_MESSAGES/konsole.mo
 share/locale/sr/LC_MESSAGES/konsole.mo
 share/locale/sv/LC_MESSAGES/konsole.mo
+share/locale/ta/LC_MESSAGES/konsole.mo
+share/locale/tg/LC_MESSAGES/konsole.mo
 share/locale/tr/LC_MESSAGES/konsole.mo
 share/locale/ug/LC_MESSAGES/konsole.mo
 share/locale/uk/LC_MESSAGES/konsole.mo
+share/locale/vi/LC_MESSAGES/konsole.mo
 share/locale/wa/LC_MESSAGES/konsole.mo
 share/locale/zh_CN/LC_MESSAGES/konsole.mo
 share/locale/zh_TW/LC_MESSAGES/konsole.mo

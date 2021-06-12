@@ -3,6 +3,7 @@ share/applications/org.kde.sweeper.desktop
 share/dbus-1/interfaces/org.kde.sweeper.xml
 share/kxmlgui5/sweeper/sweeperui.rc
 share/locale/ar/LC_MESSAGES/sweeper.mo
+share/locale/be/LC_MESSAGES/sweeper.mo
 share/locale/bg/LC_MESSAGES/sweeper.mo
 share/locale/bs/LC_MESSAGES/sweeper.mo
 share/locale/ca/LC_MESSAGES/sweeper.mo
@@ -46,10 +47,14 @@ share/locale/pt/LC_MESSAGES/sweeper.mo
 share/locale/pt_BR/LC_MESSAGES/sweeper.mo
 share/locale/ro/LC_MESSAGES/sweeper.mo
 share/locale/ru/LC_MESSAGES/sweeper.mo
+share/locale/se/LC_MESSAGES/sweeper.mo
 share/locale/sk/LC_MESSAGES/sweeper.mo
 share/locale/sl/LC_MESSAGES/sweeper.mo
+share/locale/sq/LC_MESSAGES/sweeper.mo
 share/locale/sr/LC_MESSAGES/sweeper.mo
 share/locale/sv/LC_MESSAGES/sweeper.mo
+share/locale/ta/LC_MESSAGES/sweeper.mo
+share/locale/tg/LC_MESSAGES/sweeper.mo
 share/locale/tr/LC_MESSAGES/sweeper.mo
 share/locale/ug/LC_MESSAGES/sweeper.mo
 share/locale/uk/LC_MESSAGES/sweeper.mo

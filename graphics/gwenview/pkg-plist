@@ -24,6 +24,8 @@ share/kconf_update/gwenview-imageview-alphabackgroundmode-update.pl
 share/kconf_update/gwenview.upd
 share/kservices5/gvpart.desktop
 share/locale/ar/LC_MESSAGES/gwenview.mo
+share/locale/az/LC_MESSAGES/gwenview.mo
+share/locale/be/LC_MESSAGES/gwenview.mo
 share/locale/bg/LC_MESSAGES/gwenview.mo
 share/locale/bs/LC_MESSAGES/gwenview.mo
 share/locale/ca/LC_MESSAGES/gwenview.mo
@@ -69,6 +71,7 @@ share/locale/ro/LC_MESSAGES/gwenview.mo
 share/locale/ru/LC_MESSAGES/gwenview.mo
 share/locale/sk/LC_MESSAGES/gwenview.mo
 share/locale/sl/LC_MESSAGES/gwenview.mo
+share/locale/sq/LC_MESSAGES/gwenview.mo
 share/locale/sr/LC_MESSAGES/gwenview.mo
 share/locale/sv/LC_MESSAGES/gwenview.mo
 share/locale/tr/LC_MESSAGES/gwenview.mo
@@ -78,6 +81,6 @@ share/locale/wa/LC_MESSAGES/gwenview.mo
 share/locale/zh_CN/LC_MESSAGES/gwenview.mo
 share/locale/zh_TW/LC_MESSAGES/gwenview.mo
 share/metainfo/org.kde.gwenview.appdata.xml
+share/qlogging-categories5/gwenview.categories
 share/solid/actions/gwenview_importer.desktop
 share/solid/actions/gwenview_importer_camera.desktop
-share/qlogging-categories5/gwenview.categories

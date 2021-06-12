@@ -18,6 +18,7 @@ share/kservices5/komparepart.desktop
 share/kservicetypes5/komparenavigationpart.desktop
 share/kservicetypes5/kompareviewpart.desktop
 share/locale/ar/LC_MESSAGES/kompare.mo
+share/locale/be/LC_MESSAGES/kompare.mo
 share/locale/bg/LC_MESSAGES/kompare.mo
 share/locale/bs/LC_MESSAGES/kompare.mo
 share/locale/ca/LC_MESSAGES/kompare.mo
@@ -58,10 +59,14 @@ share/locale/pt/LC_MESSAGES/kompare.mo
 share/locale/pt_BR/LC_MESSAGES/kompare.mo
 share/locale/ro/LC_MESSAGES/kompare.mo
 share/locale/ru/LC_MESSAGES/kompare.mo
+share/locale/se/LC_MESSAGES/kompare.mo
 share/locale/sk/LC_MESSAGES/kompare.mo
 share/locale/sl/LC_MESSAGES/kompare.mo
+share/locale/sq/LC_MESSAGES/kompare.mo
 share/locale/sr/LC_MESSAGES/kompare.mo
 share/locale/sv/LC_MESSAGES/kompare.mo
+share/locale/ta/LC_MESSAGES/kompare.mo
+share/locale/tg/LC_MESSAGES/kompare.mo
 share/locale/tr/LC_MESSAGES/kompare.mo
 share/locale/ug/LC_MESSAGES/kompare.mo
 share/locale/uk/LC_MESSAGES/kompare.mo

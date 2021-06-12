@@ -37,16 +37,16 @@ lib/libkaccounts.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kaccounts/qmldir
 share/kpackage/kcms/kcm_kaccounts/contents/ui/AccountDetails.qml
 share/kpackage/kcms/kcm_kaccounts/contents/ui/Accounts.qml
+share/kpackage/kcms/kcm_kaccounts/contents/ui/AvailableAccounts.qml
 share/kpackage/kcms/kcm_kaccounts/contents/ui/MessageBoxSheet.qml
 share/kpackage/kcms/kcm_kaccounts/contents/ui/RemoveAccountDialog.qml
 share/kpackage/kcms/kcm_kaccounts/contents/ui/RenameAccountDialog.qml
-share/locale/hu/LC_MESSAGES/kaccounts-integration.mo
-share/kpackage/kcms/kcm_kaccounts/contents/ui/AvailableAccounts.qml
 share/kpackage/kcms/kcm_kaccounts/metadata.desktop
 share/kpackage/kcms/kcm_kaccounts/metadata.json
 share/kservices5/kcm_kaccounts.desktop
 share/locale/ar/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ast/LC_MESSAGES/kaccounts-integration.mo
+share/locale/az/LC_MESSAGES/kaccounts-integration.mo
 share/locale/bs/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ca/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ca@valencia/LC_MESSAGES/kaccounts-integration.mo
@@ -61,6 +61,7 @@ share/locale/eu/LC_MESSAGES/kaccounts-integration.mo
 share/locale/fi/LC_MESSAGES/kaccounts-integration.mo
 share/locale/fr/LC_MESSAGES/kaccounts-integration.mo
 share/locale/gl/LC_MESSAGES/kaccounts-integration.mo
+share/locale/hu/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ia/LC_MESSAGES/kaccounts-integration.mo
 share/locale/it/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ja/LC_MESSAGES/kaccounts-integration.mo

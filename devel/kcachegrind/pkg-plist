@@ -17,6 +17,7 @@ share/icons/hicolor/64x64/apps/kcachegrind.png
 %%DATADIR%%/icons/hicolor/32x32/actions/percent.png
 %%DATADIR%%/tips
 share/locale/ar/LC_MESSAGES/kcachegrind.mo
+share/locale/be/LC_MESSAGES/kcachegrind.mo
 share/locale/bs/LC_MESSAGES/kcachegrind.mo
 share/locale/ca/LC_MESSAGES/kcachegrind.mo
 share/locale/ca@valencia/LC_MESSAGES/kcachegrind.mo
@@ -54,9 +55,13 @@ share/locale/pt/LC_MESSAGES/kcachegrind.mo
 share/locale/pt_BR/LC_MESSAGES/kcachegrind.mo
 share/locale/ro/LC_MESSAGES/kcachegrind.mo
 share/locale/ru/LC_MESSAGES/kcachegrind.mo
+share/locale/se/LC_MESSAGES/kcachegrind.mo
 share/locale/sk/LC_MESSAGES/kcachegrind.mo
 share/locale/sl/LC_MESSAGES/kcachegrind.mo
+share/locale/sq/LC_MESSAGES/kcachegrind.mo
 share/locale/sv/LC_MESSAGES/kcachegrind.mo
+share/locale/ta/LC_MESSAGES/kcachegrind.mo
+share/locale/tg/LC_MESSAGES/kcachegrind.mo
 share/locale/tr/LC_MESSAGES/kcachegrind.mo
 share/locale/ug/LC_MESSAGES/kcachegrind.mo
 share/locale/uk/LC_MESSAGES/kcachegrind.mo

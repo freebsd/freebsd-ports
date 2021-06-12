@@ -28,6 +28,7 @@ share/icons/hicolor/64x64/apps/kbounce.png
 %%DATADIR%%/themes/the_beach.svgz
 %%DATADIR%%/themes/thebeach_preview.png
 share/locale/ar/LC_MESSAGES/kbounce.mo
+share/locale/be/LC_MESSAGES/kbounce.mo
 share/locale/bg/LC_MESSAGES/kbounce.mo
 share/locale/bs/LC_MESSAGES/kbounce.mo
 share/locale/ca/LC_MESSAGES/kbounce.mo
@@ -71,13 +72,18 @@ share/locale/pt/LC_MESSAGES/kbounce.mo
 share/locale/pt_BR/LC_MESSAGES/kbounce.mo
 share/locale/ro/LC_MESSAGES/kbounce.mo
 share/locale/ru/LC_MESSAGES/kbounce.mo
+share/locale/se/LC_MESSAGES/kbounce.mo
 share/locale/sk/LC_MESSAGES/kbounce.mo
 share/locale/sl/LC_MESSAGES/kbounce.mo
+share/locale/sq/LC_MESSAGES/kbounce.mo
 share/locale/sr/LC_MESSAGES/kbounce.mo
 share/locale/sv/LC_MESSAGES/kbounce.mo
+share/locale/ta/LC_MESSAGES/kbounce.mo
+share/locale/tg/LC_MESSAGES/kbounce.mo
 share/locale/tr/LC_MESSAGES/kbounce.mo
 share/locale/ug/LC_MESSAGES/kbounce.mo
 share/locale/uk/LC_MESSAGES/kbounce.mo
+share/locale/vi/LC_MESSAGES/kbounce.mo
 share/locale/zh_CN/LC_MESSAGES/kbounce.mo
 share/locale/zh_TW/LC_MESSAGES/kbounce.mo
 share/metainfo/org.kde.kbounce.appdata.xml

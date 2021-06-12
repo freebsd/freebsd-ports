@@ -190,6 +190,7 @@ lib/libKF5Torrent.so
 lib/libKF5Torrent.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libKF5Torrent.so.6
 share/locale/ar/LC_MESSAGES/libktorrent5.mo
+share/locale/be/LC_MESSAGES/libktorrent5.mo
 share/locale/bg/LC_MESSAGES/libktorrent5.mo
 share/locale/bs/LC_MESSAGES/libktorrent5.mo
 share/locale/ca/LC_MESSAGES/libktorrent5.mo
@@ -229,6 +230,7 @@ share/locale/pt/LC_MESSAGES/libktorrent5.mo
 share/locale/pt_BR/LC_MESSAGES/libktorrent5.mo
 share/locale/ro/LC_MESSAGES/libktorrent5.mo
 share/locale/ru/LC_MESSAGES/libktorrent5.mo
+share/locale/se/LC_MESSAGES/libktorrent5.mo
 share/locale/sk/LC_MESSAGES/libktorrent5.mo
 share/locale/sl/LC_MESSAGES/libktorrent5.mo
 share/locale/sr/LC_MESSAGES/libktorrent5.mo

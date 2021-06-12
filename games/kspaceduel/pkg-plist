@@ -30,6 +30,7 @@ share/icons/hicolor/64x64/apps/kspaceduel.png
 %%DATADIR%%/sprites/playerinfo/ship23.png
 %%DATADIR%%/sprites/playerinfo/win.png
 share/locale/ar/LC_MESSAGES/kspaceduel.mo
+share/locale/be/LC_MESSAGES/kspaceduel.mo
 share/locale/bg/LC_MESSAGES/kspaceduel.mo
 share/locale/bs/LC_MESSAGES/kspaceduel.mo
 share/locale/ca/LC_MESSAGES/kspaceduel.mo
@@ -72,10 +73,14 @@ share/locale/pt/LC_MESSAGES/kspaceduel.mo
 share/locale/pt_BR/LC_MESSAGES/kspaceduel.mo
 share/locale/ro/LC_MESSAGES/kspaceduel.mo
 share/locale/ru/LC_MESSAGES/kspaceduel.mo
+share/locale/se/LC_MESSAGES/kspaceduel.mo
 share/locale/sk/LC_MESSAGES/kspaceduel.mo
 share/locale/sl/LC_MESSAGES/kspaceduel.mo
+share/locale/sq/LC_MESSAGES/kspaceduel.mo
 share/locale/sr/LC_MESSAGES/kspaceduel.mo
 share/locale/sv/LC_MESSAGES/kspaceduel.mo
+share/locale/ta/LC_MESSAGES/kspaceduel.mo
+share/locale/tg/LC_MESSAGES/kspaceduel.mo
 share/locale/tr/LC_MESSAGES/kspaceduel.mo
 share/locale/ug/LC_MESSAGES/kspaceduel.mo
 share/locale/uk/LC_MESSAGES/kspaceduel.mo

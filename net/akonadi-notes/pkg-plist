@@ -13,6 +13,7 @@ lib/libKF5AkonadiNotes.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_AkonadiNotes.pri
 share/locale/ar/LC_MESSAGES/akonadinotes5.mo
 share/locale/ast/LC_MESSAGES/akonadinotes5.mo
+share/locale/az/LC_MESSAGES/akonadinotes5.mo
 share/locale/bg/LC_MESSAGES/akonadinotes5.mo
 share/locale/bs/LC_MESSAGES/akonadinotes5.mo
 share/locale/ca/LC_MESSAGES/akonadinotes5.mo
@@ -53,6 +54,7 @@ share/locale/sk/LC_MESSAGES/akonadinotes5.mo
 share/locale/sl/LC_MESSAGES/akonadinotes5.mo
 share/locale/sr/LC_MESSAGES/akonadinotes5.mo
 share/locale/sv/LC_MESSAGES/akonadinotes5.mo
+share/locale/tg/LC_MESSAGES/akonadinotes5.mo
 share/locale/tr/LC_MESSAGES/akonadinotes5.mo
 share/locale/ug/LC_MESSAGES/akonadinotes5.mo
 share/locale/uk/LC_MESSAGES/akonadinotes5.mo

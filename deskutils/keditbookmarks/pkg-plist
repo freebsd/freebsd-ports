@@ -25,6 +25,7 @@ share/applications/org.kde.keditbookmarks.desktop
 share/config.kcfg/keditbookmarks.kcfg
 share/locale/ar/LC_MESSAGES/keditbookmarks.mo
 share/locale/ast/LC_MESSAGES/keditbookmarks.mo
+share/locale/be/LC_MESSAGES/keditbookmarks.mo
 share/locale/bg/LC_MESSAGES/keditbookmarks.mo
 share/locale/bs/LC_MESSAGES/keditbookmarks.mo
 share/locale/ca/LC_MESSAGES/keditbookmarks.mo
@@ -69,13 +70,18 @@ share/locale/pt/LC_MESSAGES/keditbookmarks.mo
 share/locale/pt_BR/LC_MESSAGES/keditbookmarks.mo
 share/locale/ro/LC_MESSAGES/keditbookmarks.mo
 share/locale/ru/LC_MESSAGES/keditbookmarks.mo
+share/locale/se/LC_MESSAGES/keditbookmarks.mo
 share/locale/sk/LC_MESSAGES/keditbookmarks.mo
 share/locale/sl/LC_MESSAGES/keditbookmarks.mo
+share/locale/sq/LC_MESSAGES/keditbookmarks.mo
 share/locale/sr/LC_MESSAGES/keditbookmarks.mo
 share/locale/sv/LC_MESSAGES/keditbookmarks.mo
+share/locale/ta/LC_MESSAGES/keditbookmarks.mo
+share/locale/tg/LC_MESSAGES/keditbookmarks.mo
 share/locale/tr/LC_MESSAGES/keditbookmarks.mo
 share/locale/ug/LC_MESSAGES/keditbookmarks.mo
 share/locale/uk/LC_MESSAGES/keditbookmarks.mo
+share/locale/vi/LC_MESSAGES/keditbookmarks.mo
 share/locale/wa/LC_MESSAGES/keditbookmarks.mo
 share/locale/zh_CN/LC_MESSAGES/keditbookmarks.mo
 share/locale/zh_TW/LC_MESSAGES/keditbookmarks.mo

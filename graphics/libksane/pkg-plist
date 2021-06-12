@@ -13,6 +13,7 @@ share/icons/hicolor/16x16/actions/black-white.png
 share/icons/hicolor/16x16/actions/color.png
 share/icons/hicolor/16x16/actions/gray-scale.png
 share/locale/ar/LC_MESSAGES/libksane.mo
+share/locale/be/LC_MESSAGES/libksane.mo
 share/locale/bg/LC_MESSAGES/libksane.mo
 share/locale/bs/LC_MESSAGES/libksane.mo
 share/locale/ca/LC_MESSAGES/libksane.mo
@@ -57,6 +58,7 @@ share/locale/ro/LC_MESSAGES/libksane.mo
 share/locale/ru/LC_MESSAGES/libksane.mo
 share/locale/sk/LC_MESSAGES/libksane.mo
 share/locale/sl/LC_MESSAGES/libksane.mo
+share/locale/sq/LC_MESSAGES/libksane.mo
 share/locale/sv/LC_MESSAGES/libksane.mo
 share/locale/tr/LC_MESSAGES/libksane.mo
 share/locale/ug/LC_MESSAGES/libksane.mo

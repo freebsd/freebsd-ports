@@ -23,6 +23,7 @@ share/kconf_update/spectacle_shortcuts.upd
 share/kglobalaccel/org.kde.spectacle.desktop
 share/knotifications5/spectacle.notifyrc
 share/locale/ar/LC_MESSAGES/spectacle.mo
+share/locale/az/LC_MESSAGES/spectacle.mo
 share/locale/bg/LC_MESSAGES/spectacle.mo
 share/locale/ca/LC_MESSAGES/spectacle.mo
 share/locale/ca@valencia/LC_MESSAGES/spectacle.mo
