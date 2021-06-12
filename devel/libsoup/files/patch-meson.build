@@ -1,0 +1,17 @@
+--- meson.build.orig	2021-06-12 13:43:16 UTC
++++ meson.build
+@@ -340,11 +340,11 @@ endif
+ ################
+ # NTLM not supported on Windows
+ if host_machine.system() != 'windows'
+-  ntlm_auth = find_program(get_option('ntlm_auth'), required: get_option('ntlm'))
++  # ntlm_auth = find_program(get_option('ntlm_auth'), required: get_option('ntlm'))
+ 
+-  if ntlm_auth.found()
++  if get_option('ntlm').enabled()
+     add_project_arguments('-DUSE_NTLM_AUTH=1', language : 'c')
+-    add_project_arguments('-DNTLM_AUTH="' + ntlm_auth.path() + '"', language : 'c')
++    add_project_arguments('-DNTLM_AUTH="@@NTLM_AUTH@@"', language : 'c')
+   endif
+ endif
+ 
