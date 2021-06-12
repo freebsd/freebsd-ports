@@ -1,4 +1,4 @@
-nauty is a program for computing automorphism groups of graphs and digraphs.
-It can also produce a canonical labelling.
+nauty and Traces are programs for computing automorphism groups of graphs and
+digraphs. They can also produce a canonical label.
 
-WWW: https://users.cecs.anu.edu.au/~bdm/nauty/
+WWW: https://pallini.di.uniroma1.it/
