@@ -1,7 +1,7 @@
 # Created by: ade, archie
 
 PORTNAME=	caja
-PORTVERSION=	1.24.0
+PORTVERSION=	1.24.1
 CATEGORIES=	x11-fm mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
