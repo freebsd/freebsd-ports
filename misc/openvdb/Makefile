@@ -1,7 +1,6 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.0.1
-PORTREVISION=	3
+DISTVERSION=	8.1.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,14 +13,17 @@ LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
 		libboost_system.so:devel/boost-libs \
 		libImath.so:math/Imath \
 		libtbb.so:devel/tbb
+TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig
-USE_GITHUB=	yes
-GH_ACCOUNT=	AcademySoftwareFoundation
+USES=		cmake:testing compiler:c++11-lang localbase:ldflags pkgconfig
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DCONCURRENT_MALLOC="Tbbmalloc"
-CMAKE_OFF=	OPENVDB_CORE_STATIC
+USE_GITHUB=	yes
+GH_ACCOUNT=	AcademySoftwareFoundation
+
+CMAKE_ARGS=		-DCONCURRENT_MALLOC="Tbbmalloc"
+CMAKE_OFF=		OPENVDB_CORE_STATIC
+CMAKE_TESTING_ON=	OPENVDB_BUILD_UNITTESTS # one test fails: https://github.com/AcademySoftwareFoundation/openvdb/issues/1103
 
 OPTIONS_DEFINE=		PYTHON TOOLS #DOCS # TOOLS and PYTHON should be made into subpackages
 OPTIONS_DEFAULT=	PYTHON TOOLS
