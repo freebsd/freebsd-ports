@@ -36,6 +36,7 @@ bin/2dcat
 bin/2perm
 bin/2swap
 bin/3dABoverlap
+bin/3dmaxdisp
 bin/3dAFNIto3D
 bin/3dAFNItoANALYZE
 bin/3dAFNItoNIFTI
@@ -463,6 +464,7 @@ bin/SurfDsetInfo
 bin/SurfExtrema
 bin/SurfFWHM
 bin/SurfInfo
+bin/SurfLocalstat
 bin/SurfMeasures
 bin/SurfPatch
 bin/SurfQual
