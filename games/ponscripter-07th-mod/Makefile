@@ -1,11 +1,13 @@
 PORTNAME=	ponscripter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.2.0_test-3
+DISTVERSIONSUFFIX=	-gfd57193
 CATEGORIES=	games
 PKGNAMESUFFIX=	-${GH_ACCOUNT}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	69068bf83653.patch:-p1 # https://github.com/sekaiproject/ponscripter-fork/pull/98
+PATCHFILES+=	6a8795f0dc4e.patch:-p1 # https://github.com/07th-mod/ponscripter-fork/pull/7
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	NScripter-like novel-game interpreter with Unicode support
@@ -27,9 +29,7 @@ USE_SDL=	image2 mixer2
 EXTRACT_AFTER_ARGS=--exclude src/extlib
 SHEBANG_FILES=	util/xml-template
 HAS_CONFIGURE=	yes
-# XXX Pretend clang is like lang/gcc and can USE_CPU_GFX
-CONFIGURE_ENV=	CC_VER="4.8" CC="${CC} ${CFLAGS}" CXX="${CXX} ${CXXFLAGS}" \
-		CPATH="${LOCALBASE}/include" LIBRARY_PATH="${LOCALBASE}/lib"
+CONFIGURE_ENV=	CC="${CC} ${CFLAGS}" CXX="${CXX} ${CXXFLAGS}"
 CONFIGURE_ARGS=	--prefix="${STAGEDIR}${PREFIX}" --unsupported-compiler
 LDFLAGS+=	-Wl,--as-needed
 PORTDOCS=	BUGS CHANGES MANUAL README.md TODO
