@@ -1,4 +1,0 @@
-pgespresso is an extension to postgresql that adds functions and views
-to be used by Barman, the disaster recovery tool
-
-WWW: https://github.com/2ndquadrant-it/pgespresso
