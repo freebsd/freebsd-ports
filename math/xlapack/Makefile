@@ -1,7 +1,6 @@
 # Created by: bf@FreeBSD.org
 
 PORTNAME=	xlapack
-PORTREVISION=	6
 
 MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	Extended Precision LAPACK

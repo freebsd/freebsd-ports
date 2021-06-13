@@ -1,7 +1,6 @@
 # Created by: ljo
 
 PORTNAME=	blas
-PORTREVISION=	6
 
 MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	Basic Linear Algebra Subroutines
