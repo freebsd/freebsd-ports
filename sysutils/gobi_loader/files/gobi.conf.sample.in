@@ -1,0 +1,8 @@
+# Load GOBI U3G QDL modem firmware.
+# Adjust VID, PID and port. Remove -2000 switch if not required.
+
+attach 100 {
+	 match "vendor" "0x03f0";
+	 match "product" "0x241d";
+	 action "/usr/local/sbin/gobi_loader -2000 /dev/cua$ttyname /boot/firmware/gobi/";
+};

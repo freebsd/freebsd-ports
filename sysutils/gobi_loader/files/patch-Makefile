@@ -1,0 +1,9 @@
+--- Makefile.orig	2019-12-27 21:35:57.626444000 +0100
++++ Makefile	2019-12-27 21:37:41.912754000 +0100
+@@ -2,5 +2,5 @@
+ 
+ gobi_loader: gobi_loader.c
+-	cc -Wall gobi_loader.c -o gobi_loader
++	$(CC) ${CFLAGS} gobi_loader.c -o gobi_loader
+ 
+ all: gobi_loader
