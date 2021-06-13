@@ -1,0 +1,8 @@
+Flatpak is a technology for packaging and distributing standalone dekstop
+applications. It uses interfaces called "portals" to communicate with the
+rest of the system.
+
+libportal is a small library that provides an asynchronous API to the
+most Flatpak portals.
+
+WWW: https://github.com/flatpak/libportal

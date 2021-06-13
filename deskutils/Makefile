@@ -145,6 +145,7 @@
     SUBDIR += kuserfeedback
     SUBDIR += latte-dock
     SUBDIR += libkdepim
+    SUBDIR += libportal
     SUBDIR += ljclive
     SUBDIR += lookbook
     SUBDIR += lumina-archiver
