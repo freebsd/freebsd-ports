@@ -1,7 +1,7 @@
 # Created by: Garrett Rooney <rooneg@electricjellyfish.net>
 
 PORTNAME=	marco
-PORTVERSION=	1.24.1
+PORTVERSION=	1.24.2
 CATEGORIES=	x11-wm mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
