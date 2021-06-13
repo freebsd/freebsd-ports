@@ -13,12 +13,12 @@ lib/libplasmapotdprovidercore.so.1.0.0
 %%QT_PLUGINDIR%%/kcm_krunner_dictionary.so
 %%QT_PLUGINDIR%%/kcm_krunner_spellcheck.so
 %%QT_PLUGINDIR%%/kf5/krunner/krunner_charrunner.so
-%%QT_PLUGINDIR%%/kf5/krunner/krunner_converter.so
 %%QT_PLUGINDIR%%/kf5/krunner/krunner_datetime.so
 %%QT_PLUGINDIR%%/kf5/krunner/krunner_dictionary.so
 %%QT_PLUGINDIR%%/kf5/krunner/krunner_katesessions.so
 %%QT_PLUGINDIR%%/kf5/krunner/krunner_konsoleprofiles.so
 %%QT_PLUGINDIR%%/kf5/krunner/krunner_spellcheck.so
+%%QT_PLUGINDIR%%/kf5/krunner/unitconverter.so
 %%QT_PLUGINDIR%%/kpackage/packagestructure/plasma_packagestructure_comic.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.grouping.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.private.grouping.so
@@ -1493,6 +1493,7 @@ share/locale/tr/LC_MESSAGES/plasma_runner_CharacterRunner.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_katesessions.mo
+share/locale/tr/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/ug/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo

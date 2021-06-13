@@ -18,14 +18,14 @@ bin/plasma-systemmonitor
 %%QT_QMLDIR%%/org/kde/ksysguard/page/SectionControl.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/page/libPagePlugin.so
 %%QT_QMLDIR%%/org/kde/ksysguard/page/qmldir
+%%QT_QMLDIR%%/org/kde/ksysguard/table/BaseCellDelegate.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/BaseTableView.qml
-%%QT_QMLDIR%%/org/kde/ksysguard/table/BasicCellDelegate.qml
-%%QT_QMLDIR%%/org/kde/ksysguard/table/CellBackground.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/ColumnConfigurationDialog.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/FirstCellDelegate.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/KillDialog.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/LineChartCellDelegate.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/TableViewHeader.qml
+%%QT_QMLDIR%%/org/kde/ksysguard/table/TextCellDelegate.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/TreeDecoration.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/UserCellDelegate.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/table/libTablePlugin.so
@@ -68,6 +68,7 @@ share/locale/da/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.m
 share/locale/da/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
 share/locale/da/LC_MESSAGES/plasma-systemmonitor.mo
 share/locale/de/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
+share/locale/de/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
 share/locale/de/LC_MESSAGES/plasma-systemmonitor.mo
 share/locale/en_GB/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
 share/locale/en_GB/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
@@ -106,6 +107,8 @@ share/locale/nl/LC_MESSAGES/plasma-systemmonitor.mo
 share/locale/nn/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
 share/locale/nn/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
 share/locale/nn/LC_MESSAGES/plasma-systemmonitor.mo
+share/locale/pa/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
+share/locale/pa/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
 share/locale/pa/LC_MESSAGES/plasma-systemmonitor.mo
 share/locale/pl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
 share/locale/pl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo

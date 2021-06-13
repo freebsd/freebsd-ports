@@ -1,6 +1,7 @@
 lib/libexec/kactivitymanagerd
 lib/libkactivitymanagerd_plugin.so
 lib/systemd/user/plasma-kactivitymanagerd.service
+%%QT_PLUGINDIR%%/kactivitymanagerd/1/kactivitymanagerd_plugin_activityrunner.so
 %%QT_PLUGINDIR%%/kactivitymanagerd/1/kactivitymanagerd_plugin_activitytemplates.so
 %%QT_PLUGINDIR%%/kactivitymanagerd/1/kactivitymanagerd_plugin_eventspy.so
 %%QT_PLUGINDIR%%/kactivitymanagerd/1/kactivitymanagerd_plugin_globalshortcuts.so
@@ -10,6 +11,7 @@ lib/systemd/user/plasma-kactivitymanagerd.service
 %%QT_PLUGINDIR%%/kactivitymanagerd/1/kactivitymanagerd_plugin_sqlite.so
 %%QT_PLUGINDIR%%/kactivitymanagerd/1/kactivitymanagerd_plugin_virtualdesktopswitch.so
 share/dbus-1/services/org.kde.ActivityManager.service
+share/krunner/dbusplugins/plasma-runnners-activities.desktop
 share/kservices5/kactivitymanagerd.desktop
 share/kservicetypes5/kactivitymanagerd-plugin.desktop
 share/locale/az/LC_MESSAGES/kactivities5.mo

@@ -15,7 +15,7 @@ USES=		cmake compiler:c++11-lib cpe gettext kde:5 pkgconfig \
 		qt:5 shebangfix tar:xz xorg
 USE_KDE=	auth codecs config configwidgets coreaddons crash ecm \
 		emoticons globalaccel i18n idletime init itemmodels kcmutils \
-		kdeclarative kdelibs4support notifications package \
+		kdeclarative kdelibs4support layer-shell-qt notifications package \
 		plasma-framework sonnet textwidgets wayland widgetsaddons \
 		windowsystem xmlgui
 USE_QT=		core dbus declarative gui network qdbus testlib widgets x11extras xml \

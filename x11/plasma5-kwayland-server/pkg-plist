@@ -40,7 +40,6 @@ include/KWaylandServer/pointer_interface.h
 include/KWaylandServer/pointerconstraints_v1_interface.h
 include/KWaylandServer/pointergestures_v1_interface.h
 include/KWaylandServer/primaryselectiondevicemanager_v1_interface.h
-include/KWaylandServer/region_interface.h
 include/KWaylandServer/relativepointer_v1_interface.h
 include/KWaylandServer/resource.h
 include/KWaylandServer/screencast_v1_interface.h

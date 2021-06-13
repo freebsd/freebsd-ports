@@ -1,4 +1,7 @@
+include/PlasmaKeyData/plasmakeydata.h
+%%QT_PLUGINDIR%%/platforminputcontexts/plasmaimplatforminputcontextplugin.so
 %%QT_PLUGINDIR%%/platformthemes/KDEPlasmaPlatformTheme.so
+libdata/pkgconfig/plasma-key-data.pc
 share/kconf_update/fonts_akregator.pl
 share/kconf_update/fonts_akregator.upd
 share/kconf_update/fonts_global.pl

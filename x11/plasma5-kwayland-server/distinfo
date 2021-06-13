@@ -1,3 +1,3 @@
-TIMESTAMP = 1620277334
-SHA256 (KDE/plasma/5.21.5/kwayland-server-5.21.5.tar.xz) = 2fcfc16e8bda1f85db8148715ec08a1b36a0738c3796cf886faadc983f8e21c9
-SIZE (KDE/plasma/5.21.5/kwayland-server-5.21.5.tar.xz) = 219148
+TIMESTAMP = 1622814019
+SHA256 (KDE/plasma/5.22.0/kwayland-server-5.22.0.tar.xz) = 84617871c47f7e5060462728a82bfcdad14fd0bb2f1f8252bee077e28deb1694
+SIZE (KDE/plasma/5.22.0/kwayland-server-5.22.0.tar.xz) = 219340

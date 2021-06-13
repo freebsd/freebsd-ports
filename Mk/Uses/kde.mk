@@ -75,7 +75,7 @@ _KDE_RELNAME=		KDE${_KDE_VERSION}
 
 # === VERSIONS OF THE DIFFERENT COMPONENTS =====================================
 # Current KDE desktop.
-KDE_PLASMA_VERSION?=		5.21.5
+KDE_PLASMA_VERSION?=		5.22.0
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
@@ -263,7 +263,7 @@ _USE_PLASMA_ALL=	activitymanagerd breeze breeze-gtk \
 			infocenter kde-cli-tools kde-gtk-config \
 			kdeplasma-addons kgamma5 kmenuedit kscreen \
 			kscreenlocker ksshaskpass ksysguard kwallet-pam \
-			kwayland-integration kwin kwrited libkscreen \
+			kwayland-integration kwin kwrited layer-shell-qt libkscreen \
 			libksysguard milou oxygen plasma-browser-integration \
 			plasma-desktop plasma-disks plasma-integration plasma-pa \
 			plasma-sdk plasma-workspace plasma-workspace-wallpapers \
@@ -441,6 +441,9 @@ kde-kwayland-protocols_LIB=	${KDE_PREFIX}/lib/cmake/PlasmaWaylandProtocols/Plasm
 
 kde-kwayland-server_PORT=	x11/plasma5-kwayland-server
 kde-kwayland-server_LIB=	libKWaylandServer.so
+
+kde-layer-shell-qt_PORT=	x11/plasma5-layer-shell-qt
+kde-layer-shell-qt_LIB=		libLayerShellQtInterface.so
 
 kde-mediaplayer_PORT=		multimedia/kf5-kmediaplayer
 kde-mediaplayer_LIB=		libKF5MediaPlayer.so.5

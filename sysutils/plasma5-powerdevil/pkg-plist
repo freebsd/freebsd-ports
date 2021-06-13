@@ -8,7 +8,7 @@ lib/libpowerdevilconfigcommonprivate.so.5
 lib/libpowerdevilconfigcommonprivate.so.%%KDE_PLASMA_VERSION%%
 lib/libpowerdevilcore.so
 lib/libpowerdevilcore.so.2
-lib/libpowerdevilcore.so.2.0.0
+lib/libpowerdevilcore.so.%%KDE_PLASMA_VERSION%%
 lib/libpowerdevilui.so
 lib/libpowerdevilui.so.5
 lib/libpowerdevilui.so.%%KDE_PLASMA_VERSION%%
@@ -19,7 +19,6 @@ lib/systemd/user/plasma-powerdevil.service
 %%QT_PLUGINDIR%%/kf5/powerdevil/powerdevilupowerbackend.so
 %%QT_PLUGINDIR%%/powerdevilbrightnesscontrolaction_config.so
 %%QT_PLUGINDIR%%/powerdevildimdisplayaction_config.so
-%%QT_PLUGINDIR%%/powerdevildpmsaction.so
 %%QT_PLUGINDIR%%/powerdevildpmsaction_config.so
 %%QT_PLUGINDIR%%/powerdevilhandlebuttoneventsaction_config.so
 %%QT_PLUGINDIR%%/powerdevilkeyboardbrightnesscontrolaction_config.so

@@ -39,7 +39,7 @@ USE_KDE=	activities activities attica auth breeze codecs \
 		newstuff notifications package plasma-framework runner service sonnet \
 		textwidgets widgetsaddons windowsystem xmlgui \
 		kwayland-integration kwayland-server wayland \
-		doctools_build 
+		doctools_build
 USE_LDCONFIG=	yes
 USE_QT=		concurrent core dbus declarative gui multimedia network script \
 		sensors testlib uiplugin uitools widgets x11extras xml \

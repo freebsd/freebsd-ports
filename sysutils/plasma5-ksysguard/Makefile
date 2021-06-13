@@ -1,6 +1,9 @@
 PORTNAME=	ksysguard
 DISTVERSION=	${KDE_PLASMA_VERSION}
-CATEGORIES=	sysutils kde kde-plasma
+PKGNAMEPREFIX=	plasma5-
+CATEGORIES=	sysutils kde
+MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/
+DIST_SUBDIR=	KDE/plasma/${KDE_PLASMA_VERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 utility to track and control the running processes
@@ -23,14 +26,5 @@ OPTIONS_SUB=		yes
 INOTIFY_DESC=		Filesystem alteration notifications using inotify
 INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
 INOTIFY_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Inotify
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
-CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_libpcap:BOOL=TRUE
-PLIST_SUB+=	PCAP="@comment "
-.else
-PLIST_SUB+=	PCAP=""
-.endif
 
 .include <bsd.port.mk>

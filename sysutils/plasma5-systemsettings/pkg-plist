@@ -1,5 +1,4 @@
 bin/systemsettings5
-lib/libsystemsettingsview.so
 lib/libsystemsettingsview.so.3
 %%QT_PLUGINDIR%%/systemsettingsview/icon_mode.so
 %%QT_PLUGINDIR%%/systemsettingsview/systemsettings_sidebar_mode.so
