@@ -1,5 +1,5 @@
 PORTNAME=	river
-PORTVERSION=	s20210605
+PORTVERSION=	s20210622
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,17 +14,18 @@ BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols \
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
+		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	ifreund
-GH_TAGNAME=	0e9dc08
+GH_TAGNAME=	3efcfed
 GH_TUPLE=	ifreund:zig-pixman:135f223:zig_pixman/deps/zig-pixman \
 		ifreund:zig-wayland:a8e1efc:zig_wayland/deps/zig-wayland \
 		ifreund:zig-xkbcommon:10cdca6:zig_xkbcommon/deps/zig-xkbcommon \
-		swaywm:zig-wlroots:d6444e7:zig_wlroots/deps/zig-wlroots
+		swaywm:zig-wlroots:c85fe79:zig_wlroots/deps/zig-wlroots
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:U-Drelease-fast=true} \
