@@ -2,7 +2,7 @@
 
 PORTNAME=	ripgrep
 DISTVERSION=	12.1.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -43,12 +43,13 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		jemallocator-0.3.2 \
 		lazy_static-1.4.0 \
 		libc-0.2.71 \
+		libm-0.1.4 \
 		log-0.4.8 \
 		maybe-uninit-2.0.0 \
 		memchr-2.3.3 \
 		memmap-0.7.0 \
 		num_cpus-1.13.0 \
-		packed_simd-0.3.3 \
+		packed_simd_2-0.3.5 \
 		pcre2-0.2.3 \
 		pcre2-sys-0.2.2 \
 		pkg-config-0.3.17 \
@@ -106,6 +107,8 @@ SIMD_VARS_i386=	RUSTFLAGS+="-C target-feature=+sse2"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|OUT_DIR|RIPGREP_OUTDIR|' ${WRKSRC}/build.rs
+	@${RLN} ${CARGO_VENDOR_DIR}/packed_simd_2-* ${CARGO_VENDOR_DIR}/packed_simd
+	@${REINPLACE_CMD} 's/packed_simd_2/packed_simd/' ${CARGO_VENDOR_DIR}/packed_simd/Cargo.toml
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rg
