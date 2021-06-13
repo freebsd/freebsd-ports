@@ -17,7 +17,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://samples.mplayerhq.hu/yuv4mpeg2/:pgo
 DIST_SUBDIR=	x264
@@ -32,8 +32,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS?=	libx264.so:multimedia/libx264
 
-X264_BUILD=	161
-X264_REV=	3049
+X264_BUILD=	163
+X264_REV=	3060
 X264_GITVER=	${GL_COMMIT:C/^(.{7}).*/\1/}
 
 USES?=		pkgconfig
@@ -42,7 +42,7 @@ USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	videolan
-GL_COMMIT=	55d517bc4569272a2c9a367a4106c234aba2ffbc
+GL_COMMIT=	5db6aa6cab1b146e07b60cc1736a01f21da01154
 HAS_CONFIGURE=	yes
 SHEBANG_FILES=	configure
 PLIST_FILES?=	bin/x264
