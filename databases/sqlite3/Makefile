@@ -2,7 +2,7 @@
 
 PORTNAME=	sqlite3
 DISTVERSION=	3.35.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${%Y:L:gmtime}/ https://www2.sqlite.org/${%Y:L:gmtime}/ https://www3.sqlite.org/${%Y:L:gmtime}/
@@ -188,7 +188,22 @@ URI_AUTHORITY_CPPFLAGS=	-DSQLITE_ALLOW_URI_AUTHORITY=1
 .include <bsd.port.options.mk>
 
 # Platform Configuration
-CPPFLAGS+=	-DHAVE_ISNAN=1 -DHAVE_MALLOC_USABLE_SIZE=1 -DHAVE_GMTIME_R=1 -DHAVE_LOCALTIME_R=1 -DHAVE_USLEEP=1 -DHAVE_STRCHRNUL=1
+# -DHAVE_POSIX_FALLOCATE=1 not yet, chunksize.test ZFS failure chunksize-1.2 expected: [32768] got: [2048]
+CPPFLAGS+=	-DHAVE_FCHOWN=1 \
+		-DHAVE_FDATASYNC=1 \
+		-DHAVE_ISNAN=1 \
+		-DHAVE_GMTIME_R=1 \
+		-DHAVE_LOCALTIME_R=1 \
+		-DHAVE_LSTAT=1 \
+		-DHAVE_MALLOC_USABLE_SIZE=1 \
+		-DHAVE_PREAD=1 \
+		-DHAVE_PWRITE=1 \
+		-DHAVE_USLEEP=1 \
+		-DHAVE_STRCHRNUL=1 \
+		-DHAVE_STRERROR_R=1 \
+		-DHAVE_READLINK=1 \
+		-DSQLITE_MMAP_READWRITE=1 \
+		-DSQLITE_OS_UNIX=1
 CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 
 # For compare with checksum from of the site. Now, this is a NIST SHA3-256 hash. sha256 not suitable for compare.
