@@ -16386,6 +16386,7 @@ net/py-python-keystoneclient3|net/py-python-keystoneclient|2021-06-10|Remove obs
 net/py-python-novaclient16|net/py-python-novaclient|2021-06-10|Remove obsoleted port. Use net/py-python-novaclient instead
 print/py-pycups1|print/py-pycups|2021-06-10|Remove obsoleted port. Use print/py-pycups instead
 lang/gcc8-devel|lang/gcc8|2021-06-11|GCC 8 reached end of life, use the final release (or a new major version)
+news/inn-CURRENT|news/inn-current|2021-06-12|Port renamed on request
 databases/postgresql95-client||2021-06-13|Has expired: PostgreSQL-9.5 has reached end-of-life
 databases/postgresql95-contrib||2021-06-13|Has expired: PostgreSQL-9.5 has reached end-of-life
 databases/postgresql95-docs||2021-06-13|Has expired: PostgreSQL-9.5 has reached end-of-life
