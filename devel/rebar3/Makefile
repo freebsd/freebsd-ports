@@ -1,5 +1,6 @@
 PORTNAME=	rebar3
 PORTVERSION=	3.15.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES+=	https://repo.hex.pm/tarballs/:hex
@@ -21,7 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	erlang
 
 NO_ARCH=	yes
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/rebar3.1.gz
 PORTEXAMPLES=	rebar.config.sample
 
 BASH_PLIST_FILES=	share/bash-completion/completions/rebar3
@@ -70,6 +72,7 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/manpages/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 do-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
