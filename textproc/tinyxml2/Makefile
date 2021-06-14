@@ -1,7 +1,7 @@
 # Created by: b.f. <bf@FreeBSD.org>
 
 PORTNAME=	tinyxml2
-PORTVERSION=	8.1.0
+PORTVERSION=	9.0.0
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
