@@ -1,5 +1,5 @@
 PKGNAMESUFFIX=	-daemon
-PORTREVISION=	3
+PORTREVISION=	4
 
 USES=		ssl
 NLS_USES=	gettext-runtime:run
