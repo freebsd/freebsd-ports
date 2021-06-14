@@ -1,5 +1,5 @@
-TIMESTAMP = 1623276854
-SHA256 (go/misc_slides/slides-v0.1.2/v0.1.2.mod) = c661428420737bdff28f33a3c73781c944169eb1e6a9995b3a20022e19e1765b
-SIZE (go/misc_slides/slides-v0.1.2/v0.1.2.mod) = 257
-SHA256 (go/misc_slides/slides-v0.1.2/v0.1.2.zip) = 40716be5e578bf5499372a92cfcbf488285337ea267420741365d6d403931679
-SIZE (go/misc_slides/slides-v0.1.2/v0.1.2.zip) = 24212
+TIMESTAMP = 1623693717
+SHA256 (go/misc_slides/slides-v0.2.0/v0.2.0.mod) = 70fa37e8b5d8f4e9476f95d7f7a7f1c006a55f6bf25ebe737e85d68909bb30f9
+SIZE (go/misc_slides/slides-v0.2.0/v0.2.0.mod) = 388
+SHA256 (go/misc_slides/slides-v0.2.0/v0.2.0.zip) = 0119a5415dbc1a0261f1c953a89c74a882e32777f311f2fd621d6a1451ca6687
+SIZE (go/misc_slides/slides-v0.2.0/v0.2.0.zip) = 478585
