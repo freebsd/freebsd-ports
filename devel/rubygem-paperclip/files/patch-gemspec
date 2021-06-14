@@ -1,0 +1,11 @@
+--- paperclip.gemspec.orig	2021-06-12 06:22:42 UTC
++++ paperclip.gemspec
+@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<activesupport>.freeze, [">= 4.2.0"])
+       s.add_runtime_dependency(%q<terrapin>.freeze, ["~> 0.6.0"])
+       s.add_runtime_dependency(%q<mime-types>.freeze, [">= 0"])
+-      s.add_runtime_dependency(%q<mimemagic>.freeze, ["~> 0.3.0"])
++      s.add_runtime_dependency(%q<mimemagic>.freeze, ["~> 0.3"])
+       s.add_development_dependency(%q<activerecord>.freeze, [">= 4.2.0"])
+       s.add_development_dependency(%q<shoulda>.freeze, [">= 0"])
+       s.add_development_dependency(%q<rspec>.freeze, ["~> 3.0"])
