@@ -1,6 +1,6 @@
---- src/wrapper.c.orig	2019-07-31 06:49:48 UTC
+--- src/wrapper.c.orig	2021-04-19 02:19:25 UTC
 +++ src/wrapper.c
-@@ -176,8 +176,8 @@ main (int argc, char *argv[])
+@@ -178,8 +178,8 @@ main (int argc, char *argv[])
  
  	int total_read = 0;
  	int total_read_cache = 0;
