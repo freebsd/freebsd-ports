@@ -738,7 +738,7 @@ GNUstep/Local/Library/Libraries/sogo/libSOGo.so.5
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.1
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.%%VERSION%%
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.1.0
 GNUstep/Local/Library/OCSTypeModels/appointment-oracle.ocs
 GNUstep/Local/Library/OCSTypeModels/appointment.ocs
 GNUstep/Local/Library/OCSTypeModels/contact-oracle.ocs
@@ -2015,6 +2015,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/ro.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/ru.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/sk.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/sl.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/sr-latn.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/sr.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/sv.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/tr.js
@@ -2041,7 +2042,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/link/di
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/link/dialogs/link.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/link/images/anchor.png
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/link/images/hidpi/anchor.png
-GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/pastefromexcel/LICENSE.md
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/pastefromgdocs/filter/default.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/pastefromword/filter/default.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/pastetools/filter/common.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/pastetools/filter/image.js
