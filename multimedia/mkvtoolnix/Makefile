@@ -1,7 +1,7 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	57.0.0
+PORTVERSION=	58.0.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -33,7 +33,8 @@ CONFIGURE_ARGS=	--with-boost=${LOCALBASE} \
 		--with-boost-filesystem=boost_filesystem \
 		--with-boost-system=boost_system \
 		--with-boost-regex=boost_regex \
-		--with-docbook-xsl-root=${PREFIX}/share/xsl/docbook
+		--with-docbook-xsl-root=${PREFIX}/share/xsl/docbook \
+		--disable-qt6
 MAKE_ENV=	V=1
 MAKE_CMD=	rake -v
 MAKEFILE=	Rakefile
