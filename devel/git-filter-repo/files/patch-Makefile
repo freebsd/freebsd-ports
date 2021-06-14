@@ -1,5 +1,14 @@
 --- Makefile.orig	2021-06-07 09:23:45.000000000 -0700
-+++ Makefile	2021-06-13 22:29:05.758893000 -0700
++++ Makefile	2021-06-14 16:03:09.610176000 -0700
+@@ -2,7 +2,7 @@
+ prefix = $(HOME)
+ bindir = $(prefix)/libexec/git-core
+ localedir = $(prefix)/share/locale
+-mandir = $(prefix)/share/man
++mandir = $(prefix)/man
+ htmldir = $(prefix)/share/doc/git-doc
+ pythondir = $(prefix)/lib64/python3.6/site-packages
+ 
 @@ -23,7 +23,7 @@
  # html/git-filter-repo.html.  But let's support people installing from a git
  # clone too; for them, just cheat and snag a copy of the built docs that I
