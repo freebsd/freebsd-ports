@@ -1,6 +1,6 @@
---- unix/Makefile.in.orig	2021-06-08 09:38:20.307442000 +0000
-+++ unix/Makefile.in	2021-06-08 09:54:29.143801000 +0000
-@@ -84,7 +84,7 @@
+--- unix/Makefile.in.orig	2021-06-13 17:37:34 UTC
++++ unix/Makefile.in
+@@ -84,7 +84,7 @@ HTML_DIR		= @HTML_DIR@
  HTML_INSTALL_DIR	= $(INSTALL_ROOT)$(HTML_DIR)
  
  # Directory in which to install the configuration file tclConfig.sh
@@ -9,7 +9,7 @@
  
  # Directory in which to install bundled packages:
  PACKAGE_DIR		= @PACKAGE_DIR@
-@@ -1003,30 +1003,23 @@
+@@ -1003,30 +1003,23 @@ install-binaries: binaries
  	@EXTRA_INSTALL_BINARIES@
  	@echo "Installing pkg-config file to $(LIB_INSTALL_DIR)/pkgconfig/"
  	@$(INSTALL_DATA_DIR) "$(LIB_INSTALL_DIR)/pkgconfig"
@@ -43,7 +43,7 @@
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)/"
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex \
  		$(UNIX_DIR)/tclAppInit.c @LDAIX_SRC@ @DTRACE_SRC@ ; do \
-@@ -1041,23 +1034,23 @@
+@@ -1041,23 +1034,23 @@ install-libraries: libraries
  	done
  	@echo "Installing package http 2.10a1 as a Tcl Module"
  	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl \
@@ -72,7 +72,7 @@
  	@echo "Installing encoding files to $(SCRIPT_INSTALL_DIR)/encoding/"
  	@for i in $(TOP_DIR)/library/encoding/*.enc; do \
  		$(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)/encoding"; \
-@@ -1067,6 +1060,9 @@
+@@ -1067,6 +1060,9 @@ install-libraries: libraries
  	    echo "if {![interp issafe]} { ::tcl::tm::roots {$(TCL_MODULE_PATH)} }" >> \
  	        "$(SCRIPT_INSTALL_DIR)/tm.tcl"; \
  	fi
