@@ -5742,6 +5742,7 @@
     SUBDIR += rubygem-aws-sdk-polly
     SUBDIR += rubygem-aws-sdk-pricing
     SUBDIR += rubygem-aws-sdk-prometheusservice
+    SUBDIR += rubygem-aws-sdk-proton
     SUBDIR += rubygem-aws-sdk-qldb
     SUBDIR += rubygem-aws-sdk-qldbsession
     SUBDIR += rubygem-aws-sdk-quicksight
@@ -6003,6 +6004,7 @@
     SUBDIR += rubygem-cheffish
     SUBDIR += rubygem-childprocess
     SUBDIR += rubygem-childprocess3
+    SUBDIR += rubygem-childprocess40
     SUBDIR += rubygem-chronic
     SUBDIR += rubygem-chronic_duration
     SUBDIR += rubygem-clamp
