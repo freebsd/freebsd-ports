@@ -102,6 +102,7 @@
     SUBDIR += py-stripe
     SUBDIR += py-ta-lib
     SUBDIR += py-vatnumber
+    SUBDIR += py-yfinance
     SUBDIR += py-ystockquote
     SUBDIR += qtbitcointrader
     SUBDIR += quantlib
