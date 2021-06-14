@@ -4690,6 +4690,7 @@
     SUBDIR += py-multi_key_dict
     SUBDIR += py-multipledispatch
     SUBDIR += py-multiprocess
+    SUBDIR += py-multitasking
     SUBDIR += py-munch
     SUBDIR += py-murmurhash
     SUBDIR += py-mygpoclient
