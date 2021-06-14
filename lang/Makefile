@@ -305,6 +305,7 @@
     SUBDIR += ruby26
     SUBDIR += ruby27
     SUBDIR += ruby30
+    SUBDIR += rubygem-ruby_language_server
     SUBDIR += runawk
     SUBDIR += rust
     SUBDIR += rust-bootstrap
