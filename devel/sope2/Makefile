@@ -1,7 +1,7 @@
 # Created by: Euan Thoms <euan@potensol.com>
 
 PORTNAME=		sope2
-PORTVERSION=		2.4.0
+PORTVERSION=		2.4.1
 CATEGORIES=		devel gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOPE-${PORTVERSION}
