@@ -1,7 +1,7 @@
 # Created by: Philippe Audeoud <jadawin@tuxaco.net>
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.5.7
+PORTVERSION=	1.5.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -22,7 +22,8 @@ SUB_FILES=	pkg-deinstall pkg-message
 
 USE_GITHUB=	yes
 
-post-extract:
+post-patch:
+	@${RM} -fr ${WRKSRC}/.github/
 	@${MKDIR} ${WRKSRC}/cache/
 	@${FIND} ${WRKSRC} -name '.git*' -delete
 	@${RM} ${WRKSRC}/zp-core/Zenphoto.package
