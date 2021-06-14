@@ -11,7 +11,7 @@ setup(
     url='https://github.com/takluyver/flit',
     packages=find_packages(),
     install_requires=['pytoml'],
-    requires_python='>=3.4',
+    python_requires='>=3.4',
     classifiers=[
         "License :: OSI Approved :: BSD License",
         "Topic :: Software Development :: Libraries :: Python Modules",
