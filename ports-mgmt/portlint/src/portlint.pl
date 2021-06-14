@@ -14,7 +14,7 @@
 # bsd.port.mk.  There are significant differences in those so non-FreeBSD code
 # was removed.
 #
-# $MCom: portlint/portlint.pl,v 1.528 2021/05/14 16:53:31 jclarke Exp $
+# $MCom$
 #
 
 use strict;
@@ -49,7 +49,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 6;
+my $micro = 7;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -593,7 +593,6 @@ sub checkplist {
 	my $owner_seen = 0;
 	my $group_seen = 0;
 	my $found_so = 0;
-	my $found_naked_so = 0;
 
 	# Variables that are allowed to be out-of-sync in the XXXDIR check.
 	# E.g., %%PORTDOCS%%%%RUBY_MODDOCDIR%% will be OK because there is
@@ -809,10 +808,8 @@ sub checkplist {
 			$makevar{USE_LDCONFIG} eq '') {
 			&perror("WARN", $file, $., "installing shared libraries, ".
 				"please define USE_LDCONFIG as appropriate");
-		} elsif ($_ =~ m|lib[^\/]+\.so\.\d+$|) {
+		} elsif ($_ =~ m|lib[^\/]+\.so[.\d]*$|) {
 			$found_so++;
-		} elsif ($_ =~ m|lib[^\/]+\.so$|) {
-			$found_naked_so++;
 		}
 
 		if ($_ =~ m|^share/icons/.*/| &&
@@ -947,14 +944,8 @@ sub checkplist {
 	}
 
 	if ($makevar{USE_LDCONFIG} ne '' && !$found_so) {
-		if ($found_naked_so) {
-			&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
-				"port does not install shared objects in the format lib*.so.[0-9] ".
-				"which ldconfig(8) needs to register them in the hints file.");
-		} else {
-			&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
-				"port does not install any shared objects.");
-		}
+		&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
+			"port does not install any shared objects.");
 	}
 
 	close(IN);
@@ -2709,7 +2700,7 @@ EOF
 	&checkorder('PORTNAME', $tmp, $file, qw(
 PORTNAME PORTVERSION DISTVERSIONPREFIX DISTVERSION DISTVERSIONSUFFIX
 PORTREVISION PORTEPOCH CATEGORIES MASTER_SITES MASTER_SITE_SUBDIR
-PROJECTHOST PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES
+PROJECTHOST PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES(_\w+)?
 DIST_SUBDIR EXTRACT_ONLY
 	));
 
@@ -3080,7 +3071,7 @@ DIST_SUBDIR EXTRACT_ONLY
 	push(@varnames, qw(
 PORTNAME PORTVERSION DISTVERSIONPREFIX DISTVERSION DISTVERSIONSUFFIX
 PORTREVISION PORTEPOCH CATEGORIES MASTER_SITES MASTER_SITE_SUBDIR
-PROJECTHOST PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES
+PROJECTHOST PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES(_\w+)?
 DIST_SUBDIR EXTRACT_ONLY
 	));
 
@@ -3255,7 +3246,7 @@ MAINTAINER COMMENT
 	@linestocheck = qw(
 DEPRECATED EXPIRATION_DATE FORBIDDEN BROKEN(_\w+)? IGNORE(_\w+)?
 ONLY_FOR_ARCHS ONLY_FOR_ARCHS_REASON(_\w+)?
-NOT_FOR_ARCHS NOT_FOR_ARCHS_REASON(_\w+)?
+NOT_FOR_ARCHS NOT_FOR_ARCHS_REASON(_\w+)? LEGAL_TEXT
 	);
 
 	my $brokenpattern = "^(" . join("|", @linestocheck) . ")[?+:]?=";
