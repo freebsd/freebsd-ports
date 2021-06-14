@@ -1,5 +1,5 @@
 PORTNAME=	terraform-docs
-PORTVERSION=	0.13.0
+DISTVERSION=	0.14.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils textproc
 
@@ -63,7 +63,7 @@ GH_TUPLE=	\
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
-		terraform-docs:plugin-sdk:v0.3.0:terraform_docs_plugin_sdk/vendor/github.com/terraform-docs/plugin-sdk \
+		terraform-docs:plugin-sdk:49b620c0a2da:terraform_docs_plugin_sdk/vendor/github.com/terraform-docs/plugin-sdk \
 		terraform-docs:terraform-config-inspect:b932ca5358a6:terraform_docs_terraform_config_inspect/vendor/github.com/terraform-docs/terraform-config-inspect \
 		zclconf:go-cty:v1.1.0:zclconf_go_cty/vendor/github.com/zclconf/go-cty
 
