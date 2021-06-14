@@ -1,9 +1,6 @@
 [
 { type: install
   message: <<EOM
-It is recommended to recompile this port from source
-with the LAME option enabled to support mp3 transcoding.
-
 To automatically start Emby Server at boot time:
 # sysrc emby_server_enable="YES"
 
