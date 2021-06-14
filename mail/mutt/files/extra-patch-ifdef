@@ -1,8 +1,8 @@
---- PATCHES.orig	2021-01-23 01:39:53 UTC
+--- PATCHES.orig	2021-06-13 21:49:46 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.4.cd.ifdef.1
---- init.c.orig	2021-01-21 20:23:24 UTC
+--- init.c.orig	2021-05-26 22:40:56 UTC
 +++ init.c
 @@ -678,6 +678,52 @@ static mbchar_table *parse_mbchar_table (const char *s
    return t;
@@ -57,9 +57,9 @@
  static int parse_unignore (BUFFER *buf, BUFFER *s, union pointer_long_t udata, BUFFER *err)
  {
    do
---- init.h.orig	2021-01-23 01:39:53 UTC
+--- init.h.orig	2021-06-13 21:49:46 UTC
 +++ init.h
-@@ -4705,6 +4705,7 @@ static int parse_lists (BUFFER *, BUFFER *, union poin
+@@ -4787,6 +4787,7 @@ static int parse_lists (BUFFER *, BUFFER *, union poin
  static int parse_unlists (BUFFER *, BUFFER *, union pointer_long_t, BUFFER *);
  static int parse_alias (BUFFER *, BUFFER *, union pointer_long_t, BUFFER *);
  static int parse_unalias (BUFFER *, BUFFER *, union pointer_long_t, BUFFER *);
@@ -67,7 +67,7 @@
  static int parse_echo (BUFFER *, BUFFER *, union pointer_long_t, BUFFER *);
  static int parse_ignore (BUFFER *, BUFFER *, union pointer_long_t, BUFFER *);
  static int parse_unignore (BUFFER *, BUFFER *, union pointer_long_t, BUFFER *);
-@@ -4772,6 +4773,7 @@ const struct command_t Commands[] = {
+@@ -4854,6 +4855,7 @@ const struct command_t Commands[] = {
    { "hdr_order",	parse_list,		{.p=&HeaderOrderList} },
  #ifdef HAVE_ICONV
    { "iconv-hook",	mutt_parse_hook,	{.l=MUTT_ICONVHOOK} },

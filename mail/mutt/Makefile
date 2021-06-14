@@ -1,7 +1,7 @@
 # Created by: Udo Schweigert
 
 PORTNAME=	mutt
-DISTVERSION=	2.0.7
+DISTVERSION=	2.1.0
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
@@ -137,12 +137,12 @@ GSSAPI_MIT_CONFIGURE_ON=	${GSSAPI_CONFIGURE_ARGS} \
 GSSAPI_NONE_CONFIGURE_ON=	--without-gss
 
 HCACHE_NONE_CONFIGURE_ON=	--disable-hcache
-HCACHE_NONE_CONFIGURE_OFF=	--enable-hcache \
-				--without-gdbm \
-				--without-qdbm
+HCACHE_NONE_CONFIGURE_OFF=	--enable-hcache
 
 HCACHE_BDB_CONFIGURE_WITH=	bdb=${LOCALBASE}
 HCACHE_BDB_USES=		bdb:42+
+HCACHE_BDB_VARS=		CFLAGS+=-I${BDB_INCLUDE_DIR} \
+				LDFLAGS+=-L${BDB_LIB_DIR}
 
 HCACHE_TOKYOCABINET_CONFIGURE_WITH=	tokyocabinet=${LOCALBASE}
 HCACHE_TOKYOCABINET_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
@@ -207,10 +207,6 @@ pre-configure::
 # Install contrib samples to ${EXAMPLESDIR}
 	@${REINPLACE_CMD} -e 's#$$(docdir)/samples#${EXAMPLESDIR}#g' \
 		${WRKSRC}/contrib/Makefile.in
-
-pre-configure-HCACHE_BDB-on:
-	@${REINPLACE_CMD} -E -e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 # Undo some dist. installed files
 post-stage::

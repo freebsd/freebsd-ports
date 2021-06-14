@@ -1,6 +1,6 @@
---- muttlib.c.orig	2020-11-08 20:52:50 UTC
+--- muttlib.c.orig	2021-06-13 21:49:47 UTC
 +++ muttlib.c
-@@ -1807,6 +1807,12 @@ void mutt_FormatString (char *dest,		/* output buffer 
+@@ -1720,6 +1720,12 @@ void mutt_FormatString (char *dest,		/* output buffer 
  	count = 0;
          while (count < sizeof (ifstring) && *src && *src != '?' && *src != '&')
  	{
@@ -13,7 +13,7 @@
            *cp++ = *src++;
  	  count++;
  	}
-@@ -1819,7 +1825,13 @@ void mutt_FormatString (char *dest,		/* output buffer 
+@@ -1732,7 +1738,13 @@ void mutt_FormatString (char *dest,		/* output buffer 
  	count = 0;
  	while (count < sizeof (elsestring) && *src && *src != '?')
  	{

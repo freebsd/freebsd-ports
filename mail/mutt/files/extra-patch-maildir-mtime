@@ -1,8 +1,8 @@
---- PATCHES.orig	2020-11-08 20:52:49 UTC
+--- PATCHES.orig	2021-06-13 21:49:47 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.7.ust.maildir-mtime.2
---- browser.c.orig	2020-11-03 17:50:37 UTC
+--- browser.c.orig	2021-05-23 18:20:50 UTC
 +++ browser.c
 @@ -32,6 +32,7 @@
  #ifdef USE_IMAP
@@ -12,7 +12,7 @@
  
  #include <stdlib.h>
  #include <dirent.h>
-@@ -430,6 +431,21 @@ static void init_state (struct browser_state *state, M
+@@ -531,6 +532,21 @@ static void init_state (struct browser_state *state, M
      menu->data = state->entry;
  }
  
@@ -34,7 +34,7 @@
  static int examine_directory (MUTTMENU *menu, struct browser_state *state,
  			      const char *d, const char *prefix)
  {
-@@ -496,6 +512,7 @@ static int examine_directory (MUTTMENU *menu, struct b
+@@ -597,6 +613,7 @@ static int examine_directory (MUTTMENU *menu, struct b
      tmp = Incoming;
      while (tmp && mutt_strcmp (mutt_b2s (full_path), mutt_b2s (tmp->pathbuf)))
        tmp = tmp->next;
@@ -42,7 +42,7 @@
      if (tmp && Context && !tmp->nopoll &&
          !mutt_strcmp (tmp->realpath, Context->realpath))
      {
-@@ -579,6 +596,7 @@ static int examine_mailboxes (MUTTMENU *menu, struct b
+@@ -680,6 +697,7 @@ static int examine_mailboxes (MUTTMENU *menu, struct b
  	s.st_mtime = st2.st_mtime;
      }
  

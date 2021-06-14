@@ -1,10 +1,10 @@
---- PATCHES.orig	2021-01-23 01:39:53 UTC
+--- PATCHES.orig	2021-06-13 21:49:47 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.6.cb.reverse_reply.2
---- init.h.orig	2021-01-23 01:39:53 UTC
+--- init.h.orig	2021-06-13 21:49:46 UTC
 +++ init.h
-@@ -3191,6 +3191,13 @@ struct option_t MuttVars[] = {
+@@ -3322,6 +3322,13 @@ struct option_t MuttVars[] = {
    ** In either case, a missing real name will be filled in afterwards
    ** using the value of $$realname.
    */
@@ -18,9 +18,9 @@
    { "rfc2047_parameters", DT_BOOL, R_NONE, {.l=OPTRFC2047PARAMS}, {.l=0} },
    /*
    ** .pp
---- mutt.h.orig	2021-01-23 01:39:53 UTC
+--- mutt.h.orig	2021-06-13 21:49:46 UTC
 +++ mutt.h
-@@ -522,6 +522,7 @@ enum
+@@ -525,6 +525,7 @@ enum
    OPTREVALIAS,
    OPTREVNAME,
    OPTREVREAL,
@@ -28,7 +28,7 @@
    OPTRFC2047PARAMS,
    OPTSAVEADDRESS,
    OPTSAVEEMPTY,
---- protos.h.orig	2021-01-21 20:23:24 UTC
+--- protos.h.orig	2021-05-23 18:20:51 UTC
 +++ protos.h
 @@ -85,6 +85,7 @@ char* mutt_extract_message_id (const char *, const cha
  ADDRESS *mutt_get_address (ENVELOPE *, char **);
@@ -38,7 +38,7 @@
  ADDRESS *mutt_expand_aliases (ADDRESS *);
  ADDRESS *mutt_parse_adrlist (ADDRESS *, const char *);
  
---- send.c.orig	2021-01-21 20:23:24 UTC
+--- send.c.orig	2021-05-28 19:33:58 UTC
 +++ send.c
 @@ -739,6 +739,10 @@ void mutt_fix_reply_recipients (ENVELOPE *env)
    /* the CC field can get cluttered, especially with lists */
@@ -51,9 +51,9 @@
    env->cc = mutt_remove_xrefs (env->to, env->cc);
  
    if (env->cc && !env->to)
---- sendlib.c.orig	2021-01-21 20:23:24 UTC
+--- sendlib.c.orig	2021-05-23 18:20:51 UTC
 +++ sendlib.c
-@@ -3012,6 +3012,35 @@ static void set_noconv_flags (BODY *b, short flag)
+@@ -3044,6 +3044,35 @@ static void set_noconv_flags (BODY *b, short flag)
    }
  }
  
