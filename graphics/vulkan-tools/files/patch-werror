@@ -1,0 +1,52 @@
+Silence Clang warnings that GCC ignores
+https://github.com/KhronosGroup/Vulkan-Tools/issues/531
+https://github.com/KhronosGroup/Vulkan-Tools/issues/532
+
+--- cube/cube.c.orig	2021-06-14 19:02:23 UTC
++++ cube/cube.c
+@@ -3027,12 +3027,12 @@ static VkResult demo_create_display_surface(struct dem
+     VkDisplayPlaneCapabilitiesKHR planeCaps;
+     vkGetDisplayPlaneCapabilitiesKHR(demo->gpu, mode_props.displayMode, plane_index, &planeCaps);
+     // Find a supported alpha mode
+-    VkCompositeAlphaFlagBitsKHR alphaMode = VK_DISPLAY_PLANE_ALPHA_OPAQUE_BIT_KHR;
++    VkCompositeAlphaFlagBitsKHR alphaMode = (VkCompositeAlphaFlagBitsKHR)VK_DISPLAY_PLANE_ALPHA_OPAQUE_BIT_KHR;
+     VkCompositeAlphaFlagBitsKHR alphaModes[4] = {
+-        VK_DISPLAY_PLANE_ALPHA_OPAQUE_BIT_KHR,
+-        VK_DISPLAY_PLANE_ALPHA_GLOBAL_BIT_KHR,
+-        VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_BIT_KHR,
+-        VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_PREMULTIPLIED_BIT_KHR,
++        (VkCompositeAlphaFlagBitsKHR)VK_DISPLAY_PLANE_ALPHA_OPAQUE_BIT_KHR,
++        (VkCompositeAlphaFlagBitsKHR)VK_DISPLAY_PLANE_ALPHA_GLOBAL_BIT_KHR,
++        (VkCompositeAlphaFlagBitsKHR)VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_BIT_KHR,
++        (VkCompositeAlphaFlagBitsKHR)VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_PREMULTIPLIED_BIT_KHR,
+     };
+     for (uint32_t i = 0; i < sizeof(alphaModes); i++) {
+         if (planeCaps.supportedAlpha & alphaModes[i]) {
+@@ -3050,7 +3050,7 @@ static VkResult demo_create_display_surface(struct dem
+     create_info.planeIndex = plane_index;
+     create_info.planeStackIndex = plane_props[plane_index].currentStackIndex;
+     create_info.transform = VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR;
+-    create_info.alphaMode = alphaMode;
++    create_info.alphaMode = (VkDisplayPlaneAlphaFlagBitsKHR)alphaMode;
+     create_info.globalAlpha = 1.0f;
+     create_info.imageExtent = image_extent;
+ 
+--- cube/cube.cpp.orig	2021-06-14 19:02:23 UTC
++++ cube/cube.cpp
+@@ -405,16 +405,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM 
+ #endif
+ 
+ #if defined(VK_USE_PLATFORM_WAYLAND_KHR)
+-static void handle_ping(void *data, wl_shell_surface *shell_surface, uint32_t serial) {
+-    wl_shell_surface_pong(shell_surface, serial);
+-}
+-
+-static void handle_configure(void *data, wl_shell_surface *shell_surface, uint32_t edges, int32_t width, int32_t height) {}
+-
+-static void handle_popup_done(void *data, wl_shell_surface *shell_surface) {}
+-
+-static const wl_shell_surface_listener shell_surface_listener = {handle_ping, handle_configure, handle_popup_done};
+-
+ static void pointer_handle_enter(void *data, struct wl_pointer *pointer, uint32_t serial, struct wl_surface *surface, wl_fixed_t sx,
+                                  wl_fixed_t sy) {}
+ 
