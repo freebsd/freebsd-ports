@@ -1,8 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	geoalchemy2
-PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	databases geography python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
