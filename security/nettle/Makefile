@@ -1,8 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	nettle
-PORTVERSION=	3.7.2
-PORTREVISION=	2
+PORTVERSION=	3.7.3
 CATEGORIES=	security
 MASTER_SITES=	GNU \
 		https://www.lysator.liu.se/~nisse/archive/
