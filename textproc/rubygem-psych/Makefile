@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	psych
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
