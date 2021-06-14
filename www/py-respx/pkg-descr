@@ -1,0 +1,5 @@
+RESPX is a simple, yet powerful, utility for mocking out the HTTPX, and HTTP
+Core, libraries.
+
+WWW: https://lundberg.github.io/respx/
+WWW: https://github.com/lundberg/respx
