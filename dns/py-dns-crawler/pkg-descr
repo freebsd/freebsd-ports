@@ -1,0 +1,25 @@
+Despite the name, the crawler gets info for more services than just DNS:
+- DNS:
+  - all A/AAAA records (for the 2nd level domain and www.subdomain), annotated
+    with GeoIP
+  - TXT records (with SPF and DMARC parsed for easier filtering)
+  - TLSA (for the 2nd level domain and www.subdomain)
+  - MX
+  - DNSSEC validation
+  - nameservers:
+    - each server IP annotated with GeoIP
+    - HOSTNAME.BIND, VERSION.BIND, AUTHORS.BIND and fortune (also for all IPs)
+  - users can add custom additional RRs in the config file
+- E-mail (for every server from MX):
+  - SMTP server banners (optional, ports are configurable)
+  - TLSA records
+- Web:
+  - HTTP status & headers (inc. parsed cookies) for ports 80 & 443 on each IP
+    from A/AAAA records
+  - certificate info for HTTPS (optionally with an entire cert chain)
+  - webpage content (optional)
+  - everything of the above is saved for each step in the redirect history --
+    the crawler follows redirects until it gets a non-redirecting status or hits
+    a configurable limit
+
+WWW: https://gitlab.nic.cz/adam/dns-crawler
