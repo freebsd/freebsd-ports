@@ -1,8 +1,7 @@
 # Created by: Loic Pefferkorn <loic-freebsd@loicp.eu>
 
 PORTNAME=	burp
-PORTVERSION=	2.2.18
-PORTREVISION=	4
+PORTVERSION=	2.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/grke/burp/releases/download/${PORTVERSION}/
 
