@@ -1,6 +1,7 @@
 PORTNAME=	wpa_supplicant
 PORTVERSION=	${COMMIT_DATE}
 CATEGORIES=	security net
+PORTREVISION=	1
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	cy@FreeBSD.org
