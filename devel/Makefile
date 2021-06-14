@@ -356,6 +356,7 @@
     SUBDIR += cloudabi-toolchain
     SUBDIR += clthreads
     SUBDIR += cltune
+    SUBDIR += clxclient
     SUBDIR += cmake
     SUBDIR += cmake-doc
     SUBDIR += cmake-fedora

@@ -1,0 +1,4 @@
+clxclient is a C++ wrapper library around the X Window System API that is used
+in some LinuxAudio-hosted projects.
+
+WWW: https://kokkinizita.linuxaudio.org/linuxaudio/
