@@ -1,7 +1,7 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	gupnp
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -11,7 +11,7 @@ COMMENT=	Framework for UPnP devices
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	glib>=2.58:devel/glib20 \
+BUILD_DEPENDS=	glib>=2.66:devel/glib20 \
 		gobject-introspection>=1.36:devel/gobject-introspection \
 		gssdp>=1.2.3:net/gssdp \
 		libsoup>=2.48.0:devel/libsoup
