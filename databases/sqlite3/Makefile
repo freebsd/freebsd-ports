@@ -2,7 +2,7 @@
 
 PORTNAME=	sqlite3
 DISTVERSION=	3.35.5
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${%Y:L:gmtime}/ https://www2.sqlite.org/${%Y:L:gmtime}/ https://www3.sqlite.org/${%Y:L:gmtime}/
@@ -202,7 +202,6 @@ CPPFLAGS+=	-DHAVE_FCHOWN=1 \
 		-DHAVE_STRCHRNUL=1 \
 		-DHAVE_STRERROR_R=1 \
 		-DHAVE_READLINK=1 \
-		-DSQLITE_MMAP_READWRITE=1 \
 		-DSQLITE_OS_UNIX=1
 CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 
