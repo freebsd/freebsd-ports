@@ -79,6 +79,7 @@ lib/tk%%TK_VER%%/console.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/spin.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/states.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/style.tcl
+%%DEMOS%%lib/tk%%TK_VER%%/demos/systray.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/tclIndex
 %%DEMOS%%lib/tk%%TK_VER%%/demos/tcolor
 %%DEMOS%%lib/tk%%TK_VER%%/demos/text.tcl
@@ -145,6 +146,7 @@ lib/tk%%TK_VER%%/safetk.tcl
 lib/tk%%TK_VER%%/scale.tcl
 lib/tk%%TK_VER%%/scrlbar.tcl
 lib/tk%%TK_VER%%/spinbox.tcl
+lib/tk%%TK_VER%%/systray.tcl
 lib/tk%%TK_VER%%/tclIndex
 lib/tk%%TK_VER%%/tearoff.tcl
 lib/tk%%TK_VER%%/text.tcl
@@ -192,6 +194,7 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/man3/Tk_AllocColorFromObj.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_AllocCursorFromObj.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_AllocFontFromObj.tk%%PKGNAMESUFFIX%%.3.gz
+%%TKMAN%%man/man3/Tk_AlwaysShowSelection.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_AttachHWND.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_Attributes.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_BindEvent.tk%%PKGNAMESUFFIX%%.3.gz
@@ -209,8 +212,8 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/man3/Tk_CanvasTextInfo.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_CanvasTkwin.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_CanvasWindowCoords.tk%%PKGNAMESUFFIX%%.3.gz
-%%TKMAN%%man/man3/Tk_Changes.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_ChangeWindowAttributes.tk%%PKGNAMESUFFIX%%.3.gz
+%%TKMAN%%man/man3/Tk_Changes.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_CharBbox.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_Class.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_ClearSelection.tk%%PKGNAMESUFFIX%%.3.gz
@@ -262,6 +265,7 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/man3/Tk_Fill3DPolygon.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_Fill3DRectangle.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_FindPhoto.tk%%PKGNAMESUFFIX%%.3.gz
+%%TKMAN%%man/man3/Tk_FontGetDescription.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_FontId.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_Free3DBorder.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_Free3DBorderFromObj.tk%%PKGNAMESUFFIX%%.3.gz
@@ -292,6 +296,7 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/man3/Tk_GetBinding.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetBitmap.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetBitmapFromObj.tk%%PKGNAMESUFFIX%%.3.gz
+%%TKMAN%%man/man3/Tk_GetButtonMask.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetCapStyle.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetColor.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetColorByValue.tk%%PKGNAMESUFFIX%%.3.gz
@@ -301,6 +306,7 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/man3/Tk_GetCursorFromData.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetCursorFromObj.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetDash.tk%%PKGNAMESUFFIX%%.3.gz
+%%TKMAN%%man/man3/Tk_GetDoublePixelsFromObj.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetFont.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetFontFromObj.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetFontMetrics.tk%%PKGNAMESUFFIX%%.3.gz
@@ -308,7 +314,7 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/man3/Tk_GetHINSTANCE.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetHWND.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetImage.tk%%PKGNAMESUFFIX%%.3.gz
-%%TKMAN%%man/man3/Tk_GetImageMasterData.tk%%PKGNAMESUFFIX%%.3.gz
+%%TKMAN%%man/man3/Tk_GetImageModelData.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetItemTypes.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetJoinStyle.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetJustify.tk%%PKGNAMESUFFIX%%.3.gz
@@ -330,12 +336,12 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/man3/Tk_GetSelection.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetUid.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetUserInactiveTime.tk%%PKGNAMESUFFIX%%.3.gz
-%%TKMAN%%man/man3/Tk_GetVisual.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_GetVRootGeometry.tk%%PKGNAMESUFFIX%%.3.gz
+%%TKMAN%%man/man3/Tk_GetVisual.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_Grab.tk%%PKGNAMESUFFIX%%.3.gz
+%%TKMAN%%man/man3/Tk_HWNDToWindow.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_HandleEvent.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_Height.tk%%PKGNAMESUFFIX%%.3.gz
-%%TKMAN%%man/man3/Tk_HWNDToWindow.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_IdToWindow.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_ImageChanged.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_Init.tk%%PKGNAMESUFFIX%%.3.gz
@@ -343,11 +349,11 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/man3/Tk_InitImageArgs.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_InitOptions.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_InitStubs.tk%%PKGNAMESUFFIX%%.3.gz
+%%TKMAN%%man/man3/Tk_InternAtom.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_InternalBorderBottom.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_InternalBorderLeft.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_InternalBorderRight.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_InternalBorderTop.tk%%PKGNAMESUFFIX%%.3.gz
-%%TKMAN%%man/man3/Tk_InternAtom.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_Interp.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_IntersectTextLayout.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_IsContainer.tk%%PKGNAMESUFFIX%%.3.gz
@@ -356,8 +362,8 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/man3/Tk_IsTopLevel.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_Main.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_MainLoop.tk%%PKGNAMESUFFIX%%.3.gz
-%%TKMAN%%man/man3/Tk_MaintainGeometry.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_MainWindow.tk%%PKGNAMESUFFIX%%.3.gz
+%%TKMAN%%man/man3/Tk_MaintainGeometry.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_MakeWindowExist.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_ManageGeometry.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_MapWindow.tk%%PKGNAMESUFFIX%%.3.gz
@@ -380,6 +386,7 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/man3/Tk_NameOfJustify.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_NameOfRelief.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_NameToWindow.tk%%PKGNAMESUFFIX%%.3.gz
+%%TKMAN%%man/man3/Tk_NewWindowObj.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_OwnSelection.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_Parent.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_ParseArgv.tk%%PKGNAMESUFFIX%%.3.gz
@@ -406,6 +413,7 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/man3/Tk_SafeInit.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_Screen.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_ScreenNumber.tk%%PKGNAMESUFFIX%%.3.gz
+%%TKMAN%%man/man3/Tk_SendVirtualEvent.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_SetAppName.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_SetBackgroundFromBorder.tk%%PKGNAMESUFFIX%%.3.gz
 %%TKMAN%%man/man3/Tk_SetCaretPos.tk%%PKGNAMESUFFIX%%.3.gz
@@ -492,8 +500,8 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/mann/message.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/option.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/options.tk%%PKGNAMESUFFIX%%.n.gz
-%%TKMAN%%man/mann/pack_old.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/pack.tk%%PKGNAMESUFFIX%%.n.gz
+%%TKMAN%%man/mann/pack_old.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/panedwindow.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/photo.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/place.tk%%PKGNAMESUFFIX%%.n.gz
@@ -505,7 +513,10 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/mann/selection.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/send.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/spinbox.tk%%PKGNAMESUFFIX%%.n.gz
+%%TKMAN%%man/mann/sysnotify.tk%%PKGNAMESUFFIX%%.n.gz
+%%TKMAN%%man/mann/systray.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/text.tk%%PKGNAMESUFFIX%%.n.gz
+%%TKMAN%%man/mann/tk.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/tk_bindForTraversal.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/tk_bisque.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/tk_chooseColor.tk%%PKGNAMESUFFIX%%.n.gz
@@ -530,7 +541,6 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/mann/tk_textCut.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/tk_textPaste.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/tk_version.tk%%PKGNAMESUFFIX%%.n.gz
-%%TKMAN%%man/mann/tk.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/tkerror.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/tkwait.tk%%PKGNAMESUFFIX%%.n.gz
 %%TKMAN%%man/mann/toplevel.tk%%PKGNAMESUFFIX%%.n.gz
