@@ -1,5 +1,5 @@
 PORTNAME=	bfs
-DISTVERSION=	2.2
+DISTVERSION=	2.2.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	driesm.michiels@gmail.com
