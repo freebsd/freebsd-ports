@@ -5,7 +5,7 @@ DISTVERSION=	11.5.0
 CATEGORIES=	www
 MASTER_SITES=	https://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP based Web Gallery
 
 LICENSE=	GPLv2
