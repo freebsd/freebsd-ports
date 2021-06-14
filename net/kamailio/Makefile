@@ -1,7 +1,7 @@
 # Created by: Oliver Mahmoudi <olivermahmoudi@gmail.com>
 
 PORTNAME=	kamailio
-PORTVERSION=	5.4.4
+PORTVERSION=	5.4.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -26,6 +26,7 @@ USE_RC_SUBR=	kamailio
 SHEBANG_FILES=	utils/kamctl/dbtextdb/dbtextdb.py utils/kamctl/kamctl \
 		utils/kamctl/kamdbctl
 
+MAKE_ARGS+=	LIBSSL_SET_MUTEX_SHARED=1
 CFLAGS+=	-Wall
 
 KAMAILIO_USER?=		kamailio
