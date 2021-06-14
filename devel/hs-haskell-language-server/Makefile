@@ -220,6 +220,9 @@ PLIST_FILES=		bin/${PORTNAME} \
 			bin/${PORTNAME}-8.10.4 \
 			bin/${PORTNAME}-wrapper
 
+post-extract:
+	${CP} ${WRKSRC}/stack-8.10.4.yaml ${WRKSRC}/stack-8.10.5.yaml
+
 do-build:
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} hls-install hls
