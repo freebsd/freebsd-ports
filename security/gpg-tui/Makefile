@@ -1,6 +1,6 @@
 PORTNAME=	gpg-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
+DISTVERSION=	0.5.0
 CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
@@ -22,7 +22,7 @@ GH_ACCOUNT=	orhun
 
 CARGO_CRATES=	ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.40 \
+		anyhow-1.0.41 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
@@ -42,7 +42,9 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		copypasta-0.7.1 \
 		copypasta-ext-0.3.4 \
 		crossterm-0.19.0 \
+		crossterm-0.20.0 \
 		crossterm_winapi-0.7.0 \
+		crossterm_winapi-0.8.0 \
 		cstr-argument-0.1.1 \
 		ctor-0.1.16 \
 		custom_derive-0.1.7 \
@@ -102,8 +104,10 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
 		shellexpand-2.1.0 \
-		signal-hook-0.1.16 \
-		signal-hook-registry-1.2.2 \
+		signal-hook-0.1.17 \
+		signal-hook-0.3.9 \
+		signal-hook-mio-0.2.1 \
+		signal-hook-registry-1.4.0 \
 		smallvec-1.5.1 \
 		smithay-client-toolkit-0.12.2 \
 		smithay-clipboard-0.6.3 \
