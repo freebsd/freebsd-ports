@@ -1,6 +1,6 @@
-TIMESTAMP = 1622493761
-SHA256 (cloudquery-cloudquery-v0.13.5_GH0.tar.gz) = 5b783fe74098abc8cac3eaa6f080e5f2c7dafd9416924b16c780133da1f3e6bc
-SIZE (cloudquery-cloudquery-v0.13.5_GH0.tar.gz) = 117006
+TIMESTAMP = 1623629570
+SHA256 (cloudquery-cloudquery-v0.13.6_GH0.tar.gz) = ed0e4a6e247bf96e1319e28b05907a5a33a5e21d400e0a612b11e8a918d9b444
+SIZE (cloudquery-cloudquery-v0.13.6_GH0.tar.gz) = 107205
 SHA256 (Masterminds-squirrel-v1.5.0_GH0.tar.gz) = 75ffb7555e2cde9fa25622c031b0b72058b5644e6d7eb004238c250957d97c52
 SIZE (Masterminds-squirrel-v1.5.0_GH0.tar.gz) = 30302
 SHA256 (VividCortex-ewma-v1.2.0_GH0.tar.gz) = 2f26521a9207b91dfbca3d28e5545bc11cb098888ecf3e9ba8e5936387b06a33
