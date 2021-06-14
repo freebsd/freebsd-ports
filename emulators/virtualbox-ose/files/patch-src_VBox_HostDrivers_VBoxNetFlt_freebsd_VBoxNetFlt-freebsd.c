@@ -1,4 +1,4 @@
---- src/VBox/HostDrivers/VBoxNetFlt/freebsd/VBoxNetFlt-freebsd.c.orig	2021-01-07 15:41:28 UTC
+--- src/VBox/HostDrivers/VBoxNetFlt/freebsd/VBoxNetFlt-freebsd.c.orig	2021-04-28 16:31:54 UTC
 +++ src/VBox/HostDrivers/VBoxNetFlt/freebsd/VBoxNetFlt-freebsd.c
 @@ -52,6 +52,7 @@
  #include <net/if_dl.h>
@@ -16,7 +16,24 @@
  
  static int vboxnetflt_modevent(struct module *, int, void *);
  static ng_constructor_t    ng_vboxnetflt_constructor;
-@@ -361,7 +363,14 @@ static int ng_vboxnetflt_rcvdata(hook_p hook, item_p i
+@@ -149,6 +151,7 @@ NETGRAPH_INIT(vboxnetflt, &ng_vboxnetflt_typestruct);
+  */
+ MODULE_VERSION(vboxnetflt, 1);
+ MODULE_DEPEND(ng_vboxnetflt, vboxdrv, 1, 1, 1);
++MODULE_DEPEND(ng_vboxnetflt, ng_ether, 1, 1, 1);
+ 
+ /**
+  * The (common) global data.
+@@ -181,8 +184,6 @@ static int vboxnetflt_modevent(struct module *pMod, in
+                 printf("vboxNetFltInitGlobalsAndIdc failed %d\n", rc);
+                 return RTErrConvertToErrno(rc);
+             }
+-            /* No MODULE_VERSION in ng_ether so we can't MODULE_DEPEND it */
+-            kern_kldload(curthread, "ng_ether", NULL);
+             break;
+ 
+         case MOD_UNLOAD:
+@@ -361,7 +362,14 @@ static int ng_vboxnetflt_rcvdata(hook_p hook, item_p i
      {
          if (mtag != NULL || !fActive)
          {
@@ -31,7 +48,7 @@
              if (fActive)
                  vboxNetFltRelease(pThis, true /*fBusy*/);
              VBOXCURVNET_RESTORE();
-@@ -436,6 +445,8 @@ static void vboxNetFltFreeBSDinput(void *arg, int pend
+@@ -436,6 +444,8 @@ static void vboxNetFltFreeBSDinput(void *arg, int pend
      struct ifnet *ifp = pThis->u.s.ifp;
      unsigned int cSegs = 0;
      bool fDropIt = false, fActive;
@@ -40,7 +57,7 @@
      PINTNETSG pSG;
  
      VBOXCURVNET_SET(ifp->if_vnet);
-@@ -448,6 +459,19 @@ static void vboxNetFltFreeBSDinput(void *arg, int pend
+@@ -448,6 +458,19 @@ static void vboxNetFltFreeBSDinput(void *arg, int pend
          if (m == NULL)
              break;
  
@@ -60,7 +77,7 @@
          for (m0 = m; m0 != NULL; m0 = m0->m_next)
              if (m0->m_len > 0)
                  cSegs++;
-@@ -462,10 +486,39 @@ static void vboxNetFltFreeBSDinput(void *arg, int pend
+@@ -462,10 +485,39 @@ static void vboxNetFltFreeBSDinput(void *arg, int pend
          vboxNetFltFreeBSDMBufToSG(pThis, m, pSG, cSegs, 0);
          fDropIt = pThis->pSwitchPort->pfnRecv(pThis->pSwitchPort, NULL /* pvIf */, pSG, INTNETTRUNKDIR_WIRE);
          RTMemTmpFree(pSG);
@@ -101,7 +118,7 @@
      }
      vboxNetFltRelease(pThis, true /* fBusy */);
      VBOXCURVNET_RESTORE();
-@@ -521,6 +574,7 @@ static void vboxNetFltFreeBSDoutput(void *arg, int pen
+@@ -521,6 +573,7 @@ static void vboxNetFltFreeBSDoutput(void *arg, int pen
   */
  int vboxNetFltPortOsXmit(PVBOXNETFLTINS pThis, void *pvIfData, PINTNETSG pSG, uint32_t fDst)
  {
@@ -109,7 +126,7 @@
      NOREF(pvIfData);
  
      void (*input_f)(struct ifnet *, struct mbuf *);
-@@ -537,10 +591,16 @@ int vboxNetFltPortOsXmit(PVBOXNETFLTINS pThis, void *p
+@@ -537,10 +590,16 @@ int vboxNetFltPortOsXmit(PVBOXNETFLTINS pThis, void *p
      {
          m = vboxNetFltFreeBSDSGMBufFromSG(pThis, pSG);
          if (m == NULL)
@@ -126,7 +143,7 @@
  
          m->m_flags |= M_PKTHDR;
          ether_output_frame(ifp, m);
-@@ -550,10 +610,16 @@ int vboxNetFltPortOsXmit(PVBOXNETFLTINS pThis, void *p
+@@ -550,10 +609,16 @@ int vboxNetFltPortOsXmit(PVBOXNETFLTINS pThis, void *p
      {
          m = vboxNetFltFreeBSDSGMBufFromSG(pThis, pSG);
          if (m == NULL)
@@ -143,7 +160,7 @@
          /*
           * Delivering packets to the host will be captured by the
           * input hook. Tag the packet with a mbuf tag so that we
-@@ -564,6 +630,7 @@ int vboxNetFltPortOsXmit(PVBOXNETFLTINS pThis, void *p
+@@ -564,6 +629,7 @@ int vboxNetFltPortOsXmit(PVBOXNETFLTINS pThis, void *p
          if (mtag == NULL)
          {
              m_freem(m);
@@ -151,7 +168,7 @@
              return VERR_NO_MEMORY;
          }
  
-@@ -574,6 +641,7 @@ int vboxNetFltPortOsXmit(PVBOXNETFLTINS pThis, void *p
+@@ -574,6 +640,7 @@ int vboxNetFltPortOsXmit(PVBOXNETFLTINS pThis, void *p
          ifp->if_input(ifp, m);
      }
      VBOXCURVNET_RESTORE();
@@ -159,7 +176,7 @@
      return VINF_SUCCESS;
  }
  
-@@ -586,6 +654,7 @@ static bool vboxNetFltFreeBsdIsPromiscuous(PVBOXNETFLT
+@@ -586,6 +653,7 @@ static bool vboxNetFltFreeBsdIsPromiscuous(PVBOXNETFLT
  
  int vboxNetFltOsInitInstance(PVBOXNETFLTINS pThis, void *pvContext)
  {
@@ -167,7 +184,7 @@
      char nam[NG_NODESIZ];
      struct ifnet *ifp;
      node_p node;
-@@ -594,7 +663,10 @@ int vboxNetFltOsInitInstance(PVBOXNETFLTINS pThis, voi
+@@ -594,7 +662,10 @@ int vboxNetFltOsInitInstance(PVBOXNETFLTINS pThis, voi
      NOREF(pvContext);
      ifp = ifunit(pThis->szName);
      if (ifp == NULL)
@@ -178,7 +195,7 @@
  
      /* Create a new netgraph node for this instance */
      if (ng_make_node_common(&ng_vboxnetflt_typestruct, &node) != 0)
-@@ -638,12 +710,14 @@ int vboxNetFltOsInitInstance(PVBOXNETFLTINS pThis, voi
+@@ -638,12 +709,14 @@ int vboxNetFltOsInitInstance(PVBOXNETFLTINS pThis, voi
          vboxNetFltRelease(pThis, true /*fBusy*/);
      }
      VBOXCURVNET_RESTORE();
@@ -193,7 +210,7 @@
      struct ifnet *ifp, *ifp0;
  
      ifp = ASMAtomicUoReadPtrT(&pThis->u.s.ifp, struct ifnet *);
-@@ -660,6 +734,7 @@ bool vboxNetFltOsMaybeRediscovered(PVBOXNETFLTINS pThi
+@@ -660,6 +733,7 @@ bool vboxNetFltOsMaybeRediscovered(PVBOXNETFLTINS pThi
          pThis->u.s.node = NULL;
      }
      VBOXCURVNET_RESTORE();
@@ -201,7 +218,7 @@
  
      if (ifp0 != NULL)
      {
-@@ -672,6 +747,7 @@ bool vboxNetFltOsMaybeRediscovered(PVBOXNETFLTINS pThi
+@@ -672,6 +746,7 @@ bool vboxNetFltOsMaybeRediscovered(PVBOXNETFLTINS pThi
  
  void vboxNetFltOsDeleteInstance(PVBOXNETFLTINS pThis)
  {
@@ -209,7 +226,7 @@
  
      taskqueue_drain(taskqueue_fast, &pThis->u.s.tskin);
      taskqueue_drain(taskqueue_fast, &pThis->u.s.tskout);
-@@ -684,6 +760,7 @@ void vboxNetFltOsDeleteInstance(PVBOXNETFLTINS pThis)
+@@ -684,6 +759,7 @@ void vboxNetFltOsDeleteInstance(PVBOXNETFLTINS pThis)
          ng_rmnode_self(pThis->u.s.node);
      VBOXCURVNET_RESTORE();
      pThis->u.s.node = NULL;
@@ -217,7 +234,7 @@
  }
  
  int vboxNetFltOsPreInitInstance(PVBOXNETFLTINS pThis)
-@@ -697,6 +774,7 @@ int vboxNetFltOsPreInitInstance(PVBOXNETFLTINS pThis)
+@@ -697,6 +773,7 @@ int vboxNetFltOsPreInitInstance(PVBOXNETFLTINS pThis)
  
  void vboxNetFltPortOsSetActive(PVBOXNETFLTINS pThis, bool fActive)
  {
@@ -225,7 +242,7 @@
      struct ifnet *ifp;
      struct ifreq ifreq;
      int error;
-@@ -730,7 +808,10 @@ void vboxNetFltPortOsSetActive(PVBOXNETFLTINS pThis, b
+@@ -730,7 +807,10 @@ void vboxNetFltPortOsSetActive(PVBOXNETFLTINS pThis, b
          NG_MKMESSAGE(msg, NGM_GENERIC_COOKIE, NGM_CONNECT,
              sizeof(struct ngm_connect), M_NOWAIT);
          if (msg == NULL)
@@ -236,7 +253,7 @@
          con = (struct ngm_connect *)msg->data;
          snprintf(con->path, NG_PATHSIZ, "vboxnetflt_%s:", ifp->if_xname);
          strlcpy(con->ourhook, "lower", NG_HOOKSIZ);
-@@ -744,7 +825,10 @@ void vboxNetFltPortOsSetActive(PVBOXNETFLTINS pThis, b
+@@ -744,7 +824,10 @@ void vboxNetFltPortOsSetActive(PVBOXNETFLTINS pThis, b
          NG_MKMESSAGE(msg, NGM_GENERIC_COOKIE, NGM_CONNECT,
              sizeof(struct ngm_connect), M_NOWAIT);
          if (msg == NULL)
@@ -247,7 +264,7 @@
          con = (struct ngm_connect *)msg->data;
          snprintf(con->path, NG_PATHSIZ, "vboxnetflt_%s:",
              ifp->if_xname);
-@@ -767,7 +851,10 @@ void vboxNetFltPortOsSetActive(PVBOXNETFLTINS pThis, b
+@@ -767,7 +850,10 @@ void vboxNetFltPortOsSetActive(PVBOXNETFLTINS pThis, b
          NG_MKMESSAGE(msg, NGM_GENERIC_COOKIE, NGM_RMHOOK,
              sizeof(struct ngm_rmhook), M_NOWAIT);
          if (msg == NULL)
@@ -258,7 +275,7 @@
          rm = (struct ngm_rmhook *)msg->data;
          strlcpy(rm->ourhook, "input", NG_HOOKSIZ);
          NG_SEND_MSG_PATH(error, node, msg, path, 0);
-@@ -778,12 +865,16 @@ void vboxNetFltPortOsSetActive(PVBOXNETFLTINS pThis, b
+@@ -778,12 +864,16 @@ void vboxNetFltPortOsSetActive(PVBOXNETFLTINS pThis, b
          NG_MKMESSAGE(msg, NGM_GENERIC_COOKIE, NGM_RMHOOK,
              sizeof(struct ngm_rmhook), M_NOWAIT);
          if (msg == NULL)
