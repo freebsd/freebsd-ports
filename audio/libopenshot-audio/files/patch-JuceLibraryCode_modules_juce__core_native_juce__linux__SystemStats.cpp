@@ -1,20 +1,6 @@
---- JuceLibraryCode/modules/juce_core/native/juce_linux_SystemStats.cpp.orig	2020-09-11 12:10:25 UTC
+--- JuceLibraryCode/modules/juce_core/native/juce_linux_SystemStats.cpp.orig	2021-05-09 14:57:33 UTC
 +++ JuceLibraryCode/modules/juce_core/native/juce_linux_SystemStats.cpp
-@@ -91,10 +91,13 @@ int SystemStats::getCpuSpeedInMegahertz()
- 
- int SystemStats::getMemorySizeInMegabytes()
- {
-+#if JUCE_BSD
-+#else
-     struct sysinfo sysi;
- 
-     if (sysinfo (&sysi) == 0)
-         return (int) (sysi.totalram * sysi.mem_unit / (1024 * 1024));
-+#endif
- 
-     return 0;
- }
-@@ -139,8 +142,13 @@ static String getLocaleValue (nl_item key)
+@@ -139,8 +139,13 @@ static String getLocaleValue (nl_item key)
      return result;
  }
  

@@ -1,7 +1,7 @@
 PORTNAME=	libopenshot-audio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0-29
-DISTVERSIONSUFFIX=	-gcdfe5a1
+DISTVERSION=	0.2.0-59
+DISTVERSIONSUFFIX=	-g92ff608
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	tatsuki_makino@hotmail.com
@@ -11,9 +11,10 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
-LIB_DEPENDS=	libasound.so:audio/alsa-lib
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libsysinfo.so:devel/libsysinfo
 
-USES=		cmake compiler:c++11-lang dos2unix
+USES=		cmake compiler:c++11-lang
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
