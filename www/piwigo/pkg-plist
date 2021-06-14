@@ -1183,10 +1183,13 @@
 %%WWWDIR%%/language/eu_ES/help/cat_options.html
 %%WWWDIR%%/language/eu_ES/help/cat_perm.html
 %%WWWDIR%%/language/eu_ES/help/configuration.html
+%%WWWDIR%%/language/eu_ES/help/extend_for_templates.html
 %%WWWDIR%%/language/eu_ES/help/group_list.html
 %%WWWDIR%%/language/eu_ES/help/help_add_photos.html
 %%WWWDIR%%/language/eu_ES/help/help_groups.html
 %%WWWDIR%%/language/eu_ES/help/help_misc.html
+%%WWWDIR%%/language/eu_ES/help/help_permissions.html
+%%WWWDIR%%/language/eu_ES/help/help_virtual_links.html
 %%WWWDIR%%/language/eu_ES/help/history.html
 %%WWWDIR%%/language/eu_ES/help/maintenance.html
 %%WWWDIR%%/language/eu_ES/help/notification_by_mail.html
@@ -2025,6 +2028,7 @@
 %%WWWDIR%%/language/zh_TW/help/notification_by_mail.html
 %%WWWDIR%%/language/zh_TW/help/permalinks.html
 %%WWWDIR%%/language/zh_TW/help/photos_add_ftp.html
+%%WWWDIR%%/language/zh_TW/help/quick_search.html
 %%WWWDIR%%/language/zh_TW/help/search.html
 %%WWWDIR%%/language/zh_TW/help/synchronize.html
 %%WWWDIR%%/language/zh_TW/help/user_list.html
@@ -3325,6 +3329,8 @@
 %%WWWDIR%%/themes/elegant/language/eo_EO/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/es_ES/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/et_EE/theme.lang.php
+%%WWWDIR%%/themes/elegant/language/eu_ES/index.php
+%%WWWDIR%%/themes/elegant/language/eu_ES/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/fa_IR/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/fi_FI/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/fr_CA/index.php
@@ -3673,6 +3679,8 @@
 %%WWWDIR%%/themes/smartpocket/language/es_MX/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/et_EE/index.php
 %%WWWDIR%%/themes/smartpocket/language/et_EE/theme.lang.php
+%%WWWDIR%%/themes/smartpocket/language/eu_ES/index.php
+%%WWWDIR%%/themes/smartpocket/language/eu_ES/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/fa_IR/index.php
 %%WWWDIR%%/themes/smartpocket/language/fa_IR/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/fi_FI/index.php
