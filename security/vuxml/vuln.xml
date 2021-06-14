@@ -76,6 +76,54 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cce76eca-ca16-11eb-9b84-d4c9ef517024">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.48</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd reports:</p>
+	<blockquote cite="https://httpd.apache.org/security/vulnerabilities_24.html">
+	  <ul>
+	    <li>moderate: mod_proxy_wstunnel tunneling of non Upgraded
+	      connections (CVE-2019-17567)</li>
+	    <li>moderate: Improper Handling of Insufficient Privileges
+	      (CVE-2020-13938)</li>
+	    <li>low: mod_proxy_http NULL pointer dereference
+	      (CVE-2020-13950)</li>
+	    <li>low: mod_auth_digest possible stack overflow by one nul byte
+	      (CVE-2020-35452)</li>
+	    <li>low: mod_session NULL pointer dereference (CVE-2021-26690)</li>
+	    <li>low: mod_session response handling heap overflow (CVE-2021-26691)</li>
+	    <li>moderate: Unexpected URL matching with 'MergeSlashes OFF'
+	      (CVE-2021-30641)</li>
+	    <li>important: NULL pointer dereference on specially crafted HTTP/2
+	      request (CVE-2021-31618)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2019-17567</cvename>
+      <cvename>CVE-2020-13938</cvename>
+      <cvename>CVE-2020-13950</cvename>
+      <cvename>CVE-2020-35452</cvename>
+      <cvename>CVE-2021-26690</cvename>
+      <cvename>CVE-2021-26691</cvename>
+      <cvename>CVE-2021-30641</cvename>
+      <cvename>CVE-2021-31618</cvename>
+      <url>https://httpd.apache.org/security/vulnerabilities_24.html</url>
+    </references>
+    <dates>
+      <discovery>2021-06-09</discovery>
+      <entry>2021-06-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c9e2a1a7-caa1-11eb-904f-14dae9d5a9d2">
     <topic>dragonfly -- argument injection</topic>
     <affects>
