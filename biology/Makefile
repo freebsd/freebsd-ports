@@ -112,6 +112,7 @@
     SUBDIR += paml
     SUBDIR += pbbam
     SUBDIR += pbseqan
+    SUBDIR += peak-classifier
     SUBDIR += pear-merger
     SUBDIR += phrap
     SUBDIR += phred
