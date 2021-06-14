@@ -1,7 +1,7 @@
 # Created by: Eric Turgeon <ericturgeon.bsd@gmail.com>
 
 PORTNAME=	lxrandr
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXRandR%20%28monitor%20config%20tool%29/LXRandR%20${PORTVERSION:R}.x/
 
