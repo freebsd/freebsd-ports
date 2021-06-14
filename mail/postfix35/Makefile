@@ -1,7 +1,7 @@
 # Created by: Torsten Blum <torstenb@FreeBSD.org>
 
 PORTNAME=	postfix
-DISTVERSION=	3.5.10
+DISTVERSION=	3.5.11
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail

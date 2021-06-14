@@ -1,3 +1,3 @@
-TIMESTAMP = 1618155540
-SHA256 (postfix/postfix-3.5.10.tar.gz) = 5bb4d7d72d7512b58f3a31426dcbd394fd354e0a43de21da89466b057a0228f8
-SIZE (postfix/postfix-3.5.10.tar.gz) = 4621130
+TIMESTAMP = 1623677593
+SHA256 (postfix/postfix-3.5.11.tar.gz) = 056c301900ddc10bd529a781571f31d1a1d054e06afc656c946acd4902e84d9f
+SIZE (postfix/postfix-3.5.11.tar.gz) = 4621709
