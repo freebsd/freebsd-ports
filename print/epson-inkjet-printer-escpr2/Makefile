@@ -44,8 +44,6 @@ PLIST_SUB+=	ARCH_I386="@comment "
 .elif ${ARCH} == i386
 PLIST_SUB+=	ARCH_AMD64="@comment "
 PLIST_SUB+=	ARCH_I386=""
-.else
-. error unsupported architectures ${ARCH}
 .endif
 
 post-extract:
