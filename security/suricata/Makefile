@@ -48,6 +48,8 @@ OPTIONS_RADIO_SCRIPTS=	LUA LUAJIT
 
 OPTIONS_SUB=		yes
 
+PRELUDE_BROKEN=		Compilation broken, see https://redmine.openinfosecfoundation.org/issues/4065
+
 GEOIP_DESC=		GeoIP support
 HYPERSCAN_DESC=		Hyperscan support
 IPFW_DESC=		IPFW and IP Divert support for inline IDP
