@@ -144,7 +144,6 @@ include/isc/deprecated.h
 include/isc/dir.h
 include/isc/endian.h
 include/isc/errno.h
-include/isc/errno2result.h
 include/isc/error.h
 include/isc/event.h
 include/isc/eventclass.h
