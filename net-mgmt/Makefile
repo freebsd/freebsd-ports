@@ -17,6 +17,7 @@
     SUBDIR += bgpq3
     SUBDIR += bgpq4
     SUBDIR += bgpuma
+    SUBDIR += bind_exporter
     SUBDIR += blackbox_exporter
     SUBDIR += bosun
     SUBDIR += bpft
