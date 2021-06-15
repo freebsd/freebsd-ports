@@ -7,6 +7,9 @@
 # Add the following lines to /etc/rc.conf to enable fail2ban:
 # fail2ban_enable="YES"
 # fail2ban_flags="<set as needed>"
+# fail2ban_pidfile="<same as in fail2ban.local>"
+
+# Make sure pidfile and socket point to the same directory
 
 . /etc/rc.subr
 
@@ -15,11 +18,17 @@ PATH=${PATH}:%%PREFIX%%/sbin:%%PREFIX%%/bin
 name="fail2ban"
 rcvar=fail2ban_enable
 
+start_precmd="fail2ban_prestart"
 command="%%PREFIX%%/bin/fail2ban-server"
 command_interpreter="%%PYTHON_CMD%%"
 client="%%PREFIX%%/bin/fail2ban-client"
 
 extra_commands="reload jailstatus"
+
+fail2ban_prestart()
+{
+   install -d -m 0755 "$(dirname ${pidfile})"
+}
 
 load_rc_config ${name}
 
