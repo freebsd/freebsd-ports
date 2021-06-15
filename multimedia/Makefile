@@ -262,6 +262,7 @@
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend
     SUBDIR += naludump
+    SUBDIR += navidrome
     SUBDIR += nordlicht
     SUBDIR += nostt
     SUBDIR += obs-audio-spectralizer
