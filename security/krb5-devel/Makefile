@@ -15,6 +15,8 @@ PATCH_DIST_STRIP=	-p2
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		MIT implementation of RFC 4120 network authentication service
 
+BROKEN_FreeBSD_11=	OpenSSL 1.0.2 is not supported
+
 LICENSE=		MIT
 
 USE_GITHUB=		yes
