@@ -241,7 +241,7 @@
     SUBDIR += tv-fonts
     SUBDIR += twemoji-color-font-ttf
     SUBDIR += ubuntu-font
-    SUBDIR += urw-core35-fonts
+    SUBDIR += urw-base35-fonts
     SUBDIR += urwfonts
     SUBDIR += urwfonts-ttf
     SUBDIR += uw-ttyp0
