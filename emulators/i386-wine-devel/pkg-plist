@@ -2217,6 +2217,7 @@ lib32/wine/i386-unix/softpub.dll.so
 lib32/wine/i386-unix/sound.drv16.so
 lib32/wine/i386-unix/spoolss.dll.so
 lib32/wine/i386-unix/spoolsv.exe.so
+lib32/wine/i386-unix/sppc.dll.so
 lib32/wine/i386-unix/srclient.dll.so
 lib32/wine/i386-unix/srvcli.dll.so
 lib32/wine/i386-unix/sspicli.dll.so
@@ -3194,6 +3195,7 @@ lib32/wine/i386-windows/softpub.dll
 lib32/wine/i386-windows/sound.drv16
 lib32/wine/i386-windows/spoolss.dll
 lib32/wine/i386-windows/spoolsv.exe
+lib32/wine/i386-windows/sppc.dll
 lib32/wine/i386-windows/srclient.dll
 lib32/wine/i386-windows/srvcli.dll
 lib32/wine/i386-windows/sspicli.dll
