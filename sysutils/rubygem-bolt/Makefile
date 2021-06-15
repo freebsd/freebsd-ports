@@ -1,5 +1,5 @@
 PORTNAME=	bolt
-PORTVERSION=	3.9.2
+PORTVERSION=	3.10.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -36,7 +36,8 @@ USE_RUBY=	yes
 ruby_OLD_CMD+=	/opt/puppetlabs/puppet/bin/ruby
 SHEBANG_FILES=	libexec/*
 
-PLIST_FILES=	bin/bolt
+PLIST_FILES=	bin/bolt \
+		etc/bash_completion.d/bolt
 
 OPTIONS_SINGLE= PUPPET
 OPTIONS_SINGLE_PUPPET=PUPPET6 PUPPET7
@@ -47,5 +48,9 @@ PUPPET7_DESC=   Depend on sysutils/puppet7
 
 PUPPET6_RUN_DEPENDS=puppet:sysutils/puppet6
 PUPPET7_RUN_DEPENDS=puppet:sysutils/puppet7
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	${INSTALL_DATA} ${WRKSRC}/resources/bolt_bash_completion.sh ${STAGEDIR}${PREFIX}/etc/bash_completion.d/bolt
 
 .include <bsd.port.mk>
