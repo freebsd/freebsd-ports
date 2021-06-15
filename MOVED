@@ -16396,3 +16396,4 @@ databases/postgresql95-pltcl||2021-06-13|Has expired: PostgreSQL-9.5 has reached
 databases/postgresql95-server||2021-06-13|Has expired: PostgreSQL-9.5 has reached end-of-life
 databases/pg_reorg||2021-06-13|Removed, abandonware only for PostgreSQL 9.5
 databases/pgespresso||2021-06-13|Removed, functionality part of PostgreSQL 9.6 and later.
+x11-fonts/urw-core35-fonts|x11-fonts/urw-base35-fonts|2021-06-15|Project was renamed upstream
