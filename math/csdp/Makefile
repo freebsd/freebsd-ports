@@ -29,6 +29,12 @@ PLIST_FILES=	bin/complement \
 		bin/rand_graph \
 		bin/theta
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USES+=		compiler:gcc-c++11-lib
+.endif
+
 post-stage:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
