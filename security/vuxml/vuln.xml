@@ -76,6 +76,33 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9f27ac74-cdee-11eb-930d-fc4dd43e2b6a">
+    <topic>ircII -- denial of service</topic>
+    <affects>
+      <package>
+	<name>ircii</name>
+	<range><lt>20210314</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michael Ortmann reports:</p>
+	<blockquote cite="https://www.openwall.com/lists/oss-security/2021/03/24/2">
+	  <p>ircii has a bug in parsing CTCP UTC messages.</p>
+	  <p>Its unknown if this could also be used for arbitrary code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-29376</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-29376</url>
+    </references>
+    <dates>
+      <discovery>2021-03-02</discovery>
+      <entry>2021-03-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cce76eca-ca16-11eb-9b84-d4c9ef517024">
     <topic>Apache httpd -- Multiple vulnerabilities</topic>
     <affects>
