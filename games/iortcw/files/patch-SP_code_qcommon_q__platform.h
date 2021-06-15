@@ -12,7 +12,7 @@
  
  #if (defined(powerc) || defined(powerpc) || defined(ppc) || \
  	defined(__ppc) || defined(__ppc__)) && !defined(C_ONLY)
-@@ -224,11 +220,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+@@ -224,11 +220,13 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
  #ifdef __i386__
  #define ARCH_STRING "i386"
  #elif defined __amd64__
@@ -23,6 +23,8 @@
  #define ARCH_STRING "alpha"
 +#elif defined __powerpc64__
 +#define ARCH_STRING "powerpc64"
++#elif defined __powerpc__
++#define ARCH_STRING "powerpc"
  #endif
  
  #if BYTE_ORDER == BIG_ENDIAN
