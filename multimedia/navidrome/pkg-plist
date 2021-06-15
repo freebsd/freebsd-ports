@@ -1,0 +1,6 @@
+@sample %%ETCDIR%%/config.toml.sample
+bin/navidrome
+@dir %%DATADIR%%/music
+@owner www
+@group www
+@dir /var/db/navidrome

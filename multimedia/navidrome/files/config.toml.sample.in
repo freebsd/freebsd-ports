@@ -1,0 +1,73 @@
+# Navidrome Configuration File
+# Anything that is commented out will use the default value shown
+#
+# Note: This file is installed by the port and not distributed as part of Navidrome
+
+# Folder where your music library is stored. Can be read-only
+MusicFolder = "%%DATADIR%%/music"
+# Folder to store application data (DB, cache…).
+#DataFolder 	= "/var/db/navidrome"
+# How frequently to scan for changes in your music library. Set it to 0 to disable scans
+#ScanInterval = "1m"
+
+# Log level. Useful for troubleshooting. Possible values: error, info, debug, trace. Default: info
+LogLevel	= "info"
+
+# HTTP port Navidrome will use
+#Port		= 4533
+# IP address the server will bind to. Comment out to use 0.0.0.0 and :: (all IPs)
+Address	= "127.0.0.1"
+
+# Enables transcoding configuration in the UI
+#EnableTranscodingConfig = false
+# Size of transcoding cache. Set to 0 to disable cache
+#TranscodingCacheSize 	= "100MB"
+# Size of image (art work) cache. Set to 0 to disable cache
+#ImageCacheSize			= "100MB"
+# Enable/disable .m3u playlist auto-import
+#AutoImportPlaylists		= true
+
+# Base URL (only the path part) to configure Navidrome behind a proxy (ex: /music).  Comment out to leave empty
+#BaseUrl				= ""
+# Change background image used in the Login page.  Comment out to use random music image from Unsplash.com
+#UILoginBackgroundUrl 	= ""
+# Add a welcome message to the login screen
+#UIWelcomeMessage		= ""
+# Send basic info to your own Google Analytics account. Must be in the format UA-XXXXXXXX 	Empty (disabled)
+#GATrackingID 			= ""
+
+# List of ignored articles when sorting/indexing artists
+#IgnoredArticles		= "The El La Los Las Le Les Os As O A"
+# Match query strings anywhere in searchable fields, not only in word boundaries. Useful for languages where words are not space separated
+#SearchFullString	= false
+
+# Configure the order to look for cover art images. Use special embedded value to get embedded images from the audio files
+#CoverArtPriority 	= "embedded, cover.*, folder.*, front.*"
+# Set JPEG quality percentage for resized cover art images
+#CoverJpegQuality	= 75
+# Enable the option in the UI to download music/albums/artists/playlists from the server
+#EnableDownloads		= true
+
+# How long Navidrome will wait before closing web ui idle sessions
+#SessionTimeout		= "24h"
+# How many login requests can be processed from a single IP during the AuthWindowLength. Set to 0 to disable the limit rater
+#AuthRequestLimit	= 5
+# Window Length for the authentication rate limit
+#AuthWindowLength	= "20s"
+# Select metadata extractor implementation. Options: taglib or ffmpeg
+#Scanner.Extractor	= "taglib"
+
+# Last.FM ApiKey
+#LastFM.ApiKey		= ""
+# Last.FM Shared Secret
+#LastFM.Secret		= ""
+# Two letter-code for language to be used to retrieve biographies from Last.FM 
+#LastFM.Language	= "en"
+
+# Spotify Client ID
+#Spotify.ID		= ""
+# Spotify Client Secret
+#Spotify.Secret	= ""
+
+# Use Gravatar images as the user profile image. Needs the user’s email to be filled.  Defaule: false
+EnableGravatar	= true
