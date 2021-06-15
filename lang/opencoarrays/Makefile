@@ -24,7 +24,7 @@ GH_ACCOUNT=	sourceryinstitute
 GH_PROJECT=	OpenCoarrays
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	GCC_VER=${_GCC_VER} PORTVERSION=${PORTVERSION}
+PLIST_SUB=	GCC_VER=${_GCC_VER} PORTVERSION=${PORTVERSION} SOVERSION=3
 
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	MPICH OPENMPI
@@ -41,16 +41,6 @@ OPENMPI_CMAKE_ON=	-DMPI_C_COMPILE_OPTIONS="-lpthread" \
 			-DMPI_Fortran_COMPILE_OPTIONS="-lpthread"
 
 .include <bsd.port.options.mk>
-
-.if ${GCC_DEFAULT} >= 8
-PLIST_SUB+=	SOVERSION=3
-.elif ${GCC_DEFAULT} == 7
-PLIST_SUB+=	SOVERSION=2
-.elif ${GCC_DEFAULT} == 6
-PLIST_SUB+=	SOVERSION=1
-.else
-IGNORE=		requires GCC 6 or higher
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} '/mod_dir_tail/s/$${CMAKE_Fortran_COMPILER_VERSION}/${_GCC_VER}/' \
