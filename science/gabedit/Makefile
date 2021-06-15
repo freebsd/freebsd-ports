@@ -37,6 +37,7 @@ PLIST_FILES+=	share/icons/hicolor/${SZ}x${SZ}/apps/${PORTNAME}.png
 
 OPTIONS_DEFINE=		OPENMP
 OPTIONS_DEFAULT=	OPENMP
+OPTIONS_EXCLUDE_powerpc=	OPENMP
 
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/|${PREFIX}/|; s| -O2| ${CFLAGS}|; s|gcc|${CC}|' ${WRKSRC}/CONFIG
