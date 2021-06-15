@@ -41,7 +41,7 @@ SDL_USE=	SDL=sdl
 SDL_MAKE_ARGS=	USE_SDL=1
 SDL_MAKE_ARGS_OFF=	WITHOUT_SDL=1
 
-ONLY_FOR_ARCHS=		i386 amd64 powerpc64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	does not configure except on i386, amd64 and powerpc64(le)
+ONLY_FOR_ARCHS=		i386 amd64 powerpc powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	does not configure except on i386, amd64 and powerpc*
 
 .include <bsd.port.mk>
