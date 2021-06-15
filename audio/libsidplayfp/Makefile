@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/sidplay-residfp/libsidplayfp/${PORTVERSION:R}
 
-MAINTAINER=	liangtai.s16@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to play Commodore 64 music derived from libsidplay2
 
 LICENSE=	GPLv2+
