@@ -1,2 +1,3 @@
 %%PYTHON_SITELIBDIR%%/libqtile/_ffi_pango.py
-%%PYTHON_SITELIBDIR%%/libqtile/core/_ffi_xcursors.py
+%%PYTHON_SITELIBDIR%%/libqtile/backend/x11/_ffi_xcursors.py
+share/xsessions/qtile.desktop
