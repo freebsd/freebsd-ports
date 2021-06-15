@@ -1,7 +1,7 @@
 # Created by: Torsten Blum <torstenb@FreeBSD.org>
 
 PORTNAME=	postfix
-DISTVERSION=	3.6.1
+DISTVERSION=	3.5.9
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
 MASTER_SITES:=	${MASTER_SITES:S|$|official/|}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ohauer@FreeBSD.org
+MAINTAINER=	otis@FreeBSD.org
 COMMENT?=	Secure alternative to widely-used Sendmail
 
 LICENSE=	IPL10 EPL
