@@ -20,7 +20,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386 && ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+.if (${ARCH} == powerpc || ${ARCH} == i386) && ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
 USE_GCC=	yes
 .endif
 
