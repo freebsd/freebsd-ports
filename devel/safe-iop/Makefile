@@ -7,13 +7,10 @@ CATEGORIES=	devel
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Safe integer operation library for C
 
-# XXX
-# I use BSD1CLAUSE as defined in /usr/src/include/ifaddrs.h
-# but bsd.licenses.db.mk only has
-# BSD BSD0CLAUSE BSD2CLAUSE BSD3CLAUSE BSD4CLAUSE - go figure
-# So fake it
-LICENSE=	BSD2CLAUSE
+# as defined in /usr/src/include/ifaddrs.h
+LICENSE=	BSD1CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_LDCONFIG=	yes
 ALL_TARGET=	so
