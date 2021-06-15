@@ -49,11 +49,6 @@ include/ratpoints.h
 lib/libratpoints.a
 %%PYTHON_SITELIBDIR%%/__pycache__/sage_conf.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/__pycache__/sagetex.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/_distutils_hack/__init__.py
-%%PYTHON_SITELIBDIR%%/_distutils_hack/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/_distutils_hack/__pycache__/override.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/_distutils_hack/override.py
-%%PYTHON_SITELIBDIR%%/distutils-precedence.pth
 %%PYTHON_SITELIBDIR%%/sage-%%VER%%-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/sage/__init__.py
 %%PYTHON_SITELIBDIR%%/sage/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc

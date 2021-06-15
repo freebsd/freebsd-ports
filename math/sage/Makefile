@@ -2,7 +2,7 @@
 
 PORTNAME=	sage
 PORTVERSION=	9.2
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	math
 MASTER_SITES=	https://mirrors.xmission.com/sage/src/		\
 		http://mirrors.xmission.com/sage/src/		\
@@ -568,8 +568,10 @@ do-install:
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib64 ${STAGEDIR}${PREFIX}/libdata/pkgconfig/blas.pc	\
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/distutils-precedence.pth	\
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/cblas.pc	\
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/gsl.pc	\
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/lapack.pc
+	${RM} -r ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_distutils_hack
 
 .include <bsd.port.post.mk>
