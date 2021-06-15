@@ -1,6 +1,6 @@
---- Makefile.orig	2018-05-08 01:27:03.541852000 +0800
-+++ Makefile	2018-05-08 01:28:27.611102000 +0800
-@@ -162,8 +162,7 @@
+--- Makefile.bsd.orig	2020-05-10 16:58:42 UTC
++++ Makefile.bsd
+@@ -121,8 +121,7 @@ LIBS += -lssl -lcrypto
  
  INSTALLBINDIR = $(PREFIX)/sbin
  INSTALLETCDIR = $(PREFIX)/etc
@@ -10,7 +10,7 @@
  
  all:	$(EXECUTABLES)
  
-@@ -181,10 +180,10 @@
+@@ -140,10 +139,10 @@ install:	miniupnpd genuuid
  	$(INSTALL) -d $(DESTDIR)$(INSTALLBINDIR)
  	$(INSTALL) -m 755 miniupnpd $(DESTDIR)$(INSTALLBINDIR)
  	$(INSTALL) -d $(DESTDIR)$(INSTALLETCDIR)
@@ -24,8 +24,8 @@
  
  # genuuid is using the uuid cli tool available under OpenBSD 4.0 in
  # the uuid-1.5.0 package
-@@ -225,7 +224,7 @@
- 	testssdppktgen.c
+@@ -187,7 +186,7 @@ dox:	miniupnpd.doxyconf
+ 	$(DOXYGEN) $>
  
  miniupnpd: config.h $(ALLOBJS)
 -	$(CC) $(LDFLAGS) -o $@ $(ALLOBJS) $(LIBS)

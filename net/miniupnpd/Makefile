@@ -1,7 +1,7 @@
 # Created by: Daniel O'Connor <darius@dons.net.au>
 
 PORTNAME=	miniupnpd
-PORTVERSION=	2.1.20190210
+PORTVERSION=	2.1.20200510
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.tuxfamily.org/files/ \
@@ -14,36 +14,40 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cpe ssl
 CPE_VENDOR=	miniupnp_project
-PLIST_FILES=	etc/miniupnpd.conf.sample sbin/miniupnpd \
-		man/man8/miniupnpd.8.gz
-MAKE_JOBS_UNSAFE=yes
 USE_RC_SUBR=	miniupnpd
+
+HAS_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
-OPTIONS_DEFINE=	PF_FILTER_RULES CHECK_PORTINUSE IPV6 UPNP_IGDV2 UPNP_STRICT LEASEFILE
-PF_FILTER_RULES_DESC=	Enable pf generation of filter rules
-CHECK_PORTINUSE_DESC=	Check if ports are in use
-UPNP_IGDV2_DESC=	Build an IGDv2 instead of an IGDv1
-UPNP_STRICT_DESC=	More strict UPnP specification compliance
-LEASEFILE_DESC=	Enable lease file
+PLIST_FILES=	etc/miniupnpd.conf.sample \
+		man/man8/miniupnpd.8.gz \
+		sbin/miniupnpd
 
-PF_FILTER_RULES_EXTRA_PATCHES=	${PATCHDIR}/pf_enable_filter_rules.patch
-CHECK_PORTINUSE_EXTRA_PATCHES=	${PATCHDIR}/enable_check_portinuse.patch
-IPV6_EXTRA_PATCHES=	${PATCHDIR}/enable_ipv6.patch
-UPNP_IGDV2_EXTRA_PATCHES=	${PATCHDIR}/enable_igdv2.patch
-UPNP_STRICT_EXTRA_PATCHES=	${PATCHDIR}/enable_upnp_strict.patch
-LEASEFILE_EXTRA_PATCHES=	${PATCHDIR}/enable_leasefile.patch
+OPTIONS_DEFINE=			CHECK_PORTINUSE IPV6 LEASEFILE UPNP_IGDV2 \
+				UPNP_STRICT
+OPTIONS_DEFAULT=		AUTODETECT_FW
+OPTIONS_SINGLE=			FIREWALL
+OPTIONS_SINGLE_FIREWALL=	AUTODETECT_FW PF IPFW
+AUTODETECT_FW_DESC=		Try to autodetect firewall type
+CHECK_PORTINUSE_DESC=		Check if ports are in use
+IPFW_DESC=			Use IPFW as firewall type
+LEASEFILE_DESC=			Enable lease file
+PF_DESC=			Use PF as firewall type
+UPNP_IGDV2_DESC=		Build an IGDv2 instead of an IGDv1
+UPNP_STRICT_DESC=		More strict UPnP specification compliance
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-portinuse.c
-.endif
+CHECK_PORTINUSE_CONFIGURE_ON=	--portinuse
+IPV6_CONFIGURE_ON=		--ipv6
+LEASEFILE_CONFIGURE_ON=		--leasefile
+PF_CONFIGURE_ON=		--firewall=pf
+UPNP_IGDV2_CONFIGURE_ON=	--igd2
+UPNP_STRICT_CONFIGURE_ON=	--strict
 
 post-patch:
-	${REINPLACE_CMD} -e 's|\(-lssl -lcrypto\)|$$(LDFLAGS) \1|g' \
-	${WRKSRC}/Makefile
-	
+	@${REINPLACE_CMD} -e 's|\(-lssl -lcrypto\)|$$(LDFLAGS) \1|g' \
+	${WRKSRC}/Makefile.bsd
+
 .include <bsd.port.mk>
