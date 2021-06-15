@@ -17,7 +17,7 @@ BROKEN_riscv64=		fails to build: No support for this architecture (yet)
 USE_GITHUB=	yes
 GH_ACCOUNT=	fluent
 
-USES=		cmake:noninja compiler:c11 gmake bison
+USES=		cmake:noninja gmake bison
 
 OPTIONS_DEFINE=		SSL PGSQL
 OPTIONS_DEFAULT=	SSL
@@ -46,6 +46,10 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-lib_luajit__src__lj_prng.c
 
 .if ${ARCH:Mpowerpc64*}
 CMAKE_ARGS+=	-DFLB_LUAJIT:BOOL=OFF
+.elif ${ARCH} == powerpc
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c11
 .endif
 
 post-install:
