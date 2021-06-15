@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# PROVIDE: hetzner_ddns
+# REQUIRE: LOGIN
+
+. /etc/rc.subr
+
+name=hetzner_ddns
+rcvar="${name}_enable" 
+pidfile="/var/run/${name}.pid"
+start_cmd="${name}_start"
+load_rc_config $name
+command="/usr/local/bin/${name}"
+command_args="--daemon"
+procname="/bin/sh"
+
+hetzner_ddns_start()
+{
+    export PATH="$PATH:/usr/local/bin"
+    eval "${command} ${command_args}"
+}
+
+run_rc_command "$1"

@@ -77,6 +77,7 @@
     SUBDIR += gen6dns
     SUBDIR += getdns
     SUBDIR += hesiod
+    SUBDIR += hetzner_ddns
     SUBDIR += hostdb
     SUBDIR += idnkit
     SUBDIR += idnkit2
