@@ -29,6 +29,7 @@ OPTIONS_DEFAULT_i386=	SSE
 SSE_CMAKE_ON=	-DPORT_SIMD_FLAGS:STRING="-msse -msse2 -mfpmath=sse"
 
 CXXFLAGS_powerpc64=	-maltivec
+CXXFLAGS_powerpc=	-maltivec
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -g | |; s| -O1 | |; s/-msse2 -mfpmath=sse/$${PORT_SIMD_FLAGS}/g' \
