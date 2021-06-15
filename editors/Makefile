@@ -185,6 +185,7 @@
     SUBDIR += libreoffice-xh
     SUBDIR += libreoffice-zu
     SUBDIR += libreoffice6
+    SUBDIR += linux-bcompare
     SUBDIR += linux-sublime
     SUBDIR += linux-sublime3
     SUBDIR += linux-wps-office
