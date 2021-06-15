@@ -1,0 +1,3 @@
+#!/bin/sh
+[ -e "%%LOCALBASE%%/libexec/nvidia-settings-hybrid" ] && exec %%LOCALBASE%%/libexec/nvidia-settings-hybrid "$@"
+exec %%PREFIX%%/libexec/nvidia-settings "$@"

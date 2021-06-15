@@ -13,7 +13,7 @@
 # the port aims to support building against arbitrary DISTVERSION, i.e.
 # ``make DISTVERSION=xxx.yy.zz -DNO_CHECKSUM'' should typically work.
 
-PORTNAME=	nvidia-driver
+PORTNAME?=	nvidia-driver
 DISTVERSION?=	460.80
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
@@ -22,8 +22,8 @@ MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	NVidia graphics card binary drivers for hardware OpenGL rendering
+MAINTAINER?=	danfe@FreeBSD.org
+COMMENT?=	NVidia graphics card binary drivers for hardware OpenGL rendering
 
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 .include "${.CURDIR}/../nvidia-driver/Makefile.common"
@@ -43,7 +43,10 @@ WAYLAND_JSON_PATH=	${PREFIX}/share/egl/egl_external_platform.d
 MAKE_ENV=	DEBUG_FLAGS=${DEBUG_FLAGS} \
 		EGL_GLVND_JSON_PATH=${STAGEDIR}${GLVND_JSON_PATH} \
 		EGL_WAYLAND_JSON_PATH=${STAGEDIR}${WAYLAND_JSON_PATH}
-SUB_FILES=	pkg-message nvidia.conf
+SUB_FILES=	pkg-message
+.if !defined(LIBGLDIR)
+SUB_FILES+=	nvidia.conf
+.endif
 .if ${NVVERSION} < 410.057
 SUB_FILES+=	pkg-deinstall pkg-install
 .endif
@@ -54,6 +57,7 @@ SUB_PATCHES=	extra-patch-src-Makefile \
 		extra-patch-src-nvidia_pci.c
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 MODULESDIR=	lib/xorg/modules
+EXTENSIONSDIR?=	${MODULESDIR}/extensions/.nvidia
 PORTDOCS=	*
 
 .if ${NVVERSION} >= 331.013
@@ -96,6 +100,20 @@ FREEBSD_AGP_DESC=	Use FreeBSD AGP GART driver
 .endif
 
 PLIST_SUB+=	MODULESDIR=${MODULESDIR}
+.if ${NVVERSION} < 410.057
+PLIST_SUB+=	EXTENSIONSDIR=${EXTENSIONSDIR}
+.else
+PLIST_SUB+=	EXTENSIONSDIR="@comment "
+.endif
+.if defined(LIBGLDIR)
+PLIST_SUB+=	LIBGLDIR=${LIBGLDIR} LIBGLMAP="@comment "
+.else
+PLIST_SUB+=	LIBGLDIR="@comment " LIBGLMAP=""
+.endif
+
+.if ${PORTNAME} != nvidia-secondary-driver
+CONFLICTS_INSTALL+=	nvidia-secondary-driver
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -284,8 +302,32 @@ post-install: .SILENT
 		${STAGEDIR}${PREFIX}/lib/libGLESv2-NVIDIA.so.2
 	${RM} ${STAGEDIR}${PREFIX}/lib/libGLESv2.so
 .endif
+# Configuration of Nvidia as secondary GPU requires preserving Mesa libraries
+# as default implementation; a libmap must not override in this case.
+.if !defined(LIBGLDIR)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/libmap.d/
 	${INSTALL_DATA} ${WRKDIR}/nvidia.conf \
 		${STAGEDIR}${PREFIX}/etc/libmap.d/
+.else
+# libgl proxies require a library path containing unrenamed lib*GL*.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/${LIBGLDIR}
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libGL-NVIDIA.so.1 \
+		${STAGEDIR}${PREFIX}/${LIBGLDIR}/libGL.so.1
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libEGL-NVIDIA.so.1 \
+		${STAGEDIR}${PREFIX}/${LIBGLDIR}/libEGL.so.1
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libGLESv2-NVIDIA.so.2 \
+		${STAGEDIR}${PREFIX}/${LIBGLDIR}/libGLESv2.so.2
+.endif
+# Configuration of Nvidia as secondary GPU requires preserving xorg-server's
+# libglx.so and moving Nvidia's glx to where it can be found by a secondary
+# Xorg instance.
+# Not needed since 410.057: Nvidia driver finds libglxserver_nvidia.so instead.
+.if ${NVVERSION} < 410.057
+.if ${EXTENSIONSDIR} != ${MODULESDIR}/extensions/.nvidia
+	${MKDIR} ${STAGEDIR}${PREFIX}/${EXTENSIONSDIR}
+	${MV} ${STAGEDIR}${PREFIX}/${MODULESDIR}/extensions/.nvidia/* \
+		${STAGEDIR}${PREFIX}/${EXTENSIONSDIR}/
+.endif
+.endif
 
 .include <bsd.port.post.mk>

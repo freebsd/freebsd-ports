@@ -1,7 +1,10 @@
 bin/nvidia-bug-report.sh
 bin/nvidia-debugdump
 bin/nvidia-smi
-etc/libmap.d/nvidia.conf
+%%LIBGLMAP%%etc/libmap.d/nvidia.conf
+%%LIBGLDIR%%/libGL.so.1
+%%LIBGLDIR%%/libEGL.so.1
+%%LIBGLDIR%%/libGLESv2.so.2
 lib/libEGL-NVIDIA.so
 lib/libEGL-NVIDIA.so.1
 lib/libEGL_nvidia.so
@@ -86,8 +89,8 @@ share/glvnd/egl_vendor.d/10_nvidia.json
 share/vulkan/icd.d/nvidia_icd.json
 share/vulkan/implicit_layer.d/nvidia_layers.json
 %%MODULESDIR%%/drivers/nvidia_drv.so
-%%MODULESDIR%%/extensions/.nvidia/libglx.so
-%%MODULESDIR%%/extensions/.nvidia/libglx.so.1
+%%EXTENSIONSDIR%%/libglx.so
+%%EXTENSIONSDIR%%/libglx.so.1
 %%MODULESDIR%%/extensions/libglxserver_nvidia.so
 %%MODULESDIR%%/extensions/libglxserver_nvidia.so.1
 /%%KMODDIR%%/nvidia.ko

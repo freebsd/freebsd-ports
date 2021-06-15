@@ -27,10 +27,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	NVIDIA
 
 PLIST_FILES=	bin/nvidia-settings \
+		libexec/nvidia-settings \
 		man/man1/nvidia-settings.1.gz \
 		lib/libnvidia-gtk2.so.${PORTVERSION} \
 		share/applications/nvidia-settings.desktop \
 		share/pixmaps/nvidia-settings.png
+
+SUB_FILES=	nvidia-settings
 
 LDFLAGS+=	-pthread
 LLD_UNSAFE=	yes
@@ -56,5 +59,9 @@ post-install:	.SILENT
 		${STAGEDIR}/${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/nvidia-settings.png \
 		${STAGEDIR}/${PREFIX}/share/pixmaps
+	${MV} ${STAGEDIR}${PREFIX}/bin/nvidia-settings \
+		${STAGEDIR}${PREFIX}/libexec/nvidia-settings
+	${INSTALL} ${WRKDIR}/nvidia-settings \
+		${STAGEDIR}${PREFIX}/bin/nvidia-settings
 
 .include <bsd.port.mk>
