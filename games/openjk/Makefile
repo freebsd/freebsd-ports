@@ -19,7 +19,7 @@ USE_SDL=	sdl2
 USE_XORG=	x11
 
 CXXFLAGS+=	-DNDEBUG
-OPENJK_ARCH=	${ARCH:S/powerpc64$/ppc64/:C/armv.*/arm/}
+OPENJK_ARCH=	${ARCH:S/powerpc64$/ppc64/:S/powerpc$/ppc/:C/armv.*/arm/}
 PLIST_SUB=	ARCH="${OPENJK_ARCH}"
 SUB_FILES=	jamp \
 		jasp
