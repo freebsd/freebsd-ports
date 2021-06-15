@@ -1,5 +1,5 @@
 PORTNAME=	simutrans
-DISTVERSION=	121-0
+DISTVERSION=	123-0-1
 CATEGORIES=	games
 MASTER_SITES=	SF/simutrans/simutrans/${DISTVERSION}
 DISTNAME=	simutrans-src-${DISTVERSION}
@@ -12,22 +12,21 @@ LICENSE_COMB=	multi
 LICENSE_FILE_ART10=	${WRKSRC}/simutrans/license.txt
 LICENSE_FILE_MIT=	${WRKSRC}/simutrans/license_squirrel.txt
 
-USES=		compiler:c11 gmake sdl zip
-USE_SDL=	sdl2 mixer2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libfreetype.so:print/freetype2 \
+		libzstd.so:archivers/zstd
 
-# Threading disabled because FreeBSD does not have a static initializer
-# for recursive mutexes.
-MAKE_ENV=	BACKEND=mixer_sdl2 \
-		COLOUR_DEPTH=16 \
-		MULTI_THREAD=0 \
-		OSTYPE=freebsd \
-		VERBOSE=1
+USES=		cmake compiler:c++11-lib pkgconfig sdl zip
+USE_SDL=	sdl2
+
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_CCache \
+		CMAKE_DISABLE_FIND_PACKAGE_Git \
+		CMAKE_DISABLE_FIND_PACKAGE_Subversion
 
 NO_WRKSUBDIR=	yes
 
 SUB_FILES=	simutrans
 
-PLIST_FILES=	bin/simutrans libexec/simutrans
 PORTDATA=	*
 PORTDOCS=	change_request.txt \
 		history.txt \
@@ -35,12 +34,12 @@ PORTDOCS=	change_request.txt \
 		readme.txt \
 		thanks.txt
 
-DESKTOP_ENTRIES=Simutrans "" "" simutrans "Game;Simulation;" false
+DESKTOP_ENTRIES=Simutrans "" simutrans simutrans "Game;Simulation;" false
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS UPNP FLUIDSYNTH
 OPTIONS_MULTI=	PAKS
 OPTIONS_MULTI_PAKS=	PAK64 PAK128 PAK128_GERMAN
-OPTIONS_DEFAULT=PAK128
+OPTIONS_DEFAULT=PAK128 UPNP FLUIDSYNTH
 
 PAKS_DESC=			Graphics sets
 PAK64_DESC=			Enable low resolution graphics set
@@ -50,12 +49,23 @@ PAK128_RUN_DEPENDS=		simutrans-pak128>=0:games/simutrans-pak128
 PAK128_GERMAN_DESC=		Enable german graphics set
 PAK128_GERMAN_RUN_DEPENDS=	simutrans-pak128.german>=0:games/simutrans-pak128.german
 
+UPNP_DESC=			Use MiniUPNP for easier server setup
+UPNP_LIB_DEPENDS=		libminiupnpc.so:net/miniupnpc
+UPNP_CMAKE_BOOL=		SIMUTRANS_USE_UPNP
+
+FLUIDSYNTH_DESC=		Enable FluidSynth for MIDI playback
+FLUIDSYNTH_LIB_DEPENDS=		libfluidsynth.so:audio/fluidsynth
+FLUIDSYNTH_CMAKE_BOOL=		SIMUTRANS_USE_FLUIDSYNTH_MIDI
+
 do-install:
 	@cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} \
 		"ai config font music script text themes" ${STAGEDIR}${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/build/default/sim \
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/simutrans/simutrans \
 		${STAGEDIR}${PREFIX}/libexec/simutrans
 	${INSTALL_SCRIPT} ${WRKDIR}/simutrans ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/simutrans.svg \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
