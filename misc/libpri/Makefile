@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	include/libpri.h lib/libpri.a lib/libpri.so lib/libpri.so.1
 MAKE_ARGS=	INSTALL_PREFIX=${STAGEDIR}${PREFIX}
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le sparc64
+ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le sparc64
 
 post-patch:
 	${REINPLACE_CMD} -e '/^all:/s/$$(UTILITIES)//' ${WRKSRC}/Makefile
