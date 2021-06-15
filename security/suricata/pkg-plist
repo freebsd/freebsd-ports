@@ -117,10 +117,16 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/main.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/maps.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/maps.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/matchers.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/matchers.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/net.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/net.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/notes.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/notes.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/osinfo.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/osinfo.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/parsers.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/parsers.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/rule.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/rule.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/sources.py
