@@ -4,7 +4,7 @@
      asm volatile ("nop" ::: "memory");
  #endif
  }
-+#elif defined(__powerpc64__)
++#elif defined(__powerpc__)
 +static inline void spin_loop_pause() noexcept {
 +    asm volatile("ori 0,0,0" ::: "memory");
 +}
