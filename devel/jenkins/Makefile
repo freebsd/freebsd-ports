@@ -1,5 +1,5 @@
 PORTNAME=	jenkins
-PORTVERSION=	2.297
+PORTVERSION=	2.298
 CATEGORIES=	devel java
 MASTER_SITES=	http://mirrors.jenkins-ci.org/war/${PORTVERSION}/
 DISTNAME=	jenkins
