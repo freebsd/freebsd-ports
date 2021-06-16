@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	feedparser
-PORTVERSION=	6.0.3
+PORTVERSION=	6.0.4
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
