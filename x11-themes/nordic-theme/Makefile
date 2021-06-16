@@ -1,8 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	nordic-theme
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.0
+DISTVERSION=	2.0.0
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -17,22 +16,21 @@ GH_PROJECT=	Nordic
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	CINNAMON GNOMESHELL KDE METACITY XFCE
-OPTIONS_DEFAULT=	GNOMESHELL KDE METACITY XFCE
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		CINNAMON GNOMESHELL KDE METACITY XFCE
+OPTIONS_DEFAULT=	CINNAMON GNOMESHELL KDE METACITY XFCE
+OPTIONS_SUB=		yes
 
-CINNAMON_DESC=	Install Cinnamon theme
+CINNAMON_DESC=		Install Cinnamon theme
 GNOMESHELL_DESC=	Install Gnome-Shell theme
-KDE_DESC=	Install KDE theme
-METACITY_DESC=	Install Metacity theme
-XFCE_DESC=	Install XFCE theme
+KDE_DESC=		Install KDE theme
+METACITY_DESC=		Install Metacity theme
+XFCE_DESC=		Install XFCE theme
 
 CINNAMON_IMPLIES=	METACITY
-CINNAMON_BROKEN=	This version of the theme dont have the cinnamon theme yet.
-CINNAMON_VARS=	THEME_SUBSETS+=cinnamon
+CINNAMON_VARS=		THEME_SUBSETS+=cinnamon
 GNOMESHELL_VARS=	THEME_SUBSETS+=gnome-shell
-METACITY_VARS=	THEME_SUBSETS+=metacity-1
-XFCE_VARS=	THEME_SUBSETS+=xfwm4
+METACITY_VARS=		THEME_SUBSETS+=metacity-1
+XFCE_VARS=		THEME_SUBSETS+=xfwm4
 
 THEMEDIR=	${PREFIX}/share/themes/Nordic
 THEME_SUBSETS=	assets gtk-2.0 gtk-3.0 index.theme
