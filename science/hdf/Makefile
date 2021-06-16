@@ -46,6 +46,9 @@ post-patch:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/hdfunpac.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
+	# Allow to build on PowerPC
+	@${REINPLACE_CMD} -e '/if defined (__APPLE__)/ \
+		s,),) || defined(__powerpc__),' ${WRKSRC}/hdf/src/hdfi.h
 	${INSTALL_MAN} ${WRKSRC}/man/gr_chunk.3 \
 		${STAGEDIR}${MAN3PREFIX}/man/man3
 
