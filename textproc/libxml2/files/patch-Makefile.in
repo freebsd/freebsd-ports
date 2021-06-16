@@ -1,6 +1,24 @@
---- Makefile.in.orig	2019-11-16 14:42:34 UTC
+--- Makefile.in.orig	2021-06-09 19:53:33 UTC
 +++ Makefile.in
-@@ -1284,7 +1284,7 @@ am--depfiles: $(am__depfiles_remade)
+@@ -760,7 +760,7 @@ man_MANS = xml2-config.1 libxml.3
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = libxml.m4
+ runtest_SOURCES = runtest.c
+-runtest_LDFLAGS = 
++runtest_LDFLAGS = -pthread
+ runtest_DEPENDENCIES = $(DEPS)
+ runtest_LDADD = $(BASE_THREAD_LIBS) $(RDL_LIBS) $(LDADDS)
+ testrecurse_SOURCES = testrecurse.c
+@@ -808,7 +808,7 @@ testC14N_LDFLAGS = 
+ testC14N_DEPENDENCIES = $(DEPS)
+ testC14N_LDADD = $(LDADDS)
+ testThreads_SOURCES = testThreads.c
+-testThreads_LDFLAGS = 
++testThreads_LDFLAGS = -pthread
+ testThreads_DEPENDENCIES = $(DEPS)
+ testThreads_LDADD = $(BASE_THREAD_LIBS) $(LDADDS)
+ testURI_SOURCES = testURI.c
+@@ -1285,7 +1285,7 @@ am--depfiles: $(am__depfiles_remade)
  @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
  
  .c.lo:
@@ -9,7 +27,7 @@
  @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@@ -1773,7 +1773,7 @@ check-am: all-am
+@@ -1774,7 +1774,7 @@ check-am: all-am
  	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
  check: $(BUILT_SOURCES)
  	$(MAKE) $(AM_MAKEFLAGS) check-recursive
@@ -18,7 +36,7 @@
  		config.h
  install-binPROGRAMS: install-libLTLIBRARIES
  
-@@ -1910,7 +1910,7 @@ info: info-recursive
+@@ -1911,7 +1911,7 @@ info: info-recursive
  
  info-am:
  
