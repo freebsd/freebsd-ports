@@ -16,6 +16,6 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	GLAD_INSTALL BUILD_SHARED_LIBS GLAD_REPRODUCIBLE
 
-CONFLICTS_INSTALL=	mesa-libs # include/KHR/khrplatform.h, see https://github.com/Dav1dde/glad/issues/260
+CONFLICTS_INSTALL=	libglvnd # include/KHR/khrplatform.h, see https://github.com/Dav1dde/glad/issues/260
 
 .include <bsd.port.mk>

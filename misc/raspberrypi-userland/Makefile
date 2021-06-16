@@ -11,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 
 ONLY_FOR_ARCHS=	armv6 armv7
 
-CONFLICTS_INSTALL=	mesa-libs
+CONFLICTS_INSTALL=	libglvnd
 
 USES=		cmake pkgconfig shebangfix
 

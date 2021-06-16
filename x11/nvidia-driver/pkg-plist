@@ -17,9 +17,9 @@ lib/libGLESv2-NVIDIA.so
 lib/libGLESv2-NVIDIA.so.2
 lib/libGLESv2_nvidia.so
 lib/libGLESv2_nvidia.so.2
-lib/libGLX.so
-lib/libGLX.so.0
-lib/libGLX_indirect.so.0
+%%LIBGLDIR%%/libGLX.so
+%%LIBGLDIR%%/libGLX.so.0
+@comment lib/libGLX_indirect.so.0
 lib/libGLX_nvidia.so
 lib/libGLX_nvidia.so.0
 lib/libGLdispatch.so

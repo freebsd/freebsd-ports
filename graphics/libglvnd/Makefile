@@ -2,13 +2,11 @@ PORTNAME=	libglvnd
 DISTVERSION=	1.3.2
 CATEGORIES=	graphics
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	GL Vendor-Neutral Dispatch library
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
-
-CONFLICTS_INSTALL=	mesa-libs # include/GL/gl.h
 
 USES=		localbase meson pkgconfig
 USE_LDCONFIG=	yes

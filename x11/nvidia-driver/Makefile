@@ -16,7 +16,7 @@
 PORTNAME?=	nvidia-driver
 DISTVERSION?=	460.80
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
@@ -32,6 +32,7 @@ LICENSE_FILE=	${WRKSRC}/doc/license.txt
 # obj/libEGL_nvidia.so.0 (see below)
 .if ${NVVERSION} >= 410.057
 PATCH_DEPENDS=	gsed:textproc/gsed
+BUILD_DEPENDS=	pkg-config:devel/pkgconf libglvnd>0:graphics/libglvnd
 .endif
 
 USES=		kmod uidfix xorg
@@ -281,6 +282,7 @@ post-install: .SILENT
 .elif ${NVVERSION} < 465.01901
 	${REINPLACE_CMD} -e '/lib32\/libnvidia-glvkspirv\.so/d' ${TMPPLIST}
 .endif
+.if ${NVVERSION} < 410.057
 # Rename some libraries and install a libmap file to resolve conflict with
 # Mesa libraries.
 	${LN} -sf libGL-NVIDIA.so.1 \
@@ -288,7 +290,7 @@ post-install: .SILENT
 	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGL.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libGL-NVIDIA.so.1
 	${RM} ${STAGEDIR}${PREFIX}/lib/libGL.so
-.if ${NVVERSION} >= 331.013
+.  if ${NVVERSION} >= 331.013
 	${LN} -sf libEGL-NVIDIA.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libEGL-NVIDIA.so
 	${MV} -f ${STAGEDIR}${PREFIX}/lib/libEGL.so.1 \
@@ -301,14 +303,14 @@ post-install: .SILENT
 	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGLESv2.so.2 \
 		${STAGEDIR}${PREFIX}/lib/libGLESv2-NVIDIA.so.2
 	${RM} ${STAGEDIR}${PREFIX}/lib/libGLESv2.so
-.endif
-# Configuration of Nvidia as secondary GPU requires preserving Mesa libraries
-# as default implementation; a libmap must not override in this case.
-.if !defined(LIBGLDIR)
+.  endif
+# Configuration of Nvidia as secondary GPU requires preserving libglvnd or mesa
+# libraries as default implementation; a libmap must not override in this case.
+.  if !defined(LIBGLDIR)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/libmap.d/
 	${INSTALL_DATA} ${WRKDIR}/nvidia.conf \
 		${STAGEDIR}${PREFIX}/etc/libmap.d/
-.else
+.  else
 # libgl proxies require a library path containing unrenamed lib*GL*.so
 	${MKDIR} ${STAGEDIR}${PREFIX}/${LIBGLDIR}
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libGL-NVIDIA.so.1 \
@@ -317,17 +319,23 @@ post-install: .SILENT
 		${STAGEDIR}${PREFIX}/${LIBGLDIR}/libEGL.so.1
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libGLESv2-NVIDIA.so.2 \
 		${STAGEDIR}${PREFIX}/${LIBGLDIR}/libGLESv2.so.2
-.endif
+.  endif
 # Configuration of Nvidia as secondary GPU requires preserving xorg-server's
 # libglx.so and moving Nvidia's glx to where it can be found by a secondary
 # Xorg instance.
 # Not needed since 410.057: Nvidia driver finds libglxserver_nvidia.so instead.
-.if ${NVVERSION} < 410.057
-.if ${EXTENSIONSDIR} != ${MODULESDIR}/extensions/.nvidia
+.  if ${EXTENSIONSDIR} != ${MODULESDIR}/extensions/.nvidia
 	${MKDIR} ${STAGEDIR}${PREFIX}/${EXTENSIONSDIR}
 	${MV} ${STAGEDIR}${PREFIX}/${MODULESDIR}/extensions/.nvidia/* \
 		${STAGEDIR}${PREFIX}/${EXTENSIONSDIR}/
-.endif
+.  endif
+.else
+	${REINPLACE_CMD} -E '/-NVIDIA/d ; \
+		/lib(Open)?E?GLX?(ESv[12](_CM)?|dispatch)?\.so/d' \
+		${TMPPLIST}
+# Override mesa.conf if GLX_EXT_libglvnd is missing
+	@${ECHO_CMD} "libGLX_indirect.so.0 libGLX_nvidia.so.0" \
+		>${STAGEDIR}${PREFIX}/etc/libmap.d/nvidia.conf
 .endif
 
 .include <bsd.port.post.mk>
