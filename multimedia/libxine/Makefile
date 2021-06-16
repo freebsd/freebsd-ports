@@ -159,6 +159,9 @@ XVMC_CONFIGURE_ENABLE=		xvmc
 
 .if ${ARCH} == aarch64
 BUILD_DEPENDS+=	as:devel/binutils
+.elif ${ARCH} == powerpc
+BUILD_DEPENDS+=	as:devel/binutils
+CFLAGS+=	-fno-integrated-as
 .endif
 
 .if !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MOPENSSL}
