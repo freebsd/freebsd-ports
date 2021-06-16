@@ -1,7 +1,7 @@
 # Created by: clement
 
 PORTNAME=	weechat
-DISTVERSION=	3.1
+DISTVERSION=	3.2
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
