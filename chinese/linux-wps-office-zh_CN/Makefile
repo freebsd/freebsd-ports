@@ -1,22 +1,24 @@
 PORTNAME=	wps-office
 DISTVERSION=	11.1.0.10161
-CATEGORIES=	editors linux
-MASTER_SITES=	https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/10161/
+DISTVERSIONSUFFIX=	-zh_CN
+CATEGORIES=	chinese editors linux
+MASTER_SITES=	https://wdl1.cache.wps.cn/wps/download/ep/Linux2019/10161/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION}.XA-1.x86_64
+PKGNAMESUFFIX=	-zh_CN
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1.x86_64
 EXTRACT_SUFX=   .rpm
 
-MAINTAINER=	freebsd@sysctl.cz
+MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Complete office suite with PDF editor
 
 LICENSE=	commercial
 LICENSE_NAME=	End User License Agreement
-LICENSE_TEXT=	See: https://www.wps.com/eula
+LICENSE_TEXT=	See: https://www.wps.cn/privacy/full_useragreement/
 LICENSE_PERMS=	no-auto-accept no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
 ONLY_FOR_ARCHS= amd64
 
-CONFLICTS_INSTALL=	linux-wps-office-zh_CN
+CONFLICTS_INSTALL=	linux-wps-office
 
 USES=		desktop-file-utils linux shebangfix
 INSTALLS_ICONS=	yes
