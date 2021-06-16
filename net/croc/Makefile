@@ -1,5 +1,5 @@
 PORTNAME=	croc
-PORTVERSION=	9.1.5
+PORTVERSION=	9.1.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -19,9 +19,9 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		golang:crypto:c07d793c2f9a:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:84b48f89b13b:golang_net/vendor/golang.org/x/net \
-		golang:sys:aa57babbf139:golang_sys/vendor/golang.org/x/sys \
-		golang:term:a79de5458b56:golang_term/vendor/golang.org/x/term \
+		golang:net:04defd469f4e:golang_net/vendor/golang.org/x/net \
+		golang:sys:665e8c7367d1:golang_sys/vendor/golang.org/x/sys \
+		golang:term:6886f2dfbf5b:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		kalafut:imohash:v1.0.2:kalafut_imohash/vendor/github.com/kalafut/imohash \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
