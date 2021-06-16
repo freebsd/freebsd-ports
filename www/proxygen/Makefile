@@ -1,6 +1,6 @@
 PORTNAME=	proxygen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2021.05.10.00
+DISTVERSION=	2021.06.14.00
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +33,5 @@ LDFLAGS+=	-lexecinfo
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
-
-BROKEN=		Update of archivers/snappy to 1.1.9 broke proxygen: https://github.com/facebook/proxygen/issues/361
 
 .include <bsd.port.mk>
