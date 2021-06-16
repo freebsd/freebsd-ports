@@ -15,6 +15,7 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_i386=	typedef redefinition with different types ('ptrdiff_t' (aka 'int') vs 'khronos_intptr_t' (aka 'long'))
+BROKEN_powerpc=	typedef redefinition with different types ('ptrdiff_t' (aka 'int') vs 'khronos_intptr_t' (aka 'long'))
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libmikmod.so:audio/libmikmod \
