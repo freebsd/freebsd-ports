@@ -7,6 +7,9 @@ COMMENT=	Database driver for MongoDB written in Elixir
 
 LICENSE=	MIT
 
+DEPRECATED=	Upsupported by upstream
+EXPIRATION_DATE=	2021-06-23
+
 BROKEN=		does not build: Compilation error in file lib/mongo.ex
 
 USES=		elixir
