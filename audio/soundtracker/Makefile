@@ -1,6 +1,5 @@
 PORTNAME=	soundtracker
-DISTVERSION=	1.0.2
-PORTREVISION=	1
+DISTVERSION=	1.0.2.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -12,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libsndfile.so:audio/libsndfile
 RUN_DEPENDS=	bash:shells/bash
 
