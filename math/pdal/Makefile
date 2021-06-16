@@ -2,7 +2,7 @@
 
 PORTNAME=	pdal
 DISTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math databases graphics
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -59,7 +59,7 @@ ICEBRIDGE_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 			libsz.so:science/szip
 
 LAZPERF_CMAKE_BOOL=	WITH_LAZPERF
-LAZPERF_BUILD_DEPENDS=	${LOCALBASE}/include/lazperf/lazperf.hpp:archivers/lazperf
+LAZPERF_LIB_DEPENDS=	liblazperf.so:archivers/lazperf
 
 MBIO_CMAKE_BOOL=	BUILD_PLUGIN_MBIO
 
