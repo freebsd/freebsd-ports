@@ -2,7 +2,7 @@
 
 PORTNAME=	tcl
 DISTVERSION=	${TCL_VERSION}${TCL_RC}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/${TCL_VERSION} \
 		TCLTK/tcl8_7
@@ -17,7 +17,9 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		compiler:c11 pathfix
+USES=		compiler:c11 localbase pathfix
+
+LIB_DEPENDS=	libtommath.so:math/libtommath
 
 OPTIONS_DEFINE=	TCLMAN TZDATA DEBUG
 OPTIONS_DEFAULT=TCLMAN TZDATA
@@ -52,7 +54,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--enable-man-suffix=.${MAN_SUFFIX} \
 		--includedir=${PREFIX}/include/tcl${TCL_VER} \
-		--enable-symbols
+		--enable-symbols \
+		--with-system-libtommath
 
 TCL_VERSION=	8.7a5
 TCL_VER=	8.7
