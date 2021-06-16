@@ -12,6 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_i386=	fails to build
+BROKEN_powerpc=	fails to build
 
 USES=		compiler:c11 gmake libtool localbase pathfix
 
