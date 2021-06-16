@@ -30,6 +30,12 @@ CBSD_HOME?=	${PREFIX}/cbsd
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == amd64 || ${ARCH} == i386
+PLIST_SUB=	X86=""
+.else
+PLIST_SUB=	X86="@comment "
+.endif
+
 do-install:
 	@${ECHO} "Installing in ${CBSD_HOME}"
 	${MKDIR} ${STAGEDIR}${CBSD_HOME}
