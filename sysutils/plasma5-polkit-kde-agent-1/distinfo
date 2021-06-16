@@ -1,3 +1,3 @@
-TIMESTAMP = 1622814007
-SHA256 (KDE/plasma/5.22.0/polkit-kde-agent-1-5.22.0.tar.xz) = 83caf23430e2ebba52163d523455f66e18c58fa74489bc0f93c7adec0df3d240
-SIZE (KDE/plasma/5.22.0/polkit-kde-agent-1-5.22.0.tar.xz) = 45812
+TIMESTAMP = 1623866692
+SHA256 (KDE/plasma/5.22.1/polkit-kde-agent-1-5.22.1.tar.xz) = de9a6f1bdf434d013a8d6f0c1498257bc4a48349e652375b4dd036eb161214ee
+SIZE (KDE/plasma/5.22.1/polkit-kde-agent-1-5.22.1.tar.xz) = 45792

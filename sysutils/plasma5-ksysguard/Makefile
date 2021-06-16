@@ -27,4 +27,6 @@ INOTIFY_DESC=		Filesystem alteration notifications using inotify
 INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
 INOTIFY_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Inotify
 
+KDE_PLASMA_VERSION=	5.22.0
+
 .include <bsd.port.mk>

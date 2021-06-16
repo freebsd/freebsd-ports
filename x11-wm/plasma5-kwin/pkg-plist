@@ -717,6 +717,7 @@ share/locale/en_GB/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/en_GB/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/en_GB/LC_MESSAGES/kcm_kwinrules.mo
 share/locale/en_GB/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/en_GB/LC_MESSAGES/kcm_virtualkeyboard.mo
 share/locale/en_GB/LC_MESSAGES/kcmkwincommon.mo
 share/locale/en_GB/LC_MESSAGES/kcmkwincompositing.mo
 share/locale/en_GB/LC_MESSAGES/kcmkwinscreenedges.mo

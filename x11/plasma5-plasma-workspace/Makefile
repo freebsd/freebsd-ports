@@ -2,9 +2,6 @@ PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	x11 kde kde-plasma
 
-PATCH_SITES=	https://invent.kde.org/plasma/plasma-workspace/commit/
-PATCHFILES=	f90d4d5548dfe2d75e83b8da91af9be0e261286b.diff:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 Plasma workspace
 
