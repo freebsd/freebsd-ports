@@ -18,6 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
+BUILD_DEPENDS=	zip:archivers/zip
 
 OPTIONS_DEFINE=	TKMAN DEMOS
 OPTIONS_SUB=	yes
