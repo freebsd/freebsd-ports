@@ -46,6 +46,7 @@ OPTIONS_EXCLUDE_mips64=		DTRACE FPM
 OPTIONS_EXCLUDE_powerpc64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}                  
 OPTIONS_EXCLUDE_powerpc64_11=	DTRACE     
 OPTIONS_EXCLUDE_powerpc64_12=	DTRACE
+OPTIONS_EXCLUDE_riscv64=	DTRACE
 OPTIONS_EXCLUDE_sparc64=	DTRACE
 OPTIONS_SUB=	yes
 
@@ -63,6 +64,10 @@ CONFLICTS=	php71-* php72-* php73-*
 DESTDIRNAME=	INSTALL_ROOT
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == riscv64
+CONFIGURE_ARGS+=--without-pcre-jit
+.endif
 
 .if ${PORT_OPTIONS:MMYSQLND}
 CONFIGURE_ARGS+=--enable-mysqlnd
