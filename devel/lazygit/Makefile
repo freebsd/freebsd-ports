@@ -1,8 +1,7 @@
 PORTNAME=	lazygit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.28.1
+DISTVERSION=	0.28.2
 CATEGORIES=	devel
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Simple terminal UI for git commands
