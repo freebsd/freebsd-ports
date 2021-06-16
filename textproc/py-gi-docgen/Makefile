@@ -1,5 +1,6 @@
 PORTNAME=	gi-docgen
 PORTVERSION=	2021.5
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	GNOME
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
@@ -24,5 +25,9 @@ USES=		python:3.6+
 USE_PYTHON= 	autoplist distutils
 
 NO_ARCH=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/gidocgen/utils.py
 
 .include <bsd.port.mk>
