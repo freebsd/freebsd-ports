@@ -54,6 +54,8 @@ NLS_CONFIGURE_ENABLE=	nls
 
 .if ${ARCH} == "i386" && ${COMPILER_TYPE} == "clang"
 CFLAGS+=	-fheinous-gnu-extensions
+.elif ${ARCH} == powerpc
+USE_GCC=	yes
 .endif
 
 post-install-DOCS-on:
