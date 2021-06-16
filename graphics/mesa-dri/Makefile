@@ -35,7 +35,7 @@ ALL_VULKAN_DRIVERS=	INTEL AMD
 
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64
 GALLIUM_DRIVERS+=	SWRAST	# llvmpipe
-.elif ${ARCH:Marm*} || ${ARCH:Mmips*} || ${ARCH:Mpowerpc*}
+.elif ${ARCH:Marm*} || ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == riscv64
 DRI_DRIVERS+=		SWRAST # Mesa Classic swrast
 .endif
 
