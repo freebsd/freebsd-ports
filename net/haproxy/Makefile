@@ -1,9 +1,9 @@
 # Created by: Hugo Saro <hugo@barafranca.com>
 
 PORTNAME=	haproxy
-DISTVERSION=	2.2.14
+DISTVERSION=	2.4.0
 CATEGORIES=	net www
-MASTER_SITES=	http://www.haproxy.org/download/2.2/src/
+MASTER_SITES=	http://www.haproxy.org/download/2.4/src/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Reliable, high performance TCP/HTTP load balancer
@@ -23,6 +23,7 @@ CONFLICTS_INSTALL=	haproxy-devel-[0-9]* haproxy17-[0-9]* haproxy18-[0-9]* haprox
 USES=		compiler:c++11-lang cpe gmake
 USE_RC_SUBR=	haproxy
 
+ALL_TARGET=	all admin/halog/halog
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \
 		USE_ZLIB=1 USE_CPU_AFFINITY=1 USE_ACCEPT4=1 \
 		CC="${CC}" DEBUG_CFLAGS="" CPU_CFLAGS="${CFLAGS}"
@@ -58,12 +59,9 @@ OPTIONS_DEFAULT+=	LUA
 MAKE_ARGS+=	USE_REGPARM=1
 .endif
 
-post-build:
-	cd ${WRKSRC}/contrib/halog && ${MAKE_CMD} ${MAKE_ENV}
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${STAGEDIR}${PREFIX}/sbin/
-	${INSTALL_PROGRAM} ${WRKSRC}/contrib/halog/halog ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/admin/halog/halog ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_MAN} ${WRKSRC}/doc/haproxy.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
