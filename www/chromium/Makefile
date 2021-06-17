@@ -1,7 +1,7 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 
 PORTNAME=	chromium
-PORTVERSION=	91.0.4472.101
+PORTVERSION=	91.0.4472.106
 CATEGORIES=	www java
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/rene/chromium/:fonts
@@ -63,8 +63,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libxshmfence.so:x11/libxshmfence
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
-		noto-basic>0:x11-fonts/noto-basic \
-		virtual_oss>0:audio/virtual_oss
+		noto-basic>0:x11-fonts/noto-basic
 
 USES=		bison compiler:c++17-lang cpe desktop-file-utils dos2unix gl gnome jpeg localbase:ldflags \
 		ninja perl5 pkgconfig python:2.7,build shebangfix tar:xz xorg
