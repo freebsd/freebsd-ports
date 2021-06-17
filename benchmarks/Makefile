@@ -45,6 +45,7 @@
     SUBDIR += lzbench
     SUBDIR += mangohud
     SUBDIR += mdtest
+    SUBDIR += mst-bench
     SUBDIR += nbench
     SUBDIR += netio
     SUBDIR += netperf
