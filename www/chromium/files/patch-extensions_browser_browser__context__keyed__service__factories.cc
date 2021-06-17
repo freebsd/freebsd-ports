@@ -1,6 +1,6 @@
---- extensions/browser/browser_context_keyed_service_factories.cc.orig	2021-04-14 18:41:04 UTC
+--- extensions/browser/browser_context_keyed_service_factories.cc.orig	2021-05-12 22:05:54 UTC
 +++ extensions/browser/browser_context_keyed_service_factories.cc
-@@ -84,7 +84,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
+@@ -86,7 +86,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
    HidDeviceManager::GetFactoryInstance();
    IdleManagerFactory::GetInstance();
    ManagementAPI::GetFactoryInstance();

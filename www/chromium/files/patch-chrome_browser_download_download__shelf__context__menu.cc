@@ -1,6 +1,6 @@
---- chrome/browser/download/download_shelf_context_menu.cc.orig	2021-04-14 18:40:53 UTC
+--- chrome/browser/download/download_shelf_context_menu.cc.orig	2021-05-12 22:05:43 UTC
 +++ chrome/browser/download/download_shelf_context_menu.cc
-@@ -146,7 +146,7 @@ base::string16 DownloadShelfContextMenu::GetLabelForCo
+@@ -148,7 +148,7 @@ std::u16string DownloadShelfContextMenu::GetLabelForCo
                     : IDS_DOWNLOAD_MENU_PLATFORM_OPEN_ALWAYS;
            break;
          }

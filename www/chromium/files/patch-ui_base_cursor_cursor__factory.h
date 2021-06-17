@@ -1,7 +1,7 @@
---- ui/base/cursor/cursor_factory.h.orig	2021-04-22 08:30:28 UTC
+--- ui/base/cursor/cursor_factory.h.orig	2021-05-12 22:06:46 UTC
 +++ ui/base/cursor/cursor_factory.h
-@@ -67,7 +67,7 @@ class COMPONENT_EXPORT(UI_BASE_CURSOR_BASE) CursorFact
-   virtual void ObserveThemeChanges();
+@@ -73,7 +73,7 @@ class COMPONENT_EXPORT(UI_BASE_CURSOR_BASE) CursorFact
+   virtual void SetDeviceScaleFactor(float scale);
  };
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)

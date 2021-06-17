@@ -1,6 +1,6 @@
---- base/memory/discardable_memory.cc.orig	2021-04-14 18:40:48 UTC
+--- base/memory/discardable_memory.cc.orig	2021-05-12 22:05:40 UTC
 +++ base/memory/discardable_memory.cc
-@@ -23,7 +23,7 @@ const base::Feature kMadvFreeDiscardableMemory{
+@@ -24,7 +24,7 @@ const base::Feature kMadvFreeDiscardableMemory{
      "MadvFreeDiscardableMemory", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif  // defined(OS_POSIX)
  
@@ -9,7 +9,7 @@
  const base::Feature kDiscardableMemoryBackingTrial{
      "DiscardableMemoryBackingTrial", base::FEATURE_DISABLED_BY_DEFAULT};
  
-@@ -41,13 +41,13 @@ const base::FeatureParam<DiscardableMemoryTrialGroup>
+@@ -42,13 +42,13 @@ const base::FeatureParam<DiscardableMemoryTrialGroup>
          DiscardableMemoryTrialGroup::kEmulatedSharedMemory,
          &kDiscardableMemoryBackingParamOptions};
  
@@ -25,7 +25,7 @@
  
  DiscardableMemoryBacking GetBackingForFieldTrial() {
    DiscardableMemoryTrialGroup trial_group =
-@@ -61,11 +61,11 @@ DiscardableMemoryBacking GetBackingForFieldTrial() {
+@@ -62,11 +62,11 @@ DiscardableMemoryBacking GetBackingForFieldTrial() {
    }
    NOTREACHED();
  }
@@ -39,7 +39,7 @@
  
  // Probe capabilities of this device to determine whether we should participate
  // in the discardable memory backing trial.
-@@ -87,18 +87,18 @@ DiscardableMemoryTrialGroup GetDiscardableMemoryBackin
+@@ -88,18 +88,18 @@ DiscardableMemoryTrialGroup GetDiscardableMemoryBackin
    DCHECK(DiscardableMemoryBackingFieldTrialIsEnabled());
    return features::kDiscardableMemoryBackingParam.Get();
  }

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_frame.cc.orig	2021-04-14 18:40:55 UTC
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig	2021-05-12 22:05:46 UTC
 +++ chrome/browser/ui/views/frame/browser_frame.cc
-@@ -43,7 +43,7 @@
+@@ -44,7 +44,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
  #include "ui/display/screen.h"
  #endif
  
-@@ -52,7 +52,7 @@ namespace {
+@@ -53,7 +53,7 @@ namespace {
  bool IsUsingGtkTheme(Profile* profile) {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -18,7 +18,7 @@
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -220,7 +220,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
+@@ -221,7 +221,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
                                             IsVisibleOnAllWorkspaces());
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

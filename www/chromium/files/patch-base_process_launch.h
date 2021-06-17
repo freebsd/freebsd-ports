@@ -1,4 +1,4 @@
---- base/process/launch.h.orig	2021-04-14 18:40:48 UTC
+--- base/process/launch.h.orig	2021-05-12 22:05:40 UTC
 +++ base/process/launch.h
 @@ -190,7 +190,7 @@ struct BASE_EXPORT LaunchOptions {
    bool clear_environment = false;
@@ -18,7 +18,7 @@
  
  #if defined(OS_MAC)
    // Mach ports that will be accessible to the child process. These are not
-@@ -418,7 +418,7 @@ BASE_EXPORT void RaiseProcessToHighPriority();
+@@ -415,7 +415,7 @@ BASE_EXPORT void RaiseProcessToHighPriority();
  // binary. This should not be called in production/released code.
  BASE_EXPORT LaunchOptions LaunchOptionsForTest();
  

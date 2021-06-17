@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc.orig	2021-04-14 18:41:10 UTC
+--- third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc.orig	2021-05-12 22:06:01 UTC
 +++ third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
 @@ -61,7 +61,7 @@ AtomicString ToAtomicString(const SkString& str) {
    return AtomicString::FromUTF8(str.c_str(), str.size());
@@ -33,6 +33,6 @@
    sk_sp<SkTypeface> typeface;
 -#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   if (alternate_name == AlternateFontName::kLocalUniqueFace &&
-       RuntimeEnabledFeatures::FontSrcLocalMatchingEnabled()) {
-     typeface = CreateTypefaceFromUniqueName(creation_params);
+   bool noto_color_emoji_from_gmscore = false;
+ #if defined(OS_ANDROID)
+   // Use the unique local matching pathway for fetching Noto Color Emoji Compat

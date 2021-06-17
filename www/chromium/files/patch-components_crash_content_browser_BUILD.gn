@@ -1,4 +1,4 @@
---- components/crash/content/browser/BUILD.gn.orig	2021-04-14 18:40:59 UTC
+--- components/crash/content/browser/BUILD.gn.orig	2021-05-12 22:05:49 UTC
 +++ components/crash/content/browser/BUILD.gn
 @@ -37,7 +37,7 @@ source_set("browser") {
  
@@ -9,7 +9,7 @@
      configs += [ "//third_party/breakpad:client_config" ]
      public_configs = [ "//third_party/breakpad:client_config" ]
    }
-@@ -57,7 +57,7 @@ source_set("browser") {
+@@ -59,7 +59,7 @@ source_set("browser") {
        "//components/crash/android:jni_headers",
        "//mojo/public/cpp/bindings",
      ]

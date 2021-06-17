@@ -1,4 +1,4 @@
---- gpu/vulkan/vulkan_function_pointers.h.orig	2021-04-14 18:41:04 UTC
+--- gpu/vulkan/vulkan_function_pointers.h.orig	2021-05-12 22:05:54 UTC
 +++ gpu/vulkan/vulkan_function_pointers.h
 @@ -241,10 +241,10 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
        vkGetAndroidHardwareBufferPropertiesANDROID;
@@ -75,7 +75,7 @@
  
  #if defined(OS_WIN)
  ALWAYS_INLINE VkResult vkGetMemoryWin32HandleKHR(
-@@ -1125,7 +1125,7 @@ ALWAYS_INLINE VkResult vkQueuePresentKHR(VkQueue queue
+@@ -1140,7 +1140,7 @@ ALWAYS_INLINE VkResult vkQueuePresentKHR(VkQueue queue
                                                               pPresentInfo);
  }
  
@@ -84,7 +84,7 @@
  ALWAYS_INLINE VkResult vkGetImageDrmFormatModifierPropertiesEXT(
      VkDevice device,
      VkImage image,
-@@ -1133,6 +1133,6 @@ ALWAYS_INLINE VkResult vkGetImageDrmFormatModifierProp
+@@ -1148,6 +1148,6 @@ ALWAYS_INLINE VkResult vkGetImageDrmFormatModifierProp
    return gpu::GetVulkanFunctionPointers()
        ->vkGetImageDrmFormatModifierPropertiesEXT(device, image, pProperties);
  }

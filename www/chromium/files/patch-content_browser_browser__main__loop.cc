@@ -1,14 +1,5 @@
---- content/browser/browser_main_loop.cc.orig	2021-04-14 18:41:02 UTC
+--- content/browser/browser_main_loop.cc.orig	2021-05-12 22:05:52 UTC
 +++ content/browser/browser_main_loop.cc
-@@ -368,7 +368,7 @@ std::unique_ptr<base::MemoryPressureMonitor> CreateMem
-   if (chromeos::switches::MemoryPressureHandlingEnabled())
-     monitor = std::make_unique<util::MultiSourceMemoryPressureMonitor>();
- #elif defined(OS_MAC) || defined(OS_WIN) || defined(OS_FUCHSIA) || \
--    ((defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) &&       \
-+    defined(OS_BSD) || ((defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
-      !BUILDFLAG(IS_CHROMECAST))
-   monitor = std::make_unique<util::MultiSourceMemoryPressureMonitor>();
- #endif
 @@ -562,7 +562,7 @@ int BrowserMainLoop::EarlyInitialization() {
  
    // Up the priority of the UI thread unless it was already high (since Mac

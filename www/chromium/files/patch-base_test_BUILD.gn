@@ -1,6 +1,6 @@
---- base/test/BUILD.gn.orig	2021-04-14 18:40:48 UTC
+--- base/test/BUILD.gn.orig	2021-05-12 22:05:40 UTC
 +++ base/test/BUILD.gn
-@@ -421,7 +421,11 @@ if (is_linux || is_chromeos) {
+@@ -423,7 +423,11 @@ if (is_linux || is_chromeos) {
  
    copy("fonts_conf") {
      sources = [ "fonts.conf" ]

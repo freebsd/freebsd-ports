@@ -1,7 +1,7 @@
---- third_party/node/node.py.orig	2021-04-14 18:41:35 UTC
+--- third_party/node/node.py.orig	2021-05-12 22:06:44 UTC
 +++ third_party/node/node.py
-@@ -13,6 +13,7 @@ import os
- def GetBinaryPath():
+@@ -19,6 +19,7 @@ def GetBinaryPath():
+                           'node-darwin-arm64', 'bin', 'node'))
    return os_path.join(os_path.dirname(__file__), *{
      'Darwin': ('mac', 'node-darwin-x64', 'bin', 'node'),
 +    'FreeBSD': ('freebsd', 'node-freebsd-x64', 'bin', 'node'),

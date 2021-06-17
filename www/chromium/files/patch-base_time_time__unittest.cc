@@ -1,6 +1,6 @@
---- base/time/time_unittest.cc.orig	2021-04-14 18:40:48 UTC
+--- base/time/time_unittest.cc.orig	2021-05-12 22:05:40 UTC
 +++ base/time/time_unittest.cc
-@@ -1969,6 +1969,7 @@ TEST(TimeDelta, Overflows) {
+@@ -2074,6 +2074,7 @@ TEST(TimeDelta, Overflows) {
    EXPECT_TRUE((kLargeDelta / 0.5).is_max());
    EXPECT_TRUE((kLargeDelta / -0.5).is_min());
  
@@ -8,7 +8,7 @@
    static_assert(
        TimeDelta::Max() / kOneSecond == std::numeric_limits<double>::infinity(),
        "");
-@@ -1997,6 +1998,7 @@ TEST(TimeDelta, Overflows) {
+@@ -2102,6 +2103,7 @@ TEST(TimeDelta, Overflows) {
    static_assert(TimeDelta::Max() % -kOneSecond == TimeDelta::Max(), "");
    static_assert(TimeDelta::Min() % kOneSecond == TimeDelta::Min(), "");
    static_assert(TimeDelta::Min() % -kOneSecond == TimeDelta::Min(), "");

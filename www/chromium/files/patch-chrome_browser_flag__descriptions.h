@@ -1,8 +1,8 @@
---- chrome/browser/flag_descriptions.h.orig	2021-04-14 18:40:53 UTC
+--- chrome/browser/flag_descriptions.h.orig	2021-06-09 22:13:55 UTC
 +++ chrome/browser/flag_descriptions.h
-@@ -21,9 +21,9 @@
- #include "ppapi/buildflags/buildflags.h"
+@@ -22,9 +22,9 @@
  #include "printing/buildflags/buildflags.h"
+ #include "third_party/blink/public/common/buildflags.h"
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
@@ -12,7 +12,7 @@
  
  // This file declares strings used in chrome://flags. These messages are not
  // translated, because instead of end-users they target Chromium developers and
-@@ -2900,7 +2900,7 @@ extern const char kEnableNewBadgeOnMenuItemsDescriptio
+@@ -2919,7 +2919,7 @@ extern const char kEnableNewBadgeOnMenuItemsDescriptio
  
  // Random platform combinations -----------------------------------------------
  
@@ -20,8 +20,8 @@
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) || \
      defined(OS_CHROMEOS)
  
- extern const char kEnableMediaFeedsName[];
-@@ -2927,10 +2927,10 @@ extern const char kRemoteCopyProgressNotificationDescr
+ extern const char kEnableOopPrintDriversName[];
+@@ -2940,10 +2940,10 @@ extern const char kRemoteCopyProgressNotificationDescr
  extern const char kDirectManipulationStylusName[];
  extern const char kDirectManipulationStylusDescription[];
  
@@ -34,7 +34,7 @@
  
  extern const char kCommanderName[];
  extern const char kCommanderDescription[];
-@@ -2941,7 +2941,7 @@ extern const char kDesktopRestructuredLanguageSettings
+@@ -2954,7 +2954,7 @@ extern const char kDesktopRestructuredLanguageSettings
  extern const char kDesktopDetailedLanguageSettingsName[];
  extern const char kDesktopDetailedLanguageSettingsDescription[];
  
@@ -43,7 +43,7 @@
  
  #if defined(OS_CHROMEOS) || defined(OS_LINUX)
  #if BUILDFLAG(USE_TCMALLOC)
-@@ -2962,11 +2962,11 @@ extern const char kWebShareDescription[];
+@@ -2975,17 +2975,17 @@ extern const char kWebShareDescription[];
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -56,8 +56,16 @@
 +#endif  // defined(OS_WIN) || (defined(OS_LINUX) || defined(OS_BSD) ||
          // BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_MAC)
  
+-#if defined(OS_LINUX) && defined(USE_OZONE)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(USE_OZONE)
+ extern const char kUseOzonePlatformName[];
+ extern const char kUseOzonePlatformDescription[];
+-#endif  // defined(OS_LINUX) && defined(USE_OZONE)
++#endif  // (defined(OS_LINUX) || defined(OS_BSD)) && defined(USE_OZONE)
+ 
  // Feature flags --------------------------------------------------------------
-@@ -3023,12 +3023,12 @@ extern const char kAutofillCreditCardUploadDescription
+ 
+@@ -3041,12 +3041,12 @@ extern const char kAutofillCreditCardUploadDescription
  
  #endif  // defined(TOOLKIT_VIEWS) || defined(OS_ANDROID)
  

@@ -1,4 +1,4 @@
---- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2021-04-14 18:40:54 UTC
+--- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2021-05-12 22:05:44 UTC
 +++ chrome/browser/password_manager/chrome_password_manager_client.cc
 @@ -9,6 +9,10 @@
  #include <string>
@@ -11,7 +11,7 @@
  #include "base/bind.h"
  #include "base/callback_helpers.h"
  #include "base/command_line.h"
-@@ -101,8 +105,11 @@
+@@ -102,8 +106,11 @@
  #include "net/cert/cert_status_flags.h"
  #include "services/metrics/public/cpp/ukm_recorder.h"
  #include "services/network/public/cpp/is_potentially_trustworthy.h"

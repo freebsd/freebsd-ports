@@ -1,4 +1,4 @@
---- ui/aura/test/aura_test_helper.cc.orig	2021-04-14 18:41:37 UTC
+--- ui/aura/test/aura_test_helper.cc.orig	2021-05-12 22:06:46 UTC
 +++ ui/aura/test/aura_test_helper.cc
 @@ -30,7 +30,7 @@
  #include "ui/wm/core/default_activation_client.h"
@@ -9,7 +9,7 @@
  #include "ui/platform_window/common/platform_window_defaults.h"  // nogncheck
  #endif
  
-@@ -64,7 +64,7 @@ AuraTestHelper::AuraTestHelper(ui::ContextFactory* con
+@@ -63,7 +63,7 @@ AuraTestHelper::AuraTestHelper(ui::ContextFactory* con
    DCHECK(!g_instance);
    g_instance = this;
  

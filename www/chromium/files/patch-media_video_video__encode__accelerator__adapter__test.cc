@@ -1,6 +1,6 @@
---- media/video/video_encode_accelerator_adapter_test.cc.orig	2021-04-14 18:41:06 UTC
+--- media/video/video_encode_accelerator_adapter_test.cc.orig	2021-05-12 22:05:56 UTC
 +++ media/video/video_encode_accelerator_adapter_test.cc
-@@ -285,7 +285,7 @@ TEST_P(VideoEncodeAcceleratorAdapterTest, TwoFramesRes
+@@ -329,7 +329,7 @@ TEST_P(VideoEncodeAcceleratorAdapterTest, TwoFramesRes
  
    vea()->SetEncodingCallback(base::BindLambdaForTesting(
        [&](BitstreamBuffer&, bool keyframe, scoped_refptr<VideoFrame> frame) {

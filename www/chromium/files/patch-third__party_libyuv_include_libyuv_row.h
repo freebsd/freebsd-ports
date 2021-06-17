@@ -1,4 +1,4 @@
---- third_party/libyuv/include/libyuv/row.h.orig	2021-04-14 18:43:06 UTC
+--- third_party/libyuv/include/libyuv/row.h.orig	2021-05-12 22:13:41 UTC
 +++ third_party/libyuv/include/libyuv/row.h
 @@ -158,10 +158,14 @@ extern "C" {
  #define HAS_ARGBSHADEROW_SSE2
@@ -15,7 +15,7 @@
  #define HAS_RGBCOLORTABLEROW_X86
  #define HAS_SOBELROW_SSE2
  #define HAS_SOBELTOPLANEROW_SSE2
-@@ -208,7 +212,9 @@ extern "C" {
+@@ -209,7 +213,9 @@ extern "C" {
  #define HAS_I422TORGB565ROW_AVX2
  #define HAS_I422TORGBAROW_AVX2
  #define HAS_I444TOARGBROW_AVX2
@@ -25,7 +25,7 @@
  #define HAS_J422TOARGBROW_AVX2
  #define HAS_MERGEUVROW_AVX2
  #define HAS_MIRRORROW_AVX2
-@@ -233,7 +239,9 @@ extern "C" {
+@@ -234,7 +240,9 @@ extern "C" {
  #define HAS_ARGBMULTIPLYROW_AVX2
  #define HAS_ARGBSUBTRACTROW_AVX2
  #define HAS_ARGBUNATTENUATEROW_AVX2

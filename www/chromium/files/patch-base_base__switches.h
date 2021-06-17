@@ -1,6 +1,6 @@
---- base/base_switches.h.orig	2021-04-14 18:40:48 UTC
+--- base/base_switches.h.orig	2021-05-12 22:05:40 UTC
 +++ base/base_switches.h
-@@ -41,8 +41,8 @@ extern const char kDisableUsbKeyboardDetect[];
+@@ -42,8 +42,8 @@ extern const char kDisableUsbKeyboardDetect[];
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -11,7 +11,7 @@
  extern const char kDisableDevShmUsage[];
  #endif
  
-@@ -58,7 +58,7 @@ extern const char kEnableIdleTracing[];
+@@ -59,7 +59,7 @@ extern const char kEnableIdleTracing[];
  extern const char kForceFieldTrialParams[];
  #endif
  

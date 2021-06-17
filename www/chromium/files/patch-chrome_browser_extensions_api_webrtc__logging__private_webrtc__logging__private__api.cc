@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc.orig	2021-04-14 18:40:53 UTC
+--- chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc.orig	2021-05-12 22:05:44 UTC
 +++ chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc
 @@ -30,7 +30,7 @@
  #include "extensions/browser/process_manager.h"
@@ -18,7 +18,7 @@
    if (extension) {
      enabled_by_permissions =
          extension->permissions_data()->active_permissions().HasAPIPermission(
-@@ -571,7 +571,7 @@ void WebrtcLoggingPrivateStartEventLoggingFunction::Fi
+@@ -572,7 +572,7 @@ void WebrtcLoggingPrivateStartEventLoggingFunction::Fi
  
  ExtensionFunction::ResponseAction
  WebrtcLoggingPrivateGetLogsDirectoryFunction::Run() {
@@ -27,7 +27,7 @@
    // Unlike other WebrtcLoggingPrivate functions that take a RequestInfo object,
    // this function shouldn't be called by a component extension on behalf of
    // some web code. It returns a DirectoryEntry for use directly in the calling
-@@ -594,9 +594,9 @@ WebrtcLoggingPrivateGetLogsDirectoryFunction::Run() {
+@@ -595,9 +595,9 @@ WebrtcLoggingPrivateGetLogsDirectoryFunction::Run() {
            &WebrtcLoggingPrivateGetLogsDirectoryFunction::FireErrorCallback,
            this));
    return RespondLater();

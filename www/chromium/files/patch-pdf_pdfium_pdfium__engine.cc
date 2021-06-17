@@ -1,6 +1,6 @@
---- pdf/pdfium/pdfium_engine.cc.orig	2021-04-14 18:41:07 UTC
+--- pdf/pdfium/pdfium_engine.cc.orig	2021-05-12 22:05:58 UTC
 +++ pdf/pdfium/pdfium_engine.cc
-@@ -75,7 +75,7 @@
+@@ -77,7 +77,7 @@
  #include "v8/include/cppgc/platform.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "pdf/pdfium/pdfium_font_linux.h"
  #endif
  
-@@ -510,7 +510,7 @@ void InitializeSDK(bool enable_v8) {
+@@ -511,7 +511,7 @@ void InitializeSDK(bool enable_v8) {
  
    FPDF_InitLibraryWithConfig(&config);
  
@@ -18,7 +18,7 @@
    InitializeLinuxFontMapper();
  #endif
  
-@@ -541,7 +541,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client,
+@@ -542,7 +542,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client,
    IFSDK_PAUSE::user = nullptr;
    IFSDK_PAUSE::NeedToPauseNow = Pause_NeedToPauseNow;
  
@@ -27,7 +27,7 @@
    // PreviewModeClient does not know its pp::Instance.
    SetLastInstance(client_->GetPluginInstance());
  #endif
-@@ -998,7 +998,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
+@@ -999,7 +999,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
  
    KillFormFocus();
  

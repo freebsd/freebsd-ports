@@ -1,6 +1,6 @@
---- third_party/zlib/BUILD.gn.orig	2021-04-22 11:59:36.597280000 +0200
-+++ third_party/zlib/BUILD.gn	2021-04-30 13:06:24.267005000 +0200
-@@ -108,6 +108,8 @@
+--- third_party/zlib/BUILD.gn.orig	2021-05-12 22:06:45 UTC
++++ third_party/zlib/BUILD.gn
+@@ -108,6 +108,8 @@ if (use_arm_neon_optimizations) {
        defines = [ "CRC32_ARMV8_CRC32" ]
        if (is_android) {
          defines += [ "ARMV8_OS_ANDROID" ]
@@ -9,7 +9,7 @@
        } else if (is_linux || is_chromeos) {
          defines += [ "ARMV8_OS_LINUX" ]
        } else if (is_mac) {
-@@ -385,7 +387,7 @@
+@@ -385,7 +387,7 @@ static_library("minizip") {
      ]
    }
  

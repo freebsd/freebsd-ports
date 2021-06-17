@@ -1,6 +1,6 @@
---- chrome/browser/ui/test/test_browser_dialog.cc.orig	2021-04-14 18:40:55 UTC
+--- chrome/browser/ui/test/test_browser_dialog.cc.orig	2021-05-12 22:05:45 UTC
 +++ chrome/browser/ui/test/test_browser_dialog.cc
-@@ -117,7 +117,7 @@ bool TestBrowserDialog::VerifyUi() {
+@@ -115,7 +115,7 @@ bool TestBrowserDialog::VerifyUi() {
  // TODO(https://crbug.com/958242) support Mac for pixel tests.
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.h.orig	2021-04-14 18:40:59 UTC
+--- components/feature_engagement/public/feature_list.h.orig	2021-05-24 22:05:38 UTC
 +++ components/feature_engagement/public/feature_list.h
-@@ -148,7 +148,7 @@ DEFINE_VARIATION_PARAM(kIPHDiscoverFeedHeaderFeature,
+@@ -155,7 +155,7 @@ DEFINE_VARIATION_PARAM(kIPHDiscoverFeedHeaderFeature,
                         "IPH_DiscoverFeedHeaderMenu");
  #endif  // defined(OS_IOS)
  
@@ -9,16 +9,16 @@
      defined(OS_CHROMEOS)
  DEFINE_VARIATION_PARAM(kIPHDesktopTabGroupsNewGroupFeature,
                         "IPH_DesktopTabGroupsNewGroup");
-@@ -162,7 +162,7 @@ DEFINE_VARIATION_PARAM(kIPHReadingListDiscoveryFeature
- DEFINE_VARIATION_PARAM(kIPHReopenTabFeature, "IPH_ReopenTab");
+@@ -172,7 +172,7 @@ DEFINE_VARIATION_PARAM(kIPHReopenTabFeature, "IPH_Reop
  DEFINE_VARIATION_PARAM(kIPHWebUITabStripFeature, "IPH_WebUITabStrip");
  DEFINE_VARIATION_PARAM(kIPHDesktopPwaInstallFeature, "IPH_DesktopPwaInstall");
+ DEFINE_VARIATION_PARAM(kIPHProfileSwitchFeature, "IPH_ProfileSwitch");
 -#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||
 +#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) ||
          // defined(OS_CHROMEOS)
  
  }  // namespace
-@@ -234,7 +234,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -248,7 +248,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHBadgedReadingListFeature),
          VARIATION_ENTRY(kIPHBadgedTranslateManualTriggerFeature),
          VARIATION_ENTRY(kIPHDiscoverFeedHeaderFeature),
@@ -27,10 +27,10 @@
      defined(OS_CHROMEOS)
          VARIATION_ENTRY(kIPHDesktopTabGroupsNewGroupFeature),
          VARIATION_ENTRY(kIPHFocusModeFeature),
-@@ -245,7 +245,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
-         VARIATION_ENTRY(kIPHReopenTabFeature),
+@@ -261,7 +261,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHWebUITabStripFeature),
          VARIATION_ENTRY(kIPHDesktopPwaInstallFeature),
+         VARIATION_ENTRY(kIPHProfileSwitchFeature),
 -#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||
 +#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) ||
          // defined(OS_CHROMEOS)

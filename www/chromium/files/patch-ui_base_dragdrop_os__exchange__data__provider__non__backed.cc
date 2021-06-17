@@ -1,9 +1,9 @@
---- ui/base/dragdrop/os_exchange_data_provider_non_backed.cc.orig	2021-04-14 18:41:37 UTC
+--- ui/base/dragdrop/os_exchange_data_provider_non_backed.cc.orig	2021-05-12 22:06:46 UTC
 +++ ui/base/dragdrop/os_exchange_data_provider_non_backed.cc
-@@ -100,14 +100,14 @@ void OSExchangeDataProviderNonBacked::SetPickledData(
+@@ -102,14 +102,14 @@ void OSExchangeDataProviderNonBacked::SetPickledData(
  }
  
- bool OSExchangeDataProviderNonBacked::GetString(base::string16* data) const {
+ bool OSExchangeDataProviderNonBacked::GetString(std::u16string* data) const {
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    if (HasFile()) {
@@ -17,12 +17,3 @@
  
    if ((formats_ & OSExchangeData::STRING) == 0)
      return false;
-@@ -184,7 +184,7 @@ bool OSExchangeDataProviderNonBacked::HasCustomFormat(
-   return base::Contains(pickle_data_, format);
- }
- 
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- void OSExchangeDataProviderNonBacked::SetFileContents(
-     const base::FilePath& filename,
-     const std::string& file_contents) {

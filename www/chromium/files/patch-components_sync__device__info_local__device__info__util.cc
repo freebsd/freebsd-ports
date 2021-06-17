@@ -1,6 +1,6 @@
---- components/sync_device_info/local_device_info_util.cc.orig	2021-04-14 18:41:01 UTC
+--- components/sync_device_info/local_device_info_util.cc.orig	2021-05-12 22:05:51 UTC
 +++ components/sync_device_info/local_device_info_util.cc
-@@ -53,7 +53,7 @@ std::string GetPersonalizableDeviceNameInternal();
+@@ -75,7 +75,7 @@ std::string GetPersonalizableDeviceNameInternal();
  sync_pb::SyncEnums::DeviceType GetLocalDeviceType() {
  #if BUILDFLAG(IS_CHROMEOS_ASH)
    return sync_pb::SyncEnums_DeviceType_TYPE_CROS;

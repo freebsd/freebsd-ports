@@ -1,6 +1,6 @@
---- chrome/browser/download/download_query.cc.orig	2021-04-14 18:40:53 UTC
+--- chrome/browser/download/download_query.cc.orig	2021-05-12 22:05:43 UTC
 +++ chrome/browser/download/download_query.cc
-@@ -28,7 +28,11 @@
+@@ -27,7 +27,11 @@
  #include "components/download/public/common/download_item.h"
  #include "components/url_formatter/url_formatter.h"
  #include "content/public/browser/content_browser_client.h"

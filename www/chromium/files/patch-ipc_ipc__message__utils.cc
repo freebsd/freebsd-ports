@@ -1,6 +1,6 @@
---- ipc/ipc_message_utils.cc.orig	2021-04-14 18:41:05 UTC
+--- ipc/ipc_message_utils.cc.orig	2021-05-12 22:05:55 UTC
 +++ ipc/ipc_message_utils.cc
-@@ -362,7 +362,7 @@ void ParamTraits<unsigned int>::Log(const param_type& 
+@@ -361,7 +361,7 @@ void ParamTraits<unsigned int>::Log(const param_type& 
    l->append(base::NumberToString(p));
  }
  

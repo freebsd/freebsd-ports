@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/webgpu_decoder_impl.cc.orig	2021-04-14 18:41:04 UTC
+--- gpu/command_buffer/service/webgpu_decoder_impl.cc.orig	2021-05-12 22:05:54 UTC
 +++ gpu/command_buffer/service/webgpu_decoder_impl.cc
-@@ -810,12 +810,12 @@ error::Error WebGPUDecoderImpl::HandleRequestAdapter(
+@@ -813,12 +813,12 @@ error::Error WebGPUDecoderImpl::HandleRequestAdapter(
        static_cast<DawnRequestAdapterSerial>(c.request_adapter_serial);
  
    if (gr_context_type_ != GrContextType::kVulkan) {
