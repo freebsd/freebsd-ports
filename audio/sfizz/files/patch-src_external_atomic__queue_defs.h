@@ -1,4 +1,4 @@
---- src/external/atomic_queue/defs.h.orig	2020-04-20 01:14:22 UTC
+--- src/external/atomic_queue/defs.h.orig	2020-07-23 22:01:34 UTC
 +++ src/external/atomic_queue/defs.h
 @@ -6,11 +6,15 @@
  
@@ -26,3 +26,14 @@
  static inline void spin_loop_pause() noexcept {
  #if (defined(__ARM_ARCH_6K__) || \
       defined(__ARM_ARCH_6Z__) || \
+@@ -37,6 +41,10 @@ static inline void spin_loop_pause() noexcept {
+ #endif
+ }
+ } // namespace atomic_queue
++#elif defined(__powerpc__)
++static inline void spin_loop_pause() noexcept {
++    asm volatile("ori 0,0,0" ::: "memory");
++}
+ #else
+ #error "Unknown CPU architecture."
+ #endif
