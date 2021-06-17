@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210617:
+  AFFECTS: users of graphics/mesa-libs
+  AUTHOR: kbowling@FreeBSD.org
+
+  Some libraries from mesa-libs are now provided by libglvnd while
+  others were renamed. When building outside poudriere make sure to
+  remove mesa-libs first in order to avoid conflict with libglvnd.
+
+  For portmaster users:
+  # pkg delete -f mesa-libs
+  # portmaster -a
+
+  For portupgrade users:
+  # pkg delete -f mesa-libs
+  # portupgrade -a
+
 20210523:
   AFFECTS: users of www/tt-rss
   AUTHOR: dereks@lifeofadishwasher.com
