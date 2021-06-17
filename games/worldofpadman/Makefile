@@ -20,7 +20,7 @@ MAKE_ENV=	DEFAULT_BASEDIR="${DATADIR}" PTHREAD_LIBS="-lpthread"
 ALL_TARGET=	release
 
 SRC_FILE=	${PORTNAME}-${PORTVERSION}
-VM_ARCHS=	amd64 i386 powerpc
+VM_ARCHS=	amd64 i386 powerpc powerpc64
 
 PLIST_FILES=	share/pixmaps/worldofpadman.png
 PORTDOCS=	*
