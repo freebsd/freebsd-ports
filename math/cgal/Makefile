@@ -1,10 +1,9 @@
 # Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 
 PORTNAME=	cgal
-PORTVERSION=	5.0.2
-PORTREVISION=	1
+PORTVERSION=	5.2.1
 CATEGORIES=	math
-MASTER_SITES=	https://github.com/${PORTNAME:tu}/${PORTNAME}/releases/download/releases/${DISTNAME}/
+MASTER_SITES=	https://github.com/${PORTNAME:tu}/${PORTNAME}/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -22,9 +21,8 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 
 #TODO math/mpfi, math/rs, graphics/qglviewer
 #Not yet in ports
-
 USES=		cmake eigen:3 shebangfix tar:xz
-USE_LDCONFIG=	yes
+
 SHEBANG_FILES=	scripts/cgal_create_CMakeLists \
 		scripts/cgal_create_cmake_script
 
