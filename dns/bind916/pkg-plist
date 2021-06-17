@@ -131,6 +131,7 @@ include/isc/assertions.h
 include/isc/astack.h
 include/isc/atomic.h
 include/isc/backtrace.h
+include/isc/barrier.h
 include/isc/base32.h
 include/isc/base64.h
 include/isc/bind9.h
@@ -169,6 +170,7 @@ include/isc/likely.h
 include/isc/list.h
 include/isc/log.h
 include/isc/magic.h
+include/isc/managers.h
 include/isc/md.h
 include/isc/mem.h
 include/isc/meminfo.h
@@ -220,9 +222,9 @@ include/isc/taskpool.h
 include/isc/thread.h
 include/isc/time.h
 include/isc/timer.h
-include/isc/tls.h
 include/isc/tm.h
 include/isc/types.h
+include/isc/url.h
 include/isc/utf8.h
 include/isc/util.h
 include/isc/version.h
