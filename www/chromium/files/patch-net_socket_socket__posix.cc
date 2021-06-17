@@ -1,6 +1,6 @@
---- net/socket/socket_posix.cc.orig	2021-04-14 18:41:07 UTC
+--- net/socket/socket_posix.cc.orig	2021-05-12 22:05:57 UTC
 +++ net/socket/socket_posix.cc
-@@ -517,7 +517,7 @@ void SocketPosix::ReadCompleted() {
+@@ -519,7 +519,7 @@ void SocketPosix::ReadCompleted() {
  }
  
  int SocketPosix::DoWrite(IOBuffer* buf, int buf_len) {

@@ -1,4 +1,4 @@
---- chrome/test/base/interactive_ui_tests_main.cc.orig	2021-04-14 18:40:56 UTC
+--- chrome/test/base/interactive_ui_tests_main.cc.orig	2021-05-12 22:05:46 UTC
 +++ chrome/test/base/interactive_ui_tests_main.cc
 @@ -17,7 +17,7 @@
  #if defined(USE_AURA)
@@ -8,8 +8,8 @@
 +#if defined(USE_OZONE) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
  #include "ui/base/ui_base_features.h"
  #include "ui/ozone/public/ozone_platform.h"
- #include "ui/views/test/ui_controls_factory_desktop_aura_ozone.h"
-@@ -55,7 +55,7 @@ class InteractiveUITestSuite : public ChromeTestSuite 
+ #include "ui/platform_window/common/platform_window_defaults.h"
+@@ -53,7 +53,7 @@ class InteractiveUITestSuite : public ChromeTestSuite 
      com_initializer_.reset(new base::win::ScopedCOMInitializer());
      ui_controls::InstallUIControlsAura(
          aura::test::CreateUIControlsAura(nullptr));
@@ -17,4 +17,4 @@
 +#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  #if defined(USE_OZONE)
      if (features::IsUsingOzonePlatform()) {
-       ui::OzonePlatform::InitParams params;
+       // Notifies the platform that test config is needed. For Wayland, for

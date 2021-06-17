@@ -1,8 +1,8 @@
---- chrome/browser/performance_monitor/process_monitor.cc.orig	2021-04-22 07:56:37 UTC
+--- chrome/browser/performance_monitor/process_monitor.cc.orig	2021-05-12 22:05:44 UTC
 +++ chrome/browser/performance_monitor/process_monitor.cc
-@@ -82,7 +82,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
-   lhs.disk_usage += rhs.disk_usage;
- #endif
+@@ -80,7 +80,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
+                                     const ProcessMonitor::Metrics& rhs) {
+   lhs.cpu_usage += rhs.cpu_usage;
  
 -#if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
 +#if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) || \

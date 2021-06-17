@@ -1,8 +1,8 @@
---- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2021-04-14 18:40:54 UTC
+--- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2021-05-12 22:05:44 UTC
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -1242,11 +1242,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1293,11 +1293,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
- #endif // !defined(OS_MAC) && !BUILDFLAG(IS_CHROMEOS_ASH)
+ #endif // !defined(OS_MAC) && !defined(OS_CHROMEOS)
  
 -#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS) || defined(OS_BSD)
@@ -14,30 +14,29 @@
  
  #if !defined(OS_MAC)
    { key::kFullscreenAllowed,
-@@ -1594,7 +1594,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -1650,14 +1650,14 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+       SimpleSchemaValidatingPolicyHandler::MANDATORY_ALLOWED));
+ #endif  // defined(OS_ANDROID)
  
- // TODO(crbug/1169547) Remove `BUILDFLAG(IS_CHROMEOS_LACROS)` once the
- // migration is complete.
--#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || \
-+#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD) || \
-     BUILDFLAG(IS_CHROMEOS_LACROS)
+-#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD)
    handlers->AddHandler(
        std::make_unique<
-@@ -1602,7 +1602,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+           enterprise_connectors::EnterpriseConnectorsPolicyHandler>(
            key::kContextAwareAccessSignalsAllowlist,
            enterprise_connectors::kContextAwareAccessSignalsAllowlistPref,
            chrome_schema));
 -#endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN)
 +#endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD)
  
- #if BUILDFLAG(IS_CHROMEOS_ASH)
-   std::vector<std::unique_ptr<ConfigurationPolicyHandler>>
-@@ -1950,13 +1950,13 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+ #if defined(OS_CHROMEOS)
+   handlers->AddHandler(std::make_unique<extensions::ExtensionListPolicyHandler>(
+@@ -2012,13 +2012,13 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+       SimpleSchemaValidatingPolicyHandler::RECOMMENDED_PROHIBITED,
        SimpleSchemaValidatingPolicyHandler::MANDATORY_ALLOWED));
  
- // TODO(crbug.com/1175651): Remove BUILDFLAG(IS_CHROMEOS_LACROS)
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
    handlers->AddHandler(std::make_unique<SimpleSchemaValidatingPolicyHandler>(
        key::kWebAppSettings, prefs::kWebAppSettings, chrome_schema,
        SCHEMA_ALLOW_UNKNOWN,
@@ -48,7 +47,7 @@
  
  #endif  // BUILDFLAG(ENABLE_EXTENSIONS)
  
-@@ -1969,7 +1969,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2031,7 +2031,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -57,7 +56,7 @@
    handlers->AddHandler(std::make_unique<SimpleDeprecatingPolicyHandler>(
        std::make_unique<SimplePolicyHandler>(key::kAllowNativeNotifications,
                                              prefs::kAllowNativeNotifications,
-@@ -1977,7 +1977,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2039,7 +2039,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
        std::make_unique<SimplePolicyHandler>(key::kAllowSystemNotifications,
                                              prefs::kAllowSystemNotifications,
                                              base::Value::Type::BOOLEAN)));

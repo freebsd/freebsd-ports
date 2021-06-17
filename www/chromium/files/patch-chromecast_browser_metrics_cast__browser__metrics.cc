@@ -1,4 +1,4 @@
---- chromecast/browser/metrics/cast_browser_metrics.cc.orig	2021-04-14 18:40:58 UTC
+--- chromecast/browser/metrics/cast_browser_metrics.cc.orig	2021-06-09 22:13:58 UTC
 +++ chromecast/browser/metrics/cast_browser_metrics.cc
 @@ -19,9 +19,9 @@
  #include "content/public/browser/network_service_instance.h"
@@ -85,3 +85,19 @@
  
    metrics_service_client_->Finalize();
  }
+@@ -126,13 +126,13 @@ void CastBrowserMetrics::CollectFinalMetricsForLog(
+ }
+ 
+ void CastBrowserMetrics::ProcessExternalEvents(base::OnceClosure cb) {
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   external_metrics_->ProcessExternalEvents(
+       base::BindOnce(&ExternalMetrics::ProcessExternalEvents,
+                      base::Unretained(platform_metrics_), std::move(cb)));
+ #else
+   std::move(cb).Run();
+-#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
++#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ }
+ 
+ }  // namespace metrics

@@ -1,6 +1,6 @@
---- content/common/BUILD.gn.orig	2021-04-14 18:41:02 UTC
+--- content/common/BUILD.gn.orig	2021-05-12 22:05:53 UTC
 +++ content/common/BUILD.gn
-@@ -336,7 +336,7 @@ source_set("common") {
+@@ -338,7 +338,7 @@ source_set("common") {
      sources -= [ "cursors/webcursor_aura.cc" ]
    }
  
@@ -9,7 +9,7 @@
      sources += [
        "common_sandbox_support_linux.cc",
        "sandbox_init_linux.cc",
-@@ -352,6 +352,15 @@ source_set("common") {
+@@ -354,6 +354,15 @@ source_set("common") {
      ]
    }
  
@@ -25,7 +25,7 @@
    if (use_zygote_handle) {
      sources += [
        "zygote/zygote_handle_impl_linux.h",
-@@ -401,7 +410,7 @@ source_set("common") {
+@@ -403,7 +412,7 @@ source_set("common") {
    }
  }
  

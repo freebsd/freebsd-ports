@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/ntp/app_launcher_handler.cc.orig	2021-04-22 07:58:52 UTC
+--- chrome/browser/ui/webui/ntp/app_launcher_handler.cc.orig	2021-05-12 22:05:46 UTC
 +++ chrome/browser/ui/webui/ntp/app_launcher_handler.cc
-@@ -1395,7 +1395,7 @@ void AppLauncherHandler::InstallOsHooks(const web_app:
+@@ -1396,7 +1396,7 @@ void AppLauncherHandler::InstallOsHooks(const web_app:
    options.os_hooks[web_app::OsHookType::kRunOnOsLogin] = false;
    options.os_hooks[web_app::OsHookType::kUninstallationViaOsSettings] = true;
  #if defined(OS_WIN) || defined(OS_MAC) || \

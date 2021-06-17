@@ -1,6 +1,6 @@
---- chrome/browser/BUILD.gn.orig	2021-04-20 18:58:25 UTC
+--- chrome/browser/BUILD.gn.orig	2021-05-12 22:05:42 UTC
 +++ chrome/browser/BUILD.gn
-@@ -2458,9 +2458,18 @@ static_library("browser") {
+@@ -2427,9 +2427,18 @@ static_library("browser") {
        ]
      }
    }
@@ -20,7 +20,7 @@
    if (use_ozone) {
      deps += [
        "//ui/events/ozone",
-@@ -5123,6 +5132,17 @@ static_library("browser") {
+@@ -5134,6 +5143,17 @@ static_library("browser") {
      }
    }
  
@@ -38,7 +38,7 @@
    if (is_chromeos_ash) {
      if (use_allocator == "tcmalloc") {
        deps += [ "//chrome/common/performance_manager/mojom" ]
-@@ -5350,7 +5370,7 @@ static_library("browser") {
+@@ -5361,7 +5381,7 @@ static_library("browser") {
      ]
    }
  

@@ -1,6 +1,6 @@
---- chrome/browser/apps/platform_apps/api/media_galleries/media_galleries_apitest.cc.orig	2021-04-14 18:40:52 UTC
+--- chrome/browser/apps/platform_apps/api/media_galleries/media_galleries_apitest.cc.orig	2021-05-12 22:05:43 UTC
 +++ chrome/browser/apps/platform_apps/api/media_galleries/media_galleries_apitest.cc
-@@ -294,7 +294,7 @@ IN_PROC_BROWSER_TEST_F(MediaGalleriesPlatformAppPpapiT
+@@ -299,7 +299,7 @@ IN_PROC_BROWSER_TEST_F(MediaGalleriesPlatformAppPpapiT
  
  // Test is flaky, it fails on certain bots, namely WinXP Tests(1) and Linux
  // (dbg)(1)(32).  See crbug.com/354425.
@@ -9,7 +9,7 @@
  #define MAYBE_MediaGalleriesNoAccess DISABLED_MediaGalleriesNoAccess
  #else
  #define MAYBE_MediaGalleriesNoAccess MediaGalleriesNoAccess
-@@ -332,7 +332,7 @@ IN_PROC_BROWSER_TEST_F(MediaGalleriesPlatformAppBrowse
+@@ -337,7 +337,7 @@ IN_PROC_BROWSER_TEST_F(MediaGalleriesPlatformAppBrowse
  
  // Test is flaky, it fails on certain bots, namely WinXP Tests(1) and Linux
  // (dbg)(1)(32).  See crbug.com/354425.

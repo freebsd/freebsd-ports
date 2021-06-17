@@ -1,6 +1,6 @@
---- chrome/browser/profiles/profiles_state.cc.orig	2021-04-14 18:40:54 UTC
+--- chrome/browser/profiles/profiles_state.cc.orig	2021-05-12 22:05:44 UTC
 +++ chrome/browser/profiles/profiles_state.cc
-@@ -179,7 +179,7 @@ bool IsRegularOrGuestSession(Browser* browser) {
+@@ -227,7 +227,7 @@ bool IsRegularOrGuestSession(Browser* browser) {
  bool IsGuestModeRequested(const base::CommandLine& command_line,
                            PrefService* local_state,
                            bool show_warning) {

@@ -1,4 +1,4 @@
---- base/posix/unix_domain_socket.cc.orig	2021-04-14 18:40:48 UTC
+--- base/posix/unix_domain_socket.cc.orig	2021-06-09 22:13:52 UTC
 +++ base/posix/unix_domain_socket.cc
 @@ -5,7 +5,10 @@
  #include "base/posix/unix_domain_socket.h"
@@ -7,7 +7,7 @@
 +#include <sys/param.h>
  #include <sys/socket.h>
 +#include <sys/types.h>
-+#include <sys/ucred.h>a
++#include <sys/ucred.h>
  #if !defined(OS_NACL_NONSFI)
  #include <sys/un.h>
  #endif

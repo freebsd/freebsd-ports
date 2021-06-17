@@ -1,6 +1,6 @@
---- chrome/browser/browsing_data/chrome_browsing_data_remover_delegate.cc.orig	2021-04-23 20:21:42 UTC
+--- chrome/browser/browsing_data/chrome_browsing_data_remover_delegate.cc.orig	2021-05-12 22:05:43 UTC
 +++ chrome/browser/browsing_data/chrome_browsing_data_remover_delegate.cc
-@@ -640,7 +640,9 @@ void ChromeBrowsingDataRemoverDelegate::RemoveEmbedder
+@@ -635,7 +635,9 @@ void ChromeBrowsingDataRemoverDelegate::RemoveEmbedder
      }
  #endif
  
@@ -9,4 +9,4 @@
 +#endif
  
      FindBarStateFactory::GetForBrowserContext(profile_)->SetLastSearchText(
-         base::string16());
+         std::u16string());

@@ -1,6 +1,6 @@
---- media/video/gpu_memory_buffer_video_frame_pool.cc.orig	2021-04-14 18:41:06 UTC
+--- media/video/gpu_memory_buffer_video_frame_pool.cc.orig	2021-05-12 22:05:56 UTC
 +++ media/video/gpu_memory_buffer_video_frame_pool.cc
-@@ -649,7 +649,7 @@ void GpuMemoryBufferVideoFramePool::PoolImpl::CreateHa
+@@ -643,7 +643,7 @@ void GpuMemoryBufferVideoFramePool::PoolImpl::CreateHa
    }
  
    bool is_software_backed_video_frame = !video_frame->HasTextures();

@@ -1,8 +1,7 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 
 PORTNAME=	chromium
-PORTVERSION=	90.0.4430.212
-PORTREVISION=	1
+PORTVERSION=	91.0.4472.101
 CATEGORIES=	www java
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/rene/chromium/:fonts
@@ -72,7 +71,8 @@ USES=		bison compiler:c++17-lang cpe desktop-file-utils dos2unix gl gnome jpeg l
 
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
-DOS2UNIX_FILES=	third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h
+DOS2UNIX_FILES=	third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h \
+		third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
 USE_GL=		gbm gl
 USE_GNOME=	atk dconf glib20 gtk30 libxml2 libxslt
 INSTALLS_ICONS=	yes
@@ -96,11 +96,13 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 # OS "target_os == is_bsd", like libusb, libpci.
 GN_ARGS+=	clang_use_chrome_plugins=false \
 		enable_hangout_services_extension=true \
+		enable_js_type_check=false \
 		enable_nacl=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
 		fieldtrial_testing_like_official_build=true \
 		is_clang=true \
+		optimize_webui=false \
 		toolkit_views=true \
 		treat_warnings_as_errors=false \
 		use_allocator="none" \
@@ -219,11 +221,6 @@ PLIST_SUB+=	NOT_AARCH64="@comment "
 PLIST_SUB+=	NOT_AARCH64=""
 .endif
 
-# Make better javascript with java
-JAVA_BUILD=	yes
-JAVA_VERSION=	1.8
-USE_JAVA=	yes
-
 # Allow relocations against read-only segments (override lld default)
 LDFLAGS_i386=	-Wl,-znotext
 
@@ -243,9 +240,12 @@ post-extract-TEST-on:
 	@${MV} ${WRKDIR}/test_fonts ${WRKSRC}/third_party/test_fonts/
 
 post-patch:
+	@${MKDIR} ${WRKSRC}/sandbox/policy/freebsd
 	@${CP} ${FILESDIR}/dir_reader_freebsd.h ${WRKSRC}/base/files
 	@${CP} ${FILESDIR}/device_info_fetcher_freebsd.h ${WRKSRC}/chrome/browser/enterprise/signals
 	@${CP} ${FILESDIR}/device_info_fetcher_freebsd.cc ${WRKSRC}/chrome/browser/enterprise/signals
+	@${CP} ${FILESDIR}/sandbox_freebsd.h ${WRKSRC}/sandbox/policy/freebsd
+	@${CP} ${FILESDIR}/sandbox_freebsd.cc ${WRKSRC}/sandbox/policy/freebsd
 
 post-patch-SNDIO-on:
 	@${MKDIR} ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
@@ -281,12 +281,6 @@ do-configure:
 	# Setup nodejs dependency
 	@${MKDIR} ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin
 	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin/node
-
-	# Setup java dependency on amd64 and i386
-.if ${ARCH} == amd64 || ${ARCH} == i386
-	@${MKDIR} ${WRKDIR}/bin
-	${LN} -sf ${LOCALBASE}/openjdk8/bin/java ${WRKDIR}/bin/java
-.endif
 
 	# Setup buildtools/freebsd
 	@${MKDIR} ${WRKSRC}/buildtools/freebsd

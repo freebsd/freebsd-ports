@@ -1,4 +1,4 @@
---- base/process/process_metrics.h.orig	2021-04-14 18:40:48 UTC
+--- base/process/process_metrics.h.orig	2021-05-12 22:05:40 UTC
 +++ base/process/process_metrics.h
 @@ -47,7 +47,7 @@ namespace base {
  // Full declaration is in process_metrics_iocounters.h.
@@ -45,7 +45,7 @@
          // defined(OS_AIX)
  
    // Returns the number of average idle cpu wakeups per second since the last
-@@ -216,14 +216,14 @@ class BASE_EXPORT ProcessMetrics {
+@@ -208,14 +208,14 @@ class BASE_EXPORT ProcessMetrics {
    int GetOpenFdSoftLimit() const;
  #endif  // defined(OS_POSIX)
  
@@ -62,7 +62,7 @@
  
    // Returns total memory usage of malloc.
    size_t GetMallocUsage();
-@@ -235,7 +235,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -227,7 +227,7 @@ class BASE_EXPORT ProcessMetrics {
    ProcessMetrics(ProcessHandle process, PortProvider* port_provider);
  #endif  // !defined(OS_MAC)
  
@@ -71,7 +71,7 @@
      defined(OS_AIX)
    int CalculateIdleWakeupsPerSecond(uint64_t absolute_idle_wakeups);
  #endif
-@@ -246,10 +246,10 @@ class BASE_EXPORT ProcessMetrics {
+@@ -238,10 +238,10 @@ class BASE_EXPORT ProcessMetrics {
        uint64_t absolute_package_idle_wakeups);
  #endif
  
@@ -84,7 +84,7 @@
          // defined(OS_AIX)
  
  #if defined(OS_WIN)
-@@ -271,7 +271,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -263,7 +263,7 @@ class BASE_EXPORT ProcessMetrics {
    // Number of bytes transferred to/from disk in bytes.
    uint64_t last_cumulative_disk_usage_ = 0;
  
@@ -93,7 +93,7 @@
      defined(OS_AIX)
    // Same thing for idle wakeups.
    TimeTicks last_idle_wakeups_time_;
-@@ -323,7 +323,7 @@ BASE_EXPORT size_t GetHandleLimit();
+@@ -315,7 +315,7 @@ BASE_EXPORT size_t GetHandleLimit();
  BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_descriptors);
  #endif  // defined(OS_POSIX)
  
@@ -102,7 +102,7 @@
      defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_AIX) || \
      defined(OS_FUCHSIA)
  // Data about system-wide memory consumption. Values are in KB. Available on
-@@ -358,7 +358,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -350,7 +350,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
    int avail_phys = 0;
  #endif
  
@@ -111,7 +111,7 @@
      defined(OS_AIX)
    // This provides an estimate of available memory as described here:
    // https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773
-@@ -373,7 +373,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -365,7 +365,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
    int swap_free = 0;
  #endif
  
@@ -120,7 +120,7 @@
      defined(OS_AIX) || defined(OS_FUCHSIA)
    int buffers = 0;
    int cached = 0;
-@@ -383,7 +383,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -375,7 +375,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
    int inactive_file = 0;
    int dirty = 0;
    int reclaimable = 0;
@@ -129,7 +129,7 @@
          // defined(OS_AIX) defined(OS_FUCHSIA)
  
  #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
-@@ -406,11 +406,11 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -398,11 +398,11 @@ struct BASE_EXPORT SystemMemoryInfoKB {
  // Exposed for memory debugging widget.
  BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoKB* meminfo);
  
@@ -143,7 +143,7 @@
      defined(OS_AIX)
  // Parse the data found in /proc/<pid>/stat and return the sum of the
  // CPU-related ticks.  Returns -1 on parse error.
-@@ -485,7 +485,7 @@ BASE_EXPORT bool GetSystemDiskInfo(SystemDiskInfo* dis
+@@ -477,7 +477,7 @@ BASE_EXPORT bool GetSystemDiskInfo(SystemDiskInfo* dis
  // Returns the amount of time spent in user space since boot across all CPUs.
  BASE_EXPORT TimeDelta GetUserCpuTimeSinceBoot();
  
@@ -152,7 +152,7 @@
          // defined(OS_AIX)
  
  #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
-@@ -597,7 +597,7 @@ class BASE_EXPORT SystemMetrics {
+@@ -589,7 +589,7 @@ class BASE_EXPORT SystemMetrics {
    FRIEND_TEST_ALL_PREFIXES(SystemMetricsTest, SystemMetrics);
  
    size_t committed_memory_;

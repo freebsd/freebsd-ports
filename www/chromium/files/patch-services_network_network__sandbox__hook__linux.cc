@@ -1,14 +1,14 @@
---- services/network/network_sandbox_hook_linux.cc.orig	2021-04-14 18:41:08 UTC
+--- services/network/network_sandbox_hook_linux.cc.orig	2021-05-12 22:05:58 UTC
 +++ services/network/network_sandbox_hook_linux.cc
-@@ -14,6 +14,7 @@ using sandbox::syscall_broker::MakeBrokerCommandSet;
- namespace network {
+@@ -32,6 +32,7 @@ std::vector<BrokerFilePermission> GetNetworkFilePermis
+ }
  
  bool NetworkPreSandboxHook(sandbox::policy::SandboxLinux::Options options) {
 +#if !defined(OS_BSD)
    auto* instance = sandbox::policy::SandboxLinux::GetInstance();
  
-   // TODO(tsepez): remove universal permission under filesytem root.
-@@ -32,6 +33,7 @@ bool NetworkPreSandboxHook(sandbox::policy::SandboxLin
+   instance->StartBrokerProcess(
+@@ -39,6 +40,7 @@ bool NetworkPreSandboxHook(sandbox::policy::SandboxLin
        sandbox::policy::SandboxLinux::PreSandboxHook(), options);
  
    instance->EngageNamespaceSandboxIfPossible();

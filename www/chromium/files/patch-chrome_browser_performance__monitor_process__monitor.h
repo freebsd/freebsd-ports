@@ -1,8 +1,8 @@
---- chrome/browser/performance_monitor/process_monitor.h.orig	2021-04-22 07:56:51 UTC
+--- chrome/browser/performance_monitor/process_monitor.h.orig	2021-05-12 22:05:44 UTC
 +++ chrome/browser/performance_monitor/process_monitor.h
-@@ -51,7 +51,7 @@ class ProcessMonitor {
-     uint64_t disk_usage = 0;
- #endif
+@@ -44,7 +44,7 @@ class ProcessMonitor {
+     // can exceed 100% in multi-thread processes running on multi-core systems.
+     double cpu_usage = 0.0;
  
 -#if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
 +#if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) || \

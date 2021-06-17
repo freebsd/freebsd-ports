@@ -1,6 +1,6 @@
---- content/browser/BUILD.gn.orig	2021-04-14 18:41:02 UTC
+--- content/browser/BUILD.gn.orig	2021-05-12 22:05:52 UTC
 +++ content/browser/BUILD.gn
-@@ -2179,6 +2179,15 @@ source_set("browser") {
+@@ -2222,6 +2222,15 @@ source_set("browser") {
      deps += [ "//third_party/speech-dispatcher" ]
    }
  

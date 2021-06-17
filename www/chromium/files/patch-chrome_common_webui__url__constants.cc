@@ -1,6 +1,6 @@
---- chrome/common/webui_url_constants.cc.orig	2021-04-14 18:40:56 UTC
+--- chrome/common/webui_url_constants.cc.orig	2021-05-12 22:05:46 UTC
 +++ chrome/common/webui_url_constants.cc
-@@ -350,12 +350,12 @@ const char kChromeUIOSSettingsHost[] = "os-settings";
+@@ -358,12 +358,12 @@ const char kChromeUIOSSettingsHost[] = "os-settings";
  const char kChromeUIOSSettingsURL[] = "chrome://os-settings/";
  #endif
  
@@ -15,7 +15,7 @@
      defined(OS_CHROMEOS)
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
-@@ -372,7 +372,7 @@ const char kChromeUINearbyShareURL[] = "chrome://nearb
+@@ -378,7 +378,7 @@ const char kChromeUINearbyShareURL[] = "chrome://nearb
  const char kChromeUILinuxProxyConfigHost[] = "linux-proxy-config";
  #endif
  
@@ -24,7 +24,7 @@
      defined(OS_ANDROID)
  const char kChromeUISandboxHost[] = "sandbox";
  #endif
-@@ -380,7 +380,7 @@ const char kChromeUISandboxHost[] = "sandbox";
+@@ -386,7 +386,7 @@ const char kChromeUISandboxHost[] = "sandbox";
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \
@@ -32,8 +32,8 @@
 +    (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
  const char kChromeUIBrowserSwitchHost[] = "browser-switch";
  const char kChromeUIBrowserSwitchURL[] = "chrome://browser-switch/";
- const char kChromeUIProfileCustomizationHost[] = "profile-customization";
-@@ -391,7 +391,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
+ const char kChromeUIEnterpriseProfileWelcomeHost[] =
+@@ -401,7 +401,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
  const char kChromeUIProfilePickerStartupQuery[] = "startup";
  #endif
  
@@ -42,7 +42,7 @@
      defined(USE_AURA)
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
  #endif
-@@ -569,14 +569,14 @@ const char* const kChromeHostURLs[] = {
+@@ -583,14 +583,14 @@ const char* const kChromeHostURLs[] = {
      kChromeUIInternetDetailDialogHost,
      kChromeUIAssistantOptInHost,
  #endif
@@ -59,7 +59,7 @@
      defined(OS_ANDROID)
      kChromeUISandboxHost,
  #endif
-@@ -635,7 +635,7 @@ const char* const kChromeDebugURLs[] = {
+@@ -649,7 +649,7 @@ const char* const kChromeDebugURLs[] = {
      content::kChromeUIGpuJavaCrashURL,
      kChromeUIJavaCrashURL,
  #endif

@@ -1,4 +1,4 @@
---- media/base/video_frame.cc.orig	2021-04-14 18:41:05 UTC
+--- media/base/video_frame.cc.orig	2021-05-12 22:05:55 UTC
 +++ media/base/video_frame.cc
 @@ -60,7 +60,7 @@ std::string VideoFrame::StorageTypeToString(
        return "OWNED_MEMORY";
@@ -36,7 +36,7 @@
  
  // static
  bool VideoFrame::IsValidConfig(VideoPixelFormat format,
-@@ -628,7 +628,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
+@@ -623,7 +623,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
    for (size_t i = 0; i < num_planes; ++i)
      planes[i].stride = gpu_memory_buffer->stride(i);
    uint64_t modifier = gfx::NativePixmapHandle::kNoModifier;
@@ -45,7 +45,7 @@
    if (gpu_memory_buffer->GetType() == gfx::NATIVE_PIXMAP) {
      const auto gmb_handle = gpu_memory_buffer->CloneHandle();
      if (gmb_handle.is_null() ||
-@@ -673,7 +673,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
+@@ -668,7 +668,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
    return frame;
  }
  
@@ -54,7 +54,7 @@
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      const VideoFrameLayout& layout,
-@@ -896,7 +896,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
+@@ -891,7 +891,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
      }
    }
  
@@ -63,7 +63,7 @@
    DCHECK(frame->dmabuf_fds_);
    // If there are any |dmabuf_fds_| plugged in, we should refer them too.
    wrapping_frame->dmabuf_fds_ = frame->dmabuf_fds_;
-@@ -1246,7 +1246,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
+@@ -1242,7 +1242,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
                          : mailbox_holders_[texture_index];
  }
  
@@ -72,7 +72,7 @@
  const std::vector<base::ScopedFD>& VideoFrame::DmabufFds() const {
    DCHECK_EQ(storage_type_, STORAGE_DMABUFS);
  
-@@ -1331,7 +1331,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
+@@ -1327,7 +1327,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
        storage_type_(storage_type),
        visible_rect_(Intersection(visible_rect, gfx::Rect(layout.coded_size()))),
        natural_size_(natural_size),

@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_configurations.cc.orig	2021-04-14 18:40:59 UTC
+--- components/feature_engagement/public/feature_configurations.cc.orig	2021-05-12 22:05:49 UTC
 +++ components/feature_engagement/public/feature_configurations.cc
 @@ -12,7 +12,7 @@ namespace feature_engagement {
  
@@ -9,8 +9,8 @@
      defined(OS_CHROMEOS)
    if (kIPHPasswordsAccountStorageFeature.name == feature->name) {
      base::Optional<FeatureConfig> config = FeatureConfig();
-@@ -28,7 +28,7 @@ base::Optional<FeatureConfig> GetClientSideFeatureConf
-                     Comparator(EQUAL, 0), 180, 180));
+@@ -41,7 +41,7 @@ base::Optional<FeatureConfig> GetClientSideFeatureConf
+         EventConfig("profile_menu_shown", Comparator(EQUAL, 0), 360, 360);
      return config;
    }
 -#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||

@@ -1,6 +1,6 @@
---- chrome/browser/password_manager/password_store_factory.cc.orig	2021-04-14 18:40:54 UTC
+--- chrome/browser/password_manager/password_store_factory.cc.orig	2021-05-12 22:05:44 UTC
 +++ chrome/browser/password_manager/password_store_factory.cc
-@@ -166,7 +166,7 @@ PasswordStoreFactory::BuildServiceInstanceFor(
+@@ -167,7 +167,7 @@ PasswordStoreFactory::BuildServiceInstanceFor(
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \

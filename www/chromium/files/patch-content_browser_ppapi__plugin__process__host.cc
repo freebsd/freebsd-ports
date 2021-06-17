@@ -1,6 +1,6 @@
---- content/browser/ppapi_plugin_process_host.cc.orig	2021-04-14 18:41:02 UTC
+--- content/browser/ppapi_plugin_process_host.cc.orig	2021-05-12 22:05:52 UTC
 +++ content/browser/ppapi_plugin_process_host.cc
-@@ -303,7 +303,7 @@ bool PpapiPluginProcessHost::Init(const PepperPluginIn
+@@ -302,7 +302,7 @@ bool PpapiPluginProcessHost::Init(const PepperPluginIn
    base::CommandLine::StringType plugin_launcher =
        browser_command_line.GetSwitchValueNative(switches::kPpapiPluginLauncher);
  

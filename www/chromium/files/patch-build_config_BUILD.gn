@@ -1,6 +1,6 @@
---- build/config/BUILD.gn.orig	2021-04-14 18:40:48 UTC
+--- build/config/BUILD.gn.orig	2021-05-12 22:05:40 UTC
 +++ build/config/BUILD.gn
-@@ -232,9 +232,7 @@ config("default_libs") {
+@@ -227,9 +227,7 @@ config("default_libs") {
      ]
    } else if (is_linux || is_chromeos) {
      libs = [
@@ -10,7 +10,7 @@
      ]
    }
  }
-@@ -313,7 +311,7 @@ config("executable_config") {
+@@ -308,7 +306,7 @@ config("executable_config") {
        "//build/config/ios:ios_dynamic_flags",
        "//build/config/ios:ios_executable_flags",
      ]

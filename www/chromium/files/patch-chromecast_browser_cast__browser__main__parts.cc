@@ -1,6 +1,6 @@
---- chromecast/browser/cast_browser_main_parts.cc.orig	2021-04-14 18:40:58 UTC
+--- chromecast/browser/cast_browser_main_parts.cc.orig	2021-05-12 22:05:48 UTC
 +++ chromecast/browser/cast_browser_main_parts.cc
-@@ -75,7 +75,7 @@
+@@ -77,7 +77,7 @@
  #include "ui/base/ui_base_switches.h"
  #include "ui/gl/gl_switches.h"
  
@@ -9,7 +9,7 @@
  #include <fontconfig/fontconfig.h>
  #include <signal.h>
  #include <sys/prctl.h>
-@@ -131,7 +131,7 @@
+@@ -132,7 +132,7 @@
  #include "extensions/browser/extension_prefs.h"  // nogncheck
  #endif
  
@@ -18,7 +18,7 @@
  #include "chromecast/browser/exo/wayland_server_controller.h"
  #endif
  
-@@ -273,7 +273,7 @@ class CastViewsDelegate : public views::ViewsDelegate 
+@@ -274,7 +274,7 @@ class CastViewsDelegate : public views::ViewsDelegate 
  
  #endif  // defined(USE_AURA)
  
@@ -27,7 +27,7 @@
  
  base::FilePath GetApplicationFontsDir() {
    std::unique_ptr<base::Environment> env(base::Environment::Create());
-@@ -289,7 +289,7 @@ base::FilePath GetApplicationFontsDir() {
+@@ -290,7 +290,7 @@ base::FilePath GetApplicationFontsDir() {
    }
  }
  
@@ -36,7 +36,7 @@
  
  }  // namespace
  
-@@ -318,7 +318,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
+@@ -319,7 +319,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
      {cc::switches::kDisableThreadedAnimation, ""},
  #endif  // defined(OS_ANDROID)
  #endif  // BUILDFLAG(IS_CAST_AUDIO_ONLY)
@@ -45,7 +45,7 @@
  #if defined(ARCH_CPU_X86_FAMILY)
      // This is needed for now to enable the x11 Ozone platform to work with
      // current Linux/NVidia OpenGL drivers.
-@@ -328,7 +328,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
+@@ -329,7 +329,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
      {switches::kEnableHardwareOverlays, "cast"},
  #endif
  #endif
@@ -54,7 +54,7 @@
      // It's better to start GPU process on demand. For example, for TV platforms
      // cast starts in background and can't render until TV switches to cast
      // input.
-@@ -482,7 +482,7 @@ void CastBrowserMainParts::ToolkitInitialized() {
+@@ -486,7 +486,7 @@ void CastBrowserMainParts::ToolkitInitialized() {
      views_delegate_ = std::make_unique<CastViewsDelegate>();
  #endif  // defined(USE_AURA)
  
@@ -63,7 +63,7 @@
    base::FilePath dir_font = GetApplicationFontsDir();
    const FcChar8 *dir_font_char8 = reinterpret_cast<const FcChar8*>(dir_font.value().data());
    if (!FcConfigAppFontAddDir(gfx::GetGlobalFontConfig(), dir_font_char8)) {
-@@ -666,7 +666,7 @@ void CastBrowserMainParts::PreMainMessageLoopRun() {
+@@ -668,7 +668,7 @@ int CastBrowserMainParts::PreMainMessageLoopRun() {
        cast_browser_process_->browser_context());
  #endif
  
@@ -72,10 +72,10 @@
    wayland_server_controller_ =
        std::make_unique<WaylandServerController>(window_manager_.get());
  #endif
-@@ -748,7 +748,7 @@ bool CastBrowserMainParts::MainMessageLoopRun(int* res
- }
+@@ -749,7 +749,7 @@ void CastBrowserMainParts::PostMainMessageLoopRun() {
  
- void CastBrowserMainParts::PostMainMessageLoopRun() {
+   cast_browser_process_->cast_service()->Stop();
+ 
 -#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(USE_OZONE)
 +#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(USE_OZONE)
    wayland_server_controller_.reset();

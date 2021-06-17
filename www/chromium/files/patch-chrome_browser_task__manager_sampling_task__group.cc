@@ -1,4 +1,4 @@
---- chrome/browser/task_manager/sampling/task_group.cc.orig	2021-04-14 18:40:55 UTC
+--- chrome/browser/task_manager/sampling/task_group.cc.orig	2021-05-12 22:05:45 UTC
 +++ chrome/browser/task_manager/sampling/task_group.cc
 @@ -33,9 +33,9 @@ const int kBackgroundRefreshTypesMask =
  #if defined(OS_WIN)
@@ -37,7 +37,7 @@
          base::BindRepeating(&TaskGroup::OnProcessPriorityDone,
                              weak_ptr_factory_.GetWeakPtr()));
  
-@@ -300,14 +300,14 @@ void TaskGroup::OnRefreshNaClDebugStubPortDone(int nac
+@@ -301,14 +301,14 @@ void TaskGroup::OnRefreshNaClDebugStubPortDone(int nac
  }
  #endif  // BUILDFLAG(ENABLE_NACL)
  

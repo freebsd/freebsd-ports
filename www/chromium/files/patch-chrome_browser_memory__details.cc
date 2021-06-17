@@ -1,6 +1,6 @@
---- chrome/browser/memory_details.cc.orig	2021-04-14 18:40:53 UTC
+--- chrome/browser/memory_details.cc.orig	2021-05-12 22:05:44 UTC
 +++ chrome/browser/memory_details.cc
-@@ -38,7 +38,7 @@
+@@ -39,7 +39,7 @@
  #include "services/resource_coordinator/public/cpp/memory_instrumentation/memory_instrumentation.h"
  #include "ui/base/l10n/l10n_util.h"
  
@@ -9,7 +9,7 @@
  #include "content/public/browser/zygote_host/zygote_host_linux.h"
  #endif
  
-@@ -339,7 +339,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+@@ -347,7 +347,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
        process.titles.push_back(title);
      }
  

@@ -1,6 +1,6 @@
---- chrome/BUILD.gn.orig	2021-04-14 18:40:48 UTC
+--- chrome/BUILD.gn.orig	2021-05-12 22:05:41 UTC
 +++ chrome/BUILD.gn
-@@ -1249,6 +1249,10 @@ group("browser_dependencies") {
+@@ -1335,6 +1335,10 @@ group("browser_dependencies") {
      public_deps += [ "//chromeos/lacros" ]
    }
  

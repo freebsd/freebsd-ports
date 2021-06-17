@@ -1,6 +1,6 @@
---- base/files/file_path_watcher_unittest.cc.orig	2021-04-14 18:40:48 UTC
+--- base/files/file_path_watcher_unittest.cc.orig	2021-05-12 22:05:40 UTC
 +++ base/files/file_path_watcher_unittest.cc
-@@ -444,12 +444,12 @@ TEST_F(FilePathWatcherTest, WatchDirectory) {
+@@ -452,12 +452,12 @@ TEST_F(FilePathWatcherTest, WatchDirectory) {
    VLOG(1) << "Waiting for file1 creation";
    ASSERT_TRUE(WaitForEvents());
  
@@ -15,8 +15,8 @@
  
    ASSERT_TRUE(base::DeleteFile(file1));
    VLOG(1) << "Waiting for file1 deletion";
-@@ -822,7 +822,7 @@ TEST_F(FilePathWatcherTest, LinkedDirectoryPart3) {
-   ASSERT_TRUE(WaitForEvents());
+@@ -1034,7 +1034,7 @@ TEST_F(FilePathWatcherTest, InotifyLimitInUpdateRecurs
+   }
  }
  
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
@@ -24,7 +24,7 @@
  
  enum Permission {
    Read,
-@@ -830,7 +830,7 @@ enum Permission {
+@@ -1042,7 +1042,7 @@ enum Permission {
    Execute
  };
  
@@ -33,7 +33,7 @@
  bool ChangeFilePermissions(const FilePath& path, Permission perm, bool allow) {
    struct stat stat_buf;
  
-@@ -859,9 +859,9 @@ bool ChangeFilePermissions(const FilePath& path, Permi
+@@ -1071,9 +1071,9 @@ bool ChangeFilePermissions(const FilePath& path, Permi
    }
    return chmod(path.value().c_str(), stat_buf.st_mode) == 0;
  }
@@ -45,7 +45,7 @@
  // Linux implementation of FilePathWatcher doesn't catch attribute changes.
  // http://crbug.com/78043
  // Windows implementation of FilePathWatcher catches attribute changes that
-@@ -897,7 +897,7 @@ TEST_F(FilePathWatcherTest, DirAttributesChanged) {
+@@ -1109,7 +1109,7 @@ TEST_F(FilePathWatcherTest, DirAttributesChanged) {
    ASSERT_TRUE(ChangeFilePermissions(test_dir1, Execute, true));
  }
  

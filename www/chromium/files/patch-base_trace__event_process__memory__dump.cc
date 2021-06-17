@@ -1,6 +1,6 @@
---- base/trace_event/process_memory_dump.cc.orig	2021-04-14 18:40:48 UTC
+--- base/trace_event/process_memory_dump.cc.orig	2021-05-12 22:05:40 UTC
 +++ base/trace_event/process_memory_dump.cc
-@@ -101,7 +101,7 @@ base::Optional<size_t> ProcessMemoryDump::CountResiden
+@@ -102,7 +102,7 @@ base::Optional<size_t> ProcessMemoryDump::CountResiden
  #if defined(OS_WIN)
    std::unique_ptr<PSAPI_WORKING_SET_EX_INFORMATION[]> vec(
        new PSAPI_WORKING_SET_EX_INFORMATION[max_vec_size]);

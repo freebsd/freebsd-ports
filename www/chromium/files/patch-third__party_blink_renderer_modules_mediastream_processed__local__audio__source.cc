@@ -1,6 +1,6 @@
---- third_party/blink/renderer/modules/mediastream/processed_local_audio_source.cc.orig	2021-04-14 18:41:10 UTC
+--- third_party/blink/renderer/modules/mediastream/processed_local_audio_source.cc.orig	2021-05-12 22:06:01 UTC
 +++ third_party/blink/renderer/modules/mediastream/processed_local_audio_source.cc
-@@ -409,7 +409,7 @@ void ProcessedLocalAudioSource::CaptureUsingProcessor(
+@@ -413,7 +413,7 @@ void ProcessedLocalAudioSource::CaptureUsingProcessor(
      bool key_pressed) {
  #if defined(OS_WIN) || defined(OS_MAC)
    DCHECK_LE(volume, 1.0);

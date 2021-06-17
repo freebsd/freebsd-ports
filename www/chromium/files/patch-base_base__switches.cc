@@ -1,6 +1,6 @@
---- base/base_switches.cc.orig	2021-04-14 18:40:48 UTC
+--- base/base_switches.cc.orig	2021-05-12 22:05:40 UTC
 +++ base/base_switches.cc
-@@ -120,8 +120,8 @@ const char kDisableUsbKeyboardDetect[]      = "disable
+@@ -125,8 +125,8 @@ const char kDisableUsbKeyboardDetect[]      = "disable
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -11,7 +11,7 @@
  // The /dev/shm partition is too small in certain VM environments, causing
  // Chrome to fail or crash (see http://crbug.com/715363). Use this flag to
  // work-around this issue (a temporary directory will always be used to create
-@@ -156,7 +156,7 @@ const char kForceFieldTrialParams[] = "force-fieldtria
+@@ -161,7 +161,7 @@ const char kForceFieldTrialParams[] = "force-fieldtria
  
  #endif
  

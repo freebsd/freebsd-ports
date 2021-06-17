@@ -1,6 +1,6 @@
---- remoting/test/it2me_standalone_host.cc.orig	2021-04-14 18:41:08 UTC
+--- remoting/test/it2me_standalone_host.cc.orig	2021-05-12 22:05:58 UTC
 +++ remoting/test/it2me_standalone_host.cc
-@@ -49,7 +49,7 @@ It2MeStandaloneHost::It2MeStandaloneHost()
+@@ -50,7 +50,7 @@ It2MeStandaloneHost::It2MeStandaloneHost()
                 context_->ui_task_runner()),
        connection_(base::WrapUnique(new testing::NiceMock<MockSession>())),
        session_jid_(kSessionJid),
