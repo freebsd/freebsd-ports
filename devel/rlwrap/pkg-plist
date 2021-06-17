@@ -36,4 +36,3 @@ man/man3/RlwrapFilter.3pm.gz
 %%DATADIR%%/filters/simple_macro
 %%DATADIR%%/filters/template
 %%DATADIR%%/filters/unbackspace
-
