@@ -1,6 +1,6 @@
 PORTNAME=	softether
 DISTVERSION=	4.36-9754-beta
-#PORTREVISION=	0
+PORTREVISION=	0
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-2021.06.07-tree/Source_Code/
 PKGNAMESUFFIX=	-devel
