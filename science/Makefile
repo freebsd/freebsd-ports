@@ -55,6 +55,7 @@
     SUBDIR += cp2k
     SUBDIR += cp2k-data
     SUBDIR += crf++
+    SUBDIR += csvtk
     SUBDIR += dakota
     SUBDIR += dalton
     SUBDIR += dcl
