@@ -1,8 +1,7 @@
 # Created by: Neil Booth
 
 PORTNAME=	electrum
-PORTVERSION=	4.1.2
-PORTREVISION=	2
+PORTVERSION=	4.1.4
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
@@ -15,9 +14,10 @@ COMMENT=	Easy to use Bitcoin client
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+# RuntimeError: aiorpcX version (0, 22, 1) does not match required: 0.18.7<=ver<0.19
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp-socks>=0.3:net/py-aiohttp-socks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.3.0:www/py-aiohttp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiorpcX>=0.18.7:devel/py-aiorpcX@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aiorpcX-legacy<=0.19:devel/py-aiorpcX-legacy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}attrs>=19.2.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bitstring>0:devel/py-bitstring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
