@@ -10,6 +10,7 @@ man/man1/verilator.1.gz
 man/man1/verilator_coverage.1.gz
 man/man1/verilator_gantt.1.gz
 man/man1/verilator_profcfunc.1.gz
+%%DATADIR%%/bin/verilator_ccache_report
 %%DATADIR%%/bin/verilator_includer
 %%DATADIR%%/examples/cmake_hello_c/CMakeLists.txt
 %%DATADIR%%/examples/cmake_hello_c/Makefile
@@ -49,6 +50,7 @@ man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/gtkwave/fastlz.c
 %%DATADIR%%/include/gtkwave/fastlz.h
 %%DATADIR%%/include/gtkwave/fst_config.h
+%%DATADIR%%/include/gtkwave/fst_win_unistd.h
 %%DATADIR%%/include/gtkwave/fstapi.c
 %%DATADIR%%/include/gtkwave/fstapi.h
 %%DATADIR%%/include/gtkwave/lz4.c
