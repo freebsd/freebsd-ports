@@ -76,6 +76,45 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="afdc7579-d023-11eb-bcad-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>91.0.4472.114</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/06/stable-channel-update-for-desktop_17.html">
+	  <p>This release includes 4 security fixes, including:</p>
+	  <ul>
+	    <li>[1219857] High CVE-2021-30554: Use after free in WebGL. Reported
+	      by anonymous on 2021-06-15</li>
+	    <li>[1215029] High CVE-2021-30555: Use after free in Sharing.
+	      Reported by David Erceg on 2021-06-01</li>
+	    <li>[1212599] High CVE-2021-30556: Use after free in WebAudio.
+	      Reported by Yangkang (@dnpushme) of 360 ATA on 2021-05-24</li>
+	    <li>[1202102] High CVE-2021-30557: Use after free in TabGroups.
+	      Reported by David Erceg on 2021-04-23</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-30554</cvename>
+      <cvename>CVE-2021-30555</cvename>
+      <cvename>CVE-2021-30556</cvename>
+      <cvename>CVE-2021-30557</cvename>
+      <url>https://chromereleases.googleblog.com/2021/06/stable-channel-update-for-desktop_17.html</url>
+    </references>
+    <dates>
+      <discovery>2021-06-17</discovery>
+      <entry>2021-06-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9f27ac74-cdee-11eb-930d-fc4dd43e2b6a">
     <topic>ircII -- denial of service</topic>
     <affects>
