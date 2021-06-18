@@ -16,6 +16,13 @@ include/ags/audio/ags_diatonic_scale.h
 include/ags/audio/ags_fast_pitch_util.h
 include/ags/audio/ags_fifoout.h
 include/ags/audio/ags_filter_util.h
+include/ags/audio/ags_fluid_iir_filter_util.h
+include/ags/audio/ags_fluid_interpolate_4th_order_util.h
+include/ags/audio/ags_fluid_interpolate_7th_order_util.h
+include/ags/audio/ags_fluid_interpolate_linear_util.h
+include/ags/audio/ags_fluid_interpolate_none_util.h
+include/ags/audio/ags_fluid_pitch_util.h
+include/ags/audio/ags_fluid_util.h
 include/ags/audio/ags_fm_synth_util.h
 include/ags/audio/ags_fourier_transform_util.h
 include/ags/audio/ags_frequency_aliase_util.h
