@@ -16399,3 +16399,17 @@ databases/pgespresso||2021-06-13|Removed, functionality part of PostgreSQL 9.6 a
 x11-fonts/urw-core35-fonts|x11-fonts/urw-base35-fonts|2021-06-15|Project was renamed upstream
 graphics/jpeg-xl|graphics/libjxl|2021-06-16|Project was renamed upstream
 chinese/docproj|textproc/docproj|2021-06-17|Deprecated after the doc transition
+devel/aarch64-gcc|devel/freebsd-gcc6@aarch64|2021-06-18|Replaced by a flavor
+devel/aarch64-xtoolchain-gcc|devel/freebsd-gcc6@aarch64|2021-06-18|Replaced by a flavor
+devel/amd64-gcc|devel/freebsd-gcc6@amd64|2021-06-18|Replaced by a flavor
+devel/amd64-xtoolchain-gcc|devel/freebsd-gcc6@amd64|2021-06-18|Replaced by a flavor
+devel/i386-gcc|devel/freebsd-gcc6@i386|2021-06-18|Replaced by a flavor
+devel/i386-xtoolchain-gcc|devel/freebsd-gcc6@i386|2021-06-18|Replaced by a flavor
+devel/mips-gcc|devel/freebsd-gcc6@mips|2021-06-18|Replaced by a flavor
+devel/mips-xtoolchain-gcc|devel/freebsd-gcc6@mips|2021-06-18|Replaced by a flavor
+devel/mips64-gcc|devel/freebsd-gcc6@mips64|2021-06-18|Replaced by a flavor
+devel/mips64-xtoolchain-gcc|devel/freebsd-gcc6@mips64|2021-06-18|Replaced by a flavor
+devel/powerpc64-gcc|devel/freebsd-gcc6@powerpc64|2021-06-18|Replaced by a flavor
+devel/powerpc64-xtoolchain-gcc|devel/freebsd-gcc6@powerpc64|2021-06-18|Replaced by a flavor
+devel/sparc64-gcc|devel/freebsd-gcc6@sparc64|2021-06-18|Replaced by a flavor
+devel/sparc64-xtoolchain-gcc|devel/freebsd-gcc6@sparc64|2021-06-18|Replaced by a flavor

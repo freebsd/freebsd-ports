@@ -112,9 +112,7 @@
     SUBDIR += R-cran-zeallot
     SUBDIR += RStudio
     SUBDIR += SpecTcl
-    SUBDIR += aarch64-gcc
     SUBDIR += aarch64-none-elf-gcc
-    SUBDIR += aarch64-xtoolchain-gcc
     SUBDIR += abi-compliance-checker
     SUBDIR += abseil
     SUBDIR += acme
@@ -133,8 +131,6 @@
     SUBDIR += allegro
     SUBDIR += allegro5
     SUBDIR += alog
-    SUBDIR += amd64-gcc
-    SUBDIR += amd64-xtoolchain-gcc
     SUBDIR += aml
     SUBDIR += amqp-cpp
     SUBDIR += android-tools-adb
@@ -958,8 +954,6 @@
     SUBDIR += hwloc
     SUBDIR += hwloc2
     SUBDIR += hyperscan
-    SUBDIR += i386-gcc
-    SUBDIR += i386-xtoolchain-gcc
     SUBDIR += ice
     SUBDIR += ice37
     SUBDIR += icestorm
@@ -1531,10 +1525,6 @@
     SUBDIR += mingw32-pdcurses
     SUBDIR += mingw32-pthreads
     SUBDIR += mingw32-zlib
-    SUBDIR += mips-gcc
-    SUBDIR += mips-xtoolchain-gcc
-    SUBDIR += mips64-gcc
-    SUBDIR += mips64-xtoolchain-gcc
     SUBDIR += mir-core
     SUBDIR += mk-configure
     SUBDIR += mm
@@ -4009,8 +3999,6 @@
     SUBDIR += pmdk
     SUBDIR += poco
     SUBDIR += popt
-    SUBDIR += powerpc64-gcc
-    SUBDIR += powerpc64-xtoolchain-gcc
     SUBDIR += poxml
     SUBDIR += ppl
     SUBDIR += pprof
@@ -6851,8 +6839,6 @@
     SUBDIR += sope
     SUBDIR += sope2
     SUBDIR += sord
-    SUBDIR += sparc64-gcc
-    SUBDIR += sparc64-xtoolchain-gcc
     SUBDIR += spark
     SUBDIR += sparsehash
     SUBDIR += spatialindex
