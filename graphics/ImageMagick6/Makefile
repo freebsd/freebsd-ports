@@ -32,8 +32,7 @@ COMMENT=	Image processing tools (legacy version)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libltdl.so:devel/libltdl	\
-		libavutil.so:multimedia/ffmpeg
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 TESTS_DEPENDS=	gsfonts>=0:print/gsfonts
 
@@ -63,7 +62,7 @@ SAMPLE_FILES=	coder.xml colors.xml delegates.xml log.xml magic.xml mime.xml \
 PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFTW FONTCONFIG FPX FREETYPE \
+OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFMPEG FFTW FONTCONFIG FPX FREETYPE \
 		GRAPHVIZ GSLIB HEIF JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES \
 		OPENEXR OPENMP PANGO PDF PERL PNG RAQM SVG TESTS TIFF WEBP WMF \
 		THREADS X11 16BIT_PIXEL HDRI RAW
@@ -86,6 +85,8 @@ PLIST_SUB+=		QBIT=${_QBIT}
 # Produce BZip compressed MIFF images
 BZIP2_DESC=		bzip2 compressed MIFF images
 BZIP2_CONFIGURE_WITH=	bzlib
+
+FFMPEG_DESC=		Video CODEC support from FFmpeg
 
 FFTW_CONFIGURE_WITH=	fftw
 FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
@@ -263,6 +264,11 @@ PLIST_SUB+=		DJVU=""
 .else
 CONFIGURE_ARGS+=	--without-djvu
 PLIST_SUB+=		DJVU="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MFFMPEG}
+BUILD_DEPENDS+=		ffmpeg:multimedia/ffmpeg
+RUN_DEPENDS+=		ffmpeg:multimedia/ffmpeg
 .endif
 
 .if ${PORT_OPTIONS:MGSLIB}

@@ -32,8 +32,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl	\
-		libzip.so:archivers/libzip	\
-		libavutil.so:multimedia/ffmpeg
+		libzip.so:archivers/libzip
 
 TESTS_DEPENDS=	gsfonts>=0:print/gsfonts
 
@@ -62,7 +61,7 @@ SAMPLE_FILES=	colors.xml delegates.xml log.xml mime.xml policy.xml \
 PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFTW FONTCONFIG FPX FREETYPE \
+OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFMPEG FFTW FONTCONFIG FPX FREETYPE \
 		GRAPHVIZ GSLIB JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES \
 		OPENEXR OPENMP PANGO PDF PERL PNG RAQM SVG TESTS TIFF WEBP WMF \
 		THREADS X11 16BIT_PIXEL HDRI HEIF RAW
@@ -72,6 +71,7 @@ OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FREETYPE \
 
 DJVU_DESC=		DJVU format support (needs THREADS)
 GSLIB_DESC=		libgs (Postscript SHLIB) support
+FFMPEG_DESC=		VIDEO codec support as FFmpeg
 TESTS_DESC=		Run bundled self-tests after build
 #SIMD_CONFIGURE_WITH=	gcc-arch
 CONFIGURE_ARGS+=	--without-gcc-arch
@@ -300,6 +300,11 @@ USES+=		ghostscript
 
 .if ${PORT_OPTIONS:MPDF} || ${PORT_OPTIONS:MGSLIB}
 RUN_DEPENDS+=	gsfonts>=0:print/gsfonts
+.endif
+
+.if ${PORT_OPTIONS:MFFMPEG}
+BUILD_DEPENDS+=		ffmpeg:multimedia/ffmpeg
+RUN_DEPENDS+=		ffmpeg:multimedia/ffmpeg
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
