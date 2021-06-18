@@ -14,6 +14,7 @@
     SUBDIR += biolibc
     SUBDIR += bioparser
     SUBDIR += biosoup
+    SUBDIR += biostar-tools
     SUBDIR += bolt-lmm
     SUBDIR += bowtie
     SUBDIR += bowtie2
