@@ -21,7 +21,6 @@
     SUBDIR += cless
     SUBDIR += cnprint
     SUBDIR += dictd-database
-    SUBDIR += docproj
     SUBDIR += enscript
     SUBDIR += eterm
     SUBDIR += fandol
