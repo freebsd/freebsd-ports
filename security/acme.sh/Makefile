@@ -1,5 +1,6 @@
 PORTNAME=	acme.sh
 PORTVERSION=	2.9.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -39,6 +40,9 @@ SUB_FILES=	pkg-message
 post-patch-IDN-on:
 	${REINPLACE_CMD} -e 's|^ *idn |      idn2 |'\
 		-e 's|_exists idn|_exists idn2|' ${WRKSRC}/acme.sh
+
+post-patch-EXAMPLES-on:
+	${REINPLACE_CMD} -e 's|sed -i "|sed -i bak "|' ${WRKSRC}/dnsapi/dns_nsd.sh
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
