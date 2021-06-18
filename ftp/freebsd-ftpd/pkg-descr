@@ -1,9 +1,4 @@
-git filter-repo is a versatile tool for rewriting history, which
-includes capabilities I have not found anywhere else. It roughly falls
-into the same space of tool as git filter-branch but without the
-capitulation-inducing poor performance, with far more capabilities,
-and with a design that scales usability-wise beyond trivial rewriting
-cases. git filter-repo is now recommended by the git project instead of
-git filter-branch.
+FreeBSD-ftpd: This is/was FreeBSD libexec/ftpd prior to its removal in
+FreeBSD-14.
 
-WWW: https://github.com/newren/git-filter-repo
+WWW: https://github.com/cschuber/freebsd-ftpd-repo
