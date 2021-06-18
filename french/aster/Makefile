@@ -12,7 +12,6 @@ LICENSE=	GPLv2
 
 NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc
 NOT_FOR_ARCHS_REASON=	ARG_MAX is too small for Code_Aster on 32 bits systems
-BROKEN=	${PYTHON_CMD}-config should honor --embed
 
 #-----------------------------------------------------------------------
 # You may define these options:
@@ -20,14 +19,9 @@ BROKEN=	${PYTHON_CMD}-config should honor --embed
 # - WITH_ZSH or WITH_BASH or WITH_KSH: select a shell among
 #			zsh (default), bash or ksh;
 # - WITH_ED: select an editor accepting '-display' (e.g. gvim, nedit);
-# - WITH_ATLAS: replace blas;
-# - WITH_BLAS: don't link with atlas, even if present, but with blas;
-#			(blas might be slower, but is lighter)
 # - WITHOUT_ASTK_CLI: won't use the GUI from this machine;
 # - WITHOUT_GMSH: don't install GMSH (a mesh generator);
 # - WITHOUT_GRACE: don't install Grace (used to create 2D graph);
-# - WITHOUT_MACR_RECAL: don't install Numerical Python
-#			(required by the macro MACR_RECAL);
 # - WITH_MUMPS: install the interface between Code_Aster and MUMPS (experimental)
 #
 #-----------------------------------------------------------------------
@@ -52,17 +46,11 @@ RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:shells/${SHIADEP}	\
 		${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
 
-USES=		bison fortran gettext python:3.6+ qt:5 tk
+USES=		bison blaslapack:openblas fortran gettext python:3.6+ qt:5 tk
 USE_BINUTILS=	yes
 USE_QT=		linguisttools_build
 
-CONFLICTS_BUILD=${PYTHON_PKGNAMEPREFIX}cysignals-1.*
-
-.if defined(WITH_ATLAS)
-USES+=		blaslapack:atlas
-.else
-USES+=		blaslapack:netlib
-.endif
+#CONFLICTS_BUILD=${PYTHON_PKGNAMEPREFIX}cysignals-1.*
 
 HAS_CONFIGURE=	yes
 MAKE_ENV=	INCLUDES="${LOCALBASE}/include"	\
@@ -129,8 +117,8 @@ PLIST_SUB+=	GRACE=""
 .else
 PLIST_SUB+=	GRACE="@comment "
 .endif
-.if !defined(WITHOUT_MACR_RECAL)
-RUN_DEPENDS+=	${PYNUMPY}
+.if defined(WITH_BOOST)
+LIB_DEPENDS+=	${PY_BOOST}
 .endif
 
 .if !defined(WITH_MPI)
@@ -210,7 +198,7 @@ v_ifdef=	${OPSYS:tu}
 SHELL_INSTALL_ASTER=	${LOCALBASE}/bin/${SHIA}
 tcl_dir=	${LOCALBASE}
 hdf_dir=	${LOCALBASE}
-lib_math=	"-L${LOCALBASE}/lib ${BLASLIB} ${LAPACKLIB} ${ATLASLIB} -lscotch -lscotcherr"
+lib_math=	"-L${LOCALBASE}/lib ${BLASLIB} ${LAPACKLIB} -lscotch -lscotcherr"
 
 LASTKDIR?=	${PORTNAME}/ASTK/ASTK_CLIENT
 ASTKDIR=	${LOCALBASE}/${LASTKDIR}
@@ -233,10 +221,6 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|/bin/bash|${SHELL_INSTALL_ASTER}|' ${WRKSRC}/${sh}
 .endfor
 	${REINPLACE_CMD} -e 's|%%PYTHON_ABIVER%%|${PYTHON_ABIVER}|' ${WRKSRC}/setup.py
-.if defined(WITH_ATLAS)
-	${REINPLACE_CMD} -e "s|cfg\['BLASLIB'\]|cfg['BLASLIB'], cfg['ATLASLIB']|"	\
-		${WRKSRC}/products.py
-.endif
 	${ECHO_CMD} "_install_hdf5 = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_med = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_tcl = False"			>> ${WRKSRC}/setup.cfg
@@ -298,8 +282,10 @@ pre-configure:
 	${ECHO_CMD} "HOME_HDF='${hdf_dir}'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_MED='${LOCALBASE}'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_TCL_TK='${tcl_dir}'"			>> ${WRKSRC}/setup.cfg
-.if defined(WITH_ATLAS)
-	${ECHO_CMD} "ATLASLIB='${_ATLASLIB}'"			>> ${WRKSRC}/setup.cfg
+.if defined(WITH_BOOST)
+	${ECHO_CMD} "HOME_BOOST='${LOCALBASE}'"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "LIBPATH_BOOST='${LOCALBASE}/lib'"		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "LIBNAME_BOOST='${PY_BOOST_LIB}'"		>> ${WRKSRC}/setup.cfg
 .endif
 	${ECHO_CMD} "BLASLIB='${_BLASLIB}'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "LAPACKLIB='lapack'"			>> ${WRKSRC}/setup.cfg

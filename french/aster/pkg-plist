@@ -3712,6 +3712,7 @@ aster/%%VE%%/lib/aster/code_aster/__init__.py
 aster/%%VE%%/lib/aster/code_aster/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 aster/%%VE%%/lib/aster/code_aster/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 aster/%%VE%%/lib/aster/elem.1
+aster/%%VE%%/lib/aster/libAsterMFrOfficial.so
 aster/%%VE%%/lib/aster/pkginfo.py
 aster/%%VE%%/profile.sh
 aster/%%VE%%/%%DATADIR%%/CTestTestfile.cmake
