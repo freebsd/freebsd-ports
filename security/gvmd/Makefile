@@ -1,6 +1,5 @@
 PORTNAME=	gvmd
-DISTVERSION=	20.8.1
-PORTREVISION=	1
+DISTVERSION=	21.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -38,11 +37,14 @@ GROUPS=		${USERS}
 
 USE_RC_SUBR=	gvmd
 
-SHEBANG_FILES=	tools/gvm-lsc-rpm-creator.sh \
-		tools/gvm-lsc-deb-creator.sh \
+SHEBANG_FILES=	tools/gvm-lsc-rpm-creator \
+		tools/gvm-lsc-deb-creator \
 		src/alert_methods/TippingPoint/report-convert.py \
 		src/alert_methods/SCP/alert \
 		src/alert_methods/SMB/alert
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/src/manage_sql.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/lib/gvm/gvmd/gnupg

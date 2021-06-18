@@ -2,8 +2,8 @@ bin/gvm-manage-certs
 @sample etc/gvm/gvmd_log.conf.sample
 @sample etc/gvm/pwpolicy.conf.sample
 lib/libgvm-pg-server.so
-lib/libgvm-pg-server.so.20
-lib/libgvm-pg-server.so.20.08.1
+lib/libgvm-pg-server.so.21
+lib/libgvm-pg-server.so.21.4.0
 sbin/greenbone-certdata-sync
 sbin/greenbone-feed-sync
 sbin/greenbone-scapdata-sync
@@ -12,8 +12,9 @@ share/doc/gvm/example-gvm-manage-certs.conf
 share/doc/gvm/html/gmp.html
 share/gvm/cert/cert_bund_getbyname.xsl
 share/gvm/cert/dfn_cert_getbyname.xsl
-share/gvm/gvm-lsc-deb-creator.sh
-share/gvm/gvm-lsc-rpm-creator.sh
+share/gvm/gvm-lsc-deb-creator
+share/gvm/gvm-lsc-exe-creator
+share/gvm/gvm-lsc-rpm-creator
 share/gvm/gvmd/global_alert_methods/159f79a5-fce8-4ec5-aa49-7d17a77739a3/alert
 share/gvm/gvmd/global_alert_methods/2db07698-ec49-11e5-bcff-28d24461215b/alert
 share/gvm/gvmd/global_alert_methods/4a398d42-87c0-11e5-a1c0-28d24461215b/alert
@@ -33,6 +34,7 @@ share/gvm/gvmd/global_schema_formats/787a4a18-dabc-11df-9486-002264764cea/genera
 share/gvm/gvmd/global_schema_formats/787a4a18-dabc-11df-9486-002264764cea/rnc.xsl
 share/gvm/gvmd/global_schema_formats/d6cf255e-947c-11e1-829a-406186ea4fc5/GMP.xsl
 share/gvm/gvmd/global_schema_formats/d6cf255e-947c-11e1-829a-406186ea4fc5/generate
+share/gvm/gvmd/template.nsis
 share/gvm/gvmd/wizards/delete_task_deep.xml
 share/gvm/gvmd/wizards/get_tasks_deep.xml
 share/gvm/gvmd/wizards/modify_task.xml

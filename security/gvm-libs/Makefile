@@ -1,7 +1,6 @@
 PORTNAME=	gvm
-DISTVERSION=	20.8.1
+DISTVERSION=	21.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	-libs
 
@@ -18,6 +17,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libssh.so:security/libssh \
 		libhiredis.so:databases/hiredis \
+		libnet.so:net/libnet \
 		libgcrypt.so:security/libgcrypt
 RUN_DEPENDS=	doxygen>0:devel/doxygen
 

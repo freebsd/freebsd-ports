@@ -1,7 +1,6 @@
 PORTNAME=	greenbone-security-assistant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	20.8.1
-PORTREVISION=	1
+DISTVERSION=	21.4.0
 CATEGORIES=	security
 MASTER_SITES=   LOCAL/acm/gsa/:yarn_cache
 DISTFILES=	${PORTNAME}-cache${EXTRACT_SUFX}:yarn_cache
@@ -34,6 +33,8 @@ USERS=		gvm
 GROUPS=		${USERS}
 
 USE_RC_SUBR=	gsad
+
+LDFLAGS+=	-lm
 
 ETCDIR=		${PREFIX}/etc/gvm
 
