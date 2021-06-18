@@ -38,6 +38,7 @@
     SUBDIR += cinnamon-translations
     SUBDIR += cldr-emoji-annotation
     SUBDIR += clex
+    SUBDIR += clifm
     SUBDIR += cloc
     SUBDIR += clpbar
     SUBDIR += cmatrix
