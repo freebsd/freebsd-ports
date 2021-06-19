@@ -1,7 +1,7 @@
 PORTNAME=	zola
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -133,7 +133,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		levenshtein_automata-0.1.1 \
-		lexical-core-0.7.4 \
+		lexical-core-0.7.6 \
 		libc-0.2.82 \
 		lindera-0.3.5 \
 		lindera-core-0.3.3 \
