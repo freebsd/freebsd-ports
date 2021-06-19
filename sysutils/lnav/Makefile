@@ -11,6 +11,7 @@ COMMENT=	Terminal based log file navigator
 LICENSE=	BSD2CLAUSE
 
 BROKEN_i386=	fails to build: error: non-constant-expression cannot be narrowed
+BROKEN_powerpc=	fails to build: error: non-constant-expression cannot be narrowed
 
 LIB_DEPENDS=	libpcrecpp.so:devel/pcre
 
