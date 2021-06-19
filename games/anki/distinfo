@@ -1,4 +1,4 @@
-TIMESTAMP = 1603538538
+TIMESTAMP = 1624129001
 SHA256 (python/anki-npm-cache-2.1.35.tar.gz) = 2168a9374715882affbaaa78d2775bc365f23cab6ecf3e74154936e128d01246
 SIZE (python/anki-npm-cache-2.1.35.tar.gz) = 51533006
 SHA256 (python/rust/crates/addr2line-0.13.0.tar.gz) = 1b6a2d3371669ab3ca9797670853d61402b03d0b4b9ebf33d677dfa720203072
@@ -199,8 +199,8 @@ SHA256 (python/rust/crates/kernel32-sys-0.2.2.tar.gz) = 7507624b29483431c0ba2d82
 SIZE (python/rust/crates/kernel32-sys-0.2.2.tar.gz) = 24537
 SHA256 (python/rust/crates/lazy_static-1.4.0.tar.gz) = e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646
 SIZE (python/rust/crates/lazy_static-1.4.0.tar.gz) = 10443
-SHA256 (python/rust/crates/lexical-core-0.7.4.tar.gz) = db65c6da02e61f55dae90a0ae427b2a5f6b3e8db09f58d10efab23af92592616
-SIZE (python/rust/crates/lexical-core-0.7.4.tar.gz) = 497535
+SHA256 (python/rust/crates/lexical-core-0.7.6.tar.gz) = 6607c62aa161d23d17a9072cc5da0be67cdfc89d3afb1e8d9c842bebc2525ffe
+SIZE (python/rust/crates/lexical-core-0.7.6.tar.gz) = 494385
 SHA256 (python/rust/crates/libc-0.2.79.tar.gz) = 2448f6066e80e3bfc792e9c98bf705b4b0fc6e8ef5b43e5889aff0eaa9c58743
 SIZE (python/rust/crates/libc-0.2.79.tar.gz) = 511752
 SHA256 (python/rust/crates/libsqlite3-sys-0.18.0.tar.gz) = 1e704a02bcaecd4a08b93a23f6be59d0bd79cd161e0963e9499165a0a35df7bd

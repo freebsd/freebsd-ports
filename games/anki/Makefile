@@ -2,7 +2,7 @@
 
 PORTNAME=	anki
 DISTVERSION=	2.1.35
-PORTREVISION=	9
+PORTREVISION=	10
 # Don't forget to update ${_MY_BUILDHASH}
 CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:npmcache
@@ -170,7 +170,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		js-sys-0.3.45 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
-		lexical-core-0.7.4 \
+		lexical-core-0.7.6 \
 		libc-0.2.79 \
 		libsqlite3-sys-0.18.0 \
 		linked-hash-map-0.5.3 \
