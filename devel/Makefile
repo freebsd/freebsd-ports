@@ -82,6 +82,7 @@
     SUBDIR += R-cran-purrr
     SUBDIR += R-cran-randomForest
     SUBDIR += R-cran-rappdirs
+    SUBDIR += R-cran-rcmdcheck
     SUBDIR += R-cran-registry
     SUBDIR += R-cran-rematch2
     SUBDIR += R-cran-remotes
