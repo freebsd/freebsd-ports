@@ -1,7 +1,7 @@
 PORTNAME=	acmed
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 
 MAINTAINER=	greg@unrelenting.technology
@@ -34,6 +34,7 @@ CARGO_CRATES=	aho-corasick-0.7.14 \
 		bytes-0.5.6 \
 		cc-1.0.61 \
 		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
 		clap-2.33.3 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
@@ -57,7 +58,7 @@ CARGO_CRATES=	aho-corasick-0.7.14 \
 		idna-0.2.0 \
 		itoa-0.4.6 \
 		lazy_static-1.4.0 \
-		lexical-core-0.7.4 \
+		lexical-core-0.7.6 \
 		libc-0.2.79 \
 		log-0.4.11 \
 		maplit-1.0.2 \
