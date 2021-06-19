@@ -3,6 +3,7 @@ bin/ncneofetch
 bin/ncplayer
 bin/nctetris
 bin/notcurses-demo
+bin/notcurses-info
 bin/notcurses-input
 include/ncpp/Cell.hh
 include/ncpp/CellStyle.hh
@@ -37,6 +38,7 @@ include/ncpp/internal/Helpers.hh
 include/ncpp/ncpp.hh
 include/notcurses/direct.h
 include/notcurses/nckeys.h
+include/notcurses/ncseqs.h
 include/notcurses/notcurses.h
 include/notcurses/version.h
 lib/cmake/Notcurses++/Notcurses++Config.cmake
@@ -65,6 +67,7 @@ libdata/pkgconfig/notcurses.pc
 %%MANPAGES%%man/man1/ncplayer.1.gz
 %%MANPAGES%%man/man1/nctetris.1.gz
 %%MANPAGES%%man/man1/notcurses-demo.1.gz
+%%MANPAGES%%man/man1/notcurses-info.1.gz
 %%MANPAGES%%man/man1/notcurses-input.1.gz
 %%MANPAGES%%man/man1/notcurses-tester.1.gz
 %%MANPAGES%%man/man3/notcurses.3.gz
@@ -169,6 +172,7 @@ libdata/pkgconfig/notcurses.pc
 %%DATADIR%%/natasha-blur.png
 %%DATADIR%%/normal.png
 %%DATADIR%%/notcursesIII.mkv
+%%DATADIR%%/onedot.png
 %%DATADIR%%/samoa.avi
 %%DATADIR%%/spaceship.png
 %%DATADIR%%/tetris-background.jpg
