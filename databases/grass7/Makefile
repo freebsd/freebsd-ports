@@ -25,7 +25,6 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.TXT
 
 BROKEN_sparc64=	Does not configure on sparc64
-BROKEN_i386=	Does not configure on i386: Could not determine External PROJ major version
 
 BUILD_DEPENDS=	${PY_NUMPY} \
 		${PYTHON_SITELIBDIR}/six.py:devel/py-six@${PY_FLAVOR}
@@ -135,12 +134,11 @@ ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" && ${OSVERSION} < 1200000
-# clang 7.x and 8.x do not build properly on 11i386
-CPP=		clang-cpp${LLVM_DEFAULT}
-CC=		clang${LLVM_DEFAULT}
-CXX=		clang++${LLVM_DEFAULT}
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+.if ${ARCH} == "i386"
+USE_GCC=	yes
+PLIST_SUB+=	NOTONI386="@comment "
+.else
+PLIST_SUB+=	NOTONI386=""
 .endif
 
 .if !defined (GRASS_INST_DIR)
