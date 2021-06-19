@@ -84,9 +84,11 @@ _USE_PYQT_DEVEL=	core dbus dbussupport help location \
 			designer designerplugin remoteobjects test 
 _USE_PYQT_GRAPHICS=	svg
 _USE_PYQT_LANG=		qml
+_USE_PYQT_LOCATION=	location
 _USE_PYQT_MISC=		demo
 _USE_PYQT_MULTIMEDIA=	multimedia multimediawidgets
 _USE_PYQT_NET=		network networkauth
+_USE_PYQT_POSITIONING=	positioning
 _USE_PYQT_PRINT=	printsupport
 _USE_PYQT_TEXTPROC=	xml xmlpatterns
 _USE_PYQT_WWW=		webchannel webengine webkit webkitwidgets websockets
@@ -100,9 +102,11 @@ _USE_PYQT_ALL=		${_USE_PYQT_COMMS} \
 			${_USE_PYQT_DEVEL} \
 			${_USE_PYQT_GRAPHICS} \
 			${_USE_PYQT_LANG} \
+			${_USE_PYQT_LOCATION} \
 			${_USE_PYQT_MISC} \
 			${_USE_PYQT_MULTIMEDIA} \
 			${_USE_PYQT_NET} \
+			${_USE_PYQT_POSITIONING} \
 			${_USE_PYQT_PRINT} \
 			${_USE_PYQT_TEXTPROC} \
 			${_USE_PYQT_WWW} \
@@ -159,6 +163,7 @@ py-multimediawidgets_DESC=	Python bindings for QtMultimediaWidgets module
 py-network_DESC=		Python bindings for QtNetwork module
 py-networkauth_DESC=		Python bindings for QtNetworkAuth module
 py-opengl_DESC=			Python bindings for QtOpenGL module
+py-positioning_DESC=		Python bindings for QtPositioning module
 py-printsupport_DESC=		Python bindings for Printsupport module
 py-qml_DESC=			Python bindings for Qml module
 py-qscintilla2_DESC=		Python bindings for QScintilla2

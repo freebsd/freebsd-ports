@@ -5030,6 +5030,7 @@
     SUBDIR += py-qt5-designerplugin
     SUBDIR += py-qt5-help
     SUBDIR += py-qt5-location
+    SUBDIR += py-qt5-positioning
     SUBDIR += py-qt5-qscintilla2
     SUBDIR += py-qt5-remoteobjects
     SUBDIR += py-qt5-sip
