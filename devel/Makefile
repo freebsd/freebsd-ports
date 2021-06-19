@@ -4151,6 +4151,7 @@
     SUBDIR += py-azure-mgmt-dns
     SUBDIR += py-azure-mgmt-eventgrid
     SUBDIR += py-azure-mgmt-eventhub
+    SUBDIR += py-azure-mgmt-extendedlocation
     SUBDIR += py-azure-mgmt-hdinsight
     SUBDIR += py-azure-mgmt-imagebuilder
     SUBDIR += py-azure-mgmt-iotcentral
