@@ -1,5 +1,6 @@
 PORTNAME=	waylandpp
 DISTVERSION=	0.2.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org

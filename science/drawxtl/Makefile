@@ -1,5 +1,6 @@
 PORTNAME=	DRAWxtl
 DISTVERSION=	5.5
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://www.lwfinger.com/drawxtl/
 DISTNAME=	${PORTNAME}${DISTVERSION:S/.//}

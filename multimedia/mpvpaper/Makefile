@@ -1,5 +1,6 @@
 PORTNAME=	mpvpaper
 DISTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org

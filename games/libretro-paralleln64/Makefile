@@ -1,5 +1,6 @@
 PORTNAME=	libretro-paralleln64
 PORTVERSION=	0.20210127
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org

@@ -1,5 +1,6 @@
 PORTNAME=	dsbautostart
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://freeshell.de/~mk/download/
 

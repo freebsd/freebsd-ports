@@ -2,6 +2,7 @@
 
 PORTNAME=	libosmesa
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	Off-Screen Mesa implementation of the OpenGL API

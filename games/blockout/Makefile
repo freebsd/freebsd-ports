@@ -2,7 +2,7 @@
 
 PORTNAME=	blockout
 PORTVERSION=	2.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/BlockOut%20${PORTVERSION}/ \
 		http://www.stasyan.com/devel/distfiles/

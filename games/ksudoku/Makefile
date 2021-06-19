@@ -1,5 +1,6 @@
 PORTNAME=	ksudoku
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

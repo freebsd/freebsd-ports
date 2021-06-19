@@ -2,7 +2,7 @@
 
 PORTNAME=	bino
 PORTVERSION=	1.6.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	https://download.savannah.nongnu.org/releases/bino/
 

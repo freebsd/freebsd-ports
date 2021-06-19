@@ -2,6 +2,7 @@
 
 PORTNAME=	waffle
 DISTVERSION=	1.6.1-15
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 # Wayland xdg-shell support (to run on sway/wayfire/etc. that have removed wl-shell)

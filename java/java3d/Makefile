@@ -2,7 +2,7 @@
 
 PORTNAME=	java3d
 PORTVERSION=	1.5.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	java graphics games devel
 MASTER_SITES=	https://sites.google.com/site/daemonwizard/
 

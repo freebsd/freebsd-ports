@@ -2,6 +2,7 @@
 
 PORTNAME=	limereport
 PORTVERSION=	1.5.35
+PORTREVISION=	1
 CATEGORIES=	print
 
 MAINTAINER=	svvord@soft-wizard.ru

@@ -1,6 +1,7 @@
 PORTNAME=	tiled
 PORTVERSION=	1.7.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics editors games
 
 MAINTAINER=	amdmi3@FreeBSD.org

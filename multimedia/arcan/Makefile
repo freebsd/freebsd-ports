@@ -1,6 +1,6 @@
 PORTNAME=	arcan
 DISTVERSION=	0.6.0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

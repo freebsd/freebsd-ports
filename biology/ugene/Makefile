@@ -2,6 +2,7 @@
 
 PORTNAME=	ugene
 PORTVERSION=	38.1
+PORTREVISION=	1
 CATEGORIES=	biology science
 
 MAINTAINER=	h2+fbsdports@fsfe.org

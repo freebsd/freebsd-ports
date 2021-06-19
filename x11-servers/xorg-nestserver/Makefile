@@ -1,6 +1,7 @@
 # Created by: Eric Anholt <anholt@FreeBSD.org>
 
 PORTNAME=	xorg-nestserver
+PORTREVISION=	1
 PORTEPOCH=	2
 
 COMMENT=	Nesting X server from X.Org

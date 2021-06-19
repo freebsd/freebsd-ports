@@ -3,6 +3,7 @@
 PORTNAME=	visualization.shadertoy
 PORTVERSION=	2.3.0
 DISTVERSIONSUFFIX=	-Matrix
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com

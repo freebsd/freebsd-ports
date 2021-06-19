@@ -1,5 +1,6 @@
 PORTNAME=	openmsx
 PORTVERSION=	16.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	menelkir@itroll.org

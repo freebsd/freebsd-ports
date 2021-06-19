@@ -2,6 +2,7 @@
 
 PORTNAME=	cinnamon-session
 PORTVERSION=	4.8.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 

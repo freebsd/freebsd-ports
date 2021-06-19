@@ -2,6 +2,7 @@
 
 PORTNAME=	residualvm
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	yerenkow@gmail.com

@@ -2,7 +2,7 @@
 
 PORTNAME=	kobodeluxe
 PORTVERSION=	0.5.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	http://olofson.net/kobodl/download/ \
 		http://mirror.amdmi3.ru/distfiles/

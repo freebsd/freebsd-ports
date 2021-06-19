@@ -2,7 +2,7 @@
 
 PORTNAME=	medit
 PORTVERSION=	2012.02.05
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science graphics
 MASTER_SITES=	https://www.ljll.math.upmc.fr/~frey/ftp/archives/
 DISTFILES=	${SOURCETARB} ${LIBTARBALL}

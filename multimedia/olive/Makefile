@@ -1,5 +1,6 @@
 PORTNAME=	olive
 DISTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-video-editor
 

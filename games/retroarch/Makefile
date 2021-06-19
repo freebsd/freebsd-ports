@@ -3,6 +3,7 @@
 PORTNAME=	RetroArch
 PORTVERSION=	1.9.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	games emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

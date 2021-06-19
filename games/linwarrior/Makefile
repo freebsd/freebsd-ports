@@ -1,6 +1,6 @@
 PORTNAME=	linwarrior
 PORTVERSION=	20100320
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.hackcraft.de/games/linwarrior_3d/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/

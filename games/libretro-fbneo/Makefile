@@ -1,5 +1,6 @@
 PORTNAME=	libretro-fbneo
 PORTVERSION=	0.20210218
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org

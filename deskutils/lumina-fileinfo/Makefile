@@ -3,6 +3,7 @@
 PORTNAME=	lumina-fileinfo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	lbartoletti@FreeBSD.org

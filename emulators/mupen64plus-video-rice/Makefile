@@ -1,6 +1,6 @@
 # Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-video-rice
 
 COMMENT=	The rice graphics plugin for Mupen64plus

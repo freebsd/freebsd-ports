@@ -2,6 +2,7 @@
 
 PORTNAME=	vm
 DISTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://gitlab.com/OpenMusicKontrollers/vm.lv2/-/archive/${DISTVERSION}/
 DISTNAME=	vm.lv2-${DISTVERSION}

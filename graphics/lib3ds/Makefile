@@ -2,7 +2,7 @@
 
 PORTNAME=	lib3ds
 PORTVERSION=	1.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/lib3ds/ \
 		http://pkgs.fedoraproject.org/repo/pkgs/lib3ds/${DISTNAME}${EXTRACT_SUFX}/2572f7b0f29b591d494c1a0658b35c86/

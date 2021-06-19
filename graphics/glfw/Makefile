@@ -2,6 +2,7 @@
 
 PORTNAME=	glfw
 PORTVERSION=	3.3.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/glfw/glfw/releases/download/${PORTVERSION}/
 

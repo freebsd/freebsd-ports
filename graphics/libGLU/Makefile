@@ -2,6 +2,7 @@
 
 PORTNAME=	libGLU
 PORTVERSION=	9.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/glu/ \
 		https://mesa.freedesktop.org/archive/glu/

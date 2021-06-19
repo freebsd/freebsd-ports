@@ -1,5 +1,6 @@
 PORTNAME=	mlt
 DISTVERSION=	6.26.1
+PORTREVISION=	1
 # Don't use GitHub "fake" downloads that are auto-generated from a
 # tag; the project uploads tarballs for each release.
 MASTER_SITES=	https://github.com/mltframework/${PORTNAME}/releases/download/v${DISTVERSION}/

@@ -2,6 +2,7 @@
 
 PORTNAME=	quiterss
 PORTVERSION=	0.19.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://quiterss.org/files/${PORTVERSION}_/
 DISTNAME=	QuiteRSS-${PORTVERSION}-src

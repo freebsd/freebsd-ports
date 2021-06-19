@@ -2,7 +2,7 @@
 
 PORTNAME=	tomatoes
 PORTVERSION=	1.55
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 DISTFILES=	${PORTNAME}-linux-src-${PORTVERSION}${EXTRACT_SUFX} \

@@ -2,6 +2,7 @@
 
 PORTNAME=	simsu
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/ \
 		https://mirror.amdmi3.ru/distfiles/

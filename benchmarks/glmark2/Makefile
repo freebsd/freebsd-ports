@@ -2,7 +2,7 @@
 
 PORTNAME=	glmark2
 PORTVERSION=	2021.02
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

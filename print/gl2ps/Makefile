@@ -2,6 +2,7 @@
 
 PORTNAME=	gl2ps
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.geuz.org/gl2ps/src/
 

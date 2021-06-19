@@ -1,4 +1,5 @@
 PORTNAME=	xephyr
+PORTREVISION=	1
 
 COMMENT=	X server from X.Org based on kdrive
 

@@ -1,5 +1,6 @@
 PORTNAME=	libretro-fbalpha
 PORTVERSION=	0.20200504
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org

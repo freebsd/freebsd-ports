@@ -2,7 +2,7 @@
 
 PORTNAME=	swftools
 PORTVERSION=	0.9.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.swftools.org/ \
 		http://www.c-s.li/ports/

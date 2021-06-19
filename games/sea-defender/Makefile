@@ -1,6 +1,6 @@
 PORTNAME=	sea-defender
 PORTVERSION=	0.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/:icon \
 		SF/nemysisfreebsdp/:icon

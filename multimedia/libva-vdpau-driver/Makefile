@@ -1,6 +1,6 @@
 PORTNAME=	libva-vdpau-driver
 PORTVERSION=	0.7.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/${PORTNAME}/
 

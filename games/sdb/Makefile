@@ -1,6 +1,6 @@
 PORTNAME=	sdb
 PORTVERSION=	1.0.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	http://stage.gamecreation.org/shotgund/ \
 		https://mirror.amdmi3.ru/distfiles/

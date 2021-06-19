@@ -3,6 +3,7 @@
 PORTNAME=	simavr
 PORTVERSION=	1.7
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel emulators
 
 MAINTAINER=	felix@palmen-it.de

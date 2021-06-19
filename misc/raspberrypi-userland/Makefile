@@ -2,6 +2,7 @@
 
 PORTNAME=	raspberrypi-userland
 PORTVERSION=	20161026
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	ports@FreeBSD.org

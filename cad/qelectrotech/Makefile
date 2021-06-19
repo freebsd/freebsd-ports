@@ -2,6 +2,7 @@
 
 PORTNAME=	qelectrotech
 DISTVERSION=	0.7.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://git.tuxfamily.org/qet/qet.git/snapshot/

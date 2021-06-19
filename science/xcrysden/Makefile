@@ -1,6 +1,6 @@
 PORTNAME=	xcrysden
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://www.xcrysden.org/download/
 

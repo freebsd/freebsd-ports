@@ -1,3 +1,4 @@
+PORTREVISION=	1
 PKGNAMESUFFIX=	-qt5
 
 COMMENT=	Qt5 modules of uim input method

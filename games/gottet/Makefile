@@ -3,6 +3,7 @@
 PORTNAME=	gottet
 PORTVERSION=	1.1.9
 DISTVERSIONSUFFIX=	-src
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/gottet/
 

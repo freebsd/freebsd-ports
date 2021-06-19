@@ -2,7 +2,7 @@
 
 PORTNAME=	glexcess
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.glexcess.com/files/
 DISTNAME=	${PORTNAME}

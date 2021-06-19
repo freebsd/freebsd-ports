@@ -2,6 +2,7 @@
 
 PORTNAME?=	xorg-server
 PORTVERSION?=	1.20.11
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver

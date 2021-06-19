@@ -2,6 +2,7 @@
 
 PORTNAME=	znotes
 DISTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	rigoletto@FreeBSD.org

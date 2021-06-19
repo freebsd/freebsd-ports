@@ -1,5 +1,6 @@
 PORTNAME=	tetzle
 PORTVERSION=	2.1.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/tetzle/ \
 		https://mirror.amdmi3.ru/distfiles/

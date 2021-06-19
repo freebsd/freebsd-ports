@@ -1,6 +1,7 @@
 PORTNAME=	qgnomeplatform
 DISTVERSION=	0.6.1-8
 DISTVERSIONSUFFIX=	-g53d7924
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	greg@unrelenting.technology

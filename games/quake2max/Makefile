@@ -2,7 +2,7 @@
 
 PORTNAME=	quake2max
 PORTVERSION=	0.45
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ LOCAL/danfe
 DISTNAME=	Quake2maX_${PORTVERSION}-src_unix

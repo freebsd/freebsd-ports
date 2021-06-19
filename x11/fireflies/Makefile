@@ -2,7 +2,7 @@
 
 PORTNAME=	fireflies
 PORTVERSION=	2.07
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	http://somewhere.fscked.org/proj/fireflies/files/
 

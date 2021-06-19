@@ -1,5 +1,6 @@
 PORTNAME=	geany-plugin-multiterm
 PORTVERSION=	${GEANY_VER}
+PORTREVISION=	1
 PKGNAMESUFFIX=	-gtk2
 CATEGORIES=	devel
 

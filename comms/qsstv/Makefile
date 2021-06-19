@@ -1,6 +1,6 @@
 PORTNAME=	qsstv
 PORTVERSION=	9.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://users.telenet.be/on4qz/qsstv/downloads/ \
 		LOCAL/shurd

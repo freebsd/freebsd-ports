@@ -1,4 +1,5 @@
 PORTNAME=	gui
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel python
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,7 +10,7 @@ PYQT_DIST=	yes
 
 USES=		gl python:3.5+ pyqt:5 qt:5
 USE_GL=		gl
-USE_PYQT=	sip_build core_run 
+USE_PYQT=	sip_build core_run
 USE_PYTHON=	concurrent flavors py3kplist
 USE_QT=		core gui qmake_build imageformats_run
 

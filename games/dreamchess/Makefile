@@ -1,5 +1,6 @@
 PORTNAME=	dreamchess
 DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
