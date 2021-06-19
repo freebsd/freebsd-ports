@@ -1,7 +1,7 @@
 PORTNAME=	pastel
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -49,7 +49,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		itoa-0.4.5 \
 		js-sys-0.3.39 \
 		lazy_static-1.4.0 \
-		lexical-core-0.6.2 \
+		lexical-core-0.6.8 \
 		libc-0.2.70 \
 		log-0.4.8 \
 		maybe-uninit-2.0.0 \

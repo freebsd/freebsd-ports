@@ -1,4 +1,4 @@
-TIMESTAMP = 1590675784
+TIMESTAMP = 1624128464
 SHA256 (rust/crates/aho-corasick-0.7.10.tar.gz) = 8716408b8bc624ed7f65d223ddb9ac2d044c0547b6fa4b0d554f3a9540496ada
 SIZE (rust/crates/aho-corasick-0.7.10.tar.gz) = 111039
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -63,8 +63,8 @@ SHA256 (rust/crates/js-sys-0.3.39.tar.gz) = fa5a448de267e7358beaf4a5d849518fe9a0
 SIZE (rust/crates/js-sys-0.3.39.tar.gz) = 67247
 SHA256 (rust/crates/lazy_static-1.4.0.tar.gz) = e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646
 SIZE (rust/crates/lazy_static-1.4.0.tar.gz) = 10443
-SHA256 (rust/crates/lexical-core-0.6.2.tar.gz) = d7043aa5c05dd34fb73b47acb8c3708eac428de4545ea3682ed2f11293ebd890
-SIZE (rust/crates/lexical-core-0.6.2.tar.gz) = 459604
+SHA256 (rust/crates/lexical-core-0.6.8.tar.gz) = 233853dfa6b87c7c00eb46a205802069263ab27e16b6bdd1b08ddf91a855e30c
+SIZE (rust/crates/lexical-core-0.6.8.tar.gz) = 498108
 SHA256 (rust/crates/libc-0.2.70.tar.gz) = 3baa92041a6fec78c687fa0cc2b3fae8884f743d672cf551bed1d6dac6988d0f
 SIZE (rust/crates/libc-0.2.70.tar.gz) = 472909
 SHA256 (rust/crates/log-0.4.8.tar.gz) = 14b6052be84e6b71ab17edffc2eeabf5c2c3ae1fdb464aae35ac50c67a44e1f7
