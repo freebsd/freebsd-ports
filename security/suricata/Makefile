@@ -108,6 +108,11 @@ TESTS_CONFIGURE_ENABLE=		unittests
 pre-patch:
 	@${CP} ${FILESDIR}/ax_check_compile_flag.m4 ${WRKSRC}/m4
 
+post-patch:
+# Disable vendor checksums
+	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
+		${WRKSRC}/rust/vendor/*/.cargo-checksum.json
+
 post-patch-PYTHON-on:
 	@${REINPLACE_CMD} -e "/AC_PATH_PROGS.*HAVE_PYTHON/ s/python[^,]*,/${PYTHON_VERSION},/g" \
 		${WRKSRC}/configure.ac
