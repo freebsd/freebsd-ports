@@ -1,7 +1,7 @@
 PORTNAME=	vector
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 
 MAINTAINER=	greg@unrelenting.technology
@@ -83,6 +83,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		cc-1.0.50 \
 		cexpr-0.3.6 \
 		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
 		chrono-0.4.11 \
 		cidr-utils-0.4.2 \
 		clang-sys-0.28.1 \
@@ -214,7 +215,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		lazycell-1.2.1 \
 		leb128-0.2.4 \
 		leveldb-sys-2.0.5 \
-		lexical-core-0.7.4 \
+		lexical-core-0.7.6 \
 		libc-0.2.69 \
 		libgit2-sys-0.12.7+1.0.0 \
 		libloading-0.5.2 \
