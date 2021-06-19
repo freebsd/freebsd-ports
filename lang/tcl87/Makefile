@@ -59,7 +59,7 @@ CONFIGURE_ARGS=	--enable-shared \
 
 TCL_VERSION=	8.7a5
 TCL_VER=	8.7
-TCL_RC=		rc3
+TCL_RC=
 SHORT_TCL_VER=	${TCL_VER:S/.//}
 MAN_SUFFIX=	${PKGBASE}
 
