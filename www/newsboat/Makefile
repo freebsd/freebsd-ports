@@ -2,7 +2,7 @@
 
 PORTNAME=	newsboat
 PORTVERSION=	2.22.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://newsboat.org/releases/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -47,6 +47,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		byteorder-1.3.4 \
 		cc-1.0.60 \
 		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		clap-2.33.3 \
 		codespan-reporting-0.9.5 \
@@ -64,7 +65,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		gimli-0.22.0 \
 		idna-0.2.0 \
 		lazy_static-1.4.0 \
-		lexical-core-0.7.4 \
+		lexical-core-0.7.6 \
 		libc-0.2.81 \
 		libz-sys-1.1.2 \
 		link-cplusplus-1.0.4 \
