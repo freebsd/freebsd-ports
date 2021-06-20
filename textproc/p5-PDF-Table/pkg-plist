@@ -1,2 +1,11 @@
 %%SITE_PERL%%/PDF/Table.pm
 %%PERL5_MAN3%%/PDF::Table.3.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/010_fonts.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PDFpref
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/border_rules.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chess.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/colspan.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/header.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/header_repeat_with_cell_props.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/row_height.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample1.pl
