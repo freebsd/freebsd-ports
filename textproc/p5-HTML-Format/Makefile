@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-Font-AFM>=0:x11-fonts/p5-Font-AFM \
 		p5-HTML-Tree>=3.15:www/p5-HTML-Tree
 TEST_DEPENDS=	p5-File-Slurper>=0:devel/p5-File-Slurper
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
