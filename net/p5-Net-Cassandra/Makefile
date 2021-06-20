@@ -17,8 +17,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
 		p5-MooseX-StrictConstructor>=0:devel/p5-MooseX-StrictConstructor
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
