@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 
-USES=		cmake gnome
+USES=		cmake gnome localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	analogdevicesinc
 USE_GNOME=	libxml2
