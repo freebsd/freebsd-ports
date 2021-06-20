@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	octicons
-PORTVERSION=	14.2.1
+PORTVERSION=	14.2.2
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
