@@ -76,6 +76,37 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0e561c06-d13a-11eb-92be-0800273f11ea">
+    <topic>gitea -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.14.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea Team reports for release 1.14.3:</p>
+	<blockquote cite="https://blog.gitea.io/2021/06/gitea-1.14.3-is-released/">
+	  <ul>
+	    <li>Encrypt migration credentials at rest (<a href="https://github.com/go-gitea/gitea/pull/15895">#15895</a>) (<a href="https://github.com/go-gitea/gitea/pull/16187">#16187</a>)</li>
+            <li>Only check access tokens if they are likely to be tokens (<a href="https://github.com/go-gitea/gitea/pull/16164">#16164</a>) (<a href="https://github.com/go-gitea/gitea/pull/16171">#16171</a>)</li>
+            <li>Add missing SameSite settings for the i_like_gitea cookie (<a href="https://github.com/go-gitea/gitea/pull/16037">#16037</a>) (<a href="https://github.com/go-gitea/gitea/pull/16039">#16039</a>)</li>
+            <li>Fix setting of SameSite on cookies (<a href="https://github.com/go-gitea/gitea/pull/15989">#15989</a>) (<a href="https://github.com/go-gitea/gitea/pull/15991">#15991</a>)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.14.3</url>
+      <freebsdpr>ports/256720</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2021-05-16</discovery>
+      <entry>2021-06-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="afdc7579-d023-11eb-bcad-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
