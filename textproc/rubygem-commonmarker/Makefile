@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	commonmarker
-PORTVERSION=	0.21.2
+PORTVERSION=	0.22.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,6 @@ COMMENT=	Ruby wrapper for libcmark (CommonMark parser)
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-RUN_DEPENDS=	rubygem-ruby-enum>=0.5<1:devel/rubygem-ruby-enum
 
 USES=		gem
 USE_RUBY=	yes
