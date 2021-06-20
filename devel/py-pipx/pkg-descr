@@ -20,4 +20,4 @@ pipx enables you to:
 
 Best of all, pipx runs with regular user permissions.
 
-WWW: https://github.com/pipxproject/pipx
+WWW: https://github.com/pypa/pipx
