@@ -1,5 +1,5 @@
 PORTNAME=	django-redis
-PORTVERSION=	4.12.1
+PORTVERSION=	5.0.0
 CATEGORIES=	www databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>=0:databases/py-hiredis@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj31-django-redis
