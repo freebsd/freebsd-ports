@@ -1,8 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	docdiff
-PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTVERSION=	0.6.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
