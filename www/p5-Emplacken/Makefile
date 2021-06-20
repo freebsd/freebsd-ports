@@ -12,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manage multiple plack apps with a directory of config files
 
 LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
@@ -27,8 +28,9 @@ RUN_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-Text-Template>=0:textproc/p5-Text-Template \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
