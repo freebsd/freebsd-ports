@@ -7,10 +7,10 @@ bin/ghe-restore
 %%DATADIR%%/ghe-backup-config
 %%DATADIR%%/ghe-backup-config.bak
 %%DATADIR%%/ghe-backup-es-audit-log
-%%DATADIR%%/ghe-backup-es-hookshot
 %%DATADIR%%/ghe-backup-es-rsync
 %%DATADIR%%/ghe-backup-fsck
 %%DATADIR%%/ghe-backup-git-hooks
+%%DATADIR%%/ghe-backup-minio
 %%DATADIR%%/ghe-backup-mssql
 %%DATADIR%%/ghe-backup-mysql
 %%DATADIR%%/ghe-backup-mysql-binary
@@ -32,10 +32,10 @@ bin/ghe-restore
 %%DATADIR%%/ghe-prune-snapshots
 %%DATADIR%%/ghe-restore-actions
 %%DATADIR%%/ghe-restore-es-audit-log
-%%DATADIR%%/ghe-restore-es-hookshot
 %%DATADIR%%/ghe-restore-es-rsync
 %%DATADIR%%/ghe-restore-external-database-compatibility-check
 %%DATADIR%%/ghe-restore-git-hooks
+%%DATADIR%%/ghe-restore-minio
 %%DATADIR%%/ghe-restore-mssql
 %%DATADIR%%/ghe-restore-mysql
 %%DATADIR%%/ghe-restore-mysql-binary
