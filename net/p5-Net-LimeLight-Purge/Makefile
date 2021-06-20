@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-DateTime-Format-ISO8601>=0.06:devel/p5-DateTime-Format-ISO8601 \
 		p5-MooseX-AttributeHelpers>=0.14:devel/p5-MooseX-AttributeHelpers \
 		p5-SOAP-Lite>=0.710.08:net/p5-SOAP-Lite
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
