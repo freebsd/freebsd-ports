@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 BUILD_DEPENDS=	${PY_MERCURIAL}
 RUN_DEPENDS=	${PY_MERCURIAL} \
 		${PYTHON_PKGNAMEPREFIX}iniparse>=0.4:devel/py-iniparse@${PY_FLAVOR} \
-		${PY_PYGMENTS}
+		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR}
 
 USES=		pyqt:5 python:3.5+
 USE_PYQT=	core gui network qscintilla2 xml
