@@ -16,7 +16,10 @@ LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 USES=		php:pecl pkgconfig
 USE_PHP=	json:build session:build
 
-CONFIGURE_ARGS=	--with-libmemcached-dir=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-memcached-json \
+		--enable-memcached-protocol \
+		--enable-memcached-session \
+		--with-libmemcached-dir=${LOCALBASE}
 
 OPTIONS_DEFINE=	IGBINARY MSGPACK SASL
 OPTIONS_DEFAULT=SASL
