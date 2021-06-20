@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	corsixth
-PORTVERSION=	0.64
+PORTVERSION=	0.65
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 

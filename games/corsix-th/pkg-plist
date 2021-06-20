@@ -75,6 +75,7 @@ share/pixmaps/corsix-th.png
 %%DATADIR%%/Lua/audio.lua
 %%DATADIR%%/Lua/base_config.lua
 %%DATADIR%%/Lua/calls_dispatcher.lua
+%%DATADIR%%/Lua/cheats.lua
 %%DATADIR%%/Lua/class.lua
 %%DATADIR%%/Lua/config_finder.lua
 %%DATADIR%%/Lua/date.lua
@@ -117,7 +118,7 @@ share/pixmaps/corsix-th.png
 %%DATADIR%%/Lua/dialogs/queue_dialog.lua
 %%DATADIR%%/Lua/dialogs/resizable.lua
 %%DATADIR%%/Lua/dialogs/resizables/calls_dispatcher.lua
-%%DATADIR%%/Lua/dialogs/resizables/cheats.lua
+%%DATADIR%%/Lua/dialogs/resizables/cheats_dialog.lua
 %%DATADIR%%/Lua/dialogs/resizables/customise.lua
 %%DATADIR%%/Lua/dialogs/resizables/directory_browser.lua
 %%DATADIR%%/Lua/dialogs/resizables/dropdown.lua
@@ -197,6 +198,8 @@ share/pixmaps/corsix-th.png
 %%DATADIR%%/Lua/game_ui.lua
 %%DATADIR%%/Lua/graphics.lua
 %%DATADIR%%/Lua/hospital.lua
+%%DATADIR%%/Lua/hospitals/ai_hospital.lua
+%%DATADIR%%/Lua/hospitals/player_hospital.lua
 %%DATADIR%%/Lua/humanoid_action.lua
 %%DATADIR%%/Lua/humanoid_actions/answer_call.lua
 %%DATADIR%%/Lua/humanoid_actions/call_checkpoint.lua
@@ -239,6 +242,7 @@ share/pixmaps/corsix-th.png
 %%DATADIR%%/Lua/languages/finnish.lua
 %%DATADIR%%/Lua/languages/french.lua
 %%DATADIR%%/Lua/languages/german.lua
+%%DATADIR%%/Lua/languages/greek.lua
 %%DATADIR%%/Lua/languages/hungarian.lua
 %%DATADIR%%/Lua/languages/iberic_portuguese.lua
 %%DATADIR%%/Lua/languages/italian.lua
