@@ -1,6 +1,6 @@
 # PORTNAME block
 PORTNAME=	libnormaliz
-DISTVERSION=	3.8.9
+DISTVERSION=	3.8.10
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Normaliz/Normaliz/releases/download/v${PORTVERSION}/
 DISTNAME=	normaliz-${PORTVERSION}
@@ -48,19 +48,37 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/libnormaliz
 	${INSTALL_DATA}	${INSTALL_WRKSRC}/libnormaliz.a ${STAGEDIR}${PREFIX}/lib
 	cd ${INSTALL_WRKSRC} && ${INSTALL_DATA} \
-		cone.h \
-		cone_property.h \
-		general.h \
 		HilbertSeries.h \
+		automorph.h \
+		collection.h \
+		cone.h \
+		cone_dual_mode.h \
+		cone_property.h \
+		descent.h \
+		dynamic_bitset.h \
+		face_lattice.h \
+		full_cone.h \
+		general.h \
+		input.h \
+		input_type.h \
 		integer.h \
 		libnormaliz.h \
+		list_and_map_operations.h \
 		matrix.h \
 		my_omp.h \
+		nmz_config.h \
+		nmz_integrate.h \
+		nmz_nauty.h \
 		normaliz_exception.h \
+		offload_handler.h \
+		options.h \
+		output.h \
+		project_and_lift.h \
+		reduction.h \
+		simplex.h \
 		sublattice_representation.h \
 		vector_operations.h \
 		version.h \
-		nmz_integrate.h \
 		${STAGEDIR}${PREFIX}/include/libnormaliz
 
 post-install-DOCS-on:
