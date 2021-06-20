@@ -31,8 +31,9 @@ TEST_DEPENDS=	p5-Path-Class>=0.27:devel/p5-Path-Class \
 		p5-Test-Number-Delta>=0:devel/p5-Test-Number-Delta \
 		p5-Test-Requires>=0:devel/p5-Test-Requires
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
