@@ -1,7 +1,7 @@
 # Created by: ache
 
 PORTNAME=	rar
-PORTVERSION=	6.0.1
+PORTVERSION=	6.0.2
 PORTEPOCH=	3
 CATEGORIES=	archivers
 MASTER_SITES=	https://rarlab.com/rar/
