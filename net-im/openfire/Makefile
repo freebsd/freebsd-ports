@@ -1,7 +1,8 @@
 # Created by: Nikolay Pavlov <qpadla@gmail.com>
+# $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	4.6.2
+PORTVERSION=	4.6.3
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	https://github.com/igniterealtime/${PORTNAME}/releases/download/v${PORTVERSION}/ \
