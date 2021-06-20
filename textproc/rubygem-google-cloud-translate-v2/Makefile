@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-cloud-translate-v2
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,10 +12,10 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-faraday>=0.17.3<2.0:www/rubygem-faraday \
-		rubygem-google-cloud-core>=1.5<2:net/rubygem-google-cloud-core \
+		rubygem-google-cloud-core>=1.6<2:net/rubygem-google-cloud-core \
 		rubygem-googleapis-common-protos>=1.3.10<2.0:devel/rubygem-googleapis-common-protos \
 		rubygem-googleapis-common-protos-types>=1.0.5<2.0:devel/rubygem-googleapis-common-protos-types \
-		rubygem-googleauth>=0.12<1:security/rubygem-googleauth
+		rubygem-googleauth>=0.16.2<2.0:security/rubygem-googleauth
 
 USES=		gem
 USE_RUBY=	yes
