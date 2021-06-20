@@ -1,0 +1,5 @@
+PyRoute2 is a pure Python netlink library.
+
+This module provides NetNS, NSPopen and RemoteSocket classes.
+
+WWW: https://github.com/svinota/pyroute2/tree/master/pyroute2.nslink
