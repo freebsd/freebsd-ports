@@ -1,5 +1,5 @@
 PORTNAME=	sndio
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.1
 CATEGORIES=	audio
 MASTER_SITES=	https://sndio.org/
 
