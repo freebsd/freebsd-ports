@@ -22,8 +22,8 @@ RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-libwww>=0:www/p5-libwww
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
 
 NO_ARCH=	yes
 
