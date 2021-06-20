@@ -11,7 +11,7 @@ COMMENT=	JSmol viewer widget for Jupyter Notebooks and JupyterLab
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PY_PYGMENTS} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}widgetsnbextension>0:devel/py-widgetsnbextension@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipykernel5>=5.0.0:devel/py-ipykernel5@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipywidgets>0:devel/py-ipywidgets@${PY_FLAVOR} \
