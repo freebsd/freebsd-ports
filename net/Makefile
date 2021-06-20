@@ -1078,6 +1078,7 @@
     SUBDIR += py-pyroute2.ipset
     SUBDIR += py-pyroute2.minimal
     SUBDIR += py-pyroute2.ndb
+    SUBDIR += py-pyroute2.nftables
     SUBDIR += py-pysendfile
     SUBDIR += py-pyshark
     SUBDIR += py-pysmb
