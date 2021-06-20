@@ -23,14 +23,16 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	COLORAMA D
+OPTIONS_DEFINE=	COLORAMA D UVLOOP
 OPTIONS_DEFAULT=COLORAMA
 COLORAMA_DESC=	Color support
 D_DESC=		Blackd HTTP server
+UVLOOP_DESC=	Event loop support
 
 COLORAMA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0.4.3:devel/py-colorama@${PY_FLAVOR}
 D_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.6.0:www/py-aiohttp@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}aiohttp_cors>=0.4.0:www/py-aiohttp_cors@${PY_FLAVOR}
+UVLOOP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uvloop>=0.15.2:devel/py-uvloop@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
