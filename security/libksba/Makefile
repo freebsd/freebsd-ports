@@ -1,7 +1,7 @@
 # Created by: Tilman Linneweh <arved@FreeBSD.org>
 
 PORTNAME=	libksba
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/${PORTNAME}
 
