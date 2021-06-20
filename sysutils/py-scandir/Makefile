@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_scandir*.so
 
