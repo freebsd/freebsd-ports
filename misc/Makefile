@@ -262,6 +262,8 @@
     SUBDIR += ompl
     SUBDIR += ondir
     SUBDIR += opencyc
+    SUBDIR += openhab
+    SUBDIR += openhab-addons
     SUBDIR += openhab2
     SUBDIR += openhab2-addons
     SUBDIR += openhantek
