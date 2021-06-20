@@ -39,8 +39,8 @@ TEST_DEPENDS=	p5-Data-Printer>=0:devel/p5-Data-Printer \
 		p5-Test-Requires>=0:devel/p5-Test-Requires \
 		p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/MaxMind/DB/Writer/Tree/Tree.so
