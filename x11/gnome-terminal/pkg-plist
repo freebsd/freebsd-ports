@@ -1,4 +1,5 @@
 bin/gnome-terminal
+lib/gnome-terminal/gschemas.compiled
 lib/nautilus/extensions-3.0/libterminal-nautilus.a
 lib/nautilus/extensions-3.0/libterminal-nautilus.so
 lib/systemd/user/gnome-terminal-server.service
@@ -647,6 +648,7 @@ share/locale/is/LC_MESSAGES/gnome-terminal.mo
 share/locale/it/LC_MESSAGES/gnome-terminal.mo
 share/locale/ja/LC_MESSAGES/gnome-terminal.mo
 share/locale/ka/LC_MESSAGES/gnome-terminal.mo
+share/locale/kab/LC_MESSAGES/gnome-terminal.mo
 share/locale/kk/LC_MESSAGES/gnome-terminal.mo
 share/locale/km/LC_MESSAGES/gnome-terminal.mo
 share/locale/kn/LC_MESSAGES/gnome-terminal.mo
