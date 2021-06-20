@@ -1,12 +1,12 @@
-TIMESTAMP = 1620836628
-SHA256 (denverquane-automuteus-6.13.0_GH0.tar.gz) = 5b6934baecf919f860b7bca3b7b26d066053412e0819baf378f8635db94154fd
-SIZE (denverquane-automuteus-6.13.0_GH0.tar.gz) = 8913724
+TIMESTAMP = 1624156447
+SHA256 (denverquane-automuteus-6.15.1_GH0.tar.gz) = 0cb77f4cd6c2dfb1e54280cca2bfacdfeb6c1d6faa1ba94d155da584765d4354
+SIZE (denverquane-automuteus-6.15.1_GH0.tar.gz) = 9616954
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (automuteus-galactus-v1.2.2_GH0.tar.gz) = 5296c340a199c26ac7a0ead52c91aed7c6e087fae8000022abb27119686ea2ce
 SIZE (automuteus-galactus-v1.2.2_GH0.tar.gz) = 16722
-SHA256 (automuteus-utils-v0.0.16_GH0.tar.gz) = 76a302b369a82f5d484c366ebdd4e290279a696e9e16214d2d4158f11950aa3b
-SIZE (automuteus-utils-v0.0.16_GH0.tar.gz) = 23688
+SHA256 (automuteus-utils-v0.0.18_GH0.tar.gz) = f4ba3c3c6c0f476dc09386d827cf7a5991b5afc142c11abc99f500e5d31d23f3
+SIZE (automuteus-utils-v0.0.18_GH0.tar.gz) = 23837
 SHA256 (beorn7-perks-v1.0.1_GH0.tar.gz) = 98db84bb0224a26094e6adba91b7ee7a1a7ace28cb648d818f8e779e6a19f825
 SIZE (beorn7-perks-v1.0.1_GH0.tar.gz) = 10867
 SHA256 (bsm-redislock-v0.7.0_GH0.tar.gz) = a4ed6616ffb450ba08e3033e758dbe13192dac3fcbbfc1e0802aa829f31b06b4

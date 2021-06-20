@@ -1,5 +1,5 @@
 PORTNAME=	automuteus
-DISTVERSION=	6.13.0
+DISTVERSION=	6.15.1
 CATEGORIES=	games
 
 MAINTAINER=	nc@FreeBSD.org
@@ -15,7 +15,7 @@ GH_ACCOUNT=	denverquane
 GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		automuteus:galactus:v1.2.2:automuteus_galactus/vendor/github.com/automuteus/galactus \
-		automuteus:utils:v0.0.16:automuteus_utils/vendor/github.com/automuteus/utils \
+		automuteus:utils:v0.0.18:automuteus_utils/vendor/github.com/automuteus/utils \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bsm:redislock:v0.7.0:bsm_redislock/vendor/github.com/bsm/redislock \
 		bwmarrin:discordgo:v0.23.2:bwmarrin_discordgo/vendor/github.com/bwmarrin/discordgo \
