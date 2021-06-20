@@ -1,0 +1,6 @@
+PyRoute2 is a pure Python netlink library.
+
+This module provides minimal subset of pyroute2 modules. Only netlink parser,
+basic netns management and some netlink protocols implementations.
+
+WWW: https://github.com/svinota/pyroute2/tree/master/pyroute2.minimal
