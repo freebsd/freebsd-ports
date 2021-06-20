@@ -22,8 +22,9 @@ RUN_DEPENDS=	p5-Data-Dumper-Concise>=0:devel/p5-Data-Dumper-Concise \
 		p5-MooX-StrictConstructor>=0:devel/p5-MooX-StrictConstructor \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
