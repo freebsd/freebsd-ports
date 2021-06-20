@@ -21,7 +21,6 @@ USE_PERL5=	configure
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
-	@${ECHO_CMD} '$$HOST = "test.dict.org"; $$PORT = 2628;' > ${WRKSRC}/t/test_host.cfg
+	@${CP} ${FILESDIR}/test_host.cfg ${WRKSRC}/t/test_host.cfg
 
 .include <bsd.port.mk>
