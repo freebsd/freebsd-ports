@@ -5154,6 +5154,7 @@
     SUBDIR += py-taskflow
     SUBDIR += py-tasklib
     SUBDIR += py-tblib
+    SUBDIR += py-telepath
     SUBDIR += py-tempora
     SUBDIR += py-tenacity
     SUBDIR += py-termcolor
