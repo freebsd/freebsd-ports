@@ -3,6 +3,7 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.31.0
+PORTVERSION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://github.com/forkbomb9/netdata/commit/:dashboard
@@ -59,6 +60,8 @@ OPTIONS_DEFAULT_FreeBSD_12=	LTO
 OPTIONS_DEFAULT_FreeBSD_13=	LTO
 OPTIONS_DEFAULT_FreeBSD_14=	LTO
 OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${OPSYS}_${OSREL:R}}
+OPTIONS_EXCLUDE_powerpc64=	LTO
+OPTIONS_EXCLUDE_riscv64=	LTO
 OPTIONS_SUB=		YES
 
 CLOUD_DESC=		Enable cloud functionality
