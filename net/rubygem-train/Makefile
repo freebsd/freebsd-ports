@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	train
-PORTVERSION=	3.7.0
+PORTVERSION=	3.7.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Transport interface to talk to different backends
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport52>=5.2.4.3<6.0.0:devel/rubygem-activesupport52 \
+RUN_DEPENDS=	rubygem-activesupport60>=6.0.3.1:devel/rubygem-activesupport60 \
 		rubygem-azure_graph_rbac>=0.16<1:devel/rubygem-azure_graph_rbac \
 		rubygem-azure_mgmt_key_vault>=0.17<1:devel/rubygem-azure_mgmt_key_vault \
 		rubygem-azure_mgmt_resources>=0.15<1:devel/rubygem-azure_mgmt_resources \
