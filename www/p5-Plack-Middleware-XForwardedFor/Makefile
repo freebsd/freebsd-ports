@@ -17,8 +17,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Net-IP>=1.26:net-mgmt/p5-Net-IP \
 		p5-Plack>=0.9913:www/p5-Plack
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
