@@ -74,7 +74,7 @@ PROFILE_SUB_LIST_OFF=	WITH_PROFILE="NO"
 GHC_VERSION=		8.10.5
 CABAL_VERSION=		3.2.1.0
 HSCOLOUR_VERSION=	1.24.4
-LLVM_VERSION=		90
+LLVM_VERSION=		10
 # LLVM version that bootstrap compiler uses
 BOOT_LLVM_VERSION=	90
 
@@ -137,7 +137,7 @@ DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${BOOTSTRAPS_SUFFIX}${E
 .endif # MBOOT
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}
-# ghc-8.10.x on arm requires devel/llvm90
+# ghc-8.10.x on arm requires devel/llvm10
 # CONFIGURE_TARGET must to be the same as the llvm triple
 CONFIGURE_TARGET=	${ARCH}-unknown-freebsd${"${ARCH:Maarch64}" != "":?:-gnueabihf}
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-aclocal.m4
@@ -152,9 +152,10 @@ CONFIGURE_ENV+=		LLC=llc${LLVM_VERSION} \
 # LLVM versions, we have to pull in both. Luckily, this is relatively rare.
 .  if ${BOOT_LLVM_VERSION} != ${LLVM_VERSION}
 BUILD_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
-# Keep in sync with BOOT_LLVM_VERSION
-BINARY_ALIAS+=		llc-9.0=llc90 \
-			opt-9.0=opt90
+CONFIGURE_ENV_BOOTSTRAP=LLC=llc${BOOT_LLVM_VERSION} \
+			OPT=opt${BOOT_LLVM_VERSION} \
+			CLANG=clang${BOOT_LLVM_VERSION} \
+			CC=clang${BOOT_LLVM_VERSION}
 .  endif
 .endif
 
@@ -208,7 +209,7 @@ pre-configure:
 
 # If we are using bootstrap compiler, configure and install it into ${BOOT_DIR}
 .if empty(PORT_OPTIONS:MBOOT)
-	cd ${BOOT_DIR} && ${CONFIGURE_ENV} ${CONFIGURE_CMD} --prefix=${BOOT_DIR}
+	cd ${BOOT_DIR} && ${CONFIGURE_ENV} ${CONFIGURE_ENV_BOOTSTRAP} ${CONFIGURE_CMD} --prefix=${BOOT_DIR}
 	cd ${BOOT_DIR} && PACKAGES='' ${MAKE_CMD} install
 .else
 # otherwise, make sure we have "ghc" in PATH
