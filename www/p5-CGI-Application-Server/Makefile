@@ -29,4 +29,6 @@ TEST_DEPENDS=	p5-CGI-Application>0:www/p5-CGI-Application \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
