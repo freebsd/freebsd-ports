@@ -39,7 +39,7 @@ MARKDOWN_DESC=		Markdown markup language format support
 MARKDOWN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>=3.1.1:textproc/py-markdown@${PY_FLAVOR}
 
 SYNTAX_DESC=		Syntax Highlighting (via pygments)
-SYNTAX_RUN_DEPENDS=	${PY_PYGMENTS}
+SYNTAX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR}
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
