@@ -36,7 +36,7 @@ MODWSGI_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}${PYTHON_PKGNAMEPREFIX}mod_wsgi>=4.4
 
 SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion-lts>=0:devel/py-subversion@${PY_FLAVOR}
 
-RUN_DEPENDS+=		${PY_PYGMENTS}
+RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}pygments-25>=0.9:textproc/py-pygments-25@${PY_FLAVOR}
 
 .include <bsd.port.options.mk>
 
