@@ -1080,6 +1080,7 @@
     SUBDIR += py-pyroute2.ndb
     SUBDIR += py-pyroute2.nftables
     SUBDIR += py-pyroute2.nslink
+    SUBDIR += py-pyroute2.protocols
     SUBDIR += py-pysendfile
     SUBDIR += py-pyshark
     SUBDIR += py-pysmb
