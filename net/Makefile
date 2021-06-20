@@ -1077,6 +1077,7 @@
     SUBDIR += py-pyroute2.ethtool
     SUBDIR += py-pyroute2.ipset
     SUBDIR += py-pyroute2.minimal
+    SUBDIR += py-pyroute2.ndb
     SUBDIR += py-pysendfile
     SUBDIR += py-pyshark
     SUBDIR += py-pysmb
