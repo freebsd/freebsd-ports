@@ -1,9 +1,7 @@
-# Created by: Alexander Leidinger
-
 PORTNAME=	openhab2-addons
-PORTVERSION=	2.5.11
+PORTVERSION=	2.5.12
 CATEGORIES=	misc java
-MASTER_SITES=	https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-addons%2F${PORTVERSION}/
+MASTER_SITES=	https://openhab.jfrog.io/artifactory/libs-release-local/org/openhab/distro/openhab-addons//${PORTVERSION}/
 DISTNAME=	openhab-addons-${PORTVERSION}
 EXTRACT_SUFX=	.kar
 
