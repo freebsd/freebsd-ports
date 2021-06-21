@@ -1,7 +1,7 @@
 # Created by: Eric Turgeon <ericturgeon.bsd@gmail.org>
 
 PORTNAME=	networkmgr
-DISTVERSION=	5.4
+DISTVERSION=	5.5
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ericbsd@FreeBSD.org
