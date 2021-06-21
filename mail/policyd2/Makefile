@@ -4,7 +4,7 @@ PORTNAME=	policyd2
 PORTVERSION=	2.0.14
 PORTREVISION=	3
 CATEGORIES=	mail
-MASTER_SITES=	http://download.policyd.org/v${PORTVERSION}/
+MASTER_SITES=	https://download.policyd.org/v${PORTVERSION}/
 DISTNAME=	cluebringer-v${PORTVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
