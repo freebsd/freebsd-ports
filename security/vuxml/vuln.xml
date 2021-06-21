@@ -89,10 +89,12 @@ Notes:
 	<p>The Gitea Team reports for release 1.14.3:</p>
 	<blockquote cite="https://blog.gitea.io/2021/06/gitea-1.14.3-is-released/">
 	  <ul>
-	    <li>Encrypt migration credentials at rest (<a href="https://github.com/go-gitea/gitea/pull/15895">#15895</a>) (<a href="https://github.com/go-gitea/gitea/pull/16187">#16187</a>)</li>
-            <li>Only check access tokens if they are likely to be tokens (<a href="https://github.com/go-gitea/gitea/pull/16164">#16164</a>) (<a href="https://github.com/go-gitea/gitea/pull/16171">#16171</a>)</li>
-            <li>Add missing SameSite settings for the i_like_gitea cookie (<a href="https://github.com/go-gitea/gitea/pull/16037">#16037</a>) (<a href="https://github.com/go-gitea/gitea/pull/16039">#16039</a>)</li>
-            <li>Fix setting of SameSite on cookies (<a href="https://github.com/go-gitea/gitea/pull/15989">#15989</a>) (<a href="https://github.com/go-gitea/gitea/pull/15991">#15991</a>)</li>
+	    <li>Encrypt migration credentials at rest (#15895) (#16187)</li>
+	    <li>Only check access tokens if they are likely to be tokens
+	      (#16164) (#16171)</li>
+	    <li>Add missing SameSite settings for the i_like_gitea cookie
+	      (#16037) (#16039)</li>
+	    <li>Fix setting of SameSite on cookies (#15989) (#15991)</li>
 	  </ul>
 	</blockquote>
       </body>
