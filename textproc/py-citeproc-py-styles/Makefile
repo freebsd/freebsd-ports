@@ -1,5 +1,5 @@
 PORTNAME=	citeproc-py-styles
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.3
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.1.1:devel/py-lxml@${PY_FLAVOR} \
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
