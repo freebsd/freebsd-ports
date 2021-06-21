@@ -19,8 +19,8 @@ externals/./httplib/httplib.h:214:2: error: Sorry, OpenSSL versions prior to 1.1
      if (OPENSSL_FOUND)
          set(OPENSSL_LIBRARIES OpenSSL::SSL OpenSSL::Crypto)
      else()
---- externals/./httplib/httplib.h.orig	2020-11-18 04:02:27 UTC
-+++ externals/./httplib/httplib.h
+--- externals/cpp-httplib/httplib.h.orig	2020-11-18 04:02:27 UTC
++++ externals/cpp-httplib/httplib.h
 @@ -210,10 +210,6 @@ using socket_t = int;
  #include <iostream>
  #include <sstream>

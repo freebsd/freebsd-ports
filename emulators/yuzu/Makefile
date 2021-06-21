@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20210618
+PORTVERSION=	s20210621
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -43,18 +43,19 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	3870ba670
+GH_TAGNAME=	0485b8e84
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.145:Vulkan_Headers/externals/Vulkan-Headers \
-		MerryMage:dynarmic:r5-69-g0c12614d:dynarmic/externals/dynarmic \
+		MerryMage:dynarmic:r5-85-gc6125082:dynarmic/externals/dynarmic \
 		ReinUsesLisp:sirit:eefca56:sirit/externals/sirit \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
+		benhoyt:inih:r52:inih/externals/inih/inih \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
 		fmtlib:fmt:7.1.2:fmt/externals/fmt \
 		herumi:xbyak:v5.96:xbyak/externals/xbyak \
 		kinetiknz:cubeb:cubeb-0.2-1298-g8d53747:cubeb/externals/cubeb \
-		benhoyt:inih:r52:inih/externals/inih/inih
+		yhirose:cpp-httplib:v0.9.0-5-g9648f95:cpp_httplib/externals/cpp-httplib
 
 USES=		cmake:testing compiler:c++17-lang localbase:ldflags sdl ssl
 USE_GCC=	yes:build # libc++ lacks std::atomic_ref, std::ranges
