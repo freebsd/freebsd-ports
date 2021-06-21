@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	octave-forge-control
-PORTVERSION=	3.2.0
-PORTREVISION=	2
+PORTVERSION=	3.3.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
