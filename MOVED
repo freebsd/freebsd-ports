@@ -16414,3 +16414,4 @@ devel/sparc64-gcc|devel/freebsd-gcc6@sparc64|2021-06-18|Replaced by a flavor
 devel/sparc64-xtoolchain-gcc|devel/freebsd-gcc6@sparc64|2021-06-18|Replaced by a flavor
 devel/riscv64-xtoolchain-gcc|devel/freebsd-gcc9@riscv64|2021-06-19|Replaced by a flavor
 www/py-beautifulsoup448|www/py-beautifulsoup|2021-06-20|Remove obsoleted port. Use www/py-beautifulsoup instead
+comms/rtl-443|comms/rtl-433|2021-06-21|Fix typo in port directory name

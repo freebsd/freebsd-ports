@@ -151,7 +151,7 @@
     SUBDIR += qtel
     SUBDIR += redsea
     SUBDIR += remserial
-    SUBDIR += rtl-443
+    SUBDIR += rtl-433
     SUBDIR += rtl-sdr
     SUBDIR += rubygem-callsign
     SUBDIR += rubygem-ruby-termios
