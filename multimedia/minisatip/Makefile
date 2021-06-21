@@ -20,6 +20,7 @@ GH_ACCOUNT=	catalinii
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 ALL_TARGET=	minisatip
 
