@@ -1,5 +1,5 @@
 PORTNAME=	cargo-c
-DISTVERSION=	0.8.2
+DISTVERSION=	0.8.3
 DISTVERSIONSUFFIX=	+cargo-0.54
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
@@ -62,7 +62,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		git2-0.13.20 \
 		git2-curl-0.14.1 \
 		glob-0.3.0 \
-		globset-0.4.7 \
+		globset-0.4.8 \
 		hashbrown-0.9.1 \
 		heck-0.3.3 \
 		hermit-abi-0.1.18 \
@@ -91,10 +91,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		num_cpus-1.13.0 \
 		once_cell-1.8.0 \
 		opener-0.4.1 \
-		openssl-0.10.34 \
+		openssl-0.10.35 \
 		openssl-probe-0.1.4 \
 		openssl-src-111.15.0+1.1.1k \
-		openssl-sys-0.9.63 \
+		openssl-sys-0.9.64 \
 		percent-encoding-2.1.0 \
 		pkg-config-0.3.19 \
 		ppv-lite86-0.2.10 \
@@ -147,7 +147,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-xid-0.2.2 \
 		url-2.2.2 \
 		utf8parse-0.1.1 \
-		vcpkg-0.2.14 \
+		vcpkg-0.2.15 \
 		vec_map-0.8.2 \
 		version_check-0.9.3 \
 		vte-0.3.3 \
