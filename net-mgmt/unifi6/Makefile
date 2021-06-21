@@ -1,5 +1,5 @@
 PORTNAME=	unifi6
-PORTVERSION=	6.2.25
+PORTVERSION=	6.2.26
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax
