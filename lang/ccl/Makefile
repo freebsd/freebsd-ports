@@ -1,7 +1,7 @@
 PORTNAME=	ccl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang lisp
 MASTER_SITES+=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/:bootstrap
 DISTFILES=	freebsdx86.tar.gz:bootstrap
@@ -11,7 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Clozure CL is a free Common Lisp implementation
 
-LICENSE=	LGPL21
+LICENSE=	APACHE20
 
 ONLY_FOR_ARCHS=	amd64
 
