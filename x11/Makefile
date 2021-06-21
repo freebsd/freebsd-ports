@@ -246,6 +246,7 @@
     SUBDIR += nvidia-secondary-driver-390
     SUBDIR += nvidia-settings
     SUBDIR += nvidia-xconfig
+    SUBDIR += nwg-drawer
     SUBDIR += nwg-launchers
     SUBDIR += nxcomp
     SUBDIR += p5-Clipboard
