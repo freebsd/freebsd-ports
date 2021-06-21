@@ -92,6 +92,7 @@
     SUBDIR += R-cran-rgexf
     SUBDIR += R-cran-rlang
     SUBDIR += R-cran-rngtools
+    SUBDIR += R-cran-roxygen2
     SUBDIR += R-cran-rprojroot
     SUBDIR += R-cran-rstudioapi
     SUBDIR += R-cran-rversions
