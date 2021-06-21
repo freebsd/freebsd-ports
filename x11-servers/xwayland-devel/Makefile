@@ -31,8 +31,8 @@ USES=		compiler:c11 gl meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_GL=		gbm gl
 USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
-GH_ACCOUNT=	mirror
-GH_PROJECT=	xserver
+GH_ACCOUNT=	freedesktop
+GH_PROJECT=	xorg-xserver
 GH_TUPLE=	freedesktop:xorg-xorgproto:xorgproto-2021.4.99.2:xorgproto/subprojects/xorgproto
 MESON_ARGS=	-D${PORTNAME}=true \
 		-Dxorg=false \
