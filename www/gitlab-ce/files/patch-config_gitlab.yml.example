@@ -1,15 +1,6 @@
---- config/gitlab.yml.example.orig	2021-05-19 15:44:42 UTC
+--- config/gitlab.yml.example.orig	2021-06-21 15:55:09 UTC
 +++ config/gitlab.yml.example
-@@ -1090,7 +1090,7 @@ production: &base
-   # Gitaly settings
-   gitaly:
-     # Path to the directory containing Gitaly client executables.
--    client_path: /home/git/gitaly
-+    client_path: %%PREFIX%%/share/gitaly/bin
-     # Default Gitaly authentication token. Can be overridden per storage. Can
-     # be left blank when Gitaly is running locally on a Unix socket, which
-     # is the normal way to deploy Gitaly.
-@@ -1108,8 +1108,8 @@ production: &base
+@@ -1109,8 +1109,8 @@ production: &base
      # real path not the symlink.
      storages: # You must have at least a `default` storage path.
        default:
@@ -20,7 +11,7 @@
          # gitaly_token: 'special token' # Optional: override global gitaly.token for this storage.
  
    ## Backup settings
-@@ -1155,12 +1155,12 @@ production: &base
+@@ -1156,12 +1156,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -36,7 +27,7 @@
  
      # Git over HTTP
      upload_pack: true
-@@ -1175,13 +1175,13 @@ production: &base
+@@ -1176,13 +1176,13 @@ production: &base
    workhorse:
      # File that contains the secret key for verifying access for gitlab-workhorse.
      # Default is '.gitlab_workhorse_secret' relative to Rails.root (i.e. root of the GitLab app).
@@ -52,7 +43,7 @@
  
      # The URL to the external KAS API (used by the Kubernetes agents)
      # external_url: wss://kas.example.com
-@@ -1191,13 +1191,13 @@ production: &base
+@@ -1192,13 +1192,13 @@ production: &base
  
    ## GitLab Elasticsearch settings
    elasticsearch:
@@ -68,3 +59,12 @@
  
    ## Webpack settings
    # If enabled, this will tell rails to serve frontend assets from the webpack-dev-server running
+@@ -1425,7 +1425,7 @@ test:
+         gitaly_address: unix:tmp/tests/gitaly/praefect.socket
+ 
+   gitaly:
+-    client_path: tmp/tests/gitaly/_build/bin
++    client_path: %%PREFIX%%/share/gitaly/bin
+     token: secret
+   workhorse:
+     secret_file: tmp/gitlab_workhorse_test_secret

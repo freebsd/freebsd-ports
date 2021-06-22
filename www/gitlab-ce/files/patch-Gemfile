@@ -1,4 +1,4 @@
---- Gemfile.orig	2021-05-21 13:24:46 UTC
+--- Gemfile.orig	2021-06-21 15:55:09 UTC
 +++ Gemfile
 @@ -88,7 +88,7 @@ gem 'gpgme', '~> 2.0.19'
  # GitLab fork with several improvements to original library. For full list of changes
@@ -26,7 +26,16 @@
  gem 'org-ruby', '~> 0.9.12'
  gem 'creole', '~> 0.5.0'
  gem 'wikicloth', '0.8.1'
-@@ -337,108 +336,13 @@ gem 'snowplow-tracker', '~> 0.6.1'
+@@ -309,7 +308,7 @@ gem 'sentry-raven', '~> 3.1'
+ # and https://github.com/pganalyze/pg_query/pull/213 are
+ # released. gitlab-labkit will need to be updated to use the pg_query
+ # version.
+-gem 'gitlab-pg_query', '~> 2.0.4', require: 'pg_query'
++gem 'pg_query', '~> 2.0.3', require: 'pg_query'
+ 
+ gem 'premailer-rails', '~> 1.10.3'
+ 
+@@ -337,107 +336,12 @@ gem 'snowplow-tracker', '~> 0.6.1'
  # Metrics
  group :metrics do
    gem 'method_source', '~> 1.0', require: false
@@ -35,12 +44,11 @@
  
    # Prometheus
    gem 'prometheus-client-mmap', '~> 0.12.0'
-   gem 'raindrops', '~> 0.18'
  end
  
 -group :development do
 -  gem 'lefthook', '~> 0.7.0', require: false
--  gem 'solargraph', '~> 0.40.4', require: false
+-  gem 'solargraph', '~> 0.42', require: false
 -
 -  gem 'letter_opener_web', '~> 1.4.0'
 -
@@ -97,7 +105,7 @@
 -end
 -
 -group :development, :test, :danger do
--  gem 'gitlab-dangerfiles', '~> 2.0.0', require: false
+-  gem 'gitlab-dangerfiles', '~> 2.1.2', require: false
 -end
 -
 -group :development, :test, :coverage do
@@ -136,12 +144,12 @@
  gem 'octokit', '~> 4.15'
  
  # https://gitlab.com/gitlab-org/gitlab/issues/207207
-@@ -483,7 +387,7 @@ gem 'spamcheck', '~> 0.1.0'
- # Gitaly GRPC protocol definitions
- gem 'gitaly', '~> 13.12.0.pre.rc1'
+@@ -485,7 +389,7 @@ gem 'gitaly', '~> 14.0.0.pre.rc2'
+ # KAS GRPC protocol definitions
+ gem 'kas-grpc', '~> 0.0.2'
  
 -gem 'grpc', '~> 1.30.2'
 +gem 'grpc', '~> 1.30'
  
- gem 'google-protobuf', '~> 3.15.8'
+ gem 'google-protobuf', '~> 3.17.1'
  
