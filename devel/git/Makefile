@@ -251,6 +251,7 @@ post-install-SUBTREE-on:
 post-install-CONTRIB-on:
 	@${ECHO_MSG} "===> Installing contributed scripts"
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/git-core/contrib
+	${RM} ${WRKSRC}/contrib/credential/netrc/test.netrc.gpg
 	${CP} -R ${WRKSRC}/contrib/* ${STAGEDIR}${PREFIX}/share/git-core/contrib
 
 post-install-P4-on:

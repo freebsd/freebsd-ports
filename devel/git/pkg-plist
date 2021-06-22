@@ -1244,7 +1244,6 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/credential/netrc/test.command-option-gpg
 %%CONTRIB%%share/git-core/contrib/credential/netrc/test.git-config-gpg
 %%CONTRIB%%share/git-core/contrib/credential/netrc/test.netrc
-%%CONTRIB%%share/git-core/contrib/credential/netrc/test.netrc.gpg
 %%CONTRIB%%share/git-core/contrib/credential/netrc/test.pl
 %%CONTRIB%%share/git-core/contrib/credential/osxkeychain/.gitignore
 %%CONTRIB%%share/git-core/contrib/credential/osxkeychain/Makefile
