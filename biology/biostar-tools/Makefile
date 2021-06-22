@@ -32,6 +32,7 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		seqtk>0:biology/seqtk \
 		datamash>0:textproc/datamash \
 		bcftools>0:biology/bcftools \
+		sra-tools>0:biology/sra-tools \
 		subread>0:biology/subread \
 		hisat2>0:biology/hisat2 \
 		trimmomatic>0:biology/trimmomatic \
