@@ -10,7 +10,6 @@
 %%DATADIR%%/ruby/git-hooks/update
 %%DATADIR%%/ruby/lib/gitaly_server.rb
 %%DATADIR%%/ruby/lib/gitaly_server/client.rb
-%%DATADIR%%/ruby/lib/gitaly_server/conflicts_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/exception_sanitizer_interceptor.rb
 %%DATADIR%%/ruby/lib/gitaly_server/feature_flags.rb
 %%DATADIR%%/ruby/lib/gitaly_server/health_service.rb
@@ -30,10 +29,6 @@
 %%DATADIR%%/ruby/lib/gitlab/git/commit.rb
 %%DATADIR%%/ruby/lib/gitlab/git/commit_patches.rb
 %%DATADIR%%/ruby/lib/gitlab/git/committer_with_hooks.rb
-%%DATADIR%%/ruby/lib/gitlab/git/conflict/file.rb
-%%DATADIR%%/ruby/lib/gitlab/git/conflict/parser.rb
-%%DATADIR%%/ruby/lib/gitlab/git/conflict/resolution.rb
-%%DATADIR%%/ruby/lib/gitlab/git/conflict/resolver.rb
 %%DATADIR%%/ruby/lib/gitlab/git/gitaly_remote_repository.rb
 %%DATADIR%%/ruby/lib/gitlab/git/gitlab_projects.rb
 %%DATADIR%%/ruby/lib/gitlab/git/hook.rb
@@ -48,7 +43,6 @@
 %%DATADIR%%/ruby/lib/gitlab/git/repository.rb
 %%DATADIR%%/ruby/lib/gitlab/git/repository_mirroring.rb
 %%DATADIR%%/ruby/lib/gitlab/git/ssh_auth.rb
-%%DATADIR%%/ruby/lib/gitlab/git/submodule.rb
 %%DATADIR%%/ruby/lib/gitlab/git/tag.rb
 %%DATADIR%%/ruby/lib/gitlab/git/user.rb
 %%DATADIR%%/ruby/lib/gitlab/git/wiki.rb
@@ -130,7 +124,6 @@
 %%DATADIR%%/ruby/spec/lib/gitlab/git/repository_mirroring_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/repository_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/ssh_auth_spec.rb
-%%DATADIR%%/ruby/spec/lib/gitlab/git/submodule_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/testdata/certs/gitalycert.pem
 %%DATADIR%%/ruby/spec/lib/gitlab/git/testdata/certs/gitalycert2.pem
 %%DATADIR%%/ruby/spec/lib/gitlab/git/testdata/certs/gitalycert3.pem
@@ -157,6 +150,7 @@
 @(,,555) %%DATADIR%%/bin/gitaly-blackbox
 @(,,555) %%DATADIR%%/bin/gitaly-debug
 @(,,555) %%DATADIR%%/bin/gitaly-git2go
+@(,,555) %%DATADIR%%/bin/gitaly-git2go-v14
 @(,,555) %%DATADIR%%/bin/gitaly-hooks
 @(,,555) %%DATADIR%%/bin/gitaly-lfs-smudge
 @(,,555) %%DATADIR%%/bin/gitaly-ssh
