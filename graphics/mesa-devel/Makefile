@@ -149,7 +149,7 @@ ZSTD_MESON_ENABLED=	zstd
 
 # Ignore Mk/bsd.default-versions.mk but respect make.conf(5)
 .if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*}
-LLVM_DEFAULT=	11 # chase intel-compute-runtime
+LLVM_DEFAULT=	12 # bump if not latest release
 .endif
 
 post-extract:
