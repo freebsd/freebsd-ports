@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME?=	gitlab-agent
-PORTVERSION?=	13.12.2.1
+PORTVERSION?=	14.0.1
 PORTREVISION?=	0
 CATEGORIES=	net
 
@@ -19,7 +19,7 @@ USES=		go:modules
 USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org/cluster-integration
 # Find the commit hash here: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/tags
-GL_COMMIT?=	e21473768c591ef41c1d80347089c05fb9f24fa5
+GL_COMMIT?=	6b592b4827fbe8b72b99daa82026ea0db6854751
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -203,7 +203,7 @@ GH_TUPLE=	\
 		uber:jaeger-lib:v2.4.1:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib \
 		xlab:treeprint:v1.0.0:xlab_treeprint/vendor/github.com/xlab/treeprint
 
-GL_TUPLE=	gitlab-org:gitaly:a7bc2f86b507daaaf9f18e0ea189b062d6149720:gitlab_org_gitaly/vendor/gitlab.com/gitlab-org/gitaly \
+GL_TUPLE=	gitlab-org:gitaly:262492a22d5b4b3ab220f2bef97bcfa1fdcdfdac:gitlab_org_gitaly_v14/vendor/gitlab.com/gitlab-org/gitaly/v14 \
 		gitlab-org:labkit:b36f912635e66d2d043f57d0d2618fdc51002b87:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
 GO_BUILDFLAGS=	-tags="tracer_static,tracer_static_jaeger" \
