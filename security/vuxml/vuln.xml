@@ -76,6 +76,45 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d18f431d-d360-11eb-a32c-00a0989e4ec1">
+    <topic>dovecot -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dovecot</name>
+	<range><ge>2.3.11</ge><lt>2.3.14.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dovecot team reports:</p>
+	<blockquote cite="https://dovecot.org/pipermail/dovecot-news/2021-June/000461.html">
+	    <p>CVE-2021-29157: Dovecot does not correctly escape kid and azp
+	      fields in JWT tokens.
+	      This may be used to supply attacker controlled keys to validate
+	      tokens in some configurations. This requires attacker
+	      to be able to write files to
+	      local disk.</p>
+	</blockquote>
+	<blockquote cite="https://dovecot.org/pipermail/dovecot-news/2021-June/000462.html">
+	    <p>CVE-2021-33515: On-path attacker could inject plaintext commands
+	      before STARTTLS negotiation that would be executed after STARTTLS
+	      finished with the client. Only the SMTP submission service is
+	      affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-29157</cvename>
+      <url>https://dovecot.org/pipermail/dovecot-news/2021-June/000461.html</url>
+      <cvename>CVE-2021-33515</cvename>
+      <url>>https://dovecot.org/pipermail/dovecot-news/2021-June/000462.html</url>
+    </references>
+    <dates>
+      <discovery>2021-03-22</discovery>
+      <entry>2021-06-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0e561c06-d13a-11eb-92be-0800273f11ea">
     <topic>gitea -- multiple vulnerabilities</topic>
     <affects>
