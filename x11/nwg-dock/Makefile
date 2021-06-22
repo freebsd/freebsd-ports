@@ -16,7 +16,6 @@ USES=		gnome go:modules pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GH_ACCOUNT=	nwg-piotr
-GH_TAGNAME=	b808f01 # from version bump in main.go
 GH_TUPLE=	allan-simon:go-singleinstance:d0997106ab37:allan_simon_go_singleinstance/vendor/github.com/allan-simon/go-singleinstance \
 		dlasky:gotk3-layershell:5cca0b819261:dlasky_gotk3_layershell/vendor/github.com/dlasky/gotk3-layershell \
 		golang:sync:56d357773e84:golang_sync/vendor/golang.org/x/sync \
