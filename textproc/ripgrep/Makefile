@@ -1,8 +1,7 @@
 # Created by: Petteri Valkonen <petteri.valkonen@iki.fi>
 
 PORTNAME=	ripgrep
-DISTVERSION=	12.1.1
-PORTREVISION=	12
+DISTVERSION=	13.0.0
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -19,59 +18,68 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	BurntSushi
 
-CARGO_CRATES=	aho-corasick-0.7.10 \
+CARGO_CRATES=	aho-corasick-0.7.18 \
 		atty-0.2.14 \
-		autocfg-1.0.0 \
-		base64-0.12.1 \
+		base64-0.13.0 \
 		bitflags-1.2.1 \
-		bstr-0.2.13 \
-		bytecount-0.6.0 \
-		byteorder-1.3.4 \
-		cc-1.0.54 \
+		bstr-0.2.16 \
+		bytecount-0.6.2 \
+		cc-1.0.68 \
 		cfg-if-0.1.10 \
-		clap-2.33.1 \
-		crossbeam-channel-0.4.2 \
-		crossbeam-utils-0.7.2 \
-		encoding_rs-0.8.23 \
+		cfg-if-1.0.0 \
+		clap-2.33.3 \
+		crossbeam-channel-0.5.1 \
+		crossbeam-utils-0.8.5 \
+		encoding_rs-0.8.28 \
 		encoding_rs_io-0.1.7 \
 		fnv-1.0.7 \
-		fs_extra-1.1.0 \
+		fs_extra-1.2.0 \
 		glob-0.3.0 \
-		hermit-abi-0.1.13 \
-		itoa-0.4.5 \
+		globset-0.4.7 \
+		grep-0.2.8 \
+		grep-cli-0.1.6 \
+		grep-matcher-0.1.5 \
+		grep-pcre2-0.1.5 \
+		grep-printer-0.1.6 \
+		grep-regex-0.1.9 \
+		grep-searcher-0.1.8 \
+		hermit-abi-0.1.18 \
+		ignore-0.4.18 \
+		itoa-0.4.7 \
 		jemalloc-sys-0.3.2 \
 		jemallocator-0.3.2 \
+		jobserver-0.1.22 \
 		lazy_static-1.4.0 \
-		libc-0.2.71 \
+		libc-0.2.97 \
 		libm-0.1.4 \
-		log-0.4.8 \
-		maybe-uninit-2.0.0 \
-		memchr-2.3.3 \
-		memmap-0.7.0 \
+		log-0.4.14 \
+		memchr-2.4.0 \
+		memmap2-0.3.0 \
 		num_cpus-1.13.0 \
+		once_cell-1.7.2 \
 		packed_simd_2-0.3.5 \
 		pcre2-0.2.3 \
-		pcre2-sys-0.2.2 \
-		pkg-config-0.3.17 \
-		proc-macro2-1.0.17 \
-		quote-1.0.6 \
-		regex-1.3.9 \
-		regex-automata-0.1.9 \
-		regex-syntax-0.6.18 \
-		ryu-1.0.4 \
+		pcre2-sys-0.2.5 \
+		pkg-config-0.3.19 \
+		proc-macro2-1.0.27 \
+		quote-1.0.9 \
+		regex-1.5.4 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.25 \
+		ryu-1.0.5 \
 		same-file-1.0.6 \
-		serde-1.0.110 \
-		serde_derive-1.0.110 \
-		serde_json-1.0.53 \
+		serde-1.0.126 \
+		serde_derive-1.0.126 \
+		serde_json-1.0.64 \
 		strsim-0.8.0 \
-		syn-1.0.27 \
-		termcolor-1.1.0 \
+		syn-1.0.73 \
+		termcolor-1.1.2 \
 		textwrap-0.11.0 \
-		thread_local-1.0.1 \
-		unicode-width-0.1.7 \
-		unicode-xid-0.2.0 \
-		walkdir-2.3.1 \
-		winapi-0.3.8 \
+		thread_local-1.1.3 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.2 \
+		walkdir-2.3.2 \
+		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
@@ -107,8 +115,6 @@ SIMD_VARS_i386=	RUSTFLAGS+="-C target-feature=+sse2"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|OUT_DIR|RIPGREP_OUTDIR|' ${WRKSRC}/build.rs
-	@${RLN} ${CARGO_VENDOR_DIR}/packed_simd_2-* ${CARGO_VENDOR_DIR}/packed_simd
-	@${REINPLACE_CMD} 's/packed_simd_2/packed_simd/' ${CARGO_VENDOR_DIR}/packed_simd/Cargo.toml
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rg
