@@ -1,7 +1,7 @@
 # Created by: Vasil Dimov <vd@FreeBSD.org>
 
 PORTNAME=	qtum
-PORTVERSION=	0.20.2
+PORTVERSION=	0.20.3
 DISTVERSIONPREFIX=	mainnet-fastlane-v
 CATEGORIES=	net-p2p finance
 
