@@ -34,19 +34,21 @@ you update your ports collection, before attempting any port upgrades.
   both at the same time on the same port.
 
 20210617:
-  AFFECTS: users of graphics/mesa-libs
+  AFFECTS: users of graphics/mesa-libs and x11/nvidia-driver
   AUTHOR: kbowling@FreeBSD.org
 
   Some libraries from mesa-libs are now provided by libglvnd while
-  others were renamed. When building outside poudriere make sure to
-  remove mesa-libs first in order to avoid conflict with libglvnd.
+  others were renamed. nvidia-driver already used libglvnd but bundled
+  a copy which is now provided as a separate package. When building
+  outside poudriere make sure to remove mesa-libs and nvidia-driver
+  first in order to avoid conflict with libglvnd.
 
   For portmaster users:
-  # pkg delete -f mesa-libs
+  # pkg delete -f mesa-libs nvidia-driver
   # portmaster -a
 
   For portupgrade users:
-  # pkg delete -f mesa-libs
+  # pkg delete -f mesa-libs nvidia-driver
   # portupgrade -a
 
 20210523:
