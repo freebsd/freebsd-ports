@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.83.1
+DISTVERSION=	0.84.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -23,14 +23,14 @@ GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		PuerkitoBio:purell:v1.1.1:puerkitobio_purell/vendor/github.com/PuerkitoBio/purell \
 		PuerkitoBio:urlesc:de5bf2ad4578:puerkitobio_urlesc/vendor/github.com/PuerkitoBio/urlesc \
-		alecthomas:chroma:v0.9.1:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
+		alecthomas:chroma:v0.9.2:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		alecthomas:repr:d37bc2a10ba1:alecthomas_repr/vendor/github.com/alecthomas/repr \
 		armon:go-radix:v1.0.0:armon_go_radix/vendor/github.com/armon/go-radix \
 		aws:aws-sdk-go:v1.38.23:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		bep:debounce:v1.2.0:bep_debounce/vendor/github.com/bep/debounce \
 		bep:gitmap:v1.1.2:bep_gitmap/vendor/github.com/bep/gitmap \
 		bep:godartsass:v0.12.0:bep_godartsass/vendor/github.com/bep/godartsass \
-		bep:golibsass:v0.7.0:bep_golibsass/vendor/github.com/bep/golibsass \
+		bep:golibsass:v1.0.0:bep_golibsass/vendor/github.com/bep/golibsass \
 		bep:gowebp:v0.1.0:bep_gowebp/vendor/github.com/bep/gowebp \
 		bep:tmc:v0.5.1:bep_tmc/vendor/github.com/bep/tmc \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
@@ -53,7 +53,7 @@ GH_TUPLE=	\
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gobuffalo:flect:v0.2.2:gobuffalo_flect/vendor/github.com/gobuffalo/flect \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
-		gohugoio:go-i18n:4c28c89f8013:gohugoio_go_i18n/vendor/github.com/gohugoio/go-i18n \
+		gohugoio:go-i18n:4c28c89f8013:gohugoio_go_i18n_v2/vendor/github.com/gohugoio/go-i18n \
 		gohugoio:testmodBuilder:c56af20f2e95:gohugoio_testmodbuilder_mods/vendor/github.com/gohugoio/testmodBuilder \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
@@ -117,12 +117,12 @@ GH_TUPLE=	\
 		spf13:fsync:v0.9.0:spf13_fsync/vendor/github.com/spf13/fsync \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
-		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
+		spf13:viper:v1.7.0:spf13_viper/vendor/github.com/spf13/viper \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		tdewolff:minify:v2.9.16:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
 		tdewolff:parse:v2.5.14:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2 \
 		yuin:goldmark-highlighting:60d527fdb691:yuin_goldmark_highlighting/vendor/github.com/yuin/goldmark-highlighting \
-		yuin:goldmark:v1.3.5:yuin_goldmark/vendor/github.com/yuin/goldmark
+		yuin:goldmark:v1.3.8:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/cloud.google.com/go/storage
@@ -160,7 +160,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		5afe0a57
+COMMIT_ID=		2c4689f7
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
