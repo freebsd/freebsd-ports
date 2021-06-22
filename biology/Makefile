@@ -175,6 +175,7 @@
     SUBDIR += smithwaterman
     SUBDIR += snpeff
     SUBDIR += spoa
+    SUBDIR += sra-tools
     SUBDIR += stacks
     SUBDIR += star
     SUBDIR += stringtie
