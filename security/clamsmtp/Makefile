@@ -4,8 +4,7 @@ PORTNAME=	clamsmtp
 PORTVERSION=	1.10
 PORTREVISION=	4
 CATEGORIES=	security
-MASTER_SITES=	https://jarasoft.net/clamsmtp/
-DISTFILES=	${DISTNAME:S/-/_/}.orig${EXTRACT_SUFX}
+MASTER_SITES=	http://thewalter.net/stef/software/clamsmtp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ClamAV anti-virus SMTP Filter
