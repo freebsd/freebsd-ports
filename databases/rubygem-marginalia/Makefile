@@ -2,7 +2,7 @@
 
 PORTNAME=	marginalia
 PORTVERSION=	1.10.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,8 @@ COMMENT=	Attach comments to your ActiveRecord queries
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-actionpack60>=2.3:www/rubygem-actionpack60 \
-		rubygem-activerecord60>=2.3:databases/rubygem-activerecord60
+RUN_DEPENDS=	rubygem-actionpack61>=2.3:www/rubygem-actionpack61 \
+		rubygem-activerecord61>=2.3:databases/rubygem-activerecord61
 
 USES=		gem
 USE_RUBY=	yes
