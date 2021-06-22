@@ -1,6 +1,6 @@
 TIMESTAMP = 1624059620
-SHA256 (nwg-piotr-nwg-drawer-v0.1.0-be2433f_GH0.tar.gz) = f455463be7c5063c6c138285def154ef1a4f784208b60bc8d31470c8e01e4a44
-SIZE (nwg-piotr-nwg-drawer-v0.1.0-be2433f_GH0.tar.gz) = 3270007
+SHA256 (nwg-piotr-nwg-drawer-v0.1.0_GH0.tar.gz) = 8fab34173a3a906254cba8531f4bef3a58f848ce576e05545e6dd8ca70aef853
+SIZE (nwg-piotr-nwg-drawer-v0.1.0_GH0.tar.gz) = 3269817
 SHA256 (allan-simon-go-singleinstance-d0997106ab37_GH0.tar.gz) = f8cee874873fe9fc1a81e8a7ca83df85c57aa86279c09cb8cba10d5feb7ed295
 SIZE (allan-simon-go-singleinstance-d0997106ab37_GH0.tar.gz) = 2819
 SHA256 (dlasky-gotk3-layershell-5cca0b819261_GH0.tar.gz) = a4548130c9fcc87302568b382fc4952aaaea262e04540480dddfd220f878c4fc
