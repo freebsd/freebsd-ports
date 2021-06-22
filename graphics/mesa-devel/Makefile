@@ -93,7 +93,6 @@ anv_DESC=		Haswell and newer
 radv_DESC=		Southern Islands and newer (implies LLVM)
 
 COINST_DESC=		Allow co-installation with another Mesa port
-COINST_VARS=		LLVM_DEFAULT=11 # chase intel-compute-runtime
 COINST_MESON_ON=	-Degl-lib-suffix=${PKGNAMESUFFIX}
 COINST_PLIST_SUB=	SUFFIX=${PKGNAMESUFFIX}
 COINST_SUB_FILES=	libmap.conf
@@ -144,6 +143,13 @@ X11_MESON_OFF=		-Dglx=disabled
 ZSTD_DESC=		Use ZSTD for shader cache
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_MESON_ENABLED=	zstd
+
+.include <bsd.port.options.mk>
+
+# Ignore Mk/bsd.default-versions.mk but respect make.conf(5)
+.if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*}
+LLVM_DEFAULT=	11 # chase intel-compute-runtime
+.endif
 
 post-extract:
 # Work around Meson lookup order e.g., llvm-config
