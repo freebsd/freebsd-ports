@@ -46,6 +46,7 @@ libexec/git-core/git-check-ignore
 libexec/git-core/git-check-mailmap
 libexec/git-core/git-check-ref-format
 libexec/git-core/git-checkout
+libexec/git-core/git-checkout--worker
 libexec/git-core/git-checkout-index
 libexec/git-core/git-cherry
 libexec/git-core/git-cherry-pick
@@ -716,6 +717,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.30.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.31.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.31.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.32.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
