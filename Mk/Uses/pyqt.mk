@@ -140,6 +140,7 @@ py-sip_PORT=			devel/py-sip
 py-qtbuilder_PORT=		devel/py-qtbuilder
 py-pysip_PORT=			devel/${PYQT_RELNAME}-sip
 py-qscintilla2_PORT=		devel/${PYQT_RELNAME}-qscintilla2
+py-positioning_PORT=		devel/${PYQT_RELNAME}-positioning
 
 .  for _categorie in comms databases devel graphics lang misc multimedia net print textproc www x11 x11-toolkits
 _PYQT_CATEGORIE=	_USE_PYQT_${_categorie:tu}
