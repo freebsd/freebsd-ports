@@ -1,6 +1,6 @@
 PORTNAME=	scli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.3
 CATEGORIES=	net-im python
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urwid-readline>=0:devel/py-urwid-readline@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urwid>=0:devel/py-urwid@${PY_FLAVOR} \
 		dbus>=0:devel/dbus \
-		signal-cli>=0.6.8_1:net-im/signal-cli
+		signal-cli>=0.8.4.1:net-im/signal-cli
 
 USES=		python:run,3.7+ shebangfix
 USE_GITHUB=	yes
