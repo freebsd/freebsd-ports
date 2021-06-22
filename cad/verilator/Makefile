@@ -9,6 +9,8 @@ COMMENT=	Synthesizable Verilog to C++ compiler
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	see https://github.com/verilator/verilator/issues/3037
+
 LIB_DEPENDS=	libsystemc.so:devel/systemc
 RUN_DEPENDS=	gmake:devel/gmake # verilator runs gmake for the --hierarchical option when the 'gmake' method is chosen
 
