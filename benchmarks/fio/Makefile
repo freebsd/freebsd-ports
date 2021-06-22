@@ -11,12 +11,12 @@ COMMENT=	Flexible IO tester
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-HAS_CONFIGURE=	yes
 USES=		compiler:c11 gmake tar:bzip2
 
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-native
 
-OPTIONS_DEFINE=	GNUPLOT EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES GNUPLOT
 GNUPLOT_DESC=	Support for plotting graphs
 
 GNUPLOT_BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:math/gnuplot
