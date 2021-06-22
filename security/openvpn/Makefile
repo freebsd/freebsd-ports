@@ -15,7 +15,6 @@ LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYRIGHT.GPL
 
 USES=			cpe libtool localbase:ldflags pkgconfig shebangfix tar:xz
-IGNORE_SSL=		libressl libressl-devel
 USE_RC_SUBR=		openvpn
 
 SHEBANG_FILES=		sample/sample-scripts/verify-cn \
@@ -112,6 +111,13 @@ pre-configure:
 	@${ECHO} "      EXAMPLE:  make LOG_OPENVPN=LOG_LOCAL6"
 	@${ECHO} ""
 .endif
+.if !empty(SSL_DEFAULT:Mlibressl*)
+	@${ECHO} "### --------------------------------------------------------- ###"
+	@${ECHO} "### NOTE that libressl is not primarily supported by OpenVPN  ###"
+	@${ECHO} "### Do not report bugs without fixes/patches unless the issue ###"
+	@${ECHO} "### can be reproduced with a released OpenSSL version.        ###"
+	@${ECHO} "### --------------------------------------------------------- ###"
+.endif
 
 post-configure:
 	${REINPLACE_CMD} '/^CFLAGS =/s/$$/ -fPIC/' \
@@ -133,8 +139,6 @@ post-install:
 	@${REINPLACE_CMD} 's|resolvconf -p -a|resolvconf -a|' ${STAGEDIR}${PREFIX}/libexec/openvpn-client.up
 	${INSTALL_SCRIPT} ${WRKDIR}/openvpn-client ${STAGEDIR}${PREFIX}/sbin/openvpn-client
 	${MKDIR} ${STAGEDIR}${PREFIX}/include
-	@: # workaround for 2.5.0 only XXX FIXME remove after 2.5.0
-	${INSTALL_MAN} ${WRKSRC}/doc/openvpn.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
