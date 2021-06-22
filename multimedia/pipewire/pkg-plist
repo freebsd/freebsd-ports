@@ -109,6 +109,7 @@ include/spa-0.2/spa/param/bluetooth/audio.h
 include/spa-0.2/spa/param/bluetooth/type-info.h
 include/spa-0.2/spa/param/format-utils.h
 include/spa-0.2/spa/param/format.h
+include/spa-0.2/spa/param/latency-utils.h
 include/spa-0.2/spa/param/param.h
 include/spa-0.2/spa/param/profiler.h
 include/spa-0.2/spa/param/props.h
@@ -138,6 +139,7 @@ include/spa-0.2/spa/support/log.h
 include/spa-0.2/spa/support/loop.h
 include/spa-0.2/spa/support/plugin.h
 include/spa-0.2/spa/support/system.h
+include/spa-0.2/spa/utils/ansi.h
 include/spa-0.2/spa/utils/defs.h
 include/spa-0.2/spa/utils/dict.h
 include/spa-0.2/spa/utils/hook.h
@@ -155,7 +157,7 @@ include/spa-0.2/spa/utils/type.h
 %%GSTREAMER%%lib/gstreamer-1.0/libgstpipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.328.0
+lib/libpipewire-0.3.so.0.330.0
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
@@ -177,6 +179,7 @@ lib/pipewire-0.3/libpipewire-module-spa-device-factory.so
 lib/pipewire-0.3/libpipewire-module-spa-device.so
 lib/pipewire-0.3/libpipewire-module-spa-node-factory.so
 lib/pipewire-0.3/libpipewire-module-spa-node.so
+%%PULSEAUDIO%%lib/pipewire-0.3/libpipewire-module-zeroconf-discover.so
 %%MEDIASESSION%%lib/spa-0.2/alsa/libspa-alsa.so
 lib/spa-0.2/audioconvert/libspa-audioconvert.so
 lib/spa-0.2/audiomixer/libspa-audiomixer.so
@@ -259,6 +262,7 @@ libdata/pkgconfig/libspa-0.2.pc
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/sennheiser-gsx.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/simple-headphones-mic.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/steelseries-arctis-common-usb-audio.conf
+%%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/native-instruments-komplete-audio6.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/usb-gaming-headset.conf
 %%MEDIASESSION%%share/alsa/alsa.conf.d/50-pipewire.conf
 %%MEDIASESSION%%share/alsa/alsa.conf.d/99-pipewire-default.conf

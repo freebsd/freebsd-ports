@@ -1,5 +1,5 @@
 PORTNAME=	pipewire
-DISTVERSION=	0.3.28
+DISTVERSION=	0.3.30
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -14,11 +14,14 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libdbus-1.so:devel/dbus \
 		libinotify.so:devel/libinotify \
 		libepoll-shim.so:devel/libepoll-shim \
-		libudev.so:devel/libudev-devd
+		libudev.so:devel/libudev-devd \
+		libwebrtc_audio_processing.so:audio/webrtc-audio-processing0
 
-USES=		compiler:c11 gettext-tools gnome localbase:ldflags meson pkgconfig
+USES=		compiler:c11 gettext-tools gnome localbase:ldflags meson \
+		pkgconfig python:3.6+,build shebangfix
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+SHEBANG_FILES=	spa/tests/gen-cpp-test.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PipeWire
@@ -35,7 +38,9 @@ MEDIASESSION_MESON_ENABLED=	alsa pipewire-alsa media-session pw-cat
 MEDIASESSION_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
 PULSEAUDIO_MESON_ENABLED=	libpulse
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio \
+				libavahi-common.so:net/avahi-app \
+				libavahi-client.so:net/avahi-app
 
 VULKAN_DESC=		Enable Vulkan integration
 VULKAN_MESON_ENABLED=	vulkan
