@@ -76,6 +76,38 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f3fc2b50-d36a-11eb-a32c-00a0989e4ec1">
+    <topic>dovecot-pigeonhole -- Sieve excessive resource usage</topic>
+    <affects>
+      <package>
+	<name>dovecot-pigeonhole</name>
+	<range><lt>2.3.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dovecot team reports reports:</p>
+	<blockquote cite="https://dovecot.org/pipermail/dovecot-news/2021-June/000460.html">
+	  <p>Sieve interpreter is not protected against abusive
+	    scripts that claim excessive resource usage. Fixed by limiting the
+	    user CPU time per single script execution and cumulatively over
+	    several script runs within a configurable timeout period. Sufficiently
+	    large CPU time usage is summed in the Sieve script binary and execution
+	    is blocked when the sum exceeds the limit within that time. The block
+	    is lifted when the script is updated after the resource usage times out.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-28200</cvename>
+      <url>https://dovecot.org/pipermail/dovecot-news/2021-June/000460.html</url>
+    </references>
+    <dates>
+      <discovery>2020-09-23</discovery>
+      <entry>2021-06-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d18f431d-d360-11eb-a32c-00a0989e4ec1">
     <topic>dovecot -- multiple vulnerabilities</topic>
     <affects>
