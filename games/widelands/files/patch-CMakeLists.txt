@@ -1,14 +1,52 @@
---- CMakeLists.txt.orig	2020-07-12 19:33:44 UTC
+--- CMakeLists.txt.orig	2021-06-14 09:22:20 UTC
 +++ CMakeLists.txt
-@@ -202,7 +202,6 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
-   set(WL_DEBUG_FLAGS "-DNDEBUG -DNOPARACHUTE")
-   option(OPTION_ASAN "Build with AddressSanitizer" ON)
- else()
--  message(FATAL_ERROR "Unknown CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
- endif()
+@@ -175,45 +175,8 @@ endif()
+ # TODO(sirver): One day, this should be enabled. Then we have no more cycles in our dependencies....
+ # set_property(GLOBAL PROPERTY GLOBAL_DEPENDS_NO_CYCLES ON)
  
- wl_add_flag(WL_GENERIC_CXX_FLAGS "-std=c++11")
-@@ -219,7 +218,7 @@ endif(OPTION_ASAN)
+-if (NOT CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE STREQUAL "")
+-  find_path(FILE_WL_RELEASE "WL_RELEASE" ${CMAKE_CURRENT_SOURCE_DIR})
+-  if(${FILE_WL_RELEASE} STREQUAL "FILE_WL_RELEASE-NOTFOUND")
+-    set(CMAKE_BUILD_TYPE Debug)
+-  else()
+-    set(CMAKE_BUILD_TYPE Release)
+-  endif()
+-endif (NOT CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE STREQUAL "")
+ 
+-if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+-  if(MSVC)
+-    set(WL_DEBUG_FLAGS "-DDEBUG")
+-  else()
+-    set(WL_DEBUG_FLAGS "-g -DDEBUG")
+-  endif()
+-  option(OPTION_ASAN "Build with AddressSanitizer" ON)
+-elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
+-  if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU") AND (CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 6.2))
+-    message(STATUS "GCC >6.2.0 breaks -03, setting -02")
+-    set(WL_OPTIMIZE_FLAGS "-O2")
+-  else()
+-    set(WL_OPTIMIZE_FLAGS "-O3")
+-  endif ()
+-  set(WL_DEBUG_FLAGS "-DNDEBUG -DNOPARACHUTE")
+-  option(OPTION_ASAN "Build with AddressSanitizer" OFF)
+-elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
+-  if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU") AND (CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 6.2))
+-    message(STATUS "GCC >6.2.0 breaks -03, setting -02")
+-    set(WL_OPTIMIZE_FLAGS "-O2")
+-  else()
+-    set(WL_OPTIMIZE_FLAGS "-O3")
+-  endif ()
+-  set(WL_DEBUG_FLAGS "-DNDEBUG -DNOPARACHUTE")
+-  option(OPTION_ASAN "Build with AddressSanitizer" ON)
+-else()
+-  message(FATAL_ERROR "Unknown CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
+-endif()
+ 
+-
+ if(OPTION_ASAN)
+   message(STATUS "Using AddressSanitizer https://clang.llvm.org/docs/AddressSanitizer.html")
+   # See https://clang.llvm.org/docs/AddressSanitizer.html
+@@ -226,7 +189,7 @@ endif(OPTION_ASAN)
  
  # This is set to avoid linker errors when using GLVND-libs on Linux
  if("${OpenGL_GL_PREFERENCE}" STREQUAL "GLVND")
@@ -17,7 +55,46 @@
     add_compile_definitions(WL_USE_GLVND)
     message(STATUS "Adding linker flags for GLVND.")
  endif()
-@@ -352,7 +351,7 @@ endif (OPTION_BUILD_TESTS)
+@@ -255,8 +218,6 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+   wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Wno-unreachable-code")
+   wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Wno-documentation")
+ 
+-  wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=deprecated")
+-  wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=non-pod-varargs")
+ 
+   wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Qunused-arguments")
+ 
+@@ -311,10 +272,6 @@ endif()
+ 
+ if(NOT MSVC)
+   # Turn some warnings into errors.
+-  wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=format-security")
+-  wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=return-type")
+-  wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=shadow")
+-  wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=uninitialized")
+ 
+   wl_add_flag(WL_GENERIC_CXX_FLAGS "-std=c++11")
+ endif()
+@@ -327,9 +284,8 @@ if(USE_FLTO_IF_AVAILABLE STREQUAL "yes")
+ if(CMAKE_BUILD_TYPE STREQUAL "Release")
+   # Only tested on Linux. Might work also on other platforms.
+   # If tested and found good, remove this check
+-  if (CMAKE_SYSTEM MATCHES "Linux")
++  if (CMAKE_SYSTEM MATCHES "Linux|FreeBSD")
+     # Usage of -flto tested only with gcc 8.3 and 9.3 (2020-04); when in doubt, leaving it out..
+-    if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU") AND (CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 8.0))
+       #
+       # The execution jumps between compile units rather often. -flot allows optimization across
+       # comple units. Binary size reduced by >15% on tested environments. This does not directly
+@@ -341,7 +297,6 @@ if(CMAKE_BUILD_TYPE STREQUAL "Release")
+       wl_add_flag(WL_GENERIC_CXX_FLAGS "-flto")
+       SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} -flto")
+       message(STATUS "Enabling link-time optimizations")
+-    endif()
+   endif(CMAKE_SYSTEM MATCHES "Linux")
+ endif(CMAKE_BUILD_TYPE STREQUAL "Release")
+ endif(USE_FLTO_IF_AVAILABLE STREQUAL  "yes")
+@@ -414,7 +369,7 @@ endif (OPTION_BUILD_TESTS)
  
  install (
    FILES ${CMAKE_CURRENT_BINARY_DIR}/VERSION
@@ -26,7 +103,7 @@
    CONFIGURATIONS Debug;Release
    COMPONENT CoreVersionFile
  )
-@@ -401,10 +400,9 @@ install(
+@@ -463,10 +418,9 @@ install(
  
  install(
    FILES
@@ -38,7 +115,7 @@
    CONFIGURATIONS Debug;Release
    COMPONENT CoreLicenseFiles
  )
-@@ -412,7 +410,7 @@ install(
+@@ -474,7 +428,7 @@ install(
  install(
    DIRECTORY
      doc
