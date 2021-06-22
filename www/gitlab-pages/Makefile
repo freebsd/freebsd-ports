@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-pages
-PORTVERSION=	1.39.0
+PORTVERSION=	1.40.0
 CATEGORIES=	www
 
 MAINTAINER=	swills@FreeBSD.org
@@ -15,7 +15,7 @@ USE_GITHUB=	nodefault
 
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-pages/tags
-GL_COMMIT=	8dec5ce6bdd6edfcf8479163a240f1488af75d7a
+GL_COMMIT=	0e711de3bdff83d19738ad18f50a18ef8deb6fff
 
 # Build with: make gomod-vendor
 # 134dd
@@ -144,8 +144,8 @@ GH_TUPLE=	\
 		tdakkota:asciicheck:d7f85be797a2:tdakkota_asciicheck/vendor/github.com/tdakkota/asciicheck \
 		tetafro:godot:v0.3.7:tetafro_godot/vendor/github.com/tetafro/godot \
 		timakin:bodyclose:f7f2e9bca95e:timakin_bodyclose/vendor/github.com/timakin/bodyclose \
+		tj:assert:v0.0.3:tj_assert/vendor/github.com/tj/assert \
 		tj:go-redirects:5c02ead0bbc5:tj_go_redirects/vendor/github.com/tj/go-redirects \
-		tomasen:realip:f0c99a92ddce:tomasen_realip/vendor/github.com/tomasen/realip \
 		tommy-muehle:go-mnd:e6f9a994e8fa:tommy_muehle_go_mnd/vendor/github.com/tommy-muehle/go-mnd \
 		ultraware:funlen:v0.0.2:ultraware_funlen/vendor/github.com/ultraware/funlen \
 		ultraware:whitespace:v0.0.4:ultraware_whitespace/vendor/github.com/ultraware/whitespace \
