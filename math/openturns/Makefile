@@ -1,7 +1,7 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,7 +27,6 @@ LIB_DEPENDS=	libbonmin.so:math/bonmin \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
 		libhdf5_cpp.so:science/hdf5 \
-		libhmat.so:math/hmat-oss \
 		libipopt.so:math/ipopt \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
@@ -48,6 +47,7 @@ CMAKE_ARGS=	-DBLAS_LIBRARIES=${LOCALBASE}/lib/libopenblas.so -DLAPACK_LIBRARIES=
 		-DOPENTURNS_EXAMPLE_PATH:STRING=share/examples/openturns \
 		-DOPENTURNS_DOC_PATH:STRING=share/doc/openturns
 CMAKE_OFF=	USE_DOXYGEN USE_SPHINX
+CMAKE_OFF+=	USE_HMAT # broken with hmat-oss-1.7.1: https://github.com/openturns/openturns/issues/1868
 
 OPTIONS_DEFINE=		PYTHON EXAMPLES
 OPTIONS_DEFAULT=	PYTHON
@@ -56,9 +56,15 @@ OPTIONS_SUB=		yes
 PYTHON_USES=		python
 PYTHON_CMAKE_BOOL=	BUILD_PYTHON
 PYTHON_CMAKE_ON=	-DSWIG_EXECUTABLE=${LOCALBASE}/bin/swig
+PYTHON_PY_DEPENDS=	${PYNUMPY} \
+			${PYTHON_PKGNAMEPREFIX}chaospy>0:math/py-chaospy@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}dill>0:devel/py-dill@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 PYTHON_BUILD_DEPENDS=	swig:devel/swig \
-			${PYTHON_RUN_DEPENDS}
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
+			${PYTHON_PY_DEPENDS}
+PYTHON_RUN_DEPENDS=	${PYTHON_PY_DEPENDS}
 
 PORTEXAMPLES=		*
 
