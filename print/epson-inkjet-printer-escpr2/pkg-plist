@@ -111,6 +111,7 @@
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S381L-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S5010_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S5080_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S6010_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S6710T_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S7070X-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-PX-S7090X-epson-inkjet-printer-escpr2.ppd.gz
@@ -122,6 +123,7 @@
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ST-3000_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ST-4000_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ST-C8000_Series-epson-inkjet-printer-escpr2.ppd.gz
+%%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ST-C8090_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ST-M1000_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-ST-M3000_Series-epson-inkjet-printer-escpr2.ppd.gz
 %%LINUXBASE%%/opt/epson-inkjet-printer-escpr2/ppds/Epson/Epson-WF-2860_Series-epson-inkjet-printer-escpr2.ppd.gz
