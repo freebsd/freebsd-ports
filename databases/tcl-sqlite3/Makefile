@@ -12,9 +12,6 @@ COMMENT=	SQLite extension for Tcl using the Tcl Extension Architecture (TEA)
 
 LICENSE=	PD
 
-DEPRECATED=	Replaced with database/sqlite3 tcl flavor
-EXPIRATION_DATE=	2021-06-30
-
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 USES=		pkgconfig tcl:tea
