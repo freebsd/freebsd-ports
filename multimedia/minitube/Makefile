@@ -1,6 +1,5 @@
 PORTNAME=	minitube
-DISTVERSION=	3.8.2
-PORTREVISION=	1
+DISTVERSION=	3.9
 CATEGORIES=	multimedia www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,11 +14,12 @@ USES=		compiler:c++11-lang gl qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	flaviotordini
 GH_TUPLE=	\
-		flaviotordini:idle:6aa092da64a011e445bf31cf31c0cd8dda4c64ff:flaviotordini_idle/lib/idle \
-		flaviotordini:media:edfcc8cb7104e95b060b955dcf0eb871df7ecbbf:flaviotordini_media/lib/media \
-		flaviotordini:http:b85c56407733f6f562f6cb25df137611f843f114:flaviotordini_http/lib/http \
-		flaviotordini:updater:18ce1d09fda792d9f4bb8fe91409a79cdae84fe1:flaviotordini_updater/lib/updater \
-		flaviotordini:js:c00b981fb1fb88a32e9e0a0287b32c73a5d1f1a5:flaviotordini_js/lib/js
+		flaviotordini:http:11e1ad8:flaviotordini_http/lib/http \
+		flaviotordini:idle:6aa092d:flaviotordini_idle/lib/idle \
+		flaviotordini:js:acf3f87:flaviotordini_js/lib/js \
+		flaviotordini:media:edfcc8c:flaviotordini_media/lib/media \
+		flaviotordini:promises:a5789eb:flaviotordini_promises/lib/promises \
+		flaviotordini:updater:18ce1d0:flaviotordini_updater/lib/updater
 
 USE_GL=		gl
 USE_QT=		core dbus declarative gui network script sql widgets \
