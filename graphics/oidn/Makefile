@@ -1,7 +1,6 @@
 PORTNAME=	oidn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
-PORTREVISION=	2
+DISTVERSION=	1.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://freebsd.org/:weights # bogus URL to make the framework happy, the fetch uses Git URL below
 DISTFILES=	${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX}:weights
@@ -41,7 +40,7 @@ APPS_CMAKE_BOOL=	OIDN_APPS
 DOCSDIR=	share/doc/${GH_ACCOUNT}
 
 WEIGHTS_GIT_URL=	https://github.com/OpenImageDenoise/oidn-weights.git
-WEIGHTS_GIT_HASH=	59bad6bb6344f8fb8205772df3f795c2dc72e23b
+WEIGHTS_GIT_HASH=	a34b7641349c5a79e46a617d61709c35df5d6c28
 
 pre-fetch:
 	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX}" ]; then \
