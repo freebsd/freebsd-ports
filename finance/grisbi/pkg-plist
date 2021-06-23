@@ -398,6 +398,7 @@ share/applications/grisbi.desktop
 %%DATADIR%%/pixmaps/flags/VND.png
 %%DATADIR%%/pixmaps/flags/VUV.png
 %%DATADIR%%/pixmaps/flags/WST.png
+%%DATADIR%%/pixmaps/flags/XBT.png
 %%DATADIR%%/pixmaps/flags/XPF.png
 %%DATADIR%%/pixmaps/flags/YER.png
 %%DATADIR%%/pixmaps/flags/YUM.png
