@@ -730,7 +730,7 @@ Notes:
 	<name>py37-aiohttp</name>
 	<name>py38-aiohttp</name>
 	<name>py39-aiohttp</name>
-	<range><lt>3.7.4</lt></range>
+	<range><le>3.7.3</le></range>
       </package>
     </affects>
     <description>
@@ -750,6 +750,7 @@ Notes:
     <dates>
       <discovery>2021-02-25</discovery>
       <entry>2021-06-03</entry>
+      <modified>2021-06-23</modified>
     </dates>
   </vuln>
 
