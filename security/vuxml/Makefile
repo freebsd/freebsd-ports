@@ -31,6 +31,8 @@ dir_DTD=	share/xml/dtd/vuxml
 
 VUXML_FILE?=	${PKGDIR}/vuln.xml
 VUXML_FLAT_FILE?=	${PKGDIR}/vuln-flat.xml
+_YEAR!=	date +%Y
+VUXML_CURRENT_FILE?=	${PKGDIR}/vuln-${_YEAR}.xml
 
 post-clean:
 	@${RM} "${VUXML_FILE}.tidy"
@@ -89,7 +91,7 @@ tidy: vuln-flat.xml
 	${SH} ${FILESDIR}/tidy.sh "${FILESDIR}/tidy.xsl" "${VUXML_FLAT_FILE}" > "${VUXML_FILE}.tidy"
 
 newentry:
-	@${SH} ${FILESDIR}/newentry.sh "${VUXML_FILE}"
+	@${SH} ${FILESDIR}/newentry.sh "${VUXML_CURRENT_FILE}"
 
 .include <bsd.port.pre.mk>
 
