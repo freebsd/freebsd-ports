@@ -1,8 +1,8 @@
---- regress/cmdline/Makefile.orig	2020-10-21 11:24:20 UTC
+--- regress/cmdline/Makefile.orig	2021-06-22 19:37:49 UTC
 +++ regress/cmdline/Makefile
-@@ -80,4 +80,6 @@ fetch:
- tree:
- 	./tree.sh -q -r "$(GOT_TEST_ROOT)"
+@@ -83,4 +83,6 @@ tree:
+ pack:
+ 	./pack.sh -q -r "$(GOT_TEST_ROOT)"
  
 -.include <bsd.regress.mk>
 +regress: ${REGRESS_TARGETS} .PHONY .SILENT

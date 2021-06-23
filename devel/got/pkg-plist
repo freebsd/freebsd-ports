@@ -1,4 +1,5 @@
 bin/got
+bin/gotadmin
 bin/tog
 libexec/got-fetch-pack
 libexec/got-index-pack
@@ -11,6 +12,7 @@ libexec/got-read-pack
 libexec/got-read-tag
 libexec/got-read-tree
 man/man1/got.1.gz
+man/man1/gotadmin.1.gz
 man/man1/tog.1.gz
 man/man5/git-repository.5.gz
 man/man5/got-worktree.5.gz
