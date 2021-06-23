@@ -1,3 +1,7 @@
 TIMESTAMP = 1620404290
 SHA256 (KDE/frameworks/5.82.0/kimageformats-5.82.0.tar.xz) = 3e7852b85f2a2e5d7136548747b5fd75b8c81e99c9f691bb8a168ce72bb1057d
 SIZE (KDE/frameworks/5.82.0/kimageformats-5.82.0.tar.xz) = 590128
+SHA256 (KDE/frameworks/5.82.0/bf3f94da766d.patch) = 007e72582ed375e0562b0e5883614e101a860c60ef1649d28f1b5c5e96484068
+SIZE (KDE/frameworks/5.82.0/bf3f94da766d.patch) = 1036
+SHA256 (KDE/frameworks/5.82.0/ef6be2c077ca.patch) = 4c2f20cdf355eb8be1d05a6273a76a9b74fab912ca9c31687d2d31fe15a8a598
+SIZE (KDE/frameworks/5.82.0/ef6be2c077ca.patch) = 1128
