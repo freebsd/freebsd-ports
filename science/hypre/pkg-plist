@@ -32,7 +32,6 @@ include/csr_matmultivec.h
 include/distributed_matrix.h
 include/fortran.h
 include/fortran_matrix.h
-include/hypre_hopscotch_hash.h
 include/interpreter.h
 include/krylov.h
 include/lobpcg.h
@@ -46,4 +45,4 @@ include/seq_mv.h
 include/temp_multivector.h
 lib/libHYPRE.so
 lib/libHYPRE.so.2
-lib/libHYPRE.so.2.21
+lib/libHYPRE.so.2.22
