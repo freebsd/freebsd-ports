@@ -3,9 +3,11 @@
 PORTNAME=	magic
 PORTVERSION=	5.39
 CATEGORIES=	devel python
-MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
+MASTER_SITES=	https://astron.com/pub/file/ \
+		ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
-		ftp://ftp.fu-berlin.de/unix/tools/file/
+		ftp://ftp.fu-berlin.de/unix/tools/file/ \
+		https://www.mirrorservice.org/sites/distfiles.macports.org/file/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	file-${PORTVERSION}
 
