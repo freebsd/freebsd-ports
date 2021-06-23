@@ -1,6 +1,6 @@
 PORTNAME=	solana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.1
+DISTVERSION=	1.7.2
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -410,16 +410,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		smallvec-1.6.1 \
 		smpl_jwt-0.6.1 \
 		socket2-0.3.17 \
-		solana-frozen-abi-1.6.4 \
-		solana-frozen-abi-macro-1.6.4 \
-		solana-logger-1.6.4 \
-		solana-program-1.6.4 \
-		solana-sdk-macro-1.6.4 \
+		solana-frozen-abi-1.7.1 \
+		solana-frozen-abi-macro-1.7.1 \
+		solana-logger-1.7.1 \
+		solana-program-1.7.1 \
+		solana-sdk-macro-1.7.1 \
 		solana_rbpf-0.2.11 \
 		spin-0.5.2 \
 		spl-associated-token-account-1.0.2 \
 		spl-memo-3.0.1 \
-		spl-token-3.1.0 \
+		spl-token-3.1.1 \
 		stable_deref_trait-1.2.0 \
 		standback-0.2.9 \
 		static_assertions-1.1.0 \
