@@ -16,6 +16,7 @@ include/glslang/Include/InitializeGlobals.h
 include/glslang/Include/PoolAlloc.h
 include/glslang/Include/ResourceLimits.h
 include/glslang/Include/ShHandle.h
+include/glslang/Include/SpirvIntrinsics.h
 include/glslang/Include/Types.h
 include/glslang/Include/arrays.h
 include/glslang/Include/glslang_c_interface.h
