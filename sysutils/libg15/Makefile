@@ -1,5 +1,5 @@
 PORTNAME=	libg15
-DISTVERSION=	3.0.5
+DISTVERSION=	3.0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	https://gitlab.com/menelkir/${PORTNAME}/-/archive/${PORTVERSION}/
 
@@ -9,7 +9,7 @@ COMMENT=	API for control of LCD and the extra keys on Logitech keyboards
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:gcc-c++11-lib gmake libtool tar:bzip2
+USES=		gmake libtool tar:bzip2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
