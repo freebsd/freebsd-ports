@@ -2,8 +2,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	3_16_7
-PORTREVISION=	2
+DISTVERSION=	3_16_8
 CATEGORIES=	graphics geography
 PKGNAMESUFFIX=	-ltr
 
@@ -45,6 +44,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libgeos.so:graphics/geos \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
+		liblazperf.so:archivers/lazperf \
 		libnetcdf.so:science/netcdf \
 		libOpenCL.so:devel/ocl-icd \
 		libproj.so:graphics/proj \
@@ -111,7 +111,7 @@ USE_GL=		gl
 USE_GNOME=	libxml2
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USE_PYQT=	core gui network qml quick quickwidgets qscintilla2 \
+USE_PYQT=	core gui location network qml quick quickwidgets qscintilla2 \
 		pysip sip sql svg webkit_run webkitwidgets_run xml
 USE_QT=		3d buildtools_build core concurrent dbus declarative \
 		designer doc gamepad gui linguist_build location \
