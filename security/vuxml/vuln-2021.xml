@@ -34,7 +34,7 @@
     <affects>
       <package>
 	<name>dovecot-pigeonhole</name>
-	<range><lt>2.3.15</lt></range>
+	<range><lt>0.5.15</lt></range>
       </package>
     </affects>
     <description>
