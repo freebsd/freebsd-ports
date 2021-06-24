@@ -16,6 +16,11 @@ USE_RC_SUBR?=	# reset to empty
 
 MASTERDIR=	${.CURDIR}/../unit
 
+# Fix build failure on clang12
+.if ${OSVERSION} >= 1400023
+CFLAGS+=	-Wno-compound-token-split-by-macro
+.endif
+
 post-configure:
 	cd ${CONFIGURE_WRKSRC} && \
 	${CONFIGURE_CMD} perl --module=${UNIT_MODNAME}
