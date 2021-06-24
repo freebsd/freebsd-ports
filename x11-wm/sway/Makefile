@@ -1,16 +1,10 @@
 PORTNAME=	sway
-DISTVERSION=	1.6
-PORTREVISION=	3
+DISTVERSION=	1.6.1
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	cd9d1038a822.patch:-p1 # https://github.com/swaywm/sway/pull/5090
 PATCHFILES+=	f98ca3ab7ca1.patch:-p1 # https://github.com/swaywm/sway/pull/5090
-PATCHFILES+=	78fc9d0d2d4f.patch:-p1 # https://github.com/swaywm/sway/pull/6176
-PATCHFILES+=	7a68a28475bf.patch:-p1 # wlroots 0.14
-PATCHFILES+=	1a72049c04b8.patch:-p1 # wlroots 0.14
-PATCHFILES+=	12e223e7973f.patch:-p1 # wlroots 0.14
-PATCHFILES+=	3162766eef14.patch:-p1 # wlroots 0.14
 PATCHFILES+=	86b08e3257a4.patch:-p1 # WLR_RENDERER=vulkan
 
 MAINTAINER=	jbeich@FreeBSD.org
