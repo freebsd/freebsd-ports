@@ -2,8 +2,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	3_18_3
-PORTREVISION=	4
+DISTVERSION=	3_20_0
 CATEGORIES=	graphics geography
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -112,7 +111,7 @@ USE_GL=		gl
 USE_GNOME=	libxml2
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USE_PYQT=	core gui network qml quick quickwidgets qscintilla2 \
+USE_PYQT=	core gui location network qml quick quickwidgets qscintilla2 \
 		pysip sip sql svg webkit_run webkitwidgets_run xml
 USE_QT=		3d buildtools_build core concurrent dbus declarative \
 		designer doc gamepad gui linguist_build location \
