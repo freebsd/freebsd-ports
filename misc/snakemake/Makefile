@@ -1,5 +1,5 @@
 PORTNAME=	snakemake
-DISTVERSION=	6.4.1
+DISTVERSION=	6.5.0
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}smart-open>0:net/py-smart-open@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stopit>0:devel/py-stopit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tabulate>0:devel/py-tabulate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toposort>0:devel/py-toposort@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>0:devel/py-wrapt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
