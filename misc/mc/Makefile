@@ -2,7 +2,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.8.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		https://ftp.osuosl.org/pub/midnightcommander/
@@ -13,24 +13,26 @@ COMMENT=	Midnight Commander, a free Norton Commander Clone
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+RUN_DEPENDS=	zip:archivers/zip
+
 USES=		gmake gnome libtool perl5 pkgconfig python shebangfix tar:xz
 SHEBANG_FILES=	${WRKSRC}/src/vfs/extfs/helpers/s3+.in \
 		${WRKSRC}/src/vfs/extfs/helpers/uc1541
 python_OLD_CMD=	@PYTHON@
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ZIP=${ZIP_CMD} UNZIP=${UNZIP_CMD}
+CONFIGURE_ENV=	ZIP=${LOCALBASE}/bin/zip UNZIP=${UNZIP_NATIVE_CMD}
 
 PORTDOCS=	AUTHORS FAQ HACKING MAINTAINERS NEWS README *.txt
 
 OPTIONS_DEFINE=	DOCS EDITOR EXTATTR ICONV NLS SFTP SMB SUBSHELL X11
-OPTIONS_DEFAULT=	EDITOR EXTATTR ICONV SFTP SLANG SMB SUBSHELL X11
+OPTIONS_DEFAULT=	EDITOR ICONV SFTP SLANG SMB SUBSHELL X11
 OPTIONS_SINGLE=	SCREEN
 OPTIONS_SINGLE_SCREEN=	SLANG NCURSES
 OPTIONS_SUB=	yes
 
 EDITOR_DESC=	Build with internal editor
-EXTATTR_DESC=	Ext2fs extended attributes support
+EXTATTR_DESC=	Extended attributes support
 SCREEN_DESC=	Screen library
 SFTP_DESC=	Support for SFTP (via libssh)
 SUBSHELL_DESC=	Build with subshell support
