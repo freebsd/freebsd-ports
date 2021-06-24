@@ -1,8 +1,0 @@
---- deps/rabbit/scripts/rabbitmqctl.orig	2018-03-14 10:59:24 UTC
-+++ deps/rabbit/scripts/rabbitmqctl
-@@ -29,4 +29,5 @@ set -a
- # shellcheck source=./rabbitmq-env
- . "${0%/*}"/rabbitmq-env
-
-+HOME=/var/db/rabbitmq
- run_escript rabbitmqctl_escript "${ESCRIPT_DIR:?must be defined}"/rabbitmqctl "$@"
