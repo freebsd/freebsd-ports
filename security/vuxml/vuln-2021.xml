@@ -299,12 +299,13 @@
       </body>
     </description>
     <references>
-      <cvename>2020-35701</cvename>
+      <cvename>CVE-2020-35701</cvename>
       <url>https://github.com/Cacti/cacti/issues/4022</url>
     </references>
     <dates>
       <discovery>2020-12-24</discovery>
       <entry>2021-06-10</entry>
+      <modified>2021-06-24</modified>
     </dates>
   </vuln>
 
