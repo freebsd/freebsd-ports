@@ -1,7 +1,7 @@
 # Created by: Will Andrews <andrews@technologist.com>
 
 PORTNAME=	makeself
-DISTVERSION=	2.4.4
+DISTVERSION=	2.4.5
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/megastep/makeself/releases/download/release-${PORTVERSION}/
 EXTRACT_SUFX=	.run
