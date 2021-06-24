@@ -1,8 +1,8 @@
 [
 { type: install
   message: <<EOM
-To run nzbget as an unprivileged user you can set the Daemonuser
-variable in %%LOCALBASE%%/etc/nzbget.conf
+Set "nzbget_user" in rc.conf or "DaemonUsername" in your nzbget config
+to run the nzbget daemon as an unprivileged user.
 EOM
 }
 ]
