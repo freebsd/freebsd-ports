@@ -3,6 +3,7 @@
   message: <<EOM
 Known issues:
 - NVIDIA may be affected by https://github.com/aritger/eglstreams-kms-example/issues/7
+- VULKAN currently requires mesa-devel
 EOM
 }
 ]

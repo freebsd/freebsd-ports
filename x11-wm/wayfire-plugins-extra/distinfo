@@ -1,3 +1,5 @@
 TIMESTAMP = 1611938557
 SHA256 (WayfireWM-wayfire-plugins-extra-v0.7.0_GH0.tar.gz) = e6377e7f2cd6b0a19fe0a256c819f801ee1d963524ed4e4930b702474bc04287
 SIZE (WayfireWM-wayfire-plugins-extra-v0.7.0_GH0.tar.gz) = 50385
+SHA256 (a8eca14c44b9.patch) = 99dd5f51ff2a27bbff2165ee80707ea3954c25c438bef5969f85bedcda410c7f
+SIZE (a8eca14c44b9.patch) = 1059

@@ -13,6 +13,8 @@ COMMENT=	Dynamic tiling Wayland compositor
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with wlroots 0.15: outdated Zig bindings
+
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>0:graphics/wayland-protocols \
 		wlroots>=0.14.0:x11-toolkits/wlroots \

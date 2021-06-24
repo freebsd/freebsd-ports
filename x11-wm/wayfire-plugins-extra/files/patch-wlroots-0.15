@@ -1,0 +1,27 @@
+../src/mag.cpp:176:30: error: no member named 'front_buffer' in 'wlr_output'
+        if (!output->handle->front_buffer)
+             ~~~~~~~~~~~~~~  ^
+../src/mag.cpp:184:52: error: no member named 'front_buffer' in 'wlr_output'
+        if (!wlr_buffer_get_dmabuf(output->handle->front_buffer, &dmabuf_attribs))
+                                   ~~~~~~~~~~~~~~  ^
+
+--- src/mag.cpp.orig	2021-01-29 16:42:37 UTC
++++ src/mag.cpp
+@@ -173,7 +173,7 @@ class wayfire_magnifier : public wf::plugin_interface_
+     {
+         wlr_dmabuf_attributes dmabuf_attribs;
+ 
+-        if (!output->handle->front_buffer)
++        if (!output->handle->back_buffer)
+         {
+             LOGE("Got empty buffer on ", output->handle->name);
+             return;
+@@ -181,7 +181,7 @@ class wayfire_magnifier : public wf::plugin_interface_
+ 
+         /* This plugin only works if this function succeeds. It will not
+          * work with the x11 backend but works with drm, for example. */
+-        if (!wlr_buffer_get_dmabuf(output->handle->front_buffer, &dmabuf_attribs))
++        if (!wlr_buffer_get_dmabuf(output->handle->back_buffer, &dmabuf_attribs))
+         {
+             LOGE("Failed reading output contents");
+             deactivate();

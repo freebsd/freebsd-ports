@@ -1,0 +1,121 @@
+https://github.com/WayfireWM/wayfire/issues/1351
+
+In file included from ../src/core/core.cpp:17:
+../src/api/wayfire/nonstd/wlroots-full.hpp:85:10: fatal error: 'wlr/backend/noop.h' file not found
+#include <wlr/backend/noop.h>
+         ^~~~~~~~~~~~~~~~~~~~
+../src/core/output-layout.cpp:630:25: error: no member named 'front_buffer' in 'wlr_output'
+        if (wo->handle->front_buffer == NULL)
+            ~~~~~~~~~~  ^
+../src/core/output-layout.cpp:637:48: error: no member named 'front_buffer' in 'wlr_output'
+        if (!wlr_buffer_get_dmabuf(wo->handle->front_buffer, &attributes))
+                                   ~~~~~~~~~~  ^
+
+--- plugins/single_plugins/preserve-output.cpp.orig	2021-06-23 13:11:20 UTC
++++ plugins/single_plugins/preserve-output.cpp
+@@ -297,7 +297,7 @@ class wayfire_preserve_output : public wf::plugin_inte
+   public:
+     void init() override
+     {
+-        if (wlr_output_is_noop(output->handle))
++        if (wlr_output_is_headless(output->handle))
+         {
+             // Don't do anything for NO-OP outputs
+             return;
+--- src/api/wayfire/nonstd/wlroots-full.hpp.orig	2021-06-23 13:11:20 UTC
++++ src/api/wayfire/nonstd/wlroots-full.hpp
+@@ -81,7 +81,7 @@ extern "C"
+ #if WLR_HAS_X11_BACKEND
+     #include <wlr/backend/x11.h>
+ #endif
+-#include <wlr/backend/noop.h>
++#include <wlr/backend/headless.h>
+ #include <wlr/backend/wayland.h>
+ #undef static
+ #include <wlr/backend/libinput.h>
+--- src/core/output-layout.cpp.orig	2021-06-23 13:11:20 UTC
++++ src/core/output-layout.cpp
+@@ -439,7 +439,7 @@ struct output_layout_output_t
+          * focused */
+         wlr_output *focused = get_core().get_active_output() ?
+             get_core().get_active_output()->handle : nullptr;
+-        if (!focused || wlr_output_is_noop(focused))
++        if (!focused || wlr_output_is_headless(focused))
+         {
+             get_core().focus_output(wo);
+         }
+@@ -627,14 +627,14 @@ struct output_layout_output_t
+         }
+ 
+         wlr_dmabuf_attributes attributes;
+-        if (wo->handle->front_buffer == NULL)
++        if (wo->handle->back_buffer == NULL)
+         {
+             LOGE("Got empty buffer on ", wo->handle->name);
+ 
+             return;
+         }
+ 
+-        if (!wlr_buffer_get_dmabuf(wo->handle->front_buffer, &attributes))
++        if (!wlr_buffer_get_dmabuf(wo->handle->back_buffer, &attributes))
+         {
+             LOGE("Failed reading mirrored output contents from ", wo->handle->name);
+ 
+@@ -653,7 +653,7 @@ struct output_layout_output_t
+ 
+     void set_enabled(bool enabled)
+     {
+-        if (wlr_output_is_noop(handle))
++        if (wlr_output_is_headless(handle))
+         {
+             return;
+         }
+@@ -740,7 +740,7 @@ struct output_layout_output_t
+      */
+     void emit_configuration_changed(uint32_t changed_fields)
+     {
+-        if (!wlr_output_is_noop(handle) && changed_fields)
++        if (!wlr_output_is_headless(handle) && changed_fields)
+         {
+             wf::output_configuration_changed_signal data{current_state};
+             data.output = output.get();
+@@ -903,7 +903,7 @@ class output_layout_t::impl
+         on_config_reload = [=] (void*) { reconfigure_from_config(); };
+         get_core().connect_signal("reload-config", &on_config_reload);
+ 
+-        noop_backend = wlr_noop_backend_create(get_core().display);
++        noop_backend = wlr_headless_backend_create(get_core().display);
+         wlr_backend_start(noop_backend);
+ 
+         get_core().connect_signal("_backend_started", &on_backend_started);
+@@ -989,7 +989,7 @@ class output_layout_t::impl
+ 
+         if (!noop_output)
+         {
+-            auto handle = wlr_noop_add_output(noop_backend);
++            auto handle = wlr_headless_add_output(noop_backend, 800, 600);
+             noop_output = std::make_unique<output_layout_output_t>(handle);
+         }
+ 
+--- src/core/wm.cpp.orig	2021-06-23 13:11:20 UTC
++++ src/core/wm.cpp
+@@ -48,7 +48,7 @@ void wayfire_exit::init()
+         int cnt_other_outputs = 0;
+         for (auto& wo : wf::get_core().output_layout->get_outputs())
+         {
+-            if ((wo != output) && !wlr_output_is_noop(wo->handle))
++            if ((wo != output) && !wlr_output_is_headless(wo->handle))
+             {
+                 ++cnt_other_outputs;
+             }
+--- src/output/render-manager.cpp	2021-06-23 13:11:20 UTC
++++ src/output/render-manager.cpp
+@@ -691,7 +691,7 @@ class wf::render_manager::impl
+ 
+         on_frame.set_callback([&] (void*)
+         {
+-            if (wlr_output_is_noop(output->handle))
++            if (wlr_output_is_headless(output->handle))
+             {
+                 return;
+             }
