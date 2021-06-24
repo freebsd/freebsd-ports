@@ -1,6 +1,5 @@
 PORTNAME=	softether
-DISTVERSION=	5.02.0
-PORTREVISION=	1
+DISTVERSION=	5.02.${SE_BUILD_NUMBER}
 PORTEPOCH=	1
 CATEGORIES=	security net-vpn
 PKGNAMESUFFIX=	5
@@ -29,11 +28,13 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	SoftEtherVPN
 GH_PROJECT=	SoftEtherVPN
-GH_TUPLE=	SoftEtherVPN:libhamcore:b7f5d8d:libhamcore/src/libhamcore \
+GH_TUPLE=	SoftEtherVPN:SoftEtherVPN:5.02.0 \
+		SoftEtherVPN:libhamcore:b7f5d8d:libhamcore/src/libhamcore \
 		BLAKE2:BLAKE2:b52178a:BLAKE2/3rdparty/BLAKE2 \
 		cxong:tinydir:ec6bff2:tinydir/3rdparty/tinydir
 
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
+		-DBUILD_NUMBER=${SE_BUILD_NUMBER} \
 		-DSE_DBDIR="${SE_DBDIR}" \
 		-DSE_LOGDIR="${SE_LOGDIR}" \
 		-DSE_PIDDIR="${SE_PIDDIR}"
@@ -43,6 +44,10 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	DISCLAIMER.md WARNING.TXT
 CONFLICTS_INSTALL=	softether-4.[0-9]* softether-devel-4.[0-9]*
 
+# The build number must be a monotonically increasing value but upstream
+# accidentally reset it to zero. So reset to the correct value.
+# See also: SoftEtherVPN/SoftEtherVPN#1392
+SE_BUILD_NUMBER=	9675
 SE_DBDIR?=	/var/db/${PORTNAME}
 SE_LOGDIR?=	/var/log/${PORTNAME}
 SE_PIDDIR?=	/var/run/${PORTNAME}
@@ -58,6 +63,7 @@ SUB_FILES=	pkg-message
 CMAKE_BOOL_ON+=	SKIP_CPU_FEATURES
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/include/cpu_features_macros.h:devel/cpu_features
+LIB_DEPENDS+=	libcpu_features.so:devel/cpu_features
 .endif
 
 post-install:
