@@ -1,7 +1,7 @@
 # Created by: Fotis Zabaras <fotis@zabaras.eu>
 
 PORTNAME=	pyzabbix
-PORTVERSION=	0.8.2
+PORTVERSION=	1.0.0
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,8 @@ COMMENT=	Zabbix API Python Library
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=1.0:www/py-requests@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=1.0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}semantic-version>=2.8.5:devel/py-semantic-version@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
