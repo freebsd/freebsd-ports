@@ -1,5 +1,5 @@
 PORTNAME=	libg15render
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://gitlab.com/menelkir/${PORTNAME}/-/archive/${PORTVERSION}/
 
@@ -11,10 +11,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libg15.so:sysutils/libg15
 
-USES=		compiler:gcc-c++11-lib gmake libtool tar:bzip2
+USES=		gmake libtool tar:bzip2 localbase
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
