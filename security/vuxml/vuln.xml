@@ -67,13 +67,13 @@ Additional tests can be done this way:
 Extensive documentation of the format and help with writing and verifying
 a new entry is available in The Porter's Handbook at:
 
-  http://www.freebsd.org/doc/en/books/porters-handbook/security-notify.html
+  https://docs.freebsd.org/en/books/porters-handbook/security/#security-notify
 
 Help is also available from ports-security@freebsd.org.
 
 Notes:
 
-  * Please add new entries to the beginning of this file.
+  * Please add new entries to the beginning of the current year's file.
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
