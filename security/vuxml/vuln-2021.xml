@@ -1,3 +1,34 @@
+  <vuln vid="4c9159ea-d4c9-11eb-aeee-8c164582fbac">
+    <topic>ansible-core -- Templating engine bug</topic>
+    <affects>
+      <package>
+	<name>py36-ansible-core</name>
+	<name>py37-ansible-core</name>
+	<name>py38-ansible-core</name>
+	<name>py39-ansible-core</name>
+	<range><lt>2.11.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ansible developers report:</p>
+	<blockquote cite="https://github.com/ansible/ansible/blob/stable-2.11/changelogs/CHANGELOG-v2.11.rst#security-fixes">
+	  <p>Templating engine fix for not preserving usnafe status
+	    when trying to preserve newlines.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-3583</cvename>
+      <url>https://github.com/ansible/ansible/blob/stable-2.11/changelogs/CHANGELOG-v2.11.rst#security-fixes</url>
+      <url>https://github.com/ansible/ansible/pull/74960</url>
+    </references>
+    <dates>
+      <discovery>2021-06-10</discovery>
+      <entry>2021-06-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f3fc2b50-d36a-11eb-a32c-00a0989e4ec1">
     <topic>dovecot-pigeonhole -- Sieve excessive resource usage</topic>
     <affects>
