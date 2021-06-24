@@ -1,3 +1,3 @@
-TIMESTAMP = 1621933345
-SHA256 (nats-io-nats-server-v2.2.6_GH0.tar.gz) = dec863683c0503cac7461970468785f65bc0771a3065f70cd3a0b4c76dd1dda9
-SIZE (nats-io-nats-server-v2.2.6_GH0.tar.gz) = 2490995
+TIMESTAMP = 1624523795
+SHA256 (nats-io-nats-server-v2.3.0_GH0.tar.gz) = 047e52312356459dfa1b4bfe32d42e4827f07480803a90cf40ab5306dda7dca5
+SIZE (nats-io-nats-server-v2.3.0_GH0.tar.gz) = 2625763
