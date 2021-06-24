@@ -1,10 +1,10 @@
---- src/api/Makefile.in.orig	2020-02-29 23:53:10 UTC
+--- src/api/Makefile.in.orig	2021-05-12 20:23:20 UTC
 +++ src/api/Makefile.in
-@@ -1300,7 +1300,6 @@ $(VERSION_SCRIPT) :
+@@ -1306,7 +1306,6 @@ $(VERSION_SCRIPT) :
+ 	 echo "   slurmdb_*;"; \
+ 	 echo "   plugin_context_*;"; \
+ 	 echo "   working_cluster_rec;"; \
+-	 echo "  local: *;"; \
+ 	 echo "};") > $(VERSION_SCRIPT)
  
  $(FULL_VERSION_SCRIPT) :
- 	(echo "{ global: *;";   \
--	 echo "  local: *;"; \
- 	 echo "};") > $(FULL_VERSION_SCRIPT)
- 
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
