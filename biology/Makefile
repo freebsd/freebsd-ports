@@ -77,6 +77,7 @@
     SUBDIR += mapm3
     SUBDIR += migrate
     SUBDIR += minimap2
+    SUBDIR += mmseqs2
     SUBDIR += molden
     SUBDIR += mopac
     SUBDIR += mothur
