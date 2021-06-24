@@ -12120,6 +12120,7 @@
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/MauticInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/MayaInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/MediaWikiInstaller.php
+%%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/MiaoxingInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/MicroweberInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/ModxInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/MoodleInstaller.php
@@ -12155,12 +12156,14 @@
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/TYPO3CmsInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/TYPO3FlowInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/TaoInstaller.php
+%%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/TastyIgniterInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/TheliaInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/TuskInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/UserFrostingInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/VanillaInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/VgmcpInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/WHMCSInstaller.php
+%%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/WinterInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/WolfCMSInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/WordPressInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/YawikInstaller.php
@@ -12292,7 +12295,8 @@
 %%WWWDIR%%/vendor/css-crush/css-crush/plugins/text-align.php
 %%WWWDIR%%/vendor/doctrine/cache/LICENSE
 %%WWWDIR%%/vendor/doctrine/cache/README.md
-%%WWWDIR%%/vendor/doctrine/cache/UPGRADE.md
+%%WWWDIR%%/vendor/doctrine/cache/UPGRADE-1.11.md
+%%WWWDIR%%/vendor/doctrine/cache/UPGRADE-1.4.md
 %%WWWDIR%%/vendor/doctrine/cache/composer.json
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ApcCache.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ApcuCache.php
@@ -12325,6 +12329,10 @@
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/WinCacheCache.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/XcacheCache.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ZendDataCache.php
+%%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/CacheAdapter.php
+%%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/CacheItem.php
+%%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/DoctrineProvider.php
+%%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/InvalidArgument.php
 %%WWWDIR%%/vendor/doctrine/dbal/LICENSE
 %%WWWDIR%%/vendor/doctrine/dbal/README.md
 %%WWWDIR%%/vendor/doctrine/dbal/SECURITY.md
@@ -17770,6 +17778,12 @@
 %%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs/ValueError.php
 %%WWWDIR%%/vendor/symfony/polyfill-php80/bootstrap.php
 %%WWWDIR%%/vendor/symfony/polyfill-php80/composer.json
+%%WWWDIR%%/vendor/symfony/polyfill-php81/LICENSE
+%%WWWDIR%%/vendor/symfony/polyfill-php81/Php81.php
+%%WWWDIR%%/vendor/symfony/polyfill-php81/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php
+%%WWWDIR%%/vendor/symfony/polyfill-php81/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-php81/composer.json
 %%WWWDIR%%/vendor/symfony/routing/Annotation/Route.php
 %%WWWDIR%%/vendor/symfony/routing/CHANGELOG.md
 %%WWWDIR%%/vendor/symfony/routing/CompiledRoute.php
