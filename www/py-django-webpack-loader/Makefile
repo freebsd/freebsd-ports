@@ -1,7 +1,8 @@
 # Created by: Richard Gallamore <ultima@FreeBSD.org>
 
 PORTNAME=	django-webpack-loader
-PORTVERSION=	1.0.0
+PORTVERSION=	0.7.0
+PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
