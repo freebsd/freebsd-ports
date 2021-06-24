@@ -213,6 +213,7 @@
     SUBDIR += prn
     SUBDIR += py-jaconv
     SUBDIR += qkc
+    SUBDIR += qolibri
     SUBDIR += quit
     SUBDIR += roget-fpw
     SUBDIR += rogue_s
