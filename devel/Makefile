@@ -579,7 +579,6 @@
     SUBDIR += elixir-quantum
     SUBDIR += elixir-smppex
     SUBDIR += elixir-timex
-    SUBDIR += elixir-tirexs
     SUBDIR += elixir-trailing_format_plug
     SUBDIR += elixir-tzdata
     SUBDIR += elixir-unsafe
