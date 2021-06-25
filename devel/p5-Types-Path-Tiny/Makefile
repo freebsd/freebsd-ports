@@ -18,8 +18,9 @@ RUN_DEPENDS=	p5-Path-Tiny>=0:devel/p5-Path-Tiny \
 		p5-Type-Tiny>=0.008:devel/p5-Type-Tiny
 TEST_DEPENDS=	p5-File-pushd>=0:devel/p5-File-pushd
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
