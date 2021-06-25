@@ -23,8 +23,9 @@ RUN_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-Getopt-Attribute>=0:devel/p5-Getopt-Attribute \
 		p5-YAML>=0:textproc/p5-YAML
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
