@@ -1,5 +1,5 @@
   <vuln vid="4c9159ea-d4c9-11eb-aeee-8c164582fbac">
-    <topic>ansible-core -- Templating engine bug</topic>
+    <topic>Ansible -- Templating engine bug</topic>
     <affects>
       <package>
 	<name>py36-ansible-core</name>
@@ -7,6 +7,20 @@
 	<name>py38-ansible-core</name>
 	<name>py39-ansible-core</name>
 	<range><lt>2.11.2</lt></range>
+      </package>
+      <package>
+	<name>py36-ansible-base</name>
+	<name>py37-ansible-base</name>
+	<name>py38-ansible-base</name>
+	<name>py39-ansible-base</name>
+	<range><lt>2.10.11</lt></range>
+      </package>
+      <package>
+	<name>py36-ansible-base</name>
+	<name>py37-ansible-base</name>
+	<name>py38-ansible-base</name>
+	<name>py39-ansible-base</name>
+	<range><lt>2.9.23</lt></range>
       </package>
     </affects>
     <description>
@@ -21,11 +35,14 @@
     <references>
       <cvename>CVE-2021-3583</cvename>
       <url>https://github.com/ansible/ansible/blob/stable-2.11/changelogs/CHANGELOG-v2.11.rst#security-fixes</url>
+      <url>https://github.com/ansible/ansible/blob/stable-2.10/changelogs/CHANGELOG-v2.10.rst#security-fixes</url>
       <url>https://github.com/ansible/ansible/pull/74960</url>
+      <url>https://groups.google.com/g/ansible-announce/c/tmIgD1DpZJg</url>
     </references>
     <dates>
       <discovery>2021-06-10</discovery>
       <entry>2021-06-24</entry>
+      <modified>2021-06-25</modified>
     </dates>
   </vuln>
 
