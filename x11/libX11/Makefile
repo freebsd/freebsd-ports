@@ -1,7 +1,7 @@
 # Created by: Eric Anholt <anholt@FreeBSD.org>
 
 PORTNAME=	libX11
-PORTVERSION=	1.7.1
+DISTVERSION=	1.7.2
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -24,7 +24,5 @@ INSTALL_TARGET=	install-strip
 post-patch:
 	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} '/^install-data-am:/,/^$$/ \
-		s/install-specDATA//' ${WRKSRC}/nls/Makefile.in
 
 .include <bsd.port.mk>
