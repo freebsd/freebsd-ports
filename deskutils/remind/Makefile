@@ -1,17 +1,34 @@
 # Created by: Lewis Thompson <purple@lewiz.net>
 
 PORTNAME=	remind
-PORTVERSION=	3.1.16
+DISTVERSION=	03.03.07
 CATEGORIES=	deskutils
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/
-DISTNAME=	${PORTNAME}-03.01.16
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@fuz.su
 COMMENT=	Sophisticated calendar and alarm program
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	TCLTK
+OPTIONS_DEFINE=	TCLTK A4
+OPTIONS_RADIO=	LANGUAGE
+OPTIONS_RADIO_LANGUAGE=	LANG_DE LANG_NL LANG_FI LANG_FR LANG_NN \
+		LANG_DA LANG_PL LANG_PBR LANG_IT LANG_RO LANG_ES LANG_IS
+
+A4_DESC=	Use A4 instead of Letter paper
+
+LANG.DE=	GERMAN
+LANG.NL=	DUTCH
+LANG.FI=	FINNISH
+LANG.FR=	FRENCH
+LANG.NN=	NORWEGIAN
+LANG.DA=	DANISH
+LANG.PL=	POLISH
+LANG.BPR=	BRAZPORT
+LANG.IT=	ITALIAN
+LANG.RO=	ROMANIAN
+LANG.ES=	SPANISH
+LANG.IS=	ICELANDIC
 
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
@@ -23,12 +40,17 @@ PLIST_FILES=	bin/rem \
 		man/man1/rem2ps.1.gz \
 		man/man1/remind.1.gz
 
+TCLTK_USES=	tk
+TCLTK_RUN_DEPENDS=	dtplite:devel/tcllib
+TCLTK_PLIST_FILES=	bin/cm2rem.tcl \
+			bin/tkremind \
+			man/man1/cm2rem.1.gz \
+			man/man1/tkremind.1.gz
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MTCLTK}
-USES=		tk
-RUN_DEPENDS+=	dtplite:devel/tcllib
-PLIST_FILES+=	bin/cm2rem.tcl bin/tkremind
+.if ${PORT_OPTIONS:MLANG_??}
+CFLAGS+=	-DLANG=${${PORT_OPTIONS:MLANG_??:S/_/./}}
 .endif
 
 post-patch:
@@ -54,7 +76,7 @@ post-patch:
 .if defined(LOCATION)
 	@${REINPLACE_CMD} -e 's#Ottawa#${LOCATION}#' ${WRKSRC}/src/custom.h
 .endif
-.if defined(A4)
+.if defined(A4) || ${PORT_OPTIONS:MA4}
 	@${REINPLACE_CMD} -e 's#"Letter", 612, 792#"A4", 595, 842#' ${WRKSRC}/src/custom.h
 .endif
 .if ${PORT_OPTIONS:MTCLTK}
