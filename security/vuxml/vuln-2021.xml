@@ -1,3 +1,34 @@
+  <vuln vid="7c555ce3-658d-4589-83dd-4b6a31c5d610">
+    <topic>RabbitMQ-C -- integer overflow leads to heap corruption</topic>
+    <affects>
+      <package>
+	<name>net/rabbitmq-c</name>
+	<name>net/rabbitmq-c-devel</name>
+	<range><lt>0.10.0</lt></range>
+      </package>
+	<p>alanxz reports:</p>
+	<blockquote cite="https://github.com/alanxz/rabbitmq-c/commit/fc85be7123050b91b054e45b91c78d3241a5047a">
+	  <p>When parsing a frame header, validate that the frame_size is less than
+	or equal to INT32_MAX. Given frame_max is limited between 0 and
+	INT32_MAX in amqp_login and friends, this does not change the API.
+	This prevents a potential buffer overflow when a malicious client sends
+	a frame_size that is close to UINT32_MAX, in which causes an overflow
+	when computing state-&gt;target_size resulting in a small value there. A
+	buffer is then allocated with the small amount, then memcopy copies the
+	frame_size writing to memory beyond the end of the buffer.</p>
+ 	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2019-18609</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18609</url>
+    </references>
+    <dates>
+      <discovery>2019-10-29</discovery>
+      <entry>2021-06-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="41bc849f-d5ef-11eb-ae37-589cfc007716">
     <topic>PuppetDB -- SQL Injection</topic>
     <affects>
@@ -8,7 +39,6 @@
       <package>
 	<name>puppetdb7</name>
 	<range><lt>7.4.1</lt></range>
-      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -25,9 +55,6 @@
     </references>
     <dates>
       <discovery>2021-06-24</discovery>
-      <entry>2021-06-25</entry>
-    </dates>
-  </vuln>
 
   <vuln vid="4c9159ea-d4c9-11eb-aeee-8c164582fbac">
     <topic>Ansible -- Templating engine bug</topic>
