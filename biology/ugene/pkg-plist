@@ -146,8 +146,8 @@ lib/ugene/plugins/wevote_support.plugin
 lib/ugene/plugins/workflow_designer.license
 lib/ugene/plugins/workflow_designer.plugin
 lib/ugene/plugins_checker
-lib/ugene/transl_en.qm
 lib/ugene/transl_ru.qm
+lib/ugene/transl_tr.qm
 lib/ugene/ugene
 lib/ugene/ugenecl
 lib/ugene/ugenem

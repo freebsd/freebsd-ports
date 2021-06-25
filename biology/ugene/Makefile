@@ -1,8 +1,7 @@
 # Created by: Hannes Hauswedell <h2+fbsdports@fsfe.org>
 
 PORTNAME=	ugene
-PORTVERSION=	38.1
-PORTREVISION=	1
+PORTVERSION=	39.0
 CATEGORIES=	biology science
 
 MAINTAINER=	h2+fbsdports@fsfe.org
@@ -58,6 +57,11 @@ post-patch:
 		${WRKSRC}/src/ugeneui/ugeneui.pri
 	@${REINPLACE_CMD} -e '218,220s|NULL)|false)|' \
 		${WRKSRC}/src/plugins/GUITestBase/src/GTUtilsMdi.cpp
+	@${REINPLACE_CMD} -e '/--no-pie/s,unix:!macx,linux-g++,' \
+		${WRKSRC}/src/plugins_checker/plugins_checker.pri \
+		${WRKSRC}/src/ugenecl/ugenecl.pri \
+		${WRKSRC}/src/ugenem/ugenem.pro \
+		${WRKSRC}/src/ugeneui/ugeneui.pri
 
 post-stage:
 	@cd ${STAGEDIR}${PREFIX} && ${RM} bin/ecp.* lib/ugene/ecp.*
