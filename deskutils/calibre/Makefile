@@ -1,8 +1,7 @@
 # Created by: stas
 
 PORTNAME=	calibre
-PORTVERSION=	5.21.0
-PORTREVISION=	1
+PORTVERSION=	5.22.1
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -23,7 +22,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libmtp.so:multimedia/libmtp \
 		libfreetype.so:print/freetype2 \
 		libhunspell-1.7.so:textproc/hunspell \
-		libhyphen.so:textproc/hyphen
+		libhyphen.so:textproc/hyphen \
+		libstemmer.so:textproc/snowballstemmer
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
