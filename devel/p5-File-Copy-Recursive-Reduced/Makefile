@@ -16,8 +16,9 @@ LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Path-Tiny>=0:devel/p5-Path-Tiny
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
