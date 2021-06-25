@@ -11,11 +11,13 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Make sure something really is faster
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LGPL
 
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
