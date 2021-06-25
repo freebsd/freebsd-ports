@@ -1,5 +1,5 @@
 PORTNAME=	foot
-DISTVERSION=	1.7.2
+DISTVERSION=	1.8.0
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -23,24 +23,26 @@ USES=		compiler:c11 meson pkgconfig xorg
 USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS_DEFINE=	NOTIFY XDG
-OPTIONS_DEFAULT=NOTIFY XDG
+OPTIONS_DEFINE=	NOTIFY UTF8PROC XDG
+OPTIONS_DEFAULT=NOTIFY UTF8PROC XDG
 
 NOTIFY_RUN_DEPENDS=	notify-send:devel/libnotify
+
+UTF8PROC_DESC=		Grapheme clustering using libutf8proc
+UTF8PROC_LIB_DEPENDS=	libutf8proc.so:textproc/utf8proc
+UTF8PROC_MESON_ENABLED=	grapheme-clustering
 
 XDG_DESC=		Open files with xdg-open
 XDG_RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 .if exists(/usr/bin/tic)
+# Add site- suffix to avoid conflict with terminfo-db (part of ncurses)
+MESON_ARGS+=	-Dterminfo-install-location="${PLIST_FILES:M*terminfo*:[1]:H:H}"
 PKGMESSAGE=	${NONEXISTENT}
 PLIST_FILES+=	share/site-terminfo/f/${PORTNAME} \
 		share/site-terminfo/f/${PORTNAME}-direct
 .else
 MESON_ARGS+=	-Dterminfo=disabled
 .endif
-
-post-patch:
-# Chase default TERMINFO_DIRS on FreeBSD, see lib/ncurses/ncurses/ncurses_cfg.h
-	@${REINPLACE_CMD} '/datadir/s/terminfo/site-&/' ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
