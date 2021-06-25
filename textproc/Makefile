@@ -1804,6 +1804,7 @@
     SUBDIR += slowcat
     SUBDIR += smi
     SUBDIR += smu
+    SUBDIR += snowballstemmer
     SUBDIR += so-hunspell
     SUBDIR += sonic
     SUBDIR += soothsayer
