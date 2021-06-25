@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	protocol-http
-PORTVERSION=	0.22.2
+PORTVERSION=	0.22.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
