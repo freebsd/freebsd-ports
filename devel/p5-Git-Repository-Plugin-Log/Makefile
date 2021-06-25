@@ -17,8 +17,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Git-Repository>=1.309:devel/p5-Git-Repository
 TEST_DEPENDS=	p5-Test-Requires-Git>=0:devel/p5-Test-Requires-Git
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
