@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-Exporter-Tiny>=0:devel/p5-Exporter-Tiny \
 		p5-XML-LibXML>=1.62:textproc/p5-XML-LibXML
 TEST_DEPENDS=	p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
