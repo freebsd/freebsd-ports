@@ -867,6 +867,7 @@ share/mime/packages/stellarium.xml
 %%DATADIR%%/nebulae/default/n2467.png
 %%DATADIR%%/nebulae/default/n247.png
 %%DATADIR%%/nebulae/default/n2477.png
+%%DATADIR%%/nebulae/default/n2506-vasey.png
 %%DATADIR%%/nebulae/default/n2516-dss.png
 %%DATADIR%%/nebulae/default/n253.png
 %%DATADIR%%/nebulae/default/n2547.png
@@ -890,6 +891,7 @@ share/mime/packages/stellarium.xml
 %%DATADIR%%/nebulae/default/n2997.png
 %%DATADIR%%/nebulae/default/n300.png
 %%DATADIR%%/nebulae/default/n3077.png
+%%DATADIR%%/nebulae/default/n3079-vasey.png
 %%DATADIR%%/nebulae/default/n3109.png
 %%DATADIR%%/nebulae/default/n3114.png
 %%DATADIR%%/nebulae/default/n3115.png
@@ -901,6 +903,7 @@ share/mime/packages/stellarium.xml
 %%DATADIR%%/nebulae/default/n3198-sdss.png
 %%DATADIR%%/nebulae/default/n3199.png
 %%DATADIR%%/nebulae/default/n3201-dss.png
+%%DATADIR%%/nebulae/default/n3227-vasey.png
 %%DATADIR%%/nebulae/default/n3242.png
 %%DATADIR%%/nebulae/default/n3293.png
 %%DATADIR%%/nebulae/default/n3310-vasey.png
@@ -982,6 +985,7 @@ share/mime/packages/stellarium.xml
 %%DATADIR%%/nebulae/default/n5286.png
 %%DATADIR%%/nebulae/default/n5307.png
 %%DATADIR%%/nebulae/default/n5315.png
+%%DATADIR%%/nebulae/default/n5363-vasey.png
 %%DATADIR%%/nebulae/default/n5367.png
 %%DATADIR%%/nebulae/default/n5426.png
 %%DATADIR%%/nebulae/default/n5466.png
@@ -1142,6 +1146,7 @@ share/mime/packages/stellarium.xml
 %%DATADIR%%/nebulae/default/sh2-136.png
 %%DATADIR%%/nebulae/default/sh2-155.png
 %%DATADIR%%/nebulae/default/sh2-170.png
+%%DATADIR%%/nebulae/default/sh2-188-vasey.png
 %%DATADIR%%/nebulae/default/sh2-240.png
 %%DATADIR%%/nebulae/default/sh2-261.png
 %%DATADIR%%/nebulae/default/sh2-263.png
@@ -1361,11 +1366,16 @@ share/mime/packages/stellarium.xml
 %%DATADIR%%/skycultures/al-sufi/description.en.utf8
 %%DATADIR%%/skycultures/al-sufi/description.es.utf8
 %%DATADIR%%/skycultures/al-sufi/description.gl.utf8
+%%DATADIR%%/skycultures/al-sufi/description.ru.utf8
 %%DATADIR%%/skycultures/al-sufi/description.sk.utf8
 %%DATADIR%%/skycultures/al-sufi/description.uk.utf8
 %%DATADIR%%/skycultures/al-sufi/dso_names.fab
 %%DATADIR%%/skycultures/al-sufi/info.ini
 %%DATADIR%%/skycultures/al-sufi/star_names.fab
+%%DATADIR%%/skycultures/almagest/almstars/cat1.dat
+%%DATADIR%%/skycultures/almagest/almstars/cat2.dat
+%%DATADIR%%/skycultures/almagest/almstars/cat3.dat
+%%DATADIR%%/skycultures/almagest/almstars/catpick.dat
 %%DATADIR%%/skycultures/almagest/constellation_names.eng.fab
 %%DATADIR%%/skycultures/almagest/constellationship.fab
 %%DATADIR%%/skycultures/almagest/corvus_s.png
@@ -1376,6 +1386,7 @@ share/mime/packages/stellarium.xml
 %%DATADIR%%/skycultures/almagest/description.gl.utf8
 %%DATADIR%%/skycultures/almagest/description.ja.utf8
 %%DATADIR%%/skycultures/almagest/description.nl.utf8
+%%DATADIR%%/skycultures/almagest/description.ru.utf8
 %%DATADIR%%/skycultures/almagest/description.sk.utf8
 %%DATADIR%%/skycultures/almagest/description.uk.utf8
 %%DATADIR%%/skycultures/almagest/dso_names.fab
@@ -1390,6 +1401,7 @@ share/mime/packages/stellarium.xml
 %%DATADIR%%/skycultures/anutan/description.gl.utf8
 %%DATADIR%%/skycultures/anutan/description.ja.utf8
 %%DATADIR%%/skycultures/anutan/description.nl.utf8
+%%DATADIR%%/skycultures/anutan/description.ru.utf8
 %%DATADIR%%/skycultures/anutan/description.sk.utf8
 %%DATADIR%%/skycultures/anutan/description.uk.utf8
 %%DATADIR%%/skycultures/anutan/dso_names.fab
@@ -1876,6 +1888,7 @@ share/mime/packages/stellarium.xml
 %%DATADIR%%/skycultures/japanese_moon_stations/description.gl.utf8
 %%DATADIR%%/skycultures/japanese_moon_stations/description.ja.utf8
 %%DATADIR%%/skycultures/japanese_moon_stations/description.nl.utf8
+%%DATADIR%%/skycultures/japanese_moon_stations/description.ru.utf8
 %%DATADIR%%/skycultures/japanese_moon_stations/description.sk.utf8
 %%DATADIR%%/skycultures/japanese_moon_stations/description.uk.utf8
 %%DATADIR%%/skycultures/japanese_moon_stations/description.zh_CN.utf8
@@ -1988,6 +2001,7 @@ share/mime/packages/stellarium.xml
 %%DATADIR%%/skycultures/macedonian/description.es.utf8
 %%DATADIR%%/skycultures/macedonian/description.gl.utf8
 %%DATADIR%%/skycultures/macedonian/description.nl.utf8
+%%DATADIR%%/skycultures/macedonian/description.ru.utf8
 %%DATADIR%%/skycultures/macedonian/description.sk.utf8
 %%DATADIR%%/skycultures/macedonian/description.uk.utf8
 %%DATADIR%%/skycultures/macedonian/description.zh_CN.utf8
