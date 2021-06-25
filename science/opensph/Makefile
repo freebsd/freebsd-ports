@@ -1,6 +1,5 @@
 PORTNAME=	OpenSPH
-DISTVERSION=	0.3.4
-PORTREVISION=	4
+DISTVERSION=	0.3.5
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +17,7 @@ USE_WX=		3.1
 GL_SITE=	https://gitlab.com
 GL_ACCOUNT=	sevecekp
 GL_PROJECT=	sph
-GL_COMMIT=	76c4b601cf05303d4ff181699aa2f0da796eb096 # 0.3.4 + some relevant for port fixes
+GL_COMMIT=	da3692e99fac19bc512c8462b0492eabd2de33af
 
 QMAKE_SOURCE_PATH=	${WRKSRC}/sph.pro
 QMAKE_ARGS=		CONFIG+=release
