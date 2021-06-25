@@ -20,7 +20,8 @@ USES=		compiler:c11 iconv libtool localbase
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-post-extract:
-	@${RM} -r ${WRKSRC}/zlib
+post-patch:
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/ogr/ogrsf_frmts/geojson/libjson/
 
 .include <bsd.port.mk>
