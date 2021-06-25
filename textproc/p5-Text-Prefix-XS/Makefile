@@ -17,8 +17,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Digest-SHA1>=1:security/p5-Digest-SHA1
 TEST_DEPENDS=	p5-Test-Deep>=0.108:devel/p5-Test-Deep
 
-USE_PERL5=	configure
 USES=		perl5 shebangfix
+USE_PERL5=	configure
 
 SHEBANG_FILES=	trie.pl
 
