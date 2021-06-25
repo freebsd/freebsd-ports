@@ -1,7 +1,7 @@
 # Created by: Yonatan <onatan@gmail.com>
 
 PORTNAME=	foldingathome
-DISTVERSION=	7.6.13
+DISTVERSION=	7.6.21
 CATEGORIES=	biology linux
 MASTER_SITES=	https://download.foldingathome.org/releases/public/release/fahclient/centos-6.7-64bit/v${DISTVERSION:R}/
 PKGNAMEPREFIX=	linux-
