@@ -18,7 +18,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Dist-Joseki>=0:devel/p5-Dist-Joseki \
 		p5-ShipIt>=0:devel/p5-ShipIt
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
