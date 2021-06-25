@@ -11,6 +11,7 @@ COMMENT=	Implementation of the Levenshtein edit distance
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		perl5
 USE_PERL5=	configure
