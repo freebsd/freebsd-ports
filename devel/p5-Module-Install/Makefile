@@ -23,4 +23,6 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	--skip
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
