@@ -17,9 +17,11 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-All>=0.30:devel/p5-IO-All \
 		p5-libwww>=0:www/p5-libwww
 
-USE_PERL5=	configure
 USES=		perl5 shebangfix
-SHEBANG_FILES=	iocp.pl
+USE_PERL5=	configure
+
 NO_ARCH=	yes
+
+SHEBANG_FILES=	iocp.pl
 
 .include <bsd.port.mk>
