@@ -23,8 +23,9 @@ RUN_DEPENDS=	p5-DateTime>=0.43.02:devel/p5-DateTime \
 		p5-namespace-clean>=0.19:devel/p5-namespace-clean
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
-NO_ARCH=	yes
-USE_PERL5=	modbuildtiny
 USES=		perl5
+USE_PERL5=	modbuildtiny
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
