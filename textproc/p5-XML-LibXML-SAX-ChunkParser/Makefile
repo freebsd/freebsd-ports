@@ -11,13 +11,16 @@ COMMENT=	Parse XML chunks via LibXML SAX
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-LibXML>=1.66:textproc/p5-XML-LibXML \
 		p5-XML-SAX>=0:textproc/p5-XML-SAX
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
