@@ -1,7 +1,7 @@
 # Created by: Steven Honson
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.86test2
+DISTVERSION=	2.86test3
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
 PORTREVISION=	0
 PORTEPOCH=	3 # attn - different between -devel and dnsmasq ports!
