@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-HTML-Parser>=3.69:www/p5-HTML-Parser \
 TEST_DEPENDS=	p5-Capture-Tiny>=0.44:devel/p5-Capture-Tiny \
 		p5-File-Slurper>=0.009:devel/p5-File-Slurper
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5 tar:tgz
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
