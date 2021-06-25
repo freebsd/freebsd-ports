@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Geo-Coder-OpenCage
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	misc geography perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-Cpanel-JSON-XS>=4.21:converters/p5-Cpanel-JSON-XS \
 TEST_DEPENDS=	p5-Net-Ping>=2.73:net/p5-Net-Ping \
 		p5-Test-Exception>=0.32:devel/p5-Test-Exception \
 		p5-Test-Pod>=1.51:devel/p5-Test-Pod \
-		p5-Test-Warn>=0:devel/p5-Test-Warn
+		p5-Test-Warn>=0:devel/p5-Test-Warn \
+		p5-libwww>=6.55:www/p5-libwww
 
 USES=		perl5
 USE_PERL5=	configure
