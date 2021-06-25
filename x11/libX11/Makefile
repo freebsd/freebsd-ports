@@ -10,13 +10,13 @@ COMMENT=	X11 library
 
 LICENSE=	MIT
 
-USES=		cpe perl5 xorg xorg-cat:lib
+USES=		cpe xorg xorg-cat:lib
 USE_XORG=	xcb xtrans xorgproto
-USE_PERL5=	build
 CPE_VENDOR=	x
 
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/lib \
 			--without-xmlto \
+			--with-perl=no \
 			--disable-specs
 CONFIGURE_ENV+=	ac_cv_path_PS2PDF=""
 INSTALL_TARGET=	install-strip
