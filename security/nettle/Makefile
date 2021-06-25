@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYINGv2
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LESSERv3
 
-BUILD_DEPENDS=	gmp>=6.0.0:math/gmp
+BUILD_DEPENDS=	gmp>=6.1.0:math/gmp
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		compiler:c11 gmake localbase makeinfo pathfix
