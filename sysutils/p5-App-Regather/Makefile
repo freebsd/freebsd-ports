@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	App-Regather
-PORTVERSION=	0.81.02
+PORTVERSION=	0.81.03
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,5 +22,8 @@ RUN_DEPENDS=	p5-Config-Parser>=1.04:devel/p5-Config-Parser \
 USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
+
+USE_RC_SUBR=	regather
+SUB_LIST=	PERL=${PERL}
 
 .include <bsd.port.mk>
