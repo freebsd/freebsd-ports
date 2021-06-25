@@ -21,7 +21,7 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-post-extract:
-	@${FIND} ${WRKSRC} -name '._*' -delete
+post-patch:
+	@${RM} ${WRKSRC}/lib/HTML/._Adsense.pm
 
 .include <bsd.port.mk>
