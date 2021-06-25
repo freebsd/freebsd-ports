@@ -18,7 +18,9 @@ RUN_DEPENDS=	p5-SVG>=2:textproc/p5-SVG \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		p5-XML-SAX>=0:textproc/p5-XML-SAX
 
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
