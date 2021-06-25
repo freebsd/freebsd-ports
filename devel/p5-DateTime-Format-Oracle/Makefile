@@ -18,8 +18,9 @@ RUN_DEPENDS=	p5-Convert-NLS_DATE_FORMAT>=0.03:converters/p5-Convert-NLS_DATE_FOR
 		p5-DateTime>=0:devel/p5-DateTime \
 		p5-DateTime-Format-Builder>=0:devel/p5-DateTime-Format-Builder
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
