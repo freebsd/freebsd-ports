@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	p5-Test-LeakTrace>=0:devel/p5-Test-LeakTrace \
 		p5-Test-Warnings>=0.006:devel/p5-Test-Warnings
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/List/SomeUtils/XS/XS.so
