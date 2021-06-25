@@ -17,7 +17,9 @@ RUN_DEPENDS=	p5-Moose>=1.21:devel/p5-Moose \
 		p5-Sub-Name>=0:devel/p5-Sub-Name \
 		p5-aliased>=0:devel/p5-aliased
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
