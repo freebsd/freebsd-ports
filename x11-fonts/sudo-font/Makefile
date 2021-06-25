@@ -7,7 +7,7 @@ DISTNAME=	sudo
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	0mp@FreeBSD.org
-COMMENT=	Font for programmers and command line users
+COMMENT=	Font for programmers and command-line users
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL.txt
