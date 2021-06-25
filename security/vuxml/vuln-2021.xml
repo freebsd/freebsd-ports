@@ -16,10 +16,17 @@
 	<range><lt>2.10.11</lt></range>
       </package>
       <package>
-	<name>py36-ansible-base</name>
-	<name>py37-ansible-base</name>
-	<name>py38-ansible-base</name>
-	<name>py39-ansible-base</name>
+	<name>py36-ansible2</name>
+	<name>py37-ansible2</name>
+	<name>py38-ansible2</name>
+	<name>py39-ansible2</name>
+	<range><lt>2.9.23</lt></range>
+      </package>
+      <package>
+	<name>py36-ansible</name>
+	<name>py37-ansible</name>
+	<name>py38-ansible</name>
+	<name>py39-ansible</name>
 	<range><lt>2.9.23</lt></range>
       </package>
     </affects>
