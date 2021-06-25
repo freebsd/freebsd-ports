@@ -22,9 +22,10 @@ TEST_DEPENDS=	p5-Class-XSAccessor>=0:devel/p5-Class-XSAccessor \
 		p5-PPI>=0:textproc/p5-PPI \
 		p5-Test-NoTabs>=0:devel/p5-Test-NoTabs
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 post-patch:
 	@${RM} ${WRKSRC}/ReadMe.pod
