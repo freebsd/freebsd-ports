@@ -21,7 +21,6 @@
     SUBDIR += dircproxy
     SUBDIR += dxirc
     SUBDIR += eggdrop
-    SUBDIR += eggdrop-devel
     SUBDIR += epic4
     SUBDIR += epic5
     SUBDIR += ergo
