@@ -1,7 +1,7 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 
 PORTNAME=	pytsk
-PORTVERSION=	20210327
+PORTVERSION=	20210419
 CATEGORIES=	sysutils security devel python
 MASTER_SITES=	https://github.com/py4n6/pytsk/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
