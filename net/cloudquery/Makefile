@@ -1,6 +1,6 @@
 PORTNAME=	cloudquery
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.7
+DISTVERSION=	0.13.8
 CATEGORIES=	net
 
 MAINTAINER=	nc@FreeBSD.org
@@ -17,18 +17,26 @@ GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 GH_TUPLE=	\
 		Masterminds:squirrel:v1.5.0:masterminds_squirrel/vendor/github.com/Masterminds/squirrel \
+		Microsoft:go-winio:v0.4.16:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
+		ProtonMail:go-crypto:04723f9f07d7:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
 		VividCortex:ewma:v1.2.0:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
 		acarl005:stripansi:5a71ef0e047d:acarl005_stripansi/vendor/github.com/acarl005/stripansi \
+		acomagu:bufpipe:v1.0.3:acomagu_bufpipe/vendor/github.com/acomagu/bufpipe \
 		agext:levenshtein:v1.2.3:agext_levenshtein/vendor/github.com/agext/levenshtein \
 		apparentlymart:go-textseg:v13.0.0:apparentlymart_go_textseg_v13/vendor/github.com/apparentlymart/go-textseg/v13 \
 		aws:aws-lambda-go:v1.23.0:aws_aws_lambda_go/vendor/github.com/aws/aws-lambda-go \
-		cloudquery:cq-provider-sdk:v0.2.0:cloudquery_cq_provider_sdk/vendor/github.com/cloudquery/cq-provider-sdk \
+		cloudquery:cq-provider-sdk:v0.2.2:cloudquery_cq_provider_sdk/vendor/github.com/cloudquery/cq-provider-sdk \
 		creasty:defaults:v1.5.1:creasty_defaults/vendor/github.com/creasty/defaults \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
 		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
-		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		georgysavva:scany:v0.2.8:georgysavva_scany/vendor/github.com/georgysavva/scany \
+		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
+		go-git:go-billy:v5.3.1:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
+		go-git:go-git:v5.4.2:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
 		go-yaml:yaml:496545a6307b:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gofrs:uuid:v4.0.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
@@ -54,6 +62,7 @@ GH_TUPLE=	\
 		huandu:go-sqlbuilder:v1.12.1:huandu_go_sqlbuilder/vendor/github.com/huandu/go-sqlbuilder \
 		huandu:xstrings:v1.3.2:huandu_xstrings/vendor/github.com/huandu/xstrings \
 		iancoleman:strcase:v0.1.3:iancoleman_strcase/vendor/github.com/iancoleman/strcase \
+		imdario:mergo:v0.3.12:imdario_mergo/vendor/github.com/imdario/mergo \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jackc:chunkreader:v2.0.1:jackc_chunkreader_v2/vendor/github.com/jackc/chunkreader/v2 \
 		jackc:pgconn:v1.8.1:jackc_pgconn/vendor/github.com/jackc/pgconn \
@@ -64,12 +73,15 @@ GH_TUPLE=	\
 		jackc:pgtype:v1.7.0:jackc_pgtype/vendor/github.com/jackc/pgtype \
 		jackc:pgx:v4.11.0:jackc_pgx_v4/vendor/github.com/jackc/pgx/v4 \
 		jackc:puddle:v1.1.3:jackc_puddle/vendor/github.com/jackc/puddle \
+		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
+		kevinburke:ssh_config:4977a11b4351:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
 		lann:builder:47ae307949d0:lann_builder/vendor/github.com/lann/builder \
 		lann:ps:62de8c46ede0:lann_ps/vendor/github.com/lann/ps \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.10:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:go-testing-interface:v1.14.1:mitchellh_go_testing_interface/vendor/github.com/mitchellh/go-testing-interface \
 		mitchellh:go-wordwrap:v1.0.1:mitchellh_go_wordwrap/vendor/github.com/mitchellh/go-wordwrap \
 		mitchellh:mapstructure:v1.4.1:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
@@ -83,9 +95,11 @@ GH_TUPLE=	\
 		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		rs:zerolog:v1.20.0:rs_zerolog/vendor/github.com/rs/zerolog \
+		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
+		sergi:go-diff:v1.2.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
-		spf13:cobra:v1.1.1:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.1.3:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
@@ -94,6 +108,7 @@ GH_TUPLE=	\
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		thoas:go-funk:efae847b30ab:thoas_go_funk/vendor/github.com/thoas/go-funk \
 		vbauerster:mpb:v6.0.3:vbauerster_mpb_v6/vendor/github.com/vbauerster/mpb/v6 \
+		xanzy:ssh-agent:v0.3.0:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
 		zclconf:go-cty:v1.8.3:zclconf_go_cty/vendor/github.com/zclconf/go-cty
 
 PLIST_FILES=	bin/${PORTNAME}
