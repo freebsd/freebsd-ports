@@ -1,5 +1,5 @@
 PORTNAME=	aiocoap
-DISTVERSION=	0.3
+DISTVERSION=	0.4
 CATEGORIES=	net
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ COMMENT=	Python CoAP library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.5+
+USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
