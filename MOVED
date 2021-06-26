@@ -16448,3 +16448,4 @@ audio/lxmusic||2021-06-26|Has expired: Uses EOL Python 2.7 via audio/xmms2
 math/gringo||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
 math/aspcud||2021-06-26|Has expired: Uses EOL Python 2.7 via math/gringo
 math/py-pyasp||2021-06-26|Has expired: Uses EOL Python 2.7 via math/gringo
+devel/viewvc|devel/viewvc-devel|2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
