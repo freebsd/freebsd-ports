@@ -16445,3 +16445,6 @@ irc/eggdrop-devel|irc/eggdrop|2021-06-26|Has expired: Use stable version instead
 audio/xmms2||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
 audio/gxmms2||2021-06-26|Has expired: Uses EOL Python 2.7 via audio/xmms2
 audio/lxmusic||2021-06-26|Has expired: Uses EOL Python 2.7 via audio/xmms2
+math/gringo||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
+math/aspcud||2021-06-26|Has expired: Uses EOL Python 2.7 via math/gringo
+math/py-pyasp||2021-06-26|Has expired: Uses EOL Python 2.7 via math/gringo

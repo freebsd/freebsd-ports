@@ -1,6 +1,0 @@
-bin/aspcud
-bin/cudf2lp
-%%DATADIR%%/misc2012.lp
-%%DATADIR%%/specification.lp
-man/man1/aspcud.1.gz
-man/man1/cudf2lp.1.gz

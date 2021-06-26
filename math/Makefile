@@ -154,7 +154,6 @@
     SUBDIR += arpack-ng
     SUBDIR += ascent
     SUBDIR += asl
-    SUBDIR += aspcud
     SUBDIR += asymptote
     SUBDIR += atlas
     SUBDIR += barvinok
@@ -336,7 +335,6 @@
     SUBDIR += gravity
     SUBDIR += gretl
     SUBDIR += gri
-    SUBDIR += gringo
     SUBDIR += grpn
     SUBDIR += gsl
     SUBDIR += half
@@ -858,7 +856,6 @@
     SUBDIR += py-pplpy
     SUBDIR += py-primme
     SUBDIR += py-pyFFTW
-    SUBDIR += py-pyasp
     SUBDIR += py-pybloom
     SUBDIR += py-pyclipper
     SUBDIR += py-pycosat
