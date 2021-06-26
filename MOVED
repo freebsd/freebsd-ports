@@ -16419,3 +16419,8 @@ devel/elixir-tirexs||2021-06-24|Remove obsoleted port. No releases on hex.pm.
 lang/perl5.28||2021-06-26|Has expired: Support ends three years after .0 release. Please upgrade to a more recent version of Perl
 sysutils/cfengine314||2021-06-26|Has expired: Expire one year after cfengine 3.16.0 released
 sysutils/cfengine-masterfiles314||2021-06-26|Has expired: Expire one year after cfengine 3.16.0 released
+lang/pypy3||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
+lang/pypy||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
+databases/pypy-gdbm||2021-06-26|Has expired: Uses EOL Python 2.7 via lang/pypy
+databases/pypy-sqlite3||2021-06-26|Has expired: Uses EOL Python 2.7 via lang/pypy
+x11-toolkits/pypy-tkinter||2021-06-26|Has expired: Uses EOL Python 2.7 via lang/pypy

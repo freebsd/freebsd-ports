@@ -274,8 +274,6 @@
     SUBDIR += py-lupa
     SUBDIR += py-qt5-qml
     SUBDIR += py-textX
-    SUBDIR += pypy
-    SUBDIR += pypy3
     SUBDIR += python
     SUBDIR += python-doc-html
     SUBDIR += python-doc-pdf-a4

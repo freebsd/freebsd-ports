@@ -163,7 +163,6 @@
     SUBDIR += py-tktreectrl
     SUBDIR += py-wxPython40
     SUBDIR += py-xlib
-    SUBDIR += pypy-tkinter
     SUBDIR += qml-box2d
     SUBDIR += qt5-charts
     SUBDIR += qt5-datavis3d

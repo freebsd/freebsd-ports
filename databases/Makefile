@@ -834,8 +834,6 @@
     SUBDIR += py-xapian
     SUBDIR += py-zodbpickle
     SUBDIR += pymongo
-    SUBDIR += pypy-gdbm
-    SUBDIR += pypy-sqlite3
     SUBDIR += qdbm
     SUBDIR += qdbm-plus
     SUBDIR += qof
