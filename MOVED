@@ -16424,3 +16424,5 @@ lang/pypy||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
 databases/pypy-gdbm||2021-06-26|Has expired: Uses EOL Python 2.7 via lang/pypy
 databases/pypy-sqlite3||2021-06-26|Has expired: Uses EOL Python 2.7 via lang/pypy
 x11-toolkits/pypy-tkinter||2021-06-26|Has expired: Uses EOL Python 2.7 via lang/pypy
+multimedia/gxine||2021-06-26|Has expired: Uses EOL Python 2.7 via lang/spidermonkey185
+lang/spidermonkey185||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream

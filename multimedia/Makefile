@@ -126,7 +126,6 @@
     SUBDIR += gstreamer1-validate
     SUBDIR += gstreamermm
     SUBDIR += gtk-youtube-viewer
-    SUBDIR += gxine
     SUBDIR += handbrake
     SUBDIR += haruna
     SUBDIR += harvid
