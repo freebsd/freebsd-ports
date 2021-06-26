@@ -1,7 +1,7 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 
 PORTNAME=	libewf
-PORTVERSION=	20140811
+PORTVERSION=	20140812
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libewf-legacy/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
