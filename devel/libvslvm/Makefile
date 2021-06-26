@@ -2,7 +2,7 @@
 
 PORTNAME=	libvslvm
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20200817
+DISTVERSION=	experimental-20210524
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libvslvm/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
