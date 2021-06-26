@@ -16429,3 +16429,6 @@ lang/spidermonkey185||2021-06-26|Has expired: Uses Python 2.7 which is EOLed ups
 www/aws||2021-06-26|Has expired: Uses EOL Python 2.7 via devel/gnatpython
 www/aws-demos||2021-06-26|Has expired: Uses EOL Python 2.7 via www/aws
 devel/gnatpython||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/libosmocore||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
+net/openggsn||2021-06-26|Has expired: Uses EOL Python 2.7 via devel/libosmocore
+devel/libosmo-abis||2021-06-26|Has expired: Uses EOL Python 2.7 via devel/libosmocore
