@@ -1,6 +1,6 @@
 PORTNAME=	golangci-lint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.40.1
+DISTVERSION=	1.41.1
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_COMMIT=	625445b
+_BUILD_COMMIT=	a207480
 _BUILD_DATE=	$$(date -u "+%Y-%m-%dT%H:%M:%SZ")
 
 GO_MODULE=	github.com/${PORTNAME:S/-lint//}/${PORTNAME}
@@ -23,28 +23,32 @@ GO_BUILDFLAGS=	-ldflags "\
 		-X main.commit=${_BUILD_COMMIT} \
 		-X main.date=${_BUILD_DATE}"
 
-PLIST_FILES=	bin/${PORTNAME} \
-		etc/bash_completion.d/${PORTNAME} \
-		share/zsh/site_functions/_${PORTNAME}
 PORTDOCS=	CHANGELOG.md README.md
 PORTEXAMPLES=	.golangci.example.yml
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=		COMPLETIONS DOCS EXAMPLES
+OPTIONS_DEFAULT=	COMPLETIONS
+OPTIONS_SUB=		yes
 
-post-build:
-.for SHELL in bash zsh
+COMPLETIONS_DESC=	Build and install shell completions
+
+do-build-COMPLETIONS-on:
+.for SHELL in bash fish zsh
 	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_WRKDIR_BIN}/${PORTNAME} completion \
 		${SHELL} > ${WRKSRC}/${SHELL}
 .endfor
 
-post-install:
+post-install-COMPLETIONS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
-		${STAGEDIR}${PREFIX}/share/zsh/site_functions
+		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
 	${INSTALL_DATA} ${WRKSRC}/bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/fish \
+		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/${PORTNAME}.fish
 	${INSTALL_DATA} ${WRKSRC}/zsh \
-		${STAGEDIR}${PREFIX}/share/zsh/site_functions/_${PORTNAME}
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
