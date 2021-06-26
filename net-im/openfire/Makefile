@@ -1,13 +1,12 @@
 # Created by: Nikolay Pavlov <qpadla@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	4.6.3
+PORTVERSION=	4.6.4
 PORTEPOCH=	1
 CATEGORIES=	net-im java
-MASTER_SITES=	https://github.com/igniterealtime/${PORTNAME}/releases/download/v${PORTVERSION}/ \
+MASTER_SITES=	https://github.com/igniterealtime/${PORTNAME}/archive/refs/tags/ \
 		LOCAL/pi:maven
-DISTFILES=	${PORTNAME}_src_${PORTVERSION:S/./_/g}.tar.gz
+DISTFILES=	v${PORTVERSION}.tar.gz
 
 MAINTAINER=	nikita@druba.su
 COMMENT=	Enterprise instant messaging server
