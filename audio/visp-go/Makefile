@@ -1,5 +1,5 @@
 PORTNAME=	visp-go
-DISTVERSION=	g20210527
+DISTVERSION=	g20210723
 CATEGORIES=	audio
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -12,8 +12,9 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	ambientsound
 GH_PROJECT=	${PORTNAME:C/-go//}
-GH_TAGNAME=	a474043
-GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+GH_TAGNAME=	2585747
+GH_TUPLE=	beorn7:perks:v1.0.0:beorn7_perks/vendor/github.com/beorn7/perks \
+		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
 		gdamore:tcell:v2.2.0:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
@@ -23,10 +24,10 @@ GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-sp
 		go-yaml:yaml:v2.2.4:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:afb366fc7cd1:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:2e8d93401602:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:net:04defd469f4e:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:d04028783cf1:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:66c3f260301c:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:04245dca01da:golang_sys/vendor/golang.org/x/sys \
 		golang:term:2321bbc49cbf:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
@@ -36,9 +37,14 @@ GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-sp
 		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-runewidth:v0.0.12:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		prometheus:client_golang:v0.9.3:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_model:14fe0d1b01d4:prometheus_client_model/vendor/github.com/prometheus/client_model \
+		prometheus:common:v0.4.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:5867b95ac084:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		sirupsen:logrus:v1.2.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
@@ -51,7 +57,7 @@ GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-sp
 		stretchr:objx:v0.1.1:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
-		zmb3:spotify:v1.1.2:zmb3_spotify/vendor/github.com/zmb3/spotify
+		zmb3:spotify:v1.3.0:zmb3_spotify/vendor/github.com/zmb3/spotify
 
 _BUILD_VERSION=	${GH_TAGNAME}
 _BUILD_DATE=	$$(date +%s)
