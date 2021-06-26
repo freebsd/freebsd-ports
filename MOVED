@@ -16417,3 +16417,5 @@ www/py-beautifulsoup448|www/py-beautifulsoup|2021-06-20|Remove obsoleted port. U
 comms/rtl-443|comms/rtl-433|2021-06-21|Fix typo in port directory name
 devel/elixir-tirexs||2021-06-24|Remove obsoleted port. No releases on hex.pm.
 lang/perl5.28||2021-06-26|Has expired: Support ends three years after .0 release. Please upgrade to a more recent version of Perl
+sysutils/cfengine314||2021-06-26|Has expired: Expire one year after cfengine 3.16.0 released
+sysutils/cfengine-masterfiles314||2021-06-26|Has expired: Expire one year after cfengine 3.16.0 released
