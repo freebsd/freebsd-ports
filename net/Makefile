@@ -903,7 +903,6 @@
     SUBDIR += pacemaker2
     SUBDIR += packetdrill
     SUBDIR += packter-agent
-    SUBDIR += panoptis
     SUBDIR += parpd
     SUBDIR += pathneck
     SUBDIR += pbnc
