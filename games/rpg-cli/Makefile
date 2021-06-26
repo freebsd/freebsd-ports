@@ -1,5 +1,5 @@
 PORTNAME=	rpg-cli
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	games
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -23,7 +23,7 @@ CARGO_CRATES=	atty-0.2.14 \
 		ctor-0.1.20 \
 		dirs-3.0.2 \
 		dirs-sys-0.3.6 \
-		dunce-1.0.1 \
+		dunce-1.0.2 \
 		erased-serde-0.3.15 \
 		getrandom-0.2.3 \
 		ghost-0.1.2 \
@@ -33,9 +33,10 @@ CARGO_CRATES=	atty-0.2.14 \
 		indexmap-1.6.2 \
 		inventory-0.1.10 \
 		inventory-impl-0.1.10 \
+		itoa-0.4.7 \
 		lazy_static-1.4.0 \
-		libc-0.2.95 \
-		once_cell-1.7.2 \
+		libc-0.2.97 \
+		once_cell-1.8.0 \
 		os_str_bytes-2.4.0 \
 		ppv-lite86-0.2.10 \
 		proc-macro-error-1.0.4 \
@@ -43,15 +44,17 @@ CARGO_CRATES=	atty-0.2.14 \
 		proc-macro2-1.0.27 \
 		quote-1.0.9 \
 		rand-0.8.3 \
-		rand_chacha-0.3.0 \
+		rand_chacha-0.3.1 \
 		rand_core-0.6.2 \
 		rand_hc-0.3.0 \
 		redox_syscall-0.2.8 \
 		redox_users-0.4.0 \
+		ryu-1.0.5 \
 		serde-1.0.126 \
 		serde_derive-1.0.126 \
+		serde_json-1.0.64 \
 		strsim-0.10.0 \
-		syn-1.0.72 \
+		syn-1.0.73 \
 		termcolor-1.1.2 \
 		textwrap-0.12.1 \
 		typetag-0.1.7 \
