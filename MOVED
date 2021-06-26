@@ -16437,3 +16437,5 @@ www/npm-node12||2021-06-26|Removed, uses www/node12
 www/yarn-node12||2021-06-26|Has expired: Uses EOL Python 2.7 via www/node12
 www/npm-node10||2021-06-26|Removed, uses EOL Python 2.7 via www/node10
 www/yarn-node10||2021-06-26|Has expired: Uses EOL Python 2.7 via www/node10
+devel/libhid||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
+sysutils/usbhotkey||2021-06-26|Has expired: Uses EOL Python 2.7 via devel/libhid

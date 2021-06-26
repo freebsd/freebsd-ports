@@ -1222,7 +1222,6 @@
     SUBDIR += libgudev
     SUBDIR += libgutenfetch
     SUBDIR += libhash
-    SUBDIR += libhid
     SUBDIR += libhoard
     SUBDIR += libhtp
     SUBDIR += libhyve-remote
