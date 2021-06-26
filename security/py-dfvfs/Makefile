@@ -1,7 +1,7 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 
 PORTNAME=	dfvfs
-PORTVERSION=	20210213
+PORTVERSION=	20210606
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -23,6 +23,7 @@ RUN_DEPENDS=	libbde>=a:devel/libbde \
 		libfvde>=0:sysutils/libfvde \
 		libfwnt>=e:devel/libfwnt \
 		libluksde>=e:devel/libluksde \
+		libmodi>=e:devel/libmodi \
 		libqcow>=a:devel/libqcow \
 		libsigscan>=e:devel/libsigscan \
 		libsmdev>=a:devel/libsmdev \
