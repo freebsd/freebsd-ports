@@ -1140,6 +1140,9 @@ lib32/.libGL/dri/swrast_dri.so
 lib32/.libGL/dri/vmwgfx_dri.so
 lib32/.libGL/libGL.so.1
 lib32/libFAudio.so.0
+lib32/libGLX.so.0
+lib32/libGLX_mesa.so.0
+lib32/libGLdispatch.so.0
 lib32/libLLVM-10.so
 lib32/libSDL2-2.0.so.0
 lib32/libX11-xcb.so.1

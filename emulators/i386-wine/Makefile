@@ -8,6 +8,9 @@ PORTNAME=	wine
 # define a dummy DISTVERSION to avoid errors with poudriere bulk -a
 # on architectures unsupported by this port
 DISTVERSION?=	0
+# define PORTREVISION with ?= to allow it to be overriden by
+# wine's PORTREVISION when cross building
+PORTREVISION=	1
 PKGNAMEPREFIX=	i386-
 CATEGORIES=	emulators
 

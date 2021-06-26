@@ -10,7 +10,7 @@ PORTNAME=	wine
 DISTVERSION?=	0
 # define PORTREVISION with ?= to allow it to be overriden by
 # wine-devel's PORTREVISION when cross building
-PORTREVISION?=	0
+PORTREVISION?=	1
 PKGNAMEPREFIX=	i386-
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	emulators

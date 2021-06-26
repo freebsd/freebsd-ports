@@ -31,7 +31,7 @@ PLIST_SUB+=	NOOSREL${osrel}=""
 .endif
 .endfor
 
-.if ${OPSYS} != FreeBSD || (!(${OSVERSION} >= 1104001 && ${OSVERSION} < 1200000) && !(${OSVERSION} >= 1202000 && ${OSVERSION} < 1300000) && !(${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000) && !(${OSVERSION} >= 1400013))
+.if ${OPSYS} != FreeBSD || (!(${OSVERSION} >= 1104001 && ${OSVERSION} < 1200000) && !(${OSVERSION} >= 1202000 && ${OSVERSION} < 1300000) && !(${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000) && !(${OSVERSION} >= 1400024))
 IGNORE=		binaries compiled for FreeBSD 11.4+, 12.2+, 13.0+ and 14.0+ only
 .endif
 
