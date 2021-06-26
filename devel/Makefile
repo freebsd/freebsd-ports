@@ -4580,6 +4580,7 @@
     SUBDIR += py-jsondiff
     SUBDIR += py-jsonform
     SUBDIR += py-jsonlines
+    SUBDIR += py-jsonnet
     SUBDIR += py-jsonpatch
     SUBDIR += py-jsonpath-rw
     SUBDIR += py-jsonpickle
