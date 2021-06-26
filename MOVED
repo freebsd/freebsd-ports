@@ -16451,3 +16451,6 @@ math/py-pyasp||2021-06-26|Has expired: Uses EOL Python 2.7 via math/gringo
 devel/viewvc|devel/viewvc-devel|2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
 chinese/sunpinyin||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
 chinese/fcitx-sunpinyin||2021-06-26|Has expired: Uses EOL Python 2.7 via chinese/sunpinyin
+www/dojo-shrinksafe||2021-06-26|Removed, deprecated upstream
+www/blastbeat||2021-06-26|Removed, abandoned upstream, broken on 12.X since 2019
+www/demoroniser||2021-06-26|Removed, made for Microsoft Powerpoint 9x with Perl 4.0

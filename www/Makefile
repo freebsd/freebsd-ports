@@ -46,7 +46,6 @@
     SUBDIR += bareos19-webui
     SUBDIR += beehive
     SUBDIR += bkmrkconv
-    SUBDIR += blastbeat
     SUBDIR += bluefish
     SUBDIR += bolt
     SUBDIR += bozohttpd
@@ -101,14 +100,12 @@
     SUBDIR += davix
     SUBDIR += dddbl
     SUBDIR += ddgr
-    SUBDIR += demoroniser
     SUBDIR += deno
     SUBDIR += devd
     SUBDIR += dfileserver
     SUBDIR += dhttpd
     SUBDIR += dillo2
     SUBDIR += dojo
-    SUBDIR += dojo-shrinksafe
     SUBDIR += dokuwiki
     SUBDIR += dolibarr
     SUBDIR += domoticz
