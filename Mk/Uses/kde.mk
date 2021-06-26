@@ -75,7 +75,7 @@ _KDE_RELNAME=		KDE${_KDE_VERSION}
 
 # === VERSIONS OF THE DIFFERENT COMPONENTS =====================================
 # Current KDE desktop.
-KDE_PLASMA_VERSION?=		5.22.1
+KDE_PLASMA_VERSION?=		5.22.2.1
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
@@ -213,7 +213,7 @@ PLIST_SUB+=		KDE_PREFIX="${KDE_PREFIX}"
 # KDE Applications version.
 PLIST_SUB+=		KDE_APPLICATIONS_VERSION="${KDE_APPLICATIONS_VERSION}" \
 			KDE_FRAMEWORKS_VERSION="${KDE_FRAMEWORKS_VERSION}" \
-			KDE_PLASMA_VERSION="${KDE_PLASMA_VERSION}"
+			KDE_PLASMA_VERSION="${KDE_PLASMA_VERSION:R}"
 # ==============================================================================
 
 _USE_KDE_BOTH=		akonadi attica libkcddb libkcompactdisc libkdcraw libkdegames \
