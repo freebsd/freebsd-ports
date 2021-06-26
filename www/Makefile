@@ -36,8 +36,6 @@
     SUBDIR += asql
     SUBDIR += authelia
     SUBDIR += awffull
-    SUBDIR += aws
-    SUBDIR += aws-demos
     SUBDIR += awstats
     SUBDIR += axis2
     SUBDIR += bacula-web

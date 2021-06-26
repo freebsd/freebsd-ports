@@ -842,7 +842,6 @@
     SUBDIR += glui
     SUBDIR += gmake
     SUBDIR += gn
-    SUBDIR += gnatpython
     SUBDIR += gnome-builder
     SUBDIR += gnome-common
     SUBDIR += gnu-efi

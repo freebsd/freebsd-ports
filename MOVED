@@ -16426,3 +16426,6 @@ databases/pypy-sqlite3||2021-06-26|Has expired: Uses EOL Python 2.7 via lang/pyp
 x11-toolkits/pypy-tkinter||2021-06-26|Has expired: Uses EOL Python 2.7 via lang/pypy
 multimedia/gxine||2021-06-26|Has expired: Uses EOL Python 2.7 via lang/spidermonkey185
 lang/spidermonkey185||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
+www/aws||2021-06-26|Has expired: Uses EOL Python 2.7 via devel/gnatpython
+www/aws-demos||2021-06-26|Has expired: Uses EOL Python 2.7 via www/aws
+devel/gnatpython||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
