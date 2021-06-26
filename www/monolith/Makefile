@@ -1,6 +1,6 @@
 PORTNAME=	monolith
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
+DISTVERSION=	2.6.0
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -16,7 +16,7 @@ GH_ACCOUNT=	Y2Z
 CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
-		assert_cmd-1.0.4 \
+		assert_cmd-1.0.5 \
 		async-compression-0.3.8 \
 		atty-0.2.14 \
 		autocfg-0.1.7 \
@@ -68,7 +68,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		http-body-0.4.2 \
 		httparse-1.4.1 \
 		httpdate-1.0.1 \
-		hyper-0.14.8 \
+		hyper-0.14.9 \
 		hyper-tls-0.5.0 \
 		idna-0.2.3 \
 		indexmap-1.6.2 \
@@ -106,8 +106,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		phf_macros-0.8.0 \
 		phf_shared-0.7.24 \
 		phf_shared-0.8.0 \
-		pin-project-1.0.7 \
-		pin-project-internal-1.0.7 \
 		pin-project-lite-0.2.6 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.19 \
@@ -147,8 +145,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		reqwest-0.11.3 \
 		ryu-1.0.5 \
 		schannel-0.1.19 \
-		security-framework-2.2.0 \
-		security-framework-sys-2.2.0 \
+		security-framework-2.3.1 \
+		security-framework-sys-2.3.0 \
 		serde-1.0.126 \
 		serde_derive-1.0.126 \
 		serde_json-1.0.64 \
@@ -180,7 +178,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		try-lock-0.2.3 \
 		typenum-1.13.0 \
 		unicode-bidi-0.3.5 \
-		unicode-normalization-0.1.18 \
+		unicode-normalization-0.1.19 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
 		url-2.2.2 \
