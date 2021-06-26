@@ -1,6 +1,6 @@
-TIMESTAMP = 1623174395
-SHA256 (dundee-gdu-v5.1.0_GH0.tar.gz) = d51b1204f7d2132ef8d9d5dd20327630b6c9d8ab45d9f9c1c131334c73f28fe4
-SIZE (dundee-gdu-v5.1.0_GH0.tar.gz) = 45862
+TIMESTAMP = 1624707520
+SHA256 (dundee-gdu-v5.1.1_GH0.tar.gz) = fb1a76562947e34fec16fd650f03793ccc5afe04fa6ba817639d92f55a1f927b
+SIZE (dundee-gdu-v5.1.1_GH0.tar.gz) = 45861
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
 SIZE (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 42152
 SHA256 (fatih-color-v1.10.0_GH0.tar.gz) = a00342a7ffb8b119346dce56e152a111cbb9eab3970c429cc2ed4272aec2858e
