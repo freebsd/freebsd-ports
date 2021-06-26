@@ -16432,3 +16432,6 @@ devel/gnatpython||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstrea
 devel/libosmocore||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
 net/openggsn||2021-06-26|Has expired: Uses EOL Python 2.7 via devel/libosmocore
 devel/libosmo-abis||2021-06-26|Has expired: Uses EOL Python 2.7 via devel/libosmocore
+www/node12||2021-06-26|Has expired: Uses Python 2.7 which is EOLed upstream
+www/npm-node12||2021-06-26|Removed, uses www/node12
+www/yarn-node12||2021-06-26|Has expired: Uses EOL Python 2.7 via www/node12
