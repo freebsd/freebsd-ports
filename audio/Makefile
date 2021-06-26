@@ -292,7 +292,6 @@
     SUBDIR += gula-plugins-lv2
     SUBDIR += guspat
     SUBDIR += gvolwheel
-    SUBDIR += gxmms2
     SUBDIR += gxplugins-lv2
     SUBDIR += harp
     SUBDIR += headsetcontrol
@@ -452,7 +451,6 @@
     SUBDIR += lv2lint
     SUBDIR += lv2proc
     SUBDIR += lvtk
-    SUBDIR += lxmusic
     SUBDIR += mac
     SUBDIR += madfufw
     SUBDIR += madplay
@@ -858,7 +856,6 @@
     SUBDIR += xmix
     SUBDIR += xmixer
     SUBDIR += xmmix
-    SUBDIR += xmms2
     SUBDIR += xmp
     SUBDIR += xmradio
     SUBDIR += xoscope
