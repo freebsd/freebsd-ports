@@ -1,7 +1,7 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	libfvde
-PORTVERSION=	20191221
+PORTVERSION=	20210425
 DISTVERSIONPREFIX=	experimental-
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/libyal/libfvde/releases/download/${PORTVERSION}/ \
