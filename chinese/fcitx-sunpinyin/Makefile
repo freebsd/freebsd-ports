@@ -12,7 +12,7 @@ COMMENT=	SunPinyin support for Fcitx
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Uses EOL Python 2.7 via chinese/fcitx
+DEPRECATED=	Uses EOL Python 2.7 via chinese/sunpinyin
 EXPIRATION_DATE=2021-06-23
 
 BUILD_DEPENDS=	bash:shells/bash
