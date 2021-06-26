@@ -250,7 +250,6 @@
     SUBDIR += pbasic
     SUBDIR += pcc
     SUBDIR += perl5-devel
-    SUBDIR += perl5.28
     SUBDIR += perl5.30
     SUBDIR += perl5.32
     SUBDIR += perl5.34
