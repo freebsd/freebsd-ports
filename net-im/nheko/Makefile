@@ -1,7 +1,7 @@
-
 PORTNAME=	nheko
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -32,6 +32,7 @@ USES=		cmake compiler:c++17-lang pkgconfig \
 		localbase:ldflags qt:5 ssl tar:xz
 USE_QT=		concurrent core dbus declarative gui multimedia network \
 		quickcontrols2 svg widgets \
+		graphicaleffects_run \
 		buildtools_build linguist_build qmake_build
 
 # There are two external dependencies: lmdb++ and tweeny.
