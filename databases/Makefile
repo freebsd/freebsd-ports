@@ -63,7 +63,6 @@
     SUBDIR += elixir-ecto
     SUBDIR += elixir-geo
     SUBDIR += elixir-mariaex
-    SUBDIR += elixir-mongo
     SUBDIR += elixir-postgrex
     SUBDIR += elixir-timex_ecto
     SUBDIR += emacsql
