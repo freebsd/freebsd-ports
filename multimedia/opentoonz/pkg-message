@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+
+!!! ATTENTION !!!
+
+No TIFF support now, set in settings some other image format!
+SSE2 available only on Windows.
+
+EOM
+}
+]
