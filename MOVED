@@ -16454,3 +16454,4 @@ chinese/fcitx-sunpinyin||2021-06-26|Has expired: Uses EOL Python 2.7 via chinese
 www/dojo-shrinksafe||2021-06-26|Removed, deprecated upstream
 www/blastbeat||2021-06-26|Removed, abandoned upstream, broken on 12.X since 2019
 www/demoroniser||2021-06-26|Removed, made for Microsoft Powerpoint 9x with Perl 4.0
+x11-toolkits/v||2021-06-27|Has expired: Dead upstream, unmaintained and no consumers
