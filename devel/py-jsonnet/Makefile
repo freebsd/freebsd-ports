@@ -4,7 +4,7 @@ DISTVERSION=	0.17.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	timp87@FreeBSD.org
+MAINTAINER=	timp87@gmail.com
 COMMENT=	Python bindings for Jsonnet - The data templating language
 
 LICENSE=	APACHE20
