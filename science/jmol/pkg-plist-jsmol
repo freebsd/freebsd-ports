@@ -770,7 +770,9 @@
 %%WWWDIR%%/j2s/JM/FF/UFFVDWCalc.js
 %%WWWDIR%%/j2s/JM/FF/data/MMFF94-smarts.txt
 %%WWWDIR%%/j2s/JM/FF/data/UFF.txt
+%%WWWDIR%%/j2s/JM/FF/data/UFF_2d.txt
 %%WWWDIR%%/j2s/JM/FF/data/mmff94.par.txt
+%%WWWDIR%%/j2s/JM/FF/data/mmff94_2d.par.txt
 %%WWWDIR%%/j2s/JM/Group.js
 %%WWWDIR%%/j2s/JM/HBond.js
 %%WWWDIR%%/j2s/JM/Helix.js
