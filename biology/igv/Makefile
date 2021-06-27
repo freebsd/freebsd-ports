@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 BUILD_DEPENDS=	openjfx14>0:java/openjfx14 \
-		gradle6:devel/gradle6
+		gradle:devel/gradle6
 RUN_DEPENDS=	openjfx14>0:java/openjfx14
 
 USES=		gettext-runtime
@@ -62,7 +62,7 @@ post-extract: # need a separate extract step because the cache is in /tmp, and n
 .endif
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle6 \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle \
 		--gradle-user-home ${DEPS_CACHE_DIR}/gradle-${PORTNAME} --project-cache-dir ${DEPS_CACHE_DIR}/gradle-${PORTNAME} \
 		${GRADLE_ARGS} --build-cache --stacktrace createDist
 
