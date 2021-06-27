@@ -6,13 +6,6 @@ If you need bedGraphToBigWig, run:
 
 	cd ${PORTSDIR}/biology/ucsc-userapps && make install clean
 
-sra-tools is using Linux compatibility for now, until the native FreeBSD
-port is complete.
-
-For a quick and proper configuration, run the following:
-
-pkg install -y auto-admin
-auto-install-linux_base
 EOM
 }
 ]
