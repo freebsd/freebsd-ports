@@ -1260,6 +1260,7 @@
     SUBDIR += sensu-go
     SUBDIR += serf
     SUBDIR += setcdboot
+    SUBDIR += setsid
     SUBDIR += sformat
     SUBDIR += sg3_utils
     SUBDIR += shim
@@ -1294,7 +1295,6 @@
     SUBDIR += squashfs-tools
     SUBDIR += ssd_report
     SUBDIR += sshsudo
-    SUBDIR += ssid
     SUBDIR += ssync
     SUBDIR += stalepid
     SUBDIR += stanchion
