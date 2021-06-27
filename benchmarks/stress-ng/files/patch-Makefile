@@ -4,7 +4,7 @@
  # Codename "keen kernel killer"
  #
  
--CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2 -std=gnu99 -g
+-CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2 -std=gnu99
 +CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2 -std=gnu11 -pipe
  
  #
