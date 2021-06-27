@@ -1,21 +1,20 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	setsid
-PORTVERSION=	0.1
+DISTVERSION=	2.37
 CATEGORIES=	sysutils
-MASTER_SITES=	http://dl.suckless.org/tools/
-DISTNAME=	ssid-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Run a command in a new session
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	PD
 
-PLIST_FILES=	bin/setsid bin/ssid
+USE_GITHUB=	yes
+GH_ACCOUNT=	t6
 
-post-install:
-	${LN} ${STAGEDIR}${PREFIX}/bin/ssid \
-		${STAGEDIR}${PREFIX}/bin/setsid
+PLIST_FILES=	bin/setsid \
+		bin/ssid \
+		share/bash-completion/completions/setsid \
+		share/man/man1/setsid.1.gz
 
 .include <bsd.port.mk>
