@@ -1,4 +1,4 @@
 Small wrapper for the setsid(2) syscall to run a command in a new
 session.
 
-WWW: http://tools.suckless.org/ssid/
+WWW: https://github.com/t6/setsid
