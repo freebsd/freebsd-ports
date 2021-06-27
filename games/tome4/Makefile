@@ -1,6 +1,5 @@
 PORTNAME=	tome4
-DISTVERSION?=	1.7.3
-PORTREVISION?=	1
+DISTVERSION?=	1.7.4
 CATEGORIES=	games
 MASTER_SITES=	https://te4.org/dl/t-engine/ \
 		SF/lifanov-ports-distfiles/${PORTNAME}/:icons
