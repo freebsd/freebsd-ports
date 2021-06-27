@@ -73,7 +73,7 @@ XCB_VARS_OFF=		PYDISTUTILS_BUILDARGS+="--disable-xcb"
 .include <bsd.port.pre.mk>
 
 PYDISTUTILS_BUILD_TARGET=	build build_ext
-PYDISTUTILS_BUILDARGS+=		saveopts --disable-raqm
+PYDISTUTILS_BUILDARGS+=		--disable-raqm saveopts
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PIL/*.so
