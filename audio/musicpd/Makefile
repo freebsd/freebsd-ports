@@ -1,5 +1,5 @@
 PORTNAME=	musicpd
-PORTVERSION=	0.22.8
+PORTVERSION=	0.22.9
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}

@@ -1,22 +1,22 @@
---- meson.build.orig	2020-11-06 15:12:54 UTC
+--- meson.build.orig	2021-06-23 18:56:13 UTC
 +++ meson.build
-@@ -79,10 +79,14 @@ test_cxxflags = test_common_flags + [
-   '-Wno-non-virtual-dtor',
- ]
+@@ -28,6 +28,14 @@ elif compiler.get_id() == 'clang' and compiler.version
+   warning('Your clang version is too old.  You need at least version 7.')
+ endif
  
 +test_ldflags = [
 +]
 +
- if compiler.get_id() == 'clang'
-   # Workaround for clang bug
-   # https://bugs.llvm.org/show_bug.cgi?id=32611
-   test_cxxflags += '-funwind-tables'
++if compiler.get_id() == 'clang'
++  # This can probably go away after FreeBSD 11 is EOL'd
 +  test_ldflags += '-fuse-ld=%%MPD_CLANG_LD%%'
- endif
- 
- test_cflags = test_common_flags + [
-@@ -95,7 +99,7 @@ test_cflags = test_common_flags + [
-   '-pedantic',
++endif
++
+ version_conf = configuration_data()
+ version_conf.set_quoted('PACKAGE', meson.project_name())
+ version_conf.set_quoted('PACKAGE_NAME', meson.project_name())
+@@ -102,7 +110,7 @@ test_cflags = test_common_flags + [
+   '-Wwrite-strings',
  ]
  
 -test_ldflags = [
