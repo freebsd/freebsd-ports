@@ -885,6 +885,7 @@
     SUBDIR += gradle
     SUBDIR += gradle-completion
     SUBDIR += gradle5
+    SUBDIR += gradle6
     SUBDIR += gradle62
     SUBDIR += grantlee5
     SUBDIR += grcov
