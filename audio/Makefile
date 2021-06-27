@@ -624,6 +624,7 @@
     SUBDIR += pragha
     SUBDIR += prelude-lv2
     SUBDIR += protracker
+    SUBDIR += psindustrializer
     SUBDIR += pulseaudio
     SUBDIR += pulseaudio-module-sndio
     SUBDIR += pulseaudio-module-xrdp
