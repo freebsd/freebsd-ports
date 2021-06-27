@@ -1,0 +1,12 @@
+--- configure.ac.orig	2021-06-27 09:08:51 UTC
++++ configure.ac
+@@ -363,6 +363,9 @@ case "${host_os}" in
+     linux*)
+         build_linux=yes
+         ;;
++    freebsd*)
++        build_linux=yes
++        ;;
+     cygwin*|mingw*)
+         build_windows=yes
+         ;;
