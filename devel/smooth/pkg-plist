@@ -54,6 +54,7 @@ include/smooth/graphics/imageloader/imageloader.h
 include/smooth/graphics/imageloader/jpeg.h
 include/smooth/graphics/imageloader/pci.h
 include/smooth/graphics/imageloader/png.h
+include/smooth/graphics/imageloader/webp.h
 include/smooth/graphics/modifiers/fontsize.h
 include/smooth/graphics/modifiers/righttoleft.h
 include/smooth/graphics/surface.h
