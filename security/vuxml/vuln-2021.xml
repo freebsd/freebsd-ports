@@ -33,19 +33,22 @@
     <topic>PuppetDB -- SQL Injection</topic>
     <affects>
       <package>
-	<name>puppetdb6</name>
-	<range><lt>6.17.0</lt></range>
+       <name>puppetdb6</name>
+       <range><lt>6.17.0</lt></range>
       </package>
       <package>
-	<name>puppetdb7</name>
-	<range><lt>7.4.1</lt></range>
+       <name>puppetdb7</name>
+       <range><lt>7.4.1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Puppet reports:</p>
-	<blockquote cite="https://puppet.com/docs/puppetdb/latest/release_notes.html#security-fixes">
-	  <p>Fixed an issue where someone with the ability to query PuppetDB could arbitrarily write, update, or delete data CVE-2021-27021 PDB-5138.</p>
-	</blockquote>
+       <p>Puppet reports:</p>
+       <blockquote cite="https://puppet.com/docs/puppetdb/latest/release_notes.html#security-fixes">
+	<p>Fixed an issue where someone with the ability to query PuppetDB
+	    could arbitrarily write, update, or delete data CVE-2021-27021
+	    PDB-5138.</p>
+       </blockquote>
       </body>
     </description>
     <references>
@@ -55,6 +58,9 @@
     </references>
     <dates>
       <discovery>2021-06-24</discovery>
+      <entry>2021-06-25</entry>
+    </dates>
+  </vuln>
 
   <vuln vid="4c9159ea-d4c9-11eb-aeee-8c164582fbac">
     <topic>Ansible -- Templating engine bug</topic>
