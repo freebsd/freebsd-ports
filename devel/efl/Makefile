@@ -2,7 +2,7 @@
 
 PORTNAME=	efl
 DISTVERSION=	1.25.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
@@ -326,7 +326,7 @@ MESON_ARGS+=		-Degl=true
 USE_GL=			egl
 .endif
 
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
