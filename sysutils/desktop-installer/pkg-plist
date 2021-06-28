@@ -13,6 +13,7 @@ sbin/desktop-installer
 %%DATADIR%%/LXDE/xinitrc
 %%DATADIR%%/LXQT/xinitrc
 %%DATADIR%%/MATE/xinitrc
+%%DATADIR%%/OTHER/xinitrc
 %%DATADIR%%/Scripts/battery-shutdown.sh
 %%DATADIR%%/Scripts/desktop-admin
 %%DATADIR%%/WMAKER/xinitrc
