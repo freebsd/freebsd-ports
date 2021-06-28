@@ -1,0 +1,8 @@
+Cine Encoder is GUI program based on FFmpeg, MKVToolNix, and MediaInfo
+that allows to convert media files while preserving HDR metadata.
+
+Supported hardware encoding NVENC for codecs H265, H264 and Intel QSV
+(experimental) for codecs H264, MPEG-2.  The following encoding modes
+are implemented: H265, H264, VP9, MPEG-2, XDCAM, DNxHR, ProRes.
+
+WWW: https://github.com/CineEncoder/cine-encoder

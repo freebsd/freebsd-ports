@@ -30,6 +30,7 @@
     SUBDIR += celluloid
     SUBDIR += cheese
     SUBDIR += chilitags
+    SUBDIR += cineencoder
     SUBDIR += clive
     SUBDIR += clutter-gst
     SUBDIR += clutter-gst3
