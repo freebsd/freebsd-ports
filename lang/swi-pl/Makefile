@@ -2,7 +2,7 @@
 
 PORTNAME=	swi-pl
 DISTVERSION=	8.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	swipl-${DISTVERSION}
@@ -75,7 +75,7 @@ USE_LDCONFIG=	${PREFIX}/lib/swipl/lib/${ARCH}-${OPSYS:tl}
 
 PLIST_SUB+=	ARCH=${ARCH} OS=${OPSYS:tl}
 
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
