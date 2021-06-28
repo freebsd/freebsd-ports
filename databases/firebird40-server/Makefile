@@ -1,5 +1,6 @@
 PORTNAME=	firebird
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES?=	databases
 MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
@@ -102,7 +103,7 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_PORTDOCS=	*
 
-FB_DOCS_FILES=	WhatsNew README.* Firebird* ambiguity.txt \
+FB_DOCS_FILES=	README.* Firebird* ambiguity.txt \
 		ods11-index-structure.html
 FB_DOCS_DIRS=	sql.extensions license upgrade
 .endif
@@ -142,7 +143,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${CONFDIR}
 	${INSTALL_DATA} ${WRKSRC}/gen/Release/firebird/databases.conf ${STAGEDIR}${PREFIX}/${CONFDIR}/databases.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/gen/Release/firebird/fbtrace.conf ${STAGEDIR}${PREFIX}/${CONFDIR}/fbtrace.conf
-	${INSTALL_DATA} ${WRKSRC}/gen/Release/firebird/replication.conf ${STAGEDIR}${PREFIX}/${CONFDIR}/replication.conf
+	${INSTALL_DATA} ${WRKSRC}/gen/Release/firebird/replication.conf ${STAGEDIR}${PREFIX}/${CONFDIR}/replication.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/gen/Release/firebird/plugins.conf ${STAGEDIR}${PREFIX}/${CONFDIR}/plugins.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/gen/Release/firebird/plugins/udr_engine.conf ${STAGEDIR}${PREFIX}/${CONFDIR}/udr_engine.conf.sample
 
