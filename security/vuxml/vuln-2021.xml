@@ -2,10 +2,13 @@
     <topic>RabbitMQ-C -- integer overflow leads to heap corruption</topic>
     <affects>
       <package>
-	<name>net/rabbitmq-c</name>
-	<name>net/rabbitmq-c-devel</name>
+	<name>rabbitmq-c</name>
+	<name>rabbitmq-c-devel</name>
 	<range><lt>0.10.0</lt></range>
       </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>alanxz reports:</p>
 	<blockquote cite="https://github.com/alanxz/rabbitmq-c/commit/fc85be7123050b91b054e45b91c78d3241a5047a">
 	  <p>When parsing a frame header, validate that the frame_size is less than
@@ -16,7 +19,7 @@
 	when computing state-&gt;target_size resulting in a small value there. A
 	buffer is then allocated with the small amount, then memcopy copies the
 	frame_size writing to memory beyond the end of the buffer.</p>
- 	</blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -27,7 +30,7 @@
       <discovery>2019-10-29</discovery>
       <entry>2021-06-25</entry>
     </dates>
-  </vuln>
+</vuln>
 
   <vuln vid="41bc849f-d5ef-11eb-ae37-589cfc007716">
     <topic>PuppetDB -- SQL Injection</topic>
