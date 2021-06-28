@@ -43,8 +43,8 @@ CONFIGURE_ARGS=	--prefix=${LOCALSTATEDIR} \
 		--with-fbtzdata=${LIBEXECDIR}/tzdata \
 		--with-fbsbin=${PREFIX}/sbin \
 		--with-fbsecure-db=${LOCALSTATEDIR} \
-		--with-fbsample-db=${EXAMPLESDIR} \
-		--with-fbudf=${LIBEXECDIR}/UDF
+		--with-fbsample-db=${EXAMPLESDIR}
+
 CONFIGURE_ENV+=	PTHREAD_LIBS="-lpthread" \
 		ac_cv_header_atomic_ops_h="no" \
 		ac_cv_lib_atomic_ops_main="no"
@@ -176,7 +176,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/gen/Release/firebird/lib/libfbclient.so.${PORTVERSION} \
 		${STAGEDIR}${PREFIX}/lib
 
-	${LN} -fs libfbclient.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libfbclient.so.3
+	${LN} -fs libfbclient.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libfbclient.so.4
 	${LN} -fs libfbclient.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libfbclient.so
 
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/firebird

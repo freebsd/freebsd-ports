@@ -44,6 +44,6 @@ include/ibase.h
 include/iberror.h
 include/perf.h
 lib/libfbclient.so
-lib/libfbclient.so.3
+lib/libfbclient.so.4
 lib/libfbclient.so.%%FIREBIRD_VERSION%%
 %%DATADIR%%/firebird.msg

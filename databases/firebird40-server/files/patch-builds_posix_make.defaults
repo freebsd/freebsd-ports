@@ -23,7 +23,7 @@
  LibraryFileName=libfbclient
  LibraryFullName=$(LibraryFileName).${SHRLIB_EXT}.${FirebirdVersion}
 -LibrarySoName=$(LibraryFileName).${SHRLIB_EXT}.2
-+LibrarySoName=$(LibraryFileName).${SHRLIB_EXT}.3
++LibrarySoName=$(LibraryFileName).${SHRLIB_EXT}.4
  LibraryBaseName=$(LibraryFileName).${SHRLIB_EXT}
  
  LIBFIREBIRD_FULLNAME = $(LIB)/$(LibraryFullName)
