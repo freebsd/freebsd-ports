@@ -1,0 +1,45 @@
+Part of https://github.com/KhronosGroup/Vulkan-ValidationLayers/commit/28198b569714
+
+In file included from layers/generated/chassis.cpp:29:
+In file included from layers/generated/chassis.h:41:
+In file included from layers/vk_layer_logging.h:49:
+layers/generated/vk_enum_string_helper.h:1107:14: error: use of undeclared identifier 'VK_STRUCTURE_TYPE_SUBPASSS_SHADING_PIPELINE_CREATE_INFO_HUAWEI'; did you mean 'VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI'?
+        case VK_STRUCTURE_TYPE_SUBPASSS_SHADING_PIPELINE_CREATE_INFO_HUAWEI:
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+             VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI
+/usr/local/include/vulkan/vulkan_core.h:828:5: note: 'VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI' declared here
+    VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI = 1000369000,
+    ^
+
+layers/generated/parameter_validation.cpp:5110:208: error: use of undeclared identifier 'VK_STRUCTURE_TYPE_SUBPASSS_SHADING_PIPELINE_CREATE_INFO_HUAWEI'; did you mean 'VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI'?
+            const VkStructureType allowed_structs_VkComputePipelineCreateInfo[] = { VK_STRUCTURE_TYPE_PIPELINE_COMPILER_CONTROL_CREATE_INFO_AMD, VK_STRUCTURE_TYPE_PIPELINE_CREATION_FEEDBACK_CREATE_INFO_EXT, VK_STRUCTURE_TYPE_SUBPASSS_SHADING_PIPELINE_CREATE_INFO_HUAWEI };
+                                                                                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                                                                                                               VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI
+/usr/local/include/vulkan/vulkan_core.h:828:5: note: 'VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI' declared here
+    VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI = 1000369000,
+    ^
+
+--- layers/generated/vk_enum_string_helper.h.orig	2021-06-21 21:57:50 UTC
++++ layers/generated/vk_enum_string_helper.h
+@@ -1104,8 +1104,8 @@ static inline const char* string_VkStructureType(VkStr
+             return "VK_STRUCTURE_TYPE_SUBMIT_INFO";
+         case VK_STRUCTURE_TYPE_SUBMIT_INFO_2_KHR:
+             return "VK_STRUCTURE_TYPE_SUBMIT_INFO_2_KHR";
+-        case VK_STRUCTURE_TYPE_SUBPASSS_SHADING_PIPELINE_CREATE_INFO_HUAWEI:
+-            return "VK_STRUCTURE_TYPE_SUBPASSS_SHADING_PIPELINE_CREATE_INFO_HUAWEI";
++        case VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI:
++            return "VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI";
+         case VK_STRUCTURE_TYPE_SUBPASS_BEGIN_INFO:
+             return "VK_STRUCTURE_TYPE_SUBPASS_BEGIN_INFO";
+         case VK_STRUCTURE_TYPE_SUBPASS_DEPENDENCY_2:
+--- layers/generated/parameter_validation.cpp~	2021-06-21 21:57:50.000000000 +0000
++++ layers/generated/parameter_validation.cpp	2021-07-01 00:39:30.820043758 +0000
+@@ -5107,7 +5107,7 @@ bool StatelessValidation::PreCallValidateCreateCompute
+     {
+         for (uint32_t createInfoIndex = 0; createInfoIndex < createInfoCount; ++createInfoIndex)
+         {
+-            const VkStructureType allowed_structs_VkComputePipelineCreateInfo[] = { VK_STRUCTURE_TYPE_PIPELINE_COMPILER_CONTROL_CREATE_INFO_AMD, VK_STRUCTURE_TYPE_PIPELINE_CREATION_FEEDBACK_CREATE_INFO_EXT, VK_STRUCTURE_TYPE_SUBPASSS_SHADING_PIPELINE_CREATE_INFO_HUAWEI };
++            const VkStructureType allowed_structs_VkComputePipelineCreateInfo[] = { VK_STRUCTURE_TYPE_PIPELINE_COMPILER_CONTROL_CREATE_INFO_AMD, VK_STRUCTURE_TYPE_PIPELINE_CREATION_FEEDBACK_CREATE_INFO_EXT, VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI };
+ 
+             skip |= validate_struct_pnext("vkCreateComputePipelines", ParameterName("pCreateInfos[%i].pNext", ParameterName::IndexVector{ createInfoIndex }), "VkPipelineCompilerControlCreateInfoAMD, VkPipelineCreationFeedbackCreateInfoEXT, VkSubpassShadingPipelineCreateInfoHUAWEI", pCreateInfos[createInfoIndex].pNext, ARRAY_SIZE(allowed_structs_VkComputePipelineCreateInfo), allowed_structs_VkComputePipelineCreateInfo, GeneratedVulkanHeaderVersion, "VUID-VkComputePipelineCreateInfo-pNext-pNext", "VUID-VkComputePipelineCreateInfo-sType-unique");
+ 
