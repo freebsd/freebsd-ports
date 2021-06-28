@@ -2,6 +2,7 @@
 
 PORTNAME=	pyserial
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	comms python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python:3.6+
 
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist concurrent
 
 NO_ARCH=	yes
 
