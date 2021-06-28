@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210628:
+  AFFECTS: users of misc/openhab
+  AUTHOR: netchild@FreeBSD.org
+
+  You need to run
+    sed -i -e 's:^karaf.framework.equinox=.*:karaf.framework.equinox=mvn\:org.eclipse.platform/org.eclipse.osgi/3.16.200: ; s:^karaf.framework.felix=.*:karaf.framework.felix=mvn\:org.apache.felix/org.apache.felix.framework/6.0.4:' /var/db/openhab/userdata/etc/config.properties
+  to update the version numbers of some components in a config file.
+
 20210621:
   AFFECTS: users of www/gitlab-ce
   AUTHOR: mfechner@FreeBSD.org

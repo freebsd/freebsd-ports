@@ -1,4 +1,4 @@
-
+[
 { type: install
   message: <<EOM
 The openhab user interface writes to /var/db/openhab
