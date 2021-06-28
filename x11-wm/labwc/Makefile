@@ -1,12 +1,6 @@
 PORTNAME=	labwc
-DISTVERSION=	0.2.1
-PORTREVISION=	1
+DISTVERSION=	0.3.0
 CATEGORIES=	x11-wm
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	f5d7bf123e83.patch:-p1 # wlroots 0.14
-PATCHFILES+=	892e93dd84c5.patch:-p1 # wlroots 0.14
-PATCHFILES+=	874cc9e63706.patch:-p1 # wlroots 0.14
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland stacking compositor
@@ -43,6 +37,10 @@ SUID_DESC=		setuid bit on "${PORTNAME}" binary (to claim DRM without seatd/conso
 SUID_VARS=		MAYBE_SUID="@(,,4755) "
 
 X11_MESON_ENABLED=	xwayland
+
+post-extract:
+# Force system dependencies
+	@${RM} ${WRKSRC}/subprojects/*.wrap
 
 post-patch:
 # Extract (snapshot) version from the port instead of meson.build
