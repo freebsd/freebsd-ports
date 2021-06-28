@@ -171,6 +171,7 @@ lib/seed7/lib/pixmapfont.s7i
 lib/seed7/lib/pkcs1.s7i
 lib/seed7/lib/png.s7i
 lib/seed7/lib/poll.s7i
+lib/seed7/lib/ppm.s7i
 lib/seed7/lib/process.s7i
 lib/seed7/lib/progs.s7i
 lib/seed7/lib/propertyfile.s7i
