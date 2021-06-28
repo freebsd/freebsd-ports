@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	14.0.0
+DISTVERSION=	14.0.1
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -43,7 +43,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	48a15899b20abb635e95707a6dd10b3fa9cdddf1
+GL_COMMIT=	57b0466e140a3e5b35805e54a769c9da17aab0f1
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -161,3 +161,4 @@ do-install:
 	cd ${WRKSRC}/ruby && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/ruby
 
 .include <bsd.port.mk>
+

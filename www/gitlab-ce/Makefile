@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	14.0.0
+PORTVERSION=	14.0.1
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # which makes maintaining this long list much easier!
 MY_DEPENDS=	git>=2.32.0:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
-	gitlab-agent>=14.0.0:net/gitlab-agent \
+	gitlab-agent>=14.0.1:net/gitlab-agent \
 	gitlab-elasticsearch-indexer>=2.12.0:textproc/gitlab-elasticsearch-indexer \
 	gitlab-pages>=1.40.0:www/gitlab-pages \
 	gitlab-shell>=13.19.0:devel/gitlab-shell \
@@ -269,7 +269,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 GL_PROJECT?=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT?=	f1926d2aa6447173a06fee5e0a3141bea27a0d8d
+GL_COMMIT?=	76b84b42f64b8009cc181d5da0c656a8a521986d
 
 USERS=	git
 GROUPS=	git

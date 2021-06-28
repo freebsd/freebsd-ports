@@ -13098,6 +13098,7 @@
 %%WWWDIR%%/data/whats_new/202103220001_13_10.yml
 %%WWWDIR%%/data/whats_new/202104220001_13_11.yml
 %%WWWDIR%%/data/whats_new/202105220001_13_12.yml
+%%WWWDIR%%/data/whats_new/202106220001_14_0.yml
 %%WWWDIR%%/data/whats_new/templates/YYYYMMDD0001_XX_YY.yml
 %%WWWDIR%%/db/fixtures/development/01_admin.rb
 %%WWWDIR%%/db/fixtures/development/02_application_settings.rb
@@ -17600,11 +17601,9 @@
 %%WWWDIR%%/doc/administration/geo/disaster_recovery/background_verification.md
 %%WWWDIR%%/doc/administration/geo/disaster_recovery/bring_primary_back.md
 %%WWWDIR%%/doc/administration/geo/disaster_recovery/img/checksum-differences-admin-project-page.png
-%%WWWDIR%%/doc/administration/geo/disaster_recovery/img/checksum-differences-admin-projects.png
-%%WWWDIR%%/doc/administration/geo/disaster_recovery/img/replication-status.png
 %%WWWDIR%%/doc/administration/geo/disaster_recovery/img/reverification-interval.png
-%%WWWDIR%%/doc/administration/geo/disaster_recovery/img/verification-status-primary.png
-%%WWWDIR%%/doc/administration/geo/disaster_recovery/img/verification-status-secondary.png
+%%WWWDIR%%/doc/administration/geo/disaster_recovery/img/verification_status_primary_v14_0.png
+%%WWWDIR%%/doc/administration/geo/disaster_recovery/img/verification_status_secondary_v14_0.png
 %%WWWDIR%%/doc/administration/geo/disaster_recovery/index.md
 %%WWWDIR%%/doc/administration/geo/disaster_recovery/planned_failover.md
 %%WWWDIR%%/doc/administration/geo/disaster_recovery/runbooks/planned_failover_multi_node.md
@@ -17620,7 +17619,8 @@
 %%WWWDIR%%/doc/administration/geo/replication/img/adding_a_secondary_node_v13_3.png
 %%WWWDIR%%/doc/administration/geo/replication/img/geo-ha-diagram.png
 %%WWWDIR%%/doc/administration/geo/replication/img/geo_architecture.png
-%%WWWDIR%%/doc/administration/geo/replication/img/geo_node_dashboard.png
+%%WWWDIR%%/doc/administration/geo/replication/img/geo_node_dashboard_v14_0.png
+%%WWWDIR%%/doc/administration/geo/replication/img/geo_node_health_v14_0.png
 %%WWWDIR%%/doc/administration/geo/replication/img/geo_overview.png
 %%WWWDIR%%/doc/administration/geo/replication/img/single_git_add_geolocation_rule.png
 %%WWWDIR%%/doc/administration/geo/replication/img/single_git_add_traffic_policy_endpoints.png
@@ -17658,7 +17658,6 @@
 %%WWWDIR%%/doc/administration/gitaly/reference.md
 %%WWWDIR%%/doc/administration/housekeeping.md
 %%WWWDIR%%/doc/administration/img/audit_log_v13_6.png
-%%WWWDIR%%/doc/administration/img/auditor_access_form.png
 %%WWWDIR%%/doc/administration/img/custom_hooks_error_msg.png
 %%WWWDIR%%/doc/administration/img/db_load_balancing_postgres_stats.png
 %%WWWDIR%%/doc/administration/img/impersonated_audit_events_v13_8.png
@@ -17716,8 +17715,6 @@
 %%WWWDIR%%/doc/administration/operations/extra_sidekiq_routing.md
 %%WWWDIR%%/doc/administration/operations/fast_ssh_key_lookup.md
 %%WWWDIR%%/doc/administration/operations/filesystem_benchmarking.md
-%%WWWDIR%%/doc/administration/operations/img/sidekiq-cluster.png
-%%WWWDIR%%/doc/administration/operations/img/write_to_authorized_keys_setting.png
 %%WWWDIR%%/doc/administration/operations/index.md
 %%WWWDIR%%/doc/administration/operations/moving_repositories.md
 %%WWWDIR%%/doc/administration/operations/puma.md
@@ -20013,7 +20010,6 @@
 %%WWWDIR%%/generator_templates/rails/post_deployment_migration/migration.rb
 %%WWWDIR%%/generator_templates/snowplow_event_definition/event_definition.yml
 %%WWWDIR%%/generator_templates/usage_metric_definition/metric_definition.yml
-%%WWWDIR%%/geo_architecture.png
 %%WWWDIR%%/haml_lint/inline_javascript.rb
 %%WWWDIR%%/haml_lint/linter/documentation_links.rb
 %%WWWDIR%%/haml_lint/linter/no_plain_nodes.rb
@@ -21397,6 +21393,7 @@
 %%WWWDIR%%/lib/gitlab/ci/templates/Jobs/Deploy.latest.gitlab-ci.yml
 %%WWWDIR%%/lib/gitlab/ci/templates/Jobs/Deploy/EC2.gitlab-ci.yml
 %%WWWDIR%%/lib/gitlab/ci/templates/Jobs/Deploy/ECS.gitlab-ci.yml
+%%WWWDIR%%/lib/gitlab/ci/templates/Jobs/Helm-2to3.gitlab-ci.yml
 %%WWWDIR%%/lib/gitlab/ci/templates/Jobs/Load-Performance-Testing.gitlab-ci.yml
 %%WWWDIR%%/lib/gitlab/ci/templates/Jobs/SAST.gitlab-ci.yml
 %%WWWDIR%%/lib/gitlab/ci/templates/Jobs/Secret-Detection.gitlab-ci.yml
