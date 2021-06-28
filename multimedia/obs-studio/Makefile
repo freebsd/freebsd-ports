@@ -1,6 +1,6 @@
 PORTNAME=	obs-studio
 DISTVERSION=	27.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -54,6 +54,7 @@ GH_TUPLE=	obsproject:obs-browser:f1a61c5:obs_browser/plugins/obs-browser \
 		obsproject:obs-vst:aaa7b7f:obs_vst/plugins/obs-vst
 
 CMAKE_ON=	UNIX_STRUCTURE
+CMAKE_OFF=	ENABLE_PIPEWIRE # beginning with 27.0.1 (PR#4287) the linux-capture plugin optionally requires the piperware library and in this case expects the linux/dma-buf.h header
 CMAKE_ARGS=	-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}"
 CFLAGS+=	-D_WITH_GETLINE
 
