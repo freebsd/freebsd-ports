@@ -7,6 +7,7 @@
     SUBDIR += ADMsnmp
     SUBDIR += R-cran-ROAuth
     SUBDIR += R-cran-askpass
+    SUBDIR += R-cran-credentials
     SUBDIR += R-cran-digest
     SUBDIR += R-cran-gitcreds
     SUBDIR += R-cran-openssl
