@@ -1,7 +1,5 @@
-# Created by: Alonso Cardenas <acmFreeBSD.org>
-
 PORTNAME=	drupal8
-PORTVERSION=	8.9.13
+PORTVERSION=	8.9.16
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
