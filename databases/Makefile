@@ -74,8 +74,10 @@
     SUBDIR += fastdb
     SUBDIR += firebird25-client
     SUBDIR += firebird30-client
+    SUBDIR += firebird40-client
     SUBDIR += firebird25-server
     SUBDIR += firebird30-server
+    SUBDIR += firebird40-server
     SUBDIR += fortytwo-bdb
     SUBDIR += foundationdb
     SUBDIR += foundationdb-devel

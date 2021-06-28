@@ -1,0 +1,48 @@
+bin/fb_lock_print
+bin/fbsplit
+bin/fbstat
+bin/fbsvcmgr
+bin/fbtracemgr
+bin/gbak
+bin/gfix
+bin/gsec
+bin/nbackup
+sbin/fbguard
+sbin/firebird
+@group firebird
+@sample %%ETCDIR%%/databases.conf.sample
+%%ETCDIR%%/fbtrace.conf
+@sample %%ETCDIR%%/plugins.conf.sample
+@sample %%ETCDIR%%/replication.conf.sample
+@sample %%ETCDIR%%/udr_engine.conf.sample
+lib/libib_util.so
+libexec/firebird/intl/fbintl.conf
+libexec/firebird/intl/libfbintl.so
+libexec/firebird/plugins/libChaCha.so
+libexec/firebird/plugins/libEngine13.so
+libexec/firebird/plugins/libLegacy_Auth.so
+libexec/firebird/plugins/libLegacy_UserManager.so
+libexec/firebird/plugins/libSrp.so
+libexec/firebird/plugins/libfbtrace.so
+libexec/firebird/plugins/libudr_engine.so
+libexec/firebird/plugins/udr/udf_compat.sql
+libexec/firebird/plugins/udr/libudf_compat.so
+libexec/firebird/tzdata/ids.dat
+libexec/firebird/tzdata/metaZones.res
+libexec/firebird/tzdata/timezoneTypes.res
+libexec/firebird/tzdata/windowsZones.res
+libexec/firebird/tzdata/zoneinfo64.res
+@group
+@owner firebird
+@group firebird
+/%%LOCALSTATEDIR%%/help/help.fdb
+%%EXAMPLESDIR%%/employee.fdb
+%%EXAMPLESDIR%%/employe2.sql
+@sample /%%LOCALSTATEDIR%%/security4.fdb.sample
+@preunexec [ -s /%%LOCALSTATEDIR%%/firebird.log ] || rm -f /%%LOCALSTATEDIR%%/firebird.log
+@rmtry /%%LOCALSTATEDIR%%/isc_event1.`hostname`
+@rmtry /%%LOCALSTATEDIR%%/isc_init1.`hostname`
+@rmtry /%%LOCALSTATEDIR%%/isc_lock1.`hostname`
+@dir /%%LOCALSTATEDIR%%/help
+@dir /%%LOCALSTATEDIR%%
+@group
