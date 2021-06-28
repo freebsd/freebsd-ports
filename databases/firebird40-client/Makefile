@@ -1,7 +1,7 @@
 PORTNAME=	firebird
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}-client
 
-COMMENT=	Firebird-3 database client
+COMMENT=	Firebird-4 database client
 
 MASTERDIR=	${.CURDIR}/../firebird40-server
 
