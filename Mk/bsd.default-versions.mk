@@ -63,7 +63,7 @@ JAVA_DEFAULT?=		8
 # Possible values: 2.0.10
 LAZARUS_DEFAULT?=	2.0.10
 # Possible values: rust, legacy
-.if empty(ARCH:Naarch64:Narmv6:Narmv7:Namd64:Ni386:Npowerpc64:Npowerpc64le)
+.if empty(ARCH:Naarch64:Narmv6:Narmv7:Namd64:Ni386:Npowerpc64:Npowerpc64le:Npowerpc)
 LIBRSVG2_DEFAULT?=	rust
 .else
 LIBRSVG2_DEFAULT?=	legacy
