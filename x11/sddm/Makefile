@@ -1,7 +1,7 @@
 PORTNAME=	sddm
 PORTVERSION=	0.19.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	kde@FreeBSD.org
@@ -25,6 +25,8 @@ USE_KDE=	ecm
 USE_QT=		core declarative dbus gui network \
 		buildtools_build linguisttools_build qmake_build
 USE_XORG=	xcb
+
+CONFLICTS_INSTALL=	lightdm
 
 CMAKE_ON=	BUILD_MAN_PAGES
 CMAKE_ARGS=	-DUID_MIN=1000 \
