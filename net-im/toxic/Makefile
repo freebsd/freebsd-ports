@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	toxic
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
@@ -26,15 +26,18 @@ USES=		compiler:c11 desktop-file-utils gettext-runtime gmake ncurses openal:al,a
 USE_GITHUB=	yes
 GH_ACCOUNT=	JFreegman
 
-OPTIONS_DEFINE=	X11 PYTHON
-OPTIONS_DEFAULT=X11
+OPTIONS_DEFINE=	GAMES X11 PYTHON
+OPTIONS_DEFAULT=GAMES X11
+
+GAMES_DESC=	Includes a games module
+GAMES_MAKE_ARGS_OFF=	DISABLE_GAMES=1
 
 X11_USES=	gnome xorg
 X11_USE=	GNOME=gdkpixbuf2,glib20 XORG=x11
 X11_MAKE_ARGS_OFF=	DISABLE_X11=1 DISABLE_DESKTOP_NOTIFY=1
 X11_LIB_DEPENDS=libnotify.so:devel/libnotify
 
-PYTHON_USES=	python:3.7+
+PYTHON_USES=	python:3.8+
 PYTHON_MAKE_ARGS=	ENABLE_PYTHON=1
 
 CFLAGS+=	-I${NCURSESINC} -pthread
@@ -44,9 +47,10 @@ MAKE_ENV=	USER_CFLAGS="${CFLAGS}" USER_LDFLAGS="${LDFLAGS}"	\
 		MANDIR="${MANPREFIX}/man"
 SUB_FILES=	pkg-message
 
-post-patch-PYTHON-on:
-	${REINPLACE_CMD} -e '/PYTHON3_LIBS/ s|python3|python-${PYTHON_VER}|' \
-			 -e 's|python3-config|${PYTHON_VERSION}-config|g' \
+pre-configure-PYTHON-on:
+	${REINPLACE_CMD} -e '/PYTHON3_LIBS/ s|python3|python-${PYTHON_VER}|'	\
+			 -e 's|python3-config|${PYTHON_VERSION}-config|g'	\
+			 -e 's|--ldflags|--ldflags --embed|'			\
 		${WRKSRC}/cfg/checks/python.mk
 
 pre-configure:
