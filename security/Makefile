@@ -374,6 +374,7 @@
     SUBDIR += nacl
     SUBDIR += ncrack
     SUBDIR += ncrypt
+    SUBDIR += nebula
     SUBDIR += nettle
     SUBDIR += nextcloud-end_to_end_encryption
     SUBDIR += nextcloud-passman
