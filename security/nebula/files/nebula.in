@@ -1,6 +1,6 @@
 #!/bin/sh 
 
-# PROVIDE: caddy
+# PROVIDE: nebula
 # REQUIRE: LOGIN DAEMON NETWORKING
 # KEYWORD: shutdown
 
