@@ -2,4 +2,4 @@ This package contains the X Window System unified protocol definitions.
 They where previously scattered through different packages, but have been
 merged to one package.
 
-WWW:	https://gitlab.freedesktop.org/xorg/proto/xorgproto
+WWW: https://gitlab.freedesktop.org/xorg/proto/xorgproto
