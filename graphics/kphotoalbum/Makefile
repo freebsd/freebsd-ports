@@ -1,5 +1,5 @@
 PORTNAME=	kphotoalbum
-DISTVERSION=	5.7.0
+DISTVERSION=	5.8.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	KDE
@@ -8,7 +8,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Image viewer and organizer for KDE
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libexpat.so:textproc/expat2 \
@@ -20,7 +19,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils jpeg kde:5 \
 USE_KDE=	archive auth codecs completion config \
 		configwidgets coreaddons ecm i18n \
 		iconthemes jobwidgets kio marble purpose service \
-		sonnet textwidgets widgetsaddons xmlgui
+		solid sonnet textwidgets widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative gui location network phonon4 \
 		printsupport sql webchannel widgets xml \
 		buildtools_build qmake_build
