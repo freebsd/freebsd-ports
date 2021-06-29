@@ -171,6 +171,7 @@
     SUBDIR += toot
     SUBDIR += tox
     SUBDIR += toxbot
+    SUBDIR += toxext
     SUBDIR += toxic
     SUBDIR += toxins
     SUBDIR += tut

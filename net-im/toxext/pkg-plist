@@ -1,0 +1,8 @@
+include/toxext/mock_fixtures.h
+include/toxext/mock_tox.h
+include/toxext/toxext.h
+include/toxext/toxext_util.h
+lib/cmake/ToxExt/ToxExtConfig-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ToxExt/ToxExtConfig.cmake
+lib/libtoxext.so
+lib/libtoxext_mock.so
