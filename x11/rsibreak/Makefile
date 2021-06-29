@@ -1,7 +1,7 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
 
 PORTNAME=	rsibreak
-DISTVERSION=	0.12.13
+DISTVERSION=	0.12.14
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION:R}/
 
