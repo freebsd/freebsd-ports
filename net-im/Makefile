@@ -170,6 +170,7 @@
     SUBDIR += tkabber-plugins
     SUBDIR += toot
     SUBDIR += tox
+    SUBDIR += tox_extension_messages
     SUBDIR += toxbot
     SUBDIR += toxext
     SUBDIR += toxic
