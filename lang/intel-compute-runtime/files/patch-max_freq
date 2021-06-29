@@ -3,9 +3,9 @@
   $ clinfo | fgrep clock
     Max clock frequency                             0MHz
 
---- shared/source/os_interface/linux/drm_query.cpp.orig	2020-04-17 18:43:38 UTC
+--- shared/source/os_interface/linux/drm_query.cpp.orig	2021-07-16 13:20:44 UTC
 +++ shared/source/os_interface/linux/drm_query.cpp
-@@ -11,10 +11,37 @@
+@@ -15,6 +15,13 @@
  
  #include <fstream>
  
@@ -17,6 +17,9 @@
 +#endif
 +
  namespace NEO {
+ 
+ namespace IoctlHelper {
+@@ -35,6 +42,26 @@ std::string getIoctlParamStringRemaining(int param) {
  
  int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int &maxGpuFrequency) {
      maxGpuFrequency = 0;
@@ -43,7 +46,7 @@
      std::string clockSysFsPath = getSysFsPciPath();
  
      clockSysFsPath += "/gt_max_freq_mhz";
-@@ -26,6 +53,7 @@ int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int 
+@@ -46,6 +73,7 @@ int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int 
  
      ifs >> maxGpuFrequency;
      ifs.close();
@@ -51,9 +54,9 @@
      return 0;
  }
  
---- shared/source/os_interface/linux/drm_query_dg1.cpp.orig	2020-11-07 13:04:57 UTC
+--- shared/source/os_interface/linux/drm_query_dg1.cpp.orig	2021-07-16 13:20:44 UTC
 +++ shared/source/os_interface/linux/drm_query_dg1.cpp
-@@ -13,11 +13,38 @@
+@@ -16,6 +16,13 @@
  
  #include <fstream>
  
@@ -67,6 +70,8 @@
  namespace NEO {
  class OsContext;
  
+@@ -37,6 +44,26 @@ std::string getIoctlParamStringRemaining(int param) {
+ 
  int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int &maxGpuFrequency) {
      maxGpuFrequency = 0;
 +#if defined(__FreeBSD__)
@@ -92,7 +97,7 @@
      std::string clockSysFsPath = getSysFsPciPath();
  
      clockSysFsPath += "/gt_max_freq_mhz";
-@@ -29,6 +56,7 @@ int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int 
+@@ -48,6 +75,7 @@ int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int 
  
      ifs >> maxGpuFrequency;
      ifs.close();

@@ -1,5 +1,5 @@
 PORTNAME=	compute-runtime
-DISTVERSION=	21.26.20194
+DISTVERSION=	21.28.20343
 CATEGORIES=	lang
 PKGNAMEPREFIX=	intel-
 
@@ -10,7 +10,7 @@ MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	OpenCL implementation for Intel HD 5000 (Gen8) or newer
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
