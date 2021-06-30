@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	nuitka
-PORTVERSION=	0.6.10.5
+PORTVERSION=	0.6.16
 CATEGORIES=	devel python
 MASTER_SITES=	https://nuitka.net/releases/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
