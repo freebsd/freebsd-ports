@@ -2,6 +2,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	3.34.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -79,9 +80,8 @@ GLIB_SCHEMAS=	org.gnome.anjuta.cvs.gschema.xml \
 		org.gnome.anjuta.tools.gschema.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	SVN DEVHELP GLADE TERMINAL
-OPTIONS_DEFAULT=SVN DEVHELP GLADE TERMINAL
-SVN_DESC=	Subversion plugin
+OPTIONS_DEFINE=	DEVHELP GLADE SUBVERSION TERMINAL
+OPTIONS_DEFAULT=DEVHELP GLADE SUBVERSION TERMINAL
 DEVHELP_DESC=	Devhelp plugin
 GLADE_DESC=	Build glade plugin
 TERMINAL_DESC=	Build build-in terminal
@@ -95,10 +95,10 @@ TERMINAL_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libpcre2-8.so:devel/pcre2
 TERMINAL_VARS=		GLIB_SCHEMAS+=org.gnome.anjuta.terminal.gschema.xml
 
-SVN_LIB_DEPENDS=	libapr-1.so:devel/apr1 \
+SUBVERSION_LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 			libserf-1.so:www/serf \
 			libsvn_client-1.so:devel/subversion
-SVN_CONFIGURE_ENABLE=	plugin-subversion
+SUBVERSION_CONFIGURE_ENABLE=	plugin-subversion
 
 DEVHELP_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 			libwebkit2gtk-4.0.so:www/webkit2-gtk3 \

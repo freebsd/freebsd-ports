@@ -2,6 +2,7 @@
 
 PORTNAME=	git
 DISTVERSION=	2.32.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -67,16 +68,16 @@ TEST_TARGET=	test
 
 CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 
-OPTIONS_DEFINE=	CONTRIB CURL CVS GITWEB GUI HTMLDOCS ICONV NLS P4 PCRE2 PERL \
-		SEND_EMAIL SUBTREE SVN
-OPTIONS_DEFAULT=CONTRIB CURL CVS GITWEB ICONV P4 PCRE2 PERL SEND_EMAIL \
+OPTIONS_DEFINE=	CONTRIB CURL CVS GITWEB GUI HTMLDOCS ICONV NLS PCRE2 PERFORCE PERL \
+		SEND_EMAIL SUBTREE SUBVERSION
+OPTIONS_DEFAULT=CONTRIB CURL CVS GITWEB ICONV PCRE2 PERFORCE PERL SEND_EMAIL \
 		SUBTREE
 .if ${FLAVOR:U} == gui
 OPTIONS_SLAVE+=		GUI
 .elif ${FLAVOR:U} == lite
-OPTIONS_EXCLUDE=	GUI SVN GITWEB CONTRIB P4 CVS PERL
+OPTIONS_EXCLUDE=	GUI SUBVERSION GITWEB CONTRIB PERFORCE CVS PERL
 .elif ${FLAVOR:U} == svn
-OPTIONS_SLAVE+=		SVN
+OPTIONS_SLAVE+=		SUBVERSION
 .elif ${FLAVOR:U} == tiny
 OPTIONS_EXCLUDE:=	${OPTIONS_DEFINE:NCURL}
 OPTIONS_SLAVE=		CURL
@@ -93,7 +94,6 @@ CURL_DESC=	Install curl support (provides HTTPS transport)
 CVS_DESC=	Enable CVS support
 GITWEB_DESC=	Install gitweb
 HTMLDOCS_DESC=	Install additional documentation
-P4_DESC=	Enable Perforce support
 PCRE2_DESC=	Use Perl Compatible Regular Expressions (v2)
 SEND_EMAIL_DESC=Enable the git-send-email(1) script
 SUBTREE_DESC=	Install git-subtree
@@ -131,11 +131,11 @@ GUI_USES=		tk
 GUI_MAKE_ARGS=		TCL_PATH=${TCLSH} TCLTK_PATH=${WISH}
 GUI_MAKE_ARGS_OFF=	NO_TCLTK=yes
 
-SVN_RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
+SUBVERSION_RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 .if ${WITH_SUBVERSION_VER:U} == LTS
-SVN_RUN_DEPENDS+=	p5-subversion-lts>=0:devel/p5-subversion
+SUBVERSION_RUN_DEPENDS+=	p5-subversion-lts>=0:devel/p5-subversion
 .else
-SVN_RUN_DEPENDS+=	p5-subversion>=0:devel/p5-subversion
+SUBVERSION_RUN_DEPENDS+=	p5-subversion>=0:devel/p5-subversion
 .endif
 
 SUBTREE_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor\
@@ -150,7 +150,7 @@ CVS_RUN_DEPENDS=	cvsps:devel/cvsps
 ALL_TARGET=	all strip
 .endif
 
-.if ${PORT_OPTIONS:MP4} || ${PORT_OPTIONS:MCONTRIB}
+.if ${PORT_OPTIONS:MPERFORCE} || ${PORT_OPTIONS:MCONTRIB}
 USES+=		python
 CONFIGURE_ARGS+=	--with-python=${PYTHON_CMD}
 .else
@@ -163,7 +163,7 @@ RMMAN1+=	git-citool.1 \
 		gitk.1
 .endif
 
-.if empty(PORT_OPTIONS:MSVN)
+.if empty(PORT_OPTIONS:MSUBVERSION)
 RMMAN1+=	git-svn.1
 .endif
 
@@ -201,17 +201,17 @@ post-patch-CVS-off:
 		s/git-cvsserver//' \
 		${WRKSRC}/Makefile
 
-post-patch-SVN-off:
+post-patch-SUBVERSION-off:
 	@${REINPLACE_CMD} -e '/git-svn.perl/d' ${WRKSRC}/Makefile
 
 post-patch-GITWEB-off:
 	@${REINPLACE_CMD} -e '/$$(MAKE) -C gitweb install/d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL}," ${WRKSRC}/t/lib-gitweb.sh
 
-post-patch-P4-off:
+post-patch-PERFORCE-off:
 	@${REINPLACE_CMD} -e '/^SCRIPT_PYTHON += git-p4.py$$/d' ${WRKSRC}/Makefile
 
-.if ${PORT_OPTIONS:MP4} || ${PORT_OPTIONS:MCONTRIB}
+.if ${PORT_OPTIONS:MPERFORCE} || ${PORT_OPTIONS:MCONTRIB}
 post-build:
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 .endif
@@ -253,7 +253,7 @@ post-install-CONTRIB-on:
 	${RM} ${WRKSRC}/contrib/credential/netrc/test.netrc.gpg
 	${CP} -R ${WRKSRC}/contrib/* ${STAGEDIR}${PREFIX}/share/git-core/contrib
 
-post-install-P4-on:
+post-install-PERFORCE-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/git-p4.py ${STAGEDIR}${PREFIX}/bin/
 
 post-install-GITWEB-on:

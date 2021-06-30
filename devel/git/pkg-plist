@@ -1,6 +1,6 @@
 bin/git
 %%CVS%%bin/git-cvsserver
-%%P4%%bin/git-p4.py
+%%PERFORCE%%bin/git-p4.py
 bin/git-receive-pack
 bin/git-shell
 bin/git-upload-archive
@@ -128,7 +128,7 @@ libexec/git-core/git-mv
 libexec/git-core/git-multi-pack-index
 libexec/git-core/git-name-rev
 libexec/git-core/git-notes
-%%P4%%libexec/git-core/git-p4
+%%PERFORCE%%libexec/git-core/git-p4
 libexec/git-core/git-pack-objects
 libexec/git-core/git-pack-redundant
 libexec/git-core/git-pack-refs
@@ -180,7 +180,7 @@ libexec/git-core/git-stripspace
 libexec/git-core/git-submodule
 libexec/git-core/git-submodule--helper
 %%SUBTREE%%libexec/git-core/git-subtree
-%%SVN%%libexec/git-core/git-svn
+%%SUBVERSION%%libexec/git-core/git-svn
 libexec/git-core/git-switch
 libexec/git-core/git-symbolic-ref
 libexec/git-core/git-tag
@@ -358,7 +358,7 @@ man/man1/git-status.1.gz
 man/man1/git-stripspace.1.gz
 man/man1/git-submodule.1.gz
 %%SUBTREE%%man/man1/git-subtree.1.gz
-%%SVN%%man/man1/git-svn.1.gz
+%%SUBVERSION%%man/man1/git-svn.1.gz
 man/man1/git-switch.1.gz
 man/man1/git-symbolic-ref.1.gz
 man/man1/git-tag.1.gz

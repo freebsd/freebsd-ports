@@ -17,7 +17,7 @@ lib/medusa/modules/smtp-vrfy.mod
 lib/medusa/modules/smtp.mod
 lib/medusa/modules/snmp.mod
 lib/medusa/modules/ssh.mod
-%%SVN%%lib/medusa/modules/svn.mod
+%%SUBVERSION%%lib/medusa/modules/svn.mod
 lib/medusa/modules/telnet.mod
 lib/medusa/modules/vmauthd.mod
 lib/medusa/modules/vnc.mod

@@ -3,6 +3,7 @@
 PORTNAME=	hydra
 DISTVERSIONPREFIX=v
 DISTVERSION=	9.2
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	rm@FreeBSD.org
@@ -27,11 +28,11 @@ CONFIGURE_ARGS=	--with-ssl=${OPENSSLINC} \
 PLIST_FILES=	bin/hydra bin/pw-inspector bin/dpl4hydra.sh bin/hydra-wizard.sh \
 		man/man1/hydra.1.gz man/man1/pw-inspector.1.gz
 
-OPTIONS_DEFINE=	FIREBIRD SSH SVN X11
+OPTIONS_DEFINE=	FIREBIRD SSH SUBVERSION X11
 OPTIONS_DEFAULT=SSH
 OPTIONS_EXCLUDE=NLS DOCS
 FIREBIRD_USES=	firebird
-SVN_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
+SUBVERSION_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
 SSH_LIB_DEPENDS=	libssh.so.4:security/libssh
 X11_USES=		gettext gnome pkgconfig
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
