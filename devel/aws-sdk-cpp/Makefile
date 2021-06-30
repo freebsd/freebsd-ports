@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_armv6=		fails to build: runaway process
 BROKEN_armv7=		fails to build: runaway process
 BROKEN_i386=		fails to build: compiler runs out of memory
+BROKEN_powerpc=		fails to build: compiler runs out of memory
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpulse.so:audio/pulseaudio \
