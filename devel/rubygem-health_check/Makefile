@@ -1,8 +1,7 @@
 # Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
 
 PORTNAME=	health_check
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTVERSION=	3.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,8 +15,9 @@ RUN_DEPENDS=	rubygem-railties60>=5.0:www/rubygem-railties60
 
 USES=		gem shebangfix
 USE_RUBY=	yes
-SHEBANG_FILES=	test/*railsapp
 
 NO_ARCH=	yes
+
+SHEBANG_FILES=	test/*railsapp
 
 .include <bsd.port.mk>
