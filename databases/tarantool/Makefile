@@ -36,7 +36,10 @@ CMAKE_OFF=	ENABLE_BUNDLED_LIBCURL \
 CMAKE_ON=	ENABLE_DIST
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USE_RC_SUBR=	${PORTNAME}
+USE_RC_SUBR=	tarantool
+
+USERS=		tarantool
+GROUPS=		tarantool
 
 PLIST_SUB=	TT_DATADIR=${TT_DATADIR} \
 		TT_LOGDIR=${TT_LOGDIR}
@@ -50,9 +53,6 @@ GH_TUPLE=	luafun:luafun:e248e00:luafun_luafun/third_party/luafun \
 		tarantool:small:279fa38:tarantool_small/src/lib/small \
 		tarantool:test-run:1263cb5:tarantool_test_run/test-run
 USE_GITHUB=	yes
-
-USERS=		tarantool
-GROUPS=		tarantool
 
 TT_DATADIR?=	/var/db/tarantool
 TT_LOGDIR?=	/var/log/tarantool
