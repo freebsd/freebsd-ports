@@ -1,12 +1,12 @@
 # Created by: Lung-Pin Chang <changlp@cs.nctu.edu.tw>
 
 PORTNAME=	WebService-Dropbox
-PORTVERSION=	2.07
+PORTVERSION=	2.09
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to Dropbox API
 
 LICENSE=	ART10 GPLv1+
@@ -14,23 +14,25 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-HTTP-Message>=6.06:www/p5-HTTP-Message \
-		p5-JSON>=2.59:converters/p5-JSON \
-		p5-LWP-Protocol-https>=6.04:www/p5-LWP-Protocol-https \
-		p5-Net-OAuth>=0.28:net/p5-Net-OAuth \
-		p5-URI>=1.60:net/p5-URI \
-		p5-libwww>=6.05:www/p5-libwww
-
-OPTIONS_DEFINE=	FURL
-OPTIONS_DEFAULT=FURL
-FURL_DESC=	Support the (faster) Furl HTTP client library
+RUN_DEPENDS=	p5-HTTP-Message>=6.11:www/p5-HTTP-Message \
+		p5-JSON>=2.94:converters/p5-JSON \
+		p5-LWP-Protocol-https>=6.07:www/p5-LWP-Protocol-https \
+		p5-Net-OAuth>=0:net/p5-Net-OAuth \
+		p5-URI>=1.71:net/p5-URI \
+		p5-libwww>=6.26:www/p5-libwww
 
 USES=		perl5
 USE_PERL5=	modbuildtiny
+
 NO_ARCH=	yes
 
-FURL_RUN_DEPENDS=	p5-Furl>=2.19:www/p5-Furl \
-			p5-IO-Socket-SSL>=1.954:security/p5-IO-Socket-SSL \
-			p5-JSON-XS>=3.02:converters/p5-JSON-XS
+OPTIONS_DEFINE=	RECOMMENDED
+OPTIONS_DEFAULT=RECOMMENDED
+RECOMMENDED_DESC=	Recommended dependencies by upstream
+
+RECOMMENDED_BUILD_DEPENDS=	p5-IO-Socket-SSL>=2.048:security/p5-IO-Socket-SSL \
+				p5-JSON-XS>=3.03:converters/p5-JSON-XS \
+				p5-Software-License>=0:misc/p5-Software-License
+#				p5-Furl>=3.11:www/p5-Furl
 
 .include <bsd.port.mk>
