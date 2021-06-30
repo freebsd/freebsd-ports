@@ -39,6 +39,10 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == powerpc
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_tbb_tools__api_ittnotify__config.h
+.endif
+
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/onetbb.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
