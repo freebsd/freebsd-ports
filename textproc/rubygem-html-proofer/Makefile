@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	html-proofer
-PORTVERSION=	3.19.1
+PORTVERSION=	3.19.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
