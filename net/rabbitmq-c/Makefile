@@ -1,8 +1,8 @@
 # Created by: Geoff Garside
 
 PORTNAME=	rabbitmq-c
-PORTVERSION=	0.8.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.11.0
 CATEGORIES=	net
 
 MAINTAINER=	dch@FreeBSD.org
@@ -11,20 +11,21 @@ COMMENT=	RabbitMQ C AMQP client library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson@${PY_FLAVOR}
+LIB_DEPENDS=	libpopt.so:devel/popt
 
-CONFLICTS=	rabbitmq-c-devel-[0-9]*
-
-USES=		cmake pathfix python tar:bzip2
+USES=		cmake localbase ssl
 USE_GITHUB=	yes
-USE_LDCONFIG=	yes
 GH_ACCOUNT=	alanxz
+USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	POPT
+CMAKE_OFF=	BUILD_EXAMPLES
+TEST_TARGET=	test
+
+OPTIONS_DEFINE=	STATIC TEST
 OPTIONS_SUB=	yes
-POPT_DESC=	Popt support in tools
-POPT_LIB_DEPENDS=	libpopt.so:devel/popt
-POPT_CFLAGS=	-I${LOCALBASE}/include
-POPT_LDFLAGS=	-L${LOCALBASE}/lib
+
+STATIC_CMAKE_BOOL=	BUILD_STATIC_LIBS
+TEST_IMPLIES=		STATIC
+TEST_CMAKE_BOOL=	BUILD_TESTS
 
 .include <bsd.port.mk>
