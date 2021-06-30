@@ -1,7 +1,7 @@
 # Created by: Evan Sarmiento <bsdports@wayfair.com>
 
 PORTNAME=	mongo
-PORTVERSION=	2.13.0
+PORTVERSION=	2.14.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -19,5 +19,8 @@ USE_RUBY=	yes
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/mongo_console
+
+post-patch:
+	@${RM} ${WRKSRC}/spec/support/ocsp
 
 .include <bsd.port.mk>
