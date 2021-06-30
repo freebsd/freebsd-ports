@@ -158,6 +158,7 @@
     SUBDIR += lumina-screenshot
     SUBDIR += lumina-textedit
     SUBDIR += lxqt-notificationd
+    SUBDIR += maliit-framework
     SUBDIR += mate-indicator-applet
     SUBDIR += mate-notification-daemon
     SUBDIR += mate-utils
