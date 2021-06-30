@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	execjs
-PORTVERSION=	2.7.0
+PORTVERSION=	2.8.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -19,13 +19,13 @@ NO_ARCH=	yes
 OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=	NODE NODE14
 OPTIONS_DEFAULT=NODE
-NODE_DESC=	Use Node.js 16.x (www/node) as backend
-NODE14_DESC=	Use Node.js 14.x (www/node14) as backend
+NODE_DESC=	Use www/node as backend
+NODE14_DESC=	Use www/node14 as backend
 
 NODE_RUN_DEPENDS=	node>=0:www/node
 NODE14_RUN_DEPENDS=	node14>=0:www/node14
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#' ${WRKSRC}/lib/execjs/runtimes.rb
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/lib/execjs/runtimes.rb
 
 .include <bsd.port.mk>
