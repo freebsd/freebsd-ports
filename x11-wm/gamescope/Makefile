@@ -1,5 +1,5 @@
 PORTNAME=	gamescope
-DISTVERSION=	3.8.3
+DISTVERSION=	3.8.4
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
