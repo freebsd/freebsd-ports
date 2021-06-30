@@ -24,6 +24,7 @@ USE_PERL5=	run
 USE_TEX=	jadetex
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	docdir="${DOCSDIR}" htmldir="${DOCSDIR}/html"
+NO_ARCH=	yes
 SHEBANG_FILES=	bin/sgmldiff.in
 perl_OLD_CMD=	@perl_bindir@/perl
 
