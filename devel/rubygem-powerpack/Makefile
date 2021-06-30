@@ -1,5 +1,5 @@
 PORTNAME=	powerpack
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -9,8 +9,9 @@ COMMENT=	Extensions to core Ruby classes
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
