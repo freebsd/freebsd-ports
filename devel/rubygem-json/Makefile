@@ -11,7 +11,7 @@ COMMENT=	Parse JSON texts and generate them from ruby data structures
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
