@@ -1,7 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 
 PORTNAME=	faraday
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
