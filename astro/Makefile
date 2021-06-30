@@ -79,6 +79,7 @@
     SUBDIR += pp3
     SUBDIR += ptiger
     SUBDIR += py-astlib
+    SUBDIR += py-astral
     SUBDIR += py-astropy
     SUBDIR += py-astropy-helpers
     SUBDIR += py-ephem
