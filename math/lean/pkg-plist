@@ -398,7 +398,6 @@ lib/lean/leanpkg/leanpkg/toml.lean
 lib/lean/library/data/buffer.lean
 lib/lean/library/data/buffer/parser.lean
 lib/lean/library/data/dlist.lean
-lib/lean/library/data/lazy_list.lean
 lib/lean/library/data/rbmap/default.lean
 lib/lean/library/data/rbtree/basic.lean
 lib/lean/library/data/rbtree/default.lean
