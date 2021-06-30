@@ -14,9 +14,9 @@
 # ``make DISTVERSION=xxx.yy.zz -DNO_CHECKSUM'' should typically work.
 
 PORTNAME?=	nvidia-driver
-DISTVERSION?=	460.80
+DISTVERSION?=	460.84
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
@@ -36,6 +36,9 @@ BUILD_DEPENDS=	pkg-config:devel/pkgconf libglvnd>0:graphics/libglvnd
 .endif
 
 USES=		kmod uidfix xorg
+.if ${NVVERSION} >= 470.04201
+USES+=		tar:xz
+.endif
 USE_XORG=	x11 xorg-server xext
 USE_LDCONFIG=	yes
 
@@ -53,7 +56,6 @@ SUB_FILES+=	pkg-deinstall pkg-install
 .endif
 SUB_PATCHES=	extra-patch-src-Makefile \
 		extra-patch-src-nv-freebsd.h \
-		extra-patch-src-nv-misc.h \
 		extra-patch-src-nvidia_dev.c \
 		extra-patch-src-nvidia_pci.c
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
@@ -84,6 +86,9 @@ EXTRA_PATCHES+=	${FILESDIR}/460-patch-lib-libGLX_nvidia-Makefile \
 		${FILESDIR}/460-patch-src-nvidia-nvidia_ctl.c \
 		${FILESDIR}/460-patch-src-nvidia-nvidia_linux.c \
 		${FILESDIR}/460-patch-src_nvidia-modeset_nvidia-modeset-freebsd.c
+.endif
+.if ${NVVERSION} < 470.04201
+SUB_PATCHES+=	extra-patch-src-nv-misc.h
 .endif
 
 OPTIONS_DEFINE=	ACPI_PM LINUX WBINVD DOCS
