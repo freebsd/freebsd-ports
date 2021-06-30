@@ -1,7 +1,12 @@
-A simple interface to Gtk3's complex MVC list widget.
+Gtk3 has a powerful, but complex MVC (Model, View, Controller) system used to
+implement list and tree widgets. Gtk3::SimpleList automates the complex setup
+work and allows you to treat the list model as a more natural list of lists
+structure.
 
-SimpleList is a simple interface to the powerful but
-complex Gtk3::TreeView and Gtk3::ListStore combination,
-implementing using tied arrays to make thing simple and easy.
+After creating a new Gtk3::SimpleList object with the desired columns you may
+set the list data with a simple Perl array assignment. Rows may be added or
+deleted with all of the normal array operations. You can treat the data member
+of the list simplelist object as an array reference, and manipulate the list
+data with perl's normal array operators.
 
-WWW: https://metacpan.org/release/Gtk3-SimpleList
+WWW: https://metacpan.org/dist/Gtk3-SimpleList
