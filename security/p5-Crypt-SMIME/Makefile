@@ -22,6 +22,10 @@ USES=		perl5 ssl
 USE_PERL5=	configure
 
 CONFIGURE_ENV=	LIBCRYPTO_CFLAGS="-I${OPENSSLINC}" LIBCRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto"
+MAKE_ENV=	OPENSSLBASE=${OPENSSLBASE}
+
+post-patch:
+	@${RM} ${WRKSRC}/t/*.orig
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/SMIME/SMIME.so
