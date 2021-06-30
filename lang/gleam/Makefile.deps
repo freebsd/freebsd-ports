@@ -24,7 +24,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		clap-2.33.3 \
-		codespan-0.11.1 \
 		codespan-reporting-0.11.1 \
 		core-foundation-0.9.1 \
 		core-foundation-sys-0.8.2 \
