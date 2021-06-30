@@ -33,7 +33,6 @@ GH_TUPLE=	\
 		fclairamb:ftpserverlib:v0.8.0:fclairamb_ftpserverlib/vendor/github.com/fclairamb/ftpserverlib \
 		frankban:quicktest:v1.7.2:frankban_quicktest/vendor/github.com/frankban/quicktest \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-errors:errors:v1.1.1:go_errors_errors/vendor/github.com/go-errors/errors \
 		go-inf:inf:v0.9.1:go_inf_inf/vendor/gopkg.in/inf.v0 \
 		go-redis:redis:v8.4.4:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
@@ -89,9 +88,7 @@ GH_TUPLE=	\
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		json-iterator:go:v1.1.11:json_iterator_go/vendor/github.com/json-iterator/go \
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
-		karlseguin:ccache:v2.0.3:karlseguin_ccache/vendor/github.com/karlseguin/ccache \
 		karlseguin:ccache:v2.0.7:karlseguin_ccache_v2/vendor/github.com/karlseguin/ccache/v2 \
-		karlseguin:expect:v1.0.1:karlseguin_expect/vendor/gopkg.in/karlseguin/expect.v1 \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		klauspost:compress:v1.10.9:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v1.2.1:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
@@ -100,10 +97,8 @@ GH_TUPLE=	\
 		konsorten:go-windows-terminal-sequences:v1.0.3:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		kurin:blazer:v0.5.3:kurin_blazer/vendor/github.com/kurin/blazer \
 		lib:pq:v1.10.0:lib_pq/vendor/github.com/lib/pq \
-		lunixbochs:vtclean:v1.0.0:lunixbochs_vtclean/vendor/github.com/lunixbochs/vtclean \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		mailru:easyjson:v0.7.1:mailru_easyjson/vendor/github.com/mailru/easyjson \
-		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
@@ -158,7 +153,6 @@ GH_TUPLE=	\
 		viant:toolbox:v0.33.2:viant_toolbox/vendor/github.com/viant/toolbox \
 		willf:bitset:v1.1.10:willf_bitset/vendor/github.com/willf/bitset \
 		willf:bloom:v2.0.3:willf_bloom/vendor/github.com/willf/bloom \
-		wsxiaoys:terminal:0940f3fc43a0:wsxiaoys_terminal/vendor/github.com/wsxiaoys/terminal \
 		xdg:scram:7eeb5667e42c:xdg_scram/vendor/github.com/xdg/scram \
 		xdg:stringprep:v1.0.0:xdg_stringprep/vendor/github.com/xdg/stringprep
 
