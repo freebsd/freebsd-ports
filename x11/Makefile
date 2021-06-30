@@ -248,6 +248,7 @@
     SUBDIR += nvidia-secondary-driver-390
     SUBDIR += nvidia-settings
     SUBDIR += nvidia-xconfig
+    SUBDIR += nwg-bar
     SUBDIR += nwg-dock
     SUBDIR += nwg-drawer
     SUBDIR += nwg-launchers
