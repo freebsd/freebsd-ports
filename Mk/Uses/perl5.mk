@@ -167,7 +167,7 @@ IGNORE= has unknown USE_PERL5 components: ${_USE_PERL5_UNKNOWN}
 _USES_POST+=	perl5
 
 .  if   ${PERL_LEVEL} >= 503100
-P5_POD_PARSER=	p5-Pod-Parser>=0:textproc/p5-Pod-Parser
+P5_POD_PARSER=	p5-Pod-Parser>=1.63:textproc/p5-Pod-Parser
 .  else
 P5_POD_PARSER=	
 .  endif
