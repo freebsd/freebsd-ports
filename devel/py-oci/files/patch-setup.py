@@ -6,7 +6,7 @@
      "certifi",
 -    "configparser==4.0.2",
 +    "configparser>=3.5.3",
-     "cryptography==3.3.2",
+     "cryptography>=3.2.1,<=3.4.7",
      "pyOpenSSL>=17.5.0,<=19.1.0",
      "python-dateutil>=2.5.3,<3.0.0",
      "pytz>=2016.10",
