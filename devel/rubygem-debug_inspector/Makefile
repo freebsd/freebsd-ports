@@ -1,5 +1,5 @@
 PORTNAME=	debug_inspector
-PORTVERSION=	0.0.3
+PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,7 +8,7 @@ COMMENT=	Ruby wrapper for the MRI 2.0 debug_inspector API
 
 LICENSE=	MIT
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
