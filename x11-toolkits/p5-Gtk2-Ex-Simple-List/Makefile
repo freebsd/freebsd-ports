@@ -20,4 +20,6 @@ RUN_DEPENDS=	p5-Glib>=1.00:devel/p5-Glib \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
