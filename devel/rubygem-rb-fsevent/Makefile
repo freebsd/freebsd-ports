@@ -1,7 +1,7 @@
 # Created by: Joseph Benden <joe@thrallingpenguin.com>
 
 PORTNAME=	rb-fsevent
-PORTVERSION=	0.10.3
+PORTVERSION=	0.11.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,9 @@ COMMENT=	FSEvents API with Signals catching (without RubyCocoa)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
