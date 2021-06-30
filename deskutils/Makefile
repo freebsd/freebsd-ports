@@ -194,6 +194,7 @@
     SUBDIR += plasma5-sddm-kcm
     SUBDIR += plopfolio
     SUBDIR += preferences
+    SUBDIR += presage
     SUBDIR += projectlibre
     SUBDIR += puush
     SUBDIR += py-autokey
