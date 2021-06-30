@@ -4109,6 +4109,7 @@
     SUBDIR += py-automaton
     SUBDIR += py-autoprop
     SUBDIR += py-avro
+    SUBDIR += py-awesomeversion
     SUBDIR += py-aws-sam-translator
     SUBDIR += py-aws-xray-sdk
     SUBDIR += py-azure-appconfiguration
