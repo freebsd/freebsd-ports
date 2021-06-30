@@ -20,5 +20,6 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gmake gnome localbase pathfix pkgconfig tar:xz
 USE_GNOME=	libxml2 libxslt
 GNU_CONFIGURE=	yes
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
