@@ -1,9 +1,8 @@
 # Created by: Daniel Roethlisberger <daniel@roe.ch>
 
 PORTNAME=	dma
-PORTVERSION=	0.13
+DISTVERSION=	0.13.20210614
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail
 
@@ -16,6 +15,7 @@ USES=		uidfix ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	corecode
+GH_TAGNAME=	430f3b59074d6303ce3eb4d9fcf16dcf3538ba31
 
 BUILD_WRKSRC=	${WRKSRC}/bsd
 INSTALL_WRKSRC=	${WRKSRC}/bsd
