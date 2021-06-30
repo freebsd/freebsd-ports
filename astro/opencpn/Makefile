@@ -45,7 +45,7 @@ DOCS_CMAKE_OFF=	-DOCPN_BUNDLE_DOCS:STRING="OFF"
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH:Mpowerpc*}
 CMAKE_ARGS+=	-DHAVE_MSSE=OFF -DHAVE_MSSE2=OFF -DHAVE_MSSE3=OFF -DHAVE_MAVX2=OFF -DHAVE_MFPU_NEON=OFF
 .endif
 
