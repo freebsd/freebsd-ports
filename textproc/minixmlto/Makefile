@@ -15,5 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bapt
 PLIST_FILES=	bin/minixmlto
 MAKE_ARGS=	DOCBOOK_XSL="${LOCALBASE}/share/xsl/docbook" PREFIX="${PREFIX}"
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
