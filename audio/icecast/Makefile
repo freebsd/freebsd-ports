@@ -25,17 +25,17 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtheora.so:multimedia/libtheora \
 		libvorbis.so:audio/libvorbis
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		cpe gmake gnome localbase ssl
 USE_GNOME=	libxml2 libxslt
 
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	${PORTNAME}
+USE_RC_SUBR=	icecast
 
 SUB_FILES=	pkg-message
 
 CPE_VENDOR=	xiph
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/favicon.ico ${STAGEDIR}${DATADIR}/web/
