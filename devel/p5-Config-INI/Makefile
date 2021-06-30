@@ -1,5 +1,5 @@
 PORTNAME=	Config-INI
-PORTVERSION=	0.026
+PORTVERSION=	0.027
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +11,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Mixin-Linewise>=0.100:devel/p5-Mixin-Linewise
+RUN_DEPENDS=	p5-Mixin-Linewise>=0.110:devel/p5-Mixin-Linewise
 
 USES=		perl5
 USE_PERL5=	configure
