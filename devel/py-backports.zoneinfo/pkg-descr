@@ -1,0 +1,11 @@
+This package was originally the reference implementation for PEP 615,
+which proposes support for the IANA time zone database in the standard
+library, and now serves as a backport to Python 3.6+ (including PyPy).
+
+This exposes the backports.zoneinfo module, which is a backport of the
+zoneinfo module. The backport's documentation can be found on readthedocs.
+
+The module uses the system time zone data if available, and falls back
+to the tzdata package (available on PyPI) if installed.
+
+WWW: https://github.com/pganssle/zoneinfo
