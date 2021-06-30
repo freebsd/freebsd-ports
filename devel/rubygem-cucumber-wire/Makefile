@@ -2,6 +2,7 @@
 
 PORTNAME=	cucumber-wire
 PORTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-cucumber-core>=9.0.1<10:devel/rubygem-cucumber-core \
 		rubygem-cucumber-cucumber-expressions>=12.1.1<13:devel/rubygem-cucumber-cucumber-expressions \
-		rubygem-cucumber-messages>=15.0.0<16:devel/rubygem-cucumber-messages
+		rubygem-cucumber-messages15>=15.0.0<16:devel/rubygem-cucumber-messages15
 
 USES=		gem
 USE_RUBY=	yes
