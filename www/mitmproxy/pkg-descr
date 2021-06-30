@@ -5,4 +5,4 @@ fly.
 'mitmdump' is the command-line version of mitmproxy, with the same
 functionality but without the frills. Think tcpdump for HTTP.
 
-WWW: https://mitmproxy.org/index.html
+WWW: https://mitmproxy.org/
