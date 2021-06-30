@@ -5,6 +5,8 @@ bin/demo-data-dump-color
 %%SITE_PERL%%/Data/Dump/Color.pm
 %%SITE_PERL%%/auto/share/dist/Data-Dump-Color/examples/example.pl
 %%SITE_PERL%%/auto/share/dist/Data-Dump-Color/examples/example2.pl
+%%SITE_PERL%%/auto/share/dist/Data-Dump-Color/images/Screenshot_20210624_071341.png
+%%SITE_PERL%%/auto/share/dist/Data-Dump-Color/images/Screenshot_20210624_071713.png
 %%PERL5_MAN1%%/demo-data-dump-color.1.gz
 %%PERL5_MAN3%%/ColorTheme::Data::Dump::Color::Default16.3.gz
 %%PERL5_MAN3%%/ColorTheme::Data::Dump::Color::Default256.3.gz
