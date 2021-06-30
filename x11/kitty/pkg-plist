@@ -46,6 +46,7 @@ lib/kitty/kittens/show_key/__init__.py
 lib/kitty/kittens/show_key/kitty_mode.py
 lib/kitty/kittens/show_key/main.py
 lib/kitty/kittens/ssh/__init__.py
+lib/kitty/kittens/ssh/completion.py
 lib/kitty/kittens/ssh/main.py
 lib/kitty/kittens/tui/__init__.py
 lib/kitty/kittens/tui/dircolors.py
@@ -78,6 +79,7 @@ lib/kitty/kitty/cli_stub.py
 lib/kitty/kitty/client.py
 lib/kitty/kitty/complete.py
 lib/kitty/kitty/conf/__init__.py
+lib/kitty/kitty/conf/generate.py
 lib/kitty/kitty/conf/types.py
 lib/kitty/kitty/conf/utils.py
 lib/kitty/kitty/config.py
