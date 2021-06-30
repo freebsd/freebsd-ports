@@ -13,6 +13,7 @@ COMMENT=	Regression testing utility for use with the Java(TM) Language
 RUN_DEPENDS=	${JAVALIBDIR}/hamcrest.jar:java/hamcrest
 
 USE_JAVA=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
