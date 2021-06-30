@@ -17,16 +17,16 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-OPTIONS_DEFINE=	DOCS
+USES=		cmake cpe
 
-DOS2UNIX_FILES=	libopenjpeg/opj_malloc.h
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		cmake cpe dos2unix
 
 PORTDOCS=	CHANGES LICENSE
 
 GH_ACCOUNT=	uclouvain
 USE_GITHUB=	yes
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
