@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Texinfo to HTML converter
 
 GNU_CONFIGURE=	yes
+NO_ARCH=	yes
 CONFIGURE_ENV=	PERL=${PERL}
 CONFIGURE_ARGS=	--disable-multiplatform
 USES=		gmake perl5 shebangfix tar:bzip2
