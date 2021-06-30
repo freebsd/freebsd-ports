@@ -1,7 +1,7 @@
 # Created by: Michael Moll <kvedulv at kvedulv.de>
 
 PORTNAME=	kafo_parsers
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
