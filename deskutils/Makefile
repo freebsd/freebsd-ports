@@ -212,6 +212,7 @@
     SUBDIR += py-vobject
     SUBDIR += qlipper
     SUBDIR += qownnotes
+    SUBDIR += qtfeedback
     SUBDIR += recoll
     SUBDIR += remind
     SUBDIR += rolo
