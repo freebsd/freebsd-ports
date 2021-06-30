@@ -24,8 +24,8 @@ CONFLICTS_INSTALL?=	npm-node14
 OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=	NODE NODE14
 OPTIONS_DEFAULT=NODE
-NODE_DESC=	Use Node.js 16.x (www/node) as backend
-NODE14_DESC=	Use Node.js 14.x (www/node14) as backend
+NODE_DESC=	Use www/node as backend
+NODE14_DESC=	Use www/node14 as backend
 
 CPE_VENDOR=	npmjs
 CPE_PRODUCT=	node_packaged_modules
