@@ -1,8 +1,7 @@
 # Created by: Bernard Spil <brnrd@FreeBSD.org>
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.4.19
-PORTREVISION?=	0
+PORTVERSION=	10.4.20
 CATEGORIES=	databases
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
@@ -19,9 +18,6 @@ COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_i386=	compile error: undeclared identifier 'my_atomic_add32'
-BROKEN_riscv64=	fails to compile: needs FP_X_INV from empty sys/riscv/include/ieeefp.h
 
 USES=		bison:build cmake:insource,noninja compiler:c++11-lib cpe iconv:translit libedit ncurses shebangfix ssl
 
@@ -255,11 +251,9 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig
 	${MV} ${STAGEDIR}${PREFIX}/etc/mysql/user_map.conf \
 		${STAGEDIR}${PREFIX}/etc/mysql/user_map.conf.sample
-	${MKDIR} ${STAGEDIR}/${MARIADB_LOGDIR}
-
-post-install-WSREP-on:
 	${MV} ${STAGEDIR}${DATADIR}/wsrep.cnf \
-		${STAGEDIR}${ETCDIR}/conf.d/wsrep.cnf.sample
+		${STAGEDIR}${ETCDIR}/conf.d/wsrep.cnf.sample || true
+	${MKDIR} ${STAGEDIR}/${MARIADB_LOGDIR}
 .endif # ${PKGNAMESUFFIX:M*-client}
 
 .include <bsd.port.post.mk>
