@@ -23,7 +23,7 @@ PORTDOCS=	*
 
 TEST_TARGET=	do-test
 
-PLIST_FILES=	lib/dbus/lib${TCL_PKG}.so.1 \
+PLIST_FILES=	lib/dbus/lib${TCL_PKG}.so \
 		lib/dbus/pkgIndex.tcl \
 		man/mann/dbus.n.gz
 
