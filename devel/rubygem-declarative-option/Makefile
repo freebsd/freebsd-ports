@@ -9,8 +9,11 @@ COMMENT=	Dynamic options to evaluate at runtime
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
+
+PORTSCOUT=	skipv:0.1.1
 
 .include <bsd.port.mk>
