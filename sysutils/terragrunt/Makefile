@@ -2,7 +2,7 @@
 
 PORTNAME=	terragrunt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.30.3
+DISTVERSION=	0.31.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com
@@ -17,19 +17,19 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gruntwork-io
 
 GH_TUPLE=	\
-		Azure:azure-sdk-for-go:v51.1.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
+		Azure:azure-sdk-for-go:v52.5.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:go-autorest:243526fc4739:azure_go_autorest_auth \
 		Azure:go-autorest:446f41b7d65b:azure_go_autorest_validation \
 		Azure:go-autorest:55c0c4ebc34d:azure_go_autorest_cli \
-		Azure:go-autorest:autorest/v0.11.17:azure_go_autorest_autorest \
+		Azure:go-autorest:79a63e70c4d8:azure_go_autorest_adal \
+		Azure:go-autorest:autorest/v0.11.18:azure_go_autorest_autorest \
 		Azure:go-autorest:b3a0b30a7423:azure_go_autorest_date \
-		Azure:go-autorest:def88ef859fb:azure_go_autorest_adal \
-		Azure:go-autorest:logger/v0.2.0:azure_go_autorest_logger \
+		Azure:go-autorest:logger/v0.2.1:azure_go_autorest_logger \
 		Azure:go-autorest:tracing/v0.6.0:azure_go_autorest_tracing \
 		Azure:go-autorest:v14.2.0:azure_go_autorest/vendor/github.com/Azure/go-autorest \
 		FiloSottile:age:v1.0.0-beta7:filosottile_age/vendor/filippo.io/age \
 		agext:levenshtein:v1.2.3:agext_levenshtein/vendor/github.com/agext/levenshtein \
-		apparentlymart:go-cidr:v1.0.1:apparentlymart_go_cidr/vendor/github.com/apparentlymart/go-cidr \
+		apparentlymart:go-cidr:v1.1.0:apparentlymart_go_cidr/vendor/github.com/apparentlymart/go-cidr \
 		apparentlymart:go-textseg:v13.0.0:apparentlymart_go_textseg_v13/vendor/github.com/apparentlymart/go-textseg/v13 \
 		aws:aws-sdk-go:v1.37.19:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		bgentry:go-netrc:9fd32a8b3d3d:bgentry_go_netrc/vendor/github.com/bgentry/go-netrc \
@@ -49,25 +49,25 @@ GH_TUPLE=	\
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:749611fa9fcc:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:5ea612d1eb83:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:lint:738671d3881b:golang_lint/vendor/golang.org/x/lint \
 		golang:mod:v0.3.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:69a78807bb2b:golang_net/vendor/golang.org/x/net \
+		golang:net:e18ecbb05110:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:5d25da1a8d43:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.2:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:6e8e738ad208:golang_sync/vendor/golang.org/x/sync \
+		golang:sync:67f06af15bc9:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:9a76102bfb43:golang_sys/vendor/golang.org/x/sys \
-		golang:term:f5c789dd3221:golang_term/vendor/golang.org/x/term \
+		golang:term:2321bbc49cbf:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
-		golang:tools:39188db58858:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:eafbe7b904eb:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.5:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:0bd0a958aa1d:google_go_genproto/vendor/google.golang.org/genproto \
 		google:shlex:c34317bd91bf:google_shlex/vendor/github.com/google/shlex \
-		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
+		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.35.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:storage/v1.10.0:googleapis_google_cloud_go_storage \
@@ -78,7 +78,7 @@ GH_TUPLE=	\
 		gruntwork-io:terratest:v0.32.6:gruntwork_io_terratest/vendor/github.com/gruntwork-io/terratest \
 		hashicorp:errwrap:v1.1.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-cleanhttp:v0.5.2:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
-		hashicorp:go-getter:9813cbd4eb02:hashicorp_go_getter/vendor/github.com/hashicorp/go-getter \
+		hashicorp:go-getter:v1.5.1:hashicorp_go_getter/vendor/github.com/hashicorp/go-getter \
 		hashicorp:go-multierror:v1.1.1:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
 		hashicorp:go-retryablehttp:v0.6.7:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
 		hashicorp:go-rootcerts:v1.0.2:hashicorp_go_rootcerts/vendor/github.com/hashicorp/go-rootcerts \
@@ -87,10 +87,10 @@ GH_TUPLE=	\
 		hashicorp:go-uuid:v1.0.2:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
 		hashicorp:go-version:v1.2.1:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
 		hashicorp:hcl:v1.0.1-vault:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
-		hashicorp:hcl:v2.9.1:hashicorp_hcl_v2/vendor/github.com/hashicorp/hcl/v2 \
+		hashicorp:hcl:v2.10.0:hashicorp_hcl_v2/vendor/github.com/hashicorp/hcl/v2 \
 		hashicorp:terraform-config-inspect:9a80970d6b34:hashicorp_terraform_config_inspect/vendor/github.com/hashicorp/terraform-config-inspect \
-		hashicorp:terraform-svchost:65d371908596:hashicorp_terraform_svchost/vendor/github.com/hashicorp/terraform-svchost \
-		hashicorp:terraform:v0.12.24:hashicorp_terraform/vendor/github.com/hashicorp/terraform \
+		hashicorp:terraform-svchost:f050f53b9734:hashicorp_terraform_svchost/vendor/github.com/hashicorp/terraform-svchost \
+		hashicorp:terraform:v0.15.3:hashicorp_terraform/vendor/github.com/hashicorp/terraform \
 		hashicorp:vault:405eced08457:hashicorp_vault_api/vendor/github.com/hashicorp/vault \
 		hashicorp:vault:b52b8b8c1264:hashicorp_vault_sdk \
 		howeyc:gopass:bf9dde6d0d2c:howeyc_gopass/vendor/github.com/howeyc/gopass \
@@ -110,7 +110,7 @@ GH_TUPLE=	\
 		pierrec:lz4:v2.5.2:pierrec_lz4/vendor/github.com/pierrec/lz4 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		pquerna:otp:468c2dd2b58d:pquerna_otp/vendor/github.com/pquerna/otp \
+		pquerna:otp:v1.2.0:pquerna_otp/vendor/github.com/pquerna/otp \
 		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		ryanuber:go-glob:v1.0.0:ryanuber_go_glob/vendor/github.com/ryanuber/go-glob \
@@ -119,11 +119,11 @@ GH_TUPLE=	\
 		sirupsen:logrus:v1.6.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		square:go-jose:v2.5.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
-		ulikunitz:xz:v0.5.7:ulikunitz_xz/vendor/github.com/ulikunitz/xz \
+		ulikunitz:xz:v0.5.8:ulikunitz_xz/vendor/github.com/ulikunitz/xz \
 		urfave:cli:v1.20.0:urfave_cli_1/vendor/gopkg.in/urfave/cli.v1 \
 		urfave:cli:v1.22.3:urfave_cli/vendor/github.com/urfave/cli \
 		zclconf:go-cty-yaml:v1.0.2:zclconf_go_cty_yaml/vendor/github.com/zclconf/go-cty-yaml \
-		zclconf:go-cty:v1.8.1:zclconf_go_cty/vendor/github.com/zclconf/go-cty
+		zclconf:go-cty:v1.8.3:zclconf_go_cty/vendor/github.com/zclconf/go-cty
 
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/cloud.google.com/go/storage
