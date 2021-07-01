@@ -1,0 +1,6 @@
+See /usr/local/share/doc/cdrtools/README.rscsi and /usr/local/etc/rscsi
+for further information on how to configure remote access to SCSI-devies
+via rscsi.
+
+Don't forget to add an entry for rshd(8) to /etc/inetd.conf in order to
+be able to use the remote SCSI daemon.

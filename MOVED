@@ -5974,7 +5974,6 @@ java/linux-sun-jdk16||2014-05-11|Has expired: Unsupported and known for multiple
 ports-mgmt/pver||2014-05-11|Has expired: does not support pkgng
 databases/firebird20-client|databases/firebird25-client|2014-05-11|Firebird 2.0 is EOLed
 databases/firebird20-server|databases/firebird25-server|2014-05-11|Firebird 2.0 is EOLed
-editors/ved||2014-05-15|Has expired: Depends on deprecated smake
 japanese/chasen||2014-05-15|Has expired: Unmaintained since 2001
 www/openx|www/revive-adserver|2014-05-15|Upstream obsolete, forked
 security/clamav-devel||2014-05-16|Retire, older than security/clamav
@@ -16457,3 +16456,5 @@ www/demoroniser||2021-06-26|Removed, made for Microsoft Powerpoint 9x with Perl 
 x11-toolkits/v||2021-06-27|Has expired: Dead upstream, unmaintained and no consumers
 sysutils/ssid|sysutils/setsid|2021-06-27|Move to more obvious package name
 databases/pgpool-II-35||2021-07-01|Has expired: EOL since January 2021, please use one of the other pgpool-II-* ports
+sysutils/cdrtools-devel|sysutils/cdrtools|2021-07-01|Obsolete, use sysutils/cdrtools instead
+sysutils/sformat|sysutils/schilyutils|2021-07-01|Subsumed under sysutils/schilyutils

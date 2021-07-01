@@ -1,0 +1,13 @@
+The rscsi command is a remote generic SCSI transport server program.
+rscsi is a program that is run locally on the machine with SCSI
+devices, it is used by remote programs like cdrecord(1), cdda2wav(1),
+readcd(1), and sformat(1) that like to access SCSI devices through an
+interprocess communication connection via libscg.  rscsi is normally
+started up with an rexec(3) or rcmd(3) call but it may also be
+connected via an internal pipe to an ssh(1) session that was set up by
+the remote user.
+
+The rscsi command must be installed setuid root for full functionality.
+For this reason it is provided as a separate package to cdrtools.
+
+WWW: http://cdrtools.sourceforge.net/

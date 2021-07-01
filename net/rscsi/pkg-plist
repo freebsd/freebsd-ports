@@ -1,0 +1,4 @@
+@(root,,4711) sbin/rscsi
+etc/default/rscsi
+share/man/man1/rscsi.1.gz
+share/doc/rscsi/default-rscsi.sample

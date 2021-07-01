@@ -1,0 +1,13 @@
+--- sunpro/Make/bin/make/common/Makefile.orig	2021-06-04 16:47:25 UTC
++++ sunpro/Make/bin/make/common/Makefile
+@@ -8,8 +8,8 @@ include		$(SRCROOT)/$(RULESDIR)/rules.top
+ ###########################################################################
+ 
+ INSDIR=		bin
+-TARGET=		make
+-HARDLINKS=	dmake svr4.make ../lib/svr4.make ../xpg4/bin/make
++TARGET=		dmake
++HARDLINKS=	svr4.make ../lib/svr4.make ../xpg4/bin/make
+ CPPOPTS +=	-I../../../../include
+ CPPOPTS +=	-I../../../include
+ #CPPOPTS +=	-compat=4

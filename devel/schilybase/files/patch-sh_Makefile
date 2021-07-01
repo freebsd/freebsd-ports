@@ -1,0 +1,13 @@
+--- sh/Makefile.orig	2021-06-04 17:19:38 UTC
++++ sh/Makefile
+@@ -7,9 +7,8 @@ include		$(SRCROOT)/$(RULESDIR)/rules.top
+ 
+ INSDIR=		bin
+ 					# Shell
+-TARGET=		sh
++TARGET=		bosh
+ SYMLINKS=	pfsh			# Profile Bourne Shell
+-SYMLINKS +=	bosh			# Bourne Shell
+ SYMLINKS +=	jsh			# Job control Bourne Shell
+ HARDLINKS +=	../xpg4/bin/sh		# POSIX Bourne Shell
+ 

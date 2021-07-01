@@ -155,7 +155,6 @@
     SUBDIR += cdrkit
     SUBDIR += cdroot
     SUBDIR += cdrtools
-    SUBDIR += cdrtools-devel
     SUBDIR += cfengine
     SUBDIR += cfengine-devel
     SUBDIR += cfengine-masterfiles
@@ -1247,6 +1246,7 @@
     SUBDIR += scanmem
     SUBDIR += scct
     SUBDIR += schedutils
+    SUBDIR += schilyutils
     SUBDIR += screen
     SUBDIR += screenfetch
     SUBDIR += screenfetch-nox11
@@ -1261,7 +1261,6 @@
     SUBDIR += serf
     SUBDIR += setcdboot
     SUBDIR += setsid
-    SUBDIR += sformat
     SUBDIR += sg3_utils
     SUBDIR += shim
     SUBDIR += shlock

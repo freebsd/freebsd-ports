@@ -455,6 +455,7 @@
     SUBDIR += rubygem-vpim
     SUBDIR += rump
     SUBDIR += ruut
+    SUBDIR += schilytools
     SUBDIR += sdformat
     SUBDIR += seabios
     SUBDIR += sent

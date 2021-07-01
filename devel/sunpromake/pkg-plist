@@ -1,0 +1,11 @@
+bin/dmake
+bin/svr4.make
+lib/libmakestate.so
+lib/libmakestate.so.1.0
+lib/svr4.make
+share/lib/make/make.rules
+share/lib/make/svr4.make.rules
+share/man/man1/dmake.1.gz
+share/man/man1/make.1.gz
+share/man/man1/sysV-make.1.gz
+xpg4/bin/make

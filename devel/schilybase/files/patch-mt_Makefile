@@ -1,0 +1,20 @@
+--- mt/Makefile.orig	2021-06-07 13:29:48 UTC
++++ mt/Makefile
+@@ -7,7 +7,7 @@ include		$(SRCROOT)/$(RULESDIR)/rules.top
+ 
+ INSDIR=		bin
+ TARGET=		smt
+-SYMLINKS=	mt
++#SYMLINKS=	mt
+ CPPOPTS +=	-DUSE_REMOTE
+ CPPOPTS +=	-DSCHILY_PRINT
+ 
+@@ -17,7 +17,7 @@ CFILES=		mt.c
+ # LIB_CAP is needed for Linux capability support in librmt.
+ #
+ LIBS=		-lrmt -lschily $(LIB_SOCKET) $(LIB_CAP)
+-XMK_FILE=	Makefile.man mt.mk1
++XMK_FILE=	Makefile.man
+ 
+ ###########################################################################
+ include		$(SRCROOT)/$(RULESDIR)/rules.cmd
