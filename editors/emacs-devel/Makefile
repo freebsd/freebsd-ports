@@ -169,10 +169,9 @@ MAILUTILS_CONFIGURE_WITH=	mailutils
 MAILUTILS_CONFIGURE_ENV_OFF=	ac_cv_lib_lockfile_maillock=no \
 				ac_cv_prog_liblockfile=no
 MODULES_CONFIGURE_WITH=		modules
-NATIVECOMP_LIB_DEPENDS=		libgccjit.so:lang/gcc11-devel
+NATIVECOMP_LIB_DEPENDS=		libgccjit.so:lang/gcc11
 NATIVECOMP_CONFIGURE_WITH=	native-compilation
 NATIVECOMP_MAKE_ARGS=		NATIVE_FULL_AOT=1
-NATIVECOMP_CFLAGS=		-I${LOCALBASE}/include
 NATIVECOMP_LDFLAGS=		-L${LOCALBASE}/lib/gcc11
 OSS_CONFIGURE_ON=		--with-sound=oss
 OTF_IMPLIES=			XFT
