@@ -1,3 +1,38 @@
+  <vuln vid="9d271bab-da22-11eb-86f0-94c691a700a6">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.300</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.289.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2021-06-30/">
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-2278 / CVE-2021-21670</h5>
+	  <p>Improper permission checks allow canceling queue items and aborting builds</p>
+	  <h5>(High) SECURITY-2371 / CVE-2021-21671</h5>
+	  <p>Session fixation vulnerability</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-21670</cvename>
+      <cvename>CVE-2021-21671</cvename>
+      <url>https://www.jenkins.io/security/advisory/2021-06-30/</url>
+    </references>
+    <dates>
+      <discovery>2021-06-30</discovery>
+      <entry>2021-07-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7003b62d-7252-46ff-a9df-1b1900f1e65b">
     <topic>RabbitMQ -- Denial of Service via improper input validation</topic>
     <affects>
