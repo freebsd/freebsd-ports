@@ -67,7 +67,7 @@ PLIST_FORMATS+=	${O:tl:S,_,-,}
 
 .if ${PORT_OPTIONS:MPDF}
 BUILD_DEPENDS+=	fop:textproc/fop \
-		${LOCALBASE}/share/fonts/GentiumPlus/GentiumPlus-R.ttf:x11-fonts/gentium-plus \
+		${LOCALBASE}/share/fonts/GentiumPlus/GentiumPlus-Regular.ttf:x11-fonts/gentium-plus \
 		${LOCALBASE}/share/fonts/Droid/DroidSans.ttf:x11-fonts/droid-fonts-ttf \
 		${LOCALBASE}/share/fonts/dejavu/DejaVuSansMono.ttf:x11-fonts/dejavu
 .endif
