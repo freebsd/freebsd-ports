@@ -1,6 +1,6 @@
---- http/http_server.c.orig	2005-01-21 16:01:58.000000000 -0500
-+++ http/http_server.c	2015-03-23 19:34:45.664653000 -0400
-@@ -197,7 +197,7 @@
+--- http/http_server.c.orig	2009-05-13 21:36:02 UTC
++++ http/http_server.c
+@@ -171,7 +171,7 @@ http_server_start(struct pevent_ctx *ctx, struct in_ad
  		_http_ssl_init();
  
  		/* Initialize SSL context for this server */

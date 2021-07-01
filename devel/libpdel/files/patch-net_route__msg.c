@@ -1,6 +1,6 @@
---- net/route_msg.c.orig	2014-04-26 19:28:21.000000000 -0300
-+++ net/route_msg.c	2014-04-26 19:28:57.000000000 -0300
-@@ -608,8 +608,12 @@
+--- net/route_msg.c.orig	2009-05-13 21:36:04 UTC
++++ net/route_msg.c
+@@ -575,8 +575,12 @@ route_msg_print(struct route_msg *msg, FILE *fp)
  	case RTM_REDIRECT:	typestr = "REDIRECT"; break;
  	case RTM_MISS:		typestr = "MISS"; break;
  	case RTM_LOCK:		typestr = "LOCK"; break;

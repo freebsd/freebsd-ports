@@ -1,48 +1,6 @@
---- net/uroute.c.prev	2005-01-21 23:02:03.000000000 +0200
-+++ net/uroute.c	2008-12-24 21:34:43.000000000 +0200
-@@ -74,9 +74,15 @@
- 	((a) > 0 ? (1 + (((a) - 1) | (sizeof(long) - 1))) : sizeof(long))
- #define ADVANCE(x, n)	((x) += ROUNDUP((n)->sa_len))
- 
-+#ifdef RTF_CLONING
- #define WRITABLE_FLAGS	(RTF_STATIC | RTF_LLINFO | RTF_REJECT | RTF_BLACKHOLE \
- 			    | RTF_PROTO1 | RTF_PROTO2 | RTF_CLONING \
- 			    | RTF_XRESOLVE | RTF_UP | RTF_GATEWAY)
-+#else
-+#define WRITABLE_FLAGS	(RTF_STATIC | RTF_REJECT | RTF_BLACKHOLE \
-+			    | RTF_PROTO1 | RTF_PROTO2 \
-+			    | RTF_XRESOLVE | RTF_UP | RTF_GATEWAY)
-+#endif
- 
- struct route_flag {
- 	const char	*name;
-@@ -92,15 +98,23 @@ static const	struct route_flag route_fla
- 	FLAG(DYNAMIC),
- 	FLAG(MODIFIED),
- 	FLAG(DONE),
-+#ifdef RTF_CLONING
- 	FLAG(CLONING),
-+#endif
- 	FLAG(XRESOLVE),
-+#ifdef RTF_LLINFO
- 	FLAG(LLINFO),
-+#endif
- 	FLAG(STATIC),
- 	FLAG(BLACKHOLE),
- 	FLAG(PROTO2),
- 	FLAG(PROTO1),
-+#ifdef RTF_PRCLONING
- 	FLAG(PRCLONING),
-+#endif
-+#ifdef RTF_WASCLONED
- 	FLAG(WASCLONED),
-+#endif
- 	FLAG(PROTO3),
- 	FLAG(PINNED),
- 	FLAG(LOCAL),
---- net/if_arp.c.prev	2005-01-21 23:02:02.000000000 +0200
-+++ net/if_arp.c	2008-12-24 23:01:46.000000000 +0200
-@@ -68,7 +68,6 @@
+--- net/if_arp.c.orig	2009-05-13 21:36:04 UTC
++++ net/if_arp.c
+@@ -35,7 +35,6 @@
  #include "structs/type/array.h"
  
  #include "net/if_util.h"
@@ -50,7 +8,7 @@
  #include "util/typed_mem.h"
  
  #define ROUNDUP(a) \
-@@ -124,7 +123,11 @@ if_get_arp(struct in_addr ip, u_char *et
+@@ -91,7 +90,11 @@ if_get_arp(struct in_addr ip, u_char *ether)
  	mib[2] = 0;
  	mib[3] = AF_INET;
  	mib[4] = NET_RT_FLAGS;
@@ -62,7 +20,7 @@
  	if (sysctl(mib, 6, NULL, &needed, NULL, 0) < 0)
  		return (-1);
  	needed += 128;
-@@ -227,9 +230,11 @@ tryagain:
+@@ -194,9 +197,11 @@ tryagain:
  	sdl = (struct sockaddr_dl *)(void *)
  	    (ROUNDUP(sin->sin_len) + (char *)sin);
  	if (sin->sin_addr.s_addr == sin_m.sin_addr.s_addr) {
@@ -77,7 +35,7 @@
  			switch (sdl->sdl_type) {
  			case IFT_ETHER:
  			case IFT_FDDI:
-@@ -278,6 +283,7 @@ arp_delete(int sock, struct in_addr ip)
+@@ -245,6 +250,7 @@ arp_delete(int sock, struct in_addr ip)
  	struct rt_msghdr *const rtm = &m_rtmsg.m_rtm;
  	struct sockaddr_dl *sdl;
  
@@ -85,7 +43,7 @@
  	sin_m = zero_sin;
  	sin->sin_addr = ip;
  tryagain:
-@@ -286,14 +292,15 @@ tryagain:
+@@ -253,14 +259,15 @@ tryagain:
  	sin = (struct sockaddr_inarp *)(rtm + 1);
  	sdl = (struct sockaddr_dl *)(void *)
  	    (ROUNDUP(sin->sin_len) + (char *)sin);
@@ -106,7 +64,7 @@
  	}
  	if (sin_m.sin_other & SIN_PROXY) {
  		errno = ENOENT;
-@@ -384,42 +391,55 @@ int
+@@ -351,42 +358,55 @@ int
  if_flush_arp(void)
  {
  	int errno_save = errno;
@@ -114,26 +72,6 @@
 -	int rtn = 0;
 -	int num;
 -	int i;
--
--	/* Get list of routes */
--	if ((num = uroute_get_all(&list, TYPED_MEM_TEMP)) == -1)
--		return (-1);
--
--	/* Delete ARP routes */
--	for (i = 0; i < num; i++) {
--		struct uroute *const route = list[i];
--		const struct sockaddr *dest;
--		const struct sockaddr *gw;
--
--		/* Is this an ARP entry? */
--		dest = uroute_get_dest(route);
--		gw = uroute_get_gateway(route);
--		if ((uroute_get_flags(route)
--		      & (RTF_HOST|RTF_LLINFO|RTF_WASCLONED))
--		      != (RTF_HOST|RTF_LLINFO|RTF_WASCLONED)
--		    || dest->sa_family != AF_INET
--		    || gw->sa_family != AF_LINK)
--			continue;
 +	int mib[6];
 +	size_t needed;
 +	char *lim, *buf, *next;
@@ -142,15 +80,17 @@
 +	struct sockaddr_dl *sdl;
 +	int sock, rtn = -1;
  
--		/* Delete it */
--		if (uroute_delete(route) == -1) {
--			errno_save = errno;
--			rtn = -1;
--		}
+-	/* Get list of routes */
+-	if ((num = uroute_get_all(&list, TYPED_MEM_TEMP)) == -1)
 +	/* Get socket */
 +	if ((sock = socket(PF_ROUTE, SOCK_RAW, 0)) == -1)
-+		return (-1);
-+
+ 		return (-1);
+ 
+-	/* Delete ARP routes */
+-	for (i = 0; i < num; i++) {
+-		struct uroute *const route = list[i];
+-		const struct sockaddr *dest;
+-		const struct sockaddr *gw;
 +	/* Get ARP table */
 +	mib[0] = CTL_NET;
 +	mib[1] = PF_ROUTE;
@@ -170,7 +110,22 @@
 +	if (sysctl(mib, 6, buf, &needed, NULL, 0) < 0) {
 +		goto done2;
 +	}
-+
+ 
+-		/* Is this an ARP entry? */
+-		dest = uroute_get_dest(route);
+-		gw = uroute_get_gateway(route);
+-		if ((uroute_get_flags(route)
+-		      & (RTF_HOST|RTF_LLINFO|RTF_WASCLONED))
+-		      != (RTF_HOST|RTF_LLINFO|RTF_WASCLONED)
+-		    || dest->sa_family != AF_INET
+-		    || gw->sa_family != AF_LINK)
+-			continue;
+-
+-		/* Delete it */
+-		if (uroute_delete(route) == -1) {
+-			errno_save = errno;
+-			rtn = -1;
+-		}
 +	/* Find desired entry */
 +	lim = buf + needed;
 +	for (next = buf; next < lim; next += rtm->rtm_msglen) {
