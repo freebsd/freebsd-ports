@@ -1,6 +1,30 @@
 Try unsynchronized userptr if regular one fails.
 https://github.com/FreeBSDDesktop/kms-drm/issues/197
 
+--- src/gallium/drivers/crocus/crocus_bufmgr.c.orig	2021-06-30 22:34:42 UTC
++++ src/gallium/drivers/crocus/crocus_bufmgr.c
+@@ -493,8 +493,20 @@ crocus_bo_create_userptr(struct crocus_bufmgr *bufmgr,
+       .user_ptr = (uintptr_t)ptr,
+       .user_size = size,
+    };
+-   if (intel_ioctl(bufmgr->fd, DRM_IOCTL_I915_GEM_USERPTR, &arg))
++
++   int ret;
++retry:
++   ret = intel_ioctl(bufmgr->fd, DRM_IOCTL_I915_GEM_USERPTR, &arg);
++   if (ret) {
++      if (errno == ENODEV && arg.flags == 0) {
++         arg.flags = I915_USERPTR_UNSYNCHRONIZED;
++         goto retry;
++      }
++      if (geteuid() != 0) {
++         fprintf(stderr, "%s", "ioctl(I915_GEM_USERPTR) failed. Try running as root but expect poor stability.\n");
++      }
+       goto err_free;
++   }
+    bo->gem_handle = arg.handle;
+ 
+    /* Check the buffer for validity before we try and use it in a batch */
 --- src/gallium/drivers/iris/iris_bufmgr.c.orig	2021-03-10 22:23:51 UTC
 +++ src/gallium/drivers/iris/iris_bufmgr.c
 @@ -624,8 +624,20 @@ iris_bo_create_userptr(struct iris_bufmgr *bufmgr, con

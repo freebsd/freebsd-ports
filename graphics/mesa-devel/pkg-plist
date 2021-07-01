@@ -26,6 +26,7 @@
 %%NO_GLVND%%%%NO_COINST%%include/KHR/khrplatform.h
 %%NO_COINST%%include/gbm.h
 %%i965%%lib/dri%%SUFFIX%%/i965_dri.so
+%%crocus%%lib/dri%%SUFFIX%%/crocus_dri.so
 %%iris%%lib/dri%%SUFFIX%%/iris_dri.so
 %%r600%%lib/dri%%SUFFIX%%/r600_dri.so
 %%radeonsi%%lib/dri%%SUFFIX%%/radeonsi_dri.so
