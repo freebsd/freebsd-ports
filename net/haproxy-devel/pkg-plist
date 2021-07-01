@@ -91,6 +91,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/regression-testing.txt
 %%PORTDOCS%%%%DOCSDIR%%/seamless_reload.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl-content-sw.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic-config-edge.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/content-sw-sample.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/400.http
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/403.http
@@ -102,6 +103,7 @@ sbin/haproxy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/haproxy.init
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/option-http_proxy.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quick-test.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/socks4.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/transparent_proxy.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wurfl-example.cfg
