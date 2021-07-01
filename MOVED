@@ -16456,3 +16456,4 @@ www/blastbeat||2021-06-26|Removed, abandoned upstream, broken on 12.X since 2019
 www/demoroniser||2021-06-26|Removed, made for Microsoft Powerpoint 9x with Perl 4.0
 x11-toolkits/v||2021-06-27|Has expired: Dead upstream, unmaintained and no consumers
 sysutils/ssid|sysutils/setsid|2021-06-27|Move to more obvious package name
+databases/pgpool-II-35||2021-07-01|Has expired: EOL since January 2021, please use one of the other pgpool-II-* ports
