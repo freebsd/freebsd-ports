@@ -31,7 +31,7 @@ DESKTOP_ENTRIES=	"XaoS" \
 			"" \
 			false
 
-OPTIONS_DEFINE=		DOCS EXAMPLES NLS TUTORIAL
+OPTIONS_DEFINE=		EXAMPLES NLS TUTORIAL
 OPTIONS_DEFAULT=	TUTORIAL
 OPTIONS_SUB=		yes
 
@@ -42,8 +42,6 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/xaos ${STAGEDIR}${PREFIX}/bin/xaos
 	${INSTALL_DATA} ${WRKSRC}/src/ui/images/xaosbig.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/xaos.png
-
-post-install-DOCS-on:
 	${INSTALL_MAN} ${WRKSRC}/doc/xaos.6 \
 		${STAGEDIR}${MANPREFIX}/share/man/man6/xaos.6
 
