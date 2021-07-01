@@ -1,7 +1,7 @@
 # Created by: Thomas Gellekum <tg@FreeBSD.org>
 
 PORTNAME=	reportlab
-PORTVERSION=	3.5.60
+PORTVERSION=	3.5.68
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP \
 		https://www.reportlab.com/ftp/
