@@ -1,0 +1,30 @@
+Swayr consists of a demon, and a client. The demon swayrd records
+window/workspace creations, deletions, and focus changes using sway's
+JSON IPC interface. The client swayr offers subcommands, see swayr
+--help, and sends them to the demon which executes them.
+
+Right now, there are these subcommands:
+* next-window focuses the next window in depth-first iteration order of the
+  tree.
+* prev-window focuses the previous window in depth-first iteration order of
+  the tree.
+* switch-window displays all windows in the order urgent first, then
+  last-recently-used, focused last and focuses the selected.
+* quit-window displays all windows and quits the selected one.
+* switch-to-urgent-or-lru-window switches to the next window with urgency
+  hint (if any) or to the last recently used window.
+* switch-workspace displays all workspaces in LRU order and switches to the
+  selected one.
+* switch-workspace-or-window displays all workspaces and their windows and
+   switches to the selected workspace or window.
+* quit-workspace-or-window displays all workspaces and their windows and
+  allows to quit either the selected workspace (all its windows) or the
+  selected window.
+* execute-swaymsg-command displays most swaymsg which don't require
+  additional input and executes the selected one. That's handy especially for
+  less often used commands not bound to a key.
+* execute-swayr-command displays all commands above and executes the selected
+  one. (This is useful for accessing swayr commands which are not bound to a
+  key.)
+
+WWW: https://sr.ht/~tsdh/swayr/
