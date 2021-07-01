@@ -39,7 +39,7 @@ Change it and make sure it is loaded in %%LOCALBASE%%/etc/solr.in.sh.
 
 Make also sure to always check the manual if you need to modify your
 configs or schemas:
-https://www-eu.apache.org/dist/lucene/solr/8.0.0/changes/Changes.html
+https://solr.apache.org/guide/8_9/solr-upgrade-notes.html
 EOM
 }
 ]
