@@ -8,7 +8,7 @@ MASTER_SITES=	http://rephial.org/downloads/${PORTVERSION:R}/
 PATCH_SITES=	https://github.com/angband/angband/commit/
 PATCHFILES=	8702eba5c070a157dfc8e9d7c2106f679b7845c2.patch:-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Rogue-like game with color, X11 support
 
 LICENSE=	GPLv2
