@@ -17,11 +17,13 @@ lib/freac/freac.extension.notifier/icons/stop.png
 lib/freac/freac.extension.notifier/sounds/License.md
 lib/freac/freac.extension.notifier/sounds/finished.flac
 lib/freac/freac.so
+lib/freac/freac_extension_accuraterip.1.0.so
 lib/freac/freac_extension_donate.1.0.so
 lib/freac/freac_extension_langnotify.1.0.so
 lib/freac/freac_extension_notifier.1.0.so
 lib/freac/freac_extension_protocols.1.0.so
 lib/freac/freac_extension_tagedit.1.0.so
+lib/freac/freac_verifier_accuraterip.1.0.so
 share/applications/org.freac.freac.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Readme
 %%PORTDOCS%%%%DOCSDIR%%/Readme.de
