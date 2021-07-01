@@ -1,7 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	sgp4
-PORTVERSION=	2.19
+PORTVERSION=	2.20
 CATEGORIES=	astro python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
