@@ -1,6 +1,7 @@
 PORTNAME=	vulkan-validation-layers
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.182
+DISTVERSIONPREFIX=	sdk-
+DISTVERSION=	1.2.182.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +18,7 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ValidationLayers
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-47-gdafead1:headers/external/spirv-headers \
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-71-g07f259e:headers/external/spirv-headers \
 		martinus:robin-hood-hashing:3.10.0:robin_hood/external/robin-hood-hashing
 CMAKE_OFF=	BUILD_TESTS
 CMAKE_ON=	BUILD_LAYER_SUPPORT_FILES
