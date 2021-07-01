@@ -49,6 +49,7 @@ include/pipewire-0.3/pipewire/impl-core.h
 include/pipewire-0.3/pipewire/impl-device.h
 include/pipewire-0.3/pipewire/impl-factory.h
 include/pipewire-0.3/pipewire/impl-link.h
+include/pipewire-0.3/pipewire/impl-metadata.h
 include/pipewire-0.3/pipewire/impl-module.h
 include/pipewire-0.3/pipewire/impl-node.h
 include/pipewire-0.3/pipewire/impl-port.h
@@ -157,7 +158,7 @@ include/spa-0.2/spa/utils/type.h
 %%GSTREAMER%%lib/gstreamer-1.0/libgstpipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.330.0
+lib/libpipewire-0.3.so.0.331.0
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
@@ -325,6 +326,7 @@ share/locale/zh_TW/LC_MESSAGES/pipewire.mo
 %%DATADIR%%/filter-chain/source-rnnoise.conf
 %%DATADIR%%/jack.conf
 %%MEDIASESSION%%%%DATADIR%%/media-session.d/alsa-monitor.conf
+%%MEDIASESSION%%%%DATADIR%%/media-session.d/bluez-hardware.conf
 %%MEDIASESSION%%%%DATADIR%%/media-session.d/bluez-monitor.conf
 %%MEDIASESSION%%%%DATADIR%%/media-session.d/media-session.conf
 %%MEDIASESSION%%%%DATADIR%%/media-session.d/v4l2-monitor.conf

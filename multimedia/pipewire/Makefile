@@ -1,5 +1,5 @@
 PORTNAME=	pipewire
-DISTVERSION=	0.3.30
+DISTVERSION=	0.3.31
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -18,10 +18,9 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libwebrtc_audio_processing.so:audio/webrtc-audio-processing0
 
 USES=		compiler:c11 gettext-tools gnome localbase:ldflags meson \
-		pkgconfig python:3.6+,build shebangfix
+		pkgconfig python:3.6+,build
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-SHEBANG_FILES=	spa/tests/gen-cpp-test.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PipeWire
