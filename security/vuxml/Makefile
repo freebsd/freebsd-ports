@@ -56,8 +56,8 @@ do-test:
 	@${CP} ${.CURDIR}/vuln.xml ${WRKDIR}/test
 	@cd ${.CURDIR} && make validate PKGDIR=${WRKDIR}/test
 
-vuln-flat.xml: vuln.xml
-	xmllint -noent ${.ALLSRC} > ${.TARGET}
+vuln-flat.xml: vuln.xml vuln-20??.xml
+	xmllint -noent ${.ALLSRC:[1]} > ${.TARGET}
 
 validate: tidy
 	@${SH} ${FILESDIR}/validate.sh "${VUXML_FLAT_FILE}"
