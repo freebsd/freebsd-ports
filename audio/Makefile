@@ -116,6 +116,7 @@
     SUBDIR += denemo
     SUBDIR += din
     SUBDIR += discid
+    SUBDIR += dmidiplayer
     SUBDIR += dpf-plugins-lv2
     SUBDIR += dragonfly-reverb-lv2
     SUBDIR += drumgizmo
