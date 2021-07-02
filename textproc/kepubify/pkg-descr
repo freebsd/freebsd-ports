@@ -1,0 +1,6 @@
+Kepubify converts EPUBs to KEPUBS.  Kepubify also includes two
+standalone utilities which do not depend on kepubify (and don't conflict
+with Calibre): covergen (which pre-generates cover images), and
+seriesmeta (which updates Calibre or EPUB3 series metadata).
+
+WWW: https://pgaskin.net/kepubify
