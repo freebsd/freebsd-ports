@@ -6963,6 +6963,7 @@
     SUBDIR += tradcpp
     SUBDIR += transient
     SUBDIR += transwarp
+    SUBDIR += tree-sitter
     SUBDIR += treepy.el
     SUBDIR += trellis
     SUBDIR += trio
