@@ -1,7 +1,7 @@
 # Created by: lesi@FreeBSD.org
 
 PORTNAME=	libdrm
-PORTVERSION=	2.4.106
+PORTVERSION=	2.4.107
 PORTEPOCH=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	https://dri.freedesktop.org/libdrm/
@@ -78,7 +78,7 @@ PLIST_SUB+=	VMWGFX_DRIVERS="@comment "
 PLIST_SUB+=	ARM_DRIVERS=""
 PLIST_SUB+=	INTEL_DRIVER="@comment "
 PLIST_SUB+=	NOUVEAU_DRIVER="@comment "
-PLIST_SUB+=	RADEON_DRIVERS="@comment "
+PLIST_SUB+=	RADEON_DRIVERS=""
 PLIST_SUB+=	VMWGFX_DRIVERS="@comment "
 .else
 PLIST_SUB+=	ARM_DRIVERS="@comment "
