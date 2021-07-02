@@ -2,8 +2,7 @@
 
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.4
-PORTREVISION=	2
+DISTVERSION=	0.5.0
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -17,6 +16,7 @@ BUILD_DEPENDS=	gperf:devel/gperf \
 LIB_DEPENDS=	libluv.so:devel/luv \
 		libmsgpackc.so:devel/msgpack \
 		libtermkey.so:devel/libtermkey \
+		libtree-sitter.so:devel/tree-sitter \
 		libunibilium.so:devel/unibilium \
 		libuv.so:devel/libuv \
 		libvterm.so:devel/libvterm
@@ -35,6 +35,9 @@ CMAKE_ARGS=	-DLUA_PRG:FILEPATH="${LUA_CMD}" \
 		-DCMAKE_INSTALL_MANDIR:PATH="${MANPREFIX}/man" \
 		-DDEPS_PREFIX:PATH="${LOCALBASE}"
 
+DATADIR=	${PREFIX}/share/nvim
+PORTDATA=	runtime
+
 OPTIONS_DEFINE=	LUAJIT NLS PYNVIM
 OPTIONS_DEFAULT=LUAJIT
 OPTIONS_EXCLUDE_aarch64=LUAJIT
@@ -52,8 +55,8 @@ LUAJIT_CMAKE_OFF=	-DPREFER_LUA:BOOL="ON"
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUAJIT_USES=		lua:build
 LUAJIT_USES_OFF=	lua:52
-NLS_CMAKE_BOOL=	ENABLE_LIBINTL
-NLS_USES=	gettext
+NLS_CMAKE_BOOL=		ENABLE_LIBINTL
+NLS_USES=		gettext
 PYNVIM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pynvim>=0.3.0:editors/py-pynvim@${PY_FLAVOR}
 PYNVIM_USES=		python:run
 
