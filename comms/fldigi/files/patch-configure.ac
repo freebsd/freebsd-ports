@@ -1,0 +1,14 @@
+--- configure.ac.orig	2021-07-01 20:36:20 UTC
++++ configure.ac
+@@ -309,11 +309,6 @@ AC_FLDIGI_INTL
+ # Set ac_cv_udev to yes/no
+ # Define USE_LIBHID in config.h
+ # Substitute LIBHID_CFLAGS and LIBHID_LIBS in Makefile
+-#if test "x$ac_cv_want_fldigi" = "xyes"; then
+-#AC_FLDIGI_PKG_CHECK([libhid], [libhid], [no], [no],
+-#  [use udev libraries @<:@autodetect@:>@],
+-#  [ENABLE_LIBHID])
+-#fi
+ 
+ ### asciidoc
+ # substitute ASCIIDOC and A2X in doc/Makefile
