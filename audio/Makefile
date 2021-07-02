@@ -870,6 +870,7 @@
     SUBDIR += yoshimi
     SUBDIR += zam-plugins-lv2
     SUBDIR += zita-convolver
+    SUBDIR += zita-njbridge
     SUBDIR += zita-resampler
     SUBDIR += zrythm
     SUBDIR += zynaddsubfx
