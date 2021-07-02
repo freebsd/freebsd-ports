@@ -1,5 +1,6 @@
 PORTNAME=	devilutionX
 DISTVERSION=	1.2.1
+PORTVERSION=	1
 CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -8,7 +9,7 @@ COMMENT=	Diablo I engine for modern operating systems
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-_MY_DEPENDS=	${LOCALBASE}/share/fonts/CharisSIL/CharisSIL-B.ttf:x11-fonts/charis
+_MY_DEPENDS=	CharisSIL>0:x11-fonts/charis
 BUILD_DEPENDS=	${_MY_DEPENDS}
 LIB_DEPENDS=	libsodium.so:security/libsodium
 RUN_DEPENDS=	${_MY_DEPENDS}
