@@ -467,11 +467,14 @@ share/applications/etr.desktop
 %%DATADIR%%/textures/ziff032.png
 %%DATADIR%%/translations/cs_CZ.lst
 %%DATADIR%%/translations/de_DE.lst
+%%DATADIR%%/translations/du_NL.lst
+%%DATADIR%%/translations/eo.lst
 %%DATADIR%%/translations/es_ES.lst
 %%DATADIR%%/translations/fi_FI.lst
 %%DATADIR%%/translations/fr_FR.lst
 %%DATADIR%%/translations/languages.lst
 %%DATADIR%%/translations/pl_PL.lst
+%%DATADIR%%/translations/ro_RO.lst
 %%DATADIR%%/translations/se_SE.lst
 %%DATADIR%%/translations/xx_XX.lst
 share/pixmaps/etr.png

@@ -1,8 +1,7 @@
 # Created by: Peter Dunning
 
 PORTNAME=	etr
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	games
 MASTER_SITES=	SF/extremetuxracer/releases/${PORTVERSION}
 PKGNAMESUFFIX=	acer
