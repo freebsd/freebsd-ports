@@ -1,3 +1,32 @@
+  <vuln vid="f2596f27-db4c-11eb-8bc6-c556d71493c9">
+    <topic>openexr v3.0.5 -- fixes miscellaneous security issues</topic>
+    <affects>
+      <package>
+	<name>openexr</name>
+	<range><lt>3.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cary Phillips reports:</p>
+	<blockquote cite="https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.0.5">
+	  <ul>
+	    <li>1038 fix/extend part number validation in MultiPart methods</li>
+	    <li>1037 verify data size in deepscanlines with NO_COMPRESSION</li>
+	    <li>1036 detect buffer overflows in RleUncompress</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.0.5</url>
+    </references>
+    <dates>
+      <discovery>2021-06-03</discovery>
+      <entry>2021-07-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8ba8278d-db06-11eb-ba49-001b217b3468">
     <topic>Gitlab -- Multiple Vulnerabilities</topic>
     <affects>
