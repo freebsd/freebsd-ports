@@ -1,7 +1,7 @@
 # Created by: Mark Pulford <mark@kyne.com.au>
 
 PORTNAME=	burgerspace
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/ \
 		LOCAL/martymac
@@ -19,7 +19,7 @@ USE_SDL=	image mixer sdl
 
 GNU_CONFIGURE=	yes
 
-PORTDOCS=	AUTHORS COPYING NEWS README THANKS
+PORTDOCS=	AUTHORS NEWS README THANKS
 
 OPTIONS_DEFINE=	DOCS
 
