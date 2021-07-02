@@ -1,7 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.2
-PORTREVISION=	1
+DISTVERSION=	1.11.4
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -42,7 +41,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		alloc-no-stdlib-2.0.1 \
 		alloc-stdlib-0.2.1 \
 		ansi_term-0.11.0 \
-		anyhow-1.0.40 \
+		anyhow-1.0.41 \
 		arrayvec-0.5.2 \
 		ash-0.32.1 \
 		ast_node-0.7.3 \
@@ -92,18 +91,19 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dashmap-4.0.2 \
 		data-encoding-2.3.2 \
 		data-url-0.1.0 \
-		deno_doc-0.5.0 \
-		deno_lint-0.6.1 \
+		deno_doc-0.7.0 \
+		deno_lint-0.8.0 \
 		derive_more-0.99.14 \
 		digest-0.9.0 \
 		dissimilar-1.0.2 \
 		dlopen-0.1.8 \
 		dlopen_derive-0.1.4 \
 		dprint-core-0.42.0 \
+		dprint-core-0.43.0 \
 		dprint-plugin-json-0.12.0 \
-		dprint-plugin-markdown-0.8.0 \
-		dprint-plugin-typescript-0.46.0 \
-		dprint-swc-ecma-ast-view-0.20.0 \
+		dprint-plugin-markdown-0.9.1 \
+		dprint-plugin-typescript-0.47.0 \
+		dprint-swc-ecma-ast-view-0.22.0 \
 		either-1.6.1 \
 		encoding_rs-0.8.28 \
 		endian-type-0.1.2 \
@@ -321,23 +321,24 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strsim-0.8.0 \
 		strsim-0.9.3 \
 		swc_atoms-0.2.6 \
-		swc_bundler-0.37.4 \
-		swc_common-0.10.20 \
-		swc_ecma_ast-0.45.0 \
-		swc_ecma_codegen-0.55.4 \
+		swc_bundler-0.44.0 \
+		swc_common-0.10.21 \
+		swc_ecma_ast-0.47.0 \
+		swc_ecma_codegen-0.60.1 \
 		swc_ecma_codegen_macros-0.5.2 \
-		swc_ecma_dep_graph-0.25.0 \
-		swc_ecma_parser-0.57.4 \
-		swc_ecma_transforms-0.50.2 \
-		swc_ecma_transforms_base-0.15.7 \
-		swc_ecma_transforms_classes-0.1.1 \
-		swc_ecma_transforms_optimization-0.20.3 \
-		swc_ecma_transforms_proposal-0.17.1 \
-		swc_ecma_transforms_react-0.18.2 \
-		swc_ecma_transforms_typescript-0.19.4 \
-		swc_ecma_utils-0.36.0 \
-		swc_ecma_visit-0.31.0 \
-		swc_ecmascript-0.36.3 \
+		swc_ecma_dep_graph-0.29.0 \
+		swc_ecma_loader-0.9.1 \
+		swc_ecma_parser-0.61.1 \
+		swc_ecma_transforms-0.57.0 \
+		swc_ecma_transforms_base-0.20.2 \
+		swc_ecma_transforms_classes-0.6.0 \
+		swc_ecma_transforms_optimization-0.27.1 \
+		swc_ecma_transforms_proposal-0.24.0 \
+		swc_ecma_transforms_react-0.25.0 \
+		swc_ecma_transforms_typescript-0.26.0 \
+		swc_ecma_utils-0.38.0 \
+		swc_ecma_visit-0.33.0 \
+		swc_ecmascript-0.44.0 \
 		swc_eq_ignore_macros-0.1.0 \
 		swc_macros_common-0.3.3 \
 		swc_visit-0.2.4 \
