@@ -1,5 +1,5 @@
-TIMESTAMP = 1623226962
-SHA256 (lapack/v3.9.1.tar.gz) = d0085d2caf997ff39299c05d4bacb6f3d27001d25a4cc613d48c1f352b73e7e0
-SIZE (lapack/v3.9.1.tar.gz) = 7543209
-SHA256 (lapack/manpages.tgz) = a65b84821765cfd4bb8bf8c05e4279a9d81130da4eb8741ef2690064c57610cf
-SIZE (lapack/manpages.tgz) = 2391904
+TIMESTAMP = 1625255946
+SHA256 (lapack-3.10.0/v3.10.0.tar.gz) = 328c1bea493a32cac5257d84157dc686cc3ab0b004e2bea22044e0a59f6f8a19
+SIZE (lapack-3.10.0/v3.10.0.tar.gz) = 7630775
+SHA256 (lapack-3.10.0/manpages.tgz) = 1eaa672dfa1ac921c795117b29b830eb84902a66248ef08d461f093305e2aaf5
+SIZE (lapack-3.10.0/manpages.tgz) = 2446510

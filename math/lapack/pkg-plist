@@ -1,7 +1,6 @@
 %%CBLAS%%include/cblas/cblas.h
 %%CBLAS%%include/cblas/cblas_f77.h
 %%CBLAS%%include/cblas/cblas_mangling.h
-%%CBLAS%%include/cblas/cblas_test.h
 %%LAPACKE%%include/lapacke/lapack.h
 %%LAPACKE%%include/lapacke/lapacke.h
 %%LAPACKE%%include/lapacke/lapacke_config.h

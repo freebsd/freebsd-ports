@@ -1,15 +1,16 @@
 # Created by: jmz
 
 PORTNAME?=	lapack
-PORTVERSION=	3.9.1
+PORTVERSION=	3.10.0
 PORTREVISION?=	0	# Never remove this line, keep PORTREVISION?=0 in case.
 CATEGORIES=	math
-MASTER_SITES=	NL/lapack/
-DISTFILES=	v${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/Reference-LAPACK/lapack/archive/refs/tags/:src	\
+		http://www.netlib.org/lapack/:man
+DISTFILES=	v${PORTVERSION}${EXTRACT_SUFX}:src
 .if make(makesum) || !(defined(BLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT))
-DISTFILES+=	manpages.tgz
+DISTFILES+=	manpages.tgz:man
 .endif
-DIST_SUBDIR=	lapack
+DIST_SUBDIR=	lapack-${PORTVERSION}
 
 MAINTAINER?=	fortran@FreeBSD.org
 COMMENT?=	Linear Algebra PACKage
