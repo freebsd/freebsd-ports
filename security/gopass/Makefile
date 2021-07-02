@@ -2,7 +2,7 @@
 
 PORTNAME=	gopass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.6
+DISTVERSION=	1.12.7
 CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -20,8 +20,8 @@ RUN_DEPENDS=	git:devel/git \
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	gopasspw
-GH_TUPLE=	\
-		FiloSottile:age:v1.0.0-rc.1:filosottile_age/vendor/filippo.io/age \
+GH_TUPLE=	FiloSottile:age:v1.0.0-rc.3:filosottile_age/vendor/filippo.io/age \
+		FiloSottile:edwards25519:v1.0.0-beta.3:filosottile_edwards25519/vendor/filippo.io/edwards25519 \
 		atotto:clipboard:v0.1.4:atotto_clipboard/vendor/github.com/atotto/clipboard \
 		blang:semver:v4.0.0:blang_semver_v4/vendor/github.com/blang/semver \
 		caspr-io:yamlpath:502e8d113a9b:caspr_io_yamlpath/vendor/github.com/caspr-io/yamlpath \
@@ -29,7 +29,7 @@ GH_TUPLE=	\
 		chzyer:readline:2972be24d48e:chzyer_readline/vendor/github.com/chzyer/readline \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
+		fatih:color:v1.12.0:fatih_color/vendor/github.com/fatih/color \
 		go-yaml:yaml:496545a6307b:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		godbus:dbus:8a1682060722:godbus_dbus/vendor/github.com/godbus/dbus \
 		gokyle:twofactor:v1.0.1:gokyle_twofactor/vendor/github.com/gokyle/twofactor \
@@ -40,7 +40,7 @@ GH_TUPLE=	\
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:37df388d1f33:golang_sys/vendor/golang.org/x/sys \
 		golang:term:72f3dc4e9b72:golang_term/vendor/golang.org/x/term \
-		google:go-cmp:v0.5.5:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-github:v17.0.0:google_go_github/vendor/github.com/google/go-github \
 		google:go-github:v33.0.0:google_go_github_v33/vendor/github.com/google/go-github/v33 \
 		google:go-querystring:v1.1.0:google_go_querystring/vendor/github.com/google/go-querystring \
@@ -53,7 +53,7 @@ GH_TUPLE=	\
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		martinhoefling:goxkcdpwgen:7dc3d102eca3:martinhoefling_goxkcdpwgen/vendor/github.com/martinhoefling/goxkcdpwgen \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-isatty:v0.0.13:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:go-ps:v1.0.0:mitchellh_go_ps/vendor/github.com/mitchellh/go-ps \
 		muesli:crunchy:v0.4.0:muesli_crunchy/vendor/github.com/muesli/crunchy \
