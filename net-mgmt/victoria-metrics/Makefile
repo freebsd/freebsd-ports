@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME?=	victoria-metrics
-PORTVERSION=	1.62.0
+PORTVERSION=	1.62.0		# don't forget to update BUILDINFO_TAG
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -16,7 +16,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 USES=		gmake go:modules,no_targets
 USE_RC_SUBR?=	${PORTNAME}
 MAKE_ENV=	PKG_TAG=${DISTVERSIONPREFIX}${DISTVERSION} \
-		BUILDINFO_TAG=2ef2e3d GOOS=${OPSYS:tl}
+		GOOS=${OPSYS:tl} BUILDINFO_TAG=008033a \
+		DATEINFO_TAG=${_GET_DATE:sh}
 ALL_TARGET=	${PORTNAME}-pure
 
 USE_GITHUB=	yes
@@ -51,3 +52,5 @@ do-install-DOCS-on:
 .endif
 
 .include <bsd.port.mk>
+
+_GET_DATE=	TZ= ${STAT} -f %Sm -t %Y%m%d-%H%M%S ${WRKSRC}/.gitignore
