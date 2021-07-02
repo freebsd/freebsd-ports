@@ -137,6 +137,7 @@
     SUBDIR += py-dnaio
     SUBDIR += py-ete3
     SUBDIR += py-gffutils
+    SUBDIR += py-goatools
     SUBDIR += py-gtfparse
     SUBDIR += py-hits
     SUBDIR += py-loompy
