@@ -5,7 +5,7 @@ DISTVERSION=	5.0.2
 PORTREVISION=	2
 CATEGORIES=	textproc x11
 
-MAINTAINER=	khng300@FreeBSD.org
+MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Fcitx5 IM framework configuration tool
 
 LICENSE=	GPLv2+
