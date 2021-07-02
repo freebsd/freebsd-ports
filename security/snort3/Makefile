@@ -1,8 +1,7 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 PORTNAME=	snort
-DISTVERSION=	3.1.5.0
-PORTREVISION=	1
+DISTVERSION=	3.1.7.0
 PORTEPOCH=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	3
