@@ -1,3 +1,42 @@
+  <vuln vid="8ba8278d-db06-11eb-ba49-001b217b3468">
+    <topic>Gitlab -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>14.0.0</ge><lt>14.0.2</lt></range>
+	<range><ge>13.12.0</ge><lt>13.12.6</lt></range>
+	<range><ge>8.0.0</ge><lt>13.11.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2021/07/01/security-release-gitlab-14-0-2-released/">
+	  <p>DoS using Webhook connections</p>
+	  <p>CSRF on GraphQL API allows executing mutations through GET requests</p>
+	  <p>Private projects information disclosure</p>
+	  <p>Denial of service of user profile page</p>
+	  <p>Single sign-on users not getting blocked</p>
+	  <p>Some users can push to Protected Branch with Deploy keys</p>
+	  <p>A deactivated user can access data through GraphQL</p>
+	  <p>Reflected XSS in release edit page</p>
+	  <p>Clipboard DOM-based XSS</p>
+	  <p>Stored XSS on Audit Log</p>
+	  <p>Forks of public projects by project members could leak codebase</p>
+	  <p>Improper text rendering</p>
+	  <p>HTML Injection in full name field</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://about.gitlab.com/releases/2021/07/01/security-release-gitlab-14-0-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2021-07-01</discovery>
+      <entry>2021-07-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9d271bab-da22-11eb-86f0-94c691a700a6">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
