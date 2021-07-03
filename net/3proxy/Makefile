@@ -1,7 +1,7 @@
 # Created by: tim@relay.nnn.tstu.ru
 
 PORTNAME=	3proxy
-PORTVERSION=	0.9.3
+DISTVERSION=	0.9.4
 CATEGORIES=	net
 
 MAINTAINER=	timp87@gmail.com
@@ -28,6 +28,9 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CFLAGS%%|${CFLAGS}|' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|%%3PROXY_LOGDIR%%|${3PROXY_LOGDIR}|' ${WRKSRC}/cfg/3proxy.cfg.sample
+	@${REINPLACE_CMD} -E -e 's| proxy( ?\(8\))| httppr\1|' ${WRKSRC}/man/*
+	@${REINPLACE_CMD} -E -e 's|([^P] "?)proxy|\1httppr|' ${WRKSRC}/man/proxy.8
+	@${REINPLACE_CMD} -E -e 's|#!/.+|#!${PREFIX}/bin/3proxy|' -e 's|/[^ ]+/3proxy\.cfg|${PREFIX}/etc/3proxy.cfg|' ${WRKSRC}/man/3proxy.8
 
 post-build:
 	${MV} ${WRKSRC}/bin/proxy ${WRKSRC}/bin/httppr

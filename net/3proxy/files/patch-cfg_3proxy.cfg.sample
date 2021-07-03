@@ -1,4 +1,4 @@
---- cfg/3proxy.cfg.sample.orig	2020-10-22 08:38:44 UTC
+--- cfg/3proxy.cfg.sample.orig	2021-07-01 16:59:57 UTC
 +++ cfg/3proxy.cfg.sample
 @@ -30,15 +30,15 @@ users 3APA3A:CL:3apa3a "test:CR:$1$qwer$CHFTUFGqkjue9H
  # this example shows you how to include passwd file. For included files
