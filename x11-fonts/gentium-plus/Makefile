@@ -1,7 +1,7 @@
 # Created by: Matthew Seaman
 
 PORTNAME=	GentiumPlus
-PORTVERSION=	6.000
+PORTVERSION=	6.001
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://software.sil.org/downloads/r/gentium/
 
