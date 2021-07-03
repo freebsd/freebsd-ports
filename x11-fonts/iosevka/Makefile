@@ -1,6 +1,6 @@
 PORTNAME=	iosevka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.2.3
+DISTVERSION=	7.2.4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/be5invis/Iosevka/releases/download/${DISTVERSIONFULL}/
 
