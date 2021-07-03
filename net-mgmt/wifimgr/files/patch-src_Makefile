@@ -1,6 +1,38 @@
---- src/Makefile.orig	2014-05-10 22:54:38 UTC
+--- src/Makefile.orig	2021-06-28 10:55:25 UTC
 +++ src/Makefile
-@@ -97,7 +97,7 @@ clean:
+@@ -6,9 +6,11 @@
+ # $Id: Makefile 145 2021-06-28 10:55:25Z jr $
+ #
+ 
+-GTK_CFLAGS !=	pkg-config --cflags gtk+-3.0
+-GTK_LDFLAGS !=	pkg-config --libs gtk+-3.0
++GTK_VERSION ?=	3
+ 
++GTK_CFLAGS !=	pkg-config --cflags gtk+-${GTK_VERSION}.0
++GTK_LDFLAGS !=	pkg-config --libs gtk+-${GTK_VERSION}.0
++
+ .if defined(WITHOUT_NLS)
+ CFLAGS +=	-DWITHOUT_NLS
+ .else
+@@ -71,7 +73,7 @@ installed =	${DESTDIR}${PREFIX}/bin/wifimgr \
+ 
+ all:		wifimgr wifimgrsu
+ 
+-wmgr_objs =	wifimgr.o string.o net_list.o wifimgr-gtk.o
++wmgr_objs =	wifimgr.o string.o net_list.o wifimgr-gtk${GTK_VERSION}.o
+ 
+ wifimgr:	${wmgr_objs}
+ 		${CC} -o $@ ${wmgr_objs} ${LDFLAGS}
+@@ -82,7 +84,7 @@ string.o:	string.c
+ 
+ net_list.o:	net_list.c wifimgr.h
+ 
+-wifimgr-gtk.o:	wifimgr-gtk.c wifimgr.h version.h
++wifimgr-gtk${GTK_VERSION}.o:	wifimgr-gtk${GTK_VERSION}.c wifimgr.h version.h
+ 
+ wmgrsu_objs =	wifimgrsu.o string.o
+ 
+@@ -97,7 +99,7 @@ clean:
  		rm -f *.o
  		rm -f *.core
  
@@ -9,7 +41,7 @@
  
  deinstall:	do-deinstall update-icon-cache
  
-@@ -113,7 +113,7 @@ ${DESTDIR}${PREFIX}/bin/wifimgr:	wifimgr
+@@ -113,7 +115,7 @@ ${DESTDIR}${PREFIX}/bin/wifimgr:	wifimgr
  		${INSTALL} $? $@
  
  ${DESTDIR}${PREFIX}/libexec/wifimgrsu:	wifimgrsu
