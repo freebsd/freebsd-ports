@@ -11,7 +11,7 @@ share/applications/com.github.maoschanz.drawing.desktop
 %%DATADIR%%/drawing/abstract_transform_tool.py
 %%DATADIR%%/drawing/brush_airbrush.py
 %%DATADIR%%/drawing/brush_hairy.py
-%%DATADIR%%/drawing/brush_nip.py
+%%DATADIR%%/drawing/brush_nib.py
 %%DATADIR%%/drawing/brush_simple.py
 %%DATADIR%%/drawing/deco_manager.py
 %%DATADIR%%/drawing/filter_blur.py
@@ -21,6 +21,7 @@ share/applications/com.github.maoschanz.drawing.desktop
 %%DATADIR%%/drawing/filter_saturation.py
 %%DATADIR%%/drawing/filter_transparency.py
 %%DATADIR%%/drawing/filter_veil.py
+%%DATADIR%%/drawing/gi_composites.py
 %%DATADIR%%/drawing/history_manager.py
 %%DATADIR%%/drawing/image.py
 %%DATADIR%%/drawing/main.py
