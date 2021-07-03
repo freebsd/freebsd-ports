@@ -1,7 +1,7 @@
 # Created by: Daniel Solsona <daniel@ish.com.au>, Guido Falsi <madpilot@FreeBSD.org>
 
 PORTNAME=	logstash
-PORTVERSION=	7.10.1
+PORTVERSION=	7.13.2
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
@@ -18,7 +18,7 @@ USES=		cpe shebangfix
 
 CPE_VENDOR=	elasticsearch
 USE_JAVA=	yes
-JAVA_VERSION=	11+
+JAVA_VERSION=	8+
 JAVA_RUN=	yes
 USE_RC_SUBR=	logstash
 
