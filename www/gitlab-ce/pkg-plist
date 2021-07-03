@@ -6401,6 +6401,7 @@
 %%WWWDIR%%/app/graphql/mutations/design_management/move.rb
 %%WWWDIR%%/app/graphql/mutations/design_management/upload.rb
 %%WWWDIR%%/app/graphql/mutations/discussions/toggle_resolve.rb
+%%WWWDIR%%/app/graphql/mutations/echo.rb
 %%WWWDIR%%/app/graphql/mutations/environments/canary_ingress/update.rb
 %%WWWDIR%%/app/graphql/mutations/issues/base.rb
 %%WWWDIR%%/app/graphql/mutations/issues/common_mutation_arguments.rb

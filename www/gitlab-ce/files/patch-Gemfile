@@ -1,4 +1,4 @@
---- Gemfile.orig	2021-06-21 15:55:09 UTC
+--- Gemfile.orig	2021-07-01 10:22:34 UTC
 +++ Gemfile
 @@ -88,7 +88,7 @@ gem 'gpgme', '~> 2.0.19'
  # GitLab fork with several improvements to original library. For full list of changes
@@ -17,15 +17,6 @@
  gem 'graphlient', '~> 0.4.0' # Used by BulkImport feature (group::import)
  
  gem 'hashie'
-@@ -157,7 +156,7 @@ gem 'github-markup', '~> 1.7.0', require: 'github/mark
- gem 'commonmarker', '~> 0.21'
- gem 'kramdown', '~> 2.3.1'
- gem 'RedCloth', '~> 4.3.2'
--gem 'rdoc', '~> 6.1.2'
-+gem 'rdoc', '~> 6.1'
- gem 'org-ruby', '~> 0.9.12'
- gem 'creole', '~> 0.5.0'
- gem 'wikicloth', '0.8.1'
 @@ -309,7 +308,7 @@ gem 'sentry-raven', '~> 3.1'
  # and https://github.com/pganalyze/pg_query/pull/213 are
  # released. gitlab-labkit will need to be updated to use the pg_query

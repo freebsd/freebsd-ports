@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	14.0.1
+PORTVERSION=	14.0.2
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -20,7 +20,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	gitlab-pages>=1.40.0:www/gitlab-pages \
 	gitlab-shell>=13.19.0:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
-	redis>=6.0.12:databases/redis \
+	redis>=6.0.14:databases/redis \
 	yarn>=1.10.0:www/yarn \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
@@ -118,7 +118,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-commonmarker>=0.21<1.0:textproc/rubygem-commonmarker \
 	rubygem-kramdown>=2.3.1<2.4:textproc/rubygem-kramdown \
 	rubygem-redcloth>=4.3.2<4.4.0:www/rubygem-redcloth \
-	rubygem-rdoc>=6.1.2<7:devel/rubygem-rdoc \
+	rubygem-gitlab-rdoc>=6.3.2<7:devel/rubygem-gitlab-rdoc \
 	rubygem-org-ruby>=0.9.12<0.10.0:textproc/rubygem-org-ruby \
 	rubygem-creole>=0.5.0<0.6.0:textproc/rubygem-creole \
 	rubygem-wikicloth081>=0.8.1<0.8.2:textproc/rubygem-wikicloth081 \
@@ -129,7 +129,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-rouge>=3.26.0<3.27:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.11<0.8.0:textproc/rubygem-truncato \
 	rubygem-bootstrap_form>=4.2.0<4.3.0:devel/rubygem-bootstrap_form \
-	rubygem-nokogiri>=1.11.3<1.12:textproc/rubygem-nokogiri \
+	rubygem-nokogiri>=1.11.4<1.12:textproc/rubygem-nokogiri \
 	rubygem-escape_utils>=1.1<2.0:textproc/rubygem-escape_utils \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
 	rubygem-diffy>=3.3<4:textproc/rubygem-diffy \
@@ -269,7 +269,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 GL_PROJECT?=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT?=	76b84b42f64b8009cc181d5da0c656a8a521986d
+GL_COMMIT?=	bac4ee4a9e2bc845fd5c91240cccaa293cb4f847
 
 USERS=	git
 GROUPS=	git
