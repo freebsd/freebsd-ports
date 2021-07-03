@@ -1,7 +1,6 @@
 PORTNAME=	cargo-c
-DISTVERSION=	0.8.3
+DISTVERSION=	0.9.0
 DISTVERSIONSUFFIX=	+cargo-0.54
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
@@ -51,6 +50,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		crypto-hash-0.3.4 \
 		curl-0.4.38 \
 		curl-sys-0.4.44+curl-7.77.0 \
+		either-1.6.1 \
 		env_logger-0.8.4 \
 		filetime-0.2.14 \
 		flate2-1.0.20 \
@@ -64,9 +64,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		git2-curl-0.14.1 \
 		glob-0.3.0 \
 		globset-0.4.8 \
-		hashbrown-0.9.1 \
+		hashbrown-0.11.2 \
 		heck-0.3.3 \
-		hermit-abi-0.1.18 \
+		hermit-abi-0.1.19 \
 		hex-0.3.2 \
 		hex-0.4.3 \
 		home-0.5.3 \
@@ -74,7 +74,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		idna-0.2.3 \
 		ignore-0.4.18 \
 		im-rc-15.0.0 \
-		indexmap-1.6.2 \
+		indexmap-1.7.0 \
+		itertools-0.10.1 \
 		itoa-0.4.7 \
 		jobserver-0.1.22 \
 		lazy_static-1.4.0 \
@@ -95,7 +96,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		openssl-0.10.35 \
 		openssl-probe-0.1.4 \
 		openssl-src-111.15.0+1.1.1k \
-		openssl-sys-0.9.64 \
+		openssl-sys-0.9.65 \
 		percent-encoding-2.1.0 \
 		pkg-config-0.3.19 \
 		ppv-lite86-0.2.10 \
@@ -143,7 +144,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		typenum-1.13.0 \
 		unicode-bidi-0.3.5 \
 		unicode-normalization-0.1.19 \
-		unicode-segmentation-1.7.1 \
+		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
 		url-2.2.2 \
