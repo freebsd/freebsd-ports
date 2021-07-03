@@ -4395,6 +4395,7 @@
     SUBDIR += py-entrypoints
     SUBDIR += py-enum-compat
     SUBDIR += py-envisage
+    SUBDIR += py-envs
     SUBDIR += py-epdb
     SUBDIR += py-epsilon
     SUBDIR += py-evdev
