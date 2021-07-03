@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	smatsui@karashi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for symbolic and ls(1)-like chmod modes
 
 USES=		perl5

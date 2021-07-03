@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CORION
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	smatsui@karashi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CSS selector to XPath compiler Perl module
 
 LICENSE=	ART10 GPLv1+

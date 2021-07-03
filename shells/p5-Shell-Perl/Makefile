@@ -7,7 +7,7 @@ CATEGORIES=	shells perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	smatsui@karashi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read-eval-print loop in Perl
 
 LICENSE=	ART10 GPLv1+
