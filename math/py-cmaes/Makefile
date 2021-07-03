@@ -4,7 +4,7 @@ CATEGORIES=	math # machine-learning
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight CMA Evolution Strategy implementation for Python
 
 LICENSE=	MIT
