@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	layan-gtk-themes
-DISTVERSION=	2021-01-12
+DISTVERSION=	2021-06-30
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -11,16 +11,17 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash>0:shells/bash
-RUN_DEPENDS=	gtk-murrine-engine>0:x11-themes/gtk-murrine-engine \
-		gtk-engines2>0:x11-themes/gtk-engines2
+RUN_DEPENDS=	gtk-engines2>0:x11-themes/gtk-engines2 \
+		gtk-murrine-engine>0:x11-themes/gtk-murrine-engine
 
 USES=		shebangfix
-SHEBANG_FILES=	install.sh
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vinceliuice
 GH_PROJECT=	Layan-gtk-theme
-GH_TAGNAME=	69f4bc4532ef4e81a36bd77d88074a5333575698
+
+SHEBANG_FILES=	install.sh
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
