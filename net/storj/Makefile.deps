@@ -20,6 +20,7 @@ GH_TUPLE=	\
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-ini:ini:v1.62.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-redis:redis:v8.7.1:go_redis_redis/vendor/github.com/go-redis/redis/v8 \
+		go-rod:rod:v0.100.0:go_rod_rod/vendor/github.com/go-rod/rod \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_0/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
@@ -56,6 +57,7 @@ GH_TUPLE=	\
 		jackc:pgservicefile:2b9c44734f2b:jackc_pgservicefile/vendor/github.com/jackc/pgservicefile \
 		jackc:pgtype:v1.6.2:jackc_pgtype/vendor/github.com/jackc/pgtype \
 		jackc:pgx:v4.10.1:jackc_pgx/vendor/github.com/jackc/pgx/v4 \
+		jackc:puddle:v1.1.3:jackc_puddle/vendor/github.com/jackc/puddle \
 		jtolds:monkit-hw:141a0da276b3:jtolds_monkit_hw/vendor/github.com/jtolds/monkit-hw/v2 \
 		jtolds:tracetagger:v2.0.0-rc5:jtolds_tracetagger/vendor/github.com/jtolds/tracetagger/v2 \
 		loov:hrtime:v1.0.3:loov_hrtime/vendor/github.com/loov/hrtime \
@@ -78,7 +80,7 @@ GH_TUPLE=	\
 		segmentio:analytics-go:v3.1.0:segmentio_analytics_go/vendor/gopkg.in/segmentio/analytics-go.v3 \
 		segmentio:backo-go:23eae7c10bd3:segmentio_backo_go/vendor/github.com/segmentio/backo-go \
 		shopspring:decimal:v1.2.0:shopspring_decimal/vendor/github.com/shopspring/decimal \
-		spacemonkeygo:monkit:v3.0.12:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
+		spacemonkeygo:monkit:v3.0.13:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
 		spacemonkeygo:spacelog:2296661a0572:spacemonkeygo_spacelog/vendor/github.com/spacemonkeygo/spacelog \
 		spf13:afero:v1.6.0:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
@@ -89,7 +91,7 @@ GH_TUPLE=	\
 		storj:common:bcb03a80052f:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.20:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:debb1cbcbbd7:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:private:421a3648fb1e:storj_private/vendor/storj.io/private \
+		storj:private:f53a5fcf98e0:storj_private/vendor/storj.io/private \
 		storj:uplink:e2e5889614a9:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v70.15.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
@@ -99,6 +101,9 @@ GH_TUPLE=	\
 		uber-go:zap:v1.16.0:uber_go_zap/vendor/go.uber.org/zap \
 		vivint:infectious:25a574ae18a3:vivint_infectious/vendor/github.com/vivint/infectious \
 		xtgo:uuid:a0b114877d4c:xtgo_uuid/vendor/github.com/xtgo/uuid \
+		ysmood:goob:v0.3.0:ysmood_goob/vendor/github.com/ysmood/goob \
+		ysmood:gson:v0.6.4:ysmood_gson/vendor/github.com/ysmood/gson \
+		ysmood:leakless:v0.7.0:ysmood_leakless/vendor/github.com/ysmood/leakless \
 		yuin:gopher-lua:ab39c6098bdb:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua \
 		zeebo:admission:v3.0.2:zeebo_admission/vendor/github.com/zeebo/admission/v3 \
 		zeebo:assert:v1.3.0:zeebo_assert/vendor/github.com/zeebo/assert \
