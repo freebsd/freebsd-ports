@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	unetbootin
-PORTVERSION=	681
+PORTVERSION=	702
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
@@ -25,6 +25,8 @@ NO_WRKSUBDIR=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/,${PREFIX}/,g' \
 		${WRKSRC}/main.cpp
+	@${REINPLACE_CMD} -e 's,this->setWindowTitle(UNETBOOTINB,& \
+		" ${PORTVERSION}",' ${WRKSRC}/unetbootin.cpp
 
 do-configure:
 	cd ${CONFIGURE_WRKSRC} && ${LUPDATE} unetbootin.pro \
