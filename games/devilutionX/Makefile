@@ -1,6 +1,6 @@
 PORTNAME=	devilutionX
 DISTVERSION=	1.2.1
-PORTVERSION=	1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -29,7 +29,7 @@ CMAKE_ON=	DEBUG
 CMAKE_ON=	BINARY_RELEASE
 .endif
 
-CXXFLAGS+=	-DTTF_FONT_NAME=\\\"${LOCALBASE}/share/fonts/CharisSIL/CharisSIL-B.ttf\\\"
+CXXFLAGS+=	-DTTF_FONT_NAME=\\\"${LOCALBASE}/share/fonts/CharisSIL/CharisSIL-Bold.ttf\\\"
 
 PLIST_FILES=	bin/devilutionx \
 		share/applications/devilutionx.desktop \
