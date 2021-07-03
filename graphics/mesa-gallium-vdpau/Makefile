@@ -1,6 +1,5 @@
 PORTNAME=	mesa-gallium-vdpau
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	Mesa Gallium VDPAU drivers
@@ -24,7 +23,7 @@ ONLY_FOR_ARCHS_REASON=	Used only by amd/radeon hardware
 MESON_ARGS+=	-Ddri-drivers="" \
 		-Dgallium-drivers="r300,r600,radeonsi" \
 		-Dvulkan-drivers="" \
-		-Dgallium-vdpau=disabled \
+		-Dgallium-va=disabled \
 		-Dgallium-omx=disabled \
 		-Dgallium-xa=disabled \
 		-Dgallium-opencl=disabled \
@@ -33,7 +32,7 @@ MESON_ARGS+=	-Ddri-drivers="" \
 		-Dgbm=disabled \
 		-Dgles1=disabled \
 		-Dgles2=disabled \
-		-Dosmesa=none \
+		-Dosmesa=false \
 		-Dglx=disabled \
 		-Ddri3=disabled
 

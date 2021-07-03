@@ -12,7 +12,7 @@
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
-MESABASEVERSION=	20.2.3
+MESABASEVERSION=	21.1.5
 # if there is a subversion, don't include the '-' between 7.11-rc2.
 MESASUBVERSION=
 
@@ -81,16 +81,11 @@ PKGHELP=	${.CURDIR}/pkg-help
 PKGINSTALL=	${.CURDIR}/pkg-install
 PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 
-.if ${COMPONENT} == clover
-EXTRA_PATCHES+= ${PATCHDIR}/extra-src_gallium_auxiliary_meson.build \
-		${PATCHDIR}/extra-src_gallium_auxiliary_vl_vl__stubs.c
-.endif
-
 .include <bsd.port.pre.mk>
 
 BINARY_ALIAS+=	python3=${PYTHON_VERSION}
 
-LLVM_DEFAULT=	10
+LLVM_DEFAULT=	12
 BUILD_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 .if ${COMPONENT} != libs
 RUN_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}

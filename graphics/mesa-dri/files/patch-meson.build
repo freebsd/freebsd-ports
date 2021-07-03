@@ -1,42 +1,28 @@
---- meson.build.orig	2020-10-06 07:15:26 UTC
+--- meson.build.orig	2021-06-30 18:18:55 UTC
 +++ meson.build
-@@ -1108,9 +1108,9 @@ else
- endif
- 
- # Check for GCC style atomics
--dep_atomic = null_dep
-+dep_atomic = cc.find_library('atomic', required : false)
- 
--if cc.compiles('''#include <stdint.h>
-+if cc.links('''#include <stdint.h>
-                   int main() {
-                     struct {
-                       uint64_t *v;
-@@ -1119,26 +1119,9 @@ if cc.compiles('''#include <stdint.h>
-                            (int)__atomic_add_fetch(x.v, (uint64_t)1, __ATOMIC_ACQ_REL);
- 
-                   }''',
-+	       dependencies : dep_atomic,
-                name : 'GCC atomic builtins')
-   pre_args += '-DUSE_GCC_ATOMIC_BUILTINS'
--
--  # Not all atomic calls can be turned into lock-free instructions, in which
--  # GCC will make calls into the libatomic library. Check whether we need to
--  # link with -latomic.
--  #
--  # This can happen for 64-bit atomic operations on 32-bit architectures such
--  # as ARM.
--  if not cc.links('''#include <stdint.h>
--                     int main() {
--                       struct {
--                         uint64_t *v;
--                       } x;
--                       return (int)__atomic_load_n(x.v, __ATOMIC_ACQUIRE) &
--                              (int)__atomic_add_fetch(x.v, (uint64_t)1, __ATOMIC_ACQ_REL);
--                     }''',
--                  name : 'GCC atomic builtins required -latomic')
--    dep_atomic = cc.find_library('atomic')
--  endif
- endif
- if not cc.links('''#include <stdint.h>
-                    uint64_t v;
+@@ -161,7 +161,7 @@ if dri_drivers.contains('auto')
+   if system_has_kms_drm
+     # TODO: PPC, Sparc
+     if ['x86', 'x86_64'].contains(host_machine.cpu_family())
+-      dri_drivers = ['i915', 'i965', 'r100', 'r200', 'nouveau']
++      dri_drivers = ['i915', 'i965', 'r100', 'r200']
+     elif ['arm', 'aarch64'].contains(host_machine.cpu_family())
+       dri_drivers = []
+     elif ['mips', 'mips64'].contains(host_machine.cpu_family())
+@@ -193,7 +193,7 @@ if gallium_drivers.contains('auto')
+     # TODO: PPC, Sparc
+     if ['x86', 'x86_64'].contains(host_machine.cpu_family())
+       gallium_drivers = [
+-        'r300', 'r600', 'radeonsi', 'nouveau', 'virgl', 'svga', 'swrast',
++        'r300', 'r600', 'radeonsi', 'virgl', 'svga', 'swrast',
+         'iris'
+       ]
+     elif ['arm', 'aarch64'].contains(host_machine.cpu_family())
+@@ -1041,7 +1041,6 @@ else
+     '-Werror=incompatible-pointer-types',
+     '-Werror=int-conversion',
+     '-Wimplicit-fallthrough',
+-    '-Werror=thread-safety',
+     '-Wno-missing-field-initializers',
+     '-Wno-format-truncation',
+     '-fno-math-errno',

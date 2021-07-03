@@ -2,7 +2,6 @@
 
 PORTNAME=	mesa-libs
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
@@ -39,15 +38,15 @@ MESON_ARGS+=	-Dgallium-drivers="" \
 		-Dgallium-xa=disabled \
 		-Dgallium-nine=false \
 		-Dgallium-clover=disabled \
-		-Dosmesa=none \
+		-Dosmesa=false \
 		-Dtools="" \
 		-Degl=enabled \
 		-Dgbm=enabled \
 		-Dvulkan-drivers="" \
 		-Dglvnd=true \
 		-Dprefer-iris=true
-# Building EGL and GBM requires a dri driver so add swrast
-MESON_ARGS+=	-Ddri-drivers="swrast"
+# Building EGL and GBM requires a dri driver so add r100
+MESON_ARGS+=	-Ddri-drivers="r100"
 
 .if ${PORT_OPTIONS:MPLATFORM_X11}
 MESA_PLATFORMS+=	x11

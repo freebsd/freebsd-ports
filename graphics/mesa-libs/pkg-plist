@@ -1,39 +1,12 @@
 etc/libmap.d/mesa.conf
-@comment include/EGL/egl.h
-@comment include/EGL/eglext.h
 include/EGL/eglextchromium.h
 include/EGL/eglmesaext.h
-@comment include/EGL/eglplatform.h
-@comment include/GL/gl.h
-@comment include/GL/glcorearb.h
-@comment include/GL/glext.h
-%%GLX%%@comment include/GL/glx.h
-%%GLX%%@comment include/GL/glxext.h
 @comment include/GL/internal/dri_interface.h
-@comment include/GLES/egl.h
-@comment include/GLES/gl.h
-@comment include/GLES/glext.h
-@comment include/GLES/glplatform.h
-@comment include/GLES2/gl2.h
-@comment include/GLES2/gl2ext.h
-@comment include/GLES2/gl2platform.h
-@comment include/GLES3/gl3.h
-@comment include/GLES3/gl31.h
-@comment include/GLES3/gl32.h
-@comment include/GLES3/gl3ext.h
-@comment include/GLES3/gl3platform.h
-@comment include/KHR/khrplatform.h
 include/gbm.h
-@comment lib/dri/swrast_dri.so
+@comment lib/dri/radeon_dri.so
 lib/libEGL_mesa.so
 lib/libEGL_mesa.so.0
 lib/libEGL_mesa.so.0.0.0
-@comment lib/libGLESv1_CM.so
-@comment lib/libGLESv1_CM.so.1
-@comment lib/libGLESv1_CM.so.1.1.0
-@comment lib/libGLESv2.so
-@comment lib/libGLESv2.so.2
-@comment lib/libGLESv2.so.2.0.0
 %%GLX%%lib/libGLX_mesa.so
 %%GLX%%lib/libGLX_mesa.so.0
 %%GLX%%lib/libGLX_mesa.so.0.0.0
@@ -44,10 +17,6 @@ lib/libglapi.so
 lib/libglapi.so.0
 lib/libglapi.so.0.0.0
 @comment libdata/pkgconfig/dri.pc
-@comment libdata/pkgconfig/egl.pc
 libdata/pkgconfig/gbm.pc
-%%GLX%%@comment libdata/pkgconfig/gl.pc
-@comment libdata/pkgconfig/glesv1_cm.pc
-@comment libdata/pkgconfig/glesv2.pc
 @comment share/drirc.d/00-mesa-defaults.conf
 share/glvnd/egl_vendor.d/50_mesa.json

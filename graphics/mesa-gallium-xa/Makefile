@@ -2,7 +2,6 @@
 
 PORTNAME=	mesa-gallium-xa
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	Mesa Gallium XA state tracker
@@ -33,7 +32,7 @@ MESON_ARGS+=	-Ddri-drivers="" \
 		-Dglx=disabled \
 		-Dopengl=false \
 		-Dshared-glapi=disabled \
-		-Dosmesa=none
+		-Dosmesa=false
 
 LDFLAGS_i386=		-Wl,-znotext
 
