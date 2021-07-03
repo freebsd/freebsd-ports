@@ -1,4 +1,3 @@
-@postunexec echo "If you are removing dovecot permanently, you should 'rm -rf /var/db/dovecot' to clear out any remaining data."
 %%DATADIR%%/stopwords/stopwords_da.txt
 %%DATADIR%%/stopwords/stopwords_de.txt
 %%DATADIR%%/stopwords/stopwords_en.txt
@@ -18,6 +17,7 @@
 %%ETCDIR%%/example-config/conf.d/10-logging.conf
 %%ETCDIR%%/example-config/conf.d/10-mail.conf
 %%ETCDIR%%/example-config/conf.d/10-master.conf
+%%ETCDIR%%/example-config/conf.d/10-metrics.conf
 %%ETCDIR%%/example-config/conf.d/10-ssl.conf
 %%ETCDIR%%/example-config/conf.d/15-lda.conf
 %%ETCDIR%%/example-config/conf.d/15-mailboxes.conf
@@ -54,10 +54,23 @@
 %%LUA%%lib/dovecot/lib01_mail_lua_plugin.so
 %%LUA%%lib/dovecot/lib22_push_notification_lua_plugin.a
 %%LUA%%lib/dovecot/lib22_push_notification_lua_plugin.so
+%%LUA%%lib/dovecot/libdovecot-lua.a
+%%LUA%%lib/dovecot/libdovecot-lua.so
+%%LUA%%lib/dovecot/libdovecot-lua.so.0
+%%LUA%%lib/dovecot/libdovecot-lua.so.0.0.0
+%%LUA%%lib/dovecot/libdovecot-storage-lua.a
+%%LUA%%lib/dovecot/libdovecot-storage-lua.so
+%%LUA%%lib/dovecot/libdovecot-storage-lua.so.0
+%%LUA%%lib/dovecot/libdovecot-storage-lua.so.0.0.0
+%%LUA%%include/dovecot/dict-lua-private.h
+%%LUA%%include/dovecot/dict-lua.h
+%%LUA%%include/dovecot/dlua-compat.h
 %%LUA%%include/dovecot/dlua-script-private.h
 %%LUA%%include/dovecot/dlua-script.h
+%%LUA%%include/dovecot/dlua-wrapper.h
 %%LUA%%include/dovecot/mail-lua-plugin.h
 %%LUA%%include/dovecot/mail-storage-lua.h
+%%LUA%%include/dovecot/mail-storage-lua-private.h
 %%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.a
 %%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.so
 %%LUCENE%%lib/dovecot/lib21_fts_lucene_plugin.a
@@ -122,9 +135,8 @@ include/dovecot/config-parser.h
 include/dovecot/config-request.h
 include/dovecot/config.h
 include/dovecot/connection.h
+include/dovecot/cpu-limit.h
 include/dovecot/crc32.h
-include/dovecot/cydir-storage.h
-include/dovecot/cydir-sync.h
 include/dovecot/data-stack.h
 include/dovecot/db-checkpassword.h
 include/dovecot/db-dict.h
@@ -205,6 +217,7 @@ include/dovecot/fts-tokenizer-generic-private.h
 include/dovecot/fts-tokenizer-private.h
 include/dovecot/fts-tokenizer.h
 include/dovecot/fts-user.h
+include/dovecot/fuzzer.h
 include/dovecot/guid.h
 include/dovecot/hash-decl.h
 include/dovecot/hash-format.h
@@ -639,6 +652,7 @@ include/dovecot/submission-settings.h
 include/dovecot/subscription-file.h
 include/dovecot/syslog-util.h
 include/dovecot/test-common.h
+include/dovecot/test-mail-storage-common.h
 include/dovecot/test-subprocess.h
 include/dovecot/time-util.h
 include/dovecot/unichar.h
@@ -661,8 +675,6 @@ lib/dovecot/auth/libauthdb_imap.a
 lib/dovecot/auth/libauthdb_imap.so
 lib/dovecot/doveadm/lib10_doveadm_acl_plugin.a
 lib/dovecot/doveadm/lib10_doveadm_acl_plugin.so
-lib/dovecot/doveadm/lib10_doveadm_expire_plugin.a
-lib/dovecot/doveadm/lib10_doveadm_expire_plugin.so
 lib/dovecot/doveadm/lib10_doveadm_quota_plugin.a
 lib/dovecot/doveadm/lib10_doveadm_quota_plugin.so
 lib/dovecot/doveadm/lib20_doveadm_fts_plugin.a
@@ -680,14 +692,10 @@ lib/dovecot/lib05_mail_crypt_acl_plugin.a
 lib/dovecot/lib05_mail_crypt_acl_plugin.so
 lib/dovecot/lib05_pop3_migration_plugin.a
 lib/dovecot/lib05_pop3_migration_plugin.so
-lib/dovecot/lib05_snarf_plugin.a
-lib/dovecot/lib05_snarf_plugin.so
 lib/dovecot/lib10_last_login_plugin.a
 lib/dovecot/lib10_last_login_plugin.so
 lib/dovecot/lib10_mail_crypt_plugin.a
 lib/dovecot/lib10_mail_crypt_plugin.so
-lib/dovecot/lib10_mail_filter_plugin.a
-lib/dovecot/lib10_mail_filter_plugin.so
 lib/dovecot/lib10_quota_plugin.a
 lib/dovecot/lib10_quota_plugin.so
 lib/dovecot/lib11_imap_quota_plugin.a
@@ -696,12 +704,8 @@ lib/dovecot/lib11_trash_plugin.a
 lib/dovecot/lib11_trash_plugin.so
 lib/dovecot/lib15_notify_plugin.a
 lib/dovecot/lib15_notify_plugin.so
-lib/dovecot/lib20_autocreate_plugin.a
-lib/dovecot/lib20_autocreate_plugin.so
 lib/dovecot/lib20_charset_alias_plugin.a
 lib/dovecot/lib20_charset_alias_plugin.so
-lib/dovecot/lib20_expire_plugin.a
-lib/dovecot/lib20_expire_plugin.so
 lib/dovecot/lib20_fts_plugin.a
 lib/dovecot/lib20_fts_plugin.so
 lib/dovecot/lib20_listescape_plugin.a
