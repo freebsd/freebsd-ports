@@ -410,7 +410,7 @@ fi
 gitlog=$(mktemp -t gitlog)
 gitrmlist=$(mktemp -t gitrmlist)
 
-echo "*/*: Remove expired ports:" > ${gitlog}
+echo "cleanup: Remove expired ports:" > ${gitlog}
 echo "" >> ${gitlog}
 
 for catport in $* ; do
