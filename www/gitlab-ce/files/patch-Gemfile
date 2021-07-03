@@ -17,6 +17,15 @@
  gem 'graphlient', '~> 0.4.0' # Used by BulkImport feature (group::import)
  
  gem 'hashie'
+@@ -286,7 +285,7 @@ gem 'gitlab_chronic_duration', '~> 0.10.6.2'
+ gem 'rack-proxy', '~> 0.6.0'
+ 
+ gem 'sassc-rails', '~> 2.1.0'
+-gem 'autoprefixer-rails', '10.2.0.0'
++gem 'autoprefixer-rails', '10.2.5.1'
+ gem 'terser', '1.0.2'
+ 
+ gem 'addressable', '~> 2.7'
 @@ -309,7 +308,7 @@ gem 'sentry-raven', '~> 3.1'
  # and https://github.com/pganalyze/pg_query/pull/213 are
  # released. gitlab-labkit will need to be updated to use the pg_query
