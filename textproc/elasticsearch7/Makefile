@@ -1,11 +1,11 @@
 # Created by: Tom Judge <tj@FreeBSD.org>
 
 PORTNAME=	elasticsearch
-PORTVERSION=	7.10.1
+PORTVERSION=	7.13.2
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/
 PKGNAMESUFFIX=	7
-DISTNAME=	${PORTNAME}-${PORTVERSION}-no-jdk-darwin-x86_64
+DISTNAME=	${PORTNAME}-${PORTVERSION}-darwin-x86_64
 
 MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Full-text search engine for Java
@@ -70,6 +70,7 @@ post-patch:
 	${RM} ${WRKSRC}/lib/jna-*.jar
 # ML plugin not supported on FreeBSD
 	${RM} -rf ${WRKSRC}/modules/x-pack/x-pack-ml
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/bin/elasticsearch-env
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/elasticsearch
@@ -88,7 +89,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/elasticsearch
 	${INSTALL} -lrs ${STAGEDIR}${ETCDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/config
-	${LN} -s ${JAVASHAREDIR}/classes/jna.jar ${STAGEDIR}${PREFIX}/lib/elasticsearch/lib/jna.jar
+	${LN} -s ${JAVASHAREDIR}/classes/jna.jar ${STAGEDIR}${PREFIX}/lib/elasticsearch/lib/jna-0.0.0.jar
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

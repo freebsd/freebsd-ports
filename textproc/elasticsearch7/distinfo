@@ -1,3 +1,3 @@
-TIMESTAMP = 1609277185
-SHA256 (elasticsearch-7.10.1-no-jdk-darwin-x86_64.tar.gz) = 269189ce606b071a30724fa678cca42dcbdea88134770070d043927b2a748dac
-SIZE (elasticsearch-7.10.1-no-jdk-darwin-x86_64.tar.gz) = 162046388
+TIMESTAMP = 1625521166
+SHA256 (elasticsearch-7.13.2-darwin-x86_64.tar.gz) = e53aa58cc96759cf4c294ea1cc9dbf29008ad7e8ffd32e2030b315dea28758a0
+SIZE (elasticsearch-7.13.2-darwin-x86_64.tar.gz) = 319111204

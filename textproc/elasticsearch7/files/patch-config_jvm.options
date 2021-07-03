@@ -1,6 +1,6 @@
---- config/jvm.options.orig	2020-01-15 04:09:47 UTC
+--- config/jvm.options.orig	2021-06-10 20:59:11 UTC
 +++ config/jvm.options
-@@ -67,10 +67,10 @@
+@@ -83,10 +83,10 @@
  8:-XX:+PrintGCDateStamps
  8:-XX:+PrintTenuringDistribution
  8:-XX:+PrintGCApplicationStoppedTime
