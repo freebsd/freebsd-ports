@@ -141,6 +141,7 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Li_Zuo_JPCA2020.snapparam
 %%DATADIR%%/potentials/MOH.nb3b.harmonic
 %%DATADIR%%/potentials/Mg_mm.eam.fs
+%%DATADIR%%/potentials/MgAl.rann
 %%DATADIR%%/potentials/Mo5.2.mgpt.README
 %%DATADIR%%/potentials/Mo5.2.mgpt.parmin
 %%DATADIR%%/potentials/Mo5.2.mgpt.potin
@@ -155,6 +156,8 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Mo_Zuo_JPCA2020.snapparam
 %%DATADIR%%/potentials/Ni.adp
 %%DATADIR%%/potentials/Ni.meam
+%%DATADIR%%/potentials/Ni_Mo.mliap.descriptor
+%%DATADIR%%/potentials/Ni_Mo.mliap.model
 %%DATADIR%%/potentials/NiAlH_jea.eam.alloy
 %%DATADIR%%/potentials/NiAlH_jea.eam.fs
 %%DATADIR%%/potentials/Ni_Zuo_JPCA2020.quadratic.snap
@@ -173,6 +176,8 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/README.reax
 %%DATADIR%%/potentials/Si.b.meam.sw.spline
 %%DATADIR%%/potentials/Si.edip
+%%DATADIR%%/potentials/Si.nn.mliap.descriptor
+%%DATADIR%%/potentials/Si.nn.mliap.model
 %%DATADIR%%/potentials/Si.sw
 %%DATADIR%%/potentials/Si.tersoff
 %%DATADIR%%/potentials/Si.tersoff.mod
@@ -218,7 +223,9 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Ta6.8x.mgpt.potin
 %%DATADIR%%/potentials/Ti.meam.spline
 %%DATADIR%%/potentials/Ti.meam.sw.spline
+%%DATADIR%%/potentials/Ti.rann
 %%DATADIR%%/potentials/TiO.meam.spline
+%%DATADIR%%/potentials/TiZr_2.rann
 %%DATADIR%%/potentials/TlBr_msw.poly
 %%DATADIR%%/potentials/V6.1.mgpt.README
 %%DATADIR%%/potentials/V6.1.mgpt.parmin
@@ -240,6 +247,8 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/W_2940_2017_2_He_JW2013.snap
 %%DATADIR%%/potentials/W_He_JW2013.table
 %%DATADIR%%/potentials/W_zhou.eam.alloy
+%%DATADIR%%/potentials/Zn.rann
+%%DATADIR%%/potentials/Zr.rann
 %%DATADIR%%/potentials/Zr_mm.eam.fs
 %%DATADIR%%/potentials/charmm22.cmap
 %%DATADIR%%/potentials/charmm36.cmap
