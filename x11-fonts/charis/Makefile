@@ -1,7 +1,7 @@
 # Created by: bf <bf@FreeBSD.org>
 
 PORTNAME=	CharisSIL
-PORTVERSION=	6.000
+PORTVERSION=	6.001
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://software.sil.org/downloads/r/charis/
 
