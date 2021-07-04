@@ -1,3 +1,59 @@
+  <vuln vid="d49f86ab-d9c7-11eb-a200-00155d01f201">
+    <topic>Exiv2 -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>exiv2</name>
+	<range><lt>0.27.4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Exiv2 teams reports:</p>
+	<blockquote cite="https://github.com/Exiv2/exiv2/security/advisories">
+	  <p>Multiple vulnerabilities covering buffer overflows, out-of-bounds,
+	    read of uninitialized memory and denial of serivce. The heap
+	    overflow is triggered when Exiv2 is used to read the metadata of
+	    a crafted image file. An attacker could potentially exploit the
+	    vulnerability to gain code execution, if they can trick the victim
+	    into running Exiv2 on a crafted image file. The out-of-bounds read
+	    is triggered when Exiv2 is used to write metadata into a crafted
+	    image file. An attacker could potentially exploit the vulnerability
+	    to cause a denial of service by crashing Exiv2, if they can trick
+	    the victim into running Exiv2 on a crafted image file. The read of
+	    uninitialized memory is triggered when Exiv2 is used to read the
+	    metadata of a crafted image file. An attacker could potentially
+	    exploit the vulnerability to leak a few bytes of stack memory, if
+	    they can trick the victim into running Exiv2 on a crafted image
+	    file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-29457</cvename>
+      <url>https://github.com/Exiv2/exiv2/security/advisories/GHSA-v74w-h496-cgqm</url>
+      <cvename>CVE-2021-29458</cvename>
+      <url>https://github.com/Exiv2/exiv2/security/advisories/GHSA-57jj-75fm-9rq5</url>
+      <cvename>CVE-2021-29463</cvename>
+      <url>https://github.com/Exiv2/exiv2/security/advisories/GHSA-5p8g-9xf3-gfrr</url>
+      <cvename>CVE-2021-29464</cvename>
+      <url>https://github.com/Exiv2/exiv2/security/advisories/GHSA-jgm9-5fw5-pw9p</url>
+      <cvename>CVE-2021-29470</cvename>
+      <url>https://github.com/Exiv2/exiv2/security/advisories/GHSA-8949-hhfh-j7rj</url>
+      <cvename>CVE-2021-29473</cvename>
+      <url>https://github.com/Exiv2/exiv2/security/advisories/GHSA-7569-phvm-vwc2</url>
+      <cvename>CVE-2021-29623</cvename>
+      <url>https://github.com/Exiv2/exiv2/security/advisories/GHSA-6253-qjwm-3q4v</url>
+      <cvename>CVE-2021-32617</cvename>
+      <url>https://github.com/Exiv2/exiv2/security/advisories/GHSA-w8mv-g8qq-36mj</url>
+      <cvename>CVE-2021-3482</cvename>
+      <url>https://github.com/Exiv2/exiv2/security/advisories/GHSA-9jp9-m3fv-2vg9</url>
+    </references>
+    <dates>
+      <discovery>2021-04-25</discovery>
+      <entry>2021-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f2596f27-db4c-11eb-8bc6-c556d71493c9">
     <topic>openexr v3.0.5 -- fixes miscellaneous security issues</topic>
     <affects>
