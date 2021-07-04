@@ -1,10 +1,10 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	calendar
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
+MASTER_SITES=	https://github.com/${PKGNAMEPREFIX}releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}
