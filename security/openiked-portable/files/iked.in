@@ -33,6 +33,7 @@ load_rc_config $name
 
 command=%%PREFIX%%/sbin/iked
 start_precmd=iked_precmd
+required_modules="ipsec"
 
 iked_config=%%PREFIX%%/etc/iked.conf
 iked_rootdir=%%PREFIX%%/etc/iked
