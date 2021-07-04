@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	numix-icon-theme-circle
-DISTVERSION=	21.05.31
+DISTVERSION=	21.07.01
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
