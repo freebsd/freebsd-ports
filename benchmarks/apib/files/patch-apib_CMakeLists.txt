@@ -1,0 +1,28 @@
+--- apib/CMakeLists.txt.orig	2020-04-15 05:06:21 UTC
++++ apib/CMakeLists.txt
+@@ -22,7 +22,7 @@ target_link_libraries(common PUBLIC -lhttp_parser
+ 
+ add_library(
+   cpu OBJECT
+-  apib_cpu_generic.cc
++  apib_cpu_bsd.cc
+ )
+ target_link_libraries(cpu PUBLIC common)
+ 
+@@ -44,7 +44,7 @@ add_library(
+   socket.h
+   tlssocket.h
+ )
+-target_link_libraries(io PUBLIC common base64 -lev -lssl.1.1 -lcrypto.1.1)
++target_link_libraries(io PUBLIC common base64 -lev -lpthread -lssl -lcrypto)
+ 
+ add_library(
+   mon_lib OBJECT
+@@ -65,3 +65,7 @@ add_executable(
+ )
+ target_link_libraries(apibmon mon_lib io cpu common base64)
+ 
++install(TARGETS
++  apib apibmon
++  DESTINATION bin
++)
