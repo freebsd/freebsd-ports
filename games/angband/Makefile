@@ -1,12 +1,10 @@
 # Created by: Matthew Hunt <mph@pobox.com>
 
 PORTNAME=	angband
-PORTVERSION=	4.1.3
+DISTVERSION=	4.2.2
+DISTNAME=	Angband-${DISTVERSION}
 CATEGORIES=	games
-MASTER_SITES=	http://rephial.org/downloads/${PORTVERSION:R}/
-
-PATCH_SITES=	https://github.com/angband/angband/commit/
-PATCHFILES=	8702eba5c070a157dfc8e9d7c2106f679b7845c2.patch:-p1
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Rogue-like game with color, X11 support
@@ -19,12 +17,17 @@ CONFIGURE_ENV=	ac_cv_path_NCURSES_CONFIG=${TRUE}
 CONFIGURE_ARGS=	--localstatedir=/var
 
 CPPFLAGS+=	-I${NCURSESINC}
-LDFLAGS+=	-L${NCURSESLIB} -lncursesw
+LDFLAGS+=	-Wl,--Bstatic -L${NCURSESLIB} -lncursesw -Wl,--Bdynamic
 
 OPTIONS_DEFINE=	SDL X11 DOCS
 OPTIONS_DEFAULT=X11
 
-DOCS_BUILD_DEPENDS=	rst2html:textproc/py-docutils
+# The docs as shipped want to use theme "better", but that's
+# not packaged in ports (yet); use rtd instead because it is.
+DOCS_USES=		python:build
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
+
 SDL_USES=		sdl
 SDL_USE=		SDL=image,mixer,ttf,sdl
 SDL_CONFIGURE_ENABLE=	sdl
@@ -41,6 +44,14 @@ post-patch:
 		's|.SILENT:||' ${WRKSRC}/mk/buildsys.mk.in
 	@${REINPLACE_CMD} -e \
 		's|-O0||' ${WRKSRC}/src/Makefile
+
+post-build-DOCS-on:
+	# Needs gmake, although we could run sphinx directly
+	cd ${WRKSRC}/docs && ${MAKE_CMD} singlehtml
+
+post-stage-DOCS-on:
+	mkdir -p ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/_build/singlehtml/index.html ${STAGEDIR}${DOCSDIR}/index.html
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/angband

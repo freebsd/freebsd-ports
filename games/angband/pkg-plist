@@ -15,6 +15,7 @@
 %%ETCDIR%%/gamedata/blow_methods.txt
 %%ETCDIR%%/gamedata/body.txt
 %%ETCDIR%%/gamedata/brand.txt
+%%ETCDIR%%/gamedata/chest_trap.txt
 %%ETCDIR%%/gamedata/class.txt
 %%ETCDIR%%/gamedata/constants.txt
 %%ETCDIR%%/gamedata/curse.txt
@@ -29,22 +30,27 @@
 %%ETCDIR%%/gamedata/names.txt
 %%ETCDIR%%/gamedata/object.txt
 %%ETCDIR%%/gamedata/object_base.txt
-%%ETCDIR%%/gamedata/object_power.txt
 %%ETCDIR%%/gamedata/object_property.txt
 %%ETCDIR%%/gamedata/p_race.txt
 %%ETCDIR%%/gamedata/pain.txt
 %%ETCDIR%%/gamedata/pit.txt
+%%ETCDIR%%/gamedata/player_property.txt
 %%ETCDIR%%/gamedata/player_timed.txt
 %%ETCDIR%%/gamedata/projection.txt
 %%ETCDIR%%/gamedata/quest.txt
 %%ETCDIR%%/gamedata/realm.txt
 %%ETCDIR%%/gamedata/room_template.txt
+%%ETCDIR%%/gamedata/shape.txt
 %%ETCDIR%%/gamedata/slay.txt
 %%ETCDIR%%/gamedata/store.txt
 %%ETCDIR%%/gamedata/summon.txt
 %%ETCDIR%%/gamedata/terrain.txt
 %%ETCDIR%%/gamedata/trap.txt
+%%ETCDIR%%/gamedata/ui_entry.txt
+%%ETCDIR%%/gamedata/ui_entry_base.txt
+%%ETCDIR%%/gamedata/ui_entry_renderer.txt
 %%ETCDIR%%/gamedata/vault.txt
+%%ETCDIR%%/gamedata/visuals.txt
 %%ETCDIR%%/gamedata/world.txt
 %%DATADIR%%/fonts/10x14x.fon
 %%DATADIR%%/fonts/10x14xb.fon
@@ -68,20 +74,9 @@
 %%DATADIR%%/fonts/8x8xb.fon
 %%DATADIR%%/fonts/9x15x.fon
 %%DATADIR%%/fonts/9x15xb.fon
-%%DATADIR%%/help/attack.txt
-%%DATADIR%%/help/birth.txt
-%%DATADIR%%/help/command.txt
-%%DATADIR%%/help/copying.txt
-%%DATADIR%%/help/customize.txt
-%%DATADIR%%/help/debug.txt
-%%DATADIR%%/help/dungeon.txt
-%%DATADIR%%/help/general.txt
-%%DATADIR%%/help/help.hlp
+%%DATADIR%%/help/commands.txt
 %%DATADIR%%/help/index.txt
-%%DATADIR%%/help/modifying.txt
-%%DATADIR%%/help/option.txt
-%%DATADIR%%/help/playing.txt
-%%DATADIR%%/help/version.txt
+%%DATADIR%%/help/symbols.txt
 %%DATADIR%%/icons/angband-sdl.desktop
 %%DATADIR%%/icons/angband-x11.desktop
 %%DATADIR%%/icons/att-128.png
@@ -325,11 +320,12 @@
 %%DATADIR%%/tiles/old/xtra-xxx.prf
 %%DATADIR%%/tiles/shockbolt/64x64.png
 %%DATADIR%%/tiles/shockbolt/flvr-shb.prf
-%%DATADIR%%/tiles/shockbolt/graf-shb.prf
+%%DATADIR%%/tiles/shockbolt/graf-shb-dark.prf
+%%DATADIR%%/tiles/shockbolt/graf-shb-light.prf
 %%DATADIR%%/tiles/shockbolt/xtra-shb.prf
 %%DATADIR%%/user/info/dummy.txt
 %%DATADIR%%/user/info/user.hlp
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
 @dir(,games,775) %%DATADIR%%/user
 @dir(,games,775) %%DATADIR%%/user/info
 @dir(,games,775) %%DATADIR%%/user/save
