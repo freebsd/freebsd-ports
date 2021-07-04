@@ -1,3 +1,5 @@
 TIMESTAMP = 1625130076
 SHA256 (PipeWire-pipewire-0.3.31_GH0.tar.gz) = 2fec0eb47dbfcad51fb8bb3d59c26fe57e09204d63c9d2776070dbdc08aaaaae
 SIZE (PipeWire-pipewire-0.3.31_GH0.tar.gz) = 1594284
+SHA256 (91988acb6b6a.patch) = 517d04240016f3e34042f5c10c57138da93c07440fa74987aff1fb9fb8f1f13e
+SIZE (91988acb6b6a.patch) = 2173
