@@ -6,6 +6,7 @@
 %%DATADIR%%/logManager
 %%DATADIR%%/startdb
 %%DATADIR%%/stopdb
+%%DATADIR%%/tsSpace
 bin/cego
 bin/cgadm
 bin/cgblow
