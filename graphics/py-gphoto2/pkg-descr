@@ -1,3 +1,6 @@
-python-gphoto2 provides Python interface to libgphoto2.
+python-gphoto2 is a comprehensive Python interface (or binding) to
+libgphoto2.  It is built using SWIG to automatically generate the
+interface code.  This gives direct access to nearly all available
+libgphoto2 functions, but sometimes in a rather un-Pythonic manner.
 
 WWW: https://pypi.org/project/gphoto2/
