@@ -1,9 +1,9 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	circles
-PORTVERSION=	0.21.2
+PORTVERSION=	0.21.3
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/${PKGNAMEPREFIX}releases/${PORTNAME}/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}
