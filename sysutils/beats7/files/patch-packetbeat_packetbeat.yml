@@ -1,4 +1,4 @@
---- packetbeat/packetbeat.yml.orig	2020-08-11 15:19:45 UTC
+--- packetbeat/packetbeat.yml.orig	2021-06-10 16:57:09 UTC
 +++ packetbeat/packetbeat.yml
 @@ -10,8 +10,10 @@
  # =============================== Network device ===============================
@@ -11,5 +11,5 @@
 +# to your preferred device
 +packetbeat.interfaces.device: em0
  
- # =================================== Flows ====================================
- 
+ # The network CIDR blocks that are considered "internal" networks for
+ # the purpose of network perimeter boundary classification. The valid

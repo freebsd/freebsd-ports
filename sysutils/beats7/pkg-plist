@@ -42,6 +42,7 @@
 %%FILEBEAT%%%%ETCDIR%%/filebeat.modules.d/nats.yml.disabled
 %%FILEBEAT%%%%ETCDIR%%/filebeat.modules.d/nginx.yml.disabled
 %%FILEBEAT%%%%ETCDIR%%/filebeat.modules.d/osquery.yml.disabled
+%%FILEBEAT%%%%ETCDIR%%/filebeat.modules.d/pensando.yml.disabled
 %%FILEBEAT%%%%ETCDIR%%/filebeat.modules.d/postgresql.yml.disabled
 %%FILEBEAT%%%%ETCDIR%%/filebeat.modules.d/redis.yml.disabled
 %%FILEBEAT%%%%ETCDIR%%/filebeat.modules.d/santa.yml.disabled
@@ -77,6 +78,7 @@
 %%FILEBEAT%%%%DATADIR%%/filebeat/kibana/7/dashboard/filebeat-santa-log-overview.json
 %%FILEBEAT%%%%DATADIR%%/filebeat/kibana/7/dashboard/osquery-compliance.json
 %%FILEBEAT%%%%DATADIR%%/filebeat/kibana/7/dashboard/osquery-rootkit.json
+%%FILEBEAT%%%%DATADIR%%/filebeat/kibana/7/dashboard/pensando-dfw-overview.json
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/apache/_meta/config.reference.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/apache/_meta/config.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/apache/_meta/docs.asciidoc
@@ -99,6 +101,7 @@
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/auditd/_meta/kibana/7/dashboard/Filebeat-auditd.json
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/auditd/log/_meta/fields.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/auditd/log/config/log.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/auditd/log/ingest/gen-ecs-mappings.py
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/auditd/log/ingest/pipeline.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/auditd/log/manifest.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/auditd/module.yml
@@ -189,6 +192,10 @@
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/kibana/_meta/config.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/kibana/_meta/docs.asciidoc
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/kibana/_meta/fields.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/kibana/audit/config/audit.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/kibana/audit/ingest/pipeline-json.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/kibana/audit/ingest/pipeline.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/kibana/audit/manifest.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/kibana/log/_meta/fields.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/kibana/log/config/log.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/kibana/log/ingest/pipeline.yml
@@ -278,6 +285,15 @@
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/osquery/result/config/result.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/osquery/result/ingest/pipeline.json
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/osquery/result/manifest.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/pensando/_meta/config.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/pensando/_meta/docs.asciidoc
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/pensando/_meta/fields.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/pensando/_meta/kibana/7/dashboard/pensando-dfw-overview.json
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/pensando/dfw/_meta/fields.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/pensando/dfw/config/dfw.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/pensando/dfw/ingest/pipeline.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/pensando/dfw/manifest.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/pensando/module.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/postgresql/_meta/config.reference.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/postgresql/_meta/config.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/postgresql/_meta/docs.asciidoc
@@ -287,6 +303,8 @@
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/postgresql/log/_meta/fields.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/postgresql/log/config/log.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/postgresql/log/ingest/pipeline.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/postgresql/log/ingest/pipeline-csv.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/postgresql/log/ingest/pipeline-log.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/postgresql/log/manifest.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/postgresql/module.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/redis/_meta/config.reference.yml
@@ -341,6 +359,9 @@
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/traefik/module.yml
 %%FILEBEAT%%@dir /var/db/beats/filebeat
 %%HEARTBEAT%%sbin/heartbeat
+%%HEARTBEAT%%%%ETCDIR%%/heartbeat.monitors.d/sample.http.yml.disabled
+%%HEARTBEAT%%%%ETCDIR%%/heartbeat.monitors.d/sample.icmp.yml.disabled
+%%HEARTBEAT%%%%ETCDIR%%/heartbeat.monitors.d/sample.tcp.yml.disabled
 %%HEARTBEAT%%%%ETCDIR%%/heartbeat.yml.reference
 %%HEARTBEAT%%%%ETCDIR%%/heartbeat.yml.sample
 %%HEARTBEAT%%@dir %%DATADIR%%/heartbeat/kibana
@@ -522,6 +543,7 @@
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/consul/_meta/config.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/consul/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/consul/_meta/fields.yml
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/consul/_meta/supported-versions.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/consul/_meta/kibana/7/dashboard/Metricbeat-consul-overview.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/consul/agent/_meta/data.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/consul/agent/_meta/docs.asciidoc
@@ -995,11 +1017,17 @@
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/_meta/kibana/7/dashboard/Metricbeat-nats-overview.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/_meta/run.sh
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/_meta/supported-versions.yml
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/connection/_meta/data.json
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/connection/_meta/docs.asciidoc
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/connection/_meta/fields.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/connections/_meta/data.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/connections/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/connections/_meta/fields.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/docker-compose.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/module.yml
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/route/_meta/data.json
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/route/_meta/docs.asciidoc
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/route/_meta/fields.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/routes/_meta/data.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/routes/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/nats/routes/_meta/fields.yml
@@ -1042,14 +1070,17 @@
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/_meta/docker-entrypoint-initdb.d/1-create-extension-pg_stat_statements.sql
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/_meta/fields.yml
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/_meta/supported-versions.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/_meta/kibana/7/dashboard/Metricbeat-postgresql-overview.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/activity/_meta/data.json
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/activity/_meta/data_backend.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/activity/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/activity/_meta/fields.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/bgwriter/_meta/data.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/bgwriter/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/bgwriter/_meta/fields.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/database/_meta/data.json
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/database/_meta/data_shared.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/database/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/database/_meta/fields.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/postgresql/docker-compose.yml
@@ -1165,8 +1196,8 @@
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/system/service/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/system/service/_meta/fields.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/system/socket/_meta/data.json
-%%METRICBEAT%%%%DATADIR%%/metricbeat/module/system/socket/_meta/data_inbound.json
-%%METRICBEAT%%%%DATADIR%%/metricbeat/module/system/socket/_meta/data_outbound.json
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/system/socket/_meta/data_egress.json
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/system/socket/_meta/data_ingress.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/system/socket/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/system/socket/_meta/fields.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/system/socket_summary/_meta/docs.asciidoc
@@ -1197,6 +1228,8 @@
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/uwsgi/docker-compose.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/uwsgi/module.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/uwsgi/status/_meta/data.json
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/uwsgi/status/_meta/data_core.json
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/uwsgi/status/_meta/data_worker.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/uwsgi/status/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/uwsgi/status/_meta/fields.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/vsphere/_meta/Dockerfile
@@ -1248,6 +1281,7 @@
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/zookeeper/server/_meta/fields.yml
 %%METRICBEAT%%@dir %%DATADIR%%/metricbeat/module/ceph/mgr
 %%METRICBEAT%%@dir %%DATADIR%%/metricbeat/module/kubernetes/util
+%%METRICBEAT%%@dir %%DATADIR%%/metricbeat/module/nats/util
 %%METRICBEAT%%@dir %%DATADIR%%/metricbeat/module/system/raid/blockinfo
 %%METRICBEAT%%@dir /var/db/beats/metricbeat
 %%PACKETBEAT%%sbin/packetbeat
