@@ -222,8 +222,7 @@ CARGO_FEATURES=	--no-default-features
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
-PORTDOCS=	CHANGELOG.md README.md client-server.md documentation.md \
-		features.md
+PORTDOCS=	CHANGELOG.md README.md documentation.md
 
 OPTIONS_DEFINE=		CLIENT_SERVER CLIPBOARD DOCS
 OPTIONS_DEFAULT=	CLIENT_SERVER CLIPBOARD
