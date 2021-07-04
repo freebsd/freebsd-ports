@@ -382,6 +382,7 @@
     SUBDIR += lean
     SUBDIR += lemon
     SUBDIR += levmar
+    SUBDIR += lib2geom
     SUBDIR += libRmath
     SUBDIR += libbraiding
     SUBDIR += libccd
