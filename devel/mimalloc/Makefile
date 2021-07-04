@@ -2,7 +2,7 @@
 
 PORTNAME=	mimalloc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.2
 CATEGORIES=	devel
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -26,8 +26,6 @@ LDFLAGS_i386+=	-latomic
 PORTSCOUT=	ignore:1
 
 post-install: # workaround for https://github.com/microsoft/mimalloc/issues/398
-	cd ${STAGEDIR}${PREFIX} && \
-		${MV} libmimalloc.a lib && \
-		${RM} mimalloc.o
+	@${RM} ${STAGEDIR}${PREFIX}/lib/mimalloc.o
 
 .include <bsd.port.mk>
