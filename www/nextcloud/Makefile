@@ -1,5 +1,5 @@
 PORTNAME=	nextcloud
-PORTVERSION=	21.0.2
+PORTVERSION=	21.0.3
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/releases/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -11,7 +11,7 @@ LICENSE=	AGPLv3
 
 USES=		cpe gettext-runtime php:flavors,web tar:bzip2
 USE_PHP=	bcmath bz2 ctype curl dom fileinfo filter gd gmp hash iconv \
-		json mbstring pdo posix session simplexml xml xmlreader \
+		json mbstring pcntl pdo posix session simplexml xml xmlreader \
 		xmlwriter xsl zip zlib
 
 NEXTCLOUD_USERNAME?=	${WWWOWN}
@@ -62,6 +62,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/www/${PORTNAME}|${WWWDIR}|;s|/var/log/|/var/log/${PORTNAME}/|' \
 		${WRKSRC}/config/config.documented.php
+	@${RM} ${WRKSRC}/config/config.documented.php.*
 	@${MV} ${WRKSRC}/apps ${WRKSRC}/apps-pkg
 
 do-install:

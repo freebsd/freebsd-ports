@@ -7067,6 +7067,8 @@
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/pl.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/pt_BR.js
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/pt_BR.json
+%%WWWDIR%%/apps-pkg/admin_audit/l10n/pt_PT.js
+%%WWWDIR%%/apps-pkg/admin_audit/l10n/pt_PT.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/ro.js
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/ro.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/ru.js
@@ -7149,6 +7151,8 @@
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/it.json
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/mk.js
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/mk.json
+%%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/my.js
+%%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/my.json
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/nb.js
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/nb.json
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/nl.js
@@ -7602,6 +7606,8 @@
 %%WWWDIR%%/apps-pkg/dashboard/l10n/pt_BR.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/pt_PT.js
 %%WWWDIR%%/apps-pkg/dashboard/l10n/pt_PT.json
+%%WWWDIR%%/apps-pkg/dashboard/l10n/ro.js
+%%WWWDIR%%/apps-pkg/dashboard/l10n/ro.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/ru.js
 %%WWWDIR%%/apps-pkg/dashboard/l10n/ru.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/sc.js
@@ -7616,6 +7622,8 @@
 %%WWWDIR%%/apps-pkg/dashboard/l10n/th.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/tr.js
 %%WWWDIR%%/apps-pkg/dashboard/l10n/tr.json
+%%WWWDIR%%/apps-pkg/dashboard/l10n/uk.js
+%%WWWDIR%%/apps-pkg/dashboard/l10n/uk.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/dashboard/l10n/zh_CN.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/zh_HK.js
@@ -8232,6 +8240,7 @@
 %%WWWDIR%%/apps-pkg/encryption/lib/AppInfo/Application.php
 %%WWWDIR%%/apps-pkg/encryption/lib/Command/DisableMasterKey.php
 %%WWWDIR%%/apps-pkg/encryption/lib/Command/EnableMasterKey.php
+%%WWWDIR%%/apps-pkg/encryption/lib/Command/FixEncryptedVersion.php
 %%WWWDIR%%/apps-pkg/encryption/lib/Command/RecoverUser.php
 %%WWWDIR%%/apps-pkg/encryption/lib/Command/ScanLegacyFormat.php
 %%WWWDIR%%/apps-pkg/encryption/lib/Controller/RecoveryController.php
@@ -8406,6 +8415,8 @@
 %%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/ro.json
 %%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/ru.js
 %%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/ru.json
+%%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/sc.js
+%%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/sc.json
 %%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/sk.js
 %%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/sk.json
 %%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/sk_SK.js
@@ -11056,6 +11067,8 @@
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ro.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ru.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ru.json
+%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/sc.js
+%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/sc.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/si.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/si.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/si_LK.php
@@ -12138,7 +12151,6 @@
 %%WWWDIR%%/apps-pkg/password_policy/lists/list-8.php
 %%WWWDIR%%/apps-pkg/password_policy/lists/list-9.php
 %%WWWDIR%%/apps-pkg/password_policy/templates/settings-admin.php
-%%WWWDIR%%/apps-pkg/photos/.npmignore
 %%WWWDIR%%/apps-pkg/photos/COPYING
 %%WWWDIR%%/apps-pkg/photos/appinfo/info.xml
 %%WWWDIR%%/apps-pkg/photos/appinfo/routes.php
@@ -12500,6 +12512,8 @@
 %%WWWDIR%%/apps-pkg/privacy/l10n/ro.json
 %%WWWDIR%%/apps-pkg/privacy/l10n/ru.js
 %%WWWDIR%%/apps-pkg/privacy/l10n/ru.json
+%%WWWDIR%%/apps-pkg/privacy/l10n/sc.js
+%%WWWDIR%%/apps-pkg/privacy/l10n/sc.json
 %%WWWDIR%%/apps-pkg/privacy/l10n/sk.js
 %%WWWDIR%%/apps-pkg/privacy/l10n/sk.json
 %%WWWDIR%%/apps-pkg/privacy/l10n/sl.js
@@ -12973,8 +12987,8 @@
 %%WWWDIR%%/apps-pkg/settings/js/usersettings.js
 %%WWWDIR%%/apps-pkg/settings/js/vue-settings-admin-security.js
 %%WWWDIR%%/apps-pkg/settings/js/vue-settings-admin-security.js.map
-%%WWWDIR%%/apps-pkg/settings/js/vue-settings-apps-e124b7f066e28c0a9747.js
-%%WWWDIR%%/apps-pkg/settings/js/vue-settings-apps-e124b7f066e28c0a9747.js.map
+%%WWWDIR%%/apps-pkg/settings/js/vue-settings-apps-53fb3e01251182861b2c.js
+%%WWWDIR%%/apps-pkg/settings/js/vue-settings-apps-53fb3e01251182861b2c.js.map
 %%WWWDIR%%/apps-pkg/settings/js/vue-settings-apps-users-management.js
 %%WWWDIR%%/apps-pkg/settings/js/vue-settings-apps-users-management.js.map
 %%WWWDIR%%/apps-pkg/settings/js/vue-settings-nextcloud-pdf.js
@@ -12983,14 +12997,14 @@
 %%WWWDIR%%/apps-pkg/settings/js/vue-settings-personal-security.js.map
 %%WWWDIR%%/apps-pkg/settings/js/vue-settings-personal-webauthn.js
 %%WWWDIR%%/apps-pkg/settings/js/vue-settings-personal-webauthn.js.map
-%%WWWDIR%%/apps-pkg/settings/js/vue-settings-users-0cb1d350c2a52bd76abc.js
-%%WWWDIR%%/apps-pkg/settings/js/vue-settings-users-0cb1d350c2a52bd76abc.js.map
-%%WWWDIR%%/apps-pkg/settings/js/vue-vendors-settings-apps-81be82220502a829059f.js
-%%WWWDIR%%/apps-pkg/settings/js/vue-vendors-settings-apps-81be82220502a829059f.js.map
-%%WWWDIR%%/apps-pkg/settings/js/vue-vendors-settings-apps-settings-users-31e348f3f85eab57f651.js
-%%WWWDIR%%/apps-pkg/settings/js/vue-vendors-settings-apps-settings-users-31e348f3f85eab57f651.js.map
-%%WWWDIR%%/apps-pkg/settings/js/vue-vendors-settings-users-8deec47e0af24a781687.js
-%%WWWDIR%%/apps-pkg/settings/js/vue-vendors-settings-users-8deec47e0af24a781687.js.map
+%%WWWDIR%%/apps-pkg/settings/js/vue-settings-users-94e0c1953ca75b42b8ee.js
+%%WWWDIR%%/apps-pkg/settings/js/vue-settings-users-94e0c1953ca75b42b8ee.js.map
+%%WWWDIR%%/apps-pkg/settings/js/vue-vendors-settings-apps-22524a229c790977c17e.js
+%%WWWDIR%%/apps-pkg/settings/js/vue-vendors-settings-apps-22524a229c790977c17e.js.map
+%%WWWDIR%%/apps-pkg/settings/js/vue-vendors-settings-apps-settings-users-a17b8f67d4a6673d779c.js
+%%WWWDIR%%/apps-pkg/settings/js/vue-vendors-settings-apps-settings-users-a17b8f67d4a6673d779c.js.map
+%%WWWDIR%%/apps-pkg/settings/js/vue-vendors-settings-users-f490719a1ba1d0f2c8d7.js
+%%WWWDIR%%/apps-pkg/settings/js/vue-vendors-settings-users-f490719a1ba1d0f2c8d7.js.map
 %%WWWDIR%%/apps-pkg/settings/l10n/af.js
 %%WWWDIR%%/apps-pkg/settings/l10n/af.json
 %%WWWDIR%%/apps-pkg/settings/l10n/ar.js
@@ -13384,6 +13398,8 @@
 %%WWWDIR%%/apps-pkg/support/l10n/de.json
 %%WWWDIR%%/apps-pkg/support/l10n/de_DE.js
 %%WWWDIR%%/apps-pkg/support/l10n/de_DE.json
+%%WWWDIR%%/apps-pkg/support/l10n/el.js
+%%WWWDIR%%/apps-pkg/support/l10n/el.json
 %%WWWDIR%%/apps-pkg/support/l10n/es.js
 %%WWWDIR%%/apps-pkg/support/l10n/es.json
 %%WWWDIR%%/apps-pkg/support/l10n/es_AR.js
@@ -13398,6 +13414,8 @@
 %%WWWDIR%%/apps-pkg/support/l10n/gl.json
 %%WWWDIR%%/apps-pkg/support/l10n/he.js
 %%WWWDIR%%/apps-pkg/support/l10n/he.json
+%%WWWDIR%%/apps-pkg/support/l10n/hr.js
+%%WWWDIR%%/apps-pkg/support/l10n/hr.json
 %%WWWDIR%%/apps-pkg/support/l10n/hu.js
 %%WWWDIR%%/apps-pkg/support/l10n/hu.json
 %%WWWDIR%%/apps-pkg/support/l10n/is.js
@@ -13406,6 +13424,8 @@
 %%WWWDIR%%/apps-pkg/support/l10n/it.json
 %%WWWDIR%%/apps-pkg/support/l10n/ja.js
 %%WWWDIR%%/apps-pkg/support/l10n/ja.json
+%%WWWDIR%%/apps-pkg/support/l10n/ko.js
+%%WWWDIR%%/apps-pkg/support/l10n/ko.json
 %%WWWDIR%%/apps-pkg/support/l10n/lt_LT.js
 %%WWWDIR%%/apps-pkg/support/l10n/lt_LT.json
 %%WWWDIR%%/apps-pkg/support/l10n/nb.js
@@ -13422,12 +13442,18 @@
 %%WWWDIR%%/apps-pkg/support/l10n/ru.json
 %%WWWDIR%%/apps-pkg/support/l10n/sk.js
 %%WWWDIR%%/apps-pkg/support/l10n/sk.json
+%%WWWDIR%%/apps-pkg/support/l10n/sl.js
+%%WWWDIR%%/apps-pkg/support/l10n/sl.json
 %%WWWDIR%%/apps-pkg/support/l10n/sr.js
 %%WWWDIR%%/apps-pkg/support/l10n/sr.json
+%%WWWDIR%%/apps-pkg/support/l10n/sv.js
+%%WWWDIR%%/apps-pkg/support/l10n/sv.json
 %%WWWDIR%%/apps-pkg/support/l10n/tr.js
 %%WWWDIR%%/apps-pkg/support/l10n/tr.json
 %%WWWDIR%%/apps-pkg/support/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/support/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/support/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/support/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/support/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/support/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/support/lib/AppInfo/Application.php
@@ -14266,6 +14292,8 @@
 %%WWWDIR%%/apps-pkg/text/js/viewer.js
 %%WWWDIR%%/apps-pkg/text/js/viewer.js.map
 %%WWWDIR%%/apps-pkg/text/krankerl.toml
+%%WWWDIR%%/apps-pkg/text/l10n/af.js
+%%WWWDIR%%/apps-pkg/text/l10n/af.json
 %%WWWDIR%%/apps-pkg/text/l10n/ar.js
 %%WWWDIR%%/apps-pkg/text/l10n/ar.json
 %%WWWDIR%%/apps-pkg/text/l10n/ast.js
@@ -15422,6 +15450,10 @@
 %%WWWDIR%%/apps-pkg/user_status/l10n/pt_BR.json
 %%WWWDIR%%/apps-pkg/user_status/l10n/ru.js
 %%WWWDIR%%/apps-pkg/user_status/l10n/ru.json
+%%WWWDIR%%/apps-pkg/user_status/l10n/sc.js
+%%WWWDIR%%/apps-pkg/user_status/l10n/sc.json
+%%WWWDIR%%/apps-pkg/user_status/l10n/sk.js
+%%WWWDIR%%/apps-pkg/user_status/l10n/sk.json
 %%WWWDIR%%/apps-pkg/user_status/l10n/sl.js
 %%WWWDIR%%/apps-pkg/user_status/l10n/sl.json
 %%WWWDIR%%/apps-pkg/user_status/l10n/sv.js
@@ -15463,7 +15495,6 @@
 %%WWWDIR%%/apps-pkg/user_status/lib/Service/JSDataService.php
 %%WWWDIR%%/apps-pkg/user_status/lib/Service/PredefinedStatusService.php
 %%WWWDIR%%/apps-pkg/user_status/lib/Service/StatusService.php
-%%WWWDIR%%/apps-pkg/viewer/.npmignore
 %%WWWDIR%%/apps-pkg/viewer/COPYING
 %%WWWDIR%%/apps-pkg/viewer/appinfo/info.xml
 %%WWWDIR%%/apps-pkg/viewer/appinfo/signature.json
@@ -15693,6 +15724,8 @@
 %%WWWDIR%%/apps-pkg/weather_status/img/umbrella.svg
 %%WWWDIR%%/apps-pkg/weather_status/js/weather-status.js
 %%WWWDIR%%/apps-pkg/weather_status/js/weather-status.js.map
+%%WWWDIR%%/apps-pkg/weather_status/l10n/af.js
+%%WWWDIR%%/apps-pkg/weather_status/l10n/af.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/ca.js
 %%WWWDIR%%/apps-pkg/weather_status/l10n/ca.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/cs.js
@@ -15713,6 +15746,8 @@
 %%WWWDIR%%/apps-pkg/weather_status/l10n/fr.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/gl.js
 %%WWWDIR%%/apps-pkg/weather_status/l10n/gl.json
+%%WWWDIR%%/apps-pkg/weather_status/l10n/he.js
+%%WWWDIR%%/apps-pkg/weather_status/l10n/he.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/hr.js
 %%WWWDIR%%/apps-pkg/weather_status/l10n/hr.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/hu.js
@@ -15944,9 +15979,7 @@
 %%WWWDIR%%/config/.htaccess
 %%WWWDIR%%/config/CAN_INSTALL
 %%WWWDIR%%/config/config.documented.php
-%%WWWDIR%%/config/config.documented.php.bak
-%%WWWDIR%%/config/config.documented.php.orig
-%%WWWDIR%%/config/config.sample.php
+@sample %%WWWDIR%%/config/config.sample.php %%WWWDIR%%/config/config.php
 %%WWWDIR%%/console.php
 %%WWWDIR%%/core/Application.php
 %%WWWDIR%%/core/BackgroundJobs/BackgroundCleanupUpdaterBackupsJob.php
@@ -16427,7 +16460,7 @@
 %%WWWDIR%%/core/doc/admin/_static/social/twitter.svg
 %%WWWDIR%%/core/doc/admin/_static/social/twitterround.png
 %%WWWDIR%%/core/doc/admin/_static/social/youtube.svg
-%%WWWDIR%%/core/doc/admin/_static/underscore-1.12.0.js
+%%WWWDIR%%/core/doc/admin/_static/underscore-1.13.1.js
 %%WWWDIR%%/core/doc/admin/_static/underscore.js
 %%WWWDIR%%/core/doc/admin/apps_management.html
 %%WWWDIR%%/core/doc/admin/configuration_database/bigint_identifiers.html
@@ -16719,7 +16752,7 @@
 %%WWWDIR%%/core/doc/user/_static/social/twitter.svg
 %%WWWDIR%%/core/doc/user/_static/social/twitterround.png
 %%WWWDIR%%/core/doc/user/_static/social/youtube.svg
-%%WWWDIR%%/core/doc/user/_static/underscore-1.12.0.js
+%%WWWDIR%%/core/doc/user/_static/underscore-1.13.1.js
 %%WWWDIR%%/core/doc/user/_static/underscore.js
 %%WWWDIR%%/core/doc/user/contents.html
 %%WWWDIR%%/core/doc/user/external_storage/external_storage.html
@@ -17562,6 +17595,7 @@
 %%WWWDIR%%/lib/private/Authentication/Listeners/RemoteWipeNotificationsListener.php
 %%WWWDIR%%/lib/private/Authentication/Listeners/UserDeletedStoreCleanupListener.php
 %%WWWDIR%%/lib/private/Authentication/Listeners/UserDeletedTokenCleanupListener.php
+%%WWWDIR%%/lib/private/Authentication/Listeners/UserDeletedWebAuthnCleanupListener.php
 %%WWWDIR%%/lib/private/Authentication/Listeners/UserLoggedInListener.php
 %%WWWDIR%%/lib/private/Authentication/Login/ALoginCommand.php
 %%WWWDIR%%/lib/private/Authentication/Login/Chain.php
