@@ -24,11 +24,4 @@ USE_QT=		core gui network widgets x11extras \
 USE_GITHUB=	yes
 GH_ACCOUNT=	rncbc
 
-post-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o ${PORTNAME}.mak \
-		${QMAKE_ARGS}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qsampler
-
 .include <bsd.port.mk>
