@@ -56,7 +56,6 @@ include/folly/IndexedMemPool.h
 include/folly/IntrusiveList.h
 include/folly/Lazy.h
 include/folly/Likely.h
-include/folly/LockTraits.h
 include/folly/MPMCPipeline.h
 include/folly/MPMCQueue.h
 include/folly/MacAddress.h
@@ -121,6 +120,7 @@ include/folly/concurrency/AtomicSharedPtr.h
 include/folly/concurrency/CacheLocality.h
 include/folly/concurrency/ConcurrentHashMap.h
 include/folly/concurrency/CoreCachedSharedPtr.h
+include/folly/concurrency/DeadlockDetector.h
 include/folly/concurrency/DynamicBoundedQueue.h
 include/folly/concurrency/PriorityUnboundedQueueSet.h
 include/folly/concurrency/QueueObserver.h
@@ -199,6 +199,7 @@ include/folly/executors/GlobalExecutor.h
 include/folly/executors/GlobalThreadPoolList.h
 include/folly/executors/IOExecutor.h
 include/folly/executors/IOObjectCache.h
+include/folly/executors/IOThreadPoolDeadlockDetectorObserver.h
 include/folly/executors/IOThreadPoolExecutor.h
 include/folly/executors/InlineExecutor.h
 include/folly/executors/ManualExecutor.h
@@ -267,6 +268,7 @@ include/folly/experimental/TimerFD.h
 include/folly/experimental/TimerFDTimeoutManager.h
 include/folly/experimental/TupleOps.h
 include/folly/experimental/bser/Bser.h
+include/folly/experimental/channels/detail/AtomicQueue.h
 include/folly/experimental/coro/Accumulate-inl.h
 include/folly/experimental/coro/Accumulate.h
 include/folly/experimental/coro/AsyncGenerator.h
@@ -305,6 +307,7 @@ include/folly/experimental/coro/SharedLock.h
 include/folly/experimental/coro/SharedMutex.h
 include/folly/experimental/coro/Sleep-inl.h
 include/folly/experimental/coro/Sleep.h
+include/folly/experimental/coro/SmallUnboundedQueue.h
 include/folly/experimental/coro/Task.h
 include/folly/experimental/coro/TimedWait.h
 include/folly/experimental/coro/Timeout-inl.h
@@ -333,6 +336,7 @@ include/folly/experimental/exception_tracer/ExceptionAbi.h
 include/folly/experimental/exception_tracer/ExceptionCounterLib.h
 include/folly/experimental/exception_tracer/ExceptionTracer.h
 include/folly/experimental/exception_tracer/ExceptionTracerLib.h
+include/folly/experimental/exception_tracer/SmartExceptionTracer.h
 include/folly/experimental/exception_tracer/StackTrace.h
 include/folly/experimental/flat_combining/FlatCombining.h
 include/folly/experimental/io/FsUtil.h
@@ -459,6 +463,7 @@ include/folly/io/Cursor-inl.h
 include/folly/io/Cursor.h
 include/folly/io/GlobalShutdownSocketSet.h
 include/folly/io/IOBuf.h
+include/folly/io/IOBufIovecBuilder.h
 include/folly/io/IOBufQueue.h
 include/folly/io/RecordIO-inl.h
 include/folly/io/RecordIO.h
@@ -604,6 +609,8 @@ include/folly/memory/not_null.h
 include/folly/net/NetOps.h
 include/folly/net/NetOpsDispatcher.h
 include/folly/net/NetworkSocket.h
+include/folly/net/TcpInfo.h
+include/folly/net/TcpInfoTypes.h
 include/folly/net/detail/SocketFileDescriptorMap.h
 include/folly/poly/Nullable.h
 include/folly/poly/Regular.h
@@ -708,6 +715,7 @@ include/folly/synchronization/HazptrObjLinked.h
 include/folly/synchronization/HazptrRec.h
 include/folly/synchronization/HazptrThrLocal.h
 include/folly/synchronization/HazptrThreadPoolExecutor.h
+include/folly/synchronization/Latch.h
 include/folly/synchronization/LifoSem.h
 include/folly/synchronization/Lock.h
 include/folly/synchronization/MicroSpinLock.h
