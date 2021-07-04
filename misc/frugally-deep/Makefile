@@ -1,6 +1,6 @@
 PORTNAME=	frugally-deep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.2-p0
+DISTVERSION=	0.15.4-p0
 CATEGORIES=	misc # deep-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,6 +23,8 @@ GH_ACCOUNT=	Dobiasd
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 do-test: # tests are broken because they require tensorflow which is currently not available on FreeBSD
 	@cd ${BUILD_WRKSRC} && \
