@@ -1,10 +1,9 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 
 PORTNAME=	inkscape
-PORTVERSION=	1.0.2
-PORTREVISION=	6
+DISTVERSION=	1.1
 CATEGORIES=	graphics gnome
-MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
+MASTER_SITES=	https://inkscape.org/gallery/item/26932/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
@@ -37,7 +36,8 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 		libsoup-2.4.so:devel/libsoup \
 		libenchant-2.so:textproc/enchant2 \
 		libyaml.so:textproc/libyaml \
-		libdouble-conversion.so:devel/double-conversion
+		libdouble-conversion.so:devel/double-conversion \
+		lib2geom.so:math/lib2geom
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scour>0:textproc/py-scour@${PY_FLAVOR} \
@@ -51,7 +51,7 @@ USE_GNOME=	gtkmm30 libxml2 libxslt
 USE_XORG=	sm ice x11 xext
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}_2021-01-15_e86c870879
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_2021-05-24_c4e8f9ed74
 
 INSTALLS_ICONS=	yes
 
