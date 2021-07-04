@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgig.so:audio/libgig \
 		liblscp.so:audio/liblscp
 RUN_DEPENDS=	linuxsampler:audio/linuxsampler
 
-USES=		autoreconf desktop-file-utils gl gmake localbase:ldflags pkgconfig \
+USES=		cmake compiler:c++17-lang desktop-file-utils gl localbase:ldflags pkgconfig \
 		shared-mime-info qmake:no_env qt:5 xorg
 USE_GL=		gl
 USE_QT=		core gui network widgets x11extras \
@@ -23,12 +23,6 @@ USE_QT=		core gui network widgets x11extras \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rncbc
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-qt5
-
-CXXFLAGS+=	-I${LOCALBASE}/include/qt5 -fPIC # https://github.com/rncbc/qsampler/issues/18
-LDFLAGS+=	-llscp
 
 post-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o ${PORTNAME}.mak \
