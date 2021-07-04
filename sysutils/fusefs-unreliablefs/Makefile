@@ -9,7 +9,6 @@ COMMENT=	FUSE-based fault injection filesystem
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	fusefs-libs>=0:fusefs-libs
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		fio:benchmarks/fio
 
