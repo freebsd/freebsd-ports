@@ -1,6 +1,10 @@
 PORTNAME=	pipewire
 DISTVERSION=	0.3.31
+PORTREVISION=	1
 CATEGORIES=	multimedia
+
+PATCH_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/-/commit/
+PATCHFILES+=	91988acb6b6a.patch:-p1 # https://gitlab.freedesktop.org/pipewire/pipewire/-/merge_requests/815
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Server and user space API to deal with multimedia pipelines
