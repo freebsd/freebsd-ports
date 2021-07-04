@@ -419,6 +419,7 @@
     SUBDIR += fusefs-squashfuse
     SUBDIR += fusefs-sshfs
     SUBDIR += fusefs-unionfs
+    SUBDIR += fusefs-unreliablefs
     SUBDIR += fusefs-webdavfs
     SUBDIR += fusefs-zip
     SUBDIR += fvcool

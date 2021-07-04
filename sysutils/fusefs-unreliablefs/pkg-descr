@@ -1,0 +1,12 @@
+UnreliableFS is a FUSE-based fault injection filesystem that allows to change
+fault-injections in runtime using simple configuration file.
+
+Supported fault injections are:
+
+- errinj_errno - return error value and set random errno.
+- errinj_kill_caller - send SIGKILL to a process that invoked file operation.
+- errinj_noop - replace file operation with no operation (similar to
+  libeatmydata, but applicable to any file operation).
+- errinj_slowdown - slowdown invoked file operation.
+
+WWW: https://github.com/ligurio/unreliablefs
