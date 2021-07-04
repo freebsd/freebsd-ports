@@ -1,7 +1,7 @@
 PORTNAME=	abGate
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -21,6 +21,9 @@ USE_QT=		core gui widgets buildtools_build qmake_build
 USE_GL=		gl
 USE_GNOME=	atkmm gtk20 gtkmm24 libsigc++20
 USE_LDCONFIG=	yes
+
+# Makefile directly calls 'qmake' binary. Give it such.
+BINARY_ALIAS=	qmake=${QMAKE}
 
 post-patch:
 	@${REINPLACE_CMD} -e ' \

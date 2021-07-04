@@ -1,7 +1,7 @@
 PORTNAME=	guidolib
 DISTVERSIONPREFIX=	v
 DISTVERSION=	168
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio graphics print
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,6 +31,8 @@ LDFLAGS+=	-lmidisharelight
 OPTIONS_DEFINE=	DOCS EXAMPLES
 PORTDOCS=	*
 PORTEXAMPLES=	*
+
+BINARY_ALIAS=	qmake=${QMAKE}
 
 post-extract:
 	@${RM} -r ${WRKSRC}/src/midisharelight

@@ -172,7 +172,7 @@ _EXTRA_PATCHES_QT5=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_fe
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_qt__module.prf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_common_bsd_bsd.conf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_freebsd-clang_qmake.conf
-.        if ${ARCH:Mmips*} || (${ARCH:Mpowerpc*} && !exists(/usr/bin/clang)) || ${ARCH} == sparc64
+.    if ${ARCH:Mmips*} || (${ARCH:Mpowerpc*} && !exists(/usr/bin/clang)) || ${ARCH} == sparc64
 _EXTRA_PATCHES_QT5+=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_g++-base.conf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_gcc-base.conf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_freebsd-g++_qmake.conf
@@ -203,15 +203,6 @@ QMAKE_ARGS+=		QT_CONFIG+="${QT_CONFIG:N-*:O:u}"
 .  if ${QT_CONFIG:M-*}
 QMAKE_ARGS+=		QT_CONFIG-="${QT_CONFIG:M-*:O:u:C/^-//}"
 .  endif
-
-# Add a RUN_DEPENDS on misc/qtchooser to select the binaries.
-# The binaries of both supported Qt versions are installed to
-# ${LOCALBASE}/lib/qt${_QT_VER}/bin. The port misc/qtchooser installs
-# wrapper binaries into ${LOCALBASE}/bin, and chooses the correct
-# one depending on the value of QT_SELECT (which we pass to both
-# CONFIGURE_ENV and MAKE_ENV). Therefore make all QT_DIST ports
-# RUN_DEPEND on it.
-RUN_DEPENDS+=		qtchooser:misc/qtchooser
 
 PLIST_SUB+=		SHORTVER=${DISTVERSION:R} \
 			FULLVER=${DISTVERSION:C/-.*//}
@@ -248,7 +239,7 @@ _QT_TOOLS+=		${UIC}
 _QT5_BASE=		core dbus gui network sql widgets
 _QT5_ADDITIONAL_LINK?=	# Ensure definition
 
-.if ${_QT_VER:M5}
+.      if ${_QT_VER:M5}
 post-patch: gcc-post-patch
 gcc-post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
@@ -259,7 +250,7 @@ gcc-post-patch:
 		${WRKSRC}/mkspecs/common/g++-base.conf \
 		${WRKSRC}/mkspecs/common/bsd/bsd.conf \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
-.endif
+.      endif
 
 pre-configure: qtbase-pre-configure
 qtbase-pre-configure:
@@ -353,11 +344,9 @@ _sub_need_remove=	\#\#
 _sub_need_add=		\#\#
 _sub_need_remove=	
 .    endif
-# Handle misc/qtchooser wrapper installation and deinstallation
 # If a port installs Qt version-specific binaries (e.g. "designer" which 
 # existed as a Qt4 application and exists as a Qt5 application and will 
-# probably be a Qt6 application) which should have a qtchooser-based wrapper, 
-# the port should set `QT_BINARIES=yes`.
+# probably be a Qt6 application) the port should set `QT_BINARIES=yes`.
 .    if defined(QT_BINARIES)
 _sub_need_bin=
 .    else

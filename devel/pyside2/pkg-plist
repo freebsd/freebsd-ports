@@ -112,6 +112,12 @@ lib/libpyside2%%PYVERSTR%%.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySide2/__init__.py
 %%PYTHON_SITELIBDIR%%/PySide2/_config.py
 %%PYTHON_SITELIBDIR%%/PySide2/_git_pyside_version.py
+%%PYTHON_SITELIBDIR%%/PySide2/__pycache__/__init__%%PYVERSTR%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/PySide2/__pycache__/__init__%%PYVERSTR%%.pyc
+%%PYTHON_SITELIBDIR%%/PySide2/__pycache__/_config%%PYVERSTR%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/PySide2/__pycache__/_config%%PYVERSTR%%.pyc
+%%PYTHON_SITELIBDIR%%/PySide2/__pycache__/_git_pyside_version%%PYVERSTR%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/PySide2/__pycache__/_git_pyside_version%%PYVERSTR%%.pyc
 libdata/pkgconfig/pyside2.pc
 share/PySide2/glue/qtcharts.cpp
 share/PySide2/glue/qtcore.cpp

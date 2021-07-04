@@ -6,10 +6,12 @@
 %%QT_BINDIR%%/lprodump
 %%DEBUG%%%%QT_BINDIR%%/lprodump.debug
 %%QT_BINDIR%%/lrelease
+bin/lrelease-qt5
 %%QT_BINDIR%%/lrelease-pro
 %%DEBUG%%%%QT_BINDIR%%/lrelease-pro.debug
 %%DEBUG%%%%QT_BINDIR%%/lrelease.debug
 %%QT_BINDIR%%/lupdate
+bin/lupdate-qt5
 %%QT_BINDIR%%/lupdate-pro
 %%DEBUG%%%%QT_BINDIR%%/lupdate-pro.debug
 %%DEBUG%%%%QT_BINDIR%%/lupdate.debug

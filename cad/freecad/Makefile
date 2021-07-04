@@ -1,6 +1,6 @@
 PORTNAME=	FreeCAD
 DISTVERSION=	0.19.2
-PORTREVISION=	1
+PORTREVISION=	2
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
@@ -12,7 +12,7 @@ COMMENT=	General purpose 3D CAD modeller
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyside2-tools>5.14.0:devel/pyside2-tools@${PY_FLAVOR} \
+BUILD_DEPENDS=	pyside_tool.py:devel/pyside2-tools@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
 		swig:devel/swig
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
@@ -34,7 +34,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		dos2unix compiler:c++11-lib cmake gl eigen:3 fortran jpeg \
+USES=		dos2unix compiler:c++17-lang cmake gl eigen:3 fortran jpeg \
 		localbase:ldflags pkgconfig python:3.7+ localbase qt:5 xorg
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
@@ -53,9 +53,10 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DPYTHON_PACKAGES_PATH="${PYTHON_SITELIBDIR}" \
 		-DPYTHON_EXECUTABLE="${PYTHON_CMD}" \
 		-DBUILD_ASSEMBLY="OFF" -DBUILD_FLAT_MESH="ON" \
-		-DPYSIDE2RCCBINARY="${LOCALBASE}/bin/rcc" \
-		-DPYSIDE2UICBINARY="${LOCALBASE}/bin/uic" \
-		-DVTK_DIR:PATH=${LOCALBASE}/lib/vtk-8.2/cmake/vtk-8.2
+		-DPYSIDE2RCCBINARY="${RCC}" \
+		-DPYSIDE2UICBINARY="${UIC}" \
+		-DVTK_DIR:PATH=${LOCALBASE}/lib/vtk-8.2/cmake/vtk-8.2 \
+		-DBUILD_ENABLE_CXX_STD=C++17
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
 

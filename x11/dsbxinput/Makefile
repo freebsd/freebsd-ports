@@ -1,5 +1,6 @@
 PORTNAME=	dsbxinput
 DISTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	mk@nic-nac-project.org
@@ -8,13 +9,14 @@ COMMENT=	Graphical tool for configuring pointing devices
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	lrelease:devel/qt5-linguisttools
 RUN_DEPENDS=	xinput:x11/xinput
 
-USES=		pyqt:5 python:3.7+
+USES=		pyqt:5 python:3.7+ qt:5
+USE_QT=		linguisttools_build
 USE_GITHUB=	yes
 GH_ACCOUNT=	mrclksr
 GH_PROJECT=	DSBXinput
 USE_PYQT=	core gui widgets
 
+BINARY_ALIAS=	lrelease=${LRELEASE}
 .include <bsd.port.mk>

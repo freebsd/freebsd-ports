@@ -489,6 +489,7 @@
 %%DEBUG%%%%QT_LIBDIR%%/libQt5Widgets.so.%%FULLVER%%.debug
 %%QT_LIBDIR%%/metatypes/qt5widgets_metatypes.json
 %%QT_BINDIR%%/uic
+bin/uic-qt5
 %%DEBUG%%%%QT_BINDIR%%/uic.debug
 %%QT_MKSPECDIR%%/modules/qt_lib_widgets.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_widgets_private.pri

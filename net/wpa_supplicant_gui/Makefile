@@ -2,7 +2,7 @@
 
 PORTNAME=	wpa_supplicant_gui
 DISTVERSION=	2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://w1.fi/releases/ \
 		http://partmedia.users.sourceforge.net/dist/:icons \
@@ -35,6 +35,10 @@ WRKSRC_SUBDIR=	wpa_supplicant
 OPTIONS_DEFINE=	DEBUG NLS
 
 NLS_PLIST_FILES=	${DATADIR_REL}/translations/wpa_gui_de.qm
+
+# The makefile directly calls 'qmake', give it such.
+BINARY_ALIAS=	qmake=${QMAKE} \
+		lrelease=${LRELEASE}
 
 post-patch:
 	@${REINPLACE_CMD} -e \

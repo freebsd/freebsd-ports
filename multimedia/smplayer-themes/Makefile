@@ -2,6 +2,7 @@
 
 PORTNAME=	smplayer-themes
 PORTVERSION=	20.11.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/smplayer/SMPlayer-themes/${PORTVERSION}/
@@ -18,6 +19,8 @@ DATADIR=	${PREFIX}/share/smplayer
 
 PORTDOCS=	Changelog README.txt
 OPTIONS_DEFINE=	DOCS
+
+BINARY_ALIAS=	rcc=${RCC}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

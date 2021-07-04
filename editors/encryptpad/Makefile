@@ -3,7 +3,7 @@
 PORTNAME=	encryptpad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors security
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -23,7 +23,8 @@ GH_PROJECT=	EncryptPad
 
 USE_GL=		gl
 USE_QT=		core gui widgets buildtools_build qmake_build
-BINARY_ALIAS=	python=${PYTHON_CMD}
+BINARY_ALIAS=	python=${PYTHON_CMD} \
+		qmake=${QMAKE}
 
 PORTDOCS=	*
 

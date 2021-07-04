@@ -1,7 +1,7 @@
 PORTNAME=	engauge-digitizer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	12.2.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics math science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,8 +32,11 @@ DOCS_USE=	QT=help,linguist_build
 do-patch-NLS-on:
 	@${REINPLACE_CMD} -e 's|QCoreApplication::applicationDirPath () + "/translations",|"${DATADIR}/translations",|' ${WRKSRC}/src/Translator/TranslatorContainer.cpp
 
+do-patch-DOCS-on:
+	@${REINPLACE_CMD} -e 's|qcollectiongenerator|${QCOLLECTIONGENERATOR}|' ${WRKSRC}/help/build.bash
+
 post-build-NLS-on:
-	@cd ${WRKSRC} && lrelease engauge.pro
+	@cd ${WRKSRC} && ${LRELEASE} engauge.pro
 
 post-build-DOCS-on:
 	@cd ${WRKSRC}/help && ./build.bash

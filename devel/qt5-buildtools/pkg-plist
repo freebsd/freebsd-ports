@@ -1,6 +1,8 @@
 %%QT_BINDIR%%/moc
+bin/moc-qt5
 %%DEBUG%%%%QT_BINDIR%%/moc.debug
 %%QT_BINDIR%%/rcc
+bin/rcc-qt5
 %%DEBUG%%%%QT_BINDIR%%/rcc.debug
 %%QT_BINDIR%%/syncqt.pl
 %%QT_LIBDIR%%/libQt5Bootstrap.a

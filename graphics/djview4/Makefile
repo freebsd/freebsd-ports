@@ -2,7 +2,7 @@
 
 PORTNAME=	djview
 PORTVERSION=	4.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/djvu/DjView/${PORTVERSION}
 
@@ -33,6 +33,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}-${PORTVERSION}
 
 WEBPLUGIN_DIR=		${PREFIX}/lib/djview4/plugins
 WEBPLUGIN_FILES=	nsdejavu.so
+
+BINARY_ALIAS=	qmake=${QMAKE}
 
 post-patch:
 # Use prebuilt icons, without using conversion tool

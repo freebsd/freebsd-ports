@@ -1,6 +1,6 @@
 PORTNAME=	buildtools
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -39,5 +39,6 @@ post-install:
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/syncqt.pl \
 		${STAGEDIR}${PREFIX}/${QT_BINDIR_REL}/syncqt.pl
-
+	${RLN} ${STAGEDIR}${QT_BINDIR}/moc ${STAGEDIR}${PREFIX}/bin/moc-qt5
+	${RLN} ${STAGEDIR}${QT_BINDIR}/rcc ${STAGEDIR}${PREFIX}/bin/rcc-qt5
 .include <bsd.port.mk>

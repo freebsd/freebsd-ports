@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210704:
+  AFFECTS: users of misc/qtchooser
+  AUTHOR: kde@FreeBSD.org
+
+  QtChooser allows you to select your version of Qt among those installed.
+  However, this tool is no longer supported upstream and will not be
+  available for Qt6.
+
+  By default, our Qt installations are done in:
+  ${LOCALBASE}/lib/qt${QT_VERSION} as recommended.
+  We have added symbolic linking for the main binaries to 
+  ${LOCALBASE}/bin with the suffix -qt5.
+
 20210628:
   AFFECTS: users of misc/openhab
   AUTHOR: netchild@FreeBSD.org

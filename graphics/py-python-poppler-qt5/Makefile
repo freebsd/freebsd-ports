@@ -1,7 +1,7 @@
 PORTNAME=	python-poppler-qt5
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.75.0
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ COMMENT=	Python bindings for the Poppler-Qt PDF rendering library
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	qmake:devel/qt5-qmake
+BUILD_DEPENDS=	qmake-qt5:devel/qt5-qmake
 LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
 USES=		compiler:c++11-lang gl pkgconfig pyqt:5 python:3.5+ qt:5
@@ -32,7 +32,7 @@ _PY_SONAME=	${PYTHON_EXT_SUFFIX}
 .endif
 
 do-build:
-	(cd ${WRKSRC} ; sip-build  --verbose --no-make --build-dir build ; ${MAKE} -C ./build )
+	(cd ${WRKSRC} ; sip-build --qmake ${QMAKE} --verbose --no-make --build-dir build ; ${MAKE} -C ./build )
 
 do-install:
 	(cd ${WRKSRC} ; ${MAKE} -C ./build install INSTALL_ROOT=${STAGEDIR} )

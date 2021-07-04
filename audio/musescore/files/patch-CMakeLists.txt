@@ -5,6 +5,15 @@ up with the dependency loop; make handles this without complaint)
 
 --- CMakeLists.txt.orig	2021-01-27 17:12:14 UTC
 +++ CMakeLists.txt
+@@ -25,7 +25,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.3.0)
+ include(build/functions.cmake) # library of CMake functions ("fn__" namespace)
+ 
+ # Print Qt version or fail the build if Qt (qmake) is not in PATH.
+-fn__require_program(QMAKE Qt --version "https://musescore.org/en/handbook/developers-handbook/compilation" qmake)
++fn__require_program(QMAKE Qt --version "https://musescore.org/en/handbook/developers-handbook/compilation" qmake qmake-qt5)
+ 
+ # Libraries linked via full path no longer produce linker search paths.
+ cmake_policy(SET CMP0003 NEW)
 @@ -276,7 +276,7 @@ endif (${CMAKE_CXX_COMPILER_ID} MATCHES "GNU")
  
  if (NOT MSVC)
