@@ -4,7 +4,6 @@ include/quic/api/IoBufQuicBatch.h
 include/quic/api/LoopDetectorCallback.h
 include/quic/api/Observer.h
 include/quic/api/QuicBatchWriter.h
-include/quic/api/QuicPacketScheduler-inl.h
 include/quic/api/QuicPacketScheduler.h
 include/quic/api/QuicSocket.h
 include/quic/api/QuicStreamAsyncTransport.h
@@ -34,6 +33,8 @@ include/quic/codec/QuicWriteCodec.h
 include/quic/codec/Types.h
 include/quic/common/BufAccessor.h
 include/quic/common/BufUtil.h
+include/quic/common/CircularDeque-inl.h
+include/quic/common/CircularDeque.h
 include/quic/common/EnumArray.h
 include/quic/common/FunctionLooper.h
 include/quic/common/IntervalSet-inl.h
@@ -67,11 +68,12 @@ include/quic/d6d/ProbeSizeRaiser.h
 include/quic/d6d/QuicD6DStateFunctions.h
 include/quic/d6d/Types.h
 include/quic/dsr/DSRPacketizationRequestSender.h
-include/quic/dsr/PacketBuilder.h
-include/quic/dsr/Scheduler.h
 include/quic/dsr/Types.h
-include/quic/dsr/WriteCodec.h
-include/quic/dsr/WriteFunctions.h
+include/quic/dsr/backend/DSRPacketizer.h
+include/quic/dsr/frontend/PacketBuilder.h
+include/quic/dsr/frontend/Scheduler.h
+include/quic/dsr/frontend/WriteCodec.h
+include/quic/dsr/frontend/WriteFunctions.h
 include/quic/dsr/test/Mocks.h
 include/quic/fizz/client/handshake/FizzClientExtensions.h
 include/quic/fizz/client/handshake/FizzClientHandshake.h
@@ -95,7 +97,6 @@ include/quic/logging/FileQLogger.h
 include/quic/logging/QLogger.h
 include/quic/logging/QLoggerConstants.h
 include/quic/logging/QLoggerTypes.h
-include/quic/logging/QuicLogger.h
 include/quic/loss/QuicLossFunctions.h
 include/quic/server/AcceptObserver.h
 include/quic/server/CCPReader.h
