@@ -1,5 +1,5 @@
 PORTNAME=	bangr
-DISTVERSION=	1.2.0
+DISTVERSION=	1.4.0
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -31,6 +31,8 @@ PLIST_FILES=	lib/lv2/BAngr.lv2/BAngr.so \
 		lib/lv2/BAngr.lv2/manifest.ttl
 
 post-install:
+	@cd ${STAGEDIR}${PREFIX}/lib/lv2/BAngr.lv2 && \
+		${STRIP_CMD} BAngr.so BAngrGUI.so
 	@${RM} ${STAGEDIR}${PREFIX}/lib/lv2/BAngr.lv2/LICENSE
 
 .include <bsd.port.mk>
