@@ -1,8 +1,7 @@
 # Created by: Brian Somers <brian@FreeBSD.org>
 
 PORTNAME=	vlc
-DISTVERSION=	3.0.14
-PORTREVISION=	1
+DISTVERSION=	3.0.16
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
