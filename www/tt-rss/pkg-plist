@@ -2340,7 +2340,6 @@
 %%WWWDIR%%/plugins/auto_assign_labels/init.php
 %%WWWDIR%%/plugins/bookmarklets/init.php
 %%WWWDIR%%/plugins/cache_starred_images/init.php
-%%WWWDIR%%/plugins/googlereaderkeys/init.php
 %%WWWDIR%%/plugins/hotkeys_force_top/init.js
 %%WWWDIR%%/plugins/hotkeys_force_top/init.php
 %%WWWDIR%%/plugins/hotkeys_noscroll/init.php
