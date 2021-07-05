@@ -638,6 +638,9 @@
 %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/css_subfolder/css_input_with_import.css.unoptimized.css
 %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/import1.css
 %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/import2.css
+%%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/quotes.css
+%%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/quotes.css.optimized.css
+%%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/quotes.css.unoptimized.css
 %%DRUPAL_BASE%%/modules/simpletest/files/html-1.txt
 %%DRUPAL_BASE%%/modules/simpletest/files/html-2.html
 %%DRUPAL_BASE%%/modules/simpletest/files/image-1.png
