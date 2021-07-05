@@ -1,6 +1,5 @@
 PORTNAME=	fheroes2
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.9.5
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -11,15 +10,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake gettext-tools iconv localbase:ldflags pkgconfig sdl
+USES=		cmake gettext-tools iconv localbase:ldflags pkgconfig sdl \
+		shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	ihhub
 USE_SDL=	image2 mixer2 sdl2 ttf2
+SHEBANG_FILES=	script/demo/demo_unix.sh
 
 OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	bin/${PORTNAME}
-PORTDOCS=	README.txt \
-		changelog.txt
+PORTDOCS=	LICENSE \
+		README.txt \
+		changelog.txt \
+		demo/demo_unix.sh
 
 .include <bsd.port.mk>
