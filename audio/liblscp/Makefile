@@ -1,7 +1,7 @@
 # Created by: trasz <trasz@pin.if.uz.zgora.pl>
 
 PORTNAME=	liblscp
-DISTVERSION=	0.9.3
+DISTVERSION=	0.9.4
 CATEGORIES=	audio
 MASTER_SITES=	SF/qsampler/${PORTNAME}/${PORTVERSION} \
 		http://download.linuxsampler.org/packages/
