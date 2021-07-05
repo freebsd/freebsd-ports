@@ -1,7 +1,10 @@
 PORTNAME=	unreliablefs
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
+PATCH_SITES=	https://github.com/ligurio/unreliablefs/commit/
+PATCHFILES=	a3caa832a5a63c69e18b8b66b503f9a460536539.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	FUSE-based fault injection filesystem
@@ -16,8 +19,6 @@ USES=		cmake:testing fuse pkgconfig python:env
 USE_CSTD=	c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	ligurio
-
-CFLAGS+=	-fcommon
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz \
