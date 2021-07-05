@@ -39,7 +39,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == powerpc
+.if ${ARCH} == powerpc || ${ARCH} == riscv64
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_tbb_tools__api_ittnotify__config.h
 .endif
 
