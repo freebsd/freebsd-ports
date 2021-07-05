@@ -2,7 +2,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -29,6 +29,12 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libpcre.so:devel/pcre \
 		libqhull.so.7:math/qhull \
 		libqrupdate.so:math/qrupdate \
+		libamd.so:math/suitesparse-amd \
+		libcamd.so:math/suitesparse-camd \
+		libccolamd.so:math/suitesparse-ccolamd \
+		libcholmod.so:math/suitesparse-cholmod \
+		libcolamd.so:math/suitesparse-colamd \
+		libsuitesparseconfig.so:math/suitesparse-config \
 		libcxsparse.so:math/suitesparse-cxsparse \
 		libklu.so:math/suitesparse-klu \
 		libumfpack.so:math/suitesparse-umfpack \
@@ -44,7 +50,7 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 
 USES=		charsetfix fortran gmake libtool perl5 pkgconfig readline \
 		tar:xz compiler:c++14-lang \
-		desktop-file-utils gl iconv xorg
+		desktop-file-utils gl iconv ncurses xorg
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/${PORTVERSION}
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
