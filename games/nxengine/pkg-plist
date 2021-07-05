@@ -1,4 +1,8 @@
-bin/nxengine
+bin/nxengine-evo
+bin/nxextract
+share/applications/org.nxengine.nxengine_evo.desktop
+share/icons/hicolor/256x256/apps/org.nxengine.nxengine_evo.png
+share/metainfo/org.nxengine.nxengine_evo.appdata.xml
 %%DATADIR%%/Config.dat
 %%DATADIR%%/DoConfig.exe
 %%DATADIR%%/Doukutsu.exe
@@ -471,6 +475,7 @@ bin/nxengine
 %%DATADIR%%/data/StageMeta/Shelt.json
 %%DATADIR%%/data/StageMeta/Start.json
 %%DATADIR%%/data/StageMeta/Statue.json
+%%DATADIR%%/data/StageMeta/WeedB.json
 %%DATADIR%%/data/StageMeta/WeedD.json
 %%DATADIR%%/data/StageMeta/WeedS.json
 %%DATADIR%%/data/StageMeta/e_Malc.json
@@ -661,10 +666,9 @@ bin/nxengine
 %%DATADIR%%/data/pxt/fx99.pxt
 %%DATADIR%%/data/pxt/fx9a.pxt
 %%DATADIR%%/data/pxt/fx9b.pxt
+%%DATADIR%%/data/spot.png
 %%DATADIR%%/data/sprites.sif
 %%DATADIR%%/data/stage.dat
 %%DATADIR%%/data/system.json
 %%DATADIR%%/data/tilekey.dat
 %%DATADIR%%/data/wavetable.dat
-%%DATADIR%%/nx
-share/pixmaps/nxengine.png
