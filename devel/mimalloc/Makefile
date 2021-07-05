@@ -20,7 +20,8 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	MI_INSTALL_TOPLEVEL
 
-LDFLAGS_i386+=	-latomic
+LDFLAGS_i386=	-latomic
+LDFLAGS_powerpc=-latomic
 
 # ci pipeline creates transient tags
 PORTSCOUT=	ignore:1
