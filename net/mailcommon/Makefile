@@ -1,6 +1,10 @@
 PORTNAME=	mailcommon
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
+
+PATCH_SITES=	https://invent.kde.org/pim/mailcommon/-/commit/
+PATCHFILES=	e0e7e702df21ac3b0b16b94f3871c0ddbe53e962.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Common libriares for KDEPim
