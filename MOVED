@@ -16458,3 +16458,7 @@ sysutils/ssid|sysutils/setsid|2021-06-27|Move to more obvious package name
 databases/pgpool-II-35||2021-07-01|Has expired: EOL since January 2021, please use one of the other pgpool-II-* ports
 sysutils/cdrtools-devel|sysutils/cdrtools|2021-07-01|Obsolete, use sysutils/cdrtools instead
 sysutils/sformat|sysutils/schilyutils|2021-07-01|Subsumed under sysutils/schilyutils
+databases/puppetdb5||2021-07-05|Has expired: Puppet 5 has reached EOL
+sysutils/puppet5||2021-07-05|Has expired: Puppet 5 has reached EOL
+sysutils/puppetserver5||2021-07-05|Has expired: Puppet 5 has reached EOL
+databases/puppetdb-terminus5||2021-07-05|Has expired: Puppet 5 has reached EOL
