@@ -1,0 +1,5 @@
+Oink is an modern implementation of parity game solvers written in C++. Oink
+aims to provide high-performance implementations of state-of-the-art algorithms
+representing different approaches to solving parity games.
+
+WWW: https://github.com/trolando/oink
