@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	7.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
@@ -13,7 +13,7 @@ COMMENT=	GNU Compiler Collection 7
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-DEPRECATED=	Unsupported by upstream. Use GCC 9 or newer instead.
+DEPRECATED=	Unsupported by upstream. Use GCC 10 or newer instead.
 ONLY_FOR_ARCHS=	amd64
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
