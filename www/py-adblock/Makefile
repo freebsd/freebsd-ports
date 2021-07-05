@@ -1,6 +1,5 @@
 PORTNAME=	adblock
-DISTVERSION=	0.4.4
-PORTREVISION=	2
+DISTVERSION=	0.5.0
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -30,10 +29,10 @@ GH_ACCOUNT=	ArniDagur
 GH_PROJECT=	python-adblock
 USE_PYTHON=	autoplist concurrent cython distutils
 
-CARGO_CRATES=	adblock-0.3.10 \
-		addr-0.11.8 \
+CARGO_CRATES=	adblock-0.3.13 \
+		addr-0.14.0 \
 		adler-1.0.2 \
-		aho-corasick-0.7.15 \
+		aho-corasick-0.7.18 \
 		autocfg-1.0.1 \
 		base64-0.13.0 \
 		bitflags-1.2.1 \
@@ -55,7 +54,7 @@ CARGO_CRATES=	adblock-0.3.10 \
 		libc-0.2.93 \
 		lock_api-0.4.3 \
 		matches-0.1.8 \
-		memchr-2.3.4 \
+		memchr-2.4.0 \
 		miniz_oxide-0.4.4 \
 		num-traits-0.2.14 \
 		once_cell-1.7.2 \
@@ -73,8 +72,8 @@ CARGO_CRATES=	adblock-0.3.10 \
 		pyo3-macros-backend-0.13.2 \
 		quote-1.0.9 \
 		redox_syscall-0.2.5 \
-		regex-1.4.5 \
-		regex-syntax-0.6.23 \
+		regex-1.5.4 \
+		regex-syntax-0.6.25 \
 		rmp-0.8.10 \
 		rmp-serde-0.13.7 \
 		scopeguard-1.1.0 \
@@ -127,7 +126,7 @@ post-install:
 # SEE devel/py-maturin/Makefile
 	@${FIND} ${STAGEDIR} \
 		-type f -o -type l | \
-		${SORT} | \
-		${SED} -e 's|${STAGEDIR}||' > ${WRKDIR}/.PLIST.pymodtmp
+		${SORT} | ${SED} -e 's|${STAGEDIR}||' > \
+		${WRKDIR}/.PLIST.pymodtmp
 
 .include <bsd.port.mk>
