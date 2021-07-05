@@ -169,6 +169,7 @@
     SUBDIR += cfengine315
     SUBDIR += cfengine316
     SUBDIR += cfengine317
+    SUBDIR += cfengine318
     SUBDIR += chaoskube
     SUBDIR += checkrestart
     SUBDIR += chezmoi
