@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	shoulda-context
-PORTVERSION=	1.2.2
+PORTVERSION=	2.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,10 +11,13 @@ COMMENT=	Context framework extracted from Shoulda
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-NO_ARCH=	yes
+USES=		gem shebangfix
 USE_RUBY=	yes
-USES=		gem
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/convert_to_should_syntax
+
+SHEBANG_FILES=	bin/*
 
 .include <bsd.port.mk>
