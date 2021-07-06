@@ -2,8 +2,7 @@
 
 PORTNAME=	sdlpop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.21
-PORTREVISION=	1
+DISTVERSION=	1.22
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -22,8 +21,10 @@ GH_ACCOUNT=	NagyD
 GH_PROJECT=	SDLPoP
 
 WRKSRC_SUBDIR=	src
-USE_SDL=	sdl2 image2 mixer2
+USE_SDL=	image2 mixer2 sdl2
 PORTDOCS=	*
+
+CFLAGS+=	-I${LOCALBASE}/include/SDL2
 
 DESKTOP_ENTRIES=	"Prince" "Open-Source port of Prince of Persia" \
 		"${DATADIR}/icon.png" "prince"  "Game;" false
@@ -38,7 +39,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/../data ; ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} \
-		${WRKSRC}/../doc/bugs.txt \
 		${WRKSRC}/../doc/ChangeLog.txt \
 		${WRKSRC}/../doc/mod.ini \
 		${WRKSRC}/../doc/Readme.txt \
