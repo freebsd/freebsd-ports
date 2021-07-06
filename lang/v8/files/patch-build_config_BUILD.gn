@@ -1,6 +1,6 @@
---- build/config/BUILD.gn.orig	2021-05-01 21:15:31 UTC
+--- build/config/BUILD.gn.orig	2021-05-26 12:26:11 UTC
 +++ build/config/BUILD.gn
-@@ -133,7 +133,7 @@ config("debug") {
+@@ -128,7 +128,7 @@ config("debug") {
        # builds, and we have to tell it to turn it off.
        defines += [ "_HAS_ITERATOR_DEBUGGING=0" ]
      }
@@ -9,7 +9,7 @@
               enable_iterator_debugging) {
      # Enable libstdc++ debugging facilities to help catch problems early, see
      # http://crbug.com/65151 .
-@@ -232,9 +232,7 @@ config("default_libs") {
+@@ -227,9 +227,7 @@ config("default_libs") {
      ]
    } else if (is_linux || is_chromeos) {
      libs = [
@@ -19,7 +19,7 @@
      ]
    }
  }
-@@ -313,7 +311,7 @@ config("executable_config") {
+@@ -308,7 +306,7 @@ config("executable_config") {
        "//build/config/ios:ios_dynamic_flags",
        "//build/config/ios:ios_executable_flags",
      ]

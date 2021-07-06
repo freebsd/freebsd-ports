@@ -1,5 +1,8 @@
+# We follow the stable channel on https://omahaproxy.appspot.com/
+# https://chromium.googlesource.com/v8/v8/+/refs/heads/9.1-lkgr
+
 PORTNAME=	v8
-PORTVERSION=	9.0.257.29
+PORTVERSION=	9.1.269.36
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}
 DISTFILES=	build-${BUILD_REV}.tar.gz \
@@ -36,18 +39,15 @@ USE_GITHUB=	yes
 
 CPE_VENDOR=	google
 
-# We follow the stable channel on https://omahaproxy.appspot.com/
-PORTSCOUT=	ignore:1
+BUILD_REV=	77edba11e25386aa719d4f08c3ce2d8c4f868c15
+BUILDTOOLS_REV=	5dbd89c9d9c0b0ff47cefdc2bc421b8c9a1c5a21
+CLANG_REV=	a387faa2a6741f565e45d78804a49a0e55de5909
+COMMON_REV=	cab90cbdaaf4444d67aef6ce3cef09fc5fdeb560
+GOOGLETEST_REV=	07f4869221012b16b7f9ee685d94856e1fc9f361
+ICU_REV=	81d656878ec611cb0b42d52c82e9dae93920d9ba
+ZLIB_REV=	09490503d0f201b81e03f5ca0ab8ba8ee76d4a8e
 
-BUILD_REV=	446bf3e5a00bfe4fd99d91cb76ec3b3a7b34d226
-BUILDTOOLS_REV=	4c78ef9c38b683c5c5cbac70445378c2362cebfc
-CLANG_REV=	cfd0f628093b7382ac054fb33e23fa9d9a278bc3
-COMMON_REV=	7af6071eddf11ad91fbd5df54138f9d3c6d980d5
-GOOGLETEST_REV=	1e315c5b1a62707fac9b8f1d4e03180ee7507f98
-ICU_REV=	e05b663d1c50b4e9ecc3ff9325f5158f1d071471
-ZLIB_REV=	348acca950b1d6de784a954f4fda0952046c652c
-
-# Run "gn args out/Release --list" for all variables.
+# Run "gn args --list out/Release" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using
 # replace_gn_files.py script, some parts just turned on/off for target host
 # OS "target_os == is_bsd", like libusb, libpci.
