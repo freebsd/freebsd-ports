@@ -18,4 +18,10 @@ RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_Makevars.in
+.endif
+
 .include <bsd.port.mk>
