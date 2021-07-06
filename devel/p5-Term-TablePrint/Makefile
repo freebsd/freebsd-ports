@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Term-TablePrint
-PORTVERSION=	0.138
+PORTVERSION=	0.139
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Term-Choose>=1.733:devel/p5-Term-Choose \
-		p5-Term-Choose-Util>=0.124:devel/p5-Term-Choose-Util \
-		p5-Term-Form>=0.534:devel/p5-Term-Form
+		p5-Term-Choose-Util>=0.125:devel/p5-Term-Choose-Util \
+		p5-Term-Form>=0.535:devel/p5-Term-Form
 
 USES=		perl5
 USE_PERL5=	configure
