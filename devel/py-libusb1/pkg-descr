@@ -1,3 +1,4 @@
-Pure-python wrapper for libusb-1.0.
+Pure-python wrapper for libusb-1.0 supports all transfer types, both in
+synchronous and asynchronous mode
 
-WWW: https://pypi.org/project/libusb1/
+WWW: https://github.com/vpelletier/python-libusb1
