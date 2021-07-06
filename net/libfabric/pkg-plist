@@ -9,12 +9,13 @@ include/rdma/fi_domain.h
 include/rdma/fi_endpoint.h
 include/rdma/fi_eq.h
 include/rdma/fi_errno.h
+include/rdma/fi_ext.h
 include/rdma/fi_rma.h
 include/rdma/fi_tagged.h
 include/rdma/fi_trigger.h
 lib/libfabric.so
 lib/libfabric.so.1
-lib/libfabric.so.1.15.1
+lib/libfabric.so.1.16.0
 libdata/pkgconfig/libfabric.pc
 man/man1/fi_info.1.gz
 man/man1/fi_pingpong.1.gz
@@ -121,6 +122,7 @@ man/man3/fi_poll.3.gz
 man/man3/fi_poll_add.3.gz
 man/man3/fi_poll_del.3.gz
 man/man3/fi_poll_open.3.gz
+man/man3/fi_provider.3.gz
 man/man3/fi_query_atomic.3.gz
 man/man3/fi_query_collective.3.gz
 man/man3/fi_read.3.gz

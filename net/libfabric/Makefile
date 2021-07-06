@@ -1,7 +1,10 @@
 PORTNAME=	libfabric
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.1
+DISTVERSION=	1.13.0
 CATEGORIES=	net
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	c2c317d6ccdacca3fcdcd7b1d3a91f47426246f4.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Fabric Interfaces
