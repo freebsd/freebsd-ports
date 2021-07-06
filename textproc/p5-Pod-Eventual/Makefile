@@ -1,8 +1,7 @@
 # Created by: Andrey Kostenko <andrey@kostenko.name>
 
 PORTNAME=	Pod-Eventual
-PORTVERSION=	0.094001
-PORTREVISION=	1
+PORTVERSION=	0.094002
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
