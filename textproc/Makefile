@@ -1411,6 +1411,7 @@
     SUBDIR += py-rss2gen
     SUBDIR += py-rst2ansi
     SUBDIR += py-rst2html5
+    SUBDIR += py-rstfmt
     SUBDIR += py-scour
     SUBDIR += py-simplebayes
     SUBDIR += py-smartypants
