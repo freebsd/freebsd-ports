@@ -1,0 +1,4 @@
+Generator gem is designed for use in Ruby projects and provides templates
+generators like Rails 3.
+
+WWW: https://github.com/maxkazar/generator

@@ -6194,6 +6194,7 @@
     SUBDIR += rubygem-gemdiff
     SUBDIR += rubygem-gemnasium-parser
     SUBDIR += rubygem-gems
+    SUBDIR += rubygem-generator
     SUBDIR += rubygem-generator_spec-rails4
     SUBDIR += rubygem-generator_spec-rails5
     SUBDIR += rubygem-georuby
