@@ -472,6 +472,8 @@
     SUBDIR += graveman
     SUBDIR += graylog
     SUBDIR += grub2-bhyve
+    SUBDIR += grub2-efi
+    SUBDIR += grub2-pcbsd
     SUBDIR += gsh
     SUBDIR += gsmartcontrol
     SUBDIR += gstopd

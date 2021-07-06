@@ -12656,8 +12656,6 @@ net/linuxigd||2019-05-09|Has expired: Abandonware; use net/miniupnpd instead
 net/openafs||2019-05-09|Has expired: Broken for more than 6 months
 security/quantis||2019-05-09|Has expired: Broken for more than 6 months
 sysutils/boxbackup||2019-05-09|Has expired: Broken for more than 6 months
-sysutils/grub2-efi||2019-05-09|Has expired: Broken for more than 6 months
-sysutils/grub2-pcbsd||2019-05-09|Has expired: Broken for more than 6 months
 sysutils/mdcp||2019-05-09|Has expired: Broken for more than 6 months
 sysutils/sbsigntool||2019-05-09|Has expired: Broken for more than 6 months
 www/py-cherrypy-old||2019-05-09|Has expired: Lates version is in tree and no dependent ports
