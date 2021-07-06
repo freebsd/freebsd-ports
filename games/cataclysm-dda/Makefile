@@ -1,7 +1,7 @@
 # Created by: Vladimir Kondratiev <wulf@cicgroup.ru>
 
 PORTNAME=	cataclysm-dda
-DISTVERSION=	0.E
+DISTVERSION=	0.F
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	games
@@ -13,7 +13,7 @@ LICENSE=	CC-BY-SA-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		alias compiler:c++14-lang gmake shebangfix
-SHEBANG_FILES=	lang/*.sh build-scripts/validate_pr_in_jenkins
+SHEBANG_FILES=	lang/*.sh
 bash_CMD=	/bin/sh
 
 USE_GITHUB=	yes
@@ -26,28 +26,26 @@ OPTIONS_DEFINE=		NLS DATA DOCS SOUND
 OPTIONS_DEFAULT=	NLS
 OPTIONS_SINGLE=		UI
 OPTIONS_SINGLE_UI=	NCURSES SDL
-OPTIONS_SUB=		yes
-OPTIONS_SLAVE?=		DATA NCURSES
 OPTIONS_EXCLUDE:=	${OPTIONS_SINGLE_UI}
+OPTIONS_SLAVE?=		DATA NCURSES
+OPTIONS_SUB=		yes
 
-UI_DESC=	User Interface
 SOUND_DESC=	Sound support (SDL UI only)
+UI_DESC=	User Interface
 
 NCURSES_USES=		ncurses
 NCURSES_ALL_TARGET=	cataclysm
-SDL_BUILD_DEPENDS=	convert:graphics/ImageMagick6
-SDL_USE=		SDL=image2,ttf2
-SDL_USES=		pkgconfig sdl
-SDL_MAKE_ARGS=		TILES=1
-SDL_ALL_TARGET=		cataclysm-tiles
-SDL_DESKTOP_ENTRIES=	"Cataclysm: DDA" "${COMMENT}" "cataclysm" "cataclysm-tiles" "Game;" ""
 NLS_USES=		gettext gettext-runtime iconv localbase
 NLS_MAKE_ARGS=		LANGUAGES=all
 NLS_MAKE_ARGS_OFF=	LOCALIZE=0
 NLS_ALL_TARGET=		localization
+SDL_USES=		pkgconfig sdl
+SDL_USE=		SDL=image2,ttf2
+SDL_MAKE_ARGS=		TILES=1
+SDL_ALL_TARGET=		cataclysm-tiles
+SOUND_IMPLIES=		SDL
 SOUND_USE=		SDL=mixer2
 SOUND_MAKE_ARGS=	SOUND=1
-SOUND_IMPLIES=		SDL
 
 .include <bsd.port.pre.mk>
 
@@ -75,29 +73,24 @@ post-patch-NLS-off:
 		'/LOCALE_DIR/s|^|#|' \
 		${WRKSRC}/Makefile
 
-post-install-NCURSES-on:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cataclysm
-
-post-install-SDL-on:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cataclysm-tiles
-.for size in 16x16 24x24 32x32 48x48 64x64 128x128
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${size}/apps
-	@convert -verbose -resize ${size} ${STAGEDIR}${DATADIR}/cataicon.ico \
-		-unsharp 0x6 ${STAGEDIR}${PREFIX}/share/icons/hicolor/${size}/apps/cataclysm.png
-.endfor
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${DOCSDIR})
 .if ${PORT_OPTIONS:MNCURSES}
-	@${INSTALL_MAN} ${STAGEDIR}${DOCSDIR}/cataclysm.6 \
+	${INSTALL_MAN} ${STAGEDIR}${DOCSDIR}/cataclysm.6 \
 		${STAGEDIR}${MANPREFIX}/share/man/man6
 .endif
 .if ${PORT_OPTIONS:MSDL}
-	@${INSTALL_MAN} ${STAGEDIR}${DOCSDIR}/cataclysm-tiles.6 \
+	${INSTALL_MAN} ${STAGEDIR}${DOCSDIR}/cataclysm-tiles.6 \
 		${STAGEDIR}${MANPREFIX}/share/man/man6
 .endif
 	@${RM} ${STAGEDIR}${DOCSDIR}/cataclysm.6 ${STAGEDIR}${DOCSDIR}/cataclysm-tiles.6
+
+post-install-NCURSES-on:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cataclysm
+
+post-install-SDL-on:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cataclysm-tiles
 
 .include <bsd.port.post.mk>
