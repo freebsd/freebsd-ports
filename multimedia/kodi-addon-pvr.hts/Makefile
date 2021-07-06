@@ -1,7 +1,7 @@
 # Created by: Bernhard Froehlich <decke@FreeBSD.org>
 
 PORTNAME=	pvr.hts
-DISTVERSION=	8.3.1
+DISTVERSION=	8.3.2
 DISTVERSIONSUFFIX=	-Matrix
 CATEGORIES=	multimedia
 
