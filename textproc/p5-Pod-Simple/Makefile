@@ -1,7 +1,7 @@
 # Created by: Mathieu Arnold <m@absolight.net>
 
 PORTNAME=	Pod-Simple
-PORTVERSION=	3.42
+PORTVERSION=	3.43
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
