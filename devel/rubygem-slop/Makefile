@@ -1,7 +1,7 @@
 # Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
 
 PORTNAME=	slop
-PORTVERSION=	4.6.2
+PORTVERSION=	4.9.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -11,8 +11,9 @@ COMMENT=	Simple DSL for gathering options and parsing the command line
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
