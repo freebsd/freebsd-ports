@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-chef-utils>=${PORTVERSION}<${PORTVERSION}_99:sysutils/rubygem-chef-utils \
 		rubygem-chef-vault>=0:sysutils/rubygem-chef-vault \
 		rubygem-chef-zero>=14.0.11:sysutils/rubygem-chef-zero \
-		rubygem-diff-lcs>=1.2.4:textproc/rubygem-diff-lcs \
+		rubygem-diff-lcs>=1.2.4<1.5.0:textproc/rubygem-diff-lcs \
 		rubygem-ed25519>=1.2<2:security/rubygem-ed25519 \
 		rubygem-erubis>=2.7<3:www/rubygem-erubis \
 		rubygem-ffi>=1.9.25:devel/rubygem-ffi \
@@ -28,15 +28,16 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-iniparse>=1.4<2:devel/rubygem-iniparse \
 		rubygem-inspec-core>=4.23<5:devel/rubygem-inspec-core \
 		rubygem-license-acceptance>=1.0.5<3:sysutils/rubygem-license-acceptance \
-		rubygem-mixlib-archive>=0.4<2:devel/rubygem-mixlib-archive \
+		rubygem-mixlib-archive>=0.4<2.0:devel/rubygem-mixlib-archive \
 		rubygem-mixlib-authentication>=2.1<4:devel/rubygem-mixlib-authentication \
-		rubygem-mixlib-cli>=2.1.1<3:devel/rubygem-mixlib-cli \
-		rubygem-mixlib-log>=2.0.3<4:devel/rubygem-mixlib-log \
-		rubygem-mixlib-shellout>=3.1.1<4:devel/rubygem-mixlib-shellout \
-		rubygem-net-sftp>=2.1.2<4:security/rubygem-net-sftp \
+		rubygem-mixlib-cli>=2.1.1<3.0:devel/rubygem-mixlib-cli \
+		rubygem-mixlib-log>=2.0.3<4.0:devel/rubygem-mixlib-log \
+		rubygem-mixlib-shellout>=3.1.1<4.0:devel/rubygem-mixlib-shellout \
+		rubygem-net-sftp>=2.1.2<4.0:security/rubygem-net-sftp \
 		rubygem-net-ssh5>=5.1,2<7,2:security/rubygem-net-ssh5 \
 		rubygem-net-ssh-multi>=1.2.1<2:security/rubygem-net-ssh-multi \
 		rubygem-ohai>=16.0<17:sysutils/rubygem-ohai \
+		rubygem-pastel>=0:devel/rubygem-pastel \
 		rubygem-plist>=3.2<4:devel/rubygem-plist \
 		rubygem-proxifier>=1.0<2:net/rubygem-proxifier \
 		rubygem-syslog-logger>=1.6<2:sysutils/rubygem-syslog-logger \
@@ -45,7 +46,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-tty-prompt>=0.21<1:devel/rubygem-tty-prompt \
 		rubygem-tty-screen>=0.6<1:devel/rubygem-tty-screen \
 		rubygem-tty-table>=0.11<1:devel/rubygem-tty-table \
-		rubygem-uuidtools>=2.1.5<2.2:devel/rubygem-uuidtools
+		rubygem-uuidtools>=2.1.5<3.0:devel/rubygem-uuidtools
 
 USES=		gem shebangfix
 USE_RUBY=	yes
