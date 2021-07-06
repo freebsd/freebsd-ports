@@ -1,7 +1,5 @@
-With the simple-navigation gem installed you can easily create multilevel
-navigations for your Rails, Sinatra or Padrino applications.  The navigation is
-defined in a single configuration file.  It supports automatic as well as
-explicit highlighting of the currently active navigation through regular
-expressions.
+Simple Navigation is a ruby library for creating navigations (with multiple
+levels) for your Rails, Sinatra or Padrino applications. It runs with all ruby
+versions.
 
 WWW: https://github.com/codeplant/simple-navigation
