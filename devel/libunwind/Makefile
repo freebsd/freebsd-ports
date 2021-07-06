@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	ARCH=${ARCH:S|i386|x86|:S|amd64|x86_64|:C|powerpc64.*|ppc64|:S|armv7|arm|}
+PLIST_SUB=	ARCH=${ARCH:S|amd64|x86_64|:S|armv7|arm|:S|i386|x86|:C|powerpc64.*|ppc64|}
 
 .include <bsd.port.pre.mk>
 
