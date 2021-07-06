@@ -21,4 +21,5 @@ FEATURES/PROBLEMS:
    * Can generate a basic Rakefile and package up built extensions for
      distribution.
 
-WWW: http://www.zenspider.com/ZSS/Products/RubyInline/
+WWW: https://www.zenspider.com/projects/rubyinline.html
+WWW: https://github.com/seattlerb/rubyinline
