@@ -1,5 +1,5 @@
 PORTNAME=	shoulda
-PORTVERSION=	3.6.0
+PORTVERSION=	4.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,11 +9,14 @@ COMMENT=	Making tests easy on the fingers and eyes
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-shoulda-context>=1.0.1:devel/rubygem-shoulda-context \
-		rubygem-shoulda-matchers>=3.0:devel/rubygem-shoulda-matchers
+RUN_DEPENDS=	rubygem-shoulda-context>=2.0<3:devel/rubygem-shoulda-context \
+		rubygem-shoulda-matchers>=4.0<5:devel/rubygem-shoulda-matchers
+
+USES=		gem shebangfix
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
+
+SHEBANG_FILES=	script/*
 
 .include <bsd.port.mk>
