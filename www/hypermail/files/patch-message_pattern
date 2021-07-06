@@ -11,6 +11,19 @@ index cdfa67f..d35d187 100644
        return buffer;
  #ifdef HAVE_LIBFNV
      }
+diff --git src/parse.c src/parse.c
+index 36da5df..77b173d 100644
+--- src/parse.c
++++ src/parse.c
+@@ -1481,7 +1481,7 @@ static void write_txt_file(struct emailinfo *emp, struct Push *raw_text_buf)
+     char *txt_filename;
+     char *p = PUSH_STRING(*raw_text_buf);
+     char tmp_buf[32];
+-    sprintf(tmp_buf, "%.4d", emp->msgnum);
++    sprintf (tmp_buf, set_message_pattern ? set_message_pattern : "%.4d" , emp->msgnum);
+     txt_filename = htmlfilename(tmp_buf, emp, set_txtsuffix);
+     if ((!emp->is_deleted
+ 	 || ((emp->is_deleted & (FILTERED_DELETE | FILTERED_OLD | FILTERED_NEW 
 diff --git src/setup.c src/setup.c
 index 3735391..0289a20 100644
 --- src/setup.c
