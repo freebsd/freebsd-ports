@@ -1,4 +1,4 @@
-CMA-ES is a Lightweight Covariance Matrix Adaptation Evolution Strategy
-(CMA-ES) implementation.
+CMA-ES is a Lightweight Covariance Matrix Adaptation Evolution Strategy (CMA-ES)
+implementation.
 
-WWW: https://pypi.org/project/cmaes/
+WWW: https://github.com/CyberAgent/cmaes
