@@ -1,7 +1,7 @@
 # Created by: chuckr@FreeBSD.org
 
 PORTNAME=	global
-PORTVERSION=	6.6.6
+PORTVERSION=	6.6.7
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
