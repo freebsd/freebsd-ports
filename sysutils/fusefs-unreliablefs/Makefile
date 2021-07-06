@@ -12,6 +12,8 @@ COMMENT=	FUSE-based fault injection filesystem
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_11=	error: use of undeclared identifier 'EINTEGRITY'
+
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		fio:benchmarks/fio
 
