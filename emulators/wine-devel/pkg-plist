@@ -179,6 +179,7 @@ include/wine/windows/cmdpre.idl
 include/wine/windows/cmdprp.idl
 include/wine/windows/cmdstrm.idl
 include/wine/windows/cmdtxt.idl
+include/wine/windows/cmdwpr.idl
 include/wine/windows/cmnquery.h
 include/wine/windows/cmnquery.idl
 include/wine/windows/codecapi.h
@@ -662,6 +663,7 @@ include/wine/windows/netcon.idl
 include/wine/windows/netfw.h
 include/wine/windows/netfw.idl
 include/wine/windows/netioapi.h
+include/wine/windows/netiodef.h
 include/wine/windows/netlistmgr.h
 include/wine/windows/netlistmgr.idl
 include/wine/windows/newdev.h
@@ -678,6 +680,7 @@ include/wine/windows/ntddstor.h
 include/wine/windows/ntddvdeo.h
 include/wine/windows/ntdef.h
 include/wine/windows/ntdsapi.h
+include/wine/windows/ntgdi.h
 %%STAGING%%include/wine/windows/ntifs.h
 include/wine/windows/ntlsa.h
 include/wine/windows/ntquery.h
@@ -736,6 +739,8 @@ include/wine/windows/poppack.h
 include/wine/windows/powrprof.h
 include/wine/windows/prntvpt.h
 include/wine/windows/profinfo.h
+include/wine/windows/proofofpossessioncookieinfo.h
+include/wine/windows/proofofpossessioncookieinfo.idl
 include/wine/windows/propidl.h
 include/wine/windows/propidl.idl
 include/wine/windows/propkey.h
@@ -866,6 +871,7 @@ include/wine/windows/t2embapi.h
 include/wine/windows/tapi.h
 include/wine/windows/taskschd.h
 include/wine/windows/taskschd.idl
+include/wine/windows/tbs.h
 include/wine/windows/tchar.h
 include/wine/windows/tcpestats.h
 include/wine/windows/tcpmib.h
@@ -1785,6 +1791,7 @@ lib/wine/%%WINEARCH%%-unix/libnetio.def
 lib/wine/%%WINEARCH%%-unix/libnewdev.def
 lib/wine/%%WINEARCH%%-unix/libninput.def
 lib/wine/%%WINEARCH%%-unix/libnormaliz.def
+lib/wine/%%WINEARCH%%-unix/libnsi.def
 lib/wine/%%WINEARCH%%-unix/libntdll.def
 lib/wine/%%WINEARCH%%-unix/libntdsapi.def
 lib/wine/%%WINEARCH%%-unix/libntoskrnl.def
@@ -1880,6 +1887,7 @@ lib/wine/%%WINEARCH%%-unix/libwtsapi32.def
 %%STAGING%%lib/wine/%%WINEARCH%%-unix/libx3daudio1_7.def
 lib/wine/%%WINEARCH%%-unix/libxinput.def
 lib/wine/%%WINEARCH%%-unix/libxmllite.def
+lib/wine/%%WINEARCH%%-unix/light.msstyles.so
 lib/wine/%%WINEARCH%%-unix/loadperf.dll.so
 lib/wine/%%WINEARCH%%-unix/localspl.dll.so
 lib/wine/%%WINEARCH%%-unix/localui.dll.so
@@ -2013,6 +2021,8 @@ lib/wine/%%WINEARCH%%-unix/normaliz.dll.so
 lib/wine/%%WINEARCH%%-unix/notepad.exe.so
 lib/wine/%%WINEARCH%%-unix/npmshtml.dll.so
 lib/wine/%%WINEARCH%%-unix/npptools.dll.so
+lib/wine/%%WINEARCH%%-unix/nsi.dll.so
+lib/wine/%%WINEARCH%%-unix/nsiproxy.sys.so
 lib/wine/%%WINEARCH%%-unix/ntdll.dll.so
 lib/wine/%%WINEARCH%%-unix/ntdll.so
 lib/wine/%%WINEARCH%%-unix/ntdsapi.dll.so
@@ -2164,6 +2174,7 @@ lib/wine/%%WINEARCH%%-unix/taskkill.exe.so
 lib/wine/%%WINEARCH%%-unix/tasklist.exe.so
 lib/wine/%%WINEARCH%%-unix/taskmgr.exe.so
 lib/wine/%%WINEARCH%%-unix/taskschd.dll.so
+lib/wine/%%WINEARCH%%-unix/tbs.dll.so
 lib/wine/%%WINEARCH%%-unix/tdh.dll.so
 lib/wine/%%WINEARCH%%-unix/tdi.sys.so
 lib/wine/%%WINEARCH%%-unix/termsv.exe.so
@@ -2907,6 +2918,7 @@ lib/wine/%%WINEARCH%%-windows/ksproxy.ax
 lib/wine/%%WINEARCH%%-windows/ksuser.dll
 lib/wine/%%WINEARCH%%-windows/ktmw32.dll
 %%MPG123%%lib/wine/%%WINEARCH%%-windows/l3codeca.acm
+lib/wine/%%WINEARCH%%-windows/light.msstyles
 lib/wine/%%WINEARCH%%-windows/loadperf.dll
 lib/wine/%%WINEARCH%%-windows/localspl.dll
 lib/wine/%%WINEARCH%%-windows/localui.dll
@@ -3037,6 +3049,8 @@ lib/wine/%%WINEARCH%%-windows/normaliz.dll
 lib/wine/%%WINEARCH%%-windows/notepad.exe
 lib/wine/%%WINEARCH%%-windows/npmshtml.dll
 lib/wine/%%WINEARCH%%-windows/npptools.dll
+lib/wine/%%WINEARCH%%-windows/nsi.dll
+lib/wine/%%WINEARCH%%-windows/nsiproxy.sys
 lib/wine/%%WINEARCH%%-windows/ntdll.dll
 lib/wine/%%WINEARCH%%-windows/ntdsapi.dll
 lib/wine/%%WINEARCH%%-windows/ntoskrnl.exe
@@ -3184,6 +3198,7 @@ lib/wine/%%WINEARCH%%-windows/taskkill.exe
 lib/wine/%%WINEARCH%%-windows/tasklist.exe
 lib/wine/%%WINEARCH%%-windows/taskmgr.exe
 lib/wine/%%WINEARCH%%-windows/taskschd.dll
+lib/wine/%%WINEARCH%%-windows/tbs.dll
 lib/wine/%%WINEARCH%%-windows/tdh.dll
 lib/wine/%%WINEARCH%%-windows/tdi.sys
 lib/wine/%%WINEARCH%%-windows/termsv.exe
