@@ -1,8 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	pg_query
-PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTVERSION=	2.1.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -13,11 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rubygem-pathname>0:devel/rubygem-pathname
-# rubygem-google-protobuf 3.17.1 is required to fix a segfault
-# see PR: https://github.com/pganalyze/pg_query/pull/212
-# and https://github.com/pganalyze/pg_query/pull/213
-RUN_DEPENDS=	${MY_DEPENDS} \
-		rubygem-google-protobuf>=3.17.1:devel/rubygem-google-protobuf
+RUN_DEPENDS=	rubygem-google-protobuf>=3.17.1:devel/rubygem-google-protobuf
 
 USES=		gem
 USE_RUBY=	yes

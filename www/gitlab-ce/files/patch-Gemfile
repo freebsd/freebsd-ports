@@ -31,7 +31,7 @@
  # released. gitlab-labkit will need to be updated to use the pg_query
  # version.
 -gem 'gitlab-pg_query', '~> 2.0.4', require: 'pg_query'
-+gem 'pg_query', '~> 2.0.3', require: 'pg_query'
++gem 'pg_query', '~> 2.1', require: 'pg_query'
  
  gem 'premailer-rails', '~> 1.10.3'
  
