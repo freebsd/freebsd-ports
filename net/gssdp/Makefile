@@ -1,7 +1,7 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	gssdp
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.0
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -26,9 +26,9 @@ OPTIONS_DEFINE=	SNIFFER VAPI
 OPTIONS_SUB=	yes
 SNIFFER_DESC=	Build graphical SSDP sniffer
 
-SNIFFER_BUILD_DEPENDS=	gtk3>=3.12:x11-toolkits/gtk30
+SNIFFER_BUILD_DEPENDS=	gtk4>=4:x11-toolkits/gtk40
 SNIFFER_MESON_TRUE=	sniffer
-SNIFFER_USE=		GNOME=gtk30
+SNIFFER_USE=		GNOME=gtk40
 VAPI_BUILD_DEPENDS=	vala>=0.20:lang/vala
 VAPI_MESON_TRUE=	vapi
 
