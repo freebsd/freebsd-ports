@@ -1,3 +1,3 @@
-TIMESTAMP = 1621458021
-SHA256 (rubygem/pg_query-2.0.3.gem) = 4f6566d174b477b25736f89d6e5455668df44962a4582c68fcc2dffbe63031d6
-SIZE (rubygem/pg_query-2.0.3.gem) = 2148352
+TIMESTAMP = 1625564038
+SHA256 (rubygem/pg_query-2.1.0.gem) = 1d4a1402ba5c9f8f2a94417409d03db7e763c846de674f049bccba66b15eb189
+SIZE (rubygem/pg_query-2.1.0.gem) = 2145280
