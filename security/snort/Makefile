@@ -4,7 +4,7 @@ PORTNAME=	snort
 PORTVERSION=	2.9.17.1
 CATEGORIES=	security
 MASTER_SITES=	https://snort.org/downloads/snort/ \
-		ZI
+		https://snort.org/downloads/archive/snort/
 
 PATCH_DIST_STRIP=	-p1
 
