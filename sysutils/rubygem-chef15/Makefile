@@ -2,6 +2,7 @@
 
 PORTNAME=	chef
 PORTVERSION=	15.15.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	15
@@ -13,7 +14,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
-		rubygem-bcrypt_pbkdf>=1.0.1<2:security/rubygem-bcrypt_pbkdf \
+		rubygem-bcrypt_pbkdf>=1.0<2:security/rubygem-bcrypt_pbkdf \
 		rubygem-bundler>=1.10:sysutils/rubygem-bundler \
 		rubygem-chef-config15>=${PORTVERSION}<${PORTVERSION}_99:sysutils/rubygem-chef-config15 \
 		rubygem-chef-utils15>=${PORTVERSION}<${PORTVERSION}_99:sysutils/rubygem-chef-utils15 \
@@ -27,12 +28,12 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-highline1>=1.6.9<2:devel/rubygem-highline1 \
 		rubygem-iniparse>=1.4<2:devel/rubygem-iniparse \
 		rubygem-license-acceptance>=1.0.5:sysutils/rubygem-license-acceptance \
-		rubygem-mixlib-archive>=0.4<2:devel/rubygem-mixlib-archive \
+		rubygem-mixlib-archive>=0.4<2.0:devel/rubygem-mixlib-archive \
 		rubygem-mixlib-authentication>=2.1<4:devel/rubygem-mixlib-authentication \
-		rubygem-mixlib-cli>=2.1.1<3:devel/rubygem-mixlib-cli \
-		rubygem-mixlib-log>=2.0.3<4:devel/rubygem-mixlib-log \
-		rubygem-mixlib-shellout>=3.0.3<4:devel/rubygem-mixlib-shellout \
-		rubygem-net-sftp>=2.1.2<4:security/rubygem-net-sftp \
+		rubygem-mixlib-cli>=2.1.1<3.0:devel/rubygem-mixlib-cli \
+		rubygem-mixlib-log>=2.0.3<4.0:devel/rubygem-mixlib-log \
+		rubygem-mixlib-shellout>=3.0.3<4.0:devel/rubygem-mixlib-shellout \
+		rubygem-net-sftp>=2.1.2<4.0:security/rubygem-net-sftp \
 		rubygem-net-ssh>=4.2,2<7,2:security/rubygem-net-ssh \
 		rubygem-net-ssh-multi>=1.2.1<2:security/rubygem-net-ssh-multi \
 		rubygem-ohai15>=15.0<16:sysutils/rubygem-ohai15 \
@@ -42,7 +43,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-train-core>=3.2.28<4:net/rubygem-train-core \
 		rubygem-train-winrm>=0.2.5:net/rubygem-train-winrm \
 		rubygem-tty-screen>=0.6<1:devel/rubygem-tty-screen \
-		rubygem-uuidtools>=2.1.5<2.2:devel/rubygem-uuidtools
+		rubygem-uuidtools>=2.1.5<3:devel/rubygem-uuidtools
 
 USES=		gem shebangfix
 USE_RUBY=	yes
