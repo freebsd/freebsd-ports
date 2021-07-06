@@ -20,11 +20,4 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 503000
-BUILD_DEPENDS+=	p5-Time-Local>=1.28:devel/p5-Time-Local
-RUN_DEPENDS+=	p5-Time-Local>=1.28:devel/p5-Time-Local
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
