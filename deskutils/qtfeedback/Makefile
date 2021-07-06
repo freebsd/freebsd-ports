@@ -14,6 +14,6 @@ USE_QT=		core declarative gui multimedia network \
 		buildtools_build qmake_build
 
 pre-configure:
-	cd ${CONFIGURE_WRKSRC} && syncqt.pl -version ${QT5_VERSION} -module QtFeedback
+	cd ${CONFIGURE_WRKSRC} && ${QT_BINDIR}/syncqt.pl -version ${QT5_VERSION} -module QtFeedback
 
 .include <bsd.port.mk>
