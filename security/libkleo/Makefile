@@ -1,10 +1,12 @@
 PORTNAME=	libkleo
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	security kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Certificate manager for KDE
 
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \

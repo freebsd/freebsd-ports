@@ -1,6 +1,6 @@
 PORTNAME=	kdiff3
 DISTVERSION=	1.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 
@@ -9,6 +9,8 @@ COMMENT=	KDE graphical frontend for diff
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
