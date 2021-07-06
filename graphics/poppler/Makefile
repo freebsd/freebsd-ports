@@ -1,8 +1,7 @@
 # Created by: marcus@FreeBSD.org
 
 PORTNAME=	poppler
-DISTVERSION=	21.06.1
-PORTREVISION=	1
+DISTVERSION=	21.07.0
 CATEGORIES=	graphics print
 MASTER_SITES=	https://poppler.freedesktop.org/
 
