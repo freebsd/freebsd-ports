@@ -1,8 +1,7 @@
 # Created by: michael@fuckner.net
 
 PORTNAME=	arcconf
-DISTVERSION=	3_01_23531
-PORTREVISION=	2
+DISTVERSION=	3_07_23971
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.adaptec.com/raid/storage_manager/
@@ -17,16 +16,22 @@ LICENSE_FILE=	${WRKSRC}/freebsd${DIST_TYPE}/cmdline/License.txt
 LICENSE_PERMS=	no-pkg-sell no-dist-sell no-dist-mirror auto-accept
 
 ONLY_FOR_ARCHS=	amd64
-USES=		zip
 LIB_DEPENDS=	libstdc++.so.6:lang/gcc${GCC_DEFAULT}
-USE_GCC=	yes
 
-PERIODICSCRIPT=	410.status-aac-raid
+USES=		zip
+USE_GCC=	4.8+
 
 SUB_FILES+=	${PERIODICSCRIPT}
 
+PERIODICSCRIPT=	410.status-aac-raid
+
 .include <bsd.port.pre.mk>
+.if ${OSREL:R} >= 12
+DIST_TYPE=	12_x64
+RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libncurses.so.8:misc/compat12x
+.else
 DIST_TYPE=	11_x64
+.endif
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
