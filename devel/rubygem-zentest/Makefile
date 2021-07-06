@@ -1,7 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 
 PORTNAME=	zentest
-PORTVERSION=	4.11.2
+PORTVERSION=	4.12.0
 PORTEPOCH=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
@@ -17,10 +17,8 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/autotest \
-		bin/multigem \
+PLIST_FILES=	bin/multigem \
 		bin/multiruby \
-		bin/multiruby_setup \
 		bin/unit_diff \
 		bin/zentest
 
