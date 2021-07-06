@@ -1,8 +1,7 @@
 # Created by: MIHIRA Yoshiro <sanpei@FreeBSD.org>
 
 PORTNAME=	mail-iso-2022-jp
-PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTVERSION=	2.0.9
 CATEGORIES=	japanese mail rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +10,7 @@ COMMENT=	Provides 'mail' gem with iso-2022-jp conversion capability
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-mail>=2.2.6:mail/rubygem-mail
+RUN_DEPENDS=	rubygem-mail>=2.2.6,2<2.7.2,2:mail/rubygem-mail
 
 USES=		gem
 USE_RUBY=	yes
