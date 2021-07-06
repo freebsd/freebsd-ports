@@ -18,7 +18,8 @@ include/bamtools/api/SamSequence.h
 include/bamtools/api/SamSequenceDictionary.h
 include/bamtools/api/algorithms/Sort.h
 include/bamtools/api/api_global.h
+include/bamtools/api/bamtools_api_export.h
 include/bamtools/shared/bamtools_global.h
 lib/libbamtools.so
-lib/libbamtools.so.2.5.1
+lib/libbamtools.so.2.5.2
 libdata/pkgconfig/bamtools-1.pc

@@ -1,4 +1,9 @@
 BamTools provides both a programmer's API and an end-user's toolkit for
 handling BAM files.
 
+BAM is the binary alternative to the sequence alignment/map (SAM) format used
+for storing genetic sequence data. It uses BGZF block compression implemented
+on top of the standard gzip file format to provide good compression while
+allowing efficient random access for indexed queries.
+
 WWW: https://github.com/pezmaster31/bamtools
