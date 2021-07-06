@@ -19,4 +19,6 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
+PORTSCOUT=	skipv:1.0.1
+
 .include <bsd.port.mk>
