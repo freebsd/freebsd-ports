@@ -2935,6 +2935,7 @@
     SUBDIR += p5-Object-Import
     SUBDIR += p5-Object-InsideOut
     SUBDIR += p5-Object-MultiType
+    SUBDIR += p5-Object-Pad
     SUBDIR += p5-Object-Pluggable
     SUBDIR += p5-Object-Realize-Later
     SUBDIR += p5-Object-Role
