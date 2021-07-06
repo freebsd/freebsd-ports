@@ -1,13 +1,11 @@
---- travis.gemspec.orig	2020-08-23 16:21:47 UTC
+--- travis.gemspec.orig	2021-07-04 17:56:14 UTC
 +++ travis.gemspec
-@@ -27,8 +27,8 @@ Gem::Specification.new do |s|
+@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<faraday_middleware>.freeze, ["~> 1.0"])
        s.add_runtime_dependency(%q<highline>.freeze, ["~> 2.0"])
        s.add_runtime_dependency(%q<gh>.freeze, ["~> 0.13"])
 -      s.add_runtime_dependency(%q<launchy>.freeze, ["~> 2.1", "< 2.5.0"])
--      s.add_runtime_dependency(%q<typhoeus>.freeze, ["~> 0.6", ">= 0.6.8"])
 +      s.add_runtime_dependency(%q<launchy>.freeze, ["~> 2.1"])
-+      s.add_runtime_dependency(%q<typhoeus>.freeze, [">= 0.6.8"])
-       s.add_runtime_dependency(%q<json>.freeze, ["~> 2.3"])
+       s.add_runtime_dependency(%q<json_pure>.freeze, ["~> 2.3"])
        s.add_runtime_dependency(%q<pusher-client>.freeze, ["~> 0.4"])
        s.add_development_dependency(%q<rspec>.freeze, ["~> 2.12"])
