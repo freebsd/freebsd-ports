@@ -27,14 +27,7 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 503000
-BUILD_DEPENDS+=	p5-Encode>=3.01:converters/p5-Encode
-RUN_DEPENDS+=	p5-Encode>=3.01:converters/p5-Encode
-.endif
-
 post-patch:
 	@${RM} ${WRKSRC}/lib/HTTP/Headers.pm.orig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
