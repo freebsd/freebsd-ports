@@ -1,8 +1,7 @@
 # Created by: alepulver
 
 PORTNAME=	eduke32
-PORTVERSION=	20210404
-PORTREVISION=	1
+PORTVERSION=	20210703
 CATEGORIES=	games
 MASTER_SITES=	http://dukeworld.com/eduke32/synthesis/${PORTVERSION}-${GITREVISION}/:eduke32 \
 		http://www.duke4.org/files/nightfright/hrp/:hrp \
@@ -38,7 +37,7 @@ USE_GL=		gl glu
 USE_GNOME=	gtk20
 USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${GITREVISION}
-GITREVISION=	9321-7225643e3
+GITREVISION=	9461-891bbb927
 DATADIR=	${PREFIX}/share/duke3d
 SUB_FILES=	pkg-message
 MAKEFILE=	GNUmakefile
