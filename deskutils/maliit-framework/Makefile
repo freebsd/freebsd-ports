@@ -24,4 +24,6 @@ CMAKE_ON=	enable-dbus-activation \
 CMAKE_OFF=	enable-tests \
 		enable-docs
 
+BINARY_ALIAS=	qtwaylandscanner=${QT_BINDIR}/qtwaylandscanner
+
 .include <bsd.port.mk>
