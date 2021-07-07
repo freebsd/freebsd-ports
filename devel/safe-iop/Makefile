@@ -9,6 +9,7 @@ COMMENT=	Safe integer operation library for C
 
 # as defined in /usr/src/include/ifaddrs.h
 LICENSE=	BSD1CLAUSE
+LICENSE_NAME=	BSD1CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
