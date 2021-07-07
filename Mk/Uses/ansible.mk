@@ -36,8 +36,8 @@
 #
 # MAINTAINER: ports@FreeBSD.org
 
-.if !defined(_INCLUDE_USES_ANSIBLE_Mk)
-_INCLUDE_USES_ANSIBLE_Mk=	yes
+.if !defined(_INCLUDE_USES_ANSIBLE_MK)
+_INCLUDE_USES_ANSIBLE_MK=	yes
 
 _valid_ARGS=    env module plugin
 .for _arg in ${ansible_ARGS}
