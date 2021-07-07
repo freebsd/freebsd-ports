@@ -22,7 +22,7 @@ MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
 ALL_TARGET=	ARCH="aarch64" PLAT=${PLAT} V=1 CFLAGS= bl31
 
 # Default to the latest release
-ATF_VERSION?=	v2.4
+ATF_VERSION?=	v2.5
 
 PLIST_FILES?=	${PREFIX}/share/${PORTNAME}-${PLAT}/${BL31:T}
 
@@ -38,6 +38,5 @@ IGNORE=		is a metaport; there is nothing to build
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/
 	${INSTALL_DATA} ${WRKSRC}/build/${PLAT}/release/${BL31} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/
-	${INSTALL_DATA} ${DESCR} ${STAGEDIR}/${INST}/README
 
 .include <bsd.port.mk>
