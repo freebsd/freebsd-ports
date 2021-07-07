@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.2
 CATEGORIES=	x11-wm
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	7b664f055249.patch:-p1 # https://github.com/WayfireWM/wayfire/pull/1230
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	3D Wayland compositor
 
@@ -51,8 +54,5 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.ini ${STAGEDIR}${EXAMPLESDIR}
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/wayland-sessions
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
-		${STAGEDIR}${PREFIX}/share/wayland-sessions
 
 .include <bsd.port.mk>
