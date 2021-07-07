@@ -1,5 +1,5 @@
 PORTNAME=	fcft
-DISTVERSION=	2.4.1
+DISTVERSION=	2.4.2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
