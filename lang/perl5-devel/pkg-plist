@@ -319,6 +319,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Pod/Escapes.pm
 %%PRIV_LIB%%/Pod/Functions.pm
 %%PRIV_LIB%%/Pod/Html.pm
+%%PRIV_LIB%%/Pod/Html/Util.pm
 %%PRIV_LIB%%/Pod/Man.pm
 %%PRIV_LIB%%/Pod/ParseLink.pm
 %%PRIV_LIB%%/Pod/Perldoc.pm
@@ -1446,6 +1447,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Pod::Checker.3.gz
 %%MAN3%%/Pod::Escapes.3.gz
 %%MAN3%%/Pod::Html.3.gz
+%%MAN3%%/Pod::Html::Util.3.gz
 %%MAN3%%/Pod::Man.3.gz
 %%MAN3%%/Pod::ParseLink.3.gz
 %%MAN3%%/Pod::Perldoc.3.gz
