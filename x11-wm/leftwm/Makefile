@@ -1,6 +1,5 @@
 PORTNAME=	leftwm
-DISTVERSION=	0.2.7-67
-DISTVERSIONSUFFIX=	-g3c80a4a
+DISTVERSION=	0.2.8
 CATEGORIES=	x11-wm
 
 MAINTAINER=	rigoletto@FreeBSD.org
@@ -16,7 +15,6 @@ USES=		cargo xorg
 USE_XORG=	xinerama xrandr
 
 USE_GITHUB=	yes
-GH_TAGNAME=	3c80a4a294598d1c461033c06a356efe33f009ff
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
