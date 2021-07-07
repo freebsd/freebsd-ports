@@ -1,9 +1,10 @@
---- adm/cmake/occt_csf.cmake.orig	2018-05-25 19:13:23 UTC
+--- adm/cmake/occt_csf.cmake.orig	2020-11-03 14:49:43 UTC
 +++ adm/cmake/occt_csf.cmake
-@@ -116,6 +116,5 @@ if (WIN32)
+@@ -124,7 +124,6 @@ else()
        set (CSF_OpenGlLibs  "GL")
      endif()
      set (CSF_XwLibs      "X11 Xext Xmu Xi")
 -    set (CSF_dl          "dl")
+     set (CSF_fontconfig  "fontconfig")
    endif()
  endif()

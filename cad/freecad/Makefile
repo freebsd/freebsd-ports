@@ -1,10 +1,13 @@
 PORTNAME=	FreeCAD
 DISTVERSION=	0.19.2
-PORTREVISION=	2
+PORTREVISION=	3
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
 CATEGORIES=	cad
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	0cfea3fee3e7848bbf043d2b1a19f6405d7ebe25.patch:-p1
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	General purpose 3D CAD modeller
@@ -22,7 +25,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libCoin.so:graphics/Coin \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
-		libvtkFiltersTexture-8.2.so:math/vtk8 \
+		libvtksys-${VTK_VER}.so:math/vtk${VTK_VER:R} \
 		libTKernel.so:cad/opencascade \
 		libxerces-c.so:textproc/xerces-c3 \
 		libboost_thread.so:devel/boost-libs \
@@ -43,6 +46,8 @@ USE_QT=		buildtools concurrent core gui network opengl printsupport \
 		qmake_build svg webkit widgets xml xmlpatterns
 USE_LDCONFIG=	yes
 
+VTK_VER=	9.0
+
 DOS2UNIX_GLOB=	*.txt *.h *.cpp *.py *.qss *.csv *.pov *.stp *.ui *.wrl *.WRL
 
 CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
@@ -55,7 +60,6 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DBUILD_ASSEMBLY="OFF" -DBUILD_FLAT_MESH="ON" \
 		-DPYSIDE2RCCBINARY="${RCC}" \
 		-DPYSIDE2UICBINARY="${UIC}" \
-		-DVTK_DIR:PATH=${LOCALBASE}/lib/vtk-8.2/cmake/vtk-8.2 \
 		-DBUILD_ENABLE_CXX_STD=C++17
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}

@@ -2,7 +2,7 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	7.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -18,8 +18,8 @@ BUILD_DEPENDS=	rapidjson>0:devel/rapidjson			\
 		${LOCALBASE}/lib/qt5/bin/qmake:devel/qt5-qmake	\
 		${LOCALBASE}/lib/qt5/bin/moc:devel/qt5-buildtools
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
-		libvtksys-${VTKVER}.so:math/vtk8	\
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2		\
+		libvtksys-${VTKVER}.so:math/vtk${VTKVER:R}
 RUN_DEPENDS=	bash:shells/bash
 
 # Check ${WRKSRC}/dox/overview/overview.md
@@ -27,7 +27,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		alias:10 cmake compiler:c++14-lang dos2unix \
 		gl python qt:5 shebangfix tk tar:tgz xorg
 USE_XORG=	ice sm x11 xext xi xmu xt
-USE_GL=		gl glu
+USE_GL=		egl gl glesv2 glu
 
 DOS2UNIX_FILES=	adm/templates/*
 SHEBANG_FILES=	adm/templates/*.sh	\
@@ -38,7 +38,7 @@ SHEBANG_FILES=	adm/templates/*.sh	\
 		gendoc
 ENVSH=		adm/templates/env.sh
 
-VTKVER=		8.2
+VTKVER=		9.0
 
 OPTIONS_DEFINE=	DOCS DOXYGEN FFMPEG VIS
 VIS_DESC=	Build Visualizazion module (requires OpenGL, freetype, ftgl)
@@ -59,7 +59,7 @@ CMAKE_ARGS+=	-DINSTALL_DIR=${OCCROOT}				\
 		-DUSE_TBB:BOOL=OFF					\
 		-DUSE_RAPIDJSON:BOOL=ON					\
 		-DUSE_VTK:BOOL=ON					\
-		-DVTK_DIR:PATH=${LOCALBASE}/lib/vtk-${VTKVER}/cmake/vtk-${VTKVER}
+		-D3RDPARTY_VTK_INCLUDE_DIR:PATH=${LOCALBASE}/include/vtk-${VTKVER}
 
 # TODO: TBB to be replaced by onetbb later
 #CMAKE_ARGS+=	-DUSE_EIGEN:BOOL=ON -DUSE_TBB:BOOL=ON
