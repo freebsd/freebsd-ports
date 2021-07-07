@@ -393,6 +393,7 @@
     SUBDIR += workrave
     SUBDIR += wshowkeys
     SUBDIR += wtype
+    SUBDIR += x-on-resize
     SUBDIR += x11perf
     SUBDIR += x3270
     SUBDIR += xantfarm
