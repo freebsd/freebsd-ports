@@ -11,6 +11,7 @@
     SUBDIR += alttab
     SUBDIR += aminal
     SUBDIR += antimicro
+    SUBDIR += appmenu-registrar
     SUBDIR += appres
     SUBDIR += apwal
     SUBDIR += arandr
