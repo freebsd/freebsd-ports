@@ -1,14 +1,14 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	notes
-PORTVERSION=	4.0.4
+PORTVERSION=	4.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www editors
-MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
+MASTER_SITES=	https://github.com/nextcloud/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}/${DISTNAME}-${DISTVERSIONPREFIX}${PORTVERSION}
+DIST_SUBDIR=	nextxloud/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Notes app for Nextcloud
@@ -22,16 +22,12 @@ USES=		php:flavors
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-NEXTCLOUD_USERNAME?=	${WWWOWN}
-NEXTCLOUD_GROUPNAME?=	${WWWGRP}
-
-PLIST_SUB=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
-		NEXTCLOUD_GROUPNAME=${NEXTCLOUD_GROUPNAME}
-
 WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+	@(cd ${WRKSRC}; ${FIND} . -not -type d) | ${SORT} | \
+		${SED} -e 's,^\.,${WWWDIR_REL},' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
