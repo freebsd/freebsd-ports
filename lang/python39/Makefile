@@ -34,7 +34,7 @@ PYTHON_SUFFIX=		${PYTHON_VER:S/.//g}
 DISABLED_EXTENSIONS=	_sqlite3 _tkinter _gdbm
 CONFIGURE_ARGS+=	--enable-shared --without-ensurepip \
 			--with-system-ffi
-CONFIGURE_ENV+=		OPT="" DISABLED_EXTENSIONS="${DISABLED_EXTENSIONS}"	# Null out OPT to respect user CFLAGS and remove optimizations
+CONFIGURE_ENV+=		OPT="" # Null out OPT to respect user CFLAGS and remove optimizations
 
 INSTALL_TARGET=		altinstall						# Don't want cloberring of unprefixed files
 
@@ -116,6 +116,11 @@ post-patch:
 # which introduces hidden dependency and breaks build
 	@${REINPLACE_CMD} -e 's|uuid/uuid.h|ignore_&|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/find_library_file/ s|uuid|ignore_&|' ${WRKSRC}/setup.py
+# Apply DISABLED_EXTENSIONS
+	@${ECHO} '*disabled*' > ${WRKSRC}/Modules/Setup.local
+.  for _module in ${DISABLED_EXTENSIONS}
+		@${ECHO} ${_module} >> ${WRKSRC}/Modules/Setup.local
+.  endfor
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
