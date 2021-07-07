@@ -1,27 +1,31 @@
-PORTNAME=	appmenu-registrar
+PORTNAME=	mate-applet-appmenu
 DISTVERSION=	0.7.6
 CATEGORIES=	x11
 
 MAINTAINER=	ericbsd@FreeBSD.org
-COMMENT=	Appmenu DBusMenu registrar
+COMMENT=	Application Menu plugin for mate-panel
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libbamf3.so:sysutils/bamf
 BUILD_DEPENDS=	valac:lang/vala
+RUN_DEPENDS=	appmenu-registrar>=0:x11/appmenu-registrar \
+		appmenu-gtk-module>=0:x11/gtk-app-menu
 
-USES=	meson gnome pkgconfig gettext
+USES=	meson gnome mate pkgconfig gettext
 
 MESON_ARGS=	-Dvalapanel=disabled \
 		-Dxfce=disabled \
-		-Dmate=disabled \
+		-Dmate=enabled \
 		-Dbudgie=disabled \
 		-Djayatana=disabled \
-		-Dregistrar=enabled \
+		-Dregistrar=disabled \
 		-Dappmenu-gtk-module=disabled
 
+USE_MATE= 	panel
 USE_GNOME=	gtk30 glib20 gtk20 gdkpixbuf2
+GLIB_SCHEMAS=	org.valapanel.appmenu.gschema.xml
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	vala-panel-project

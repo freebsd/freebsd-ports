@@ -215,6 +215,7 @@
     SUBDIR += ly
     SUBDIR += mako
     SUBDIR += mate
+    SUBDIR += mate-applet-appmenu
     SUBDIR += mate-applets
     SUBDIR += mate-base
     SUBDIR += mate-desktop
