@@ -1,5 +1,5 @@
 diff --git src/file.c src/file.c
-index cdfa67f..d35d187 100644
+index cdfa67f..7e376f1 100644
 --- src/file.c
 +++ src/file.c
 @@ -655,7 +655,7 @@ char *message_name (struct emailinfo *email)
@@ -7,12 +7,117 @@ index cdfa67f..d35d187 100644
      {
  #endif /* HAVE_LIBFNV */
 -      sprintf (buffer, "%.4d", email->msgnum);
-+      sprintf (buffer, set_message_pattern ? set_message_pattern : "%.4d" , email->msgnum);
++      sprintf (buffer, set_message_pattern, email->msgnum);
        return buffer;
  #ifdef HAVE_LIBFNV
      }
+diff --git src/finelink.c src/finelink.c
+index e320f8c..ec3ee89 100644
+--- src/finelink.c
++++ src/finelink.c
+@@ -181,7 +181,9 @@ static int add_anchor(int msgnum, int quoting_msgnum, int quote_num, const char
+ 	        struct emailinfo *ep2;
+ 		if (hashnumlookup(quoting_msgnum, &ep2)) {
+ 		    char *path = get_path(ep, ep2);
+-					fprintf(fp2, "<a href=\"%s%.4d.%s#qlink%d\">%s</a>", path, quoting_msgnum, set_htmlsuffix, quote_num, set_link_to_replies);
++		    fprintf(fp2, "<a href=\"%s", path);
++		    fprintf(fp2, set_message_pattern, quoting_msgnum);
++		    fprintf(fp2, ".%s#qlink%d\">%s</a>", set_htmlsuffix, quote_num, set_link_to_replies);
+ 		    if (*path)
+ 		        free(path);
+ 		}
+@@ -283,19 +285,23 @@ static char *url_replying_to(struct emailinfo *email, char *line1,	/* first line
+     String_Match match_info;
+     char *p;
+     int subjmatch = 0;
+-    char *anchor;
++    char *anchor, *pattern;
+     struct emailinfo *ep;
+ 	int statusnum = hashreplynumlookup(*quoting_msgnum, email->inreplyto, email->subject,
+ 			   &subjmatch);
+     hashnumlookup(*quoting_msgnum, &ep);
+-    trio_asprintf(&anchor, "%.4dqlink%d", *quoting_msgnum, quote_num);
++    trio_asprintf(&pattern, "%sqlink%%d", set_message_pattern);
++    trio_asprintf(&anchor, pattern, *quoting_msgnum, quote_num);
++    free(pattern);
+     if (statusnum != -1) {
+ 	struct emailinfo *ep2;
+ 	hashnumlookup(statusnum, &ep2);
+ 		if (add_anchor(statusnum, *quoting_msgnum, quote_num, anchor, line1, 0, count_quoted_lines, NULL)) {
+ 	    char *path = get_path(ep, ep2);
+ 	    char *buf;
+-			trio_asprintf(&buf, "%s%.4d.%s#%s", path, statusnum, set_htmlsuffix, anchor);
++	    trio_asprintf(&pattern, "%%s%s%%s#%%s", set_message_pattern);
++	    trio_asprintf(&buf, pattern, path, statusnum, set_htmlsuffix, anchor);
++	    free(pattern);
+ 	    if (maybe_reply)
+ 		set_new_reply_to(statusnum, strlen(line2));
+ 	    if (*path)
+@@ -316,7 +322,9 @@ static char *url_replying_to(struct emailinfo *email, char *line1,	/* first line
+ 			if (add_anchor(statusnum, *quoting_msgnum, quote_num, anchor, tptr, 1, count_quoted_lines, NULL)) {
+ 	        char *path = get_path(ep, ep2);
+ 		char *buf;
+-				trio_asprintf(&buf, "%s%.4d.%s#%s", path, statusnum, set_htmlsuffix, anchor);
++		trio_asprintf(&pattern, "%%s%s%%s#%%s", set_message_pattern);
++		trio_asprintf(&buf, pattern, path, statusnum, set_htmlsuffix, anchor);
++		free(pattern);
+ 		free(tptr);
+ 		if (maybe_reply)
+ 		    set_new_reply_to(statusnum, strlen(buf));
+@@ -362,7 +370,9 @@ static char *url_replying_to(struct emailinfo *email, char *line1,	/* first line
+                 hashnumlookup(match_info.msgnum, &ep2);
+                 path = get_path(ep, ep2);
+ 
+-		trio_asprintf(&buf, "%s%.4d.%s#%s", path, match_info.msgnum, set_htmlsuffix, anchor);
++		trio_asprintf(&pattern, "%%s%s%%s#%%s", set_message_pattern);
++		trio_asprintf(&buf, pattern, path, match_info.msgnum, set_htmlsuffix, anchor);
++		free(pattern);
+ 		set_new_reply_to(match_info.msgnum, match_info.match_len_bytes);
+ 		free(parsed2);
+ 		if (*path)
+@@ -541,8 +551,10 @@ void replace_maybe_replies(const char *filename, struct emailinfo *ep, int new_r
+ 		char *tmpptr = convchars(ep2->subject, ep2->charset);
+ 		if (tmpptr) {
+ 		    char *path = get_path(ep, ep2);
+-                    fprintf(fp2,"[ <a href=\"%s%.4d.%s\" title=\"%s: &quot;%s&quot;\">%s</a> ]\n", 
+-			    path, new_reply_to, set_htmlsuffix, lang[MSG_LTITLE_IN_REPLY_TO], 
++                    fprintf(fp2,"[ <a href=\"%s", path);
++		    fprintf(fp2, set_message_pattern, new_reply_to);
++		    fprintf(fp2, ".%s\" title=\"%s: &quot;%s&quot;\">%s</a> ]\n",
++			    set_htmlsuffix, lang[MSG_LTITLE_IN_REPLY_TO],
+ 			    ep2->name, tmpptr ? tmpptr : "");
+ 		    free(tmpptr);
+ 		}
+@@ -552,10 +564,12 @@ void replace_maybe_replies(const char *filename, struct emailinfo *ep, int new_r
+ 	        char *tmpptr = convchars(ep2->subject, ep2->charset);
+ 		if (tmpptr) {
+ 		    char *path = get_path(ep, ep2);
+-                    fprintf(fp2, "<li><dfn>%s</dfn> " 
+-			    "<a href=\"%s%.4d.%s\" title=\"%s\">%s: \"%s\"</a></li>\n", 
+-			    lang[MSG_IN_REPLY_TO], path, 
+-			    new_reply_to, set_htmlsuffix, lang[MSG_LTITLE_IN_REPLY_TO], 
++                    fprintf(fp2, "<li><dfn>%s</dfn> "
++			    "<a href=\"%s",
++			    lang[MSG_IN_REPLY_TO], path);
++		    fprintf(fp2, set_message_pattern, new_reply_to);
++		    fprintf(fp2, ".%s\" title=\"%s\">%s: \"%s\"</a></li>\n",
++			    set_htmlsuffix, lang[MSG_LTITLE_IN_REPLY_TO],
+ 			    ep2->name, tmpptr ? tmpptr : "");
+ 		    free(tmpptr);
+ 		}
+@@ -565,7 +579,9 @@ void replace_maybe_replies(const char *filename, struct emailinfo *ep, int new_r
+ 		char *tmpptr = convchars(ep2->subject, ep2->charset);
+ 		if (tmpptr) {
+ 		    char *path = get_path(ep, ep2);
+-                    fprintf(fp2, "<li> <strong>%s:</strong> " "<a href=\"%s%.4d.%s\">%s: \"%s\"</a>\n", lang[MSG_IN_REPLY_TO], path, new_reply_to, set_htmlsuffix, ep2->name, tmpptr ? tmpptr : "");
++                    fprintf(fp2, "<li> <strong>%s:</strong> " "<a href=\"%s", lang[MSG_IN_REPLY_TO], path);
++		    fprintf(fp2, set_message_pattern, new_reply_to);
++		    fprintf(fp2, ".%s\">%s: \"%s\"</a>\n", set_htmlsuffix, ep2->name, tmpptr ? tmpptr : "");
+ 		    free(tmpptr);
+ 		}
+ 	  }
 diff --git src/parse.c src/parse.c
-index 36da5df..77b173d 100644
+index 36da5df..719c39d 100644
 --- src/parse.c
 +++ src/parse.c
 @@ -1481,7 +1481,7 @@ static void write_txt_file(struct emailinfo *emp, struct Push *raw_text_buf)
@@ -20,12 +125,65 @@ index 36da5df..77b173d 100644
      char *p = PUSH_STRING(*raw_text_buf);
      char tmp_buf[32];
 -    sprintf(tmp_buf, "%.4d", emp->msgnum);
-+    sprintf (tmp_buf, set_message_pattern ? set_message_pattern : "%.4d" , emp->msgnum);
++    sprintf (tmp_buf, set_message_pattern, emp->msgnum);
      txt_filename = htmlfilename(tmp_buf, emp, set_txtsuffix);
      if ((!emp->is_deleted
  	 || ((emp->is_deleted & (FILTERED_DELETE | FILTERED_OLD | FILTERED_NEW 
+@@ -3720,14 +3720,18 @@ int parse_old_html(int num, struct emailinfo *ep, int parse_body,
+     }
+ 
+     /* prepare the name of the file that stores the message */
+-    if (set_nonsequential)
++    if (set_nonsequential) {
+       trio_asprintf(&filename, "%s%s%s.%s", set_dir,
+ 		    subdir ? subdir->subdir : "", 
+ 		    msgnum_id_table[num],
+ 		    set_htmlsuffix);
+-    else
+-      trio_asprintf(&filename, "%s%s%.4d.%s", set_dir,
++    } else {
++      char *pattern;
++      trio_asprintf(&pattern, "%%s%%s%s.%%s", set_message_pattern);
++      trio_asprintf(&filename, pattern, set_dir,
+ 		    subdir ? subdir->subdir : "", num, set_htmlsuffix);
++      free(pattern);
++    }
+ 
+     /*
+      * fromdate == <!-- received="Wed Jun  3 10:12:00 1998 CDT" -->
+diff --git src/print.c src/print.c
+index a3f9be2..9255251 100644
+--- src/print.c
++++ src/print.c
+@@ -1554,11 +1554,13 @@ static char *href01(struct emailinfo *email, struct emailinfo *email2, int in_th
+ 		    bool generate_markup)
+ {
+ 	static char buffer[256];
++	char pattern[256];
+ 	if (in_thread_file) {
+ 	  if (generate_markup)
+-	    sprintf(buffer, "<a href=\"#%.4d\">", email2->msgnum);
++	    snprintf(pattern, sizeof(pattern), "<a href=\"#%s\">", set_message_pattern);
+ 	  else
+-	    sprintf(buffer, "#%.4d", email2->msgnum);
++	    snprintf(pattern, sizeof(pattern), "#%s", set_message_pattern);
++	  sprintf(buffer, pattern, email2->msgnum);
+ 	  return buffer;
+ 	} 
+ 	else
+@@ -2328,7 +2330,9 @@ void writearticles(int startnum, int maxnum)
+ 	fprintf(fp, "</div>\n");
+ 	
+ 	if (set_txtsuffix) {
+-	  fprintf(fp, "<p><a rel=\"nofollow\" href=\"%.4d.%s\">%s</a>", email->msgnum, set_txtsuffix, lang[MSG_TXT_VERSION]);
++	  fprintf(fp, "<p><a rel=\"nofollow\" href=\"");
++	  fprintf(fp, set_message_pattern, email->msgnum);
++	  fprintf(fp, ".%s\">%s</a>", set_txtsuffix, lang[MSG_TXT_VERSION]);
+ 	}
+ 	
+ 	printfooter(fp, mhtmlfooterfile, set_label, set_dir, email->subject, filename, FALSE);
 diff --git src/setup.c src/setup.c
-index 3735391..0289a20 100644
+index 3735391..ce30fc4 100644
 --- src/setup.c
 +++ src/setup.c
 @@ -146,6 +146,7 @@ char *set_mhtmlfooter;
@@ -40,7 +198,7 @@ index 3735391..0289a20 100644
       "# option is set to plus a file name extension if one can be found\n"
       "# in the name supplied by the message. This option is mainly for\n"
       "# languages that use different character sets from English.\n", FALSE},
-+    {"message_pattern", &set_message_pattern, NULL, CFG_STRING,
++    {"message_pattern", &set_message_pattern, "%.4d", CFG_STRING,
 +     "# This option overrides the default pattern \"%.4d\" for creating\n"
 +     "# html files.\n", FALSE},
  };
@@ -58,3 +216,20 @@ index 3a57a26..7f944c0 100644
  extern bool set_linkquotes;
  
  extern char *set_antispamdomain;
+diff --git src/threadprint.c src/threadprint.c
+index 5b74a0f..c1b228f 100644
+--- src/threadprint.c
++++ src/threadprint.c
+@@ -258,7 +258,11 @@ static void format_thread_info(FILE *fp, struct emailinfo *email,
+     if (set_files_by_thread) {
+ 	int maybe_reply = 0;
+ 	int is_reply = 1;
+-	fprintf(fp_body, "<a name =\"%.4d\" id=\"%.4d\"></a>", email->msgnum, email->msgnum);
++	fprintf(fp_body, "<a name =\"");
++	fprintf(fp_body, set_message_pattern, email->msgnum);
++	fprintf(fp_body, "\" id=\"");
++	fprintf(fp_body, set_message_pattern, email->msgnum);
++	fprintf(fp_body, "\"></a>");
+ 	print_headers(fp_body, email, TRUE);
+ 	if ((set_show_msg_links && set_show_msg_links != 4) || !set_usetable) {
+ 	    fprintf(fp_body, "</ul>\n");
