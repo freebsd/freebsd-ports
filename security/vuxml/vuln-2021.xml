@@ -1,3 +1,30 @@
+  <vuln vid="01974420-dfaf-11eb-ba49-001b217b3468">
+    <topic>Gitlab -- vulnerability</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>14.0.0</ge><lt>14.0.4</lt></range>
+	<range><ge>13.12.0</ge><lt>13.12.8</lt></range>
+	<range><ge>13.11.0</ge><lt>13.11.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2021/07/07/critical-security-release-gitlab-14-0-4-released/">
+	  <p>Arbitrary file read via design feature</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://about.gitlab.com/releases/2021/07/07/critical-security-release-gitlab-14-0-4-released/</url>
+    </references>
+    <dates>
+      <discovery>2021-07-07</discovery>
+      <entry>2021-07-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d49f86ab-d9c7-11eb-a200-00155d01f201">
     <topic>Exiv2 -- Multiple vulnerabilities</topic>
     <affects>
