@@ -16195,7 +16195,6 @@ textproc/elasticsearch5-search-guard||2021-04-06|Has expired: textproc/elasticse
 multimedia/gnome-subtitles||2021-04-06|Has expired: outdated, depends on deprecated library www/gtkhtml3
 net/libproxy-mozjs||2021-04-06|Has expired: Uses EOL Python 2.7 via lang/spidermonkey52
 lang/spidermonkey52|lang/spidermonkey78|2021-04-06|Has expired: Uses Python 2.7 which is EOLed upstream
-ftp/wzdftpd||2021-04-07|Has expired: Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
 astro/roadmap||2021-04-07|Has expired: Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
 games/cosmo||2021-04-07|Has expired: Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
 games/bomberinstinct||2021-04-07|Has expired: Unmaintained and dead upstream, does not build with -fno-common (llvm 11)

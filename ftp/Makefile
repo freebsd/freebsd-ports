@@ -93,6 +93,7 @@
     SUBDIR += wmget
     SUBDIR += wput
     SUBDIR += wxdfast
+    SUBDIR += wzdftpd
     SUBDIR += yafc
 
 .include <bsd.port.subdir.mk>
