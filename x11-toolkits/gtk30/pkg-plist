@@ -100,6 +100,7 @@ include/gtk-3.0/gtk/a11y/gtkcontaineraccessible.h
 include/gtk-3.0/gtk/a11y/gtkcontainercellaccessible.h
 include/gtk-3.0/gtk/a11y/gtkentryaccessible.h
 include/gtk-3.0/gtk/a11y/gtkexpanderaccessible.h
+include/gtk-3.0/gtk/a11y/gtkfilechooserwidgetaccessible.h
 include/gtk-3.0/gtk/a11y/gtkflowboxaccessible.h
 include/gtk-3.0/gtk/a11y/gtkflowboxchildaccessible.h
 include/gtk-3.0/gtk/a11y/gtkframeaccessible.h
@@ -434,7 +435,6 @@ lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-viqr.so
 %%WAYLAND%%lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-wayland.so
 %%WAYLAND%%lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-waylandgtk.so
 %%X11%%lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-xim.so
-%%CLOUDPRINT%%lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-cloudprint.so
 %%CUPS%%lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-cups.so
 lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-file.so
 lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-lpr.so

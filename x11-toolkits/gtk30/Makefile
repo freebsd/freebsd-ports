@@ -3,8 +3,7 @@
 # adwaita-icon-theme, gnome-themes-standard and mate-themes
 
 PORTNAME=	gtk
-PORTVERSION=	3.24.29
-PORTREVISION=	1
+PORTVERSION=	3.24.30
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	3
@@ -38,7 +37,7 @@ CPPFLAGS+=	-fno-omit-frame-pointer
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
-LIBVERSION=	0.2404.25
+LIBVERSION=	0.2404.26
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
@@ -47,7 +46,7 @@ GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
 		org.gtk.Settings.EmojiChooser.gschema.xml \
 		org.gtk.Settings.FileChooser.gschema.xml
 
-OPTIONS_DEFINE=	ATK_BRIDGE CUPS CLOUDPRINT COLORD DEBUG BROADWAY WAYLAND X11
+OPTIONS_DEFINE=	ATK_BRIDGE CUPS COLORD DEBUG BROADWAY WAYLAND X11
 OPTIONS_DEFAULT=ATK_BRIDGE CUPS COLORD BROADWAY WAYLAND X11
 OPTIONS_SUB=	yes
 
@@ -65,13 +64,6 @@ COLORD_CONFIGURE_ENABLE=colord
 
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_CONFIGURE_ENABLE=	cups
-
-CLOUDPRINT_DESC=	Cloud printing support
-CLOUDPRINT_CONFIGURE_ENABLE=	cloudprint
-CLOUDPRINT_USE=		gnome=libxml2
-CLOUDPRINT_LIB_DEPENDS=	librest-0.7.so:devel/librest \
-			libsoup-2.4.so:devel/libsoup \
-			libjson-glib-1.0.so:devel/json-glib
 
 # don't explicitly disable debug, this causes segfaults. See ports r437293
 DEBUG_CONFIGURE_ON=	--enable-debug=yes
