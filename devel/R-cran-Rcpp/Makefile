@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	Rcpp
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
