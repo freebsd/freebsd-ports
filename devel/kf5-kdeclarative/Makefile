@@ -1,5 +1,6 @@
 PORTNAME=	kdeclarative
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,9 +12,9 @@ USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig \
 		qt:5 tar:xz
 USE_KDE=	completion config coreaddons globalaccel guiaddons i18n \
 		iconthemes jobwidgets kio notifications package service widgetsaddons \
-		windowsystem
-USE_QT=		concurrent core dbus declarative gui network testlib widgets \
-		xml \
-		buildtools_build qmake_build
+		windowsystem \
+		ecm_build
+USE_QT=		concurrent core dbus declarative gui network widgets xml \
+		buildtools_build qmake_build testlib_build
 
 .include <bsd.port.mk>

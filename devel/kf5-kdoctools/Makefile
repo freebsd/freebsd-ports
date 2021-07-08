@@ -1,5 +1,6 @@
 PORTNAME=	kdoctools
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +14,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xs
 
 USES=		cmake compiler:c++11-lib gettext gnome kde:5 qt:5 tar:xz
 USE_GNOME=	libxml2 libxslt
-USE_KDE=	archive ecm i18n
+USE_KDE=	archive i18n \
+		ecm_build
 USE_QT=		core \
 		buildtools_build qmake_build
 

@@ -1,6 +1,6 @@
 PORTNAME=	kwayland
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,8 +17,8 @@ LICENSE_COMB=	dual
 USES=		cmake compiler:c++11-lib gettext gl kde:5 pkgconfig \
 		qt:5 tar:xz
 USE_GL=		egl
-USE_KDE=	ecm
-USE_QT=		concurrent core gui testlib wayland \
-		buildtools_build qmake_build
+USE_KDE=	ecm_build
+USE_QT=		concurrent core gui wayland \
+		buildtools_build qmake_build testlib_build
 
 .include <bsd.port.mk>

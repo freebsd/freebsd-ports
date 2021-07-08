@@ -1,5 +1,6 @@
 PORTNAME=	knotifications
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,7 +10,8 @@ LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt \
 		libcanberra.so:audio/libcanberra
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz xorg
-USE_KDE=	codecs config coreaddons ecm windowsystem
+USE_KDE=	codecs config coreaddons windowsystem \
+		ecm_build
 USE_QT=		core dbus gui linguisttools phonon4 widgets x11extras \
 		buildtools_build qmake_build
 USE_XORG=	x11 xtst

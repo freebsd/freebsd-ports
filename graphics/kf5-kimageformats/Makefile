@@ -1,6 +1,6 @@
 PORTNAME=	kimageformats
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics kde kde-frameworks
 
 PATCH_SITES=	https://invent.kde.org/frameworks/${PORTNAME}/-/commit/
@@ -13,7 +13,8 @@ COMMENT=	KF5 library providing support for additional image formats
 LIB_DEPENDS=	libImath.so:math/Imath
 
 USES=		cmake compiler:c++11-lib kde:5 pkgconfig qt:5 tar:xz
-USE_KDE=	archive ecm
+USE_KDE=	archive \
+		ecm_build
 USE_QT=		core gui printsupport widgets \
 		buildtools_build qmake_build
 
