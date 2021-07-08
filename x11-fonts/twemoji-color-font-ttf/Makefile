@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	twemoji-color-font-ttf
-PORTVERSION=	13.0.1
+PORTVERSION=	13.1.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/eosrei/twemoji-color-font/releases/download/v${PORTVERSION}/
 DISTNAME=	TwitterColorEmoji-SVGinOT-Linux-${PORTVERSION}
