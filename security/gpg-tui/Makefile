@@ -1,6 +1,6 @@
 PORTNAME=	gpg-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
+DISTVERSION=	0.7.0
 CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
@@ -114,8 +114,8 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		socket2-0.3.19 \
 		static_assertions-1.1.0 \
 		strsim-0.8.0 \
-		structopt-0.3.21 \
-		structopt-derive-0.4.14 \
+		structopt-0.3.22 \
+		structopt-derive-0.4.15 \
 		syn-1.0.55 \
 		term_size-0.3.2 \
 		textwrap-0.11.0 \
