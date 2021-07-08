@@ -1,7 +1,7 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 
 PORTNAME=	consolekit
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	sysutils gnome
 PKGNAMESUFFIX=	2
 
