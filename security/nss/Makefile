@@ -1,9 +1,16 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 
 PORTNAME=	nss
-PORTVERSION=	3.67
+PORTVERSION=	3.68
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
+# XXX Temporary until upstream uploads their own version
+# $ pkg install git-cinnabar
+# $ git clone hg::https://hg.mozilla.org/projects/nss
+# $ cd nss
+# $ git fetch --tags hg::tags: tag "*"
+# $ git archive -o ${_DISTDIR}/nss-${PORTVERSION}.tar.gz --prefix=nss-${PORTVERSION}/nss/ --format tar.gz NSS_${PORTVERSION:S/./_/g}_RTM
+MASTER_SITES=	LOCAL/jbeich
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
