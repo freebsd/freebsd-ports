@@ -11414,6 +11414,7 @@
 %%WWWDIR%%/config/feature_flags/development/read_container_registry_access_level.yml
 %%WWWDIR%%/config/feature_flags/development/real_time_issue_sidebar.yml
 %%WWWDIR%%/config/feature_flags/development/rebalance_issues.yml
+%%WWWDIR%%/config/feature_flags/development/recursive_approach_for_all_projects.yml
 %%WWWDIR%%/config/feature_flags/development/redirect_to_latest_template_jobs_browser_performance_testing.yml
 %%WWWDIR%%/config/feature_flags/development/redirect_to_latest_template_security_api_fuzzing.yml
 %%WWWDIR%%/config/feature_flags/development/redirect_to_latest_template_security_dast.yml
@@ -32220,6 +32221,8 @@
 %%WWWDIR%%/spec/lib/gitlab/lets_encrypt_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/lfs/client_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/lfs_token_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/local_and_remote_storage_migration/artifact_migrater_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/local_and_remote_storage_migration/pages_deployment_migrater_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/log_timestamp_formatter_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/logging/cloudflare_helper_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/lograge/custom_options_spec.rb
@@ -35662,6 +35665,7 @@
 %%WWWDIR%%/spec/support/shared_examples/lib/gitlab/jwt_token_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/lib/gitlab/kubernetes/network_policy_common_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/lib/gitlab/ldap_shared_examples.rb
+%%WWWDIR%%/spec/support/shared_examples/lib/gitlab/local_and_remote_storage_migration_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/lib/gitlab/malicious_regexp_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/lib/gitlab/middleware/multipart_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/lib/gitlab/middleware/read_only_gitlab_instance_shared_examples.rb
