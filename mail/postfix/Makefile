@@ -88,8 +88,9 @@ MAKEFILEFLAGS+=	DEBUG=
 
 MAKEFILEFLAGS+=	pie=yes CC="${CC}" OPT="${CFLAGS}"
 
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_11=	error: OpenSSL-1.1.1 is the minimum supported version
+.if (${OSREL:R} < 12 && ${SSL_DEFAULT} == base) || (${SSL_DEFAULT} == libressl)
+BROKEN=		error: OpenSSL-1.1.1 is the minimum supported version. \
+		LibreSSL is not supported
 .endif
 
 .if ${PORT_OPTIONS:MINST_BASE}
