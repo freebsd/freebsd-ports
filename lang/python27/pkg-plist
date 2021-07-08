@@ -1937,9 +1937,11 @@ lib/python2.7/lib-dynload/cmath.so
 lib/python2.7/lib-dynload/crypt.so
 lib/python2.7/lib-dynload/datetime.so
 lib/python2.7/lib-dynload/dbm.so
+%%32BIT_ONLY%%lib/python2.7/lib-dynload/dl.so
 lib/python2.7/lib-dynload/fcntl.so
 lib/python2.7/lib-dynload/future_builtins.so
 lib/python2.7/lib-dynload/grp.so
+%%32BIT_ONLY%%lib/python2.7/lib-dynload/imageop.so
 lib/python2.7/lib-dynload/itertools.so
 lib/python2.7/lib-dynload/math.so
 lib/python2.7/lib-dynload/mmap.so
@@ -1957,8 +1959,6 @@ lib/python2.7/lib-dynload/termios.so
 lib/python2.7/lib-dynload/time.so
 lib/python2.7/lib-dynload/unicodedata.so
 lib/python2.7/lib-dynload/zlib.so
-%%32BIT_ONLY%%lib/python2.7/lib-dynload/dl.so
-%%32BIT_ONLY%%lib/python2.7/lib-dynload/imageop.so
 lib/python2.7/lib-tk/Canvas.py
 lib/python2.7/lib-tk/Canvas.pyc
 lib/python2.7/lib-tk/Canvas.pyo
@@ -2065,10 +2065,10 @@ lib/python2.7/lib-tk/ttk.pyo
 lib/python2.7/lib-tk/turtle.py
 lib/python2.7/lib-tk/turtle.pyc
 lib/python2.7/lib-tk/turtle.pyo
-lib/python2.7/lib2to3/Grammar%%DISTVERSION%%.final.0.pickle
 lib/python2.7/lib2to3/Grammar.txt
-lib/python2.7/lib2to3/PatternGrammar%%DISTVERSION%%.final.0.pickle
+lib/python2.7/lib2to3/Grammar%%DISTVERSION%%.final.0.pickle
 lib/python2.7/lib2to3/PatternGrammar.txt
+lib/python2.7/lib2to3/PatternGrammar%%DISTVERSION%%.final.0.pickle
 lib/python2.7/lib2to3/__init__.py
 lib/python2.7/lib2to3/__init__.pyc
 lib/python2.7/lib2to3/__init__.pyo
