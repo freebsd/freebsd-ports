@@ -159,6 +159,7 @@
     SUBDIR += fpc-libenet
     SUBDIR += fpc-pcap
     SUBDIR += fping
+    SUBDIR += freebsd-telnetd
     SUBDIR += freebsd-uucp
     SUBDIR += freediameter
     SUBDIR += freeradius-client
