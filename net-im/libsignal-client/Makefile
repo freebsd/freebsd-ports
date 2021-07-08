@@ -1,6 +1,6 @@
 PORTNAME=	libsignal-client
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2
+DISTVERSION=	0.8.3
 CATEGORIES=	net-im java
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -20,9 +20,9 @@ USE_LDCONFIG=	yes
 
 CARGO_CRATES=	addr2line-0.14.1 \
 		adler-1.0.2 \
-		aes-0.6.0 \
-		aes-soft-0.6.4 \
-		aesni-0.10.0 \
+		aead-0.4.1 \
+		aes-0.7.4 \
+		aes-gcm-siv-0.10.1 \
 		aho-corasick-0.7.15 \
 		anyhow-1.0.38 \
 		arrayref-0.3.6 \
@@ -34,7 +34,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		base64-0.12.3 \
 		bitflags-1.2.1 \
 		block-buffer-0.9.0 \
-		block-modes-0.7.0 \
+		block-modes-0.8.1 \
 		block-padding-0.2.1 \
 		bstr-0.2.15 \
 		bumpalo-3.6.1 \
@@ -46,9 +46,10 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		cipher-0.2.5 \
+		cipher-0.3.0 \
 		clap-2.33.3 \
 		combine-4.5.2 \
+		cpufeatures-0.1.5 \
 		cpuid-bool-0.1.2 \
 		criterion-0.3.4 \
 		criterion-plot-0.4.3 \
@@ -60,26 +61,22 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		cslice-0.2.0 \
 		csv-1.1.5 \
 		csv-core-0.1.10 \
-		ctr-0.6.0 \
+		ctr-0.7.0 \
 		derivative-2.2.0 \
 		digest-0.9.0 \
 		either-1.6.1 \
 		fixedbitset-0.2.0 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
-		futures-0.3.13 \
-		futures-channel-0.3.13 \
 		futures-core-0.3.13 \
-		futures-executor-0.3.13 \
-		futures-io-0.3.13 \
 		futures-macro-0.3.13 \
-		futures-sink-0.3.13 \
 		futures-task-0.3.13 \
 		futures-util-0.3.13 \
 		generator-0.6.24 \
 		generic-array-0.14.4 \
 		getrandom-0.1.16 \
 		getrandom-0.2.2 \
+		ghash-0.4.2 \
 		gimli-0.23.0 \
 		half-1.7.1 \
 		hashbrown-0.9.1 \
@@ -96,7 +93,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		js-sys-0.3.47 \
 		keccak-0.1.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.94 \
+		libc-0.2.97 \
 		libloading-0.6.7 \
 		libm-0.2.1 \
 		linkme-0.2.4 \
@@ -137,7 +134,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		plotters-0.3.0 \
 		plotters-backend-0.3.0 \
 		plotters-svg-0.3.0 \
-		polyval-0.4.2 \
+		polyval-0.5.1 \
 		ppv-lite86-0.2.10 \
 		proc-macro-crate-0.1.5 \
 		proc-macro-hack-0.5.19 \
