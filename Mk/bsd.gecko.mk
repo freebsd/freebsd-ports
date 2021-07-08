@@ -64,7 +64,10 @@ USES+=		compiler:c++17-lang cpe gl gmake gnome iconv localbase perl5 pkgconfig \
 			python:3.6+,build desktop-file-utils
 CPE_VENDOR?=mozilla
 USE_GL=		gl
-USE_GNOME=	cairo gdkpixbuf2 gtk20 gtk30
+USE_GNOME=	cairo gdkpixbuf2 gtk30
+.if ${MOZILLA_VER:R:R} < 90
+USE_GNOME+=	gtk20
+.endif
 USE_PERL5=	build
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrender xt
 HAS_CONFIGURE=	yes
