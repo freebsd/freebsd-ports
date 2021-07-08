@@ -1,5 +1,14 @@
 --- libwzd-core/wzd_tls.c.orig	2007-10-25 17:25:33 UTC
 +++ libwzd-core/wzd_tls.c
+@@ -297,7 +297,7 @@ int tls_init(void)
+       return 1;
+     }
+ 
+-    SSL_CTX_set_client_CA_list(tls_ctx, (STACK *)ca_list);
++    SSL_CTX_set_client_CA_list(tls_ctx, ca_list);
+   }
+ 
+   SSL_CTX_set_session_cache_mode(tls_ctx, SSL_SESS_CACHE_CLIENT);
 @@ -946,19 +946,13 @@ int tls_exit(void)
  
  static gnutls_session initialize_tls_session(gnutls_connection_end con_end)
@@ -22,7 +31,7 @@
  
    gnutls_credentials_set(session, GNUTLS_CRD_CERTIFICATE, x509_cred);
  
-@@ -1001,27 +995,6 @@ int tls_auth (const char *type, wzd_cont
+@@ -1001,27 +995,6 @@ int tls_auth (const char *type, wzd_context_t * contex
    }
  
    /** \todo XXX parse TLS cipher names */

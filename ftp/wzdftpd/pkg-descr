@@ -1,5 +1,5 @@
-wzdftpd is a ftp server designed to be modular and entirely configurable online
-using SITE commands.
+wzdftpd is an FTP server designed to be modular and entirely configurable
+online using SITE commands.
 
 wzdftpd offers the following features:
 - Simple configuration file, supporting inclusions

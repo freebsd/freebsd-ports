@@ -1,14 +1,11 @@
 #!/bin/sh
 
-# Start or stop wzdftpd
-
 # PROVIDE: wzdftpd
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 #
-
-# Add the following lines to /etc/rc.conf to enable wzdftpd
+# Add the following lines to /etc/rc.conf to enable wzdftpd:
 # wzdftpd_enable="YES"
 # wzdftpd_flags="<set as needed>"
 
