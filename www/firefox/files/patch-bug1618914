@@ -1,10 +1,18 @@
-[Wayland] Fall back to ftruncate if posix_fallocate isn't supported by filesystem.
+From cea8e6a01bb03bbe565c9bf5dd4f439f30ca953f Mon Sep 17 00:00:00 2001
+From: Jan Beich <jbeich@FreeBSD.org>
+Date: Fri, 28 Feb 2020 16:49:38 +0000
+Subject: Bug 1618914 - [Wayland] Fall back to ftruncate if posix_fallocate isn't supported by filesystem.
 
-diff --git widget/gtk/WindowSurfaceWayland.cpp widget/gtk/WindowSurfaceWayland.cpp
-index 9a73326399bd5..9e42a7f1c5d18 100644
---- widget/gtk/WindowSurfaceWayland.cpp
-+++ widget/gtk/WindowSurfaceWayland.cpp
-@@ -221,7 +221,9 @@ static int WaylandAllocateShmMemory(int aSize) {
+diff --git widget/gtk/WaylandShmBuffer.cpp widget/gtk/WaylandShmBuffer.cpp
+index 42eeedd3429ac..2a5c23d287413 100644
+--- widget/gtk/WaylandShmBuffer.cpp
++++ widget/gtk/WaylandShmBuffer.cpp
+@@ -67,36 +67,37 @@ static int WaylandAllocateShmMemory(int aSize) {
+     return -1;
+   }
+ 
+   int ret = 0;
+ #ifdef HAVE_POSIX_FALLOCATE
    do {
      ret = posix_fallocate(fd, 0, aSize);
    } while (ret == EINTR);
@@ -15,7 +23,7 @@ index 9a73326399bd5..9e42a7f1c5d18 100644
      NS_WARNING(
          nsPrintfCString("posix_fallocate() fails to allocate shm memory: %s",
                          strerror(ret))
-@@ -229,7 +231,7 @@ static int WaylandAllocateShmMemory(int aSize) {
+             .get());
      close(fd);
      return -1;
    }
@@ -24,7 +32,10 @@ index 9a73326399bd5..9e42a7f1c5d18 100644
    do {
      ret = ftruncate(fd, aSize);
    } while (ret < 0 && errno == EINTR);
-@@ -240,7 +242,6 @@ static int WaylandAllocateShmMemory(int aSize) {
+   if (ret < 0) {
+     NS_WARNING(nsPrintfCString("ftruncate() fails to allocate shm memory: %s",
+                                strerror(ret))
+                    .get());
      close(fd);
      fd = -1;
    }
@@ -32,12 +43,8 @@ index 9a73326399bd5..9e42a7f1c5d18 100644
  
    return fd;
  }
-@@ -253,7 +254,7 @@ static bool WaylandReAllocateShmMemory(int aFd, int aSize) {
-   do {
-     errno = posix_fallocate(aFd, 0, aSize);
-   } while (errno == EINTR);
--  if (errno != 0) {
-+  if (errno != 0 && errno != ENODEV && errno != EINVAL && errno != EOPNOTSUPP) {
-     return false;
-   }
- #endif
+ 
+ /* static */
+ RefPtr<WaylandShmPool> WaylandShmPool::Create(
+     const RefPtr<nsWaylandDisplay>& aWaylandDisplay, int aSize) {
+   RefPtr<WaylandShmPool> shmPool = new WaylandShmPool(aSize);
