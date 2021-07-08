@@ -1,6 +1,6 @@
---- src/classes/info.py.orig	2021-01-30 23:50:27 UTC
+--- src/classes/info.py.orig	2021-06-09 04:36:57 UTC
 +++ src/classes/info.py
-@@ -160,6 +160,7 @@ SETUP = {
+@@ -161,6 +161,7 @@ SETUP = {
                         "License :: OSI Approved :: GNU General Public License (GPL)",
                         "Operating System :: OS Independent",
                         "Operating System :: POSIX :: Linux",
