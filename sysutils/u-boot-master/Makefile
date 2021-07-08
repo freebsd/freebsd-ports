@@ -6,7 +6,8 @@ PORTNAME=	u-boot
 PORTVERSION=	${UBOOT_VERSION}
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	-${MODEL}
-MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/
+MASTER_SITES=	https://ftp.denx.de/pub/u-boot/ \
+		ftp://ftp.denx.de/pub/u-boot/
 DIST_SUBDIR=	u-boot
 
 MAINTAINER?=	uboot@FreeBSD.org
