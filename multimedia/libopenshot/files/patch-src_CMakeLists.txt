@@ -1,14 +1,17 @@
---- src/CMakeLists.txt.orig	2021-02-18 07:59:16 UTC
+--- src/CMakeLists.txt.orig	2021-06-07 02:42:27 UTC
 +++ src/CMakeLists.txt
-@@ -415,6 +415,12 @@ if(ENABLE_OPENCV)
- endif()
+@@ -469,6 +469,15 @@ See https://github.com/opencv/opencv/issues/19260]])
+ endif()  # ENABLE_OPENCV
  add_feature_info("OpenCV algorithms" ENABLE_OPENCV "Use OpenCV algorithms")
  
-+find_library(EXECINFO_LIBRARY NAMES execinfo)
-+if(NOT EXECINFO_LIBRARY)
-+	message(FATAL_ERROR "${EXECINFO_LIBRARY}")
-+endif(NOT EXECINFO_LIBRARY)
-+target_link_libraries(openshot PUBLIC ${EXECINFO_LIBRARY})
++# EXECINFO
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++	find_library(EXECINFO_LIBRARY NAMES execinfo)
++	if(NOT EXECINFO_LIBRARY)
++		message(FATAL_ERROR "${EXECINFO_LIBRARY}")
++	endif(NOT EXECINFO_LIBRARY)
++	target_link_libraries(openshot PRIVATE ${EXECINFO_LIBRARY})
++endif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
 +
  ###############  LINK LIBRARY  #################
  # Link remaining dependency libraries

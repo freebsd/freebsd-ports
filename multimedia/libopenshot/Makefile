@@ -1,7 +1,7 @@
 PORTNAME=	libopenshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.5-517
-DISTVERSIONSUFFIX=	-gdd2735e
+DISTVERSION=	0.2.5-726
+DISTVERSIONSUFFIX=	-gd9ea98eb
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +12,6 @@ LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	swig:devel/swig \
-		unittest-cpp>=0:devel/unittest-cpp \
 		${LOCALBASE}/include/zmq.hpp:net/cppzmq
 LIB_DEPENDS=	libopenshot-audio.so:audio/libopenshot-audio \
 		libjsoncpp.so:devel/jsoncpp \
@@ -26,7 +25,7 @@ GH_ACCOUNT=	OpenShot
 USE_PYTHON=	flavors
 USE_QT=		core gui network multimedia widgets qmake_build buildtools_build
 
-CMAKE_ON=	USE_SYSTEM_JSONCPP DISABLE_BUNDLED_JSONCPP\
+CMAKE_ON=	USE_SYSTEM_JSONCPP DISABLE_BUNDLED_JSONCPP USE_HW_ACCEL\
 		CMAKE_DISABLE_FIND_PACKAGE_Doxygen\
 		CMAKE_DISABLE_FIND_PACKAGE_Resvg\
 		CMAKE_DISABLE_FIND_PACKAGE_Ruby
@@ -38,8 +37,10 @@ OPTIONS_DEFAULT=	IMAGEMAGICK
 OPTIONS_SUB=	yes
 IMAGEMAGICK_LIB_DEPENDS=	libMagick++-${IMAGEMAGICK_DEFAULT}.so:graphics/ImageMagick${IMAGEMAGICK_DEFAULT}
 IMAGEMAGICK_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_ImageMagick
-OPENCV_LIB_DEPENDS=	libopencv_core.so:graphics/opencv \
-			libprotobuf.so:devel/protobuf
+#OPENCV_LIB_DEPENDS=	libopencv_core.so:graphics/opencv
+OPENCV_BUILD_DEPENDS=	opencv>=4.5.2:graphics/opencv
+OPENCV_LIB_DEPENDS=	libprotobuf.so:devel/protobuf
+OPENCV_RUN_DEPENDS=	opencv>=4.5.2:graphics/opencv
 OPENCV_CMAKE_ON=	-DOpenCV_DIR:STRING=${LOCALBASE:Q}/cmake/opencv4
 OPENCV_CMAKE_BOOL=	ENABLE_OPENCV
 OPENCV_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenCV\
