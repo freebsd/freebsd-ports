@@ -11,6 +11,7 @@ additional programs that are not in the manual pages under
 There is more in the source tree but the others are only useful in
 conjunction with the rest of the source tree.
 
+---
 This package requires procfs(5) mounted on /proc.
 
 If you have not done it yet, please do the following:
@@ -20,7 +21,13 @@ If you have not done it yet, please do the following:
 To make it permanent, you need the following line in /etc/fstab:
 
 	proc	/proc		procfs		rw	0	0
+---
+This winebuild was built by (Alexander88207) Alexander Vereeken <Alexander88207@protonmail.com>
 
+If you have any issues [or even need help to run an application] dont fear to create an issue or ask him via E-Mail, in forums or Discord.
+
+Have Fun!
+---
 EOM
 }
 ]
