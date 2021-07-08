@@ -1,3 +1,3 @@
-TIMESTAMP = 1551021235
-SHA256 (dbus-glib-0.110.tar.gz) = 7ce4760cf66c69148f6bd6c92feaabb8812dee30846b24cd0f7395c436d7e825
-SIZE (dbus-glib-0.110.tar.gz) = 836497
+TIMESTAMP = 1625781983
+SHA256 (dbus-glib-0.112.tar.gz) = 7d550dccdfcd286e33895501829ed971eeb65c614e73aadb4a08aeef719b143a
+SIZE (dbus-glib-0.112.tar.gz) = 715340
