@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	inscript2
-PORTVERSION=	20160423
+PORTVERSION=	20210708
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://releases.pagure.org/${PORTNAME}/
 
