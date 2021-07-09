@@ -15,8 +15,6 @@ include/fb303/QuantileStat-inl.h
 include/fb303/QuantileStat.h
 include/fb303/ServiceData.h
 include/fb303/SimpleLRUMap.h
-include/fb303/SynchMap-inl.h
-include/fb303/SynchMap.h
 include/fb303/TFunctionStatHandler.h
 include/fb303/TLStatsAsyncAggregator.h
 include/fb303/TLStatsLockTraits.h
