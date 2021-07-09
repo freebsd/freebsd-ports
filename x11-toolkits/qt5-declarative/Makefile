@@ -1,6 +1,6 @@
 PORTNAME=	declarative
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-
 
@@ -10,8 +10,8 @@ COMMENT=	Qt declarative framework for dynamic user interfaces
 USES=		compiler:c++11-lang gl python:build qmake:norecursive \
 		qt-dist:5
 USE_GL=		gl
-USE_QT=		core gui network sql testlib \
-		widgets buildtools_build
+USE_QT=		core gui network sql widgets \
+		buildtools_build testlib_build
 
 CONFLICTS=	qt5-declarative-render2d-* qt5-qml qt5-quick
 
