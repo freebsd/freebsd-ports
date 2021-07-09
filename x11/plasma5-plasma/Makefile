@@ -10,10 +10,9 @@ LICENSE=	LGPL20
 
 USES=		kde:5 metaport qt:5
 # remove:
-#   * bluedevil as we do have bluez
-#   * plasma-pa don't depend on plamsa-pa by default
-#   * breeze-kde4 don't pull in qt4 bits
-USE_KDE=	${_USE_PLASMA_ALL:Nplasma-pa:Nbreeze-kde4}
+#   * bluedevil we do not have bluez at all
+#   * plasma-pa no plasma-pa (pulseaudio) by default
+USE_KDE=	${_USE_PLASMA_ALL:Nplasma-pa}
 
 OPTIONS_DEFINE=	PHONON PULSEAUDIO
 OPTIONS_DEFAULT=	PHONON
