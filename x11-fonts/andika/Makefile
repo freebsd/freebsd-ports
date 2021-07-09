@@ -1,5 +1,5 @@
 PORTNAME=	Andika
-DISTVERSION=	6.000
+DISTVERSION=	6.001
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://software.sil.org/downloads/r/andika/
 
