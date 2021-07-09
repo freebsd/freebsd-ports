@@ -1046,6 +1046,7 @@
     SUBDIR += swftools
     SUBDIR += sxiv
     SUBDIR += synaesthesia
+    SUBDIR += synfig
     SUBDIR += synfigstudio
     SUBDIR += tachyon
     SUBDIR += telak

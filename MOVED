@@ -16460,3 +16460,4 @@ databases/puppetdb5||2021-07-05|Has expired: Puppet 5 has reached EOL
 sysutils/puppet5||2021-07-05|Has expired: Puppet 5 has reached EOL
 sysutils/puppetserver5||2021-07-05|Has expired: Puppet 5 has reached EOL
 databases/puppetdb-terminus5||2021-07-05|Has expired: Puppet 5 has reached EOL
+devel/synfig|graphics/synfig|2021-07-06|The Graphics category is a more appropriate category for an image manipulation program

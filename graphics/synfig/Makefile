@@ -4,9 +4,9 @@ PORTNAME=	synfig
 PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=v
 PORTREVISION=	14
-CATEGORIES=	devel graphics multimedia
+CATEGORIES=	graphics devel multimedia
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Vector based 2D animation package
 
 LICENSE=	GPLv2+
