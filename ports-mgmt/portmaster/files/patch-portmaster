@@ -39,7 +39,7 @@
  
  		: ${PAGER:='less -e'}
 +		if [ -n "$PM_NO_CONFIRM" ]; then
-+			PAGER=cat ;;
++			PAGER=cat
 +		fi
  		(
 -		pkg query "===>>> pkg-message for %n-%v\n%M" $DISPLAY_LIST
