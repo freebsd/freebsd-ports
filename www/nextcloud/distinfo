@@ -1,3 +1,3 @@
-TIMESTAMP = 1625397573
-SHA256 (nextcloud-21.0.3.tar.bz2) = 8adcd175c7a70c33332586fa9ce36d03ba02d1df5d4c334d1210201d3fb953ee
-SIZE (nextcloud-21.0.3.tar.bz2) = 129433656
+TIMESTAMP = 1625571276
+SHA256 (nextcloud/nextcloud-22.0.0.tar.bz2) = 3911d3754c37aca7c9b5f3b2b37513c0f2b5bb979af00816c1117b1eedbc5d7a
+SIZE (nextcloud/nextcloud-22.0.0.tar.bz2) = 144386509

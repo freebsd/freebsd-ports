@@ -1,8 +1,9 @@
 PORTNAME=	nextcloud
-PORTVERSION=	21.0.3
+PORTVERSION=	22.0.0
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/releases/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Personal cloud which runs on your own server
@@ -20,9 +21,10 @@ NEXTCLOUD_GROUPNAME?=	${WWWGRP}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
-SUB_FILES=	config.sample.php pkg-message
-PLIST_SUB=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
+SUB_FILES=	config.sample.php pkg-message plist.post
+SUB_LIST=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
 		NEXTCLOUD_GROUPNAME=${NEXTCLOUD_GROUPNAME}
+PLIST_SUB=	${SUB_LIST}
 
 OPTIONS_DEFINE=		EXIF IMAGICK INTL LDAP PCNTL SMB SSL
 OPTIONS_GROUP=		CACHING
@@ -58,20 +60,26 @@ SSL_USE=	PHP=openssl
 
 post-extract:
 	@${MV} ${WRKSRC}/config/config.sample.php ${WRKSRC}/config/config.documented.php
+	@${MV} ${WRKSRC}/.htaccess ${WRKSRC}/.htaccess.dist
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/www/${PORTNAME}|${WWWDIR}|;s|/var/log/|/var/log/${PORTNAME}/|' \
 		${WRKSRC}/config/config.documented.php
-	@${RM} ${WRKSRC}/config/config.documented.php.*
+	@${RM} ${WRKSRC}/config/config.documented.php.* \
+		 ${WRKSRC}/updater/updater.phar
 	@${MV} ${WRKSRC}/apps ${WRKSRC}/apps-pkg
 
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/config.sample.php ${STAGEDIR}${WWWDIR}/config/config.sample.php
-	@${RM} ${STAGEDIR}${WWWDIR}/updater/updater.phar
-	@${MKDIR} ${STAGEDIR}${WWWDIR}/data
-	@${MKDIR} ${STAGEDIR}${WWWDIR}/apps
-	@${MKDIR} ${STAGEDIR}/var/log/${PORTNAME}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+	${INSTALL_SCRIPT} ${WRKDIR}/config.sample.php \
+		${STAGEDIR}${WWWDIR}/config/config.sample.php
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/data ${STAGEDIR}${WWWDIR}/apps \
+		${STAGEDIR}/var/log/${PORTNAME}
+	(cd ${WRKSRC}; ${FIND} . -type f) | ${SORT} | \
+		${SED} -Ee '/^\.\/\.(htaccess\.dist|user\.ini)/d' \
+			-e '/^\.\/config\/config\.sample\.php/d' \
+			-e 's,^\.,${WWWDIR_REL},' >> ${TMPPLIST}
+	${CAT} ${WRKDIR}/plist.post >> ${TMPPLIST}
 
 .include <bsd.port.mk>
