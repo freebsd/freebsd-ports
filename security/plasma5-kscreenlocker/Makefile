@@ -1,5 +1,6 @@
 PORTNAME=	kscreenlocker
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	security kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,13 +14,14 @@ RUN_DEPENDS=	ck-list-sessions:sysutils/consolekit2\
 
 USES=		cmake compiler:c++11-lib cpe gettext kde:5 pkgconfig \
 		qt:5 shebangfix tar:xz xorg
-USE_KDE=	auth codecs config configwidgets coreaddons crash ecm \
+USE_KDE=	auth codecs config configwidgets coreaddons crash \
 		emoticons globalaccel i18n idletime init itemmodels kcmutils \
-		kdeclarative kdelibs4support layer-shell-qt notifications package \
+		kdeclarative layer-shell-qt notifications package \
 		plasma-framework sonnet textwidgets wayland widgetsaddons \
-		windowsystem xmlgui
-USE_QT=		core dbus declarative gui network qdbus testlib widgets x11extras xml \
-		buildtools_build qmake_build
+		windowsystem xmlgui \
+		ecm_build
+USE_QT=		core dbus declarative gui network qdbus widgets x11extras xml \
+		buildtools_build qmake_build testlib_build
 USE_XORG=	ice sm x11 xcb xcursor xext xi
 
 SHEBANG_FILES=	updaters/ksreenlocker_5_3_separate_autologin.pl

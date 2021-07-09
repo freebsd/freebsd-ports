@@ -1,5 +1,6 @@
 PORTNAME=	kinfocenter
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,11 +12,12 @@ USES=		cmake compiler:c++11-lib cpe gettext gl kde:5 pkgconfig \
 		qt:5 tar:xz xorg
 USE_GL=		egl gl glu
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons crash dbusaddons doctools ecm emoticons guiaddons \
+		coreaddons crash dbusaddons emoticons guiaddons \
 		i18n iconthemes jobwidgets kcmutils kdeclarative \
-		kdelibs4support kio notifications package parts init \
+		kio notifications package parts init \
 		itemmodels itemviews service solid sonnet textwidgets \
 		unitconversion wayland wayland widgetsaddons windowsystem xmlgui \
+		doctools_build ecm_build \
 		systemsettings_run
 USE_QT=		concurrent core dbus declarative gui network printsupport widgets xml \
 		buildtools_build qmake_build

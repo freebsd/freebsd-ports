@@ -1,5 +1,6 @@
 PORTNAME=	plasma-desktop
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -28,15 +29,16 @@ USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext gnome \
 USE_GNOME=	glib20
 USE_KDE=	activities activities-stats archive attica auth baloo \
 		bookmarks codecs completion config configwidgets coreaddons \
-		crash dbusaddons doctools ecm emoticons filemetadata \
+		crash dbusaddons emoticons filemetadata \
 		globalaccel guiaddons i18n iconthemes init itemmodels \
 		itemviews jobwidgets kcmutils kdeclarative kdelibs4support \
 		kio libksysguard newstuff notifications \
 		notifyconfig package parts people plasma-framework \
 		plasma-workspace runner service solid \
 		sonnet textwidgets unitconversion wallet \
-		widgetsaddons windowsystem xmlgui
-USE_KDE+=	drkonqi_run infocenter_run kde-cli-tools_run kmenuedit_run \
+		widgetsaddons windowsystem xmlgui \
+		doctools_build ecm_build \
+		drkonqi_run infocenter_run kde-cli-tools_run kmenuedit_run \
 		ksysguard_run \
 		polkit-kde-agent-1_run systemsettings_run
 USE_QT=		concurrent core dbus declarative gui network phonon4 printsupport \

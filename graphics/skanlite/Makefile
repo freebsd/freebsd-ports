@@ -1,6 +1,6 @@
 PORTNAME=	skanlite
 DISTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION:R}/
 
@@ -18,8 +18,8 @@ USE_KDE=	auth config configwidgets codecs completion \
 		coreaddons i18n jobwidgets kio \
 		service widgetsaddons xmlgui \
 		doctools_build ecm_build
-USE_QT=		buildtools_build qmake_build \
-		core concurrent dbus gui network widgets xml
+USE_QT=		core concurrent dbus gui network widgets xml \
+		buildtools_build qmake_build testlib_build
 
 
 .include <bsd.port.mk>

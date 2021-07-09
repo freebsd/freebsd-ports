@@ -16,6 +16,6 @@ USE_KDE=	archive auth bookmarks codecs completion config \
 		doctools_build ecm_build 
 USE_QT=		concurrent core dbus declarative gui network \
 		script widgets x11extras xml \
-		buildtools_build qmake_build
+		buildtools_build qmake_build testlib_build
 
 .include <bsd.port.mk>

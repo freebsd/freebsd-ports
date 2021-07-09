@@ -15,9 +15,9 @@ USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		itemviews jobwidgets kdelibs4support kio libksysguard \
 		newstuff notifications service widgetsaddons windowsystem \
 		xmlgui \
-		doctools_build
+		doctools_build ecm_build
 USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools_build qmake_build
+		buildtools_build qmake_build testlib_build
 
 OPTIONS_DEFINE=		INOTIFY
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
