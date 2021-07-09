@@ -1,5 +1,5 @@
 PORTNAME=	qmk
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dotty-dict>=0:devel/py-dotty-dict@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}milc>=1.4.0:devel/py-milc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose2>=0:devel/py-nose2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyrsistent>=0:devel/py-pyrsistent@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyusb>=0:devel/py-pyusb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yapf>=0:textproc/py-yapf@${PY_FLAVOR} \
 		arm-none-eabi-gcc>0:devel/arm-none-eabi-gcc \
@@ -34,7 +35,7 @@ SHEBANG_GLOB=	*.py
 
 TEST_ENV=	PYTHONPATH="${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}"
 TEST_TARGET=	config
-DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/qmk
+DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/qmk >/dev/null
 
 NO_ARCH=	yes
 
