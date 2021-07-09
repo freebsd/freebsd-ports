@@ -1,6 +1,6 @@
---- ghcide/ghcide.cabal.orig	2021-04-13 07:56:15 UTC
+--- ghcide/ghcide.cabal.orig	2021-06-13 09:19:43 UTC
 +++ ghcide/ghcide.cabal
-@@ -405,7 +405,6 @@ executable ghcide-bench
+@@ -403,7 +403,6 @@ executable ghcide-bench
          extra,
          filepath,
          ghcide,

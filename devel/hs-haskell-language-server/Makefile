@@ -1,7 +1,7 @@
 PORTNAME=	haskell-language-server
-DISTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	devel haskell
+EXTRACT_ONLY=	hsyl20-ghc-api-compat-8fee87eac97a538dbe81ff1ab18cff10f2f9fa15_GH0${EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	LSP provider implementation for Haskell language
@@ -14,6 +14,7 @@ USES=		cabal
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haskell
+GH_TUPLE=	hsyl20:ghc-api-compat:8fee87eac97a538dbe81ff1ab18cff10f2f9fa15:ghcapicompat
 
 USE_CABAL=	Diff-0.4.0 \
 		Glob-0.10.1 \
@@ -30,7 +31,7 @@ USE_CABAL=	Diff-0.4.0 \
 		algebraic-graphs-0.5 \
 		ansi-terminal-0.10.3 \
 		ansi-wl-pprint-0.6.9_2 \
-		apply-refact-0.9.2.0 \
+		apply-refact-0.9.3.0 \
 		assoc-1.0.2_1 \
 		async-2.2.3 \
 		attoparsec-0.13.2.5_1 \
@@ -87,7 +88,7 @@ USE_CABAL=	Diff-0.4.0 \
 		fuzzy-0.1.0.0 \
 		generic-lens-2.1.0.0 \
 		generic-lens-core-2.1.0.0 \
-		ghc-check-0.5.0.3 \
+		ghc-check-0.5.0.5 \
 		ghc-exactprint-0.6.4 \
 		ghc-lib-parser-8.10.4.20210206 \
 		ghc-lib-parser-ex-8.10.0.19 \
@@ -109,6 +110,7 @@ USE_CABAL=	Diff-0.4.0 \
 		hsc2hs-0.68.7_1 \
 		hscolour-1.24.4 \
 		hslogger-1.3.1.0_2 \
+		hyphenation-0.8.2 \
 		implicit-hie-0.1.2.5 \
 		implicit-hie-cradle-0.3.0.2 \
 		indexed-profunctors-0.1 \
@@ -217,11 +219,11 @@ EXECUTABLES=		${PORTNAME} \
 
 NOT_FOR_ARCHS=		i386
 PLIST_FILES=		bin/${PORTNAME} \
-			bin/${PORTNAME}-8.10.4 \
+			bin/${PORTNAME}-8.10.5 \
 			bin/${PORTNAME}-wrapper
 
 post-extract:
-	${CP} ${WRKSRC}/stack-8.10.4.yaml ${WRKSRC}/stack-8.10.5.yaml
+	${MV} ${WRKDIR}/ghc-api-compat-8fee87eac97a538dbe81ff1ab18cff10f2f9fa15 ${WRKSRC}/ghc-api-compat
 
 do-build:
 	cd ${WRKSRC} && \
@@ -231,7 +233,7 @@ do-install:
 .for exe in ${EXECUTABLES}
 	${INSTALL_PROGRAM} ${CABAL_HOME}/.cabal/bin/${exe} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${LN} -s ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-8.10.4
+	${LN} -s ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-8.10.5
 
 cabal-extract-deps:
 	cd ${WRKSRC} && \
