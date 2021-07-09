@@ -9,7 +9,7 @@ share/ECM/cmake/ECMConfigVersion.cmake
 share/ECM/find-modules/ECMFindModuleHelpersStub.cmake
 share/ECM/find-modules/FindCanberra.cmake
 share/ECM/find-modules/FindEGL.cmake
-share/ECM/find-modules/FindFontconfig.cmake
+share/ECM/find-modules/FindLibMount.cmake
 share/ECM/find-modules/FindGLIB2.cmake
 share/ECM/find-modules/FindGperf.cmake
 share/ECM/find-modules/FindGradle.cmake

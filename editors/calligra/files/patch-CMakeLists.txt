@@ -1,0 +1,17 @@
+Fix build against KDE Frameworks 5.83
+(no longer ships find module, and the
+cmake default one is used).
+
+--- CMakeLists.txt.orig	2021-07-09 21:31:30 UTC
++++ CMakeLists.txt
+@@ -641,8 +641,8 @@ if(NOT WIN32 AND NOT APPLE)
+ 	)
+ endif()
+ 
+-if(NOT FONTCONFIG_FOUND OR NOT FREETYPE_FOUND)
+-    set(FONTCONFIG_INCLUDE_DIR "")
++if(NOT Fontconfig_FOUND OR NOT FREETYPE_FOUND)
++    set(Fontconfig_INCLUDE_DIRS "")
+     set(FREETYPE_INCLUDE_DIRS "")
+ else()
+     add_definitions( -DSHOULD_BUILD_FONT_CONVERSION )

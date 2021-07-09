@@ -1,0 +1,20 @@
+Fix build against KDE Frameworks 5.83
+(no longer ships find module, and the
+cmake default one is used).
+
+--- libs/text/CMakeLists.txt.orig	2021-07-09 21:32:19 UTC
++++ libs/text/CMakeLists.txt
+@@ -152,11 +152,11 @@ if( SHOULD_BUILD_FEATURE_RDF )
+ endif()
+ 
+ if( FONTCONFIG_FOUND )
+-    target_link_libraries(kotext PRIVATE ${FONTCONFIG_LIBRARIES})
++    target_link_libraries(kotext PRIVATE Fontconfig::Fontconfig)
+ endif()
+ 
+ if( FREETYPE_FOUND )
+-    target_link_libraries(kotext PRIVATE ${FREETYPE_LIBRARIES})
++    target_link_libraries(kotext PRIVATE Freetype::Freetype)
+ endif()
+ 
+ 
