@@ -403,6 +403,15 @@ diff -rNu fdisk.c fdisk.c
  				fatal(ioctl_error);
  			close(fd);
  			if (opts == 1)
+diff -rNu fdisk.h fdisk.h
+--- fdisk.h	2001-09-13 23:05:35 UTC
++++ fdisk.h
+@@ -101,4 +101,4 @@
+ /* prototypes for fdisksgilabel.c */
+ extern int valid_part_table_flag(unsigned char *b);
+ 
+-#define PROC_PARTITIONS "/proc/partitions"
++#define PROC_PARTITIONS "/compat/linux/proc/partitions"
 diff -rNu fdiskaixlabel.c fdiskaixlabel.c
 --- fdiskaixlabel.c	Tue Apr 18 15:21:28 2000
 +++ fdiskaixlabel.c	Fri Jun 20 19:25:55 2003
@@ -1104,6 +1113,15 @@ diff -rNu sfdisk.c sfdisk.c
  	    
      return 1;
  }
+@@ -2353,7 +2336,7 @@
+ 	return is_ide;
+ }
+ 
+-#define PROC_PARTITIONS	"/proc/partitions"
++#define PROC_PARTITIONS	"/compat/linux/proc/partitions"
+ static FILE *procf = NULL;
+ 
+ static void
 @@ -2413,9 +2396,11 @@
      char *activatearg = 0;
      char *unhidearg = 0;
