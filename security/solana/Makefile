@@ -1,6 +1,6 @@
 PORTNAME=	solana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.3
+DISTVERSION=	1.7.4
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -59,9 +59,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		block-padding-0.1.5 \
 		block-padding-0.2.1 \
 		borsh-0.8.1 \
+		borsh-0.9.0 \
 		borsh-derive-0.8.1 \
+		borsh-derive-0.9.0 \
 		borsh-derive-internal-0.8.1 \
+		borsh-derive-internal-0.9.0 \
 		borsh-schema-derive-internal-0.8.1 \
+		borsh-schema-derive-internal-0.9.0 \
 		bs58-0.3.1 \
 		bstr-0.2.13 \
 		bumpalo-3.3.0 \
