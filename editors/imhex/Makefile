@@ -12,7 +12,7 @@ COMMENT=	Hex editor for reverse engineers and programmers
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS=	i386 powerpc
 NOT_FOR_ARCHS_REASON=	__uint128_t and __int128_t are not supported
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		btzy-nativefiledialog-extended-${GH_TAG_NATIVEFILEDIALOG}_GH0${EXTRACT_SUFX} \
