@@ -1,0 +1,10 @@
+--- tensorflow/compiler/mlir/tensorflow/BUILD.orig	2021-07-06 11:28:13 UTC
++++ tensorflow/compiler/mlir/tensorflow/BUILD
+@@ -586,6 +586,7 @@ tf_native_cc_binary(
+     srcs = [
+         "translate/derived_attr_populator_gen.cc",
+     ],
++    linkopts = ["-lexecinfo"],
+     deps = [
+         "@llvm//:support",
+         "@llvm//:tablegen",

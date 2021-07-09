@@ -1,6 +1,6 @@
---- tensorflow/core/protobuf/autotuning.proto.orig	2019-06-18 23:48:23.000000000 +0100
-+++ tensorflow/core/protobuf/autotuning.proto	2019-07-30 11:45:04.342068000 +0100
-@@ -11,14 +11,14 @@
+--- tensorflow/core/protobuf/autotuning.proto.orig	2019-10-14 21:08:43 UTC
++++ tensorflow/core/protobuf/autotuning.proto
+@@ -11,14 +11,14 @@ import "google/protobuf/any.proto";
  import "google/protobuf/duration.proto";
  
  message CudnnVersion {

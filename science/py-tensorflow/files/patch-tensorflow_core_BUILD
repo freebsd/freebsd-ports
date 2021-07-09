@@ -1,6 +1,6 @@
---- tensorflow/core/BUILD.orig	2019-06-18 23:48:23.000000000 +0100
-+++ tensorflow/core/BUILD	2019-07-14 09:27:38.471527000 +0100
-@@ -2412,7 +2412,7 @@
+--- tensorflow/core/BUILD.orig	2019-10-14 21:08:43 UTC
++++ tensorflow/core/BUILD
+@@ -2432,7 +2432,7 @@ cc_library(
      copts = tf_copts(),
      defines = LIB_INTERNAL_DEFINES,
      linkopts = select({
@@ -9,7 +9,7 @@
          "//tensorflow:windows": [],
          "//tensorflow:android": [],
          "//conditions:default": [
-@@ -2512,7 +2512,7 @@
+@@ -2515,7 +2515,7 @@ cc_library(
      hdrs = ["lib/gif/gif_io.h"],
      copts = tf_copts(),
      linkopts = select({
@@ -18,7 +18,7 @@
          "//tensorflow:windows": [],
          "//conditions:default": ["-ldl"],
      }),
-@@ -2536,7 +2536,7 @@
+@@ -2539,7 +2539,7 @@ cc_library(
      ],
      copts = tf_copts(),
      linkopts = select({
@@ -27,7 +27,7 @@
          "//tensorflow:windows": [],
          "//conditions:default": ["-ldl"],
      }),
-@@ -2566,7 +2566,7 @@
+@@ -2570,7 +2570,7 @@ cc_library(
      ],
      copts = tf_copts(),
      linkopts = select({
@@ -36,7 +36,7 @@
          "//tensorflow:windows": [],
          "//conditions:default": ["-ldl"],
      }),
-@@ -2897,7 +2897,7 @@
+@@ -2907,7 +2907,7 @@ tf_cuda_library(
      hdrs = FRAMEWORK_INTERNAL_PUBLIC_HEADERS,
      copts = tf_copts(),
      linkopts = select({

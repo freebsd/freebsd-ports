@@ -1,6 +1,6 @@
---- tensorflow/contrib/boosted_trees/BUILD.orig	2019-07-07 15:35:52.034885000 +0100
-+++ tensorflow/contrib/boosted_trees/BUILD	2019-07-07 15:50:02.149725000 +0100
-@@ -27,6 +27,10 @@
+--- tensorflow/contrib/boosted_trees/BUILD.orig	2019-10-14 21:08:43 UTC
++++ tensorflow/contrib/boosted_trees/BUILD
+@@ -24,6 +24,10 @@ cc_library(
          ":stats_accumulator_ops_kernels",
          ":training_ops_kernels",
      ],
@@ -11,7 +11,7 @@
      alwayslink = 1,
  )
  
-@@ -40,6 +44,10 @@
+@@ -37,6 +41,10 @@ cc_library(
          ":stats_accumulator_ops_op_lib",
          ":training_ops_op_lib",
      ],

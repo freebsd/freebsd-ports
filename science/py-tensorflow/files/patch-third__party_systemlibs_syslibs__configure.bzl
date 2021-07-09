@@ -1,10 +1,10 @@
---- third_party/systemlibs/syslibs_configure.bzl.orig	2019-07-11 15:43:32.713320000 +0100
-+++ third_party/systemlibs/syslibs_configure.bzl	2019-07-11 15:43:54.448882000 +0100
-@@ -21,6 +21,7 @@
-     "curl",
-     "cython",
+--- third_party/systemlibs/syslibs_configure.bzl.orig	2021-07-08 11:07:25 UTC
++++ third_party/systemlibs/syslibs_configure.bzl
+@@ -22,6 +22,7 @@ VALID_LIBS = [
      "double_conversion",
-+    "enum34_archive",
+     "enum34_archive",
      "flatbuffers",
++    "functools32_archive",
      "gast_archive",
      "gif_archive",
+     "grpc",

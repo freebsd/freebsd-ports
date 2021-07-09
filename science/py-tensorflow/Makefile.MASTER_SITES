@@ -1,34 +1,39 @@
-DISTFILES+=	v0.18.tar.gz:mkldnn \
-		daf381e8535a1f1f1b8a75966a74e7cca63dee89.tar.gz:abseil \
-		a0d250e79c79.tar.gz:eigen \
-		12fed0cd7cfcd9e169bf1925bc3a7a58725fdcc3.zip:gemmlowp \
+DISTFILES+=	fft2d.tgz:oourafft2d \
+		49177915a14a.tar.gz:eigen \
+		43ef2148c0936ebf7cb4be6b19927a9d9d145b8f.tar.gz:abseil \
+		bazel-skylib.0.8.0.tar.gz:skylib \
+		92dd8a7a518a2fb7ba992d47c8b38299fe0be825.tar.gz:toolchain \
+		308b05b2419edb5c8ee0471b67a40403df940149.tar.gz:closure \
+		0d5f3f2768c6ca2faca0079a997a97ce22997a0c.zip:rulescc \
+		rules_docker-v0.10.0.tar.gz:docker \
+		rules_swift.0.11.1.tar.gz:swift \
 		816a4ae622e964763ca0862d9dbd19324a1eaf45.tar.gz:farmhash \
-		cf1e44edb908e9616030cc83d085989b8e6cd6df.tar.gz:closure \
-		94d31935a2c94fe7e7c7379a0f3393e181928ff7.tar.gz:toolchain \
-		b8ff6a85ec359db3fd5657accd3e524daf12016d.tar.gz:docker \
-		0.6.0.tar.gz:skylib \
-		rules_swift.0.9.0.tar.gz:swift \
-		fft.tgz:fft \
+		12fed0cd7cfcd9e169bf1925bc3a7a58725fdcc3.zip:gemmlowp \
+		fd3d9af80465e4383162e4a7c5e2f406e82dd968.tar.gz:highwayhash \
+		36dbc057604f00aacfc0288ddad57e3b21cfc1b8.tar.gz:kissfft \
+		94d31935a2c94fe7e7c7379a0f3393e181928ff7.tar.gz:bazel \
+		v2.3.0.tar.gz:pybind \
+		7a7e03f906aada0cf4b749b51213fe5784eeff84.tar.gz:llvm \
 		1200fe90bb174a6224a525ee60148671a786a71f.tar.gz:neon \
-		fd3d9af80465e4383162e4a7c5e2f406e82dd968.tar.gz:highway \
 		license.rst.txt:license \
-		backports.weakref-1.0rc1.tar.gz:weakref \
-		0d5f3f2768c6ca2faca0079a997a97ce22997a0c.zip:rulescc
+		backports.weakref-1.0rc1.tar.gz:weakref 
 
-
-MASTER_SITES+=	https://github.com/intel/mkl-dnn/archive/:mkldnn \
+MASTER_SITES+=	http://www.kurims.kyoto-u.ac.jp/~ooura/:oourafft2d \
+		https://storage.googleapis.com/mirror.tensorflow.org/bitbucket.org/eigen/eigen/get/:eigen \
 		https://github.com/abseil/abseil-cpp/archive/:abseil \
-		https://bitbucket.org/eigen/eigen/get/:eigen \
-		https://github.com/google/gemmlowp/archive/:gemmlowp \
-		https://github.com/google/farmhash/archive/:farmhash \
+		https://github.com/bazelbuild/bazel-skylib/releases/download/0.8.0/:skylib \
+		https://github.com/bazelbuild/bazel-toolchains/archive/:toolchain \
 		https://github.com/bazelbuild/rules_closure/archive/:closure \
-		http://mirror.tensorflow.org/github.com/bazelbuild/bazel-toolchains/archive/:toolchain \
-		https://github.com/bazelbuild/rules_docker/archive/:docker \
-		https://github.com/bazelbuild/bazel-skylib/archive/:skylib \
-		https://github.com/bazelbuild/rules_swift/releases/download/0.9.0/:swift \
-		http://www.kurims.kyoto-u.ac.jp/~ooura/:fft \
-		http://mirror.tensorflow.org/github.com/intel/ARM_NEON_2_x86_SSE/archive/:neon \
-		http://mirror.tensorflow.org/github.com/google/highwayhash/archive/:highway \
-		http://mirror.tensorflow.org/docs.python.org/2.7/_sources/:license \
+		https://github.com/bazelbuild/rules_docker/releases/download/v0.10.0/:docker \
+		https://github.com/bazelbuild/rules_swift/releases/download/0.11.1/:swift \
+		https://github.com/google/farmhash/archive/:farmhash \
+		https://github.com/google/gemmlowp/archive/:gemmlowp \
+		https://github.com/google/highwayhash/archive/:highwayhash \
+		https://github.com/mborgerding/kissfft/archive/:kissfft \
+		https://github.com/nlopezgi/bazel-toolchains/archive/:bazel \
+		https://github.com/pybind/pybind11/archive/:pybind \
+		https://github.com/llvm-mirror/llvm/archive/:llvm \
+		https://github.com/intel/ARM_NEON_2_x86_SSE/archive/:neon \
+		https://storage.googleapis.com/mirror.tensorflow.org/docs.python.org/2.7/_sources/:license \
 		https://pypi.python.org/packages/bc/cc/3cdb0a02e7e96f6c70bd971bc8a90b8463fda83e264fa9c5c1c98ceabd81/:weakref \
-		https://mirror.bazel.build/github.com/bazelbuild/rules_cc/archive/:rulescc
+		https://github.com/bazelbuild/rules_cc/archive/:rulescc

@@ -1,18 +1,16 @@
---- third_party/systemlibs/jsoncpp.BUILD.orig	2019-06-19 00:48:23.000000000 +0200
-+++ third_party/systemlibs/jsoncpp.BUILD	2020-01-13 00:12:53.470881000 +0100
-@@ -7,8 +7,10 @@
- 
+--- third_party/systemlibs/jsoncpp.BUILD.orig	2019-10-14 21:08:43 UTC
++++ third_party/systemlibs/jsoncpp.BUILD
+@@ -8,9 +8,7 @@ filegroup(
  HEADERS = [
-     "include/json/autolink.h",
-+    "include/json/allocator.h",
-+    "include/json/assertions.h",
+     "include/json/allocator.h",
+     "include/json/assertions.h",
+-    "include/json/autolink.h",
      "include/json/config.h",
 -    "include/json/features.h",
-+    "include/json/json_features.h",
      "include/json/forwards.h",
      "include/json/json.h",
      "include/json/reader.h",
-@@ -23,7 +25,7 @@
+@@ -25,7 +23,7 @@ genrule(
      cmd = """
        for i in $(OUTS); do
          i=$${i##*/}

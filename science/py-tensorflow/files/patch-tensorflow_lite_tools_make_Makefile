@@ -1,6 +1,6 @@
---- tensorflow/lite/tools/make/Makefile.orig	2019-07-08 14:04:30.373727000 +0100
-+++ tensorflow/lite/tools/make/Makefile	2019-07-08 16:44:36.249811000 +0100
-@@ -16,12 +16,15 @@
+--- tensorflow/lite/tools/make/Makefile.orig	2019-10-14 21:08:43 UTC
++++ tensorflow/lite/tools/make/Makefile
+@@ -16,12 +16,15 @@ else
  	ifeq ($(UNAME_S),Linux)
  		HOST_OS := linux
  	endif

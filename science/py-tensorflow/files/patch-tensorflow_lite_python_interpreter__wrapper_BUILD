@@ -1,0 +1,10 @@
+--- tensorflow/lite/python/interpreter_wrapper/BUILD.orig	2021-07-05 17:39:13 UTC
++++ tensorflow/lite/python/interpreter_wrapper/BUILD
+@@ -31,6 +31,7 @@ cc_library(
+         "//tensorflow/lite/kernels:builtin_ops",
+         "//third_party/python_runtime:headers",
+         "@com_google_absl//absl/memory",
++	"@com_google_absl//absl/strings:str_format",
+     ],
+ )
+ 

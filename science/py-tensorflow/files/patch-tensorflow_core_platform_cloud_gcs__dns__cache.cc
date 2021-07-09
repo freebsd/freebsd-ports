@@ -1,6 +1,6 @@
---- tensorflow/core/platform/cloud/gcs_dns_cache.cc.orig	2019-06-18 23:48:23.000000000 +0100
-+++ tensorflow/core/platform/cloud/gcs_dns_cache.cc	2019-07-06 18:15:09.827112000 +0100
-@@ -24,6 +24,11 @@
+--- tensorflow/core/platform/cloud/gcs_dns_cache.cc.orig	2019-10-14 21:08:43 UTC
++++ tensorflow/core/platform/cloud/gcs_dns_cache.cc
+@@ -26,6 +26,11 @@ limitations under the License.
  #endif
  #include <sys/types.h>
  

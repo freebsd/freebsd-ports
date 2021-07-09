@@ -1,0 +1,20 @@
+--- tensorflow/lite/tools/optimize/BUILD.orig	2021-01-04 20:18:42 UTC
++++ tensorflow/lite/tools/optimize/BUILD
+@@ -26,6 +26,8 @@ cc_library(
+         "//tensorflow/lite/schema:schema_fbs",
+         "//third_party/eigen3",
+         "@com_google_absl//absl/memory",
++        "@com_google_absl//absl/strings",
++        "@com_google_absl//absl/base",
+     ],
+ )
+ 
+@@ -40,6 +42,8 @@ cc_library(
+         "//tensorflow/lite/kernels/internal:types",
+         "//tensorflow/lite/schema:schema_fbs",
+         "@com_google_absl//absl/memory",
++        "@com_google_absl//absl/strings",
++        "@com_google_absl//absl/base",
+     ],
+ )
+ 

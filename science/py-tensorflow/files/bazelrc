@@ -15,3 +15,5 @@ build --define=PREFIX=%%LOCALBASE%%
 build --define=LIBDIR=%%LOCALBASE%%/lib
 
 build --config=noaws --config=nohdfs --config=noignite --config=nokafka
+build --define tensorflow_mkldnn_contraction_kernel=0
+build --incompatible_no_support_tools_in_action_inputs=false

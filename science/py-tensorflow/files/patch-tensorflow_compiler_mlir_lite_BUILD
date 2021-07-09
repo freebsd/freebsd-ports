@@ -1,0 +1,10 @@
+--- tensorflow/compiler/mlir/lite/BUILD.orig	2021-07-06 22:08:16 UTC
++++ tensorflow/compiler/mlir/lite/BUILD
+@@ -318,6 +318,7 @@ tf_native_cc_binary(
+     srcs = [
+         "operator_writer_gen.cc",
+     ],
++    linkopts = ["-lexecinfo"],
+     deps = [
+         "@llvm//:support",
+         "@llvm//:tablegen",
