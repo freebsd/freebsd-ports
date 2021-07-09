@@ -12,7 +12,7 @@ COMMENT=	Softether VPN 4 (stable beta version)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and i386: https://www.softether.org/3-spec
 #IGNORE=		no beta version available right now, use security/softether instead
 
