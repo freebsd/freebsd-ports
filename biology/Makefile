@@ -32,6 +32,7 @@
     SUBDIR += dsr-pdb
     SUBDIR += edlib
     SUBDIR += emboss
+    SUBDIR += erminej
     SUBDIR += exonerate
     SUBDIR += fasta
     SUBDIR += fasta3
