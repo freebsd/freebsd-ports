@@ -1,5 +1,5 @@
 PORTNAME=	biostar-tools
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	biology python
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -47,7 +47,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		bioawk>0:biology/bioawk \
 		vt>0:biology/vt \
 		${PYTHON_PKGNAMEPREFIX}crossmap>0:biology/py-crossmap@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}goatools>0:biology/py-goatools@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}goatools>0:biology/py-goatools@${PY_FLAVOR} \
+		erminej>0:biology/erminej
 
 USES=		metaport python
 
