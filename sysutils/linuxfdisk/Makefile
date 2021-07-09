@@ -16,7 +16,6 @@ LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/util-linux-${PORTVERSION}/fdisk
 USES=		tar:bzip2
-ONLY_FOR_ARCHS=	i386 amd64 armv7 powerpc powerpc64 powerpc64le
 
 pre-patch:
 	@${CP} ${FILESDIR}/linuxfdisk-Makefile ${WRKSRC}/Makefile

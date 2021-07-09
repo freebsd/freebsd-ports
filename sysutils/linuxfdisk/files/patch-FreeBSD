@@ -243,7 +243,7 @@ diff -rNu fdisk.c fdisk.c
 -"  or: fdisk /dev/eda  (for the first PS/2 ESDI drive)\n"
 -"  or: fdisk /dev/rd/c0d0  or: fdisk /dev/ida/c0d0  (for RAID devices)\n"
 +"Usage: fdisk-linux [-l] [-b SSZ] [-u] device\n"
-+"E.g.: fdisk-linux /dev/ada0  (for the first IDE disk)\n"
++"E.g.: fdisk-linux /dev/ada0  (for the first ATA disk)\n"
 +"  or: fdisk-linux /dev/da2  (for the third SCSI disk)\n"
  "  ...\n");
  			break;
@@ -950,7 +950,7 @@ diff -rNu fdisk.8 fdisk.8
  .fi
 -(/dev/hd[a-h] for IDE disks, /dev/sd[a-p] for SCSI disks,
 -/dev/ed[a-d] for ESDI disks, /dev/xd[ab] for XT disks).
-+(/dev/adaN for IDE disks, /dev/daN for SCSI disks, N=0,1,2...)
++(/dev/adaN for ATA disks, /dev/daN for SCSI disks, N=0,1,2...)
  A device name refers to the entire disk.
  
  The
@@ -959,12 +959,13 @@ diff -rNu fdisk.8 fdisk.8
  .I device
 -name followed by a partition number.  For example,
 -.B /dev/hda1
-+name followed by 's' and a partition number.  For example,
-+.B /dev/ada0s1
- is the first partition on the first IDE hard disk in the system.
+-is the first partition on the first IDE hard disk in the system.
 -IDE disks can have up to 63 partitions, SCSI disks up to 15.
 -See also
 -.IR /usr/src/linux/Documentation/devices.txt .
++name followed by 's' and a partition number.  For example,
++.B /dev/ada0s1
++is the first partition on the first ATA hard disk in the system.
  
  A BSD/SUN type disklabel can describe 8 partitions,
  the third of which should be a `whole disk' partition.
