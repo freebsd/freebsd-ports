@@ -1,4 +1,4 @@
-TIMESTAMP = 1618427275
+TIMESTAMP = 1625846468
 SHA256 (cabal/Cabal-3.4.0.0/Cabal-3.4.0.0.tar.gz) = b879998a96763b30fd8a1a5f4e94923dcefa73c4da700813f2884f47026541fd
 SIZE (cabal/Cabal-3.4.0.0/Cabal-3.4.0.0.tar.gz) = 836699
 SHA256 (cabal/aeson-1.5.6.0/aeson-1.5.6.0.tar.gz) = 0361c34be3d2ec945201f02501693436fbda10dcc549469481a084b2de22bfe8
@@ -123,5 +123,5 @@ SHA256 (cabal/vector-0.12.3.0/vector-0.12.3.0.tar.gz) = 15f818505adda63e7f484ecd
 SIZE (cabal/vector-0.12.3.0/vector-0.12.3.0.tar.gz) = 148083
 SHA256 (cabal/vector-binary-instances-0.2.5.2/vector-binary-instances-0.2.5.2.tar.gz) = b72e3b2109a02c75cb8f07ef0aabba0dba6ec0148e21321a0a2b2197c9a2f54d
 SIZE (cabal/vector-binary-instances-0.2.5.2/vector-binary-instances-0.2.5.2.tar.gz) = 4028
-SHA256 (cabal/haskell-haskell-language-server-1.1.0_GH0.tar.gz) = 1d2bab12dcf6ef5f14fe4159e2d1f76b00de75fa9af51846b7ad861fa1daadb2
-SIZE (cabal/haskell-haskell-language-server-1.1.0_GH0.tar.gz) = 1194891
+SHA256 (cabal/haskell-haskell-language-server-1.2.0_GH0.tar.gz) = 8931fd95bf28300d3f18675b0f03aac9bda172becb67eaa8ef1f62e6d1c6238e
+SIZE (cabal/haskell-haskell-language-server-1.2.0_GH0.tar.gz) = 1268563

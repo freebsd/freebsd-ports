@@ -1,6 +1,5 @@
 PORTNAME=	hls-install
-DISTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -69,11 +68,5 @@ CABAL_PROJECT=	remove
 
 WRKSRC_SUBDIR=	install
 NOT_FOR_ARCHS=	i386
-
-post-extract:
-	echo "executable hls-install" >> ${WRKSRC}/hls-install.cabal
-	echo "  main-is: ../install.hs" >> ${WRKSRC}/hls-install.cabal
-	echo "  build-depends: hls-install"  >> ${WRKSRC}/hls-install.cabal
-	echo "               , base"  >> ${WRKSRC}/hls-install.cabal
 
 .include <bsd.port.mk>
