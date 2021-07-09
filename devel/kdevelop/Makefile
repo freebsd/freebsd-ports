@@ -3,6 +3,7 @@
 #  devel/kdev-python
 PORTNAME=	kdevelop
 DISTVERSION=	5.6.2
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/kdevelop/${DISTVERSION}/src
 DIST_SUBDIR=	KDE/kdevelop
@@ -38,6 +39,12 @@ USE_QT=		concurrent core dbus declarative gui help network \
 		script sql widgets xml buildtools_build qmake_build
 SHEBANG_FILES=	kdevplatform/util/kdevplatform_shell_environment.sh \
 		kdevplatform/util/.zshrc
+# Most ports have ecm_build, testlib_build, but because this is an
+# IDE, which **probably** is used for Qt / KDE development (also
+# other things, but let's guess a target market), pull in some
+# additional development things that are otherwise build-dep-only.
+USE_KDE+=	ecm
+USE_QT+=	testlib
 
 CMAKE_ARGS=	-DCMAKE_POLICY_DEFAULT_CMP0074=NEW -DLLVM_ROOT=${LOCALBASE}/llvm${LLVM_DEFAULT}
 
