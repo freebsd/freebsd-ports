@@ -15,6 +15,6 @@ USE_QT=		core declarative gui network \
 OPTIONS_DEFINE=	DOCS
 
 # Override shared library version
-KDE_APPLICATIONS_SHLIB_VER=	21.4.2
+KDE_APPLICATIONS_SHLIB_VER=	21.4.3
 
 .include <bsd.port.mk>

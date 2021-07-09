@@ -380,7 +380,9 @@ share/locale/km/LC_MESSAGES/marble.mo
 share/locale/km/LC_MESSAGES/marble_qt.qm
 share/locale/ko/LC_MESSAGES/marble.mo
 share/locale/ko/LC_MESSAGES/marble_qt.qm
+share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_marble.mo
+share/locale/ko/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/lt/LC_MESSAGES/marble.mo
 share/locale/lt/LC_MESSAGES/marble_qt.qm
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
