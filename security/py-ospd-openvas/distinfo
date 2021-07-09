@@ -1,3 +1,3 @@
-TIMESTAMP = 1623717986
-SHA256 (ospd-openvas-21.4.0.tar.gz) = cb3f711d557fde991b1b5a5648a1289b6fcd2ad32456af9028ed0992d49c2c1b
-SIZE (ospd-openvas-21.4.0.tar.gz) = 86530
+TIMESTAMP = 1624924612
+SHA256 (greenbone-ospd-openvas-v21.4.1_GH0.tar.gz) = 6af9d4de0460aa463f7c59c1de41b2d63ba8a5553453b035bc9130b4b4da27f6
+SIZE (greenbone-ospd-openvas-v21.4.1_GH0.tar.gz) = 90601
