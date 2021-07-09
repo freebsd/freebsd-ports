@@ -1,6 +1,5 @@
 PORTNAME=	khelpcenter
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-applications # kde kde-applications-plasma
 
 MAINTAINER=	kde@FreeBSD.org
