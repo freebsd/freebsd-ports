@@ -1,6 +1,7 @@
 bin/ccache
 bin/ccache-update-links
-man/man1/ccache.1.gz
+@comment manpage requires extra dependencies
+%%DOCS%%man/man1/ccache.1.gz
 %%CCLINKDIR%%/world/ccache
 %%TINDERBOX%%%%DATADIR%%/ccache.tar
 @postexec echo "Create compiler links..."
