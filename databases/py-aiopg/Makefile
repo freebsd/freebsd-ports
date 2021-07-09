@@ -1,7 +1,7 @@
 # Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
 
 PORTNAME=	aiopg
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
