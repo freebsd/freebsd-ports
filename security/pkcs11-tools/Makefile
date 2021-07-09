@@ -1,6 +1,6 @@
 PORTNAME=	pkcs11-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
+DISTVERSION=	2.3.1
 CATEGORIES=	security
 
 MAINTAINER=	eric.devolder@gmail.com
@@ -8,11 +8,11 @@ COMMENT=	Tools for managing PKCS11 cryptographic tokens
 
 LICENSE=	APACHE20
 
-BROKEN_SSL=			libressl
+BROKEN_SSL=	libressl
 BROKEN_SSL_REASON_libressl=	error: use of undeclared identifier 'EVP_PKEY_X25519' (LibreSSL has no support for Edwards curves)
 
-BUILD_DEPENDS=	autoconf>0:devel/autoconf \
-		autoconf-archive>0:devel/autoconf-archive \
+BUILD_DEPENDS=	autoconf-archive>0:devel/autoconf-archive \
+		autoconf>0:devel/autoconf \
 		automake>0:devel/automake \
 		flex:textproc/flex
 RUN_DEPENDS=	bash:shells/bash
@@ -29,14 +29,15 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	LIBCRYPTO_RPATH=${OPENSSLBASE}/lib
 
 # workaround for Bug#255277:
-LDFLAGS+=	${OPENSSLBASE}/lib/libcrypto.a # -lcrypto # fails to find symbol in the shared library: ld: error: undefined symbol: EVP_PKEY_meth_get_digestsign
+# -lcrypto # fails to find symbol in the shared library: ld: error: undefined symbol: EVP_PKEY_meth_get_digestsign
+LDFLAGS+=	${OPENSSLBASE}/lib/libcrypto.a
 
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.options.mk>
 
 .if ${SSL_DEFAULT} == base && ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085
-BROKEN=	OpenSSL version is too old, lacks symbols: error: use of undeclared identifier 'EVP_PKEY_X25519', etc.
+BROKEN=		OpenSSL version is too old, lacks symbols: error: use of undeclared identifier 'EVP_PKEY_X25519', etc.
 .endif
 
 post-extract:
