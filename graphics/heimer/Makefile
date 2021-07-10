@@ -1,5 +1,5 @@
 PORTNAME=	heimer
-DISTVERSION=	2.5.0
+DISTVERSION=	2.6.0
 CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -17,16 +17,21 @@ USE_QT=		core gui svg widgets xml buildtools_build linguisttools_build \
 		qmake_build testlib_build
 TEST_TARGET=	test
 
+PLIST_FILES=	bin/heimer \
+		share/applications/heimer.desktop \
+		share/icons/hicolor/64x64/apps/heimer.png \
+		share/metainfo/heimer.appdata.xml \
+		share/pixmaps/heimer.png
+
 PORTDOCS=	README.md
 PORTEXAMPLES=	examples/*.alz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-EXAMPLES_PLIST_FILES=	\
-	${EXAMPLESDIR}/Company.alz \
-	${EXAMPLESDIR}/Family.alz \
-	${EXAMPLESDIR}/Heimer.alz \
-	${EXAMPLESDIR}/Large.alz
+EXAMPLES_PLIST_FILES=	${EXAMPLESDIR}/Company.alz \
+			${EXAMPLESDIR}/Family.alz \
+			${EXAMPLESDIR}/Heimer.alz \
+			${EXAMPLESDIR}/Large.alz
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
