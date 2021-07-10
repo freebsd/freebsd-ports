@@ -1,7 +1,7 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	20.0.0
-PORTREVISION?=	3
+DISTVERSION=	20.0.2
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
@@ -208,6 +208,7 @@ MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 post-patch:
 	@${REINPLACE_CMD}  '76,79d' ${WRKSRC}/CMakeLists.txt
 .if ${PKGNAMESUFFIX} == "-server"
+	@${REINPLACE_CMD}  '45d' ${WRKSRC}/core/src/CMakeLists.txt
 	@${REINPLACE_CMD}  '51d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
 .endif
 

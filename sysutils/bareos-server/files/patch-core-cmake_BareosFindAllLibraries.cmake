@@ -1,6 +1,6 @@
---- core/cmake/BareosFindAllLibraries.cmake	2020-12-16 02:46:16.000000000 -0500
-+++ core/cmake/BareosFindAllLibraries.cmake	2020-12-27 00:31:34.725219000 -0500
-@@ -37,46 +37,30 @@
+--- core/cmake/BareosFindAllLibraries.cmake	2021-06-10 10:37:18.000000000 -0500
++++ core/cmake/BareosFindAllLibraries.cmake	2021-07-09 21:07:45.799522000 -0500
+@@ -37,55 +37,39 @@
    set(Python3_FOUND 0)
  
  else()
@@ -9,18 +9,27 @@
 +  if(python)
 +    find_package(Python3 COMPONENTS Interpreter Development)
  
+-  set(Python3_VERSION_MAJOR
+-      ${Python3_VERSION_MAJOR}
+-      PARENT_SCOPE
+-  )
+-
+-  set(Python3_VERSION_MINOR
+-      ${Python3_VERSION_MINOR}
+-      PARENT_SCOPE
+-  )
+-
 -  if(${Python2_FOUND} OR ${Python3_FOUND})
 -    set(HAVE_PYTHON 1)
 -  endif()
-+    if(${Python3_FOUND})
-+      set(HAVE_PYTHON 1)
-+    endif()
- 
+-
 -  if(${Python2_FOUND})
 -    set(PYTHON_EXECUTABLE
 -        ${Python2_EXECUTABLE}
--        PARENT_SCOPE
--    )
++    set(Python3_VERSION_MAJOR
++        ${Python3_VERSION_MAJOR}
+         PARENT_SCOPE
+     )
 -    set(Python2_EXECUTABLE
 -        ${Python2_EXECUTABLE}
 -        PARENT_SCOPE
@@ -31,6 +40,30 @@
 -      OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/py2settings.cmake
 -    )
 -    include(${CMAKE_CURRENT_BINARY_DIR}/py2settings.cmake)
+-  endif()
+ 
+-  if(${Python3_FOUND})
+-    set(PYTHON_EXECUTABLE
+-        ${Python3_EXECUTABLE}
++    set(Python3_VERSION_MINOR
++        ${Python3_VERSION_MINOR}
+         PARENT_SCOPE
+     )
+-    set(Python3_EXECUTABLE
+-        ${Python3_EXECUTABLE}
+-        PARENT_SCOPE
+-    )
+-    execute_process(
+-      COMMAND ${Python3_EXECUTABLE}
+-              ${CMAKE_CURRENT_SOURCE_DIR}/cmake/get_python_compile_settings.py
+-      OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/py3settings.cmake
+-    )
+-    include(${CMAKE_CURRENT_BINARY_DIR}/py3settings.cmake)
++
++    if(${Python3_FOUND})
++      set(HAVE_PYTHON 1)
++    endif()
++
 +    if(${Python3_FOUND})
 +      set(PYTHON_EXECUTABLE
 +          ${Python3_EXECUTABLE}
@@ -48,27 +81,9 @@
 +      include(${CMAKE_CURRENT_BINARY_DIR}/py3settings.cmake)
 +    endif()
    endif()
--
--  if(${Python3_FOUND})
--    set(PYTHON_EXECUTABLE
--        ${Python3_EXECUTABLE}
--        PARENT_SCOPE
--    )
--    set(Python3_EXECUTABLE
--        ${Python3_EXECUTABLE}
--        PARENT_SCOPE
--    )
--    execute_process(
--      COMMAND ${Python3_EXECUTABLE}
--              ${CMAKE_CURRENT_SOURCE_DIR}/cmake/get_python_compile_settings.py
--      OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/py3settings.cmake
--    )
--    include(${CMAKE_CURRENT_BINARY_DIR}/py3settings.cmake)
--  endif()
  endif()
  
- if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-@@ -154,12 +138,18 @@
+@@ -164,12 +148,18 @@
  endif()
  
  bareosfindlibraryandheaders("jansson" "jansson.h" "")
