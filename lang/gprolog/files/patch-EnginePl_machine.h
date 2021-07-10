@@ -9,12 +9,3 @@
  
  #ifdef NO_USE_EBP
  #    define M_USED_REGS            {"ebx", 0}
-@@ -137,7 +137,7 @@ void M_Check_Magic_Words(void); /* not c
- #    define M_USED_REGS            {"15", "20", 0}
- 
- /* on M_x86_64_darwin Lion r12-r15 do not work (why ?) */
--#elif defined(M_x86_64) && !defined(_MSC_VER) && !defined(M_x86_64_darwin)
-+#elif defined(M_x86_64) && !defined(_MSC_VER) && !defined(M_x86_64_darwin) && !defined(__clang__)
- 
- #    define M_USED_REGS            {"r12", "r13", "r14", "r15", 0}
- 

@@ -1,7 +1,7 @@
 # Created by: Douglas Anestad <yotta@dougdidit.com>
 
 PORTNAME=	gprolog
-PORTVERSION=	1.4.5
+PORTVERSION=	1.5.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.gprolog.org/
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	as:devel/binutils
 
 USES=		gmake
 CFLAGS+=	-DUSE_LOCKS=1 -DUSE_RECURSIVE_LOCKS=1 -DUSE_SPIN_LOCKS=0 \
-		-DMMAP_CLEARS=0 -DNO_MACHINE_REG_FOR_REG_BANK -fcommon
+		-DMMAP_CLEARS=0
 
 PLIST_SUB=	GPROLOG_VER=${PORTVERSION}
 GNU_CONFIGURE=	yes
