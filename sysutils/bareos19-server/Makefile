@@ -1,7 +1,7 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	19.2.9
-PORTREVISION?=	2
+DISTVERSION=	19.2.10
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	19-server
@@ -206,6 +206,7 @@ post-patch:
 	@${REINPLACE_CMD}  '69,72d' ${WRKSRC}/CMakeLists.txt
 .if ${PKGNAMESUFFIX} == "19-server"
 	@${REINPLACE_CMD}  '24d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
+	@${REINPLACE_CMD}  '35d' ${WRKSRC}/core/src/CMakeLists.txt
 .endif
 
 post-extract:
