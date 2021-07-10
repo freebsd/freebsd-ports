@@ -1,7 +1,7 @@
 # Created by: <ports@c0decafe.net>
 
 PORTNAME=	onioncat
-DISTVERSION=	0.3.8
+DISTVERSION=	0.3.9
 CATEGORIES=	net security
 MASTER_SITES=	https://www.cypherpunk.at/ocat/download/Source/current/
 
