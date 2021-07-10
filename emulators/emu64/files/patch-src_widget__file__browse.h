@@ -1,4 +1,4 @@
---- src/widget_file_browse.h.orig	2020-11-08 17:22:47 UTC
+--- src/widget_file_browse.h.orig	2021-07-09 07:30:04 UTC
 +++ src/widget_file_browse.h
 @@ -26,8 +26,8 @@
          #include "quazip/quazip.h"
