@@ -431,7 +431,6 @@
     SUBDIR += nextcloud
     SUBDIR += nextcloud-appointments
     SUBDIR += nextcloud-calendar
-    SUBDIR += nextcloud-circles
     SUBDIR += nextcloud-contacts
     SUBDIR += nextcloud-deck
     SUBDIR += nextcloud-forms
