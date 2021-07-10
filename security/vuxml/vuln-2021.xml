@@ -1,3 +1,39 @@
+  <vuln vid="9b1699ff-d84c-11eb-92d6-1b6ff3dfe4d3">
+    <topic>mantis -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mantis-php73</name>
+	<name>mantis-php74</name>
+	<name>mantis-php80</name>
+	<range><lt>2.25.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mantis 2.25.1 and 2.25.2 releases report:</p>
+	<blockquote cite="https://mantisbt.org/bugs/changelog_page.php?version_id=362">
+	  <p>Security and maintenance release, PHPMailer update to 6.5.0</p>
+	  <ul>
+	    <li>0028552: XSS in manage_custom_field_edit_page.php (CVE-2021-33557)</li>
+	    <li>0028821: Update PHPMailer to 6.5.0 (CVE-2021-3603, CVE-2020-36326)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-33557</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-33557</url>
+      <cvename>CVE-2021-3603</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-3603</url>
+      <cvename>CVE-2020-36326</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=2020-36326</url>
+    </references>
+    <dates>
+      <discovery>2021-04-28</discovery>
+      <entry>2021-07-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="01974420-dfaf-11eb-ba49-001b217b3468">
     <topic>Gitlab -- vulnerability</topic>
     <affects>
