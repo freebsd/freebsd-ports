@@ -1,7 +1,7 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	18.2.10
-PORTREVISION?=	2
+DISTVERSION=	18.2.11
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	18-server
@@ -99,6 +99,7 @@ CMAKE_ARGS+=	-Dtcp-wrappers=ON \
 		-Ddisable-conio=ON \
 		-Dbatch-insert=ON \
 		-Dhave_plugins=ON \
+		-Dtest-plugin=OFF \
 		-Dplugindir=${PREFIX}/lib/bareos/plugins \
 		-Dscriptdir=${PREFIX}/lib/bareos/scripts \
 		-Dbackenddir=${PREFIX}/lib/bareos/backends \
@@ -208,6 +209,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|sm_dump(false)|sm_dump(jcr,false)|g' \
 		${WRKSRC}/core/src/tools/btestls.cc
 .if ${PKGNAMESUFFIX} == "18-server"
+	@${REINPLACE_CMD}  '23d' ${WRKSRC}/core/src/CMakeLists.txt
 	@${REINPLACE_CMD}  '25d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
 .endif
 
