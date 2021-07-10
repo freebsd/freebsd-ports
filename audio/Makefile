@@ -327,6 +327,7 @@
     SUBDIR += jalv
     SUBDIR += jalv-select
     SUBDIR += jamulus
+    SUBDIR += jconvolver
     SUBDIR += jid3lib
     SUBDIR += juk
     SUBDIR += juke
