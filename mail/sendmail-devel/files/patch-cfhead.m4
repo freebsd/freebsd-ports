@@ -1,6 +1,6 @@
---- cf/m4/cfhead.m4.orig	2019-02-15 10:30:19 UTC
+--- cf/m4/cfhead.m4.orig	2021-06-07 19:03:56 UTC
 +++ cf/m4/cfhead.m4
-@@ -278,7 +278,8 @@ define(`_REC_AUTH_', `$.$?{auth_type}(au
+@@ -284,7 +284,8 @@ define(`_REC_AUTH_', `$.$?{auth_type}(authenticated')
  define(`_REC_FULL_AUTH_', `$.$?{auth_type}(user=${auth_authen} $?{auth_author}author=${auth_author} $.mech=${auth_type}')
  define(`_REC_HDR_', `$?sfrom $s $.$?_($?s$|from $.$_)')
  define(`_REC_END_', `for $u; $|;
