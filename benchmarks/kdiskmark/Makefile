@@ -18,7 +18,7 @@ GH_PROJECT=	KDiskMark
 USES=		cmake compiler:c++11-lang kde:5 qt:5
 USE_QT=		buildtools_build linguisttools_build qmake_build \
 		core gui widgets
-USE_KDE=	auth coreaddons
+USE_KDE=	ecm_build auth coreaddons
 
 post-patch:
 	@${REINPLACE_CMD} -e '/--ioengine=/s,libaio,posixaio,' \
