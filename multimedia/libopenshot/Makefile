@@ -18,7 +18,7 @@ LIB_DEPENDS=	libopenshot-audio.so:audio/libopenshot-audio \
 		libavformat.so:multimedia/ffmpeg \
 		libzmq.so:net/libzmq4
 
-USES=		cmake compiler:c++11-lang pkgconfig python:3.5+ qt:5
+USES=		cmake pkgconfig python:3.5+ qt:5
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
@@ -45,5 +45,13 @@ OPENCV_CMAKE_ON=	-DOpenCV_DIR:STRING=${LOCALBASE:Q}/cmake/opencv4
 OPENCV_CMAKE_BOOL=	ENABLE_OPENCV
 OPENCV_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenCV\
 			CMAKE_DISABLE_FIND_PACKAGE_Protobuf
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lang
+.endif
 
 .include <bsd.port.mk>
