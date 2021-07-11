@@ -1,7 +1,7 @@
 PORTNAME=	xplr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -177,4 +177,13 @@ post-install-EXAMPLES-on:
 		${INSTALL_DATA} ${_EXAMPLES} \
 		${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# XXX: getentropy(3) did not appear until FreeBSD 12, anything lower will
+# not compile, throwing an undefined reference to `getentropy'.  We can
+# safely remove this once FreeBSD 11 is EOL.
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
+EXTRA_PATCHES=	${PATCHDIR}/extra-cargo-crates_luajit-src-210.1.3+restyfe08842_luajit2_src_lj__prng.c
+.endif
+
+.include <bsd.port.post.mk>
