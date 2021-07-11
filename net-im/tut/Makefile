@@ -1,5 +1,5 @@
 PORTNAME=	tut
-DISTVERSION=	0.0.17
+DISTVERSION=	0.0.20
 CATEGORIES=	net-im
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -14,22 +14,23 @@ GH_ACCOUNT=	RasmusLindroth
 GH_TUPLE=	aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
 		chris-ramon:douceur:v0.2.0:chris_ramon_douceur \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
-		gdamore:tcell:v1.3.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
+		gdamore:tcell:v2.3.11:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
 		go-ini:ini:v1.57.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		golang:net:ab3426394381:golang_net/vendor/golang.org/x/net \
-		golang:sys:85ca7c5b95cd:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		golang:sys:68d13333faf2:golang_sys/vendor/golang.org/x/sys \
+		golang:term:6a3ed077a48d:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
 		gorilla:websocket:v1.4.1:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		icza:gox:7dc3510ae515:icza_gox/vendor/github.com/icza/gox \
 		kyoh86:xdg:v1.2.0:kyoh86_xdg/vendor/github.com/kyoh86/xdg \
-		lucasb-eyer:go-colorful:v1.0.3:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
-		mattn:go-mastodon:315df7d9162e:mattn_go_mastodon/vendor/github.com/mattn/go-mastodon \
-		mattn:go-runewidth:v0.0.8:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
+		mattn:go-mastodon:d39c10ba5e94:mattn_go_mastodon/vendor/github.com/mattn/go-mastodon \
+		mattn:go-runewidth:v0.0.10:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		microcosm-cc:bluemonday:v1.0.3:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		pelletier:go-toml:v1.8.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
-		rivo:tview:c65badfc3d92:rivo_tview/vendor/github.com/rivo/tview \
-		rivo:uniseg:v0.1.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
+		rivo:tview:452d97725245:rivo_tview/vendor/github.com/rivo/tview \
+		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		smartystreets:goconvey:v1.6.4:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey \
 		tomnomnom:linkheader:02ca5825eb80:tomnomnom_linkheader/vendor/github.com/tomnomnom/linkheader
 
