@@ -8,7 +8,7 @@ COMMENT=	Implementation of homomorphic encryption
 
 LICENSE=	APACHE20
 
-BROKEN_i386=	no matching function for call to 'assertEq', see https://github.com/homenc/HElib/issues/342
+NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libntl.so:math/ntl
