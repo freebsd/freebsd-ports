@@ -1,5 +1,6 @@
 PORTNAME=	kget
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -21,12 +22,12 @@ USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qca qt:5 \
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons emoticons guiaddons i18n \
 		iconthemes itemmodels itemviews jobwidgets kcmutils \
-		kio notifications notifyconfig parts service \
+		kdelibs4support kio notifications notifyconfig parts service \
 		solid sonnet textwidgets unitconversion wallet widgetsaddons \
 		windowsystem xmlgui \
 		ecm_build
 USE_QT=		concurrent core dbus gui network printsupport sql widgets xml \
-		buildtools_build qmake_build
+		buildtools_build qmake_build testlib_build
 
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	conf/*.pl
