@@ -1,7 +1,7 @@
 PORTNAME=	tetraproc
 DISTVERSION=	0.8.6
 CATEGORIES=	audio
-MASTER_SITES=	http://kokkinizita.linuxaudio.org/linuxaudio/downloads/
+MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tetrahedral microphone processor for ambisonic recording
