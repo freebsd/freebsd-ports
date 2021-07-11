@@ -874,6 +874,7 @@
     SUBDIR += zita-bls1
     SUBDIR += zita-convolver
     SUBDIR += zita-dpl1
+    SUBDIR += zita-mu1
     SUBDIR += zita-njbridge
     SUBDIR += zita-resampler
     SUBDIR += zita-rev1
