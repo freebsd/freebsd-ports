@@ -16433,6 +16433,7 @@
 %%WWWDIR%%/vendor/imagine/imagine/lib/Imagine/resources/color.org/sRGB_IEC61966-2-1_no_black_scaling.icc
 %%WWWDIR%%/vendor/imagine/imagine/.travis/gmagick.sh
 %%WWWDIR%%/vendor/imagine/imagine/.travis/imagick.sh
+%%WWWDIR%%/vendor/league/flysystem/CODE_OF_CONDUCT.md
 %%WWWDIR%%/vendor/league/flysystem/LICENSE
 %%WWWDIR%%/vendor/league/flysystem/SECURITY.md
 %%WWWDIR%%/vendor/league/flysystem/composer.json
@@ -16460,6 +16461,7 @@
 %%WWWDIR%%/vendor/league/flysystem/src/Config.php
 %%WWWDIR%%/vendor/league/flysystem/src/ConnectionErrorException.php
 %%WWWDIR%%/vendor/league/flysystem/src/ConnectionRuntimeException.php
+%%WWWDIR%%/vendor/league/flysystem/src/CorruptedPathDetected.php
 %%WWWDIR%%/vendor/league/flysystem/src/Directory.php
 %%WWWDIR%%/vendor/league/flysystem/src/Exception.php
 %%WWWDIR%%/vendor/league/flysystem/src/FileExistsException.php
@@ -16630,6 +16632,15 @@
 %%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/XML empty tag.xhtml
 %%WWWDIR%%/vendor/michelf/php-markdown/test/unit/MarkdownExtraTest.php
 %%WWWDIR%%/vendor/michelf/php-markdown/.travis.yml
+%%WWWDIR%%/vendor/league/mime-type-detection/CHANGELOG.md
+%%WWWDIR%%/vendor/league/mime-type-detection/LICENSE
+%%WWWDIR%%/vendor/league/mime-type-detection/composer.json
+%%WWWDIR%%/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php
+%%WWWDIR%%/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php
+%%WWWDIR%%/vendor/league/mime-type-detection/src/ExtensionToMimeTypeMap.php
+%%WWWDIR%%/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php
+%%WWWDIR%%/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php
+%%WWWDIR%%/vendor/league/mime-type-detection/src/MimeTypeDetector.php
 %%WWWDIR%%/vendor/misd/linkify/CHANGELOG.md
 %%WWWDIR%%/vendor/misd/linkify/LICENSE
 %%WWWDIR%%/vendor/misd/linkify/README.md
