@@ -1,7 +1,6 @@
 PORTNAME=	monolith
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0
-PORTREVISION=	1
+DISTVERSION=	2.6.1
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -17,7 +16,7 @@ GH_ACCOUNT=	Y2Z
 CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
-		assert_cmd-1.0.5 \
+		assert_cmd-1.0.7 \
 		async-compression-0.3.8 \
 		atty-0.2.14 \
 		autocfg-0.1.7 \
@@ -35,15 +34,16 @@ CARGO_CRATES=	adler-1.0.2 \
 		cloudabi-0.0.3 \
 		core-foundation-0.9.1 \
 		core-foundation-sys-0.8.2 \
-		cpufeatures-0.1.4 \
+		cpufeatures-0.1.5 \
 		crc32fast-1.2.1 \
 		cssparser-0.28.1 \
 		cssparser-macros-0.6.0 \
-		difference-2.0.0 \
+		difflib-0.4.0 \
 		digest-0.9.0 \
 		doc-comment-0.3.3 \
 		dtoa-0.4.8 \
 		dtoa-short-0.3.3 \
+		either-1.6.1 \
 		encoding_rs-0.8.28 \
 		flate2-1.0.20 \
 		fnv-1.0.7 \
@@ -62,8 +62,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		getrandom-0.1.16 \
 		getrandom-0.2.3 \
 		h2-0.3.3 \
-		hashbrown-0.9.1 \
-		hermit-abi-0.1.18 \
+		hashbrown-0.11.2 \
+		hermit-abi-0.1.19 \
 		html5ever-0.24.1 \
 		http-0.2.4 \
 		http-body-0.4.2 \
@@ -72,12 +72,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		hyper-0.14.9 \
 		hyper-tls-0.5.0 \
 		idna-0.2.3 \
-		indexmap-1.6.2 \
-		ipnet-2.3.0 \
+		indexmap-1.7.0 \
+		ipnet-2.3.1 \
+		itertools-0.10.1 \
 		itoa-0.4.7 \
 		js-sys-0.3.51 \
 		lazy_static-1.4.0 \
-		libc-0.2.95 \
+		libc-0.2.97 \
 		log-0.4.14 \
 		mac-0.1.1 \
 		markup5ever-0.9.0 \
@@ -85,7 +86,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		memchr-2.4.0 \
 		mime-0.3.16 \
 		miniz_oxide-0.4.4 \
-		mio-0.7.11 \
+		mio-0.7.13 \
 		miow-0.3.7 \
 		native-tls-0.2.7 \
 		new_debug_unreachable-1.0.4 \
@@ -93,11 +94,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
-		once_cell-1.7.2 \
+		once_cell-1.8.0 \
 		opaque-debug-0.3.0 \
-		openssl-0.10.34 \
+		openssl-0.10.35 \
 		openssl-probe-0.1.4 \
-		openssl-sys-0.9.63 \
+		openssl-sys-0.9.65 \
 		percent-encoding-2.1.0 \
 		phf-0.7.24 \
 		phf-0.8.0 \
@@ -107,12 +108,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		phf_macros-0.8.0 \
 		phf_shared-0.7.24 \
 		phf_shared-0.8.0 \
-		pin-project-lite-0.2.6 \
+		pin-project-lite-0.2.7 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.19 \
 		ppv-lite86-0.2.10 \
 		precomputed-hash-0.1.1 \
-		predicates-1.0.8 \
+		predicates-2.0.0 \
 		predicates-core-1.0.2 \
 		predicates-tree-1.0.2 \
 		proc-macro-hack-0.5.19 \
@@ -120,17 +121,17 @@ CARGO_CRATES=	adler-1.0.2 \
 		quote-1.0.9 \
 		rand-0.6.5 \
 		rand-0.7.3 \
-		rand-0.8.3 \
+		rand-0.8.4 \
 		rand_chacha-0.1.1 \
 		rand_chacha-0.2.2 \
-		rand_chacha-0.3.0 \
+		rand_chacha-0.3.1 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
 		rand_core-0.5.1 \
-		rand_core-0.6.2 \
+		rand_core-0.6.3 \
 		rand_hc-0.1.0 \
 		rand_hc-0.2.0 \
-		rand_hc-0.3.0 \
+		rand_hc-0.3.1 \
 		rand_isaac-0.1.1 \
 		rand_jitter-0.1.4 \
 		rand_os-0.1.3 \
@@ -138,12 +139,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		rand_pcg-0.2.1 \
 		rand_xorshift-0.1.1 \
 		rdrand-0.4.0 \
-		redox_syscall-0.2.8 \
+		redox_syscall-0.2.9 \
 		regex-1.5.4 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
-		reqwest-0.11.3 \
+		reqwest-0.11.4 \
 		ryu-1.0.5 \
 		schannel-0.1.19 \
 		security-framework-2.3.1 \
@@ -162,14 +163,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		string_cache_codegen-0.4.4 \
 		string_cache_shared-0.3.0 \
 		strsim-0.8.0 \
-		syn-1.0.72 \
+		syn-1.0.73 \
 		tempfile-3.2.0 \
 		tendril-0.4.2 \
 		textwrap-0.11.0 \
 		time-0.1.44 \
 		tinyvec-1.2.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.6.1 \
+		tokio-1.8.0 \
 		tokio-native-tls-0.3.0 \
 		tokio-util-0.6.7 \
 		tower-service-0.3.1 \
@@ -184,7 +185,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-xid-0.2.2 \
 		url-2.2.2 \
 		utf-8-0.7.6 \
-		vcpkg-0.2.13 \
+		vcpkg-0.2.15 \
 		vec_map-0.8.2 \
 		version_check-0.9.3 \
 		wait-timeout-0.2.0 \
