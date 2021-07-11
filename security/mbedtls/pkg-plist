@@ -1,4 +1,3 @@
-bin/mbedtls_aescrypt2
 bin/mbedtls_benchmark
 bin/mbedtls_cert_app
 bin/mbedtls_cert_req
