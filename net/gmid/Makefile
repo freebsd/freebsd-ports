@@ -1,7 +1,7 @@
 PORTNAME=	gmid
-DISTVERSION=	v1.6.1
-PORTREVISION=	1
+DISTVERSION=	1.7.1
 CATEGORIES=	net
+MASTER_SITES=	https://github.com/omar-polo/gmid/releases/download/${DISTVERSION}/
 
 MAINTAINER=	freebsd@omarpolo.com
 COMMENT=	Simple and secure Gemini server
@@ -13,13 +13,13 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 		libtls.so:security/libressl
 
 USES=		localbase pkgconfig ssl
-USE_GITHUB=	yes
-GH_ACCOUNT=	omar-polo
 USE_RC_SUBR=	gmid
 
 HAS_CONFIGURE=	yes
 
 TEST_TARGET=	regress
+
+LDFLAGS+=	-lcrypto -lssl
 
 USERS=		_gmid
 GROUPS=		_gmid
