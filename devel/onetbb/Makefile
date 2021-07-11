@@ -5,6 +5,9 @@ PORTVERSION=	2021.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
+PATCH_SITES=	https://github.com/oneapi-src/oneTBB/commit/
+PATCHFILES=	fa944e19600500863507ed8e9b1f5a30037d9df6.patch:-p1
+
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Library that provides thread building blocks
 
