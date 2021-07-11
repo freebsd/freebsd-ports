@@ -3,4 +3,4 @@ features, among which Capsicum support and a "config-less"
 mode akin to "python -m http.server" to quickly serve local
 directories from the shell.
 
-WWW: https://github.com/omar-polo/gmid
+WWW: https://gmid.omarpolo.com
