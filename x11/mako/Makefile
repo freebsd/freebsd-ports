@@ -1,6 +1,6 @@
 PORTNAME=	mako
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5
+DISTVERSION=	1.6
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,7 +10,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>=1.14:graphics/wayland-protocols
+		wayland-protocols>=1.21:graphics/wayland-protocols
 LIB_DEPENDS=	libbasu.so:devel/basu \
 		libepoll-shim.so:devel/libepoll-shim \
 		libwayland-client.so:graphics/wayland
