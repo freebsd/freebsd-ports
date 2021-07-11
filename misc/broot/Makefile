@@ -1,7 +1,7 @@
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -222,15 +222,12 @@ CARGO_FEATURES=	--no-default-features
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
-PORTDOCS=	CHANGELOG.md README.md documentation.md
+PORTDOCS=	CHANGELOG.md README.md documentation.md features.md
 
-OPTIONS_DEFINE=		CLIENT_SERVER CLIPBOARD DOCS
-OPTIONS_DEFAULT=	CLIENT_SERVER CLIPBOARD
+OPTIONS_DEFINE=		CLIPBOARD DOCS
+OPTIONS_DEFAULT=	CLIPBOARD
 
-CLIENT_SERVER_DESC=	Enable client/server support
-CLIPBOARD_DESC=		Enable terminal X11 clipboard support
-
-CLIENT_SERVER_VARS=	CARGO_FEATURES+=client-server
+CLIPBOARD_DESC=	Enable terminal X11 clipboard support
 
 CLIPBOARD_USES=		python:3.6+,build xorg
 CLIPBOARD_USE=		XORG=xcb
@@ -241,16 +238,20 @@ _BUILD_VERSION=	${DISTVERSION}
 _BUILD_DATE=	$$(date +'%Y/%m/%d')
 
 pre-build:
-	@${MV} ${WRKSRC}/man/page ${WRKSRC}/man/${PORTNAME}.1
+	@${MV} ${WRKSRC}/man/page \
+		${WRKSRC}/man/${PORTNAME}.1
 	@${REINPLACE_CMD} -e 's|#version|${_BUILD_VERSION}|g' \
-		-e "s|#date|${_BUILD_DATE}|g" ${WRKSRC}/man/${PORTNAME}.1
+		-e "s|#date|${_BUILD_DATE}|g" \
+		${WRKSRC}/man/${PORTNAME}.1
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
