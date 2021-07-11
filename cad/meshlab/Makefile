@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/include/vcglib/img/img.h:devel/vcglib
 LIB_DEPENDS=	libmpirxx.so:math/mpir
 
-USES=		compiler:c++11-lang dos2unix gl qmake:outsource qt:5
+USES=		dos2unix gl qmake:outsource qt:5
 USE_GL=		gl glu glew
 USE_QT=		buildtools_build core gui network \
 		opengl script xml xmlpatterns widgets
@@ -25,6 +25,14 @@ USE_LDCONFIG=	yes
 QMAKE_SOURCE_PATH=	${WRKSRC}/src/meshlab.pro
 
 DOS2UNIX_GLOB=	*.c *.cpp *.h
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lang
+.endif
 
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/src/general.pri
@@ -39,4 +47,5 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/distrib/meshlabserver ${STAGEDIR}${PREFIX}/lib/meshlab
 	${RLN} ${STAGEDIR}${PREFIX}/lib/meshlab/meshlab ${STAGEDIR}${PREFIX}/bin
 	${RLN} ${STAGEDIR}${PREFIX}/lib/meshlab/meshlabserver ${STAGEDIR}${PREFIX}/bin
+
 .include <bsd.port.mk>
