@@ -4,7 +4,7 @@ PORTNAME=	zita-convolver
 DISTVERSION=	4.0.3
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://kokkinizita.linuxaudio.org/linuxaudio/downloads/
+MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast, partitioned convolution engine library
