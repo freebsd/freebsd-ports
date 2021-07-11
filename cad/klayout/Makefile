@@ -10,6 +10,7 @@ COMMENT=	Qt-based GDS2 Viewer
 LICENSE=	GPLv2
 
 BROKEN_i386=	type 'hash<long long>' does not provide a call operator
+BROKEN_powerpc=	type 'hash<long long>' does not provide a call operator
 BROKEN_sparc64=	Does not compile on sparc64: gcc bug
 
 USES=		compiler:c++0x gmake gl python qt:5
