@@ -2,7 +2,7 @@
 
 PORTNAME=	labplot
 DISTVERSION=	2.8.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 
@@ -20,14 +20,14 @@ LIB_DEPENDS=	libgsl.so:math/gsl \
 USES=		bison cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 \
 		shared-mime-info tar:xz
 USE_KDE=	archive attica auth bookmarks codecs completion config configwidgets \
-		coreaddons crash ecm_build guiaddons i18n iconthemes itemviews \
-		jobwidgets kdelibs4support kio newstuff notifications parts \
+		coreaddons crash guiaddons i18n iconthemes itemviews \
+		jobwidgets kio newstuff notifications parts \
 		service solid sonnet syntaxhighlighting textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui \
-		doctools_build
+		doctools_build ecm_build
 USE_QT=		concurrent core dbus gui network printsupport serialport \
 		sql svg widgets xml \
-		buildtools_build qmake_build
+		buildtools_build qmake_build testlib_build
 
 CMAKE_OFF=	ENABLE_LIBCERF
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_KUserFeedback
