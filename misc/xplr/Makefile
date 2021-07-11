@@ -1,7 +1,7 @@
 PORTNAME=	xplr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -137,6 +137,8 @@ CARGO_CRATES=	ansi-to-tui-0.3.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		yaml-rust-0.4.5
+
+BINARY_ALIAS=	make=gmake
 
 PORTDOCS=	CODE_OF_CONDUCT.md README.md RELEASE.md
 _EXAMPLES=	${WRKSRC}/src/init.lua
