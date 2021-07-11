@@ -2,7 +2,7 @@
 
 PORTNAME=	tellico
 DISTVERSION=	3.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
@@ -26,13 +26,13 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext gnome \
 		tar:xz
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	archive attica5 auth bookmarks codecs completion config \
-		configwidgets coreaddons crash ecm filemetadata guiaddons \
+		configwidgets coreaddons crash filemetadata guiaddons \
 		i18n iconthemes itemmodels itemviews jobwidgets js khtml kio \
 		libkcddb libksane newstuff parts service solid sonnet \
 		textwidgets wallet widgetsaddons windowsystem xmlgui \
-		doctools_build
+		doctools_build ecm_build
 USE_QT=		concurrent core dbus gui network widgets xml  \
-		buildtools_build qmake_build
+		buildtools_build qmake_build testlib_build
 
 SHEBANG_FILES=	src/fetch/scripts/dark_horse_comics.py \
 		src/fetch/scripts/fr.allocine.py
