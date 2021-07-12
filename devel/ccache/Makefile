@@ -1,8 +1,7 @@
 # Created by: Dominic Marks <d.marks@student.umist.ac.uk>
 
 PORTNAME=	ccache
-PORTVERSION=	3.7.1
-PORTREVISION=	1
+PORTVERSION=	3.7.12
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ccache/ccache/releases/download/v${DISTVERSION}/ \
 		LOCAL/bdrewery
