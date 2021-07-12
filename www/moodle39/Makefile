@@ -1,7 +1,7 @@
 # Created by: Javier Martin Rueda <jmrueda@diatel.upm.es>
 
 PORTNAME=	moodle
-PORTVERSION=	3.9.7
+PORTVERSION=	3.9.8
 CATEGORIES=	www education
 MASTER_SITES=	SF/moodle/Moodle/stable39/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}${PHP_PKGNAMESUFFIX}
@@ -11,7 +11,7 @@ COMMENT=	Course management system based on social constructionism
 
 LICENSE=	GPLv3
 
-CONFLICTS=	moodle310-3.10.[0-9]* moodle311-3.11
+CONFLICTS=	moodle310-3.10.[0-9]* moodle311-3.11.[0-9]*
 
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom fileinfo filter gd hash iconv intl json mbstring \
