@@ -1,0 +1,7 @@
+bin/mkjail
+@sample etc/mkjail.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%DATADIR%%/create.sh
+%%DATADIR%%/getrelease.sh
+%%DATADIR%%/update.sh
+%%DATADIR%%/upgrade.sh

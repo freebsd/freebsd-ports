@@ -1,0 +1,10 @@
+mkjail can be used on FreeBSD to create new jails, keep them updated,
+and upgrade to a new release.
+
+mkjail requires the use of ZFS and will create each new jail in a
+separate filesystem.
+
+mkjail is not a jail manager.  Jails are configured via /etc/jail.conf
+and started/stopped via service jail start foo.
+
+WWW: https://github.com/mkjail/mkjail
