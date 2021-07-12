@@ -872,6 +872,7 @@
     SUBDIR += ympd
     SUBDIR += yoshimi
     SUBDIR += zam-plugins-lv2
+    SUBDIR += zita-alsa-pcmi
     SUBDIR += zita-at1
     SUBDIR += zita-bls1
     SUBDIR += zita-convolver
