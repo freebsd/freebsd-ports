@@ -1,5 +1,6 @@
 PORTNAME=	tortoisehg
 DISTVERSION=	5.8.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	arrowd@FreeBSD.org

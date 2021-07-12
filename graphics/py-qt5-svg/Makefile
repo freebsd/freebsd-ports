@@ -1,5 +1,5 @@
 PORTNAME=	svg
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel python
 
 MAINTAINER=	kde@FreeBSD.org
