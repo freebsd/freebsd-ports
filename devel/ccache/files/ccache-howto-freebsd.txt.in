@@ -1,9 +1,8 @@
-To use ccache for ports, just add WITH_CCACHE_BUILD=yes to
+To use ccache for ports and base, just add WITH_CCACHE_BUILD=yes to
 /etc/make.conf. The rest of this guide is for building
 /usr/src and other checkouts.
 
-To use ccache for base (11.0+) just add WITH_CCACHE_BUILD=yes
-to /etc/src.conf.  Refer to src.conf(5) for more information.
+Refer to src.conf(5) for more information specific to base builds.
 
 -------------------------------------------------------------------------------
 

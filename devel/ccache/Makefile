@@ -2,7 +2,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	3.7.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ccache/ccache/releases/download/v${DISTVERSION}/ \
 		LOCAL/bdrewery
