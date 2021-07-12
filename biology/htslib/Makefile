@@ -1,7 +1,7 @@
 # Created by: Reed A. Cartwright <cartwright@asu.edu>
 
 PORTNAME=	htslib
-DISTVERSION=	1.12
+DISTVERSION=	1.13
 CATEGORIES=	biology devel
 # Github generated distfiles are incomplete, so use custom tarball
 MASTER_SITES=	https://github.com/samtools/htslib/releases/download/${DISTVERSION}/
