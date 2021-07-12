@@ -1,5 +1,5 @@
 PORTNAME=	art
-DISTVERSION=	1.9.1
+DISTVERSION=	1.9.3
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/agriggio/art/downloads/
 PKGNAMESUFFIX=	-raw-image-editor
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libexiv2.so:graphics/exiv2 \
 		libexpat.so:textproc/expat2 \
 		libfftw3f.so:math/fftw3-float \
+		libharfbuzz.so:print/harfbuzz \
 		liblensfun.so:graphics/lensfun \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
