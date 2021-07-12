@@ -18,7 +18,7 @@ USES=		compiler:c++11-lang cmake desktop-file-utils gettext \
 USE_KDE=	auth codecs config configwidgets coreaddons ecm_build i18n \
 		kio kross sonnet textwidgets widgetsaddons xmlgui \
 		doctools_build
-USE_QT=		buildtools_build qmake_build core gui widgets
+USE_QT=		buildtools_build qmake_build testlib_build core gui widgets
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxrd2
