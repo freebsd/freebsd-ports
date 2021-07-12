@@ -1,7 +1,6 @@
 PORTNAME=	gitui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.1
-PORTREVISION=	1
+DISTVERSION=	0.16.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +27,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		ahash-0.6.3 \
 		aho-corasick-0.7.18 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.40 \
+		anyhow-1.0.42 \
 		arrayvec-0.4.12 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
@@ -39,14 +38,14 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		bit-vec-0.6.3 \
 		bitflags-1.2.1 \
 		bugreport-0.4.0 \
-		bytemuck-1.5.1 \
+		bytemuck-1.7.0 \
 		bytesize-1.0.1 \
 		cassowary-0.3.0 \
 		cc-1.0.68 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		clap-2.33.3 \
-		cpp_demangle-0.3.2 \
+		cpp_demangle-0.3.3 \
 		crc32fast-1.2.1 \
 		crossbeam-channel-0.5.1 \
 		crossbeam-deque-0.8.0 \
@@ -70,19 +69,18 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		git-version-0.3.4 \
 		git-version-macro-0.3.4 \
 		git2-0.13.20 \
-		glob-0.3.0 \
-		hashbrown-0.9.1 \
-		hermit-abi-0.1.18 \
+		hashbrown-0.11.2 \
+		hermit-abi-0.1.19 \
 		idna-0.2.3 \
-		indexmap-1.6.2 \
+		indexmap-1.7.0 \
 		inferno-0.10.6 \
 		instant-0.1.9 \
-		itertools-0.10.0 \
+		itertools-0.10.1 \
 		itoa-0.4.7 \
 		jobserver-0.1.22 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.95 \
+		libc-0.2.98 \
 		libgit2-sys-0.12.21+1.1.0 \
 		libssh2-sys-0.2.21 \
 		libz-sys-1.1.3 \
@@ -95,7 +93,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		memmap-0.7.0 \
 		memoffset-0.6.4 \
 		miniz_oxide-0.4.4 \
-		mio-0.7.11 \
+		mio-0.7.13 \
 		miow-0.3.7 \
 		nix-0.20.0 \
 		nodrop-0.1.14 \
@@ -104,11 +102,11 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
-		object-0.25.2 \
-		once_cell-1.7.2 \
+		object-0.25.3 \
+		once_cell-1.8.0 \
 		openssl-probe-0.1.4 \
 		openssl-src-111.15.0+1.1.1k \
-		openssl-sys-0.9.63 \
+		openssl-sys-0.9.65 \
 		output_vt100-0.1.2 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.3 \
@@ -122,19 +120,19 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		proc-macro2-1.0.27 \
 		quick-xml-0.20.0 \
 		quote-1.0.9 \
-		rand-0.8.3 \
-		rand_chacha-0.3.0 \
-		rand_core-0.6.2 \
-		rand_hc-0.3.0 \
+		rand-0.8.4 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.3 \
+		rand_hc-0.3.1 \
 		rayon-core-1.9.1 \
-		redox_syscall-0.2.8 \
+		redox_syscall-0.2.9 \
 		redox_users-0.4.0 \
 		regex-1.5.4 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
 		rgb-0.8.27 \
 		ron-0.6.4 \
-		rustc-demangle-0.1.19 \
+		rustc-demangle-0.1.20 \
 		ryu-1.0.5 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
@@ -152,29 +150,30 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		smawk-0.3.1 \
 		stable_deref_trait-1.2.0 \
 		str_stack-0.1.0 \
-		symbolic-common-8.1.0 \
-		symbolic-demangle-8.1.0 \
-		syn-1.0.72 \
+		symbolic-common-8.3.0 \
+		symbolic-demangle-8.3.0 \
+		syn-1.0.73 \
 		syntect-4.5.0 \
 		sys-info-0.9.0 \
 		tempfile-3.2.0 \
 		textwrap-0.11.0 \
-		textwrap-0.13.4 \
-		thiserror-1.0.25 \
-		thiserror-impl-1.0.25 \
+		textwrap-0.14.2 \
+		thiserror-1.0.26 \
+		thiserror-impl-1.0.26 \
 		time-0.1.43 \
 		tinyvec-1.2.0 \
 		tinyvec_macros-0.1.0 \
 		tui-0.15.0 \
 		unicode-bidi-0.3.5 \
+		unicode-linebreak-0.1.1 \
 		unicode-normalization-0.1.19 \
-		unicode-segmentation-1.7.1 \
+		unicode-segmentation-1.8.0 \
 		unicode-truncate-0.2.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
 		url-2.2.2 \
 		uuid-0.8.2 \
-		vcpkg-0.2.13 \
+		vcpkg-0.2.15 \
 		version_check-0.9.3 \
 		walkdir-2.3.2 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
