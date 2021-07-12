@@ -1,6 +1,6 @@
 PORTNAME=	nfpm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.1
+DISTVERSION=	2.6.0
 CATEGORIES=	archivers
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,9 +20,10 @@ GH_TUPLE=	\
 		Masterminds:semver:v3.1.1:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		Masterminds:sprig:v2.22.0:masterminds_sprig/vendor/github.com/Masterminds/sprig \
 		Microsoft:go-winio:v0.4.16:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
-		ProtonMail:go-crypto:bf0c5240ed99:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
+		ProtonMail:go-crypto:c05353c2d58c:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
 		ProtonMail:go-mime:9b5a4261663a:protonmail_go_mime/vendor/github.com/ProtonMail/go-mime \
-		ProtonMail:gopenpgp:v2.1.8:protonmail_gopenpgp_v2/vendor/github.com/ProtonMail/gopenpgp/v2 \
+		ProtonMail:gopenpgp:v2.2.0:protonmail_gopenpgp_v2/vendor/github.com/ProtonMail/gopenpgp/v2 \
+		alecthomas:jsonschema:edb03dcab7bc:alecthomas_jsonschema/vendor/github.com/alecthomas/jsonschema \
 		blakesmith:ar:809d4375e1fb:blakesmith_ar/vendor/github.com/blakesmith/ar \
 		cavaliercoder:go-cpio:925f9528c45e:cavaliercoder_go_cpio/vendor/github.com/cavaliercoder/go-cpio \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
@@ -37,14 +38,14 @@ GH_TUPLE=	\
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:afb366fc7cd1:golang_net/vendor/golang.org/x/net \
-		golang:sys:f1c623a9e750:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:977fb7262007:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
-		google:go-cmp:v0.5.4:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:rpmpack:e20c988a6f5a:google_rpmpack/vendor/github.com/google/rpmpack \
 		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
 		goreleaser:chglog:v0.1.2:goreleaser_chglog/vendor/github.com/goreleaser/chglog \
 		goreleaser:fileglob:v1.2.0:goreleaser_fileglob/vendor/github.com/goreleaser/fileglob \
 		huandu:xstrings:v1.3.2:huandu_xstrings/vendor/github.com/huandu/xstrings \
+		iancoleman:orderedmap:ac98e3ecb4b0:iancoleman_orderedmap/vendor/github.com/iancoleman/orderedmap \
 		imdario:mergo:v0.3.12:imdario_mergo/vendor/github.com/imdario/mergo \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
@@ -61,7 +62,7 @@ GH_TUPLE=	\
 		sergi:go-diff:v1.2.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		spf13:cobra:v1.1.3:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.2.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		ulikunitz:xz:v0.5.9:ulikunitz_xz/vendor/github.com/ulikunitz/xz \
