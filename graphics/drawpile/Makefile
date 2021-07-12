@@ -13,6 +13,7 @@ COMMENT=	Collaborative drawing program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/kf5-extra-cmake-modules
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libmicrohttpd.so:www/libmicrohttpd \
 		libminiupnpc.so:net/miniupnpc \
