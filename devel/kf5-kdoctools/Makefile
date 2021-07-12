@@ -1,6 +1,10 @@
 PORTNAME=	kdoctools
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
+
+PATCH_SITES=	https://invent.kde.org/frameworks/kdoctools/-/commit/
+PATCHFILES=	4121e38824b45068ee0f0aca9c7c8d38783a9f32.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 documentation generation from docbook
