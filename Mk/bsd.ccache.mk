@@ -3,7 +3,8 @@
 #
 # WITH_CCACHE_BUILD=yes enables depending on ccache and using it in the build.
 # NO_CCACHE_DEPEND will additionally not add the dependency on ccache.
-# NO_CCACHE will disable this entirely.
+# NO_CCACHE will disable using ccache entirely.
+# CCACHE_PREFIX is where ccache is already installed.  Default: LOCALBASE
 
 COMMANDS_Include_MAINTAINER=	portmgr@FreeBSD.org
 
@@ -36,8 +37,9 @@ WARNING+=	WITH_CCACHE_BUILD support disabled, please set CCACHE_DIR.
 BUILD_DEPENDS+=		${LOCALBASE}/bin/ccache:devel/ccache
 .	endif
 
-CCACHE_WRAPPER_PATH?=	${LOCALBASE}/libexec/ccache
-CCACHE_BIN?=			${CCACHE_WRAPPER_PATH:C,/libexec/ccache$,,}/bin/ccache
+CCACHE_PREFIX?=			${LOCALBASE}
+CCACHE_WRAPPER_PATH?=	${CCACHE_PREFIX}/libexec/ccache
+CCACHE_BIN?=			${CCACHE_PREFIX}/bin/ccache
 
 .if exists(${CCACHE_WRAPPER_PATH})
 # Prepend the ccache dir into the PATH and setup ccache env
