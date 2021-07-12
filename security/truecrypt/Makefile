@@ -24,6 +24,9 @@ LICENSE_NAME=	truecrypt
 LICENSE_FILE=	${WRKSRC}/License.txt
 LICENSE_PERMS=	none
 
+DEPRECATED=	Development and support for truecrypt ended in 2014
+EXPIRATION_DATE=2021-06-11
+
 BUILD_DEPENDS=	nasm:devel/nasm
 RUN_DEPENDS=	sudo:security/sudo
 
