@@ -1,4 +1,4 @@
-TIMESTAMP = 1625226734
+TIMESTAMP = 1626104861
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
 SIZE (rust/crates/Inflector-0.11.4.crate) = 17438
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -777,5 +777,5 @@ SHA256 (rust/crates/winres-0.1.11.crate) = ff4fb510bbfe5b8992ff15f77a2e6fe6cf062
 SIZE (rust/crates/winres-0.1.11.crate) = 18369
 SHA256 (rust/crates/wio-0.2.2.crate) = 5d129932f4644ac2396cb456385cbf9e63b5b30c6e8dc4820bdca4eb082037a5
 SIZE (rust/crates/wio-0.2.2.crate) = 11214
-SHA256 (denoland-deno-v1.11.4_GH0.tar.gz) = 582be5c9b71484918151a81c4a1e47b7daf62ba97b7388ad29081dc69c0cc039
-SIZE (denoland-deno-v1.11.4_GH0.tar.gz) = 8273015
+SHA256 (denoland-deno-v1.11.5_GH0.tar.gz) = 07be53bd87b4a1ffac3071fda728c2ebda92ceb81062a00134e68c3a76640210
+SIZE (denoland-deno-v1.11.5_GH0.tar.gz) = 8273038
