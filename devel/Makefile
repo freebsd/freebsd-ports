@@ -4257,6 +4257,7 @@
     SUBDIR += py-cclib
     SUBDIR += py-cdg
     SUBDIR += py-celery
+    SUBDIR += py-celery-progress
     SUBDIR += py-cerberus
     SUBDIR += py-certsrv
     SUBDIR += py-cffi
