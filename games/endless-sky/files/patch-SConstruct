@@ -1,15 +1,19 @@
---- SConstruct.orig	2020-02-24 15:50:12 UTC
+--- SConstruct.orig	2021-07-11 20:56:35 UTC
 +++ SConstruct
-@@ -24,7 +24,7 @@ Help(opts.GenerateHelpText(env))
- 
- flags = ["-std=c++11", "-Wall"]
+@@ -46,10 +46,9 @@ Help(opts.GenerateHelpText(env))
+ #   $ CXXFLAGS=-msse3 scons
+ #   $ CXXFLAGS=-march=native scons
+ # or modify the `flags` variable:
+-flags = ["-std=c++11", "-Wall", "-Werror", "-Wold-style-cast"]
++flags = ["-std=c++11", "-Wall", "-Wold-style-cast"]
  if env["mode"] != "debug":
--	flags += ["-O3"]
+-	flags += ["-O3", "-flto"]
+-	env.Append(LINKFLAGS = ["-O3", "-flto"])
 +	pass
  if env["mode"] == "debug":
  	flags += ["-g"]
- if env["mode"] == "profile":
-@@ -59,7 +59,7 @@ sky = env.Program("endless-sky", Glob(buildDirectory +
+ elif env["mode"] == "profile":
+@@ -157,7 +156,7 @@ env.AlwaysBuild("test")
  
  
  # Install the binary:
@@ -18,8 +22,8 @@
  
  # Install the desktop file:
  env.Install("$DESTDIR$PREFIX/share/applications", "endless-sky.desktop")
-@@ -100,11 +100,11 @@ def RecursiveInstall(env, target, source):
- 			RecursiveInstall(env, os.path.join(target, name), node.abspath)
+@@ -198,11 +197,11 @@ def RecursiveInstall(env, target, source):
+ 			RecursiveInstall(env, pathjoin(target, name), node.abspath)
  		else:
  			env.Install(target, node)
 -RecursiveInstall(env, "$DESTDIR$PREFIX/share/games/endless-sky/data", "data")
