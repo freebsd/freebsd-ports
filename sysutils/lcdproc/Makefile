@@ -11,7 +11,7 @@ COMMENT=	Client/server suite for LCD devices
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 powerpc64le
 
 USES=		autoreconf pkgconfig
 GNU_CONFIGURE=	yes
@@ -92,7 +92,7 @@ PLIST_SUB+=	X86=""
 PLIST_SUB+=	X86="@comment "
 .endif
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH:Mpowerpc*}
 USE_GCC=	yes
 .endif
 
