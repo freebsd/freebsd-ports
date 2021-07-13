@@ -12,9 +12,14 @@ COMMENT=	Graph the life story of a file under CVS or RCS
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgd.so:graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd \
+		libpng16.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libwebp.so:graphics/webp \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		localbase:ldflags
+USES=		localbase:ldflags jpeg
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lm
