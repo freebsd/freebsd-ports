@@ -21,7 +21,23 @@
  				return (0);
  			}
  			/*
-@@ -186,14 +191,17 @@ cache_process(struct rr *rr)
+@@ -167,6 +172,7 @@ cache_process(struct rr *rr)
+ 				log_warnx("cache_process: conflict for %s",
+ 				    rrs_str(&rr->rrs));
+ 				conflict_resolve_by_rr(rr_aux);
++				free(rr);
+ 				return (-1);
+ 			}
+ 		}
+@@ -178,6 +184,7 @@ cache_process(struct rr *rr)
+ 					log_warnx("cache_process: goodbye %s",
+ 					    rrs_str(&rr->rrs));
+ 					cache_delete(rr_aux);
++					free(rr);
+ 					return (0);
+ 				}
+ 				/* Cache refresh */
+@@ -186,14 +193,17 @@ cache_process(struct rr *rr)
  				rr_aux->ttl = rr->ttl;
  				rr_aux->revision = 0;
  				cache_schedrev(rr_aux);
