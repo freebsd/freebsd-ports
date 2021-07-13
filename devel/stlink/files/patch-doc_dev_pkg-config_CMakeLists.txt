@@ -1,0 +1,9 @@
+--- doc/dev/pkg-config/CMakeLists.txt.orig	2021-04-25 01:24:02.000000000 +0300
++++ doc/dev/pkg-config/CMakeLists.txt	2021-07-13 15:09:25.486974252 +0300
+@@ -11,5 +11,5 @@
+ 
+ install(
+     FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc"
+-    DESTINATION ${STLINK_LIBRARY_PATH}/pkgconfig
++    DESTINATION libdata/pkgconfig/
+     )
