@@ -1,0 +1,4 @@
+iopath is a lightweight I/O abstraction library that provides a common
+interface across storage backends.
+
+WWW: https://github.com/facebookresearch/iopath
