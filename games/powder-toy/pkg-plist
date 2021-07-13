@@ -1,5 +1,4 @@
 bin/powder-toy
-libexec/powder-toy
 share/appdata/powder-toy.appdata.xml
 share/applications/powder-toy.desktop
 share/icons/hicolor/128x128/apps/powder-toy.png

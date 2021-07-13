@@ -1,5 +1,5 @@
 PORTNAME=	powder-toy
-PORTVERSION=	95.0
+PORTVERSION=	96.2.350
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -10,44 +10,31 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
-		libfftw3.so:math/fftw3
+		libfftw3.so:math/fftw3 \
+		libluajit-5.1.so:lang/luajit-openresty \
+		libcurl.so:ftp/curl
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	ThePowderToy
+GH_ACCOUNT=	The-Powder-Toy
 GH_PROJECT=	The-Powder-Toy
 
-USES=		compiler:c++11-lang scons sdl localbase:ldflags lua:51 pkgconfig
+USES=		compiler:c++11-lang meson pkgconfig python:build sdl
 USE_SDL=	sdl2
 
-MAKE_ENV=	LINKFLAGS="${LINKFLAGS}"
+PORTDOCS=	README.md changelog.txt
 
-SUB_FILES=	${PORTNAME}.sh
-
-PORTDOCS=	README.md TODO
-
-OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS SSE SSE3 OPENGL HTTP
-OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS HTTP
+OPTIONS_DEFINE=		DOCS SSE
 OPTIONS_DEFAULT_amd64=	SSE
-# upstream also uses -funsafe-loop-optimizations, but it's not supported by clang
-OPTIMIZED_CFLAGS_CXXFLAGS=	-O3 -ftree-vectorize -funsafe-math-optimizations -ffast-math -fomit-frame-pointer
-SSE_MAKE_ARGS_OFF=	--no-sse
-SSE3_DESC=		Enable SSE3 optimizations
-SSE3_MAKE_ARGS=		--sse3
-SSE3_IMPLIES=		SSE
-OPENGL_USES=		gl
-OPENGL_USE=		GL=gl,glu,glew
-OPENGL_MAKE_ARGS=	--opengl --opengl-renderer
-OPENGL_BROKEN=		Application dies with SIGBUS at startup
-HTTP_DESC=		Enable HTTP requests support
-HTTP_LIB_DEPENDS=	libcurl.so:ftp/curl
-HTTP_MAKE_ARGS_OFF=	--nohttp
+
+SSE_DESC=		Enable SSE optimizations
+SSE_MESON_ON=		-Dx86_sse=auto
+SSE_MESON_OFF=		-Dx86_sse=none
 
 post-patch:
-	@${REINPLACE_CMD} -e '/#include/ s|lua5.1/|lua51/|' ${WRKSRC}/src/lua/LuaCompat.h
+	@${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' ${WRKSRC}/meson.build
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/build/powder* ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/powder ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/resources/powder.desktop ${STAGEDIR}${PREFIX}/share/applications/powder-toy.desktop
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/appdata
 	${INSTALL_DATA} ${WRKSRC}/resources/powder.appdata.xml ${STAGEDIR}${PREFIX}/share/appdata/powder-toy.appdata.xml

@@ -1,5 +1,0 @@
-#!/bin/sh -eu
-
-mkdir -p $HOME/.powdertoy
-cd $HOME/.powdertoy
-exec %%PREFIX%%/libexec/powder-toy "$@"
