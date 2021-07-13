@@ -1,4 +1,4 @@
-TIMESTAMP = 1624707818
+TIMESTAMP = 1626169817
 SHA256 (rust/crates/atty-0.2.14.crate) = d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8
 SIZE (rust/crates/atty-0.2.14.crate) = 5470
 SHA256 (rust/crates/autocfg-1.0.1.crate) = cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a
@@ -113,5 +113,5 @@ SHA256 (rust/crates/winapi-util-0.1.5.crate) = 70ec6ce85bb158151cae5e5c87f95a8e9
 SIZE (rust/crates/winapi-util-0.1.5.crate) = 10164
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 2947998
-SHA256 (facundoolano-rpg-cli-0.4.1_GH0.tar.gz) = 2b68e9c53ff7fcebb319aa741e008b1f8c2ed714558302c1707a1fc87fa09164
-SIZE (facundoolano-rpg-cli-0.4.1_GH0.tar.gz) = 659713
+SHA256 (facundoolano-rpg-cli-0.5.0_GH0.tar.gz) = 2746093aeddd27e1fa7b75e460e232b9a84ed26569751341c53f2808c63cc637
+SIZE (facundoolano-rpg-cli-0.5.0_GH0.tar.gz) = 424080
