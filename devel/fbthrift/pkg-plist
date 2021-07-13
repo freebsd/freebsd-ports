@@ -140,6 +140,7 @@ include/thrift/lib/cpp2/async/RequestChannel.h
 include/thrift/lib/cpp2/async/ResponseChannel.h
 include/thrift/lib/cpp2/async/RetryingRequestChannel.h
 include/thrift/lib/cpp2/async/RocketClientChannel.h
+include/thrift/lib/cpp2/async/RpcOptions.h
 include/thrift/lib/cpp2/async/RpcTypes.h
 include/thrift/lib/cpp2/async/ServerChannel.h
 include/thrift/lib/cpp2/async/ServerGeneratorStream-inl.h
@@ -279,6 +280,7 @@ include/thrift/lib/cpp2/server/Cpp2Worker.h
 include/thrift/lib/cpp2/server/IOWorkerContext.h
 include/thrift/lib/cpp2/server/LoggingEvent.h
 include/thrift/lib/cpp2/server/LoggingEventHelper.h
+include/thrift/lib/cpp2/server/MemoryTracker.h
 include/thrift/lib/cpp2/server/MonitoringMethodNames.h
 include/thrift/lib/cpp2/server/MonitoringServerInterface.h
 include/thrift/lib/cpp2/server/PreprocessParams.h
