@@ -1,7 +1,6 @@
 PORTNAME=	dua-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.13.1
-PORTREVISION=	1
+DISTVERSION=	2.14.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -15,16 +14,18 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Byron
 
 CARGO_CRATES=	ansi_term-0.12.1 \
-		anyhow-1.0.40 \
+		anyhow-1.0.41 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
 		byte-unit-4.0.12 \
 		cassowary-0.3.0 \
 		cfg-if-1.0.0 \
+		chrono-0.4.19 \
 		clap-3.0.0-beta.2 \
 		clap_derive-3.0.0-beta.2 \
 		colored-2.0.0 \
+		const-sha1-0.2.0 \
 		core-foundation-sys-0.8.2 \
 		crossbeam-0.8.1 \
 		crossbeam-channel-0.5.1 \
@@ -41,30 +42,38 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		either-1.6.1 \
 		filesize-0.2.0 \
 		fixedbitset-0.2.0 \
+		form_urlencoded-1.0.1 \
 		glob-0.3.0 \
-		hashbrown-0.9.1 \
+		hashbrown-0.11.2 \
 		heck-0.3.3 \
-		hermit-abi-0.1.18 \
-		indexmap-1.6.2 \
+		hermit-abi-0.1.19 \
+		idna-0.2.3 \
+		indexmap-1.7.0 \
 		instant-0.1.9 \
-		itertools-0.10.0 \
+		itertools-0.10.1 \
 		jwalk-0.6.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.95 \
+		libc-0.2.97 \
 		lock_api-0.4.4 \
 		log-0.4.14 \
+		malloc_buf-0.0.6 \
+		matches-0.1.8 \
 		memoffset-0.6.4 \
-		mio-0.7.11 \
+		mio-0.7.13 \
 		miow-0.3.7 \
 		ntapi-0.3.6 \
+		num-integer-0.1.44 \
+		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
 		numtoa-0.1.0 \
-		once_cell-1.7.2 \
+		objc-0.2.7 \
+		once_cell-1.8.0 \
 		open-1.7.0 \
 		os_str_bytes-2.4.0 \
 		output_vt100-0.1.2 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.3 \
+		percent-encoding-2.1.0 \
 		petgraph-0.5.1 \
 		pretty_assertions-0.7.2 \
 		proc-macro-error-1.0.4 \
@@ -73,32 +82,43 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		quote-1.0.9 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
-		redox_syscall-0.2.8 \
+		redox_syscall-0.2.9 \
 		redox_termios-0.1.2 \
 		scopeguard-1.1.0 \
 		signal-hook-0.1.17 \
 		signal-hook-registry-1.4.0 \
 		smallvec-1.6.1 \
 		strsim-0.10.0 \
-		syn-1.0.72 \
-		sysinfo-0.18.2 \
+		syn-1.0.73 \
+		sysinfo-0.19.0 \
 		termcolor-1.1.2 \
 		termion-1.5.6 \
 		textwrap-0.12.1 \
+		time-0.1.44 \
+		tinyvec-1.2.0 \
+		tinyvec_macros-0.1.0 \
+		trash-2.0.1 \
 		tui-0.15.0 \
 		tui-react-0.15.0 \
+		unicode-bidi-0.3.5 \
+		unicode-normalization-0.1.19 \
 		unicode-segmentation-1.7.1 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
+		url-2.2.2 \
 		utf8-width-0.1.5 \
 		vec_map-0.8.2 \
 		version_check-0.9.3 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
 		which-4.1.0 \
 		wild-2.0.4 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.8.0 \
+		windows_gen-0.8.0 \
+		windows_macros-0.8.0
 
 PLIST_FILES=	bin/dua
 PORTDOCS=	README.md
