@@ -1,6 +1,6 @@
 PORTNAME=	k6
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.32.0
+DISTVERSION=	0.33.0
 CATEGORIES=	net
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -12,12 +12,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 USES=		go:modules
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
-_BUILD_HASH=	e9d8349
+_BUILD_HASH=	cc0361c
 
 GO_MODULE=	github.com/k6io/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
-		-X github.com/${GH_ACCOUNT}/${PORTNAME}/lib/consts.VersionDetails=${_BUILD_DATE}/${_BUILD_HASH}"
+		-X go.k6.io/k6/lib/consts.VersionDetails=${_BUILD_DATE}/${_BUILD_HASH}"
 
 PLIST_FILES=	bin/${PORTNAME}
 _DOCS=		release\ notes/\${DISTVERSIONFULL}.md CODE_OF_CONDUCT.md \
