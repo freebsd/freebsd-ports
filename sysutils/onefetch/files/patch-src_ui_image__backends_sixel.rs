@@ -1,5 +1,5 @@
---- src/onefetch/image_backends/sixel.rs.orig	2020-12-09 14:22:47 UTC
-+++ src/onefetch/image_backends/sixel.rs
+--- src/ui/image_backends/sixel.rs.orig	2021-07-13 09:57:28 UTC
++++ src/ui/image_backends/sixel.rs
 @@ -74,7 +74,7 @@ impl super::ImageBackend for SixelBackend {
      fn add_image(&self, lines: Vec<String>, image: &DynamicImage, colors: usize) -> Result<String> {
          let tty_size = unsafe {

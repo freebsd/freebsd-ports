@@ -1,5 +1,5 @@
---- src/onefetch/image_backends/kitty.rs.orig	2020-12-09 14:30:15 UTC
-+++ src/onefetch/image_backends/kitty.rs
+--- src/ui/image_backends/kitty.rs.orig	2021-07-13 09:57:06 UTC
++++ src/ui/image_backends/kitty.rs
 @@ -77,7 +77,7 @@ impl super::ImageBackend for KittyBackend {
      ) -> Result<String> {
          let tty_size = unsafe {
