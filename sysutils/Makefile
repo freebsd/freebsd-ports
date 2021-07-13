@@ -107,6 +107,7 @@
     SUBDIR += bashtop
     SUBDIR += bastille
     SUBDIR += batmon
+    SUBDIR += batterycat
     SUBDIR += battmond
     SUBDIR += battray
     SUBDIR += bchunk

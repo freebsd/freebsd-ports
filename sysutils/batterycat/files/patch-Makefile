@@ -1,0 +1,60 @@
+--- Makefile.orig	2017-07-28 18:13:56 UTC
++++ Makefile
+@@ -1,16 +1,16 @@
+ 
+ PROJECT = batterycat
+-CC = gcc
+-PREFIX = /usr/local
++CC ?= gcc
++PREFIX ?= /usr/local
+ 
+ OBJ_DIR = obj
+ TARGET = batterycat
+ C_INCLUDE_DIRS = 
+-C_PREPROC = -DENABLE_NLS -DPACKAGE=\"$(PROJECT)\" -DLOCALE_DIR=\"$(PREFIX)/share/locale\"
+-CFLAGS = -pipe `pkg-config --cflags gtk+-2.0` -Wall -g0 -O2 -DPREFIX=\"$(PREFIX)\" -Wno-deprecated-declarations
++C_PREPROC = -DPACKAGE=\"$(PROJECT)\" -DLOCALE_DIR=\"$(PREFIX)/share/locale\"
++CFLAGS += $(shell pkg-config --cflags gtk+-2.0) -Wall -DPREFIX=\"$(PREFIX)\" -Wno-deprecated-declarations
+ LIB_DIRS = 
+ LIBS = 
+-LDFLAGS = -pipe -s `pkg-config --libs gtk+-2.0`
++LDFLAGS += $(shell pkg-config --libs gtk+-2.0)
+ 
+ SRC_OBJS = \
+ 	$(OBJ_DIR)/config.o	\
+@@ -24,21 +24,27 @@ SRC_OBJS = \
+ 	$(OBJ_DIR)/help_about.o	\
+ 	$(OBJ_DIR)/batterycat-icon.o
+ 
+-all: $(TARGET) nls
++all: $(TARGET)
+ 
+ $(TARGET): $(OBJ_DIR) $(SRC_OBJS)
+ 	$(CC) -o $(TARGET) $(SRC_OBJS) $(LIB_DIRS) $(LIBS) $(LDFLAGS) $(FW)
+ 
+ nls:
+-	cd po; make all
++	$(MAKE) -C po all
+ 
+ install: $(TARGET)
+-	cp $(TARGET) $(PREFIX)/bin/.
+-	mkdir -p $(PREFIX)/share/$(TARGET)
+-	cp $(TARGET)*.xpm $(PREFIX)/share/$(TARGET)/.
+-	cp $(TARGET).html $(PREFIX)/share/$(TARGET)/.
+-	cp $(TARGET).desktop /usr/share/applications/.
+-	cd po; make install
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(PREFIX)/bin/.
++	mkdir -p $(DESTDIR)$(PREFIX)/share/$(TARGET)
++	$(BSD_INSTALL_DATA) $(TARGET)*.xpm $(DESTDIR)$(PREFIX)/share/$(TARGET)/.
++	$(BSD_INSTALL_DATA) $(TARGET).html $(DESTDIR)$(PREFIX)/share/$(TARGET)/.
++	$(BSD_INSTALL_DATA) $(TARGET).desktop $(DESTDIR)$(PREFIX)/share/applications/.
++ifeq ($(WITH_NLS),yes)
++	for lang in $(notdir $(basename $(wildcard po/*.gmo))); do \
++		$(BSD_INSTALL_DATA) po/$$lang.gmo $(DESTDIR)$(PREFIX)/share/locale/$$lang/LC_MESSAGES/batterycat.mo ; done
++
++C_PREPROC += -DENABLE_NLS
++all: nls
++endif
+ 
+ uninstall:
+ 	rm -f $(PREFIX)/bin/$(TARGET) 
