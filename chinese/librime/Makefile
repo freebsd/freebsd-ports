@@ -2,6 +2,7 @@
 
 PORTNAME=	librime
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng300@gmail.com

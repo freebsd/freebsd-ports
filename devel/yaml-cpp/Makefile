@@ -1,7 +1,7 @@
 # Created by: Tim Niemueller <tim@niemueller.de>
 
 PORTNAME=	yaml-cpp
-PORTVERSION=	0.6.3
+PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	devel
 
@@ -19,5 +19,9 @@ CMAKE_ARGS+=	-DYAML_BUILD_SHARED_LIBS:BOOL=ON \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jbeder
+
+post-patch:
+	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|" \
+		${WRKSRC}/yaml-cpp-config.cmake.in
 
 .include <bsd.port.mk>
