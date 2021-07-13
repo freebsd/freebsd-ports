@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	Old-Versions/Official-3.62/Unix
 PKGNAMESUFFIX=	36
 DIST_SUBDIR=	povray36
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsd@philippost.de
 COMMENT=	Persistence of Vision Ray Tracer
 
 LIB_DEPENDS=	libpng.so:graphics/png \

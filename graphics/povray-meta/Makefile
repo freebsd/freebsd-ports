@@ -1,11 +1,11 @@
 PORTNAME=	povray-meta
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	#
 DISTFILES=	#
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsd@philippost.de
 COMMENT=	Meta port for all povray ports
 
 NO_BUILD=	yes
@@ -15,7 +15,7 @@ PLIST_FILES=	bin/povray
 POV_VERSIONS_ALL=	36 37
 #By default only the following version will be installed and
 #link bin/povray -> bin/povray${DEFAULT_VER} will be created.
-DEFAULT_VER?=	36
+DEFAULT_VER?=	37
 #Additional version can be installed by defining WITH_POVRAY${ver}.
 #To change version linked by default define WITH_DEFAULT${ver}.
 #Please, note that only one of WITH_DEFAULT* can be set at once.
