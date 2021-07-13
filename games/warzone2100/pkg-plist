@@ -3,6 +3,7 @@ man/man6/warzone2100.6.gz
 share/applications/warzone2100.desktop
 share/icons/warzone2100.png
 %%NLS%%share/locale/af_ZA/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/ar_SA/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/bg_BG/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/warzone2100.mo
@@ -13,6 +14,7 @@ share/icons/warzone2100.png
 %%NLS%%share/locale/eo/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/es/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/et_EE/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/fa_IR/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/fy/LC_MESSAGES/warzone2100.mo
@@ -26,6 +28,7 @@ share/icons/warzone2100.png
 %%NLS%%share/locale/ko/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/la/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/my_MM/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/warzone2100.mo

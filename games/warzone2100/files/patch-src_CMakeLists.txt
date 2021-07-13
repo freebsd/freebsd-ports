@@ -1,0 +1,12 @@
+--- src/CMakeLists.txt.orig	2021-07-12 15:03:29 UTC
++++ src/CMakeLists.txt
+@@ -611,9 +611,6 @@ endif()
+ # Install
+ install(TARGETS warzone2100 COMPONENT Core DESTINATION "${WZ_APP_INSTALL_DEST}")
+ 
+-# For Portable packages only, copy the ".portable" file that triggers portable mode (Windows-only)
+-install(FILES "${CMAKE_SOURCE_DIR}/pkg/portable.in" COMPONENT PortableConfig DESTINATION "${WZ_APP_INSTALL_DEST}" RENAME ".portable")
+-
+ #####################
+ # Installing Required Runtime Dependencies
+ 
