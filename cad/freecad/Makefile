@@ -6,9 +6,6 @@ PORTREVISION=	3
 # DISTVERSIONSUFFIX=	-g690774c0e
 CATEGORIES=	cad
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	0cfea3fee3e7848bbf043d2b1a19f6405d7ebe25.patch:-p1
-
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	General purpose 3D CAD modeller
 
