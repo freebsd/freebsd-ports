@@ -1,0 +1,7 @@
+The certificate monitoring module for Icinga keeps track
+of certificates as they are deployed in a network environment.
+It does this by scanning networks for TLS services
+and collects whatever certificates it finds along the way.
+The certificates are verified using its own trust store.
+
+WWW: https://github.com/Icinga/icingaweb2-module-x509
