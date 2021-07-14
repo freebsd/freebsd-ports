@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 DEPRECATED=	Asterisk 13.x will reach EOL on 2021-10-24. Please migrate to net/asterisk18
 EXPIRATION_DATE=2021-10-24
 
-ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le sparc64
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le sparc64
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson
