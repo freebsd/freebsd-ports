@@ -872,6 +872,7 @@
     SUBDIR += py-pynndescent
     SUBDIR += py-pyodeint
     SUBDIR += py-pyodesys
+    SUBDIR += py-pyreadr
     SUBDIR += py-pysmt
     SUBDIR += py-pystan
     SUBDIR += py-pysym
