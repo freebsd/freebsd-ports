@@ -1369,6 +1369,7 @@
     SUBDIR += py-pyahocorasick
     SUBDIR += py-pyaml
     SUBDIR += py-pycountry
+    SUBDIR += py-pyexcel
     SUBDIR += py-pygccxml
     SUBDIR += py-pygments
     SUBDIR += py-pygments-25
