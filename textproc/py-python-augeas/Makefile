@@ -19,6 +19,8 @@ USE_PYTHON=	distutils py3kplist
 
 GH_ACCOUNT=	hercules-team
 
+NO_ARCH=	yes
+
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${WRKSRC}/test/test_augeas.py
 
