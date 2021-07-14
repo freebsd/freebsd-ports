@@ -1,7 +1,7 @@
 # Created by: Eric TUrgeon <ericbsd@FreeBSD.org>
 
 PORTNAME=	sublime
-PORTVERSION=	4111
+PORTVERSION=	4113
 CATEGORIES=	editors linux
 MASTER_SITES=	http://download.sublimetext.com/
 PKGNAMESUFFIX=	-text4
@@ -28,8 +28,8 @@ SUB_FILES=	sublime-text
 
 WRKSRC=		${WRKDIR}/sublime_text
 
-DISTNAME_amd64=	sublime_text_build_4107_x64
-DISTNAME_arm64=	sublime_text_build_4107_arm64
+DISTNAME_amd64=	sublime_text_build_${PORTVERSION}_x64
+DISTNAME_arm64=	sublime_text_build_${PORTVERSION}_arm64
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
