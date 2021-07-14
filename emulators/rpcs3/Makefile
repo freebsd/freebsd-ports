@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.17-12446 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g6a7324ab3
+DISTVERSION=	0.0.17-12457 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g15ae06a7c
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,13 +24,13 @@ GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-125-g01f601a:hidapi/3rdparty/hidapi/hidapi \
 		RPCS3:llvm-mirror:5836324d6443:llvm/llvm \
 		Cyan4973:xxHash:v0.8.0:xxHash/3rdparty/xxHash \
-		FNA-XNA:FAudio:21.04:FAudio/3rdparty/FAudio \
+		FNA-XNA:FAudio:21.07:FAudio/3rdparty/FAudio \
 		asmjit:asmjit:723f585:asmjit/3rdparty/asmjit/asmjit \
 		google:flatbuffers:v1.11.0:flatbuffers/3rdparty/flatbuffers \
 		jbeder:yaml-cpp:yaml-cpp-0.6.3-30-g6a211f0:yamlcpp/3rdparty/yaml-cpp \
 		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
 		KhronosGroup:SPIRV-Tools:v2020.4:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
-		KhronosGroup:glslang:11.4.0:glslang/3rdparty/glslang/glslang \
+		KhronosGroup:glslang:11.5.0:glslang/3rdparty/glslang/glslang \
 		wolfSSL:wolfssl:v4.5.0-stable-80-g39b544860:wolfssl/3rdparty/wolfssl \
 		zeux:pugixml:v1.11.4:pugixml/3rdparty/pugixml
 
