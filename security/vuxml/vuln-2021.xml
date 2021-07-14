@@ -1,3 +1,47 @@
+  <vuln vid="7ed5779c-e4c7-11eb-91d7-08002728f74c">
+    <topic>Ruby -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ruby26</name>
+	<range><lt>2.6.8,1</lt></range>
+      </package>
+      <package>
+	<name>ruby</name>
+	<range><lt>2.7.4,1</lt></range>
+      </package>
+      <package>
+	<name>ruby30</name>
+	<range><lt>3.0.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby news:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2021/07/07/ruby-3-0-2-released/">
+	  <p>This release includes security fixes. Please check the topics below for details.</p>
+	  <p>CVE-2021-31810: Trusting FTP PASV responses vulnerability in Net::FTP</p>
+	  <p>CVE-2021-32066: A StartTLS stripping vulnerability in Net::IMAP</p>
+	  <p>CVE-2021-31799: A command injection vulnerability in RDoc</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-31799</cvename>
+      <cvename>CVE-2021-31810</cvename>
+      <cvename>CVE-2021-32066</cvename>
+      <url>https://www.ruby-lang.org/en/news/2021/07/07/ruby-2-6-8-released/</url>
+      <url>https://www.ruby-lang.org/en/news/2021/07/07/ruby-2-7-4-released/</url>
+      <url>https://www.ruby-lang.org/en/news/2021/07/07/ruby-3-0-2-released/</url>
+      <url>https://www.ruby-lang.org/en/news/2021/05/02/os-command-injection-in-rdoc/</url>
+      <url>https://www.ruby-lang.org/en/news/2021/07/07/starttls-stripping-in-net-imap/</url>
+      <url>https://www.ruby-lang.org/en/news/2021/07/07/trusting-pasv-responses-in-net-ftp/</url>
+    </references>
+    <dates>
+      <discovery>2021-07-07</discovery>
+      <entry>2021-07-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c365536d-e3cf-11eb-9d8d-b37b683944c2">
     <topic>go -- crypto/tls: clients can panic when provided a certificate of the wrong type for the negotiated parameters</topic>
     <affects>
