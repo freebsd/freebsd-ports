@@ -1,11 +1,11 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 
 PORTNAME=	JSON-Path
-PORTVERSION=	0.431
-PORTREVISION=	1
+PORTVERSION=	0.500
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:S|00$||}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Search nested hashref/arrayref structures using JSONPath
