@@ -12,14 +12,12 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gobject-introspection>=0.10:devel/gobject-introspection \
-		gupnp>=1.2.0:net/gupnp \
-		gssdp>=1.2.0:net/gssdp
+		gssdp>=1.2.0:net/gssdp \
+		gupnp>=1.2.0:net/gupnp
 LIB_DEPENDS=	libgssdp-1.2.so:net/gssdp \
 		libgupnp-1.2.so:net/gupnp
-RUN_DEPENDS=	gupnp>=1.2.0:net/gupnp \
-		gssdp>=1.2.0:net/gssdp
 
-USES=		compiler:c11 gnome meson pathfix pkgconfig tar:xz
+USES=		compiler:c11 gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 
 MESON_ARGS=	-Dgtk_doc=false -Dintrospection=true
