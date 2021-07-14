@@ -1,9 +1,9 @@
-TIMESTAMP = 1623620472
-SHA256 (mutt/mutt-2.1.0.tar.gz) = 80835bbcce920bccf4fc99676eda9e83f03a929b4022eada931d721ede330d37
-SIZE (mutt/mutt-2.1.0.tar.gz) = 5405519
-SHA256 (mutt/mutt-2.0.6.vc.greeting) = dbf9602a153acb5410d22d1fe7a478df74f40ba1b203c8a4bdb7eab2f876bdb5
-SIZE (mutt/mutt-2.0.6.vc.greeting) = 1971
+TIMESTAMP = 1626223839
+SHA256 (mutt/mutt-2.1.1.tar.gz) = 4ae6d60f7f19854c375cc1c27b5768b71e9f450c2adc10c22e45de8a27de524a
+SIZE (mutt/mutt-2.1.1.tar.gz) = 5406187
+SHA256 (mutt/mutt-2.1.0.vc.greeting) = d43686bbd88539c7b50cc198d15c146f579af344c26b83c4018c50f65f5c6dac
+SIZE (mutt/mutt-2.1.0.vc.greeting) = 2003
 SHA256 (mutt/patch-1.13.0.vvv.initials.xz) = 8b25ad6596bd57d94f6551e7e73ceb8da620468e96fb507b2f51545d5b3eaa02
 SIZE (mutt/patch-1.13.0.vvv.initials.xz) = 720
-SHA256 (mutt/mutt-2.0.6.vvv.quote) = 2d2e8852bf895a3c628f595a08abfa6d73890948595eeb614fc7694785408120
-SIZE (mutt/mutt-2.0.6.vvv.quote) = 2909
+SHA256 (mutt/mutt-2.1.0.vvv.quote) = 8763e6ebc7a3c9ba5155a60fcb00d1eb636dabbff410acaf0385f0465aed1dad
+SIZE (mutt/mutt-2.1.0.vvv.quote) = 2909
