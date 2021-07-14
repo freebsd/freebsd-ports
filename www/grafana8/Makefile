@@ -1,5 +1,5 @@
 PORTNAME=	grafana
-DISTVERSION=	8.0.2
+DISTVERSION=	8.0.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://dl.grafana.com/oss/release/:public \
@@ -139,7 +139,7 @@ GH_TUPLE=	\
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		gosimple:slug:v1.9.0:gosimple_slug/vendor/github.com/gosimple/slug \
 		grafana:go-mssqldb:d0ce3c521036:grafana_go_mssqldb/vendor/github.com/denisenkom/go-mssqldb \
-		grafana:grafana-aws-sdk:v0.4.0:grafana_grafana_aws_sdk/vendor/github.com/grafana/grafana-aws-sdk \
+		grafana:grafana-aws-sdk:v0.7.0:grafana_grafana_aws_sdk/vendor/github.com/grafana/grafana-aws-sdk \
 		grafana:grafana-live-sdk:v0.0.6:grafana_grafana_live_sdk/vendor/github.com/grafana/grafana-live-sdk \
 		grafana:grafana-plugin-sdk-go:v0.105.0:grafana_grafana_plugin_sdk_go/vendor/github.com/grafana/grafana-plugin-sdk-go \
 		grafana:loki:15d417efe103:grafana_loki/vendor/github.com/grafana/loki \
@@ -246,7 +246,7 @@ GH_TUPLE=	\
 		yudai:golcs:ecda9a501e82:yudai_golcs/vendor/github.com/yudai/golcs
 
 USE_RC_SUBR=	grafana
-TAG=		5c5d45e
+TAG=		cbb2aa5
 
 GO_TARGET=	./pkg/cmd/grafana-server \
 		./pkg/cmd/grafana-cli
@@ -260,7 +260,7 @@ SUB_LIST=	GRAFANA_USER=${GRAFANA_USER} \
 		GRAFANA_LOGDIR=${GRAFANA_LOGDIR} \
 		GRAFANA_PLUGINDIR=${GRAFANA_PLUGINDIR} \
 		GRAFANA_PROVISIONINGDIR=${GRAFANA_PROVISIONINGDIR} \
-		GRAFANA_BUILDHASH=7f5a241f55df4a1c66ae
+		GRAFANA_BUILDHASH=cb577348e5e011d82919
 
 GRAFANA_USER?=	grafana
 GRAFANA_GROUP?=	grafana

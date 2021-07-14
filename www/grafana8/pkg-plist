@@ -558,7 +558,6 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/dashboard/components/AddPanelWidget/AddPanelWidget.test.tsx
 %%DATADIR%%/public/app/features/dashboard/components/AddPanelWidget/AddPanelWidget.tsx
 %%DATADIR%%/public/app/features/dashboard/components/AddPanelWidget/_AddPanelWidget.scss
-%%DATADIR%%/public/app/features/dashboard/components/AddPanelWidget/__snapshots__/AddPanelWidget.test.tsx.snap
 %%DATADIR%%/public/app/features/dashboard/components/AddPanelWidget/index.ts
 %%DATADIR%%/public/app/features/dashboard/components/AnnotationSettings/AngularEditorLoader.tsx
 %%DATADIR%%/public/app/features/dashboard/components/AnnotationSettings/AnnotationSettingsEdit.tsx
@@ -586,6 +585,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/dashboard/components/DashboardSettings/AutoRefreshIntervals.tsx
 %%DATADIR%%/public/app/features/dashboard/components/DashboardSettings/DashboardSettings.tsx
 %%DATADIR%%/public/app/features/dashboard/components/DashboardSettings/DashboardSettingsHeader.tsx
+%%DATADIR%%/public/app/features/dashboard/components/DashboardSettings/GeneralSettings.test.tsx
 %%DATADIR%%/public/app/features/dashboard/components/DashboardSettings/GeneralSettings.tsx
 %%DATADIR%%/public/app/features/dashboard/components/DashboardSettings/JsonEditorSettings.tsx
 %%DATADIR%%/public/app/features/dashboard/components/DashboardSettings/LinksSettings.test.tsx
@@ -1503,12 +1503,14 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/IconButton.tsx
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/MetricPicker.tsx
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/BucketAggregationEditor.tsx
+%%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/DateHistogramSettingsEditor.tsx
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/FiltersSettingsEditor/index.tsx
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/FiltersSettingsEditor/state/actions.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/FiltersSettingsEditor/state/reducer.test.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/FiltersSettingsEditor/state/reducer.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/FiltersSettingsEditor/state/types.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/FiltersSettingsEditor/utils.ts
+%%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/TermsSettingsEditor.tsx
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/index.tsx
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/useDescription.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/aggregations.ts
@@ -1549,6 +1551,8 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/state.test.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/state.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/styles.ts
+%%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/hooks/useCreatableSelectPersistedBehaviour.test.tsx
+%%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/hooks/useCreatableSelectPersistedBehaviour.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/types.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/configuration/ConfigEditor.test.tsx
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/configuration/ConfigEditor.tsx
@@ -1584,6 +1588,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/specs/index_pattern.test.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/specs/query_builder.test.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/specs/query_def.test.ts
+%%DATADIR%%/public/app/plugins/datasource/elasticsearch/test-helpers/render.tsx
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/types.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/utils.test.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/utils.ts
@@ -2333,6 +2338,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/panel/timeseries/LineStyleEditor.tsx
 %%DATADIR%%/public/app/plugins/panel/timeseries/README.md
 %%DATADIR%%/public/app/plugins/panel/timeseries/SpanNullsEditor.tsx
+%%DATADIR%%/public/app/plugins/panel/timeseries/ThresholdsStyleEditor.tsx
 %%DATADIR%%/public/app/plugins/panel/timeseries/TimeSeriesPanel.tsx
 %%DATADIR%%/public/app/plugins/panel/timeseries/__snapshots__/migrations.test.ts.snap
 %%DATADIR%%/public/app/plugins/panel/timeseries/config.ts
@@ -2370,6 +2376,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/panel/xychart/plugin.json
 %%DATADIR%%/public/app/plugins/panel/xychart/types.ts
 %%DATADIR%%/public/app/plugins/sdk.ts
+%%DATADIR%%/public/app/polyfills/old-mediaquerylist.ts
 %%DATADIR%%/public/app/routes/GrafanaCtrl.ts
 %%DATADIR%%/public/app/routes/routes.tsx
 %%DATADIR%%/public/app/store/configureStore.ts
@@ -2410,6 +2417,8 @@ bin/grafana-server
 %%DATADIR%%/public/build/101.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/102.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/102.%%GRAFANA_BUILDHASH%%.js.map
+%%DATADIR%%/public/build/103.%%GRAFANA_BUILDHASH%%.js
+%%DATADIR%%/public/build/103.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/87.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/87.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/88.%%GRAFANA_BUILDHASH%%.js
