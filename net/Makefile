@@ -226,6 +226,7 @@
     SUBDIR += gupnp-av
     SUBDIR += gupnp-dlna
     SUBDIR += gupnp-igd
+    SUBDIR += gupnp-tools
     SUBDIR += gupnp-ui
     SUBDIR += gutenfetch
     SUBDIR += gwhois
