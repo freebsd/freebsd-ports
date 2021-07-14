@@ -2413,8 +2413,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d31/cls__pointer__stack_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d31/structsucc__index__table.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d34/structst__hash__type.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d35/fileblocks_8c.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d35/fileblocks_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d36/ucontext_2_context_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d36/ucontext_2_context_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d36/ucontext_2_context_8c__incl.png
@@ -10788,6 +10786,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Net/FTP/storbinary-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/FTP/storlines-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/FTP/system-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Net/FTP/use_pasv_ip-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/FTP/voidcmd-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/FTP/welcome-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/FTPConnectionError/cdesc-FTPConnectionError.ri
@@ -11127,6 +11126,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Net/IMAP/ResponseError/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/IMAP/ResponseError/response-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/IMAP/ResponseParseError/cdesc-ResponseParseError.ri
+%%RDOC%%%%RUBY_RIDIR%%/Net/IMAP/UnknownResponseError/cdesc-UnknownResponseError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/IMAP/add_authenticator-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/IMAP/add_response_handler-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/IMAP/append-i.ri
