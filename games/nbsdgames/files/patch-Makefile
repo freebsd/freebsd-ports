@@ -1,11 +1,11 @@
---- Makefile.orig	2021-05-05 17:39:38 UTC
+--- Makefile.orig	2021-05-07 00:50:08 UTC
 +++ Makefile
 @@ -6,7 +6,7 @@
  GAMES_DIR?=/usr/games
  SCORES_DIR?=/var/games
  MAN_DIR?=/usr/share/man/man6
 -CFLAGS+=  -Wno-unused-result -D SCORES_DIR=\"$(SCORES_DIR)\"
-+CFLAGS+= ${CPPFLAGS} -Wno-unused-result -D SCORES_DIR=\"$(SCORES_DIR)\"
++CFLAGS+= ${CPPFLAGS} -D SCORES_DIR=\"$(SCORES_DIR)\"
  LDFLAGS+= -lncurses -lm
  
  
