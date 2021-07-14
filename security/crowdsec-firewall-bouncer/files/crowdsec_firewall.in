@@ -4,6 +4,11 @@
 # REQUIRE: LOGIN DAEMON NETWORKING
 # KEYWORD: shutdown
 #
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# crowdsec_firewall_enable (bool):	Set it to YES to enable crowdsec firewall.
+#					Default is "NO"
 
 . /etc/rc.subr
 
@@ -13,12 +18,12 @@ rcvar=crowdsec_firewall_enable
 
 load_rc_config $name
 
-: ${crowdsec_firewall_enbable:="NO"}
-: ${crowdsec_firewall_config:="%%PREFIX%%/etc/crowdsec-firewall-bouncer/cs-firewall-bouncer.yaml"}
+: ${crowdsec_firewall_enable:="NO"}
+: ${crowdsec_firewall_config:="%%PREFIX%%/etc/crowdsec-firewall-bouncer/crowdsec-firewall-bouncer.yaml"}
 
 pidfile=/var/run/$name.pid
 required_files="$crowdsec_firewall_config"
-procname="%%PREFIX%%/bin/cs-firewall-bouncer"
+procname="%%PREFIX%%/bin/crowdsec-firewall-bouncer"
 command=/usr/sbin/daemon
 command_args="-fp $pidfile -t '$desc' -- '$procname' -c '$crowdsec_firewall_config'"
 
