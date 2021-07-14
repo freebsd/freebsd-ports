@@ -652,3 +652,6 @@ share/metainfo/org.gtk.WidgetFactory4.appdata.xml
 @dir lib/gtk-4.0/engines
 @dir lib/gtk-4.0/loaders
 @dir lib/gtk-4.0/modules
+@dir lib/gtk-4.0/%%GTK4_VERSION%%/engines
+@dir lib/gtk-4.0/%%GTK4_VERSION%%/loaders
+@dir lib/gtk-4.0/%%GTK4_VERSION%%/modules
