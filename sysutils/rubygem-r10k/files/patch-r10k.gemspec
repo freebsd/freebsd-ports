@@ -1,6 +1,12 @@
---- r10k.gemspec.orig	2021-04-30 19:31:50 UTC
+--- r10k.gemspec.orig	2021-07-14 21:11:15 UTC
 +++ r10k.gemspec
-@@ -29,8 +29,8 @@ Gem::Specification.new do |s|
+@@ -24,26 +24,26 @@ Gem::Specification.new do |s|
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<colored2>.freeze, ["= 3.1.2"])
+-      s.add_runtime_dependency(%q<cri>.freeze, ["= 2.15.10"])
++      s.add_runtime_dependency(%q<cri>.freeze, ["~> 2.15.10"])
+       s.add_runtime_dependency(%q<log4r>.freeze, ["= 1.1.10"])
        s.add_runtime_dependency(%q<multi_json>.freeze, ["~> 1.10"])
        s.add_runtime_dependency(%q<puppet_forge>.freeze, ["~> 2.3.0"])
        s.add_runtime_dependency(%q<gettext-setup>.freeze, ["~> 0.24"])
@@ -11,7 +17,12 @@
        s.add_development_dependency(%q<rspec>.freeze, ["~> 3.1"])
        s.add_development_dependency(%q<rake>.freeze, [">= 0"])
        s.add_development_dependency(%q<yard>.freeze, ["~> 0.9.11"])
-@@ -42,8 +42,8 @@ Gem::Specification.new do |s|
+       s.add_development_dependency(%q<minitar>.freeze, ["~> 0.9.0"])
+     else
+       s.add_dependency(%q<colored2>.freeze, ["= 3.1.2"])
+-      s.add_dependency(%q<cri>.freeze, ["= 2.15.10"])
++      s.add_dependency(%q<cri>.freeze, ["~> 2.15.10"])
+       s.add_dependency(%q<log4r>.freeze, ["= 1.1.10"])
        s.add_dependency(%q<multi_json>.freeze, ["~> 1.10"])
        s.add_dependency(%q<puppet_forge>.freeze, ["~> 2.3.0"])
        s.add_dependency(%q<gettext-setup>.freeze, ["~> 0.24"])
@@ -22,7 +33,13 @@
        s.add_dependency(%q<rspec>.freeze, ["~> 3.1"])
        s.add_dependency(%q<rake>.freeze, [">= 0"])
        s.add_dependency(%q<yard>.freeze, ["~> 0.9.11"])
-@@ -56,8 +56,8 @@ Gem::Specification.new do |s|
+@@ -51,13 +51,13 @@ Gem::Specification.new do |s|
+     end
+   else
+     s.add_dependency(%q<colored2>.freeze, ["= 3.1.2"])
+-    s.add_dependency(%q<cri>.freeze, ["= 2.15.10"])
++    s.add_dependency(%q<cri>.freeze, ["~> 2.15.10"])
+     s.add_dependency(%q<log4r>.freeze, ["= 1.1.10"])
      s.add_dependency(%q<multi_json>.freeze, ["~> 1.10"])
      s.add_dependency(%q<puppet_forge>.freeze, ["~> 2.3.0"])
      s.add_dependency(%q<gettext-setup>.freeze, ["~> 0.24"])
