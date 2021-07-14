@@ -1,4 +1,5 @@
 include/rdata.h
+include/rdata_io_unistd.h
 lib/librdata.so
 lib/librdata.so.0
 lib/librdata.so.0.0.0
