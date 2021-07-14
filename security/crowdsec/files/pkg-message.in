@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+
+crowdsec is installed.
+
+You need to edit the agent config file %%ETCDIR%%/crowdsec.yaml and
+enable rc via sysrc.
+
+# sysrc crowdsec_enable="YES"
+EOM
+}
+]
