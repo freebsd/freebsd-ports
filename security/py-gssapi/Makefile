@@ -1,5 +1,5 @@
 PORTNAME=	gssapi
-DISTVERSION=	1.6.9
+DISTVERSION=	1.6.14
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,9 +9,9 @@ COMMENT=	High-level and low-level Python bindings to GSSAPI C libraries
 
 LICENSE=	ISCL
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>1.4.0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator@${PY_FLAVOR}
 
+# Officially: 3.6, 3.7, 3.8, 3.9
 USES=	python:3.6+
 USE_PYTHON=	distutils autoplist
 
@@ -23,10 +23,9 @@ GSSAPI_BASE_USES=	gssapi ssl
 GSSAPI_HEIMDAL_USES=	gssapi:heimdal
 GSSAPI_MIT_USES=	gssapi:mit
 
-post-patch:
-	${REINPLACE_CMD} -e 's|%%KRB5CONFIG%%|${KRB5CONFIG}|' ${WRKSRC}/setup.py
+MAKE_ENV+=	GSSAPI_KRB5CONFIG=${KRB5CONFIG}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/raw/*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME} -type f -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
