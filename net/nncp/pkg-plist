@@ -1,6 +1,7 @@
 bin/nncp-bundle
 bin/nncp-call
 bin/nncp-caller
+bin/nncp-cfgdir
 bin/nncp-cfgenc
 bin/nncp-cfgmin
 bin/nncp-cfgnew
@@ -10,12 +11,14 @@ bin/nncp-daemon
 bin/nncp-exec
 bin/nncp-file
 bin/nncp-freq
+bin/nncp-hash
 bin/nncp-log
 bin/nncp-pkt
 bin/nncp-reass
 bin/nncp-rm
 bin/nncp-stat
 bin/nncp-toss
+bin/nncp-trns
 bin/nncp-xfer
 @dir etc/newsyslog.conf.d
 @sample etc/nncp.conf.sample etc/newsyslog.conf.d/nncp.conf
