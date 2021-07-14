@@ -668,6 +668,7 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rdoc/markup/raw.rb
 %%RUBY_LIBDIR%%/rdoc/markup/regexp_handling.rb
 %%RUBY_LIBDIR%%/rdoc/markup/rule.rb
+%%RUBY_LIBDIR%%/rdoc/markup/table.rb
 %%RUBY_LIBDIR%%/rdoc/markup/to_ansi.rb
 %%RUBY_LIBDIR%%/rdoc/markup/to_bs.rb
 %%RUBY_LIBDIR%%/rdoc/markup/to_html.rb
@@ -8220,6 +8221,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Complex/denominator-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Complex/fdiv-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Complex/finite%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Complex/hash-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Complex/imag-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Complex/imaginary-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Complex/infinite%3f-i.ri
@@ -9693,10 +9695,13 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/CertCommand/build-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/CertCommand/cdesc-CertCommand.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/CertCommand/certificates_matching-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/CertCommand/check_openssl-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/CertCommand/execute-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/CertCommand/load_default_cert-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/CertCommand/load_default_key-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/CertCommand/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/CertCommand/open_cert-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/CertCommand/open_private_key-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/CertCommand/re_sign_cert-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/CertCommand/sign-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/CertCommand/valid_email%3f-i.ri
@@ -10047,6 +10052,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/get_scope_params-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/host-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/mfa_unauthorized%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/otp-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/pretty_host-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/request_with_otp-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/rubygems_api_request-i.ri
@@ -11353,6 +11359,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/StaticSet/load_spec-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/StaticSet/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/StaticSet/remote-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/_synchronize-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/add_to_fetcher-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/all_spec_names-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/ask_if_ok-i.ri
@@ -11361,6 +11368,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/assert_directory_exists-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/bindir-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/build_rake_in-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/capture_subprocess_io-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/cdesc-TestCase.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/common_installer_setup-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/common_installer_teardown-i.ri
@@ -11376,6 +11384,8 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/install_specs-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/java_platform%3f-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/java_platform%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/load_yaml-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/load_yaml_file-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/loaded_spec_names-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/make_command-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/make_command-i.ri
@@ -11416,6 +11426,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/win_platform%3f-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/win_platform%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/with_clean_path_to_ruby-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/without_any_upwards_gemfiles-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/write_file-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Text/cdesc-Text.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Text/clean_text-i.ri
@@ -13105,6 +13116,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Net/FTP/storbinary-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/FTP/storlines-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/FTP/system-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Net/FTP/use_pasv_ip-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/FTP/voidcmd-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/FTP/welcome-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/FTPConnectionError/cdesc-FTPConnectionError.ri
@@ -13446,6 +13458,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Net/IMAP/ResponseError/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/IMAP/ResponseError/response-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/IMAP/ResponseParseError/cdesc-ResponseParseError.ri
+%%RDOC%%%%RUBY_RIDIR%%/Net/IMAP/UnknownResponseError/cdesc-UnknownResponseError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/IMAP/add_authenticator-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/IMAP/add_response_handler-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/IMAP/append-i.ri
@@ -13844,6 +13857,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Object/singleton_class-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Object/singleton_method-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Object/singleton_methods-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Object/stub-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Object/taint-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Object/tainted%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Object/timeout-i.ri
@@ -16080,12 +16094,17 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/C/scan-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/C/singleton_classes-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/C/top_level-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/ChangeLog/Git/cdesc-Git.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/ChangeLog/Git/create_entries-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/ChangeLog/Git/parse_entries-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/ChangeLog/Git/parse_info-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/ChangeLog/cdesc-ChangeLog.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/ChangeLog/continue_entry_body-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/ChangeLog/create_document-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/ChangeLog/create_entries-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/ChangeLog/create_items-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/ChangeLog/group_entries-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/ChangeLog/parse_date-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/ChangeLog/parse_entries-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/ChangeLog/scan-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/Markdown/cdesc-Markdown.ri
@@ -17131,6 +17150,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Rational/denominator-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Rational/fdiv-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Rational/floor-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Rational/hash-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Rational/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Rational/json_create-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Rational/magnitude-i.ri
