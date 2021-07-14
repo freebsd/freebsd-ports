@@ -14,8 +14,8 @@ LICENSE_NAME=	End User License Agreement
 LICENSE_FILE=	${FILESDIR}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-ONLY_FOR_ARCHS=	amd64 arm64
-ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and i386
+ONLY_FOR_ARCHS= aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and aarch64
 
 USES=		desktop-file-utils gnome linux tar:xz
 INSTALLS_ICONS=	yes
