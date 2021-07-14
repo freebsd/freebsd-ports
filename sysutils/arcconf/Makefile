@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS=	amd64
 LIB_DEPENDS=	libstdc++.so.6:lang/gcc${GCC_DEFAULT}
 
 USES=		zip
-USE_GCC=	4.8+
+USE_GCC=	yes
 
 SUB_FILES+=	${PERIODICSCRIPT}
 
