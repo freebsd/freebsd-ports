@@ -27,7 +27,7 @@ ETCSYMLINK_CONFLICTS_INSTALL=	ca-roots-[0-9]*
 CERTDIR?=	share/certs
 PLIST_SUB+=	CERTDIR=${CERTDIR}
 
-VERSION_NSS=	3.67
+VERSION_NSS=	3.68
 CERTDATA_TXT_PATH=	lib/ckfw/builtins/certdata.txt
 BUNDLE_PROCESSOR=	MAca-bundle.pl
 
