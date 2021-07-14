@@ -3,7 +3,7 @@
 PORTNAME=	libaacs
 DISTVERSION=	0.11.0
 CATEGORIES=	multimedia
-MASTER_SITES=	https://downloads.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
+MASTER_SITES=	https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced Access Content System implementation
