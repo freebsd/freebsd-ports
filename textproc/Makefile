@@ -1294,6 +1294,7 @@
     SUBDIR += py-googletrans
     SUBDIR += py-grako
     SUBDIR += py-guess-language
+    SUBDIR += py-hashids
     SUBDIR += py-hexdump
     SUBDIR += py-hieroglyph
     SUBDIR += py-hjson
