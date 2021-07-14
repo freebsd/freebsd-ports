@@ -1,11 +1,3 @@
-%%PERL5_MAN3%%/Chemistry::Atom.3.gz
-%%PERL5_MAN3%%/Chemistry::Bond.3.gz
-%%PERL5_MAN3%%/Chemistry::File.3.gz
-%%PERL5_MAN3%%/Chemistry::File::Dumper.3.gz
-%%PERL5_MAN3%%/Chemistry::File::Formula.3.gz
-%%PERL5_MAN3%%/Chemistry::Mol.3.gz
-%%PERL5_MAN3%%/Chemistry::Obj.3.gz
-%%PERL5_MAN3%%/Chemistry::Tutorial.3.gz
 %%SITE_PERL%%/Chemistry/Atom.pm
 %%SITE_PERL%%/Chemistry/Bond.pm
 %%SITE_PERL%%/Chemistry/File.pm
@@ -14,3 +6,11 @@
 %%SITE_PERL%%/Chemistry/Mol.pm
 %%SITE_PERL%%/Chemistry/Obj.pm
 %%SITE_PERL%%/Chemistry/Tutorial.pod
+%%PERL5_MAN3%%/Chemistry::Atom.3.gz
+%%PERL5_MAN3%%/Chemistry::Bond.3.gz
+%%PERL5_MAN3%%/Chemistry::File.3.gz
+%%PERL5_MAN3%%/Chemistry::File::Dumper.3.gz
+%%PERL5_MAN3%%/Chemistry::File::Formula.3.gz
+%%PERL5_MAN3%%/Chemistry::Mol.3.gz
+%%PERL5_MAN3%%/Chemistry::Obj.3.gz
+%%PERL5_MAN3%%/Chemistry::Tutorial.3.gz
