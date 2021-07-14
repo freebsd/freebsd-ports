@@ -29,7 +29,6 @@ share/aclocal/cmake.m4
 share/bash-completion/completions/cmake
 share/bash-completion/completions/cpack
 share/bash-completion/completions/ctest
-
 %%DATADIR%%/Help/command/DEVICE_LINK_OPTIONS.txt
 %%DATADIR%%/Help/command/FIND_XXX.txt
 %%DATADIR%%/Help/command/FIND_XXX_ORDER.txt
@@ -189,10 +188,12 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/envvar/CMAKE_GENERATOR_PLATFORM.rst
 %%DATADIR%%/Help/envvar/CMAKE_GENERATOR_TOOLSET.rst
 %%DATADIR%%/Help/envvar/CMAKE_LANG_COMPILER_LAUNCHER.rst
+%%DATADIR%%/Help/envvar/CMAKE_LANG_LINKER_LAUNCHER.rst
 %%DATADIR%%/Help/envvar/CMAKE_MSVCIDE_RUN_PATH.rst
 %%DATADIR%%/Help/envvar/CMAKE_NO_VERBOSE.rst
 %%DATADIR%%/Help/envvar/CMAKE_OSX_ARCHITECTURES.rst
 %%DATADIR%%/Help/envvar/CMAKE_PREFIX_PATH.rst
+%%DATADIR%%/Help/envvar/CMAKE_TOOLCHAIN_FILE.rst
 %%DATADIR%%/Help/envvar/CSFLAGS.rst
 %%DATADIR%%/Help/envvar/CTEST_INTERACTIVE_DEBUG_MODE.rst
 %%DATADIR%%/Help/envvar/CTEST_OUTPUT_ON_FAILURE.rst
@@ -210,6 +211,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/envvar/ENV_VAR.txt
 %%DATADIR%%/Help/envvar/FC.rst
 %%DATADIR%%/Help/envvar/FFLAGS.rst
+%%DATADIR%%/Help/envvar/HIPCXX.rst
+%%DATADIR%%/Help/envvar/HIPFLAGS.rst
 %%DATADIR%%/Help/envvar/ISPC.rst
 %%DATADIR%%/Help/envvar/ISPCFLAGS.rst
 %%DATADIR%%/Help/envvar/LDFLAGS.rst
@@ -236,12 +239,14 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/generator/Sublime Text 2.rst
 %%DATADIR%%/Help/generator/Unix Makefiles.rst
 %%DATADIR%%/Help/generator/VS_TOOLSET_HOST_ARCH.txt
+%%DATADIR%%/Help/generator/VS_TOOLSET_HOST_ARCH_LEGACY.txt
 %%DATADIR%%/Help/generator/Visual Studio 10 2010.rst
 %%DATADIR%%/Help/generator/Visual Studio 11 2012.rst
 %%DATADIR%%/Help/generator/Visual Studio 12 2013.rst
 %%DATADIR%%/Help/generator/Visual Studio 14 2015.rst
 %%DATADIR%%/Help/generator/Visual Studio 15 2017.rst
 %%DATADIR%%/Help/generator/Visual Studio 16 2019.rst
+%%DATADIR%%/Help/generator/Visual Studio 17 2022.rst
 %%DATADIR%%/Help/generator/Visual Studio 6.rst
 %%DATADIR%%/Help/generator/Visual Studio 7 .NET 2003.rst
 %%DATADIR%%/Help/generator/Visual Studio 7.rst
@@ -441,6 +446,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/module/FindMPI.rst
 %%DATADIR%%/Help/module/FindMatlab.rst
 %%DATADIR%%/Help/module/FindMotif.rst
+%%DATADIR%%/Help/module/FindMsys.rst
 %%DATADIR%%/Help/module/FindODBC.rst
 %%DATADIR%%/Help/module/FindOpenACC.rst
 %%DATADIR%%/Help/module/FindOpenAL.rst
@@ -670,6 +676,12 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/policy/CMP0118.rst
 %%DATADIR%%/Help/policy/CMP0119.rst
 %%DATADIR%%/Help/policy/CMP0120.rst
+%%DATADIR%%/Help/policy/CMP0121.rst
+%%DATADIR%%/Help/policy/CMP0122.rst
+%%DATADIR%%/Help/policy/CMP0123.rst
+%%DATADIR%%/Help/policy/CMP0124.rst
+%%DATADIR%%/Help/policy/CMP0125.rst
+%%DATADIR%%/Help/policy/CMP0126.rst
 %%DATADIR%%/Help/policy/DEPRECATED.txt
 %%DATADIR%%/Help/policy/DISALLOWED_COMMAND.txt
 %%DATADIR%%/Help/prop_cache/ADVANCED.rst
@@ -691,6 +703,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_dir/DEFINITIONS.rst
 %%DATADIR%%/Help/prop_dir/EXCLUDE_FROM_ALL.rst
 %%DATADIR%%/Help/prop_dir/IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.rst
+%%DATADIR%%/Help/prop_dir/IMPORTED_TARGETS.rst
 %%DATADIR%%/Help/prop_dir/INCLUDE_DIRECTORIES.rst
 %%DATADIR%%/Help/prop_dir/INCLUDE_REGULAR_EXPRESSION.rst
 %%DATADIR%%/Help/prop_dir/INTERPROCEDURAL_OPTIMIZATION.rst
@@ -719,6 +732,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_gbl/AUTOMOC_SOURCE_GROUP.rst
 %%DATADIR%%/Help/prop_gbl/AUTOMOC_TARGETS_FOLDER.rst
 %%DATADIR%%/Help/prop_gbl/AUTORCC_SOURCE_GROUP.rst
+%%DATADIR%%/Help/prop_gbl/AUTOUIC_SOURCE_GROUP.rst
 %%DATADIR%%/Help/prop_gbl/CMAKE_CUDA_KNOWN_FEATURES.rst
 %%DATADIR%%/Help/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.rst
 %%DATADIR%%/Help/prop_gbl/CMAKE_C_KNOWN_FEATURES.rst
@@ -945,6 +959,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/GHS_NO_SOURCE_GROUP_FILE.rst
 %%DATADIR%%/Help/prop_tgt/GNUtoMS.rst
 %%DATADIR%%/Help/prop_tgt/HAS_CXX.rst
+%%DATADIR%%/Help/prop_tgt/HIP_ARCHITECTURES.rst
 %%DATADIR%%/Help/prop_tgt/IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_COMMON_LANGUAGE_RUNTIME.rst
@@ -1006,6 +1021,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/LANG_CPPCHECK.rst
 %%DATADIR%%/Help/prop_tgt/LANG_CPPLINT.rst
 %%DATADIR%%/Help/prop_tgt/LANG_INCLUDE_WHAT_YOU_USE.rst
+%%DATADIR%%/Help/prop_tgt/LANG_LINKER_LAUNCHER.rst
 %%DATADIR%%/Help/prop_tgt/LANG_VISIBILITY_PRESET.rst
 %%DATADIR%%/Help/prop_tgt/LIBRARY_OUTPUT_DIRECTORY.rst
 %%DATADIR%%/Help/prop_tgt/LIBRARY_OUTPUT_DIRECTORY_CONFIG.rst
@@ -1142,7 +1158,9 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_EMBED_FRAMEWORKS_REMOVE_HEADERS_ON_COPY.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_EMBED_type.rst
+%%DATADIR%%/Help/prop_tgt/XCODE_EMBED_type_CODE_SIGN_ON_COPY.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_EMBED_type_PATH.rst
+%%DATADIR%%/Help/prop_tgt/XCODE_EMBED_type_REMOVE_HEADERS_ON_COPY.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_EXPLICIT_FILE_TYPE.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_GENERATE_SCHEME.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_LINK_BUILD_PHASE_MODE.rst
@@ -1185,6 +1203,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/release/3.19.rst
 %%DATADIR%%/Help/release/3.2.rst
 %%DATADIR%%/Help/release/3.20.rst
+%%DATADIR%%/Help/release/3.21.rst
 %%DATADIR%%/Help/release/3.3.rst
 %%DATADIR%%/Help/release/3.4.rst
 %%DATADIR%%/Help/release/3.5.rst
@@ -1392,6 +1411,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_GLOBAL_AUTORCC_TARGET.rst
 %%DATADIR%%/Help/variable/CMAKE_GLOBAL_AUTORCC_TARGET_NAME.rst
 %%DATADIR%%/Help/variable/CMAKE_GNUtoMS.rst
+%%DATADIR%%/Help/variable/CMAKE_HIP_ARCHITECTURES.rst
 %%DATADIR%%/Help/variable/CMAKE_HOME_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CMAKE_HOST_APPLE.rst
 %%DATADIR%%/Help/variable/CMAKE_HOST_SOLARIS.rst
@@ -1475,6 +1495,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_LANG_IMPLICIT_LINK_LIBRARIES.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_INCLUDE_WHAT_YOU_USE.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LIBRARY_ARCHITECTURE.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_LINKER_LAUNCHER.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINKER_PREFERENCE.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINKER_PREFERENCE_PROPAGATES.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINKER_WRAPPER_FLAG.rst
@@ -1619,6 +1640,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_Swift_LANGUAGE_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_Swift_MODULE_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CMAKE_Swift_NUM_THREADS.rst
+%%DATADIR%%/Help/variable/CMAKE_TLS_VERIFY.rst
 %%DATADIR%%/Help/variable/CMAKE_TOOLCHAIN_FILE.rst
 %%DATADIR%%/Help/variable/CMAKE_TRY_COMPILE_CONFIGURATION.rst
 %%DATADIR%%/Help/variable/CMAKE_TRY_COMPILE_PLATFORM_VARIABLES.rst
@@ -1688,6 +1710,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_XCODE_SCHEME_ZOMBIE_OBJECTS.rst
 %%DATADIR%%/Help/variable/CPACK_ABSOLUTE_DESTINATION_FILES.rst
 %%DATADIR%%/Help/variable/CPACK_COMPONENT_INCLUDE_TOPLEVEL_DIRECTORY.rst
+%%DATADIR%%/Help/variable/CPACK_CUSTOM_INSTALL_VARIABLES.rst
 %%DATADIR%%/Help/variable/CPACK_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION.rst
 %%DATADIR%%/Help/variable/CPACK_INCLUDE_TOPLEVEL_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CPACK_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS.rst
@@ -1754,6 +1777,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CTEST_RESOURCE_SPEC_FILE.rst
 %%DATADIR%%/Help/variable/CTEST_RUN_CURRENT_SCRIPT.rst
 %%DATADIR%%/Help/variable/CTEST_SCP_COMMAND.rst
+%%DATADIR%%/Help/variable/CTEST_SCRIPT_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CTEST_SITE.rst
 %%DATADIR%%/Help/variable/CTEST_SOURCE_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CTEST_SUBMIT_URL.rst
@@ -1792,6 +1816,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/PROJECT-NAME_BINARY_DIR.rst
 %%DATADIR%%/Help/variable/PROJECT-NAME_DESCRIPTION.rst
 %%DATADIR%%/Help/variable/PROJECT-NAME_HOMEPAGE_URL.rst
+%%DATADIR%%/Help/variable/PROJECT-NAME_IS_TOP_LEVEL.rst
 %%DATADIR%%/Help/variable/PROJECT-NAME_SOURCE_DIR.rst
 %%DATADIR%%/Help/variable/PROJECT-NAME_VERSION.rst
 %%DATADIR%%/Help/variable/PROJECT-NAME_VERSION_MAJOR.rst
@@ -1801,6 +1826,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/PROJECT_BINARY_DIR.rst
 %%DATADIR%%/Help/variable/PROJECT_DESCRIPTION.rst
 %%DATADIR%%/Help/variable/PROJECT_HOMEPAGE_URL.rst
+%%DATADIR%%/Help/variable/PROJECT_IS_TOP_LEVEL.rst
 %%DATADIR%%/Help/variable/PROJECT_NAME.rst
 %%DATADIR%%/Help/variable/PROJECT_SOURCE_DIR.rst
 %%DATADIR%%/Help/variable/PROJECT_VERSION.rst
@@ -1872,6 +1898,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/CMakeDetermineCompilerABI.cmake
 %%DATADIR%%/Modules/CMakeDetermineCompilerId.cmake
 %%DATADIR%%/Modules/CMakeDetermineFortranCompiler.cmake
+%%DATADIR%%/Modules/CMakeDetermineHIPCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineISPCCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineJavaCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineOBJCCompiler.cmake
@@ -1901,6 +1928,11 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/CMakeFortranInformation.cmake
 %%DATADIR%%/Modules/CMakeGenericSystem.cmake
 %%DATADIR%%/Modules/CMakeGraphVizOptions.cmake
+%%DATADIR%%/Modules/CMakeHIPCompiler.cmake.in
+%%DATADIR%%/Modules/CMakeHIPCompilerABI.hip
+%%DATADIR%%/Modules/CMakeHIPCompilerId.hip.in
+%%DATADIR%%/Modules/CMakeHIPInformation.cmake
+%%DATADIR%%/Modules/CMakeHIPRuntime.cmake.in
 %%DATADIR%%/Modules/CMakeIOSInstallCombined.cmake
 %%DATADIR%%/Modules/CMakeISPCCompiler.cmake.in
 %%DATADIR%%/Modules/CMakeISPCCompilerABI.ispc
@@ -1951,6 +1983,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/CMakeTestCompilerCommon.cmake
 %%DATADIR%%/Modules/CMakeTestFortranCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestGNU.c
+%%DATADIR%%/Modules/CMakeTestHIPCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestISPCCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestJavaCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestOBJCCompiler.cmake
@@ -2059,6 +2092,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Compiler/Clang-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/Clang-DetermineCompilerInternal.cmake
 %%DATADIR%%/Modules/Compiler/Clang-FindBinUtils.cmake
+%%DATADIR%%/Modules/Compiler/Clang-HIP.cmake
 %%DATADIR%%/Modules/Compiler/Clang-OBJC.cmake
 %%DATADIR%%/Modules/Compiler/Clang-OBJCXX.cmake
 %%DATADIR%%/Modules/Compiler/Clang.cmake
@@ -2077,7 +2111,16 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Compiler/Embarcadero-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/Flang-FindBinUtils.cmake
 %%DATADIR%%/Modules/Compiler/Flang-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/Fujitsu-C.cmake
+%%DATADIR%%/Modules/Compiler/Fujitsu-CXX.cmake
 %%DATADIR%%/Modules/Compiler/Fujitsu-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/Fujitsu-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/Fujitsu.cmake
+%%DATADIR%%/Modules/Compiler/FujitsuClang-C.cmake
+%%DATADIR%%/Modules/Compiler/FujitsuClang-CXX.cmake
+%%DATADIR%%/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/FujitsuClang-FindBinUtils.cmake
+%%DATADIR%%/Modules/Compiler/FujitsuClang.cmake
 %%DATADIR%%/Modules/Compiler/G95-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/GHS-C.cmake
 %%DATADIR%%/Modules/Compiler/GHS-CXX.cmake
@@ -2158,6 +2201,15 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Compiler/QCC-CXX-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/QCC-CXX.cmake
 %%DATADIR%%/Modules/Compiler/QCC.cmake
+%%DATADIR%%/Modules/Compiler/ROCMClang-ASM.cmake
+%%DATADIR%%/Modules/Compiler/ROCMClang-C.cmake
+%%DATADIR%%/Modules/Compiler/ROCMClang-CXX.cmake
+%%DATADIR%%/Modules/Compiler/ROCMClang-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/ROCMClang-FindBinUtils.cmake
+%%DATADIR%%/Modules/Compiler/ROCMClang-HIP.cmake
+%%DATADIR%%/Modules/Compiler/ROCMClang-OBJC.cmake
+%%DATADIR%%/Modules/Compiler/ROCMClang-OBJCXX.cmake
+%%DATADIR%%/Modules/Compiler/ROCMClang.cmake
 %%DATADIR%%/Modules/Compiler/SCO-C.cmake
 %%DATADIR%%/Modules/Compiler/SCO-CXX.cmake
 %%DATADIR%%/Modules/Compiler/SCO-DetermineCompiler.cmake
@@ -2312,6 +2364,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/FindMPI/test_mpi.f90.in
 %%DATADIR%%/Modules/FindMatlab.cmake
 %%DATADIR%%/Modules/FindMotif.cmake
+%%DATADIR%%/Modules/FindMsys.cmake
 %%DATADIR%%/Modules/FindODBC.cmake
 %%DATADIR%%/Modules/FindOpenACC.cmake
 %%DATADIR%%/Modules/FindOpenAL.cmake
@@ -2653,6 +2706,9 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Linux-Clang-C.cmake
 %%DATADIR%%/Modules/Platform/Linux-Clang-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-Determine-CXX.cmake
+%%DATADIR%%/Modules/Platform/Linux-Fujitsu-C.cmake
+%%DATADIR%%/Modules/Platform/Linux-Fujitsu-CXX.cmake
+%%DATADIR%%/Modules/Platform/Linux-Fujitsu.cmake
 %%DATADIR%%/Modules/Platform/Linux-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/Linux-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-GNU-Fortran.cmake
@@ -2692,6 +2748,15 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Linux-como.cmake
 %%DATADIR%%/Modules/Platform/Linux.cmake
 %%DATADIR%%/Modules/Platform/MP-RAS.cmake
+%%DATADIR%%/Modules/Platform/MSYS-Clang-C.cmake
+%%DATADIR%%/Modules/Platform/MSYS-Clang-CXX.cmake
+%%DATADIR%%/Modules/Platform/MSYS-Determine-CXX.cmake
+%%DATADIR%%/Modules/Platform/MSYS-GNU-C.cmake
+%%DATADIR%%/Modules/Platform/MSYS-GNU-CXX.cmake
+%%DATADIR%%/Modules/Platform/MSYS-GNU-Fortran.cmake
+%%DATADIR%%/Modules/Platform/MSYS-GNU.cmake
+%%DATADIR%%/Modules/Platform/MSYS-windres.cmake
+%%DATADIR%%/Modules/Platform/MSYS.cmake
 %%DATADIR%%/Modules/Platform/Midipix.cmake
 %%DATADIR%%/Modules/Platform/MirBSD.cmake
 %%DATADIR%%/Modules/Platform/NetBSD.cmake
@@ -2856,6 +2921,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Templates/CPack.GenericWelcome.txt
 %%DATADIR%%/Templates/CPackConfig.cmake.in
 %%DATADIR%%/Templates/CTestScript.cmake.in
+%%DATADIR%%/Templates/MSBuild/CustomBuildDepFile.targets
 %%DATADIR%%/Templates/MSBuild/FlagTables/v10_CL.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v10_CSharp.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v10_Cuda.json

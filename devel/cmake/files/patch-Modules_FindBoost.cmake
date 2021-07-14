@@ -1,4 +1,4 @@
---- Modules/FindBoost.cmake.orig	2021-03-23 15:43:17 UTC
+--- Modules/FindBoost.cmake.orig	2021-07-14 14:10:23 UTC
 +++ Modules/FindBoost.cmake
 @@ -135,6 +135,9 @@ This module reads hints about search locations from va
  ``BOOST_LIBRARYDIR``
@@ -20,7 +20,7 @@
  #-------------------------------------------------------------------------------
  # Before we go searching, check whether a boost cmake package is available, unless
  # the user specifically asked NOT to search for one.
-@@ -2131,10 +2137,10 @@ foreach(COMPONENT ${Boost_FIND_COMPONENTS})
+@@ -2132,10 +2138,10 @@ foreach(COMPONENT ${Boost_FIND_COMPONENTS})
    # Handle Python version suffixes
    unset(COMPONENT_PYTHON_VERSION_MAJOR)
    unset(COMPONENT_PYTHON_VERSION_MINOR)
