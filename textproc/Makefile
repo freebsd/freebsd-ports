@@ -1371,6 +1371,7 @@
     SUBDIR += py-pycountry
     SUBDIR += py-pyexcel
     SUBDIR += py-pyexcel-ezodf
+    SUBDIR += py-pyexcel-io
     SUBDIR += py-pygccxml
     SUBDIR += py-pygments
     SUBDIR += py-pygments-25
