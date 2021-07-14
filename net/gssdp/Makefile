@@ -16,7 +16,7 @@ BUILD_DEPENDS=	glib>=2.54:devel/glib20 \
 		libsoup>=2.26.1:devel/libsoup
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
-USES=		gnome meson pathfix pkgconfig tar:xz
+USES=		gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 
 MESON_ARGS=	-Dexamples=false -Dgtk_doc=false -Dintrospection=true
