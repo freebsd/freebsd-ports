@@ -1,23 +1,24 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
 PORTNAME=	Net_SMTP
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	net mail www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class that provides an implementation of the SMTP protocol
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR}
-RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}Net_Socket>=1.0.7:net/pear-Net_Socket@${PHP_FLAVOR}
+
+USES=		pear
 
 NO_ARCH=	yes
-USES=		pear
 
 OPTIONS_DEFINE=	PEAR_AUTH_SASL
 PEAR_AUTH_SASL_DESC=	PEAR::Auth_SASL support
 
-PEAR_AUTH_SASL_BUILD_DEPENDS=	${PEARDIR}/Auth/SASL.php:security/pear-Auth_SASL@${PHP_FLAVOR}
+PEAR_AUTH_SASL_RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}Auth_SASL>=1.0.5:security/pear-Auth_SASL@${PHP_FLAVOR}
 
 .include <bsd.port.mk>
