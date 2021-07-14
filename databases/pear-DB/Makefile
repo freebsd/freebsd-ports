@@ -12,4 +12,6 @@ LICENSE=	PHP301
 
 USES=		pear
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
