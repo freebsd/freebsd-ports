@@ -1,6 +1,6 @@
---- cargo-crates/rusty_v8-0.22.3/build/toolchain/gcc_toolchain.gni.orig	2021-01-19 00:12:27 UTC
-+++ cargo-crates/rusty_v8-0.22.3/build/toolchain/gcc_toolchain.gni
-@@ -50,6 +50,11 @@ if (enable_resource_allowlist_generation) {
+--- cargo-crates/rusty_v8-0.25.3/build/toolchain/gcc_toolchain.gni.orig	1970-01-01 01:00:00.000000000 +0100
++++ cargo-crates/rusty_v8-0.25.3/build/toolchain/gcc_toolchain.gni	2021-07-13 19:32:27.892587000 +0200
+@@ -51,6 +51,11 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
  }
  
@@ -12,7 +12,7 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -626,13 +631,23 @@ template("clang_toolchain") {
+@@ -654,13 +659,23 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {
@@ -22,7 +22,7 @@
 -    ld = cxx
 -    readelf = "${toolprefix}readelf"
 -    ar = "${prefix}/llvm-ar"
--    nm = "${toolprefix}nm"
+-    nm = "${prefix}/llvm-nm"
 +    if (is_bsd) {
 +      prefix = "%%LOCALBASE%%/bin"
 +      cc = "cc"
