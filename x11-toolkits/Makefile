@@ -186,6 +186,7 @@
     SUBDIR += rubygem-gdk4
     SUBDIR += rubygem-gtk2
     SUBDIR += rubygem-gtk3
+    SUBDIR += rubygem-gtk4
     SUBDIR += rubygem-gtksourceview2
     SUBDIR += rubygem-gtksourceview3
     SUBDIR += rubygem-pango
