@@ -57,6 +57,11 @@ WARNING+=	WITH_CCACHE_BUILD support disabled, please set CCACHE_DIR.
 .if !defined(NO_CCACHE) && defined(WITH_CCACHE_BUILD) && !${CC:M*ccache*} && \
   !defined(NO_BUILD)
 
+# Poudriere will only define CCACHE_WRAPPER_PATH for using a host-static ccache
+# binary.
+.if defined(CCACHE_WRAPPER_PATH)
+CCACHE_PKG_PREFIX=		${CCACHE_WRAPPER_PATH:C,/libexec/ccache$,,}
+.endif
 CCACHE_PKG_PREFIX?=		${LOCALBASE}
 CCACHE_WRAPPER_PATH?=	${CCACHE_PKG_PREFIX}/libexec/ccache
 CCACHE_BIN?=			${CCACHE_PKG_PREFIX}/bin/ccache
