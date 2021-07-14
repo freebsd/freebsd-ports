@@ -2,7 +2,7 @@ PORTNAME=	weebsay
 PORTVERSION=	0.0.20210508
 CATEGORIES=	games
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Like cowsay but with random anime quotes
 
 LICENSE=	MIT
