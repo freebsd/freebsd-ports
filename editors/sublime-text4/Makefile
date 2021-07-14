@@ -29,7 +29,7 @@ SUB_FILES=	sublime-text
 WRKSRC=		${WRKDIR}/sublime_text
 
 DISTNAME_amd64=	sublime_text_build_${PORTVERSION}_x64
-DISTNAME_arm64=	sublime_text_build_${PORTVERSION}_arm64
+DISTNAME_aarch64=	sublime_text_build_${PORTVERSION}_arm64
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
