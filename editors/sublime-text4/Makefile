@@ -1,7 +1,7 @@
 # Created by: Eric TUrgeon <ericbsd@FreeBSD.org>
 
 PORTNAME=	sublime
-PORTVERSION=	4109
+PORTVERSION=	4111
 CATEGORIES=	editors linux
 MASTER_SITES=	http://download.sublimetext.com/
 PKGNAMESUFFIX=	-text4
