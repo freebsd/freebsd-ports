@@ -1,7 +1,7 @@
 # Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
 
 PORTNAME=	claws-mail-plugins
-PORTVERSION=	3.17.8
+PORTVERSION=	3.18.0
 CATEGORIES=	mail news
 
 MAINTAINER=	portmaster@BSDforge.com
