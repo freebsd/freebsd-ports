@@ -12,7 +12,7 @@
 %%GLVND%%%%X11%%# Fallback if GLX_EXT_libglvnd is missing or vendor library doesn't exist
 %%GLVND%%%%X11%%libGLX_indirect.so.0 libGLX_mesa%%SUFFIX%%.so.0
 
-# GBM clients like eglkms and wlroots fail otherwise
+# GBM clients like kmscube and wlroots fail otherwise
 libgbm.so.1 libgbm%%SUFFIX%%.so.1
 
 %%anv%%%%PREFIX%%/lib/libvulkan_intel.so libvulkan_intel%%SUFFIX%%.so
