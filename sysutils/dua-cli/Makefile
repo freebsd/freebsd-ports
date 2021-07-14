@@ -1,6 +1,6 @@
 PORTNAME=	dua-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.14.1
+DISTVERSION=	2.14.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Byron
 
 CARGO_CRATES=	ansi_term-0.12.1 \
-		anyhow-1.0.41 \
+		anyhow-1.0.42 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
@@ -41,7 +41,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		doc-comment-0.3.3 \
 		either-1.6.1 \
 		filesize-0.2.0 \
-		fixedbitset-0.2.0 \
+		fixedbitset-0.4.0 \
 		form_urlencoded-1.0.1 \
 		glob-0.3.0 \
 		hashbrown-0.11.2 \
@@ -49,11 +49,11 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		hermit-abi-0.1.19 \
 		idna-0.2.3 \
 		indexmap-1.7.0 \
-		instant-0.1.9 \
+		instant-0.1.10 \
 		itertools-0.10.1 \
 		jwalk-0.6.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.97 \
+		libc-0.2.98 \
 		lock_api-0.4.4 \
 		log-0.4.14 \
 		malloc_buf-0.0.6 \
@@ -74,7 +74,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.3 \
 		percent-encoding-2.1.0 \
-		petgraph-0.5.1 \
+		petgraph-0.6.0 \
 		pretty_assertions-0.7.2 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
@@ -90,7 +90,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		smallvec-1.6.1 \
 		strsim-0.10.0 \
 		syn-1.0.73 \
-		sysinfo-0.19.0 \
+		sysinfo-0.19.1 \
 		termcolor-1.1.2 \
 		termion-1.5.6 \
 		textwrap-0.12.1 \
@@ -102,7 +102,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		tui-react-0.15.0 \
 		unicode-bidi-0.3.5 \
 		unicode-normalization-0.1.19 \
-		unicode-segmentation-1.7.1 \
+		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
 		url-2.2.2 \
@@ -119,6 +119,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		windows-0.8.0 \
 		windows_gen-0.8.0 \
 		windows_macros-0.8.0
+CARGO_FEATURES=	--no-default-features tui-crossplatform
 
 PLIST_FILES=	bin/dua
 PORTDOCS=	README.md
