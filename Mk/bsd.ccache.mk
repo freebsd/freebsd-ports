@@ -1,10 +1,36 @@
 #-*- tab-width: 4; -*-
 # ex:ts=4
 #
-# WITH_CCACHE_BUILD=yes enables depending on ccache and using it in the build.
-# NO_CCACHE_DEPEND will additionally not add the dependency on ccache.
-# NO_CCACHE will disable using ccache entirely.
-# CCACHE_PKG_PREFIX is where ccache is already installed.  Default: LOCALBASE
+# User settable:
+#  - WITH_CCACHE_BUILD - enables depending on ccache and using it in the build.
+#  - CCACHE_PKG_PREFIX - where ccache is already installed.  Default: LOCALBASE
+#                       This should not be set unless it differs from the
+#                       default.
+#  - CCACHE_DIR (optional) - where ccache stores its cache. See ccache(1).
+#                       This should not be set unless it differs from the
+#                       default.
+#
+# Port use (users should not modify these):
+#  - CCACHE_BIN - path to the ccache binary.  Intended to be prefixed before CC.
+#  - CCACHE_WRAPPER_PATH - path to directory containing compiler symlinks back
+#                          to ccache.  For example, gcc5 -> ccache.  Intended
+#                          to be added to $PATH
+#                          This is expected to end in /libexec/ccache.
+#
+#   In general CCACHE_WRAPPER_PATH should be placed into the env PATH for a
+#   port build rather than directly invoking CCACHE_BIN.  Then when the port
+#   runs 'cc' or 'gcc5' it will find the symlinks.  If a port is directly
+#   using a full path to a specific compiler then CCACHE_BIN can possibly be
+#   prefixed in front of it, if the CC path cannot be fixed to be relative.
+#
+# Port use (special case):
+#  - NO_CCACHE - disable using ccache entirely.  This is for when a port build
+#                fails with ccache being used.  Typically this should be
+#                temporary only.
+#  - NO_CCACHE_DEPEND - avoid automatically depending on ccache but still
+#                       attempt to use it in PATH.  This is typically only
+#                       needed in devel/ccache itself.
+#
 
 COMMANDS_Include_MAINTAINER=	portmgr@FreeBSD.org
 
