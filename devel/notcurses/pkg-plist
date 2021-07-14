@@ -172,6 +172,7 @@ libdata/pkgconfig/notcurses.pc
 %%DATADIR%%/megaman2.bmp
 %%DATADIR%%/natasha-blur.png
 %%DATADIR%%/normal.png
+%%DATADIR%%/notcurses.png
 %%DATADIR%%/notcursesIII.mkv
 %%DATADIR%%/onedot.png
 %%DATADIR%%/samoa.avi
