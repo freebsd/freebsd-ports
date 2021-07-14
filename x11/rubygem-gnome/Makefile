@@ -1,6 +1,5 @@
 PORTNAME=	gnome
-PORTVERSION=	3.4.3
-PORTREVISION=	7
+PORTVERSION=	3.4.4
 CATEGORIES=	x11 gnome rubygems
 PKGNAMEPREFIX=	rubygem-
 
@@ -17,19 +16,18 @@ RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
 		rubygem-clutter-gtk>=${PORTVERSION}:graphics/rubygem-clutter-gtk \
 		rubygem-gdk_pixbuf2>=${PORTVERSION}:graphics/rubygem-gdk_pixbuf2 \
 		rubygem-gdk3>=${PORTVERSION}:x11-toolkits/rubygem-gdk3 \
+		rubygem-gdk4>=${PORTVERSION}:x11-toolkits/rubygem-gdk4 \
 		rubygem-gio2>=${PORTVERSION}:devel/rubygem-gio2 \
 		rubygem-glib2>=${PORTVERSION}:devel/rubygem-glib2 \
 		rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject-introspection \
-		rubygem-goocanvas>=2.2.0:graphics/rubygem-goocanvas \
 		rubygem-gstreamer>=${PORTVERSION}:multimedia/rubygem-gstreamer \
-		rubygem-gtk2>=${PORTVERSION}:x11-toolkits/rubygem-gtk2 \
 		rubygem-gtk3>=${PORTVERSION}:x11-toolkits/rubygem-gtk3 \
-		rubygem-gtksourceview2>=${PORTVERSION}:x11-toolkits/rubygem-gtksourceview2 \
+		rubygem-gtk4>=${PORTVERSION}:x11-toolkits/rubygem-gtk4 \
 		rubygem-gtksourceview3>=${PORTVERSION}:x11-toolkits/rubygem-gtksourceview3 \
+		rubygem-gtksourceview4>=${PORTVERSION}:x11-toolkits/rubygem-gtksourceview4 \
 		rubygem-pango>=${PORTVERSION}:x11-toolkits/rubygem-pango \
 		rubygem-poppler>=${PORTVERSION}:x11-toolkits/rubygem-poppler \
 		rubygem-rsvg2>=${PORTVERSION}:graphics/rubygem-rsvg2 \
-		rubygem-vte>=${PORTVERSION}:x11-toolkits/rubygem-vte \
 		rubygem-vte3>=${PORTVERSION}:x11-toolkits/rubygem-vte3
 
 USES=		metaport
