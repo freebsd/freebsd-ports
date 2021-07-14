@@ -53,10 +53,10 @@ do-install:
 
 do-test:
 	@${MKDIR} ${WRKDIR}/test
-	@${CP} ${.CURDIR}/vuln.xml ${WRKDIR}/test
+	@${CP} ${.CURDIR}/vuln*.xml ${WRKDIR}/test
 	@cd ${.CURDIR} && make validate PKGDIR=${WRKDIR}/test
 
-vuln-flat.xml: vuln.xml vuln-20??.xml
+${VUXML_FLAT_FILE}: ${VUXML_FILE} vuln-20??.xml
 	xmllint -noent ${.ALLSRC:[1]} > ${.TARGET}
 
 validate: tidy
@@ -82,7 +82,7 @@ validate: tidy
 	fi
 	${PYTHON_CMD} ${FILESDIR}/extra-validation.py ${VUXML_FLAT_FILE}
 
-tidy: vuln-flat.xml
+tidy: ${VUXML_FLAT_FILE}
 	@if [ ! -e ${LOCALBASE}/share/xml/dtd/vuxml/catalog.xml ]; \
 	then \
 		echo "Please install the VuXML port prior to running make validate/tidy."; \
