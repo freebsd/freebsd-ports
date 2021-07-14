@@ -2,6 +2,7 @@
 
 PORTNAME=	gitlab-omniauth-openid-connect
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-addressable>=2.7<3.0:www/rubygem-addressable \
-		rubygem-omniauth>=1.9<2.0:security/rubygem-omniauth \
+		rubygem-omniauth1>=1.9<2.0:security/rubygem-omniauth1 \
 		rubygem-openid_connect>=1.2<2.0:net/rubygem-openid_connect
 
 USES=		gem
