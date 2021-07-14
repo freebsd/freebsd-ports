@@ -1,7 +1,7 @@
 PORTNAME=	sddm
 PORTVERSION=	0.19.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,7 +17,8 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/LICENSE
 LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LICENSE.CC-BY-3.0
 
 BUILD_DEPENDS=	rst2man.py-${PYTHON_VER}:textproc/py-docutils@${PY_FLAVOR}
-RUN_DEPENDS=	dbus-run-session:devel/dbus
+RUN_DEPENDS=	dbus-run-session:devel/dbus \
+		xauth:x11/xauth
 
 USES=		cmake compiler:c++11-lang kde:5 pkgconfig python:build qt:5 xorg
 USE_GITHUB=	yes
