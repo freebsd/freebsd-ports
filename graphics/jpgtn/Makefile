@@ -2,15 +2,15 @@
 
 PORTNAME=	jpgtn
 PORTVERSION=	2.06
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	SUNSITE/apps/graphics/misc
+MASTER_SITES=	SF SUNSITE/apps/graphics/misc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@fuz.su
 COMMENT=	Creates thumbnails of JPEG images
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: background
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: background
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		jpeg
 GNU_CONFIGURE=	yes
@@ -23,34 +23,13 @@ WITH_MAXSIZE?=	2048
 WITH_MINSIZE?=	1
 WITH_DEFSIZE?=	128
 
-pre-everything::
-	@${ECHO_MSG} "===>"
-	@${ECHO_MSG} "===> You can control program functionality by defining the following variables:"
-	@${ECHO_MSG} "===>"
-.if !defined(WITH_MAXSIZE)
-	@${ECHO_MSG} "===> Define WITH_MAXSIZE to set the maximum allowable thumbnail size"
-.endif
-.if !defined(WITH_MINSIZE)
-	@${ECHO_MSG} "===> Define WITH_MINSIZE to set the minimum allowable thumbnail size"
-.endif
-.if !defined(WITH_DEFSIZE)
-	@${ECHO_MSG} "===> Define WITH_DEFSIZE to set the default thumbnail size"
-.endif
-	@${ECHO_MSG} "===>"
-
 post-patch:
-.if defined(WITH_MAXSIZE)
 	@${ECHO_MSG} "Setting MAXSIZE to ${WITH_MAXSIZE}"
 	@${REINPLACE_CMD} "s/define MAXSIZE[[:blank:]]*2048/define MAXSIZE ${WITH_MAXSIZE}/" ${WRKSRC}/src/jpgtn.h
-.endif
-.if defined(WITH_MINSIZE)
 	@${ECHO_MSG} "Setting MINSIZE to ${WITH_MINSIZE}"
 	@${REINPLACE_CMD} "s/define MINSIZE[[:blank:]]*1/define MINSIZE ${WITH_MINSIZE}/" ${WRKSRC}/src/jpgtn.h
-.endif
-.if defined(WITH_DEFSIZE)
 	@${ECHO_MSG} "Setting DEFAULTSIZE to ${WITH_DEFSIZE}"
 	@${REINPLACE_CMD} "s/define DEFAULTSIZE[[:blank:]]*128/define DEFAULTSIZE ${WITH_DEFSIZE}/" ${WRKSRC}/src/jpgtn.h
-.endif
 	@${REINPLACE_CMD} "s/(2-2048) the size defaults to 128/(${WITH_MINSIZE}-${WITH_MAXSIZE}) the size defaults to ${WITH_DEFSIZE}/" \
 		${WRKSRC}/doc/jpgtn.1
 
