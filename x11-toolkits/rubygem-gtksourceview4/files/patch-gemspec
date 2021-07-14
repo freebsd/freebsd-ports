@@ -1,0 +1,10 @@
+--- gtksourceview4.gemspec.orig	2021-07-10 12:35:16 UTC
++++ gtksourceview4.gemspec
+@@ -13,7 +13,6 @@ Gem::Specification.new do |s|
+   s.date = "2021-04-22"
+   s.description = "Ruby/GtkSourceView4 is a Ruby binding of gtksourceview-4.x.".freeze
+   s.email = "ruby-gnome2-devel-en@lists.sourceforge.net".freeze
+-  s.extensions = ["dependency-check/Rakefile".freeze]
+   s.files = ["COPYING.LIB".freeze, "README.md".freeze, "Rakefile".freeze, "dependency-check/Rakefile".freeze, "gtksourceview4.gemspec".freeze, "lib/gtksourceview4.rb".freeze, "lib/gtksourceview4/deprecated.rb".freeze, "lib/gtksourceview4/loader.rb".freeze, "lib/gtksourceview4/mark-attributes.rb".freeze, "test/run-test.rb".freeze, "test/test-mark-attributes.rb".freeze, "test/test-source-gutter-renderer.rb".freeze, "test/test-source-language-manager.rb".freeze, "test/test-source-view.rb".freeze]
+   s.homepage = "https://ruby-gnome2.osdn.jp/".freeze
+   s.licenses = ["LGPL-2.1+".freeze]
