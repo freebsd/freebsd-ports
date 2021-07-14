@@ -9,19 +9,6 @@
  	github.com/mattn/go-sqlite3 v2.0.3+incompatible
  	github.com/nsf/jsondiff v0.0.0-20200515183724-f29ed568f4ce
  	github.com/nsf/termbox-go v0.0.0-20200418040025-38ba6e5628f1
---- go.sum.orig
-+++ go.sum
-@@ -313,8 +313,8 @@ github.com/lib/pq v1.3.0 h1:/qkRGz8zljWiDcFvgpwUpwIAPu3r07TDvs3Rws+o/pU=
- github.com/lib/pq v1.3.0/go.mod h1:5WUZQaWbwv1U+lTReE5YruASi9Al49XbQIvNi/34Woo=
- github.com/loov/hrtime v1.0.3 h1:LiWKU3B9skJwRPUf0Urs9+0+OE3TxdMuiRPOTwR0gcU=
- github.com/loov/hrtime v1.0.3/go.mod h1:yDY3Pwv2izeY4sq7YcPX/dtLwzg5NU1AxWuWxKwd0p0=
--github.com/lucas-clemente/quic-go v0.21.0 h1:ZdC8UBxUSBdPlEv1+4y4SqIBy54VA8bRxN7DmkQ0URs=
--github.com/lucas-clemente/quic-go v0.21.0/go.mod h1:BWkfkkOSJD1AxFNBqdjBZi6FznZ96bhdcvZiA+LDrY8=
-+github.com/lucas-clemente/quic-go v0.20.1 h1:hb5m76V8QS/8Nw/suHvXqo3BMHAozvIkcnzpJdpanSk=
-+github.com/lucas-clemente/quic-go v0.20.1/go.mod h1:fZq/HUDIM+mW6X6wtzORjC0E/WDBMKe5Hf9bgjISwLk=
- github.com/lunixbochs/vtclean v1.0.0/go.mod h1:pHhQNgMf3btfWnGBVipUOjRYhoOsdGqdm/+2c2E2WMI=
- github.com/magiconair/properties v1.8.1/go.mod h1:PppfXfuXeibc/6YijjN8zIbojt8czPbwD3XqdrwzmxQ=
- github.com/magiconair/properties v1.8.5 h1:b6kJs+EmPFMYGkow9GiUyCyOvIwYetYJ3fSaWak/Gls=
 --- private/quic/conn.go.orig
 +++ private/quic/conn.go
 @@ -97,7 +97,7 @@ func (c *Conn) ConnectionState() tls.ConnectionState {
