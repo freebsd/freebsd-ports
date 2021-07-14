@@ -27,10 +27,24 @@ load_rc_config $name
 : ${crowdsec_flags:=""}
 
 pidfile=/var/run/${name}.pid
+required_files="$crowdsec_config"
 command="%%PREFIX%%/bin/${name}"
 start_cmd="${name}_start"
+start_precmd="${name}_precmd"
 configtest_cmd="${name}_configtest"
 extra_commands="configtest reload"
+
+crowdsec_precmd() {
+    if [ ! -d %%PREFIX%%/etc/crowdsec/hub ]; then
+        %%PREFIX%%/bin/crowdsec-cli hub update || :
+    fi
+    if [ -z "`%%PREFIX%%/bin/crowdsec-cli machines list -o raw`" ]; then
+        %%PREFIX%%/bin/crowdsec-cli machines add --auto || :
+    fi
+    if [ ! -s %%PREFIX%%/etc/crowdsec/online_api_credentials.yaml ]; then
+        %%PREFIX%%/bin/crowdsec-cli capi register || :
+    fi
+}
 
 crowdsec_start()
 {
