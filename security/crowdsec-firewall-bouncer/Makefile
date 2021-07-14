@@ -1,5 +1,5 @@
 PORTNAME=	crowdsec-firewall-bouncer
-PORTVERSION=	0.0.12
+PORTVERSION=	0.0.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -19,21 +19,22 @@ GO_MODULE=	github.com/crowdsecurity/cs-firewall-bouncer
 
 GO_BUILDFLAGS=	-ldflags "-s -w \
 		-X github.com/crowdsecurity/cs-firewall-bouncer/pkg/version.Version=v${PORTVERSION} \
-		-X github.com/crowdsecurity/cs-firewall-bouncer/pkg/version.Tag=freebsd"
+		-X github.com/crowdsecurity/cs-firewall-bouncer/pkg/version.Tag=freebsd \
+		-X github.com/crowdsecurity/cs-firewall-bouncer/pkg/version.BuildDate=`date -u '+%Y-%m-%d_%I:%M:%S%p'`"
 
 SUB_FILES=	pkg-message
 
 post-patch:
 	${REINPLACE_CMD} 's,$${BACKEND},pf,g' \
-		${WRKSRC}/config/cs-firewall-bouncer.yaml
+		${WRKSRC}/config/crowdsec-firewall-bouncer.yaml
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 
-	${INSTALL_DATA} ${WRKSRC}/config/cs-firewall-bouncer.yaml \
-		${STAGEDIR}${ETCDIR}/cs-firewall-bouncer.yaml.sample
+	${INSTALL_DATA} ${WRKSRC}/config/crowdsec-firewall-bouncer.yaml \
+		${STAGEDIR}${ETCDIR}/crowdsec-firewall-bouncer.yaml.sample
 
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/crowdsec-firewall-bouncer \
-		${STAGEDIR}${PREFIX}/bin/cs-firewall-bouncer
+		${STAGEDIR}${PREFIX}/bin/crowdsec-firewall-bouncer
 
 .include <bsd.port.mk>

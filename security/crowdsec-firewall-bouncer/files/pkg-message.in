@@ -4,7 +4,7 @@
 
 crowdsec-firewall-bouncer is installed.
 
-You need to edit the config file %%ETCDIR%%/cs-firewall-bouncer.yaml, your pf
+You need to edit the config file %%ETCDIR%%/crowdsec-firewall-bouncer.yaml, your pf
 config and enable rc via sysrc.
 
 Add the following in pf.conf to create the tables
