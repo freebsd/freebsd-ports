@@ -10,7 +10,8 @@ COMMENT=	PEAR database abstraction layer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
 USES=		pear
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
