@@ -1374,6 +1374,7 @@
     SUBDIR += py-pyexcel-io
     SUBDIR += py-pyexcel-ods3
     SUBDIR += py-pyexcel-xls
+    SUBDIR += py-pyexcel-xlsx
     SUBDIR += py-pygccxml
     SUBDIR += py-pygments
     SUBDIR += py-pygments-25
