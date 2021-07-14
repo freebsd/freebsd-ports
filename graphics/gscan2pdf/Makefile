@@ -38,6 +38,7 @@ RUN_DEPENDS:=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
 		p5-Date-Calc>=6.4:devel/p5-Date-Calc \
 		p5-Config-General>=2.40:devel/p5-Config-General \
 		p5-Glib>=1.210:devel/p5-Glib \
+		p5-Locale-Codes>0:misc/p5-Locale-Codes \
 		p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
 		p5-Log-Log4perl>0:devel/p5-Log-Log4perl \
 		p5-Readonly>0:devel/p5-Readonly \
@@ -70,12 +71,6 @@ OCR_DESC=		Optical Character Recognition
 TESSERACT_DESC=		OCR engine developed at Google
 TESSERACT_RUN_DEPENDS=	tesseract:graphics/tesseract
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502902
-RUN_DEPENDS+=	p5-Locale-Codes>0:misc/p5-Locale-Codes
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$$sharedir/man|$$prefixdir/man| ; \
@@ -83,4 +78,4 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/bin/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
