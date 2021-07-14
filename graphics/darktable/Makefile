@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	uses 64-bit address space
 
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
-		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
+		${P5_POD_PARSER} \
 		po4a-translate:textproc/po4a \
 		xsltproc:textproc/libxslt \
 		bash:shells/bash
