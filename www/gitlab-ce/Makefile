@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	14.0.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -41,7 +41,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-doorkeeper-openid_connect>=1.7.5<1.8:security/rubygem-doorkeeper-openid_connect \
 	rubygem-rexml>=3.2.5<3.3:textproc/rubygem-rexml \
 	rubygem-ruby-saml>=1.12.1<1.13:security/rubygem-ruby-saml \
-	rubygem-omniauth>=1.8<2.0:security/rubygem-omniauth \
+	rubygem-omniauth1>=1.8<2.0:security/rubygem-omniauth1 \
 	rubygem-omniauth-auth0>=2.0.0<2.1.0:net/rubygem-omniauth-auth0 \
 	rubygem-omniauth-azure-activedirectory-v2>=0.1<1:net/rubygem-omniauth-azure-activedirectory-v2 \
 	rubygem-omniauth-azure-oauth2>=0.0.9<0.1.0:net/rubygem-omniauth-azure-oauth2 \
