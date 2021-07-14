@@ -29,7 +29,7 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	images *.css *.json
 
 post-patch:
-# Respect PREFIX for *.desktop
+# Respect PREFIX for button images
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/config/*.json \
 		${WRKSRC}/tools.go
