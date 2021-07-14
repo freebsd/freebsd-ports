@@ -17,11 +17,4 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 503000
-BUILD_DEPENDS+=	p5-Math-BigInt>=1.999813:math/p5-Math-BigInt
-RUN_DEPENDS+=	p5-Math-BigInt>=1.999813:math/p5-Math-BigInt
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
