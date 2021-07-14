@@ -1179,6 +1179,7 @@
     SUBDIR += recvnet
     SUBDIR += redir
     SUBDIR += relayd
+    SUBDIR += remarkable-devd
     SUBDIR += remmina
     SUBDIR += remotebox
     SUBDIR += remotedesk

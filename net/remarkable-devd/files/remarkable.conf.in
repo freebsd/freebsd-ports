@@ -1,0 +1,7 @@
+# Connect the Remarkable 1 device and get the IP address
+attach 100 {
+       device-name "urndis.+";
+       match "vendor"	"0x04b3";
+       match "product"	"0x4010";
+       action "%%PREFIX%%/etc/rc.d/remarkable start $device-name";
+};
