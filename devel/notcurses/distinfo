@@ -1,5 +1,5 @@
-TIMESTAMP = 1624527737
-SHA256 (notcurses-doc-2.3.6.tar.gz) = 063d2e133ca8e078dc1a7b80ad345f092932ad12dea873725d2d9f210003363f
-SIZE (notcurses-doc-2.3.6.tar.gz) = 124425
-SHA256 (dankamongmen-notcurses-v2.3.6_GH0.tar.gz) = 41848caddbea3de8b60d8ac8d5400163d972915391cfe340c37061f6cec11633
-SIZE (dankamongmen-notcurses-v2.3.6_GH0.tar.gz) = 11835854
+TIMESTAMP = 1626901489
+SHA256 (notcurses-doc-2.3.11.tar.gz) = fa6ec68c0943f2ed139b63643752329ab8d652592a7203156f49b1fe72d29e6b
+SIZE (notcurses-doc-2.3.11.tar.gz) = 128183
+SHA256 (dankamongmen-notcurses-v2.3.11_GH0.tar.gz) = 9cdd868c6546cf1c2cf800ed2a054139b7377527493cdc4b71aced860de0d670
+SIZE (dankamongmen-notcurses-v2.3.11_GH0.tar.gz) = 12175197
