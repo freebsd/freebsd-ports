@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	net-imap
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
