@@ -84,7 +84,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 # RUBY_PORT		- Port path of ruby without PORTSDIR.
 #
 # DEPEND_RUBY		- BUILD_DEPENDS/RUN_DEPENDS entry for ruby.
-# DEPEND_RUBY_RDOC	- BUILD_DEPENDS entry for rdoc.
 #
 # RUBY_LIBDIR		- Installation path for architecture independent
 #			  libraries.
