@@ -1,7 +1,7 @@
 # Created by: Cezary Morga <cm@therek.net>
 
 PORTNAME=	DateTime-Format-Flexible
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
