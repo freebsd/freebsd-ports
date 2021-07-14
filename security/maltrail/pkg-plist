@@ -134,7 +134,6 @@
 %%DATADIR%%/trails/feeds/ransomwaretrackerdns.py
 %%DATADIR%%/trails/feeds/ransomwaretrackerip.py
 %%DATADIR%%/trails/feeds/ransomwaretrackerurl.py
-%%DATADIR%%/trails/feeds/riproxies.py
 %%DATADIR%%/trails/feeds/rutgers.py
 %%DATADIR%%/trails/feeds/sblam.py
 %%DATADIR%%/trails/feeds/socksproxy.py
@@ -152,6 +151,7 @@
 %%DATADIR%%/trails/feeds/zeustrackerurl.py
 %%DATADIR%%/trails/static/__init__.py
 %%DATADIR%%/trails/static/malicious/alexus_spamtool.txt
+%%DATADIR%%/trails/static/malicious/android_hiddad.txt
 %%DATADIR%%/trails/static/malicious/bad_proxy.txt
 %%DATADIR%%/trails/static/malicious/bad_script.txt
 %%DATADIR%%/trails/static/malicious/bad_service.txt
@@ -183,6 +183,7 @@
 %%DATADIR%%/trails/static/malicious/katyabot.txt
 %%DATADIR%%/trails/static/malicious/magentocore.txt
 %%DATADIR%%/trails/static/malicious/modxcore.txt
+%%DATADIR%%/trails/static/malicious/mythic.txt
 %%DATADIR%%/trails/static/malicious/perfaudcore.txt
 %%DATADIR%%/trails/static/malicious/perswaysion.txt
 %%DATADIR%%/trails/static/malicious/pinnaclecore.txt
@@ -204,6 +205,7 @@
 %%DATADIR%%/trails/static/malware/404.txt
 %%DATADIR%%/trails/static/malware/44caliber.txt
 %%DATADIR%%/trails/static/malware/9002.txt
+%%DATADIR%%/trails/static/malware/a310.txt
 %%DATADIR%%/trails/static/malware/ab.txt
 %%DATADIR%%/trails/static/malware/aboc.txt
 %%DATADIR%%/trails/static/malware/absent.txt
@@ -276,6 +278,7 @@
 %%DATADIR%%/trails/static/malware/android_ewind.txt
 %%DATADIR%%/trails/static/malware/android_exodus.txt
 %%DATADIR%%/trails/static/malware/android_exprespam.txt
+%%DATADIR%%/trails/static/malware/android_facestealer.txt
 %%DATADIR%%/trails/static/malware/android_fakeapp.txt
 %%DATADIR%%/trails/static/malware/android_fakebanco.txt
 %%DATADIR%%/trails/static/malware/android_fakedown.txt
@@ -313,7 +316,6 @@
 %%DATADIR%%/trails/static/malware/android_gustuff.txt
 %%DATADIR%%/trails/static/malware/android_gypte.txt
 %%DATADIR%%/trails/static/malware/android_henbox.txt
-%%DATADIR%%/trails/static/malware/android_hiddad.txt
 %%DATADIR%%/trails/static/malware/android_hydra.txt
 %%DATADIR%%/trails/static/malware/android_ibanking.txt
 %%DATADIR%%/trails/static/malware/android_joker.txt
@@ -341,6 +343,7 @@
 %%DATADIR%%/trails/static/malware/android_phonespy.txt
 %%DATADIR%%/trails/static/malware/android_pikspam.txt
 %%DATADIR%%/trails/static/malware/android_pjapps.txt
+%%DATADIR%%/trails/static/malware/android_pjobrat.txt
 %%DATADIR%%/trails/static/malware/android_qdplugin.txt
 %%DATADIR%%/trails/static/malware/android_raddex.txt
 %%DATADIR%%/trails/static/malware/android_ransomware.txt
@@ -366,6 +369,7 @@
 %%DATADIR%%/trails/static/malware/android_stels.txt
 %%DATADIR%%/trails/static/malware/android_svpeng.txt
 %%DATADIR%%/trails/static/malware/android_swanalitics.txt
+%%DATADIR%%/trails/static/malware/android_teabot.txt
 %%DATADIR%%/trails/static/malware/android_teelog.txt
 %%DATADIR%%/trails/static/malware/android_telerat.txt
 %%DATADIR%%/trails/static/malware/android_tetus.txt
@@ -377,6 +381,7 @@
 %%DATADIR%%/trails/static/malware/android_usbcleaver.txt
 %%DATADIR%%/trails/static/malware/android_viceleaker.txt
 %%DATADIR%%/trails/static/malware/android_vmvol.txt
+%%DATADIR%%/trails/static/malware/android_vultur.txt
 %%DATADIR%%/trails/static/malware/android_walkinwat.txt
 %%DATADIR%%/trails/static/malware/android_windseeker.txt
 %%DATADIR%%/trails/static/malware/android_wirex.txt
@@ -450,6 +455,7 @@
 %%DATADIR%%/trails/static/malware/apt_evasivepanda.txt
 %%DATADIR%%/trails/static/malware/apt_ezq.txt
 %%DATADIR%%/trails/static/malware/apt_familiarfeeling.txt
+%%DATADIR%%/trails/static/malware/apt_ferociouskitten.txt
 %%DATADIR%%/trails/static/malware/apt_finfisher.txt
 %%DATADIR%%/trails/static/malware/apt_flame.txt
 %%DATADIR%%/trails/static/malware/apt_fruityarmor.txt
@@ -474,6 +480,7 @@
 %%DATADIR%%/trails/static/malware/apt_higaisa.txt
 %%DATADIR%%/trails/static/malware/apt_hogfish.txt
 %%DATADIR%%/trails/static/malware/apt_icefog.txt
+%%DATADIR%%/trails/static/malware/apt_indigozebra.txt
 %%DATADIR%%/trails/static/malware/apt_infy.txt
 %%DATADIR%%/trails/static/malware/apt_innaput.txt
 %%DATADIR%%/trails/static/malware/apt_irn2.txt
@@ -515,6 +522,7 @@
 %%DATADIR%%/trails/static/malware/apt_rancor.txt
 %%DATADIR%%/trails/static/malware/apt_reaper.txt
 %%DATADIR%%/trails/static/malware/apt_redbaldknight.txt
+%%DATADIR%%/trails/static/malware/apt_redfoxtrot.txt
 %%DATADIR%%/trails/static/malware/apt_redoctober.txt
 %%DATADIR%%/trails/static/malware/apt_rnexus.txt
 %%DATADIR%%/trails/static/malware/apt_rocketman.txt
@@ -527,6 +535,7 @@
 %%DATADIR%%/trails/static/malware/apt_scieron.txt
 %%DATADIR%%/trails/static/malware/apt_sectora05.txt
 %%DATADIR%%/trails/static/malware/apt_shamoon.txt
+%%DATADIR%%/trails/static/malware/apt_sharppanda.txt
 %%DATADIR%%/trails/static/malware/apt_shiqiang.txt
 %%DATADIR%%/trails/static/malware/apt_sidewinder.txt
 %%DATADIR%%/trails/static/malware/apt_silence.txt
@@ -559,6 +568,7 @@
 %%DATADIR%%/trails/static/malware/apt_unc1151.txt
 %%DATADIR%%/trails/static/malware/apt_unc2447.txt
 %%DATADIR%%/trails/static/malware/apt_unc2452.txt
+%%DATADIR%%/trails/static/malware/apt_unc2465.txt
 %%DATADIR%%/trails/static/malware/apt_unc2529.txt
 %%DATADIR%%/trails/static/malware/apt_unclassified.txt
 %%DATADIR%%/trails/static/malware/apt_viciouspanda.txt
@@ -690,10 +700,12 @@
 %%DATADIR%%/trails/static/malware/chasebot.txt
 %%DATADIR%%/trails/static/malware/cheshire.txt
 %%DATADIR%%/trails/static/malware/chewbacca.txt
+%%DATADIR%%/trails/static/malware/chimerabot.txt
 %%DATADIR%%/trails/static/malware/chinachopper.txt
 %%DATADIR%%/trails/static/malware/chinoxy.txt
 %%DATADIR%%/trails/static/malware/chisbur.txt
 %%DATADIR%%/trails/static/malware/chthonic.txt
+%%DATADIR%%/trails/static/malware/ciadoor.txt
 %%DATADIR%%/trails/static/malware/cinobi.txt
 %%DATADIR%%/trails/static/malware/cirenegrat.txt
 %%DATADIR%%/trails/static/malware/clientmeshrat.txt
@@ -714,6 +726,7 @@
 %%DATADIR%%/trails/static/malware/corebot.txt
 %%DATADIR%%/trails/static/malware/cotxrat.txt
 %%DATADIR%%/trails/static/malware/couponarific.txt
+%%DATADIR%%/trails/static/malware/crackonosh.txt
 %%DATADIR%%/trails/static/malware/crapsomware.txt
 %%DATADIR%%/trails/static/malware/criakl.txt
 %%DATADIR%%/trails/static/malware/cridex.txt
@@ -746,6 +759,7 @@
 %%DATADIR%%/trails/static/malware/darkcrystalrat.txt
 %%DATADIR%%/trails/static/malware/darkgate.txt
 %%DATADIR%%/trails/static/malware/darkirc.txt
+%%DATADIR%%/trails/static/malware/darkmoon.txt
 %%DATADIR%%/trails/static/malware/darkrat.txt
 %%DATADIR%%/trails/static/malware/darkshell.txt
 %%DATADIR%%/trails/static/malware/darkside.txt
@@ -767,6 +781,7 @@
 %%DATADIR%%/trails/static/malware/dexter.txt
 %%DATADIR%%/trails/static/malware/dharma.txt
 %%DATADIR%%/trails/static/malware/diamondfoxrat.txt
+%%DATADIR%%/trails/static/malware/diavol.txt
 %%DATADIR%%/trails/static/malware/dimnie.txt
 %%DATADIR%%/trails/static/malware/dircrypt.txt
 %%DATADIR%%/trails/static/malware/dirtjump.txt
@@ -800,6 +815,7 @@
 %%DATADIR%%/trails/static/malware/egregor.txt
 %%DATADIR%%/trails/static/malware/electrorat.txt
 %%DATADIR%%/trails/static/malware/elf_aidra.txt
+%%DATADIR%%/trails/static/malware/elf_amcsh.txt
 %%DATADIR%%/trails/static/malware/elf_amnesiark.txt
 %%DATADIR%%/trails/static/malware/elf_asnarok.txt
 %%DATADIR%%/trails/static/malware/elf_bigviktor.txt
@@ -809,6 +825,7 @@
 %%DATADIR%%/trails/static/malware/elf_chalubo.txt
 %%DATADIR%%/trails/static/malware/elf_chinaz.txt
 %%DATADIR%%/trails/static/malware/elf_coinminer.txt
+%%DATADIR%%/trails/static/malware/elf_darkradiation.txt
 %%DATADIR%%/trails/static/malware/elf_darlloz.txt
 %%DATADIR%%/trails/static/malware/elf_ddosman.txt
 %%DATADIR%%/trails/static/malware/elf_dofloo.txt
@@ -816,6 +833,7 @@
 %%DATADIR%%/trails/static/malware/elf_ekoms.txt
 %%DATADIR%%/trails/static/malware/elf_emptiness.txt
 %%DATADIR%%/trails/static/malware/elf_evilgnome.txt
+%%DATADIR%%/trails/static/malware/elf_facefish.txt
 %%DATADIR%%/trails/static/malware/elf_freakout.txt
 %%DATADIR%%/trails/static/malware/elf_gafgyt.txt
 %%DATADIR%%/trails/static/malware/elf_generic.txt
@@ -849,6 +867,7 @@
 %%DATADIR%%/trails/static/malware/elf_patpooty.txt
 %%DATADIR%%/trails/static/malware/elf_pinscan.txt
 %%DATADIR%%/trails/static/malware/elf_powerghost.txt
+%%DATADIR%%/trails/static/malware/elf_prism.txt
 %%DATADIR%%/trails/static/malware/elf_qbot.txt
 %%DATADIR%%/trails/static/malware/elf_ransomware.txt
 %%DATADIR%%/trails/static/malware/elf_redxor.txt
@@ -859,6 +878,7 @@
 %%DATADIR%%/trails/static/malware/elf_skidmap.txt
 %%DATADIR%%/trails/static/malware/elf_slexec.txt
 %%DATADIR%%/trails/static/malware/elf_speakup.txt
+%%DATADIR%%/trails/static/malware/elf_specter.txt
 %%DATADIR%%/trails/static/malware/elf_sshdoor.txt
 %%DATADIR%%/trails/static/malware/elf_sshscan.txt
 %%DATADIR%%/trails/static/malware/elf_teamtnt.txt
@@ -933,6 +953,7 @@
 %%DATADIR%%/trails/static/malware/gauss.txt
 %%DATADIR%%/trails/static/malware/gbot.txt
 %%DATADIR%%/trails/static/malware/gehenna.txt
+%%DATADIR%%/trails/static/malware/gelsemium.txt
 %%DATADIR%%/trails/static/malware/generic.txt
 %%DATADIR%%/trails/static/malware/generic_miner.txt
 %%DATADIR%%/trails/static/malware/germanwiper.txt
@@ -986,6 +1007,7 @@
 %%DATADIR%%/trails/static/malware/hiddentear.txt
 %%DATADIR%%/trails/static/malware/hiloti.txt
 %%DATADIR%%/trails/static/malware/hinired.txt
+%%DATADIR%%/trails/static/malware/hive_ransomware.txt
 %%DATADIR%%/trails/static/malware/hiverat.txt
 %%DATADIR%%/trails/static/malware/hollow_miner.txt
 %%DATADIR%%/trails/static/malware/honeybee.txt
@@ -1000,6 +1022,7 @@
 %%DATADIR%%/trails/static/malware/imddos.txt
 %%DATADIR%%/trails/static/malware/imminentrat.txt
 %%DATADIR%%/trails/static/malware/immortal.txt
+%%DATADIR%%/trails/static/malware/indexsinas.txt
 %%DATADIR%%/trails/static/malware/indone_miner.txt
 %%DATADIR%%/trails/static/malware/infinityrat.txt
 %%DATADIR%%/trails/static/malware/injecto.txt
@@ -1031,8 +1054,8 @@
 %%DATADIR%%/trails/static/malware/jigsaw.txt
 %%DATADIR%%/trails/static/malware/jrat.txt
 %%DATADIR%%/trails/static/malware/jripbot.txt
+%%DATADIR%%/trails/static/malware/jshellrat.txt
 %%DATADIR%%/trails/static/malware/jsoutprox.txt
-%%DATADIR%%/trails/static/malware/jssloader.txt
 %%DATADIR%%/trails/static/malware/jupyter.txt
 %%DATADIR%%/trails/static/malware/kapahyku.txt
 %%DATADIR%%/trails/static/malware/karkoff.txt
@@ -1045,10 +1068,12 @@
 %%DATADIR%%/trails/static/malware/kernelbot.txt
 %%DATADIR%%/trails/static/malware/keybase.txt
 %%DATADIR%%/trails/static/malware/khrat.txt
+%%DATADIR%%/trails/static/malware/kief.txt
 %%DATADIR%%/trails/static/malware/killrabbit.txt
 %%DATADIR%%/trails/static/malware/killua.txt
 %%DATADIR%%/trails/static/malware/kingslayer.txt
 %%DATADIR%%/trails/static/malware/kjw0rm.txt
+%%DATADIR%%/trails/static/malware/klingon.txt
 %%DATADIR%%/trails/static/malware/koadic.txt
 %%DATADIR%%/trails/static/malware/kolab.txt
 %%DATADIR%%/trails/static/malware/konni.txt
@@ -1072,6 +1097,7 @@
 %%DATADIR%%/trails/static/malware/l0rdix.txt
 %%DATADIR%%/trails/static/malware/ladon.txt
 %%DATADIR%%/trails/static/malware/lampion.txt
+%%DATADIR%%/trails/static/malware/lanfiltrator.txt
 %%DATADIR%%/trails/static/malware/latentbot.txt
 %%DATADIR%%/trails/static/malware/latot.txt
 %%DATADIR%%/trails/static/malware/lazagne.txt
@@ -1094,8 +1120,10 @@
 %%DATADIR%%/trails/static/malware/lollipop.txt
 %%DATADIR%%/trails/static/malware/loocipher.txt
 %%DATADIR%%/trails/static/malware/loopbackrat.txt
+%%DATADIR%%/trails/static/malware/lorenz.txt
 %%DATADIR%%/trails/static/malware/lostdoorrat.txt
 %%DATADIR%%/trails/static/malware/loud_miner.txt
+%%DATADIR%%/trails/static/malware/lu0bot.txt
 %%DATADIR%%/trails/static/malware/lucifer.txt
 %%DATADIR%%/trails/static/malware/lucky.txt
 %%DATADIR%%/trails/static/malware/luminositylinkrat.txt
@@ -1120,6 +1148,7 @@
 %%DATADIR%%/trails/static/malware/mass_miner.txt
 %%DATADIR%%/trails/static/malware/masslogger.txt
 %%DATADIR%%/trails/static/malware/mastermana.txt
+%%DATADIR%%/trails/static/malware/matanbuchus.txt
 %%DATADIR%%/trails/static/malware/matrix.txt
 %%DATADIR%%/trails/static/malware/matsnu.txt
 %%DATADIR%%/trails/static/malware/maze.txt
@@ -1140,6 +1169,7 @@
 %%DATADIR%%/trails/static/malware/metamorfo.txt
 %%DATADIR%%/trails/static/malware/mewsei.txt
 %%DATADIR%%/trails/static/malware/midie.txt
+%%DATADIR%%/trails/static/malware/mielit.txt
 %%DATADIR%%/trails/static/malware/milkman.txt
 %%DATADIR%%/trails/static/malware/milkyboy.txt
 %%DATADIR%%/trails/static/malware/millionware.txt
@@ -1152,6 +1182,7 @@
 %%DATADIR%%/trails/static/malware/mist.txt
 %%DATADIR%%/trails/static/malware/mitglieder.txt
 %%DATADIR%%/trails/static/malware/miuref.txt
+%%DATADIR%%/trails/static/malware/mnubot.txt
 %%DATADIR%%/trails/static/malware/mocker.txt
 %%DATADIR%%/trails/static/malware/modirat.txt
 %%DATADIR%%/trails/static/malware/modpipe.txt
@@ -1177,6 +1208,7 @@
 %%DATADIR%%/trails/static/malware/nanocore.txt
 %%DATADIR%%/trails/static/malware/napolar.txt
 %%DATADIR%%/trails/static/malware/nbot.txt
+%%DATADIR%%/trails/static/malware/necrobot.txt
 %%DATADIR%%/trails/static/malware/necurs.txt
 %%DATADIR%%/trails/static/malware/neko.txt
 %%DATADIR%%/trails/static/malware/nemeot.txt
@@ -1221,6 +1253,7 @@
 %%DATADIR%%/trails/static/malware/obliquerat.txt
 %%DATADIR%%/trails/static/malware/octopus.txt
 %%DATADIR%%/trails/static/malware/odcodc.txt
+%%DATADIR%%/trails/static/malware/oddball.txt
 %%DATADIR%%/trails/static/malware/odyssey.txt
 %%DATADIR%%/trails/static/malware/oficla.txt
 %%DATADIR%%/trails/static/malware/onkods.txt
@@ -1254,6 +1287,7 @@
 %%DATADIR%%/trails/static/malware/osx_wirelurker.txt
 %%DATADIR%%/trails/static/malware/osx_xcodespy.txt
 %%DATADIR%%/trails/static/malware/osx_xcsset.txt
+%%DATADIR%%/trails/static/malware/ovidiy.txt
 %%DATADIR%%/trails/static/malware/padcrypt.txt
 %%DATADIR%%/trails/static/malware/palevo.txt
 %%DATADIR%%/trails/static/malware/palmerworm.txt
@@ -1322,11 +1356,13 @@
 %%DATADIR%%/trails/static/malware/purplefox.txt
 %%DATADIR%%/trails/static/malware/purplewave.txt
 %%DATADIR%%/trails/static/malware/pushdo.txt
+%%DATADIR%%/trails/static/malware/puzzlemaker.txt
 %%DATADIR%%/trails/static/malware/pykspa.txt
 %%DATADIR%%/trails/static/malware/pyleet.txt
 %%DATADIR%%/trails/static/malware/pylocky.txt
 %%DATADIR%%/trails/static/malware/pypi_backdoor.txt
 %%DATADIR%%/trails/static/malware/pyrogenic.txt
+%%DATADIR%%/trails/static/malware/pysa_ransomware.txt
 %%DATADIR%%/trails/static/malware/python_brost.txt
 %%DATADIR%%/trails/static/malware/python_injector.txt
 %%DATADIR%%/trails/static/malware/python_xwo.txt
@@ -1359,6 +1395,7 @@
 %%DATADIR%%/trails/static/malware/razy.txt
 %%DATADIR%%/trails/static/malware/reactorbot.txt
 %%DATADIR%%/trails/static/malware/reaver.txt
+%%DATADIR%%/trails/static/malware/reddot_ransomware.txt
 %%DATADIR%%/trails/static/malware/rediswannamine.txt
 %%DATADIR%%/trails/static/malware/redline.txt
 %%DATADIR%%/trails/static/malware/redsip.txt
@@ -1517,6 +1554,7 @@
 %%DATADIR%%/trails/static/malware/sombrat.txt
 %%DATADIR%%/trails/static/malware/sonoko.txt
 %%DATADIR%%/trails/static/malware/sorano.txt
+%%DATADIR%%/trails/static/malware/sorena.txt
 %%DATADIR%%/trails/static/malware/specter.txt
 %%DATADIR%%/trails/static/malware/spideybot.txt
 %%DATADIR%%/trails/static/malware/spybotpos.txt
@@ -1525,6 +1563,7 @@
 %%DATADIR%%/trails/static/malware/stabuniq.txt
 %%DATADIR%%/trails/static/malware/stantinko.txt
 %%DATADIR%%/trails/static/malware/stealzilla.txt
+%%DATADIR%%/trails/static/malware/stely.txt
 %%DATADIR%%/trails/static/malware/stop_ransomware.txt
 %%DATADIR%%/trails/static/malware/strictor.txt
 %%DATADIR%%/trails/static/malware/strrat.txt
@@ -1639,6 +1678,7 @@
 %%DATADIR%%/trails/static/malware/weecnaw.txt
 %%DATADIR%%/trails/static/malware/westeal.txt
 %%DATADIR%%/trails/static/malware/whiteshadow.txt
+%%DATADIR%%/trails/static/malware/wickrme.txt
 %%DATADIR%%/trails/static/malware/wildfire.txt
 %%DATADIR%%/trails/static/malware/wildpressure.txt
 %%DATADIR%%/trails/static/malware/winnti.txt
@@ -1671,6 +1711,7 @@
 %%DATADIR%%/trails/static/malware/zeroaccess.txt
 %%DATADIR%%/trails/static/malware/zeropadypt.txt
 %%DATADIR%%/trails/static/malware/zeus.txt
+%%DATADIR%%/trails/static/malware/zgrat.txt
 %%DATADIR%%/trails/static/malware/zherotee.txt
 %%DATADIR%%/trails/static/malware/zlader.txt
 %%DATADIR%%/trails/static/malware/zloader.txt
