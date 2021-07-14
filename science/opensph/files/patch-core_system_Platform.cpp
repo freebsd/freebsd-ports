@@ -1,5 +1,5 @@
---- lib/system/Platform.cpp.orig	2021-04-08 21:23:28 UTC
-+++ lib/system/Platform.cpp
+--- core/system/Platform.cpp.orig	2021-04-08 21:23:28 UTC
++++ core/system/Platform.cpp
 @@ -14,7 +14,11 @@ NAMESPACE_SPH_BEGIN
  
  Expected<Path> getExecutablePath() {
