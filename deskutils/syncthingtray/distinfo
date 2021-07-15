@@ -1,9 +1,9 @@
-TIMESTAMP = 1618192488
-SHA256 (Martchus-syncthingtray-v1.1.5_GH0.tar.gz) = cc8909020bbfb8fbd1fd902c87f3c1d7aeac43588d6bb3fb0ed78c82ca74b315
-SIZE (Martchus-syncthingtray-v1.1.5_GH0.tar.gz) = 1554686
-SHA256 (Martchus-cpp-utilities-v5.10.2_GH0.tar.gz) = 65c34689a2d88dc0f7bb70e5bd5a0128ee6e97746504d10239d9e6820a835d54
-SIZE (Martchus-cpp-utilities-v5.10.2_GH0.tar.gz) = 166073
-SHA256 (Martchus-qtutilities-v6.4.0_GH0.tar.gz) = c6c06a4e6648529e34e7f9bd12058d74b5e28ad755f99213dfd7d551b630ed70
-SIZE (Martchus-qtutilities-v6.4.0_GH0.tar.gz) = 109549
+TIMESTAMP = 1626355716
+SHA256 (Martchus-syncthingtray-v1.1.8_GH0.tar.gz) = 82a3ca453dd74bd2d73b49a5288eb52683ce26fbc7d4a2f6445aa57df6dc2f35
+SIZE (Martchus-syncthingtray-v1.1.8_GH0.tar.gz) = 1563970
+SHA256 (Martchus-cpp-utilities-v5.10.5_GH0.tar.gz) = 36005e493e0db4605f3270d6b7ccb3ee4b42da7a70636b00f914425ec9fe3ec6
+SIZE (Martchus-cpp-utilities-v5.10.5_GH0.tar.gz) = 168627
+SHA256 (Martchus-qtutilities-v6.4.2_GH0.tar.gz) = a09decbde9ddbeefe09b4c3febeea4cbadaf5eb0da1533acd9c03eb046b75026
+SIZE (Martchus-qtutilities-v6.4.2_GH0.tar.gz) = 109593
 SHA256 (Martchus-subdirs-f3b12f9_GH0.tar.gz) = b4879e20a46ea6b24558264dbd9f20072de94fa32b71b4d60e0d39523aae769f
 SIZE (Martchus-subdirs-f3b12f9_GH0.tar.gz) = 8834
