@@ -23,7 +23,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Limited scope: no old drivers and no software rendering. \
 			See also https://mesamatrix.net/
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
+BUILD_DEPENDS=	libglvnd>=1.3.2:graphics/libglvnd \
+		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libexpat.so:textproc/expat2
 .if !exists(/usr/lib/libelf.so)
@@ -41,6 +42,7 @@ MESON_ARGS=	-Dgallium-omx=disabled \
 		-Dgallium-opencl=disabled \
 		-Dgallium-xa=disabled \
 		-Dgallium-xvmc=disabled \
+		-Dglvnd=true \
 		-Dplatforms=${PLATFORMS:O:[-1..1]:ts,} \
 		${BINARY_ALIAS:D--native-file=binary_alias.ini} \
 		${NULL}
@@ -64,7 +66,6 @@ OPTIONS_EXCLUDE+=	${ARCH:Namd64:Ni386:Nx86_64:C/.+/anv crocus i965 iris/}
 OPTIONS_EXCLUDE+=	${ARCH:Naarch64:Namd64:Ni386:Npowerpc64:Npowerpc64le:Nx86_64:C/.+/LIBUNWIND/}
 OPTIONS_EXCLUDE+=	${"${GL_DEFAULT:S/,/ /g:[-1]}"==${.CURDIR:T}:?COINST:}
 OPTIONS_SLAVE+=		${"${GL_DEFAULT:S/,/ /g:[-1]}"!=${.CURDIR:T}:?COINST:}
-OPTIONS_SLAVE+=		GLVND
 OPTIONS_SUB=		yes
 
 # Convert options to -D<type>-drivers=<driver1,driver2,etc>
@@ -95,10 +96,6 @@ COINST_PLIST_SUB=	SUFFIX=${PKGNAMESUFFIX}
 COINST_SUB_FILES=	libmap.conf
 COINST_SUB_LIST=	SUFFIX=${PKGNAMESUFFIX}
 COINST_PLIST_SUB_OFF=	SUFFIX=
-
-GLVND_DESC=		GL Vendor-Neutral Dispatch support
-GLVND_BUILD_DEPENDS=	libglvnd>=1.3.2:graphics/libglvnd
-GLVND_MESON_TRUE=	glvnd
 
 LIBUNWIND_DESC=		Use libunwind for stacktraces
 LIBUNWIND_LIB_DEPENDS=	libunwind.so:devel/libunwind
