@@ -1,13 +1,18 @@
 # Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 
 PORTNAME=	Cache_Lite
-PORTVERSION=	1.7.16
+PORTVERSION=	1.8.3
 PORTEPOCH=	1
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	PEAR fast and safe little cache system
+COMMENT=	Fast and Safe little cache system
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		pear
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
