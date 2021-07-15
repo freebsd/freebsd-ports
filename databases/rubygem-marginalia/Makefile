@@ -1,8 +1,7 @@
 # Created by Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	marginalia
-PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTVERSION=	1.10.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
