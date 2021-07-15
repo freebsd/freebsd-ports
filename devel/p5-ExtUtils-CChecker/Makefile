@@ -1,8 +1,7 @@
 # Created by: Sahil Tandon <sahil@tandon.net>
 
 PORTNAME=	ExtUtils-CChecker
-PORTVERSION=	0.10
-PORTREVISION=	1
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +13,10 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Module-Build>=0:devel/p5-Module-Build
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 NO_ARCH=	yes
 
