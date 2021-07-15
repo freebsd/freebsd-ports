@@ -1,6 +1,6 @@
 PORTNAME=	powerdevil
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		cmake compiler:c++11-lib cpe gettext kde:5 pkgconfig qt:5 tar:xz xorg
 USE_KDE=	activities auth bookmarks codecs completion configwidgets \
 		coreaddons crash config dbusaddons emoticons globalaccel \
 		guiaddons i18n idletime iconthemes init itemmodels itemviews \
-		jobwidgets kdelibs4support kio libkscreen notifications \
+		jobwidgets kio libkscreen notifications \
 		notifyconfig parts plasma-workspace service solid sonnet \
 		textwidgets unitconversion wayland widgetsaddons windowsystem \
 		xmlgui \
