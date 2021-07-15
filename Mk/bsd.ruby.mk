@@ -37,7 +37,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 #			  build.
 # RUBY_SETUP		- Set to the alternative name of setup.rb
 #			  (default: setup.rb).
-# USE_RUBY_RDOC		- Says that the port uses rdoc to generate documents.
 # RUBY_REQUIRE		- Set to a Ruby expression to evaluate before building
 #			  the port.  The constant "Ruby" is set to the integer
 #			  version number of ruby, and the result of the
@@ -293,10 +292,6 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY26=${RUBY26} \
 			RUBY27=${RUBY27} \
 			RUBY30=${RUBY30}
-
-.if defined(USE_RUBY_RDOC)
-MAKE_ENV+=	RUBY_RDOC=${RUBY_RDOC}
-.endif
 
 # require check
 .if defined(RUBY_REQUIRE)
