@@ -40,7 +40,8 @@ USE_XORG=	x11 xext xfixes xscrnsaver
 USE_GNOME=	glib20
 USE_QT=		concurrent core dbus declarative gui multimedia network \
 		script scripttools sql webkit widgets x11extras \
-		xml xmlpatterns buildtools_build linguisttools_build \
+		xml xmlpatterns \
+		buildtools_build linguisttools_build testlib_build \
 		qmake_build imageformats_run sql-sqlite3_run
 # Setting KADU_VERSION disables git invocation
 CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON \
