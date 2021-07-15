@@ -1,7 +1,6 @@
 PORTNAME=	ruqola
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
-PORTREVISION=	2
+DISTVERSION=	1.4.1
 CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,15 +16,15 @@ USES=		cmake compiler:c++11-lang gnome kde:5 localbase:ldflags qt:5
 USE_GNOME=	glib20
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons i18n iconthemes itemviews jobwidgets kio kirigami2 \
-		notifications notifyconfig service sonnet syntaxhighlighting \
+		notifications notifyconfig service solid sonnet syntaxhighlighting \
 		textwidgets widgetsaddons windowsystem xmlgui \
 		doctools_build ecm_build
 USE_QT=		concurrent core dbus declarative declarative gui multimedia \
 		network networkauth speech xml websockets widgets \
 		buildtools_build qmake_build testlib_build
 
-KDE_INVENT=	9a770478085e737b291db2b50fe76a9b7704cd7d network
+KDE_INVENT=	e90f37a7a3d63f4c1bb8be83e438054f6addf606 network
 
-PLIST_SUB=	SO_VER=${DISTVERSION} 
+PLIST_SUB=	SO_VER=${DISTVERSION}
 
 .include <bsd.port.mk>
