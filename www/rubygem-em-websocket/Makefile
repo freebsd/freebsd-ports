@@ -2,6 +2,7 @@
 
 PORTNAME=	em-websocket
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
 RUN_DEPENDS=	rubygem-eventmachine>=0.12.9:devel/rubygem-eventmachine \
-		rubygem-http_parser.rb>=0.6.0<0.7:net/rubygem-http_parser.rb
+		rubygem-http_parser.rb>=0.6.0<1:net/rubygem-http_parser.rb
 
 USES=		gem
 USE_RUBY=	yes
