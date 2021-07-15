@@ -1,7 +1,7 @@
 bin/retroshare
 bin/retroshare-nogui
 lib/retroshare/extensions6/libFeedReader.so
-lib/retroshare/extensions6/libVOIP.so
+%%VOIP%%lib/retroshare/extensions6/libVOIP.so
 %%DATADIR%%/bdboot.txt
 %%DATADIR%%/qss/blacknight.qss
 %%DATADIR%%/qss/blacknight/check_sel.png
@@ -434,10 +434,10 @@ lib/retroshare/extensions6/libVOIP.so
 %%DATADIR%%/stylesheets/Bubble_Compact/private/system.htm
 %%DATADIR%%/stylesheets/Bubble_Compact/private/variants/color.css
 %%DATADIR%%/stylesheets/Bubble_Compact/private/variants/standard.css
-%%DATADIR%%/webui/app.css
-%%DATADIR%%/webui/app.js
-%%DATADIR%%/webui/img/logo_splash.png
-%%DATADIR%%/webui/index.html
+%%WEBUI%%%%DATADIR%%/webui/app.css
+%%WEBUI%%%%DATADIR%%/webui/app.js
+%%WEBUI%%%%DATADIR%%/webui/img/logo_splash.png
+%%WEBUI%%%%DATADIR%%/webui/index.html
 share/applications/retroshare.desktop
 share/icons/hicolor/128x128/apps/retroshare.png
 share/icons/hicolor/24x24/apps/retroshare.png
