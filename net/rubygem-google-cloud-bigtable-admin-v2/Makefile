@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-cloud-bigtable-admin-v2
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
