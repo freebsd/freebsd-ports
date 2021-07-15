@@ -1,9 +1,9 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	folium
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -22,5 +22,8 @@ USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+GH_ACCOUNT=	python-visualization
+USE_GITHUB=	yes
 
 .include <bsd.port.mk>
