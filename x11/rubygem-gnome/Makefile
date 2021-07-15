@@ -1,10 +1,10 @@
 PORTNAME=	gnome
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.5
 CATEGORIES=	x11 gnome rubygems
 PKGNAMEPREFIX=	rubygem-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Meta port for gems of Ruby-GNOME2 project
+COMMENT=	Meta port for gems of Ruby-GNOME project
 
 LICENSE=	LGPL21+
 
