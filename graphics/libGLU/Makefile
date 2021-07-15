@@ -11,12 +11,11 @@ DISTNAME=	glu-${PORTVERSION}
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL utility library
 
-USES=		gl libtool meson pathfix pkgconfig tar:xz
+USES=		gl meson pkgconfig tar:xz
 
 USE_GL=		opengl
 USE_LDCONFIG=	yes
 
-INSTALL_TARGET=	install-strip
 MESON_ARGS=	-Ddefault_library=shared
 
 .include <bsd.port.mk>
