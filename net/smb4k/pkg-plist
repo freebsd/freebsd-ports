@@ -1,8 +1,6 @@
 bin/smb4k
 lib/libexec/kauth/mounthelper
 lib/libsmb4kcore.so
-lib/libsmb4kcore.so.6
-lib/libsmb4kcore.so.6.0.0
 %%QT_PLUGINDIR%%/smb4kconfigdialog.so
 %%QT_QMLDIR%%/org/kde/smb4k/smb4kqmlplugin/libsmb4kqmlplugin.so
 %%QT_QMLDIR%%/org/kde/smb4k/smb4kqmlplugin/qmldir
