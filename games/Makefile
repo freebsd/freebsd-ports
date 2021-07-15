@@ -769,6 +769,7 @@
     SUBDIR += pushover
     SUBDIR += pvpgn
     SUBDIR += py-cbeams
+    SUBDIR += py-discord.py
     SUBDIR += py-fife
     SUBDIR += py-mnemosyne
     SUBDIR += py-pychess

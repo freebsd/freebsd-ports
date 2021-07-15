@@ -1,0 +1,19 @@
+PORTNAME=	discord.py
+PORTVERSION=	1.7.3
+CATEGORIES=	games python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	nc@FreeBSD.org
+COMMENT=	API wrapper for Discord written in Python
+
+LICENSE=	MIT
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR}
+
+USES=		python:3.8+
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>
