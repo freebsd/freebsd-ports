@@ -52,8 +52,8 @@ GCC_DEFAULT?=		8
 .else
 GCC_DEFAULT?=		10
 .endif
-# Possible values (tuple): libglvnd, mesa-libs, mesa-devel
-GL_DEFAULT?=		libglvnd,mesa-libs
+# Possible values: mesa-libs, mesa-devel
+GL_DEFAULT?=		mesa-libs
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
 # Possible values: 6, 6-nox11, 7, 7-nox11

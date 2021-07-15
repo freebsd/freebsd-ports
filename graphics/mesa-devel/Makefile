@@ -63,9 +63,8 @@ OPTIONS_EXCLUDE_powerpc64=	${"${/usr/bin/ld:L:tA}"==/usr/bin/ld.lld:?LTO:} # LLV
 OPTIONS_EXCLUDE+=	${ARCH:Namd64:Ni386:Nx86_64:C/.+/anv crocus i965 iris/}
 OPTIONS_EXCLUDE+=	${ARCH:Naarch64:Namd64:Ni386:Npowerpc64:Npowerpc64le:Nx86_64:C/.+/LIBUNWIND/}
 OPTIONS_EXCLUDE+=	${"${GL_DEFAULT:S/,/ /g:[-1]}"==${.CURDIR:T}:?COINST:}
-OPTIONS_EXCLUDE+=	${"${GL_DEFAULT:S/,/ /g:[1]}"!=libglvnd:?GLVND:}
 OPTIONS_SLAVE+=		${"${GL_DEFAULT:S/,/ /g:[-1]}"!=${.CURDIR:T}:?COINST:}
-OPTIONS_SLAVE+=		${"${GL_DEFAULT:S/,/ /g:[1]}"==libglvnd:?GLVND:}
+OPTIONS_SLAVE+=		GLVND
 OPTIONS_SUB=		yes
 
 # Convert options to -D<type>-drivers=<driver1,driver2,etc>
