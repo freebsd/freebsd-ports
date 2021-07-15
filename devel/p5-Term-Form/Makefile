@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Term-Form
-PORTVERSION=	0.535
+PORTVERSION=	0.537
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Term-Choose>=1.733:devel/p5-Term-Choose \
+RUN_DEPENDS=	p5-Term-Choose>=1.734:devel/p5-Term-Choose \
 		p5-Term-Choose-Util>=0.125:devel/p5-Term-Choose-Util
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
