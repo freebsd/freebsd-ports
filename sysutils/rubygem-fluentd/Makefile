@@ -1,5 +1,6 @@
 PORTNAME=	fluentd
 PORTVERSION=	1.12.3
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,16 +11,16 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
 	rubygem-bundler>=0:sysutils/rubygem-bundler \
-	rubygem-msgpack>=1.3.1:devel/rubygem-msgpack \
-	rubygem-yajl-ruby>=1.0:devel/rubygem-yajl-ruby \
-	rubygem-cool.io>=1.4.5:devel/rubygem-cool.io \
-	rubygem-serverengine>=2.2.2:net/rubygem-serverengine \
-	rubygem-http_parser.rb>=0.5.1:net/rubygem-http_parser.rb \
-	rubygem-sigdump>=0.2.2:devel/rubygem-sigdump \
-	rubygem-strptime>=0.2.2:devel/rubygem-strptime \
-	rubygem-tzinfo1>=1.0:devel/rubygem-tzinfo1 \
-	rubygem-tzinfo-data>=1.0.0:devel/rubygem-tzinfo-data \
-	rubygem-webrick>=1.4.2:www/rubygem-webrick
+	rubygem-cool.io>=1.4.5<2.0.0:devel/rubygem-cool.io \
+	rubygem-http_parser.rb>=0.5.1<0.8.0:net/rubygem-http_parser.rb \
+	rubygem-msgpack>=1.3.1<2.0.0:devel/rubygem-msgpack \
+	rubygem-serverengine>=2.2.2<3.0.0:net/rubygem-serverengine \
+	rubygem-sigdump>=0.2.2<0.3:devel/rubygem-sigdump \
+	rubygem-strptime>=0.2.2<1.0.0:devel/rubygem-strptime \
+	rubygem-tzinfo1>=1.0<3.0:devel/rubygem-tzinfo1 \
+	rubygem-tzinfo-data>=1.0<2:devel/rubygem-tzinfo-data \
+	rubygem-webrick>=1.4.2<1.8.0:www/rubygem-webrick \
+	rubygem-yajl-ruby>=1.0<2:devel/rubygem-yajl-ruby
 
 PLIST_FILES=	bin/fluent-cap-ctl bin/fluent-cat bin/fluent-ctl \
 		bin/fluent-debug bin/fluent-gem bin/fluentd \
