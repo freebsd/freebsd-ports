@@ -9,7 +9,8 @@ COMMENT=	Create and Use PHP Archive files
 
 LICENSE=	PHP301
 
-NO_ARCH=	yes
 USES=		pear
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
