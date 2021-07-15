@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	aws-sdk-transcribestreamingservice
-PORTVERSION=	1.29.0
+PORTVERSION=	1.29.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
