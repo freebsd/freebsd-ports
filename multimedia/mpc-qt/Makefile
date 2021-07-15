@@ -13,8 +13,6 @@ BUILD_DEPENDS=	mpv>=0.29,1:multimedia/mpv
 LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	cmdrkotori
-GH_PROJECT=	${PORTNAME}-origin
 
 USES=		compiler:c++14-lang desktop-file-utils gl pkgconfig qmake qt:5
 USE_QT=		qmake_build buildtools_build linguisttools_build \
