@@ -10,15 +10,17 @@ COMMENT=	Show Information about your PEAR install and its packages
 
 LICENSE=	PHP301
 
-BUILD_DEPENDS=	${PEARDIR}/Console/Getargs.php:devel/pear-Console_Getargs@${PHP_FLAVOR}
-RUN_DEPENDS=	${PEARDIR}/Console/Getargs.php:devel/pear-Console_Getargs@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}Console_Getargs>=1.3.3:devel/pear-Console_Getargs@${PHP_FLAVOR}
+
+USES=		pear
+USE_PHP=	pcre
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	PHPUNIT
 OPTIONS_DEFAULT=PHPUNIT
 PHPUNIT_DESC=	PEAR::PHPUnit support
 
-USES=		pear
-
-PHPUNIT_RUN_DEPENDS=	phpunit:devel/phpunit6@${PHP_FLAVOR}
+PHPUNIT_RUN_DEPENDS=	phpunit6${PHP_PKGNAMESUFFIX}>=3.1.4:devel/phpunit6@${PHP_FLAVOR}
 
 .include <bsd.port.mk>
