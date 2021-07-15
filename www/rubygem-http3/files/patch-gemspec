@@ -1,0 +1,11 @@
+--- http.gemspec.orig	2021-07-15 21:54:09 UTC
++++ http.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<http_parser.rb>.freeze, ["~> 0.6.0"])
++      s.add_runtime_dependency(%q<http_parser.rb>.freeze, ["~> 0.6"])
+       s.add_runtime_dependency(%q<http-form_data>.freeze, ["~> 2.0"])
+       s.add_runtime_dependency(%q<http-cookie>.freeze, ["~> 1.0"])
+       s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.3"])
