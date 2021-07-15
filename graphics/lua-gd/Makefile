@@ -25,9 +25,10 @@ EXAMPLESDIR=	${LUA_EXAMPLESDIR}
 
 .include <bsd.port.options.mk>
 
-CFLAGS_aarch64+=-fPIC
-CFLAGS_amd64+=	-fPIC
-CFLAGS_i386+=	-fPIC
+CFLAGS_aarch64=	-fPIC
+CFLAGS_amd64=	-fPIC
+CFLAGS_i386=	-fPIC
+CFLAGS_powerpc=	-fPIC
 
 do-build:
 	${CC} -o ${WRKSRC}/gd.so ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} ${GDFEATURES} ${WRKSRC}/luagd.c
