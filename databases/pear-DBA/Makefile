@@ -11,4 +11,6 @@ LICENSE=	LGPL3
 
 USES=		pear
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
