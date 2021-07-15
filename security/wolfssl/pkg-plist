@@ -175,6 +175,7 @@ include/wolfssl/wolfcrypt/des3.h
 include/wolfssl/wolfcrypt/dh.h
 include/wolfssl/wolfcrypt/dsa.h
 include/wolfssl/wolfcrypt/ecc.h
+include/wolfssl/wolfcrypt/eccsi.h
 include/wolfssl/wolfcrypt/ed25519.h
 include/wolfssl/wolfcrypt/ed448.h
 include/wolfssl/wolfcrypt/error-crypt.h
@@ -206,6 +207,7 @@ include/wolfssl/wolfcrypt/random.h
 include/wolfssl/wolfcrypt/rc2.h
 include/wolfssl/wolfcrypt/ripemd.h
 include/wolfssl/wolfcrypt/rsa.h
+include/wolfssl/wolfcrypt/sakke.h
 include/wolfssl/wolfcrypt/settings.h
 include/wolfssl/wolfcrypt/sha.h
 include/wolfssl/wolfcrypt/sha256.h
@@ -224,7 +226,7 @@ include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
 lib/libwolfssl.so.24
-lib/libwolfssl.so.24.4.0
+lib/libwolfssl.so.24.5.0
 libdata/pkgconfig/wolfssl.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/example/client.c
