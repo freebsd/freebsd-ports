@@ -1,3 +1,3 @@
-TIMESTAMP = 1527234593
-SHA256 (rubygem/connection_pool-2.2.2.gem) = c8cc9446bcc51034103c1259ad70b91dc9f5297d13460b2c0cce7e5a93e8d451
-SIZE (rubygem/connection_pool-2.2.2.gem) = 13824
+TIMESTAMP = 1626383214
+SHA256 (rubygem/connection_pool-2.2.5.gem) = 13a8fc3921ce4df8e04fb65f1037251decb08d74757b41163688bd1c1feccd39
+SIZE (rubygem/connection_pool-2.2.5.gem) = 14848
