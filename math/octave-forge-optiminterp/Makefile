@@ -2,7 +2,7 @@
 
 PORTNAME=	octave-forge-optiminterp
 PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
