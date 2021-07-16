@@ -1,6 +1,5 @@
 PORTNAME=	ns3
-PORTVERSION=	3.33
-PORTREVISION=	1
+PORTVERSION=	3.34
 CATEGORIES=	net education
 MASTER_SITES=	https://www.nsnam.org/release/
 DISTNAME=	ns-allinone-${PORTVERSION}
