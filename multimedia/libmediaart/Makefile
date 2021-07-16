@@ -1,7 +1,7 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 
 PORTNAME=	libmediaart
-PORTVERSION=	1.9.4
+DISTVERSION=	1.9.5
 CATEGORIES=	multimedia devel
 MASTER_SITES=	GNOME
 
@@ -23,8 +23,7 @@ MESON_ARGS=	-Dimage_library=gdk-pixbuf
 
 OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	gtk-doc>=0:textproc/gtk-doc
-DOCS_MESON_ON=	-Dwith-docs=yes
-DOCS_MESON_OFF=	-Dwith-docs=no
+DOCS_MESON_TRUE=	gtk_doc
 #option('image_library', type: 'combo', choices: ['auto', 'gdk-pixbuf', 'qt4', 'qt5'],
 #       description: 'Which image processing backend to use')
 #option('with-docs', type : 'combo', choices : ['auto', 'yes', 'no'], value : 'auto')
