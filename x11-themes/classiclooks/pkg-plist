@@ -67,14 +67,10 @@ share/themes/ClassicLooks (HDPI)/gtk-3.0/gtk.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/default-button-off.css
@@ -196,14 +192,10 @@ share/themes/ClassicLooks Ambiance/gtk-3.0/gtk.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/default-button-off.css
@@ -325,14 +317,10 @@ share/themes/ClassicLooks Bronze/gtk-3.0/gtk.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/default-button-off.css
@@ -454,14 +442,10 @@ share/themes/ClassicLooks Crux/gtk-3.0/gtk.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/default-button-off.css
@@ -583,14 +567,10 @@ share/themes/ClassicLooks Devilsclaw/gtk-3.0/gtk.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/default-button-off.css
@@ -712,14 +692,10 @@ share/themes/ClassicLooks Graphite/gtk-3.0/gtk.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/default-button-off.css
@@ -841,14 +817,10 @@ share/themes/ClassicLooks Greybird/gtk-3.0/gtk.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/default-button-off.css
@@ -970,14 +942,10 @@ share/themes/ClassicLooks Icelake/gtk-3.0/gtk.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/default-button-off.css
@@ -1099,14 +1067,10 @@ share/themes/ClassicLooks Irix/gtk-3.0/gtk.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/default-button-off.css
@@ -1228,14 +1192,10 @@ share/themes/ClassicLooks Rainyday/gtk-3.0/gtk.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/default-button-off.css
@@ -1357,14 +1317,10 @@ share/themes/ClassicLooks Raleigh/gtk-3.0/gtk.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/default-button-off.css
@@ -1486,14 +1442,10 @@ share/themes/ClassicLooks Redmond/gtk-3.0/gtk.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/default-button-off.css
@@ -1615,14 +1567,10 @@ share/themes/ClassicLooks Solaris/gtk-3.0/gtk.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/default-button-off.css
@@ -1744,14 +1692,10 @@ share/themes/ClassicLooks Straw/gtk-3.0/gtk.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/default-button-off.css
@@ -1873,14 +1817,10 @@ share/themes/ClassicLooks Summerfield/gtk-3.0/gtk.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/default-button-off.css
@@ -2002,14 +1942,10 @@ share/themes/ClassicLooks Summerstorm/gtk-3.0/gtk.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/default-button-off.css
@@ -2566,14 +2502,10 @@ share/themes/ClassicLooks/gtk-3.0/gtk.css
 share/themes/ClassicLooks/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks/gtk-3.0/options/default-button-off.css
