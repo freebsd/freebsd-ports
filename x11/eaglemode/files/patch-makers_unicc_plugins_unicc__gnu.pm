@@ -1,4 +1,6 @@
---- makers/unicc/plugins/unicc_gnu.pm.orig	2018-12-23 06:47:44 UTC
+Note that this plugin is used for both gnu and clang build.
+
+--- makers/unicc/plugins/unicc_gnu.pm.orig	2021-07-11 05:50:52 UTC
 +++ makers/unicc/plugins/unicc_gnu.pm
 @@ -35,7 +35,7 @@ my $IsWinOrCygwin;
  my $IsDarwin;
@@ -21,13 +23,21 @@
  		if ($isCpp && $GccVersion>=4.7 && $GccVersion<6.1) {
  			push(@args,"-std=c++11");
  		}
-@@ -167,7 +167,8 @@ sub Link
+@@ -166,7 +166,8 @@ sub Link
  		push(@args,(@{GetObjFiles()}));
  	}
  	else {
 -		push(@args,"gcc");
-+		push(@args,$ENV{'CC'});
++		push(@args,HaveCppLib ? $ENV{'CXX'} : $ENV{'CC'});
 +		push(@args,grep /./, split(/\s+/, $ENV{'LDFLAGS'}));
  		if (HaveDebug) { push(@args,"-g"); }
  		if ($type eq 'dynlib') {
  			push(@args,$IsDarwin ? "-dynamiclib" : "-shared");
+@@ -182,7 +183,6 @@ sub Link
+ 		foreach my $s (@{GetLinkNames()}) { push(@args,"-l$s"); }
+ 		if ($IsCygwin && -e "/lib/libcygipc.a") { push(@args,"-lcygipc"); }
+ 		if (HaveMath) { push(@args,"-lm"); }
+-		if (HaveCppLib) { push(@args,"-lstdc++"); }
+ 		push(@args,"-o");
+ 		push(@args,GetTgtFile);
+ 		if ($IsWinOrCygwin and $type eq "dynlib") {
