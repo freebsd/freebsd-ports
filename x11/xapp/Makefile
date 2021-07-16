@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	xapp
-PORTVERSION=	2.2.0
+DISTVERSION=	2.2.2
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
