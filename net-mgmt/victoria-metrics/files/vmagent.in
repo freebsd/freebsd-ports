@@ -7,7 +7,7 @@
 . /etc/rc.subr
 
 name="vmagent"
-desc="Fast, cost-effective, and scalable time series database"
+desc="Agent daemon for VictoriaMetrics"
 rcvar="vmagent_enable"
 pidfile="/var/run/${name}.pid"
 daemon_pidfile="/var/run/${name}-daemon.pid"

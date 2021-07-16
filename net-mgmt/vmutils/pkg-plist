@@ -11,6 +11,10 @@ bin/vmrestore
 %%PORTDOCS%%%%DOCSDIR%%/vmauth.md
 %%PORTDOCS%%%%DOCSDIR%%/vmbackup.md
 %%PORTDOCS%%%%DOCSDIR%%/vmbackupmanager.md
+%%PORTDOCS%%%%DOCSDIR%%/vmbackupmanager_latest_folder.png
+%%PORTDOCS%%%%DOCSDIR%%/vmbackupmanager_root_folder.png
+%%PORTDOCS%%%%DOCSDIR%%/vmbackupmanager_rp_daily_1.png
+%%PORTDOCS%%%%DOCSDIR%%/vmbackupmanager_rp_daily_2.png
 %%PORTDOCS%%%%DOCSDIR%%/vmctl.md
 %%PORTDOCS%%%%DOCSDIR%%/vmgateway-access-control.jpg
 %%PORTDOCS%%%%DOCSDIR%%/vmgateway-overview.jpeg
