@@ -989,7 +989,7 @@ pkgmessage()
 		if [ -f "${message}" ]; then
 			if ! head -1 "${message}" | grep -q '^\['; then
 				warn "${message} not in UCL format, will be shown on initial install only."
-				warn "See https://www.freebsd.org/doc/en/books/porters-handbook/pkg-files.html#porting-message"
+				warn "See https://docs.freebsd.org/en/books/porters-handbook/pkg-files/#porting-message"
 			fi
 		fi
 	done
