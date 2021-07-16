@@ -1,6 +1,5 @@
 PORTNAME=	libwpe
-PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTVERSION=	1.10.1
 CATEGORIES=	www
 MASTER_SITES=	https://wpewebkit.org/releases/
 
