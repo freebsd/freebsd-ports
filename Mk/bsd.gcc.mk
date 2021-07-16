@@ -28,11 +28,11 @@
 # Examples:
 #   USE_GCC=	yes			# port requires a current version of GCC
 #							# as defined in bsd.default-versions.mk.
-#   USE_GCC=	9+			# port requires GCC 9 or later.
-#   USE_GCC=	8			# port requires GCC 8.
+#   USE_GCC=	11+			# port requires GCC 11 or later.
+#   USE_GCC=	9			# port requires GCC 9.
 #   USE_GCC=	yes:build	# port requires a current version of GCC at
 #							# build time only.
-#   USE_GCC=	9:build		# port requires GCC 9 at build time only.
+#   USE_GCC=	10:build	# port requires GCC 10 at build time only.
 #   USE_GCC=	11+:build	# port requires GCC 11 or later at build
 #							# time only.
 #
