@@ -15,6 +15,8 @@ man/man1/emacsclient.1.gz
 man/man1/etags.1.gz
 share/applications/emacs.desktop
 share/applications/emacsclient.desktop
+share/applications/emacs-mail.desktop
+share/applications/emacsclient-mail.desktop
 %%NO_NATIVECOMP%%share/metainfo/emacs.metainfo.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/AUTHORS
 %%DATADIR%%/%%EMACS_VER%%/etc/CALC-NEWS
@@ -190,6 +192,7 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs-buffer.gdb
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs.desktop
+%%DATADIR%%/%%EMACS_VER%%/etc/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs.icon
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs.service
 %%DATADIR%%/%%EMACS_VER%%/etc/emacsclient.desktop
