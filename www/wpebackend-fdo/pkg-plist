@@ -13,7 +13,8 @@ include/wpe-fdo-1.0/wpe/unstable/view-backend-exportable-eglstream.h
 include/wpe-fdo-1.0/wpe/version.h
 include/wpe-fdo-1.0/wpe/view-backend-exportable-egl.h
 include/wpe-fdo-1.0/wpe/view-backend-exportable.h
+include/wpe-fdo-1.0/wpe/wpebackend-fdo-version.h
 lib/libWPEBackend-fdo-1.0.so
 lib/libWPEBackend-fdo-1.0.so.1
-lib/libWPEBackend-fdo-1.0.so.1.6.6
+lib/libWPEBackend-fdo-1.0.so.1.8.3
 libdata/pkgconfig/wpebackend-fdo-1.0.pc
