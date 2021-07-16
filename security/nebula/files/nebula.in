@@ -18,6 +18,8 @@
 name="nebula"
 rcvar="nebula_enable"
 desc="Scalable overlay networking tool with a focus on performance, simplicity and security"
+pidfile="/var/run/nebula.pid"
+procname="%%PREFIX%%/bin/nebula"
 
 load_rc_config $name 
 
@@ -27,12 +29,11 @@ load_rc_config $name
 : ${nebula_logfile:=/var/log/nebula.log}
 
 command="/usr/sbin/daemon"
-actual_command="%%PREFIX%%/bin/nebula"
-command_args="-c -t nebula -o ${nebula_logfile} ${actual_command} -config ${nebula_config}"
+command_args="-c -p ${pidfile} -t nebula -o ${nebula_logfile} ${procname} -config ${nebula_config}"
 
 required_files="${nebula_config} ${command}"
 
 extra_commands="configtest"
-configtest_cmd="${actual_command} -test -config ${nebula_config}"
+configtest_cmd="${procname} -test -config ${nebula_config}"
 
 run_rc_command "$1"
