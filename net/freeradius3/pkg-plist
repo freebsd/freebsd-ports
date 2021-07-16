@@ -816,6 +816,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-enabled/replicate
 %%EXAMPLESDIR%%/raddb/mods-enabled/soh
 %%EXAMPLESDIR%%/raddb/mods-enabled/sradutmp
+%%EXAMPLESDIR%%/raddb/mods-enabled/totp
 %%EXAMPLESDIR%%/raddb/mods-enabled/unix
 %%EXAMPLESDIR%%/raddb/mods-enabled/unpack
 %%EXAMPLESDIR%%/raddb/mods-enabled/utf8
@@ -858,6 +859,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/sites-available/robust-proxy-accounting
 %%EXAMPLESDIR%%/raddb/sites-available/soh
 %%EXAMPLESDIR%%/raddb/sites-available/status
+%%EXAMPLESDIR%%/raddb/sites-available/totp
 %%EXAMPLESDIR%%/raddb/sites-available/tls
 %%EXAMPLESDIR%%/raddb/sites-available/virtual.example.com
 %%EXAMPLESDIR%%/raddb/sites-available/vmps
