@@ -121,7 +121,7 @@ LIT_VARS=		_USES_PYTHON=python:3.6+
 LLD_DESC=		Install lld, the LLVM linker
 LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
 LLD_EXTRA_PATCHES=	${PATCHDIR}/lld
-LLD_LINK_DESC=		Link ld.lld as ld to clang uses it
+LLD_LINK_DESC=		Link ld.lld to ld, so clang uses it
 LLD_LINK_IMPLIES=	LLD
 LLDB_BUILD_DEPENDS=	swig:devel/swig
 LLDB_DESC=		Install lldb, the LLVM debugger
