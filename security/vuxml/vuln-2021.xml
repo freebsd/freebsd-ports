@@ -1,3 +1,54 @@
+  <vuln vid="1ba21ff1-e672-11eb-a686-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>91.0.4472.164</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/07/stable-channel-update-for-desktop.html">
+	  <p>This release contains 8 security fixes, including:</p>
+	  <ul>
+	    <li>[1219082] High CVE-2021-30559: Out of bounds write in ANGLE.
+	      Reported by Seong-Hwan Park (SeHwa) of SecunologyLab on
+	      2021-06-11</li>
+	    <li>[1214842] High CVE-2021-30541: Use after free in V8. Reported by
+	      Richard Wheeldon on 2021-05-31</li>
+	    <li>[1219209] High CVE-2021-30560: Use after free in Blink XSLT.
+	      Reported by Nick Wellnhofer on 2021-06-12</li>
+	    <li>[1219630] High CVE-2021-30561: Type Confusion in V8. Reported by
+	      Sergei Glazunov of Google Project Zero on 2021-06-14</li>
+	    <li>[1220078] High CVE-2021-30562: Use after free in WebSerial.
+	      Reported by Anonymous on 2021-06-15</li>
+	    <li>[1228407] High CVE-2021-30563: Type Confusion in V8. Reported by
+	      Anonymous on 2021-07-12</li>
+	    <li>[1221309] Medium CVE-2021-30564: Heap buffer overflow in WebXR.
+	      Reported by Ali Merchant, iQ3Connect VR Platform on
+	      2021-06-17</li>
+	  </ul>
+	  <p>Google is aware of reports that an exploit for CVE-2021-30563 exists in the wild.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-30541</cvename>
+      <cvename>CVE-2021-30559</cvename>
+      <cvename>CVE-2021-30560</cvename>
+      <cvename>CVE-2021-30561</cvename>
+      <cvename>CVE-2021-30562</cvename>
+      <cvename>CVE-2021-30563</cvename>
+      <cvename>CVE-2021-30564</cvename>
+      <url>https://chromereleases.googleblog.com/2021/07/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2021-07-15</discovery>
+      <entry>2021-07-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7ed5779c-e4c7-11eb-91d7-08002728f74c">
     <topic>Ruby -- multiple vulnerabilities</topic>
     <affects>
