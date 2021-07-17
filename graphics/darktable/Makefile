@@ -32,7 +32,7 @@ LIB_DEPENDS=	libcolord-gtk.so:graphics/colord-gtk \
 		libtiff.so:graphics/tiff
 
 USES=		cmake compiler:c++14-lang desktop-file-utils gl gnome jpeg \
-		pkgconfig shebangfix sqlite tar:xz xorg
+		perl5 pkgconfig shebangfix sqlite tar:xz xorg
 USE_GL=		glu
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
 INSTALLS_ICONS=	yes
