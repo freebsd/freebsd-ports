@@ -1,5 +1,6 @@
 PORTNAME=	ksysguard
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 PKGNAMEPREFIX=	plasma5-
 CATEGORIES=	sysutils kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/
@@ -12,7 +13,7 @@ USES=		cmake compiler:c++11-lib cpe desktop-file-utils \
 		gettext kde:5 localbase pathfix qt:5 tar:xz
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		dbusaddons emoticons i18n iconthemes init itemmodels \
-		itemviews jobwidgets kdelibs4support kio libksysguard \
+		itemviews jobwidgets kio libksysguard \
 		newstuff notifications service widgetsaddons windowsystem \
 		xmlgui \
 		doctools_build ecm_build
