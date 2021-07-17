@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2021-07-17 17:48:32 UTC
++++ Makefile.am
+@@ -1,7 +1,7 @@
+ SUBDIRS = gfbgraph docs tests
+ ACLOCAL_AMFLAGS = -I m4
+ 
+-libgfbgraphdocdir = ${prefix}/doc/libgfbgraph
++libgfbgraphdocdir = ${prefix}/share/doc/libgfbgraph
+ libgfbgraphdoc_DATA = \
+ 	README\
+ 	COPYING\
