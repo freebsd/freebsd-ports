@@ -36,7 +36,7 @@ share/applications/webstorm.desktop
 %%DATADIR%%/lib/bootstrap.jar
 %%DATADIR%%/lib/bouncy-castle-provider.jar
 %%DATADIR%%/lib/branding.jar
-%%DATADIR%%/lib/build-marker-WS-211.7442.26
+%%DATADIR%%/lib/build-marker-WS-211.7628.25
 %%DATADIR%%/lib/byte-buddy-agent-1.10.1.jar
 %%DATADIR%%/lib/caffeine-2.8.8.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
