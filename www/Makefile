@@ -2313,6 +2313,7 @@
     SUBDIR += wikicalc
     SUBDIR += wordpress
     SUBDIR += wpebackend-fdo
+    SUBDIR += writeas-cli
     SUBDIR += wsdlpull
     SUBDIR += wslay
     SUBDIR += wsmake
