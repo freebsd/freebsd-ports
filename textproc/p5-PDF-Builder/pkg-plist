@@ -118,6 +118,7 @@
 %%SITE_PERL%%/PDF/Builder/Resource/uniglyph.txt
 %%SITE_PERL%%/PDF/Builder/UniWrap.pm
 %%SITE_PERL%%/PDF/Builder/Util.pm
+%%SITE_PERL%%/PDF/optional_update.pl
 %%PERL5_MAN3%%/PDF::Builder.3.gz
 %%PERL5_MAN3%%/PDF::Builder::Annotation.3.gz
 %%PERL5_MAN3%%/PDF::Builder::Basic::PDF.3.gz
