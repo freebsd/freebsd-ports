@@ -1,6 +1,5 @@
 PORTNAME=	sentry-cli
-DISTVERSION=	1.66.0
-PORTREVISION=	1
+DISTVERSION=	1.67.2
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -65,6 +64,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		curl-sys-0.4.44+curl-7.77.0 \
 		debugid-0.7.2 \
 		difference-2.0.0 \
+		difflib-0.4.0 \
 		digest-0.8.1 \
 		dirs-1.0.5 \
 		dirs-3.0.2 \
@@ -115,7 +115,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		ignore-0.4.17 \
 		im-14.3.0 \
 		indexmap-1.6.2 \
-		indicatif-0.14.0 \
+		indicatif-0.16.2 \
 		insta-1.7.1 \
 		instant-0.1.9 \
 		itertools-0.10.0 \
@@ -147,7 +147,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
-		number_prefix-0.3.0 \
+		number_prefix-0.4.0 \
 		object-0.25.2 \
 		ole32-sys-0.2.0 \
 		once_cell-1.7.2 \
@@ -173,6 +173,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		ppv-lite86-0.2.10 \
 		precomputed-hash-0.1.1 \
 		predicates-1.0.8 \
+		predicates-2.0.0 \
 		predicates-core-1.0.2 \
 		predicates-tree-1.0.2 \
 		prettytable-rs-0.8.0 \
