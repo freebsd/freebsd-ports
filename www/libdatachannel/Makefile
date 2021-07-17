@@ -1,6 +1,6 @@
 PORTNAME=	libdatachannel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.4
+DISTVERSION=	0.13.5
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,8 +18,9 @@ GH_ACCOUNT=	paullouisageneau
 GH_TUPLE=	\
 		SergiusTheBest:plog:d8461e9:plog/deps/plog \
 		sctplab:usrsctp:07f871b:usrsctp/deps/usrsctp \
-		paullouisageneau:libjuice:15d6654:libjuice/deps/libjuice \
-		nlohmann:json:973c52d:json/deps/json
+		paullouisageneau:libjuice:1a5bf2e:libjuice/deps/libjuice \
+		nlohmann:json:973c52d:json/deps/json \
+		cisco:libsrtp:f379f48:libsrtp/deps/libsrtp
 
 CMAKE_ON=	USE_SYSTEM_SRTP NO_EXAMPLES NO_TESTS
 
