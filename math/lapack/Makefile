@@ -72,7 +72,6 @@ USES+=			python:3.6+,build,test
 CMAKE_ON+=		USE_OPTIMIZED_BLAS BUILD_TESTING
 CMAKE_ARGS+=		-DBLAS_LIBRARIES="${LOCALBASE}/lib/libblas.so"
 LIBS=			lapack
-PLIST_FILES+=		${MAN3L:S|^|man/man3/|:S|$|.gz|}
 PLIST_SUB+=		BLAS="@comment " CBLAS="@comment " LAPACK="" XLAPACK="@comment " LAPACKE="@comment "
 .endif
 
@@ -122,7 +121,13 @@ post-build:
 	(cd ${BUILD_WRKSRC} && ${MAKE} -f TESTING/MATGEN/CMakeFiles/tmglib.dir/build.make build-static)
 .endif
 
-.include "${FILESDIR}/manpages"
+pre-su-install:
+.if !(defined(BLAS_SLAVEPORT) || defined(CBLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT) || defined(LAPACKE_SLAVEPORT))
+	cd ${WRKDIR} && ${FIND} man/man3 -type f | ${GREP} -v Users_julie | \
+	tee ${WRKDIR}/manpages | ${SED} 's|$$|.gz|' >> ${TMPPLIST}
+	cd ${WRKDIR} && \
+	${XARGS} -J @ ${INSTALL_MAN} @ ${STAGEDIR}${MAN3PREFIX}/man/man3 < ${WRKDIR}/manpages
+.endif
 
 post-install:
 .if defined(BLAS_SLAVEPORT)
@@ -163,10 +168,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/libtmglib.so.${PORTVERSION}
 	${LN} -sf libtmglib.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libtmglib.so
 	${LN} -sf libtmglib.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libtmglib.so.${SVERSION}
-.endif
-.if !(defined(BLAS_SLAVEPORT) || defined(CBLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT) || defined(LAPACKE_SLAVEPORT))
-	cd ${WRKDIR}/man ; ${ECHO_CMD} ${MAN3L:S|^|man3/|} \
-	| ${XARGS} -J @ ${INSTALL_MAN} @ ${STAGEDIR}${MAN3PREFIX}/man/man3
 .endif
 
 .include <bsd.port.post.mk>
