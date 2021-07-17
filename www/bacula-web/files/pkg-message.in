@@ -31,4 +31,11 @@ Make sure to update dependencies with:
   cd %%WWWDIR%%; composer i
 EOM
 }
+{
+  type: remove
+  message: <<EOM
+You would like to delete:
+  rm -R %%WWWDIR%%
+EOM
+}
 ]
