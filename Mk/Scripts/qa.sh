@@ -663,9 +663,13 @@ proxydeps() {
 
 				# Check that the .so we need has a SONAME
 				if [ "${dep_file_pkg}" != "${PKGORIGIN}" ]; then
+					# When grep -q finds a match it will close the pipe immediately.
+					# This may cause the test to fail when pipefail is turned on.
+					set +o pipefail
 					if ! readelf -d "${dep_file}" | grep -q SONAME; then
 						err "${file} is linked to ${dep_file} which does not have a SONAME.  ${dep_file_pkg} needs to be fixed."
 					fi
+					set -o pipefail
 				fi
 
 				# If we don't already depend on it, and we don't provide it
