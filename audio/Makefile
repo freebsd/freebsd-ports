@@ -626,6 +626,7 @@
     SUBDIR += poly-lv2
     SUBDIR += polyphone
     SUBDIR += portaudio
+    SUBDIR += portmidi
     SUBDIR += praat
     SUBDIR += pragha
     SUBDIR += prelude-lv2

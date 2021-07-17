@@ -1,0 +1,10 @@
+include/pmutil.h
+include/portmidi.h
+include/porttime.h
+lib/cmake/PortMidi/PortMidiConfig.cmake
+lib/cmake/PortMidi/PortMidiConfigVersion.cmake
+lib/cmake/PortMidi/PortMidiTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/PortMidi/PortMidiTargets.cmake
+lib/libportmidi.so
+lib/libporttime.so
+libdata/pkgconfig/portmidi.pc
