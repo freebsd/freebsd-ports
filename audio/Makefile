@@ -482,6 +482,7 @@
     SUBDIR += mixer.app
     SUBDIR += mixertui
     SUBDIR += mixxx
+    SUBDIR += mixxx22
     SUBDIR += mkcue
     SUBDIR += moc
     SUBDIR += modplug-tools
