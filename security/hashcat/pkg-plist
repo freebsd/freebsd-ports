@@ -1,5 +1,4 @@
 bin/hashcat
-include/hashcat/Windows.h
 include/hashcat/affinity.h
 include/hashcat/autotune.h
 include/hashcat/backend.h
@@ -31,11 +30,15 @@ include/hashcat/event.h
 include/hashcat/ext_ADL.h
 include/hashcat/ext_OpenCL.h
 include/hashcat/ext_cuda.h
+include/hashcat/ext_hip.h
+include/hashcat/ext_hiprtc.h
+include/hashcat/ext_iokit.h
 include/hashcat/ext_lzma.h
 include/hashcat/ext_nvapi.h
 include/hashcat/ext_nvml.h
 include/hashcat/ext_nvrtc.h
-include/hashcat/ext_sysfs.h
+include/hashcat/ext_sysfs_amdgpu.h
+include/hashcat/ext_sysfs_cpu.h
 include/hashcat/filehandling.h
 include/hashcat/folder.h
 include/hashcat/hashcat.h
@@ -133,6 +136,7 @@ lib/libhashcat.so.%%PORTVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/charsets/special/Portuguese/pt_cp1252-special.hcchr
 %%PORTDOCS%%%%DOCSDIR%%/charsets/special/Russian/ru_ISO-8859-5-special.hcchr
 %%PORTDOCS%%%%DOCSDIR%%/charsets/special/Russian/ru_cp1251-special.hcchr
+%%PORTDOCS%%%%DOCSDIR%%/charsets/special/Russian/ru_cp866-special.hcchr
 %%PORTDOCS%%%%DOCSDIR%%/charsets/special/Slovak/sk_ISO-8859-2-special.hcchr
 %%PORTDOCS%%%%DOCSDIR%%/charsets/special/Slovak/sk_cp1250-special.hcchr
 %%PORTDOCS%%%%DOCSDIR%%/charsets/special/Spanish/es_ISO-8859-1-special.hcchr
@@ -176,6 +180,7 @@ lib/libhashcat.so.%%PORTVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/charsets/standard/Russian/ru_ISO-8859-5.hcchr
 %%PORTDOCS%%%%DOCSDIR%%/charsets/standard/Russian/ru_KOI8-R.hcchr
 %%PORTDOCS%%%%DOCSDIR%%/charsets/standard/Russian/ru_cp1251.hcchr
+%%PORTDOCS%%%%DOCSDIR%%/charsets/standard/Russian/ru_cp866.hcchr
 %%PORTDOCS%%%%DOCSDIR%%/charsets/standard/Slovak/sk_ISO-8859-2.hcchr
 %%PORTDOCS%%%%DOCSDIR%%/charsets/standard/Slovak/sk_cp1250.hcchr
 %%PORTDOCS%%%%DOCSDIR%%/charsets/standard/Spanish/es_ISO-8859-1.hcchr
@@ -408,6 +413,8 @@ lib/libhashcat.so.%%PORTVERSION%%
 %%DATADIR%%/OpenCL/inc_truecrypt_xts.h
 %%DATADIR%%/OpenCL/inc_types.h
 %%DATADIR%%/OpenCL/inc_vendor.h
+%%DATADIR%%/OpenCL/inc_veracrypt_keyfile.cl
+%%DATADIR%%/OpenCL/inc_veracrypt_keyfile.h
 %%DATADIR%%/OpenCL/inc_veracrypt_xts.cl
 %%DATADIR%%/OpenCL/inc_veracrypt_xts.h
 %%DATADIR%%/OpenCL/inc_zip_inflate.cl
@@ -1497,6 +1504,17 @@ lib/libhashcat.so.%%PORTVERSION%%
 %%DATADIR%%/OpenCL/m26300_a0-pure.cl
 %%DATADIR%%/OpenCL/m26300_a1-pure.cl
 %%DATADIR%%/OpenCL/m26300_a3-pure.cl
+%%DATADIR%%/OpenCL/m26401_a0-optimized.cl
+%%DATADIR%%/OpenCL/m26401_a1-optimized.cl
+%%DATADIR%%/OpenCL/m26401_a3-optimized.cl
+%%DATADIR%%/OpenCL/m26402_a0-optimized.cl
+%%DATADIR%%/OpenCL/m26402_a1-optimized.cl
+%%DATADIR%%/OpenCL/m26402_a3-optimized.cl
+%%DATADIR%%/OpenCL/m26403_a0-optimized.cl
+%%DATADIR%%/OpenCL/m26403_a1-optimized.cl
+%%DATADIR%%/OpenCL/m26403_a3-optimized.cl
+%%DATADIR%%/OpenCL/m26500-pure.cl
+%%DATADIR%%/OpenCL/m26600-pure.cl
 %%DATADIR%%/OpenCL/markov_be.cl
 %%DATADIR%%/OpenCL/markov_le.cl
 %%DATADIR%%/OpenCL/shared.cl
@@ -1741,6 +1759,9 @@ lib/libhashcat.so.%%PORTVERSION%%
 %%DATADIR%%/modules/module_13771.so
 %%DATADIR%%/modules/module_13772.so
 %%DATADIR%%/modules/module_13773.so
+%%DATADIR%%/modules/module_13781.so
+%%DATADIR%%/modules/module_13782.so
+%%DATADIR%%/modules/module_13783.so
 %%DATADIR%%/modules/module_13800.so
 %%DATADIR%%/modules/module_13900.so
 %%DATADIR%%/modules/module_14000.so
@@ -1874,5 +1895,9 @@ lib/libhashcat.so.%%PORTVERSION%%
 %%DATADIR%%/modules/module_26100.so
 %%DATADIR%%/modules/module_26200.so
 %%DATADIR%%/modules/module_26300.so
+%%DATADIR%%/modules/module_26401.so
+%%DATADIR%%/modules/module_26402.so
+%%DATADIR%%/modules/module_26403.so
+%%DATADIR%%/modules/module_26500.so
+%%DATADIR%%/modules/module_26600.so
 %%DATADIR%%/modules/module_99999.so
-@dir include/hashcat/workarounds
