@@ -1,7 +1,7 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 
 PORTNAME=	geoclue
-PORTVERSION=	2.5.5
+DISTVERSION=	2.5.7
 CATEGORIES=	net devel gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-GL_COMMIT=	9519d67c7a9a0e97a75115f9ff99d4fb0bb81b21
+GL_COMMIT=	3bb60dd600a8b247fd6049e7e5b1c73c2c5fc0e8
 
 MESON_ARGS=	-D3g-source=false \
 		-Dcdma-source=false \
