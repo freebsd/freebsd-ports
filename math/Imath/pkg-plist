@@ -43,10 +43,12 @@ lib/libImath-%%MAJORVER%%.so.%%VER%%.0.%%PLVER%%
 lib/libImath.so
 libdata/pkgconfig/Imath.pc
 %%PYTHON%%include/Imath/PyImath.h
+%%PYTHON%%include/Imath/PyImathAPI.h
 %%PYTHON%%include/Imath/PyImathAutovectorize.h
 %%PYTHON%%include/Imath/PyImathBasicTypes.h
 %%PYTHON%%include/Imath/PyImathBox.h
 %%PYTHON%%include/Imath/PyImathBoxArrayImpl.h
+%%PYTHON%%include/Imath/PyImathBufferProtocol.h
 %%PYTHON%%include/Imath/PyImathColor.h
 %%PYTHON%%include/Imath/PyImathColor3ArrayImpl.h
 %%PYTHON%%include/Imath/PyImathColor4Array2DImpl.h
@@ -56,6 +58,7 @@ libdata/pkgconfig/Imath.pc
 %%PYTHON%%include/Imath/PyImathExport.h
 %%PYTHON%%include/Imath/PyImathFixedArray.h
 %%PYTHON%%include/Imath/PyImathFixedArray2D.h
+%%PYTHON%%include/Imath/PyImathFixedArrayTraits.h
 %%PYTHON%%include/Imath/PyImathFixedMatrix.h
 %%PYTHON%%include/Imath/PyImathFixedVArray.h
 %%PYTHON%%include/Imath/PyImathFrustum.h
@@ -67,6 +70,7 @@ libdata/pkgconfig/Imath.pc
 %%PYTHON%%include/Imath/PyImathOperators.h
 %%PYTHON%%include/Imath/PyImathPlane.h
 %%PYTHON%%include/Imath/PyImathQuat.h
+%%PYTHON%%include/Imath/PyImathQuatOperators.h
 %%PYTHON%%include/Imath/PyImathRandom.h
 %%PYTHON%%include/Imath/PyImathShear.h
 %%PYTHON%%include/Imath/PyImathStringArray.h
