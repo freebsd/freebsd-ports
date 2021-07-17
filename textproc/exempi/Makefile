@@ -2,7 +2,7 @@
 #   $MCom: ports/textproc/exempi/Makefile,v 1.1 2008/02/26 18:50:26 ahze Exp $
 
 PORTNAME=	exempi
-PORTVERSION=	2.2.2
+DISTVERSION=	2.5.2
 PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
@@ -10,15 +10,16 @@ MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Port of Adobe XMP SDK to work on UNIX
 
+BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-unittest=no
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
-USES=		pathfix iconv libtool tar:bzip2
+USES=		gmake iconv libtool localbase pathfix tar:bzip2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+GNU_CONFIGURE=	yes
+
+pre-configure:
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} NOCONFIGURE=1 ./autogen.sh
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
