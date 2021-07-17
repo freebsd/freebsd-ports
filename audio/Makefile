@@ -380,6 +380,7 @@
     SUBDIR += libinstpatch
     SUBDIR += libkcddb
     SUBDIR += libkcompactdisc
+    SUBDIR += libkeyfinder
     SUBDIR += liblastfm-qt5
     SUBDIR += liblo
     SUBDIR += liblscp
