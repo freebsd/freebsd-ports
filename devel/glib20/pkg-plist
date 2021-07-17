@@ -242,6 +242,7 @@ include/glib-2.0/glib/gstdio.h
 include/glib-2.0/glib/gstrfuncs.h
 include/glib-2.0/glib/gstring.h
 include/glib-2.0/glib/gstringchunk.h
+include/glib-2.0/glib/gstrvbuilder.h
 include/glib-2.0/glib/gtestutils.h
 include/glib-2.0/glib/gthread.h
 include/glib-2.0/glib/gthreadpool.h
