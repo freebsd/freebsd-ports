@@ -16,7 +16,8 @@ BROKEN_aarch64=		fails to build: Exception in thread "main" java.lang.StackOverf
 BROKEN_FreeBSD_11_powerpc64=	fails to build: Java Runtime Environment: SIGSEGV happened inside stack but outside yellow and red zone.
 BROKEN_FreeBSD_12_powerpc64=	fails to build: Java Runtime Environment: SIGSEGV happened inside stack but outside yellow and red zone.
 
-BUILD_DEPENDS=	docproj>=2.0_6:textproc/docproj
+BUILD_DEPENDS=	docproj>=2.0_6:textproc/docproj \
+		docproj-legacy>0:textproc/docproj-legacy
 
 USES=		groff uidfix
 WRKSRC=		${WRKDIR}/doc
