@@ -44,6 +44,12 @@ SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
 SLANG_CONFIGURE_ENABLE=	slang
 SLANG_LDFLAGS=		-lncurses
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_GCC=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lpthread|-pthread| ; \
