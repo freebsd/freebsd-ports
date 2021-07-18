@@ -1,0 +1,10 @@
+--- doc/latex-mk.texi.orig	2010-12-28 21:50:27 UTC
++++ doc/latex-mk.texi
+@@ -3,7 +3,6 @@
+ @c %**start of header
+ @setfilename latex-mk.info
+ @settitle LaTeX-Mk
+-@setcontentsaftertitlepage
+ @c %**end of header
+ 
+ @include version.texi

@@ -1,10 +1,10 @@
---- tp/Texinfo/XS/parsetexi/api.c.orig	2019-08-25 17:11:45 UTC
+--- tp/Texinfo/XS/parsetexi/api.c.orig	2021-03-12 20:48:49 UTC
 +++ tp/Texinfo/XS/parsetexi/api.c
 @@ -25,7 +25,9 @@
  
  #undef context
  
-+#if defined(HAVE_LIBINTL_H)
++#ifdef ENABLE_NLS
  #include <libintl.h>
 +#endif
  

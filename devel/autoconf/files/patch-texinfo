@@ -1,0 +1,12 @@
+--- doc/autoconf.texi.orig	2012-04-25 02:14:19 UTC
++++ doc/autoconf.texi
+@@ -5,9 +5,6 @@
+ @include version.texi
+ @settitle Autoconf
+ @setchapternewpage odd
+-@ifnothtml
+-@setcontentsaftertitlepage
+-@end ifnothtml
+ @finalout
+ 
+ @c @ovar(ARG)

@@ -1,8 +1,7 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 
 PORTNAME=	texinfo
-PORTVERSION=	6.7
-PORTREVISION=	6
+PORTVERSION=	6.8
 PORTEPOCH=	1
 CATEGORIES=	print
 MASTER_SITES=	GNU \
