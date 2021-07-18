@@ -1,7 +1,7 @@
 # Created by: Michael Moll <kvedulv@kvedulv.de>
 
 PORTNAME=	hammer_cli_foreman
-PORTVERSION=	2.2.0
+PORTVERSION=	2.5.1
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -10,8 +10,8 @@ COMMENT=	Foreman commands for Hammer CLI
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	rubygem-apipie-bindings>=0.3.0:devel/rubygem-apipie-bindings \
-		rubygem-hammer_cli>=2.1.0:sysutils/rubygem-hammer_cli \
+RUN_DEPENDS=	rubygem-apipie-bindings>=0.4.0:devel/rubygem-apipie-bindings \
+		rubygem-hammer_cli>=2.5.0:sysutils/rubygem-hammer_cli \
 		rubygem-jwt>=2.2.1:www/rubygem-jwt \
 		rubygem-rest-client>=1.8.0<3.0.0:www/rubygem-rest-client
 
