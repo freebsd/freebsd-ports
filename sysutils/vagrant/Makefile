@@ -3,7 +3,7 @@
 PORTNAME=	vagrant
 PORTVERSION=	2.2.14
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com
@@ -25,8 +25,8 @@ RUN_DEPENDS=	rubygem-bcrypt_pbkdf10>=1.0.0<1.1:security/rubygem-bcrypt_pbkdf10 \
 		rubygem-i18n>=1.8,2<2,2:devel/rubygem-i18n \
 		rubygem-listen>=3.1.5:devel/rubygem-listen \
 		rubygem-log4r>=1.1.9<1.1.11:sysutils/rubygem-log4r \
-		rubygem-net-scp>=1.2.0<1.3:security/rubygem-net-scp \
-		rubygem-net-sftp>=2.1<3:security/rubygem-net-sftp \
+		rubygem-net-scp1>=1.2.0<1.3:security/rubygem-net-scp1 \
+		rubygem-net-sftp2>=2.1<3:security/rubygem-net-sftp2 \
 		rubygem-net-ssh>=5.2.0:security/rubygem-net-ssh \
 		rubygem-rb-kqueue>=0.2.0<0.3:devel/rubygem-rb-kqueue \
 		rubygem-rest-client>=1.6.0<3.0:www/rubygem-rest-client \
