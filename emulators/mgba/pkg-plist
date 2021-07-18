@@ -1,10 +1,10 @@
 bin/mgba
 %%QT5%%bin/mgba-qt
-include/mgba-util/arm-algo.h
 include/mgba-util/circle-buffer.h
 include/mgba-util/common.h
 include/mgba-util/configuration.h
 include/mgba-util/crc32.h
+include/mgba-util/dllexports.h
 include/mgba-util/elf-read.h
 include/mgba-util/export.h
 include/mgba-util/formatting.h
@@ -61,7 +61,6 @@ include/mgba/core/tile-cache.h
 include/mgba/core/timing.h
 include/mgba/core/version.h
 include/mgba/debugger/debugger.h
-include/mgba/dllexports.h
 include/mgba/feature/commandline.h
 include/mgba/feature/thread-proxy.h
 include/mgba/feature/video-logger.h
@@ -86,6 +85,7 @@ include/mgba/internal/arm/macros.h
 include/mgba/internal/debugger/cli-debugger.h
 include/mgba/internal/debugger/gdb-stub.h
 include/mgba/internal/debugger/parser.h
+include/mgba/internal/debugger/stack-trace.h
 include/mgba/internal/debugger/symbols.h
 include/mgba/internal/gb/audio.h
 include/mgba/internal/gb/cheats.h
@@ -93,6 +93,7 @@ include/mgba/internal/gb/debugger/debugger.h
 include/mgba/internal/gb/debugger/symbols.h
 include/mgba/internal/gb/extra/cli.h
 include/mgba/internal/gb/gb.h
+include/mgba/internal/gb/input.h
 include/mgba/internal/gb/io.h
 include/mgba/internal/gb/mbc.h
 include/mgba/internal/gb/memory.h
@@ -124,13 +125,11 @@ include/mgba/internal/gba/renderers/common.h
 include/mgba/internal/gba/renderers/gl.h
 include/mgba/internal/gba/renderers/proxy.h
 include/mgba/internal/gba/renderers/video-software.h
-include/mgba/internal/gba/rr/mgm.h
-include/mgba/internal/gba/rr/rr.h
-include/mgba/internal/gba/rr/vbm.h
 include/mgba/internal/gba/savedata.h
 include/mgba/internal/gba/serialize.h
 include/mgba/internal/gba/sharkport.h
 include/mgba/internal/gba/sio.h
+include/mgba/internal/gba/sio/dolphin.h
 include/mgba/internal/gba/sio/lockstep.h
 include/mgba/internal/gba/timer.h
 include/mgba/internal/gba/vfame.h
@@ -143,8 +142,8 @@ include/mgba/internal/sm83/emitter-sm83.h
 include/mgba/internal/sm83/isa-sm83.h
 include/mgba/internal/sm83/sm83.h
 lib/libmgba.so
-lib/libmgba.so.0.8
-lib/libmgba.so.0.8.4
+lib/libmgba.so.0.9
+lib/libmgba.so.0.9.2
 %%LIBRETRO%%lib/libretro/mgba_libretro.so
 %%QT5%%man/man6/mgba-qt.6.gz
 man/man6/mgba.6.gz
@@ -153,6 +152,8 @@ man/man6/mgba.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/README_DE.md
+%%PORTDOCS%%%%DOCSDIR%%/README_ES.md
+%%PORTDOCS%%%%DOCSDIR%%/README_ZH_CN.md
 %%PORTDOCS%%%%DOCSDIR%%/licenses/blip_buf.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/inih.txt
 share/icons/hicolor/128x128/apps/mgba.png
