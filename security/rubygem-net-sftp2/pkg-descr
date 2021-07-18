@@ -1,0 +1,4 @@
+Net::SFTP is a pure Ruby implementation of the SFTP client protocol
+(versions 1 through 5).
+
+WWW: https://github.com/net-ssh/net-sftp
