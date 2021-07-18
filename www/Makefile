@@ -1690,6 +1690,7 @@
     SUBDIR += py-protego
     SUBDIR += py-puppetboard
     SUBDIR += py-py-restclient
+    SUBDIR += py-pygsheets
     SUBDIR += py-pyjwt
     SUBDIR += py-pylsqpack
     SUBDIR += py-pyocclient
