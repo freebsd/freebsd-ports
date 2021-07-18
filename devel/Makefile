@@ -2398,6 +2398,7 @@
     SUBDIR += p5-File-HomeDir-Tiny
     SUBDIR += p5-File-Iterator
     SUBDIR += p5-File-LibMagic
+    SUBDIR += p5-File-LoadLines
     SUBDIR += p5-File-MMagic
     SUBDIR += p5-File-MMagic-XS
     SUBDIR += p5-File-Map
