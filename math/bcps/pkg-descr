@@ -1,0 +1,5 @@
+Branch, Constrain, and Price Software (BiCePS), a layer of the COIN-OR High
+Performance Parallel Search framework supporting the implementation of
+relaxation-based optimization algorithms.
+
+WWW: https://github.com/coin-or/CHiPPS-BiCePS

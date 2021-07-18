@@ -1,6 +1,7 @@
 bin/fix_includes.py
 bin/include-what-you-use
 bin/iwyu_tool.py
+man/man1/include-what-you-use.1.gz
 %%DATADIR%%/boost-1.64-all-private.imp
 %%DATADIR%%/boost-1.64-all.imp
 %%DATADIR%%/boost-all-private.imp
@@ -13,5 +14,6 @@ bin/iwyu_tool.py
 %%DATADIR%%/iwyu.gcc.imp
 %%DATADIR%%/libcxx.imp
 %%DATADIR%%/qt4.imp
+%%DATADIR%%/qt5_11.imp
 %%DATADIR%%/qt5_4.imp
 %%DATADIR%%/stl.c.headers.imp

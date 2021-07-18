@@ -1,5 +1,6 @@
 PORTNAME=	libretro-pcsx_rearmed
 PORTVERSION=	0.20210215
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org

@@ -6,7 +6,7 @@ CATEGORIES=	games perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to simulate die rolls
 
 LICENSE=	MIT

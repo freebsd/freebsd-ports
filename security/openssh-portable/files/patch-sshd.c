@@ -33,8 +33,8 @@ of short-living parent. Only mark the master process that accepts
 connections, do not protect connection handlers spawned from inetd.
 
 
---- sshd.c.orig	2010-04-15 23:56:22.000000000 -0600
-+++ sshd.c	2010-09-14 16:14:13.000000000 -0600
+--- sshd.c.orig	2021-04-27 11:49:55.540744000 -0700
++++ sshd.c	2021-04-27 11:50:20.239225000 -0700
 @@ -46,6 +46,7 @@
  
  #include <sys/types.h>
@@ -43,7 +43,7 @@ connections, do not protect connection handlers spawned from inetd.
  #include <sys/socket.h>
  #ifdef HAVE_SYS_STAT_H
  # include <sys/stat.h>
-@@ -83,6 +84,13 @@
+@@ -85,6 +86,13 @@
  #include <prot.h>
  #endif
  
@@ -56,24 +56,13 @@ connections, do not protect connection handlers spawned from inetd.
 +
  #include "xmalloc.h"
  #include "ssh.h"
- #include "ssh1.h"
-@@ -1877,6 +1885,10 @@
- 	/* Reinitialize the log (because of the fork above). */
- 	log_init(__progname, options.log_level, options.log_facility, log_stderr);
- 
-+ 	/* Avoid killing the process in high-pressure swapping environments. */
-+ 	if (!inetd_flag && madvise(NULL, 0, MADV_PROTECT) != 0)
-+ 		debug("madvise(): %.200s", strerror(errno));
-+
- 	/* Chdir to the root directory so that the current disk can be
- 	   unmounted if desired. */
- 	if (chdir("/") == -1)
-@@ -1995,6 +2007,29 @@
- 	signal(SIGCHLD, SIG_DFL);
- 	signal(SIGINT, SIG_DFL);
+ #include "ssh2.h"
+@@ -2007,7 +2015,30 @@ main(int ac, char **av)
+ 	for (i = 0; i < options.num_log_verbose; i++)
+ 		log_verbose_add(options.log_verbose[i]);
  
 +#ifdef __FreeBSD__
-+	/*
+ 	/*
 +	 * Initialize the resolver.  This may not happen automatically
 +	 * before privsep chroot().
 +	 */
@@ -95,6 +84,18 @@ connections, do not protect connection handlers spawned from inetd.
 +#endif
 +#endif
 +
++	/*
+ 	 * If not in debugging mode, not started from inetd and not already
+ 	 * daemonized (eg re-exec via SIGHUP), disconnect from the controlling
+ 	 * terminal, and fork.  The original process exits.
+@@ -2022,6 +2053,10 @@ main(int ac, char **av)
+ 	}
+ 	/* Reinitialize the log (because of the fork above). */
+ 	log_init(__progname, options.log_level, options.log_facility, log_stderr);
++
++ 	/* Avoid killing the process in high-pressure swapping environments. */
++ 	if (!inetd_flag && madvise(NULL, 0, MADV_PROTECT) != 0)
++ 		debug("madvise(): %.200s", strerror(errno));
+ 
  	/*
- 	 * Register our connection.  This turns encryption off because we do
- 	 * not have a key.
+ 	 * Chdir to the root directory so that the current disk can be

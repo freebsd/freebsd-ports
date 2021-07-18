@@ -111,7 +111,7 @@ post-patch:
 		${WRKSRC}/providers/bdb/gda-bdb-provider.c \
 		${WRKSRC}/providers/bdb/gda-bdb-test.c
 .if ${LIBGDA5_SLAVE} == jdbc
-	@${REINPLACE_CMD} -e 's|lib/amd64|lib/${ARCH}|g' \
+	@${REINPLACE_CMD} -e 's|lib/amd64|lib/${ARCH:S/powerpc64/ppc64/}|g' \
 		${WRKSRC}/getsp.java
 .endif
 .if ${LIBGDA5_SLAVE}!="no"

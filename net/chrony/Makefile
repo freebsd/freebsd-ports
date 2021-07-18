@@ -1,8 +1,7 @@
 # Created by: Masaki TAGAWA <masaki@club.kyutech.ac.jp>
 
 PORTNAME=	chrony
-DISTVERSION=	4.0
-PORTREVISION=	1
+DISTVERSION=	4.1
 CATEGORIES=	net
 MASTER_SITES=	https://download.tuxfamily.org/chrony/ \
 		LOCAL/mandree
@@ -15,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gmake libedit pkgconfig
 
-CONFLICTS_INSTALL?=	chrony-lite
-
 CPE_VENDOR=	tuxfamily
 
 USE_RC_SUBR=	chronyd
@@ -25,18 +22,20 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--chronyvardir=/var/db/${PORTNAME} \
 		--datarootdir=${DATADIR} \
 		--docdir=${DOCSDIR} \
+		--enable-ntp-signd \
 		--mandir=${MANPREFIX}/man \
 		--prefix=${PREFIX} \
 		--sysconfdir=${PREFIX}/etc \
-		--enable-ntp-signd \
 		--without-tomcrypt
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install
-PORTDOCS=	FAQ NEWS README
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+CONFLICTS_INSTALL?=	chrony-lite
+
+PORTDOCS=	FAQ NEWS README
 PORTEXAMPLES=	chrony.conf.example1 chrony.conf.example2 chrony.conf.example3 \
 		chrony.keys.example
 

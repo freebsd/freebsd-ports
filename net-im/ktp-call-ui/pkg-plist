@@ -54,6 +54,7 @@ share/locale/sv/LC_MESSAGES/ktp-call-ui.mo
 share/locale/tr/LC_MESSAGES/ktp-call-ui.mo
 share/locale/ug/LC_MESSAGES/ktp-call-ui.mo
 share/locale/uk/LC_MESSAGES/ktp-call-ui.mo
+share/locale/vi/LC_MESSAGES/ktp-call-ui.mo
 share/locale/zh_CN/LC_MESSAGES/ktp-call-ui.mo
 share/locale/zh_TW/LC_MESSAGES/ktp-call-ui.mo
 share/telepathy/clients/KTp.CallUi.client

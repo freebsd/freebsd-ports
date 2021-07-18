@@ -1,0 +1,33 @@
+changeset:   569030:f875a4ffd653
+user:        Mike Hommey <mh+mozilla@glandium.org>
+date:        Sun Feb 28 17:47:27 2021 +0000
+summary:     Bug 1694575 - Don't include mozalloc.h from the iosfwd wrapper. r=andi
+
+diff -r d31bf2fc599d -r f875a4ffd653 config/gcc-stl-wrapper.template.h
+--- config/gcc-stl-wrapper.template.h	Sun Feb 28 14:59:31 2021 +0000
++++ config/gcc-stl-wrapper.template.h	Sun Feb 28 17:47:27 2021 +0000
+@@ -27,7 +27,11 @@
+ //  # define _GLIBCXX_DEBUG 1
+ #endif
+ 
+-// Don't include mozalloc for cstdlib. See bug 1245076.
++// Don't include mozalloc.h for cstdlib, type_traits, limits and iosfwd.
++// See bug 1245076 (cstdlib), bug 1594027 (type_traits, limits) and
++// bug 1694575 (iosfwd).
++// Please be careful when adding more exceptions, especially regarding
++// the header not directly or indirectly including <new>.
+ #ifndef moz_dont_include_mozalloc_for_cstdlib
+ #  define moz_dont_include_mozalloc_for_cstdlib
+ #endif
+@@ -40,6 +44,10 @@
+ #  define moz_dont_include_mozalloc_for_limits
+ #endif
+ 
++#ifndef moz_dont_include_mozalloc_for_iosfwd
++#  define moz_dont_include_mozalloc_for_iosfwd
++#endif
++
+ // Include mozalloc after the STL header and all other headers it includes
+ // have been preprocessed.
+ #if !defined(MOZ_INCLUDE_MOZALLOC_H) && \
+

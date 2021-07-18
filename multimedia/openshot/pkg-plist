@@ -1,9 +1,9 @@
 bin/openshot-qt
-%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev2-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev2-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev2-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev2-py%%PYTHON_VER%%.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev2-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev3-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev3-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev3-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev3-py%%PYTHON_VER%%.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev3-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/openshot_qt/__init__.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -2161,7 +2161,6 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/images/cache/Header_1.png
 %%PYTHON_SITELIBDIR%%/openshot_qt/images/cache/Header_2.png
 %%PYTHON_SITELIBDIR%%/openshot_qt/images/cache/Header_3.png
-%%PYTHON_SITELIBDIR%%/openshot_qt/images/cache/NewWebsite.png
 %%PYTHON_SITELIBDIR%%/openshot_qt/images/cache/Oval_1.png
 %%PYTHON_SITELIBDIR%%/openshot_qt/images/cache/Oval_2.png
 %%PYTHON_SITELIBDIR%%/openshot_qt/images/cache/Oval_3.png
@@ -3552,6 +3551,8 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/views/__pycache__/tutorial.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/views/__pycache__/webview.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/views/__pycache__/webview.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/openshot_qt/windows/views/__pycache__/zoom_slider.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/openshot_qt/windows/views/__pycache__/zoom_slider.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/views/add_to_timeline_treeview.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/views/blender_listview.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/views/changelog_treeview.py
@@ -3578,6 +3579,7 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/views/webview_backend/__pycache__/webkit.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/views/webview_backend/webengine.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/views/webview_backend/webkit.py
+%%PYTHON_SITELIBDIR%%/openshot_qt/windows/views/zoom_slider.py
 share/applications/org.openshot.OpenShot.desktop
 share/icons/hicolor/128x128/apps/openshot-qt.png
 share/icons/hicolor/256x256/apps/openshot-qt.png

@@ -68,10 +68,12 @@ share/osinfo/install-script/redhat.com/rhel-kickstart-desktop.xml
 share/osinfo/install-script/redhat.com/rhel-kickstart-jeos.xml
 share/osinfo/install-script/ubuntu.com/ubuntu-preseed-desktop.xml
 share/osinfo/install-script/ubuntu.com/ubuntu-preseed-jeos.xml
+share/osinfo/os/almalinux.org/almalinux-8.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.10.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.11.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.12.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.13.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.14.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
@@ -140,6 +142,7 @@ share/osinfo/os/centos.org/centos-6.9.xml
 share/osinfo/os/centos.org/centos-7.0.xml
 share/osinfo/os/centos.org/centos-8.xml
 share/osinfo/os/centos.org/centos-stream-8.xml
+share/osinfo/os/centos.org/centos-stream-9.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.0.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.1.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.2.xml
@@ -147,6 +150,9 @@ share/osinfo/os/cirros-cloud.net/cirros-0.3.3.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.4.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.5.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.4.0.xml
+share/osinfo/os/cirros-cloud.net/cirros-0.5.0.xml
+share/osinfo/os/cirros-cloud.net/cirros-0.5.1.xml
+share/osinfo/os/cirros-cloud.net/cirros-0.5.2.xml
 share/osinfo/os/clearlinux.org/clearlinux-rolling.xml
 share/osinfo/os/debian.org/debian-1.1.xml
 share/osinfo/os/debian.org/debian-1.2.xml
@@ -303,6 +309,7 @@ share/osinfo/os/freebsd.org/freebsd-11.4.xml
 share/osinfo/os/freebsd.org/freebsd-12.0.xml
 share/osinfo/os/freebsd.org/freebsd-12.1.xml
 share/osinfo/os/freebsd.org/freebsd-12.2.xml
+share/osinfo/os/freebsd.org/freebsd-13.0.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.xml
 share/osinfo/os/freebsd.org/freebsd-2.2.8.xml
@@ -372,6 +379,7 @@ share/osinfo/os/mageia.org/mageia-4.xml
 share/osinfo/os/mageia.org/mageia-5.xml
 share/osinfo/os/mageia.org/mageia-6.xml
 share/osinfo/os/mageia.org/mageia-7.xml
+share/osinfo/os/mageia.org/mageia-8.xml
 share/osinfo/os/mandriva.com/mandrake-10.0.xml
 share/osinfo/os/mandriva.com/mandrake-10.1.xml
 share/osinfo/os/mandriva.com/mandrake-10.2.xml
@@ -468,6 +476,7 @@ share/osinfo/os/netbsd.org/netbsd-8.2.xml
 share/osinfo/os/netbsd.org/netbsd-9.0.xml
 share/osinfo/os/nixos.org/nixos-20.03.xml
 share/osinfo/os/nixos.org/nixos-20.09.xml
+share/osinfo/os/nixos.org/nixos-21.05.xml
 share/osinfo/os/nixos.org/nixos-unknown.xml
 share/osinfo/os/nixos.org/nixos-unstable.xml
 share/osinfo/os/novell.com/netware-4.xml
@@ -497,6 +506,8 @@ share/osinfo/os/openbsd.org/openbsd-6.4.xml
 share/osinfo/os/openbsd.org/openbsd-6.5.xml
 share/osinfo/os/openbsd.org/openbsd-6.6.xml
 share/osinfo/os/openbsd.org/openbsd-6.7.xml
+share/osinfo/os/openbsd.org/openbsd-6.8.xml
+share/osinfo/os/openbsd.org/openbsd-6.9.xml
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
 share/osinfo/os/opensuse.org/opensuse-11.0.xml
@@ -512,6 +523,7 @@ share/osinfo/os/opensuse.org/opensuse-13.2.xml
 share/osinfo/os/opensuse.org/opensuse-15.0.xml
 share/osinfo/os/opensuse.org/opensuse-15.1.xml
 share/osinfo/os/opensuse.org/opensuse-15.2.xml
+share/osinfo/os/opensuse.org/opensuse-15.3.xml
 share/osinfo/os/opensuse.org/opensuse-42.1.xml
 share/osinfo/os/opensuse.org/opensuse-42.2.xml
 share/osinfo/os/opensuse.org/opensuse-42.3.xml
@@ -701,6 +713,7 @@ share/osinfo/os/suse.com/caasp-unknown.xml
 share/osinfo/os/suse.com/sle-15-unknown.xml
 share/osinfo/os/suse.com/sle-15.1.xml
 share/osinfo/os/suse.com/sle-15.2.xml
+share/osinfo/os/suse.com/sle-15.3.xml
 share/osinfo/os/suse.com/sle-15.xml
 share/osinfo/os/suse.com/sle-unknown.xml
 share/osinfo/os/suse.com/sled-10.1.xml
@@ -721,6 +734,7 @@ share/osinfo/os/suse.com/sled-12.4.xml
 share/osinfo/os/suse.com/sled-12.5.xml
 share/osinfo/os/suse.com/sled-12.xml
 share/osinfo/os/suse.com/sled-9.xml
+share/osinfo/os/suse.com/slem-5.0.xml
 share/osinfo/os/suse.com/sles-10.1.xml
 share/osinfo/os/suse.com/sles-10.2.xml
 share/osinfo/os/suse.com/sles-10.3.xml

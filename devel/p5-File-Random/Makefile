@@ -1,7 +1,7 @@
 # Created by: Aaron Dalton <aaron@daltons.ca>
 
 PORTNAME=	File-Random
-PORTVERSION=	0.19
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

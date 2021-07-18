@@ -1,6 +1,6 @@
 PORTNAME=	geomorph
 PORTVERSION=	0.60.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.60/
 
@@ -16,7 +16,7 @@ SHEBANG_FILES=	update-rc
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libintl-prefix="${LOCALBASE}"
-USE_GCC=	any # lots of severely broken code
+USE_GCC=	yes # lots of severely broken code
 CFLAGS+=	-fcommon
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}

@@ -12,6 +12,8 @@ COMMENT=	GNUstep mail client
 
 LICENSE=	GPLv2
 
+BROKEN=		does not link: Framework/GNUMail/GNUMail.framework/Versions/Current/./libGNUMail.so: undefined reference to __objc_ivar_offset_NSWindow._delegate.
+
 LIB_DEPENDS=	libPantomime.so:mail/pantomime \
 		libAddresses.so:mail/addresses
 

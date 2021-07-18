@@ -13,7 +13,11 @@ COMMENT=	Composite pronunciation dictionary from ogi.edu for Festival
 RUN_DEPENDS=	festival:audio/festival \
 		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:audio/festlex-poslex
 
-RESTRICTED=	No commercial use
+# Converted from RESTRICTED
+LICENSE=	FESTLEX
+LICENSE_NAME=	festlex
+LICENSE_TEXT=	No commercial use
+LICENSE_PERMS=	auto-accept
 
 WRKSRC=		${WRKDIR}/festival
 

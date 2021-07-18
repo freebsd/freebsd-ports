@@ -8,12 +8,19 @@ COMMENT=	Example-based Image Synthesis and Style Transfer
 
 LICENSE=	PD
 
-USES=		compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	jamriska
 GH_TAGNAME=	2f5c97c0c21a
 
 PLIST_FILES=	bin/ebsynth
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USES=		compiler:gcc-c++11-lib
+.else
+USES=		compiler:c++11-lang
+.endif
 
 do-build:
 	@(cd ${BUILD_WRKSRC} && ${CXX} src/ebsynth.cpp \

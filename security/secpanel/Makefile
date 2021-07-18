@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}.tgz \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	GUI for managing and running ssh and related utilities
 
 LICENSE=	GPLv2

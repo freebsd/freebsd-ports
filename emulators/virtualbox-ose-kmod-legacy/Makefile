@@ -2,7 +2,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.44
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX=	-kmod-legacy
@@ -39,6 +39,8 @@ CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
 CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-* \
 			virtualbox-ose-kmod-*
+
+PORTSCOUT=	limit:^5\.
 
 OPTIONS_DEFINE=	DEBUG VIMAGE
 OPTIONS_DEFAULT=VIMAGE

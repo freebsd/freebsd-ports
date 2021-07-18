@@ -2,7 +2,7 @@
 
 PORTNAME=	sage
 PORTVERSION=	9.2
-PORTREVISION=	11
+PORTREVISION=	16
 CATEGORIES=	math
 MASTER_SITES=	https://mirrors.xmission.com/sage/src/		\
 		http://mirrors.xmission.com/sage/src/		\
@@ -54,8 +54,8 @@ BUILD_DEPENDS=	bash:shells/bash		\
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0i:devel/py-Jinja2@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}jedi>0:devel/py-jedi@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR}\
-		${PYTHON_PKGNAMEPREFIX}jupyter_core>0:devel/py-jupyter_core@${PY_FLAVOR}\
-		${PYTHON_PKGNAMEPREFIX}jupyter_client>0:devel/py-jupyter_client@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}jupyter-core>0:devel/py-jupyter-core@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}jupyter-client>0:devel/py-jupyter-client@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}kiwisolver>0:math/py-kiwisolver@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}markupsafe>0:textproc/py-markupsafe@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}\
@@ -142,7 +142,6 @@ BUILD_DEPENDS=	bash:shells/bash		\
 		pari-nftables>0:math/pari_nftables	\
 		pari-seadata>0:math/pari_seadata\
 		QuadraticSieve:math/flintqs	\
-		ninja:devel/ninja		\
 		gpatch:devel/patch		\
 		rubiks>0:math/rubiks		\
 		sympow:math/sympow		\
@@ -202,7 +201,7 @@ LIB_DEPENDS=	libarb.so:math/arb		\
 		libR.so:math/R			\
 		librw.so:math/rankwidth		\
 		libSingular.so:math/singular	\
-		libamd.so:math/suitesparse	\
+		libumfpack.so:math/suitesparse-umfpack	\
 		libsemigroups.so:math/libsemigroups	\
 		libsymmetrica.so:math/symmetrica\
 		libzmq.so:net/libzmq4		\
@@ -252,8 +251,8 @@ RUN_DEPENDS=	bash:shells/bash		\
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}jedi>0:devel/py-jedi@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR}\
-		${PYTHON_PKGNAMEPREFIX}jupyter_core>0:devel/py-jupyter_core@${PY_FLAVOR}\
-		${PYTHON_PKGNAMEPREFIX}jupyter_client>0:devel/py-jupyter_client@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}jupyter-core>0:devel/py-jupyter-core@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}jupyter-client>0:devel/py-jupyter-client@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}kiwisolver>0:math/py-kiwisolver@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}markupsafe>0:textproc/py-markupsafe@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}\
@@ -338,9 +337,10 @@ RUN_DEPENDS=	bash:shells/bash		\
 		yasm:devel/yasm			\
 		pixz:archivers/pixz
 
-USES=		autoreconf blaslapack:openblas compiler:c++11-lib fortran	\
-		gettext gmake gnome iconv jpeg libtool localbase ncurses perl5	\
-		pkgconfig python:3.7+ readline shebangfix sqlite tk xorg
+USES=		autoreconf blaslapack:openblas compiler:c++11-lib fortran \
+		gettext gmake gnome iconv jpeg libtool localbase ncurses \
+		ninja:build perl5 pkgconfig python:3.7+ readline shebangfix \
+		sqlite tk xorg
 USE_TEX=	latex:build pdftex:build tex:build
 USE_XORG=	x11 xext xscrnsaver
 USE_GNOME=	cairo glib20 pango
@@ -500,6 +500,8 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|/var/lib/sage|/share/libdata/${PORTNAME}|'	\
 		${WRKSRC}/${f}
 .endfor
+	# Bug with py-docutils > 0.16
+	${RM} -r ${WRKSRC}/src/doc/hu
 	(cd ${WRKSRC} && ./bootstrap)
 	${MKDIR} ${BLDDIR}${PREFIX}/lib/pkgconfig	# Removed thereafter
 
@@ -566,8 +568,10 @@ do-install:
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib64 ${STAGEDIR}${PREFIX}/libdata/pkgconfig/blas.pc	\
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/distutils-precedence.pth	\
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/cblas.pc	\
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/gsl.pc	\
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/lapack.pc
+	${RM} -r ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_distutils_hack
 
 .include <bsd.port.post.mk>

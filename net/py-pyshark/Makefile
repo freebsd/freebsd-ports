@@ -1,7 +1,7 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 PORTNAME=	pyshark
-PORTVERSION=	0.4.2.11
+PORTVERSION=	0.4.3
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +23,6 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|C:\\Program Files\\Wireshark\\\(.*\).exe|${LOCALBASE}/bin/\1|' ${WRKSRC}/pyshark/config.ini
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/pyshark/config.ini
 
 .include <bsd.port.mk>

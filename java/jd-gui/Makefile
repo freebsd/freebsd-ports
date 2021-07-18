@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	jd-gui
 PORTVERSION=	1.6.6
 DISTVERSIONPREFIX=	v

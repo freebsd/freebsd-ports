@@ -2,7 +2,7 @@
 
 PORTNAME=	wmi
 PORTVERSION=	1.3.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://dev.zenoss.org/trac/export/26435/trunk/inst/externallibs/ \
 		http://www.openvas.org/download/wmi/ \
@@ -21,11 +21,9 @@ ALL_TARGET=	build
 
 PROGS=	bin/wmic bin/winexe
 
-.include <bsd.port.options.mk>
-
 do-install:
 .for x in ${PROGS}
-	@${INSTALL_PROGRAM} ${WRKSRC}/Samba/source/${x} ${STAGEDIR}${PREFIX}/${x}
+	${INSTALL_PROGRAM} ${WRKSRC}/Samba/source/${x} ${STAGEDIR}${PREFIX}/${x}
 .endfor
 
 .include <bsd.port.mk>

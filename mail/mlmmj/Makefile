@@ -2,7 +2,7 @@
 
 PORTNAME=	mlmmj
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://mlmmj.org/releases/
 
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cpe gmake iconv shebangfix tar:bzip2
 SHEBANG_FILES=	contrib/web/perl-user/mlmmj.cgi
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-receive-strip
 
 CPPFLAGS+=	-I${ICONV_INCLUDE_PATH}
 LDFLAGS+=	${ICONV_LIB_PATH}

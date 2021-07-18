@@ -1,7 +1,7 @@
 # Created by: Aaron Dalton <aaron@daltons.ca>
 
 PORTNAME=	Tree-Simple-VisitorFactory
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +17,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Tree-Simple>=1.22:devel/p5-Tree-Simple
 TEST_DEPENDS=	p5-Test-Exception>=0.15:devel/p5-Test-Exception
 
-NO_ARCH=	yes
 USES=		perl5 tar:tgz
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+--- qt5/applet/qtquick-plugin/CMakeLists.txt.orig	2021-04-30 17:45:18 UTC
++++ qt5/applet/qtquick-plugin/CMakeLists.txt
+@@ -40,8 +40,8 @@ target_compile_options(
+ target_link_libraries(
+   uim-qtquick-plugin
+   PRIVATE
+-  ${CMAKE_BINARY_DIR}/../../uim/.libs/libuim.so
+-  ${CMAKE_BINARY_DIR}/../../uim/.libs/libuim-scm.so
++  -luim
++  -luim-scm
+   Qt5::Core
+   Qt5::Quick
+   Qt5::Qml

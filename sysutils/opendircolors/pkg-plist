@@ -1,0 +1,6 @@
+bin/dircolors
+bin/dirconvert
+bin/opendircolors
+man/man1/dircolors.1.gz
+man/man1/dirconvert.1.gz
+man/man1/opendircolors.1.gz

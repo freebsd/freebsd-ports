@@ -99,12 +99,15 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/org.kde.desktop/SwipeListItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/org.kde.desktop/Theme.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/org.kde.desktop/Units.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PageTab.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeHighlight.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeProgress.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeStack.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeTab.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeTabBar.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/SwipeNavigator.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/TabViewLayout.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/templates/PageTab.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/AbstractApplicationHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/AbstractCard.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/AbstractListItem.qml

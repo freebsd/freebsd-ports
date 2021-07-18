@@ -1,9 +1,9 @@
 PORTNAME=	fluent-mixin-plaintextformatter
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.6
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Fluentd plugin to include format values into json, tsv or csv
 
 LICENSE=	APACHE20

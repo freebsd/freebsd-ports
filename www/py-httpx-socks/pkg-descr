@@ -1,0 +1,5 @@
+The httpx-socks package provides proxy transports for httpx
+client. SOCKS4(a), SOCKS5, HTTP (tunneling) proxy supported.
+It uses python-socks for core proxy functionality.
+
+WWW: https://github.com/romis2012/httpx-socks

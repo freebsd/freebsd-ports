@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	lme4
-DISTVERSION=	1.1-26
+DISTVERSION=	1.1-27.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,7 +12,6 @@ LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-minqa>=1.1.15:math/R-cran-minqa \
 		R-cran-nloptr>=1.0.4:math/R-cran-nloptr \
-		R-cran-statmod>0:math/R-cran-statmod \
 		R-cran-Rcpp>=0.10.5:devel/R-cran-Rcpp \
 		R-cran-RcppEigen>0:math/R-cran-RcppEigen
 BUILD_DEPENDS=	${CRAN_DEPENDS}

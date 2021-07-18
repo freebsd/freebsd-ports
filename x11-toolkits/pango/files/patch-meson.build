@@ -1,35 +1,14 @@
---- meson.build.orig	2018-04-07 12:06:28.000000000 +0200
-+++ meson.build	2018-05-08 15:01:59.098440000 +0200
-@@ -297,11 +297,13 @@
-   pango_deps += freetype_dep
- endif
+Disable the fallback on subprojects/gi-docgen -- if py-docgen is not found 
+on the system, the shipped fallback in 'subprojects' would be tried. This is
+unwanted behaviour.
+
+--- meson.build.orig	2021-05-27 18:22:12 UTC
++++ meson.build
+@@ -585,7 +585,6 @@ pango_conf.set('HAVE_SYSPROF', libsysprof_capture_dep.
+ pango_deps += libsysprof_capture_dep
  
--xft_dep = dependency('xft', version: xft_req_version, required: false)
--if xft_dep.found()
--  pango_conf.set('HAVE_XFT', 1)
--  pango_deps += dependency('xrender', required: false)
--  pango_deps += xft_dep
-+if get_option('xft')
-+  xft_dep = dependency('xft', version: xft_req_version, required: false)
-+  if xft_dep.found()
-+    pango_conf.set('HAVE_XFT', 1)
-+    pango_deps += dependency('xrender', required: false)
-+    pango_deps += xft_dep
-+  endif
- endif
+ gidocgen_dep = dependency('gi-docgen', version: '>= 2021.1',
+-                          fallback: ['gi-docgen', 'dummy_dep'],
+                           required: get_option('gtk_doc'))
  
- if host_system == 'darwin'
-@@ -481,9 +483,12 @@
-   [ 'pango.pc' ],
-   [ 'pangowin32.pc', host_system == 'windows' ],
-   [ 'pangoft2.pc', build_pangoft2 ],
--  [ 'pangoxft.pc', xft_dep.found() ],
-   [ 'pangocairo.pc', cairo_dep.found() ],
- ]
-+
-+if get_option('xft')
-+  pkgconf_files += [[ 'pangoxft.pc', xft_dep.found() ]]
-+endif
- 
- foreach pkg: pkgconf_files
-   pkg_name = pkg[0]
+ gnome = import('gnome')

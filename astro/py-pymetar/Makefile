@@ -1,8 +1,8 @@
 # Created by: Hye-Shik Chang <perky@fallin.lv>
 
 PORTNAME=	pymetar
-PORTVERSION=	1.2
-CATEGORIES=	astro python geography
+PORTVERSION=	1.3
+CATEGORIES=	astro geography python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

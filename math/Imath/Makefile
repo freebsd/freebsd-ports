@@ -1,7 +1,7 @@
 # Based on the graphics/ilmbase port that was done by: nork@FreeBSD.org
 
 PORTNAME=	Imath
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.0
 CATEGORIES=	math devel graphics
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -18,6 +18,8 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DCMAKE_DEBUG_POSTFIX= \
 		-DCMAKE_INSTALL_PREFIX=${PREFIX}
 
+PATCH_STRIP=	-p1
+
 PLIST_SUB=	MAJORVER=${_MAJORVER} \
 		MINVER=${_MINVER} \
 		PLVER=${_PLVER} \
@@ -31,14 +33,14 @@ OPTIONS_SUB=	yes
 LARGE_STACK_DESC=	Enable sys-dependent large stack optimizations
 LARGE_STACK_CMAKE_BOOL=	IMATH_ENABLE_LARGE_STACK
 
+PYTHON_BUILD_DEPENDS=	${PYNUMPY}
 PYTHON_LIB_DEPENDS=	${PY_BOOST}
+PYTHON_RUN_DEPENDS=	${PYNUMPY}
 PYTHON_USES=		python
 PYTHON_CMAKE_BOOL=	PYTHON
-PYTHON_BUILD_DEPENDS=	${PYNUMPY}
-PYTHON_RUN_DEPENDS=	${PYNUMPY}
 
-_MAJORVER=	3_0
-_VER=		27
+_MAJORVER=	3_1
+_VER=		29
 _MINVER=	0
 _PLVER=		0
 
@@ -51,6 +53,6 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 do-test:
-	cd ${BUILD_WRKSRC} && ctest
+	cd ${BUILD_WRKSRC} && ctest -j ${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.mk>

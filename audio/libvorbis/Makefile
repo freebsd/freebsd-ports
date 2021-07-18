@@ -6,7 +6,7 @@ PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/ \
-		https://download.videolan.org/videolan/testing/contrib/vorbis/
+		https://ftp.osuosl.org/pub/xiph/releases/vorbis/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Audio compression codec library

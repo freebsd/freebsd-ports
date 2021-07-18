@@ -1,5 +1,5 @@
 DeleGate is a general purpose protocol proxy system for protocols that use
-TCP/IP.  This software includes support for HTTP, Gopher, FTP, SMTP, NNTP,
+TCP/IP. This software includes support for HTTP, Gopher, FTP, SMTP, NNTP,
 POP, Telnet, Wais, Whois, etc.
 
 WWW: http://www.delegate.org/delegate/

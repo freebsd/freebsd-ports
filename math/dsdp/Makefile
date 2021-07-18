@@ -1,6 +1,6 @@
 PORTNAME=	dsdp
 DISTVERSION=	5.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	https://www.mcs.anl.gov/hs/software/${PORTNAME:tu}/
 DISTNAME=	${PORTNAME:tu}${DISTVERSION}
@@ -31,6 +31,7 @@ PLIST_FILES=	bin/dsdp5 \
 		include/dsdp/dsdplapack.h \
 		include/dsdp/dsdpmem.h \
 		include/dsdp/dsdpsys.h \
+		lib/libdsdp.so.0 \
 		lib/libdsdp.so
 
 do-build: # the build fails to build all binaries without being called twice due to makefile convolution
@@ -40,7 +41,8 @@ do-build: # the build fails to build all binaries without being called twice due
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/dsdp
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/dsdp5 ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_LIB} ${WRKSRC}/lib/libdsdp.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/lib/libdsdp.so ${STAGEDIR}${PREFIX}/lib/libdsdp.so.0
+	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s libdsdp.so.0 libdsdp.so)
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include/dsdp
 
 .include <bsd.port.mk>

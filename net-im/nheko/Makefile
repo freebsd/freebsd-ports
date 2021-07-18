@@ -1,6 +1,7 @@
 PORTNAME=	nheko
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.8.1
+DISTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -31,26 +32,17 @@ USES=		cmake compiler:c++17-lang pkgconfig \
 		localbase:ldflags qt:5 ssl tar:xz
 USE_QT=		concurrent core dbus declarative gui multimedia network \
 		quickcontrols2 svg widgets \
+		graphicaleffects_run \
 		buildtools_build linguist_build qmake_build
 
-# There are two external dependencies: lmdb++ and tweeny.
+# There is one external dependencie: lmdb++
 #  - lmdb++ is a single header file, it just needs to be included
-#  - tweeny is a library, but only one header is needed; it is normally
-#    installed into a tweeny/ subdirectory, but its sources place it
-#    in include/. Add one more symlink to the build for that.
-# We don't actually use the bundled versions, we get them via
-# the ports system (see GH_TUPLE, below).
-CMAKE_ARGS=	-DLMDBXX_INCLUDE_DIR=${WRKSRC}/deps/lmdb \
-		-DTWEENY_INCLUDE_DIR=${WRKSRC}/deps/tweeny/include \
+CMAKE_ARGS=	-DLMDBXX_INCLUDE_DIR=${WRKSRC}/deps/lmdb
 CFLAGS+=	-DSPDLOG_FMT_EXTERNAL=1
 LDFLAGS+=	-L${LOCALBASE}/lib -lfmt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Nheko-Reborn
-GH_TUPLE=	drycpp:lmdbxx:0b43ca87d8cfabba392dfe884eb1edb83874de02:lmdb/deps/lmdb \
-		mobius3:tweeny:6a5033372fe53c4c731c66c8a2d56261746cd85c:tweeny/deps/tweeny
-
-post-extract:
-	cd ${WRKSRC}/deps/tweeny && ${LN} -s include tweeny
+GH_TUPLE=	hoytech:lmdbxx:029fb681213af3020f5e3a86045445552bd024c5:lmdb/deps/lmdb
 
 .include <bsd.port.mk>

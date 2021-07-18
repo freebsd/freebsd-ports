@@ -2,7 +2,7 @@
 
 PORTNAME=	egl
 PORTVERSION=	0.3.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-stable-src

@@ -1,7 +1,7 @@
 # Created by: gahr
 
 PORTNAME=	seed7
-DISTVERSION=	05_20210106
+DISTVERSION=	05_20210627
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
@@ -16,7 +16,7 @@ COMMENT=	High-level, extensible programming language
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le sparc64
+ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le sparc64
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 

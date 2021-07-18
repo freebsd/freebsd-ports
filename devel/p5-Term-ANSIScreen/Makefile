@@ -11,7 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Term::ANSIColor clone with screen mode support
 
-USE_PERL5=	configure
+LICENSE=	CC0-1.0
+
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.6
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	bash:shells/bash \
 		msghack:devel/gettext-msghack \
-		${PYTHON_PKGNAMEPREFIX}lxml>=4.0:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=4.6.3:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		gettext python:3.6+ shebangfix
@@ -42,7 +42,7 @@ TMSERVER_DESC=	Tmserver backend support
 TRADOS_DESC=	Trados format support
 YAML_DESC=	YAML format support
 
-ENCODING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=3.0.4:textproc/py-chardet@${PY_FLAVOR}
+ENCODING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=4.0.0,1:textproc/py-chardet@${PY_FLAVOR}
 ICAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6.1:deskutils/py-vobject@${PY_FLAVOR}
 ICAL_VARS=		MANPAGES+="ical2po po2ical"
 INI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}iniparse>=0.5:devel/py-iniparse@${PY_FLAVOR}

@@ -1,13 +1,15 @@
 bin/rist2rist
 bin/ristreceiver
 bin/ristsender
+bin/ristsrppasswd
 include/librist/common.h
 include/librist/headers.h
 include/librist/librist.h
+include/librist/librist_srp.h
 include/librist/logging.h
 include/librist/udpsocket.h
 include/librist/version.h
 lib/librist.so
 lib/librist.so.4
-lib/librist.so.4.0.0
+lib/librist.so.4.1.0
 libdata/pkgconfig/librist.pc

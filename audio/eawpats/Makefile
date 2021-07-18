@@ -10,7 +10,11 @@ DISTNAME=	eawpats12_full
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eric A. Welsh's collection of Gravis Ultrasound MIDI patches
 
-RESTRICTED=	Some of the patches are marked no-commercial-use
+# Converted from RESTRICTED
+LICENSE=	EAWPATS
+LICENSE_NAME=	eawpats
+LICENSE_TEXT=	Some of the patches are marked no-commercial-use
+LICENSE_PERMS=	auto-accept
 
 NO_BUILD=	yes
 NO_ARCH=	yes

@@ -1,0 +1,5 @@
+Friendly and fast tool for sending HTTP requests.
+It reimplements as much as possible of HTTPie's excellent
+design.
+
+WWW: https://github.com/ducaale/xh

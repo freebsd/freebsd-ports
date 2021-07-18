@@ -10,5 +10,5 @@ lib/cmake/Clingo/ClingoConfigVersion.cmake
 lib/cmake/Clingo/ClingoTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Clingo/ClingoTargets.cmake
 lib/libclingo.so
-lib/libclingo.so.3
-lib/libclingo.so.3.0
+lib/libclingo.so.4
+lib/libclingo.so.4.0

@@ -11,6 +11,12 @@ MASTER_SITES=	http://www.dsl.gr.jp/~tf/pool/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WAEIJIRO English - Japanese Dictionary (EPWING V1 format)
 
+# Converted from RESTRICTED
+LICENSE=	waeijiro
+LICENSE_NAME=	waeijiro
+LICENSE_TEXT=	The original dictionary is not free
+LICENSE_PERMS=	auto-accept
+
 EXTRACT_DEPENDS=${LOCALBASE}/share/freepwing/fpwutils.mk:japanese/freepwing \
 		lha:archivers/lha
 BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:japanese/freepwing \
@@ -19,7 +25,6 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:japanese/freepwing \
 MANUAL_PACKAGE_BUILD=Needs data from a CDROM
 MAKE_JOBS_UNSAFE=	yes
 
-RESTRICTED=	The original dictionary is not free
 USES=		perl5 gmake
 PORTDOCS=	README
 DICT_PATH?=	/cdrom

@@ -1,6 +1,6 @@
---- Light.c.orig	2014-09-25 08:03:26 UTC
+--- Light.c.orig	2016-08-26 08:14:53 UTC
 +++ Light.c
-@@ -252,8 +252,10 @@ int main(int argc, char *argv[])
+@@ -254,8 +254,10 @@ int main(int argc, char *argv[])
  
    /* >>>>>>>>>>>>>>>>    ALLOCATE MEMORY        <<<<<<<<<<<<<<<<<<<<<  */
  

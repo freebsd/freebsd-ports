@@ -3,10 +3,10 @@
 PORTNAME=	synfigstudio
 PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=v
-PORTREVISION=	11
+PORTREVISION=	14
 CATEGORIES=	graphics multimedia
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Vector-based 2D animation software package
 
 LICENSE=	GPLv2+
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libmlt.so:multimedia/mlt \
-		libsynfig.so:devel/synfig
+		libsynfig.so:graphics/synfig
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 PORTSCOUT=	limitw:1,even

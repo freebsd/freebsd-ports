@@ -5,7 +5,7 @@ PORTVERSION=	1.1.1
 PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.xiph.org/releases/theora/ \
-		https://repo.turris.cz/downloads/
+		https://ftp.osuosl.org/pub/xiph/releases/theora/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Theora video codec for the Ogg multimedia streaming system

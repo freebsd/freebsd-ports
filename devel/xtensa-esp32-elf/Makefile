@@ -2,7 +2,7 @@
 
 PORTNAME=	xtensa-esp32-elf
 DISTVERSION=	1.22.0.g20200907
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases/binutils:source1 \
 		GNU/binutils:source1 \
@@ -48,7 +48,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		wget:ftp/wget
 
 USES=		autoreconf:build bison gmake libtool python
-USE_GCC=	9
+USE_GCC=	10
 USE_GITHUB=	yes
 
 NO_MTREE=	yes

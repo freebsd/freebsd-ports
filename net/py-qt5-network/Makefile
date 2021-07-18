@@ -1,4 +1,5 @@
 PORTNAME=	network
+PORTREVISION=	1
 CATEGORIES=	net devel python
 
 MAINTAINER=	kde@FreeBSD.org

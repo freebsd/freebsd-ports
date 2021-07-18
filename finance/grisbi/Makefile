@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	grisbi
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION:R}.x/${PORTVERSION}
 
@@ -11,6 +11,7 @@ COMMENT=	Personal accounting application
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libofx.so:finance/libofx		\
+		libharfbuzz.so:print/harfbuzz		\
 		libfreetype.so:print/freetype2		\
 		libgoffice-0.10.so:devel/goffice	\
 		libfontconfig.so:x11-fonts/fontconfig

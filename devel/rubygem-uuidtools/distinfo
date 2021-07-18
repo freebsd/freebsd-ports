@@ -1,2 +1,3 @@
-SHA256 (rubygem/uuidtools-2.1.5.gem) = af6c85f2fca731cbf45ebc55b96bf5c94d0d46663dfc4a7d32f2db9c65c05b7e
-SIZE (rubygem/uuidtools-2.1.5.gem) = 25600
+TIMESTAMP = 1625323815
+SHA256 (rubygem/uuidtools-2.2.0.gem) = c4aed168141746d2357ce907626b83998084aeb3c6ac16670ae902a462191069
+SIZE (rubygem/uuidtools-2.2.0.gem) = 27136

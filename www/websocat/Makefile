@@ -2,8 +2,8 @@
 
 PORTNAME=	websocat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.0
-PORTREVISION=	9
+DISTVERSION=	1.8.1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -16,10 +16,11 @@ USES=	cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	vi
 
-CARGO_FEATURES=	ssl seqpacket
+CARGO_FEATURES=	ssl seqpacket --no-default-features
 
 CARGO_CRATES=	anymap-0.12.1 \
 		arc-swap-0.4.3 \
+		atty-0.2.14 \
 		autocfg-0.1.7 \
 		base64-0.9.3 \
 		base64-0.10.1 \
@@ -55,7 +56,8 @@ CARGO_CRATES=	anymap-0.12.1 \
 		generic-array-0.12.3 \
 		getrandom-0.1.13 \
 		heck-0.3.1 \
-		hermit-abi-0.1.3 \
+		hermit-abi-0.1.18 \
+		hex-0.4.2 \
 		http-0.1.19 \
 		http-bytes-0.1.0 \
 		httparse-1.3.4 \
@@ -85,6 +87,7 @@ CARGO_CRATES=	anymap-0.12.1 \
 		opaque-debug-0.2.3 \
 		openssl-0.10.25 \
 		openssl-probe-0.1.2 \
+		openssl-src-111.13.0+1.1.1i \
 		openssl-sys-0.9.52 \
 		owning_ref-0.4.0 \
 		parking_lot-0.7.1 \
@@ -144,6 +147,7 @@ CARGO_CRATES=	anymap-0.12.1 \
 		tokio-file-unix-0.5.1 \
 		tokio-fs-0.1.6 \
 		tokio-io-0.1.12 \
+		tokio-named-pipes-0.1.0 \
 		tokio-process-0.2.4 \
 		tokio-reactor-0.1.9 \
 		tokio-signal-0.2.7 \

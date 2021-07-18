@@ -1,0 +1,21 @@
+port = 1965
+# use "::" for ipv6 and ipv4 or "0.0.0.0" for ipv4 only
+host = "0.0.0.0"
+# log is optional and server wide. It defaults to info if not set. Other levels
+# are error, warn, and info. If error is set it will only show error. If warn
+# is set it will show error and warn. Info shows all three.
+log = "info"
+
+# There must be at least 1 server tag if a client doesn't send sni the server
+# will use this tag as its default.
+# Server 1
+[[server]]
+hostname = "gemini.example.net"
+dir = "/usr/local/gemini/gemserv-dist"
+key = "/usr/local/etc/gemserv/key.pem"
+cert = "/usr/local/etc/gemserv/cert.pem"
+# index is optional but defaults to index.gemini. The server will serve files
+# ending in gemini or gmi.
+index = "index.gmi"
+# lang is optional
+lang = "en"

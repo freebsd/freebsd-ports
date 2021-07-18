@@ -1,0 +1,12 @@
+--- contrib/cassandra/CMakeLists.txt.orig	2021-01-25 21:26:46 UTC
++++ contrib/cassandra/CMakeLists.txt
+@@ -165,7 +165,8 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR
+    "${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+   # Enable C++11 support to use std::atomic
+   if(CASS_USE_STD_ATOMIC)
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
++    set(CMAKE_CXX_STANDARD "17")
+   endif()
+ 
+   # OpenSSL is deprecated on later versions of Mac OS X. The long-term solution

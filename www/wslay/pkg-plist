@@ -1,0 +1,6 @@
+include/wslay/wslay.h
+include/wslay/wslayver.h
+lib/cmake/wslay/wslay-config.cmake
+lib/cmake/wslay/wslay-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/wslay/wslay.cmake
+lib/libwslay_shared.so

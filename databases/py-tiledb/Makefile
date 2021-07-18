@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	tiledb
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.11
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,15 +15,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	is currently 64-bit only
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.27:lang/cython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pybind11>=2.6.2:devel/py-pybind11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.5.4:devel/py-setuptools_scm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0.30:devel/py-wheel@${PY_FLAVOR} \
-		${RUN_DEPENDS} \
-		tiledb>=2.1.6:databases/tiledb
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16,1:math/py-numpy@${PY_FLAVOR} \
+		tiledb>=2.2.8:databases/tiledb
 LIB_DEPENDS=	libtiledb.so:databases/tiledb
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang localbase python:3.5+
+USES=		compiler:c++14-lang localbase python:3.7+
 USE_PYTHON=	autoplist concurrent cython distutils
 
 .include <bsd.port.mk>

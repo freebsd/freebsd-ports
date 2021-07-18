@@ -1,4 +1,4 @@
-Stackdriver Logging API: Writes log entries and
-manages your Stackdriver Logging configuration.
+Cloud Logging API: Writes log entries and manages your Cloud Logging
+configuration.
 
-WWW: https://pypi.org/project/google-cloud-logging/
+WWW: https://github.com/googleapis/python-logging

@@ -1,0 +1,8 @@
+Perl bindings for the libtiff library. This module allows you to access
+TIFF images in a Perlish and object-oriented way, freeing you from the
+casting and memory management in C, yet remaining very close in spirit
+to original API.
+
+Find out more about libtiff at http://www.libtiff.org.
+
+WWW: https://metacpan.org/pod/Graphics::TIFF

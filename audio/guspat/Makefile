@@ -12,9 +12,14 @@ DISTFILES=	${DISTNAME}-required${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Izumo collection of Gravis Ultrasound MIDI patches
 
+# Converted from NO_CDROM
+LICENSE=	GUSPAT
+LICENSE_NAME=	guspat
+LICENSE_TEXT=	Some of the patches are marked no-commercial-use
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 NO_BUILD=	yes
 NO_ARCH=	yes
-NO_CDROM=	Some of the patches are marked no-commercial-use
 PLIST_SUB=	TIMIDITY_DATADIR=${TIMIDITY_DATADIR}
 WRKSRC=		${WRKDIR}/timidity
 

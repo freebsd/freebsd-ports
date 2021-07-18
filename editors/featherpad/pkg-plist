@@ -5,6 +5,7 @@ share/applications/featherpad.desktop
 %%DATADIR%%/help_ja
 %%DATADIR%%/help_pt_BR
 %%DATADIR%%/translations/featherpad_ar_DZ.qm
+%%DATADIR%%/translations/featherpad_bg.qm
 %%DATADIR%%/translations/featherpad_cs.qm
 %%DATADIR%%/translations/featherpad_cy.qm
 %%DATADIR%%/translations/featherpad_da.qm
@@ -13,6 +14,7 @@ share/applications/featherpad.desktop
 %%DATADIR%%/translations/featherpad_eo.qm
 %%DATADIR%%/translations/featherpad_es.qm
 %%DATADIR%%/translations/featherpad_fa.qm
+%%DATADIR%%/translations/featherpad_fi.qm
 %%DATADIR%%/translations/featherpad_fr.qm
 %%DATADIR%%/translations/featherpad_he.qm
 %%DATADIR%%/translations/featherpad_hu.qm
@@ -24,9 +26,10 @@ share/applications/featherpad.desktop
 %%DATADIR%%/translations/featherpad_nb_NO.qm
 %%DATADIR%%/translations/featherpad_nl.qm
 %%DATADIR%%/translations/featherpad_pl.qm
+%%DATADIR%%/translations/featherpad_pt.qm
 %%DATADIR%%/translations/featherpad_pt_BR.qm
-%%DATADIR%%/translations/featherpad_pt_PT.qm
 %%DATADIR%%/translations/featherpad_ru.qm
+%%DATADIR%%/translations/featherpad_si.qm
 %%DATADIR%%/translations/featherpad_sk_SK.qm
 %%DATADIR%%/translations/featherpad_tr.qm
 %%DATADIR%%/translations/featherpad_zh_CN.qm

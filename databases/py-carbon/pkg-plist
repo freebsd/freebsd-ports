@@ -1,7 +1,6 @@
 bin/carbon-aggregator.py
 bin/carbon-aggregator-cache.py
 bin/carbon-cache.py
-bin/carbon-client.py
 bin/carbon-relay.py
 bin/validate-storage-schemas.py
 @sample %%ETCDIR%%/aggregation-rules.conf.example etc/carbon/aggregation-rules.conf

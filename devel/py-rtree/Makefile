@@ -19,6 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/include/spatialindex/SpatialIndex.h:devel/spatialindex
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 post-extract:
 	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
 		${WRKSRC}/setup.cfg

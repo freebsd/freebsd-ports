@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		jpeg localbase ncurses pkgconfig tar:bz2
 USE_CSTD=	c99

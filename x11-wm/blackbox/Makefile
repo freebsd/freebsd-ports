@@ -33,7 +33,7 @@ TOOLS_ONLY_VARS_OFF=		PORTDOCS+="AUTHORS COMPLIANCE ChangeLog README RELNOTES TO
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == armv6 || ${ARCH} == armv7
+.if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == powerpc
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_Toolbar.cc
 .endif
 

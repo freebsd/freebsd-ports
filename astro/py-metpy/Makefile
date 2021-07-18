@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	metpy
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,11 +31,11 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3800
+.if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=1.0.0:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
 
-.if ${PYTHON_REL} < 3900
+.if ${PYTHON_REL} < 30900
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.3.0:devel/py-importlib-resources@${PY_FLAVOR}
 .endif
 

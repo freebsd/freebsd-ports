@@ -1,4 +1,4 @@
---- base/process/memory_unittest.cc.orig	2021-03-12 23:57:15 UTC
+--- base/process/memory_unittest.cc.orig	2021-04-14 18:40:48 UTC
 +++ base/process/memory_unittest.cc
 @@ -38,6 +38,8 @@
  #if defined(OS_LINUX) || defined(OS_CHROMEOS)
@@ -9,7 +9,7 @@
  #endif
  
  #if defined(OS_WIN)
-@@ -105,9 +107,9 @@ TEST(MemoryTest, AllocatorShimWorking) {
+@@ -110,9 +112,9 @@ TEST(MemoryTest, AllocatorShimWorking) {
  #endif
  }
  
@@ -21,7 +21,7 @@
      !defined(MEMORY_TOOL_REPLACES_ALLOCATOR)
  
  namespace {
-@@ -299,7 +301,7 @@ TEST_F(OutOfMemoryDeathTest, SecurityAlignedRealloc) {
+@@ -307,7 +309,7 @@ TEST_F(OutOfMemoryDeathTest, SecurityAlignedRealloc) {
  #endif  // defined(OS_WIN)
  #endif  // !defined(OS_MAC) && !defined(OS_ANDROID)
  
@@ -30,7 +30,7 @@
  
  TEST_F(OutOfMemoryDeathTest, Valloc) {
    ASSERT_OOM_DEATH({
-@@ -345,7 +347,7 @@ TEST_F(OutOfMemoryDeathTest, ViaSharedLibraries) {
+@@ -353,7 +355,7 @@ TEST_F(OutOfMemoryDeathTest, ViaSharedLibraries) {
      value_ = MallocWrapper(test_size_);
    });
  }
@@ -39,7 +39,7 @@
  
  // Android doesn't implement posix_memalign().
  #if defined(OS_POSIX) && !defined(OS_ANDROID)
-@@ -496,7 +498,7 @@ TEST_F(OutOfMemoryTest, TerminateBecauseOutOfMemoryRep
+@@ -504,7 +506,7 @@ TEST_F(OutOfMemoryTest, TerminateBecauseOutOfMemoryRep
  #endif  // OS_WIN
  
  #if defined(ARCH_CPU_32_BITS) && \
@@ -48,7 +48,7 @@
  
  void TestAllocationsReleaseReservation(void* (*alloc_fn)(size_t),
                                         void (*free_fn)(void*)) {
-@@ -554,7 +556,7 @@ TEST_F(OutOfMemoryHandledTest, NewReleasesReservation)
+@@ -562,7 +564,7 @@ TEST_F(OutOfMemoryHandledTest, NewReleasesReservation)
        [](size_t size) { return static_cast<void*>(new char[size]); },
        [](void* ptr) { delete[] static_cast<char*>(ptr); });
  }
@@ -57,7 +57,7 @@
          // defined(OS_CHROMEOS))
  
  // See the comment in |UncheckedMalloc()|, it behaves as malloc() in these
-@@ -616,5 +618,5 @@ TEST_F(OutOfMemoryHandledTest, UncheckedCalloc) {
+@@ -624,5 +626,5 @@ TEST_F(OutOfMemoryHandledTest, UncheckedCalloc) {
  
  #endif  // BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC) || defined(OS_ANDROID)
  

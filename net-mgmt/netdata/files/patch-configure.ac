@@ -1,6 +1,22 @@
---- configure.ac.orig	2018-11-02 14:04:52 UTC
+--- configure.ac.orig	2021-05-19 11:38:53 UTC
 +++ configure.ac
-@@ -497,15 +497,15 @@ AC_MSG_RESULT([${enable_lto}])
+@@ -5,11 +5,11 @@
+ AC_PREREQ(2.60)
+ 
+ # We do not use m4_esyscmd_s to support older autoconf.
+-define([VERSION_STRING], m4_esyscmd([git describe 2>/dev/null | tr -d '\n']))
+-define([VERSION_FROM_FILE], m4_esyscmd([cat packaging/version | tr -d '\n']))
+-m4_ifval(VERSION_STRING, [], [define([VERSION_STRING], VERSION_FROM_FILE)])
++# define([VERSION_STRING], m4_esyscmd([git describe 2>/dev/null | tr -d '\n']))
++# define([VERSION_FROM_FILE], m4_esyscmd([cat packaging/version | tr -d '\n']))
++# m4_ifval(VERSION_STRING, [], [define([VERSION_STRING], VERSION_FROM_FILE)])
+ 
+-AC_INIT([netdata], VERSION_STRING[])
++AC_INIT([netdata], v%%DISTVERSION%%)
+ 
+ AM_MAINTAINER_MODE([disable])
+ if test x"$USE_MAINTAINER_MODE" = xyes; then
+@@ -1449,15 +1449,15 @@ AM_CONDITIONAL([ENABLE_CXX_LINKER], [test "${enable_ba
  
  AC_DEFINE_UNQUOTED([NETDATA_USER], ["${with_user}"], [use this user to drop privileged])
  

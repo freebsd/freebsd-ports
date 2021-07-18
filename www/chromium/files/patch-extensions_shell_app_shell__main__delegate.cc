@@ -1,4 +1,4 @@
---- extensions/shell/app/shell_main_delegate.cc.orig	2021-03-12 23:57:25 UTC
+--- extensions/shell/app/shell_main_delegate.cc.orig	2021-04-14 18:41:04 UTC
 +++ extensions/shell/app/shell_main_delegate.cc
 @@ -39,7 +39,7 @@
  

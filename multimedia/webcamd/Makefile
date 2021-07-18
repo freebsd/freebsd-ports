@@ -2,8 +2,7 @@
 
 PORTNAME=	webcamd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.10.6.1
-PORTREVISION=	2
+DISTVERSION=	5.13.2.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	hselasky@FreeBSD.org
@@ -21,7 +20,7 @@ SUB_FILES=	webcamd.conf
 USE_GITHUB=	yes
 GH_ACCOUNT=	hselasky
 GH_PROJECT=	${PORTNAME}
-GH_TUPLE=	torvalds:linux:v5.10-rc6:linux
+GH_TUPLE=	torvalds:linux:v5.13-rc2:linux/media_tree
 
 OPTIONS_DEFINE=	DEBUG VT_CLIENT VT_SERVER DVB INPUT KEYBOARD MOUSE RADIO WEBCAM
 OPTIONS_DEFAULT=DVB INPUT RADIO WEBCAM
@@ -76,7 +75,6 @@ do-configure:
 	${MAKE} ${MAKE_ARGS} configure -C${WEBCAMDDIR}
 
 post-patch:
-	@(${RM} -r ${WEBCAMDDIR}/media_tree && ${LN} -s ${LINUXDIR} ${WEBCAMDDIR}/media_tree)
 	@(cd ${WEBCAMDDIR}/patches && ${SH} ./do_patch.sh)
 
 post-install:

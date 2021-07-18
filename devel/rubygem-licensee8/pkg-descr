@@ -1,5 +1,0 @@
-Licensee automates the process of reading LICENSE files and compares their
-contents to known licenses using a fancy math thing called Rabin-Karp
-rolling-hashes.
-
-WWW: https://github.com/benbalter/licensee

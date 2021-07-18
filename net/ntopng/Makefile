@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
 
 PORTNAME=	ntopng
-PORTVERSION=	4.2.d20210309
+PORTVERSION=	4.2.d20210615
 PORTEPOCH=	1
 CATEGORIES=	net
 

@@ -1,0 +1,39 @@
+#Warning : Some of these settings may be overridden when changing settings on the admin page or in the config.json file
+#located by default at: /usr/local/www/vaulwarden/data/config.json
+
+ROCKET_ADDRESS=127.0.0.1
+export ROCKET_ADDRESS
+
+ROCKET_PORT=4567 # your port here
+export ROCKET_PORT
+
+# ROCKET_TLS='{certs = "/ssl/fullchain.pem", key = "/ssl/key.pem"}'
+# LOG_FILE='/data/bitwarden.log'
+
+SIGNUPS_ALLOWED='false'
+export SIGNUPS_ALLOWED
+
+# DOMAIN='https://localhost.localdomain'
+# export DOMAIN
+
+# ADMIN_TOKEN= # generate one with ~$ openssl rand -base64 48
+# export ADMIN_TOKEN
+
+SMTP_HOST=localhost
+export SMTP_HOST
+
+SMTP_FROM=noreply@localhost
+export SMTP_FROM
+
+SMTP_PORT=25
+export SMTP_PORT
+
+SMTP_SSL=false
+export SMTP_SSL
+
+# SMTP_USERNAME=
+# export SMTP_USERNAME
+
+# SMTP_PASSWORD=
+# export SMTP_PASSWORD
+

@@ -1,0 +1,13 @@
+--- third_party/aws/BUILD.bazel.orig	2019-10-14 21:08:43 UTC
++++ third_party/aws/BUILD.bazel
+@@ -30,7 +30,9 @@ cc_library(
+         "@org_tensorflow//tensorflow:freebsd": glob([
+             "aws-cpp-sdk-core/source/platform/linux-shared/*.cpp",
+         ]),
+-        "//conditions:default": [],
++        "//conditions:default":glob([
++            "aws-cpp-sdk-core/source/platform/linux-shared/*.cpp",
++        ]),
+     }) + glob([
+         "aws-cpp-sdk-core/include/**/*.h",
+         "aws-cpp-sdk-core/source/*.cpp",

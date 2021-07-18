@@ -1,6 +1,6 @@
 PORTNAME=	fisicalab
 PORTVERSION=	0.3.3
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	science education gnustep
 MASTER_SITES=	SAVANNAH
 
@@ -9,7 +9,9 @@ COMMENT=	Physics simulation program for educational use
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS+=	libgsl.so:math/gsl
+BROKEN=		fails to configure: error: C compiler cannot create executables
+
+LIB_DEPENDS=	libgsl.so:math/gsl
 
 USES=		gnustep
 GNU_CONFIGURE=	yes

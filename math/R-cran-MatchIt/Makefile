@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
 
 PORTNAME=	MatchIt
-DISTVERSION=	4.1.0
+DISTVERSION=	4.2.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

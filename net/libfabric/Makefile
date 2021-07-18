@@ -1,7 +1,10 @@
 PORTNAME=	libfabric
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.2
+DISTVERSION=	1.13.0
 CATEGORIES=	net
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	c2c317d6ccdacca3fcdcd7b1d3a91f47426246f4.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Fabric Interfaces
@@ -12,14 +15,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 
 USES=		autoreconf gmake libtool pkgconfig
-USE_GITHUB=	yes
-GH_ACCOUNT=	ofiwg
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static
 USE_LDCONFIG=	yes
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	ofiwg
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static
+
 CFLAGS+=	-I${LOCALBASE}/include/libepoll-shim
-LDFLAGS+=	${LOCALBASE}/lib/libepoll-shim.so
+LDFLAGS+=	-L${LOCALBASE}/lib -lepoll-shim
 
 INSTALL_TARGET=	install-strip
 

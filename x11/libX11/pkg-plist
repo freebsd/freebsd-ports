@@ -151,9 +151,9 @@ lib/X11/locale/pt_PT.UTF-8/XLC_LOCALE
 lib/X11/locale/ru_RU.UTF-8/Compose
 lib/X11/locale/ru_RU.UTF-8/XI18N_OBJS
 lib/X11/locale/ru_RU.UTF-8/XLC_LOCALE
-lib/X11/locale/sr_CS.UTF-8/Compose
-lib/X11/locale/sr_CS.UTF-8/XI18N_OBJS
-lib/X11/locale/sr_CS.UTF-8/XLC_LOCALE
+lib/X11/locale/sr_RS.UTF-8/Compose
+lib/X11/locale/sr_RS.UTF-8/XI18N_OBJS
+lib/X11/locale/sr_RS.UTF-8/XLC_LOCALE
 lib/X11/locale/tatar-cyr/Compose
 lib/X11/locale/tatar-cyr/XI18N_OBJS
 lib/X11/locale/tatar-cyr/XLC_LOCALE
@@ -209,7 +209,7 @@ lib/libX11-xcb.so.1.0.0
 lib/libX11.a
 lib/libX11.so
 lib/libX11.so.6
-lib/libX11.so.6.3.0
+lib/libX11.so.6.4.0
 libdata/pkgconfig/x11-xcb.pc
 libdata/pkgconfig/x11.pc
 man/man3/AllPlanes.3.gz

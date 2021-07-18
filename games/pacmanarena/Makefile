@@ -16,9 +16,6 @@ COMMENT=	Pacman clone in full 3D with a few surprises
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: keyboard_map
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: keyboard_map
-
 WRKSRC=		${WRKDIR}/${PORTNAME:S/arena//}
 
 USES=		gnome sdl
@@ -39,6 +36,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@prefix@|${DATADIR}|; \
 		s|@datadir@/pacman|${DATADIR}|' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/keyboard_map/,+1d' \
+		${WRKSRC}/include/input.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME:S/arena//} \

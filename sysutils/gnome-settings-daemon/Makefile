@@ -1,7 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	gnome-settings-daemon
-PORTVERSION=	3.38.1
+PORTVERSION=	3.38.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome

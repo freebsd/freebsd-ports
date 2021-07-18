@@ -37,10 +37,11 @@ OGG_LIB_DEPENDS=\
 	libvorbisfile.so:audio/libvorbis \
 	libogg.so:audio/libogg
 OGG_CMAKE_OFF=	-DWITHOUT_OGGVORBIS=yes
-#.if exists(/usr/lib/libc++.so) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-#TAGLIB_BROKEN=		ld: undefined reference to symbol '__cxa_demangle@@CXXABI_1.3' (try adding -lcxxrt)
-#.endif
 TAGLIB_LIB_DEPENDS=	libtag_c.so:audio/taglib
 TAGLIB_CMAKE_OFF=	-DWITHOUT_TAGLIB=yes
+# For FreeBSD 11: ld: undefined reference to symbol `__cxa_demangle@@CXXABI_1.3' (try adding -lcxxrt)
+.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
+TAGLIB_LDFLAGS=		-fuse-ld=lld
+.endif
 
 .include <bsd.port.mk>

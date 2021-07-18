@@ -1,10 +1,11 @@
---- Makefile.orig	2016-12-01 13:14:44 UTC
+--- Makefile.orig	2021-04-19 17:36:31 UTC
 +++ Makefile
-@@ -1,5 +1,5 @@
--CFLAGS := -D_FORTIFY_SOURCE=2 -Wall -W -Wextra -pedantic -Werror -pedantic-errors $(shell imlib2-config --cflags) -O3
--LDLIBS := -lm $(shell imlib2-config --libs)
-+CFLAGS += -D_FORTIFY_SOURCE=2 $(shell imlib2-config --cflags)
-+LDLIBS += -lm $(shell imlib2-config --libs)
- PREFIX := /usr/local
- BINDIR := $(PREFIX)/bin
- MANDIR := $(PREFIX)/share/man/man1
+@@ -1,7 +1,7 @@
+ # minimal CFLAGS definition (try if compilation fails with default CFLAGS)
+ #CFLAGS  := $(shell imlib2-config --cflags)
+ # default CFLAGS definition
+-CFLAGS  := -D_FORTIFY_SOURCE=2 -Wall -W -Wextra -pedantic -Werror -pedantic-errors -fstack-protector-all $(shell imlib2-config --cflags) -O3
++CFLAGS  := -D_FORTIFY_SOURCE=2 $(shell imlib2-config --cflags)
+ LDLIBS  := -lm $(shell imlib2-config --libs)
+ PREFIX  := /usr/local
+ BINDIR  := $(PREFIX)/bin

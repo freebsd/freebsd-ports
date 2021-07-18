@@ -43,3 +43,11 @@
  
  /* My functions */
  
+@@ -198,6 +186,7 @@ int TLS_readline ();
+ #endif
+ /* util.c */
+ char *random_string ();
++char *to_upper(char *);
+ void tvsub ();
+ void tvadd ();
+ void tvavg ();

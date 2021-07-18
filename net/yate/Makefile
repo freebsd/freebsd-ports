@@ -11,7 +11,7 @@ COMMENT=	Yet Another Telephony Engine
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 sparc64
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le sparc64
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libspeex.so:audio/speex \

@@ -2,6 +2,7 @@
 
 PORTNAME=	omniauth-atlassian-oauth2
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +11,8 @@ COMMENT=	An Atlassian OAuth2 strategy for OmniAuth
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-omniauth>=1.1.1:security/rubygem-omniauth \
-		rubygem-omniauth-oauth2>=1.1.1:net/rubygem-omniauth-oauth2
+RUN_DEPENDS=	rubygem-omniauth1>=1.1.1:security/rubygem-omniauth1 \
+		rubygem-omniauth-oauth2>=1.5:net/rubygem-omniauth-oauth2
 
 USES=		gem
 USE_RUBY=	yes

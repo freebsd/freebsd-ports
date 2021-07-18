@@ -6,7 +6,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface for the MusicBrainz libdiscid library
 
 LICENSE=	MIT

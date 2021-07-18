@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	upower
-PORTVERSION=	0.99.11
-PORTREVISION=	1
+PORTVERSION=	0.99.12
 CATEGORIES=	sysutils
-MASTER_SITES=	http://upower.freedesktop.org/releases/
+MASTER_SITES=	https://gitlab.freedesktop.org/upower/upower/uploads/244f5966c58773bbd3b4c507c549560f/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	D-Bus daemon for simplifying power management tasks

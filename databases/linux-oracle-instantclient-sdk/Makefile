@@ -13,13 +13,17 @@ DIST_SUBDIR=	oracle
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Oracle 10 InstantClient SDK. Works with Oracle RDBMS 8.1.2+
 
+# Converted from RESTRICTED
+LICENSE=	Oracle
+LICENSE_NAME=	Oracle
+LICENSE_TEXT=	Packaging prohibited by Oracle license
+LICENSE_PERMS=	auto-accept
+
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/oracle/${ORACLEVERSION}/client/lib/libocci.so.10.1:databases/linux-oracle-instantclient-basic
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 DISTINFO_FILE=	${MASTERDIR}/distinfo.${ARCH}
-
-RESTRICTED=	Packaging prohibited by Oracle license
 
 USES=		zip
 USE_LINUX_PREFIX=	yes

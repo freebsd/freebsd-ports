@@ -1,7 +1,7 @@
 # Created by: archfan <mail_me@riseup.net>
 
 PORTNAME=	gtk-arc-themes
-DISTVERSION=	20210127
+DISTVERSION=	20210412
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com

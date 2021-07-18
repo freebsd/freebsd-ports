@@ -3,6 +3,8 @@
     SUBDIR += amule
     SUBDIR += amule-devel
     SUBDIR += awgg
+    SUBDIR += bazarr
+    SUBDIR += bazarr-devel
     SUBDIR += bitcoin
     SUBDIR += bitcoin-daemon
     SUBDIR += bitcoin-utils
@@ -11,6 +13,7 @@
     SUBDIR += bitmark-cli
     SUBDIR += bitmark-daemon
     SUBDIR += bitmark-recorder
+    SUBDIR += btcheck
     SUBDIR += btpd
     SUBDIR += c-lightning
     SUBDIR += cpuminer

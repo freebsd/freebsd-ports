@@ -2,8 +2,8 @@
 
 PORTNAME=	sympow
 PORTVERSION=	2.023.6
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -25,11 +25,16 @@ GL_COMMIT=	7fd4d97cabc07951200b98ee841afc4151c2c287
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|-O3 ||' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-build:
-	mkdir -p ${WRKDIR}/home
+	${MKDIR} ${WRKDIR}/home ${WRKDIR}/var/cache/sympow/datafiles
 	for file in `${LS} ${WRKSRC}/datafiles/*.txt`; do	\
-		env HOME=${WRKDIR}/home ${WRKSRC}/sympow -txt2bin "`${GREP} -c AT $${file}`" <$${file} $${file%txt}bin; \
+		${SETENV} HOME=${WRKDIR}/home SYMPOW_PKGCACHEDIR="${WRKDIR}/var/cache/sympow"	\
+		${WRKSRC}/sympow -txt2bin "`${GREP} -c AT $${file}`" <$${file} $${file%txt}bin; \
 	done
 
 post-install:

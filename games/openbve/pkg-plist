@@ -31,6 +31,9 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Compatibility/Limits/limit_left.csv
 %%DATADIR%%/Data/Compatibility/Limits/limit_right.csv
 %%DATADIR%%/Data/Compatibility/Limits/limit_straight.csv
+%%DATADIR%%/Data/Compatibility/Mechanik/database.xml
+%%DATADIR%%/Data/Compatibility/Mechanik/greysky.png
+%%DATADIR%%/Data/Compatibility/Mechanik/modules.xml
 %%DATADIR%%/Data/Compatibility/Poles/pole_1.csv
 %%DATADIR%%/Data/Compatibility/Poles/pole_1.png
 %%DATADIR%%/Data/Compatibility/Poles/pole_2.csv
@@ -52,6 +55,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Compatibility/RoutePatches/Italy.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Japan.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Misc.xml
+%%DATADIR%%/Data/Compatibility/RoutePatches/Spain.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/UnitedKingdom.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/database.xml
 %%DATADIR%%/Data/Compatibility/Signals/Australian.xml
@@ -561,6 +565,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/In-game/Slim/stop_back_right_none.png
 %%DATADIR%%/Data/In-game/Slim/stop_tick_left.png
 %%DATADIR%%/Data/In-game/Slim/stop_tick_right.png
+%%DATADIR%%/Data/In-game/beep.wav
 %%DATADIR%%/Data/In-game/interface.cfg.txt
 %%DATADIR%%/Data/In-game/loadingbkg_0.png
 %%DATADIR%%/Data/In-game/loadingbkg_1.png
@@ -613,6 +618,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Menu/arrow_right.png
 %%DATADIR%%/Data/Menu/arrow_up.png
 %%DATADIR%%/Data/Menu/banner.png
+%%DATADIR%%/Data/Menu/gamepad.png
 %%DATADIR%%/Data/Menu/icon_critical.png
 %%DATADIR%%/Data/Menu/icon_disk.png
 %%DATADIR%%/Data/Menu/icon_error.png
@@ -626,6 +632,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Menu/icon_library_notinstalled.png
 %%DATADIR%%/Data/Menu/icon_library_outdatedversion.png
 %%DATADIR%%/Data/Menu/icon_library_protected.png
+%%DATADIR%%/Data/Menu/icon_mechanik.png
 %%DATADIR%%/Data/Menu/icon_mouse.png
 %%DATADIR%%/Data/Menu/icon_parent.png
 %%DATADIR%%/Data/Menu/icon_route.png
@@ -644,10 +651,12 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Menu/logo.png
 %%DATADIR%%/Data/Menu/package.png
 %%DATADIR%%/Data/Menu/raildriver.png
+%%DATADIR%%/Data/Menu/raildriver2.png
 %%DATADIR%%/Data/Menu/route_error.png
 %%DATADIR%%/Data/Menu/route_unknown.png
 %%DATADIR%%/Data/Menu/train_error.png
 %%DATADIR%%/Data/Menu/train_unknown.png
+%%DATADIR%%/Data/Menu/xbox.png
 %%DATADIR%%/Data/Plugins/Object.Animated.dll
 %%DATADIR%%/Data/Plugins/Object.Animated.dll.config
 %%DATADIR%%/Data/Plugins/Object.Animated.pdb
@@ -670,6 +679,8 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Plugins/OpenBveAts.dll.config
 %%DATADIR%%/Data/Plugins/Route.CsvRw.dll
 %%DATADIR%%/Data/Plugins/Route.CsvRw.pdb
+%%DATADIR%%/Data/Plugins/Route.Mechanik.dll
+%%DATADIR%%/Data/Plugins/Route.Mechanik.pdb
 %%DATADIR%%/Data/Plugins/Sound.Flac.dll
 %%DATADIR%%/Data/Plugins/Sound.Flac.dll.config
 %%DATADIR%%/Data/Plugins/Sound.MP3.dll
@@ -730,6 +741,14 @@ bin/openbve-routeviewer
 %%DATADIR%%/DevTools/LBAHeader.exe
 %%DATADIR%%/DevTools/LBAHeader.exe.config
 %%DATADIR%%/DevTools/LBAHeader.pdb
+%%DATADIR%%/DevTools/Mono.Cecil.Mdb.dll
+%%DATADIR%%/DevTools/Mono.Cecil.Mdb.pdb
+%%DATADIR%%/DevTools/Mono.Cecil.Pdb.dll
+%%DATADIR%%/DevTools/Mono.Cecil.Pdb.pdb
+%%DATADIR%%/DevTools/Mono.Cecil.Rocks.dll
+%%DATADIR%%/DevTools/Mono.Cecil.Rocks.pdb
+%%DATADIR%%/DevTools/Mono.Cecil.dll
+%%DATADIR%%/DevTools/Mono.Cecil.pdb
 %%DATADIR%%/DotNetZip.dll
 %%DATADIR%%/DotNetZip.pdb
 %%DATADIR%%/DotNetZip.xml
@@ -737,6 +756,8 @@ bin/openbve-routeviewer
 %%DATADIR%%/LibRender2.dll
 %%DATADIR%%/LibRender2.dll.config
 %%DATADIR%%/LibRender2.pdb
+%%DATADIR%%/LibUsbDotNet.LibUsbDotNet.dll
+%%DATADIR%%/LibUsbDotNet.LibUsbDotNet.pdb
 %%DATADIR%%/Microsoft.Win32.Primitives.dll
 %%DATADIR%%/NAudio.Vorbis.dll
 %%DATADIR%%/NAudio.dll
@@ -749,7 +770,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/ObjectBender.exe.config
 %%DATADIR%%/ObjectViewer.exe
 %%DATADIR%%/ObjectViewer.exe.config
-%%DATADIR%%/OpenAL32.dll
+%%DATADIR%%/OpenBve-32.exe
 %%DATADIR%%/OpenBve.XML
 %%DATADIR%%/OpenBve.exe
 %%DATADIR%%/OpenBve.exe.config
@@ -765,6 +786,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/OpenTK.pdb
 %%DATADIR%%/OpenTK.xml
 %%DATADIR%%/PIEHid32Net.dll
+%%DATADIR%%/PIEHid64Net.dll
 %%DATADIR%%/Prism.dll
 %%DATADIR%%/Prism.pdb
 %%DATADIR%%/Prism.xml
@@ -773,6 +795,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/RouteManager2.dll
 %%DATADIR%%/RouteManager2.dll.config
 %%DATADIR%%/RouteManager2.pdb
+%%DATADIR%%/RouteViewer-32.exe
 %%DATADIR%%/RouteViewer.exe
 %%DATADIR%%/RouteViewer.exe.config
 %%DATADIR%%/SharpCompress.dll
@@ -887,6 +910,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/System.Xml.XPath.dll
 %%DATADIR%%/System.Xml.XmlDocument.dll
 %%DATADIR%%/System.Xml.XmlSerializer.dll
+%%DATADIR%%/TolkDotNet.dll
 %%DATADIR%%/TrainEditor.exe
 %%DATADIR%%/TrainEditor.exe.config
 %%DATADIR%%/TrainEditor2.exe
@@ -895,7 +919,23 @@ bin/openbve-routeviewer
 %%DATADIR%%/TrainManager.dll
 %%DATADIR%%/TrainManager.pdb
 %%DATADIR%%/Ude.NetStandard.dll
+%%DATADIR%%/Win32PluginProxy.exe
+%%DATADIR%%/Win32PluginProxy.exe.config
+%%DATADIR%%/Win32PluginProxy.pdb
 %%DATADIR%%/netstandard.dll
+%%DATADIR%%/x64/OpenAL32.dll
+%%DATADIR%%/x64/SAAPI64.dll
+%%DATADIR%%/x64/Tolk.dll
+%%DATADIR%%/x64/Tolk.exp
+%%DATADIR%%/x64/Tolk.lib
+%%DATADIR%%/x64/nvdaControllerClient64.dll
+%%DATADIR%%/x86/OpenAL32.dll
+%%DATADIR%%/x86/SAAPI32.dll
+%%DATADIR%%/x86/Tolk.dll
+%%DATADIR%%/x86/Tolk.exp
+%%DATADIR%%/x86/Tolk.lib
+%%DATADIR%%/x86/dolapi32.dll
+%%DATADIR%%/x86/nvdaControllerClient32.dll
 man/man6/openbve-objectviewer.6.gz
 man/man6/openbve-routeviewer.6.gz
 man/man6/openbve.6.gz

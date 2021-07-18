@@ -14,7 +14,11 @@ DISTNAME=	ICON-Gnome-RH8
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Refined Icons for Gnome
 
-RESTRICTED=	${REASON}
+# Converted from RESTRICTED
+LICENSE=	icons
+LICENSE_NAME=	icons
+LICENSE_TEXT=	${REASON}
+LICENSE_PERMS=	auto-accept
 
 NO_WRKSUBDIR=	yes
 

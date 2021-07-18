@@ -2,7 +2,7 @@
 
 PORTNAME?=	ioquake3
 PORTVERSION?=	${IOQUAKE3VER}
-PORTREVISION?=	16
+PORTREVISION?=	17
 CATEGORIES=	games
 MASTER_SITES?=	http://ioquake3.org/files/${DISTVERSION}/
 # Using zip this way enables slaves to override it.
@@ -86,7 +86,7 @@ Q3INSTALL?=
 Q3ENGINEVER?=	${DISTVERSION}
 IOQUAKE3VER=	1.36
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
 
 DEBUG_VARS=		ALL_TARGET=debug
 SERVER_RUN_DEPENDS=	${Q3SERVER}${BINSUFFIX}:games/${PORTNAME}-server

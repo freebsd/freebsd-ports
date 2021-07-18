@@ -1,0 +1,4 @@
+A simple & lightweight Qt file archiver.
+The core I/O functions are ported from Engrampa
+
+WWW: https://github.com/lxqt/lxqt-archiver

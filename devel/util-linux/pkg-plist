@@ -19,7 +19,7 @@ bin/rename
 bin/renice
 bin/rev
 bin/scriptreplay
-bin/setsid
+@comment bin/setsid
 bin/ul
 %%UUID%%bin/uuidgen
 %%UUID%%bin/uuidparse
@@ -69,7 +69,7 @@ man/man1/rename.1.gz
 man/man1/renice.1.gz
 man/man1/rev.1.gz
 man/man1/scriptreplay.1.gz
-man/man1/setsid.1.gz
+@comment man/man1/setsid.1.gz
 man/man1/ul.1.gz
 %%UUID%%man/man1/uuidgen.1.gz
 %%UUID%%man/man1/uuidparse.1.gz
@@ -151,7 +151,7 @@ share/bash-completion/completions/rename
 share/bash-completion/completions/renice
 share/bash-completion/completions/rev
 share/bash-completion/completions/scriptreplay
-share/bash-completion/completions/setsid
+@comment share/bash-completion/completions/setsid
 %%UUID%%share/bash-completion/completions/sfdisk
 share/bash-completion/completions/swaplabel
 share/bash-completion/completions/ul

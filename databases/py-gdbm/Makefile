@@ -1,12 +1,12 @@
 # Created by: Thomas Gellekum <tg@FreeBSD.org>
 
 PORTNAME=	gdbm
-PORTVERSION=	${PYTHON_PORTVERSION}
+DISTVERSION=	${PYTHON_DISTVERSION}
 PORTREVISION=	6
 CATEGORIES=	databases python
-MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
+MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Python-${PORTVERSION}
+DISTNAME=	Python-${DISTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python bindings to the GNU dbm library (Python ${PYTHON_VER})
@@ -24,7 +24,7 @@ PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHONPREFIX_LIBDIR}/lib-dynload
 
 DIST_SUBDIR=	python
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
-WRKSRC=		${WRKDIR}/Python-${PORTVERSION}/Modules
+WRKSRC_SUBDIR=	Modules
 
 post-extract:
 	@${CP} ${FILESDIR}/setup3.py ${WRKSRC}/setup.py

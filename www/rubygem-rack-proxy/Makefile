@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	rack-proxy
-PORTVERSION=	0.6.5
+PORTVERSION=	0.7.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

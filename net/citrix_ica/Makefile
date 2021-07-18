@@ -9,12 +9,17 @@ DISTNAME=	linuxx86-${PORTVERSION}.20
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
 
+# Converted from RESTRICTED
+LICENSE=	citrix
+LICENSE_NAME=	citrix
+LICENSE_TEXT=	License prohibits redistribution
+LICENSE_PERMS=	auto-accept
+
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		fakeroot linux:c7 webplugin:linux
 USE_LINUX=	alsalib gtk2 libxml2 openmotif
 WEBPLUGIN_DIR=	${PREFIX}/ICAClient
 WEBPLUGIN_FILES=	npica.so
-RESTRICTED=	License prohibits redistribution
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

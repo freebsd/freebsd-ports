@@ -1,5 +1,7 @@
 include/level_zero/layers/zel_tracing_api.h
 include/level_zero/layers/zel_tracing_ddi.h
+include/level_zero/layers/zel_tracing_register_cb.h
+include/level_zero/loader/ze_loader.h
 include/level_zero/ze_api.h
 include/level_zero/ze_ddi.h
 include/level_zero/zes_api.h
@@ -8,11 +10,12 @@ include/level_zero/zet_api.h
 include/level_zero/zet_ddi.h
 lib/libze_loader.so
 lib/libze_loader.so.1
-lib/libze_loader.so.1.2.3
+lib/libze_loader.so.1.4.1
 lib/libze_tracing_layer.so
 lib/libze_tracing_layer.so.1
-lib/libze_tracing_layer.so.1.2.3
+lib/libze_tracing_layer.so.1.4.1
 lib/libze_validation_layer.so
 lib/libze_validation_layer.so.1
-lib/libze_validation_layer.so.1.2.3
+lib/libze_validation_layer.so.1.4.1
+libdata/pkgconfig/level-zero.pc
 libdata/pkgconfig/libze_loader.pc

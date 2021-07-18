@@ -1,7 +1,7 @@
 # Created by: Frederic Culot <culot@FreeBSD.org>
 
 PORTNAME=	HTTP-Message
-PORTVERSION=	6.28
+PORTVERSION=	6.33
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,14 +27,7 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 503000
-BUILD_DEPENDS+=	p5-Encode>=3.01:converters/p5-Encode
-RUN_DEPENDS+=	p5-Encode>=3.01:converters/p5-Encode
-.endif
-
 post-patch:
 	@${RM} ${WRKSRC}/lib/HTTP/Headers.pm.orig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

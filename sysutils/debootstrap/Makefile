@@ -2,7 +2,7 @@
 
 PORTNAME=	debootstrap
 PORTVERSION=	1.0.123
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/debian/copyright
 
 RUN_DEPENDS=	wget:ftp/wget \
 		bash:shells/bash \
+		${LOCALBASE}/bin/grep:textproc/gnugrep \
 		gpgv2:security/gnupg \
 		${LOCALBASE}/share/keyrings/ubuntu-archive-keyring.gpg:security/ubuntu-keyring
 
@@ -40,6 +41,10 @@ post-patch:
 		${WRKSRC}/functions
 	@${FIND} ${WRKSRC}/scripts -type f | \
 		${XARGS} ${REINPLACE_CMD} -e 's,/usr/share/keyrings,${LOCALBASE}/share/keyrings,g'
+
+	# Workaround for bin/255525
+	@${REINPLACE_CMD} -e 's,grep,${LOCALBASE}/bin/grep,g' \
+		${WRKSRC}/functions
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/debootstrap.8 \

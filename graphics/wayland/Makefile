@@ -2,8 +2,12 @@
 
 PORTNAME=	wayland
 PORTVERSION=	1.19.0
+PORTREVISION=	1
 CATEGORIES=	graphics wayland
 MASTER_SITES=	https://wayland.freedesktop.org/releases/
+
+PATCH_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES+=	ed55438366e93d70867e3ba6b80978673e536fc0.patch:-p1 # MR 133
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Wayland composite "server"
@@ -17,7 +21,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 
 CFLAGS+=	"-I${LOCALBASE}/include/libepoll-shim"
 
-USES=		meson pkgconfig tar:xz
+USES=		gnome meson pkgconfig tar:xz
 USE_GNOME=	libxslt:build
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Ddocumentation=false

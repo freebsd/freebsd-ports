@@ -1,0 +1,4 @@
+Small wrapper for the setsid(2) syscall to run a command in a new
+session.
+
+WWW: https://github.com/t6/setsid

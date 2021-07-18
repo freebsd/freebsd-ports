@@ -1,0 +1,13 @@
+[
+{ type: upgrade
+  maximum_version: "0.10.0"
+  message: <<EOM
+Since release 0.10.0, the default config.yml configuration has been
+fully replaced with a new init.lua configuration. If you have a lot of
+customization in your existing config.yml, you can use xplr-yml2lua[1]
+to help with the migration.
+
+[1] https://github.com/sayanarijit/xplr-yml2lua
+EOM
+}
+]

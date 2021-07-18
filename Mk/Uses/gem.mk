@@ -118,7 +118,7 @@ do-install:
 .if empty(gem_ARGS:Mnoautoplist)
 _USES_install+=	820:gem-autoplist
 gem-autoplist:
-	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
+	@${ECHO_CMD} ${GEM_SPEC} >> ${TMPPLIST}
 .if ${PORT_OPTIONS:MDOCS}
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${DOC_DIR} -type f -print | ${SED} -E -e \
 		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}

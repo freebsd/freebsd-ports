@@ -1,0 +1,33 @@
+--- sys/unix/Makefile.utl.orig	2021-03-22 22:28:14 UTC
++++ sys/unix/Makefile.utl
+@@ -93,18 +93,25 @@ NHSROOT=..
+ # flags for debugging:
+ # CFLAGS = -g -I../include
+ 
+-#CFLAGS = -O -I../include
+-#LFLAGS =
++CFLAGS += -I../include -I${LUA_INCDIR}
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++CFLAGS += -DX11_GRAPHICS
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++CFLAGS += -DQT_GRAPHICS
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++CFLAGS += -DGNOME_GRAPHICS
++endif
+ 
+-# -lm required by lua
+-LFLAGS += -lm
++LFLAGS = -L${LUA_LIBDIR}
+ 
+ # we specify C preprocessor flags via CFLAGS; files built with default rules
+ # might include $(CPPFLAGS) which could get a value from user's environment;
+ # we avoid that by forcing it empty rather than by overriding default rules
+ CPPFLAGS =
+ 
+-LIBS =
++LIBS = -llua-${LUA_VER} -lm
+ 
+ OBJDIR = ../src
+ 

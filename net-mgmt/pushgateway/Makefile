@@ -2,7 +2,7 @@
 
 PORTNAME=	pushgateway
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	0xdutra@gmail.com
@@ -25,21 +25,21 @@ GH_TUPLE=	\
 		go-logfmt:logfmt:v0.5.0:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:crypto:5f87f3452ae9:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:f5854403a974:golang_net/vendor/golang.org/x/net \
-		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:f9fddec55a1e:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
+		golang:net:4c5254603344:golang_net/vendor/golang.org/x/net \
+		golang:protobuf:v1.5.1:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:68d13333faf2:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		jpillora:backoff:v1.0.0:jpillora_backoff/vendor/github.com/jpillora/backoff \
 		julienschmidt:httprouter:v1.3.0:julienschmidt_httprouter/vendor/github.com/julienschmidt/httprouter \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		mwitkow:go-conntrack:2f068394615f:mwitkow_go_conntrack/vendor/github.com/mwitkow/go-conntrack \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		prometheus:client_golang:v1.9.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_golang:v1.10.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
-		prometheus:common:v0.15.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:common:v0.19.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:exporter-toolkit:v0.5.1:prometheus_exporter_toolkit/vendor/github.com/prometheus/exporter-toolkit \
-		prometheus:procfs:v0.2.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		protocolbuffers:protobuf-go:v1.23.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		prometheus:procfs:v0.6.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		shurcooL:httpfs:8d4bc4ba7749:shurcool_httpfs/vendor/github.com/shurcooL/httpfs \
 		shurcooL:vfsgen:0d455de96546:shurcool_vfsgen/vendor/github.com/shurcooL/vfsgen
 

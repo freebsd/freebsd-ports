@@ -14,6 +14,7 @@ include/xapp/libxapp/xapp-stack-sidebar.h
 include/xapp/libxapp/xapp-status-icon-monitor.h
 include/xapp/libxapp/xapp-status-icon.h
 include/xapp/libxapp/xapp-statusicon-interface.h
+include/xapp/libxapp/xapp-style-manager.h
 include/xapp/libxapp/xapp-util.h
 lib/girepository-1.0/XApp-1.0.typelib
 lib/gtk-3.0/modules/libxapp-gtk3-module.so
@@ -96,6 +97,7 @@ share/locale/af/LC_MESSAGES/xapp.mo
 share/locale/am/LC_MESSAGES/xapp.mo
 share/locale/ar/LC_MESSAGES/xapp.mo
 share/locale/az/LC_MESSAGES/xapp.mo
+share/locale/be/LC_MESSAGES/xapp.mo
 share/locale/ber/LC_MESSAGES/xapp.mo
 share/locale/bg/LC_MESSAGES/xapp.mo
 share/locale/bn/LC_MESSAGES/xapp.mo
@@ -129,6 +131,7 @@ share/locale/kab/LC_MESSAGES/xapp.mo
 share/locale/kk/LC_MESSAGES/xapp.mo
 share/locale/ko/LC_MESSAGES/xapp.mo
 share/locale/ku/LC_MESSAGES/xapp.mo
+share/locale/la/LC_MESSAGES/xapp.mo
 share/locale/lt/LC_MESSAGES/xapp.mo
 share/locale/mai/LC_MESSAGES/xapp.mo
 share/locale/ms/LC_MESSAGES/xapp.mo

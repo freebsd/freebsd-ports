@@ -1,7 +1,7 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	passman
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.8
 CATEGORIES=	security
 MASTER_SITES=	https://releases.passman.cc/
 PKGNAMEPREFIX=	nextcloud-

@@ -1,7 +1,7 @@
 # Created by: Glenn Johnson <glennpj@charter.net>
 
 PORTNAME=	libofx
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 

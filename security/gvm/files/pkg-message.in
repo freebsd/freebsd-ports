@@ -3,6 +3,10 @@
   message: <<EOM
 GVM ports were installed
 
+If you are migrating to new version do not forget do the following:
+
+  # su -m gvm -c "gvmd --migrate"
+
 Basic instructions for configure your gvm infraestruture are following:
 
 1) Redis is a dependency of GVM. Please, configure redis-server for 
@@ -34,7 +38,19 @@ Basic instructions for configure your gvm infraestruture are following:
   # sysrc ospd_openvas_enable="YES"
   # sysrc gsad_enable="YES"
 
-5) The following steps are neccessary before of you can access to GVM web 
+5) Currently, ospd_openvas should run as a user without elevated privileges 
+   (gvm) and use sudo for run openvas scanner but it does not work properly. 
+   Like a workaround you must run redis as root and the same with ospd_openvas.
+
+   Add the following lines to /etc/rc.conf
+
+   redis_user="root"
+   ospd_openvas_user="root"
+
+   Take in mind it is not the best configuration for run ospd_openvas and
+   openvas. 
+
+6) The following steps are neccessary before of you can access to GVM web 
    interface (gsad):
 
   Start gvmd service. It will listen on /var/run/gvmd/gvmd.sock by default
@@ -64,7 +80,7 @@ Basic instructions for configure your gvm infraestruture are following:
    
   # su -m gvm -c "gvmd --modify-setting 78eceaec-3385-11ea-b237-28d24461215b --value <uuid_of_user>
 
-6) Start OSPD-OpenVAS Wrapper service. It will listen on /var/run/ospd/ospd.sock by default
+7) Start OSPD-OpenVAS Wrapper service. It will listen on /var/run/ospd/ospd.sock by default
 
   # service ospd_openvas start
 
@@ -77,11 +93,11 @@ Basic instructions for configure your gvm infraestruture are following:
   # su -m gvm -c "gvmd --verify-scanner=08b69003-5fc2-4037-a479-93b440211c73"
   Scanner version: OpenVAS x.x.x
 
-7) Start GVM web interface. It will listen on http://127.0.0.1 by default
+8) Start GVM web interface. It will listen on http://127.0.0.1 by default
 
   # service gsad start
 
-8) Some openvas scanner tasks  need access to /dev/bpf device. Add the 
+9) Some openvas scanner tasks  need access to /dev/bpf device. Add the 
    following lines to /etc/devfs.conf
 
    own     bpf     root:gvm
@@ -91,15 +107,15 @@ Basic instructions for configure your gvm infraestruture are following:
 
    # service devfs restart
 
-9) gvm log files are stores to /var/log/gvm directory
+10) gvm log files are stores to /var/log/gvm directory
 
-10) gsad can export results to PDF. It needs print/texlive-texmf port
+11) gsad can export results to PDF. It needs print/texlive-texmf port
   
   # pkg install texlive-texmf
 
   It will install 1G of data
 
-11) If you need more configure information you can look at the following links:
+12) If you need more configure information you can look at the following links:
 
    https://github.com/greenbone/gvmd/blob/master/INSTALL.md
    https://github.com/greenbone/openvas/blob/master/INSTALL.md
@@ -113,7 +129,7 @@ Basic instructions for configure your gvm infraestruture are following:
    # ospd-openvas -h
    # gsad -h
 
-12) Enjoy it
+13) Enjoy it
 EOM
 }
 ]

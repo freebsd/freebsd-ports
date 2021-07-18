@@ -1,5 +1,5 @@
 PORTNAME=	orchestrator_client
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,5 +13,7 @@ RUN_DEPENDS=	rubygem-faraday0>=0:www/rubygem-faraday0 \
 
 USES=		gem
 USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

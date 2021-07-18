@@ -1,5 +1,6 @@
 PORTNAME=	omniauth-multipassword
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +10,7 @@ COMMENT=	OmniAuth strategy using different password strategies
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-omniauth>=1.0<2:security/rubygem-omniauth
+RUN_DEPENDS=	rubygem-omniauth1>=1.0<2:security/rubygem-omniauth1
 
 USES=		gem
 USE_RUBY=	yes

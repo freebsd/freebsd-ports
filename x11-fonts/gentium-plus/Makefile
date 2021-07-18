@@ -1,10 +1,9 @@
 # Created by: Matthew Seaman
 
 PORTNAME=	GentiumPlus
-PORTREVISION=	1
-PORTVERSION=	5.000
+PORTVERSION=	6.001
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://software.sil.org/downloads/gentium/
+MASTER_SITES=	http://software.sil.org/downloads/r/gentium/
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Gentium Plus TrueType font collection
@@ -16,13 +15,29 @@ NO_BUILD=	yes
 
 USES=		fonts zip
 
-PLIST_FILES=	${FONTSDIR}/${PORTNAME}-I.ttf \
-		${FONTSDIR}/${PORTNAME}-R.ttf
+PLIST_FILES=	${FONTSDIR}/GentiumBookPlus-Bold.ttf       \
+		${FONTSDIR}/GentiumBookPlus-BoldItalic.ttf \
+		${FONTSDIR}/GentiumBookPlus-Italic.ttf     \
+		${FONTSDIR}/GentiumBookPlus-Regular.ttf    \
+		${FONTSDIR}/GentiumPlus-Bold.ttf           \
+		${FONTSDIR}/GentiumPlus-BoldItalic.ttf     \
+		${FONTSDIR}/GentiumPlus-Italic.ttf         \
+		${FONTSDIR}/GentiumPlus-Regular.ttf
 
 SUB_FILES=	pkg-message
 
-DOCSLIST=	FONTLOG.txt GENTIUM-FAQ.txt OFL-FAQ.txt OFL.txt \
-		README.txt documentation/GentiumPlus-features.pdf
+DOCSLIST=	FONTLOG.txt OFL-FAQ.txt OFL.txt README.txt \
+		documentation/pdf/resources.pdf            \
+		documentation/pdf/features.pdf             \
+		documentation/pdf/developer.pdf            \
+		documentation/pdf/design.pdf               \
+		documentation/pdf/faq.pdf                  \
+		documentation/pdf/about.pdf                \
+		documentation/pdf/history.pdf              \
+		documentation/pdf/index.pdf                \
+		documentation/pdf/charset.pdf              \
+		documentation/pdf/support.pdf              \
+		documentation/pdf/versions.pdf
 PORTDOCS=	${DOCSLIST:C,^.*/,,}
 
 OPTIONS_DEFINE=	DOCS

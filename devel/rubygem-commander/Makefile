@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	commander
-PORTVERSION=	4.5.2
+PORTVERSION=	4.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

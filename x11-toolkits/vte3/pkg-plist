@@ -14,7 +14,7 @@ include/vte-%%VERSION%%/vte/vteversion.h
 lib/girepository-1.0/Vte-%%VERSION%%.typelib
 lib/libvte-%%VERSION%%.so
 lib/libvte-%%VERSION%%.so.0
-lib/libvte-%%VERSION%%.so.0.6400.0
+lib/libvte-%%VERSION%%.so.0.6400.1
 libdata/pkgconfig/vte-%%VERSION%%.pc
 libexec/vte-urlencode-cwd
 share/gir-1.0/Vte-%%VERSION%%.gir

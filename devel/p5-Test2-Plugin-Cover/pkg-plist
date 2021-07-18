@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/Test2/EventFacet/Coverage.pm
+%%SITE_ARCH%%/Test2/Plugin/Cover.pm
+%%SITE_ARCH%%/auto/Test2/Plugin/Cover/Cover.so
+%%PERL5_MAN3%%/Test2::EventFacet::Coverage.3.gz
+%%PERL5_MAN3%%/Test2::Plugin::Cover.3.gz

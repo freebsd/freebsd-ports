@@ -1,4 +1,4 @@
---- build/linux/unbundle/libusb.gn.orig	2021-03-15 11:01:22 UTC
+--- build/linux/unbundle/libusb.gn.orig	2021-04-15 08:12:30 UTC
 +++ build/linux/unbundle/libusb.gn
 @@ -0,0 +1,24 @@
 +# Copyright 2016 The Chromium Authors. All rights reserved.

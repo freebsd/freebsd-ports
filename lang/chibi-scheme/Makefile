@@ -1,7 +1,7 @@
-# Created by: Tobias Kortkamp <tobias.kortkamp@gmail.com>
+#
 
 PORTNAME=	chibi-scheme
-DISTVERSION=	0.9.1
+DISTVERSION=	0.10.0
 CATEGORIES=	lang
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	ashinn
+GH_TAGNAME=	${DISTVERSION:R}
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

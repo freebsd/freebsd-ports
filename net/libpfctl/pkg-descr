@@ -1,0 +1,6 @@
+Ports version of the base system pf(4) library, libpfctl.
+
+Ports should ideally use this interface rather than manually implementing the
+pf(4) ioctl() interface.
+
+WWW: https://cgit.freebsd.org/src/tree/lib/libpfctl

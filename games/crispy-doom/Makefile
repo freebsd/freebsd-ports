@@ -1,5 +1,5 @@
 PORTNAME=	crispy-doom
-PORTVERSION=	5.10.0
+PORTVERSION=	5.10.1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	games
 
@@ -9,7 +9,7 @@ COMMENT=	Enhanced-resolution Doom source port based on Chocolate Doom
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 CONFLICTS_INSTALL=	chocolate-doom
 

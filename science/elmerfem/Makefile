@@ -2,7 +2,7 @@
 
 PORTNAME=	elmerfem
 PORTVERSION=	8.4.20200708
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	henrik@gulbra.net
@@ -54,7 +54,7 @@ OCC_CMAKE_BOOL=		WITH_OCC
 OCC_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/vtk-8.2/cmake/vtk-8.2
 OCC_LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 			libfreetype.so:print/freetype2 \
-			libpng16.so:graphics/png \
+			libpng.so:graphics/png \
 			libpython3.7m.so:lang/python37 \
 			libtiff.so:graphics/tiff \
 			libTKernel.so:cad/opencascade \

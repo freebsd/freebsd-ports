@@ -1,5 +1,5 @@
 PORTNAME=	vault
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -16,7 +16,7 @@ GH_TUPLE=	hashicorp:${PORTNAME}:${VAULTTAG}:DEFAULT \
 		swills:vaultui:${VAULTUITAG}:vaultui
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
-COMMIT_ID=	b540be4b7ec48d0dd7512c8d8df9399d6bf84d76
+COMMIT_ID=	5d517c864c8f10385bf65627891bc7ef55f5e827
 GO_BUILDFLAGS=	-tags=ui \
 		-ldflags="\
 		-X github.com/hashicorp/vault/sdk/version.Version=${PORTVERSION} \

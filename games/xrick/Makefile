@@ -9,7 +9,12 @@ MASTER_SITES=	http://www.bigorno.net/xrick/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of Rick Dangerous
 
-RESTRICTED=	Copyright status of the graphics and sounds is uncertain
+# Converted from RESTRICTED
+LICENSE=	xrick
+LICENSE_NAME=	xrick
+LICENSE_TEXT=	Copyright status of the graphics and sounds is uncertain
+LICENSE_PERMS=	auto-accept
+
 USES=		gmake jpeg sdl tar:tgz
 USE_SDL=	sdl
 

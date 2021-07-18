@@ -8,7 +8,7 @@ COMMENT=	KF5 plugin based UI runtime used to write user interfaces
 USES=		cmake compiler:c++11-lib gettext gl kde:5 pkgconfig qt:5 tar:xz xorg
 USE_GL=		egl gl
 USE_KDE=	activities archive auth codecs completion config \
-		configwidgets coreaddons dbusaddons doctools globalaccel \
+		configwidgets coreaddons dbusaddons doctools_build globalaccel \
 		guiaddons i18n iconthemes jobwidgets kirigami2 kio package \
 		notifications service wayland windowsystem xmlgui kdeclarative \
 		widgetsaddons

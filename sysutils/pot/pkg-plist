@@ -9,10 +9,10 @@ bin/pot
 %%DATADIR%%/clone-fscomp.sh
 %%DATADIR%%/clone.sh
 %%DATADIR%%/common.sh
+%%DATADIR%%/common-flv.sh
 %%DATADIR%%/config.sh
 %%DATADIR%%/copy-in.sh
 %%DATADIR%%/create-base.sh
-%%DATADIR%%/create-dns.sh
 %%DATADIR%%/create-fscomp.sh
 %%DATADIR%%/create-private-bridge.sh
 %%DATADIR%%/create.sh

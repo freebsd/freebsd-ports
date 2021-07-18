@@ -1,8 +1,10 @@
---- include/gal/graphics_abstraction_layer.h.orig	2016-04-16 13:14:32.003824016 +0200
-+++ include/gal/graphics_abstraction_layer.h	2016-04-16 13:15:06.143789160 +0200
-@@ -31,4 +31,5 @@
+--- include/gal/graphics_abstraction_layer.h.orig	2021-06-08 00:34:09 UTC
++++ include/gal/graphics_abstraction_layer.h
+@@ -30,6 +30,7 @@
+ #include <deque>
  #include <stack>
  #include <limits>
 +#include <cmath>
  
  #include <math/matrix3x3.h>
+ 

@@ -1,0 +1,31 @@
+CCLINKDIR?=	libexec/ccache
+PLIST_SUB+=	CCLINKDIR="${CCLINKDIR}"
+SUB_LIST+=	CCACHE_COMPILERS="${CCACHE_COMPILERS}" \
+		CCLINKDIR="${CCLINKDIR}" \
+		ICCPREFIX="${LOCALBASE}/intel_cc_80/bin"
+
+.if ${ARCH}=="i386"
+CCACHE_COMPILERS+=	icc icpc
+.endif
+
+# ===================== Bump PORTREVISION in both ========================
+# ===================== devel/ccache and devel/ccache-memcached ==========
+# ========================================================================
+
+GNU_COMPILERS+=		34 42 43 44 45 46 47 48 49 5 6 7 8 9 10 11 12
+CCACHE_COMPILERS+=	cc c++ CC gcc g++ ${GNU_COMPILERS:S|^|gcc|} \
+			${GNU_COMPILERS:S|^|g++|} \
+			${GNU_COMPILERS:S|^|cpp|}
+
+.if ${PORT_OPTIONS:MCLANGLINK}
+CLANG_COMPILERS+=	33 34 35 36 37 38 39 40 50 60 70 80 90 10 11 12 -devel
+CCACHE_COMPILERS+=	clang clang++ ${CLANG_COMPILERS:S|^|clang|} \
+			${CLANG_COMPILERS:S|^|clang++|} \
+			${CLANG_COMPILERS:S|^|cpp|}
+.endif
+
+.if ${PORT_OPTIONS:MLLVMLINK}
+CCACHE_COMPILERS+=	llvm-gcc llvm-c++ llvm-g++
+.endif
+
+CCACHE_COMPILERS+=	${EXTRA_COMPILERS}

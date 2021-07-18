@@ -1,5 +1,5 @@
---- tools/greenbone-nvt-sync.in	2020-08-11 07:00:25.000000000 -0500
-+++ tools/greenbone-nvt-sync.in	2021-01-02 02:45:37.863324000 -0500
+--- tools/greenbone-nvt-sync.in	2021-04-15 09:39:00.000000000 -0500
++++ tools/greenbone-nvt-sync.in	2021-06-15 16:41:18.698165000 -0500
 @@ -87,10 +87,10 @@
  LOG_CMD="logger -t $SCRIPT_NAME"
  
@@ -13,7 +13,16 @@
      $LOG_CMD -p daemon.warning "The log facility is not working as expected. All messages will be written to the standard error stream."
    fi
  }
-@@ -428,7 +428,7 @@
+@@ -202,7 +202,7 @@
+   SYNC_TMP_DIR=/tmp
+   # If we have mktemp, create a temporary dir (safer)
+   if [ -n "`which mktemp`" ]; then
+-    SYNC_TMP_DIR=`mktemp -t -d greenbone-nvt-sync.XXXXXXXXXX` || { echo "ERROR: Cannot create temporary directory for file download" >&2; exit 1 ; }
++    SYNC_TMP_DIR=`mktemp -d /tmp/greenbone-nvt-sync.XXXXXXXXXX` || { echo "ERROR: Cannot create temporary directory for file download" >&2; exit 1 ; }
+     trap "rm -rf $SYNC_TMP_DIR" EXIT HUP INT TRAP TERM
+   fi
+ else
+@@ -437,7 +437,7 @@
          log_err "rsync failed, aborting synchronization."
          exit 1
        fi
@@ -22,7 +31,7 @@
        if [ $? -ne 0 ]  ; then
          if [ -n "$retried" ]
          then
-@@ -462,10 +462,10 @@
+@@ -471,10 +471,10 @@
  
  do_self_test ()
  {
@@ -35,3 +44,12 @@
    fi
  
    RSYNC_AVAIL=`command -v rsync`
+@@ -512,7 +512,7 @@
+     log_write "Feed is already current, skipping synchronization."
+   else
+     (
+-      chmod +660 $OPENVAS_FEED_LOCK_PATH
++      chmod 660 $OPENVAS_FEED_LOCK_PATH
+       flock -n 9
+       if [ $? -eq 1 ] ; then
+           log_warning "Another process related to the feed update is already running"

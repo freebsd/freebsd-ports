@@ -16,8 +16,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Regexp-RegGrp>=1.001001:devel/p5-Regexp-RegGrp
 TEST_DEPENDS=	p5-Test-Pod>=1.22:devel/p5-Test-Pod
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

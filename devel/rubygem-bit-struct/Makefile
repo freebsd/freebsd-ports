@@ -1,5 +1,5 @@
 PORTNAME=	bit-struct
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,9 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

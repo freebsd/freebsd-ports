@@ -1,3 +1,13 @@
+%%FFMPEG%%etc/alsa/conf.d/10-rate-lav.conf
+%%SAMPLERATE%%etc/alsa/conf.d/10-samplerate.conf
+%%FFMPEG%%etc/alsa/conf.d/60-a52-encoder.conf
+@comment etc/alsa/conf.d/50-arcam-av-ctl.conf
+@comment etc/alsa/conf.d/50-oss.conf
+@comment etc/alsa/conf.d/50-pulseaudio.conf
+@comment etc/alsa/conf.d/60-upmix.conf
+@comment etc/alsa/conf.d/60-vdownmix.conf
+@comment etc/alsa/conf.d/98-usb-stream.conf
+@comment etc/alsa/conf.d/99-pulseaudio-default.conf.example
 %%PULSEAUDIO%%lib/alsa-lib/libasound_module_conf_pulse.la
 %%PULSEAUDIO%%lib/alsa-lib/libasound_module_conf_pulse.so
 lib/alsa-lib/libasound_module_ctl_arcam_av.la
@@ -22,12 +32,12 @@ lib/alsa-lib/libasound_module_pcm_usb_stream.la
 lib/alsa-lib/libasound_module_pcm_usb_stream.so
 lib/alsa-lib/libasound_module_pcm_vdownmix.la
 lib/alsa-lib/libasound_module_pcm_vdownmix.so
-%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavcrate.la
-%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavcrate.so
-%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavcrate_fast.so
-%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavcrate_faster.so
-%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavcrate_high.so
-%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavcrate_higher.so
+%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavrate.la
+%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavrate.so
+%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavrate_fast.so
+%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavrate_faster.so
+%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavrate_high.so
+%%FFMPEG%%lib/alsa-lib/libasound_module_rate_lavrate_higher.so
 %%SAMPLERATE%%lib/alsa-lib/libasound_module_rate_samplerate.la
 %%SAMPLERATE%%lib/alsa-lib/libasound_module_rate_samplerate.so
 %%SAMPLERATE%%lib/alsa-lib/libasound_module_rate_samplerate_best.so
@@ -38,5 +48,12 @@ lib/alsa-lib/libasound_module_pcm_vdownmix.so
 %%SPEEX%%lib/alsa-lib/libasound_module_rate_speexrate.so
 %%SPEEX%%lib/alsa-lib/libasound_module_rate_speexrate_best.so
 %%SPEEX%%lib/alsa-lib/libasound_module_rate_speexrate_medium.so
+%%FFMPEG%%share/alsa/alsa.conf.d/10-rate-lav.conf
+%%SAMPLERATE%%share/alsa/alsa.conf.d/10-samplerate.conf
+@comment share/alsa/alsa.conf.d/50-arcam-av-ctl.conf
+@comment share/alsa/alsa.conf.d/50-oss.conf
 %%PULSEAUDIO%%share/alsa/alsa.conf.d/50-pulseaudio.conf
-%%PULSEAUDIO%%share/alsa/alsa.conf.d/99-pulseaudio-default.conf.example
+%%FFMPEG%%share/alsa/alsa.conf.d/60-a52-encoder.conf
+@comment share/alsa/alsa.conf.d/60-upmix.conf
+@comment share/alsa/alsa.conf.d/60-vdownmix.conf
+@comment share/alsa/alsa.conf.d/98-usb-stream.conf

@@ -94,6 +94,7 @@ share/kxmlgui5/parley/themes/theme_reference.desktop
 share/kxmlgui5/parley/themes/theme_reference.svgz
 share/kxmlgui5/parley/themes/theme_reference_preview.jpg
 share/locale/ar/LC_MESSAGES/parley.mo
+share/locale/be/LC_MESSAGES/parley.mo
 share/locale/bg/LC_MESSAGES/parley.mo
 share/locale/bs/LC_MESSAGES/parley.mo
 share/locale/ca/LC_MESSAGES/parley.mo
@@ -136,9 +137,13 @@ share/locale/pt/LC_MESSAGES/parley.mo
 share/locale/pt_BR/LC_MESSAGES/parley.mo
 share/locale/ro/LC_MESSAGES/parley.mo
 share/locale/ru/LC_MESSAGES/parley.mo
+share/locale/se/LC_MESSAGES/parley.mo
 share/locale/sk/LC_MESSAGES/parley.mo
 share/locale/sl/LC_MESSAGES/parley.mo
+share/locale/sq/LC_MESSAGES/parley.mo
 share/locale/sv/LC_MESSAGES/parley.mo
+share/locale/ta/LC_MESSAGES/parley.mo
+share/locale/tg/LC_MESSAGES/parley.mo
 share/locale/tr/LC_MESSAGES/parley.mo
 share/locale/ug/LC_MESSAGES/parley.mo
 share/locale/uk/LC_MESSAGES/parley.mo

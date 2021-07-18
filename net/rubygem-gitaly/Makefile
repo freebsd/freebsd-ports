@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-PORTVERSION=	13.9.0.pre.rc1
+PORTVERSION=	14.0.0.pre.rc2
 PORTREVISION=	0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
@@ -9,8 +9,8 @@ COMMENT=	Auto-generated gRPC client for gitaly
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-grpc130>=1.0<2.0:net/rubygem-grpc130 \
-		gitaly>=13.8:devel/gitaly
+RUN_DEPENDS=	rubygem-grpc>=1.0<2.0:net/rubygem-grpc \
+		gitaly>=14.0:devel/gitaly
 
 USES=		gem
 USE_RUBY=	yes

@@ -1,7 +1,7 @@
 # Created by: Matthias Andree <mandree@FreeBSD.org>
 
 PORTNAME=		openvpn
-DISTVERSION=		2.5.1
+DISTVERSION=		2.5.3
 PORTREVISION?=		0
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
@@ -15,7 +15,6 @@ LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYRIGHT.GPL
 
 USES=			cpe libtool localbase:ldflags pkgconfig shebangfix tar:xz
-IGNORE_SSL=		libressl libressl-devel
 USE_RC_SUBR=		openvpn
 
 SHEBANG_FILES=		sample/sample-scripts/verify-cn \
@@ -34,11 +33,8 @@ SUB_FILES=		pkg-message openvpn-client
 PORTDOCS=		*
 PORTEXAMPLES=		*
 
-# avoid picking up CMAKE, we don't have cmocka in the tarballs.
-CONFIGURE_ENV+=		ac_cv_prog_CMAKE= CMAKE=
-
 OPTIONS_DEFINE=		PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME \
-			TEST LZ4 LZO SMALL TUNNELBLICK ASYNC_PUSH
+			TEST LZ4 LZO SMALL TUNNELBLICK ASYNC_PUSH UNITTESTS
 OPTIONS_DEFAULT=	EASYRSA OPENSSL TEST LZ4 LZO
 OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	OPENSSL MBEDTLS
@@ -48,6 +44,7 @@ MBEDTLS_DESC=		SSL/TLS via mbedTLS (lacks TLS v1.3)
 PKCS11_DESC=		Use security/pkcs11-helper (OpenSSL only)
 SMALL_DESC=		Build a smaller executable with fewer features
 TUNNELBLICK_DESC=	Tunnelblick XOR scramble patch (READ HELP!)
+UNITTESTS_DESC=		Enable unit tests
 X509ALTUSERNAME_DESC=	Enable --x509-username-field (OpenSSL only)
 
 ASYNC_PUSH_LIB_DEPENDS=	libinotify.so:devel/libinotify
@@ -78,6 +75,9 @@ TEST_ALL_TARGET=	check
 TEST_TEST_TARGET_OFF=	check
 
 TUNNELBLICK_EXTRA_PATCHES=	${FILESDIR}/extra-tunnelblick-openvpn_xorpatch:-p1
+
+UNITTESTS_BUILD_DEPENDS=	cmocka>=0:sysutils/cmocka
+UNITTESTS_CONFIGURE_ENABLE=	unit-tests
 
 X509ALTUSERNAME_PREVENTS=	MBEDTLS
 X509ALTUSERNAME_PREVENTS_MSG=	OpenVPN ${DISTVERSION} cannot use --x509-username-field with mbedTLS. Disable X509ALTUSERNAME, or use OpenSSL instead
@@ -111,6 +111,13 @@ pre-configure:
 	@${ECHO} "      EXAMPLE:  make LOG_OPENVPN=LOG_LOCAL6"
 	@${ECHO} ""
 .endif
+.if !empty(SSL_DEFAULT:Mlibressl*)
+	@${ECHO} "### --------------------------------------------------------- ###"
+	@${ECHO} "### NOTE that libressl is not primarily supported by OpenVPN  ###"
+	@${ECHO} "### Do not report bugs without fixes/patches unless the issue ###"
+	@${ECHO} "### can be reproduced with a released OpenSSL version.        ###"
+	@${ECHO} "### --------------------------------------------------------- ###"
+.endif
 
 post-configure:
 	${REINPLACE_CMD} '/^CFLAGS =/s/$$/ -fPIC/' \
@@ -132,8 +139,6 @@ post-install:
 	@${REINPLACE_CMD} 's|resolvconf -p -a|resolvconf -a|' ${STAGEDIR}${PREFIX}/libexec/openvpn-client.up
 	${INSTALL_SCRIPT} ${WRKDIR}/openvpn-client ${STAGEDIR}${PREFIX}/sbin/openvpn-client
 	${MKDIR} ${STAGEDIR}${PREFIX}/include
-	@: # workaround for 2.5.0 only XXX FIXME remove after 2.5.0
-	${INSTALL_MAN} ${WRKSRC}/doc/openvpn.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
@@ -144,5 +149,6 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/)
 	${CHMOD} ${BINMODE} ${STAGEDIR}${EXAMPLESDIR}/sample-scripts/*
+	${RM} ${STAGEDIR}${EXAMPLESDIR}/sample-config-files/*.orig
 
 .include <bsd.port.mk>

@@ -268,7 +268,7 @@ MASTER_SITE_FESTIVAL_OGI+= \
 #
 # For the full list, see the Handbook:
 #
-#    http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html
+#    https://docs.FreeBSD.org/en/books/handbook/mirrors/#mirrors-ftp
 #
 .if !defined(IGNORE_MASTER_SITE_FREEBSD_ORG)
 MASTER_SITE_FREEBSD_ORG+= \
@@ -431,10 +431,12 @@ GH_PROJECT:=	${GH_PROJECT_DEFAULT}
 GH_TAGNAME:=	${GH_TAGNAME_DEFAULT}
 GH_SUBDIR:=	${GH_SUBDIR_DEFAULT}
 .  if defined(GH_TAGNAME)
+# If you change either of the _SANITIZED or _EXTRACT variables, please keep the
+# changes in sync with the GH_TAGNAME_${_group}_* variables 50 lines below.
 GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,g}
 # GitHub silently converts tags starting with v to not have v in the filename
 # and extraction directory.  It also replaces + with -.
-GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:C/^[vV]([0-9])/\1/:S/+/-/g}
+GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:C/^[vV]([0-9])/\1/:S/+/-/g:C/--*/-/g}
 .  endif
 # This new scheme rerolls distfiles. Also ensure they are renamed to avoid
 # conflicts. Use _GITHUB_REV in case github changes their zipping or structure
@@ -476,8 +478,10 @@ post-extract-gh-DEFAULT:
 GH_ACCOUNT_${_group}?=	${GH_ACCOUNT_DEFAULT}
 GH_PROJECT_${_group}?=	${GH_PROJECT_DEFAULT}
 GH_TAGNAME_${_group}?=	${GH_TAGNAME_DEFAULT}
-GH_TAGNAME_${_group}_SANITIZED=	${GH_TAGNAME_${_group}:S,/,-,}
-GH_TAGNAME_${_group}_EXTRACT=	${GH_TAGNAME_${_group}_SANITIZED:C/^[vV]([0-9])/\1/}
+# If you change either of the _SANITIZED or _EXTRACT variables, please keep the
+# changes in sync with the GH_TAGNAME_* variables 50 lines above.
+GH_TAGNAME_${_group}_SANITIZED=	${GH_TAGNAME_${_group}:S,/,-,g}
+GH_TAGNAME_${_group}_EXTRACT=	${GH_TAGNAME_${_group}_SANITIZED:C/^[vV]([0-9])/\1/:S/+/-/g:C/--*/-/g}
 _GH_TUPLE_OUT:=	${_GH_TUPLE_OUT} ${GH_ACCOUNT_${_group}}:${GH_PROJECT_${_group}}:${GH_TAGNAME_${_group}}:${_group}/${GH_SUBDIR_${_group}}
 DISTNAME_${_group}:=	${GH_ACCOUNT_${_group}}-${GH_PROJECT_${_group}}-${GH_TAGNAME_${_group}_SANITIZED}
 DISTFILE_${_group}:=	${DISTNAME_${_group}}_GH${_GITHUB_REV}${_GITHUB_EXTRACT_SUFX}
@@ -782,7 +786,6 @@ MASTER_SITE_KDE+= \
 	http://www-ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
 	https://ftp-stud.hs-esslingen.de/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.cronyx.ru/pub/mirror/kde/%SUBDIR%/ \
-	http://ftp.twaren.net/Unix/X/KDE/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
 	ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/kde/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/X11/kde/%SUBDIR%/ \
@@ -802,7 +805,7 @@ MASTER_SITE_KDE+= \
 	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	http://kde.cs.nctu.edu.tw/%SUBDIR%/
+	https://kde.cs.nctu.edu.tw/ftp/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_LIBREOFFICE_DEV)

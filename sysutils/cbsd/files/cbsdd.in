@@ -58,7 +58,7 @@ command_args="&"
 
 cbsdd_prestart() {
 	%%PREFIX%%/bin/cbsd task mode=flushall > /dev/null 2>&1
-	. ${distdir}/initenv.subr
+	. ${subrdir}/initenv.subr
 	. ${inventory}
 
 	%%PREFIX%%/bin/cbsd sysinv mode=update

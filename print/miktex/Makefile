@@ -1,6 +1,6 @@
 PORTNAME=	miktex
 DISTVERSION=	21.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/arrowd/miktex:bootstrap
 DISTFILES=	miktex-zzdb1-2.9.tar.lzma:bootstrap \
@@ -38,7 +38,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		liblog4cxx.so:devel/log4cxx \
 		libmpfr.so:math/mpfr \
 		libmspack.so:archivers/libmspack \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libpopt.so:devel/popt \
 		liburiparser.so:net/uriparser \
 		libzzip.so:devel/zziplib

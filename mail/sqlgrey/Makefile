@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-Net-Server>=0:net/p5-Net-Server \
 		p5-IO-Multiplex>=0:devel/p5-IO-Multiplex \
-		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
+		${P5_POD_PARSER} \
 		${LOCALBASE}/bin/bash:shells/bash \
 		${LOCALBASE}/bin/gmd5sum:sysutils/coreutils
 

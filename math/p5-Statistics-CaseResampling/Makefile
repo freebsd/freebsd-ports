@@ -12,8 +12,8 @@ COMMENT=	Efficient resampling and calculation of medians with confidence interva
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Statistics/CaseResampling/CaseResampling.so

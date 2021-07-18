@@ -1,0 +1,11 @@
+--- chrome/test/BUILD.gn.orig	2021-04-14 01:08:42 UTC
++++ chrome/test/BUILD.gn
+@@ -6915,7 +6915,7 @@ test("chrome_app_unittests") {
+     "//components/safe_browsing:buildflags",
+     "//pdf:pdf_ppapi",
+   ]
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     # TODO(crbug.com/753619): Enable crash reporting on Fuchsia.
+     deps += [ "//third_party/breakpad:client" ]
+   }

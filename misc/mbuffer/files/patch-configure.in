@@ -1,0 +1,30 @@
+- AC_PATH_PROG(SH,bash sh)
+  this only checks whether bash exists in ${PATH}, not sh
+  AC_PATH_PROGS() is suppose to check for each program in the blank-separated list,
+  and there is no bash in the FreeBSD base system.
+
+- AC_CHECK_TARGET_TOOLS(OBJDUMP,gobjdump objdump)
+  /usr/bin/objdump (the GNU version) was removed from the FreeBSD base system
+  https://cgit.freebsd.org/src/commit/?id=0ad202f312f6da4f2774ecb7a3f3c2a05b3dde5f
+  add llvm-objdump to the list for ${OBJDUMP}.
+
+--- configure.in.orig	2021-01-16 05:20:02 UTC
++++ configure.in
+@@ -104,7 +104,7 @@ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([])],
+ AC_SUBST(CFLAGS)
+ 
+ AC_PROG_INSTALL
+-AC_PATH_PROG(SH,bash sh)
++AC_PATH_PROG(SH,sh)
+ AC_PATH_PROG(RM,rm)
+ AC_PATH_PROG(CP,cp)
+ AC_PATH_PROG(MT,mt,AC_MSG_WARN(could not find the program mt - you might need this if you want autoloader support))
+@@ -113,7 +113,7 @@ AC_PATH_PROG(AWK,awk)
+ AC_SYS_LARGEFILE
+ AC_STRUCT_ST_BLKSIZE
+ 
+-AC_CHECK_TARGET_TOOLS(OBJDUMP,gobjdump objdump)
++AC_CHECK_TARGET_TOOLS(OBJDUMP,gobjdump objdump llvm-objdump)
+ 
+ AC_HEADER_ASSERT
+ AC_CHECK_LIB(pthread, pthread_mutex_init)

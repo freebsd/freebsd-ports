@@ -4,14 +4,14 @@ PORTNAME=	amb-plugins
 PORTVERSION=	0.8.1
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://kokkinizita.linuxaudio.org/linuxaudio/downloads/
+MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 DISTNAME=	AMB-plugins-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fa-plugins.rdf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Ambisonics plugins, mainly to be used within Ardour
+COMMENT=	Ambisonics LADSPA plugins, mainly to be used within Ardour
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 RUN_DEPENDS:=	${BUILD_DEPENDS}

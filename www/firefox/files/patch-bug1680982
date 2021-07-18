@@ -1,28 +1,28 @@
-commit d947b92c7503
+commit 3204512f58a1
 Author: Greg V <greg@unrelenting.technology>
 Date:   Sun Dec 6 22:07:00 2020 +0000
 
-    Bug 1680982 - Use evdev for gamepads on Linux/FreeBSD
+    Bug 1680982 - Use evdev instead of the Linux legacy joystick API for gamepads
     
-    Switch from the legacy Linux joystick API to the generic evdev API.
+    Using evdev is a prerequisite for adding rumble (haptic feedback) and LED support.
     
     - BTN_GAMEPAD semantic buttons are interpreted directly,
     since all kernel drivers are supposed to use them correctly:
     https://www.kernel.org/doc/html/latest/input/gamepad.html
     - BTN_JOYSTICK legacy style numbered buttons use the model specific remappers
-    - using evdev is a prerequisite for adding rumble (haptic feedback) and other extras
-    - the Linux gamepad module is enabled on FreeBSD, because
-    FreeBSD provides evdev, and libudev-devd provides enough of libudev
+    - we support even strange devices that combine both styles in one device
+    - the Linux gamepad module is enabled on FreeBSD and DragonFly, because
+    these kernels provide evdev, and libudev-devd provides enough of libudev
     (evdev headers are provided by the devel/evdev-proto package)
     
     Differential Revision: https://phabricator.services.mozilla.com/D98868
 ---
- dom/gamepad/linux/LinuxGamepad.cpp | 243 +++++++++++++++++++++++++++++++------
+ dom/gamepad/linux/LinuxGamepad.cpp | 262 ++++++++++++++++++++++++++++++++-----
  dom/gamepad/moz.build              |   2 +-
- 2 files changed, 210 insertions(+), 35 deletions(-)
+ 2 files changed, 229 insertions(+), 35 deletions(-)
 
 diff --git dom/gamepad/linux/LinuxGamepad.cpp dom/gamepad/linux/LinuxGamepad.cpp
-index 512ac765020d..0e51183c2a2d 100644
+index deee47b9d267..31f0aad7ae4a 100644
 --- dom/gamepad/linux/LinuxGamepad.cpp
 +++ dom/gamepad/linux/LinuxGamepad.cpp
 @@ -5,15 +5,16 @@
@@ -109,13 +109,15 @@ index 512ac765020d..0e51183c2a2d 100644
    static gboolean OnGamepadData(GIOChannel* source, GIOCondition condition,
                                  gpointer data);
  
-@@ -114,8 +129,12 @@ void LinuxGamepadService::AddDevice(struct udev_device* dev) {
+@@ -114,8 +129,14 @@ void LinuxGamepadService::AddDevice(struct udev_device* dev) {
    g_io_channel_set_encoding(channel, nullptr, nullptr);
    g_io_channel_set_buffered(channel, FALSE);
    int fd = g_io_channel_unix_get_fd(channel);
 +
-+  struct input_id id = {0};
-+  ioctl(fd, EVIOCGID, &id);
++  struct input_id id {};
++  if (ioctl(fd, EVIOCGID, &id) == -1) {
++    return;
++  }
 +
    char name[128];
 -  if (ioctl(fd, JSIOCGNAME(sizeof(name)), &name) == -1) {
@@ -123,7 +125,7 @@ index 512ac765020d..0e51183c2a2d 100644
      strcpy(name, "unknown");
    }
    const char* vendor_id =
-@@ -131,20 +150,69 @@ void LinuxGamepadService::AddDevice(struct udev_device* dev) {
+@@ -131,20 +152,86 @@ void LinuxGamepadService::AddDevice(struct udev_device* dev) {
        model_id = mUdev.udev_device_get_sysattr_value(parent, "id/product");
      }
    }
@@ -148,8 +150,11 @@ index 512ac765020d..0e51183c2a2d 100644
 +  unsigned long abs_bits[NLONGS(ABS_CNT)] = {0};
 +  ioctl(fd, EVIOCGBIT(EV_KEY, sizeof(key_bits)), key_bits);
 +  ioctl(fd, EVIOCGBIT(EV_ABS, sizeof(abs_bits)), abs_bits);
++
++  /* Here, we try to support even strange cases where proper semantic
++   * BTN_GAMEPAD button are combined with arbitrary extra buttons. */
 +  for (uint16_t i = BTN_JOYSTICK; i < KEY_MAX; i++) {
-+    /* Skip proper gamepad events, they are handled directly */
++    /* Do not map semantic buttons, they are handled directly */
 +    if (i == BTN_GAMEPAD) {
 +      i = BTN_THUMBR + 1;
 +      continue;
@@ -167,6 +172,13 @@ index 512ac765020d..0e51183c2a2d 100644
 +      gamepad->key_map[i] = numButtons++;
 +    }
 +  }
++  for (uint16_t i = BTN_GAMEPAD; i <= BTN_THUMBR; i++) {
++    /* But if any semantic event exists, count them all */
++    if (TestBit(key_bits, i)) {
++      numButtons += BUTTON_INDEX_COUNT;
++      break;
++    }
++  }
 +  for (uint16_t i = 0; i < ABS_MAX; ++i) {
 +    if (TestBit(abs_bits, i)) {
 +      gamepad->abs_info.emplace(i, input_absinfo{});
@@ -179,6 +191,13 @@ index 512ac765020d..0e51183c2a2d 100644
 +      }
 +      gamepad->abs_map[i] = numAxes++;
 +    }
++  }
++
++  if (numAxes == 0) {
++    NS_WARNING("Gamepad with zero axes detected?");
++  }
++  if (numButtons == 0) {
++    NS_WARNING("Gamepad with zero buttons detected?");
 +  }
 +
 +  bool defaultRemapper = false;
@@ -200,7 +219,7 @@ index 512ac765020d..0e51183c2a2d 100644
    // TODO: Bug 1523355, implement gamepad lighindicator and touch for Linux.
  
    gamepad->source_id =
-@@ -257,7 +325,7 @@ bool LinuxGamepadService::is_gamepad(struct udev_device* dev) {
+@@ -257,7 +344,7 @@ bool LinuxGamepadService::is_gamepad(struct udev_device* dev) {
    if (!devpath) {
      return false;
    }
@@ -209,16 +228,16 @@ index 512ac765020d..0e51183c2a2d 100644
      return false;
    }
  
-@@ -292,7 +360,7 @@ gboolean LinuxGamepadService::OnGamepadData(GIOChannel* source,
+@@ -292,7 +379,7 @@ gboolean LinuxGamepadService::OnGamepadData(GIOChannel* source,
    if (condition & G_IO_ERR || condition & G_IO_HUP) return FALSE;
  
    while (true) {
 -    struct js_event event;
-+    struct input_event event = {0};
++    struct input_event event {};
      gsize count;
      GError* err = nullptr;
      if (g_io_channel_read_chars(source, (gchar*)&event, sizeof(event), &count,
-@@ -301,18 +369,125 @@ gboolean LinuxGamepadService::OnGamepadData(GIOChannel* source,
+@@ -301,18 +388,125 @@ gboolean LinuxGamepadService::OnGamepadData(GIOChannel* source,
        break;
      }
  
@@ -355,7 +374,7 @@ index 512ac765020d..0e51183c2a2d 100644
      }
    }
 diff --git dom/gamepad/moz.build dom/gamepad/moz.build
-index 5f55d5a95e96..b5d10e9d095a 100644
+index 5f55d5a95e96..544b7f927736 100644
 --- dom/gamepad/moz.build
 +++ dom/gamepad/moz.build
 @@ -59,7 +59,7 @@ elif CONFIG["MOZ_WIDGET_TOOLKIT"] == "windows":
@@ -363,7 +382,7 @@ index 5f55d5a95e96..b5d10e9d095a 100644
  elif CONFIG["MOZ_WIDGET_TOOLKIT"] == "android":
      UNIFIED_SOURCES += ["android/AndroidGamepad.cpp"]
 -elif CONFIG["OS_ARCH"] == "Linux":
-+elif CONFIG["OS_ARCH"] == "Linux" or CONFIG["OS_ARCH"] == "FreeBSD":
++elif CONFIG["OS_ARCH"] in ("Linux", "FreeBSD", "DragonFly"):
      UNIFIED_SOURCES += ["linux/LinuxGamepad.cpp"]
  else:
      UNIFIED_SOURCES += ["fallback/FallbackGamepad.cpp"]

@@ -1,23 +1,23 @@
 # Created by: Kris Moore <kmoore@FreeBSD.org>
 
 PORTNAME=	sphinx-intl
-PORTVERSION=	0.9.5
-PORTREVISION=	2
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kmoore@FreeBSD.org
-COMMENT=	Sphinx-intl translation features
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Sphinx utility that make it easy to translate and to apply translation
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}polib>=1.0.6:devel/py-polib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.8.0:devel/py-six@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click>=0:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

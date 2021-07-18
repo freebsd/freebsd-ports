@@ -11,10 +11,15 @@ DISTNAME=	nero2_linux_i386
 MAINTAINER=	craig001@lerwick.hopto.org
 COMMENT=	Neuro evolving robotic operatives the game
 
+# Converted from RESTRICTED
+LICENSE=	nero
+LICENSE_NAME=	nero
+LICENSE_TEXT=	Nero is freeware, but i am not sure of its license
+LICENSE_PERMS=	auto-accept
+
 USES=		linux
 USE_LINUX=	dri libtheora libvorbis sdl12
 NO_BUILD=	yes
-RESTRICTED=	Nero is freeware, but i am not sure of its license
 
 SUB_FILES=	nerogame pkg-message
 DATADIR=	share/${PKGNAMEPREFIX}${PORTNAME}

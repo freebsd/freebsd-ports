@@ -16,6 +16,7 @@ include/glslang/Include/InitializeGlobals.h
 include/glslang/Include/PoolAlloc.h
 include/glslang/Include/ResourceLimits.h
 include/glslang/Include/ShHandle.h
+include/glslang/Include/SpirvIntrinsics.h
 include/glslang/Include/Types.h
 include/glslang/Include/arrays.h
 include/glslang/Include/glslang_c_interface.h
@@ -68,6 +69,8 @@ lib/cmake/SPIRVTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SPIRVTargets.cmake
 lib/cmake/SPVRemapperTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SPVRemapperTargets.cmake
+lib/cmake/glslang-default-resource-limitsTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/glslang-default-resource-limitsTargets.cmake
 lib/cmake/glslangTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/glslangTargets.cmake
 lib/cmake/glslangValidatorTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -81,4 +84,5 @@ lib/libOGLCompiler.a
 lib/libOSDependent.a
 lib/libSPIRV.a
 lib/libSPVRemapper.a
+lib/libglslang-default-resource-limits.a
 lib/libglslang.a

@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2021-04-07 12:23:46 UTC
++++ CMakeLists.txt
+@@ -408,6 +408,10 @@ test_big_endian (HAVE_BIGENDIAN)
+ if (HAVE_BIGENDIAN)
+     add_definitions (-DHAVE_BIGENDIAN)
+ endif ()
++# CMake 3.20 doesn't do the tests internally in TestBigEndian
++# that end up setting HAVE_STDINT_H and similar.
++include(CheckTypeSize)
++CHECK_TYPE_SIZE("unsigned short" CMAKE_SIZEOF_UNSIGNED_SHORT LANGUAGE C)
+ 
+ # Force certain components to always be built as release
+ macro (force_release_build)

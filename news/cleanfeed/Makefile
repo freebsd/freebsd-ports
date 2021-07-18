@@ -1,18 +1,27 @@
 # Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
 
 PORTNAME=	cleanfeed
-DISTVERSION=	20190602
+DISTVERSION=	20200402
 CATEGORIES=	news
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crooks
-GH_TAGNAME=	b3c6bcf6e34a6d35cad402d34c7ff76aba481c6d
+GH_TAGNAME=	dd177d4a3b6ea2e538da17bbb2a74772cea4a49a
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Spam filter for Usenet news servers
 
-RUN_DEPENDS=	${LOCALBASE}/news/bin/innd:news/inn
+FLAVORS=                        inn inncurrent
+FLAVOR?=                        ${FLAVORS:[1]}
 
+inn_CONFLICTS_INSTALL=		cleanfeed-current
+inn_RUN_DEPENDS=		${LOCALBASE}/news/bin/innd:news/inn
+
+inncurrent_PKGNAMESUFFIX=	-current
+inncurrent_CONFLICTS_INSTALL=	cleanfeed
+inncurrent_RUN_DEPENDS=		${LOCALBASE}/news/bin/innd:news/inn-current
+
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		perl5
 BINOWN=		news

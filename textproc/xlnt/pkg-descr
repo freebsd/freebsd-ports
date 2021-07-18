@@ -1,0 +1,4 @@
+xlnt is a modern C++ library for manipulating spreadsheets in memory and
+reading/writing them from/to XLSX files as described in ECMA 376 4th edition.
+
+WWW: https://github.com/tfussell/xlnt

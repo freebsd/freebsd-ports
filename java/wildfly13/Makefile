@@ -45,6 +45,7 @@ CONFIG_FILES=	appclient/configuration/appclient.xml \
 		standalone/configuration/logging.properties \
 		standalone/configuration/mgmt-groups.properties \
 		standalone/configuration/mgmt-users.properties \
+		standalone/configuration/standalone-ee8.xml \
 		standalone/configuration/standalone-full-ha.xml \
 		standalone/configuration/standalone-full.xml \
 		standalone/configuration/standalone-ha.xml \

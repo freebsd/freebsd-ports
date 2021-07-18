@@ -1,0 +1,29 @@
+--- uim/Makefile.am.orig	2021-04-29 13:46:21 UTC
++++ uim/Makefile.am
+@@ -81,7 +81,7 @@ libuim_custom_la_SOURCES = uim-custom.c
+ if M17NLIB
+   uim_plugin_LTLIBRARIES += libuim-m17nlib.la
+   libuim_m17nlib_la_SOURCES = m17nlib.c
+-  libuim_m17nlib_la_LIBADD = @M17NLIB_LIBS@ libuim-scm.la libuim.la
++  libuim_m17nlib_la_LIBADD = @M17NLIB_LIBS@ -luim-scm -luim
+   libuim_m17nlib_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
+   libuim_m17nlib_la_CPPFLAGS = -I$(top_srcdir) @M17NLIB_CFLAGS@
+ endif
+@@ -100,7 +100,7 @@ if ENABLE_ANTHY_STATIC
+ else
+   uim_plugin_LTLIBRARIES += libuim-anthy.la
+   libuim_anthy_la_SOURCES = anthy.c
+-  libuim_anthy_la_LIBADD = @ANTHY_LIBS@ libuim-scm.la libuim.la
++  libuim_anthy_la_LIBADD = @ANTHY_LIBS@ -luim-scm -luim
+   libuim_anthy_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
+   libuim_anthy_la_CPPFLAGS = -I$(top_srcdir)
+ endif
+@@ -112,7 +112,7 @@ if ENABLE_ANTHY_UTF8_STATIC
+ else
+   uim_plugin_LTLIBRARIES += libuim-anthy-utf8.la
+   libuim_anthy_utf8_la_SOURCES = anthy-utf8.c
+-  libuim_anthy_utf8_la_LIBADD = @ANTHY_UTF8_LIBS@ libuim-scm.la libuim.la
++  libuim_anthy_utf8_la_LIBADD = @ANTHY_UTF8_LIBS@ -luim-scm -luim
+   libuim_anthy_utf8_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
+   libuim_anthy_utf8_la_CPPFLAGS = -I$(top_srcdir) @ANTHY_UTF8_CFLAGS@
+ endif

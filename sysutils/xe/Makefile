@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	xe
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11

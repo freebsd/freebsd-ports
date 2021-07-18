@@ -11,7 +11,7 @@ COMMENT=	C++ library to manipulate and create NURBS curves and surfaces
 
 USES=		libtool tar:bzip2
 GNU_CONFIGURE=	yes
-USE_GCC=	any
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip

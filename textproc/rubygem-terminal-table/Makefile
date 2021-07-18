@@ -1,7 +1,7 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
 
 PORTNAME=	terminal-table
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Simple, feature rich ASCII table generation library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-unicode-display_width1>=1.1.1<2:devel/rubygem-unicode-display_width1
+RUN_DEPENDS=	rubygem-unicode-display_width>=1.1.1<3:devel/rubygem-unicode-display_width
 
 USES=		gem shebangfix
 USE_RUBY=	yes

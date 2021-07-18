@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	simplestroke
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.1

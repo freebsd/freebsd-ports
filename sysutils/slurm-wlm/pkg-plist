@@ -483,6 +483,12 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%/html/mpi_guide.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mpiplugins.html
 %%PORTDOCS%%%%DOCSDIR%%/html/multi_cluster.html
+%%PORTDOCS%%%%DOCSDIR%%/html/network.html
+%%PORTDOCS%%%%DOCSDIR%%/html/network_failover.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/network_federation.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/network_multi_cluster.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/network_srun.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/network_standard.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/news.html
 %%PORTDOCS%%%%DOCSDIR%%/html/node_features_plugins.html
 %%PORTDOCS%%%%DOCSDIR%%/html/nonstop.conf.html
@@ -503,6 +509,7 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%/html/power_save.html
 %%PORTDOCS%%%%DOCSDIR%%/html/preempt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/preemption_plugins.html
+%%PORTDOCS%%%%DOCSDIR%%/html/prep_plugins.html
 %%PORTDOCS%%%%DOCSDIR%%/html/priority_multifactor.html
 %%PORTDOCS%%%%DOCSDIR%%/html/priority_multifactor3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/priority_plugins.html

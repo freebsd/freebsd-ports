@@ -1,0 +1,22 @@
+Index: configure
+diff -u configure.orig configure
+--- configure.orig	2010-10-18 21:36:00.000000000 +0900
++++ configure	2010-10-18 23:50:45.966557478 +0900
+@@ -9501,7 +9501,7 @@
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgssapi ${GSSAPIBASE_LIBS} -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
++LIBS="-lgssapi ${GSSAPIBASE_LIBS} -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} -lhx509 $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -9803,7 +9803,7 @@
+     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a ${K5SUPSTATIC}"
+   elif test "$gss_impl" = "heimdal"; then
+     CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
+-    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err"
++    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err -lhx509"
+     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
+   elif test "$gss_impl" = "cybersafe03"; then
+ # Version of CyberSafe with two libraries

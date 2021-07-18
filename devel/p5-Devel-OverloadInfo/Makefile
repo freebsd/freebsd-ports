@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Devel-OverloadInfo
-PORTVERSION=	0.005
+PORTVERSION=	0.007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,15 +11,16 @@ COMMENT=	Introspect overloaded operators
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-MRO-Compat>=0:devel/p5-MRO-Compat \
-		p5-Package-Stash>=0.14:devel/p5-Package-Stash \
-		p5-Sub-Identify>=0:devel/p5-Sub-Identify
+		p5-Package-Stash>=0.14:devel/p5-Package-Stash
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

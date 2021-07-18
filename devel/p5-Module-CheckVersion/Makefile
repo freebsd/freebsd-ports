@@ -16,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

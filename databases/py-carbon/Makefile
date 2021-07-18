@@ -1,8 +1,7 @@
 # Created by: Evan Sarmiento <bsdports@wayfair.com>
 
 PORTNAME=	carbon
-PORTVERSION=	1.1.7
-PORTREVISION=	2
+PORTVERSION=	1.1.8
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

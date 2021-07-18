@@ -1,4 +1,4 @@
---- content/public/app/content_main_delegate.cc.orig	2021-03-12 23:57:24 UTC
+--- content/public/app/content_main_delegate.cc.orig	2021-04-14 18:41:03 UTC
 +++ content/public/app/content_main_delegate.cc
 @@ -24,12 +24,12 @@ int ContentMainDelegate::RunProcess(
    return -1;

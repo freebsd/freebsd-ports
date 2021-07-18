@@ -1,7 +1,7 @@
 # Created by: perl@FreeBSD.org
 
 PORTNAME=	Crypt-RHash
-PORTVERSION=	0.99
+PORTVERSION=	1.00
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

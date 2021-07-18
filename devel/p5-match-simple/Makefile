@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-Exporter-Tiny>=0.026:devel/p5-Exporter-Tiny \
 		p5-Sub-Infix>=0.004:devel/p5-Sub-Infix
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

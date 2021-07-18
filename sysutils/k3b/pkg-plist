@@ -328,6 +328,10 @@ share/kxmlgui5/k3b/k3bui.rc
 share/locale/ar/LC_MESSAGES/k3b.mo
 share/locale/ast/LC_MESSAGES/kio_videodvd.mo
 share/locale/ast/LC_MESSAGES/libk3bdevice.mo
+share/locale/be/LC_MESSAGES/k3b.mo
+share/locale/be/LC_MESSAGES/kio_videodvd.mo
+share/locale/be/LC_MESSAGES/libk3b.mo
+share/locale/be/LC_MESSAGES/libk3bdevice.mo
 share/locale/bg/LC_MESSAGES/k3b.mo
 share/locale/bg/LC_MESSAGES/kio_videodvd.mo
 share/locale/bg/LC_MESSAGES/libk3b.mo
@@ -495,6 +499,9 @@ share/locale/ru/LC_MESSAGES/k3b.mo
 share/locale/ru/LC_MESSAGES/kio_videodvd.mo
 share/locale/ru/LC_MESSAGES/libk3b.mo
 share/locale/ru/LC_MESSAGES/libk3bdevice.mo
+share/locale/se/LC_MESSAGES/k3b.mo
+share/locale/se/LC_MESSAGES/libk3b.mo
+share/locale/se/LC_MESSAGES/libk3bdevice.mo
 share/locale/sk/LC_MESSAGES/k3b.mo
 share/locale/sk/LC_MESSAGES/kio_videodvd.mo
 share/locale/sk/LC_MESSAGES/libk3b.mo
@@ -503,6 +510,10 @@ share/locale/sl/LC_MESSAGES/k3b.mo
 share/locale/sl/LC_MESSAGES/kio_videodvd.mo
 share/locale/sl/LC_MESSAGES/libk3b.mo
 share/locale/sl/LC_MESSAGES/libk3bdevice.mo
+share/locale/sq/LC_MESSAGES/k3b.mo
+share/locale/sq/LC_MESSAGES/kio_videodvd.mo
+share/locale/sq/LC_MESSAGES/libk3b.mo
+share/locale/sq/LC_MESSAGES/libk3bdevice.mo
 share/locale/sr/LC_MESSAGES/k3b.mo
 share/locale/sr/LC_MESSAGES/kio_videodvd.mo
 share/locale/sr/LC_MESSAGES/libk3b.mo

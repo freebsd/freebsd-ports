@@ -13,12 +13,16 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main ${EXTRA_FILES}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Play most popular animation formats and show pictures
 
-NO_CDROM=	Must be redistributed without fee
+# Converted from NO_CDROM
+LICENSE=	xanim
+LICENSE_NAME=	xanim
+LICENSE_TEXT=	Must be redistributed without fee
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 # clang's cpp destroys whitespace, particularly hard tabs in makefiles,
 # which is fatal for imake.
 USES=		alias imake xorg
-USE_GCC=	any
+USE_GCC=	yes
 USE_XORG=	xext xt sm ice xext x11
 MAKE_ARGS+=	-j 2 # safe and helps even the single-CPU machines
 DLLDIR=		${PREFIX}/lib/X11/xanim

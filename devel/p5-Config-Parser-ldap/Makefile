@@ -1,7 +1,7 @@
 # Created by: Zeus Panchenko <zeus@gnu.org.ua>
 
 PORTNAME=	Config-Parser-ldap
-PORTVERSION=	1.00
+PORTVERSION=	1.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,6 +10,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Configuration file parser for ldap.conf
 
 LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-Config-AST>=1.05:devel/p5-Config-AST \
 		p5-Config-Parser>=1.03:devel/p5-Config-Parser

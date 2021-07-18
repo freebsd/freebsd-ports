@@ -6,12 +6,6 @@ man/man1/engrampa.1.gz
 share/applications/engrampa.desktop
 share/caja/extensions/libcaja-engrampa.caja-extension
 share/dbus-1/services/org.mate.Engrampa.service
-share/icons/hicolor/16x16/actions/add-files-to-archive.png
-share/icons/hicolor/16x16/actions/add-folder-to-archive.png
-share/icons/hicolor/16x16/actions/extract-archive.png
-share/icons/hicolor/24x24/actions/add-files-to-archive.png
-share/icons/hicolor/24x24/actions/add-folder-to-archive.png
-share/icons/hicolor/24x24/actions/extract-archive.png
 %%DATADIR%%/packages.match
 share/help/C/engrampa/figures/engrampa_home.png
 share/help/C/engrampa/figures/engrampa_leftarrow.png
@@ -685,8 +679,14 @@ share/help/zu/engrampa/figures/engrampa_rightarrow.png
 share/help/zu/engrampa/figures/engrampa_uparrow.png
 share/help/zu/engrampa/index.docbook
 share/help/zu/engrampa/legal.xml
+share/icons/hicolor/16x16/actions/add-files-to-archive.png
+share/icons/hicolor/16x16/actions/add-folder-to-archive.png
+share/icons/hicolor/16x16/actions/extract-archive.png
 share/icons/hicolor/16x16/apps/engrampa.png
 share/icons/hicolor/22x22/apps/engrampa.png
+share/icons/hicolor/24x24/actions/add-files-to-archive.png
+share/icons/hicolor/24x24/actions/add-folder-to-archive.png
+share/icons/hicolor/24x24/actions/extract-archive.png
 share/icons/hicolor/24x24/apps/engrampa.png
 share/icons/hicolor/32x32/apps/engrampa.png
 share/icons/hicolor/scalable/apps/engrampa.svg

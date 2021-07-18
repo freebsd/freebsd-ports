@@ -21,7 +21,7 @@ rcvar=encrypted_dns_enable
 load_rc_config $name
 
 : ${encrypted_dns_enable:=NO}
-: ${encrypted_dns_config="%%PREFIX%%/etc/encrypted-dns/encrypted-dns.toml"}
+: ${encrypted_dns_config="%%ETCDIR%%/encrypted-dns.toml"}
 
 pidfile=/var/run/encrypted-dns.pid
 command=/usr/sbin/daemon

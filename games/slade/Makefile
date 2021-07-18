@@ -1,7 +1,8 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	slade
-PORTVERSION=	3.1.12
+PORTVERSION=	3.1.13
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -47,7 +48,5 @@ post-patch:
 		${WRKSRC}/src/External/zreaders/portable_endian.h
 	@${REINPLACE_CMD} -e 's,wxVSCROLL,static_cast<long>(&),' \
 		${WRKSRC}/src/MapEditor/UI/Dialogs/ActionSpecialDialog.cpp
-	@${REINPLACE_CMD} -e 's,(new_print,&.ToStdString(),' \
-		${WRKSRC}/src/Scripting/Lua.cpp
 
 .include <bsd.port.mk>

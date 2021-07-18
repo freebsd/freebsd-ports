@@ -1,44 +1,44 @@
 PORTNAME=	edk2
-PORTVERSION=	g202005
+PORTVERSION=	g202102
 CATEGORIES=	sysutils
 
-MAINTAINER=	manu@FreeBSD.org
+MAINTAINER=	uboot@FreeBSD.org
 COMMENT=	EDK2 Firmware for ${FLAVOR}
 
 LICENSE=	BSD3CLAUSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 riscv64
-ONLY_FOR_ARCHS_REASON=	source code is not yet ported to anything other than IA32, X64, ARM, AARCH64, RISCV64 or EBC
+ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	This port only provides firmware for aarch64 and amd64 machine
 
 PKGNAMESUFFIX=	-${FLAVOR:C/_/-/g}
-FLAVORS=	macchiatobin rpi3 rpi4
+FLAVORS=	macchiatobin rpi3 rpi4 xen_x64
 FLAVOR?=	macchiatobin
 
 USES=	gmake python:3.7+,build
+USE_GCC=	yes:build
 
-BUILD_DEPENDS+=	aarch64-none-elf-gcc:devel/aarch64-none-elf-gcc \
-		gcc8:lang/gcc8 \
-		dtc>=1.4.1:sysutils/dtc \
+BUILD_DEPENDS+=	dtc>=1.4.1:sysutils/dtc \
 		bash:shells/bash
 
 # Both platform and non-osi repository don't have release, use latest known to work tag
-PLATFORM_TAG=	b716f363
-NONOSI_TAG=	f8023973
+PLATFORM_TAG=	89f6170d
+NONOSI_TAG=	f9b9957d
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tianocore
-GH_TAGNAME=	edk2-stable202005
+GH_TAGNAME=	edk2-stable202102
 GH_TUPLE=	tianocore:edk2-platforms:${PLATFORM_TAG}:platforms \
 		tianocore:edk2-non-osi:${NONOSI_TAG}:nonosi \
-		openssl:openssl:OpenSSL_1_1_1d-2-gc3656cc594:openssl/CryptoPkg/Library/OpensslLib/openssl \
+		openssl:openssl:OpenSSL_1_1_1g:openssl/CryptoPkg/Library/OpensslLib/openssl \
 		ucb-bar:berkeley-softfloat-3:master:softfloat/ArmPkg/Library/ArmSoftFloatLib/berkeley-softfloat-3 \
 		kkos:oniguruma:v6.9.4_mark1:oniguruma/MdeModulePkg/Universal/RegularExpressionDxe/oniguruma \
-		google:brotli:v1.0.7-17-g666c328:brotli/MdeModulePkg/Library/BrotliCustomDecompressLib/brotli
+		google:brotli:v1.0.7-17-g666c328:brotli/MdeModulePkg/Library/BrotliCustomDecompressLib/brotli \
 
 BINARY_ALIAS=	make=${LOCALBASE}/bin/gmake \
 		dtc=${LOCALBASE}/bin/dtc \
-		gcc=${LOCALBASE}/bin/gcc8 \
-		g++=${LOCALBASE}/bin/g++8 \
+		gcc=${LOCALBASE}/bin/gcc${GCC_DEFAULT} \
+		gcc-ar=${LOCALBASE}/bin/gcc-ar${GCC_DEFAULT} \
+		g++=${LOCALBASE}/bin/g++${GCC_DEFAULT} \
 		python3=${PYTHON_CMD} python=${PYTHON_CMD}
 
 .if ${FLAVOR} == macchiatobin
@@ -71,6 +71,15 @@ PLAT_RESULT=	RPi4/${PLAT_TARGET}_GCC5/FV/RPI_EFI.fd
 PLAT_FILENAME=	RPI_EFI.fd
 .endif
 
+.if ${FLAVOR} == xen_x64
+PLAT=		xen
+PLAT_ARCH=	X64
+PLAT_TARGET=	RELEASE
+PLATFILE=	OvmfPkg/OvmfXen.dsc
+PLAT_RESULT=	OvmfXen/${PLAT_TARGET}_GCC5/FV/OVMF.fd
+PLAT_FILENAME=	XEN_X64_EFI.fd
+.endif
+
 PLIST_FILES=	${PREFIX}/share/${PORTNAME}-${PLAT}/${PLAT_FILENAME}
 
 # Emulate source edk2/edksetup.sh
@@ -83,7 +92,12 @@ MAKE_ENV+=	WORKSPACE=${WRKDIR} \
 		PYTHONHASHSEED=1
 
 .if ${PLAT_ARCH} == AARCH64
+BUILD_DEPENDS+=	aarch64-none-elf-gcc:devel/aarch64-none-elf-gcc
 MAKE_ENV+=	GCC5_AARCH64_PREFIX=aarch64-none-elf-
+.endif
+
+.if ${PLAT_ARCH} == X64
+BUILD_DEPENDS+=	nasm:devel/nasm
 .endif
 
 # We can't have two submodule with the same origin in GH_TUPLE
@@ -102,6 +116,6 @@ do-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/
-	${INSTALL_DATA} ${WRKDIR}/Build/${PLAT_RESULT} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/
+	${INSTALL_DATA} ${WRKDIR}/Build/${PLAT_RESULT} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/${PLAT_FILENAME}
 
 .include <bsd.port.mk>

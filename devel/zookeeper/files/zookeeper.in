@@ -19,8 +19,9 @@ load_rc_config "${name}"
 : ${zookeeper_user:="%%ZOOKEEPER_USER%%"}
 : ${zookeeper_group:="%%ZOOKEEPER_GROUP%%"}
 : ${zookeeper_config:="%%ETCDIR%%/zoo.cfg"}
-: ${zookeeper_log4j_config:="%%ETCDIR%%/log4j.properties"}
-: ${zookeeper_rootlogger:="INFO,ROLLINGFILE"}
+%%NO_LOG4J2%%: ${zookeeper_log4j_config:="%%ETCDIR%%/log4j.properties"}
+%%NO_LOG4J2%%: ${zookeeper_rootlogger:="INFO,ROLLINGFILE"}
+%%LOG4J2%%: ${zookeeper_log4j_config:="%%ETCDIR%%/log4j2.properties"}
 : ${zookeeper_logdir:="%%ZOOKEEPER_LOGDIR%%"}
 : ${zookeeper_syslog_output_enable:="YES"}
 
@@ -52,7 +53,8 @@ JAVA="%%JAVA%%"
 
 CLASSPATH=":%%DATADIR%%/*"
 
-log4j_params="-Dzookeeper.root.logger=${zookeeper_rootlogger} -Dzookeeper.log.dir=${zookeeper_logdir} -Dlog4j.configuration=file:${zookeeper_log4j_config}"
+%%NO_LOG4J2%%log4j_params="-Dzookeeper.root.logger=${zookeeper_rootlogger} -Dzookeeper.log.dir=${zookeeper_logdir} -Dlog4j.configuration=file:${zookeeper_log4j_config}"
+%%LOG4J2%%log4j_params="-Dzookeeper.log.dir=${zookeeper_logdir} -Dlog4j2.configurationFile=file:${zookeeper_log4j_config}"
 zookeeper_main="${zookeeper_java_opts} ${log4j_params} -cp ${CLASSPATH} org.apache.zookeeper.server.quorum.QuorumPeerMain ${zookeeper_config}"
 pidfile="/var/run/${name}.pid"
 required_dirs="${zookeeper_logdir}"

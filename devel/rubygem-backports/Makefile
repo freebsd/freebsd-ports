@@ -1,7 +1,7 @@
 # Created by: Bryan Drewery <bryan@shatow.net>
 
 PORTNAME=	backports
-PORTVERSION=	3.18.1
+PORTVERSION=	3.21.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

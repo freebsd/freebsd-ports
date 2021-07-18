@@ -13,7 +13,6 @@ share/icons/hicolor/64x64/apps/simsu.png
 share/icons/hicolor/scalable/apps/simsu.svg
 share/man/man6/simsu.6.gz
 share/metainfo/simsu.appdata.xml
-share/pixmaps/simsu.xpm
 %%NLS%%%%DATADIR%%/translations/simsu_bg.qm
 %%NLS%%%%DATADIR%%/translations/simsu_ca.qm
 %%NLS%%%%DATADIR%%/translations/simsu_cs.qm
@@ -33,6 +32,7 @@ share/pixmaps/simsu.xpm
 %%NLS%%%%DATADIR%%/translations/simsu_pt.qm
 %%NLS%%%%DATADIR%%/translations/simsu_ro.qm
 %%NLS%%%%DATADIR%%/translations/simsu_ru.qm
+%%NLS%%%%DATADIR%%/translations/simsu_te.qm
 %%NLS%%%%DATADIR%%/translations/simsu_tr.qm
 %%NLS%%%%DATADIR%%/translations/simsu_uk.qm
 %%NLS%%%%DATADIR%%/translations/simsu_zh.qm

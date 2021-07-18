@@ -10,6 +10,7 @@ LICENSE=	CC-BY-3.0
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
 BROKEN_i386=	error: __int128 is not supported on this target
+BROKEN_powerpc=	error: __int128 is not supported on this target
 
 LIB_DEPENDS=	libntl.so:math/ntl
 

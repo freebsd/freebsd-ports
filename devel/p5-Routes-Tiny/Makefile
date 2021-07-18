@@ -11,10 +11,10 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight routes implementation
 
 LICENSE=	ART20
-LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		perl5
+USE_PERL5=	modbuildtiny
 
 NO_ARCH=	yes
-USE_PERL5=	modbuildtiny
-USES=		perl5
 
 .include <bsd.port.mk>

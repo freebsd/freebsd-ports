@@ -1,3 +1,3 @@
-TIMESTAMP = 1597337134
-SHA256 (pyzabbix-0.8.2.tar.gz) = 4601fa93bc07c2e77dd5c09165b02da1690af9ecc4b63d6397abd5ec249dcc38
-SIZE (pyzabbix-0.8.2.tar.gz) = 5472
+TIMESTAMP = 1624565034
+SHA256 (pyzabbix-1.0.0.tar.gz) = 4bcde3944f932685dba60551725e1b63de64d463da0e1c281b3121c0805f1c71
+SIZE (pyzabbix-1.0.0.tar.gz) = 5840

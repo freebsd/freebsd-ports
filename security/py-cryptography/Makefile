@@ -54,6 +54,12 @@ EXTRA_PATCHES=	${PATCHDIR}/openssl102u
 . endif
 .endif
 
+# Apply LibreSSL upstream patch that conflicts with above patch for 2.9.2
+# XXX convert back to unconditional when FreeBSD 11 goes EOL
+.if ${SSL_DEFAULT:Mlibressl*}
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Fix-build-with-LibreSSL-3.3.2-5988
+.endif
+
 .if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
 post-patch:
 	@${REINPLACE_CMD} -e 's|"-Wno-error=sign-conversion"||' \

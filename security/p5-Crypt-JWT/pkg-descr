@@ -1,0 +1,15 @@
+JSON Web Token (JWT, JWS, JWE) as defined by RFC7519, RFC7515, RFC7516
+implements the Perl interface to:
+
+ * JSON Web Token (JWT)
+ * JSON Web Signature (JWS)
+ * JSON Web Encryption (JWE)
+
+As defined by RFC7519, RFC7515, RFC7516.
+
+The module implements all (100%) algorithms defined in RFC7518 - JSON
+Web Algorithms (JWA). This module supports Compact JWS/JWE and
+flattened JWS/JWE JSON serialization, general JSON serialization
+is not supported yet.
+
+WWW: https://metacpan.org/release/Crypt-JWT

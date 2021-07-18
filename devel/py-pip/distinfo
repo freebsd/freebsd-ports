@@ -1,7 +1,7 @@
-TIMESTAMP = 1599653916
+TIMESTAMP = 1618321124
 SHA256 (pip/setuptools-44.0.0-py2.py3-none-any.whl) = 180081a244d0888b0065e18206950d603f6550721bd6f8c0a10221ed467dd78e
 SIZE (pip/setuptools-44.0.0-py2.py3-none-any.whl) = 583230
 SHA256 (pip/wheel-0.35.1-py2.py3-none-any.whl) = 497add53525d16c173c2c1c733b8f655510e909ea78cc0e29d374243544b77a2
 SIZE (pip/wheel-0.35.1-py2.py3-none-any.whl) = 33174
-SHA256 (pip/pypa-pip-20.2.3_GH0.tar.gz) = 57125defc81049b227fd81679664221d2d9b2bc5d3b855660a93bf87ecdc3509
-SIZE (pip/pypa-pip-20.2.3_GH0.tar.gz) = 8719284
+SHA256 (pip/pypa-pip-20.3.4_GH0.tar.gz) = cc21e03832d7ce96a0cf77ec1669661de35abb4366a9059fa54f1647e514ce3f
+SIZE (pip/pypa-pip-20.3.4_GH0.tar.gz) = 8758232

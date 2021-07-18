@@ -2,7 +2,7 @@
 
 PORTNAME=	sms1xxx
 PORTVERSION=	20120113
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-siano/
 PKGNAMESUFFIX=	-kmod
@@ -14,7 +14,11 @@ COMMENT=	Native FreeBSD driver for Siano-based USB DVB devices
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Supports DVB API v3 only. Use multimedia/webcamd instead
+EXPIRATION_DATE=2021-09-30
+
 ONLY_FOR_ARCHS=	amd64 i386
+USES=		kmod tar:tgz
 
 WRKSRC=	${WRKDIR}/siano-${PORTVERSION}
 
@@ -39,8 +43,6 @@ PORTDOCS=	CHANGELOG README COPYING
 STELLAR_FW=	stellar_dvbt
 NOVA_FW=	novab0_dvbbda
 BUILD_FWS=
-
-USES=		kmod tar:tgz
 
 .include <bsd.port.options.mk>
 

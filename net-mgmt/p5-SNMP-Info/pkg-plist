@@ -21,6 +21,7 @@
 %%SITE_PERL%%/SNMP/Info/Entity.pm
 %%SITE_PERL%%/SNMP/Info/EtherLike.pm
 %%SITE_PERL%%/SNMP/Info/FDP.pm
+%%SITE_PERL%%/SNMP/Info/IEEE802_Bridge.pm
 %%SITE_PERL%%/SNMP/Info/IEEE802dot11.pm
 %%SITE_PERL%%/SNMP/Info/IEEE802dot3ad.pm
 %%SITE_PERL%%/SNMP/Info/IPv6.pm
@@ -68,6 +69,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/Altiga.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Arista.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Aruba.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/ArubaCX.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/BayRS.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/BlueCoatSG.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/C3550.pm
@@ -157,6 +159,7 @@
 %%PERL5_MAN3%%/SNMP::Info::Entity.3.gz
 %%PERL5_MAN3%%/SNMP::Info::EtherLike.3.gz
 %%PERL5_MAN3%%/SNMP::Info::FDP.3.gz
+%%PERL5_MAN3%%/SNMP::Info::IEEE802_Bridge.3.gz
 %%PERL5_MAN3%%/SNMP::Info::IEEE802dot11.3.gz
 %%PERL5_MAN3%%/SNMP::Info::IEEE802dot3ad.3.gz
 %%PERL5_MAN3%%/SNMP::Info::IPv6.3.gz
@@ -204,6 +207,7 @@
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Altiga.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Arista.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Aruba.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Layer3::ArubaCX.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::BayRS.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::BlueCoatSG.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::C3550.3.gz

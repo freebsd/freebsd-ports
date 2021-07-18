@@ -1,6 +1,7 @@
 PORTNAME=	wx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.4
+DISTVERSION=	3.1.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	31-gtk3
 
@@ -10,7 +11,8 @@ COMMENT=	GUI toolkit (wxWidgets) with GTK+ bindings
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/gpl.txt
 
-LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libjbig.so:graphics/jbigkit \
@@ -18,7 +20,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpng.so:graphics/png \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup \
-		libtiff.so:graphics/tiff
+		libtiff.so:graphics/tiff \
+		libwayland-egl.so:graphics/wayland
 
 USES=		compiler:c++11-lib gl gmake gnome iconv jpeg localbase \
 		pkgconfig xorg

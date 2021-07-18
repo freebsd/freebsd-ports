@@ -1,10 +1,9 @@
 PORTNAME=	libsidplayfp
-PORTVERSION=	2.1.1
+DISTVERSION=	2.2.0
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
-		SF/sidplay-residfp/libsidplayfp/${PORTVERSION:R}
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	liangtai.s16@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to play Commodore 64 music derived from libsidplay2
 
 LICENSE=	GPLv2+
@@ -39,7 +38,7 @@ DEBUG_CONFIGURE_ON=	--enable-debug=full
 DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_prog_HAVE_DOXYGEN=false
 
-SIDPLAYFP_SHLIB_VERSION=	6.2.17
+SIDPLAYFP_SHLIB_VERSION=	6.3.19
 STILVIEW_SHLIB_VERSION=		0.0.4
 
 post-build-DOXYGEN-on:

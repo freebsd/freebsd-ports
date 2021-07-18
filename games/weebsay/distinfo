@@ -1,0 +1,17 @@
+TIMESTAMP = 1620669197
+SHA256 (irevenko-weebsay-0.0.20210508-8107cc5_GH0.tar.gz) = 53d6f0e9b0d5b6799a1bd9ca792135ce5b575857cc91b150c803e4b9967894d5
+SIZE (irevenko-weebsay-0.0.20210508-8107cc5_GH0.tar.gz) = 77100
+SHA256 (fatih-color-v1.10.0_GH0.tar.gz) = a00342a7ffb8b119346dce56e152a111cbb9eab3970c429cc2ed4272aec2858e
+SIZE (fatih-color-v1.10.0_GH0.tar.gz) = 1267532
+SHA256 (golang-sys-d5e6a3e2c0ae_GH0.tar.gz) = 6cd44aa33cb0fc4caedadde44b3a943bece0aa67d803c00bfb09b03222845f19
+SIZE (golang-sys-d5e6a3e2c0ae_GH0.tar.gz) = 1539001
+SHA256 (inconshreveable-mousetrap-v1.0.0_GH0.tar.gz) = 5edc7731c819c305623568e317aa253d342be3447def97f1fa9e10eb5ad819f6
+SIZE (inconshreveable-mousetrap-v1.0.0_GH0.tar.gz) = 2290
+SHA256 (mattn-go-colorable-v0.1.8_GH0.tar.gz) = 1027954f9abbe06b6e117e3047af70204dd0eb4f8c27fcd459fb2574b279755f
+SIZE (mattn-go-colorable-v0.1.8_GH0.tar.gz) = 9571
+SHA256 (mattn-go-isatty-v0.0.12_GH0.tar.gz) = addbdc341d7685ed4cc8d2d8a8fd2bd9b784bde00d0ea99fb251039fc10c611c
+SIZE (mattn-go-isatty-v0.0.12_GH0.tar.gz) = 4548
+SHA256 (spf13-cobra-v1.1.3_GH0.tar.gz) = e5f93c61e1236e61c7fc45882d2a03b81f46ebebdf70628ebb64b0b5fe34f6fa
+SIZE (spf13-cobra-v1.1.3_GH0.tar.gz) = 146580
+SHA256 (spf13-pflag-v1.0.5_GH0.tar.gz) = 9a2cae1f8e8ab0d2cc8ebe468e871af28d9ac0962cf0520999e3ba85f0c7b808
+SIZE (spf13-pflag-v1.0.5_GH0.tar.gz) = 50796

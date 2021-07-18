@@ -10,11 +10,13 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-php-71
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Modular web application framework for office
 
-LICENSE=	AGPLv3
+LICENSE=	AGPLv3 PERSONAL
+LICENSE_COMB=	multi
+LICENSE_NAME_PERSONAL=	Personal use
+LICENSE_TEXT_PERSONAL=	Free for personal use only
+LICENSE_PERMS_PERSONAL=	auto-accept
 
 USES=		mysql shebangfix php:web python
-
-RESTRICTED=	Free for personal use only
 
 NO_ARCH=	yes
 NO_BUILD=	yes

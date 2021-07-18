@@ -1,0 +1,20 @@
+--- libexec/telnetd/Makefile.orig	2020-12-29 13:05:48.000000000 -0800
++++ libexec/telnetd/Makefile	2021-07-08 10:59:49.657276000 -0700
+@@ -5,7 +5,6 @@
+ 
+ .include <src.opts.mk>
+ 
+-TELNETDIR=	${SRCTOP}/contrib/telnet
+ .PATH:		${TELNETDIR}/telnetd
+ 
+ PROG=		telnetd
+@@ -18,7 +17,8 @@
+ WFORMAT?=	0
+ 
+ CFLAGS+=	-DLINEMODE -DUSE_TERMIO -DDIAGNOSTICS -DOLD_ENVIRON \
+-		-DENV_HACK -DSTREAMSPTY
++		-DENV_HACK -DSTREAMSPTY \
++		-L${TELNETDIR}/../../lib/libtelnet
+ 
+ .if ${MK_INET6_SUPPORT} != "no"
+ CFLAGS+=	-DINET6

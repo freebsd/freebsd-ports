@@ -1,0 +1,44 @@
+--- src/glog/stl_logging.h.in.orig	2021-05-07 23:05:04 UTC
++++ src/glog/stl_logging.h.in
+@@ -39,7 +39,6 @@
+ // need to define macros before including this file:
+ //
+ // - GLOG_STL_LOGGING_FOR_UNORDERED     - <unordered_map> and <unordered_set>
+-// - GLOG_STL_LOGGING_FOR_TR1_UNORDERED - <tr1/unordered_(map|set)>
+ // - GLOG_STL_LOGGING_FOR_EXT_HASH      - <ext/hash_(map|set)>
+ // - GLOG_STL_LOGGING_FOR_EXT_SLIST     - <ext/slist>
+ //
+@@ -64,11 +63,6 @@
+ # include <unordered_set>
+ #endif
+ 
+-#ifdef GLOG_STL_LOGGING_FOR_TR1_UNORDERED
+-# include <tr1/unordered_map>
+-# include <tr1/unordered_set>
+-#endif
+-
+ #ifdef GLOG_STL_LOGGING_FOR_EXT_HASH
+ # include <ext/hash_set>
+ # include <ext/hash_map>
+@@ -134,10 +128,6 @@ OUTPUT_FOUR_ARG_CONTAINER(std::multimap)
+ OUTPUT_FOUR_ARG_CONTAINER(std::unordered_set)
+ OUTPUT_FOUR_ARG_CONTAINER(std::unordered_multiset)
+ #endif
+-#ifdef GLOG_STL_LOGGING_FOR_TR1_UNORDERED
+-OUTPUT_FOUR_ARG_CONTAINER(std::tr1::unordered_set)
+-OUTPUT_FOUR_ARG_CONTAINER(std::tr1::unordered_multiset)
+-#endif
+ #ifdef GLOG_STL_LOGGING_FOR_EXT_HASH
+ OUTPUT_FOUR_ARG_CONTAINER(__gnu_cxx::hash_set)
+ OUTPUT_FOUR_ARG_CONTAINER(__gnu_cxx::hash_multiset)
+@@ -156,10 +146,6 @@ inline std::ostream& operator<<(std::ostream& out, \
+ #ifdef GLOG_STL_LOGGING_FOR_UNORDERED
+ OUTPUT_FIVE_ARG_CONTAINER(std::unordered_map)
+ OUTPUT_FIVE_ARG_CONTAINER(std::unordered_multimap)
+-#endif
+-#ifdef GLOG_STL_LOGGING_FOR_TR1_UNORDERED
+-OUTPUT_FIVE_ARG_CONTAINER(std::tr1::unordered_map)
+-OUTPUT_FIVE_ARG_CONTAINER(std::tr1::unordered_multimap)
+ #endif
+ #ifdef GLOG_STL_LOGGING_FOR_EXT_HASH
+ OUTPUT_FIVE_ARG_CONTAINER(__gnu_cxx::hash_map)

@@ -2,12 +2,12 @@
 
 PORTNAME=	nmap
 DISTVERSION=	7.91
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://nmap.org/dist/ \
 		LOCAL/ohauer
 
-MAINTAINER?=	ohauer@FreeBSD.org
+MAINTAINER?=	cy@FreeBSD.org
 COMMENT?=	Port scanning utility for large networks
 
 # nmap-6.47 => svn.nmap.org/nmap-releases/nmap-6.47 (r33605)

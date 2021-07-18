@@ -3,7 +3,7 @@
 PORTNAME=	midori
 PORTVERSION=	9.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www xfce
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -19,14 +19,14 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libp11-kit.so:security/p11-kit \
 		libgcr-base-3.so:security/gcr \
 		libpeas-1.0.so:devel/libpeas \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext gnome \
-		libarchive localbase:ldflags pkgconfig sqlite tar:bzip2 xorg
+		libarchive localbase:ldflags pkgconfig sqlite tar:bzip2
 USE_GNOME=	cairo glib20 gtk30 intltool introspection librsvg2:build \
 		libxml2
-USE_XORG=	xscrnsaver
 
 CFLAGS+=	-Wno-return-type
 CMAKE_ARGS=	-DUSE_APIDOCS:BOOL=OFF

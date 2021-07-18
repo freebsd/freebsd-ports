@@ -2,7 +2,7 @@
 
 PORTNAME=	q3cellshading
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	q3cel-${PORTVERSION}-src
@@ -12,6 +12,8 @@ COMMENT=	Quake III engine with Cell Shading capabilities
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	does not run properly; try games/ioquake3 with option
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: re
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: re
 
 USES=		compiler dos2unix gmake zip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

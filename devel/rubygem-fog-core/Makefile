@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	fog-core
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

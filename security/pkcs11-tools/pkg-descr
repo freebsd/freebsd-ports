@@ -1,0 +1,8 @@
+pkcs11-tools is a toolkit containing a bunch of small utilities to perform key
+management tasks on cryptographic tokens implementing a PKCS#11 interface. It
+features a number of commands similar to the unix CLI utilities, such as ls, mv,
+rm, od, and more. It also has specific commands to generate keys, generate CSRs,
+import certificates and other files, in a fashion compatible with most
+implementations, including both IBM and Oracle JVMs.
+
+WWW: https://github.com/Mastercard/pkcs11-tools

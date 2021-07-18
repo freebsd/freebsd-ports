@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Test2-Suite
-PORTVERSION=	0.000139
+PORTVERSION=	0.000140
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST

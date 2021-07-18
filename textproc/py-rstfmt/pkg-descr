@@ -1,0 +1,12 @@
+rstfmt is a tool for automatically formatting reStructuredText files in a
+consistent way.
+
+Like Black and gofmt, the motivation is to provide a format that is reasonable
+and minimally configurable to prevent teams from wasting time on style
+discussions (or individuals on manually doing formatting, for that matter).
+
+Currently, rstfmt is in a very early stage of development. Not all reST
+constructs are covered and the interface or formatting may change at any time
+without warning.
+
+WWW: https://github.com/dzhu/rstfmt

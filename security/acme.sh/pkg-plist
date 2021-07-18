@@ -21,6 +21,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/opensshd.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/openstack.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/panos.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/peplink.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/pureftpd.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/qiniu.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/routeros.sh
@@ -40,6 +41,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ali.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_anx.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_arvan.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_aurora.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_autodns.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_aws.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_azure.sh
@@ -84,6 +86,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_hostingde.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_infoblox.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_infomaniak.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ionos.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_internetbs.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_inwx.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ispconfig.sh
@@ -126,15 +129,19 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_openstack.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_opnsense.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ovh.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_porkbun.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_pdns.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_pleskxml.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_pointhq.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_rackcorp.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_rackspace.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_rcode0.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_regru.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_scaleway.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_schlundtech.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_selectel.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_servercow.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_simply.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_tele3.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ultra.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_world4you.sh
@@ -143,6 +150,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_variomedia.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_vscale.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_vultr.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_websupport.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_yandex.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_zilore.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_zone.sh
@@ -159,6 +167,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/slack.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/smtp.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/teams.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/telegram.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/xmpp.sh
 @sample(acme,acme,0640) /var/db/acme/.acme.sh/account.conf.sample
 %%PORTEXAMPLES%%/var/db/acme/.acme.sh/deploy

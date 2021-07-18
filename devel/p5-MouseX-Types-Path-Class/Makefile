@@ -19,10 +19,11 @@ RUN_DEPENDS=	p5-Mouse>=0.39:devel/p5-Mouse \
 		p5-MouseX-Types>=0.02:devel/p5-MouseX-Types \
 		p5-Path-Class>0:devel/p5-Path-Class \
 		p5-MouseX-Getopt>=0.22:devel/p5-MouseX-Getopt
-
 TEST_DEPENDS=	p5-Test-UseAllModules>0:devel/p5-Test-UseAllModules
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

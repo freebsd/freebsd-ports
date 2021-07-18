@@ -1,4 +1,4 @@
---- netstat.cpp.orig	2019-01-30 19:24:29 UTC
+--- netstat.cpp.orig	2021-04-18 21:04:00 UTC
 +++ netstat.cpp
 @@ -26,8 +26,23 @@
  
@@ -24,16 +24,15 @@
  namespace SysStat {
  
  NetStatPrivate::NetStatPrivate(NetStat *parent)
-@@ -37,7 +52,7 @@ NetStatPrivate::NetStatPrivate(NetStat *parent)
+@@ -37,6 +52,7 @@ NetStatPrivate::NetStatPrivate(NetStat *parent)
  
      connect(mTimer, SIGNAL(timeout()), SLOT(timeout()));
  
--
 +#ifndef HAVE_SYSCTL_H
-     QStringList rows(readAllFile("/proc/net/dev").split(QLatin1Char('\n'), QString::SkipEmptyParts));
  
-     rows.erase(rows.begin(), rows.begin() + 2);
-@@ -50,6 +65,29 @@ NetStatPrivate::NetStatPrivate(NetStat *parent)
+ #if (QT_VERSION >= QT_VERSION_CHECK(5,15,0))
+     QStringList rows(readAllFile("/proc/net/dev").split(QLatin1Char('\n'), Qt::SkipEmptyParts));
+@@ -58,12 +74,78 @@ NetStatPrivate::NetStatPrivate(NetStat *parent)
  
          mSources.append(tokens[0].trimmed());
      }
@@ -62,8 +61,7 @@
 +#endif
  }
  
- NetStatPrivate::~NetStatPrivate()
-@@ -58,6 +96,50 @@ NetStatPrivate::~NetStatPrivate()
+ NetStatPrivate::~NetStatPrivate() = default;
  
  void NetStatPrivate::timeout()
  {
@@ -110,11 +108,10 @@
 +
 +        }
 +    }
-+#else
-     QStringList rows(readAllFile("/proc/net/dev").split(QLatin1Char('\n'), QString::SkipEmptyParts));
- 
- 
-@@ -99,6 +181,7 @@ void NetStatPrivate::timeout()
+ #if (QT_VERSION >= QT_VERSION_CHECK(5,15,0))
+     QStringList rows(readAllFile("/proc/net/dev").split(QLatin1Char('\n'), Qt::SkipEmptyParts));
+ #else
+@@ -122,6 +204,7 @@ void NetStatPrivate::timeout()
  
          mPrevious[interfaceName] = current;
      }

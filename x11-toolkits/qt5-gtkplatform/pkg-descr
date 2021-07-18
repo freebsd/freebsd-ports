@@ -1,8 +1,0 @@
-gtkplatform is a Qt Platform Abstraction plugin providing Qt applications with
-the capability to use GTK+ as a host toolkit.
-
-It lets Qt applications render with native GTK+ menus, and use GTK+ for input
-(mouse, keyboard, touch), and getting window content on screen, the same as it
-uses e.g. Cocoa on macOS.
-
-WWW: https://github.com/CrimsonAS/gtkplatform

@@ -758,6 +758,7 @@
 %%WWWDIR%%/core/lib/Drupal/Component/Transliteration/data/de.php
 %%WWWDIR%%/core/lib/Drupal/Component/Transliteration/data/eo.php
 %%WWWDIR%%/core/lib/Drupal/Component/Transliteration/data/kg.php
+%%WWWDIR%%/core/lib/Drupal/Component/Transliteration/data/uk.php
 %%WWWDIR%%/core/lib/Drupal/Component/Transliteration/data/x00.php
 %%WWWDIR%%/core/lib/Drupal/Component/Transliteration/data/x01.php
 %%WWWDIR%%/core/lib/Drupal/Component/Transliteration/data/x02.php
@@ -2627,6 +2628,7 @@
 %%WWWDIR%%/core/misc/dialog/dialog.position.es6.js
 %%WWWDIR%%/core/misc/dialog/dialog.position.js
 %%WWWDIR%%/core/misc/dialog/off-canvas.base.css
+%%WWWDIR%%/core/misc/dialog/off-canvas.base.pcss.css
 %%WWWDIR%%/core/misc/dialog/off-canvas.button.css
 %%WWWDIR%%/core/misc/dialog/off-canvas.css
 %%WWWDIR%%/core/misc/dialog/off-canvas.details.css
@@ -2637,6 +2639,7 @@
 %%WWWDIR%%/core/misc/dialog/off-canvas.layout.css
 %%WWWDIR%%/core/misc/dialog/off-canvas.motion.css
 %%WWWDIR%%/core/misc/dialog/off-canvas.reset.css
+%%WWWDIR%%/core/misc/dialog/off-canvas.reset.pcss.css
 %%WWWDIR%%/core/misc/dialog/off-canvas.table.css
 %%WWWDIR%%/core/misc/dialog/off-canvas.tabledrag.css
 %%WWWDIR%%/core/misc/dialog/off-canvas.theme.css
@@ -4641,6 +4644,7 @@
 %%WWWDIR%%/core/modules/editor/tests/modules/src/EditorXssFilter/Insecure.php
 %%WWWDIR%%/core/modules/editor/tests/modules/src/Plugin/Editor/TRexEditor.php
 %%WWWDIR%%/core/modules/editor/tests/modules/src/Plugin/Editor/UnicornEditor.php
+%%WWWDIR%%/core/modules/editor/tests/modules/src/Plugin/Field/FieldType/EditorTestTextLongItem.php
 %%WWWDIR%%/core/modules/editor/tests/src/Functional/EditorAdminTest.php
 %%WWWDIR%%/core/modules/editor/tests/src/Functional/EditorDialogAccessTest.php
 %%WWWDIR%%/core/modules/editor/tests/src/Functional/EditorLoadingTest.php
@@ -6628,6 +6632,7 @@
 %%WWWDIR%%/core/modules/locale/tests/src/Kernel/LocaleStringIsSafeTest.php
 %%WWWDIR%%/core/modules/locale/tests/src/Kernel/LocaleStringTest.php
 %%WWWDIR%%/core/modules/locale/tests/src/Kernel/LocaleTranslationProjectsTest.php
+%%WWWDIR%%/core/modules/locale/tests/src/Kernel/LocaleTranslationTest.php
 %%WWWDIR%%/core/modules/locale/tests/src/Kernel/LocaleUpdateTest.php
 %%WWWDIR%%/core/modules/locale/tests/src/Kernel/Migrate/MigrateLocaleConfigsTest.php
 %%WWWDIR%%/core/modules/locale/tests/src/Unit/LocaleLookupTest.php
@@ -11874,6 +11879,7 @@
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_menu_link.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_mini_pager.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_mini_pager_ajax.yml
+%%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_month_date_plugin.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_page_display.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_page_display_arguments.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_page_display_menu.yml
@@ -12021,6 +12027,7 @@
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/FilterTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/MenuLinkTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/MiniPagerTest.php
+%%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/MonthDatePluginTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/NumericFormatPluralTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/PagerTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/StyleOpmlTest.php
@@ -12049,6 +12056,7 @@
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Update/EntityViewsMultiValueBaseFieldDataUpdateTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Update/ExposedFilterBlocksUpdateTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Update/FieldHandlersUpdateTest.php
+%%WWWDIR%%/core/modules/views/tests/src/Functional/Update/GlossaryStatusFilterTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Update/ImageStyleDependencyUpdateTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Update/LimitOperatorsDefaultsTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Update/PlaceholderTextUpdateTest.php
@@ -13724,6 +13732,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/UrlRewritingTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/UrlTransformRelativeTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Form/ExternalFormUrlTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Form/FormActionXssTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Form/FormCacheTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Form/FormDefaultHandlersTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Form/FormValidationMessageOrderTest.php
@@ -15692,6 +15701,7 @@
 %%WWWDIR%%/core/themes/stable/css/contextual/contextual.theme.css
 %%WWWDIR%%/core/themes/stable/css/contextual/contextual.toolbar.css
 %%WWWDIR%%/core/themes/stable/css/core/dialog/off-canvas.base.css
+%%WWWDIR%%/core/themes/stable/css/core/dialog/off-canvas.base.pcss.css
 %%WWWDIR%%/core/themes/stable/css/core/dialog/off-canvas.button.css
 %%WWWDIR%%/core/themes/stable/css/core/dialog/off-canvas.css
 %%WWWDIR%%/core/themes/stable/css/core/dialog/off-canvas.details.css
@@ -15700,6 +15710,7 @@
 %%WWWDIR%%/core/themes/stable/css/core/dialog/off-canvas.layout.css
 %%WWWDIR%%/core/themes/stable/css/core/dialog/off-canvas.motion.css
 %%WWWDIR%%/core/themes/stable/css/core/dialog/off-canvas.reset.css
+%%WWWDIR%%/core/themes/stable/css/core/dialog/off-canvas.reset.pcss.css
 %%WWWDIR%%/core/themes/stable/css/core/dialog/off-canvas.table.css
 %%WWWDIR%%/core/themes/stable/css/core/dialog/off-canvas.tabledrag.css
 %%WWWDIR%%/core/themes/stable/css/core/dialog/off-canvas.theme.css
@@ -16153,6 +16164,7 @@
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/MauticInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/MayaInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/MediaWikiInstaller.php
+%%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/MiaoxingInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/MicroweberInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/ModxInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/MoodleInstaller.php
@@ -16188,12 +16200,14 @@
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/TYPO3CmsInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/TYPO3FlowInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/TaoInstaller.php
+%%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/TastyIgniterInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/TheliaInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/TuskInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/UserFrostingInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/VanillaInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/VgmcpInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/WHMCSInstaller.php
+%%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/WinterInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/WolfCMSInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/WordPressInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/YawikInstaller.php

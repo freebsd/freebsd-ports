@@ -1,10 +1,9 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 
 PORTNAME=	gnome-todo
-PORTVERSION=	3.28.1
-PORTREVISION=	4
+PORTVERSION=	40.0
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -14,24 +13,21 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	appstream-util:devel/appstream-glib
-LIB_DEPENDS=	libpeas-1.0.so:devel/libpeas \
-		libgoa-1.0.so:net/gnome-online-accounts \
+LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \
+		libgraphene-1.0.so:graphics/graphene \
+		libical.so:devel/libical \
+		libpeas-1.0.so:devel/libpeas \
 		libsecret-1.so:security/libsecret \
-		libsoup-2.4.so:devel/libsoup \
-		libical.so:devel/libical
+		libsoup-2.4.so:devel/libsoup
 
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
 		python:3.4+,build shebangfix tar:xz
-USE_GNOME=	cairo evolutiondataserver3 gnomedesktop3 gtk30 introspection
+USE_GNOME=	cairo evolutiondataserver3 gnomedesktop3 gtk40 introspection \
+		libadwaita
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
-SHEBANG_FILES=	meson_post_install.py
 
-GLIB_SCHEMAS=	org.gnome.todo.background.gschema.xml \
-		org.gnome.todo.enums.xml \
-		org.gnome.todo.gschema.xml \
-		org.gnome.todo.txt.gschema.xml
+GLIB_SCHEMAS=	org.gnome.todo.gschema.xml
 
 .include <bsd.port.mk>

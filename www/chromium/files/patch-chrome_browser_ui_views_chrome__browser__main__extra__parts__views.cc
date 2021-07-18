@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
 @@ -38,7 +38,7 @@
  
@@ -16,9 +16,9 @@
 -#endif  // defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#endif  // defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  
- // This connector is used in ui_devtools's TracingAgent to hook up with the
- // tracing service.
-@@ -120,7 +120,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
+ namespace {
+ 
+@@ -131,7 +131,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -27,7 +27,7 @@
    // On the Linux desktop, we want to prevent the user from logging in as root,
    // so that we don't destroy the profile. Now that we have some minimal ui
    // initialized, check to see if we're running as root and bail if we are.
-@@ -151,7 +151,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
+@@ -162,7 +162,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
    base::RunLoop().RunUntilIdle();
  
    exit(EXIT_FAILURE);

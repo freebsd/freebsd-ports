@@ -18,7 +18,7 @@
 @sample %%APP_HOME%%/standalone/configuration/logging.properties.sample
 @sample %%APP_HOME%%/standalone/configuration/mgmt-groups.properties.sample
 @sample %%APP_HOME%%/standalone/configuration/mgmt-users.properties.sample
-@sample %%APP_HOME%%/standalone/configuration/standalone-ee8.xml
+@sample %%APP_HOME%%/standalone/configuration/standalone-ee8.xml.sample
 @sample %%APP_HOME%%/standalone/configuration/standalone-full-ha.xml.sample
 @sample %%APP_HOME%%/standalone/configuration/standalone-full.xml.sample
 @sample %%APP_HOME%%/standalone/configuration/standalone-ha.xml.sample

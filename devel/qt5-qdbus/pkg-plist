@@ -1,2 +1,3 @@
+bin/qdbus-qt5
 %%QT_BINDIR%%/qdbus
 %%DEBUG%%%%QT_BINDIR%%/qdbus.debug

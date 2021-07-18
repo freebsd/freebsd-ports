@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	ExtUtils-CppGuess
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

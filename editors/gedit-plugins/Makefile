@@ -1,10 +1,9 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 
 PORTNAME=	gedit-plugins
-PORTVERSION=	3.38.1
-PORTREVISION=	2
+PORTVERSION=	40.1
 CATEGORIES=	editors gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org

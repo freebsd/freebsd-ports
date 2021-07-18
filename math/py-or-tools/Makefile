@@ -1,7 +1,6 @@
 PORTNAME=	or-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.1
-PORTREVISION=	1
+DISTVERSION=	8.2
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -31,9 +30,10 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		blaslapack cmake:insource compiler:c++17-lang pkgconfig python:3.6+
+USE_PYTHON=	flavors
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-USE_PYTHON=	flavors
 
 CMAKE_OFF=	BUILD_DEPS INSTALL_BUILD_DEPS BUILD_EXAMPLES
 CMAKE_ON=	BUILD_PYTHON
@@ -61,5 +61,13 @@ do-install: # by default cmake installs the whole or-tools project without the p
 		unzip ${BUILD_WRKSRC}/python/dist/ortools-${DISTVERSION}*.whl && \
 		${RM} -rf ortools-*.dist-info
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name "*.so" -o -name "*.so.*" | ${XARGS} ${STRIP_CMD}
+
+do-test: install
+.for e in arc_flow_cutting_stock_sat.py bus_driver_scheduling_sat.py cover_rectangle_sat.py cvrptw_plot.py qubo_sat.py # list is from examples/python/CMakeLists.txt
+	@cd ${WRKSRC}/examples/python && \
+		${ECHO} "==> Running ${PORTNAME} test ${e} ..." && \
+		${PYTHON_CMD} ${e} && \
+		${ECHO} "... test ${e} succeeded"
+.endfor
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+This port installs the module CHOLMOD of SuiteSparse.
+
+CHOLMOD is a set of routines for factorizing sparse symmetric positive definite
+matrices of the form A or AA', updating/downdating a sparse Cholesky
+factorization, solving linear systems, updating/downdating the solution to the
+triangular system Lx=b, and many other sparse matrix functions for both
+symmetric and unsymmetric matrices. Its supernodal Cholesky factorization relies
+on LAPACK and the Level-3 BLAS, and obtains a substantial fraction of the peak
+performance of the BLAS. Both real and complex matrices are supported.
+
+WWW: http://faculty.cse.tamu.edu/davis/suitesparse.html

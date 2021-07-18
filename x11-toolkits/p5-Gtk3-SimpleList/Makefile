@@ -7,15 +7,18 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TVIGNAUD
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple interface to Gtk3's complex MVC list widget
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-Gtk3>=0.026:x11-toolkits/p5-Gtk3
-RUN_DEPENDS=	p5-Gtk3>=0.026:x11-toolkits/p5-Gtk3
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Gtk3>=0:x11-toolkits/p5-Gtk3
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # Created by: clement@FreeBSD.org
 
 PORTNAME=	spine
-PORTVERSION=	1.2.16
+PORTVERSION=	1.2.17
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
 DISTNAME=	cacti-${PORTNAME}-${PORTVERSION}

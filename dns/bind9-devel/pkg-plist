@@ -130,6 +130,7 @@ include/isc/astack.h
 include/isc/atomic.h
 include/isc/attributes.h
 include/isc/backtrace.h
+include/isc/barrier.h
 include/isc/base32.h
 include/isc/base64.h
 include/isc/bind9.h
@@ -143,7 +144,6 @@ include/isc/deprecated.h
 include/isc/dir.h
 include/isc/endian.h
 include/isc/errno.h
-include/isc/errno2result.h
 include/isc/error.h
 include/isc/event.h
 include/isc/eventclass.h
@@ -168,11 +168,11 @@ include/isc/likely.h
 include/isc/list.h
 include/isc/log.h
 include/isc/magic.h
+include/isc/managers.h
 include/isc/md.h
 include/isc/mem.h
 include/isc/meminfo.h
 include/isc/mutex.h
-include/isc/mutexatomic.h
 include/isc/mutexblock.h
 include/isc/net.h
 include/isc/netaddr.h
@@ -184,7 +184,6 @@ include/isc/offset.h
 include/isc/once.h
 include/isc/os.h
 include/isc/parseint.h
-include/isc/platform.h
 include/isc/pool.h
 include/isc/portset.h
 include/isc/print.h
@@ -266,19 +265,19 @@ include/pkcs11/pkcs11.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
 lib/libbind9.so
-lib/libbind9-9.17.11.so
+lib/libbind9-9.17.15.so
 lib/libdns.so
-lib/libdns-9.17.11.so
+lib/libdns-9.17.15.so
 lib/libirs.so
-lib/libirs-9.17.11.so
+lib/libirs-9.17.15.so
 lib/libisc.so
-lib/libisc-9.17.11.so
+lib/libisc-9.17.15.so
 lib/libisccc.so
-lib/libisccc-9.17.11.so
+lib/libisccc-9.17.15.so
 lib/libisccfg.so
-lib/libisccfg-9.17.11.so
+lib/libisccfg-9.17.15.so
 lib/libns.so
-lib/libns-9.17.11.so
+lib/libns-9.17.15.so
 @comment man/man1/arpaname.1.gz
 @comment man/man1/delv.1.gz
 @comment man/man1/dig.1.gz

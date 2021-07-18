@@ -1,5 +1,6 @@
 PORTNAME=	kafka
-PORTVERSION=	2.7.0
+PORTVERSION=	2.8.0
+
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}_2.13-${PORTVERSION}
@@ -29,13 +30,14 @@ GROUPS=		${KAFKA_GROUP}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 KAFKA_BINS=	connect-distributed.sh connect-mirror-maker.sh \
 		connect-standalone.sh kafka-acls.sh \
-		kafka-broker-api-versions.sh kafka-configs.sh \
+		kafka-broker-api-versions.sh kafka-cluster.sh kafka-configs.sh \
 		kafka-console-consumer.sh kafka-console-producer.sh \
 		kafka-consumer-groups.sh kafka-consumer-perf-test.sh \
 		kafka-delegation-tokens.sh kafka-delete-records.sh \
 		kafka-dump-log.sh kafka-leader-election.sh kafka-features.sh \
 		kafka-log-dirs.sh kafka-mirror-maker.sh \
-		kafka-preferred-replica-election.sh kafka-producer-perf-test.sh \
+		kafka-preferred-replica-election.sh \
+		kafka-producer-perf-test.sh kafka-storage.sh \
 		kafka-reassign-partitions.sh kafka-replica-verification.sh \
 		kafka-run-class.sh kafka-server-start.sh kafka-server-stop.sh \
 		kafka-streams-application-reset.sh kafka-topics.sh \

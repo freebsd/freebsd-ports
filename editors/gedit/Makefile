@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	gedit
-PORTVERSION=	3.38.1
+PORTVERSION=	40.1
 CATEGORIES=	editors gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libenchant.so:textproc/enchant \
 		libpeas-gtk-1.0.so:devel/libpeas \
 		libgspell-1.so:textproc/gspell \
 		libsoup-2.4.so:devel/libsoup \
-		libtepl-5.so:x11-toolkits/tepl \
+		libtepl-6.so:x11-toolkits/tepl6 \
 		libamtk-5.so:x11-toolkits/amtk
 
 RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
@@ -36,7 +36,7 @@ USE_GNOME=	cairo gdkpixbuf2 gtksourceview4 intlhack introspection \
 		libxml2 pygobject3
 USE_XORG=	sm x11
 USE_LDCONFIG=	yes
-PLIST_SUB=	VERSION="3.38"
+PLIST_SUB=	VERSION=${PORTVERSION:R}.0
 INSTALL_TARGET=	install-strip
 MESON_ARGS+=	--buildtype plain
 BINARY_ALIAS=	python3=${PYTHON_CMD}

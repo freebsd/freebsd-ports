@@ -1,6 +1,6 @@
---- net/socket/udp_socket_posix.cc.orig	2021-03-12 23:57:27 UTC
+--- net/socket/udp_socket_posix.cc.orig	2021-05-12 22:05:57 UTC
 +++ net/socket/udp_socket_posix.cc
-@@ -71,6 +71,32 @@ const int kActivityMonitorMinimumSamplesForThroughputE
+@@ -74,6 +74,32 @@ const int kActivityMonitorMinimumSamplesForThroughputE
  const base::TimeDelta kActivityMonitorMsThreshold =
      base::TimeDelta::FromMilliseconds(100);
  
@@ -33,7 +33,7 @@
  #if defined(OS_MAC)
  
  // On OSX the file descriptor is guarded to detect the cause of
-@@ -623,13 +649,13 @@ int UDPSocketPosix::SetDoNotFragment() {
+@@ -622,13 +648,13 @@ int UDPSocketPosix::SetDoNotFragment() {
  }
  
  void UDPSocketPosix::SetMsgConfirm(bool confirm) {
@@ -49,7 +49,7 @@
  }
  
  int UDPSocketPosix::AllowAddressReuse() {
-@@ -918,7 +944,11 @@ int UDPSocketPosix::SetMulticastOptions() {
+@@ -920,7 +946,11 @@ int UDPSocketPosix::SetMulticastOptions() {
          mreq.imr_ifindex = multicast_interface_;
          mreq.imr_address.s_addr = htonl(INADDR_ANY);
          int rv = setsockopt(socket_, IPPROTO_IP, IP_MULTICAST_IF,
@@ -61,7 +61,7 @@
          if (rv)
            return MapSystemError(errno);
          break;
-@@ -1019,9 +1049,18 @@ int UDPSocketPosix::LeaveGroup(const IPAddress& group_
+@@ -1021,9 +1051,18 @@ int UDPSocketPosix::LeaveGroup(const IPAddress& group_
      case IPAddress::kIPv4AddressSize: {
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;

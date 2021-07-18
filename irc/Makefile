@@ -21,9 +21,9 @@
     SUBDIR += dircproxy
     SUBDIR += dxirc
     SUBDIR += eggdrop
-    SUBDIR += eggdrop-devel
     SUBDIR += epic4
     SUBDIR += epic5
+    SUBDIR += ergo
     SUBDIR += evangeline
     SUBDIR += ezbounce
     SUBDIR += gruftistats
@@ -60,7 +60,6 @@
     SUBDIR += ngircd
     SUBDIR += ninja
     SUBDIR += onis
-    SUBDIR += oragono
     SUBDIR += p5-AnyEvent-IRC
     SUBDIR += p5-Bot-BasicBot
     SUBDIR += p5-IRC-Bot-Hangman
@@ -84,6 +83,7 @@
     SUBDIR += pircbot
     SUBDIR += pisg
     SUBDIR += polari
+    SUBDIR += pounce
     SUBDIR += py-fishcrypt
     SUBDIR += py-irc
     SUBDIR += py-limnoria

@@ -1,0 +1,7 @@
+XCFun is a library of exchange-correlation (XC) functionals to be used in
+density-functional theory (DFT) codes. XCFun follows a unique implementation
+strategy which enables the computation of derivatives of the XC functional
+kernel up to arbitrary order. It does so by relying on forward-mode automatic
+differentiation.
+
+WWW: https://xcfun.readthedocs.io/en/latest/

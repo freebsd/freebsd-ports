@@ -1,8 +1,7 @@
 # Created by: Jim Riggs <ports@christianserving.org>
 
 PORTNAME=	hatop
-PORTVERSION=	0.7.7
-PORTREVISION=	5
+PORTVERSION=	0.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils net
 
@@ -14,16 +13,16 @@ LICENSE=	GPLv3+
 RUN_DEPENDS=	${LOCALBASE}/sbin/haproxy:net/haproxy
 
 USES=		python shebangfix
-SHEBANG_FILES=	bin/hatop
-NO_BUILD=	yes
-NO_ARCH=	yes
-
 USE_GITHUB=	yes
-GH_ACCOUNT=	feurix
+GH_ACCOUNT=	jhunt
 GH_PROJECT=	hatop
 
+SHEBANG_FILES=	bin/hatop
+NO_ARCH=	yes
+NO_BUILD=	yes
+
 PLIST_FILES=	bin/hatop man/man1/hatop.1.gz
-PORTDOCS=	HACKING KEYBINDS README
+PORTDOCS=	HACKING KEYBINDS README.rst
 
 OPTIONS_DEFINE=	DOCS
 

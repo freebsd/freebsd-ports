@@ -29,6 +29,7 @@ share/aclocal/cmake.m4
 share/bash-completion/completions/cmake
 share/bash-completion/completions/cpack
 share/bash-completion/completions/ctest
+
 %%DATADIR%%/Help/command/DEVICE_LINK_OPTIONS.txt
 %%DATADIR%%/Help/command/FIND_XXX.txt
 %%DATADIR%%/Help/command/FIND_XXX_ORDER.txt
@@ -54,6 +55,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/command/cmake_language.rst
 %%DATADIR%%/Help/command/cmake_minimum_required.rst
 %%DATADIR%%/Help/command/cmake_parse_arguments.rst
+%%DATADIR%%/Help/command/cmake_path.rst
 %%DATADIR%%/Help/command/cmake_policy.rst
 %%DATADIR%%/Help/command/configure_file.rst
 %%DATADIR%%/Help/command/continue.rst
@@ -197,6 +199,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/envvar/CTEST_PARALLEL_LEVEL.rst
 %%DATADIR%%/Help/envvar/CTEST_PROGRESS_OUTPUT.rst
 %%DATADIR%%/Help/envvar/CTEST_USE_LAUNCHERS_DEFAULT.rst
+%%DATADIR%%/Help/envvar/CUDAARCHS.rst
 %%DATADIR%%/Help/envvar/CUDACXX.rst
 %%DATADIR%%/Help/envvar/CUDAFLAGS.rst
 %%DATADIR%%/Help/envvar/CUDAHOSTCXX.rst
@@ -661,6 +664,12 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/policy/CMP0112.rst
 %%DATADIR%%/Help/policy/CMP0113.rst
 %%DATADIR%%/Help/policy/CMP0114.rst
+%%DATADIR%%/Help/policy/CMP0115.rst
+%%DATADIR%%/Help/policy/CMP0116.rst
+%%DATADIR%%/Help/policy/CMP0117.rst
+%%DATADIR%%/Help/policy/CMP0118.rst
+%%DATADIR%%/Help/policy/CMP0119.rst
+%%DATADIR%%/Help/policy/CMP0120.rst
 %%DATADIR%%/Help/policy/DEPRECATED.txt
 %%DATADIR%%/Help/policy/DISALLOWED_COMMAND.txt
 %%DATADIR%%/Help/prop_cache/ADVANCED.rst
@@ -920,6 +929,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/EXCLUDE_FROM_ALL.rst
 %%DATADIR%%/Help/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD.rst
 %%DATADIR%%/Help/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD_CONFIG.rst
+%%DATADIR%%/Help/prop_tgt/EXPORT_COMPILE_COMMANDS.rst
 %%DATADIR%%/Help/prop_tgt/EXPORT_NAME.rst
 %%DATADIR%%/Help/prop_tgt/EXPORT_PROPERTIES.rst
 %%DATADIR%%/Help/prop_tgt/EchoString.rst
@@ -1085,6 +1095,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/UNITY_BUILD_CODE_AFTER_INCLUDE.rst
 %%DATADIR%%/Help/prop_tgt/UNITY_BUILD_CODE_BEFORE_INCLUDE.rst
 %%DATADIR%%/Help/prop_tgt/UNITY_BUILD_MODE.rst
+%%DATADIR%%/Help/prop_tgt/UNITY_BUILD_UNIQUE_ID.rst
 %%DATADIR%%/Help/prop_tgt/VERSION.rst
 %%DATADIR%%/Help/prop_tgt/VISIBILITY_INLINES_HIDDEN.rst
 %%DATADIR%%/Help/prop_tgt/VS_CONFIGURATION_TYPE.rst
@@ -1128,6 +1139,10 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/WIN32_EXECUTABLE.rst
 %%DATADIR%%/Help/prop_tgt/WINDOWS_EXPORT_ALL_SYMBOLS.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_ATTRIBUTE_an-attribute.rst
+%%DATADIR%%/Help/prop_tgt/XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY.rst
+%%DATADIR%%/Help/prop_tgt/XCODE_EMBED_FRAMEWORKS_REMOVE_HEADERS_ON_COPY.rst
+%%DATADIR%%/Help/prop_tgt/XCODE_EMBED_type.rst
+%%DATADIR%%/Help/prop_tgt/XCODE_EMBED_type_PATH.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_EXPLICIT_FILE_TYPE.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_GENERATE_SCHEME.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_LINK_BUILD_PHASE_MODE.rst
@@ -1169,6 +1184,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/release/3.18.rst
 %%DATADIR%%/Help/release/3.19.rst
 %%DATADIR%%/Help/release/3.2.rst
+%%DATADIR%%/Help/release/3.20.rst
 %%DATADIR%%/Help/release/3.3.rst
 %%DATADIR%%/Help/release/3.4.rst
 %%DATADIR%%/Help/release/3.5.rst
@@ -1193,6 +1209,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_ARM_MODE.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_ARM_NEON.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_ASSETS_DIRECTORIES.rst
+%%DATADIR%%/Help/variable/CMAKE_ANDROID_EXCEPTIONS.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_GUI.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_JAR_DEPENDENCIES.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_JAR_DIRECTORIES.rst
@@ -1203,9 +1220,11 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_NDK_DEPRECATED_HEADERS.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_NDK_TOOLCHAIN_HOST_TAG.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION.rst
+%%DATADIR%%/Help/variable/CMAKE_ANDROID_NDK_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_PROCESS_MAX.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_PROGUARD.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_PROGUARD_CONFIG_PATH.rst
+%%DATADIR%%/Help/variable/CMAKE_ANDROID_RTTI.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_SECURE_PROPS_PATH.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_SKIP_ANT_STEP.rst
 %%DATADIR%%/Help/variable/CMAKE_ANDROID_STANDALONE_TOOLCHAIN.rst
@@ -1298,6 +1317,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_DEFAULT_BUILD_TYPE.rst
 %%DATADIR%%/Help/variable/CMAKE_DEFAULT_CONFIGS.rst
 %%DATADIR%%/Help/variable/CMAKE_DEPENDS_IN_PROJECT_ONLY.rst
+%%DATADIR%%/Help/variable/CMAKE_DEPENDS_USE_COMPILER.rst
 %%DATADIR%%/Help/variable/CMAKE_DIRECTORY_LABELS.rst
 %%DATADIR%%/Help/variable/CMAKE_DISABLE_FIND_PACKAGE_PackageName.rst
 %%DATADIR%%/Help/variable/CMAKE_DISABLE_PRECOMPILE_HEADERS.rst
@@ -1415,6 +1435,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_LANG_ARCHIVE_APPEND.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_ARCHIVE_CREATE.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_ARCHIVE_FINISH.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_BYTE_ORDER.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_CLANG_TIDY.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER_ABI.rst
@@ -1605,6 +1626,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_TWEAK_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_UNITY_BUILD.rst
 %%DATADIR%%/Help/variable/CMAKE_UNITY_BUILD_BATCH_SIZE.rst
+%%DATADIR%%/Help/variable/CMAKE_UNITY_BUILD_UNIQUE_ID.rst
 %%DATADIR%%/Help/variable/CMAKE_USER_MAKE_RULES_OVERRIDE.rst
 %%DATADIR%%/Help/variable/CMAKE_USER_MAKE_RULES_OVERRIDE_LANG.rst
 %%DATADIR%%/Help/variable/CMAKE_USE_RELATIVE_PATHS.rst
@@ -1906,6 +1928,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/CMakeParseArguments.cmake
 %%DATADIR%%/Modules/CMakeParseImplicitIncludeInfo.cmake
 %%DATADIR%%/Modules/CMakeParseImplicitLinkInfo.cmake
+%%DATADIR%%/Modules/CMakeParseLibraryArchitecture.cmake
 %%DATADIR%%/Modules/CMakePlatformId.h.in
 %%DATADIR%%/Modules/CMakePrintHelpers.cmake
 %%DATADIR%%/Modules/CMakePrintSystemInformation.cmake
@@ -2095,6 +2118,12 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Compiler/Intel-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/Intel-ISPC.cmake
 %%DATADIR%%/Modules/Compiler/Intel.cmake
+%%DATADIR%%/Modules/Compiler/IntelLLVM-ASM.cmake
+%%DATADIR%%/Modules/Compiler/IntelLLVM-C.cmake
+%%DATADIR%%/Modules/Compiler/IntelLLVM-CXX.cmake
+%%DATADIR%%/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/IntelLLVM-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/IntelLLVM.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-ASM.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-C-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-C.cmake
@@ -2102,6 +2131,11 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Compiler/MSVC-CXX.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/NAG-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/NVHPC-C.cmake
+%%DATADIR%%/Modules/Compiler/NVHPC-CXX.cmake
+%%DATADIR%%/Modules/Compiler/NVHPC-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/NVHPC-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/NVHPC.cmake
 %%DATADIR%%/Modules/Compiler/NVIDIA-CUDA.cmake
 %%DATADIR%%/Modules/Compiler/NVIDIA-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/OpenWatcom-C.cmake
@@ -2520,6 +2554,10 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Apple-Intel-CXX.cmake
 %%DATADIR%%/Modules/Platform/Apple-Intel-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Apple-Intel.cmake
+%%DATADIR%%/Modules/Platform/Apple-IntelLLVM-C.cmake
+%%DATADIR%%/Modules/Platform/Apple-IntelLLVM-CXX.cmake
+%%DATADIR%%/Modules/Platform/Apple-IntelLLVM-Fortran.cmake
+%%DATADIR%%/Modules/Platform/Apple-IntelLLVM.cmake
 %%DATADIR%%/Modules/Platform/Apple-NAG-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Apple-NVIDIA-CUDA.cmake
 %%DATADIR%%/Modules/Platform/Apple-PGI-C.cmake
@@ -2623,7 +2661,15 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Linux-Intel-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-Intel-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linux-Intel.cmake
+%%DATADIR%%/Modules/Platform/Linux-IntelLLVM-C.cmake
+%%DATADIR%%/Modules/Platform/Linux-IntelLLVM-CXX.cmake
+%%DATADIR%%/Modules/Platform/Linux-IntelLLVM-Fortran.cmake
+%%DATADIR%%/Modules/Platform/Linux-IntelLLVM.cmake
 %%DATADIR%%/Modules/Platform/Linux-NAG-Fortran.cmake
+%%DATADIR%%/Modules/Platform/Linux-NVHPC-C.cmake
+%%DATADIR%%/Modules/Platform/Linux-NVHPC-CXX.cmake
+%%DATADIR%%/Modules/Platform/Linux-NVHPC-Fortran.cmake
+%%DATADIR%%/Modules/Platform/Linux-NVHPC.cmake
 %%DATADIR%%/Modules/Platform/Linux-OpenWatcom-C.cmake
 %%DATADIR%%/Modules/Platform/Linux-OpenWatcom-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-OpenWatcom.cmake
@@ -2703,6 +2749,11 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Windows-Intel-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Windows-Intel-ISPC.cmake
 %%DATADIR%%/Modules/Platform/Windows-Intel.cmake
+%%DATADIR%%/Modules/Platform/Windows-IntelLLVM-ASM.cmake
+%%DATADIR%%/Modules/Platform/Windows-IntelLLVM-C.cmake
+%%DATADIR%%/Modules/Platform/Windows-IntelLLVM-CXX.cmake
+%%DATADIR%%/Modules/Platform/Windows-IntelLLVM-Fortran.cmake
+%%DATADIR%%/Modules/Platform/Windows-IntelLLVM.cmake
 %%DATADIR%%/Modules/Platform/Windows-MSVC-C.cmake
 %%DATADIR%%/Modules/Platform/Windows-MSVC-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-MSVC.cmake
@@ -2779,9 +2830,10 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/TestForSTDNamespace.cxx
 %%DATADIR%%/Modules/UseEcos.cmake
 %%DATADIR%%/Modules/UseJava.cmake
+%%DATADIR%%/Modules/UseJava/ClassFilelist.cmake
 %%DATADIR%%/Modules/UseJava/ClearClassFiles.cmake
-%%DATADIR%%/Modules/UseJavaClassFilelist.cmake
-%%DATADIR%%/Modules/UseJavaSymlinks.cmake
+%%DATADIR%%/Modules/UseJava/Symlinks.cmake
+%%DATADIR%%/Modules/UseJava/javaTargets.cmake.in
 %%DATADIR%%/Modules/UsePkgConfig.cmake
 %%DATADIR%%/Modules/UseQt4.cmake
 %%DATADIR%%/Modules/UseSWIG.cmake
@@ -2793,7 +2845,6 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/WriteCompilerDetectionHeader.cmake
 %%DATADIR%%/Modules/ecos_clean.cmake
 %%DATADIR%%/Modules/exportheader.cmake.in
-%%DATADIR%%/Modules/javaTargets.cmake.in
 %%DATADIR%%/Modules/kde3init_dummy.cpp.in
 %%DATADIR%%/Modules/kde3uic.cmake
 %%DATADIR%%/Modules/readme.txt

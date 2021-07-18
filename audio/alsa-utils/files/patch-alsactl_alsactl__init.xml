@@ -1,0 +1,24 @@
+--- alsactl/alsactl_init.xml.orig	2020-02-19 12:02:10 UTC
++++ alsactl/alsactl_init.xml
+@@ -29,8 +29,8 @@
+ 
+       <refsect1><title>CONFIGURATION</title>
+         <para>All "alsactl init" configuration files are placed in
+-        <filename>/usr/share/alsa/init/</filename> directory. The top level
+-        configuration file is <filename>/usr/share/alsa/init/00main</filename>.
++        <filename>%%PREFIX%%/share/alsa/init/</filename> directory. The top level
++        configuration file is <filename>%%PREFIX%%/share/alsa/init/00main</filename>.
+ 	The default top-level file can be also specified using -i or
+ 	--initfile parameter for the alsactl tool.
+ 	Every file consists of a set of lines of text. All empty lines or
+@@ -38,8 +38,8 @@
+ 
+         <refsect2><title>Rules files</title>
+           <para>The "alsactl init" rules are read from the files located
+-          in the <filename>/usr/share/alsa/init/*</filename>. The top
+-          level configuration file is <filename>/usr/share/alsa/init/00main</filename>.
++          in the <filename>%%PREFIX%%/share/alsa/init/*</filename>. The top
++          level configuration file is <filename>%%PREFIX%%/share/alsa/init/00main</filename>.
+           Every line in the rules file contains at least one key value pair.
+           There are two kind of keys, match and assignment keys. If all match
+           keys are matching against its value, the rule gets applied and the

@@ -20,8 +20,9 @@ RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Pod>=0:devel/p5-Test-Pod
 
-NO_ARCH=	yes
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

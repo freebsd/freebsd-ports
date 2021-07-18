@@ -1,0 +1,1054 @@
+diff --git a/.github/workflows/php.yml b/.github/workflows/php.yml
+index 4d52983ba9..4ca606ac52 100644
+diff --git a/library/Icinga/Application/ApplicationBootstrap.php b/library/Icinga/Application/ApplicationBootstrap.php
+index 04cc930d20..8c72d0e513 100644
+--- library/Icinga/Application/ApplicationBootstrap.php
++++ library/Icinga/Application/ApplicationBootstrap.php
+@@ -605,7 +605,7 @@ protected function setupErrorHandling()
+         ini_set('display_startup_errors', 1);
+         ini_set('display_errors', 1);
+         set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+-            if (error_reporting() === 0) {
++            if (! (error_reporting() & $errno)) {
+                 // Error was suppressed with the @-operator
+                 return false; // Continue with the normal error handler
+             }
+diff --git a/library/Icinga/Test/BaseTestCase.php b/library/Icinga/Test/BaseTestCase.php
+index 286ec30591..aea79210fb 100644
+--- library/Icinga/Test/BaseTestCase.php
++++ library/Icinga/Test/BaseTestCase.php
+@@ -23,7 +23,6 @@ function mt()
+     use Exception;
+     use RuntimeException;
+     use Mockery;
+-    use PHPUnit_Framework_TestCase;
+     use Icinga\Application\Icinga;
+     use Icinga\Data\ConfigObject;
+     use Icinga\Data\ResourceFactory;
+@@ -32,7 +31,7 @@ function mt()
+     /**
+      * Class BaseTestCase
+      */
+-    abstract class BaseTestCase extends PHPUnit_Framework_TestCase implements DbTest
++    abstract class BaseTestCase extends Mockery\Adapter\Phpunit\MockeryTestCase implements DbTest
+     {
+         /**
+          * Path to application/
+@@ -138,7 +137,7 @@ public static function setupDirectories()
+         /**
+          * Setup MVC bootstrapping and ensure that the Icinga-Mock gets reinitialized
+          */
+-        public function setUp()
++        public function setUp(): void
+         {
+             parent::setUp();
+             $this->setupIcingaMock();
+@@ -334,6 +333,23 @@ public function setupDbProvider($resource)
+                 $adapter->exec('DROP TABLE ' . $table . ';');
+             }
+         }
++
++        /**
++         * Add assertMatchesRegularExpression() method for phpunit >= 8.0 < 9.0 for compatibility with PHP 7.2.
++         *
++         * @TODO Remove once PHP 7.2 support is not needed for testing anymore.
++         */
++        public static function assertMatchesRegularExpression(
++            string $pattern,
++            string $string,
++            string $message = ''
++        ): void {
++            if (method_exists(parent::class, 'assertMatchesRegularExpression')) {
++                parent::assertMatchesRegularExpression($pattern, $string, $message);
++            } else {
++                static::assertRegExp($pattern, $string, $message);
++            }
++        }
+     }
+ 
+     BaseTestCase::setupTimezone();
+diff --git a/modules/monitoring/library/Monitoring/Backend/Ido/Query/HostdowntimestarthistoryQuery.php b/modules/monitoring/library/Monitoring/Backend/Ido/Query/HostdowntimestarthistoryQuery.php
+index 831df6c818..5d0517884e 100644
+--- modules/monitoring/library/Monitoring/Backend/Ido/Query/HostdowntimestarthistoryQuery.php
++++ modules/monitoring/library/Monitoring/Backend/Ido/Query/HostdowntimestarthistoryQuery.php
+@@ -96,7 +96,7 @@ protected function joinBaseTables()
+             array()
+         );
+ 
+-        if (@func_get_arg(0) === false) {
++        if (func_num_args() === 0 || func_get_arg(0) === false) {
+             $this->select->where(
+                 "hdh.actual_start_time > '1970-01-02 00:00:00'"
+             );
+diff --git a/modules/monitoring/library/Monitoring/Backend/Ido/Query/ServicedowntimestarthistoryQuery.php b/modules/monitoring/library/Monitoring/Backend/Ido/Query/ServicedowntimestarthistoryQuery.php
+index 6ed081ef70..932d854a01 100644
+--- modules/monitoring/library/Monitoring/Backend/Ido/Query/ServicedowntimestarthistoryQuery.php
++++ modules/monitoring/library/Monitoring/Backend/Ido/Query/ServicedowntimestarthistoryQuery.php
+@@ -97,7 +97,7 @@ protected function joinBaseTables()
+             array()
+         );
+ 
+-        if (@func_get_arg(0) === false) {
++        if (func_num_args() === 0 || func_get_arg(0) === false) {
+             $this->select->where(
+                 "sdh.actual_start_time > '1970-01-02 00:00:00'"
+             );
+diff --git a/modules/monitoring/test/php/application/views/helpers/PluginOutputTest.php b/modules/monitoring/test/php/application/views/helpers/PluginOutputTest.php
+index a07614079e..94efee939a 100644
+--- modules/monitoring/test/php/application/views/helpers/PluginOutputTest.php
++++ modules/monitoring/test/php/application/views/helpers/PluginOutputTest.php
+@@ -20,7 +20,7 @@ class PluginOutputTest extends BaseTestCase
+ 
+     protected static $statusTags = array('OK', 'WARNING', 'CRITICAL', 'UNKNOWN', 'UP', 'DOWN');
+ 
+-    public function setUp()
++    public function setUp(): void
+     {
+         parent::setUp();
+ 
+@@ -45,7 +45,7 @@ protected function checkOutput($output, $html, $regexp = false, $isHtml = false)
+                 $html,
+                 preg_quote(self::SUFFIX, '~')
+             );
+-            $this->assertRegExp($expect, $actual, 'Output must match example regexp');
++            $this->assertMatchesRegularExpression($expect, $actual, 'Output must match example regexp');
+         } else {
+             $expect = $prefix . $html . self::SUFFIX;
+             $this->assertEquals($expect, $actual, 'Output must match example');
+diff --git a/modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataTest.php b/modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataTest.php
+index dbccb5c800..ab6ffa9387 100644
+--- modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataTest.php
++++ modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataTest.php
+@@ -8,19 +8,17 @@
+ 
+ class PerfdataTest extends BaseTestCase
+ {
+-    /**
+-     * @expectedException   \InvalidArgumentException
+-     */
+     public function testWhetherFromStringThrowsExceptionWhenGivenAnEmptyString()
+     {
++        $this->expectException(\InvalidArgumentException::class);
++
+         Perfdata::fromString('');
+     }
+ 
+-    /**
+-     * @expectedException   \InvalidArgumentException
+-     */
+     public function testWhetherFromStringThrowsExceptionWhenGivenAnInvalidString()
+     {
++        $this->expectException(\InvalidArgumentException::class);
++
+         Perfdata::fromString('test');
+     }
+ 
+diff --git a/modules/monitoring/test/php/library/Monitoring/Web/Rest/RestRequestTest.php b/modules/monitoring/test/php/library/Monitoring/Web/Rest/RestRequestTest.php
+index e422ec0766..6e77ffcdde 100644
+--- modules/monitoring/test/php/library/Monitoring/Web/Rest/RestRequestTest.php
++++ modules/monitoring/test/php/library/Monitoring/Web/Rest/RestRequestTest.php
+@@ -16,11 +16,10 @@ protected function curlExec(array $options)
+ 
+ class RestRequestTest extends BaseTestCase
+ {
+-    /**
+-     * @expectedException \Icinga\Exception\Json\JsonDecodeException
+-     */
+     public function testInvalidServerResponseHandling()
+     {
++        $this->expectException(\Icinga\Exception\Json\JsonDecodeException::class);
++
+         MockedRestRequest::get('http://localhost')->send();
+     }
+ }
+diff --git a/modules/monitoring/test/php/regression/Bug7043Test.php b/modules/monitoring/test/php/regression/Bug7043Test.php
+index 07cc02428f..ba9291be60 100644
+--- modules/monitoring/test/php/regression/Bug7043Test.php
++++ modules/monitoring/test/php/regression/Bug7043Test.php
+@@ -24,7 +24,7 @@ public static function setModuleConfig($moduleName, $configName, $config)
+ 
+ class Bug7043Test extends BaseTestCase
+ {
+-    public function tearDown()
++    public function tearDown(): void
+     {
+         parent::tearDown();
+         Mockery::close(); // Necessary because some tests run in a separate process
+diff --git a/modules/setup/application/views/scripts/index/index.phtml b/modules/setup/application/views/scripts/index/index.phtml
+index b5fb40798f..3a6e17965f 100644
+--- modules/setup/application/views/scripts/index/index.phtml
++++ modules/setup/application/views/scripts/index/index.phtml
+@@ -9,10 +9,10 @@ $currentPos = array_search($wizard->getCurrentPage(), $pages, true);
+ list($configPagesLeft, $configPagesRight) = array_chunk($configPages, count($configPages) / 2, true);
+ 
+ $visitedPages = array_keys($wizard->getPageData());
+-$maxProgress = @max(array_keys(array_filter(
++$maxProgress = max(array_merge([0], array_keys(array_filter(
+     $pages,
+     function ($page) use ($visitedPages) { return in_array($page->getName(), $visitedPages); }
+-)));
++))));
+ 
+ ?>
+ <div id="setup-content-wrapper" data-base-target="layout">
+diff --git a/test/php/application/views/helpers/DateFormatTestBroken.php b/test/php/application/views/helpers/DateFormatTestBroken.php
+index 188c629888..6fb768b3cd 100644
+--- test/php/application/views/helpers/DateFormatTestBroken.php
++++ test/php/application/views/helpers/DateFormatTestBroken.php
+@@ -12,7 +12,7 @@
+ 
+ class DateFormatTest extends BaseTestCase
+ {
+-    public function tearDown()
++    public function tearDown(): void
+     {
+         DateTimeFactory::setConfig(array('timezone' => date_default_timezone_get()));
+     }
+diff --git a/test/php/bootstrap.php b/test/php/bootstrap.php
+index 75912674c2..6f78711720 100644
+--- test/php/bootstrap.php
++++ test/php/bootstrap.php
+@@ -36,10 +36,6 @@
+ 
+ require_once($icingaLibPath . '/Test/ClassLoader.php');
+ 
+-if (! class_exists('PHPUnit_Framework_TestCase')) {
+-    require_once __DIR__ . '/phpunit-compat.php';
+-}
+-
+ $loader = new Icinga\Test\ClassLoader();
+ $loader->registerNamespace('Tests', $testLibraryPath);
+ $loader->registerNamespace('Icinga', $icingaLibPath);
+diff --git a/test/php/library/Icinga/Application/ClassLoaderTest.php b/test/php/library/Icinga/Application/ClassLoaderTest.php
+index 5422869125..7b88c6e74a 100644
+--- test/php/library/Icinga/Application/ClassLoaderTest.php
++++ test/php/library/Icinga/Application/ClassLoaderTest.php
+@@ -26,7 +26,7 @@ public function testFlag()
+ 
+ EOD;
+ 
+-    public function setUp()
++    public function setUp(): void
+     {
+         parent::setUp();
+         $tempDir = sys_get_temp_dir();
+@@ -35,7 +35,7 @@ public function setUp()
+         file_put_contents($this->baseDir. self::$classFile, self::$classContent);
+     }
+ 
+-    public function tearDown()
++    public function tearDown(): void
+     {
+         parent::tearDown();
+         system('rm -rf '. $this->baseDir);
+diff --git a/test/php/library/Icinga/Application/ConfigTest.php b/test/php/library/Icinga/Application/ConfigTest.php
+index e47173679c..5fb47639a6 100644
+--- test/php/library/Icinga/Application/ConfigTest.php
++++ test/php/library/Icinga/Application/ConfigTest.php
+@@ -11,7 +11,7 @@ class ConfigTest extends BaseTestCase
+     /**
+      * Set up config dir
+      */
+-    public function setUp()
++    public function setUp(): void
+     {
+         parent::setUp();
+         $this->oldConfigDir = Config::$configDir;
+@@ -21,7 +21,7 @@ public function setUp()
+     /**
+      * Reset config dir
+      */
+-    public function tearDown()
++    public function tearDown(): void
+     {
+         parent::tearDown();
+         Config::$configDir = $this->oldConfigDir;
+@@ -185,11 +185,10 @@ public function testWhetherConfigKnowsWhichSectionsItHas()
+         );
+     }
+ 
+-    /**
+-     * @expectedException UnexpectedValueException
+-     */
+     public function testWhetherAnExceptionIsThrownWhenTryingToAccessASectionPropertyOnANonSection()
+     {
++        $this->expectException(\UnexpectedValueException::class);
++
+         $config = Config::fromArray(array('a' => 'b'));
+         $config->get('a', 'b');
+     }
+@@ -234,11 +233,10 @@ public function testWhetherItIsPossibleToInitializeAConfigFromAIniFile()
+         );
+     }
+ 
+-    /**
+-     * @expectedException Icinga\Exception\NotReadableError
+-     */
+     public function testWhetherFromIniThrowsAnExceptionOnInsufficientPermission()
+     {
++        $this->expectException(\Icinga\Exception\NotReadableError::class);
++
+         Config::fromIni('/etc/shadow');
+     }
+ 
+diff --git a/test/php/library/Icinga/Application/Hook/AuditHookTest.php b/test/php/library/Icinga/Application/Hook/AuditHookTest.php
+index 8f0a12507b..14ca43792c 100644
+--- test/php/library/Icinga/Application/Hook/AuditHookTest.php
++++ test/php/library/Icinga/Application/Hook/AuditHookTest.php
+@@ -32,27 +32,24 @@ public function testFormatMessageResolvesParametersWithSingleBraces()
+         $this->assertEquals('foo', (new TestAuditHook())->formatMessage('{{te{.}st}}', ['te{' => ['}st' => 'foo']]));
+     }
+ 
+-    /**
+-     * @expectedException \InvalidArgumentException
+-     */
+     public function testFormatMessageComplainsAboutUnresolvedParameters()
+     {
++        $this->expectException(\InvalidArgumentException::class);
++
+         (new TestAuditHook())->formatMessage('{{missing}}', []);
+     }
+ 
+-    /**
+-     * @expectedException \InvalidArgumentException
+-     */
+     public function testFormatMessageComplainsAboutNonScalarParameters()
+     {
++        $this->expectException(\InvalidArgumentException::class);
++
+         (new TestAuditHook())->formatMessage('{{test}}', ['test' => ['foo' => 'bar']]);
+     }
+ 
+-    /**
+-     * @expectedException \InvalidArgumentException
+-     */
+     public function testFormatMessageComplainsAboutNonArrayParameters()
+     {
++        $this->expectException(\InvalidArgumentException::class);
++
+         (new TestAuditHook())->formatMessage('{{test.foo}}', ['test' => 'foo']);
+     }
+ }
+diff --git a/test/php/library/Icinga/Data/ConfigObjectTest.php b/test/php/library/Icinga/Data/ConfigObjectTest.php
+index 9b87019bf6..f6b577b034 100644
+--- test/php/library/Icinga/Data/ConfigObjectTest.php
++++ test/php/library/Icinga/Data/ConfigObjectTest.php
+@@ -115,11 +115,10 @@ public function testWhetherItIsPossibleToSetPropertiesAndSections()
+         );
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\ProgrammingError
+-     */
+     public function testWhetherItIsNotPossibleToAppendProperties()
+     {
++        $this->expectException(\Icinga\Exception\ProgrammingError::class);
++
+         $config = new ConfigObject();
+         $config[] = 'test';
+     }
+diff --git a/test/php/library/Icinga/Data/DataArray/ArrayDatasourceTest.php b/test/php/library/Icinga/Data/DataArray/ArrayDatasourceTest.php
+index 5ad2b1b091..7e715cac2e 100644
+--- test/php/library/Icinga/Data/DataArray/ArrayDatasourceTest.php
++++ test/php/library/Icinga/Data/DataArray/ArrayDatasourceTest.php
+@@ -10,7 +10,7 @@ class ArrayDatasourceTest extends BaseTestCase
+ {
+     private $sampleData;
+ 
+-    public function setUp()
++    public function setUp(): void
+     {
+         parent::setUp();
+         $this->sampleData = array(
+diff --git a/test/php/library/Icinga/Data/Filter/FilterTest.php b/test/php/library/Icinga/Data/Filter/FilterTest.php
+index 97133a2163..9bbff01a32 100644
+--- test/php/library/Icinga/Data/Filter/FilterTest.php
++++ test/php/library/Icinga/Data/Filter/FilterTest.php
+@@ -61,7 +61,7 @@ class FilterTest extends BaseTestCase
+ 
+     private $sampleData;
+ 
+-    public function setUp()
++    public function setUp(): void
+     {
+         parent::setUp();
+         $this->sampleData = array(
+diff --git a/test/php/library/Icinga/File/Ini/IniParserTest.php b/test/php/library/Icinga/File/Ini/IniParserTest.php
+index 5a1d7df906..b945cc44e1 100644
+--- test/php/library/Icinga/File/Ini/IniParserTest.php
++++ test/php/library/Icinga/File/Ini/IniParserTest.php
+@@ -12,13 +12,13 @@ class IniParserTest extends BaseTestCase
+ {
+     protected $tempFile;
+ 
+-    public function setUp()
++    public function setUp(): void
+     {
+         parent::setUp();
+         $this->tempFile = tempnam(sys_get_temp_dir(), 'icinga-ini-parser-test');
+     }
+ 
+-    public function tearDown()
++    public function tearDown(): void
+     {
+         parent::tearDown();
+         unlink($this->tempFile);
+diff --git a/test/php/library/Icinga/File/Ini/IniWriterTest.php b/test/php/library/Icinga/File/Ini/IniWriterTest.php
+index c3fb6df1fc..41e1f13e67 100644
+--- test/php/library/Icinga/File/Ini/IniWriterTest.php
++++ test/php/library/Icinga/File/Ini/IniWriterTest.php
+@@ -12,7 +12,7 @@ class IniWriterTest extends BaseTestCase
+     protected $tempFile;
+     protected $tempFile2;
+ 
+-    public function setUp()
++    public function setUp(): void
+     {
+         parent::setUp();
+ 
+@@ -20,7 +20,7 @@ public function setUp()
+         $this->tempFile2 = tempnam(sys_get_temp_dir(), 'icinga-ini-writer-test-2');
+     }
+ 
+-    public function tearDown()
++    public function tearDown(): void
+     {
+         parent::tearDown();
+ 
+@@ -275,7 +275,7 @@ public function testWhetherLinebreaksAreProcessed()
+         );
+ 
+         $rendered = $writer->render();
+-        $this->assertRegExp(
++        $this->assertMatchesRegularExpression(
+             '~linebreak\\\\nin line~',
+             $rendered,
+             'newlines in values are not escaped'
+@@ -322,11 +322,10 @@ public function testSectionNameEscaping()
+         );
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\ConfigurationError
+-     */
+     public function testWhetherBracketsAreIllegalInSectionNames()
+     {
++        $this->expectException(\Icinga\Exception\ConfigurationError::class);
++
+         $config = Config::fromArray(['section [brackets]' => []]);
+         (new IniWriter($config, $this->tempFile))->write();
+     }
+@@ -419,7 +418,7 @@ public function testWhetherNullValuesGetPersisted()
+         $config->setSection('garbage', $section);
+ 
+         $iniWriter = new IniWriter($config, '/dev/null');
+-        $this->assertNotContains(
++        $this->assertStringNotContainsString(
+             'foobar',
+             $iniWriter->render(),
+             'IniWriter persists section keys with null values'
+@@ -434,7 +433,7 @@ public function testWhetherEmptyValuesGetPersisted()
+         $config->setSection('garbage', $section);
+ 
+         $iniWriter = new IniWriter($config, '/dev/null');
+-        $this->assertContains(
++        $this->assertStringContainsString(
+             'foobar',
+             $iniWriter->render(),
+             'IniWriter doesn\'t persist section keys with empty values'
+@@ -451,7 +450,7 @@ public function testExplicitRemove()
+         $section = $config->getSection('garbage');
+         $section->foobar = null;
+         $iniWriter = new IniWriter($config, $filename);
+-        $this->assertNotContains(
++        $this->assertStringNotContainsString(
+             'foobar',
+             $iniWriter->render(),
+             'IniWriter doesn\'t remove section keys with null values'
+diff --git a/test/php/library/Icinga/File/Storage/LocalFileStorageTest.php b/test/php/library/Icinga/File/Storage/LocalFileStorageTest.php
+index 5f104a50c4..7ba0efd2f1 100644
+--- test/php/library/Icinga/File/Storage/LocalFileStorageTest.php
++++ test/php/library/Icinga/File/Storage/LocalFileStorageTest.php
+@@ -54,11 +54,10 @@ public function testGetIterator()
+         static::assertSame(array('foobar'), array_values(iterator_to_array($lfs->getIterator())));
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\NotReadableError
+-     */
+     public function testGetIteratorThrowsNotReadableError()
+     {
++        $this->expectException(\Icinga\Exception\NotReadableError::class);
++
+         $lfs = new LocalFileStorage('/notreadabledirectory');
+         $lfs->getIterator();
+     }
+@@ -79,21 +78,19 @@ public function testCreate()
+         static::assertSame('Hello world!', $lfs->read('foo/bar'));
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\AlreadyExistsException
+-     */
+     public function testCreateThrowsAlreadyExistsException()
+     {
++        $this->expectException(\Icinga\Exception\AlreadyExistsException::class);
++
+         $lfs = new TemporaryLocalFileStorage();
+         $lfs->create('foobar', 'Hello world!');
+         $lfs->create('foobar', 'Hello world!');
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\NotWritableError
+-     */
+     public function testCreateThrowsNotWritableError()
+     {
++        $this->expectException(\Icinga\Exception\NotWritableError::class);
++
+         $lfs = new LocalFileStorage('/notwritabledirectory');
+         $lfs->create('foobar', 'Hello world!');
+     }
+@@ -105,20 +102,18 @@ public function testRead()
+         static::assertSame('Hello world!', $lfs->read('foobar'));
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\NotFoundError
+-     */
+     public function testReadThrowsNotFoundError()
+     {
++        $this->expectException(\Icinga\Exception\NotFoundError::class);
++
+         $lfs = new TemporaryLocalFileStorage();
+         $lfs->read('foobar');
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\NotReadableError
+-     */
+     public function testReadThrowsNotReadableError()
+     {
++        $this->expectException(\Icinga\Exception\NotReadableError::class);
++
+         $lfs = new TemporaryLocalFileStorage();
+         $lfs->create('foobar', 'Hello world!');
+         chmod($lfs->resolvePath('foobar'), 0);
+@@ -133,20 +128,18 @@ public function testUpdate()
+         static::assertSame('Hello universe!', $lfs->read('foobar'));
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\NotFoundError
+-     */
+     public function testUpdateThrowsNotFoundError()
+     {
++        $this->expectException(\Icinga\Exception\NotFoundError::class);
++
+         $lfs = new TemporaryLocalFileStorage();
+         $lfs->update('foobar', 'Hello universe!');
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\NotWritableError
+-     */
+     public function testUpdateThrowsNotWritableError()
+     {
++        $this->expectException(\Icinga\Exception\NotWritableError::class);
++
+         $lfs = new TemporaryLocalFileStorage();
+         $lfs->create('foobar', 'Hello world!');
+         chmod($lfs->resolvePath('foobar'), 0);
+@@ -161,20 +154,18 @@ public function testDelete()
+         static::assertFalse($lfs->has('foobar'));
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\NotFoundError
+-     */
+     public function testDeleteThrowsNotFoundError()
+     {
++        $this->expectException(\Icinga\Exception\NotFoundError::class);
++
+         $lfs = new TemporaryLocalFileStorage();
+         $lfs->delete('foobar');
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\NotWritableError
+-     */
+     public function testDeleteThrowsNotWritableError()
+     {
++        $this->expectException(\Icinga\Exception\NotWritableError::class);
++
+         $lfs = new TemporaryLocalFileStorage();
+         $lfs->create('foobar', 'Hello world!');
+ 
+@@ -204,20 +195,18 @@ public function testResolvePathAssertExistence()
+         $lfs->resolvePath('./notRelevant/../foobar', true);
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\NotFoundError
+-     */
+     public function testResolvePathThrowsNotFoundError()
+     {
++        $this->expectException(\Icinga\Exception\NotFoundError::class);
++
+         $lfs = new TemporaryLocalFileStorage();
+         $lfs->resolvePath('foobar', true);
+     }
+ 
+-    /**
+-     * @expectedException \InvalidArgumentException
+-     */
+     public function testResolvePathThrowsInvalidArgumentException()
+     {
++        $this->expectException(\InvalidArgumentException::class);
++
+         $lfs = new LocalFileStorage('/notreadabledirectory');
+         $lfs->resolvePath('../foobar');
+     }
+diff --git a/test/php/library/Icinga/Logger/Writer/StreamWriterTest.php b/test/php/library/Icinga/Logger/Writer/StreamWriterTest.php
+index 38ff4dc0d0..dfd356248a 100644
+--- test/php/library/Icinga/Logger/Writer/StreamWriterTest.php
++++ test/php/library/Icinga/Logger/Writer/StreamWriterTest.php
+@@ -10,14 +10,14 @@
+ 
+ class StreamWriterTest extends BaseTestCase
+ {
+-    public function setUp()
++    public function setUp(): void
+     {
+         parent::setUp();
+ 
+         $this->target = tempnam(sys_get_temp_dir(), 'log');
+     }
+ 
+-    public function tearDown()
++    public function tearDown(): void
+     {
+         parent::tearDown();
+ 
+@@ -38,6 +38,6 @@ public function testWhetherStreamWriterWritesMessages()
+         $writer = new FileWriter(new ConfigObject(array('file' => $this->target)));
+         $writer->log(Logger::ERROR, 'This is a test error');
+         $log = file_get_contents($this->target);
+-        $this->assertContains('This is a test error', $log, 'StreamWriter does not write log messages');
++        $this->assertStringContainsString('This is a test error', $log, 'StreamWriter does not write log messages');
+     }
+ }
+diff --git a/test/php/library/Icinga/Test/BaseTestCaseTest.php b/test/php/library/Icinga/Test/BaseTestCaseTest.php
+index 8611dbe620..5c06ad9662 100644
+--- test/php/library/Icinga/Test/BaseTestCaseTest.php
++++ test/php/library/Icinga/Test/BaseTestCaseTest.php
+@@ -10,7 +10,7 @@ class BaseTestCaseTest extends BaseTestCase
+ {
+     protected $emptySqlDumpFile;
+ 
+-    public function tearDown()
++    public function tearDown(): void
+     {
+         parent::tearDown();
+ 
+@@ -148,19 +148,17 @@ public function testWhetherSetupDbProviderCleansUpOciAdapter($resource)
+         $this->assertCount(0, $tables);
+     }
+ 
+-    /**
+-     * @expectedException   RuntimeException
+-     */
+     public function testWhetherLoadSqlThrowsErrorWhenFileMissing()
+     {
++        $this->expectException(\RuntimeException::class);
++
+         $this->loadSql(Mockery::mock('Icinga\Data\Db\DbConnection'), 'not_existing');
+     }
+ 
+-    /**
+-     * @expectedException   RuntimeException
+-     */
+     public function testWhetherLoadSqlThrowsErrorWhenFileEmpty()
+     {
++        $this->expectException(\RuntimeException::class);
++
+         $this->emptySqlDumpFile = tempnam(sys_get_temp_dir(), 'icinga2-web-db-test-empty');
+         $this->loadSql(Mockery::mock('Icinga\Data\Db\DbConnection'), $this->emptySqlDumpFile);
+     }
+diff --git a/test/php/library/Icinga/User/Store/DbStoreTest.php b/test/php/library/Icinga/User/Store/DbStoreTest.php
+index 54855cf60a..1f56f93cbe 100644
+--- test/php/library/Icinga/User/Store/DbStoreTest.php
++++ test/php/library/Icinga/User/Store/DbStoreTest.php
+@@ -83,11 +83,10 @@ public function testWhetherPreferenceInsertionWorks()
+         $this->assertEmpty($dbMock->deletions, 'DbStore::save deletes *new* preferences');
+     }
+ 
+-    /**
+-     * @expectedException   \Icinga\Exception\NotWritableError
+-     */
+     public function testWhetherPreferenceInsertionThrowsNotWritableError()
+     {
++        $this->expectException(\Icinga\Exception\NotWritableError::class);
++
+         $store = $this->getStore(new FaultyDatabaseMock());
+         $store->save(
+             Mockery::mock(
+@@ -114,11 +113,10 @@ public function testWhetherPreferenceUpdatesWork()
+         $this->assertEmpty($dbMock->deletions, 'DbStore::save inserts *existing* preferneces');
+     }
+ 
+-    /**
+-     * @expectedException   \Icinga\Exception\NotWritableError
+-     */
+     public function testWhetherPreferenceUpdatesThrowNotWritableError()
+     {
++        $this->expectException(\Icinga\Exception\NotWritableError::class);
++
+         $store = $this->getStore(new FaultyDatabaseMock());
+         $store->setPreferences(array('testsection' => array('key' => 'value')));
+         $store->save(
+@@ -146,11 +144,10 @@ public function testWhetherPreferenceDeletionWorks()
+         $this->assertEmpty($dbMock->updates, 'DbStore::save updates *removed* preferences');
+     }
+ 
+-    /**
+-     * @expectedException   \Icinga\Exception\NotWritableError
+-     */
+     public function testWhetherPreferenceDeletionThrowsNotWritableError()
+     {
++        $this->expectException(\Icinga\Exception\NotWritableError::class);
++
+         $store = $this->getStore(new FaultyDatabaseMock());
+         $store->setPreferences(array('testsection' => array('key' => 'value')));
+         $store->save(
+diff --git a/test/php/library/Icinga/UserTest.php b/test/php/library/Icinga/UserTest.php
+index 7798aee501..a5f7ebdb1b 100644
+--- test/php/library/Icinga/UserTest.php
++++ test/php/library/Icinga/UserTest.php
+@@ -52,11 +52,10 @@ public function testWhetherValidEmailsCanBeSet()
+         );
+     }
+ 
+-    /**
+-     * @expectedException   \InvalidArgumentException
+-     */
+     public function testWhetherInvalidEmailsCannotBeSet()
+     {
++        $this->expectException(\InvalidArgumentException::class);
++
+         $user = new User('unittest');
+         $user->setEmail('mySampleEmail at someDomain dot org');
+     }
+diff --git a/test/php/library/Icinga/Util/FileTest.php b/test/php/library/Icinga/Util/FileTest.php
+index 68074a5d34..d05be2bec6 100644
+--- test/php/library/Icinga/Util/FileTest.php
++++ test/php/library/Icinga/Util/FileTest.php
+@@ -8,20 +8,18 @@
+ 
+ class FileTest extends BaseTestCase
+ {
+-    /**
+-     * @expectedException \Icinga\Exception\NotWritableError
+-     */
+     public function testWhetherWritingToNonWritableFilesThrowsAnException()
+     {
++        $this->expectException(\Icinga\Exception\NotWritableError::class);
++
+         $file = new File('/dev/null');
+         $file->fwrite('test');
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\NotWritableError
+-     */
+     public function testWhetherTruncatingNonWritableFilesThrowsAnException()
+     {
++        $this->expectException(\Icinga\Exception\NotWritableError::class);
++
+         $file = new File('/dev/null');
+         $file->ftruncate(0);
+     }
+diff --git a/test/php/library/Icinga/Util/TranslatorTest.php b/test/php/library/Icinga/Util/TranslatorTest.php
+index d61ea4a9da..1ebb7b4141 100644
+--- test/php/library/Icinga/Util/TranslatorTest.php
++++ test/php/library/Icinga/Util/TranslatorTest.php
+@@ -17,7 +17,7 @@ public static function getAvailableLocaleCodes()
+ 
+ class TranslatorTest extends BaseTestCase
+ {
+-    public function setUp()
++    public function setUp(): void
+     {
+         parent::setUp();
+         Translator::registerDomain('icingatest', BaseTestCase::$testDir . '/res/locale');
+@@ -48,11 +48,10 @@ public function testWhetherSetupLocaleSetsUpTheGivenLocale()
+         );
+     }
+ 
+-    /**
+-     * @expectedException Icinga\Exception\IcingaException
+-     */
+     public function testWhetherSetupLocaleThrowsAnExceptionWhenGivenAnInvalidLocale()
+     {
++        $this->expectException(\Icinga\Exception\IcingaException::class);
++
+         Translator::setupLocale('foobar');
+     }
+ 
+diff --git a/test/php/library/Icinga/Web/FormTest.php b/test/php/library/Icinga/Web/FormTest.php
+index 3d6ac7d1e9..b43efe452d 100644
+--- test/php/library/Icinga/Web/FormTest.php
++++ test/php/library/Icinga/Web/FormTest.php
+@@ -26,7 +26,7 @@ public function onSuccess()
+ 
+ class FormTest extends BaseTestCase
+ {
+-    public function tearDown()
++    public function tearDown(): void
+     {
+         Mockery::close(); // Necessary as some tests are running isolated
+     }
+@@ -251,11 +251,10 @@ public function testWhetherGetNameReturnsTheEscapedClassNameByDefault()
+         );
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\ProgrammingError
+-     */
+     public function testWhetherTheOnSuccessOptionMustBeCallable()
+     {
++        $this->expectException(\Icinga\Exception\ProgrammingError::class);
++
+         new Form(array('onSuccess' => '_invalid_'));
+     }
+ 
+diff --git a/test/php/library/Icinga/Web/HookTest.php b/test/php/library/Icinga/Web/HookTest.php
+index fdee11636a..111b6be379 100644
+--- test/php/library/Icinga/Web/HookTest.php
++++ test/php/library/Icinga/Web/HookTest.php
+@@ -41,14 +41,14 @@ class HookTest extends BaseTestCase
+     protected $failingHook   = '\\Tests\\Icinga\\Web\\FailingHook';
+     protected $testBaseClass = '\\Icinga\\Web\\Hook\\TestHook';
+ 
+-    public function setUp()
++    public function setUp(): void
+     {
+         $this->markTestSkipped();
+         parent::setUp();
+         Hook::clean();
+     }
+ 
+-    public function tearDown()
++    public function tearDown(): void
+     {
+         parent::tearDown();
+         Hook::clean();
+diff --git a/test/php/library/Icinga/Web/Paginator/ScrollingStyle/SlidingWithBorderTest.php b/test/php/library/Icinga/Web/Paginator/ScrollingStyle/SlidingWithBorderTest.php
+index 93fc2b171e..96d2ec65ce 100644
+--- test/php/library/Icinga/Web/Paginator/ScrollingStyle/SlidingWithBorderTest.php
++++ test/php/library/Icinga/Web/Paginator/ScrollingStyle/SlidingWithBorderTest.php
+@@ -17,7 +17,7 @@ public function testGetPages2()
+         $paginator = new Zend_Paginator($this->getPaginatorAdapter());
+ 
+         $pages = $scrollingStyle->getPages($paginator);
+-        $this->assertInternalType('array', $pages);
++        $this->assertIsArray($pages);
+         $this->assertCount(10, $pages);
+         $this->assertEquals('...', $pages[8]);
+     }
+@@ -29,7 +29,7 @@ public function testGetPages3()
+         $paginator->setCurrentPageNumber(9);
+ 
+         $pages = $scrollingStyle->getPages($paginator);
+-        $this->assertInternalType('array', $pages);
++        $this->assertIsArray($pages);
+         $this->assertCount(10, $pages);
+         $this->assertEquals('...', $pages[3]);
+         $this->assertEquals('...', $pages[12]);
+diff --git a/test/php/library/Icinga/Web/Session/SessionNamespaceTest.php b/test/php/library/Icinga/Web/Session/SessionNamespaceTest.php
+index 99f08317de..7f90b2cd60 100644
+--- test/php/library/Icinga/Web/Session/SessionNamespaceTest.php
++++ test/php/library/Icinga/Web/Session/SessionNamespaceTest.php
+@@ -62,11 +62,10 @@ public function testPropertyAccess()
+         $this->assertNull($ns->get('key2'));
+     }
+ 
+-    /**
+-     * @expectedException Icinga\Exception\IcingaException
+-     */
+     public function testFailingPropertyAccess()
+     {
++        $this->expectException(\Icinga\Exception\IcingaException::class);
++
+         $ns = new SessionNamespace();
+         $ns->missing;
+     }
+diff --git a/test/php/library/Icinga/Web/UrlTest.php b/test/php/library/Icinga/Web/UrlTest.php
+index 31c790c998..cbe8b6bf87 100644
+--- test/php/library/Icinga/Web/UrlTest.php
++++ test/php/library/Icinga/Web/UrlTest.php
+@@ -130,11 +130,10 @@ public function testWhetherFromRequestAcceptsAdditionalParameters()
+         );
+     }
+ 
+-    /**
+-     * @expectedException Icinga\Exception\ProgrammingError
+-     */
+     public function testWhetherFromPathProperlyHandlesInvalidUrls()
+     {
++        $this->expectException(\Icinga\Exception\ProgrammingError::class);
++
+         Url::fromPath(null);
+     }
+ 
+diff --git a/test/php/library/Icinga/Web/Widget/DashboardTest.php b/test/php/library/Icinga/Web/Widget/DashboardTest.php
+index 260e5b494b..3749bc8ef9 100644
+--- test/php/library/Icinga/Web/Widget/DashboardTest.php
++++ test/php/library/Icinga/Web/Widget/DashboardTest.php
+@@ -39,7 +39,7 @@ public function getTabs()
+ 
+ class DashboardTest extends BaseTestCase
+ {
+-    public function tearDown()
++    public function tearDown(): void
+     {
+         parent::tearDown();
+         Mockery::close(); // Necessary because some tests run in a separate process
+@@ -109,11 +109,12 @@ public function testWhetherGetPaneReturnsAPaneByName()
+     }
+ 
+     /**
+-     * @expectedException \Icinga\Exception\ProgrammingError
+      * @depends testWhetherCreatePaneCreatesAPane
+      */
+     public function testWhetherGetPaneThrowsAnExceptionOnNotExistentPaneName()
+     {
++        $this->expectException(\Icinga\Exception\ProgrammingError::class);
++
+         $dashboard = new Dashboard();
+         $dashboard->createPane('test1');
+ 
+@@ -267,11 +268,10 @@ public function testWhetherSetDashletUrlUpdatesTheDashletUrl()
+         );
+     }
+ 
+-    /**
+-     * @expectedException \Icinga\Exception\ConfigurationError
+-     */
+     public function testWhetherDetermineActivePaneThrowsAnExceptionIfCouldNotDetermine()
+     {
++        $this->expectException(\Icinga\Exception\ConfigurationError::class);
++
+         $dashboard = new Dashboard();
+         $dashboard->determineActivePane();
+     }
+@@ -279,11 +279,12 @@ public function testWhetherDetermineActivePaneThrowsAnExceptionIfCouldNotDetermi
+     /**
+      * @runInSeparateProcess
+      * @preserveGlobalState disabled
+-     * @expectedException \Icinga\Exception\ProgrammingError
+      * @depends testWhetherCreatePaneCreatesAPane
+      */
+     public function testWhetherDetermineActivePaneThrowsAnExceptionIfCouldNotDetermineInvalidPane()
+     {
++        $this->expectException(\Icinga\Exception\ProgrammingError::class);
++
+         $dashboard = new DashboardWithPredefinableActiveName();
+         $dashboard->createPane('test1');
+ 
+diff --git a/test/php/library/Icinga/Web/Widget/SearchDashboardTest.php b/test/php/library/Icinga/Web/Widget/SearchDashboardTest.php
+index 7370338e5c..916ab79143 100644
+--- test/php/library/Icinga/Web/Widget/SearchDashboardTest.php
++++ test/php/library/Icinga/Web/Widget/SearchDashboardTest.php
+@@ -11,7 +11,7 @@
+ 
+ class SearchDashboardTest extends BaseTestCase
+ {
+-    public function setUp()
++    public function setUp(): void
+     {
+         $moduleMock = Mockery::mock('Icinga\Application\Modules\Module');
+         $searchUrl = (object) array(
+@@ -32,11 +32,10 @@ public function setUp()
+         $bootstrapMock->shouldReceive('getModuleManager')->andReturn($moduleManagerMock);
+     }
+ 
+-    /**
+-     * @expectedException Zend_Controller_Action_Exception
+-     */
+     public function testWhetherRenderThrowsAnExceptionWhenHasNoDashlets()
+     {
++        $this->expectException(\Zend_Controller_Action_Exception::class);
++
+         $user = new User('test');
+         $user->setPermissions(array('*' => '*'));
+         $dashboard = new SearchDashboard();
+diff --git a/test/php/phpunit-compat.php b/test/php/phpunit-compat.php
+deleted file mode 100644
+index 88287906d6..0000000000
+--- test/php/phpunit-compat.php
++++ /dev/null
+@@ -1,15 +0,0 @@
+-<?php
+-/**
+- * @codingStandardsIgnoreStart
+- */
+-class PHPUnit_Framework_TestCase extends \PHPUnit\Framework\TestCase
+-{
+-}
+-
+-interface PHPUnit_Framework_Test extends \PHPUnit\Framework\Test
+-{
+-}
+-
+-interface PHPUnit_Framework_TestListener extends \PHPUnit\Framework\TestListener
+-{
+-}
+diff --git a/test/php/regression/Bug4102Test.php b/test/php/regression/Bug4102Test.php
+deleted file mode 100644
+index eeb3cc0f6f..0000000000
+--- test/php/regression/Bug4102Test.php
++++ /dev/null
+@@ -1,42 +0,0 @@
+-<?php
+-/* Icinga Web 2 | (c) 2013 Icinga Development Team | GPLv2+ */
+-
+-namespace Tests\Icinga\Regression;
+-
+-use Icinga\Test\BaseTestCase;
+-
+-/**
+- * Class Bug4102
+- *
+- * Bogus regression test
+- *
+- * @see https://dev.icinga.com/issues/4102
+- */
+-class Bug4102Test extends BaseTestCase
+-{
+-    /**
+-     * Test class name to match definition
+-     */
+-    public function testClassName()
+-    {
+-        $class = get_class($this);
+-        $this->assertContains('Bug4102Test', $class);
+-    }
+-
+-    /**
+-     * Test namespace to match definition
+-     */
+-    public function testNamespace()
+-    {
+-        $namespace = __NAMESPACE__;
+-        $this->assertEquals('Tests\Icinga\Regression', $namespace);
+-    }
+-
+-    /**
+-     * Test phpunit inheritance
+-     */
+-    public function testInheritance()
+-    {
+-        $this->assertInstanceOf('\PHPUnit_Framework_TestCase', $this);
+-    }
+-}

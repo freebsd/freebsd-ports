@@ -2,7 +2,7 @@
 
 PORTNAME=	giacxcas
 DISTVERSION=	1.6.0-7
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/:giac \
 		http://cocoa.dima.unige.it/cocoalib/tgz/:cocoa \
@@ -15,8 +15,13 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computer algebra system
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv3 DOC
+LICENSE_COMB=	multi
+LICENSE_NAME_DOC=	French documentation
+LICENSE_TEXT_DOC=	French documentation is for non-commercial use only
+LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
+LICENSE_PERMS_DOC=	dist-mirror pkg-mirror auto-accept
+LICENSE_DISTFILES_DOC=	giac_${DISTVERSION}${EXTRACT_SUFX}
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libao.so:audio/libao \
@@ -32,8 +37,6 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libpng.so:graphics/png \
 		libsamplerate.so:audio/libsamplerate
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
-
-NO_CDROM=	French documentation is for non-commercial use only
 
 USES=		blaslapack compiler:c++14-lang desktop-file-utils fortran \
 		gettext gl gmake gnome jpeg libtool localbase ncurses perl5 \

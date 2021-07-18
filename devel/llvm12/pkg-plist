@@ -3765,6 +3765,7 @@ llvm%%LLVM_SUFFIX%%/share/opt-viewer/optrecord.py
 llvm%%LLVM_SUFFIX%%/share/opt-viewer/style.css
 %%CLANG%%llvm%%LLVM_SUFFIX%%/share/scan-build/scanview.css
 %%CLANG%%llvm%%LLVM_SUFFIX%%/share/scan-build/sorttable.js
+%%CLANG%%llvm%%LLVM_SUFFIX%%/share/scan-view/Reporter.py
 %%CLANG%%llvm%%LLVM_SUFFIX%%/share/scan-view/ScanView.py
 %%CLANG%%llvm%%LLVM_SUFFIX%%/share/scan-view/bugcatcher.ico
 %%CLANG%%llvm%%LLVM_SUFFIX%%/share/scan-view/startfile.py

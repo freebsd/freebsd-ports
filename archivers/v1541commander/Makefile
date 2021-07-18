@@ -30,6 +30,9 @@ OPTIONS_DEFINE=	DOCS
 
 MAKE_ARGS=	pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
 		V=1
+MAKE_ENV=	DEFAULT_MOC=${MOC} \
+		DEFAULT_RCC=${RCC} \
+		LRELEASE=${LRELEASE}
 ALL_TARGET=	strip
 
 post-extract:

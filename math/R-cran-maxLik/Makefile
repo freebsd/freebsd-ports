@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	maxLik
-DISTVERSION=	1.4-6
+DISTVERSION=	1.4-8
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

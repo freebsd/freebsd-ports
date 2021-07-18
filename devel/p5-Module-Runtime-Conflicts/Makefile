@@ -18,8 +18,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Dist-CheckConflicts>=0:devel/p5-Dist-CheckConflicts \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

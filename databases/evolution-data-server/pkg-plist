@@ -88,6 +88,7 @@ include/evolution-data-server/camel/camel-sasl-plain.h
 include/evolution-data-server/camel/camel-sasl-popb4smtp.h
 include/evolution-data-server/camel/camel-sasl-xoauth2-google.h
 include/evolution-data-server/camel/camel-sasl-xoauth2-outlook.h
+include/evolution-data-server/camel/camel-sasl-xoauth2-yahoo.h
 include/evolution-data-server/camel/camel-sasl-xoauth2.h
 include/evolution-data-server/camel/camel-sasl.h
 include/evolution-data-server/camel/camel-search-private.h
@@ -255,6 +256,7 @@ include/evolution-data-server/libedataserver/e-network-monitor.h
 include/evolution-data-server/libedataserver/e-oauth2-service-base.h
 include/evolution-data-server/libedataserver/e-oauth2-service-google.h
 include/evolution-data-server/libedataserver/e-oauth2-service-outlook.h
+include/evolution-data-server/libedataserver/e-oauth2-service-yahoo.h
 include/evolution-data-server/libedataserver/e-oauth2-service.h
 include/evolution-data-server/libedataserver/e-oauth2-services.h
 include/evolution-data-server/libedataserver/e-operation-pool.h

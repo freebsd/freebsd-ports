@@ -17,6 +17,7 @@ share/icons/hicolor/48x48/apps/blinken.png
 share/icons/hicolor/64x64/apps/blinken.png
 share/icons/hicolor/scalable/apps/blinken.svgz
 share/locale/ar/LC_MESSAGES/blinken.mo
+share/locale/be/LC_MESSAGES/blinken.mo
 share/locale/bg/LC_MESSAGES/blinken.mo
 share/locale/bs/LC_MESSAGES/blinken.mo
 share/locale/ca/LC_MESSAGES/blinken.mo
@@ -39,6 +40,7 @@ share/locale/he/LC_MESSAGES/blinken.mo
 share/locale/hi/LC_MESSAGES/blinken.mo
 share/locale/hr/LC_MESSAGES/blinken.mo
 share/locale/hu/LC_MESSAGES/blinken.mo
+share/locale/ia/LC_MESSAGES/blinken.mo
 share/locale/is/LC_MESSAGES/blinken.mo
 share/locale/it/LC_MESSAGES/blinken.mo
 share/locale/ja/LC_MESSAGES/blinken.mo
@@ -59,12 +61,16 @@ share/locale/pt/LC_MESSAGES/blinken.mo
 share/locale/pt_BR/LC_MESSAGES/blinken.mo
 share/locale/ro/LC_MESSAGES/blinken.mo
 share/locale/ru/LC_MESSAGES/blinken.mo
+share/locale/se/LC_MESSAGES/blinken.mo
 share/locale/sk/LC_MESSAGES/blinken.mo
 share/locale/sl/LC_MESSAGES/blinken.mo
+share/locale/sq/LC_MESSAGES/blinken.mo
 share/locale/sv/LC_MESSAGES/blinken.mo
+share/locale/tg/LC_MESSAGES/blinken.mo
 share/locale/tr/LC_MESSAGES/blinken.mo
 share/locale/ug/LC_MESSAGES/blinken.mo
 share/locale/uk/LC_MESSAGES/blinken.mo
+share/locale/vi/LC_MESSAGES/blinken.mo
 share/locale/zh_CN/LC_MESSAGES/blinken.mo
 share/locale/zh_TW/LC_MESSAGES/blinken.mo
 share/metainfo/org.kde.blinken.appdata.xml

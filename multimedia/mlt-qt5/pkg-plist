@@ -3,7 +3,9 @@ lib/mlt/libmltqt.so
 %%DATADIR%%/qt/filter_audiowaveform.yml
 %%DATADIR%%/qt/filter_lightshow.yml
 %%DATADIR%%/qt/filter_qtblend.yml
+%%DATADIR%%/qt/filter_qtcrop.yml
 %%DATADIR%%/qt/filter_qtext.yml
+%%DATADIR%%/qt/filter_typewriter.yml
 %%DATADIR%%/qt/producer_kdenlivetitle.yml
 %%DATADIR%%/qt/producer_qimage.yml
 %%DATADIR%%/qt/producer_qtext.yml

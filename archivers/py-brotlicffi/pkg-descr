@@ -1,0 +1,5 @@
+BrotliCFFI contains Python CFFI bindings for the reference Brotli
+encoder/decoder. This allows Python software to use the Brotli compression
+algorithm directly from Python code.
+
+WWW: https://github.com/python-hyper/brotlicffi

@@ -1,11 +1,9 @@
 PORTNAME=	clover
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	lang
 
 COMMENT=	Mesa OpenCL implementation for AMD GPUs
-
-DEPRECATED=	Uses EOL Python 2.7 via devel/libclc
-EXPIRATION_DATE=2021-06-23
 
 BUILD_DEPENDS=	libclc>=0.3.0:devel/libclc \
 		opencl>=0:devel/opencl
@@ -14,7 +12,7 @@ LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
 RUN_DEPENDS=	libclc>=0.3.0:devel/libclc \
 		opencl>=0:devel/opencl
 
-ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS=		i386 amd64 powerpc64le powerpc64
 ONLY_FOR_ARCHS_REASON=	Clover needs a GPU supported by the Radeon KMS driver
 BROKEN_FreeBSD_11=	undefined reference to `vl_video_buffer_plane_order'
 

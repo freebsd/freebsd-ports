@@ -16,7 +16,6 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING-LGPLV3
 
 IGNORE_FreeBSD_11=	fails to build: fails to compile dwarf_abbrev_hash.c
 BROKEN_armv6=		fails to build: fails to compile i386_disasm.c
-BROKEN_armv7=		fails to build: fails to compile i386_disasm.c
 BROKEN_sparc64=		sparc patch does not apply cleanly to 0.172
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone
@@ -41,7 +40,9 @@ CFLAGS+=	-Wno-null-dereference -Wno-unused-value
 # For GCC8:
 CFLAGS+=	-Wno-cast-function-type
 # Give i386 a prayer of building, and we can fix the warnings later:
-CFLAGS_i386+=	-Wno-error
+CFLAGS_armv7=	-Wno-error
+CFLAGS_i386=	-Wno-error
+CFLAGS_powerpc=	-Wno-error
 
 # Avoid conflict with binutils / elftoolchain programs with the same names:
 CONFIGURE_ARGS+=	--program-prefix=eu-

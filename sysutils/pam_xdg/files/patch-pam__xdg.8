@@ -1,0 +1,32 @@
+- Chase option name used in the source
+- Switch to OpenPAM include for local sessions
+
+--- pam_xdg.8.orig	2021-03-29 22:50:34 UTC
++++ pam_xdg.8
+@@ -28,7 +28,7 @@
+ .Sh SYNOPSIS
+ .
+ .Nm
+-.Op Ar rundir
++.Op Ar runtime
+ .Op Ar notroot
+ .
+ .
+@@ -47,7 +47,7 @@ into user sessions.
+ When linked into the PAM session system the runtime directory will be
+ created once a user creates his or her first login session.
+ Unless
+-.Ar rundir
++.Ar runtime
+ was given all XDG related environment variables will be created in all
+ user sessions with their default or computed values, otherwise only
+ .Ev XDG_RUNTIME_DIR .
+@@ -61,7 +61,7 @@ In order to make use of this script, place the followi
+ file of desire under
+ .Pa /etc/pam.d ,
+ best maybe
+-.Pa /etc/pam.d/common-session
++.Pa /etc/pam.d/system
+ if that exists (possibly adjusting paths):
+ .
+ .Bd -literal -offset indent

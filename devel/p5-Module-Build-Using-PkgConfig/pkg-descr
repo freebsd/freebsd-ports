@@ -1,0 +1,5 @@
+Module::Build::Using::PkgConfig provides some handy methods to assist the
+Build.PL script of XS-based module distributions that make use of platform
+libraries managed by pkg-config.
+
+WWW: https://metacpan.org/release/Module-Build-Using-PkgConfig

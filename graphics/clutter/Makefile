@@ -1,7 +1,7 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	clutter
-PORTVERSION=	1.26.2
+DISTVERSION=	1.26.4
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libcogl.so:graphics/cogl
+		libcogl.so:graphics/cogl \
+		libharfbuzz.so:print/harfbuzz
 
 PORTSCOUT=	limit:1,even
 

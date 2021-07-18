@@ -12,11 +12,16 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full vt220 compatible Java SSH-1 client (not only for websites)
 
+# Converted from NO_CDROM
+LICENSE=	mindterm
+LICENSE_NAME=	mindterm
+LICENSE_TEXT=	Do not sell for profit
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
-NO_CDROM=	Do not sell for profit
 
 OPTIONS_DEFINE=	DOCS
 

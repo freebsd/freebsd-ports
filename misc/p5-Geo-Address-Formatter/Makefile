@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Geo-Address-Formatter
-PORTVERSION=	1.85
+PORTVERSION=	1.95
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,6 @@ RUN_DEPENDS=	p5-Clone>=0.45:devel/p5-Clone \
 		p5-File-Find-Rule>=0:devel/p5-File-Find-Rule \
 		p5-Ref-Util>=0.204:devel/p5-Ref-Util \
 		p5-Text-Hogan>=2.03:textproc/p5-Text-Hogan \
-		p5-Text-Trim>=1.02:textproc/p5-Text-Trim \
 		p5-Try-Catch>=0:lang/p5-Try-Catch \
 		p5-YAML-LibYAML>=0.82:textproc/p5-YAML-LibYAML
 TEST_DEPENDS=	p5-File-Slurper>=0:devel/p5-File-Slurper \

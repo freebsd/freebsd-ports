@@ -1,5 +1,5 @@
 PORTNAME=	binding_of_caller
-PORTVERSION=	0.8.0
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,9 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-debug_inspector>=0.0.1:devel/rubygem-debug_inspector
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

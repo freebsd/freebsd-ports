@@ -1,4 +1,4 @@
---- ui/message_center/views/message_popup_view.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/message_center/views/message_popup_view.cc.orig	2021-04-14 18:41:39 UTC
 +++ ui/message_center/views/message_popup_view.cc
 @@ -114,7 +114,7 @@ void MessagePopupView::Show() {
    params.z_order = ui::ZOrderLevel::kFloatingWindow;

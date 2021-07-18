@@ -1,11 +1,11 @@
---- src/packResourceProvider.cpp.orig	2016-08-31 19:10:48 UTC
+--- src/packResourceProvider.cpp.orig	2021-06-23 12:12:02 UTC
 +++ src/packResourceProvider.cpp
 @@ -5,7 +5,7 @@
- #ifdef __WIN32__
+ #ifdef _WIN32
  #include <malloc.h>
  #else
 -#include <alloca.h>
 +#include <stdlib.h>
  #endif
  
- static inline int readInt(FILE* f)
+ #ifdef _MSC_VER

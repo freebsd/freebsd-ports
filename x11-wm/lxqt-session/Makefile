@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	lxqt-session
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	LXQT
 

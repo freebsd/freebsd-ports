@@ -1,0 +1,5 @@
+@sample %%ETCDIR%%/discusrc.sample
+man/man1/discus.1.gz
+sbin/discus
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/README.md

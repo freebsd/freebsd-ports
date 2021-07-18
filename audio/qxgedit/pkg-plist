@@ -1,0 +1,8 @@
+bin/qxgedit
+%%QT_PLUGINDIR%%/styles/libskulpturestyle.so
+man/fr/man1/qxgedit.1.gz
+man/man1/qxgedit.1.gz
+share/applications/qxgedit.desktop
+share/icons/hicolor/32x32/apps/qxgedit.png
+share/icons/hicolor/scalable/apps/qxgedit.svg
+share/metainfo/qxgedit.appdata.xml

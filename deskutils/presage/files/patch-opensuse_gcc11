@@ -1,0 +1,263 @@
+Index: presage-0.9.1/src/lib/presage.cpp
+===================================================================
+--- src/lib/presage.cpp.orig
++++ src/lib/presage.cpp
+@@ -31,7 +31,7 @@
+ #include "core/predictorActivator.h"
+ 
+ Presage::Presage (PresageCallback* callback)
+-    throw (PresageException)
++    EXCEPT (PresageException)
+ {
+     profileManager = new ProfileManager();
+     configuration = profileManager->get_configuration();
+@@ -42,7 +42,7 @@ Presage::Presage (PresageCallback* callb
+ }
+ 
+ Presage::Presage (PresageCallback* callback, const std::string config_filename)
+-    throw (PresageException)
++    EXCEPT (PresageException)
+ {
+     profileManager = new ProfileManager(config_filename);
+     configuration = profileManager->get_configuration();
+@@ -62,7 +62,7 @@ Presage::~Presage()
+ }
+ 
+ std::vector<std::string> Presage::predict ()
+-    throw (PresageException)
++    EXCEPT (PresageException)
+ {
+     std::vector<std::string> result;
+ 
+@@ -88,7 +88,7 @@ std::vector<std::string> Presage::predic
+ }
+ 
+ std::multimap<double, std::string> Presage::predict (std::vector<std::string> filter)
+-    throw (PresageException)
++    EXCEPT (PresageException)
+ {
+     std::multimap<double, std::string> result;
+ 
+@@ -137,20 +137,20 @@ std::multimap<double, std::string> Presa
+ }
+ 
+ void Presage::learn(const std::string text) const
+-    throw (PresageException)
++    EXCEPT (PresageException)
+ {
+     contextTracker->learn(text); // TODO: can pass additional param to
+ 				 // learn to specify offline learning
+ }
+ 
+ PresageCallback* Presage::callback (PresageCallback* callback)
+-    throw (PresageException)
++    EXCEPT (PresageException)
+ {
+     return const_cast<PresageCallback*>(contextTracker->callback(callback));
+ }
+ 
+ std::string Presage::completion (const std::string str)
+-    throw (PresageException)
++    EXCEPT (PresageException)
+ {
+     // There are two types of completions: normal and erasing.
+     // normal_completion  = prefix + remainder
+@@ -198,37 +198,37 @@ std::string Presage::completion (const s
+ }
+ 
+ std::string Presage::context () const
+-    throw (PresageException)
++    EXCEPT (PresageException)
+ {
+     return contextTracker->getPastStream();
+ }
+ 
+ bool Presage::context_change () const
+-    throw (PresageException)
++    EXCEPT (PresageException)
+ {
+     return contextTracker->contextChange();
+ }
+ 
+ std::string Presage::prefix () const
+-    throw (PresageException)
++    EXCEPT (PresageException)
+ {
+     return contextTracker->getPrefix();
+ }
+ 
+ std::string Presage::config (const std::string variable) const
+-    throw (PresageException)
++    EXCEPT (PresageException)
+ {
+     return configuration->find (variable)->get_value ();
+ }
+ 
+ void Presage::config (const std::string variable, const std::string value) const
+-    throw (PresageException)
++    EXCEPT (PresageException)
+ {
+     configuration->insert (variable, value);
+ }
+ 
+ void Presage::save_config () const
+-    throw (PresageException)
++    EXCEPT (PresageException)
+ {
+     profileManager->save_profile ();
+ }
+Index: presage-0.9.1/src/lib/presage.h
+===================================================================
+--- src/lib/presage.h.orig
++++ src/lib/presage.h
+@@ -28,6 +28,12 @@
+ #include "presageException.h"
+ #include "presageCallback.h"
+ 
++#if __cplusplus >= 201103L
++#define EXCEPT(...) noexcept(false)
++#else
++#define EXCEPT(...) throw(__VA_ARGS__)
++#endif
++
+ /** \mainpage
+ 
+     \section intro_section Introduction
+@@ -112,7 +118,7 @@ public:
+      * 
+      * Presage does not take ownership of the callback object.
+      */
+-    Presage(PresageCallback* callback) throw (PresageException);
++    Presage(PresageCallback* callback) EXCEPT(PresageException);
+ 
+ 
+     /** Creates and initializes presage with supplied configuration.
+@@ -122,7 +128,7 @@ public:
+      *
+      * Presage does not take ownership of the callback object.
+      */
+-    Presage(PresageCallback* callback, const std::string config) throw (PresageException);
++    Presage(PresageCallback* callback, const std::string config) EXCEPT(PresageException);
+ 
+ 
+     /** Destroys presage.
+@@ -138,7 +144,7 @@ public:
+      * context.
+      *
+      */
+-    std::vector<std::string> predict() throw (PresageException);
++    std::vector<std::string> predict() EXCEPT(PresageException);
+ 
+     /** \brief Obtain a prediction that matches the supplied token
+      *         filter.
+@@ -153,7 +159,7 @@ public:
+      * of the filter tokens.
+      *
+      */
+-    std::multimap<double, std::string> predict(std::vector<std::string> filter) throw (PresageException);
++    std::multimap<double, std::string> predict(std::vector<std::string> filter) EXCEPT(PresageException);
+ 
+     /** \brief Learn from text offline.
+      *
+@@ -167,7 +173,7 @@ public:
+      * \param text a text string to learn from.
+      *
+      */
+-    void learn(const std::string text) const throw (PresageException);
++    void learn(const std::string text) const EXCEPT(PresageException);
+ 
+     /** \brief Callback getter/setter.
+      *
+@@ -176,7 +182,7 @@ public:
+      *
+      * \return pointer to previously used callback
+      */
+-    PresageCallback* callback(PresageCallback* callback) throw (PresageException);
++    PresageCallback* callback(PresageCallback* callback) EXCEPT(PresageException);
+ 
+     /** \brief Request presage to return the completion string for the given predicted token.
+      *
+@@ -190,26 +196,26 @@ public:
+      *
+      * \return completion string
+      */
+-    std::string completion(std::string str) throw (PresageException);
++    std::string completion(std::string str) EXCEPT(PresageException);
+ 
+     /** \brief Returns the text entered so far.
+      *
+      * \return context, text entered so far.
+      */
+-    std::string context() const throw (PresageException);
++    std::string context() const EXCEPT(PresageException);
+ 
+     /** \brief Returns true if a context change occured.
+      *
+      * \return true if a context change occured after the last update
+      * or predict calls, or false otherwise.
+      */
+-    bool context_change() const throw (PresageException);
++    bool context_change() const EXCEPT(PresageException);
+ 
+     /** \brief Returns the current prefix.
+      *
+      * \return prefix
+      */
+-    std::string prefix() const throw (PresageException);
++    std::string prefix() const EXCEPT(PresageException);
+ 
+     /** \brief Gets the value of specified configuration variable.
+      *
+@@ -218,7 +224,7 @@ public:
+      *
+      * \return value assigned to configuration variable.
+      */
+-    std::string config(const std::string variable) const throw (PresageException);
++    std::string config(const std::string variable) const EXCEPT(PresageException);
+ 
+     /** \brief Sets the value of specified configuration variable.
+      *
+@@ -227,7 +233,7 @@ public:
+      * from the configuration file in use.
+      *
+      */
+-    void config(const std::string variable, const std::string value) const throw (PresageException);
++    void config(const std::string variable, const std::string value) const EXCEPT(PresageException);
+ 
+     /** \brief Save current configuration to file.
+      *
+@@ -236,7 +242,7 @@ public:
+      * active XML profile.
+      *
+      */
+-    void save_config() const throw (PresageException);
++    void save_config() const EXCEPT(PresageException);
+ 
+     /*
+      * Presage public API ends here
+From e9faf7fa918e75bdf26f3068794c97b34d14b406 Mon Sep 17 00:00:00 2001
+From: Martin Liska <mliska@suse.cz>
+Date: Wed, 12 May 2021 14:13:23 +0200
+Subject: [PATCH] Fix GCC 11 warning.
+
+---
+ apps/gtk/gprompter/scintilla/gtk/ScintillaGTK.cxx | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/apps/gtk/gprompter/scintilla/gtk/ScintillaGTK.cxx b/apps/gtk/gprompter/scintilla/gtk/ScintillaGTK.cxx
+index 926457b..8f4816d 100644
+--- apps/gtk/gprompter/scintilla/gtk/ScintillaGTK.cxx.orig
++++ apps/gtk/gprompter/scintilla/gtk/ScintillaGTK.cxx
+@@ -1626,7 +1626,7 @@ void ScintillaGTK::ReceivedDrop(GtkSelectionData *selection_data) {
+ 		drop.push_back('\0');
+ 		NotifyURIDropped(&drop[0]);
+ 	} else if ((TypeOfGSD(selection_data) == GDK_TARGET_STRING) || (TypeOfGSD(selection_data) == atomUTF8)) {
+-		if (TypeOfGSD(selection_data) > 0) {
++		if (TypeOfGSD(selection_data) != NULL) {
+ 			SelectionText selText;
+ 			GetGtkSelectionText(selection_data, selText);
+ 			DropAt(posDrop, selText.Data(), selText.Length(), false, selText.rectangular);
+-- 
+2.31.1
+
+

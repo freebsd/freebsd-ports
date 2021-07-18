@@ -153,7 +153,7 @@ lib/anjuta/anjuta-quick-open.plugin
 lib/anjuta/anjuta-run-program.plugin
 lib/anjuta/anjuta-snippets-manager.plugin
 lib/anjuta/anjuta-starter.plugin
-%%SVN%%lib/anjuta/anjuta-subversion.plugin
+%%SUBVERSION%%lib/anjuta/anjuta-subversion.plugin
 %%TERMINAL%%lib/anjuta/anjuta-terminal.plugin
 lib/anjuta/anjuta-tools.plugin
 lib/anjuta/dir-project.plugin
@@ -191,7 +191,7 @@ lib/anjuta/libanjuta-run-program.so
 lib/anjuta/libanjuta-snippets-manager.so
 lib/anjuta/libanjuta-sourceview.so
 lib/anjuta/libanjuta-starter.so
-%%SVN%%lib/anjuta/libanjuta-subversion.so
+%%SUBVERSION%%lib/anjuta/libanjuta-subversion.so
 lib/anjuta/libanjuta-symbol-db.so
 %%TERMINAL%%lib/anjuta/libanjuta-terminal.so
 lib/anjuta/libanjuta-tools.so
@@ -244,7 +244,7 @@ man/man1/anjuta.1.gz
 %%DATADIR%%/glade/anjuta-project-wizard.ui
 %%DATADIR%%/glade/anjuta-quick-open.ui
 %%DATADIR%%/glade/anjuta-run-program.ui
-%%SVN%%%%DATADIR%%/glade/anjuta-subversion.ui
+%%SUBVERSION%%%%DATADIR%%/glade/anjuta-subversion.ui
 %%DATADIR%%/glade/anjuta-symbol-db.ui
 %%TERMINAL%%%%DATADIR%%/glade/anjuta-terminal-plugin.ui
 %%DATADIR%%/glade/anjuta-tools.ui
@@ -462,7 +462,7 @@ man/man1/anjuta.1.gz
 %%DATADIR%%/ui/anjuta-quick-open.xml
 %%DATADIR%%/ui/anjuta-run-program.xml
 %%DATADIR%%/ui/anjuta-sourceview.xml
-%%SVN%%%%DATADIR%%/ui/anjuta-subversion.xml
+%%SUBVERSION%%%%DATADIR%%/ui/anjuta-subversion.xml
 %%DATADIR%%/ui/anjuta-symbol-db-plugin.xml
 %%TERMINAL%%%%DATADIR%%/ui/anjuta-terminal-plugin.xml
 %%DATADIR%%/ui/anjuta-tools.xml
@@ -2306,8 +2306,8 @@ share/pixmaps/anjuta/anjuta-step-out-16.png
 share/pixmaps/anjuta/anjuta-step-out-24.png
 share/pixmaps/anjuta/anjuta-step-over-16.png
 share/pixmaps/anjuta/anjuta-step-over-24.png
-%%SVN%%share/pixmaps/anjuta/anjuta-subversion-plugin-48.png
-%%SVN%%share/pixmaps/anjuta/anjuta-subversion-plugin.svg
+%%SUBVERSION%%share/pixmaps/anjuta/anjuta-subversion-plugin-48.png
+%%SUBVERSION%%share/pixmaps/anjuta/anjuta-subversion-plugin.svg
 share/pixmaps/anjuta/anjuta-swap-16.png
 share/pixmaps/anjuta/anjuta-swap-24.png
 share/pixmaps/anjuta/anjuta-symbol-db-plugin-16.png

@@ -1,0 +1,6 @@
+uharfbuzz is an awesome tool for shaping text in Python. But it wraps the
+Harfbuzz C interface quite closely, so still requires you to perform a bunch of
+boilerplate operations before you can get on with the shaping. vharfbuzz allows
+you a slightly more high-level interface to the text shaping process.
+
+WWW: https://github.com/simoncozens/vharfbuzz

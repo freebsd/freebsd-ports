@@ -5,7 +5,7 @@ PORTVERSION=	5.06
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
-MAINTAINER=	ohauer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	sFlow capture and sFlow-to-NetFlow conversion tool
 
 LICENSE=	InMon

@@ -1,4 +1,3 @@
-PORTREVISION=	5
 PKGNAMESUFFIX=		-activesync
 
 MAINTAINER=		acm@FreeBSD.org

@@ -234,16 +234,16 @@ rancid:*:286:286::0:0:RANCID daemon user:/usr/local/var/rancid:/bin/sh
 webdis:*:287:287::0:0:webdis daemon user:/nonexistent:/usr/sbin/nologin
 ntopng:*:288:288::0:0:ntopng daemon user:/nonexistent:/usr/sbin/nologin
 victoria-metrics:*:289:289::0:0:VictoriaMetrics user:/nonexistent:/usr/sbin/nologin
-# free: 290
-# free: 291
-# free: 292
+_gmid:*:290:290::0:0:gmid daemon user:/var/empty:/usr/sbin/nologin
+pydio:*:291:291::0:0:pydio cells user:/var/pydio:/bin/sh
+sftpgo:*:292:292::0:0:SFTPGo user:/nonexistent:/usr/sbin/nologin
 # free: 293
 # free: 294
 # free: 295
 # free: 296
 # free: 297
 # free: 298
-# free: 299
+owncast:*:299:299::0:0:& daemon:/nonexistent:/usr/sbin/nologin
 backuppc:*:300:300::0:0:BackupPC pseudo-user:/nonexistent:/usr/sbin/nologin
 # free: 301
 netdata:*:302:302::0:0:NetData Daemon:/var/cache/netdata:/usr/sbin/nologin
@@ -301,7 +301,7 @@ _iodined:*:353:353::0:0:Iodine Daemon:/nonexistent:/usr/sbin/nologin
 jackett:*:354:354::0:0:Jackett Torznab Proxy Daemon:/nonexistent:/usr/sbin/nologin
 nzbhydra2:*:355:355::0:0:NZBHydra 2 Daemon:/nonexistent:/usr/sbin/nologin
 lidarr:*:356:356::0:0:Lidarr Daemon:/nonexistent:/usr/sbin/nologin
-# free: 357
+bazarr:*:357:357::0:0:Bazarr Daemon:/nonexistent:/usr/sbin/nologin
 # free: 358
 # free: 359
 v2ray:*:360:360::0:0:V2Ray Daemon:/nonexistent:/usr/sbin/nologin
@@ -822,7 +822,7 @@ bitmark-recorder:*:873:873::0:0:Bitmark Property Recorder:/var/lib/recorderd:/us
 librespeed:*:874:874::0:0:LibreSpeed user:/nonexistent:/usr/sbin/nologin
 # free: 875
 # free: 876
-# free: 877
+gemserv:*:877:877::0:0:gemserv user:/nonexistent:/usr/sbin/nologin
 gerbera:*:878:878::0:0:Gerbera DLNA Media Server:/nonexistent:/usr/sbin/nologin
 _encrypted-dns:*:879:879::0:0:encrypted-dns user:/var/empty:/usr/sbin/nologin
 pyspf-milter:*:880:880::0:0:pyspf-milter:/nonexistent:/usr/sbin/nologin

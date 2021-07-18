@@ -1,5 +1,5 @@
 PORTNAME=	vcf2hap
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.3
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -8,7 +8,7 @@ COMMENT=	Generate .hap file from VCF for haplohseq
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	biolibc>=0.1.1:biology/biolibc
+LIB_DEPENDS=	libbiolibc.so:biology/biolibc libxtend.so:devel/libxtend
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab

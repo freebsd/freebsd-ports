@@ -5,7 +5,7 @@
  DEPFILES        := $(patsubst %.cpp, %.d, $(SRCFILES))
  WARNINGS        ?= -Wall -Wextra -pedantic
 -OPTIMS          ?= -march=native -mtune=native -Ofast
-+OPTIMS          ?= -mtune=native -Ofast
++OPTIMS          ?= -Ofast
  DMACROS         := -DNDEBUG -DUNIX -DPACKAGE_VERSION=\"$(DISTVER)\"
  INCDIRS         := -I'./include'
  CXXFLAGS        += -std=c++11 $(WARNINGS) $(OPTIMS)

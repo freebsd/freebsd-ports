@@ -1,4 +1,4 @@
---- apps/app_restore_service_browsertest.cc.orig	2021-03-12 23:57:14 UTC
+--- apps/app_restore_service_browsertest.cc.orig	2021-04-14 18:40:47 UTC
 +++ apps/app_restore_service_browsertest.cc
 @@ -148,7 +148,7 @@ IN_PROC_BROWSER_TEST_F(PlatformAppBrowserTest, FileAcc
  }

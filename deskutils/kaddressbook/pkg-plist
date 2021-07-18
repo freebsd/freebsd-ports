@@ -66,6 +66,8 @@ share/kontact/ksettingsdialog/kaddressbook.setdlg
 share/kservices5/kaddressbook_config_plugins.desktop
 share/kservices5/kontact/kaddressbookplugin.desktop
 share/locale/ar/LC_MESSAGES/kaddressbook.mo
+share/locale/az/LC_MESSAGES/kaddressbook.mo
+share/locale/be/LC_MESSAGES/kaddressbook.mo
 share/locale/bg/LC_MESSAGES/kaddressbook.mo
 share/locale/bs/LC_MESSAGES/kaddressbook.mo
 share/locale/ca/LC_MESSAGES/kaddressbook.mo
@@ -107,13 +109,18 @@ share/locale/pt/LC_MESSAGES/kaddressbook.mo
 share/locale/pt_BR/LC_MESSAGES/kaddressbook.mo
 share/locale/ro/LC_MESSAGES/kaddressbook.mo
 share/locale/ru/LC_MESSAGES/kaddressbook.mo
+share/locale/se/LC_MESSAGES/kaddressbook.mo
 share/locale/sk/LC_MESSAGES/kaddressbook.mo
 share/locale/sl/LC_MESSAGES/kaddressbook.mo
+share/locale/sq/LC_MESSAGES/kaddressbook.mo
 share/locale/sr/LC_MESSAGES/kaddressbook.mo
 share/locale/sv/LC_MESSAGES/kaddressbook.mo
+share/locale/ta/LC_MESSAGES/kaddressbook.mo
+share/locale/tg/LC_MESSAGES/kaddressbook.mo
 share/locale/tr/LC_MESSAGES/kaddressbook.mo
 share/locale/ug/LC_MESSAGES/kaddressbook.mo
 share/locale/uk/LC_MESSAGES/kaddressbook.mo
+share/locale/vi/LC_MESSAGES/kaddressbook.mo
 share/locale/zh_CN/LC_MESSAGES/kaddressbook.mo
 share/locale/zh_TW/LC_MESSAGES/kaddressbook.mo
 share/metainfo/org.kde.kaddressbook.appdata.xml

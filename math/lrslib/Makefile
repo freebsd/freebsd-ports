@@ -1,6 +1,5 @@
 PORTNAME=	lrslib
-DISTVERSION=	071
-PORTREVISION=	1
+PORTVERSION=	071a
 CATEGORIES=	math
 MASTER_SITES=	http://cgm.cs.mcgill.ca/~avis/C/lrslib/archive/
 
@@ -11,6 +10,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_i386=	error: __int128 is not supported on this target
+BROKEN_powerpc=	error: __int128 is not supported on this target
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 

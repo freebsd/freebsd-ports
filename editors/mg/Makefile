@@ -1,7 +1,7 @@
 # Created by: Dima Dorfman <dima@unixfreak.org>
 
 PORTNAME=	mg
-PORTVERSION=	6.8.1
+PORTVERSION=	6.9
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/ibara/mg/releases/download/mg-${PORTVERSION}/

@@ -1,0 +1,7 @@
+git-lab is an extension for the git command-line tool that
+helps with interacting with a gitlab instance (e.g. gitlab.com,
+or GNOME or KDE gitlab instances). It adds a `git lab` 
+subcommand to git, which allows you to manage issues, 
+merge requests and more from the command-line.
+
+WWW: https://invent.kde.org/sdk/git-lab

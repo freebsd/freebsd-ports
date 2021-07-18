@@ -1,6 +1,6 @@
---- src/dhcp_probe.c.orig	2015-01-03 11:16:23.000000000 -0500
-+++ src/dhcp_probe.c	2015-01-17 11:44:33.000000000 -0500
-@@ -69,7 +69,7 @@
+--- src/dhcp_probe.c.orig	2021-01-18 19:17:29 UTC
++++ src/dhcp_probe.c
+@@ -70,7 +70,7 @@ pcap_dumper_t *pcap_dump_d = NULL;	/* libpcap - dump d
  enum dhcp_flavor_t packet_flavors[] = {BOOTP, DHCP_INIT, DHCP_SELECTING, DHCP_INIT_REBOOT, DHCP_REBINDING};
  
  char *ifname;
@@ -9,46 +9,16 @@
  
  int use_8021q = 0;
  int vlan_id = 0;
-@@ -96,7 +96,7 @@
- 	bpf_u_int32 netnumber,  netmask;
+@@ -95,7 +95,7 @@ main(int argc, char **argv)
+ 	/* for libpcap */
  	struct bpf_program bpf_code;
  	int linktype;
 -	char pcap_errbuf[PCAP_ERRBUF_SIZE], pcap_errbuf2[PCAP_ERRBUF_SIZE];
 +	char pcap_errbuf[PCAP_ERRBUF_SIZE];
  
- 	/* for libnet */
- 	char libnet_errbuf[LIBNET_ERRBUF_SIZE];
-@@ -228,6 +228,7 @@
- 		/* ignore SIGHUP */
- 		sigemptyset(&sa.sa_mask);
- 		sa.sa_handler = SIG_IGN;
-+		sa.sa_flags = 0;
- 		if (sigaction(SIGHUP, &sa, NULL) < 0) {
- 			report(LOG_ERR, "sigaction: %s", get_errmsg());
- 			my_exit(1, 0, 1);
-@@ -236,6 +237,7 @@
- 	/* ignore SIGUSR1 */
- 	sigemptyset(&sa.sa_mask);
- 	sa.sa_handler = SIG_IGN;
-+	sa.sa_flags = 0;
- 	if (sigaction(SIGUSR1, &sa, NULL) < 0) {
- 		report(LOG_ERR, "sigaction: %s", get_errmsg());
- 		my_exit(1, 0, 1);
-@@ -243,12 +245,12 @@
- 	/* ignore SIGUSR2 */
- 	sigemptyset(&sa.sa_mask);
- 	sa.sa_handler = SIG_IGN;
-+	sa.sa_flags = 0;
- 	if (sigaction(SIGUSR2, &sa, NULL) < 0) {
- 		report(LOG_ERR, "sigaction: %s", get_errmsg());
- 		my_exit(1, 0, 1);
- 	}
- 
--
- 	/* write pid file as soon as possible after (possibly) forking */
- 	if ((pid_fp = open_for_writing(pid_file)) == NULL) {
- 		report(LOG_ERR, "could not open pid file %s for writing", pid_file);
-@@ -401,7 +403,7 @@
+ 	/* get progname = last component of argv[0] */
+ 	prog = strrchr(argv[0], '/');
+@@ -416,7 +416,7 @@ main(int argc, char **argv)
  		*/
  		pcap_errbuf[0] = '\0'; /* so we can tell if a warning was produced on success */
  		if ((pd_template = pcap_open_live(ifname, snaplen, 0, 1, pcap_errbuf)) == NULL) {
@@ -57,7 +27,7 @@
  			my_exit(1, 1, 1);
  		}
  		if (pcap_errbuf[0] != '\0')
-@@ -470,8 +472,8 @@
+@@ -485,8 +485,8 @@ main(int argc, char **argv)
  		   it's possible there's a server out there that does it wrong, and might therefore mistakenly
  		   send responses to ether_src.  So lets also listen promiscuously if ether_src != my_eaddr.
  		*/
@@ -68,32 +38,37 @@
  			promiscuous = 1;
  		else
  			promiscuous = 0;
-@@ -699,8 +701,8 @@
+@@ -775,9 +775,9 @@ process_response(u_char *user, const struct pcap_pkthd
     When we return, control returns to pcap_dispatch() so it can continue capturing packets.
  */
  
 -	struct ether_header *ether_header; /* access ethernet header */
--	struct ip *ip_header;				/* access ip header */
 +	struct libnet_ethernet_hdr *ether_header; /* access ethernet header */
+ 	struct my_ether_vlan_header *my_ether_vlan_header; /* possibly access ethernet 802.1Q header */
+-	struct ip *ip_header;				/* access ip header */
 +	struct libnet_ipv4_hdr *ip_header;				/* access ip header */
  	bpf_u_int32 ether_len;		/* bpf_u_int32 from pcap.h */
  	struct udphdr *udp_header; /* access UDP header */
  	struct bootp *bootp_pkt; /* access bootp/dhcp packet */
-@@ -710,7 +712,7 @@
+@@ -787,10 +787,10 @@ process_response(u_char *user, const struct pcap_pkthd
  	int isLegalServer;			/* boolean */
  
  	/* fields parsed out from packet*/
 -	struct ether_addr ether_dhost, ether_shost;
 +	struct libnet_ether_addr ether_dhost, ether_shost;
+ 	uint16_t ether_type, ether_type_inner;
+ 	uint16_t ether_vid;
+-	size_t ether_or_vlan_header_len; 	/* = sizeof(struct ether_header) or sizeof(struct my_ether_vlan_header) depending on response packet */
++	size_t ether_or_vlan_header_len; 	/* = sizeof(struct libnet_ethernet_hdr) or sizeof(struct my_ether_vlan_header) depending on response packet */
  	struct in_addr ip_src, ip_dst, yiaddr;
  	/* string versions of same */
  	char ether_dhost_str[MAX_ETHER_ADDR_STR], ether_shost_str[MAX_ETHER_ADDR_STR];
-@@ -729,13 +731,13 @@
+@@ -810,13 +810,13 @@ process_response(u_char *user, const struct pcap_pkthd
  		return;
  	}
  
--	if ((ether_len < sizeof(sizeof(struct ether_header))) && (debug > 1)) {
-+	if ((ether_len < sizeof(sizeof(struct libnet_ethernet_hdr))) && (debug > 1)) {
+-	if ((ether_len < sizeof(struct ether_header)) && (debug > 1)) {
++	if ((ether_len < sizeof(struct libnet_ethernet_hdr)) && (debug > 1)) {
  		report(LOG_WARNING, "interface %s, short packet (got %d bytes, smaller than an Ethernet header)", ifname, ether_len);
  		return;
  	}
@@ -102,53 +77,34 @@
 -	ether_header = (struct ether_header *) packet;
 +	ether_header = (struct libnet_ethernet_hdr *) packet;
  
- 	/* parse fields out of ethernet header for easier access */
- 	bcopy(&(ether_header->ether_dhost), &ether_dhost, sizeof(ether_dhost));
-@@ -747,13 +749,13 @@
- 	if (debug > 10)
- 		report(LOG_DEBUG, "     interface %s, from ether %s to %s", ifname, ether_shost_str, ether_dhost_str);
+     /* we may use my_ether_vlan_header to access the Ethernet 801.Q header */
+     my_ether_vlan_header = (struct my_ether_vlan_header *) packet;
+@@ -835,7 +835,7 @@ process_response(u_char *user, const struct pcap_pkthd
+ 		report(LOG_DEBUG, "     interface %s, from ether %s to %s type %s", ifname, ether_shost_str, ether_dhost_str, ether_type_str);
  
--	if (ether_len < sizeof(sizeof(struct ether_header)) + sizeof(struct ip)) {
-+	if (ether_len < sizeof(sizeof(struct libnet_ethernet_hdr)) + sizeof(struct libnet_ipv4_hdr)) {
- 		report(LOG_WARNING, "interface %s, ether src %s: short packet (got %d bytes, smaller than IP header in Ethernet)", ifname, ether_shost_str, ether_len);
+ 	if (ether_type == ETHERTYPE_IP) {
+-		ether_or_vlan_header_len = sizeof(struct ether_header);
++		ether_or_vlan_header_len = sizeof(struct libnet_ethernet_hdr);
+ 
+ 	} else if (ether_type == ETHERTYPE_VLAN) {
+ 
+@@ -880,13 +880,13 @@ process_response(u_char *user, const struct pcap_pkthd
+ 	   Else if the frame is tagged, ether_or_vlan_header_len is now set to the length of the ethernet VLAN header.
+ 	*/
+ 
+-	if (ether_len < ether_or_vlan_header_len + sizeof(struct ip)) {
++	if (ether_len < ether_or_vlan_header_len + sizeof(struct libnet_ipv4_hdr)) {
+ 		report(LOG_WARNING, "interface %s, ether src %s type %s: short packet (got %d bytes, smaller than IP header in Ethernet)", ifname, ether_shost_str, ether_type_str, ether_len);
  		return;
  	}	
  
  	/* we use ip_header to access the IP header */
--	ip_header = (struct ip *) (packet + sizeof(struct ether_header));
-+	ip_header = (struct libnet_ipv4_hdr *) (packet + sizeof(struct libnet_ethernet_hdr));
+-	ip_header = (struct ip *) (packet + ether_or_vlan_header_len);
++	ip_header = (struct libnet_ipv4_hdr *) (packet + ether_or_vlan_header_len);
  
  	/* parse fields out of ip header for easier access */
  	bcopy(&(ip_header->ip_src), &ip_src, sizeof(ip_header->ip_src));
-@@ -768,15 +770,15 @@
- 	ip_header_len_bytes = ip_header->ip_hl << 2;
- 
- 	/* Repeat the packet size check (through IP header), but taking into account ip_header_len_bytes */
--	if (ether_len < sizeof(sizeof(struct ether_header)) + ip_header_len_bytes) {
-+	if (ether_len < sizeof(sizeof(struct libnet_ethernet_hdr)) + ip_header_len_bytes) {
- 		report(LOG_WARNING, "interface %s, short packet (got %d bytes, smaller than IP header in Ethernet)", ifname, ether_len);
- 		return;
- 	}	
- 
- 	/* we use udp_header to access the UDP header */
--	udp_header = (struct udphdr *) (packet + sizeof(struct ether_header) + ip_header_len_bytes);
-+	udp_header = (struct udphdr *) (packet + sizeof(struct libnet_ethernet_hdr) + ip_header_len_bytes);
- 
--	if (ether_len <  sizeof(sizeof(struct ether_header)) + ip_header_len_bytes + sizeof(struct udphdr)) {
-+	if (ether_len <  sizeof(sizeof(struct libnet_ethernet_hdr)) + ip_header_len_bytes + sizeof(struct udphdr)) {
- 		report(LOG_WARNING, "interface %s ether src %s: short packet (got %d bytes, smaller than UDP/IP header in Ethernet)", ifname, ether_shost_str, ether_len);
- 		return;
- 	}	
-@@ -800,7 +802,7 @@
- 	}
- 
- 	/* we use bootp_pkt to access the bootp/dhcp packet */
--	bootp_pkt = (struct bootp *) (packet + sizeof(struct ether_header) + ip_header_len_bytes + sizeof(struct udphdr));
-+	bootp_pkt = (struct bootp *) (packet + sizeof(struct libnet_ethernet_hdr) + ip_header_len_bytes + sizeof(struct udphdr));
- 
- 	/* Make sure the packet is in response to our query, otherwise ignore it.
- 	   Our query had bootp_htype=HTYPE_ETHER, bootp_hlen=HLEN_ETHER, and bootp_chaddr=GetChaddr().
-@@ -820,7 +822,7 @@
+@@ -953,7 +953,7 @@ process_response(u_char *user, const struct pcap_pkthd
  
  	if (bcmp(bootp_pkt->bootp_chaddr, GetChaddr(), HLEN_ETHER)) {
  		if (debug > 10) {

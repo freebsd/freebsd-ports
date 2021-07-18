@@ -1,5 +1,5 @@
 PORTNAME=	html-xml-utils
-PORTVERSION=	7.9
+PORTVERSION=	8.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.w3.org/Tools/HTML-XML-utils/
 
@@ -13,19 +13,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		gmake iconv localbase shebangfix
-GNU_CONFIGURE=	yes
 
 SHEBANG_FILES=	${WRKSRC}/hxcite-mkbib
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LDFLAGS=${ICONV_LIB}
 
-OPTIONS_SUB=		yes
 OPTIONS_DEFINE=		CURL IDN IDN2 DOCS
-CURL_CONFIGURE_WITH=	libcurl=${LOCALBASE}
+OPTIONS_SUB=		yes
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-IDN_CONFIGURE_WITH=	libidn=${LOCALBASE}
+CURL_CONFIGURE_WITH=	libcurl=${LOCALBASE}
 IDN_LIB_DEPENDS=	libidn.so:dns/libidn
-IDN2_CONFIGURE_WITH=	libidn2=${LOCALBASE}
+IDN_CONFIGURE_WITH=	libidn=${LOCALBASE}
 IDN2_DESC=		Use dns/libidn2 (IDNA2008 library)
 IDN2_LIB_DEPENDS=	libidn2.so:dns/libidn2
+IDN2_CONFIGURE_WITH=	libidn2=${LOCALBASE}
 
 .include <bsd.port.mk>

@@ -80,6 +80,7 @@
     SUBDIR += cyrus-imapd25
     SUBDIR += cyrus-imapd30
     SUBDIR += cyrus-imapd32
+    SUBDIR += cyrus-imapd34
     SUBDIR += cyrus2courier
     SUBDIR += cyrus2dovecot
     SUBDIR += davmail
@@ -475,6 +476,7 @@
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix-postfwd
     SUBDIR += postfix-sasl
+    SUBDIR += postfix35
     SUBDIR += postfixadmin
     SUBDIR += postgrey
     SUBDIR += postsrsd
@@ -487,6 +489,7 @@
     SUBDIR += py-alot
     SUBDIR += py-authheaders
     SUBDIR += py-authres
+    SUBDIR += py-django-mailbox
     SUBDIR += py-django-mailman3
     SUBDIR += py-dkimpy
     SUBDIR += py-email-validator
@@ -595,6 +598,7 @@
     SUBDIR += rubygem-premailer-rails-rails5
     SUBDIR += rubygem-premailer-rails-rails52
     SUBDIR += rubygem-premailer-rails-rails60
+    SUBDIR += rubygem-premailer-rails-rails61
     SUBDIR += rubygem-rmail
     SUBDIR += rubygem-roadie
     SUBDIR += rubygem-roadie-rails-rails4

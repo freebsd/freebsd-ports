@@ -9,11 +9,16 @@ DISTNAME=	${PORTNAME}-spec${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Transaction API (JTA)
 
+# Converted from NO_CDROM
+LICENSE=	jta
+LICENSE_NAME=	jta
+LICENSE_TEXT=	See the license
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 USES=		zip
 USE_JAVA=	yes
 
 NO_BUILD=	yes
-NO_CDROM=	See the license
 DOWNLOAD_URL=	http://download.oracle.com/otndocs/jcp/7286-jta-${PORTVERSION}-spec-oth-JSpec/?submit=Download
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar

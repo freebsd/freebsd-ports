@@ -3,14 +3,13 @@
 PORTNAME=	mozc
 PORTVERSION=	2.23.2815.102.01
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION?=	3
 CATEGORIES=	japanese
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT?=	Mozc Japanese Input Method, Server
 
-BUILD_DEPENDS=	ninja:devel/ninja \
-		${PYTHON_PKGNAMEPREFIX}gyp>=20200512:devel/py-gyp@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gyp>=20200512:devel/py-gyp@${PY_FLAVOR}
 EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		libzinnia.so:japanese/zinnia
@@ -25,8 +24,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hrs-allbsd
 GH_TUPLE=	hiroyuki-komatsu:japanese-usage-dictionary:e5b3425:udic
 
-USES=		compiler:c++11-lang pkgconfig gmake \
-		tar:bzip2 python:3.5+,build shebangfix
+USES=		compiler:c++11-lang gmake ninja:build pkgconfig \
+		python:3.5+,build shebangfix tar:bzip2
 SHEBANG_FILES=	src/build_mozc.py
 BUILD_WRKSRC=	${WRKSRC}/src
 

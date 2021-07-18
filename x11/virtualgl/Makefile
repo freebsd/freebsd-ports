@@ -2,7 +2,7 @@
 
 PORTNAME=	virtualgl
 PORTVERSION=	2.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	VirtualGL-${PORTVERSION}
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libturbojpeg.so:graphics/libjpeg-turbo \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le
 
 CMAKE_INSTALL_PREFIX=	${LOCALBASE}/VirtualGL
 DOCSDIR=	${LOCALBASE}/VirtualGL/doc
@@ -46,7 +46,7 @@ XVIDEO_USE=	XORG=xv
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
+.if ${ARCH} == "armv7" || ${ARCH} == "i386" || ${ARCH} == "powerpc"
 PLIST_SUB+=	I386=""
 PLIST_SUB+=	AMD64="@comment "
 .else

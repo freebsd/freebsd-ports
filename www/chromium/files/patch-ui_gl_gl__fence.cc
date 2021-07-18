@@ -1,4 +1,4 @@
---- ui/gl/gl_fence.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/gl/gl_fence.cc.orig	2021-04-14 18:41:39 UTC
 +++ ui/gl/gl_fence.cc
 @@ -18,7 +18,7 @@
  #include "ui/gl/gl_fence_apple.h"

@@ -1,6 +1,6 @@
---- ui/native_theme/native_theme_base.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/native_theme/native_theme_base.cc.orig	2021-05-12 22:06:47 UTC
 +++ ui/native_theme/native_theme_base.cc
-@@ -258,7 +258,7 @@ void NativeThemeBase::Paint(cc::PaintCanvas* canvas,
+@@ -274,7 +274,7 @@ void NativeThemeBase::Paint(cc::PaintCanvas* canvas,
        break;
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

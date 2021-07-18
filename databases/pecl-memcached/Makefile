@@ -16,14 +16,21 @@ LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 USES=		php:pecl pkgconfig
 USE_PHP=	json:build session:build
 
-CONFIGURE_ARGS=	--with-libmemcached-dir=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-memcached-json \
+		--enable-memcached-protocol \
+		--enable-memcached-session \
+		--with-libmemcached-dir=${LOCALBASE}
 
-OPTIONS_DEFINE=	IGBINARY SASL
+OPTIONS_DEFINE=	IGBINARY MSGPACK SASL
 OPTIONS_DEFAULT=SASL
 IGBINARY_DESC=	Binary serializer support
+MSGPACK_DESC=	MessagePack serializer support
 
 IGBINARY_CONFIGURE_ENABLE=	memcached-igbinary
 IGBINARY_USE=		PHP=igbinary:build
+MSGPACK_BUILD_DEPENDS=	${PECL_PKGNAMEPREFIX}msgpack>=0:devel/pecl-msgpack@${PHP_FLAVOR}
+MSGPACK_CONFIGURE_ENABLE=	memcached-msgpack
+MSGPACK_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}msgpack>=0:devel/pecl-msgpack@${PHP_FLAVOR}
 SASL_CONFIGURE_ENABLE=	memcached-sasl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 

@@ -16,7 +16,7 @@ COMMENT=	Educational arcade game starring Tux
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/COPYING_GPL3
 
-LIB_DEPENDS=	libpng16.so:graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gmake gnome iconv localbase perl5 pkgconfig sdl
 USE_GNOME=	libxml2

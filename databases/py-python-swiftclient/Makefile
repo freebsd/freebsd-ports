@@ -1,7 +1,7 @@
 # Created by: Mikolaj Golub <trociny@FreeBSD.org>
 
 PORTNAME=	python-swiftclient
-PORTVERSION=	3.11.0
+PORTVERSION=	3.12.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

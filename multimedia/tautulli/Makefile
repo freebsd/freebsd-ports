@@ -1,7 +1,7 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 PORTNAME=	tautulli
-PORTVERSION=	2.5.5
+PORTVERSION=	2.7.3
 DISTVERSIONPREFIX=v
 CATEGORIES=	multimedia python
 

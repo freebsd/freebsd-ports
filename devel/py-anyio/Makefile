@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	anyio
-PORTVERSION=	2.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,16 +21,14 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	CURIO TRIO
-CURIO_DESC=	Use curio as backend
+OPTIONS_DEFINE=	TRIO
 TRIO_DESC=	Use trio as backend
 
-CURIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}curio>=1.4:devel/py-curio@${PY_FLAVOR}
 TRIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trio>=0.16:net/py-trio@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3800
+.if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 .endif
 

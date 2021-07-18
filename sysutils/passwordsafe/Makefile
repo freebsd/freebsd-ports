@@ -1,5 +1,6 @@
 PORTNAME=	passwordsafe
 DISTVERSION=	1.12.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -45,7 +46,7 @@ ALL_TARGET=	unicoderelease
 
 .include <bsd.port.options.mk>
 
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+.if (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c++11-lang

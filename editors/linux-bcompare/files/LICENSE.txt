@@ -1,0 +1,154 @@
+License Agreement
+
+https://www.scootersoftware.com/v4help/index.html?support_ordering_and_license.html
+
+Your use of Beyond Compare is governed by the following Terms and
+Conditions:
+
+Acceptance of License Agreement
+
+You should carefully read the following terms and conditions before
+using Beyond Compare 4 (the "Software").  Unless you have a different
+license agreement signed by Scooter Software, your use of this software
+indicates your agreement to these terms and conditions.  If you do not
+accept all of these terms and conditions, you must cease using the
+Software immediately.
+
+Copyright
+
+Customer acknowledges that the Software, License Key and accompanying
+user documentation ("Documentation") are copyrighted works owned by
+Scooter Software and that Customer has no rights in the foregoing except
+as expressly granted herein.
+
+Free 30-Day Trial
+
+This is not free software.  Scooter Software hereby grants you a
+non-exclusive, non-transferable, limited license to use the Software
+free of charge for a period of thirty (30) days.  Use of the Software
+beyond the thirty-day (30-day) trial period requires the purchase of a
+License Key as described below.  Use of the Software beyond the
+thirty-day (30-day) trial period without purchase of a License Key is a
+violation of U.S. and international copyright laws.
+
+License Key
+
+A unique key that will allow you to use the Software beyond the
+thirty-day (30-day) free trial period ("License Key") may be purchased
+from the Scooter Software website, which is currently
+http://www.scootersoftware.com.  A License Key may be purchased for
+single or multiple users, all users at a named site, or an entire
+enterprise.  A License Key is further categorized by feature set
+(Standard Edition or Pro Edition), and operating system platform
+(Windows Platform, Mac Platform, Linux Platform, or Multi Platform).  A
+price list on the Scooter Software website details pricing for all
+license options.  Upon purchase of a License Key, Scooter Software
+hereby grants you a non-exclusive, non-transferable license to use the
+Software with the applicable feature set on the applicable operating
+system platform as follows:
+
+   Per-User License Key:  A Per-User License Key may be purchased for a
+   specific quantity of users.  Each user of the total quantity may be
+   either (a) a person who has access to the Software on any number of
+   computers, or (b) a computer on which the Software will be installed
+   for use by any number of persons, one at a time, while physically
+   present at the computer.  Each person so licensed must be the
+   Customer, an employee of the Customer, an employee of a Customer's
+   subsidiary company, or a third party consultant retained by the
+   Customer to perform information technology functions (each, a "Third
+   Party") to use the Software solely for Customer's internal business
+   operations and benefit, and for no other purpose whatsoever.
+   Customer shall ensure that such Third Party complies with the terms
+   of this License Agreement and will be responsible for any breach by
+   such Third Party.
+
+   Site License Key:  An unlimited user, single-location License Key may
+   be used at Customer locations within a 100-mile radius of the site
+   identified in the License Key (the "Site"), by any and all of
+   Customer's employees while personally present at the Site.  This
+   license is likewise granted to Customer's employees who typically
+   work at the Site, while performing Customer work at other locations
+   such as client locations or home.  Customer shall have the right to
+   sublicense its rights under this License Agreement to third party
+   consultants that it retains to perform information technology
+   functions (each, an "Onsite Consultant"), while personally present at
+   the Site to use the Software solely for Customer's internal business
+   operations and benefit, and for no other purpose whatsoever.
+   Customer shall ensure that such Onsite Consultant complies with the
+   terms of this License Agreement and will be responsible for any
+   breach by such Onsite Consultant.
+
+   Enterprise License Key:  An enterprise-wide ("Enterprise") License
+   Key may be used world-wide, by any and all of Customer's employees.
+   Customer shall have the right to sublicense its rights under this
+   License Agreement to third party consultants that it retains to
+   perform information technology functions (each, an "Enterprise
+   Consultant"), while personally present at any Customer location to
+   use the Software solely for Customer's internal business operations
+   and benefit, and for no other purpose whatsoever.  Customer shall
+   ensure that such Enterprise Consultant complies with the terms of
+   this License Agreement and will be responsible for any breach by such
+   Enterprise Consultant.
+
+You shall be responsible for maintaining the License Key in a safe
+location and are specifically prohibited from distributing the License
+Key, intentionally or unintentionally, to any third party not authorized
+by this License Agreement.  Upon loss or distribution of the License
+Key, Customer shall be required to pay a reinstatement fee at Scooter
+Software's discretion.
+
+Distribution of the Software
+
+Provided that you do not copy or distribute the License Key, and you
+include a copy of this License Agreement, you may (a) make copies of the
+Software; (b) give exact, unmodified copies of the Software to anyone;
+and (c) distribute the Software in its unmodified form via electronic
+means.  You are specifically prohibited from charging any fees for any
+such copies or distributions.
+
+Term and Termination
+
+You may continue to use the Software for as long as you comply with the
+terms and conditions of this License Agreement.  Scooter Software may
+terminate this License Agreement immediately upon notice to you in the
+event that Scooter Software has reason to believe you have breached this
+License Agreement.  Upon termination, you shall immediately cease all
+use of the Software, License Key and Documentation and shall not be
+entitled to a refund of any fees paid.
+
+Warranties
+
+Scooter Software warrants and represents that: (a) it has all right,
+title and interest in the Software, the right to enter into and provide
+the license rights granted by this Agreement, and is not party to and
+will not enter into any agreement, covenant or encumbrance that
+conflicts with this Agreement; (b) the Software does not, to the best of
+Scooter Software’s knowledge, infringe upon or violate any patent,
+copyright, or trade secret or other proprietary right of any third
+party; (c) the advent of any date or year shall not adversely affect the
+performance of the Software; and (d) the Software is not contaminated by
+harmful code (e.g., self-propagating program instructions commonly
+called viruses, worms or Trojans).
+
+General Disclaimer
+
+Except for the limited warranties set forth herein, THE SOFTWARE AND
+DOCUMENTATION ARE PROVIDED "AS IS".  TO THE MAXIMUM EXTENT PERMITTED BY
+APPLICABLE LAW, SCOOTER SOFTWARE DISCLAIMS ALL WARRANTIES, EITHER
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF
+MERCHANTABILITY, NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE.
+ANY LIABILITY OF SCOOTER SOFTWARE WILL BE LIMITED EXCLUSIVELY TO REFUND
+OF THE PURCHASE PRICE.
+
+Miscellaneous Provisions
+
+The validity and interpretation of this Agreement shall be governed by
+the laws of the United States of America and the State of Wisconsin.
+Customer agrees that the state and federal courts located in the State
+of Wisconsin, Dane County, shall be the appropriate site of venue for
+actions relating to this Agreement, and hereby consents to the exclusive
+jurisdiction and venue of such courts.  If any provision of this
+Agreement is declared by a court of competent jurisdiction to be
+invalid, illegal or unenforceable, such provision or part thereof will
+be severed from the Agreement and the remaining provisions will remain
+in full force and effect.

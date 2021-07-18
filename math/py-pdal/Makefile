@@ -12,13 +12,12 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR} \
-		${LOCALBASE}/bin/cmake:devel/cmake \
-		${LOCALBASE}/bin/ninja:devel/ninja
+		cmake:devel/cmake
 LIB_DEPENDS=	libpdal_base.so:math/pdal
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
 		${PYNUMPY}
 
-USES=		compiler:c++11-lang python:3.6+
+USES=		compiler:c++11-lang ninja:build python:3.6+
 USE_PYTHON=	autoplist cython distutils
 
 post-install:

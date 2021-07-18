@@ -1,7 +1,8 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	libmediainfo
-PORTVERSION=	20.09
+PORTVERSION=	21.03
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet

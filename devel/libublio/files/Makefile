@@ -11,4 +11,6 @@ LIB=	ublio
 SHLIB_MAJOR=	1
 LIBDIR=	${PREFIX}/lib
 
+MK_PROFILE=	no
+
 .include <bsd.lib.mk>

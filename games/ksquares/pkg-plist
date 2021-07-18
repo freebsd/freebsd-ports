@@ -8,6 +8,7 @@ share/icons/hicolor/32x32/apps/ksquares.png
 share/icons/hicolor/48x48/apps/ksquares.png
 share/icons/hicolor/64x64/apps/ksquares.png
 share/locale/ar/LC_MESSAGES/ksquares.mo
+share/locale/be/LC_MESSAGES/ksquares.mo
 share/locale/bs/LC_MESSAGES/ksquares.mo
 share/locale/ca/LC_MESSAGES/ksquares.mo
 share/locale/ca@valencia/LC_MESSAGES/ksquares.mo
@@ -33,9 +34,9 @@ share/locale/ja/LC_MESSAGES/ksquares.mo
 share/locale/kk/LC_MESSAGES/ksquares.mo
 share/locale/km/LC_MESSAGES/ksquares.mo
 share/locale/ko/LC_MESSAGES/ksquares.mo
-share/locale/ml/LC_MESSAGES/ksquares.mo
 share/locale/lt/LC_MESSAGES/ksquares.mo
 share/locale/lv/LC_MESSAGES/ksquares.mo
+share/locale/ml/LC_MESSAGES/ksquares.mo
 share/locale/mr/LC_MESSAGES/ksquares.mo
 share/locale/nb/LC_MESSAGES/ksquares.mo
 share/locale/nds/LC_MESSAGES/ksquares.mo
@@ -46,8 +47,10 @@ share/locale/pt/LC_MESSAGES/ksquares.mo
 share/locale/pt_BR/LC_MESSAGES/ksquares.mo
 share/locale/ro/LC_MESSAGES/ksquares.mo
 share/locale/ru/LC_MESSAGES/ksquares.mo
+share/locale/se/LC_MESSAGES/ksquares.mo
 share/locale/sk/LC_MESSAGES/ksquares.mo
 share/locale/sl/LC_MESSAGES/ksquares.mo
+share/locale/sq/LC_MESSAGES/ksquares.mo
 share/locale/sr/LC_MESSAGES/ksquares.mo
 share/locale/sv/LC_MESSAGES/ksquares.mo
 share/locale/tr/LC_MESSAGES/ksquares.mo

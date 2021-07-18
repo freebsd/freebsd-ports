@@ -1,4 +1,4 @@
---- chrome/browser/media/webrtc/webrtc_log_uploader.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/media/webrtc/webrtc_log_uploader.cc.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/media/webrtc/webrtc_log_uploader.cc
 @@ -360,6 +360,8 @@ void WebRtcLogUploader::SetupMultipart(
    const char product[] = "Chrome_Android";

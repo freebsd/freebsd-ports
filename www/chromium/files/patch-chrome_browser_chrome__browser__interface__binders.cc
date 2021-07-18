@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_interface_binders.cc.orig	2021-03-12 23:57:17 UTC
+--- chrome/browser/chrome_browser_interface_binders.cc.orig	2021-06-09 22:13:55 UTC
 +++ chrome/browser/chrome_browser_interface_binders.cc
-@@ -138,7 +138,7 @@
+@@ -148,7 +148,7 @@
  #include "mojo/public/cpp/bindings/self_owned_receiver.h"
  #endif  // defined(OS_ANDROID)
  
@@ -9,7 +9,16 @@
      defined(OS_CHROMEOS)
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
-@@ -835,7 +835,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -612,7 +612,7 @@ void PopulateChromeFrameBinders(
+       base::BindRepeating(&BindCaptionContextHandler));
+ #endif
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+   if (base::FeatureList::IsEnabled(features::kWebAppWindowControlsOverlay) &&
+       !render_frame_host->GetParent()) {
+     map->Add<chrome::mojom::DraggableRegions>(
+@@ -846,7 +846,7 @@ void PopulateChromeWebUIFrameBinders(
    }
  #endif
  

@@ -2,7 +2,7 @@
 
 PORTNAME=	inspircd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.9.0
+DISTVERSION=	3.10.0
 CATEGORIES=	irc
 
 MAINTAINER=	driesm.michiels@gmail.com

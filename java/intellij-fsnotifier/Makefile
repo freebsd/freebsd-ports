@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	intellij-fsnotifier
 PORTVERSION=	20160221
 PORTREVISION=	6

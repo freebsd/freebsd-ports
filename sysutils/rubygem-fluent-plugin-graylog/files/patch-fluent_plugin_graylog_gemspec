@@ -1,0 +1,12 @@
+--- fluent-plugin-graylog.gemspec.orig  2021-05-20 20:05:36.608489000 +0000
++++ fluent-plugin-graylog.gemspec       2021-05-20 20:06:00.869370000 +0000
+@@ -22,7 +22,7 @@
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<fluentd>.freeze, ["~> 0.12.36"])
++      s.add_runtime_dependency(%q<fluentd>.freeze, [">= 0.12.36"])
+       s.add_development_dependency(%q<rake>.freeze, ["~> 10.0"])
+       s.add_development_dependency(%q<rspec>.freeze, ["~> 3.3"])
+       s.add_development_dependency(%q<test-unit>.freeze, ["~> 3.1"])
+

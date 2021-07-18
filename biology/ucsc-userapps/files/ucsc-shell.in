@@ -1,0 +1,28 @@
+#!/bin/sh -e
+
+ucsc_bin=%%PREFIX%%/userapps/bin
+cat << EOM
+
+Adding $ucsc_bin to \$PATH.
+
+UCSC kent utils contains commands that conflict with other tools, including
+at least "calc", "mktime", and "stringify".
+
+The other commands with these names may serve entirely different functions
+and will not be accessible while running this shell unless you refer to them
+by their absolute path name (e.g. /usr/local/bin/calc), which is not portable,
+BTW, so don't hard-code such paths into your scripts.
+
+Type "exit" or "Ctrl+D" to return to your normal shell.
+
+EOM
+
+export PATH=${ucsc_bin}:$PATH
+
+# FIXME: Update shell prompts to include (ucsc-kent)?
+
+# Invoke the user's chosen shell
+if echo $SHELL | egrep -q '/t?csh'; then
+    args='-f'
+fi
+exec $SHELL $args

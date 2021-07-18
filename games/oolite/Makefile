@@ -1,6 +1,6 @@
 PORTNAME=		oolite
 PORTVERSION=		1.88
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		games gnustep
 MASTER_SITES=		https://github.com/OoliteProject/oolite/releases/download/1.88/
 DISTNAME=		${PORTNAME}-source-${PORTVERSION}
@@ -56,6 +56,7 @@ OPTIONS_DEFINE=	DOCS
 BROKEN_aarch64=		fails to configure: error: These compiler flags are invalid: -O
 BROKEN_armv6=		fails to compile: your compiler does not follow the C++ specification for temporary object destruction order
 BROKEN_armv7=		fails to compile: your compiler does not follow the C++ specification for temporary object destruction order
+BROKEN_i386=		fails to compile: ../methodjit/MethodJIT.cpp:318:5: error: expected '(' after 'asm'
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -e 's/GNUSTEP_USER_ROOT/GNUSTEP_LOCAL_ROOT/ ; \

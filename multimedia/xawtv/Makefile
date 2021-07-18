@@ -11,7 +11,7 @@ COMMENT=	TV viewing application and a few TV utilities
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le
 
 BUILD_DEPENDS=	${LOCALBASE}/share/fonts/misc/led-iso8859-1.pcf.gz:x11-fonts/tv-fonts
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/misc/led-iso8859-1.pcf.gz:x11-fonts/tv-fonts

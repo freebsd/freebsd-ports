@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	ruby2_keywords
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

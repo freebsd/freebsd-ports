@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-#    $MCom: ports/trunk/graphics/goocanvas/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	goocanvas
 PORTVERSION=	1.0.0
@@ -8,7 +7,9 @@ CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
-COMMENT=	Canvas widget for GTK+
+COMMENT=	Cairo-based canvas widget for GTK+
+
+LICENSE=	LGPL20
 
 PORTSCOUT=	ignore:1
 
@@ -19,35 +20,24 @@ USES=		gnome libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 LIBS=		-lm
 
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext localbase
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${datadir}/gtk-doc/html|${DOCSDIR}|' \
+	@${REINPLACE_CMD} -e 's|$${datadir}/gtk-doc/html|${DOCSDIR:H}|' \
 		${WRKSRC}/configure
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||g' ${WRKSRC}/Makefile.in
-.endif
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s|po||g' ${WRKSRC}/Makefile.in
-.endif
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgoocanvas.so.*
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||g' ${WRKSRC}/Makefile.in
+
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|po||g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

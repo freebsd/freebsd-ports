@@ -1,6 +1,6 @@
---- ui/base/ui_base_features.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/base/ui_base_features.cc.orig	2021-05-12 22:06:46 UTC
 +++ ui/base/ui_base_features.cc
-@@ -115,7 +115,7 @@ const base::Feature kExperimentalFlingAnimation {
+@@ -147,7 +147,7 @@ const base::Feature kExperimentalFlingAnimation {
    "ExperimentalFlingAnimation",
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
                          !BUILDFLAG(IS_CHROMEOS_LACROS))
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -148,7 +148,7 @@ const base::Feature kPrecisionTouchpadLogging{
+@@ -180,7 +180,7 @@ const base::Feature kPrecisionTouchpadLogging{
      "PrecisionTouchpadLogging", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif  // defined(OS_WIN)
  
@@ -18,7 +18,7 @@
      defined(OS_CHROMEOS)
  // Enables stylus appearing as touch when in contact with digitizer.
  const base::Feature kDirectManipulationStylus = {
-@@ -159,7 +159,7 @@ const base::Feature kDirectManipulationStylus = {
+@@ -191,7 +191,7 @@ const base::Feature kDirectManipulationStylus = {
      base::FEATURE_DISABLED_BY_DEFAULT
  #endif
  };
@@ -27,21 +27,12 @@
          // defined(OS_CHROMEOS)
  
  // Enables forced colors mode for web content.
-@@ -193,7 +193,7 @@ bool IsEyeDropperEnabled() {
- // crbug.com/1086530 for the Desktop launch bug.
- const base::Feature kCSSColorSchemeUARendering = {
-     "CSSColorSchemeUARendering",
--#if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD) || \
-     defined(OS_APPLE)
-                                             base::FEATURE_ENABLED_BY_DEFAULT
+@@ -209,7 +209,7 @@ bool IsForcedColorsEnabled() {
+ // milestones.
+ const base::Feature kEyeDropper {
+   "EyeDropper",
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+       base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -212,7 +212,7 @@ bool IsCSSColorSchemeUARenderingEnabled() {
- // crbug.com/1012106 for the Windows launch bug, and crbug.com/1012108 for the
- // Mac launch bug.
- const base::Feature kFormControlsRefresh = {"FormControlsRefresh",
--#if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD) || \
-     defined(OS_APPLE)
-                                             base::FEATURE_ENABLED_BY_DEFAULT
- #else
+       base::FEATURE_DISABLED_BY_DEFAULT

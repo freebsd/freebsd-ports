@@ -1,9 +1,11 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	vm
-DISTVERSION=	0.12.0
+DISTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	https://gitlab.com/OpenMusicKontrollers/vm.lv2/repository/archive.tar.gz?ref=${PORTVERSION}&dummy=/
+MASTER_SITES=	https://gitlab.com/OpenMusicKontrollers/vm.lv2/-/archive/${DISTVERSION}/
+DISTNAME=	vm.lv2-${DISTVERSION}
 PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +24,8 @@ LIB_DEPENDS=	liblilv-0.so:audio/lilv \
 USES=		compiler:c++11-lib gl meson pkgconfig localbase xorg
 USE_XORG=	x11 xext
 USE_GL=		gl glew glu
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 post-extract:
 	@${MV} ${WRKDIR}/vm* ${WRKDIR}/${PORTNAME}-${PORTVERSION}

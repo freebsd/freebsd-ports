@@ -1,3 +1,3 @@
-TIMESTAMP = 1612733509
-SHA256 (zeek-package-manager-v2.7.1_GH0.tar.gz) = ff0d9cf003d51135fa82c8f6f0ca98ba02528df7267636d877d4da38e51ac8fa
-SIZE (zeek-package-manager-v2.7.1_GH0.tar.gz) = 113533
+TIMESTAMP = 1624541541
+SHA256 (zeek-package-manager-v2.10.0_GH0.tar.gz) = a0f236dac5b29dc9c5c660100c2249c3a4b7d4efdc079493bd0c5593c200132b
+SIZE (zeek-package-manager-v2.10.0_GH0.tar.gz) = 135310

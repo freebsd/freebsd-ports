@@ -13,10 +13,8 @@ COMMENT=	Java/UML Object-Oriented Design Tool
 
 LICENSE=	EULA
 LICENSE_NAME=	End User License Agreement
-LICENSE_TEXT=	${RESTRICTED}
+LICENSE_TEXT=	License restrictions -- See http://astah.net/faq/community/enduser-license-agreement
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell no-auto-accept
-
-RESTRICTED=	License restrictions -- See http://astah.net/faq/community/enduser-license-agreement
 
 USES=		zip
 USE_JAVA=	yes

@@ -1,11 +1,11 @@
 # Created by: Vladimir Kondratyev <wulf@FreeBSD.org>
 
 PORTNAME=	iwmbt-firmware
-PORTVERSION=	20190717
-PORTREVISION=	1
+PORTVERSION=	20210315
+DEB_REVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	DEBIAN/pool/non-free/f/firmware-nonfree/
-DISTNAME=	firmware-iwlwifi_${PORTVERSION}-2_all
+DISTNAME=	firmware-iwlwifi_${PORTVERSION}-${DEB_REVISION}_all
 EXTRACT_SUFX=	.deb
 
 MAINTAINER=	wulf@FreeBSD.org
@@ -22,8 +22,7 @@ NO_ARCH=	yes
 EXTRACT_CMD=	${AR}
 EXTRACT_BEFORE_ARGS=	-p
 EXTRACT_AFTER_ARGS=	data.tar.xz | ${TAR} -xf - ${EXTRACT_FILES}
-EXTRACT_FILES=	lib/firmware/intel/ibt-*.sfi \
-		lib/firmware/intel/ibt-*.ddc \
+EXTRACT_FILES=	lib/firmware/intel \
 		usr/share/doc/firmware-iwlwifi/copyright
 
 do-install:

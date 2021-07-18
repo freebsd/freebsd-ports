@@ -1,4 +1,4 @@
---- third_party/perfetto/gn/BUILD.gn.orig	2021-03-15 13:24:18 UTC
+--- third_party/perfetto/gn/BUILD.gn.orig	2021-04-14 18:43:06 UTC
 +++ third_party/perfetto/gn/BUILD.gn
 @@ -48,13 +48,15 @@ action("gen_buildflags") {
    # we run the tools/gen_xxx generators.

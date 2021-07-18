@@ -1,3 +1,4 @@
+bin/couenne
 include/coin/BonCouenneInfo.hpp
 include/coin/BonCouenneInterface.hpp
 include/coin/BonCouenneSetup.hpp
@@ -82,11 +83,16 @@ include/coin/CouenneTwoImplied.hpp
 include/coin/CouenneTypes.hpp
 include/coin/CouenneVTObject.hpp
 include/coin/CouenneVarObject.hpp
+include/coin/Nauty.h
 lib/libCouenne.so
 lib/libCouenne.so.1
 lib/libCouenne.so.1.4.8
+lib/libCouenneReadnl.so
+lib/libCouenneReadnl.so.1
+lib/libCouenneReadnl.so.1.4.8
 libdata/pkgconfig/couenne.pc
 share/coin/doc/Couenne/AUTHORS
 share/coin/doc/Couenne/LICENSE
 share/coin/doc/Couenne/README
 share/coin/doc/Couenne/couenne_addlibs.txt
+share/minizinc/solvers/couenne.msc

@@ -16,7 +16,8 @@ LIB_DEPENDS=	libefl.so:devel/efl \
 		libpulse.so:audio/pulseaudio
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gnome \
-		meson ninja iconv libtool pathfix pkgconfig tar:xz xorg
+		localbase:ldflags meson ninja iconv libtool pathfix pkgconfig \
+		tar:xz xorg
 USE_XORG=	xcb
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
@@ -25,8 +26,6 @@ MESON_ARGS=	-Dsystemd=false -Ddevice-udev=false \
 		-Dmount-udisks=false -Dmount-eeze=false -Dbluez5=false \
 		-Dconnman=false --sysconfdir=/usr/local/etc
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		NLS
@@ -46,7 +45,11 @@ ENLIGHTENMENT_ARCH=     ${OPSYS:tl}-x86
 .if ${CURRENT_ARCH:Mpowerpc64*}
 ENLIGHTENMENT_ARCH=     ${OPSYS:tl}-ppc64
 .else
+.if ${CURRENT_ARCH} == powerpc
+ENLIGHTENMENT_ARCH=     ${OPSYS:tl}-ppc
+.else
 ENLIGHTENMENT_ARCH=     ${OPSYS:tl}-${CURRENT_ARCH}
+.endif
 .endif
 .endif
 .endif

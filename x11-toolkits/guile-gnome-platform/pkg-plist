@@ -35,12 +35,6 @@ lib/guile-gnome-2/libgw-guile-gnome-gobject.so.0.0.0
 %%GLADE%%lib/guile-gnome-2/libgw-guile-gnome-libglade.so
 %%GLADE%%lib/guile-gnome-2/libgw-guile-gnome-libglade.so.0
 %%GLADE%%lib/guile-gnome-2/libgw-guile-gnome-libglade.so.0.0.0
-%%LIBGNOME%%lib/guile-gnome-2/libgw-guile-gnome-libgnome.so
-%%LIBGNOME%%lib/guile-gnome-2/libgw-guile-gnome-libgnome.so.0
-%%LIBGNOME%%lib/guile-gnome-2/libgw-guile-gnome-libgnome.so.0.0.0
-%%LIBGNOMEUI%%lib/guile-gnome-2/libgw-guile-gnome-libgnomeui.so
-%%LIBGNOMEUI%%lib/guile-gnome-2/libgw-guile-gnome-libgnomeui.so.0
-%%LIBGNOMEUI%%lib/guile-gnome-2/libgw-guile-gnome-libgnomeui.so.0.0.0
 %%PANGO%%lib/guile-gnome-2/libgw-guile-gnome-pango.so
 %%PANGO%%lib/guile-gnome-2/libgw-guile-gnome-pango.so.0
 %%PANGO%%lib/guile-gnome-2/libgw-guile-gnome-pango.so.0.0.0
@@ -53,7 +47,6 @@ lib/libguile-gnome-gobject-2.so.0.0.0
 libdata/pkgconfig/guile-gnome-defs-2.pc
 libdata/pkgconfig/guile-gnome-glib-2.pc
 %%GTK2%%libdata/pkgconfig/guile-gnome-gtk-2.pc
-%%LIBGNOMEUI%%libdata/pkgconfig/guile-gnome-libgnomeui-2.pc
 %%ATK%%%%DATADIR%%/gnome/atk.scm
 %%CANVAS%%%%DATADIR%%/gnome/canvas.scm
 %%DATADIR%%/gnome/contrib/delay-tree-model.scm
@@ -107,8 +100,6 @@ libdata/pkgconfig/guile-gnome-glib-2.pc
 %%GCONF%%%%DATADIR%%/gnome/gconf.scm
 %%GLADE%%%%DATADIR%%/gnome/glade.scm
 %%DATADIR%%/gnome/glib.scm
-%%LIBGNOMEUI%%%%DATADIR%%/gnome/gnome-ui.scm
-%%LIBGNOME%%%%DATADIR%%/gnome/gnome.scm
 %%DATADIR%%/gnome/gobject.scm
 %%DATADIR%%/gnome/gobject/config.scm
 %%DATADIR%%/gnome/gobject/defs-support.scm
@@ -145,10 +136,6 @@ libdata/pkgconfig/guile-gnome-glib-2.pc
 %%GTK2%%%%DATADIR%%/gnome/gw/gtk.scm
 %%GLADE%%%%DATADIR%%/gnome/gw/libglade-spec.scm
 %%GLADE%%%%DATADIR%%/gnome/gw/libglade.scm
-%%LIBGNOME%%%%DATADIR%%/gnome/gw/libgnome-spec.scm
-%%LIBGNOME%%%%DATADIR%%/gnome/gw/libgnome.scm
-%%LIBGNOMEUI%%%%DATADIR%%/gnome/gw/libgnomeui-spec.scm
-%%LIBGNOMEUI%%%%DATADIR%%/gnome/gw/libgnomeui.scm
 %%PANGO%%%%DATADIR%%/gnome/gw/pango-spec.scm
 %%PANGO%%%%DATADIR%%/gnome/gw/pango.scm
 %%PANGO%%%%CAIRO%%%%DATADIR%%/gnome/gw/pangocairo-spec.scm

@@ -1,5 +1,6 @@
 PORTNAME=	libquotient
 DISTVERSION=	0.6.6
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -12,7 +13,7 @@ CONFLICTS=	libqmatrixclient\*
 
 USES=	cmake compiler:c++14-lang qt:5 tar:xz
 USE_QT=	core gui multimedia network \
-	buildtools_build qmake_build
+	buildtools_build qmake_build testlib_build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	quotient-im

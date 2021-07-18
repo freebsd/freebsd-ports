@@ -1,62 +1,35 @@
---- CMakeLists.txt.orig	2019-09-01 13:59:42 UTC
+--- CMakeLists.txt.orig	2021-06-28 15:28:22 UTC
 +++ CMakeLists.txt
-@@ -54,7 +54,7 @@ set(_DBUS_INIT OFF)
- 
- # User options
- option(STATIC_DRUMSTICK "Build static libraries instead of dynamic" OFF)
--option(USE_DBUS "Include DBus support (required for RealtimeKit)" ${_DBUS_INIT})
-+#option(USE_DBUS "Include DBus support (required for RealtimeKit)" ${_DBUS_INIT})
- 
- message(STATUS "Build configuration: ${CMAKE_BUILD_TYPE}")
- 
-@@ -84,8 +84,8 @@ if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-     endif()
+@@ -111,8 +111,8 @@ else()
+ 	message(FATAL_ERROR "Program pkg-config not found")
  endif()
  
 -if(${CMAKE_SYSTEM} MATCHES "Linux")
--    pkg_check_modules(ALSA alsa>=1.0.0)
+-    pkg_check_modules(ALSA REQUIRED IMPORTED_TARGET alsa>=1.0.0)
 +if(${CMAKE_SYSTEM} MATCHES "Linux|FreeBSD")
-+    #pkg_check_modules(ALSA alsa>=1.0.0)
++    #pkg_check_modules(ALSA REQUIRED IMPORTED_TARGET alsa>=1.0.0)
      if(ALSA_FOUND)
-         set(ALSA_LIBS ${ALSA_LIBRARIES})
-         list(APPEND ALSA_LIB_DIR ${ALSA_LIBRARY_DIRS} ${ALSA_LIBDIR})
-@@ -96,7 +96,9 @@ if(${CMAKE_SYSTEM} MATCHES "Linux")
- endif()
- 
- if(PKG_CONFIG_FOUND)
--    pkg_check_modules(PULSE libpulse-simple)
-+    if (USE_PULSEAUDIO)
-+        pkg_check_modules(PULSE libpulse-simple)
-+    endif()
-     if(NOT PULSE_FOUND)
-         message(STATUS "Warning: PulseAudio library not found.")
+         message(STATUS "Found ALSA version = ${ALSA_VERSION}")
      endif()
-@@ -117,7 +119,7 @@ if(BUILD_TESTING)
-   add_subdirectory(tests)
- endif()
+@@ -179,7 +179,7 @@ endif()
  
--if(${CMAKE_SYSTEM} MATCHES "Linux")
-+if(${CMAKE_SYSTEM} MATCHES "Linux|FreeBSD")
-     find_package(Doxygen)
-     if(DOXYGEN_FOUND)
-         configure_file(
-@@ -128,12 +130,14 @@ if(${CMAKE_SYSTEM} MATCHES "Linux")
-             ${DOXYGEN} Doxyfile
-             WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+ if(UNIX AND NOT APPLE)
+     if (BUILD_DOCS)
+-        find_package(Doxygen REQUIRED dot)
++        #find_package(Doxygen REQUIRED dot)
+         if(DOXYGEN_FOUND)
+             string(REPLACE ";" " " DOXYGEN_INCLUDE_DIRS "${Qt${QT_VERSION_MAJOR}Core_INCLUDE_DIRS}")
+             configure_file("${CMAKE_SOURCE_DIR}/Doxyfile.in"
+@@ -192,9 +192,9 @@ if(UNIX AND NOT APPLE)
      endif()
--    add_subdirectory(doc)
--    configure_file(drumstick-alsa.pc.in drumstick-alsa.pc IMMEDIATE @ONLY)
-+    if (BUILD_DOCS)
-+      add_subdirectory(doc)
-+    endif()
-+    #configure_file(drumstick-alsa.pc.in drumstick-alsa.pc IMMEDIATE @ONLY)
      configure_file(drumstick.spec.in drumstick.spec IMMEDIATE @ONLY)
--    install(FILES
--	${CMAKE_CURRENT_BINARY_DIR}/drumstick-alsa.pc
--        DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig )
-+    #install(FILES
-+#	${CMAKE_CURRENT_BINARY_DIR}/drumstick-alsa.pc
-+#        DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig )
+     if(ALSA_FOUND AND PKG_CONFIG_FOUND)
+-        configure_file(drumstick-alsa.pc.in drumstick-alsa.pc IMMEDIATE @ONLY)
+-        install(FILES ${CMAKE_CURRENT_BINARY_DIR}/drumstick-alsa.pc
+-            DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig )
++        #configure_file(drumstick-alsa.pc.in drumstick-alsa.pc IMMEDIATE @ONLY)
++        #install(FILES ${CMAKE_CURRENT_BINARY_DIR}/drumstick-alsa.pc
++        #    DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig )
+     endif()
      # XML mime types
      set( SHARED_MIME_INFO_MINIMUM_VERSION "0.30" )
-     set( XDG_MIME_INSTALL_DIR "${CMAKE_INSTALL_DATAROOTDIR}/mime/packages" )

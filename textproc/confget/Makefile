@@ -1,7 +1,7 @@
 # Created by: Peter Pentchev <roam@FreeBSD.org>
 
 PORTNAME=	confget
-PORTVERSION=	2.3.4
+PORTVERSION=	3.0.2
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	textproc
 MASTER_SITES=	https://gitlab.com/confget/confget/-/archive/release/${PORTVERSION}/

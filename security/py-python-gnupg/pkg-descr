@@ -5,4 +5,4 @@ and verify digital signatures, manage (generate, list and delete) encryption
 keys, using proven Public Key Infrastructure (PKI) encryption technology based
 on OpenPGP.
 
-WWW: http://packages.python.org/python-gnupg/index.html
+WWW: https://docs.red-dove.com/python-gnupg/

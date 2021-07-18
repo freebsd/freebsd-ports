@@ -18,6 +18,6 @@ USES=		compiler:c11 python:3.6+
 USE_PYTHON=	autoplist distutils
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Box2D/_Box2D.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Box2D/_Box2D*.so
 
 .include <bsd.port.mk>

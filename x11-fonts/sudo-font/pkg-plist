@@ -29,5 +29,15 @@
 %%FONTSDIR%%/Sudo-ThinItalic.ttf
 %%FONTSDIR%%/Sudo-ThinItalic.woff
 %%FONTSDIR%%/Sudo-ThinItalic.woff2
+%%FONTSDIR%%/SudoUI-Bold.ttf
+%%FONTSDIR%%/SudoUI-BoldItalic.ttf
+%%FONTSDIR%%/SudoUI-Light.ttf
+%%FONTSDIR%%/SudoUI-LightItalic.ttf
+%%FONTSDIR%%/SudoUI-Medium.ttf
+%%FONTSDIR%%/SudoUI-MediumItalic.ttf
+%%FONTSDIR%%/SudoUI-Regular.ttf
+%%FONTSDIR%%/SudoUI-RegularItalic.ttf
+%%FONTSDIR%%/SudoUI-Thin.ttf
+%%FONTSDIR%%/SudoUI-ThinItalic.ttf
 %%FONTSDIR%%/SudoVariable.ttf
 %%FONTSDIR%%/SudoVariable.woff2

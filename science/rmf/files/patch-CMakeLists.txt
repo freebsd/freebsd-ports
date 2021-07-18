@@ -1,10 +1,10 @@
---- CMakeLists.txt.orig	2018-06-15 00:56:51 UTC
+--- CMakeLists.txt.orig	2021-04-19 19:25:22 UTC
 +++ CMakeLists.txt
-@@ -4,15 +4,15 @@ project(RMF)
- # needs to be in main CMakeLists.txt
- enable_testing()
+@@ -18,15 +18,15 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_S
+ include(cmake_modules/IMPFindPython.cmake)
+ imp_find_python()
  
--execute_process(COMMAND python setup_git.py
+-execute_process(COMMAND ${PYTHON_EXECUTABLE} setup_git.py
 -                  RESULT_VARIABLE setup
 -                  OUTPUT_VARIABLE toutput
 -                  ERROR_VARIABLE error
@@ -13,7 +13,7 @@
 -if(NOT ${setup} EQUAL 0)
 -   message(FATAL_ERROR " Failed to run setup_git.py: ${setup}; ${error}")
 -endif()
-+#execute_process(COMMAND python setup_git.py
++#execute_process(COMMAND ${PYTHON_EXECUTABLE} setup_git.py
 +#                  RESULT_VARIABLE setup
 +#                  OUTPUT_VARIABLE toutput
 +#                  ERROR_VARIABLE error
@@ -23,20 +23,21 @@
 +#   message(FATAL_ERROR " Failed to run setup_git.py: ${setup}; ${error}")
 +#endif()
  
- set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake_modules)
- 
-@@ -140,12 +140,12 @@ else()
+ # Don't deref quoted variables in if()
+ if(POLICY CMP0054)
+@@ -168,12 +168,14 @@ else()
  endif()
  
  
 -add_subdirectory(swig)
 +#add_subdirectory(swig)
  
--add_subdirectory(test)
++if (FREEBSD_BUILS_WITH_TESTS)
+ add_subdirectory(test)
 -add_subdirectory(examples)
 -add_subdirectory(benchmark)
 -add_subdirectory(doc)
-+#add_subdirectory(test)
++endif()
 +#add_subdirectory(examples)
 +#add_subdirectory(benchmark)
 +#add_subdirectory(doc)

@@ -247,6 +247,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/simulation/pspice/schematic_libspice.dcm
 %%DATADIR%%/demos/simulation/pspice/schematic_libspice.lib
 %%DATADIR%%/demos/simulation/pspice/sym-lib-table
+%%DATADIR%%/demos/simulation/rectifier/diode.mod
 %%DATADIR%%/demos/simulation/rectifier/rectifier-cache.lib
 %%DATADIR%%/demos/simulation/rectifier/rectifier.pro
 %%DATADIR%%/demos/simulation/rectifier/rectifier.sch

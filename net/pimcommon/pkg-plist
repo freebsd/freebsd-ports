@@ -142,7 +142,7 @@ lib/libKF5PimCommonAkonadi.so.5
 lib/libKF5PimCommonAkonadi.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_PimCommon.pri
 %%QT_MKSPECDIR%%/modules/qt_PimCommonAkonadi.pri
-%%QT_PLUGINDIR%%/designer/pimcommoniakonadiwidgets.so
+%%QT_PLUGINDIR%%/designer/pimcommonakonadiwidgets.so
 %%QT_PLUGINDIR%%/designer/pimcommonwidgets.so
 share/locale/ar/LC_MESSAGES/libpimcommon.mo
 share/locale/bs/LC_MESSAGES/libpimcommon.mo

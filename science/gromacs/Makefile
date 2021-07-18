@@ -1,7 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	gromacs
-DISTVERSION=	2021.1
+DISTVERSION=	2021.2
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
@@ -68,7 +68,6 @@ MP_DESC=		Multiprocessing
 NOMP_DESC=		No multiprocessing support
 NOMP_PLIST_SUB=		SUFFIX_MPI=""
 
-MPICH_DESC=		Parallel processing support via MPICH
 MPICH_LIB_DEPENDS=	libmpich.so:net/mpich
 MPICH_CMAKE_ON=		-DGMX_MPI:BOOL=ON \
 			-DMPI_C_COMPILER:FILEPATH="${LOCALBASE}/bin/mpicc"

@@ -1,11 +1,20 @@
---- chrome/browser/media/audio_service_util.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/media/audio_service_util.cc.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/media/audio_service_util.cc
-@@ -24,7 +24,7 @@ bool IsAudioServiceSandboxEnabled() {
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
+@@ -21,7 +21,7 @@
+ namespace {
+ 
  #if defined(OS_WIN) || defined(OS_MAC) || \
--    (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
-+    (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
+-    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
++    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
+ bool GetPolicyOrFeature(const char* policy_name, const base::Feature& feature) {
    const policy::PolicyMap& policies =
        g_browser_process->browser_policy_connector()
-           ->GetPolicyService()
+@@ -43,7 +43,7 @@ bool IsAudioServiceSandboxEnabled() {
+ // TODO(crbug.com/1052397): Remove !IS_CHROMEOS_LACROS once lacros starts being
+ // built with OS_CHROMEOS instead of OS_LINUX.
+ #if defined(OS_WIN) || defined(OS_MAC) || \
+-    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
++    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
+   return GetPolicyOrFeature(policy::key::kAudioSandboxEnabled,
+                             features::kAudioServiceSandbox);
+ #else

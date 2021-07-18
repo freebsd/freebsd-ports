@@ -1,5 +1,5 @@
---- powerpc64/p8/aes-decrypt-internal.asm.orig	2021-04-03 16:33:37.883035000 -0500
-+++ powerpc64/p8/aes-decrypt-internal.asm	2021-04-03 16:34:24.022307000 -0500
+--- powerpc64/p8/aes-decrypt-internal.asm.orig	2021-06-06 20:06:30 UTC
++++ powerpc64/p8/aes-decrypt-internal.asm
 @@ -71,7 +71,7 @@ define(`FUNC_ALIGN', `5')
  PROLOGUE(_nettle_aes_decrypt)
   vxor ZERO,ZERO,ZERO

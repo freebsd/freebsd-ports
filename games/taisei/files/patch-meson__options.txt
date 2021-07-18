@@ -1,0 +1,8 @@
+--- meson_options.txt.orig	2021-04-30 18:54:50 UTC
++++ meson_options.txt
+@@ -197,3 +197,5 @@ option(
+     value : true,
+     description : 'Allow use of some GNU C extensions (if supported by compiler)'
+ )
++
++option('OPENSSLLIB', type : 'string')

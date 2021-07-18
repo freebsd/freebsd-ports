@@ -1,9 +1,9 @@
 # Created by: David O'Brien <obrien@FreeBSD.org>
 
 PORTNAME=	zeek
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.3
 CATEGORIES=	security
-MASTER_SITES=	https://old.zeek.org/downloads/
+MASTER_SITES=	https://download.zeek.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	leres@FreeBSD.org
@@ -14,13 +14,14 @@ LICENSE=	BSD3CLAUSE
 BROKEN_FreeBSD_11_powerpc64=	Does not build: error: zero-size array 'names'
 BROKEN_FreeBSD_12_powerpc64=	Does not build: error: zero-size array 'names'
 
-USES=		bison cmake compiler:c++11-lang gettext-runtime ninja perl5 python shebangfix ssl
+USES=		bison cmake compiler:c++11-lang gettext-runtime ninja perl5 \
+		python shebangfix ssl
 USE_LDCONFIG=	yes
 
 PORTSCOUT=	limit:0,even
 
 CXXFLAGS_powerpc64=	-mpower8-vector
-CMAKE_ARGS+=	-DPYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
+CMAKE_ARGS+=		-DPYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
 
 SHEBANG_FILES=	auxil/zeekctl/auxil/trace-summary/trace-summary
 
@@ -44,32 +45,41 @@ CMAKE_ARGS+=	-GNinja \
 ZEEKUSER?=	zeek
 ZEEKGROUP?=	zeek
 PLIST_SUB+=	ARCH=${UNAME_M} \
-		ZEEKUSER=${ZEEKUSER} \
+		LCASE_OPSYS=${OPSYS:tl} \
 		ZEEKGROUP=${ZEEKGROUP} \
-		LCASE_OPSYS=${OPSYS:tl}
+		ZEEKUSER=${ZEEKUSER}
 
 USERS=		${ZEEKUSER}
 GROUPS=		${ZEEKGROUP}
 
-OPTIONS_DEFINE= BROKER DEBUG GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP \
-		PERFTOOLS ZEEKCTL
-OPTIONS_DEFAULT=BROKER GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP ZEEKCTL
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE= BROKER GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP PERFTOOLS \
+		ZEEKCTL ZKG
 
-BROKER_DESC=	Enable the Broker communication library
-GEOIP2_DESC=	Build with GeoIP2 (MaxMindDB) support
-IPSUMDUMP_DESC=	Enables traffic summaries
-LBL_CF_DESC=	Unix time to formated time/date filter support
-LBL_HF_DESC=	Address to hostname filter support
-NETMAP_DESC=	Native Netmap Packet IOSource for Zeek
-PERFTOOLS_DESC=	Use Perftools to improve memory & CPU usage
-ZEEKCTL_DESC=	ZeekControl support (implies BROKER and IPSUMDUMP)
+OPTIONS_SINGLE=			BUILD_TYPE
+OPTIONS_SINGLE_BUILD_TYPE=	DEBUG MINSIZEREL RELEASE RELWITHDEBINFO
 
-ZEEKCTL_IMPLIES=		BROKER IPSUMDUMP
+OPTIONS_DEFAULT=	BROKER GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP RELEASE \
+			ZEEKCTL ZKG
+OPTIONS_SUB=		yes
+
+BROKER_DESC=		Enable the Broker communication library
+DEBUG_DESC=		Optimizations off, debug symbols/flags on
+GEOIP2_DESC=		Build with GeoIP2 (MaxMindDB) support
+IPSUMDUMP_DESC=		Enables traffic summaries
+LBL_CF_DESC=		Unix time to formated time/date filter support
+LBL_HF_DESC=		Address to hostname filter support
+MINSIZEREL_DESC=	Optimizations on, debug symbols/flags off
+NETMAP_DESC=		Native Netmap Packet IOSource for Zeek
+PERFTOOLS_DESC=		Use Perftools to improve memory & CPU usage
+RELEASE_DESC=		Optimizations on, debug symbols/flags off
+RELWITHDEBINFO_DESC=	Optimizations/debug symbols on, debug flags off
+ZEEKCTL_DESC=		ZeekControl support (implies BROKER and IPSUMDUMP)
+ZKG_DESC=		Zeek package manager support
+
+ZEEKCTL_IMPLIES=	BROKER IPSUMDUMP
 
 BROKER_BUILD_DEPENDS=	swig:devel/swig
 BROKER_CMAKE_BOOL=	ENABLE_BROKER
-DEBUG_CMAKE_BOOL=	ENABLE_DEBUG
 GEOIP2_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 IPSUMDUMP_BUILD_DEPENDS=ipsumdump:net/ipsumdump
 IPSUMDUMP_RUN_DEPENDS=	ipsumdump:net/ipsumdump
@@ -87,8 +97,21 @@ ZEEKCTL_BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 ZEEKCTL_CMAKE_BOOL=	INSTALL_ZEEKCTL
 ZEEKCTL_RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
+ZKG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zkg>=2.7.1:security/py-zkg@${PY_FLAVOR} \
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDEBUG}
+CMAKE_BUILD_TYPE=	Debug
+STRIP=
+.elif ${PORT_OPTIONS:MMINSIZEREL}
+CMAKE_BUILD_TYPE=	MinSizeRel
+.elif ${PORT_OPTIONS:MRELEASE}
+CMAKE_BUILD_TYPE=	Release
+.elif ${PORT_OPTIONS:MRELWITHDEBINFO}
+CMAKE_BUILD_TYPE=	RelWithDebInfo
+STRIP=
+.endif
 
 .if ${PORT_OPTIONS:MZEEKCTL}
 USE_RC_SUBR=	zeek
@@ -120,8 +143,7 @@ pre-install-ZEEKCTL-on:
 post-install-NETMAP-on:
 	${MKDIR} ${WRKDIR}/zeek-bin
 	${CP} ${STAGEDIR}${PREFIX}/bin/zeek-config ${WRKDIR}/zeek-bin
-	${REINPLACE_CMD} -e 's|=/usr/local|=${STAGEDIR}${PREFIX}|' \
-	    -e '/^include_dir=/s|:/usr/local|:${STAGEDIR}${PREFIX}|' \
+	${REINPLACE_CMD} -e 's|${PREFIX}|${STAGEDIR}${PREFIX}|g' \
 	    ${WRKDIR}/zeek-bin/zeek-config
 	cd ${WRKSRC_zeek_netmap} && ${SETENV} PATH=${WRKDIR}/zeek-bin:${PATH} \
 	    ./configure --with-netmap=/usr \

@@ -1,5 +1,5 @@
 bin/incrontab
-@sample etc/incron.conf.example
+@sample etc/incron.conf.example etc/incron.conf
 sbin/incrond
 man/man1/incrontab.1.gz
 man/man5/incron.conf.5.gz

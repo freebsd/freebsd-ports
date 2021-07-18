@@ -12,6 +12,8 @@ COMMENT=	Development environment for GNUstep
 
 LICENSE=	GPLv2+ # comment in code; COPYING says GPLv3
 
+BROKEN=		fails to link: libProjectCenter.so: undefined reference to __objc_ivar_offset_NSView._tracking_rects
+
 USES=		gnustep
 USE_GNUSTEP=	back build
 USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}

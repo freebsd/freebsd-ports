@@ -1,6 +1,6 @@
---- cmake/install_layout.cmake.orig	2015-02-25 21:09:49 UTC
+--- cmake/install_layout.cmake.orig	2017-07-13 06:55:32 UTC
 +++ cmake/install_layout.cmake
-@@ -112,14 +112,14 @@ FILE(GLOB plugin_tests
+@@ -151,14 +151,14 @@ SET(secure_file_priv_embedded_path "NULL")
  #
  # STANDALONE layout
  #

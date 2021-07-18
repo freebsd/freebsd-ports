@@ -4,6 +4,7 @@ bin/nikon-curve
 bin/ufraw-batch
 %%GIMP%%libexec/gimp/2.2/plug-ins/ufraw-gimp
 man/man1/ufraw.1.gz
+%%GNOME%%share/appdata/ufraw.appdata.xml
 share/applications/ufraw.desktop
 share/locale/ca/LC_MESSAGES/ufraw.mo
 share/locale/cs/LC_MESSAGES/ufraw.mo

@@ -2232,11 +2232,11 @@ PKG_SUFX?=	.pkg
 .if defined(PKG_NOCOMPRESS)
 PKG_OLDSUFX?=	.tar
 .else
-.if ${OSVERSION} > 1400000
-PKG_OLDSUFX?=	.tzst
-.else
+#.if ${OSVERSION} > 1400000
+#PKG_OLDSUFX?=	.tzst
+#.else
 PKG_OLDSUFX?=	.txz
-.endif
+#.endif
 .endif
 .else
 .if defined(PKG_NOCOMPRESS)
@@ -3047,7 +3047,7 @@ check-deprecated:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "More information about port maintainership is available at:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port"
+	@${ECHO_MSG} "https://docs.freebsd.org/en/articles/contributing/#ports-contributing"
 	@${ECHO_MSG}
 .endif
 .if defined(DEPRECATED)
@@ -4085,6 +4085,7 @@ _FLAVOR_RECURSIVE_SH= \
 	for dir in $${recursive_dirs}; do \
 		unset flavor; \
 		case $${dir} in \
+			*@*/*) ;; \
 			*@*) \
 				flavor=$${dir\#*@}; \
 				dir=$${dir%@*}; \
@@ -4094,7 +4095,7 @@ _FLAVOR_RECURSIVE_SH= \
 		/*) ;; \
 		*) dir=${PORTSDIR}/$$dir ;; \
 		esac; \
-		(cd $$dir; ${SETENV} FLAVOR=$${flavor} ${MAKE} $${recursive_cmd}); \
+		(cd $$dir; ${SETENV} $${flavor:+FLAVOR=$${flavor}} ${MAKE} $${recursive_cmd}); \
 	done
 
 # This script is shared among several dependency list variables.  See file for

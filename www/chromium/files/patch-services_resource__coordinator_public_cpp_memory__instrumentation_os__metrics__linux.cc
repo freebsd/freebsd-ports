@@ -1,4 +1,4 @@
---- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc.orig	2021-03-12 23:57:28 UTC
+--- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc.orig	2021-04-14 18:41:08 UTC
 +++ services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc
 @@ -5,7 +5,6 @@
  #include <dlfcn.h>

@@ -1,7 +1,7 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	dill
-DISTVERSION=	0.3.3
+DISTVERSION=	0.3.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:3.6+ zip
 USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

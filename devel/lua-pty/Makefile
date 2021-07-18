@@ -1,35 +1,41 @@
 # Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
 
 PORTNAME=	pty
-PORTVERSION=	1.25
-PORTREVISION=	1
+DISTVERSION=	1.26
 CATEGORIES=	devel
-MASTER_SITES=	https://raw.githubusercontent.com/nuclewall/bsdinstaller/${COMMIT}/src/lib/lua/pty/ \
-		https://BSDforge.com/projects/source/devel/lua-pty/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
-DISTFILES=	pty.lua pty.c
-DIST_SUBDIR=	lua-${PORTNAME}-${COMMIT}
 
 MAINTAINER=	portmaster@BSDforge.com
-COMMENT=	Pty (pseudo-terminal) bindings for Lua 5
+COMMENT=	Pty (pseudo-terminal) bindings for Lua 5+
+
+LICENSE=	BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		lua:51,module
 
-COMMIT=		8323bb9
+USE_GITLAB=	yes
+GL_ACCOUNT=	ports1
+GL_PROJECT=	lua-pty
+GL_COMMIT=	1c36a8b40688c6a38c188000bba59ce20ab616ce
+
 MAKEFILE=	${FILESDIR}/Makefile
-MAKE_ENV=	VPATH=${_DISTDIR}
-NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	%%LUA_MODSHAREDIR%%/pty.lua \
-		%%LUA_MODLIBDIR%%/lpty.so
-
-do-extract:
-	${CP} -p ${_DISTFILES:S|^|${_DISTDIR}/|} ${WRKSRC}/
+DOCSDIR=	${PREFIX}/share/doc/lua-${PORTNAME}
+DOCFILES=	README README.md CHANGELOG
+PLIST_FILES=	${LUA_MODSHAREDIR}/pty.lua \
+		${LUA_MODLIBDIR}/lpty.so \
+		${DOCSDIR}/README \
+		${DOCSDIR}/README.md \
+		${DOCSDIR}/CHANGELOG
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lpty.so ${STAGEDIR}${LUA_MODLIBDIR}
 	@${MKDIR} ${STAGEDIR}${LUA_MODSHAREDIR}
 	${INSTALL_DATA} ${WRKSRC}/pty.lua ${STAGEDIR}${LUA_MODSHAREDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${DOCFILES}
+	${CP} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

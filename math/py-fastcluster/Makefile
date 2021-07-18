@@ -1,7 +1,7 @@
 # Created by: Johannes Meixner <johannes@perceivon.net>
 
 PORTNAME=	fastcluster
-PORTVERSION=	1.1.28
+PORTVERSION=	1.2.3
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +12,8 @@ COMMENT=	Fast hierarchical clustering routines for R and Python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9,1:math/py-numpy@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils

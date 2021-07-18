@@ -1,5 +1,5 @@
-TIMESTAMP = 1612775049
-SHA256 (hselasky-webcamd-v5.10.6.1_GH0.tar.gz) = ffef7d407f7c4e7536a51ecc2e115d1e38e39257ec785d45220915ab6ad09cd8
-SIZE (hselasky-webcamd-v5.10.6.1_GH0.tar.gz) = 273201
-SHA256 (torvalds-linux-v5.10-rc6_GH0.tar.gz) = d139d4cc8eb8b27364adc774c0df0feac39389beb4357a36d628a48c92fed393
-SIZE (torvalds-linux-v5.10-rc6_GH0.tar.gz) = 185316277
+TIMESTAMP = 1622986597
+SHA256 (hselasky-webcamd-v5.13.2.4_GH0.tar.gz) = 3cc1bdcd1f714dd975169514c749fc884a5adf24c8e6e1a56d2e118561de080b
+SIZE (hselasky-webcamd-v5.13.2.4_GH0.tar.gz) = 272384
+SHA256 (torvalds-linux-v5.13-rc2_GH0.tar.gz) = 34673cea88f7e5399b704bcacc088b3f14f5800dadf04af6a90b19c35ad3777f
+SIZE (torvalds-linux-v5.13-rc2_GH0.tar.gz) = 192612873

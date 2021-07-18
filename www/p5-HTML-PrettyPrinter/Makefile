@@ -16,4 +16,6 @@ RUN_DEPENDS=	p5-HTML-Tree>=0:www/p5-HTML-Tree
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

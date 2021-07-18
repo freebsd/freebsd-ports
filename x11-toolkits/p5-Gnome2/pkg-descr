@@ -1,7 +1,0 @@
-The Gnome2 module allows a perl developer to use the Gnome libraries.  Find out
-more about Gnome+ at http://www.gnome.org/.
-
-The perl bindings follow the C API very closely, and the C reference
-documentation should be considered the canonical source.
-
-WWW: https://metacpan.org/release/Gnome2

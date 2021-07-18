@@ -1,5 +1,6 @@
 %%OCAMLGRAPHDIR%%/META
 %%OCAMLGRAPHDIR%%/builder.mli
+%%OCAMLGRAPHDIR%%/chaoticIteration.mli
 %%OCAMLGRAPHDIR%%/classic.mli
 %%OCAMLGRAPHDIR%%/clique.mli
 %%OCAMLGRAPHDIR%%/cliquetree.mli
@@ -46,4 +47,5 @@
 %%OCAMLGRAPHDIR%%/topological.mli
 %%OCAMLGRAPHDIR%%/traverse.mli
 %%OCAMLGRAPHDIR%%/util.mli
+%%OCAMLGRAPHDIR%%/weakTopological.mli
 @dir %%OCAML_SITELIBDIR%%

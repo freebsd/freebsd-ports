@@ -1,9 +1,0 @@
---- gnome-vfs-module-2.0.pc.in.orig	Tue Jul 11 07:31:58 2006
-+++ gnome-vfs-module-2.0.pc.in	Tue Jul 11 09:34:36 2006
-@@ -8,5 +8,5 @@
- Description: The GNOME virtual file-system module include info
- Version: @VERSION@
- Requires: gconf-2.0 gthread-2.0 gmodule-no-export-2.0 gobject-2.0
--Libs: -L${libdir} -lgnomevfs-2
-+Libs: -L${libdir} -lgnomevfs-2 -pthread
- Cflags: -I${includedir}/gnome-vfs-2.0 -I${includedir}/gnome-vfs-module-2.0 -I${libdir}/gnome-vfs-2.0/include

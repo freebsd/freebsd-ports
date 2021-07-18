@@ -1,4 +1,4 @@
---- components/policy/core/common/schema.cc.orig	2021-03-12 23:57:22 UTC
+--- components/policy/core/common/schema.cc.orig	2021-04-14 18:41:00 UTC
 +++ components/policy/core/common/schema.cc
 @@ -24,7 +24,11 @@
  #include "base/strings/stringprintf.h"

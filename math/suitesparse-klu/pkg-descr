@@ -1,0 +1,10 @@
+This port installs the module KLU of SuiteSparse.
+
+KLU is a set of routines for solving sparse linear systems of equations. It is
+particularly well-suited to matrices arising in SPICE-like circuit simulation
+applications. It relies on a permutation to block triangular form (BTF), several
+methods for finding a fill-reducing ordering (variants of approximate minimum
+degree, and nested dissection), and a sparse left-looking LU factorization
+method to factorize each block.
+
+WWW: http://faculty.cse.tamu.edu/davis/suitesparse.html

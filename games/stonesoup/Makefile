@@ -5,7 +5,7 @@ PORTVERSION=	0.23.2
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dungeon Crawl Stone Soup - a fun, free rogue-like game
 
 LICENSE=	GPLv2

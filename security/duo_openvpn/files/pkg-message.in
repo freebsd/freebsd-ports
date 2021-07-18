@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+After creating a new protected OpenVPN application in your duo
+admin panel, add the following to your openvpn configuration file:
+
+plugin %%DATADIR%%/duo_openvpn.so 'IKEY SKEY HOST'
+
+For more detailed installation instructions, please visit:
+https://duo.com/docs/openvpn
+EOM
+}
+]

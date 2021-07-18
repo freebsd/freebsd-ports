@@ -11,7 +11,11 @@ DISTNAME=	stuffit520.611linux-i386
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stuffit Archive Creator and Expander
 
-RESTRICTED=	Only unmodified original package can be distributed
+# Converted from RESTRICTED
+LICENSE=	STUFFIT
+LICENSE_NAME=	STUFFIT
+LICENSE_TEXT=	Only unmodified original package can be distributed
+LICENSE_PERMS=	auto-accept
 
 ONLY_FOR_ARCHS=	i386 amd64
 

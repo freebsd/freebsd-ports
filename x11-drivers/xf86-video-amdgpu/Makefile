@@ -2,14 +2,14 @@
 
 PORTNAME=	xf86-video-amdgpu
 PORTVERSION=	19.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org amdgpu display driver
 
-PATCH_SITES=	https://gitlab.freedesktop.org/xorg/driver/${PORTNAME}/commit/
-PATCHFILES+=	edcbe5f52ddfceee3d66d69bbcebbceac06b6d0d.diff:-p1
+PATCH_SITES=	https://gitlab.freedesktop.org/xorg/driver/${PORTNAME}/-/commit/
+PATCHFILES+=	edcbe5f52ddfceee3d66d69bbcebbceac06b6d0d.patch:-p1
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,0 +1,5 @@
+This Python package contains CVSS v2 and v3 computation utilities
+and interactive calculator compatible with both Python 2 and Python 3.
+run cvss_calculator --help
+
+WWW: https://github.com/skontar/cvss

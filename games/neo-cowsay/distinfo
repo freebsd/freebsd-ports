@@ -1,6 +1,6 @@
-TIMESTAMP = 1604222441
-SHA256 (Code-Hex-Neo-cowsay-v1.0.1_GH0.tar.gz) = 4e7287b42c63df2b11942d6f074f41afb02f0561257ac200fb14a8a320b68798
-SIZE (Code-Hex-Neo-cowsay-v1.0.1_GH0.tar.gz) = 38569
+TIMESTAMP = 1626331397
+SHA256 (Code-Hex-Neo-cowsay-v1.0.3_GH0.tar.gz) = 14fc1aa9410b5fe58640cf619b62dbc9488b28434dca3faaa63a9ed7a3b75db1
+SIZE (Code-Hex-Neo-cowsay-v1.0.3_GH0.tar.gz) = 18845
 SHA256 (Code-Hex-go-wordwrap-v1.0.0_GH0.tar.gz) = 4a46ed1aba825767992a992bc31b61e0d6298e91ead60a4edf52836e920ec970
 SIZE (Code-Hex-go-wordwrap-v1.0.0_GH0.tar.gz) = 4419
 SHA256 (golang-crypto-74369b46fc67_GH0.tar.gz) = 4fa9713287d51530ea926ed7187139f700c6247db1dd0904796a2e41a40ce9ec

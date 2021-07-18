@@ -1,0 +1,9 @@
+bin/zita-at1
+%%DATADIR%%/ctrlsect.png
+%%DATADIR%%/hmeter0.png
+%%DATADIR%%/hmeter1.png
+%%DATADIR%%/hscale.png
+%%DATADIR%%/midi.png
+%%DATADIR%%/note.png
+%%DATADIR%%/notesect.png
+%%DATADIR%%/redzita.png

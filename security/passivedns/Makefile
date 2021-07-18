@@ -1,15 +1,12 @@
 PORTNAME=	passivedns
-DISTVERSION=	1.2.1-10
-DISTVERSIONSUFFIX=	-ge126cbb
+DISTVERSION=	1.2.1-22
+DISTVERSIONSUFFIX=	-gd757713
 CATEGORIES=	security
 
 MAINTAINER=	shadowbq@gmail.com
 COMMENT=	Network sniffer that logs DNS replies for use in passive DNS setups
 
 LICENSE=	GPLv2
-
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: config
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: config
 
 LIB_DEPENDS=	libldns.so:dns/ldns
 

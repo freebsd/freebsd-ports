@@ -1,0 +1,7 @@
+# configuration file for newsyslog for librenms
+#
+# see newsyslog.conf(5) for details
+#
+# logfilename                           [owner:group]    mode count size when  flags [/pid_file] [sig_num]
+/var/log/librenms/librenms.log	        www:www          644  7	    *    $D0   J     /var/run/librenms/librenms.pid
+/var/log/librenms/librenms-service.log	www:www	         644  7	    *    $D0   J     /var/run/librenms/librenms.pid

@@ -1,12 +1,14 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 
 PORTNAME=	cairo
-PORTVERSION=	1.16.0 # update to 1.17.2 causes problems, see bug#249290
+DISTVERSION=	1.17.4
 PORTEPOCH=	3
-PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://cairographics.org/releases/ \
-		http://cairographics.org/snapshots/
+MASTER_SITES=	https://cairographics.org/releases/ \
+		https://cairographics.org/snapshots/
+
+PATCH_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	ebbaebdec12878836fc84d31c59ee324e67abc05.patch:-p1 # cairo-script-interpreter.pc
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
@@ -22,7 +24,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 
 PORTSCOUT=	skipv:5c-1.1,5c-1.2,5c-1.5
 
-USES=		cpe gnome libtool pathfix pkgconfig tar:xz xorg
+USES=		autoreconf cpe gnome libtool pathfix pkgconfig tar:xz xorg
 CPE_VENDOR=	cairographics
 USE_XORG=	pixman
 USE_LDCONFIG=	yes
@@ -71,7 +73,7 @@ MIPS_BUILD_DEPENDS=	${LOCALBASE}/include/atomic_ops.h:devel/libatomic_ops
 MIPS_USES=	localbase
 MIPS_CONFIGURE_ENV=	cairo_cv_atomic_primitives="libatomic-ops"
 
-PLIST_SUB+=	LIBVER=2.11600.0
+PLIST_SUB+=	LIBVER=2.11704.0
 
 post-patch:
 	@${REINPLACE_CMD} -e '/strings/s/ - / -a /' \

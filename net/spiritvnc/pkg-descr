@@ -1,0 +1,10 @@
+SpiritVNC is FLTK-based VNC viewer that allows to have many simultaneous
+connections opened and allows to switch between them efficiently.
+
+Besides regular VNC connections, SpiritVNC also supports VNC-through-SSH
+for encryption and more secure connections.  Also supported are reverse
+or "listening" VNC connections as well as an auto-scanning function that
+displays one VNC viewer for a user-defined time, then automatically
+displays the next connected viewer, and so-on.
+
+WWW: https://www.pismotek.com/brainout/content/spiritvnc.php

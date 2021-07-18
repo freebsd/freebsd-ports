@@ -1,7 +1,7 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 
 PORTNAME=	github-backup-utils
-PORTVERSION=	2.22.0
+PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/github/backup-utils/releases/download/v${PORTVERSION}/

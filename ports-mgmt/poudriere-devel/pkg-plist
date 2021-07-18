@@ -87,6 +87,14 @@ man/man8/poudriere-version.8.gz
 %%DATADIR%%/html/jail.html
 %%DATADIR%%/html/robots.txt
 %%DATADIR%%/image.sh
+%%DATADIR%%/image_dump.sh
+%%DATADIR%%/image_firmware.sh
+%%DATADIR%%/image_iso.sh
+%%DATADIR%%/image_mfs.sh
+%%DATADIR%%/image_rawdisk.sh
+%%DATADIR%%/image_tar.sh
+%%DATADIR%%/image_usb.sh
+%%DATADIR%%/image_zsnapshot.sh
 %%DATADIR%%/include/cache.sh
 %%DATADIR%%/include/colors.pre.sh
 %%DATADIR%%/include/colors.sh

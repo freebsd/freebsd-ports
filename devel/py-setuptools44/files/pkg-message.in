@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+  Only %%PREFIX%%/bin/easy_install-%%PYTHON_VER%% script has been installed
+  since Python %%PYTHON_VER%% is not the default Python version.
+EOM
+}
+]

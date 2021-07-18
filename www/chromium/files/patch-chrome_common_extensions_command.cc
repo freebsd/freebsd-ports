@@ -1,4 +1,4 @@
---- chrome/common/extensions/command.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/common/extensions/command.cc.orig	2021-04-14 18:40:56 UTC
 +++ chrome/common/extensions/command.cc
 @@ -294,7 +294,7 @@ std::string Command::CommandPlatform() {
    return values::kKeybindingPlatformMac;

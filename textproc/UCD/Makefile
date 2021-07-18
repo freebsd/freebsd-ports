@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.unicode.org/Public/zipped/${PORTVERSION}/:src\
 		ftp://www.unicode.org/Public/zipped/${PORTVERSION}/:src	\
 		http://www.unicode.org/:lic
 DISTFILES=	${PORTNAME}.zip:src	\
-		copyright.html:lic
+		license.html:lic
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=
 
@@ -16,7 +16,7 @@ COMMENT=	Unicode Character Database
 
 LICENSE=	Unicode_License_Agreement
 LICENSE_NAME=	Unicode License Agreement
-LICENSE_FILE=	${_DISTDIR}/copyright.html
+LICENSE_FILE=	${_DISTDIR}/license.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS_DEFINE=	HAN

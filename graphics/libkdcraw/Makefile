@@ -6,7 +6,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	LibRaw interface for KDE
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjasper.so:graphics/jasper \
 		liblcms.so:graphics/lcms \
@@ -20,7 +19,5 @@ USE_QT=		core gui \
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DWITH_OpenMP:BOOL=False \
 		-DENABLE_RAWSPEED=True
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

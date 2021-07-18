@@ -8,6 +8,9 @@ To start logstash as an agent during startup, add
 to your /etc/rc.conf.
 
 Extra options can be found in startup script.
+
+WARNING: In order for logstash to work properly,
+you need /proc filesystem mounted.
 EOM
 }
 ]

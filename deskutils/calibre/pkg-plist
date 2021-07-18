@@ -74,6 +74,7 @@ lib/calibre/calibre/db/tests/__init__.py
 lib/calibre/calibre/db/tests/add_remove.py
 lib/calibre/calibre/db/tests/base.py
 lib/calibre/calibre/db/tests/filesystem.py
+lib/calibre/calibre/db/tests/fts.py
 lib/calibre/calibre/db/tests/legacy.py
 lib/calibre/calibre/db/tests/locking.py
 lib/calibre/calibre/db/tests/main.py
@@ -145,7 +146,6 @@ lib/calibre/calibre/devices/mtp/unix/sysfs.py
 lib/calibre/calibre/devices/mtp/unix/upstream/update.py
 lib/calibre/calibre/devices/mtp/windows/__init__.py
 lib/calibre/calibre/devices/mtp/windows/driver.py
-lib/calibre/calibre/devices/mtp/windows/remote.py
 lib/calibre/calibre/devices/nokia/__init__.py
 lib/calibre/calibre/devices/nokia/driver.py
 lib/calibre/calibre/devices/nook/__init__.py
@@ -366,7 +366,6 @@ lib/calibre/calibre/ebooks/metadata/sources/google.py
 lib/calibre/calibre/ebooks/metadata/sources/google_images.py
 lib/calibre/calibre/ebooks/metadata/sources/identify.py
 lib/calibre/calibre/ebooks/metadata/sources/openlibrary.py
-lib/calibre/calibre/ebooks/metadata/sources/overdrive.py
 lib/calibre/calibre/ebooks/metadata/sources/prefs.py
 lib/calibre/calibre/ebooks/metadata/sources/search_engines.py
 lib/calibre/calibre/ebooks/metadata/sources/test.py
@@ -634,6 +633,7 @@ lib/calibre/calibre/gui2/actions/add.py
 lib/calibre/calibre/gui2/actions/add_to_library.py
 lib/calibre/calibre/gui2/actions/annotate.py
 lib/calibre/calibre/gui2/actions/author_mapper.py
+lib/calibre/calibre/gui2/actions/auto_scroll.py
 lib/calibre/calibre/gui2/actions/browse_annots.py
 lib/calibre/calibre/gui2/actions/catalog.py
 lib/calibre/calibre/gui2/actions/choose_library.py
@@ -754,14 +754,6 @@ lib/calibre/calibre/gui2/cover_flow.py
 lib/calibre/calibre/gui2/covers.py
 lib/calibre/calibre/gui2/css_transform_rules.py
 lib/calibre/calibre/gui2/custom_column_widgets.py
-lib/calibre/calibre/gui2/dbus_export/__init__.py
-lib/calibre/calibre/gui2/dbus_export/demo.py
-lib/calibre/calibre/gui2/dbus_export/gtk.py
-lib/calibre/calibre/gui2/dbus_export/menu.py
-lib/calibre/calibre/gui2/dbus_export/menu2.py
-lib/calibre/calibre/gui2/dbus_export/tray.py
-lib/calibre/calibre/gui2/dbus_export/utils.py
-lib/calibre/calibre/gui2/dbus_export/widgets.py
 lib/calibre/calibre/gui2/device.py
 lib/calibre/calibre/gui2/device_drivers/__init__.py
 lib/calibre/calibre/gui2/device_drivers/configwidget.py
@@ -832,6 +824,7 @@ lib/calibre/calibre/gui2/dialogs/tag_list_editor.py
 lib/calibre/calibre/gui2/dialogs/tag_list_editor_table_widget.py
 lib/calibre/calibre/gui2/dialogs/tag_list_editor_ui.py
 lib/calibre/calibre/gui2/dialogs/template_dialog.py
+lib/calibre/calibre/gui2/dialogs/template_dialog_code_widget.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/template_line_editor.py
 lib/calibre/calibre/gui2/dialogs/trim_image.py
@@ -1179,6 +1172,7 @@ lib/calibre/calibre/plugins/podofo.so
 lib/calibre/calibre/plugins/progress_indicator.so
 lib/calibre/calibre/plugins/speedup.so
 lib/calibre/calibre/plugins/sqlite_custom.so
+lib/calibre/calibre/plugins/sqlite_extension.so
 lib/calibre/calibre/plugins/tokenizer.so
 lib/calibre/calibre/plugins/unicode_names.so
 lib/calibre/calibre/prints.py
@@ -1246,7 +1240,6 @@ lib/calibre/calibre/utils/complete.py
 lib/calibre/calibre/utils/config.py
 lib/calibre/calibre/utils/config_base.py
 lib/calibre/calibre/utils/date.py
-lib/calibre/calibre/utils/dbus_service.py
 lib/calibre/calibre/utils/exim.py
 lib/calibre/calibre/utils/file_type_icons.py
 lib/calibre/calibre/utils/filenames.py

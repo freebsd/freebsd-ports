@@ -15,7 +15,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		liblcms.so:graphics/lcms
 
 USES=		localbase:ldflags scons tar:bzip2
-USE_GCC=	any	# segfaults on exit when built with Clang
+USE_GCC=	yes	# segfaults on exit when built with Clang
 
 PLIST_FILES=	bin/${PORTNAME}
 

@@ -1,7 +1,8 @@
+# Created by: Oleh Hushchenkov <o.hushchenkov@gmail.com>
+
 PORTNAME=	gn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1823
-PORTREVISION=	2
+DISTVERSION=	1897
 CATEGORIES=	devel
 
 MAINTAINER=	o.hushchenkov@gmail.com
@@ -30,7 +31,7 @@ CONFIGURE_WRKSRC=	${WRKSRC}/out # --out-path breaks "make test"
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} 's/"python"/"${PYTHON_CMD:T}"/' \
+	@${REINPLACE_CMD} 's/"python3"/"${PYTHON_CMD:T}"/' \
 		${WRKSRC}/src/gn/exec_process_unittest.cc
 
 do-install:

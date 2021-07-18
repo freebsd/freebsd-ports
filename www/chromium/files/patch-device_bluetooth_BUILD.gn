@@ -1,4 +1,4 @@
---- device/bluetooth/BUILD.gn.orig	2021-03-12 23:57:25 UTC
+--- device/bluetooth/BUILD.gn.orig	2021-04-14 18:41:03 UTC
 +++ device/bluetooth/BUILD.gn
 @@ -9,7 +9,7 @@ if (is_android) {
  }

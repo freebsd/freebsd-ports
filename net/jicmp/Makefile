@@ -5,7 +5,7 @@ PORTVERSION=	1.4.4
 CATEGORIES=	net java
 MASTER_SITES=	SF/opennms/JICMP/stable-1.4/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java native interface (JNI) to ICMP (ping)
 
 WRKSRC=		${WRKDIR}/jicmp-${PORTVERSION}

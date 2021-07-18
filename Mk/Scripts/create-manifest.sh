@@ -141,7 +141,7 @@ if [ ${dp_MAINTAINER} = "ports@FreeBSD.org" ]; then
 
 	More information about port maintainership is available at:
 
-	https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port
+	https://docs.freebsd.org/en/articles/contributing/#ports-contributing
 	EOD
 	},
 	EOT

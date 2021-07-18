@@ -23,7 +23,6 @@ RUN_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:devel/sparsehash
 
 USES=		autoreconf libtool localbase:ldflags compiler:c++11-lang
 USE_CXXSTD=	gnu++98
-USE_PERL5=	run
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes

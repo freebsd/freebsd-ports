@@ -1,10 +1,10 @@
 PORTNAME=	sqlalchemy
-PORTVERSION=	1.4.0b3
+PORTVERSION=	1.4.21
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	14
-DISTNAME=	SQLAlchemy-${DISTVERSIONFULL}
+DISTNAME=	SQLAlchemy-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python SQL toolkit and Object Relational Mapper 1.4.x
@@ -37,7 +37,7 @@ SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3800
+.if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
 

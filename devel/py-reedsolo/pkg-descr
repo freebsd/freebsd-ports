@@ -1,0 +1,4 @@
+A pure-python universal errors-and-erasures Reed-Solomon Codec, based on
+the wonderful tutorial at wikiversity, written by "Bobmath" and "LRQ3000".
+
+WWW: https://github.com/tomerfiliba/reedsolomon

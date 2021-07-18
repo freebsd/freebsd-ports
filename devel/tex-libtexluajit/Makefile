@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-20150521-source
 DIST_SUBDIR=	TeX
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	freebsd-tex@FreeBSD.org
 COMMENT=	LuaJIT library for TeXLive
 
 LICENSE=	MIT
@@ -26,5 +26,11 @@ EXTRACT_FILES=		build-aux libs/luajit
 WRKSRC=		${WRKDIR}/${DISTNAME}/libs/luajit
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USES+=		compiler:gcc-c++11-lib
+.endif
 
 .include <bsd.port.mk>

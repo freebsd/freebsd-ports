@@ -1,6 +1,6 @@
---- Makefile.am.orig	2017-12-09 17:59:37 UTC
+--- Makefile.am.orig	2021-02-28 23:41:19 UTC
 +++ Makefile.am
-@@ -133,8 +133,8 @@ googleinclude_HEADERS =				\
+@@ -122,8 +122,8 @@ googleinclude_HEADERS =				\
  # Add your documentation files (in doc/) in addition to these
  # top-level boilerplate files.  Also add a TODO file if you have one.
  # We'll add to this later, on a library-by-library basis

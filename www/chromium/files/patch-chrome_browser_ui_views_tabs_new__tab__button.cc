@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/tabs/new_tab_button.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/views/tabs/new_tab_button.cc.orig	2021-04-14 18:40:56 UTC
 +++ chrome/browser/ui/views/tabs/new_tab_button.cc
 @@ -58,7 +58,7 @@ NewTabButton::NewTabButton(TabStrip* tab_strip, Presse
    SetAnimateOnStateChange(true);

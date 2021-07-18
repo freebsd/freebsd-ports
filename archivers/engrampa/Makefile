@@ -1,7 +1,7 @@
 # Created by: Anders Nordby <anders@FreeBSD.org>
 
 PORTNAME=	engrampa
-PORTVERSION=	1.24.1
+PORTVERSION=	1.24.2
 CATEGORIES=	archivers mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

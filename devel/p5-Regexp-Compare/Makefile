@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Regexp-Compare
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

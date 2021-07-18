@@ -1,0 +1,6 @@
+Plack::Middleware::DBIx::DisconnectAll calls DBIx::DisconnectAll at end of
+request and disconnects all database connections.
+
+This modules is useful for freeing resources.
+
+WWW: https://metacpan.org/dist/Plack-Middleware-DBIx-DisconnectAll

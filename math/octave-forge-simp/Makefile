@@ -2,7 +2,7 @@
 
 PORTNAME=	octave-forge-simp
 PORTVERSION=	1.1.0
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

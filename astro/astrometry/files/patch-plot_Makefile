@@ -1,0 +1,31 @@
+--- plot/Makefile.orig	2020-07-16 20:26:35 UTC
++++ plot/Makefile
+@@ -119,23 +119,24 @@ install:
+ PYTHON_EXTRA_INSTALL := plotstuff.py plotstuff_c.py _plotstuff_c$(PYTHON_SO_EXT)
+ 
+ install-extra: $(INSTALL_CAIRO_EXECS)
+-	@echo Installing in directory '$(INSTALL_DIR)'
++	@echo Installing executables in directory '$(INSTALL_DIR)'
+ 	$(MKDIR) '$(INSTALL_DIR)/bin'
+ 	@for x in $(INSTALL_CAIRO_EXECS); do \
+-		echo $(CP) $$x '$(INSTALL_DIR)/bin'; \
+-		$(CP) $$x '$(INSTALL_DIR)/bin'; \
++		echo $(BSD_INSTALL_PROGRAM) $$x '$(INSTALL_DIR)/bin'; \
++		$(BSD_INSTALL_PROGRAM) $$x '$(INSTALL_DIR)/bin'; \
+ 	done
+ 	$(MKDIR) '$(INCLUDE_INSTALL_DIR)'
+ 	@for x in $(PLOT_INSTALL_H); do \
+ 		echo $(CP) '$(INCLUDE_DIR)/'$$x '$(INCLUDE_INSTALL_DIR)'; \
+ 		$(CP) '$(INCLUDE_DIR)/'$$x '$(INCLUDE_INSTALL_DIR)'; \
+ 	done
+-	$(MAKE) $(PYTHON_EXTRA_INSTALL)
++	$(MAKE) $(PYTHON_EXTRA_INSTALL) _plotstuff_c$(PYTHON_SO_EXT)
+ 	$(MKDIR) '$(PY_INSTALL_DIR)'
+ 	@for x in $(PYTHON_EXTRA_INSTALL); do \
+ 		echo $(CP) $$x '$(PY_INSTALL_DIR)/'$$x; \
+ 		$(CP) $$x '$(PY_INSTALL_DIR)/'$$x; \
+ 	done
++	$(BSD_INSTALL_LIB) _plotstuff_c$(PYTHON_SO_EXT) '$(PY_INSTALL_DIR)'
+ 
+ $(COMMON)/cairoutils.o:
+ 	$(MAKE) -C $(COMMON) cairoutils.o

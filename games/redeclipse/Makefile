@@ -3,6 +3,7 @@
 PORTNAME=	redeclipse
 PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -10,6 +11,8 @@ COMMENT=	Single-player and multi-player first-person ego-shooter
 
 LICENSE=	MIT ZLIB
 LICENSE_COMB=	multi
+
+CONFLICTS_INSTALL=redeclipse16-[0-9]*
 
 BROKEN_sparc64=	does not build on sparc64
 

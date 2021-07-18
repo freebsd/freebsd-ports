@@ -60,6 +60,7 @@ man/man1/ircII.1.gz
 %%HELP%%%%DATADIR%%/help/bind/quote_character
 %%HELP%%%%DATADIR%%/help/bind/refresh_inputline
 %%HELP%%%%DATADIR%%/help/bind/refresh_screen
+%%HELP%%%%DATADIR%%/help/bind/refresh_window_lastlog
 %%HELP%%%%DATADIR%%/help/bind/scroll_backward
 %%HELP%%%%DATADIR%%/help/bind/scroll_end
 %%HELP%%%%DATADIR%%/help/bind/scroll_forward

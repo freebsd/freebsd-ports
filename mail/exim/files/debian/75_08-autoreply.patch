@@ -1,0 +1,70 @@
+From 26de37d8960da80473866fb59b9dfd10a5761538 Mon Sep 17 00:00:00 2001
+From: "Heiko Schlittermann (HS12-RIPE)" <hs@schlittermann.de>
+Date: Sun, 28 Mar 2021 11:06:27 +0200
+Subject: [PATCH 08/23] autoreply
+
+---
+ src/transports/autoreply.c | 21 ++++++++++++---------
+ 1 file changed, 12 insertions(+), 9 deletions(-)
+
+diff --git a/src/transports/autoreply.c b/src/transports/autoreply.c
+index 865abbf4f..ed99de4c6 100644
+--- a/src/transports/autoreply.c
++++ b/src/transports/autoreply.c
+@@ -404,14 +404,15 @@ recipient cache. */
+ 
+ if (oncelog && *oncelog && to)
+   {
++  uschar *m;
+   time_t then = 0;
+ 
+-  if (is_tainted(oncelog))
++  if (m = is_tainted2(oncelog, 0, "Tainted '%s' (once file for %s transport)"
++      " not permitted", oncelog, tblock->name))
+     {
+     addr->transport_return = DEFER;
+     addr->basic_errno = EACCES;
+-    addr->message = string_sprintf("Tainted '%s' (once file for %s transport)"
+-      " not permitted", oncelog, tblock->name);
++    addr->message = m;
+     goto END_OFF;
+     }
+ 
+@@ -515,13 +516,14 @@ if (oncelog && *oncelog && to)
+ 
+   if (then != 0 && (once_repeat_sec <= 0 || now - then < once_repeat_sec))
+     {
++    uschar *m;
+     int log_fd;
+-    if (is_tainted(logfile))
++    if (m = is_tainted2(logfile, 0, "Tainted '%s' (logfile for %s transport)"
++	" not permitted", logfile, tblock->name))
+       {
+       addr->transport_return = DEFER;
+       addr->basic_errno = EACCES;
+-      addr->message = string_sprintf("Tainted '%s' (logfile for %s transport)"
+-	" not permitted", logfile, tblock->name);
++      addr->message = m;
+       goto END_OFF;
+       }
+ 
+@@ -548,12 +550,13 @@ if (oncelog && *oncelog && to)
+ /* We are going to send a message. Ensure any requested file is available. */
+ if (file)
+   {
+-  if (is_tainted(file))
++  uschar *m;
++  if (m = is_tainted2(file, 0, "Tainted '%s' (file for %s transport)"
++      " not permitted", file, tblock->name))
+     {
+     addr->transport_return = DEFER;
+     addr->basic_errno = EACCES;
+-    addr->message = string_sprintf("Tainted '%s' (file for %s transport)"
+-      " not permitted", file, tblock->name);
++    addr->message = m;
+     return FALSE;
+     }
+   if (!(ff = Ufopen(file, "rb")) && !ob->file_optional)
+-- 
+2.30.2
+

@@ -14,6 +14,8 @@
 %%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-links.elc
 %%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-loader.el
 %%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-loader.elc
+%%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-macs.el
+%%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-macs.elc
 %%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-misc.el
 %%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-misc.elc
 %%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-occur.el

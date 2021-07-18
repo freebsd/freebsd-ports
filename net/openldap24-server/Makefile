@@ -1,16 +1,19 @@
 # Created by: Xin LI <delphij@FreeBSD.org>
 
 PORTNAME=		openldap
-DISTVERSION=		2.4.58
+DISTVERSION=		2.4.59
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
-MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
-			http://repository.linagora.org/OpenLDAP/openldap-release/ \
-			ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/%SUBDIR%/ \
+MASTER_SITES=		https://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/ \
+			http://gpl.savoirfairelinux.net/pub/mirrors/openldap/%SUBDIR%/ \
+			http://repository.linagora.org/OpenLDAP/%SUBDIR%/ \
+			http://mirror.eu.oneandone.net/software/openldap/%SUBDIR%/ \
 			ftp://ftp.ntua.gr/mirror/OpenLDAP/%SUBDIR%/ \
-			ftp://ftp.u-aizu.ac.jp/pub/net/openldap/%SUBDIR%/ \
-			ftp://ftp.nl.uu.net/pub/unix/db/openldap/%SUBDIR%/ \
-			ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/ \
+			https://mirror-hk.koddos.net/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.dti.ad.jp/pub/net/OpenLDAP/%SUBDIR%/ \
+			https://mirror.koddos.net/OpenLDAP/%SUBDIR%/ \
+			https://mirror.lyrahosting.com/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			http://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-release
 .if defined(CLIENT_ONLY)
@@ -65,9 +68,9 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	1
+PORTREVISION_SERVER=	0
 OPENLDAP_SHLIB_MAJOR=	2
-OPENLDAP_SHLIB_MINOR=	11.6
+OPENLDAP_SHLIB_MINOR=	11.7
 OPENLDAP_MAJOR=		${DISTVERSION:R}
 
 OPTIONS_DEFINE=		DEBUG FETCH GSSAPI
@@ -81,7 +84,7 @@ OPTIONS_DEFINE+=	DOCS
 OPTIONS_DEFINE+=	DYNACL ACI BDB MDB DNSSRV PASSWD PERL RELAY SHELL
 OPTIONS_DEFINE+=	SOCK ODBC RLOOKUPS SLP SLAPI TCP_WRAPPERS
 OPTIONS_DEFINE+=	ACCESSLOG AUDITLOG COLLECT CONSTRAINT DDS
-OPTIONS_DEFINE+=	DEREF DYNGROUP DYNLIST MEMBEROF PPOLICY PROXYCACHE
+OPTIONS_DEFINE+=	DEREF DYNGROUP DYNLIST MEMBEROF PPOLICY PCACHE
 OPTIONS_DEFINE+=	REFINT RETCODE RWM SEQMOD SSSVLV SYNCPROV TRANSLUCENT
 OPTIONS_DEFINE+=	UNIQUE VALSORT SMBPWD SHA2 DYNAMIC_BACKENDS SASL
 OPTIONS_DEFINE+=	LMPASSWD
@@ -89,8 +92,16 @@ OPTIONS_DEFINE+=	PBKDF2
 OPTIONS_DEFINE+=	OUTLOOK
 OPTIONS_DEFINE+=	LASTBIND
 OPTIONS_DEFINE+=	KQUEUE
+OPTIONS_DEFINE+=	DYNAMIC_MODULES
 
-OPTIONS_DEFAULT=	MDB SYNCPROV DYNAMIC_BACKENDS
+OPTIONS_DEFAULT=	DYNAMIC_MODULES
+# Backend modules
+OPTIONS_DEFAULT+=	DNSSRV MDB PASSWD RELAY ODBC
+# Overlay modules
+OPTIONS_DEFAULT+=	ACCESSLOG AUDITLOG COLLECT CONSTRAINT DDS
+OPTIONS_DEFAULT+=	DYNGROUP DYNLIST MEMBEROF PCACHE PPOLICY
+OPTIONS_DEFAULT+=	REFINT RETCODE RWM SOCK SSSVLV SYNCPROV
+OPTIONS_DEFAULT+=	TRANSLUCENT UNIQUE VALSORT
 
 DYNACL_DESC=		Run-time loadable ACL (experimental)
 ACI_DESC=		Per-object ACI (experimental)
@@ -117,7 +128,7 @@ DYNGROUP_DESC=		With Dynamic Group overlay
 DYNLIST_DESC=		With Dynamic List overlay
 MEMBEROF_DESC=		With Reverse Group Membership overlay
 PPOLICY_DESC=		With Password Policy overlay
-PROXYCACHE_DESC=	With Proxy Cache overlay
+PCACHE_DESC=		With Proxy Cache overlay
 REFINT_DESC=		With Referential Integrity overlay
 RETCODE_DESC=		With Return Code testing overlay
 RWM_DESC=		With Rewrite/Remap overlay
@@ -132,7 +143,8 @@ SMBPWD_DESC=		With Samba Password hashes overlay
 SHA2_DESC=		With SHA2 Password hashes overlay
 LMPASSWD_DESC=		With LM hash password support (DEPRECATED)
 PBKDF2_DESC=		With PBKDF2 hash password support
-DYNAMIC_BACKENDS_DESC=	Build dynamic backends
+DYNAMIC_BACKENDS_DESC=	Build dynamic backends (DEPRECATED)
+DYNAMIC_MODULES_DESC=	Build dynamic backend and overlay modules
 OUTLOOK_DESC=		Force caseIgnoreOrderingMatch on name attribute (experimental)
 LASTBIND_DESC=		With lastbind overlay
 KQUEUE_DESC=		With kqueue support (experimental)
@@ -197,7 +209,9 @@ SUB_LIST+=		LDAP_RUN_DIR=${LDAP_RUN_DIR} \
 			LDAP_USER=${LDAP_USER} \
 			LDAP_GROUP=${LDAP_GROUP} \
 			DATABASEDIR=${DATABASEDIR} \
-			PKGNAME=${PKGNAME}
+			PORTNAME=${PORTNAME} \
+			PKGNAME=${PKGNAME} \
+			PKGNAMESUFFIX=${PKGNAMESUFFIX}
 
 CONFIGURE_ARGS=		--with-threads=posix \
 			--with-tls=openssl \
@@ -233,8 +247,9 @@ USE_RC_SUBR=		slapd
 
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
-.if ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSLAPI}
+.if ${PORT_OPTIONS:MDYNAMIC_MODULES} || ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSLAPI}
 LIB_DEPENDS+=		libltdl.so:devel/libltdl
+LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--enable-modules
 PLIST_SUB+=		MODULES=""
 .else
@@ -243,7 +258,7 @@ PLIST_SUB+=		MODULES="@comment "
 
 SED_MODULES=		-e 's/\(moduleload[ 	]*back_[a-z]*\)\.la/\1/'
 
-.if ${PORT_OPTIONS:MDYNAMIC_BACKENDS}
+.if ${PORT_OPTIONS:MDYNAMIC_MODULES} || ${PORT_OPTIONS:MDYNAMIC_BACKENDS}
 BACKEND_ENABLE=		"mod"
 BACKEND_PLIST=		""
 SED_MODULES+=		-e 's/\# *\(modulepath\)/\1/' \
@@ -253,7 +268,13 @@ BACKEND_ENABLE=		"yes"
 BACKEND_PLIST=		"@comment "
 .endif
 
+.if ${PORT_OPTIONS:MDYNAMIC_MODULES}
+OVERLAY_ENABLE=		mod
+OVERLAY_PLIST=		""
+.else
 OVERLAY_ENABLE=		yes
+OVERLAY_PLIST=		"@comment "
+.endif
 
 CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
 			--enable-crypt \
@@ -267,22 +288,37 @@ PLIST_SUB+=		BACKEND=${BACKEND_PLIST}
 
 .if ${PORT_OPTIONS:MACCESSLOG}
 CONFIGURE_ARGS+=	--enable-accesslog=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_ACCESSLOG=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_ACCESSLOG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAUDITLOG}
 CONFIGURE_ARGS+=	--enable-auditlog=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_AUDITLOG=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_AUDITLOG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCOLLECT}
 CONFIGURE_ARGS+=	--enable-collect=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_COLLECT=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_COLLECT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCONSTRAINT}
 CONFIGURE_ARGS+=	--enable-constraint=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_CONSTRAINT=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_CONSTRAINT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDDS}
 CONFIGURE_ARGS+=	--enable-dds=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_DDS=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_DDS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -293,14 +329,23 @@ MAKE_ENV+=		STRIP=${STRIP}
 
 .if ${PORT_OPTIONS:MDEREF}
 CONFIGURE_ARGS+=	--enable-deref=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_DEREF=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_DEREF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDYNGROUP}
 CONFIGURE_ARGS+=	--enable-dyngroup=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_DYNGROUP=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_DYNGROUP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDYNLIST}
 CONFIGURE_ARGS+=	--enable-dynlist=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_DYNLIST=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_DYNLIST="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLMPASSWD}
@@ -309,54 +354,88 @@ CONFIGURE_ARGS+=	--enable-lmpasswd
 
 .if ${PORT_OPTIONS:MMEMBEROF}
 CONFIGURE_ARGS+=	--enable-memberof=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_MEMBEROF=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_MEMBEROF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPPOLICY}
 CONFIGURE_ARGS+=	--enable-ppolicy=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_PPOLICY=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_PPOLICY="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MPROXYCACHE}
+.if ${PORT_OPTIONS:MPCACHE}
 CONFIGURE_ARGS+=	--enable-proxycache=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_PCACHE=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_PCACHE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MREFINT}
 CONFIGURE_ARGS+=	--enable-refint=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_REFINT=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_REFINT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRETCODE}
 CONFIGURE_ARGS+=	--enable-retcode=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_RETCODE=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_RETCODE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRWM}
 CONFIGURE_ARGS+=	--enable-rwm=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_RWM=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_RWM="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSEQMOD}
 CONFIGURE_ARGS+=	--enable-seqmod=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_SEQMOD=${OVERLAY_PLIST}
 .else
 CONFIGURE_ARGS+=	--disable-seqmod
+PLIST_SUB+=		OVERLAY_SEQMOD="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSSSVLV}
 CONFIGURE_ARGS+=	--enable-sssvlv=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_SSSVLV=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_SSSVLV="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSYNCPROV}
 CONFIGURE_ARGS+=	--enable-syncprov=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_SYNCPROV=${OVERLAY_PLIST}
 .else
 CONFIGURE_ARGS+=	--disable-syncprov
+PLIST_SUB+=		OVERLAY_SYNCPROV="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTRANSLUCENT}
 CONFIGURE_ARGS+=	--enable-translucent=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_TRANSLUCENT=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_TRANSLUCENT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MUNIQUE}
 CONFIGURE_ARGS+=	--enable-unique=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_UNIQUE=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_UNIQUE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVALSORT}
 CONFIGURE_ARGS+=	--enable-valsort=${OVERLAY_ENABLE}
+PLIST_SUB+=		OVERLAY_VALSORT=${OVERLAY_PLIST}
+.else
+PLIST_SUB+=		OVERLAY_VALSORT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MACI}
@@ -648,10 +727,10 @@ post-install:
 		${MAKE_ARGS} prefix="${PREFIX}" install)
 	${RM} ${STAGEDIR}${PREFIX}/libexec/openldap/lastbind.a
 .endif
-.if ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSMBPWD} || ${PORT_OPTIONS:MSHA2} || ${PORT_OPTIONS:MPBKDF2}
+.if ${PORT_OPTIONS:MDYNAMIC_MODULES} || ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSMBPWD} || ${PORT_OPTIONS:MSHA2} || ${PORT_OPTIONS:MPBKDF2}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/openldap/*.so
 .endif
-.if ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSLAPI}
+.if ${PORT_OPTIONS:MDYNAMIC_MODULES} || ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSLAPI}
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/openldap
 .endif
 .endif # defined(CLIENT_ONLY)

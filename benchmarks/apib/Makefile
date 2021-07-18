@@ -1,8 +1,9 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	apib
-PORTVERSION=	1.0
-PORTREVISION=	3
+DISTVERSIONPREFIX=	${PORTNAME:tu}_
+DISTVERSION=	1_2_1
+DISTVERSIONSUFFIX=	_RC1
 CATEGORIES=	benchmarks www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -10,29 +11,21 @@ COMMENT=	Simple and fast HTTP performance testing tool
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libapr-1.so:devel/apr1
+LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libev.so:devel/libev \
+		libgtest.so:devel/googletest \
+		libhttp_parser.so:www/http-parser
 
+USES=		cmake:testing compiler:c++17-lang localbase:ldflags ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	apigee
-GH_TAGNAME=	7e8dea9
 
-USES=		localbase ssl
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	APR_LOC="${LOCALBASE}/include/apr-1"
-
-PLIST_FILES=	bin/apib bin/apibmon
+PLIST_FILES=	bin/apib bin/apibmon bin/testserver
 PORTEXAMPLES=	env.sh pivot run.sh rungroup.sh tojson
 
 OPTIONS_DEFINE=	EXAMPLES
 
-post-patch:
-	@${REINPLACE_CMD} -e 's, LIBS="-lssl,& -lcrypto,' ${WRKSRC}/configure
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/apib ${WRKSRC}/apibmon \
-		${STAGEDIR}${PREFIX}/bin
-
-do-install-EXAMPLES-on:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samplescripts/* ${STAGEDIR}${EXAMPLESDIR}
 

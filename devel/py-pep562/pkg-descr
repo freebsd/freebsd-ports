@@ -1,0 +1,4 @@
+A backport of PEP 562. Allows controlling a module's __dir__ and __getattr__.
+Useful for deprecating attributes.
+
+WWW: https://github.com/facelessuser/pep562

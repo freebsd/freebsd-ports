@@ -158,6 +158,8 @@ share/locale/ar/LC_MESSAGES/kipiplugin_googleservices.mo
 share/locale/ar/LC_MESSAGES/kipiplugin_imgur.mo
 share/locale/ar/LC_MESSAGES/kipiplugin_remotestorage.mo
 share/locale/ar/LC_MESSAGES/kipiplugins.mo
+share/locale/be/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/be/LC_MESSAGES/kipiplugins.mo
 share/locale/bs/LC_MESSAGES/kipiplugin_dropbox.mo
 share/locale/bs/LC_MESSAGES/kipiplugin_facebook.mo
 share/locale/bs/LC_MESSAGES/kipiplugin_flashexport.mo
@@ -826,6 +828,7 @@ share/locale/ru/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/ru/LC_MESSAGES/kipiplugin_vkontakte.mo
 share/locale/ru/LC_MESSAGES/kipiplugin_yandexfotki.mo
 share/locale/ru/LC_MESSAGES/kipiplugins.mo
+share/locale/se/LC_MESSAGES/kipiplugins.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_dropbox.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_facebook.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_flashexport.mo
@@ -864,6 +867,11 @@ share/locale/sl/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/sl/LC_MESSAGES/kipiplugin_vkontakte.mo
 share/locale/sl/LC_MESSAGES/kipiplugin_yandexfotki.mo
 share/locale/sl/LC_MESSAGES/kipiplugins.mo
+share/locale/sq/LC_MESSAGES/kipiplugin_facebook.mo
+share/locale/sq/LC_MESSAGES/kipiplugin_flickr.mo
+share/locale/sq/LC_MESSAGES/kipiplugin_googleservices.mo
+share/locale/sq/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/sq/LC_MESSAGES/kipiplugins.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_dropbox.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_facebook.mo
 share/locale/sv/LC_MESSAGES/kipiplugin_flashexport.mo

@@ -1,0 +1,41 @@
+#!/bin/sh
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+buildwarning() {
+cat <<EOF
+###############################################################################
+
+                             ** IMPORTANT **
+
+If you want to cancel it, press ctrl-C now if you need check some things
+before of build it.
+
+###############################################################################
+EOF
+        sleep 5
+}
+
+case $2 in
+PRE-INSTALL)
+	buildwarning
+;;
+POST-INSTALL)
+cd /var/db/firebird
+
+# Lock files
+
+for i in isc_init1 isc_lock1 isc_event1
+do
+	FileName=$i.`hostname`
+	touch $FileName
+	chmod uga=rw $FileName
+	chown firebird:firebird $FileName
+done
+
+touch firebird.log
+chown firebird:firebird firebird.log security4.fdb
+
+;;
+
+esac

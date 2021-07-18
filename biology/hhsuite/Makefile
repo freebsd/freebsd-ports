@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmpi.so:net/openmpi
 
-USES=		cmake perl5 python shebangfix
+USES=		compiler:c++11-lang cmake perl5 python shebangfix
 SHEBANG_GLOB=	*.pl *.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	soedinglab
@@ -21,16 +21,10 @@ LDFLAGS+=	-Wl,-rpath,${LOCALBASE}/mpi/openmpi/lib -L${LOCALBASE}/mpi/openmpi/lib
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64
+.if ${ARCH} == amd64 || ${ARCH} == i386
 CMAKE_ON=	HAVE_SSE2
-.endif
-
-.if ${ARCH} == powerpc64
-USES+=		compiler:gcc-c++11-lib
-post-patch:
-	${REINPLACE_CMD} -e 's/-msse -msse2/-D_ARCH_PWR8 -DNO_WARN_X86_INTRINSICS -maltivec -mpower8-vector -mvsx/g' ${WRKSRC}/src/CMakeLists.txt
-.else
-USES+=		compiler:c++11-lang
+.elif ${ARCH:Mpowerpc64*}
+CMAKE_ON=	HAVE_POWER8
 .endif
 
 .include <bsd.port.mk>

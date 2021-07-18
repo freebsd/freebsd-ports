@@ -1,0 +1,3 @@
+uharfbuzz provides streamlined Cython bindings for the HarfBuzz shaping engine.
+
+WWW: https://github.com/harfbuzz/uharfbuzz

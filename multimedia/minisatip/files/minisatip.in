@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# PROVIDE: minisatip
+# REQUIRE: DAEMON webcamd
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable minisatip
+#
+# minisatip_enable (bool):      Set to "NO" by default.
+#                               Set it to "YES" to enable minisatip.
+# minisatip_flags (str):        Custom flags for minisatip
+
+. /etc/rc.subr
+
+name=minisatip
+rcvar=minisatip_enable
+
+load_rc_config $name
+
+: ${minisatip_enable:=NO}
+
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/sbin/minisatip"
+command_args="-g -R %%PREFIX%%/share/minisatip/html"
+
+run_rc_command "$1"

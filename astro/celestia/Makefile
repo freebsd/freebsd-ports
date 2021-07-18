@@ -2,7 +2,7 @@
 
 PORTNAME=	celestia
 PORTVERSION=	1.6.1
-PORTREVISION=	11
+PORTREVISION=	13
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Celestia-source/${PORTVERSION}
 PKGNAMESUFFIX=	-${CELESTIA_UI}
@@ -37,9 +37,6 @@ CONFLICTS=	${UI_LIST:S|${CELESTIA_UI}||:S|^|celestia-|:S|$|-[0-9]*|}
 #	the default one);
 # gtk	Full interface with minimal dependencies: adds menu, configuration
 #	dialog, some other utilities;
-# gnome	Full GTK interface plus a few GNOME integration goodies, such as
-#	preference saving in GConf (this looks and works very much like
-#	the Windows interface).
 #
 .if ${CELESTIA_UI} == "glut"
 CONFIGURE_ARGS+=	--with-glut
@@ -50,17 +47,11 @@ CONFIGURE_ARGS+=	--with-gtk
 USES+=		gnome
 USE_GNOME+=	gtk20
 PLIST_FILES=	share/applications/celestia.desktop
-.elif ${CELESTIA_UI} == "gnome"
-CATEGORIES+=	gnome
-CONFIGURE_ARGS+=	--with-gnome
-USE_GNOME+=	libgnomeui
-GCONF_SCHEMAS=	celestia.schemas
-PLIST_FILES=	share/applications/celestia.desktop
 .else
 IGNORE=		requires one of the <${UI_LIST}> values for CELESTIA_UI
 .endif
 
-.if ${CELESTIA_UI} == "gtk" || ${CELESTIA_UI} == "gnome"
+.if ${CELESTIA_UI} == "gtk"
 USES+=		pathfix
 LIB_DEPENDS+=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libtheora.so:multimedia/libtheora

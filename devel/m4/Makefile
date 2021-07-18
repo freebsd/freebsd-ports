@@ -1,8 +1,7 @@
 # Created by: mr
 
 PORTNAME=	m4
-PORTVERSION=	1.4.18
-PORTREVISION=	1
+PORTVERSION=	1.4.19
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
@@ -13,20 +12,23 @@ COMMENT=	GNU M4
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	LIBSIGSEGV EXAMPLES
-LIBSIGSEGV_DESC=Use alternative page fault handler (GNU libsigsegv)
+USES=		iconv makeinfo tar:xz
 
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
 GNU_CONFIGURE=	yes
-USES=		makeinfo tar:xz
 
 EXAMPLESDIR=	${PREFIX}/share/examples/gm4
 INFO=		m4
 
-LIBSIGSEGV_CONFIGURE_OFF=	--without-libsigsegv-prefix
-LIBSIGSEGV_CONFIGURE_ON=	--with-libsigsegv-prefix=${LOCALBASE}
-LIBSIGSEGV_LIB_DEPENDS=		libsigsegv.so:devel/libsigsegv
+OPTIONS_DEFINE=	EXAMPLES LIBSIGSEGV NLS
+OPTIONS_SUB=	yes
+LIBSIGSEGV_DESC=Use alternative page fault handler (GNU libsigsegv)
+
+LIBSIGSEGV_CONFIGURE_WITH=	libsigsegv-prefix=${LOCALBASE}
+LIBSIGSEGV_LIB_DEPENDS=	libsigsegv.so:devel/libsigsegv
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^* M4: / s|M4|G&|' ${WRKSRC}/doc/m4.texi

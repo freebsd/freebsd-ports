@@ -1,5 +1,5 @@
 PORTNAME=	libvirt-dbus
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://libvirt.org/libvirt/dbus/
 

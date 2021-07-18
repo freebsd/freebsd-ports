@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# PROVIDE: owncast
+# REQUIRE: NETWORKING SYSLOG
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable owncast:
+#
+#owncast_enable="YES"
+
+. /etc/rc.subr
+
+name="owncast"
+rcvar="owncast_enable"
+
+load_rc_config $name
+
+: ${owncast_user:="%%OWNCAST_USER%%"}
+: ${owncast_enable:="NO"}
+: ${owncast_path:="%%WWWDIR%%"}
+: ${owncast_facility:="daemon"}
+: ${owncast_priority:="debug"}
+
+command="%%PREFIX%%/sbin/${name}"
+procname="%%PREFIX%%/sbin/${name}"
+
+pidfile="/var/run/${name}.pid"
+
+start_cmd="${name}_start"
+
+owncast_start() {
+	cd ${owncast_path}
+	/usr/sbin/daemon %%DAEMONARGS%% \
+		-u ${owncast_user} -p ${pidfile} \
+		/usr/bin/env -i \
+		"HOME=${owncast_path}" \
+		"PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:${PATH}" \
+		"USER=${owncast_user}" \
+		$command
+}
+
+run_rc_command "$1"

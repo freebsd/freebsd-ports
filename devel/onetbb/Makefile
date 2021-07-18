@@ -1,7 +1,7 @@
 # Created by: Arun Sharma <arun@sharma-home.net>
 
 PORTNAME=	onetbb
-PORTVERSION=	2021.2.0
+PORTVERSION=	2021.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -25,12 +25,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	oneapi-src
 GH_PROJECT=	oneTBB
 
-SUB_FILES=	onetbb.pc
-SUB_LIST=	prefix="${PREFIX}" \
-		name="${PORTNAME}" \
-		description="${COMMENT}" \
-		version="${PORTVERSION}"
-
 USE_LDCONFIG=	yes
 
 PORTDOCS=	README.md
@@ -39,7 +33,8 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-post-install:
-	${INSTALL_DATA} ${WRKDIR}/onetbb.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+.if ${ARCH} == powerpc || ${ARCH} == riscv64
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_tbb_tools__api_ittnotify__config.h
+.endif
 
 .include <bsd.port.post.mk>

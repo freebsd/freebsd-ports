@@ -1,6 +1,5 @@
 PORTNAME=	irssi
-PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTVERSION=	1.2.3
 PORTEPOCH=	2
 CATEGORIES?=	irc
 MASTER_SITES=	https://github.com/irssi/irssi/releases/download/${PORTVERSION}/
@@ -39,7 +38,6 @@ PERL_USES=			perl5
 PERL_CONFIGURE_ON=		--with-perl-lib=site
 PERL_CONFIGURE_OFF=		--with-perl=no
 PROXY_CONFIGURE_WITH=		proxy
-SOCKS_DESC=			Socks proxy support
 SOCKS_CONFIGURE_WITH=		socks
 TRUECOLOR_DESC=			True color support
 TRUECOLOR_CONFIGURE_ENABLE=	true-color

@@ -1,14 +1,20 @@
 PORTNAME=	vscode
-DISTVERSION=	1.55.1
+DISTVERSION=	1.56.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://registry.npmjs.org/esbuild-freebsd-64/-/:esbuild_binary \
 		https://nodejs.org/dist/v${NODE_VER}/:node_headers \
 		https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
-DISTFILES=	esbuild-freebsd-64-${ESBUILD_VER}.tgz:esbuild_binary \
+DISTFILES=	esbuild-freebsd-64-${ESBUILD_VER_BUILD}.tgz:esbuild_binary \
+		esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}.tgz:esbuild_binary \
 		node-v${NODE_VER}-headers${EXTRACT_SUFX}:node_headers \
 		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
 		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache
 DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
+		node-v${NODE_VER}-headers${EXTRACT_SUFX} \
+		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} \
+		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Visual Studio Code - Open Source ("Code - OSS")
@@ -16,7 +22,7 @@ COMMENT=	Visual Studio Code - Open Source ("Code - OSS")
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-DEPRECATED=	Uses EOL Python 2.7 via devel/electron11
+DEPRECATED=	Uses EOL Python 2.7 via devel/electron12
 EXPIRATION_DATE=2021-06-23
 
 ONLY_FOR_ARCHS=	amd64
@@ -41,7 +47,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libre2.so:devel/re2 \
 		liblcms2.so:graphics/lcms2 \
 		libdrm.so:graphics/libdrm \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libwebp.so:graphics/webp \
 		libavcodec.so:multimedia/ffmpeg \
 		libvpx.so:multimedia/libvpx \
@@ -53,6 +59,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libnss3.so:security/nss \
 		libexpat.so:textproc/expat2 \
 		libxkbcommon.so:x11/libxkbcommon \
+		libxshmfence.so:x11/libxshmfence \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
 		xdg-open:devel/xdg-utils \
@@ -66,7 +73,7 @@ USES=		desktop-file-utils gl gmake gnome jpeg pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	08a217c4d27a02a5bcde898fd7981bda5b49391b
+SOURCE_COMMIT_HASH=	054a9295330880ed74ceaedda236253b4f39a335
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -78,10 +85,12 @@ USE_GNOME=	atk cairo pango gdkpixbuf2 gtk30 libxml2 libxslt
 USE_LDCONFIG=	${DATADIR}
 
 # See ${WRKSRC}/remote/.yarnrc for NODE_VER
-NODE_VER=	12.18.3
+NODE_VER=	14.16.0
 NODE_VER_MAJOR=	${NODE_VER:C/\..*$//}
-# See ${WRKSRC}/build/package.json for ESBUILD_VER
-ESBUILD_VER=	0.8.30
+# See ${WRKSRC}/build/package.json for ESBUILD_VER_BUILD
+ESBUILD_VER_BUILD=	0.8.30
+# See ${WRKSRC}/extensions/package.json for ESBUILD_VER_EXTENSIONS
+ESBUILD_VER_EXTENSIONS=	0.11.12
 
 SHEBANG_REGEX=	./(extensions|resources|scripts|src)/.*\.sh$$
 PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
@@ -100,7 +109,7 @@ MAKE_ENV+=	PLAYWRIGHT_BROWSERS_PATH=${WRKDIR}/pw-browsers \
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
-ELECTRON_DIR=	${.CURDIR}/../../devel/electron11
+ELECTRON_DIR=	${.CURDIR}/../../devel/electron12
 .include	"${ELECTRON_DIR}/Makefile.version"
 
 ELECTRON_DOWNLOAD_URL=	https://github.com/electron/electron/releases/download/v${ELECTRON_VER}
@@ -118,8 +127,16 @@ pre-everything::
 post-extract:
 	# setup download cache for esbuild binary
 	${MKDIR} ${WRKDIR}/.cache/esbuild/bin
-	${MV} ${WRKDIR}/package/bin/esbuild \
-		${WRKDIR}/.cache/esbuild/bin/esbuild-freebsd-64@${ESBUILD_VER}
+	${MKDIR} ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_BUILD}
+	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/esbuild-freebsd-64-${ESBUILD_VER_BUILD}.tgz \
+		-C ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_BUILD}
+	${MV} ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_BUILD}/package/bin/esbuild \
+		${WRKDIR}/.cache/esbuild/bin/esbuild-freebsd-64@${ESBUILD_VER_BUILD}
+	${MKDIR} ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}
+	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}.tgz \
+		-C ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}
+	${MV} ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}/package/bin/esbuild \
+		${WRKDIR}/.cache/esbuild/bin/esbuild-freebsd-64@${ESBUILD_VER_EXTENSIONS}
 
 post-patch:
 	# force use of electron version matching port one
@@ -215,7 +232,7 @@ do-install:
 	cd ${WRKDIR}/VSCode-linux-x64 && \
 		${TAR} -cf - . | ${TAR} -xf - -C ${STAGEDIR}${DATADIR}
 	cd ${STAGEDIR}${DATADIR}/resources/app/node_modules.asar.unpacked && \
-		${FIND} . -type f -exec ${STRIP_CMD} {} ';'
+		${FIND} . -type f -name '*.node' -exec ${STRIP_CMD} {} ';'
 .for f in chromedriver mksnapshot v8_context_snapshot_generator
 	${RM} ${STAGEDIR}${DATADIR}/${f}
 .endfor

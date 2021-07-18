@@ -1,7 +1,7 @@
 # Created by: Moggie <moggie@elasticmind.net>
 
 PORTNAME=	werkzeug
-PORTVERSION=	1.0.1
+PORTVERSION=	2.0.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,10 +23,16 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	EXAMPLES WATCHDOG
 WATCHDOG_DESC=	Monitor filesystem events
 
-WATCHDOG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}watchdog>=0.8:devel/py-watchdog@${PY_FLAVOR}
+WATCHDOG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}watchdog>=0:devel/py-watchdog@${PY_FLAVOR}
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 30700
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dataclasses>=0:devel/py-dataclasses@${PY_FLAVOR}
+.endif
 
 post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

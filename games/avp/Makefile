@@ -2,6 +2,7 @@
 
 PORTNAME=	avp
 DISTVERSION=	20170505
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://icculus.org/avp/files/
 EXTRACT_SUFX=	-a1.tar.gz

@@ -1,5 +1,5 @@
 PORTNAME=	qutebrowser
-DISTVERSION=	2.1.1
+DISTVERSION=	2.3.0
 CATEGORIES=	www
 MASTER_SITES=	CHEESESHOP
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 		${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 
 USES=		desktop-file-utils python:3.6+ pyqt:5 qt:5
-USE_PYQT=	core opengl printsupport sql widgets qml
+USE_PYQT=	dbus core opengl printsupport sql widgets qml
 USE_PYTHON=	distutils autoplist noflavors
 USE_QT=		sql-sqlite3
 
@@ -48,11 +48,11 @@ DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
 EXPIRATION_DATE=2021-06-23
 .endif
 
-.if ${PYTHON_REL} < 3700
+.if ${PYTHON_REL} < 30700
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dataclasses>0:devel/py-dataclasses@${PY_FLAVOR}
 .endif
 
-.if ${PYTHON_REL} < 3900
+.if ${PYTHON_REL} < 30900
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>0:devel/py-importlib-resources@${PY_FLAVOR}
 .endif
 

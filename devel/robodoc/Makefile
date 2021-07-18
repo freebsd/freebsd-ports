@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 
-DOCS_FILES=	AUTHORS ChangeLog NEWS README \
-		Docs/manual.html Docs/manual.css Docs/robodoc_example.rc
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+DOCS_FILES=	AUTHORS ChangeLog NEWS README Docs/manual.html Docs/manual.css \
+		Docs/robodoc_example.rc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Source/robodoc ${STAGEDIR}${PREFIX}/bin

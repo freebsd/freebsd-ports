@@ -1,7 +1,7 @@
 # Created by: alepulver
 
 PORTNAME=	eduke32
-PORTVERSION=	20210404
+PORTVERSION=	20210703
 CATEGORIES=	games
 MASTER_SITES=	http://dukeworld.com/eduke32/synthesis/${PORTVERSION}-${GITREVISION}/:eduke32 \
 		http://www.duke4.org/files/nightfright/hrp/:hrp \
@@ -37,7 +37,7 @@ USE_GL=		gl glu
 USE_GNOME=	gtk20
 USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${GITREVISION}
-GITREVISION=	9321-7225643e3
+GITREVISION=	9461-891bbb927
 DATADIR=	${PREFIX}/share/duke3d
 SUB_FILES=	pkg-message
 MAKEFILE=	GNUmakefile
@@ -76,7 +76,7 @@ FULL_PLIST_FILES=	${DATADIR}/duke3d.grp ${DATADIR}/duke.rts
 
 .include <bsd.port.options.mk>
 
-.if (${ARCH} == i386 || ${ARCH} == powerpc64) || ${OSVERSION} < 1202000
+.if (${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == riscv64) || ${OSVERSION} < 1202000
 MAKE_ARGS+=	LTO=0
 .endif
 
@@ -88,7 +88,7 @@ MAKE_ARGS+=	LTO=0
 # is set.
 _CKSUMFILES=	${ALLFILES:Nduke3d/duke*}
 
-.if !exists(${DISTDIR}/duke3d/duke3d.grp) && !exists(${DISTDIR}/duke3d/duke.rts)
+.if !exists(${DISTDIR}/duke3d/duke3d.grp) || !exists(${DISTDIR}/duke3d/duke.rts)
 IGNORE=	option FULL selected, but duke3d.grp or duke.rts not found in ${DISTDIR}/duke3d
 .endif
 

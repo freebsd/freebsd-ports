@@ -1,4 +1,4 @@
---- services/resource_coordinator/memory_instrumentation/queued_request_dispatcher.cc.orig	2021-03-12 23:57:28 UTC
+--- services/resource_coordinator/memory_instrumentation/queued_request_dispatcher.cc.orig	2021-04-14 18:41:08 UTC
 +++ services/resource_coordinator/memory_instrumentation/queued_request_dispatcher.cc
 @@ -50,7 +50,7 @@ namespace {
  uint32_t CalculatePrivateFootprintKb(const mojom::RawOSMemDump& os_dump,

@@ -1,7 +1,7 @@
 # Created by: Sergei Kolobov <sergei@kolobov.com>
 
 PORTNAME=	skalibs
-PORTVERSION=	2.10.0.0
+PORTVERSION=	2.10.0.3
 CATEGORIES=	devel
 MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 

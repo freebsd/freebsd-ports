@@ -1,0 +1,67 @@
+#!/bin/sh
+#
+# PROVIDE: mirrorselect
+# REQUIRE: LOGIN
+#
+# Configurations:
+#
+# mirrorselect_enable (bool):		Set to YES to enable mirrorselect
+#					Default: NO
+# mirrorselect_conf (str):		Mirrorselect configuration file
+#					Default: %%ETCDIR%%/mirrorselect.toml
+# mirrorselect_user (str):		Mirrorselect daemon user
+#					Default: nobody
+# mirrorselect_access_log (str):	File to store the mirrorselect web access log
+#					Default: /var/log/mirrorselect.log
+# mirrorselect_datadir (str):		Data directory to store MMDB files
+#					Default: /var/lib/mirrorselect
+# mirrorselect_fetch_dbip (str):	DB-IP Lite city database filename to fetch
+#					Default: dbip-city-lite-2021-02.mmdb.gz
+#
+
+. /etc/rc.subr
+
+name="mirrorselect"
+rcvar="${name}_enable"
+
+load_rc_config ${name}
+: ${mirrorselect_enable:="NO"}
+: ${mirrorselect_conf:="%%ETCDIR%%/${name}.toml"}
+: ${mirrorselect_user:="nobody"}
+: ${mirrorselect_access_log:="/var/log/${name}.log"}
+: ${mirrorselect_datadir:="/var/lib/${name}"}
+: ${mirrorselect_fetch_dbip:="dbip-city-lite-2021-02.mmdb.gz"}
+
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-c -p ${pidfile} -T ${name}
+		${procname} -config ${mirrorselect_conf}
+		-access-log ${mirrorselect_access_log}"
+start_precmd="mirrorselect_precmd"
+
+mirrorselect_precmd()
+{
+	install -o ${mirrorselect_user} /dev/null ${pidfile}
+	if [ ! -f "${mirrorselect_access_log}" ]; then
+		install -o ${mirrorselect_user} /dev/null ${mirrorselect_access_log}
+	fi
+
+	if [ -z "${mirrorselect_fetch_dbip}" ]; then
+		return
+	fi
+	if [ -f "${mirrorselect_datadir}/${mirrorselect_fetch_dbip%.gz}" ]; then
+		return
+	fi
+
+	[ -d "${mirrorselect_datadir}" ] || mkdir -pv ${mirrorselect_datadir}
+
+	echo "Fetching DB-IP Lite database: ${mirrorselect_fetch_dbip} ..."
+	fetch -a -o - \
+		https://download.db-ip.com/free/${mirrorselect_fetch_dbip} | \
+		gunzip > ${mirrorselect_datadir}/${mirrorselect_fetch_dbip%.gz}
+	chmod 0444 ${mirrorselect_datadir}/${mirrorselect_fetch_dbip%.gz}
+	ln -svf ${mirrorselect_fetch_dbip%.gz} ${mirrorselect_datadir}/dbip.mmdb
+}
+
+run_rc_command "$1"

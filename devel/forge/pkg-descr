@@ -1,0 +1,10 @@
+Forge allows you to work with Git forges, such as Github and Gitlab,
+from the comfort of Magit and the rest of Emacs.
+
+Forge fetches issues, pull-requests and other data using the forge's
+API and stores that in a local database. Additionally it fetches the
+pull-request references using Git. Forge implements various features
+that use this data but the database and pull-request refs can also be
+used by third-party packages.
+
+WWW: https://github.com/magit/forge

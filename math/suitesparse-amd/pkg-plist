@@ -1,0 +1,7 @@
+include/suitesparse/amd.h
+lib/libamd.so
+lib/libamd.so.2
+lib/libamd.so.2.4.6
+lib/libamdf77.a
+%%PORTDOCS%%%%DOCSDIR%%/AMD_README.txt
+%%PORTDOCS%%%%DOCSDIR%%/AMD_UserGuide.pdf

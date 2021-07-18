@@ -1,4 +1,4 @@
---- base/debug/elf_reader.cc.orig	2021-03-12 23:57:15 UTC
+--- base/debug/elf_reader.cc.orig	2021-04-14 18:40:48 UTC
 +++ base/debug/elf_reader.cc
 @@ -38,7 +38,9 @@ using Nhdr = Elf64_Nhdr;
  using Word = Elf64_Word;
@@ -24,5 +24,5 @@
        }
 +#endif
  
-       size_t section_size = bits::Align(current_note->n_namesz, 4) +
-                             bits::Align(current_note->n_descsz, 4) +
+       size_t section_size = bits::AlignUp(current_note->n_namesz, 4) +
+                             bits::AlignUp(current_note->n_descsz, 4) +

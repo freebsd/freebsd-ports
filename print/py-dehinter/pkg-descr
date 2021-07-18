@@ -1,0 +1,16 @@
+dehinter is a Python command line application that removes TrueType instruction
+sets, global hinting tables, and other associated OpenType table data in font
+files.
+
+What it does
+- Removes OpenType glyf table instruction set bytecode data
+- Removes OpenType and other TTF hinting related tables - cvt table - fpgm table
+- hdmx table - LTSH table - prep table - TTFA table (not part of the OpenType
+  specification) - VDMX table
+- Removes OpenType cvar table from variable fonts
+- Updates gasp table values
+- Updates maxp table values
+- Updates head table bit flags
+- Displays file sizes of the hinted and dehinted versions of the fonts
+
+WWW: https://github.com/source-foundry/dehinter

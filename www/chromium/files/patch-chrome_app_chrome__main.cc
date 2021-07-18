@@ -1,4 +1,4 @@
---- chrome/app/chrome_main.cc.orig	2021-03-12 23:57:16 UTC
+--- chrome/app/chrome_main.cc.orig	2021-04-14 18:40:49 UTC
 +++ chrome/app/chrome_main.cc
 @@ -130,12 +130,12 @@ int ChromeMain(int argc, const char** argv) {
    MainThreadStackSamplingProfiler scoped_sampling_profiler;

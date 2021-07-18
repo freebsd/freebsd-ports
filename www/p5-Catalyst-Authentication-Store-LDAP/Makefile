@@ -1,7 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	Catalyst-Authentication-Store-LDAP
-PORTVERSION=	1.016
+PORTVERSION=	1.017
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Catalyst-Plugin-Authentication>=0.10003:www/p5-Catalyst-Plugin-Authentication \
+		p5-Class-Accessor>=0.50:devel/p5-Class-Accessor \
 		p5-perl-ldap>=0:net/p5-perl-ldap
 TEST_DEPENDS=	p5-Net-LDAP-Server-Test>=0:net/p5-Net-LDAP-Server-Test \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
@@ -22,5 +23,7 @@ TEST_DEPENDS=	p5-Net-LDAP-Server-Test>=0:net/p5-Net-LDAP-Server-Test \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

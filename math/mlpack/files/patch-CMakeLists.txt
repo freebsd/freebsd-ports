@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2021-04-25 03:10:15 UTC
++++ CMakeLists.txt
+@@ -534,7 +534,7 @@ endif ()
+ 
+ # Determine whether or not this is a git repository, so that we can set the
+ # version number if necessary.
+-find_package(Git)
++#find_package(Git)
+ set (USING_GIT "NO")
+ if (GIT_FOUND)
+   # Run 'git rev-parse HEAD' to find out if this is a working copy. If the

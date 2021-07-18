@@ -1,10 +1,10 @@
 # Created by: johnpupu <johnpupu@gmail.com>
 
 PORTNAME=	yaf
-DISTVERSION=	3.2.5
+PORTVERSION=	3.3.3
 CATEGORIES=	www
 
-MAINTAINER=	miwi@freeBSD.org
+MAINTAINER=	sunpoet@freeBSD.org
 COMMENT=	MVC framework written as a C PHP extension
 
 LICENSE=	PHP301

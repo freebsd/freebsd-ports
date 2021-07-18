@@ -1,93 +1,100 @@
 # Created by: Matthias Andree <mandree@FreeBSD.org>
 
-PORTNAME=		openvpn
-DISTVERSION=		202113
-CATEGORIES=		security net net-vpn
-MASTER_SITES=		https://secure-computing.net/files/openvpn/
-PKGNAMESUFFIX=		-devel
+PORTNAME=	openvpn
+DISTVERSION=	g20210603
+PORTEPOCH=	1
+CATEGORIES=	security net net-vpn
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=		ecrist@secure-computing.net
+MAINTAINER=	gert@greenie.muc.de
 # let's use ?= in spite of portlint WARNings because this might become
 # security/openvpn one day which would then have a slave port:
-COMMENT?=		Secure IP/Ethernet tunnel daemon
+COMMENT?=	Secure IP/Ethernet tunnel daemon
 
-LICENSE=		GPLv2
+LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT.GPL
 
-IGNORE_SSL=		libressl libressl-devel
+BUILD_DEPENDS+=	cmocka>=0:sysutils/cmocka \
+		rst2man:textproc/py-docutils
+LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 
-USES=			cpe libtool pkgconfig shebangfix tar:xz
+USES=		autoreconf cpe libtool pkgconfig shebangfix tar:xz
+IGNORE_SSL=	libressl libressl-devel
+USE_GITLAB=	yes
+GL_COMMIT=	0033811e0215af76f469d78912c95a2f59813454
+USE_RC_SUBR=	openvpn
 
-CONFLICTS_INSTALL?=	openvpn-2.[!4].* openvpn-[!2].* openvpn-beta-[0-9]* openvpn-devel-[0-9]* openvpn-mbedtls-[0-9]*
+SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl sample/sample-scripts/ucn.pl \
+		sample/sample-scripts/verify-cn
+
 GNU_CONFIGURE=		yes
-WRKSRC=			${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
-SHEBANG_FILES=		sample/sample-scripts/verify-cn \
-			sample/sample-scripts/auth-pam.pl \
-			sample/sample-scripts/ucn.pl
 CONFIGURE_ARGS+=	--enable-strict
 # set PLUGIN_LIBDIR so that unqualified plugin paths are found:
 CONFIGURE_ENV+=		PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
 
 # let OpenVPN's configure script pick up the requisite libraries,
 # but do not break the plugin build if an older version is installed
-CPPFLAGS+=		-I${WRKSRC}/include -I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
+.ifdef (LOG_OPENVPN)
+CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
+.endif
 
-OPTIONS_DEFINE=		PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME \
-			TEST LZ4 SMALL TUNNELBLICK
-OPTIONS_DEFAULT=	EASYRSA OPENSSL TEST LZ4
+CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include -DCONFIGURE_GIT_REVISION='\"${GL_COMMIT}\"' -DCONFIGURE_GIT_FLAGS=
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+CONFLICTS_INSTALL?=	openvpn-2.[!4].* openvpn-[!2].* openvpn-beta-[0-9]* \
+			openvpn-devel-[0-9]* openvpn-mbedtls-[0-9]*
+
+SUB_FILES=	openvpn-client pkg-message
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=		DOCS EASYRSA EXAMPLES LZ4 PKCS11 SMALL TEST TUNNELBLICK \
+			X509ALTUSERNAME
+OPTIONS_DEFAULT=	EASYRSA LZ4 OPENSSL TEST
 OPTIONS_SINGLE=		SSL
-OPTIONS_SINGLE_SSL=	OPENSSL MBEDTLS
-PKCS11_DESC=		Use security/pkcs11-helper
-EASYRSA_DESC=		Install security/easy-rsa RSA helper package
-MBEDTLS_DESC=		SSL/TLS via mbedTLS (lacks TLS v1.3)
-TUNNELBLICK_DESC=	Tunnelblick XOR scramble patch (READ HELP!)
-X509ALTUSERNAME_DESC=	Enable --x509-username-field (OpenSSL only)
-SMALL_DESC=		Build a smaller executable with fewer features
+OPTIONS_SINGLE_SSL=	MBEDTLS OPENSSL
+
+# option descriptions and interdependencies
+
+EASYRSA_DESC=			Install security/easy-rsa RSA helper package
+MBEDTLS_DESC=			SSL/TLS via mbedTLS (lacks TLS v1.3)
+PKCS11_DESC=			Use security/pkcs11-helper
+PKCS11_PREVENTS=		MBEDTLS
+PKCS11_PREVENTS_MSG=		OpenVPN cannot use pkcs11-helper with mbedTLS. \
+				Disable PKCS11, or use OpenSSL instead
+SMALL_DESC=			Build a smaller executable with fewer features
+TUNNELBLICK_DESC=		Tunnelblick XOR scramble patch (READ HELP!)
+X509ALTUSERNAME_DESC=		Enable --x509-username-field (OpenSSL only)
+X509ALTUSERNAME_PREVENTS=	MBEDTLS
+X509ALTUSERNAME_PREVENTS_MSG=	OpenVPN ${DISTVERSION} cannot use \
+				--x509-username-field with mbedTLS. Disable \
+				X509ALTUSERNAME, or use OpenSSL instead
+
+# option implementations
 
 EASYRSA_RUN_DEPENDS=	easy-rsa>=0:security/easy-rsa
 
-PKCS11_LIB_DEPENDS=	libpkcs11-helper.so:security/pkcs11-helper
-PKCS11_CONFIGURE_ENABLE=	pkcs11
-PKCS11_PREVENTS=	MBEDTLS
-PKCS11_PREVENTS_MSG=	OpenVPN cannot use pkcs11-helper with mbedTLS. Disable PKCS11, or use OpenSSL instead
-
-TUNNELBLICK_EXTRA_PATCHES=	${FILESDIR}/extra-tunnelblick-openvpn_xorpatch
-
-X509ALTUSERNAME_CONFIGURE_ENABLE=	x509-alt-username
-
-X509ALTUSERNAME_PREVENTS=	MBEDTLS
-X509ALTUSERNAME_PREVENTS_MSG=	OpenVPN ${DISTVERSION} cannot use --x509-username-field with mbedTLS. Disable X509ALTUSERNAME, or use OpenSSL instead
-
-OPENSSL_USES=		ssl
-OPENSSL_CONFIGURE_ON=	--with-crypto-library=openssl
-
+LZ4_LIB_DEPENDS+=	liblz4.so:archivers/liblz4
 LZ4_CONFIGURE_OFF=	--disable-lz4
-
-SMALL_CONFIGURE_ON=	--enable-small
 
 MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
 MBEDTLS_CONFIGURE_ON=	--with-crypto-library=mbedtls
 
-USE_RC_SUBR=		openvpn
+OPENSSL_USES=		ssl
+OPENSSL_CONFIGURE_ON=	--with-crypto-library=openssl
 
-SUB_FILES=		pkg-message openvpn-client
+PKCS11_LIB_DEPENDS=		libpkcs11-helper.so:security/pkcs11-helper
+PKCS11_CONFIGURE_ENABLE=	pkcs11
 
-.ifdef (LOG_OPENVPN)
-CFLAGS+=		-DLOG_OPENVPN=${LOG_OPENVPN}
-.endif
-
-BUILD_DEPENDS+=		cmocka>=0:sysutils/cmocka \
-			rst2man:textproc/py-docutils
-LIB_DEPENDS+=		liblzo2.so:archivers/lzo2
-
-LZ4_LIB_DEPENDS+=	liblz4.so:archivers/liblz4
-
-PORTDOCS=		*
-PORTEXAMPLES=		*
+SMALL_CONFIGURE_ON=	--enable-small
 
 TEST_ALL_TARGET=	check
 TEST_TEST_TARGET_OFF=	check
+
+TUNNELBLICK_EXTRA_PATCHES=	${FILESDIR}/extra-tunnelblick-openvpn_xorpatch
+
+X509ALTUSERNAME_CONFIGURE_ENABLE=	x509-alt-username
 
 pre-configure:
 .ifdef (LOG_OPENVPN)
@@ -109,10 +116,10 @@ post-configure:
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMBEDTLS}
-_tlslibs=libmbedtls libmbedx509 libmbedcrypto
+_tlslibs=	libmbedtls libmbedx509 libmbedcrypto
 .else
 # OpenSSL
-_tlslibs=libssl libcrypto
+_tlslibs=	libssl libcrypto
 .endif
 
 # sanity check that we don't inherit incompatible SSL libs through,
@@ -140,5 +147,6 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/)
 	${CHMOD} ${BINMODE} ${STAGEDIR}${EXAMPLESDIR}/sample-scripts/*
+	${RM} ${STAGEDIR}${EXAMPLESDIR}/sample-config-files/*.orig
 
 .include <bsd.port.mk>

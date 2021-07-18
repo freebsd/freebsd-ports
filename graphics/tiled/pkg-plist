@@ -53,6 +53,7 @@ share/thumbnailers/tiled.thumbnailer
 %%DATADIR%%/translations/tiled_pt_PT.qm
 %%DATADIR%%/translations/tiled_ru.qm
 %%DATADIR%%/translations/tiled_sv.qm
+%%DATADIR%%/translations/tiled_th.qm
 %%DATADIR%%/translations/tiled_tr.qm
 %%DATADIR%%/translations/tiled_uk.qm
 %%DATADIR%%/translations/tiled_zh_CN.qm

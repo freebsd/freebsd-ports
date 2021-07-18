@@ -5,7 +5,7 @@ PORTVERSION=	1.9.0
 PORTREVISION=	4
 CATEGORIES=	devel pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class to find out the minimum version and extensions required
 
 RUN_DEPENDS=	${PEARDIR}/Console/Table.php:devel/pear-Console_Table@${PHP_FLAVOR} \
@@ -13,9 +13,12 @@ RUN_DEPENDS=	${PEARDIR}/Console/Table.php:devel/pear-Console_Table@${PHP_FLAVOR}
 		${PEARDIR}/File/Find.php:sysutils/pear-File_Find@${PHP_FLAVOR} \
 		${PEARDIR}/Event/Dispatcher.php:devel/pear-Event_Dispatcher@${PHP_FLAVOR}
 
-PORTSCOUT=	skipv:1.9.0a1,1.9.0b1,1.9.0b2
 USES=		dos2unix pear php
 USE_PHP=	tokenizer
+
+NO_ARCH=	yes
+
+PORTSCOUT=	skipv:1.9.0a1,1.9.0b1,1.9.0b2
 
 OPTIONS_DEFINE=	PEAR_XML_BEAUTIFIER PEAR_VAR_DUMP PHPUNIT PEAR_XML_UTIL PEAR_HTML_TABLE
 OPTIONS_DEFAULT=	PHPUNIT PEAR_XML_UTIL

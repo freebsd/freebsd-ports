@@ -6,7 +6,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE-based filesystem for mounting iOS devices over USB
 
 LICENSE=	LGPL21+

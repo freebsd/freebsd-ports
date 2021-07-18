@@ -16,6 +16,6 @@ include/poppler/glib/poppler.h
 lib/girepository-1.0/Poppler-0.18.typelib
 lib/libpoppler-glib.so
 lib/libpoppler-glib.so.8
-lib/libpoppler-glib.so.8.19.0
+lib/libpoppler-glib.so.8.21.0
 libdata/pkgconfig/poppler-glib.pc
 share/gir-1.0/Poppler-0.18.gir

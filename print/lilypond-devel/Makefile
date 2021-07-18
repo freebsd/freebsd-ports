@@ -1,7 +1,7 @@
 # Created by: patrick, trevor
 
 PORTNAME=	lilypond
-DISTVERSION=	2.23.2
+DISTVERSION=	2.23.3
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -25,6 +25,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgmp.so:math/gmp \
+		libharfbuzz.so:print/harfbuzz \
 		libltdl.so:devel/libltdl
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu \
 		mftrace:print/mftrace
@@ -72,16 +73,14 @@ GUILE2_LIB_DEPENDS_OFF=	libguile.so:lang/guile1
 
 NLS_USES=	gettext
 
-URW_BUILD_DEPENDS=	urw-core35-fonts>0:x11-fonts/urw-core35-fonts
-URW_RUN_DEPENDS_OFF=	urw-core35-fonts>0:x11-fonts/urw-core35-fonts
+URW_BUILD_DEPENDS=	urw-base35-fonts>0:x11-fonts/urw-base35-fonts
+URW_RUN_DEPENDS_OFF=	urw-base35-fonts>0:x11-fonts/urw-base35-fonts
 
-URW_CONFIGURE_WITH=	urwotf-dir=${LOCALBASE}/share/fonts/urw-core35-fonts
+URW_CONFIGURE_WITH=	urwotf-dir=${LOCALBASE}/share/fonts/urw-base35-fonts
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<FlexLexer.h>|"/usr/include/FlexLexer.h"|' \
 		${WRKSRC}/lily/include/includable-lexer.hh
-	@${REINPLACE_CMD} -e 's|$save_CXXFLAGS -Werror=suggest-override|$save_CXXFLAGS|' \
-		${WRKSRC}/configure
 	@${SED} -e 's|%%FONTDIR%%|${WRKDIR}/fontconfig/cache/|'  \
 		${FILESDIR}/fonts.conf > ${WRKDIR}/.fonts.conf
 

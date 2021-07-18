@@ -15,6 +15,7 @@ bin/sgt-loopy
 bin/sgt-magnets
 bin/sgt-map
 bin/sgt-mines
+bin/sgt-mosaic
 bin/sgt-net
 bin/sgt-netslide
 bin/sgt-palisade
@@ -54,6 +55,7 @@ share/applications/sgt-loopy.desktop
 share/applications/sgt-magnets.desktop
 share/applications/sgt-map.desktop
 share/applications/sgt-mines.desktop
+share/applications/sgt-mosaic.desktop
 share/applications/sgt-net.desktop
 share/applications/sgt-netslide.desktop
 share/applications/sgt-palisade.desktop
@@ -93,6 +95,7 @@ share/pixmaps/sgt-loopy-48d24.png
 share/pixmaps/sgt-magnets-48d24.png
 share/pixmaps/sgt-map-48d24.png
 share/pixmaps/sgt-mines-48d24.png
+share/pixmaps/sgt-mosaic-48d24.png
 share/pixmaps/sgt-net-48d24.png
 share/pixmaps/sgt-netslide-48d24.png
 share/pixmaps/sgt-palisade-48d24.png

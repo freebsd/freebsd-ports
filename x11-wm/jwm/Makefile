@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://joewing.net/projects/jwm/releases/
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Joe's Window Manager
 
 LICENSE=	MIT

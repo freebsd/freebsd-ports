@@ -1,4 +1,4 @@
---- third_party/blink/renderer/core/clipboard/system_clipboard.cc.orig	2021-03-12 23:57:29 UTC
+--- third_party/blink/renderer/core/clipboard/system_clipboard.cc.orig	2021-04-14 18:41:09 UTC
 +++ third_party/blink/renderer/core/clipboard/system_clipboard.cc
 @@ -43,10 +43,10 @@ SystemClipboard::SystemClipboard(LocalFrame* frame)
    frame->GetBrowserInterfaceBroker().GetInterface(

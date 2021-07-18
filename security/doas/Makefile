@@ -1,5 +1,5 @@
 PORTNAME=	doas
-PORTVERSION=	6.3p4
+PORTVERSION=	6.3p5
 CATEGORIES=	security
 
 MAINTAINER=	jsmith@resonatingmedia.com
@@ -37,7 +37,7 @@ _GLOBAL_PATH?=	${LOCALBASE}/sbin:${LOCALBASE}/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/vidoas ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/vidoas.final ${STAGEDIR}${PREFIX}/bin/vidoas
 	${INSTALL_MAN} ${WRKSRC}/doas.1.final ${STAGEDIR}${MAN1PREFIX}/man/man1/doas.1
 	${INSTALL_MAN} ${WRKSRC}/doas.conf.5.final ${STAGEDIR}${MAN5PREFIX}/man/man5/doas.conf.5
 	${INSTALL_MAN} ${WRKSRC}/vidoas.8.final ${STAGEDIR}${MAN5PREFIX}/man/man8/vidoas.8

@@ -11,7 +11,6 @@ COMMENT=	Cisco 1700/2600/3600/3700/7200 Simulator
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc=		fails to compile: invokes x86 assembler
 BROKEN_riscv64=		fails to compile: common/dynamips_common.h:71:2: Please define your architecture!
 BROKEN_sparc64=		fails to compile: invokes x86 assembler
 

@@ -39,6 +39,7 @@ share/icons/hicolor/scalable/apps/kanagram.svgz
 %%DATADIR%%/ui/sounds/wrong.ogg
 %%DATADIR%%/ui/sounds/wrong.wav
 share/locale/ar/LC_MESSAGES/kanagram.mo
+share/locale/be/LC_MESSAGES/kanagram.mo
 share/locale/bg/LC_MESSAGES/kanagram.mo
 share/locale/bs/LC_MESSAGES/kanagram.mo
 share/locale/ca/LC_MESSAGES/kanagram.mo
@@ -81,9 +82,12 @@ share/locale/pt/LC_MESSAGES/kanagram.mo
 share/locale/pt_BR/LC_MESSAGES/kanagram.mo
 share/locale/ro/LC_MESSAGES/kanagram.mo
 share/locale/ru/LC_MESSAGES/kanagram.mo
+share/locale/se/LC_MESSAGES/kanagram.mo
 share/locale/sk/LC_MESSAGES/kanagram.mo
 share/locale/sl/LC_MESSAGES/kanagram.mo
+share/locale/sq/LC_MESSAGES/kanagram.mo
 share/locale/sv/LC_MESSAGES/kanagram.mo
+share/locale/tg/LC_MESSAGES/kanagram.mo
 share/locale/tr/LC_MESSAGES/kanagram.mo
 share/locale/ug/LC_MESSAGES/kanagram.mo
 share/locale/uk/LC_MESSAGES/kanagram.mo

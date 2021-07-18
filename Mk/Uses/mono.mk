@@ -224,7 +224,7 @@ makenupkg:
 				eval url="\$${$${feed}_URL}$${0%%=*}/$${0##*=}/$${0%%=*}.$${0##*=}.nupkg"; \
 			fi; \
 			if curl --output /dev/null --silent --head --fail $$url; then\
-				${ECHO} $$0 >> ${WRKDIR}/nupkg-$$feed; \
+				${ECHO_CMD} $$0 >> ${WRKDIR}/nupkg-$$feed; \
 				found=yes; \
 				break; \
 			fi; \

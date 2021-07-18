@@ -11,7 +11,11 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Two-Dimensional Quality Mesh Generator and Delaunay Triangulator
 
-NO_CDROM=	No commercial use without prior arrangement with the author
+# Converted from NO_CDROM
+LICENSE=	triangle
+LICENSE_NAME=	triangle
+LICENSE_TEXT=	No commercial use without prior arrangement with the author
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		zip xorg
 NO_WRKSUBDIR=	yes

@@ -1,7 +1,7 @@
 # Created by: Marc van Woerkom <3d@FreeBSD.org>
 
 PORTNAME=	libdvdread
-PORTVERSION=	6.1.0
+PORTVERSION=	6.1.2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 

@@ -14,7 +14,7 @@
 # bsd.port.mk.  There are significant differences in those so non-FreeBSD code
 # was removed.
 #
-# $MCom: portlint/portlint.pl,v 1.522 2020/12/27 19:19:02 jclarke Exp $
+# $MCom$
 #
 
 use strict;
@@ -49,7 +49,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 4;
+my $micro = 7;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -138,7 +138,6 @@ my $mfile_gids = "${portsdir}/GIDs";
 
 if ($verbose) {
 	print "OK: config: portsdir: \"$portsdir\" ".
-		"rcsidstr: \"$rcsidstr\" ".
 		"localbase: $localbase ".
 		"\n";
 }
@@ -588,14 +587,12 @@ sub checkdescr {
 sub checkplist {
 	my($file) = @_;
 	my($curdir) = ($localbase);
-	my($rcsidseen) = (0);
 
 	my $seen_special = 0;
 	my $item_count = 0;
 	my $owner_seen = 0;
 	my $group_seen = 0;
 	my $found_so = 0;
-	my $found_naked_so = 0;
 
 	# Variables that are allowed to be out-of-sync in the XXXDIR check.
 	# E.g., %%PORTDOCS%%%%RUBY_MODDOCDIR%% will be OK because there is
@@ -726,7 +723,7 @@ sub checkplist {
 						"for more details).");
 				}
 			} elsif ($_ =~ /^\@(comment)/) {
-				$rcsidseen++ if (/\$$rcsidstr[:\$]/);
+				&perror("FATAL", $file, $., "\$$rcsidstr\$ is deprecated in Git.") if (/\$$rcsidstr[:\$]/);
 			} elsif ($_ =~ m!^\@(dirrm|dirrmtry)\s+/!) {
 				&perror("WARN", $file, $., "Using \@$1 with absolute path ".
 					"will not work as you expected in most cases.  Use ".
@@ -811,10 +808,8 @@ sub checkplist {
 			$makevar{USE_LDCONFIG} eq '') {
 			&perror("WARN", $file, $., "installing shared libraries, ".
 				"please define USE_LDCONFIG as appropriate");
-		} elsif ($_ =~ m|lib[^\/]+\.so\.\d+$|) {
+		} elsif ($_ =~ m|lib[^\/]+\.so[.\d]*$|) {
 			$found_so++;
-		} elsif ($_ =~ m|lib[^\/]+\.so$|) {
-			$found_naked_so++;
 		}
 
 		if ($_ =~ m|^share/icons/.*/| &&
@@ -949,14 +944,8 @@ sub checkplist {
 	}
 
 	if ($makevar{USE_LDCONFIG} ne '' && !$found_so) {
-		if ($found_naked_so) {
-			&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
-				"port does not install shared objects in the format lib*.so.[0-9] ".
-				"which ldconfig(8) needs to register them in the hints file.");
-		} else {
-			&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
-				"port does not install any shared objects.");
-		}
+		&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
+			"port does not install any shared objects.");
 	}
 
 	close(IN);
@@ -1443,20 +1432,19 @@ sub checkmakefile {
 	print "OK: checking header in $file.\n" if ($verbose);
 	if ($lines[1] =~ /^# (?:New )?[Pp]orts collection [mM]akefile/) {
 		&perror("FATAL", $file, 1, "old style headers found.");
+	} elsif ($lines[1] =~ /^# \$$rcsidstr[:\$]/) {
+		&perror("FATAL", $file, 1, "\$$rcsidstr\$ is deprecated in Git.");
 	} elsif ($lines[1] =~ /^# Created by: \S/) {
-		if ($lines[2] !~ /^# \$$rcsidstr[:\$]/) {
-			&perror("FATAL", $file, 2, "header should be ".
-				"followed by \$$rcsidstr\$.");
-		} elsif ($lines[3] !~ /^$/) {
-		#&perror("FATAL", $file, 3, "do not add extra ".
+		if ($lines[2] =~ /^# \$$rcsidstr[:\$]/) {
+			&perror("FATAL", $file, 2, "\$$rcsidstr\$ is deprecated in Git.");
+		}
+		if ($lines[2] !~ /^$/) {
+		#&perror("FATAL", $file, 2, "do not add extra ".
 		#		"empty comments after header.");
 		}
 	# special case for $rcsidsrt\nMCom:
-	} elsif ($lines[1] =~ /^# \$$rcsidstr[:\$]/ and $lines[2] =~ /^#\s+\$MCom[:\$]/ and $lines[3] =~ /^$/) {
+	} elsif ($lines[1] =~ /^#\s+\$MCom[:\$]/ and $lines[2] =~ /^$/) {
         # DO NOTHING
-	} elsif ($lines[1] !~ /^# \$$rcsidstr[:\$]/ or $lines[2] !~ /^$/) {
-		&perror("FATAL", $file, 1, "incorrect header; ".
-			"simply use \$$rcsidstr\$.");
 	}
 
 	#
@@ -2666,58 +2654,39 @@ xargs xmkmf
 		}
 	}
 	$idx = 0;
+	my @linestocheck = ();
 
-	#
-	# section 1: comment lines.
-	#
-	print "OK: checking comment section of $file.\n" if ($verbose);
-	my @linestocheck = split("\n", <<EOF);
+	# check if all lines in the first section are comments
+	if (grep(/^#/, split(/\n/, $sections[$idx])) == split(/\n/, $sections[$idx])) {
+
+		#
+		# section 1: comment lines.
+		#
+		print "OK: checking comment section of $file.\n" if ($verbose);
+		@linestocheck = split("\n", <<EOF);
 Whom
 Date [cC]reated
 EOF
 
-	$tmp = $sections[$idx++];
-	$tmp = "\n" . $tmp;	# to make the begin-of-line check easier
+		$tmp = $sections[$idx++];
+		$tmp = "\n" . $tmp;	# to make the begin-of-line check easier
 
-	if ($tmp =~ /\n[^#]/) {
-		&perror("FATAL", $file, -1, "non-comment line in comment section.");
-	}
-	if ($tmp =~ m/Version [rR]equired/) {
-		&perror("WARN", $file, -1, "Version required is no longer needed in the comment section.");
-	}
-	my $tmp2 = "";
-	for (split(/\n/, $tmp)) {
-		$tmp2 .= $_ if (m/\$$rcsidstr/);
-	}
-	if ($tmp2 !~ /#(\s+)\$$rcsidstr([^\$]*)\$$/) {
-
-		&perror("FATAL", $file, -1, "no \$$rcsidstr\$ line in comment ".
-			"section.");
-	} else {
-		print "OK: \$$rcsidstr\$ seen in $file.\n" if ($verbose);
-		if ($1 ne ' ') {
-			&perror("WARN", $file, -1, "please use single whitespace ".
-				"right before \$$rcsidstr\$ tag.");
+		if ($tmp =~ /\n[^#]/) {
+			&perror("FATAL", $file, -1, "non-comment line in comment section.");
 		}
-		if ($2 ne '') {
-			if ($verbose || $newport) {	# XXX
-				&perror("WARN", $file, -1,
-				    ($newport ? 'for new port, '
-					      : 'is it a new port? if so, ').
-				    "make \$$rcsidstr\$ tag in comment ".
-				    "section empty, to make SVN happy.");
-			}
+		if ($tmp =~ m/Version [rR]equired/) {
+			&perror("WARN", $file, -1, "Version required is no longer needed in the comment section.");
 		}
-	}
 
-	#
-	# for the rest of the checks, comment lines are not important.
-	#
-	for ($i = 0; $i < scalar(@sections); $i++) {
-		$sections[$i] = "\n" . $sections[$i];
-		$sections[$i] =~ s/\n#[^\n]*//g;
-		$sections[$i] =~ s/\n\n+/\n/g;
-		$sections[$i] =~ s/^\n//;
+		#
+		# for the rest of the checks, comment lines are not important.
+		#
+		for ($i = 0; $i < scalar(@sections); $i++) {
+			$sections[$i] = "\n" . $sections[$i];
+			$sections[$i] =~ s/\n#[^\n]*//g;
+			$sections[$i] =~ s/\n\n+/\n/g;
+			$sections[$i] =~ s/^\n//;
+		}
 	}
 
 	#
@@ -2731,7 +2700,7 @@ EOF
 	&checkorder('PORTNAME', $tmp, $file, qw(
 PORTNAME PORTVERSION DISTVERSIONPREFIX DISTVERSION DISTVERSIONSUFFIX
 PORTREVISION PORTEPOCH CATEGORIES MASTER_SITES MASTER_SITE_SUBDIR
-PROJECTHOST PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES
+PROJECTHOST PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES(_\w+)?
 DIST_SUBDIR EXTRACT_ONLY
 	));
 
@@ -3102,7 +3071,7 @@ DIST_SUBDIR EXTRACT_ONLY
 	push(@varnames, qw(
 PORTNAME PORTVERSION DISTVERSIONPREFIX DISTVERSION DISTVERSIONSUFFIX
 PORTREVISION PORTEPOCH CATEGORIES MASTER_SITES MASTER_SITE_SUBDIR
-PROJECTHOST PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES
+PROJECTHOST PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES(_\w+)?
 DIST_SUBDIR EXTRACT_ONLY
 	));
 
@@ -3251,6 +3220,12 @@ MAINTAINER COMMENT
 			}
 		}
 
+		# Last-ditch check to make sure the license is sanely defined.
+		my $lic_check = system("make check-license 2>&1 >/dev/null");
+		if ($lic_check) {
+			&perror("FATAL", $file, -1, "Failed to validate port LICENSE '$makevar{LICENSE}' with ``make check-license''");
+		}
+
 		$idx++;
 
 		push(@varnames, qw(
@@ -3271,7 +3246,7 @@ MAINTAINER COMMENT
 	@linestocheck = qw(
 DEPRECATED EXPIRATION_DATE FORBIDDEN BROKEN(_\w+)? IGNORE(_\w+)?
 ONLY_FOR_ARCHS ONLY_FOR_ARCHS_REASON(_\w+)?
-NOT_FOR_ARCHS NOT_FOR_ARCHS_REASON(_\w+)?
+NOT_FOR_ARCHS NOT_FOR_ARCHS_REASON(_\w+)? LEGAL_TEXT
 	);
 
 	my $brokenpattern = "^(" . join("|", @linestocheck) . ")[?+:]?=";
@@ -3463,15 +3438,6 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 			&perror("WARN", $file, -1, "definition of WRKSRC not necessary. ".
 				"WRKSRC is \${WRKDIR} by default.");
 		}
-	}
-
-	# check RESTRICTED/NO_CDROM/NO_PACKAGE
-	print "OK: checking RESTRICTED/NO_CDROM/NO_PACKAGE.\n" if ($verbose);
-	my $lps = $makevar{LICENSE_PERMS} // '';
-	if ($committer && ($tmp =~ /\n(RESTRICTED|NO_CDROM|NO_PACKAGE)[+?]?=/ ||
-		$lps =~ /\bno-\b/)) {
-		&perror("WARN", $file, -1, "Possible restrictive licensing found.  ".
-			"If there are, in fact, limitations to use or distribution, please update ports/LEGAL.");
 	}
 
 	if ($tmp =~ /\nNO_PACKAGE[+?]?=/) {

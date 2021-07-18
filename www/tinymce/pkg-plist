@@ -1,9 +1,9 @@
 @owner www
 @group www
-%%WWWDIR%%/changelog.txt
+%%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/js/tinymce/icons/default/icons.min.js
 %%WWWDIR%%/js/tinymce/jquery.tinymce.min.js
-%%WWWDIR%%/js/tinymce/langs/readme.md
+%%WWWDIR%%/js/tinymce/langs/README.md
 %%WWWDIR%%/js/tinymce/license.txt
 %%WWWDIR%%/js/tinymce/plugins/advlist/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/anchor/plugin.min.js

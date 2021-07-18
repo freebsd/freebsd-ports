@@ -1,0 +1,24 @@
+# drop privileges
+user "_gmid"
+
+# it's a good idea to enable chroot, but
+# beware that can make CGI scripting harder
+chroot "/var/gemini"
+
+# An example of a server block:
+server "localhost" {
+	# set the directory to serve; it's relative to the
+	# chroot (if enabled)
+	root "/localhost"
+
+	# Set self-signed TLS cert and key.  It's better to keep
+	# the keys outside the chroot.
+	#
+	# You should generate them manually, for example:
+	# openssl req -x509 -newkey rsa:4096 -nodes		\
+	#	-out /usr/local/etc/ssl/gmid/localhost.crt	\
+	#	-keyout /usr/local/etc/ssl/gmid/localhost.key	\
+	# 	-subj "/CN=localhost"
+	cert "/usr/local/etc/ssl/gmid/localhost.crt"
+	key  "/usr/local/etc/ssl/gmid/localhost.key"
+}

@@ -9,10 +9,8 @@ COMMENT=	Rime Cantonese (Jyutping) schema support
 
 LICENSE=		CC-BY-4.0 ODbL
 LICENSE_COMB=		multi
-LICENSE_NAME_ODbL=	Open Database License
 LICENSE_FILE_CC-BY-4.0=	${WRKSRC}/LICENSE-CC-BY
 LICENSE_FILE_ODbL=	${WRKSRC}/LICENSE-ODbL
-LICENSE_PERMS_ODbL=	dist-mirror dist-sell auto-accept
 
 BUILD_DEPENDS=	\
 		rime_deployer:chinese/librime \

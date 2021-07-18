@@ -1,0 +1,5 @@
+include/suitesparse/GraphBLAS.h
+lib/libgraphblas.a
+lib/libgraphblas.so
+lib/libgraphblas.so.5
+lib/libgraphblas.so.5.0.5

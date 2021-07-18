@@ -21,6 +21,7 @@ share/icons/hicolor/64x64/apps/kfourinline.png
 %%DATADIR%%/grafix/yellow_reflection.desktop
 %%DATADIR%%/grafix/yellow_reflection.rc
 share/locale/ar/LC_MESSAGES/kfourinline.mo
+share/locale/be/LC_MESSAGES/kfourinline.mo
 share/locale/bg/LC_MESSAGES/kfourinline.mo
 share/locale/bs/LC_MESSAGES/kfourinline.mo
 share/locale/ca/LC_MESSAGES/kfourinline.mo
@@ -67,6 +68,8 @@ share/locale/sk/LC_MESSAGES/kfourinline.mo
 share/locale/sl/LC_MESSAGES/kfourinline.mo
 share/locale/sr/LC_MESSAGES/kfourinline.mo
 share/locale/sv/LC_MESSAGES/kfourinline.mo
+share/locale/ta/LC_MESSAGES/kfourinline.mo
+share/locale/tg/LC_MESSAGES/kfourinline.mo
 share/locale/tr/LC_MESSAGES/kfourinline.mo
 share/locale/ug/LC_MESSAGES/kfourinline.mo
 share/locale/uk/LC_MESSAGES/kfourinline.mo

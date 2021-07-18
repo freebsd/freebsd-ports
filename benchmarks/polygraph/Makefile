@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake ncurses shebangfix
 SHEBANG_FILES=	tools/*.pl
-USE_GCC=	any
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 
 # The port does not build with C++11 or later (bug 219275).

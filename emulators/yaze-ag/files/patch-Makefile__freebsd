@@ -1,0 +1,122 @@
+--- Makefile_freebsd.orig	2020-09-18 14:28:23 UTC
++++ Makefile_freebsd
+@@ -1,17 +1,16 @@
+ # Makefile for yaze-ag
+-
+ BUILD = " (build for INTEL x86_32Bit)"
+ 
+ # CC must be an ANSI-C compiler
+-CC            =	gcc
++#CC            =	gcc
+ 
+ #where you want the binaries and manual page
+-BINDIR	      = /usr/local/bin
+-MANDIR	      = /usr/local/man/man1
+-LIBDIR	      = /usr/local/lib/yaze
+-DSKDIR        = $(LIBDIR)/disks
+-DOCDIR        = $(LIBDIR)/doc
+-DOCHTMLDIR    = $(LIBDIR)/doc_html
++#BINDIR	      = $(PREFIX)/bin
++#MANDIR	      = $(PREFIX)/man/man1
++#LIBDIR	      = $(PREFIX)/share/yaze-ag
++#DSKDIR        = $(LIBDIR)/disks
++#DOCDIR        = $(PREFIX)/share/doc/yaze-ag
++#DOCHTMLDIR    = $(DOCDIR)/html
+ 
+ #OPTIMIZE	= -g -m486
+ #OPTIMIZE	= -g -save-temps -m486
+@@ -58,7 +57,7 @@ DOCHTMLDIR    = $(LIBDIR)/doc_html
+ #OPTIMIZE	= -O3 -march=athlon-mp
+ #OPTIMIZE	= -O3 -march=athlon64	# 64 Bit AMD
+ #OPTIMIZE	= -O3 -march=athlon64-sse3
+-OPTIMIZE	= -O3 -march=barcelona
++#OPTIMIZE	= -O3 -march=barcelona
+ 
+ # -DUSE_GNU_READLINE for command recall/editing and filename completion
+ # -DBGii_BUG works around a problem in Backgrounder II
+@@ -106,7 +105,7 @@ OPTIMIZE	= -O3 -march=barcelona
+ # solaris2, freebsd and cygwin needs -D__EXTENSIONS__
+ # linux needs -D_BSD_SOURCE
+ #
+-OPTIONS	= -DBIOS -D__EXTENSIONS__ -DMMU -DBOOTSYS -DMULTIO # -DSHOWDRV
++OPTIONS	= -DBIOS -D__EXTENSIONS__ -DMMU -DBOOTSYS -DMULTIO -DUSE_GNU_READLINE # -DSHOWDRV
+ 
+ # Link with CP/M BIOS support,
+ YAZE_OBJS     = yaze.o mem_mmu.o simz80.o simz80_wts.o ytimer.o ybios.o \
+@@ -121,7 +120,7 @@ KT_OBJS       = keytest.o conin.o keytran.o nulrq.o
+ #  (you don't need -liberty on linux or BSD systems)
+ #
+ #LIBS	      = -lreadline -lncurses
+-LIBS	      =
++LIBS	      = -L$(PREFIX)/lib -lreadline
+ 
+ # a bsd-like install program (/usr/ucb/install on Solaris2)
+ INSTALL	      = install
+@@ -130,12 +129,12 @@ INSTALL	      = install
+ ###### you should not need to change anything below this line ######
+ # CWARN	      = -ansi -pedantic -Wall -Wshadow \
+ #		-Wpointer-arith -Wnested-externs -Winline
+-CWARN	      = -ansi -pedantic -Wall -Wshadow \
++CWARN	      = -pedantic -Wall -Wshadow \
+ 		-Wpointer-arith -Wnested-externs -Winline \
+ 		-Wno-attributes -Wno-char-subscripts -Wno-unused-variable
+ # CWARN	      = -ansi -Wall 
+ CFLAGS        =	$(CWARN) $(OPTIMIZE) $(OPTIONS) -DLIBDIR=\"$(LIBDIR)/\" \
+-		-DBUILD=\"$(BUILD)\"
++		-DBUILD=\"$(BUILD)\" -I$(PREFIX)/include
+ 
+ SRCS	      = yaze.c mem_mmu.c simz80.c simz80_wts.c ytimer.c io.c ybios.c monitor.c cdm.c \
+ 		conin.c keytest.c keytran.c nulrq.c \
+@@ -209,30 +208,28 @@ cdm:		cdm.o
+ 		$(CC) $(CFLAGS) cdm.o $(LIBS) -o $@
+ 
+ install:	all
+-		rm -rf $(LIBDIR)
+-		mkdir -p $(LIBDIR)
+-		mkdir -p $(MANDIR)
+-		$(INSTALL) -s -c -m 755 yaze_bin $(BINDIR)
+-		$(INSTALL) -s -c -m 755 cdm $(BINDIR)
+-		$(INSTALL) -c -m 755 yaze $(BINDIR)
+-		ln -f -s $(BINDIR)/yaze $(BINDIR)/cpm
+-		ln -f -s $(BINDIR)/yaze $(BINDIR)/z80
+-		$(INSTALL) -c -m 644 yaze-cpm3.boot $(LIBDIR)
+-		$(INSTALL) -c -m 644 yaze.boot $(LIBDIR)
+-		$(INSTALL) -c -m 644 m2.ktt $(LIBDIR)
+-		$(INSTALL) -c -m 644 sample.ktt $(LIBDIR)
+-		$(INSTALL) -c -m 644 yaze.ktt $(LIBDIR)
+-		$(INSTALL) -c -m 644 yaze.1 $(MANDIR)
+-		$(INSTALL) -c -m 644 cdm.1 $(MANDIR)
+-		$(INSTALL) -c -m 644 cpm.1 $(MANDIR)
+-		$(INSTALL) -c -m 644 z80.1 $(MANDIR)
+-		/bin/sh install_disks.sh $(DSKDIR)
+-		/bin/sh install_doc.sh $(DOCDIR)
+-		/bin/sh install_doc_html.sh $(DOCHTMLDIR)
+-		(cd $(LIBDIR); \
+-		rm -f md5 /tmp/md5.yaze-ag; \
+-		find . -type f -exec md5sum -b {} >>/tmp/md5.yaze-ag \; ; \
+-		mv /tmp/md5.yaze-ag md5)
++		rm -rf $(STAGEDIR)$(LIBDIR)
++		mkdir -p $(STAGEDIR)$(LIBDIR)
++		mkdir -p $(STAGEDIR)$(MANDIR)
++		$(INSTALL) -s -c -m 755 yaze_bin $(STAGEDIR)$(PREFIX)/libexec
++		$(INSTALL) -s -c -m 755 cdm $(STAGEDIR)$(BINDIR)
++		$(INSTALL) -c -m 755 yaze $(STAGEDIR)$(BINDIR)
++		ln -f -s yaze $(STAGEDIR)$(BINDIR)/cpm
++		ln -f -s yaze $(STAGEDIR)$(BINDIR)/z80
++		$(INSTALL) -c -m 644 yaze-cpm3.boot $(STAGEDIR)$(LIBDIR)
++		$(INSTALL) -c -m 644 yaze.boot $(STAGEDIR)$(LIBDIR)
++		$(INSTALL) -c -m 644 m2.ktt $(STAGEDIR)$(LIBDIR)
++		$(INSTALL) -c -m 644 sample.ktt $(STAGEDIR)$(LIBDIR)
++		$(INSTALL) -c -m 644 yaze.ktt $(STAGEDIR)$(LIBDIR)
++		$(INSTALL) -c -m 644 yaze.1 $(STAGEDIR)$(MANDIR)
++		$(INSTALL) -c -m 644 cdm.1 $(STAGEDIR)$(MANDIR)
++		$(INSTALL) -c -m 644 cpm.1 $(STAGEDIR)$(MANDIR)
++		$(INSTALL) -c -m 644 z80.1 $(STAGEDIR)$(MANDIR)
++		/bin/sh install_disks.sh $(STAGEDIR)$(DSKDIR)
++
++install-doc:
++		/bin/sh install_doc.sh $(STAGEDIR)$(DOCDIR)
++		/bin/sh install_doc_html.sh $(STAGEDIR)$(DOCHTMLDIR)
+ 
+ md5:		$(DISTRIB)
+ 		(P=`pwd`; D=`basename $$P`; \

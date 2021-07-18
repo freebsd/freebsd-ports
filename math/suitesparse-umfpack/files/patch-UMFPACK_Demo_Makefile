@@ -1,0 +1,16 @@
+--- UMFPACK/Demo/Makefile.orig	2021-05-17 01:04:52 UTC
++++ UMFPACK/Demo/Makefile
+@@ -31,13 +31,7 @@ LIBS = $(LDLIBS) -L../../lib -lumfpack -lamd -lsuitesp
+ 	$(LIB_WITH_CHOLMOD) $(LAPACK) $(BLAS)
+ 
+ libs: metis
+-	( cd ../../SuiteSparse_config ; $(MAKE) )
+-	( cd ../../AMD ; $(MAKE) library )
+ 	( cd ../Lib ; $(MAKE) )
+-	- ( cd ../../CHOLMOD && $(MAKE) library )
+-	- ( cd ../../COLAMD && $(MAKE) library )
+-	- ( cd ../../CCOLAMD ; $(MAKE) library )
+-	- ( cd ../../CAMD ; $(MAKE) library )
+ 
+ metis: ../../include/metis.h
+ 

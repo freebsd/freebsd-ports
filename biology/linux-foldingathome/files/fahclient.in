@@ -76,7 +76,9 @@ load_rc_config 'fahclient'
 : "${fahclient_logfile:=%%FAHCLIENT_WORK_DIR%%/log.txt}"
 
 pidfile="${fahclient_pidfile}"
-command='%%FAHCLIENT_PROGRAM%%'
+procname="%%FAHCLIENT_PROGRAM%%"
+command="/usr/sbin/daemon"
+command_args="-o ${fahclient_logfile} -p ${pidfile} -- ${procname}"
 # Some notes on the specified options:
 # - fahclient_flags are passed in before other options by the rc
 #   framework.
@@ -86,26 +88,20 @@ command='%%FAHCLIENT_PROGRAM%%'
 #   precedence).
 # - --config is necessary to point the program to the correct configuration
 #   file.
-# - --log sets the log file location (takes precedence over config file),
-#   log is special in this respect.
 # - --chdir is used to switch to a desired work directory. The program is going
 #   to create a lot of files in its current working directory so should not be
 #   just any directory on the system.
-# - --pid-file specifies the location for the PID file.
-# - --daemon is to detach the program from the terminal and run it
-#   in the background.
 # - fahclient_extra_flags are passed in after all other options.
-
-command_args="${command_args} --user=${fahclient_donor}"
-command_args="${command_args} --team=${fahclient_team}"
-command_args="${command_args} --config=${fahclient_config}"
-command_args="${command_args} --log=${fahclient_logfile}"
-command_args="${command_args} --chdir=${fahclient_chdir}"
-command_args="${command_args} --pid-file=${pidfile} --daemon"
-command_args="${command_args} ${fahclient_extra_flags}"
+_fahclient_command_args=
+_fahclient_command_args="${_fahclient_command_args} --user=${fahclient_donor}"
+_fahclient_command_args="${_fahclient_command_args} --team=${fahclient_team}"
+_fahclient_command_args="${_fahclient_command_args} --config=${fahclient_config}"
+_fahclient_command_args="${_fahclient_command_args} --chdir=${fahclient_chdir}"
+_fahclient_command_args="${_fahclient_command_args} ${fahclient_extra_flags}"
+command_args="${command_args} ${_fahclient_command_args}"
 extra_commands="log showconfig"
 log_cmd="tail -F -- ${fahclient_logfile}"
-showconfig_cmd="${command} ${fahclient_flags} ${command_args} --print"
+showconfig_cmd="${procname} ${fahclient_flags} ${_fahclient_command_args} --print"
 if [ -n "$fahclient_user" ]; then
 	showconfig_cmd="su -m $fahclient_user -c 'sh -c \"$showconfig_cmd\"'"
 fi

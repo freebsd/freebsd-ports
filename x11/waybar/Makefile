@@ -1,5 +1,5 @@
 PORTNAME=	waybar
-DISTVERSION=	0.9.5
+DISTVERSION=	0.9.7
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -61,6 +61,7 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-river-tags.5.gz \
 			man/man5/${PORTNAME}-sndio.5.gz \
 			man/man5/${PORTNAME}-states.5.gz \
+			man/man5/${PORTNAME}-sway-language.5.gz \
 			man/man5/${PORTNAME}-sway-mode.5.gz \
 			man/man5/${PORTNAME}-sway-window.5.gz \
 			man/man5/${PORTNAME}-sway-workspaces.5.gz \

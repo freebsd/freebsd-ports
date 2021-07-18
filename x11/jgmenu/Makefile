@@ -9,7 +9,7 @@ COMMENT=	Simple X11 menu
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng16.so:graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		compiler:c11 gmake gnome pkgconfig python:3.4+ shebangfix xorg
 USE_GITHUB=	yes

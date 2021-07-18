@@ -1,8 +1,7 @@
 PORTNAME=	speech-dispatcher
-DISTVERSION=	0.8.8
-PORTREVISION=	1
+DISTVERSION=	0.10.2
 CATEGORIES?=	accessibility audio
-MASTER_SITES=	http://devel.freebsoft.org/pub/projects/speechd/
+MASTER_SITES=	https://github.com/brailcom/speechd/releases/download/${PORTVERSION}/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	Common interface to speech synthesis
@@ -10,14 +9,18 @@ COMMENT?=	Common interface to speech synthesis
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libdotconf.so:devel/dotconf \
 		libltdl.so:devel/libltdl \
 		libsndfile.so:audio/libsndfile
 
-USES=		alias gettext gmake gnome libtool pathfix pkgconfig
+USES=		alias autoreconf gettext gmake gnome libtool makeinfo pathfix pkgconfig
 USE_GNOME=	glib20 intltool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-espeak-ng
+CONFIGURE_ARGS=	--with-espeak-ng=no \
+		--with-baratinoo=no \
+		--with-kali=no \
+		--with-ibmtts=no
 CFLAGS+=	-fcommon -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
@@ -27,20 +30,20 @@ INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS+=	--disable-python
 
-ETCFILES=	clients/emacs.conf modules/cicero.conf modules/dtk-generic.conf \
-		modules/epos-generic.conf modules/espeak-generic.conf \
-		modules/espeak-mbrola-generic.conf modules/espeak-ng.conf \
-		modules/espeak.conf modules/festival.conf modules/flite.conf \
-		modules/ibmtts.conf modules/ivona.conf \
-		modules/llia_phon-generic.conf modules/pico-generic.conf \
-		modules/swift-generic.conf speechd.conf
+ETCFILES=	clients/emacs.conf modules/cicero.conf \
+		modules/dtk-generic.conf modules/epos-generic.conf \
+		modules/espeak-mbrola-generic.conf modules/espeak-ng-mbrola-generic.conf \
+		modules/espeak-ng.conf modules/espeak.conf modules/festival.conf \
+		modules/flite.conf modules/ivona.conf modules/llia_phon-generic.conf \
+		modules/mary-generic-disabled.conf modules/swift-generic.conf \
+		modules/voxin.conf speechd.conf
 
 PORTDOCS=	ANNOUNCE AUTHORS FAQ NEWS README TODO
 
 INFO=		spd-say speech-dispatcher speech-dispatcher-cs ssip
 
 OPTIONS_DEFINE=		ALSA AO DOCS ESPEAK FESTIVAL FLITE NAS PULSEAUDIO
-OPTIONS_DEFAULT=	ESPEAK
+OPTIONS_DEFAULT=	ESPEAK PULSEAUDIO
 OPTIONS_SUB=		yes
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -91,6 +94,7 @@ SHEBANG_FILES=	src/api/python/speechd_config/spd-conf
 USE_PYTHON=	flavors
 LIB_DEPENDS+=	libspeechd.so:accessibility/speech-dispatcher
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${PY_FLAVOR}
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${PY_FLAVOR}
 
 .endif
 

@@ -1,0 +1,4 @@
+Dump SCTE-35 data from a Transport Stream contained
+within a file or RTP network stream.
+
+WWW: https://github.com/m2amedia/scte35dump

@@ -3,5 +3,4 @@ and server classes, with sample implementations. Hooks are included for easy
 inclusion in a UI for populating progress indicators. It supports RFCs 1350,
 2347, 2348 and the tsize option from RFC 2349.
 
-WWW: https://pypi.org/project/tftpy/
 WWW: https://github.com/msoulier/tftpy

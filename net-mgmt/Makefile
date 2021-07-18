@@ -17,6 +17,7 @@
     SUBDIR += bgpq3
     SUBDIR += bgpq4
     SUBDIR += bgpuma
+    SUBDIR += bind_exporter
     SUBDIR += blackbox_exporter
     SUBDIR += bosun
     SUBDIR += bpft
@@ -96,6 +97,7 @@
     SUBDIR += icingaweb2-module-reactbundle
     SUBDIR += icingaweb2-module-reporting
     SUBDIR += icingaweb2-module-vsphere
+    SUBDIR += icingaweb2-module-x509
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
     SUBDIR += iftop
@@ -306,6 +308,9 @@
     SUBDIR += py-napalm-logs
     SUBDIR += py-ncclient
     SUBDIR += py-nxapi-plumbing
+    SUBDIR += py-opn-cli
+    SUBDIR += py-pdagent
+    SUBDIR += py-pdagent-integrations
     SUBDIR += py-prometheus-client
     SUBDIR += py-pyIOSXR
     SUBDIR += py-pyang
@@ -370,8 +375,6 @@
     SUBDIR += torrus
     SUBDIR += triton-guesttools
     SUBDIR += unbound_exporter
-    SUBDIR += unifi-devel
-    SUBDIR += unifi-lts
     SUBDIR += unifi-poller
     SUBDIR += unifi5
     SUBDIR += unifi6
@@ -405,5 +408,10 @@
     SUBDIR += zabbix52-java
     SUBDIR += zabbix52-proxy
     SUBDIR += zabbix52-server
+    SUBDIR += zabbix54-agent
+    SUBDIR += zabbix54-frontend
+    SUBDIR += zabbix54-java
+    SUBDIR += zabbix54-proxy
+    SUBDIR += zabbix54-server
 
 .include <bsd.port.subdir.mk>

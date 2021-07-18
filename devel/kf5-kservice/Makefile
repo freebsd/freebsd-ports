@@ -6,8 +6,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 advanced plugin and service introspection
 
 USES=		bison cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
-USE_KDE=	archive config coreaddons crash dbusaddons \
-		doctools ecm i18n
+USE_KDE=	archive config coreaddons crash dbusaddons i18n \
+		doctools_build ecm_build 
 USE_QT=		core dbus gui xml \
 		buildtools_build qmake_build
 

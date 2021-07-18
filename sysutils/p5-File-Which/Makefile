@@ -1,7 +1,7 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 
 PORTNAME=	File-Which
-PORTVERSION=	1.23
+PORTVERSION=	1.27
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

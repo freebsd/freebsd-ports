@@ -11,17 +11,17 @@
  
  ifeq ($(COMPILE_PLATFORM),mingw32)
    ifeq ($(COMPILE_ARCH),i386)
-@@ -70,6 +74,9 @@
+@@ -70,6 +74,9 @@ endif
  ifeq ($(COMPILE_ARCH),powerpc64)
    COMPILE_ARCH=ppc64
  endif
 +ifeq ($(COMPILE_ARCH),powerpc64le)
 +  COMPILE_ARCH=ppc64le
 +endif
-
+ 
  ifndef ARCH
  ARCH=$(COMPILE_ARCH)
-@@ -205,6 +209,8 @@ ifneq ($(BUILD_CLIENT),0)
+@@ -205,6 +212,8 @@ ifneq ($(BUILD_CLIENT),0)
      OPENAL_LIBS=$(shell pkg-config --silence-errors --libs openal)
      SDL_CFLAGS=$(shell pkg-config --silence-errors --cflags sdl|sed 's/-Dmain=SDL_main//')
      SDL_LIBS=$(shell pkg-config --silence-errors --libs sdl)
@@ -30,7 +30,7 @@
    endif
    # Use sdl-config if all else fails
    ifeq ($(SDL_CFLAGS),)
-@@ -570,9 +576,15 @@ else # ifeq mingw32
+@@ -570,9 +579,15 @@ else # ifeq mingw32
  
  ifeq ($(PLATFORM),freebsd)
  
@@ -46,7 +46,7 @@
      -DUSE_ICON -DMAP_ANONYMOUS=MAP_ANON
    CLIENT_CFLAGS = $(SDL_CFLAGS)
    SERVER_CFLAGS = 
-@@ -595,29 +607,26 @@ ifeq ($(PLATFORM),freebsd)
+@@ -595,29 +610,26 @@ ifeq ($(PLATFORM),freebsd)
  
    # optional features/libraries
    ifeq ($(USE_OPENAL),1)
@@ -82,7 +82,7 @@
    # cross-compiling tweaks
    ifeq ($(ARCH),i386)
      ifeq ($(CROSS_COMPILING),1)
-@@ -897,7 +906,7 @@ ifeq ($(USE_VOIP),1)
+@@ -897,7 +909,7 @@ ifeq ($(USE_VOIP),1)
    CLIENT_CFLAGS += -DUSE_VOIP
    SERVER_CFLAGS += -DUSE_VOIP
    ifeq ($(USE_INTERNAL_SPEEX),1)
@@ -91,8 +91,12 @@
    else
      CLIENT_LIBS += -lspeex -lspeexdsp
    endif
-@@ -1564,9 +1576,12 @@
-   ifeq ($(ARCH),ppc)
+@@ -1561,12 +1573,15 @@ ifeq ($(HAVE_VM_COMPILED),true)
+   ifeq ($(ARCH),amd64)
+     Q3OBJ += $(B)/client/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
+   endif
+-  ifeq ($(ARCH),ppc)
++  ifeq ($(COMPILE_ARCH),ppc)
      Q3OBJ += $(B)/client/vm_powerpc.o $(B)/client/vm_powerpc_asm.o
    endif
 -  ifeq ($(ARCH),ppc64)
@@ -105,8 +109,12 @@
    ifeq ($(ARCH),sparc)
      Q3OBJ += $(B)/client/vm_sparc.o
    endif
-@@ -1732,7 +1747,10 @@
-   ifeq ($(ARCH),ppc)
+@@ -1729,10 +1744,13 @@ ifeq ($(HAVE_VM_COMPILED),true)
+   ifeq ($(ARCH),amd64)
+     Q3DOBJ += $(B)/ded/vm_x86_64.o $(B)/ded/vm_x86_64_assembler.o
+   endif
+-  ifeq ($(ARCH),ppc)
++  ifeq ($(COMPILE_ARCH),ppc)
      Q3DOBJ += $(B)/ded/vm_powerpc.o $(B)/ded/vm_powerpc_asm.o
    endif
 -  ifeq ($(ARCH),ppc64)

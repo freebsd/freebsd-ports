@@ -20,7 +20,7 @@ CONFLICTS_INSTALL=	kBuild-devel-[0-9]*
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 KBUILD_VERSION=	0.1.9998
-KBUILD_ARCH=	${MACHINE_ARCH:S/i386/x86/:S/x86_64/amd64/:C/powerpc64.*/ppc64/:C/powerpc.*/ppc32/:C/armv.*/arm/}
+KBUILD_ARCH=	${MACHINE_ARCH:S/aarch64/arm64/:S/i386/x86/:S/x86_64/amd64/:C/powerpc64.*/ppc64/:C/powerpc.*/ppc32/:C/armv.*/arm/}
 KBUILD_ENV=	AUTORECONF=${AUTORECONF} \
 		AUTOPOINT=true \
 		CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" \

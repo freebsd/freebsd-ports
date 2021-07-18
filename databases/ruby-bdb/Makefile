@@ -22,12 +22,12 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 USES=		bdb shebangfix tar:bzip2
 USE_RUBY=		yes
 USE_RUBY_EXTCONF=	yes
-USE_RUBY_RDOC=		yes
 
 ALL_TARGET=	all rdoc
 CONFIGURE_ARGS=	--with-db-include=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR}
 INSTALL_TARGET=	site-install
+MAKE_ENV=	RUBY_RDOC=${LOCALBASE}/bin/rdoc
 
 DOCS=		Changes README.en bdb.rd docs/*.rd
 DOCSDIR=	${RUBY_MODDOCDIR}

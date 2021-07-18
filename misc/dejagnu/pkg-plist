@@ -1,5 +1,9 @@
+bin/dejagnu
 bin/runtest
 include/dejagnu.h
+man/man1/dejagnu-help.1.gz
+man/man1/dejagnu-report-card.1.gz
+man/man1/dejagnu.1.gz
 man/man1/runtest.1.gz
 %%DATADIR%%/baseboards/README
 %%DATADIR%%/baseboards/aarch64-sim.exp
@@ -15,6 +19,7 @@ man/man1/runtest.1.gz
 %%DATADIR%%/baseboards/fr30-sim.exp
 %%DATADIR%%/baseboards/frv-sim.exp
 %%DATADIR%%/baseboards/gdbserver-sample.exp
+%%DATADIR%%/baseboards/generic-sim.exp
 %%DATADIR%%/baseboards/i386-sid.exp
 %%DATADIR%%/baseboards/iq2000-sim.exp
 %%DATADIR%%/baseboards/jmr3904-sim.exp
@@ -37,11 +42,16 @@ man/man1/runtest.1.gz
 %%DATADIR%%/baseboards/mmixware-sim.exp
 %%DATADIR%%/baseboards/mn10200-sim.exp
 %%DATADIR%%/baseboards/mn10300-sim.exp
+%%DATADIR%%/baseboards/moxie-sim.exp
 %%DATADIR%%/baseboards/msp430-sim.exp
 %%DATADIR%%/baseboards/mt-sid.exp
 %%DATADIR%%/baseboards/multi-sim.exp
+%%DATADIR%%/baseboards/pi.exp
 %%DATADIR%%/baseboards/powerpc-sim.exp
 %%DATADIR%%/baseboards/powerpcle-sim.exp
+%%DATADIR%%/baseboards/pru-sim.exp
+%%DATADIR%%/baseboards/qemu.exp
+%%DATADIR%%/baseboards/riscv-sim.exp
 %%DATADIR%%/baseboards/rx-sim.exp
 %%DATADIR%%/baseboards/sh-sid.exp
 %%DATADIR%%/baseboards/sh-sim.exp
@@ -57,6 +67,8 @@ man/man1/runtest.1.gz
 %%DATADIR%%/baseboards/vr4111-sim.exp
 %%DATADIR%%/baseboards/vr4300-sim.exp
 %%DATADIR%%/baseboards/xtensa-sim.exp
+%%DATADIR%%/commands/help.sh
+%%DATADIR%%/commands/report-card.awk
 %%DATADIR%%/config/README
 %%DATADIR%%/config/aarch64-fv8.exp
 %%DATADIR%%/config/adb.exp

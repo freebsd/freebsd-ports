@@ -1,8 +1,7 @@
 # Created by: Euan Thoms <euan@potensol.com>
 
 PORTNAME=		sope2
-PORTVERSION=		2.3.23
-PORTREVISION=		6
+PORTVERSION=		2.4.1
 CATEGORIES=		devel gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOPE-${PORTVERSION}
@@ -29,7 +28,7 @@ MYSQL_DESC=		Build with MySQL support
 PGSQL_DESC=		Build with PostgreSQL support
 MEMCACHED_DESC=		Install memcached
 
-USES=			gmake iconv gnustep
+USES=			gmake iconv gnustep ssl
 USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}
 LLD_UNSAFE=		yes # PR 230608
@@ -46,6 +45,7 @@ MEMCACHED_RUN_DEPENDS=	${LOCALBASE}/bin/memcached:databases/memcached
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/sope-core/NGStreams/configure
 
 post-patch-LDAP-off:
 	@${REINPLACE_CMD} -e '/checkLinking "ldap"/d' ${WRKSRC}/configure

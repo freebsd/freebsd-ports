@@ -2,6 +2,7 @@ bin/protoc-c
 bin/protoc-gen-c
 include/google/protobuf-c/protobuf-c.h
 include/protobuf-c/protobuf-c.h
+include/protobuf-c/protobuf-c.proto
 lib/libprotobuf-c.a
 lib/libprotobuf-c.so
 lib/libprotobuf-c.so.1

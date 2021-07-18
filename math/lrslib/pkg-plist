@@ -5,6 +5,9 @@ include/lrslib/lrsgmp.h
 include/lrslib/lrslib.h
 include/lrslib/lrslong.h
 include/lrslib/lrsmp.h
+include/lrslib/lrsnashlib.h
+include/lrslib/lrsrestart.h
+include/lrslib/mplrs.h
 lib/liblrs.so
 lib/liblrs.so.1
 lib/liblrs.so.1.0.0

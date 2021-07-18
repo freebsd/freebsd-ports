@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	intellij-pty4j
 PORTVERSION=	0.11.4
 CATEGORIES=	java devel

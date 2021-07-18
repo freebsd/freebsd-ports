@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	erb
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

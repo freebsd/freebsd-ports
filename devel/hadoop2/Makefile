@@ -6,7 +6,7 @@
 # no problems encountered so far.  Thanks.
 PORTNAME=	hadoop
 PORTVERSION=	2.7.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/common/hadoop-${PORTVERSION} \
 		LOCAL/demon/:maven \
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3 \
 		${LOCALBASE}/protobuf25/bin/protoc:devel/protobuf25
 LIB_DEPENDS=	libsnappy.so:archivers/snappy
 RUN_DEPENDS=	bash:shells/bash \
-		ssid:sysutils/ssid
+		setsid:sysutils/setsid
 
 CONFLICTS_INSTALL=	hadoop-1* yarn
 

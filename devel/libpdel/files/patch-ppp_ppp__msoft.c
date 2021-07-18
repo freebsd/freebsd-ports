@@ -1,6 +1,6 @@
---- ppp/ppp_msoft.c.orig	2005-01-21 22:02:07.000000000 +0100
-+++ ppp/ppp_msoft.c	2015-01-24 13:42:43.120485776 +0100
-@@ -163,14 +163,14 @@
+--- ppp/ppp_msoft.c.orig	2009-05-13 21:36:03 UTC
++++ ppp/ppp_msoft.c
+@@ -130,14 +130,14 @@ ppp_msoft_challenge_response(const u_char *chal,
  static void
  ppp_msoft_des_encrypt(const u_char *clear, u_char *key0, u_char *cypher)
  {
@@ -17,7 +17,7 @@
  	 * algorithm may care though.
  	 */
  	key[0] = key0[0] & 0xfe;
-@@ -181,10 +181,10 @@
+@@ -148,10 +148,10 @@ ppp_msoft_des_encrypt(const u_char *clear, u_char *key
  	key[5] = (key0[4] << 3) | (key0[5] >> 5);
  	key[6] = (key0[5] << 2) | (key0[6] >> 6);
  	key[7] = key0[6] << 1;

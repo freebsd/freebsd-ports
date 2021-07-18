@@ -1,6 +1,5 @@
 PORTNAME=	simple-navigation
-PORTVERSION=	4.0.5
-PORTREVISION=	1
+PORTVERSION=	4.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
@@ -11,11 +10,11 @@ COMMENT=	Create navigations for Rails, Sinatra or Padrino applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport50>0:devel/rubygem-activesupport50
+RUN_DEPENDS=	rubygem-activesupport50>=2.3.2:devel/rubygem-activesupport50
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>

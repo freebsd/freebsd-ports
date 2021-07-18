@@ -1,0 +1,31 @@
+https://github.com/quinn-rs/quinn/issues/1142
+
+--- cargo-crates/quinn-0.7.2/src/platform/unix.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/quinn-0.7.2/src/platform/unix.rs
+@@ -284,7 +284,7 @@ fn recv(
+             libc::recvmmsg(
+                 io.as_raw_fd(),
+                 hdrs.as_mut_ptr(),
+-                bufs.len().min(BATCH_SIZE) as libc::c_uint,
++                bufs.len().min(BATCH_SIZE) as usize,
+                 0,
+                 ptr::null_mut(),
+             )
+@@ -381,7 +381,8 @@ fn prepare_msg(
+     }
+ 
+     if let Some(ip) = &transmit.src_ip {
+-        if cfg!(target_os = "linux") {
++        #[cfg(target_os = "linux")]
++        {
+             match ip {
+                 IpAddr::V4(v4) => {
+                     let pktinfo = libc::in_pktinfo {
+@@ -451,6 +452,7 @@ fn decode_recv(
+                     ecn_bits = cmsg::decode::<libc::c_int>(cmsg) as u8;
+                 }
+             },
++            #[cfg(target_os = "linux")]
+             (libc::IPPROTO_IP, libc::IP_PKTINFO) => unsafe {
+                 let pktinfo = cmsg::decode::<libc::in_pktinfo>(cmsg);
+                 dst_ip = Some(IpAddr::V4(ptr::read(&pktinfo.ipi_addr as *const _ as _)));

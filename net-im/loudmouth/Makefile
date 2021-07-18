@@ -2,8 +2,7 @@
 #   $MCom: ports/trunk/net-im/loudmouth/Makefile 19914 2014-09-25 22:33:21Z kwm $
 
 PORTNAME=	loudmouth
-PORTVERSION=	1.5.3
-PORTREVISION=	1
+DISTVERSION=	1.5.4
 CATEGORIES=	net-im
 MASTER_SITES=	https://mcabber.com/files/loudmouth/ \
 		http://www.lilotux.net/~mikael/mcabber/files/loudmouth/
@@ -20,26 +19,29 @@ USES=		gettext gmake gnome libtool pkgconfig tar:bzip2
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-gtk-doc --disable-rebuilds \
+CONFIGURE_ARGS=	--disable-rebuilds \
+		--disable-gtk-doc \
+		--with-compile-warnings=no \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=GNUTLS
-OPTIONS_RADIO=	SSL
+OPTIONS_DEFINE=		DOCS
+OPTIONS_RADIO=		SSL
 OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
+
+OPTIONS_DEFAULT=	GNUTLS
+
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+GNUTLS_CONFIGURE_ON=	--with-ssl=gnutls
+
+OPENSSL_USES=		ssl
+OPENSSL_CONFIGURE_ON=	--with-ssl=openssl
+OPENSSL_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libgnutls.so:security/gnutls
-CONFIGURE_ARGS+=--with-ssl=gnutls
-.elif ${PORT_OPTIONS:MOPENSSL}
-USES+=		ssl
-CONFIGURE_ARGS+=--with-ssl=openssl
-RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
-.else
-CONFIGURE_ARGS+=--without-ssl
+.if empty(PORT_OPTIONS:MGNUTLS) && empty(PORT_OPTIONS:MOPENSSL)
+CONFIGURE_ARGS+=	--without-ssl
 .endif
 
 .include <bsd.port.mk>

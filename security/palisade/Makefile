@@ -1,13 +1,13 @@
 PORTNAME=	palisade
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.6
+DISTVERSION=	1.11.3
 CATEGORIES=	security math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PALISADE lattice cryptography library for Fully Homomorphic Encryption
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/License.md
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	fails to build: a declaration of 'Mul128' must be available
 BROKEN_powerpc64=	fails to build: math/native_int/binint.h:510:11: error: Architecture not supported for MultD()
@@ -18,7 +18,7 @@ USES=		cmake:noninja localbase # compiler:c++11-lang
 USE_GITLAB=	yes
 USE_GITHUB=	nodefault
 GL_PROJECT=	palisade-release # there's also palisade-development
-GL_COMMIT=	7eec669e1faa4aca0434021b7bdd5fd43695c075
+GL_COMMIT=	1a66eb80233b2adef8c67c71d9ca4652ea188f7d
 GH_TUPLE=	\
 		JerryRyan:cereal:a384b101:cereal/third-party/cereal \
 		google:benchmark:d3ad0b9d:benchmark/third-party/google-benchmark \

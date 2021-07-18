@@ -1,0 +1,30 @@
+bin/rtl_433
+@sample etc/rtl_433/CAME-TOP432.conf etc/rtl_433/CAME-TOP432.conf.sample
+@sample etc/rtl_433/EV1527-4Button-Universal-Remote.conf etc/rtl_433/EV1527-4Button-Universal-Remote.conf.sample
+@sample etc/rtl_433/EV1527-PIR-Sgooway.conf etc/rtl_433/EV1527-PIR-Sgooway.conf.sample
+@sample etc/rtl_433/FAN-53T.conf etc/rtl_433/FAN-53T.conf.sample
+@sample etc/rtl_433/HeatmiserPRT-W.conf etc/rtl_433/HeatmiserPRT-W.conf.sample
+@sample etc/rtl_433/MightyMule-FM231.conf etc/rtl_433/MightyMule-FM231.conf.sample
+@sample etc/rtl_433/SMC5326-Remote.conf etc/rtl_433/SMC5326-Remote.conf.sample
+@sample etc/rtl_433/SalusRT300RF.conf etc/rtl_433/SalusRT300RF.conf.sample
+@sample etc/rtl_433/Skylink_HA-434TL.conf etc/rtl_433/Skylink_HA-434TL.conf.sample
+@sample etc/rtl_433/adlm_fprf.conf etc/rtl_433/adlm_fprf.conf.sample
+@sample etc/rtl_433/atc-technology_lmt-430.conf etc/rtl_433/atc-technology_lmt-430.conf.sample
+@sample etc/rtl_433/car_fob.conf etc/rtl_433/car_fob.conf.sample
+@sample etc/rtl_433/chungear_bcf-0019x2.conf etc/rtl_433/chungear_bcf-0019x2.conf.sample
+@sample etc/rtl_433/dooya_curtain.conf etc/rtl_433/dooya_curtain.conf.sample
+@sample etc/rtl_433/energy_count_3000.conf etc/rtl_433/energy_count_3000.conf.sample
+@sample etc/rtl_433/fan-11t.conf etc/rtl_433/fan-11t.conf.sample
+@sample etc/rtl_433/friedlandevo.conf etc/rtl_433/friedlandevo.conf.sample
+@sample etc/rtl_433/led-light-remote.conf etc/rtl_433/led-light-remote.conf.sample
+@sample etc/rtl_433/pir-ef4.conf etc/rtl_433/pir-ef4.conf.sample
+@sample etc/rtl_433/rtl_433.example.conf etc/rtl_433/rtl_433.example.conf.sample
+@sample etc/rtl_433/silverline_doorbell.conf etc/rtl_433/silverline_doorbell.conf.sample
+@sample etc/rtl_433/sonoff_rm433.conf etc/rtl_433/sonoff_rm433.conf.sample
+@sample etc/rtl_433/steffen_switch.conf etc/rtl_433/steffen_switch.conf.sample
+@sample etc/rtl_433/tesla_charge-port-opener.conf etc/rtl_433/tesla_charge-port-opener.conf.sample
+@sample etc/rtl_433/valeo_car_key.conf etc/rtl_433/valeo_car_key.conf.sample
+@sample etc/rtl_433/verisure_alarm.conf etc/rtl_433/verisure_alarm.conf.sample
+include/rtl_433.h
+include/rtl_433_devices.h
+share/man/man1/rtl_433.1.gz

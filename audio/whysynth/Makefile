@@ -6,7 +6,7 @@ PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://smbolton.com/whysynth/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Versatile softsynth implemented as a DSSI plugin
 
 LICENSE=	GPLv2 LGPL21

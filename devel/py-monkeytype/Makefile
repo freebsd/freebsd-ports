@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	monkeytype
-PORTVERSION=	20.5.0
+PORTVERSION=	21.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Generate type annotations from sampled production types
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libcst>=0.3.5:devel/py-libcst@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libcst>=0.3.7:devel/py-libcst@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy_extensions>=0:devel/py-mypy_extensions@${PY_FLAVOR}
 
 USES=		python:3.6+

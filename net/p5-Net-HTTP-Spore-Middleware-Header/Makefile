@@ -12,13 +12,15 @@ COMMENT=	Spore Middleware to add header on each request
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
 		p5-Net-HTTP-Spore>=0:net/p5-Net-HTTP-Spore
 
-NO_ARCH=	yes
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

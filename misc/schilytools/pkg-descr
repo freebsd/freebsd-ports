@@ -1,0 +1,15 @@
+Schily-Tools are a set of tools developed or maintained by Joerg Schilling.
+This is a meta port to install all packages derived from the Schily-Tools.
+
+Programs and tools included in the Schily-Tools bundle:
+
+ * Cdrtools (cdrecord/cdda2wav/mkisofs/...)
+ * The Schily-Bourne Shell
+ * The Schily-SunPro Make
+ * A K&R cpp derived from the original cpp sources from John F. Reiser
+ * cstyle is a C-indentation lint tool derived from the OpenSolaris sources
+ * spatch is derived from the last patch from Larry Wall, POSIX compliant
+   and using a 1-clause BSD license.
+ * SCCS derived from OpenSolaris sources
+ * star, the oldest free TAR implementation, started in 1982
+ * ved, A portable, easy to learn and extremely fast screen oriented editor.

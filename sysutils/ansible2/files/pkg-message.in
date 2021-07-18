@@ -1,0 +1,30 @@
+[
+{
+message: <<EOD
+To use Ansible, you need at least a host database.
+If you installed examples, you will have a sample
+inventory and a sample configuration file:
+
+  %%EXAMPLESDIR%%/hosts
+  %%EXAMPLESDIR%%/ansible.cfg
+
+EOD
+type: install
+}
+{
+message: <<EOD
+Ansible has been updated to %%MAJMINVER%%. Please follow the porting guide
+to update the rulesets:
+
+  https://docs.ansible.com/ansible/devel/porting_guides/porting_guide_%%MAJMINVER%%.html
+
+In order to stay with an older version instead, e.g., 2.7, use pkg-set(8).
+For example:
+
+  # pkg set -n %%PKGBASE%%:%%PYTHON_PKGNAMEPREFIX%%ansible27
+
+EOD
+maximum_version: "%%MAJMINVER%%"
+type: upgrade
+}
+]

@@ -1,7 +1,7 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 
 PORTNAME=	libolecf
-DISTVERSION=	alpha-20201004
+DISTVERSION=	alpha-20210512
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libolecf/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine

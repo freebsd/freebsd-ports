@@ -1,7 +1,7 @@
 PORTNAME=	libmodulemd
-DISTVERSION=	2.12.0
+DISTVERSION=	2.12.1
 CATEGORIES=	misc
-MASTER_SITES=	https://github.com/fedora-modularity/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
+MASTER_SITES=	https://github.com/fedora-modularity/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	modulemd-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org

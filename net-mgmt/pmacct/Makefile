@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE3 LAYER2 DEBUG GEOIP2 \
 		DOCS PLABEL RABBITMQ REDIS KAFKA AVRO EXAMPLES
 OPTIONS_DEFAULT=LAYER2
-OPTIONS_SUB=	1
+OPTIONS_SUB=	yes
 
 AVRO_DESC=	Enable avro support
 GEOIP2_DESC=	Enable GeoIPv2 (libmaxminddb) support
@@ -48,19 +48,19 @@ LAYER2_CONFIGURE_ENABLE=	l2
 PLABEL_CONFIGURE_ENABLE=	plabel
 DEBUG_CONFIGURE_ENABLE=		debug
 
-RABBITMQ_VARS=			LIB_DEPENDS+=librabbitmq.so:net/rabbitmq-c-devel
+RABBITMQ_LIB_DEPENDS=		librabbitmq.so:net/rabbitmq-c-devel
 RABBITMQ_CONFIGURE_ENABLE=	rabbitmq
 
-REDIS_VARS=			LIB_DEPENDS+=libhiredis.so:databases/hiredis
+REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
 REDIS_CONFIGURE_ENABLE=		redis
 
-KAFKA_VARS=			LIB_DEPENDS+=librdkafka.so:net/librdkafka
-KAFKA_CONFIGURE_ENABLE==	kafka
+KAFKA_LIB_DEPENDS=		librdkafka.so:net/librdkafka
+KAFKA_CONFIGURE_ENABLE=		kafka
 
-AVRO_VARS=			LIB_DEPENDS+=libavro.so:devel/avro-c
+AVRO_LIB_DEPENDS=		libavro.so:devel/avro-c
 AVRO_CONFIGURE_ENABLE=		avro
 
-GEOIP2_VARS=			LIB_DEPENDS+=libmaxminddb.so:net/libmaxminddb
+GEOIP2_LIB_DEPENDS=		libmaxminddb.so:net/libmaxminddb
 GEOIP2_CONFIGURE_ENABLE=	geoipv2
 
 .include <bsd.port.options.mk>
@@ -70,12 +70,6 @@ PLIST_SUB+=	SQLDOC=${SQLDOC}
 .if ${PORT_OPTIONS:MRABBITMQ} || ${PORT_OPTIONS:MKAFKA}
 LIB_DEPENDS+=	libjansson.so:devel/jansson
 CONFIGURE_ARGS+=--enable-jansson
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-CONFIGURE_ARGS+=--enable-64bit
 .endif
 
 post-patch:
@@ -91,4 +85,4 @@ post-install:
 .endfor
 	${MKDIR} ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

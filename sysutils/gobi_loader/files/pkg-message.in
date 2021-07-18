@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+To automatically load firmware copy %%PREFIX%%/etc/devd/gobi.conf.sample to
+%%PREFIX%%/etc/devd/gobi.conf and adjust port, VID and PID to match your
+device. To find VID and PID of the device look through the output of the
+command: usbconfig dump_device_desc
+
+The firmware for this device is not publicly downloadable. It should be
+obtained separately and usually consists of 3 files: amss.mbn, apps.mbn and
+uqcn.mbn which all should be placed in directory /boot/firmware/gobi. The
+directory has to be created first if appropirate: mkdir -p /boot/firmware/gobi
+EOM
+}
+]

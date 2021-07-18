@@ -1,4 +1,4 @@
---- cc/layers/scrollbar_layer_impl_base.cc.orig	2021-03-12 23:57:15 UTC
+--- cc/layers/scrollbar_layer_impl_base.cc.orig	2021-04-14 18:40:48 UTC
 +++ cc/layers/scrollbar_layer_impl_base.cc
 @@ -219,8 +219,8 @@ gfx::Rect ScrollbarLayerImplBase::ComputeThumbQuadRect
    int thumb_offset = TrackStart();

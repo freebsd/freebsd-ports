@@ -1,7 +1,5 @@
-# Created by: Daniel Solsona <daniel@ish.com.au>, Guido Falsi <madpilot@FreeBSD.org>
-
 PORTNAME=	logstash
-PORTVERSION=	6.8.15
+PORTVERSION=	6.8.16
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
 PKGNAMESUFFIX=	6
@@ -15,32 +13,28 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USES=		cpe shebangfix
 
-CONFLICTS=	logstash-[0-9]* logstash5* logstash7*
-
-SHEBANG_FILES=	bin/*
 CPE_VENDOR=	elasticsearch
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 JAVA_RUN=	yes
-NO_BUILD=	yes
-
-USERS=	logstash
-GROUPS=	logstash
-
-LOGSTASH_DIR=	${PREFIX}/${PORTNAME}
-
 USE_RC_SUBR=	logstash
+SHEBANG_FILES=	bin/*
+CONFLICTS=	logstash-[0-9]* logstash5* logstash7*
 
-LOGSTASH_HOME?=	${PREFIX}/${PORTNAME}
-
+NO_BUILD=	yes
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		LOGSTASH_HOME=${LOGSTASH_HOME}
 
-LOGSTASH_CONF_FILES=	jvm.options log4j2.properties logstash.yml \
-			pipelines.yml startup.options
-LOGSTASH_JRUBY_SUBDIR=	vendor/jruby/bin
+USERS=		logstash
+GROUPS=		logstash
+
+LOGSTASH_CONF_FILES=		jvm.options log4j2.properties logstash.yml \
+				pipelines.yml startup.options
+LOGSTASH_DIR=	${PREFIX}/${PORTNAME}
+LOGSTASH_HOME?=	${PREFIX}/${PORTNAME}
 LOGSTASH_JRUBY_BIN_FILES=	ast gem irb jgem jirb jirb_swing jruby \
 				jruby.bash jruby.sh jrubyc rake rdoc ri testrb
+LOGSTASH_JRUBY_SUBDIR=		vendor/jruby/bin
 
 post-patch:
 	${REINPLACE_CMD} 's|%%ETCDIR%%|${ETCDIR}|g' ${WRKSRC}/config/logstash.yml

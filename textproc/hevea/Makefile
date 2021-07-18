@@ -8,7 +8,7 @@ MASTER_SITES=	http://para.inria.fr/~maranget/hevea/distri/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert LaTeX to HTML
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild

@@ -1,7 +1,7 @@
 # Created by: Talal Al Dik (tad@vif.com)
 
 PORTNAME=	sngrep
-DISTVERSION=	1.4.8
+DISTVERSION=	1.4.9
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/irontec/${PORTNAME}/releases/download/v${DISTVERSION}/
 

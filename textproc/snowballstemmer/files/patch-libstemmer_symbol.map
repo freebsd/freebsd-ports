@@ -1,0 +1,9 @@
+--- libstemmer/symbol.map.orig	2021-06-25 16:40:40 UTC
++++ libstemmer/symbol.map
+@@ -0,0 +1,6 @@
++SB_STEMMER_0 {
++    global:
++        sb_stemmer_*;
++    local:
++        *;
++};

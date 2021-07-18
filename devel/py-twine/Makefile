@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0.4.3:devel/py-colorama@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}keyring>=15.1:security/py-keyring@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}keyring>=15.1,1:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pkginfo>=1.4.2:sysutils/py-pkginfo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}readme-renderer>=21.0:devel/py-readme-renderer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.20:www/py-requests@${PY_FLAVOR} \
@@ -29,7 +29,7 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3800
+.if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
 

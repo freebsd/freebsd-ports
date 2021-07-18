@@ -15,11 +15,16 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Unreal Tournament for Linux
 
+# Converted from RESTRICTED
+LICENSE=	unreal
+LICENSE_NAME=	unreal
+LICENSE_TEXT=	Redistribution is limited, see license
+LICENSE_PERMS=	auto-accept
+
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux
 USE_LINUX=	xorglibs sdl12
 NO_BUILD=	yes
-RESTRICTED=	Redistribution is limited, see license
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
 CONFLICTS_INSTALL=	exult-[0-9]* ucc-[0-9]*

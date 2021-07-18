@@ -5,4 +5,4 @@ to each other.
 
 This port is the Python API to interface with the D-BUS based SPI framework.
 
-WWW: http://www.linuxfoundation.org/en/AT-SPI_on_D-Bus
+WWW: https://gitlab.gnome.org/GNOME/pyatspi2

@@ -1,5 +1,6 @@
-%%JACK%%bin/spectacle
-lib/lv2/spectacle.lv2/manifest.ttl
-lib/lv2/spectacle.lv2/presets.ttl
-lib/lv2/spectacle.lv2/spectacle.so
-lib/lv2/spectacle.lv2/spectacle.ttl
+%%JACK%%bin/spectacle-analyzer
+lib/lv2/spectacle-analyzer.lv2/manifest.ttl
+lib/lv2/spectacle-analyzer.lv2/presets.ttl
+lib/lv2/spectacle-analyzer.lv2/spectacle-analyzer.so
+lib/lv2/spectacle-analyzer.lv2/spectacle-analyzer.ttl
+%%VST%%lib/vst/spectacle-analyzer-vst.so

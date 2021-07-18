@@ -11,6 +11,4 @@ USE_KDE=	archive completion config coreaddons ecm jobwidgets libkdcraw \
 USE_QT=		concurrent core dbus gui network widgets \
 		buildtools_build qmake_build
 
-OPTIONS_DEFINE=	DOCS
-
 .include <bsd.port.mk>

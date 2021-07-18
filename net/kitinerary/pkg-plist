@@ -40,6 +40,7 @@ include/KPim/KItinerary/TrainTrip
 include/KPim/KItinerary/Uic9183Block
 include/KPim/KItinerary/Uic9183Parser
 include/KPim/KItinerary/Uic9183TicketLayout
+include/KPim/KItinerary/Uic9183Utils
 include/KPim/KItinerary/VdvTicket
 include/KPim/KItinerary/VdvTicketParser
 include/KPim/KItinerary/Vendor0080Block
@@ -87,6 +88,7 @@ include/KPim/kitinerary/traintrip.h
 include/KPim/kitinerary/uic9183block.h
 include/KPim/kitinerary/uic9183parser.h
 include/KPim/kitinerary/uic9183ticketlayout.h
+include/KPim/kitinerary/uic9183utils.h
 include/KPim/kitinerary/vdvticket.h
 include/KPim/kitinerary/vdvticketparser.h
 include/KPim/kitinerary/vendor0080block.h

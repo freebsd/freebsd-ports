@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/about_ui.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/webui/about_ui.cc.orig	2021-04-14 18:40:56 UTC
 +++ chrome/browser/ui/webui/about_ui.cc
 @@ -580,7 +580,7 @@ std::string ChromeURLs() {
    return html;

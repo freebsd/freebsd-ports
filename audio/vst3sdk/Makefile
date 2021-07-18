@@ -11,6 +11,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_i386=	fails to build: static_assert failed due to requirement 'alignof(Steinberg::Vst::ProcessContext) == (0 ? 8U : 0 ? 1U : 1 ? 8U : 8U)
+BROKEN_FreeBSD_11=	x11fileselector.cpp:57:9: error: use of undeclared identifier 'getline'; did you mean 'std::getline'?
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
@@ -36,6 +37,8 @@ GH_TUPLE=	\
 		steinbergmedia:vstgui:83c6dc9a548729e121746839da946e2b73781b70:steinbergmedia_vstgui/vstgui4
 
 SHEBANG_FILES=	vstgui4/vstgui/uidescription/editing/createuidescdata.sh
+
+PORTSCOUT=	limit:^.*\d\.\d # prevent tags like vstsdk370_31_07_2020_build_116
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}

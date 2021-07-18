@@ -4,7 +4,7 @@ Date:   Wed Feb 11 09:04:46 2015 +0100
 
     Use int instead of u8 for variables handled through SYSCTL_ADD_INT
 
---- sms1xxx-gpio.h.orig
+--- sms1xxx-gpio.h.orig	2012-01-13 09:45:26 UTC
 +++ sms1xxx-gpio.h
 @@ -88,7 +88,7 @@ struct sms1xxx_gpio {
      /* Other */
@@ -15,7 +15,7 @@ Date:   Wed Feb 11 09:04:46 2015 +0100
  };
  
  int sms1xxx_gpio_get_pin_params(u32, u32 *, u32 *, u32 *);
---- sms1xxx-ir.h.orig
+--- sms1xxx-ir.h.orig	2012-01-13 09:45:26 UTC
 +++ sms1xxx-ir.h
 @@ -37,9 +37,9 @@
  /* Board IR configuration */

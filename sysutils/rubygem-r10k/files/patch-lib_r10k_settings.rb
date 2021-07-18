@@ -1,6 +1,6 @@
---- lib/r10k/settings.rb.orig
+--- lib/r10k/settings.rb.orig	2021-04-30 19:31:49 UTC
 +++ lib/r10k/settings.rb
-@@ -123,8 +123,8 @@
+@@ -141,8 +141,8 @@ module R10K
          }),
  
          Definition.new(:puppet_path, {

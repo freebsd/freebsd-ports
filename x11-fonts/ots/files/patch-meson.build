@@ -1,10 +1,10 @@
---- meson.build.orig	2021-01-12 17:06:54 UTC
+--- meson.build.orig	2021-03-07 06:36:19 UTC
 +++ meson.build
 @@ -1,6 +1,6 @@
  project('ots', 'c', 'cpp',
-   version: '8.1.3',
--  default_options : ['cpp_std=c++11', 'default_library=static'],
-+  default_options : ['cpp_std=c++11', 'default_library=both'],
+   version: '8.1.4',
+-  default_options : ['cpp_std=c++11', 'default_library=static', 'warning_level=2'],
++  default_options : ['cpp_std=c++11', 'default_library=both', 'warning_level=2'],
    meson_version : '>= 0.55.2',
  )
  

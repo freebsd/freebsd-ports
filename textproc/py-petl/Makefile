@@ -1,7 +1,8 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	petl
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.4
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,15 +36,15 @@ XPATH_DESC=	XPath support
 WHOOSH_DESC=	Whoosh support
 
 AVRO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastavro>=0.24.0:textproc/py-fastavro@${PY_FLAVOR}
-DB_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sqlalchemy13>=1.3.6:databases/py-sqlalchemy13@${PY_FLAVOR}
+DB_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.3.6:databases/py-sqlalchemy14@${PY_FLAVOR}
 HDF5_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.13:lang/cython@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}numexpr>=2.6.9:math/py-numexpr@${PY_FLAVOR} \
-			${PYNUMPY} \
+			${PYTHON_PKGNAMEPREFIX}numpy>=1.16.4,1:math/py-numpy@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}tables>=3.5.2:devel/py-tables@${PY_FLAVOR}
 HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.6.2:www/py-aiohttp@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 INTERVAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}intervaltree>=3.0.2:devel/py-intervaltree@${PY_FLAVOR}
-NUMPY_RUN_DEPENDS=	${PYNUMPY}
+NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16.4,1:math/py-numpy@${PY_FLAVOR}
 PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=0.24.2,1:math/py-pandas@${PY_FLAVOR}
 REMOTE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=0.7.4:devel/py-fsspec@${PY_FLAVOR}
 SMB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}smbprotocol>=1.0.1:net/py-smbprotocol@${PY_FLAVOR}

@@ -7,6 +7,7 @@
     SUBDIR += ADMsnmp
     SUBDIR += R-cran-ROAuth
     SUBDIR += R-cran-askpass
+    SUBDIR += R-cran-credentials
     SUBDIR += R-cran-digest
     SUBDIR += R-cran-gitcreds
     SUBDIR += R-cran-openssl
@@ -30,6 +31,7 @@
     SUBDIR += apkid
     SUBDIR += arirang
     SUBDIR += arpCounterattack
+    SUBDIR += arti
     SUBDIR += asignify
     SUBDIR += assh
     SUBDIR += autossh
@@ -51,7 +53,6 @@
     SUBDIR += belier
     SUBDIR += bfbtester
     SUBDIR += binwalk
-    SUBDIR += bitwarden_rs
     SUBDIR += boringssl
     SUBDIR += botan110
     SUBDIR += botan2
@@ -68,7 +69,7 @@
     SUBDIR += cargo-audit
     SUBDIR += ccrypt
     SUBDIR += ccsrch
-    SUBDIR += certificate-transparency
+    SUBDIR += certmgr
     SUBDIR += cfs
     SUBDIR += cfssl
     SUBDIR += chaosreader
@@ -103,7 +104,9 @@
     SUBDIR += cracklib
     SUBDIR += crackpkcs12
     SUBDIR += create-cert
+    SUBDIR += crlfuzz
     SUBDIR += crowdsec
+    SUBDIR += crowdsec-firewall-bouncer
     SUBDIR += cryptlib
     SUBDIR += cryptopp
     SUBDIR += ct-submit
@@ -132,6 +135,7 @@
     SUBDIR += dsniff
     SUBDIR += dsvpn
     SUBDIR += duo
+    SUBDIR += duo_openvpn
     SUBDIR += easy-rsa
     SUBDIR += elixir-comeonin
     SUBDIR += elixir-comeonin_i18n
@@ -147,7 +151,6 @@
     SUBDIR += fakeident
     SUBDIR += fakeroot
     SUBDIR += farmhash
-    SUBDIR += fbopenssl
     SUBDIR += fcheck
     SUBDIR += fcrackzip
     SUBDIR += ffuf
@@ -174,6 +177,7 @@
     SUBDIR += git-crypt
     SUBDIR += git-remote-gcrypt
     SUBDIR += git-secret
+    SUBDIR += gitjacker
     SUBDIR += gnome-keyring
     SUBDIR += gnome-keyring-sharp
     SUBDIR += gnome-ssh-askpass
@@ -190,6 +194,7 @@
     SUBDIR += govpn
     SUBDIR += gpa
     SUBDIR += gpg-gui
+    SUBDIR += gpg-tui
     SUBDIR += gpgdir
     SUBDIR += gpgme
     SUBDIR += gpgme-cpp
@@ -273,6 +278,7 @@
     SUBDIR += kripp
     SUBDIR += kstart
     SUBDIR += ktls_isa-l_crypto-kmod
+    SUBDIR += kuku
     SUBDIR += kwalletmanager
     SUBDIR += l0pht-watch
     SUBDIR += l0phtcrack
@@ -310,6 +316,7 @@
     SUBDIR += libpwstor
     SUBDIR += libressl
     SUBDIR += libressl-devel
+    SUBDIR += libreswan
     SUBDIR += libretls
     SUBDIR += libscep
     SUBDIR += libscrypt
@@ -369,11 +376,13 @@
     SUBDIR += nacl
     SUBDIR += ncrack
     SUBDIR += ncrypt
+    SUBDIR += nebula
     SUBDIR += nettle
     SUBDIR += nextcloud-end_to_end_encryption
     SUBDIR += nextcloud-passman
     SUBDIR += nextcloud-twofactor_totp
     SUBDIR += nextcloud-twofactor_u2f
+    SUBDIR += nextcloud-twofactor_webauthn
     SUBDIR += nflib
     SUBDIR += ngrok
     SUBDIR += nikto
@@ -397,11 +406,13 @@
     SUBDIR += openbsm
     SUBDIR += openca-tools-forked
     SUBDIR += openconnect
+    SUBDIR += openconnect-freebsd-daemon
     SUBDIR += openconnect-gui
     SUBDIR += opencryptoki
     SUBDIR += openct
     SUBDIR += openfortivpn
     SUBDIR += openiked
+    SUBDIR += openiked-portable
     SUBDIR += opensaml
     SUBDIR += opensc
     SUBDIR += openscep
@@ -518,6 +529,7 @@
     SUBDIR += p5-Crypt-HSXKPasswd
     SUBDIR += p5-Crypt-IDEA
     SUBDIR += p5-Crypt-Imail
+    SUBDIR += p5-Crypt-JWT
     SUBDIR += p5-Crypt-Juniper
     SUBDIR += p5-Crypt-Khazad
     SUBDIR += p5-Crypt-LE
@@ -768,6 +780,7 @@
     SUBDIR += pecl-libsodium
     SUBDIR += pecl-mcrypt
     SUBDIR += pecl-pam
+    SUBDIR += pecl-pkcs11
     SUBDIR += pecl-scrypt
     SUBDIR += pecl-ssh2
     SUBDIR += peda
@@ -802,6 +815,7 @@
     SUBDIR += pkcs11-dump
     SUBDIR += pkcs11-gateway
     SUBDIR += pkcs11-helper
+    SUBDIR += pkcs11-tools
     SUBDIR += pkesh
     SUBDIR += pks
     SUBDIR += pktsuckers
@@ -892,6 +906,7 @@
     SUBDIR += py-gnutls
     SUBDIR += py-google-auth
     SUBDIR += py-google-auth-httplib2
+    SUBDIR += py-google-auth-oauthlib
     SUBDIR += py-gpgme
     SUBDIR += py-gpsoauth
     SUBDIR += py-gssapi
@@ -945,6 +960,7 @@
     SUBDIR += py-pyotp2289
     SUBDIR += py-pysaml2
     SUBDIR += py-pysaml24
+    SUBDIR += py-pysaml26
     SUBDIR += py-pyscard
     SUBDIR += py-pysha3
     SUBDIR += py-pysodium
@@ -985,6 +1001,7 @@
     SUBDIR += py-stix2
     SUBDIR += py-stix2-patterns
     SUBDIR += py-taxii2-client
+    SUBDIR += py-tls-parser
     SUBDIR += py-tlslite
     SUBDIR += py-trezor
     SUBDIR += py-trustme
@@ -1044,9 +1061,11 @@
     SUBDIR += rubygem-bcrypt_pbkdf
     SUBDIR += rubygem-bcrypt_pbkdf10
     SUBDIR += rubygem-cose
+    SUBDIR += rubygem-declarative_policy
     SUBDIR += rubygem-devise-two-factor
     SUBDIR += rubygem-devise-two-factor-rails5
     SUBDIR += rubygem-devise-two-factor-rails60
+    SUBDIR += rubygem-devise-two-factor-rails61
     SUBDIR += rubygem-devise-two-factor30-rails52
     SUBDIR += rubygem-devise-two-factor30-rails60
     SUBDIR += rubygem-devise_pam_authenticatable2
@@ -1063,6 +1082,7 @@
     SUBDIR += rubygem-gpgr
     SUBDIR += rubygem-gssapi
     SUBDIR += rubygem-hkdf
+    SUBDIR += rubygem-hkdf0
     SUBDIR += rubygem-hrr_rb_ssh
     SUBDIR += rubygem-lockbox
     SUBDIR += rubygem-metasploit-aggregator
@@ -1074,7 +1094,9 @@
     SUBDIR += rubygem-metasploit_payloads-mettle
     SUBDIR += rubygem-nessus_rest
     SUBDIR += rubygem-net-scp
+    SUBDIR += rubygem-net-scp1
     SUBDIR += rubygem-net-sftp
+    SUBDIR += rubygem-net-sftp2
     SUBDIR += rubygem-net-ssh
     SUBDIR += rubygem-net-ssh-gateway
     SUBDIR += rubygem-net-ssh-gateway1
@@ -1096,6 +1118,7 @@
     SUBDIR += rubygem-omniauth-oauth2-generic
     SUBDIR += rubygem-omniauth-saml
     SUBDIR += rubygem-omniauth-shibboleth
+    SUBDIR += rubygem-omniauth1
     SUBDIR += rubygem-openssl
     SUBDIR += rubygem-openssl-ccm
     SUBDIR += rubygem-openssl-cmac
@@ -1142,6 +1165,7 @@
     SUBDIR += rubygem-sshkey
     SUBDIR += rubygem-sshkit
     SUBDIR += rubygem-sslshake
+    SUBDIR += rubygem-ssrf_filter
     SUBDIR += rubygem-timfel-krb5
     SUBDIR += rubygem-tpm-key_attestation
     SUBDIR += rubygem-twitter_oauth
@@ -1196,6 +1220,7 @@
     SUBDIR += softether-devel
     SUBDIR += softether5
     SUBDIR += softhsm2
+    SUBDIR += solana
     SUBDIR += sops
     SUBDIR += spass
     SUBDIR += spass-qt5
@@ -1239,6 +1264,7 @@
     SUBDIR += swatchdog
     SUBDIR += symbion-sslproxy
     SUBDIR += tailscale
+    SUBDIR += tang
     SUBDIR += tclsasl
     SUBDIR += tcpcrypt
     SUBDIR += teleport
@@ -1271,6 +1297,7 @@
     SUBDIR += unicornscan
     SUBDIR += vanguards-tor
     SUBDIR += vault
+    SUBDIR += vaultwarden
     SUBDIR += veracrypt
     SUBDIR += vigenere
     SUBDIR += vinetto

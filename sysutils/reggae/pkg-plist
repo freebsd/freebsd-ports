@@ -61,6 +61,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/mk/salt.mk
 %%DATADIR%%/mk/service.mk
 %%DATADIR%%/mk/shell.mk
+%%DATADIR%%/mk/use.mk
 %%DATADIR%%/scripts/bhyve-init.sh
 %%DATADIR%%/scripts/cbsd-init.sh
 %%DATADIR%%/scripts/chef-provision.sh
@@ -114,6 +115,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/export-ports.sh
 %%DATADIR%%/templates/freebsd-update.conf
 %%DATADIR%%/templates/gitignore
+%%DATADIR%%/templates/gitignore.project
 %%DATADIR%%/templates/initenv.conf
 %%DATADIR%%/templates/install-packages.sh
 %%DATADIR%%/templates/ip-by-mac.sh

@@ -1,0 +1,4 @@
+An Ansible connection plugin for remotely provisioning FreeBSD jails
+separately from their jailhost.
+
+WWW: https://github.com/austinhyde/ansible-sshjail

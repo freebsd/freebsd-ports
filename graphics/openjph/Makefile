@@ -1,8 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	openjph
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.7.3
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org

@@ -32,7 +32,7 @@ MINGW32_DESC=	Add the mingw32 target (requires wine)
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		gmake shebangfix
-USE_GCC=	any
+USE_GCC=	yes
 
 .include <bsd.port.options.mk>
 

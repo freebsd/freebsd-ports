@@ -6,10 +6,11 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library for handling icons in applications
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
-USE_KDE=	archive auth codecs config configwidgets coreaddons ecm \
-		i18n itemviews widgetsaddons
-USE_QT=		buildtools_build concurrent core dbus gui qmake_build \
-		script svg widgets xml
+USE_KDE=	archive auth codecs config configwidgets coreaddons \
+		i18n itemviews widgetsaddons \
+		ecm_build
+USE_QT=		concurrent core dbus gui script svg widgets xml \
+		buildtools_build qmake_build 
 
 OPTIONS_DEFINE=	ICONS
 OPTIONS_DEFAULT=	ICONS

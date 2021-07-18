@@ -1,7 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	mate-settings-daemon
-PORTVERSION=	1.24.1
+PORTVERSION=	1.24.2
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

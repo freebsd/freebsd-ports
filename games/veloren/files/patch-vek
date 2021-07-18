@@ -9,29 +9,6 @@ error[E0658]: platform intrinsics are experimental and possibly buggy
    = note: see issue #27731 <https://github.com/rust-lang/rust/issues/27731> for more information
    = help: add `#![feature(platform_intrinsics)]` to the crate attributes to enable
 
---- cargo-crates/vek-0.11.2/build.rs.orig	2020-03-29 09:38:47 UTC
-+++ cargo-crates/vek-0.11.2/build.rs
-@@ -4,19 +4,6 @@ use rustc_version::{version, version_meta, Channel};
- fn main() {
-     assert!(version().unwrap().major >= 1);
- 
--    match version_meta().unwrap().channel {
--        Channel::Stable => {
--            println!("cargo:rustc-cfg=stable");
--        }
--        Channel::Beta => {
--            println!("cargo:rustc-cfg=beta");
--        }
--        Channel::Nightly => {
--            println!("cargo:rustc-cfg=nightly");
--        }
--        Channel::Dev => {
--            println!("cargo:rustc-cfg=dev");
--        }
--    }
-+    println!("cargo:rustc-cfg=nightly");
- }
- 
 --- ../vek-df6842cc874a697dec8896c66851817e744af7e8/build.rs.orig	2021-03-03 21:14:39 UTC
 +++ ../vek-df6842cc874a697dec8896c66851817e744af7e8/build.rs
 @@ -4,19 +4,6 @@ use rustc_version::{version, version_meta, Channel};

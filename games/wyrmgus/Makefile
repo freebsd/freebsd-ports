@@ -1,8 +1,9 @@
 # Created by: Travis Poppe <tlp@liquidx.org>
 
 PORTNAME=	wyrmgus
-PORTVERSION=	4.1.3
+PORTVERSION=	4.1.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	games devel
 
 MAINTAINER=	amdmi3@FreeBSD.org

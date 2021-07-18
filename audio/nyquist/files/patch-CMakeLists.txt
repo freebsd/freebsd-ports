@@ -1,0 +1,53 @@
+--- CMakeLists.txt.orig	2020-10-09 03:20:26 UTC
++++ CMakeLists.txt
+@@ -299,13 +299,17 @@ if(UNIX)
+       portaudio/src/hostapi/coreaudio/pa_mac_core_internal.h
+       portaudio/src/hostapi/coreaudio/pa_mac_core.c)
+     set(portaudio_SRCS ${portaudio_SRCS} ${portaudio_mac_SRCS})
+-  else(APPLE)
++  elseif(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++    set(portaudio_freebsd_SRCS 
++      portaudio/src/hostapi/oss/pa_unix_oss.c)
++    set(portaudio_SRCS ${portaudio_SRCS} ${portaudio_freebsd_SRCS})
++  else()
+     # Linux
+     set(portaudio_linux_SRCS 
+       portaudio/src/hostapi/alsa/pa_linux_alsa.c
+       portaudio/src/hostapi/oss/pa_unix_oss.c)
+     set(portaudio_SRCS ${portaudio_SRCS} ${portaudio_linux_SRCS})
+-  endif(APPLE)
++  endif()
+ else(UNIX)
+   #WIN32
+   set(portaudio_SRCS ${portaudio_SRCS} 
+@@ -343,8 +347,8 @@ if(UNIX)
+   target_include_directories(portaudio_static PRIVATE
+           PROPERTY INCLUDE_DIRECTORIES
+           ${CMAKE_CURRENT_SOURCE_DIR}/portaudio/src/os/unix)
+-if(APPLE)
+-else(APPLE)
++if(APPLE OR CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++else(APPLE OR CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+     # Linux
+     set(USE_ALSA 1 CACHE BOOL "Use ALSA audio rather than OSS")
+     
+@@ -355,7 +359,7 @@ else(APPLE)
+     endif(USE_ALSA)
+     set_target_properties(portaudio_static PROPERTIES COMPILE_FLAGS 
+       "-DPA_USE_OSS=1 -DHAVE_LINUX_SOUNDCARD_H ${ALSA_FLAGS}")
+-endif(APPLE)
++endif(APPLE OR CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+ else(UNIX)
+     # Windows
+     set_target_properties(portaudio_static PROPERTIES COMPILE_FLAGS 
+@@ -807,7 +811,9 @@ if(UNIX)
+     add_definitions("-DPA_USE_COREAUDIO")
+     add_definitions("-DCMTSTUFF")
+     add_definitions("-Dmacintosh")
+-  else(APPLE)
++  elseif(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++    set(EXTRA_PA_LIBS pthread m)
++  else()
+     # Linux
+     set(EXTRA_PA_LIBS asound pthread m)
+   endif(APPLE)

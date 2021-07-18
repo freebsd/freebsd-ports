@@ -1,18 +1,18 @@
 PORTNAME=	compat12x
-PORTVERSION=	12.1.1201000.20200220
+PORTVERSION=	12.2.1202000.20210406
 CATEGORIES=	misc
-MASTER_SITES=	LOCAL/bapt
+MASTER_SITES=	LOCAL/jkim
 PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Convenience package to install the compat12x libraries
 
 LICENSE=	BSD2CLAUSE
 
 USES=		tar:xz
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc
 PLIST=		${PKGDIR}/pkg-plist.${ARCH}
 TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat

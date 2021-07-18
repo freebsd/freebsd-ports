@@ -1,11 +1,10 @@
 PORTNAME=	poppler
-PORTVERSION=	3.4.3
-PORTREVISION=	7
+PORTVERSION=	3.4.6
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Ruby binding for Poppler
+COMMENT=	Ruby binding of poppler-glib
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

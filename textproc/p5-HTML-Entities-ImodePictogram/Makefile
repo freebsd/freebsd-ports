@@ -7,7 +7,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	smatsui@karashi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Encode/decode HTML entities for i-mode pictograms
 
 USES=		perl5

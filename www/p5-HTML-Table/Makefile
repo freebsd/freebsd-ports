@@ -13,10 +13,12 @@ COMMENT=	Generate HTML tables for CGI scripts
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-PORTSCOUT=	skipv:2.08
-
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+PORTSCOUT=	skipv:2.08
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|2.08a|2.08_1|' ${WRKSRC}/lib/HTML/Table.pm

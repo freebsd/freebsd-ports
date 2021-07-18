@@ -1,4 +1,4 @@
---- services/video_capture/broadcasting_receiver.cc.orig	2021-03-12 23:57:28 UTC
+--- services/video_capture/broadcasting_receiver.cc.orig	2021-04-14 18:41:08 UTC
 +++ services/video_capture/broadcasting_receiver.cc
 @@ -39,7 +39,7 @@ void CloneSharedBufferHandle(const mojo::ScopedSharedB
  void CloneSharedBufferToRawFileDescriptorHandle(

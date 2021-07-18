@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pysam>=0.8.3:biology/py-pysam@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.9.0:science/py-scipy@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ecogenomics
 USE_PYTHON=	distutils noflavors autoplist

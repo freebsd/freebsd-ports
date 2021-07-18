@@ -1,5 +1,6 @@
 PORTNAME=	Flask-SAML
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	security www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,10 +20,10 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3900
+.if ${PYTHON_REL} < 30900
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pysaml24>=4.0.0<5:security/py-pysaml24@${PY_FLAVOR}
 .else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pysaml2>=5.1.0<6.20:security/py-pysaml2@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pysaml26>=5.1.0<6.20:security/py-pysaml26@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>

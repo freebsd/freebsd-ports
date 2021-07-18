@@ -1,6 +1,6 @@
---- Light.h.orig	2014-09-25 09:25:17 UTC
+--- Light.h.orig	2016-09-06 07:52:21 UTC
 +++ Light.h
-@@ -935,7 +935,9 @@ void DefineAxis(double *Min, double *Max
+@@ -957,7 +957,9 @@ void DefineAxis(double *Min, double *Max, double *Inc)
  /*                                                                        */
  /**************************************************************************/
  

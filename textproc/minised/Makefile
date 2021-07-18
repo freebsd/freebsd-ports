@@ -5,7 +5,7 @@ PORTVERSION=	1.15
 CATEGORIES=	textproc
 MASTER_SITES=	http://dl.exactcode.de/oss/minised/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Smaller, cheaper, faster sed implementation
 
 ALL_TARGET=	${PORTNAME}

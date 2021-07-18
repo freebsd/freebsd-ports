@@ -1,4 +1,4 @@
---- extensions/renderer/bindings/api_binding_util.cc.orig	2021-03-12 23:57:25 UTC
+--- extensions/renderer/bindings/api_binding_util.cc.orig	2021-04-14 18:41:04 UTC
 +++ extensions/renderer/bindings/api_binding_util.cc
 @@ -131,6 +131,8 @@ std::string GetPlatformString() {
    return "mac";

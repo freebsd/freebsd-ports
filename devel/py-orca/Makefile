@@ -1,13 +1,13 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	orca
-PORTVERSION=	1.5.4
+PORTVERSION=	1.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Pipeline orchestration tool with Pandas support
+COMMENT=	Python library for task orchestration
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -20,5 +20,12 @@ USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	SERVER
+SERVER_DESC=	Orca server and supporting functionality
+
+SERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10:www/py-flask@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pygments>=2.0:textproc/py-pygments@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR}
 
 .include <bsd.port.mk>

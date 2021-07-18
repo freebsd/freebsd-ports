@@ -1,9 +1,5 @@
-# Created by: Dmitri Goutnik <dg@syrec.org>
-
 PORTNAME=	gdrive
-DISTVERSION=	2.1.0-23
-DISTVERSIONSUFFIX=	-gc3cbcce
-PORTREVISION=	1
+DISTVERSION=	2.1.1
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -28,6 +24,10 @@ OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	bin/gdrive
 PORTDOCS=	README.md
+
+post-patch:
+	${MV} ${WRKSRC}/vendor/github.com/sabhiram/go-git-ignore \
+		${WRKSRC}/vendor/github.com/sabhiram/go-gitignore
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

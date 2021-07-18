@@ -1,6 +1,20 @@
---- files/rkhunter.orig	2014-03-12 20:54:55 UTC
+--- files/rkhunter.orig	2018-02-24 23:08:27 UTC
 +++ files/rkhunter
-@@ -7275,6 +7275,9 @@ download_file() {
+@@ -4750,7 +4750,12 @@ get_sha_hash_function() {
+ 		return
+ 	fi
+ 
+-	HFUNC=`find_cmd sha${SHA_SIZE}sum`
++	case ${OPERATING_SYSTEM} in
++	FreeBSD)
++		HFUNC=`find_cmd sha${SHA_SIZE}` ;;
++	*)
++		HFUNC=`find_cmd sha${SHA_SIZE}sum` ;;
++	esac
+ 
+ 	if [ -z "${HFUNC}" ]; then
+ 		HFUNC=`find_cmd sha${SHA_SIZE}`
+@@ -7522,6 +7527,9 @@ download_file() {
  		rm -f "${OUTPUT_FILE}" >/dev/null 2>&1
  
  		case "${RKHWEBCMD_BASE}" in

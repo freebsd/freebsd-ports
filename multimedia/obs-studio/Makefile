@@ -1,5 +1,6 @@
 PORTNAME=	obs-studio
-DISTVERSION=	26.1.2
+DISTVERSION=	27.0.1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +26,13 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libudev.so:devel/libudev-devd \
 		libv4l2.so:multimedia/libv4l \
 		libvlc.so:multimedia/vlc \
+		libwayland-client.so:graphics/wayland \
 		libx264.so:multimedia/libx264 \
+		libxcb-ewmh.so:x11/xcb-util-wm \
+		libxcb-image.so:x11/xcb-util-image \
+		libxcb-keysyms.so:x11/xcb-util-keysyms \
+		libxcb-render-util.so:x11/xcb-util-renderutil \
+		libxcb-util.so:x11/xcb-util \
 		${LIB_DEPENDS_${ARCH}}
 LIB_DEPENDS_amd64=	libluajit-5.1.so:lang/luajit
 LIB_DEPENDS_armv7=	libluajit-5.1.so:lang/luajit
@@ -34,26 +41,37 @@ LIB_DEPENDS_powerpc=	libluajit-5.1.so:lang/luajit
 LIB_DEPENDS_powerpc64=	libluajit-5.1.so:lang/luajit-openresty
 LIB_DEPENDS_powerpc64le=	libluajit-5.1.so:lang/luajit-openresty
 
-USES=		cmake gl lua pkgconfig python:3.4+ qt:5 xorg
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	obsproject
+USES=		cmake compiler:c++17-lang gl gnome lua pkgconfig python:3.4+ \
+		qt:5 xorg
 USE_QT=		core gui svg widgets x11extras xml buildtools_build imageformats_run qmake_build
+USE_GNOME=	glib20
 USE_GL=		gl
 USE_XORG=	ice sm x11 xcb xcomposite xext xfixes xinerama xrandr
 USE_LDCONFIG=	yes
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	obsproject
+GH_TUPLE=	obsproject:obs-browser:f1a61c5:obs_browser/plugins/obs-browser \
+		obsproject:obs-vst:aaa7b7f:obs_vst/plugins/obs-vst
+
 CMAKE_ON=	UNIX_STRUCTURE
+CMAKE_OFF=	ENABLE_PIPEWIRE # beginning with 27.0.1 (PR#4287) the linux-capture plugin optionally requires the piperware library and in this case expects the linux/dma-buf.h header
 CMAKE_ARGS=	-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}"
 CFLAGS+=	-D_WITH_GETLINE
 
 LDFLAGS+=	-fPIC # pending https://github.com/obsproject/obs-studio/issues/3436
 
+OPTIONS_DEFINE=		BROWSER VST
+OPTIONS_DEFAULT=	VST
 OPTIONS_MULTI=		AUDIO
 OPTIONS_MULTI_AUDIO=	JACK PULSEAUDIO SNDIO
-OPTIONS_DEFAULT=	JACK PULSEAUDIO SNDIO
+OPTIONS_DEFAULT+=	JACK PULSEAUDIO SNDIO
 OPTIONS_SUB=		yes
 AUDIO_DESC=		Audio backends
+
+BROWSER_DESC=		Build OSB browser
+BROWSER_CMAKE_BOOL=	BUILD_BROWSER
+BROWSER_BROKEN=		Needs CEF (Chromium Embedded Framework) which isn't yet ported
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_ON=		-DENABLE_JACK=TRUE
@@ -68,14 +86,8 @@ SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_CMAKE_ON=		-DENABLE_SNDIO=TRUE
 SNDIO_CMAKE_OFF=	-DDISABLE_SNDIO=TRUE
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH:Mpowerpc64*}
-CFLAGS+=	-Wno-unused-label
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++11-lib
-.endif
+VST_DESC=		Build VST submodule
+VST_CMAKE_BOOL=		BUILD_VST
 
 .include <bsd.port.pre.mk>
 

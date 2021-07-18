@@ -2,13 +2,13 @@
 @comment %%WINE32%%wine-proton/lib/wine/steamclient.dll.so
 @comment %%WINE64%%wine-proton/lib/wine/fakedlls/steamclient64.dll
 @comment %%WINE64%%wine-proton/lib/wine/steamclient64.dll.so
+@comment wine-proton/lib/libwine.so
 @comment wine-proton/lib/wine/fakedlls/winejoystick.drv
 @comment wine-proton/lib/wine/winejoystick.drv.so
 %%DOCSDIR%%/ANNOUNCE
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/README
-%%WINE32%%wine-proton/bin/wine
-%%WINE32%%wine-proton/bin/wine32
+%%WINE32%%wine-proton/bin/wine.bin
 %%WINE32%%wine-proton/bin/wineserver32
 %%WINE32%%wine-proton/lib/wine/avifile.dll16.so
 %%WINE32%%wine-proton/lib/wine/comm.drv16.so
@@ -139,7 +139,9 @@
 %%WINE32%%wine-proton/lib/wine/winsock.dll16.so
 %%WINE32%%wine-proton/lib/wine/wintab.dll16.so
 %%WINE32%%wine-proton/lib/wine/wow32.dll.so
+%%WINE64%%wine-proton/bin/pkg32.sh
 %%WINE64%%wine-proton/bin/wine64
+%%WINE64%%wine-proton/bin/wine64.bin
 %%WINE64%%wine-proton/bin/wineserver
 wine-proton/bin/function_grep.pl
 wine-proton/bin/msidb
@@ -148,6 +150,7 @@ wine-proton/bin/notepad
 wine-proton/bin/regedit
 wine-proton/bin/regsvr32
 wine-proton/bin/widl
+wine-proton/bin/wine
 wine-proton/bin/wineboot
 wine-proton/bin/winebuild
 wine-proton/bin/winecfg
@@ -163,7 +166,6 @@ wine-proton/bin/winemine
 wine-proton/bin/winepath
 wine-proton/bin/wmc
 wine-proton/bin/wrc
-wine-proton/lib/libwine.so
 wine-proton/lib/libwine.so.1
 wine-proton/lib/libwine.so.1.0
 wine-proton/lib/wine/acledit.dll.so
@@ -206,6 +208,8 @@ wine-proton/lib/wine/api-ms-win-core-errorhandling-l1-1-2.dll.so
 wine-proton/lib/wine/api-ms-win-core-errorhandling-l1-1-3.dll.so
 wine-proton/lib/wine/api-ms-win-core-fibers-l1-1-0.dll.so
 wine-proton/lib/wine/api-ms-win-core-fibers-l1-1-1.dll.so
+wine-proton/lib/wine/api-ms-win-core-file-ansi-l2-1-0.dll.so
+wine-proton/lib/wine/api-ms-win-core-file-fromapp-l1-1-0.dll.so
 wine-proton/lib/wine/api-ms-win-core-file-l1-1-0.dll.so
 wine-proton/lib/wine/api-ms-win-core-file-l1-2-0.dll.so
 wine-proton/lib/wine/api-ms-win-core-file-l1-2-1.dll.so
@@ -247,6 +251,7 @@ wine-proton/lib/wine/api-ms-win-core-localregistry-l1-1-0.dll.so
 wine-proton/lib/wine/api-ms-win-core-memory-l1-1-0.dll.so
 wine-proton/lib/wine/api-ms-win-core-memory-l1-1-1.dll.so
 wine-proton/lib/wine/api-ms-win-core-memory-l1-1-2.dll.so
+wine-proton/lib/wine/api-ms-win-core-memory-l1-1-3.dll.so
 wine-proton/lib/wine/api-ms-win-core-memory-l1-1-4.dll.so
 wine-proton/lib/wine/api-ms-win-core-misc-l1-1-0.dll.so
 wine-proton/lib/wine/api-ms-win-core-namedpipe-ansi-l1-1-0.dll.so
@@ -418,6 +423,7 @@ wine-proton/lib/wine/avicap32.dll.so
 wine-proton/lib/wine/avifil32.dll.so
 wine-proton/lib/wine/avrt.dll.so
 wine-proton/lib/wine/bcrypt.dll.so
+wine-proton/lib/wine/bcrypt.so
 wine-proton/lib/wine/bluetoothapis.dll.so
 wine-proton/lib/wine/browseui.dll.so
 wine-proton/lib/wine/bthprops.cpl.so
@@ -444,11 +450,14 @@ wine-proton/lib/wine/connect.dll.so
 wine-proton/lib/wine/control.exe.so
 wine-proton/lib/wine/credui.dll.so
 wine-proton/lib/wine/crtdll.dll.so
+wine-proton/lib/wine/crtdll.so
 wine-proton/lib/wine/crypt32.dll.so
+wine-proton/lib/wine/crypt32.so
 wine-proton/lib/wine/cryptdlg.dll.so
 wine-proton/lib/wine/cryptdll.dll.so
 wine-proton/lib/wine/cryptext.dll.so
 wine-proton/lib/wine/cryptnet.dll.so
+wine-proton/lib/wine/cryptsp.dll.so
 wine-proton/lib/wine/cryptui.dll.so
 wine-proton/lib/wine/cscript.exe.so
 wine-proton/lib/wine/ctapi32.dll.so
@@ -459,6 +468,7 @@ wine-proton/lib/wine/d3d10.dll.so
 wine-proton/lib/wine/d3d10core.dll.so
 wine-proton/lib/wine/d3d11.dll.so
 wine-proton/lib/wine/d3d8.dll.so
+wine-proton/lib/wine/d3d8thk.dll.so
 wine-proton/lib/wine/d3d9.dll.so
 wine-proton/lib/wine/d3dcompiler_33.dll.so
 wine-proton/lib/wine/d3dcompiler_34.dll.so
@@ -474,6 +484,7 @@ wine-proton/lib/wine/d3dcompiler_43.dll.so
 wine-proton/lib/wine/d3dcompiler_46.dll.so
 wine-proton/lib/wine/d3dcompiler_47.dll.so
 wine-proton/lib/wine/d3dim.dll.so
+wine-proton/lib/wine/d3dim700.dll.so
 wine-proton/lib/wine/d3drm.dll.so
 wine-proton/lib/wine/d3dx10_33.dll.so
 wine-proton/lib/wine/d3dx10_34.dll.so
@@ -513,6 +524,7 @@ wine-proton/lib/wine/davclnt.dll.so
 wine-proton/lib/wine/dbgeng.dll.so
 wine-proton/lib/wine/dbghelp.dll.so
 wine-proton/lib/wine/dciman32.dll.so
+wine-proton/lib/wine/dcomp.dll.so
 wine-proton/lib/wine/ddraw.dll.so
 wine-proton/lib/wine/ddrawex.dll.so
 wine-proton/lib/wine/devenum.dll.so
@@ -536,6 +548,7 @@ wine-proton/lib/wine/dmusic32.dll.so
 wine-proton/lib/wine/dnsapi.dll.so
 wine-proton/lib/wine/dotnetfx35.exe.so
 wine-proton/lib/wine/dplay.dll.so
+wine-proton/lib/wine/dplaysvr.exe.so
 wine-proton/lib/wine/dplayx.dll.so
 wine-proton/lib/wine/dpnaddr.dll.so
 wine-proton/lib/wine/dpnet.dll.so
@@ -543,6 +556,7 @@ wine-proton/lib/wine/dpnhpast.dll.so
 wine-proton/lib/wine/dpnlobby.dll.so
 wine-proton/lib/wine/dpnsvr.exe.so
 wine-proton/lib/wine/dpvoice.dll.so
+wine-proton/lib/wine/dpvsetup.exe.so
 wine-proton/lib/wine/dpwsockx.dll.so
 wine-proton/lib/wine/drmclien.dll.so
 wine-proton/lib/wine/dsdmo.dll.so
@@ -657,6 +671,8 @@ wine-proton/lib/wine/fakedlls/api-ms-win-core-errorhandling-l1-1-2.dll
 wine-proton/lib/wine/fakedlls/api-ms-win-core-errorhandling-l1-1-3.dll
 wine-proton/lib/wine/fakedlls/api-ms-win-core-fibers-l1-1-0.dll
 wine-proton/lib/wine/fakedlls/api-ms-win-core-fibers-l1-1-1.dll
+wine-proton/lib/wine/fakedlls/api-ms-win-core-file-ansi-l2-1-0.dll
+wine-proton/lib/wine/fakedlls/api-ms-win-core-file-fromapp-l1-1-0.dll
 wine-proton/lib/wine/fakedlls/api-ms-win-core-file-l1-1-0.dll
 wine-proton/lib/wine/fakedlls/api-ms-win-core-file-l1-2-0.dll
 wine-proton/lib/wine/fakedlls/api-ms-win-core-file-l1-2-1.dll
@@ -698,6 +714,7 @@ wine-proton/lib/wine/fakedlls/api-ms-win-core-localregistry-l1-1-0.dll
 wine-proton/lib/wine/fakedlls/api-ms-win-core-memory-l1-1-0.dll
 wine-proton/lib/wine/fakedlls/api-ms-win-core-memory-l1-1-1.dll
 wine-proton/lib/wine/fakedlls/api-ms-win-core-memory-l1-1-2.dll
+wine-proton/lib/wine/fakedlls/api-ms-win-core-memory-l1-1-3.dll
 wine-proton/lib/wine/fakedlls/api-ms-win-core-memory-l1-1-4.dll
 wine-proton/lib/wine/fakedlls/api-ms-win-core-misc-l1-1-0.dll
 wine-proton/lib/wine/fakedlls/api-ms-win-core-namedpipe-ansi-l1-1-0.dll
@@ -900,6 +917,7 @@ wine-proton/lib/wine/fakedlls/cryptdlg.dll
 wine-proton/lib/wine/fakedlls/cryptdll.dll
 wine-proton/lib/wine/fakedlls/cryptext.dll
 wine-proton/lib/wine/fakedlls/cryptnet.dll
+wine-proton/lib/wine/fakedlls/cryptsp.dll
 wine-proton/lib/wine/fakedlls/cryptui.dll
 wine-proton/lib/wine/fakedlls/cscript.exe
 wine-proton/lib/wine/fakedlls/ctapi32.dll
@@ -910,6 +928,7 @@ wine-proton/lib/wine/fakedlls/d3d10.dll
 wine-proton/lib/wine/fakedlls/d3d10core.dll
 wine-proton/lib/wine/fakedlls/d3d11.dll
 wine-proton/lib/wine/fakedlls/d3d8.dll
+wine-proton/lib/wine/fakedlls/d3d8thk.dll
 wine-proton/lib/wine/fakedlls/d3d9.dll
 wine-proton/lib/wine/fakedlls/d3dcompiler_33.dll
 wine-proton/lib/wine/fakedlls/d3dcompiler_34.dll
@@ -925,6 +944,7 @@ wine-proton/lib/wine/fakedlls/d3dcompiler_43.dll
 wine-proton/lib/wine/fakedlls/d3dcompiler_46.dll
 wine-proton/lib/wine/fakedlls/d3dcompiler_47.dll
 wine-proton/lib/wine/fakedlls/d3dim.dll
+wine-proton/lib/wine/fakedlls/d3dim700.dll
 wine-proton/lib/wine/fakedlls/d3drm.dll
 wine-proton/lib/wine/fakedlls/d3dx10_33.dll
 wine-proton/lib/wine/fakedlls/d3dx10_34.dll
@@ -964,6 +984,7 @@ wine-proton/lib/wine/fakedlls/davclnt.dll
 wine-proton/lib/wine/fakedlls/dbgeng.dll
 wine-proton/lib/wine/fakedlls/dbghelp.dll
 wine-proton/lib/wine/fakedlls/dciman32.dll
+wine-proton/lib/wine/fakedlls/dcomp.dll
 wine-proton/lib/wine/fakedlls/ddraw.dll
 wine-proton/lib/wine/fakedlls/ddrawex.dll
 wine-proton/lib/wine/fakedlls/devenum.dll
@@ -987,6 +1008,7 @@ wine-proton/lib/wine/fakedlls/dmusic32.dll
 wine-proton/lib/wine/fakedlls/dnsapi.dll
 wine-proton/lib/wine/fakedlls/dotnetfx35.exe
 wine-proton/lib/wine/fakedlls/dplay.dll
+wine-proton/lib/wine/fakedlls/dplaysvr.exe
 wine-proton/lib/wine/fakedlls/dplayx.dll
 wine-proton/lib/wine/fakedlls/dpnaddr.dll
 wine-proton/lib/wine/fakedlls/dpnet.dll
@@ -994,6 +1016,7 @@ wine-proton/lib/wine/fakedlls/dpnhpast.dll
 wine-proton/lib/wine/fakedlls/dpnlobby.dll
 wine-proton/lib/wine/fakedlls/dpnsvr.exe
 wine-proton/lib/wine/fakedlls/dpvoice.dll
+wine-proton/lib/wine/fakedlls/dpvsetup.exe
 wine-proton/lib/wine/fakedlls/dpwsockx.dll
 wine-proton/lib/wine/fakedlls/drmclien.dll
 wine-proton/lib/wine/fakedlls/dsdmo.dll
@@ -1416,6 +1439,7 @@ wine-proton/lib/wine/fakedlls/wdscore.dll
 wine-proton/lib/wine/fakedlls/webservices.dll
 wine-proton/lib/wine/fakedlls/wer.dll
 wine-proton/lib/wine/fakedlls/wevtapi.dll
+wine-proton/lib/wine/fakedlls/wevtsvc.dll
 wine-proton/lib/wine/fakedlls/wevtutil.exe
 wine-proton/lib/wine/fakedlls/where.exe
 wine-proton/lib/wine/fakedlls/whoami.exe
@@ -1542,6 +1566,7 @@ wine-proton/lib/wine/fusion.dll.so
 wine-proton/lib/wine/fwpuclnt.dll.so
 wine-proton/lib/wine/gameux.dll.so
 wine-proton/lib/wine/gdi32.dll.so
+wine-proton/lib/wine/gdi32.so
 wine-proton/lib/wine/gdiplus.dll.so
 wine-proton/lib/wine/glu32.dll.so
 wine-proton/lib/wine/gphoto2.ds.so
@@ -1769,6 +1794,7 @@ wine-proton/lib/wine/libvulkan-1.def
 wine-proton/lib/wine/libwbemuuid.a
 wine-proton/lib/wine/libwebservices.def
 wine-proton/lib/wine/libwer.def
+wine-proton/lib/wine/libwevtapi.def
 wine-proton/lib/wine/libwindowscodecs.a
 wine-proton/lib/wine/libwindowscodecsext.def
 wine-proton/lib/wine/libwinecrt0.a
@@ -1829,6 +1855,7 @@ wine-proton/lib/wine/msadp32.acm.so
 wine-proton/lib/wine/msasn1.dll.so
 wine-proton/lib/wine/mscat32.dll.so
 wine-proton/lib/wine/mscms.dll.so
+wine-proton/lib/wine/mscms.so
 wine-proton/lib/wine/mscoree.dll.so
 wine-proton/lib/wine/mscorwks.dll.so
 wine-proton/lib/wine/msctf.dll.so
@@ -1877,17 +1904,26 @@ wine-proton/lib/wine/msvcp71.dll.so
 wine-proton/lib/wine/msvcp80.dll.so
 wine-proton/lib/wine/msvcp90.dll.so
 wine-proton/lib/wine/msvcr100.dll.so
+wine-proton/lib/wine/msvcr100.so
 wine-proton/lib/wine/msvcr110.dll.so
+wine-proton/lib/wine/msvcr110.so
 wine-proton/lib/wine/msvcr120_app.dll.so
 wine-proton/lib/wine/msvcr120.dll.so
+wine-proton/lib/wine/msvcr120.so
 wine-proton/lib/wine/msvcr70.dll.so
+wine-proton/lib/wine/msvcr70.so
 wine-proton/lib/wine/msvcr71.dll.so
+wine-proton/lib/wine/msvcr71.so
 wine-proton/lib/wine/msvcr80.dll.so
+wine-proton/lib/wine/msvcr80.so
 wine-proton/lib/wine/msvcr90.dll.so
+wine-proton/lib/wine/msvcr90.so
 wine-proton/lib/wine/msvcrt.dll.so
+wine-proton/lib/wine/msvcrt.so
 wine-proton/lib/wine/msvcrt20.dll.so
 wine-proton/lib/wine/msvcrt40.dll.so
 wine-proton/lib/wine/msvcrtd.dll.so
+wine-proton/lib/wine/msvcrtd.so
 wine-proton/lib/wine/msvfw32.dll.so
 wine-proton/lib/wine/msvidc32.dll.so
 wine-proton/lib/wine/mswsock.dll.so
@@ -1922,6 +1958,7 @@ wine-proton/lib/wine/ntoskrnl.exe.so
 wine-proton/lib/wine/ntprint.dll.so
 wine-proton/lib/wine/objsel.dll.so
 wine-proton/lib/wine/odbc32.dll.so
+wine-proton/lib/wine/odbc32.so
 wine-proton/lib/wine/odbcbcp.dll.so
 wine-proton/lib/wine/odbccp32.dll.so
 wine-proton/lib/wine/odbccu32.dll.so
@@ -1956,6 +1993,7 @@ wine-proton/lib/wine/pstorec.dll.so
 wine-proton/lib/wine/pwrshplugin.dll.so
 wine-proton/lib/wine/qasf.dll.so
 wine-proton/lib/wine/qcap.dll.so
+wine-proton/lib/wine/qcap.so
 wine-proton/lib/wine/qdvd.dll.so
 wine-proton/lib/wine/qedit.dll.so
 wine-proton/lib/wine/qmgr.dll.so
@@ -2047,6 +2085,7 @@ wine-proton/lib/wine/traffic.dll.so
 wine-proton/lib/wine/twain_32.dll.so
 wine-proton/lib/wine/tzres.dll.so
 wine-proton/lib/wine/ucrtbase.dll.so
+wine-proton/lib/wine/ucrtbase.so
 wine-proton/lib/wine/uianimation.dll.so
 wine-proton/lib/wine/uiautomationcore.dll.so
 wine-proton/lib/wine/uiribbon.dll.so
@@ -2058,6 +2097,7 @@ wine-proton/lib/wine/url.dll.so
 wine-proton/lib/wine/urlmon.dll.so
 wine-proton/lib/wine/usbd.sys.so
 wine-proton/lib/wine/user32.dll.so
+wine-proton/lib/wine/user32.so
 wine-proton/lib/wine/userenv.dll.so
 wine-proton/lib/wine/usp10.dll.so
 wine-proton/lib/wine/utildll.dll.so
@@ -2084,6 +2124,7 @@ wine-proton/lib/wine/wdscore.dll.so
 wine-proton/lib/wine/webservices.dll.so
 wine-proton/lib/wine/wer.dll.so
 wine-proton/lib/wine/wevtapi.dll.so
+wine-proton/lib/wine/wevtsvc.dll.so
 wine-proton/lib/wine/wevtutil.exe.so
 wine-proton/lib/wine/where.exe.so
 wine-proton/lib/wine/whoami.exe.so
@@ -2094,6 +2135,7 @@ wine-proton/lib/wine/windows.globalization.dll.so
 wine-proton/lib/wine/windows.media.devices.dll.so
 wine-proton/lib/wine/windows.media.speech.dll.so
 wine-proton/lib/wine/windowscodecs.dll.so
+wine-proton/lib/wine/windowscodecs.so
 wine-proton/lib/wine/windowscodecsext.dll.so
 wine-proton/lib/wine/wineboot.exe.so
 wine-proton/lib/wine/winebrowser.exe.so
@@ -2105,6 +2147,7 @@ wine-proton/lib/wine/winedbg.exe.so
 wine-proton/lib/wine/winedevice.exe.so
 wine-proton/lib/wine/winefile.exe.so
 wine-proton/lib/wine/winegstreamer.dll.so
+wine-proton/lib/wine/winegstreamer.so
 wine-proton/lib/wine/winehid.sys.so
 wine-proton/lib/wine/winemapi.dll.so
 wine-proton/lib/wine/winemine.exe.so
@@ -2137,6 +2180,7 @@ wine-proton/lib/wine/wmic.exe.so
 wine-proton/lib/wine/wmiutils.dll.so
 wine-proton/lib/wine/wmp.dll.so
 wine-proton/lib/wine/wmphoto.dll.so
+wine-proton/lib/wine/wmphoto.so
 wine-proton/lib/wine/wmplayer.exe.so
 wine-proton/lib/wine/wmvcore.dll.so
 wine-proton/lib/wine/wnaspi32.dll.so
@@ -2251,6 +2295,7 @@ wine-proton/share/wine/fonts/vgasyse.fon
 wine-proton/share/wine/fonts/vgasysg.fon
 wine-proton/share/wine/fonts/vgasysr.fon
 wine-proton/share/wine/fonts/vgasyst.fon
+wine-proton/share/wine/fonts/webdings.ttf
 wine-proton/share/wine/fonts/wingding.ttf
 wine-proton/share/wine/nls/c_037.nls
 wine-proton/share/wine/nls/c_10000.nls
@@ -2297,6 +2342,7 @@ wine-proton/share/wine/nls/c_28603.nls
 wine-proton/share/wine/nls/c_28605.nls
 wine-proton/share/wine/nls/c_437.nls
 wine-proton/share/wine/nls/c_500.nls
+wine-proton/share/wine/nls/c_708.nls
 wine-proton/share/wine/nls/c_737.nls
 wine-proton/share/wine/nls/c_775.nls
 wine-proton/share/wine/nls/c_850.nls
@@ -2325,6 +2371,3 @@ wine-proton/share/wine/nls/normnfkc.nls
 wine-proton/share/wine/nls/normnfkd.nls
 wine-proton/share/wine/nls/sortdefault.nls
 wine-proton/share/wine/wine.inf
-wine-proton/share/wine/winebus.inf
-wine-proton/share/wine/winehid.inf
-wine-proton/share/wine/wineusb.inf

@@ -1,4 +1,4 @@
---- ui/views/widget/desktop_aura/desktop_screen_ozone.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/views/widget/desktop_aura/desktop_screen_ozone.cc.orig	2021-04-14 18:41:39 UTC
 +++ ui/views/widget/desktop_aura/desktop_screen_ozone.cc
 @@ -26,7 +26,7 @@ gfx::NativeWindow DesktopScreenOzone::GetNativeWindowF
  // To avoid multiple definitions when use_x11 && use_ozone is true, disable this

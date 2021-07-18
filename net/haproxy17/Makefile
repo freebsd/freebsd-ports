@@ -1,7 +1,7 @@
 # Created by: Clement Laforet
 
 PORTNAME=	haproxy
-PORTVERSION=	1.7.13
+PORTVERSION=	1.7.14
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/1.7/src/
 PKGNAMESUFFIX=	17

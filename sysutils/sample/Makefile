@@ -6,6 +6,11 @@ CATEGORIES=	sysutils
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Examine periodic stack traces of all running processes
 
+BROKEN_FreeBSD_13=	does not build: vm_page_unhold(page) API has changed
+BROKEN_FreeBSD_14=	does not build: vm_page_unhold(page) API has changed
+DEPRECATED=		abandoned upstream, incompatible with newer kernels
+EXPIRATION_DATE=	2021-12-31
+
 LICENSE=	BSD3CLAUSE
 
 ONLY_FOR_ARCHS=	amd64

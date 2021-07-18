@@ -136,6 +136,8 @@
 %%WWWDIR%%/l10n/ro.json
 %%WWWDIR%%/l10n/ru.js
 %%WWWDIR%%/l10n/ru.json
+%%WWWDIR%%/l10n/sc.js
+%%WWWDIR%%/l10n/sc.json
 %%WWWDIR%%/l10n/sk.js
 %%WWWDIR%%/l10n/sk.json
 %%WWWDIR%%/l10n/sl.js
@@ -159,6 +161,8 @@
 %%WWWDIR%%/l10n/vi.json
 %%WWWDIR%%/l10n/zh_CN.js
 %%WWWDIR%%/l10n/zh_CN.json
+%%WWWDIR%%/l10n/zh_HK.js
+%%WWWDIR%%/l10n/zh_HK.json
 %%WWWDIR%%/l10n/zh_TW.js
 %%WWWDIR%%/l10n/zh_TW.json
 %%WWWDIR%%/lib/Activity/Provider.php

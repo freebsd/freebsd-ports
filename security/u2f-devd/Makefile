@@ -2,7 +2,7 @@
 
 PORTNAME=	u2f-devd
 PORTVERSION=	1.1.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	#
 DISTFILES=	#
@@ -12,6 +12,7 @@ COMMENT=	Devd hotplug rules for Universal 2nd Factor (U2F) tokens
 
 LICENSE=	BSD2CLAUSE
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 

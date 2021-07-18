@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libetpan.so:mail/libetpan \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libsasl2.so:security/cyrus-sasl2 \
 		libgnutls.so:security/gnutls \
 		libgcrypt.so:security/libgcrypt \

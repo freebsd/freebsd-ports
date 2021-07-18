@@ -1,7 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	Pod-ProjectDocs
-PORTVERSION=	0.52
+PORTVERSION=	0.53
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,8 +20,9 @@ RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-Readonly>=0:devel/p5-Readonly \
 		p5-Template-Toolkit>=0:www/p5-Template-Toolkit
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

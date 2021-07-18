@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@rubick>
 
 PORTNAME=	kramdown
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

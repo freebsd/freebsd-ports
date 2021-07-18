@@ -1,0 +1,9 @@
+The Gtk3::ImageView widget allows the user to zoom, pan and select the
+specified image and provides hooks to allow additional tools, e.g.
+painter, to be created and used.
+
+Gtk3::ImageView is a Gtk3 port of Gtk2::ImageView.
+
+Find out more about GtkImageView at http://trac.bjourne.webfactional.com/.
+
+WWW: https://metacpan.org/release/Gtk3-ImageView

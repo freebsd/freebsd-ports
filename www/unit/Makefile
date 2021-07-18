@@ -106,6 +106,13 @@ CONFIGURE_ARGS+=--no-unix-sockets
 CONFIGURE_ARGS+=--control=unix:${UNIT_SOCK}
 .endif
 
+.if defined(UNIT_MODNAME) && ${UNIT_MODNAME:Mperl*}
+# Fix build failure on clang12
+.if ${OSVERSION} >= 1400023
+CFLAGS+=	-Wno-compound-token-split-by-macro
+.endif
+.endif
+
 .if !target(post-install)
 post-install:
 	${MKDIR} ${STAGEDIR}${UNIT_DBDIR}

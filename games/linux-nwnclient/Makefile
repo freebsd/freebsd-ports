@@ -20,10 +20,15 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
 
+# Converted from RESTRICTED
+LICENSE=	nwnclient
+LICENSE_NAME=	nwnclient
+LICENSE_TEXT=	Distribution not allowed
+LICENSE_PERMS=	auto-accept
+
 RUN_DEPENDS=	${LOCALBASE}/share/nwndata/docs/readme.txt:games/nwndata
 
 NO_BUILD=	yes
-RESTRICTED=	Distribution not allowed
 USES=		linux
 USE_LINUX=	dri sdl12 xorglibs
 NWNDATADIR=	${LOCALBASE}/share/nwndata

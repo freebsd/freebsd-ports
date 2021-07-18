@@ -1,8 +1,8 @@
 PORTNAME=	numix-icon-theme
-PORTVERSION=	20.06.07
+PORTVERSION=	21.04.14
 CATEGORIES=	x11-themes
 
-MAINTAINER=	20.100@defert.com
+MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Official base icon theme from the Numix Project
 
 LICENSE=	GPLv3+

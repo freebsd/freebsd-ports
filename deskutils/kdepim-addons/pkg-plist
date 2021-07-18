@@ -128,6 +128,10 @@ share/locale/ar/LC_MESSAGES/messageviewerplugins.mo
 share/locale/ar/LC_MESSAGES/pimeventsplugin.mo
 share/locale/ar/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/ar/LC_MESSAGES/webengineurlinterceptor.mo
+share/locale/be/LC_MESSAGES/kaddressbook_importexportplugins.mo
+share/locale/be/LC_MESSAGES/korganizer_plugins.mo
+share/locale/be/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
+share/locale/be/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/bg/LC_MESSAGES/cryptopageplugin.mo
 share/locale/bg/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/bg/LC_MESSAGES/korganizer_plugins.mo
@@ -763,6 +767,10 @@ share/locale/ru/LC_MESSAGES/messageviewerplugins.mo
 share/locale/ru/LC_MESSAGES/pimeventsplugin.mo
 share/locale/ru/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/ru/LC_MESSAGES/webengineurlinterceptor.mo
+share/locale/se/LC_MESSAGES/kaddressbook_importexportplugins.mo
+share/locale/se/LC_MESSAGES/korganizer_plugins.mo
+share/locale/se/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
+share/locale/se/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/sk/LC_MESSAGES/cryptopageplugin.mo
 share/locale/sk/LC_MESSAGES/customtoolsplugin.mo
 share/locale/sk/LC_MESSAGES/importwizard_plugins.mo
@@ -813,6 +821,8 @@ share/locale/sl/LC_MESSAGES/messageviewerplugins.mo
 share/locale/sl/LC_MESSAGES/pimeventsplugin.mo
 share/locale/sl/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/sl/LC_MESSAGES/webengineurlinterceptor.mo
+share/locale/sq/LC_MESSAGES/kaddressbook_importexportplugins.mo
+share/locale/sq/LC_MESSAGES/korganizer_plugins.mo
 share/locale/sr/LC_MESSAGES/cryptopageplugin.mo
 share/locale/sr/LC_MESSAGES/customtoolsplugin.mo
 share/locale/sr/LC_MESSAGES/kaddressbook_importexportplugins.mo
@@ -859,6 +869,14 @@ share/locale/sv/LC_MESSAGES/messageviewerplugins.mo
 share/locale/sv/LC_MESSAGES/pimeventsplugin.mo
 share/locale/sv/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/sv/LC_MESSAGES/webengineurlinterceptor.mo
+share/locale/ta/LC_MESSAGES/kaddressbook_importexportplugins.mo
+share/locale/ta/LC_MESSAGES/korganizer_plugins.mo
+share/locale/ta/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
+share/locale/ta/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
+share/locale/tg/LC_MESSAGES/kaddressbook_importexportplugins.mo
+share/locale/tg/LC_MESSAGES/korganizer_plugins.mo
+share/locale/tg/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
+share/locale/tg/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/tr/LC_MESSAGES/cryptopageplugin.mo
 share/locale/tr/LC_MESSAGES/customtoolsplugin.mo
 share/locale/tr/LC_MESSAGES/importwizard_plugins.mo
@@ -909,6 +927,7 @@ share/locale/uk/LC_MESSAGES/messageviewerplugins.mo
 share/locale/uk/LC_MESSAGES/pimeventsplugin.mo
 share/locale/uk/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/uk/LC_MESSAGES/webengineurlinterceptor.mo
+share/locale/vi/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/wa/LC_MESSAGES/korganizer_plugins.mo
 share/locale/zh_CN/LC_MESSAGES/cryptopageplugin.mo
 share/locale/zh_CN/LC_MESSAGES/customtoolsplugin.mo

@@ -1,3 +1,3 @@
-TIMESTAMP = 1614880353
-SHA256 (DrTimothyAldenDavis-SuiteSparse-v5.9.0_GH0.tar.gz) = 7bdd4811f1cf0767c5fdb5e435817fdadee50b0acdb598f4882ae7b8291a7f24
-SIZE (DrTimothyAldenDavis-SuiteSparse-v5.9.0_GH0.tar.gz) = 59608169
+TIMESTAMP = 1622466861
+SHA256 (suitesparse/v5.10.1.tar.gz) = acb4d1045f48a237e70294b950153e48dce5b5f9ca8190e86c2b8c54ce00a7ee
+SIZE (suitesparse/v5.10.1.tar.gz) = 59919745

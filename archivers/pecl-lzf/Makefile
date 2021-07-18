@@ -5,7 +5,7 @@ PORTVERSION=	1.6.8
 CATEGORIES=	archivers pear
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Handles LZF de/compression
 
 LICENSE=	PHP301
@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		php:pecl
 
 CONFIGURE_ARGS=	--enable-lzf
-WRKSRC=		${WRKDIR}/${DISTNAME:tu}
 
-OPTIONS_DEFINE=		BETTER_COMPRESSION
-BETTER_COMPRESSION_DESC=	Better compression ratio
-BETTER_COMPRESSION_CONFIGURE_ON=	--enable-lzf-better-compression
+OPTIONS_DEFINE=	BETTER_COMPRESSION
+BETTER_COMPRESSION_DESC=Better compression ratio
+
+BETTER_COMPRESSION_CONFIGURE_ENABLE=	lzf-better-compression
 
 .include <bsd.port.mk>

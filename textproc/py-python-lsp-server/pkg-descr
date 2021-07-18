@@ -1,0 +1,8 @@
+A Python 3.6+ implementation of the Language Server Protocol.
+
+Language Server Features: Auto Completion, Code Linting,
+Signature Help, Go to definition, Hover, Find References,
+Document Symbols, Document Formatting, Code folding, and
+Multiple workspaces
+
+WWW: https://github.com/python-lsp/python-lsp-server

@@ -1,5 +1,0 @@
---- src/tainnow=contents.orig	2015-01-12 06:31:21 UTC
-+++ src/tainnow=contents
-@@ -1 +1 @@
--skalibs_sysdeps/tainnow.lib
-+skalibs_sysdeps/sysclock.lib

@@ -1,7 +1,7 @@
 # Created by: anholt@FreeBSD.org
 
 PORTNAME=	asciidoc
-PORTVERSION=	9.0.5
+PORTVERSION=	9.1.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/asciidoc/asciidoc-py3/releases/download/${PORTVERSION}/
 

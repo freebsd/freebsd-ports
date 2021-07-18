@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	stackdriver-core
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

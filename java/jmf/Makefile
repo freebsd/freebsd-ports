@@ -10,13 +10,17 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-alljava
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Media Framework
 
+# Converted from RESTRICTED
+LICENSE=	jmf
+LICENSE_NAME=	jmf
+LICENSE_TEXT=	Redistribution of pre-compiled binaries is not permitted
+LICENSE_PERMS=	auto-accept
+
 USES=		zip
 USE_JAVA=	yes
 NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}/JMF-${PORTVERSION}
-
-RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
 
 OPTIONS_DEFINE=	DOCS
 

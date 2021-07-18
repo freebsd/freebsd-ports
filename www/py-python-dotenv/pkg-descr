@@ -2,5 +2,4 @@ python-dotenv reads the key,value pair from .env and adds them to environment
 variable. It is great of managing app settings during development and in
 production using 12-factor principles.
 
-WWW: https://pypi.org/project/python-dotenv/
 WWW: https://github.com/theskumar/python-dotenv

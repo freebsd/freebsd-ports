@@ -1,7 +1,7 @@
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
 MODEL=		sifive-fu540
-BOARD_CONFIG=	sifive_fu540_defconfig
+BOARD_CONFIG=	sifive_unleashed_defconfig
 FAMILY=		sifive
 UBOOT_ARCH=	riscv64
 

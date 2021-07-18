@@ -51,9 +51,9 @@ it private to wayfire package for now.
  
  # -------------------------------------------------------------------------------------------------
  # Unit tests
---- subprojects/wf-touch/meson.build.orig	2020-09-20 09:41:37 UTC
+--- subprojects/wf-touch/meson.build.orig	2021-03-19 14:56:39 UTC
 +++ subprojects/wf-touch/meson.build
-@@ -5,14 +5,18 @@ project('wf-touch', ['cpp'],
+@@ -6,18 +6,22 @@ project('wf-touch', ['cpp'],
  glm = dependency('glm')
  
  wf_touch_inc_dirs = include_directories('.')
@@ -71,5 +71,9 @@ it private to wayfire package for now.
      include_directories: wf_touch_inc_dirs, dependencies: glm)
  
 +if not meson.is_subproject()
- subdir('test')
+ doctest = dependency('doctest', required: get_option('tests'))
+ 
+ if doctest.found()
+     subdir('test')
 +endif
+ endif

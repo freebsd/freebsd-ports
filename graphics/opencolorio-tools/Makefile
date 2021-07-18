@@ -1,6 +1,7 @@
 # Created by: Shane Ambler <FreeBSD@Shaneware.biz>
 
 PKGNAMESUFFIX=	-tools
+PORTREVISION=	1
 
 COMMENT=	Tools to work with OpenColorIO profiles
 

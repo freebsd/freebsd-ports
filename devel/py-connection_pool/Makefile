@@ -1,0 +1,17 @@
+PORTNAME=	connection_pool
+DISTVERSION=	0.0.3
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Thread safe connection pool for Python programs
+
+LICENSE=	MIT
+
+USES=		python
+USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

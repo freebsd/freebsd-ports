@@ -1,7 +1,7 @@
 # Created by: dmitry@karasik.eu.org
 
 PORTNAME=	Prima
-PORTVERSION=	1.60
+PORTVERSION=	1.62
 CATEGORIES=	x11-toolkits graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp
 
-USES=		jpeg perl5 pkgconfig xorg
+USES=		dos2unix jpeg perl5 pkgconfig xorg
 USE_PERL5=	configure
 USE_XORG=	x11 xcursor xext xpm xrender xrandr
 

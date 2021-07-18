@@ -44,7 +44,6 @@ foreach($objDir AS $objFile) {
   // list of config files to ignore
   $arrConfigFiles = array('/config/database.yml.example',
                           '/config/gitlab.yml.example',
-                          '/config/unicorn.rb.example',
                           '/config/puma.rb.example',
                           '/config/resque.yml.example',
                           '/config/secrets.yml.example',
@@ -106,7 +105,6 @@ print "@owner git
 @dir(git,git,554) %%WWWDIR%%/bin
 @dir %%WWWDIR%%/config
 @dir(,,700) %%WWWDIR%%/builds
-@dir %%WWWDIR%%/changelogs/unreleased
 @dir(,,744) %%WWWDIR%%/locale
 @dir %%WWWDIR%%/lib/assets
 @dir(,,744) %%WWWDIR%%/locale/bg
@@ -129,7 +127,6 @@ print "@owner git
 @dir(,,744) %%WWWDIR%%/locale/zh_HK
 @dir(,,744) %%WWWDIR%%/locale/zh_TW
 @dir(,,744) %%WWWDIR%%/log
-@dir(,,744) %%WWWDIR%%/plugins
 @dir %%WWWDIR%%/public
 @dir %%WWWDIR%%/public/assets
 @dir(,,700) %%WWWDIR%%/public/uploads
@@ -178,7 +175,6 @@ print "@owner git
 @sample %%WWWDIR%%/config/redis.queues.yml.sample
 @sample %%WWWDIR%%/config/initializers/devise_password_length.rb.sample
 @sample %%WWWDIR%%/config/redis.shared_state.yml.sample
-@sample %%WWWDIR%%/config/unicorn.rb.sample
 @sample %%WWWDIR%%/config/resque.yml.sample
 @sample %%WWWDIR%%/config/database.yml.sample
 @sample %%WWWDIR%%/lib/support/nginx/gitlab.sample

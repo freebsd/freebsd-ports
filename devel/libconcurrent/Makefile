@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	libconcurrent
 PORTVERSION=	0.0.20160629
 PORTREVISION=	3

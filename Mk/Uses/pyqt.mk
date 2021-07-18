@@ -63,7 +63,7 @@ MASTER_SITES_QSCI2=	RIVERBANK/QScintilla/${PORTVERSION} \
 			GENTOO
 
 SIP_VERSION=		5.5.0
-QSCI2_VERSION=		2.12.0
+QSCI2_VERSION=		2.12.1
 PYQT5_VERSION=		5.15.4
 PYQTSIP_VERSION=	12.8.1
 PYQTBUILDER_VERSION=	1.9.1
@@ -84,9 +84,11 @@ _USE_PYQT_DEVEL=	core dbus dbussupport help location \
 			designer designerplugin remoteobjects test 
 _USE_PYQT_GRAPHICS=	svg
 _USE_PYQT_LANG=		qml
+_USE_PYQT_LOCATION=	location
 _USE_PYQT_MISC=		demo
 _USE_PYQT_MULTIMEDIA=	multimedia multimediawidgets
 _USE_PYQT_NET=		network networkauth
+_USE_PYQT_POSITIONING=	positioning
 _USE_PYQT_PRINT=	printsupport
 _USE_PYQT_TEXTPROC=	xml xmlpatterns
 _USE_PYQT_WWW=		webchannel webengine webkit webkitwidgets websockets
@@ -100,9 +102,11 @@ _USE_PYQT_ALL=		${_USE_PYQT_COMMS} \
 			${_USE_PYQT_DEVEL} \
 			${_USE_PYQT_GRAPHICS} \
 			${_USE_PYQT_LANG} \
+			${_USE_PYQT_LOCATION} \
 			${_USE_PYQT_MISC} \
 			${_USE_PYQT_MULTIMEDIA} \
 			${_USE_PYQT_NET} \
+			${_USE_PYQT_POSITIONING} \
 			${_USE_PYQT_PRINT} \
 			${_USE_PYQT_TEXTPROC} \
 			${_USE_PYQT_WWW} \
@@ -136,6 +140,7 @@ py-sip_PORT=			devel/py-sip
 py-qtbuilder_PORT=		devel/py-qtbuilder
 py-pysip_PORT=			devel/${PYQT_RELNAME}-sip
 py-qscintilla2_PORT=		devel/${PYQT_RELNAME}-qscintilla2
+py-positioning_PORT=		devel/${PYQT_RELNAME}-positioning
 
 .  for _categorie in comms databases devel graphics lang misc multimedia net print textproc www x11 x11-toolkits
 _PYQT_CATEGORIE=	_USE_PYQT_${_categorie:tu}
@@ -159,6 +164,7 @@ py-multimediawidgets_DESC=	Python bindings for QtMultimediaWidgets module
 py-network_DESC=		Python bindings for QtNetwork module
 py-networkauth_DESC=		Python bindings for QtNetworkAuth module
 py-opengl_DESC=			Python bindings for QtOpenGL module
+py-positioning_DESC=		Python bindings for QtPositioning module
 py-printsupport_DESC=		Python bindings for Printsupport module
 py-qml_DESC=			Python bindings for Qml module
 py-qscintilla2_DESC=		Python bindings for QScintilla2

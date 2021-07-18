@@ -1,7 +1,7 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 
 PORTNAME=	artifacts
-PORTVERSION=	20201106
+PORTVERSION=	20210620
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/ForensicArtifacts/artifacts/releases/download/${PORTVERSION}/
@@ -14,7 +14,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pbr>=4.2.0:devel/py-pbr@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:3.5+

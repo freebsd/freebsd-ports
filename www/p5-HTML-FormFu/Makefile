@@ -13,8 +13,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		p5-File-ShareDir-Install>=0.03:devel/p5-File-ShareDir-Install
+BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.03:devel/p5-File-ShareDir-Install \
+		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Clone>=0.31:devel/p5-Clone \
 		p5-Config-Any>=0.18:devel/p5-Config-Any \
 		p5-Data-Visitor>=0.26:devel/p5-Data-Visitor \
@@ -45,8 +45,9 @@ TEST_DEPENDS=	p5-CGI>=0:www/p5-CGI \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-RequiresInternet>=0:devel/p5-Test-RequiresInternet
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

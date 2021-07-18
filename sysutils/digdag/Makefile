@@ -1,9 +1,9 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	digdag
-DISTVERSION=	0.10.0
+DISTVERSION=	0.10.1
 CATEGORIES=	sysutils java
-MASTER_SITES=	https://dl.bintray.com/digdag/maven/ \
+MASTER_SITES=	https://github.com/treasure-data/digdag/releases/download/v${DISTVERSION}/ \
 		LOCAL/ehaupt
 EXTRACT_SUFX=	.jar
 

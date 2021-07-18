@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XS implementation of parts of Class::Load
 
 LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Load>=0.20:devel/p5-Class-Load
@@ -18,8 +19,8 @@ TEST_DEPENDS=	p5-Module-Implementation>=0.04:devel/p5-Module-Implementation \
 		p5-Test-Needs>=0:devel/p5-Test-Needs \
 		p5-Test-Without-Module>=0:devel/p5-Test-Without-Module
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Class/Load/XS/XS.so

@@ -27,6 +27,7 @@ include/MNN/Tensor.hpp
 include/MNN/expr/Expr.hpp
 include/MNN/expr/ExprCreator.hpp
 include/MNN/expr/MathOp.hpp
+include/MNN/expr/Module.hpp
 include/MNN/expr/NeuralNetWorkOp.hpp
 include/MNN/expr/Optimizer.hpp
 lib/libMNN.so

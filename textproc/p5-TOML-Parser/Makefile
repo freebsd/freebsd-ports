@@ -18,10 +18,11 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Types-Serialiser>=0:devel/p5-Types-Serialiser
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
-PORTSCOUT=	limit:^[0-9\.]*$$
+USES=		perl5
+USE_PERL5=	modbuildtiny
 
 NO_ARCH=	yes
-USE_PERL5=	modbuildtiny
-USES=		perl5
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 .include <bsd.port.mk>

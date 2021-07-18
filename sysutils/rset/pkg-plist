@@ -1,0 +1,11 @@
+bin/labelgrep
+bin/miniquark
+bin/rinstall
+bin/rset
+bin/rsub
+man/man1/labelgrep.1.gz
+man/man1/miniquark.1.gz
+man/man1/rinstall.1.gz
+man/man1/rset.1.gz
+man/man1/rsub.1.gz
+man/man5/pln.5.gz

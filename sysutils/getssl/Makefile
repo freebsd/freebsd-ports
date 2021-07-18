@@ -1,22 +1,25 @@
-PORTNAME=		getssl
+PORTNAME=	getssl
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.22
-CATEGORIES=		sysutils
+DISTVERSION=	2.35
+CATEGORIES=	sysutils
 
-MAINTAINER=		rainbow@sanitylinux.org
-COMMENT=		Local LetsEncrypt client for managing certificates on remote servers
+MAINTAINER=	rainbow@sanitylinux.org
+COMMENT=	Local LetsEncrypt client for managing certificates on remote servers
 
-LICENSE=		GPLv3
-LICENSE_FILE=		${WRKSRC}/LICENSE
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=		bash:shells/bash nslookup:dns/bind-tools curl:ftp/curl
+RUN_DEPENDS=	bash:shells/bash \
+		curl:ftp/curl \
+		nslookup:dns/bind-tools
 
-USE_GITHUB=		yes
-GH_ACCOUNT=		srvrco
+USE_GITHUB=	yes
+GH_ACCOUNT=	srvrco
 
-NO_BUILD=		yes
-NO_ARCH=		yes
-PLIST_FILES=		bin/getssl
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+PLIST_FILES=	bin/getssl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/getssl ${STAGEDIR}${PREFIX}/bin

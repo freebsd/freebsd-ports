@@ -1,6 +1,7 @@
 PORTNAME=	yubikey-manager-qt
 DISTVERSIONPREFIX=	yubikey-manager-qt-
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	daniel@shafer.cc

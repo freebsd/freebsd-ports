@@ -1,10 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 
 PORTNAME=	gnome-calculator
-PORTVERSION=	3.38.2
-PORTREVISION=	2
+PORTVERSION=	40.1
 CATEGORIES=	math gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -18,7 +17,8 @@ BUILD_DEPENDS=	vala:lang/vala \
 LIB_DEPENDS=	libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc \
 		libsoup-2.4.so:devel/libsoup \
-		libgee-0.8.so:devel/libgee
+		libgee-0.8.so:devel/libgee \
+		libhandy-1.so:x11-toolkits/libhandy
 
 PORTSCOUT=	limitw:1,even
 

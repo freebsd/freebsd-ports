@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@critical.ch>
 
 PORTNAME=	schismtracker
-PORTVERSION=	20200412
+PORTVERSION=	20210525
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -9,7 +9,7 @@ COMMENT=	Module tracker editor/player resembling impulse tracker
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64le
+ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le
 
 USES=		autoreconf compiler:c++11-lib desktop-file-utils python sdl \
 		xorg

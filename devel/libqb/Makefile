@@ -1,8 +1,8 @@
 # Created by: David Shane Holden <dpejesh@yahoo.com>
 
 PORTNAME=		libqb
-PORTVERSION=		2.0.0
-MASTER_SITES=		https://github.com/ClusterLabs/libqb/releases/download/v2.0.0/
+DISTVERSIONPREFIX=	v
+DISTVERSION=		2.0.3
 CATEGORIES=		devel
 
 MAINTAINER=		egypcio@FreeBSD.org
@@ -21,7 +21,10 @@ PLIST_SUB+=		QB_SOCKET_DIR=${QB_SOCKET_DIR}
 
 USES=			autoreconf gmake libtool pathfix pkgconfig python
 USE_BINUTILS=		yes
+USE_GITHUB=		yes
 USE_LDCONFIG=		yes
+
+GH_ACCOUNT=		ClusterLabs
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-socket-dir=${QB_SOCKET_DIR} \

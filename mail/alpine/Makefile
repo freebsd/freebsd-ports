@@ -1,5 +1,5 @@
 PORTNAME?=	alpine
-DISTVERSION=	2.24.1
+DISTVERSION=	2.24.2
 CATEGORIES?=	mail news
 MASTER_SITES=	https://repo.or.cz/alpine.git/snapshot/${GIT_COMMIT}${EXTRACT_SUFX}?dummy=/
 
@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=	--with-debug-level=2 \
 MAKE_ARGS+=		CC="${CC}" CXX="${CXX}" GCCCFLAGS="${CFLAGS}"
 # When you update please double check that the commit corresponds to
 # the actual version you've set in PORTVERSION.
-GIT_COMMIT=		2f6c9dc8e95cadb1abc2a0f5853aea378ef1b13a
+GIT_COMMIT=		9121164149cdeac438762406514df10f459e8918
 GIT_COMMIT_SHORT=	${GIT_COMMIT:C/^(.......).*/\1/}
 WRKSRC=			${WRKDIR}/alpine-${GIT_COMMIT_SHORT}
 

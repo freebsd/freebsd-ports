@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	markdown-it-py
-PORTVERSION=	0.6.2
+PORTVERSION=	1.1.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,12 +12,18 @@ COMMENT=	Python port of markdown-it
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=19<21:devel/py-attrs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mdit-py-plugins>=0.2.1<0.3:textproc/py-mdit-py-plugins@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=19<22:devel/py-attrs@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=19<22:devel/py-attrs@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 30800
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,8 +1,7 @@
 # Created by: Martin Wilke (miwi@FreeBSD.org)
 
 PORTNAME=	xfce4-screenshooter-plugin
-PORTVERSION=	1.9.8
-PORTREVISION=	1
+PORTVERSION=	1.9.9
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DISTNAME=	xfce4-screenshooter-${DISTVERSIONFULL}
@@ -14,7 +13,8 @@ COMMENT=	Application and panel plugin to take screenshots
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg

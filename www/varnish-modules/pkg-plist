@@ -1,12 +1,16 @@
+lib/varnish/vmods/libvmod_accept.so
 lib/varnish/vmods/libvmod_bodyaccess.so
 lib/varnish/vmods/libvmod_header.so
 lib/varnish/vmods/libvmod_saintmode.so
+lib/varnish/vmods/libvmod_str.so
 lib/varnish/vmods/libvmod_var.so
 lib/varnish/vmods/libvmod_vsthrottle.so
 lib/varnish/vmods/libvmod_xkey.so
+man/man3/vmod_accept.3.gz
 man/man3/vmod_bodyaccess.3.gz
 man/man3/vmod_header.3.gz
 man/man3/vmod_saintmode.3.gz
+man/man3/vmod_str.3.gz
 man/man3/vmod_var.3.gz
 man/man3/vmod_vsthrottle.3.gz
 man/man3/vmod_xkey.3.gz

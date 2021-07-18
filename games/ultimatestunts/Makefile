@@ -2,7 +2,7 @@
 
 PORTNAME=	ultimatestunts
 PORTVERSION=	0.7.7.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/sourcecode \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

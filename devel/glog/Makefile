@@ -1,8 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 
 PORTNAME=	glog
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -12,23 +11,20 @@ COMMENT=	Library of C++ classes for flexible logging
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgflags.so:devel/gflags
+LIB_DEPENDS=	libgflags.so:devel/gflags \
+		libunwind.so:devel/libunwind
 
-OPTIONS_DEFINE=	DOCS
+USES=		cmake compiler:c++11-lang pkgconfig
 
-USES=		autoreconf compiler:c++11-lang libtool localbase pathfix
+CMAKE_ON=	BUILD_SHARED_LIBS WITH_GFLAGS WITH_PKGCONFIG WITH_SYMBOLIZE WITH_THREADS WITH_TLS WITH_UNWIND
+CMAKE_OFF=	PRINT_UNSYMBOLIZED_STACK_TRACES WITH_CUSTOM_PREFIX WITH_GTEST
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 LDFLAGS+=	-lexecinfo
-TEST_TARGET=	check
+TEST_TARGET=	test
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	google
 USE_GITHUB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^docdir = / s| = .*| = ${DOCSDIR}|' ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>

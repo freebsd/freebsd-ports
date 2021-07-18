@@ -1,13 +1,13 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Text-Table-ASV
-PORTVERSION=	0.001
+PORTVERSION=	0.002
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Generate TSV
+COMMENT=	Generate ASV (ASCII Separated Value)
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

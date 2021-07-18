@@ -1,6 +1,6 @@
---- chrome/app/chrome_command_ids.h.orig	2021-03-12 23:57:16 UTC
+--- chrome/app/chrome_command_ids.h.orig	2021-04-14 18:40:49 UTC
 +++ chrome/app/chrome_command_ids.h
-@@ -64,7 +64,7 @@
+@@ -65,7 +65,7 @@
  #define IDC_NAME_WINDOW                 34049
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch of lacros-chrome is complete.

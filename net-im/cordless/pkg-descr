@@ -1,9 +1,0 @@
-Cordless is supposed to be a custom Discord client
-that aims to have a low memory footprint and be aimed
-at power-users.
-
-The application only uses the official Discord API and
-doesn't send data to any third party. However, this
-application is not a official product by Discord Inc.
-
-WWW: https://github.com/Bios-Marcel/cordless

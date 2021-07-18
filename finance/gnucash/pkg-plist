@@ -66,7 +66,6 @@ include/gnucash/gnc-cell-renderer-popup.h
 include/gnucash/gnc-cell-renderer-text-flag.h
 include/gnucash/gnc-cell-renderer-text-view.h
 include/gnucash/gnc-cell-view.h
-include/gnucash/gnc-combott.h
 include/gnucash/gnc-commodity-edit.h
 include/gnucash/gnc-commodity.h
 include/gnucash/gnc-component-manager.h
@@ -409,6 +408,7 @@ lib/guile/2.2/site-ccache/gnucash/reports/standard/dashboard.go
 lib/guile/2.2/site-ccache/gnucash/reports/standard/equity-statement.go
 lib/guile/2.2/site-ccache/gnucash/reports/standard/general-journal.go
 lib/guile/2.2/site-ccache/gnucash/reports/standard/general-ledger.go
+lib/guile/2.2/site-ccache/gnucash/reports/standard/ifrs-cost-basis.go
 lib/guile/2.2/site-ccache/gnucash/reports/standard/income-gst-statement.go
 lib/guile/2.2/site-ccache/gnucash/reports/standard/income-statement.go
 lib/guile/2.2/site-ccache/gnucash/reports/standard/invoice.go
@@ -939,7 +939,23 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/accounts/zh_CN/acctchrt_spouseinc.gnucash-xea
 %%DATADIR%%/accounts/zh_CN/acctchrt_spouseretire.gnucash-xea
 %%DATADIR%%/accounts/zh_HK/acctchrt_business.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_brokerage.gnucash-xea
 %%DATADIR%%/accounts/zh_TW/acctchrt_business.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_carloan.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_cdmoneymkt.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_checkbook.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_childcare.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_common.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_eduloan.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_fixedassets.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_homeloan.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_homeown.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_otherloan.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_renter.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_retiremt.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_spouseinc.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_spouseretire.gnucash-xea
+%%DATADIR%%/accounts/zh_TW/acctchrt_vehicle.gnucash-xea
 %%DATADIR%%/chartjs/Chart.bundle.js
 %%DATADIR%%/chartjs/Chart.bundle.min.js
 %%DATADIR%%/checks/deluxe.chk
@@ -1270,6 +1286,7 @@ share/guile/site/2.2/gnucash/reports/standard/dashboard.scm
 share/guile/site/2.2/gnucash/reports/standard/equity-statement.scm
 share/guile/site/2.2/gnucash/reports/standard/general-journal.scm
 share/guile/site/2.2/gnucash/reports/standard/general-ledger.scm
+share/guile/site/2.2/gnucash/reports/standard/ifrs-cost-basis.scm
 share/guile/site/2.2/gnucash/reports/standard/income-gst-statement.scm
 share/guile/site/2.2/gnucash/reports/standard/income-statement.scm
 share/guile/site/2.2/gnucash/reports/standard/invoice.scm

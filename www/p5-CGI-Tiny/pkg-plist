@@ -1,0 +1,9 @@
+%%SITE_PERL%%/CGI/Tiny.pm
+%%SITE_PERL%%/CGI/Tiny.pod
+%%SITE_PERL%%/CGI/Tiny/Cookbook.pod
+%%SITE_PERL%%/CGI/Tiny/Multipart.pm
+%%SITE_PERL%%/CGI/Tiny/Multipart.pod
+%%SITE_PERL%%/CGI/Tiny/_Debug.pm
+%%PERL5_MAN3%%/CGI::Tiny.3.gz
+%%PERL5_MAN3%%/CGI::Tiny::Cookbook.3.gz
+%%PERL5_MAN3%%/CGI::Tiny::Multipart.3.gz

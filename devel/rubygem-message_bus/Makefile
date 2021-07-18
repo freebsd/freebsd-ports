@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	message_bus
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

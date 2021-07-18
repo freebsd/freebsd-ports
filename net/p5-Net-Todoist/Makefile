@@ -12,13 +12,15 @@ COMMENT=	Todoist API
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-libwww>=0:www/p5-libwww
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

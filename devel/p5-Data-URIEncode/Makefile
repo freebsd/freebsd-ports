@@ -6,7 +6,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allow complex data structures to be encoded using flat URIs
 
 LICENSE=	ART10 GPLv1+

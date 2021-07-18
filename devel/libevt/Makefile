@@ -1,7 +1,7 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 
 PORTNAME=	libevt
-DISTVERSION=	alpha-20200926
+DISTVERSION=	alpha-20210424
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libevt/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine

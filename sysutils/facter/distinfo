@@ -1,3 +1,3 @@
-TIMESTAMP = 1612946793
-SHA256 (facter-3.14.16.tar.gz) = 196c69b1ae325dbf11f68025eb12b9c53c054bee9112bd4f3e2ece8c5fe76571
-SIZE (facter-3.14.16.tar.gz) = 360145
+TIMESTAMP = 1624643511
+SHA256 (facter-3.14.18.tar.gz) = 0a7e871ca5a2e8bdd55b516fbab2c5d6a53af10527365174a4d82446d7cb87de
+SIZE (facter-3.14.18.tar.gz) = 362509

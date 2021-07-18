@@ -14,13 +14,14 @@ daemon_pidfile="/var/run/${name}-daemon.pid"
 logdir="/var/log/${name}"
 logfile="${logdir}/victoria_metrics.log"
 command="%%PREFIX%%/bin/victoria-metrics"
-victoria_metrics_args=${cbsd_mq_router_config-"--storageDataPath=%%VICTORIA_DATA%% --retentionPeriod=1 --httpListenAddr=:8428"}
+victoria_metrics_args=${victoria_metrics_args-"--storageDataPath=%%VICTORIA_DATA%% --retentionPeriod=1 --httpListenAddr=:8428"}
 victoria_metrics_user="%%VICTORIA_USER%%"
 load_rc_config ${name}
 
 start_cmd="start"
 stop_cmd="stop"
 status_cmd="status"
+extra_commands="reload"
 
 start()
 {

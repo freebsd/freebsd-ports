@@ -59,6 +59,7 @@ share/locale/ar/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
 share/locale/ar/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/ar/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/ar/LC_MESSAGES/plasmoidviewer.mo
+share/locale/ast/LC_MESSAGES/cuttlefish.mo
 share/locale/az/LC_MESSAGES/cuttlefish.mo
 share/locale/az/LC_MESSAGES/cuttlefish_editorplugin.mo
 share/locale/az/LC_MESSAGES/org.kde.plasma.lookandfeelexplorer.mo
@@ -215,6 +216,8 @@ share/locale/hsb/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/hsb/LC_MESSAGES/plasmoidviewer.mo
 share/locale/hu/LC_MESSAGES/cuttlefish.mo
 share/locale/hu/LC_MESSAGES/cuttlefish_editorplugin.mo
+share/locale/hu/LC_MESSAGES/org.kde.plasma.lookandfeelexplorer.mo
+share/locale/hu/LC_MESSAGES/org.kde.plasma.themeexplorer.mo
 share/locale/hu/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
 share/locale/hu/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/hu/LC_MESSAGES/plasmawallpaperviewer.mo
@@ -486,13 +489,14 @@ share/metainfo/org.kde.plasmaengineexplorer.appdata.xml
 share/metainfo/org.kde.plasmoidviewer.appdata.xml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/Actions.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/Comparison.qml
-share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/DualMontage.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/GlobalMenuBar.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/IconGrid.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/IconGridDelegate.qml
+share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/IconMontage.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/Menu.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/Preview.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/ResponsivePreview.qml
+share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/Screenshot.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/Tools.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/ToolsResponsive.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/cuttlefish.qml

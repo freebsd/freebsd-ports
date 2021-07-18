@@ -4,7 +4,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library to pretty-print tabular data
 
 LICENSE=	GPLv3

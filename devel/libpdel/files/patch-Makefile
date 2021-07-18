@@ -1,5 +1,5 @@
---- Makefile.orig	2014-04-26 19:31:00.000000000 -0300
-+++ Makefile	2014-04-26 19:31:40.000000000 -0300
+--- Makefile.orig	2009-05-13 21:36:05 UTC
++++ Makefile
 @@ -2,6 +2,11 @@
  
  LIB=		pdel
@@ -9,6 +9,15 @@
 +SHAREOWN=	${BINOWN}
 +SHAREGRP=	${BINGRP}
 +
- SUBDIRS=	config http io net ppp structs sys tmpl util
+ SUBDIRS=	config http io misc net pdel ppp regex structs sys thread tmpl util
  
  VERSION!=	grep -w PDEL_VERSION_STRING ${.CURDIR}/version.h \
+@@ -32,7 +37,7 @@ OBJDIR=		${PDELTOP}/obj/${OS}.${ARCH}
+ SHLIB_MAJOR=	${VERSION_MAJOR}
+ SHLIB_MAJOR=	${VERSION_MINOR}
+ MAN=		libpdel.3
+-NO_PROFILE=
++MK_PROFILE=	no
+ INCHDRS=	version.h
+ BASEINCHDRS=	
+ 

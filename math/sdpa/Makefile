@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	sdpa
 EXTRACT_ONLY=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Very efficient SDP (semidefinite programming) solver
 
 LICENSE=	GPLv2 # (or later)

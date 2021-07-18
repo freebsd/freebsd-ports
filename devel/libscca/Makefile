@@ -1,7 +1,7 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 
 PORTNAME=	libscca
-DISTVERSION=	alpha-20200717
+DISTVERSION=	alpha-20210419
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libscca/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine

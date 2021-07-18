@@ -1,4 +1,4 @@
---- chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc
 @@ -39,10 +39,12 @@ void MTPDeviceMapService::RegisterMTPFileSystem(
      // Note that this initializes the delegate asynchronously, but since

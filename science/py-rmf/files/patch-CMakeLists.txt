@@ -1,10 +1,10 @@
---- CMakeLists.txt.orig	2018-06-15 00:56:51 UTC
+--- CMakeLists.txt.orig	2021-04-19 19:25:22 UTC
 +++ CMakeLists.txt
-@@ -4,15 +4,15 @@ project(RMF)
- # needs to be in main CMakeLists.txt
- enable_testing()
+@@ -18,15 +18,15 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_S
+ include(cmake_modules/IMPFindPython.cmake)
+ imp_find_python()
  
--execute_process(COMMAND python setup_git.py
+-execute_process(COMMAND ${PYTHON_EXECUTABLE} setup_git.py
 -                  RESULT_VARIABLE setup
 -                  OUTPUT_VARIABLE toutput
 -                  ERROR_VARIABLE error
@@ -13,7 +13,7 @@
 -if(NOT ${setup} EQUAL 0)
 -   message(FATAL_ERROR " Failed to run setup_git.py: ${setup}; ${error}")
 -endif()
-+#execute_process(COMMAND python setup_git.py
++#execute_process(COMMAND ${PYTHON_EXECUTABLE} setup_git.py
 +#                  RESULT_VARIABLE setup
 +#                  OUTPUT_VARIABLE toutput
 +#                  ERROR_VARIABLE error
@@ -23,9 +23,9 @@
 +#   message(FATAL_ERROR " Failed to run setup_git.py: ${setup}; ${error}")
 +#endif()
  
- set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake_modules)
- 
-@@ -116,14 +116,14 @@ configure_file (
+ # Don't deref quoted variables in if()
+ if(POLICY CMP0054)
+@@ -144,14 +144,14 @@ configure_file (
    "${PROJECT_BINARY_DIR}/include/RMF/config.h"
    )
  
@@ -45,15 +45,16 @@
  
  # swig support is a little broken
  
-@@ -142,10 +142,10 @@ endif()
+@@ -170,10 +170,12 @@ endif()
  
  add_subdirectory(swig)
  
--add_subdirectory(test)
++if (FREEBSD_BUILS_WITH_TESTS)
+ add_subdirectory(test)
 -add_subdirectory(examples)
 -add_subdirectory(benchmark)
 -add_subdirectory(doc)
-+#add_subdirectory(test)
++endif()
 +#add_subdirectory(examples)
 +#add_subdirectory(benchmark)
 +#add_subdirectory(doc)

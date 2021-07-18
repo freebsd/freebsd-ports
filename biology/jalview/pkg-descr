@@ -19,7 +19,4 @@ o Sequence feature retrieval and display on the alignment.
 o Print your alignment with colours and annotations.
 o Output alignments as HTML pages, images (PNG) or postscript (EPS).
 
-If you use Jalview in your work, please quote this publication. Clamp, M., et
-al. (2004), The Jalview Java Alignment Editor. Bioinformatics, 12, 426-7
-
-WWW: http://www.jalview.org
+WWW: https://www.jalview.org

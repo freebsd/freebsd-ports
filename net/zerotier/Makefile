@@ -1,7 +1,7 @@
 # Created by: Corey Smith <corsmith@gmail.com>
 
 PORTNAME=	zerotier
-DISTVERSION=	1.6.4
+DISTVERSION=	1.6.5
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/zerotier/zerotierone/pull/
@@ -11,6 +11,7 @@ PATCHFILES=	1304.patch:-p1
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Network virtualization everywhere
 
+# No SaaS or Govt usage: https://github.com/zerotier/ZeroTierOne/blob/master/LICENSE.txt
 LICENSE=		BUSINESS MIT PD
 LICENSE_COMB=		multi
 LICENSE_NAME_BUSINESS=	Business Source License
@@ -33,8 +34,6 @@ DBG_DESC=	Enable foreground debugging for zerotier-one daemon
 DBG_ALL_TARGET=	debug
 
 PLIST_FILES=	bin/zerotier-cli bin/zerotier-idtool sbin/zerotier-one
-
-LEGAL_TEXT=	No SaaS or Govt usage: https://github.com/zerotier/ZeroTierOne/blob/master/LICENSE.txt
 
 .include <bsd.port.pre.mk>
 

@@ -10,9 +10,14 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Base calling and quality value assignment on DNA sequencing
 
+# Converted from RESTRICTED
+LICENSE=	PHRED
+LICENSE_NAME=	phred
+LICENSE_TEXT=	Redistribution is not permitted in any form. You must request the tarball via e-mail. Free for academic use.
+LICENSE_PERMS=	auto-accept
+
 SUB_FILES=	pkg-message
 
-RESTRICTED=	Redistribution is not permitted in any form. You must request the tarball via e-mail. Free for academic use.
 .if defined(PACKAGE_BUILDING)
 IGNORE=		distribution files must be obtained via the authors
 .endif

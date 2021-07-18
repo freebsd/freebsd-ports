@@ -46,6 +46,7 @@ include/musikcube/musikcore/sdk/ReplayGain.h
 include/musikcube/musikcore/sdk/String.h
 include/musikcube/musikcore/sdk/constants.h
 %%DATADIR%%/libmusikcore.so
+%%DATADIR%%/locales/de_DE.json
 %%DATADIR%%/locales/en_US.json
 %%DATADIR%%/locales/fr_FR.json
 %%DATADIR%%/locales/it_IT.json
@@ -58,6 +59,7 @@ include/musikcube/musikcore/sdk/constants.h
 %%DATADIR%%/plugins/libgmedecoder.so
 %%DATADIR%%/plugins/libhttpdatastream.so
 %%DATADIR%%/plugins/libnullout.so
+%%DATADIR%%/plugins/libopenmptdecoder.so
 %%DATADIR%%/plugins/libserver.so
 %%DATADIR%%/plugins/libsndioout.so
 %%DATADIR%%/plugins/libstockencoders.so

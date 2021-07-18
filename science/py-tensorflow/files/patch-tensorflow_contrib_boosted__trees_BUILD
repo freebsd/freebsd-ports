@@ -1,0 +1,24 @@
+--- tensorflow/contrib/boosted_trees/BUILD.orig	2019-10-14 21:08:43 UTC
++++ tensorflow/contrib/boosted_trees/BUILD
+@@ -24,6 +24,10 @@ cc_library(
+         ":stats_accumulator_ops_kernels",
+         ":training_ops_kernels",
+     ],
++    linkopts = select({
++        "//tensorflow:freebsd": ["-lm", "-lexecinfo",],
++    }),
++
+     alwayslink = 1,
+ )
+ 
+@@ -37,6 +41,10 @@ cc_library(
+         ":stats_accumulator_ops_op_lib",
+         ":training_ops_op_lib",
+     ],
++    linkopts = select({
++        "//tensorflow:freebsd": ["-lm", "-lexecinfo",],
++    }),
++
+ )
+ 
+ py_library(

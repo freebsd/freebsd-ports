@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	--with-xml2-prefix=${LOCALBASE} \
 		--with-hdf5-prefix=${LOCALBASE} \
 		--with-mbedtls-prefix=${LOCALBASE} \
 		CC="${CC}" CXX="${CXX}" TOOLS="${CHOSEN_COMPILER_TYPE}"
+MAKE_ENV+=	CPATH="${LOCALBASE}/include/libepoll-shim"
 MAKE_ARGS+=	CCNAME=${CC} CXXNAME=${CXX} PKGCFLAGS="${CFLAGS}"
 
 CFLAGS+=	-I${WRKSRC}/lib

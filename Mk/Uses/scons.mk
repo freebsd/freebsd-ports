@@ -1,30 +1,19 @@
 # Provide support to use the scons
 #
 # Feature:	scons
-# Usage:	USES=scons[:ARGS]
-# Valid ARGS:	python2 python3
-#
-# python2:	Use default python 2.x to run scons
-# python3:	Use default python 3.x to run scons (default)
+# Usage:	USES=scons
+# Valid ARGS:	none
 #
 # MAINTAINER: python@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_SCONS_MK)
 _INCLUDE_USES_SCONS_MK=	yes
 
-.if empty(scons_ARGS)
-scons_ARGS=	python3
-.endif
+.  if !empty(scons_ARGS)
+IGNORE+=	USES=scons takes no arguments
+.  endif
 
-.if ${scons_ARGS} == python3
 _SCONS_PYTHON_VER=	${PYTHON3_DEFAULT}
-.elif ${scons_ARGS} == python2
-_SCONS_PYTHON_VER=	${PYTHON2_DEFAULT}
-DEPRECATED?=	Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
-EXPIRATION_DATE?=	2020-12-31
-.else
-IGNORE=		Incorrect 'USES+= scons:${scons_ARGS}' usage
-.endif
 
 _SCONS_PYTHON_FLAVOR=	py${_SCONS_PYTHON_VER:S|.||}
 

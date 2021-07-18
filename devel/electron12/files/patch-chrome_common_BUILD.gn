@@ -1,0 +1,36 @@
+--- chrome/common/BUILD.gn.orig	2021-04-14 01:08:42 UTC
++++ chrome/common/BUILD.gn
+@@ -251,6 +251,10 @@ static_library("common") {
+     public_deps += [ "//ppapi/shared_impl" ]
+   }
+ 
++  if (is_bsd) {
++    deps -= [ "//components/crash/core/app" ]
++  }
++
+   if (enable_extensions) {
+     sources += [
+       "extensions/api/commands/commands_handler.cc",
+@@ -481,13 +485,21 @@ static_library("common") {
+     public_deps += [ "//chrome/common/safe_browsing" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "auto_start_linux.cc",
+       "auto_start_linux.h",
+       "multi_process_lock_linux.cc",
+     ]
+     deps += [ "//sandbox/linux:sandbox_services" ]
++  }
++
++  if (is_bsd) {
++    sources += [
++      "auto_start_linux.cc",
++      "auto_start_linux.h",
++      "multi_process_lock_linux.cc",
++    ]
+   }
+ 
+   if (enable_cdm_host_verification) {

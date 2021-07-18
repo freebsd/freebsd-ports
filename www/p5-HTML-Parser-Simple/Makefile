@@ -16,8 +16,9 @@ RUN_DEPENDS=	p5-Moo>=1.003001:devel/p5-Moo \
 		p5-Tree-Simple>=1.22:devel/p5-Tree-Simple
 TEST_DEPENDS=	p5-Test-Pod>=0:devel/p5-Test-Pod
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5 tar:tgz
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

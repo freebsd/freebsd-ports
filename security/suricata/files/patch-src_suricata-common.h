@@ -1,4 +1,4 @@
---- src/suricata-common.h.orig	2020-12-04 07:11:05 UTC
+--- src/suricata-common.h.orig	2021-03-01 16:13:22 UTC
 +++ src/suricata-common.h
 @@ -36,6 +36,8 @@
  #define _GNU_SOURCE
@@ -7,5 +7,5 @@
 +#include "queue.h"
 +
  #if HAVE_CONFIG_H
- #include <config.h>
+ #include <autoconf.h>
  #endif

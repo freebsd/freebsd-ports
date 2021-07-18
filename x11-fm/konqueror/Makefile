@@ -3,7 +3,7 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	x11-fm www kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE system log application
+COMMENT=	KDE web browser and file manager
 
 DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
 EXPIRATION_DATE=2021-06-23

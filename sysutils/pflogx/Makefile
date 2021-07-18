@@ -12,6 +12,9 @@ COMMENT=	Simple tool to export pf (packet filter) logs to XML files
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13=	does not build: error: unknown type name 'LIST_ENTRY'
+BROKEN_FreeBSD_14=	does not build: error: unknown type name 'LIST_ENTRY'
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	EXPAT DOCS EXAMPLES

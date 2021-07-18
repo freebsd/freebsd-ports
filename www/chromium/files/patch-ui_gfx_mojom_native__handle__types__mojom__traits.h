@@ -1,4 +1,4 @@
---- ui/gfx/mojom/native_handle_types_mojom_traits.h.orig	2021-03-12 23:57:48 UTC
+--- ui/gfx/mojom/native_handle_types_mojom_traits.h.orig	2021-04-14 18:41:39 UTC
 +++ ui/gfx/mojom/native_handle_types_mojom_traits.h
 @@ -14,13 +14,13 @@
  #include "mojo/public/cpp/system/platform_handle.h"

@@ -1,7 +1,7 @@
 PORTNAME=	dose-response
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
-PORTREVISION=	14
+PORTREVISION=	16
 CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
@@ -10,7 +10,7 @@ COMMENT=	Open-world roguelike game where you play an addict
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		cargo gnome
+USES=		cargo gnome sdl
 USE_SDL=	sdl2
 USE_GITHUB=	yes
 GH_ACCOUNT=	tryjumping

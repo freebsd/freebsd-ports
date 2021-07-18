@@ -1,0 +1,15 @@
+--- Makefile.orig	2015-09-01 07:23:10 UTC
++++ Makefile
+@@ -1,9 +1,9 @@
+-CFLAGS = -I.
+-CFLAGS += -g
++CFLAGS += -I.
++#CFLAGS += -g
+ #CFLAGS += -pg
+ CFLAGS += -Wall
+ CFLAGS += --pedantic
+-CFLAGS += -O9
++#CFLAGS += -O9
+ #CFLAGS += -DBLISS_DEBUG
+ CFLAGS += -fPIC
+ 

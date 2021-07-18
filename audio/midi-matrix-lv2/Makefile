@@ -2,6 +2,7 @@
 
 PORTNAME=	midi-matrix
 DISTVERSION=	0.28.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://gitlab.com/OpenMusicKontrollers/midi_matrix.lv2/repository/archive.tar.gz?ref=${DISTVERSION}&dummy=/
 PKGNAMESUFFIX=	-lv2

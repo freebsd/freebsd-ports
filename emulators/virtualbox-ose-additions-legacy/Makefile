@@ -41,11 +41,13 @@ CONFIGURE_ARGS+=	--disable-alsa \
 CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
 CONFLICTS_INSTALL=	virtualbox-ose-[0-9]* \
+			virtualbox-ose-additions-[0-9]* \
 			virtualbox-ose-additions-devel-[0-9]* \
 			virtualbox-ose-devel-[0-9]* \
-			virtualbox-ose-[0-9]* \
 			virtualbox-ose-lite-[0-9]* \
 			virtualbox-ose-nox11-[0-9]*
+
+PORTSCOUT=	limit:^5\.
 
 OPTIONS_DEFINE=	DBUS DEBUG X11
 OPTIONS_DEFAULT=	DBUS X11

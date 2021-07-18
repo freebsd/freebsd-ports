@@ -17,8 +17,6 @@ LICENSE_NAME=	commercial
 LICENSE_TEXT=	Commercial software with shareware license to 50 threads
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-RESTRICTED=	Commercial software with shareware license to 50 threads
-
 OPTIONS_DEFINE=	DEPENDACK APACHE PHP PGSQL
 OPTIONS_DEFAULT=DEPENDACK APACHE PHP PGSQL
 DEPENDACK_DESC=	I have read and understood the depends needs
@@ -28,7 +26,7 @@ PGSQL_DESC=	Install PostgreSQL (report data storing)
 
 USES=		php shebangfix tar:bzip2 ssl
 SHEBANG_FILES=	sbin/thunderlog.php
-USE_GCC=	any
+USE_GCC=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 

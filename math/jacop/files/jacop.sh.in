@@ -1,0 +1,3 @@
+#!/bin/sh
+
+%%JAVA%% -jar %%JAVAJARDIR%%/jacop-%%PORTVERSION%%.jar "$@"

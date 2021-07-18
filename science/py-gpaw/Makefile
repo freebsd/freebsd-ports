@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ase>0:science/py-ase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYNUMPY}
 
-USES=		gettext-runtime localbase python:3.5+ shebangfix
+USES=		gettext-runtime localbase python:3.7+ shebangfix
 USE_PYTHON=	distutils concurrent autoplist
 SHEBANG_FILES=	tools/*
 

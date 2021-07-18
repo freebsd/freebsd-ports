@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	POE-Component-IRC
-PORTVERSION=	6.90
+PORTVERSION=	6.93
 CATEGORIES=	irc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,13 +22,14 @@ RUN_DEPENDS=	p5-IRC-Utils>=0.12:irc/p5-IRC-Utils \
 		p5-POE-Filter-IRCD>=2.42:irc/p5-POE-Filter-IRCD
 TEST_DEPENDS=	p5-Test-Differences>=0.610:devel/p5-Test-Differences
 
-OPTIONS_DEFINE=	EXAMPLES
-
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	EXAMPLES
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

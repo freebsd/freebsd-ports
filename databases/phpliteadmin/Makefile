@@ -6,7 +6,7 @@ CATEGORIES=	databases www
 MASTER_SITES=	https://bitbucket.org/phpliteadmin/public/downloads/
 DISTNAME=	${PORTNAME}_v${DISTVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Web-based database management tool for Sqlite
 
 LICENSE=	GPLv3

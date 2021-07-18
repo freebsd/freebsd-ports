@@ -1,5 +1,6 @@
 bin/kirigami2gallery
 share/applications/org.kde.kirigami2.gallery.desktop
+share/locale/pa/LC_MESSAGES/kirigamigallery_qt.qm
 share/locale/ca/LC_MESSAGES/kirigamigallery_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/kirigamigallery_qt.qm
 share/locale/cs/LC_MESSAGES/kirigamigallery_qt.qm

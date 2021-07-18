@@ -9,13 +9,17 @@ MASTER_SITES=	http://www.xs4all.nl/~suelette/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	News caching/anti-spam/server-merging system
 
+# Converted from NO_CDROM
+LICENSE=	nttpcache
+LICENSE_NAME=	nttpcache
+LICENSE_TEXT=	Free for individuals and non-military, non-profit organisations only
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: jmp
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: jmp
 BROKEN_aarch64=		fails to link: missing sbrk
 BROKEN_mips64=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
 BROKEN_riscv64=		fails to link: missing sbrk
-
-NO_CDROM=	Free for individuals and non-military, non-profit organisations only
 
 # This may be set interactively at install-time.  NNTPCache will
 # cache news articles and related data in ${SPOOLDIR}/nntpcache.

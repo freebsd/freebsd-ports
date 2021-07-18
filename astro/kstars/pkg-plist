@@ -332,6 +332,7 @@ share/doc/HTML/en/kstars/filter_settings.png
 share/doc/HTML/en/kstars/find.png
 share/doc/HTML/en/kstars/find2.png
 share/doc/HTML/en/kstars/fits_settings.png
+share/doc/HTML/en/kstars/fits_tab.png
 share/doc/HTML/en/kstars/fitsarea.png
 share/doc/HTML/en/kstars/fitsviewer.docbook
 share/doc/HTML/en/kstars/fitsviewer.png
@@ -435,6 +436,7 @@ share/doc/HTML/en/kstars/star_profile_vertical.png
 share/doc/HTML/en/kstars/stars.docbook
 share/doc/HTML/en/kstars/supernovae_tab.png
 share/doc/HTML/en/kstars/telescopes.docbook
+share/doc/HTML/en/kstars/terrain_tab.png
 share/doc/HTML/en/kstars/timezones.docbook
 share/doc/HTML/en/kstars/tools.docbook
 share/doc/HTML/en/kstars/utime.docbook
@@ -444,6 +446,7 @@ share/doc/HTML/en/kstars/view-refresh.png
 share/doc/HTML/en/kstars/viewops.png
 share/doc/HTML/en/kstars/wut.docbook
 share/doc/HTML/en/kstars/wut.png
+share/doc/HTML/en/kstars/xplanet_tab.png
 share/doc/HTML/en/kstars/zenith.docbook
 share/doc/HTML/es/kstars/ai-contents.docbook
 share/doc/HTML/es/kstars/altvstime.docbook
@@ -872,6 +875,7 @@ share/doc/HTML/uk/kstars/Another_way_to_add_part3.png
 share/doc/HTML/uk/kstars/Delete_all_images.png
 share/doc/HTML/uk/kstars/KStars_Neptune.png
 share/doc/HTML/uk/kstars/Savin_session.png
+share/doc/HTML/uk/kstars/advanced_tab.png
 share/doc/HTML/uk/kstars/ai-contents.docbook
 share/doc/HTML/uk/kstars/alpha.png
 share/doc/HTML/uk/kstars/altvstime.docbook
@@ -905,6 +909,7 @@ share/doc/HTML/uk/kstars/calculator.docbook
 share/doc/HTML/uk/kstars/cequator.docbook
 share/doc/HTML/uk/kstars/color_indices.png
 share/doc/HTML/uk/kstars/colorandtemp.docbook
+share/doc/HTML/uk/kstars/colors_tab.png
 share/doc/HTML/uk/kstars/commands.docbook
 share/doc/HTML/uk/kstars/config.docbook
 share/doc/HTML/uk/kstars/cosmicdist.docbook
@@ -930,6 +935,7 @@ share/doc/HTML/uk/kstars/ekos-setup.docbook
 share/doc/HTML/uk/kstars/ekos-tutorials.docbook
 share/doc/HTML/uk/kstars/ekos-user-interface.docbook
 share/doc/HTML/uk/kstars/ekos.docbook
+share/doc/HTML/uk/kstars/ekos_tab.png
 share/doc/HTML/uk/kstars/ellipticalgalaxies.docbook
 share/doc/HTML/uk/kstars/epoch.docbook
 share/doc/HTML/uk/kstars/equinox.docbook
@@ -937,6 +943,7 @@ share/doc/HTML/uk/kstars/execute_session_nt.png
 share/doc/HTML/uk/kstars/execute_session_the_nt.png
 share/doc/HTML/uk/kstars/eyepieceview.docbook
 share/doc/HTML/uk/kstars/faq.docbook
+share/doc/HTML/uk/kstars/fits_tab.png
 share/doc/HTML/uk/kstars/fitsarea.png
 share/doc/HTML/uk/kstars/fitsviewer.docbook
 share/doc/HTML/uk/kstars/flux.docbook
@@ -945,12 +952,14 @@ share/doc/HTML/uk/kstars/flux2.png
 share/doc/HTML/uk/kstars/geocoords.docbook
 share/doc/HTML/uk/kstars/geolocator.png
 share/doc/HTML/uk/kstars/greatcircle.docbook
+share/doc/HTML/uk/kstars/guides_tab.png
 share/doc/HTML/uk/kstars/hips.docbook
 share/doc/HTML/uk/kstars/horizon.docbook
 share/doc/HTML/uk/kstars/hourangle.docbook
 share/doc/HTML/uk/kstars/index.cache.bz2
 share/doc/HTML/uk/kstars/index.docbook
 share/doc/HTML/uk/kstars/indi.docbook
+share/doc/HTML/uk/kstars/indi_tab.png
 share/doc/HTML/uk/kstars/jmoons.docbook
 share/doc/HTML/uk/kstars/jmoons.png
 share/doc/HTML/uk/kstars/julianday.docbook
@@ -967,6 +976,7 @@ share/doc/HTML/uk/kstars/parallax.docbook
 share/doc/HTML/uk/kstars/precession.docbook
 share/doc/HTML/uk/kstars/quicktour.docbook
 share/doc/HTML/uk/kstars/retrograde.docbook
+share/doc/HTML/uk/kstars/satellites_tab.png
 share/doc/HTML/uk/kstars/scriptbuilder.docbook
 share/doc/HTML/uk/kstars/scriptbuilder.png
 share/doc/HTML/uk/kstars/sds.png
@@ -974,15 +984,19 @@ share/doc/HTML/uk/kstars/sidereal.docbook
 share/doc/HTML/uk/kstars/skycoords.docbook
 share/doc/HTML/uk/kstars/solarsys.docbook
 share/doc/HTML/uk/kstars/solarsystem.png
+share/doc/HTML/uk/kstars/solarsystem_tab.png
 share/doc/HTML/uk/kstars/spiralgalaxies.docbook
 share/doc/HTML/uk/kstars/stars.docbook
+share/doc/HTML/uk/kstars/supernovae_tab.png
 share/doc/HTML/uk/kstars/telescopes.docbook
+share/doc/HTML/uk/kstars/terrain_tab.png
 share/doc/HTML/uk/kstars/timezones.docbook
 share/doc/HTML/uk/kstars/tools.docbook
 share/doc/HTML/uk/kstars/utime.docbook
 share/doc/HTML/uk/kstars/viewops.png
 share/doc/HTML/uk/kstars/wut.docbook
 share/doc/HTML/uk/kstars/wut.png
+share/doc/HTML/uk/kstars/xplanet_tab.png
 share/doc/HTML/uk/kstars/zenith.docbook
 share/icons/hicolor/128x128/apps/kstars.png
 share/icons/hicolor/16x16/apps/kstars.png

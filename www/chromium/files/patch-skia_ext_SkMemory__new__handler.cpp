@@ -1,4 +1,4 @@
---- skia/ext/SkMemory_new_handler.cpp.orig	2021-03-12 23:57:28 UTC
+--- skia/ext/SkMemory_new_handler.cpp.orig	2021-04-14 18:41:08 UTC
 +++ skia/ext/SkMemory_new_handler.cpp
 @@ -78,7 +78,7 @@ static void* malloc_nothrow(size_t size) {
    // TODO(b.kelemen): we should always use UncheckedMalloc but currently it

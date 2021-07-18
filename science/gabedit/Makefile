@@ -1,5 +1,6 @@
 PORTNAME=	gabedit
 DISTVERSION=	2.5.1-300720 # the last number is "snapshot"
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://sites.google.com/site/allouchear/Home/gabedit/download/
 DISTNAME=	GabeditSrc${DISTVERSION:C/([0-9])\.([0-9])\.([0-9])-([0-9])/\1\2\3_\4/}
@@ -37,6 +38,7 @@ PLIST_FILES+=	share/icons/hicolor/${SZ}x${SZ}/apps/${PORTNAME}.png
 
 OPTIONS_DEFINE=		OPENMP
 OPTIONS_DEFAULT=	OPENMP
+OPTIONS_EXCLUDE_powerpc=	OPENMP
 
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/|${PREFIX}/|; s| -O2| ${CFLAGS}|; s|gcc|${CC}|' ${WRKSRC}/CONFIG

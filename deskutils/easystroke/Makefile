@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <tobias.kortkamp@gmail.com>
-
 PORTNAME=	easystroke
 PORTVERSION=	0.6.0
 PORTREVISION=	22

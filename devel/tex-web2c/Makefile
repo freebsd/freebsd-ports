@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-${PORTVERSION}-source
 DIST_SUBDIR=	TeX
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	freebsd-tex@FreeBSD.org
 COMMENT=	TeX implementation translating WEB to C
 
 LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15 \

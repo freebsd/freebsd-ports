@@ -1,9 +1,9 @@
 # Created by: Thomas-Martin Seck <tmseck@netcologne.de>
 
 PORTNAME=	libowfat
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	devel
-MASTER_SITES=	http://www.fefe.de/libowfat/
+MASTER_SITES=	https://www.fefe.de/libowfat/
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	General purpose library based on code by D. J. Bernstein
@@ -12,9 +12,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake tar:xz
-ALL_TARGET=	dep all
-
 MAKEFILE=	GNUmakefile
+ALL_TARGET=	dep all
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS

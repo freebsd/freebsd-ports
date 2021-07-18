@@ -18,6 +18,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	felix@palmen-it.de
 COMMENT=	Video converter reading from DVD and Bluray
 
+# Do not sell. Do not redistribute modified binaries, but
+# explicit permission to distribute a patched makemkvcon given by
+# copyright owner
 LICENSE=	MAKEMKV FDK LGPL21+ OpenSSL
 LICENSE_COMB=	multi
 LICENSE_NAME_MAKEMKV=	The MakeMKV EULA
@@ -41,12 +44,6 @@ USE_PERL5=	build
 BUILD_DEPENDS=	nasm>0:devel/nasm \
 		${LOCALBASE}/include/expat.h:textproc/expat2 \
 		patchelf>0:sysutils/patchelf
-
-NO_CDROM=	Do not sell
-RESTRICTED_FILES=	makemkv-bin-${PORTVERSION}.tar.gz
-LEGAL_TEXT=	${NO_CDROM}. Do not redistribute modified binaries, but\
-		explicit permission to distribute a patched makemkvcon given\
-		by copyright owner
 
 WRKSRC=		${WRKDIR}/makemkv-oss-${PORTVERSION}
 

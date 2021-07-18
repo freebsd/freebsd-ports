@@ -1,0 +1,8 @@
+CivetWeb is a C/C++ embeddable web server with optional CGI, SSL and
+Lua support. CivetWeb can be used by developers as a library, to add
+web server functionality to an existing application. It can also be
+used by end users as a stand-alone web server running on a Windows or
+Linux PC. It is available as single executable, no installation is
+required.
+
+WWW: https://github.com/civetweb/civetweb

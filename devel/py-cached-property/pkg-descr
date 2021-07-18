@@ -1,5 +1,4 @@
-A decorator for caching properties in classes.
-
-Makes caching of time or computational expensive properties quick and easy.
+cached-property is a decorator for caching properties in classes. It makes
+caching of time or computational expensive properties quick and easy.
 
 WWW: https://github.com/pydanny/cached-property

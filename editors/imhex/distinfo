@@ -1,3 +1,11 @@
-TIMESTAMP = 1613820150
-SHA256 (WerWolv-ImHex-v1.7.0_GH0.tar.gz) = 891c9268dda958922698c6fdfcba34ec7b20853f3764fe9d58c4a932a6b0d3d8
-SIZE (WerWolv-ImHex-v1.7.0_GH0.tar.gz) = 1189375
+TIMESTAMP = 1621959882
+SHA256 (imhex/xdg.hpp) = 2e08ce74adb71ff9b9aa9e1c999733fccd4b00967b9cf0c0e51dbf049392a9ec
+SIZE (imhex/xdg.hpp) = 7674
+SHA256 (imhex/WerWolv-ImHex-v1.8.1_GH0.tar.gz) = f70cb238d3db75530e30b72cac586ffad975123e9478dae967be0086e57f9edd
+SIZE (imhex/WerWolv-ImHex-v1.8.1_GH0.tar.gz) = 1758664
+SHA256 (imhex/btzy-nativefiledialog-extended-300203a_GH0.tar.gz) = 5db23b09fb098fa44cae663a5f2b38fc679dbf0a7acf9a8425500c9942478624
+SIZE (imhex/btzy-nativefiledialog-extended-300203a_GH0.tar.gz) = 400036
+SHA256 (imhex/fmtlib-fmt-6271406_GH0.tar.gz) = f07b01d4f092318f3da39d404f7cafbca311e7b576f09121adb1a54927826410
+SIZE (imhex/fmtlib-fmt-6271406_GH0.tar.gz) = 778679
+SHA256 (imhex/VirusTotal-yara-1842271_GH0.tar.gz) = a7148c3ddbc80746f60d56e0ecbbecc05c5f5401263ba95571aaf65dcaa75175
+SIZE (imhex/VirusTotal-yara-1842271_GH0.tar.gz) = 935600

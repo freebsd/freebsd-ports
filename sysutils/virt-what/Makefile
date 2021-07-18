@@ -1,5 +1,5 @@
 PORTNAME=	virt-what
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	sysutils
 MASTER_SITES=	https://people.redhat.com/~rjones/virt-what/files/
 

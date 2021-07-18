@@ -1,0 +1,5 @@
+include/suitesparse/colamd.h
+lib/libcolamd.so
+lib/libcolamd.so.2
+lib/libcolamd.so.2.9.6
+%%PORTDOCS%%%%DOCSDIR%%/COLAMD_README.txt

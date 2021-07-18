@@ -1,6 +1,6 @@
---- Makefile.orig	2013-12-03 06:24:57.000000000 +0100
-+++ Makefile	2013-12-03 06:25:48.000000000 +0100
-@@ -26,8 +26,8 @@
+--- Makefile.orig	2012-01-13 08:51:27 UTC
++++ Makefile
+@@ -26,8 +26,8 @@ installkld:
  	${MAKE} -f Makefile.kld install
  
  installman:

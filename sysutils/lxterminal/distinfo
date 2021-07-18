@@ -1,3 +1,4 @@
-TIMESTAMP = 1539749195
-SHA256 (lxterminal-0.3.2.tar.xz) = 3166b18493a8e55811b02aa0de825cbbea65e2b628e69006c1a65b98e1bb4484
-SIZE (lxterminal-0.3.2.tar.xz) = 198348
+TIMESTAMP = 1620260649
+SHA256 (lxterminal-0.4.0.tar.xz) = 9db8748923b3fa09a82ae2210ed1fa4cdb4c45312009da9caed103d48f8e9be7
+SHA512 (lxterminal-0.4.0.tar.xz) = d1462bf9739c5e9022cbabe9f9c8f70bbb882c0aba7a39d1f87d804f4002056151165d7555cace6f439c0acfbdcd3c959a420993379f646d066f5d30af71232e
+SIZE (lxterminal-0.4.0.tar.xz) = 201856

@@ -24,6 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
 		sqlite3>0:databases/sqlite3 \
 		zip>=0:archivers/zip
 
+CONFLICTS_BUILD=	brotli
 CONFLICTS_INSTALL=	czmq-3* mono5.10 mono6.8
 
 USES=	autoreconf bison compiler:c11 cpe gmake iconv libtool \
@@ -79,7 +80,7 @@ MONODEV_CONFIGURE_ON=	--enable-icall-symbol-map --enable-icall-export --with-cra
 
 NINJA_DESC=	Use ninja to build wherever possible
 NINJA_CONFIGURE_ON=	ninja
-NINJA_BUILD_DEPENDS=	ninja>0:devel/ninja
+NINJA_USES=	ninja:build
 
 NLS_DESC=	NLS Localization Support
 NLS_CONFIGURE_OFF=	--disable-nls

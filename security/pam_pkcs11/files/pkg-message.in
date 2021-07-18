@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Note: base configuration directory is %%ETCDIR%% instead of
-/etc/pam_pkcs11 in PAM-PKCS11 User Manual.
-EOM
-}
-]

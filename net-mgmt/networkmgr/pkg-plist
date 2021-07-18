@@ -1,5 +1,6 @@
 bin/netcardmgr
 bin/networkmgr
+etc/devd/networkmgr.conf
 etc/sudoers.d/networkmgr
 etc/xdg/autostart/networkmgr.desktop
 share/icons/hicolor/128x128/apps/nm-adhoc.png
@@ -198,6 +199,7 @@ share/icons/hicolor/scalable/apps/nm-signal-50-secure.svg
 share/icons/hicolor/scalable/apps/nm-signal-50.svg
 share/icons/hicolor/scalable/apps/nm-signal-75-secure.svg
 share/icons/hicolor/scalable/apps/nm-signal-75.svg
-%%DATADIR%%/authentication.py
+%%DATADIR%%/auto-switch.py
 %%DATADIR%%/net_api.py
+%%DATADIR%%/setup-nic.py
 %%DATADIR%%/trayicon.py

@@ -2,7 +2,6 @@
 
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -29,7 +28,15 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libpcre.so:devel/pcre \
 		libqhull.so.7:math/qhull \
 		libqrupdate.so:math/qrupdate \
-		libumfpack.so:math/suitesparse \
+		libamd.so:math/suitesparse-amd \
+		libcamd.so:math/suitesparse-camd \
+		libccolamd.so:math/suitesparse-ccolamd \
+		libcholmod.so:math/suitesparse-cholmod \
+		libcolamd.so:math/suitesparse-colamd \
+		libsuitesparseconfig.so:math/suitesparse-config \
+		libcxsparse.so:math/suitesparse-cxsparse \
+		libklu.so:math/suitesparse-klu \
+		libumfpack.so:math/suitesparse-umfpack \
 		libglpk.so:math/glpk \
 		libgl2ps.so:print/gl2ps \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -42,7 +49,7 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 
 USES=		charsetfix fortran gmake libtool perl5 pkgconfig readline \
 		tar:xz compiler:c++14-lang \
-		desktop-file-utils gl iconv xorg
+		desktop-file-utils gl iconv ncurses xorg
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/${PORTVERSION}
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
@@ -63,9 +70,12 @@ CONFIGURE_ENV=	GPERF="${LOCALBASE}/bin/gperf" \
 		JAVA_HOME=${JAVA_HOME} \
 		MAKEINFO=${LOCALBASE}/bin/makeinfo \
 		MKINFO=${LOCALBASE}/bin/makeinfo \
-		MOC_QTVER=${LOCALBASE}/bin/moc \
-		UIC_QTVER=${LOCALBASE}/bin/uic \
-		RCC_QTVER=${LOCALBASE}/bin/rcc \
+		MOC_QTVER=${MOC} \
+		UIC_QTVER=${UIC} \
+		RCC_QTVER=${RCC} \
+		LRELEASE_QTVER=${LRELEASE} \
+		QCOLLECTIONGENERATOR_QTVER=${QCOLLECTIONGENERATOR} \
+		QHELPGENERATOR_QTVER=${QHELPGENERATOR} \
 		ac_cv_type_max_align_t=yes \
 		ac_cv_path_SED=${LOCALBASE}/bin/gsed
 

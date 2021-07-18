@@ -1,8 +1,7 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 
 PORTNAME=	Twitter-API
-PORTVERSION=	1.0005
-PORTREVISION=	1
+PORTVERSION=	1.0006
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -34,8 +33,9 @@ RUN_DEPENDS=	p5-Net-Twitter>0:net/p5-Net-Twitter \
 		p5-libwww>=2.032:www/p5-libwww \
 		p5-namespace-clean>0:devel/p5-namespace-clean
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuildtiny
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

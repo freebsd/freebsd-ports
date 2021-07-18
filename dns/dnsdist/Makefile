@@ -1,23 +1,26 @@
 # Created by: Carlos J Puga Medina <cpm@fbsd.es>
 
 PORTNAME=	dnsdist
-DISTVERSION=	1.5.1
-PORTREVISION=	4
+DISTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 
 MAINTAINER=	tremere@cainites.net
-COMMENT=	Highly DNS-, DoS-, and abuse-aware load balancer
+COMMENT=	Highly DNS-, DoS- and abuse-aware loadbalancer
 
-LICENSE=	GPLv2 UNLICENSE
+LICENSE=	GPLv2 ISCL MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
-LICENSE_FILE_UNLICENSE=	${WRKSRC}/ext/incbin/UNLICENSE
+LICENSE_FILE_ISCL=	${WRKSRC}/ext/ipcrypt/LICENSE
+LICENSE_FILE_MIT=	${WRKSRC}/ext/yahttp/LICENSE
+
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	archs with 32-bits time_t are no longer supported by upstream
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libh2o-evloop.so:www/h2o \
-		libprotobuf.so:devel/protobuf \
 		libre2.so:devel/re2 \
 		libsodium.so:security/libsodium
 
@@ -61,10 +64,10 @@ CDB_CONFIGURE_ON=	CDB_CFLAGS="-I${LOCALBASE}/include" \
 			CDB_LIBS="-L${LOCALBASE}/lib -lcdb"
 
 DNSTAP_LIB_DEPENDS=		libfstrm.so:devel/fstrm
-DNSTAP_CONFIGURE_ENABLE=	fstrm
+DNSTAP_CONFIGURE_ENABLE=	dnstap
 
-GNUTLS_LIB_DEPENDS=		libgnutls.so:security/gnutls
-GNUTLS_CONFIGURE_ENABLE=	gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+GNUTLS_CONFIGURE_WITH=	gnutls
 
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 LMDB_CONFIGURE_ON=	--with-lmdb=${LOCALBASE}

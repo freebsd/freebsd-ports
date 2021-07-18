@@ -1,7 +1,7 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 
 PORTNAME=	tvdb_api
-PORTVERSION=	3.0.2
+PORTVERSION=	3.1.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

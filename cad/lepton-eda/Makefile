@@ -1,7 +1,7 @@
 PORTNAME=	lepton-eda
-PORTVERSION=	1.9.14
+PORTVERSION=	1.9.15
 CATEGORIES=	cad
-MASTER_SITES=	https://github.com/lepton-eda/lepton-eda/releases/download/${PORTVERSION}-20210407/
+MASTER_SITES=	https://github.com/lepton-eda/lepton-eda/releases/download/${PORTVERSION}-20210626/
 
 MAINTAINER=	graahnul.grom@gmail.com
 COMMENT=	Lepton Electronic Design Automation
@@ -14,32 +14,31 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libguile-2.2.so:lang/guile2 \
 		libpng.so:graphics/png \
 		libstroke.so:devel/libstroke \
-		libgtkextra-x11-3.0.so:x11-toolkits/gtkextra
+		libgtkextra-x11-3.0.so:x11-toolkits/gtkextra \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		desktop-file-utils gettext-tools gnome \
 		groff:build libtool localbase makeinfo pathfix perl5 \
 		pkgconfig shared-mime-info shebangfix
 USE_GNOME=	cairo gtk20
+INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	utils/pcb_backannotate/lepton-pcb_backannotate \
 		utils/refdes_renum/lepton-refdes_renum \
 		utils/symfix/lepton-symfix
 
-PORTEXAMPLES=	examples/*
-
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-INSTALLS_ICONS=	yes
-
 INFO=	lepton-scheme lepton-manual
+PORTEXAMPLES=	examples/*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	${REINPLACE_CMD} -e \

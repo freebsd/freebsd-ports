@@ -1,7 +1,7 @@
 # Created by: TERAMOTO Masahiro <markun@onohara.to>
 
 PORTNAME=	YAML-LibYAML
-PORTVERSION=	0.82
+PORTVERSION=	0.83
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

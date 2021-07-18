@@ -1,7 +1,5 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	kibana
-PORTVERSION=	6.8.15
+PORTVERSION=	6.8.16
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
@@ -14,18 +12,20 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 LICENSE=	APACHE20
 
 DEPRECATED=	Uses EOL Python 2.7 via www/node10
-EXPIRATION_DATE=2021-06-23
+EXPIRATION_DATE=	2021-06-23
 
 RUN_DEPENDS=	node10>=10.15.2:www/node10
 
-CONFLICTS=	kibana[3-5]* kibana7*
-
-NO_BUILD=	yes
-WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 USE_RC_SUBR=	${PORTNAME}
 
+CONFLICTS=	kibana7* kibana[3-5]*
+
+WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
+
+NO_BUILD=	yes
 SUB_FILES=	pkg-deinstall
-SUB_LIST+=	PORTNAME=${PORTNAME} PKGNAMESUFFIX=${PKGNAMESUFFIX}
+SUB_LIST+=	PKGNAMESUFFIX=${PKGNAMESUFFIX} \
+		PORTNAME=${PORTNAME}
 
 post-patch:
 	${FIND} -s ${WRKSRC}/node_modules -type d -empty -delete

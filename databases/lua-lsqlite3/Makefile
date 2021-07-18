@@ -13,6 +13,8 @@ COMMENT=	Lua 5.1 to 5.3 wrapper for SQLite3 library
 
 LICENSE=	MIT
 
+BROKEN=		does not build: cp: /wrkdirs/usr/ports/databases/sqlite3/work/sqlite-src-3350500/sqlite3.[ch]: No such file or directory
+
 BUILD_DEPENDS=	${NONEXISTENT}:databases/sqlite3:patch
 
 USES=		localbase:ldflags sqlite:3 zip lua:module

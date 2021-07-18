@@ -7,7 +7,7 @@ set -xeu
 : "${PORTSDIR=/usr/ports}"
 : "${DATADIR=/tmp/rust-bootstrap}"
 
-version=$(make -C "${PORTSDIR}/lang/rust" PORTVERSION)
+version=$(make -C "${PORTSDIR}/lang/rust" -V PORTVERSION)
 date=$(fetch -qo- https://static.rust-lang.org/dist/channel-rust-stable-date.txt)
 
 export ABI=FreeBSD:13:amd64

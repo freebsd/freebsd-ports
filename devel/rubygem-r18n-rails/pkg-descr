@@ -3,4 +3,4 @@ R18n-rails is a gem to add out-of-box R18n support to Rails I18n.
 It is a wrapper for R18n Rails API and R18n core libraries. See R18n core
 documentation for more information.
 
-WWW: https://github.com/r18n/r18n/tree/master/r18n-rails
+WWW: https://github.com/r18n/r18n-rails

@@ -17,8 +17,6 @@
 %%ELISPDIR%%/magit-branch.elc
 %%ELISPDIR%%/magit-clone.el
 %%ELISPDIR%%/magit-clone.elc
-%%ELISPDIR%%/magit-collab.el
-%%ELISPDIR%%/magit-collab.elc
 %%ELISPDIR%%/magit-commit.el
 %%ELISPDIR%%/magit-commit.elc
 %%ELISPDIR%%/magit-core.el
@@ -39,6 +37,8 @@
 %%ELISPDIR%%/magit-gitignore.elc
 %%ELISPDIR%%/magit-imenu.el
 %%ELISPDIR%%/magit-imenu.elc
+%%LIBEGIT2%%%%ELISPDIR%%/magit-libgit.el
+%%LIBEGIT2%%%%ELISPDIR%%/magit-libgit.elc
 %%ELISPDIR%%/magit-log.el
 %%ELISPDIR%%/magit-log.elc
 %%ELISPDIR%%/magit-margin.el
@@ -59,6 +59,8 @@
 %%ELISPDIR%%/magit-pull.elc
 %%ELISPDIR%%/magit-push.el
 %%ELISPDIR%%/magit-push.elc
+%%ELISPDIR%%/magit-reflog.el
+%%ELISPDIR%%/magit-reflog.elc
 %%ELISPDIR%%/magit-refs.el
 %%ELISPDIR%%/magit-refs.elc
 %%ELISPDIR%%/magit-remote.el
@@ -81,6 +83,8 @@
 %%ELISPDIR%%/magit-subtree.elc
 %%ELISPDIR%%/magit-tag.el
 %%ELISPDIR%%/magit-tag.elc
+%%ELISPDIR%%/magit-transient.el
+%%ELISPDIR%%/magit-transient.elc
 %%ELISPDIR%%/magit-utils.el
 %%ELISPDIR%%/magit-utils.elc
 %%ELISPDIR%%/magit-version.el

@@ -1,0 +1,10 @@
+--- transmute.orig	2021-03-04 06:50:29 UTC
++++ transmute
+@@ -329,6 +329,7 @@ case "$osname-$cputype" in
+   Darwin-*arm* )           platform=Darwin ;;
+   CYGWIN_NT-* | MINGW*-* ) platform=CYGWIN_NT ;;
+   Linux-*arm* )            platform=ARM ;;
++  FreeBSD-* )              platform=FreeBSD ;;
+   * )                      platform=UNSUPPORTED ;;
+ esac
+ compiled=$0."$platform"

@@ -1,11 +1,11 @@
 # Created by: Kris Moore <kmoore@FreeBSD.org>
 
 PORTNAME=	lxterminal
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.0
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/lxde/LXTerminal%20%28terminal%20emulator%29/LXTerminal%20${PORTVERSION}/
+MASTER_SITES=	SF/lxde/LXTerminal%20%28terminal%20emulator%29/LXTerminal%200.4.x/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Lightweight terminal emulator from the LXDE project
 
 LICENSE=	GPLv2+

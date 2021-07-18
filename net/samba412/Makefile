@@ -22,7 +22,7 @@ EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.12.14
+SAMBA4_VERSION=			4.12.15
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -383,7 +383,7 @@ MANDOC_CONFIGURE_ENV_OFF=	XSLTPROC="true"
 .include <bsd.port.options.mk>
 ##############################################################################
 
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 # unwind
 LIB_DEPENDS+=			libunwind.so:devel/libunwind
 .endif

@@ -1,11 +1,11 @@
---- loader/vk_loader_platform.h.orig	2020-11-23 16:19:03 UTC
+--- loader/vk_loader_platform.h.orig	2021-04-20 16:45:05 UTC
 +++ loader/vk_loader_platform.h
 @@ -35,7 +35,7 @@
  #include "vulkan/vk_platform.h"
  #include "vulkan/vk_sdk_platform.h"
  
--#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__)
-+#if defined(__unix__) || defined(__APPLE__) || defined(__Fuchsia__)
+-#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__)
++#if defined(__unix__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__)
  /* Linux-specific common code: */
  
  // Headers:

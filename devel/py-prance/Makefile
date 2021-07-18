@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	prance
-PORTVERSION=	0.20.0
+PORTVERSION=	0.21.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +12,11 @@ COMMENT=	Resolving Swagger/OpenAPI 2.0 and 3.0.0 parser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=3.0:textproc/py-chardet@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=5.3:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.22:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}semver>=2.9:devel/py-semver@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.14:devel/py-six@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=3.0,1<5.0,1:textproc/py-chardet@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=5.3<6:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.25<3:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}semver>=2.13<3:devel/py-semver@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.15<2:devel/py-six@${PY_FLAVOR}
 
 USES=		python:3.4+
 USE_PYTHON=	autoplist concurrent distutils

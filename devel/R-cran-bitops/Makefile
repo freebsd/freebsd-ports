@@ -1,16 +1,14 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	bitops
-DISTVERSION=	1.0-6
-PORTREVISION=	9
+DISTVERSION=	1.0-7
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Functions for Bitwise operations
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 USES=		cran:auto-plist,compiles
 

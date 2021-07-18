@@ -1,7 +1,7 @@
 # Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 
 PORTNAME=	osinfo-db
-PORTVERSION=	20210312
+PORTVERSION=	20210621
 CATEGORIES=	misc
 MASTER_SITES=	https://releases.pagure.org/libosinfo/
 

@@ -1,4 +1,4 @@
---- third_party/openscreen/src/platform/impl/udp_socket_posix.cc.orig	2021-03-13 00:03:38 UTC
+--- third_party/openscreen/src/platform/impl/udp_socket_posix.cc.orig	2021-04-14 18:43:06 UTC
 +++ third_party/openscreen/src/platform/impl/udp_socket_posix.cc
 @@ -31,7 +31,7 @@ namespace openscreen {
  namespace {
@@ -9,7 +9,7 @@
  constexpr int kMaxUdpBufferSize = 64 << 10;
  #endif
  
-@@ -380,7 +380,7 @@ bool IsPacketInfo<in6_pktinfo>(cmsghdr* cmh) {
+@@ -381,7 +381,7 @@ bool IsPacketInfo<in6_pktinfo>(cmsghdr* cmh) {
  template <class SockAddrType, class PktInfoType>
  ErrorOr<UdpPacket> ReceiveMessageInternal(int fd) {
    int upper_bound_bytes;
@@ -18,7 +18,7 @@
    // This should return the exact size of the next message.
    upper_bound_bytes = recv(fd, nullptr, 0, MSG_PEEK | MSG_TRUNC);
    if (upper_bound_bytes == -1) {
-@@ -408,7 +408,7 @@ ErrorOr<UdpPacket> ReceiveMessageInternal(int fd) {
+@@ -409,7 +409,7 @@ ErrorOr<UdpPacket> ReceiveMessageInternal(int fd) {
  
    // Although we don't do anything with the control buffer, on Linux
    // it is required for the message to be properly read.

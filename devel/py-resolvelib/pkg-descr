@@ -1,0 +1,5 @@
+ResolveLib at the highest level provides a Resolver class that includes
+dependency resolution logic. You give it some things, and a little information
+on how it should interact with them, and it will spit out a resolution result.
+
+WWW: https://github.com/sarugaku/resolvelib

@@ -44,3 +44,4 @@ bin/vcolg
 bin/watercluster2
 include/nauty/nauty.h
 lib/libnauty.a
+lib/libnauty.so

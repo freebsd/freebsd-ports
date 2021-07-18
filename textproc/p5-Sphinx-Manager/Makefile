@@ -18,8 +18,9 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Proc-ProcessTable>=0:devel/p5-Proc-ProcessTable \
 		p5-Sphinx-Config>=0.09:textproc/p5-Sphinx-Config
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

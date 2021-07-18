@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	omniauth-facebook
-PORTVERSION=	5.0.0
+PORTVERSION=	8.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +10,11 @@ COMMENT=	Facebook OAuth2 Strategy for OmniAuth
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.2:net/rubygem-omniauth-oauth2
+RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.2<2:net/rubygem-omniauth-oauth2
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>

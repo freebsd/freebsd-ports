@@ -1,6 +1,6 @@
---- chrome/browser/extensions/BUILD.gn.orig	2021-03-12 23:57:17 UTC
+--- chrome/browser/extensions/BUILD.gn.orig	2021-05-12 22:05:43 UTC
 +++ chrome/browser/extensions/BUILD.gn
-@@ -1248,6 +1248,12 @@ static_library("extensions") {
+@@ -1269,6 +1269,12 @@ static_library("extensions") {
      ]
    }
  

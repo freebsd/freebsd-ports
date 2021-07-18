@@ -1,7 +1,6 @@
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
-PORTREVISION=	1
 CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 
@@ -46,7 +45,7 @@ MAKE_ENV=	LANG="C" \
 		CPP=${CPP} \
 		MAKEFLAGS=""
 
-JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc64/ppc64/}
+JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:C/armv.*/arm/:S/i386/x86/:S/powerpc64/ppc64/}
 JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-normal-${JDK_BUILD_JVM}-${JDK_BUILD_TYPE}
 .if defined(BUILD_JRE)
 JDK_IMAGEDIR=	${JDK_BUILDDIR}/images/jre
@@ -59,7 +58,7 @@ NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	11
 JDK_MINOR_VERSION=	0
-JDK_PATCH_VERSION=	10
+JDK_PATCH_VERSION=	11
 JDK_BUILD_NUMBER=	9
 BSD_JDK_VERSION=	1
 
@@ -110,9 +109,9 @@ JDK_BUILD_TYPE=		release
 
 .include <bsd.port.pre.mk>
 
-# Support aarch64 on FreeBSD 12 and up
+# Support aarch64, armv6 and armv7 on FreeBSD 12 and up
 .if ${OSVERSION} >= 1200500
-ONLY_FOR_ARCHS+=aarch64
+ONLY_FOR_ARCHS+=aarch64 armv6 armv7
 .endif
 
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk11 \
@@ -145,10 +144,10 @@ CONFIGURE_ARGS+=	--with-extra-ldflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFA
 MAKE_ENV+=	USE_CLANG=true
 .endif
 
-.if ${ARCH} == aarch64 || ${ARCH:Mpowerpc64*}
+.if ${ARCH} == aarch64 || ${ARCH:Marmv*} || ${ARCH:Mpowerpc64*}
 CONFIGURE_ARGS+=	--disable-warnings-as-errors
 .endif
-.if ${ARCH} == aarch64 || (defined(PPC_ABI) && ${PPC_ABI} == ELFv1)
+.if ${ARCH} == aarch64 || ${ARCH:Marmv*} || (defined(PPC_ABI) && ${PPC_ABI} == ELFv1)
 CONFIGURE_ARGS+=	--disable-dtrace
 .endif
 .if (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc64le

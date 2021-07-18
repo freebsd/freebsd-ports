@@ -3,8 +3,7 @@
 PORTNAME=	chan_sccp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.3
-#DISTVERSIONSUFFIX=
-#PORTREVISION=	0
+PORTREVISION=	0
 CATEGORIES=	net
 PKGNAMEPREFIX=	asterisk-
 
@@ -14,7 +13,7 @@ COMMENT=	Replacement for the SCCP channel driver in Asterisk
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	asterisk16 asterisk18 asterisk13
+FLAVORS=	asterisk18 asterisk16 asterisk13
 FLAVOR?=	${FLAVORS:[1]}
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl

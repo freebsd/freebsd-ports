@@ -1,7 +1,7 @@
-TIMESTAMP = 1612495835
-SHA256 (oidn-weights-59bad6bb6344f8fb8205772df3f795c2dc72e23b.tar.gz) = 169e25c8a49e13ea5dd94d7bd97feb4bc45247f0532a86d2b46d6ac4fd15d3e1
-SIZE (oidn-weights-59bad6bb6344f8fb8205772df3f795c2dc72e23b.tar.gz) = 27410305
-SHA256 (OpenImageDenoise-oidn-v1.3.0_GH0.tar.gz) = a6b30d7aa3ea81490431dba823dab475daad73a7124940560624742126db7274
-SIZE (OpenImageDenoise-oidn-v1.3.0_GH0.tar.gz) = 3443375
+TIMESTAMP = 1624456807
+SHA256 (oidn-weights-a34b7641349c5a79e46a617d61709c35df5d6c28.tar.gz) = e52c689a0fdcade16936d2b417590dbc565340bc641e3e2f858e02492dbe3ee6
+SIZE (oidn-weights-a34b7641349c5a79e46a617d61709c35df5d6c28.tar.gz) = 41124636
+SHA256 (OpenImageDenoise-oidn-v1.4.1_GH0.tar.gz) = db022565ffe46266188992e1db68d11c94f799c37e25996f5aee44bebffcf079
+SIZE (OpenImageDenoise-oidn-v1.4.1_GH0.tar.gz) = 3422102
 SHA256 (OpenImageDenoise-mkl-dnn-eb3e967_GH0.tar.gz) = 5a46df10204a61daab19e8d1c01a074c1c2e98d7bb5303b13a4c7c592cc77b4f
 SIZE (OpenImageDenoise-mkl-dnn-eb3e967_GH0.tar.gz) = 5795997

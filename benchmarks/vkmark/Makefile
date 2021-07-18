@@ -1,6 +1,7 @@
 PORTNAME=	vkmark
 DISTVERSION=	2017.08-24
 DISTVERSIONSUFFIX=	-g53abc4f
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -22,6 +23,7 @@ USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	DRM WAYLAND X11
 OPTIONS_DEFAULT=DRM WAYLAND X11
+OPTIONS_EXCLUDE=${ARCH:Namd64:Ni386:Nx86_64:C/.+/DRM/} # https://github.com/vkmark/vkmark/issues/33
 OPTIONS_SUB=	yes
 
 DRM_DESC=		KMS console support

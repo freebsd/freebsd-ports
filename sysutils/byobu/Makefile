@@ -2,12 +2,12 @@
 
 PORTNAME=	byobu
 PORTVERSION=	5.133
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	jcoffman@xsecure.io
+MAINTAINER=	cws@cybersecu.red
 COMMENT=	Profile and configuration utilities for GNU Screen and/or tmux
 
 LICENSE=	GPLv3

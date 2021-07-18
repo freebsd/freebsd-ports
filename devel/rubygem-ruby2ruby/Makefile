@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@rtfm.jp>
 
 PORTNAME=	ruby2ruby
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

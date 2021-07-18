@@ -1,5 +1,6 @@
 PORTNAME=	linguisttools
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -22,6 +23,7 @@ post-install:
 .for f in lrelease lupdate
 	${INSTALL_MAN} ${WRKSRC}/src/linguist/${f}/${f}.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1
+	${RLN} ${STAGEDIR}${QT_BINDIR}/${f} ${STAGEDIR}${PREFIX}/bin/${f}-qt5
 .endfor
 
 .include <bsd.port.mk>

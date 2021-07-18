@@ -1,3 +1,3 @@
-TIMESTAMP = 1614706334
-SHA256 (KDE/release-service/20.12.3/libkleo-20.12.3.tar.xz) = 9949cc5492cf2ea9a349b56aa7d88a79d0f96a48baa73c9339e521e09448950c
-SIZE (KDE/release-service/20.12.3/libkleo-20.12.3.tar.xz) = 358540
+TIMESTAMP = 1625868310
+SHA256 (KDE/release-service/21.04.3/libkleo-21.04.3.tar.xz) = 1beefb25c80231655017ff9c2af41d85f340af837cf1f520aec3793454ae5582
+SIZE (KDE/release-service/21.04.3/libkleo-21.04.3.tar.xz) = 384252

@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# PROVIDE: regather
+# KEYWORD: shutdown
+#
+# Add the following line(s) to /etc/rc.conf to enable regather:
+#
+# regather_enable (bool):	Set to "NO" by default.
+#				Set to "YES" to enable regather
+#
+# regather_configfile (str):	Set to "%%PREFIX%%/etc/regather.conf" by default.
+#
+# regather_flags (str):		Set to "" by default.
+#
+
+. /etc/rc.subr
+
+name=regather
+rcvar=regather_enable
+
+: ${regather_enable="NO"}
+: ${regather_configfile="%%PREFIX%%/etc/regather.conf"}
+: ${regather_flags=""}
+
+command="%%PREFIX%%/bin/${name}"
+command_args="-c ${regather_configfile} ${regather_flags}"
+command_interpreter="%%PERL%%"
+
+required_files="${regather_configfile}"
+
+extra_commands="reload"
+pidfile="/var/run/regather.pid"
+
+load_rc_config "${name}"
+
+run_rc_command "$1"

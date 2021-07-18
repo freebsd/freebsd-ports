@@ -2,6 +2,7 @@
 
 PORTNAME=	numpy
 PORTVERSION=	1.16.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP \
@@ -43,7 +44,7 @@ NETLIB_VARS=		BLASLIBS="blas, cblas" BLASNAME=atlas LAPACKLIBS=lapack LIBRARIES=
 NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
 OPENBLAS_USES=		blaslapack:openblas
 OPENBLAS_VARS=		BLASLIBS="openblas, gfortran" BLASNAME=openblas LAPACKLIBS="openblas, gfortran" LIBRARIES=libraries
-SUITESPARSE_LIB_DEPENDS=libumfpack.so:math/suitesparse
+SUITESPARSE_LIB_DEPENDS=libumfpack.so:math/suitesparse-umfpack
 
 post-extract:
 	@${TOUCH} ${WRKSRC}/numpy/f2py/tests/src/temp

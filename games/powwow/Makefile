@@ -1,10 +1,10 @@
 # Created by: Juraj Lutter <otis@sk.freebsd.org>
 
 PORTNAME=	powwow
-PORTVERSION=	1.2.22
+PORTVERSION=	1.2.23
 CATEGORIES=	games
 MASTER_SITES=	https://hoopajoo.net/static/projects/ \
-		https://ftp.sk.FreeBSD.org/pub/FreeBSD/local/distfiles/
+		LOCAL/otis/games_powwow/
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Client to play MUDs
@@ -28,6 +28,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/follow ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${MAN6PREFIX}/man/man6
 	${INSTALL_MAN} ${WRKSRC}/man/powwow.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/powwow.doc ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/powwow.help ${STAGEDIR}${DOCSDIR}

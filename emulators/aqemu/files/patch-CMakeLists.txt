@@ -1,5 +1,14 @@
---- CMakeLists.txt.orig	2017-12-31 01:02:19 UTC
+--- CMakeLists.txt.orig	2016-05-31 12:34:02 UTC
 +++ CMakeLists.txt
+@@ -285,7 +285,7 @@ MACRO( pack_icons _sources )
+ 		
+ 		SET( _out ${CMAKE_CURRENT_SOURCE_DIR}/${_basename}.rcc )
+ 		
+-		ADD_CUSTOM_COMMAND( OUTPUT ${_out} COMMAND rcc ARGS ${_in} -binary -o ${_out} DEPENDS ${_in} )
++		ADD_CUSTOM_COMMAND( OUTPUT ${_out} COMMAND ${Qt5Core_RCC_EXECUTABLE} ARGS ${_in} -binary -o ${_out} DEPENDS ${_in} )
+ 		
+ 		SET( ${_sources} ${${_sources}} ${_out} )
+ 	ENDFOREACH( curFile )
 @@ -327,11 +327,11 @@ IF( INSTALL_MAN )
  						WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} )
  		

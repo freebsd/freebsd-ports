@@ -1,0 +1,30 @@
+--- CMakeLists.txt.orig	2020-04-15 05:06:21 UTC
++++ CMakeLists.txt
+@@ -1,25 +1,13 @@
+ cmake_minimum_required(VERSION 3.13)
+ project(Forest)
+-include(ExternalProject)
++#include(ExternalProject)
+ enable_testing()
+ 
+-set(CMAKE_CXX_STANDARD 11)
++set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_FLAGS -Wall)
+ 
+-ExternalProject_Add(
+-  gtest
+-  PREFIX gtest
+-  URL https://github.com/google/googletest/archive/release-1.10.0.tar.gz
+-  URL_HASH SHA256=9dc9157a9a1551ec7a7e43daea9a694a0bb5fb8bec81235d8a1e6ef64c716dcb
+-  INSTALL_COMMAND ""
+-)
+-
+ include_directories(
+   ${CMAKE_SOURCE_DIR}
+-  ${CMAKE_BINARY_DIR}/gtest/src/gtest/googletest/include
+-)
+-link_directories(
+-  ${CMAKE_BINARY_DIR}/gtest/src/gtest-build/lib
+ )
+ 
+ if (DEFINED ENV{OPENSSL_INCLUDE_DIR})

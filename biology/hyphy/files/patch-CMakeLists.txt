@@ -1,0 +1,27 @@
+--- CMakeLists.txt.orig	2021-06-05 18:31:25 UTC
++++ CMakeLists.txt
+@@ -307,21 +307,16 @@ endif(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+ #-------------------------------------------------------------------------------
+ find_package(CURL)
+ if(${CURL_FOUND})
+-    #if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+-    #    set(DEFAULT_LIBRARIES " crypto curl ssl")
+-    #else(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+-    #    set(DEFAULT_LIBRARIES "dl crypto curl ssl")
+-    #endif(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+     message(${CURL_LIBRARIES})
+-    string(APPEND DEFAULT_LIBRARIES " " ${CURL_LIBRARIES})
++    list(APPEND DEFAULT_LIBRARIES ${CURL_LIBRARIES})
+     add_definitions (-D__HYPHYCURL__)
+ endif(${CURL_FOUND})
+ 
+ if(NOT NOZLIB)
+ 	find_package(ZLIB 1.2.9)
+ 	if(${ZLIB_FOUND})
+-		string(APPEND DEFAULT_LIBRARIES " " ${ZLIB_LIBRARIES})
+-		include_directories(${ZLIB_INCLUDE_DIRS})
++                list(APPEND DEFAULT_LIBRARIES ${ZLIB_LIBRARIES})
++                include_directories(${ZLIB_INCLUDE_DIRS})
+ 		add_definitions (-D__ZLIB__)
+ 	endif(${ZLIB_FOUND})
+ endif(NOT NOZLIB)

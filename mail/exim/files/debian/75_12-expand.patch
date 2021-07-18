@@ -1,0 +1,34 @@
+From c02ea85f525ff256d78e084d6f76fe3032fd52e1 Mon Sep 17 00:00:00 2001
+From: "Heiko Schlittermann (HS12-RIPE)" <hs@schlittermann.de>
+Date: Thu, 1 Apr 2021 21:33:50 +0200
+Subject: [PATCH 12/23] expand
+
+---
+ src/expand.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/expand.c b/src/expand.c
+index 05de94c49..21b86ebf5 100644
+--- a/src/expand.c
++++ b/src/expand.c
+@@ -4383,13 +4383,13 @@ DEBUG(D_expand)
+ f.expand_string_forcedfail = FALSE;
+ expand_string_message = US"";
+ 
+-if (is_tainted(string))
++{ uschar *m;
++if (m = is_tainted2(string, LOG_MAIN|LOG_PANIC, "Tainted string '%s' in expansion", s))
+   {
+-  expand_string_message =
+-    string_sprintf("attempt to expand tainted string '%s'", s);
+-  log_write(0, LOG_MAIN|LOG_PANIC, "%s", expand_string_message);
++  expand_string_message = m;
+   goto EXPAND_FAILED;
+   }
++}
+ 
+ while (*s != 0)
+   {
+-- 
+2.30.2
+

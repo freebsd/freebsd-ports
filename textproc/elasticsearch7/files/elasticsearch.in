@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # PROVIDE: elasticsearch
-# REQUIRE: NETWORKING SERVERS
-# BEFORE: DAEMON
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable elasticsearch:
@@ -44,7 +44,7 @@ command=%%PREFIX%%/lib/elasticsearch/bin/elasticsearch
 command_args="-d --pidfile=${pidfile}"
 
 export ES_PATH_CONF=${elasticsearch_config}
-export JAVA_HOME=${elasticsearch_java_home}
+export ES_JAVA_HOME=${elasticsearch_java_home}
 
 elasticsearch_precmd()
 {

@@ -2,7 +2,7 @@
 { type: install
   message: <<EOM
 Known issues:
-- Intel GPUs are not supported yet, see
+- Intel GPUs require mesa-devel, see
   https://github.com/Plagman/gamescope/issues/49
 EOM
 }

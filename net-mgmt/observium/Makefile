@@ -3,7 +3,7 @@
 
 PORTNAME=	observium
 PORTVERSION=	0.19.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
@@ -40,8 +40,8 @@ RUN_DEPENDS+=	rrdtool:databases/rrdtool \
 		sudo:security/sudo
 LIB_DEPENDS+=	libpng.so:graphics/png
 
-OPTIONS_DEFINE=	APACHEMOD DOCS EXAMPLES FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER SVN WMIC
-OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER SVN WMIC
+OPTIONS_DEFINE=	APACHEMOD DOCS EXAMPLES FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER SUBVERSION WMIC
+OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER SUBVERSION WMIC
 APACHEMOD_DESC=	Use PHP with Apache 2.2+ module
 FPING_DESC=	Enable fping support ping monitoring
 IPMITOOL_DESC=	Enable support for monitoring hardware IPMI
@@ -55,7 +55,7 @@ LIBVIRT_RUN_DEPENDS=	virsh:devel/libvirt
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
 NMAP_RUN_DEPENDS=	nmap:security/nmap
 PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mysqlclient>=1.3.13:databases/py-mysqlclient@${PY_FLAVOR}
-SVN_RUN_DEPENDS=	svn:devel/subversion
+SUBVERSION_RUN_DEPENDS=	svn:devel/subversion
 WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
 
 .include <bsd.port.options.mk>

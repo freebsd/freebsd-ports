@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	buku
-PORTVERSION=	4.5
+PORTVERSION=	4.6
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 

@@ -1,4 +1,4 @@
---- chrome/browser/send_tab_to_self/send_tab_to_self_client_service.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/send_tab_to_self/send_tab_to_self_client_service.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/send_tab_to_self/send_tab_to_self_client_service.cc
 @@ -40,7 +40,7 @@ void SendTabToSelfClientService::SendTabToSelfModelLoa
  void SendTabToSelfClientService::EntriesAddedRemotely(

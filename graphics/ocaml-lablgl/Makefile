@@ -2,7 +2,7 @@
 
 PORTNAME=	lablgl
 PORTVERSION=	1.05
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/lsl/dist/ \

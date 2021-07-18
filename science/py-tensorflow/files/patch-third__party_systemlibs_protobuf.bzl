@@ -1,6 +1,6 @@
---- third_party/systemlibs/protobuf.bzl.orig	2019-07-26 12:28:57.790848000 +0100
-+++ third_party/systemlibs/protobuf.bzl	2019-07-26 12:29:42.978059000 +0100
-@@ -76,7 +76,7 @@
+--- third_party/systemlibs/protobuf.bzl.orig	2021-01-04 20:18:42 UTC
++++ third_party/systemlibs/protobuf.bzl
+@@ -76,7 +76,7 @@ def _proto_gen_impl(ctx):
      source_dir = _SourceDir(ctx)
      gen_dir = _GenDir(ctx)
      if source_dir:

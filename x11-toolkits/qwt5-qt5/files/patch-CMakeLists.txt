@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2021-02-11 06:01:52 UTC
++++ CMakeLists.txt
+@@ -75,8 +75,5 @@ if( "${CMAKE_SOURCE_DIR}" STREQUAL "${PROJECT_SOURCE_D
+   configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/qwt5-qt5.pc.in" "${CMAKE_CURRENT_BINARY_DIR}/qwt5-qt5.pc" @ONLY )
+   install( FILES "${CMAKE_CURRENT_BINARY_DIR}/qwt5-qt5.pc" DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig )
+ 
+-  install( DIRECTORY ${PROJECT_SOURCE_DIR}/doc/html/ DESTINATION ${CMAKE_INSTALL_DOCDIR}/html )
+-  if( UNIX )
+-    install( DIRECTORY ${PROJECT_SOURCE_DIR}/doc/man/ DESTINATION ${CMAKE_INSTALL_MANDIR} )
+-  endif()
++  install( DIRECTORY ${PROJECT_SOURCE_DIR}/doc/html/ DESTINATION ${CMAKE_INSTALL_DOCDIR} )
+ endif()

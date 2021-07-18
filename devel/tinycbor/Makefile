@@ -13,9 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcjson.so:devel/libcjson
 
+USES=		gmake localbase pathfix
+
 INSTALL_TARGET=	install-strip
 MAKE_ARGS=	SOVERSION=${PORTVERSION:R:R}
-USES=		gmake localbase pathfix
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
@@ -27,8 +28,8 @@ do-configure:
 	@cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} configure
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtinycbor.so.${PORTVERSION}
 	${LN} -fs libtinycbor.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libtinycbor.so
 	${LN} -fs libtinycbor.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libtinycbor.so.${PORTVERSION:R:R}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtinycbor.so
 
 .include <bsd.port.mk>

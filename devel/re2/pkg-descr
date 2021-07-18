@@ -1,7 +1,8 @@
 RE2 is a fast, safe, thread-friendly alternative to backtracking regular
-expression engines like those used in PCRE, Perl, and Python.
-It is a C++ library.
-RE2 uses automata theory  to guarantee that regular expression searches run in
+expression engines like those used in PCRE, Perl, and Python. It is a C++
+library.
+
+RE2 uses automata theory to guarantee that regular expression searches run in
 time linear in the size of the input. RE2 implements memory limits, so that
 searches can be constrained to a fixed amount of memory. RE2 is engineered to
 use a small fixed C++ stack footprint no matter what inputs or regular

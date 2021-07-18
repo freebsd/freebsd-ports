@@ -38,4 +38,11 @@
      %%ETCDIR%%/examples-config/
 EOM
 }
+{
+  type: remove
+  message: <<EOM
+If you are removing dovecot permanently, you should 'rm -rf /var/db/dovecot' to
+clear out any remaining data.
+EOM
+}
 ]

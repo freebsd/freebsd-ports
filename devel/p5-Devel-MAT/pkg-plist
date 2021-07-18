@@ -28,6 +28,7 @@ bin/pmat-list-orphans
 %%SITE_ARCH%%/Devel/MAT/Tool/Stack.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Summary.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Symbols.pm
+%%SITE_ARCH%%/Devel/MAT/ToolBase/GraphWalker.pm
 %%SITE_ARCH%%/Devel/MAT/UI.pod
 %%SITE_ARCH%%/Devel/MAT/UserGuide.pod
 %%SITE_ARCH%%/Devel/MAT/UserGuide/IdentifyingAnSV.pod

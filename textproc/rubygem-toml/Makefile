@@ -1,8 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	toml
-PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTVERSION=	0.3.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

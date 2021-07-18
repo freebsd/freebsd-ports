@@ -23,6 +23,7 @@ stop_postcmd="dbus_poststop"
 
 dbus_prestart()
 {
+    mkdir -p /var/lib/dbus
     %%PREFIX%%/bin/dbus-uuidgen --ensure
     mkdir -p /var/run/dbus
 }

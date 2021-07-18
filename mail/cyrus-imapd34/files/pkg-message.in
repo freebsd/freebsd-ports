@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+To setup mail spool, modify %%PREFIX%%/etc/imapd.conf appropriately,
+then run %%PREFIX%%/cyrus/sbin/mkimap.
+To run Cyrus IMAPd from startup, add cyrus_imapd_enable="YES" in your
+/etc/rc.conf.
+EOM
+}
+]

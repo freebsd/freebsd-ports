@@ -1,6 +1,6 @@
-TIMESTAMP = 1616673280
-SHA256 (intel-gmmlib-intel-gmmlib-21.1.1_GH0.tar.gz) = b996f09264e05ebca0dc275ea32791ba22769fe04147592371b4a61cdf508763
-SIZE (intel-gmmlib-intel-gmmlib-21.1.1_GH0.tar.gz) = 737024
+TIMESTAMP = 1623922317
+SHA256 (intel-gmmlib-intel-gmmlib-21.2.1_GH0.tar.gz) = 912cd86e4cb564b6fa549d69a28b72b9cdcb5a3eab9320955ed70ac37381fc2f
+SIZE (intel-gmmlib-intel-gmmlib-21.2.1_GH0.tar.gz) = 746883
 SHA256 (f17dd87c7f57.patch) = 0bdfd22e8f36a097c875796c7bbf7003a16cc7535fdf5d3caa3a7de9dc21c28e
 SIZE (f17dd87c7f57.patch) = 1485
 SHA256 (7171f6d818fc.patch) = 8a3e8fb3aff618c41818df7e2a46af2b649a4a059b0ec37d053eeb5972dd846a

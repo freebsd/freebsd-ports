@@ -1,4 +1,4 @@
---- net/dns/dns_reloader.cc.orig	2021-03-12 23:57:27 UTC
+--- net/dns/dns_reloader.cc.orig	2021-04-14 18:41:07 UTC
 +++ net/dns/dns_reloader.cc
 @@ -7,6 +7,10 @@
  #if defined(OS_POSIX) && !defined(OS_APPLE) && !defined(OS_OPENBSD) && \

@@ -46,16 +46,14 @@ share/themes/ClassicLooks (HDPI)/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks (HDPI)/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks (HDPI)/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks (HDPI)/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks (HDPI)/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks (HDPI)/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks (HDPI)/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks (HDPI)/gtk-2.0/options/tab-flat.css
@@ -69,14 +67,10 @@ share/themes/ClassicLooks (HDPI)/gtk-3.0/gtk.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/default-button-off.css
@@ -113,16 +107,14 @@ share/themes/ClassicLooks (HDPI)/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks (HDPI)/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks (HDPI)/gtk-3.0/options/tab-flat.css
@@ -179,16 +171,14 @@ share/themes/ClassicLooks Ambiance/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Ambiance/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Ambiance/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Ambiance/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Ambiance/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Ambiance/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Ambiance/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Ambiance/gtk-2.0/options/tab-flat.css
@@ -202,14 +192,10 @@ share/themes/ClassicLooks Ambiance/gtk-3.0/gtk.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/default-button-off.css
@@ -246,16 +232,14 @@ share/themes/ClassicLooks Ambiance/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Ambiance/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Ambiance/gtk-3.0/options/tab-flat.css
@@ -312,16 +296,14 @@ share/themes/ClassicLooks Bronze/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Bronze/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Bronze/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Bronze/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Bronze/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Bronze/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Bronze/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Bronze/gtk-2.0/options/tab-flat.css
@@ -335,14 +317,10 @@ share/themes/ClassicLooks Bronze/gtk-3.0/gtk.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/default-button-off.css
@@ -379,16 +357,14 @@ share/themes/ClassicLooks Bronze/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Bronze/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Bronze/gtk-3.0/options/tab-flat.css
@@ -445,16 +421,14 @@ share/themes/ClassicLooks Crux/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Crux/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Crux/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Crux/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Crux/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Crux/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Crux/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Crux/gtk-2.0/options/tab-flat.css
@@ -468,14 +442,10 @@ share/themes/ClassicLooks Crux/gtk-3.0/gtk.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/default-button-off.css
@@ -512,16 +482,14 @@ share/themes/ClassicLooks Crux/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Crux/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Crux/gtk-3.0/options/tab-flat.css
@@ -578,16 +546,14 @@ share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Devilsclaw/gtk-2.0/options/tab-flat.css
@@ -601,14 +567,10 @@ share/themes/ClassicLooks Devilsclaw/gtk-3.0/gtk.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/default-button-off.css
@@ -645,16 +607,14 @@ share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Devilsclaw/gtk-3.0/options/tab-flat.css
@@ -711,16 +671,14 @@ share/themes/ClassicLooks Graphite/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Graphite/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Graphite/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Graphite/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Graphite/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Graphite/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Graphite/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Graphite/gtk-2.0/options/tab-flat.css
@@ -734,14 +692,10 @@ share/themes/ClassicLooks Graphite/gtk-3.0/gtk.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/default-button-off.css
@@ -778,16 +732,14 @@ share/themes/ClassicLooks Graphite/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Graphite/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Graphite/gtk-3.0/options/tab-flat.css
@@ -844,16 +796,14 @@ share/themes/ClassicLooks Greybird/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Greybird/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Greybird/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Greybird/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Greybird/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Greybird/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Greybird/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Greybird/gtk-2.0/options/tab-flat.css
@@ -867,14 +817,10 @@ share/themes/ClassicLooks Greybird/gtk-3.0/gtk.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/default-button-off.css
@@ -911,16 +857,14 @@ share/themes/ClassicLooks Greybird/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Greybird/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Greybird/gtk-3.0/options/tab-flat.css
@@ -977,16 +921,14 @@ share/themes/ClassicLooks Icelake/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Icelake/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Icelake/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Icelake/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Icelake/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Icelake/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Icelake/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Icelake/gtk-2.0/options/tab-flat.css
@@ -1000,14 +942,10 @@ share/themes/ClassicLooks Icelake/gtk-3.0/gtk.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/default-button-off.css
@@ -1044,16 +982,14 @@ share/themes/ClassicLooks Icelake/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Icelake/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Icelake/gtk-3.0/options/tab-flat.css
@@ -1110,16 +1046,14 @@ share/themes/ClassicLooks Irix/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Irix/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Irix/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Irix/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Irix/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Irix/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Irix/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Irix/gtk-2.0/options/tab-flat.css
@@ -1133,14 +1067,10 @@ share/themes/ClassicLooks Irix/gtk-3.0/gtk.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/default-button-off.css
@@ -1177,16 +1107,14 @@ share/themes/ClassicLooks Irix/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Irix/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Irix/gtk-3.0/options/tab-flat.css
@@ -1243,16 +1171,14 @@ share/themes/ClassicLooks Rainyday/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Rainyday/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Rainyday/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Rainyday/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Rainyday/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Rainyday/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Rainyday/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Rainyday/gtk-2.0/options/tab-flat.css
@@ -1266,14 +1192,10 @@ share/themes/ClassicLooks Rainyday/gtk-3.0/gtk.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/default-button-off.css
@@ -1310,16 +1232,14 @@ share/themes/ClassicLooks Rainyday/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Rainyday/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Rainyday/gtk-3.0/options/tab-flat.css
@@ -1376,16 +1296,14 @@ share/themes/ClassicLooks Raleigh/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Raleigh/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Raleigh/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Raleigh/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Raleigh/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Raleigh/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Raleigh/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Raleigh/gtk-2.0/options/tab-flat.css
@@ -1399,14 +1317,10 @@ share/themes/ClassicLooks Raleigh/gtk-3.0/gtk.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/default-button-off.css
@@ -1443,16 +1357,14 @@ share/themes/ClassicLooks Raleigh/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Raleigh/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Raleigh/gtk-3.0/options/tab-flat.css
@@ -1509,16 +1421,14 @@ share/themes/ClassicLooks Redmond/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Redmond/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Redmond/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Redmond/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Redmond/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Redmond/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Redmond/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Redmond/gtk-2.0/options/tab-flat.css
@@ -1532,14 +1442,10 @@ share/themes/ClassicLooks Redmond/gtk-3.0/gtk.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/default-button-off.css
@@ -1576,16 +1482,14 @@ share/themes/ClassicLooks Redmond/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Redmond/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Redmond/gtk-3.0/options/tab-flat.css
@@ -1642,16 +1546,14 @@ share/themes/ClassicLooks Solaris/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Solaris/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Solaris/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Solaris/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Solaris/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Solaris/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Solaris/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Solaris/gtk-2.0/options/tab-flat.css
@@ -1665,14 +1567,10 @@ share/themes/ClassicLooks Solaris/gtk-3.0/gtk.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/default-button-off.css
@@ -1709,16 +1607,14 @@ share/themes/ClassicLooks Solaris/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Solaris/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Solaris/gtk-3.0/options/tab-flat.css
@@ -1775,16 +1671,14 @@ share/themes/ClassicLooks Straw/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Straw/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Straw/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Straw/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Straw/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Straw/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Straw/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Straw/gtk-2.0/options/tab-flat.css
@@ -1798,14 +1692,10 @@ share/themes/ClassicLooks Straw/gtk-3.0/gtk.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/default-button-off.css
@@ -1842,16 +1732,14 @@ share/themes/ClassicLooks Straw/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Straw/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Straw/gtk-3.0/options/tab-flat.css
@@ -1908,16 +1796,14 @@ share/themes/ClassicLooks Summerfield/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Summerfield/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Summerfield/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Summerfield/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Summerfield/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Summerfield/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Summerfield/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Summerfield/gtk-2.0/options/tab-flat.css
@@ -1931,14 +1817,10 @@ share/themes/ClassicLooks Summerfield/gtk-3.0/gtk.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/default-button-off.css
@@ -1975,16 +1857,14 @@ share/themes/ClassicLooks Summerfield/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Summerfield/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Summerfield/gtk-3.0/options/tab-flat.css
@@ -2041,16 +1921,14 @@ share/themes/ClassicLooks Summerstorm/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks Summerstorm/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks Summerstorm/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks Summerstorm/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Summerstorm/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Summerstorm/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks Summerstorm/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks Summerstorm/gtk-2.0/options/tab-flat.css
@@ -2064,14 +1942,10 @@ share/themes/ClassicLooks Summerstorm/gtk-3.0/gtk.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/default-button-off.css
@@ -2108,16 +1982,14 @@ share/themes/ClassicLooks Summerstorm/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks Summerstorm/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks Summerstorm/gtk-3.0/options/tab-flat.css
@@ -2382,6 +2254,7 @@ share/themes/ClassicLooks XFWM4/xfwm4/top-right-inactive.xpm
 share/themes/ClassicLooks XFWM4/xfwm4/xfmw4
 share/themes/ClassicLooks/TOOLS/CONFIG/HACKING
 share/themes/ClassicLooks/TOOLS/CONFIG/lib/set-theme-color.sh
+share/themes/ClassicLooks/TOOLS/CONFIG/lib/themecolor.sh
 share/themes/ClassicLooks/classiclooks_mark
 share/themes/ClassicLooks/gtk-2.0/assets/arrow-down.png
 share/themes/ClassicLooks/gtk-2.0/assets/button-bg-hover.png
@@ -2436,16 +2309,14 @@ share/themes/ClassicLooks/gtk-2.0/options/panel-black.css
 share/themes/ClassicLooks/gtk-2.0/options/panel-contrast.css
 share/themes/ClassicLooks/gtk-2.0/options/panel-dark.css
 share/themes/ClassicLooks/gtk-2.0/options/panel-themed.css
-share/themes/ClassicLooks/gtk-2.0/options/scrollbar-accent.css
-share/themes/ClassicLooks/gtk-2.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks/gtk-2.0/options/scrollbar-flat.css
-share/themes/ClassicLooks/gtk-2.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks/gtk-2.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks/gtk-2.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks/gtk-2.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks/gtk-2.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks/gtk-2.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks/gtk-2.0/options/scrollbar-themed.css
+share/themes/ClassicLooks/gtk-2.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks/gtk-2.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks/gtk-2.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks/gtk-2.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks/gtk-2.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks/gtk-2.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks/gtk-2.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks/gtk-2.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks/gtk-2.0/options/tab-button.css
 share/themes/ClassicLooks/gtk-2.0/options/tab-classic.css
 share/themes/ClassicLooks/gtk-2.0/options/tab-flat.css
@@ -2631,14 +2502,10 @@ share/themes/ClassicLooks/gtk-3.0/gtk.css
 share/themes/ClassicLooks/gtk-3.0/options/button-hover-accent.css
 share/themes/ClassicLooks/gtk-3.0/options/button-hover-contrast.css
 share/themes/ClassicLooks/gtk-3.0/options/button-hover-themed.css
-share/themes/ClassicLooks/gtk-3.0/options/button-pressed-accent.css
-share/themes/ClassicLooks/gtk-3.0/options/button-pressed-contrast.css
 share/themes/ClassicLooks/gtk-3.0/options/button-pressed-dented.css
 share/themes/ClassicLooks/gtk-3.0/options/button-pressed-dented_tab.css
 share/themes/ClassicLooks/gtk-3.0/options/button-pressed-sunken.css
 share/themes/ClassicLooks/gtk-3.0/options/button-pressed-sunken_tab.css
-share/themes/ClassicLooks/gtk-3.0/options/button-pressed-themed.css
-share/themes/ClassicLooks/gtk-3.0/options/button-pressed-tx.css
 share/themes/ClassicLooks/gtk-3.0/options/default-button-accent.css
 share/themes/ClassicLooks/gtk-3.0/options/default-button-contrast.css
 share/themes/ClassicLooks/gtk-3.0/options/default-button-off.css
@@ -2675,16 +2542,14 @@ share/themes/ClassicLooks/gtk-3.0/options/panel-black.css
 share/themes/ClassicLooks/gtk-3.0/options/panel-contrast.css
 share/themes/ClassicLooks/gtk-3.0/options/panel-dark.css
 share/themes/ClassicLooks/gtk-3.0/options/panel-themed.css
-share/themes/ClassicLooks/gtk-3.0/options/scrollbar-accent.css
-share/themes/ClassicLooks/gtk-3.0/options/scrollbar-contrast.css
-share/themes/ClassicLooks/gtk-3.0/options/scrollbar-flat.css
-share/themes/ClassicLooks/gtk-3.0/options/scrollbar-handle-decoration-off.css
-share/themes/ClassicLooks/gtk-3.0/options/scrollbar-handle-decoration-on.css
-share/themes/ClassicLooks/gtk-3.0/options/scrollbar-hover-accent.css
-share/themes/ClassicLooks/gtk-3.0/options/scrollbar-hover-contrast.css
-share/themes/ClassicLooks/gtk-3.0/options/scrollbar-hover-flat.css
-share/themes/ClassicLooks/gtk-3.0/options/scrollbar-hover-themed.css
-share/themes/ClassicLooks/gtk-3.0/options/scrollbar-themed.css
+share/themes/ClassicLooks/gtk-3.0/options/scrollbar-controls-accent.css
+share/themes/ClassicLooks/gtk-3.0/options/scrollbar-controls-contrast.css
+share/themes/ClassicLooks/gtk-3.0/options/scrollbar-controls-flat.css
+share/themes/ClassicLooks/gtk-3.0/options/scrollbar-controls-hover-accent.css
+share/themes/ClassicLooks/gtk-3.0/options/scrollbar-controls-hover-themed.css
+share/themes/ClassicLooks/gtk-3.0/options/scrollbar-controls-themed.css
+share/themes/ClassicLooks/gtk-3.0/options/scrollbar-decoration-off.css
+share/themes/ClassicLooks/gtk-3.0/options/scrollbar-decoration-on.css
 share/themes/ClassicLooks/gtk-3.0/options/tab-button.css
 share/themes/ClassicLooks/gtk-3.0/options/tab-classic.css
 share/themes/ClassicLooks/gtk-3.0/options/tab-flat.css

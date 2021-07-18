@@ -1,8 +1,8 @@
 PORTNAME=	winetricks
-PORTVERSION=	20191224
+PORTVERSION=	20210617
 CATEGORIES=	emulators
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Easy way to work around problems in Wine
 
 LICENSE=	LGPL21
@@ -15,6 +15,7 @@ USE_PERL5=	run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Winetricks
+GH_TAGNAME=	b0210c3
 
 NO_ARCH=	yes
 NO_BUILD=	yes

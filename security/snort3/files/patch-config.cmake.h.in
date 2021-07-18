@@ -1,6 +1,6 @@
---- config.cmake.h.in.orig	2020-07-10 23:41:43 UTC
+--- config.cmake.h.in.orig	2021-03-27 18:13:03 UTC
 +++ config.cmake.h.in
-@@ -164,5 +164,8 @@
+@@ -167,5 +167,8 @@
  /* Define if `thread_local` keyword should be used */
  #cmakedefine USE_THREAD_LOCAL 1
  

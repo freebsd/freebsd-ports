@@ -1,7 +1,7 @@
 # Created by: William Grzybowski <william88@gmail.com>
 
 PORTNAME=	flake8
-PORTVERSION=	3.9.0
+PORTVERSION=	3.9.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ TEST_ENV=	PYTHONPATH="${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}"
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3800
+.if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>0:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
 

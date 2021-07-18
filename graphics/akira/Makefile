@@ -1,7 +1,8 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	akira
-PORTVERSION=	0.0.13
+PORTVERSION=	0.0.14
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -12,7 +13,7 @@ LICENSE=	GPLv3+
 
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
-		libgoocanvas-2.0.so:graphics/goocanvas2 \
+		libgoocanvas-3.0.so:graphics/goocanvas3 \
 		libgranite.so:x11-toolkits/granite \
 		libjson-glib-1.0.so:devel/json-glib
 

@@ -3,6 +3,7 @@
 share/dbus-1/interfaces/org.kde.kdnssd.xml
 share/kservices5/kded/dnssdwatcher.desktop
 share/locale/ar/LC_MESSAGES/kio5_zeroconf.mo
+share/locale/be/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/bg/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/bs/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/ca/LC_MESSAGES/kio5_zeroconf.mo
@@ -45,13 +46,17 @@ share/locale/pt/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/ro/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/ru/LC_MESSAGES/kio5_zeroconf.mo
+share/locale/se/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/sk/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/sl/LC_MESSAGES/kio5_zeroconf.mo
+share/locale/sq/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/sr/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/sv/LC_MESSAGES/kio5_zeroconf.mo
+share/locale/ta/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/tr/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/ug/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/uk/LC_MESSAGES/kio5_zeroconf.mo
+share/locale/vi/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_zeroconf.mo
 share/metainfo/org.kde.zeroconf-ioslave.metainfo.xml

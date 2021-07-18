@@ -1,7 +1,7 @@
 # Created by: Yinghong Liu <relaxbsd@gmail.com>
 
 PORTNAME=	roxterm
-PORTVERSION=	3.10.1
+PORTVERSION=	3.11.1
 CATEGORIES=	x11
 
 MAINTAINER=	nc@FreeBSD.org

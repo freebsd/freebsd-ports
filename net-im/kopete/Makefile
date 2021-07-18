@@ -15,15 +15,16 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gnome jpeg kde:5 \
 		qca qt:5 shebangfix tar:xz
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
-		coreaddons crash dbusaddons dnssd ecm emoticons guiaddons i18n \
+		coreaddons crash dbusaddons dnssd emoticons guiaddons i18n \
 		iconthemes itemviews jobwidgets js kcmutils kdelibs4support \
 		khtml kio notifications notifyconfig parts service solid sonnet \
 		texteditor textwidgets unitconversion wallet widgetsaddons \
-		windowsystem xmlgui
+		windowsystem xmlgui \
+		ecm_build
 # KDE PIM components
 USE_KDE+=	contacts identitymanagement libkleo pimtextedit
 USE_QT=		concurrent core dbus gui network phonon4 printsupport sql widgets xml \
-		buildtools_build qmake_build
+		buildtools_build qmake_build testlib_build
 
 SHEBANG_FILES=	protocols/winpopup/winpopup-install \
 		protocols/winpopup/winpopup-send \

@@ -2,7 +2,7 @@
 { type: install
   message: <<EOM
 
-  Before running the server, the repository needs to be created, populated with TALS and initialized
+  Before running the server, the repository needs to be created, populated with TALS, and initialized
   To do so, run 
 
     sudo mkdir -p /var/routinator

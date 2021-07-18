@@ -1,0 +1,19 @@
+PORTNAME=	sunpromake
+CATEGORIES=	devel parallel
+
+COMMENT=	Parallel-execution enabled SunOS make program, enhanced to fit POSIX
+
+USE_LDCONFIG=	yes
+
+MASTERDIR=	${.CURDIR}/../../devel/schilybase
+COMPONENTS=	sunpro
+
+# these libraries are installed by the sunpro component
+# but are internal to the program.  The author recommends
+# not shipping them, so we don't.
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/lib/libbsd.a
+	${RM} ${STAGEDIR}${PREFIX}/lib/libmksh.a
+	${RM} ${STAGEDIR}${PREFIX}/lib/libvroot.a
+
+.include "${MASTERDIR}/Makefile.master"

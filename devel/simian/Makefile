@@ -11,12 +11,11 @@ COMMENT=	Similarity analyser for source and other text files
 LICENSE=	SIMIAN
 LICENSE_NAME=	SIMIAN SOFTWARE LICENSE
 LICENSE_FILE=	${WRKSRC}/license.pdf
+# Have to agree to license before download
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell no-auto-accept
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-
-RESTRICTED=	Have to agree to license before download
 
 SUB_FILES=	simian
 SUB_LIST+=	VERSION=${PORTVERSION}

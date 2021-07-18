@@ -757,13 +757,13 @@ include/octave-%%OCTAVE_VERSION%%/octave/xpow.h
 include/octave-%%OCTAVE_VERSION%%/octave/zfstream.h
 lib/octave/%%OCTAVE_VERSION%%/liboctave.so
 lib/octave/%%OCTAVE_VERSION%%/liboctave.so.8
-lib/octave/%%OCTAVE_VERSION%%/liboctave.so.8.0.1
+lib/octave/%%OCTAVE_VERSION%%/liboctave.so.8.0.2
 %%QT5%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so
 %%QT5%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.6
-%%QT5%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.6.0.1
+%%QT5%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.6.1.0
 lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so
-lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.8
-lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.8.0.1
+lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.9
+lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.9.0.0
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/PKG_ADD
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__delaunayn__.oct
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__fltk_uigetfile__.oct
@@ -954,6 +954,8 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-59704/bug59704_2.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-59937/bug-59937.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-59937/eval_global_script.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-60237/bug-60237.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-60237/bug_60237.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/nest/bug_59989.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/class-concat/@foo/foo.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/class-concat/class-concat.tst
@@ -1109,8 +1111,10 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/fcn-handle/bug57941a.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/fcn-handle/bug57941b.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/fcn-handle/bug58519.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/fcn-handle/bug60845.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/fcn-handle/derived-resolution.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/fcn-handle/f1.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/fcn-handle/handle-to-sibling.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/fcn-handle/keyword.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/fcn-handle/object-method.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/fcn-handle/package-function.tst
@@ -2374,9 +2378,9 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/site/m/startup/octaverc
 @dir lib/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%
 @dir lib/octave/site/oct/%%GNU_HOST%%
-@dir lib/octave/site/oct/api-v55/%%GNU_HOST%%
+@dir lib/octave/site/oct/api-v56/%%GNU_HOST%%
 @dir libexec/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%%
-@dir libexec/octave/api-v55/site/exec/%%GNU_HOST%%
+@dir libexec/octave/api-v56/site/exec/%%GNU_HOST%%
 @dir libexec/octave/site/exec/%%GNU_HOST%%
 @dir %%DATADIR%%/%%OCTAVE_VERSION%%/site/m
-@dir %%DATADIR%%/site/api-v55/m
+@dir %%DATADIR%%/site/api-v56/m

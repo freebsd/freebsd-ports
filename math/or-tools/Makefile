@@ -1,6 +1,7 @@
 PORTNAME=	or-tools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.2
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libCbc.so:math/cbc \
 		libCgl.so:math/cgl \
+		libcoinasl.so:math/asl \
+		libcoinmetis.so:math/ipopt \
+		libCoinUtils.so:math/coinutils \
+		libopenblas.so:math/openblas \
 		libOsiClp.so:math/clp \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
@@ -26,8 +31,12 @@ CMAKE_OFF=	BUILD_PYTHON BUILD_DEPS INSTALL_BUILD_DEPS BUILD_EXAMPLES BUILD_SAMPL
 CMAKE_ON=	BUILD_CXX
 CONFIGURE_ENV=	UNIX_CBC_DIR=${LOCALBASE} UNIX_CLP_DIR=${LOCALBASE}
 
-OPTIONS_DEFINE=		SCIP
-#OPTIONS_DEFAULT=	SCIP
+OPTIONS_DEFINE=		FLATZINC SCIP
+OPTIONS_DEFAULT=	FLATZINC #SCIP
+OPTIONS_SUB=		yes
+
+FLATZINC_DESC=		Build FlatZinc - MiniZinc interface
+FLATZINC_CMAKE_BOOL=	BUILD_FLATZINC
 
 SCIP_DESC=		Use the SCIP solver # SCIP package isn't built because of licensing restrictions
 SCIP_CMAKE_BOOL=	USE_SCIP

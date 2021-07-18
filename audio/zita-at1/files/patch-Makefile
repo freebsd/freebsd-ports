@@ -1,0 +1,13 @@
+--- Makefile.orig	2021-07-11 23:40:11 UTC
++++ Makefile
+@@ -24,8 +24,8 @@ SHARED ?= $(PREFIX)/share/zita-at1
+ 
+ VERSION = 0.6.2
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\" -DSHARED=\"$(SHARED)\"
+-CXXFLAGS += -O2 -Wall -ffast-math -pthread
+-CXXFLAGS += -march=native
++CXXFLAGS += -Wall -ffast-math -pthread
++CXXFLAGS += ${FREEBSD_CXXFLAGS_SIMD}
+ 
+ 
+ all:	zita-at1

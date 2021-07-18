@@ -1,7 +1,7 @@
 # Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
 
 PORTNAME=	glance-store
-PORTVERSION=	2.4.0
+PORTVERSION=	2.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,10 +21,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>=0.18.2:net/py-eventlet@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}oslo.config>=5.2.0:devel/py-oslo.config@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=3.15.3:devel/py-oslo.i18n@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.serialization>=2.18.0:devel/py-oslo.serialization@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.33.0:devel/py-oslo.utils@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.utils>=4.7.0:devel/py-oslo.utils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-keystoneclient>=3.8.0:net/py-python-keystoneclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.14.2:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.11.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.20.0:devel/py-stevedore@${PY_FLAVOR}
 
 USES=		python:3.6+ shebangfix
@@ -48,7 +48,7 @@ S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>=1.9.199:www/py-boto3@${PY_FLAVOR}
 SWIFT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httplib2>=0.9.1:www/py-httplib2@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}python-swiftclient>=3.2.0:databases/py-python-swiftclient@${PY_FLAVOR}
 VMWARE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oslo.privsep>=1.23.0:devel/py-oslo.privsep@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}oslo.vmware>=2.17.0:devel/py-oslo.vmware@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}oslo.vmware>=3.6.0:devel/py-oslo.vmware@${PY_FLAVOR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/glance/|${PREFIX}&|' ${WRKSRC}/etc/glance/rootwrap.conf ${WRKSRC}/glance_store/_drivers/cinder.py ${WRKSRC}/glance_store/tests/unit/test_cinder_store.py

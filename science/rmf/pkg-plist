@@ -11,6 +11,7 @@ bin/rmf_transform
 bin/rmf_update
 bin/rmf_validate
 bin/rmf_xml
+include/RMF.h
 include/RMF/BufferConstHandle.h
 include/RMF/BufferHandle.h
 include/RMF/CoordinateTransformer.h
@@ -60,6 +61,7 @@ include/RMF/decorator/reference.h
 include/RMF/decorator/representation.h
 include/RMF/decorator/sequence.h
 include/RMF/decorator/shape.h
+include/RMF/decorator/uncertainty.h
 include/RMF/decorators.h
 include/RMF/enums.h
 include/RMF/exceptions.h
@@ -96,3 +98,4 @@ include/RMF/types.h
 include/RMF/utility.h
 include/RMF/validate.h
 lib/libRMF.so
+lib/libRMF.so.1.3

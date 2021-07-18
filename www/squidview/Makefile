@@ -5,7 +5,7 @@ PORTVERSION=	0.86
 CATEGORIES=	www
 MASTER_SITES=	http://www.rillion.net/squidview/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor squid statistics in realtime
 
 LICENSE=	GPLv2

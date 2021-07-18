@@ -40,7 +40,7 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 #
 
 _LICENSE_LIST= 	BSL CDDL CPAL-1.0 ClArtistic EPL GFDL GMGPL \
-				ISCL MIT NCSA OFL10 OFL11 OWL OpenSSL PD PSFL PostgreSQL \
+				ISCL MIT NCSA ODbL OFL10 OFL11 OWL OpenSSL PD PSFL PostgreSQL \
 				RUBY UNLICENSE WTFPL1 WTFPL ZLIB ZPL21
 
 # GNU family
@@ -363,6 +363,8 @@ _LICENSE_GROUPS_MPL20=	FSF OSI
 
 _LICENSE_NAME_NCSA=	University of Illinois/NCSA Open Source License
 _LICENSE_GROUPS_NCSA=	COPYFREE FSF GPL OSI
+
+_LICENSE_NAME_ODbL=	Open Database License
 
 _LICENSE_NAME_OFL10=	SIL Open Font License version 1.0 (http://scripts.sil.org/OFL)
 _LICENSE_GROUPS_OFL10=	FONTS

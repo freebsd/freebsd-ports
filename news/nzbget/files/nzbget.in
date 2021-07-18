@@ -4,22 +4,34 @@
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
-# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
-# to enable this service:
+# Add the following lines to /etc/rc.conf to enable the nzbget daemon:
 #
-# nzbget_enable (bool):	Set to NO by default.
-#			Set it to YES to enable it.
+# nzbget_enable="YES"
+#
+# Following additional settings are available:
+#
+# nzbget_user:    user to run nzbget as (recommended)
+# nzbget_conf:    path to config if in a non-standard location (optional)
+
+command=%%PREFIX%%/bin/nzbget
 
 . /etc/rc.subr
+
+load_rc_config nzbget
+
+nzbget_enable=${nzbget_enable:-NO}
+nzbget_user=${nzbget_user:-root}
+nzbget_conf=${nzbget_conf:+"-c $nzbget_conf"}
 
 name=nzbget
 rcvar=nzbget_enable
 
-load_rc_config ${name}
+start_cmd="nzbget_cmd -D"
+stop_cmd="nzbget_cmd -Q"
+reload_cmd="nzbget_cmd -O"
 
-: ${nzbget_enable:=NO}
-
-command=%%PREFIX%%/bin/nzbget
-command_args="-D"
+nzbget_cmd() {
+  /usr/bin/su -l $nzbget_user -c "exec $command $nzbget_conf $1"
+}
 
 run_rc_command "$1"

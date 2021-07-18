@@ -1,7 +1,7 @@
 # Created by: Uffe Jakobsen <uffe@uffe.org>
 
 PORTNAME=	tass64
-PORTVERSION=	1.55.2200
+PORTVERSION=	1.56.2625
 CATEGORIES=	devel
 MASTER_SITES=	SF/tass64/source
 DISTNAME=	64tass-${PORTVERSION}-src

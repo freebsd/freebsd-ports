@@ -10,12 +10,14 @@ DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - MarkAd plugin
 
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2+ LOGOS
+LICENSE_COMB=	multi
+LICENSE_NAME_LOGOS=	Station logos
+LICENSE_TEXT_LOGOS=	Installs station logos
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
+LICENSE_PERMS_LOGOS=	auto-accept
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
-
-RESTRICTED=	Installs station logos
 
 USES=		compiler:c++11-lang pkgconfig tar:tgz
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}

@@ -1,20 +1,17 @@
 # Created by: Andrew Lewis <freeghb@gmail.com>
 
 PORTNAME=	luasec
-PORTVERSION=	0.9
+PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	thomas@beingboiled.info
 COMMENT=	Lua binding for the OpenSSL library to provide TLS/SSL communication
 
 LICENSE=	MIT
 
-.if !defined(SLAVE_PORT)
 USES=		lua:module ssl
-.endif
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	brunoos
@@ -25,5 +22,8 @@ MAKE_ENV+=	LUAPATH=${LUA_MODSHAREDIR} LUACPATH=${LUA_MODLIBDIR} \
 		DESTDIR=${STAGEDIR}
 CFLAGS+=	-I${OPENSSLINC} -DOPENSSL_NO_SSL3
 LDFLAGS+=	-L${OPENSSLLIB}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${LUA_MODLIBDIR}/ssl.so
 
 .include <bsd.port.mk>

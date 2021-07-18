@@ -1,7 +1,7 @@
 # Created by: James Earl <jdearl@telus.net>
 
 PORTNAME=	xfce4-panel
-PORTVERSION=	4.16.2
+PORTVERSION=	4.16.3
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4

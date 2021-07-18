@@ -30,6 +30,7 @@
     SUBDIR += celluloid
     SUBDIR += cheese
     SUBDIR += chilitags
+    SUBDIR += cineencoder
     SUBDIR += clive
     SUBDIR += clutter-gst
     SUBDIR += clutter-gst3
@@ -73,7 +74,6 @@
     SUBDIR += gdialog
     SUBDIR += get_iplayer
     SUBDIR += gmerlin
-    SUBDIR += gmimms
     SUBDIR += gmmlib
     SUBDIR += gmp-api
     SUBDIR += gmtk
@@ -127,8 +127,8 @@
     SUBDIR += gstreamer1-validate
     SUBDIR += gstreamermm
     SUBDIR += gtk-youtube-viewer
-    SUBDIR += gxine
     SUBDIR += handbrake
+    SUBDIR += haruna
     SUBDIR += harvid
     SUBDIR += hypnotix
     SUBDIR += imagination
@@ -158,7 +158,6 @@
     SUBDIR += l-smash
     SUBDIR += libaacs
     SUBDIR += libass
-    SUBDIR += libav
     SUBDIR += libbdplus
     SUBDIR += libbluray
     SUBDIR += libcec
@@ -220,13 +219,13 @@
     SUBDIR += livego
     SUBDIR += lives
     SUBDIR += livestreamer
+    SUBDIR += lms
     SUBDIR += lsdvd
     SUBDIR += m2tstoavi
     SUBDIR += m2vrequantiser
     SUBDIR += makemkv
     SUBDIR += mediainfo
     SUBDIR += mencoder
-    SUBDIR += mimms
     SUBDIR += minisatip
     SUBDIR += minitube
     SUBDIR += mjpegtools
@@ -263,6 +262,7 @@
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend
     SUBDIR += naludump
+    SUBDIR += navidrome
     SUBDIR += nordlicht
     SUBDIR += nostt
     SUBDIR += obs-audio-spectralizer
@@ -353,6 +353,7 @@
     SUBDIR += rubygem-streamio-ffmpeg
     SUBDIR += sabbu
     SUBDIR += schroedinger
+    SUBDIR += scte35dump
     SUBDIR += shotcut
     SUBDIR += simplescreenrecorder
     SUBDIR += smpeg
@@ -443,6 +444,7 @@
     SUBDIR += xporthdmv
     SUBDIR += xvid
     SUBDIR += yamdi
+    SUBDIR += ytfzf
     SUBDIR += zart
     SUBDIR += zoneminder
 

@@ -12,7 +12,7 @@ COMMENT=	Python library for parsing and creating TOML
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:2.7+
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

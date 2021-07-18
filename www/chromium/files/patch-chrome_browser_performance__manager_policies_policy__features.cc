@@ -1,4 +1,4 @@
---- chrome/browser/performance_manager/policies/policy_features.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/performance_manager/policies/policy_features.cc.orig	2021-05-12 22:05:44 UTC
 +++ chrome/browser/performance_manager/policies/policy_features.cc
 @@ -125,7 +125,7 @@ const base::Feature kPageFreezingFromPerformanceManage
  

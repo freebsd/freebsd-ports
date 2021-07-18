@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-Cisco-Reconfig>=0.05:net-mgmt/p5-Cisco-Reconfig \
 		p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask
 TEST_DEPENDS=	p5-Test-Signature>=1.04:devel/p5-Test-Signature
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

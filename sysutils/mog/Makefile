@@ -11,7 +11,7 @@ COMMENT=	Different take on the UNIX tool cat
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PY_PYGMENTS} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mdv>0:devel/py-mdv@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

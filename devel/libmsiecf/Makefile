@@ -1,7 +1,7 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 
 PORTNAME=	libmsiecf
-DISTVERSION=	alpha-20200710
+DISTVERSION=	alpha-20210420
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libmsiecf/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine

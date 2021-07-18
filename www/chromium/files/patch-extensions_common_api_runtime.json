@@ -1,6 +1,6 @@
---- extensions/common/api/runtime.json.orig	2021-03-12 23:57:25 UTC
+--- extensions/common/api/runtime.json.orig	2021-05-12 22:05:54 UTC
 +++ extensions/common/api/runtime.json
-@@ -68,7 +68,7 @@
+@@ -77,7 +77,7 @@
          "id": "PlatformOs",
          "type": "string",
          "description": "The operating system chrome is running on.",

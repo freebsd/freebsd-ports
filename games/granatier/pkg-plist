@@ -114,7 +114,6 @@ share/icons/hicolor/22x22/apps/granatier.png
 share/icons/hicolor/32x32/apps/granatier.png
 share/icons/hicolor/48x48/apps/granatier.png
 share/icons/hicolor/64x64/apps/granatier.png
-share/kxmlgui5/granatier/granatierui.rc
 share/locale/ar/LC_MESSAGES/granatier.mo
 share/locale/bg/LC_MESSAGES/granatier.mo
 share/locale/bs/LC_MESSAGES/granatier.mo

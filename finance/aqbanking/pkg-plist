@@ -50,7 +50,7 @@ lib/cmake/aqbanking-%%AQB_MAJ_MIN_VER%%/aqbanking-config-version.cmake
 lib/cmake/aqbanking-%%AQB_MAJ_MIN_VER%%/aqbanking-config.cmake
 lib/libaqbanking.so
 lib/libaqbanking.so.%%AQB_SHLIB_VER%%
-lib/libaqbanking.so.%%AQB_SHLIB_VER%%.2.9
+lib/libaqbanking.so.%%AQB_SHLIB_VER%%.2.10
 libdata/pkgconfig/aqbanking.pc
 share/aclocal/aqbanking.m4
 %%DATADIR%%/aqbanking/typemaker2/c/ab_account.tm2

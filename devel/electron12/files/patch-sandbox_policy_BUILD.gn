@@ -1,0 +1,11 @@
+--- sandbox/policy/BUILD.gn.orig	2021-04-14 01:08:53 UTC
++++ sandbox/policy/BUILD.gn
+@@ -29,7 +29,7 @@ component("policy") {
+     "//sandbox:common",
+   ]
+   public_deps = []
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "linux/bpf_audio_policy_linux.cc",
+       "linux/bpf_audio_policy_linux.h",

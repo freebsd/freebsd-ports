@@ -1,6 +1,4 @@
-diff --git Modules/Internal/CPack/CPackFreeBSD.cmake Modules/Internal/CPack/CPackFreeBSD.cmake
-index ae40532017..c35089cbcf 100644
---- Modules/Internal/CPack/CPackFreeBSD.cmake
+--- Modules/Internal/CPack/CPackFreeBSD.cmake.orig	2021-03-23 15:43:17 UTC
 +++ Modules/Internal/CPack/CPackFreeBSD.cmake
 @@ -34,7 +34,7 @@ function(_cpack_freebsd_fallback_var OUTPUT_VAR_NAME)
      endif()
@@ -11,9 +9,7 @@ index ae40532017..c35089cbcf 100644
    endif()
  endfunction()
  
-diff --git Source/CPack/cmCPackFreeBSDGenerator.cxx Source/CPack/cmCPackFreeBSDGenerator.cxx
-index b673006f25..9bafc792db 100644
---- Source/CPack/cmCPackFreeBSDGenerator.cxx
+--- Source/CPack/cmCPackFreeBSDGenerator.cxx.orig	2021-03-23 15:43:17 UTC
 +++ Source/CPack/cmCPackFreeBSDGenerator.cxx
 @@ -21,8 +21,12 @@
  

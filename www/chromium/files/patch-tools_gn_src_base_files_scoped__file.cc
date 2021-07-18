@@ -1,4 +1,4 @@
---- tools/gn/src/base/files/scoped_file.cc.orig	2021-03-13 00:10:18 UTC
+--- tools/gn/src/base/files/scoped_file.cc.orig	2021-04-14 18:49:10 UTC
 +++ tools/gn/src/base/files/scoped_file.cc
 @@ -30,7 +30,7 @@ void ScopedFDCloseTraits::Free(int fd) {
    // a single open directory would bypass the entire security model.

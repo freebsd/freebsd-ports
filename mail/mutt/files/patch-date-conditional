@@ -1,8 +1,8 @@
---- PATCHES.orig	2020-11-08 20:52:50 UTC
+--- PATCHES.orig	2021-06-13 21:49:47 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.0.ats.date_conditional.1
---- hdrline.c.orig	2020-11-08 20:52:49 UTC
+--- hdrline.c.orig	2021-06-13 21:49:47 UTC
 +++ hdrline.c
 @@ -428,6 +428,53 @@ hdr_format_str (char *dest,
        const char *cp;
@@ -58,9 +58,9 @@
  
        p = dest;
  
---- muttlib.c.orig	2020-11-06 22:10:26 UTC
+--- muttlib.c.orig	2021-05-23 18:20:51 UTC
 +++ muttlib.c
-@@ -1764,7 +1764,16 @@ void mutt_FormatString (char *dest,		/* output buffer 
+@@ -1677,7 +1677,16 @@ void mutt_FormatString (char *dest,		/* output buffer 
        if (*src == '?')
        {
  	flags |= MUTT_FORMAT_OPTIONAL;
@@ -78,7 +78,7 @@
        }
        else
        {
-@@ -1780,12 +1789,12 @@ void mutt_FormatString (char *dest,		/* output buffer 
+@@ -1693,12 +1702,12 @@ void mutt_FormatString (char *dest,		/* output buffer 
  	  count++;
  	}
  	*cp = 0;

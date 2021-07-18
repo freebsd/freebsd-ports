@@ -1,8 +1,8 @@
-# Created by: Revis Zinkov <rzinkov@gmail.com>
+# Created by: Rob Zinkov <rzinkov@gmail.com>
 
 PORTNAME=	moc
 PORTVERSION=	2.5.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.daper.net/pub/soft/moc/stable/
 
@@ -24,7 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
 
 OPTIONS_DEFINE=	AAC CURL DEBUG FFMPEG FLAC JACK MODPLUG MP3 MUSEPACK RCC \
 		SAMPLERATE SIDPLAY2 SNDFILE SPEEX VORBIS WAVPACK
-OPTIONS_DEFAULT=	MP3 VORBIS FLAC CURL
+OPTIONS_DEFAULT=	MP3 VORBIS FLAC CURL WAVPACK
 CURL_DESC=	curl support (Internet streams)
 RCC_DESC=	RCC support
 SIDPLAY2_DESC=	libsidplay2 support

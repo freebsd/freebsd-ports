@@ -13,5 +13,5 @@ include/libairspy/iqconverter_float.h
 include/libairspy/iqconverter_int16.h
 lib/libairspy.so
 lib/libairspy.so.0
-lib/libairspy.so.1.0.9
+lib/libairspy.so.1.0.10
 libdata/pkgconfig/libairspy.pc

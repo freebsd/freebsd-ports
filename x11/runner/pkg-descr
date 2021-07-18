@@ -1,0 +1,11 @@
+Runner is a launch menu for X Window System.  It is meant to start fast
+and give access to often used programs but also run any command.  It is
+also optimized for keyboard usage.  Its features are:
+
+  - Configurable list of programs
+  - Integrated dialog to run arbitrary commands with arguments
+  - Unlimited command history
+  - Completion for programs in history file and PATH variable
+  - Keyboard support in popup menu with type-ahead filtering
+
+WWW: http://www.boomerangsworld.de/cms/tools/runner.html

@@ -1,8 +1,7 @@
 #   $MCom: ports/finance/gnucash/Makefile,v 1.26 2008/12/31 03:25:18 mezz Exp $
 
 PORTNAME=	gnucash
-PORTVERSION=	4.5
-PORTREVISION=	1
+PORTVERSION=	4.6
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -23,7 +22,8 @@ LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring \
 		libguile-2.2.so:lang/guile2 \
 		libgc-threaded.so:devel/boehm-gc-threaded \
 		libboost_date_time.so:devel/boost-libs \
-		libicudata.so:devel/icu
+		libicudata.so:devel/icu\
+		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-Finance-Quote>=0:finance/p5-Finance-Quote

@@ -1,0 +1,17 @@
+include/coin/FlopCppConfig.h
+include/coin/MP_boolean.hpp
+include/coin/MP_constant.hpp
+include/coin/MP_constraint.hpp
+include/coin/MP_data.hpp
+include/coin/MP_domain.hpp
+include/coin/MP_expression.hpp
+include/coin/MP_index.hpp
+include/coin/MP_model.hpp
+include/coin/MP_set.hpp
+include/coin/MP_utilities.hpp
+include/coin/MP_variable.hpp
+include/coin/flopc.hpp
+lib/libFlopCpp.so
+lib/libFlopCpp.so.0
+lib/libFlopCpp.so.0.0.0
+libdata/pkgconfig/flopcpp.pc

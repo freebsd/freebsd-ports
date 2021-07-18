@@ -1,4 +1,4 @@
---- ui/base/test/skia_gold_pixel_diff.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/base/test/skia_gold_pixel_diff.cc.orig	2021-04-14 18:41:37 UTC
 +++ ui/base/test/skia_gold_pixel_diff.cc
 @@ -168,7 +168,7 @@ std::string SkiaGoldPixelDiff::GetPlatform() {
    return "macOS";

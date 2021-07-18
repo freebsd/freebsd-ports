@@ -1,10 +1,9 @@
 # Created by: nork@FreeBSD.org
 
 PORTNAME=	openexr
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	graphics devel
-MASTER_SITES=	LOCAL/mandree/:test
-DISTFILES=	${PORTNAME}-2.2.0-comp_dwa-test-images.tar.xz:test
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
@@ -12,7 +11,7 @@ COMMENT=	High dynamic-range (HDR) image file format
 LICENSE=	BSD3CLAUSE
 
 # exact version required to avoid hard-to-debug issues
-LIB_DEPENDS=	libImath-3_0.so.27:math/Imath
+LIB_DEPENDS=	libImath-3_1.so.29:math/Imath
 
 USES=		cmake compiler:c++14-lang pathfix pkgconfig
 
@@ -21,16 +20,18 @@ GH_TUPLE=	AcademySoftwareFoundation:openexr:v${PORTVERSION}
 
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DCMAKE_DEBUG_POSTFIX=
-CPPFLAGS+=	-I. -I../IlmImf
+CPPFLAGS+=	-I.
 # must be linked with -l{thr|pthread} explicitly
 LDFLAGS+=	-lpthread
 
-MAJORVER=	3_0
-_VER=		27
+PATCH_STRIP=	-p1
+
+_MAJORVER=	3_0
+_VER=		29
 _MINVER=	0
 _PLVER=		0
 
-PLIST_SUB+=	MAJORVER=${MAJORVER} \
+PLIST_SUB+=	MAJORVER=${_MAJORVER} \
 		VER=${_VER} \
 		MINVER=${_MINVER} \
 		PLVER=${_PLVER}
@@ -62,7 +63,6 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${_DOC_FILES1:S|^|${_DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${_DOC_FILES2:S|^|${_DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR}
-	#${MV} ${STAGEDIR}${DOCSDIR:H}/OpenEXR/[a-df-zA-Z]* ${STAGEDIR}${DOCSDIR}
 
 post-install-DOCS-off:
 	${RM} ${STAGEDIR}${DOCSDIR:H}/OpenEXR/*.pdf

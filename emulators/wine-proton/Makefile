@@ -1,5 +1,6 @@
 PORTNAME=	wine-proton
-DISTVERSION=	5.13-4
+DISTVERSION=	6.3-2
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	iwtcex@gmail.com
@@ -23,18 +24,21 @@ LIB_DEPENDS=	libFAudio.so:audio/faudio \
 		libxml2.so:textproc/libxml2
 
 USES=		bison desktop-file-utils gettext-runtime gl gmake gnome jpeg localbase openal pkgconfig sdl shebangfix tar:xz xorg
+USE_GCC=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ValveSoftware
 GH_PROJECT=	wine
-GH_TAGNAME=	7f9f4285c2dfb81234c01996f6d33fae07701629
+GH_TAGNAME=	97f962cd469ee9b9b68d32e79849bf94cfe15581
 
-USE_GCC=	yes
-USE_GL=		glu
+USE_GL=		gl
 USE_GNOME=	glib20
 USE_GSTREAMER1=	good
 USE_SDL=	sdl2
 USE_XORG=	x11 xext xcomposite xcursor xi xinerama xrandr xrender
+
+SHEBANG_FILES=	tools/make_requests tools/winemaker/winemaker \
+		tools/winedump/function_grep.pl
 
 GNU_CONFIGURE=		yes
 GNU_CONFIGURE_PREFIX=	${PREFIX}/${PORTNAME}
@@ -46,7 +50,6 @@ CONFIGURE_ARGS=	--verbose \
 		--with-cms \
 		--with-fontconfig \
 		--with-freetype \
-		--with-glu \
 		--with-gnutls \
 		--with-gstreamer \
 		--with-jpeg \
@@ -70,7 +73,6 @@ CONFIGURE_ARGS=	--verbose \
 		--without-gettextpo \
 		--without-gphoto \
 		--without-gsm \
-		--without-hal \
 		--without-inotify \
 		--without-krb5 \
 		--without-ldap \
@@ -90,9 +92,6 @@ CONFIGURE_ARGS=	--verbose \
 
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex" JXRLIB_CFLAGS="-I${LOCALBASE}/include/jxrlib"
 
-SHEBANG_FILES=	tools/make_requests tools/winemaker/winemaker \
-		tools/winedump/function_grep.pl
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
@@ -108,8 +107,13 @@ pre-build:
 post-install:
 .if ${ARCH} == i386
 	${MV} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wineserver ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wineserver32
-	${MV} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine       ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine32
+	${MV} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine       ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine.bin
 	${INSTALL_SCRIPT} ${FILESDIR}/wine.sh                 ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine
+.else
+	${INSTALL_SCRIPT} ${FILESDIR}/pkg32.sh                ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/pkg32.sh
+	${MV} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine64     ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine64.bin
+	${INSTALL_SCRIPT} ${FILESDIR}/wine.sh                 ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine64
+	${INSTALL_SCRIPT} ${FILESDIR}/wine-wow64.sh           ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine
 .endif
 	${RM} -r ${STAGEDIR}${PREFIX}/${PORTNAME}/include
 	${RM} -r ${STAGEDIR}${MANPREFIX}/man

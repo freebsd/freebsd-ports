@@ -1,0 +1,8 @@
+--- meson.build.orig	2021-01-02 21:06:31 UTC
++++ meson.build
+@@ -117,4 +117,4 @@ readmes = [
+     'README.md',
+     'LICENSE',
+ ]
+-install_data(readmes, install_dir : join_paths(get_option('datadir'), meson.project_name(), 'doc'))
++# install_data(readmes, install_dir : join_paths(get_option('datadir'), meson.project_name(), 'doc'))

@@ -1,6 +1,5 @@
 PORTNAME=	Data-Dump
-PORTVERSION=	1.23
-PORTREVISION=	1
+PORTVERSION=	1.25
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,8 +10,9 @@ COMMENT=	Pretty printing of data structures
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

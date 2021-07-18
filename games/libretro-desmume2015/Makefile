@@ -1,5 +1,6 @@
 PORTNAME=	libretro-desmume2015
 PORTVERSION=	0.20210131
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org

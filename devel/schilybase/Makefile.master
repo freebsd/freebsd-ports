@@ -1,0 +1,88 @@
+DISTVERSION=	2021-06-07
+MASTER_SITES=	SF/schilytools
+DISTNAME=	schily-${DISTVERSION}
+
+MAINTAINER=	fuz@fuz.su
+
+LICENSE=	CDDL ${COMPONENTS:@c@${LICENSE.${c}}@:O:u}
+LICENSE.autoconf=	GPLv2
+LICENSE.libhfs_iso=	GPLv2
+LICENSE.man2html=	GPLv2
+LICENSE.mkisofs=	GPLv2
+LICENSE.libparanoia=	LGPL21
+LICENSE.cpp=		BSD3CLAUSE
+LICENSE.libmdigest=	BSD2CLAUSE
+LICENSE.libfile=	BSD2CLAUSE
+LICENSE.patch=		BSD1CLAUSE
+LICENSE.lndir=		MIT
+LICENSE_COMB=		${${LICENSE:[#]}>1:?multi:single}
+LICENSE_FILE_CDDL=	${WRKSRC}/CDDL.Schily.txt
+LICENSE_FILE_GPLv2=	${WRKSRC}/GPL-2.0.txt
+LICENSE_FILE_LGPL21=	${WRKSRC}/LGPL-2.1.txt
+LICENSE_FILE_BSD1CLAUSE=	${WRKSRC}/patch/LICENSE
+LICENSE_NAME_BSD1CLAUSE=	BSD 1-clause LICENSE
+LICENSE_PERMS_BSD1CLAUSE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+# schilybase has all the libraries
+.if ${PORTNAME} != "schilybase"
+BUILD_DEPENDS+=	schilybase=${PORTVERSION}:devel/schilybase
+RUN_DEPENDS+=	schilybase=${PORTVERSION}:devel/schilybase
+.endif
+
+.if "${BOOTSTRAP_SMAKE:tl}" != "yes"
+BUILD_DEPENDS+=	smake:devel/smake
+.endif
+
+USES+=		tar:bz2 compiler gettext-runtime iconv
+
+MAKE_ARGS=	INS_BASE=${PREFIX} \
+		INS_RBASE=${PREFIX} \
+		LINKMODE=dynamic \
+		DESTDIR=${STAGEDIR} \
+		STRIPFLAGS=${WITH_DEBUG:D:U-s} \
+		CCOM=${COMPILER_TYPE} \
+		CC=${CC} \
+		CCC=${CXX} \
+		COPTX="${CFLAGS}" \
+		C++OPTX="${CXXFLAGS}" \
+		NOECHO=
+MAKE_CMD=	${"${BOOTSTRAP_SMAKE}" == "yes":?${WRKSRC}/psmake/smake:smake}
+
+PLIST_SUB+=	ARCH=${ARCH} COMPILER_TYPE=${COMPILER_TYPE}
+PLIST=		${.CURDIR}/pkg-plist
+PKGMESSAGE=	${.CURDIR}/pkg-message
+DESCR=		${.CURDIR}/pkg-descr
+
+post-extract:
+	cd ${WRKSRC}/rmt && ${MV} rmt.dfl srmt.dfl
+	cd ${WRKSRC}/rmt && ${MV} default-rmt.sample default-srmt.sample
+
+.if "${BOOTSTRAP_SMAKE:tl}" == "yes"
+# build a bootstrap smake as MAKE_CMD
+pre-configure:
+	cd ${WRKSRC}/psmake && ${SETENV} ${MAKE_ENV} ${SH} ./MAKE-all
+.endif
+
+do-configure:
+	for component in ${COMPONENTS} ; \
+	do \
+		cd ${WRKSRC}/$$component && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} config ; \
+	done
+
+do-build:
+	for component in ${COMPONENTS} ; \
+	do \
+		cd ${WRKSRC}/$$component && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} all ; \
+	done
+
+do-install:
+	for component in ${COMPONENTS} ; \
+	do \
+		cd ${WRKSRC}/$$component && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install ; \
+	done
+	[ -z "${COMPONENTS:Mlib*}" ] || ${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*.* 
+
+.include <bsd.port.mk>

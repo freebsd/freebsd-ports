@@ -1,8 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	openid_connect
-PORTVERSION=	1.1.7
-PORTREVISION=	2
+PORTVERSION=	1.2.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

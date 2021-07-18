@@ -10,11 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple date object
 
-LICENSE=	ART10 GPLv2 GPLv3
+LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Date/Simple/Simple.so

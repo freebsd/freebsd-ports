@@ -1,6 +1,6 @@
 PORTNAME=	arcan
 DISTVERSION=	0.6.0.1
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -28,18 +28,22 @@ GH_ACCOUNT=	letoram
 WRKSRC_SUBDIR=	src
 CMAKE_ON=	HYBRID_HEADLESS
 CMAKE_OFF=	STATIC_LIBUVC
-CMAKE_ARGS=	-DENGINE_BUILDTAG:STRING="${DISTVERSIONFULL}"
+CMAKE_ARGS=	-DDISTR_TAG:STRING="portbld" \
+		-DENGINE_BUILDTAG:STRING="${DISTVERSIONFULL}"
 LDFLAGS+=	-Wl,--as-needed # bzip2, ffmpeg, librt, libutil, lzma, zlib
 LDFLAGS_i386=	-Wl,-z,notext
 
-OPTIONS_DEFINE=	ESPEAK FFMPEG LUAJIT SDL SUID TESSERACT UVC VLC VNC WAYLAND
-OPTIONS_DEFAULT=ESPEAK FFMPEG LUAJIT SDL SUID TESSERACT UVC VLC VNC WAYLAND
+OPTIONS_DEFINE=	ESPEAK FFMPEG LUAJIT MANPAGES SDL SUID TESSERACT UVC VLC VNC WAYLAND
+OPTIONS_DEFAULT=ESPEAK FFMPEG LUAJIT MANPAGES SDL SUID TESSERACT UVC VLC VNC WAYLAND
 OPTIONS_SUB=	yes
 
 ESPEAK_DESC=		Text to speech via eSpeak
 ESPEAK_LIB_DEPENDS=	libespeak.so:audio/espeak
 
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+
+MANPAGES_USE=		RUBY=yes
+MANPAGES_VARS=		RUBY_NO_RUN_DEPENDS=yes
 
 LUAJIT_DESC=		Use LuaJIT instead of standard Lua
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
@@ -86,6 +90,9 @@ post-patch:
 		${WRKSRC}/frameserver/terminal/default/cli_builtin.c \
 		${WRKSRC}/platform/posix/paths.c \
 		${WRKSRC}/shmif/arcan_shmif_debugif.c
+
+pre-configure-MANPAGES-on:
+	@${RUBY} -C ${WRKSRC:H}/doc -Ku docgen.rb mangen 2>/dev/null
 
 post-patch-ESPEAK-off:
 	@${REINPLACE_CMD} -i.noespeak '/find.*Espeak/d' \

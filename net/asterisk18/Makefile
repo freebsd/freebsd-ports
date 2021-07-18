@@ -1,5 +1,5 @@
 PORTNAME=	asterisk
-PORTVERSION=	18.3.0
+PORTVERSION=	18.5.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -14,8 +14,6 @@ COMMENT=	Open Source PBX and telephony toolkit
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le sparc64
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson

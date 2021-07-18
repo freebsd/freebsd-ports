@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/utils.cc.orig	2021-03-15 13:16:17 UTC
+--- third_party/perfetto/src/base/utils.cc.orig	2021-04-14 18:43:06 UTC
 +++ third_party/perfetto/src/base/utils.cc
 @@ -21,7 +21,8 @@
  

@@ -1,4 +1,4 @@
---- src/cpp/diagnostics/CMakeLists.txt.orig	2020-01-23 23:30:24 UTC
+--- src/cpp/diagnostics/CMakeLists.txt.orig	2021-05-24 22:22:25 UTC
 +++ src/cpp/diagnostics/CMakeLists.txt
 @@ -57,6 +57,7 @@ add_stripped_executable(diagnostics
  # set link dependencies
@@ -6,5 +6,5 @@
     rstudio-core
 +   procstat
  )
+ 
  if(NOT RSTUDIO_SESSION_WIN32)
-    install(TARGETS diagnostics DESTINATION ${RSTUDIO_INSTALL_BIN})

@@ -11,6 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	non-constant-expression cannot be narrowed from type 'dim_t', see https://github.com/pytorch/glow/issues/4024
+BROKEN=		does not link: undefined reference to typeinfo for snappy::Source
 
 LIB_DEPENDS=	libLLVM-${LLVM_VER:R}.so:devel/llvm${LLVM_VER:S/.//} \
 		libboost_system.so:devel/boost-libs \

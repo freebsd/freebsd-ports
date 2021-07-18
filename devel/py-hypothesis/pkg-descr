@@ -3,4 +3,5 @@ which are parametrized by a source of examples, and then generates simple and
 comprehensible examples that make your tests fail. This lets you find more bugs
 in your code with less work.
 
+WWW: https://hypothesis.works/
 WWW: https://github.com/HypothesisWorks/hypothesis/tree/master/hypothesis-python

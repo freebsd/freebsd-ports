@@ -78,6 +78,7 @@ bin/ovdb_monitor
 bin/ovdb_server
 bin/ovdb_stat
 bin/overchan
+%%SQLITE%%bin/ovsqlite-server
 bin/perl-nocem
 bin/pgpverify
 bin/procbatch
@@ -113,6 +114,7 @@ doc/INSTALL
 doc/LICENSE
 doc/NEWS
 doc/README
+%%SNAPSHOT%%doc/README.snapshot
 doc/TODO
 doc/config-design
 doc/config-semantics
@@ -240,6 +242,7 @@ man/man5/nnrpd.track.5.gz
 man/man5/nntpsend.ctl.5.gz
 man/man5/nocem.ctl.5.gz
 man/man5/ovdb.5.gz
+%%SQLITE%%man/man5/ovsqlite.5.gz
 man/man5/passwd.nntp.5.gz
 man/man5/readers.conf.5.gz
 man/man5/storage.conf.5.gz
@@ -289,6 +292,7 @@ man/man8/ovdb_init.8.gz
 man/man8/ovdb_monitor.8.gz
 man/man8/ovdb_server.8.gz
 man/man8/ovdb_stat.8.gz
+%%SQLITE%%man/man8/ovsqlite-server.8.gz
 man/man8/overchan.8.gz
 man/man8/perl-nocem.8.gz
 man/man8/procbatch.8.gz
@@ -333,6 +337,7 @@ man/man8/writelog.8.gz
 %%EXAMPLESDIR%%/nntpsend.ctl
 %%EXAMPLESDIR%%/nocem.ctl
 %%EXAMPLESDIR%%/ovdb.conf
+%%SQLITE%%%%EXAMPLESDIR%%/ovsqlite.conf
 %%EXAMPLESDIR%%/passwd.nntp
 %%EXAMPLESDIR%%/readers.conf
 %%EXAMPLESDIR%%/send-uucp.cf
@@ -375,6 +380,7 @@ man/man8/writelog.8.gz
 @sample %%CONFDIR%%/nntpsend.ctl.sample
 @sample %%CONFDIR%%/nocem.ctl.sample
 @sample %%CONFDIR%%/ovdb.conf.sample
+%%SQLITE%%@sample %%CONFDIR%%/ovsqlite.conf.sample
 @sample %%CONFDIR%%/passwd.nntp.sample
 @sample %%CONFDIR%%/readers.conf.sample
 @sample %%CONFDIR%%/send-uucp.cf.sample

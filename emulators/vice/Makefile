@@ -2,14 +2,18 @@
 
 PORTNAME=	vice
 PORTVERSION=	3.5
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF/vice-emu/releases
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 ROM
+LICENSE_COMB=	multi
+LICENSE_NAME_ROM=	Commodore ROMs
+LICENSE_TEXT_ROM=	ROMs are copyrighted by Commodore Business Machines
+LICENSE_PERMS_ROM=	auto-accept
 
 BUILD_DEPENDS=	xa65:devel/xa65 \
 		xdg-open:devel/xdg-utils
@@ -25,16 +29,16 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpcre2-8.so:devel/pcre2 \
-		libgnutls.so:security/gnutls
+		libgnutls.so:security/gnutls \
+		libharfbuzz.so:print/harfbuzz
 
-RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 USES=		compiler:c++11-lang pkgconfig makeinfo localbase:ldflags \
 		gmake iconv:wchar_t jpeg readline gettext xorg
 USE_XORG=	xpm ice sm xext xv xt x11 xmu xxf86vm
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
 HAS_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split" \
-		XDG_DATA_DIRS=${STAGEDIR}/${PREFIX}/share
+		XDG_DATA_DIRS=${STAGEDIR}${PREFIX}/share
 CFLAGS+=	-fcommon
 CONFIGURE_ARGS+=	--enable-ipv6 \
 			--enable-external-ffmpeg \

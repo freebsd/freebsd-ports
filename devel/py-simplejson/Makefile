@@ -1,7 +1,7 @@
 # Created by: Alexander Botero-Lowry <alex@foxybanana.com>
 
 PORTNAME=	simplejson
-PORTVERSION=	3.17.2
+PORTVERSION=	3.17.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

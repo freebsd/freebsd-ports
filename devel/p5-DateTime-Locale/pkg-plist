@@ -571,6 +571,7 @@
 %%SITE_PERL%%/DateTime/Locale/nn_NO.pod
 %%SITE_PERL%%/DateTime/Locale/nnh.pod
 %%SITE_PERL%%/DateTime/Locale/nnh_CM.pod
+%%SITE_PERL%%/DateTime/Locale/no.pod
 %%SITE_PERL%%/DateTime/Locale/nus.pod
 %%SITE_PERL%%/DateTime/Locale/nus_SS.pod
 %%SITE_PERL%%/DateTime/Locale/nyn.pod
@@ -1351,6 +1352,7 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/nn.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/nnh-CM.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/nnh.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/no.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/nus-SS.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/nus.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/nyn-UG.pl
@@ -2142,6 +2144,7 @@
 %%PERL5_MAN3%%/DateTime::Locale::nn_NO.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::nnh.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::nnh_CM.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::no.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::nus.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::nus_SS.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::nyn.3.gz

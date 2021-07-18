@@ -23,8 +23,9 @@ TEST_DEPENDS=	p5-Test-CheckDeps>=0.010:devel/p5-Test-CheckDeps \
 		p5-Test-Requires>=0:devel/p5-Test-Requires \
 		p5-aliased>=0:devel/p5-aliased
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

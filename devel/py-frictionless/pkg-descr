@@ -1,0 +1,6 @@
+Frictionless is a framework to describe, extract, validate, and transform
+tabular data (DEVT Framework). It supports a great deal of data schemes and
+formats, as well as provides popular platforms integrations. The framework is
+powered by the lightweight yet comprehensive Frictionless Data Specifications.
+
+WWW: https://github.com/frictionlessdata/frictionless-py

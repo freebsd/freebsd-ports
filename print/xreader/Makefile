@@ -1,9 +1,10 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	xreader
-PORTVERSION=	2.8.3
-PORTREVISION=	2
+PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	print gnome
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Multi-format document reader

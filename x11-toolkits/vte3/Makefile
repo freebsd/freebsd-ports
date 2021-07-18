@@ -1,7 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	vte
-PORTVERSION=	0.64.0
+PORTVERSION=	0.64.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lang gettext gnome localbase meson \
-		pkgconfig python:3.6+ tar:bzip2
+		pkgconfig python:3.6+ tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 

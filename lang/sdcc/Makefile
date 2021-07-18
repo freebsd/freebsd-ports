@@ -1,7 +1,7 @@
 PORTNAME=	sdcc
 PORTVERSION=	4.0.0
 DISTVERSIONPREFIX=src-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:devel/boost-l
 CONFLICTS_INSTALL=	sdcc-[0-9]* sdcc-devel-[0-9]*
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build bison compiler:c++11-lang gmake \
-		readline:port python shebangfix tar:bzip2
+		readline python shebangfix tar:bzip2
 SHEBANG_FILES=	support/scripts/as2gbmap.py
 TEST_WRKSRC=	${WRKSRC}/support/regression
 TEST_ARGS=	--no-print-directory # tons of them, way too annoying
@@ -79,6 +79,7 @@ post-patch:
 		${WRKSRC}/device/lib/pic14/Makefile.common \
 		${WRKSRC}/device/lib/pic14/Makefile.in \
 		${WRKSRC}/device/lib/pic14/configure \
+		${WRKSRC}/device/lib/pic14/configure.ac \
 		${WRKSRC}/device/lib/pic14/libc/Makefile.in \
 		${WRKSRC}/device/lib/pic14/libm/Makefile.in \
 		${WRKSRC}/device/lib/pic14/libsdcc/enhanced/Makefile.in \

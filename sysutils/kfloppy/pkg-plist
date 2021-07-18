@@ -8,6 +8,7 @@ share/icons/hicolor/32x32/apps/kfloppy.png
 share/icons/hicolor/48x48/apps/kfloppy.png
 share/icons/hicolor/64x64/apps/kfloppy.png
 share/locale/ar/LC_MESSAGES/kfloppy.mo
+share/locale/be/LC_MESSAGES/kfloppy.mo
 share/locale/bg/LC_MESSAGES/kfloppy.mo
 share/locale/bs/LC_MESSAGES/kfloppy.mo
 share/locale/ca/LC_MESSAGES/kfloppy.mo
@@ -51,10 +52,14 @@ share/locale/pt/LC_MESSAGES/kfloppy.mo
 share/locale/pt_BR/LC_MESSAGES/kfloppy.mo
 share/locale/ro/LC_MESSAGES/kfloppy.mo
 share/locale/ru/LC_MESSAGES/kfloppy.mo
+share/locale/se/LC_MESSAGES/kfloppy.mo
 share/locale/sk/LC_MESSAGES/kfloppy.mo
 share/locale/sl/LC_MESSAGES/kfloppy.mo
+share/locale/sq/LC_MESSAGES/kfloppy.mo
 share/locale/sr/LC_MESSAGES/kfloppy.mo
 share/locale/sv/LC_MESSAGES/kfloppy.mo
+share/locale/ta/LC_MESSAGES/kfloppy.mo
+share/locale/tg/LC_MESSAGES/kfloppy.mo
 share/locale/tr/LC_MESSAGES/kfloppy.mo
 share/locale/ug/LC_MESSAGES/kfloppy.mo
 share/locale/uk/LC_MESSAGES/kfloppy.mo

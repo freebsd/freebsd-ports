@@ -1,9 +1,10 @@
 PORTNAME=	shotcut
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${FULLVERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Free, open source, cross-platform video editor
 
 LICENSE=	GPLv3

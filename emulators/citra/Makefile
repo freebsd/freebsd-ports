@@ -1,5 +1,5 @@
 PORTNAME=	citra
-PORTVERSION=	s20210403
+PORTVERSION=	s20210711
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -21,15 +21,15 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	b3cab3c45
+GH_TAGNAME=	62236b725
 GH_TUPLE=	citra-emu:ext-boost:36603a1:boost/externals/boost \
 		citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
-		MerryMage:dynarmic:r3-207-gf9d84871:dynarmic/externals/dynarmic \
+		MerryMage:dynarmic:r3-219-g71e3553d:dynarmic/externals/dynarmic \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		arun11299:cpp-jwt:v1.1.1:cpp_jwt/externals/cpp-jwt \
 		benhoyt:inih:r52:inih/externals/inih/inih \
-		catchorg:Catch2:v2.3.0:catch/externals/catch \
+		catchorg:Catch2:v2.13.4:catch/externals/catch \
 		facebook:zstd:v1.4.8:zstd/externals/zstd \
 		fmtlib:fmt:7.1.2:fmt/externals/fmt \
 		herumi:xbyak:v5.96:xbyak/externals/xbyak \
@@ -40,11 +40,10 @@ GH_TUPLE=	citra-emu:ext-boost:36603a1:boost/externals/boost \
 		weidai11:cryptopp:CRYPTOPP_7_0_0-23-gf320e7d9:cryptopp/externals/cryptopp/cryptopp \
 		wwylele:teakra:3e032a7:teakra/externals/teakra
 
-USES=		cmake compiler:c++17-lang localbase:ldflags sdl
+USES=		cmake:testing compiler:c++17-lang localbase:ldflags sdl
 USE_SDL=	sdl2
 CMAKE_ON=	USE_SYSTEM_BOOST
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
-TEST_TARGET=	test
 
 OPTIONS_DEFINE=	ALSA FFMPEG PULSEAUDIO JACK SNDIO
 OPTIONS_DEFAULT=FFMPEG PULSEAUDIO JACK SNDIO

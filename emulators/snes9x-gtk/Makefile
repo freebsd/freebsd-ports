@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	-gtk
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	Super Nintendo Entertainment System (SNES) Emulator
 
+# Commercial users must seek permission from copyright holders.
 LICENSE=	Snes9x
 LICENSE_NAME=	Snes9x License
 LICENSE_FILE=	${WRKSRC}/../docs/snes9x-license.txt
@@ -29,7 +30,6 @@ LDFLAGS+=	-Wl,--as-needed
 
 PATCH_WRKSRC=	${WRKSRC}/..
 WRKSRC_SUBDIR=	gtk
-NO_CDROM=	Commercial users must seek permission from copyright holders.
 
 OPTIONS_DEFINE=		DEBUG JMA NETPLAY
 OPTIONS_GROUP=		SOUND VIDEO

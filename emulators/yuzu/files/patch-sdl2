@@ -1,0 +1,123 @@
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=252371
+
+-- SDL2 2.0.15 or newer not found, falling back to externals.
+
+CMake Error at externals/CMakeLists.txt:54 (add_subdirectory):
+  The source directory
+
+    externals/SDL
+
+  does not contain a CMakeLists.txt file.
+
+--- CMakeLists.txt.orig	2021-05-19 22:47:48 UTC
++++ CMakeLists.txt
+@@ -297,7 +297,7 @@ endif()
+ 
+ if (NOT YUZU_USE_BUNDLED_SDL2)
+         if (YUZU_ALLOW_SYSTEM_SDL2)
+-            find_package(SDL2 2.0.15 QUIET)
++            find_package(SDL2 2.0.12 QUIET)
+ 
+         if (TRUE)
+             if (SDL2_FOUND)
+--- src/input_common/sdl/sdl_impl.cpp.orig	2021-06-02 22:29:09 UTC
++++ src/input_common/sdl/sdl_impl.cpp
+@@ -64,6 +64,7 @@ class SDLJoystick { (public)
+     }
+ 
+     void EnableMotion() {
++#if SDL_VERSION_ATLEAST(2,0,14)
+         if (sdl_controller) {
+             SDL_GameController* controller = sdl_controller.get();
+             if (SDL_GameControllerHasSensor(controller, SDL_SENSOR_ACCEL) && !has_accel) {
+@@ -75,6 +76,7 @@ class SDLJoystick { (public)
+                 has_gyro = true;
+             }
+         }
++#endif
+     }
+ 
+     void SetButton(int button, bool value) {
+@@ -82,6 +84,7 @@ class SDLJoystick { (public)
+         state.buttons.insert_or_assign(button, value);
+     }
+ 
++#if SDL_VERSION_ATLEAST(2,0,14)
+     void SetMotion(SDL_ControllerSensorEvent event) {
+         constexpr float gravity_constant = 9.80665f;
+         std::lock_guard lock{mutex};
+@@ -109,6 +112,7 @@ class SDLJoystick { (public)
+         motion.UpdateRotation(time_difference * 1000);
+         motion.UpdateOrientation(time_difference * 1000);
+     }
++#endif
+ 
+     bool GetButton(int button) const {
+         std::lock_guard lock{mutex};
+@@ -378,12 +382,14 @@ void SDLState::HandleGameControllerEvent(const SDL_Eve
+         }
+         break;
+     }
++#if SDL_VERSION_ATLEAST(2,0,14)
+     case SDL_CONTROLLERSENSORUPDATE: {
+         if (auto joystick = GetSDLJoystickBySDLID(event.csensor.which)) {
+             joystick->SetMotion(event.csensor);
+         }
+         break;
+     }
++#endif
+     case SDL_JOYDEVICEREMOVED:
+         LOG_DEBUG(Input, "Controller removed with Instance_ID {}", event.jdevice.which);
+         CloseJoystick(SDL_JoystickFromInstanceID(event.jdevice.which));
+@@ -823,7 +829,9 @@ SDLState::SDLState() {
+ 
+     // Enable HIDAPI rumble. This prevents SDL from disabling motion on PS4 and PS5 controllers
+     SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_PS4_RUMBLE, "1");
++#if SDL_VERSION_ATLEAST(2,0,15)
+     SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE, "1");
++#endif
+ 
+     // Tell SDL2 to use the hidapi driver. This will allow joycons to be detected as a
+     // GameController and not a generic one
+@@ -1037,6 +1045,7 @@ Common::ParamPackage SDLEventToMotionParamPackage(SDLS
+         }
+         break;
+     }
++#if SDL_VERSION_ATLEAST(2,0,14)
+     case SDL_CONTROLLERSENSORUPDATE: {
+         bool is_motion_shaking = false;
+         constexpr float gyro_threshold = 5.0f;
+@@ -1066,6 +1075,7 @@ Common::ParamPackage SDLEventToMotionParamPackage(SDLS
+         }
+         break;
+     }
++#endif
+     }
+     return {};
+ }
+@@ -1169,6 +1179,7 @@ ButtonBindings SDLState::GetNintendoButtonBinding(
+     auto sl_button = SDL_CONTROLLER_BUTTON_LEFTSHOULDER;
+     auto sr_button = SDL_CONTROLLER_BUTTON_RIGHTSHOULDER;
+ 
++#if SDL_VERSION_ATLEAST(2,0,14)
+     if (joystick->IsJoyconLeft()) {
+         sl_button = SDL_CONTROLLER_BUTTON_PADDLE2;
+         sr_button = SDL_CONTROLLER_BUTTON_PADDLE4;
+@@ -1177,6 +1188,7 @@ ButtonBindings SDLState::GetNintendoButtonBinding(
+         sl_button = SDL_CONTROLLER_BUTTON_PADDLE3;
+         sr_button = SDL_CONTROLLER_BUTTON_PADDLE1;
+     }
++#endif
+ 
+     return {
+         std::pair{Settings::NativeButton::A, SDL_CONTROLLER_BUTTON_A},
+@@ -1462,7 +1474,9 @@ class SDLMotionPoller final : public SDLPoller { (publ
+             [[fallthrough]];
+         case SDL_JOYBUTTONUP:
+         case SDL_JOYHATMOTION:
++#if SDL_VERSION_ATLEAST(2,0,14)
+         case SDL_CONTROLLERSENSORUPDATE:
++#endif
+             return {SDLEventToMotionParamPackage(state, event)};
+         }
+         return std::nullopt;

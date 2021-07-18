@@ -2,7 +2,7 @@
 
 PORTNAME=	thunar-vcs-plugin
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel xfce
 MASTER_SITES=	XFCE/thunar-plugins
 DIST_SUBDIR=	xfce4
@@ -22,11 +22,9 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		NLS GIT SVN
-OPTIONS_DEFAULT=	SVN
+OPTIONS_DEFINE=		GIT NLS SUBVERSION
+OPTIONS_DEFAULT=	SUBVERSION
 OPTIONS_SUB=		yes
-
-GIT_DESC=		Git support
 
 GIT_CONFIGURE_ENABLE=	git
 GIT_RUN_DEPENDS=	git:devel/git
@@ -34,8 +32,8 @@ GIT_RUN_DEPENDS=	git:devel/git
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
 
-SVN_CONFIGURE_ENABLE=	subversion
-SVN_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
-			libapr-1.so:devel/apr1
+SUBVERSION_CONFIGURE_ENABLE=	subversion
+SUBVERSION_LIB_DEPENDS=		libsvn_client-1.so:devel/subversion \
+				libapr-1.so:devel/apr1
 
 .include <bsd.port.mk>

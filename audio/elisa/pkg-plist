@@ -14,6 +14,7 @@ share/icons/hicolor/64x64/apps/elisa.png
 share/icons/hicolor/scalable/apps/elisa.svg
 share/locale/ar/LC_MESSAGES/elisa.mo
 share/locale/ast/LC_MESSAGES/elisa.mo
+share/locale/az/LC_MESSAGES/elisa.mo
 share/locale/bs/LC_MESSAGES/elisa.mo
 share/locale/ca/LC_MESSAGES/elisa.mo
 share/locale/ca@valencia/LC_MESSAGES/elisa.mo
@@ -28,6 +29,7 @@ share/locale/eu/LC_MESSAGES/elisa.mo
 share/locale/fi/LC_MESSAGES/elisa.mo
 share/locale/fr/LC_MESSAGES/elisa.mo
 share/locale/gl/LC_MESSAGES/elisa.mo
+share/locale/hi/LC_MESSAGES/elisa.mo
 share/locale/hu/LC_MESSAGES/elisa.mo
 share/locale/ia/LC_MESSAGES/elisa.mo
 share/locale/id/LC_MESSAGES/elisa.mo

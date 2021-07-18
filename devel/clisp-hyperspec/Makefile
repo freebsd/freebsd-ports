@@ -7,7 +7,11 @@ DISTNAME=	HyperSpec-7-0
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Common Lisp reference in HTML format, from LispWorks Ltd
 
-NO_CDROM=	Commercial redistribution prohibited
+# Converted from NO_CDROM
+LICENSE=	HyperSpec
+LICENSE_NAME=	HyperSpec
+LICENSE_TEXT=	Commercial redistribution prohibited
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 NO_ARCH=	yes
 NO_BUILD=	yes

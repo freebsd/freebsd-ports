@@ -1,6 +1,6 @@
 PORTNAME=	luatex
 PORTVERSION=	0.80.0
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	TeX
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	freebsd-tex@FreeBSD.org
 COMMENT=	Extended version of pdfTeX using Lua
 
 LIB_DEPENDS=	libpng.so:graphics/png \
@@ -72,13 +72,11 @@ CONFIGURE_ARGS+=--with-system-$L \
 		--with-$L-include=${LOCALBASE}/include \
 		--with-$L-libdir=${LOCALBASE}/lib
 .endfor
+CONFIGURE_ARGS+=CC="${CC}" \
+		CXX="${CXX}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 TEX_FORMATS=	luatex
-
-# Fix build on recent current -- our tex is so outdated,
-# that it's unlikely that any upstream patches apply.
-CFLAGS+=	-fcommon
 
 # buildenv and dumpenv in Makefile uses hard-coded TEXMFCNF.
 post-extract:

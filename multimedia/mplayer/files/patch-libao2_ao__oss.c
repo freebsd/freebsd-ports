@@ -1,4 +1,4 @@
---- libao2/ao_oss.c.orig	2016-02-26 20:47:16 UTC
+--- libao2/ao_oss.c.orig	2021-04-15 19:26:53 UTC
 +++ libao2/ao_oss.c
 @@ -57,6 +57,8 @@ static const ao_info_t info =
  	""
@@ -129,13 +129,10 @@
    oss_format = format2oss(ao_data.format);
    if(AF_FORMAT_IS_AC3(ao_data.format))
      fail |= ioctl (audio_fd, SNDCTL_DSP_SPEED, &ao_data.samplerate) == -1;
-@@ -467,14 +543,15 @@ static void reset(void){
-       int c = ao_data.channels-1;
-       fail |= ioctl (audio_fd, SNDCTL_DSP_STEREO, &c) == -1;
-     }
--    fail |= ioctl (audio_fd, SNDCTL_DSP_SPEED, &ao_data.samplerate) == -1;
+@@ -471,11 +547,14 @@ static void reset(void){
    }
--  mp_msg(MSGT_AO,MSGL_WARN, "OSS: Reset failed\n");
+   if (fail)
+     mp_msg(MSGT_AO,MSGL_WARN, "OSS: Reset failed\n");
 +  setfragment(audio_fd);
 +  restorevol();
  }

@@ -15,7 +15,7 @@ LIB_DEPENDS=	libspf2.so:mail/libspf2
 
 USES=		compiler tar:xz
 USE_RC_SUBR=	milter-callback
-USE_GCC=	any
+USE_GCC=	yes
 
 SUB_FILES=	pkg-message
 

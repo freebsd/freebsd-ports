@@ -14,7 +14,9 @@ share/metainfo/io.photoflare.photoflare.appdata.xml
 %%DATADIR%%/languages/cs.qm
 %%DATADIR%%/languages/de.qm
 %%DATADIR%%/languages/en.qm
+%%DATADIR%%/languages/es.qm
 %%DATADIR%%/languages/fr.qm
+%%DATADIR%%/languages/id.qm
 %%DATADIR%%/languages/nl.qm
 %%DATADIR%%/languages/pt_BR.qm
 %%DATADIR%%/languages/pt_PT.qm

@@ -3,6 +3,7 @@
 PORTNAME=	screensaver.biogenesis
 PORTVERSION=	2.5.0
 DISTVERSIONSUFFIX=	-Matrix
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com

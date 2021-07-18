@@ -14,3 +14,5 @@ Features:
   * SSL Support using OpenSSL
   * Apache module server support
   * Client digest authentication
+
+WWW: https://libsoup.org/

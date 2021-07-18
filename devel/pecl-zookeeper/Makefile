@@ -1,7 +1,7 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	zookeeper
-PORTVERSION=	0.7.2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org

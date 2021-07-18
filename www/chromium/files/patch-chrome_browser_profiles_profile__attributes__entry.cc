@@ -1,4 +1,4 @@
---- chrome/browser/profiles/profile_attributes_entry.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/profiles/profile_attributes_entry.cc.orig	2021-05-12 22:05:44 UTC
 +++ chrome/browser/profiles/profile_attributes_entry.cc
 @@ -159,7 +159,7 @@ void ProfileAttributesEntry::Initialize(ProfileInfoCac
    if (is_force_signin_enabled_) {

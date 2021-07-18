@@ -1,7 +1,7 @@
 PORTNAME=	jenkins
-PORTVERSION=	2.277.2
+PORTVERSION=	2.289.2
 CATEGORIES=	devel java
-MASTER_SITES=	http://mirrors.jenkins-ci.org/war-stable/${PORTVERSION}/
+MASTER_SITES=	http://mirrors.jenkins.io/war-stable/${PORTVERSION}/
 PKGNAMESUFFIX=	-lts
 DISTNAME=	jenkins
 EXTRACT_SUFX=	.war
@@ -13,20 +13,20 @@ COMMENT=	Open-source continuous integration server
 
 LICENSE=	MIT
 
-CONFLICTS=	jenkins-[0-9]*
-USE_JAVA=	1.8+
-
-NO_BUILD=	yes
-
-USE_RC_SUBR=	jenkins
-
-USES+=		cpe
+USES=		cpe
 CPE_VENDOR=	cloudbees
 CPE_EDITION=	lts
+USE_JAVA=	yes
+USE_RC_SUBR=	jenkins
 
-JENKINS_HOME?=	${PREFIX}/jenkins
-JENKINS_USER?=	jenkins
-JENKINS_GROUP?=	jenkins
+CONFLICTS=	jenkins-[0-9]*
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+JENKINS_HOME?=		${PREFIX}/jenkins
+JENKINS_USER?=		jenkins
+JENKINS_GROUP?=		jenkins
 JENKINS_LOG_FILE?=	/var/log/jenkins.log
 
 .if ${JENKINS_USER} == "jenkins"
@@ -36,13 +36,13 @@ USERS=	jenkins
 GROUPS=	jenkins
 .endif
 
-SUB_LIST+=	JENKINS_HOME=${JENKINS_HOME} \
-		JENKINS_USER=${JENKINS_USER} \
+SUB_LIST+=	JAVA_HOME=${JAVA_HOME} \
 		JENKINS_GROUP=${JENKINS_GROUP} \
-		JAVA_HOME=${JAVA_HOME} \
-		JENKINS_LOG_FILE=${JENKINS_LOG_FILE}
-PLIST_SUB+=	JENKINS_USER=${JENKINS_USER} \
-		JENKINS_GROUP=${JENKINS_GROUP}
+		JENKINS_HOME=${JENKINS_HOME} \
+		JENKINS_LOG_FILE=${JENKINS_LOG_FILE} \
+		JENKINS_USER=${JENKINS_USER}
+PLIST_SUB+=	JENKINS_GROUP=${JENKINS_GROUP} \
+		JENKINS_USER=${JENKINS_USER}
 
 .include <bsd.port.pre.mk>
 

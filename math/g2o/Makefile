@@ -1,6 +1,7 @@
 PORTNAME=	g2o
 DISTVERSION=	20201223
 DISTVERSIONSUFFIX=	_git
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +10,7 @@ COMMENT=	General framework for graph optimization
 LICENSE=	LGPL3 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libcxsparse.so:math/suitesparse \
+LIB_DEPENDS=	libcxsparse.so:math/suitesparse-cxsparse \
 		libQGLViewer-qt5.so:graphics/libQGLViewer \
 		libmetis.so:math/metis \
 		libopenblas.so:math/openblas

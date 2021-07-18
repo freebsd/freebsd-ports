@@ -1,7 +1,7 @@
 PORTNAME=	setzer
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.3.4
-PORTREVISION=	3
+DISTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	greg@unrelenting.technology
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libgspell-1.so:textproc/gspell \
 		libpoppler-glib.so:graphics/poppler-glib \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0:devel/py-xdg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pdfminer.six>=0:textproc/py-pdfminer.six@${PY_FLAVOR} \
 		xdg-open:devel/xdg-utils
 
 USES=		desktop-file-utils gettext gnome meson pkgconfig python:3.5+ \

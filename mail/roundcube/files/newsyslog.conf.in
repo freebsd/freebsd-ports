@@ -1,3 +1,3 @@
-# logfilename                     [owner:group]    mode count size when  flags [/pid_file] [sig_num]
-%%WWWDIR%%/roundcube/logs/errors    www:www    644  10    1000 *     XCBN
-%%WWWDIR%%/roundcube/logs/sendmail  www:www    644  10    1000 *     XCBN
+# logfilename                 [owner:group] mode count size when  flags [/pid_file] [sig_num]
+%%WWWDIR%%/logs/errors.log    www:www       644  10    1000 *     XCBN
+%%WWWDIR%%/logs/sendmail.log  www:www       644  10    1000 *     XCBN

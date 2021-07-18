@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/settings/appearance_handler.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/webui/settings/appearance_handler.cc.orig	2021-04-14 18:40:56 UTC
 +++ chrome/browser/ui/webui/settings/appearance_handler.cc
 @@ -31,7 +31,7 @@ void AppearanceHandler::RegisterMessages() {
                            base::Unretained(this)));

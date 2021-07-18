@@ -1,5 +1,6 @@
 PORTNAME=	networkauth
 PORTVERSION=	${PYQT5_VERSION}
+PORTREVISION=	2
 CATEGORIES=	net devel python
 MASTER_SITES=	${MASTER_SITES_PYQTNETWORKAUTH}
 PKGNAMEPREFIX=	${PYQT_PY_RELNAME}-
@@ -8,7 +9,7 @@ DISTNAME=	${PYQTNETWORKAUTH_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt5 toolkit, QtNetworkAuth module
 
-USES=		python:3.5+ pyqt:5 qt:5
+USES=		gl pyqt:5 python:3.5+ qt:5
 USE_PYQT=	sip_build core gui network widgets
 USE_PYTHON=	concurrent flavors py3kplist
 USE_QT=		core gui network networkauth qmake_build

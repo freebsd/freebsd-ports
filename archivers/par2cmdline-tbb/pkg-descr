@@ -1,7 +1,0 @@
-par2cmdline-tbb is the tbb version of the par2cmdline tool.
-
-par2cmdline is a program for creating and using PAR2 files to detect
-damage in data files and repair them if necessary. It can be used with
-any kind of file. Par files are especially popular on Usenet.
-
-WWW: http://chuchusoft.com/par2_tbb/

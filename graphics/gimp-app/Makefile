@@ -2,7 +2,7 @@
 
 PORTNAME?=	gimp-app
 PORTVERSION=	2.10.24
-PORTREVISION=	1
+PORTREVISION=	9
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	GIMP/gimp/v${PORTVERSION:R}
@@ -39,6 +39,7 @@ LIB_DEPENDS+=	libjson-glib-1.0.so:devel/json-glib \
 
 LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
 LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_armv7=	libunwind.so:devel/libunwind
 LIB_DEPENDS_i386=	libunwind.so:devel/libunwind
 LIB_DEPENDS_powerpc64=		libunwind.so:devel/libunwind
 LIB_DEPENDS_powerpc64le=	libunwind.so:devel/libunwind
@@ -83,9 +84,9 @@ PLIST_SUB+=	LIBVER=0.1000.${PORTVERSION:E}
 
 USES+=		desktop-file-utils
 
-OPTIONS_DEFINE?=	AA GHOSTSCRIPT \
+OPTIONS_DEFINE?=	AALIB GHOSTSCRIPT \
 			LIBHEIF LIBMNG OPENEXR OPENJPEG SIMD WEBP WMF
-OPTIONS_DEFAULT=	AA LIBMNG OPENEXR OPENJPEG SIMD WEBP WMF
+OPTIONS_DEFAULT=	AALIB LIBMNG OPENEXR OPENJPEG SIMD WEBP WMF
 OPTIONS_SUB=		yes
 
 .endif
@@ -102,9 +103,9 @@ LIB_DEPENDS+=	libgimp-2.0.so:graphics/gimp-app
 
 DEBUG_CONFIGURE_ON=	--enable-debug
 
-AA_DESC=		Ascii-art Plug-in
-AA_LIB_DEPENDS=		libaa.so:graphics/aalib
-AA_CONFIGURE_WITH=	aa
+AALIB_DESC=		Ascii-art Plug-in
+AALIB_LIB_DEPENDS=	libaa.so:graphics/aalib
+AALIB_CONFIGURE_WITH=	aa
 
 LIBHEIF_DESC=		ISO/IEC 23008-12:2017 HEIF file format support
 LIBHEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
@@ -117,7 +118,8 @@ LIBMNG_LIB_DEPENDS=	libmng.so:graphics/libmng
 LIBMNG_CONFIGURE_WITH=	libmng
 
 OPENEXR_CONFIGURE_WITH=	openexr
-OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
+OPENEXR_LIB_DEPENDS=	libImath.so:math/Imath \
+			libOpenEXR.so:graphics/openexr
 
 OPENJPEG_DESC=		Enhanced JPEG (jpeg2000) graphics support
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg

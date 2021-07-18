@@ -21,7 +21,7 @@ BUILD_DEPENDS=	swig:devel/swig \
 		${PYNUMPY}
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		liblcms2.so:graphics/lcms2 \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libmypaint.so:graphics/libmypaint
 RUN_DEPENDS=	mypaint-brushes2>0:graphics/mypaint-brushes2 \
 		${PYNUMPY}

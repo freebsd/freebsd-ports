@@ -43,9 +43,9 @@ lib/uim/plugin/libuim-sqlite3.so
 lib/uim/plugin/libuim-xkb.so
 libdata/pkgconfig/gcroots.pc
 libdata/pkgconfig/uim.pc
-%%X11%%libexec/uim-candwin-gtk
-%%X11%%libexec/uim-candwin-horizontal-gtk
-%%X11%%libexec/uim-candwin-tbl-gtk
+%%X11%%libexec/uim-candwin-gtk3
+%%X11%%libexec/uim-candwin-horizontal-gtk3
+%%X11%%libexec/uim-candwin-tbl-gtk3
 libexec/uim-helper-server
 %%X11%%man/man1/uim-xim.1.gz
 share/applications/uim.desktop

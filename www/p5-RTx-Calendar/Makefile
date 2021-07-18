@@ -7,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	matthew@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calendar extension module for the RT ticketing system
 
 LICENSE=	ART10 GPLv1+

@@ -11,7 +11,11 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual globe, map and geographical information program
 
-RESTRICTED=	Not really sure about the redistribution terms
+# Converted from RESTRICTED
+LICENSE=	GEARTH
+LICENSE_NAME=	Google Earth
+LICENSE_TEXT=	Not really sure about the redistribution terms
+LICENSE_PERMS=	auto-accept
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

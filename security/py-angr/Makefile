@@ -1,6 +1,7 @@
 PORTNAME=	angr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ANGR_VERSION}
+PORTREVISION=	1
 CATEGORIES=	security devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ailment>=${ANGR_VERSION}:security/py-ailment
 		${PYTHON_PKGNAMEPREFIX}cle>=${ANGR_VERSION}:devel/py-cle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cppheaderparser>=0:devel/py-cppheaderparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dpkt>=0:net/py-dpkt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}GitPython>=0:devel/py-gitpython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gitpython>=0:devel/py-gitpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}itanium_demangler>=0:devel/py-itanium_demangler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mulpyplexer>=0:devel/py-mulpyplexer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.0:math/py-networkx@${PY_FLAVOR} \
@@ -38,9 +39,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ailment>=${ANGR_VERSION}:security/py-ailment
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keystone-engine>=0:devel/py-keystone-engine@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
-USES=		gmake localbase:ldflags python:3.6+
+USES=		angr:binaries gmake localbase:ldflags python:3.6+
 USE_GITHUB=	yes
-GH_TUPLE=	${PORTNAME}:binaries:${ANGR_BINARIES_TAGNAME}:binaries
 USE_PYTHON=	autoplist distutils
 
 TEST_ENV=	${MAKE_ENV} \
@@ -84,11 +84,7 @@ _NOSE_EXCLUDE=	(${_EXCLUDED_TESTS:S,  , ,g:S, ,|,gW})
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/lib/angr_native*.so
 
-pre-test:
-	@${LN} -Fs ${WRKSRC_binaries} ${WRKDIR}/binaries
-
 do-test:
 	@(cd ${WRKSRC}/tests && ${SETENV} ${TEST_ENV} nosetests-${PYTHON_VER} -v)
 
-.include "${.CURDIR}/Makefile.version"
 .include <bsd.port.mk>

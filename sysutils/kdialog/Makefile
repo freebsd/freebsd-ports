@@ -16,6 +16,4 @@ USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build
 USE_XORG=	x11
 
-OPTIONS_DEFINE=	DOCS
-
 .include <bsd.port.mk>

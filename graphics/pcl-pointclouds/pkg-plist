@@ -259,13 +259,13 @@ include/pcl-%%SHL2%%/pcl/filters/convolution_3d.h
 include/pcl-%%SHL2%%/pcl/filters/covariance_sampling.h
 include/pcl-%%SHL2%%/pcl/filters/crop_box.h
 include/pcl-%%SHL2%%/pcl/filters/crop_hull.h
+include/pcl-%%SHL2%%/pcl/filters/experimental/functor_filter.h
 include/pcl-%%SHL2%%/pcl/filters/extract_indices.h
 include/pcl-%%SHL2%%/pcl/filters/fast_bilateral.h
 include/pcl-%%SHL2%%/pcl/filters/fast_bilateral_omp.h
 include/pcl-%%SHL2%%/pcl/filters/filter.h
 include/pcl-%%SHL2%%/pcl/filters/filter_indices.h
 include/pcl-%%SHL2%%/pcl/filters/frustum_culling.h
-include/pcl-%%SHL2%%/pcl/filters/functor_filter.h
 include/pcl-%%SHL2%%/pcl/filters/grid_minimum.h
 include/pcl-%%SHL2%%/pcl/filters/impl/approximate_voxel_grid.hpp
 include/pcl-%%SHL2%%/pcl/filters/impl/bilateral.hpp
@@ -381,7 +381,6 @@ include/pcl-%%SHL2%%/pcl/io/robot_eye_grabber.h
 include/pcl-%%SHL2%%/pcl/io/tar.h
 include/pcl-%%SHL2%%/pcl/io/vlp_grabber.h
 include/pcl-%%SHL2%%/pcl/io/vtk_io.h
-include/pcl-%%SHL2%%/pcl/kdtree/flann.h
 include/pcl-%%SHL2%%/pcl/kdtree/impl/io.hpp
 include/pcl-%%SHL2%%/pcl/kdtree/impl/kdtree_flann.hpp
 include/pcl-%%SHL2%%/pcl/kdtree/io.h
@@ -970,6 +969,7 @@ libdata/pkgconfig/pcl_tracking-%%SHL2%%.pc
 %%DATADIR%%/Modules/FindEigen.cmake
 %%DATADIR%%/Modules/FindEnsenso.cmake
 %%DATADIR%%/Modules/FindFLANN.cmake
+%%DATADIR%%/Modules/FindGLEW.cmake
 %%DATADIR%%/Modules/FindOpenNI.cmake
 %%DATADIR%%/Modules/FindOpenNI2.cmake
 %%DATADIR%%/Modules/FindPcap.cmake
@@ -978,7 +978,7 @@ libdata/pkgconfig/pcl_tracking-%%SHL2%%.pc
 %%DATADIR%%/Modules/FindRSSDK2.cmake
 %%DATADIR%%/Modules/FindSphinx.cmake
 %%DATADIR%%/Modules/FinddavidSDK.cmake
-%%DATADIR%%/Modules/Findlibusb-1.0.cmake
+%%DATADIR%%/Modules/Findlibusb.cmake
 %%DATADIR%%/Modules/UseCompilerCache.cmake
 %%DATADIR%%/PCLConfig.cmake
 %%DATADIR%%/PCLConfigVersion.cmake

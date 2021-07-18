@@ -1,9 +1,9 @@
---- src/configfile.c.orig	2015-01-03 11:29:45.000000000 -0500
-+++ src/configfile.c	2015-01-03 11:54:18.000000000 -0500
-@@ -20,12 +20,12 @@
- 
+--- src/configfile.c.orig	2021-01-18 19:18:05 UTC
++++ src/configfile.c
+@@ -21,13 +21,13 @@
  /* chaddr to use for bootp header 'chaddr' and to construct ClientID option */
  /* optionally specified by user; if unspecified, GetChaddr() returns my_eaddr */
+ /* Is required if do_not_lookup_enet_and_ip_addresses is also specifed. */
 -struct ether_addr chaddr; 
 +struct libnet_ether_addr chaddr; 
  int is_chaddr_specified; /* flag */
@@ -11,12 +11,13 @@
 -/* ether_addr to use for ethernet frame src */
 +/* libnet_ether_addr to use for ethernet frame src */
  /* optionally specified by user; if unspecified, GetEther_src() returns my_eaddr */
+ /* Is required if do_not_lookup_enet_and_ip_addresses is also specifed. */
 -struct ether_addr ether_src; 
 +struct libnet_ether_addr ether_src; 
  int is_ether_src_specified; /* flag */
  
  /* An ipaddr to use for "Server Identifer" option  (when this is needed)
-@@ -50,7 +50,7 @@
+@@ -52,7 +52,7 @@ struct in_addr legal_servers[MAX_LEGAL_SERVERS];
  int num_legal_servers;
  
  /* array of legal DHCP servers' ethersrc addresses, and number elems in array */
@@ -25,16 +26,16 @@
  int num_legal_server_ethersrcs;
  
  /* parallel arrays of "lease networks of concern" (address & mask), and number of elems in arrays.
-@@ -85,7 +85,7 @@
+@@ -95,7 +95,7 @@ read_configfile(const char *fname)
  	int tokens; /* number of tokens successfully read by sscanf */
  	int tmpint;
  	unsigned int tmpuint;
 -	struct ether_addr *enet;
 +	struct libnet_ether_addr *enet;
  	struct in_addr inaddr, inaddr2;
+ 	int is_fatal_error;
  	
- 	/* init all values to defaults */
-@@ -420,14 +420,14 @@
+@@ -459,14 +459,14 @@ read_configfile(const char *fname)
  }
  
  
@@ -51,7 +52,7 @@
  
  	/* we re-init the static copy on each call, since we don't know if the
  	   	caller has written into it. */
-@@ -442,14 +442,14 @@
+@@ -481,14 +481,14 @@ GetChaddr (void)
  }
  
  
@@ -68,7 +69,7 @@
  
  	/* we re-init the static copy on each call, since we don't know if the
  	   	caller has written into it. */
-@@ -555,7 +555,7 @@
+@@ -594,7 +594,7 @@ isInLeaseNetworksOfConcern(struct in_addr *ipaddr)
  }
  
  int
@@ -77,7 +78,7 @@
  {
  /* If eaddr is a member of legal_server_ethersrcs[], return true.
     If legal_server_ethersrcs[] is empty, also return true.
-@@ -576,7 +576,7 @@
+@@ -615,7 +615,7 @@ isLegalServerEthersrcsMember(struct ether_addr *eaddr)
  		return 1;
  
  	for (i = 0; i < num_legal_server_ethersrcs; i++) {

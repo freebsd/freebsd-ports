@@ -1,6 +1,6 @@
 PORTNAME=	omniauth_crowd
 PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,10 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS?=	rubygem-activesupport60>=0:devel/rubygem-activesupport60 \
 		rubygem-nokogiri>=1.4.4:textproc/rubygem-nokogiri \
-		rubygem-omniauth>=1.0:security/rubygem-omniauth
+		rubygem-omniauth1>=1.0<2:security/rubygem-omniauth1
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>

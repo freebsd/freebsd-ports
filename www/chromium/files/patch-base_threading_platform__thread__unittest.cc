@@ -1,6 +1,6 @@
---- base/threading/platform_thread_unittest.cc.orig	2021-03-12 23:57:15 UTC
+--- base/threading/platform_thread_unittest.cc.orig	2021-04-14 18:40:48 UTC
 +++ base/threading/platform_thread_unittest.cc
-@@ -312,7 +312,7 @@ TEST(PlatformThreadTest,
+@@ -313,7 +313,7 @@ TEST(PlatformThreadTest,
  // and hardcodes what we know. Please inform scheduler-dev@chromium.org if this
  // proprerty changes for a given platform.
  TEST(PlatformThreadTest, CanIncreaseThreadPriority) {
@@ -9,7 +9,7 @@
    // On Ubuntu, RLIMIT_NICE and RLIMIT_RTPRIO are 0 by default, so we won't be
    // able to increase priority to any level.
    constexpr bool kCanIncreasePriority = false;
-@@ -406,9 +406,9 @@ TEST(PlatformThreadTest, SetHugeThreadName) {
+@@ -407,9 +407,9 @@ TEST(PlatformThreadTest, SetHugeThreadName) {
  
  TEST(PlatformThreadTest, GetDefaultThreadStackSize) {
    size_t stack_size = PlatformThread::GetDefaultThreadStackSize();

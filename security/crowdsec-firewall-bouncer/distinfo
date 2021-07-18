@@ -1,0 +1,5 @@
+TIMESTAMP = 1625834541
+SHA256 (go/security_crowdsec-firewall-bouncer/crowdsec-firewall-bouncer-v0.0.13/v0.0.13.mod) = c4ee3539ac5bd53f013e0798add577d5daef4480ad6910a3c35c381e74b26f63
+SIZE (go/security_crowdsec-firewall-bouncer/crowdsec-firewall-bouncer-v0.0.13/v0.0.13.mod) = 935
+SHA256 (go/security_crowdsec-firewall-bouncer/crowdsec-firewall-bouncer-v0.0.13/v0.0.13.zip) = 0817452582e7ff9f92ae7c51751c6de86a277d7b772e5ac1b35dc7a3ea35aba7
+SIZE (go/security_crowdsec-firewall-bouncer/crowdsec-firewall-bouncer-v0.0.13/v0.0.13.zip) = 148490

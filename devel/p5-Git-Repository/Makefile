@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
 
 PORTNAME=	Git-Repository
-PORTVERSION=	1.324
+PORTVERSION=	1.325
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

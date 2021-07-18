@@ -1,0 +1,13 @@
+--- gtk3/pref/Makefile.am.orig	2021-04-30 14:54:42 UTC
++++ gtk3/pref/Makefile.am
+@@ -10,9 +10,7 @@ uim_pref_gtk3_SOURCES  = ../../gtk2/pref/gtk.c \
+ 			../../gtk2/pref/gtk-keytab.h \
+ 			../../gtk2/immodule/key-util-gtk.c \
+ 			../../gtk2/immodule/key-util-gtk.h
+-uim_pref_gtk3_LDADD    = @GTK3_LIBS@ $(top_builddir)/uim/libuim-custom.la \
+-			$(top_builddir)/uim/libuim-scm.la \
+-			$(top_builddir)/uim/libuim.la
++uim_pref_gtk3_LDADD    = @GTK3_LIBS@ -luim-custom -luim-scm -luim
+ if LIBUIM_X_UTIL
+ uim_pref_gtk3_LDADD += $(top_builddir)/uim/libuim-x-util.la
+ endif

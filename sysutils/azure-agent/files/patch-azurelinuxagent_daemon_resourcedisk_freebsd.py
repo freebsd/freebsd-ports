@@ -1,10 +1,10 @@
---- azurelinuxagent/daemon/resourcedisk/freebsd.py.orig	2020-05-22 12:55:32 UTC
+--- azurelinuxagent/daemon/resourcedisk/freebsd.py.orig	2021-05-18 18:30:52 UTC
 +++ azurelinuxagent/daemon/resourcedisk/freebsd.py
 @@ -1,6 +1,7 @@
  # Microsoft Azure Linux Agent
  #
  # Copyright 2018 Microsoft Corporation
-+# Copyright 2020 The FreeBSD Foundation
++# Copyright 2020-2021 The FreeBSD Foundation
  #
  # Licensed under the Apache License, Version 2.0 (the "License");
  # you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@
 -    2. GPT: The resource disk partition is /dev/da1p2, /dev/da1p1 is for reserved usage.
      """
  
-     def __init__(self):
+     def __init__(self):  # pylint: disable=W0235
          super(FreeBSDResourceDiskHandler, self).__init__()
  
      @staticmethod
@@ -76,7 +76,7 @@
  
          device = self.osutil.device_for_ide_port(1)
          if device is None or device not in disks:
-@@ -90,94 +101,186 @@ class FreeBSDResourceDiskHandler(ResourceDiskHandler):
+@@ -90,94 +101,195 @@ class FreeBSDResourceDiskHandler(ResourceDiskHandler):
              raise ResourceDiskError("Unable to detect resource disk device.")
          logger.info('Resource disk device {0} found.', device)
  
@@ -97,16 +97,21 @@
 +            raise ResourceDiskError("Cannot get resource disk size.")
 +        disk_info = output.split()
 +        block_size = int(disk_info[1])
-+        disk_size = int(disk_info[2])
  
++        err, output = shellutil.run_get_output("gpart show {0} | grep '=>'".format(device))
++        if err:
++            raise ResourceDiskError("Cannot get resource disk partition information.")
++        disk_info = output.split()
++        partition_size = int(disk_info[2]) * block_size
++
 +        swap_size = 0
 +        if conf.get_resourcedisk_enable_swap():
 +            swap_size_mb = conf.get_resourcedisk_swap_size_mb()
 +            swap_size = swap_size_mb * 1024 * 1024
-+        resource_size = disk_size - swap_size
++        resource_size = partition_size - swap_size
 +        if resource_size < MINIMAL_RESOURCE_PARTITION_SIZE:
 +            resource_size = MINIMAL_RESOURCE_PARTITION_SIZE
-+            swap_size = disk_size - resource_size
++            swap_size = partition_size - resource_size
 +
 +        # get size of the current swap partition
 +        current_swap_size = 0
@@ -283,7 +288,7 @@
  
 -        if os.path.isfile(swapfile) and os.path.getsize(swapfile) != size:
 -            logger.info("Remove old swap file")
--            shellutil.run("swapoff -a", chk_err=False)
+-            shellutil.run("swapoff {0}".format(swapfile), chk_err=False)
 -            os.remove(swapfile)
 +        # get swap partition (geom provider)
 +        err, output = shellutil.run_get_output('mount')
@@ -308,8 +313,11 @@
 -        mddevice = shellutil.run_get_output(
 -            "mdconfig -a -t vnode -f {0}".format(swapfile))[1].rstrip()
 -        shellutil.run("chmod 0600 /dev/{0}".format(mddevice))
-+        if shellutil.run("swapon {0}".format(swap_provider_name)):
-+            raise ResourceDiskError(swap_provider_name)
++        err, output = shellutil.run_get_output(
++			"swapctl -l | grep {0}".format(swap_provider_name))
++        if not output:
++            if shellutil.run("swapon {0}".format(swap_provider_name)):
++                raise ResourceDiskError(swap_provider_name)
  
 -        if conf.get_resourcedisk_enable_swap_encryption():
 -            shellutil.run("kldload aesni")
@@ -327,6 +335,7 @@
 -                raise ResourceDiskError("/dev/{0}".format(mddevice))
 -            logger.info(
 -                "Enabled {0}KB of swap at /dev/{1} ({2})".format(size_kb, mddevice, swapfile))
-+        size_mb = shellutil.run_get_output("swapctl -lm")[1].split()[1]
++        size_mb = shellutil.run_get_output(
++            "swapctl -lm | grep {0}".format(swap_provider_name))[1].split()[1]
 +        logger.info(
 +            "Enabled {0}MB of swap at {1}".format(size_mb, swap_provider_name))

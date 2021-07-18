@@ -1,5 +1,5 @@
 PORTNAME=	yoshimi
-DISTVERSION=	2.0
+DISTVERSION=	2.0.2
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libjack.so:audio/jack \
 		libmxml.so:textproc/mxml
 
-USES=		cmake compiler:c++11-lang gnome ncurses pkgconfig readline:port
+USES=		cmake compiler:c++11-lang gnome ncurses pkgconfig readline
 USE_GNOME=	cairo
 
 USE_GITHUB=	yes
@@ -25,7 +25,6 @@ GH_ACCOUNT=	Yoshimi
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 LDFLAGS+=		-Wl,--as-needed
-LDFLAGS+=		-largp # workaround for https://github.com/Yoshimi/yoshimi/issues/135
 
 INSTALLS_ICONS=	yes
 

@@ -1,4 +1,4 @@
---- third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h.orig	2021-03-13 00:03:46 UTC
+--- third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h.orig	2021-04-14 18:43:13 UTC
 +++ third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h
 @@ -35,7 +35,7 @@
  #include "vulkan/vk_platform.h"

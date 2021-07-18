@@ -1,7 +1,7 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 
 PORTNAME=	prompt-toolkit
-PORTVERSION=	3.0.16
+PORTVERSION=	3.0.19
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

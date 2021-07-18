@@ -1,5 +1,5 @@
 PORTNAME=	calendar
-DISTVERSION=	0.9
+DISTVERSION=	0.9.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	se@FreeBSD.org

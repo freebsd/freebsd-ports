@@ -13,10 +13,10 @@ COMMENT=	Metrics library with rate, distribution and timing information
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
 USES=		python:3.6+
-USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 PORTDOCS=	README.rst HISTORY.rst
 

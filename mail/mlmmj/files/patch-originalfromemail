@@ -1,0 +1,79 @@
+diff --git src/mlmmj-process.c src/mlmmj-process.c
+index 82e4d04..fee5603 100644
+--- src/mlmmj-process.c
++++ src/mlmmj-process.c
+@@ -473,6 +473,7 @@ int main(int argc, char **argv)
+ 	struct stat st;
+ 	uid_t uid;
+ 	struct email_container fromemails = { 0, NULL };
++	struct email_container originalfromemails = { 0, NULL };
+ 	struct email_container toemails = { 0, NULL };
+ 	struct email_container ccemails = { 0, NULL };
+ 	struct email_container rpemails = { 0, NULL };
+@@ -488,6 +489,7 @@ int main(int argc, char **argv)
+ 		{ "Return-Path:", 0, NULL },
+ 		{ "Delivered-To:", 0, NULL },
+ 		{ "Subject:", 0, NULL },
++		{ "X-Original-From:", 0, NULL },
+ 		{ NULL, 0, NULL }
+ 	};
+ 
+@@ -708,6 +710,11 @@ int main(int argc, char **argv)
+ 	for(i = 0; i < readhdrs[0].valuecount; i++) {
+ 		find_email_adr(readhdrs[0].values[i], &fromemails);
+ 	}
++	/* X-Original-From: addresses */
++	for(i = 0; i < readhdrs[6].valuecount; i++) {
++		find_email_adr(readhdrs[6].values[i], &originalfromemails);
++	}
++
+ 	/* discard malformed mail with invalid From: unless it's a bounce */
+ 	if(fromemails.emailcount != 1 &&
+ 			(recipextra == NULL ||
+@@ -1036,7 +1043,10 @@ int main(int argc, char **argv)
+ 	if(!send && (subonlypost || modonlypost || modnonsubposts)) {
+ 		/* Don't send a mail about denial to the list, but silently
+ 		 * discard and exit. */
+-		if (strcasecmp(listaddr, posteraddr) == 0) {
++		char *testaddr = posteraddr;
++		if (originalfromemails.emailcount > 0)
++			testaddr = originalfromemails.emaillist[0];
++		if (strcasecmp(listaddr, testaddr) == 0) {
+ 			log_error(LOG_ARGS, "Discarding %s because"
+ 					" there are sender restrictions but"
+ 					" From: was the list address",
+@@ -1047,10 +1057,10 @@ int main(int argc, char **argv)
+ 			exit(EXIT_SUCCESS);
+ 		}
+ 		if(subonlypost) {
+-			foundaddr = (is_subbed(listdir, posteraddr, 0) !=
++			foundaddr = (is_subbed(listdir, testaddr, 0) !=
+ 					SUB_NONE);
+ 		} else if (modonlypost) {
+-			foundaddr = is_moderator(listdir, posteraddr, NULL);
++			foundaddr = is_moderator(listdir, testaddr, NULL);
+ 		}
+ 		if(!foundaddr) {
+ 			if(modnonsubposts) {
+@@ -1086,10 +1096,10 @@ int main(int argc, char **argv)
+ 			    }
+ 			    MY_ASSERT(txt);
+ 			    register_unformatted(txt, "subject", subject);
+-			    register_unformatted(txt, "posteraddr", posteraddr);
++			    register_unformatted(txt, "posteraddr", testaddr);
+ 			    register_originalmail(txt, donemailname);
+ 			    queuefilename = prepstdreply(txt, listdir,
+-				    "$listowner$", posteraddr, NULL);
++				    "$listowner$", testaddr, NULL);
+ 			    MY_ASSERT(queuefilename)
+ 			    close_text(txt);
+ 			    myfree(listaddr);
+@@ -1101,7 +1111,7 @@ int main(int argc, char **argv)
+ 			    execlp(mlmmjsend, mlmmjsend,
+ 				    "-L", listdir,
+ 				    "-l", "1",
+-				    "-T", posteraddr,
++				    "-T", testaddr,
+ 				    "-F", fromaddr,
+ 				    "-m", queuefilename, (char *)NULL);
+ 

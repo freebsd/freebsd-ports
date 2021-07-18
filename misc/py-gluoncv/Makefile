@@ -21,7 +21,7 @@ PY_DEPENDS=	${PYNUMPY} \
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		compiler:c11 python:3.6+ localbase
+USES=		compiler:c11 python:3.7+ localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	dmlc
 GH_PROJECT=	gluon-cv

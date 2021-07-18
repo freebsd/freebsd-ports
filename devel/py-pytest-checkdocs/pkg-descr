@@ -1,0 +1,4 @@
+pytest-checkdocs is a pytest plugin that checks the long description of the
+project to ensure it renders properly.
+
+WWW: https://github.com/jaraco/pytest-checkdocs

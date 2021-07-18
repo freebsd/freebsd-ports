@@ -77,6 +77,10 @@ bin/tide_float.pl
 %%SITE_PERL%%/Algorithm/Evolutionary/Run.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Utils.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Wheel.pm
+%%PERL5_MAN1%%/canonical-genetic-algorithm.pl.1.gz
+%%PERL5_MAN1%%/rectangle-coverage.pl.1.gz
+%%PERL5_MAN1%%/tide_bitstring.pl.1.gz
+%%PERL5_MAN1%%/tide_float.pl.1.gz
 %%PERL5_MAN3%%/Algorithm::Evolutionary.3.gz
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Experiment.3.gz
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Fitness::Any.3.gz
@@ -152,7 +156,3 @@ bin/tide_float.pl
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Run.3.gz
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Utils.3.gz
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Wheel.3.gz
-%%PERL5_MAN1%%/canonical-genetic-algorithm.pl.1.gz
-%%PERL5_MAN1%%/rectangle-coverage.pl.1.gz
-%%PERL5_MAN1%%/tide_bitstring.pl.1.gz
-%%PERL5_MAN1%%/tide_float.pl.1.gz

@@ -1,16 +1,18 @@
-share/qlogging-categories5/libkmahjongg.categories
+include/KF5/KF5KMahjongg/KMahjonggBackground
+include/KF5/KF5KMahjongg/KMahjonggConfigDialog
+include/KF5/KF5KMahjongg/KMahjonggTileset
 include/KF5/KF5KMahjongg/kmahjonggbackground.h
 include/KF5/KF5KMahjongg/kmahjonggconfigdialog.h
 include/KF5/KF5KMahjongg/kmahjongglib_version.h
 include/KF5/KF5KMahjongg/kmahjonggtileset.h
 include/KF5/KF5KMahjongg/libkmahjongg_export.h
-lib/cmake/KF5KMahjongglib/KF5KMahjonggLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/KF5KMahjongglib/KF5KMahjonggLibraryDepends.cmake
+lib/cmake/KF5KMahjongglib/KF5KMahjonggTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KF5KMahjongglib/KF5KMahjonggTargets.cmake
 lib/cmake/KF5KMahjongglib/KF5KMahjongglibConfig.cmake
 lib/cmake/KF5KMahjongglib/KF5KMahjongglibConfigVersion.cmake
 lib/libKF5KMahjongglib.so
 lib/libKF5KMahjongglib.so.5
-lib/libKF5KMahjongglib.so.5.0.0
+lib/libKF5KMahjongglib.so.5.1.0
 share/kmahjongglib/backgrounds/chinese_landscape.copyright
 share/kmahjongglib/backgrounds/chinese_landscape.desktop
 share/kmahjongglib/backgrounds/chinese_landscape.svgz
@@ -46,6 +48,7 @@ share/kmahjongglib/tilesets/traditional.copyright
 share/kmahjongglib/tilesets/traditional.desktop
 share/kmahjongglib/tilesets/traditional.svgz
 share/locale/ar/LC_MESSAGES/libkmahjongg5.mo
+share/locale/be/LC_MESSAGES/libkmahjongg5.mo
 share/locale/bs/LC_MESSAGES/libkmahjongg5.mo
 share/locale/ca/LC_MESSAGES/libkmahjongg5.mo
 share/locale/ca@valencia/LC_MESSAGES/libkmahjongg5.mo
@@ -85,8 +88,10 @@ share/locale/pt/LC_MESSAGES/libkmahjongg5.mo
 share/locale/pt_BR/LC_MESSAGES/libkmahjongg5.mo
 share/locale/ro/LC_MESSAGES/libkmahjongg5.mo
 share/locale/ru/LC_MESSAGES/libkmahjongg5.mo
+share/locale/se/LC_MESSAGES/libkmahjongg5.mo
 share/locale/sk/LC_MESSAGES/libkmahjongg5.mo
 share/locale/sl/LC_MESSAGES/libkmahjongg5.mo
+share/locale/sq/LC_MESSAGES/libkmahjongg5.mo
 share/locale/sr/LC_MESSAGES/libkmahjongg5.mo
 share/locale/sv/LC_MESSAGES/libkmahjongg5.mo
 share/locale/tr/LC_MESSAGES/libkmahjongg5.mo
@@ -95,3 +100,4 @@ share/locale/uk/LC_MESSAGES/libkmahjongg5.mo
 share/locale/wa/LC_MESSAGES/libkmahjongg5.mo
 share/locale/zh_CN/LC_MESSAGES/libkmahjongg5.mo
 share/locale/zh_TW/LC_MESSAGES/libkmahjongg5.mo
+share/qlogging-categories5/libkmahjongg.categories

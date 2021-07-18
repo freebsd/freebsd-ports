@@ -1,11 +1,13 @@
 bin/h2o
-bin/h2o-httpclient
+@comment bin/h2o-httpclient
 @sample %%ETCDIR%%/h2o.conf.sample
 include/h2o.h
+include/h2o/absprio.h
 include/h2o/balancer.h
 include/h2o/cache.h
 include/h2o/cache_digests.h
 include/h2o/configurator.h
+include/h2o/ebpf.h
 include/h2o/file.h
 include/h2o/filecache.h
 include/h2o/header.h
@@ -18,6 +20,9 @@ include/h2o/http2_casper.h
 include/h2o/http2_common.h
 include/h2o/http2_internal.h
 include/h2o/http2_scheduler.h
+include/h2o/http3_server.h
+include/h2o/http3_common.h
+include/h2o/http3_internal.h
 include/h2o/httpclient.h
 include/h2o/linklist.h
 include/h2o/memcached.h
@@ -25,8 +30,10 @@ include/h2o/memory.h
 include/h2o/mruby_.h
 include/h2o/multithread.h
 include/h2o/openssl_backport.h
+include/h2o/qpack.h
 include/h2o/rand.h
 include/h2o/redis.h
+include/h2o/send_state.h
 include/h2o/serverutil.h
 include/h2o/socket.h
 include/h2o/socket/evloop.h
@@ -35,18 +42,18 @@ include/h2o/socketpool.h
 include/h2o/string_.h
 include/h2o/time_.h
 include/h2o/timerwheel.h
-include/h2o/token_table.h
 include/h2o/token.h
+include/h2o/token_table.h
 include/h2o/tunnel.h
 include/h2o/url.h
 include/h2o/version.h
 include/h2o/websocket.h
-lib/libh2o-evloop.so
-lib/libh2o-evloop.so.0.16
-lib/libh2o-evloop.so.0.16.0-beta2
-lib/libh2o.so
-lib/libh2o.so.0.16
-lib/libh2o.so.0.16.0-beta2
+@comment lib/libh2o-evloop.so
+@comment lib/libh2o-evloop.so.0.16
+@comment lib/libh2o-evloop.so.0.16.0-beta2
+@comment lib/libh2o.so
+@comment lib/libh2o.so.0.16
+@comment lib/libh2o.so.0.16.0-beta2
 libdata/pkgconfig/libh2o-evloop.pc
 libdata/pkgconfig/libh2o.pc
 man/man5/h2o.conf.5.gz
@@ -85,12 +92,14 @@ man/man8/h2o.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/configure/syntax_and_structure.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/throttle_response_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/doc_root.alternate/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/examples/doc_root.third/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/examples/doc_root/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/h2o/alternate.crt
 %%PORTDOCS%%%%DOCSDIR%%/examples/h2o/alternate.key
 %%PORTDOCS%%%%DOCSDIR%%/examples/h2o/h2o.conf
 %%PORTDOCS%%%%DOCSDIR%%/examples/h2o/server.crt
 %%PORTDOCS%%%%DOCSDIR%%/examples/h2o/server.key
+%%PORTDOCS%%%%DOCSDIR%%/examples/h2o/server.pub
 %%PORTDOCS%%%%DOCSDIR%%/examples/h2o_mruby/h2o.conf
 %%PORTDOCS%%%%DOCSDIR%%/examples/h2o_mruby/hello.rb
 %%PORTDOCS%%%%DOCSDIR%%/examples/h2o/wildcard.crt

@@ -1,7 +1,7 @@
 # Created by: chinsan <chinsan.tw@gmail.com>
 
 PORTNAME=	ack
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc sysutils perl5
 MASTER_SITES=	CPAN
@@ -26,8 +26,8 @@ NO_ARCH=	yes
 
 CONFLICTS_INSTALL=	ja-ack-[0-9]*
 
-PORTSCOUT=	limit:^[0-9\.]*$$
-
 CPE_VENDOR=	beyondgrep
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 .include <bsd.port.mk>

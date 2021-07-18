@@ -1,0 +1,11 @@
+--- build/config/compiler/pgo/pgo.gni.orig	2021-04-14 01:08:36 UTC
++++ build/config/compiler/pgo/pgo.gni
+@@ -16,7 +16,7 @@ declare_args() {
+       # TODO(crbug.com/1052397): Remove chromeos_is_browser_only once
+       # target_os switch for lacros-chrome is completed.
+       (is_win || is_mac ||
+-       (is_linux && !chromeos_is_browser_only && !is_chromecast))) {
++       (is_linux && !chromeos_is_browser_only && !is_chromecast && !is_bsd))) {
+     chrome_pgo_phase = 2
+   }
+ 

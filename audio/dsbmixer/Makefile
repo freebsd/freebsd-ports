@@ -1,5 +1,6 @@
 PORTNAME=	dsbmixer
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	mk@nic-nac-project.org

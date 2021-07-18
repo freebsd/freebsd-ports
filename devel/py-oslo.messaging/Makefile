@@ -1,7 +1,7 @@
 # Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
 
 PORTNAME=	oslo.messaging
-PORTVERSION=	12.7.1
+PORTVERSION=	12.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

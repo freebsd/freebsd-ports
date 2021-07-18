@@ -1,6 +1,6 @@
---- Makefile.OCaml.orig	2017-03-23 16:39:49 UTC
+--- Makefile.OCaml.orig	2021-06-23 14:30:30 UTC
 +++ Makefile.OCaml
-@@ -32,7 +32,11 @@ ifeq ($(shell uname),OpenBSD)
+@@ -34,7 +34,11 @@ ifeq ($(shell uname),OpenBSD)
  else
  ifeq ($(shell uname),NetBSD)
    OSARCH=NetBSD
@@ -12,21 +12,22 @@
  ifeq ($(shell uname),Linux)
    OSARCH=Linux
  endif
-@@ -311,6 +315,10 @@ ifeq ($(OSARCH),Linux)
- -include fsmonitor/linux/Makefile src/fsmonitor/linux/Makefile
+@@ -290,6 +294,11 @@ ifeq ($(OSARCH),Linux)
+ INCLFLAGS+=-I fsmonitor -I fsmonitor/linux
  endif
  
 +ifeq ($(OSARCH),FreeBSD)
 +-include fsmonitor/linux/Makefile src/fsmonitor/linux/Makefile
++INCLFLAGS+=-I fsmonitor -I fsmonitor/linux
 +endif
 +
- ifeq ($(OSARCH),win32gnuc)
- -include fsmonitor/windows/Makefile src/fsmonitor/windows/Makefile
- endif
-@@ -436,7 +444,7 @@ win32rc/unison.res.lib: win32rc/unison.res
+ ifeq ($(OSARCH),solaris)
+ -include fsmonitor/solaris/Makefile src/fsmonitor/solaris/Makefile
+ INCLFLAGS+=-I fsmonitor -I fsmonitor/solaris
+@@ -432,7 +441,7 @@ fswatch.cmi : ubase/prefs.cmi
  
  %.o %.obj: %.c
- 	@echo "$(OCAMLOPT): $< ---> $@"
+ 	@echo "$(CAMLC): $< ---> $@"
 -	$(CAMLC) $(CAMLFLAGS) -ccopt $(OUTPUT_SEL)$(CWD)/$@ -c $(CWD)/$<
 +	$(CAMLC) $(CAMLFLAGS) -ccopt $(OUTPUT_SEL)$(CWD)/$@ -c $(CFLAGS) $(CWD)/$<
  

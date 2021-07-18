@@ -1,8 +1,7 @@
 # Created by: Dima Panov <fluffy@Fluffy.Khv.RU>
 
 PORTNAME=	polkit-qt-1
-DISTVERSION=	0.113.0
-PORTREVISION=	8
+DISTVERSION=	0.114.0
 CATEGORIES=	sysutils
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 
@@ -10,7 +9,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt5 wrapper around Polkit libraries
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpolkit-agent-1.so:sysutils/polkit
 

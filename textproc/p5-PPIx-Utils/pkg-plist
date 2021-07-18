@@ -1,0 +1,9 @@
+%%SITE_PERL%%/PPIx/Utils.pm
+%%SITE_PERL%%/PPIx/Utils/Classification.pm
+%%SITE_PERL%%/PPIx/Utils/Language.pm
+%%SITE_PERL%%/PPIx/Utils/Traversal.pm
+%%SITE_PERL%%/PPIx/Utils/_Common.pm
+%%PERL5_MAN3%%/PPIx::Utils.3.gz
+%%PERL5_MAN3%%/PPIx::Utils::Classification.3.gz
+%%PERL5_MAN3%%/PPIx::Utils::Language.3.gz
+%%PERL5_MAN3%%/PPIx::Utils::Traversal.3.gz

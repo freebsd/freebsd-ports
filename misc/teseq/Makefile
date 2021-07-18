@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal control sequence analyzer
 
 GNU_CONFIGURE=	yes

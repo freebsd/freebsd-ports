@@ -1,4 +1,4 @@
---- base/memory/platform_shared_memory_region_posix.cc.orig	2021-03-12 23:57:15 UTC
+--- base/memory/platform_shared_memory_region_posix.cc.orig	2021-04-14 18:40:48 UTC
 +++ base/memory/platform_shared_memory_region_posix.cc
 @@ -23,7 +23,11 @@ struct ScopedPathUnlinkerTraits {
    static const FilePath* InvalidValue() { return nullptr; }

@@ -1,7 +1,7 @@
 # Created by: Jonathan Chen <jonc@chen.org.nz>
 
 PORTNAME=	sigil
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 CATEGORIES=	textproc
 
 MAINTAINER=	jonc@chen.org.nz

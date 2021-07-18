@@ -1,14 +1,14 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	end_to_end_encryption
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}/${DISTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 
 MAINTAINER=	brnrd@freebsd.org
 COMMENT=	End-to-End Encryption app for Nextcloud

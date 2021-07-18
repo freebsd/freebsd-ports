@@ -13,12 +13,14 @@ COMMENT=	Alternative Exporter with persistent defaults and auto-ISA
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-mem>=0.4.5:devel/p5-mem
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

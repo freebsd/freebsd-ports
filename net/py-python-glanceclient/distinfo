@@ -1,3 +1,3 @@
-TIMESTAMP = 1599729135
-SHA256 (python-glanceclient-3.2.2.tar.gz) = dd5a593dfaa12832718ff343b389702e49cb624aa5c25b5469ea81dba89c9ae6
-SIZE (python-glanceclient-3.2.2.tar.gz) = 191501
+TIMESTAMP = 1624189743
+SHA256 (python-glanceclient-3.4.0.tar.gz) = 2bf28ef90afedbc7f9ea1541a43639bb720ca146e856abb05f32166a83b5563d
+SIZE (python-glanceclient-3.4.0.tar.gz) = 197474

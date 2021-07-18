@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Qtile
+Comment=This session logs you into Qtile
+Exec=qtile start
+TryExec=qtile
+Icon=
+Type=Application
+Keywords=launch;qtile;desktop;session;
+

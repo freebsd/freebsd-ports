@@ -19,7 +19,9 @@ RUN_DEPENDS=	p5-Devel-Hide>=0:devel/p5-Devel-Hide \
 TEST_DEPENDS=	p5-Test-Pod-Coverage>=1.04:devel/p5-Test-Pod-Coverage \
 		p5-Test-Pod>=1.18:devel/p5-Test-Pod
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

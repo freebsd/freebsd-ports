@@ -10,6 +10,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Core set of typical audio and video GStreamer plugins
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 GST_DIR=	lib/gstreamer-1.0
 PLIST_FILES=	${GST_DIR}/.gstreamer-plugins-core.keep

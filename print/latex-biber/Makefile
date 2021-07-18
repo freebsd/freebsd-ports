@@ -6,7 +6,7 @@ CATEGORIES=	print perl5
 PKGNAMEPREFIX=	latex-
 DIST_SUBDIR=	TeX
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	freebsd-tex@FreeBSD.org
 COMMENT=	BibTeX replacement for users of biblatex
 
 LICENSE=	ART10 GPLv1+

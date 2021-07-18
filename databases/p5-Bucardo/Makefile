@@ -1,7 +1,7 @@
 PORTNAME=	Bucardo
 PORTVERSION=	5.6.0
 CATEGORIES=	databases perl5
-MASTER_SITES=	http://bucardo.org/downloads/ \
+MASTER_SITES=	https://bucardo.org/downloads/ \
 		LOCAL/mat/${PORTNAME}
 PKGNAMEPREFIX=	p5-
 

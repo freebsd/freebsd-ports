@@ -2,7 +2,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.44
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-legacy
@@ -41,6 +41,8 @@ CONFLICTS_INSTALL=	virtualbox-ose-additions-* \
 			virtualbox-ose-devel-[0-9]* \
 			virtualbox-ose-[0-9]* \
 			virtualbox-ose-lite-[0-9]*
+
+PORTSCOUT=	limit:^5\.
 
 LDFLAGS=	-lpthread
 
@@ -130,8 +132,11 @@ KMK_BUILDTYPE=	release
 
 .if ${PORT_OPTIONS:MGUESTADDITIONS}
 GUESTADDITIONS=	VBoxGuestAdditions_${PORTVERSION}.iso
-RESTRICTED=	for personal use only
-RESTRICTED_FILES=	${GUESTADDITIONS}
+LICENSE+=	Additions
+LICENSE_COMB=	multi
+LICENSE_NAME_Additions=	Guest Additions
+LICENSE_PERMS_Additions=	auto-accept
+LICENSE_DISTFILES_Additions=	${GUESTADDITIONS}
 .endif
 
 .if ${PORT_OPTIONS:MMANUAL}

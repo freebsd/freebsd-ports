@@ -62,6 +62,9 @@ bin/s3cl
 %%SITE_PERL%%/Net/Amazon/S3/Operation/Object/Fetch.pm
 %%SITE_PERL%%/Net/Amazon/S3/Operation/Object/Fetch/Request.pm
 %%SITE_PERL%%/Net/Amazon/S3/Operation/Object/Fetch/Response.pm
+%%SITE_PERL%%/Net/Amazon/S3/Operation/Object/Head.pm
+%%SITE_PERL%%/Net/Amazon/S3/Operation/Object/Head/Request.pm
+%%SITE_PERL%%/Net/Amazon/S3/Operation/Object/Head/Response.pm
 %%SITE_PERL%%/Net/Amazon/S3/Operation/Object/Restore.pm
 %%SITE_PERL%%/Net/Amazon/S3/Operation/Object/Restore/Request.pm
 %%SITE_PERL%%/Net/Amazon/S3/Operation/Object/Restore/Response.pm
@@ -105,6 +108,7 @@ bin/s3cl
 %%SITE_PERL%%/Net/Amazon/S3/Request/Role/HTTP/Method.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/Role/HTTP/Method/DELETE.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/Role/HTTP/Method/GET.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/Role/HTTP/Method/HEAD.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/Role/HTTP/Method/POST.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/Role/HTTP/Method/PUT.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/Role/Query/Action.pm
@@ -227,6 +231,9 @@ bin/s3cl
 %%PERL5_MAN3%%/Net::Amazon::S3::Operation::Object::Fetch.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Operation::Object::Fetch::Request.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Operation::Object::Fetch::Response.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Operation::Object::Head.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Operation::Object::Head::Request.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Operation::Object::Head::Response.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Operation::Object::Restore.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Operation::Object::Restore::Request.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Operation::Object::Restore::Response.3.gz
@@ -270,6 +277,7 @@ bin/s3cl
 %%PERL5_MAN3%%/Net::Amazon::S3::Request::Role::HTTP::Method.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Request::Role::HTTP::Method::DELETE.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Request::Role::HTTP::Method::GET.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::Role::HTTP::Method::HEAD.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Request::Role::HTTP::Method::POST.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Request::Role::HTTP::Method::PUT.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Request::Role::Query::Action.3.gz

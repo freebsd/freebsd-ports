@@ -1,7 +1,7 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 
 PORTNAME=	gfbgraph
-PORTVERSION=	0.2.3
+DISTVERSION=	0.2.4
 CATEGORIES=	net www
 MASTER_SITES=	GNOME
 
@@ -11,19 +11,20 @@ COMMENT=	GObject library for Facebook Graph API
 BUILD_DEPENDS=	gtkdoc-rebase:textproc/gtk-doc
 LIB_DEPENDS=	librest-0.7.so:devel/librest \
 		libgoa-1.0.so:net/gnome-online-accounts \
-		libjson-glib-1.0.so:devel/json-glib
+		libjson-glib-1.0.so:devel/json-glib \
+		libsoup-2.4.so:devel/libsoup
 
-USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 intlhack introspection:build
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+USES=		autoreconf gettext gmake gnome libtool localbase:ldflags pathfix \
+		pkgconfig tar:xz
+USE_GNOME=	glib20 intlhack introspection:build libxml2
 INSTALLS_ICONS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-gtk-doc
 
-post-patch:
-	${REINPLACE_CMD} -e 's|/doc/libgfbgraph|/share/doc/libgfbgraph|g' \
-		${WRKSRC}/Makefile.in
+INSTALL_TARGET=	install install-strip
+
+pre-configure:
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} NOCONFIGURE=1 ./autogen.sh
 
 .include <bsd.port.mk>

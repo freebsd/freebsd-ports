@@ -4,4 +4,5 @@ save, modify and playback MIDI files.  The umidi20 library supports
 direct playback and recording through JACK MIDI, FIFOs and character
 device nodes.
 
-WWW: http://www.selasky.org/hans_petter/midistudio
+WWW: https://github.com/hselasky/libumidi
+

@@ -1,0 +1,5 @@
+include/suitesparse/btf.h
+lib/libbtf.so
+lib/libbtf.so.1
+lib/libbtf.so.1.2.6
+%%PORTDOCS%%%%DOCSDIR%%/BTF_README.txt

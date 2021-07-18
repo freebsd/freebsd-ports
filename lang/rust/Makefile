@@ -1,7 +1,7 @@
 # Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 
 PORTNAME=	rust
-PORTVERSION?=	1.51.0
+PORTVERSION?=	1.53.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -25,14 +25,16 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 IGNORE_FreeBSD_11_powerpc64=	is missing a bootstrap for FreeBSD 11.x powerpc64
-ONLY_FOR_ARCHS?=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
+IGNORE_FreeBSD_11_powerpc=	is missing a bootstrap for FreeBSD 11.x powerpc
+IGNORE_FreeBSD_12_powerpc=	is missing a bootstrap for FreeBSD 12.x powerpc
+ONLY_FOR_ARCHS?=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le \
+			powerpc
 ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 
-BUILD_DEPENDS=	cmake:devel/cmake \
-		ninja:devel/ninja
+BUILD_DEPENDS=	cmake:devel/cmake
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		pkgconfig python:3.6+,build ssl tar:xz
+USES=		ninja:build pkgconfig python:3.6+,build ssl tar:xz
 
 MAKE_ENV=	DESTDIR=${STAGEDIR} \
 		OPENSSL_DIR="${OPENSSLBASE}" \
@@ -44,6 +46,8 @@ CONFLICTS_INSTALL?=	rust-nightly
 
 OPTIONS_DEFINE=		DOCS GDB SOURCES WASM
 OPTIONS_DEFAULT=	SOURCES WASM
+OPTIONS_EXCLUDE_armv6=	DOCS
+OPTIONS_EXCLUDE_armv7=	DOCS
 
 GDB_DESC=	Install ports gdb (necessary for debugging rust programs)
 SOURCES_DESC=	Install source files
@@ -58,8 +62,8 @@ WASM_VARS=		_RUST_BUILD_WASM=true \
 WASM_VARS_OFF=		_RUST_BUILD_WASM=false
 
 # See WRKSRC/src/stage0.txt for the date and version values.
-BOOTSTRAPS_DATE?=		2021-02-11
-RUST_BOOTSTRAP_VERSION?=	1.50.0
+BOOTSTRAPS_DATE?=		2021-05-10
+RUST_BOOTSTRAP_VERSION?=	1.52.1
 
 BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
 BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
@@ -71,13 +75,21 @@ _RUST_ARCH_amd64=	x86_64
 _RUST_ARCH_i386=	i686
 _RUST_TARGET=		${_RUST_ARCH_${ARCH}:U${ARCH}}-unknown-${OPSYS:tl}
 _RUST_TARGETS=		${_RUST_TARGET}
-_RUST_TOOLS=		analysis cargo clippy rls rustfmt
+_RUST_TOOLS=		analysis cargo clippy rustfmt
 
 _RUSTC_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
 _RUST_STD_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
 _CARGO_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == powerpc
+# bfd to link rustc_driver; lld currently can't
+BUILD_DEPENDS+=	ld.bfd:devel/binutils
+.else
+# rls needs 64-bit atomics
+_RUST_TOOLS+=	rls
+.endif
 
 .if exists(${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX})
 EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
@@ -88,6 +100,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
 # but we can build with a newer or older compiler as provided by USE_GCC=yes
 BUILD_DEPENDS+=	gcc9:lang/gcc9
 USE_GCC=	yes
+STRIP_CMD=	${LOCALBASE}/bin/strip # unsupported e_type with base strip
 .endif
 
 # remove when 11.4 is EOL
@@ -99,6 +112,12 @@ IGNORE=	fails to run due to a bug in rtld, update to 12.2-RELEASE or newer
 IGNORE=	fails to build with qemu-user-static
 .endif
 
+.if make(makesum)
+DISTFILES:=	${DISTFILES:M*\:src} \
+		${ONLY_FOR_ARCHS:O:@_arch@${:!${MAKE} ARCH=${_arch} PPC_ABI=ELFv1 -V'DISTFILES:N*\:src'!}@} \
+		${ONLY_FOR_ARCHS:Mpowerpc64:@_arch@${:!${MAKE} ARCH=${_arch} PPC_ABI=ELFv2 -V'DISTFILES:N*\:src'!}@}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's,gdb,${LOCALBASE}/bin/gdb,' ${WRKSRC}/src/etc/rust-gdb
 .if defined(NIGHTLY_DATE)
@@ -107,10 +126,15 @@ post-patch:
 # Disable vendor checksums
 	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
 		${CARGO_VENDOR_DIR}/*/.cargo-checksum.json
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1 && ${LOCALBASE} != /usr/local
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
+	@${REINPLACE_CMD} 's,%CC%,${CC},g' \
+		${WRKSRC}/compiler/rustc_llvm/build.rs \
+		${WRKSRC}/src/bootstrap/native.rs
+.if ${LOCALBASE} != /usr/local
 	@${REINPLACE_CMD} 's,/usr/local/,${LOCALBASE}/,g' \
 		${WRKSRC}/compiler/rustc_llvm/build.rs \
 		${WRKSRC}/src/bootstrap/native.rs
+.endif
 .endif
 
 do-configure:
@@ -143,6 +167,9 @@ do-configure:
 	@${ECHO_CMD} 'sysconfdir="${PREFIX}/etc"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[rust]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'channel="${PKGNAMESUFFIX:Ustable:S/^-//}"' >> ${WRKSRC}/config.toml
+.if defined(NIGHTLY_DATE)
+	@${ECHO_CMD} 'codegen-units=1' >> ${WRKSRC}/config.toml
+.endif
 	@${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'deny-warnings=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'verbose-tests=true' >> ${WRKSRC}/config.toml
@@ -158,14 +185,31 @@ do-configure:
 # fails to link with base ld.bfd: rustc_codegen_llvm.e2557spx-cgu.11:(.text._ZN89_$LT$rustc_target..abi..call..CastTarget$u20$as$u20$rustc_codegen_llvm..abi..LlvmType$GT$9llvm_type17h1296210ab461fc57E+0x54): relocation truncated to fit: R_ARM_CALL against symbol `__aeabi_uldivmod' defined in .text.__aeabi_uldivmod section in /tmp/rustcdnGbao/libcompiler_builtins-ee65b414e4115a8f.rlib(compiler_builtins-ee65b414e4115a8f.compiler_builtins.ay8p39ey-cgu.13.rcgu.o)
 	@${PRINTF} '#!/bin/sh\nexec ${CC} -fuse-ld=lld "$$@"' > ${WRKDIR}/cc-wrapper
 	@${CHMOD} +x ${WRKDIR}/cc-wrapper
+.elif ${ARCH} == powerpc
+# Rust doesn't call the system compiler with the full version of the target.
+# This makes powerpc miscompile due to the secure-plt ABI change.
+# Additionally, force using ld.bfd to work around a linking problem in rustc_mir
+	@${PRINTF} '#!/bin/sh\nexec ${CC} "$$@" --target=powerpc-unknown-freebsd13.0' > ${WRKDIR}/cc-wrapper
+	@${CHMOD} +x ${WRKDIR}/cc-wrapper
+	@${PRINTF} '#!/bin/sh\nexec ${CXX} "$$@" --target=powerpc-unknown-freebsd13.0' > ${WRKDIR}/cxx-wrapper
+	@${CHMOD} +x ${WRKDIR}/cxx-wrapper
+	@${PRINTF} '#!/bin/sh\nexec ${CC} -fuse-ld=bfd "$$@" --target=powerpc-unknown-freebsd13.0' > ${WRKDIR}/ld-wrapper
+	@${CHMOD} +x ${WRKDIR}/ld-wrapper
 .endif
 .for _target in ${_RUST_TARGETS}
 	@${ECHO_CMD} '[target.${_target}]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'ar="${AR}"' >> ${WRKSRC}/config.toml
+.if ${ARCH} == powerpc
+	@${ECHO_CMD} 'cc="${WRKDIR}/cc-wrapper"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'cxx="${WRKDIR}/cxx-wrapper"' >> ${WRKSRC}/config.toml
+.else
 	@${ECHO_CMD} 'cc="${CC}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'cxx="${CXX}"' >> ${WRKSRC}/config.toml
+.endif
 .if ${ARCH} == armv6
 	@${ECHO_CMD} 'linker="${WRKDIR}/cc-wrapper"' >> ${WRKSRC}/config.toml
+.elif ${ARCH} == powerpc
+	@${ECHO_CMD} 'linker="${WRKDIR}/ld-wrapper"' >> ${WRKSRC}/config.toml
 .else
 	@${ECHO_CMD} 'linker="${CC}"' >> ${WRKSRC}/config.toml
 .endif
@@ -176,12 +220,6 @@ do-configure:
 # Don't abort if optional tools fail to build
 	@${ECHO_CMD} 'missing-tools=true' >> ${WRKSRC}/config.toml
 .endif
-	@${REINPLACE_CMD} 's,%CC%,${CC},g' \
-		${WRKSRC}/src/bootstrap/native.rs
-# this reinplace_cmd is used for ppc64-elfv1, don't remove it
-# even if sed_checked.sh says it's unused
-	@${REINPLACE_CMD} 's,%CC%,${CC},g' \
-		${WRKSRC}/compiler/rustc_llvm/build.rs
 
 do-build:
 	@cd ${WRKSRC} && \
@@ -222,22 +260,5 @@ post-install-SOURCES-on:
 do-test:
 	@cd ${WRKSRC} && \
 		${SETENV} ${TEST_ENV} ${PYTHON_CMD} x.py test --jobs=${MAKE_JOBS_NUMBER}
-
-.if !defined(_RUST_MAKESUM_GUARD)
-makesum:
-	${MAKE} -D_RUST_MAKESUM_GUARD makesum ARCH=${ONLY_FOR_ARCHS:O:[1]} DISTINFO_FILE=${DISTINFO_FILE}.tmp
-.for arch in ${ONLY_FOR_ARCHS:O:[2..-1]}
-	${MAKE} -D_RUST_MAKESUM_GUARD makesum PPC_ABI=ELFv1 ARCH=${arch} DISTINFO_FILE=${DISTINFO_FILE}.${arch}
-	${SED} 1d ${DISTINFO_FILE}.${arch} >> ${DISTINFO_FILE}.tmp
-	${RM} ${DISTINFO_FILE}.${arch}
-.endfor
-.if ${ONLY_FOR_ARCHS:Mpowerpc64}
-	${MAKE} -D_RUST_MAKESUM_GUARD makesum PPC_ABI=ELFv2 ARCH=powerpc64 DISTINFO_FILE=${DISTINFO_FILE}.powerpc64-elfv2
-	${SED} 1d ${DISTINFO_FILE}.powerpc64-elfv2 >> ${DISTINFO_FILE}.tmp
-	${RM} ${DISTINFO_FILE}.powerpc64-elfv2
-.endif
-	${AWK} '!seen[$$0]++' ${DISTINFO_FILE}.tmp > ${DISTINFO_FILE}
-	${RM} ${DISTINFO_FILE}.tmp
-.endif
 
 .include <bsd.port.post.mk>

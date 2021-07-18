@@ -29,6 +29,7 @@ CFLAGS_powerpc=		-fPIC
 CFLAGS_powerpc64=	-fPIC
 CFLAGS_powerpc64le=	-fPIC
 CFLAGS_powerpcspe=	-fPIC
+CFLAGS_riscv64=		-fPIC
 
 CONFIGURE_ARGS=	parilib="-L${PARI_WRKSRC}/build -lpari" \
 		paridir=${PARI_WRKSRC}

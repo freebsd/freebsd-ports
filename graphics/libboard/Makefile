@@ -2,7 +2,7 @@
 
 PORTNAME=	libboard
 DISTVERSION=	0.9.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	Vector graphics C++ library
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick6
+LIB_DEPENDS=	libMagick++-${IMAGEMAGICK_DEFAULT}.so:graphics/ImageMagick${IMAGEMAGICK_DEFAULT}
 
 USES=		cmake compiler:c++11-lang localbase
 

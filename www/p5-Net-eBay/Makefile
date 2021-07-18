@@ -26,17 +26,16 @@ RUN_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple \
 		p5-libwww>=0:www/p5-libwww
 
-OPTIONS_DEFINE=	EXAMPLES
+USES=		perl5 shebangfix
+USE_PERL5=	configure
 
 NO_ARCH=	yes
-USE_PERL5=	configure
-USES=		perl5 shebangfix
 
-PORTEXAMPLES=	*
+SHEBANG_FILES=	*.pl
 
-SHEBANG_FILES=	examples/*.pl
+OPTIONS_DEFINE=	EXAMPLES
 
-post-extract:
+post-patch:
 	@${MKDIR} ${WRKSRC}/examples/
 	@${MV} ${WRKSRC}/*.pl ${WRKSRC}/examples/
 

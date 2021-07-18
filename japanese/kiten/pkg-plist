@@ -37,6 +37,7 @@ share/kxmlgui5/kiten/kitenui.rc
 share/kxmlgui5/kitenkanjibrowser/kanjibrowserui.rc
 share/kxmlgui5/kitenradselect/radselectui.rc
 share/locale/ar/LC_MESSAGES/kiten.mo
+share/locale/be/LC_MESSAGES/kiten.mo
 share/locale/bg/LC_MESSAGES/kiten.mo
 share/locale/bs/LC_MESSAGES/kiten.mo
 share/locale/ca/LC_MESSAGES/kiten.mo
@@ -63,6 +64,7 @@ share/locale/it/LC_MESSAGES/kiten.mo
 share/locale/ja/LC_MESSAGES/kiten.mo
 share/locale/kk/LC_MESSAGES/kiten.mo
 share/locale/km/LC_MESSAGES/kiten.mo
+share/locale/ko/LC_MESSAGES/kiten.mo
 share/locale/lt/LC_MESSAGES/kiten.mo
 share/locale/lv/LC_MESSAGES/kiten.mo
 share/locale/ml/LC_MESSAGES/kiten.mo
@@ -76,9 +78,13 @@ share/locale/pt/LC_MESSAGES/kiten.mo
 share/locale/pt_BR/LC_MESSAGES/kiten.mo
 share/locale/ro/LC_MESSAGES/kiten.mo
 share/locale/ru/LC_MESSAGES/kiten.mo
+share/locale/se/LC_MESSAGES/kiten.mo
 share/locale/sk/LC_MESSAGES/kiten.mo
 share/locale/sl/LC_MESSAGES/kiten.mo
+share/locale/sq/LC_MESSAGES/kiten.mo
 share/locale/sv/LC_MESSAGES/kiten.mo
+share/locale/ta/LC_MESSAGES/kiten.mo
+share/locale/tg/LC_MESSAGES/kiten.mo
 share/locale/tr/LC_MESSAGES/kiten.mo
 share/locale/ug/LC_MESSAGES/kiten.mo
 share/locale/uk/LC_MESSAGES/kiten.mo

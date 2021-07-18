@@ -1,5 +1,5 @@
 bin/gem
-bin/gem%%RUBY_VER_SHORT%%
+bin/gem%%RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/rubygems.rb
 %%RUBY_SITELIBDIR%%/rubygems/available_set.rb
 %%RUBY_SITELIBDIR%%/rubygems/basic_specification.rb

@@ -1,12 +1,7 @@
 PORTNAME=	wlsunset
-DISTVERSION=	0.1.0
+DISTVERSION=	0.2.0
 CATEGORIES=	accessibility
 MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
-
-PATCH_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/commit/
-PATCHFILES+=	fa2bd4425314.patch:-p1 33c64bc929b2.patch:-p1 # manpage
-PATCHFILES+=	ec0c1614af21.patch:-p1 # avoid USES=localbase
-PATCHFILES+=	49ad3ce7a8e8.patch:-p1 # unbreak Clang >= 10
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Day/night gamma adjustments for Wayland

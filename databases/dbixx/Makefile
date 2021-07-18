@@ -18,7 +18,7 @@ BUILD_DEPENDS=	libdbi-drivers>=0:databases/libdbi-drivers
 GNU_CONFIGURE=	yes
 USES=		libtool localbase:ldflags pathfix
 USE_LDCONFIG=	yes
-USE_GCC=	any
+USE_GCC=	yes
 
 INSTALL_TARGET=	install-strip
 

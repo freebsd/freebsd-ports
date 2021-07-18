@@ -12,7 +12,9 @@ COMMENT=	Basic runtime logger
 
 LICENSE=	GPLv2
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

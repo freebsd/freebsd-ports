@@ -3,7 +3,7 @@ PORTVERSION=	2.0.3
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CUPS backend for Canon USB over IP protocol
 
 LICENSE=	GPLv2

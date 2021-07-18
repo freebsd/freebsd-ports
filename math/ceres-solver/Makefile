@@ -1,6 +1,6 @@
 PORTNAME=	ceres-solver
 DISTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +9,7 @@ COMMENT=	Nonlinear least squares minimizer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	glog>=0.5.0:devel/glog
 LIB_DEPENDS=	libglog.so:devel/glog
 RUN_DEPENDS:=	${BUILD_DEPENDS:Meigen*}
 
@@ -83,7 +84,7 @@ OPENBLAS_IMPLIES=	LAPACK
 
 SPARSE_DESC=		Sparse linear algebra library
 CXSPARSE_DESC=		CXSparse support
-CXSPARSE_LIB_DEPENDS=	libcxsparse.so:math/suitesparse
+CXSPARSE_LIB_DEPENDS=	libcxsparse.so:math/suitesparse-cxsparse
 CXSPARSE_CMAKE_ON=	-DCXSPARSE_INCLUDE_DIR:PATH="${LOCALBASE}/include/suitesparse"
 CXSPARSE_CMAKE_BOOL=	CXSPARSE
 EIGENSPARSE_DESC=	Simplicial Cholesky factorization in Eigen
@@ -91,7 +92,8 @@ EIGENSPARSE_CMAKE_BOOL=	EIGENSPARSE
 EIGENSPARSE_VARS=	LICENSE+=LGPL21+ LICENSE_COMB=multi \
 			LICENSE_FILE_BSD3CLAUSE="${LICENSE_FILE}"
 SUITESPARSE_DESC=	SuiteSparse support
-SUITESPARSE_LIB_DEPENDS=libspqr.so:math/suitesparse
+SUITESPARSE_LIB_DEPENDS=libspqr.so:math/suitesparse-spqr	\
+			libcholmod.so:math/suitesparse-cholmod
 SUITESPARSE_CMAKE_BOOL=	SUITESPARSE
 
 post-patch-DOCS-on:

@@ -1,8 +1,8 @@
---- src/ruby/ext/grpc/extconf.rb.orig	2019-11-22 13:44:33 UTC
+--- src/ruby/ext/grpc/extconf.rb.orig	2021-04-24 13:33:17 UTC
 +++ src/ruby/ext/grpc/extconf.rb
-@@ -39,9 +39,9 @@ end
- 
- ENV['AR'] = 'libtool -o' if RUBY_PLATFORM =~ /darwin/
+@@ -42,9 +42,9 @@ if RUBY_PLATFORM =~ /darwin/
+   ENV['ARFLAGS'] = '-o'
+  end
  
 -ENV['EMBED_OPENSSL'] = 'true'
 -ENV['EMBED_ZLIB'] = 'true'
@@ -10,10 +10,10 @@
 +ENV['EMBED_OPENSSL'] = 'false'
 +ENV['EMBED_ZLIB'] = 'false'
 +ENV['EMBED_CARES'] = 'false'
+ 
  ENV['ARCH_FLAGS'] = RbConfig::CONFIG['ARCH_FLAG']
- ENV['ARCH_FLAGS'] = '-arch i386 -arch x86_64' if RUBY_PLATFORM =~ /darwin/
- ENV['CPPFLAGS'] = '-DGPR_BACKWARDS_COMPATIBILITY_MODE'
-@@ -50,22 +50,23 @@ output_dir = File.expand_path(RbConfig::CONFIG['topdir
+ if RUBY_PLATFORM =~ /darwin/
+@@ -61,22 +61,23 @@ output_dir = File.expand_path(RbConfig::CONFIG['topdir
  grpc_lib_dir = File.join(output_dir, 'libs', grpc_config)
  ENV['BUILDDIR'] = output_dir
  

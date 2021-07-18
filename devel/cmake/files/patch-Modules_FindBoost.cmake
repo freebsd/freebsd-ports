@@ -1,25 +1,26 @@
---- Modules/FindBoost.cmake.orig	2019-02-07 20:55:01 UTC
+--- Modules/FindBoost.cmake.orig	2021-03-23 15:43:17 UTC
 +++ Modules/FindBoost.cmake
-@@ -56,6 +56,8 @@ This module reads hints about search locations from va
-    (or BOOSTROOT)
-   BOOST_INCLUDEDIR       - Preferred include directory e.g. <prefix>/include
-   BOOST_LIBRARYDIR       - Preferred library directory e.g. <prefix>/lib
-+  BOOST_PYTHON_SUFFIX    - Preferred Python version
+@@ -135,6 +135,9 @@ This module reads hints about search locations from va
+ ``BOOST_LIBRARYDIR``
+   Preferred library directory e.g. ``<prefix>/lib``.
+ 
++``BOOST_PYTHON_SUFFIX``
++  Preferred Python version.
 +
-   Boost_NO_SYSTEM_PATHS  - Set to ON to disable searching in locations not
-                            specified by these hint variables. Default is OFF.
-   Boost_ADDITIONAL_VERSIONS
-@@ -242,6 +244,9 @@ Set Boost_NO_BOOST_CMAKE to ON to disable the search f
- cmake_policy(PUSH)
- cmake_policy(SET CMP0057 NEW) # if IN_LIST
+ ``Boost_NO_SYSTEM_PATHS``
+   Set to ``ON`` to disable searching in locations not
+   specified by these hint variables. Default is ``OFF``.
+@@ -558,6 +561,9 @@ function(_boost_set_legacy_variables_from_config)
+   endif()
+ endfunction()
  
 +# https://gitlab.kitware.com/cmake/cmake/issues/18865
 +set(Boost_NO_BOOST_CMAKE ON CACHE BOOL "Disable the search for boost-cmake")
 +
  #-------------------------------------------------------------------------------
- # Before we go searching, check whether boost-cmake is available, unless the
- # user specifically asked NOT to search for boost-cmake.
-@@ -1739,10 +1744,10 @@ foreach(COMPONENT ${Boost_FIND_COMPONENTS})
+ # Before we go searching, check whether a boost cmake package is available, unless
+ # the user specifically asked NOT to search for one.
+@@ -2131,10 +2137,10 @@ foreach(COMPONENT ${Boost_FIND_COMPONENTS})
    # Handle Python version suffixes
    unset(COMPONENT_PYTHON_VERSION_MAJOR)
    unset(COMPONENT_PYTHON_VERSION_MINOR)

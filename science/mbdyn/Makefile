@@ -1,8 +1,8 @@
 # Created by: Kay Lehmann <kay_lehmann@web.de>
 
 PORTNAME=	mbdyn
-PORTVERSION=	1.7.3
-PORTREVISION=	1
+DISTVERSION=	1.7.3
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://www.mbdyn.org/userfiles/downloads/
 
@@ -18,14 +18,17 @@ BROKEN_powerpc64=	fails to compile: libraries/libmbutil/parser.h:275:3: error: e
 BUILD_DEPENDS=	libatomic_ops>0:devel/libatomic_ops
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libarpack.so:math/arpack-ng \
-		libumfpack.so:math/suitesparse
+		libumfpack.so:math/suitesparse-umfpack
 
-GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lib fortran gmake libtool:build localbase
 USE_LDCONFIG=	yes
+
 CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include/suitesparse
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix='' --enable-multithread --with-mpi=no \
 		--with-ginac=no
+
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	METIS CHACO

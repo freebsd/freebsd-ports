@@ -1,8 +1,7 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME?=	nginx
-PORTVERSION=	1.19.10
-PORTREVISION=	1
+PORTVERSION=	1.21.1
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -215,10 +214,6 @@ CONFIGURE_ARGS+=	--${_addextmod}=${WRKDIR}/${moddir}
 .if empty(PORT_OPTIONS:MHTTP) && empty(PORT_OPTIONS:MMAIL)
 IGNORE=		requires at least HTTP or MAIL to \
 		be defined.  Please do 'make config' again
-.endif
-
-.if !${PORT_OPTIONS:MHTTP_REWRITE} && !defined(USE_HTTP_REWRITE)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nopcre
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER} && empty(PORT_OPTIONS:MDEBUG)

@@ -1,10 +1,10 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.13.0
+DISTVERSION=	0.14.1
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	7c0e2a271a4c.patch:-p1 # https://github.com/swaywm/wlroots/pull/2064
-PATCHFILES+=	e1b5323f56c3.patch:-p1 # https://github.com/swaywm/wlroots/pull/2064
+PATCHFILES+=	55a8d225cf8c.patch:-p1 # https://github.com/swaywm/wlroots/pull/2064
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library
@@ -18,48 +18,74 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 		libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
+		libseat.so:sysutils/seatd \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
-RUN_DEPENDS=	libudev-devd>=0.4.1:devel/libudev-devd \
-		mesa-dri>0:graphics/mesa-dri
+RUN_DEPENDS=	libudev-devd>=0.4.1:devel/libudev-devd
 
 USES=		compiler:c11 gl meson pkgconfig xorg
 USE_GITHUB=	yes
-USE_GL=		egl gbm glesv2
+USE_GL=		gbm
 USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	swaywm
-MESON_ARGS=	-Dexamples=false
+MESON_ARGS=	-Dexamples=false -Drenderers=${RENDERERS:ts,}
 
-OPTIONS_DEFINE=	CONSOLEKIT LIBSEAT NVIDIA UUID X11
-OPTIONS_DEFAULT=LIBSEAT UUID X11
+OPTIONS_DEFINE=	NVIDIA OPENGL VULKAN X11
+OPTIONS_DEFAULT=OPENGL VULKAN X11
 OPTIONS_SUB=	yes
-
-CONSOLEKIT_DESC=	DRM sessions without root via ConsoleKit2 (experimental)
-CONSOLEKIT_PATCH_SITES=	https://github.com/unrelentingtech/${GH_PROJECT}/commit/:ck2
-CONSOLEKIT_PATCHFILES=	fb837ae10b1f.patch:-p1:ck2 # https://github.com/swaywm/wlroots/pull/1467
-CONSOLEKIT_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-			libconsolekit.so:sysutils/consolekit2
-CONSOLEKIT_MESON_ENABLED=	consolekit2
-.if make(makesum)
-.MAKEFLAGS:		WITH+=CONSOLEKIT
-.endif
-
-LIBSEAT_DESC=		DRM sessions with/without root via libseat
-LIBSEAT_LIB_DEPENDS=	libseat.so:sysutils/seatd
-LIBSEAT_MESON_ENABLED=	libseat
 
 NVIDIA_DESC=		EGLStreams support for DRM backend (experimental)
 NVIDIA_PATCH_SITES=	https://github.com/danvd/${GH_PROJECT}-eglstreams/commit/:nvidia
-NVIDIA_PATCHFILES=	eba4b66f92ca.patch:-p1:nvidia # https://github.com/swaywm/wlroots/pull/2769
+NVIDIA_PATCHFILES=	d9acdb6b21ec.patch:-p1:nvidia # https://github.com/swaywm/wlroots/pull/2769
+NVIDIA_IMPLIES=		OPENGL
 .if make(makesum)
 .MAKEFLAGS:		WITH+=NVIDIA
 .endif
 
-# uuid_create() is random on NetBSD and OpenBSD but not DragonFly and FreeBSD
-# See also https://github.com/netbsd/src/commit/8651e9a438af
-UUID_DESC=		Exported surfaces to use random UUIDs via libuuid
-UUID_LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+OPENGL_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
+OPENGL_USE=		GL=egl,glesv2
+OPENGL_VARS=		RENDERERS+=gles2
+
+VULKAN_DESC=		Vulkan renderer (experimental)
+VULKAN_PATCHFILES+=	8c700c534556.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	0464af8573f9.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	e3e9250ea6d8.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	1af1d1694195.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	93319aa2b633.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	0028938735d1.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	6885b636508c.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	76534695a8d3.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	445142e6a1f9.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	f029ae1dac4b.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	ad1fab0b3704.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	4407b8e5a3a7.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	e021c068d02f.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	2cc710bda83c.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	f0888604d6ce.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	4fdd5efc9260.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	59c119829f1c.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	cfbd8aa6cf24.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	3f6dbe428e8b.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	a83943798aef.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	f64a98d49d25.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	9885ccb4b0b1.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	71f9f33e3bf2.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	bd8c520dbd9a.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	2d89dc9b8651.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	8f9aeda46d8a.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	e3d16970433f.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	79f10d929b72.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	1a16e8fc56a9.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_PATCHFILES+=	dd039c56d93a.patch:-p1 # https://github.com/swaywm/wlroots/pull/2771
+VULKAN_BUILD_DEPENDS=	glslangValidator:graphics/glslang \
+			vulkan-headers>0:graphics/vulkan-headers
+VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
+VULKAN_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
+VULKAN_USES=		localbase # Silence -Werror=undef in <vulkan/vulkan_core.h>
+VULKAN_VARS=		RENDERERS+=vulkan
+VULKAN_PLIST_FILES=	include/wlr/types/wlr_drm.h \
+			%%VULKAN%%include/wlr/render/vulkan.h
 
 X11_LIB_DEPENDS=	libxcb-errors.so:x11/xcb-util-errors \
 			libxcb-render-util.so:x11/xcb-util-renderutil \
@@ -68,5 +94,10 @@ X11_BUILD_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel
 X11_RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel
 X11_USE=		XORG=xcb
 X11_MESON_ENABLED=	x11-backend xwayland
+
+post-patch:
+# Extract (snapshot) version from the port instead of meson.build
+	@${REINPLACE_CMD} "/STR/s/meson.project_version()/'${DISTVERSIONFULL}'/" \
+		${WRKSRC}/include/wlr/meson.build
 
 .include <bsd.port.mk>

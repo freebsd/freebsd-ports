@@ -8,6 +8,7 @@ bin/myisamlog
 bin/myisampack
 bin/mysqldumpslow
 bin/mysql_client_test
+bin/mysql_keyring_encryption_test
 bin/mysql_secure_installation
 bin/mysql_ssl_rsa_setup
 bin/mysql_tzinfo_to_sql
@@ -58,6 +59,7 @@ lib/mysql/plugin/component_audit_api_message_emit.so
 lib/mysql/plugin/component_example_component1.so
 lib/mysql/plugin/component_example_component2.so
 lib/mysql/plugin/component_example_component3.so
+lib/mysql/plugin/component_keyring_file.so
 lib/mysql/plugin/component_log_filter_dragnet.so
 lib/mysql/plugin/component_log_sink_json.so
 lib/mysql/plugin/component_log_sink_syseventlog.so

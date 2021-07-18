@@ -1,6 +1,6 @@
---- base/base_switches.h.orig	2021-03-12 23:57:15 UTC
+--- base/base_switches.h.orig	2021-05-12 22:05:40 UTC
 +++ base/base_switches.h
-@@ -41,8 +41,8 @@ extern const char kDisableUsbKeyboardDetect[];
+@@ -42,8 +42,8 @@ extern const char kDisableUsbKeyboardDetect[];
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -11,12 +11,12 @@
  extern const char kDisableDevShmUsage[];
  #endif
  
-@@ -58,7 +58,7 @@ extern const char kEnableIdleTracing[];
+@@ -59,7 +59,7 @@ extern const char kEnableIdleTracing[];
  extern const char kForceFieldTrialParams[];
  #endif
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  extern const char kEnableThreadInstructionCount[];
- #endif
  
+ // TODO(crbug.com/1176772): Remove kEnableCrashpad and IsCrashpadEnabled() when

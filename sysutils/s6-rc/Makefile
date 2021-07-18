@@ -1,7 +1,7 @@
 # Created by: Andris Raugulis <moo@arthepsy.eu>
 
 PORTNAME=	s6-rc
-PORTVERSION=	0.5.2.1
+PORTVERSION=	0.5.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -30,7 +30,10 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 	--with-lib=${LOCALBASE}/lib/execline \
 	--with-lib=${LOCALBASE}/lib/s6 \
 	--with-dynlib=${LOCALBASE}/lib \
+	--livedir=${LIVEDIR} \
 	--enable-shared
+
+LIVEDIR?=	/var/run/${PORTNAME}
 
 DOCS=		AUTHORS COPYING INSTALL README doc/*.html
 OPTIONS_DEFINE=	DOCS

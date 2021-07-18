@@ -1,0 +1,6 @@
+The envsubst utility is designed to take a set of strings as input and replace
+variables in them, in the same way that shells do variable substitution.
+Additionally, the variables that will be substituted can be restricted to a
+defined set.
+
+WWW: https://github.com/kaniini/envsubst

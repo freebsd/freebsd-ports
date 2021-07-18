@@ -1,6 +1,6 @@
-TIMESTAMP = 1613349864
-SHA256 (tianocore-edk2-g20210214-2e1e8c35f3178df95d79da81ac6deec242da74c2_GH0.tar.gz) = d611fece6f4b0cd7dad24af490524fadb4c560e7bbce7028002f69ce2102f247
-SIZE (tianocore-edk2-g20210214-2e1e8c35f3178df95d79da81ac6deec242da74c2_GH0.tar.gz) = 13615777
+TIMESTAMP = 1619914029
+SHA256 (tianocore-edk2-g20210226-edk2-stable202102_GH0.tar.gz) = 268591f0db8fd1f8c977509e8ac37bd6090c8373bf63a9657c88bb27bb43a279
+SIZE (tianocore-edk2-g20210226-edk2-stable202102_GH0.tar.gz) = 13604550
 SHA256 (ucb-bar-berkeley-softfloat-3-master_GH0.tar.gz) = a40ccfa8d5c04971e6af8014217c93b58fba4d08c337bc0436bb141e9e79426a
 SIZE (ucb-bar-berkeley-softfloat-3-master_GH0.tar.gz) = 148747
 SHA256 (google-brotli-v1.0.7-17-g666c328_GH0.tar.gz) = caed254751585590b20b4a34d6600e9c9aae153ab1f9e1ae6b67f9bc3ee09b92

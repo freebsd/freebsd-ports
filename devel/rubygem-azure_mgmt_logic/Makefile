@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	azure_mgmt_logic
-PORTVERSION=	0.18.2
+PORTVERSION=	0.18.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

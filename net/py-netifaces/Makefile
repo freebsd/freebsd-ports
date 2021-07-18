@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 
 PORTNAME=	netifaces
-PORTVERSION=	0.10.9
+PORTVERSION=	0.11.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,5 +16,8 @@ USE_PYTHON=	autoplist distutils
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/netifaces*.so
+
+do-test:
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} test.py
 
 .include <bsd.port.mk>

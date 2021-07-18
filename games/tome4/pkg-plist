@@ -4,6 +4,7 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/addons/tome-addon-dev.teaa
 %%DATADIR%%/game/addons/tome-items-vault.teaa
 %%DATADIR%%/game/addons/tome-possessors.teaa
+%%DATADIR%%/game/addons/tome-remote-designer.teaa
 %%DATADIR%%/game/engines/te4-%%PORTVERSION%%.teae
 %%DATADIR%%/game/loader/init.lua
 %%DATADIR%%/game/loader/pre-init.lua
@@ -19,6 +20,10 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/modules/example_realtime/data/general/grids/basic.lua
 %%DATADIR%%/game/modules/example_realtime/data/general/npcs/kobold.lua
 %%DATADIR%%/game/modules/example_realtime/data/gfx/particles/acid.lua
+%%DATADIR%%/game/modules/example_realtime/data/locales/ja_JP.lua                                     
+%%DATADIR%%/game/modules/example_realtime/data/locales/ko_KR.lua                                     
+%%DATADIR%%/game/modules/example_realtime/data/locales/zh_hans.lua                                   
+%%DATADIR%%/game/modules/example_realtime/data/locales/zh_hant.lua
 %%DATADIR%%/game/modules/example_realtime/data/rooms/pilar.lua
 %%DATADIR%%/game/modules/example_realtime/data/rooms/simple.lua
 %%DATADIR%%/game/modules/example_realtime/data/talents.lua
@@ -43,6 +48,10 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/modules/example/data/general/grids/basic.lua
 %%DATADIR%%/game/modules/example/data/general/npcs/kobold.lua
 %%DATADIR%%/game/modules/example/data/gfx/particles/acid.lua
+%%DATADIR%%/game/modules/example/data/locales/ja_JP.lua      
+%%DATADIR%%/game/modules/example/data/locales/ko_KR.lua     
+%%DATADIR%%/game/modules/example/data/locales/zh_hans.lua      
+%%DATADIR%%/game/modules/example/data/locales/zh_hant.lua                                            
 %%DATADIR%%/game/modules/example/data/rooms/pilar.lua
 %%DATADIR%%/game/modules/example/data/rooms/simple.lua
 %%DATADIR%%/game/modules/example/data/talents.lua

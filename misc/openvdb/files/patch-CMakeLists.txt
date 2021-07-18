@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-02-05 19:21:38 UTC
+--- CMakeLists.txt.orig	2021-06-11 21:38:41 UTC
 +++ CMakeLists.txt
-@@ -199,7 +199,7 @@ mark_as_advanced(
+@@ -216,7 +216,7 @@ set(MINIMUM_CXX_STANDARD 14)
  # @note  Blosc version is currently treated as exception which must be adhered
  # to. The minimum version must be at least 1.5.0. Previous versions are incompatible.
  # Later versions (including 1.5.4), can be buggy on certain platforms.
@@ -9,7 +9,7 @@
  # @note  ABI always enforced so the correct deprecation messages are available.
  # OPENVDB_USE_DEPRECATED_ABI_<VERSION> should be used to circumvent this
  set(MINIMUM_OPENVDB_ABI_VERSION 6)
-@@ -214,13 +214,13 @@ if(NOT DISABLE_DEPENDENCY_VERSION_CHECKS)
+@@ -231,13 +231,13 @@ if(NOT DISABLE_DEPENDENCY_VERSION_CHECKS)
    set(MINIMUM_MSVC_VERSION 19.10)
  
    set(MINIMUM_BOOST_VERSION 1.61)  # @warning should be 1.66, but H18 ships with 1.61

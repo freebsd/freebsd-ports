@@ -81,9 +81,6 @@ lib/wayfire/libwrot.so
 lib/wayfire/libzoom.so
 libdata/pkgconfig/wayfire.pc
 %%EXAMPLESDIR%%/wayfire.ini
-%%DATADIR%%/decoration/resources/close.png
-%%DATADIR%%/decoration/resources/maximize.png
-%%DATADIR%%/decoration/resources/minimize.png
 %%DATADIR%%/metadata/alpha.xml
 %%DATADIR%%/metadata/animate.xml
 %%DATADIR%%/metadata/autostart.xml

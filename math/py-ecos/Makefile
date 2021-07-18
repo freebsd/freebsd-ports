@@ -1,9 +1,7 @@
 PORTNAME=	ecos
-DISTVERSION=	2.0.7
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	.post1
+DISTVERSION=	2.0.8
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+#MASTER_SITES=	CHEESESHOP # outdated on PyPI, use GitHub instead
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,5 +16,16 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	embotech
+GH_PROJECT=	ecos-python
+GH_TUPLE=	embotech:ecos:v${DISTVERSION}:ecos/ecos
+
+pre-configure:
+	@${ECHO} "__version__=\"$(DISTVERSION)\"" > ${WRKSRC}/src/ecos/version.py
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_ecos*.so
 
 .include <bsd.port.mk>

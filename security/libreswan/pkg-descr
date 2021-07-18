@@ -1,0 +1,6 @@
+Libreswan is a free software implementation of the most widely supported and
+standardized VPN protocol using "IPsec" and the Internet Key Exchange ("IKE").
+These standards are produced and maintained by the Internet Engineering Task
+Force ("IETF").
+
+WWW: https://libreswan.org/

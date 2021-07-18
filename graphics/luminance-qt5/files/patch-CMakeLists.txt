@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2021-01-11 09:41:28 UTC
++++ CMakeLists.txt
+@@ -64,6 +64,7 @@ find_package(Qt5Core             REQUIRED)
+ find_package(Qt5Concurrent       REQUIRED)
+ find_package(Qt5Widgets          REQUIRED)
+ find_package(Qt5Gui              REQUIRED)
++if (WITH_HELPBROWSER)
+ # QtWebEngine is preferred web engine because QtWebKit is deprecated since Qt 5.5:
+ # https://wiki.qt.io/New-Features-in-Qt-5.5#Deprecated_Functionality. Unfortunately,
+ # some Qt distributions still provide QtWebKit instead of QtWebEngine. So first we
+@@ -75,6 +76,8 @@ else()
+     find_package(Qt5WebKit           REQUIRED)
+     find_package(Qt5WebKitWidgets    REQUIRED)
+     add_definitions(-DUSE_DEPRECATED_QTWEBKIT)
++endif()
++    add_definitions(-DWITH_HELPBROWSER)
+ endif()
+ find_package(Qt5Xml              REQUIRED)
+ find_package(Qt5Sql              REQUIRED)

@@ -542,6 +542,7 @@
 %%DATADIR%%/ipam/migrations/__init__.py
 %%DATADIR%%/ipam/models.py
 %%DATADIR%%/ipam/querysets.py
+%%DATADIR%%/ipam/signals.py
 %%DATADIR%%/ipam/tables.py
 %%DATADIR%%/ipam/tests/__init__.py
 %%DATADIR%%/ipam/tests/test_api.py
@@ -1459,7 +1460,6 @@
 %%DATADIR%%/templates/dcim/inc/cabletermination.html
 %%DATADIR%%/templates/dcim/inc/device_component_table.html
 %%DATADIR%%/templates/dcim/inc/device_import_header.html
-%%DATADIR%%/templates/dcim/inc/device_napalm_tabs.html
 %%DATADIR%%/templates/dcim/inc/devicetype_component_table.html
 %%DATADIR%%/templates/dcim/inc/endpoint_connection.html
 %%DATADIR%%/templates/dcim/inc/interface_vlans_table.html

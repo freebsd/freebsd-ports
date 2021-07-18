@@ -1,9 +1,11 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
 
 PORTNAME=	stellarium
-PORTVERSION=	0.21.0
+PORTVERSION=	0.21.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro
+MASTER_SITES=	http://www.etwright.org/astro/:alm
+DISTFILES=	almstars-1.1.tar.gz:alm
 EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat:N*.pdf}
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -75,6 +77,10 @@ PLIST_SUB+=	MORE_STARS="@comment "
 post-extract-DOCS-on:
 	@${LN} -sf ${_DISTDIR}/stellarium_user_guide-${GUIDE_VERSION}-1.pdf \
 		${WRKSRC}
+
+post-install:
+	${INSTALL_DATA} ${WRKDIR}/almstars-1.1/*.dat \
+		${STAGEDIR}${DATADIR}/skycultures/almagest/almstars
 
 post-install-MORE_STARS-on:
 	${INSTALL_DATA} ${DISTDIR}/stars_4_1v0_2.cat \

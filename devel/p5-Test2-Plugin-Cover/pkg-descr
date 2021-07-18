@@ -1,0 +1,12 @@
+Test2::Plugin::Cover will collect minimal file coverage info, and will do so
+with minimal performance impact.
+
+Every time a subroutine is called this tool will do its best to find the
+filename the subroutine was defined in, and add it to a list. Also, anytime you
+attempt to open a file with open() or sysopen() the file will be added to the
+list. This list will be attached to a test2 event just before the test exits. In
+most formaters the event will only show up as a comment on STDOUT # This test
+covered N source files. . However tools such as Test2::Harness::UI can make full
+use of the coverage information contained in the event.
+
+WWW: https://metacpan.org/release/Test2-Plugin-Cover

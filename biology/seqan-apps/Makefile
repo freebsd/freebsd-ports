@@ -31,7 +31,7 @@ NATIVE_CMAKE_ON=	-DSEQAN_ARCH_NATIVE:BOOL=TRUE
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
+.if ${ARCH} == "armv7" || ${ARCH} == "i386" || ${ARCH} == "powerpc"
 PLIST_SUB+=	RM_I386="@comment "
 .else
 PLIST_SUB+=	RM_I386=""

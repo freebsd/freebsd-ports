@@ -1,7 +1,7 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 
 PORTNAME=	libevtx
-DISTVERSION=	alpha-20200709
+DISTVERSION=	alpha-20210525
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libevtx/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine

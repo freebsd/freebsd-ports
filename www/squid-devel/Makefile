@@ -1,5 +1,5 @@
 PORTNAME=	squid
-PORTVERSION=	5.0.5
+DISTVERSION=	5.0.6
 CATEGORIES=	www
 MASTER_SITES=	http://www2.pl.squid-cache.org/Versions/v5/ \
 		http://ca.squid-cache.org/Versions/v5/ \

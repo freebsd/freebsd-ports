@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}upt>=0.11:sysutils/py-upt@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 

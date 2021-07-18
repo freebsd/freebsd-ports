@@ -1,7 +1,7 @@
 # Created by: Dima Dorfman <dima@unixfreak.org>
 
 PORTNAME=	foomatic-db
-PORTVERSION=	20201029
+PORTVERSION=	20210513
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/danilo
 DISTNAME=	${PORTNAME}-${FOOMATICVER}-${PORTVERSION}

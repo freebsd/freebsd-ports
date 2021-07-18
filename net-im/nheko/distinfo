@@ -1,7 +1,5 @@
-TIMESTAMP = 1611962793
-SHA256 (Nheko-Reborn-nheko-v0.8.1_GH0.tar.gz) = c9e11b763f39d18a899125678daa7a05cd80aa6acfcad0329485c2034f4a4d27
-SIZE (Nheko-Reborn-nheko-v0.8.1_GH0.tar.gz) = 1176445
-SHA256 (drycpp-lmdbxx-0b43ca87d8cfabba392dfe884eb1edb83874de02_GH0.tar.gz) = 93721132bbf5045d38ad62de2997655e9984c48ea5c9886746d42128f4b26fbd
-SIZE (drycpp-lmdbxx-0b43ca87d8cfabba392dfe884eb1edb83874de02_GH0.tar.gz) = 47524
-SHA256 (mobius3-tweeny-6a5033372fe53c4c731c66c8a2d56261746cd85c_GH0.tar.gz) = c9fcabcdbeb89e4236bbb773ddacf6293ca2a8618f2b1a67e689e3edb704ecd3
-SIZE (mobius3-tweeny-6a5033372fe53c4c731c66c8a2d56261746cd85c_GH0.tar.gz) = 49038
+TIMESTAMP = 1619428220
+SHA256 (Nheko-Reborn-nheko-v0.8.2_GH0.tar.gz) = df4575c47daab47d418637a4637b599e3848dd749132ca1e92f981d9212eabb2
+SIZE (Nheko-Reborn-nheko-v0.8.2_GH0.tar.gz) = 1232245
+SHA256 (hoytech-lmdbxx-029fb681213af3020f5e3a86045445552bd024c5_GH0.tar.gz) = f1d048d7ec720667a3ea091ed44f06eb79171e77d646a59dac45b9e5ff75f33b
+SIZE (hoytech-lmdbxx-029fb681213af3020f5e3a86045445552bd024c5_GH0.tar.gz) = 52468

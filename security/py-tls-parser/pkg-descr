@@ -1,0 +1,3 @@
+tls_parser is a small library to parse TLS records used by SSLyze.
+
+WWW: https://github.com/nabla-c0d3/tls_parser

@@ -1,6 +1,6 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2021-05-12 22:05:44 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
-@@ -81,11 +81,11 @@
+@@ -82,11 +82,11 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -14,7 +14,7 @@
  
  #if BUILDFLAG(ENABLE_EXTENSIONS)
  #include "extensions/common/constants.h"
-@@ -146,10 +146,10 @@ network::mojom::HttpAuthDynamicParamsPtr CreateHttpAut
+@@ -147,10 +147,10 @@ network::mojom::HttpAuthDynamicParamsPtr CreateHttpAut
    auth_dynamic_params->basic_over_http_enabled =
        local_state->GetBoolean(prefs::kBasicAuthOverHttpEnabled);
  
@@ -40,7 +40,7 @@
  
  #if defined(OS_POSIX)
    pref_change_registrar_.Add(prefs::kNtlmV2Enabled, auth_pref_callback);
-@@ -416,10 +416,10 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -422,10 +422,10 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterStringPref(prefs::kAuthServerAllowlist, std::string());
    registry->RegisterStringPref(prefs::kAuthNegotiateDelegateAllowlist,
                                 std::string());
@@ -53,7 +53,7 @@
  
  #if defined(OS_POSIX)
    registry->RegisterBooleanPref(
-@@ -513,7 +513,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
+@@ -521,7 +521,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

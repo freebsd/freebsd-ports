@@ -68,7 +68,7 @@ check-depends::
 	@${ECHO_CMD} "Dependency error: This port requires the OpenSSL library, which is part of"
 	@${ECHO_CMD} "the FreeBSD crypto distribution, but not installed on your"
 	@${ECHO_CMD} "machine. Please see the \"OpenSSL\" section in the handbook"
-	@${ECHO_CMD} "(at \"http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/openssl.html\", for instance)"
+	@${ECHO_CMD} "(at \"https://docs.FreeBSD.org/en/books/handbook/security/#openssl\", for instance)"
 	@${ECHO_CMD} "for instructions on how to obtain and install the FreeBSD"
 	@${ECHO_CMD} "OpenSSL distribution."
 	@${FALSE}

@@ -1,6 +1,6 @@
 PORTNAME=	Drawpile
 DISTVERSION=	2.1.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -13,6 +13,7 @@ COMMENT=	Collaborative drawing program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/kf5-extra-cmake-modules
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libmicrohttpd.so:www/libmicrohttpd \
 		libminiupnpc.so:net/miniupnpc \

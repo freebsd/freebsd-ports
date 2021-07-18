@@ -1,7 +1,7 @@
 # Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 
 PORTNAME=	ming
-DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSIONPREFIX=	ming-
 DISTVERSION=	0_4_8
 CATEGORIES=	graphics
 
@@ -17,29 +17,28 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgif.so:graphics/giflib \
 		libpng.so:graphics/png
 
-CONFLICTS_INSTALL=	ja-ming
+USES=		autoreconf bison gmake libtool localbase pathfix shebangfix
 
-OPTIONS_DEFINE=	DOCS
-
-PORTSCOUT=	limit:^ming-
-
+CFLAGS+=	-fcommon # https://github.com/libming/libming/issues/55
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/ming
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USES=		autoreconf bison gmake libtool localbase pathfix shebangfix
 
 PORTDOCS=	*
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	lib${PORTNAME}
-GH_PROJECT=	lib${PORTNAME}
+GH_ACCOUNT=	libming
+GH_PROJECT=	libming
+
+CONFLICTS_INSTALL=	ja-ming
+
+PORTSCOUT=	limit:^ming-
 
 SHEBANG_FILES=	util/cws2fws
 
-# https://github.com/libming/libming/issues/55
-CFLAGS+=	-fcommon
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/ming/ ${STAGEDIR}${PREFIX}/include/ming/blocks/ ${STAGEDIR}${PREFIX}/include/ming/util/

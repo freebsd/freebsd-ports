@@ -2,12 +2,12 @@
 
 PORTNAME=	openimageio
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	2.2.13.1
+DISTVERSION=	2.2.16.0
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -101,7 +101,7 @@ VDB_LIB_DEPENDS=	libopenvdb.so:misc/openvdb
 PLIST_SUB+=	LIBVERS=${DISTVERSION:C/([0-9]*)\.([0-9]*)\.([0-9]*)(.*)/\1.\2.\3/}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/src/cmake/modules/FindPTex.cmake
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/src/cmake/modules/FindPtex.cmake
 
 .include <bsd.port.options.mk>
 
@@ -117,8 +117,8 @@ CMAKE_OFF+=	USE_QT USE_OPENGL OIIO_BUILD_TOOLS OIIO_BUILD_TESTS
 CMAKE_ARGS+=	-DPYTHON_VERSION:STRING=${PYTHON_VER}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	${INSTALL_LIB} ${BUILD_WRKSRC}/lib/python/site-packages/OpenImageIO.so ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${INSTALL_LIB} ${BUILD_WRKSRC}/lib/python/site-packages/OpenImageIO*.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 .else # SLAVE_PORT != yes
 USE_LDCONFIG=	yes
 CMAKE_OFF+=	USE_PYTHON

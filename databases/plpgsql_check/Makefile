@@ -1,7 +1,7 @@
 # Created by: Jov <amutu@amutu.com>
 
 PORTNAME=	plpgsql_check
-PORTVERSION=	1.15.3
+PORTVERSION=	1.17.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER_NODOT}-
@@ -14,7 +14,7 @@ LICENSE_NAME=	postcardware
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
-USES=		compiler:c11 gmake pgsql
+USES=		compiler:c11 gmake pgsql:10+
 
 LLD_UNSAFE=	yes
 MAKE_ARGS=	CC="${CC}"

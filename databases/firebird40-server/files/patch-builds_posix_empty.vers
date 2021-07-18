@@ -1,0 +1,9 @@
+--- builds/posix/empty.vers.orig	2020-10-12 00:02:22 UTC
++++ builds/posix/empty.vers
+@@ -21,3 +21,5 @@
+ #  Contributor(s): ______________________________________.
+ 
+ main
++__progname
++environ
+

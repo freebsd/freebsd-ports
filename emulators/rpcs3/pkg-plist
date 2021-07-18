@@ -2,7 +2,7 @@ bin/rpcs3
 share/applications/rpcs3.desktop
 share/icons/hicolor/48x48/apps/rpcs3.png
 share/icons/hicolor/scalable/apps/rpcs3.svg
-share/metainfo/rpcs3.appdata.xml
+share/metainfo/rpcs3.metainfo.xml
 %%DATADIR%%/GuiConfigs/Classic (Bright).qss
 %%DATADIR%%/GuiConfigs/Darker Style by TheMitoSan.qss
 %%DATADIR%%/GuiConfigs/Envy.qss

@@ -1,0 +1,4 @@
+Library for efficient spherical harmonic transforms at arbitrary spins,
+supporting CPU vectorization, OpenMP and MPI.
+
+WWW: https://gitlab.mpcdf.mpg.de/mtr/libsharp

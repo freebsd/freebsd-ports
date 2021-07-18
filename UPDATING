@@ -5,6 +5,193 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210704:
+  AFFECTS: users of misc/qtchooser
+  AUTHOR: kde@FreeBSD.org
+
+  QtChooser allows you to select your version of Qt among those installed.
+  However, this tool is no longer supported upstream and will not be
+  available for Qt6.
+
+  By default, our Qt installations are done in:
+  ${LOCALBASE}/lib/qt${QT_VERSION} as recommended.
+  We have added symbolic linking for the main binaries to 
+  ${LOCALBASE}/bin with the suffix -qt5.
+
+20210628:
+  AFFECTS: users of misc/openhab
+  AUTHOR: netchild@FreeBSD.org
+
+  You need to run
+    sed -i -e 's:^karaf.framework.equinox=.*:karaf.framework.equinox=mvn\:org.eclipse.platform/org.eclipse.osgi/3.16.200: ; s:^karaf.framework.felix=.*:karaf.framework.felix=mvn\:org.apache.felix/org.apache.felix.framework/6.0.4:' /var/db/openhab/userdata/etc/config.properties
+  to update the version numbers of some components in a config file.
+
+20210621:
+  AFFECTS: users of www/gitlab-ce
+  AUTHOR: mfechner@FreeBSD.org
+
+  The upgrade of Gitlab 14.0.0 is in preparation.
+  You must upgrade first to 13.12.
+  For more information see here:
+  https://about.gitlab.com/blog/2021/06/04/gitlab-moving-to-14-breaking-changes/
+
+  To do the upgrade, make sure you follow the upgrade manuals:
+  https://gitlab.fechner.net/mfechner/Gitlab-docu/-/tree/master/update
+
+  I will merge the 14.0.0 upgrade later to quarterly branch to give you
+  some time for the upgrade to 13.12.
+
+20210620:
+  AFFECTS: users of misc/openhab2
+  AUTHOR: netchild@FreeBSD.org
+
+  The openhab v3 port has been committed. Upstream has removed the
+  version from the name, as such the FreeBSD port follows in all places
+  (start script name, directory names, ...).
+  Users are encuraged to migrate from misc/openhab2 to misc/openhab.
+
+  No automatic config migration is available Both versions can be
+  installed in parallel, but an users has to take care to not run
+  both at the same time on the same port.
+
+20210617:
+  AFFECTS: users of graphics/mesa-libs and x11/nvidia-driver
+  AUTHOR: kbowling@FreeBSD.org
+
+  Some libraries from mesa-libs are now provided by libglvnd while
+  others were renamed. nvidia-driver already used libglvnd but bundled
+  a copy which is now provided as a separate package. When building
+  outside poudriere make sure to remove mesa-libs and nvidia-driver
+  first in order to avoid conflict with libglvnd.
+
+  For portmaster users:
+  # pkg delete -f mesa-libs nvidia-driver
+  # portmaster -a
+
+  For portupgrade users:
+  # pkg delete -f mesa-libs nvidia-driver
+  # portupgrade -a
+
+20210523:
+  AFFECTS: users of www/tt-rss
+  AUTHOR: dereks@lifeofadishwasher.com
+
+  tt-rss config.php syntax has changed.  You can find detailed changes
+  here https://tt-rss.org/wiki/GlobalConfig or look at config.php.sample.
+  Expect your config.php to not work with newer www/tt-rss releases.
+
+  Due to changes in ttrssd before updating you should stop ttrssd or
+  otherwise kill the php process running update_daemon2.php.
+
+20210516:
+  AFFECTS: users of security/bitwarden_rs
+  AUTHOR: mr@FreeBSD.org
+
+  bitwarden_rs has been renamed to vaultwarden upstream.
+  So switch to security/vaultwarden instead.
+
+20210515:
+  AFFECTS: users of databases/postgresql??-server
+  AUTHOR: girgen@FreeBSD.org
+
+  The rc.conf parameter for the login class of the postgresql daemon has
+  changed name from postgresql_class to postgresql_login_class.
+  rc.subr(8) states that the parameter should be named ${name}_login_class.
+
+20200512:
+  AFFECTS: users of sysutils/ansible*
+  AUTHOR: 0mp@FreeBSD.org
+
+  Ansible has been updated to 3.3.0. Please follow the porting guide
+  to update the rulesets:
+
+    https://docs.ansible.com/ansible/devel/porting_guides/porting_guide_3.html
+
+20210508:
+  AFFECTS: users of devel/pycharm-ce
+  AUTHOR: bsam@FreeBSD.org
+
+  Pycharm-ce has switched to the supported java version 11.
+
+20210506:
+  AFFECTS: users of mail/postfix
+  AUTHOR: ohauer@FreeBSD.org
+
+  Postfix 3.6 and higher requires minimum OpenSSL 1.1.1
+  FreeBSD 11 users using base OpenSSL can switch to
+  mail/postfix35
+
+  If you wish to use postfix35 until FreeBSD 11 EoL you might run the
+  following command:
+
+  # pkg set -o mail/postfix:mail/postfix35
+  # pkg upgrade
+
+20210505:
+  AFFECTS: users of sysutils/terraform
+  AUTHOR: 0mp@FreeBSD.org
+
+  Terraform has been updated from 0.13 to 0.15, which introduces several
+  incompatible changes. Please follow upgrading guide when updating
+  the package.
+
+    https://www.terraform.io/upgrade-guides/0-14.html
+    https://www.terraform.io/upgrade-guides/0-15.html
+
+20210426:
+  AFFECTS: users of x11-fonts/iosevka
+  AUTHOR: 0mp@FreeBSD.org
+
+  The selection of options for Iosevka has become less granular as the port has
+  switched from TTF-based distfiles to super-TTC-based distfiles. Now all the
+  spacing variants are contained within one file for each Iosevka style.
+
+20210425:
+  AFFECTS: users of python
+  AUTHOR: kai@FreeBSD.org
+
+  The default version of python3 and python was switched to 3.8.
+
+  For ports users wanting to keep version 3.7 as default,
+  add DEFAULT_VERSIONS+= python=3.7 python3=3.7 to make.conf
+
+  Following procedures may ease the upgrade:
+
+  For users of pre-build packages:
+  # sh
+  # for i in $(pkg query -g %n 'py37-*'); do pkg set -yn ${i}:py38-${i#py37-}; done
+  # pkg upgrade
+
+  For portmaster users:
+  # sh
+  # portmaster -o lang/python38 python37
+  # REINSTALL="$(pkg info -o "*py37*" | awk '{printf "%s ", $2}')"
+  # pkg delete -f "*py37*"
+  # portmaster $REINSTALL
+  # REBUILD=$(pkg query -g "%n:%dn" '*' | grep py3 | grep -v py38 | cut -d : -f 1 | sort -u)
+  # portmaster $REBUILD
+  # REBUILD2=$(pkg list | grep python-37 | xargs pkg which | awk '{print $6}' | sort -u)
+  # portmaster $REBUILD2
+
+20210420:
+  AFFECTS: users of www/node
+  AUTHOR: bhughes@FreeBSD.org
+
+  The www/node port has been updated to Node.js v16.0.0, the latest
+  upstream release. This is a major release, including many significant
+  changes. Users are encouraged to read the release announcements before
+  upgrading:
+
+  https://nodejs.org/en/blog/release/v16.0.0/
+
+20210416:
+  AFFECTS: Users of shells/bash, shells/bash-static with PORTS_READLINE=off
+  AUTHOR: olce.freebsd@certner.fr
+
+  Bundled readline now will use LOCALBASE/etc/inputrc as its ultimate default
+  inputrc file (instead of /etc/inputrc). This puts these ports in line with
+  what devel/readline has been doing recently (since 20210103).
+
 20210414:
   AFFECTS: users of graphics/OpenEXR or graphics/ilmbase
   AUTHOR: mandree@FreeBSD.org

@@ -22,4 +22,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}babi_grammars>=0:devel/py-babi_grammars@${PY
 USES=		python:3.7+
 USE_PYTHON=	autoplist distutils flavors
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

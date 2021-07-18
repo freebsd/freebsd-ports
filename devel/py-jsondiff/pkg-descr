@@ -4,4 +4,4 @@ patch JSON and JSON-like structures in Python. It has special support for:
 - Python sets
 - similarity-based list comparison
 
-WWW: https://github.com/ZoomerAnalytics/jsondiff
+WWW: https://github.com/xlwings/jsondiff

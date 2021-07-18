@@ -1,7 +1,7 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 
 PORTNAME=	gdb
-PORTVERSION=	10.1
+DISTVERSION=	10.2
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
@@ -26,7 +26,7 @@ TEST_TARGET=	check
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
-CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
+CONFIGURE_ARGS=	--program-suffix=${DISTVERSION:S/.//g} \
 		--enable-targets=all --enable-64-bit-bfd \
 		--with-separate-debug-dir=/usr/lib/debug \
 		${ICONV_CONFIGURE_ARG} \
@@ -40,7 +40,7 @@ EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 
-VER=		${PORTVERSION:S/.//g}
+VER=		${DISTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 
 OPTIONS_DEFINE=	DEBUG GDB_LINK GUILE KGDB NLS PYTHON SOURCE_HIGHLIGHT TUI
@@ -68,11 +68,11 @@ OPTIONS_SUB=	yes
 
 BUNDLED_READLINE_CONFIGURE_OFF=	--with-system-readline
 DEBUG_CFLAGS=		-g
+DEBUG_VARS=	STRIP=
 GUILE_CONFIGURE_WITH=	guile
 GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
-GUILE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-guile22
 NLS_USES=	gettext-runtime
-PORT_READLINE_USES=	readline:port
+PORT_READLINE_USES=	readline
 PORT_ICONV_USES=	iconv:wchar_t
 PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}
 PYTHON_CONFIGURE_OFF=	--without-python
@@ -120,7 +120,7 @@ CFLAGS+=	-Wno-extended-offsetof
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$| [GDB v${PORTVERSION} for FreeBSD]|' \
+	@${REINPLACE_CMD} -e 's|$$| [GDB v${DISTVERSION} for FreeBSD]|' \
 		${WRKSRC}/gdb/version.in
 
 post-patch-KGDB-on:

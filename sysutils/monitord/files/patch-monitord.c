@@ -73,17 +73,6 @@
  	
  	// Main loop
  	while(1) {
-@@ -290,8 +294,8 @@ int loop ( char **file, char *filename, int max_proc, 
- 
- 			bzero (param, sizeof(param));
- 			while ((token = strtok(NULL, " \t"))) {
--				strncat (param, " ", sizeof(param));
--				strncat (param, token, sizeof(param));
-+				strncat (param, " ", sizeof(*param));
-+				strncat (param, token, sizeof(*param));
- 			}
- 
- 			/* Each line has a \n at the end which must be removed
 @@ -355,18 +359,18 @@ int loop ( char **file, char *filename, int max_proc, 
  //					printf("Couldn't open %s\n", buf);
  				}

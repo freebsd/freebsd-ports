@@ -10,7 +10,7 @@ COMMENT=	G.729 codec for Asterisk PBX
 
 LIB_DEPENDS=	libbcg729.so:audio/bcg729
 
-FLAVORS=			asterisk16 asterisk18 asterisk13
+FLAVORS=			asterisk18 asterisk16 asterisk13
 FLAVOR?=			${FLAVORS:[1]}
 
 asterisk13_PKGNAMEPREFIX=	asterisk13-

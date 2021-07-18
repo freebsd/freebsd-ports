@@ -1,7 +1,5 @@
-# Created by: Juraj Lutter <otis@FreeBSD.org>
-
 PORTNAME=	unifi6
-PORTVERSION=	6.0.45
+PORTVERSION=	6.2.26
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax

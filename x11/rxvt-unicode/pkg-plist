@@ -1,3 +1,4 @@
+bin/urclock
 @(,,4711) bin/urxvt
 bin/urxvtc
 bin/urxvtcd

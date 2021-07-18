@@ -1076,8 +1076,9 @@
 %%WWWDIR%%/js/displayimage.js
 %%WWWDIR%%/js/edit_one_pic.js
 %%WWWDIR%%/js/editpics.js
-%%WWWDIR%%/js/jquery-1.4.2.js
+%%WWWDIR%%/js/jquery-1.12.4.js
 %%WWWDIR%%/js/jquery-1.7.2.js
+%%WWWDIR%%/js/jquery-migrate-1.4.1.js
 %%WWWDIR%%/js/jquery.cluetip.js
 %%WWWDIR%%/js/jquery.datePicker.js
 %%WWWDIR%%/js/jquery.dimensions.pack.js

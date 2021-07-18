@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	pandana
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,6 @@ USE_PYTHON=	autoplist concurrent cython distutils
 CFLAGS+=	-DNO_TR1_MEMORY
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pandana/cyaccess.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pandana/cyaccess*.so
 
 .include <bsd.port.mk>

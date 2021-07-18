@@ -16,8 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyspf>=0:mail/py-pyspf@${PY_FLAVOR}
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		python shebangfix
 
 NO_ARCH=	yes
@@ -34,17 +32,19 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 
 SHEBANG_FILES=	*
 
-TUMGREYSPF_DIR?=	/var/db/${PORTNAME}
+TUMGREYSPF_DIR?=	/var/db/tumgreyspf
 TUMGREYSPF_USER?=	nobody
 TUMGREYSPF_GROUP?=	nobody
+
+OPTIONS_DEFINE=	DOCS
 
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may set following options:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "TUMGREYSPF_DIR=/var/db/${PORTNAME}	Local are used to greylist (Default: /var/db/${PORTNAME})"
-	@${ECHO_MSG} "TUMGREYSPF_USER=nobody			User to run ${PORTNAME} (Default: nobody)"
-	@${ECHO_MSG} "TUMGREYSPF_GROUP=nobody			Group to run ${PORTNAME} (Default: nobody)"
+	@${ECHO_MSG} "TUMGREYSPF_DIR=/var/db/tumgreyspf		Local are used to greylist (Default: /var/db/tumgreyspf)"
+	@${ECHO_MSG} "TUMGREYSPF_USER=nobody			User to run tumgreyspf (Default: nobody)"
+	@${ECHO_MSG} "TUMGREYSPF_GROUP=nobody			Group to run tumgreyspf (Default: nobody)"
 	@${ECHO_MSG}
 
 post-patch:

@@ -1,7 +1,7 @@
 # Created by: torstenb
 
 PORTNAME=	ircii
-PORTVERSION=	20190117
+PORTVERSION=	20210314
 CATEGORIES=	irc
 MASTER_SITES=	http://ircii.warped.com/
 

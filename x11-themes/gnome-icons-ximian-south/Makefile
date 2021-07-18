@@ -14,7 +14,12 @@ DISTNAME=	ICON-Ximian-South-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ximian-South Icons for Gnome
 
-RESTRICTED=	${REASON}
+# Converted from RESTRICTED
+LICENSE=	icons
+LICENSE_NAME=	icons
+LICENSE_TEXT=	${REASON}
+LICENSE_PERMS=	auto-accept
+
 NO_WRKSUBDIR=	yes
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"

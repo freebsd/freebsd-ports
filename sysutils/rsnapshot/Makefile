@@ -1,7 +1,7 @@
 # Created by: Ralf van Dooren <r.vdooren@snow.nl>
 
 PORTNAME=	rsnapshot
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsnapshot.org/downloads/
 

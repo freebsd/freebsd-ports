@@ -1,3 +1,5 @@
 %%SITE_ARCH%%/Syntax/Keyword/Try.pm
+%%SITE_ARCH%%/Syntax/Keyword/Try/Deparse.pm
 %%SITE_ARCH%%/auto/Syntax/Keyword/Try/Try.so
 %%PERL5_MAN3%%/Syntax::Keyword::Try.3.gz
+%%PERL5_MAN3%%/Syntax::Keyword::Try::Deparse.3.gz

@@ -2,45 +2,43 @@
 
 PORTNAME=	libxslt
 DISTVERSION=	1.1.34
-PORTREVISION=	1
-CATEGORIES?=	textproc gnome
+PORTREVISION=	2
+CATEGORIES=	textproc gnome
 MASTER_SITES=	http://xmlsoft.org/sources/ \
 		https://mirror.umd.edu/xbmc/build-deps/sources/
 DIST_SUBDIR=	gnome2
 
-MAINTAINER?=	desktop@FreeBSD.org
-COMMENT?=	The XSLT C library for GNOME
-
-USES+=		cpe gmake gnome localbase libtool pathfix
-CPE_VENDOR=	xmlsoft
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
-USE_GNOME?=	libxml2
-CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
-		--without-python
+MAINTAINER=	desktop@FreeBSD.org
+COMMENT=	XML stylesheet transformation library
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-.if defined(MASTERDIR)
-_SLAVE_PORT=	yes
-.else
+USES=		cpe gmake gnome localbase libtool pathfix pkgconfig
+CPE_VENDOR=	xmlsoft
+GNU_CONFIGURE=	yes
+USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	MEM_DEBUG CRYPTO
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
+		--without-python
+
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+
+OPTIONS_DEFINE=	CRYPTO MEM_DEBUG
 OPTIONS_DEFAULT=CRYPTO
-MEM_DEBUG_DESC=	Enable memory debugging
-CRYPTO_DESC=	Enable crypto support for exslt
-.endif
 
-MEM_DEBUG_CONFIGURE_ON=	--with-mem-debug
+CRYPTO_DESC=	Enable crypto support
+MEM_DEBUG_DESC=	Enable memory debugging
+
+CRYPTO_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+			libgpg-error.so:security/libgpg-error
 CRYPTO_CONFIGURE_WITH=	crypto
-CRYPTO_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
+MEM_DEBUG_CONFIGURE_ON=	--with-mem-debug
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' \
-		${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e 's|[$$](bindir)/xsltproc|../xsltproc/xsltproc|g ; \
-		s|[$$](bindir)/xmllint|../xmllint/xmllint|g' \
 		${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.mk>

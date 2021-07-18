@@ -120,6 +120,7 @@
     SUBDIR += bsdtris
     SUBDIR += bsp
     SUBDIR += bstone
+    SUBDIR += bubble-chains
     SUBDIR += bugsquish
     SUBDIR += bugsx
     SUBDIR += bumprace
@@ -472,6 +473,7 @@
     SUBDIR += libkmahjongg
     SUBDIR += liblcf
     SUBDIR += libmaitretarot
+    SUBDIR += libmanette
     SUBDIR += libmt_client
     SUBDIR += libretro
     SUBDIR += libretro-2048
@@ -610,7 +612,6 @@
     SUBDIR += miscom
     SUBDIR += mkhexgrid
     SUBDIR += moagg
-    SUBDIR += monster-masher
     SUBDIR += monsterz
     SUBDIR += moon-buggy
     SUBDIR += moonlander
@@ -628,6 +629,7 @@
     SUBDIR += naev-data
     SUBDIR += narcissu2
     SUBDIR += nazghul
+    SUBDIR += nbsdgames
     SUBDIR += nehquake
     SUBDIR += neo-cowsay
     SUBDIR += nethack32
@@ -767,6 +769,7 @@
     SUBDIR += pushover
     SUBDIR += pvpgn
     SUBDIR += py-cbeams
+    SUBDIR += py-discord.py
     SUBDIR += py-fife
     SUBDIR += py-mnemosyne
     SUBDIR += py-pychess
@@ -821,6 +824,8 @@
     SUBDIR += re3
     SUBDIR += redeclipse
     SUBDIR += redeclipse-data
+    SUBDIR += redeclipse-data16
+    SUBDIR += redeclipse16
     SUBDIR += redorblack
     SUBDIR += regoth
     SUBDIR += reminiscence
@@ -841,6 +846,7 @@
     SUBDIR += rocksndiamonds
     SUBDIR += rocksndiamonds-data
     SUBDIR += rottdc
+    SUBDIR += rpg-cli
     SUBDIR += rubix
     SUBDIR += rubygem-fortune_gem
     SUBDIR += rubygem-lolcat
@@ -1007,6 +1013,7 @@
     SUBDIR += wargus
     SUBDIR += warmux
     SUBDIR += warzone2100
+    SUBDIR += weebsay
     SUBDIR += wesnoth
     SUBDIR += whichwayisup
     SUBDIR += widelands
@@ -1083,6 +1090,8 @@
     SUBDIR += xmris
     SUBDIR += xmulti
     SUBDIR += xneko
+    SUBDIR += xnethack
+    SUBDIR += xnethack-nox11
     SUBDIR += xoct
     SUBDIR += xoids
     SUBDIR += xoj

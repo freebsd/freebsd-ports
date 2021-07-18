@@ -1,0 +1,20 @@
+--- doc/recover.6.orig	2021-03-22 22:28:14 UTC
++++ doc/recover.6
+@@ -43,7 +43,7 @@ option, which must be the first argument if it appears
+ supplies a directory which is the NetHack playground.
+ It overrides the value from NETHACKDIR, HACKDIR, or the directory
+ specified by the game administrator during compilation
+-(usually /usr/games/lib/nethackdir).
++(usually %%HACKDIR%%).
+ .PP
+ ^?ALLDOCS
+ For recovery to be possible,
+@@ -130,7 +130,7 @@ but even a compression-using
+ .I nethack
+ will find them in the uncompressed form.
+ .SH "SEE ALSO"
+-nethack(6)
++xnethack%%HACKEXT%%(6)
+ .SH BUGS
+ .PP
+ .I recover

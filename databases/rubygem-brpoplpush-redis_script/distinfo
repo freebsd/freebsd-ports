@@ -1,3 +1,3 @@
-TIMESTAMP = 1598175206
-SHA256 (rubygem/brpoplpush-redis_script-0.1.1.gem) = dd65e5bc5a3d7bb6a5e6e2b7476945aea9b710d04d945333af31f355c9eaafae
-SIZE (rubygem/brpoplpush-redis_script-0.1.1.gem) = 12288
+TIMESTAMP = 1618320322
+SHA256 (rubygem/brpoplpush-redis_script-0.1.2.gem) = 327d5fcc608f0cb3ff96b8b0f61d3794ef5242a1d74514ab2f8353d8080a5566
+SIZE (rubygem/brpoplpush-redis_script-0.1.2.gem) = 12288

@@ -16,8 +16,6 @@ GH_PROJECT=	mpreal
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-mpfrc-${DISTVERSION}
-
 PLIST_FILES=	include/mpreal.h
 
 do-install:

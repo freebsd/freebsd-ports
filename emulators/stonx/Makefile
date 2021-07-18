@@ -10,14 +10,16 @@ DISTNAME=	STonX-0.6.7.6
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	AtariST emulator
 
-LICENSE=	GPLv2+
+LICENSE=	GPLv2+ ROM
+LICENSE_COMB=	multi
+LICENSE_NAME_ROM=	Atari ROM
+LICENSE_TEXT_ROM=	Contains ROM (C) by Atari
+LICENSE_PERMS_ROM=	auto-accept
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		gccmakedep:devel/gccmakedep \
 		mkfontscale:x11-fonts/mkfontscale \
 		${LOCALBASE}/share/fonts/misc/10x20-ISO8859-1.pcf.gz:x11-fonts/font-misc-misc
-
-RESTRICTED=	Contains ROM (C) by Atari
 
 TOSIMG?=	tos.img
 USES=		fonts xorg

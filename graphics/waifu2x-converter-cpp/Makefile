@@ -15,14 +15,14 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:devel/opencl
 LIB_DEPENDS=	libopencv_imgcodecs.so:graphics/opencv
 
-USES=		cmake compiler:c++17-lang localbase:ldflags
+USES=		cmake:testing compiler:c++17-lang localbase:ldflags
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	DeadSix27
+CMAKE_ON=	INSTALL_MODELS
+CMAKE_TESTING_ON=	ENABLE_TESTS
 CMAKE_ARGS=	-DOPENCV_PREFIX:PATH="${LOCALBASE}" \
 		-DOpenCL_LIBRARY:FILEPATH="${LOCALBASE}/lib/libOpenCL.so"
-CMAKE_ON=	INSTALL_MODELS ENABLE_TESTS
-TEST_TARGET=	test
 PLIST_FILES=	bin/${PORTNAME} \
 		include/w2xconv.h \
 		lib/libw2xc.so

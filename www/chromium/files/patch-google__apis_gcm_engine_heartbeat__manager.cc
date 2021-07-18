@@ -1,4 +1,4 @@
---- google_apis/gcm/engine/heartbeat_manager.cc.orig	2021-03-12 23:57:25 UTC
+--- google_apis/gcm/engine/heartbeat_manager.cc.orig	2021-04-14 18:41:04 UTC
 +++ google_apis/gcm/engine/heartbeat_manager.cc
 @@ -32,13 +32,13 @@ const int kMinClientHeartbeatIntervalMs = 1000 * 30;  
  // Minimum time spent sleeping before we force a new heartbeat.

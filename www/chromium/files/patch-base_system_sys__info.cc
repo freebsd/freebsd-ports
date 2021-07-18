@@ -1,4 +1,4 @@
---- base/system/sys_info.cc.orig	2021-03-12 23:57:15 UTC
+--- base/system/sys_info.cc.orig	2021-04-14 18:40:48 UTC
 +++ base/system/sys_info.cc
 @@ -94,7 +94,7 @@ void SysInfo::GetHardwareInfo(base::OnceCallback<void(
  #if defined(OS_WIN) || defined(OS_ANDROID) || defined(OS_APPLE)

@@ -2,7 +2,7 @@
 
 PORTNAME=	nss_resinit
 PORTVERSION=	20060412
-#PORTREVISION=	0
+PORTREVISION=	0
 CATEGORIES=	dns
 MASTER_SITES=	http://www.mahoroba.org/~ume/FreeBSD/
 

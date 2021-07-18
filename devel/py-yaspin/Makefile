@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	yaspin
-PORTVERSION=	1.4.0
+PORTVERSION=	2.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,7 @@ COMMENT=	Yet Another Terminal Spinner
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}termcolor>=1.1.0<2.0.0:devel/py-termcolor@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.6+

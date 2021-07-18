@@ -18,8 +18,9 @@ RUN_DEPENDS=	p5-Mouse>=0.82:devel/p5-Mouse
 TEST_DEPENDS=	p5-Any-Moose>=0.13:devel/p5-Any-Moose \
 		p5-Test-Fatal>=0.003:devel/p5-Test-Fatal
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

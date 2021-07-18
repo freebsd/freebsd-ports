@@ -13,7 +13,6 @@ lib/libpcscspy.so.0
 lib/libpcscspy.so.0.0.0
 libdata/pkgconfig/libpcsclite.pc
 sbin/pcscd
-%%PORTDOCS%%%%DOCSDIR%%/README.DAEMON
 %%PORTDOCS%%%%DOCSDIR%%/README.polkit
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in

@@ -1,4 +1,0 @@
-@(,games,2555) bin/ivan
-@sample(,games,664) /var/games/ivan/ivan-highscore.scores.sample
-@dir(,games,775) /var/games/ivan/Bones
-@dir(,games,775) /var/games/ivan

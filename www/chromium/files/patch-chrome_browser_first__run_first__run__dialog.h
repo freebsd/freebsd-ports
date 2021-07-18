@@ -1,4 +1,4 @@
---- chrome/browser/first_run/first_run_dialog.h.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/first_run/first_run_dialog.h.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/first_run/first_run_dialog.h
 @@ -12,7 +12,7 @@
  // Hide this function on platforms where the dialog does not exist.

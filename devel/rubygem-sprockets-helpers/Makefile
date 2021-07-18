@@ -1,7 +1,7 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 
 PORTNAME=	sprockets-helpers
-PORTVERSION=	1.2.1
+PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-sprockets3>=2.2:devel/rubygem-sprockets3
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # Created by: Rainer Hurling <rhurlin@gwdg.de>
 
 PORTNAME=	pyls-black
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

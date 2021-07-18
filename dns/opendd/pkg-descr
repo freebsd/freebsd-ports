@@ -1,7 +1,0 @@
-OpenDD is a DynDNS client, written in C, and especially designed
-for small gateway machines, like a Soekris box. Its main feature
-is that it does not require any Perl or Python interpreter.
-It supports HTTPS, can send a mail report, and can run as daemon.
-It is also very easy to deploy.
-
-WWW: http://www.bsdmon.com/wakka/OpenDD

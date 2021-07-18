@@ -1,7 +1,7 @@
 # Created by: Eugene Mychlo <myc@barev.net>
 
 PORTNAME=	yed
-DISTVERSION=	3.20.1
+DISTVERSION=	3.21.1
 CATEGORIES=	graphics java
 MASTER_SITES=	#
 DISTNAME=	yEd-${DISTVERSION}
@@ -13,19 +13,22 @@ LICENSE=	YED_1_1
 LICENSE_NAME=	yEd Software License Agreement (Version 1.1)
 LICENSE_TEXT=	Description of the license can be obtained from the following URL: \
 		http://www.yworks.com/products/yed/license.html
+# Downloading requires acceptance of license agreement
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
-NO_BUILD=	yes
-NO_ARCH=	yes
-RESTRICTED=	Downloading requires acceptance of license agreement
+
 DESKTOP_ENTRIES="yEd" "${COMMENT}" "" "yed" "Graphics;" false
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 SUB_FILES=	${PORTNAME}
+SUB_LIST=	JAVA_HOME=${JAVA_HOME}
+
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 DOWNLOAD_URL?=	http://www.yworks.com/downloads\#yEd
 

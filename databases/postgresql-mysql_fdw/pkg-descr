@@ -6,6 +6,6 @@ The following enhancements are added to the mysql_fdw:
 	Column push-down
 	Prepared Statment
 Please note that this version of mysql_fdw works with PostgreSQL
-9.3, 9.4, 9.5, 9.6, 10, and 11.
+9.6, 10, 11, 12 and 13.
 
 WWW: https://github.com/EnterpriseDB/mysql_fdw

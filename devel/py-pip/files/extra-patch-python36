@@ -1,0 +1,11 @@
+--- docs/docs_feedback_sphinxext.py.orig	2021-01-23 11:51:53 UTC
++++ docs/docs_feedback_sphinxext.py
+@@ -1,6 +1,7 @@
++# -*- coding: future_annotations -*-
+ """A sphinx extension for collecting per doc feedback."""
+ 
+-from __future__ import annotations
++import future_annotations
+ 
+ from itertools import chain
+ from typing import TYPE_CHECKING

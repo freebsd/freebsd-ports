@@ -20,13 +20,10 @@ bin/kotlinc-jvm
 %%DATADIR%%/lib/kotlin-annotation-processing-cli.jar
 %%DATADIR%%/lib/kotlin-annotation-processing-runtime.jar
 %%DATADIR%%/lib/kotlin-annotation-processing.jar
-%%DATADIR%%/lib/kotlin-annotations-android.jar
 %%DATADIR%%/lib/kotlin-annotations-jvm-sources.jar
 %%DATADIR%%/lib/kotlin-annotations-jvm.jar
 %%DATADIR%%/lib/kotlin-ant.jar
 %%DATADIR%%/lib/kotlin-compiler.jar
-%%DATADIR%%/lib/kotlin-coroutines-experimental-compat-sources.jar
-%%DATADIR%%/lib/kotlin-coroutines-experimental-compat.jar
 %%DATADIR%%/lib/kotlin-daemon-client.jar
 %%DATADIR%%/lib/kotlin-daemon.jar
 %%DATADIR%%/lib/kotlin-imports-dumper-compiler-plugin.jar
@@ -62,6 +59,7 @@ bin/kotlinc-jvm
 %%DATADIR%%/lib/kotlin-test.jar
 %%DATADIR%%/lib/kotlinx-coroutines-core.jar
 %%DATADIR%%/lib/kotlinx-serialization-compiler-plugin.jar
+%%DATADIR%%/lib/lombok-compiler-plugin.jar
 %%DATADIR%%/lib/mutability-annotations-compat.jar
 %%DATADIR%%/lib/noarg-compiler-plugin.jar
 %%DATADIR%%/lib/parcelize-compiler.jar

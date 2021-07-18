@@ -16,7 +16,7 @@ USES=		gmake
 MAKE_ARGS=	CC="${CC}" MAKE="${MAKE_CMD}" OPTIONS="${CFLAGS}" \
 		RO_GAME_DIR="${DATADIR}" RW_GAME_DIR="${DATADIR}/scores" \
 		X11_PATH="${LOCALBASE}"
-USE_GCC=	any # doesn't start otherwise (UB?)
+USE_GCC=	yes # doesn't start otherwise (UB?)
 
 PORTDATA=	*
 PORTDOCS=	*

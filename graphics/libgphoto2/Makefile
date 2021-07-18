@@ -5,7 +5,7 @@ PORTVERSION=	2.5.26
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Universal digital camera control library
 
 LICENSE=	LGPL21+

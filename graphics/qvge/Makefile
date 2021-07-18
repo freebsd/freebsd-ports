@@ -1,8 +1,9 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	qvge
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -32,7 +33,6 @@ PORTDOCS=	CHANGES README.md
 
 OPTIONS_DEFINE=	DOCS OGDF
 OGDF_DESC=	Use OGDF instead of GraphViz engine
-OGDF_BROKEN=	does not build against OGDF, see https://github.com/ArsMasiuk/qvge/issues/130
 
 OGDF_LIB_DEPENDS=	libOGDF.so:math/ogdf
 OGDF_QMAKE_ON=	CONFIG+=USE_OGDF

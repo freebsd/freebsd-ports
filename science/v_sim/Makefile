@@ -2,7 +2,7 @@
 
 PORTNAME=	v_sim
 PORTVERSION=	3.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://gitlab.com/l_sim/${PORTNAME}/-/archive/${PORTVERSION}/
 
@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		autoreconf blaslapack compiler:c11 fortran gl gmake gnome	\
-		libtool:keepla localbase:ldflags pkgconfig python:3.6+		\
+		libtool:keepla localbase:ldflags pkgconfig python:3.7+		\
 		shebangfix tar:bzip2 xorg
 SHEBANG_GLOB=	*.py
 USE_XORG=	x11

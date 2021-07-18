@@ -21,7 +21,7 @@ USES=		cpe qmail tar:tgz
 WRKSRC=		${WRKDIR}/${DISTNAME}/spamdyke
 GNU_CONFIGURE=	yes
 ALL_TARGET=	spamdyke
-USE_GCC=	any
+USE_GCC=	yes
 
 OPTIONS_DEFINE=		TLS DEBUG DEBUG_EXCESSIVE DOCS
 OPTIONS_DEFAULT=	TLS
@@ -46,6 +46,7 @@ PORTDOCS=	Changelog.txt FAQ.html GNUGPL.txt INSTALL.txt \
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	checking for library containing SSL_library_init... no
 BROKEN_FreeBSD_13=	checking for library containing SSL_library_init... no
+BROKEN_FreeBSD_14=	checking for library containing SSL_library_init... no
 .endif
 
 post-patch:

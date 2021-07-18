@@ -1,0 +1,7 @@
+--- requirements/base.txt.orig	2021-06-23 23:39:55.270387000 +0200
++++ requirements/base.txt	2021-06-23 23:40:00.325729000 +0200
+@@ -4,4 +4,3 @@
+ MarkupSafe
+ requests>=1.0.0
+ distro>=1.0.1
+-contextvars

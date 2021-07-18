@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 
 PORTNAME=	Babel
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

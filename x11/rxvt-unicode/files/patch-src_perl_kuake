@@ -1,6 +1,6 @@
---- ./src/perl/kuake.orig	Fri Jul  7 01:46:51 2006
-+++ ./src/perl/kuake	Mon Jul 17 22:35:22 2006
-@@ -11,7 +11,8 @@
+--- src/perl/kuake.orig	2021-05-14 16:08:01 UTC
++++ src/perl/kuake
+@@ -44,7 +44,8 @@ sub on_start {
     $self->{keycode} = $self->XKeysymToKeycode ($self->{keysym})
        or urxvt::fatal "cannot convert requested kuake wake-up key '$self->{key}' to keycode, unable to continue.\n";
  

@@ -1,0 +1,10 @@
+Tox provides a reasonable base set of features, but new features are slow to
+implement, and may not be wanted by all clients. This is reasonable as any
+protocol changes are API breaking and force clients to update to use them. Once
+the features are in they are there forever meaning quality of the API and the
+network layer have to be very strong.
+
+An extension library with negotiation allows more experimentation with less risk
+resulting in more features for tox clients.
+
+WWW: https://github.com/toxext/toxext

@@ -2,12 +2,12 @@
 
 PORTNAME=	daq
 PORTVERSION=	2.2.2
-PORTREVISION=	0
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	https://snort.org/downloads/snortplus/ \
 		ZI
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Data Acquisition abstraction library for snort 2.9+
 
 LICENSE=	GPLv2

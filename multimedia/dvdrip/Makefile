@@ -2,19 +2,16 @@
 
 PORTNAME=	dvdrip
 PORTVERSION=	0.98.11
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia
 MASTER_SITES=	CPAN http://www.exit1.org/dvdrip/dist/
 MASTER_SITE_SUBDIR=	CPAN:JRED
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	se@FreeBSD.org
 COMMENT=	Perl Gtk+ based dvd-ripper
 
 LICENSE=	ART10 GPLv1 # (ART10 or GPLv1) and CC-BY-SA-2.5
 LICENSE_COMB=	dual
-
-DEPRECATED=	Depends on expired multimedia/transcode
-EXPIRATION_DATE=2021-05-01
 
 BUILD_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-AnyEvent>=0:devel/p5-AnyEvent \
@@ -38,8 +35,9 @@ RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		cdrecord:sysutils/cdrtools
 
 USES=		gettext perl5 shebangfix
-SHEBANG_FILES=	bin/dvdrip*
 USE_PERL5=	configure patch
+
+SHEBANG_FILES=	bin/dvdrip*
 CONFIGURE_ENV=	SKIP_UNPACK_REQUIRED_MODULES=1
 
 MAKE_JOBS_UNSAFE=	yes

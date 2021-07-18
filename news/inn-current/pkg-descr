@@ -1,0 +1,8 @@
+InterNetNews is a complete Usenet system.  The cornerstone of the package
+is innd, an NNTP server that multiplexes all I/O. Newsreading is handled
+by a separate server, nnrpd, that is spawned for each client.  Both innd
+and nnrpd have some slight variances from the NNTP protocol.
+
+This version follows the CURRENT snapshots.
+
+WWW: http://www.eyrie.org/~eagle/software/inn/

@@ -21,7 +21,10 @@ include/tcl%%TCL_VER%%/tclUnixPort.h
 %%DTRACE%%lib/tcl%%TCL_VER%%/tclDTrace.d
 lib/tcl%%TCL_VER%%/auto.tcl
 lib/tcl%%TCL_VER%%/clock.tcl
-lib/tcl%%TCL_VER%%/cookiejar0.1
+lib/tcl%%TCL_VER%%/cookiejar0.2/cookiejar.tcl
+lib/tcl%%TCL_VER%%/cookiejar0.2/idna.tcl
+lib/tcl%%TCL_VER%%/cookiejar0.2/pkgIndex.tcl
+lib/tcl%%TCL_VER%%/cookiejar0.2/public_suffix_list.dat.gz
 lib/tcl%%TCL_VER%%/encoding/ascii.enc
 lib/tcl%%TCL_VER%%/encoding/big5.enc
 lib/tcl%%TCL_VER%%/encoding/cp1250.enc
@@ -101,10 +104,10 @@ lib/tcl%%TCL_VER%%/encoding/shiftjis.enc
 lib/tcl%%TCL_VER%%/encoding/symbol.enc
 lib/tcl%%TCL_VER%%/encoding/tis-620.enc
 lib/tcl%%TCL_VER%%/history.tcl
-lib/tcl%%TCL_VER%%/http-2.9.1.tm
+lib/tcl%%TCL_VER%%/http-2.10a1.tm
 lib/tcl%%TCL_VER%%/init.tcl
 lib/tcl%%TCL_VER%%/install.tcl
-lib/tcl%%TCL_VER%%/msgcat-1.7.0.tm
+lib/tcl%%TCL_VER%%/msgcat-1.7.1.tm
 lib/tcl%%TCL_VER%%/msgs/af_za.msg
 lib/tcl%%TCL_VER%%/msgs/af.msg
 lib/tcl%%TCL_VER%%/msgs/ar_in.msg
@@ -236,14 +239,14 @@ lib/tcl%%TCL_VER%%/opt0.4/optparse.tcl
 lib/tcl%%TCL_VER%%/opt0.4/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/package.tcl
 lib/tcl%%TCL_VER%%/parray.tcl
-lib/tcl%%TCL_VER%%/platform-1.0.14.tm
+lib/tcl%%TCL_VER%%/platform-1.0.17.tm
 lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
 lib/tcl%%TCL_VER%%/safe.tcl
 lib/tcl%%TCL_VER%%/tclAppInit.c
 lib/tcl%%TCL_VER%%/tclConfig.sh
 lib/tcl%%TCL_VER%%/tclIndex
 lib/tcl%%TCL_VER%%/tclooConfig.sh
-lib/tcl%%TCL_VER%%/tcltest-2.5.1.tm
+lib/tcl%%TCL_VER%%/tcltest-2.5.4.tm
 lib/tcl%%TCL_VER%%/tm.tcl
 lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man1/tclsh.tcl%%PKGNAMESUFFIX%%.1.gz
@@ -335,6 +338,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_CreateAliasObj.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_CreateChannel.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_CreateChannelHandler.tcl%%PKGNAMESUFFIX%%.3.gz
+%%TCLMAN%%man/man3/Tcl_CreateChild.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_CreateCloseHandler.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_CreateCommand.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_CreateEncoding.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -510,6 +514,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_GetChannelThread.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetChannelType.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetCharLength.tcl%%PKGNAMESUFFIX%%.3.gz
+%%TCLMAN%%man/man3/Tcl_GetChild.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetClassAsObject.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetCommandFromObj.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetCommandFullName.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -555,6 +560,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_GetLongFromObj.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetMaster.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetMathFuncInfo.tcl%%PKGNAMESUFFIX%%.3.gz
+%%TCLMAN%%man/man3/Tcl_GetMemoryInfo.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetModeFromStat.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetModificationTimeFromStat.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetNameOfExecutable.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -567,6 +573,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_GetObjResult.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetObjType.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetOpenFile.tcl%%PKGNAMESUFFIX%%.3.gz
+%%TCLMAN%%man/man3/Tcl_GetParent.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetPathType.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetRange.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_GetRegExpFromObj.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -650,6 +657,8 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_LoadFile.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_LogCommandInfo.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_Main.tcl%%PKGNAMESUFFIX%%.3.gz
+%%TCLMAN%%man/man3/Tcl_MainEx.tcl%%PKGNAMESUFFIX%%.3.gz
+%%TCLMAN%%man/man3/Tcl_MainExW.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_MakeFileChannel.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_MakeSafe.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_MakeTcpClientChannel.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -822,6 +831,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_StackChannel.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_StandardChannels.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_Stat.tcl%%PKGNAMESUFFIX%%.3.gz
+%%TCLMAN%%man/man3/Tcl_StaticLibrary.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_StaticPackage.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_StringCaseMatch.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_StringMatch.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -849,6 +859,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_UniCharIsPrint.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_UniCharIsPunct.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_UniCharIsSpace.tcl%%PKGNAMESUFFIX%%.3.gz
+%%TCLMAN%%man/man3/Tcl_UniCharIsUnicode.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_UniCharIsUpper.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_UniCharIsWordChar.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_UniCharLen.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -897,7 +908,6 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_VarTraceInfo2.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_WaitForEvent.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_WaitPid.tcl%%PKGNAMESUFFIX%%.3.gz
-%%TCLMAN%%man/man3/Tcl_WCharToUtfDString.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_Write.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_WriteChars.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_WriteObj.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -947,6 +957,8 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/mann/concat.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%man/mann/continue.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%man/mann/cookiejar.tcl%%PKGNAMESUFFIX%%.n.gz
+%%TCLMAN%%man/mann/coroinject.tcl%%PKGNAMESUFFIX%%.n.gz
+%%TCLMAN%%man/mann/coroprobe.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%man/mann/coroutine.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%man/mann/dde.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%man/mann/dict.tcl%%PKGNAMESUFFIX%%.n.gz
@@ -1269,6 +1281,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/North_Dakota/Beulah
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/North_Dakota/Center
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/North_Dakota/New_Salem
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Nuuk
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Ojinaga
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Panama
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Pangnirtung

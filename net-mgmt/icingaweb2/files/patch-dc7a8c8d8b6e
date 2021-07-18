@@ -1,0 +1,193 @@
+diff --git a/library/vendor/JShrink/Minifier.php b/library/vendor/JShrink/Minifier.php
+index 171a7b6c22..fad43d2127 100644
+--- library/vendor/JShrink/Minifier.php
++++ library/vendor/JShrink/Minifier.php
+@@ -38,6 +38,13 @@ class Minifier
+      */
+     protected $input;
+ 
++    /**
++     * Length of input javascript.
++     *
++     * @var int
++     */
++    protected $len = 0;
++
+     /**
+      * The location of the character (in the input string) that is next to be
+      * processed.
+@@ -77,7 +84,7 @@ class Minifier
+     /**
+      * These characters are used to define strings.
+      */
+-    protected $stringDelimiters = ['\'', '"', '`'];
++    protected $stringDelimiters = ['\'' => true, '"' => true, '`' => true];
+ 
+     /**
+      * Contains the default options for minification. This array is merged with
+@@ -86,7 +93,7 @@ class Minifier
+      *
+      * @var array
+      */
+-    protected static $defaultOptions = array('flaggedComments' => true);
++    protected static $defaultOptions = ['flaggedComments' => true];
+ 
+     /**
+      * Contains lock ids which are used to replace certain code patterns and
+@@ -94,7 +101,7 @@ class Minifier
+      *
+      * @var array
+      */
+-    protected $locks = array();
++    protected $locks = [];
+ 
+     /**
+      * Takes a string containing javascript and removes unneeded characters in
+@@ -105,7 +112,7 @@ class Minifier
+      * @throws \Exception
+      * @return bool|string
+      */
+-    public static function minify($js, $options = array())
++    public static function minify($js, $options = [])
+     {
+         try {
+             ob_start();
+@@ -157,21 +164,34 @@ protected function minifyDirectToOutput($js, $options)
+     protected function initialize($js, $options)
+     {
+         $this->options = array_merge(static::$defaultOptions, $options);
+-        $js = str_replace("\r\n", "\n", $js);
+-        $js = str_replace('/**/', '', $js);
+-        $this->input = str_replace("\r", "\n", $js);
++        $this->input = str_replace(["\r\n", '/**/', "\r"], ["\n", "", "\n"], $js);
+ 
+         // We add a newline to the end of the script to make it easier to deal
+         // with comments at the bottom of the script- this prevents the unclosed
+         // comment error that can otherwise occur.
+         $this->input .= PHP_EOL;
+ 
++        // save input length to skip calculation every time
++        $this->len = strlen($this->input);
++
+         // Populate "a" with a new line, "b" with the first character, before
+         // entering the loop
+         $this->a = "\n";
+         $this->b = $this->getReal();
+     }
+ 
++    /**
++     * Characters that can't stand alone preserve the newline.
++     *
++     * @var array
++     */
++    protected $noNewLineCharacters = [
++        '(' => true,
++        '-' => true,
++        '+' => true,
++        '[' => true,
++        '@' => true];
++
+     /**
+      * The primary action occurs here. This function loops through the input string,
+      * outputting anything that's relevant and discarding anything that is not.
+@@ -183,7 +203,7 @@ protected function loop()
+                 // new lines
+                 case "\n":
+                     // if the next line is something that can't stand alone preserve the newline
+-                    if ($this->b !== false && strpos('(-+[@', $this->b) !== false) {
++                    if ($this->b !== false && isset($this->noNewLineCharacters[$this->b])) {
+                         echo $this->a;
+                         $this->saveString();
+                         break;
+@@ -226,7 +246,7 @@ protected function loop()
+                                 break;
+                             }
+ 
+-                                // no break
++                        // no break
+                         default:
+                             // check for some regex that breaks stuff
+                             if ($this->a === '/' && ($this->b === '\'' || $this->b === '"')) {
+@@ -243,7 +263,7 @@ protected function loop()
+             // do reg check of doom
+             $this->b = $this->getReal();
+ 
+-            if (($this->b == '/' && strpos('(,=:[!&|?*+-%', $this->a) !== false)) {
++            if (($this->b == '/' && strpos('(,=:[!&|?', $this->a) !== false)) {
+                 $this->saveRegex();
+             }
+         }
+@@ -257,6 +277,7 @@ protected function loop()
+     protected function clean()
+     {
+         unset($this->input);
++        $this->len = 0;
+         $this->index = 0;
+         $this->a = $this->b = '';
+         unset($this->c);
+@@ -276,7 +297,7 @@ protected function getChar()
+             unset($this->c);
+         } else {
+             // Otherwise we start pulling from the input.
+-            $char = substr($this->input, $this->index, 1);
++            $char = $this->index < $this->len ? $this->input[$this->index] : false;
+ 
+             // If the next character doesn't exist return false.
+             if (isset($char) && $char === false) {
+@@ -289,7 +310,7 @@ protected function getChar()
+ 
+         // Normalize all whitespace except for the newline character into a
+         // standard space.
+-        if ($char !== "\n" && ord($char) < 32) {
++        if ($char !== "\n" && $char < "\x20") {
+             return ' ';
+         }
+ 
+@@ -340,7 +361,7 @@ protected function getReal()
+      */
+     protected function processOneLineComments($startIndex)
+     {
+-        $thirdCommentString = substr($this->input, $this->index, 1);
++        $thirdCommentString = $this->index < $this->len ? $this->input[$this->index] : false;
+ 
+         // kill rest of line
+         $this->getNext("\n");
+@@ -429,7 +450,7 @@ protected function getNext($string)
+         $this->index = $pos;
+ 
+         // Return the first character of that string.
+-        return substr($this->input, $this->index, 1);
++        return $this->index < $this->len ? $this->input[$this->index] : false;
+     }
+ 
+     /**
+@@ -447,7 +468,7 @@ protected function saveString()
+         $this->a = $this->b;
+ 
+         // If this isn't a string we don't need to do anything.
+-        if (!in_array($this->a, $this->stringDelimiters)) {
++        if (!isset($this->stringDelimiters[$this->a])) {
+             return;
+         }
+ 
+@@ -557,7 +578,7 @@ protected function lock($js)
+         /* lock things like <code>"asd" + ++x;</code> */
+         $lock = '"LOCK---' . crc32(time()) . '"';
+ 
+-        $matches = array();
++        $matches = [];
+         preg_match('/([+-])(\s+)([+-])/S', $js, $matches);
+         if (empty($matches)) {
+             return $js;
+diff --git a/library/vendor/JShrink/SOURCE b/library/vendor/JShrink/SOURCE
+index 794856288e..00ccc58ce0 100644
+--- library/vendor/JShrink/SOURCE
++++ library/vendor/JShrink/SOURCE
+@@ -1,6 +1,6 @@
+ #!/bin/bash
+ set -eux
+-VERSION=1.3.2
++VERSION=1.4.0
+ curl -LsS https://github.com/tedious/JShrink/archive/v"$VERSION".tar.gz -o /tmp/JShrink.tar.gz
+ tar xzf /tmp/JShrink.tar.gz --strip-components 1 JShrink-"$VERSION"/LICENSE
+ tar xzf /tmp/JShrink.tar.gz --strip-components 3 JShrink-"$VERSION"/src/JShrink/Minifier.php

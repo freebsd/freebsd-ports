@@ -13,6 +13,7 @@ LICENSE_COMB=	multi
 
 BROKEN_FreeBSD_12=	'net/iso88025.h' file not found
 BROKEN_FreeBSD_13=	'net/iso88025.h' file not found
+BROKEN_FreeBSD_14=	'net/iso88025.h' file not found
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \

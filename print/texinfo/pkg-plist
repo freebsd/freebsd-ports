@@ -106,9 +106,13 @@ man/man5/texinfo.5.gz
 %%DATADIR%%/htmlxref.cnf
 %%DATADIR%%/init/book.pm
 %%DATADIR%%/init/chm.pm
+%%DATADIR%%/init/highlight_syntax.pm
 %%DATADIR%%/init/html32.pm
 %%DATADIR%%/init/latex2html.pm
 %%DATADIR%%/init/tex4ht.pm
+%%DATADIR%%/js/info.css
+%%DATADIR%%/js/info.js
+%%DATADIR%%/js/modernizr.js
 %%DATADIR%%/texindex.awk
 %%DATADIR%%/texinfo.dtd
 %%TEXMFDIR%%/tex/generic/epsf/epsf.tex
@@ -119,6 +123,7 @@ man/man5/texinfo.5.gz
 %%TEXMFDIR%%/tex/texinfo/txi-de.tex
 %%TEXMFDIR%%/tex/texinfo/txi-en.tex
 %%TEXMFDIR%%/tex/texinfo/txi-es.tex
+%%TEXMFDIR%%/tex/texinfo/txi-fi.tex
 %%TEXMFDIR%%/tex/texinfo/txi-fr.tex
 %%TEXMFDIR%%/tex/texinfo/txi-hu.tex
 %%TEXMFDIR%%/tex/texinfo/txi-is.tex

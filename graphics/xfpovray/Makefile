@@ -13,6 +13,9 @@ COMMENT=	Graphical interface to POV-Ray
 LIB_DEPENDS=	libforms.so:x11-toolkits/xforms
 RUN_DEPENDS=	povray:graphics/povray-meta
 
+BROKEN_FreeBSD_13=	does not build
+BROKEN_FreeBSD_14=	does not build
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

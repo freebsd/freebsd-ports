@@ -19,9 +19,10 @@ RUN_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple \
 		p5-libwww>=0:www/p5-libwww
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
 
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>

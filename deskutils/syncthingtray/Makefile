@@ -1,5 +1,5 @@
 PORTNAME=	syncthingtray
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -18,17 +18,17 @@ USES=		cmake:insource compiler:c++11-lang iconv kde:5 qt:5
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	Martchus:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:syncthingtray/../syncthingtray \
-		Martchus:cpp-utilities:v5.10.2:cpputilities/../c++utilities \
-		Martchus:qtutilities:v6.4.0:qtutilities/../qtutilities \
+		Martchus:cpp-utilities:v5.10.5:cpputilities/../c++utilities \
+		Martchus:qtutilities:v6.4.2:qtutilities/../qtutilities \
 		Martchus:subdirs:f3b12f9:subdirs/../subdirs
 
 USE_KDE=	plasma-framework
 USE_QT=		concurrent core dbus declarative gui location network \
 		printsupport qdbus quickcontrols2 svg webchannel \
 		widgets x11extras buildtools_build doc_build linguist_build \
-		qmake_build
+		qmake_build testlib_build
 
-CMAKE_OFF=	USE_STANDARD_FILESYSTEM
+CMAKE_OFF=	USE_STANDARD_FILESYSTEM SYSTEMD_SUPPORT
 
 CONFIGURE_WRKSRC=	${WRKDIR}
 BUILD_WRKSRC=		${WRKDIR}

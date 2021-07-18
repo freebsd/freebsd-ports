@@ -1,6 +1,6 @@
 PORTNAME=	sdformat
 DISTVERSION=	8.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 

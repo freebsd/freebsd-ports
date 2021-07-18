@@ -6,7 +6,7 @@ include/libssh/libsshpp.hpp
 include/libssh/server.h
 include/libssh/sftp.h
 include/libssh/ssh2.h
-lib/cmake/libssh/libssh-config-release.cmake
+lib/cmake/libssh/libssh-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libssh/libssh-config-version.cmake
 lib/cmake/libssh/libssh-config.cmake
 lib/libssh.a

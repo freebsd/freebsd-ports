@@ -16,6 +16,4 @@ USE_KDE=	completion config coreaddons i18n jobwidgets kio service widgetsaddons
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
 
-OPTIONS_DEFINE=	DOCS
-
 .include <bsd.port.mk>

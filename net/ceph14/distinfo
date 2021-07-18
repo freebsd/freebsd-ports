@@ -1,6 +1,6 @@
-TIMESTAMP = 1597409334
-SHA256 (ceph-ceph-v14.2.11_GH0.tar.gz) = 45470f70befab52dbf143224e3e9bfc90870369ae9413677e79f387863e76a80
-SIZE (ceph-ceph-v14.2.11_GH0.tar.gz) = 21948721
+TIMESTAMP = 1621102521
+SHA256 (ceph-ceph-v14.2.21_GH0.tar.gz) = a21743228d64d096119b2a92e871277bec6c60f7d274069c23e5a7c8da7f194a
+SIZE (ceph-ceph-v14.2.21_GH0.tar.gz) = 21956991
 SHA256 (ceph-ceph-erasure-code-corpus-2d7d78b_GH0.tar.gz) = 8ab8f36f3e0a720c882b8bb4abb3f2e26bd6b025cc263119207f7d2eb3b1e490
 SIZE (ceph-ceph-erasure-code-corpus-2d7d78b_GH0.tar.gz) = 3685656
 SHA256 (ceph-ceph-object-corpus-e32bf8c_GH0.tar.gz) = 79ff0d1b9f959c9f5264a0dff193105d71885615deaa9c8469902400fd82d214
@@ -29,5 +29,5 @@ SHA256 (ceph-xxHash-1f40c65_GH0.tar.gz) = 809e06b7493ed01f13c7ba972393a5a6d23dd9
 SIZE (ceph-xxHash-1f40c65_GH0.tar.gz) = 25484
 SHA256 (facebook-zstd-f4340f4_GH0.tar.gz) = 0db909a46914eb7800bce044b86fcf595451713e56a2b131ace6f70ff25c1c4d
 SIZE (facebook-zstd-f4340f4_GH0.tar.gz) = 1619022
-SHA256 (ceph-seastar-0cf6aa6_GH0.tar.gz) = 2772b32fbcb0f26c6d1cf07c1fcb9bfef7cdd2fdc41ec21af142d6cb3ff08f38
-SIZE (ceph-seastar-0cf6aa6_GH0.tar.gz) = 896598
+SHA256 (ceph-spawn-5f4742f_GH0.tar.gz) = c8832724cf3dd873db7c10407404b6cef30fa770902ab446f830902fed21603a
+SIZE (ceph-spawn-5f4742f_GH0.tar.gz) = 7319

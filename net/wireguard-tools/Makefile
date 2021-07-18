@@ -1,6 +1,5 @@
 PORTNAME=	wireguard-tools
-PORTVERSION=	1.0.20210315
-PORTREVISION=	4
+PORTVERSION=	1.0.20210424
 CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/wireguard-tools/snapshot/
 
@@ -8,14 +7,14 @@ MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Fast, modern and secure VPN Tunnel
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKDIR}/${DISTNAME}/COPYING
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 FLAVORS=	default lite
 lite_PKGNAMESUFFIX=	-lite
 
 USES=		gmake tar:xz
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC_SUBDIR=	src
 
 MAKE_ARGS+=	DEBUG=no WITH_BASHCOMPLETION=yes WITH_SYSTEMDUNITS=no
 MAKE_ENV+=	MANDIR="${MANPREFIX}/man" \

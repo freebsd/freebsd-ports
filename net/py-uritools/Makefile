@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	uritools
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.2
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:3.5+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 

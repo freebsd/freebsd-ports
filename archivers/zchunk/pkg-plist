@@ -7,7 +7,7 @@ bin/zckdl
 include/zck.h
 lib/libzck.so
 lib/libzck.so.1
-lib/libzck.so.1.1.9
+lib/libzck.so.1.1.16
 libdata/pkgconfig/zck.pc
 man/man1/unzck.1.gz
 man/man1/zck.1.gz

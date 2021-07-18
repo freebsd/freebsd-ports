@@ -1,4 +1,4 @@
---- ui/views/examples/widget_example.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/views/examples/widget_example.cc.orig	2021-04-14 18:41:39 UTC
 +++ ui/views/examples/widget_example.cc
 @@ -50,7 +50,7 @@ void WidgetExample::CreateExampleView(View* container)
    modal_button->SetCallback(

@@ -1,49 +1,30 @@
---- unix/Makefile.gtk.orig	2019-03-16 12:26:40 UTC
+--- unix/Makefile.gtk.orig	2021-05-02 07:21:01 UTC
 +++ unix/Makefile.gtk
-@@ -109,7 +109,7 @@ GTK_CONFIG = sh -c 'pkg-config gtk+-3.0 x11 $$0 2>/dev
+@@ -104,7 +104,7 @@ GTK_CONFIG = sh -c 'pkg-config gtk+-3.0 x11 $$0 2>/dev
  
  unexport CFLAGS # work around a weird issue with krb5-config
  
--CFLAGS = -O2 -Wall -Werror -std=gnu99 -Wvla -g -I.././ -I../charset/ \
-+CFLAGS := $(CFLAGS) -Wall -Werror -std=gnu99 -Wvla -I.././ -I../charset/ \
- 		-I../windows/ -I../unix/ $(shell $(GTK_CONFIG) --cflags) -D _FILE_OFFSET_BITS=64
+-CFLAGS = -O2 -Wall -std=gnu99 -Wvla -g -I.././ -I../charset/ -I../windows/ \
++CFLAGS := $(CFLAGS) -Wall -std=gnu11 -Wvla -I.././ -I../charset/ -I../windows/ \
+ 		-I../unix/ $(shell $(GTK_CONFIG) --cflags) -D _FILE_OFFSET_BITS=64
  XLDFLAGS = $(LDFLAGS) $(shell $(GTK_CONFIG) --libs)
  ULDFLAGS = $(LDFLAGS)
-@@ -136,8 +136,13 @@ man1dir=$(mandir)/man1
+@@ -131,9 +131,14 @@ man1dir=$(mandir)/man1
  .SUFFIXES:
  
  
 +ifdef PUTTY_WITH_GTK
- all: cgtest fuzzterm osxlaunch pageant plink pscp psftp pterm ptermapp putty \
- 		puttyapp puttygen puttytel testcrypt testsc testzlib uppity
+ all: cgtest fuzzterm osxlaunch pageant plink pscp psftp psocks psusan pterm \
+ 		ptermapp putty puttyapp puttygen puttytel testcrypt testsc \
+ 		testzlib uppity
 +else
 +all: cgtest fuzzterm osxlaunch plink pscp psftp \
 +		puttygen testcrypt testsc testzlib uppity
 +endif
  
- cgtest: cgtest.o conf.o ecc.o import.o marshal.o memory.o misc.o mpint.o \
- 		notiming.o sshaes.o sshauxcrypt.o sshbcrypt.o sshblowf.o \
-@@ -497,15 +502,15 @@ testsc: ecc.o marshal.o memory.o mpint.o sshaes.o ssha
- 		sshblowf.o sshccp.o sshcrc.o sshcrcda.o sshdes.o sshdh.o \
- 		sshdss.o sshecc.o sshhmac.o sshmac.o sshmd5.o sshrsa.o \
- 		sshsh256.o sshsh512.o sshsha.o testsc.o tree234.o utils.o \
--		uxutils.o wildcard.o
-+		uxutils.o wildcard.o uxmisc.o
- 	$(CC) -o $@ ecc.o marshal.o memory.o mpint.o sshaes.o ssharcf.o \
- 		sshauxcrypt.o sshblowf.o sshccp.o sshcrc.o sshcrcda.o \
- 		sshdes.o sshdh.o sshdss.o sshecc.o sshhmac.o sshmac.o \
- 		sshmd5.o sshrsa.o sshsh256.o sshsh512.o sshsha.o testsc.o \
--		tree234.o utils.o uxutils.o wildcard.o $(ULDFLAGS) 
-+		tree234.o utils.o uxutils.o wildcard.o uxmisc.o $(ULDFLAGS) 
- 
--testzlib: marshal.o memory.o sshzlib.o testzlib.o utils.o
--	$(CC) -o $@ marshal.o memory.o sshzlib.o testzlib.o utils.o \
-+testzlib: marshal.o memory.o sshzlib.o testzlib.o utils.o uxmisc.o
-+	$(CC) -o $@ marshal.o memory.o sshzlib.o testzlib.o utils.o uxmisc.o \
- 		$(ULDFLAGS) 
- 
- uppity: be_misc.o be_none.o callback.o conf.o cproxy.o ecc.o errsock.o \
-@@ -1602,10 +1607,12 @@ xpmputty.o: ../unix/xpmputty.c
+ cgtest: cgtest.o conf.o console.o ecc.o import.o marshal.o memory.o \
+ 		millerrabin.o misc.o mpint.o mpunsafe.o notiming.o pockle.o \
+@@ -1805,10 +1810,12 @@ xpmputty.o: ../unix/xpmputty.c
  
  install:
  	mkdir -p $(DESTDIR)$(bindir) $(DESTDIR)$(man1dir)
@@ -57,7 +38,7 @@
  	$(INSTALL_PROGRAM) -m 755 pterm $(DESTDIR)$(bindir)/pterm
  	if test -n "$(UTMP_GROUP)"; then \
  	  chgrp $(UTMP_GROUP) $(DESTDIR)$(bindir)/pterm && \
-@@ -1615,16 +1622,18 @@ install:
+@@ -1818,16 +1825,18 @@ install:
  	    chmod 4755 $(DESTDIR)$(bindir)/pterm; \
  	fi
  	$(INSTALL_PROGRAM) -m 755 putty $(DESTDIR)$(bindir)/putty

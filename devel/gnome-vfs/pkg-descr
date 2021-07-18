@@ -1,7 +1,0 @@
-The GNOME Virtual File System allows applications and users to treat
-any number of file system concepts as a part of the local filesystem.
-With GnomeVFS, filesystems across the internet, on connected devices,
-and in multiple formats are as simple to access (and write code for)
-as any directory on the local machine.
-
-WWW: https://www.gnome.org/

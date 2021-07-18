@@ -1,0 +1,6 @@
+cpp-pcp-client is a C++ client library for the Puppet Communications Protocol
+(PCP) protocol. It includes a collection of abstractions which can be used to
+initiate connections to a PCP broker, wrapping the PCP message format and
+performing schema validation for message bodies.
+
+WWW: https://github.com/puppetlabs/cpp-pcp-client

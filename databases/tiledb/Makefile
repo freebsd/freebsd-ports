@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	tiledb
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.9
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org

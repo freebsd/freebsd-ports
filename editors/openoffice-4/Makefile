@@ -2,6 +2,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
+PORTREVISION=	1
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -110,10 +111,10 @@ CONFLICTS_INSTALL=	apache-openoffice-devel-*
 
 AOOVERSION1=	4
 AOOVERSION2=	1
-AOOVERSION3=	9
+AOOVERSION3=	10
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO419m1\(Build:9805\)
-GITREVISION=	561082130a
+AOOTAG=		AOO4110m2\(Build:9807\)
+GITREVISION=	b1cdbd2c1b
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}

@@ -12,6 +12,7 @@ COMMENT=	Collection of scripts to setup routes and other changes for a VPN
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	sbin/vpnc-script sbin/vpnc-script-sshd sbin/vpnc-script-ptrtd

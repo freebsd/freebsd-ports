@@ -1,6 +1,4 @@
-ad2vdf extracts allelic depth info from a SAM stream and adds it to a
-corresponding single-sample VCF file.  SAM input is read via stdin and the VCF
-input file is taken as a command-line argument. This allows expensive BAM/CRAM
-decoding to be performed in parallel by a separate samtools process.
+ad2vcf extracts allelic depth info from a SAM stream and adds it to a
+corresponding single-sample VCF file.
 
 WWW: https://github.com/auerlab/ad2vcf

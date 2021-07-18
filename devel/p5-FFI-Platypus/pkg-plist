@@ -29,6 +29,7 @@
 %%SITE_ARCH%%/FFI/Platypus/Type/PointerSizeBuffer.pm
 %%SITE_ARCH%%/FFI/Platypus/Type/StringArray.pm
 %%SITE_ARCH%%/FFI/Platypus/Type/StringPointer.pm
+%%SITE_ARCH%%/FFI/Platypus/Type/WideString.pm
 %%SITE_ARCH%%/FFI/Platypus/TypeParser.pm
 %%SITE_ARCH%%/FFI/Platypus/TypeParser/Version0.pm
 %%SITE_ARCH%%/FFI/Platypus/TypeParser/Version1.pm
@@ -80,6 +81,7 @@
 %%PERL5_MAN3%%/FFI::Platypus::Type::PointerSizeBuffer.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Type::StringArray.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Type::StringPointer.3.gz
+%%PERL5_MAN3%%/FFI::Platypus::Type::WideString.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::TypeParser.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::TypeParser::Version0.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::TypeParser::Version1.3.gz

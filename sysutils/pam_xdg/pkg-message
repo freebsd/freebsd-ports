@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+XDG_RUNTIME_DIR on Wayland maybe used as a fallback for anonymous
+shared memory. For better performance and to avoid posix_fallocate(2)
+issues on ZFS moving the directory under tmpfs(5) is recommended:
+
+  # echo "none	/var/run/user	tmpfs	rw" >>/etc/fstab
+  # mkdir -p /var/run/user
+  # mount -a
+EOM
+}
+]

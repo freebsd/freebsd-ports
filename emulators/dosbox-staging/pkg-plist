@@ -1,4 +1,12 @@
 bin/dosbox-staging
+man/man1/dosbox-staging.1.gz
 share/applications/dosbox-staging.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+share/icons/hicolor/16x16/apps/dosbox-staging.png
+share/icons/hicolor/22x22/apps/dosbox-staging.png
+share/icons/hicolor/24x24/apps/dosbox-staging.png
+share/icons/hicolor/32x32/apps/dosbox-staging.png
 share/icons/hicolor/scalable/apps/dosbox-staging.svg
-share/man/man1/dosbox-staging.1.gz
+share/metainfo/dosbox-staging.metainfo.xml

@@ -1965,6 +1965,7 @@ share/icons/hicolor/64x64/apps/klettres.png
 share/knsrcfiles/klettres.knsrc
 share/kxmlgui5/klettres/klettresui.rc
 share/locale/ar/LC_MESSAGES/klettres.mo
+share/locale/be/LC_MESSAGES/klettres.mo
 share/locale/bg/LC_MESSAGES/klettres.mo
 share/locale/bs/LC_MESSAGES/klettres.mo
 share/locale/ca/LC_MESSAGES/klettres.mo
@@ -1993,6 +1994,7 @@ share/locale/it/LC_MESSAGES/klettres.mo
 share/locale/ja/LC_MESSAGES/klettres.mo
 share/locale/kk/LC_MESSAGES/klettres.mo
 share/locale/km/LC_MESSAGES/klettres.mo
+share/locale/ko/LC_MESSAGES/klettres.mo
 share/locale/lt/LC_MESSAGES/klettres.mo
 share/locale/lv/LC_MESSAGES/klettres.mo
 share/locale/ml/LC_MESSAGES/klettres.mo
@@ -2007,15 +2009,19 @@ share/locale/pt/LC_MESSAGES/klettres.mo
 share/locale/pt_BR/LC_MESSAGES/klettres.mo
 share/locale/ro/LC_MESSAGES/klettres.mo
 share/locale/ru/LC_MESSAGES/klettres.mo
+share/locale/se/LC_MESSAGES/klettres.mo
 share/locale/sk/LC_MESSAGES/klettres.mo
 share/locale/sl/LC_MESSAGES/klettres.mo
+share/locale/sq/LC_MESSAGES/klettres.mo
 share/locale/sv/LC_MESSAGES/klettres.mo
+share/locale/ta/LC_MESSAGES/klettres.mo
+share/locale/tg/LC_MESSAGES/klettres.mo
 share/locale/tr/LC_MESSAGES/klettres.mo
 share/locale/ug/LC_MESSAGES/klettres.mo
 share/locale/uk/LC_MESSAGES/klettres.mo
+share/locale/vi/LC_MESSAGES/klettres.mo
 share/locale/wa/LC_MESSAGES/klettres.mo
 share/locale/zh_CN/LC_MESSAGES/klettres.mo
 share/locale/zh_TW/LC_MESSAGES/klettres.mo
 share/metainfo/org.kde.klettres.appdata.xml
 share/qlogging-categories5/klettres.categories
-

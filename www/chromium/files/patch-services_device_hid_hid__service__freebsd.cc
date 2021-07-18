@@ -1,6 +1,6 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2021-03-15 11:01:24 UTC
+--- services/device/hid/hid_service_freebsd.cc.orig	2021-06-10 13:30:27 UTC
 +++ services/device/hid/hid_service_freebsd.cc
-@@ -0,0 +1,389 @@
+@@ -0,0 +1,391 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -32,8 +32,10 @@
 +#include "base/strings/string_util.h"
 +#include "base/strings/string_split.h"
 +#include "base/task/post_task.h"
++#include "base/task/thread_pool.h"
 +#include "base/threading/scoped_blocking_call.h"
 +#include "base/threading/thread_task_runner_handle.h"
++#include "base/threading/thread_restrictions.h"
 +#include "components/device_event_log/device_event_log.h"
 +#include "services/device/hid/hid_connection_freebsd.h"
 +

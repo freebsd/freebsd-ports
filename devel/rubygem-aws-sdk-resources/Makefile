@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.94.0
+PORTVERSION=	3.105.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -7,6 +7,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	AWS SDK for Ruby Resources
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessanalyzer \
 		rubygem-aws-sdk-acm>=1<2:devel/rubygem-aws-sdk-acm \
@@ -21,10 +22,12 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-appflow>=1<2:devel/rubygem-aws-sdk-appflow \
 		rubygem-aws-sdk-appintegrationsservice>=1<2:devel/rubygem-aws-sdk-appintegrationsservice \
 		rubygem-aws-sdk-applicationautoscaling>=1<2:devel/rubygem-aws-sdk-applicationautoscaling \
+		rubygem-aws-sdk-applicationcostprofiler>=1<2:devel/rubygem-aws-sdk-applicationcostprofiler \
 		rubygem-aws-sdk-applicationdiscoveryservice>=1<2:devel/rubygem-aws-sdk-applicationdiscoveryservice \
 		rubygem-aws-sdk-applicationinsights>=1<2:devel/rubygem-aws-sdk-applicationinsights \
 		rubygem-aws-sdk-appmesh>=1<2:devel/rubygem-aws-sdk-appmesh \
 		rubygem-aws-sdk-appregistry>=1<2:devel/rubygem-aws-sdk-appregistry \
+		rubygem-aws-sdk-apprunner>=1<2:devel/rubygem-aws-sdk-apprunner \
 		rubygem-aws-sdk-appstream>=1<2:devel/rubygem-aws-sdk-appstream \
 		rubygem-aws-sdk-appsync>=1<2:devel/rubygem-aws-sdk-appsync \
 		rubygem-aws-sdk-athena>=1<2:devel/rubygem-aws-sdk-athena \
@@ -104,7 +107,10 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-emr>=1<2:devel/rubygem-aws-sdk-emr \
 		rubygem-aws-sdk-emrcontainers>=1<2:devel/rubygem-aws-sdk-emrcontainers \
 		rubygem-aws-sdk-eventbridge>=1<2:devel/rubygem-aws-sdk-eventbridge \
+		rubygem-aws-sdk-finspace>=1<2:devel/rubygem-aws-sdk-finspace \
+		rubygem-aws-sdk-finspacedata>=1<2:devel/rubygem-aws-sdk-finspacedata \
 		rubygem-aws-sdk-firehose>=1<2:devel/rubygem-aws-sdk-firehose \
+		rubygem-aws-sdk-fis>=1<2:devel/rubygem-aws-sdk-fis \
 		rubygem-aws-sdk-fms>=1<2:devel/rubygem-aws-sdk-fms \
 		rubygem-aws-sdk-forecastqueryservice>=1<2:devel/rubygem-aws-sdk-forecastqueryservice \
 		rubygem-aws-sdk-forecastservice>=1<2:devel/rubygem-aws-sdk-forecastservice \
@@ -162,7 +168,9 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-licensemanager>=1<2:devel/rubygem-aws-sdk-licensemanager \
 		rubygem-aws-sdk-lightsail>=1<2:devel/rubygem-aws-sdk-lightsail \
 		rubygem-aws-sdk-locationservice>=1<2:devel/rubygem-aws-sdk-locationservice \
+		rubygem-aws-sdk-lookoutequipment>=1<2:devel/rubygem-aws-sdk-lookoutequipment \
 		rubygem-aws-sdk-lookoutforvision>=1<2:devel/rubygem-aws-sdk-lookoutforvision \
+		rubygem-aws-sdk-lookoutmetrics>=1<2:devel/rubygem-aws-sdk-lookoutmetrics \
 		rubygem-aws-sdk-machinelearning>=1<2:devel/rubygem-aws-sdk-machinelearning \
 		rubygem-aws-sdk-macie>=1<2:devel/rubygem-aws-sdk-macie \
 		rubygem-aws-sdk-macie2>=1<2:devel/rubygem-aws-sdk-macie2 \
@@ -179,6 +187,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-mediastore>=1<2:devel/rubygem-aws-sdk-mediastore \
 		rubygem-aws-sdk-mediastoredata>=1<2:devel/rubygem-aws-sdk-mediastoredata \
 		rubygem-aws-sdk-mediatailor>=1<2:devel/rubygem-aws-sdk-mediatailor \
+		rubygem-aws-sdk-mgn>=1<2:devel/rubygem-aws-sdk-mgn \
 		rubygem-aws-sdk-migrationhub>=1<2:devel/rubygem-aws-sdk-migrationhub \
 		rubygem-aws-sdk-migrationhubconfig>=1<2:devel/rubygem-aws-sdk-migrationhubconfig \
 		rubygem-aws-sdk-mobile>=1<2:devel/rubygem-aws-sdk-mobile \
@@ -188,6 +197,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-neptune>=1<2:devel/rubygem-aws-sdk-neptune \
 		rubygem-aws-sdk-networkfirewall>=1<2:devel/rubygem-aws-sdk-networkfirewall \
 		rubygem-aws-sdk-networkmanager>=1<2:devel/rubygem-aws-sdk-networkmanager \
+		rubygem-aws-sdk-nimblestudio>=1<2:devel/rubygem-aws-sdk-nimblestudio \
 		rubygem-aws-sdk-opsworks>=1<2:devel/rubygem-aws-sdk-opsworks \
 		rubygem-aws-sdk-opsworkscm>=1<2:devel/rubygem-aws-sdk-opsworkscm \
 		rubygem-aws-sdk-organizations>=1<2:devel/rubygem-aws-sdk-organizations \
@@ -202,6 +212,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-polly>=1<2:devel/rubygem-aws-sdk-polly \
 		rubygem-aws-sdk-pricing>=1<2:devel/rubygem-aws-sdk-pricing \
 		rubygem-aws-sdk-prometheusservice>=1<2:devel/rubygem-aws-sdk-prometheusservice \
+		rubygem-aws-sdk-proton>=1<2:devel/rubygem-aws-sdk-proton \
 		rubygem-aws-sdk-qldb>=1<2:devel/rubygem-aws-sdk-qldb \
 		rubygem-aws-sdk-qldbsession>=1<2:devel/rubygem-aws-sdk-qldbsession \
 		rubygem-aws-sdk-quicksight>=1<2:devel/rubygem-aws-sdk-quicksight \
@@ -242,6 +253,8 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-sns>=1<2:devel/rubygem-aws-sdk-sns \
 		rubygem-aws-sdk-sqs>=1<2:devel/rubygem-aws-sdk-sqs \
 		rubygem-aws-sdk-ssm>=1<2:devel/rubygem-aws-sdk-ssm \
+		rubygem-aws-sdk-ssmcontacts>=1<2:devel/rubygem-aws-sdk-ssmcontacts \
+		rubygem-aws-sdk-ssmincidents>=1<2:devel/rubygem-aws-sdk-ssmincidents \
 		rubygem-aws-sdk-ssoadmin>=1<2:devel/rubygem-aws-sdk-ssoadmin \
 		rubygem-aws-sdk-ssooidc>=1<2:devel/rubygem-aws-sdk-ssooidc \
 		rubygem-aws-sdk-states>=1<2:devel/rubygem-aws-sdk-states \

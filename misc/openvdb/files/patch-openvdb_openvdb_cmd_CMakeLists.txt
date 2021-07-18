@@ -1,4 +1,4 @@
---- openvdb/openvdb/cmd/CMakeLists.txt.orig	2021-02-05 19:21:38 UTC
+--- openvdb/openvdb/cmd/CMakeLists.txt.orig	2021-06-11 21:38:41 UTC
 +++ openvdb/openvdb/cmd/CMakeLists.txt
 @@ -116,8 +116,8 @@ endif()
  #### vdb_render
@@ -11,10 +11,11 @@
  
    set(VDB_RENDER_SOURCE_FILES openvdb_render.cc)
    add_executable(vdb_render ${VDB_RENDER_SOURCE_FILES})
-@@ -129,10 +129,8 @@ if(OPENVDB_BUILD_VDB_RENDER)
+@@ -129,11 +129,8 @@ if(OPENVDB_BUILD_VDB_RENDER)
    # headers
  
    target_link_libraries(vdb_render
+-    IlmBase::Half
 -    OpenEXR::IlmImf
 -    IlmBase::IlmThread
 -    IlmBase::Iex

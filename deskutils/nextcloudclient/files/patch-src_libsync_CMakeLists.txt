@@ -1,0 +1,18 @@
+--- src/libsync/CMakeLists.txt.orig	2021-04-18 20:44:16.273394000 +0200
++++ src/libsync/CMakeLists.txt	2021-04-18 20:44:45.589737000 +0200
+@@ -136,8 +130,7 @@
+ endif()
+ 
+-if(INOTIFY_FOUND)
+-    target_include_directories(${synclib_NAME} PRIVATE ${INOTIFY_INCLUDE_DIR})
+-    link_directories(${INOTIFY_LIBRARY_DIR})
+-    target_link_libraries(${synclib_NAME} ${INOTIFY_LIBRARY} )
++if(Inotify_FOUND)
++    target_include_directories(${synclib_NAME} PRIVATE ${Inotify_INCLUDE_DIRS})
++    target_link_libraries(${synclib_NAME} PUBLIC ${Inotify_LIBRARIES})
+ endif()
+ 
+@@ -167,2 +160,3 @@
+     install(TARGETS ${synclib_NAME} DESTINATION ${OWNCLOUD_OSX_BUNDLE}/Contents/MacOS)
+ endif()
++

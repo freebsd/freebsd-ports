@@ -1,7 +1,7 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 
 PORTNAME=	libvshadow
-PORTVERSION=	20201222
+PORTVERSION=	20210425
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libvshadow/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine

@@ -1,0 +1,11 @@
+--- scidavis/CMakeLists.txt.orig	2021-05-05 01:51:49 UTC
++++ scidavis/CMakeLists.txt
+@@ -135,7 +135,7 @@ if (NOT CMAKE_CROSS_COMPILING)
+       if( MULTI_CONFIG )
+         install( FILES scidavisrc.py ${CMAKE_CURRENT_BINARY_DIR}/$<CONFIG>/scidavisrc.pyc DESTINATION etc )
+       else()
+-        install( FILES scidavisrc.py ${CMAKE_CURRENT_BINARY_DIR}/scidavisrc.pyc DESTINATION etc )
++        install( FILES scidavisrc.py DESTINATION etc )
+       endif()
+       install( FILES scidavisUtil.py DESTINATION share/scidavis )
+     endif()

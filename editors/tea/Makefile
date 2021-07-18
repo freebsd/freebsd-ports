@@ -1,7 +1,7 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
 
 PORTNAME=	tea
-PORTVERSION=	50.1.0
+PORTVERSION=	60.3.0
 CATEGORIES=	editors
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -15,6 +15,7 @@ OPTIONS_DEFINE=		DOCS
 OPTIONS_GROUP=		SPELL
 OPTIONS_GROUP_SPELL=	ASPELL HUNSPELL
 OPTIONS_DEFAULT=	ASPELL HUNSPELL
+SPELL_DESC=		Spell checker backend
 
 USE_QT=		buildtools_build core declarative gui network widgets printsupport
 USE_GL=		gl

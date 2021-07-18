@@ -10,6 +10,9 @@ share/icons/hicolor/32x32/apps/konsolekalendar.png
 share/icons/hicolor/48x48/apps/konsolekalendar.png
 share/locale/ar/LC_MESSAGES/calendarjanitor.mo
 share/locale/ar/LC_MESSAGES/konsolekalendar.mo
+share/locale/az/LC_MESSAGES/calendarjanitor.mo
+share/locale/az/LC_MESSAGES/konsolekalendar.mo
+share/locale/be/LC_MESSAGES/konsolekalendar.mo
 share/locale/bg/LC_MESSAGES/konsolekalendar.mo
 share/locale/bs/LC_MESSAGES/calendarjanitor.mo
 share/locale/bs/LC_MESSAGES/konsolekalendar.mo
@@ -80,12 +83,16 @@ share/locale/pt_BR/LC_MESSAGES/konsolekalendar.mo
 share/locale/ro/LC_MESSAGES/konsolekalendar.mo
 share/locale/ru/LC_MESSAGES/calendarjanitor.mo
 share/locale/ru/LC_MESSAGES/konsolekalendar.mo
+share/locale/se/LC_MESSAGES/konsolekalendar.mo
 share/locale/sk/LC_MESSAGES/calendarjanitor.mo
 share/locale/sk/LC_MESSAGES/konsolekalendar.mo
 share/locale/sl/LC_MESSAGES/calendarjanitor.mo
 share/locale/sl/LC_MESSAGES/konsolekalendar.mo
+share/locale/sq/LC_MESSAGES/konsolekalendar.mo
 share/locale/sv/LC_MESSAGES/calendarjanitor.mo
 share/locale/sv/LC_MESSAGES/konsolekalendar.mo
+share/locale/ta/LC_MESSAGES/konsolekalendar.mo
+share/locale/tg/LC_MESSAGES/konsolekalendar.mo
 share/locale/tr/LC_MESSAGES/calendarjanitor.mo
 share/locale/tr/LC_MESSAGES/konsolekalendar.mo
 share/locale/ug/LC_MESSAGES/konsolekalendar.mo

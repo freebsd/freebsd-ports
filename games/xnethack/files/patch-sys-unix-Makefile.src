@@ -1,0 +1,154 @@
+--- sys/unix/Makefile.src.orig	2021-03-22 22:28:14 UTC
++++ sys/unix/Makefile.src
+@@ -169,9 +169,17 @@ SYSOBJ = $(TARGETPFX)ioctl.o $(TARGETPFX)unixmain.o $(
+ 
+ # flags for debugging:
+ # CFLAGS = -g -I../include
++CFLAGS += -I../include -I${LUA_INCDIR}
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++CFLAGS += -DX11_GRAPHICS -I${LOCALBASE}/include
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++CFLAGS += -DQT_GRAPHICS
++endif
+ 
+ #CFLAGS = -O -I../include
+-#LFLAGS =
++LFLAGS += -L${LUA_LIBDIR}
++LINK = $(CC)
+ 
+ # The Qt and Be window systems are written in C++, while the rest of
+ # NetHack is standard C.  If using Qt, uncomment the LINK line here to get
+@@ -297,6 +305,29 @@ WINBEOBJ =
+ # Curses - Karl Garrison, Tangles
+ #WINSRC = $(WINCURSESSRC)
+ #WINOBJ = $(WINCURSESOBJ)
++
++WINSRC = $(WINTTYSRC) $(WINCURSESSRC)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINSRC += $(WINX11SRC)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINSRC += $(WINQTSRC)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINSRC += $(WINGNOMESRC)
++endif
++
++WINOBJ = $(WINTTYOBJ) $(WINCURSESOBJ)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINOBJ += $(WINX11OBJ)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINOBJ += $(WINQTOBJ)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINOBJ += $(WINGNOMEOBJ)
++endif
++
+ #
+ # on some systems the termcap library is in -ltermcap or -lcurses
+ # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
+@@ -313,6 +344,7 @@ WINBEOBJ =
+ # WINTTYLIB = -lcurses16
+ # WINTTYLIB = -lncurses
+ #WINTTYLIB = -ltermlib
++WINTTYLIB = -lncurses -L${LOCALBASE}/lib
+ #
+ # libraries for X11
+ # If USE_XPM is defined in config.h, you will also need -lXpm here.
+@@ -320,10 +352,13 @@ WINBEOBJ =
+ # WINX11LIB = -lXaw -lXmu -lXt -lX11
+ # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
+ # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
++WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -L${LOCALBASE}/lib
+ #
+ #
+ # libraries for Qt 3
+-WINQT3LIB = -L$(QTDIR)/lib -lqt
++#WINQTLIB = -L$(QTDIR)/lib -lqt
++WINQT3LIB = ${QTCFGLIBS} ${LIBQT}
++WINQTLIB = ${QTCFGLIBS} ${LIBQT}
+ #
+ # libraries for Qt 4
+ WINQT4LIB = `pkg-config QtGui --libs`
+@@ -339,7 +374,7 @@ WINBELIB = -lbe
+ #
+ # libraries for curses port
+ # link with ncurses
+-WINCURSESLIB = -lncurses
++WINCURSESLIB = -lncurses -L${LOCALBASE}/lib
+ # link with pdcurses for SDL, installed in a separate directory
+ #WINCURSESLIB = -L/usr/local/lib/pdcurses -lpdcurses -lSDL
+ # same as above, for XCurses
+@@ -349,6 +384,18 @@ WINCURSESLIB = -lncurses
+ #
+ # For Curses
+ #WINLIB = $(WINCURSESLIB)
++
++WINLIB = $(WINTTYLIB)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINLIB += $(WINX11LIB)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINLIB += $(WINQTLIB)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINLIB += $(WINGNOMELIB)
++endif
++
+ #
+ # some platforms need to build the support libraries
+ # BUILDMORE = $(TARGETPFX)pdcurses.a
+@@ -384,7 +431,7 @@ WINCURSESLIB = -lncurses
+ # LIBS =
+ 
+ # make NetHack
+-GAME     = xnethack
++GAME     = xnethack%%HACKEXT%%
+ # GAME     = nethack.prg
+ GAMEBIN = $(GAME)
+ 
+@@ -412,7 +459,7 @@ GITINFO=1
+ # (rather than just in suffix default rule), such as is implemented by
+ # gnu make and others which have picked up its extensions;
+ # allowed values are 0, 1, and empty (which behaves like 0)
+-QUIETCC=1
++QUIETCC=0
+ 
+ # ----------------------------------------
+ #
+@@ -465,7 +512,8 @@ PACKAGE=@true
+ MAKEDEFS = ../util/makedefs
+ 
+ # -lm required by lua
+-LUALIB = ../lib/lua/liblua.a -lm
++#LUALIB = ../lib/lua/liblua.a -lm
++LUALIB = -llua-${LUA_VER} -lm
+ 
+ # timestamp files to reduce `make' overhead and shorten .o dependency lists
+ CONFIG_H = ../src/config.h-t
+@@ -654,7 +702,7 @@ DUMB.Setup:	../include/extern.h
+ 	cp ../include/extern.DUMB ../include/extern.h
+ 	@touch DUMB.Setup
+ 
+-../lib/lua/liblua.a ../include/nhlua.h:
++../include/nhlua.h:
+ 	@( cd .. ; $(MAKE) lua_support )
+ 
+ #	dependencies for makedefs and its outputs, which the util
+@@ -673,11 +721,11 @@ objects.o:
+ 
+ # Qt 3 windowport meta-object-compiler output
+ qt3_kde0.moc: ../win/Qt3/qt3_kde0.h
+-	$(QTDIR)/bin/moc -o qt3kde0.moc ../win/Qt3/qt3_kde0.h
++	${MOC} -o qt3kde0.moc ../win/Qt3/qt3_kde0.h
+ qt3_win.moc: ../win/Qt3/qt3_win.h
+-	$(QTDIR)/bin/moc -o qt3win.moc ../win/Qt3/qt3_win.h
++	${MOC} -o qt3win.moc ../win/Qt3/qt3_win.h
+ qt3tableview.moc: ../win/Qt3/qt3tableview.h
+-	$(QTDIR)/bin/moc -o qt3tableview.moc ../win/Qt/qt3tableview.h
++	${MOC} -o qt3tableview.moc ../win/Qt/qt3tableview.h
+ 
+ # Qt 4 windowport meta-object-compiler output
+ qt_kde0.moc : ../win/Qt/qt_kde0.h

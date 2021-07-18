@@ -2,11 +2,11 @@
 
 PORTNAME=	lightdm
 PORTVERSION=	1.30.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/CanonicalLtd/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Lightweight Display Manager
 
 # library/bindings are LGPLv2 or LGPLv3, the rest GPLv3+
@@ -29,6 +29,8 @@ USE_GNOME=	glib20 intltool
 USE_XORG=	x11 xcb xdmcp
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	lightdm
+
+CONFLICTS_INSTALL=	sddm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests # PAM errors

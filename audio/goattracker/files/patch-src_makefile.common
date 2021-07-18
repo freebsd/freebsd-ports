@@ -1,11 +1,13 @@
---- src/makefile.common.orig	2019-03-21 10:51:16 UTC
+--- src/makefile.common.orig	2021-05-16 12:09:42 UTC
 +++ src/makefile.common
-@@ -2,7 +2,7 @@
+@@ -2,8 +2,8 @@
  
  CC?=gcc
  CXX?=g++
--CFLAGS+=-Ibme -Iasm -O3 -fpermissive
+-CFLAGS+=-Ibme -Iasm -O3
+-CXXFLAGS+=$(CFLAGS) -fpermissive
 +CFLAGS+=-Ibme -Iasm
- CXXFLAGS+=$(CFLAGS)
++CXXFLAGS+=$(CFLAGS)
  
  EXE=	$(PREFIX)goattrk2$(SUFFIX) \
+ 	$(PREFIX)gt2reloc$(SUFFIX) \

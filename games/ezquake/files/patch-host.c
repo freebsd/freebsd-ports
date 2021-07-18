@@ -4,7 +4,7 @@
  	SYSINFO_processor_description = cpu_model;
  
  	gettimeofday(&old_tp, NULL);
-+#ifdef __powerpc64__
++#ifdef __powerpc__
 +	__asm__ __volatile__("mfspr %%r3, 268": "=r" (old_tsc));
 +#else
  	old_tsc = rdtsc();
@@ -12,7 +12,7 @@
  	do {
  		gettimeofday(&tp, NULL);
  	} while ((tp.tv_sec - old_tp.tv_sec) * 1000000. + tp.tv_usec - old_tp.tv_usec < 1000000.);
-+#ifdef __powerpc64__
++#ifdef __powerpc__
 +	__asm__ __volatile__("mfspr %%r3, 268": "=r" (tsc_freq));
 +#else
  	tsc_freq = rdtsc();

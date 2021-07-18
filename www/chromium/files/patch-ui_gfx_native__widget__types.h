@@ -1,4 +1,4 @@
---- ui/gfx/native_widget_types.h.orig	2021-03-12 23:57:48 UTC
+--- ui/gfx/native_widget_types.h.orig	2021-04-14 18:41:39 UTC
 +++ ui/gfx/native_widget_types.h
 @@ -106,7 +106,7 @@ class SkBitmap;
  

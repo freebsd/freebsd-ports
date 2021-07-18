@@ -1,5 +1,6 @@
 PORTNAME=	anydesk
 DISTVERSION=	6.0.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://download.anydesk.com/freebsd/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}-${ARCH:S/amd64/x86_64/:S/i386/i386/}

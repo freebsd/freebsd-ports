@@ -1,6 +1,6 @@
 PORTNAME=	openbor
 # Hint: svn revision is git rev-list --count ${GH_TAGNAME}
-PORTVERSION?=	7103
+PORTVERSION?=	7123
 .ifndef PKGNAMESUFFIX
 PORTREVISION=	0
 .endif
@@ -36,7 +36,7 @@ PORTSCOUT=	ignore:1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DCurrent
-GH_TAGNAME?=	78764f05
+GH_TAGNAME?=	f5261e7c
 
 USES+=		gmake pkgconfig sdl
 .if ${PORTVERSION} < 4433
@@ -44,7 +44,7 @@ USE_CSTD=	gnu89
 .endif
 .if ${PORTVERSION} < 4108
 USE_SDL=	gfx
-.elif ${PORTVERSION} < 6639
+.elif ${PORTVERSION} < 6639 || ${PORTVERSION} >= 7119
 USE_SDL=	gfx2
 .else
 USE_SDL=	sdl2
@@ -101,6 +101,7 @@ post-patch:
 		's,malloc\.h,stdlib.h,'
 	@${REINPLACE_CMD} -e 's/^function \(.*\) {/\1() {/' \
 		-e '/^[[:space:]]*VERSION_.*=0000/d' \
+		-e '/.*read -r VERSION_/d' \
 		${WRKSRC}/version.sh
 
 do-configure:

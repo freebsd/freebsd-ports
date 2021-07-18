@@ -1,8 +1,7 @@
 # Created by: Sean Chittenden <seanc@FreeBSD.org>
 
 PORTNAME=	rubyinline
-PORTVERSION=	3.12.4
-PORTREVISION=	2
+PORTVERSION=	3.12.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 DISTNAME=	RubyInline-${PORTVERSION}
@@ -14,9 +13,10 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-zentest>=4.3:devel/rubygem-zentest
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem shebangfix
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 SHEBANG_FILES=	example2.rb \
 		tutorial/example1.rb \

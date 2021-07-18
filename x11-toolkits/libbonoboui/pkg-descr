@@ -1,7 +1,0 @@
-Bonobo is a set of language- and system-independant CORBA
-interfaces for creating reusable components and compound documents.
-
-libbonoboui includes a Gtk+-based implementation of the Bonobo
-interfaces.
-
-WWW: http://www.gnome.org/

@@ -1,6 +1,6 @@
 # Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-video-arachnoid
 DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-src-${PORTVERSION}${EXTRACT_SUFX}:plugin
 

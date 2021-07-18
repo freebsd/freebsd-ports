@@ -1,8 +1,7 @@
 # Created by: Joerg Wunsch <joerg@FreeBSD.org>
 
 PORTNAME=	libbfd
-PORTVERSION=	2.19.1
-PORTREVISION=	3
+PORTVERSION=	2.33.1
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 DISTNAME=	binutils-${PORTVERSION}
@@ -20,7 +19,7 @@ CONFLICTS=	mingw-binutils-[0-9]* binutils-[0-9]*
 
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}/bfd
 
-USES=		libtool tar:bzip2
+USES=		libtool tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-install-libbfd \
 		--disable-nls \

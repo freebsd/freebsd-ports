@@ -1,4 +1,4 @@
---- ui/gl/sync_control_vsync_provider.h.orig	2021-03-12 23:57:48 UTC
+--- ui/gl/sync_control_vsync_provider.h.orig	2021-04-14 18:41:39 UTC
 +++ ui/gl/sync_control_vsync_provider.h
 @@ -26,11 +26,11 @@ class SyncControlVSyncProvider : public gfx::VSyncProv
    bool SupportGetVSyncParametersIfAvailable() const override;

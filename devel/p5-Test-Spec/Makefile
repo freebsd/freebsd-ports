@@ -18,8 +18,9 @@ RUN_DEPENDS=	p5-Package-Stash>=0.23:devel/p5-Package-Stash \
 		p5-Test-Trap>=0:devel/p5-Test-Trap \
 		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

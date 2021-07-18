@@ -1,4 +1,4 @@
---- build/linux/chrome.map.orig	2021-03-12 23:57:15 UTC
+--- build/linux/chrome.map.orig	2021-04-14 18:40:48 UTC
 +++ build/linux/chrome.map
 @@ -1,4 +1,7 @@
  {

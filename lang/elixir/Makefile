@@ -2,7 +2,7 @@
 
 PORTNAME=	elixir
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.4
+DISTVERSION=	1.11.3
 CATEGORIES=	lang
 MASTER_SITES+=	https://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/:doc
 DISTFILES=	Docs.zip:doc

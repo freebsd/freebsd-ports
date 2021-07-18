@@ -1,0 +1,30 @@
+--- gtk2/candwin/Makefile.am.orig	2021-04-30 14:25:14 UTC
++++ gtk2/candwin/Makefile.am
+@@ -4,24 +4,21 @@ libexec_PROGRAMS = uim-candwin-gtk uim-candwin-tbl-gtk
+ uim_candwin_gtk_SOURCES  = gtk.c \
+ 			   ../immodule/caret-state-indicator.c \
+ 			   ../immodule/caret-state-indicator.h
+-uim_candwin_gtk_LDADD    = @GTK2_LIBS@ $(top_builddir)/uim/libuim-scm.la \
+-			   $(top_builddir)/uim/libuim.la
++uim_candwin_gtk_LDADD    = @GTK2_LIBS@ -luim-scm -luim
+ uim_candwin_gtk_CPPFLAGS = -I$(top_srcdir)
+ uim_candwin_gtk_CFLAGS   = @GTK2_CFLAGS@
+ 
+ uim_candwin_tbl_gtk_SOURCES  = tbl-gtk.c \
+ 			   ../immodule/caret-state-indicator.c \
+ 			   ../immodule/caret-state-indicator.h
+-uim_candwin_tbl_gtk_LDADD    = @GTK2_LIBS@ $(top_builddir)/uim/libuim-scm.la \
+-			   $(top_builddir)/uim/libuim.la
++uim_candwin_tbl_gtk_LDADD    = @GTK2_LIBS@ -luim-scm -luim
+ uim_candwin_tbl_gtk_CPPFLAGS = -I$(top_srcdir)
+ uim_candwin_tbl_gtk_CFLAGS   = @GTK2_CFLAGS@
+ 
+ uim_candwin_horizontal_gtk_SOURCES  = horizontal-gtk.c \
+ 			   ../immodule/caret-state-indicator.c \
+ 			   ../immodule/caret-state-indicator.h
+-uim_candwin_horizontal_gtk_LDADD    = @GTK2_LIBS@ $(top_builddir)/uim/libuim-scm.la \
+-			   $(top_builddir)/uim/libuim.la -lm
++uim_candwin_horizontal_gtk_LDADD    = @GTK2_LIBS@ -luim-scm -luim -lm
+ uim_candwin_horizontal_gtk_CPPFLAGS = -I$(top_srcdir)
+ uim_candwin_horizontal_gtk_CFLAGS   = @GTK2_CFLAGS@
+ endif

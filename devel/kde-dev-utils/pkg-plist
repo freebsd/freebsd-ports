@@ -12,6 +12,9 @@ share/icons/hicolor/scalable/apps/kuiviewer.svg
 share/kservices5/designerthumbnail.desktop
 share/kservices5/kuiviewer_part.desktop
 share/locale/ar/LC_MESSAGES/kuiviewer.mo
+share/locale/az/LC_MESSAGES/kpartloader.mo
+share/locale/az/LC_MESSAGES/kuiviewer.mo
+share/locale/be/LC_MESSAGES/kuiviewer.mo
 share/locale/bg/LC_MESSAGES/kuiviewer.mo
 share/locale/bs/LC_MESSAGES/kpartloader.mo
 share/locale/bs/LC_MESSAGES/kuiviewer.mo
@@ -85,12 +88,17 @@ share/locale/ro/LC_MESSAGES/kpartloader.mo
 share/locale/ro/LC_MESSAGES/kuiviewer.mo
 share/locale/ru/LC_MESSAGES/kpartloader.mo
 share/locale/ru/LC_MESSAGES/kuiviewer.mo
+share/locale/se/LC_MESSAGES/kuiviewer.mo
 share/locale/sk/LC_MESSAGES/kpartloader.mo
 share/locale/sk/LC_MESSAGES/kuiviewer.mo
 share/locale/sl/LC_MESSAGES/kpartloader.mo
 share/locale/sl/LC_MESSAGES/kuiviewer.mo
+share/locale/sq/LC_MESSAGES/kpartloader.mo
+share/locale/sq/LC_MESSAGES/kuiviewer.mo
 share/locale/sv/LC_MESSAGES/kpartloader.mo
 share/locale/sv/LC_MESSAGES/kuiviewer.mo
+share/locale/ta/LC_MESSAGES/kuiviewer.mo
+share/locale/tg/LC_MESSAGES/kuiviewer.mo
 share/locale/tr/LC_MESSAGES/kpartloader.mo
 share/locale/tr/LC_MESSAGES/kuiviewer.mo
 share/locale/ug/LC_MESSAGES/kpartloader.mo

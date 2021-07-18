@@ -1,5 +1,6 @@
 PORTNAME=	cvxopt
 DISTVERSION=	1.2.6
+PORTREVISION=	2
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
-		libumfpack.so:math/suitesparse
+		libumfpack.so:math/suitesparse-umfpack
 
 USES=		python:3.6+ localbase:ldflags
 USE_GITHUB=	yes

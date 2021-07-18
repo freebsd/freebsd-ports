@@ -2,7 +2,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.4.30
-PORTREVISION=	1
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 
@@ -125,6 +125,10 @@ MESON_ARGS+=	-Dpangocairo=enabled
 .else
 MESON_ARGS+=	-Dpangocairo=disabled
 PLIST_SUB+=	PANGOCAIRO="@comment "
+.endif
+
+.if defined(WITH_DEBUG)
+LDFLAGS+=	-lexecinfo
 .endif
 
 post-patch:

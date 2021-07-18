@@ -1,5 +1,5 @@
 PORTNAME=	unifont
-PORTVERSION=	13.0.05
+PORTVERSION=	13.0.06
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	GNU/unifont/unifont-${PORTVERSION}
@@ -8,7 +8,7 @@ DISTFILES=	${FONTFILES:S|$|-${PORTVERSION}${FONTSUFFIX}|}
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT?=	GNU Unicode font
+COMMENT=	GNU Unicode font
 
 LICENSE=	GPLv2+
 
@@ -20,8 +20,8 @@ NO_BUILD=	yes
 FONTSDIR=	${PREFIX}/share/fonts/gnu-unifont${PKGNAMESUFFIX}
 PLIST_FILES=	${FONTFILES:S|^|${FONTSDIR}/|:S|$|${FONTSUFFIX}|}
 
-FONTFILES?=	unifont
-FONTSUFFIX?=	.pcf.gz
+FONTFILES=	unifont
+FONTSUFFIX=	.pcf.gz
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}

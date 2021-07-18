@@ -9,7 +9,7 @@ COMMENT=	C/C++ arbitrary precision decimal floating point libraries
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

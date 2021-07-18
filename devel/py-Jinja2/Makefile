@@ -62,7 +62,7 @@ do-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	*
 post-build:
-.	if ${PYTHON_REL} >= 3000
+.	if ${PYTHON_REL} >= 30000
 	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/examples
 .	endif
 	${PYTHON_CMD} -m compileall ${WRKSRC}/examples ; \

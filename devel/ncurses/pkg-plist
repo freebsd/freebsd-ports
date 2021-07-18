@@ -270,6 +270,7 @@ libdata/pkgconfig/tinfo.pc
 %%MANPAGES%%man/man3/erasechar.3x.gz
 %%MANPAGES%%man/man3/erasechar_sp.3x.gz
 %%MANPAGES%%man/man3/erasewchar.3x.gz
+%%MANPAGES%%man/man3/erasewchar_sp.3x.gz
 %%MANPAGES%%man/man3/exit_curses.3x.gz
 %%MANPAGES%%man/man3/exit_terminfo.3x.gz
 %%MANPAGES%%man/man3/extended_color_content.3x.gz
@@ -463,6 +464,7 @@ libdata/pkgconfig/tinfo.pc
 %%MANPAGES%%man/man3/killchar.3x.gz
 %%MANPAGES%%man/man3/killchar_sp.3x.gz
 %%MANPAGES%%man/man3/killwchar.3x.gz
+%%MANPAGES%%man/man3/killwchar_sp.3x.gz
 %%MANPAGES%%man/man3/leaveok.3x.gz
 %%MANPAGES%%man/man3/legacy_coding.3x.gz
 %%MANPAGES%%man/man3/link_field.3x.gz

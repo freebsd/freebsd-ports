@@ -2,11 +2,13 @@
 
 PORTNAME=	jfsw
 PORTVERSION=	20210130
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Jonathon Fowler's Shadow Warrior Port
 
+# Must be distributed only through the Internet and free of charge
 LICENSE=	GPLv2 BuildLic
 LICENSE_COMB=	multi
 LICENSE_NAME_BuildLic=	Build source code license
@@ -35,8 +37,6 @@ GH_TAGNAME=	c434002 \
 		0b82be9:audio \
 		1149eb1:mact
 GH_SUBDIR=	jfbuild:build jfaudiolib:audio jfmact:mact
-
-NO_CDROM=	Must be distributed only through the Internet and free of charge
 
 MAKE_ENV+=	DATADIR="${DATADIR}"
 

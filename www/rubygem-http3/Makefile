@@ -2,6 +2,7 @@
 
 PORTNAME=	http
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	3
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-addressable>=2.3<3:www/rubygem-addressable \
 		rubygem-http-cookie>=1.0<2:www/rubygem-http-cookie \
 		rubygem-http-form_data>=2.0<3:www/rubygem-http-form_data \
-		rubygem-http_parser.rb>=0.6.0<0.7:net/rubygem-http_parser.rb
+		rubygem-http_parser.rb>=0.6.0<1:net/rubygem-http_parser.rb
 
 USES=		gem
 USE_RUBY=	yes

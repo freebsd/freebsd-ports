@@ -1,24 +1,23 @@
 # Created by: Alan Eldridge <alane@FreeBSD.org>
 
 PORTNAME=	firefox
-DISTVERSION=	87.0
-PORTREVISION=	3
+DISTVERSION=	90.0.1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build3/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
 DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.26:devel/nspr \
-		nss>=3.62:security/nss \
+		nss>=3.64:security/nss \
 		icu>=67.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=2.7.4:print/harfbuzz \
+		harfbuzz>=2.8.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
-		png>=1.6.35:graphics/png \
+		png>=1.6.37:graphics/png \
 		libvpx>=1.8.2:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \

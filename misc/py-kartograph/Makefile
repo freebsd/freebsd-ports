@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Shapely>=1.0.14:devel/py-shapely@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tinycss>0:textproc/py-tinycss@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python:3.7+
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}.py
 USE_PYTHON=	distutils concurrent autoplist

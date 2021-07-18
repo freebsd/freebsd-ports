@@ -1,0 +1,10 @@
+#!/bin/sh -ex
+
+# This script replaces setup.sh, which is designed to download GO binaries
+# and dependencies and hence does not fit into a package manager build.
+
+platform=`uname -s`
+export HOME=$(pwd)
+go build -o xtract."$platform" xtract.go
+go build -o transmute."$platform" transmute.go
+go build -o rchive."$platform" rchive.go

@@ -6,6 +6,7 @@ lib/cmake/Snappy/SnappyConfig.cmake
 lib/cmake/Snappy/SnappyConfigVersion.cmake
 lib/cmake/Snappy/SnappyTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Snappy/SnappyTargets.cmake
+lib/libsnappy.a
 lib/libsnappy.so
 lib/libsnappy.so.1
 lib/libsnappy.so.%%PORTVERSION%%

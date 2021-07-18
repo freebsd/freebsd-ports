@@ -1,6 +1,6 @@
---- media/capture/video/file_video_capture_device_factory.cc.orig	2021-03-12 23:57:26 UTC
+--- media/capture/video/file_video_capture_device_factory.cc.orig	2021-04-14 18:41:05 UTC
 +++ media/capture/video/file_video_capture_device_factory.cc
-@@ -52,7 +52,7 @@ void FileVideoCaptureDeviceFactory::GetDevicesInfo(
+@@ -53,7 +53,7 @@ void FileVideoCaptureDeviceFactory::GetDevicesInfo(
        VideoCaptureApi::WIN_DIRECT_SHOW;
  #elif defined(OS_MAC)
        VideoCaptureApi::MACOSX_AVFOUNDATION;

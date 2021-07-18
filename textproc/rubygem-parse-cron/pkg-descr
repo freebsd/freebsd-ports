@@ -1,0 +1,4 @@
+The goal of Parse-Cron is to parse a crontab timing specification and determine
+when the job should be run. It is not a scheduler, it does not run the jobs.
+
+WWW: https://github.com/siebertm/parse-cron

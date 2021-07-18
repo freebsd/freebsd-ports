@@ -538,7 +538,7 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/defaults/mail_tt2/which.tt2
 %%DATADIR%%/defaults/mail_tt2/x509-user-cert-missing.tt2
 %%DATADIR%%/defaults/mail_tt2/your_infected_msg.tt2
-%%DATADIR%%/defaults/mhonarc-ressources.tt2
+%%DATADIR%%/defaults/mhonarc_rc.tt2
 %%DATADIR%%/defaults/mime.types
 %%DATADIR%%/defaults/nrcpt_by_domain.conf
 %%DATADIR%%/defaults/scenari/add.auth
@@ -680,7 +680,7 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/defaults/web_tt2/arcsearch_form.tt2
 %%DATADIR%%/defaults/web_tt2/aside_menu.tt2
 %%DATADIR%%/defaults/web_tt2/authorization_reject.tt2
-%%DATADIR%%/defaults/web_tt2/blacklist.tt2
+%%DATADIR%%/defaults/web_tt2/blocklist.tt2
 %%DATADIR%%/defaults/web_tt2/button_footer.tt2
 %%DATADIR%%/defaults/web_tt2/button_header.tt2
 %%DATADIR%%/defaults/web_tt2/ca.tt2

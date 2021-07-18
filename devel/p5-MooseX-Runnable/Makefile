@@ -26,8 +26,9 @@ RUN_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-TableDriven>=0:devel/p5-Test-TableDriven
 
-NO_ARCH=	yes
-USE_PERL5=	modbuildtiny
 USES=		perl5
+USE_PERL5=	modbuildtiny
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

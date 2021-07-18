@@ -1,7 +1,7 @@
 # Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
 
 PORTNAME=	pint
-PORTVERSION=	0.16.1
+PORTVERSION=	0.17
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,11 +25,11 @@ SHEBANG_FILES=	pint/pint-convert
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3700
+.if ${PYTHON_REL} < 30700
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=0:devel/py-importlib-resources@${PY_FLAVOR}
 .endif
 
-.if ${PYTHON_REL} < 3800
+.if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
 

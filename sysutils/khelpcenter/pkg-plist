@@ -40,6 +40,7 @@ share/kservices5/khelpcenter.desktop
 share/kxmlgui5/khelpcenter/khelpcenterui.rc
 share/locale/ar/LC_MESSAGES/khelpcenter5.mo
 share/locale/ast/LC_MESSAGES/khelpcenter5.mo
+share/locale/be/LC_MESSAGES/khelpcenter5.mo
 share/locale/bg/LC_MESSAGES/khelpcenter5.mo
 share/locale/bs/LC_MESSAGES/khelpcenter5.mo
 share/locale/ca/LC_MESSAGES/khelpcenter5.mo
@@ -84,13 +85,18 @@ share/locale/pt/LC_MESSAGES/khelpcenter5.mo
 share/locale/pt_BR/LC_MESSAGES/khelpcenter5.mo
 share/locale/ro/LC_MESSAGES/khelpcenter5.mo
 share/locale/ru/LC_MESSAGES/khelpcenter5.mo
+share/locale/se/LC_MESSAGES/khelpcenter5.mo
 share/locale/sk/LC_MESSAGES/khelpcenter5.mo
 share/locale/sl/LC_MESSAGES/khelpcenter5.mo
+share/locale/sq/LC_MESSAGES/khelpcenter5.mo
 share/locale/sr/LC_MESSAGES/khelpcenter5.mo
 share/locale/sv/LC_MESSAGES/khelpcenter5.mo
+share/locale/ta/LC_MESSAGES/khelpcenter5.mo
+share/locale/tg/LC_MESSAGES/khelpcenter5.mo
 share/locale/tr/LC_MESSAGES/khelpcenter5.mo
 share/locale/ug/LC_MESSAGES/khelpcenter5.mo
 share/locale/uk/LC_MESSAGES/khelpcenter5.mo
+share/locale/vi/LC_MESSAGES/khelpcenter5.mo
 share/locale/wa/LC_MESSAGES/khelpcenter5.mo
 share/locale/zh_CN/LC_MESSAGES/khelpcenter5.mo
 share/locale/zh_TW/LC_MESSAGES/khelpcenter5.mo

@@ -2,6 +2,8 @@
 @group www
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
+%%WWWDIR%%/SECURITY.md
+%%WWWDIR%%/SUPPORT.md
 %%WWWDIR%%/contributing.md
 %%WWWDIR%%/index.php
 %%WWWDIR%%/themes/basic/404.php
@@ -1023,9 +1025,14 @@
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/help/pl.html.js
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/help/ru.html.js
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/help/sk.html.js
+%%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/help/tr.html.js
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/proxy/elFinderSupportVer1.js
+%%WWWDIR%%/zp-core/zp-extensions/elFinder/js/worker/calcfilehash.js
+%%WWWDIR%%/zp-core/zp-extensions/elFinder/js/worker/quicklook.tiff.js
+%%WWWDIR%%/zp-core/zp-extensions/elFinder/js/worker/quicklook.unzip.js
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/php/MySQLStorage.sql
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/php/autoload.php
+%%WWWDIR%%/zp-core/zp-extensions/elFinder/php/connector.maximal.php-dist
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/php/connector.minimal.php-dist
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/php/connector_zp.php
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/php/editors/OnlineConvert/editor.php
@@ -1063,7 +1070,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/email-newuser.php
 %%WWWDIR%%/zp-core/zp-extensions/exampleMacros.php
 %%WWWDIR%%/zp-core/zp-extensions/favoritesHandler.php
-%%WWWDIR%%/zp-core/zp-extensions/favoritesHandler/favoritesClass.php
+%%WWWDIR%%/zp-core/zp-extensions/favoritesHandler/class-favorites.php
 %%WWWDIR%%/zp-core/zp-extensions/flag_thumbnail.php
 %%WWWDIR%%/zp-core/zp-extensions/flag_thumbnail/GPS.png
 %%WWWDIR%%/zp-core/zp-extensions/flag_thumbnail/action.png
@@ -1110,6 +1117,10 @@
 %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/zenphotolight/jplayer.zenphoto.png
 %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/zenphotolight/jplayer.zenphoto.seeking.gif
 %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/zenphotolight/jplayer.zenphotolight.css
+%%WWWDIR%%/zp-core/zp-extensions/lazyload.php
+%%WWWDIR%%/zp-core/zp-extensions/lazyload/lazysizes.min.js
+%%WWWDIR%%/zp-core/zp-extensions/lazyload/ls.native-loading.min.js
+%%WWWDIR%%/zp-core/zp-extensions/lazyload/ls.unveilhooks.min.js
 %%WWWDIR%%/zp-core/zp-extensions/macroList.php
 %%WWWDIR%%/zp-core/zp-extensions/macroList/macroList_tab.php
 %%WWWDIR%%/zp-core/zp-extensions/markRelease.php
@@ -1143,6 +1154,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/openstreetmap/leaflet-providers.js
 %%WWWDIR%%/zp-core/zp-extensions/openstreetmap/leaflet.css
 %%WWWDIR%%/zp-core/zp-extensions/openstreetmap/leaflet.js
+%%WWWDIR%%/zp-core/zp-extensions/openstreetmap/leaflet.js.map
 %%WWWDIR%%/zp-core/zp-extensions/openstreetmap/leaflet.markercluster.js
 %%WWWDIR%%/zp-core/zp-extensions/openstreetmap/leaflet.markercluster.js.map
 %%WWWDIR%%/zp-core/zp-extensions/openstreetmap/openstreetmap.css
@@ -1368,7 +1380,9 @@
 %%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/img/object.gif
 %%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/img/trans.gif
 %%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/skin.min.css
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/skin.min.css.map
 %%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/skin.mobile.min.css
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/lightgray/skin.mobile.min.css.map
 %%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/content.inline.min.css
 %%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/content.min.css
 %%WWWDIR%%/zp-core/zp-extensions/tinymce4/skins/tundora/fonts/icomoon-small.eot

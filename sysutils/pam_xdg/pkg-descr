@@ -1,0 +1,5 @@
+Complete XDG Base Directories support via PAM, including injection of
+according environment variables into user sessions, as well as creation
+support for per-user $XDG_RUNTIME_DIR.
+
+WWW: https://www.sdaoden.eu/code.html#s-toolbox

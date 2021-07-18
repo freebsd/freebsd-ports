@@ -2,5 +2,13 @@ bin/uim-chardict-qt5
 bin/uim-im-switcher-qt5
 bin/uim-pref-qt5
 bin/uim-toolbar-qt5
+%%QT_QMLDIR%%/com/github/uim/libuim-qtquick-plugin.so
+%%QT_QMLDIR%%/com/github/uim/qmldir
 %%QT_PLUGINDIR%%/platforminputcontexts/libuimplatforminputcontextplugin.so
 libexec/uim-candwin-qt5
+share/kservices5/plasma-applet-com.github.uim.status.desktop
+share/metainfo/com.github.uim.status.appdata.xml
+share/plasma/plasmoids/com.github.uim.status/contents/ui/main.qml
+share/plasma/plasmoids/com.github.uim.status/contents/ui/messageProcessor.js
+share/plasma/plasmoids/com.github.uim.status/metadata.desktop
+share/plasma/plasmoids/com.github.uim.status/metadata.json

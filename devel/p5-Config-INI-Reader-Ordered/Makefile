@@ -1,7 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 
 PORTNAME=	Config-INI-Reader-Ordered
-PORTVERSION=	0.020
+PORTVERSION=	0.021
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Config-INI>=0:devel/p5-Config-INI
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -10,9 +10,9 @@ COMMENT=	Collapse Python packages into a single module
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-
 USES=		python:3.4+
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

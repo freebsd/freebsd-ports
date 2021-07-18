@@ -1,8 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	chafa
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://hpjansson.org/chafa/releases/ \
 		https://github.com/hpjansson/chafa/releases/download/${PORTVERSION}/

@@ -2,7 +2,8 @@
 
 PORTNAME=	google-perftools
 DISTVERSIONPREFIX=	gperftools-
-DISTVERSION=	2.8.1
+DISTVERSION=	2.9.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/gperftools/gperftools/releases/download/gperftools-${PORTVERSION}/
 DISTNAME=	gperftools-${PORTVERSION}
@@ -59,7 +60,7 @@ CONFIGURE_ARGS+=--enable-frame-pointers
 .endif
 
 # keep in sync with all platforms where libunwind is available
-.if (${ARCH} == amd64 || ${ARCH} == i386)
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 

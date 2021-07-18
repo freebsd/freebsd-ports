@@ -14,15 +14,16 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-Without-Module>=0:devel/p5-Test-Without-Module
 
+USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	CLONE CLONE_PP STORABLE
 OPTIONS_DEFAULT=CLONE
 CLONE_DESC=	Use Clone
 CLONE_PP_DESC=	Use Clone::PP
 STORABLE_DESC=	Use Storable
-
-NO_ARCH=	yes
-USE_PERL5=	configure
-USES=		perl5
 
 CLONE_BUILD_DEPENDS=	p5-Clone>=0.10:devel/p5-Clone
 CLONE_RUN_DEPENDS=	p5-Clone>=0.10:devel/p5-Clone

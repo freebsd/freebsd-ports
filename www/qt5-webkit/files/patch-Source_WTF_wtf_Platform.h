@@ -31,16 +31,17 @@ Add proper architecture name:
  #endif
  
  /* CPU(PPC) - PowerPC 32-bit */
-@@ -135,6 +140,8 @@
+@@ -135,6 +141,9 @@
      && (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
  #define WTF_CPU_PPC 1
  #define WTF_CPU_BIG_ENDIAN 1
 +#define ENABLE_JIT 0
 +#define ENABLE_SAMPLING_PROFILER 0
++#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_8 1
  #endif
  
  /* CPU(SH4) - SuperH SH-4 */
-@@ -226,6 +233,7 @@
+@@ -227,6 +234,7 @@
  #elif defined(__ARM_ARCH_6__) \
      || defined(__ARM_ARCH_6J__) \
      || defined(__ARM_ARCH_6K__) \

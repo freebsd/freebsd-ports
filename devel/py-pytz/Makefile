@@ -1,7 +1,7 @@
 # Created by: Khairil Yusof <kaeru@inigo-tech.com>
 
 PORTNAME=	pytz
-PORTVERSION=	2020.5
+PORTVERSION=	2021.1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP

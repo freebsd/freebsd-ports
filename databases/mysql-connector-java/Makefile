@@ -1,7 +1,7 @@
 # Created by: Matthew Seaman
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	8.0.23
+PORTVERSION=	8.0.25
 CATEGORIES=	databases java
 MASTER_SITES=	MYSQL/Connector-J
 

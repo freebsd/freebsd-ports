@@ -1,6 +1,5 @@
 bin/nestopia
 share/applications/nestopia.desktop
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/readme.html

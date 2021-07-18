@@ -1,4 +1,4 @@
---- chrome/browser/policy/browser_signin_policy_handler.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/policy/browser_signin_policy_handler.cc.orig	2021-04-14 18:40:54 UTC
 +++ chrome/browser/policy/browser_signin_policy_handler.cc
 @@ -52,7 +52,7 @@ void BrowserSigninPolicyHandler::ApplyPolicySettings(c
      }

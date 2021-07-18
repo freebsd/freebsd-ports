@@ -1,7 +1,7 @@
 # Created by: luigi@FreeBSD.org
 
 PORTNAME=	fio
-PORTVERSION=	3.26
+PORTVERSION=	3.27
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://brick.kernel.dk/snaps/
 
@@ -11,12 +11,12 @@ COMMENT=	Flexible IO tester
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-HAS_CONFIGURE=	yes
 USES=		compiler:c11 gmake tar:bzip2
 
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-native
 
-OPTIONS_DEFINE=	GNUPLOT EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES GNUPLOT
 GNUPLOT_DESC=	Support for plotting graphs
 
 GNUPLOT_BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:math/gnuplot

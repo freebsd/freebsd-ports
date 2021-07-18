@@ -1,3 +1,9 @@
+include/vk_video/vulkan_video_codec_h264std.h
+include/vk_video/vulkan_video_codec_h264std_decode.h
+include/vk_video/vulkan_video_codec_h264std_encode.h
+include/vk_video/vulkan_video_codec_h265std.h
+include/vk_video/vulkan_video_codec_h265std_decode.h
+include/vk_video/vulkan_video_codecs_common.h
 include/vulkan/vk_icd.h
 include/vulkan/vk_layer.h
 include/vulkan/vk_platform.h
@@ -8,12 +14,17 @@ include/vulkan/vulkan_android.h
 include/vulkan/vulkan_beta.h
 include/vulkan/vulkan_core.h
 include/vulkan/vulkan_directfb.h
+include/vulkan/vulkan_enums.hpp
 include/vulkan/vulkan_fuchsia.h
+include/vulkan/vulkan_funcs.hpp
 include/vulkan/vulkan_ggp.h
+include/vulkan/vulkan_handles.hpp
 include/vulkan/vulkan_ios.h
 include/vulkan/vulkan_macos.h
 include/vulkan/vulkan_metal.h
+include/vulkan/vulkan_raii.hpp
 include/vulkan/vulkan_screen.h
+include/vulkan/vulkan_structs.hpp
 include/vulkan/vulkan_vi.h
 include/vulkan/vulkan_wayland.h
 include/vulkan/vulkan_win32.h

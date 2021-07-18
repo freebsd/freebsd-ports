@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}h5py>=0:science/py-h5py@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_GITHUB=	yes
 GH_ACCOUNT=	keras-team
 USE_PYTHON=	autoplist distutils

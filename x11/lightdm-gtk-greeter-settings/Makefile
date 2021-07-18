@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Settings editor for LightDM GTK+ Greeter
 
 LICENSE=	GPLv3

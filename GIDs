@@ -229,16 +229,16 @@ rancid:*:286:
 webdis:*:287:
 ntopng:*:288:
 victoria-metrics:*:289:
-# free: 290
-# free: 291
-# free: 292
+_gmid:*:290:
+pydio:*:291:
+sftpgo:*:292:
 # free: 293
 # free: 294
 # free: 295
 # free: 296
 # free: 297
 # free: 298
-# free: 299
+owncast:*:299:
 backuppc:*:300:
 # free: 301
 netdata:*:302:
@@ -296,7 +296,7 @@ _iodined:*:353:
 jackett:*:354:
 nzbhydra2:*:355:
 lidarr:*:356:
-# free: 357
+bazarr:*:357:
 # free: 358
 # free: 359
 v2ray:*:360:
@@ -817,7 +817,7 @@ bitmark-recorder:*:873:
 librespeed:*:874:
 # free: 875
 # free: 876
-# free: 877
+gemserv:*:877:
 gerbera:*:878:
 _encrypted-dns:*:879:
 pyspf-milter:*:880:

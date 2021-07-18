@@ -1,7 +1,7 @@
 # Created by: Mathieu Arnold
 
 PORTNAME=	DateTime-Format-Strptime
-PORTVERSION=	1.78
+PORTVERSION=	1.79
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN

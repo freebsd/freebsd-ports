@@ -1,8 +1,8 @@
---- build/config/linux/BUILD.gn.orig	2020-05-13 18:39:36 UTC
+--- build/config/linux/BUILD.gn.orig	2021-05-01 21:15:31 UTC
 +++ build/config/linux/BUILD.gn
 @@ -30,7 +30,7 @@ config("runtime_library") {
  
-   if ((!(is_chromeos || chromeos_is_browser_only) ||
+   if ((!(is_chromeos_ash || is_chromeos_lacros) ||
         default_toolchain != "//build/toolchain/cros:target") &&
 -      (!use_custom_libcxx || current_cpu == "mipsel")) {
 +      (!use_custom_libcxx || current_cpu == "mipsel") && !is_bsd) {

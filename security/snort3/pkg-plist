@@ -14,6 +14,7 @@ bin/u2spewfoo
 %%ETCDIR%%/talos.lua
 include/snort/actions/actions.h
 include/snort/codecs/codec_module.h
+include/snort/control/control.h
 include/snort/daqs/daq_user.h
 include/snort/decompress/file_decomp.h
 include/snort/detection/detect.h
@@ -99,7 +100,6 @@ include/snort/log/unified2.h
 include/snort/lua/snort_plugin.lua
 include/snort/main/analyzer_command.h
 include/snort/main/policy.h
-include/snort/main/request.h
 include/snort/main/snort.h
 include/snort/main/snort_config.h
 include/snort/main/snort_debug.h
@@ -120,6 +120,7 @@ include/snort/mime/file_mime_paf.h
 include/snort/mime/file_mime_process.h
 include/snort/network_inspectors/appid/appid_api.h
 include/snort/network_inspectors/appid/appid_app_descriptor.h
+include/snort/network_inspectors/appid/appid_debug.h
 include/snort/network_inspectors/appid/appid_dns_session.h
 include/snort/network_inspectors/appid/appid_http_session.h
 include/snort/network_inspectors/appid/appid_session_api.h
@@ -131,6 +132,7 @@ include/snort/network_inspectors/appid/tp_appid_types.h
 include/snort/network_inspectors/packet_tracer/packet_tracer.h
 include/snort/network_inspectors/reputation/reputation_common.h
 include/snort/network_inspectors/rna/rna_fingerprint.h
+include/snort/network_inspectors/rna/rna_fingerprint_smb.h
 include/snort/network_inspectors/rna/rna_fingerprint_tcp.h
 include/snort/network_inspectors/rna/rna_fingerprint_udp.h
 include/snort/network_inspectors/rna/rna_fingerprint_ua.h
@@ -155,6 +157,7 @@ include/snort/protocols/cdp.h
 include/snort/protocols/cisco_meta_data.h
 include/snort/protocols/eapol.h
 include/snort/protocols/eth.h
+include/snort/protocols/geneve.h
 include/snort/protocols/gre.h
 include/snort/protocols/icmp4.h
 include/snort/protocols/icmp6.h
@@ -176,6 +179,7 @@ include/snort/protocols/token_ring.h
 include/snort/protocols/udp.h
 include/snort/protocols/vlan.h
 include/snort/protocols/wlan.h
+include/snort/pub_sub/appid_debug_log_event.h
 include/snort/pub_sub/appid_events.h
 include/snort/pub_sub/cip_events.h
 include/snort/pub_sub/daq_message_event.h
@@ -185,10 +189,13 @@ include/snort/pub_sub/dhcp_events.h
 include/snort/pub_sub/expect_events.h
 include/snort/pub_sub/finalize_packet_event.h
 include/snort/pub_sub/http_events.h
+include/snort/pub_sub/http_request_body_event.h
 include/snort/pub_sub/opportunistic_tls_event.h
 include/snort/pub_sub/sip_events.h
+include/snort/pub_sub/smb_events.h
 include/snort/search_engines/search_common.h
 include/snort/search_engines/search_tool.h
+include/snort/service_inspectors/ssl/ssl_flow_data.h
 include/snort/sfip/sf_cidr.h
 include/snort/sfip/sf_ip.h
 include/snort/sfip/sf_returns.h
@@ -198,6 +205,7 @@ include/snort/stream/stream_splitter.h
 include/snort/target_based/snort_protocols.h
 include/snort/time/clock_defs.h
 include/snort/time/packet_time.h
+include/snort/time/periodic.h
 include/snort/time/stopwatch.h
 include/snort/trace/trace.h
 include/snort/trace/trace_api.h
@@ -217,7 +225,6 @@ include/snort/utils/sflsq.h
 include/snort/utils/stats.h
 include/snort/utils/util.h
 include/snort/utils/util_cstring.h
-include/snort/utils/util_jsnorm.h
 include/snort/utils/util_unfold.h
 include/snort/utils/util_utf.h
 lib/snort/daqs/daq_file.so
@@ -250,6 +257,7 @@ libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/high_availability.txt
 %%PORTDOCS%%%%DOCSDIR%%/http_inspect.txt
 %%PORTDOCS%%%%DOCSDIR%%/http2_inspect.txt
+%%PORTDOCS%%%%DOCSDIR%%/iec104.txt
 %%PORTDOCS%%%%DOCSDIR%%/overview.txt
 %%PORTDOCS%%%%DOCSDIR%%/params.txt
 %%PORTDOCS%%%%DOCSDIR%%/perf_monitor.txt

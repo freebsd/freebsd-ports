@@ -1,7 +1,7 @@
 # Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
 
 PORTNAME=	pry
-PORTVERSION=	0.14.0
+PORTVERSION=	0.14.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

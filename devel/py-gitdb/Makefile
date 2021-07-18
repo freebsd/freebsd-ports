@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	gitdb
-PORTVERSION=	4.0.5
+PORTVERSION=	4.0.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Git Object Database
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}smmap>=3.0.1:devel/py-smmap@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}smmap>=3.0.1<5:devel/py-smmap@${PY_FLAVOR}
 
 USES=		python:3.4+
 USE_PYTHON=	autoplist concurrent distutils

@@ -48,6 +48,7 @@
     SUBDIR += aylet
     SUBDIR += bambootracker
     SUBDIR += bamp-lv2
+    SUBDIR += bangr-lv2
     SUBDIR += baresip
     SUBDIR += baudline
     SUBDIR += bcg729
@@ -58,11 +59,12 @@
     SUBDIR += bjumblr-lv2
     SUBDIR += bliss
     SUBDIR += blop
+    SUBDIR += boca
     SUBDIR += boops-lv2
     SUBDIR += bristol
+    SUBDIR += bschaffl-lv2
     SUBDIR += bsequencer-lv2
     SUBDIR += bshapr-lv2
-    SUBDIR += bschaffl-lv2
     SUBDIR += bslizr-lv2
     SUBDIR += cadence
     SUBDIR += calf-lv2
@@ -114,6 +116,7 @@
     SUBDIR += denemo
     SUBDIR += din
     SUBDIR += discid
+    SUBDIR += dmidiplayer
     SUBDIR += dpf-plugins-lv2
     SUBDIR += dragonfly-reverb-lv2
     SUBDIR += drumgizmo
@@ -128,6 +131,7 @@
     SUBDIR += easytag
     SUBDIR += eawpats
     SUBDIR += eawplus
+    SUBDIR += ebumeter
     SUBDIR += ecasound
     SUBDIR += elisa
     SUBDIR += emms
@@ -199,6 +203,7 @@
     SUBDIR += fpc-modplug
     SUBDIR += fpc-oggvorbis
     SUBDIR += fpc-openal
+    SUBDIR += freac
     SUBDIR += freealut
     SUBDIR += freedesktop-sound-theme
     SUBDIR += freepats
@@ -290,7 +295,6 @@
     SUBDIR += gula-plugins-lv2
     SUBDIR += guspat
     SUBDIR += gvolwheel
-    SUBDIR += gxmms2
     SUBDIR += gxplugins-lv2
     SUBDIR += harp
     SUBDIR += headsetcontrol
@@ -324,7 +328,9 @@
     SUBDIR += jalv
     SUBDIR += jalv-select
     SUBDIR += jamulus
+    SUBDIR += jconvolver
     SUBDIR += jid3lib
+    SUBDIR += jmatconvol
     SUBDIR += juk
     SUBDIR += juke
     SUBDIR += julius
@@ -374,6 +380,7 @@
     SUBDIR += libinstpatch
     SUBDIR += libkcddb
     SUBDIR += libkcompactdisc
+    SUBDIR += libkeyfinder
     SUBDIR += liblastfm-qt5
     SUBDIR += liblo
     SUBDIR += liblscp
@@ -450,7 +457,6 @@
     SUBDIR += lv2lint
     SUBDIR += lv2proc
     SUBDIR += lvtk
-    SUBDIR += lxmusic
     SUBDIR += mac
     SUBDIR += madfufw
     SUBDIR += madplay
@@ -476,6 +482,7 @@
     SUBDIR += mixer.app
     SUBDIR += mixertui
     SUBDIR += mixxx
+    SUBDIR += mixxx22
     SUBDIR += mkcue
     SUBDIR += moc
     SUBDIR += modplug-tools
@@ -537,6 +544,7 @@
     SUBDIR += normalize
     SUBDIR += nosefart
     SUBDIR += noson-app
+    SUBDIR += nyquist
     SUBDIR += oaml
     SUBDIR += ocp
     SUBDIR += ogg2mp3
@@ -592,6 +600,7 @@
     SUBDIR += pacpl
     SUBDIR += padthv1-lv2
     SUBDIR += paman
+    SUBDIR += pamixer
     SUBDIR += paprefs
     SUBDIR += pavucontrol
     SUBDIR += pavucontrol-qt
@@ -618,10 +627,12 @@
     SUBDIR += poly-lv2
     SUBDIR += polyphone
     SUBDIR += portaudio
+    SUBDIR += portmidi
     SUBDIR += praat
     SUBDIR += pragha
     SUBDIR += prelude-lv2
     SUBDIR += protracker
+    SUBDIR += psindustrializer
     SUBDIR += pulseaudio
     SUBDIR += pulseaudio-module-sndio
     SUBDIR += pulseaudio-module-xrdp
@@ -662,9 +673,11 @@
     SUBDIR += qjackctl
     SUBDIR += qmidiarp
     SUBDIR += qmidictl
+    SUBDIR += qmidinet
     SUBDIR += qsampler
     SUBDIR += qsynth
     SUBDIR += quimup
+    SUBDIR += qxgedit
     SUBDIR += raul
     SUBDIR += rawrec
     SUBDIR += re
@@ -677,7 +690,6 @@
     SUBDIR += rhvoice-dictionary
     SUBDIR += rhythmbox
     SUBDIR += rioutil
-    SUBDIR += ripit
     SUBDIR += ripperx
     SUBDIR += rkr-lv2
     SUBDIR += rnnoise
@@ -727,9 +739,11 @@
     SUBDIR += soundgrab
     SUBDIR += soundkonverter
     SUBDIR += soundtouch
+    SUBDIR += soundtracker
     SUBDIR += sox
     SUBDIR += spc2it
     SUBDIR += spectacle-lv2
+    SUBDIR += spectmorph
     SUBDIR += spectrogram
     SUBDIR += speech-denoiser-lv2
     SUBDIR += speex
@@ -777,6 +791,7 @@
     SUBDIR += tcd
     SUBDIR += teamspeak3-server
     SUBDIR += tempest_for_eliza
+    SUBDIR += tetraproc
     SUBDIR += thunar-media-tags-plugin
     SUBDIR += tiatracker
     SUBDIR += timely-lv2
@@ -803,10 +818,12 @@
     SUBDIR += umodplayer
     SUBDIR += umurmur
     SUBDIR += vamp-plugin-sdk
+    SUBDIR += vban
     SUBDIR += vgmplay
     SUBDIR += vimpc
     SUBDIR += virtual_oss
     SUBDIR += virtual_oss_ctl
+    SUBDIR += visp-go
     SUBDIR += vitunes
     SUBDIR += vm-lv2
     SUBDIR += vmpk
@@ -823,6 +840,7 @@
     SUBDIR += wavbreaker
     SUBDIR += wavegain
     SUBDIR += waveplay
+    SUBDIR += wavetral
     SUBDIR += wavpack
     SUBDIR += wavplay
     SUBDIR += webrtc-audio-processing
@@ -833,6 +851,7 @@
     SUBDIR += wmix
     SUBDIR += wmmp
     SUBDIR += wmsmixer
+    SUBDIR += wolf-shaper-lv2
     SUBDIR += wxguitar
     SUBDIR += x42-plugins-lv2
     SUBDIR += xanalyser
@@ -846,7 +865,6 @@
     SUBDIR += xmix
     SUBDIR += xmixer
     SUBDIR += xmmix
-    SUBDIR += xmms2
     SUBDIR += xmp
     SUBDIR += xmradio
     SUBDIR += xoscope
@@ -856,8 +874,15 @@
     SUBDIR += ympd
     SUBDIR += yoshimi
     SUBDIR += zam-plugins-lv2
+    SUBDIR += zita-alsa-pcmi
+    SUBDIR += zita-at1
+    SUBDIR += zita-bls1
     SUBDIR += zita-convolver
+    SUBDIR += zita-dpl1
+    SUBDIR += zita-mu1
+    SUBDIR += zita-njbridge
     SUBDIR += zita-resampler
+    SUBDIR += zita-rev1
     SUBDIR += zrythm
     SUBDIR += zynaddsubfx
 

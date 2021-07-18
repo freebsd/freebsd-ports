@@ -1,7 +1,7 @@
 # Created by: Marcel Kaiser <mk@nic-nac-project.org>
 
 PORTNAME=	dsbmd
-PORTVERSION=	1.11.3
+PORTVERSION=	1.11.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	mk@nic-nac-project.org
@@ -17,8 +17,6 @@ USE_RC_SUBR=	dsbmd
 USE_GITHUB=	yes
 GH_ACCOUNT=	mrclksr
 GH_PROJECT=	DSBMD
-
-QMAKE_ARGS=	PORTS=1
 
 PLIST_FILES=	"@sample etc/dsbmd.conf.sample" \
 		libexec/dsbmd

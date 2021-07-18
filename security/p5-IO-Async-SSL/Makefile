@@ -21,8 +21,9 @@ TEST_DEPENDS=	p5-Test-Identity>=0:devel/p5-Test-Identity \
 		p5-Test-Pod>=1:devel/p5-Test-Pod \
 		socat:net/socat
 
-NO_ARCH=	yes
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

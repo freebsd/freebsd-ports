@@ -18,7 +18,9 @@ RUN_DEPENDS=	p5-Hash-AutoHash>=1.17:devel/p5-Hash-AutoHash
 TEST_DEPENDS=	p5-Test-Deep>=0.110:devel/p5-Test-Deep \
 		p5-Test-Pod>=1.48:devel/p5-Test-Pod
 
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

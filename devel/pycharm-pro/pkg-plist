@@ -2355,8 +2355,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2and3/zipfile.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2and3/zipimport.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2and3/zlib.pyi
-%%DATADIR%%/plugins/python/helpers/typeshed/stdlib/%%PYTHON_VER%%/_py_abc.pyi
-%%DATADIR%%/plugins/python/helpers/typeshed/stdlib/%%PYTHON_VER%%/contextvars.pyi
+%%DATADIR%%/plugins/python/helpers/typeshed/stdlib/3.7/_py_abc.pyi
+%%DATADIR%%/plugins/python/helpers/typeshed/stdlib/3.7/contextvars.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/3.9/graphlib.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/3.9/zoneinfo/__init__.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/3/_bootlocale.pyi

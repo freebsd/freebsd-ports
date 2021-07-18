@@ -3,6 +3,7 @@ bin/kdialog_progress_helper
 share/dbus-1/interfaces/org.kde.kdialog.ProgressDialog.xml
 share/locale/ar/LC_MESSAGES/kdialog.mo
 share/locale/ast/LC_MESSAGES/kdialog.mo
+share/locale/be/LC_MESSAGES/kdialog.mo
 share/locale/bg/LC_MESSAGES/kdialog.mo
 share/locale/bs/LC_MESSAGES/kdialog.mo
 share/locale/ca/LC_MESSAGES/kdialog.mo
@@ -47,13 +48,18 @@ share/locale/pt/LC_MESSAGES/kdialog.mo
 share/locale/pt_BR/LC_MESSAGES/kdialog.mo
 share/locale/ro/LC_MESSAGES/kdialog.mo
 share/locale/ru/LC_MESSAGES/kdialog.mo
+share/locale/se/LC_MESSAGES/kdialog.mo
 share/locale/sk/LC_MESSAGES/kdialog.mo
 share/locale/sl/LC_MESSAGES/kdialog.mo
+share/locale/sq/LC_MESSAGES/kdialog.mo
 share/locale/sr/LC_MESSAGES/kdialog.mo
 share/locale/sv/LC_MESSAGES/kdialog.mo
+share/locale/ta/LC_MESSAGES/kdialog.mo
+share/locale/tg/LC_MESSAGES/kdialog.mo
 share/locale/tr/LC_MESSAGES/kdialog.mo
 share/locale/ug/LC_MESSAGES/kdialog.mo
 share/locale/uk/LC_MESSAGES/kdialog.mo
+share/locale/vi/LC_MESSAGES/kdialog.mo
 share/locale/wa/LC_MESSAGES/kdialog.mo
 share/locale/zh_CN/LC_MESSAGES/kdialog.mo
 share/locale/zh_TW/LC_MESSAGES/kdialog.mo

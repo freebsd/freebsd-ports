@@ -21,7 +21,6 @@
     SUBDIR += cless
     SUBDIR += cnprint
     SUBDIR += dictd-database
-    SUBDIR += docproj
     SUBDIR += enscript
     SUBDIR += eterm
     SUBDIR += fandol
@@ -31,7 +30,6 @@
     SUBDIR += fcitx-configtool
     SUBDIR += fcitx-libpinyin
     SUBDIR += fcitx-rime
-    SUBDIR += fcitx-sunpinyin
     SUBDIR += fcitx-table-extra
     SUBDIR += fcitx-ui-light
     SUBDIR += fcitx5-chewing
@@ -66,6 +64,7 @@
     SUBDIR += libreoffice-zh_TW
     SUBDIR += librime
     SUBDIR += libtabe
+    SUBDIR += linux-wps-office-zh_CN
     SUBDIR += lunar
     SUBDIR += moettf
     SUBDIR += muni
@@ -127,7 +126,6 @@
     SUBDIR += sourcehansans-tc-otf
     SUBDIR += sourcehanserif-sc-otf
     SUBDIR += sourcehanserif-tc-otf
-    SUBDIR += sunpinyin
     SUBDIR += taipeisanstc
     SUBDIR += tin
     SUBDIR += tintin++

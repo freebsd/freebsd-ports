@@ -1,5 +1,5 @@
 PORTNAME=	OWSLib
-PORTVERSION=		0.22.0
+PORTVERSION=	0.24.1
 CATEGORIES=	graphics geography python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=1.0:www/py-requests@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

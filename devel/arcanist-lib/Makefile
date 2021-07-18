@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PHP_DESTDIR=	lib/php/arcanist
-USES=		php:flavors python:env shebangfix
+USES=		php:cli,flavors python:env shebangfix
 SHEBANG_FILES=	bin/arc \
 		bin/phage \
 		scripts/*.php \
@@ -44,8 +44,6 @@ ENCODINGS_USE=	PHP=mbstring
 .else # link only
 
 RUN_DEPENDS=	arcanist-lib${PHP_PKGNAMESUFFIX}>0:devel/arcanist-lib@${PHP_FLAVOR}
-
-NO_BUILD=	yes
 
 CONFLICTS=	arc
 

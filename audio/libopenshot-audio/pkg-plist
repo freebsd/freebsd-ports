@@ -1,6 +1,7 @@
-bin/openshot-audio-test-sound
+bin/openshot-audio-demo
 include/libopenshot-audio/AppConfig.h
 include/libopenshot-audio/JuceHeader.h
+include/libopenshot-audio/OpenShotAudio.h
 include/libopenshot-audio/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h
 include/libopenshot-audio/juce_audio_basics/buffers/juce_AudioChannelSet.h
 include/libopenshot-audio/juce_audio_basics/buffers/juce_AudioDataConverters.h
@@ -322,10 +323,15 @@ include/libopenshot-audio/juce_events/native/juce_win32_HiddenMessageWindow.h
 include/libopenshot-audio/juce_events/native/juce_win32_WinRTWrapper.h
 include/libopenshot-audio/juce_events/timers/juce_MultiTimer.h
 include/libopenshot-audio/juce_events/timers/juce_Timer.h
+lib/cmake/OpenShotAudio/FindASIO.cmake
+lib/cmake/OpenShotAudio/OpenShotAudioConfig.cmake
+lib/cmake/OpenShotAudio/OpenShotAudioConfigVersion.cmake
+lib/cmake/OpenShotAudio/OpenShotAudioTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/OpenShotAudio/OpenShotAudioTargets.cmake
 lib/libopenshot-audio.so
 lib/libopenshot-audio.so.0.2.0
 lib/libopenshot-audio.so.7
-man/man1/openshot-audio-test-sound.1.gz
+man/man1/openshot-audio-demo.1.gz
 @dir include/libopenshot-audio/juce_audio_devices/native/java/app/com/roli/juce
 @dir include/libopenshot-audio/juce_core/native/java/app/com/roli/juce
 @dir include/libopenshot-audio/juce_core/native/javacore/app/com/roli/juce

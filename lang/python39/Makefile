@@ -1,11 +1,11 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	python
-PORTVERSION=	${PYTHON_PORTVERSION}
+DISTVERSION=	${PYTHON_DISTVERSION}
 CATEGORIES=	lang python
-MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
+MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
-DISTNAME=	Python-${PORTVERSION}
+DISTNAME=	Python-${DISTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
@@ -13,25 +13,28 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-USES=		compiler:c11 cpe ncurses pathfix pkgconfig readline:port \
+LIB_DEPENDS=	libffi.so:devel/libffi
+
+USES=		compiler:c11 cpe ncurses pathfix pkgconfig readline \
 		shebangfix ssl tar:xz
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-python_CMD=	${PREFIX}/bin/python${PYTHON_PORTVERSION:R}
+python_CMD=	${PREFIX}/bin/python${PYTHON_DISTVERSION:R}
 SHEBANG_FILES=	Lib/*.py Lib/*/*.py Lib/*/*/*.py Lib/*/*/*/*.py
 SHEBANG_FILES+=	Lib/test/ziptestdata/exe_with_z64 \
 		Lib/test/ziptestdata/exe_with_zip \
 		Lib/test/ziptestdata/header.sh
 
 # Duplicate python.mk variables. TODO: Let lang/python?? ports use python.mk bits.
-PYTHON_VER=		${PYTHON_PORTVERSION:R}
+PYTHON_VER=		${PYTHON_DISTVERSION:R}
 PYTHON_VERSION=		python${PYTHON_VER}
 PYTHON_SUFFIX=		${PYTHON_VER:S/.//g}
 
 DISABLED_EXTENSIONS=	_sqlite3 _tkinter _gdbm
-CONFIGURE_ARGS+=	--enable-shared --without-ensurepip
-CONFIGURE_ENV+=		OPT="" DISABLED_EXTENSIONS="${DISABLED_EXTENSIONS}"	# Null out OPT to respect user CFLAGS and remove optimizations
+CONFIGURE_ARGS+=	--enable-shared --without-ensurepip \
+			--with-system-ffi
+CONFIGURE_ENV+=		OPT="" # Null out OPT to respect user CFLAGS and remove optimizations
 
 INSTALL_TARGET=		altinstall						# Don't want cloberring of unprefixed files
 
@@ -46,16 +49,16 @@ SUB_LIST=		PYTHON_SUFFIX=${PYTHON_SUFFIX}
 PLIST_SUB=		ABI=${ABIFLAGS} \
 			XY=${PYTHON_SUFFIX} \
 			XYDOT=${PYTHON_VER} \
-			XYZDOT=${PORTVERSION} \
+			XYZDOT=${DISTVERSION} \
 			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. https://bugs.python.org/issue19554
 
-OPTIONS_DEFINE=		DEBUG IPV6 LIBFFI NLS PYMALLOC
-OPTIONS_DEFAULT=	LIBFFI PYMALLOC
+OPTIONS_DEFINE=		DEBUG IPV6 LIBMPDEC NLS PYMALLOC
+OPTIONS_DEFAULT=	LIBMPDEC PYMALLOC
 OPTIONS_RADIO=		HASH
 OPTIONS_RADIO_HASH=	FNV SIPHASH
 OPTIONS_SUB=		yes
 
-LIBFFI_DESC=		Use libffi from ports instead of bundled version
+LIBMPDEC_DESC=		Use libmpdec from ports instead of bundled version
 NLS_DESC=		Enable gettext support for the locale module
 PYMALLOC_DESC=		Enable specialized mallocs
 
@@ -67,10 +70,11 @@ FNV_CONFIGURE_ON=	--with-hash-algorithm=fnv
 SIPHASH_CONFIGURE_ON=	--with-hash-algorithm=siphash24
 
 DEBUG_CONFIGURE_WITH=	pydebug
+DEBUG_BROKEN=		incorrect pkg-plist
 IPV6_CONFIGURE_ENABLE=	ipv6
 
-LIBFFI_CONFIGURE_ON=	--with-system-ffi
-LIBFFI_LIB_DEPENDS=	libffi.so:devel/libffi
+LIBMPDEC_CONFIGURE_ON=	--with-system-libmpdec
+LIBMPDEC_LIB_DEPENDS=	libmpdec.so:math/mpdecimal
 
 # Use CPPFLAGS over CFLAGS due to -I ordering, causing elementtree and pyexpat
 # to break in Python 2.7, or preprocessor complaints in Python >= 3.3
@@ -96,12 +100,6 @@ PLIST_FILES+=	bin/python${PYTHON_VER}${ABIFLAGS} \
 		libdata/pkgconfig/python-${PYTHON_VER}${ABIFLAGS}-embed.pc
 .endif
 
-# https://bugs.python.org/issue22521
-# https://bugs.python.org/issue23042
-.if ${ARCH} == i386 && !${PORT_OPTIONS:MLIBFFI}
-BROKEN=		You must use libffi from ports on i386. Enable the LIBFFI option
-.endif
-
 .if ${ARCH} == sparc64
 CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 .endif
@@ -119,6 +117,11 @@ post-patch:
 # which introduces hidden dependency and breaks build
 	@${REINPLACE_CMD} -e 's|uuid/uuid.h|ignore_&|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/find_library_file/ s|uuid|ignore_&|' ${WRKSRC}/setup.py
+# Apply DISABLED_EXTENSIONS
+	@${ECHO_CMD} '*disabled*' > ${WRKSRC}/Modules/Setup.local
+.  for _module in ${DISABLED_EXTENSIONS}
+		@${ECHO_CMD} ${_module} >> ${WRKSRC}/Modules/Setup.local
+.  endfor
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}

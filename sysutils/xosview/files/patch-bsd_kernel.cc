@@ -1,32 +1,50 @@
---- bsd/kernel.cc.orig	2018-09-12 13:52:23 UTC
+--- bsd/kernel.cc.orig	2021-05-16 03:48:22 UTC
 +++ bsd/kernel.cc
-@@ -93,6 +93,9 @@ static int mib_uvm[2] = { CTL_VM, VM_UVMEXP2 };
- static int mib_uvm[2] = { CTL_VM, VM_UVMEXP };
+@@ -48,8 +48,10 @@ static int maxcpus = 1;
+ #include <sys/ioctl.h>
+ #include <sys/resource.h>
+ #include <dev/acpica/acpiio.h>
++#if defined(__amd64__) || defined(__i386__)
+ #include <machine/apm_bios.h>
  #endif
- #else
-+#if defined(XOSVIEW_FREEBSD)
-+#define _WANT_VMMETER
 +#endif
- #include <sys/vmmeter.h>
- #endif
  
-@@ -339,7 +342,9 @@ BSDGetPageStats(uint64_t *meminfo, uint64_t *pageinfo)
- 	GET_VM_STATS(v_active_count);
- 	GET_VM_STATS(v_inactive_count);
- 	GET_VM_STATS(v_wire_count);
-+#if __FreeBSD_version < 1200017
- 	GET_VM_STATS(v_cache_count);
-+#endif
- 	GET_VM_STATS(v_free_count);
- 	GET_VM_STATS(v_page_size);
- 	GET_VM_STATS(v_vnodepgsin);
-@@ -361,7 +366,9 @@ BSDGetPageStats(uint64_t *meminfo, uint64_t *pageinfo)
- 		meminfo[0] = (uint64_t)vm.v_active_count * vm.v_page_size;
- 		meminfo[1] = (uint64_t)vm.v_inactive_count * vm.v_page_size;
- 		meminfo[2] = (uint64_t)vm.v_wire_count * vm.v_page_size;
-+#if __FreeBSD_version < 1200017
- 		meminfo[3] = (uint64_t)vm.v_cache_count * vm.v_page_size;
-+#endif
- 		meminfo[4] = (uint64_t)vm.v_free_count * vm.v_page_size;
- #else  /* XOSVIEW_DFBSD */
- 		meminfo[0] = (uint64_t)vms.v_active_count * vms.v_page_size;
+ #if defined(XOSVIEW_NETBSD)
+ #include <sys/sched.h>
+@@ -1558,6 +1560,7 @@ BSDHasBattery() {
+ #else // XOSVIEW_FREEBSD || XOSVIEW_DFBSD
+ 	int fd;
+ 	if ( (fd = open(ACPIDEV, O_RDONLY)) == -1 ) {
++		#if defined(__amd64__) || defined(__i386__)
+ 		// No ACPI -> try APM
+ 		if ( (fd = open(APMDEV, O_RDONLY)) == -1 )
+ 			return false;
+@@ -1569,6 +1572,9 @@ BSDHasBattery() {
+ 		if (aip.ai_batt_stat == 0xff || aip.ai_batt_life == 0xff)
+ 			return false;
+ 		return true;
++		#else
++		return false;
++		#endif
+ 	}
+ 
+ 	union acpi_battery_ioctl_arg battio;
+@@ -1717,6 +1723,7 @@ BSDGetBatteryInfo(int *remaining, unsigned int *state)
+ 	/* Adapted from acpiconf and apm. */
+ 	int fd;
+ 	if ( (fd = open(ACPIDEV, O_RDONLY)) == -1 ) {
++		#if defined(__amd64__) || defined(__i386__)
+ 		// No ACPI -> try APM
+ 		if ( (fd = open(APMDEV, O_RDONLY)) == -1 )
+ 			err(EX_OSFILE, "could not open %s or %s", ACPIDEV, APMDEV);
+@@ -1740,6 +1747,10 @@ BSDGetBatteryInfo(int *remaining, unsigned int *state)
+ 		else
+ 			*state = XOSVIEW_BATT_NONE;
+ 		return;
++		#else
++		*state = XOSVIEW_BATT_NONE;
++		return;
++		#endif
+ 	}
+ 	// ACPI
+ 	union acpi_battery_ioctl_arg battio;

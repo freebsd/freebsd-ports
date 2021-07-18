@@ -26,7 +26,6 @@ include/entt/entity/sparse_set.hpp
 include/entt/entity/storage.hpp
 include/entt/entity/utility.hpp
 include/entt/entity/view.hpp
-include/entt/entity/view_pack.hpp
 include/entt/entt.hpp
 include/entt/fwd.hpp
 include/entt/locator/locator.hpp
@@ -34,14 +33,17 @@ include/entt/meta/adl_pointer.hpp
 include/entt/meta/container.hpp
 include/entt/meta/ctx.hpp
 include/entt/meta/factory.hpp
-include/entt/meta/internal.hpp
 include/entt/meta/meta.hpp
+include/entt/meta/node.hpp
 include/entt/meta/pointer.hpp
 include/entt/meta/policy.hpp
 include/entt/meta/range.hpp
 include/entt/meta/resolve.hpp
+include/entt/meta/template.hpp
 include/entt/meta/type_traits.hpp
+include/entt/meta/utility.hpp
 include/entt/platform/android-ndk-r17.hpp
+include/entt/poly/fwd.hpp
 include/entt/poly/poly.hpp
 include/entt/process/process.hpp
 include/entt/process/scheduler.hpp
@@ -57,3 +59,4 @@ include/entt/signal/sigh.hpp
 lib/EnTT/cmake/EnTTConfig.cmake
 lib/EnTT/cmake/EnTTConfigVersion.cmake
 lib/EnTT/cmake/EnTTTargets.cmake
+libdata/pkgconfig/entt.pc

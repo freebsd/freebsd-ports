@@ -46,6 +46,7 @@ lib/gedit/plugins/joinlines.py
 lib/gedit/plugins/libbookmarks.so
 lib/gedit/plugins/libdrawspaces.so
 lib/gedit/plugins/libfindinfiles.so
+lib/gedit/plugins/libsmartspaces.so
 lib/gedit/plugins/libwordcompletion.so
 lib/gedit/plugins/multiedit.plugin
 lib/gedit/plugins/multiedit/__init__.py
@@ -62,7 +63,6 @@ lib/gedit/plugins/sessionsaver/store/sessionstore.py
 lib/gedit/plugins/sessionsaver/store/xmlsessionstore.py
 lib/gedit/plugins/sessionsaver/windowactivable.py
 lib/gedit/plugins/smartspaces.plugin
-lib/gedit/plugins/smartspaces.py
 lib/gedit/plugins/synctex.plugin
 lib/gedit/plugins/synctex/__init__.py
 lib/gedit/plugins/synctex/evince_dbus.py

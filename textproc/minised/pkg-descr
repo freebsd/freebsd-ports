@@ -8,8 +8,8 @@ handy. Though it suffered several bugs and was not under active maintenance
 anymore. After sending a bunch of fixes we agreed to continue maintaining
 this lovely, historic sed implementation.
 
-Along a lot fixes and cleanups, further speedups, and some missing features
-and POSIX conformance, we also added a test-suite to the package, so
-regressions are quickly and easily uncovered.
+Along with a lot fixes and cleanups, further speedups, and some missing
+features and POSIX conformance, we also added a test-suite to the package,
+so regressions are quickly and easily uncovered.
 
 WWW: http://www.exactcode.de/oss/minised/

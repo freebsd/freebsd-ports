@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	cryptography-vectors
-PORTVERSION=	2.9.2
+PORTVERSION=	3.3.2
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

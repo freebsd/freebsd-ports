@@ -16,6 +16,7 @@ LIB_DEPENDS=	libXcursor.so:x11/libXcursor \
 		libfreetype.so:print/freetype2 \
 		libinput.so:x11/libinput \
 		libudev.so:devel/libudev-devd \
+		liblcms2.so:graphics/lcms2 \
 		libwayland-cursor.so:graphics/wayland \
 		libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-icccm.so:x11/xcb-util-wm \
@@ -23,8 +24,10 @@ LIB_DEPENDS=	libXcursor.so:x11/libXcursor \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxkbcommon.so:x11/libxkbcommon
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
-		xwayland-devel>0:x11-servers/xwayland-devel
-RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel
+		xwayland-devel>0:x11-servers/xwayland-devel \
+		${kde-kwayland-protocols_LIB}:${kde-kwayland-protocols_PORT}
+RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel \
+		${kde-kwayland-protocols_LIB}:${kde-kwayland-protocols_PORT}
 
 USES=		cmake compiler:c++11-lib cpe gettext gl gnome kde:5 pkgconfig python:3.5+,run \
 		qt:5 shebangfix tar:xz xorg
@@ -32,21 +35,19 @@ USE_GL=		egl
 USE_GNOME=	glib20
 USE_KDE=	activities activities attica auth breeze codecs \
 		completion config configwidgets coreaddons crash decoration \
-		doctools doctools globalaccel i18n iconthemes idletime init \
-		jobwidgets kcmutils kdeclarative kio kwayland-server kscreenlocker \
-		newstuff notifications package plasma-framework service sonnet \
-		textwidgets wayland widgetsaddons windowsystem xmlgui
+		globalaccel i18n iconthemes idletime init \
+		jobwidgets kcmutils kdeclarative kio kscreenlocker \
+		newstuff notifications package plasma-framework runner service sonnet \
+		textwidgets widgetsaddons windowsystem xmlgui \
+		kwayland-integration kwayland-server wayland \
+		doctools_build ecm_build
 USE_LDCONFIG=	yes
 USE_QT=		concurrent core dbus declarative gui multimedia network script \
-		sensors testlib uiplugin uitools widgets x11extras xml \
-		buildtools_build qmake_build \
+		sensors uiplugin uitools widgets x11extras xml \
+		buildtools_build qmake_build testlib_build \
 		quickcontrols2_run virtualkeyboard_run
 USE_XORG=	ice sm x11 xcb xext xi
-SHEBANG_FILES=	kconf_update/kwin-5.18-move-animspeed.py \
-		kconf_update/kwinrules-5.19-placement.pl
-
-post-patch:
-	${REINPLACE_CMD} '/sysmacros.h/d' \
-		${PATCH_WRKSRC}/logind.cpp
+SHEBANG_FILES=	kconf_update/*.py \
+		kconf_update/*.pl
 
 .include <bsd.port.mk>

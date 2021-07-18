@@ -1,0 +1,5 @@
+This package provides simple Perl interface for nc(1) command line
+utility, known as Swiss army knife of networking, to construct and
+run TCP, UDP, or Unix domain servers and clients.
+
+WWW: https://metacpan.org/release/Net-Netcat

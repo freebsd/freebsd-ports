@@ -1,0 +1,4 @@
+A set of common locale data and translations to internationalize and/or localize
+your Rails applications.
+
+WWW: https://github.com/svenfuchs/rails-i18n

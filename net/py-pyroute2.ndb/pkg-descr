@@ -1,0 +1,8 @@
+PyRoute2 is a pure Python netlink library.
+
+NDB is a high-level network management module. It provides a transactional DB
+with multiple sources, from local RTNL source to netns and remote systems. The
+DB provides Python API and HTTP RPC (json and plain text), my run as a
+standalone service or may be used as a Python module.
+
+WWW: https://github.com/svinota/pyroute2/tree/master/pyroute2.ndb

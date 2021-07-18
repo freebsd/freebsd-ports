@@ -1,7 +1,7 @@
 # Created by: Philippe Audeoud <jadawin@tuxaco.net>
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.5.7
+PORTVERSION=	1.5.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -22,7 +22,8 @@ SUB_FILES=	pkg-deinstall pkg-message
 
 USE_GITHUB=	yes
 
-post-extract:
+post-patch:
+	@${RM} -fr ${WRKSRC}/.github/
 	@${MKDIR} ${WRKSRC}/cache/
 	@${FIND} ${WRKSRC} -name '.git*' -delete
 	@${RM} ${WRKSRC}/zp-core/Zenphoto.package
@@ -35,7 +36,7 @@ do-install:
 
 MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 
-genplist: do-clean extract
+genplist: do-clean extract patch
 	@${ECHO_CMD} '@owner www' > ${MS_PLIST}
 	@${ECHO_CMD} '@group www' >> ${MS_PLIST}
 	@cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SORT} | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}

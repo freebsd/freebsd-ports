@@ -1,0 +1,60 @@
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+
+PORTNAME=	Test2-Harness-UI
+PORTVERSION=	0.000070
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:EXODIST
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Web interface for viewing and inspecting yath test logs
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
+		${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
+		p5-Crypt-Eksblowfish>=0:security/p5-Crypt-Eksblowfish \
+		p5-DBI>=0:databases/p5-DBI \
+		p5-DBIx-Class-InflateColumn-Serializer>=0:databases/p5-DBIx-Class-InflateColumn-Serializer \
+		p5-DBIx-Class-Schema-Loader>=0:databases/p5-DBIx-Class-Schema-Loader \
+		p5-DBIx-Class-Tree>=0:databases/p5-DBIx-Class-Tree \
+		p5-DBIx-Class-UUIDColumns>=0:databases/p5-DBIx-Class-UUIDColumns \
+		p5-DBIx-Class>=0:databases/p5-DBIx-Class \
+		p5-DBIx-QuickDB>=0.000020:databases/p5-DBIx-QuickDB \
+		p5-DBIx-QuickDB>=0:databases/p5-DBIx-QuickDB \
+		p5-Data-GUID>=0:devel/p5-Data-GUID \
+		p5-DateTime>=0:devel/p5-DateTime \
+		p5-Email-Sender>=0:mail/p5-Email-Sender \
+		p5-Email-Simple>=0:mail/p5-Email-Simple \
+		p5-Email-Simple>=0:mail/p5-Email-Simple \
+		p5-File-ShareDir>=0:devel/p5-File-ShareDir \
+		p5-Importer>=0.025:devel/p5-Importer \
+		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
+		p5-Plack-Middleware-DBIx-DisconnectAll>=0:www/p5-Plack-Middleware-DBIx-DisconnectAll \
+		p5-Plack>=0:www/p5-Plack \
+		p5-Router-Simple>=0:www/p5-Router-Simple \
+		p5-Starman>=0:www/p5-Starman \
+		p5-Statistics-Basic>=0:math/p5-Statistics-Basic \
+		p5-Test2-Harness>=0:devel/p5-Test2-Harness \
+		p5-Test2-Harness>=1.000058:devel/p5-Test2-Harness \
+		p5-Test2-Suite>=0.000126:devel/p5-Test2-Suite \
+		p5-Test2-Suite>=0:devel/p5-Test2-Suite \
+		p5-Text-Xslate>=0:textproc/p5-Text-Xslate
+
+USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 503200
+BUILD_DEPENDS+=	p5-Test-Simple>=1.302166:devel/p5-Test-Simple
+RUN_DEPENDS+=	p5-Test-Simple>=1.302166:devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>

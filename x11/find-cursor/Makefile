@@ -1,6 +1,6 @@
 PORTNAME=	find-cursor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6
+DISTVERSION=	1.7
 CATEGORIES=	x11
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -14,18 +14,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Carpetsmoker
 USE_XORG=	x11 xdamage xext xfixes xrender
 
-MAKE_ARGS=	MANPREFIX=${MANPREFIX}/man
-
-PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME}
 
 PORTDOCS=	README.markdown screenshot.gif
 
 OPTIONS_DEFINE=	DOCS
-
-post-configure:
-	${REINPLACE_CMD} 's/`git tag | tail -1 | tr -d v`/${PORTVERSION}/' \
-		${WRKSRC}/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

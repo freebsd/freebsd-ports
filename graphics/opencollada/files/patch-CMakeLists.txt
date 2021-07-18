@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-11-26 22:43:10 UTC
++++ CMakeLists.txt
+@@ -192,7 +192,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CXX_WARNINGS
+ 
+ set(OPENCOLLADA_INST_INCLUDE ${CMAKE_INSTALL_PREFIX}/include/opencollada)
+ set(OPENCOLLADA_INST_LIBRARY ${CMAKE_INSTALL_PREFIX}/lib/opencollada)
+-set(OPENCOLLADA_INST_CMAKECONFIG ${OPENCOLLADA_INST_LIBRARY}/cmake)
++set(OPENCOLLADA_INST_CMAKECONFIG ${CMAKE_INSTALL_PREFIX}/share/cmake/Modules)
+ 
+ 
+ #-----------------------------------------------------------------------------

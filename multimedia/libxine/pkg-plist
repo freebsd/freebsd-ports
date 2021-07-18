@@ -104,7 +104,6 @@ lib/libxine.so.2.9.0
 %%PLUGINSDIR%%/xineplug_inp_cdda.so
 %%DVB%%%%PLUGINSDIR%%/xineplug_inp_dvb.so
 %%PLUGINSDIR%%/xineplug_inp_dvd.so
-%%GNOMEVFS2%%%%PLUGINSDIR%%/xineplug_inp_gnome_vfs.so
 %%PLUGINSDIR%%/xineplug_inp_mms.so
 %%PLUGINSDIR%%/xineplug_inp_network.so
 %%NFS%%%%PLUGINSDIR%%/xineplug_inp_nfs.so

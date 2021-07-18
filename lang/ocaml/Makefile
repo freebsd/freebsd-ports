@@ -71,6 +71,8 @@ PLIST_SUB+=	DOC="@comment "
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7
 CONFIGURE_ARGS+=	-as "${AS} ${ASFLAGS} -meabi=5"
+.elif ${ARCH} == powerpc
+LLD_UNSAFE=		yes
 .else
 CONFIGURE_ARGS+=	-as "${AS} ${ASFLAGS}"
 .endif

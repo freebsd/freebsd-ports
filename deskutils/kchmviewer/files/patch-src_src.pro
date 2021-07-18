@@ -5,17 +5,17 @@ This patch contains the following (by hunks)
      remove the wrong Qt5 version check
   4) create installation targets
 
---- src/src.pro.orig	2017-03-29 21:21:13 UTC
+--- src/src.pro.orig	2021-06-05 18:58:14 UTC
 +++ src/src.pro
 @@ -67,7 +67,7 @@ QT += webkit \
      webkitwidgets \
      printsupport
-
+ 
 -linux-g++*:{
 +unix:{
      LIBS += -lX11
  }
-
+ 
 @@ -108,26 +108,16 @@ unix:!macx: {
      HEADERS += dbus_interface.h
      SOURCES += dbus_interface.cpp
@@ -24,12 +24,12 @@ This patch contains the following (by hunks)
 +    LIBS += ../lib/libebook/libebook.a -lchm -lzip
      POST_TARGETDEPS += ../lib/libebook/libebook.a
  }
-
+ 
  greaterThan(QT_MAJOR_VERSION, 4) {
      # Qt 5
 -    greaterThan(QT_MINOR_VERSION, 5) {
 -        # Qt 5.6+
--        error("You use Qt5.6+ - QWebEngine is not yet suitable for kchmviewer and is not supported")
+-#        error("You use Qt5.6+ - QWebEngine is not yet suitable for kchmviewer and is not supported")
 -        QT += webengine webenginewidgets
 -        DEFINES += USE_WEBENGINE
 -        SOURCES += viewwindow_webengine.cpp dataprovider_qwebengine.cpp

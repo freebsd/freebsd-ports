@@ -31,4 +31,10 @@ USES=		autoreconf gmake libtool perl5
 
 CFLAGS_powerpc64=	-mabi=elfv2
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LLD_UNSAFE=	yes
+.endif
+
 .include <bsd.port.mk>

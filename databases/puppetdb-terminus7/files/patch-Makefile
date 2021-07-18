@@ -1,4 +1,4 @@
---- Makefile.orig	2021-02-05 20:06:30 UTC
+--- Makefile.orig	2021-06-17 22:24:06 UTC
 +++ Makefile
 @@ -1,7 +1,7 @@
  prefix = /usr/local
@@ -13,22 +13,22 @@
  
  
  install-puppetdb-termini:
+-	install -Dm 0644 puppet/functions/puppetdb_query.rb "$(DESTDIR)$(rubylibdir)/puppet/functions/puppetdb_query.rb"
 -	install -Dm 0644 puppet/face/node/status.rb "$(DESTDIR)$(rubylibdir)/puppet/face/node/status.rb"
 -	install -Dm 0644 puppet/face/node/deactivate.rb "$(DESTDIR)$(rubylibdir)/puppet/face/node/deactivate.rb"
--	install -Dm 0644 puppet/functions/puppetdb_query.rb "$(DESTDIR)$(rubylibdir)/puppet/functions/puppetdb_query.rb"
--	install -Dm 0644 puppet/indirector/node/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/indirector/node/puppetdb.rb"
--	install -Dm 0644 puppet/indirector/facts/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/indirector/facts/puppetdb.rb"
 -	install -Dm 0644 puppet/indirector/facts/puppetdb_apply.rb "$(DESTDIR)$(rubylibdir)/puppet/indirector/facts/puppetdb_apply.rb"
+-	install -Dm 0644 puppet/indirector/facts/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/indirector/facts/puppetdb.rb"
+-	install -Dm 0644 puppet/indirector/node/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/indirector/node/puppetdb.rb"
 -	install -Dm 0644 puppet/indirector/catalog/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/indirector/catalog/puppetdb.rb"
 -	install -Dm 0644 puppet/indirector/resource/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/indirector/resource/puppetdb.rb"
--	install -Dm 0644 puppet/util/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb.rb"
--	install -Dm 0644 puppet/util/puppetdb/config.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/config.rb"
--	install -Dm 0644 puppet/util/puppetdb/atom.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/atom.rb"
--	install -Dm 0644 puppet/util/puppetdb/command.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/command.rb"
+-	install -Dm 0644 puppet/reports/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/reports/puppetdb.rb"
 -	install -Dm 0644 puppet/util/puppetdb/char_encoding.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/char_encoding.rb"
 -	install -Dm 0644 puppet/util/puppetdb/http.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/http.rb"
+-	install -Dm 0644 puppet/util/puppetdb/command.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/command.rb"
+-	install -Dm 0644 puppet/util/puppetdb/config.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/config.rb"
 -	install -Dm 0644 puppet/util/puppetdb/command_names.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/command_names.rb"
--	install -Dm 0644 puppet/reports/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/reports/puppetdb.rb"
+-	install -Dm 0644 puppet/util/puppetdb/atom.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/atom.rb"
+-	install -Dm 0644 puppet/util/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb.rb"
 +	install -d -m 0755 "$(DESTDIR)$(rubylibdir)/puppet"
 +	install -d -m 0755 "$(DESTDIR)$(rubylibdir)/puppet/face"
 +	install -d -m 0755 "$(DESTDIR)$(rubylibdir)/puppet/face/node"
@@ -41,22 +41,22 @@
 +	install -d -m 0755 "$(DESTDIR)$(rubylibdir)/puppet/reports"
 +	install -d -m 0755 "$(DESTDIR)$(rubylibdir)/puppet/util"
 +	install -d -m 0755 "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb"
++	install -m 0644 puppet/functions/puppetdb_query.rb "$(DESTDIR)$(rubylibdir)/puppet/functions/puppetdb_query.rb"
 +	install -m 0644 puppet/face/node/status.rb "$(DESTDIR)$(rubylibdir)/puppet/face/node/status.rb"
 +	install -m 0644 puppet/face/node/deactivate.rb "$(DESTDIR)$(rubylibdir)/puppet/face/node/deactivate.rb"
-+	install -m 0644 puppet/functions/puppetdb_query.rb "$(DESTDIR)$(rubylibdir)/puppet/functions/puppetdb_query.rb"
-+	install -m 0644 puppet/indirector/node/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/indirector/node/puppetdb.rb"
-+	install -m 0644 puppet/indirector/facts/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/indirector/facts/puppetdb.rb"
 +	install -m 0644 puppet/indirector/facts/puppetdb_apply.rb "$(DESTDIR)$(rubylibdir)/puppet/indirector/facts/puppetdb_apply.rb"
++	install -m 0644 puppet/indirector/facts/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/indirector/facts/puppetdb.rb"
++	install -m 0644 puppet/indirector/node/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/indirector/node/puppetdb.rb"
 +	install -m 0644 puppet/indirector/catalog/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/indirector/catalog/puppetdb.rb"
 +	install -m 0644 puppet/indirector/resource/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/indirector/resource/puppetdb.rb"
-+	install -m 0644 puppet/util/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb.rb"
-+	install -m 0644 puppet/util/puppetdb/config.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/config.rb"
-+	install -m 0644 puppet/util/puppetdb/atom.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/atom.rb"
-+	install -m 0644 puppet/util/puppetdb/command.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/command.rb"
++	install -m 0644 puppet/reports/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/reports/puppetdb.rb"
 +	install -m 0644 puppet/util/puppetdb/char_encoding.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/char_encoding.rb"
 +	install -m 0644 puppet/util/puppetdb/http.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/http.rb"
++	install -m 0644 puppet/util/puppetdb/command.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/command.rb"
++	install -m 0644 puppet/util/puppetdb/config.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/config.rb"
 +	install -m 0644 puppet/util/puppetdb/command_names.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/command_names.rb"
-+	install -m 0644 puppet/reports/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/reports/puppetdb.rb"
++	install -m 0644 puppet/util/puppetdb/atom.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb/atom.rb"
++	install -m 0644 puppet/util/puppetdb.rb "$(DESTDIR)$(rubylibdir)/puppet/util/puppetdb.rb"
  
  install-rpm-sysv-init: install-rpm-preinst
  	install -d -m 0755 "$(DESTDIR)$(initdir)"

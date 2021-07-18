@@ -1,5 +1,5 @@
-Scrapy is a high level scraping and web crawling framework for writing
-spiders to crawl and parse web pages for all kinds of purposes, from
-information retrieval to monitoring or testing web sites.
+Scrapy is a fast high-level web crawling and web scraping framework, used to
+crawl websites and extract structured data from their pages. It can be used for
+a wide range of purposes, from data mining to monitoring and automated testing.
 
 WWW: https://scrapy.org/

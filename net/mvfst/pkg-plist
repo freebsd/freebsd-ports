@@ -4,7 +4,6 @@ include/quic/api/IoBufQuicBatch.h
 include/quic/api/LoopDetectorCallback.h
 include/quic/api/Observer.h
 include/quic/api/QuicBatchWriter.h
-include/quic/api/QuicPacketScheduler-inl.h
 include/quic/api/QuicPacketScheduler.h
 include/quic/api/QuicSocket.h
 include/quic/api/QuicStreamAsyncTransport.h
@@ -12,6 +11,7 @@ include/quic/api/QuicTransportBase.h
 include/quic/api/QuicTransportFunctions.h
 include/quic/api/test/MockQuicSocket.h
 include/quic/api/test/Mocks.h
+include/quic/client/QuicClientAsyncTransport.h
 include/quic/client/QuicClientTransport.h
 include/quic/client/handshake/CachedServerTransportParameters.h
 include/quic/client/handshake/ClientHandshake.h
@@ -33,6 +33,8 @@ include/quic/codec/QuicWriteCodec.h
 include/quic/codec/Types.h
 include/quic/common/BufAccessor.h
 include/quic/common/BufUtil.h
+include/quic/common/CircularDeque-inl.h
+include/quic/common/CircularDeque.h
 include/quic/common/EnumArray.h
 include/quic/common/FunctionLooper.h
 include/quic/common/IntervalSet-inl.h
@@ -51,6 +53,7 @@ include/quic/congestion_control/BbrRttSampler.h
 include/quic/congestion_control/CongestionControlFunctions.h
 include/quic/congestion_control/CongestionControllerFactory.h
 include/quic/congestion_control/Copa.h
+include/quic/congestion_control/Copa2.h
 include/quic/congestion_control/NewReno.h
 include/quic/congestion_control/Pacer.h
 include/quic/congestion_control/QuicCCP.h
@@ -64,6 +67,14 @@ include/quic/d6d/ConstantStepProbeSizeRaiser.h
 include/quic/d6d/ProbeSizeRaiser.h
 include/quic/d6d/QuicD6DStateFunctions.h
 include/quic/d6d/Types.h
+include/quic/dsr/DSRPacketizationRequestSender.h
+include/quic/dsr/Types.h
+include/quic/dsr/backend/DSRPacketizer.h
+include/quic/dsr/frontend/PacketBuilder.h
+include/quic/dsr/frontend/Scheduler.h
+include/quic/dsr/frontend/WriteCodec.h
+include/quic/dsr/frontend/WriteFunctions.h
+include/quic/dsr/test/Mocks.h
 include/quic/fizz/client/handshake/FizzClientExtensions.h
 include/quic/fizz/client/handshake/FizzClientHandshake.h
 include/quic/fizz/client/handshake/FizzClientQuicHandshakeContext.h
@@ -86,10 +97,10 @@ include/quic/logging/FileQLogger.h
 include/quic/logging/QLogger.h
 include/quic/logging/QLoggerConstants.h
 include/quic/logging/QLoggerTypes.h
-include/quic/logging/QuicLogger.h
 include/quic/loss/QuicLossFunctions.h
 include/quic/server/AcceptObserver.h
 include/quic/server/CCPReader.h
+include/quic/server/QuicCcpThreadLauncher.h
 include/quic/server/QuicReusePortUDPSocketFactory.h
 include/quic/server/QuicServer.h
 include/quic/server/QuicServerPacketRouter.h
@@ -111,10 +122,11 @@ include/quic/server/state/ServerConnectionIdRejector.h
 include/quic/server/state/ServerStateMachine.h
 include/quic/state/AckHandlers.h
 include/quic/state/AckStates.h
+include/quic/state/DatagramHandlers.h
+include/quic/state/LossState.h
 include/quic/state/OutstandingPacket.h
 include/quic/state/PacketEvent.h
 include/quic/state/PendingPathRateLimiter.h
-include/quic/state/QPRFunctions.h
 include/quic/state/QuicConnectionStats.h
 include/quic/state/QuicPacingFunctions.h
 include/quic/state/QuicPriorityQueue.h
@@ -148,6 +160,8 @@ lib/libmvfst_codec_types.a
 lib/libmvfst_constants.so
 lib/libmvfst_d6d_state_functions.a
 lib/libmvfst_d6d_types.a
+lib/libmvfst_dsr_frontend.so
+lib/libmvfst_dsr_types.so
 lib/libmvfst_exception.so
 lib/libmvfst_fizz_client.a
 lib/libmvfst_fizz_handshake.a
@@ -158,12 +172,13 @@ lib/libmvfst_looper.a
 lib/libmvfst_loss.a
 lib/libmvfst_qlogger.a
 lib/libmvfst_server.a
+lib/libmvfst_server_state.a
 lib/libmvfst_socketutil.a
 lib/libmvfst_state_ack_handler.so
+lib/libmvfst_state_datagram_handler.so
 lib/libmvfst_state_functions.so
 lib/libmvfst_state_machine.so
 lib/libmvfst_state_pacing_functions.so
-lib/libmvfst_state_qpr_functions.so
 lib/libmvfst_state_simple_frame_functions.so
 lib/libmvfst_state_stream.a
 lib/libmvfst_state_stream_functions.so

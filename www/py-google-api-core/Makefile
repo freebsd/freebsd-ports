@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-api-core
-PORTVERSION=	1.26.0
+PORTVERSION=	1.31.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Core Google API Client Library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=1.21.1<2.0:security/py-google-auth@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=1.25.0<2.0:security/py-google-auth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}googleapis-common-protos>=1.6.0<2.0:devel/py-googleapis-common-protos@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=14.3:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.12.0,1:devel/py-protobuf@${PY_FLAVOR} \
@@ -26,6 +26,7 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	GRPC GRPCGCP
+OPTIONS_DEFAULT=GRPC
 GRPC_DESC=	gRPC support
 GRPCGCP_DESC=	gRPC support for GCP
 

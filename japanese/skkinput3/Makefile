@@ -11,7 +11,7 @@ MAINTAINER=	koma2@lovepeers.org
 COMMENT=	SKK-like Japanese input method for X11
 
 USES=		imake xorg
-USE_GCC=	any
+USE_GCC=	yes
 USE_CSTD=	gnu89
 USE_XORG=	ice sm x11 xext xmu xt
 MAKE_JOBS_UNSAFE=	yes

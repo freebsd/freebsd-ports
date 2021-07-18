@@ -1,21 +1,20 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20210414
+PORTVERSION=	s20210716
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	09efade03619.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/1340
-PATCHFILES+=	91076a814ff2.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/4836
-PATCHFILES+=	ec7337d1da05.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	4c1e00b7780f.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	1d703019d37a.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	96dc85f79b0b.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	8ab3e2366b32.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	c279e3ad6104.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	9b429b84617c.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	cc4650cc8a84.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	4233c859a602.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
-PATCHFILES+=	c8880a62d365.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896
+PATCHFILES+=	a2686843592e.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/4836 mainline-merge
+PATCHFILES+=	e2d5cff34554.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	5e559324a080.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	3bfdd34ce241.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	234d7ded1c52.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	2caf2f0fe288.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	b9ff77485840.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	26907dfe941c.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	043027f85b64.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	169384b954b9.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
+PATCHFILES+=	16a67d43d9a4.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/5896 mainline-merge
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger
@@ -36,6 +35,7 @@ BUILD_DEPENDS=	catch>0:devel/catch \
 		nlohmann-json>0:devel/nlohmann-json \
 		glslangValidator:graphics/glslang
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
+		libzip.so:archivers/libzip \
 		libzstd.so:archivers/zstd \
 		libopus.so:audio/opus \
 		libboost_context.so:devel/boost-libs \
@@ -43,27 +43,27 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	eedbe8351
-GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-52-geac2416b8:mbedtls/externals/mbedtls \
+GH_TAGNAME=	046de2cc4
+GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.145:Vulkan_Headers/externals/Vulkan-Headers \
-		MerryMage:dynarmic:r4-219-gb2a4da5e:dynarmic/externals/dynarmic \
+		MerryMage:dynarmic:r5-88-g7946868a:dynarmic/externals/dynarmic \
 		ReinUsesLisp:sirit:eefca56:sirit/externals/sirit \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
+		benhoyt:inih:r52:inih/externals/inih/inih \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
-		fmtlib:fmt:7.1.2:fmt/externals/fmt \
+		fmtlib:fmt:8.0.0:fmt/externals/fmt \
 		herumi:xbyak:v5.96:xbyak/externals/xbyak \
-		nih-at:libzip:rel-1-5-2-93-g89bd6d63:libzip/externals/libzip/libzip \
 		kinetiknz:cubeb:cubeb-0.2-1298-g8d53747:cubeb/externals/cubeb \
-		benhoyt:inih:r52:inih/externals/inih/inih
+		yhirose:cpp-httplib:v0.9.0-5-g9648f95:cpp_httplib/externals/cpp-httplib
 
-USES=		cmake compiler:c++17-lang localbase:ldflags sdl ssl
+USES=		cmake:testing compiler:c++17-lang localbase:ldflags sdl ssl
 USE_GCC=	yes:build # libc++ lacks std::atomic_ref, std::ranges
 USE_SDL=	sdl2
+CMAKE_ON=	YUZU_ALLOW_SYSTEM_SDL2
 CMAKE_OFF=	ENABLE_GNUTLS ENABLE_MBEDTLS
 LDFLAGS+=	-static-libstdc++ # avoid libc++ conflict, requires files/patch-fmt
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
-TEST_TARGET=	test
 
 OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK SNDIO VULKAN
 OPTIONS_DEFAULT=PULSEAUDIO JACK SNDIO VULKAN

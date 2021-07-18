@@ -12,6 +12,9 @@ COMMENT=	Java Development Kit 7
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_13=	does not link: duplicate symbol: fp_g_free
+BROKEN_FreeBSD_14=	does not link: duplicate symbol: fp_g_free
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	battleblow
 GH_PROJECT=	jdk7u

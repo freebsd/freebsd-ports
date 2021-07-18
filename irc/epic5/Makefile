@@ -1,7 +1,7 @@
 # Created by: Josh Paetzel <josh@tcbug.org>
 
 PORTNAME=	epic5
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	irc
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/
 

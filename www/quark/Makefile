@@ -7,7 +7,7 @@ MASTER_SITES=	https://people.freebsd.org/~0mp/distfiles/
 PKGNAMESUFFIX=	-server
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and simple HTTP GET/HEAD-only web server for static content
 
 LICENSE=	ISCL
@@ -41,14 +41,5 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/quark
-
-_regenerate-distfile:
-	${RM} -r -- ${PKGNAME}
-	git clone -n https://git.suckless.org/quark ${PKGNAME}
-	git -C ${PKGNAME} checkout ${_COMMIT_HASH}
-	${RM} -r -- ${PKGNAME}/.git
-	${TAR} -czf ${PKGNAME}.tar.gz ${PKGNAME}
-	scp ${PKGNAME}.tar.gz 0mp@freefall.freebsd.org:~/public_html/distfiles
-	${RM} -r -- ${PKGNAME} ${PKGNAME}.tar.gz
 
 .include <bsd.port.mk>

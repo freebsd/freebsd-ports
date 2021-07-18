@@ -1,8 +1,8 @@
 # Created by: gahr
 
 PORTNAME=	dbus-tcl
-PORTVERSION=	2.1
-PORTREVISION=	2
+PORTVERSION=	2.2
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://chiselapp.com/user/schelte/repository/dbus/uv/
 DISTNAME=	dbus-${PORTVERSION}
@@ -23,14 +23,13 @@ PORTDOCS=	*
 
 TEST_TARGET=	do-test
 
-PLIST_FILES=	lib/dbus/libdbus21.so.1 \
+PLIST_FILES=	lib/dbus/lib${TCL_PKG}.so \
 		lib/dbus/pkgIndex.tcl \
 		man/mann/dbus.n.gz
 
 post-patch:
 	${REINPLACE_CMD} \
 	    -e '/^INSTALL_PROGRAM/s|$$| -s|' \
-	    -e 's|\$$\+|$$>|' \
 	    ${WRKSRC}/Makefile.in
 
 do-test:

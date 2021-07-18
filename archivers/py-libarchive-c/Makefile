@@ -1,8 +1,7 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	libarchive-c
-PORTVERSION=	2.8
-PORTREVISION=	1
+PORTVERSION=	2.9
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +22,6 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -vv
+	@cd ${WRKSRC} && TZ=UTC LC_ALL=en_US.UTF-8 ${PYTHON_CMD} -m pytest -vv
 
 .include <bsd.port.mk>

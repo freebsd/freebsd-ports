@@ -1,5 +1,5 @@
 PORTNAME=	Image-PNG-Libpng
-PORTVERSION=	0.56
+PORTVERSION=	0.57
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,9 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		localbase perl5
 USE_PERL5=	configure
+
+post-patch:
+	@${RM} ${WRKSRC}/*.pl
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Image/PNG/Libpng/Libpng.so

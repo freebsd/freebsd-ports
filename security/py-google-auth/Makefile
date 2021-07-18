@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-auth
-PORTVERSION=	1.27.0
+PORTVERSION=	1.33.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,10 +22,15 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	AIOHTTP
+OPTIONS_DEFINE=	AIOHTTP PYOPENSSL REAUTH
 OPTIONS_DEFAULT=AIOHTTP
 AIOHTTP_DESC=	Use aiohttp
+PYOPENSSL_DESC=	OpenSSL support
+REAUTH_DESC=	Reauth support
 
-AIOHTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.6.2<4.0.0:www/py-aiohttp@${PY_FLAVOR}
+AIOHTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.6.2<4.0.0:www/py-aiohttp@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}requests>=2.20.0:www/py-requests@${PY_FLAVOR}
+PYOPENSSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=20.0.0:security/py-openssl@${PY_FLAVOR}
+REAUTH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyu2f>=0.1.5:net/py-pyu2f@${PY_FLAVOR}
 
 .include <bsd.port.mk>

@@ -38,6 +38,7 @@
     SUBDIR += fluxter
     SUBDIR += flwm
     SUBDIR += fvwm2
+    SUBDIR += fvwm3
     SUBDIR += gamescope
     SUBDIR += gcompmgr
     SUBDIR += herbstluftwm
@@ -51,6 +52,7 @@
     SUBDIR += kickshaw
     SUBDIR += labwc
     SUBDIR += larswm
+    SUBDIR += leftwm
     SUBDIR += libcompizconfig
     SUBDIR += libdockapp
     SUBDIR += libwraster

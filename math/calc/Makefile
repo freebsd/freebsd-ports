@@ -1,7 +1,7 @@
 # Created by: jmz
 
 PORTNAME=	calc
-PORTVERSION=	2.13.0.0
+PORTVERSION=	2.13.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -27,6 +27,11 @@ OPTIONS_DEFAULT=FULL HELP
 OPTIONS_SUB=	yes
 FULL_DESC=	Install all funcs/scripts/headers (OFF: just basic calculator)
 HELP_DESC=	Install calc help files
+
+# We use Makefile.freebsd because Makefile.local is in .gitignore
+post-extract:
+	${SED} -e 's|%%CC%%|${CC}|; s|%%CFLAGS%%|${CFLAGS}|' \
+		${FILESDIR}/Makefile.freebsd > ${WRKSRC}/Makefile.local
 
 post-install:
 	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/calc lib/lib*.so

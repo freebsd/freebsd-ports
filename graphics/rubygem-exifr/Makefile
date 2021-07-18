@@ -1,7 +1,7 @@
 # Created by: stas
 
 PORTNAME=	exifr
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.9
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 

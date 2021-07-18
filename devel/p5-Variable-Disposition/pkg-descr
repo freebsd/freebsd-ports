@@ -1,0 +1,4 @@
+Variable::Disposition provides some basic helper functions for making sure
+variables go away when you want them to.
+
+WWW: https://metacpan.org/release/Variable-Disposition

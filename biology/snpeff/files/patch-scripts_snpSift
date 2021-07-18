@@ -1,0 +1,19 @@
+--- scripts/snpSift.orig	2021-04-19 15:55:06 UTC
++++ scripts/snpSift
+@@ -13,9 +13,9 @@
+ # Created by: Brad Chapman
+ #---------------------------------------------------------------------------------------------------
+ 
+-jardir="$(cd "$(dirname "$0")" && cd ".." && pwd -P)"
++jardir=%%JAVAJARDIR%%/snpeff
++JAVA_HOME=%%JAVA_HOME%%
+ 
+-java=java
+ if [ -e "$JAVA_HOME/bin/java" ]
+ then
+ 	java="$JAVA_HOME/bin/java"
+@@ -44,4 +44,3 @@ if [ "$jvm_mem_opts" == "" ]; then
+ fi
+ 
+ exec $java $jvm_mem_opts $jvm_prop_opts -jar ${jardir}/SnpSift.jar $pass_args
+-exit

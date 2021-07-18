@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-extra${EXTRACT_SUFX}:tlmgr \
 DIST_SUBDIR=	TeX
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-extra${EXTRACT_SUFX}
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	freebsd-tex@FreeBSD.org
 COMMENT=	TeXLive manager modules
 
 RUN_DEPENDS=	tex-kpathsea>=6.2.1_1:devel/tex-kpathsea

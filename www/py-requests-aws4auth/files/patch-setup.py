@@ -1,8 +1,8 @@
---- setup.py.orig	2020-09-29 00:16:05 UTC
+--- setup.py.orig	2021-05-21 16:58:29 UTC
 +++ setup.py
 @@ -45,9 +45,7 @@ setup(
      keywords='requests authentication amazon web services aws s3 REST',
-     install_requires=['requests'],
+     install_requires=['requests', 'six'],
      packages=['requests_aws4auth'],
 -    package_data={'requests_aws4auth': ['test/requests_aws4auth_test.py',
 -                                        '../README.md', '../LICENSE',

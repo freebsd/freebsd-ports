@@ -9,13 +9,14 @@ USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 python:run qt:5 \
 		shebangfix tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons dbusaddons ecm i18n itemviews jobwidgets kio service solid \
-		widgetsaddons xmlgui
+		widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
 
-SHEBANG_FILES=	converters/hotshot2calltree.cmake \
+SHEBANG_FILES=	converters/dprof2calltree \
+		converters/hotshot2calltree.in \
 		converters/memprof2calltree \
-		converters/op2calltree converters/dprof2calltree
+		converters/op2calltree
 
 OPTIONS_DEFINE=	DOT VALGRIND DOCS
 

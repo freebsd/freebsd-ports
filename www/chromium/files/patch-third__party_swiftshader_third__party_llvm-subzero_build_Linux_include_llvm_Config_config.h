@@ -1,4 +1,4 @@
---- third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm/Config/config.h.orig	2021-03-13 00:03:44 UTC
+--- third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm/Config/config.h.orig	2021-04-14 18:43:11 UTC
 +++ third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm/Config/config.h
 @@ -121,7 +121,7 @@
  #define HAVE_LINK_H 1

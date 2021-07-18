@@ -1,7 +1,7 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	20.0.0
-PORTREVISION?=	3
+DISTVERSION=	20.0.2
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
@@ -17,7 +17,7 @@ CONFLICTS?=	bacula19*-server bacula18*-server-* bareos17-server-*
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson
 
-USES+=		cmake compiler:c++11-lang localbase perl5 pkgconfig readline:port \
+USES+=		cmake compiler:c++11-lang localbase perl5 pkgconfig readline \
 		shebangfix
 USE_GITHUB=	yes
 USE_PERL5=	run
@@ -208,6 +208,7 @@ MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 post-patch:
 	@${REINPLACE_CMD}  '76,79d' ${WRKSRC}/CMakeLists.txt
 .if ${PKGNAMESUFFIX} == "-server"
+	@${REINPLACE_CMD}  '45d' ${WRKSRC}/core/src/CMakeLists.txt
 	@${REINPLACE_CMD}  '51d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
 .endif
 

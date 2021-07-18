@@ -1,8 +1,7 @@
 # Created by: Andrej Zverev <az@inec.ru>
 
 PORTNAME=	ne
-PORTVERSION=	3.3.0
-PORTREVISION=	1
+PORTVERSION=	3.3.1
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.di.unimi.it/
 

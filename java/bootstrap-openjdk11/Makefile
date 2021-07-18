@@ -21,19 +21,19 @@ WRKSRC=		${WRKDIR}/${JDK_ROOT}
 
 JDK_PORT=	${PKGNAMEPREFIX}${PORTNAME}
 JDK_ROOT=	${PKGNAMEPREFIX}${PORTNAME}
-JDK_ARCH=	${ARCH}${JDK_ARCH_SUFFIX_${ARCH}}
+JDK_ARCH=	${ARCH:C/armv.*/arm/}${JDK_ARCH_SUFFIX_${ARCH}}
 JDK_ARCH_SUFFIX_powerpc64=	-${PPC_ABI:tl}
 
 INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
 
 .include <bsd.port.pre.mk>
 
-# Support aarch64 on FreeBSD 12 and up
+# Support aarch64, armv6 and armv7 on FreeBSD 12 and up
 .if ${OSVERSION} >= 1200500
-ONLY_FOR_ARCHS+=aarch64
+ONLY_FOR_ARCHS+=aarch64 armv6 armv7
 .endif
 
-.if ${ARCH} == aarch64
+.if ${ARCH} == aarch64 || ${ARCH:Marmv*}
 DISTNAME=	${JDK_PORT}-${JDK_ARCH}-12-${PORTVERSION}
 PLIST_SUB+=	PPC64LE=""
 .elif ${ARCH} == powerpc64le

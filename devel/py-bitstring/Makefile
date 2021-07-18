@@ -1,7 +1,7 @@
 # Created by: Sofian Brabez <sbrabez@gmail.com>
 
 PORTNAME=	bitstring
-PORTVERSION=	3.1.5
+PORTVERSION=	3.1.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,13 +12,14 @@ COMMENT=	Simple construction, analysis, and modification of binary data
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+ zip
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOCS=	PKG-INFO README.rst release_notes.txt
 
 OPTIONS_DEFINE=	DOCS
+NO_ARCH=	yes
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

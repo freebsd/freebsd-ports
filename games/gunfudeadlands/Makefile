@@ -1,6 +1,6 @@
 PORTNAME=	gunfudeadlands
 PORTVERSION=	1.01
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/GunFu%20Deadlands%20${PORTVERSION}/
 DISTNAME=	GunFuDeadlands_${PORTVERSION:C/\.//}_src
@@ -17,20 +17,31 @@ USES=		zip
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-SUB_FILES=	gunfudeadlands
+SUB_FILES=	${PORTNAME}
 
-PLIST_FILES=	bin/gunfudeadlands
+PLIST_FILES=	bin/${PORTNAME} share/pixmaps/${PORTNAME}.png
 PORTDOCS=	*
 PORTDATA=	*
+
+DESKTOP_ENTRIES="GunFu Deadlands" \
+                "" \
+                "${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+                "${PORTNAME}" \
+                "Game;ArcadeGame;" \
+                ""
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		${STAGEDIR}${DATADIR}/GunFuDeadlands.zip
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/images/guy.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/readme.txt ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

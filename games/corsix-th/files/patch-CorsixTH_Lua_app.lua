@@ -1,6 +1,6 @@
---- CorsixTH/Lua/app.lua.orig	2015-08-30 20:29:45 UTC
+--- CorsixTH/Lua/app.lua.orig	2021-06-17 02:16:54 UTC
 +++ CorsixTH/Lua/app.lua
-@@ -63,7 +63,7 @@ function App:App()
+@@ -64,7 +64,7 @@ function App:App()
    }
    self.strings = {}
    self.savegame_version = SAVEGAME_VERSION

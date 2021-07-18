@@ -51,7 +51,7 @@ RUN_DEPENDS=	rubygem-CFPropertyList>=2.3.1:devel/rubygem-CFPropertyList \
 		rubygem-inflecto>=0.0.2:devel/rubygem-inflecto \
 		rubygem-ipaddress>=0.8.0:net/rubygem-ipaddress \
 		rubygem-json>=1.8.2:devel/rubygem-json \
-		rubygem-mail>=2.6.3:mail/rubygem-mail \
+		rubygem-mail>=2.6.3,2:mail/rubygem-mail \
 		rubygem-memoizable>=0.4.0:devel/rubygem-memoizable \
 		rubygem-mime-types>=2.4.3:misc/rubygem-mime-types \
 		rubygem-multi_json>=1.10.1:devel/rubygem-multi_json \
@@ -59,7 +59,7 @@ RUN_DEPENDS=	rubygem-CFPropertyList>=2.3.1:devel/rubygem-CFPropertyList \
 		rubygem-multipart-post>=1.2.0:www/rubygem-multipart-post \
 		rubygem-net-scp>=1.2.1:security/rubygem-net-scp \
 		rubygem-net-sftp>=2.1.2:security/rubygem-net-sftp \
-		rubygem-net-ssh>=3.2.0:security/rubygem-net-ssh \
+		rubygem-net-ssh>=3.2.0,2:security/rubygem-net-ssh \
 		rubygem-netrc>=0.11.0:net/rubygem-netrc \
 		rubygem-nokogiri>=1.8.2:textproc/rubygem-nokogiri \
 		rubygem-open4>=1.3.0:devel/rubygem-open4 \

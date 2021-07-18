@@ -1,8 +1,7 @@
 # Created by: Stefan Esser <se@FreeBSD.org>
 
 PORTNAME=	argus-clients
-PORTVERSION=	3.0.8.2
-PORTREVISION=	4
+PORTVERSION=	3.0.8.3
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
@@ -22,7 +21,6 @@ SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_CONFIGURE_ON=	--with-sasl=${LOCALBASE}
 MYSQL_USES=	mysql
 
-USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	examples/rahosts/raips.pl
 
@@ -54,9 +52,6 @@ do-install:
 .for i in argusclientbug radark ragraph rahosts raips raplot raports
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/$i ${STAGEDIR}/${PREFIX}/bin/$i
 .endfor
-.for i in radark ragraph rahosts raports
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/$i ${STAGEDIR}/${PREFIX}/bin/$i
-.endfor
 .for i in ra.1 rabins.1 racluster.1 raconvert.1 racount.1 radump.1 raevent.1 \
 	rafilteraddr.1 ragraph.1 ragrep.1 rahisto.1 ralabel.1 ranonymize.1 \
 	rapath.1 rapolicy.1 rasort.1 rasplit.1 rastream.1 rastrip.1
@@ -78,14 +73,14 @@ do-install-MYSQL-on:
 .endfor
 
 do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}/${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}/
 .for i in AUTHORS CHANGES CREDITS ChangeLog INSTALL \
 	MANIFEST README VERSION
 	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}/${DOCSDIR}
 .endfor
 
 do-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 .for i in Config Database Startup System
 	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}/$i
 .endfor

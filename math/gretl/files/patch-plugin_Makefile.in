@@ -1,14 +1,15 @@
---- plugin/Makefile.in.orig	2019-01-26 04:17:48 UTC
+--- plugin/Makefile.in.orig	2021-05-07 16:11:37 UTC
 +++ plugin/Makefile.in
-@@ -396,13 +396,13 @@ $(GRETLLIB):
+@@ -423,14 +423,14 @@ $(GRETLLIB):
  .PHONY:
  
  install: $(GRETLLIB) $(PLUGINS) $(URCDATA) $(DWDATA) installdirs
 -	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) \
 +	$(LIBTOOL) --mode=install $(INSTALL_DATA) \
  	$(PLUGINS) $(DESTDIR)$(plugindir)
- 	$(INSTALL_DATA) $(URCDATA) $(DESTDIR)$(plugindir)/data
- 	$(INSTALL_DATA) $(DWDATA) $(DESTDIR)$(plugindir)/data
+ 	for f in $(PLUGIN_DATA) ; do \
+ 	$(INSTALL_DATA) $(topsrc)/plugin/data/$$f \
+ 	$(DESTDIR)$(plugindir)/data ; done
  
  install-strip: $(GRETLLIB) $(PLUGINS) installdirs
 -	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) -s \

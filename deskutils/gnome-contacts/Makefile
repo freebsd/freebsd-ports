@@ -2,6 +2,7 @@
 
 PORTNAME=	gnome-contacts
 PORTVERSION=	3.38.1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 

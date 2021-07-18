@@ -1338,7 +1338,6 @@ share/metainfo/io.github.OpenToonz.appdata.xml
 %%DATADIR%%/stuff/library/vector brushes/thickening.pli
 %%DATADIR%%/stuff/library/vector brushes/trail_shape1.pli
 %%DATADIR%%/stuff/library/vector brushes/trail_shape2.pli
-%%DATADIR%%/stuff/plugins/.gitkeep
 %%DATADIR%%/stuff/profiles/layouts/check.bmp
 %%DATADIR%%/stuff/profiles/layouts/fxs/SHADER_caustics.xml
 %%DATADIR%%/stuff/profiles/layouts/fxs/SHADER_fireball.xml
@@ -1526,10 +1525,11 @@ share/metainfo/io.github.OpenToonz.appdata.xml
 %%DATADIR%%/stuff/profiles/layouts/shortcuts/otretas.ini
 %%DATADIR%%/stuff/profiles/layouts/toolbars/maintoolbar.xml
 %%DATADIR%%/stuff/profiles/project_folders.txt
-%%DATADIR%%/stuff/projects/.gitkeep
 %%DATADIR%%/stuff/studiopalette/Global Palettes/basics.tpl
 %%DATADIR%%/stuff/studiopalette/Global Palettes/color_key.tpl
 %%DATADIR%%/stuff/studiopalette/Global Palettes/skin.tpl
 %%DATADIR%%/stuff/studiopalette/Global Palettes/variety.tpl
 %%DATADIR%%/stuff/studiopalette/cleanup_default.tpl
-%%DATADIR%%/stuff/toonzfarm/.gitkeep
+@dir %%DATADIR%%/stuff/plugins
+@dir %%DATADIR%%/stuff/projects
+@dir %%DATADIR%%/stuff/toonzfarm

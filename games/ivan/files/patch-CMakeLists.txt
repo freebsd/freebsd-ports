@@ -1,0 +1,13 @@
+TODO: On FreeBSD, libexecinfo needs to be linked
+
+--- CMakeLists.txt.orig	2020-03-16 02:04:05 UTC
++++ CMakeLists.txt
+@@ -65,7 +65,7 @@ endif()
+ 
+ find_path(EXECINFO_INCLUDE_DIR NAMES execinfo.h)
+ if(NOT EXECINFO_INCLUDE_DIR MATCHES "-NOTFOUND$")
+-  add_definitions(-DBACKTRACE)
++	#add_definitions(-DBACKTRACE)
+ endif()
+ 
+ add_subdirectory(FeLib)

@@ -29,7 +29,7 @@ CPE_VERSION=	${PORTVERSION:R}
 OPTIONS_DEFINE=	DOCS
 
 # https://ftp.gnu.org/gnu/readline/readline-8.1-patches/
-#PATCHES=	1
+PATCHES=	1
 .if defined(PATCHES)
 CPE_UPDATE=	${PATCHLEVEL}
 PATCHLEVEL=	${PATCHES:O:[-1]}
@@ -41,7 +41,7 @@ PATCHLEVEL=	0
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/rlconf.h
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/rlconf.h ${WRKSRC}/doc/readline.3 ${WRKSRC}/doc/readline.info ${WRKSRC}/doc/rluserman.info
 .if exists(/usr/lib/libtermcapw.so)
 	@${REINPLACE_CMD} 's|-ltermcap|-ltermcapw|g' ${WRKSRC}/configure
 .endif

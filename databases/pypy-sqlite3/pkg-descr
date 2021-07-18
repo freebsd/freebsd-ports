@@ -1,8 +1,0 @@
-SQLite is a library that provides a SQL-language database that
-stores data in disk files without requiring a separate server
-process. pysqlite provides a SQL interface compliant with the DB-API
-2.0 specification described by PEP 249. This means that it should
-be possible to write the first version of your applications using
-SQLite for data storage. If switching to a larger database such as
-PostgreSQL or Oracle is later necessary, the switch should be
-relatively easy.

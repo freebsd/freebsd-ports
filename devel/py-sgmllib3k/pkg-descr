@@ -1,0 +1,6 @@
+sgmllib3k is a Python 3 port of the old Python 2's sgmllib stdlib module.
+
+sgmllib was dropped from the Python standard library in Python 3. This package
+provides a port of the library to Python 3.
+
+WWW: https://pypi.org/project/sgmllib3k/

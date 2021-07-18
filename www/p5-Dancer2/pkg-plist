@@ -1,8 +1,8 @@
 bin/dancer2
 %%SITE_PERL%%/Dancer2.pm
 %%SITE_PERL%%/Dancer2/CLI.pm
-%%SITE_PERL%%/Dancer2/CLI/Command/gen.pm
-%%SITE_PERL%%/Dancer2/CLI/Command/version.pm
+%%SITE_PERL%%/Dancer2/CLI/Gen.pm
+%%SITE_PERL%%/Dancer2/CLI/Version.pm
 %%SITE_PERL%%/Dancer2/Config.pod
 %%SITE_PERL%%/Dancer2/Cookbook.pod
 %%SITE_PERL%%/Dancer2/Core.pm
@@ -48,6 +48,7 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Logger/Null.pm
 %%SITE_PERL%%/Dancer2/Manual.pod
 %%SITE_PERL%%/Dancer2/Manual/Deployment.pod
+%%SITE_PERL%%/Dancer2/Manual/Keywords.pod
 %%SITE_PERL%%/Dancer2/Manual/Migration.pod
 %%SITE_PERL%%/Dancer2/Manual/Testing.pod
 %%SITE_PERL%%/Dancer2/Plugin.pm
@@ -65,6 +66,7 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Template/Tiny.pm
 %%SITE_PERL%%/Dancer2/Test.pm
 %%SITE_PERL%%/Dancer2/Tutorial.pod
+%%SITE_PERL%%/auto/share/dist/Dancer2/docker/Dockerfile
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/.dancer
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/MANIFEST.SKIP
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/Makefile.PL
@@ -91,8 +93,8 @@ bin/dancer2
 %%PERL5_MAN1%%/dancer2.1.gz
 %%PERL5_MAN3%%/Dancer2.3.gz
 %%PERL5_MAN3%%/Dancer2::CLI.3.gz
-%%PERL5_MAN3%%/Dancer2::CLI::Command::gen.3.gz
-%%PERL5_MAN3%%/Dancer2::CLI::Command::version.3.gz
+%%PERL5_MAN3%%/Dancer2::CLI::Gen.3.gz
+%%PERL5_MAN3%%/Dancer2::CLI::Version.3.gz
 %%PERL5_MAN3%%/Dancer2::Config.3.gz
 %%PERL5_MAN3%%/Dancer2::Cookbook.3.gz
 %%PERL5_MAN3%%/Dancer2::Core.3.gz
@@ -138,6 +140,7 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Logger::Null.3.gz
 %%PERL5_MAN3%%/Dancer2::Manual.3.gz
 %%PERL5_MAN3%%/Dancer2::Manual::Deployment.3.gz
+%%PERL5_MAN3%%/Dancer2::Manual::Keywords.3.gz
 %%PERL5_MAN3%%/Dancer2::Manual::Migration.3.gz
 %%PERL5_MAN3%%/Dancer2::Manual::Testing.3.gz
 %%PERL5_MAN3%%/Dancer2::Plugin.3.gz

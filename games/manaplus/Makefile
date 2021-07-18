@@ -2,6 +2,7 @@
 
 PORTNAME=	manaplus
 DISTVERSION=	2.1.3.17
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.evolonline.org/manaplus/download/${PORTVERSION}/
 

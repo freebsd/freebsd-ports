@@ -1,5 +1,5 @@
 PORTNAME=	croc
-PORTVERSION=	8.6.12
+PORTVERSION=	9.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -18,13 +18,13 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:61e056675ecf:golang_net/vendor/golang.org/x/net \
-		golang:sys:49726bf1d181:golang_sys/vendor/golang.org/x/sys \
-		golang:term:de623e64d2a6:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
-		kalafut:imohash:v1.0.0:kalafut_imohash/vendor/github.com/kalafut/imohash \
-		mattn:go-runewidth:v0.0.10:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		golang:crypto:5ff15b29337e:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:04defd469f4e:golang_net/vendor/golang.org/x/net \
+		golang:sys:59db8d763f22:golang_sys/vendor/golang.org/x/sys \
+		golang:term:6886f2dfbf5b:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
+		kalafut:imohash:v1.0.2:kalafut_imohash/vendor/github.com/kalafut/imohash \
+		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mitchellh:colorstring:d06e56a500db:mitchellh_colorstring/vendor/github.com/mitchellh/colorstring \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
@@ -32,12 +32,12 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		schollz:cli:v2.2.1:schollz_cli_v2/vendor/github.com/schollz/cli/v2 \
 		schollz:logger:v1.2.0:schollz_logger/vendor/github.com/schollz/logger \
 		schollz:mnemonicode:v1.0.1:schollz_mnemonicode/vendor/github.com/schollz/mnemonicode \
-		schollz:pake:v2.0.7:schollz_pake_v2/vendor/github.com/schollz/pake/v2 \
-		schollz:peerdiscovery:v1.6.3:schollz_peerdiscovery/vendor/github.com/schollz/peerdiscovery \
-		schollz:progressbar:v3.7.6:schollz_progressbar_v3/vendor/github.com/schollz/progressbar/v3 \
-		spaolacci:murmur3:v1.1.0:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
+		schollz:pake:v3.0.2:schollz_pake_v3/vendor/github.com/schollz/pake/v3 \
+		schollz:peerdiscovery:v1.6.6:schollz_peerdiscovery/vendor/github.com/schollz/peerdiscovery \
+		schollz:progressbar:v3.8.2:schollz_progressbar_v3/vendor/github.com/schollz/progressbar/v3 \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
-		tscholl2:siec:8da93652b094:tscholl2_siec/vendor/github.com/tscholl2/siec
+		tscholl2:siec:8da93652b094:tscholl2_siec/vendor/github.com/tscholl2/siec \
+		twmb:murmur3:v1.1.5:twmb_murmur3/vendor/github.com/twmb/murmur3
 
 PLIST_FILES=	bin/croc
 

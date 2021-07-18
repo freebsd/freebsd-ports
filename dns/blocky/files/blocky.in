@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: blocky
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# blocky_enable (bool):	Set to NO by default.
+#				Set it to YES to enable blocky.
+# blocky_config (str): Set to /usr/local/etc/blocky/config.yml by default.
+#
+
+. /etc/rc.subr
+
+name=blocky
+rcvar=blocky_enable
+
+load_rc_config ${name}
+
+: ${blocky_enable:=NO}
+: ${blocky_config:="%%PREFIX%%/etc/blocky-config.yml"}
+: ${blocky_flags:=}
+
+pidfile=/var/run/blocky.pid
+command="%%PREFIX%%/sbin/blocky"
+
+start_cmd="${name}_start"
+
+blocky_start()
+{
+	echo -n "Starting ${name}."
+	/usr/sbin/daemon -p ${pidfile} -f ${command} -c ${blocky_config} ${blocky_flags}
+}
+
+run_rc_command "$1"

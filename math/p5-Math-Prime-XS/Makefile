@@ -18,8 +18,8 @@ RUN_DEPENDS=	p5-Params-Validate>=0:devel/p5-Params-Validate \
 TEST_DEPENDS=	p5-Test-Pod>=1.14:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.04:devel/p5-Test-Pod-Coverage
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Prime/XS/XS.so

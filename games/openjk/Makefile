@@ -1,5 +1,5 @@
 PORTNAME=	openjk
-PORTVERSION=	g20200823
+PORTVERSION=	g20210516
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -14,12 +14,12 @@ USE_GL=		gl glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	JACoders
 GH_PROJECT=	OpenJK
-GH_TAGNAME=	ca63f21
+GH_TAGNAME=	07675e2
 USE_SDL=	sdl2
 USE_XORG=	x11
 
 CXXFLAGS+=	-DNDEBUG
-OPENJK_ARCH=	${ARCH:S/powerpc64$/ppc64/:C/armv.*/arm/}
+OPENJK_ARCH=	${ARCH:S/powerpc64$/ppc64/:S/powerpc$/ppc/:C/armv.*/arm/}
 PLIST_SUB=	ARCH="${OPENJK_ARCH}"
 SUB_FILES=	jamp \
 		jasp

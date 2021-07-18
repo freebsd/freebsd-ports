@@ -37,7 +37,7 @@ MANPAGES_USES=		python:3.6+,build shebangfix
 MANPAGES_VARS=		SHEBANG_GLOB=*.py
 SDL_CMAKE_BOOL=		ZZIPSDL
 SDL_USE=		SDL=sdl2
-SDL_USES=		libtool:ldflags sdl
+SDL_USES=		localbase:ldflags pkgconfig sdl
 TEST_BUILD_DEPENDS=	zip:archivers/zip
 TEST_CMAKE_BOOL=	BUILD_TESTS ZZIPTEST
 TEST_CMAKE_BOOL_OFF=	ZZIP_TESTCVE

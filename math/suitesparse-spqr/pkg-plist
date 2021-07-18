@@ -1,0 +1,9 @@
+include/suitesparse/SuiteSparseQR.hpp
+include/suitesparse/SuiteSparseQR_C.h
+include/suitesparse/SuiteSparseQR_definitions.h
+include/suitesparse/spqr.hpp
+lib/libspqr.so
+lib/libspqr.so.2
+lib/libspqr.so.2.0.9
+%%PORTDOCS%%%%DOCSDIR%%/SPQR_README.txt
+%%PORTDOCS%%%%DOCSDIR%%/spqr_user_guide.pdf

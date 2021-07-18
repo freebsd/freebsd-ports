@@ -1,7 +1,10 @@
 bin/nvidia-bug-report.sh
 bin/nvidia-debugdump
 bin/nvidia-smi
-etc/libmap.d/nvidia.conf
+%%LIBGLMAP%%etc/libmap.d/nvidia.conf
+%%LIBGLDIR%%/libGL.so.1
+%%LIBGLDIR%%/libEGL.so.1
+%%LIBGLDIR%%/libGLESv2.so.2
 lib/libEGL-NVIDIA.so
 lib/libEGL-NVIDIA.so.1
 lib/libEGL_nvidia.so
@@ -14,9 +17,9 @@ lib/libGLESv2-NVIDIA.so
 lib/libGLESv2-NVIDIA.so.2
 lib/libGLESv2_nvidia.so
 lib/libGLESv2_nvidia.so.2
-lib/libGLX.so
-lib/libGLX.so.0
-lib/libGLX_indirect.so.0
+%%LIBGLDIR%%/libGLX.so
+%%LIBGLDIR%%/libGLX.so.0
+@comment lib/libGLX_indirect.so.0
 lib/libGLX_nvidia.so
 lib/libGLX_nvidia.so.0
 lib/libGLdispatch.so
@@ -75,6 +78,8 @@ lib32/libnvidia-glcore.so
 lib32/libnvidia-glcore.so.1
 lib32/libnvidia-glsi.so
 lib32/libnvidia-glsi.so.1
+lib32/libnvidia-glvkspirv.so
+lib32/libnvidia-glvkspirv.so.1
 lib32/libnvidia-tls.so
 lib32/libnvidia-tls.so.1
 lib32/vdpau/libvdpau_nvidia.so.1
@@ -84,8 +89,8 @@ share/glvnd/egl_vendor.d/10_nvidia.json
 share/vulkan/icd.d/nvidia_icd.json
 share/vulkan/implicit_layer.d/nvidia_layers.json
 %%MODULESDIR%%/drivers/nvidia_drv.so
-%%MODULESDIR%%/extensions/.nvidia/libglx.so
-%%MODULESDIR%%/extensions/.nvidia/libglx.so.1
+%%EXTENSIONSDIR%%/libglx.so
+%%EXTENSIONSDIR%%/libglx.so.1
 %%MODULESDIR%%/extensions/libglxserver_nvidia.so
 %%MODULESDIR%%/extensions/libglxserver_nvidia.so.1
 /%%KMODDIR%%/nvidia.ko

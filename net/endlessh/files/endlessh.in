@@ -26,8 +26,9 @@ load_rc_config $name
 : ${endlessh_logfile:=/var/log/endlessh.log}
 
 pidfile=/var/run/endlessh.pid
+daemonpidfile=/var/run/daemon_endlessh.pid
 procname="%%PREFIX%%/bin/endlessh"
 command=/usr/sbin/daemon
-command_args='-p ${pidfile} -u ${endlessh_daemonuser} -o ${endlessh_logfile} ${procname} -f ${endlessh_config} ${endlessh_args}'
+command_args='-p ${pidfile} -P ${daemonpidfile} -u ${endlessh_daemonuser} -Ho ${endlessh_logfile} ${procname} -f ${endlessh_config} ${endlessh_args}'
 
 run_rc_command $1

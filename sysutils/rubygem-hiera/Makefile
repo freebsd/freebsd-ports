@@ -1,7 +1,7 @@
 # Created by: Greg Larkin <glarkin@FreeBSD.org>
 
 PORTNAME=	hiera
-PORTVERSION=	3.4.5
+PORTVERSION=	3.7.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -11,24 +11,22 @@ COMMENT=	Pluggable data store for hierarchical data
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	rubygem-hiera1-*
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
-HIERA_DBDIR=	/var/db/hiera
+PLIST_DIRS=	/var/db/hiera
 PLIST_FILES=	bin/hiera
-PLIST_DIRS=	${HIERA_DBDIR}
 
 post-install:
-	${REINPLACE_CMD} 's|/etc/puppetlabs/code/environments/%{environment}/hieradata|${HIERA_DBDIR}|' \
+	${REINPLACE_CMD} 's|/etc/puppetlabs/code/environments/%{environment}/hieradata|/var/db/hiera|' \
 		${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/lib/hiera/util.rb \
 		${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/spec/unit/util_spec.rb
 	${REINPLACE_CMD} 's|/etc/puppetlabs/code|${PREFIX}/etc|' \
 		${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/lib/hiera/util.rb \
 		${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/spec/unit/util_spec.rb
 	${FIND} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR} -name \*.bak -delete
-	${MKDIR} ${STAGEDIR}${HIERA_DBDIR}
+	${MKDIR} ${STAGEDIR}/var/db/hiera
 
 .include <bsd.port.mk>

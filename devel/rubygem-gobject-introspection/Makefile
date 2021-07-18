@@ -1,10 +1,10 @@
 PORTNAME=	gobject-introspection
-PORTVERSION=	3.4.3
+PORTVERSION=	3.4.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Ruby binding for GObjectIntrospection
+COMMENT=	Ruby binding of GObject Introspection
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

@@ -1,4 +1,4 @@
---- third_party/nasm/config/config-linux.h.orig	2021-03-13 00:03:38 UTC
+--- third_party/nasm/config/config-linux.h.orig	2021-04-14 18:43:05 UTC
 +++ third_party/nasm/config/config-linux.h
 @@ -139,7 +139,7 @@
  #define HAVE_ACCESS 1

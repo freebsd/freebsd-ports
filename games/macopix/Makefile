@@ -5,25 +5,17 @@ PORTVERSION=	1.7.4
 PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://rosegray.sakura.ne.jp/macopix/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RESTRICTED_FILES}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LICENSE_DISTFILES_DATA}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window sitter for X11
 
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: AutoBar
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: AutoBar
-BROKEN_armv6=		dumps core: Assertion failed: (!NodePtr->isKnownSentinel()), function operator*, file ilist_iterator.h
-BROKEN_armv7=		dumps core: Assertion failed: (!NodePtr->isKnownSentinel()), function operator*, file ilist_iterator.h
-
-LIB_DEPENDS=	libpng.so:graphics/png \
-		libtiff.so:graphics/tiff
-
-RESTRICTED=	'contains commercial character data'
-
-RESTRICTED_FILES=	\
+LICENSE=	GPLv2+ DATA
+LICENSE_COMB=	multi
+LICENSE_NAME_DATA=	Commercial character data
+LICENSE_TEXT_DATA=	contains commercial character data
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
+LICENSE_DISTFILES_DATA=	\
 		macopix-mascot-comic_party-euc-ja-1.02.tar.gz \
 		macopix-mascot-cosmos-euc-ja-1.02.tar.gz \
 		macopix-mascot-kanon-euc-ja-1.02.tar.gz \
@@ -34,6 +26,15 @@ RESTRICTED_FILES=	\
 		macopix-mascot-tsukihime-euc-ja-1.02.tar.gz \
 		macopix-mascot-marimite-euc-ja-2.20.tar.gz \
 		macopix-mascot-HxB-euc-ja-0.30.tar.gz
+LICENSE_PERMS_DATA=	auto-accept
+
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: AutoBar
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: AutoBar
+BROKEN_armv6=		dumps core: Assertion failed: (!NodePtr->isKnownSentinel()), function operator*, file ilist_iterator.h
+BROKEN_armv7=		dumps core: Assertion failed: (!NodePtr->isKnownSentinel()), function operator*, file ilist_iterator.h
+
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 USES=		gettext gmake gnome iconv jpeg libtool pkgconfig xorg
 USE_GNOME=	gtk20

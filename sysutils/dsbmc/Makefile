@@ -2,6 +2,7 @@
 
 PORTNAME=	dsbmc
 DISTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	mk@nic-nac-project.org

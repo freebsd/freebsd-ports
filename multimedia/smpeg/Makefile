@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--disable-opengl-player \
 		--disable-gtk-player \
 		--enable-mmx
 CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
-CFLAGS_clang=	-Wno-error-narrowing
+CFLAGS_clang=	-Wno-c++11-narrowing
 LDFLAGS_i386=	-Wl,-znotext
 MAKE_ARGS=	LIBTOOL=${LOCALBASE}/bin/libtool
 INSTALL_TARGET=	install-strip

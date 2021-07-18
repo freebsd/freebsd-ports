@@ -1,8 +1,10 @@
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	2020_09_5
-PORTREVISION=	1
+DISTVERSION=	2021_03_4
 CATEGORIES=	science
+MASTER_SITES=	https://fonts.google.com/download?family=Comic%20Neue&dummy=/:font
+DISTFILES=	Comic_Neue.zip:font
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of cheminformatics and machine-learning software
@@ -18,7 +20,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libmaeparser.so:science/maeparser
 
-USES=		bison:build cmake compiler:c++11-lang eigen:3 python:3.6+
+USES=		bison:build cmake compiler:c++11-lang eigen:3 python:3.7+
 USE_GITHUB=	yes
 GH_TUPLE=	rareylab:RingDecomposerLib:v1.1.3_rdkit:RingDecomposerLib/External/RingFamilies/RingDecomposerLib
 USE_LDCONFIG=	yes
@@ -66,6 +68,7 @@ PLIST_SUB+=	LITTLE_ENDIAN="@comment "
 post-extract:
 	@${MKDIR} ${WRKSRC}/External/rapidjson-1.1.0
 	@cd ${WRKSRC}/External/rapidjson-1.1.0 && ${LN} -s ${LOCALBASE}/include/rapidjson include
+	@cd ${WRKSRC}/Data/Fonts && unzip ${DISTDIR}/${DIST_SUBDIR}/Comic_Neue.zip
 
 post-stage: # https://github.com/rdkit/rdkit/issues/2094
 	#@${MKDIR} ${STAGEDIR}${PREFIX}/lib/cmake

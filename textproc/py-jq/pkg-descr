@@ -1,0 +1,5 @@
+jq.py: a lightweight and flexible JSON processor
+
+py-jq contains Python bindings for jq.
+
+WWW: https://github.com/mwilliamson/jq.py

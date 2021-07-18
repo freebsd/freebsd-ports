@@ -1,6 +1,6 @@
 PORTNAME=	thermofun
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.7
+DISTVERSION=	0.3.8
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 
 USES=		cmake compiler:c++14-lang
-USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	thermohub

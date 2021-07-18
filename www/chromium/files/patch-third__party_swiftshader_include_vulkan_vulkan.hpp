@@ -1,4 +1,4 @@
---- third_party/swiftshader/include/vulkan/vulkan.hpp.orig	2021-03-13 00:03:40 UTC
+--- third_party/swiftshader/include/vulkan/vulkan.hpp.orig	2021-04-14 18:43:08 UTC
 +++ third_party/swiftshader/include/vulkan/vulkan.hpp
 @@ -67,7 +67,7 @@
  #endif

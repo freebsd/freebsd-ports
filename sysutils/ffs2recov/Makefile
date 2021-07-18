@@ -12,6 +12,7 @@ COMMENT=	Utility to recover UFS2 filesystems
 LICENSE=	BSD2CLAUSE
 
 BROKEN_FreeBSD_13=	Changes made to the ffs2 filesystem in FreeBSD 13 are no longer compatible with ffs2recov
+BROKEN_FreeBSD_14=	Changes made to the ffs2 filesystem in FreeBSD 13 are no longer compatible with ffs2recov
 
 USES=		compiler:c11 tar:bzip2 uidfix
 WRKSRC=		${WRKDIR}/${PORTNAME}

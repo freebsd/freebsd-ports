@@ -1,0 +1,6 @@
+google-re2 is a rop-in replacement for the re module.
+
+It uses RE2 under the hood, of course, so various PCRE features (e.g.
+backreferences, look-around assertions) are not supported.
+
+WWW: https://github.com/google/re2/tree/abseil/python

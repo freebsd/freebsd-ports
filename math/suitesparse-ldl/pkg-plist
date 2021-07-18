@@ -1,0 +1,6 @@
+include/suitesparse/ldl.h
+lib/libldl.so
+lib/libldl.so.2
+lib/libldl.so.2.2.6
+%%PORTDOCS%%%%DOCSDIR%%/LDL_README.txt
+%%PORTDOCS%%%%DOCSDIR%%/ldl_userguide.pdf

@@ -1411,6 +1411,7 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/webinterface.default/lang/_strings/pt.json
 %%DATADIR%%/addons/webinterface.default/lang/_strings/sk.json
 %%DATADIR%%/addons/webinterface.default/lang/_strings/zh_hans.json
+%%DATADIR%%/addons/webinterface.default/lang/_strings/zh_hant.json
 %%DATADIR%%/addons/webinterface.default/lang/de/app-readme.html
 %%DATADIR%%/addons/webinterface.default/lang/de/keybind-readme.html
 %%DATADIR%%/addons/webinterface.default/lang/de/lang-readme.html

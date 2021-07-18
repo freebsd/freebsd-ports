@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	c-icap
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	www security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/0.5.x/
 PKGNAMESUFFIX=	-modules

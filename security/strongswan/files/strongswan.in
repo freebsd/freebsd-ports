@@ -14,7 +14,7 @@
 #	Valid options are:
 #	"stroke" for the old ipsec/startr interface
 #	"vici" for the newer swanctl intrface
-#	Default is "stroke"
+#	Default is "%%INTERFACE%%"
 
 . /etc/rc.subr
 
@@ -26,7 +26,7 @@ rcvar=strongswan_enable
 load_rc_config $name
 
 : ${strongswan_enable:=NO}
-: ${strongswan_interface:="vici"}
+: ${strongswan_interface:="%%INTERFACE%%"}
 
 extra_commands="reload statusall"
 

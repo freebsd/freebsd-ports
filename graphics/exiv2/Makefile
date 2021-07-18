@@ -1,7 +1,7 @@
 # Created by: Michael Johnson <ahze@ahze.net>
 
 PORTNAME=	exiv2
-DISTVERSION=	0.27.3
+DISTVERSION=	0.27.4
 DISTVERSIONSUFFIX=	-Source
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -18,7 +18,7 @@ TEST_DEPENDS=	bash:shells/bash
 TEST_LIB_DEPENDS=	libgtest.so:devel/googletest
 
 USES=		cmake compiler:c++11-lang cpe dos2unix gettext-tools pathfix \
-		python:3.5+,test localbase:ldflags
+		python:3.6+,test localbase:ldflags
 USE_LDCONFIG=	yes
 DOS2UNIX_FILES=	cmake/compilerFlags.cmake
 
@@ -51,6 +51,8 @@ LDFLAGS_mips=		-lintl
 LDFLAGS_mips64=		-lintl
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' \
+		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' \
 		${WRKSRC}/test/Makefile
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' \

@@ -1,6 +1,6 @@
---- src/DrawResources/CheckCommands.tcl.orig	2018-05-25 19:13:38 UTC
+--- src/DrawResources/CheckCommands.tcl.orig	2020-11-03 14:49:56 UTC
 +++ src/DrawResources/CheckCommands.tcl
-@@ -1036,6 +1036,7 @@ help checkplatform {
+@@ -1053,6 +1053,7 @@ help checkplatform {
      -windows : return 1 if current platform is 'Windows', overwise return 0
      -linux   : return 1 if current platform is 'Linux', overwise return 0
      -osx     : return 1 if current platform is 'MacOS X', overwise return 0
@@ -8,7 +8,7 @@
  
    Only one option can be used at once.
    If no option is given, procedure will return the name of current platform.
-@@ -1044,9 +1045,11 @@ proc checkplatform {args} {
+@@ -1061,9 +1062,11 @@ proc checkplatform {args} {
      set check_for_windows false
      set check_for_linux false
      set check_for_macosx false
@@ -20,7 +20,7 @@
                   {"-osx" check_for_macosx 0}}
  
      _check_args ${args} ${options} "checkplatform"
-@@ -1055,17 +1058,19 @@ proc checkplatform {args} {
+@@ -1072,17 +1075,19 @@ proc checkplatform {args} {
          set current_platform Windows
      } elseif { $::tcl_platform(os) == "Linux" } {
          set current_platform Linux
@@ -42,21 +42,18 @@
          error "Error: wrong usage of command checkplatform, only single option can be used at once"
      }
  
-@@ -1074,11 +1079,16 @@ proc checkplatform {args} {
+@@ -1091,8 +1096,13 @@ proc checkplatform {args} {
          return 1
      }
  
 -    # checking for Mac OS X platforms
 +    # checking for Linux platforms
      if { ${check_for_linux} && ${current_platform} == "Linux" } {
-         return 1
-     }
- 
-+    # checking for FreeBSD platforms
-+    if { ${check_for_freebsd} && ${current_platform} == "FreeBSD" } {
 +        return 1
 +    }
 +
-     # checking for Mac OS X platforms
-     if { ${check_for_macosx} && ${current_platform} == "MacOS" } {
++    # checking for FreeBSD platforms
++    if { ${check_for_freebsd} && ${current_platform} == "FreeBSD" } {
          return 1
+     }
+ 

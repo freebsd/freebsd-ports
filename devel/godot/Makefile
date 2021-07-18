@@ -2,7 +2,7 @@
 
 PORTNAME=	godot
 DISTVERSION=	3.2.3
-PORTREVISION=	1
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	devel games
 
@@ -16,6 +16,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	yasm:devel/yasm
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libpcre2-8.so:devel/pcre2 \
 		libpng.so:graphics/png
 RUN_DEPENDS=	xdg-user-dir:devel/xdg-user-dirs \
 		xdg-open:devel/xdg-utils \
@@ -28,8 +29,9 @@ USE_GL=		gl glew glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	godotengine
 
-MAKE_ARGS+=		platform=x11 builtin_libpng=False \
-			builtin_freetype=False builtin_zlib=False verbose=True
+MAKE_ARGS+=		platform=x11 builtin_freetype=False \
+			builtin_libpng=False builtin_pcre2=False \
+			builtin_zlib=False verbose=True
 MAKE_ARGS+=		${MAKE_ARGS_${CHOSEN_COMPILER_TYPE}}
 MAKE_ARGS_clang=	use_llvm=True use_lld=True
 CXXFLAGS_i386=		${CXXFLAGS_i386_${CHOSEN_COMPILER_TYPE}}

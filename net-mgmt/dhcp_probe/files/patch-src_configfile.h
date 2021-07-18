@@ -1,5 +1,5 @@
---- src/configfile.h.orig	2015-01-03 11:29:51.000000000 -0500
-+++ src/configfile.h	2015-01-03 11:40:09.000000000 -0500
+--- src/configfile.h.orig	2021-01-18 19:16:10 UTC
++++ src/configfile.h
 @@ -6,14 +6,14 @@
  int read_configfile(const char *fname);
  
@@ -16,5 +16,5 @@
 -int isLegalServerEthersrcsMember(struct ether_addr *eaddr);
 +int isLegalServerEthersrcsMember(struct libnet_ether_addr *eaddr);
  int isInLeaseNetworksOfConcern(struct in_addr *ipaddr);
+ int GetDo_not_lookup_enet_and_ip_addresses(void);
  
- char * GetAlert_program_name(void);

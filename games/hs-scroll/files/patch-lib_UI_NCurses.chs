@@ -1,5 +1,5 @@
 --- ncurses-0.2.16/lib/UI/NCurses.chs.orig	2016-08-29 01:09:37 UTC
-+++ ncurses-0.2.16/lib/UI/NCurses.chs
++++ _cabal_deps/ncurses-0.2.16/lib/UI/NCurses.chs
 @@ -435,12 +435,12 @@ setColor (ColorID pair) = withWindow_ "s
  -- | Add some text to the window, at the current cursor position.
  drawString :: String -> Update ()

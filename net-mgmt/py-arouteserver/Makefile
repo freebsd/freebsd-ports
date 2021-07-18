@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 
 PORTNAME=	arouteserver
-PORTVERSION=	0.26.0
+PORTVERSION=	1.8.0
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,10 +27,6 @@ USE_PYTHON=	autoplist concurrent distutils
 
 SHEBANG_FILES=	pierky/arouteserver/config.d/rtt_getter.sh
 NO_ARCH=	yes
-
-post-patch:
-	${REINPLACE_CMD} -e 's|#bgpq3_path: "bgpq3"|bgpq3_path: "bgpq4"|' \
-		${WRKSRC}/pierky/arouteserver/config.d/arouteserver.yml
 
 do-test:
 	@(cd ${WRKSRC} && ${SETENV} nosetests -vs --tests=tests/external_resources/)

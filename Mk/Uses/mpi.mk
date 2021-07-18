@@ -57,7 +57,7 @@ MPICXX=		${MPI_HOME}/bin/mpicxx
 MPIEXEC=	${MPI_HOME}/bin/mpiexec
 MPIRUN=		${MPI_HOME}/bin/mpirun
 
-.if ${USES:Mcmake}
+.if ${USES:Mcmake} || ${USES:Mcmake\:*}
 CMAKE_ARGS+=	-DMPIEXEC_EXECUTABLE:FILEPATH="${MPIEXEC}"	\
 		-DMPI_HOME:PATH="${MPI_HOME}"
 .endif

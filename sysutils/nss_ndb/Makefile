@@ -1,6 +1,6 @@
 PORTNAME=		nss_ndb
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.0.23
+DISTVERSION=		1.0.24
 CATEGORIES=		sysutils security
 
 MAINTAINER=		pen@lysator.liu.se
@@ -13,7 +13,7 @@ OPTIONS_DEFINE=		CFG VAR REALM WRKGRP
 
 CFG_DESC=		Enable configuration file
 CFG_CONFIGURE_ON=	--with-config-file
-CFG_PLIST_FILES+=	etc/nss_ndb.conf
+CFG_PLIST_FILES+=	"@sample etc/nss_ndb.conf.sample"
 
 VAR_DESC=		Enable configuration variable
 VAR_CONFIGURE_ON=	--with-config-var
@@ -25,10 +25,10 @@ WRKGRP_DESC=		Enable workgroup stripping
 WRKGRP_CONFIGURE_ON=	--with-workgroup
 
 OPTIONS_SINGLE=		BDB
-OPTIONS_SINGLE_BDB=	DB0 DB5 DB4
+OPTIONS_SINGLE_BDB=	DB0 DB5 DB18
 OPTIONS_DEFAULT=	DB0
 
-DB0_DESC=		Use old libc version of Berkeley DB
+DB0_DESC=		Use the libc version of Berkeley DB (old)
 DB0_CONFIGURE_ON=	--without-db
 
 DB5_DESC=		Build with Berkeley DB v5 library
@@ -37,20 +37,19 @@ DB5_USE_LDCONFIG+=	yes
 DB5_LIB_DEPENDS=	libdb-5.so:databases/db5
 DB5_CONFIGURE_ON=	--with-db=5
 
-DB4_DESC=		Build with Berkeley DB v4.8 library
-DB4_USES+=		localbase
-DB4_USE_LDCONFIG+=	yes
-DB4_LIB_DEPENDS=	libdb-4.8.so:databases/db48
-DB4_CONFIGURE_ON=	--with-db=4
+DB18_DESC=		Build with Berkeley DB v18 library
+DB18_USES+=		localbase
+DB18_USE_LDCONFIG+=	yes
+DB18_LIB_DEPENDS=	libdb-18.so:databases/db18
+DB18_CONFIGURE_ON=	--with-db=18
 
-USES=			compiler:c11
 USE_GITHUB=		yes
 GH_ACCOUNT=		ptrrkssn
 
 GNU_CONFIGURE=		yes
 
 PLIST_FILES=		lib/nss_ndb.so.1 \
-			lib/nss_ndb.so.1.0.23 \
+			lib/nss_ndb.so.1.0.24 \
 			sbin/makendb sbin/nsstest \
 			man/man5/nss_ndb.conf.5.gz \
 			man/man8/makendb.8.gz \
@@ -58,5 +57,8 @@ PLIST_FILES=		lib/nss_ndb.so.1 \
 			man/man8/nss_ndb.8.gz \
 			share/examples/nss_ndb/ndbsync \
 			share/examples/nss_ndb/nss_ndb.conf \
+
+do-install-CFG-on:
+	${INSTALL_DATA} ${WRKSRC}/nss_ndb.conf ${STAGEDIR}${PREFIX}/etc/nss_ndb.conf.sample
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
---- chromecast/app/cast_main_delegate.cc.orig	2021-03-12 23:57:21 UTC
+--- chromecast/app/cast_main_delegate.cc.orig	2021-04-14 18:40:58 UTC
 +++ chromecast/app/cast_main_delegate.cc
 @@ -136,7 +136,7 @@ bool CastMainDelegate::BasicStartupComplete(int* exit_
  

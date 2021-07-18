@@ -1,0 +1,39 @@
+#!/bin/sh 
+
+# PROVIDE: nebula
+# REQUIRE: LOGIN DAEMON NETWORKING
+# KEYWORD: shutdown
+
+# To enable nebula, add 'nebula_enable="YES"' to /etc/rc.conf or
+# /etc/rc.conf.local
+
+# Optional settings:
+# nebula_config (string):   Full path to nebula configuration file
+#			    (%%PREFIX%%/etc/nebula/config.yml)
+# nebula_logfile (string):   Full path to nebula log file
+#			    (/var/log/nebula.log)
+
+. /etc/rc.subr 
+
+name="nebula"
+rcvar="nebula_enable"
+desc="Scalable overlay networking tool with a focus on performance, simplicity and security"
+pidfile="/var/run/nebula.pid"
+procname="%%PREFIX%%/bin/nebula"
+
+load_rc_config $name 
+
+# Defaults
+: ${nebula_enable:=NO}
+: ${nebula_config:=%%PREFIX%%/etc/nebula/config.yml}
+: ${nebula_logfile:=/var/log/nebula.log}
+
+command="/usr/sbin/daemon"
+command_args="-c -p ${pidfile} -t nebula -o ${nebula_logfile} ${procname} -config ${nebula_config}"
+
+required_files="${nebula_config} ${command}"
+
+extra_commands="configtest"
+configtest_cmd="${procname} -test -config ${nebula_config}"
+
+run_rc_command "$1"

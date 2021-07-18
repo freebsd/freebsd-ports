@@ -10,9 +10,13 @@ DISTNAME=	mb339pan_${PORTVERSION}
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Simulation of the MB-339 PAN aerobatic jet
 
-RUN_DEPENDS=	${LOCALBASE}/share/flightgear/version:games/flightgear-data
+# Converted from RESTRICTED
+LICENSE=	mb339
+LICENSE_NAME=	mb339
+LICENSE_TEXT=	Redistribution prohibited
+LICENSE_PERMS=	auto-accept
 
-RESTRICTED=	Redistribution prohibited
+RUN_DEPENDS=	${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
 NO_BUILD=	yes
 USES=		zip

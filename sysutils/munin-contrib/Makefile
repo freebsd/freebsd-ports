@@ -1,6 +1,5 @@
 PORTNAME=	contrib
-DISTVERSION=	git.2019-06-28
-PORTREVISION=	1
+DISTVERSION=	git.2021-04-27
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	munin-
 
@@ -15,8 +14,8 @@ USES=		python:env shebangfix uniquefiles:dirs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	munin-monitoring
-GH_TAGNAME=	33270dd
-GH_TUPLE=	shuque:bind9stats:a920ded:bind9stats
+GH_TAGNAME=	c31cb28
+GH_TUPLE=	shuque:bind9stats:687c94a:bind9stats
 
 SHEBANG_REGEX=	./(${EXAMPLES_DIRS:ts|})/.*
 SHEBANG_LANG=	expect gawk python3 zsh
@@ -35,7 +34,7 @@ SUB_FILES=	pkg-message
 EXAMPLES_DIRS=	plugins samples templates tools
 
 post-extract:
-	@${MV} ${WRKSRC_bind9stats}/bind9stats.py ${WRKSRC}/plugins/bind9stats
+	@${MV} ${WRKSRC_bind9stats}/bind9stats-munin.py ${WRKSRC}/plugins/bind9stats
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}

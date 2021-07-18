@@ -1,45 +1,29 @@
 PORTNAME=	bats-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.3.0
+PORTREVISION=	2
 CATEGORIES=	devel
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Bash automated testing system
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
-
-USES=		shebangfix
-SHEBANG_FILES=	${SCRIPTS:S/^/libexec\/${PORTNAME}\//}
 
 USE_GITHUB=	yes
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-SCRIPTS=	bats \
-		bats-exec-suite \
-		bats-exec-test \
-		bats-format-tap-stream \
-		bats-preprocess
+OPTIONS_DEFINE=	PARALLEL
 
-PLIST_FILES=	${SCRIPTS:S/^/libexec\/${PORTNAME}\//} \
-		bin/bats \
-		man/man1/bats.1.gz \
-		man/man7/bats.7.gz
+PARALLEL_DESC=		Install sysutils/parallel to enable parallel runs
+PARALLEL_RUN_DEPENDS=	parallel:sysutils/parallel
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
-.for f in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/libexec/${PORTNAME}/${f} \
-		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/${f}
-.endfor
-	${RLN} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/bats \
-		${STAGEDIR}${PREFIX}/bin/bats
-	${INSTALL_MAN} ${WRKSRC}/man/bats.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/bats.7 ${STAGEDIR}${MAN7PREFIX}/man/man7
+	cd ${WRKSRC} && ./install.sh ${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>

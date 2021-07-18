@@ -1,12 +1,12 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	lximage-qt
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	graphics
 MASTER_SITES=	LXQT
 
 MAINTAINER=	jsm@FreeBSD.org
-COMMENT=	Image viewer and screenshot tool
+COMMENT=	Image viewer
 
 LICENSE=	GPLv2
 

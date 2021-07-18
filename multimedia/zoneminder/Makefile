@@ -1,6 +1,6 @@
 PORTNAME=	zoneminder
 PORTVERSION=	1.34.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru
@@ -8,7 +8,7 @@ COMMENT=	Complete security camera solution, fully web based with image analysis
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc powerpc64 powerpc64le
 
 ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql \

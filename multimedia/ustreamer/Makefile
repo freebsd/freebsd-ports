@@ -1,6 +1,6 @@
 PORTNAME=	ustreamer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.25
+DISTVERSION=	4.4
 CATEGORIES=	multimedia net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,14 +17,14 @@ USES=		compiler:c11 gmake jpeg localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	pikvm
 
-MAKE_ARGS=	WITH_PTHREAD_NP=0
+MAKE_ARGS=	WITH_PTHREAD_NP=0 MANPREFIX=${PREFIX}/share/man
 
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/ustreamer \
 		bin/ustreamer-dump \
-		man1/ustreamer-dump.1.gz \
-		man1/ustreamer.1.gz
+		share/man/man1/ustreamer-dump.1.gz \
+		share/man/man1/ustreamer.1.gz
 
 .include <bsd.port.options.mk>
 

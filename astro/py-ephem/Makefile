@@ -1,7 +1,7 @@
 # Created by: db
 
 PORTNAME=	ephem
-PORTVERSION=	3.7.7.1
+PORTVERSION=	4.0.0.2
 CATEGORIES=	astro math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,16 +9,19 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Compute positions of the planets and stars
 
-LICENSE=	LGPL3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python:3.7+ # Because of UnicodeDecodeError in ascii.py
 USE_PYTHON=	autoplist distutils
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ephem/_libastro*.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ephem/_libastro${PYTHON_EXT_SUFFIX}.so
 
 do-test:
+	# WARNING: Testing via this command is deprecated and will be
+	# removed in a future version. Users looking for a generic test
+	# entry point independent of test runner are encouraged to use tox.
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@ CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Ruby binding for GTK+2
+COMMENT=	Ruby binding of GTK+ 2.x
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

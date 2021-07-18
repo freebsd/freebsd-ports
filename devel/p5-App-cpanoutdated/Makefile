@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-CPAN-DistnameInfo>=0.10:devel/p5-CPAN-DistnameInfo \
 		p5-libwww>=0:www/p5-libwww \
 		p5-local-lib>=0:devel/p5-local-lib
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

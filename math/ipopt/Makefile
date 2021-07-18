@@ -2,7 +2,7 @@
 
 PORTNAME=	Ipopt
 DISTVERSION=	3.12.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	https://www.coin-or.org/download/source/Ipopt/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/:metis \
@@ -15,6 +15,8 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software package for large-scale nonlinear optimization
 
 LICENSE=	EPL
+
+LIB_DEPENDS=	libcoinasl.so:math/asl
 
 USES=		blaslapack compiler:c++11-lang fortran libtool pathfix \
 		pkgconfig tar:tgz

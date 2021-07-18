@@ -1,7 +1,8 @@
 # Created by: Christer Edwards <christer.edwards@gmail.com>
 
 PORTNAME=	salt
-PORTVERSION=	3002.6
+PORTVERSION=	3003.1
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -60,8 +61,8 @@ SUB_FILES=	pkg-message
 # Upstream archive contains files with UTF-8 names
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
-OPTIONS_DEFINE=	AWS TCP ZEROMQ
-OPTIONS_DEFAULT=ZEROMQ
+OPTIONS_DEFINE=	AWS BASH TCP ZEROMQ ZSH
+OPTIONS_DEFAULT=	BASH ZEROMQ ZSH
 
 AWS_DESC=	Install dependencies required for Amazon Web Services
 TCP_DESC=	Install dependencies required for TCP transport
@@ -78,6 +79,9 @@ ZEROMQ_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:net/py-pyzmq@${PY_FLAV
 ZEROMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:net/py-pyzmq@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pycryptodomex>=3.9.7:security/py-pycryptodomex@${PY_FLAVOR}
 
+BASH_PLIST_FILES=	share/bash-completion/completions/salt
+ZSH_PLIST_FILES=	share/zsh/site-functions/_salt
+
 post-patch:
 .for file in conf/minion conf/master doc/man/salt-key.1 \
 	doc/man/salt-cp.1 doc/man/salt-minion.1 doc/man/salt-syndic.1 \
@@ -88,6 +92,16 @@ post-patch:
 		-e 's|/srv/pillar|${ETCDIR}/pillar|' ${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e 's|yumpkg5|pkgng|' ${WRKSRC}/conf/minion
+
+do-install-BASH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions/
+	${INSTALL_DATA} ${WRKSRC}/pkg/salt.bash \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/salt
+
+do-install-ZSH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/pkg/zsh_completion.zsh \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_salt
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}

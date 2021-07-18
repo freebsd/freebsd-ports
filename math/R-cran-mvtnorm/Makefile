@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	mvtnorm
-DISTVERSION=	1.1-1
+DISTVERSION=	1.1-2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

@@ -1,7 +1,7 @@
 # Created by: Andrew L. Neporada <andrew@chg.ru>
 
 PORTNAME=	gsl
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	math
 MASTER_SITES=	GNU
 

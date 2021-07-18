@@ -51,6 +51,8 @@ share/chibi/chibi/app.scm
 share/chibi/chibi/app.sld
 share/chibi/chibi/apropos.scm
 share/chibi/chibi/apropos.sld
+share/chibi/chibi/assert-test.sld
+share/chibi/chibi/assert.sld
 share/chibi/chibi/ast.scm
 share/chibi/chibi/ast.sld
 share/chibi/chibi/base64-test.sld
@@ -442,11 +444,18 @@ share/chibi/srfi/166/unicode.scm
 share/chibi/srfi/166/unicode.sld
 share/chibi/srfi/166/width.scm
 share/chibi/srfi/166/write.scm
+share/chibi/srfi/179.sld
+share/chibi/srfi/179/base.scm
+share/chibi/srfi/179/base.sld
+share/chibi/srfi/179/test.sld
+share/chibi/srfi/179/transforms.scm
 share/chibi/srfi/18.sld
 share/chibi/srfi/18/interface.scm
 share/chibi/srfi/18/types.scm
 share/chibi/srfi/188.sld
+share/chibi/srfi/193.sld
 share/chibi/srfi/2.sld
+share/chibi/srfi/219.sld
 share/chibi/srfi/23.sld
 share/chibi/srfi/26.sld
 share/chibi/srfi/27.sld

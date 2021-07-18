@@ -1,20 +1,20 @@
---- weblayer/browser/browser_main_parts_impl.cc.orig	2021-03-12 23:57:49 UTC
+--- weblayer/browser/browser_main_parts_impl.cc.orig	2021-05-12 22:06:47 UTC
 +++ weblayer/browser/browser_main_parts_impl.cc
-@@ -69,7 +69,7 @@
- #include "ui/base/ui_base_features.h"
- #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
+@@ -77,7 +77,7 @@
  #endif
--#if defined(USE_AURA) && defined(OS_LINUX)
-+#if defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD))
+ // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
+ // complete.
+-#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  
-@@ -184,7 +184,7 @@ void BrowserMainPartsImpl::PreMainMessageLoopStart() {
- int BrowserMainPartsImpl::PreEarlyInitialization() {
-   browser_process_ = std::make_unique<BrowserProcess>(std::move(local_state_));
+@@ -195,7 +195,7 @@ int BrowserMainPartsImpl::PreEarlyInitialization() {
  
--#if defined(USE_AURA) && defined(OS_LINUX)
-+#if defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD))
+ // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
+ // complete.
+-#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
    ui::InitializeInputMethodForTesting();
  #endif
  #if defined(OS_ANDROID)

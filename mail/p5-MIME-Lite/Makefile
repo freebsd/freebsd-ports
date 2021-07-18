@@ -1,7 +1,7 @@
 # Created by: Alex Perel <veers@disturbed.net>
 
 PORTNAME=	MIME-Lite
-PORTVERSION=	3.031
+PORTVERSION=	3.033
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

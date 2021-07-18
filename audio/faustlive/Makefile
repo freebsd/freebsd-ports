@@ -1,5 +1,6 @@
 PORTNAME=	faustlive
 DISTVERSION=	2.5.5
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,8 +26,6 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TUPLE=	grame-cncm:faustlibraries:cde5c7b:grame_cncm_faustlibraries/Resources/Libs
-
-CMAKE_SOURCE_PATH=	${WRKSRC}/package
 
 SHEBANG_GLOB=	build install makelibs
 

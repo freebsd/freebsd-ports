@@ -1,5 +1,5 @@
 PORTNAME=	river
-PORTVERSION=	s20210407
+PORTVERSION=	s20210715
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,22 +9,23 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols \
-		wlroots>=0.13.0:x11-toolkits/wlroots \
-		zig>=0.7.1:lang/zig
+		wlroots>=0.14.0:x11-toolkits/wlroots \
+		zig>=0.8.0:lang/zig
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
+		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	ifreund
-GH_TAGNAME=	9e3e920
-GH_TUPLE=	ifreund:zig-pixman:7847fd1:zig_pixman/deps/zig-pixman \
-		ifreund:zig-wayland:f170fe0:zig_wayland/deps/zig-wayland \
-		ifreund:zig-xkbcommon:9e4d41f:zig_xkbcommon/deps/zig-xkbcommon \
-		swaywm:zig-wlroots:6c62568:zig_wlroots/deps/zig-wlroots
+GH_TAGNAME=	28fc879
+GH_TUPLE=	ifreund:zig-pixman:135f223:zig_pixman/deps/zig-pixman \
+		ifreund:zig-wayland:a8e1efc:zig_wayland/deps/zig-wayland \
+		ifreund:zig-xkbcommon:10cdca6:zig_xkbcommon/deps/zig-xkbcommon \
+		swaywm:zig-wlroots:4c4e598:zig_wlroots/deps/zig-wlroots
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:U-Drelease-fast=true} \
@@ -48,7 +49,7 @@ MANPAGES_CONFIGURE_OFF=	-Dman-pages=false
 MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz \
 			share/man/man1/${PORTNAME}ctl.1.gz \
 			share/man/man1/${PORTNAME}tile.1.gz \
-			share/man/man7/${PORTNAME}-layouts.7.gz
+			${NULL}
 
 X11_CONFIGURE_ON=	-Dxwayland=true
 X11_CONFIGURE_OFF=	-Dxwayland=false

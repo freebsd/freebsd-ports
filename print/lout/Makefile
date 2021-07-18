@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX like document creation system with PostScript/PDF output
 
 LICENSE=	GPLv3+

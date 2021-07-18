@@ -1,0 +1,7 @@
+--- speaker-test/samples/sample_map.csv.orig	2020-02-19 12:02:10 UTC
++++ speaker-test/samples/sample_map.csv
+@@ -1,2 +1,2 @@
+-0, "Front Left", "/usr/share/alsa/samples/Front_Left.wav"
+-1, "Front Right", "/usr/share/alsa/samples/Front_Right.wav"
++0, "Front Left", "%%PREFIX%%/share/alsa/samples/Front_Left.wav"
++1, "Front Right", "%%PREFIX%%/share/alsa/samples/Front_Right.wav"

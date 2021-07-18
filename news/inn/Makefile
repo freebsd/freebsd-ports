@@ -1,9 +1,11 @@
 # Created by: torstenb
 
-PORTNAME=	inn
-PORTVERSION=	2.6.4
-CATEGORIES=	news
-MASTER_SITES=	ISC/${PORTNAME}
+PORTNAME?=		inn
+PORTVERSION?=		2.6.4
+PORTREVISION?=		0
+CATEGORIES=		news
+MASTER_SITES=		ISC
+MASTER_SITE_SUBDIR?=	${PORTNAME}
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
@@ -19,7 +21,7 @@ SUB_FILES=	pkg-install
 USES=		cpe gmake libtool perl5 uidfix
 CPE_VENDOR=	isc
 
-CONFLICTS?=	inn-stable-[0-9]* inn-current-[0-9]*
+CONFLICTS?=	inn-current-[0-9]*
 
 OPTIONS_DEFINE=		BERKELEYDB GNUPG KERBEROS PYTHON SASL KEYWORDS \
 			LARGE_FILES OPENSSL SETGID_INEWS TAGGED_HASH \
@@ -39,6 +41,16 @@ OPENSSL_DESC=		Enable OpenSSL (for NNTP over TLS/SSL support)
 GNUPG_DESC=		GnuPG support (for pgpverify control message)
 UUCP_RNEWS_DESC=	Install rnews suitable for use with net/freebsd-uucp
 SETGID_INEWS_DESC=	Enable posting articles locally for all users
+
+.if ${BRANCH:U} == CURRENT
+OPTIONS_DEFINE+=	SQLITE
+OPTIONS_DEFAULT+=	SQLITE
+SQLITE_DESC=		Enable SQLite (for ovsqlite overview method)
+
+PLIST_SUB+=		SNAPSHOT=""
+.else
+PLIST_SUB+=		SNAPSHOT="@comment "
+.endif
 
 VARBASE?=	/var
 
@@ -66,6 +78,20 @@ PLIST_SUB+=		LIBVER=${LIBVER_LONG:R:R} LIBVER_LONG=${LIBVER_LONG} \
 			INNLIB=${INNLIB_LONG:R:R} INNLIB_LONG=${INNLIB_LONG}
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSQLITE}
+USES+=			sqlite
+CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
+PLIST_SUB+=		SQLITE=""
+
+TO_BE_STRIPPED+=	bin/ovsqlite-server
+CONFIG_FILES+=		ovsqlite.conf
+.else
+.  if ${BRANCH:U} == CURRENT
+CONFIGURE_ARGS+=	--without-sqlite3
+.  endif
+PLIST_SUB+=		SQLITE="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MBERKELEYDB}
 USES+=			bdb
@@ -139,7 +165,7 @@ PLIST_SUB+=		MODE_INEWS=""
 .endif
 PORTDOCS=	CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
 
-TO_BE_STRIPPED=	bin/actsync bin/archive bin/auth/passwd/auth_krb5 \
+TO_BE_STRIPPED+=	bin/actsync bin/archive bin/auth/passwd/auth_krb5 \
 	bin/auth/passwd/ckpasswd bin/auth/passwd/radius bin/auth/resolv/domain \
 	bin/auth/resolv/ident bin/batcher bin/buffchan bin/buffindexed_d \
 	bin/convdate bin/ctlinnd bin/cvtbatch bin/expire bin/expireover \
@@ -153,7 +179,7 @@ TO_BE_STRIPPED=	bin/actsync bin/archive bin/auth/passwd/auth_krb5 \
 	lib/libinn.so.${INNLIB_LONG} lib/libinnhist.so.${LIBVER_LONG} \
 	lib/libstorage.so.${LIBVER_LONG}
 
-CONFIG_FILES=	actsync.cfg actsync.ign buffindexed.conf control.ctl \
+CONFIG_FILES+=	actsync.cfg actsync.ign buffindexed.conf control.ctl \
 	control.ctl.local cycbuff.conf distrib.pats distributions expire.ctl \
 	localgroups incoming.conf inn.conf innfeed.conf innreport.conf \
 	innshellvars.local innshellvars.pl.local innshellvars.tcl.local \

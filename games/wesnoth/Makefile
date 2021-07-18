@@ -24,7 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
 PORTSCOUT=	limitw:1,even
 
 USES=		cmake compiler:c++11-lang cpe gnome pkgconfig \
-		python:3.6+,run readline:port shebangfix ssl sdl tar:bzip2 xorg
+		python:3.6+,run readline shebangfix ssl sdl tar:bzip2 xorg
 USE_SDL=	image2 mixer2 ttf2
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo pango

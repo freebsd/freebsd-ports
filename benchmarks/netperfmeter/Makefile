@@ -1,7 +1,7 @@
 # Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
 
 PORTNAME=	netperfmeter
-PORTVERSION=	1.8.6
+PORTVERSION=	1.9.0
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://www.uni-due.de/~be0001/netperfmeter/download/
 

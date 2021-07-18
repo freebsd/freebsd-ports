@@ -1,5 +1,5 @@
 PORTNAME=	dnaio
-DISTVERSION=	0.5.0	# py-cutadapt 3.2 requires 0.5.x
+DISTVERSION=	0.5.1	# py-cutadapt 3.3 requires 0.5.x
 CATEGORIES=	biology python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

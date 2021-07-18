@@ -1,10 +1,10 @@
 PORTNAME=	gio2
-PORTVERSION=	3.4.3
+PORTVERSION=	3.4.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Ruby binding for gio 2.x
+COMMENT=	Ruby binding of gio 2.x
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

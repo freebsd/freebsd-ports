@@ -1,3 +1,3 @@
-TIMESTAMP = 1612519305
-SHA256 (rubygem/aws-sdk-devicefarm-1.40.0.gem) = 8aa20067b7034fb8a36c30e30b5c97f768e7ad7f5de94e519dc775d1173da173
-SIZE (rubygem/aws-sdk-devicefarm-1.40.0.gem) = 87040
+TIMESTAMP = 1622213948
+SHA256 (rubygem/aws-sdk-devicefarm-1.42.0.gem) = efe6fb292d36084058c1a6361b4c891ddcfb0b20ebcc98bf49d6d120da227fa8
+SIZE (rubygem/aws-sdk-devicefarm-1.42.0.gem) = 92672

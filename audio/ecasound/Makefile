@@ -16,7 +16,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 
 USES=		gmake libtool localbase:ldflags ncurses pkgconfig \
-		readline:port shebangfix
+		readline shebangfix
 SHEBANG_FILES=	ecatools/ecamonitor
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-liblilv \

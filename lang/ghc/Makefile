@@ -2,7 +2,6 @@
 
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot \
@@ -19,13 +18,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386 aarch64 armv6 armv7 powerpc64
 
-USES=			autoreconf compiler:c11 gmake iconv:translit \
+USES=			autoreconf compiler:c11 gmake iconv:patch,translit \
 			localbase:ldflags ncurses perl5 tar:xz
 USE_LOCALE=		en_US.UTF-8
 USE_PERL5=		build
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-iconv-includes=${LOCALBASE}/include \
-			--with-iconv-libraries=${LOCALBASE}/lib
 CONFIGURE_ENV=		CC=${CC} LD=${LD} PATH=${SLAVES_PREFIX}/bin:${PATH}
 MAKE_ENV=		PATH=${SLAVES_PREFIX}/bin:${PATH}
 
@@ -74,10 +71,10 @@ BOOT_SUB_LIST_OFF=	HSC2HS=${BOOT_HSC2HS}
 PROFILE_SUB_LIST=	WITH_PROFILE="YES"
 PROFILE_SUB_LIST_OFF=	WITH_PROFILE="NO"
 
-GHC_VERSION=		8.10.4
+GHC_VERSION=		8.10.5
 CABAL_VERSION=		3.2.1.0
 HSCOLOUR_VERSION=	1.24.4
-LLVM_VERSION=		90
+LLVM_VERSION=		10
 # LLVM version that bootstrap compiler uses
 BOOT_LLVM_VERSION=	90
 
@@ -92,7 +89,7 @@ PORTDOCS=		*
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
 .endif
 
-.if ${ARCH} == powerpc64
+.if ${ARCH} == powerpc64 || ${OSVERSION} >= 1400018
 CONFIGURE_ARGS+=	--enable-dtrace=0
 .endif
 
@@ -140,7 +137,7 @@ DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${BOOTSTRAPS_SUFFIX}${E
 .endif # MBOOT
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}
-# ghc-8.10.x on arm requires devel/llvm90
+# ghc-8.10.x on arm requires devel/llvm10
 # CONFIGURE_TARGET must to be the same as the llvm triple
 CONFIGURE_TARGET=	${ARCH}-unknown-freebsd${"${ARCH:Maarch64}" != "":?:-gnueabihf}
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-aclocal.m4
@@ -155,9 +152,10 @@ CONFIGURE_ENV+=		LLC=llc${LLVM_VERSION} \
 # LLVM versions, we have to pull in both. Luckily, this is relatively rare.
 .  if ${BOOT_LLVM_VERSION} != ${LLVM_VERSION}
 BUILD_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
-# Keep in sync with BOOT_LLVM_VERSION
-BINARY_ALIAS+=		llc-9.0=llc90 \
-			opt-9.0=opt90
+CONFIGURE_ENV_BOOTSTRAP=LLC=llc${BOOT_LLVM_VERSION} \
+			OPT=opt${BOOT_LLVM_VERSION} \
+			CLANG=clang${BOOT_LLVM_VERSION} \
+			CC=clang${BOOT_LLVM_VERSION}
 .  endif
 .endif
 
@@ -211,7 +209,7 @@ pre-configure:
 
 # If we are using bootstrap compiler, configure and install it into ${BOOT_DIR}
 .if empty(PORT_OPTIONS:MBOOT)
-	cd ${BOOT_DIR} && ${CONFIGURE_ENV} ${CONFIGURE_CMD} --prefix=${BOOT_DIR}
+	cd ${BOOT_DIR} && ${CONFIGURE_ENV} ${CONFIGURE_ENV_BOOTSTRAP} ${CONFIGURE_CMD} --prefix=${BOOT_DIR}
 	cd ${BOOT_DIR} && PACKAGES='' ${MAKE_CMD} install
 .else
 # otherwise, make sure we have "ghc" in PATH

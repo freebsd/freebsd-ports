@@ -1,7 +1,7 @@
 # Created by: Mathieu Arnold
 
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.1.3
+PORTVERSION=	3.2.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -13,20 +13,20 @@ LICENSE=	GPLv2
 DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
 EXPIRATION_DATE=2021-06-23
 
+BUILD_DEPENDS=	inkscape:graphics/inkscape
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libqt5keychain.so:security/qtkeychain
 
-USES=		cmake:noninja compiler:c++11-lib gmake gnome iconv \
-		localbase:ldflags pkgconfig qt:5 sqlite ssl
+USES=		cmake:noninja compiler:c++14-lang desktop-file-utils gmake \
+		gnome iconv localbase:ldflags pkgconfig qt:5 shared-mime-info \
+		sqlite ssl
 USE_QT=		buildtools_build concurrent core dbus declarative graphicaleffects \
 		gui linguist_build location network printsupport qmake_build \
-		quickcontrols2 sql svg webchannel webengine websockets \
+		quickcontrols2 sql svg testlib webchannel webengine websockets \
 		widgets xml
-CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=OFF \
-		-DBUILD_UPDATER:BOOL=OFF \
+CMAKE_ARGS=	-DBUILD_UPDATER:BOOL=OFF \
 		-DCMAKE_INSTALL_MANDIR:STRING=man \
-		-DWITH_STACK_PROTECTOR:BOOL=OFF \
-		-DNO_SHIBBOLETH=1
+		-DWITH_STACK_PROTECTOR:BOOL=OFF
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
@@ -61,5 +61,9 @@ post-patch:
 
 pre-configure:
 	@(cd ${WRKSRC} && ${CP} -f sync-exclude.lst sync-exclude.lst.sample)
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sync-exclude.lst ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>

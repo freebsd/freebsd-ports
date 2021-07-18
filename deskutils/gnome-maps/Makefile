@@ -1,7 +1,8 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 
 PORTNAME=	gnome-maps
-DISTVERSION=	3.38.4
+DISTVERSION=	3.38.5
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome

@@ -1,5 +1,7 @@
 bin/kbackup
 man/ca/man1/kbackup.1.gz
+man/de/man1/kbackup.1.gz
+man/es/man1/kbackup.1.gz
 man/it/man1/kbackup.1.gz
 man/man1/kbackup.1.gz
 man/nl/man1/kbackup.1.gz

@@ -25,7 +25,10 @@ include/libcomps/comps_utils.h
 include/libcomps/comps_validate.h
 lib/libcomps.so
 lib/libcomps.so.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/libcomps-0.1.15-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/libcomps-0.1.17-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/libcomps-0.1.17-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/libcomps-0.1.17-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/libcomps-0.1.17-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libcomps/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libcomps/_libpycomps.so
 libdata/pkgconfig/libcomps.pc

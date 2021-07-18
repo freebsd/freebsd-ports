@@ -2,6 +2,7 @@
 
 PORTNAME=	gnome-tweaks
 PORTVERSION=	3.34.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -14,6 +15,7 @@ LICENSE_FILE_CC0-1.0=	${WRKSRC}/LICENSES/CC0-1.0
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENSES/GPL-3.0
 
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libhandy-0.0.so:x11-toolkits/libhandy0
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		gnome-shell>=3.28:x11/gnome-shell
 

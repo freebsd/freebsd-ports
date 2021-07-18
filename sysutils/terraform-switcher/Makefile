@@ -1,7 +1,7 @@
 # Created by: Gabriel M. Dutra <0xdutra@gmail.com>
 
 PORTNAME=	terraform-switcher
-PORTVERSION=	0.10.1010
+DISTVERSION=	0.12.1092
 CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com
@@ -14,18 +14,18 @@ USES=	go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	warrensbox
-
 GH_TUPLE=	\
 		Masterminds:semver:v1.5.0:masterminds_semver/vendor/github.com/Masterminds/semver \
 		agext:levenshtein:v1.2.2:agext_levenshtein/vendor/github.com/agext/levenshtein \
 		apparentlymart:go-textseg:v1.0.0:apparentlymart_go_textseg/vendor/github.com/apparentlymart/go-textseg \
+		apparentlymart:go-textseg:v13.0.0:apparentlymart_go_textseg_v13/vendor/github.com/apparentlymart/go-textseg/v13 \
 		chzyer:readline:f6d7a1f6fbf3:chzyer_readline/vendor/github.com/chzyer/readline \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:sys:a43fa875dd82:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		google:go-cmp:v0.3.0:google_go_cmp/vendor/github.com/google/go-cmp \
-		hashicorp:hcl2:0c888d1241f6:hashicorp_hcl2/vendor/github.com/hashicorp/hcl2 \
+		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
+		google:go-cmp:v0.3.1:google_go_cmp/vendor/github.com/google/go-cmp \
+		hashicorp:hcl2:fb75b3253c80:hashicorp_hcl2/vendor/github.com/hashicorp/hcl2 \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		juju:ansiterm:720a0952cc2a:juju_ansiterm/vendor/github.com/juju/ansiterm \
 		kiranjthomas:terraform-config-inspect:a1d709eb2824:kiranjthomas_terraform_config_inspect/vendor/github.com/kiranjthomas/terraform-config-inspect \
@@ -44,7 +44,7 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.4.0:spf13_viper/vendor/github.com/spf13/viper \
-		zclconf:go-cty:v1.0.0:zclconf_go_cty/vendor/github.com/zclconf/go-cty
+		zclconf:go-cty:v1.8.0:zclconf_go_cty/vendor/github.com/zclconf/go-cty
 
 PLIST_FILES=	bin/${PORTNAME}
 

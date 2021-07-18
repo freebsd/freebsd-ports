@@ -1,0 +1,34 @@
+--- tensorflow/lite/tools/optimize/calibration/BUILD.orig	2021-07-05 17:42:23 UTC
++++ tensorflow/lite/tools/optimize/calibration/BUILD
+@@ -25,6 +25,7 @@ cc_library(
+         "//tensorflow/lite/kernels:builtin_ops",
+         "//tensorflow/lite/schema:schema_fbs",
+         "@com_google_absl//absl/memory",
++	"@com_google_absl//absl/strings",
+         "@flatbuffers",
+     ],
+ )
+@@ -49,6 +50,7 @@ tf_cc_test(
+         "//tensorflow/lite:framework",
+         "//tensorflow/lite/kernels:builtin_ops",
+         "@com_google_absl//absl/memory",
++	"@com_google_absl//absl/strings",
+         "@com_google_googletest//:gtest",
+     ],
+ )
+@@ -62,6 +64,7 @@ cc_library(
+         "//tensorflow/lite:framework",
+         "//tensorflow/lite/core/api",
+         "@com_google_absl//absl/memory",
++	"@com_google_absl//absl/strings",
+     ],
+ )
+ 
+@@ -84,6 +87,7 @@ cc_library(
+         ":calibration_logger",
+         "//tensorflow/lite:framework",
+         "@com_google_absl//absl/memory",
++	"@com_google_absl//absl/strings",
+     ],
+ )
+ 

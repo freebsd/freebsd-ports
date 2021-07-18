@@ -7,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	matthew@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RT Extension to repeat tickets base on a schedule
 
 LICENSE=	GPLv2

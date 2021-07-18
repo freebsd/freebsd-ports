@@ -17,11 +17,4 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502902
-BUILD_DEPENDS+=	p5-PathTools>=3.7500:devel/p5-PathTools
-RUN_DEPENDS+=	p5-PathTools>=3.7500:devel/p5-PathTools
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

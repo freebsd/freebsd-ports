@@ -1,6 +1,6 @@
---- f_check.orig	2018-12-02 22:41:17 UTC
-+++ f_check
-@@ -288,7 +288,7 @@ if ($link ne "") {
+--- f_check.orig	2021-05-03 06:50:22.000000000 +0900
++++ f_check	2021-05-06 23:42:10.192934000 +0900
+@@ -326,7 +326,7 @@
  
      foreach $flags (@flags) {
  	if (
@@ -9,12 +9,20 @@
  	    && ($flags !~ /^-LIST:/)
  	    && ($flags !~ /^-LANG:/)
  	    ) {
-@@ -317,7 +317,7 @@ if ($link ne "") {
+@@ -358,7 +358,7 @@
  	}
  
  	if (
 -	    ($flags =~ /^\-l/)
 +	    ($flags =~ /^\-l\S/)
+ 	    && ($flags !~ /ibrary/)
  	    && ($flags !~ /gfortranbegin/)
  	    && ($flags !~ /frtbegin/)
- 	    && ($flags !~ /pathfstart/)
+@@ -369,6 +369,7 @@
+ 	    && ($flags !~ /kernel32/)
+ 	    && ($flags !~ /advapi32/)
+ 	    && ($flags !~ /shell32/)
++	    && ($flags !~ /gomp/)
+ 	    && ($flags !~ /omp/ || ($vendor !~ /PGI/ && $vendor !~ /FUJITSU/ && $flags =~ /omp/))
+ 	    && ($flags !~ /[0-9]+/ || ($vendor == FUJITSU && $flags =~ /^-lfj90/))
+ 		&& ($flags !~ /^\-l$/)

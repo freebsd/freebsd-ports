@@ -1,6 +1,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/ca.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/crl.pem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/expired.crt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/expired.key
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/revoked.crt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/revoked.key
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/certs/valid.crt
@@ -9,5 +11,4 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crypto.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/twisted-client.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/twisted-green-client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/twisted-server.py

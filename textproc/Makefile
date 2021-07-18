@@ -52,6 +52,7 @@
     SUBDIR += apertium
     SUBDIR += artha
     SUBDIR += asciidoc
+    SUBDIR += askgit
     SUBDIR += asm-xml
     SUBDIR += asm2html
     SUBDIR += aspell
@@ -77,7 +78,6 @@
     SUBDIR += br-aspell
     SUBDIR += bsddiff
     SUBDIR += bsdgrep
-    SUBDIR += bsdsort
     SUBDIR += btparse
     SUBDIR += c2html
     SUBDIR += c2man
@@ -103,6 +103,7 @@
     SUBDIR += confetti
     SUBDIR += confget
     SUBDIR += consul-template
+    SUBDIR += cpp-peglib
     SUBDIR += crex
     SUBDIR += crimson
     SUBDIR += crunch
@@ -150,6 +151,7 @@
     SUBDIR += docbook2odf
     SUBDIR += docbookrx
     SUBDIR += docproj
+    SUBDIR += docproj-legacy
     SUBDIR += dom4j
     SUBDIR += domc
     SUBDIR += dsssl-docbook-modular
@@ -229,6 +231,7 @@
     SUBDIR += gladtex
     SUBDIR += gmetadom
     SUBDIR += gnugrep
+    SUBDIR += go-md2man
     SUBDIR += goldendict
     SUBDIR += google-ctemplate
     SUBDIR += google-translate-cli
@@ -322,6 +325,7 @@
     SUBDIR += json-yaml
     SUBDIR += jtc
     SUBDIR += kdiff3
+    SUBDIR += kepubify
     SUBDIR += kf5-kcodecs
     SUBDIR += kf5-sonnet
     SUBDIR += kf5-syntax-highlighting
@@ -479,6 +483,7 @@
     SUBDIR += opensp
     SUBDIR += openvanilla-framework
     SUBDIR += or-aspell
+    SUBDIR += ov
     SUBDIR += p5-AI-Categorizer
     SUBDIR += p5-Algorithm-CheckDigits
     SUBDIR += p5-Algorithm-RabinKarp
@@ -627,6 +632,7 @@
     SUBDIR += p5-PDF-API2-Simple
     SUBDIR += p5-PDF-API2-XS
     SUBDIR += p5-PDF-API3
+    SUBDIR += p5-PDF-Builder
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-PDF-FromHTML
     SUBDIR += p5-PDF-Reuse
@@ -644,9 +650,11 @@
     SUBDIR += p5-PPIx-QuoteLike
     SUBDIR += p5-PPIx-Regexp
     SUBDIR += p5-PPIx-Utilities
+    SUBDIR += p5-PPIx-Utils
     SUBDIR += p5-Parse-ANSIColor-Tiny
     SUBDIR += p5-Parse-BooleanLogic
     SUBDIR += p5-Parse-CSV
+    SUBDIR += p5-Parse-EDID
     SUBDIR += p5-Parse-FixedLength
     SUBDIR += p5-Parse-Flex
     SUBDIR += p5-Parse-PhoneNumber
@@ -932,6 +940,7 @@
     SUBDIR += p5-Text-Table-Paragraph
     SUBDIR += p5-Text-Table-Sprintf
     SUBDIR += p5-Text-Table-TSV
+    SUBDIR += p5-Text-Table-TickitWidget
     SUBDIR += p5-Text-Table-Tiny
     SUBDIR += p5-Text-Table-TinyBorderStyle
     SUBDIR += p5-Text-Table-TinyColor
@@ -1282,9 +1291,11 @@
     SUBDIR += py-gambit-elasticsearch
     SUBDIR += py-genshi
     SUBDIR += py-gensim
+    SUBDIR += py-gi-docgen
     SUBDIR += py-googletrans
     SUBDIR += py-grako
     SUBDIR += py-guess-language
+    SUBDIR += py-hashids
     SUBDIR += py-hexdump
     SUBDIR += py-hieroglyph
     SUBDIR += py-hjson
@@ -1299,6 +1310,7 @@
     SUBDIR += py-j2cli
     SUBDIR += py-jc
     SUBDIR += py-jinja2-cli
+    SUBDIR += py-jq
     SUBDIR += py-jsonslicer
     SUBDIR += py-jsx-lexer
     SUBDIR += py-jtextfsm
@@ -1319,6 +1331,7 @@
     SUBDIR += py-markuppy
     SUBDIR += py-markups
     SUBDIR += py-markupsafe
+    SUBDIR += py-mathics-pygments
     SUBDIR += py-mdit-py-plugins
     SUBDIR += py-misaka
     SUBDIR += py-mistune
@@ -1357,6 +1370,12 @@
     SUBDIR += py-pyahocorasick
     SUBDIR += py-pyaml
     SUBDIR += py-pycountry
+    SUBDIR += py-pyexcel
+    SUBDIR += py-pyexcel-ezodf
+    SUBDIR += py-pyexcel-io
+    SUBDIR += py-pyexcel-ods3
+    SUBDIR += py-pyexcel-xls
+    SUBDIR += py-pyexcel-xlsx
     SUBDIR += py-pygccxml
     SUBDIR += py-pygments
     SUBDIR += py-pygments-25
@@ -1379,6 +1398,8 @@
     SUBDIR += py-python-docx
     SUBDIR += py-python-gettext
     SUBDIR += py-python-language-server
+    SUBDIR += py-python-lsp-jsonrpc
+    SUBDIR += py-python-lsp-server
     SUBDIR += py-python-slugify
     SUBDIR += py-python-xmp-toolkit
     SUBDIR += py-pytidylib
@@ -1396,15 +1417,19 @@
     SUBDIR += py-rich
     SUBDIR += py-rnc2rng
     SUBDIR += py-rss2gen
+    SUBDIR += py-rst2ansi
     SUBDIR += py-rst2html5
+    SUBDIR += py-rstfmt
     SUBDIR += py-scour
     SUBDIR += py-simplebayes
+    SUBDIR += py-smartypants
     SUBDIR += py-snowballstemmer
     SUBDIR += py-sparqlwrapper
     SUBDIR += py-sphinx
     SUBDIR += py-sphinx-argparse
     SUBDIR += py-sphinx-autoapi
     SUBDIR += py-sphinx-autodoc-typehints
+    SUBDIR += py-sphinx-copybutton
     SUBDIR += py-sphinx-inline-tabs
     SUBDIR += py-sphinx-intl
     SUBDIR += py-sphinx-issues
@@ -1449,6 +1474,7 @@
     SUBDIR += py-translationstring
     SUBDIR += py-transpopy
     SUBDIR += py-ttp
+    SUBDIR += py-typogrify
     SUBDIR += py-ucl
     SUBDIR += py-ufal.udpipe
     SUBDIR += py-wcmatch
@@ -1533,6 +1559,7 @@
     SUBDIR += rubygem-asciidoctor-plantuml
     SUBDIR += rubygem-asciidoctor-plantuml0010
     SUBDIR += rubygem-autoprefixer-rails
+    SUBDIR += rubygem-autoprefixer-rails1020
     SUBDIR += rubygem-babel-source
     SUBDIR += rubygem-babel-transpiler
     SUBDIR += rubygem-babosa
@@ -1556,7 +1583,9 @@
     SUBDIR += rubygem-cssmin
     SUBDIR += rubygem-cucumber-gherkin
     SUBDIR += rubygem-cucumber-gherkin15
+    SUBDIR += rubygem-cucumber-gherkin18
     SUBDIR += rubygem-cucumber-html-formatter
+    SUBDIR += rubygem-cucumber-html-formatter13
     SUBDIR += rubygem-cucumber-html-formatter9
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-diff_match_patch
@@ -1596,6 +1625,7 @@
     SUBDIR += rubygem-hikidoc
     SUBDIR += rubygem-html-pipeline
     SUBDIR += rubygem-html-pipeline27
+    SUBDIR += rubygem-html-proofer
     SUBDIR += rubygem-html2text
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-ini
@@ -1641,6 +1671,7 @@
     SUBDIR += rubygem-opml
     SUBDIR += rubygem-org-ruby
     SUBDIR += rubygem-ox
+    SUBDIR += rubygem-parse-cron
     SUBDIR += rubygem-parslet
     SUBDIR += rubygem-parslet1
     SUBDIR += rubygem-phone
@@ -1782,8 +1813,10 @@
     SUBDIR += sl-hyphen
     SUBDIR += sl-mythes
     SUBDIR += slides
+    SUBDIR += slowcat
     SUBDIR += smi
     SUBDIR += smu
+    SUBDIR += snowballstemmer
     SUBDIR += so-hunspell
     SUBDIR += sonic
     SUBDIR += soothsayer
@@ -1900,6 +1933,7 @@
     SUBDIR += xhtml1-xsd
     SUBDIR += xincluder
     SUBDIR += xlhtml
+    SUBDIR += xlnt
     SUBDIR += xlreader
     SUBDIR += xml-commons
     SUBDIR += xml-format
@@ -1929,6 +1963,7 @@
     SUBDIR += yali
     SUBDIR += yamcha
     SUBDIR += yaml-mode.el
+    SUBDIR += yaml.el
     SUBDIR += ydiff
     SUBDIR += yelp-tools
     SUBDIR += yelp-xsl

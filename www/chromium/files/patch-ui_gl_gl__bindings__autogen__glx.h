@@ -1,4 +1,4 @@
---- ui/gl/gl_bindings_autogen_glx.h.orig	2021-03-12 23:57:48 UTC
+--- ui/gl/gl_bindings_autogen_glx.h.orig	2021-04-14 18:41:39 UTC
 +++ ui/gl/gl_bindings_autogen_glx.h
 @@ -104,6 +104,8 @@ typedef bool(GL_BINDING_CALL* glXGetMscRateOMLProc)(Di
                                                      GLXDrawable drawable,

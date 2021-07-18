@@ -1,13 +1,13 @@
 PORTNAME=	texlive
 PORTVERSION=	20150521
-PORTREVISION=	64
+PORTREVISION=	69
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMESUFFIX=	-base
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 DIST_SUBDIR=	TeX
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	freebsd-tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, base binaries
 
 LIB_DEPENDS=	libicuio.so:devel/icu \
@@ -26,9 +26,10 @@ RUN_DEPENDS=	p5-File-HomeDir>=0:devel/p5-File-HomeDir \
 		p5-YAML-Tiny>=0:textproc/p5-YAML-Tiny \
 		psbook:print/psutils
 
-USES=		compiler:c++11-lib ghostscript localbase pkgconfig perl5 \
+USES=		compiler:c++11-lib ghostscript gnome localbase pkgconfig perl5 \
 		python:run shebangfix tar:xz
 USE_CXXSTD=	gnu++11
+USE_GNOME=	cairo
 USE_PERL5=	run
 USE_TEX=	web2c kpathsea ptexenc tlmgr texhash-bootstrap
 SHEBANG_FILES=	texk/texlive/linked_scripts/accfonts/mkt1font \

@@ -3,6 +3,7 @@
 PORTNAME=	rocksdb
 PORTVERSION=	6.11.6
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	databases
 
 PATCH_SITES=	https://github.com/facebook/${PORTNAME}/commit/
@@ -81,12 +82,11 @@ CXXFLAGS+=	-Wno-error=shadow
 .endif
 
 post-patch:
-.if ${ARCH} != amd64 && ${ARCH} != i386
+.if (${ARCH} == amd64 || ${ARCH} == i386) && !empty(CFLAGS:M-march=*)
+	@${REINPLACE_CMD} -e 's| -march=native| ${CFLAGS:M-march=*}|' \
+	    ${WRKSRC}/build_tools/build_detect_platform
+.else
 	@${REINPLACE_CMD} -e 's| -march=native||' ${WRKSRC}/build_tools/build_detect_platform
-.endif
-# Disable SSE4.2 on i386 architecture to fix i386 builds on FreeBSD package building cluster
-.if ${ARCH} == i386
-	@${REINPLACE_CMD} -e 's|#ifdef __SSE4_2__|&DISABLED__|' ${WRKSRC}/util/crc32c.cc
 .endif
 
 post-install:

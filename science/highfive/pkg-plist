@@ -28,6 +28,8 @@ include/highfive/bits/H5Iterables_misc.hpp
 include/highfive/bits/H5Node_traits.hpp
 include/highfive/bits/H5Node_traits_misc.hpp
 include/highfive/bits/H5Object_misc.hpp
+include/highfive/bits/H5Path_traits.hpp
+include/highfive/bits/H5Path_traits_misc.hpp
 include/highfive/bits/H5PropertyList_misc.hpp
 include/highfive/bits/H5ReadWrite_misc.hpp
 include/highfive/bits/H5Reference_misc.hpp

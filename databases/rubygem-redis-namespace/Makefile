@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	redis-namespace
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

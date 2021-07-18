@@ -1,4 +1,4 @@
---- chrome/browser/first_run/first_run_internal_posix.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/first_run/first_run_internal_posix.cc.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/first_run/first_run_internal_posix.cc
 @@ -46,7 +46,7 @@ enum class ForcedShowDialogState {
  ForcedShowDialogState g_forced_show_dialog_state =

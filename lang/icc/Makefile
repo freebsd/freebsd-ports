@@ -13,12 +13,13 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intel C/C++ compiler, set up to produce native FreeBSD binaries
 
-LICENSE=	EPL LGPL21
+LICENSE=	EPL LGPL21 INTEL
 LICENSE_COMB=	multi
+LICENSE_NAME_INTEL=	Intel
+LICENSE_TEXT_INTEL=	Intel forbids any redistribution.
+LICENSE_PERMS_INTEL=	auto-accept
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:archivers/rpm2cpio
-
-RESTRICTED=	Intel forbids any redistribution.
 
 USES=		linux
 USE_LINUX=	base

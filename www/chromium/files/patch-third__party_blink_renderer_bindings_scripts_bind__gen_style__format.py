@@ -1,4 +1,4 @@
---- third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig	2021-03-12 23:57:29 UTC
+--- third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig	2021-04-14 18:41:09 UTC
 +++ third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py
 @@ -29,6 +29,9 @@ def init(root_src_dir):
      elif sys.platform.startswith(("cygwin", "win")):

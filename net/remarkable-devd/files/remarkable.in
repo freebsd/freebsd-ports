@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# PROVIDE: remarkable
+# REQUIRE: FILESYSTEMS netif
+# BEFORE: devd
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=remarkable
+rcvar=remarkable_enable
+load_rc_config $name
+
+devd_device=${2}
+start_cmd="${name}_start"
+
+remarkable_start_devd()
+{
+    # Find the USB Ethernet for the device
+    # We first grab the total number of interfaces in
+    # the case when all the interfaces are USB Ethernet
+    local total_ifs=`sysctl -n net.link.generic.system.ifcount`
+    local i=0
+    for i in $(seq 0 $total_ifs)
+    do
+	ueparent=`sysctl -n net.ue.$i.%parent`
+	if [ $? -eq 0 ] && [ $ueparent = $devd_device ]; then
+	    /sbin/dhclient ue$i
+	    return
+	fi
+    done
+    echo "Couldn't find a remarkable tablet."
+}
+
+remarkable_start()
+{
+    if [ "$devd_device" ]; then
+	remarkable_start_devd
+    else
+	echo "Plug in your Remarkable to connect to it" 
+    fi
+}
+
+run_rc_command "$1"
+

@@ -17,7 +17,7 @@ BROKEN=		fails to build
 
 LIB_DEPENDS=	libv8.so:lang/v8
 
-USES=		compiler:c++11-lang gmake perl5 pgsql:9.5-10
+USES=		compiler:c++11-lang gmake perl5 pgsql:9.6-10
 USE_PERL5=	build
 USE_GITHUB=	yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"

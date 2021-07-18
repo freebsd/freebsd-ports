@@ -126,6 +126,26 @@ int deserialize_StatPersisted(struct iarchive *in, const char *tag, struct StatP
 }
 void deallocate_StatPersisted(struct StatPersisted*v){
 }
+int serialize_ClientInfo(struct oarchive *out, const char *tag, struct ClientInfo *v){
+    int rc;
+    rc = out->start_record(out, tag);
+    rc = rc ? rc : out->serialize_String(out, "authScheme", &v->authScheme);
+    rc = rc ? rc : out->serialize_String(out, "user", &v->user);
+    rc = rc ? rc : out->end_record(out, tag);
+    return rc;
+}
+int deserialize_ClientInfo(struct iarchive *in, const char *tag, struct ClientInfo*v){
+    int rc;
+    rc = in->start_record(in, tag);
+    rc = rc ? rc : in->deserialize_String(in, "authScheme", &v->authScheme);
+    rc = rc ? rc : in->deserialize_String(in, "user", &v->user);
+    rc = rc ? rc : in->end_record(in, tag);
+    return rc;
+}
+void deallocate_ClientInfo(struct ClientInfo*v){
+    deallocate_String(&v->authScheme);
+    deallocate_String(&v->user);
+}
 int serialize_ConnectRequest(struct oarchive *out, const char *tag, struct ConnectRequest *v){
     int rc;
     rc = out->start_record(out, tag);
@@ -1114,6 +1134,68 @@ int deserialize_GetEphemeralsResponse(struct iarchive *in, const char *tag, stru
 }
 void deallocate_GetEphemeralsResponse(struct GetEphemeralsResponse*v){
     deallocate_String_vector(&v->ephemerals);
+}
+int allocate_ClientInfo_vector(struct ClientInfo_vector *v, int32_t len) {
+    if (!len) {
+        v->count = 0;
+        v->data = 0;
+    } else {
+        v->count = len;
+        v->data = calloc(sizeof(*v->data), len);
+    }
+    return 0;
+}
+int deallocate_ClientInfo_vector(struct ClientInfo_vector *v) {
+    if (v->data) {
+        int32_t i;
+        for(i=0;i<v->count; i++) {
+            deallocate_ClientInfo(&v->data[i]);
+        }
+        free(v->data);
+        v->data = 0;
+    }
+    return 0;
+}
+int serialize_ClientInfo_vector(struct oarchive *out, const char *tag, struct ClientInfo_vector *v)
+{
+    int32_t count = v->count;
+    int rc = 0;
+    int32_t i;
+    rc = out->start_vector(out, tag, &count);
+    for(i=0;i<v->count;i++) {
+    rc = rc ? rc : serialize_ClientInfo(out, "data", &v->data[i]);
+    }
+    rc = rc ? rc : out->end_vector(out, tag);
+    return rc;
+}
+int deserialize_ClientInfo_vector(struct iarchive *in, const char *tag, struct ClientInfo_vector *v)
+{
+    int rc = 0;
+    int32_t i;
+    rc = in->start_vector(in, tag, &v->count);
+    v->data = calloc(v->count, sizeof(*v->data));
+    for(i=0;i<v->count;i++) {
+    rc = rc ? rc : deserialize_ClientInfo(in, "value", &v->data[i]);
+    }
+    rc = in->end_vector(in, tag);
+    return rc;
+}
+int serialize_WhoAmIResponse(struct oarchive *out, const char *tag, struct WhoAmIResponse *v){
+    int rc;
+    rc = out->start_record(out, tag);
+    rc = rc ? rc : serialize_ClientInfo_vector(out, "clientInfo", &v->clientInfo);
+    rc = rc ? rc : out->end_record(out, tag);
+    return rc;
+}
+int deserialize_WhoAmIResponse(struct iarchive *in, const char *tag, struct WhoAmIResponse*v){
+    int rc;
+    rc = in->start_record(in, tag);
+    rc = rc ? rc : deserialize_ClientInfo_vector(in, "clientInfo", &v->clientInfo);
+    rc = rc ? rc : in->end_record(in, tag);
+    return rc;
+}
+void deallocate_WhoAmIResponse(struct WhoAmIResponse*v){
+    deallocate_ClientInfo_vector(&v->clientInfo);
 }
 int serialize_LearnerInfo(struct oarchive *out, const char *tag, struct LearnerInfo *v){
     int rc;

@@ -1,11 +1,11 @@
 PORTNAME=	avogadrolibs
-DISTVERSION=	1.93.0
+DISTVERSION=	1.94.0
 PORTREVISION=	1
 CATEGORIES=	science
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
 PATCHFILES=	cf9d82575796d5fcabb153bdebde26843d81d83e.patch:-p1 \
-		ea813f683cdd9865994c0ba94a24325e04b9f8fb.patch:-p1 \
+		ea813f683cdd9865994c0ba94a24325e04b9f8fb.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Avogadro2 libraries for chemical editor and visualization applications
@@ -13,17 +13,21 @@ COMMENT=	Avogadro2 libraries for chemical editor and visualization applications
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/mmtf.hpp:science/mmtf-cpp
+TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake compiler:c++11-lang eigen:3,build,run # eigen needs to be 'run' because it is written into cmake files
-USE_GITHUB=	yes
-GH_ACCOUNT=	OpenChemistry
+USES=		cmake:testing compiler:c++17-lang eigen:3,build,run # eigen needs to be 'run' because it is written into cmake files
 USE_LDCONFIG=	yes
 
-CMAKE_ON=	BUILD_SHARED_LIBS
+USE_GITHUB=	yes
+GH_ACCOUNT=	OpenChemistry
+GH_TUPLE=	OpenChemistry:molecules:b1e16c5:molecules/../molecules \
+		OpenChemistry:crystals:c3e2468:crystals/../crystals
 
-OPTIONS_DEFINE=		HDF5 LIBARCHIVE LIBMSYM MOLEQUEUE OPENGL QT5 SPGLIB VTK
-OPTIONS_DEFAULT=	LIBARCHIVE LIBMSYM MOLEQUEUE OPENGL QT5 SPGLIB
+CMAKE_ON=		BUILD_SHARED_LIBS
+CMAKE_TESTING_ON=	ENABLE_TESTING
+
+OPTIONS_DEFINE=		HDF5 LIBARCHIVE LIBMSYM MMTF OPENGL QT5 SPGLIB VTK
+OPTIONS_DEFAULT=	LIBARCHIVE LIBMSYM MMTF OPENGL QT5 SPGLIB
 OPTIONS_SUB=		yes
 
 HDF5_CMAKE_BOOL=	USE_HDF5
@@ -38,11 +42,11 @@ LIBARCHIVE_IMPLIES=	QT5
 LIBMSYM_DESC=		Enable optional features using libmsym
 LIBMSYM_CMAKE_BOOL=	USE_LIBMSYM
 LIBMSYM_LIB_DEPENDS=	libmsym.so:science/libmsym
+LIBMSYM_IMPLIES=	QT5 # enables the 'symmetry' Qt plugin
 
-MOLEQUEUE_DESC=		Enable the MoleQueue dependent functionality
-MOLEQUEUE_CMAKE_BOOL=	USE_MOLEQUEUE
-MOLEQUEUE_LIB_DEPENDS=	libMoleQueueClient.so:misc/molequeue
-MOLEQUEUE_IMPLIES=	QT5
+MMTF_DESC=		Enable optional features using mmtf
+MMTF_CMAKE_BOOL=	USE_MMTF
+MMTF_BUILD_DEPENDS=	mmtf-cpp>0:science/mmtf-cpp
 
 OPENGL_CMAKE_BOOL=	USE_OPENGL
 OPENGL_USES=		gl
@@ -50,12 +54,14 @@ OPENGL_USE=		GL=gl,glew,glu
 
 QT5_CMAKE_BOOL=		USE_QT
 QT5_USES=		qt:5
-QT5_USE=		QT=core,concurrent,gui,network,widgets,buildtools_build,qmake_build
+QT5_USE=		QT=core,concurrent,gui,network,svg,widgets,buildtools_build,qmake_build
 QT5_IMPLIES=		OPENGL
 
 SPGLIB_DESC=		Enable optional features using spglib
 SPGLIB_CMAKE_BOOL=	USE_SPGLIB
+SPGLIB_CMAKE_ON=	-DSPGLIB_INCLUDE_DIR=${LOCALBASE}/include/spglib
 SPGLIB_LIB_DEPENDS=	libsymspg.so:science/spglib
+SPGLIB_IMPLIES=		QT5 # USE_SPGLIB only installs header file without USE_QT, and also installs SpaceGroup.a with USE_QT, see https://github.com/OpenChemistry/avogadrolibs/issues/610
 
 VTK_DESC=		Enable libraries that use VTK
 VTK_CMAKE_BOOL=		USE_VTK

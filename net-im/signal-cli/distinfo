@@ -1,5 +1,5 @@
-TIMESTAMP = 1615119907
-SHA256 (signal-cli-0.8.1.tar.gz) = 2ead51489d5521ae8c1538936c6a8dcbb22a96227019eb9e826ff5f9146dbbe2
-SIZE (signal-cli-0.8.1.tar.gz) = 16870784
-SHA256 (AsamK-signal-cli-v0.8.1_GH0.tar.gz) = 36316a11d2f3bfe59898f8bf163ba795e5551db9c1de0abde9dfbad9789cb17d
-SIZE (AsamK-signal-cli-v0.8.1_GH0.tar.gz) = 182957
+TIMESTAMP = 1624268783
+SHA256 (signal-cli-0.8.4.1.tar.gz) = f1286d0b7a759f0bc86496d87f5cb24bb9a208eb8383d0f33815452bb5a331d6
+SIZE (signal-cli-0.8.4.1.tar.gz) = 17756732
+SHA256 (AsamK-signal-cli-v0.8.4.1_GH0.tar.gz) = 0b7a2ee5564a66a9a1d1c65f5df0ffc28cecc8e6a50836543116a78c1cfd4856
+SIZE (AsamK-signal-cli-v0.8.4.1_GH0.tar.gz) = 211997

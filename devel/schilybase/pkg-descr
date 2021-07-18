@@ -1,0 +1,16 @@
+Support files and libraries for schilytools, a collection
+of programs by Joerg Schilling.  This includes among others
+
+ * libedc -- CD sector formatting library
+ * libfind -- find(1) as a library
+ * libhfs -- library to handle Apple HFS extensions
+ * libmdigest -- message digest library
+ * libparanoia -- Portable CD Audio paranoia extraction library
+ * librscg -- remote SCSI transport library
+ * libsiconv -- NLS library for Unicode and iconv wrapper
+ * libscg -- portable SCSI transport library
+ * libschily -- portable extensions to the POSIX API
+ * libshedit -- bsh command line editor
+ * libxtermcap -- extended termcap library
+
+WWW: http://schilytools.sourceforge.net

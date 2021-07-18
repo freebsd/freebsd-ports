@@ -1,0 +1,17 @@
+Conda, like pip and CRAN, is a popular system that allows non-root users to
+install many binary software packages in their own directories.  The system
+includes a base "channel" (repository) as well as 3rd party community
+channels, such as "bioconda".  QC for community channels is generally below
+that of the base channel and FreeBSD ports, but they provide users with a
+convenient way to install software not yet available in FreeBSD ports.
+
+Packages are available for Linux, MacOS, and Windows.  Linux Conda packages
+work about as well on FreeBSD as they do on CentOS, which is the basis of
+FreeBSD's Linux compatibility tool set.  However, Conda and its packages
+require a complete Linux environment for full functionality.
+
+Typical Conda users do not know how to configure this environment on FreeBSD.
+Miniconda-installer ensures a proper environment for installing and using
+Miniconda and the packages it provides.
+
+WWW: https://github.com/outpaddling/miniconda-installer

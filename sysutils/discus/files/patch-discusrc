@@ -1,0 +1,25 @@
+--- discusrc.orig	2021-04-27 15:52:50 UTC
++++ discusrc
+@@ -17,11 +17,6 @@ opts["graph"] = 1
+ opts["graph_char"] = "*"
+ opts["graph_fill"] = "-"
+ 
+-##  Example mtab entry that uses a shell command (always use a ! as
+-##  first character) rather than a file:
+-##	opts["mtab"] = "!/bin/mount |awk '{print $1, $3}'"
+-opts["mtab"] = "/etc/mtab"
+-
+ ##  Number of decimal places to display, same as -p
+ opts["places"] = 1
+ 
+@@ -30,10 +25,6 @@ opts["skip_list"] = ["/dev/pts", "/proc", "/dev", "/pr
+ 
+ ##  Use smart formatting of numbers.
+ opts["smart"] = 1
+-
+-##  Location of stat program in lieu of Python's statvfs module.
+-# Deprecated starting from version 0.3.0
+-#opts["stat_prog"] = "stat -ft"
+ 
+ ##  These colors should work on VT100-type displays.  Change them if you use
+ ##  something else.

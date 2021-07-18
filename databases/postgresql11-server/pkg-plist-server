@@ -877,7 +877,7 @@ lib/libpgcommon.a
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_test_fsync-11.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_test_timing-11.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_upgrade-11.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_waldump-11.mo 
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_waldump-11.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/plpgsql-11.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/postgres-11.mo
 %%DATADIR%%/snowball_create.sql

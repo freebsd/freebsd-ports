@@ -1036,7 +1036,7 @@ libdata/pkgconfig/fish.pc
 %%MANPAGES%%%%DATADIR%%/man/man1/exit.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/false.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fg.1.gz
-%%MANPAGES%%%%DATADIR%%/man/man1/fish-%%CMAKE_BUILD_TYPE%%notes.1.gz
+%%MANPAGES%%%%DATADIR%%/man/man1/fish-releasenotes.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish-completions.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish-doc.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish-faq.1.gz

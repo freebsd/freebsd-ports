@@ -2,10 +2,12 @@ PORTNAME=	opentracker
 PORTVERSION=	0.2017.08.13
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/ \
+MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Free lightweight bittorrent tracker using libowfat
+
+BROKEN_riscv64=		fails to link: duplicate symbol: first_deferred
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:devel/libowfat
 

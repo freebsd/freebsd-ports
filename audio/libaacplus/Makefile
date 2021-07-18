@@ -15,11 +15,9 @@ COMMENT=	HE-AAC+ Codec as Shared Library
 
 LICENSE=	libaacplus
 LICENSE_NAME=	3GPP
-LICENSE_TEXT=	${RESTRICTED}
+LICENSE_TEXT=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 LICENSE_DISTFILES_3GPP=	${SRC26410}
-
-RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 
 CONFLICTS=	aacplusenc-0*
 

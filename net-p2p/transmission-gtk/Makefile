@@ -1,5 +1,5 @@
 PKGNAMESUFFIX=	-gtk
-PORTREVISION=	3
+PORTREVISION=	4
 
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libnotify.so:devel/libnotify

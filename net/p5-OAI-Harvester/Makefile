@@ -22,10 +22,11 @@ RUN_DEPENDS=	p5-URI>=1.30:net/p5-URI \
 TEST_DEPENDS=	p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
 		p5-XML-SAX-Writer>=0:textproc/p5-XML-SAX-Writer
 
-PORTSCOUT=	limit:^[0-9\.]*$$
+USES=		perl5
+USE_PERL5=	configure
 
 NO_ARCH=	yes
-USE_PERL5=	configure
-USES=		perl5
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 .include <bsd.port.mk>

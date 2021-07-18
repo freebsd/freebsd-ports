@@ -1,0 +1,5 @@
+yaml.el is a YAML parser written in Emacs List without any external
+dependencies. It provides an interface similar to the Emacs JSON
+parsing utility.
+
+WWW: https://github.com/zkry/yaml.el

@@ -1,6 +1,6 @@
 PORTNAME=	retext
 DISTVERSION=	7.0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 
 MAINTAINER=	arved@FreeBSD.org
@@ -31,6 +31,6 @@ BINARY_ALIAS=	lrelease=${LRELEASE}
 NO_ARCH=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e "s,lrelease,${LOCALBASE}/bin/lrelease," ${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e "s,lrelease,${LRELEASE}," ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

@@ -2,6 +2,7 @@
 
 PORTNAME=	medikit
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10<3:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}git-semver>=0.3.2<0.4:devel/py-git-semver@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mondrian>=0.8<1:devel/py-mondrian@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>=20.0<21:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=20.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip-tools4>=4.5.0<4.6:devel/py-pip-tools4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}semantic-version>=2.8<3:devel/py-semantic-version@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.28<2:devel/py-stevedore@${PY_FLAVOR} \

@@ -7,7 +7,8 @@ COMMENT=	LDAP access API for KDE
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
+		libqt5keychain.so:security/qtkeychain
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	ecm completion config coreaddons i18n kio widgetsaddons service

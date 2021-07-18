@@ -5,7 +5,7 @@ PORTVERSION=	2.4.4
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	https://downloads.xiph.org/releases/icecast/:source \
-		https://svn.xiph.org/releases/icecast/:source \
+		https://ftp.osuosl.org/pub/xiph/releases/icecast/:source \
 		LOCAL/sunpoet/icecast:icon,source \
 		https://github.com/xiph/Icecast-Server/raw/master/web/:icon
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source \
@@ -25,17 +25,17 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtheora.so:multimedia/libtheora \
 		libvorbis.so:audio/libvorbis
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		cpe gmake gnome localbase ssl
 USE_GNOME=	libxml2 libxslt
 
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	${PORTNAME}
+USE_RC_SUBR=	icecast
 
 SUB_FILES=	pkg-message
 
 CPE_VENDOR=	xiph
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/favicon.ico ${STAGEDIR}${DATADIR}/web/

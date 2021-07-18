@@ -1,7 +1,7 @@
 # Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 
 PORTNAME=	trafficserver
-PORTVERSION=	8.1.1
+PORTVERSION=	9.0.1
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -55,19 +55,20 @@ PLIST_SUB+=	ARCH="${ARCH:C/powerpc64.*/powerpc/}"
 
 WCCP_DESC=	Enable WCCPv2 protocol
 WCCP_CONFIGURE_ENABLE=	wccp
+WCCP_USE=	GCC=yes
 
 MEMCACHED_DESC=		Enable memcache & memcached_remap plugin
+MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
 IMAGEMAGICK_DESC=	Enable ats-magick & webp convert plugin
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MMEMCACHED}
-LIB_DEPENDS+=	libmemcached.so:databases/libmemcached
-PLIST_SUB+=	MEMCACHED=""
-.else
-PLIST_SUB+=	MEMCACHED="@comment "
+# Can be removed after 11 EoL'd
+.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
+# --build-id isn't supported by old GNU ld.bfd in base
+LDFLAGS+=	-fuse-ld=lld
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 .if ${PORT_OPTIONS:MX11}
@@ -75,16 +76,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6
 .else
 RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6-nox11
 .endif
-PLIST_SUB+=	IMAGEMAGICK=""
-.else
-PLIST_SUB+=	IMAGEMAGICK="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MWCCP}
-PLIST_SUB+=	WCCP=""
-USE_GCC=	yes
-.else
-PLIST_SUB+=	WCCP="@comment "
 .endif
 
 post-patch:
@@ -92,8 +83,9 @@ post-patch:
 		-e '/cachedir:/s,$${localstatedir}+,$${localstatedir}/cache+,' \
 		-e '/runtimedir:/s,$${localstatedir}+,$${localstatedir}/run+,' \
 		${WRKSRC}/config.layout
-	@${REINPLACE_CMD} '/^LUA_LDFLAGS =/s/$$/ @LDFLAGS@/' \
-		${WRKSRC}/lib/Makefile.in
+	@${REINPLACE_CMD} -e 's/#ifdef HAVE_EVENTFD/#if defined(HAVE_EVENTFD) \&\& TS_USE_EPOLL == 1/' \
+		${WRKSRC}/src/tscore/EventNotify.cc \
+		${WRKSRC}/include/tscore/EventNotify.h
 
 post-install:
 	${RMDIR} ${STAGEDIR}${DATADIR}

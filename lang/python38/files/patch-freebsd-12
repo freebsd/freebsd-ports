@@ -1,0 +1,107 @@
+From 9fa60bf7361d3244c19ed273fd4f1df7dd9698b0 Mon Sep 17 00:00:00 2001
+From: Yasuhiro Kimura <yasu@utahime.org>
+Date: Tue, 11 May 2021 04:17:33 +0900
+Subject: [PATCH] Revert "[3.8] bpo-43799: OpenSSL 3.0.0: declare
+ OPENSSL_API_COMPAT 1.1.1 (GH-25329) (GH-25383)"
+
+This reverts commit b71aaa0df0f3a9640b034b4774651cd8c54d2fb9.
+---
+ Modules/_hashopenssl.c |  9 +--------
+ Modules/_ssl.c         | 33 +++++++++++++++++++--------------
+ 2 files changed, 20 insertions(+), 22 deletions(-)
+
+diff --git Modules/_hashopenssl.c Modules/_hashopenssl.c
+index 93bf25fee3..edadbcb393 100644
+--- Modules/_hashopenssl.c
++++ Modules/_hashopenssl.c
+@@ -11,13 +11,6 @@
+  *
+  */
+ 
+-/* Don't warn about deprecated functions, */
+-#ifndef OPENSSL_API_COMPAT
+-  // 0x10101000L == 1.1.1, 30000 == 3.0.0
+-  #define OPENSSL_API_COMPAT 0x10101000L
+-#endif
+-#define OPENSSL_NO_DEPRECATED 1
+-
+ #define PY_SSIZE_T_CLEAN
+ 
+ #include "Python.h"
+@@ -31,7 +24,7 @@
+ #include <openssl/hmac.h>
+ /* We use the object interface to discover what hashes OpenSSL supports. */
+ #include <openssl/objects.h>
+-#include <openssl/err.h>
++#include "openssl/err.h"
+ 
+ #ifndef OPENSSL_THREADS
+ #  error "OPENSSL_THREADS is not defined, Python requires thread-safe OpenSSL"
+diff --git Modules/_ssl.c Modules/_ssl.c
+index d6a2fb814a..5cbc2b65be 100644
+--- Modules/_ssl.c
++++ Modules/_ssl.c
+@@ -14,13 +14,6 @@
+        http://bugs.python.org/issue8108#msg102867 ?
+ */
+ 
+-/* Don't warn about deprecated functions, */
+-#ifndef OPENSSL_API_COMPAT
+-  // 0x10101000L == 1.1.1, 30000 == 3.0.0
+-  #define OPENSSL_API_COMPAT 0x10101000L
+-#endif
+-#define OPENSSL_NO_DEPRECATED 1
+-
+ #define PY_SSIZE_T_CLEAN
+ 
+ #include "Python.h"
+@@ -52,6 +45,14 @@ static PySocketModule_APIObject PySocketModule;
+ #include <sys/poll.h>
+ #endif
+ 
++/* Don't warn about deprecated functions */
++#ifdef __GNUC__
++#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
++#endif
++#ifdef __clang__
++#pragma clang diagnostic ignored "-Wdeprecated-declarations"
++#endif
++
+ /* Include OpenSSL header files */
+ #include "openssl/rsa.h"
+ #include "openssl/crypto.h"
+@@ -149,20 +150,24 @@ static void _PySSLFixErrno(void) {
+ #  define PY_OPENSSL_1_1_API 1
+ #endif
+ 
+-/* OpenSSL API 1.1.0+ does not include version methods. Define the methods
+- * unless OpenSSL is compiled without the methods. It's the easiest way to
+- * make 1.0.2, 1.1.0, 1.1.1, and 3.0.0 happy without deprecation warnings.
+- */
++/* OpenSSL API compat */
++#ifdef OPENSSL_API_COMPAT
++#if OPENSSL_API_COMPAT >= 0x10100000L
++
++/* OpenSSL API 1.1.0+ does not include version methods */
+ #ifndef OPENSSL_NO_TLS1_METHOD
+-extern const SSL_METHOD *TLSv1_method(void);
++#define OPENSSL_NO_TLS1_METHOD 1
+ #endif
+ #ifndef OPENSSL_NO_TLS1_1_METHOD
+-extern const SSL_METHOD *TLSv1_1_method(void);
++#define OPENSSL_NO_TLS1_1_METHOD 1
+ #endif
+ #ifndef OPENSSL_NO_TLS1_2_METHOD
+-extern const SSL_METHOD *TLSv1_2_method(void);
++#define OPENSSL_NO_TLS1_2_METHOD 1
+ #endif
+ 
++#endif /* >= 1.1.0 compcat */
++#endif /* OPENSSL_API_COMPAT */
++
+ /* LibreSSL 2.7.0 provides necessary OpenSSL 1.1.0 APIs */
+ #if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER >= 0x2070000fL
+ #  define PY_OPENSSL_1_1_API 1
+-- 
+2.31.1
+

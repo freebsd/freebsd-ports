@@ -11,7 +11,6 @@ share/mime/packages/fractgen.xml
 %%DATADIR%%/examples/alpha06.fsf
 %%DATADIR%%/examples/alpha07.fsf
 %%DATADIR%%/examples/alpha08.fsf
-%%DATADIR%%/examples/demo-fractal.fsf
 %%DATADIR%%/examples/beta01.fsf
 %%DATADIR%%/examples/beta02.fsf
 %%DATADIR%%/examples/beta03.fsf
@@ -20,6 +19,8 @@ share/mime/packages/fractgen.xml
 %%DATADIR%%/examples/beta06.fsf
 %%DATADIR%%/examples/beta07.fsf
 %%DATADIR%%/examples/beta08.fsf
+%%DATADIR%%/examples/delta01.fsf
+%%DATADIR%%/examples/demo-fractal.fsf
 %%DATADIR%%/examples/gamma01.fsf
 %%DATADIR%%/examples/gamma02.fsf
 %%DATADIR%%/examples/gamma03.fsf

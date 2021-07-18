@@ -1,5 +1,7 @@
+#  Created by: Oleg Sidorkin <osidorkin@gmail.com>
+
 PORTNAME=	rss-bridge
-DISTVERSION=	2020-11-10
+DISTVERSION=	2021-04-25
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -9,13 +11,12 @@ COMMENT=	RSS feed generator for websites missing it
 LICENSE=	PD
 
 USES=		php:web
-USE_PHP=	curl json mbstring openssl simplexml
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	RSS-Bridge
+USE_PHP=	curl json mbstring openssl simplexml
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 

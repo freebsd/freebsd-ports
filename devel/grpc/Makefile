@@ -1,8 +1,9 @@
 # Created by: vanilla@
 
 PORTNAME=	grpc
-PORTVERSION=	1.36.0
+PORTVERSION=	1.38.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel
 
@@ -35,6 +36,14 @@ CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 CMAKE_ON=	BUILD_SHARED_LIBS
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	SHLIB_MAJOR=${PORTVERSION:R} \
+		SHLIB_MINOR=${PORTVERSION:E}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# Remove openssl from grpc.pc because we do not ship openssl.pc in base system
+.if ${SSL_DEFAULT} == base
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-CMakeLists.txt
+.endif
+
+.include <bsd.port.post.mk>

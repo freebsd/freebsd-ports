@@ -1,0 +1,38 @@
+From b9b967cca71a4da51506f8ba596b9ae40cfcef57 Mon Sep 17 00:00:00 2001
+From: "Heiko Schlittermann (HS12-RIPE)" <hs@schlittermann.de>
+Date: Thu, 1 Apr 2021 21:42:38 +0200
+Subject: [PATCH 16/23] smtp_out
+
+---
+ src/smtp_out.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+
+diff --git a/src/smtp_out.c b/src/smtp_out.c
+index c4c409677..9c160e697 100644
+--- a/src/smtp_out.c
++++ b/src/smtp_out.c
+@@ -53,11 +53,8 @@ if (!(expint = expand_string(istring)))
+   return FALSE;
+   }
+ 
+-if (is_tainted(expint))
++if (is_tainted2(expint, LOG_MAIN|LOG_PANIC, "Tainted value '%s' from '%s' for interface", expint, istring))
+   {
+-  log_write(0, LOG_MAIN|LOG_PANIC,
+-    "attempt to use tainted value '%s' from '%s' for interface",
+-    expint, istring);
+   addr->transport_return = PANIC;
+   addr->message = string_sprintf("failed to expand \"interface\" "
+       "option for %s: configuration error", msg);
+@@ -425,7 +422,7 @@ if (ob->socks_proxy)
+   {
+   int sock = socks_sock_connect(sc->host, sc->host_af, port, sc->interface,
+ 				sc->tblock, ob->connect_timeout);
+-  
++
+   if (sock >= 0)
+     {
+     if (early_data && early_data->data && early_data->len)
+-- 
+2.30.2
+

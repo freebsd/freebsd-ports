@@ -1,4 +1,4 @@
---- components/content_settings/core/browser/website_settings_registry.cc.orig	2021-03-12 23:57:22 UTC
+--- components/content_settings/core/browser/website_settings_registry.cc.orig	2021-04-14 18:40:59 UTC
 +++ components/content_settings/core/browser/website_settings_registry.cc
 @@ -69,7 +69,7 @@ const WebsiteSettingsInfo* WebsiteSettingsRegistry::Re
      return nullptr;

@@ -1,7 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	POE-Component-Client-Ping
-PORTVERSION=	1.176
+PORTVERSION=	1.177
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,4 +19,5 @@ USES=		perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
+
 .include <bsd.port.mk>

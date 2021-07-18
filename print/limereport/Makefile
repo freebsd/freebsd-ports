@@ -2,6 +2,7 @@
 
 PORTNAME=	limereport
 PORTVERSION=	1.5.35
+PORTREVISION=	1
 CATEGORIES=	print
 
 MAINTAINER=	svvord@soft-wizard.ru
@@ -21,7 +22,7 @@ GH_PROJECT=	LimeReport
 
 USE_LDCONFIG=	yes
 
-LIB_DEPENDS+=	libpng16.so:graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 
 OPTIONS_DEFINE=	DEBUG DOCS ZINT
 OPTIONS_DEFAULT=	ZINT

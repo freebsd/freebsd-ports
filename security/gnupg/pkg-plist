@@ -16,7 +16,7 @@ bin/gpgtar
 bin/gpgv2
 bin/kbxutil
 bin/watchgnupg
-%%LDAP%%libexec/dirmngr_ldap
+%%DIRMNGRLDAP%%libexec/dirmngr_ldap
 libexec/gpg-check-pattern
 libexec/gpg-pair-tool
 libexec/gpg-preset-passphrase
@@ -57,6 +57,7 @@ sbin/applygnupgdefaults
 %%PORTDOCS%%%%DOCSDIR%%/examples/Automatic.prf
 %%PORTDOCS%%%%DOCSDIR%%/examples/README
 %%PORTDOCS%%%%DOCSDIR%%/examples/VS-NfD.prf
+%%PORTDOCS%%%%DOCSDIR%%/examples/common.conf
 %%PORTDOCS%%%%DOCSDIR%%/examples/debug.prf
 %%PORTDOCS%%%%DOCSDIR%%/examples/gpgconf.conf
 %%PORTDOCS%%%%DOCSDIR%%/examples/pwpattern.list

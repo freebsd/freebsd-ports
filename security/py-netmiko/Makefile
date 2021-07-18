@@ -1,7 +1,6 @@
 PORTNAME=	netmiko
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.1
-PORTREVISION=	1
+DISTVERSION=	3.3.0
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -26,6 +25,6 @@ GH_ACCOUNT=	ktbyers
 NO_ARCH=	yes
 
 do-test:
-	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -s tests/test_import_netmiko.py
+	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -s tests/test_import_netmiko.py
 
 .include <bsd.port.mk>

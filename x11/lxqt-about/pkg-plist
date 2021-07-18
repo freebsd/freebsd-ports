@@ -14,6 +14,7 @@ share/applications/lxqt-about.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_eo.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_es.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_es_VE.qm
+%%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_et.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_eu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_fa.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_fi.qm
@@ -31,12 +32,13 @@ share/applications/lxqt-about.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_lv.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_nb_NO.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_nl.qm
+%%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_oc.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_pl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_pt.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_pt_BR.qm
-%%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_pt_PT.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_ro_RO.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_ru.qm
+%%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_si.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_sk_SK.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_sl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-about/lxqt-about_sr@latin.qm

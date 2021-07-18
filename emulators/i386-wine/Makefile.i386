@@ -60,6 +60,27 @@ post-install-script:
 			${ECHO_CMD} lib32/$${i##*/} >> ${TMPPLIST} ; \
 		fi ; \
 	done
+	# Install missing libraries that dont have been caught
+	${INSTALL_DATA} ${LOCALBASE}/lib/libGLX_mesa.so.0 ${STAGEDIR}${PREFIX}/lib32
+	${INSTALL_DATA} ${LOCALBASE}/lib/libX11-xcb.so.1 ${STAGEDIR}${PREFIX}/lib32
+	${INSTALL_DATA} ${LOCALBASE}/lib/libxcb-dri2.so.0 ${STAGEDIR}${PREFIX}/lib32
+	${INSTALL_DATA} ${LOCALBASE}/lib/libxcb-dri3.so.0 ${STAGEDIR}${PREFIX}/lib32
+	${INSTALL_DATA} ${LOCALBASE}/lib/libxcb-glx.so.0 ${STAGEDIR}${PREFIX}/lib32
+	${INSTALL_DATA} ${LOCALBASE}/lib/libxcb-present.so.0 ${STAGEDIR}${PREFIX}/lib32
+	${INSTALL_DATA} ${LOCALBASE}/lib/libxcb-sync.so.1 ${STAGEDIR}${PREFIX}/lib32
+	${INSTALL_DATA} ${LOCALBASE}/lib/libxcb-xfixes.so.0 ${STAGEDIR}${PREFIX}/lib32
+	${INSTALL_DATA} ${LOCALBASE}/lib/libXdamage.so.1 ${STAGEDIR}${PREFIX}/lib32
+	${INSTALL_DATA} ${LOCALBASE}/lib/libxshmfence.so.1 ${STAGEDIR}${PREFIX}/lib32
+	${ECHO_CMD} lib32/libGLX_mesa.so.0 >> ${TMPPLIST}
+	${ECHO_CMD} lib32/libX11-xcb.so.1 >> ${TMPPLIST}
+	${ECHO_CMD} lib32/libxcb-dri2.so.0 >> ${TMPPLIST}
+	${ECHO_CMD} lib32/libxcb-dri3.so.0 >> ${TMPPLIST}
+	${ECHO_CMD} lib32/libxcb-glx.so.0 >> ${TMPPLIST}
+	${ECHO_CMD} lib32/libxcb-present.so.0 >> ${TMPPLIST}
+	${ECHO_CMD} lib32/libxcb-sync.so.1 >> ${TMPPLIST}
+	${ECHO_CMD} lib32/libxcb-xfixes.so.0 >> ${TMPPLIST}
+	${ECHO_CMD} lib32/libXdamage.so.1 >> ${TMPPLIST}
+	${ECHO_CMD} lib32/libxshmfence.so.1 >> ${TMPPLIST}
 	# Install nvidia patching script
 	${INSTALL_SCRIPT} ${.CURDIR}/files/nvidia.sh ${STAGEDIR}${DATADIR}/patch-nvidia.sh
 	${ECHO_CMD} ${DATADIR:S|$(PREFIX)/||}/patch-nvidia.sh >> ${TMPPLIST}

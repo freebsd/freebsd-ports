@@ -1,7 +1,6 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
-PORTREVISION=	1
+DISTVERSION=	1.4.1
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,34 +12,30 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 BUILD_DEPENDS=	cmake:devel/cmake
 LIB_DEPENDS=	libdmlc.so:devel/dmlc-core \
-		librabit.so:misc/xgboost
+		libxgboost.so:misc/xgboost
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 
 USES=		compiler:c11 python:3.5+ localbase:ldflags
-USE_GITHUB=	yes
-GH_ACCOUNT=	dmlc
 USE_PYTHON=	distutils autoplist
 USE_LDCONFIG=	yes
-GH_TUPLE=	\
-		dmlc:rabit:4acdd7c6f68debe1c39ae07ca75466d74d194dd1:dmlc_rabit/../rabit
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dmlc
 
 WRKSRC_SUBDIR=	python-package
 
-LDFLAGS+=	-lexecinfo
+PYDISTUTILS_INSTALLARGS=	--use-system-libxgboost # this is ignored so that setup.py has to be patched, see https://github.com/dmlc/xgboost/issues/6879
+
+NO_ARCH=	yes
 
 POST_PLIST=	fix-plist
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1300060
-BROKEN_i386=	undefined symbol: __atomic_load (on 11 and 12, but not on 13)
-.endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/lib/libxgboost.so
-
 fix-plist: # https://github.com/dmlc/xgboost/issues/5705
-	@${REINPLACE_CMD} 's|/libxgboost${PYTHON_EXT_SUFFIX}.so$$|/xgboost/lib/libxgboost.so|' ${TMPPLIST}
+	@${REINPLACE_CMD} 's|.*libxgboost${PYTHON_EXT_SUFFIX}.so$$||' ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+do-test: # tests fail w/out CUDA: https://github.com/dmlc/xgboost/issues/6881
+	@cd ${WRKSRC}/.. && ${PYTHON_CMD} -m pytest
+
+.include <bsd.port.mk>

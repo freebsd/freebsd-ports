@@ -1,0 +1,19 @@
+Priority is a pure-Python implementation of the priority logic for HTTP/2, set
+out in RFC 7540 Section 5.3 (Stream Priority). This logic allows for clients to
+express a preference for how the server allocates its (limited) resources to the
+many outstanding HTTP requests that may be running over a single HTTP/2
+connection.
+
+Specifically, this Python implementation uses a variant of the implementation
+used in the excellent H2O project. This original implementation is also the
+inspiration for nghttp2's priority implementation, and generally produces a very
+clean and even priority stream. The only notable changes from H2O's
+implementation are small modifications to allow the priority implementation to
+work cleanly as a separate implementation, rather than being embedded in a
+HTTP/2 stack directly.
+
+While priority information in HTTP/2 is only a suggestion, rather than an
+enforceable constraint, where possible servers should respect the priority
+requests of their clients.
+
+WWW: https://github.com/python-hyper/priority

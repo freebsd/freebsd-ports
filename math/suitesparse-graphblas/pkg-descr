@@ -1,0 +1,11 @@
+This port installs the module GraphBLAS of SuiteSparse.
+
+SuiteSparse:GraphBLAS is a complete implementation of the GraphBLAS
+standard, which defines a set of sparse matrix operations on an extended
+algebra of semirings using an almost unlimited variety of operators and
+types. When applied to sparse adjacency matrices, these algebraic
+operations are equivalent to computations on graphs. GraphBLAS provides
+a powerful and expressive framework for creating graph algorithms based
+on the elegant mathematics of sparse matrix operations on a semiring.
+
+WWW: http://faculty.cse.tamu.edu/davis/suitesparse.html

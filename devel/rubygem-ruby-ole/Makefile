@@ -1,7 +1,7 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
 
 PORTNAME=	ruby-ole
-PORTVERSION=	1.2.12.1
+PORTVERSION=	1.2.12.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,13 +11,14 @@ COMMENT=	Library for easy read/write access to OLE compound documents
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gem shebangfix
+USE_RUBY=	yes
+
 NO_ARCH=	yes
 
-USE_RUBY=	yes
-USES=		gem shebangfix
+PLIST_FILES=	bin/oletool
+
 SHEBANG_FILES=	bin/oletool \
 		test/*.rb
-
-PLIST_FILES=	bin/oletool
 
 .include <bsd.port.mk>

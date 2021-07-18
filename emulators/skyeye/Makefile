@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 USE_CSTD=	gnu89
 USE_BINUTILS=	yes
-USE_GCC=	any
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_working_mktime=yes
 CFLAGS+=	-fcommon

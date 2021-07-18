@@ -1,8 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 
 PORTNAME=	zope.i18nmessageid
-PORTVERSION=	3.6.1
-PORTREVISION=	1
+PORTVERSION=	5.0.1
 CATEGORIES=	textproc www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

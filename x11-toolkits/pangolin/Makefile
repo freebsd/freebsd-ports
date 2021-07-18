@@ -1,7 +1,7 @@
 PORTNAME=	pangolin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5-431
-DISTVERSIONSUFFIX=	-g86eb497
+DISTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		liblz4.so:archivers/liblz4 \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libzstd.so:archivers/zstd
 

@@ -1,0 +1,5 @@
+pyexcel lets you focus on data, instead of file formats. It supports csv, tsv,
+csvz, tsvz, xls, xlsx, xlsm, ods, fods, json, html, simple, rst and media wiki
+table.
+
+WWW: https://github.com/pyexcel/pyexcel

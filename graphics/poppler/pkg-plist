@@ -91,6 +91,7 @@ include/poppler/cpp/poppler-page.h
 include/poppler/cpp/poppler-rectangle.h
 include/poppler/cpp/poppler-toc.h
 include/poppler/cpp/poppler-version.h
+include/poppler/cpp/poppler_cpp_export.h
 include/poppler/fofi/FoFiBase.h
 include/poppler/fofi/FoFiEncodings.h
 include/poppler/fofi/FoFiIdentifier.h
@@ -111,6 +112,7 @@ include/poppler/goo/gmem.h
 include/poppler/goo/grandom.h
 include/poppler/goo/gstrtod.h
 include/poppler/poppler-config.h
+include/poppler/poppler_private_export.h
 include/poppler/splash/Splash.h
 include/poppler/splash/SplashBitmap.h
 include/poppler/splash/SplashClip.h

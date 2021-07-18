@@ -1,0 +1,25 @@
+PORTNAME=	sqlitecpp
+DISTVERSION=	3.1.1-28
+DISTVERSIONSUFFIX=	-g0c46d86
+CATEGORIES=	databases devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	SQLiteC++: Easy to use C++ SQLite3 wrapper
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+TEST_DEPENDS=	googletest>0:devel/googletest
+
+USES=		cmake:testing compiler:c++11-lang sqlite
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	SRombauts
+GH_PROJECT=	SQLiteCpp
+
+CMAKE_ON=		BUILD_SHARED_LIBS
+CMAKE_OFF=		SQLITECPP_INTERNAL_SQLITE SQLITECPP_RUN_CPPLINT
+CMAKE_TESTING_ON=	SQLITECPP_BUILD_TESTS
+
+.include <bsd.port.mk>

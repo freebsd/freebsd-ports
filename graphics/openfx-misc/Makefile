@@ -1,6 +1,6 @@
 PORTNAME=	openfx-misc
 PORTVERSION=	2.3.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -8,7 +8,7 @@ COMMENT=	Miscellaneous OpenFX Effects plugins
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64
 
 USES=		gl gmake
 USE_GITHUB=	yes

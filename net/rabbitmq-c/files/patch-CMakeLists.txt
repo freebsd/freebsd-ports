@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2021-06-26 16:16:31 UTC
++++ CMakeLists.txt
+@@ -319,8 +319,8 @@ foreach (lib ${SOCKET_LIBRARIES})
+ endforeach(lib)
+ set(libs_private "${libs_private} -l${LIBRT}")
+ if (ENABLE_SSL_SUPPORT)
+-  set(requires_private "openssl")
+-  set(libs_private "${libs_private} ${CMAKE_THREAD_LIBS_INIT}")
++#  set(requires_private "openssl")
++  set(libs_private "${libs_private} -lssl -lcrypto ${CMAKE_THREAD_LIBS_INIT}")
+ endif()
+ 
+ set(prefix ${CMAKE_INSTALL_PREFIX})

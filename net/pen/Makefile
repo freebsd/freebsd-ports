@@ -5,7 +5,7 @@ PORTVERSION=	0.34.1
 CATEGORIES=	net
 MASTER_SITES=	http://siag.nu/pub/pen/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Load balancer for UDP and TCP based protocols
 
 LICENSE=	GPLv2

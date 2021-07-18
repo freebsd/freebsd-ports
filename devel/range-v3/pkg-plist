@@ -1,3 +1,4 @@
+include/concepts/compare.hpp
 include/concepts/concepts.hpp
 include/concepts/swap.hpp
 include/concepts/type_traits.hpp
@@ -121,13 +122,14 @@ include/range/v3/all.hpp
 include/range/v3/at.hpp
 include/range/v3/back.hpp
 include/range/v3/begin_end.hpp
+include/range/v3/compare.hpp
 include/range/v3/core.hpp
 include/range/v3/data.hpp
 include/range/v3/detail/adl_get.hpp
 include/range/v3/detail/config.hpp
-include/range/v3/detail/disable_warnings.hpp
+include/range/v3/detail/epilogue.hpp
+include/range/v3/detail/prologue.hpp
 include/range/v3/detail/range_access.hpp
-include/range/v3/detail/reenable_warnings.hpp
 include/range/v3/detail/satisfy_boost_range.hpp
 include/range/v3/detail/variant.hpp
 include/range/v3/detail/with_braced_init_args.hpp

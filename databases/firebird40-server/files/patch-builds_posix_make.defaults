@@ -1,0 +1,64 @@
+--- builds/posix/make.defaults	2020-10-20 03:40:05.000000000 -0500
++++ builds/posix/make.defaults	2021-06-25 00:23:49.718147000 -0500
+@@ -134,7 +134,7 @@
+ MATHLIB=@MATHLIB@
+ 
+ # switch to make sed edit files inplace
+-INLINE_EDIT_SED:= -i
++INLINE_EDIT_SED:= -i ""
+ 
+ # Default programs and tools to be used in the build process
+ 
+@@ -144,7 +144,7 @@
+ CHMOD=			chmod
+ CHMOD_6=		chmod 666
+ CHMOD_7=		chmod 777
+-CHMOD_S7=		chmod 06777
++CHMOD_S7=		chmod 04555
+ MV=			mv -f
+ TOUCH=			touch
+ CP=			cp
+@@ -219,7 +219,7 @@
+ #LibraryFileName=libfbclient
+ LibraryFileName=libfbclient
+ LibraryFullName=$(LibraryFileName).${SHRLIB_EXT}.${FirebirdVersion}
+-LibrarySoName=$(LibraryFileName).${SHRLIB_EXT}.2
++LibrarySoName=$(LibraryFileName).${SHRLIB_EXT}.4
+ LibraryBaseName=$(LibraryFileName).${SHRLIB_EXT}
+ 
+ LIBFIREBIRD_FULLNAME = $(LIB)/$(LibraryFullName)
+@@ -240,7 +240,7 @@
+ 
+ ifeq ($(EDITLINE_FLG),Y)
+   ifeq ($(STD_EDITLINE), true)
+-	LIBEDITLINE := -l$(READLINE)
++	LIBEDITLINE := $(shell pkgconf libedit --libs)
+   else
+ 	LIBEDITLINE := $(LIB)/libedit.a
+   endif
+@@ -362,7 +362,7 @@
+ GDS_DROP	= $(BIN)/gds_drop$(EXEC_EXT)
+ FBSVCMGR	= $(BIN)/fbsvcmgr$(EXEC_EXT)
+ FBTRACEMGR	= $(BIN)/fbtracemgr$(EXEC_EXT)
+-GSTAT		= $(BIN)/gstat$(EXEC_EXT)
++GSTAT		= $(BIN)/fbstat$(EXEC_EXT)
+ NBACKUP		= $(BIN)/nbackup$(EXEC_EXT)
+ LOCKPRINT	= $(BIN)/fb_lock_print$(EXEC_EXT)
+ GSEC		= $(BIN)/gsec$(EXEC_EXT)
+@@ -383,13 +383,13 @@
+ QLI            = $(BIN)/qli$(EXEC_EXT)
+ 
+ # From isql
+-ISQL            = $(BIN)/isql$(EXEC_EXT)
+-RUN_ISQL        = $(RBIN)/isql$(EXEC_EXT)
++ISQL            = $(BIN)/isql-fb$(EXEC_EXT)
++RUN_ISQL        = $(RBIN)/isql-fb$(EXEC_EXT)
+ 
+ # From burp
+ GBAK            = $(BIN)/gbak$(EXEC_EXT)
+ RUN_GBAK        = $(RBIN)/gbak$(EXEC_EXT)
+-GSPLIT          = $(BIN)/gsplit$(EXEC_EXT)
++GSPLIT          = $(BIN)/fbsplit$(EXEC_EXT)
+ 
+ # From gpre
+ # (gpre current is a link to one of the others)

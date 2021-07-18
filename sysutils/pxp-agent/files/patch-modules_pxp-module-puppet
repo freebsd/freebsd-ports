@@ -1,0 +1,8 @@
+--- modules/pxp-module-puppet.orig	2018-09-28 17:04:38 UTC
++++ modules/pxp-module-puppet
+@@ -1,4 +1,4 @@
+-#!/opt/puppetlabs/puppet/bin/ruby
++#!/usr/bin/env ruby
+ # encoding: UTF-8
+ 
+ require 'json'

@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_frame.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig	2021-05-12 22:05:46 UTC
 +++ chrome/browser/ui/views/frame/browser_frame.cc
 @@ -44,7 +44,7 @@
  
@@ -18,7 +18,7 @@
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -226,7 +226,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
+@@ -221,7 +221,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
                                             IsVisibleOnAllWorkspaces());
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

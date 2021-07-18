@@ -34,17 +34,31 @@ CARGO_CARGOLOCK?=	${WRKSRC}/Cargo.lock
 CARGO_DIST_SUBDIR?=	rust/crates
 
 # Generate list of DISTFILES.
-.for _crate in ${CARGO_CRATES}
+# Prefer canonical file extension .crate going forward
+.if make(makesum)
+CARGO_CRATE_EXT=	.crate
+.else
+# If there is a rust/crates/*.tar.gz in distinfo keep using the old
+# extension.  We need to delay eval until the last moment for
+# DISTINFO_FILE.  We cache the command output to avoid multiple
+# slow grep runs for every CARGO_CRATE_EXT access.
+CARGO_CRATE_EXT=	${defined(_CARGO_CRATE_EXT_CACHE):?${_CARGO_CRATE_EXT_CACHE}:${:!if ${GREP} -q '\(${CARGO_DIST_SUBDIR}/.*\.tar\.gz\)' "${DISTINFO_FILE}" 2>/dev/null; then ${ECHO_CMD} .tar.gz; else ${ECHO_CMD} .crate; fi!:_=_CARGO_CRATE_EXT_CACHE}}
+.endif
+# enumerate crates for unqiue and sane distfile group names
+_CARGO_CRATES:=	${empty(CARGO_CRATES):?:${CARGO_CRATES:range:@i@$i ${CARGO_CRATES:[$i]}@}}
+# split up crates into (index, crate, name, version) 4-tuples
+_CARGO_CRATES:=	${_CARGO_CRATES:C/^([-_a-zA-Z0-9]+)-([0-9].*)/\0 \1 \2/}
+.for _index _crate _name _version in ${_CARGO_CRATES}
 # Resolving CRATESIO alias is very inefficient with many MASTER_SITES, consume MASTER_SITE_CRATESIO directly
-MASTER_SITES+=	${MASTER_SITE_CRATESIO:S,%SUBDIR%,${_crate:C/^([-_a-zA-Z0-9]+)-[0-9].*/\1/}/${_crate:C/^[-_a-zA-Z0-9]+-([0-9].*)/\1/},:S,$,:cargo_${_crate:C/[^a-zA-Z0-9_]//g},}
-DISTFILES+=	${CARGO_DIST_SUBDIR}/${_crate}.tar.gz:cargo_${_crate:C/[^a-zA-Z0-9_]//g}
+MASTER_SITES+=	${MASTER_SITE_CRATESIO:S,%SUBDIR%,${_name}/${_version},:S,$,:_cargo_${_index},}
+DISTFILES+=	${CARGO_DIST_SUBDIR}/${_crate}${CARGO_CRATE_EXT}:_cargo_${_index}
 .endfor
 
 # Build dependencies.
 
 CARGO_BUILDDEP?=	yes
 .if ${CARGO_BUILDDEP:tl} == "yes"
-BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.51.0:lang/${RUST_DEFAULT}
+BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.53.0:lang/${RUST_DEFAULT}
 .endif
 
 # Location of cargo binary (default to lang/rust's Cargo binary)
@@ -81,6 +95,7 @@ RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
 USE_GCC?=	yes
+STRIP_CMD=	${LOCALBASE}/bin/strip # unsupported e_type with base strip
 .endif
 
 # Helper to shorten cargo calls.
@@ -129,45 +144,31 @@ CARGO_TEST_ARGS+=	--release
 CARGO_INSTALL_ARGS+=	--debug
 .endif
 
-.if ${CARGO_CRATES:Mcmake-[0-9]*}
+.if ${_CARGO_CRATES:Mcmake}
 BUILD_DEPENDS+=	cmake:devel/cmake
 .endif
 
-.if ${CARGO_CRATES:Mgettext-sys-[0-9]*}
+.if ${_CARGO_CRATES:Mgettext-sys}
 CARGO_ENV+=	GETTEXT_BIN_DIR=${LOCALBASE}/bin \
 		GETTEXT_INCLUDE_DIR=${LOCALBASE}/include \
 		GETTEXT_LIB_DIR=${LOCALBASE}/lib
 .endif
 
-.if ${CARGO_CRATES:Mjemalloc-sys-[0-9]*}
+.if ${_CARGO_CRATES:Mjemalloc-sys}
 BUILD_DEPENDS+=	gmake:devel/gmake
 .endif
 
-.for libc in ${CARGO_CRATES:Mlibc-[0-9]*}
-# FreeBSD 12.0 changed ABI: r318736 and r320043
-# https://github.com/rust-lang/libc/commit/78f93220d70e
-# https://github.com/rust-lang/libc/commit/969ad2b73cdc
-_libc_VER=	${libc:C/.*-//}
-. if ${_libc_VER:R:R} == 0 && (${_libc_VER:R:E} < 2 || ${_libc_VER:R:E} == 2 && ${_libc_VER:E} < 38)
-DEV_ERROR+=	"CARGO_CRATES=${libc} may be unstable on FreeBSD 12.0. Consider updating to the latest version \(higher than 0.2.37\)."
-. endif
-. if ${_libc_VER:R:R} == 0 && (${_libc_VER:R:E} < 2 || ${_libc_VER:R:E} == 2 && ${_libc_VER:E} < 49)
-DEV_ERROR+=	"CARGO_CRATES=${libc} may be unstable on aarch64 or not build on armv6, armv7, powerpc64. Consider updating to the latest version \(higher than 0.2.49\)."
-. endif
-.undef _libc_VER
-.endfor
-
-.if ${CARGO_CRATES:Mlibgit2-sys-[0-9]*}
+.if ${_CARGO_CRATES:Mlibgit2-sys}
 # Use the system's libgit2 instead of building the bundled version
 CARGO_ENV+=	LIBGIT2_SYS_USE_PKG_CONFIG=1
 .endif
 
-.if ${CARGO_CRATES:Mlibssh2-sys-[0-9]*}
+.if ${_CARGO_CRATES:Mlibssh2-sys}
 # Use the system's libssh2 instead of building the bundled version
 CARGO_ENV+=	LIBSSH2_SYS_USE_PKG_CONFIG=1
 .endif
 
-.if ${CARGO_CRATES:Monig_sys-[0-9]*}
+.if ${_CARGO_CRATES:Monig_sys}
 # onig_sys always prefers the system library but will try to link
 # statically with it.  Since devel/oniguruma doesn't provide a static
 # library it'll link to libonig.so instead.  Strictly speaking setting
@@ -176,31 +177,42 @@ CARGO_ENV+=	LIBSSH2_SYS_USE_PKG_CONFIG=1
 CARGO_ENV+=	RUSTONIG_SYSTEM_LIBONIG=1
 .endif
 
-.if ${CARGO_CRATES:Mopenssl-0.[0-9].*}
-# FreeBSD 12.0 updated base OpenSSL in r339270:
-# https://github.com/sfackler/rust-openssl/commit/276577553501
-. if !exists(${PATCHDIR}/patch-openssl-1.1.1) # skip if backported
-_openssl_VER=	${CARGO_CRATES:Mopenssl-0.[0-9].*:C/.*-//}
-.  if ${_openssl_VER:R:R} == 0 && (${_openssl_VER:R:E} < 10 || ${_openssl_VER:R:E} == 10 && ${_openssl_VER:E} < 4)
-DEV_WARNING+=	"CARGO_CRATES=openssl-0.10.3 or older do not support OpenSSL 1.1.1. Consider updating to the latest version."
-.  endif
-. endif
-.undef _openssl_VER
-.endif
-
-.if ${CARGO_CRATES:Mopenssl-src-[0-9]*}
+.if ${_CARGO_CRATES:Mopenssl-src}
 DEV_WARNING+=	"Please make sure this port uses the system OpenSSL and consider removing CARGO_CRATES=${CARGO_CRATES:Mopenssl-src-[0-9]*} (a vendored copy of OpenSSL) from the build, e.g., by patching Cargo.toml appropriately."
 .endif
 
-.if ${CARGO_CRATES:Mopenssl-sys-[0-9]*}
+.if ${_CARGO_CRATES:Mopenssl-sys}
 # Make sure that openssl-sys can find the correct version of OpenSSL
 CARGO_ENV+=	OPENSSL_LIB_DIR=${OPENSSLLIB} \
 		OPENSSL_INCLUDE_DIR=${OPENSSLINC}
 .endif
 
-.if ${CARGO_CRATES:Mpkg-config-[0-9]*}
+.if ${_CARGO_CRATES:Mpkg-config}
 .include "${USESDIR}/pkgconfig.mk"
 .endif
+
+.for _index _crate _name _version in ${_CARGO_CRATES}
+# Split up semantic version and try to sanitize it by removing
+# pre-release identifier (-) or build metadata (+)
+.  if ${_version:S/./ /:S/./ /:C/[-+].*//:_:[#]} == 3
+.    for _major _minor _patch in $_
+# FreeBSD 12.0 changed ABI: r318736 and r320043
+# https://github.com/rust-lang/libc/commit/78f93220d70e
+# https://github.com/rust-lang/libc/commit/969ad2b73cdc
+.      if ${_name} == libc && ${_major} == 0 && (${_minor} < 2 || (${_minor} == 2 && ${_patch} < 38))
+DEV_ERROR+=	"CARGO_CRATES=${_crate} may be unstable on FreeBSD 12.0. Consider updating to the latest version \(higher than 0.2.37\)."
+.      endif
+.      if ${_name} == libc && ${_major} == 0 && (${_minor} < 2 || (${_minor} == 2 && ${_patch} < 49))
+DEV_ERROR+=	"CARGO_CRATES=${_crate} may be unstable on aarch64 or not build on armv6, armv7, powerpc64. Consider updating to the latest version \(higher than 0.2.49\)."
+.      endif
+# FreeBSD 12.0 updated base OpenSSL in r339270:
+# https://github.com/sfackler/rust-openssl/commit/276577553501
+.      if ${_name} == openssl && !exists(${PATCHDIR}/patch-openssl-1.1.1) && ${_major} == 0 && (${_minor} < 10 || (${_minor} == 10 && ${_patch} < 4))
+DEV_WARNING+=	"CARGO_CRATES=${_crate} does not support OpenSSL 1.1.1. Consider updating to the latest version \(higher than 0.10.3\)."
+.      endif
+.    endfor
+.  endif
+.endfor
 
 _USES_extract+=	600:cargo-extract
 cargo-extract:
@@ -211,7 +223,7 @@ cargo-extract:
 .for _crate in ${CARGO_CRATES}
 	@${MV} ${WRKDIR}/${_crate} ${CARGO_VENDOR_DIR}/${_crate}
 	@${PRINTF} '{"package":"%s","files":{}}' \
-		$$(${SHA256} -q ${DISTDIR}/${CARGO_DIST_SUBDIR}/${_crate}.tar.gz) \
+		$$(${SHA256} -q ${DISTDIR}/${CARGO_DIST_SUBDIR}/${_crate}${CARGO_CRATE_EXT}) \
 		> ${CARGO_VENDOR_DIR}/${_crate}/.cargo-checksum.json
 	@if [ -r ${CARGO_VENDOR_DIR}/${_crate}/Cargo.toml.orig ]; then \
 		${MV} ${CARGO_VENDOR_DIR}/${_crate}/Cargo.toml.orig \
@@ -224,11 +236,11 @@ _CARGO_GIT_PATCH_CARGOTOML=
 .  for _group in ${GH_TUPLE:C@^[^:]*:[^:]*:[^:]*:(([^:/]*)?)((/.*)?)@\2@}
 .    if empty(CARGO_GIT_SUBDIR:M${_group}\:*)
 _CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
-	-e "s@git = ['\"](https|http|git)://github.com/${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}(\.git)?/?[\"']@path = \"${WRKSRC_${_group}}\"@"
+	-e "s@git *= *['\"](https|http|git)://github.com/${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}(\.git)?/?[\"']@path = \"${WRKSRC_${_group}}\"@"
 .    else
 .      for _group2 _crate _subdir in ${CARGO_GIT_SUBDIR:M${_group}\:*:S,:, ,g}
 _CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
-	-e "/^${_crate} =/ s@git = ['\"](https|http|git)://github.com/${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}(\.git)?/?[\"']@path = \"${WRKSRC_${_group}}/${_subdir}\"@"
+	-e "/^${_crate} =/ s@git *= *['\"](https|http|git)://github.com/${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}(\.git)?/?[\"']@path = \"${WRKSRC_${_group}}/${_subdir}\"@"
 .	endfor
 .    endif
 .  endfor
@@ -237,11 +249,11 @@ _CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
 .  for _group in ${GL_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\8@:S/^://}
 .    if empty(CARGO_GIT_SUBDIR:M${_group}\:*)
 _CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
-	-e "s@git = ['\"]${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}(\.git)?/?['\"]@path = \"${WRKSRC_${_group}}\"@"
+	-e "s@git *= *['\"]${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}(\.git)?/?['\"]@path = \"${WRKSRC_${_group}}\"@"
 .    else
 .      for _group2 _crate _subdir in ${CARGO_GIT_SUBDIR:M${_group}\:*:S,:, ,g}
 _CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
-	-e "/^${_crate} = / s@git = ['\"]${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}(\.git)?/?['\"]@path = \"${WRKSRC_${_group}}/${_subdir}\"@"
+	-e "/^${_crate} = / s@git *= *['\"]${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}(\.git)?/?['\"]@path = \"${WRKSRC_${_group}}/${_subdir}\"@"
 .      endfor
 .    endif
 .  endfor

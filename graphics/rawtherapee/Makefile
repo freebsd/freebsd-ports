@@ -30,8 +30,6 @@ LIB_DEPENDS=	\
 USES=		cmake desktop-file-utils compiler:gcc-c++11-lib gnome \
 		jpeg localbase:ldflags pkgconfig tar:xz
 
-DOS2UNIX_REGEX=	.*\.(cc|h)
-
 # Binutils required for LTO (base ar/nm/ld/ranlib don't work)
 USE_BINUTILS=	yes
 

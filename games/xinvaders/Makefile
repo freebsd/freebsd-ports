@@ -9,7 +9,11 @@ MASTER_SITES=	SUNSITE/games/arcade/invaders
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shoot-em-up them nasty little bugs
 
-NO_CDROM=	don't sell for profit
+# Converted from NO_CDROM
+LICENSE=	xinvaders
+LICENSE_NAME=	xinvaders
+LICENSE_TEXT=	don't sell for profit
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		gettext xorg
 USE_XORG=	x11 xmu xaw xt

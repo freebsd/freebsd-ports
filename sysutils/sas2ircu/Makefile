@@ -10,12 +10,10 @@ COMMENT=	Tool for basic management of mps(4) based LSI/Avago/Broadcom RAID contr
 
 LICENSE=	sas2ircu
 LICENSE_NAME=	BROADCOM
-LICENSE_TEXT=	${RESTRICTED}
-LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
-
-RESTRICTED=	Source recipient must acknowledge license.\
+LICENSE_TEXT=	Source recipient must acknowledge license.\
 		Reproduction or redistribution prohibited.\
 		See https://www.broadcom.com/cs/Satellite?pagename=AVG2/Utilities/EulaMsg
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
 USES=		zip
 NO_BUILD=	yes

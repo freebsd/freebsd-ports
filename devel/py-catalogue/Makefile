@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	catalogue
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +19,9 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} <  3800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0.20:devel/py-importlib-metadata@${PY_FLAVOR}
+.if ${PYTHON_REL} < 30800
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.4:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zipp>=0.5:devel/py-zipp@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>

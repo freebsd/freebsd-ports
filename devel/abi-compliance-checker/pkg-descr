@@ -19,4 +19,4 @@ compatibility problems:
 The checker then generates a report that assesses the risks of any potential
 problems detected.
 
-WWW: http://ispras.linux-foundation.org/index.php/ABI_compliance_checker
+WWW: https://lvc.github.io/abi-compliance-checker/

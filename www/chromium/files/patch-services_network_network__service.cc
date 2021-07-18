@@ -1,6 +1,6 @@
---- services/network/network_service.cc.orig	2021-03-12 23:57:28 UTC
+--- services/network/network_service.cc.orig	2021-05-12 22:05:58 UTC
 +++ services/network/network_service.cc
-@@ -73,7 +73,7 @@
+@@ -71,7 +71,7 @@
  #include "third_party/boringssl/src/include/openssl/cpu.h"
  #endif
  
@@ -9,7 +9,7 @@
      !BUILDFLAG(IS_CHROMECAST)
  #include "components/os_crypt/key_storage_config_linux.h"
  #endif
-@@ -680,7 +680,7 @@ void NetworkService::OnCertDBChanged() {
+@@ -614,7 +614,7 @@ void NetworkService::OnCertDBChanged() {
    net::CertDatabase::GetInstance()->NotifyObserversCertDBChanged();
  }
  

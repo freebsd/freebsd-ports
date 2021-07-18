@@ -1,0 +1,20 @@
+collidoscope reports on situations where paths overlap in a shaped piece of
+text.
+
+This software tries every combination of glyphs within a specified Unicode range
+and up to a specified length of string and outputs a report of all situations
+where the glyphs collide. It has a number of collision tests:
+- Paths in non-adjacent glyphs are never allowed to collide.
+- If the cursive test is turned on, then paths with a cursive attachment anchor
+  are allowed to overlap with paths in an adjacent glyph which also contain a
+  cursive attachment anchor, but are not allowed to overlap with a path without
+  a cursive attachment anchor.
+- If the area test is turned on, then paths in adjacent glyphs may collide so
+  long as the area of overlap does not exceed a given percentage of the smallest
+  path's area. i.e. if the area percentage is set to 25%, then two strokes may
+  connect, because the overlap is likely to be quite small compared to the size
+  of the paths involved. But if a stroke significantly overlaps a nukta, it will
+  be reported as a collision. (Of course, this will not detect strokes which
+  merely graze a nukta.)
+
+WWW: https://github.com/simoncozens/collidoscope

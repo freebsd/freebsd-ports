@@ -1,0 +1,5 @@
+wavetral is a small program to convert single cycle waveforms to spectra and
+vice versa. It supports different input and output formats to export
+your waveforms/spectra from one synthesizer to another.
+
+WWW: https://github.com/jeanette-c/wavetral

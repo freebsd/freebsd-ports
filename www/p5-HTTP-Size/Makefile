@@ -1,7 +1,7 @@
 # Created by: Aaron Dalton <aaron@FreeBSD.org>
 
 PORTNAME=	HTTP-Size
-PORTVERSION=	1.151
+PORTVERSION=	1.153
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,8 +18,9 @@ RUN_DEPENDS=	p5-HTML-SimpleLinkExtor>=0:www/p5-HTML-SimpleLinkExtor \
 		p5-URI>=0:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

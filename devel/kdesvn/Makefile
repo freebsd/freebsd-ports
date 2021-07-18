@@ -1,6 +1,6 @@
 PORTNAME=	kdesvn
 DISTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/
 
@@ -21,7 +21,8 @@ USES=		bdb cmake compiler:c++11-lang kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons dbusaddons ecm i18n iconthemes itemviews jobwidgets \
 		kio notifications parts service sonnet texteditor textwidgets \
-		wallet widgetsaddons xmlgui
+		wallet widgetsaddons xmlgui \
+		doctools_build
 USE_QT=		concurrent core dbus gui network sql widgets xml \
 		buildtools_build qmake_build
 

@@ -1,5 +1,5 @@
 TIMESTAMP = 1613211655
 SHA256 (gnome/swell-foop-3.34.1.tar.xz) = 61c6b6ff9047c00bdc0dbe11a880058a5462921c702123a2d6d1a652bbbe6280
 SIZE (gnome/swell-foop-3.34.1.tar.xz) = 732008
-SHA256 (gnome/a366bf649c032c56f52138d14e2b96b4a48525de.diff) = e7a62c59d238ad0c8f4d5dd6abb643e04e2f5bbcff9dbd57b86f0b69e04ee2ec
-SIZE (gnome/a366bf649c032c56f52138d14e2b96b4a48525de.diff) = 528
+SHA256 (gnome/a366bf649c032c56f52138d14e2b96b4a48525de.patch) = 744f046f0561bd27f339ee2115d8caa2d9cd36c8a6c3046456fe0bdaefacf419
+SIZE (gnome/a366bf649c032c56f52138d14e2b96b4a48525de.patch) = 757

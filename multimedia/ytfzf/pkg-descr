@@ -1,0 +1,4 @@
+Ytfzf is a POSIX script that helps you find Youtube videos (without API)
+and opens/downloads them using mpv/youtube-dl.
+
+WWW: https://github.com/pystardust/ytfzf

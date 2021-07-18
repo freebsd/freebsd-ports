@@ -7,9 +7,9 @@ bin/copyq
 %%PLUGINS%%lib/copyq/plugins/libitemsync.so
 %%PLUGINS%%lib/copyq/plugins/libitemtags.so
 %%PLUGINS%%lib/copyq/plugins/libitemtext.so
-%%PLUGINS%%%%WEBKIT%%lib/copyq/plugins/libitemweb.so
 man/man1/copyq.1.gz
 share/applications/com.github.hluk.copyq.desktop
+share/bash-completion/completions/copyq
 %%DATADIR%%/themes/dark.ini
 %%DATADIR%%/themes/forest.ini
 %%DATADIR%%/themes/items.css
@@ -28,6 +28,7 @@ share/applications/com.github.hluk.copyq.desktop
 %%DATADIR%%/translations/copyq_cs.qm
 %%DATADIR%%/translations/copyq_da.qm
 %%DATADIR%%/translations/copyq_de.qm
+%%DATADIR%%/translations/copyq_el.qm
 %%DATADIR%%/translations/copyq_es.qm
 %%DATADIR%%/translations/copyq_fa.qm
 %%DATADIR%%/translations/copyq_fr.qm

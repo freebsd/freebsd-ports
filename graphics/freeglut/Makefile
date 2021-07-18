@@ -1,8 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	freeglut
-PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTVERSION=	3.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 

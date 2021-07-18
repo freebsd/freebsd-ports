@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	mime
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	misc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

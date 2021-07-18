@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	nordlicht
 PORTVERSION=	0.4.5
 DISTVERSIONPREFIX=	v

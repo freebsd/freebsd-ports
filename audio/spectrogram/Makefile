@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	spectrogram
 PORTVERSION=	20190725
 CATEGORIES=	audio

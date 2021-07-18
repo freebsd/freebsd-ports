@@ -1,5 +1,5 @@
 PORTNAME=	qmk
-PORTVERSION=	0.0.40
+DISTVERSION=	0.1.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,16 +10,16 @@ COMMENT=	CLI program for working with QMK firmware
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=0:devel/py-appdirs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}argcomplete>=0:devel/py-argcomplete@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}colorama>=0:devel/py-colorama@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dotty-dict>=0:devel/py-dotty-dict@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dotty-dict>=0:devel/py-dotty-dict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8>=0:devel/py-flake8@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hid>=0:comms/py-hid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hjson>=0:textproc/py-hjson@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}milc>=1.0.8:devel/py-milc@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>=3:devel/py-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}milc>=1.4.0:devel/py-milc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose2>=0:devel/py-nose2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyrsistent>=0:devel/py-pyrsistent@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyusb>=0:devel/py-pyusb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yapf>=0:textproc/py-yapf@${PY_FLAVOR} \
 		arm-none-eabi-gcc>0:devel/arm-none-eabi-gcc \
 		avr-gcc>0:devel/avr-gcc \
@@ -32,6 +32,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=0:devel/py-appdirs@${PY_FLAVOR} \
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_GLOB=	*.py
+
+TEST_ENV=	PYTHONPATH="${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}"
+TEST_TARGET=	config
+DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/qmk >/dev/null
 
 NO_ARCH=	yes
 

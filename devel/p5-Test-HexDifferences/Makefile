@@ -18,8 +18,9 @@ RUN_DEPENDS=	p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \
 		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings \
 		p5-Text-Diff>=0:textproc/p5-Text-Diff
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

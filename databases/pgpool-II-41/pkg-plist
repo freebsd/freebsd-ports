@@ -19,10 +19,10 @@ bin/watchdog_setup
 @sample etc/follow_master.sh.sample
 @sample etc/pcp.conf.sample
 @sample etc/pgpool.conf.sample
-@sample etc/pgpool.conf.sample-logical
-@sample etc/pgpool.conf.sample-master-slave
-@sample etc/pgpool.conf.sample-replication
-@sample etc/pgpool.conf.sample-stream
+etc/pgpool.conf.sample-logical
+etc/pgpool.conf.sample-master-slave
+etc/pgpool.conf.sample-replication
+etc/pgpool.conf.sample-stream
 @sample etc/pgpool_remote_start.sample
 @sample etc/pool_hba.conf.sample
 etc/recovery_1st_stage.sample

@@ -1,0 +1,11 @@
+--- src/core/configure.json.orig	2021-04-29 15:52:01 UTC
++++ src/core/configure.json
+@@ -96,7 +96,7 @@
+         "qt3d-simd-avx2": {
+             "label": "Use AVX2 instructions",
+             "purpose": "Use AVX2 SIMD instructions to accelerate matrix operations",
+-            "autoDetect": "subarch.avx2",
++            "autoDetect": "features.avx2",
+             "enable": "input.qt3d-simd == 'avx2'",
+             "disable": "input.qt3d-simd == 'sse2' || input.qt3d-simd == 'no' || arch.i386",
+             "output": [ "privateFeature" ]

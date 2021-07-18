@@ -161,6 +161,7 @@ include/claws-mail/mutt.h
 include/claws-mail/news.h
 include/claws-mail/news_gtk.h
 include/claws-mail/noticeview.h
+include/claws-mail/oauth2.h
 include/claws-mail/partial_download.h
 include/claws-mail/password.h
 include/claws-mail/password_gtk.h

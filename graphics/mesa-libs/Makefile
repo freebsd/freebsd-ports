@@ -2,11 +2,12 @@
 
 PORTNAME=	mesa-libs
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
 
-CONFLICTS_INSTALL=	libglvnd # include/GL/gl.h
+BUILD_DEPENDS=	libglvnd>0:graphics/libglvnd
 
 OPTIONS_GROUP=			PLATFORM
 OPTIONS_GROUP_PLATFORM=		PLATFORM_X11 PLATFORM_WAYLAND
@@ -43,6 +44,7 @@ MESON_ARGS+=	-Dgallium-drivers="" \
 		-Degl=enabled \
 		-Dgbm=enabled \
 		-Dvulkan-drivers="" \
+		-Dglvnd=true \
 		-Dprefer-iris=true
 # Building EGL and GBM requires a dri driver so add swrast
 MESON_ARGS+=	-Ddri-drivers="swrast"
@@ -71,5 +73,10 @@ USE_GCC=	yes
 .endif
 
 .include "${MASTERDIR}/Makefile.targets"
+
+post-install:
+# Fallback if GLX_EXT_libglvnd is missing or vendor library doesn't exist
+	@${ECHO_CMD} "libGLX_indirect.so.0 libGLX_mesa.so.0" \
+		>${STAGEDIR}${PREFIX}/etc/libmap.d/mesa.conf
 
 .include <bsd.port.post.mk>

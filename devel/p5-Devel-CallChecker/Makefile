@@ -17,8 +17,8 @@ RUN_DEPENDS=	p5-DynaLoader-Functions>=0.001:devel/p5-DynaLoader-Functions
 TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage
 
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Devel/CallChecker/CallChecker.so

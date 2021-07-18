@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	mixlib-archive
-PORTVERSION=	1.0.7
+PORTVERSION=	1.1.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

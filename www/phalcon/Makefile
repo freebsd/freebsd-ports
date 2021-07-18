@@ -11,7 +11,7 @@ COMMENT=	Phalcon PHP Framework written in C-language
 
 LICENSE=	BSD3CLAUSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
 USES=		localbase php:ext
 USE_PHP=	hash:build json:build pdo:build
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--enable-phalcon
 
 .include <bsd.port.pre.mk>
 
-PBITS=		${ARCH:S/aarch64/64/:S/amd64/64/:C/armv.*/32/:S/i386/32/:S/x86_64/64/:C/powerpc64.*/64/}
+PBITS=		${ARCH:S/aarch64/64/:S/amd64/64/:C/armv.*/32/:S/i386/32/:S/x86_64/64/:C/powerpc64.*/64/:S/powerpc/32/}
 WRKSRC_SUBDIR=	build/php${PHP_VER:C/.$//}/${PBITS}bits
 
 post-patch:

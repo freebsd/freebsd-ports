@@ -10,7 +10,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}${EXTRACT_SUFX}:texmf \
 DIST_SUBDIR=	TeX
 EXTRACT_ONLY=	latex-base-20150101.2${EXTRACT_SUFX}
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	freebsd-tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, texmf Tree
 
 CONFLICTS_INSTALL=	texlive-base-201[234]* \

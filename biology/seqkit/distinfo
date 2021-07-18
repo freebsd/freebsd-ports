@@ -1,0 +1,5 @@
+TIMESTAMP = 1621489008
+SHA256 (go/biology_seqkit/seqkit-v0.16.1/v0.16.1.mod) = 2b29e40d7d4b891b1ece058363b9b4f8b3ba6385aa2855fb8d5f3df25bc83057
+SIZE (go/biology_seqkit/seqkit-v0.16.1/v0.16.1.mod) = 1211
+SHA256 (go/biology_seqkit/seqkit-v0.16.1/v0.16.1.zip) = 1127a5b026fbe962b6c91647a702dfa653e76005fa71c6f15d46902a137066da
+SIZE (go/biology_seqkit/seqkit-v0.16.1/v0.16.1.zip) = 29978026

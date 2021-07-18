@@ -1,10 +1,9 @@
 # Created by: Dave McKay <dave@mu.org>
 
 PORTNAME=	seahorse
-PORTVERSION=	3.36.2
-PORTREVISION=	1
+PORTVERSION=	40.0
 CATEGORIES=	security gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	gnupg>=2.1.4:security/gnupg \
 		valac:lang/vala
 LIB_DEPENDS=	libgcr-base-3.so:security/gcr \
 		libgpgme.so:security/gpgme \
-		libhandy-0.0.so:x11-toolkits/libhandy0 \
+		libhandy-1.so:x11-toolkits/libhandy \
 		libpwquality.so:security/libpwquality \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup

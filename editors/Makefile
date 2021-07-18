@@ -52,6 +52,7 @@
     SUBDIR += gnome-latex
     SUBDIR += gobby
     SUBDIR += gomate
+    SUBDIR += gummi
     SUBDIR += heme
     SUBDIR += hexcurse
     SUBDIR += hexedit
@@ -184,8 +185,10 @@
     SUBDIR += libreoffice-xh
     SUBDIR += libreoffice-zu
     SUBDIR += libreoffice6
+    SUBDIR += linux-bcompare
     SUBDIR += linux-sublime
     SUBDIR += linux-sublime3
+    SUBDIR += linux-wps-office
     SUBDIR += madedit
     SUBDIR += marker
     SUBDIR += mg
@@ -220,7 +223,9 @@
     SUBDIR += py-babi
     SUBDIR += py-editorconfig
     SUBDIR += py-pynvim
+    SUBDIR += py-vim-bridge
     SUBDIR += quilter
+    SUBDIR += rehex
     SUBDIR += rubygem-neovim
     SUBDIR += scite
     SUBDIR += se
@@ -234,6 +239,7 @@
     SUBDIR += sly-quicklisp
     SUBDIR += ssed
     SUBDIR += sted
+    SUBDIR += sublime-text4
     SUBDIR += tamago
     SUBDIR += tea
     SUBDIR += teco
@@ -249,6 +255,7 @@
     SUBDIR += tweak
     SUBDIR += uemacs
     SUBDIR += uzap
+    SUBDIR += ved
     SUBDIR += vigor
     SUBDIR += vile
     SUBDIR += vim

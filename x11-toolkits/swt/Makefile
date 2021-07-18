@@ -2,7 +2,7 @@
 
 PORTNAME=	swt
 DISTVERSION=	4.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	http://archive.eclipse.org/eclipse/downloads/drops4/R-${DISTVERSION}-201903070500/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-gtk-linux-x86_64

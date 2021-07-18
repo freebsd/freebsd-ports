@@ -1,0 +1,5 @@
+include/suitesparse/ccolamd.h
+lib/libccolamd.so
+lib/libccolamd.so.2
+lib/libccolamd.so.2.9.6
+%%PORTDOCS%%%%DOCSDIR%%/CCOLAMD_README.txt

@@ -1,6 +1,6 @@
 PORTNAME=		kdb
 DISTVERSION=		3.2.0
-PORTREVISION=		8
+PORTREVISION=		9
 CATEGORIES=		databases kde
 MASTER_SITES=		KDE/stable/${PORTNAME}/src
 DIST_SUBDIR=		KDE/${PORTNAME}
@@ -10,7 +10,7 @@ COMMENT=		Database connectivity and creation framework
 
 LIB_DEPENDS=		libicuuc.so:devel/icu
 
-USES=			cmake compiler:c++11-lang gettext kde:5 \
+USES=			cmake compiler:c++11-lang kde:5 \
 			python qt:5 tar:xz
 USE_KDE=		coreaddons ecm i18n
 USE_QT=			core gui network widgets xml \

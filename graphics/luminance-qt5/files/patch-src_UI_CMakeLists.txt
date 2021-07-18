@@ -1,0 +1,19 @@
+--- src/UI/CMakeLists.txt.orig	2021-01-11 09:41:28 UTC
++++ src/UI/CMakeLists.txt
+@@ -53,11 +53,14 @@ ADD_LIBRARY(ui STATIC ${FILES_H} ${FILES_CPP} ${FILES_
+ IF(MINGW)
+     TARGET_LINK_LIBRARIES(ui Qt5::Core Qt5::Concurrent Qt5::Gui Qt5::Widgets Qt5::WebKitWidgets Qt5::Sql)
+ ELSE()
++    TARGET_LINK_LIBRARIES(ui Qt5::Core Qt5::Concurrent Qt5::Gui Qt5::Widgets Qt5::Sql)
++  IF(WITH_HELPBROWSER)
+     IF(Qt5WebEngineCore_FOUND)
+-        TARGET_LINK_LIBRARIES(ui Qt5::Core Qt5::Concurrent Qt5::Gui Qt5::Widgets Qt5::WebEngineWidgets Qt5::Sql)
++        TARGET_LINK_LIBRARIES(ui Qt5::WebEngineWidgets)
+     ELSE()
+-        TARGET_LINK_LIBRARIES(ui Qt5::Core Qt5::Concurrent Qt5::Gui Qt5::Widgets Qt5::WebKitWidgets Qt5::Sql)
++        TARGET_LINK_LIBRARIES(ui Qt5::WebKitWidgets)
+     ENDIF()
++  ENDIF()
+ ENDIF()
+ SET(FILES_TO_TRANSLATE ${FILES_TO_TRANSLATE} ${FILES_CPP} ${FILES_H} ${FILES_UI} PARENT_SCOPE)
+ SET(LUMINANCE_MODULES_GUI ${LUMINANCE_MODULES_GUI} ui PARENT_SCOPE)

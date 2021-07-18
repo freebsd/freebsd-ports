@@ -5,7 +5,7 @@ PORTVERSION=	2.00
 PORTREVISION=	7
 CATEGORIES=	security
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced CPU-based password recovery utility
 
 LICENSE=	MIT
@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hashcat
 
 USES=		gmake
-USE_GCC=	any
+USE_GCC=	yes
 
 ALL_TARGET=	posix64 posixXOP
 

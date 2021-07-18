@@ -35,6 +35,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/2.9.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.0.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.1.rst
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.2.rst
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.3.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/index.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bytesio.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/collective_io.py
@@ -51,3 +53,4 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/swmr_multiprocess.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/threading_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vds_simple.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/write-direct-compressed.py

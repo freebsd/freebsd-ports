@@ -2,7 +2,7 @@
 
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
@@ -35,7 +35,7 @@ ALL_VULKAN_DRIVERS=	INTEL AMD
 
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64
 GALLIUM_DRIVERS+=	SWRAST	# llvmpipe
-.elif ${ARCH:Marm*} || ${ARCH:Mmips*} || ${ARCH:Mpowerpc*}
+.elif ${ARCH:Marm*} || ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == riscv64
 DRI_DRIVERS+=		SWRAST # Mesa Classic swrast
 .endif
 

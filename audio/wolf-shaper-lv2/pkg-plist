@@ -1,0 +1,8 @@
+%%JACK%%bin/wolf-shaper
+%%DSSI%%lib/dssi/wolf-shaper-dssi.so
+lib/lv2/wolf-shaper.lv2/manifest.ttl
+lib/lv2/wolf-shaper.lv2/wolf-shaper_dsp.so
+lib/lv2/wolf-shaper.lv2/wolf-shaper_dsp.ttl
+lib/lv2/wolf-shaper.lv2/wolf-shaper_ui.so
+lib/lv2/wolf-shaper.lv2/wolf-shaper_ui.ttl
+%%VST%%lib/vst/wolf-shaper-vst.so

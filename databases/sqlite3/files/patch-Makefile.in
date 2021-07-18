@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2021-04-11 09:08:25 UTC
++++ Makefile.in
+@@ -1274,7 +1274,7 @@ valgrindfuzz:	fuzzcheck$(TEXT) $(FUZZDATA) sessionfuzz
+ # The veryquick.test TCL tests.
+ #
+ tcltest:	./testfixture$(TEXE)
+-	./testfixture$(TEXE) $(TOP)/test/veryquick.test $(TESTOPTS)
++	mkdir $(TOP)/testdir && touch $(TOP)/test-out.txt && chown nobody $(TOP)/testdir $(TOP)/test-out.txt && su -m nobody -c "./testfixture$(TEXE) $(TOP)/test/veryquick.test $(TESTOPTS)"
+ 
+ # Minimal testing that runs in less than 3 minutes
+ #

@@ -2,7 +2,7 @@
 
 PORTNAME=	squeak
 PORTVERSION=	4.10.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang
 MASTER_SITES=	http://www.squeakvm.org/unix/release/:vmsrc \
 		http://ftp.squeak.org/${IMAGE_VERSION}/:src \
@@ -45,7 +45,6 @@ IMAGE_FULL_VERSION=	${IMAGE_VERSION}-${IMAGE_SVN_VERSION}
 SQUEAK_SRC=	SqueakV46.sources
 SQUEAK_LIB_DIR=	${PORTVERSION}-${SVN_VERSION}
 
-CMAKE_SOURCE_PATH=	unix
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	unix/cmake/configure
 CONFIGURE_ARGS=		--prefix=${PREFIX}

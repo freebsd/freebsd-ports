@@ -31,4 +31,10 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-CMakeLists.txt
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != powerpc
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src_Version.h.cin
+.endif
+
 .include <bsd.port.mk>

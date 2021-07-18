@@ -1,7 +1,7 @@
 # Created by: Patrice Clement <monsieurp@gentoo.org>
 
 PORTNAME=	colorful
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

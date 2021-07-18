@@ -16,9 +16,10 @@ LICENSE_FILE=	${WRKSRC}/README
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-Atom-SimpleFeed>=0.80:textproc/p5-XML-Atom-SimpleFeed
 
-NO_ARCH=	yes
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/subatom \
 		${SITE_MAN1_REL}/subatom.1.gz

@@ -36,6 +36,7 @@
 %%SITE_PERL%%/URI/mms.pm
 %%SITE_PERL%%/URI/news.pm
 %%SITE_PERL%%/URI/nntp.pm
+%%SITE_PERL%%/URI/nntps.pm
 %%SITE_PERL%%/URI/pop.pm
 %%SITE_PERL%%/URI/rlogin.pm
 %%SITE_PERL%%/URI/rsync.pm

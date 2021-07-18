@@ -40,6 +40,8 @@ lib/libKEduVocDocument.so
 lib/libKEduVocDocument.so.5
 lib/libKEduVocDocument.so.5.0.0
 share/locale/ar/LC_MESSAGES/libkeduvocdocument.mo
+share/locale/az/LC_MESSAGES/libkeduvocdocument.mo
+share/locale/be/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/bg/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/bs/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/ca/LC_MESSAGES/libkeduvocdocument.mo
@@ -67,6 +69,7 @@ share/locale/it/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/ja/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/kk/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/km/LC_MESSAGES/libkeduvocdocument.mo
+share/locale/ko/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/lt/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/lv/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/ml/LC_MESSAGES/libkeduvocdocument.mo
@@ -81,11 +84,15 @@ share/locale/pt/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/pt_BR/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/ro/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/ru/LC_MESSAGES/libkeduvocdocument.mo
+share/locale/se/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/sk/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/sl/LC_MESSAGES/libkeduvocdocument.mo
+share/locale/sq/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/sv/LC_MESSAGES/libkeduvocdocument.mo
+share/locale/tg/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/tr/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/ug/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/uk/LC_MESSAGES/libkeduvocdocument.mo
+share/locale/vi/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/zh_CN/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/zh_TW/LC_MESSAGES/libkeduvocdocument.mo

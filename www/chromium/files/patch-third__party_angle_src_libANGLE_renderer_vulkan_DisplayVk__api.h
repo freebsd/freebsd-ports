@@ -1,4 +1,4 @@
---- third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h.orig	2021-03-13 00:03:31 UTC
+--- third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h.orig	2021-04-14 18:42:58 UTC
 +++ third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h
 @@ -19,7 +19,7 @@ bool IsVulkanWin32DisplayAvailable();
  DisplayImpl *CreateVulkanWin32Display(const egl::DisplayState &state);

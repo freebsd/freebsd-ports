@@ -1,0 +1,11 @@
+--- src/nomos/agent/STRINGS.in.orig	2021-05-07 09:49:07 UTC
++++ src/nomos/agent/STRINGS.in
+@@ -13302,7 +13302,7 @@ k
+ #
+ %ENTRY% _UTIL_LATEX
+ %KEY% =NULL=
+-%STR% "\\htmladdnormallink"
++%STR% "\\\\htmladdnormallink"
+ #
+ %ENTRY% _UTIL_HYPHEN
+ %KEY% =NULL=

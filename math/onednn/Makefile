@@ -1,6 +1,6 @@
 PORTNAME=	onednn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2
+DISTVERSION=	2.3
 CATEGORIES=	math # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,17 +9,18 @@ COMMENT=	Intel(R) Math Kernel Library for Deep Neural Networks
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
 BROKEN_aarch64=	error: sys/prctl.h file not found
-BROKEN_i386=	error: shift count >= width of type (and other errors), see https://github.com/intel/mkl-dnn/issues/315
 
 TEST_DEPENDS=	bash:shells/bash \
 		libsysinfo>0:devel/libsysinfo
 
 USES=		cmake compiler:c++11-lang localbase:ldflags
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	oneapi-src
 GH_PROJECT=	oneDNN
-USE_LDCONFIG=	yes
 
 CMAKE_OFF=	DNNL_BUILD_TESTS DNNL_BUILD_EXAMPLES
 

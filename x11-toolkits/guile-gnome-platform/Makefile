@@ -1,5 +1,6 @@
 PORTNAME=	guile-gnome-platform
 DISTVERSION=	2.16.5
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNU/guile-gnome/${PORTNAME}
 
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libguile-2.2.so:lang/guile2				\
 		libgwrap-guile-runtime.so:devel/g-wrap			\
 		libffi.so:devel/libffi
 
-# A note on flavors: LIBGNOMEUI, LIBGNOME, GCONF pull in very long
+# A note on flavors: GCONF pull in very long
 # dependency lists including things like spidermonkey and samba, which
 # is rather overkill if you just want to do GUI tools. So make "lite"
 # the default.
@@ -41,11 +42,11 @@ DATADIR=	${PREFIX}/share/guile-gnome-2
 
 INFO=		guile-gnome-glib guile-gnome-gobject
 
-OPTIONS_DEFINE=	ATK CAIRO CANVAS GCONF GLADE GTK2 LIBGNOME LIBGNOMEUI PANGO
+OPTIONS_DEFINE=	ATK CAIRO CANVAS GCONF GLADE GTK2 PANGO
 OPTIONS_DEFAULT=ATK CAIRO CANVAS GLADE GTK2 PANGO
 
 .if ${FLAVOR} == full
-OPTIONS_SLAVE=	ATK CAIRO CANVAS GCONF GLADE GTK2 LIBGNOME LIBGNOMEUI PANGO
+OPTIONS_SLAVE=	ATK CAIRO CANVAS GCONF GLADE GTK2 PANGO
 .endif
 
 OPTIONS_SUB=	yes
@@ -53,8 +54,6 @@ OPTIONS_SUB=	yes
 # other options have descriptions provided by ports/Mk/*
 ATK_DESC=	GNOME accessibility toolkit (ATK)
 CANVAS_DESC=	GNOMECanvas Graphics library
-LIBGNOMEUI_DESC=libgnomeui support
-LIBGNOME_DESC=	libgnome support
 
 ATK_USE=		gnome=atk
 ATK_CONFIGURE_WITH=	atk
@@ -88,22 +87,6 @@ GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
 GTK2_USE=		gnome=gtk20,gdkpixbuf2
 GTK2_CONFIGURE_WITH=	gtk pixbuf
 GTK2_INFO=		guile-gnome-gtk guile-gnome-gdk
-
-LIBGNOMEUI_IMPLIES=	LIBGNOME GTK2 CAIRO
-# libgnomeui's pkgconf brings in libSM and libICE from xorg, but for
-# some reason Uses/gnome doesn't account for this, so we arrange for
-# USES=xorg and USE_XORG=sm,ice
-LIBGNOMEUI_USES=	xorg
-LIBGNOMEUI_USE=		gnome=libgnomeui xorg=sm,ice
-LIBGNOMEUI_CONFIGURE_WITH=libgnomeui
-LIBGNOMEUI_INFO=	guile-gnome-libgnomeui
-
-# This dependency is brought in from libgnome's pkgconf, but
-# not accounted for by Uses/gnome
-LIBGNOME_LIB_DEPENDS=	libpopt.so:devel/popt
-LIBGNOME_USE=		gnome=libgnome
-LIBGNOME_CONFIGURE_WITH=libgnome
-LIBGNOME_INFO=		guile-gnome-libgnome
 
 PANGO_USE=		gnome=pango
 PANGO_CONFIGURE_WITH=	pango

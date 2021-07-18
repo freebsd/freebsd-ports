@@ -1,0 +1,18 @@
+@owner orthanc
+@group orthanc
+@mode 700
+@dir %%DATADIR%%/plugins
+@dir /var/db/orthanc/db/db-v5
+@dir /var/db/orthanc/db
+@dir /var/db/orthanc
+@mode 600
+@sample %%ETCDIR%%/orthanc.json.sample
+@mode
+bin/OrthancRecoverCompressedFile
+include/orthanc/OrthancCDatabasePlugin.h
+include/orthanc/OrthancCPlugin.h
+sbin/Orthanc
+%%DATADIR%%/plugins/libModalityWorklists.so
+%%DATADIR%%/plugins/libModalityWorklists.so.%%PORTVERSION%%
+%%DATADIR%%/plugins/libServeFolders.so
+%%DATADIR%%/plugins/libServeFolders.so.%%PORTVERSION%%

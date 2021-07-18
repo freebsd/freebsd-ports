@@ -16,6 +16,7 @@ RUN_DEPENDS=	gnuplot:math/gnuplot
 
 BROKEN_FreeBSD_12=	tcp_debug.h: field has incomplete type 'struct tcpcb'
 BROKEN_FreeBSD_13=	tcp_debug.h: field has incomplete type 'struct tcpcb'
+BROKEN_FreeBSD_14=	tcp_debug.h: field has incomplete type 'struct tcpcb'
 
 BUILD_WRKSRC=	${WRKSRC}/obj/${OPSYS}
 INSTALL_WRKSRC=	${WRKSRC}/obj/${OPSYS}

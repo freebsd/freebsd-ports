@@ -68,6 +68,13 @@ struct StatPersisted {
 int serialize_StatPersisted(struct oarchive *out, const char *tag, struct StatPersisted *v);
 int deserialize_StatPersisted(struct iarchive *in, const char *tag, struct StatPersisted*v);
 void deallocate_StatPersisted(struct StatPersisted*);
+struct ClientInfo {
+    char * authScheme;
+    char * user;
+};
+int serialize_ClientInfo(struct oarchive *out, const char *tag, struct ClientInfo *v);
+int deserialize_ClientInfo(struct iarchive *in, const char *tag, struct ClientInfo*v);
+void deallocate_ClientInfo(struct ClientInfo*);
 struct ConnectRequest {
     int32_t protocolVersion;
     int64_t lastZxidSeen;
@@ -414,6 +421,21 @@ struct GetEphemeralsResponse {
 int serialize_GetEphemeralsResponse(struct oarchive *out, const char *tag, struct GetEphemeralsResponse *v);
 int deserialize_GetEphemeralsResponse(struct iarchive *in, const char *tag, struct GetEphemeralsResponse*v);
 void deallocate_GetEphemeralsResponse(struct GetEphemeralsResponse*);
+struct ClientInfo_vector {
+    int32_t count;
+    struct ClientInfo *data;
+
+};
+int serialize_ClientInfo_vector(struct oarchive *out, const char *tag, struct ClientInfo_vector *v);
+int deserialize_ClientInfo_vector(struct iarchive *in, const char *tag, struct ClientInfo_vector *v);
+int allocate_ClientInfo_vector(struct ClientInfo_vector *v, int32_t len);
+int deallocate_ClientInfo_vector(struct ClientInfo_vector *v);
+struct WhoAmIResponse {
+    struct ClientInfo_vector clientInfo;
+};
+int serialize_WhoAmIResponse(struct oarchive *out, const char *tag, struct WhoAmIResponse *v);
+int deserialize_WhoAmIResponse(struct iarchive *in, const char *tag, struct WhoAmIResponse*v);
+void deallocate_WhoAmIResponse(struct WhoAmIResponse*);
 struct LearnerInfo {
     int64_t serverid;
     int32_t protocolVersion;

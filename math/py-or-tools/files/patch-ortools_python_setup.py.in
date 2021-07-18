@@ -1,14 +1,14 @@
 See https://github.com/google/or-tools/issues/2305
 
---- ortools/python/setup.py.in.orig	2020-12-30 17:40:00 UTC
+--- ortools/python/setup.py.in.orig	2021-03-02 14:21:44 UTC
 +++ ortools/python/setup.py.in
 @@ -42,8 +42,8 @@ setup(
      version='@PROJECT_VERSION@',
      packages=find_packages(),
      install_requires=[
--        'protobuf >= 3.14.0',
+-        'protobuf >= 3.15.3',
 -        'absl-py >= 0.11',
-+        #'protobuf >= 3.14.0',
++        #'protobuf >= 3.15.3',
 +        #'absl-py >= 0.11',
      ],
      package_data={

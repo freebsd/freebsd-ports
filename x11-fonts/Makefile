@@ -204,6 +204,7 @@
     SUBDIR += proggy_fonts-ttf
     SUBDIR += psftools
     SUBDIR += py-QtAwesome
+    SUBDIR += py-babelfont
     SUBDIR += py-bdflib
     SUBDIR += py-booleanOperations
     SUBDIR += py-compreffor
@@ -240,7 +241,7 @@
     SUBDIR += tv-fonts
     SUBDIR += twemoji-color-font-ttf
     SUBDIR += ubuntu-font
-    SUBDIR += urw-core35-fonts
+    SUBDIR += urw-base35-fonts
     SUBDIR += urwfonts
     SUBDIR += urwfonts-ttf
     SUBDIR += uw-ttyp0

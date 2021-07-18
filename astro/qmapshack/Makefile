@@ -1,9 +1,9 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 
 PORTNAME=	qmapshack
-PORTVERSION=	1.15.2
-PORTREVISION=	1
+PORTVERSION=	1.16.0
 DISTVERSIONPREFIX=	V_
+PORTREVISION=	1
 CATEGORIES=	astro
 
 MAINTAINER=	bofh@FreeBSD.org

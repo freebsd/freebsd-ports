@@ -37,6 +37,7 @@ LLVM_COMMANDS=	\
 		llvm-objcopy \
 		llvm-objdump \
 		llvm-opt-report \
+		llvm-otool \
 		llvm-pdbutil \
 		llvm-profdata \
 		llvm-profgen \
@@ -54,6 +55,7 @@ LLVM_COMMANDS=	\
 		llvm-symbolizer \
 		llvm-tblgen \
 		llvm-undname \
+		llvm-windres \
 		llvm-xray \
 		opt \
 		sancov \
@@ -95,6 +97,7 @@ FLANG_COMMANDS=	\
 		f18-parse-demo \
 		fir-opt \
 		flang \
+		flang-new \
 		tco
 
 LIT_COMMANDS=	\
@@ -121,6 +124,7 @@ LLDB_COMMANDS=	\
 MLIR_COMMANDS=	\
 		mlir-cpu-runner \
 		mlir-linalg-ods-gen \
+		mlir-lsp-server \
 		mlir-opt \
 		mlir-reduce \
 		mlir-tblgen \

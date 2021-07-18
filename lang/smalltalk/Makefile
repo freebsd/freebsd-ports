@@ -2,7 +2,7 @@
 
 PORTNAME=	smalltalk
 PORTVERSION=	3.2.5
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
@@ -11,6 +11,7 @@ COMMENT=	GNU Smalltalk
 
 BROKEN_aarch64=		Fails to link: undefined reference to sbrk
 BROKEN_powerpc64=	Fails to build: gst-package: did not understand #~
+BROKEN_riscv64=		Fails to link: undefined reference to sbrk
 BROKEN_sparc64=		Fails to install
 
 BUILD_DEPENDS=	zip:archivers/zip \

@@ -1,0 +1,6 @@
+cpp-peglib is a single file C++ header-only PEG (Parsing Expression Grammars)
+library.
+
+This library supports the linear-time parsing known as the Packrat parsing.
+
+WWW: https://github.com/yhirose/cpp-peglib

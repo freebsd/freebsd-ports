@@ -8,7 +8,7 @@ DISTNAME=	texlive-20150523-texmf
 DIST_SUBDIR=	TeX
 EXTRACT_ONLY=
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	freebsd-tex@FreeBSD.org
 COMMENT=	Non-validating XML parser, written in TeX
 
 USES=		tar:xz
@@ -20,6 +20,7 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 EXTRACT_FILES= \
 	texmf-dist/tex/xmltex \
 	texmf-dist/doc/otherformats/xmltex
+NO_ARCH=	yes
 NO_BUILD=	yes
 TEX_FORMATS=	xmltex
 

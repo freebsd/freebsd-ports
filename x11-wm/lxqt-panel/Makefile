@@ -1,8 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	lxqt-panel
-PORTVERSION=	0.16.0
-PORTREVISION=	1
+PORTVERSION=	0.17.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	LXQT
 

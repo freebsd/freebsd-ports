@@ -1,6 +1,6 @@
 PORTNAME=	lego
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.1
+DISTVERSION=	4.4.0
 CATEGORIES=	security
 
 MAINTAINER=	matt@matthoran.com
@@ -55,7 +55,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v32.4.0:azure_azure_sdk_for_go/vendor/github.co
 		golang:protobuf:v1.3.4:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:f84b799fce68:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
-		golang:time:7e3f01d25324:golang_time/vendor/golang.org/x/time \
+		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
 		google:go-genproto:506484158171:google_go_genproto/vendor/google.golang.org/genproto \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
@@ -66,8 +66,9 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v32.4.0:azure_azure_sdk_for_go/vendor/github.co
 		gophercloud:utils:f6de111f2eae:gophercloud_utils/vendor/github.com/gophercloud/utils \
 		grpc:grpc-go:v1.27.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:go-cleanhttp:v0.5.1:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
-		hashicorp:go-retryablehttp:v0.6.8:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
+		hashicorp:go-retryablehttp:v0.6.6:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
 		iij:doapi:0bbf12d6d7df:iij_doapi/vendor/github.com/iij/doapi \
+		infobloxopen:infoblox-go-client:v1.1.1:infobloxopen_infoblox_go_client/vendor/github.com/infobloxopen/infoblox-go-client \
 		jarcoal:httpmock:v1.0.6:jarcoal_httpmock/vendor/github.com/jarcoal/httpmock \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		json-iterator:go:v1.1.7:json_iterator_go/vendor/github.com/json-iterator/go \
@@ -92,6 +93,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v32.4.0:azure_azure_sdk_for_go/vendor/github.co
 		nrdcg:dnspod-go:v0.4.0:nrdcg_dnspod_go/vendor/github.com/nrdcg/dnspod-go \
 		nrdcg:goinwx:v0.8.1:nrdcg_goinwx/vendor/github.com/nrdcg/goinwx \
 		nrdcg:namesilo:v0.2.1:nrdcg_namesilo/vendor/github.com/nrdcg/namesilo \
+		nrdcg:porkbun:v0.1.1:nrdcg_porkbun/vendor/github.com/nrdcg/porkbun \
 		ns1:ns1-go:v2.4.4:ns1_ns1_go/vendor/gopkg.in/ns1/ns1-go.v2 \
 		oracle:oci-go-sdk:v24.3.0:oracle_oci_go_sdk/vendor/github.com/oracle/oci-go-sdk \
 		ovh:go-ovh:v1.1.0:ovh_go_ovh/vendor/github.com/ovh/go-ovh \
@@ -102,16 +104,19 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v32.4.0:azure_azure_sdk_for_go/vendor/github.co
 		rainycape:memcache:1031fa0ce2f2:rainycape_memcache/vendor/github.com/rainycape/memcache \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		sacloud:libsacloud:v1.36.2:sacloud_libsacloud/vendor/github.com/sacloud/libsacloud \
+		scaleway:scaleway-sdk-go:bd30bebeac4f:scaleway_scaleway_sdk_go/vendor/github.com/scaleway/scaleway-sdk-go \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		smartystreets:go-aws-auth:0c1422d1fdb9:smartystreets_go_aws_auth/vendor/github.com/smartystreets/go-aws-auth \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
 		square:go-jose:v2.5.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		stretchr:objx:v0.3.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		transip:gotransip:v6.6.0:transip_gotransip_v6/vendor/github.com/transip/gotransip/v6 \
+		transip:gotransip:v6.2.0:transip_gotransip_v6/vendor/github.com/transip/gotransip/v6 \
 		uber-go:ratelimit:c15da0234277:uber_go_ratelimit/vendor/go.uber.org/ratelimit \
-		urfave:cli:v1.22.5:urfave_cli/vendor/github.com/urfave/cli \
-		vultr:govultr:v2.4.0:vultr_govultr_v2/vendor/github.com/vultr/govultr/v2
+		urfave:cli:v1.22.4:urfave_cli/vendor/github.com/urfave/cli \
+		vinyldns:go-vinyldns:148a5f6b8f14:vinyldns_go_vinyldns/vendor/github.com/vinyldns/go-vinyldns \
+		vultr:govultr:v2.0.0:vultr_govultr_v2/vendor/github.com/vultr/govultr/v2
 
 GO_TARGET=	./cmd/lego
 GO_BUILDFLAGS=	-ldflags '-X "main.version=${DISTVERSION}"'

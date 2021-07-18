@@ -1,7 +1,7 @@
 # Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 
 PORTNAME=	icewm
-PORTVERSION=	2.3.1
+PORTVERSION=	2.6.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
 
@@ -42,6 +42,7 @@ NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 SVG_USE=		GNOME=librsvg2
+SVG_CONFIGURE_OFF=	--disable-rsvg
 
 XFT_LIB_DEPENDS=	libXft.so:x11-fonts/libXft
 XFT_CONFIGURE_OFF=	--enable-corefonts --disable-xfreetype

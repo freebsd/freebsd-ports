@@ -1,7 +1,7 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
 
 PORTNAME=	qtfm
-PORTVERSION=	6.2.0
+PORTVERSION=	6.2.1
 PORTREVISION=	1
 CATEGORIES=	x11-fm
 

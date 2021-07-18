@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+
+If you need bedGraphToBigWig, run:
+
+	cd ${PORTSDIR}/biology/ucsc-userapps && make install clean
+
+EOM
+}
+]

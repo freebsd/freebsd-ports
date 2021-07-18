@@ -22,6 +22,8 @@ GH_TUPLE=	potassco:libpotassco:6e31cff:other/libpotassco
 
 PLIST_FILES=	bin/${PORTNAME}
 
+CONFLICTS_INSTALL=	clingo # bin/clasp is contained in clingo
+
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 

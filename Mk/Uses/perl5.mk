@@ -42,12 +42,12 @@ USE_PERL5?=	run build
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.    if ${PERL5_DEFAULT} == 5.28
-.include "${PORTSDIR}/lang/perl5.28/version.mk"
-.    elif ${PERL5_DEFAULT} == 5.30
+.    if ${PERL5_DEFAULT} == 5.30
 .include "${PORTSDIR}/lang/perl5.30/version.mk"
 .    elif ${PERL5_DEFAULT} == 5.32
 .include "${PORTSDIR}/lang/perl5.32/version.mk"
+.    elif ${PERL5_DEFAULT} == 5.34
+.include "${PORTSDIR}/lang/perl5.34/version.mk"
 .    elif ${PERL5_DEFAULT} == devel
 .include "${PORTSDIR}/lang/perl5-devel/version.mk"
 # Force PERL_PORT here in case two identical PERL_VERSION.
@@ -81,12 +81,12 @@ PERL_ARCH?=	mach
 # perl5_default file, or up there in the default versions selection.
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.  if   ${PERL_LEVEL} >= 503200
+.  if   ${PERL_LEVEL} >= 503400
+PERL_PORT?=	perl5.34
+.  elif   ${PERL_LEVEL} >= 503200
 PERL_PORT?=	perl5.32
-.  elif ${PERL_LEVEL} >= 503000
+.  else # ${PERL_LEVEL} < 503200
 PERL_PORT?=	perl5.30
-.  else # ${PERL_LEVEL} < 503000
-PERL_PORT?=	perl5.28
 .  endif
 
 SITE_PERL_REL?=	lib/perl5/site_perl
@@ -167,7 +167,7 @@ IGNORE= has unknown USE_PERL5 components: ${_USE_PERL5_UNKNOWN}
 _USES_POST+=	perl5
 
 .  if   ${PERL_LEVEL} >= 503100
-P5_POD_PARSER=	p5-Pod-Parser>=0:textproc/p5-Pod-Parser
+P5_POD_PARSER=	p5-Pod-Parser>=1.63:textproc/p5-Pod-Parser
 .  else
 P5_POD_PARSER=	
 .  endif
@@ -301,7 +301,7 @@ fix-perl-things:
 	@(if [ -d ${STAGEDIR}${PACKLIST_DIR} ] ; then \
 		${FIND} ${STAGEDIR}${PACKLIST_DIR} -name .packlist | while read f ; do \
 			${SED} -i '' 's|^${STAGEDIR}||' "$$f"; \
-			${ECHO} $$f | ${SED} -e 's|^${STAGEDIR}||' >> ${TMPPLIST}; \
+			${ECHO_CMD} $$f | ${SED} -e 's|^${STAGEDIR}||' >> ${TMPPLIST}; \
 		done \
 	fi) || :
 

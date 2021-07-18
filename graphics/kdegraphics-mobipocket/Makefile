@@ -13,6 +13,4 @@ USE_QT=		concurrent core dbus gui network widgets \
 
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS
-
 .include <bsd.port.mk>

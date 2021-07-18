@@ -10,8 +10,8 @@ LICENSE=	LGPL21
 DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
 EXPIRATION_DATE=2021-06-23
 
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 LIB_DEPENDS=	libassuan.so:security/libassuan \
-		libboost_system.so:devel/boost-libs \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
 		libgpgmepp.so:security/gpgme-cpp \
@@ -19,9 +19,10 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
-		ecm i18n iconthemes itemmodels itemviews jobwidgets kio \
+		i18n iconthemes itemmodels itemviews jobwidgets kio \
 		service sonnet syntaxhighlighting textwidgets wallet \
-		widgetsaddons windowsystem xmlgui
+		widgetsaddons windowsystem xmlgui \
+		ecm_build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime contacts identitymanagement \
 		imap ldap libkdepim libkleo mailimporter \

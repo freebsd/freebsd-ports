@@ -6,9 +6,11 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 widgets for configuration dialogs
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 shebangfix tar:xz
-USE_KDE=	archive auth codecs config coreaddons doctools ecm guiaddons \
-		i18n widgetsaddons
-USE_QT=		buildtools_build core dbus gui qmake_build widgets xml
+USE_KDE=	auth codecs config coreaddons guiaddons \
+		i18n widgetsaddons \
+		doctools_build ecm_build 
+USE_QT=		core dbus gui widgets xml \
+		buildtools_build qmake_build 
 
 SHEBANG_FILES=	src/preparetips5
 

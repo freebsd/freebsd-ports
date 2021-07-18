@@ -1,7 +1,7 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 
 PORTNAME=	libvmdk
-PORTVERSION=	20200926
+PORTVERSION=	20210418
 DISTVERSIONPREFIX=	alpha-
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libvmdk/releases/download/${PORTVERSION}/ \

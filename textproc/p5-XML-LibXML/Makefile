@@ -1,7 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	XML-LibXML
-PORTVERSION=	2.0206
+PORTVERSION=	2.0207
 PORTEPOCH=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN

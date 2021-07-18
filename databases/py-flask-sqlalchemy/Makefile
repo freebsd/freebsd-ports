@@ -1,15 +1,14 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 
 PORTNAME=	flask-sqlalchemy
-PORTVERSION=	2.4.4
-PORTREVISION=	1
+PORTVERSION=	2.5.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Flask-SQLAlchemy-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Adds SQLAlchemy support to Flask
+COMMENT=	Add SQLAlchemy support to your Flask application
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

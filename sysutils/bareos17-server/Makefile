@@ -17,7 +17,7 @@ CONFLICTS?=	bacula*-server-* bareos16-server-*
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson
 
-USES+=		libtool:keepla pkgconfig readline:port shebangfix
+USES+=		libtool:keepla pkgconfig readline shebangfix
 USE_GITHUB=	yes
 
 USERS=		bareos
@@ -197,9 +197,9 @@ post-patch:
 #	In server port don't install filed
 	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' \
 		-e 's|src/lib||' -e 's|src/findlib||' -e 's|@FD_PLUGIN_DIR@||' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|../lib/|$$(LOCALBASE)/lib/|g' -e 's|../findlib/|$$(LOCALBASE)/lib/|g' ${WRKSRC}/src/dird/Makefile.in \
+	@${REINPLACE_CMD} -e 's|\.\./lib/|$$(LOCALBASE)/lib/|g' -e 's|\.\./findlib/|$$(LOCALBASE)/lib/|g' ${WRKSRC}/src/dird/Makefile.in \
 		${WRKSRC}/src/stored/Makefile.in ${WRKSRC}/src/tools/Makefile.in ${WRKSRC}/src/tests/Makefile.in
-	@${REINPLACE_CMD} -e 's|../../lib/|$$(LOCALBASE)/lib/|g' ${WRKSRC}/src/plugins/dird/Makefile.in ${WRKSRC}/src/plugins/stored/Makefile.in
+	@${REINPLACE_CMD} -e 's|\.\./\.\./lib/|$$(LOCALBASE)/lib/|g' ${WRKSRC}/src/plugins/dird/Makefile.in ${WRKSRC}/src/plugins/stored/Makefile.in
 	@${REINPLACE_CMD} -e 's|fd_plugins.h|filed/fd_plugins.h|g' -e 's|dir_plugins.h|dird/dir_plugins.h|g' -e 's|stored.h|stored/stored.h|g' \
 		${WRKSRC}/src/tools/bpluginfo.c
 	@${REINPLACE_CMD} -e 's|perl|$(LOCALBASE)/bin/perl|g' ${WRKSRC}/scripts/mtx-changer.in

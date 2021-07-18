@@ -1,5 +1,6 @@
 PORTNAME=	pandoc-crossref
 PORTVERSION=	0.3.9.1
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

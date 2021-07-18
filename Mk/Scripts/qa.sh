@@ -373,28 +373,20 @@ proxydeps_suggest_uses() {
 		${pkg} = "audio/gsound" -o \
 		${pkg} = "x11-toolkits/gtk20" -o \
 		${pkg} = "x11-toolkits/gtk30" -o \
-		${pkg} = "www/gtkhtml3" -o \
 		${pkg} = "www/gtkhtml4" -o \
 		${pkg} = "x11-toolkits/gtkmm20" -o \
 		${pkg} = "x11-toolkits/gtkmm24" -o \
 		${pkg} = "x11-toolkits/gtkmm30" -o \
-		${pkg} = "x11-toolkits/gtksourceview" -o \
 		${pkg} = "x11-toolkits/gtksourceview2" -o \
 		${pkg} = "x11-toolkits/gtksourceview3" -o \
 		${pkg} = "x11-toolkits/gtksourceviewmm3" -o \
-		${pkg} = "devel/libbonobo" -o \
-		${pkg} = "x11-toolkits/libbonoboui" -o \
 		${pkg} = "databases/libgda5" -o \
 		${pkg} = "databases/libgda5-ui" -o \
 		${pkg} = "databases/libgdamm5" -o \
 		${pkg} = "devel/libglade2" -o \
-		${pkg} = "x11/libgnome" -o \
 		${pkg} = "graphics/libgnomecanvas" -o \
 		${pkg} = "x11/libgnomekbd" -o \
-		${pkg} = "x11-toolkits/libgnomeui" -o \
 		${pkg} = "devel/libgsf" -o \
-		${pkg} = "www/libgtkhtml" -o \
-		${pkg} = "x11-toolkits/libgtksourceviewmm" -o \
 		${pkg} = "graphics/librsvg2" -o \
 		${pkg} = "devel/libsigc++12" -o \
 		${pkg} = "devel/libsigc++20" -o \
@@ -416,7 +408,6 @@ proxydeps_suggest_uses() {
 	elif [ ${pkg} = "graphics/gdk-pixbuf" ]; then warn "you need USE_GNOME+=gdkpixbuf"
 	elif [ ${pkg} = "graphics/gdk-pixbuf2" ]; then warn "you need USE_GNOME+=gdkpixbuf2"
 	elif [ ${pkg} = "x11/gnome-desktop" ]; then warn "you need USE_GNOME+=gnomedesktop3"
-	elif [ ${pkg} = "devel/gnome-vfs" ]; then warn "you need USE_GNOME+=gnomevfs2"
 	elif [ ${pkg} = "devel/gobject-introspection" ]; then warn "you need USE_GNOME+=introspection"
 	elif [ ${pkg} = "graphics/libart_lgpl" ]; then warn "you need USE_GNOME+=libartlgpl2"
 	elif [ ${pkg} = "devel/libIDL" ]; then warn "you need USE_GNOME+=libidl"
@@ -998,7 +989,7 @@ pkgmessage()
 		if [ -f "${message}" ]; then
 			if ! head -1 "${message}" | grep -q '^\['; then
 				warn "${message} not in UCL format, will be shown on initial install only."
-				warn "See https://www.freebsd.org/doc/en/books/porters-handbook/pkg-files.html#porting-message"
+				warn "See https://docs.freebsd.org/en/books/porters-handbook/pkg-files/#porting-message"
 			fi
 		fi
 	done

@@ -1,5 +1,5 @@
 PORTNAME=	free42
-DISTVERSION=	3.0.2
+DISTVERSION=	3.0.5
 CATEGORIES=	misc
 MASTER_SITES=	http://thomasokken.com/free42/upstream/
 DISTNAME=	${PORTNAME}-nologo-${DISTVERSION}
@@ -9,6 +9,8 @@ COMMENT=	Simulation of the HP-42S scientific calculator and HP-82240 printer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_FreeBSD_11=	error: unknown type name 'cha'; did you mean 'char'?
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2

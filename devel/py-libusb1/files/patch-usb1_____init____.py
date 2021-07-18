@@ -1,19 +1,8 @@
 https://lists.freebsd.org/pipermail/freebsd-usb/2015-January/013586.html
 
---- usb1/__init__.py.orig	2016-11-23 13:07:52 UTC
+--- usb1/__init__.py.orig	2021-07-02 12:59:01 UTC
 +++ usb1/__init__.py
-@@ -1830,15 +1830,20 @@ class USBDevice(object):
-         """
-         Get device's port number.
-         """
--        return libusb1.libusb_get_port_number(self.device_p)
-+        try:
-+            return libusb1.libusb_get_port_number(self.device_p)
-+        except AttributeError:
-+            return 0
- 
-     def getPortNumberList(self):
-         """
+@@ -1864,8 +1864,10 @@ class USBDevice(object):
          Get the port number of each hub toward device.
          """
          port_list = (c_uint8 * PATH_MAX_DEPTH)()

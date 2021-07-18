@@ -9,14 +9,18 @@ MASTER_SITES=	http://www.superscript.com/qtools/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to use in .qmail files
 
+# Converted from LEGAL_TEXT
+LICENSE=	djb
+LICENSE_NAME=	djb
+LICENSE_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 RUN_DEPENDS=	${EZMLM_DIR}/bin/ezmlm-weed:mail/ezmlm
 
 USES=		qmail:vars
 
 ALL_TARGET=	prog
 INSTALL_TARGET=	setup check
-
-LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
 EZMLM_DIR?=	${LOCALBASE}
 

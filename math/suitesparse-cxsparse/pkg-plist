@@ -1,0 +1,5 @@
+include/suitesparse/cs.h
+lib/libcxsparse.so
+lib/libcxsparse.so.3
+lib/libcxsparse.so.3.2.0
+%%PORTDOCS%%%%DOCSDIR%%/CXSPARSE_README.txt

@@ -26,7 +26,7 @@ options are available in
 You can find annotated configuration options in config.documented.php
 in the same directory. Nextcloud's configuration documentation is at 
 
-	https://docs.nextcloud.com/server/18/admin_manual/configuration_server
+	https://docs.nextcloud.com/server/stable/admin_manual/configuration_server
 
 The caching options require additional Nextcloud configuration.
 EOM
@@ -38,6 +38,12 @@ using command line:
 
   cd %%WWWDIR%%
   su -m www -c "php ./occ upgrade"
+
+Merge any changes to %%WWWDIR%%/.htaccess.dist into .htaccess (above the
+'#### DO NOT CHANGE ANYTHING ABOVE THIS LINE ####' divider if it exists)
+and update the dynamic part of the file using the commandline:
+
+  su -m www -c "php ./occ maintenance:update:htaccess"
 EOM
 }
 ]

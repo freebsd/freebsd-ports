@@ -83,10 +83,10 @@
 %%DATADIR%%/common/annotations/ms.xml
 %%DATADIR%%/common/annotations/mt.xml
 %%DATADIR%%/common/annotations/my.xml
-%%DATADIR%%/common/annotations/nb.xml
 %%DATADIR%%/common/annotations/ne.xml
 %%DATADIR%%/common/annotations/nl.xml
 %%DATADIR%%/common/annotations/nn.xml
+%%DATADIR%%/common/annotations/no.xml
 %%DATADIR%%/common/annotations/or.xml
 %%DATADIR%%/common/annotations/pa.xml
 %%DATADIR%%/common/annotations/pa_Arab.xml
@@ -223,10 +223,10 @@
 %%DATADIR%%/common/annotationsDerived/ms.xml
 %%DATADIR%%/common/annotationsDerived/mt.xml
 %%DATADIR%%/common/annotationsDerived/my.xml
-%%DATADIR%%/common/annotationsDerived/nb.xml
 %%DATADIR%%/common/annotationsDerived/ne.xml
 %%DATADIR%%/common/annotationsDerived/nl.xml
 %%DATADIR%%/common/annotationsDerived/nn.xml
+%%DATADIR%%/common/annotationsDerived/no.xml
 %%DATADIR%%/common/annotationsDerived/or.xml
 %%DATADIR%%/common/annotationsDerived/pa.xml
 %%DATADIR%%/common/annotationsDerived/pcm.xml
@@ -432,6 +432,7 @@
 %%DATADIR%%/common/casing/nmg.xml
 %%DATADIR%%/common/casing/nn.xml
 %%DATADIR%%/common/casing/nnh.xml
+%%DATADIR%%/common/casing/no.xml
 %%DATADIR%%/common/casing/nus.xml
 %%DATADIR%%/common/casing/nyn.xml
 %%DATADIR%%/common/casing/om.xml
@@ -590,6 +591,7 @@
 %%DATADIR%%/common/collation/ne.xml
 %%DATADIR%%/common/collation/nl.xml
 %%DATADIR%%/common/collation/nn.xml
+%%DATADIR%%/common/collation/no.xml
 %%DATADIR%%/common/collation/om.xml
 %%DATADIR%%/common/collation/or.xml
 %%DATADIR%%/common/collation/pa.xml
@@ -1202,6 +1204,7 @@
 %%DATADIR%%/common/main/nn_NO.xml
 %%DATADIR%%/common/main/nnh.xml
 %%DATADIR%%/common/main/nnh_CM.xml
+%%DATADIR%%/common/main/no.xml
 %%DATADIR%%/common/main/nus.xml
 %%DATADIR%%/common/main/nus_SS.xml
 %%DATADIR%%/common/main/nyn.xml
@@ -1425,8 +1428,11 @@
 %%DATADIR%%/common/main/zu.xml
 %%DATADIR%%/common/main/zu_ZA.xml
 %%DATADIR%%/common/properties/ExtendedPictographic.txt
+%%DATADIR%%/common/properties/external_data_versions.tsv
 %%DATADIR%%/common/properties/labels.txt
+%%DATADIR%%/common/properties/readme.md
 %%DATADIR%%/common/properties/scriptMetadata.txt
+%%DATADIR%%/common/properties/segments/GraphemeBreakTest.html
 %%DATADIR%%/common/properties/segments/GraphemeBreakTest.txt
 %%DATADIR%%/common/properties/segments/readme.txt
 %%DATADIR%%/common/rbnf/af.xml
@@ -1488,8 +1494,10 @@
 %%DATADIR%%/common/rbnf/mt.xml
 %%DATADIR%%/common/rbnf/my.xml
 %%DATADIR%%/common/rbnf/nb.xml
+%%DATADIR%%/common/rbnf/ne.xml
 %%DATADIR%%/common/rbnf/nl.xml
 %%DATADIR%%/common/rbnf/nn.xml
+%%DATADIR%%/common/rbnf/no.xml
 %%DATADIR%%/common/rbnf/pl.xml
 %%DATADIR%%/common/rbnf/pt.xml
 %%DATADIR%%/common/rbnf/pt_PT.xml
@@ -1584,9 +1592,9 @@
 %%DATADIR%%/common/subdivisions/mr.xml
 %%DATADIR%%/common/subdivisions/ms.xml
 %%DATADIR%%/common/subdivisions/my.xml
-%%DATADIR%%/common/subdivisions/nb.xml
 %%DATADIR%%/common/subdivisions/ne.xml
 %%DATADIR%%/common/subdivisions/nl.xml
+%%DATADIR%%/common/subdivisions/no.xml
 %%DATADIR%%/common/subdivisions/or.xml
 %%DATADIR%%/common/subdivisions/pa.xml
 %%DATADIR%%/common/subdivisions/pl.xml

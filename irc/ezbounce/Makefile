@@ -21,7 +21,7 @@ COMPRESS_DESC=		Chat log compression (requires boost)
 
 GNU_CONFIGURE=	yes
 USES=		compiler:c++0x gmake
-USE_GCC=	any
+USE_GCC=	yes
 
 # ezbounce 1.99.15 isn't compatible with C++11 and later, which some compilers
 # such as GCC 6 default to.

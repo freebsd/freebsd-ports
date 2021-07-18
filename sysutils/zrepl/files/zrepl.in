@@ -40,7 +40,7 @@ load_rc_config $name
 : ${zrepl_priority:="alert"}
 : ${zrepl_options:="${zrepl_flags} --config ${zrepl_config}"}
 
-pidfile="/var/run/zrepl/daemon.pid"
+pidfile="/var/run/zrepl.pid"
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/zrepl"
 command_args="-p ${pidfile} %%DAEMON_LOGGING%% ${procname} ${zrepl_options} daemon"

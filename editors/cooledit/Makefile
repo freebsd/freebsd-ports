@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext gmake libtool python xorg # gettext is linked to despite .mo files having been deleted
-USE_GCC=	any
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xt
 GNU_CONFIGURE=	yes

@@ -1,7 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@dragon2.net>
 
 PORTNAME=	XML-Feed
-PORTVERSION=	0.61
+PORTVERSION=	0.63
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

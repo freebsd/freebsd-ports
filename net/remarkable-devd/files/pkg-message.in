@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+A devd rule and rc script has been added to get an address from the
+remarkable tablet when it is connected. This is disabled by default.
+Set remarkable_enable=YES if you want this to happen automatically. Devd must also be restarted.
+
+# sysrc remarkable_enable=YES
+# service devd restart
+
+For details, see %%PREFIX%%/etc/devd/remarkable.conf and %%PREFIX%%/etc/rc.d/remarkable
+EOM
+}
+]

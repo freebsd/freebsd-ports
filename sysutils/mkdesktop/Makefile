@@ -1,5 +1,5 @@
 PORTNAME=	mkdesktop
-PORTVERSION=	4.3
+PORTVERSION=	5.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	bourne.identity@hotmail.com

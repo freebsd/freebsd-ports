@@ -1,8 +1,9 @@
 PORTNAME=	bemenu
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.2
 CATEGORIES=	x11 wayland
+MASTER_SITES=	https://github.com/Cloudef/bemenu/releases/download/${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Dynamic menu library and client program inspired by dmenu
 
 LICENSE=	GPLv3+ LGPL3+
@@ -10,10 +11,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENSE-CLIENT
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSE-LIB
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	Cloudef
 USE_LDCONFIG=	yes
-
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ARGS=	RENDERERS="${_BEMENU_RENDERERS}" \
 		VERSION=${DISTVERSION}

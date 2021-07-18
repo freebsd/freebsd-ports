@@ -1,15 +1,24 @@
---- bootstrap/linux-8.10.1.json.orig	2021-03-05 14:30:13 UTC
+--- bootstrap/linux-8.10.1.json.orig	2021-02-20 10:28:17 UTC
 +++ bootstrap/linux-8.10.1.json
+@@ -2,7 +2,7 @@
+     "builtin": [
+         {
+             "package": "rts",
+-            "version": "1.0"
++            "version": "1.0.1"
+         },
+         {
+             "package": "ghc-prim",
 @@ -14,7 +14,7 @@
          },
          {
              "package": "base",
 -            "version": "4.14.0.0"
-+            "version": "4.14.1.0"
++            "version": "4.14.2.0"
          },
          {
              "package": "array",
-@@ -26,7 +26,7 @@
+@@ -26,11 +26,11 @@
          },
          {
              "package": "bytestring",
@@ -18,6 +27,11 @@
          },
          {
              "package": "containers",
+-            "version": "0.6.2.1"
++            "version": "0.6.4.1"
+         },
+         {
+             "package": "binary",
 @@ -62,7 +62,7 @@
          },
          {
@@ -37,7 +51,16 @@
          {
              "package": "ghc-boot-th",
 -            "version": "8.10.1"
-+            "version": "8.10.4"
++            "version": "8.10.5"
          },
          {
              "package": "template-haskell",
+@@ -86,7 +86,7 @@
+         },
+         {
+             "package": "stm",
+-            "version": "2.5.0.0"
++            "version": "2.5.0.1"
+         }
+     ],
+     "dependencies": [

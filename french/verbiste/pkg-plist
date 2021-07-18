@@ -1,6 +1,5 @@
 bin/french-conjugator
 bin/french-deconjugator
-%%HASGNOME%%bin/verbiste
 %%HASGTK%%bin/verbiste-gtk
 include/verbiste-0.1/verbiste/FrenchVerbDictionary.h
 include/verbiste-0.1/verbiste/Trie.cpp
@@ -17,7 +16,6 @@ man/fr/man3/verbiste.3.gz
 man/man1/french-conjugator.1.gz
 man/man1/french-deconjugator.1.gz
 man/man3/verbiste.3.gz
-%%HASGNOME%%share/applications/verbiste.desktop
 %%HASGUI%%share/locale/da/LC_MESSAGES/verbiste.mo
 %%HASGUI%%share/locale/de/LC_MESSAGES/verbiste.mo
 %%HASGUI%%share/locale/el/LC_MESSAGES/verbiste.mo

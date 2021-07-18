@@ -1,8 +1,7 @@
 # Created by: David Thiel <lx@redundancy.redundancy.org>
 
 PORTNAME=	runwhen
-PORTVERSION=	2015.02.24
-PORTREVISION=	2
+PORTVERSION=	2021.04.30
 CATEGORIES=	sysutils
 MASTER_SITES=	http://code.dogmap.org/runwhen/releases/
 

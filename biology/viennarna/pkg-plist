@@ -126,6 +126,7 @@ include/ViennaRNA/part_func_co.h
 include/ViennaRNA/part_func_up.h
 include/ViennaRNA/part_func_window.h
 include/ViennaRNA/perturbation_fold.h
+include/ViennaRNA/pk_plex.h
 include/ViennaRNA/plex.h
 include/ViennaRNA/plot_aln.h
 include/ViennaRNA/plot_layouts.h

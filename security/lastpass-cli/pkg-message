@@ -5,7 +5,7 @@ Before using the 'edit' subcommand interactively, it's recommended to set the
 SECURE_TMPDIR environment variable to a location that isn't written to disk,
 such as a tmpfs mount, ideally using encrypted swap:
 
-	https://www.freebsd.org/doc/handbook/swap-encrypting.html
+	https://docs.freebsd.org/en/books/handbook/disks/#swap-encrypting
 
 Also keep in mind your editor may create temporary files and backups in other
 locations - consider disabling these features for files matching the pattern

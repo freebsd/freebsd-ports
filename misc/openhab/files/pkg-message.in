@@ -1,0 +1,34 @@
+[
+{ type: install
+  message: <<EOM
+The openhab user interface writes to /var/db/openhab
+(config) and to %%ETCDIR%% (when installing add-onds).
+The config in %%ETCDIR%% is evaluated additionally to
+/var/db/openhab.
+
+See %%PREFIX%%/etc/rc.d/openhab for environment variables you need
+to set by hand (all "export"-ones) if you want to execute some of
+the openhab commands from the shell directly.
+
+When the openhab docs talk about "userdata", look into /var/db/openhab.
+
+Serial ports do not work with FreeBSD, see:
+	https://github.com/openhab/openhab1-addons/wiki/FreeBSD
+
+By default openhab tries to use IPv6. As FreeBSD does not support
+mapping IPV4 multicast addresses inside IPv6 addresses you will get
+the following error message:
+	[ERROR] [org.jupnp.transport.Router] - Unable to initialize network router: org.jupnp.transport.spi.InitializationException: Could not initialize MulticastReceiverImpl: java.net.SocketException: Invalid argument
+
+A workaround is to use the following rc.conf setting which will
+prefer IPv4 over IPv6:
+	openhab_java_opts="-Djava.net.preferIPv4Stack=true"
+
+
+If you upgrade from a pevious version, make a backup of
+	/var/db/openhab
+and read about the breaking changes in the release notes at
+	https://github.com/openhab/openhab-distro/releases/
+EOM
+}
+]

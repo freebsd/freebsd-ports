@@ -2,9 +2,6 @@ PORTNAME=	kalzium
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	science education kde kde-applications
 
-PATCH_SITES=	https://invent.kde.org/education/kalzium/commit/
-PATCHFILES=	2b9ebd85.diff:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Periodic table of elements for KDE
 

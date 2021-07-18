@@ -1,5 +1,5 @@
 bin/kaidan
-share/applications/kaidan.desktop
+share/applications/im.kaidan.kaidan.desktop
 share/icons/hicolor/128x128/apps/kaidan.png
 share/icons/hicolor/scalable/apps/kaidan.svg
 %%DATADIR%%/images/account-deletion-from-client-and-server.svg

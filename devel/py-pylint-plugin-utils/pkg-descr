@@ -1,0 +1,5 @@
+Utilities and helpers for writing Pylint plugins. This is not a direct Pylint
+plugin, but rather a set of tools and functions used by other plugins such as
+pylint-django and pylint-celery.
+
+WWW: https://github.com/PyCQA/pylint-plugin-utils

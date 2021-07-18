@@ -1,0 +1,16 @@
+bin/creme
+include/coin/chooseblock.h
+include/coin/cmdline.h
+include/coin/init.h
+include/coin/isfeas.h
+include/coin/linopt.h
+include/coin/locsrch.h
+include/coin/lpio.h
+include/coin/misc.h
+include/coin/move.h
+include/coin/rtr.h
+include/coin/sparse.h
+lib/libCreme.so
+lib/libCreme.so.0
+lib/libCreme.so.0.0.0
+libdata/pkgconfig/creme.pc

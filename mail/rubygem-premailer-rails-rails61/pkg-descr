@@ -1,0 +1,6 @@
+This gem brings you the power of the premailer gem to Rails
+without any configuration needs. Create HTML emails, include
+a CSS file as you do in a normal HTML document and premailer
+will inline the included CSS.
+
+WWW: https://github.com/fphilipe/premailer-rails

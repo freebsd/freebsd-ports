@@ -1,7 +1,7 @@
 # Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
 
 PORTNAME=	ibus-table
-DISTVERSION=	1.12.5
+DISTVERSION=	1.13.3
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,15 +16,17 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR
 LIB_DEPENDS=	libibus-1.0.so:textproc/ibus
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		autoreconf gmake pkgconfig python:3.4+
+USES=		autoreconf gettext-tools gmake gnome pkgconfig python:3.4+
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	kaio
 
+GLIB_SCHEMAS=	org.freedesktop.ibus.engine.table.gschema.xml
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=		gettext
+NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:

@@ -16,7 +16,9 @@ LICENSE_COMB=	dual
 TEST_DEPENDS=	p5-Test-Pod>=1.14:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.04:devel/p5-Test-Pod-Coverage
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

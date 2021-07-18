@@ -34,16 +34,20 @@
  	fi
  
  	case "$DISPLAY_LIST" in
-@@ -195,7 +197,7 @@ parent_exit () {
+@@ -194,8 +196,11 @@ parent_exit () {
+ 		fi
  
  		: ${PAGER:='less -e'}
++		if [ -n "$PM_NO_CONFIRM" ]; then
++			PAGER=cat
++		fi
  		(
 -		pkg query "===>>> pkg-message for %n-%v\n%M" $DISPLAY_LIST
 +		$PKG_CMD query "===>>> pkg-message for %n-%v\n%M" $DISPLAY_LIST
  		echo "===>>> Done displaying pkg-message files" ; echo '' ) | $PAGER ;;
  	esac
  
-@@ -243,12 +245,12 @@ parent_exit () {
+@@ -243,12 +248,12 @@ parent_exit () {
  	fi
  
  	if [ -n "$1" -a -n "${PM_NEEDS_UPDATE# }" -a -n "$PM_BUILDING" -a -z "$FETCH_ONLY" ]; then
@@ -58,7 +62,7 @@
  		echo ''
  	fi
  }
-@@ -260,7 +262,7 @@ safe_exit () {
+@@ -260,7 +265,7 @@ safe_exit () {
  		parent_exit $1
  	else
  		# Save state for the parent process to read back in
@@ -67,7 +71,7 @@
  		if [ -z "$PM_FIRST_PASS" ]; then
  			echo "DISPLAY_LIST='$DISPLAY_LIST'" >> $IPC_SAVE
  			echo "INSTALLED_LIST='$INSTALLED_LIST'" >> $IPC_SAVE
-@@ -308,50 +310,55 @@ safe_exit () {
+@@ -308,50 +313,55 @@ safe_exit () {
  	exit ${1:-0}
  } # safe_exit()
  
@@ -142,7 +146,7 @@
  pm_sv             () { [ -n "$PM_SU_VERBOSE" ] && echo -e "===>>> SU $*"; }
  
  # Do this here so we can have a reasonably good guess.
-@@ -359,7 +366,7 @@ pm_sv             () { [ -n "$PM_SU_VERBOSE" ] && echo
+@@ -359,7 +369,7 @@ pm_sv             () { [ -n "$PM_SU_VERBOSE" ] && echo
  if [ "$$" -eq "$PM_PARENT_PID" ]; then
  	if [ -z "$pd" ]; then
  		if [ -z "$PORTSDIR" ]; then
@@ -151,7 +155,7 @@
  			[ -z "$pd" ] && pm_isdir /usr/ports && pd=/usr/ports
  		else
  			pd=$PORTSDIR
-@@ -433,6 +440,8 @@ usage () {
+@@ -433,6 +443,8 @@ usage () {
  	echo ''
  	echo "$progname --list-origins"
  	echo ''
@@ -160,7 +164,7 @@
  	echo "$progname [--force-config|-G] [-P|-PP] [-aftv] -F"
  	echo ''
  	echo "$progname [-n|y] [-b] [-D|d] -e <name/glob of a single port in $pdb>"
-@@ -513,6 +522,8 @@ usage () {
+@@ -513,6 +525,8 @@ usage () {
  	echo '-n answer no to all user prompts for the features below'
  	echo '-y answer yes to all user prompts for the features below'
  	echo ''
@@ -169,7 +173,7 @@
  	echo '[-n|y] [-b] [-D|d] -e expunge one port via pkg delete, and remove its distfiles'
  	echo '[-n|y] [-b] [-D|d] -s clean out stale ports that used to be depended on'
  	echo ''
-@@ -549,7 +560,7 @@ find_glob_dirs () {
+@@ -549,7 +563,7 @@ find_glob_dirs () {
  
  	pattern=`globstrip $1`
  
@@ -178,7 +182,7 @@
  	case "$glob_dirs" in
  	# Match a newline in multiple responses from find
  	*'
-@@ -562,12 +573,37 @@ find_glob_dirs () {
+@@ -562,12 +576,37 @@ find_glob_dirs () {
  	return 1
  }
  
@@ -219,7 +223,7 @@
  
  	case "$pkgname" in bsdpan-*) return 3 ;; esac
  
-@@ -576,7 +612,7 @@ origin_from_pdb () {
+@@ -576,7 +615,7 @@ origin_from_pdb () {
  			# An error above doesn't necessarily mean there's
  			# a problem in +MANIFEST, so don't mention it
  			echo "	===>>> No origin available for $pkgname" >&2
@@ -228,7 +232,7 @@
  			echo '' >&2
  		fi
  		return 2
-@@ -684,6 +720,7 @@ for var in "$@" ; do
+@@ -684,6 +723,7 @@ for var in "$@" ; do
  	--list-origins)		LIST_ORIGINS=list_origins ;;
  	--show-work)		SHOW_WORK=show ; PM_THOROUGH=thorough ;;
  	--force-config)		export PM_FORCE_CONFIG=pm_force_config ;;
@@ -236,7 +240,15 @@
  	--*)			echo "Illegal option $var" ; echo ''
  				echo "===>>> Try $progname --help"; exit 1 ;;
  	*)			newopts="$newopts $var" ;;
-@@ -728,7 +765,7 @@ while getopts 'BCDFGHKLPRabde:fghilm:nop:r:stvwx:y' CO
+@@ -709,6 +749,7 @@ while getopts 'BCDFGHKLPRabde:fghilm:nop:r:stvwx:y' CO
+ 	G)	[ -z "$PM_FORCE_CONFIG" ] && {
+ 			PM_NO_MAKE_CONFIG=Gopt; ARGS="-G $ARGS"; } ;;
+ 	H)	HIDE_BUILD=Hopt; ARGS="-H $ARGS" ;;
++	I)	NON_INTERACTIVE=Iopt; ARGS="-I $ARGS" ;;
+ 	K)	DONT_POST_CLEAN=Kopt; ARGS="-K $ARGS" ;;
+ 	L)	LIST_PLUS=Lopt ;;
+ 	P)	packages_init first ;;
+@@ -728,7 +769,7 @@ while getopts 'BCDFGHKLPRabde:fghilm:nop:r:stvwx:y' CO
  	o)	REPLACE_ORIGIN=oopt ;; # -o should take a parameter and $OPTARG should be assigned here
  	p)	fail 'The -p option has been deprecated' ;;
  	r)	PM_URB=ropt
@@ -245,7 +257,7 @@
  			glob_dirs=$OPTARG
  		else
  			case "$OPTARG" in */*) fail 'The argument to -r must be a package name, or a glob pattern' ;; esac
-@@ -789,6 +826,7 @@ if [ -n "$ALWAYS_SCRUB_DISTFILES" -a -n "$DONT_SCRUB_D
+@@ -789,6 +830,7 @@ if [ -n "$ALWAYS_SCRUB_DISTFILES" -a -n "$DONT_SCRUB_D
  		fail "The -d and -D options are mutually exclusive"
  fi
  
@@ -253,7 +265,7 @@
  [ -n "$PM_NO_MAKE_CONFIG" -a -n "$PM_FORCE_CONFIG" ] && unset PM_NO_MAKE_CONFIG
  
  if [ -n "$LIST" -o -n "$LIST_PLUS" ]; then
-@@ -875,7 +913,7 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
+@@ -875,7 +917,7 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
  		fi
  		unset INDEXFILE INDEXDIR
  
@@ -262,7 +274,7 @@
  		export PM_INDEX_PORTS
  
  		if [ -z "$pd" -o "$pd" != /usr/ports ]; then
-@@ -927,6 +965,9 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
+@@ -927,6 +969,9 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
  	fi
  fi	# [ "$$" -eq "$PM_PARENT_PID" ]
  
@@ -272,7 +284,7 @@
  #=============== Begin functions relevant to --features and main ===============
  
  # find installed port for given origin (with optional @flavor) in the pkg DB
-@@ -938,11 +979,15 @@ iport_from_origin () {
+@@ -938,11 +983,15 @@ iport_from_origin () {
  
  	origin=$(dir_part "$1")
  	flavor=$(flavor_part "$1")
@@ -290,7 +302,7 @@
  		if [ "$pkgflavor" = "$flavor" ]; then
  			echo $pkgname
  			return 0
-@@ -1002,25 +1047,6 @@ get_answer_yn () {
+@@ -1002,25 +1051,6 @@ get_answer_yn () {
  	fi
  }
  
@@ -316,7 +328,7 @@
  # Find the new origin for moved ports
  # Set global variable moved_npd on success
  # Return values:
-@@ -1045,7 +1071,7 @@ find_moved_port () {
+@@ -1045,7 +1075,7 @@ find_moved_port () {
  					echo ''
  					echo "	===>>> The $sf port has been deleted"
  					echo "	===>>> Reason: ${moved##*|}"
@@ -325,7 +337,7 @@
  					echo ''
  				fi
  				return 0
-@@ -1056,7 +1082,8 @@ find_moved_port () {
+@@ -1056,7 +1086,8 @@ find_moved_port () {
  			fi ;;
  		${sf}\|*) moved_npd=${moved#*\|}	# New port directory
  			moved_npd=${moved_npd%%\|*}
@@ -335,7 +347,7 @@
  			echo ''
  			echo "	===>>> The $sf port moved to $moved_npd"
  			echo "	===>>> Reason: ${moved##*|}"
-@@ -1082,7 +1109,7 @@ find_moved_port () {
+@@ -1082,7 +1113,7 @@ find_moved_port () {
  }
  
  all_pkgs_by_origin () {
@@ -344,7 +356,7 @@
  	echo "$namesorigins"
  	return
  }
-@@ -1146,11 +1173,10 @@ read_distinfos_all () {
+@@ -1146,11 +1177,10 @@ read_distinfos_all () {
  	echo ''
  
  	for origin in ${pd}/*/*; do
@@ -357,7 +369,7 @@
  
  		if [ -s "${origin}/distinfo" ]; then
  			distinfo="${origin}/distinfo"
-@@ -1181,17 +1207,17 @@ ports_by_category () {
+@@ -1181,17 +1211,17 @@ ports_by_category () {
  	local pkg
  
  	pm_v "===>>> Sorting ports by category"
@@ -380,7 +392,7 @@
  }
  
  delete_empty_dist_subdirs () {
-@@ -1279,7 +1305,7 @@ if [ -n "$CLEAN_PACKAGES" ]; then
+@@ -1279,7 +1309,7 @@ if [ -n "$CLEAN_PACKAGES" ]; then
  	for package in `find $PACKAGES -type f | sort`; do
  		pkg_dir=${package##*/} ; pkg_dir=${pkg_dir%\.*} ; echo ''
  
@@ -389,7 +401,7 @@
  			origin=`tar -O -zxvf $package '+CONTENTS' 2>/dev/null | grep '@comment ORIGIN:'` ||
  			origin=`tar -O -zxvf $package '+MANIFEST' 2>/dev/null | grep '^origin:'` ||
  			fail "Empty origin in $package"
-@@ -1302,7 +1328,7 @@ if [ -n "$CLEAN_PACKAGES" ]; then
+@@ -1302,7 +1332,7 @@ if [ -n "$CLEAN_PACKAGES" ]; then
  		if [ -n "$port_ver" ]; then
  			if [ "$port_ver" = "$pkg_dir" ]; then
  				echo "===>>> ${package##*/} is up to date"
@@ -398,7 +410,7 @@
  					echo "	===>>> $pkg_dir is not installed"
  					echo "	===>>> Path: ${package}"
  					get_answer_yn y "\n\t===>>> Delete stale package: ${package##*/}"
-@@ -1320,7 +1346,7 @@ if [ -n "$CLEAN_PACKAGES" ]; then
+@@ -1320,7 +1350,7 @@ if [ -n "$CLEAN_PACKAGES" ]; then
  
  			unset port_ver
  
@@ -407,7 +419,7 @@
  				echo "	===>>> ${package##*/} matches the installed version"
  			else
  				echo "	===>>> ${package##*/} is not installed"
-@@ -1362,7 +1388,7 @@ if [ -n "$CLEAN_PACKAGES" ]; then
+@@ -1362,7 +1392,7 @@ if [ -n "$CLEAN_PACKAGES" ]; then
  fi	# [ -n "$CLEAN_PACKAGES" ]
  
  if [ -n "$CHECK_DEPENDS" ]; then
@@ -416,7 +428,7 @@
  	exit 0
  fi
  
-@@ -1377,14 +1403,14 @@ if [ -n "$CHECK_PORT_DBDIR" ]; then
+@@ -1377,14 +1407,14 @@ if [ -n "$CHECK_PORT_DBDIR" ]; then
  		if ! pm_isdir_pd "$origin"; then
  			find_moved_port $origin $pkg nonfatal >/dev/null
  			[ -n "$moved_npd" ] || continue
@@ -433,7 +445,7 @@
  	done <<-EOF
  	$(all_pkgs_by_origin)
  	EOF
-@@ -1413,7 +1439,7 @@ if [ -n "$CHECK_PORT_DBDIR" ]; then
+@@ -1413,7 +1443,7 @@ if [ -n "$CHECK_PORT_DBDIR" ]; then
  fi
  
  if [ -n "$LIST_ORIGINS" ]; then
@@ -442,7 +454,7 @@
  
  	exit 0
  fi
-@@ -1423,10 +1449,11 @@ fi
+@@ -1423,10 +1453,11 @@ fi
  
  check_state () {
  	# Global: state
@@ -456,7 +468,7 @@
  			state_set=`pm_make -V $state`
  			if [ -n "$state_set" ]; then
  				echo "	===>>> This port is marked $state"
-@@ -1502,10 +1529,10 @@ check_for_updates () {
+@@ -1502,10 +1533,10 @@ check_for_updates () {
  	fi
  
  	if [ -z "$do_update" -a -z "$skip" -a -z "$PM_INDEX_ONLY" ] && pm_isdir "$pd/$origin"; then
@@ -469,7 +481,7 @@
  				echo ''
  				CUR_DEPS="${CUR_DEPS}${iport}:${originflavor}:"
  				return 0
-@@ -1521,7 +1548,7 @@ check_for_updates () {
+@@ -1521,7 +1552,7 @@ check_for_updates () {
  		# If the port has moved and no +IGNOREME, we have to update it
  		if [ -n "$moved_npd" ]; then
  			if pm_islocked "$iport"; then
@@ -478,7 +490,7 @@
  				echo ''
  				CUR_DEPS="${CUR_DEPS}${iport}:${originflavor}:"
  				return 0
-@@ -1545,7 +1572,7 @@ check_for_updates () {
+@@ -1545,7 +1576,7 @@ check_for_updates () {
  				unset port_ver
  			fi
  		else
@@ -487,7 +499,7 @@
  			\<)	do_update=upd_lt ;;
  			=)	;;	# Can be reached if same version with different options
  			\>)	if [ -n "$PM_VERBOSE" ]; then
-@@ -1569,7 +1596,7 @@ check_for_updates () {
+@@ -1569,7 +1600,7 @@ check_for_updates () {
  		if [ -z "$moved_npd" ]; then
  			echo "	===>>> New version available: $port_ver"
  			if pm_islocked "$iport"; then
@@ -496,7 +508,7 @@
  			fi
  			pm_cd_pd $origin && check_state
  			num_updates=$(( $num_updates + 1 ))
-@@ -1628,7 +1655,7 @@ pm_pkg_create () {
+@@ -1628,7 +1659,7 @@ pm_pkg_create () {
  	fi
  
  	pm_cd $pkgdir || fail "Cannot cd into $pkgdir to create a package"
@@ -505,7 +517,7 @@
  		if [ "$1" = "$pbu" ]; then
  			if [ -n "$BACKUP" ]; then
  				echo "	===>>> Package saved to $1" ; echo ''
-@@ -1980,7 +2007,7 @@ if [ -n "$LIST" -o -n "$LIST_PLUS" ]; then
+@@ -1980,7 +2011,7 @@ if [ -n "$LIST" -o -n "$LIST_PLUS" ]; then
  fi
  
  if [ -n "$EXPUNGE" ]; then
@@ -514,7 +526,7 @@
  		find_glob_dirs $EXPUNGE
  		case $? in
  		1)	fail "No such port: $EXPUNGE" ;;
-@@ -1992,7 +2019,7 @@ if [ -n "$EXPUNGE" ]; then
+@@ -1992,7 +2023,7 @@ if [ -n "$EXPUNGE" ]; then
  	fi
  
  	origin=`origin_from_pdb $EXPUNGE`
@@ -523,7 +535,7 @@
  	if [ -n "$deplist" ]; then
  		echo "===>>> Warning: Ports with dependencies on ${EXPUNGE}:"
  		echo "$deplist" | sed 's/^/	/'
-@@ -2020,7 +2047,7 @@ fi
+@@ -2020,7 +2051,7 @@ fi
  if [ -n "$CLEAN_STALE" ]; then
  	[ -z "$no_del_list" ] && export no_del_list=':'
  
@@ -532,7 +544,7 @@
  	for file in $stale_ports; do
  		iport="${file%/+REQUIRED_BY}" ; iport=${iport#$pdb/}
  
-@@ -2040,7 +2067,7 @@ if [ -n "$CLEAN_STALE" ]; then
+@@ -2040,7 +2071,7 @@ if [ -n "$CLEAN_STALE" ]; then
  			continue
  		fi
  
@@ -541,7 +553,7 @@
  
  		get_answer_yn n "\t===>>> ${iport} is no longer depended on, delete"
  		case "$?" in
-@@ -2073,7 +2100,7 @@ check_restart_and_udf () {
+@@ -2073,7 +2104,7 @@ check_restart_and_udf () {
  	# to go out to the disk if we don't have to.
  	[ -z "$RESTART" ] && return 1
  
@@ -550,7 +562,7 @@
  		return 1
  	else
  		already_done $1
-@@ -2175,26 +2202,32 @@ update_pm_nu () {
+@@ -2175,26 +2206,32 @@ update_pm_nu () {
  }
  
  update_build_l () {
@@ -588,7 +600,7 @@
  	\<)	build_l="${build_l}\tUpgrade $iport to $new_port\n" ;;
  	=)	build_l="${build_l}\tRe-install $iport\n" ;;
  	\>)	build_l="${build_l}\tDowngrade $iport to $new_port\n" ;;
-@@ -2203,8 +2236,9 @@ update_build_l () {
+@@ -2203,8 +2240,9 @@ update_build_l () {
  }
  
  update_port () {
@@ -599,7 +611,7 @@
  	if [ -n "$2" ]; then
  		echo "===>>> Launching child to update $1 to $2"
  	else
-@@ -2300,7 +2334,7 @@ make_dep_list () {
+@@ -2300,7 +2338,7 @@ make_dep_list () {
  			fail "make_dep_list: Unsupported option '$dep_type'"
  		esac
  	done
@@ -608,7 +620,7 @@
  }
  
  gen_dep_list () {
-@@ -2368,15 +2402,17 @@ dependency_check () {
+@@ -2368,15 +2406,17 @@ dependency_check () {
  		rundeps=`gen_dep_list run-depends-list`
  
  		for dep in $d_port_list; do
@@ -629,7 +641,7 @@
  				rundep_list="$rundep_list $varname"
  				eval $varname=\"$portdir \$$varname\"
  				eval ${varname}_p=$dep
-@@ -2409,7 +2445,10 @@ dependency_check () {
+@@ -2409,7 +2449,10 @@ dependency_check () {
  
  	# Do not export, for THIS parent process only
  	[ -n "$PM_FIRST_PASS" ] && doing_dep_check=doing_dep_check
@@ -641,7 +653,7 @@
  		origin="${d_port#$pd/}"
  		if [ -n "$SHOW_WORK" ]; then
  			iport=`iport_from_origin $origin`
-@@ -2429,23 +2468,14 @@ dependency_check () {
+@@ -2429,23 +2472,14 @@ dependency_check () {
  		[ -z "$PM_URB_UP" ] &&
  			case "$CUR_DEPS" in *:${origin}:*) continue ;; esac
  
@@ -669,7 +681,7 @@
  				if [ -n "$confl_p" ]; then
  					confl_p=${confl_p%% *}
  					d_port="$pd/`origin_from_pdb $confl_p`"
-@@ -2498,7 +2528,11 @@ dependency_check () {
+@@ -2498,7 +2532,11 @@ dependency_check () {
  			check_for_updates $iport $origin || fail 'Update failed'
  		else
  			check_interactive $origin || continue
@@ -682,7 +694,7 @@
  		fi
  	done
  	[ -n "$PM_FIRST_PASS" ] && unset doing_dep_check
-@@ -2587,7 +2621,7 @@ post_first_pass () {
+@@ -2587,7 +2625,7 @@ post_first_pass () {
  		done
  
  		for dep in $build_only_dl_g; do
@@ -691,7 +703,7 @@
  			[ -n "$PM_DEL_BUILD_ONLY" ] &&
  				iport_from_origin ${dep#$pd/} >/dev/null && continue
  			temp_bodlg="$temp_bodlg $dep"
-@@ -2629,7 +2663,7 @@ urb_update () {
+@@ -2629,7 +2667,7 @@ urb_update () {
  			case " $PM_URB_ORIGINS" in *" $req_by_o "*) continue ;; esac
  			PM_URB_LIST="${PM_URB_LIST} ${req_by}"
  		done <<-EOF
@@ -700,7 +712,7 @@
  		EOF
  	done
  
-@@ -2642,7 +2676,7 @@ urb_update () {
+@@ -2642,7 +2680,7 @@ urb_update () {
  
  	for req_by in $PM_URB_LIST; do
  		# Probably not needed, but JIC
@@ -709,7 +721,7 @@
  
  		pm_v "===>>> $req_by depends on $PM_URB_IPORTS"
  
-@@ -2683,7 +2717,7 @@ multiport () {
+@@ -2683,7 +2721,7 @@ multiport () {
  			else
  				fail "$pd/${port} does not exist"
  			fi ;;
@@ -718,7 +730,7 @@
  				worklist_temp="$worklist_temp $port"
  			else
  				find_glob_dirs $port
-@@ -2773,8 +2807,8 @@ multiport () {
+@@ -2773,8 +2811,8 @@ multiport () {
  
  		num=$(( $num + 1 ))
  		init_term_printf "$port ${num}/${numports}"
@@ -729,7 +741,7 @@
  		[ -n "$update_failed" ] && fail "Update for $port failed"
  
  		case "$PM_NEEDS_UPDATE" in
-@@ -2803,7 +2837,7 @@ multiport () {
+@@ -2803,7 +2841,7 @@ multiport () {
  		*/*)	origin=$port ;;
  		*)	# If an installed version does not exist at this
  			# point it probably got updated as a dependency
@@ -738,7 +750,7 @@
  				numports=$(( $numports - 1 ))
  				continue
  			fi
-@@ -2823,7 +2857,7 @@ multiport () {
+@@ -2823,7 +2861,7 @@ multiport () {
  		num=$(( $num + 1 ))
  		init_term_printf "$port ${num}/${numports}"
  		("$program" $ARGS $port) || update_failed=update_failed
@@ -747,7 +759,7 @@
  		[ -n "$update_failed" ] && fail "Update for $port failed"
  	done
  
-@@ -2951,7 +2985,7 @@ all_first_pass () {
+@@ -2951,7 +2989,7 @@ all_first_pass () {
  		origin=`origin_from_pdb $iport` || {
  			case "$?" in
  			3) ;;
@@ -756,7 +768,7 @@
  				echo "	===>>> Skipping"
  				echo '' ;;
  			*)	fail 'Cannot continue' ;;
-@@ -3029,8 +3063,12 @@ no_valid_port () {
+@@ -3029,8 +3067,12 @@ no_valid_port () {
  	echo "===>>> Try $progname --help" ; echo '' ; safe_exit 1
  }
  
@@ -769,7 +781,7 @@
  	export_flavor $(flavor_part $portdir)
  	[ -n "$portdir" ] && { argv=$portdir ; unset portdir; }
  	argv=${argv:-$1} ; argv=${argv%/} ; argv=`globstrip $argv`
-@@ -3048,7 +3086,7 @@ if [ -z "$REPLACE_ORIGIN" ]; then
+@@ -3048,7 +3090,7 @@ if [ -z "$REPLACE_ORIGIN" ]; then
  			*)	echo '' ; no_valid_port ;;
  			esac
  		done ;;
@@ -778,7 +790,7 @@
  	esac
  
  	if [ -z "$portdir" -a -z "$upg_port" ]; then
-@@ -3061,9 +3099,11 @@ if [ -z "$REPLACE_ORIGIN" ]; then
+@@ -3061,9 +3103,11 @@ if [ -z "$REPLACE_ORIGIN" ]; then
  		unset glob_dirs
  	fi
  	unset argv
@@ -791,7 +803,7 @@
  	if [ -z "$PM_INDEX_ONLY" ]; then
  		pm_isdir_pd "$portdir" ] || missing=missing
  	else
-@@ -3076,12 +3116,12 @@ else
+@@ -3076,12 +3120,12 @@ else
  		echo '' ; no_valid_port
  	fi
  
@@ -806,7 +818,7 @@
  			ro_upg_port=$arg2
  		else
  			find_glob_dirs $arg2 && ro_upg_port=${glob_dirs#$pdb/}
-@@ -3097,7 +3137,7 @@ else
+@@ -3097,7 +3141,7 @@ else
  	unset arg2
  
  	if [ -z "$ro_upg_port" ]; then
@@ -815,7 +827,7 @@
  		if [ "$?" -eq 1 ]; then
  			echo ''
  			echo "===>>> The second argument to -o can be a package name,"
-@@ -3133,6 +3173,7 @@ if [ -z "$PM_INDEX_ONLY" ] && ! pm_isdir_pd "$portdir"
+@@ -3133,6 +3177,7 @@ if [ -z "$PM_INDEX_ONLY" ] && ! pm_isdir_pd "$portdir"
  	pm_isdir_pd "$moved_npd" || no_valid_port
  
  	[ "$$" -eq "$PM_PARENT_PID" ] && parent_exit
@@ -823,7 +835,7 @@
  	exec "$program" $ARGS -o $moved_npd $upg_port
  	# NOT REACHED
  fi
-@@ -3142,8 +3183,8 @@ iport_from_pkgname () {
+@@ -3142,8 +3187,8 @@ iport_from_pkgname () {
  
  	dir=$(dir_part $1)
  	flavor=$(flavor_part $1)
@@ -834,7 +846,7 @@
  }
  
  if [ -z "$upg_port" -a -z "$REPLACE_ORIGIN" ]; then
-@@ -3161,7 +3202,7 @@ if pm_islocked "$upg_port"; then
+@@ -3161,7 +3206,7 @@ if pm_islocked "$upg_port"; then
  		*:${upg_port}:*) ;;	# Let it build
  		*)	if [ -z "$FETCH_ONLY" ]; then
  				echo ''
@@ -843,7 +855,7 @@
  				get_answer_g n y "\t===>>> Update anyway? y/n"
  				case "$?" in
  				1)	;;	# Let it build
-@@ -3175,7 +3216,7 @@ if pm_islocked "$upg_port"; then
+@@ -3175,7 +3220,7 @@ if pm_islocked "$upg_port"; then
  				esac
  			else
  				echo ''
@@ -852,7 +864,7 @@
  				echo ''
  				CUR_DEPS="${CUR_DEPS}${upg_port}:${portdir}:"
  				safe_exit
-@@ -3183,7 +3224,7 @@ if pm_islocked "$upg_port"; then
+@@ -3183,7 +3228,7 @@ if pm_islocked "$upg_port"; then
  		esac
  	elif [ -n "$PM_URB_UP" ]; then
  		echo ''
@@ -861,7 +873,7 @@
  		echo ''
  		safe_exit
  	fi
-@@ -3229,11 +3270,14 @@ if [ -n "$PM_FIRST_PASS" -a -z "$FETCH_ONLY" ]; then
+@@ -3229,11 +3274,14 @@ if [ -n "$PM_FIRST_PASS" -a -z "$FETCH_ONLY" ]; then
  		fi
  	fi
  
@@ -877,7 +889,7 @@
  # Do these things first time through
  if [ -z "$PM_INDEX_ONLY" -a -z "$PM_BUILDING" -a -z "$SHOW_WORK" -a -z "$NO_ACTION" ]; then
  	# Do not start this in the background until we are sure we are going to proceed
-@@ -3389,7 +3433,7 @@ fetch_package () {
+@@ -3389,7 +3437,7 @@ fetch_package () {
  		export ppd
  	fi
  
@@ -886,7 +898,7 @@
  
  	if [ -z "$FETCH_ARGS" ]; then
  		FETCH_ARGS=`pm_make -f/usr/share/mk/bsd.port.mk -V FETCH_ARGS 2>/dev/null`
-@@ -3533,7 +3577,7 @@ notnewer () {
+@@ -3533,7 +3581,7 @@ notnewer () {
  		pm_v "===>>> Available package ($latest_pv) matches the current version"
  	elif [ -n "$latest_pv" -a -n "$PM_PACKAGES_NEWER" ]; then
  		if [ -n "$upg_port" ]; then
@@ -895,7 +907,7 @@
  			\<)	use_package=up_newer
  				pm_v "===>>> Available package ($latest_pv)"
  				pm_v "       is newer than installed ($upg_port)" ;;
-@@ -3549,7 +3593,7 @@ notnewer () {
+@@ -3549,7 +3597,7 @@ notnewer () {
  			pm_v "===>>> There is a package available ($latest_pv)"
  		fi
  	elif [ -n "$latest_pv" ]; then
@@ -904,7 +916,7 @@
  		\<)	# Could happen if ports tree is out of date
  			use_package=up_old_tree
  			pm_v "===>>> Available package ($latest_pv)"
-@@ -3603,7 +3647,7 @@ if [ -z "$use_package" ]; then
+@@ -3603,7 +3651,7 @@ if [ -z "$use_package" ]; then
  
  	pm_cd_pd $portdir
  	export_flavor $(flavor_part $portdir)
@@ -913,7 +925,7 @@
  		fail 'make clean failed'; }
  
  	fl_read=`echo ${TMPDIR}/f-${PM_PARENT_PID}-fetchlog-${portdir#*/}.*`
-@@ -3632,19 +3676,27 @@ if [ -z "$use_package" ]; then
+@@ -3632,19 +3680,27 @@ if [ -z "$use_package" ]; then
  
  # Return flavor for named pkg (must be executed in port directory!)
  pkg_flavor () {
@@ -943,7 +955,7 @@
  else
  	[ -z "$local_package" ] && {
  		fetch_package $latest_pv || fail "Fetch for ${latest_pv}.txz failed"; }
-@@ -3665,7 +3717,7 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ] && [ -z "$F
+@@ -3665,7 +3721,7 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ] && [ -z "$F
  		    grep -v ^$LOCALBASE_COMPAT > $pm_mktemp_file
  
  		unset temp
@@ -952,7 +964,7 @@
  		    sort - $pm_mktemp_file | uniq -d`; do
  			temp="${temp}$file "
  		done
-@@ -3688,7 +3740,7 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ] && [ -z "$F
+@@ -3688,7 +3744,7 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ] && [ -z "$F
  
  	if [ -n "$REPLACE_ORIGIN" -a -n "$ro_upg_port" ]; then # <se> not always true for port moved to flavored version with no version update???
  		# Delete any existing versions of the old port
@@ -961,7 +973,7 @@
  		pm_sv "Running pkg delete for $ro_upg_port"
  		pm_pkg_delete_s $ro_upg_port
  	fi
-@@ -3710,7 +3762,7 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ] && [ -z "$F
+@@ -3710,7 +3766,7 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ] && [ -z "$F
  
  		# If $ro_upg_port was non-automatic, keep its state
  		if [ "${np_orphan:-1}" -eq 1 ]; then
@@ -970,7 +982,7 @@
  		fi
  		pm_sv "Running pkg delete for $upg_port"
  		pm_pkg_delete_s $upg_port
-@@ -3776,7 +3828,7 @@ else
+@@ -3776,7 +3832,7 @@ else
  	[ -n "$local_package" ] && ppd=${LOCAL_PACKAGEDIR}/All
  
  	echo "===>>> Installing package from: ${ppd}/${latest_pv}.txz"
@@ -979,7 +991,7 @@
  		if [ -n "$PM_DELETE_PACKAGES" ]; then
  			pm_v "===>>> Deleting ${latest_pv}.txz"
  			pm_unlink_s ${ppd}/${latest_pv}.txz
-@@ -3786,6 +3838,10 @@ else
+@@ -3786,6 +3842,10 @@ else
  	fi
  fi
  
@@ -990,7 +1002,7 @@
  if [ -n "$preserve_dir" ]; then
  	rmdir $preserve_dir 2>/dev/null
  	unset preserve_dir preserve_port_files
-@@ -3801,14 +3857,14 @@ echo ''
+@@ -3801,14 +3861,14 @@ echo ''
  temp=`find $LOCALBASE_COMPAT -type d -empty 2>/dev/null`
  if [ -z "$temp" ] && pm_isdir "$LOCALBASE_COMPAT"; then
  	unset files
@@ -1007,7 +1019,7 @@
  		$PM_SU_CMD /etc/rc.d/ldconfig start > /dev/null
  	fi
  	unset temp file files
-@@ -3876,14 +3932,18 @@ if [ -n "$MAKE_PACKAGE" ]; then
+@@ -3876,14 +3936,18 @@ if [ -n "$MAKE_PACKAGE" ]; then
  fi
  
  if [ -z "$use_package" -a -z "$DONT_POST_CLEAN" ]; then
@@ -1029,7 +1041,7 @@
  fi
  
  
-@@ -3903,7 +3963,7 @@ if [ "$$" -ne "$PM_PARENT_PID" -o -n "$PM_URB" ]; then
+@@ -3903,7 +3967,7 @@ if [ "$$" -ne "$PM_PARENT_PID" -o -n "$PM_URB" ]; then
  fi
  
  INSTALLED_LIST="${INSTALLED_LIST}\t${ilist}\n"

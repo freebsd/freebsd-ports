@@ -1,7 +1,8 @@
 # Created by: Douglas Thrift <douglas@douglasthrift.net>
 
 PORTNAME=	keyring
-PORTVERSION=	23.0.1
+PORTVERSION=	18.0.1
+PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

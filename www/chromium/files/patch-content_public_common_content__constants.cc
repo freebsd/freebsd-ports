@@ -1,4 +1,4 @@
---- content/public/common/content_constants.cc.orig	2021-03-12 23:57:24 UTC
+--- content/public/common/content_constants.cc.orig	2021-04-14 18:41:03 UTC
 +++ content/public/common/content_constants.cc
 @@ -50,7 +50,7 @@ std::string GetCorsExemptRequestedWithHeaderName() {
    return base::JoinString(pieces, "-");

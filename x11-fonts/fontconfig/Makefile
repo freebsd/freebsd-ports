@@ -2,6 +2,7 @@
 
 PORTNAME=	fontconfig
 DISTVERSION=	2.13.93
+PORTREVISION?=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://www.freedesktop.org/software/fontconfig/release/

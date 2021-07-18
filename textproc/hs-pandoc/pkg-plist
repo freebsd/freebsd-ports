@@ -86,6 +86,8 @@ man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/article.jats_publishing
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.asciidoc
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.asciidoctor
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.biblatex
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.bibtex
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.commonmark
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.context
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.docbook4

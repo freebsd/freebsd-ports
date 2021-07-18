@@ -33,6 +33,7 @@ lib/libKF5Libkdepim.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/dbus-1/interfaces/org.kde.addressbook.service.xml
 share/dbus-1/interfaces/org.kde.mailtransport.service.xml
 share/locale/ar/LC_MESSAGES/libkdepim.mo
+share/locale/be/LC_MESSAGES/libkdepim.mo
 share/locale/bg/LC_MESSAGES/libkdepim.mo
 share/locale/bs/LC_MESSAGES/libkdepim.mo
 share/locale/ca/LC_MESSAGES/libkdepim.mo
@@ -75,10 +76,14 @@ share/locale/pt/LC_MESSAGES/libkdepim.mo
 share/locale/pt_BR/LC_MESSAGES/libkdepim.mo
 share/locale/ro/LC_MESSAGES/libkdepim.mo
 share/locale/ru/LC_MESSAGES/libkdepim.mo
+share/locale/se/LC_MESSAGES/libkdepim.mo
 share/locale/sk/LC_MESSAGES/libkdepim.mo
 share/locale/sl/LC_MESSAGES/libkdepim.mo
+share/locale/sq/LC_MESSAGES/libkdepim.mo
 share/locale/sr/LC_MESSAGES/libkdepim.mo
 share/locale/sv/LC_MESSAGES/libkdepim.mo
+share/locale/ta/LC_MESSAGES/libkdepim.mo
+share/locale/tg/LC_MESSAGES/libkdepim.mo
 share/locale/tr/LC_MESSAGES/libkdepim.mo
 share/locale/ug/LC_MESSAGES/libkdepim.mo
 share/locale/uk/LC_MESSAGES/libkdepim.mo

@@ -1,0 +1,25 @@
+--- OrthancServer/Resources/Configuration.json.orig	2021-01-29 09:36:16 UTC
++++ OrthancServer/Resources/Configuration.json
+@@ -10,12 +10,12 @@
+   // Path to the directory that holds the heavyweight files (i.e. the
+   // raw DICOM instances). Backslashes must be either escaped by
+   // doubling them, or replaced by forward slashes "/".
+-  "StorageDirectory" : "OrthancStorage",
++  "StorageDirectory" : "/var/db/orthanc/db-v5",
+ 
+   // Path to the directory that holds the SQLite index (if unset, the
+   // value of StorageDirectory is used). This index could be stored on
+   // a RAM-drive or a SSD device for performance reasons.
+-  "IndexDirectory" : "OrthancStorage",
++  "IndexDirectory" : "/var/db/orthanc/db-v5",
+ 
+   // Path to the directory where Orthanc stores its large temporary
+   // files. The content of this folder can be safely deleted once
+@@ -53,6 +53,7 @@
+   // find shared libraries. Backslashes must be either escaped by
+   // doubling them, or replaced by forward slashes "/".
+   "Plugins" : [
++    "%%PREFIX%%/share/orthanc/plugins/"
+   ],
+ 
+   // Maximum number of processing jobs that are simultaneously running

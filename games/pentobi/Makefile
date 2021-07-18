@@ -1,5 +1,5 @@
 PORTNAME=	pentobi
-PORTVERSION=	18.5
+PORTVERSION=	19.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -16,15 +16,14 @@ BUILD_DEPENDS=	itstool:textproc/itstool \
 USES=		compiler:c++14-lang cmake desktop-file-utils gettext-tools gnome qt:5 \
 		shared-mime-info tar:xz
 USE_GNOME=	librsvg2:build
-USE_QT=		core gui widgets svg concurrent quickcontrols2 \
-		declarative network \
+USE_QT=		core gui concurrent quickcontrols2 declarative network \
 		qmake_build buildtools_build linguisttools_build
 CMAKE_ARGS=	-DDOCBOOK_XSL=${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl
 
 PORTDOCS=	AUTHORS.md HACKING.md NEWS.md README.md
 PORTDATA=	*
 
-OPTIONS_DEFINE=	DOCS TEST GNOME KDE EXTERNAL_HELP
+OPTIONS_DEFINE=	DOCS TEST GNOME KDE
 OPTIONS_DEFAULT=EXTERNAL_HELP
 OPTIONS_SUB=	yes
 
@@ -36,9 +35,6 @@ KDE_CMAKE_BOOL=		PENTOBI_BUILD_KDE_THUMBNAILER
 KDE_USES=		kde:5
 KDE_USE=		KDE=kio
 KDE_DESC=		Build KDE thumbnailer
-EXTERNAL_HELP_DESC=	Open help in web browser instead of build-in webview
-EXTERNAL_HELP_CMAKE_BOOL=	PENTOBI_OPEN_HELP_EXTERNALLY
-EXTERNAL_HELP_USE_OFF=	QT=webview
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

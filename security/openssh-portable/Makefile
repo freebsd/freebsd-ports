@@ -1,8 +1,8 @@
 # Created by: dwcjr@inethouston.net
 
 PORTNAME=	openssh
-DISTVERSION=	8.4p1
-PORTREVISION=	4
+DISTVERSION=	8.6p1
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -99,8 +99,8 @@ ETCDIR?=		${PREFIX}/etc/ssh
 PATCH_SITES+=	http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,hpn,gsskex
 
 # Must add this patch before HPN due to conflicts
-.if ${PORT_OPTIONS:MKERB_GSSAPI}
-#BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
+.if ${PORT_OPTIONS:MKERB_GSSAPI} || ${FLAVOR:U} == gssapi
+BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
 .  if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
 # Needed glue for applying HPN patch without conflict
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-hpn-gss-glue

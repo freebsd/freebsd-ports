@@ -1,0 +1,19 @@
+# vim:ft=make
+ARCH_CFLAGS:=
+BINDIR:=	${PREFIX}/bin
+CALC_INCDIR:=	${PREFIX}/include/calc
+CALC_SHAREDIR:=	${DATADIR}
+CALCPAGER:=	more
+CC:=		%%CC%%
+CFLAGS:=	%%CFLAGS%% ${ICFLAGS} ${CCOPT}
+INCDIR:=	${LOCALBASE}/include
+LCC:=		%%CC%%
+LIBDIR:=	${PREFIX}/lib
+MANDIR:=	${PREFIX}/man/man1
+SCRIPTDIR:=	${PREFIX}/libexec/cscript
+T:=		${DESTDIR}
+USE_READLINE:=	-DUSE_READLINE -I${LOCALBASE}/include
+
+# These need to be in this order:
+READLINE_LIBS:=		-L${LOCALBASE}/lib -lreadline
+READLINE_EXTRAS:=	${READLINE_LIBS} -lhistory -lncurses

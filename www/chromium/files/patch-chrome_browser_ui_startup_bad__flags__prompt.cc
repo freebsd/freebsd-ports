@@ -1,4 +1,4 @@
---- chrome/browser/ui/startup/bad_flags_prompt.cc.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/startup/bad_flags_prompt.cc.orig	2021-04-14 18:40:55 UTC
 +++ chrome/browser/ui/startup/bad_flags_prompt.cc
 @@ -96,7 +96,7 @@ static const char* kBadFlags[] = {
  

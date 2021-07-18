@@ -24,11 +24,11 @@ include/tiffvers.h
 lib/libtiff.a
 lib/libtiff.so
 lib/libtiff.so.5
-lib/libtiff.so.5.6.0
+lib/libtiff.so.5.7.0
 lib/libtiffxx.a
 lib/libtiffxx.so
 lib/libtiffxx.so.5
-lib/libtiffxx.so.5.6.0
+lib/libtiffxx.so.5.7.0
 libdata/pkgconfig/libtiff-4.pc
 man/man1/fax2ps.1.gz
 man/man1/fax2tiff.1.gz
@@ -292,3 +292,4 @@ man/man3/libtiff.3tiff.gz
 %%PORTDOCS%%%%DOCSDIR%%/v4.0.9.html
 %%PORTDOCS%%%%DOCSDIR%%/v4.1.0.html
 %%PORTDOCS%%%%DOCSDIR%%/v4.2.0.html
+%%PORTDOCS%%%%DOCSDIR%%/v4.3.0.html

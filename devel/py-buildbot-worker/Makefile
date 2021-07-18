@@ -1,7 +1,7 @@
 # Created by: Frederic Praca <frederic.praca@freebsd-fr.org>
 
 PORTNAME=	buildbot-worker
-PORTVERSION=	2.7.0
+PORTVERSION=	2.10.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

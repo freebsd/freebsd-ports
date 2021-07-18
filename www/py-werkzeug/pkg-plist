@@ -1,3 +1,4 @@
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/application.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/helpers.py
@@ -9,10 +10,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/utils.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/views/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/views/static.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/application.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/models.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/static/style.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/templates/display.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/couchy/templates/layout.html
@@ -56,8 +57,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/manage-shorty.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/manage-simplewiki.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/manage-webpylike.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/partial/complex_routing.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/partial/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/partial/complex_routing.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/database.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/shared/style.css
@@ -68,7 +69,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/utils.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/views.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plnt/webapp.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shortly/shortly.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shortly/static/style.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shortly/templates/404.html
@@ -107,3 +107,4 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/upload.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpylike/example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpylike/webpylike.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wsecho.py

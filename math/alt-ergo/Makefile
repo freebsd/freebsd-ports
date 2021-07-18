@@ -17,8 +17,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BROKEN_powerpc64=	fails to compile: Assembler messages: /tmp/camlasm2822e8.s:10348: Error: operand out of range
 
 BUILD_DEPENDS=	ocaml-zarith>1.2:math/ocaml-zarith \
-		ocaml-ocamlgraph>1.8:math/ocaml-ocamlgraph
-RUN_DEPENDS=	ocaml-ocamlgraph>1.8:math/ocaml-ocamlgraph
+		ocaml-ocamlgraph>1.8:math/ocaml-ocamlgraph \
+		ocaml-lablgtk2>=0:x11-toolkits/ocaml-lablgtk2
+RUN_DEPENDS=	ocaml-ocamlgraph>1.8:math/ocaml-ocamlgraph \
+		ocaml-lablgtk2>=0:x11-toolkits/ocaml-lablgtk2
 
 GNU_CONFIGURE=	yes
 USES=		gmake

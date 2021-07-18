@@ -1,8 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	zope.proxy
-PORTVERSION=	4.1.3
-PORTREVISION=	1
+DISTVERSION=	4.3.5
 CATEGORIES=	net python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +14,7 @@ LICENSE=	ZPL21
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0:devel/py-zope.interface@${PY_FLAVOR}
 
-USES=		python:3.6+ zip
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

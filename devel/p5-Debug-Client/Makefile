@@ -21,8 +21,9 @@ TEST_DEPENDS=	p5-File-HomeDir>=1:devel/p5-File-HomeDir \
 		p5-Test-Deep>=0.112:devel/p5-Test-Deep \
 		p5-Test-Requires>=0.07:devel/p5-Test-Requires
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

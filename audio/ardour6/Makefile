@@ -1,8 +1,7 @@
 # Created by: Michael Beer <beerml@sigma6audio.de>
 
 PORTNAME=	ardour6
-PORTVERSION=	6.5.0
-PORTREVISION=	1
+PORTVERSION=	6.6.0
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/beerml/ardour_releases/raw/master/
 # The original master side points to the latest release only:
@@ -44,7 +43,7 @@ LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libwebsockets.so:net/libwebsockets
 
 USES=		compiler:c++11-lang desktop-file-utils gettext gnome \
-		libarchive pkgconfig python:3.7,build readline:port tar:bzip2 \
+		libarchive pkgconfig python:3.7,build readline tar:bzip2 \
 		waf xorg
 USE_CXXSTD=	c++11
 USE_XORG=	x11
@@ -61,6 +60,8 @@ CONFIGURE_ARGS=	--optimize --ptformat --freedesktop --no-phone-home \
 CONFIGURE_ARGS_amd64=	--arch='-msse -mfpmath=sse -DARCH_X86' --dist-target=x86_64
 # only support for i686 or better
 CONFIGURE_ARGS_i386=	--arch='-msse -mfpmath=sse -march=i686 -DARCH_X86' --dist-target=i686
+
+LDFLAGS_powerpc=	-Wl,-z,notext
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/obj\.use            = '\''libsmf libpbd'\''/obj\.use            = '\''libsmf_internal libpbd'\''/g' ${WRKSRC}/libs/evoral/wscript

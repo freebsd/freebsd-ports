@@ -2,6 +2,7 @@
 
 PORTNAME?=	mame
 PORTVERSION=	0.226
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	manu@FreeBSD.org
@@ -9,8 +10,8 @@ COMMENT=	Multi Arcade Machine Emulator
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=		amd64 i386 powerpc64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	not yet ported to any arch other than x86 and powerpc64(le)
+ONLY_FOR_ARCHS=		amd64 armv7 i386 powerpc powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	not yet ported to any arch other than armv7, x86 and powerpc*
 
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libexpat.so:textproc/expat2 \

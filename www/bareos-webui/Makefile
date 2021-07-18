@@ -1,7 +1,6 @@
 PORTNAME=       bareos
 DISTVERSIONPREFIX=      Release/
-DISTVERSION=    20.0.0
-PORTREVISION=	1
+DISTVERSION=    20.0.2
 CATEGORIES?=    www sysutils
 PKGNAMESUFFIX= -webui
 

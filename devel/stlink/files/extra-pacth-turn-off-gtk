@@ -1,19 +1,11 @@
---- CMakeLists.txt.orig	2020-06-01 01:00:20.000000000 +0300
-+++ CMakeLists.txt	2020-06-02 16:07:00.308748843 +0300
-@@ -48,11 +48,11 @@ endif ()
- find_package(libusb REQUIRED)
+--- CMakeLists.txt.orig	2021-04-25 01:24:02.000000000 +0300
++++ CMakeLists.txt	2021-07-13 15:04:41.612208080 +0300
+@@ -295,7 +295,7 @@
+ # Additional build tasks
+ ###
  
- ## Package configuration (pkg-config) on unix-based systems
--if (NOT WIN32 AND NOT CMAKE_CROSSCOMPILING)
--    #add_subdirectory(cmake/pkgconfig)
--    find_package(PkgConfig)
--    pkg_check_modules(GTK3 gtk+-3.0)
--endif ()
-+#if (NOT WIN32 AND NOT CMAKE_CROSSCOMPILING)
-+#    #add_subdirectory(cmake/pkgconfig)
-+#    find_package(PkgConfig)
-+#    pkg_check_modules(GTK3 gtk+-3.0)
-+#endif ()
+-add_subdirectory(src/stlink-gui)  # contains subordinate CMakeLists to build GUI
++# add_subdirectory(src/stlink-gui)  # contains subordinate CMakeLists to build GUI
+ add_subdirectory(tests)           # contains subordinate CMakeLists to build test executables
+ add_subdirectory(cmake/packaging) # contains subordinate CMakeLists to build packages
  
- ## Check for system-specific additional header files and libraries
- include(CheckIncludeFile)

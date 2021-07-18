@@ -1,0 +1,39 @@
+--- configure.ac.orig	2021-06-22 16:59:07.387685000 -0600
++++ configure.ac	2021-06-22 16:59:40.892936000 -0600
+@@ -165,21 +165,21 @@
+ 
+ 
+ dnl See if git exists.  If it does, update VERSION to include a git tag
+-AC_CHECK_PROG(git_found, git, true, false)
+-if test x"${git_found}" = xtrue; then
+-    # Test to see if git describe works (discarding any output).  If
+-    # it works, use it.  Otherwise, keep existing value of VERSION.
+-    # (git describe fails if git is executed in a non-Git directory, e.g.,
+-    # an unpacked tarball. Since the exit codes of git describe are undocumented,
+-    # we cannot distinguish that from a missing annotated tag.
+-    # Play it safe by refusing to change VERSION.)
+-    if git describe > /dev/null 2>&1; then
+-        VERSION="`git describe --dirty`"
+-        # When building RPMs, hyphens in the version are not allowed, so
+-        # replace them with underscores.
+-        VERSION=`echo $VERSION | sed 's;-;_;g'`
+-    fi
+-fi
++dnl AC_CHECK_PROG(git_found, git, true, false)
++dnl if test x"${git_found}" = xtrue; then
++dnl     # Test to see if git describe works (discarding any output).  If
++dnl     # it works, use it.  Otherwise, keep existing value of VERSION.
++dnl     # (git describe fails if git is executed in a non-Git directory, e.g.,
++dnl     # an unpacked tarball. Since the exit codes of git describe are undocumented,
++dnl     # we cannot distinguish that from a missing annotated tag.
++dnl     # Play it safe by refusing to change VERSION.)
++dnl     if git describe > /dev/null 2>&1; then
++dnl         VERSION="`git describe --dirty`"
++dnl         # When building RPMs, hyphens in the version are not allowed, so
++dnl         # replace them with underscores.
++dnl         VERSION=`echo $VERSION | sed 's;-;_;g'`
++dnl     fi
++dnl fi
+ 
+ dnl Parses the version number for the manual
+ manual_version=`echo $VERSION | sed 's+branch_++; s+_base++; s+_dirty++; s+_+.+g'`

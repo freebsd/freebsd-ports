@@ -11,9 +11,11 @@ DISTNAME=	live.${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	LIVE.COM Streaming Media
 
-LICENSE=	LGPL21
-
-NO_CDROM=	'dated material'
+LICENSE=	LGPL21 MAT
+LICENSE_COMB=	multi
+LICENSE_NAME_MAT=	dated material
+LICENSE_TEXT_MAT=	dated material
+LICENSE_PERMS_MAT=	pkg-mirror dist-mirror auto-accept
 
 BROKEN_sparc64=		Fails to compile
 

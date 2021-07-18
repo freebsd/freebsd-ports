@@ -1,0 +1,11 @@
+--- builds/posix/Makefile.in.plugins_examples	2021-05-29 10:05:05.000000000 -0500
++++ builds/posix/Makefile.in.plugins_examples	2021-06-25 22:13:32.653450000 -0500
+@@ -101,7 +101,7 @@
+ crypt_app: $(CRYPT_APP)
+ 
+ $(CRYPT_APP):	$(CA_Objects)
+-	$(EXE_LINK) $(LSB_UNDEF) $^ -o $@ $(FIREBIRD_LIBRARY_LINK)
++	$(EXE_LINK) $(LSB_UNDEF) $^ -o $@ $(LDFLAGS) $(FIREBIRD_LIBRARY_LINK)
+ 
+ 
+ include $(ROOT)/gen/make.shared.targets

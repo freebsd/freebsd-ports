@@ -1,3 +1,3 @@
-TIMESTAMP = 1601283819
-SHA256 (gnome/seahorse-3.36.2.tar.xz) = 45eb2066aceb4ce192342d55edc5e801b1e054f1963d353f92eeb1776fef959b
-SIZE (gnome/seahorse-3.36.2.tar.xz) = 1695824
+TIMESTAMP = 1622079483
+SHA256 (gnome/seahorse-40.0.tar.xz) = 7ec7057b3868bac6ea041fda82140a39f5ec9e5b188b450914d453bc2d55d02c
+SIZE (gnome/seahorse-40.0.tar.xz) = 1309064

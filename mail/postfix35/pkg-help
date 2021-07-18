@@ -1,0 +1,15 @@
+Readme SASL:
+
+Dovecot uses its own daemon process for authentication.  Because there is no
+need to link extra libraries into Postfix, Dovecot SASL will be build into
+Postfix by default.
+
+Cyrus SASL is optional and will be the default if build with SASL=on
+
+To find out what SASL implementations are compiled into Postfix, use the
+following commands:
+
+ % postconf -a (SASL support in the SMTP server)
+ % postconf -A (SASL support in the SMTP+LMTP client)
+ % postconf smtpd_sasl_type (show default SASL)
+

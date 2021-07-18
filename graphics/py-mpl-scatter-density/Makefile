@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}fast-histogram>=0.3:misc/py-fast-histogram@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.0:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

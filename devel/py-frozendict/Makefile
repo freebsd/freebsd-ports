@@ -1,7 +1,7 @@
 # Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
 
 PORTNAME=	frozendict
-PORTVERSION=	1.2
+PORTVERSION=	2.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

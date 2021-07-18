@@ -1,3 +1,3 @@
-TIMESTAMP = 1610032322
-SHA256 (python-dtrace-0.0.11.tar.gz) = b343728e61cb697ab76eb8091a361d7de6735527c788fc85b979db8356640fbc
-SIZE (python-dtrace-0.0.11.tar.gz) = 15143
+TIMESTAMP = 1615201570
+SHA256 (python-dtrace-0.0.13.tar.gz) = 23c6ddb3241686f6845d6333dade5215bb497c3e241a413f8251c42ae941123b
+SIZE (python-dtrace-0.0.13.tar.gz) = 15619

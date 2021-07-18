@@ -1,4 +1,4 @@
---- extensions/common/features/feature.cc.orig	2021-03-12 23:57:25 UTC
+--- extensions/common/features/feature.cc.orig	2021-04-14 18:41:04 UTC
 +++ extensions/common/features/feature.cc
 @@ -26,7 +26,7 @@ Feature::Platform Feature::GetCurrentPlatform() {
    return LACROS_PLATFORM;

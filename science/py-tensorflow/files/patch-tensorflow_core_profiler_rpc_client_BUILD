@@ -1,0 +1,19 @@
+--- tensorflow/core/profiler/rpc/client/BUILD.orig	2019-10-14 21:08:43 UTC
++++ tensorflow/core/profiler/rpc/client/BUILD
+@@ -37,6 +37,8 @@ cc_library(
+         "//tensorflow/core:lib",
+         "//tensorflow/core:protos_all_cc",
+         "//tensorflow/core/profiler:op_profile_proto_cc",
++	"@com_google_absl//absl/base",
++	"@com_google_absl//absl/synchronization",
+     ],
+ )
+ 
+@@ -48,6 +50,7 @@ cc_library(
+         "//tensorflow/core:lib",
+         "//tensorflow/core:protos_all_cc",
+         "@jsoncpp_git//:jsoncpp",
++	"@jsonHeaders//:headers",
+     ],
+ )
+ 

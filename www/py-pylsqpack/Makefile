@@ -16,6 +16,6 @@ USES=		compiler:c++11-lang python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 do-test:
-	cd ${WRKSRC} && ${PYTHON_CMD} -m unittest discover -v
+	cd ${WRKSRC} && ${PYTHON_CMD} -m unittest -v
 
 .include <bsd.port.mk>

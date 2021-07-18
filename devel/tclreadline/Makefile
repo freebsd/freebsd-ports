@@ -11,7 +11,7 @@ COMMENT=	GNU readline for TCL
 
 LICENSE=	BSD3CLAUSE
 
-USES=		autoreconf libtool tcl readline:port
+USES=		autoreconf libtool tcl readline
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \

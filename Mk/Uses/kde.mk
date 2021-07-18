@@ -17,11 +17,16 @@
 # To simplify the ports, also:
 # CATEGORIES	If the port is part of one of the KDE Software distribution,
 #		it can add, in addition to 'kde' one of the following:
-#			kde-application:	part of applications release
+#			kde-applications:	part of applications release
 #			kde-frameworks:		part of frameworks release
 #			kde-plasma:		part of plasma release
 #		this will then set default values for MASTER_SITES and DIST_SUBDIR
 #		as well as CPE_VENDOR and LICENSE.
+#
+# option DOCS	If the port is part of kde-applications (see CATEGORIES,
+#		above) and has an option defined for DOCS then a dependency
+#		for doctools_build is added. The option itself doesn't
+#		have to do anything -- the dependency is always there.
 #
 # KDE_INVENT	If the port does not have a regular release, and should
 #		be fetched from KDE Invent (a GitLab instance) it can set
@@ -70,20 +75,17 @@ _KDE_RELNAME=		KDE${_KDE_VERSION}
 
 # === VERSIONS OF THE DIFFERENT COMPONENTS =====================================
 # Current KDE desktop.
-KDE_PLASMA_VERSION?=		5.20.5
+KDE_PLASMA_VERSION?=		5.22.3
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
-KDE_FRAMEWORKS_VERSION?=	5.81.0
+KDE_FRAMEWORKS_VERSION?=	5.83.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
-KDE_APPLICATIONS_VERSION?=	20.12.3
-KDE_APPLICATIONS_SHLIB_VER?=	5.16.3
+KDE_APPLICATIONS_VERSION?=	21.04.3
+KDE_APPLICATIONS_SHLIB_VER?=	5.17.3
 KDE_APPLICATIONS_BRANCH?=	stable
-# Upstream moves old software to Attic/. Specify the newest applications release there.
-# Only the major version is used for the comparison.
-_KDE_APPLICATIONS_ATTIC_VERSION=	17.08.3
 
 # Extended KDE universe applications.
 CALLIGRA_VERSION?=		2.9.11
@@ -131,7 +133,6 @@ GL_SITE=		https://invent.kde.org
 GL_ACCOUNT=		${_invent_category}
 GL_PROJECT=		${_invent_name}
 GL_COMMIT=		${_invent_hash}
-WRKSRC=			${WRKDIR}/${GL_PROJECT}-${GL_COMMIT}-${GL_COMMIT}
 .      endif
 .    endif
 
@@ -146,22 +147,21 @@ CPE_VENDOR?=		kde
 
 .      if ${_KDE_CATEGORY:Mkde-applications}
 PORTVERSION?=		${KDE_APPLICATIONS_VERSION}
-# Decide where the file lies on KDE's servers: Check whether the file lies in Attic
-.        if ${KDE_APPLICATIONS_VERSION:R:R} <= ${_KDE_APPLICATIONS_ATTIC_VERSION:R:R}
-MASTER_SITES?=		KDE/Attic/applications/${KDE_APPLICATIONS_VERSION}/src
-.        elseif ${KDE_APPLICATIONS_VERSION:R} < 19.12
-MASTER_SITES?=		KDE/${KDE_APPLICATIONS_BRANCH}/applications/${KDE_APPLICATIONS_VERSION}/src
-.        else
 MASTER_SITES?=		KDE/${KDE_APPLICATIONS_BRANCH}/release-service/${KDE_APPLICATIONS_VERSION}/src
 # Let bsd.port.mk create the plist-entries for the documentation.
 # KDE Applications ports install their documentation to
-# ${PREFIX}/share/doc.
+# ${PREFIX}/share/doc. This is only done if the port
+# defines OPTION DOCS -- the _KDE_OPTIONS here is to
+# avoid make errors when there are no options defined at all.
+_KDE_OPTIONS=		bogus ${OPTIONS_DEFINE}
+.          if ${_KDE_OPTIONS:MDOCS}
 DOCSDIR=		${PREFIX}/share/doc
 PORTDOCS?=		HTML/*
+USE_KDE+=		doctools_build
+.          endif
 # Further pass along a SHLIB_VER PLIST_SUB
 PLIST_SUB+=		KDE_APPLICATIONS_SHLIB_VER=${KDE_APPLICATIONS_SHLIB_VER} \
 			KDE_APPLICATIONS_VERSION_SHORT="${KDE_APPLICATIONS_VERSION:R:R}"
-.        endif
 DIST_SUBDIR?=		KDE/release-service/${KDE_APPLICATIONS_VERSION}
 .      elif ${_KDE_CATEGORY:Mkde-plasma}
 PORTVERSION?=		${KDE_PLASMA_VERSION}
@@ -263,7 +263,7 @@ _USE_PLASMA_ALL=	activitymanagerd breeze breeze-gtk \
 			infocenter kde-cli-tools kde-gtk-config \
 			kdeplasma-addons kgamma5 kmenuedit kscreen \
 			kscreenlocker ksshaskpass ksysguard kwallet-pam \
-			kwayland-integration kwin kwrited libkscreen \
+			kwayland-integration kwin kwrited layer-shell-qt libkscreen \
 			libksysguard milou oxygen plasma-browser-integration \
 			plasma-desktop plasma-disks plasma-integration plasma-pa \
 			plasma-sdk plasma-workspace plasma-workspace-wallpapers \
@@ -436,11 +436,14 @@ kde-kquickcharts_PATH=		${QT_QMLDIR}/org/kde/quickcharts/controls/libchartscontr
 kde-kross_PORT=			lang/kf5-kross
 kde-kross_LIB=			libKF5KrossCore.so
 
-kde-kwayland-protocols_PORT=	x11/plasma-kwayland-protocols
+kde-kwayland-protocols_PORT=	x11/plasma-wayland-protocols
 kde-kwayland-protocols_LIB=	${KDE_PREFIX}/lib/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfig.cmake
 
 kde-kwayland-server_PORT=	x11/plasma5-kwayland-server
 kde-kwayland-server_LIB=	libKWaylandServer.so
+
+kde-layer-shell-qt_PORT=	x11/plasma5-layer-shell-qt
+kde-layer-shell-qt_LIB=		libLayerShellQtInterface.so
 
 kde-mediaplayer_PORT=		multimedia/kf5-kmediaplayer
 kde-mediaplayer_LIB=		libKF5MediaPlayer.so.5

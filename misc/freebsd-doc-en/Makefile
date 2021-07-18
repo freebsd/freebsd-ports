@@ -16,7 +16,8 @@ BROKEN_aarch64=		fails to build: Exception in thread "main" java.lang.StackOverf
 BROKEN_FreeBSD_11_powerpc64=	fails to build: Java Runtime Environment: SIGSEGV happened inside stack but outside yellow and red zone.
 BROKEN_FreeBSD_12_powerpc64=	fails to build: Java Runtime Environment: SIGSEGV happened inside stack but outside yellow and red zone.
 
-BUILD_DEPENDS=	docproj>=2.0_6:textproc/docproj
+BUILD_DEPENDS=	docproj>=2.0_6:textproc/docproj \
+		docproj-legacy>0:textproc/docproj-legacy
 
 USES=		groff uidfix
 WRKSRC=		${WRKDIR}/doc
@@ -67,7 +68,7 @@ PLIST_FORMATS+=	${O:tl:S,_,-,}
 
 .if ${PORT_OPTIONS:MPDF}
 BUILD_DEPENDS+=	fop:textproc/fop \
-		${LOCALBASE}/share/fonts/GentiumPlus/GentiumPlus-R.ttf:x11-fonts/gentium-plus \
+		${LOCALBASE}/share/fonts/GentiumPlus/GentiumPlus-Regular.ttf:x11-fonts/gentium-plus \
 		${LOCALBASE}/share/fonts/Droid/DroidSans.ttf:x11-fonts/droid-fonts-ttf \
 		${LOCALBASE}/share/fonts/dejavu/DejaVuSansMono.ttf:x11-fonts/dejavu
 .endif

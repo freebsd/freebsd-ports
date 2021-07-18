@@ -1,7 +1,7 @@
 # Created by: Evan Sarmiento <esarmiento@wayfair.com>
 
 PORTNAME=	graphite-web
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

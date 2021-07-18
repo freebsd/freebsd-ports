@@ -1,7 +1,7 @@
 # Created by: peter.thoenen@yahoo.com
 
 PORTNAME=	tor
-DISTVERSION=	0.4.5.7
+DISTVERSION=	0.4.6.6
 CATEGORIES=	security net
 MASTER_SITES=	TOR
 
@@ -106,10 +106,6 @@ LDFLAGS+=		-lc++ -lm # required by libtcmalloc.a and isn't cocered by google-per
 .else
 LIB_DEPENDS+=		libtcmalloc.so:devel/google-perftools
 .endif
-.endif
-
-.if ${SSL_DEFAULT:Mlibressl*}
-BROKEN=		Libressl 3.2.1 with compatibility issues to Tor relays: https://gitlab.torproject.org/tpo/core/tor/-/issues/40128
 .endif
 
 post-patch:

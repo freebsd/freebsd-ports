@@ -5,7 +5,7 @@ DISTVERSION=	2.3.3
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://www.nagios-plugins.org/download/ \
+MASTER_SITES=	https://nagios-plugins.org/download/ \
 		LOCAL/mat/${PORTNAME}
 
 MAINTAINER=	mat@FreeBSD.org

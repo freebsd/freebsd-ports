@@ -8,9 +8,7 @@ COMMENT=	USB floppy disk interface for reading and writing non-PC disk formats
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
-BUILD_DEPENDS=	ninja:devel/ninja
-
-USES=		pkgconfig gmake compiler:gcc-c++11-lib sqlite
+USES=		compiler:gcc-c++11-lib gmake ninja:build pkgconfig sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	davidgiven

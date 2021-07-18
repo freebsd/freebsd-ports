@@ -9,7 +9,7 @@
  #include <stdlib.h>
  #include <stdint.h>
  #include <assert.h>
-@@ -73,10 +75,12 @@ socket(int domain, int type, int protocol)
+@@ -73,15 +75,22 @@ socket(int domain, int type, int protocol)
  {
  	wrapped_calls_socket++;
  
@@ -22,7 +22,17 @@
  
  	return real_socket(domain, type, protocol);
  }
-@@ -89,10 +93,12 @@ fcntl(int fd, int cmd, ...)
+ 
+ __attribute__ ((visibility("default"))) int
++#ifdef fcntl
++/* Work around #define fcntl in epoll-shim */
++#define old_fcntl fcntl
++#undef fcntl
++#endif
+ fcntl(int fd, int cmd, ...)
+ {
+ 	va_list ap;
+@@ -89,10 +98,12 @@ fcntl(int fd, int cmd, ...)
  
  	wrapped_calls_fcntl++;
  
@@ -35,7 +45,16 @@
  
  	va_start(ap, cmd);
  	arg = va_arg(ap, void*);
-@@ -106,10 +112,12 @@ recvmsg(int sockfd, struct msghdr *msg, int flags)
+@@ -100,16 +111,21 @@ fcntl(int fd, int cmd, ...)
+ 
+ 	return real_fcntl(fd, cmd, arg);
+ }
++#ifdef old_fcntl
++#define fcntl old_fcntl 
++#endif
+ 
+ __attribute__ ((visibility("default"))) ssize_t
+ recvmsg(int sockfd, struct msghdr *msg, int flags)
  {
  	wrapped_calls_recvmsg++;
  
@@ -48,7 +67,7 @@
  
  	return real_recvmsg(sockfd, msg, flags);
  }
-@@ -156,12 +164,14 @@ TEST(os_wrappers_socket_cloexec)
+@@ -156,12 +172,14 @@ TEST(os_wrappers_socket_cloexec)
  	do_os_wrappers_socket_cloexec(0);
  }
  
@@ -63,7 +82,7 @@
  
  static void
  do_os_wrappers_dupfd_cloexec(int n)
-@@ -195,11 +205,13 @@ TEST(os_wrappers_dupfd_cloexec)
+@@ -195,11 +213,13 @@ TEST(os_wrappers_dupfd_cloexec)
  	do_os_wrappers_dupfd_cloexec(0);
  }
  
@@ -77,7 +96,7 @@
  
  struct marshal_data {
  	struct wl_connection *read_connection;
-@@ -218,8 +230,7 @@ struct marshal_data {
+@@ -218,8 +238,7 @@ struct marshal_data {
  static void
  setup_marshal_data(struct marshal_data *data)
  {
@@ -87,7 +106,7 @@
  
  	data->read_connection = wl_connection_create(data->s[0]);
  	assert(data->read_connection);
-@@ -328,11 +339,13 @@ TEST(os_wrappers_recvmsg_cloexec)
+@@ -328,11 +347,13 @@ TEST(os_wrappers_recvmsg_cloexec)
  	do_os_wrappers_recvmsg_cloexec(0);
  }
  

@@ -12,6 +12,7 @@ share/icons/hicolor/48x48/apps/artikulate.png
 share/icons/hicolor/64x64/apps/artikulate.png
 share/icons/hicolor/scalable/apps/artikulate.svg
 share/knsrcfiles/artikulate.knsrc
+share/locale/az/LC_MESSAGES/artikulate.mo
 share/locale/bs/LC_MESSAGES/artikulate.mo
 share/locale/ca/LC_MESSAGES/artikulate.mo
 share/locale/ca@valencia/LC_MESSAGES/artikulate.mo
@@ -32,6 +33,7 @@ share/locale/hu/LC_MESSAGES/artikulate.mo
 share/locale/ia/LC_MESSAGES/artikulate.mo
 share/locale/it/LC_MESSAGES/artikulate.mo
 share/locale/ja/LC_MESSAGES/artikulate.mo
+share/locale/ko/LC_MESSAGES/artikulate.mo
 share/locale/lt/LC_MESSAGES/artikulate.mo
 share/locale/ml/LC_MESSAGES/artikulate.mo
 share/locale/mr/LC_MESSAGES/artikulate.mo

@@ -1,5 +1,5 @@
 PORTNAME=	llvm
-DISTVERSION=	12.0.0rc4
+DISTVERSION=	12.0.1
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
@@ -72,20 +72,24 @@ CMAKE_ARGS+=	-DLLVM_ENABLE_TERMINFO=OFF
 CFLAGS+=	-DNDEBUG
 CXXFLAGS+=	-DNDEBUG
 
-OPTIONS_DEFINE=	BE_AMDGPU CLANG DOCS EXTRAS LIT LLD LLD_LINK PYCLANG
+OPTIONS_DEFINE=	BE_AMDGPU CLANG DOCS EXTRAS LIT LLD PYCLANG
 OPTIONS_DEFINE_aarch64=	OPENMP
 OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD LLDB OPENMP
 OPTIONS_DEFINE_i386=	COMPILER_RT LLDB OPENMP
+OPTIONS_DEFINE_powerpc=	GOLD
 OPTIONS_DEFINE_powerpc64=	GOLD OPENMP
 OPTIONS_DEFINE_powerpc64le=	GOLD OPENMP
-OPTIONS_DEFAULT=	BE_AMDGPU BE_STANDARD CLANG EXTRAS LIT LLD LLD_LINK PYCLANG
+OPTIONS_DEFINE_riscv64=	OPENMP
+OPTIONS_DEFAULT=	BE_AMDGPU BE_STANDARD CLANG EXTRAS LIT LLD PYCLANG
 OPTIONS_DEFAULT_aarch64=	OPENMP
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD LLDB OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT LLDB OPENMP
-OPTIONS_DEFAULT_powerpc64=     ${OPTIONS_DEFAULT_powerpc64_${OSREL:R}} OPENMP
+OPTIONS_DEFAULT_powerpc=	GOLD
+OPTIONS_DEFAULT_powerpc64=	${OPTIONS_DEFAULT_powerpc64_${OSREL:R}} OPENMP
 OPTIONS_DEFAULT_powerpc64_13=	GOLD
 OPTIONS_DEFAULT_powerpc64_14=	GOLD
-OPTIONS_DEFAULT_powerpc64le=     GOLD OPENMP
+OPTIONS_DEFAULT_powerpc64le=	GOLD OPENMP
+OPTIONS_DEFAULT_riscv64=	OPENMP
 OPTIONS_SINGLE=		BACKENDS
 OPTIONS_SINGLE_BACKENDS=BE_FREEBSD BE_NATIVE BE_STANDARD
 OPTIONS_SUB=	yes
@@ -117,6 +121,8 @@ COMPILER_RT_DESC=	Sanitizer libraries
 # but this seems to work as a workaround...
 COMPILER_RT_BUILD_DEPENDS=	libunwind>0:devel/libunwind
 COMPILER_RT_CMAKE_ON=	-DCOMPILER_RT_INSTALL_PATH=${LLVM_PREFIX}/lib/clang/${LLVM_RELEASE}
+# Allow unwind.h to be found reliably
+COMPILER_RT_USES=	localbase
 COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS:S|^|${_CRTLIBDIR}/|} \
 			${_COMPILER_RT_BLACKLISTS:S|^|${_CRTBLDIR}/|}
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
@@ -136,8 +142,6 @@ GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
 LIT_DESC=		Install lit and FileCheck test tools
 LIT_VARS=		_USES_PYTHON=python:3.6+
 LLD_DESC=		Install lld, the LLVM linker
-LLD_LINK_DESC=		Link ld.lld as ld to clang uses it
-LLD_LINK_IMPLIES=	LLD
 LLDB_BUILD_DEPENDS=	swig:devel/swig
 LLDB_CMAKE_ON=		-DLUA_INCLUDE_DIR=${LOCALBASE}/include/lua${LUA_VER_STR} \
 			-DLUA_LIBRARY=${LOCALBASE}/lib/liblua-${LUA_VER}.so \
@@ -312,7 +316,7 @@ _FREEBSD_BACKENDS=	AArch64 ARM Mips PowerPC RISCV Sparc X86
 FREEBSD_BACKENDS=	${_FREEBSD_BACKENDS}
 .if ${ARCH} == amd64
 _NATIVE_BACKENDS=	X86
-.elif ${ARCH} == arm64
+.elif ${ARCH} == aarch64
 _NATIVE_BACKENDS=	AArch64
 .elif ${ARCH:Marmv*}
 _NATIVE_BACKENDS=	ARM
@@ -381,7 +385,6 @@ _COMPILER_RT_LIBS_i386= \
 _COMPILER_RT_BLACKLISTS+=	asan_blacklist.txt
 _COMPILER_RT_BLACKLISTS+=	msan_blacklist.txt
 _COMPILER_RT_LIBS= \
-	${_COMPILER_RT_LIBS_i386} \
 	libclang_rt.asan-preinit-x86_64.a \
 	libclang_rt.asan-x86_64.a \
 	libclang_rt.asan-x86_64.a.syms \
@@ -420,6 +423,9 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.xray-fdr-x86_64.a \
 	libclang_rt.xray-profiling-x86_64.a \
 	libclang_rt.xray-x86_64.a
+.if exists(/usr/lib32/libc.so.7)
+_COMPILER_RT_LIBS+=	${_COMPILER_RT_LIBS_i386}
+.endif
 .endif
 .if ${ARCH} == "i386"
 _COMPILER_RT_BLACKLISTS+=	asan_blacklist.txt
@@ -448,7 +454,7 @@ PLIST_SUB+=     ${opt}="@comment "
 post-patch:
 	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \
 	    -e 's|from lit|from lit${LLVM_SUFFIX}|' \
-	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
+	    -e 's|lit\.|lit${LLVM_SUFFIX}.|g' \
 	    ${WRKSRC}/llvm/utils/lit/lit.py \
 	    ${WRKSRC}/llvm/utils/lit/lit/*.py \
 	    ${WRKSRC}/llvm/utils/lit/lit/formats/*.py

@@ -1,15 +1,14 @@
 --- src/util.cpp.orig	2020-12-26 14:29:40 UTC
 +++ src/util.cpp
-@@ -25,6 +25,8 @@
+@@ -25,6 +25,7 @@
  #include <mutex>
  #include <unordered_set>
  
 +#include <sys/types.h>
-+
  #include "md5.h"
  
  #include <qregexp.h>
-@@ -3823,16 +3825,16 @@ QCString convertNameToFile(const char *name,bool allow
+@@ -3812,24 +3813,18 @@ QCString convertNameToFile(const char *name,bool allow
      if (resultLen>=128) // prevent names that cannot be created!
      {
        // third algorithm based on MD5 hash
@@ -23,27 +22,18 @@
    }
    if (createSubdirs)
    {
-+#if MAP_ALGO==ALGO_COUNT || MAP_ALGO==ALGO_CRC16
-     int l1Dir=0,l2Dir=0;
-+#endif
- 
- #if MAP_ALGO==ALGO_COUNT
-     // old algorithm, has the problem that after regeneration the
-@@ -3863,12 +3865,13 @@ QCString convertNameToFile(const char *name,bool allow
-     l2Dir = (dirNum>>4)&0xff;
- #elif MAP_ALGO==ALGO_MD5
-     // third algorithm based on MD5 hash
+-    int l1Dir=0,l2Dir=0;
+-
+     // compute md5 hash to determine sub directory to use
 -    uchar md5_sig[16];
 -    MD5Buffer((const unsigned char *)result.data(),result.length(),md5_sig);
 -    l1Dir = md5_sig[14]&0xf;
 -    l2Dir = md5_sig[15];
 +    char md5[33];
 +    MD5Data((const unsigned char *)result.data(),result.length(),md5);
+ 
+-    result.prepend(QCString().sprintf("d%x/d%02x/",l1Dir,l2Dir));
 +    result.prepend(QCString().sprintf("d%c/d%c%c/",md5[29],md5[30],md5[31]));
- #endif
-+#if MAP_ALGO==ALGO_COUNT || MAP_ALGO==ALGO_CRC16
-     result.prepend(QCString().sprintf("d%x/d%02x/",l1Dir,l2Dir));
-+#endif
    }
    //printf("*** convertNameToFile(%s)->%s\n",name,result.data());
    return result;

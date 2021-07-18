@@ -12,9 +12,14 @@ EXTRACT_SUFX=	.sh.bin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Tournament 2003 demo
 
+# Converted from RESTRICTED
+LICENSE=	Unreal
+LICENSE_NAME=	Unreal
+LICENSE_TEXT=	Redistribution is limited, see license
+LICENSE_PERMS=	auto-accept
+
 USES=		linux
 USE_LINUX=	dri sdl12 xorglibs
-RESTRICTED=	Redistribution is limited, see license
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

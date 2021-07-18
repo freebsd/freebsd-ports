@@ -7,7 +7,7 @@ CATEGORIES=	graphics sysutils
 MASTER_SITES=	SF/gphoto/${PORTNAME}/${PORTVERSION}.0
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Mount PTP camera as a file system
 
 LICENSE=	GPLv2

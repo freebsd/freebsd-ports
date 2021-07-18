@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	sentinelhub
-PORTVERSION=	3.1.0
+PORTVERSION=	3.3.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aenum>=2.1.4:devel/py-aenum@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto3>=0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}botocore>=0:devel/py-botocore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=0:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dataclasses-json>=0:devel/py-dataclasses-json@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oauthlib>=0:security/py-oauthlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
@@ -28,15 +29,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aenum>=2.1.4:devel/py-aenum@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}utm>=0:graphics/py-utm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3700
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dataclasses>=0:devel/py-dataclasses@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

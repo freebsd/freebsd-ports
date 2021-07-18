@@ -1,11 +1,11 @@
---- installManPage.orig	2017-09-03 10:29:26 UTC
-+++ installManPage
-@@ -100,7 +100,7 @@ SrcDir=`dirname $ManPage`
+--- unix/installManPage.orig	2021-06-07 16:21:14 UTC
++++ unix/installManPage
+@@ -108,7 +108,7 @@ done
  
  First=""
  for Target in $Names; do
 -    Target=$Target.$Section$Suffix
 +    Target=$Target$Suffix.$Section
-     rm -f $Dir/$Target $Dir/$Target.*
+     rm -f "$Dir/$Target" "$Dir/$Target.*"
      if test -z "$First" ; then
  	First=$Target

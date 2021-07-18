@@ -1,0 +1,26 @@
+--- src/Makefile.orig	2021-05-14 17:08:08 UTC
++++ src/Makefile
+@@ -80,7 +80,9 @@ endif
+ ifeq ($(UNAME),FreeBSD)
+ CC                      := cc
+ CXX                     := c++
+-SED                     := gsed
++CXXLIB			:= -lc++
++SED                     := /usr/bin/sed
++SED_IN_PLACE            := -i ""
+ endif
+ 
+ ##
+@@ -586,10 +588,10 @@ endif
+ 
+ ifeq ($(SHARED),1)
+ $(HASHCAT_FRONTEND): src/main.c $(HASHCAT_LIBRARY)
+-	$(CC)    $(CCFLAGS) $(CFLAGS_NATIVE) $^ -o $@ $(HASHCAT_LIBRARY) $(LFLAGS_NATIVE) -DCOMPTIME=$(COMPTIME) -DVERSION_TAG=\"$(VERSION_TAG)\" -DINSTALL_FOLDER=\"$(INSTALL_FOLDER)\" -DSHARED_FOLDER=\"$(SHARED_FOLDER)\" -DDOCUMENT_FOLDER=\"$(DOCUMENT_FOLDER)\"
++	$(CC)    $(CCFLAGS) $(CFLAGS_NATIVE) $^ -o $@ $(HASHCAT_LIBRARY) $(LFLAGS_NATIVE) ${CXXLIB} -DCOMPTIME=$(COMPTIME) -DVERSION_TAG=\"$(VERSION_TAG)\" -DINSTALL_FOLDER=\"$(INSTALL_FOLDER)\" -DSHARED_FOLDER=\"$(SHARED_FOLDER)\" -DDOCUMENT_FOLDER=\"$(DOCUMENT_FOLDER)\"
+ else
+ $(HASHCAT_FRONTEND): src/main.c obj/combined.NATIVE.a
+-	$(CC)    $(CCFLAGS) $(CFLAGS_NATIVE) $^ -o $@                    $(LFLAGS_NATIVE) -DCOMPTIME=$(COMPTIME) -DVERSION_TAG=\"$(VERSION_TAG)\" -DINSTALL_FOLDER=\"$(INSTALL_FOLDER)\" -DSHARED_FOLDER=\"$(SHARED_FOLDER)\" -DDOCUMENT_FOLDER=\"$(DOCUMENT_FOLDER)\"
++	$(CC)    $(CCFLAGS) $(CFLAGS_NATIVE) $^ -o $@                    $(LFLAGS_NATIVE) ${CXXLIB} -DCOMPTIME=$(COMPTIME) -DVERSION_TAG=\"$(VERSION_TAG)\" -DINSTALL_FOLDER=\"$(INSTALL_FOLDER)\" -DSHARED_FOLDER=\"$(SHARED_FOLDER)\" -DDOCUMENT_FOLDER=\"$(DOCUMENT_FOLDER)\" -lc++
+ endif
+ 
+ ##

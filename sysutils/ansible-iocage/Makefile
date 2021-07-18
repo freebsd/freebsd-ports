@@ -10,9 +10,7 @@ COMMENT=	Ansible module for iocage
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible>0:sysutils/ansible@${PY_FLAVOR}
-
-USES=		python shebangfix
+USES=		ansible:module python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	fractalcells
 GH_TAGNAME=	0f0b5e6e5df45b653ed8c512207cb4cc2f58f82d
@@ -21,16 +19,15 @@ SHEBANG_FILES=	iocage
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-_ANSIBLE_MOD=	share/${PYTHON_PKGNAMEPREFIX}ansible/plugins/modules
-PLIST_FILES=	${_ANSIBLE_MOD}/iocage
+PLIST_FILES=	${ANSIBLE_MODULESDIR}/iocage
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${_ANSIBLE_MOD}
+	${MKDIR} ${STAGEDIR}${ANSIBLE_MODULESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/iocage \
-		${STAGEDIR}${PREFIX}/${_ANSIBLE_MOD}/iocage
+		${STAGEDIR}${ANSIBLE_MODULESDIR}/iocage
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

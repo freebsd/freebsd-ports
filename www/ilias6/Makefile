@@ -1,7 +1,7 @@
 # Created by: Bartlomiej Rutkowski <r@robakdesign.com>
 
 PORTNAME=	ilias
-PORTVERSION=	6.8
+PORTVERSION=	6.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www education
 PKGNAMESUFFIX=	6${PHP_PKGNAMESUFFIX}

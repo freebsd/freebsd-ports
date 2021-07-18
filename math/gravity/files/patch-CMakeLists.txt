@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2021-05-12 22:20:46 UTC
++++ CMakeLists.txt
+@@ -317,7 +317,9 @@ endif()
+ 
+ 
+ add_subdirectory(src)
++if (BUILD_EXAMPLES)
+ add_subdirectory(examples)
++endif()
+ # add_subdirectory(solvers)
+ 
+ #Get user defined configuration including passing project source directory into c++ code

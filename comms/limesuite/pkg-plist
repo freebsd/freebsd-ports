@@ -38,7 +38,7 @@ lib/libLimeSuite.so
 lib/libLimeSuite.so.20.10-1
 lib/libLimeSuite.so.%%PORTVERSION%%
 libdata/pkgconfig/LimeSuite.pc
-%%SOAPYSDR%%lib/SoapySDR/modules0.7/libLMS7Support.so
+%%SOAPYSDR%%lib/SoapySDR/modules0.8/libLMS7Support.so
 %%GUI%%bin/LimeSuiteGUI
 %%GUI%%share/applications/lime-suite.desktop
 %%GUI%%share/pixmaps/lime-suite-128.png

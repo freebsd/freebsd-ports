@@ -13,7 +13,7 @@ COMMENT=	Open source library for manipulating fonts, written in Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+ zip
+USES=		python:3.7+ zip
 USE_PYTHON=	autoplist concurrent distutils
 
 MAKE_ENV=	FONTTOOLS_MANPATH="man"
@@ -46,7 +46,7 @@ WOFF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.1:archivers/py-brotli@${PY_
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MUNICODE}
-.if ${PYTHON_REL} < 3800
+.if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unicodedata2>=12.0.0:devel/py-unicodedata2@${PY_FLAVOR}
 .endif
 .endif

@@ -20,6 +20,7 @@ COMMENT=	DSSSL stylesheets for the DocBook DTD by Norman Walsh
 BUILD_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 NO_MTREE=	yes
 
 RELDIR=		docbook/dsssl/modular

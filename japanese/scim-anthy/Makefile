@@ -19,7 +19,7 @@ LIB_DEPENDS=	libanthy.so:japanese/anthy \
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		kasumi:japanese/kasumi
 
-USES=		gettext-runtime gmake iconv libtool:keepla pkgconfig
+USES=		gettext-runtime gmake gnome iconv libtool:keepla pkgconfig
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
 GNU_CONFIGURE=	yes
 

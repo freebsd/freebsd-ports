@@ -1,0 +1,10 @@
+Cpplint is a command-line tool to check C/C++ files for style issues following
+Google's C++ style guide. Cpplint is developed and maintained by Google Inc. at
+google/styleguide <https://github.com/google/styleguide>, also see the wikipedia
+entry <http://en.wikipedia.org/wiki/Cpplint>.
+
+While Google maintains cpplint, Google is not (very) responsive to issues and
+pull requests, this fork aims to be (somewhat) more open to add fixes to cpplint
+to enable fixes, when those fixes make cpplint usable in wider contexts.
+
+WWW: https://github.com/cpplint/cpplint

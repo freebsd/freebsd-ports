@@ -12,6 +12,7 @@ COMMENT=	Export lexically-available subs with Sub::Exporter
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0:devel/p5-B-Hooks-EndOfScope \
@@ -20,7 +21,9 @@ RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0:devel/p5-B-Hooks-EndOfScope \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean \
 		p5-namespace-clean>=0:devel/p5-namespace-clean
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

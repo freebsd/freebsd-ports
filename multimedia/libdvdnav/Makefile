@@ -1,7 +1,7 @@
 # Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
 
 PORTNAME=	libdvdnav
-PORTVERSION=	6.1.0
+PORTVERSION=	6.1.1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 

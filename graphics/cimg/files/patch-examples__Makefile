@@ -74,7 +74,7 @@
  
  # Flags to enable native support for compressed .cimgz files, using the Zlib library.
  # ( http://www.zlib.net/ )
-@@ -288,15 +288,15 @@ endif
+@@ -288,17 +288,17 @@ endif
  
  # Flags to enable the use of LAPACK routines for matrix computation
  # ( http://www.netlib.org/lapack/ )
@@ -90,10 +90,14 @@
  # ( https://github.com/c-koi/libboard )
  BOARD_DEFINE = -Dcimg_use_board
 -BOARD_INCDIR = -I/usr/include/board
+-BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
+-BOARD_LIBS = -lboard
 +BOARD_INCDIR = -I$(LOCALBASE)/include/board
- BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
- BOARD_LIBS = -lboard
++#BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
++#BOARD_LIBS = -lboard
  
+ # Flags to compile GIMP plug-ins.
+ ifeq ($(MSYSTEM),MINGW32)
 @@ -368,6 +368,7 @@ $(TIFF_LIBS) \
  $(HEIF_LIBS) \
  $(LAPACK_LIBS) \

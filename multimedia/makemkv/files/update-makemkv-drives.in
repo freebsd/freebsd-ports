@@ -26,7 +26,7 @@ to your kernel configuration:
 device		sg
 
 Refer to
-<https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/kernelconfig-building.html>
+<https://docs.freebsd.org/en/books/handbook/kernelconfig/#kernelconfig-building>
 for building a custom kernel.
 
 When finished, re-run this script (update-makemkv-drives).

@@ -11,6 +11,7 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpuio.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cross-stripe-verify.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dev-dax.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dfs.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/disk-zone-profile.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/e4defrag.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/e4defrag2.fio
@@ -18,6 +19,7 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exitwhat.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/falloc.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/filecreate-ioengine.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filedelete-ioengine.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/filestat-ioengine.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fio-rand-RW.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fio-rand-read.fio
@@ -44,12 +46,17 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libiscsi.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libhdfs.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libpmem.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/librpma_apm-client.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/librpma_apm-server.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/librpma_gpspm-client.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/librpma_gpspm-server.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libzbc-rand-write.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libzbc-seq-read.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtd.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nbd.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio_multicast.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nfs.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/null.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/numa.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pmemblk.fio

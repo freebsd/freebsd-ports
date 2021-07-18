@@ -1,0 +1,4 @@
+Goatools is a python library for processing Gene Ontology (GO) terms.  It
+includes routines for processing, filtering, and visualizing GO data.
+
+WWW: https://pypi.python.org/pypi/goatools

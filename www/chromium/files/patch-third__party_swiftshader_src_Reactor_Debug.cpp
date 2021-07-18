@@ -1,4 +1,4 @@
---- third_party/swiftshader/src/Reactor/Debug.cpp.orig	2021-03-13 00:03:40 UTC
+--- third_party/swiftshader/src/Reactor/Debug.cpp.orig	2021-04-14 18:43:08 UTC
 +++ third_party/swiftshader/src/Reactor/Debug.cpp
 @@ -23,16 +23,20 @@
  #	include <android/log.h>

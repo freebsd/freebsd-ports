@@ -38,6 +38,7 @@ include/libopenshot/ImageWriter.h
 include/libopenshot/Json.h
 include/libopenshot/KeyFrame.h
 include/libopenshot/MagickUtilities.h
+%%OPENCV%%include/libopenshot/OpenCVUtilities.h
 include/libopenshot/OpenMPUtilities.h
 include/libopenshot/OpenShot.h
 include/libopenshot/OpenShotVersion.h
@@ -63,6 +64,8 @@ include/libopenshot/Settings.h
 include/libopenshot/TextReader.h
 include/libopenshot/Timeline.h
 include/libopenshot/TimelineBase.h
+%%OPENCV%%include/libopenshot/TrackedObjectBBox.h
+%%OPENCV%%include/libopenshot/TrackedObjectBase.h
 include/libopenshot/WriterBase.h
 include/libopenshot/ZmqLogger.h
 include/libopenshot/effects/Bars.h
@@ -96,4 +99,4 @@ lib/libopenshot.so.19
 %%OPENCV%%lib/libopenshot_protobuf.so.19
 %%PYTHON_SITELIBDIR%%/_openshot.so
 %%PYTHON_SITELIBDIR%%/openshot.py
-@dir include/libopenshot/protobuf_messages
+%%NO_OPENCV%%@dir include/libopenshot/protobuf_messages

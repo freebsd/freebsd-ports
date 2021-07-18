@@ -6,7 +6,7 @@ CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix/${PORTVERSION} \
 		TEX_CTAN
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translator from LaTeX to RTF
 
 USES=		shebangfix makeinfo

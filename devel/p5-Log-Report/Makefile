@@ -1,7 +1,7 @@
 # Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 
 PORTNAME=	Log-Report
-PORTVERSION=	1.32
+PORTVERSION=	1.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

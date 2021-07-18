@@ -20,6 +20,7 @@ lib/seed7/lib/bitmapfont.s7i
 lib/seed7/lib/bitset.s7i
 lib/seed7/lib/bitsetof.s7i
 lib/seed7/lib/blowfish.s7i
+lib/seed7/lib/bmp.s7i
 lib/seed7/lib/boolean.s7i
 lib/seed7/lib/browser.s7i
 lib/seed7/lib/bstring.s7i
@@ -120,6 +121,7 @@ lib/seed7/lib/ftpserv.s7i
 lib/seed7/lib/getf.s7i
 lib/seed7/lib/gethttp.s7i
 lib/seed7/lib/gethttps.s7i
+lib/seed7/lib/gif.s7i
 lib/seed7/lib/graph_file.s7i
 lib/seed7/lib/graph.s7i
 lib/seed7/lib/gtkserver.s7i
@@ -131,6 +133,7 @@ lib/seed7/lib/html_ent.s7i
 lib/seed7/lib/html.s7i
 lib/seed7/lib/http_response.s7i
 lib/seed7/lib/httpserv.s7i
+lib/seed7/lib/huffman.s7i
 lib/seed7/lib/ico.s7i
 lib/seed7/lib/idxarray.s7i
 lib/seed7/lib/image.s7i
@@ -139,6 +142,7 @@ lib/seed7/lib/inflatefile.s7i
 lib/seed7/lib/inifile.s7i
 lib/seed7/lib/integer.s7i
 lib/seed7/lib/iobuffer.s7i
+lib/seed7/lib/jpeg.s7i
 lib/seed7/lib/keybd.s7i
 lib/seed7/lib/keydescr.s7i
 lib/seed7/lib/leb128.s7i
@@ -165,7 +169,9 @@ lib/seed7/lib/pic32.s7i
 lib/seed7/lib/pixmap_file.s7i
 lib/seed7/lib/pixmapfont.s7i
 lib/seed7/lib/pkcs1.s7i
+lib/seed7/lib/png.s7i
 lib/seed7/lib/poll.s7i
+lib/seed7/lib/ppm.s7i
 lib/seed7/lib/process.s7i
 lib/seed7/lib/progs.s7i
 lib/seed7/lib/propertyfile.s7i

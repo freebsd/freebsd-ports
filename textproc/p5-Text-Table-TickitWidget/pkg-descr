@@ -1,0 +1,4 @@
+Text::Table::TickitWidget uses the Text::Table::Tiny interface to let you view
+table data on the terminal using Tickit::Widget::Table.
+
+WWW: https://metacpan.org/release/Text-Table-TickitWidget

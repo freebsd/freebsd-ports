@@ -4,7 +4,8 @@ PORTNAME=	libkate
 PORTVERSION=	0.4.1
 PORTREVISION=	11
 CATEGORIES=	multimedia
-MASTER_SITES=	http://downloads.xiph.org/releases/kate/
+MASTER_SITES=	https://downloads.xiph.org/releases/kate/ \
+		https://ftp.osuosl.org/pub/xiph/releases/kate/
 
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Codec for karaoke and text encapsulation for Ogg

@@ -1,7 +1,7 @@
 # Created by: Hannes Hauswedell <h2+fbsdports@fsfe.org>
 
 PORTNAME=	ugene
-PORTVERSION=	38.0
+PORTVERSION=	39.0
 CATEGORIES=	biology science
 
 MAINTAINER=	h2+fbsdports@fsfe.org
@@ -39,9 +39,8 @@ OPENCL_QMAKE_ON=	UGENE_OPENCL_DETECTED=1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-# XXX: need to manually tell the build we are on x64
-QMAKE_ARGS+=	CONFIG+=x64
+.if ${ARCH} == i386
+QMAKE_ARGS+=	CONFIG+=x86
 .endif
 
 post-patch:
@@ -58,6 +57,11 @@ post-patch:
 		${WRKSRC}/src/ugeneui/ugeneui.pri
 	@${REINPLACE_CMD} -e '218,220s|NULL)|false)|' \
 		${WRKSRC}/src/plugins/GUITestBase/src/GTUtilsMdi.cpp
+	@${REINPLACE_CMD} -e '/--no-pie/s,unix:!macx,linux-g++,' \
+		${WRKSRC}/src/plugins_checker/plugins_checker.pri \
+		${WRKSRC}/src/ugenecl/ugenecl.pri \
+		${WRKSRC}/src/ugenem/ugenem.pro \
+		${WRKSRC}/src/ugeneui/ugeneui.pri
 
 post-stage:
 	@cd ${STAGEDIR}${PREFIX} && ${RM} bin/ecp.* lib/ugene/ecp.*

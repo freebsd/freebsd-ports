@@ -1,5 +1,5 @@
 PORTNAME=	bitvector
-PORTVERSION=	3.4.9
+PORTVERSION=	3.5.0
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP \
 		https://engineering.purdue.edu/kak/dist/
@@ -11,7 +11,7 @@ COMMENT=	Pure-Python memory-efficient packed representation for bit arrays
 
 LICENSE=	PSFL
 
-USES=		python:3.6+
+USES=		python
 
 USE_PYTHON=	autoplist distutils
 PYDISTUTILS_PKGNAME=	BitVector

@@ -2,7 +2,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	3_18_1
+DISTVERSION=	3_20_0
 PORTREVISION=	1
 CATEGORIES=	graphics geography
 
@@ -44,6 +44,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libgeos.so:graphics/geos \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
+		liblazperf.so:archivers/lazperf \
 		libnetcdf.so:science/netcdf \
 		libOpenCL.so:devel/ocl-icd \
 		libpdal_base.so:math/pdal \
@@ -98,6 +99,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=3.7.7:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}termcolor>=1.1.0:devel/py-termcolor@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xlrd>=2.0.1:textproc/py-xlrd@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.3.1:devel/py-yaml@${PY_FLAVOR}
 
 ### Fortran is needed by numpy, GRASS, etc.
@@ -110,7 +112,7 @@ USE_GL=		gl
 USE_GNOME=	libxml2
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USE_PYQT=	core gui network qml quick quickwidgets qscintilla2 \
+USE_PYQT=	core gui location network qml quick quickwidgets qscintilla2 \
 		pysip sip sql svg webkit_run webkitwidgets_run xml
 USE_QT=		3d buildtools_build core concurrent dbus declarative \
 		designer doc gamepad gui linguist_build location \
@@ -128,7 +130,7 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt6.so \
 		-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW
 CMAKE_ON=	BUILD_TESTING ENABLE_TESTS USE_OPENCL WITH_3D WITH_ASTYLE \
-		WITH_BINDINGS WITH_CUSTOM_WIDGETS WITH_INTERNAL_MDAL \
+		WITH_BINDINGS WITH_CUSTOM_WIDGETS WITH_EPT WITH_INTERNAL_MDAL \
 		WITH_POSTGRESQL WITH_PDAL
 CMAKE_OFF=	WITH_GLOBE WITH_QWTPOLAR
 

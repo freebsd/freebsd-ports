@@ -1,9 +1,9 @@
 # Created by: Oliver Eikemeier
 
 PORTNAME=		bash
-PATCHLEVEL=		4
+PATCHLEVEL=		8
 PORTVERSION=		5.1.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		1
+PORTREVISION?=		0
 CATEGORIES=		shells
 MASTER_SITES=		GNU
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -93,6 +93,9 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e "s|\(/etc/profile\)|${LOCALBASE}\1|" \
 		${WRKSRC}/pathnames.h.in
+	@${REINPLACE_CMD} -e "s|/etc/[iI]nputrc|${LOCALBASE}/etc/inputrc|g" \
+		${WRKSRC}/doc/*.info ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.1 \
+		${WRKSRC}/lib/readline/rlconf.h
 
 post-patch-SYSBASHRC-on:
 	@${REINPLACE_CMD} \
@@ -127,6 +130,6 @@ cklatest:
 	@${MAKE} -V PATCHLEVEL
 	-ncftpls \
 		${PATCH_SITES:Mftp*:Ox:[1]} \
-		| fgrep -v .sig | ${TAIL}
+		| fgrep -v .sig | ${SORT} | ${TAIL}
 
 .include <bsd.port.mk>

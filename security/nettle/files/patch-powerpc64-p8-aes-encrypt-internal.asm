@@ -1,5 +1,5 @@
---- powerpc64/p8/aes-encrypt-internal.asm.orig	2021-04-03 16:33:26.104735000 -0500
-+++ powerpc64/p8/aes-encrypt-internal.asm	2021-04-03 16:34:43.805790000 -0500
+--- powerpc64/p8/aes-encrypt-internal.asm.orig	2021-06-06 20:06:30 UTC
++++ powerpc64/p8/aes-encrypt-internal.asm
 @@ -63,7 +63,7 @@ define(`S7', `v9')
  
  define(`FUNC_ALIGN', `5')

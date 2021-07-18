@@ -1,9 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	eog
-DISTVERSION=	3.38.2
+DISTVERSION=	40.2
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org

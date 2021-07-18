@@ -1,8 +1,8 @@
 PORTNAME=	softether
-DISTVERSION=	4.34-9745-beta
-PORTREVISION=	3
+DISTVERSION=	4.36-9754-beta
+PORTREVISION=	0
 CATEGORIES=	security net-vpn
-MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-2020.04.05-tree/Source_Code/
+MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-2021.06.07-tree/Source_Code/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}
 
@@ -12,9 +12,9 @@ COMMENT=	Softether VPN 4 (stable beta version)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and i386: https://www.softether.org/3-spec
-IGNORE=		no beta version available right now, use security/softether instead
+#IGNORE=		no beta version available right now, use security/softether instead
 
 USES=		dos2unix gmake iconv:wchar_t localbase:ldflags ncurses \
 		readline ssl

@@ -1,4 +1,4 @@
---- base/profiler/thread_delegate_posix.cc.orig	2021-03-12 23:57:15 UTC
+--- base/profiler/thread_delegate_posix.cc.orig	2021-04-14 18:40:48 UTC
 +++ base/profiler/thread_delegate_posix.cc
 @@ -12,6 +12,9 @@
  #include "base/profiler/thread_delegate_posix.h"

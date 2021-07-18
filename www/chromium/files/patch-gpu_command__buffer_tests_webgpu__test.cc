@@ -1,6 +1,6 @@
---- gpu/command_buffer/tests/webgpu_test.cc.orig	2021-03-12 23:57:25 UTC
+--- gpu/command_buffer/tests/webgpu_test.cc.orig	2021-04-14 18:41:04 UTC
 +++ gpu/command_buffer/tests/webgpu_test.cc
-@@ -51,8 +51,8 @@ bool WebGPUTest::WebGPUSupported() const {
+@@ -48,8 +48,8 @@ bool WebGPUTest::WebGPUSupported() const {
  
  bool WebGPUTest::WebGPUSharedImageSupported() const {
    // Currently WebGPUSharedImage is only implemented on Mac, Linux and Windows
@@ -11,7 +11,7 @@
      BUILDFLAG(USE_DAWN)
    return true;
  #else
-@@ -67,7 +67,7 @@ void WebGPUTest::SetUp() {
+@@ -64,7 +64,7 @@ void WebGPUTest::SetUp() {
  
    gpu::GpuPreferences gpu_preferences;
    gpu_preferences.enable_webgpu = true;

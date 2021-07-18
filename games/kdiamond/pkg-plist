@@ -18,7 +18,6 @@ share/icons/hicolor/64x64/apps/kdiamond.png
 %%DATADIR%%/themes/funny_zoo.svgz
 share/knotifications5/kdiamond.notifyrc
 share/knsrcfiles/kdiamond.knsrc
-share/kxmlgui5/kdiamond/kdiamondui.rc
 share/locale/ar/LC_MESSAGES/kdiamond.mo
 share/locale/bg/LC_MESSAGES/kdiamond.mo
 share/locale/bs/LC_MESSAGES/kdiamond.mo
@@ -62,6 +61,7 @@ share/locale/ro/LC_MESSAGES/kdiamond.mo
 share/locale/ru/LC_MESSAGES/kdiamond.mo
 share/locale/sk/LC_MESSAGES/kdiamond.mo
 share/locale/sl/LC_MESSAGES/kdiamond.mo
+share/locale/sq/LC_MESSAGES/kdiamond.mo
 share/locale/sr/LC_MESSAGES/kdiamond.mo
 share/locale/sv/LC_MESSAGES/kdiamond.mo
 share/locale/tr/LC_MESSAGES/kdiamond.mo

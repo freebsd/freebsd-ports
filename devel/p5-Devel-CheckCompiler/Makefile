@@ -11,9 +11,11 @@ COMMENT=	Check the compiler availability
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		perl5
+USE_PERL5=	modbuildtiny
 
 NO_ARCH=	yes
-USE_PERL5=	modbuildtiny
-USES=		perl5
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
---- gpu/command_buffer/service/external_vk_image_backing.cc.orig	2021-03-12 23:57:25 UTC
+--- gpu/command_buffer/service/external_vk_image_backing.cc.orig	2021-04-14 18:41:04 UTC
 +++ gpu/command_buffer/service/external_vk_image_backing.cc
 @@ -30,7 +30,7 @@
  #include "ui/gl/gl_version_info.h"

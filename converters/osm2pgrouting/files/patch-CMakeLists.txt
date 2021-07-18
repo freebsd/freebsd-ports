@@ -1,36 +1,16 @@
---- CMakeLists.txt.orig	2021-02-04 06:38:35 UTC
+--- CMakeLists.txt.orig	2021-06-06 05:46:00 UTC
 +++ CMakeLists.txt
-@@ -8,7 +8,8 @@ if ( ${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR} 
- endif()
+@@ -9,7 +9,8 @@ endif()
+ PROJECT(osm2pgrouting)
  
  LIST(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 -SET(SHARE_DIR "${CMAKE_INSTALL_PREFIX}/share/osm2pgrouting")
 +SET(DOC_DIR "${CMAKE_INSTALL_PREFIX}/share/doc/osm2pgrouting")
 +SET(ETC_DIR "${CMAKE_INSTALL_PREFIX}/etc/osm2pgrouting")
  
- FIND_PACKAGE(PostgreSQL REQUIRED)
- find_package(LibPQXX REQUIRED)
-@@ -37,6 +38,7 @@ include(CheckCXXCompilerFlag)
- CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)
- CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
- CHECK_CXX_COMPILER_FLAG("-std=c++14" COMPILER_SUPPORTS_CXX14)
-+CHECK_CXX_COMPILER_FLAG("-std=c++17" COMPILER_SUPPORTS_CXX17)
- if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
-     if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS GNU_CXX_MINIMUM_VERSION)
-         message(FATAL_ERROR "GCC version must be at least ${GNU_CXX_MINIMUM_VERSION}!
-@@ -50,7 +52,10 @@ else()
-     message(STATUS "Unknown compiler minimum version for ${CMAKE_CXX_COMPILER_ID}")
- endif()
- 
--if(COMPILER_SUPPORTS_CXX14)
-+if(COMPILER_SUPPORTS_CXX17)
-+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
-+    message(STATUS "Using  -std=c++17.")
-+elseif(COMPILER_SUPPORTS_CXX14)
-     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
-     message(STATUS "Using  -std=c++14.")
- elseif(COMPILER_SUPPORTS_CXX11)
-@@ -114,14 +119,15 @@ if(WIN32)
+ find_package(PostgreSQL REQUIRED)
+ find_package(PQXX REQUIRED)
+@@ -92,14 +93,15 @@ if(WIN32)
  endif()
  
  INSTALL(FILES

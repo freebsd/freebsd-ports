@@ -1,4 +1,4 @@
---- hdrline.c.orig	2020-11-08 20:52:48 UTC
+--- hdrline.c.orig	2021-06-13 21:49:46 UTC
 +++ hdrline.c
 @@ -249,6 +249,89 @@ static char *apply_subject_mods (ENVELOPE *env)
   * %Y = `x-label:' field (if present, tree unfolded, and != parent's x-label)
@@ -105,9 +105,9 @@
        if (!do_locales)
          setlocale (LC_TIME, "");
  
---- mutt.h.orig	2020-11-08 20:52:49 UTC
+--- mutt.h.orig	2021-06-13 21:49:47 UTC
 +++ mutt.h
-@@ -169,6 +169,16 @@ typedef enum
+@@ -168,6 +168,16 @@ typedef enum
    MUTT_WRITE_HEADER_MIME
  } mutt_write_header_mode;
  

@@ -16,8 +16,9 @@ RUN_DEPENDS=	rubygem-eventmachine>=0.12.8:devel/rubygem-eventmachine \
 		rubygem-http_parser.rb>=0.5.1:net/rubygem-http_parser.rb \
 		rubygem-simple_oauth>=0.1.4:net/rubygem-simple_oauth
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

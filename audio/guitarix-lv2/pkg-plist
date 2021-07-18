@@ -222,12 +222,6 @@ lib/lv2/gx_tremolo.lv2/gx_tremolo.so
 lib/lv2/gx_tremolo.lv2/gx_tremolo.ttl
 lib/lv2/gx_tremolo.lv2/gx_tremolo_gui.so
 lib/lv2/gx_tremolo.lv2/manifest.ttl
-lib/lv2/gx_vibe.lv2/gx_vibe.so
-lib/lv2/gx_vibe.lv2/gx_vibe.ttl
-lib/lv2/gx_vibe.lv2/gx_vibe_gui.so
-lib/lv2/gx_vibe.lv2/gx_vibe_mono.ttl
-lib/lv2/gx_vibe.lv2/manifest.ttl
-lib/lv2/gx_vibe.lv2/modguis.ttl
 lib/lv2/gx_w20.lv2/gx_w20.so
 lib/lv2/gx_w20.lv2/gx_w20.ttl
 lib/lv2/gx_w20.lv2/gx_w20_gui.so
@@ -856,6 +850,7 @@ share/gx_head/sounds/greathall.wav
 %%NLS%%share/locale/fr/LC_MESSAGES/guitarix.mo
 %%NLS%%share/locale/it/LC_MESSAGES/guitarix.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/guitarix.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/guitarix.mo
 share/pixmaps/gx_bypass.png
 share/pixmaps/gx_head.png
 share/pixmaps/gx_log_grey.png

@@ -8,6 +8,7 @@ include/core/flags.hpp
 include/core/hashtable.hpp
 include/core/localheap.hpp
 include/core/logging.hpp
+include/core/memtracer.hpp
 include/core/mpi_wrapper.hpp
 include/core/ngcore.hpp
 include/core/ngcore_api.hpp

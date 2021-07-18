@@ -1,5 +1,7 @@
 # Created by: Martin Matuska <martin@matuska.org>
 
+PORTREVISION=	1
+
 LUASQL_DRIVER=	firebird
 
 MASTERDIR=	${.CURDIR}/../luasql-mysql

@@ -1,11 +1,11 @@
 # Created by: swallace
 
 PORTNAME=	irsim
-DISTVERSION=	9.7.108
+DISTVERSION=	9.7.110
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/irsim/archive/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Event-driven logic-level simulator for MOS circuis
 
 LICENSE=	GPLv2
@@ -49,5 +49,8 @@ post-patch:
 		 s|wish |${WISH:T} | ; \
 		 s|"-fpic"|"-fPIC"| ; \
 		 /-l\/usr\/X11R6\/include/d' ${CONFIGURE_WRKSRC}/configure
+
+post-install:
+	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/gentbl bin/genspktbl
 
 .include <bsd.port.mk>

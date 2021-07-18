@@ -2,7 +2,7 @@
 
 PORTNAME=	sqlitebrowser
 PORTVERSION=	3.12.1
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 
 INSTALLS_ICONS=	yes
 
-PORTSCOUT=	ignore:continuous
+PORTSCOUT=	ignore:1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \

@@ -23,4 +23,7 @@ INSTALL_DIRS?=	src/pl/plperl contrib/bool_plperl contrib/hstore_plperl contrib/j
 SLAVE_ONLY=	yes
 COMPONENT=	-plperl
 
+# this port fails to build in parallel
+MAKE_JOBS_UNSAFE=	yes
+
 .include "${MASTERDIR}/Makefile"

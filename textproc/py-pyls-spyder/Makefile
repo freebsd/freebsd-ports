@@ -1,7 +1,7 @@
 # Created by: Rainer Hurling <rhurlin@gwdg.de>
 
 PORTNAME=	pyls-spyder
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Spyder extensions for the python-language-server (pyls)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-language-server>0:textproc/py-python-language-server@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-lsp-server>0:textproc/py-python-lsp-server@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils

@@ -1,5 +1,5 @@
 PKGNAMESUFFIX=	-qt
-PORTREVISION=	3
+PORTREVISION=	4
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2

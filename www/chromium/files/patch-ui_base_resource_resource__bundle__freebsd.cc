@@ -1,4 +1,4 @@
---- ui/base/resource/resource_bundle_freebsd.cc.orig	2021-03-15 11:01:24 UTC
+--- ui/base/resource/resource_bundle_freebsd.cc.orig	2021-04-15 08:13:29 UTC
 +++ ui/base/resource/resource_bundle_freebsd.cc
 @@ -0,0 +1,21 @@
 +// Copyright 2017 The Chromium Authors. All rights reserved.

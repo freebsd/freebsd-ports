@@ -1,0 +1,7 @@
+LibreSSL libtls is an easy to use, secure by default, consistent, obvious and
+well documented shared library based on the LibreSSL codebase.
+
+The libtls flavor only installs the libtls shared library of LibreSSL, and can
+coexist with OpenSSL.
+
+WWW: http://www.libressl.org/

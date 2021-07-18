@@ -4,7 +4,7 @@ DISTVERSION=	0.11.7
 CATEGORIES=	databases www
 PKGNAMEPREFIX=	go-
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based database browser for PostgreSQL
 
 LICENSE=	MIT

@@ -1,4 +1,4 @@
---- base/test/launcher/test_launcher.cc.orig	2021-03-12 23:57:15 UTC
+--- base/test/launcher/test_launcher.cc.orig	2021-04-14 18:40:48 UTC
 +++ base/test/launcher/test_launcher.cc
 @@ -58,6 +58,7 @@
  #include "testing/gtest/include/gtest/gtest.h"
@@ -17,7 +17,7 @@
    options.kill_on_parent_death = true;
  #endif
  
-@@ -1516,7 +1517,7 @@ bool TestLauncher::Init(CommandLine* command_line) {
+@@ -1515,7 +1516,7 @@ bool TestLauncher::Init(CommandLine* command_line) {
    results_tracker_.AddGlobalTag("OS_IOS");
  #endif
  

@@ -20,6 +20,7 @@ share/kservices5/krdc_vnc_config.desktop
 share/kservices5/vnc.protocol
 share/kxmlgui5/krdc/krdcui.rc
 share/locale/ar/LC_MESSAGES/krdc.mo
+share/locale/be/LC_MESSAGES/krdc.mo
 share/locale/bg/LC_MESSAGES/krdc.mo
 share/locale/bs/LC_MESSAGES/krdc.mo
 share/locale/ca/LC_MESSAGES/krdc.mo
@@ -62,13 +63,18 @@ share/locale/pt/LC_MESSAGES/krdc.mo
 share/locale/pt_BR/LC_MESSAGES/krdc.mo
 share/locale/ro/LC_MESSAGES/krdc.mo
 share/locale/ru/LC_MESSAGES/krdc.mo
+share/locale/se/LC_MESSAGES/krdc.mo
 share/locale/sk/LC_MESSAGES/krdc.mo
 share/locale/sl/LC_MESSAGES/krdc.mo
+share/locale/sq/LC_MESSAGES/krdc.mo
 share/locale/sr/LC_MESSAGES/krdc.mo
 share/locale/sv/LC_MESSAGES/krdc.mo
+share/locale/ta/LC_MESSAGES/krdc.mo
+share/locale/tg/LC_MESSAGES/krdc.mo
 share/locale/tr/LC_MESSAGES/krdc.mo
 share/locale/ug/LC_MESSAGES/krdc.mo
 share/locale/uk/LC_MESSAGES/krdc.mo
+share/locale/vi/LC_MESSAGES/krdc.mo
 share/locale/zh_CN/LC_MESSAGES/krdc.mo
 share/locale/zh_TW/LC_MESSAGES/krdc.mo
 share/metainfo/org.kde.krdc.appdata.xml

@@ -13,23 +13,23 @@ CONFIGURE_ARGS=	--with-gtk3 --enable-pref --enable-default-toolkit=gtk3
 
 UIM_SLAVE=	yes
 
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-gtk3_candwin_Makefile.in \
-		${PATCHDIR}/extra-patch-gtk3_dict_Makefile.in \
-		${PATCHDIR}/extra-patch-gtk3_immodule_Makefile.in \
-		${PATCHDIR}/extra-patch-gtk3_pad_Makefile.in \
-		${PATCHDIR}/extra-patch-gtk3_pref_Makefile.in \
-		${PATCHDIR}/extra-patch-gtk3_switcher_Makefile.in \
-		${PATCHDIR}/extra-patch-gtk3_toolbar_Makefile.in
-
 .if defined(WITHOUT_X11)
 IGNORE=		requires X11
 .endif
 
 do-build:
 	(cd ${WRKSRC}/uim && ${MAKE_CMD} libuim-x-util.la libuim-counted-init.la)
-	(cd ${WRKSRC}/gtk3 && ${MAKE_CMD})
+	(cd ${WRKSRC}/gtk3/immodule && ${MAKE_CMD})
+	(cd ${WRKSRC}/gtk3/pad && ${MAKE_CMD})
+	(cd ${WRKSRC}/gtk3/pref && ${MAKE_CMD})
+	(cd ${WRKSRC}/gtk3/switcher && ${MAKE_CMD})
+	(cd ${WRKSRC}/gtk3/toolbar && ${MAKE_CMD})
 
 do-install:
-	(cd ${WRKSRC}/gtk3 && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/gtk3/immodule && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/gtk3/pad && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/gtk3/pref && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/gtk3/switcher && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/gtk3/toolbar && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
 
 .include "${MASTERDIR}/Makefile"

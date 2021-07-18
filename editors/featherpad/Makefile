@@ -1,8 +1,9 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=		featherpad
-PORTVERSION=		0.16.0
+PORTVERSION=		0.18.0
 DISTVERSIONPREFIX=	V
+PORTREVISION=	1
 CATEGORIES=		editors
 
 MAINTAINER=	jsm@FreeBSD.org

@@ -22,12 +22,14 @@ load_rc_config "${name}"
 : ${ttrssd_enable="NO"}
 : ${ttrssd_local_db:="YES"}
 
+initdb_php="%%WWWDIR%%/update.php"
 required_files="%%WWWDIR%%/config.php"
 pidfile="/var/run/${name}.pid"
+ppidfile="/var/run/${name}_parent.pid"
 phpcli="%%LOCALBASE%%/bin/php"
 command_interpreter=$phpcli
 long_name="Tiny Tiny RSS updating feeds daemon."
-phpupd="update_daemon2.php"
+phpupd="%%WWWDIR%%/update_daemon2.php"
 ttrssd_log="/var/log/${name}.log"
 ttrssd_user="%%WWWOWN%%"
 
@@ -37,40 +39,49 @@ stop_cmd=${name}_stop
 
 %%MYSQL%%CHECK_CMD="%%LOCALBASE%%/bin/mysqladmin -u mysqld ping"
 %%MYSQL%%CHECK_MSG="${name}: mysqladmin command failed; mysql not ready?"
-# Waiting for pg_isready when 9.3 is the default
-%%PGSQL%%CHECK_CMD="%%LOCALBASE%%/etc/rc.d/postgresql status"
+%%PGSQL%%CHECK_CMD="%%LOCALBASE%%/bin/pg_isready"
 %%PGSQL%%CHECK_MSG="${name}: postgresql status failed; postgresql not ready?"
 
 ttrssd_start() {
-	[ -x $phpcli ] || (echo "$phpcli not found"; exit 1)
-	[ -f $pidfile ] && (echo "$name already running?"; exit 2)
+	if ! [ -x $phpcli ]; then
+		echo "$phpcli not found"
+		exit 1
+	fi
+
+	if [ -f $pidfile ]; then
+		echo "$name already running?"
+		exit 2
+	fi
+
 	echo "Starting $long_name"
-	(cd %%WWWDIR%% && su -fm $ttrssd_user -c "./$phpupd" > $ttrssd_log &) && \
-	echo $$ > $pidfile
+	daemon -P "$ppidfile" -p "$pidfile" -u "$ttrssd_user" -o "$ttrssd_log" \
+		sh -c "${initdb_php} --update-schema=force-yes; $phpupd"
 }
 
 ttrssd_stop() {
-	[ -f $pidfile ] || (echo "$name not running?"; exit 1)
+	if ! [ -f $pidfile ]; then
+		echo "$name not running?"
+		exit 1
+	fi
+
 	echo "Stopping $long_name"
-	kill `ps ax | grep $phpupd | grep -v grep | awk '{print $1}'`
-	rm -f $pidfile
+	pkill -CHLD -F "$pidfile"
+	pkill -F "$pidfile"
+	pwait "$(cat $ppidfile)"
 }
 
 ttrssd_prestart() {
-  if checkyesno ttrssd_local_db; then
-	# Wait for the local database to be started
-	local _count=0
+	if checkyesno ttrssd_local_db; then
+		# Wait for the local database to be started
 
-	while : ; do
-		$CHECK_CMD > /dev/null 2>&1 && return
-		_count=$(( $_count + 1 ))
-		if [ $_count -gt 10 ]; then
-			err 1 $CHECK_MSG
-		fi
-
-		sleep 1
-	done
-  fi
+		for n in $(seq 1 10); do
+			if $CHECK_CMD > /dev/null 2>&1; then
+			    return
+			fi
+			sleep 1
+		done
+		err 1 $CHECK_MSG
+	fi
 }
 
 run_rc_command "$1"

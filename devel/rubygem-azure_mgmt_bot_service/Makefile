@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	azure_mgmt_bot_service
-PORTVERSION=	0.17.1
+PORTVERSION=	0.17.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

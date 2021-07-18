@@ -24,7 +24,7 @@ PORTSCOUT=	limit:^${PORT_V_MAJOR}\.${PORT_V_MINOR}\.
 
 PORT_V_MAJOR=	10
 PORT_V_MINOR=	4
-PORT_V_PATCH=	10
+PORT_V_PATCH=	16
 
 TYPO3WWW=	www
 TYPO3SRC=	${PORTNAME}_src-${PORTVERSION}
@@ -71,6 +71,11 @@ RUN_DEPENDS+=	convert:graphics/ImageMagick6-nox11
 .endif
 
 do-install:
+	# workaround fix for:
+	# "Checking for items in STAGEDIR missing from pkg-plist"
+	# "Error: Orphaned: @dir %%WWWDIR%%_src-10.4.16/vendor/symfony/string/Resources/bin"
+	${RMDIR} ${WRKSRC}/vendor/symfony/string/Resources/bin
+	# remove source empty directory
 	${MKDIR} ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${TYPO3DIR}
 	${CP} -R ${WRKDIR}/${TYPO3SRC} ${STAGEDIR}${PREFIX}/${TYPO3WWW}/
 	${LN} -fs ../${TYPO3SRC} ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${TYPO3DIR}/typo3_src

@@ -1,7 +1,7 @@
 # Created by: Michael Haro <mharo@FreeBSD.org>
 
 PORTNAME=	Crypt-Random
-PORTVERSION=	1.52
+PORTVERSION=	1.54
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

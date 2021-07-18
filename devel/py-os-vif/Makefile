@@ -1,7 +1,7 @@
 # Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
 
 PORTNAME=	os-vif
-PORTVERSION=	2.3.0
+PORTVERSION=	2.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

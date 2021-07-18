@@ -1,0 +1,12 @@
+--- Makefile.orig	2018-08-24 18:50:31 UTC
++++ Makefile
+@@ -55,7 +55,8 @@ install:	$(CLXCLIENT_MIN)
+ 	install -d $(DESTDIR)$(LIBDIR)
+ 	install -m 644 $(CLXCLIENT_H) $(DESTDIR)$(INCDIR)
+ 	install -m 755 $(CLXCLIENT_MIN) $(DESTDIR)$(LIBDIR)
+-	ldconfig
++	#ldconfig
++	ln -sf $(CLXCLIENT_MIN) $(DESTDIR)$(LIBDIR)/$(CLXCLIENT_MAJ)
+ 	ln -sf $(CLXCLIENT_MIN) $(DESTDIR)$(LIBDIR)/$(CLXCLIENT_SO)
+ 
+ uninstall:

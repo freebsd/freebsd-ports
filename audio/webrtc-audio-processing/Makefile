@@ -5,9 +5,9 @@ CATEGORIES=	audio
 MASTER_SITES=	https://freedesktop.org/software/pulseaudio/${PORTNAME}/
 
 PATCH_SITES=	https://gitlab.freedesktop.org/pulseaudio/${PORTNAME}/-/commit/
-PATCHFILES+=	2083c9a5dd34.diff:-p1 # https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/merge_requests/6
-PATCHFILES+=	3f9907f93d39.diff:-p1 # https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/merge_requests/13
-PATCHFILES+=	b34c1d5746ea.diff:-p1 # https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/merge_requests/14
+PATCHFILES+=	2083c9a5dd34.patch:-p1 # https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/merge_requests/6
+PATCHFILES+=	3f9907f93d39.patch:-p1 # https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/merge_requests/13
+PATCHFILES+=	b34c1d5746ea.patch:-p1 # https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/merge_requests/14
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	AudioProcessing module from WebRTC project

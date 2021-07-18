@@ -1,7 +1,7 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 
 PORTNAME=	pefile
-PORTVERSION=	2019.4.18
+PORTVERSION=	2021.5.24
 CATEGORIES=	devel python
 MASTER_SITES=	https://github.com/erocarrera/pefile/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

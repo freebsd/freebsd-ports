@@ -1,5 +1,5 @@
 PORTNAME=	python-gist
-DISTVERSION=	0.10.3
+DISTVERSION=	0.10.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,8 +10,8 @@ COMMENT=	Command line interface for working with github gists
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-gnupg>=0.4.1:security/py-python-gnupg@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-gnupg>=0.4.7,<0.5.0:security/py-python-gnupg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.25.1,<3.0.0:www/py-requests@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}responses>0:devel/py-responses@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycodestyle>0:devel/py-pycodestyle@${PY_FLAVOR} \

@@ -1,12 +1,11 @@
-# Created by: iblis <iblis@hs.ntnu.edu.tw>
+# Created by: iblis <iblis.dif01@nctu.edu.tw>
 
 PORTNAME=	c-blosc
-PORTVERSION=	1.15.0
-PORTREVISION=	2
+PORTVERSION=	1.21.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers devel
 
-MAINTAINER=	iblis@hs.ntnu.edu.tw
+MAINTAINER=	iblis.dif01@nctu.edu.tw
 COMMENT=	Blocking, shuffling and loss-less compression library
 
 LICENSE=	BSD3CLAUSE

@@ -5,4 +5,4 @@ support for any classes, time and number localization, several user language
 support, agnostic core package with out-of-box support for Rails, Sinatra and
 desktop applications.
 
-WWW: https://github.com/r18n/r18n/tree/master/sinatra-r18n
+WWW: https://github.com/r18n/sinatra-r18n

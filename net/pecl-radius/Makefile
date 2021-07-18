@@ -1,16 +1,16 @@
 # Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 
 PORTNAME=	radius
-DISTVERSION=	1.4.0b1
+PORTVERSION=	1.4.0b1
+PORTREVISION=	1
 CATEGORIES=	net security pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Radius client library for PHP
 
 LICENSE=	BSD3CLAUSE
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	80
 
 CONFIGURE_ARGS=	--enable-radius
 

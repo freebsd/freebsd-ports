@@ -1,7 +1,5 @@
-TIMESTAMP = 1576048624
-SHA256 (ycm-core-YouCompleteMe-g20191130-1386c6b_GH0.tar.gz) = d5d9a2a63b4c17337c20b1879bebf90041743afab59cfb52cf934ed047291dc4
-SIZE (ycm-core-YouCompleteMe-g20191130-1386c6b_GH0.tar.gz) = 315502
-SHA256 (ycm-core-ycmd-a374320_GH0.tar.gz) = 7b8fc941162b20b1e15b4d7807a69967b26632865bbee7407f213e78f3e9744f
-SIZE (ycm-core-ycmd-a374320_GH0.tar.gz) = 4510540
-SHA256 (ycm-core-regex-cc538bb_GH0.tar.gz) = b26ee13605dae6a30a3b65e224e3dd4f4942acefc419e9109b3f6c5ad0a44ae8
-SIZE (ycm-core-regex-cc538bb_GH0.tar.gz) = 684593
+TIMESTAMP = 1621803852
+SHA256 (ycm-core-YouCompleteMe-g20210518-ab73ca2_GH0.tar.gz) = cd466762c509e67ac96f649b090a5a1fd5bc13fe0b6535ff2dacf95ca424904a
+SIZE (ycm-core-YouCompleteMe-g20210518-ab73ca2_GH0.tar.gz) = 298400
+SHA256 (ycm-core-ycmd-df3d7eb_GH0.tar.gz) = f999e89eef82a71280b0ab3c3318411d0787a13e1946f6d410eda77cc8a2b876
+SIZE (ycm-core-ycmd-df3d7eb_GH0.tar.gz) = 2898578

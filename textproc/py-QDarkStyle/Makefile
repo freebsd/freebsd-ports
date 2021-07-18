@@ -1,9 +1,8 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-#
-# Note: finance/electrum requires this exact version
 
 PORTNAME=	QDarkStyle
-PORTVERSION=	2.8.1
+PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -1,8 +1,7 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 
 PORTNAME=	polari
-PORTVERSION=	3.38.0
-PORTREVISION=	1
+PORTVERSION=	3.38.1
 CATEGORIES=	irc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome

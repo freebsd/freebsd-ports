@@ -1,4 +1,4 @@
---- components/viz/host/host_display_client.cc.orig	2021-03-12 23:57:23 UTC
+--- components/viz/host/host_display_client.cc.orig	2021-04-14 18:41:02 UTC
 +++ components/viz/host/host_display_client.cc
 @@ -60,7 +60,7 @@ void HostDisplayClient::CreateLayeredWindowUpdater(
  

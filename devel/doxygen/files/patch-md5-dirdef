@@ -1,11 +1,20 @@
 --- src/dirdef.cpp.orig	2020-11-27 20:27:34 UTC
 +++ src/dirdef.cpp
-@@ -1,3 +1,4 @@
+@@ -11,11 +11,13 @@
+  * Documents produced by Doxygen are derivative works derived from the
+  * input used in their production; they are not affected by this license.
+  *
 +#include <sys/types.h>
- #include "md5.h"
+  */
+ 
+ #include <algorithm>
  
  #include "dirdef.h"
-@@ -167,10 +168,8 @@ void DirDefImpl::sort()
++#include <sys/types.h>
+ #include "md5.h"
+ #include "filename.h"
+ #include "doxygen.h"
+@@ -180,10 +182,8 @@ void DirDefImpl::sort()
  static QCString encodeDirName(const QCString &anchor)
  {
    // convert to md5 hash

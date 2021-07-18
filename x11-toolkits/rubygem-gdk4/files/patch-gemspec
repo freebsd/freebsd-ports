@@ -1,0 +1,10 @@
+--- gdk4.gemspec.orig	2021-07-10 11:39:56 UTC
++++ gdk4.gemspec
+@@ -13,7 +13,6 @@ Gem::Specification.new do |s|
+   s.date = "2021-04-22"
+   s.description = "Ruby/GDK4 is a Ruby binding of GDK-4.x.".freeze
+   s.email = "ruby-gnome2-devel-en@lists.sourceforge.net".freeze
+-  s.extensions = ["dependency-check/Rakefile".freeze]
+   s.files = ["COPYING.LIB".freeze, "README.md".freeze, "Rakefile".freeze, "dependency-check/Rakefile".freeze, "gdk4.gemspec".freeze, "lib/gdk4.rb".freeze, "lib/gdk4/cairo.rb".freeze, "lib/gdk4/loader.rb".freeze, "lib/gdk4/rectangle.rb".freeze, "lib/gdk4/rgba.rb".freeze, "lib/gdk4/version.rb".freeze, "lib/gdk4/x11-loader.rb".freeze, "test/fixture/ruby-gnome2-logo.png".freeze, "test/gdk-test-utils.rb".freeze, "test/run-test.rb".freeze, "test/test-gdk-cairo.rb".freeze, "test/test-gdk-cursor.rb".freeze, "test/test-gdk-event-mask.rb".freeze, "test/test-gdk-event-type.rb".freeze, "test/test-gdk-event.rb".freeze, "test/test-gdk-geometry.rb".freeze, "test/test-gdk-keyval.rb".freeze, "test/test-gdk-pixbuf.rb".freeze, "test/test-gdk-rectangle.rb".freeze, "test/test-gdk-rgba.rb".freeze, "test/test-gdk-selection.rb".freeze, "test/test-gdk-window-attr.rb".freeze]
+   s.homepage = "https://ruby-gnome2.osdn.jp/".freeze
+   s.licenses = ["LGPL-2.1+".freeze]

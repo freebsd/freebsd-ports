@@ -1,3 +1,5 @@
+bin/ipopt
+include/coin/AmplTNLP.hpp
 include/coin/HSLLoader.h
 include/coin/IpAlgBuilder.hpp
 include/coin/IpAlgStrategy.hpp
@@ -85,6 +87,10 @@ lib/libcoinmumps.so.1.6.1
 lib/libipopt.so
 lib/libipopt.so.1
 lib/libipopt.so.1.10.13
+lib/libipoptamplinterface.so
+lib/libipoptamplinterface.so.1
+lib/libipoptamplinterface.so.1.10.13
 libdata/pkgconfig/coinmetis.pc
 libdata/pkgconfig/coinmumps.pc
 libdata/pkgconfig/ipopt.pc
+libdata/pkgconfig/ipoptamplinterface.pc

@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	elasticsearch-dsl
-PORTVERSION=	0.1.9
+PORTVERSION=	0.1.10
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

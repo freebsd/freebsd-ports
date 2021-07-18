@@ -23,4 +23,6 @@ TEST_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

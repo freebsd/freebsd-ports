@@ -2,7 +2,7 @@
 
 PORTNAME=	quake2lnx
 PORTVERSION=	0.16.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/quake2/files/
 DISTNAME=	quake2-r${PORTVERSION}

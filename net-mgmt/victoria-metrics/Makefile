@@ -1,31 +1,34 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
-PORTNAME=	victoria-metrics
+PORTNAME?=	victoria-metrics
+PORTVERSION=	1.63.0		# don't forget to update BUILDINFO_TAG
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.58.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Fast, cost-effective, and scalable time series database
+COMMENT?=	Fast, cost-effective, and scalable time series database
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+
 USES=		gmake go:modules,no_targets
-USE_RC_SUBR=	${PORTNAME}
+USE_RC_SUBR?=	${PORTNAME}
 MAKE_ENV=	PKG_TAG=${DISTVERSIONPREFIX}${DISTVERSION} \
-		BUILDINFO_TAG=edd1590 GOOS=${OPSYS:tl}
+		GOOS=${OPSYS:tl} BUILDINFO_TAG=61cc13c \
+		DATEINFO_TAG=${_GET_DATE:sh}
 ALL_TARGET=	${PORTNAME}-pure
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	VictoriaMetrics
 GH_PROJECT=	VictoriaMetrics
 
-.include "${.CURDIR}/Makefile.deps"
+.include "${.CURDIR}/../victoria-metrics/Makefile.deps"
 
-USERS=		${PORTNAME}
-GROUPS=		${PORTNAME}
-VICTORIA_DATA?=	/var/db/${PORTNAME}
+USERS=		victoria-metrics
+GROUPS=		victoria-metrics
+VICTORIA_DATA?=	/var/db/victoria-metrics
 
 SUB_LIST+=	VICTORIA_DATA=${VICTORIA_DATA} \
 		VICTORIA_USER=${USERS}
@@ -36,6 +39,7 @@ PLIST_SUB+=	VICTORIA_DATA=${VICTORIA_DATA} \
 
 OPTIONS_DEFINE=	DOCS
 
+.if !defined(MASTERDIR)
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/${PORTNAME}-pure \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
@@ -44,6 +48,9 @@ do-install:
 do-install-DOCS-on:
 	@cd ${INSTALL_WRKSRC}/docs && ${RM} robots.txt vm*
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
+	${MV} ${INSTALL_WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
+
+_GET_DATE=	TZ= ${STAT} -f %Sm -t %Y%m%d-%H%M%S ${WRKSRC}/.gitignore

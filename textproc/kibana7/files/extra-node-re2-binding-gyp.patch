@@ -1,0 +1,51 @@
+--- binding.gyp.orig	2021-05-10 04:34:55.000000000 +0200
++++ binding.gyp	2021-07-05 19:22:23.670716000 +0200
+@@ -14,29 +14,6 @@
+         "lib/to_string.cc",
+         "lib/accessors.cc",
+         "lib/util.cc",
+-        "vendor/re2/bitstate.cc",
+-        "vendor/re2/compile.cc",
+-        "vendor/re2/dfa.cc",
+-        "vendor/re2/filtered_re2.cc",
+-        "vendor/re2/mimics_pcre.cc",
+-        "vendor/re2/nfa.cc",
+-        "vendor/re2/onepass.cc",
+-        "vendor/re2/parse.cc",
+-        "vendor/re2/perl_groups.cc",
+-        "vendor/re2/prefilter.cc",
+-        "vendor/re2/prefilter_tree.cc",
+-        "vendor/re2/prog.cc",
+-        "vendor/re2/re2.cc",
+-        "vendor/re2/regexp.cc",
+-        "vendor/re2/set.cc",
+-        "vendor/re2/simplify.cc",
+-        "vendor/re2/stringpiece.cc",
+-        "vendor/re2/tostring.cc",
+-        "vendor/re2/unicode_casefold.cc",
+-        "vendor/re2/unicode_groups.cc",
+-        "vendor/util/pcre.cc",
+-        "vendor/util/rune.cc",
+-        "vendor/util/strutil.cc"
+       ],
+       "cflags": [
+         "-std=c++14",
+@@ -45,7 +22,7 @@
+         "-Wno-sign-compare",
+         "-Wno-unused-parameter",
+         "-Wno-missing-field-initializers",
+-        "-Wno-cast-function-type",
++        "-Wno-bad-function-cast",
+         "-O3",
+         "-g"
+       ],
+@@ -54,7 +31,8 @@
+         "NOMINMAX"
+       ],
+       "include_dirs": [
+-        "<!(node -e \"require('nan')\")",
++	"%%PREFIX%%/include",
++	"%%DEVDIR%%/nan",
+         "vendor"
+       ],
+       "xcode_settings": {

@@ -132,6 +132,7 @@ include/irssi/src/irc/notifylist/notify-setup.h
 include/irssi/src/irc/notifylist/notifylist.h
 include/irssi/src/lib-config/iconfig.h
 include/irssi/src/lib-config/module.h
+@dir lib/irssi/modules
 %%PROXY%%lib/irssi/modules/libirc_proxy.a
 %%PROXY%%lib/irssi/modules/libirc_proxy.so
 %%OTR%%lib/irssi/modules/libotr_core.a

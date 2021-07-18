@@ -26,7 +26,6 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/psl/binding.b
 %%DATADIR%%/psl/bpsl
 %%DATADIR%%/psl/break.b
-%%DATADIR%%/red/brsltnt_bmap.b
 %%DATADIR%%/psl/build.b
 %%DATADIR%%/psl/c-template.b
 %%DATADIR%%/psl/carcdr.b
@@ -93,7 +92,6 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/psl/hash-decls.b
 %%DATADIR%%/psl/hcons.b
 %%DATADIR%%/psl/helferlein.b
-%%DATADIR%%/red/heugcd.b
 %%DATADIR%%/psl/ieee-decls.b
 %%DATADIR%%/psl/if-system.b
 %%DATADIR%%/psl/if.b
@@ -279,6 +277,7 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/red/bounds.b
 %%DATADIR%%/red/bquote.b
 %%DATADIR%%/red/breduce.b
+%%DATADIR%%/red/brsltnt_bmap.b
 %%DATADIR%%/red/buchbg.b
 %%DATADIR%%/red/cali.b
 %%DATADIR%%/red/calimat.b
@@ -297,6 +296,7 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/red/cde_totalder.b
 %%DATADIR%%/red/cde_varcalc.b
 %%DATADIR%%/red/cde_vectorfield.b
+%%DATADIR%%/red/cde_weaklynl.b
 %%DATADIR%%/red/cdiff.b
 %%DATADIR%%/red/cdiffx.b
 %%DATADIR%%/red/cedit.b
@@ -332,6 +332,7 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/red/codpri.b
 %%DATADIR%%/red/codstr.b
 %%DATADIR%%/red/coeff.b
+%%DATADIR%%/red/coeff2.b
 %%DATADIR%%/red/coeffts.b
 %%DATADIR%%/red/cofactor.b
 %%DATADIR%%/red/comfac.b
@@ -565,6 +566,7 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/red/hdiff.b
 %%DATADIR%%/red/helpasst.b
 %%DATADIR%%/red/hephys.b
+%%DATADIR%%/red/heugcd.b
 %%DATADIR%%/red/hf.b
 %%DATADIR%%/red/hggroeb.b
 %%DATADIR%%/red/hgrsolve.b
@@ -902,11 +904,13 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/red/rlami.b
 %%DATADIR%%/red/rlblackbox.b
 %%DATADIR%%/red/rlblackboxes.b
+%%DATADIR%%/red/rlbuiltin.b
 %%DATADIR%%/red/rlcont.b
 %%DATADIR%%/red/rlfi.b
 %%DATADIR%%/red/rlhelp.b
 %%DATADIR%%/red/rlisp.b
 %%DATADIR%%/red/rlisp88.b
+%%DATADIR%%/red/rljson.b
 %%DATADIR%%/red/rlprint.b
 %%DATADIR%%/red/rlprovide.b
 %%DATADIR%%/red/rlservice.b
@@ -954,8 +958,10 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/red/sfpolys.b
 %%DATADIR%%/red/sfpsi.b
 %%DATADIR%%/red/sfsums.b
+%%DATADIR%%/red/sftheta.b
 %%DATADIR%%/red/sfto.b
 %%DATADIR%%/red/sftoresultant.b
+%%DATADIR%%/red/sfweier.b
 %%DATADIR%%/red/showrule.b
 %%DATADIR%%/red/simp.b
 %%DATADIR%%/red/simp4.b

@@ -1,7 +1,9 @@
---- conf/graphite.wsgi.example.orig	2018-04-04 07:58:36 UTC
+--- conf/graphite.wsgi.example.orig	2021-04-19 05:24:42 UTC
 +++ conf/graphite.wsgi.example
-@@ -1,4 +1,4 @@
- import sys
+@@ -2,6 +2,6 @@ import sys
+ # In case of multi-instance graphite, uncomment and set appropriate name
+ # import os
+ # os.environ['GRAPHITE_SETTINGS_MODULE'] = 'graphite.local_settings'
 -sys.path.append('/opt/graphite/webapp')
 +sys.path.append('%%PYTHON_SITELIBDIR%%/graphite')
  

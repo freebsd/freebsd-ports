@@ -1,6 +1,6 @@
---- printing/printing_features.h.orig	2021-03-12 23:57:28 UTC
+--- printing/printing_features.h.orig	2021-04-14 18:41:07 UTC
 +++ printing/printing_features.h
-@@ -38,10 +38,10 @@ PRINTING_EXPORT bool IsXpsPrintCapabilityRequired();
+@@ -34,10 +34,10 @@ PRINTING_EXPORT bool IsXpsPrintCapabilityRequired();
  PRINTING_EXPORT bool ShouldPrintUsingXps(bool source_is_pdf);
  #endif  // defined(OS_WIN)
  

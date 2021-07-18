@@ -18,8 +18,9 @@ RUN_DEPENDS=	p5-Object-Simple>=3.0621:devel/p5-Object-Simple
 TEST_DEPENDS=	p5-JSON>=2:converters/p5-JSON \
 		p5-Test-Pod>=1.22:devel/p5-Test-Pod
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

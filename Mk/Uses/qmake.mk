@@ -77,7 +77,7 @@ QMAKE_ARGS+=		-spec ${QMAKESPEC} \
 
 .  if defined(WITH_DEBUG)
 PLIST_SUB+=		DEBUG=""
-QMAKE_ARGS+=		CONFIG+="debug" \
+QMAKE_ARGS+=		CONFIG+="debug separate_debug_info" \
 			CONFIG-="release"
 .  else
 PLIST_SUB+=		DEBUG="@comment "

@@ -1,4 +1,4 @@
---- ui/gfx/font_names_testing.cc.orig	2021-03-12 23:57:48 UTC
+--- ui/gfx/font_names_testing.cc.orig	2021-04-14 18:41:39 UTC
 +++ ui/gfx/font_names_testing.cc
 @@ -22,7 +22,7 @@ Note that we have to support the full range from Jelly
  dessert.

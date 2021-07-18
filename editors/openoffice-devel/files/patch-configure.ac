@@ -1,0 +1,11 @@
+--- configure.ac.orig	2021-04-17 18:43:53 UTC
++++ configure.ac
+@@ -3407,7 +3407,7 @@ if test "$enable_epm" = "yes"; then
+    dnl ===================================================================
+    dnl Check for epm - not needed for Windows
+    dnl ===================================================================
+-   if test "$_os" != "WINNT"; then
++   if test "$_os" != "WINNT" -a "$with_package_format" != "archive"; then
+       if test -n "$with_epm"; then
+ 	      EPM=$with_epm
+       else

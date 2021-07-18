@@ -8,6 +8,9 @@ MASTER_SITES=	http://www.nazgul.ch/dev/
 MAINTAINER=	LukeD@pobox.com
 COMMENT=	DockApp showing the state of a wireless network device
 
+BROKEN_FreeBSD_13=	does not compile: wl.c:29:10: fatal error: 'dev/wi/if_wavelan_ieee.h' file not found
+BROKEN_FreeBSD_14=	does not compile: wl.c:29:10: fatal error: 'dev/wi/if_wavelan_ieee.h' file not found
+
 USES=		xorg
 USE_XORG=	x11 xext xpm
 

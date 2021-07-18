@@ -1,8 +1,7 @@
 # Created by: Henk van Oers <hvo.pm@xs4all.nl>
 
 PORTNAME=	UUID-Random-Patch-UseMRS
-PORTVERSION=	0.01
-PORTREVISION=	1
+PORTVERSION=	0.030
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,12 +11,15 @@ COMMENT=	Make UUID::Random use Math::Random::Secure::rand()
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Math-Random-Secure>=0:math/p5-Math-Random-Secure \
 		p5-UUID-Random>=0:devel/p5-UUID-Random
 
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

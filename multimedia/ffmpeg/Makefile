@@ -2,6 +2,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	4.4
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -77,11 +78,6 @@ OPTIONS_EXCLUDE+=	KLVANC
 .if !exists(${.CURDIR:H:H}/science/openvino)
 # https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/ff37ebaf30e6
 OPTIONS_EXCLUDE+=	OPENVINO
-.endif
-
-.if !exists(${.CURDIR:H:H}/net/srt)
-# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/a2fc8dbae853
-OPTIONS_EXCLUDE+=	SRT
 .endif
 
 .if !exists(${.CURDIR:H:H}/science/tensorflow)
@@ -463,7 +459,7 @@ SSH_LIB_DEPENDS=	libssh.so:security/libssh
 SSH_CONFIGURE_ENABLE=	libssh
 
 # srt
-SRT_LIB_DEPENDS=	libsrt.so:net/srt
+SRT_LIB_DEPENDS=	libsrt.so:www/srt
 SRT_CONFIGURE_ENABLE=	libsrt
 
 # svt-av1
@@ -610,7 +606,6 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING.GPLv3
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LGPLv3
 
 NONFREE_CONFIGURE_ENABLE=nonfree
-NONFREE_VARS=		RESTRICTED="enabling OPENSSL or FDK_AAC restricts redistribution"
 
 INSTALL_TARGET=	install-progs install-doc install-data \
 		install-libs install-headers install-examples
@@ -640,6 +635,16 @@ DOC_FILES=	Changelog CREDITS INSTALL.md LICENSE.md MAINTAINERS \
 # under doc subdirectory
 DOC_DOCFILES=	APIchanges *.txt
 PORTDOCS=	*
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNONFREE}
+LICENSE+=	NONFREE
+LICENSE_COMB=	multi
+LICENSE_NAME_NONFREE=	Non free code
+LICENSE_TEXT_NONFREE=	enabling OPENSSL or FDK_AAC restricts redistribution
+LICENSE_PERMS_NONFREE=	auto-accept
+.endif
 
 .include <bsd.port.pre.mk>
 

@@ -1,0 +1,11 @@
+TIMESTAMP = 1624304403
+SHA256 (nkanaev-yarr-v2.0-0c5385c_GH0.tar.gz) = 83558d4962d2e27195fc0a484c2c8b45bb8f8278ded9d110278ca4c141e34898
+SIZE (nkanaev-yarr-v2.0-0c5385c_GH0.tar.gz) = 924613
+SHA256 (golang-net-d3edc9973b7e_GH0.tar.gz) = 3f1ba89024d8a03881a5f308e820f1beb0fa6f3a03eff3dca42c4cc9f59869f9
+SIZE (golang-net-d3edc9973b7e_GH0.tar.gz) = 1174466
+SHA256 (golang-sys-eeed37f84f13_GH0.tar.gz) = f656a17b77d0b695e8bb6537e3650e971f33222271da42419c60e49a6ceae9c3
+SIZE (golang-sys-eeed37f84f13_GH0.tar.gz) = 1069057
+SHA256 (golang-text-v0.3.0_GH0.tar.gz) = 8f4c9a048345befc7beccd09267737ee1f55c7b35e5ff80f344ec9e0aa90febb
+SIZE (golang-text-v0.3.0_GH0.tar.gz) = 6102619
+SHA256 (mattn-go-sqlite3-v1.14.0_GH0.tar.gz) = 84f86e4619915791b5a67d8fa4ba6e0101abd9be827548b27b54a954b374bf54
+SIZE (mattn-go-sqlite3-v1.14.0_GH0.tar.gz) = 2350479

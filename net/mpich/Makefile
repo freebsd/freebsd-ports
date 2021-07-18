@@ -1,5 +1,6 @@
 PORTNAME=	mpich
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
+PORTREVISION=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	https://www.mpich.org/static/downloads/${DISTVERSION}/
 
@@ -27,12 +28,12 @@ USES=		compiler:c11 libtool perl5 pkgconfig
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=		DOCS FORTRAN
+OPTIONS_DEFINE=		DOCS FORTRAN L0
 OPTIONS_GROUP=		PM
 OPTIONS_GROUP_PM=	GFORKER HYDRA
 OPTIONS_RADIO=		DEFAULTPM
 OPTIONS_RADIO_DEFAULTPM=DGFORKER DHYDRA
-OPTIONS_DEFAULT=	FORTRAN GFORKER HYDRA DHYDRA
+OPTIONS_DEFAULT=	FORTRAN GFORKER HYDRA DHYDRA L0
 OPTIONS_SUB=		yes
 
 FORTRAN_USES=			fortran
@@ -52,8 +53,12 @@ DEFAULTPM_DESC=	Default process manager
 DGFORKER_DESC=	Make gforker the default process manager
 DHYDRA_DESC=	Make hydra the default process manager
 
-CONFIGURE_ENV=	ac_cv_header_level_zero_ze_api_h=no \
-		ac_cv_lib_ze_loader_zeInit=no
+L0_DESC=		oneAPI Level Zero support
+L0_LIB_DEPENDS=		libze_loader.so:devel/level-zero
+L0_CPPFLAGS=		-DZE_IPC_MEMORY_FLAG_TBD=ZE_IPC_MEMORY_FLAG_BIAS_CACHED # 1.4.1
+L0_CONFIGURE_ENV_OFF=	ac_cv_header_level_zero_ze_api_h=no \
+			ac_cv_lib_ze_loader_zeInit=no
+
 CONFIGURE_ARGS=	--enable-fast="" --with-hwloc-prefix=${LOCALBASE} \
 		--with-libfabric=${LOCALBASE} \
 		pkgconfigdir="${PREFIX}/libdata/pkgconfig" \

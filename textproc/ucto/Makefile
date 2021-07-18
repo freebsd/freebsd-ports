@@ -1,7 +1,6 @@
 PORTNAME=	ucto
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.1
-PORTREVISION=	11
+DISTVERSION=	0.23
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,12 +19,14 @@ RUN_DEPENDS=	uctodata>0:textproc/uctodata
 
 USES=		autoreconf compiler:c++11-lang gmake gnome libedit libtool \
 		pkgconfig readline
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static
-USE_GITHUB=	yes
-GH_ACCOUNT=	LanguageMachines
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	LanguageMachines
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static
 
 INSTALL_TARGET=	install-strip
 

@@ -1,0 +1,2 @@
+@sample etc/crowdsec-firewall-bouncer/crowdsec-firewall-bouncer.yaml.sample
+bin/crowdsec-firewall-bouncer

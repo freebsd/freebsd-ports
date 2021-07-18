@@ -1,7 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	AtExit
-PORTVERSION=	2.03
+PORTVERSION=	2.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

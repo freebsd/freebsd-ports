@@ -1,5 +1,5 @@
 PORTNAME=	xen
-PORTVERSION=	4.14.1
+PORTVERSION=	4.15.0
 PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
@@ -23,11 +23,10 @@ STRIP=		#
 PLIST_FILES=	/boot/xen \
 		lib/debug/boot/xen.debug
 
-# Propagate module command line passed by the loader.
-EXTRA_PATCHES+= ${PATCHDIR}/0001-x86-pvh-pass-module-command-line-to-dom0.patch:-p1
-
-# Fix EFI BS call ABI.
-EXTRA_PATCHES+= ${PATCHDIR}/0001-x86-efi-enable-MS-ABI-attribute-on-clang.patch:-p1
+# Fix grant/foreign mapping cache attributes on Intel.
+EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-mtrr-remove-stale-function-prototype.patch:-p1 \
+		${PATCHDIR}/0002-x86-mtrr-move-epte_get_entry_emt-to-p2m-ept.c.patch:-p1 \
+		${PATCHDIR}/0003-x86-ept-force-WB-cache-attributes-for-grant-and-fore.patch:-p1
 
 .include <bsd.port.options.mk>
 

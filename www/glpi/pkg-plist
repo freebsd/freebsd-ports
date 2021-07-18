@@ -902,6 +902,7 @@
 %%WWWDIR%%/inc/config.php
 %%WWWDIR%%/inc/console/abstractcommand.class.php
 %%WWWDIR%%/inc/console/application.class.php
+%%WWWDIR%%/inc/console/build/compilescsscommand.class.php
 %%WWWDIR%%/inc/console/command/forcenopluginsoptioncommandinterface.class.php
 %%WWWDIR%%/inc/console/command/glpicommandinterface.class.php
 %%WWWDIR%%/inc/console/commandloader.class.php
@@ -1389,6 +1390,7 @@
 %%WWWDIR%%/inc/system/requirementslist.class.php
 %%WWWDIR%%/inc/system/requirementsmanager.class.php
 %%WWWDIR%%/inc/system/status/statuschecker.class.php
+%%WWWDIR%%/inc/system/variables.class.php
 %%WWWDIR%%/inc/taskcategory.class.php
 %%WWWDIR%%/inc/tasktemplate.class.php
 %%WWWDIR%%/inc/telemetry.class.php
@@ -1486,6 +1488,8 @@
 %%WWWDIR%%/install/update_94_95/dashboards.php
 %%WWWDIR%%/install/update_951_952.php
 %%WWWDIR%%/install/update_952_953.php
+%%WWWDIR%%/install/update_953_954.php
+%%WWWDIR%%/install/update_954_955.php
 %%WWWDIR%%/install/update_content.php
 %%WWWDIR%%/install/update_to_031.php
 %%WWWDIR%%/install/update_xx_xy.tpl.php
@@ -2814,8 +2818,10 @@
 %%WWWDIR%%/status.php
 %%WWWDIR%%/vendor/autoload.php
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/LICENSE.txt
+%%WWWDIR%%/vendor/blueimp/jquery-file-upload/README.md
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/SECURITY.md
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/VULNERABILITIES.md
+%%WWWDIR%%/vendor/blueimp/jquery-file-upload/composer.json
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/cors/postmessage.html
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/cors/result.html
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/css/jquery.fileupload-noscript.css
@@ -2874,6 +2880,7 @@
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/wdio/wdio.conf.js
 %%WWWDIR%%/vendor/brick/math/LICENSE
 %%WWWDIR%%/vendor/brick/math/SECURITY.md
+%%WWWDIR%%/vendor/brick/math/composer.json
 %%WWWDIR%%/vendor/brick/math/psalm-baseline.xml
 %%WWWDIR%%/vendor/brick/math/psalm.xml
 %%WWWDIR%%/vendor/brick/math/src/BigDecimal.php
@@ -2903,17 +2910,34 @@
 %%WWWDIR%%/vendor/composer/installed.json
 %%WWWDIR%%/vendor/composer/installed.php
 %%WWWDIR%%/vendor/container-interop/container-interop/LICENSE
+%%WWWDIR%%/vendor/container-interop/container-interop/README.md
+%%WWWDIR%%/vendor/container-interop/container-interop/composer.json
+%%WWWDIR%%/vendor/container-interop/container-interop/docs/ContainerInterface-meta.md
+%%WWWDIR%%/vendor/container-interop/container-interop/docs/ContainerInterface.md
+%%WWWDIR%%/vendor/container-interop/container-interop/docs/Delegate-lookup-meta.md
+%%WWWDIR%%/vendor/container-interop/container-interop/docs/Delegate-lookup.md
+%%WWWDIR%%/vendor/container-interop/container-interop/docs/images/interoperating_containers.png
+%%WWWDIR%%/vendor/container-interop/container-interop/docs/images/priority.png
+%%WWWDIR%%/vendor/container-interop/container-interop/docs/images/side_by_side_containers.png
 %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop/Container/ContainerInterface.php
 %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop/Container/Exception/ContainerException.php
 %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop/Container/Exception/NotFoundException.php
 %%WWWDIR%%/vendor/elvanto/litemoji/LICENSE
+%%WWWDIR%%/vendor/elvanto/litemoji/README.md
 %%WWWDIR%%/vendor/elvanto/litemoji/bin/generate-shortcodes-array.php
+%%WWWDIR%%/vendor/elvanto/litemoji/composer.json
 %%WWWDIR%%/vendor/elvanto/litemoji/phpunit.xml
 %%WWWDIR%%/vendor/elvanto/litemoji/src/LitEmoji.php
 %%WWWDIR%%/vendor/elvanto/litemoji/src/shortcodes-array.php
+%%WWWDIR%%/vendor/elvanto/litemoji/tests/LitEmojiTest.php
+%%WWWDIR%%/vendor/elvanto/litemoji/tests/ShortcodeIpsum
+%%WWWDIR%%/vendor/elvanto/litemoji/tests/UnicodeIpsum
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/Dockerfile
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/LICENSE
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/README.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/UPGRADING.md
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/composer.json
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Client.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/ClientInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php
@@ -2952,8 +2976,11 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Utils.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/functions.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/functions_include.php
+%%WWWDIR%%/vendor/guzzlehttp/promises/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/promises/LICENSE
 %%WWWDIR%%/vendor/guzzlehttp/promises/Makefile
+%%WWWDIR%%/vendor/guzzlehttp/promises/README.md
+%%WWWDIR%%/vendor/guzzlehttp/promises/composer.json
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/AggregateException.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/CancellationException.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/Coroutine.php
@@ -2968,7 +2995,10 @@
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/TaskQueueInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/functions.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/functions_include.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/psr7/LICENSE
+%%WWWDIR%%/vendor/guzzlehttp/psr7/README.md
+%%WWWDIR%%/vendor/guzzlehttp/psr7/composer.json
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/AppendStream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/BufferStream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/CachingStream.php
@@ -3002,10 +3032,15 @@
 %%WWWDIR%%/vendor/htmlawed/htmlawed/htmLawed_README.txt
 %%WWWDIR%%/vendor/htmlawed/htmlawed/htmLawed_TESTCASE.txt
 %%WWWDIR%%/vendor/iamcal/lib_autolink/LICENSE
+%%WWWDIR%%/vendor/iamcal/lib_autolink/README.md
+%%WWWDIR%%/vendor/iamcal/lib_autolink/composer.json
 %%WWWDIR%%/vendor/iamcal/lib_autolink/lib_autolink.php
+%%WWWDIR%%/vendor/laminas/laminas-cache/CHANGELOG.md
 %%WWWDIR%%/vendor/laminas/laminas-cache/COPYRIGHT.md
 %%WWWDIR%%/vendor/laminas/laminas-cache/LICENSE.md
+%%WWWDIR%%/vendor/laminas/laminas-cache/README.md
 %%WWWDIR%%/vendor/laminas/laminas-cache/autoload/patternPluginManagerPolyfill.php
+%%WWWDIR%%/vendor/laminas/laminas-cache/composer.json
 %%WWWDIR%%/vendor/laminas/laminas-cache/src/ConfigProvider.php
 %%WWWDIR%%/vendor/laminas/laminas-cache/src/Exception/BadMethodCallException.php
 %%WWWDIR%%/vendor/laminas/laminas-cache/src/Exception/ExceptionInterface.php
@@ -3113,8 +3148,11 @@
 %%WWWDIR%%/vendor/laminas/laminas-cache/src/Storage/TaggableInterface.php
 %%WWWDIR%%/vendor/laminas/laminas-cache/src/Storage/TotalSpaceCapableInterface.php
 %%WWWDIR%%/vendor/laminas/laminas-cache/src/StorageFactory.php
+%%WWWDIR%%/vendor/laminas/laminas-eventmanager/CHANGELOG.md
 %%WWWDIR%%/vendor/laminas/laminas-eventmanager/COPYRIGHT.md
 %%WWWDIR%%/vendor/laminas/laminas-eventmanager/LICENSE.md
+%%WWWDIR%%/vendor/laminas/laminas-eventmanager/README.md
+%%WWWDIR%%/vendor/laminas/laminas-eventmanager/composer.json
 %%WWWDIR%%/vendor/laminas/laminas-eventmanager/src/AbstractListenerAggregate.php
 %%WWWDIR%%/vendor/laminas/laminas-eventmanager/src/Event.php
 %%WWWDIR%%/vendor/laminas/laminas-eventmanager/src/EventInterface.php
@@ -3141,8 +3179,11 @@
 %%WWWDIR%%/vendor/laminas/laminas-eventmanager/src/SharedEventManagerInterface.php
 %%WWWDIR%%/vendor/laminas/laminas-eventmanager/src/SharedEventsCapableInterface.php
 %%WWWDIR%%/vendor/laminas/laminas-eventmanager/src/Test/EventListenerIntrospectionTrait.php
+%%WWWDIR%%/vendor/laminas/laminas-i18n/CHANGELOG.md
 %%WWWDIR%%/vendor/laminas/laminas-i18n/COPYRIGHT.md
 %%WWWDIR%%/vendor/laminas/laminas-i18n/LICENSE.md
+%%WWWDIR%%/vendor/laminas/laminas-i18n/README.md
+%%WWWDIR%%/vendor/laminas/laminas-i18n/composer.json
 %%WWWDIR%%/vendor/laminas/laminas-i18n/src/ConfigProvider.php
 %%WWWDIR%%/vendor/laminas/laminas-i18n/src/Exception/ExceptionInterface.php
 %%WWWDIR%%/vendor/laminas/laminas-i18n/src/Exception/ExtensionNotLoadedException.php
@@ -3437,8 +3478,11 @@
 %%WWWDIR%%/vendor/laminas/laminas-i18n/src/View/Helper/TranslatePlural.php
 %%WWWDIR%%/vendor/laminas/laminas-i18n/src/View/HelperConfig.php
 %%WWWDIR%%/vendor/laminas/laminas-i18n/src/View/HelperTrait.php
+%%WWWDIR%%/vendor/laminas/laminas-json/CHANGELOG.md
 %%WWWDIR%%/vendor/laminas/laminas-json/COPYRIGHT.md
 %%WWWDIR%%/vendor/laminas/laminas-json/LICENSE.md
+%%WWWDIR%%/vendor/laminas/laminas-json/README.md
+%%WWWDIR%%/vendor/laminas/laminas-json/composer.json
 %%WWWDIR%%/vendor/laminas/laminas-json/src/Decoder.php
 %%WWWDIR%%/vendor/laminas/laminas-json/src/Encoder.php
 %%WWWDIR%%/vendor/laminas/laminas-json/src/Exception/BadMethodCallException.php
@@ -3448,8 +3492,11 @@
 %%WWWDIR%%/vendor/laminas/laminas-json/src/Exception/RuntimeException.php
 %%WWWDIR%%/vendor/laminas/laminas-json/src/Expr.php
 %%WWWDIR%%/vendor/laminas/laminas-json/src/Json.php
+%%WWWDIR%%/vendor/laminas/laminas-loader/CHANGELOG.md
 %%WWWDIR%%/vendor/laminas/laminas-loader/COPYRIGHT.md
 %%WWWDIR%%/vendor/laminas/laminas-loader/LICENSE.md
+%%WWWDIR%%/vendor/laminas/laminas-loader/README.md
+%%WWWDIR%%/vendor/laminas/laminas-loader/composer.json
 %%WWWDIR%%/vendor/laminas/laminas-loader/src/AutoloaderFactory.php
 %%WWWDIR%%/vendor/laminas/laminas-loader/src/ClassMapAutoloader.php
 %%WWWDIR%%/vendor/laminas/laminas-loader/src/Exception/BadMethodCallException.php
@@ -3467,8 +3514,11 @@
 %%WWWDIR%%/vendor/laminas/laminas-loader/src/ShortNameLocator.php
 %%WWWDIR%%/vendor/laminas/laminas-loader/src/SplAutoloader.php
 %%WWWDIR%%/vendor/laminas/laminas-loader/src/StandardAutoloader.php
+%%WWWDIR%%/vendor/laminas/laminas-mail/CHANGELOG.md
 %%WWWDIR%%/vendor/laminas/laminas-mail/COPYRIGHT.md
 %%WWWDIR%%/vendor/laminas/laminas-mail/LICENSE.md
+%%WWWDIR%%/vendor/laminas/laminas-mail/README.md
+%%WWWDIR%%/vendor/laminas/laminas-mail/composer.json
 %%WWWDIR%%/vendor/laminas/laminas-mail/src/Address.php
 %%WWWDIR%%/vendor/laminas/laminas-mail/src/Address/AddressInterface.php
 %%WWWDIR%%/vendor/laminas/laminas-mail/src/AddressList.php
@@ -3569,8 +3619,11 @@
 %%WWWDIR%%/vendor/laminas/laminas-mail/src/Transport/Smtp.php
 %%WWWDIR%%/vendor/laminas/laminas-mail/src/Transport/SmtpOptions.php
 %%WWWDIR%%/vendor/laminas/laminas-mail/src/Transport/TransportInterface.php
+%%WWWDIR%%/vendor/laminas/laminas-mime/CHANGELOG.md
 %%WWWDIR%%/vendor/laminas/laminas-mime/COPYRIGHT.md
 %%WWWDIR%%/vendor/laminas/laminas-mime/LICENSE.md
+%%WWWDIR%%/vendor/laminas/laminas-mime/README.md
+%%WWWDIR%%/vendor/laminas/laminas-mime/composer.json
 %%WWWDIR%%/vendor/laminas/laminas-mime/src/Decode.php
 %%WWWDIR%%/vendor/laminas/laminas-mime/src/Exception/ExceptionInterface.php
 %%WWWDIR%%/vendor/laminas/laminas-mime/src/Exception/InvalidArgumentException.php
@@ -3578,8 +3631,11 @@
 %%WWWDIR%%/vendor/laminas/laminas-mime/src/Message.php
 %%WWWDIR%%/vendor/laminas/laminas-mime/src/Mime.php
 %%WWWDIR%%/vendor/laminas/laminas-mime/src/Part.php
+%%WWWDIR%%/vendor/laminas/laminas-serializer/CHANGELOG.md
 %%WWWDIR%%/vendor/laminas/laminas-serializer/COPYRIGHT.md
 %%WWWDIR%%/vendor/laminas/laminas-serializer/LICENSE.md
+%%WWWDIR%%/vendor/laminas/laminas-serializer/README.md
+%%WWWDIR%%/vendor/laminas/laminas-serializer/composer.json
 %%WWWDIR%%/vendor/laminas/laminas-serializer/src/Adapter/AbstractAdapter.php
 %%WWWDIR%%/vendor/laminas/laminas-serializer/src/Adapter/AdapterInterface.php
 %%WWWDIR%%/vendor/laminas/laminas-serializer/src/Adapter/AdapterOptions.php
@@ -3603,10 +3659,13 @@
 %%WWWDIR%%/vendor/laminas/laminas-serializer/src/Exception/RuntimeException.php
 %%WWWDIR%%/vendor/laminas/laminas-serializer/src/Module.php
 %%WWWDIR%%/vendor/laminas/laminas-serializer/src/Serializer.php
+%%WWWDIR%%/vendor/laminas/laminas-servicemanager/CHANGELOG.md
 %%WWWDIR%%/vendor/laminas/laminas-servicemanager/COPYRIGHT.md
 %%WWWDIR%%/vendor/laminas/laminas-servicemanager/LICENSE.md
+%%WWWDIR%%/vendor/laminas/laminas-servicemanager/README.md
 %%WWWDIR%%/vendor/laminas/laminas-servicemanager/bin/generate-deps-for-config-factory
 %%WWWDIR%%/vendor/laminas/laminas-servicemanager/bin/generate-factory-for-class
+%%WWWDIR%%/vendor/laminas/laminas-servicemanager/composer.json
 %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/AbstractFactory/ConfigAbstractFactory.php
 %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/AbstractFactory/ReflectionBasedAbstractFactory.php
 %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/AbstractFactoryInterface.php
@@ -3638,8 +3697,11 @@
 %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/Tool/ConfigDumperCommand.php
 %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/Tool/FactoryCreator.php
 %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/Tool/FactoryCreatorCommand.php
+%%WWWDIR%%/vendor/laminas/laminas-stdlib/CHANGELOG.md
 %%WWWDIR%%/vendor/laminas/laminas-stdlib/COPYRIGHT.md
 %%WWWDIR%%/vendor/laminas/laminas-stdlib/LICENSE.md
+%%WWWDIR%%/vendor/laminas/laminas-stdlib/README.md
+%%WWWDIR%%/vendor/laminas/laminas-stdlib/composer.json
 %%WWWDIR%%/vendor/laminas/laminas-stdlib/src/AbstractOptions.php
 %%WWWDIR%%/vendor/laminas/laminas-stdlib/src/ArrayObject.php
 %%WWWDIR%%/vendor/laminas/laminas-stdlib/src/ArraySerializableInterface.php
@@ -3687,9 +3749,12 @@
 %%WWWDIR%%/vendor/laminas/laminas-stdlib/src/StringWrapper/MbString.php
 %%WWWDIR%%/vendor/laminas/laminas-stdlib/src/StringWrapper/Native.php
 %%WWWDIR%%/vendor/laminas/laminas-stdlib/src/StringWrapper/StringWrapperInterface.php
+%%WWWDIR%%/vendor/laminas/laminas-validator/CHANGELOG.md
 %%WWWDIR%%/vendor/laminas/laminas-validator/COPYRIGHT.md
 %%WWWDIR%%/vendor/laminas/laminas-validator/LICENSE.md
+%%WWWDIR%%/vendor/laminas/laminas-validator/README.md
 %%WWWDIR%%/vendor/laminas/laminas-validator/bin/update_hostname_validator.php
+%%WWWDIR%%/vendor/laminas/laminas-validator/composer.json
 %%WWWDIR%%/vendor/laminas/laminas-validator/src/AbstractValidator.php
 %%WWWDIR%%/vendor/laminas/laminas-validator/src/Barcode.php
 %%WWWDIR%%/vendor/laminas/laminas-validator/src/Barcode/AbstractAdapter.php
@@ -3803,8 +3868,11 @@
 %%WWWDIR%%/vendor/laminas/laminas-validator/src/ValidatorPluginManagerAwareInterface.php
 %%WWWDIR%%/vendor/laminas/laminas-validator/src/ValidatorPluginManagerFactory.php
 %%WWWDIR%%/vendor/laminas/laminas-validator/src/ValidatorProviderInterface.php
+%%WWWDIR%%/vendor/laminas/laminas-zendframework-bridge/CHANGELOG.md
 %%WWWDIR%%/vendor/laminas/laminas-zendframework-bridge/COPYRIGHT.md
 %%WWWDIR%%/vendor/laminas/laminas-zendframework-bridge/LICENSE.md
+%%WWWDIR%%/vendor/laminas/laminas-zendframework-bridge/README.md
+%%WWWDIR%%/vendor/laminas/laminas-zendframework-bridge/composer.json
 %%WWWDIR%%/vendor/laminas/laminas-zendframework-bridge/config/replacements.php
 %%WWWDIR%%/vendor/laminas/laminas-zendframework-bridge/src/Autoloader.php
 %%WWWDIR%%/vendor/laminas/laminas-zendframework-bridge/src/ConfigPostProcessor.php
@@ -3812,6 +3880,8 @@
 %%WWWDIR%%/vendor/laminas/laminas-zendframework-bridge/src/Replacements.php
 %%WWWDIR%%/vendor/laminas/laminas-zendframework-bridge/src/RewriteRules.php
 %%WWWDIR%%/vendor/laminas/laminas-zendframework-bridge/src/autoload.php
+%%WWWDIR%%/vendor/mexitek/phpcolors/README.md
+%%WWWDIR%%/vendor/mexitek/phpcolors/composer.json
 %%WWWDIR%%/vendor/mexitek/phpcolors/demo/demo.php
 %%WWWDIR%%/vendor/mexitek/phpcolors/demo/phpColor-demo.png
 %%WWWDIR%%/vendor/mexitek/phpcolors/src/Mexitek/PHPColors/Color.php
@@ -3823,7 +3893,10 @@
 %%WWWDIR%%/vendor/michelf/php-markdown/Michelf/MarkdownExtra.php
 %%WWWDIR%%/vendor/michelf/php-markdown/Michelf/MarkdownInterface.inc.php
 %%WWWDIR%%/vendor/michelf/php-markdown/Michelf/MarkdownInterface.php
+%%WWWDIR%%/vendor/michelf/php-markdown/Readme.md
 %%WWWDIR%%/vendor/michelf/php-markdown/Readme.php
+%%WWWDIR%%/vendor/michelf/php-markdown/composer.json
+%%WWWDIR%%/vendor/michelf/php-markdown/phpunit.xml.dist
 %%WWWDIR%%/vendor/michelf/php-markdown/test/bootstrap.php
 %%WWWDIR%%/vendor/michelf/php-markdown/test/helpers/MarkdownTestHelper.php
 %%WWWDIR%%/vendor/michelf/php-markdown/test/integration/PhpMarkdownTest.php
@@ -3948,8 +4021,12 @@
 %%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/XML empty tag.text
 %%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/XML empty tag.xhtml
 %%WWWDIR%%/vendor/michelf/php-markdown/test/unit/MarkdownExtraTest.php
+%%WWWDIR%%/vendor/monolog/monolog/CHANGELOG.md
 %%WWWDIR%%/vendor/monolog/monolog/LICENSE
+%%WWWDIR%%/vendor/monolog/monolog/README.md
 %%WWWDIR%%/vendor/monolog/monolog/UPGRADE.md
+%%WWWDIR%%/vendor/monolog/monolog/composer.json
+%%WWWDIR%%/vendor/monolog/monolog/phpstan.neon.dist
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/DateTimeImmutable.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/ErrorHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php
@@ -4022,6 +4099,7 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/PsrHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/PushoverHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/RedisHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/RedisPubSubHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/RollbarHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SamplingHandler.php
@@ -4061,6 +4139,7 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Test/TestCase.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Utils.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/LICENSE
+%%WWWDIR%%/vendor/paragonie/sodium_compat/README.md
 %%WWWDIR%%/vendor/paragonie/sodium_compat/appveyor.yml
 %%WWWDIR%%/vendor/paragonie/sodium_compat/autoload-fast.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/autoload-pedantic.php
@@ -4069,6 +4148,7 @@
 %%WWWDIR%%/vendor/paragonie/sodium_compat/autoload.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/build-phar.sh
 %%WWWDIR%%/vendor/paragonie/sodium_compat/composer-php52.json
+%%WWWDIR%%/vendor/paragonie/sodium_compat/composer.json
 %%WWWDIR%%/vendor/paragonie/sodium_compat/dist/Makefile
 %%WWWDIR%%/vendor/paragonie/sodium_compat/dist/box.json
 %%WWWDIR%%/vendor/paragonie/sodium_compat/lib/constants.php
@@ -4102,6 +4182,7 @@
 %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced/Core/Xsalsa20.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced/Crypto.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced/File.php
+%%WWWDIR%%/vendor/paragonie/sodium_compat/phpunit.xml.dist
 %%WWWDIR%%/vendor/paragonie/sodium_compat/psalm-above-3.xml
 %%WWWDIR%%/vendor/paragonie/sodium_compat/psalm-below-3.xml
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Compat.php
@@ -4120,6 +4201,7 @@
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/Curve25519/Ge/P3.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/Curve25519/Ge/Precomp.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/Curve25519/H.php
+%%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/Curve25519/README.md
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/Ed25519.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/HChaCha20.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/HSalsa20.php
@@ -4144,6 +4226,7 @@
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core32/Curve25519/Ge/P3.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core32/Curve25519/Ge/Precomp.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core32/Curve25519/H.php
+%%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core32/Curve25519/README.md
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core32/Ed25519.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core32/HChaCha20.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core32/HSalsa20.php
@@ -4165,8 +4248,10 @@
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/SodiumException.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/COMMITMENT
 %%WWWDIR%%/vendor/phpmailer/phpmailer/LICENSE
+%%WWWDIR%%/vendor/phpmailer/phpmailer/README.md
 %%WWWDIR%%/vendor/phpmailer/phpmailer/SECURITY.md
 %%WWWDIR%%/vendor/phpmailer/phpmailer/VERSION
+%%WWWDIR%%/vendor/phpmailer/phpmailer/composer.json
 %%WWWDIR%%/vendor/phpmailer/phpmailer/get_oauth_token.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-af.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ar.php
@@ -4224,16 +4309,24 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/PHPMailer.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/POP3.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/SMTP.php
+%%WWWDIR%%/vendor/psr/cache/CHANGELOG.md
 %%WWWDIR%%/vendor/psr/cache/LICENSE.txt
+%%WWWDIR%%/vendor/psr/cache/README.md
+%%WWWDIR%%/vendor/psr/cache/composer.json
 %%WWWDIR%%/vendor/psr/cache/src/CacheException.php
 %%WWWDIR%%/vendor/psr/cache/src/CacheItemInterface.php
 %%WWWDIR%%/vendor/psr/cache/src/CacheItemPoolInterface.php
 %%WWWDIR%%/vendor/psr/cache/src/InvalidArgumentException.php
 %%WWWDIR%%/vendor/psr/container/LICENSE
+%%WWWDIR%%/vendor/psr/container/README.md
+%%WWWDIR%%/vendor/psr/container/composer.json
 %%WWWDIR%%/vendor/psr/container/src/ContainerExceptionInterface.php
 %%WWWDIR%%/vendor/psr/container/src/ContainerInterface.php
 %%WWWDIR%%/vendor/psr/container/src/NotFoundExceptionInterface.php
+%%WWWDIR%%/vendor/psr/http-message/CHANGELOG.md
 %%WWWDIR%%/vendor/psr/http-message/LICENSE
+%%WWWDIR%%/vendor/psr/http-message/README.md
+%%WWWDIR%%/vendor/psr/http-message/composer.json
 %%WWWDIR%%/vendor/psr/http-message/src/MessageInterface.php
 %%WWWDIR%%/vendor/psr/http-message/src/RequestInterface.php
 %%WWWDIR%%/vendor/psr/http-message/src/ResponseInterface.php
@@ -4253,13 +4346,22 @@
 %%WWWDIR%%/vendor/psr/log/Psr/Log/Test/DummyTest.php
 %%WWWDIR%%/vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php
 %%WWWDIR%%/vendor/psr/log/Psr/Log/Test/TestLogger.php
+%%WWWDIR%%/vendor/psr/log/README.md
+%%WWWDIR%%/vendor/psr/log/composer.json
 %%WWWDIR%%/vendor/psr/simple-cache/LICENSE.md
+%%WWWDIR%%/vendor/psr/simple-cache/README.md
+%%WWWDIR%%/vendor/psr/simple-cache/composer.json
 %%WWWDIR%%/vendor/psr/simple-cache/src/CacheException.php
 %%WWWDIR%%/vendor/psr/simple-cache/src/CacheInterface.php
 %%WWWDIR%%/vendor/psr/simple-cache/src/InvalidArgumentException.php
 %%WWWDIR%%/vendor/ralouphie/getallheaders/LICENSE
+%%WWWDIR%%/vendor/ralouphie/getallheaders/README.md
+%%WWWDIR%%/vendor/ralouphie/getallheaders/composer.json
 %%WWWDIR%%/vendor/ralouphie/getallheaders/src/getallheaders.php
+%%WWWDIR%%/vendor/ramsey/collection/CHANGELOG.md
 %%WWWDIR%%/vendor/ramsey/collection/LICENSE
+%%WWWDIR%%/vendor/ramsey/collection/README.md
+%%WWWDIR%%/vendor/ramsey/collection/composer.json
 %%WWWDIR%%/vendor/ramsey/collection/phpstan-tests.neon
 %%WWWDIR%%/vendor/ramsey/collection/src/AbstractArray.php
 %%WWWDIR%%/vendor/ramsey/collection/src/AbstractCollection.php
@@ -4290,7 +4392,10 @@
 %%WWWDIR%%/vendor/ramsey/collection/src/Tool/TypeTrait.php
 %%WWWDIR%%/vendor/ramsey/collection/src/Tool/ValueExtractorTrait.php
 %%WWWDIR%%/vendor/ramsey/collection/src/Tool/ValueToStringTrait.php
+%%WWWDIR%%/vendor/ramsey/uuid/CHANGELOG.md
 %%WWWDIR%%/vendor/ramsey/uuid/LICENSE
+%%WWWDIR%%/vendor/ramsey/uuid/README.md
+%%WWWDIR%%/vendor/ramsey/uuid/composer.json
 %%WWWDIR%%/vendor/ramsey/uuid/src/BinaryUtils.php
 %%WWWDIR%%/vendor/ramsey/uuid/src/Builder/BuilderCollection.php
 %%WWWDIR%%/vendor/ramsey/uuid/src/Builder/DefaultUuidBuilder.php
@@ -4394,8 +4499,12 @@
 %%WWWDIR%%/vendor/ramsey/uuid/src/Validator/GenericValidator.php
 %%WWWDIR%%/vendor/ramsey/uuid/src/Validator/ValidatorInterface.php
 %%WWWDIR%%/vendor/ramsey/uuid/src/functions.php
+%%WWWDIR%%/vendor/rlanvin/php-rrule/CHANGELOG.md
 %%WWWDIR%%/vendor/rlanvin/php-rrule/LICENSE
+%%WWWDIR%%/vendor/rlanvin/php-rrule/README.md
 %%WWWDIR%%/vendor/rlanvin/php-rrule/bin/import_windows_timezones.php
+%%WWWDIR%%/vendor/rlanvin/php-rrule/composer.json
+%%WWWDIR%%/vendor/rlanvin/php-rrule/phpunit.xml.dist
 %%WWWDIR%%/vendor/rlanvin/php-rrule/src/RRule.php
 %%WWWDIR%%/vendor/rlanvin/php-rrule/src/RRuleInterface.php
 %%WWWDIR%%/vendor/rlanvin/php-rrule/src/RRuleTrait.php
@@ -4410,8 +4519,16 @@
 %%WWWDIR%%/vendor/rlanvin/php-rrule/src/i18n/it.php
 %%WWWDIR%%/vendor/rlanvin/php-rrule/src/i18n/nl.php
 %%WWWDIR%%/vendor/rlanvin/php-rrule/src/tzdata/windows.php
+%%WWWDIR%%/vendor/rlanvin/php-rrule/tests/RRuleTest.php
+%%WWWDIR%%/vendor/rlanvin/php-rrule/tests/RSetTest.php
+%%WWWDIR%%/vendor/rlanvin/php-rrule/tests/RfcParserTest.php
+%%WWWDIR%%/vendor/rlanvin/php-rrule/tests/bootstrap.php
+%%WWWDIR%%/vendor/rlanvin/php-rrule/tests/i18n/fr_BE.php
+%%WWWDIR%%/vendor/rlanvin/php-rrule/tests/i18n/xx.php
+%%WWWDIR%%/vendor/sabre/dav/CHANGELOG.md
 %%WWWDIR%%/vendor/sabre/dav/CONTRIBUTING.md
 %%WWWDIR%%/vendor/sabre/dav/LICENSE
+%%WWWDIR%%/vendor/sabre/dav/README.md
 %%WWWDIR%%/vendor/sabre/dav/bin/build.php
 %%WWWDIR%%/vendor/sabre/dav/bin/googlecode_upload.py
 %%WWWDIR%%/vendor/sabre/dav/bin/migrateto20.php
@@ -4421,6 +4538,33 @@
 %%WWWDIR%%/vendor/sabre/dav/bin/naturalselection
 %%WWWDIR%%/vendor/sabre/dav/bin/sabredav
 %%WWWDIR%%/vendor/sabre/dav/bin/sabredav.php
+%%WWWDIR%%/vendor/sabre/dav/composer.json
+%%WWWDIR%%/vendor/sabre/dav/examples/addressbookserver.php
+%%WWWDIR%%/vendor/sabre/dav/examples/calendarserver.php
+%%WWWDIR%%/vendor/sabre/dav/examples/fileserver.php
+%%WWWDIR%%/vendor/sabre/dav/examples/groupwareserver.php
+%%WWWDIR%%/vendor/sabre/dav/examples/minimal.php
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/mysql.addressbooks.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/mysql.calendars.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/mysql.locks.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/mysql.principals.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/mysql.propertystorage.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/mysql.users.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/pgsql.addressbooks.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/pgsql.calendars.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/pgsql.locks.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/pgsql.principals.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/pgsql.propertystorage.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/pgsql.users.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/sqlite.addressbooks.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/sqlite.calendars.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/sqlite.locks.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/sqlite.principals.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/sqlite.propertystorage.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/sql/sqlite.users.sql
+%%WWWDIR%%/vendor/sabre/dav/examples/webserver/apache2_htaccess.conf
+%%WWWDIR%%/vendor/sabre/dav/examples/webserver/apache2_vhost.conf
+%%WWWDIR%%/vendor/sabre/dav/examples/webserver/apache2_vhost_cgi.conf
 %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Backend/AbstractBackend.php
 %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Backend/BackendInterface.php
 %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Backend/NotificationSupport.php
@@ -4655,7 +4799,254 @@
 %%WWWDIR%%/vendor/sabre/dav/lib/DAVACL/Xml/Request/PrincipalPropertySearchReport.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAVACL/Xml/Request/PrincipalSearchPropertySetReport.php
 %%WWWDIR%%/vendor/sabre/dav/phpstan.neon
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Backend/AbstractPDOTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Backend/AbstractTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Backend/Mock.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Backend/MockScheduling.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Backend/MockSharing.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Backend/MockSubscriptionSupport.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Backend/PDOMySQLTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Backend/PDOPgSqlTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Backend/PDOSqliteTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Backend/SimplePDOTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/CalendarHomeNotificationsTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/CalendarHomeSharedCalendarsTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/CalendarHomeSubscriptionsTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/CalendarHomeTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/CalendarObjectTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/CalendarQueryVAlarmTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/CalendarQueryValidatorTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/CalendarTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/ExpandEventsDTSTARTandDTENDTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/ExpandEventsDTSTARTandDTENDbyDayTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/ExpandEventsDoubleEventsTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/ExpandEventsFloatingTimeTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/FreeBusyReportTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/GetEventsByTimerangeTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/ICSExportPluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Issue166Test.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Issue172Test.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Issue203Test.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Issue205Test.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Issue211Test.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Issue220Test.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Issue228Test.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/JCalTransformTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Notifications/CollectionTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Notifications/NodeTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Notifications/PluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/PluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Principal/CollectionTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Principal/ProxyReadTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Principal/ProxyWriteTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Principal/UserTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Schedule/DeliverNewEventTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Schedule/FreeBusyRequestTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Schedule/IMip/MockPlugin.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Schedule/IMipPluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Schedule/InboxTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Schedule/OutboxPostTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Schedule/OutboxTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Schedule/PluginBasicTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Schedule/PluginPropertiesTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Schedule/PluginPropertiesWithSharedCalendarTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Schedule/ScheduleDeliverTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Schedule/SchedulingObjectTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/SharedCalendarTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/SharingPluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Subscriptions/CreateSubscriptionTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Subscriptions/PluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Subscriptions/SubscriptionTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/TestUtil.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/ValidateICalTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Notification/InviteReplyTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Notification/InviteTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Notification/SystemStatusTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Property/AllowedSharingModesTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Property/EmailAddressSetTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Property/InviteTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Property/ScheduleCalendarTranspTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Property/SupportedCalendarComponentSetTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Property/SupportedCalendarDataTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Property/SupportedCollationSetTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Request/CalendarQueryReportTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Request/InviteReplyTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Request/ShareTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/AbstractPluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/AddressBookHomeTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/AddressBookQueryTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/AddressBookRootTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/AddressBookTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/Backend/AbstractPDOTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/Backend/Mock.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/Backend/PDOMySQLTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/Backend/PDOPgSqlTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/Backend/PDOSqliteTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/CardTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/IDirectoryTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/MultiGetTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/PluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/SogoStripContentTypeTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/VCFExportTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/ValidateFilterTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/ValidateVCardTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/Xml/Property/SupportedAddressDataTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/Xml/Property/SupportedCollationSetTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/Xml/Request/AddressBookMultiGetTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/Xml/Request/AddressBookQueryReportTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/AbstractServer.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth/Backend/AbstractBasicTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth/Backend/AbstractBearerTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth/Backend/AbstractDigestTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth/Backend/AbstractPDOTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth/Backend/ApacheTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth/Backend/BasicCallBackTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth/Backend/FileTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth/Backend/IMAPTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth/Backend/Mock.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth/Backend/PDOMySQLTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth/Backend/PDOPgSqlTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth/Backend/PDOSqliteTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth/PluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/BasicNodeTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Browser/GuessContentTypeTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Browser/MapGetToPropFindTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Browser/PluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Browser/PropFindAllTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/ClientMock.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/ClientTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/CorePluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/DbTestHelperTrait.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Exception/LockedTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Exception/PaymentRequiredTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Exception/ServiceUnavailableTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Exception/TooManyMatchesTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/ExceptionTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/FS/NodeTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/FSExt/DirectoryTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/FSExt/FileTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/FSExt/ServerTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/GetIfConditionsTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/HTTPPreferParsingTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/HttpCopyTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/HttpDeleteTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/HttpGetTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/HttpHeadTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/HttpMoveTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/HttpPutTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Issue33Test.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Locks/Backend/AbstractTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Locks/Backend/FileTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Locks/Backend/Mock.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Locks/Backend/PDOMySQLTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Locks/Backend/PDOPgSqlTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Locks/Backend/PDOSqliteTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Locks/Backend/PDOTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Locks/MSWordTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Locks/Plugin2Test.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Locks/PluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Mock/Collection.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Mock/File.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Mock/PropertiesCollection.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Mock/SharedNode.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Mock/StreamingFile.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/MockLogger.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Mount/PluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/ObjectTreeTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PSR3Test.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PartialUpdate/FileMock.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PartialUpdate/PluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PartialUpdate/SpecificationTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PropFindTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PropPatchTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PropertyStorage/Backend/AbstractPDOTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PropertyStorage/Backend/Mock.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PropertyStorage/Backend/PDOMysqlTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PropertyStorage/Backend/PDOPgSqlTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PropertyStorage/Backend/PDOSqliteTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PropertyStorage/PluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/ServerEventsTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/ServerMKCOLTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/ServerPluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/ServerPreconditionsTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/ServerPropsInfiniteDepthTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/ServerPropsTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/ServerRangeTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/ServerSimpleTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/ServerUpdatePropertiesTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Sharing/PluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Sharing/ShareResourceTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/SimpleCollectionTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/SimpleFileTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/StringUtilTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Sync/MockSyncCollection.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Sync/PluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/SyncTokenPropertyTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/TemporaryFileFilterTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/TestPlugin.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/TreeTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/UUIDUtilTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Element/PropTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Element/ResponseTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Element/ShareeTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Property/HrefTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Property/InviteTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Property/LastModifiedTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Property/LocalHrefTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Property/LockDiscoveryTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Property/ShareAccessTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Property/SupportedMethodSetTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Property/SupportedReportSetTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Request/PropFindTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Request/PropPatchTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Request/ShareResourceTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Request/SyncCollectionTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/ServiceTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/XmlTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/ACLMethodTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/AclPrincipalPropSetReportTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/AllowAccessTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/BlockAccessTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Exception/AceConflictTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Exception/NeedPrivilegesExceptionTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Exception/NoAbstractTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Exception/NotRecognizedPrincipalTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Exception/NotSupportedPrivilegeTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/ExpandPropertiesTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/FS/CollectionTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/FS/FileTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/FS/HomeCollectionTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/MockACLNode.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/MockPrincipal.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/PluginAdminTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/PluginPropertiesTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/PluginUpdatePropertiesTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/PrincipalBackend/AbstractPDOTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/PrincipalBackend/Mock.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/PrincipalBackend/PDOMySQLTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/PrincipalBackend/PDOPgSqlTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/PrincipalBackend/PDOSqliteTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/PrincipalCollectionTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/PrincipalMatchTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/PrincipalPropertySearchTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/PrincipalSearchPropertySetTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/PrincipalTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/SimplePluginTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Xml/Property/ACLTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Xml/Property/AclRestrictionsTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Xml/Property/CurrentUserPrivilegeSetTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Xml/Property/PrincipalTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Xml/Property/SupportedPrivilegeSetTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Xml/Request/AclPrincipalPropSetReportTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Xml/Request/PrincipalMatchReportTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVServerTest.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/HTTP/ResponseMock.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/HTTP/SapiMock.php
+%%WWWDIR%%/vendor/sabre/dav/tests/Sabre/TestUtil.php
+%%WWWDIR%%/vendor/sabre/dav/tests/bootstrap.php
+%%WWWDIR%%/vendor/sabre/dav/tests/phpunit.xml
 %%WWWDIR%%/vendor/sabre/event/LICENSE
+%%WWWDIR%%/vendor/sabre/event/composer.json
 %%WWWDIR%%/vendor/sabre/event/lib/Emitter.php
 %%WWWDIR%%/vendor/sabre/event/lib/EmitterInterface.php
 %%WWWDIR%%/vendor/sabre/event/lib/EmitterTrait.php
@@ -4670,7 +5061,16 @@
 %%WWWDIR%%/vendor/sabre/event/lib/WildcardEmitterTrait.php
 %%WWWDIR%%/vendor/sabre/event/lib/coroutine.php
 %%WWWDIR%%/vendor/sabre/event/phpstan.neon
+%%WWWDIR%%/vendor/sabre/http/CHANGELOG.md
 %%WWWDIR%%/vendor/sabre/http/LICENSE
+%%WWWDIR%%/vendor/sabre/http/README.md
+%%WWWDIR%%/vendor/sabre/http/composer.json
+%%WWWDIR%%/vendor/sabre/http/examples/asyncclient.php
+%%WWWDIR%%/vendor/sabre/http/examples/basicauth.php
+%%WWWDIR%%/vendor/sabre/http/examples/client.php
+%%WWWDIR%%/vendor/sabre/http/examples/digestauth.php
+%%WWWDIR%%/vendor/sabre/http/examples/reverseproxy.php
+%%WWWDIR%%/vendor/sabre/http/examples/stringify.php
 %%WWWDIR%%/vendor/sabre/http/lib/Auth/AWS.php
 %%WWWDIR%%/vendor/sabre/http/lib/Auth/AbstractAuth.php
 %%WWWDIR%%/vendor/sabre/http/lib/Auth/Basic.php
@@ -4693,12 +5093,35 @@
 %%WWWDIR%%/vendor/sabre/http/lib/Version.php
 %%WWWDIR%%/vendor/sabre/http/lib/functions.php
 %%WWWDIR%%/vendor/sabre/http/phpstan.neon
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/Auth/AWSTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/Auth/BasicTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/Auth/BearerTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/Auth/DigestTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/ClientTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/FunctionsTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/MessageDecoratorTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/MessageTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/NegotiateTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/RequestDecoratorTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/RequestTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/ResponseDecoratorTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/ResponseTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/SapiTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/HTTP/URLUtilTest.php
+%%WWWDIR%%/vendor/sabre/http/tests/bootstrap.php
+%%WWWDIR%%/vendor/sabre/http/tests/phpunit.xml
+%%WWWDIR%%/vendor/sabre/http/tests/www/bar.php
+%%WWWDIR%%/vendor/sabre/http/tests/www/foo
+%%WWWDIR%%/vendor/sabre/http/tests/www/large.php
 %%WWWDIR%%/vendor/sabre/uri/LICENSE
+%%WWWDIR%%/vendor/sabre/uri/composer.json
 %%WWWDIR%%/vendor/sabre/uri/lib/InvalidUriException.php
 %%WWWDIR%%/vendor/sabre/uri/lib/Version.php
 %%WWWDIR%%/vendor/sabre/uri/lib/functions.php
 %%WWWDIR%%/vendor/sabre/uri/phpstan.neon
+%%WWWDIR%%/vendor/sabre/vobject/CHANGELOG.md
 %%WWWDIR%%/vendor/sabre/vobject/LICENSE
+%%WWWDIR%%/vendor/sabre/vobject/README.md
 %%WWWDIR%%/vendor/sabre/vobject/bin/bench.php
 %%WWWDIR%%/vendor/sabre/vobject/bin/bench_freebusygenerator.php
 %%WWWDIR%%/vendor/sabre/vobject/bin/bench_manipulatevcard.php
@@ -4708,6 +5131,7 @@
 %%WWWDIR%%/vendor/sabre/vobject/bin/mergeduplicates.php
 %%WWWDIR%%/vendor/sabre/vobject/bin/rrulebench.php
 %%WWWDIR%%/vendor/sabre/vobject/bin/vobject
+%%WWWDIR%%/vendor/sabre/vobject/composer.json
 %%WWWDIR%%/vendor/sabre/vobject/lib/BirthdayCalendarGenerator.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Cli.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Component.php
@@ -4788,7 +5212,108 @@
 %%WWWDIR%%/vendor/sabre/vobject/phpstan.neon
 %%WWWDIR%%/vendor/sabre/vobject/resources/schema/xcal.rng
 %%WWWDIR%%/vendor/sabre/vobject/resources/schema/xcard.rng
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/AttachIssueTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/BirthdayCalendarGeneratorTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/CliTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Component/AvailableTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Component/VAlarmTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Component/VAvailabilityTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Component/VCalendarTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Component/VCardTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Component/VEventTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Component/VFreeBusyTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Component/VJournalTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Component/VTimeZoneTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Component/VTodoTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ComponentTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/DateTimeParserTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/DocumentTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ElementListTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/EmClientTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/EmptyParameterTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/EmptyValueIssueTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/FreeBusyDataTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/FreeBusyGeneratorTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/GoogleColonEscapingTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ICalendar/AttachParseTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerAttendeeReplyTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerDeleteEventTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerNewEventTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerProcessMessageTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerProcessReplyTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerSignificantChangesTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerTester.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerTimezoneInParseEventInfoWithoutMasterTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerUpdateEventTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/EvolutionTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/MessageTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Issue153Test.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Issue259Test.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Issue36WorkAroundTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Issue40Test.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Issue64Test.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Issue96Test.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/IssueUndefinedIndexTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/JCalTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/JCardTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/LineFoldingIssueTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ParameterTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Parser/JsonTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Parser/MimeDirTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Parser/QuotedPrintableTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Parser/XmlTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/BinaryTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/BooleanTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/CompoundTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/FloatTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/ICalendar/CalAddressTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/ICalendar/DateTimeTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/ICalendar/DurationTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/ICalendar/RecurTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/TextTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/UriTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/VCard/DateAndOrTimeTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/VCard/LanguageTagTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/VCard/PhoneNumberTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/PropertyTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ReaderTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/ByMonthInDailyTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/BySetPosHangTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/ExpandFloatingTimesTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/FifthTuesdayProblemTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/HandleRDateExpandTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/IncorrectExpandTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/InfiniteLoopProblemTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/Issue26Test.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/Issue48Test.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/Issue50Test.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/MainTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/MaxInstancesTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/MissingOverriddenTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/NoInstancesTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/OverrideFirstEventTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/SameDateForRecurringEventsTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/RDateIteratorTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/RRuleIteratorTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/RecurrenceIterator/UntilRespectsTimezoneTest.ics
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/SlashRTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Splitter/ICalendarTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Splitter/VCardTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/StringUtilTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/TimeZoneUtilTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/UUIDUtilTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/VCard21Test.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/VCardConverterTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/VersionTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/WriterTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/issue153.vcf
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/issue64.vcf
+%%WWWDIR%%/vendor/sabre/vobject/tests/bootstrap.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/phpunit.xml
+%%WWWDIR%%/vendor/sabre/xml/CHANGELOG.md
 %%WWWDIR%%/vendor/sabre/xml/LICENSE
+%%WWWDIR%%/vendor/sabre/xml/README.md
+%%WWWDIR%%/vendor/sabre/xml/composer.json
 %%WWWDIR%%/vendor/sabre/xml/lib/ContextStackTrait.php
 %%WWWDIR%%/vendor/sabre/xml/lib/Deserializer/functions.php
 %%WWWDIR%%/vendor/sabre/xml/lib/Element.php
@@ -4808,8 +5333,31 @@
 %%WWWDIR%%/vendor/sabre/xml/lib/XmlDeserializable.php
 %%WWWDIR%%/vendor/sabre/xml/lib/XmlSerializable.php
 %%WWWDIR%%/vendor/sabre/xml/phpstan.neon
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/ContextStackTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Deserializer/EnumTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Deserializer/FunctionCallerTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Deserializer/KeyValueTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Deserializer/MixedContentTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Deserializer/RepeatingElementsTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Deserializer/ValueObjectTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Element/CDataTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Element/Eater.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Element/ElementsTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Element/KeyValueTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Element/Mock.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Element/UriTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Element/XmlFragmentTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/InfiteLoopTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/ReaderTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Serializer/EnumTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Serializer/RepeatingElementsTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/ServiceTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/WriterTest.php
+%%WWWDIR%%/vendor/sabre/xml/tests/phpunit.xml
 %%WWWDIR%%/vendor/scssphp/scssphp/LICENSE.md
+%%WWWDIR%%/vendor/scssphp/scssphp/README.md
 %%WWWDIR%%/vendor/scssphp/scssphp/bin/pscss
+%%WWWDIR%%/vendor/scssphp/scssphp/composer.json
 %%WWWDIR%%/vendor/scssphp/scssphp/scss.inc.php
 %%WWWDIR%%/vendor/scssphp/scssphp/src/Base/Range.php
 %%WWWDIR%%/vendor/scssphp/scssphp/src/Block.php
@@ -4838,7 +5386,11 @@
 %%WWWDIR%%/vendor/scssphp/scssphp/src/Type.php
 %%WWWDIR%%/vendor/scssphp/scssphp/src/Util.php
 %%WWWDIR%%/vendor/scssphp/scssphp/src/Version.php
+%%WWWDIR%%/vendor/sebastian/diff/ChangeLog.md
 %%WWWDIR%%/vendor/sebastian/diff/LICENSE
+%%WWWDIR%%/vendor/sebastian/diff/README.md
+%%WWWDIR%%/vendor/sebastian/diff/build.xml
+%%WWWDIR%%/vendor/sebastian/diff/composer.json
 %%WWWDIR%%/vendor/sebastian/diff/phpunit.xml
 %%WWWDIR%%/vendor/sebastian/diff/src/Chunk.php
 %%WWWDIR%%/vendor/sebastian/diff/src/Diff.php
@@ -4856,9 +5408,40 @@
 %%WWWDIR%%/vendor/sebastian/diff/src/Output/UnifiedDiffOutputBuilder.php
 %%WWWDIR%%/vendor/sebastian/diff/src/Parser.php
 %%WWWDIR%%/vendor/sebastian/diff/src/TimeEfficientLongestCommonSubsequenceCalculator.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/ChunkTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/DiffTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/DifferTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/Exception/ConfigurationExceptionTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/Exception/InvalidArgumentExceptionTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/LineTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/LongestCommonSubsequenceTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/MemoryEfficientImplementationTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/Output/AbstractChunkOutputBuilderTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/Output/DiffOnlyOutputBuilderTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/Output/Integration/StrictUnifiedDiffOutputBuilderIntegrationTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/Output/Integration/UnifiedDiffOutputBuilderIntegrationTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/Output/StrictUnifiedDiffOutputBuilderDataProvider.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/Output/StrictUnifiedDiffOutputBuilderTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/Output/UnifiedDiffOutputBuilderDataProvider.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/Output/UnifiedDiffOutputBuilderTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/ParserTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/TimeEfficientImplementationTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/Utils/FileUtils.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/Utils/UnifiedDiffAssertTrait.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/Utils/UnifiedDiffAssertTraitIntegrationTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/Utils/UnifiedDiffAssertTraitTest.php
+%%WWWDIR%%/vendor/sebastian/diff/tests/fixtures/UnifiedDiffAssertTraitIntegrationTest/1_a.txt
+%%WWWDIR%%/vendor/sebastian/diff/tests/fixtures/UnifiedDiffAssertTraitIntegrationTest/1_b.txt
+%%WWWDIR%%/vendor/sebastian/diff/tests/fixtures/UnifiedDiffAssertTraitIntegrationTest/2_a.txt
+%%WWWDIR%%/vendor/sebastian/diff/tests/fixtures/UnifiedDiffAssertTraitIntegrationTest/2_b.txt
+%%WWWDIR%%/vendor/sebastian/diff/tests/fixtures/patch.txt
+%%WWWDIR%%/vendor/sebastian/diff/tests/fixtures/patch2.txt
+%%WWWDIR%%/vendor/sebastian/diff/tests/fixtures/serialized_diff.bin
+%%WWWDIR%%/vendor/simplepie/simplepie/CHANGELOG.md
 %%WWWDIR%%/vendor/simplepie/simplepie/LICENSE.txt
 %%WWWDIR%%/vendor/simplepie/simplepie/README.markdown
 %%WWWDIR%%/vendor/simplepie/simplepie/autoloader.php
+%%WWWDIR%%/vendor/simplepie/simplepie/composer.json
 %%WWWDIR%%/vendor/simplepie/simplepie/db.sql
 %%WWWDIR%%/vendor/simplepie/simplepie/idn/LICENCE
 %%WWWDIR%%/vendor/simplepie/simplepie/idn/ReadMe.txt
@@ -4900,6 +5483,7 @@
 %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/XML/Declaration/Parser.php
 %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/gzdecode.php
 %%WWWDIR%%/vendor/symfony/console/Application.php
+%%WWWDIR%%/vendor/symfony/console/CHANGELOG.md
 %%WWWDIR%%/vendor/symfony/console/Command/Command.php
 %%WWWDIR%%/vendor/symfony/console/Command/HelpCommand.php
 %%WWWDIR%%/vendor/symfony/console/Command/ListCommand.php
@@ -4976,6 +5560,7 @@
 %%WWWDIR%%/vendor/symfony/console/Question/ChoiceQuestion.php
 %%WWWDIR%%/vendor/symfony/console/Question/ConfirmationQuestion.php
 %%WWWDIR%%/vendor/symfony/console/Question/Question.php
+%%WWWDIR%%/vendor/symfony/console/README.md
 %%WWWDIR%%/vendor/symfony/console/Resources/bin/hiddeninput.exe
 %%WWWDIR%%/vendor/symfony/console/Style/OutputStyle.php
 %%WWWDIR%%/vendor/symfony/console/Style/StyleInterface.php
@@ -4984,26 +5569,200 @@
 %%WWWDIR%%/vendor/symfony/console/Tester/ApplicationTester.php
 %%WWWDIR%%/vendor/symfony/console/Tester/CommandTester.php
 %%WWWDIR%%/vendor/symfony/console/Tester/TesterTrait.php
+%%WWWDIR%%/vendor/symfony/console/composer.json
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/LICENSE
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/Mbstring.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-php73/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-php73/Php73.php
+%%WWWDIR%%/vendor/symfony/polyfill-php73/README.md
 %%WWWDIR%%/vendor/symfony/polyfill-php73/Resources/stubs/JsonException.php
 %%WWWDIR%%/vendor/symfony/polyfill-php73/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-php73/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-php80/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-php80/Php80.php
+%%WWWDIR%%/vendor/symfony/polyfill-php80/README.md
 %%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs/Stringable.php
 %%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs/ValueError.php
 %%WWWDIR%%/vendor/symfony/polyfill-php80/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-php80/composer.json
 %%WWWDIR%%/vendor/symfony/service-contracts/LICENSE
+%%WWWDIR%%/vendor/symfony/service-contracts/README.md
 %%WWWDIR%%/vendor/symfony/service-contracts/ResetInterface.php
 %%WWWDIR%%/vendor/symfony/service-contracts/ServiceLocatorTrait.php
 %%WWWDIR%%/vendor/symfony/service-contracts/ServiceProviderInterface.php
 %%WWWDIR%%/vendor/symfony/service-contracts/ServiceSubscriberInterface.php
 %%WWWDIR%%/vendor/symfony/service-contracts/ServiceSubscriberTrait.php
 %%WWWDIR%%/vendor/symfony/service-contracts/Test/ServiceLocatorTest.php
+%%WWWDIR%%/vendor/symfony/service-contracts/composer.json
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/CHANGELOG.TXT
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/LICENSE.TXT
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/README.md
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/VERSION
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/composer.json
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/config/tcpdf_config.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_1d_html.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_1d_png.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_1d_svg.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_1d_svgi.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_datamatrix_html.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_datamatrix_png.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_datamatrix_svg.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_datamatrix_svgi.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_pdf417_html.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_pdf417_png.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_pdf417_svg.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_pdf417_svgi.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_qrcode_html.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_qrcode_png.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_qrcode_svg.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_2d_qrcode_svgi.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/tcpdf_barcodes_1d_include.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/tcpdf_barcodes_2d_include.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/config/tcpdf_config_alt.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/cert/tcpdf.crt
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/cert/tcpdf.fdf
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/cert/tcpdf.p12
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/chapter_demo_1.txt
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/chapter_demo_2.txt
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/table_data_demo.txt
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/utf8test.txt
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_001.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_002.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_003.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_004.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_005.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_006.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_007.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_008.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_009.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_010.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_011.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_012.pdf
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_012.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_013.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_014.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_015.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_016.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_017.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_018.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_019.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_020.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_021.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_022.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_023.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_024.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_025.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_026.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_027.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_028.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_029.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_030.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_031.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_032.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_033.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_034.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_035.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_036.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_037.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_038.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_039.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_040.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_041.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_042.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_043.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_044.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_045.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_046.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_047.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_048.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_049.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_050.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_051.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_052.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_053.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_054.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_055.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_056.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_057.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_058.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_059.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_060.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_061.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_062.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_063.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_064.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/example_065.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/_blank.png
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/alpha.png
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/image_demo.jpg
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/image_with_alpha.png
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/img.png
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/logo_example.gif
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/logo_example.jpg
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/logo_example.png
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/tcpdf_box.ai
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/tcpdf_box.svg
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/tcpdf_cell.png
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/tcpdf_logo.jpg
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/tcpdf_signature.png
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/testsvg.svg
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images/tux.svg
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/index.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/afr.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/ara.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/aze.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/bel.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/bra.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/bul.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/cat.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/ces.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/chi.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/cym.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/dan.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/eng.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/est.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/eus.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/far.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/fra.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/ger.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/gle.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/glg.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/hat.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/heb.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/hrv.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/hun.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/hye.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/ind.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/ita.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/jpn.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/kat.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/kor.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/mkd.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/mlt.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/msa.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/nld.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/nob.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/pol.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/por.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/ron.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/rus.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/slv.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/spa.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/sqi.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/srp.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/swa.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/swe.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/ukr.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/urd.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/yid.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang/zho.php
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/tcpdf_include.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/ae_fonts_2.0/COPYING
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/ae_fonts_2.0/ChangeLog
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/ae_fonts_2.0/README
@@ -5205,12 +5964,8 @@
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_filters.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_font_data.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_fonts.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_fonts.php.orig
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_fonts.php.rej
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_images.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_static.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_static.php.orig
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/include/tcpdf_static.php.rej
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_autoconfig.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_barcodes_1d.php
@@ -5220,14 +5975,23 @@
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tools/.htaccess
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tools/convert_fonts_examples.txt
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
+%%WWWDIR%%/vendor/true/punycode/CHANGELOG.md
 %%WWWDIR%%/vendor/true/punycode/LICENSE
+%%WWWDIR%%/vendor/true/punycode/README.md
+%%WWWDIR%%/vendor/true/punycode/composer.json
 %%WWWDIR%%/vendor/true/punycode/src/Exception/DomainOutOfBoundsException.php
 %%WWWDIR%%/vendor/true/punycode/src/Exception/LabelOutOfBoundsException.php
 %%WWWDIR%%/vendor/true/punycode/src/Exception/OutOfBoundsException.php
 %%WWWDIR%%/vendor/true/punycode/src/Punycode.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/CHANGELOG.md
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/LICENSE
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/README.md
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/_config.yml
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/bin/cam
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/composer.json
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/docs/API.md
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/docs/Usage.md
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/phpunit.xml.dist
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/ArchiveEntry.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/ArchiveInformation.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/CamApplication.php
@@ -5254,6 +6018,12 @@
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/LzwStreamWrapper.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/PclzipZipInterface.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/UnifiedArchive.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/ArchivingTest.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/ReadingTest.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/bootstrap.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/fixtures/doc
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/fixtures/folder/subdoc
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/fixtures/folder/subfolder/subfile
 @dir %%WWWDIR%%/ajax
 @dir %%WWWDIR%%/bin
 @dir %%WWWDIR%%/config
@@ -5294,6 +6064,7 @@
 @dir %%WWWDIR%%/inc/caldav/plugin
 @dir %%WWWDIR%%/inc/caldav/traits
 @dir %%WWWDIR%%/inc/console
+@dir %%WWWDIR%%/inc/console/build
 @dir %%WWWDIR%%/inc/console/command
 @dir %%WWWDIR%%/inc/console/config
 @dir %%WWWDIR%%/inc/console/database
@@ -5426,6 +6197,8 @@
 @dir %%WWWDIR%%/vendor/composer
 @dir %%WWWDIR%%/vendor/container-interop
 @dir %%WWWDIR%%/vendor/container-interop/container-interop
+@dir %%WWWDIR%%/vendor/container-interop/container-interop/docs
+@dir %%WWWDIR%%/vendor/container-interop/container-interop/docs/images
 @dir %%WWWDIR%%/vendor/container-interop/container-interop/src
 @dir %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop
 @dir %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop/Container
@@ -5434,6 +6207,7 @@
 @dir %%WWWDIR%%/vendor/elvanto/litemoji
 @dir %%WWWDIR%%/vendor/elvanto/litemoji/bin
 @dir %%WWWDIR%%/vendor/elvanto/litemoji/src
+@dir %%WWWDIR%%/vendor/elvanto/litemoji/tests
 @dir %%WWWDIR%%/vendor/guzzlehttp
 @dir %%WWWDIR%%/vendor/guzzlehttp/guzzle
 @dir %%WWWDIR%%/vendor/guzzlehttp/guzzle/src
@@ -5647,9 +6421,14 @@
 @dir %%WWWDIR%%/vendor/rlanvin/php-rrule/src
 @dir %%WWWDIR%%/vendor/rlanvin/php-rrule/src/i18n
 @dir %%WWWDIR%%/vendor/rlanvin/php-rrule/src/tzdata
+@dir %%WWWDIR%%/vendor/rlanvin/php-rrule/tests
+@dir %%WWWDIR%%/vendor/rlanvin/php-rrule/tests/i18n
 @dir %%WWWDIR%%/vendor/sabre
 @dir %%WWWDIR%%/vendor/sabre/dav
 @dir %%WWWDIR%%/vendor/sabre/dav/bin
+@dir %%WWWDIR%%/vendor/sabre/dav/examples
+@dir %%WWWDIR%%/vendor/sabre/dav/examples/sql
+@dir %%WWWDIR%%/vendor/sabre/dav/examples/webserver
 @dir %%WWWDIR%%/vendor/sabre/dav/lib
 @dir %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV
 @dir %%WWWDIR%%/vendor/sabre/dav/lib/CalDAV/Backend
@@ -5698,6 +6477,52 @@
 @dir %%WWWDIR%%/vendor/sabre/dav/lib/DAVACL/Xml
 @dir %%WWWDIR%%/vendor/sabre/dav/lib/DAVACL/Xml/Property
 @dir %%WWWDIR%%/vendor/sabre/dav/lib/DAVACL/Xml/Request
+@dir %%WWWDIR%%/vendor/sabre/dav/tests
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Backend
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Notifications
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Principal
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Schedule
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Schedule/IMip
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Subscriptions
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Notification
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Property
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CalDAV/Xml/Request
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/Backend
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/Xml
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/Xml/Property
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/CardDAV/Xml/Request
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Auth/Backend
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Browser
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Exception
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/FS
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/FSExt
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Locks
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Locks/Backend
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Mock
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Mount
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PartialUpdate
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PropertyStorage
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/PropertyStorage/Backend
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Sharing
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Sync
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Element
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Property
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAV/Xml/Request
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Exception
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/FS
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/PrincipalBackend
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Xml
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Xml/Property
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/DAVACL/Xml/Request
+@dir %%WWWDIR%%/vendor/sabre/dav/tests/Sabre/HTTP
 @dir %%WWWDIR%%/vendor/sabre/event
 @dir %%WWWDIR%%/vendor/sabre/event/bin
 @dir %%WWWDIR%%/vendor/sabre/event/lib
@@ -5705,8 +6530,13 @@
 @dir %%WWWDIR%%/vendor/sabre/event/lib/Promise
 @dir %%WWWDIR%%/vendor/sabre/http
 @dir %%WWWDIR%%/vendor/sabre/http/bin
+@dir %%WWWDIR%%/vendor/sabre/http/examples
 @dir %%WWWDIR%%/vendor/sabre/http/lib
 @dir %%WWWDIR%%/vendor/sabre/http/lib/Auth
+@dir %%WWWDIR%%/vendor/sabre/http/tests
+@dir %%WWWDIR%%/vendor/sabre/http/tests/HTTP
+@dir %%WWWDIR%%/vendor/sabre/http/tests/HTTP/Auth
+@dir %%WWWDIR%%/vendor/sabre/http/tests/www
 @dir %%WWWDIR%%/vendor/sabre/uri
 @dir %%WWWDIR%%/vendor/sabre/uri/lib
 @dir %%WWWDIR%%/vendor/sabre/vobject
@@ -5725,12 +6555,31 @@
 @dir %%WWWDIR%%/vendor/sabre/vobject/lib/timezonedata
 @dir %%WWWDIR%%/vendor/sabre/vobject/resources
 @dir %%WWWDIR%%/vendor/sabre/vobject/resources/schema
+@dir %%WWWDIR%%/vendor/sabre/vobject/tests
+@dir %%WWWDIR%%/vendor/sabre/vobject/tests/VObject
+@dir %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Component
+@dir %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ICalendar
+@dir %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip
+@dir %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Parser
+@dir %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property
+@dir %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/ICalendar
+@dir %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Property/VCard
+@dir %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur
+@dir %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator
+@dir %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/RecurrenceIterator
+@dir %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Splitter
 @dir %%WWWDIR%%/vendor/sabre/xml
 @dir %%WWWDIR%%/vendor/sabre/xml/bin
 @dir %%WWWDIR%%/vendor/sabre/xml/lib
 @dir %%WWWDIR%%/vendor/sabre/xml/lib/Deserializer
 @dir %%WWWDIR%%/vendor/sabre/xml/lib/Element
 @dir %%WWWDIR%%/vendor/sabre/xml/lib/Serializer
+@dir %%WWWDIR%%/vendor/sabre/xml/tests
+@dir %%WWWDIR%%/vendor/sabre/xml/tests/Sabre
+@dir %%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml
+@dir %%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Deserializer
+@dir %%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Element
+@dir %%WWWDIR%%/vendor/sabre/xml/tests/Sabre/Xml/Serializer
 @dir %%WWWDIR%%/vendor/scssphp
 @dir %%WWWDIR%%/vendor/scssphp/scssphp
 @dir %%WWWDIR%%/vendor/scssphp/scssphp/bin
@@ -5746,6 +6595,14 @@
 @dir %%WWWDIR%%/vendor/sebastian/diff/src
 @dir %%WWWDIR%%/vendor/sebastian/diff/src/Exception
 @dir %%WWWDIR%%/vendor/sebastian/diff/src/Output
+@dir %%WWWDIR%%/vendor/sebastian/diff/tests
+@dir %%WWWDIR%%/vendor/sebastian/diff/tests/Exception
+@dir %%WWWDIR%%/vendor/sebastian/diff/tests/Output
+@dir %%WWWDIR%%/vendor/sebastian/diff/tests/Output/Integration
+@dir %%WWWDIR%%/vendor/sebastian/diff/tests/Utils
+@dir %%WWWDIR%%/vendor/sebastian/diff/tests/fixtures
+@dir %%WWWDIR%%/vendor/sebastian/diff/tests/fixtures/UnifiedDiffAssertTraitIntegrationTest
+@dir %%WWWDIR%%/vendor/sebastian/diff/tests/fixtures/out
 @dir %%WWWDIR%%/vendor/simplepie
 @dir %%WWWDIR%%/vendor/simplepie/simplepie
 @dir %%WWWDIR%%/vendor/simplepie/simplepie/idn
@@ -5780,6 +6637,9 @@
 @dir %%WWWDIR%%/vendor/symfony/console/Resources/bin
 @dir %%WWWDIR%%/vendor/symfony/console/Style
 @dir %%WWWDIR%%/vendor/symfony/console/Tester
+@dir %%WWWDIR%%/vendor/symfony/polyfill-mbstring
+@dir %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources
+@dir %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata
 @dir %%WWWDIR%%/vendor/symfony/polyfill-php73
 @dir %%WWWDIR%%/vendor/symfony/polyfill-php73/Resources
 @dir %%WWWDIR%%/vendor/symfony/polyfill-php73/Resources/stubs
@@ -5791,6 +6651,13 @@
 @dir %%WWWDIR%%/vendor/tecnickcom
 @dir %%WWWDIR%%/vendor/tecnickcom/tcpdf
 @dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/config
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/examples
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/config
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/data/cert
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/images
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/lang
 @dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts
 @dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/ae_fonts_2.0
 @dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/dejavu-fonts-ttf-2.33
@@ -5807,8 +6674,13 @@
 @dir %%WWWDIR%%/vendor/wapmorgan
 @dir %%WWWDIR%%/vendor/wapmorgan/unified-archive
 @dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/bin
+@dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/docs
 @dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/src
 @dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Exceptions
 @dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Formats
+@dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/tests
+@dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/fixtures
+@dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/fixtures/folder
+@dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/tests/fixtures/folder/subfolder
 @owner
 @group

@@ -1,0 +1,19 @@
+xNetHack is a fork of the dungeon exploration game NetHack.  It is a
+distant descendent of Rogue and Hack, and a direct descendant of the
+development version of NetHack 3.7.
+
+The main goals of xNetHack are to take vanilla NetHack and:
+
+ - Fix gameplay balance issues.
+ - Remove tedious and frustrating parts of the game.
+ - Make uninteresting parts of the game more interesting.
+ - Experiment with new ideas from the community.
+
+In general, the game design takes a conservative approach to changing
+the gameplay compared to other variants, with focus on deepening
+elements of the game rather than broadening them.  For example, this
+philosophy would prefer to differentiate monsters in a class that all
+tend to play the same way, instead of adding new monsters to that class.
+
+
+WWW: https://nethackwiki.com/wiki/XNetHack

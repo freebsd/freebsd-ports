@@ -1,7 +1,7 @@
 # Created by: Jason Helfman <jgh@FreeBSD.org>
 
 PORTNAME=	libvirt
-PORTVERSION=	7.2.0
+PORTVERSION=	7.5.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libxml2.so:textproc/libxml2
 BUILD_DEPENDS=	dnsmasq:dns/dnsmasq \
 		${LOCALBASE}/bin/grep:textproc/gnugrep \
+		gsed:textproc/gsed \
 		rst2html-${PYTHON_VER}:textproc/py-docutils@${PY_FLAVOR} \
 		xsltproc:textproc/libxslt
 RUN_DEPENDS=	dnsmasq:dns/dnsmasq
@@ -75,6 +76,7 @@ ZFS_MESON_ENABLED=	storage_zfs
 VARDIR=		/var
 
 MESON_ARGS+=	\
+		-Ddriver_remote=enabled \
 		-Ddbus=disabled \
 		-Dpolkit=disabled \
 		-Dhal=disabled \
@@ -104,7 +106,7 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-SHLIB_VER=	0.7002.0
+SHLIB_VER=	0.7005.0
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 SHEBANG_FILES=	src/keycodemapdb/tools/keymap-gen

@@ -6,7 +6,8 @@ PORTNAME=	u-boot
 PORTVERSION=	${UBOOT_VERSION}
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	-${MODEL}
-MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/
+MASTER_SITES=	https://ftp.denx.de/pub/u-boot/ \
+		ftp://ftp.denx.de/pub/u-boot/
 DIST_SUBDIR=	u-boot
 
 MAINTAINER?=	uboot@FreeBSD.org
@@ -111,7 +112,7 @@ UBOOT_PLIST_QEMU=	u-boot.bin
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
 .endif
-UBOOT_VERSION?=	2021.04
+UBOOT_VERSION?=	2021.07
 
 # If a slave port defines a PORTREVISION use it
 .if defined(U_BOOT_SLAVE_PORTREVISION_${UBOOT_VERSION})
@@ -131,7 +132,6 @@ UBOOT_ARCH?=	arm
 .if ${UBOOT_ARCH} == arm
 CROSS_COMPILE=arm-none-eabi-
 ARCHFLAGS=ARCH=${UBOOT_ARCH}
-UBOOT_PLIST+=	boot.scr
 .elif ${UBOOT_ARCH} == aarch64
 CROSS_COMPILE=aarch64-none-elf-
 ARCHFLAGS=ARCH=arm
@@ -202,7 +202,6 @@ METADATA_BS=${UBOOT_METADATA_${FAMILY:tu}_RAW_BS}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|make|${MAKE_CMD}|" ${WRKSRC}/scripts/kconfig/merge_config.sh
-	${CP} ${FILESDIR}/boot.cmd ${WRKSRC}/
 .if defined(METADATA_METHOD)
 	@echo "METHOD=uboot-${METADATA_METHOD}" > ${WRKSRC}/metadata
 	@echo "FILES=\"${METADATA_FILES}\"" >> ${WRKSRC}/metadata
@@ -214,7 +213,7 @@ post-patch:
 .endif
 
 .if ${UBOOT_ARCH} == arm && !defined(CONFIG_FRAGMENT)
-# For armv6/v7 we want CONFIG_API
+# For armv6/v7 we want do disable secure mode and cache cleaning
 # Use a KConfig fragment for that
 FRAGMENT_NAME=		FreeBSD_Fragment
 CONFIG_FRAGMENT=	${FILESDIR}/${FRAGMENT_NAME}
@@ -230,9 +229,6 @@ do-configure:
 .endif
 
 post-build:
-.if ${UBOOT_ARCH} == arm
-	mkimage -C none -A arm -T script -d ${FILESDIR}/boot.cmd ${WRKSRC}/boot.scr
-.endif
 .if defined(UBOOT_EXTRA_TARGETS)
 .for i in ${UBOOT_EXTRA_TARGETS}
 	(cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${i})
@@ -251,5 +247,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}/${INST}
 .endfor
 	${INSTALL_DATA} ${DESCR} ${STAGEDIR}/${INST}/README
+
+.include <bsd.port.options.mk>
+
+.if defined(FAMILY)
+.if ${FAMILY} == qemu && ${OPSYS} == FreeBSD && ${OSVERSION} <= 1200000
+BROKEN=		Base openssl too old
+.endif
+.endif
 
 .include <bsd.port.mk>

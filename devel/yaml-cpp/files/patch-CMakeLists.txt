@@ -1,20 +1,36 @@
---- CMakeLists.txt.orig	2019-09-25 16:56:00 UTC
+--- CMakeLists.txt.orig	2021-07-10 15:53:22 UTC
 +++ CMakeLists.txt
-@@ -276,7 +276,7 @@ set_target_properties(yaml-cpp PROPERTIES
+@@ -123,14 +123,14 @@ endif()
  
  set_target_properties(yaml-cpp PROPERTIES
- 	VERSION "${YAML_CPP_VERSION}"
--	SOVERSION "${YAML_CPP_VERSION_MAJOR}.${YAML_CPP_VERSION_MINOR}"
-+	SOVERSION "${YAML_CPP_VERSION_MAJOR}"
- 	PROJECT_LABEL "yaml-cpp ${LABEL_SUFFIX}"
- )
+   VERSION "${PROJECT_VERSION}"
+-  SOVERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
++  SOVERSION "${PROJECT_VERSION_MAJOR}"
+   PROJECT_LABEL "yaml-cpp ${yaml-cpp-label-postfix}"
+   DEBUG_POSTFIX "${CMAKE_DEBUG_POSTFIX}")
  
-@@ -342,7 +342,7 @@ if (YAML_CPP_INSTALL)
- 	if(UNIX)
- 		set(PC_FILE ${CMAKE_BINARY_DIR}/yaml-cpp.pc)
- 		configure_file("yaml-cpp.pc.cmake" ${PC_FILE} @ONLY)
--		install(FILES ${PC_FILE} DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
-+		install(FILES ${PC_FILE} DESTINATION libdata/pkgconfig)
- 	endif()
+ configure_package_config_file(
+   "${PROJECT_SOURCE_DIR}/yaml-cpp-config.cmake.in"
+   "${PROJECT_BINARY_DIR}/yaml-cpp-config.cmake"
+-  INSTALL_DESTINATION "${CMAKE_INSTALL_DATADIR}/cmake/yaml-cpp")
++  INSTALL_DESTINATION "lib/cmake/yaml-cpp")
  
+ write_basic_package_version_file(
+   "${PROJECT_BINARY_DIR}/yaml-cpp-config-version.cmake"
+@@ -148,13 +148,13 @@ if (YAML_CPP_INSTALL)
+     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+ 		FILES_MATCHING PATTERN "*.h")
+   install(EXPORT yaml-cpp-targets
+-    DESTINATION "${CMAKE_INSTALL_DATADIR}/cmake/yaml-cpp")
++    DESTINATION "lib/cmake/yaml-cpp")
+ 	install(FILES
+ 		"${PROJECT_BINARY_DIR}/yaml-cpp-config.cmake"
+ 		"${PROJECT_BINARY_DIR}/yaml-cpp-config-version.cmake"
+-    DESTINATION "${CMAKE_INSTALL_DATADIR}/cmake/yaml-cpp")
++    DESTINATION "lib/cmake/yaml-cpp")
+   install(FILES "${PROJECT_BINARY_DIR}/yaml-cpp.pc"
+-    DESTINATION ${CMAKE_INSTALL_DATADIR}/pkgconfig)
++    DESTINATION libdata/pkgconfig)
  endif()
+ 
+ if(YAML_CPP_BUILD_TESTS)

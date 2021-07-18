@@ -1,7 +1,7 @@
 bin/qterminal
 share/appdata/qterminal.appdata.xml
+share/applications/qterminal-drop.desktop
 share/applications/qterminal.desktop
-share/applications/qterminal_drop.desktop
 share/icons/hicolor/64x64/apps/qterminal.png
 %%DATADIR%%/translations/qterminal_ar.qm
 %%DATADIR%%/translations/qterminal_arn.qm
@@ -32,6 +32,7 @@ share/icons/hicolor/64x64/apps/qterminal.png
 %%DATADIR%%/translations/qterminal_pt.qm
 %%DATADIR%%/translations/qterminal_pt_BR.qm
 %%DATADIR%%/translations/qterminal_ru.qm
+%%DATADIR%%/translations/qterminal_si.qm
 %%DATADIR%%/translations/qterminal_sk_SK.qm
 %%DATADIR%%/translations/qterminal_tr.qm
 %%DATADIR%%/translations/qterminal_uk.qm

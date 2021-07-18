@@ -2,7 +2,7 @@
 
 PORTNAME=	PDL
 PORTVERSION=	2.019
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 
@@ -75,8 +75,7 @@ PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
 READLINE_RUN_DEPENDS=	p5-Term-ReadLine-Gnu>=0:devel/p5-Term-ReadLine-Gnu
 READLINE_RUN_DEPENDS_OFF=	p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl
 SINK_RUN_DEPENDS=	ppmtogif:graphics/netpbm \
-			mpeg_encode:multimedia/mpeg_encode \
-			saoimage:astro/saoimage
+			mpeg_encode:multimedia/mpeg_encode
 
 post-patch:
 	@${GREP} -lR '#!/.*bin/perl' ${WRKSRC}/ | ${XARGS} ${SED} -e 's|#!/.*bin/perl|#!${PERL}|' -i ''

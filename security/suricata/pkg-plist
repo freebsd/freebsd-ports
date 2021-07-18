@@ -75,8 +75,6 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/disablesource.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/enablesource.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/enablesource.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/listenabledsources.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/listenabledsources.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/listsources.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/listsources.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/removesource.py
@@ -119,10 +117,16 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/main.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/maps.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/maps.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/matchers.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/matchers.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/net.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/net.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/notes.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/notes.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/osinfo.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/osinfo.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/parsers.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/parsers.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/rule.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/rule.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/sources.py
@@ -131,7 +135,7 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/util.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.1.3-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.2.1-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.pyc
 %%DATADIR%%/rules/app-layer-events.rules

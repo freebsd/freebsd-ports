@@ -22,7 +22,7 @@ include/gupnp-1.2/libgupnp/gupnp.h
 lib/girepository-1.0/GUPnP-1.2.typelib
 lib/libgupnp-1.2.so
 lib/libgupnp-1.2.so.0
-lib/libgupnp-1.2.so.0.0.0
+lib/libgupnp-1.2.so.0.103.0
 libdata/pkgconfig/gupnp-1.2.pc
 share/gir-1.0/GUPnP-1.2.gir
 %%VAPI%%share/vala/vapi/gupnp-1.2.deps

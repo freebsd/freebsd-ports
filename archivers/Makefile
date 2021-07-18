@@ -65,11 +65,13 @@
     SUBDIR += libunrar
     SUBDIR += libunrar6
     SUBDIR += libzip
+    SUBDIR += libzippp
     SUBDIR += linux-c7-lz4
     SUBDIR += lizard
     SUBDIR += lrzip
     SUBDIR += lua-lzlib
     SUBDIR += lua-zlib
+    SUBDIR += lxqt-archiver
     SUBDIR += lzfse
     SUBDIR += lzip
     SUBDIR += lziprecover
@@ -131,7 +133,6 @@
     SUBDIR += paq
     SUBDIR += par
     SUBDIR += par2cmdline
-    SUBDIR += par2cmdline-tbb
     SUBDIR += parchive
     SUBDIR += pbzip2
     SUBDIR += pear-File_Archive
@@ -169,7 +170,9 @@
     SUBDIR += py-acefile
     SUBDIR += py-borgbackup
     SUBDIR += py-brotli
+    SUBDIR += py-brotlicffi
     SUBDIR += py-brotlipy
+    SUBDIR += py-bup
     SUBDIR += py-bz2file
     SUBDIR += py-libarchive-c
     SUBDIR += py-lz4

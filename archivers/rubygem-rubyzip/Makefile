@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	rubyzip
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.2
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 

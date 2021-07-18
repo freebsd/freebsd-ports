@@ -17,6 +17,8 @@ SUB_FILES=	BSDMakefile Makefile Makefile.lib
 MAKEFILE=	BSDMakefile
 PORTDOCS=	README.TXT CHANGES.TXT CREDITS.TXT
 
+CFLAGS_riscv64=	-fPIC
+
 PROGDIRS=	addr6 flow6 frag6 icmp6 jumbo6 na6 ni6 ns6 path6 ra6 rd6 rs6 \
 		scan6 tcp6 udp6
 LIBDIRS=	libipv6

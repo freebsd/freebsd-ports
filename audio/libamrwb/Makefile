@@ -15,14 +15,12 @@ MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	3GPP Adaptive Multi-Rate - Wideband (AMR-WB) Speech Codec
 
 LICENSE=	BSD3CLAUSE 3GPP
-LICENSE_COMB=	dual
+LICENSE_COMB=	multi
 LICENSE_NAME_3GPP=	3GPP
-LICENSE_TEXT_3GPP=	${RESTRICTED}
+LICENSE_TEXT_3GPP=	unclear legal status, probably need licenses from 3GPP and more
 LICENSE_PERMS_3GPP=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 LICENSE_DISTFILES_BSD3CLAUSE=	${DISTNAME}${EXTRACT_SUFX}
 LICENSE_DISTFILES_3GPP=	${SRC26204}
-
-RESTRICTED=	unclear legal status, probably need licenses from 3GPP and more
 
 USES=		gmake tar:bzip2 libtool
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO readme.txt

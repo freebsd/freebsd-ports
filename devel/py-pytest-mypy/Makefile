@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	pytest-mypy
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=19.0:devel/py-attrs@${PY_FLAVOR} \
 USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
-#NO_ARCH=	yes
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

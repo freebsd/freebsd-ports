@@ -1,7 +1,7 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
 
 PORTNAME=	solidity
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.6
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ethereum/solidity/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

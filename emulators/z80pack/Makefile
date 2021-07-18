@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	z80pack
 DISTVERSION=	1.37
 CATEGORIES=	emulators

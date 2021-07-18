@@ -1,6 +1,6 @@
 TIMESTAMP = 1596611248
-SHA256 (termplay-2.0.6.tar.gz) = 996343049484d479e980aad3659d096ad2665b8e8e7795332a431a99b97a67da
-SIZE (termplay-2.0.6.tar.gz) = 20023
+SHA256 (rust/crates/termplay-2.0.6.tar.gz) = 996343049484d479e980aad3659d096ad2665b8e8e7795332a431a99b97a67da
+SIZE (rust/crates/termplay-2.0.6.tar.gz) = 20023
 SHA256 (rust/crates/adler32-1.0.4.tar.gz) = 5d2e7343e7fc9de883d1b0341e0b13970f764c14101234857d2ddafa1cb1cac2
 SIZE (rust/crates/adler32-1.0.4.tar.gz) = 5105
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b

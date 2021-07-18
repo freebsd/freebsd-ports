@@ -1,12 +1,13 @@
---- wscript.orig	2021-03-18 23:07:57 UTC
+--- wscript.orig	2021-07-15 06:06:13 UTC
 +++ wscript
-@@ -220,20 +220,9 @@ def configure(conf):
+@@ -220,21 +220,11 @@ def configure(conf):
  
  	conf.env.append_value('LIB_KDECORE', 'KF5KDELibs4Support')
  
--	for x in ('', '/usr/include/KF5/KDELibs4Support', '/usr/local/include/KF5/KDELibs4Support'):
--		conf.env.stash()
-+	for x in ('@@LOCALBASE@@/include/KF5/KDELibs4Support', "bogus"):
+-	kdelibs4support_candidates = ['', '/usr/include/KF5/KDELibs4Support', '/usr/local/include/KF5/KDELibs4Support']
++	kdelibs4support_candidates = ['@@LOCALBASE@@/include/KF5/KDELibs4Support', "bogus"]
+ 	for x in kdelibs4support_candidates:
+ 		conf.env.stash()
  		if os.path.exists(x):
  			conf.env.append_value('INCLUDES_KDECORE', x)
 -		try:
@@ -17,8 +18,8 @@
 -			break
 -		except conf.errors.ConfigurationError:
 -			conf.env.revert()
--		else:
--			conf.fatal('kdelibs4support was not found, check the config.log file')
+-	else:
+-		conf.fatal('kdelibs4support was not found, check the config.log file')
  
  	for x in ('', '/usr/local/include'):
  		conf.env.stash()

@@ -1,7 +1,7 @@
 # Created by: Tony Narlock <tony@git-pull.com>
 
 PORTNAME=	argcomplete
-PORTVERSION=	1.12.2
+PORTVERSION=	1.12.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,8 +24,8 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0.23<4:devel/py-importlib-metadata@${PY_FLAVOR}
+.if ${PYTHON_REL} < 30800
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0.23<5:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>

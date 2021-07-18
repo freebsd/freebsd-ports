@@ -15,8 +15,9 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Params-Classify>=0:devel/p5-Params-Classify
 
-NO_ARCH=	yes
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

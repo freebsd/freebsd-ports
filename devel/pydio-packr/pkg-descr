@@ -1,0 +1,4 @@
+This is a fork of gobuffalo's packr v1 customized by pydio team.
+Its sole purpose is to be used in building the www/pydio-cells port.
+
+WWW: https://github.com/pydio/packr

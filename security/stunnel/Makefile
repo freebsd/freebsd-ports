@@ -1,7 +1,7 @@
 # Created by: Martti Kuparinen <martti.kuparinen@ericsson.com>
 
 PORTNAME=	stunnel
-PORTVERSION=	5.58
+PORTVERSION=	5.59
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.stunnel.org/downloads/%SUBDIR%/ \

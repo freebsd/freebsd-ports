@@ -2,11 +2,11 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
-PORTREVISION=	45
+PORTREVISION=	48
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/france/transcode-tcforge/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	se@FreeBSD.org
 COMMENT=	Text-console utility for video stream processing
 
 LICENSE=	GPLv2
@@ -14,17 +14,12 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 USE_LDCONFIG=	yes
-USES=		gmake libtool pkgconfig tar:bzip2
+USES=		gmake libtool pkgconfig tar:bzip2 gettext-runtime
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-oss
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-
-CFLAGS+=		-fcommon
-
-DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
-EXPIRATION_DATE=2021-04-01
 
 OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS X11 MPEG2 BKTR POSTPROC FREETYPE LAME \
 			XVID X264 OGG VORBIS THEORA DVDREAD DV QUICKTIME LZO A52 \
@@ -35,7 +30,7 @@ POSTPROC_DESC=		Libpostproc support
 DVDREAD_DESC=		Libdvdread support
 
 X11_USES=			xorg
-X11_USE=			xorg=xv,xaw,xpm
+X11_USE=			xorg=xv,xaw,xpm,sm,ice,xext,x11,xt
 X11_CONFIGURE_WITH=		x
 
 MPEG2_LIB_DEPENDS=		libmpeg2.so:multimedia/libmpeg2

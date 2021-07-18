@@ -60,6 +60,7 @@ share/cmake/lxqt/lxqt-targets.cmake
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_eo.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_es.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_es_VE.qm
+%%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_et.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_eu.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_fi.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_fr.qm
@@ -81,6 +82,7 @@ share/cmake/lxqt/lxqt-targets.cmake
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_pt_BR.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_ro_RO.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_ru.qm
+%%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_si.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_sk_SK.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_sl.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_sr@latin.qm

@@ -1,7 +1,7 @@
 # Created by: Roy Boerner
 
 PORTNAME=	squirrel-sql
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}-plainzip
 DISTNAME=	squirrelsql-${PORTVERSION}-optional

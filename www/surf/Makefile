@@ -1,8 +1,7 @@
 # Created by: Christopher Knaust <jigboe@gmx.de>
 
 PORTNAME=	surf
-DISTVERSION=	2.0
-PORTREVISION=	2
+DISTVERSION=	2.1
 CATEGORIES=	www
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 PKGNAMESUFFIX=	-browser
@@ -14,7 +13,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
-		libsoup-2.4.so:devel/libsoup
+		libsoup-2.4.so:devel/libsoup \
+		libgcr-base-3.so:security/gcr
 RUN_DEPENDS=	dmenu:x11/dmenu \
 		curl:ftp/curl \
 		xterm:x11/xterm
@@ -25,13 +25,15 @@ USE_XORG=	x11
 
 CONFLICTS=	surf-1* # math/surf
 
+DESKTOP_ENTRIES="Surf" "" "${PREFIX}/share/pixmaps/surf.png" "surf" "" true
+
 PLIST_FILES=	bin/surf \
+		lib/surf/webext-surf.so \
 		man/man1/surf.1.gz \
 		share/pixmaps/surf.png
-PORTDOCS=	FAQ.md README TODO.md
-PORTEXAMPLES=	surf-open.sh
 
-DESKTOP_ENTRIES="Surf" "" "${PREFIX}/share/pixmaps/surf.png" "surf" "" true
+PORTDOCS=	README TODO.md
+PORTEXAMPLES=	surf-open.sh
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

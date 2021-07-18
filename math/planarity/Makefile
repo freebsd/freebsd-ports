@@ -1,7 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	planarity
-PORTVERSION=	3.0.1.0
+PORTVERSION=	3.0.1.1
 DISTVERSIONPREFIX=	Version_
 CATEGORIES=	math
 

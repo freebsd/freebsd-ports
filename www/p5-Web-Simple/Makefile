@@ -20,8 +20,9 @@ RUN_DEPENDS=	p5-HTTP-Body>=1.22:www/p5-HTTP-Body \
 		p5-strictures>=1:devel/p5-strictures
 TEST_DEPENDS=	p5-Data-Dumper-Concise>=2.20:devel/p5-Data-Dumper-Concise
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

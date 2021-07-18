@@ -29,55 +29,6 @@
 # those of the authors and should not be interpreted as representing official
 # policies, either expressed or implied, of David Naylor.
 
-# Version 1.0 - 2010/05/28
-#  - initial release
-# Version 1.1 - 2010/10/04
-#  - add support for 256 driver series
-#  - use passive connections for FTP
-#  - allow resuming of downloads if they were interrupted
-#  - add license and copyright notice
-# Version 1.2 - 2010/10/17
-#  - try to save the NVIDIA tarball under $PORTSDIR/distfiles
-#  - obay $PREFIX
-#  - extract files directly to destination (avoids using /tmp)
-# Version 1.3 - 2010/11/02
-#  - add support for future driver series
-# Version 1.4 - 2011/05/23
-#  - add support for legacy drivers
-# Version 1.5 - 2011/10/23
-#  - add support for no-fetch mode
-#  - backup the original openGL.so.1 library
-# Version 1.6 - 2012/06/06
-#  - add support for pkgng
-# Version 1.7 - 2012/06/23
-#  - make nVidia detection more robust
-#  - allow mixed pkg/pkgng operation
-# Version 1.8 - 2012/07/02
-#  - fix mixed pkg/pkgng operation
-# Version 1.9 - 2012/10/31
-#  - fix permission of extracts files
-# Version 1.10 - 2013/05/06
-#  - s/wine-fbsd64/i386-wine/g
-#  - fix unwanted failures due to `set -e`
-# Version 1.11 - 2013/05/26
-#  - install libGL.so.1 to ${PREFIX}/lib32/.nvidia and link to it
-#  - add deinstall option
-# Version 1.12 - 2013/11/03
-#  - add detection for i386-wine-devel
-# Version 1.13 - 2014/08/05
-#  - add detection for i386-wine-compholio
-# Version 1.14 - 2014/12/26
-#  - gracefully handle a corrupt nVidia tarball
-#  - provide checksum and size information for nVidia tarball
-# Version 1.15 - 2015/03/10
-#  - handle nvidia-driver with package name suffix
-#  - handle i386-wine with arbitary package name suffix
-#  - remove support for old pkg_ tools
-# Version 1.16 - 2017/06/04
-#  - use https download site
-# Version 1.17 - 2020/03/02
-#  - do not do anything if nvidia-driver version >= 440.59
-
 set -e
 
 PORTSDIR=${PORTSDIR:-/usr/ports}
@@ -115,12 +66,6 @@ do
       rm -f ${PREFIX}/lib32/libGLcore.so.1 ${PREFIX}/lib32/libnvidia-tls.so.1 
       rm -f ${PREFIX}/lib32/libnvidia-glcore.so.1 ${PREFIX}/lib32/libnvidia-tls.so.1
       rm -rf  ${PREFIX}/lib32/.nvidia/
-      if [ -d ${PREFIX}/lib32/.libGL-new ]
-      then
-        ln -s .libGL-new/libGL.so.1 ${PREFIX}/lib32/libGL.so.1
-      else
-        ln -s .libGL/libGL.so.1 ${PREFIX}/lib32/libGL.so.1
-      fi
       exit 0
       ;;
     -n)

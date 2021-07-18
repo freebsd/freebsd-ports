@@ -1,40 +1,39 @@
 # Created by: Sander Vesik <sander@haldjas.folklore.ee>
 
 PORTNAME=	tclcheck
-PORTVERSION=	1.1.13
-PORTREVISION=	1
+DISTVERSION=	1.1.14
 CATEGORIES=	devel
-MASTER_SITES=	https://BSDforge.com/projects/source/devel/tclcheck/
-DISTNAME=	tclCheck-${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Program to check the nesting of parenthesis in tcl scripts
 
-LICENSE_FILE=	${WRKSRC}/COPYRIGHT
-LICENSE_PERMS=	 dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=			NEWCASTLE BSD2CLAUSE
+LICENSE_COMB=			dual
+LICENSE_NAME_NEWCASTLE=		University of Newcastle upon Tyne
+LICENSE_FILE_NEWCASTLE=		${WRKSRC}/COPYRIGHT
+LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE
+LICENSE_PERMS_NEWCASTLE=	dist-mirror pkg-mirror auto-accept
 
 USES=		alias
 
-PLIST_FILES=	bin/tclCheck \
-		man/man1/tclCheck.1.gz
-PORTDOCS=	*
+USE_GITLAB=	yes
+GL_ACCOUNT=	ports1
+GL_COMMIT=	9de3e5b12c5f453137305377344cb1d1c848e75e
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	${REINPLACE_CMD} \
-	    -e '/^BIN/s|=.*|=${PREFIX}/bin|' \
-	    -e '/^CC/s|=.*|=${CC}|' \
-	    -e '/^CFLAGS/s|=.*|=${CFLAGS}|' \
-	    ${WRKSRC}/Makefile
-	${REINPLACE_CMD} \
-	    -e '25s|^|#include <unistd.h>|' \
-	    ${WRKSRC}/tclCheck.c
+PLIST_FILES=	bin/tclCheck \
+		man/man1/tclCheck.1.gz \
+
+PORTDOCS=	README README.md
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tclCheck ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/tclCheck.1 ${STAGEDIR}${PREFIX}/man/man1
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 PORTNAME=	sddm
 PORTVERSION=	0.19.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	5
 CATEGORIES=	x11
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,14 +17,18 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/LICENSE
 LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LICENSE.CC-BY-3.0
 
 BUILD_DEPENDS=	rst2man.py-${PYTHON_VER}:textproc/py-docutils@${PY_FLAVOR}
-RUN_DEPENDS=	dbus-run-session:devel/dbus
+RUN_DEPENDS=	dbus-run-session:devel/dbus \
+		xauth:x11/xauth \
+		xmessage:x11/xmessage
 
 USES=		cmake compiler:c++11-lang kde:5 pkgconfig python:build qt:5 xorg
 USE_GITHUB=	yes
-USE_KDE=	ecm
+USE_KDE=	ecm_build
 USE_QT=		core declarative dbus gui network \
-		buildtools_build linguisttools_build qmake_build
+		buildtools_build linguisttools_build qmake_build testlib_build
 USE_XORG=	xcb
+
+CONFLICTS_INSTALL=	lightdm
 
 CMAKE_ON=	BUILD_MAN_PAGES
 CMAKE_ARGS=	-DUID_MIN=1000 \
@@ -50,5 +54,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/xsessions
 	${INSTALL_DATA} ${WRKDIR}/xinitrc.desktop ${STAGEDIR}${PREFIX}/share/xsessions
 	${INSTALL_SCRIPT} ${FILESDIR}/xinit-session ${STAGEDIR}${PREFIX}/share/sddm/scripts
+	${REINPLACE_CMD} -e 's#@@LOCALBASE@@#${LOCALBASE}#' ${STAGEDIR}${PREFIX}/share/sddm/scripts/xinit-session
+
 
 .include <bsd.port.mk>

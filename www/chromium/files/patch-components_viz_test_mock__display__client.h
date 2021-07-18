@@ -1,4 +1,4 @@
---- components/viz/test/mock_display_client.h.orig	2021-03-12 23:57:23 UTC
+--- components/viz/test/mock_display_client.h.orig	2021-04-14 18:41:02 UTC
 +++ components/viz/test/mock_display_client.h
 @@ -39,7 +39,7 @@ class MockDisplayClient : public mojom::DisplayClient 
  #endif

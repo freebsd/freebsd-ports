@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	azure_mgmt_web
-PORTVERSION=	0.18.0
+PORTVERSION=	0.18.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

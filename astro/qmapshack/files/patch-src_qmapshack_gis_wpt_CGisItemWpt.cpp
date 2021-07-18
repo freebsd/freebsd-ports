@@ -1,7 +1,7 @@
---- src/qmapshack/gis/wpt/CGisItemWpt.cpp.orig	2020-05-21 11:11:11 UTC
+--- src/qmapshack/gis/wpt/CGisItemWpt.cpp.orig	2021-05-24 09:18:08 UTC
 +++ src/qmapshack/gis/wpt/CGisItemWpt.cpp
-@@ -38,6 +38,7 @@
- 
+@@ -40,6 +40,7 @@
+ #include <QPainterPath>
  #include <QtWidgets>
  #include <QtXml>
 +#include <QPainterPath>

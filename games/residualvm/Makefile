@@ -2,6 +2,7 @@
 
 PORTNAME=	residualvm
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	yerenkow@gmail.com
@@ -23,7 +24,7 @@ BROKEN_armv7=	fails to link: ld: libgrim.a has EABI version 0, but target residu
 LIB_DEPENDS=	libmad.so:audio/libmad \
 		libogg.so:audio/libogg \
 		libvorbisfile.so:audio/libvorbis \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libmpeg2.so:multimedia/libmpeg2 \
 		libtheoradec.so:multimedia/libtheora \
 		libfreetype.so:print/freetype2

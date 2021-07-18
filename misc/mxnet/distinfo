@@ -1,6 +1,6 @@
-TIMESTAMP = 1598541817
-SHA256 (apache-incubator-mxnet-1.7.0_GH0.tar.gz) = 4440289341b588063fea5d2911e7520a7d87dd7e42ba4a052f752d52e7e35664
-SIZE (apache-incubator-mxnet-1.7.0_GH0.tar.gz) = 22293420
+TIMESTAMP = 1621514118
+SHA256 (apache-incubator-mxnet-1.8.0_GH0.tar.gz) = 976e0193622378b9174d6ff95b8d1e5369e66945c5345a13c642748b51eb9758
+SIZE (apache-incubator-mxnet-1.8.0_GH0.tar.gz) = 23246903
 SHA256 (apache-incubator-tvm-9bd2c7b_GH0.tar.gz) = 1e9a69d8ac686b526a0d66241e017b8e9b9ee4f2e687b32f437527926d929d7f
 SIZE (apache-incubator-tvm-9bd2c7b_GH0.tar.gz) = 2852339
 SHA256 (dmlc-dlpack-3efc489_GH0.tar.gz) = e8a3fc92d24eab985a73539b7478da84ebc12cfb33f654d915671748fd3d7d98

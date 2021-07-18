@@ -6,8 +6,10 @@ PORTREVISION=	3
 CATEGORIES=	x11-fonts tcl tk
 MASTER_SITES=	LOCAL/petef
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Tk based replacement for xfontsel
+
+LICENSE=	GPLv2
 
 USES+=		tk:run
 RUN_DEPENDS+=	xlsfonts:x11-fonts/xlsfonts

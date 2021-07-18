@@ -21,6 +21,11 @@ share/locale/ar/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/ar/LC_MESSAGES/kcmaudiocd.mo
 share/locale/ar/LC_MESSAGES/kio_audiocd.mo
 share/locale/ast/LC_MESSAGES/audiocd_encoder_flac.mo
+share/locale/az/LC_MESSAGES/kcmaudiocd.mo
+share/locale/be/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/be/LC_MESSAGES/audiocd_encoder_vorbis.mo
+share/locale/be/LC_MESSAGES/kcmaudiocd.mo
+share/locale/be/LC_MESSAGES/kio_audiocd.mo
 share/locale/bg/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/bg/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/bg/LC_MESSAGES/kcmaudiocd.mo
@@ -241,6 +246,10 @@ share/locale/ru/LC_MESSAGES/audiocd_encoder_opus.mo
 share/locale/ru/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/ru/LC_MESSAGES/kcmaudiocd.mo
 share/locale/ru/LC_MESSAGES/kio_audiocd.mo
+share/locale/se/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/se/LC_MESSAGES/audiocd_encoder_vorbis.mo
+share/locale/se/LC_MESSAGES/kcmaudiocd.mo
+share/locale/se/LC_MESSAGES/kio_audiocd.mo
 share/locale/sk/LC_MESSAGES/audiocd_encoder_flac.mo
 share/locale/sk/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/sk/LC_MESSAGES/audiocd_encoder_opus.mo
@@ -253,6 +262,10 @@ share/locale/sl/LC_MESSAGES/audiocd_encoder_opus.mo
 share/locale/sl/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/sl/LC_MESSAGES/kcmaudiocd.mo
 share/locale/sl/LC_MESSAGES/kio_audiocd.mo
+share/locale/sq/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/sq/LC_MESSAGES/audiocd_encoder_vorbis.mo
+share/locale/sq/LC_MESSAGES/kcmaudiocd.mo
+share/locale/sq/LC_MESSAGES/kio_audiocd.mo
 share/locale/sr/LC_MESSAGES/audiocd_encoder_flac.mo
 share/locale/sr/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/sr/LC_MESSAGES/audiocd_encoder_vorbis.mo
@@ -264,6 +277,14 @@ share/locale/sv/LC_MESSAGES/audiocd_encoder_opus.mo
 share/locale/sv/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/sv/LC_MESSAGES/kcmaudiocd.mo
 share/locale/sv/LC_MESSAGES/kio_audiocd.mo
+share/locale/ta/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/ta/LC_MESSAGES/audiocd_encoder_vorbis.mo
+share/locale/ta/LC_MESSAGES/kcmaudiocd.mo
+share/locale/ta/LC_MESSAGES/kio_audiocd.mo
+share/locale/tg/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/tg/LC_MESSAGES/audiocd_encoder_vorbis.mo
+share/locale/tg/LC_MESSAGES/kcmaudiocd.mo
+share/locale/tg/LC_MESSAGES/kio_audiocd.mo
 share/locale/tr/LC_MESSAGES/audiocd_encoder_flac.mo
 share/locale/tr/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/tr/LC_MESSAGES/audiocd_encoder_vorbis.mo
@@ -279,6 +300,8 @@ share/locale/uk/LC_MESSAGES/audiocd_encoder_opus.mo
 share/locale/uk/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/uk/LC_MESSAGES/kcmaudiocd.mo
 share/locale/uk/LC_MESSAGES/kio_audiocd.mo
+share/locale/vi/LC_MESSAGES/kcmaudiocd.mo
+share/locale/vi/LC_MESSAGES/kio_audiocd.mo
 share/locale/wa/LC_MESSAGES/kcmaudiocd.mo
 share/locale/wa/LC_MESSAGES/kio_audiocd.mo
 share/locale/zh_CN/LC_MESSAGES/audiocd_encoder_flac.mo

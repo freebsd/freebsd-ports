@@ -7,7 +7,11 @@ COMMENT=	Firmware and tools for RockChip SoCs
 
 ONLY_FOR_ARCHS=	amd64
 
-LEGAL_TEXT=	No license
+# Converted from LEGAL_TEXT
+LICENSE=	rkbin
+LICENSE_NAME=	rkbin
+LICENSE_TEXT=	No license
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 NO_BUILD=	yes
 

@@ -1,0 +1,4 @@
+GooCanvas is similar in many ways to GnomeCanvas and FooCanvas, but uses
+cairo graphics library for rendering.
+
+WWW: https://gitlab.gnome.org/GNOME/goocanvas/

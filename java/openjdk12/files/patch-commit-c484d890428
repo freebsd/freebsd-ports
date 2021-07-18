@@ -1,0 +1,23 @@
+commit c484d8904285652246c3af212a4211b9a8955149
+Author: Thomas Stuefe <stuefe@openjdk.org>
+Date:   Tue Mar 16 05:49:01 2021 +0000
+
+    8263557: Possible NULL dereference in Arena::destruct_contents()
+    
+    Reviewed-by: kbarrett, coleenp
+
+diff --git src/hotspot/share/memory/arena.cpp src/hotspot/share/memory/arena.cpp
+index 8388f68c359..16059bed9be 100644
+--- src/hotspot/share/memory/arena.cpp
++++ src/hotspot/share/memory/arena.cpp
+@@ -310,7 +310,9 @@ void Arena::destruct_contents() {
+   // reset size before chop to avoid a rare racing condition
+   // that can have total arena memory exceed total chunk memory
+   set_size_in_bytes(0);
+-  _first->chop();
++  if (_first != NULL) {
++    _first->chop();
++  }
+   reset();
+ }
+ 

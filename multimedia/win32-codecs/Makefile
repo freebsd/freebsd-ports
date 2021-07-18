@@ -15,7 +15,11 @@ EXTRACT_ONLY=	all-${DISTVERSION}.tar.bz2
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Huge compilation of Win32 binary video codecs
 
-RESTRICTED=	Unsure of codec's license
+# Converted from RESTRICTED
+LICENSE=	win32-codec
+LICENSE_NAME=	win32-codec
+LICENSE_TEXT=	Unsure of codec's license
+LICENSE_PERMS=	auto-accept
 
 USES=		tar:bzip2
 

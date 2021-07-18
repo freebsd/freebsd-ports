@@ -1,3 +1,4 @@
-TIMESTAMP = 1605298492
-SHA256 (claws-mail-3.17.8.tar.xz) = cdb7b2814995d6f4a9c3b1f0bc1467ed5c3cf2a5e0da1730aaa25a8accafddaf
-SIZE (claws-mail-3.17.8.tar.xz) = 6435692
+TIMESTAMP = 1626114302
+SHA256 (claws-mail-3.18.0.tar.xz) = cb5819e66b4bb3bbd44eb79c58f516a932389367a7900554321c24b509ece6bb
+SHA512 (claws-mail-3.18.0.tar.xz) = 3f73e11fc75234c44c0faf266a196c7f1c80b837fb920fc4a3979ede81f37efd180c006ab6436ae9c2dffde2d6c3bf6340a90d93e1e3fa8821fb09693d030811
+SIZE (claws-mail-3.18.0.tar.xz) = 6517632

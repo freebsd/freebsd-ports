@@ -16,12 +16,12 @@ r294563 was incomplete; re-add the client-side options as well.
 
 ------------------------------------------------------------------------
 
---- readconf.c.orig	2020-03-21 16:51:23.450425000 -0700
-+++ readconf.c	2020-03-21 17:00:01.827757000 -0700
-@@ -310,6 +310,12 @@ static struct {
- 	{ "ignoreunknown", oIgnoreUnknown },
+--- readconf.c.orig	2021-04-27 11:24:15.916596000 -0700
++++ readconf.c	2021-04-27 11:25:24.222034000 -0700
+@@ -316,6 +316,12 @@ static struct {
  	{ "proxyjump", oProxyJump },
  	{ "securitykeyprovider", oSecurityKeyProvider },
+ 	{ "knownhostscommand", oKnownHostsCommand },
 +	{ "hpndisabled", oDeprecated },
 +	{ "hpnbuffersize", oDeprecated },
 +	{ "tcprcvbufpoll", oDeprecated },

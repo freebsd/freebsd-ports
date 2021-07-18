@@ -1,7 +1,7 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	6.1.18
+PORTVERSION=	6.1.22
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-additions
@@ -41,6 +41,7 @@ CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
 CONFLICTS_INSTALL=	virtualbox-ose-[0-9]* \
 			virtualbox-ose-additions-devel-[0-9]* \
+			virtualbox-ose-additions-legacy-[0-9]* \
 			virtualbox-ose-devel-[0-9]* \
 			virtualbox-ose-legacy-[0-9]* \
 			virtualbox-ose-lite-[0-9]* \
@@ -154,10 +155,10 @@ do-install-X11-on:
 	    ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
 	    ${STAGEDIR}${PREFIX}/share/autostart/
 	${MKDIR} ${STAGEDIR}${VIDEODIR}
-	${INSTALL_DATA} ${VBOX_BIN}/vboxvideo_drv_system.so \
+	${INSTALL_LIB} ${VBOX_BIN}/vboxvideo_drv_system.so \
 	    ${STAGEDIR}${VIDEODIR}/vboxvideo_drv.so
 	${MKDIR} ${STAGEDIR}${INPUTDIR}
-	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_system.so \
+	${INSTALL_LIB} ${VBOX_BIN}/vboxmouse_drv_system.so \
 	    ${STAGEDIR}${INPUTDIR}/vboxmouse_drv.so
 
 .include <bsd.port.post.mk>

@@ -18,6 +18,6 @@ USE_PYTHON=	autoplist concurrent distutils
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}psutil121
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/psutil/_psutil_bsd*.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/psutil/_psutil_posix*.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/psutil/_psutil_*.so
 
 .include <bsd.port.mk>

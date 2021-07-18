@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library to use the pseudo-tty of a docker container
 
 LICENSE=	APACHE20

@@ -1,6 +1,6 @@
---- Makefile.in.orig	2020-12-19 17:48:16 UTC
+--- Makefile.in.orig	2021-04-16 10:56:02 UTC
 +++ Makefile.in
-@@ -492,19 +492,6 @@ distclean-libtool:
+@@ -509,19 +509,6 @@ distclean-libtool:
  	-rm -f libtool config.lt
  install-dist_docDATA: $(dist_doc_DATA)
  	@$(NORMAL_INSTALL)

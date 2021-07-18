@@ -11,7 +11,11 @@ DISTNAME=	dn${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-system emulator
 
-NO_CDROM=	Commercial use is restricted
+# Converted from NO_CDROM
+LICENSE=	darcnes-license
+LICENSE_NAME=	darcnes
+LICENSE_TEXT=	Commercial use is restricted
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -13,8 +13,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PerlX/Maybe/XS/XS.so

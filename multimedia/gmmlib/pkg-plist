@@ -61,5 +61,5 @@ include/igdgmm/util/g_gfxDebug.h
 include/igdgmm/util/gfxDebug.h
 lib/libigdgmm.so
 lib/libigdgmm.so.11
-lib/libigdgmm.so.11.2.0
+lib/libigdgmm.so.11.3.0
 libdata/pkgconfig/igdgmm.pc

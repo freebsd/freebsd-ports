@@ -10,6 +10,12 @@ EXTRACT_SUFX=	-linux.tar.gz
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Transcoding DLNA-server implemented in Java
 
+# Converted from RESTRICTED
+LICENSE=	serviio
+LICENSE_NAME=	serviio
+LICENSE_TEXT=	License does not allow selling
+LICENSE_PERMS=	auto-accept
+
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
 NO_BUILD=	yes
@@ -22,7 +28,6 @@ PKGMESSAGE=	${WRKSRC}/pkg-message
 SUB_FILES+=	pkg-message serviiod
 USE_RC_SUBR=	serviio
 SUB_LIST+=	USER=${USERS}
-RESTRICTED=	License does not allow selling
 EXTRACT_AFTER_ARGS=--exclude junit.jar	\
 	--exclude org.restlet.ext.net.jar
 

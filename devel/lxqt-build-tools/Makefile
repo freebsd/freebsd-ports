@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	lxqt-build-tools
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	devel
 MASTER_SITES=	LXQT/${PORTNAME}
 

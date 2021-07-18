@@ -1,4 +1,4 @@
---- chrome/browser/first_run/first_run_internal.h.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/first_run/first_run_internal.h.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/first_run/first_run_internal.h
 @@ -58,14 +58,13 @@ FirstRunState DetermineFirstRunState(bool has_sentinel
  

@@ -1,0 +1,4 @@
+A 100% API compatible replacement for Python's zipfile
+that can read and write AES encrypted zip files
+
+WWW: https://github.com/danifus/pyzipper

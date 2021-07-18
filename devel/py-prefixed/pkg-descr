@@ -1,0 +1,4 @@
+Prefixed provides an alternative implementation of the built-in float which
+supports formatted output with SI (decimal) and IEC (binary) prefixes.
+
+WWW: https://github.com/Rockhopper-Technologies/prefixed

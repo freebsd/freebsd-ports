@@ -16,7 +16,7 @@ LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 		libnotify.so:devel/libnotify \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libunique-1.0.so:x11-toolkits/unique
-RUN_DEPENDS=	ap*-mod_dnssd>=0:www/mod_dnssd \
+RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_dnssd>=0:www/mod_dnssd \
 		console-kit-daemon:sysutils/consolekit2
 
 USES=		apache:2.2+ gettext gmake gnome libtool pkgconfig tar:xz xorg

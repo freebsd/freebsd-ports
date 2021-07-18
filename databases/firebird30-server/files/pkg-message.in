@@ -1,0 +1,43 @@
+[
+{ type: install
+  message: <<EOM
+Firebird 3 was installed.
+
+1) Before start the server ensure that the following line exists in /etc/services:
+
+gds_db		3050/tcp  #InterBase Database Remote Protocol
+
+2) If you use inetd (Classic Server) then add the following line to /etc/inetd.conf
+
+gds_db  stream  tcp     nowait  firebird        %%PREFIX%%/sbin/firebird  firebird
+
+And finally restart inetd.
+
+3) If you want to use change firebird modes then you must modify the ServerMode
+   variable into %%ETCDIR%%/firebird.conf file.
+
+ ServerMode="Super"
+ # ServerMode="SuperClassic"
+ # ServerMode="Classic"
+
+4) It is STRONGLY recommended that you change the SYSDBA
+password with:
+
+ # gsec -user SYSDBA -pass masterkey
+ GSEC> modify SYSDBA -pw newpassword
+ GSEC> quit
+
+before doing anything serious with Firebird.
+
+5) See documentation in %%DOCSDIR%%/ for more information.
+
+6) Some firebird tools were renamed for avoid conflicts with some other ports
+
+	%%PREFIX%%/bin/isql	-> 	%%PREFIX%%/bin/isql-fb
+	%%PREFIX%%/bin/gstat	->	%%PREFIX%%/bin/fbstat
+	%%PREFIX%%/bin/gsplit	->	%%PREFIX%%/bin/fbsplit
+
+6) Enjoy it ;)
+EOM
+}
+]

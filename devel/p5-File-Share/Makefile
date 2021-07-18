@@ -16,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-ShareDir>=1.03:devel/p5-File-ShareDir
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

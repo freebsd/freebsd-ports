@@ -20,6 +20,7 @@ share/icons/hicolor/32x32/actions/kmousetool_on.png
 share/icons/hicolor/32x32/apps/kmousetool.png
 %%DATADIR%%/sounds/mousetool_tap.wav
 share/locale/ar/LC_MESSAGES/kmousetool.mo
+share/locale/be/LC_MESSAGES/kmousetool.mo
 share/locale/bg/LC_MESSAGES/kmousetool.mo
 share/locale/bs/LC_MESSAGES/kmousetool.mo
 share/locale/ca/LC_MESSAGES/kmousetool.mo
@@ -63,13 +64,18 @@ share/locale/pt/LC_MESSAGES/kmousetool.mo
 share/locale/pt_BR/LC_MESSAGES/kmousetool.mo
 share/locale/ro/LC_MESSAGES/kmousetool.mo
 share/locale/ru/LC_MESSAGES/kmousetool.mo
+share/locale/se/LC_MESSAGES/kmousetool.mo
 share/locale/sk/LC_MESSAGES/kmousetool.mo
 share/locale/sl/LC_MESSAGES/kmousetool.mo
+share/locale/sq/LC_MESSAGES/kmousetool.mo
 share/locale/sr/LC_MESSAGES/kmousetool.mo
 share/locale/sv/LC_MESSAGES/kmousetool.mo
+share/locale/ta/LC_MESSAGES/kmousetool.mo
+share/locale/tg/LC_MESSAGES/kmousetool.mo
 share/locale/tr/LC_MESSAGES/kmousetool.mo
 share/locale/ug/LC_MESSAGES/kmousetool.mo
 share/locale/uk/LC_MESSAGES/kmousetool.mo
+share/locale/vi/LC_MESSAGES/kmousetool.mo
 share/locale/zh_CN/LC_MESSAGES/kmousetool.mo
 share/locale/zh_TW/LC_MESSAGES/kmousetool.mo
 share/metainfo/org.kde.kmousetool.appdata.xml

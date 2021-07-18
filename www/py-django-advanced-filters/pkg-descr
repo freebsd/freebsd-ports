@@ -1,0 +1,3 @@
+A django ModelAdmin mixin which adds advanced filtering abilities to the admin.
+
+WWW: https://github.com/modlinltd/django-advanced-filters

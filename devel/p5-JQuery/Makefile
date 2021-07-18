@@ -21,8 +21,10 @@ RUN_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application \
 		p5-IO-String>=0:devel/p5-IO-String \
 		p5-XML-Writer>=0:textproc/p5-XML-Writer
 
-USE_PERL5=	modbuild
 USES=		perl5 shebangfix
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 SHEBANG_FILES=	lib/JQuery/cgi-bin/*.pl
 

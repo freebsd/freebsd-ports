@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.bluej.org/download/files/
 DISTNAME=	BlueJ-generic-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrated Java environment designed for introductory teaching
 
 LICENSE=	GPLv2

@@ -1,0 +1,13 @@
+bin/jsonnet
+bin/jsonnetfmt
+include/libjsonnet++.h
+include/libjsonnet.h
+include/libjsonnet_fmt.h
+lib/libjsonnet++.a
+lib/libjsonnet++.so
+lib/libjsonnet++.so.0
+lib/libjsonnet++.so.%%PORTVERSION%%
+lib/libjsonnet.a
+lib/libjsonnet.so
+lib/libjsonnet.so.0
+lib/libjsonnet.so.%%PORTVERSION%%

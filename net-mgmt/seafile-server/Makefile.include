@@ -1,5 +1,5 @@
-SEAFILE_VER=	8.0.3
-SEAHUB_VER=	8.0.3
+SEAFILE_VER=	8.0.5
+SEAHUB_VER=	8.0.5
 
 
 # Various vars used in most/all the Makefiles

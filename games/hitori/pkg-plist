@@ -5,6 +5,7 @@ share/help/C/hitori/figures/dialog-question-symbolic.svg
 share/help/C/hitori/figures/edit-redo-symbolic.svg
 share/help/C/hitori/figures/edit-undo-symbolic.svg
 share/help/C/hitori/figures/hitori_main_window.png
+share/help/C/hitori/figures/org.gnome.Hitori.svg
 share/help/C/hitori/game.page
 share/help/C/hitori/index.page
 share/help/C/hitori/legal.xml
@@ -15,6 +16,7 @@ share/help/ca/hitori/figures/dialog-question-symbolic.svg
 share/help/ca/hitori/figures/edit-redo-symbolic.svg
 share/help/ca/hitori/figures/edit-undo-symbolic.svg
 share/help/ca/hitori/figures/hitori_main_window.png
+share/help/ca/hitori/figures/org.gnome.Hitori.svg
 share/help/ca/hitori/game.page
 share/help/ca/hitori/index.page
 share/help/ca/hitori/legal.xml
@@ -25,6 +27,7 @@ share/help/cs/hitori/figures/dialog-question-symbolic.svg
 share/help/cs/hitori/figures/edit-redo-symbolic.svg
 share/help/cs/hitori/figures/edit-undo-symbolic.svg
 share/help/cs/hitori/figures/hitori_main_window.png
+share/help/cs/hitori/figures/org.gnome.Hitori.svg
 share/help/cs/hitori/game.page
 share/help/cs/hitori/index.page
 share/help/cs/hitori/legal.xml
@@ -35,6 +38,7 @@ share/help/da/hitori/figures/dialog-question-symbolic.svg
 share/help/da/hitori/figures/edit-redo-symbolic.svg
 share/help/da/hitori/figures/edit-undo-symbolic.svg
 share/help/da/hitori/figures/hitori_main_window.png
+share/help/da/hitori/figures/org.gnome.Hitori.svg
 share/help/da/hitori/game.page
 share/help/da/hitori/index.page
 share/help/da/hitori/legal.xml
@@ -45,6 +49,7 @@ share/help/de/hitori/figures/dialog-question-symbolic.svg
 share/help/de/hitori/figures/edit-redo-symbolic.svg
 share/help/de/hitori/figures/edit-undo-symbolic.svg
 share/help/de/hitori/figures/hitori_main_window.png
+share/help/de/hitori/figures/org.gnome.Hitori.svg
 share/help/de/hitori/game.page
 share/help/de/hitori/index.page
 share/help/de/hitori/legal.xml
@@ -55,6 +60,7 @@ share/help/el/hitori/figures/dialog-question-symbolic.svg
 share/help/el/hitori/figures/edit-redo-symbolic.svg
 share/help/el/hitori/figures/edit-undo-symbolic.svg
 share/help/el/hitori/figures/hitori_main_window.png
+share/help/el/hitori/figures/org.gnome.Hitori.svg
 share/help/el/hitori/game.page
 share/help/el/hitori/index.page
 share/help/el/hitori/legal.xml
@@ -65,6 +71,7 @@ share/help/en_GB/hitori/figures/dialog-question-symbolic.svg
 share/help/en_GB/hitori/figures/edit-redo-symbolic.svg
 share/help/en_GB/hitori/figures/edit-undo-symbolic.svg
 share/help/en_GB/hitori/figures/hitori_main_window.png
+share/help/en_GB/hitori/figures/org.gnome.Hitori.svg
 share/help/en_GB/hitori/game.page
 share/help/en_GB/hitori/index.page
 share/help/en_GB/hitori/legal.xml
@@ -75,16 +82,29 @@ share/help/es/hitori/figures/dialog-question-symbolic.svg
 share/help/es/hitori/figures/edit-redo-symbolic.svg
 share/help/es/hitori/figures/edit-undo-symbolic.svg
 share/help/es/hitori/figures/hitori_main_window.png
+share/help/es/hitori/figures/org.gnome.Hitori.svg
 share/help/es/hitori/game.page
 share/help/es/hitori/index.page
 share/help/es/hitori/legal.xml
 share/help/es/hitori/playing.page
 share/help/es/hitori/strategy.page
+share/help/eu/hitori/customization.page
+share/help/eu/hitori/figures/dialog-question-symbolic.svg
+share/help/eu/hitori/figures/edit-redo-symbolic.svg
+share/help/eu/hitori/figures/edit-undo-symbolic.svg
+share/help/eu/hitori/figures/hitori_main_window.png
+share/help/eu/hitori/figures/org.gnome.Hitori.svg
+share/help/eu/hitori/game.page
+share/help/eu/hitori/index.page
+share/help/eu/hitori/legal.xml
+share/help/eu/hitori/playing.page
+share/help/eu/hitori/strategy.page
 share/help/fr/hitori/customization.page
 share/help/fr/hitori/figures/dialog-question-symbolic.svg
 share/help/fr/hitori/figures/edit-redo-symbolic.svg
 share/help/fr/hitori/figures/edit-undo-symbolic.svg
 share/help/fr/hitori/figures/hitori_main_window.png
+share/help/fr/hitori/figures/org.gnome.Hitori.svg
 share/help/fr/hitori/game.page
 share/help/fr/hitori/index.page
 share/help/fr/hitori/legal.xml
@@ -95,6 +115,7 @@ share/help/fur/hitori/figures/dialog-question-symbolic.svg
 share/help/fur/hitori/figures/edit-redo-symbolic.svg
 share/help/fur/hitori/figures/edit-undo-symbolic.svg
 share/help/fur/hitori/figures/hitori_main_window.png
+share/help/fur/hitori/figures/org.gnome.Hitori.svg
 share/help/fur/hitori/game.page
 share/help/fur/hitori/index.page
 share/help/fur/hitori/legal.xml
@@ -105,6 +126,7 @@ share/help/hu/hitori/figures/dialog-question-symbolic.svg
 share/help/hu/hitori/figures/edit-redo-symbolic.svg
 share/help/hu/hitori/figures/edit-undo-symbolic.svg
 share/help/hu/hitori/figures/hitori_main_window.png
+share/help/hu/hitori/figures/org.gnome.Hitori.svg
 share/help/hu/hitori/game.page
 share/help/hu/hitori/index.page
 share/help/hu/hitori/legal.xml
@@ -115,6 +137,7 @@ share/help/id/hitori/figures/dialog-question-symbolic.svg
 share/help/id/hitori/figures/edit-redo-symbolic.svg
 share/help/id/hitori/figures/edit-undo-symbolic.svg
 share/help/id/hitori/figures/hitori_main_window.png
+share/help/id/hitori/figures/org.gnome.Hitori.svg
 share/help/id/hitori/game.page
 share/help/id/hitori/index.page
 share/help/id/hitori/legal.xml
@@ -125,6 +148,7 @@ share/help/pl/hitori/figures/dialog-question-symbolic.svg
 share/help/pl/hitori/figures/edit-redo-symbolic.svg
 share/help/pl/hitori/figures/edit-undo-symbolic.svg
 share/help/pl/hitori/figures/hitori_main_window.png
+share/help/pl/hitori/figures/org.gnome.Hitori.svg
 share/help/pl/hitori/game.page
 share/help/pl/hitori/index.page
 share/help/pl/hitori/legal.xml
@@ -135,6 +159,7 @@ share/help/pt_BR/hitori/figures/dialog-question-symbolic.svg
 share/help/pt_BR/hitori/figures/edit-redo-symbolic.svg
 share/help/pt_BR/hitori/figures/edit-undo-symbolic.svg
 share/help/pt_BR/hitori/figures/hitori_main_window.png
+share/help/pt_BR/hitori/figures/org.gnome.Hitori.svg
 share/help/pt_BR/hitori/game.page
 share/help/pt_BR/hitori/index.page
 share/help/pt_BR/hitori/legal.xml
@@ -145,6 +170,7 @@ share/help/ro/hitori/figures/dialog-question-symbolic.svg
 share/help/ro/hitori/figures/edit-redo-symbolic.svg
 share/help/ro/hitori/figures/edit-undo-symbolic.svg
 share/help/ro/hitori/figures/hitori_main_window.png
+share/help/ro/hitori/figures/org.gnome.Hitori.svg
 share/help/ro/hitori/game.page
 share/help/ro/hitori/index.page
 share/help/ro/hitori/legal.xml
@@ -155,6 +181,7 @@ share/help/sl/hitori/figures/dialog-question-symbolic.svg
 share/help/sl/hitori/figures/edit-redo-symbolic.svg
 share/help/sl/hitori/figures/edit-undo-symbolic.svg
 share/help/sl/hitori/figures/hitori_main_window.png
+share/help/sl/hitori/figures/org.gnome.Hitori.svg
 share/help/sl/hitori/game.page
 share/help/sl/hitori/index.page
 share/help/sl/hitori/legal.xml
@@ -165,6 +192,7 @@ share/help/sv/hitori/figures/dialog-question-symbolic.svg
 share/help/sv/hitori/figures/edit-redo-symbolic.svg
 share/help/sv/hitori/figures/edit-undo-symbolic.svg
 share/help/sv/hitori/figures/hitori_main_window.png
+share/help/sv/hitori/figures/org.gnome.Hitori.svg
 share/help/sv/hitori/game.page
 share/help/sv/hitori/index.page
 share/help/sv/hitori/legal.xml
@@ -175,6 +203,7 @@ share/help/uk/hitori/figures/dialog-question-symbolic.svg
 share/help/uk/hitori/figures/edit-redo-symbolic.svg
 share/help/uk/hitori/figures/edit-undo-symbolic.svg
 share/help/uk/hitori/figures/hitori_main_window.png
+share/help/uk/hitori/figures/org.gnome.Hitori.svg
 share/help/uk/hitori/game.page
 share/help/uk/hitori/index.page
 share/help/uk/hitori/legal.xml

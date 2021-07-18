@@ -5,7 +5,7 @@ PORTVERSION=	0.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	security
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ncurses GUI and command-line tool for KeePass2 Database files
 
 LICENSE=	GPLv2

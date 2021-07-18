@@ -1,7 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	eom
-PORTVERSION=	1.24.1
+PORTVERSION=	1.24.2
 PORTREVISION=	1
 CATEGORIES=	graphics mate
 MASTER_SITES=	MATE

@@ -1,3 +1,3 @@
-TIMESTAMP = 1601308293
-SHA256 (apache-zookeeper-3.6.2.tar.gz) = 62d9e865a7b1da5e906ff39ebf40cfa1880303c04b4cf38e2c88d328bc2bcd6f
-SIZE (apache-zookeeper-3.6.2.tar.gz) = 3372391
+TIMESTAMP = 1617193329
+SHA256 (apache-zookeeper-3.7.0.tar.gz) = cb3980f61b66babe550dcb717c940160ba813512c0aca26c2b8a718fac5d465d
+SIZE (apache-zookeeper-3.7.0.tar.gz) = 3438672

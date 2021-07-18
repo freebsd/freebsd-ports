@@ -1,7 +1,7 @@
 # Created by: Alex Varju <freebsd-ports@varju.ca>
 
 PORTNAME=	pmd
-PORTVERSION=	6.29.0
+PORTVERSION=	6.34.0
 CATEGORIES=	devel java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}

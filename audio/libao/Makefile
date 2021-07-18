@@ -4,7 +4,8 @@ PORTNAME=	libao
 PORTVERSION=	1.2.0
 PORTREVISION=	5
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.xiph.org/releases/ao/
+MASTER_SITES=	https://downloads.xiph.org/releases/ao/ \
+		https://ftp.osuosl.org/pub/xiph/releases/ao/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Portable audio output library

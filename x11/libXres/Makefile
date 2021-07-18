@@ -1,8 +1,7 @@
 # Created by: Eric Anholt <anholt@FreeBSD.org>
 
 PORTNAME=	libXres
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.2.1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org

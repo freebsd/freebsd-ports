@@ -1,6 +1,6 @@
 PORTNAME=	surge-synthesizer
 DISTVERSIONPREFIX=	release_
-DISTVERSION=	1.8.1
+DISTVERSION=	1.9.0
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -15,30 +15,34 @@ BROKEN_FreeBSD_11=	error: use of undeclared identifier 'getline'; did you mean '
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/nanosvg.h:graphics/nanosvg \
 		${LOCALBASE}/include/simde/simde-common.h:devel/simde \
-		xcb-util-keysyms>0:x11/xcb-util-keysyms
+		xcb-util-keysyms>0:x11/xcb-util-keysyms \
+		bash:shells/bash
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libmidifile.so:audio/midifile \
+		libsamplerate.so:audio/libsamplerate \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxcb-util.so:x11/xcb-util
 
 USES=		cmake compiler:c++17-lang gnome localbase:ldflags pkgconfig python:build shebangfix xorg
-SHEBANG_FILES=	build-linux.sh
+SHEBANG_FILES=	build-linux.sh scripts/linux/package-vst3.sh
 USE_GNOME=	cairo
 USE_XORG=	x11 xcb
 
 USE_GITHUB=	yes
 GH_PROJECT=	surge
 
-CXXFLAGS+=	-I${LOCALBASE}/include/midifile
+CXXFLAGS+=	-I${LOCALBASE}/include/midifile # see https://github.com/surge-synthesizer/surge/issues/4358
 LDFLAGS+=	-lmidifile
 
 GH_TUPLE=	\
+		ODDSound:MTS-ESP:2ec61b5:MTS_ESP/libs/oddsound-mts/MTS-ESP \
+		surge-synthesizer:eurorack:1e9e12f:eurorack/libs/eurorack/eurorack \
 		surge-synthesizer:vst3sdk:10287bc37bbb34324b8097369e2ec4eb73a51d65:surge_synthesizer_vst3sdk/vst3sdk \
-		surge-synthesizer:vstgui:8abd688c76edfb7215413080960649a532a6755c:surge_synthesizer_vstgui/vstgui.surge \
-		surge-synthesizer:tuning-library:d9660eff4b59cafb9dcd712864b6c8af536089bc:surge_synthesizer_tuning_library/libs/tuning-library \
+		surge-synthesizer:vstgui:1bcbae8:surge_synthesizer_vstgui/vstgui.surge \
+		surge-synthesizer:tuning-library:cec555c:surge_synthesizer_tuning_library/libs/tuning-library \
 		steinbergmedia:vst3_base:37dbdb6ff7af29e518877f57f14050594164a0d6:steinbergmedia_vst3_base/vst3sdk/base \
 		steinbergmedia:vst3_cmake:f7ae22417019aa355de6f7ec46ecf890d3c2a76f:steinbergmedia_vst3_cmake/vst3sdk/cmake \
 		steinbergmedia:vst3_pluginterfaces:6c6bb30d18c3d5a553e55aa74afc5d146571be0a:steinbergmedia_vst3_pluginterfaces/vst3sdk/pluginterfaces \
@@ -53,7 +57,7 @@ PORTSCOUT=	limit:^\d+\. # prevent alpha-numeric strings
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/usr/share/Surge/"|"${DATADIR}/"|' ${WRKSRC}/src/common/SurgeStorage.cpp
 
-do-install:
+do-install: # https://github.com/surge-synthesizer/surge/issues/4359
 	# LV2 plugin
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/lv2
 	cd ${BUILD_WRKSRC}/surge_products && ${COPYTREE_SHARE} Surge.lv2 ${STAGEDIR}${PREFIX}/lib/lv2
@@ -63,5 +67,6 @@ do-install:
 	${INSTALL_LIB} ${BUILD_WRKSRC}/surge_products/Surge.vst3/Contents/*/Surge.so ${STAGEDIR}${PREFIX}/lib/vst
 	# data
 	cd ${WRKSRC}/resources/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	${RM} ${STAGEDIR}${DATADIR}/WHERE\ TO\ PLACE\ USER\ DATA.txt
 
 .include <bsd.port.mk>

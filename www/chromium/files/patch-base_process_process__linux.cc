@@ -1,4 +1,4 @@
---- base/process/process_linux.cc.orig	2021-03-12 23:57:15 UTC
+--- base/process/process_linux.cc.orig	2021-04-14 18:40:48 UTC
 +++ base/process/process_linux.cc
 @@ -24,7 +24,9 @@ namespace base {
  
@@ -19,7 +19,7 @@
  const int kBackgroundPriority = 5;
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
  
-@@ -96,13 +98,18 @@ Time Process::CreationTime() const {
+@@ -85,13 +87,18 @@ Time Process::CreationTime() const {
    if (!start_ticks)
      return Time();
  
@@ -38,7 +38,7 @@
  // static
  bool Process::CanBackgroundProcesses() {
  #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
-@@ -154,6 +161,7 @@ bool Process::SetProcessBackgrounded(bool background) 
+@@ -143,6 +150,7 @@ bool Process::SetProcessBackgrounded(bool background) 
    DPCHECK(result == 0);
    return result == 0;
  }

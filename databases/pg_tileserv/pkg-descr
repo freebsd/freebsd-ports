@@ -1,0 +1,18 @@
+pg_tileserv is a PostGIS-only tile server written in Go. By restricting itself
+to only using PostGIS as a data source, pg_tileserv gains the following
+features:
+
+- Automatic configuration. The server can discover and automatically publish
+as tiles sources all tables it has read access to: just point it at a
+PostgreSQL/PostGIS database.
+- Full SQL flexibility. Using function layers, the server can run any SQL to
+generate tile outputs. Any data processing, feature filtering, or record
+aggregation that can be expressed in SQL, can be exposed as parameterized tile
+sources.
+- Database security model. You can restrict access to tables and functions
+using standard database access control. This means you can also use advanced
+access control techniques, like row-level security to dynamically filter
+access based on the login role.
+
+
+WWW: https://github.com/crunchydata/pg_tileserv/issues

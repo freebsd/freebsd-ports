@@ -1,8 +1,9 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	xed
-PORTVERSION=	2.8.4
+PORTVERSION=	3.0.2
 CATEGORIES=	editors gnome
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Small but powerful graphical text editor

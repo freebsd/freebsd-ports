@@ -1,6 +1,7 @@
 bin/emu64
 share/applications/emu64.desktop
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/hotkeys.txt
 %%PORTDOCS%%%%DOCSDIR%%/kommandozeilenparameter.txt
 %%PORTDOCS%%%%DOCSDIR%%/änderungen.txt
 %%DATADIR%%/floppy_sounds/anschlag.raw

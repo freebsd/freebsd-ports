@@ -1,0 +1,6 @@
+If you've ever tried making admin object tools, you may have thought, 
+"why can't this be as easy as making Django Admin Actions?"
+
+Well now they can be.
+
+WWW: https://github.com/crccheck/django-object-actions

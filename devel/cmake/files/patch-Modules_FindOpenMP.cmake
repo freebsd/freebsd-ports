@@ -7,9 +7,9 @@ Look for omp.h in LOCALBASE and pass suitable -I and -L flags
 if those are necessary. Also use OpenMP flags when linking.
 PR 223678 and PR 234050.
 
---- Modules/FindOpenMP.cmake.orig	2019-04-03 08:45:25 UTC
+--- Modules/FindOpenMP.cmake.orig	2021-03-23 15:43:17 UTC
 +++ Modules/FindOpenMP.cmake
-@@ -80,6 +80,33 @@ cmake_policy(SET CMP0012 NEW) # if() recognizes number
+@@ -97,6 +97,33 @@ cmake_policy(SET CMP0012 NEW) # if() recognizes number
  cmake_policy(SET CMP0054 NEW) # if() quoted variables not dereferenced
  cmake_policy(SET CMP0057 NEW) # if IN_LIST
  
@@ -43,7 +43,7 @@ PR 223678 and PR 234050.
  function(_OPENMP_FLAG_CANDIDATES LANG)
    if(NOT OpenMP_${LANG}_FLAG)
      unset(OpenMP_FLAG_CANDIDATES)
-@@ -185,6 +212,15 @@ function(_OPENMP_GET_FLAGS LANG FLAG_MODE OPENMP_FLAG_
+@@ -210,6 +237,15 @@ function(_OPENMP_GET_FLAGS LANG FLAG_MODE OPENMP_FLAG_
      if(OpenMP_VERBOSE_COMPILE_OPTIONS)
        string(APPEND OPENMP_FLAGS_TEST " ${OpenMP_VERBOSE_COMPILE_OPTIONS}")
      endif()
@@ -59,7 +59,7 @@ PR 223678 and PR 234050.
      string(REGEX REPLACE "[-/=+]" "" OPENMP_PLAIN_FLAG "${OPENMP_FLAG}")
      try_compile( OpenMP_COMPILE_RESULT_${FLAG_MODE}_${OPENMP_PLAIN_FLAG} ${CMAKE_BINARY_DIR} ${_OPENMP_TEST_SRC}
        CMAKE_FLAGS "-DCOMPILE_DEFINITIONS:STRING=${OPENMP_FLAGS_TEST}"
-@@ -192,8 +228,23 @@ function(_OPENMP_GET_FLAGS LANG FLAG_MODE OPENMP_FLAG_
+@@ -217,8 +253,23 @@ function(_OPENMP_GET_FLAGS LANG FLAG_MODE OPENMP_FLAG_
        OUTPUT_VARIABLE OpenMP_TRY_COMPILE_OUTPUT
      )
  
@@ -84,7 +84,7 @@ PR 223678 and PR 234050.
  
        if(CMAKE_${LANG}_VERBOSE_FLAG)
          unset(OpenMP_${LANG}_IMPLICIT_LIBRARIES)
-@@ -491,9 +542,16 @@ foreach(LANG IN LISTS OpenMP_FINDLIST)
+@@ -565,9 +616,16 @@ foreach(LANG IN LISTS OpenMP_FINDLIST)
          add_library(OpenMP::OpenMP_${LANG} INTERFACE IMPORTED)
        endif()
        if(OpenMP_${LANG}_FLAGS)
@@ -102,4 +102,4 @@ PR 223678 and PR 234050.
 +          INTERFACE_LINK_OPTIONS "$<$<COMPILE_LANGUAGE:${LANG}>:${_OpenMP_${LANG}_LINK_OPTIONS}>")
          unset(_OpenMP_${LANG}_OPTIONS)
        endif()
-       if(OpenMP_${LANG}_LIBRARIES)
+       if(OpenMP_${LANG}_INCLUDE_DIRS)

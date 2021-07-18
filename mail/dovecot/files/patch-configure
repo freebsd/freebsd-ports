@@ -1,15 +1,6 @@
---- configure.orig	2020-12-22 13:27:02 UTC
+--- configure.orig	2021-06-22 13:00:25 UTC
 +++ configure
-@@ -26053,7 +26053,7 @@ fi
- $as_echo "$with_lua" >&6; }
- 
-   if test "x$with_lua" != "xno"; then :
--  for LUAPC in lua5.3 lua-5.3 lua53 lua5.2 lua-5.2 lua52 lua5.1 lua-5.1 lua51 lua; do
-+  for LUAPC in lua5.4 lua-5.4 lua54 lua5.3 lua-5.3 lua53 lua5.2 lua-5.2 lua52 lua5.1 lua-5.1 lua51 lua; do
- 
- pkg_failed=no
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for LUA" >&5
-@@ -29355,13 +29355,13 @@ fi
+@@ -29748,13 +29748,13 @@ fi
  
  
    if test $want_stemmer != no; then

@@ -1,0 +1,4 @@
+include/libzippp/libzippp.h
+lib/libzippp.so
+%%DATADIR%%/libzipppTargets-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/libzipppTargets.cmake

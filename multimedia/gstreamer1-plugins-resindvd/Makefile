@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer resindvd DVD playback plugin

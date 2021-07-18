@@ -5,6 +5,7 @@ CATEGORIES=	net www
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Cloudflare's Argo Tunnel client
 
+# Not sure if we are allowed to redistribute it.
 LICENSE=	cloudflare
 LICENSE_NAME=	cloudflare
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -23,6 +24,5 @@ GO_TARGET=	${GO_PKGNAME}/cmd/cloudflared
 GO_BUILDFLAGS+=	-ldflags '-s -w -X main.Version=${PORTVERSION}'
 
 PLIST_FILES=	bin/${PORTNAME}
-RESTRICTED=	Not sure if we are allowed to redistribute it.
 
 .include <bsd.port.mk>

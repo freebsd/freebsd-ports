@@ -1,0 +1,11 @@
+--- extras/dhcp_probe.cf.sample.orig	2011-12-06 23:40:55 UTC
++++ extras/dhcp_probe.cf.sample
+@@ -124,7 +124,7 @@
+ # Syntax:
+ #    cycle_time num_seconds
+ 
+-# cycle_wait_time 300
++# cycle_time 300
+ 
+ # ----------------------------------------------------------------------------------
+ #

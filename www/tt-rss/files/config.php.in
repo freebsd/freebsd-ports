@@ -1,0 +1,31 @@
+<?php
+	/*
+		This file can be used to customize global defaults if environment method is not available (i.e. no Docker).
+
+		Use the following syntax to override defaults (options are declared in classes/config.php, prefixed by TTRSS_):
+
+		putenv('TTRSS_DB_HOST=myserver');
+		putenv('TTRSS_SELF_URL_PATH=http://example.com/tt-rss');
+
+		Plugin-required constants also go here, using define():
+
+		define('LEGACY_CONSTANT', 'value');
+
+		etc.
+
+		See this page for more information: https://tt-rss.org/wiki/GlobalConfig
+	*/
+
+	# Required for FreeBSD ports php location
+	putenv('TTRSS_PHP_EXECUTABLE=%%LOCALBASE%%/bin/php');
+	# Required for plugin installer usage of git
+	putenv("PATH=%%LOCALBASE%%/bin/:" . getenv("PATH"));
+
+	#putenv('TTRSS_SINGLE_USER_MODE=true');
+
+	#putenv('TTRSS_SELF_URL_PATH=');
+	#putenv('TTRSS_DB_TYPE=');
+	#putenv('TTRSS_DB_HOST=');
+	#putenv('TTRSS_DB_USER=');
+	#putenv('TTRSS_DB_NAME=');
+	#putenv('TTRSS_DB_PASS=');

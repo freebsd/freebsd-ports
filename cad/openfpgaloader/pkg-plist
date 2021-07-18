@@ -1,0 +1,9 @@
+bin/openFPGALoader
+%%DATADIR%%/spiOverJtag_xc7a100tfgg484.bit
+%%DATADIR%%/spiOverJtag_xc7a200tsbg484.bit
+%%DATADIR%%/spiOverJtag_xc7a35tcsg324.bit
+%%DATADIR%%/spiOverJtag_xc7a35tftg256.bit
+%%DATADIR%%/spiOverJtag_xc7a50tcpg236.bit
+%%DATADIR%%/spiOverJtag_xc7a75tfgg484.bit
+%%DATADIR%%/spiOverJtag_xc7s50csga324.bit
+%%DATADIR%%/test_sfl.svf

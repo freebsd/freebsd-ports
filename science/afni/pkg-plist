@@ -242,6 +242,7 @@ bin/3dmaskave
 bin/3dmaskdump
 bin/3dmatcalc
 bin/3dmatmult
+bin/3dmaxdisp
 bin/3dmaxima
 bin/3dmerge
 bin/3dnewid
@@ -295,6 +296,7 @@ bin/@GetAfniRes
 bin/@GetAfniView
 bin/@GradFlipTest
 bin/@Install_3dPFM_Demo
+bin/@Install_AP_MULTI_DEMO1
 bin/@Install_AfniRetinoDemo
 bin/@Install_ClustScat_Demo
 bin/@Install_D99_macaque
@@ -310,6 +312,7 @@ bin/@Install_MEICA_Demo
 bin/@Install_NIH_Marmoset
 bin/@Install_NMT
 bin/@Install_RSFMRI_Motion_Group_Demo
+bin/@Install_SURFLAYERS_DEMO1
 bin/@Install_TSrestMovieDemo
 bin/@IsoMasks
 bin/@MakeLabelTable
@@ -463,6 +466,8 @@ bin/SurfDsetInfo
 bin/SurfExtrema
 bin/SurfFWHM
 bin/SurfInfo
+bin/SurfLayers
+bin/SurfLocalstat
 bin/SurfMeasures
 bin/SurfPatch
 bin/SurfQual
@@ -477,8 +482,7 @@ bin/Xphace
 bin/abids_json_info.py
 bin/abids_json_tool.py
 bin/abids_tool.py
-bin/adjunct_apqc_tsnr_no_mask
-bin/adjunct_apqc_tsnr_with_mask
+bin/adjunct_apqc_tsnr_general
 bin/adjunct_aw_tableize_roi_info.py
 bin/adjunct_calc_mont_dims.py
 bin/adjunct_combine_str.py
@@ -575,6 +579,7 @@ bin/imstack
 bin/imstat
 bin/imupsam
 bin/inspec
+bin/lesion_align
 bin/make_pq_script.py
 bin/make_random_timing.py
 bin/make_stim_times.py
@@ -601,6 +606,7 @@ bin/prompt_user
 bin/python_module_test.py
 bin/quick.alpha.vals.py
 bin/quickspec
+bin/quickspecSL
 bin/quotize
 bin/rPkgsInstall
 bin/rPkgsInstall.R
@@ -672,6 +678,7 @@ include/afni/rcmat.h
 include/afni/tagset.h
 include/afni/thd_atlas.h
 include/afni/thd_compress.h
+include/afni/thd_depth.h
 include/afni/thd_iochan.h
 include/afni/thd_maker.h
 include/afni/thd_ttatlas_CA_EZ.h

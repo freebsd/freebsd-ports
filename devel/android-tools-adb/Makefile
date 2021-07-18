@@ -4,7 +4,7 @@ DISTVERSION?=	29.0.6
 PORTREVISION?=	1
 CATEGORIES=	devel comms
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Android debug bridge command line tool
 
 LICENSE=	APACHE20

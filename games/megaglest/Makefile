@@ -2,7 +2,7 @@
 
 PORTNAME=	megaglest
 PORTVERSION=	3.13.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 
 MAINTAINER=	monwarez@mailoo.org

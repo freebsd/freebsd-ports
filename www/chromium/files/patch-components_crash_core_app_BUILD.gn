@@ -1,11 +1,11 @@
---- components/crash/core/app/BUILD.gn.orig	2021-03-12 23:57:22 UTC
+--- components/crash/core/app/BUILD.gn.orig	2021-04-14 18:40:59 UTC
 +++ components/crash/core/app/BUILD.gn
 @@ -3,7 +3,7 @@
  # found in the LICENSE file.
  
  # TODO(crbug.com/753619): Enable crash reporting on Fuchsia.
--assert(!is_ios && !is_fuchsia)
-+assert(!is_ios && !is_fuchsia && !is_bsd)
+-assert(!is_fuchsia)
++assert(!is_fuchsia && !is_bsd)
  
  import("//components/gwp_asan/buildflags/buildflags.gni")
  

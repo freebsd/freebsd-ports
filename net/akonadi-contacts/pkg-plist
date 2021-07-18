@@ -108,6 +108,9 @@ share/kservices5/akonadicontact_actions.desktop
 share/locale/ar/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/ar/LC_MESSAGES/akonadicontact5.mo
 share/locale/ar/LC_MESSAGES/kcm_akonadicontact_actions.mo
+share/locale/az/LC_MESSAGES/akonadicontact5-serializer.mo
+share/locale/az/LC_MESSAGES/akonadicontact5.mo
+share/locale/az/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/bs/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/bs/LC_MESSAGES/akonadicontact5.mo
 share/locale/bs/LC_MESSAGES/kcm_akonadicontact_actions.mo

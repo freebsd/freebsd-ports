@@ -3,4 +3,6 @@ bin/bpgenc
 %%SDL%%bin/bpgview
 include/libbpg.h
 lib/libbpg.a
+lib/libbpg.so.0.9
+lib/libbpg.so.0
 lib/libbpg.so

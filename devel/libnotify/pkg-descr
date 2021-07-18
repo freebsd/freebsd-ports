@@ -7,4 +7,4 @@ of time.
 This port contains the library and a small command line client.
 See deskutils/notification-daemon for the daemon.
 
-WWW: http://www.galago-project.org/specs/notification/index.php
+WWW: https://gitlab.gnome.org/GNOME/libnotify

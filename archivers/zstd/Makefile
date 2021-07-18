@@ -1,7 +1,7 @@
 # Created by: John Marino <marino@FreeBSD.org>
 
 PORTNAME=	zstd
-PORTVERSION=	1.4.8
+PORTVERSION=	1.5.0
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/facebook/zstd/releases/download/v${PORTVERSION}/
 

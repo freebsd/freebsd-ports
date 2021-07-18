@@ -79,7 +79,6 @@ lib/pidgin/xmppdisco.so
 libdata/pkgconfig/pidgin.pc
 man/man1/pidgin.1.gz
 %%PERLMAN:%%man/man3/Pidgin.3.gz
-share/appdata/pidgin.appdata.xml
 share/applications/pidgin.desktop
 share/icons/hicolor/16x16/apps/pidgin.png
 share/icons/hicolor/22x22/apps/pidgin.png
@@ -87,6 +86,7 @@ share/icons/hicolor/24x24/apps/pidgin.png
 share/icons/hicolor/32x32/apps/pidgin.png
 share/icons/hicolor/48x48/apps/pidgin.png
 share/icons/hicolor/scalable/apps/pidgin.svg
+share/metainfo/pidgin.appdata.xml
 share/pixmaps/pidgin/animations/16/connect0.png
 share/pixmaps/pidgin/animations/16/connect1.png
 share/pixmaps/pidgin/animations/16/connect2.png
@@ -466,12 +466,10 @@ share/pixmaps/pidgin/emotes/small/wink.png
 share/pixmaps/pidgin/emotes/small/working.png
 share/pixmaps/pidgin/emotes/small/writing.png
 share/pixmaps/pidgin/logo.png
-share/pixmaps/pidgin/protocols/16/aim.png
 share/pixmaps/pidgin/protocols/16/bonjour.png
 share/pixmaps/pidgin/protocols/16/facebook.png
 share/pixmaps/pidgin/protocols/16/gadu-gadu.png
 share/pixmaps/pidgin/protocols/16/google-talk.png
-share/pixmaps/pidgin/protocols/16/icq.png
 share/pixmaps/pidgin/protocols/16/irc.png
 share/pixmaps/pidgin/protocols/16/jabber.png
 share/pixmaps/pidgin/protocols/16/meanwhile.png
@@ -479,12 +477,10 @@ share/pixmaps/pidgin/protocols/16/novell.png
 share/pixmaps/pidgin/protocols/16/silc.png
 share/pixmaps/pidgin/protocols/16/simple.png
 share/pixmaps/pidgin/protocols/16/zephyr.png
-share/pixmaps/pidgin/protocols/22/aim.png
 share/pixmaps/pidgin/protocols/22/bonjour.png
 share/pixmaps/pidgin/protocols/22/facebook.png
 share/pixmaps/pidgin/protocols/22/gadu-gadu.png
 share/pixmaps/pidgin/protocols/22/google-talk.png
-share/pixmaps/pidgin/protocols/22/icq.png
 share/pixmaps/pidgin/protocols/22/irc.png
 share/pixmaps/pidgin/protocols/22/jabber.png
 share/pixmaps/pidgin/protocols/22/meanwhile.png
@@ -492,11 +488,9 @@ share/pixmaps/pidgin/protocols/22/novell.png
 share/pixmaps/pidgin/protocols/22/silc.png
 share/pixmaps/pidgin/protocols/22/simple.png
 share/pixmaps/pidgin/protocols/22/zephyr.png
-share/pixmaps/pidgin/protocols/48/aim.png
 share/pixmaps/pidgin/protocols/48/bonjour.png
 share/pixmaps/pidgin/protocols/48/facebook.png
 share/pixmaps/pidgin/protocols/48/gadu-gadu.png
-share/pixmaps/pidgin/protocols/48/icq.png
 share/pixmaps/pidgin/protocols/48/irc.png
 share/pixmaps/pidgin/protocols/48/jabber.png
 share/pixmaps/pidgin/protocols/48/meanwhile.png
@@ -504,11 +498,9 @@ share/pixmaps/pidgin/protocols/48/novell.png
 share/pixmaps/pidgin/protocols/48/silc.png
 share/pixmaps/pidgin/protocols/48/simple.png
 share/pixmaps/pidgin/protocols/48/zephyr.png
-share/pixmaps/pidgin/protocols/scalable/aim.svg
 share/pixmaps/pidgin/protocols/scalable/bonjour.svg
 share/pixmaps/pidgin/protocols/scalable/gadu-gadu.svg
 share/pixmaps/pidgin/protocols/scalable/google-talk.svg
-share/pixmaps/pidgin/protocols/scalable/icq.svg
 share/pixmaps/pidgin/protocols/scalable/irc.svg
 share/pixmaps/pidgin/protocols/scalable/jabber.svg
 share/pixmaps/pidgin/protocols/scalable/meanwhile.svg

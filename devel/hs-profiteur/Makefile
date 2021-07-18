@@ -1,6 +1,6 @@
 PORTNAME=	profiteur
 PORTVERSION=	0.4.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -34,6 +34,6 @@ profiteur_DATADIR_VARS=		js-jquery
 
 post-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/js-jquery-3.3.1/javascript/jquery-3.3.1.min.js ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${CABAL_DEPSDIR}/js-jquery-3.3.1/javascript/jquery-3.3.1.min.js ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

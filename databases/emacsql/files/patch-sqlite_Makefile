@@ -1,0 +1,22 @@
+--- sqlite/Makefile.orig	2020-07-14 00:28:59 UTC
++++ sqlite/Makefile
+@@ -1,6 +1,6 @@
+ .POSIX:
+-LDLIBS = -ldl -lm
+-CFLAGS = -O2 -Wall -Wextra \
++LDLIBS = -lsqlite3
++CFLAGS += \
+     -DSQLITE_THREADSAFE=0 \
+     -DSQLITE_DEFAULT_FOREIGN_KEYS=1 \
+     -DSQLITE_ENABLE_FTS5 \
+@@ -10,8 +10,8 @@ CFLAGS = -O2 -Wall -Wextra \
+     -DSQLITE_ENABLE_JSON1 \
+     -DSQLITE_SOUNDEX
+ 
+-emacsql-sqlite: emacsql.c sqlite3.c
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ emacsql.c sqlite3.c $(LDLIBS)
++emacsql-sqlite: emacsql.c
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ emacsql.c $(LDLIBS)
+ 
+ clean:
+ 	rm -f emacsql-sqlite

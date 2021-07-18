@@ -3,7 +3,7 @@
 PORTNAME=	opencolorio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.1
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz

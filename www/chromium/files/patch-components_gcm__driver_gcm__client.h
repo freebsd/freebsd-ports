@@ -1,4 +1,4 @@
---- components/gcm_driver/gcm_client.h.orig	2021-03-12 23:57:22 UTC
+--- components/gcm_driver/gcm_client.h.orig	2021-04-14 18:40:59 UTC
 +++ components/gcm_driver/gcm_client.h
 @@ -87,6 +87,7 @@ class GCMClient {
      PLATFORM_CROS,

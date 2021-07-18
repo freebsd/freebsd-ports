@@ -93,6 +93,7 @@
     SUBDIR += py-backtrader
     SUBDIR += py-bitcoin
     SUBDIR += py-ebaysdk
+    SUBDIR += py-mplfinance
     SUBDIR += py-ofxparse
     SUBDIR += py-pycoin
     SUBDIR += py-python-bitcoinlib
@@ -101,6 +102,7 @@
     SUBDIR += py-stripe
     SUBDIR += py-ta-lib
     SUBDIR += py-vatnumber
+    SUBDIR += py-yfinance
     SUBDIR += py-ystockquote
     SUBDIR += qtbitcointrader
     SUBDIR += quantlib

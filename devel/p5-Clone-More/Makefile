@@ -13,8 +13,9 @@ COMMENT=	Perl module for natively copying Perl data structures
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-install:

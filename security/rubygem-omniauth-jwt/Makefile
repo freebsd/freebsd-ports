@@ -2,6 +2,7 @@
 
 PORTNAME=	omniauth-jwt
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-jwt>=0:www/rubygem-jwt \
-		rubygem-omniauth>=1.1<2:security/rubygem-omniauth
+		rubygem-omniauth1>=1.1<2:security/rubygem-omniauth1
 
 USES=		gem
 USE_RUBY=	yes

@@ -1,4 +1,4 @@
---- gpu/ipc/service/gpu_watchdog_thread.cc.orig	2021-03-12 23:57:25 UTC
+--- gpu/ipc/service/gpu_watchdog_thread.cc.orig	2021-04-14 18:41:04 UTC
 +++ gpu/ipc/service/gpu_watchdog_thread.cc
 @@ -73,7 +73,7 @@ GpuWatchdogThread::GpuWatchdogThread(base::TimeDelta t
    }

@@ -26,7 +26,9 @@ TEST_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-Test-Pod>=1.22:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.08:devel/p5-Test-Pod-Coverage
 
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

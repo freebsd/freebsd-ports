@@ -1,10 +1,12 @@
 PORTNAME=	kget
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE download manager
 
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:devel/boost-libs
 LIB_DEPENDS=    libKF5Torrent.so:net-p2p/libktorrent  \
 		libassuan.so:security/libassuan \
 		libgcrypt.so:security/libgcrypt \
@@ -22,9 +24,10 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		iconthemes itemmodels itemviews jobwidgets kcmutils \
 		kdelibs4support kio notifications notifyconfig parts service \
 		solid sonnet textwidgets unitconversion wallet widgetsaddons \
-		windowsystem xmlgui
+		windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus gui network printsupport sql widgets xml \
-		buildtools_build qmake_build
+		buildtools_build qmake_build testlib_build
 
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	conf/*.pl

@@ -15,7 +15,7 @@ BROKEN_aarch64=		fails to compile: gu_int128.h: use of undeclared identifier '__
 BROKEN_armv6=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
 BROKEN_armv7=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
 BROKEN_riscv64=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
-NOT_FOR_ARCHS=		i386
+NOT_FOR_ARCHS=		i386 powerpc
 # On i386 older versions of clang produce:
 #   cannot compile this atomic library call yet ... __atomic_add_fetch
 # whereas newer ones generate a call to __atomic_add_fetch which ends up with
@@ -25,6 +25,7 @@ NOT_FOR_ARCHS=		i386
 # https://bugs.llvm.org//show_bug.cgi?id=24908
 # https://tracker.crystax.net/issues/1263
 NOT_FOR_ARCHS_REASON_i386=Uses 64 bit atomics that clang cannot generate on i386
+NOT_FOR_ARCHS_REASON_powerpc=Uses 64 bit atomics that clang cannot generate on i386
 
 BUILD_DEPENDS=	checkmk:devel/check \
 		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs \

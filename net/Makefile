@@ -23,6 +23,7 @@
     SUBDIR += appkonference
     SUBDIR += aprsc
     SUBDIR += aquantia-atlantic-kmod
+    SUBDIR += arataga
     SUBDIR += arp-scan
     SUBDIR += arp-sk
     SUBDIR += arpdig
@@ -92,10 +93,12 @@
     SUBDIR += corosync3
     SUBDIR += courier-authlib-ldap
     SUBDIR += courier-sox
+    SUBDIR += cpp-pcp-client
     SUBDIR += cppzmq
     SUBDIR += croc
     SUBDIR += cryptcat
     SUBDIR += csocks
+    SUBDIR += csync2
     SUBDIR += ctrace
     SUBDIR += cvsup-static
     SUBDIR += cvsync
@@ -156,6 +159,7 @@
     SUBDIR += fpc-libenet
     SUBDIR += fpc-pcap
     SUBDIR += fping
+    SUBDIR += freebsd-telnetd
     SUBDIR += freebsd-uucp
     SUBDIR += freediameter
     SUBDIR += freeradius-client
@@ -169,7 +173,9 @@
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fsplib
+    SUBDIR += gamenetworkingsockets
     SUBDIR += gdrive
+    SUBDIR += gemserv
     SUBDIR += geoclue
     SUBDIR += geocode-glib
     SUBDIR += geoipupdate
@@ -180,6 +186,7 @@
     SUBDIR += glflow
     SUBDIR += glib-networking
     SUBDIR += glusterfs
+    SUBDIR += gmid
     SUBDIR += gnet2
     SUBDIR += gnetcat
     SUBDIR += gnome-nettool
@@ -219,6 +226,7 @@
     SUBDIR += gupnp-av
     SUBDIR += gupnp-dlna
     SUBDIR += gupnp-igd
+    SUBDIR += gupnp-tools
     SUBDIR += gupnp-ui
     SUBDIR += gutenfetch
     SUBDIR += gwhois
@@ -231,6 +239,7 @@
     SUBDIR += haproxy19
     SUBDIR += haproxy20
     SUBDIR += haproxy21
+    SUBDIR += haproxy22
     SUBDIR += haproxy23
     SUBDIR += hblock
     SUBDIR += hexinject
@@ -282,6 +291,7 @@
     SUBDIR += jgroups
     SUBDIR += jicmp
     SUBDIR += jicmp6
+    SUBDIR += jose
     SUBDIR += jrdesktop
     SUBDIR += jsch
     SUBDIR += jumpgate
@@ -356,7 +366,6 @@
     SUBDIR += libgweather
     SUBDIR += libilbc
     SUBDIR += libiscsi
-    SUBDIR += libjson-rpc-cpp
     SUBDIR += libkgapi
     SUBDIR += libksieve
     SUBDIR += libkvkontakte
@@ -382,6 +391,7 @@
     SUBDIR += libosip2
     SUBDIR += libpcap
     SUBDIR += libpcapnav
+    SUBDIR += libpfctl
     SUBDIR += libproxy
     SUBDIR += libproxy-gnome3
     SUBDIR += libproxy-kde
@@ -532,7 +542,6 @@
     SUBDIR += open-isns
     SUBDIR += openbgpd
     SUBDIR += openbgpd6
-    SUBDIR += openggsn
     SUBDIR += openldap24-client
     SUBDIR += openldap24-sasl-client
     SUBDIR += openldap24-server
@@ -717,6 +726,7 @@
     SUBDIR += p5-Net-NIS-Listgroup
     SUBDIR += p5-Net-NTP
     SUBDIR += p5-Net-Nessus-XMLRPC
+    SUBDIR += p5-Net-Netcat
     SUBDIR += p5-Net-Nmsg
     SUBDIR += p5-Net-OAuth
     SUBDIR += p5-Net-OAuth-Simple
@@ -895,7 +905,6 @@
     SUBDIR += pacemaker2
     SUBDIR += packetdrill
     SUBDIR += packter-agent
-    SUBDIR += panoptis
     SUBDIR += parpd
     SUBDIR += pathneck
     SUBDIR += pbnc
@@ -1064,6 +1073,14 @@
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
     SUBDIR += py-pyroute2
+    SUBDIR += py-pyroute2.core
+    SUBDIR += py-pyroute2.ethtool
+    SUBDIR += py-pyroute2.ipset
+    SUBDIR += py-pyroute2.minimal
+    SUBDIR += py-pyroute2.ndb
+    SUBDIR += py-pyroute2.nftables
+    SUBDIR += py-pyroute2.nslink
+    SUBDIR += py-pyroute2.protocols
     SUBDIR += py-pysendfile
     SUBDIR += py-pyshark
     SUBDIR += py-pysmb
@@ -1073,20 +1090,17 @@
     SUBDIR += py-python-bitcoinrpc
     SUBDIR += py-python-ceilometerclient
     SUBDIR += py-python-cinderclient
-    SUBDIR += py-python-cinderclient5
     SUBDIR += py-python-designateclient
     SUBDIR += py-python-glanceclient
-    SUBDIR += py-python-glanceclient2
     SUBDIR += py-python-heatclient
     SUBDIR += py-python-keystoneclient
-    SUBDIR += py-python-keystoneclient3
     SUBDIR += py-python-neutronclient
     SUBDIR += py-python-novaclient
-    SUBDIR += py-python-novaclient16
     SUBDIR += py-python-openstackclient
     SUBDIR += py-python-socks
     SUBDIR += py-python-twitter
     SUBDIR += py-pytradfri
+    SUBDIR += py-pyu2f
     SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
     SUBDIR += py-qt5-network
@@ -1166,6 +1180,7 @@
     SUBDIR += recvnet
     SUBDIR += redir
     SUBDIR += relayd
+    SUBDIR += remarkable-devd
     SUBDIR += remmina
     SUBDIR += remotebox
     SUBDIR += remotedesk
@@ -1176,6 +1191,7 @@
     SUBDIR += routinator
     SUBDIR += rp-pppoe
     SUBDIR += rpki-client
+    SUBDIR += rscsi
     SUBDIR += rsocket-cpp
     SUBDIR += rsplib
     SUBDIR += rsync
@@ -1247,6 +1263,7 @@
     SUBDIR += rubygem-gitaly-proto
     SUBDIR += rubygem-gitlab-fog-azure-rm
     SUBDIR += rubygem-gitlab-fog-google
+    SUBDIR += rubygem-gitlab-omniauth-openid-connect
     SUBDIR += rubygem-gitlab_omniauth-ldap
     SUBDIR += rubygem-google-cloud-bigquery
     SUBDIR += rubygem-google-cloud-bigtable
@@ -1273,6 +1290,7 @@
     SUBDIR += rubygem-httpauth
     SUBDIR += rubygem-ipaddress
     SUBDIR += rubygem-iproto
+    SUBDIR += rubygem-kas-grpc
     SUBDIR += rubygem-lita-gems
     SUBDIR += rubygem-macaddr
     SUBDIR += rubygem-maxmind-db
@@ -1337,6 +1355,7 @@
     SUBDIR += rubygem-rye
     SUBDIR += rubygem-serverengine
     SUBDIR += rubygem-simple_oauth
+    SUBDIR += rubygem-spamcheck
     SUBDIR += rubygem-stackdriver-core
     SUBDIR += rubygem-stompserver
     SUBDIR += rubygem-t
@@ -1357,7 +1376,6 @@
     SUBDIR += rude
     SUBDIR += ryu
     SUBDIR += sacc
-    SUBDIR += samba411
     SUBDIR += samba412
     SUBDIR += samba413
     SUBDIR += samplicator
@@ -1404,6 +1422,7 @@
     SUBDIR += socketpipe
     SUBDIR += socketw
     SUBDIR += sofia-sip
+    SUBDIR += spiritvnc
     SUBDIR += spoofer
     SUBDIR += spread
     SUBDIR += spread-j
@@ -1455,6 +1474,7 @@
     SUBDIR += tcpwatch
     SUBDIR += tcpxd
     SUBDIR += tcpxtract
+    SUBDIR += td-system-tools
     SUBDIR += tdetect
     SUBDIR += termshark
     SUBDIR += tftpgrab

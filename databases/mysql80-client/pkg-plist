@@ -3,6 +3,7 @@ bin/my_print_defaults
 bin/mysql
 bin/mysql_config
 bin/mysql_config_editor
+bin/mysql_migrate_keyring
 bin/mysqladmin
 bin/mysqlbinlog
 bin/mysqlcheck

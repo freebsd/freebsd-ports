@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python:3.7+
 USE_PYTHON=	distutils concurrent autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	mph-

@@ -87,6 +87,8 @@ share/applications/worker.desktop
 %%DATADIR%%/config-updates/update-4.4.0.conf
 %%DATADIR%%/config-updates/update-4.4.1-utf8.conf
 %%DATADIR%%/config-updates/update-4.4.1.conf
+%%DATADIR%%/config-updates/update-4.8.1-utf8.conf
+%%DATADIR%%/config-updates/update-4.8.1.conf
 %%DATADIR%%/hints-english
 %%DATADIR%%/hints-english.utf8
 %%DATADIR%%/scripts/aa.pattern_rename.sh

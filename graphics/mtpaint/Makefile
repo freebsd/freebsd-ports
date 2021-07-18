@@ -1,7 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	mtpaint
-PORTVERSION=	3.50.08
+DISTVERSION=	3.50.09
 CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org

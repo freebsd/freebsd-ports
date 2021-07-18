@@ -1,0 +1,9 @@
+A service daemon for the FreeBSD rc(8) framework. It lets the user configure
+OpenConnect VPN in rc.conf(5) and use the standard FreeBSD tools to control the
+daemon.
+
+Features:
+- Support for starting multiple OpenConnect services.
+- Support for running arbitrary commands for OTP-based authentication.
+
+WWW: https://github.com/0mp/openconnect-freebsd-daemon

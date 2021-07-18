@@ -55,7 +55,7 @@ MAKE_ARGS=	INSTALL_ROOT="${STAGEDIR}${PREFIX}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${CHOSEN_COMPILER_TYPE} == gcc
+.if ${ARCH} == "i386" || ${ARCH} == "powerpc" || ${CHOSEN_COMPILER_TYPE} == gcc
 USE_GCC=	8
 .endif
 

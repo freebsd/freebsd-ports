@@ -1,7 +1,7 @@
 # Created by: Victor Yagofarov <xnasx@yandex.ru>
 
 PORTNAME=	librdkafka
-PORTVERSION=	1.6.1
+DISTVERSION=	1.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 

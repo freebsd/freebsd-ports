@@ -1,4 +1,4 @@
---- chrome/browser/memory_details_linux.cc.orig	2021-03-12 23:57:18 UTC
+--- chrome/browser/memory_details_linux.cc.orig	2021-04-14 18:40:53 UTC
 +++ chrome/browser/memory_details_linux.cc
 @@ -70,8 +70,10 @@ ProcessData GetProcessDataMemoryInformation(
  

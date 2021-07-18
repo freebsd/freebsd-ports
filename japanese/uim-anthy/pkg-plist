@@ -1,4 +1,4 @@
-%%X11%%bin/uim-dict-gtk
+%%X11%%bin/uim-dict-gtk3
 lib/uim/plugin/libuim-anthy.so
 lib/uim/plugin/libuim-anthy-utf8.so
 %%X11%%%%DATADIR%%/helperdata/uim-dict-ui.xml

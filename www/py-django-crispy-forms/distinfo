@@ -1,3 +1,3 @@
-TIMESTAMP = 1614794318
-SHA256 (django-crispy-forms-1.11.1.tar.gz) = 5c600dea66e2f435f774fe2c4cacfb5b5eb9914dd6da0728edd174b95f6956fd
-SIZE (django-crispy-forms-1.11.1.tar.gz) = 62205
+TIMESTAMP = 1623697082
+SHA256 (django-crispy-forms-1.12.0.tar.gz) = d196db62ee8b4fc32d1f9583d0e4be1bb17328b662682c1ecb9fb77bbc0fcf77
+SIZE (django-crispy-forms-1.12.0.tar.gz) = 67073

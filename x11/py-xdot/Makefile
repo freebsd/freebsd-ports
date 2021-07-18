@@ -1,5 +1,6 @@
 PORTNAME=	xdot
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	x11 python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +10,8 @@ COMMENT=	Interactive viewer for Graphviz dot files
 
 LICENSE=	LGPL3+
 
-RUN_DEPENDS=	dot:graphics/graphviz
+RUN_DEPENDS=	dot:graphics/graphviz \
+		${PYNUMPY}
 
 USES=		gnome python:3.4+
 USE_PYTHON=	autoplist distutils

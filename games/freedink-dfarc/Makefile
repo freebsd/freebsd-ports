@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	GNU/freedink
 DISTNAME=	dfarc-${PORTVERSION}
 
-MAINTAINER=	shurd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend and .dmod installer for GNU FreeDink
 
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake gnome \

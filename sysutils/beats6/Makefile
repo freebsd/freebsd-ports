@@ -1,8 +1,6 @@
-# Created by: Palle Girgensohn <girgen@FreeBSD.org>
-
 PORTNAME=	beats
-PORTVERSION=	6.8.15
-DISTVERSIONPREFIX=v
+PORTVERSION=	6.8.16
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	6
 
@@ -16,28 +14,27 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	elastic
 USE_RC_SUBR=	${GO_TARGETS}
 
-CONFLICTS=	beats7*
-
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
-FIND_ARGS=	"! ( -regex .*/*\.(go|in|log) ) ! -path *test* ! -path *vendor*"
 MAKE_ENV+=	GOBUILD_FLAGS=""
 
-OPTIONS_DEFAULT=FILEBEAT HEARTBEAT METRICBEAT
-OPTIONS_DEFINE=	FILEBEAT HEARTBEAT METRICBEAT PACKETBEAT
-OPTIONS_SUB=	yes
+CONFLICTS=	beats7
 
-FILEBEAT_DESC=	Filebeat
-FILEBEAT_VARS=	GO_TARGETS+=filebeat
+OPTIONS_DEFINE=		FILEBEAT HEARTBEAT METRICBEAT PACKETBEAT
+OPTIONS_DEFAULT=	FILEBEAT HEARTBEAT METRICBEAT
+OPTIONS_SUB=		yes
 
-PACKETBEAT_DESC=Packetbeat
-PACKETBEAT_VARS=GO_TARGETS+=packetbeat
+FILEBEAT_DESC=		Filebeat
+HEARTBEAT_DESC=		Heartbeat
+METRICBEAT_DESC=	Metricbeat
+PACKETBEAT_DESC=	Packetbeat
+
+FILEBEAT_VARS=		GO_TARGETS+=filebeat
+HEARTBEAT_VARS=		GO_TARGETS+=heartbeat
+METRICBEAT_VARS=	GO_TARGETS+=metricbeat
 PACKETBEAT_BROKEN=	An underlying library is currently broken under FreeBSD
+PACKETBEAT_VARS=	GO_TARGETS+=packetbeat
 
-METRICBEAT_DESC=Metricbeat
-METRICBEAT_VARS=GO_TARGETS+=metricbeat
-
-HEARTBEAT_DESC=	Heartbeat
-HEARTBEAT_VARS=	GO_TARGETS+=heartbeat
+_FIND_ARGS=	"! ( -regex .*/*\.(go|in|log) ) ! -path *test* ! -path *vendor*"
 
 .include <bsd.port.options.mk>
 
@@ -64,7 +61,7 @@ do-install:
 .endfor
 .for BEATMOD in filebeat metricbeat
 	${MKDIR} ${STAGEDIR}${ETCDIR}/${BEATMOD}.modules.d ${STAGEDIR}${DATADIR}/${BEATMOD}/module
-	(cd ${WRKSRC}/${BEATMOD}/module && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${BEATMOD}/module ${FIND_ARGS})
+	(cd ${WRKSRC}/${BEATMOD}/module && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${BEATMOD}/module ${_FIND_ARGS})
 	(cd ${WRKSRC}/${BEATMOD}/modules.d && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/${BEATMOD}.modules.d)
 .endfor
 

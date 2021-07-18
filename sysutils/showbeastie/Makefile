@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	showbeastie
 PORTVERSION=	0.3
 CATEGORIES=	sysutils

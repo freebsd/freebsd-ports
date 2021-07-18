@@ -16,7 +16,7 @@ BUILD_DEPENDS=	opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
 RUN_DEPENDS=	opencl>=0:devel/opencl
 
-ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64le riscv64
 
 USES=		cmake
 USE_LDCONFIG=	yes

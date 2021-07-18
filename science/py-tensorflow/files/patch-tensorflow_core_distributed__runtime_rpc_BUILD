@@ -1,0 +1,10 @@
+--- tensorflow/core/distributed_runtime/rpc/BUILD.orig	2021-07-08 11:22:26 UTC
++++ tensorflow/core/distributed_runtime/rpc/BUILD
+@@ -253,6 +253,7 @@ cc_library(
+     name = "grpc_master_service_impl",
+     srcs = ["grpc_master_service_impl.cc"],
+     hdrs = ["grpc_master_service_impl.h"],
++    copts = ["-I%%LOCALBASE%%/include"],
+     deps = [
+         "//tensorflow:grpc++",
+         "//tensorflow/core:master_proto_cc",

@@ -1,7 +1,0 @@
-fbopenssl is a library containing extensions to OpenSSL,
-including support for:
-
-- GSS-API (RFC 2743)
-- SPNEGO (RFC 2478)
-
-WWW: http://modgssapache.sourceforge.net/

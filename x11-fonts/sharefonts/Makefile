@@ -13,7 +13,11 @@ MASTER_SITE_SUBDIR=	gimp/fonts
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Collection of shareware ATM fonts from the CICA archives
 
-RESTRICTED=	Shareware: cannot be distributed without prior authorization
+# Converted from RESTRICTED
+LICENSE=	sharefonts
+LICENSE_NAME=	sharefonts
+LICENSE_TEXT=	Shareware: cannot be distributed without prior authorization
+LICENSE_PERMS=	auto-accept
 
 NO_BUILD=	yes
 

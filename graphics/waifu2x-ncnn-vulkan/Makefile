@@ -1,5 +1,5 @@
 PORTNAME=	waifu2x-ncnn-vulkan
-DISTVERSION=	20210210
+DISTVERSION=	20210521
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ USES=		cmake compiler:${OPENMP}c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	nihui
 GH_TUPLE=	KhronosGroup:glslang:11.1.0-44-g4afd6917:glslang/src/ncnn/glslang \
-		Tencent:ncnn:20210124-35-g9fd4d371:ncnn/src/ncnn
+		Tencent:ncnn:20210507-24-g61eb52e2:ncnn/src/ncnn
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 CMAKE_ON=	USE_SYSTEM_WEBP
 PLIST_FILES=	bin/${PORTNAME}

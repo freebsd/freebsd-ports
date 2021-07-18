@@ -1,5 +1,3 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 # Based on the devel/intellij port from OpenBSD by
 # Vadim Zhukov <zhuk@openbsd.org>
 

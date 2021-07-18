@@ -1,8 +1,7 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	ristretto
-PORTVERSION=	0.10.0
-PORTREVISION=	2
+PORTVERSION=	0.11.0
 CATEGORIES=	graphics xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -13,7 +12,8 @@ COMMENT=	Image viewer with Xfce integration
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libexif.so:graphics/libexif
+LIB_DEPENDS=	libexif.so:graphics/libexif \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
 		pkgconfig tar:bzip2 xfce xorg

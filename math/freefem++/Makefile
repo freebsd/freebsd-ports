@@ -3,7 +3,7 @@
 PORTNAME=	freefem++
 PORTVERSION=	4.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	math science
 
 MAINTAINER=	kh@mogami.com
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	bash:shells/bash		\
 		pipe:misc/pipe			\
 		tetgen:math/tetgen
 LIB_DEPENDS=	libhdf5.so:science/hdf5		\
-		libamd.so:math/suitesparse	\
+		libumfpack.so:math/suitesparse-umfpack	\
 		libarpack.so:math/arpack-ng	\
 		libfftw3.so:math/fftw3		\
 		libgsl.so:math/gsl		\

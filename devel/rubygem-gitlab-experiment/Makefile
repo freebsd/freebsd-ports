@@ -1,7 +1,8 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	gitlab-experiment
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,8 @@ COMMENT=	Experiment library for Gitlab
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activesupport60>=3.0:devel/rubygem-activesupport60 \
+RUN_DEPENDS=	rubygem-activesupport61>=3.0:devel/rubygem-activesupport61 \
+		rubygem-request_store>=1.0:devel/rubygem-request_store \
 		rubygem-scientist>=1.6.0<2:devel/rubygem-scientist
 
 USES=		gem

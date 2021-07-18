@@ -23,10 +23,7 @@ CONFIGURE_ARGS+=	HOSTCC=${CC}
 # Verbose build makes it easier to spot problems
 MAKE_ARGS=	ICONV_CFLAGS="-I${ICONV_INCLUDE_PATH}" \
 		ICONV_LIBS="-L${ICONV_PREFIX}/lib ${ICONV_LIB}" \
-		${MAKE_ARGS_${ARCH:U}} \
 		V=2
-# undefined reference to `__atomic_fetch_add_8'
-MAKE_ARGS_powerpc=	COMPAT_LIBS="-latomic"
 
 # Disable all configure options first.  These will be overwritten by
 # enabled port options later.  The args to cmus' configure script

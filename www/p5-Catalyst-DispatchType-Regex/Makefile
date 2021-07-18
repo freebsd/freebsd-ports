@@ -20,8 +20,9 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.90060:www/p5-Catalyst-Runtime \
 TEST_DEPENDS=	p5-MRO-Compat>=0:devel/p5-MRO-Compat \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 
-NO_ARCH=	yes
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

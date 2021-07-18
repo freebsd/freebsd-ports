@@ -1,0 +1,11 @@
+--- libraries/libffi/configure.host.orig	2021-07-16 10:42:44.379020000 +0200
++++ libraries/libffi/configure.host	2021-07-16 10:43:21.153777000 +0200
+@@ -203,7 +203,7 @@
+ 	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
+ 	HAVE_LONG_DOUBLE_VARIANT=1
+ 	;;
+-  powerpc64-*-freebsd*)
++  powerpc64*-*-freebsd*)
+ 	TARGET=POWERPC; TARGETDIR=powerpc
+ 	;;
+   powerpc*-*-rtems*)

@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES?=	misc devel
 PKGNAMESUFFIX=	3
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source binary diff, VCDIFF/RFC 3284 delta compression
 
 LICENSE=	GPLv2+

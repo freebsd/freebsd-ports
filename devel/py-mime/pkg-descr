@@ -1,0 +1,5 @@
+MIME Types for Python, clone of halostatue/mime-types.
+This library allows for the identification of a file's likely MIME content type.
+MIME types are used in MIME-compliant communications
+
+WWW: https://github.com/liluo/mime

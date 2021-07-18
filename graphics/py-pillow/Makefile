@@ -1,7 +1,7 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	pillow
-PORTVERSION=	7.0.0
+PORTVERSION=	8.2.0
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,8 +13,7 @@ LICENSE_NAME=	Standard PIL License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 # Python 3.5+
 USES=		cpe python:3.5+
@@ -24,12 +23,14 @@ USE_PYTHON=	autoplist concurrent distutils
 GH_ACCOUNT=	python-${PORTNAME}
 GH_PROJECT=	${PORTNAME:C/p/P/}
 
-OPTIONS_DEFINE=		FREETYPE JPEG JPEG2000 LCMS OLE PNG TIFF TKINTER WEBP
-OPTIONS_DEFAULT=	FREETYPE JPEG JPEG2000 LCMS OLE PNG TIFF TKINTER WEBP
+OPTIONS_DEFINE=		FREETYPE JPEG JPEG2000 LCMS OLE PNG RAQM TIFF TKINTER WEBP XCB
+OPTIONS_DEFAULT=	FREETYPE JPEG JPEG2000 LCMS OLE PNG RAQM TIFF TKINTER WEBP XCB
 
 LCMS_DESC=		Little Color Management System
 OLE_DESC=		Microsoft OLE2 file format support
+RAQM_DESC=		Complex text layout support
 TKINTER_DESC=		Tkinter (Tcl/Tk) BitmapImage & PhotoImage support
+XCB_DESC=		X11 screengrab support
 
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_VARS=		PYDISTUTILS_BUILDARGS+=--enable-freetype
@@ -52,6 +53,10 @@ OLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}olefile>0:devel/py-olefile@${PY_FLAVOR}
 PNG_VARS=		PYDISTUTILS_BUILDARGS+=--enable-zlib
 PNG_VARS_OFF=		PYDISTUTILS_BUILDARGS+=--disable-zlib
 
+RAQM_LIB_DEPENDS=	libraqm.so:print/libraqm
+RAQM_VARS=		PYDISTUTILS_BUILDARGS+=--enable-raqm
+RAQM_VARS_OFF=		PYDISTUTILS_BUILDARGS+=--disable-raqm
+
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_VARS=		PYDISTUTILS_BUILDARGS+=--enable-tiff
 TIFF_VARS_OFF=		PYDISTUTILS_BUILDARGS+=--disable-tiff
@@ -65,6 +70,10 @@ WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_VARS=		PYDISTUTILS_BUILDARGS+="--enable-webp --enable-webpmux"
 WEBP_VARS_OFF=		PYDISTUTILS_BUILDARGS+="--disable-webp --disable-webpmux"
 
+XCB_USES=		xorg
+XCB_VARS=		PYDISTUTILS_BUILDARGS+="--enable-xcb" USE_XORG=xcb
+XCB_VARS_OFF=		PYDISTUTILS_BUILDARGS+="--disable-xcb"
+
 .include <bsd.port.pre.mk>
 
 PYDISTUTILS_BUILD_TARGET=	build build_ext
@@ -73,7 +82,7 @@ PYDISTUTILS_BUILDARGS+=		saveopts
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PIL/*.so
 
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+do-test: install
+	@cd ${WRKSRC} && ${PYTHON_CMD} selftest.py
 
 .include <bsd.port.post.mk>

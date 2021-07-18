@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	formatR
-DISTVERSION=	1.8
+DISTVERSION=	1.11
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

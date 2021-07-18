@@ -1,0 +1,4 @@
+This port (previously UFconfig) installs a common library used by many modules
+of SuiteSparse.
+
+WWW: http://faculty.cse.tamu.edu/davis/suitesparse.html

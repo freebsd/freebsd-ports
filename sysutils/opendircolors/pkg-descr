@@ -1,0 +1,4 @@
+A BSD-licensed replacement for GNU dircolors(1),
+with support for FreeBSD's ls(1) using LSCOLORS.
+
+WWW: https://github.com/CRKatri/opendircolors

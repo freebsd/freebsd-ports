@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.colm.net/files/${PORTNAME}/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Compile regular languages into executable C/C++ code
 
 LICENSE=	GPLv2 GPLv3

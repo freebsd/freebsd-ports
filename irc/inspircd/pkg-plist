@@ -1,6 +1,8 @@
 bin/inspircd
 bin/inspircd-genssl
 bin/inspircd-testssl
+@sample %%ETCDIR%%/examples/codepages/iso-8859-1.conf.example %%ETCDIR%%/iso-8859-1.conf
+@sample %%ETCDIR%%/examples/codepages/iso-8859-2.conf.example %%ETCDIR%%/iso-8859-2.conf
 @sample %%ETCDIR%%/examples/filter.conf.example %%ETCDIR%%/filter.conf
 @sample %%ETCDIR%%/examples/helpop.conf.example %%ETCDIR%%/helpop.conf
 @sample %%ETCDIR%%/examples/inspircd.conf.example %%ETCDIR%%/inspircd.conf
@@ -11,7 +13,6 @@ bin/inspircd-testssl
 @sample %%ETCDIR%%/examples/opers.conf.example %%ETCDIR%%/opers.conf
 @sample %%ETCDIR%%/examples/quotes.txt.example %%ETCDIR%%/quotes.txt
 %%ETCDIR%%/examples/codepages/ascii.conf.example
-%%ETCDIR%%/examples/codepages/latin1.conf.example
 %%ETCDIR%%/examples/codepages/rfc1459.conf.example
 %%ETCDIR%%/examples/codepages/strict-rfc1459.conf.example
 %%ETCDIR%%/examples/providers/dronebl.conf.example

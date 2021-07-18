@@ -1,0 +1,16 @@
+bin/psindustrializer
+include/psphymod/psmetalobj.h
+include/psphymod/psphymod.h
+lib/libpsphymod.a
+lib/libpsphymod.so
+lib/libpsphymod.so.0
+lib/libpsphymod.so.0.0.0
+share/appdata/psindustrializer.appdata.xml
+share/applications/psindustrializer.desktop
+share/locale/en@boldquot/LC_MESSAGES/psindustrializer.mo
+share/locale/en@quot/LC_MESSAGES/psindustrializer.mo
+share/locale/ru/LC_MESSAGES/psindustrializer.mo
+share/pixmaps/psindustrializer.png
+%%DATADIR%%/power_station_logo.xpm
+%%DATADIR%%/save-wav-22.png
+%%DATADIR%%/save-wav-32.png

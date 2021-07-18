@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/settings/appearance_handler.h.orig	2021-03-12 23:57:19 UTC
+--- chrome/browser/ui/webui/settings/appearance_handler.h.orig	2021-04-14 18:40:56 UTC
 +++ chrome/browser/ui/webui/settings/appearance_handler.h
 @@ -39,7 +39,7 @@ class AppearanceHandler : public SettingsPageUIHandler
  

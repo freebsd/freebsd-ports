@@ -1,5 +1,5 @@
-ImageScience is a Ruby library that generates
-thumbnails.  Supports square and proportional
-thumbnails, as well as arbitrary resizes.
+ImageScience is a clean and happy Ruby library that generates thumbnails -- and
+kicks the living crap out of RMagick. Oh, and it doesn't leak memory like a
+sieve.
 
-WWW: http://docs.seattlerb.org/ImageScience.html
+WWW: https://github.com/seattlerb/image_science

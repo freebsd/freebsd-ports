@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 BUILD_DEPENDS=	openjfx14>0:java/openjfx14 \
-		gradle:devel/gradle
+		gradle:devel/gradle6
 RUN_DEPENDS=	openjfx14>0:java/openjfx14
 
 USES=		gettext-runtime

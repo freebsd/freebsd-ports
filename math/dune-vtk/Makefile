@@ -12,6 +12,7 @@ HPP_DEPENDS=	${LOCALBASE}/include/dune/foamgrid/foamgrid.hh:math/dune-foamgrid \
 		dune-spgrid>0:math/dune-spgrid
 BUILD_DEPENDS=	${HPP_DEPENDS} \
 		dune-functions>0:math/dune-functions \
+		suitesparse>0:math/suitesparse \
 		${LOCALBASE}/mpi/openmpi/lib/libmpi.so:net/openmpi
 LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libdunealugrid.so:math/dune-alugrid \
@@ -23,10 +24,10 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libgmp.so:math/gmp \
 		libmetis.so:math/metis \
 		libopenblas.so:math/openblas \
-		libsuitesparseconfig.so:math/suitesparse \
 		libsuperlu.so:math/superlu \
 		libtbb.so:devel/tbb
 RUN_DEPENDS=	${HPP_DEPENDS} \
+		suitesparse>0:math/suitesparse \
 		${LOCALBASE}/mpi/openmpi/lib/libmpi.so:net/openmpi
 
 USES=		cmake compiler:c++17-lang fortran pkgconfig

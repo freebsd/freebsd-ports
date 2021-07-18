@@ -2,7 +2,7 @@
 
 PORTNAME=	molden
 DISTVERSION=	5.8.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.umcn.nl/pub/molgraph/molden/
@@ -14,9 +14,8 @@ COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 LICENSE=	Molden
 LICENSE_NAME=	Molden
 LICENSE_FILE=	${WRKSRC}/CopyRight
+# free for academic, non profit usage; do not re-distribute source and executable.
 LICENSE_PERMS=	auto-accept
-
-RESTRICTED=	free for academic, non profit usage; do not re-distribute source and executable.
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
 

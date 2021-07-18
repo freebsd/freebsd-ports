@@ -1,12 +1,11 @@
 --- parser/Makefile.orig
 +++ parser/Makefile
-@@ -7,10 +7,10 @@
+@@ -7,10 +7,9 @@
  MAN=
  SRCS=		bnep.c cmtp.c hidp.c l2cap.c rfcomm.c hci.c parser.c sdp.c
  WARNS?=		2
 -DEBUG_FLAGS=	-g
 -CFLAGS=		-O2
-+NO_WERROR=	yes
 +CFLAGS?=	-O2
  
 -NOPROFILE=	1

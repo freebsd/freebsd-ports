@@ -1,5 +1,5 @@
 PORTNAME=	toybox
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	vidar@karlsen.tech
@@ -15,6 +15,9 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		gmake shebangfix
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	landley
+
 SHEBANG_FILES=	scripts/bloatcheck scripts/mcm-buildall.sh \
 		scripts/change.sh scripts/findglobals.sh \
 		scripts/genconfig.sh scripts/install.sh \
@@ -25,9 +28,6 @@ SHEBANG_FILES=	scripts/bloatcheck scripts/mcm-buildall.sh \
 		tests/*
 
 PLIST_FILES=	bin/toybox
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	landley
 
 post-patch:
 	${REINPLACE_CMD} -e 's|<sys/inotify.h>|"${LOCALBASE}/include/sys/inotify.h"|' \

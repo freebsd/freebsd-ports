@@ -2,15 +2,14 @@
 
 PORTNAME=	subtitleripper
 DISTVERSION=	0.3-4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.3-4
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Convert DVD subtitles into text format (subrip srt) or VobSub format
 
-DEPRECATED=	Depends on expired multimedia/transcode
-EXPIRATION_DATE=2021-05-01
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm \
 		libpng.so:graphics/png
@@ -23,6 +22,8 @@ CFLAGS+=	-D_WITH_GETLINE=1 -DHAVE_GETLINE=1 \
 		-I${LOCALBASE}/include/netpbm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 DOC_FILES=	\
 		ChangeLog \
@@ -43,8 +44,6 @@ PROGRAM_FILES=	\
 		vobsub2pgm
 SCRIPT_FILES=	\
 		pgm2txt
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -E \

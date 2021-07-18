@@ -1,8 +1,7 @@
-# Created by: Tobias Kortkamp <t@tobik.me>
-
 PORTNAME=	openmw
 DISTVERSIONPREFIX=	openmw-
 DISTVERSION=	0.46.0
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	fluffy@FreeBSD.org

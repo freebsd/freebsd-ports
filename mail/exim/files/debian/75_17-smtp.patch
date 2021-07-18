@@ -1,0 +1,29 @@
+From 8b7d4ba8903ace7e3e3db70343798a5a0b7cea23 Mon Sep 17 00:00:00 2001
+From: "Heiko Schlittermann (HS12-RIPE)" <hs@schlittermann.de>
+Date: Thu, 1 Apr 2021 22:02:27 +0200
+Subject: [PATCH 17/23] smtp
+
+---
+ src/transports/smtp.c | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/src/transports/smtp.c b/src/transports/smtp.c
+index 6540e4d2b..8fecf7eef 100644
+--- a/src/transports/smtp.c
++++ b/src/transports/smtp.c
+@@ -4715,11 +4715,8 @@ if (!hostlist || (ob->hosts_override && ob->hosts))
+     else
+       if (ob->hosts_randomize) s = expanded_hosts = string_copy(s);
+ 
+-    if (is_tainted(s))
++    if (is_tainted2(s, LOG_MAIN|LOG_PANIC, "Tainted host list '%s' from '%s' in transport %s", s, ob->hosts, tblock->name))
+       {
+-      log_write(0, LOG_MAIN|LOG_PANIC,
+-	"attempt to use tainted host list '%s' from '%s' in transport %s",
+-	s, ob->hosts, tblock->name);
+       /* Avoid leaking info to an attacker */
+       addrlist->message = US"internal configuration error";
+       addrlist->transport_return = PANIC;
+-- 
+2.30.2
+

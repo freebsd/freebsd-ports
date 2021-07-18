@@ -12,9 +12,14 @@ DIST_SUBDIR=	zh-moettf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three Chinese BIG5 TrueType fonts: Kai LiShu Sung SungExt
 
+# Converted from NO_CDROM
+LICENSE=	MOETTF
+LICENSE_NAME=	moettf
+LICENSE_TEXT=	Contact Ministry of Education of Taiwan for commercial use
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 EXTRACT_DEPENDS=	unrar:archivers/unrar
 
-NO_CDROM=	Contact Ministry of Education of Taiwan for commercial use
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

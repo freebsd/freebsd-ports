@@ -1,0 +1,5 @@
+A Python 3.6+ server implementation of the JSON RPC 2.0
+protocol. This library has been pulled out of the Python
+LSP Server project.
+
+WWW: https://github.com/python-lsp/python-lsp-jsonrpc

@@ -1,21 +1,7 @@
 --- UTC
-r100678 | fanf | 2002-07-25 10:59:40 -0500 (Thu, 25 Jul 2002) | 5 lines
-
-Document the FreeBSD default for CheckHostIP, which was changed in
-rev 1.2 of readconf.c.
 
 --- ssh_config.5.orig	2020-11-16 11:53:55.871161000 -0800
 +++ ssh_config.5	2020-11-16 12:43:41.763006000 -0800
-@@ -420,8 +420,7 @@ or
- .Cm no .
- .It Cm CheckHostIP
- If set to
--.Cm yes
--(the default),
-+.Cm yes ,
- .Xr ssh 1
- will additionally check the host IP address in the
- .Pa known_hosts
 @@ -434,6 +433,8 @@ in the process, regardless of the setting of
  If the option is set to
  .Cm no ,

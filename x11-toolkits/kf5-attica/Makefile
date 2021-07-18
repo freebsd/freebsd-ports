@@ -11,7 +11,8 @@ LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
 USES=		cmake compiler:c++11-lib kde:5 pathfix qt:5 tar:xz
-USE_KDE=	ecm
-USE_QT=		buildtools_build core gui network qmake_build testlib_build widgets
+USE_KDE=	ecm_build
+USE_QT=		core network \
+		buildtools_build qmake_build testlib_build 
 
 .include <bsd.port.mk>

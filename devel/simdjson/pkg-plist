@@ -1,6 +1,8 @@
 include/simdjson.h
-lib/cmake/simdjson/simdjson-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/simdjson/simdjson-config-version.cmake
 lib/cmake/simdjson/simdjson-config.cmake
+lib/cmake/simdjson/simdjson-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/simdjson/simdjson-targets.cmake
 lib/libsimdjson.so
-lib/libsimdjson.so.4
-lib/libsimdjson.so.4.0.0
+lib/libsimdjson.so.8
+lib/libsimdjson.so.8.0.0

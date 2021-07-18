@@ -1,8 +1,7 @@
 # Created by: Ashish SHUKLA <ashish@FreeBSD.org>
 
 PORTNAME=	mcomix
-PORTVERSION=	1.2.1g20201223
-PORTREVISION=	1
+PORTVERSION=	1.2.1g20210526
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,13 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=5.2.0:graphics/py-pillow@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gnome python:3.5+ shebangfix
+USES=		gnome python:3.8+ shebangfix
 USE_GNOME=	gtk30 pygobject3
 USE_PYTHON=	flavors
 USE_GITHUB=	yes
 GH_ACCOUNT=	multiSnow
 GH_PROJECT=	mcomix3
-GH_TAGNAME=	9ba2f5b
+GH_TAGNAME=	9eb4fc7
 NO_ARCH=	yes
 NO_BUILD=	yes
 

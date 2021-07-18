@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.boxbackup.org/snapshots/201108/
 PKGNAMESUFFIX=	${CLIENT_OR_SERVER}-devel
 DISTNAME=	${PORTNAME}-${SVNVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source, completely automatic on-line backup system
 
 LICENSE=	BSD3CLAUSE GPLv2
@@ -41,6 +41,7 @@ MAKE_JOBS_UNSAFE=	yes
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	field has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
 BROKEN_FreeBSD_13=	field has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
+BROKEN_FreeBSD_14=	field has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
 .endif
 
 CLIENTDIR=	CLIENT

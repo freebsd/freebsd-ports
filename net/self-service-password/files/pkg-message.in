@@ -5,14 +5,14 @@
 
     %%WWWDIR%%
 
-Please edit config.inc.php to suit your needs.
+Please edit config.inc.php or create config.inc.local.php to suit your needs.
 
 To make Self Service Password available through your web site, I suggest that
 you add something like the following to httpd.conf:
 
-    Alias /ssp/ "%%WWWDIR%%/"
+    Alias /ssp/ "%%WWWDIR%%/htdocs/"
 
-    <Directory "%%WWWDIR%%">
+    <Directory "%%WWWDIR%%/htdocs">
         Options none
         AllowOverride none
 
@@ -26,7 +26,7 @@ To make Self Service Password available through your web site, I suggest that
 you add something like the following to nginx.conf:
 
 location /ssp/ {
-    alias %%WWWDIR%%/;
+    alias %%WWWDIR%%/htdocs/;
     index index.php;
 
     location ~ \.php$ {

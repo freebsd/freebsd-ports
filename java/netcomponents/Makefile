@@ -10,7 +10,11 @@ DISTNAME=	NetComponents-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java library with common network protocol implementations
 
-RESTRICTED=	May not redistribute except as part of a new software product
+# Converted from RESTRICTED
+LICENSE=	NetComponents
+LICENSE_NAME=	NetComponents
+LICENSE_TEXT=	May not redistribute except as part of a new software product
+LICENSE_PERMS=	auto-accept
 
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 USES=		zip

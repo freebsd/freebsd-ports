@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	xenv
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.gnu.org.ua/release/xenv/
 

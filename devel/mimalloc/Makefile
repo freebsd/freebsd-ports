@@ -2,7 +2,7 @@
 
 PORTNAME=	mimalloc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.2
 CATEGORIES=	devel
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -14,13 +14,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS_i386=	libatomic_ops>0:devel/libatomic_ops
 
 USES=		cmake compiler:gcc-c++11-lib
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
+USE_LDCONFIG=	yes
 
-LDFLAGS_i386+=	-latomic
+CMAKE_ON=	MI_INSTALL_TOPLEVEL
+
+LDFLAGS_i386=	-latomic
+LDFLAGS_powerpc=-latomic
 
 # ci pipeline creates transient tags
 PORTSCOUT=	ignore:1
+
+post-install: # workaround for https://github.com/microsoft/mimalloc/issues/398
+	@${RM} ${STAGEDIR}${PREFIX}/lib/mimalloc.o
 
 .include <bsd.port.mk>

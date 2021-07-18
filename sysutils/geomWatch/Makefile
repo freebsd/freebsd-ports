@@ -20,6 +20,7 @@ BROKEN_aarch64=		fails to compile: ISA not supported
 BROKEN_armv6=		fails to compile: call to 'atomic_add_64' is ambiguous
 BROKEN_armv7=		fails to compile: call to 'atomic_add_64' is ambiguous
 IGNORE_DragonFly=	requires geom(4) support
+BROKEN=			does not fetch
 
 USES=		tar:tbz
 USE_CXXSTD=	gnu++98

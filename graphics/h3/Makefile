@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	h3
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 

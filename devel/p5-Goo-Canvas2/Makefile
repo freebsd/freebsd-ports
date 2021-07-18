@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	2
 DISTNAME=	GooCanvas2-${PORTVERSION}
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl binding for GooCanvas2
 
 LICENSE=	GPLv2

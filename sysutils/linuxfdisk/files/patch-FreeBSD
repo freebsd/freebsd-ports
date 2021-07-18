@@ -24,7 +24,7 @@ diff -rNu cfdisk.c cfdisk.c
  
 -#define DEFAULT_DEVICE "/dev/hda"
 -#define ALTERNATE_DEVICE "/dev/sda"
-+#define DEFAULT_DEVICE "/dev/ad0"
++#define DEFAULT_DEVICE "/dev/ada0"
 +#define ALTERNATE_DEVICE "/dev/da0"
  
  /* With K=1024 we have `binary' megabytes, gigabytes, etc.
@@ -215,27 +215,36 @@ diff -rNu fdisk.c fdisk.c
  static void delete_partition(int i);
  
  #define hex_val(c)	({ \
-@@ -198,8 +193,8 @@
- "       fdisk -l [-b SSZ] [-u] DISK  List partition table(s)\n"
- "       fdisk -s PARTITION           Give partition size(s) in blocks\n"
- "       fdisk -v                     Give fdisk version\n"
+@@ -194,23 +189,21 @@
+ 
+ 	switch (why) {
+ 		case usage: message = _(
+-"Usage: fdisk [-b SSZ] [-u] DISK     Change partition table\n"
+-"       fdisk -l [-b SSZ] [-u] DISK  List partition table(s)\n"
+-"       fdisk -s PARTITION           Give partition size(s) in blocks\n"
+-"       fdisk -v                     Give fdisk version\n"
 -"Here DISK is something like /dev/hdb or /dev/sda\n"
 -"and PARTITION is something like /dev/hda7\n"
-+"Here DISK is something like /dev/ad1 or /dev/da0\n"
-+"and PARTITION is something like /dev/ad0s7\n"
++"Usage: fdisk-linux [-b SSZ] [-u] DISK     Change partition table\n"
++"       fdisk-linux -l [-b SSZ] [-u] DISK  List partition table(s)\n"
++"       fdisk-linux -s PARTITION           Give partition size(s) in blocks\n"
++"       fdisk-linux -v                     Give fdisk version\n"
++"Here DISK is something like /dev/ada1 or /dev/da0\n"
++"and PARTITION is something like /dev/ada0s7\n"
  "-u: give Start and End in sector (instead of cylinder) units\n"
  "-b 2048: (for certain MO disks) use 2048-byte sectors\n");
  			break;
-@@ -207,10 +202,8 @@
+ 		case usage2:
  		  /* msg in cases where fdisk used to probe */
  			message = _(
- "Usage: fdisk [-l] [-b SSZ] [-u] device\n"
+-"Usage: fdisk [-l] [-b SSZ] [-u] device\n"
 -"E.g.: fdisk /dev/hda  (for the first IDE disk)\n"
 -"  or: fdisk /dev/sdc  (for the third SCSI disk)\n"
 -"  or: fdisk /dev/eda  (for the first PS/2 ESDI drive)\n"
 -"  or: fdisk /dev/rd/c0d0  or: fdisk /dev/ida/c0d0  (for RAID devices)\n"
-+"E.g.: fdisk /dev/ad0  (for the first IDE disk)\n"
-+"  or: fdisk /dev/da0  (for the third SCSI disk)\n"
++"Usage: fdisk-linux [-l] [-b SSZ] [-u] device\n"
++"E.g.: fdisk-linux /dev/ada0  (for the first ATA disk)\n"
++"  or: fdisk-linux /dev/da2  (for the third SCSI disk)\n"
  "  ...\n");
  			break;
  		case unable_to_open:
@@ -390,7 +399,7 @@ diff -rNu fdisk.c fdisk.c
  		case 'V':
  		case 'v':
 -			printf("fdisk v" UTIL_LINUX_VERSION "\n");
-+			printf("fdisk v" "2.11z" "-freebsd-portbld" "\n");
++			printf("fdisk v" UTIL_LINUX_VERSION "-freebsd-portbld\n");
  			exit(0);
  		default:
  			fatal(usage);
@@ -403,6 +412,15 @@ diff -rNu fdisk.c fdisk.c
  				fatal(ioctl_error);
  			close(fd);
  			if (opts == 1)
+diff -rNu fdisk.h fdisk.h
+--- fdisk.h	2001-09-13 23:05:35 UTC
++++ fdisk.h
+@@ -101,4 +101,4 @@
+ /* prototypes for fdisksgilabel.c */
+ extern int valid_part_table_flag(unsigned char *b);
+ 
+-#define PROC_PARTITIONS "/proc/partitions"
++#define PROC_PARTITIONS "/compat/linux/proc/partitions"
 diff -rNu fdiskaixlabel.c fdiskaixlabel.c
 --- fdiskaixlabel.c	Tue Apr 18 15:21:28 2000
 +++ fdiskaixlabel.c	Fri Jun 20 19:25:55 2003
@@ -646,7 +664,7 @@ diff -rNu sfdisk.8 sfdisk.8
  .I partition
  is usually something like
 -.I /dev/hda1
-+.I /dev/ad0s1
++.I /dev/ada0s1
  or
 -.IR /dev/sdb12 ,
 +.IR /dev/da2s12 ,
@@ -658,7 +676,7 @@ diff -rNu sfdisk.8 sfdisk.8
  .nf
  .if t .ft CW
 -% sfdisk \-s /dev/hda9
-+% sfdisk-linux \-s /dev/ad0s9
++% sfdisk-linux \-s /dev/ada0s9
  81599
  %
  .if t .ft R
@@ -673,9 +691,9 @@ diff -rNu sfdisk.8 sfdisk.8
 -/dev/sda: 8877895
 -/dev/sdb: 1758927
 +% sfdisk-linux \-s
-+/dev/ad0: 208896
-+/dev/ad1: 1025136
-+/dev/ad2: 1031063
++/dev/ada0: 208896
++/dev/ada1: 1025136
++/dev/ada2: 1031063
 +/dev/da0: 8877895
 +/dev/da1: 1758927
  total: 12901917 blocks
@@ -686,10 +704,10 @@ diff -rNu sfdisk.8 sfdisk.8
  .nf
  .if t .ft CW
 -% sfdisk \-l /dev/hdc
-+% sfdisk-linux \-l /dev/ad2
++% sfdisk-linux \-l /dev/ada2
  
 -Disk /dev/hdc: 16 heads, 63 sectors, 2045 cylinders
-+Disk /dev/ad2: 16 heads, 63 sectors, 2045 cylinders
++Disk /dev/ada2: 16 heads, 63 sectors, 2045 cylinders
  Units = cylinders of 516096 bytes, blocks of 1024 bytes, counting from 0
  
     Device Boot Start     End   #cyls   #blocks   Id  System
@@ -697,10 +715,10 @@ diff -rNu sfdisk.8 sfdisk.8
 -/dev/hdc2        407     813     407    205128   83  Linux native
 -/dev/hdc3        814    2044    1231    620424   83  Linux native
 -/dev/hdc4          0       \-       0         0    0  Empty
-+/dev/ad2s1          0+    406     407\-   205096+  83  Linux native
-+/dev/ad2s2        407     813     407    205128   83  Linux native
-+/dev/ad2s3        814    2044    1231    620424   83  Linux native
-+/dev/ad2s4          0       \-       0         0    0  Empty
++/dev/ada2s1        0+    406     407\-   205096+  83  Linux native
++/dev/ada2s2      407     813     407    205128   83  Linux native
++/dev/ada2s3      814    2044    1231    620424   83  Linux native
++/dev/ada2s4        0       \-       0         0    0  Empty
  %
  .if t .ft R
  .fi
@@ -730,7 +748,7 @@ diff -rNu sfdisk.8 sfdisk.8
  .nf
  .if t .ft CW
 -% sfdisk /dev/hdd \-O hdd-partition-sectors.save
-+% sfdisk-linux /dev/ad3 \-O ad3-partition-sectors.save
++% sfdisk-linux /dev/ada3 \-O ada3-partition-sectors.save
  \&...
  %
  .if t .ft R
@@ -739,7 +757,7 @@ diff -rNu sfdisk.8 sfdisk.8
  .nf
  .if t .ft CW
 -% sfdisk /dev/hdd \-I hdd-partition-sectors.save
-+% sfdisk-linux /dev/ad3 \-I ad3-partition-sectors.save
++% sfdisk-linux /dev/ada3 \-I ada3-partition-sectors.save
  %
  .if t .ft R
  .fi
@@ -749,8 +767,8 @@ diff -rNu sfdisk.8 sfdisk.8
  .if t .ft CW
 -    % sfdisk -d /dev/hda > hda.out
 -    % sfdisk /dev/hda < hda.out
-+    % sfdisk-linux -d /dev/ad0 > ad0.out
-+    % sfdisk-linux /dev/ad0 < ad0.out
++    % sfdisk-linux -d /dev/ada0 > ada0.out
++    % sfdisk-linux /dev/ada0 < ada0.out
  .if t .ft R
  .fi
  will correct the bad last extended partition that the OS/2
@@ -759,16 +777,16 @@ diff -rNu sfdisk.8 sfdisk.8
  .nf
  .if t .ft CW
 -    % sfdisk /dev/hdb \-N5
-+    % sfdisk-linux /dev/ad1 \-N5
++    % sfdisk-linux /dev/ada1 \-N5
      ,,,*
      %
  .if t .ft R
  .fi
 -will make the fifth partition on /dev/hdb bootable (`active')
-+will make the fifth partition on /dev/ad1 bootable (`active')
++will make the fifth partition on /dev/ada1 bootable (`active')
  and change nothing else. (Probably this fifth partition
 -is called /dev/hdb5, but you are free to call it something else,
-+is called /dev/ad1s5, but you are free to call it something else,
++is called /dev/ada1s5, but you are free to call it something else,
  like `/my_equipment/disks/2/5' or so).
  .TP
  .BI \-A "number"
@@ -777,15 +795,15 @@ diff -rNu sfdisk.8 sfdisk.8
  .nf
  .if t .ft CW
 -    % sfdisk --print-id /dev/hdb 5
-+    % sfdisk-linux --print-id /dev/ad1 5
++    % sfdisk-linux --print-id /dev/ada1 5
      6
 -    % sfdisk --change-id /dev/hdb 5 83
-+    % sfdisk-linux --change-id /dev/ad1 5 83
++    % sfdisk-linux --change-id /dev/ada1 5 83
      OK
  .if t .ft R
  .fi
 -first reports that /dev/hdb5 has Id 6, and then changes that into 83.
-+first reports that /dev/ad1s5 has Id 6, and then changes that into 83.
++first reports that /dev/ada1s5 has Id 6, and then changes that into 83.
  .TP
  .BR \-uS " or " \-uB " or " \-uC " or " \-uM
  Accept or report in units of sectors (blocks, cylinders, megabytes,
@@ -794,7 +812,7 @@ diff -rNu sfdisk.8 sfdisk.8
  .nf
  .if t .ft CW
 -sfdisk /dev/hdc << EOF
-+sfdisk-linux /dev/ad2 << EOF
++sfdisk-linux /dev/ada2 << EOF
  0,407
  ,407
  ;
@@ -803,7 +821,7 @@ diff -rNu sfdisk.8 sfdisk.8
  .fi
  .RE
 -will partition /dev/hdc just as indicated above.
-+will partition /dev/ad2 just as indicated above.
++will partition /dev/ada2 just as indicated above.
  
  With the \-x option, the number of input lines must be a multiple of 4:
  you have to list the two empty partitions that you never want
@@ -812,10 +830,10 @@ diff -rNu sfdisk.8 sfdisk.8
  to zero the first 512 bytes of that partition before using DOS FORMAT to
  format the partition.  For example, if you were using sfdisk to make a DOS
 -partition table entry for /dev/hda1, then (after exiting sfdisk and
-+partition table entry for /dev/ad0s1, then (after exiting sfdisk and
++partition table entry for /dev/ada0s1, then (after exiting sfdisk and
  rebooting Linux so that the partition table information is valid) you
 -would use the command "dd if=/dev/zero of=/dev/hda1 bs=512 count=1" to zero
-+would use the command "dd if=/dev/zero of=/dev/ad0s1 bs=512 count=1" to zero
++would use the command "dd if=/dev/zero of=/dev/ada0s1 bs=512 count=1" to zero
  the first 512 bytes of the partition.
  .B BE EXTREMELY CAREFUL
  if you use the
@@ -861,8 +879,8 @@ diff -rNu cfdisk.8 cfdisk.8
 -/dev/sdb
 -/dev/sdc
 -/dev/sdd
-+/dev/ad0 [default]
-+/dev/ad1
++/dev/ada0 [default]
++/dev/ada1
 +/dev/da0
 +/dev/da1
  .RE
@@ -873,10 +891,10 @@ diff -rNu cfdisk.8 cfdisk.8
  to zero the first 512 bytes of that partition before using DOS FORMAT to
  format the partition.  For example, if you were using cfdisk to make a DOS
 -partition table entry for /dev/hda1, then (after exiting fdisk or cfdisk
-+partition table entry for /dev/ad0s1, then (after exiting fdisk or cfdisk
++partition table entry for /dev/ada0s1, then (after exiting fdisk or cfdisk
  and rebooting Linux so that the partition table information is valid) you
 -would use the command "dd if=/dev/zero of=/dev/hda1 bs=512 count=1" to zero
-+would use the command "dd if=/dev/zero of=/dev/ad0s1 bs=512 count=1" to zero
++would use the command "dd if=/dev/zero of=/dev/ada0s1 bs=512 count=1" to zero
  the first 512 bytes of the partition. Note:
  
  .B BE EXTREMELY CAREFUL
@@ -924,15 +942,15 @@ diff -rNu fdisk.8 fdisk.8
 -/dev/hdb
 -/dev/sda
 -/dev/sdb
-+/dev/ad0
-+/dev/ad1
++/dev/ada0
++/dev/ada1
 +/dev/da0
 +/dev/da1
  .RE
  .fi
 -(/dev/hd[a-h] for IDE disks, /dev/sd[a-p] for SCSI disks,
 -/dev/ed[a-d] for ESDI disks, /dev/xd[ab] for XT disks).
-+(/dev/adN for IDE disks, /dev/daN for SCSI disks, N=0,1,2...)
++(/dev/adaN for ATA disks, /dev/daN for SCSI disks, N=0,1,2...)
  A device name refers to the entire disk.
  
  The
@@ -941,12 +959,13 @@ diff -rNu fdisk.8 fdisk.8
  .I device
 -name followed by a partition number.  For example,
 -.B /dev/hda1
-+name followed by 's' and a partition number.  For example,
-+.B /dev/ad0s1
- is the first partition on the first IDE hard disk in the system.
+-is the first partition on the first IDE hard disk in the system.
 -IDE disks can have up to 63 partitions, SCSI disks up to 15.
 -See also
 -.IR /usr/src/linux/Documentation/devices.txt .
++name followed by 's' and a partition number.  For example,
++.B /dev/ada0s1
++is the first partition on the first ATA hard disk in the system.
  
  A BSD/SUN type disklabel can describe 8 partitions,
  the third of which should be a `whole disk' partition.
@@ -974,6 +993,15 @@ diff -rNu fdisk.8 fdisk.8
 diff -rNu sfdisk.c sfdisk.c
 --- sfdisk.c	Tue Jan 28 20:18:03 2003
 +++ sfdisk.c	Tue Jun 24 01:10:28 2003
+@@ -30,7 +30,7 @@
+  * 19990319 - Arnaldo Carvalho de Melo <acme@conectiva.com.br> - i18n
+  */
+ 
+-#define PROGNAME "sfdisk"
++#define PROGNAME "sfdisk-linux"
+ #define VERSION "3.07"
+ #define DATE "990908"
+ 
 @@ -42,11 +42,9 @@
  #include <errno.h>		/* ERANGE */
  #include <string.h>		/* index() */
@@ -1104,6 +1132,24 @@ diff -rNu sfdisk.c sfdisk.c
  	    
      return 1;
  }
+@@ -2229,7 +2212,7 @@
+ usage(void) {
+     version();
+     printf(_("Usage: %s [options] device ...\n"), PROGNAME);
+-    puts (_("device: something like /dev/hda or /dev/sda"));
++    puts (_("device: something like /dev/ada0 or /dev/da0"));
+     puts (_("useful options:"));
+     puts (_("    -s [or --show-size]: list size of a partition"));
+     puts (_("    -c [or --id]:        print or change partition Id"));
+@@ -2353,7 +2336,7 @@
+ 	return is_ide;
+ }
+ 
+-#define PROC_PARTITIONS	"/proc/partitions"
++#define PROC_PARTITIONS	"/compat/linux/proc/partitions"
+ static FILE *procf = NULL;
+ 
+ static void
 @@ -2413,9 +2396,11 @@
      char *activatearg = 0;
      char *unhidearg = 0;
@@ -1116,6 +1162,33 @@ diff -rNu sfdisk.c sfdisk.c
  
      if (argc < 1)
        fatal(_("no command?\n"));
+@@ -2543,9 +2528,9 @@
+ 
+     if (optind == argc) {
+ 	if (activate)
+-	  activate_usage(fdisk ? "sfdisk -A" : progn);
++	  activate_usage(fdisk ? PROGNAME " -A" : progn);
+ 	else if (unhide)
+-	  unhide_usage(fdisk ? "sfdisk -U" : progn);
++	  unhide_usage(fdisk ? PROGNAME " -U" : progn);
+ 	else
+ 	  usage();
+     }
+@@ -2573,11 +2558,11 @@
+     }
+     if (do_id) {
+         if ((do_id & PRINT_ID) != 0 && optind != argc-2)
+-	  fatal(_("usage: sfdisk --print-id device partition-number\n"));
++	  fatal(_("usage: " PROGNAME " --print-id device partition-number\n"));
+ 	else if ((do_id & CHANGE_ID) != 0 && optind != argc-3)
+-	  fatal(_("usage: sfdisk --change-id device partition-number Id\n"));
++	  fatal(_("usage: " PROGNAME " --change-id device partition-number Id\n"));
+ 	else if (optind != argc-3 && optind != argc-2)
+-	  fatal(_("usage: sfdisk --id device partition-number [Id]\n"));
++	  fatal(_("usage: " PROGNAME " --id device partition-number [Id]\n"));
+ 	do_change_id(argv[optind], argv[optind+1],
+ 		     (optind == argc-2) ? 0 : argv[optind+2]);
+ 	exit(exit_status);
 @@ -2668,10 +2653,10 @@
      if (fd < 0)
  	return;

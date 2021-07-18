@@ -1,6 +1,6 @@
 PORTNAME=	kamerka
 DISTVERSION=	0.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +22,8 @@ USE_QT=		concurrent core dbus declarative gui network printsupport script xml wi
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons crash \
 		guiaddons i18n iconthemes init itemviews jobwidgets kdeclarative kdelibs4support \
 		kio notifications package parts service solid sonnet textwidgets \
-		unitconversion xmlgui widgetsaddons windowsystem
+		unitconversion xmlgui widgetsaddons windowsystem \
+		doctools_build
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

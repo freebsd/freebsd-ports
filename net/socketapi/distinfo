@@ -1,5 +1,5 @@
-TIMESTAMP = 1568116187
-SHA256 (socketapi-2.2.16.tar.gz) = f29d324e1b7b2743d80d4c493c56d56eebdd1166ae55426dca2829cc9381e4a8
-SIZE (socketapi-2.2.16.tar.gz) = 572446
+TIMESTAMP = 1618745532
+SHA256 (socketapi-2.2.19.tar.gz) = 524ff5e0c27a33b3ca5a1453bad19037855d82a1dfaf43fa9df87bcabc43daba
+SIZE (socketapi-2.2.19.tar.gz) = 578542
 SHA256 (afeb56202fa44daddff64500f03785b490e11c12.patch) = a2c4bfd074fcf5bd3f0dfe2b8911901226383148f8d49635b4dfd6022083c510
 SIZE (afeb56202fa44daddff64500f03785b490e11c12.patch) = 667

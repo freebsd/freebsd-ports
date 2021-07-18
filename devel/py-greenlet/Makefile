@@ -1,7 +1,7 @@
 # Created by: Peter Schuller <peter.schuller@infidyne.com>
 
 PORTNAME=	greenlet
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

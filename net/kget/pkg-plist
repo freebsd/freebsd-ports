@@ -49,6 +49,9 @@ share/kxmlgui5/kget/kgetui.rc
 share/locale/ar/LC_MESSAGES/kget.mo
 share/locale/ar/LC_MESSAGES/kgetplugin.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_kget.mo
+share/locale/be/LC_MESSAGES/kget.mo
+share/locale/be/LC_MESSAGES/kgetplugin.mo
+share/locale/be/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/bg/LC_MESSAGES/kget.mo
 share/locale/bg/LC_MESSAGES/kgetplugin.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_kget.mo
@@ -214,6 +217,8 @@ share/locale/ru/LC_MESSAGES/kget.mo
 share/locale/ru/LC_MESSAGES/kgetplugin.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_kget.mo
+share/locale/se/LC_MESSAGES/kget.mo
+share/locale/se/LC_MESSAGES/kgetplugin.mo
 share/locale/sk/LC_MESSAGES/kget.mo
 share/locale/sk/LC_MESSAGES/kgetplugin.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_kget.mo
@@ -222,6 +227,8 @@ share/locale/sl/LC_MESSAGES/kget.mo
 share/locale/sl/LC_MESSAGES/kgetplugin.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_kget.mo
+share/locale/sq/LC_MESSAGES/kget.mo
+share/locale/sq/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/sr/LC_MESSAGES/kget.mo
 share/locale/sr/LC_MESSAGES/kgetplugin.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_kget.mo
@@ -230,6 +237,10 @@ share/locale/sv/LC_MESSAGES/kget.mo
 share/locale/sv/LC_MESSAGES/kgetplugin.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_kget.mo
+share/locale/ta/LC_MESSAGES/kget.mo
+share/locale/ta/LC_MESSAGES/kgetplugin.mo
+share/locale/tg/LC_MESSAGES/kget.mo
+share/locale/tg/LC_MESSAGES/kgetplugin.mo
 share/locale/tr/LC_MESSAGES/kget.mo
 share/locale/tr/LC_MESSAGES/kgetplugin.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_kget.mo
@@ -242,6 +253,10 @@ share/locale/uk/LC_MESSAGES/kget.mo
 share/locale/uk/LC_MESSAGES/kgetplugin.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_kget.mo
+share/locale/vi/LC_MESSAGES/kget.mo
+share/locale/vi/LC_MESSAGES/kgetplugin.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_kget.mo
+share/locale/vi/LC_MESSAGES/plasma_runner_kget.mo
 share/locale/wa/LC_MESSAGES/kget.mo
 share/locale/wa/LC_MESSAGES/kgetplugin.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_kget.mo
