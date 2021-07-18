@@ -9,7 +9,7 @@ You can increase the container server's memory allocation if needed like
 Use a UTF-8 locale to enable support for all possible tags. Otherwise,
 files with Unicode tags will not scan properly and will be unplayable.
 Chapter 23 of the FreeBSD Handbook has information on using locales.
-https://www.freebsd.org/doc/handbook/l10n.html
+https://docs.freebsd.org/en/books/handbook/l10n/
 
 For example, US English:
 %%CONTAINERFLAGS%%="-Dfile.encoding=UTF-8 -Duser.language=en -Duser.region=US"
