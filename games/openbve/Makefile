@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	openbve
-PORTVERSION=	1.8.0.2
+PORTVERSION=	1.8.1.0
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -9,8 +9,7 @@ COMMENT=	Realistic 3D train/railway simulator
 
 LICENSE=	PD
 
-BUILD_DEPENDS=	msbuild:devel/msbuild \
-		gdate:sysutils/coreutils
+BUILD_DEPENDS=	msbuild:devel/msbuild
 LIB_DEPENDS=	libgdiplus.so:x11-toolkits/libgdiplus
 
 USE_GITHUB=	yes
@@ -23,6 +22,7 @@ ALL_TARGET=	all-release
 
 NUGET_DEPENDS=	CS-Script.lib=3.30.3 \
 		DotNetZip=1.13.8 \
+		LibUsbDotNet=2.2.29 \
 		Mono.Cecil=0.11.3 \
 		NAudio.Vorbis=1.2.0 \
 		NAudio=1.10.0 \
@@ -57,8 +57,6 @@ BROKEN=		fails to build with Mono version ${MONO_DEFAULT}: The imported project 
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/Unix/s,bash,sh,' \
-		${WRKSRC}/source/OpenBVE/OpenBve.csproj
 	@${REINPLACE_CMD} -e '/TargetFrameworkVersion/s,4\.7\.2,4.6.1,' \
 		${WRKSRC}/source/TrainEditor2/TrainEditor2.csproj
 
