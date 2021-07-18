@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	async-http
-PORTVERSION=	0.56.3
+PORTVERSION=	0.56.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ COMMENT=	HTTP client and server library
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-async>=1.25<2:devel/rubygem-async \
+RUN_DEPENDS=	rubygem-async>=1.25:devel/rubygem-async \
 		rubygem-async-io>=1.28<2:devel/rubygem-async-io \
 		rubygem-async-pool>=0.2<1:www/rubygem-async-pool \
 		rubygem-protocol-http>=0.22.0<0.23:www/rubygem-protocol-http \
