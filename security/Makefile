@@ -31,6 +31,7 @@
     SUBDIR += apkid
     SUBDIR += arirang
     SUBDIR += arpCounterattack
+    SUBDIR += arti
     SUBDIR += asignify
     SUBDIR += assh
     SUBDIR += autossh
