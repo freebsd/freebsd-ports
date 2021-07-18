@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	async-pool
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ COMMENT=	Redis client library
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-async>=1.25<2:devel/rubygem-async
+RUN_DEPENDS=	rubygem-async>=1.25:devel/rubygem-async
 
 USES=		gem
 USE_RUBY=	yes
