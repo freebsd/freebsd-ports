@@ -1,6 +1,6 @@
 PORTNAME=	bitlbee-mastodon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.4
+DISTVERSION=	1.4.5
 CATEGORIES=	irc
 
 MAINTAINER=	tobias.rehbein@web.de
