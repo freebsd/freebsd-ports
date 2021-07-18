@@ -1,7 +1,7 @@
 # Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 
 PORTNAME=	Net-SIP
-PORTVERSION=	0.829
+PORTVERSION=	0.830
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
