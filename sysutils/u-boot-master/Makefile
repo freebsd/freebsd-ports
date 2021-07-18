@@ -248,4 +248,10 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${DESCR} ${STAGEDIR}/${INST}/README
 
+.include <bsd.port.options.mk>
+
+.if ${FAMILY} == qemu && ${OPSYS} == FreeBSD && ${OSVERSION} <= 1200000
+BROKEN=		Base openssl too old
+.endif
+
 .include <bsd.port.mk>
