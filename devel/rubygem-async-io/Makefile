@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	async-io
-PORTVERSION=	1.32.1
+PORTVERSION=	1.32.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ COMMENT=	Provides support for asynchronous TCP, UDP, Unix, and SSL sockets
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-async>=1.14<2:devel/rubygem-async
+RUN_DEPENDS=	rubygem-async>=0:devel/rubygem-async
 
 USES=		gem
 USE_RUBY=	yes
