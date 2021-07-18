@@ -712,8 +712,8 @@ lib/libopencv_videostab.so.%%SHLIB_VER%%
 %%VTK%%lib/libopencv_viz.so.4.5
 %%VTK%%lib/libopencv_viz.so.%%SHLIB_VER%%
 %%PROTOBUF%%lib/libopencv_wechat_qrcode.so
-%%PROTOBUF%%lib/libopencv_wechat_qrcode.so.%%SHLIB_VER%%
 %%PROTOBUF%%lib/libopencv_wechat_qrcode.so.4.5
+%%PROTOBUF%%lib/libopencv_wechat_qrcode.so.%%SHLIB_VER%%
 lib/libopencv_xfeatures2d.so
 lib/libopencv_xfeatures2d.so.4.5
 lib/libopencv_xfeatures2d.so.%%SHLIB_VER%%
