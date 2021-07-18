@@ -1,7 +1,6 @@
 PORTNAME=	rx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
-PORTREVISION=	15
+DISTVERSION=	0.5.0
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-editor
 
@@ -19,154 +18,90 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cloudhead
 USE_XORG=	x11 xcursor xext xi xinerama xrandr
 
-CARGO_CRATES=	adler32-1.0.3 \
-		arrayref-0.3.5 \
-		arrayvec-0.4.11 \
+CARGO_CRATES=	adler32-1.0.4 \
+		arrayref-0.3.6 \
 		arrayvec-0.5.1 \
-		ash-0.29.0 \
-		atom-0.3.5 \
-		atty-0.2.13 \
-		autocfg-0.1.5 \
-		backtrace-0.3.34 \
-		backtrace-sys-0.1.31 \
-		base64-0.10.1 \
-		bitflags-1.1.0 \
-		blake2b_simd-0.5.7 \
-		block-0.1.6 \
-		bumpalo-2.6.0 \
-		byteorder-1.3.2 \
+		autocfg-1.0.0 \
+		base64-0.11.0 \
+		bitflags-1.2.1 \
+		blake2b_simd-0.5.10 \
+		byteorder-1.3.4 \
 		c2-chacha-0.2.3 \
-		cc-1.0.40 \
-		cfg-if-0.1.9 \
-		chrono-0.4.10 \
-		cloudabi-0.0.3 \
-		cmake-0.1.41 \
-		cocoa-0.19.1 \
+		cc-1.0.50 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		chrono-0.4.19 \
+		cmake-0.1.42 \
 		color_quant-1.0.1 \
-		colorful-0.2.1 \
-		constant_time_eq-0.1.4 \
-		copyless-0.1.4 \
-		core-foundation-0.6.4 \
-		core-foundation-sys-0.6.2 \
-		core-graphics-0.17.3 \
+		constant_time_eq-0.1.5 \
 		crc32fast-1.2.0 \
-		crossbeam-utils-0.6.6 \
-		d3d12-0.3.0 \
-		deflate-0.7.20 \
+		crossbeam-utils-0.7.2 \
+		deflate-0.8.6 \
 		digest-0.8.1 \
 		directories-2.0.2 \
 		dirs-sys-0.3.4 \
-		failure-0.1.5 \
-		failure_derive-0.1.5 \
-		foreign-types-0.3.2 \
-		foreign-types-shared-0.1.1 \
-		fuchsia-cprng-0.1.1 \
-		fxhash-0.2.1 \
-		gcc-0.3.55 \
+		flate2-1.0.14 \
 		generic-array-0.12.3 \
 		getrandom-0.1.14 \
-		gfx-auxil-0.1.0 \
-		gfx-backend-dx11-0.4.1 \
-		gfx-backend-dx12-0.4.1 \
-		gfx-backend-empty-0.4.0 \
-		gfx-backend-metal-0.4.0 \
-		gfx-backend-vulkan-0.4.0 \
-		gfx-hal-0.4.0 \
 		gif-0.10.3 \
 		gl-0.14.0 \
 		gl_generator-0.14.0 \
-		glfw-0.34.0 \
-		glfw-sys-3.3.0 \
-		hibitset-0.6.2 \
-		inflate-0.4.5 \
-		js-sys-0.3.33 \
+		glfw-0.41.0 \
+		glfw-sys-3.3.2 \
+		itoa-0.4.6 \
 		khronos_api-3.1.0 \
-		lazy_static-1.3.0 \
-		libc-0.2.65 \
-		libloading-0.5.2 \
-		lock_api-0.3.1 \
-		log-0.4.8 \
-		luminance-0.38.0 \
-		luminance-derive-0.5.0 \
+		lazy_static-1.4.0 \
+		libc-0.2.92 \
+		log-0.4.14 \
+		luminance-0.43.2 \
+		luminance-derive-0.6.3 \
+		luminance-gl-0.16.1 \
 		lzw-0.10.0 \
 		malloc_buf-0.0.6 \
-		meowhash-0.1.2 \
-		metal-0.17.0 \
-		nodrop-0.1.13 \
-		nonempty-0.1.4 \
-		num-integer-0.1.41 \
-		num-traits-0.2.8 \
-		objc-0.2.6 \
-		objc_exception-0.1.1 \
-		parking_lot-0.9.0 \
-		parking_lot_core-0.6.2 \
-		pico-args-0.3.0 \
-		pkg-config-0.3.15 \
-		png-0.15.0 \
+		memoir-0.2.1 \
+		mini-internal-0.1.13 \
+		miniserde-0.1.13 \
+		miniz_oxide-0.3.6 \
+		nonempty-0.1.5 \
+		num-integer-0.1.44 \
+		num-traits-0.2.11 \
+		objc-0.2.7 \
+		pico-args-0.3.1 \
+		png-0.16.6 \
+		podio-0.1.6 \
 		ppv-lite86-0.2.6 \
-		proc-macro2-0.4.30 \
-		proc-macro2-1.0.1 \
-		quote-0.6.13 \
-		quote-1.0.2 \
+		proc-macro2-1.0.24 \
+		quote-1.0.8 \
 		rand-0.7.3 \
 		rand_chacha-0.2.1 \
-		rand_core-0.3.1 \
-		rand_core-0.4.2 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
-		rand_os-0.1.3 \
-		range-alloc-0.1.0 \
 		raw-window-handle-0.3.3 \
-		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
-		redox_users-0.3.1 \
-		relevant-0.4.2 \
+		redox_users-0.3.4 \
 		remove_dir_all-0.5.2 \
-		rendy-descriptor-0.5.0 \
-		rendy-memory-0.5.0 \
-		rgx-0.7.1 \
-		rust-argon2-0.5.1 \
-		rustc-demangle-0.1.16 \
-		rustc_version-0.2.3 \
-		scopeguard-1.0.0 \
+		rgx-0.8.1 \
+		rust-argon2-0.7.0 \
+		ryu-1.0.5 \
+		seahash-4.0.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.102 \
-		serde_derive-1.0.102 \
-		shared_library-0.1.9 \
-		simple_logger-1.4.0 \
-		slab-0.4.2 \
-		smallvec-0.6.10 \
+		serde-1.0.114 \
+		serde_derive-1.0.113 \
 		snap-0.2.5 \
-		spirv_cross-0.16.0 \
-		storage-map-0.2.0 \
-		syn-0.15.44 \
-		syn-1.0.3 \
-		synstructure-0.10.2 \
+		syn-1.0.16 \
 		tempfile-3.1.0 \
-		time-0.1.42 \
-		toml-0.5.5 \
+		time-0.1.44 \
+		toml-0.5.6 \
 		typenum-1.11.2 \
-		unicode-xid-0.1.0 \
 		unicode-xid-0.2.0 \
-		vec_map-0.8.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.56 \
-		wasm-bindgen-backend-0.2.56 \
-		wasm-bindgen-macro-0.2.56 \
-		wasm-bindgen-macro-support-0.2.56 \
-		wasm-bindgen-shared-0.2.56 \
-		wgpu-0.4.0 \
-		wgpu-native-0.4.1 \
-		winapi-0.3.7 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		winapi-0.3.8 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		wio-0.2.2 \
-		x11-2.18.1 \
 		xml-rs-0.8.0 \
-		zerocopy-0.2.8 \
-		zerocopy-derive-0.1.4
-
+		zip-0.5.5
 PLIST_FILES=	bin/rx
 
 LDFLAGS+=	-L${PREFIX}/lib
