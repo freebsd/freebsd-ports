@@ -1,5 +1,6 @@
 PORTNAME=	bolt
 PORTVERSION=	3.13.0
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +18,7 @@ RUN_DEPENDS=	r10k:sysutils/rubygem-r10k \
 		rubygem-hiera-eyaml>=3:sysutils/rubygem-hiera-eyaml \
 		rubygem-jwt>=2.2:www/rubygem-jwt \
 		rubygem-logging>=2.2:devel/rubygem-logging \
-		rubygem-net-scp>=1.2:security/rubygem-net-scp \
+		rubygem-net-scp1>=1.2<2:security/rubygem-net-scp1 \
 		rubygem-net-ssh>=4.0:security/rubygem-net-ssh \
 		rubygem-net-ssh-krb>=0.5:security/rubygem-net-ssh-krb \
 		rubygem-orchestrator_client>=0.5:net/rubygem-orchestrator_client \
