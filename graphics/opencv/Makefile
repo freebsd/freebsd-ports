@@ -141,7 +141,7 @@ DC1394_DESC=		IEEE 1394 camera support
 DC1394_CMAKE_BOOL=	WITH_1394
 DC1394_LIB_DEPENDS=	libdc1394.so:multimedia/libdc1394
 
-FFMPEG_DESC=		Link with ffmpeg, circular dependancy possible
+FFMPEG_DESC=		Link with ffmpeg
 FFMPEG_CMAKE_BOOL=	WITH_FFMPEG
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
