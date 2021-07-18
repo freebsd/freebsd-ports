@@ -2,7 +2,11 @@
 
 PORTNAME?=	lapack
 PORTVERSION=	3.10.0
+.if !(defined(BLAS_SLAVEPORT) || defined(CBLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT) || defined(LAPACKE_SLAVEPORT))
+PORTREVISION=	1
+.else
 PORTREVISION?=	0	# Never remove this line, keep PORTREVISION?=0 in case.
+.endif
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Reference-LAPACK/lapack/archive/refs/tags/:src	\
 		http://www.netlib.org/lapack/:man	\
@@ -164,10 +168,6 @@ post-install:
 .else # Lapack
 	${INSTALL_DATA} ${BUILD_WRKSRC}/SRC/liblapack.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${BUILD_WRKSRC}/TESTING/MATGEN/libtmglib.a ${STAGEDIR}${PREFIX}/lib
-	${MV} ${STAGEDIR}${PREFIX}/lib/libtmglib.so	\
-		${STAGEDIR}${PREFIX}/lib/libtmglib.so.${PORTVERSION}
-	${LN} -sf libtmglib.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libtmglib.so
-	${LN} -sf libtmglib.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libtmglib.so.${SVERSION}
 .endif
 
 .include <bsd.port.post.mk>
