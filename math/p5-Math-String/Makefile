@@ -1,8 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	Math-String
-PORTVERSION=	1.29
-PORTREVISION=	1
+PORTVERSION=	1.30
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
