@@ -16462,3 +16462,5 @@ sysutils/puppetserver5||2021-07-05|Has expired: Puppet 5 has reached EOL
 databases/puppetdb-terminus5||2021-07-05|Has expired: Puppet 5 has reached EOL
 devel/synfig|graphics/synfig|2021-07-06|The Graphics category is a more appropriate category for an image manipulation program
 www/nextcloud-circles|www/nextcloud|2021-07-09|Included in the Nextcloud port with 22.0.0
+net-mgmt/unifi-lts||2021-07-18|Has expired: Upstream EoL the hardware supported by this release
+audio/ripit|audio/abcde|2021-07-18|Has expired: Upstream no longer maintained, use audio/abcde instead

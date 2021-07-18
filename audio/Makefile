@@ -690,7 +690,6 @@
     SUBDIR += rhvoice-dictionary
     SUBDIR += rhythmbox
     SUBDIR += rioutil
-    SUBDIR += ripit
     SUBDIR += ripperx
     SUBDIR += rkr-lv2
     SUBDIR += rnnoise
