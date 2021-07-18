@@ -64,6 +64,8 @@
     SUBDIR += font-cica
     SUBDIR += font-elisa10
     SUBDIR += font-elisa8
+    SUBDIR += font-firge
+    SUBDIR += font-firge-nerd
     SUBDIR += font-genjyuugothic
     SUBDIR += font-genshingothic
     SUBDIR += font-hackgen
