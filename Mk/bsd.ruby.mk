@@ -37,12 +37,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 #			  build.
 # RUBY_SETUP		- Set to the alternative name of setup.rb
 #			  (default: setup.rb).
-# RUBY_REQUIRE		- Set to a Ruby expression to evaluate before building
-#			  the port.  The constant "Ruby" is set to the integer
-#			  version number of ruby, and the result of the
-#			  expression will be set to RUBY_PROVIDED, which is
-#			  left undefined if the result is nil, false or a
-#			  zero-length string.  Implies USE_RUBY.
 # USE_RUBYGEMS		- Do not use this -- instead USES=gem
 #
 # [variables that each port should not (re)define]
@@ -292,23 +286,6 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY26=${RUBY26} \
 			RUBY27=${RUBY27} \
 			RUBY30=${RUBY30}
-
-# require check
-.if defined(RUBY_REQUIRE)
-USE_RUBY=		yes
-
-.if exists(${RUBY})
-RUBY_PROVIDED!=		${RUBY} -e '\
-	Ruby = ${RUBY_RELVERSION_CODE}; \
-	value = begin; ${RUBY_REQUIRE}; end and puts value'
-.else
-RUBY_PROVIDED=		"should be"	# the latest version is going to be installed
-.endif
-
-.if empty(RUBY_PROVIDED)
-.undef RUBY_PROVIDED
-.endif
-.endif
 
 .if ${PORT_OPTIONS:MDEBUG}
 RUBY_FLAGS+=	-d
