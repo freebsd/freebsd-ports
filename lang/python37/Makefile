@@ -112,9 +112,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|uuid/uuid.h|ignore_&|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/find_library_file/ s|uuid|ignore_&|' ${WRKSRC}/setup.py
 # Apply DISABLED_EXTENSIONS
-	@${ECHO} '*disabled*' > ${WRKSRC}/Modules/Setup.local
+	@${ECHO_CMD} '*disabled*' > ${WRKSRC}/Modules/Setup.local
 .  for _module in ${DISABLED_EXTENSIONS}
-		@${ECHO} ${_module} >> ${WRKSRC}/Modules/Setup.local
+		@${ECHO_CMD} ${_module} >> ${WRKSRC}/Modules/Setup.local
 .  endfor
 
 post-install:
