@@ -1,8 +1,7 @@
 # Created by: Shinsuke Matsui <smatsui@karashi.org>
 
 PORTNAME=	Shell-Perl
-PORTVERSION=	0.0022
-PORTREVISION=	1
+PORTVERSION=	0.004
 CATEGORIES=	shells perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
