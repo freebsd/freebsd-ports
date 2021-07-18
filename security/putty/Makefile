@@ -1,5 +1,5 @@
 PORTNAME=	putty
-PORTVERSION=	0.75
+PORTVERSION=	0.76
 CATEGORIES=	security
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
