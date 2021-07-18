@@ -16,6 +16,14 @@
          tg_owt::libvpx
          tg_owt::libvpx_mmx
          tg_owt::libvpx_sse2
+@@ -112,7 +111,6 @@
+         tg_owt::libpffft
+         tg_owt::librnnoise
+         tg_owt::libsrtp
+-        tg_owt::libusrsctp
+         tg_owt::libvpx
+         tg_owt::libyuv
+     )
 @@ -137,6 +135,7 @@ endif()
  link_openssl(tg_owt)
  link_ffmpeg(tg_owt)
