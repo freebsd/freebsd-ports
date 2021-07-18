@@ -34,6 +34,8 @@ VUXML_FLAT_FILE?=	${PKGDIR}/vuln-flat.xml
 _YEAR!=	date +%Y
 VUXML_CURRENT_FILE?=	${PKGDIR}/vuln-${_YEAR}.xml
 
+.include <bsd.port.pre.mk>
+
 post-clean:
 	@${RM} "${VUXML_FILE}.tidy"
 	@${RM} "${VUXML_FLAT_FILE}"
@@ -92,8 +94,6 @@ tidy: ${VUXML_FLAT_FILE}
 
 newentry:
 	@${SH} ${FILESDIR}/newentry.sh "${VUXML_CURRENT_FILE}"
-
-.include <bsd.port.pre.mk>
 
 .if defined(VID) && !empty(VID)
 html: work/${VID}.html
