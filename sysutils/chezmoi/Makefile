@@ -2,7 +2,7 @@
 
 PORTNAME=	chezmoi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.16
+DISTVERSION=	2.1.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	samir@noir.im
@@ -26,6 +26,8 @@ GH_TUPLE=	Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Maste
 		alecthomas:repr:bb82daffcca2:alecthomas_repr/vendor/github.com/alecthomas/repr \
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
 		bmatcuk:doublestar:v4.0.2:bmatcuk_doublestar_v4/vendor/github.com/bmatcuk/doublestar/v4 \
+		bradenhilton:cityhash:v1.0.0:bradenhilton_cityhash/vendor/github.com/bradenhilton/cityhash \
+		bradenhilton:mozillainstallhash:v1.0.0:bradenhilton_mozillainstallhash/vendor/github.com/bradenhilton/mozillainstallhash \
 		charmbracelet:glamour:v0.3.0:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		coreos:go-semver:v0.3.0:coreos_go_semver/vendor/github.com/coreos/go-semver \
 		danieljoos:wincred:v1.1.0:danieljoos_wincred/vendor/github.com/danieljoos/wincred \
@@ -91,7 +93,7 @@ GH_TUPLE=	Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Maste
 		smartystreets:assertions:v1.2.0:smartystreets_assertions/vendor/github.com/smartystreets/assertions \
 		spf13:afero:v1.6.0:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
-		spf13:cobra:v1.1.3:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.2.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.8.1:spf13_viper/vendor/github.com/spf13/viper \
