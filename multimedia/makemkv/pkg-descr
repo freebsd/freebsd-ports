@@ -23,7 +23,7 @@ Requirements:
 * A custom FreeBSD kernel with sg devices (Linux' "scsi generic" interface) is
   required to use makemkvcon. To build such a kernel, add "device sg" to your
   kernel configuration and follow the instructions at
-  https://www.freebsd.org/doc/handbook/kernelconfig-building.html
+  https://docs.freebsd.org/en/books/handbook/kernelconfig/#kernelconfig-building
 * Make sure you have the "linux" kernel module loaded. On amd64, "linux64" is
   also required.
 
