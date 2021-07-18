@@ -1,8 +1,6 @@
-Obtained from:	https://github.com/OSGeo/gdal/commit/b414b0a0594b3e9c175a001e8455819463039eb6
+% sed -e 's|-lminizip|-lkmlminizip|; s|IlmImf|OpenEXR|' configure
 
-sed -e 's|-lminizip|-lkmlminizip|; s|IlmImf|OpenEXR|' configure
-
---- configure.orig	2021-04-26 12:29:56 UTC
+--- configure.orig	2021-06-28 10:57:58 UTC
 +++ configure
 @@ -36537,9 +36537,9 @@ $as_echo "$LIBKML_VERSION" >&6; }
              libkml_include_dir2="$libkml_prefix/include/kml"
@@ -16,73 +14,7 @@ sed -e 's|-lminizip|-lkmlminizip|; s|IlmImf|OpenEXR|' configure
              fi
              run_libkml_test="yes"
          elif test "$libkml_requested" = "yes"; then
-@@ -38323,6 +38323,7 @@ fi
-     { $as_echo "$as_me:${as_lineno-$LINENO}: result: GEOS support disabled" >&5
- $as_echo "GEOS support disabled" >&6; }
-     GEOS_CONFIG=no
-+    HAVE_GEOS=no
- 
-   elif test x"$with_geos" = x"yes" -o x"$with_geos" = x"" ; then
- 
-@@ -38580,15 +38581,13 @@ $as_echo "$as_me: WARNING: GEOS was found on your syst
- 
-   else
- 
--    if test $ac_geos_config_auto = "no" ; then
-+    if test x"$with_geos" != x"no" -a x"$with_geos" != x ; then
-       as_fn_error $? "GEOS support explicitly enabled, but geos-config could not be found" "$LINENO" 5
-     fi
- 
-   fi
- 
--HAVE_GEOS_RESULT="no"
- if test "${HAVE_GEOS}" = "yes" ; then
--
-   { $as_echo "$as_me:${as_lineno-$LINENO}: Using C API from GEOS $GEOS_VERSION" >&5
- $as_echo "$as_me: Using C API from GEOS $GEOS_VERSION" >&6;}
- 
-@@ -38602,7 +38601,6 @@ $as_echo "$as_me: Using C API from GEOS $GEOS_VERSION"
- 
-   GEOS_LIBS="$STRIPPED_LIBRARY_NAME"
-   LIBS="${GEOS_LIBS} ${LIBS}"
--  HAVE_GEOS_RESULT="yes"
- fi
- 
- 
-@@ -38625,6 +38623,7 @@ fi
- 
-     { $as_echo "$as_me:${as_lineno-$LINENO}: result: SFCGAL support disabled" >&5
- $as_echo "SFCGAL support disabled" >&6; }
-+    HAVE_SFCGAL=no
-     SFCGAL_CONFIG=no
- 
-   elif test x"$with_sfcgal" = x"yes" -o x"$with_sfcgal" = x"" ; then
-@@ -38883,15 +38882,13 @@ $as_echo "$as_me: WARNING: SFCGAL was found on your sy
- 
-   else
- 
--    if test $ac_sfcgal_config_auto = "no" ; then
-+    if test x"$with_sfcgal" != x"no" -a x"$with_sfcgal" != x ; then
-       as_fn_error $? "SFCGAL support explicitly enabled, but sfcgal-config could not be found" "$LINENO" 5
-     fi
- 
-   fi
- 
--HAVE_SFCGAL_RESULT="no"
- if test "${HAVE_SFCGAL}" = "yes" ; then
--
-   { $as_echo "$as_me:${as_lineno-$LINENO}: Using C API from SFCGAL $SFCGAL_VERSION" >&5
- $as_echo "$as_me: Using C API from SFCGAL $SFCGAL_VERSION" >&6;}
- 
-@@ -38905,7 +38902,6 @@ $as_echo "$as_me: Using C API from SFCGAL $SFCGAL_VERS
- 
-   SFCGAL_LIBS="$STRIPPED_LIBRARY_NAME"
-   LIBS="${SFCGAL_LIBS} ${LIBS}"
--  HAVE_SFCGAL_RESULT="yes"
- fi
- 
- 
-@@ -42250,13 +42246,13 @@ fi
+@@ -42246,13 +42246,13 @@ fi
      # Test that the package found is for the right architecture
      saved_LIBS="$LIBS"
      LIBS="$EXR_LIBS"
@@ -100,7 +32,7 @@ sed -e 's|-lminizip|-lkmlminizip|; s|IlmImf|OpenEXR|' configure
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -42276,17 +42272,17 @@ return ImfTiledInputReadTile ();
+@@ -42272,17 +42272,17 @@ return ImfTiledInputReadTile ();
  }
  _ACEOF
  if ac_fn_c_try_link "$LINENO"; then :
@@ -123,21 +55,3 @@ sed -e 's|-lminizip|-lkmlminizip|; s|IlmImf|OpenEXR|' configure
    HAVE_EXR=yes
  else
    HAVE_EXR=no
-@@ -44998,7 +44994,7 @@ echo "  FreeXL support:            ${HAVE_FREEXL}"
- echo "  GEORASTER support:         ${HAVE_GEORASTER}"
- 
- 
--echo "  GEOS support:              ${HAVE_GEOS_RESULT}"
-+echo "  GEOS support:              ${HAVE_GEOS}"
- 
- 
- echo "  Google libkml support:     ${HAVE_LIBKML}"
-@@ -45162,7 +45158,7 @@ echo "  RasterLite2 support:       ${HAVE_RASTERLITE2}
- echo "  RDB support:               ${RDB_SETTING}"
- 
- 
--echo "  SFCGAL support:            ${HAVE_SFCGAL_RESULT}"
-+echo "  SFCGAL support:            ${HAVE_SFCGAL}"
- 
- 
- echo "  SOSI support:              ${SOSI_ENABLED}"
