@@ -35,6 +35,12 @@ FFMPEG_BUILD_DEPENDS_OFF=	nasm:devel/nasm
 FFMPEG_MAKE_ENV_OFF=	V=1
 FFMPEG_VARS_OFF+=	NOPRECIOUSMAKEVARS=yes # ARCH
 
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MFFMPEG)
+LDFLAGS_aarch64=	-Wl,-z,notext
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' \
 		${WRKSRC}/configure
