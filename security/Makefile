@@ -905,6 +905,7 @@
     SUBDIR += py-gnutls
     SUBDIR += py-google-auth
     SUBDIR += py-google-auth-httplib2
+    SUBDIR += py-google-auth-oauthlib
     SUBDIR += py-gpgme
     SUBDIR += py-gpsoauth
     SUBDIR += py-gssapi
