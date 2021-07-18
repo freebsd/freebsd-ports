@@ -1,7 +1,7 @@
 # Created by: Edwin Groothuis <edwin@mavetju.org>
 
 PORTNAME=	ipv6calc
-PORTVERSION=	3.0.2
+PORTVERSION=	3.2.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 
