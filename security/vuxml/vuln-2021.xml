@@ -1,3 +1,32 @@
+  <vuln vid="943d23b6-e65e-11eb-ad30-0800273f11ea">
+    <topic>gitea -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.14.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea Team reports for release 1.14.5:</p>
+	<blockquote cite="https://blog.gitea.io/2021/07/gitea-1.14.5-is-released/">
+	  <ul>
+	    <li>Hide mirror passwords on repo settings page (#16022) (#16355)</li>
+	    <li>Update bluemonday to v1.0.15 (#16379) (#16380)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.14.5</url>
+      <freebsdpr>ports/257221</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2021-05-16</discovery>
+      <entry>2021-07-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1ba21ff1-e672-11eb-a686-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
