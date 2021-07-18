@@ -126,6 +126,7 @@
     SUBDIR += bpytop
     SUBDIR += brasero
     SUBDIR += brename
+    SUBDIR += brut
     SUBDIR += bsd-splash-changer
     SUBDIR += bsdconfig
     SUBDIR += bsdcrashtar

@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+- Sudo is used as backend. The file ${PREFIX}/etc/sudoers handles its permissions.
+- If dbus complains about a missing machine-id, run "dbus-uuidgen --ensure".
+EOM
+}
+]
