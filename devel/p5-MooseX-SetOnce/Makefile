@@ -1,10 +1,11 @@
 # Created by: Frederic Culot <culot@FreeBSD.org>
 
 PORTNAME=	MooseX-SetOnce
-PORTVERSION=	0.201
+PORTVERSION=	0.201000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:S|000$||}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write-once, read-many attributes for Moose
