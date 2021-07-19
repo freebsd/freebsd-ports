@@ -14,5 +14,5 @@ LIB_DEPENDS=	libclucene-core.so:textproc/clucene \
 
 USES=		cmake compiler:c11 qt:5 tar:xz ssl
 USE_QT=		buildtools core dbus gui linguist_build network script svg \
-		webkit xml qmake_build
+		webkit xml qmake_build testlib_build
 .include <bsd.port.mk>
