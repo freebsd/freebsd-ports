@@ -30,11 +30,12 @@ CPE_VENDOR=	apache
 
 OPTIONS_DEFINE=	JTS
 OPTIONS_SUB=	yes
-JTS_DESC=	Enable support for JTS Topology Suite
 
+JTS_DESC=	Enable support for JTS Topology Suite
 JTS_RUN_DEPENDS=	jts>0:math/jts
 
 do-install:
+	${FIND} ${WRKSRC} -name '*.orig' -delete
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/oom_solr.sh ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/post ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
@@ -55,9 +56,12 @@ do-install:
 do-install-JTS-on:
 	${LN} -sf ${JAVALIBDIR}/jts-core.jar ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/server/solr-webapp/webapp/WEB-INF/lib/
 
-# execute this target to generate the pkg-plist
-my-generate-plist: patch
-	php create-plist.php ${WRKSRC} >pkg-plist
-	$(MAKE) clean
+post-install:
+	${FIND} -s ${STAGEDIR}${PREFIX}/${CPE_PRODUCT} -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(solr,solr) /var/db/solr" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(solr,solr) /var/log/solr" >> ${TMPPLIST}
+	@${ECHO_CMD} "@sample etc/solr.in.sh.sample" >> ${TMPPLIST}
+	@${ECHO_CMD} "@sample(solr,solr) /var/db/solr/solr.xml.sample" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
