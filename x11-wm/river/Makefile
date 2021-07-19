@@ -1,5 +1,5 @@
 PORTNAME=	river
-PORTVERSION=	s20210715
+PORTVERSION=	s20210719
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,7 +21,7 @@ USES=		pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	ifreund
-GH_TAGNAME=	28fc879
+GH_TAGNAME=	1fec079
 GH_TUPLE=	ifreund:zig-pixman:135f223:zig_pixman/deps/zig-pixman \
 		ifreund:zig-wayland:a8e1efc:zig_wayland/deps/zig-wayland \
 		ifreund:zig-xkbcommon:10cdca6:zig_xkbcommon/deps/zig-xkbcommon \
@@ -34,7 +34,6 @@ NO_INSTALL=	yes # strip(1) breaks runtime
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}ctl \
 		bin/${PORTNAME}tile \
-		"@sample ${ETCDIR}/init.sample" \
 		share/bash-completion/completions/${PORTNAME}ctl \
 		share/fish/vendor_completions.d/${PORTNAME}ctl.fish \
 		share/zsh/site-functions/_${PORTNAME}ctl \
@@ -55,9 +54,8 @@ X11_CONFIGURE_ON=	-Dxwayland=true
 X11_CONFIGURE_OFF=	-Dxwayland=false
 
 post-patch:
-# Respect PREFIX for system-wide config (a la sysconfdir in Meson)
-	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
-		${WRKSRC}/doc/${PORTNAME}.1.scd \
+# Respect PREFIX in path references
+	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},' \
 		${WRKSRC}/doc/${PORTNAME}ctl.1.scd
 
 do-build:
@@ -65,9 +63,5 @@ do-build:
 
 do-test:
 	@(cd ${WRKSRC} && ${TEST_ENV} zig build test ${CONFIGURE_ARGS})
-
-post-install:
-# Let @sample handle default files under etc/
-	@${MV} ${STAGEDIR}${ETCDIR}/init ${STAGEDIR}${ETCDIR}/init.sample
 
 .include <bsd.port.mk>
