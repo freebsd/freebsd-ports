@@ -148,6 +148,7 @@ man/man1/z80.1.gz
 %%DATADIR%%/disks/yazerc
 %%DATADIR%%/disks/zinc.ydsk.gz
 %%DATADIR%%/m2.ktt
+%%DATADIR%%/md5
 %%DATADIR%%/sample.ktt
 %%DATADIR%%/yaze-cpm3.boot
 %%DATADIR%%/yaze.boot

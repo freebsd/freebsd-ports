@@ -1,5 +1,5 @@
 PORTNAME=	yaze-ag
-DISTVERSION=	2.51.0-rc1
+DISTVERSION=	2.51.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.mathematik.uni-ulm.de/users/ag/yaze-ag/devel/
 
@@ -15,13 +15,14 @@ USES=		compiler:c11
 
 MAKEFILE=	Makefile_freebsd
 MAKE_ENV=	BINDIR=${PREFIX}/bin \
+		DESTDIR="${STAGEDIR}" \
 		DOCDIR=${DOCSDIR} \
 		DOCHTMLDIR=${DOCSDIR}/html \
 		DSKDIR=${DATADIR}/disks \
 		LIBDIR=${DATADIR} \
+		LIBEXECDIR=${PREFIX}/libexec \
 		MANDIR=${MAN1PREFIX}/man/man1 \
-		OPTIMIZE="${CFLAGS}" \
-		STAGEDIR="${STAGEDIR}"
+		OPTIMIZE="${CFLAGS}"
 
 OPTIONS_DEFINE=	DOCS
 
@@ -30,8 +31,5 @@ post-build:
 				 -e 's:%%DOCSDIR%%:${DOCSDIR}:' \
 				 -e 's:%%LIBEXECDIR%%:${PREFIX}/libexec:' \
 							${WRKSRC}/yaze.sh
-
-do-install-DOCS-on:
-		${SETENV} ${MAKE_ENV} ${MAKE} -C ${WRKSRC} -f ${MAKEFILE} install-doc
 
 .include <bsd.port.mk>
