@@ -10,6 +10,8 @@ COMMENT=	Advanced DNS server with multiple backends including SQL
 LICENSE=	GPLv2
 
 BROKEN_sparc64=	Does not compile: error: to_string is not a member of std
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	archs with 32-bits time_t are no longer supported by upstream
 
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libcurl.so:ftp/curl
