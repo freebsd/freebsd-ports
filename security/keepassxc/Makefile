@@ -3,7 +3,7 @@ DISTVERSION=	2.6.6
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/${PORTNAME}-${DISTVERSION}-src.tar.xz?dummy=/
 
-MAINTAINER=	melanhit@gmail.com
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	KeePass Cross-platform Community Edition
 
 LICENSE=	APACHE20 BSD3CLAUSE CC0-1.0 GPLv2 GPLv3 LGPL21 LGPL3 MIT \
