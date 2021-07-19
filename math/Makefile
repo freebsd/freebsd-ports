@@ -212,6 +212,7 @@
     SUBDIR += coinmp
     SUBDIR += coinmumps
     SUBDIR += coinutils
+    SUBDIR += colpack
     SUBDIR += combblas
     SUBDIR += conauto
     SUBDIR += concorde
