@@ -16,7 +16,7 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig \
 		localbase qt:5
 USE_QT=		core gui network widgets xml xmlpatterns buildtools_build \
-		linguisttools_build qmake_build
+		linguisttools_build qmake_build testlib_build
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
