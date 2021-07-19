@@ -79,6 +79,7 @@ CAIRO_DESC=	Cairo renderer
 VAAPI_DESC=	VAAPI support
 
 CYGNAL_CONFIGURE_ENABLE=	cygnal
+VAAPI_CPPFLAGS=	-I../libdevice/vaapi
 
 .include <bsd.port.options.mk>
 
