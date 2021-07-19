@@ -73,7 +73,6 @@
     SUBDIR += libhandy
     SUBDIR += libhandy0
     SUBDIR += libsexy
-    SUBDIR += libsexymm
     SUBDIR += libunique3
     SUBDIR += libwnck
     SUBDIR += libwnck3
