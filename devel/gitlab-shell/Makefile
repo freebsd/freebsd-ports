@@ -120,7 +120,12 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${x}
 	(cd ${WRKSRC}/${x} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${x})
 .endfor
-
 	@${MKDIR} ${STAGEDIR}${VARLOGDIR}
+
+post-install:
+	${FIND} -s ${STAGEDIR}${DATADIR} -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' | \
+		${SED} -E -e '/sample$$/ s#^#@sample #; \
+		s#${DATADIR_REL}/bin#@(,,555) ${DATADIR_REL}/bin#; ' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
