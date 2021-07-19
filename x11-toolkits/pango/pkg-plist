@@ -1,3 +1,4 @@
+bin/pango-segmentation
 bin/pango-list
 bin/pango-view
 include/pango-1.0/pango/pango-attributes.h
