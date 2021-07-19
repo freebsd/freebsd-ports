@@ -160,5 +160,13 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} config.toml.sample  ${STAGEDIR}${DATADIR}) && \
 	cd ${WRKSRC}/ruby && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/ruby
 
+post-install:
+	${FIND} -s ${STAGEDIR}${DATADIR} -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' | \
+		${SED} -E -e '/sample$$/ s#^#@sample #; \
+		/gitlab-shell-hook$$/ s#^#@(,,755) #; \
+		s#${DATADIR_REL}/ruby/bin#@(,,555) ${DATADIR_REL}/ruby/bin#; \
+		s#${DATADIR_REL}/bin#@(,,555) ${DATADIR_REL}/bin#; ' >> ${TMPPLIST}
+
 .include <bsd.port.mk>
 
