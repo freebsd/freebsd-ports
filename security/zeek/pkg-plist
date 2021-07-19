@@ -1942,7 +1942,7 @@ man/man8/zeek.8.gz
 %%DATADIR%%/policy/tuning/defaults/warnings.zeek
 %%DATADIR%%/policy/tuning/json-logs.zeek
 %%DATADIR%%/policy/tuning/track-all-assets.zeek
-%%DATADIR%%/site/local.zeek.sample
+@sample %%DATADIR%%/site/local.zeek.sample
 %%ZEEKCTL%%%%DATADIR%%/test-all-policy.zeek
 %%ZEEKCTL%%share/zeek/zeekctl/__load__.zeek
 %%ZEEKCTL%%share/zeek/zeekctl/auto.zeek
