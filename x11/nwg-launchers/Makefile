@@ -1,7 +1,6 @@
 PORTNAME=	nwg-launchers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.4
-PORTREVISION=	1
+DISTVERSION=	0.5.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,6 +15,13 @@ USES=		compiler:c++17-lang gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	gtkmm30
 GH_ACCOUNT=	nwg-piotr
+
+OPTIONS_DEFINE=	GLS
+OPTIONS_DEFAULT=GLS
+
+GLS_DESC=		Layer-shell support
+GLS_LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
+GLS_MESON_ENABLED=	layer-shell
 
 post-patch:
 # Respect PREFIX when looking for .desktop files
