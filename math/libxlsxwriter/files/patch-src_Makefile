@@ -1,24 +1,6 @@
---- src/Makefile.orig	2021-03-30 13:12:10 UTC
+--- src/Makefile.orig	2021-07-12 22:30:20 UTC
 +++ src/Makefile
-@@ -82,7 +82,7 @@ endif
- 
- # Library names.
- LIBXLSXWRITER_A  = libxlsxwriter.a
--LIBXLSXWRITER_SO = libxlsxwriter.so
-+LIBXLSXWRITER_SO = libxlsxwriter.so.0
- 
- # Library with additional non-static functions for testing.
- LIBXLSXWRITER_TO = libxlsxwriter_test.a
-@@ -92,7 +92,7 @@ ARFLAGS = rc
- 
- # Flags passed to dynamic linker.
- FPIC = -fPIC
--SOFLAGS = -shared $(FPIC)
-+SOFLAGS = -shared $(FPIC) -Wl,-soname=${LIBXLSXWRITER_SO}
- 
- # Get Env/OS name.
- UNAME := $(shell uname)
-@@ -144,11 +144,11 @@ $(LIBXLSXWRITER_A) : $(OBJS)
+@@ -159,11 +159,11 @@ $(LIBXLSXWRITER_A) : $(OBJS)
  
  # The dynamic library.
  ifeq ($(findstring m32,$(CFLAGS)),m32)
@@ -27,8 +9,8 @@
  endif
  
  $(LIBXLSXWRITER_SO) : $(SOBJS)
--	$(Q)$(CC) $(LDFLAGS) $(SOFLAGS) $(ARCH) $(TARGET_ARCH) -o $@ $(MINIZIP_SO) $(TMPFILEPLUS_SO) $(MD5_SO) $^ $(LIBS)
-+	$(Q)$(CC) $(LDFLAGS) $(SOFLAGS) $(XLSX_ARCH) $(TARGET_ARCH) -o $@ $(MINIZIP_SO) $(TMPFILEPLUS_SO) $(MD5_SO) $^ $(LIBS)
+-	$(Q)$(CC) $(LDFLAGS) $(SOFLAGS) $(ARCH) $(TARGET_ARCH) -o $@ $(MINIZIP_SO) $(TMPFILEPLUS_SO) $(MD5_SO) $(DTOA_LIB_SO) $^ $(LIBS)
++	$(Q)$(CC) $(LDFLAGS) $(SOFLAGS) $(XSLX_ARCH) $(TARGET_ARCH) -o $@ $(MINIZIP_SO) $(TMPFILEPLUS_SO) $(MD5_SO) $(DTOA_LIB_SO) $^ $(LIBS)
  
  # The test library.
  $(LIBXLSXWRITER_TO) : $(TOBJS)

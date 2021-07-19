@@ -1,5 +1,5 @@
 PORTNAME=	libxlsxwriter
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	RELEASE_
 CATEGORIES=	math devel
 
@@ -14,9 +14,5 @@ MAKE_ARGS=	INSTALL_DIR=${STAGEDIR}${PREFIX}
 
 USE_LDCONFIG=	yes
 USES=		compiler:c11 gmake
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxlsxwriter.so.0
-	${LN} -s libxlsxwriter.so.0 ${STAGEDIR}${PREFIX}/lib/libxlsxwriter.so
 
 .include <bsd.port.mk>
