@@ -1,10 +1,10 @@
 PORTNAME=	fossil
-PORTVERSION=	2.15.1
+PORTVERSION=	2.16
 DISTVERSIONPREFIX=	src-
 PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	devel www
-MASTER_SITES=	https://fossil-scm.org/index.html/uv/
+MASTER_SITES=	https://fossil-scm.org/home/tarball/7aedd5/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	DSCM with built-in wiki, http interface and server, tickets database
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT-BSD2.txt
 
 USES=		ssl
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-openssl=${OPENSSLBASE}
