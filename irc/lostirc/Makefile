@@ -12,6 +12,9 @@ COMMENT=	Simple and minimal IRC client for X
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware since 2005, dependens on discontinued libraries
+EXPIRATION_DATE=	2021-08-19
+
 LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
 USES=		compiler:c++11-lang gettext gnome pathfix pkgconfig
