@@ -1,6 +1,6 @@
 PORTNAME=	nbsdgames
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.1
+DISTVERSION=	4.1.2
 CATEGORIES=	games
 
 MAINTAINER=	fuz@fuz.su
@@ -17,7 +17,7 @@ GH_ACCOUNT=	abakh
 MAKE_ARGS+=	GAMES_DIR=${PREFIX}/bin \
 		MAN_DIR=${PREFIX}/share/man/man6 \
 		SCORES_DIR=/var/games/nbsdgames
-CFLAGS+=	-I${NCURSESINC} -I${NCURSESBASE}/include
+CFLAGS+=	--std=c99 -I${NCURSESINC} -I${NCURSESBASE}/include
 
 _GAMES=	battleship \
 	checkers \
