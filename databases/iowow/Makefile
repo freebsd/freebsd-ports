@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	iowow
-PORTVERSION=	1.4.11
+PORTVERSION=	1.4.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
