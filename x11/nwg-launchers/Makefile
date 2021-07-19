@@ -1,6 +1,6 @@
 PORTNAME=	nwg-launchers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,17 +16,21 @@ USE_GITHUB=	yes
 USE_GNOME=	gtkmm30
 GH_ACCOUNT=	nwg-piotr
 
-OPTIONS_DEFINE=	GLS
-OPTIONS_DEFAULT=GLS
+OPTIONS_DEFINE=	GLS LIBRSVG2
+OPTIONS_DEFAULT=GLS LIBRSVG2
+OPTIONS_SUB=	yes
 
 GLS_DESC=		Layer-shell support
 GLS_LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 GLS_MESON_ENABLED=	layer-shell
 
+LIBRSVG2_USE=		GNOME=librsvg2
+LIBRSVG2_MESON_ENABLED=	support-svg
+
 post-patch:
 # Respect PREFIX when looking for .desktop files
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
-		${WRKSRC}/common/nwg_tools.cc \
+		${WRKSRC}/common/nwg_classes.cc \
 		${WRKSRC}/grid/grid_tools.cc
 
 .include <bsd.port.mk>
