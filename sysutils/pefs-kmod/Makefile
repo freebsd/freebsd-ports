@@ -1,46 +1,34 @@
 # Created by: Gleb Kurtsou <gleb@FreeBSD.org>
 
 PORTNAME=	pefs
-DISTVERSION=	2018-11-26
+DISTVERSION=	g20210628
+PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL/gleb
 PKGNAMESUFFIX=	-kmod
 
-MAINTAINER=	gleb@FreeBSD.org
+MAINTAINER=	darius@dons.net.au
 COMMENT=	PEFS kernel level stacked cryptographic filesystem
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99
-BROKEN_DragonFly=	fails to build: don't know how to make vnode_if.h
-ONLY_FOR_ARCHS=		amd64 armv6 i386
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
 ONLY_FOR_ARCHS_REASON=	untested on any other arch
-BROKEN_FreeBSD_13=	fails to compile: too many arguments to function call, expected single argument 'vp', have 2 arguments
-BROKEN_FreeBSD_14=	fails to compile: too many arguments to function call, expected single argument 'vp', have 2 arguments
+# PEFS works on -current but out of tree KLDs get incorrectly compiled without INVARIANTS
+BROKEN_FreeBSD_14=	crashes on mount due to INVARIANTS
 
 USES=		kmod uidfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	freebsd-pefs
+GH_TAGNAME=	4e03778
 
 MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man"
 
-OPTIONS_DEFINE=	AESNI
-OPTIONS_DEFAULT=
-AESNI_DESC=	Enable AES-NI hardware acceleration
-
 PLIST_FILES=	sbin/pefs \
 		lib/pam_pefs.so \
+		lib/pam_pefs.so.6 \
 		man/man8/pam_pefs.8.gz \
 		man/man8/pefs.8.gz \
 		${KMODDIR}/pefs.ko
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAESNI}
-MAKE_ENV+=	PEFS_AESNI=yes
-.endif
-
-.if ${OPSYS} == FreeBSD
-PLIST_FILES+=	lib/pam_pefs.so.6
-.endif
 
 .include <bsd.port.mk>
