@@ -1,5 +1,6 @@
 PORTNAME=	adol-c
 DISTVERSION=	2.7.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://www.coin-or.org/download/source/${PORTNAME:tu}/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
@@ -14,14 +15,21 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USES=		compiler:c++11-lang gmake libtool tar:tgz
-GNU_CONFIGURE=	yes
-CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
 USE_LDCONFIG=	yes
 
+GNU_CONFIGURE=	yes
+CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
+
+INSTALL_TARGET=	install-strip
+
 OPTIONS_DEFINE=			SPARSE # also uses AMPI, a seemingly obscure MPI implementation
+OPTIONS_DEFAULT=		SPARSE
 OPTIONS_SUB=			yes
 
 SPARSE_DESC=			Build sparse drivers
 SPARSE_CONFIGURE_ENABLE=	sparse
+
+post-patch: # broken with ColPack: https://github.com/coin-or/ADOL-C/issues/40
+	@${REINPLACE_CMD} -e 's|with_colpack|with_colpackx| ; s|-lColPack||' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
