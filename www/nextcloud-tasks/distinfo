@@ -1,3 +1,3 @@
-TIMESTAMP = 1605184709
-SHA256 (nextcloud/tasks-0.13.6/tasks.tar.gz) = 98bbe7be9e0315af247572da6ef2c6f67ee1387065ca69a56988ee0a77367f11
-SIZE (nextcloud/tasks-0.13.6/tasks.tar.gz) = 2690108
+TIMESTAMP = 1626611583
+SHA256 (nextcloud/tasks-0.14.0/tasks.tar.gz) = ec4adaa7218dae5aa5bd6f78337533c01bd938ea8cd68565b2d6da546470bdc2
+SIZE (nextcloud/tasks-0.14.0/tasks.tar.gz) = 8231407
