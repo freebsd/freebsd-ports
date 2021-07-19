@@ -15,3 +15,4 @@ include/CLI/Validators.hpp
 include/CLI/Version.hpp
 lib/cmake/CLI11/CLI11Config.cmake
 lib/cmake/CLI11/CLI11ConfigVersion.cmake
+libdata/pkgconfig/CLI11.pc
