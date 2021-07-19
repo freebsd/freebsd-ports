@@ -3,7 +3,7 @@ include/tidy.h
 include/tidybuffio.h
 include/tidyenum.h
 include/tidyplatform.h
-lib/libtidy.so.5
+lib/libtidy.so.58
 lib/libtidy.so.%%VER%%
 lib/libtidy5.so
 lib/libtidys.a

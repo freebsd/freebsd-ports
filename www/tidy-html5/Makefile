@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	tidy-html5
-PORTVERSION=	5.7.28
+PORTVERSION=	5.8.0
 CATEGORIES=	www
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -25,6 +25,7 @@ PLIST_SUB=	VER=${PORTVERSION}
 post-install:
 	# To avoid conflict ATM - to be removed later
 	${MV} ${STAGEDIR}${PREFIX}/bin/tidy ${STAGEDIR}${PREFIX}/bin/tidy5
+	${MV} ${STAGEDIR}${PREFIX}/lib/libtidy.a ${STAGEDIR}${PREFIX}/lib/libtidys.a
 	${MV} ${STAGEDIR}${PREFIX}/lib/libtidy.so ${STAGEDIR}${PREFIX}/lib/libtidy5.so
 	${MV} ${STAGEDIR}${MANPREFIX}/man/man1/tidy.1 ${STAGEDIR}${MANPREFIX}/man/man1/tidy5.1
 
