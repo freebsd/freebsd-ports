@@ -9,6 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME interface to xcompmgr
 
+DEPRECATED=	Abandonware since 2005, using discontinued libraries
+EXPIRATION_DATE=	2021-08-19
+
 RUN_DEPENDS=	xcompmgr:x11-wm/xcompmgr
 
 GNU_CONFIGURE=	yes
