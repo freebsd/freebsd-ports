@@ -1,6 +1,6 @@
-TIMESTAMP = 1615703868
-SHA256 (votca-votca-v2021_GH0.tar.gz) = c3ada008b51cd3c96904a75eb502c67790feda14b8b27ff132c8864171cdd472
-SIZE (votca-votca-v2021_GH0.tar.gz) = 43489
+TIMESTAMP = 1626645948
+SHA256 (votca-votca-v2021.1_GH0.tar.gz) = 09b2a3cc7f06cf4dc70c33e2856b49455c3f5dae90191012342f8994800e3e3b
+SIZE (votca-votca-v2021.1_GH0.tar.gz) = 43583
 SHA256 (votca-tools-6c83772_GH0.tar.gz) = e07fe43baea7113cd92eb7a942f877976204075a968d69db81a55fec3e392891
 SIZE (votca-tools-6c83772_GH0.tar.gz) = 114796
 SHA256 (votca-csg-253f1e5_GH0.tar.gz) = 5395e0dcf088497fdfe8ac72e3544cda971b9398744a533eb61b4c073aab7f52
