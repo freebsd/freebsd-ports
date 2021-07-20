@@ -1,5 +1,5 @@
 PORTNAME=	arti
-DISTVERSION=	0.0.0.20210715
+DISTVERSION=	0.0.0.20210720
 CATEGORIES=	security
 
 MAINTAINER=	cs@FreeBSD.org
@@ -11,7 +11,7 @@ USES=		cargo ssl sqlite
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.torproject.org
 GL_ACCOUNT=	tpo/core
-GL_COMMIT=	50691f2a00f468cba497dafbcacc0a4adf945d72
+GL_COMMIT=	888296cca6b4bd33d776d44274d92cc41c1d4bba
 CARGO_INSTALL=	no
 CARGO_CRATES=	adler-1.0.2 \
 		aes-0.7.4 \
@@ -45,6 +45,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		block-buffer-0.9.0 \
 		block-padding-0.2.1 \
 		blocking-1.0.2 \
+		bounded-vec-deque-0.1.1 \
 		bumpalo-3.7.0 \
 		byteorder-1.4.3 \
 		bytes-1.0.1 \
@@ -62,7 +63,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		cpufeatures-0.1.5 \
 		crc32fast-1.2.1 \
 		crossbeam-utils-0.8.5 \
-		crypto-mac-0.11.0 \
+		crypto-mac-0.11.1 \
 		ctor-0.1.20 \
 		ctr-0.7.0 \
 		curve25519-dalek-3.1.0 \
@@ -79,7 +80,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		event-listener-2.5.1 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
-		fastrand-1.4.1 \
+		fastrand-1.5.0 \
 		flate2-1.0.20 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
@@ -203,7 +204,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		serde-1.0.126 \
 		serde_derive-1.0.126 \
 		serde_test-1.0.126 \
-		sha-1-0.9.6 \
+		sha-1-0.9.7 \
 		sha2-0.9.5 \
 		sha3-0.9.1 \
 		shellexpand-2.1.0 \
@@ -227,9 +228,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		thiserror-impl-1.0.26 \
 		thread-id-3.3.0 \
 		time-0.1.44 \
-		tinyvec-1.2.0 \
+		tinyvec-1.3.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.8.1 \
+		tokio-1.8.2 \
 		tokio-native-tls-0.3.0 \
 		tokio-util-0.6.7 \
 		toml-0.5.8 \
@@ -260,7 +261,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		x25519-dalek-1.1.1 \
 		xz2-0.1.6 \
-		zeroize-1.3.0 \
+		zeroize-1.4.1 \
 		zeroize_derive-1.1.0 \
 		zstd-0.7.0+zstd.1.4.9 \
 		zstd-safe-3.1.0+zstd.1.4.9 \
