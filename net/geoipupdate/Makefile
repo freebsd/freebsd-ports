@@ -1,7 +1,7 @@
 # Created by: adamw
 
 PORTNAME=	geoipupdate
-PORTVERSION=	4.7.1
+PORTVERSION=	4.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
