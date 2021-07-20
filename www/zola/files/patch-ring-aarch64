@@ -1,5 +1,5 @@
---- cargo-crates/ring-0.16.19/Cargo.toml.orig	2021-01-16 08:59:14 UTC
-+++ cargo-crates/ring-0.16.19/Cargo.toml
+--- cargo-crates/ring-0.16.20/Cargo.toml.orig	2021-01-16 08:59:14 UTC
++++ cargo-crates/ring-0.16.20/Cargo.toml
 @@ -62,10 +62,10 @@ wasm32_c = []
  version = "0.3.37"
  features = ["Crypto", "Window"]
@@ -13,8 +13,8 @@
  version = "0.2.69"
  default-features = false
 
---- cargo-crates/ring-0.16.19/src/cpu.rs.orig	2020-11-30 20:30:03 UTC
-+++ cargo-crates/ring-0.16.19/src/cpu.rs
+--- cargo-crates/ring-0.16.20/src/cpu.rs.orig	2020-11-30 20:30:03 UTC
++++ cargo-crates/ring-0.16.20/src/cpu.rs
 @@ -31,7 +31,7 @@ pub(crate) fn features() -> Features {
          target_arch = "x86_64",
          all(
