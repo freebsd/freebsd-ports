@@ -1,6 +1,6 @@
---- ext-src/php_swoole_private.h.orig	2021-04-23 05:47:52 UTC
+--- ext-src/php_swoole_private.h.orig	2021-07-16 07:18:11 UTC
 +++ ext-src/php_swoole_private.h
-@@ -894,7 +894,7 @@ static sw_inline zend_bool sw_zend_is_callable_at_fram
+@@ -890,7 +890,7 @@ static sw_inline zend_bool sw_zend_is_callable_at_fram
                                                          char **error) {
      zend_string *name;
      zend_bool ret;
