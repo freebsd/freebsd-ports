@@ -1,6 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.0
+DISTVERSION=	1.12.1
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -93,8 +93,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dashmap-4.0.2 \
 		data-encoding-2.3.2 \
 		data-url-0.1.0 \
-		deno_doc-0.8.0 \
-		deno_lint-0.10.0 \
+		deno_doc-0.9.0 \
+		deno_lint-0.11.0 \
 		derive_more-0.99.16 \
 		digest-0.9.0 \
 		dissimilar-1.0.2 \
@@ -103,8 +103,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dprint-core-0.43.0 \
 		dprint-plugin-json-0.12.1 \
 		dprint-plugin-markdown-0.9.2 \
-		dprint-plugin-typescript-0.48.0 \
-		dprint-swc-ecma-ast-view-0.23.0 \
+		dprint-plugin-typescript-0.49.0 \
+		dprint-swc-ecma-ast-view-0.24.0 \
 		drm-fourcc-2.1.1 \
 		either-1.6.1 \
 		encoding_rs-0.8.28 \
@@ -339,24 +339,24 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strsim-0.9.3 \
 		subtle-2.4.0 \
 		swc_atoms-0.2.6 \
-		swc_bundler-0.45.0 \
-		swc_common-0.10.23 \
-		swc_ecma_ast-0.48.1 \
-		swc_ecma_codegen-0.61.1 \
+		swc_bundler-0.46.0 \
+		swc_common-0.11.0 \
+		swc_ecma_ast-0.49.0 \
+		swc_ecma_codegen-0.62.0 \
 		swc_ecma_codegen_macros-0.5.2 \
-		swc_ecma_dep_graph-0.30.0 \
-		swc_ecma_loader-0.10.0 \
-		swc_ecma_parser-0.62.1 \
-		swc_ecma_transforms-0.58.0 \
-		swc_ecma_transforms_base-0.21.1 \
-		swc_ecma_transforms_classes-0.7.0 \
-		swc_ecma_transforms_optimization-0.28.0 \
-		swc_ecma_transforms_proposal-0.25.0 \
-		swc_ecma_transforms_react-0.26.0 \
-		swc_ecma_transforms_typescript-0.27.0 \
-		swc_ecma_utils-0.39.0 \
-		swc_ecma_visit-0.34.0 \
-		swc_ecmascript-0.45.0 \
+		swc_ecma_dep_graph-0.31.0 \
+		swc_ecma_loader-0.11.0 \
+		swc_ecma_parser-0.63.0 \
+		swc_ecma_transforms-0.59.0 \
+		swc_ecma_transforms_base-0.22.1 \
+		swc_ecma_transforms_classes-0.8.0 \
+		swc_ecma_transforms_optimization-0.29.0 \
+		swc_ecma_transforms_proposal-0.26.0 \
+		swc_ecma_transforms_react-0.27.0 \
+		swc_ecma_transforms_typescript-0.28.0 \
+		swc_ecma_utils-0.40.0 \
+		swc_ecma_visit-0.35.0 \
+		swc_ecmascript-0.46.0 \
 		swc_eq_ignore_macros-0.1.0 \
 		swc_macros_common-0.3.3 \
 		swc_visit-0.2.4 \
