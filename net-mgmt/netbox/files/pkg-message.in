@@ -17,11 +17,13 @@ database migrations will be executed.
 
 The following steps are required to finish the upgrade: 
 
-1. Run database migrations, collect static files, remove stale content files,
-   delete any expired user sessions and clear all cached data:
+1. Run database migrations, trace any missing cable paths, collect static
+   files, remove stale content files, delete any expired user sessions and
+   clear all cached data:
 
 # cd %%DATADIR%%
 # python%%PYTHON_VER%% manage.py migrate
+# python%%PYTHON_VER%% manage.py trace_paths --no-input
 # python%%PYTHON_VER%% manage.py collectstatic --no-input
 # python%%PYTHON_VER%% manage.py remove_stale_contenttypes --no-input
 # python%%PYTHON_VER%% manage.py clearsessions
@@ -213,6 +215,33 @@ upgrading.
 
 Also the support for embedded graphs was completely removed and several changes
 to the REST API were made.  Please check the changelogs for further details.
+EOD
+}
+{ type: upgrade
+  maximum_version: 2.11.9
+  message: <<EOD
+* All objects now use numeric IDs in their UI view URLs instead of slugs.  You
+  may need to update external references to NetBox objects.  (Note that this
+  does _not_ affect the REST API.)
+
+* The UI now uses numeric IDs when filtering object lists.  You may need to
+  update external links to filtered object lists.  (Note that the slug- and
+  name-based filters will continue to work, however the filter selection fields
+  within the UI will not be automatically populated.)
+
+* The RackGroup model has been renamed to "Location".  Its REST API endpoint
+  has changed from /api/dcim/rack-groups/ to /api/dcim/locations/.
+
+* The foreign key field "group" on dcim.Rack has been renamed to "location".
+
+* The foreign key field "site" on ipam.VLANGroup has been replaced with the
+  "scope" generic foreign key.
+
+* Custom script ObjectVars no longer support the "queryset" parameter:
+  Use "model" instead.
+
+Several changes to the REST API were made as well.  Please check the changelogs
+for further details.
 EOD
 }
 ]
