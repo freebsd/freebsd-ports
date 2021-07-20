@@ -1,7 +1,11 @@
 PORTNAME=	ruqola
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	net-im kde
+
+PATCH_SITES=	https://invent.kde.org/network/ruqola/-/commit/
+PATCHFILES=	1c9e8072fcb6cdbc1b3f2201eba902706f917b58.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Rocketchat client
