@@ -1,3 +1,37 @@
+  <vuln vid="38a4a043-e937-11eb-9b84-d4c9ef517024">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql57-server</name>
+	<range><lt>5.7.35</lt></range>
+      </package>
+      <package>
+	<name>mysql80-server</name>
+	<range><lt>8.0.26</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpujul2021.html">
+	  <p>This Critical Patch Update contains 41 new security patches for
+	    Oracle MySQL. 10 of these vulnerabilities may be remotely exploitable
+	    without authentication, i.e., may be exploited over a network without
+	    requiring user credentials.<br/>
+	    The highest CVSS v3.1 Base Score of vulnerabilities affecting Oracle
+	    MySQL is 8.8.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.oracle.com/security-alerts/cpujul2021.html</url>
+    </references>
+    <dates>
+      <discovery>2021-07-20</discovery>
+      <entry>2021-07-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="943d23b6-e65e-11eb-ad30-0800273f11ea">
     <topic>gitea -- multiple vulnerabilities</topic>
     <affects>
