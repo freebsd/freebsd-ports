@@ -22,7 +22,8 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 PORTDOCS=	*
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-auth-ldap
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-auth-ldap \
+			${PYTHON_PKGNAMEPREFIX}dj32-django-auth-ldap
 
 OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}

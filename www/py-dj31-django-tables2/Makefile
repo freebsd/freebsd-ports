@@ -17,7 +17,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django31>=0:www/py-django31@${PY_FLAVOR}
 USES=		python:3.7+
 USE_PYTHON=	distutils autoplist
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-tables2
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-tables2 \
+			${PYTHON_PKGNAMEPREFIX}dj32-django-tables2
 
 NO_ARCH=		yes
 

@@ -4382,6 +4382,7 @@
     SUBDIR += py-distlib
     SUBDIR += py-distributed
     SUBDIR += py-dj31-django-rq
+    SUBDIR += py-dj32-django-rq
     SUBDIR += py-django-rq
     SUBDIR += py-docker-py
     SUBDIR += py-dockerpty

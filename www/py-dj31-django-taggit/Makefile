@@ -16,6 +16,7 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=		yes
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-taggit
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-taggit \
+			${PYTHON_PKGNAMEPREFIX}dj32-django-taggit
 
 .include <bsd.port.mk>

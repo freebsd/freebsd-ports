@@ -24,7 +24,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=2.2.16:www/py-django22@${PY_FLAVOR
 USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}py-dj31-drf-yasg
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}py-dj31-drf-yasg \
+			${PYTHON_PKGNAMEPREFIX}py-dj32-drf-yasg
 
 NO_ARCH=		yes
 

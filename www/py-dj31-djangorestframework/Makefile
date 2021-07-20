@@ -17,7 +17,8 @@ USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}djangorestframework3* \
-			${PYTHON_PKGNAMEPREFIX}djangorestframework
+			${PYTHON_PKGNAMEPREFIX}djangorestframework \
+			${PYTHON_PKGNAMEPREFIX}dj32-djangorestframework
 NO_ARCH=		yes
 
 .include <bsd.port.mk>

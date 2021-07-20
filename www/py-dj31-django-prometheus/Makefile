@@ -16,7 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django31>=2.2:www/py-django31@${PY_FLAVOR} \
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-prometheus
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-prometheus \
+			${PYTHON_PKGNAMEPREFIX}dj32-django-prometheus
 
 NO_ARCH=		yes
 
