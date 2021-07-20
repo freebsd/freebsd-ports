@@ -1,8 +1,7 @@
 # Created by: Thorsten Greiner <thorsten.greiner@web.de>
 
 PORTNAME=	xfce4-notes-plugin
-PORTVERSION=	1.8.1
-PORTREVISION=	2
+PORTVERSION=	1.9.0
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -12,15 +11,13 @@ COMMENT=	Notes plugin for the Xfce panel
 
 LICENSE=	GPLv2
 
-BROKEN=		Depends on removed XFCE GTK2 support
-
 LIB_DEPENDS=	libunique-1.0.so:x11-toolkits/unique \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
-		tar:bzip2 xfce:gtk2 xorg
-USE_GNOME=	cairo glib20 gtk20 intltool
+		tar:bzip2 xfce xorg
+USE_GNOME=	cairo glib20 gtk30 intltool
 USE_XFCE=	panel
 USE_XORG=	ice sm x11
 
