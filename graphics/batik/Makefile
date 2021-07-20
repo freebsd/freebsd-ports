@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	batik
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	graphics java
 MASTER_SITES=	APACHE/xmlgraphics/${PORTNAME}/binaries
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
