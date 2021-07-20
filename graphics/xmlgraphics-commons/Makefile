@@ -1,7 +1,7 @@
 # Created by: rfarmer@predatorlabs.net
 
 PORTNAME=	xmlgraphics-commons
-PORTVERSION=	2.4
+PORTVERSION=	2.6
 DISTVERSIONSUFFIX=	-bin
 CATEGORIES=	graphics textproc java
 MASTER_SITES=	APACHE/xmlgraphics/commons/binaries
