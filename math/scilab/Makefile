@@ -1,8 +1,7 @@
 # Created by: js@jeannot.org
 
 PORTNAME=	scilab
-PORTVERSION=	6.1.0
-PORTREVISION=	5
+PORTVERSION=	6.1.1
 CATEGORIES=	math cad java
 MASTER_SITES=	https://www.scilab.org/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -22,7 +21,8 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libarpack.so:math/arpack-ng \
 		libfftw3.so:math/fftw3 \
 		libmatio.so:math/matio \
-		libamd.so:math/suitesparse-amd
+		libamd.so:math/suitesparse-amd \
+		libumfpack.so:math/suitesparse-umfpack
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		compiler:c++17-lang cpe desktop-file-utils eigen:3,build \
