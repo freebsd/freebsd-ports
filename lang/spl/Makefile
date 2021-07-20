@@ -2,25 +2,22 @@
 
 PORTNAME=	spl
 PORTVERSION=	1.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@fuz.su
 COMMENT=	Shakespeare programming language
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: cast
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: cast
-
 USES=		bison gmake
+
+OPTIONS_DEFINE=	EXAMPLES
 
 ALL_EXAMPLES=	Makefile fibonacci.spl fibonacci2.spl guess.spl hello.spl \
 		primes.spl reverse.spl shakesbeer.spl
-
-OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
 .for f in . examples
