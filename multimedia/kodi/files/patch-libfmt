@@ -1,0 +1,13 @@
+--- xbmc/utils/StringUtils.h.orig	2021-05-08 16:20:52 UTC
++++ xbmc/utils/StringUtils.h
+@@ -37,6 +37,10 @@
+ #include <fmt/printf.h>
+ #endif
+ 
++#if FMT_VERSION >= 80000
++#include <fmt/xchar.h>
++#endif
++
+ #include "XBDateTime.h"
+ #include "utils/params_check_macros.h"
+ 
