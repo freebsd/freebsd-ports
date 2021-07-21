@@ -1,5 +1,6 @@
 PORTNAME=	elf-dissector
 DISTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	devel kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -21,7 +22,7 @@ USE_QT=		core \
 USE_KDE=	itemmodels \
 		doctools_build ecm_build
 
-KDE_INVENT=	92497fd2b887ff9ba1484450788db3910440213e sdk
+KDE_INVENT=	942274185cc89fabf74f5f1efb886ecf210ab2fb sdk
 
 .include <bsd.port.mk>
 
