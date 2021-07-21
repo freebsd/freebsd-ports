@@ -1,5 +1,5 @@
 PORTNAME=	representable
-PORTVERSION=	3.0.4
+PORTVERSION=	3.1.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -9,12 +9,13 @@ COMMENT=	Maps Ruby objects to documents and back
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-declarative<=0.1.0:devel/rubygem-declarative \
-		rubygem-declarative-option<=0.2.0:devel/rubygem-declarative-option \
-		rubygem-uber<=0.2.0:devel/rubygem-uber
+RUN_DEPENDS=	rubygem-declarative>=0<0.1.0:devel/rubygem-declarative \
+		rubygem-trailblazer-option>=0.1.1<0.2.0:devel/rubygem-trailblazer-option \
+		rubygem-uber>=0<0.2.0:devel/rubygem-uber
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
