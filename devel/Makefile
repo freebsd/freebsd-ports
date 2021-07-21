@@ -6729,6 +6729,7 @@
     SUBDIR += rubygem-to_regexp
     SUBDIR += rubygem-tool
     SUBDIR += rubygem-tracer
+    SUBDIR += rubygem-trailblazer-option
     SUBDIR += rubygem-transaction-simple
     SUBDIR += rubygem-travis
     SUBDIR += rubygem-treetop
