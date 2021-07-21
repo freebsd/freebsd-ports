@@ -1,7 +1,7 @@
 # Created by: Michael Moll <kvedulv at kvedulv.de>
 
 PORTNAME=	yell
-PORTVERSION=	2.0.7
+PORTVERSION=	2.2.2
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -11,8 +11,9 @@ COMMENT=	Extensible logging library for Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
