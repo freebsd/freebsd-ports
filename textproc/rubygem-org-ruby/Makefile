@@ -10,12 +10,12 @@ COMMENT=	Org mode parser written in Ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rubypants>=0.2.0:textproc/rubygem-rubypants
+RUN_DEPENDS=	rubygem-rubypants>=0.2<1:textproc/rubygem-rubypants
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-
-USE_RUBY=	yes
-USES=		gem
 
 PLIST_FILES=	bin/org-ruby
 
