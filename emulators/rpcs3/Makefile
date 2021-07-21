@@ -56,9 +56,8 @@ EVDEV_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 EVDEV_LIB_DEPENDS=	libevdev.so:devel/libevdev
 
 FAUDIO_DESC=		FAudio audio support
-FAUDIO_USES=		sdl
-FAUDIO_USE=		SDL=sdl2
-FAUDIO_CMAKE_BOOL=	USE_FAUDIO
+FAUDIO_LIB_DEPENDS=	libFAudio.so:audio/faudio
+FAUDIO_CMAKE_BOOL=	USE_FAUDIO USE_SYSTEM_FAUDIO
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
