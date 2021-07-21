@@ -2091,7 +2091,6 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/build_bug.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/byteorder/generic.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/component.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/cpu.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/cpufreq.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/cpuidle.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/ctype.h
@@ -2106,6 +2105,7 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/input.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/intel-iommu.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/io-64-nonatomic-lo-hi.h
+%%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/kconfig.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/kfifo.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/kgdb.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/list_sort.h
@@ -2133,7 +2133,6 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/stacktrace.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/stat.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/stddef.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/stringify.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/swiotlb.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/sysrq.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/tracepoint.h
@@ -2163,6 +2162,7 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/circ_buf.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/compiler.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/console.h
+%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/cpu.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/device.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/dma-buf.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/dma-fence-array.h
@@ -2171,7 +2171,6 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/dma-mapping.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/dma-resv.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/fb.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/firmware.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/fwnode.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/genalloc.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/gpio/consumer.h
@@ -2190,9 +2189,7 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/irqdomain.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/irqflags.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/irqhandler.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/kconfig.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/kernel.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/kobject.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/mm.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/mmu_context.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/mmu_notifier.h
@@ -2225,6 +2222,7 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/sort.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/stackdepot.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/stop_machine.h
+%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/stringify.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/suspend.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/swap.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/sync_file.h
@@ -2247,8 +2245,6 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_anon_inodefs.c
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_anon_inodes.c
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_compat.c
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_device.c
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_firmware.c
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_genalloc.c
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_i2c.c
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_interval_tree.c
