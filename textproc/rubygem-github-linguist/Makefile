@@ -1,5 +1,5 @@
 PORTNAME=	github-linguist
-PORTVERSION=	7.12.2
+PORTVERSION=	7.15.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-charlock_holmes>=0.7.7<0.8:textproc/rubygem-charlock_holmes \
 		rubygem-escape_utils>=1.2.0<1.3:textproc/rubygem-escape_utils \
-		rubygem-mini_mime>=1.0<2.0:mail/rubygem-mini_mime \
+		rubygem-mini_mime>=1.0<2:mail/rubygem-mini_mime \
 		rubygem-rugged>=0.25.1:devel/rubygem-rugged
 
 USES=		gem
