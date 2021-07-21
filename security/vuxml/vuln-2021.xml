@@ -1,3 +1,115 @@
+  <vuln vid="76487640-ea29-11eb-a686-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>92.0.4515.107</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/07/stable-channel-update-for-desktop_20.html">
+	  <p>This release contains 35 security fixes, including:</p>
+	  <ul>
+	    <li>][1210985] High CVE-2021-30565: Out of bounds write in Tab
+	      Groups. Reported by David Erceg on 2021-05-19</li>
+	    <li>[1202661] High CVE-2021-30566: Stack buffer overflow in
+	      Printing. Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2021-04-26</li>
+	    <li>[1211326] High CVE-2021-30567: Use after free in DevTools.
+	      Reported by DDV_UA on 2021-05-20</li>
+	    <li>[1219886] High CVE-2021-30568: Heap buffer overflow in WebGL.
+	      Reported by Yangkang (@dnpushme) of 360 ATA on 2021-06-15</li>
+	    <li>[1218707] High CVE-2021-30569: Use after free in sqlite.
+	      Reported by Chris Salls (@salls) of Makai Security on
+	      2021-06-11</li>
+	    <li>[1101897] High CVE-2021-30571: Insufficient policy enforcement
+	      in DevTools. Reported by David Erceg on 2020-07-03</li>
+	    <li>[1214234] High CVE-2021-30572: Use after free in Autofill.
+	      Reported by Weipeng Jiang (@Krace) from Codesafe Team of
+	      Legendsec at Qi'anxin Group on 2021-05-28</li>
+	    <li>[1216822] High CVE-2021-30573: Use after free in GPU. Reported
+	      by Security For Everyone Team - https://securityforeveryone.com on
+	      2021-06-06</li>
+	    <li>[1227315] High CVE-2021-30574: Use after free in protocol
+	      handling. Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2021-07-08</li>
+	    <li>[1213313] Medium CVE-2021-30575: Out of bounds read in Autofill.
+	      Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2021-05-26</li>
+	    <li>[1194896] Medium CVE-2021-30576: Use after free in DevTools.
+	      Reported by David Erceg on 2021-04-01</li>
+	    <li>[1204811] Medium CVE-2021-30577: Insufficient policy enforcement
+	      in Installer. Reported by Jan van der Put (REQON B.V) on
+	      2021-05-01</li>
+	    <li>[1201074] Medium CVE-2021-30578: Uninitialized Use in Media.
+	      Reported by Chaoyuan Peng  on 2021-04-21</li>
+	    <li>[1207277] Medium CVE-2021-30579: Use after free in UI framework.
+	      Reported by Weipeng Jiang (@Krace) from Codesafe Team of
+	      Legendsec at Qi'anxin Group on 2021-05-10</li>
+	    <li>[1189092] Medium CVE-2021-30580: Insufficient policy enforcement
+	      in Android intents. Reported by @retsew0x01 on 2021-03-17</li>
+	    <li>[1194431] Medium CVE-2021-30581: Use after free in DevTools.
+	      Reported by David Erceg on 2021-03-31</li>
+	    <li>[1205981] Medium CVE-2021-30582: Inappropriate implementation in
+	      Animation. Reported by George Liu  on 2021-05-05</li>
+	    <li>[1179290] Medium CVE-2021-30583: Insufficient policy enforcement
+	      in image handling on Windows. Reported by Muneaki Nishimura
+	      (nishimunea) on 2021-02-17</li>
+	    <li>[1213350] Medium CVE-2021-30584: Incorrect security UI in
+	      Downloads. Reported by @retsew0x01 on 2021-05-26</li>
+	    <li>[1023503] Medium CVE-2021-30585: Use after free in sensor
+	      handling. Reported by niarci on 2019-11-11</li>
+	    <li>[1201032] Medium CVE-2021-30586: Use after free in dialog box
+	      handling on Windows. Reported by kkomdal with kkwon and neodal on
+	      2021-04-21</li>
+	    <li>[1204347] Medium CVE-2021-30587: Inappropriate implementation in
+	      Compositing on Windows. Reported by Abdulrahman Alqabandi,
+	      Microsoft Browser Vulnerability Research on 2021-04-30</li>
+	    <li>[1195650] Low CVE-2021-30588: Type Confusion in V8. Reported by
+	      Jose Martinez (tr0y4) from VerSprite Inc. on 2021-04-04</li>
+	    <li>[1180510] Low CVE-2021-30589: Insufficient validation of
+	      untrusted input in Sharing. Reported by Kirtikumar Anandrao
+	      Ramchandani (@Kirtikumar_A_R) and Patrick Walker (@homesen) on
+	      2021-02-20</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-30565</cvename>
+      <cvename>CVE-2021-30566</cvename>
+      <cvename>CVE-2021-30567</cvename>
+      <cvename>CVE-2021-30568</cvename>
+      <cvename>CVE-2021-30569</cvename>
+      <cvename>CVE-2021-30571</cvename>
+      <cvename>CVE-2021-30572</cvename>
+      <cvename>CVE-2021-30573</cvename>
+      <cvename>CVE-2021-30574</cvename>
+      <cvename>CVE-2021-30575</cvename>
+      <cvename>CVE-2021-30576</cvename>
+      <cvename>CVE-2021-30577</cvename>
+      <cvename>CVE-2021-30578</cvename>
+      <cvename>CVE-2021-30579</cvename>
+      <cvename>CVE-2021-30580</cvename>
+      <cvename>CVE-2021-30581</cvename>
+      <cvename>CVE-2021-30582</cvename>
+      <cvename>CVE-2021-30583</cvename>
+      <cvename>CVE-2021-30584</cvename>
+      <cvename>CVE-2021-30585</cvename>
+      <cvename>CVE-2021-30586</cvename>
+      <cvename>CVE-2021-30587</cvename>
+      <cvename>CVE-2021-30588</cvename>
+      <cvename>CVE-2021-30589</cvename>
+      <url>https://chromereleases.googleblog.com/2021/07/stable-channel-update-for-desktop_20.html</url>
+    </references>
+    <dates>
+      <discovery>2021-07-20</discovery>
+      <entry>2021-07-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aa646c01-ea0d-11eb-9b84-d4c9ef517024">
     <topic>cURL -- Multiple vulnerabilities</topic>
     <affects>
