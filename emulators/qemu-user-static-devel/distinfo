@@ -1,5 +1,5 @@
-TIMESTAMP = 1620780258
-SHA256 (qemu/3.1.0/qemu-bsd-user-qemu-bsd-user-3.1.0-6ffee39fe2e49944_GH0.tar.gz) = 82231d6e7a0fbf44861e51a3fd472ca316c704c287aa5f85ed4366e7701fa0bf
-SIZE (qemu/3.1.0/qemu-bsd-user-qemu-bsd-user-3.1.0-6ffee39fe2e49944_GH0.tar.gz) = 16909652
-SHA256 (qemu/3.1.0/qemu-keycodemapdb-10739aa_GH0.tar.gz) = ae43fb1e2b07b78be88a7882306b6e71383eb77472a35d7d78fed21e345d134a
-SIZE (qemu/3.1.0/qemu-keycodemapdb-10739aa_GH0.tar.gz) = 47895
+TIMESTAMP = 1628093294
+SHA256 (qemu/6.0.91/qemu-bsd-user-qemu-bsd-user-6.0.91-38bb64abdce3606c823ea8f9d1c7e7176fdf20c9_GH0.tar.gz) = b304996608addf6823c12ad5c9acae310b39d0c9208353eec6b67bc381555355
+SIZE (qemu/6.0.91/qemu-bsd-user-qemu-bsd-user-6.0.91-38bb64abdce3606c823ea8f9d1c7e7176fdf20c9_GH0.tar.gz) = 31372925
+SHA256 (qemu/6.0.91/qemu-keycodemapdb-10739aa_GH0.tar.gz) = ae43fb1e2b07b78be88a7882306b6e71383eb77472a35d7d78fed21e345d134a
+SIZE (qemu/6.0.91/qemu-keycodemapdb-10739aa_GH0.tar.gz) = 47895

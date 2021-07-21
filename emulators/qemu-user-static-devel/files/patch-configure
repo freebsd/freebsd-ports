@@ -1,0 +1,22 @@
+--- configure.orig	2021-05-11 21:34:33 UTC
++++ configure
+@@ -1964,19 +1964,6 @@ if test -z "$meson"; then
+             error_exit "Meson not found.  Use --meson=/path/to/meson"
+         fi
+     fi
+-else
+-    # Meson uses its own Python interpreter to invoke other Python scripts,
+-    # but the user wants to use the one they specified with --python.
+-    #
+-    # We do not want to override the distro Python interpreter (and sometimes
+-    # cannot: for example in Homebrew /usr/bin/meson is a bash script), so
+-    # just require --meson=git|internal together with --python.
+-    if test "$explicit_python" = yes; then
+-        case "$meson" in
+-            git | internal) ;;
+-            *) error_exit "--python requires using QEMU's embedded Meson distribution." ;;
+-        esac
+-    fi
+ fi
+ 
+ if test "$meson" = git; then
