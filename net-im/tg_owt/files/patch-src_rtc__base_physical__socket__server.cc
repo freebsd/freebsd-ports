@@ -1,7 +1,7 @@
---- src/rtc_base/physical_socket_server.cc.orig	2021-02-03 11:42:41 UTC
+--- src/rtc_base/physical_socket_server.cc.orig	2021-06-27 05:27:48 UTC
 +++ src/rtc_base/physical_socket_server.cc
-@@ -50,6 +50,8 @@
- #include "rtc_base/null_socket_server.h"
+@@ -51,6 +51,8 @@
+ #include "rtc_base/synchronization/mutex.h"
  #include "rtc_base/time_utils.h"
  
 +#undef WEBRTC_LINUX
@@ -9,7 +9,7 @@
  #if defined(WEBRTC_LINUX)
  #include <linux/sockios.h>
  #endif
-@@ -69,7 +71,7 @@ typedef void* SockOptArg;
+@@ -70,7 +72,7 @@ typedef void* SockOptArg;
  
  #endif  // WEBRTC_POSIX
  
@@ -18,7 +18,7 @@
  
  int64_t GetSocketRecvTimestamp(int socket) {
    struct timeval tv_ioctl;
-@@ -571,7 +573,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -564,7 +566,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *slevel = IPPROTO_IP;
        *sopt = IP_DONTFRAGMENT;
        break;
