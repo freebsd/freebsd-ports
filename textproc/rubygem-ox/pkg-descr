@@ -6,4 +6,4 @@ which is designed to be a speed-optimized alternative to Nokogiri and Marshal.
 * Ox serializes Objects into human readable XML in contrast to Marshal
 * Ox also supports SAX parsing. 
 
-WWW: http://ohler.com/ox/
+WWW: https://ohler.com/ox/
