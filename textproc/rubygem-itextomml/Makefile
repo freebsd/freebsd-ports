@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
 
 PORTNAME=	itextomml
-PORTVERSION=	1.5.8
+PORTVERSION=	1.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
