@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	nokogumbo
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.5
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
