@@ -1,15 +1,19 @@
 PORTNAME=	tidy_ffi
-PORTVERSION=	0.1.6
+PORTVERSION=	1.0.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tidy library interface via FFI
 
-RUN_DEPENDS=	rubygem-ffi>=0:devel/rubygem-ffi
-LIB_DEPENDS=	libtidy.so:www/tidy-lib
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	rubygem-ffi>=1.2<2:devel/rubygem-ffi
 
 USES=		gem
 USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
