@@ -29,12 +29,12 @@ WRKSRC=		${WRKDIR}
 
 dir_DTD=	share/xml/dtd/vuxml
 
+.include <bsd.port.pre.mk>
+
 VUXML_FILE?=	${PKGDIR}/vuln.xml
 VUXML_FLAT_FILE?=	${PKGDIR}/vuln-flat.xml
 _YEAR!=	date +%Y
 VUXML_CURRENT_FILE?=	${PKGDIR}/vuln-${_YEAR}.xml
-
-.include <bsd.port.pre.mk>
 
 post-clean:
 	@${RM} "${VUXML_FILE}.tidy"
