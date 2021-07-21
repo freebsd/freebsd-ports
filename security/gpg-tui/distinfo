@@ -1,4 +1,4 @@
-TIMESTAMP = 1626632321
+TIMESTAMP = 1626863854
 SHA256 (rust/crates/ansi_term-0.11.0.crate) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
 SIZE (rust/crates/ansi_term-0.11.0.crate) = 17087
 SHA256 (rust/crates/ansi_term-0.12.1.crate) = d52a9bb7ec0cf484c551830a7ce27bd20d67eac647e1befb56b0be4ee39a55d2
@@ -249,5 +249,5 @@ SHA256 (rust/crates/xcursor-0.3.3.crate) = 3a9a231574ae78801646617cefd13bfe94be9
 SIZE (rust/crates/xcursor-0.3.3.crate) = 6130
 SHA256 (rust/crates/xml-rs-0.8.3.crate) = b07db065a5cf61a7e4ba64f29e67db906fb1787316516c4e6e5ff0fea1efcd8a
 SIZE (rust/crates/xml-rs-0.8.3.crate) = 52547
-SHA256 (orhun-gpg-tui-v0.7.1_GH0.tar.gz) = acb13a51e5c3eaa1a26864a578f3398e09cb73c04bf545ab8542809e2aba21cd
-SIZE (orhun-gpg-tui-v0.7.1_GH0.tar.gz) = 11621922
+SHA256 (orhun-gpg-tui-v0.7.2_GH0.tar.gz) = 5df6636ddc18072c4747ad54814edb9e2535730e0bd068cbaef82c7f473ce929
+SIZE (orhun-gpg-tui-v0.7.2_GH0.tar.gz) = 11622157
