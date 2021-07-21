@@ -1,7 +1,7 @@
 # Created by: Johannes Meixner <johannes@perceivon.net>
 
 PORTNAME=	pkgconfig
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
