@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	http-cookie
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,11 +10,11 @@ COMMENT=	Ruby library to handle HTTP Cookies
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-domain_name>=0.5.1:net/rubygem-domain_name
+RUN_DEPENDS=	rubygem-domain_name>=0.5<1:net/rubygem-domain_name
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
