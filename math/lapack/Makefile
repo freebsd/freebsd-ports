@@ -81,7 +81,7 @@ PLIST_SUB+=		BLAS="@comment " CBLAS="@comment " LAPACK="" XLAPACK="@comment " LA
 
 .include <bsd.port.pre.mk>
 
-pre-configure:
+post-patch:
 	${SED} -Ee '\
 		s@^(FORTRAN|LOADER)([[:blank:]]*=)(.*)@\1\2 $${FC}@; \
 		s@^(OPTS[[:blank:]]*=)(.*)@\1 $${FFLAGS} $${EXTRAFLAGS}@; \
@@ -94,6 +94,8 @@ pre-configure:
 		s@^(LDFLAGS[[:blank:]]*=)(.*)@@; \
 		\@(BLAS|LAPACKE|RAN)LIB[[:blank:]]*=@d;' \
 			${WRKSRC}/make.inc.example > ${WRKSRC}/make.inc
+
+pre-configure:
 	${REINPLACE_CMD} -e 's@\./lapack_testing\.py@${S} &@' \
 		${WRKSRC}/Makefile
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS}	\
