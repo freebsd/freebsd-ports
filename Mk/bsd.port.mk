@@ -2648,6 +2648,9 @@ PKGBASE?=			${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_SUFX}
 .if ${WITH_PKG} == devel
 PKGOLDLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_OLDSUFX}
+# Temporary workaround to be deleted once every supported version of FreeBSD
+# have a bootstrap which handles the pkg extension.
+PKGOLDSIGFILE=			${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_OLDSUFX}.sig
 .endif
 
 CONFIGURE_SCRIPT?=	configure
@@ -3447,10 +3450,16 @@ ${PKGLATESTFILE}: ${PKGFILE} ${PKGLATESTREPOSITORY}
 	${INSTALL} -l rs ${PKGFILE} ${PKGLATESTFILE}
 
 .if ${WITH_PKG} == devel
-_EXTRA_PACKAGE_TARGET_DEP+=	${PKGOLDLATESTFILE}
+_EXTRA_PACKAGE_TARGET_DEP+=	${PKGOLDLATESTFILE} ${PKGOLDSIGFILE}
 
 ${PKGOLDLATESTFILE}: ${PKGOLDFILE} ${PKGLATESTREPOSITORY}
 	${INSTALL} -l rs ${PKGOLDFILE} ${PKGOLDLATESTFILE}
+
+# Temporary workaround to be deleted once every supported version of FreeBSD
+# have a bootstrap which handles the pkg extension.
+
+${PKGOLDSIGFILE}: ${PKGLATESTREPOSITORY}
+	${INSTALL} -l rs pkg.pkg.sig ${PKGOLDSIGFILE}
 .endif
 .  endif
 
