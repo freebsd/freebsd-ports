@@ -1,3 +1,37 @@
+  <vuln vid="aa646c01-ea0d-11eb-9b84-d4c9ef517024">
+    <topic>cURL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>7.78.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The cURL project reports:</p>
+	<blockquote cite="https://curl.se/docs/vuln-7.77.0.html">
+	  <p>CURLOPT_SSLCERT mixup with Secure Transport (CVE-2021-22926)</p>
+	  <p>TELNET stack contents disclosure again (CVE-2021-22925)</p>
+	  <p>Bad connection reuse due to flawed path name checks (CVE-2021-92254)</p>
+	  <p>Metalink download sends credentials (CVE-2021-92253)</p>
+	  <p>Wrong content via metalink not discarded (CVE-2021-92252)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-22922</cvename>
+      <cvename>CVE-2021-22923</cvename>
+      <cvename>CVE-2021-22924</cvename>
+      <cvename>CVE-2021-22925</cvename>
+      <cvename>CVE-2021-22926</cvename>
+      <url>https://curl.se/docs/vuln-7.77.0.html</url>
+    </references>
+    <dates>
+      <discovery>2021-07-21</discovery>
+      <entry>2021-07-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="38a4a043-e937-11eb-9b84-d4c9ef517024">
     <topic>MySQL -- Multiple vulnerabilities</topic>
     <affects>
