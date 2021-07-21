@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-cloud-bigtable
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,8 @@ COMMENT=	Google Cloud Bigtable API client library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.26.0<2.0.0:www/py-google-api-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}google-cloud-core>=1.4.1<2.0:www/py-google-cloud-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.26.0<3.0.0:www/py-google-api-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}google-cloud-core>=1.4.1<3.0.0:www/py-google-cloud-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}grpc-google-iam-v1>=0.12.3<0.13:devel/py-grpc-google-iam-v1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libcst>=0.2.5:devel/py-libcst@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=14.3:devel/py-packaging@${PY_FLAVOR} \
