@@ -1,7 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 
 PORTNAME=	cuba
-PORTVERSION=	3.9.2
+PORTVERSION=	3.9.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-rack>=1.6.0:www/rubygem-rack
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
