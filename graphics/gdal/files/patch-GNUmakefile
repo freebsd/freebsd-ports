@@ -9,8 +9,8 @@
  	$(LIBTOOL_FINISH) $(DESTDIR)$(INST_LIB)
 -	$(INSTALL_DIR) $(DESTDIR)$(INST_LIB)/pkgconfig
 -	$(INSTALL_DATA) gdal.pc $(DESTDIR)$(INST_LIB)/pkgconfig/gdal.pc
-+	$(INSTALL_DIR) $(DESTDIR)/usr/local/libdata/pkgconfig
-+	$(INSTALL_DATA) gdal.pc $(DESTDIR)/usr/local/libdata/pkgconfig/gdal.pc
++	$(INSTALL_DIR) $(DESTDIR)$(INST_PREFIX)/libdata/pkgconfig
++	$(INSTALL_DATA) gdal.pc $(DESTDIR)$(INST_PREFIX)/libdata/pkgconfig/gdal.pc
  
  install-actions: install-lib
  	$(INSTALL_DIR) $(DESTDIR)$(INST_BIN)
@@ -23,8 +23,8 @@
  	$(LIBTOOL_FINISH) $(DESTDIR)$(INST_LIB)
 -	$(INSTALL_DIR) $(DESTDIR)$(INST_LIB)/pkgconfig
 -	$(INSTALL_DATA) gdal.pc $(DESTDIR)$(INST_LIB)/pkgconfig/gdal.pc
-+	$(INSTALL_DIR) $(DESTDIR)/usr/local/libdata/pkgconfig
-+	$(INSTALL_DATA) gdal.pc $(DESTDIR)/usr/local/libdata/pkgconfig/gdal.pc
++	$(INSTALL_DIR) $(DESTDIR)$(INST_PREFIX)/libdata/pkgconfig
++	$(INSTALL_DATA) gdal.pc $(DESTDIR)$(INST_PREFIX)/libdata/pkgconfig/gdal.pc
  
  ifeq ($(HAVE_LIBTOOL),yes)
  
