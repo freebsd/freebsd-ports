@@ -1,9 +1,8 @@
 PORTNAME=	xsd
-PORTVERSION=	4.0.0
+DISTVERSION=	4.1.0.a11
 DISTVERSIONSUFFIX=	+dep
-PORTREVISION=	4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.codesynthesis.com/download/${PORTNAME}/${PORTVERSION:R}/
+MASTER_SITES=	https://codesynthesis.com/~boris/tmp/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	W3C XML Schema to C++ translator
@@ -21,17 +20,16 @@ BUILD_DEPENDS=	${LOCALBASE}/include/build-0.3/abspath.make:devel/build
 LIB_DEPENDS=	libcutl.so:devel/libcutl \
 		libxerces-c.so:textproc/xerces-c3
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+USES=		compiler:c++11-lang ghostscript:build gmake localbase:ldflags tar:bzip2
 
-ALL_TARGET=	# no default target should be passed to gmake.
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 MAKEFILE=	makefile
 MAKE_ARGS=	EXTERNAL_LIBCUTL=y \
 		install_prefix=${STAGEDIR}${PREFIX} \
 		install_man_dir=${STAGEDIR}${MANPREFIX}/man \
 		verbose=1
-USES=		compiler:c++11-lang gmake tar:bzip2
+ALL_TARGET=	# no default target should be passed to gmake.
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 # Use devel/build instead of the port's bundled copy.

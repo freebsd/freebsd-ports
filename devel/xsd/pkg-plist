@@ -415,6 +415,13 @@ man/man1/xsdcxx.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/polymorphism/makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/polymorphism/supermen.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/polymorphism/supermen.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/secure/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/secure/driver.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/secure/library.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/secure/library.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/secure/makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/secure/secure-dom-parser.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/secure/secure-dom-parser.hxx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/streaming/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/streaming/driver.cxx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/tree/streaming/grammar-input-stream.cxx

@@ -1,19 +1,17 @@
 Rename the xsd binary to xsdcxx, as lang/mono already installs an executable
 called `xsd'.
---- xsd/doc/xsd.1.orig	2014-07-21 06:38:41 UTC
+--- xsd/doc/xsd.1.orig	2017-09-24 00:18:08 UTC
 +++ xsd/doc/xsd.1
-@@ -1,16 +1,16 @@
+@@ -1,7 +1,7 @@
  .\" Process this file with
  .\" groff -man -Tascii xsd.1
  .\"
--.TH XSD 1 "July 2014" "XSD 4.0.0"
-+.TH XSDCXX 1 "July 2014" "XSDCXX 4.0.0"
+-.TH XSD 1 "July 2014" "XSD 4.1.0"
++.TH XSDCXX 1 "July 2014" "XSDCXX 4.1.0"
  .SH NAME
--xsd \- W3C XML Schema to C++ Compiler
-+xsdcxx \- W3C XML Schema to C++ Compiler
+ xsd \- W3C XML Schema to C++ Compiler
  .\"
- .\"
- .\"
+@@ -10,7 +10,7 @@ xsd \- W3C XML Schema to C++ Compiler
  .\"--------------------------------------------------------------------
  .SH SYNOPSIS
  .\"--------------------------------------------------------------------
@@ -54,20 +52,7 @@ called `xsd'.
  .I command
  .RE
  .PP
-@@ -133,9 +133,9 @@ semantics and uses \fBstd::unique_ptr\fP
- 
- When the C++11 mode is selected, you normally don't need to perform any
- extra steps other than enable C++11 in your C++ compiler, if required\. The
--XSD compiler will automatically add the necessary macro defines to the
--generated header files that will switch the header-only XSD runtime library
--(\fBlibxsd\fP) to the C++11 mode\. However, if you include any of the XSD
-+XSDCXX compiler will automatically add the necessary macro defines to the
-+generated header files that will switch the header-only XSDCXX runtime library
-+(\fBlibxsd\fP) to the C++11 mode\. However, if you include any of the XSDCXX
- runtime headers directly in your application (normally you just include the
- generated headers), then you will need to define the \fBXSD_CXX11\fP macro
- for your entire project\.
-@@ -1632,7 +1632,7 @@ option. With this approach you don't nee
+@@ -1461,7 +1461,7 @@ option. With this approach you don't need to worry abo
  .\"
  .SH DIAGNOSTICS
  If the input file is not a valid W3C XML Schema definition,
