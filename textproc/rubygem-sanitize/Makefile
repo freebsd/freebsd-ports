@@ -1,7 +1,7 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
 
 PORTNAME=	sanitize
-PORTVERSION=	5.2.1
+PORTVERSION=	5.2.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
