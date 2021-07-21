@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	ethon
-PORTVERSION=	0.11.0
+PORTVERSION=	0.14.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,10 +12,11 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
-RUN_DEPENDS=	rubygem-ffi>=1.3.0:devel/rubygem-ffi
+RUN_DEPENDS=	rubygem-ffi>=1.15.0:devel/rubygem-ffi
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
