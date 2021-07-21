@@ -32,6 +32,7 @@ CHARLS_DESC=	JPEG-Lossless support via charls
 CRYPTOPP_DESC=	Cryptopp support
 DODS_DESC=	DODS/OPeNDAP support
 EXR_DESC=	EXR support via OpenEXR library
+HEIF_DESC=	HEIF support via libheif library
 PCRE_DESC=	Regular expression support for SQLite
 TILEDB_DESC=	TileDB support
 
@@ -117,6 +118,8 @@ GTA_CONFIGURE_WITH=	gta
 GTA_LIB_DEPENDS=	libgta.so:devel/libgta
 HDF5_CONFIGURE_WITH=	hdf5
 HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5
+HEIF_CONFIGURE_WITH=	heif
+HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
 JASPER_CONFIGURE_WITH=	jasper
 JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
 KML_CONFIGURE_WITH=	libkml
