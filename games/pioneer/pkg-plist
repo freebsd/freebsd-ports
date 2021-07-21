@@ -12,6 +12,6 @@ share/icons/hicolor/32x32/apps/net.pioneerspacesim.Pioneer.png
 share/icons/hicolor/40x40/apps/net.pioneerspacesim.Pioneer.png
 share/icons/hicolor/48x48/apps/net.pioneerspacesim.Pioneer.png
 share/icons/hicolor/64x64/apps/net.pioneerspacesim.Pioneer.png
-@dir %%DATADIR%%/data/music/core/docked
-@dir %%DATADIR%%/data/music/core/near-planet
 @dir %%DATADIR%%/data/music/core/undocked
+@dir %%DATADIR%%/data/music/core/near-planet
+@dir %%DATADIR%%/data/music/core/docked
