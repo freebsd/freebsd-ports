@@ -65,7 +65,7 @@ export JAVA_VERSION=11
 pidfile=/var/run/${name}/${name}.pid
 
 command=/usr/sbin/daemon
-command_args="-p ${pidfile} -t openhab ${OPENHAB_HOME}/start.sh server"
+command_args="-p ${pidfile} -c -t openhab ${OPENHAB_HOME}/start.sh server"
 
 openhab_stop() {
 	${OPENHAB_RUNTIME}/bin/stop
