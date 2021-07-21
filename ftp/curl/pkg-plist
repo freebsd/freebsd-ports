@@ -10,7 +10,7 @@ include/curl/stdcheaders.h
 include/curl/system.h
 include/curl/typecheck-gcc.h
 include/curl/urlapi.h
-lib/libcurl.a
+%%STATIC%%lib/libcurl.a
 lib/libcurl.so
 lib/libcurl.so.4
 lib/libcurl.so.4.7.0
