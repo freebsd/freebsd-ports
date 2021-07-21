@@ -1,8 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	cucumber-wire
-PORTVERSION=	5.0.1
-PORTREVISION=	1
+PORTVERSION=	6.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +10,9 @@ COMMENT=	Wire protocol plugin for Cucumber
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-cucumber-core>=9.0.1<10:devel/rubygem-cucumber-core \
+RUN_DEPENDS=	rubygem-cucumber-core>=10.0.1<11:devel/rubygem-cucumber-core \
 		rubygem-cucumber-cucumber-expressions>=12.1.1<13:devel/rubygem-cucumber-cucumber-expressions \
-		rubygem-cucumber-messages15>=15.0.0<16:devel/rubygem-cucumber-messages15
+		rubygem-cucumber-messages>=17.0.1<18:devel/rubygem-cucumber-messages
 
 USES=		gem
 USE_RUBY=	yes
