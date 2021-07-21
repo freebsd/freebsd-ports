@@ -25,12 +25,16 @@ man/man3/idn2_to_unicode_8z4z.3.gz
 man/man3/idn2_to_unicode_8z8z.3.gz
 man/man3/idn2_to_unicode_8zlz.3.gz
 man/man3/idn2_to_unicode_lzlz.3.gz
+share/gtk-doc/html/libidn2/api-index-0.1.html
+share/gtk-doc/html/libidn2/api-index-2.0.0.html
+share/gtk-doc/html/libidn2/api-index-2.1.1.html
+share/gtk-doc/html/libidn2/api-index-deprecated.html
 share/gtk-doc/html/libidn2/api-index-full.html
 share/gtk-doc/html/libidn2/home.png
 share/gtk-doc/html/libidn2/index.html
 share/gtk-doc/html/libidn2/left-insensitive.png
 share/gtk-doc/html/libidn2/left.png
-share/gtk-doc/html/libidn2/libidn2-idn2.html
+share/gtk-doc/html/libidn2/libidn2-idn2.h.html
 share/gtk-doc/html/libidn2/libidn2.devhelp2
 share/gtk-doc/html/libidn2/libidn2.html
 share/gtk-doc/html/libidn2/right-insensitive.png
