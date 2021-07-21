@@ -596,7 +596,7 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-double.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-event.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-formadd.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-poll.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-legacy.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-post.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-single.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-uv.c
