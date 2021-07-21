@@ -1,5 +1,3 @@
-# Created by: Tobias C. Berner <tcberner@gmail.com>
-
 PORTNAME=	libaccounts-glib
 DISTVERSION=	1.25
 CATEGORIES=	net-im

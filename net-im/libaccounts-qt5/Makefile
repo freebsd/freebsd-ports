@@ -1,5 +1,3 @@
-# Created by: Tobias C. Berner <tcberner@gmail.com>
-
 PORTNAME=	libaccounts-qt5
 DISTVERSION=	1.16
 PORTREVISION=	2

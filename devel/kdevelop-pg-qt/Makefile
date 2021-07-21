@@ -1,5 +1,3 @@
-# Created by: Tobias C. Berner <tcberner@gmail.com>
-
 PORTNAME=	kdevelop-pg-qt
 DISTVERSION=	2.2.1
 CATEGORIES=	devel kde

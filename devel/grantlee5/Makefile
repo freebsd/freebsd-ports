@@ -1,5 +1,3 @@
-# Created by: Tobias C. Berner <tcberner@gmail.com>
-
 PORTNAME=	grantlee
 DISTVERSION=	${GRANTLEE_VERSION}
 PORTREVISION=	1

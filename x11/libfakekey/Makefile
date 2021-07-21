@@ -1,5 +1,3 @@
-# Created by: Tobias Berner <tcberner@gmail.com>
-
 PORTNAME=	libfakekey
 PORTVERSION=	0.1
 CATEGORIES=	x11 kde
