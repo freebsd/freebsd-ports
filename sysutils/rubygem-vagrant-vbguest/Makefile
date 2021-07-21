@@ -1,5 +1,5 @@
 PORTNAME=	vagrant-vbguest
-PORTVERSION=	0.26.0
+PORTVERSION=	0.30.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
