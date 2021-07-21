@@ -18,5 +18,4 @@ flexmock declarations are structured to read more like English sentences than
 API calls, and it is possible to chain them together in any order to achieve
 high degree of expressiveness in a single line of code.
 
-WWW: https://pypi.org/project/flexmock/
-WWW: https://github.com/bkabrda/flexmock
+WWW: https://github.com/flexmock/flexmock
