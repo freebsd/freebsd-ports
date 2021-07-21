@@ -1,8 +1,7 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	addressable
-PORTVERSION=	2.7.0
-PORTREVISION=	0
+PORTVERSION=	2.8.0
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 
