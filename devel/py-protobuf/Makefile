@@ -1,7 +1,7 @@
 # Created by: vanilla@
 
 PORTNAME=	protobuf
-PORTVERSION=	3.14.0
+PORTVERSION=	3.17.3
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
