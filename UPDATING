@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210721:
+  AFFECTS: users of x11/rxvt-unicode
+  AUTHOR: thierry@FreeBSD.org
+
+  Since 9.26, there is a regression in resource parsing, which no longer
+  accepts a prefix of the form "URxvt*keysym" ("*." is equivalent to "*").
+
+  Changing "*." to "." should make your bindings work again.
+
 20210704:
   AFFECTS: users of misc/qtchooser
   AUTHOR: kde@FreeBSD.org
