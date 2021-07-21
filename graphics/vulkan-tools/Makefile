@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.184
+DISTVERSION=	1.2.185
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +12,7 @@ BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 		vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
-USES=		cmake compiler:c++11-lib pkgconfig python:3.4+,build
+USES=		alias cmake compiler:c++11-lib pkgconfig python:3.4+,build
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-Tools
