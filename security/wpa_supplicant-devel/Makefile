@@ -1,6 +1,5 @@
 PORTNAME=	wpa_supplicant
 PORTVERSION=	${COMMIT_DATE}
-PORTREVISION=	1
 CATEGORIES=	security net
 PKGNAMESUFFIX=	-devel
 
@@ -10,8 +9,8 @@ COMMENT=	Supplicant (client) for WPA/802.1x protocols
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	hostap
-GH_TAGNAME=	311091eb4
-COMMIT_DATE=	2021.06.14
+GH_TAGNAME=	b4f7506ff
+COMMIT_DATE=	2021.07.14
 
 BROKEN_FreeBSD_11=	Does not support OpenSSL 1.0.2
 
