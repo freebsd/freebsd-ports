@@ -1,7 +1,7 @@
 # Created by: Johannes Meixner <johannes@perceivon.net>
 
 PORTNAME=	rubypants
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,9 @@ COMMENT=	Translates ASCII into smart typographic punctuation HTML entities
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
