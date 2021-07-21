@@ -1,7 +1,7 @@
 # Created by: Michael Schout <mschout@gkg.net>
 
 PORTNAME=	libxml-ruby
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
