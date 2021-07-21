@@ -1,3 +1,4 @@
+include/fmt/args.h
 include/fmt/chrono.h
 include/fmt/color.h
 include/fmt/compile.h
@@ -7,14 +8,14 @@ include/fmt/format.h
 include/fmt/locale.h
 include/fmt/os.h
 include/fmt/ostream.h
-include/fmt/posix.h
 include/fmt/printf.h
 include/fmt/ranges.h
+include/fmt/xchar.h
 lib/cmake/fmt/fmt-config-version.cmake
 lib/cmake/fmt/fmt-config.cmake
 lib/cmake/fmt/fmt-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/fmt/fmt-targets.cmake
 lib/libfmt.so
-lib/libfmt.so.7
+lib/libfmt.so.8
 lib/libfmt.so.%%PORTVERSION%%
 libdata/pkgconfig/fmt.pc

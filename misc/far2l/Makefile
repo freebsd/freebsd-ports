@@ -5,6 +5,7 @@ PORTNAME=	far2l
 # the g${DATE} format even for tagged releases to avoid bumping PORTEPOCH
 # in case we'd have to use raw commit hashes again in the future.
 PORTVERSION=	g20210426
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	danfe@FreeBSD.org

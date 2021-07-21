@@ -3,7 +3,7 @@
 PORTNAME=	spdlog
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/gabime/spdlog/commit/
