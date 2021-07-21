@@ -1,7 +1,7 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 
 PORTNAME=	jruby-jars
-PORTVERSION=	9.2.13.0
+PORTVERSION=	9.2.19.0
 CATEGORIES=	devel rubygems java
 MASTER_SITES=	RG
 
