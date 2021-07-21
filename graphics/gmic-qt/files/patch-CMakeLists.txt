@@ -1,39 +1,15 @@
---- CMakeLists.txt.orig	2018-08-27 14:56:34 UTC
+--- CMakeLists.txt.orig	2021-07-21 06:15:34 UTC
 +++ CMakeLists.txt
-@@ -232,6 +232,12 @@ if (WIN32)
-     )
+@@ -233,6 +233,12 @@ if(ENABLE_CURL)
+     endif()
  endif()
  
-+find_package(Threads) 
++find_package(Threads)
 +set(gmic_qt_LIBRARIES
 +    ${gmic_qt_LIBRARIES}
 +    Threads::Threads
 +)
 +
- if (NOT CMAKE_BUILD_TYPE)
-     set(CMAKE_BUILD_TYPE "Release")
- endif()
-@@ -427,10 +433,10 @@ qt5_wrap_ui(gmic_qt_SRCS
-   ui/zoomlevelselector.ui
- )
- 
--# qt5_create_translation(
--#     qmic_qt_QM
--#     ${CMAKE_SOURCE_DIR}/translations
--#     ${gmic_qt_SRCS}
-+qt5_create_translation(
-+    qmic_qt_QM
-+    ${CMAKE_SOURCE_DIR}/translations
-+    ${gmic_qt_SRCS}
- #     translations/cs.ts
- #     translations/de.ts
- #     translations/es.ts
-@@ -446,7 +452,7 @@ qt5_wrap_ui(gmic_qt_SRCS
- #     translations/zh.ts
- # )
- 
--qt5_add_translation(gmic_qt_QM
-+# qt5_add_translation(gmic_qt_QM
-     translations/cs.ts
-     translations/de.ts
-     translations/es.ts
+ add_definitions(-Dgmic_build)
+ add_definitions(-Dcimg_use_abort)
+ add_definitions(-Dgmic_is_parallel)

@@ -1,7 +1,6 @@
 PORTNAME=	gmic-qt
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	2.3.6
-PORTREVISION=	5
+DISTVERSION=	2.9.8
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://gmic.eu/:stdlib \
@@ -9,9 +8,6 @@ MASTER_SITES=	http://gmic.eu/:stdlib \
 DISTFILES=	gmic_stdlib${DISTVERSION:S/.//g}.h:stdlib
 DIST_SUBDIR=	KDE/${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz ${DISTFILE_gmic} ${DISTFILE_cimg}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	64cdd2cdd416ec43171753eddf55a7b3fda0d33b.patch:-p1 # Remove translation files install directive
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Versatile Qt front-end to GMIC
