@@ -2,6 +2,7 @@
 
     SUBDIR += 6cord
     SUBDIR += beebeep
+    SUBDIR += biboumi
     SUBDIR += centerim
     SUBDIR += chatterino2
     SUBDIR += climm
