@@ -1,6 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	2.7.4
-PORTREVISION=	1
+DISTVERSION=	2.8.11
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -32,6 +31,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libjpeg.so:graphics/jpeg-turbo \
 		liblz4.so:archivers/liblz4 \
 		libminizip.so:archivers/minizip \
+		librnnoise.so:audio/rnnoise \
 		libopenal.so:audio/openal-soft \
 		libopus.so:audio/opus \
 		libqrcodegencpp.so:graphics/qr-code-generator \
