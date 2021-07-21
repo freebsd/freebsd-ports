@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	loggability
-PORTVERSION=	0.14.0
+PORTVERSION=	0.18.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,9 @@ COMMENT=	Composable logging system built on the standard Logger library
 
 LICENSE=	BSD3CLAUSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

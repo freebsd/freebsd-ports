@@ -3,4 +3,4 @@ Loggability to large libraries and systems, then hook everything up later when
 you know where you want logs to be written, at what level of severity, and in
 which format.
 
-WWW: http://deveiate.org/projects/loggability
+WWW: https://hg.sr.ht/~ged/Loggability
