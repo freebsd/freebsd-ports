@@ -1,8 +1,7 @@
 # Created by: Toby Allsopp <toby@mi6.gen.nz>
 
 PORTNAME=	Text-Tabs+Wrap
-PORTVERSION=	2013.0523
-PORTREVISION=	1
+PORTVERSION=	2021.0717
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
