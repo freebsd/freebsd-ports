@@ -517,6 +517,15 @@
  		if [ "$1" = "$pbu" ]; then
  			if [ -n "$BACKUP" ]; then
  				echo "	===>>> Package saved to $1" ; echo ''
+@@ -1637,7 +1668,7 @@ pm_pkg_create () {
+ 				NB_DELETE="${NB_DELETE}${pkg} "
+ 			fi
+ 		elif [ "$1" = "$PACKAGES" ]; then
+-			local pkg ; pkg=$2.txz
++			local pkg ; pkg=$2.pkg
+ 
+ 			if [ -z "$PM_INDEX_ONLY" ]; then
+ 				local pkg_latest_file
 @@ -1980,7 +2011,7 @@ if [ -n "$LIST" -o -n "$LIST_PLUS" ]; then
  fi
  
@@ -898,6 +907,61 @@
  
  	if [ -z "$FETCH_ARGS" ]; then
  		FETCH_ARGS=`pm_make -f/usr/share/mk/bsd.port.mk -V FETCH_ARGS 2>/dev/null`
+@@ -3398,7 +3446,7 @@ fetch_package () {
+ 	fi
+ 
+ 	if [ -z "$PM_ALWAYS_FETCH" ]; then
+-		if [ -r "${ppd}/${1}.txz" ]; then
++		if [ -r "${ppd}/${1}.pkg" ]; then
+ 			pm_v "===>>> Package exists, skipping fetch"
+ 			return 0
+ 		else
+@@ -3406,7 +3454,7 @@ fetch_package () {
+ 		fi
+ 	else
+ 		do_fetch=do_fetch_always_fetch
+-		pm_unlink_s ${ppd}/${1}.txz
++		pm_unlink_s ${ppd}/${1}.pkg
+ 	fi
+ 
+ 	if [ -n "$do_fetch" ]; then
+@@ -3418,10 +3466,10 @@ fetch_package () {
+ 			fi
+ 		fi
+ 
+-		pm_sv Fetching ${1}.txz
+-		if ! $PM_SU_CMD fetch $FETCH_ARGS -o $ppd ${sitepath}${1}.txz 2>/dev/null; then
+-			pm_unlink_s ${ppd}/${1}.txz
+-			$PM_SU_CMD fetch $FETCH_ARGS -o $ppd ${sitepath}${1}.txz 2>/dev/null
++		pm_sv Fetching ${1}.pkg
++		if ! $PM_SU_CMD fetch $FETCH_ARGS -o $ppd ${sitepath}${1}.pkg 2>/dev/null; then
++			pm_unlink_s ${ppd}/${1}.pkg
++			$PM_SU_CMD fetch $FETCH_ARGS -o $ppd ${sitepath}${1}.pkg 2>/dev/null
+ 		fi
+ 	fi
+ }
+@@ -3444,9 +3492,9 @@ fetch_package () {
+ 	echo "===>>> Checking package repository for latest available version"
+ 
+ 	if [ -n "$LOCAL_PACKAGEDIR" ]; then
+-		pm_v "===>>> ... checking: ${LOCAL_PACKAGEDIR}/All/${new_port}.txz"
+-		if [ -r "${LOCAL_PACKAGEDIR}/All/${new_port}.txz" ]; then
+-			local_package=${LOCAL_PACKAGEDIR}/All/${new_port}.txz
++		pm_v "===>>> ... checking: ${LOCAL_PACKAGEDIR}/All/${new_port}.pkg"
++		if [ -r "${LOCAL_PACKAGEDIR}/All/${new_port}.pkg" ]; then
++			local_package=${LOCAL_PACKAGEDIR}/All/${new_port}.pkg
+ 			latest_pv=${local_package##*/}
+ 		fi
+ 		if [ -z "$latest_pv" -a -z "$PM_INDEX_ONLY" ]; then
+@@ -3518,7 +3566,7 @@ fetch_package () {
+ 		fi
+ 	else
+ 		latest_pv=${latest_pv#*href=\"}
+-		latest_pv=${latest_pv%%\.txz*}
++		latest_pv=${latest_pv%%\.pkg*}
+ 	fi
+ 
+ notnewer () {
 @@ -3533,7 +3581,7 @@ notnewer () {
  		pm_v "===>>> Available package ($latest_pv) matches the current version"
  	elif [ -n "$latest_pv" -a -n "$PM_PACKAGES_NEWER" ]; then
@@ -925,7 +989,7 @@
  		fail 'make clean failed'; }
  
  	fl_read=`echo ${TMPDIR}/f-${PM_PARENT_PID}-fetchlog-${portdir#*/}.*`
-@@ -3632,19 +3680,27 @@ if [ -z "$use_package" ]; then
+@@ -3632,22 +3680,30 @@ if [ -z "$use_package" ]; then
  
  # Return flavor for named pkg (must be executed in port directory!)
  pkg_flavor () {
@@ -954,7 +1018,11 @@
 +	[ "$make_target" = "stage" ] && safe_exit
  else
  	[ -z "$local_package" ] && {
- 		fetch_package $latest_pv || fail "Fetch for ${latest_pv}.txz failed"; }
+-		fetch_package $latest_pv || fail "Fetch for ${latest_pv}.txz failed"; }
++		fetch_package $latest_pv || fail "Fetch for ${latest_pv}.pkg failed"; }
+ fi
+ 
+ # Ignore if no old port exists, or -F
 @@ -3665,7 +3721,7 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ] && [ -z "$F
  		    grep -v ^$LOCALBASE_COMPAT > $pm_mktemp_file
  
@@ -982,16 +1050,23 @@
  		fi
  		pm_sv "Running pkg delete for $upg_port"
  		pm_pkg_delete_s $upg_port
-@@ -3776,7 +3832,7 @@ else
+@@ -3775,17 +3831,21 @@ if [ -z "$use_package" ]; then
+ else
  	[ -n "$local_package" ] && ppd=${LOCAL_PACKAGEDIR}/All
  
- 	echo "===>>> Installing package from: ${ppd}/${latest_pv}.txz"
+-	echo "===>>> Installing package from: ${ppd}/${latest_pv}.txz"
 -	if $PM_SU_CMD pkg add --accept-missing --force ${ppd}/${latest_pv}.txz; then
-+	if $PM_SU_CMD $PKG_CMD add --accept-missing --force ${ppd}/${latest_pv}.txz; then
++	echo "===>>> Installing package from: ${ppd}/${latest_pv}.pkg"
++	if $PM_SU_CMD $PKG_CMD add --accept-missing --force ${ppd}/${latest_pv}.pkg; then
  		if [ -n "$PM_DELETE_PACKAGES" ]; then
- 			pm_v "===>>> Deleting ${latest_pv}.txz"
- 			pm_unlink_s ${ppd}/${latest_pv}.txz
-@@ -3786,6 +3842,10 @@ else
+-			pm_v "===>>> Deleting ${latest_pv}.txz"
+-			pm_unlink_s ${ppd}/${latest_pv}.txz
++			pm_v "===>>> Deleting ${latest_pv}.pkg"
++			pm_unlink_s ${ppd}/${latest_pv}.pkg
+ 		fi
+ 	else
+-		install_failed ${latest_pv}.txz
++		install_failed ${latest_pv}.pkg
  	fi
  fi
  
@@ -1019,6 +1094,15 @@
  		$PM_SU_CMD /etc/rc.d/ldconfig start > /dev/null
  	fi
  	unset temp file files
+@@ -3868,7 +3928,7 @@ fi
+ if [ -n "$MAKE_PACKAGE" ]; then
+ 	if [ -z "$use_package" ]; then
+ 		echo "===>>> Creating a package for new version $new_port"
+-		pm_make_s -D_OPTIONS_OK ${PACKAGE_FORMAT:+PKG_SUFX=.$PACKAGE_FORMAT} package >/dev/null || fail "Package creation of $new_port failed"
++		pm_make_s -D_OPTIONS_OK ${PACKAGE_FORMAT:+PKG_COMPRESSION_FORMAT=$PACKAGE_FORMAT} package >/dev/null || fail "Package creation of $new_port failed"
+ 		echo "	===>>> Package saved to $PACKAGES/All" ; echo ''
+ 	else
+ 		pm_pkg_create $PACKAGES $new_port
 @@ -3876,14 +3936,18 @@ if [ -n "$MAKE_PACKAGE" ]; then
  fi
  
