@@ -4,9 +4,10 @@ PKGNAMESUFFIX=	-recorder
 COMMENT=	Bitmark distributed property system recorder
 
 CONFLICTS?=	bitmark
-SLAVE_PORT=	yes
 
-OPTIONS_DEFINE=		RECORDER
+OPTIONS_EXCLUDE=	CLI DAEMON DUMPER
 OPTIONS_DEFAULT=	RECORDER
+
+_SLAVE_PORT=	yes
 
 .include "${MASTERDIR}/Makefile"
