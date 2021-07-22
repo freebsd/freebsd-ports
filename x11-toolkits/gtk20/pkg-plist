@@ -567,8 +567,8 @@ share/themes/Default/gtk-2.0-key/gtkrc
 share/themes/Emacs/gtk-2.0-key/gtkrc
 share/themes/Raleigh/gtk-2.0/gtkrc
 @postexec /usr/bin/find %%LOCALBASE%%/share/icons -type d -depth 1 -exec %D/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null || /usr/bin/true
-@unexec /usr/bin/find %%LOCALBASE%%/share/icons -type f -depth 2 -name icon-theme.cache -delete 2>/dev/null || /usr/bin/true
-@unexec /bin/rm -f %D/lib/gtk-2.0/%%GTK2_VERSION%%/immodules.cache
+@postunexec /usr/bin/find %%LOCALBASE%%/share/icons -type f -depth 2 -name icon-theme.cache -delete 2>/dev/null || /usr/bin/true
+@postunexec /bin/rm -f %D/lib/gtk-2.0/%%GTK2_VERSION%%/immodules.cache
 @postexec %D/bin/gtk-query-immodules-2.0 --update-cache > /dev/null 2>&1 || /usr/bin/true
 @dir lib/gtk-2.0/modules
 @dir lib/gtk-2.0/%%GTK2_VERSION%%/printbackends
