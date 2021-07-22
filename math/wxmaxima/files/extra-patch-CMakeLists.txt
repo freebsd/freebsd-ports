@@ -1,10 +1,10 @@
---- CMakeLists.txt.orig	2019-05-07 12:21:45 UTC
+--- CMakeLists.txt.orig	2021-07-15 22:20:34 UTC
 +++ CMakeLists.txt
-@@ -62,7 +62,6 @@ if(Git_FOUND)
- endif()
- 
- 
--add_subdirectory(locales)
+@@ -192,7 +192,6 @@ set(CPACK_PACKAGE_CHECKSUM "SHA512")
  add_subdirectory(Doxygen)
  add_subdirectory(data)
  add_subdirectory(info)
+-add_subdirectory(locales)
+ add_subdirectory(art)
+ add_subdirectory(src)
+ add_subdirectory(examples)
