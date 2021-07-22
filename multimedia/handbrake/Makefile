@@ -128,6 +128,9 @@ pre-configure:
 # Following patches reduces warnings with clang.
 	${CP} ${FILESDIR}/P00-freebsd-libavutil-x86-asm-h.patch ${WRKSRC}/contrib/ffmpeg
 	${CP} ${FILESDIR}/P01-freebsd-ifo_types.h.patch ${WRKSRC}/contrib/libdvdread
+# for powerpc64
+# picked from multimedia/ffmpeg/files/patch-libswscale_ppc_yuv2rgb__altivec.c
+	${CP} ${FILESDIR}/P02-freebsd-ppc-libswscale.patch ${WRKSRC}/contrib/ffmpeg
 
 post-install-X11-on:
 	${LN} -sf ghb ${STAGEDIR}${PREFIX}/bin/HandBrake
