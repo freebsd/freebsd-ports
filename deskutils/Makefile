@@ -194,6 +194,7 @@
     SUBDIR += plans
     SUBDIR += plasma5-milou
     SUBDIR += plasma5-sddm-kcm
+    SUBDIR += plasma5-xdg-desktop-portal-kde
     SUBDIR += plopfolio
     SUBDIR += preferences
     SUBDIR += presage
