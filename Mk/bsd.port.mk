@@ -1211,6 +1211,14 @@ _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 .if !defined(_PKG_VERSION)
 _PKG_VERSION!=	${PKG_BIN} -v
 .endif
+# XXX hack for smooth transition towards pkg 1.17
+_PKG_BEFORE_PKGEXT!= ${PKG_BIN} version -t ${_PKG_VERSION:C/-.*//g} 1.17.0
+.if ${_PKG_BEFORE_PKGEXT} == "<"
+_PKG_TRANSITIONING_TO_NEW_EXT=	yes
+_EXPORTED_VARS+=	_PKG_TRANSITIONING_TO_NEW_EXT
+.warning "It is strongly recommanded to upgrade to a newer vertion of pkg first"
+.endif
+# XXX End of hack
 _PKG_STATUS!=	${PKG_BIN} version -t ${_PKG_VERSION:C/-.*//g} ${MINIMAL_PKG_VERSION}
 .if ${_PKG_STATUS} == "<"
 IGNORE=		pkg(8) must be version ${MINIMAL_PKG_VERSION} or greater, but you have ${_PKG_VERSION}. You must upgrade the ${PKG_ORIGIN} port first
@@ -2227,23 +2235,29 @@ _PKGMESSAGES+=	${PKGMESSAGE}
 
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 
-.if ${WITH_PKG} == devel
-PKG_SUFX?=	.pkg
+# backward compatibility for users
+.if defined(_PKG_TRANSITIONING_TO_NEW_EXT)
 .if defined(PKG_NOCOMPRESS)
-PKG_OLDSUFX?=	.tar
+PKG_SUFX?=	.tar
+.else
+PKG_SUFX?=	.txz
+.endif
+PKG_COMPRESSION_FORMAT?=	${PKG_SUFX:S/.//}
+.else
+.if defined(PKG_SUFX)
+PKG_COMPRESSION_FORMAT?=	${PKG_SUFX:S/.//}
+.warning PKG_SUFX is defined, if should be replace with PKG_COMPRESSION_FORMAT
+.endif
+PKG_SUFX=	.pkg
+.endif
+.if defined(PKG_NOCOMPRESS)
+PKG_COMPRESSION_FORMAT?=	tar
 .else
 #.if ${OSVERSION} > 1400000
-#PKG_OLDSUFX?=	.tzst
+#PKG_COMPRESSION_FORMAT?=	tzst
 #.else
-PKG_OLDSUFX?=	.txz
+PKG_COMPRESSION_FORMAT?=	txz
 #.endif
-.endif
-.else
-.if defined(PKG_NOCOMPRESS)
-PKG_SUFX?=		.tar
-.else
-PKG_SUFX?=		.txz
-.endif
 .endif
 # where pkg(8) stores its data
 PKG_DBDIR?=		/var/db/pkg
@@ -2634,9 +2648,7 @@ PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
 PACKAGES:=	${PACKAGES:S/:/\:/g}
 _HAVE_PACKAGES=	yes
 PKGFILE?=		${PKGREPOSITORY}/${PKGNAME}${PKG_SUFX}
-.if ${WITH_PKG} == devel
-PKGOLDFILE?=		${PKGREPOSITORY}/${PKGNAME}${PKG_OLDSUFX}
-.endif
+PKGOLDFILE?=		${PKGREPOSITORY}/${PKGNAME}.${PKG_COMPRESSION_FORMAT}
 .else
 PKGFILE?=		${.CURDIR}/${PKGNAME}${PKG_SUFX}
 .endif
@@ -2646,12 +2658,10 @@ WRKDIR_PKGFILE=	${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}
 PKGLATESTREPOSITORY?=	${PACKAGES}/Latest
 PKGBASE?=			${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_SUFX}
-.if ${WITH_PKG} == devel
-PKGOLDLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_OLDSUFX}
+PKGOLDLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}.${PKG_COMPRESSION_FORMAT}
 # Temporary workaround to be deleted once every supported version of FreeBSD
 # have a bootstrap which handles the pkg extension.
-PKGOLDSIGFILE=			${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_OLDSUFX}.sig
-.endif
+PKGOLDSIGFILE=			${PKGLATESTREPOSITORY}/${PKGBASE}.${PKG_COMPRESSION_FORMAT}.sig
 
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_CMD?=		./${CONFIGURE_SCRIPT}
@@ -3434,7 +3444,7 @@ ${PKGFILE}: ${WRKDIR_PKGFILE} ${PKGREPOSITORY}
 	@${LN} -f ${WRKDIR_PKGFILE} ${PKGFILE} 2>/dev/null \
 			|| ${CP} -f ${WRKDIR_PKGFILE} ${PKGFILE}
 
-.if ${WITH_PKG} == devel
+.if !defined(_PKG_TRANSITIONING_TO_NEW_EXT)
 _EXTRA_PACKAGE_TARGET_DEP+= ${PKGOLDFILE}
 ${PKGOLDFILE}: ${PKGFILE}
 	${INSTALL} -l rs ${PKGFILE} ${PKGOLDFILE}
@@ -3449,7 +3459,7 @@ _EXTRA_PACKAGE_TARGET_DEP+=	${PKGLATESTFILE}
 ${PKGLATESTFILE}: ${PKGFILE} ${PKGLATESTREPOSITORY}
 	${INSTALL} -l rs ${PKGFILE} ${PKGLATESTFILE}
 
-.if ${WITH_PKG} == devel
+.if !defined(_PKG_TRANSITIONING_TO_NEW_EXT)
 _EXTRA_PACKAGE_TARGET_DEP+=	${PKGOLDLATESTFILE} ${PKGOLDSIGFILE}
 
 ${PKGOLDLATESTFILE}: ${PKGOLDFILE} ${PKGLATESTREPOSITORY}
@@ -3477,13 +3487,7 @@ _EXTRA_PACKAGE_TARGET_DEP+=	${WRKDIR_PKGFILE}
 # This will be the end of the loop
 
 .if !target(do-package)
-.if ${WITH_PKG} == devel
-.if defined(PKG_NOCOMPRESS)
-PKG_CREATE_ARGS+= -f ${PKG_OLDSUFX:S/.//}
-.endif
-.else
-PKG_CREATE_ARGS+= -f ${PKG_SUFX:S/.//}
-.endif
+PKG_CREATE_ARGS+= -f ${PKG_COMPRESSION_FORMAT}
 PKG_CREATE_ARGS+=	-r ${STAGEDIR}
 .  if defined(PKG_CREATE_VERBOSE)
 PKG_CREATE_ARGS+=	-v
