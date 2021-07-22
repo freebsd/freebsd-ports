@@ -1,6 +1,5 @@
 PORTNAME=	hikari
-DISTVERSION=	2.3.0
-PORTREVISION=	1
+DISTVERSION=	2.3.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://hikari.acmelabs.space/releases/
 
