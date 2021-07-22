@@ -1,6 +1,6 @@
 PORTNAME=	bazarr-devel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.6-beta.18
+DISTVERSION=	0.9.7-beta.0
 CATEGORIES=	net-p2p python
 # Grab the asset as it contains built frontend and some extra files
 MASTER_SITES=	https://github.com/morpheus65535/bazarr/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
