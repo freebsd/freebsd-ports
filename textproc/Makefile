@@ -1414,6 +1414,7 @@
     SUBDIR += py-recommonmark
     SUBDIR += py-regex
     SUBDIR += py-reno
+    SUBDIR += py-restructuredtext-lint
     SUBDIR += py-reverend
     SUBDIR += py-rich
     SUBDIR += py-rnc2rng
