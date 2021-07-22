@@ -31,6 +31,12 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_DOCDIR=${DOCSDIR} \
 
 OPTIONS_DEFINE=	DOCS
 
+# Patch 11.x, which requires #define _WITH_DPRINTF
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-source_intercept_source_report_libexec_Logger.cc
+.endif
+
+
 pre-install:
 	${MV} ${STAGEDIR}/${CONFIGURE_WRKSRC}/stage ${CONFIGURE_WRKSRC}/
 	${RM} -r ${STAGEDIR}/wrkdirs
