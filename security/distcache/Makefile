@@ -23,8 +23,8 @@ PORTDOCS=	ANNOUNCE BUGS CHANGES FAQ README
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${GREP} -q 'define SSLeay_version' /usr/include/openssl/crypto.h \
+pre-configure:	# yes, post-patch won't work in this case
+	@${GREP} -q 'define SSLeay_version' ${OPENSSLINC}/openssl/crypto.h \
 	    && ${REINPLACE_CMD} -e 's,SSLeay_version,OpenSSL_version,' \
 		${WRKSRC}/ssl/configure || :
 
