@@ -1216,7 +1216,7 @@ _PKG_BEFORE_PKGEXT!= ${PKG_BIN} version -t ${_PKG_VERSION:C/-.*//g} 1.17.0
 .if ${_PKG_BEFORE_PKGEXT} == "<"
 _PKG_TRANSITIONING_TO_NEW_EXT=	yes
 _EXPORTED_VARS+=	_PKG_TRANSITIONING_TO_NEW_EXT
-.warning "It is strongly recommended to upgrade to a newer version of pkg first"
+WARNING+=	"It is strongly recommended to upgrade to a newer version of pkg first"
 .endif
 # XXX End of hack
 _PKG_STATUS!=	${PKG_BIN} version -t ${_PKG_VERSION:C/-.*//g} ${MINIMAL_PKG_VERSION}
@@ -2246,7 +2246,7 @@ PKG_COMPRESSION_FORMAT?=	${PKG_SUFX:S/.//}
 .else
 .if defined(PKG_SUFX)
 PKG_COMPRESSION_FORMAT?=	${PKG_SUFX:S/.//}
-.warning PKG_SUFX is defined, it should be replaced with PKG_COMPRESSION_FORMAT
+WARNING+= "PKG_SUFX is defined, if should be replaced with PKG_COMPRESSION_FORMAT"
 .endif
 PKG_SUFX=	.pkg
 .endif
