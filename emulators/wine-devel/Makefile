@@ -1,7 +1,7 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 
 PORTNAME=	wine
-DISTVERSION=	6.12
+DISTVERSION=	6.13
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -100,7 +100,6 @@ SDL_CONFIGURE_WITH=	sdl
 SDL_USES=		sdl
 SDL_USE=		SDL=sdl2
 
-STAGING_BROKEN=		fails to patch
 STAGING_MASTER_SITES=	https://github.com/wine-staging/wine-staging/archive/:staging
 STAGING_DIST=		v${DISTVERSION}.tar.gz
 STAGING_DISTFILES=	${STAGING_DIST}:staging

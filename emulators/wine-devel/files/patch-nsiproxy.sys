@@ -1,22 +1,22 @@
-This patch of mine has been included upstream in the meantime.
+Submitted this upstream and should be in the next release.
 
-commit 1fc3d75a17b025bcdb818714db47a37c309ea186
+commit a89016726656776c42643a021c09ce139b0c196e
 Author: Gerald Pfeifer <gerald@pfeifer.com>
-Date:   Sat Jul 3 06:55:06 2021 +0000
+Date:   Thu Jul 22 09:51:02 2021 +0000
 
-    nsiproxy: Include netinet/in.h before if_ether.h
+    nsiproxy: Include sys/socket.h
 
-index 647fd650cd3..7a0e7ec6f6c 100644
---- dlls/nsiproxy.sys/ndis.c
-+++ dlls/nsiproxy.sys/ndis.c
-@@ -38,6 +38,10 @@
- #include <net/if_arp.h>
- #endif
+index ab1b6294bea..93fdefa24cc 100644
+--- dlls/nsiproxy.sys/ip.c
++++ dlls/nsiproxy.sys/ip.c
+@@ -21,6 +21,10 @@
+ #include "config.h"
+ #include <stdarg.h>
  
-+#ifdef HAVE_NETINET_IN_H
-+#include <netinet/in.h>
++#ifdef HAVE_SYS_SOCKET_H
++#include <sys/socket.h>
 +#endif
 +
- #ifdef HAVE_NETINET_IF_ETHER_H
- #include <netinet/if_ether.h>
+ #ifdef HAVE_NETINET_IN_H
+ #include <netinet/in.h>
  #endif
