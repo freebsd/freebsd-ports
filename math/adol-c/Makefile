@@ -14,11 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		compiler:c++11-lang gmake libtool tar:tgz
+USES=		compiler:c++11-lang gmake libtool python:3.7+,build tar:tgz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
+
+CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 
 INSTALL_TARGET=	install-strip
 
