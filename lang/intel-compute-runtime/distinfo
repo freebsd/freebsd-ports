@@ -1,5 +1,5 @@
-TIMESTAMP = 1626193968
-SHA256 (intel-compute-runtime-21.29.20389_GH0.tar.gz) = c1fd20bcc47b2f51b2e2c858162d03008f0fd27ae93b6f954ee1da8ee080da2a
-SIZE (intel-compute-runtime-21.29.20389_GH0.tar.gz) = 4267474
+TIMESTAMP = 1626975336
+SHA256 (intel-compute-runtime-21.30.20482_GH0.tar.gz) = 978e8d8471e658beca650890ec0d3160a2aac958a3c865ce4b61d334c73b2fb1
+SIZE (intel-compute-runtime-21.30.20482_GH0.tar.gz) = 4416357
 SHA256 (4a926516c3ea.patch) = 1a9c4694dbe892f01a7d3be5c5229b6b3bb34222848d61054f7bdf91134ca60f
 SIZE (4a926516c3ea.patch) = 1691
