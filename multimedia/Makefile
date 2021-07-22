@@ -321,6 +321,7 @@
     SUBDIR += py-gstreamer1
     SUBDIR += py-guessit
     SUBDIR += py-librtmp
+    SUBDIR += py-mat2
     SUBDIR += py-mido
     SUBDIR += py-mlt6
     SUBDIR += py-moviepy
