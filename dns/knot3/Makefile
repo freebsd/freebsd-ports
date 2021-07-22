@@ -1,7 +1,7 @@
 # Created by: Leo Vandewoestijne <freebsd@dns.company>
 
 PORTNAME=	knot
-DISTVERSION=	3.0.7
+DISTVERSION=	3.0.8
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
@@ -13,19 +13,14 @@ COMMENT=	High performance authoritative-only DNS server
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-#BUILD_DEPENDS=	autoconf>=2.65:devel/autoconf \
-#		gsed:textproc/gsed
 BUILD_DEPENDS=	gsed:textproc/gsed
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
-		liblmdb.so:databases/lmdb \
-		libnghttp2.so:www/libnghttp2
+		liblmdb.so:databases/lmdb
 
-USES=		alias autoreconf libtool localbase pkgconfig tar:xz
-
-CONFLICTS=	knot-1.* knot1-[0-6].* knot2-[0-9].*
+USES=		alias libtool localbase pkgconfig tar:xz
+USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes
-BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 CONFIGURE_ARGS=	--enable-recvmmsg=no \
 		--mandir=${MANPREFIX}/man \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
@@ -35,7 +30,6 @@ CONFIGURE_ARGS+=	--with-rundir=/var/run/knot \
 			--with-storage=/var/db/knot
 LIB_DEPENDS+=		liburcu.so:sysutils/liburcu
 USE_RC_SUBR=		${PORTNAME}
-#PLIST_FILES=		etc/rc.d/${PORTNAME}
 SUB_FILES=		pkg-message
 USES+=			libedit
 .endif
@@ -49,8 +43,11 @@ CONFIGURE_ARGS+=	--disable-daemon \
 CONFIGURE_ARGS+=	--disable-utilities
 .endif
 
-USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+
+CONFLICTS=	knot-1.* knot1-[0-6].* knot2-[0-9].*
+
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 
 USERS=		knot
 GROUPS=		knot
@@ -62,7 +59,8 @@ PORTDOCS=	COPYING NEWS
 OPTIONS_DEFINE=	DNSTAP DOCS
 
 .if !defined(LIB_ONLY)
-OPTIONS_DEFINE+=	IDN
+OPTIONS_DEFINE+=	DOH IDN
+OPTIONS_DEFAULT+=	DOH IDN
 .endif
 
 .if !defined(UTILS_ONLY) && !defined(LIB_ONLY)
@@ -70,10 +68,10 @@ OPTIONS_DEFINE+=	FASTPARSER MAXMINDDB
 .endif
 
 DNSTAP_DESC=			dnstap support (see dnstap.info)
-DNSTAP_CONFIGURE_ENABLE=	dnstap
-DNSTAP_CONFIGURE_WITH=		module-dnstap=yes
 DNSTAP_LIB_DEPENDS=		libfstrm.so:devel/fstrm \
 				libprotobuf-c.so:devel/protobuf-c
+DNSTAP_CONFIGURE_ENABLE=	dnstap
+DNSTAP_CONFIGURE_WITH=		module-dnstap=yes
 
 # XXX: because `kdig_CPPFLAGS += $(DNSTAP_CFLAGS)' line is missing from
 # `src/Makefile.am' file (and thus pre-generated `src/Makefile.in') which
@@ -84,12 +82,15 @@ DNSTAP_CPPFLAGS=	-I${LOCALBASE}/include
 
 DOCS_CONFIGURE_OFF=	--disable-documentation
 
+DOH_DESC=		DoH support in kdig
+DOH_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
+
 FASTPARSER_DESC=		Fast zone parser (demanding compilation)
 FASTPARSER_CONFIGURE_ENABLE=	fastparser
 
 IDN_CONFIGURE_WITH=	libidn
 IDN_CONFIGURE_OFF=	--without-libidn
-#IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
+IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
 
 MAXMINDDB_DESC=			Enable MaxMind for geodb module
 MAXMINDDB_LIB_DEPENDS=		libmaxminddb.so:net/libmaxminddb
