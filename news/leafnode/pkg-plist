@@ -30,7 +30,7 @@ sbin/setup-daemontools.sh
 @dir %%ETCDIR%%
 @comment only remove these when empty:
 @comment we don't want to kill the news spool across updates
-@unexec rm -f %%SPOOLDIR%%/leaf.node/lock.file
+@postunexec rm -f %%SPOOLDIR%%/leaf.node/lock.file
 @dir %%SPOOLDIR%%/failed.postings
 @dir %%SPOOLDIR%%/interesting.groups
 @dir %%SPOOLDIR%%/leaf.node
@@ -38,4 +38,4 @@ sbin/setup-daemontools.sh
 @dir %%SPOOLDIR%%/out.going
 @dir %%SPOOLDIR%%/temp.files
 @dir %%SPOOLDIR%%
-@unexec if test -d "%%SPOOLDIR%%" || test -d "%D/etc/leafnode" ; then echo ; echo "==============================================================================" ; echo "If you want to remove leafnode for good, delete spool and configuration:" ; echo "type: rm -rf %D/etc/leafnode %%SPOOLDIR%%" ; echo "==============================================================================" ; fi
+@postunexec if test -d "%%SPOOLDIR%%" || test -d "%D/etc/leafnode" ; then echo ; echo "==============================================================================" ; echo "If you want to remove leafnode for good, delete spool and configuration:" ; echo "type: rm -rf %D/etc/leafnode %%SPOOLDIR%%" ; echo "==============================================================================" ; fi
