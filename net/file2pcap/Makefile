@@ -1,7 +1,7 @@
 # Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
 
 PORTNAME=	file2pcap
-PORTVERSION=	1.27.b.${SNAPDATE}
+PORTVERSION=	1.29
 CATEGORIES=	net
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -14,8 +14,6 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	Cisco-Talos
 GH_PROJECT=	file2pcap
-GH_TAGNAME=	0f694c0
-SNAPDATE=	20191122
 
 ALL_TARGET=	file2pcap
 
