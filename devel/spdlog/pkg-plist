@@ -34,8 +34,10 @@ include/spdlog/details/thread_pool.h
 include/spdlog/details/windows_include.h
 include/spdlog/fmt/bin_to_hex.h
 include/spdlog/fmt/chrono.h
+include/spdlog/fmt/compile.h
 include/spdlog/fmt/fmt.h
 include/spdlog/fmt/ostr.h
+include/spdlog/fmt/xchar.h
 include/spdlog/formatter.h
 include/spdlog/fwd.h
 include/spdlog/logger-inl.h
@@ -53,9 +55,11 @@ include/spdlog/sinks/daily_file_sink.h
 include/spdlog/sinks/dist_sink.h
 include/spdlog/sinks/dup_filter_sink.h
 include/spdlog/sinks/hourly_file_sink.h
+include/spdlog/sinks/mongo_sink.h
 include/spdlog/sinks/msvc_sink.h
 include/spdlog/sinks/null_sink.h
 include/spdlog/sinks/ostream_sink.h
+include/spdlog/sinks/qt_sinks.h
 include/spdlog/sinks/ringbuffer_sink.h
 include/spdlog/sinks/rotating_file_sink-inl.h
 include/spdlog/sinks/rotating_file_sink.h
