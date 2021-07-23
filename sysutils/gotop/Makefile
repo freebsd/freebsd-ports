@@ -6,7 +6,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Terminal based graphical activity monitor inspired by gtop and vtop
 
-LICENSE=	GPLv3
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
