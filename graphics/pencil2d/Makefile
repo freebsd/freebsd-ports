@@ -1,7 +1,7 @@
 PORTNAME=	pencil2d
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
 USES=		compiler:c++11-lang desktop-file-utils gl gmake qmake qt:5 \
 		shared-mime-info
-USE_QT=		core gui multimedia network svg widgets xml xmlpatterns buildtools_build
+USE_QT=		core gui multimedia svg testlib widgets xml xmlpatterns buildtools_build
 USE_GL=		gl
 
 USE_GITHUB=	yes
