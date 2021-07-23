@@ -1,3 +1,108 @@
+  <vuln vid="53fbffe6-ebf7-11eb-aef1-0897988a1c07">
+    <topic>asterisk -- pjproject/pjsip: crash when SSL socket destroyed during handshake</topic>
+    <affects>
+      <package>
+	<name>asterisk13</name>
+	<range><lt>13.38.3</lt></range>
+      </package>
+      <package>
+	<name>asterisk16</name>
+	<range><lt>16.19.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>18.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/downloads/security-advisories">
+	  <p>Depending on the timing, it's possible for Asterisk to
+	  crash when using a TLS connection if the underlying socket
+	  parent/listener gets destroyed during the handshake.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-32686</cvename>
+      <url>https://downloads.asterisk.org/pub/security/AST-2021-009.html</url>
+    </references>
+    <dates>
+      <discovery>2021-05-05</discovery>
+      <entry>2021-07-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fb3455be-ebf6-11eb-aef1-0897988a1c07">
+    <topic>asterisk -- Remote crash when using IAX2 channel driver</topic>
+    <affects>
+      <package>
+	<name>asterisk13</name>
+	<range><lt>13.38.3</lt></range>
+      </package>
+      <package>
+	<name>asterisk16</name>
+	<range><lt>16.19.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>18.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/downloads/security-advisories">
+	  <p>If the IAX2 channel driver receives a packet that
+	  contains an unsupported media format it can cause a crash
+	  to occur in Asterisk.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-32558</cvename>
+      <url>https://downloads.asterisk.org/pub/security/AST-2021-008.html</url>
+    </references>
+    <dates>
+      <discovery>2021-04-13</discovery>
+      <entry>2021-07-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ffa364e1-ebf5-11eb-aef1-0897988a1c07">
+    <topic>asterisk -- Remote Crash Vulnerability in PJSIP channel driver</topic>
+    <affects>
+      <package>
+	<name>asterisk16</name>
+	<range><ge>16.17.0</ge><lt>16.19.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><ge>18.3.0</ge><lt>18.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/downloads/security-advisories">
+	  <p>When Asterisk receives a re-INVITE without SDP after
+	  having sent a BYE request a crash will occur. This occurs
+	  due to the Asterisk channel no longer being present while
+	  code assumes it is.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-31878</cvename>
+      <url>https://downloads.asterisk.org/pub/security/AST-2021-007.html</url>
+    </references>
+    <dates>
+      <discovery>2021-04-06</discovery>
+      <entry>2021-07-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="76487640-ea29-11eb-a686-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
