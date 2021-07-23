@@ -11,6 +11,7 @@ include/entt/core/monostate.hpp
 include/entt/core/type_info.hpp
 include/entt/core/type_traits.hpp
 include/entt/core/utility.hpp
+include/entt/entity/component.hpp
 include/entt/entity/entity.hpp
 include/entt/entity/fwd.hpp
 include/entt/entity/group.hpp

@@ -1,6 +1,6 @@
 PORTNAME=	entt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.1
+DISTVERSION=	3.8.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ CMAKE_OFF=	BUILD_TESTING
 
 NO_ARCH=	yes
 
-do-test:
+do-test: # one testcase fails: https://github.com/skypjack/entt/issues/741
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DENTT_BUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
