@@ -1,7 +1,7 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 
 PORTNAME=	dbus
-DISTVERSION=	1.2.16
+DISTVERSION=	1.2.18
 PORTREVISION?=	0
 CATEGORIES=	devel gnome python
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-python/
