@@ -1,7 +1,7 @@
 # Created by: Michael Winking <mwfp@foldl.net>
 
 PORTNAME=	commons-io
-PORTVERSION=	2.8.0
+PORTVERSION=	2.11.0
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	apache-
