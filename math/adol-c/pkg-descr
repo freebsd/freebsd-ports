@@ -8,4 +8,4 @@ The numerical values of derivative vectors are obtained free of truncation
 errors at a small multiple of the run time and randomly accessed memory of the
 given function evaluation program.
 
-WWW: https://projects.coin-or.org/ADOL-C
+WWW: https://github.com/coin-or/ADOL-C
