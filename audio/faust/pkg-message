@@ -5,17 +5,19 @@ You installed Faust: the programming language for realtime audio
 signal processing.
 
 In order to try it, you can put the dsp program from
-http://faust.grame.fr/examples/2015/09/30/oscillator.html into the
-source file sine.dsp, and run the faust compiler that will create
+https://faustdoc.grame.fr/tutorials/basic-osc/ into the source file
+example.dsp, and run the faust compiler that will create
 Qt UI with Jack audio backend:
 
-$ faust2jaqt sine.dsp
-$ ./sine;
+$ cp files/example.dsp .
+$ faust2jaqt example.dsp
+$ ./example
 
-It will create the window with sliders for two tunable oscillators.
+It will create the window with sliders and a button that you would
+need to press.
 
 In order to compile programs for some audio backends (like Jack,
-PortAudio) you need to first install them.
+PortAudio) and UI frontends (like Qt), you need to first install them.
 
 EOM
 }
