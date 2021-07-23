@@ -110,6 +110,7 @@
     SUBDIR += rubygem-money
     SUBDIR += skrooge
     SUBDIR += sql-ledger
+    SUBDIR += ticker
     SUBDIR += tickrs
     SUBDIR += vanitygen
     SUBDIR += venice
