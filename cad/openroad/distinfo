@@ -1,5 +1,5 @@
-TIMESTAMP = 1615434359
-SHA256 (The-OpenROAD-Project-OpenROAD-2021_03_09_stable_GH0.tar.gz) = 0e872d1c607f7bc62d1516e93ae5f69d16d62771504be4a0d30e6016bc110233
-SIZE (The-OpenROAD-Project-OpenROAD-2021_03_09_stable_GH0.tar.gz) = 175470490
-SHA256 (The-OpenROAD-Project-OpenSTA-181a9f2_GH0.tar.gz) = da9764be47bd6e895a19fb48daeea1052e8aeee9778e940ccd2b55c6aaa9b7d6
-SIZE (The-OpenROAD-Project-OpenSTA-181a9f2_GH0.tar.gz) = 4895949
+TIMESTAMP = 1627018650
+SHA256 (The-OpenROAD-Project-OpenROAD-v2.0_GH0.tar.gz) = 5926af338ba2adcda5e5e73b50feb9e4d98838aebf31fe91763dc74cf87cfbdc
+SIZE (The-OpenROAD-Project-OpenROAD-v2.0_GH0.tar.gz) = 222297114
+SHA256 (The-OpenROAD-Project-OpenSTA-be0d38e_GH0.tar.gz) = 301e8499ade5fd1a1db7c9565295f4b0fbffc70bd9a8ef439a5c48804480b34c
+SIZE (The-OpenROAD-Project-OpenSTA-be0d38e_GH0.tar.gz) = 4898566
