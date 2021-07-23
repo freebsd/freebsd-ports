@@ -1,7 +1,7 @@
 # Created by: KIRIYAMA Kazuhiko <kiri@FreeBSD.org>
 
 PORTNAME=	fop
-DISTVERSION=	2.5
+DISTVERSION=	2.6
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/xmlgraphics/fop/source/:fop \
 		SF/offo/offo-hyphenation/2.2:hyph

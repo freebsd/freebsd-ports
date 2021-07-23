@@ -1,6 +1,6 @@
 This patch reverts FOP-2895 to avoid dependency on maven.
 
---- fop/build.xml.orig	2020-05-05 09:42:05 UTC
+--- fop/build.xml.orig	2021-01-12 12:15:02 UTC
 +++ fop/build.xml
 @@ -207,7 +207,7 @@ list of possible build targets.
    <property name="lib.dir" value="${basedir}/lib"/>
@@ -80,11 +80,29 @@ This patch reverts FOP-2895 to avoid dependency on maven.
    <fileset dir="${build.classes.dir}" id="transcoder-classes-files">
      <patternset refid="transcoder-classes"/>
    </fileset>
-@@ -614,15 +667,60 @@ list of possible build targets.
-     <include name="commons-logging*.jar"/>
-     <include name="xmlgraphics-commons*.jar"/>
-   </fileset>
--  <target name="transcoder-pkg" depends="remove-cache" description="Generates the jar for the transcoder package for Batik">
+@@ -623,28 +676,60 @@ list of possible build targets.
+     <os family="unix" />
+   </condition>
+   
+-  <target name="transcoder-pkg" depends="remove-cache,transcoder-pkg-unix" description="Generates the jar for the transcoder package for Batik" if="isWindows">
+-    <exec executable="cmd" dir="${basedir}/.." failonerror="true">
+-      <env key="MAVEN_OPTS" value="-Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2"/>
+-	  <arg value="/c"/>
+-	  <arg value="mvn"/>
+-      <arg value="clean"/>
+-      <arg value="install"/>
+-      <arg value="-DskipTests"/>
+-    </exec>	
+-    <copy file="${basedir}/../fop-transcoder/target/fop-transcoder-${version}.jar" tofile="${build.dir}/fop-transcoder.jar"/>
+-    <copy file="${basedir}/../fop-transcoder-allinone/target/fop-transcoder-allinone-${version}.jar" tofile="${build.dir}/fop-transcoder-allinone.jar"/>
++  <target name="uptodate-transcoder-pkg" depends="compile">
++    <uptodate property="transcoder.pkg.uptodate" targetfile="${build.dir}/fop-transcoder.jar">
++      <srcfiles refid="transcoder-classes-files"/>
++      <srcfiles refid="transcoder-lib-files"/>
++    </uptodate>
+   </target>
+-  
+-  <target name="transcoder-pkg-unix" if="isUnix">
 -    <exec executable="mvn" dir="${basedir}/.." failonerror="true">
 -      <env key="MAVEN_OPTS" value="-Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2"/>
 -      <arg value="clean"/>
@@ -93,12 +111,6 @@ This patch reverts FOP-2895 to avoid dependency on maven.
 -    </exec>
 -    <copy file="${basedir}/../fop-transcoder/target/fop-transcoder-${version}.jar" tofile="${build.dir}/fop-transcoder.jar"/>
 -    <copy file="${basedir}/../fop-transcoder-allinone/target/fop-transcoder-allinone-${version}.jar" tofile="${build.dir}/fop-transcoder-allinone.jar"/>
-+  <target name="uptodate-transcoder-pkg" depends="compile">
-+    <uptodate property="transcoder.pkg.uptodate" targetfile="${build.dir}/fop-transcoder.jar">
-+      <srcfiles refid="transcoder-classes-files"/>
-+      <srcfiles refid="transcoder-lib-files"/>
-+    </uptodate>
-+  </target>
 +  <target name="transcoder-pkg" depends="remove-cache, uptodate-transcoder-pkg, compile" description="Generates the jar for the transcoder package for Batik" unless="transcoder.pkg.uptodate">
 +    <echo message="Creating the jar file ${build.dir}/fop-transcoder.jar"/>
 +    <property name="fop-transcoder.name" value="FOP Transcoder Package"/>
@@ -148,5 +160,5 @@ This patch reverts FOP-2895 to avoid dependency on maven.
 +      <metainf dir="${basedir}/.." includes="LICENSE,NOTICE"/>
 +    </jar>
    </target>
+   
    <target name="all" depends="package, servlet, transcoder-pkg, junit"/>
- <!-- "all" target for us Makefile converts ;-) -->
