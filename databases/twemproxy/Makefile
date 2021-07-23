@@ -1,8 +1,7 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 
 PORTNAME=	twemproxy
-PORTVERSION=	0.4.1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	0.5.0
 CATEGORIES=	databases
 
 MAINTAINER=	skreuzer@FreeBSD.org
@@ -10,10 +9,10 @@ COMMENT=	Fast, light-weight proxy for memcached and redis
 
 LICENSE=	APACHE20
 
+USES=		autoreconf gmake libtool
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	twitter
-
-USES=		autoreconf libtool
 
 LDFLAGS+=	-lexecinfo
 
