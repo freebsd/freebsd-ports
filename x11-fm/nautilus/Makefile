@@ -6,6 +6,10 @@ CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
+# Fix against glib 2.68.3
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/nautilus/-/commit/
+PATCHFILES=	9b733dd9df9d6d9805c56749d05ada15a7560ef4.diff:-p1
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	File manager for the GNOME desktop
 
