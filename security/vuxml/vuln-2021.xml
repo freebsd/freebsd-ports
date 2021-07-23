@@ -1,3 +1,33 @@
+  <vuln vid="92ad12b8-ec09-11eb-aef1-0897988a1c07">
+    <topic>pjsip -- Race condition in SSL socket server</topic>
+    <affects>
+      <package>
+	<name>pjsip</name>
+	<range><lt>2.11.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>pjsip reports:</p>
+	<blockquote cite="https://github.com/pjsip/pjproject/security/advisories">
+	  <p>There are a couple of issues found in the SSL socket:</p>
+	  <ul>
+	    <li>A race condition between callback and destroy, due to the accepted socket having no group lock.</li>
+	    <li>SSL socket parent/listener may get destroyed during handshake.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-32686</cvename>
+      <url>https://github.com/pjsip/pjproject/security/advisories/GHSA-cv8x-p47p-99wr</url>
+    </references>
+    <dates>
+      <discovery>2021-07-23</discovery>
+      <entry>2021-07-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="53fbffe6-ebf7-11eb-aef1-0897988a1c07">
     <topic>asterisk -- pjproject/pjsip: crash when SSL socket destroyed during handshake</topic>
     <affects>
