@@ -19,6 +19,7 @@ include/amgcl/backend/detail/mixing.hpp
 include/amgcl/backend/eigen.hpp
 include/amgcl/backend/hpx.hpp
 include/amgcl/backend/interface.hpp
+include/amgcl/backend/mkl.hpp
 include/amgcl/backend/vexcl.hpp
 include/amgcl/backend/vexcl_static_matrix.hpp
 include/amgcl/backend/viennacl.hpp
@@ -33,11 +34,13 @@ include/amgcl/coarsening/runtime.hpp
 include/amgcl/coarsening/smoothed_aggr_emin.hpp
 include/amgcl/coarsening/smoothed_aggregation.hpp
 include/amgcl/coarsening/tentative_prolongation.hpp
+include/amgcl/deflated_solver.hpp
 include/amgcl/detail/inverse.hpp
 include/amgcl/detail/qr.hpp
 include/amgcl/detail/sort_row.hpp
 include/amgcl/detail/spgemm.hpp
 include/amgcl/io/binary.hpp
+include/amgcl/io/ios_saver.hpp
 include/amgcl/io/mm.hpp
 include/amgcl/make_block_solver.hpp
 include/amgcl/make_solver.hpp
@@ -68,6 +71,7 @@ include/amgcl/mpi/relaxation/damped_jacobi.hpp
 include/amgcl/mpi/relaxation/gauss_seidel.hpp
 include/amgcl/mpi/relaxation/ilu0.hpp
 include/amgcl/mpi/relaxation/iluk.hpp
+include/amgcl/mpi/relaxation/ilup.hpp
 include/amgcl/mpi/relaxation/ilut.hpp
 include/amgcl/mpi/relaxation/runtime.hpp
 include/amgcl/mpi/relaxation/spai0.hpp
@@ -93,7 +97,6 @@ include/amgcl/preconditioner/cpr_drs.hpp
 include/amgcl/preconditioner/dummy.hpp
 include/amgcl/preconditioner/runtime.hpp
 include/amgcl/preconditioner/schur_pressure_correction.hpp
-include/amgcl/preconditioner/simple.hpp
 include/amgcl/profiler.hpp
 include/amgcl/relaxation/as_preconditioner.hpp
 include/amgcl/relaxation/chebyshev.hpp
@@ -103,6 +106,7 @@ include/amgcl/relaxation/detail/ilu_solve.hpp
 include/amgcl/relaxation/gauss_seidel.hpp
 include/amgcl/relaxation/ilu0.hpp
 include/amgcl/relaxation/iluk.hpp
+include/amgcl/relaxation/ilup.hpp
 include/amgcl/relaxation/ilut.hpp
 include/amgcl/relaxation/runtime.hpp
 include/amgcl/relaxation/spai0.hpp
