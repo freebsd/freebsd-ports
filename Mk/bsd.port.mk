@@ -2246,7 +2246,7 @@ PKG_COMPRESSION_FORMAT?=	${PKG_SUFX:S/.//}
 .else
 .if defined(PKG_SUFX)
 PKG_COMPRESSION_FORMAT?=	${PKG_SUFX:S/.//}
-WARNING+= "PKG_SUFX is defined, if should be replaced with PKG_COMPRESSION_FORMAT"
+WARNING+= "PKG_SUFX is defined, it should be replaced with PKG_COMPRESSION_FORMAT"
 .endif
 PKG_SUFX=	.pkg
 .endif
