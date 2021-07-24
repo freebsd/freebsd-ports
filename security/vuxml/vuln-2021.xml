@@ -1,3 +1,34 @@
+  <vuln vid="cc553d79-e1f0-4b94-89f2-bacad42ee826">
+    <topic>mosquitto -- NULL pointer dereference</topic>
+    <affects>
+      <package>
+	<name>mosquitto</name>
+	<range><ge>2.0.0</ge><lt>2.0.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Roger Light reports:</p>
+	<blockquote cite="https://github.com/eclipse/mosquitto/blob/d5ecd9f5aa98d42e7549eea09a71a23eef241f31/ChangeLog.txt">
+	  <p>If an authenticated client connected with MQTT v5 sent
+	  a malformed CONNACK message to the broker a NULL pointer
+	  dereference occurred, most likely resulting in a
+	  segfault.</p>
+	  <p>(Note: a CVE is referenced in the github commit but it
+	  appears to be for a python-bleach vulnerability so it is
+	  not included here.)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/eclipse/mosquitto/blob/d5ecd9f5aa98d42e7549eea09a71a23eef241f31/ChangeLog.txt</url>
+    </references>
+    <dates>
+      <discovery>2021-04-10</discovery>
+      <entry>2021-07-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="92ad12b8-ec09-11eb-aef1-0897988a1c07">
     <topic>pjsip -- Race condition in SSL socket server</topic>
     <affects>
