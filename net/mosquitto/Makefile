@@ -1,9 +1,9 @@
 # Created by: Joseph Benden <joe@thrallingpenguin.com>
 
 PORTNAME=	mosquitto
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.10
 CATEGORIES=	net
-MASTER_SITES=	http://mosquitto.org/files/source/
+MASTER_SITES=	https://mosquitto.org/files/source/
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Open source MQTT broker
