@@ -1,4 +1,4 @@
---- Gemfile.orig	2021-07-01 10:22:34 UTC
+--- Gemfile.orig	2021-07-21 12:00:21 UTC
 +++ Gemfile
 @@ -88,7 +88,7 @@ gem 'gpgme', '~> 2.0.19'
  # GitLab fork with several improvements to original library. For full list of changes
@@ -17,34 +17,22 @@
  gem 'graphlient', '~> 0.4.0' # Used by BulkImport feature (group::import)
  
  gem 'hashie'
-@@ -286,7 +285,7 @@ gem 'gitlab_chronic_duration', '~> 0.10.6.2'
- gem 'rack-proxy', '~> 0.6.0'
+@@ -229,7 +228,7 @@ gem 'js_regex', '~> 3.4'
+ gem 'device_detector'
  
- gem 'sassc-rails', '~> 2.1.0'
--gem 'autoprefixer-rails', '10.2.0.0'
-+gem 'autoprefixer-rails', '10.2.5.1'
- gem 'terser', '1.0.2'
+ # Redis
+-gem 'redis', '~> 4.1.4'
++gem 'redis', '~> 4.1'
+ gem 'connection_pool', '~> 2.0'
  
- gem 'addressable', '~> 2.7'
-@@ -309,7 +308,7 @@ gem 'sentry-raven', '~> 3.1'
- # and https://github.com/pganalyze/pg_query/pull/213 are
- # released. gitlab-labkit will need to be updated to use the pg_query
- # version.
--gem 'gitlab-pg_query', '~> 2.0.4', require: 'pg_query'
-+gem 'pg_query', '~> 2.1', require: 'pg_query'
+ # Redis session store
+@@ -332,104 +331,9 @@ gem 'snowplow-tracker', '~> 0.6.1'
  
- gem 'premailer-rails', '~> 1.10.3'
- 
-@@ -337,107 +336,12 @@ gem 'snowplow-tracker', '~> 0.6.1'
  # Metrics
- group :metrics do
-   gem 'method_source', '~> 1.0', require: false
--  gem 'webrick', '~> 1.6.1', require: false
-+  gem 'webrick', '~> 1.6', require: false
- 
-   # Prometheus
-   gem 'prometheus-client-mmap', '~> 0.12.0'
- end
+ gem 'method_source', '~> 1.0', require: false
+-gem 'webrick', '~> 1.6.1', require: false
++gem 'webrick', '~> 1.6', require: false
+ gem 'prometheus-client-mmap', '~> 0.12.0', require: 'prometheus/client'
  
 -group :development do
 -  gem 'lefthook', '~> 0.7.0', require: false
@@ -105,7 +93,7 @@
 -end
 -
 -group :development, :test, :danger do
--  gem 'gitlab-dangerfiles', '~> 2.1.2', require: false
+-  gem 'gitlab-dangerfiles', '~> 2.2.2', require: false
 -end
 -
 -group :development, :test, :coverage do
@@ -144,7 +132,7 @@
  gem 'octokit', '~> 4.15'
  
  # https://gitlab.com/gitlab-org/gitlab/issues/207207
-@@ -485,7 +389,7 @@ gem 'gitaly', '~> 14.0.0.pre.rc2'
+@@ -477,7 +381,7 @@ gem 'gitaly', '~> 14.1.0.pre.rc3'
  # KAS GRPC protocol definitions
  gem 'kas-grpc', '~> 0.0.2'
  
