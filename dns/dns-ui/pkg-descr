@@ -1,0 +1,15 @@
+A tool to manage a PowerDNS authoritative server in a corporate LDAP-driven
+environment.
+
+Features:
+* Connects to PowerDNS via its JSON API.
+* Allows login managed by LDAP server.
+* Create zones; add, edit and delete records.
+* Grant multiple users access to administer a zone.
+* Lower access level that allows to view a zone and request changes.
+* Provides its own JSON API for making changes to DNS records.
+* Keeps a changelog of all DNS changes done through it.
+* (Optionally) export all zones as bind-format zone files and store changes
+  in git.
+
+WWW: https://github.com/operasoftware/dns-ui/
