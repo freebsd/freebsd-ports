@@ -23,6 +23,4 @@ RUN_DEPENDS=	font-arabic-misc>0:x11-fonts/font-arabic-misc \
 
 USES=		metaport
 
-NO_ARCH=	yes
-
 .include <bsd.port.mk>
