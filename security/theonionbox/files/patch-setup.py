@@ -32,7 +32,7 @@
          'tzlocal>=1.5',
          'futures>=3.2; python_version<"3.0"',
 -        'urllib3>=1.24.2, <1.25'    # '<1.25' due to requests 2.21 requirement
-+        'urllib3>=1.21.1,<1.26' # copied (except the exclusions) from requests 2.22
++        'urllib3>=1.21.1,<1.27' # copied (except the exclusions) from requests 2.25.1
      ],
      long_description_content_type='text/x-rst; charset=UTF-8',
      classifiers=[
