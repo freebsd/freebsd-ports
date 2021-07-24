@@ -9,4 +9,6 @@ COMMENT=	X.Org miscellaneous Meltho font
 USES=		xorg-cat:font
 FONTNAME=	OTF
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
