@@ -22,6 +22,7 @@ USES=		perl5 tar:xz
 USE_PERL5=	run
 USE_TEX=	kpathsea
 PATCH_WRKSRC=	${WRKDIR}
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 TLPKG_FILE=	${PORTNAME}-20150924.tlpdb
