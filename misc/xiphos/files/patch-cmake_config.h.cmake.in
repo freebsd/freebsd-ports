@@ -1,0 +1,15 @@
+Fix build with glib 2.68.3
+
+Obtained from [1] via [2].
+
+[1] https://aur.archlinux.org/cgit/aur.git/tree/xiphos-glibc.patch?h=xiphos
+[2] https://github.com/crosswire/xiphos/issues/1083
+
+--- cmake/config.h.cmake.in.orig	2021-07-24 06:17:00 UTC
++++ cmake/config.h.cmake.in
+@@ -65,3 +65,5 @@
+ 
+ 
+ #endif
++
++#define GLIB_VERSION_MIN_REQUIRED (GLIB_VERSION_2_26)
