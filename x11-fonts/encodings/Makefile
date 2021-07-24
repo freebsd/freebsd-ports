@@ -16,6 +16,8 @@ USE_XORG=	fontutil
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fontrootdir=${PREFIX}/share/fonts
 
+NO_ARCH=	yes
+
 post-install:
 	cd ${STAGEDIR}${PREFIX}/share/fonts/encodings && mkfontscale -b -s -l -n -r -p ${PREFIX}/share/fonts/encodings -e . -e large .
 
