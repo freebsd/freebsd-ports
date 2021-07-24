@@ -11,4 +11,6 @@ COMMENT=	X.Org Bigelow Holmes Lucida TypeWriter 100dpi font
 USES=		xorg xorg-cat:font
 USE_XORG=	fontutil
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
