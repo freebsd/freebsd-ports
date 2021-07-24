@@ -330,6 +330,7 @@
     SUBDIR += kpimtextedit
     SUBDIR += krdc
     SUBDIR += krfb
+    SUBDIR += krill
     SUBDIR += ksmtp
     SUBDIR += ktnef
     SUBDIR += kube-controller-manager

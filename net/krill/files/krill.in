@@ -1,0 +1,37 @@
+#!/bin/sh
+
+#
+# PROVIDE: krill
+# REQUIRE:  LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+desc="RPKI daemon, Certificate Authority and publication server"
+name=krill
+rcvar=krill_enable
+
+load_rc_config ${name}
+
+: ${name_enable:=NO}
+: ${krill_config=${krill_conf:-/usr/local/etc/krill/krill.conf}}
+: ${name_user=krill}
+: ${name_group=krill}
+
+wrkdir=/var/krill
+pidfile=${wrkdir}/${name}.pid
+required_files=${krill_config}
+required_dirs=${wrkdir}
+
+command=%%PREFIX%%/bin/krill
+command_args="-c ${krill_config}"
+start_cmd=krill_start
+
+krill_start()
+{
+	su -m krill -c "${command} ${command_args}" >/dev/null 2>&1 &
+	echo Starting ${name}.
+}
+
+
+run_rc_command "$1"
