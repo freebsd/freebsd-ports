@@ -1,6 +1,6 @@
---- dbdimp.h.orig	Fri Sep  8 06:50:50 2006
-+++ dbdimp.h	Tue Sep 12 14:00:36 2006
-@@ -105,6 +105,9 @@
+--- dbdimp.h.orig	2021-06-05 16:28:51 UTC
++++ dbdimp.h
+@@ -222,6 +222,9 @@ newUTF8SVpvn(char *s, STRLEN len) {
  #define newUTF8SVpvn newSVpvn
  #define SvUTF8_on(a) (a)
  #define SvUTF8_off(a) (a)
@@ -9,4 +9,4 @@
 +#endif
  #define sv_utf8_upgrade(a) (a)
  
- #endif
+ #endif /* #ifdef SvUTF8_on */
