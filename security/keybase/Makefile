@@ -1,5 +1,5 @@
 PORTNAME=	keybase
-PORTVERSION=	5.6.1
+PORTVERSION=	5.7.1
 DISTVERSIONPREFIX=	v
 MASTER_SITES=	https://github.com/keybase/client/releases/download/v${PORTVERSION}/
 CATEGORIES=	security
