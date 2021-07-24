@@ -49,6 +49,7 @@ WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CFLAGS+=	-Wno-address-of-packed-member
 CFLAGS+=	-D_WANT_SEMUN
+CFLAGS_powerpc=	-D_CALL_SYSV
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC} --enable-docs \
 	--disable-linux-user --disable-linux-aio \
 	--disable-kvm --disable-xen \
