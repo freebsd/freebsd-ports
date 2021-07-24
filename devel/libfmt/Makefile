@@ -1,6 +1,6 @@
 PORTNAME=	fmt
 # Make sure to check devel/spdlog consumers too
-PORTVERSION=	8.0.0
+PORTVERSION=	8.0.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/fmtlib/fmt/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	lib
