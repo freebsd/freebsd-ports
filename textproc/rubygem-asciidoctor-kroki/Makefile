@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	asciidoctor-kroki
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
