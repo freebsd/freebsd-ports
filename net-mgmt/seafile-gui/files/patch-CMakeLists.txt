@@ -1,6 +1,14 @@
---- CMakeLists.txt.orig	2018-08-31 11:31:59 UTC
+--- CMakeLists.txt.orig	2020-07-29 02:24:40 UTC
 +++ CMakeLists.txt
-@@ -107,7 +107,7 @@ IF (WIN32)
+@@ -6,6 +6,7 @@ SET(SEAFILE_CLIENT_VERSION_MINOR 0)
+ SET(SEAFILE_CLIENT_VERSION_PATCH 9)
+ SET(PROJECT_VERSION "${SEAFILE_CLIENT_VERSION_MAJOR}.${SEAFILE_CLIENT_VERSION_MINOR}.${SEAFILE_CLIENT_VERSION_PATCH}")
+ ADD_DEFINITIONS(-DSEAFILE_CLIENT_VERSION=${PROJECT_VERSION})
++ADD_DEFINITIONS(-DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_26)
+ INCLUDE(FindPkgConfig)
+ 
+ ## Build crash repoter on release build as default
+@@ -109,7 +110,7 @@ IF (WIN32)
        SET(SPARKLE_LIBS ${CMAKE_SOURCE_DIR}/WinSparkle.lib)
      ENDIF()
  
@@ -9,7 +17,7 @@
      INCLUDE_DIRECTORIES(${QT_QTDBUS_INCLUDE_DIR})
      LINK_DIRECTORIES(${QT_QTDBUS_LIBRARIES})
      SET(EXTRA_LIBS ${EXTRA_LIBS} ${QT_QTDBUS_LIBRARIES})
-@@ -183,7 +183,7 @@ IF (BUILD_SHIBBOLETH_SUPPORT)
+@@ -185,7 +186,7 @@ IF (BUILD_SHIBBOLETH_SUPPORT)
      ADD_DEFINITIONS(-DHAVE_SHIBBOLETH_SUPPORT)
  ENDIF()
  
@@ -18,7 +26,7 @@
      SET(USE_QT_LIBRARIES ${USE_QT_LIBRARIES} "DBus")
  ENDIF()
  
-@@ -367,7 +367,7 @@ PKG_CHECK_MODULES(LIBCCNET REQUIRED libccnet>=1.3)
+@@ -372,7 +373,7 @@ PKG_CHECK_MODULES(JANSSON REQUIRED jansson>=2.0)
  
  PKG_CHECK_MODULES(LIBSEARPC REQUIRED libsearpc>=1.0)
  
@@ -27,7 +35,7 @@
  
  PKG_CHECK_MODULES(LIBSEAFILE REQUIRED libseafile>=1.7)
  
-@@ -574,7 +574,7 @@ IF (WIN32)
+@@ -583,7 +584,7 @@ IF (WIN32)
          src/utils/registry.cpp
          src/utils/utils-win.cpp
          )
@@ -36,7 +44,7 @@
      LIST(APPEND utils_sources
          src/utils/process-linux.cpp
          )
-@@ -775,7 +775,7 @@ target_link_libraries(seafile-applet Qt5::WebEngine Qt
+@@ -794,7 +795,7 @@ target_link_libraries(seafile-applet Qt5::${WEBKIT_NAM
  ENDIF()
  
  ## QtBus
