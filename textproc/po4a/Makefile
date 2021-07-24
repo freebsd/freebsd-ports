@@ -3,7 +3,7 @@
 PORTNAME=	po4a
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.63
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -23,7 +23,8 @@ RUN_DEPENDS=	p5-Term-ReadKey>=2.30:devel/p5-Term-ReadKey \
 		jade>=0:textproc/jade \
 		xsltproc:textproc/libxslt \
 		docbook-xsl>0:textproc/docbook-xsl \
-		OpenSP>0:textproc/opensp
+		OpenSP>0:textproc/opensp \
+		msgmerge:devel/gettext-tools
 
 USES=		gettext perl5
 USE_PERL5=	modbuild
