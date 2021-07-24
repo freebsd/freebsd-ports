@@ -10,4 +10,6 @@ COMMENT=	X.Org miscellaneous Sony fonts
 
 USES=		xorg-cat:font
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
