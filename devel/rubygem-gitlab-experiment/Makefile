@@ -1,8 +1,8 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	gitlab-experiment
-PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTVERSION=	0.6.2
+PORTREVISION=	0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
