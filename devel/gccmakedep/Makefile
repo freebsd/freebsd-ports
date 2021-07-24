@@ -14,4 +14,6 @@ BUILD_DEPENDS=	tradcpp:devel/tradcpp
 PLIST_FILES=	bin/gccmakedep man/man1/gccmakedep.1.gz
 CONFIGURE_ENV+=	ac_cv_path_RAWCPP=tradcpp
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
