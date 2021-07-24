@@ -1,9 +1,9 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	noto
-PORTVERSION=	2.020
+PORTVERSION=	2.028
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/googlefonts/noto-emoji/raw/v2020-09-16-unicode13_1/fonts/
+MASTER_SITES=	https://github.com/googlefonts/noto-emoji/raw/v${PORTVERSION}/fonts/
 PKGNAMESUFFIX=	-emoji
 DISTFILES=	NotoColorEmoji.ttf \
 		NotoEmoji-Regular.ttf
