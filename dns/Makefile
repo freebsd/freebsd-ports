@@ -25,10 +25,10 @@
     SUBDIR += djbdns-tools
     SUBDIR += dlint
     SUBDIR += dnrd
+    SUBDIR += dns-ui
     SUBDIR += dns2blackhole
     SUBDIR += dns2tcp
     SUBDIR += dns_balance
-    SUBDIR += dns-ui
     SUBDIR += dnsblast
     SUBDIR += dnscap
     SUBDIR += dnscheckengine
