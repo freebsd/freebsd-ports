@@ -16,4 +16,6 @@ RUN_DEPENDS=	font-bh-ttf>0:x11-fonts/font-bh-ttf \
 
 USES=		metaport
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
