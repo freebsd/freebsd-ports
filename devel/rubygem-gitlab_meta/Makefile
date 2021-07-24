@@ -9,9 +9,10 @@ COMMENT=	GitLab meta gem
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		cpe gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 CPE_PRODUCT=	gitlab
 CPE_VENDOR=	gitlab
