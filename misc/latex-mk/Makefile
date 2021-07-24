@@ -20,4 +20,6 @@ GNU_CONFIGURE=	yes
 
 INFO=		latex-mk
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
