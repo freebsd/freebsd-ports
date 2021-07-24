@@ -8,9 +8,9 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library to create/read/write to XBase databases (*.DBF files)
 
-NO_ARCH=	yes
-
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
