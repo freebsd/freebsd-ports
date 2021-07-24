@@ -61,6 +61,9 @@ post-patch:
 		${BUILD_WRKSRC}/lua/src/lib
 	${LN} -s ${WRKDIR}/gtdialog-${GTD_HASH} ${BUILD_WRKSRC}/gtdialog
 	@${RM} ${WRKSRC}/core/.*.luadoc
+# Fix build with glib 2.68.3: see https://github.com/orbitalquark/textadept/issues/110
+	${REINPLACE_CMD} -e '/static volatile/s|volatile||g' \
+		${BUILD_WRKSRC}/scintilla/gtk/ScintillaGTKAccessible.cxx
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
