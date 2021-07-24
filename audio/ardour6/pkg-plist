@@ -113,33 +113,26 @@ share/appdata/ardour6.appdata.xml
 share/applications/ardour6.desktop
 %%DATADIR%%/ArdourMono.ttf
 %%DATADIR%%/ArdourSans.ttf
+%%DATADIR%%/export/Amazon Music.format  
+%%DATADIR%%/export/Apple Music.format
 %%DATADIR%%/export/BWAV 24bit Export.format
 %%DATADIR%%/export/BWAV 32float Export.format
 %%DATADIR%%/export/CD (Red Book).format
-%%DATADIR%%/export/CD + DVD-A.preset
-%%DATADIR%%/export/CD + FLAC (tagged).preset
-%%DATADIR%%/export/CD + FLAC.preset
-%%DATADIR%%/export/CD + Ogg_Vorbis (tagged).preset
-%%DATADIR%%/export/CD + Ogg_Vorbis + FLAC (tagged).preset
-%%DATADIR%%/export/CD + Ogg_Vorbis.preset
+%%DATADIR%%/export/CD + Ogg_Vorbis + FLAC.preset
 %%DATADIR%%/export/CD only.preset
-%%DATADIR%%/export/DVD-A only.preset
-%%DATADIR%%/export/DVD-A.format
-%%DATADIR%%/export/FLAC (tagged).preset
-%%DATADIR%%/export/FLAC 24 bit (tagged).format
-%%DATADIR%%/export/FLAC 24 bit .format
+%%DATADIR%%/export/FLAC 24 bit.format 
 %%DATADIR%%/export/FLAC.preset
 %%DATADIR%%/export/MP3 (extreme).format
 %%DATADIR%%/export/MP3 (medium).format
 %%DATADIR%%/export/MP3 (standard).format
-%%DATADIR%%/export/Ogg_Vorbis (tagged).format
-%%DATADIR%%/export/Ogg_Vorbis (tagged).preset
-%%DATADIR%%/export/Ogg_Vorbis + FLAC (tagged).preset
 %%DATADIR%%/export/Ogg_Vorbis + FLAC.preset
-%%DATADIR%%/export/Ogg_Vorbis .preset
 %%DATADIR%%/export/Ogg_Vorbis.format
+%%DATADIR%%/export/Ogg_Vorbis.preset         
 %%DATADIR%%/export/Ring Tone.format
+%%DATADIR%%/export/Soundcloud and Spotify.format
+%%DATADIR%%/export/Streaming.preset         
 %%DATADIR%%/export/WAV (tagged).format
+%%DATADIR%%/export/YouTube and Deezer.format
 %%DATADIR%%/icons/act-disabled.png
 %%DATADIR%%/icons/add.png
 %%DATADIR%%/icons/anchored_trim_left_cursor.png
@@ -255,6 +248,8 @@ share/applications/ardour6.desktop
 %%DATADIR%%/mcp/SSL Nucleus Ardour.profile
 %%DATADIR%%/mcp/artist_control.device
 %%DATADIR%%/mcp/artist_mix.device
+%%DATADIR%%/mcp/arturiaMkII.device 
+%%DATADIR%%/mcp/arturiaMkII.profile
 %%DATADIR%%/mcp/bcf2000.device
 %%DATADIR%%/mcp/cmc.device
 %%DATADIR%%/mcp/mc+xt+xt.device
@@ -284,6 +279,7 @@ share/applications/ardour6.desktop
 %%DATADIR%%/midi_maps/AKAI_MPK61.map
 %%DATADIR%%/midi_maps/AKAI_MPKmini.map
 %%DATADIR%%/midi_maps/Alesis_QX25.map
+%%DATADIR%%/midi_maps/Alesis_VI25.map
 %%DATADIR%%/midi_maps/Arturia_KeyLab49.map
 %%DATADIR%%/midi_maps/Arturia_MiniLab_mkII.map
 %%DATADIR%%/midi_maps/DDX3216.map
@@ -755,6 +751,7 @@ share/applications/ardour6.desktop
 %%DATADIR%%/patchfiles/Yamaha_PSR_DJX.midnam
 %%DATADIR%%/patchfiles/Yamaha_PSR_DJX_II.midnam
 %%DATADIR%%/patchfiles/Yamaha_PSR_S900.midnam
+%%DATADIR%%/patchfiles/Yamaha_P_121_125.midnam
 %%DATADIR%%/patchfiles/Yamaha_QS300.midnam
 %%DATADIR%%/patchfiles/Yamaha_QY70.midnam
 %%DATADIR%%/patchfiles/Yamaha_RM50.midnam
@@ -818,6 +815,7 @@ share/applications/ardour6.desktop
 %%DATADIR%%/scripts/reset_mixer.lua
 %%DATADIR%%/scripts/rubberband_swing.lua
 %%DATADIR%%/scripts/s_chanmap.lua
+%%DATADIR%%/scripts/s_ducks.lua
 %%DATADIR%%/scripts/s_fader_automation.lua
 %%DATADIR%%/scripts/s_foreach_track.lua
 %%DATADIR%%/scripts/s_group_color.lua
@@ -828,6 +826,7 @@ share/applications/ardour6.desktop
 %%DATADIR%%/scripts/s_portengine.lua
 %%DATADIR%%/scripts/s_region_gain.lua
 %%DATADIR%%/scripts/s_region_gain2.lua
+%%DATADIR%%/scripts/s_region_gain_curve.lua
 %%DATADIR%%/scripts/s_replaceplugin.lua
 %%DATADIR%%/scripts/s_selection.lua
 %%DATADIR%%/scripts/s_set_region_fades.lua
@@ -1081,3 +1080,4 @@ share/icons/hicolor/256x256/apps/ardour6.png
 share/icons/hicolor/32x32/apps/ardour6.png
 share/icons/hicolor/48x48/apps/ardour6.png
 share/icons/hicolor/512x512/apps/ardour6.png
+share/mime/application/ardour.xml

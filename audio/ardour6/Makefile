@@ -1,9 +1,10 @@
 # Created by: Michael Beer <beerml@sigma6audio.de>
 
 PORTNAME=	ardour6
-PORTVERSION=	6.6.0
+PORTVERSION=	6.8.0
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/beerml/ardour_releases/raw/master/
+MASTER_SITES=	LOCAL/nc/mirror/ \
+		https://misc.neelc.org/mirror/
 # The original master side points to the latest release only:
 # MASTER_SITES=	https://community.ardour.org/srctar/
 DISTNAME=	Ardour-${PORTVERSION}
