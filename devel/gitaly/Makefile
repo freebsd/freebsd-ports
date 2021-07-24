@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	14.0.5
+DISTVERSION=	14.1.0
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -15,7 +15,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 		rubygem-rugged>=1.1<2:devel/rubygem-rugged \
 		rubygem-github-linguist>=7.12.1<8:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.7.1<1.8.0:textproc/rubygem-gitlab-markup \
-		rubygem-activesupport61>=6.0.3.6<6.2:devel/rubygem-activesupport61 \
+		rubygem-activesupport61>=6.1.3.2<6.2:devel/rubygem-activesupport61 \
 		rubygem-rdoc>=6.1<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.1<4.2.8:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.4.gitlab.1<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
@@ -23,7 +23,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 		rubygem-sentry-raven>=3.0<4:devel/rubygem-sentry-raven \
 		rubygem-faraday>=1.0.1<2:www/rubygem-faraday \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
-		rubygem-gitlab-labkit>=0.18<0.19:devel/rubygem-gitlab-labkit \
+		rubygem-gitlab-labkit>=0.20<0.21:devel/rubygem-gitlab-labkit \
 		rubygem-licensee>=9.14.1<9.15:devel/rubygem-licensee \
 		rubygem-google-protobuf>=3.17.3<3.18:devel/rubygem-google-protobuf
 BUILD_DEPENDS=	gem:devel/ruby-gems \
@@ -43,7 +43,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	9adacd9933b211ca82452fe9b7eb565820c5417b
+GL_COMMIT=	11ceaf6b6204634021c70ed510e2805f9633bb14
 
 # for go dependencies
 USE_GITHUB=	nodefault

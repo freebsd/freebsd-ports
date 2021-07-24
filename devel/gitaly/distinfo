@@ -1,4 +1,4 @@
-TIMESTAMP = 1625901926
+TIMESTAMP = 1627071975
 SHA256 (DataDog-datadog-go-v4.4.0_GH0.tar.gz) = ca4e63041f5e0a176f0affd7a59979255de116686479816a80ff067531f141dc
 SIZE (DataDog-datadog-go-v4.4.0_GH0.tar.gz) = 43175
 SHA256 (DataDog-dd-trace-go-v1.30.0_GH0.tar.gz) = a739f6c2c20cfa8ffe427451c9eeea3b369fd7bf1334507eef2b8d60088974a2
@@ -185,8 +185,8 @@ SHA256 (uber-jaeger-client-go-v2.27.0_GH0.tar.gz) = 7590acdefcbbf9553bd3415bc7e5
 SIZE (uber-jaeger-client-go-v2.27.0_GH0.tar.gz) = 210139
 SHA256 (uber-jaeger-lib-v2.4.1_GH0.tar.gz) = c178bcad325857dba29551c16f40707701adf6e3a9e01e1ca3e5edfc3c6de8bc
 SIZE (uber-jaeger-lib-v2.4.1_GH0.tar.gz) = 38010
-SHA256 (gitlab-org-gitaly-9adacd9933b211ca82452fe9b7eb565820c5417b_GL0.tar.gz) = 3f79fc2c173f6f0a8411b6904aaef24912276d7fa88bf2434ea7cb95081ca043
-SIZE (gitlab-org-gitaly-9adacd9933b211ca82452fe9b7eb565820c5417b_GL0.tar.gz) = 3528548
+SHA256 (gitlab-org-gitaly-11ceaf6b6204634021c70ed510e2805f9633bb14_GL0.tar.gz) = b71749cd0e36976cb77c72bc7857706f742be154de605b1e0edb8daf8da5c38b
+SIZE (gitlab-org-gitaly-11ceaf6b6204634021c70ed510e2805f9633bb14_GL0.tar.gz) = 3577870
 SHA256 (gitlab-org-gitlab-shell-3f9890ef73dced430d86801a1efc0e93ec50890e_GL0.tar.gz) = 7f5b214e4bd2b72231462c3a153d9b416caab331a1a25a3ca5cd44b02ab9eb15
 SIZE (gitlab-org-gitlab-shell-3f9890ef73dced430d86801a1efc0e93ec50890e_GL0.tar.gz) = 89693
 SHA256 (gitlab-org-labkit-bdc29f9e957c46d7b0a4747a4662879c7189bf08_GL0.tar.gz) = 89f9ff3689f9338379e62abda71c678e6ff1a65f7d67392c284941678dc90c7e
