@@ -2,7 +2,7 @@
 
 PORTNAME=	numpy
 PORTVERSION=	1.16.6
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP \
@@ -38,7 +38,7 @@ OPTIONS_DEFAULT=	OPENBLAS SUITESPARSE
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 
 ATLAS_USES=		blaslapack:atlas
-ATLAS_VARS=		BLASLIBS="ptf77blas, ptcblas" BLASNAME=atlas LAPACKLIBS=alpack LIBRARIES=atlas_libs
+ATLAS_VARS=		BLASLIBS="ptf77blas, ptcblas" BLASNAME=atlas LAPACKLIBS=alapack LIBRARIES=atlas_libs
 NETLIB_USES=		blaslapack:netlib
 NETLIB_VARS=		BLASLIBS="blas, cblas" BLASNAME=atlas LAPACKLIBS=lapack LIBRARIES=atlas_libs
 NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
