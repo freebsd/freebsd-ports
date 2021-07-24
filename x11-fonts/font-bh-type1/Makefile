@@ -10,4 +10,6 @@ COMMENT=	X.Org Bigelow Holmes Type1 font
 
 USES=		xorg-cat:font
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
