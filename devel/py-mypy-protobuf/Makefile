@@ -19,7 +19,4 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e '/protoc_gen_mypy.bat/d' ${WRKSRC}/setup.py
-
 .include <bsd.port.mk>
