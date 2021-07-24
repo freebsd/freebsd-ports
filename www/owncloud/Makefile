@@ -1,7 +1,7 @@
 # Created by: Kevin Lo <kevlo@FreeBSD.org>
 
 PORTNAME=	owncloud
-PORTVERSION=	10.7.0
+PORTVERSION=	10.8.0
 CATEGORIES=	www
 MASTER_SITES=	https://download.owncloud.org/community/ \
 		LOCAL/sunpoet
@@ -42,6 +42,10 @@ PGSQL_USE=	PHP=pdo_pgsql
 SMB_RUN_DEPENDS=${PECL_PKGNAMEPREFIX}smbclient>=0.8.0:net/pecl-smbclient@${PHP_FLAVOR}
 SQLITE_USE=	PHP=pdo_sqlite
 SSL_USE=	PHP=openssl
+
+post-patch:
+	@${FIND} ${WRKSRC} -type d -empty -delete
+	@${FIND} ${WRKSRC} -type d -name .github | ${XARGS} ${RM} -fr
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/
