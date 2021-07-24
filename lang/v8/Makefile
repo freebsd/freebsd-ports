@@ -1,8 +1,8 @@
 # We follow the stable channel on https://omahaproxy.appspot.com/
-# https://chromium.googlesource.com/v8/v8/+/refs/heads/9.1-lkgr
+# https://chromium.googlesource.com/v8/v8/+/refs/heads/9.2-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	9.1.269.39
+PORTVERSION=	9.2.230.20
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}
 DISTFILES=	build-${BUILD_REV}.tar.gz \
@@ -29,7 +29,7 @@ LIB_DEPENDS=	libicudata.so:devel/icu
 USES=		cpe gnome ninja pkgconfig python:3.5+,build tar:xz
 USE_GNOME=	glib20
 
-BINARY_ALIAS=	python=${PYTHON_CMD}
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 MAKE_ARGS=	-C out/Release
 USE_LDCONFIG=	yes
 
@@ -39,13 +39,13 @@ USE_GITHUB=	yes
 
 CPE_VENDOR=	google
 
-BUILD_REV=	77edba11e25386aa719d4f08c3ce2d8c4f868c15
-BUILDTOOLS_REV=	5dbd89c9d9c0b0ff47cefdc2bc421b8c9a1c5a21
-CLANG_REV=	a387faa2a6741f565e45d78804a49a0e55de5909
-COMMON_REV=	cab90cbdaaf4444d67aef6ce3cef09fc5fdeb560
-GOOGLETEST_REV=	07f4869221012b16b7f9ee685d94856e1fc9f361
-ICU_REV=	81d656878ec611cb0b42d52c82e9dae93920d9ba
-ZLIB_REV=	09490503d0f201b81e03f5ca0ab8ba8ee76d4a8e
+BUILD_REV=	4036cf1b17581f5668b487a25e252d56e0321a7f
+BUILDTOOLS_REV=	20b1d0fc13ebaa263a1248f08814f523a86e6bed
+CLANG_REV=	a38f01b956e091d5e698d2af484c81cd4e9a2a2d
+COMMON_REV=	d5bb24e5d9802c8c917fcaa4375d5239a586c168
+GOOGLETEST_REV=	23ef29555ef4789f555f1ba8c51b4c52975f0907
+ICU_REV=	f022e298b4f4a782486bb6d5ce6589c998b51fe2
+ZLIB_REV=	5b8d433953beb2a75a755ba321a3076b95f7cdb9
 
 # Run "gn args --list out/Release" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using
