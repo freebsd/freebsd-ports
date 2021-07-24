@@ -3,7 +3,7 @@
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.33.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://waf.io/:waf
@@ -17,6 +17,7 @@ PATCHFILES+=	3f006eced47b.patch:-p1 # required for #7268
 PATCHFILES+=	dbf0fd7d60fa.patch:-p1 # https://github.com/mpv-player/mpv/pull/7268
 PATCHFILES+=	dbbf4a415de7.patch:-p1 # https://github.com/mpv-player/mpv/pull/7268
 PATCHFILES+=	03b9f8e32362.patch:-p1 # https://github.com/mpv-player/mpv/issues/8913
+PATCHFILES+=	747b1520012e.patch:-p1 # https://github.com/mpv-player/mpv/pull/9033
 PATCHFILES+=	968faef86723.patch:-p1 # libplacebo 3.104
 PATCHFILES+=	7c4465cefb27.patch:-p1 # libplacebo 3.104
 
