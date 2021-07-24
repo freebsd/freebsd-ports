@@ -10,4 +10,6 @@ COMMENT=	X.Org Bitstream Vera 100dpi font
 
 USES=		xorg-cat:font
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
