@@ -11,4 +11,6 @@ COMMENT=	X.Org miscellaneous Misc fonts
 USES=		xorg xorg-cat:font
 USE_XORG=	fontutil
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
