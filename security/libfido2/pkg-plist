@@ -47,6 +47,7 @@ man/man3/fido_assert_largeblob_key_ptr.3.gz
 man/man3/fido_assert_new.3.gz
 man/man3/fido_assert_rp_id.3.gz
 man/man3/fido_assert_set_authdata.3.gz
+man/man3/fido_assert_set_clientdata.3.gz
 man/man3/fido_assert_set_clientdata_hash.3.gz
 man/man3/fido_assert_set_count.3.gz
 man/man3/fido_assert_set_extensions.3.gz
@@ -93,6 +94,9 @@ man/man3/fido_bio_template_set_id.3.gz
 man/man3/fido_bio_template_set_name.3.gz
 man/man3/fido_cbor_info_aaguid_len.3.gz
 man/man3/fido_cbor_info_aaguid_ptr.3.gz
+man/man3/fido_cbor_info_algorithm_cose.3.gz
+man/man3/fido_cbor_info_algorithm_count.3.gz
+man/man3/fido_cbor_info_algorithm_type.3.gz
 man/man3/fido_cbor_info_extensions_len.3.gz
 man/man3/fido_cbor_info_extensions_ptr.3.gz
 man/man3/fido_cbor_info_free.3.gz
@@ -107,6 +111,8 @@ man/man3/fido_cbor_info_options_name_ptr.3.gz
 man/man3/fido_cbor_info_options_value_ptr.3.gz
 man/man3/fido_cbor_info_protocols_len.3.gz
 man/man3/fido_cbor_info_protocols_ptr.3.gz
+man/man3/fido_cbor_info_transports_len.3.gz
+man/man3/fido_cbor_info_transports_ptr.3.gz
 man/man3/fido_cbor_info_versions_len.3.gz
 man/man3/fido_cbor_info_versions_ptr.3.gz
 man/man3/fido_cred_aaguid_len.3.gz
@@ -135,9 +141,11 @@ man/man3/fido_cred_rp_name.3.gz
 man/man3/fido_cred_set_authdata.3.gz
 man/man3/fido_cred_set_authdata_raw.3.gz
 man/man3/fido_cred_set_blob.3.gz
+man/man3/fido_cred_set_clientdata.3.gz
 man/man3/fido_cred_set_clientdata_hash.3.gz
 man/man3/fido_cred_set_extensions.3.gz
 man/man3/fido_cred_set_fmt.3.gz
+man/man3/fido_cred_set_id.3.gz
 man/man3/fido_cred_set_prot.3.gz
 man/man3/fido_cred_set_rk.3.gz
 man/man3/fido_cred_set_rp.3.gz
@@ -175,6 +183,7 @@ man/man3/fido_credman_rp_id_hash_len.3.gz
 man/man3/fido_credman_rp_id_hash_ptr.3.gz
 man/man3/fido_credman_rp_name.3.gz
 man/man3/fido_credman_rp_new.3.gz
+man/man3/fido_credman_set_dev_rk.3.gz
 man/man3/fido_dev_build.3.gz
 man/man3/fido_dev_cancel.3.gz
 man/man3/fido_dev_close.3.gz
@@ -201,6 +210,7 @@ man/man3/fido_dev_info_product_string.3.gz
 man/man3/fido_dev_info_ptr.3.gz
 man/man3/fido_dev_info_vendor.3.gz
 man/man3/fido_dev_is_fido2.3.gz
+man/man3/fido_dev_is_winhello.3.gz
 man/man3/fido_dev_largeblob_get.3.gz
 man/man3/fido_dev_largeblob_get_array.3.gz
 man/man3/fido_dev_largeblob_remove.3.gz
@@ -260,6 +270,7 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_new.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_rp_id.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_set_authdata.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_set_clientdata.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_set_clientdata_hash.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_set_count.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_set_extensions.html
@@ -306,6 +317,9 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_bio_template_set_name.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_aaguid_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_aaguid_ptr.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_algorithm_cose.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_algorithm_count.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_algorithm_type.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_extensions_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_extensions_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_free.html
@@ -320,6 +334,8 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_options_value_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_protocols_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_protocols_ptr.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_transports_len.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_transports_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_versions_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_versions_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_aaguid_len.html
@@ -348,9 +364,11 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_authdata.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_authdata_raw.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_blob.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_clientdata.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_clientdata_hash.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_fmt.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_id.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_prot.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_rk.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_rp.html
@@ -388,6 +406,7 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_credman_rp_id_hash_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_credman_rp_name.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_credman_rp_new.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_credman_set_dev_rk.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_build.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_cancel.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_close.html
@@ -414,6 +433,7 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_info_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_info_vendor.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_is_fido2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_is_winhello.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_largeblob_get.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_largeblob_get_array.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_largeblob_remove.html
