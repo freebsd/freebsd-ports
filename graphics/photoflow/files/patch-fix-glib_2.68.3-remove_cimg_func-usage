@@ -1,0 +1,20 @@
+Remove last remnant of cimg_funcs.h
+
+The cimg functionality was removed in 2014 in
+	https://github.com/libvips/libvips/commit/927b2d795448eb676d4c1680f07b54d61bb4dd7c
+The header was completely removed in
+	https://github.com/libvips/libvips/commit/221a5f7e8bfd11797f1bef5a29a928bc0f03e311
+
+This fixes the build against glib-2.68.3
+
+--- src/operations/denoise.cc.orig	2021-07-24 09:04:04 UTC
++++ src/operations/denoise.cc
+@@ -27,7 +27,7 @@
+ 
+  */
+ 
+-#include <vips/cimg_funcs.h>
++// #include <vips/cimg_funcs.h>
+ 
+ #include "../base/new_operation.hh"
+ #include "convert_colorspace.hh"
