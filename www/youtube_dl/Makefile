@@ -1,8 +1,9 @@
 PORTNAME=	youtube_dl
-PORTVERSION=	2021.06.06
+DISTVERSION=	2021.06.06
 CATEGORIES=	www
-MASTER_SITES=	https://yt-dl.org/downloads/${PORTVERSION}/
-DISTNAME=	youtube-dl-${PORTVERSION}
+MASTER_SITES=	https://github.com/ytdl-org/youtube-dl/releases/download/${DISTVERSION}/ \
+		https://yt-dl.org/downloads/${DISTVERSION}/
+DISTNAME=	youtube-dl-${DISTVERSION}
 
 # Implicit approval to commit trivial version updates.
 MAINTAINER=	multimedia@FreeBSD.org
