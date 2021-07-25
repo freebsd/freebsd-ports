@@ -1,8 +1,7 @@
 # Created by: nork@FreeBSD.org
 
 PORTNAME=	openexr
-PORTVERSION=	3.0.5
-PORTREVISION=	1
+PORTVERSION=	3.1.1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -24,11 +23,11 @@ CPPFLAGS+=	-I.
 # must be linked with -l{thr|pthread} explicitly
 LDFLAGS+=	-lpthread
 
-PATCH_STRIP=	-p1
+PATCH_STRIP=	-p0
 
-_MAJORVER=	3_0
-_VER=		29
-_MINVER=	0
+_MAJORVER=	3_1
+_VER=		30
+_MINVER=	1
 _PLVER=		0
 
 PLIST_SUB+=	MAJORVER=${_MAJORVER} \
