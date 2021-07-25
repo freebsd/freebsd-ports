@@ -1,6 +1,6 @@
 PORTNAME=	solana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.4
+DISTVERSION=	1.7.8
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	Fails on 32-bit systems: https://github.com/solana-labs/solana/issues/16811
 
-BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION} \
+		protoc:devel/protobuf
 LIB_DEPENDS=	libhidapi.so:comms/hidapi
 
 USES=		cargo pkgconfig ssl
@@ -25,6 +26,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ahash-0.4.6 \
 		ahash-0.6.1 \
 		aho-corasick-0.7.10 \
+		aliasable-0.1.3 \
 		ansi_term-0.11.0 \
 		anyhow-1.0.38 \
 		arc-swap-0.4.8 \
@@ -49,7 +51,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		base64-0.11.0 \
 		base64-0.12.3 \
 		base64-0.13.0 \
-		bincode-1.3.1 \
+		bincode-1.3.3 \
 		bindgen-0.57.0 \
 		bitflags-1.2.1 \
 		blake2b_simd-0.5.10 \
@@ -58,13 +60,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		block-buffer-0.9.0 \
 		block-padding-0.1.5 \
 		block-padding-0.2.1 \
-		borsh-0.8.1 \
 		borsh-0.9.0 \
-		borsh-derive-0.8.1 \
 		borsh-derive-0.9.0 \
-		borsh-derive-internal-0.8.1 \
 		borsh-derive-internal-0.9.0 \
-		borsh-schema-derive-internal-0.8.1 \
 		borsh-schema-derive-internal-0.9.0 \
 		bs58-0.3.1 \
 		bstr-0.2.13 \
@@ -96,6 +94,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		console-0.11.3 \
 		console-0.14.1 \
 		const_fn-0.4.5 \
+		const_format-0.2.14 \
+		const_format_proc_macros-0.2.14 \
 		constant_time_eq-0.1.5 \
 		core-foundation-0.9.1 \
 		core-foundation-sys-0.8.2 \
@@ -157,6 +157,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		feature-probe-0.1.1 \
 		filedescriptor-0.8.0 \
 		filetime-0.2.10 \
+		fixedbitset-0.2.0 \
 		flate2-1.0.14 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
@@ -193,6 +194,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hash32-0.1.1 \
 		hashbrown-0.8.2 \
 		hashbrown-0.9.1 \
+		heck-0.3.3 \
 		hermit-abi-0.1.13 \
 		hex-0.4.2 \
 		hidapi-1.2.5 \
@@ -201,10 +203,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hmac-0.8.1 \
 		hmac-0.9.0 \
 		hmac-0.10.1 \
-		hmac-drbg-0.2.0 \
+		hmac-drbg-0.3.0 \
 		http-0.2.1 \
 		http-body-0.3.1 \
-		http-body-0.4.0 \
+		http-body-0.4.2 \
 		httparse-1.3.4 \
 		httpdate-0.3.2 \
 		humantime-2.0.1 \
@@ -212,6 +214,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hyper-0.13.10 \
 		hyper-0.14.3 \
 		hyper-rustls-0.22.1 \
+		hyper-timeout-0.4.1 \
 		hyper-tls-0.5.0 \
 		idna-0.1.5 \
 		idna-0.2.0 \
@@ -224,6 +227,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		iovec-0.1.4 \
 		ipnet-2.3.0 \
 		itertools-0.9.0 \
+		itertools-0.10.1 \
 		itoa-0.4.5 \
 		jobserver-0.1.21 \
 		js-sys-0.3.47 \
@@ -245,7 +249,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		libloading-0.6.2 \
 		libloading-0.7.0 \
 		librocksdb-sys-6.17.3 \
-		libsecp256k1-0.3.5 \
+		libsecp256k1-0.5.0 \
+		libsecp256k1-core-0.2.1 \
+		libsecp256k1-gen-ecmult-0.2.0 \
+		libsecp256k1-gen-genmult-0.2.0 \
 		linked-hash-map-0.5.3 \
 		lock_api-0.3.4 \
 		lock_api-0.4.1 \
@@ -269,6 +276,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		mio-uds-0.6.8 \
 		miow-0.2.2 \
 		miow-0.3.6 \
+		multimap-0.8.3 \
 		native-tls-0.2.7 \
 		net2-0.2.37 \
 		nix-0.17.0 \
@@ -291,8 +299,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		openssl-0.10.29 \
 		openssl-probe-0.1.2 \
 		openssl-sys-0.9.57 \
-		ouroboros-0.5.1 \
-		ouroboros_macro-0.5.1 \
+		ouroboros-0.10.0 \
+		ouroboros_macro-0.10.0 \
 		parity-tokio-ipc-0.8.0 \
 		parity-ws-0.10.0 \
 		parking_lot-0.9.0 \
@@ -308,6 +316,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		percent-encoding-1.0.1 \
 		percent-encoding-2.1.0 \
 		pest-2.1.3 \
+		petgraph-0.5.1 \
 		pickledb-0.4.1 \
 		pin-project-0.4.23 \
 		pin-project-1.0.1 \
@@ -324,16 +333,19 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		predicates-tree-1.0.0 \
 		pretty-hex-0.2.1 \
 		proc-macro-crate-0.1.5 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.4 \
 		proc-macro2-0.4.30 \
 		proc-macro2-1.0.24 \
-		prost-0.7.0 \
-		prost-derive-0.7.0 \
-		prost-types-0.7.0 \
+		prost-0.8.0 \
+		prost-build-0.8.0 \
+		prost-derive-0.8.0 \
+		prost-types-0.8.0 \
 		qstring-0.7.2 \
 		quote-0.6.13 \
-		quote-1.0.6 \
+		quote-1.0.9 \
 		rand-0.4.6 \
 		rand-0.6.5 \
 		rand-0.7.3 \
@@ -414,16 +426,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		smallvec-1.6.1 \
 		smpl_jwt-0.6.1 \
 		socket2-0.3.17 \
-		solana-frozen-abi-1.7.1 \
-		solana-frozen-abi-macro-1.7.1 \
-		solana-logger-1.7.1 \
-		solana-program-1.7.1 \
-		solana-sdk-macro-1.7.1 \
+		solana-frozen-abi-1.7.6 \
+		solana-frozen-abi-macro-1.7.6 \
+		solana-logger-1.7.6 \
+		solana-program-1.7.6 \
+		solana-sdk-macro-1.7.6 \
 		solana_rbpf-0.2.11 \
 		spin-0.5.2 \
-		spl-associated-token-account-1.0.2 \
+		spl-associated-token-account-1.0.3 \
 		spl-memo-3.0.1 \
-		spl-token-3.1.1 \
+		spl-token-3.2.0 \
 		stable_deref_trait-1.2.0 \
 		standback-0.2.9 \
 		static_assertions-1.1.0 \
@@ -461,14 +473,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tinyvec_macros-0.1.0 \
 		tokio-0.1.22 \
 		tokio-0.2.22 \
-		tokio-1.1.1 \
+		tokio-1.8.1 \
 		tokio-codec-0.1.2 \
 		tokio-current-thread-0.1.7 \
 		tokio-executor-0.1.10 \
 		tokio-fs-0.1.7 \
 		tokio-io-0.1.13 \
+		tokio-io-timeout-1.1.1 \
 		tokio-macros-0.2.6 \
-		tokio-macros-1.0.0 \
+		tokio-macros-1.3.0 \
 		tokio-native-tls-0.3.0 \
 		tokio-reactor-0.1.12 \
 		tokio-rustls-0.22.0 \
@@ -484,8 +497,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tokio-util-0.3.1 \
 		tokio-util-0.6.3 \
 		toml-0.5.6 \
-		tonic-0.4.0 \
-		tower-0.4.4 \
+		tonic-0.5.0 \
+		tonic-build-0.5.0 \
+		tower-0.4.8 \
 		tower-layer-0.3.1 \
 		tower-service-0.3.0 \
 		tracing-0.1.18 \
@@ -504,6 +518,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.16 \
+		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.7 \
 		unicode-xid-0.1.0 \
 		unicode-xid-0.2.0 \
@@ -536,6 +551,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		webpki-roots-0.21.0 \
 		websocket-0.24.0 \
 		websocket-base-0.24.0 \
+		which-4.0.2 \
 		winapi-0.2.8 \
 		winapi-0.3.8 \
 		winapi-build-0.1.1 \

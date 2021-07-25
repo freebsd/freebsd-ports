@@ -22,7 +22,6 @@ bin/solana-merkle-root-bench
 bin/solana-net-shaper
 bin/solana-poh-bench
 bin/solana-stake-accounts
-bin/solana-stake-monitor
 bin/solana-store-tool
 bin/solana-sys-tuner
 bin/solana-test-validator
