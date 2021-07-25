@@ -16466,3 +16466,4 @@ net-mgmt/unifi-lts||2021-07-18|Has expired: Upstream EoL the hardware supported 
 audio/ripit|audio/abcde|2021-07-18|Has expired: Upstream no longer maintained, use audio/abcde instead
 x11-toolkits/libsexymm||2021-07-19|Discontinued in 2006, no dependency left in the ports tree
 sysutils/rubygem-fluent-plugin-graylog||2021-07-21|Has expired: Project is abandoned upstreams
+www/rubygem-toml-rb10|www/rubygem-toml-rb|2021-07-25|Obsolete, use www/rubygem-toml-rb
