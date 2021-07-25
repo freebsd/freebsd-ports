@@ -5,7 +5,7 @@ DISTVERSION=	10.91.01
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/t6/netpbm/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Toolkit for conversion of images between different formats
 
 LICENSE=	GPLv2 IJG LGPL21 MIT PD
@@ -120,7 +120,7 @@ NETPBM_REPO=	https://svn.code.sf.net/p/netpbm/code
 NETPBM_SERIES=	advanced
 
 netpbm-version-check:
-	@REV=`svnlite info ${NETPBM_REPO}/${NETPBM_SERIES}/version.mk | sed -n 's/Last Changed Rev: //p'`; \
+	@REV=`svnlite info ${NETPBM_REPO}/${NETPBM_SERIES}/version.mk | ${SED} -n 's/Last Changed Rev: //p'`; \
 	VERSION=`(svnlite cat -r$$REV ${NETPBM_REPO}/${NETPBM_SERIES}/version.mk; \
 			echo 'all:'; \
 			echo '	@printf "%02d.%02d.%02d" \'; \

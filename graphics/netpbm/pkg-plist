@@ -294,7 +294,7 @@ bin/ppmnorm
 bin/ppmntsc
 bin/ppmpat
 %%PERL%%bin/ppmquant
-bin/ppmquantall
+%%PERL%%bin/ppmquantall
 %%PERL%%bin/ppmrainbow
 bin/ppmrelief
 bin/ppmrough
@@ -699,7 +699,7 @@ lib/libnetpbm.so.11.91
 %%MANPAGES%%man/man1/ppmntsc.1.gz
 %%MANPAGES%%man/man1/ppmpat.1.gz
 %%PERL%%%%MANPAGES%%man/man1/ppmquant.1.gz
-%%MANPAGES%%man/man1/ppmquantall.1.gz
+%%PERL%%%%MANPAGES%%man/man1/ppmquantall.1.gz
 %%PERL%%%%MANPAGES%%man/man1/ppmrainbow.1.gz
 %%MANPAGES%%man/man1/ppmrelief.1.gz
 %%MANPAGES%%man/man1/ppmrough.1.gz
