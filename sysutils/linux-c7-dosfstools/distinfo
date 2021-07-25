@@ -1,4 +1,6 @@
-TIMESTAMP = 1578577223
+TIMESTAMP = 1627157205
+SHA256 (centos/dosfstools-3.0.20-10.el7.aarch64.rpm) = 6fd4743d87914e69224466fcb2d53c44fce3891b64bb0561fd83ef3c5c8dbbff
+SIZE (centos/dosfstools-3.0.20-10.el7.aarch64.rpm) = 102152
 SHA256 (centos/dosfstools-3.0.20-10.el7.i686.rpm) = 1ab8831faff8ef12b3cac4aafdd9d5d7819d2fc0ff248c424b72dc703498d6d8
 SIZE (centos/dosfstools-3.0.20-10.el7.i686.rpm) = 103912
 SHA256 (centos/dosfstools-3.0.20-10.el7.x86_64.rpm) = cbf47c845706e9d0a764b49d9d020128616dcbf16959479d6575c21da06369e9

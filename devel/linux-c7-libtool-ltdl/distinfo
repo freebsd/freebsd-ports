@@ -1,3 +1,6 @@
+TIMESTAMP = 1627157548
+SHA256 (centos/libtool-ltdl-2.4.2-22.el7_3.aarch64.rpm) = 9538519d5f7365663a0bdadbbfd4cc32336f6673b3a8b6469c117dc62952eece
+SIZE (centos/libtool-ltdl-2.4.2-22.el7_3.aarch64.rpm) = 48512
 SHA256 (centos/libtool-ltdl-2.4.2-22.el7_3.i686.rpm) = eb6e5c2ba44e6f24a125a8fe008dd038f9cd4141425e80489118f84b112830a8
 SIZE (centos/libtool-ltdl-2.4.2-22.el7_3.i686.rpm) = 50336
 SHA256 (centos/libtool-ltdl-2.4.2-22.el7_3.x86_64.rpm) = 0b2000c290f71e4b6e373a28ad38429d9bd62300df735badd219701c5d714c49

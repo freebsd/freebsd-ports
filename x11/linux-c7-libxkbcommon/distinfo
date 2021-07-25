@@ -1,4 +1,6 @@
-TIMESTAMP = 1568993041
+TIMESTAMP = 1627157327
+SHA256 (centos/libxkbcommon-0.7.1-3.el7.aarch64.rpm) = ad9684ce41bae8980522aa3a48e5473f105c322a12df666b9a1d1a5ed0063b46
+SIZE (centos/libxkbcommon-0.7.1-3.el7.aarch64.rpm) = 106652
 SHA256 (centos/libxkbcommon-0.7.1-3.el7.i686.rpm) = 04bfdd159c7cfe3d7c0d6c60b6aa00f619ea72049dafe7c4d2a2aa6321bdabce
 SIZE (centos/libxkbcommon-0.7.1-3.el7.i686.rpm) = 111552
 SHA256 (centos/libxkbcommon-0.7.1-3.el7.x86_64.rpm) = a9b062f6eb21386a67dfea0fd3f3bca884fa25a938f6edf36b4a4fcc30578fc9

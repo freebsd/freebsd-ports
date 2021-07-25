@@ -1,4 +1,6 @@
-TIMESTAMP = 1598716218
+TIMESTAMP = 1627157267
+SHA256 (centos/librsvg2-2.40.20-1.el7.aarch64.rpm) = 4582f22490b77169b8ac42b7aea5da2a887219fe298ccbfd9581721e9f6d6d85
+SIZE (centos/librsvg2-2.40.20-1.el7.aarch64.rpm) = 125900
 SHA256 (centos/librsvg2-2.40.20-1.el7.i686.rpm) = 8234418b33407a24cef770cf994a5ae21dc4acb5bf7466e7dd5e4cfdca96d5e5
 SIZE (centos/librsvg2-2.40.20-1.el7.i686.rpm) = 139252
 SHA256 (centos/librsvg2-2.40.20-1.el7.x86_64.rpm) = c291f4d51a6ed1d5f51d8ad1f4aa7bdfe08063d257216065ea009347a2901c07

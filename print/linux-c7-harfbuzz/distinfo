@@ -1,4 +1,6 @@
-TIMESTAMP = 1556485359
+TIMESTAMP = 1627157760
+SHA256 (centos/harfbuzz-1.7.5-2.el7.aarch64.rpm) = 8229d1e457c709a2a54cfd05b2682011d253d9060ac53c14c297355540bd225b
+SIZE (centos/harfbuzz-1.7.5-2.el7.aarch64.rpm) = 256824
 SHA256 (centos/harfbuzz-1.7.5-2.el7.i686.rpm) = db07a5560c2a369a94e823499ba16f36e026adff0276e95ec979cda512fc10d0
 SIZE (centos/harfbuzz-1.7.5-2.el7.i686.rpm) = 272200
 SHA256 (centos/harfbuzz-1.7.5-2.el7.x86_64.rpm) = 3b99fde0c10155533b6e60202089d6e8ba99cf8aef0dea593164d9da90b08a21

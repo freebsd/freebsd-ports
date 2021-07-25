@@ -59,7 +59,14 @@ post-install:
 
 	${LN} -sfh ../../../../libgcc_s.so.1 \
 	${STAGEDIR}${PREFIX}/usr/lib/gcc/x86_64-redhat-linux/4.8.2/32/libgcc_s.so
-.else
+.endif
+
+.if ${ARCH} == aarch64
+	${LN} -sfh ../../../../lib64/libgcc_s.so.1 \
+	${STAGEDIR}${PREFIX}/usr/lib/gcc/aarch64-redhat-linux/4.8.2/libgcc_s.so
+.endif
+
+.if ${ARCH} == i386
 	${LN} -sfh ../../../libgcc_s.so.1 \
 	${STAGEDIR}${PREFIX}/usr/lib/gcc/i686-redhat-linux/4.8.2/libgcc_s.so
 .endif

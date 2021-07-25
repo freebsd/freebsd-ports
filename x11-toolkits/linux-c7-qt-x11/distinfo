@@ -1,4 +1,6 @@
-TIMESTAMP = 1614799616
+TIMESTAMP = 1627157513
+SHA256 (centos/qt-x11-4.8.7-9.el7_9.aarch64.rpm) = e8572e8033eade9c969dd4510fcf052c04c572e5e105ea01f7796305f54c13d6
+SIZE (centos/qt-x11-4.8.7-9.el7_9.aarch64.rpm) = 12278284
 SHA256 (centos/qt-x11-4.8.7-9.el7_9.i686.rpm) = 9311ccab42970f1272cfc018419932b0fb8fe37ba50649863fba7a09fcb64c4b
 SIZE (centos/qt-x11-4.8.7-9.el7_9.i686.rpm) = 13369988
 SHA256 (centos/qt-x11-4.8.7-9.el7_9.x86_64.rpm) = 051767c8b8b2c33280f93fb2f1f60e7d9bdd8f44678ca6c68f5e2e59986a7ef8

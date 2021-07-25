@@ -1,4 +1,6 @@
-TIMESTAMP = 1482094134
+TIMESTAMP = 1627157541
+SHA256 (centos/libglade2-2.6.4-11.el7.aarch64.rpm) = 35ddf68b4bf4f955a0d839546b4ac8bdfe2dffe917f8fcbf57d2b6e7303eec36
+SIZE (centos/libglade2-2.6.4-11.el7.aarch64.rpm) = 62296
 SHA256 (centos/libglade2-2.6.4-11.el7.i686.rpm) = 6b27c79eb71ab0acff2ea196b539796afd9a094706e97b310aeb1b5fd61f9b4b
 SIZE (centos/libglade2-2.6.4-11.el7.i686.rpm) = 64660
 SHA256 (centos/libglade2-2.6.4-11.el7.x86_64.rpm) = 3234362d598b7fe5021fda23e88ebc0ec949030fb3b0e900caad19d8e538567d

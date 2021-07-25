@@ -1,4 +1,6 @@
-TIMESTAMP = 1568991423
+TIMESTAMP = 1627157016
+SHA256 (centos/cairo-gobject-1.15.12-4.el7.aarch64.rpm) = 3a1d4c046e6512a4ac932ee6a889826dac242e22df0c4b9c89a45c2cb3173b4e
+SIZE (centos/cairo-gobject-1.15.12-4.el7.aarch64.rpm) = 25372
 SHA256 (centos/cairo-gobject-1.15.12-4.el7.i686.rpm) = 130cbc9d6a93b28bdd50603cecd5db57171d8e9f9f4b2678f94a5d69989eb214
 SIZE (centos/cairo-gobject-1.15.12-4.el7.i686.rpm) = 25204
 SHA256 (centos/cairo-gobject-1.15.12-4.el7.x86_64.rpm) = 10b0eb65496e8b8c7b1d14fb3c529c4e5473e113d9b872cbb504fc4611a469af

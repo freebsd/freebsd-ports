@@ -1,4 +1,6 @@
-TIMESTAMP = 1544570156
+TIMESTAMP = 1627157286
+SHA256 (centos/glx-utils-8.3.0-10.el7.aarch64.rpm) = d68b2a338941d97c6b0e9b1ecab3c4229e71415c9e5f231fbb44d17d0b47ecee
+SIZE (centos/glx-utils-8.3.0-10.el7.aarch64.rpm) = 34320
 SHA256 (centos/glx-utils-8.3.0-10.el7.i686.rpm) = dfa82bdcfe63079b380092ba64797c3360c6d1354022190dd54806781bf375a2
 SIZE (centos/glx-utils-8.3.0-10.el7.i686.rpm) = 34820
 SHA256 (centos/glx-utils-8.3.0-10.el7.x86_64.rpm) = 5f87660d7fe1253ae5365285fd90694201191539a9acb87b91b7ee00c1fb2eb5

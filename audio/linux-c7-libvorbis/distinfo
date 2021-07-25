@@ -1,4 +1,6 @@
-TIMESTAMP = 1556469764
+TIMESTAMP = 1627157163
+SHA256 (centos/libvorbis-1.3.3-8.el7.1.aarch64.rpm) = 285e879f5526423203de2614c035a6907bf9d14a26704231fbdaf6428afb2804
+SIZE (centos/libvorbis-1.3.3-8.el7.1.aarch64.rpm) = 199560
 SHA256 (centos/libvorbis-1.3.3-8.el7.1.i686.rpm) = 89800188336771d97fd95d824a7d80e08635537a1fc315ea1898d0e61074d691
 SIZE (centos/libvorbis-1.3.3-8.el7.1.i686.rpm) = 199304
 SHA256 (centos/libvorbis-1.3.3-8.el7.1.x86_64.rpm) = 103a96863323b13b8c59cc4a095884150426a54ff3c72afc1ef44cd191f3b0be

@@ -1,8 +1,12 @@
-TIMESTAMP = 1614799329
+TIMESTAMP = 1627157166
+SHA256 (centos/pulseaudio-libs-10.0-6.el7_9.aarch64.rpm) = 8a13af402bab7e21dd00cc3ef463f2dd98d7d2435c44f887cc5447e131bb4f10
+SIZE (centos/pulseaudio-libs-10.0-6.el7_9.aarch64.rpm) = 624912
 SHA256 (centos/pulseaudio-libs-10.0-6.el7_9.i686.rpm) = f87dbce0436b2de45c2927d892e89fb44340ab9ee675d27c648fbe5c6ae4fdeb
 SIZE (centos/pulseaudio-libs-10.0-6.el7_9.i686.rpm) = 653620
 SHA256 (centos/pulseaudio-libs-10.0-6.el7_9.x86_64.rpm) = 491db6a3e909d355ebf2f70d1e83753a0ca5ce5a0a294d1a7903cb2e82a228c8
 SIZE (centos/pulseaudio-libs-10.0-6.el7_9.x86_64.rpm) = 666184
+SHA256 (centos/pulseaudio-libs-glib2-10.0-6.el7_9.aarch64.rpm) = d824bfb134b7de50e27c91e21ac5659923a7986be640d90288ab119b916cda47
+SIZE (centos/pulseaudio-libs-glib2-10.0-6.el7_9.aarch64.rpm) = 27220
 SHA256 (centos/pulseaudio-libs-glib2-10.0-6.el7_9.i686.rpm) = 99f0c52a65a75ef09c13260211d703963aba5c4870dc9b32bbda82b9a3a9fe18
 SIZE (centos/pulseaudio-libs-glib2-10.0-6.el7_9.i686.rpm) = 27964
 SHA256 (centos/pulseaudio-libs-glib2-10.0-6.el7_9.x86_64.rpm) = 6f2e6d0fece31e7231bbaae7370f0f0edc484ea6e4bb69ce105819e1f85a83e5

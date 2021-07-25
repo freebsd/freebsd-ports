@@ -1,4 +1,6 @@
-TIMESTAMP = 1581427438
+TIMESTAMP = 1627157188
+SHA256 (centos/sqlite-3.7.17-8.el7_7.1.aarch64.rpm) = 1cd83fe84556753dcfd6b71db11971e428fad5106eb329b390f80e391830780f
+SIZE (centos/sqlite-3.7.17-8.el7_7.1.aarch64.rpm) = 375332
 SHA256 (centos/sqlite-3.7.17-8.el7_7.1.i686.rpm) = 23aba566842009e5b1de0da13d18652ba0df4250af61b62d2c0cd1109f1c75d1
 SIZE (centos/sqlite-3.7.17-8.el7_7.1.i686.rpm) = 406104
 SHA256 (centos/sqlite-3.7.17-8.el7_7.1.x86_64.rpm) = 93ffb0eb1e297c35cee76add2e583efb990da702684bbfaa6b159494d135d99c

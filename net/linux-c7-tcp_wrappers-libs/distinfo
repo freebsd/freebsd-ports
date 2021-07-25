@@ -1,4 +1,6 @@
-TIMESTAMP = 1482091911
+TIMESTAMP = 1627157211
+SHA256 (centos/tcp_wrappers-libs-7.6-77.el7.aarch64.rpm) = 2348ad2490a234e4e3debf027e6d8dd8443a9ab913bf510a69a4b185d564c3c2
+SIZE (centos/tcp_wrappers-libs-7.6-77.el7.aarch64.rpm) = 66968
 SHA256 (centos/tcp_wrappers-libs-7.6-77.el7.i686.rpm) = fcb8fbce4ee712432ae90b25a264965849b58425bf279ef6e6163c25e7cc9278
 SIZE (centos/tcp_wrappers-libs-7.6-77.el7.i686.rpm) = 67760
 SHA256 (centos/tcp_wrappers-libs-7.6-77.el7.x86_64.rpm) = f9962f7260a97c671a86ba738c6ef238997636432e12b25383328710755fc1f2

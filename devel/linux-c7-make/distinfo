@@ -1,4 +1,6 @@
-TIMESTAMP = 1568991120
+TIMESTAMP = 1627157658
+SHA256 (centos/make-3.82-24.el7.aarch64.rpm) = f07aa8ca0bc590e1f12a011b80132e213b208671fd791d1bef62f22bf7a010ca
+SIZE (centos/make-3.82-24.el7.aarch64.rpm) = 424472
 SHA256 (centos/make-3.82-24.el7.i686.rpm) = 894afc5cea2c6be459db56b40a498215df915395cfee7186a729c7422f28a270
 SIZE (centos/make-3.82-24.el7.i686.rpm) = 427696
 SHA256 (centos/make-3.82-24.el7.x86_64.rpm) = d4829aff887b450f0f3bd307f782e062d1067ca4f95fcad5511148679c14a668

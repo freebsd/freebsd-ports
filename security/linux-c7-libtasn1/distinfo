@@ -1,4 +1,6 @@
-TIMESTAMP = 1507317043
+TIMESTAMP = 1627157746
+SHA256 (centos/libtasn1-4.10-1.el7.aarch64.rpm) = 2d344893146e6a627413161adf03e8b20108925c0d94d9ea480b69caf2d3c371
+SIZE (centos/libtasn1-4.10-1.el7.aarch64.rpm) = 324840
 SHA256 (centos/libtasn1-4.10-1.el7.i686.rpm) = 5c358877cdeeead802e5baaf828d666b3aaac0fb491c94f1b4967c57b9ca81f0
 SIZE (centos/libtasn1-4.10-1.el7.i686.rpm) = 328116
 SHA256 (centos/libtasn1-4.10-1.el7.x86_64.rpm) = 1eaec9f67f2e84e097979010b7ba623b8b309c6b54d14639b98abaeceb50f6bd

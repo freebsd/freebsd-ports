@@ -1,4 +1,6 @@
-TIMESTAMP = 1614797783
+TIMESTAMP = 1627156942
+SHA256 (centos/freetype-2.8-14.el7_9.1.aarch64.rpm) = 7fd8a8dacbbfbe1b572ffac9a0477c49917d6cfa93d13d254cde910a71ad42e1
+SIZE (centos/freetype-2.8-14.el7_9.1.aarch64.rpm) = 361032
 SHA256 (centos/freetype-2.8-14.el7_9.1.i686.rpm) = b06da13bab5aee0690c6d98073ecafe702d73f53e8e1b9421e90fe7928ba1d17
 SIZE (centos/freetype-2.8-14.el7_9.1.i686.rpm) = 386436
 SHA256 (centos/freetype-2.8-14.el7_9.1.x86_64.rpm) = 564e997b9c790bd2ccb1bc895a8ace373c5af426e771063ebc24eb3ac892b979

@@ -1,4 +1,6 @@
-TIMESTAMP = 1482094216
+TIMESTAMP = 1627157203
+SHA256 (centos/libv4l-0.9.5-4.el7.aarch64.rpm) = 3db794770f5c97a5268c43ce370806fa7eaa2dcf60fec52ffc3cc51a0adb0f0c
+SIZE (centos/libv4l-0.9.5-4.el7.aarch64.rpm) = 188884
 SHA256 (centos/libv4l-0.9.5-4.el7.i686.rpm) = 7c9fb65097d72f0a796220f39613c89cf86f075b18510e11e296b75bfea71f7d
 SIZE (centos/libv4l-0.9.5-4.el7.i686.rpm) = 193748
 SHA256 (centos/libv4l-0.9.5-4.el7.x86_64.rpm) = b05704ce53c147cbf0f9c873cff2e676207298c2b2258ebda84b673682250355
