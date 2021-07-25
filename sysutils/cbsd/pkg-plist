@@ -314,7 +314,7 @@ cbsd/misc/fmagic
 cbsd/misc/ipv6range
 cbsd/misc/next-vale-port
 cbsd/misc/nics-list
-cbsd/misc/popcnttest
+%%X86%%cbsd/misc/popcnttest
 cbsd/misc/pwcrypt
 cbsd/misc/resolv
 cbsd/misc/sipcalc
