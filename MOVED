@@ -16470,3 +16470,4 @@ www/rubygem-toml-rb10|www/rubygem-toml-rb|2021-07-25|Obsolete, use www/rubygem-t
 devel/rubygem-grape-entity07|devel/rubygem-grape-entity|2021-07-25|Obsolete, use devel/rubygem-grape-entity
 net/rubygem-gitlab-fog-google|net/rubygem-fog-google|2021-07-25|Obsolete, use net/rubygem-fog-google
 devel/rubygem-gitlab-rdoc|devel/rubygem-rdoc|2021-07-25|Obsolete, use devel/rubygem-rdoc
+databases/rubygem-redis-namespace17|databases/rubygem-redis-namespace|2021-07-25|Obsolete, use databases/rubygem-redis-namespace
