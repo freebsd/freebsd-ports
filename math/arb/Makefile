@@ -1,6 +1,10 @@
 PORTNAME=	arb
 DISTVERSION=	2.19.0
+PORTREVISION=	1
 CATEGORIES=	math
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	b6c8032e2da1b19eb7c5a5f5c2f3372643e3d170.patch:-p1 # compatibility fix for latest flint
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library for arbitrary-precision interval arithmetic

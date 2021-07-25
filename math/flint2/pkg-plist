@@ -36,10 +36,12 @@ include/flint/fmpz_matxx.h
 include/flint/fmpz_mod.h
 include/flint/fmpz_mod_mat.h
 include/flint/fmpz_mod_mpoly.h
+include/flint/fmpz_mod_mpoly_factor.h
 include/flint/fmpz_mod_poly.h
 include/flint/fmpz_mod_poly_factor.h
 include/flint/fmpz_mod_poly_factorxx.h
 include/flint/fmpz_mod_polyxx.h
+include/flint/fmpz_mod_vec.h
 include/flint/fmpz_mpoly.h
 include/flint/fmpz_mpoly_factor.h
 include/flint/fmpz_poly.h
@@ -55,6 +57,10 @@ include/flint/fmpz_vecxx.h
 include/flint/fmpzxx.h
 include/flint/forwarding.h
 include/flint/fq.h
+include/flint/fq_default.h
+include/flint/fq_default_mat.h
+include/flint/fq_default_poly.h
+include/flint/fq_default_poly_factor.h
 include/flint/fq_embed.h
 include/flint/fq_embed_templates.h
 include/flint/fq_mat.h
@@ -132,5 +138,5 @@ include/flint/tuple.h
 include/flint/ulong_extras.h
 include/flint/vector.h
 lib/libflint.so
-lib/libflint.so.15
-lib/libflint.so.15.0.1
+lib/libflint.so.16
+lib/libflint.so.16.1.0

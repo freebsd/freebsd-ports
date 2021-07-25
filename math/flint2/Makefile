@@ -1,6 +1,6 @@
 PORTNAME=	flint2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.1	# See note #1
+DISTVERSION=	2.8.0	# See note #1
 CATEGORIES=	math
 # Note #1: FLINT is known to change its API. When upgrading please check that
 #	it does not break its consumers (e.g. math/e-antic)
