@@ -13,8 +13,6 @@ on linear spaces. It computes
 * the primitive partition identities, that is, the Graver basis of [1 2 3 ... N]
 * a generator description of a cone
 * the extreme rays of a cone
-* the minimal solution of an integer linear program or, more general, a lattice
-  program using a Groebner basis
 * an integer lattice basis
 * solutions of linear inequality and equation systems over the integers
 
