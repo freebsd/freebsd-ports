@@ -1,14 +1,15 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	blob
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	A Simple S3 Class for Representing Vectors of Binary Data ('BLOBS')
 
-LICENSE=	GPLv3
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	R-cran-rlang>0:devel/R-cran-rlang \
 		R-cran-vctrs>=0.2.1:devel/R-cran-vctrs
