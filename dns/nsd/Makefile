@@ -1,8 +1,7 @@
 # Created by: alexis
 
 PORTNAME=	nsd
-DISTVERSION=	4.3.6
-PORTREVISION=	1
+DISTVERSION=	4.3.7
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/nsd/
 
