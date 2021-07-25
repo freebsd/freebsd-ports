@@ -1,3 +1,5 @@
 TIMESTAMP = 1477478547
 SHA256 (colorclass-2.2.0.tar.gz) = b05c2a348dfc1aff2d502527d78a5b7b7e2f85da94a96c5081210d8e9ee8e18b
 SIZE (colorclass-2.2.0.tar.gz) = 17037
+SHA256 (f8bbe9fdcff1.patch) = a88c098b2ae446049dab34b459efe07d13ebd15890ab76414df4d5a63730b870
+SIZE (f8bbe9fdcff1.patch) = 1141
