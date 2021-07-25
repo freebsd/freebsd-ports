@@ -5,16 +5,6 @@ LOCALBASE="${PREFIX%/*}"
 
 I386_ROOT="${WINE_i386_ROOT:-$HOME/.i386-wine-pkg}"
 
-export LIBGL_DRIVERS_PATH="${LIBGL_DRIVERS_PATH:+$LIBGL_DRIVERS_PATH:}$LOCALBASE/lib/dri:$LOCALBASE/lib32/dri:$I386_ROOT/$LOCALBASE/lib/dri"
-export LD_32_LIBRARY_PATH="${LD_32_LIBRARY_PATH:+$LD_32_LIBRARY_PATH:}$I386_ROOT/$PREFIX/lib/wine:$LOCALBASE/lib32:$I386_ROOT/$LOCALBASE/lib:$I386_ROOT/$LOCALBASE/llvm10/lib:$I386_ROOT/$LOCALBASE/llvm11/lib"
-export LD_32_LIBRARY_PATH_RPATH=y
-
-if [ -z "$WINE_NO_WOW64" ]
-then
-  export PATH="${TARGET%/*}:${PATH}"
-  export WINESERVER="${TARGET}server"
-fi
-
 if [ ! -f "$I386_ROOT/$PREFIX/bin/wine" ]
 then
   printf "%s doesn't exist!\n\n" "$I386_ROOT/$PREFIX/bin/wine"
@@ -29,6 +19,27 @@ then
   printf "wine [%s] and wine64 [%s] versions do not match!\n\n" "$WINE32_VERSION" "$WINE64_VERSION"
   printf "Try updating 32-bit wine with\n\t%s\n" "$PREFIX/bin/pkg32.sh upgrade"
   exit 1
+fi
+
+export LIBGL_DRIVERS_PATH="${LIBGL_DRIVERS_PATH:+$LIBGL_DRIVERS_PATH:}$LOCALBASE/lib/dri:$LOCALBASE/lib32/dri:$I386_ROOT/$LOCALBASE/lib/dri"
+export LD_32_LIBRARY_PATH="${LD_32_LIBRARY_PATH:+$LD_32_LIBRARY_PATH:}$I386_ROOT/$PREFIX/lib/wine:$LOCALBASE/lib32:$I386_ROOT/$LOCALBASE/lib"
+for d in "$I386_ROOT/$LOCALBASE"/llvm*/lib
+do
+  if [ -d "$d" ]
+  then
+    export LD_32_LIBRARY_PATH="$LD_32_LIBRARY_PATH:$d"
+  fi
+done
+export LD_32_LIBRARY_PATH_RPATH=y
+export LD_32_LIBMAP="
+$LOCALBASE/lib/libvulkan_intel.so  $I386_ROOT/$LOCALBASE/lib/libvulkan_intel.so
+$LOCALBASE/lib/libvulkan_radeon.so $I386_ROOT/$LOCALBASE/lib/libvulkan_radeon.so
+$LD_32_LIBMAP"
+
+if [ -z "$WINE_NO_WOW64" ]
+then
+  export PATH="${TARGET%/*}:${PATH}"
+  export WINESERVER="${TARGET}server"
 fi
 
 exec "$I386_ROOT/$PREFIX/bin/wine" "$@"
