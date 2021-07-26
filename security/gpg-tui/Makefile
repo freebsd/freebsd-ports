@@ -1,6 +1,6 @@
 PORTNAME=	gpg-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2
+DISTVERSION=	0.7.3
 CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
@@ -40,7 +40,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		colorsys-0.6.3 \
 		conv-0.3.3 \
 		copypasta-0.7.1 \
-		copypasta-ext-0.3.4 \
+		copypasta-ext-0.3.7 \
 		crossterm-0.19.0 \
 		crossterm-0.20.0 \
 		crossterm_winapi-0.7.0 \
