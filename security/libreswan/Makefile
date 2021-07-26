@@ -1,5 +1,6 @@
 PORTNAME=	libreswan
 DISTVERSION=	4.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://download.libreswan.org/
 
@@ -13,7 +14,8 @@ COMMENT=	IPsec and IKE based firewall
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	xmlto:textproc/xmlto # build requires xmlto, but manpages aren't installed: https://github.com/libreswan/libreswan/issues/479
+BUILD_DEPENDS=	gawk:lang/gawk \
+		xmlto:textproc/xmlto # build requires xmlto, but manpages aren't installed: https://github.com/libreswan/libreswan/issues/479
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libevent.so:devel/libevent \
 		libldns.so:dns/ldns \
@@ -32,6 +34,8 @@ MAKE_ARGS=	PKG_BASE=${LOCALBASE} \
 		USE_PTHREAD_SETSCHEDPRIO=false \
 		WERROR_CFLAGS=""  \
 		PYTHON_BINARY=${PYTHON_CMD}
+
+BINARY_ALIAS=	awk=gawk
 
 OPTIONS_DEFINE=	DOCS
 
