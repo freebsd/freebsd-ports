@@ -1,7 +1,7 @@
 # Created by: Xin Li <delphij@FreeBSD.org>
 
 PORTNAME=	ddpt
-PORTVERSION=	0.95
+PORTVERSION=	0.97
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 
@@ -17,7 +17,9 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ddpt
 PLIST_FILES+=	bin/ddptctl
+PLIST_FILES+=	bin/ddpt_sgl
 PLIST_FILES+=	man/man8/ddpt.8.gz
 PLIST_FILES+=	man/man8/ddptctl.8.gz
+PLIST_FILES+=	man/man8/ddpt_sgl.8.gz
 
 .include <bsd.port.mk>
