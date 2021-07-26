@@ -1,7 +1,7 @@
 # Created by: Xin Li <delphij@FreeBSD.org>
 
 PORTNAME=	lmdb
-PORTVERSION=	0.9.28
+PORTVERSION=	0.9.29
 DISTVERSIONPREFIX=	${PORTNAME:tu}_
 PORTEPOCH=	1
 CATEGORIES=	databases
