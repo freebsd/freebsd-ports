@@ -1,8 +1,8 @@
 # Created by: David Naylor <naylor.b.david@gmail.com>
 
 PORTNAME=	wine-mono
-DISTVERSION=	4.9.4
-PORTREVISION=	1
+DISTVERSION=	5.1.1
+DISTVERSIONSUFFIX=-x86
 CATEGORIES=	emulators
 MASTER_SITES=	http://dl.winehq.org/wine/wine-mono/${DISTVERSION}/
 EXTRACT_SUFX=	.msi

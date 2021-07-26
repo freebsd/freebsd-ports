@@ -1,7 +1,7 @@
 # Created by: David Naylor <naylor.b.david@gmail.com>
 
 PORTNAME=	wine-gecko
-DISTVERSION=	2.47.1
+DISTVERSION=	2.47.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://dl.winehq.org/wine/wine-gecko/${DISTVERSION}/
 DISTNAME=	wine-gecko-${DISTVERSION}-x86
