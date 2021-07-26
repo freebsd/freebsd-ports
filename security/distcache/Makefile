@@ -5,7 +5,7 @@ DISTVERSION=	1.5.1
 CATEGORIES=	security www
 MASTER_SITES=	SF/distcache/1.%20distcache-devel/1.5.1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Distributed OpenSSL session caching tools
 
 LICENSE=	LGPL21
@@ -29,7 +29,7 @@ pre-configure:	# yes, post-patch won't work in this case
 		${WRKSRC}/ssl/configure || :
 
 post-install:
-	# INSTALL_TARGET=install-strip isn't working!  Brute force it
+# Only executables are stripped with `install-strip', not the libraries
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 post-install-DOCS-on:
