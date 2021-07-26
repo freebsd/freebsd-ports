@@ -22,6 +22,7 @@ libdata/pkgconfig/libnumbertext.pc
 %%DATADIR%%/et.sor
 %%DATADIR%%/fi.sor
 %%DATADIR%%/fr.sor
+%%DATADIR%%/ga.sor
 %%DATADIR%%/gl.sor
 %%DATADIR%%/he.sor
 %%DATADIR%%/hr.sor
@@ -33,9 +34,12 @@ libdata/pkgconfig/libnumbertext.pc
 %%DATADIR%%/ja.sor
 %%DATADIR%%/ko.sor
 %%DATADIR%%/lb.sor
+%%DATADIR%%/lg.sor
 %%DATADIR%%/lt.sor
 %%DATADIR%%/lv.sor
+%%DATADIR%%/mr.sor
 %%DATADIR%%/ms.sor
+%%DATADIR%%/mt.sor
 %%DATADIR%%/nl.sor
 %%DATADIR%%/no.sor
 %%DATADIR%%/pl.sor
