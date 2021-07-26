@@ -10,4 +10,6 @@ I386_ROOT="${WINE_i386_ROOT:-$HOME/.i386-wine-pkg}"
 
 mkdir -p "$I386_ROOT"
 ABI=$(pkg config ABI | sed s/amd64/i386/)
+# Show what we're going to do, then do it.
 echo pkg -o ABI="$ABI" -o INSTALL_AS_USER=true -o RUN_SCRIPTS=false --rootdir "$I386_ROOT" "$@"
+exec pkg -o ABI="$ABI" -o INSTALL_AS_USER=true -o RUN_SCRIPTS=false --rootdir "$I386_ROOT" "$@"
