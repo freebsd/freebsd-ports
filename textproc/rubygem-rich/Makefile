@@ -9,6 +9,9 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Opinionated WYSIWYG editor for Rails based on CKEditor
 
+DEPRECATED=	Depends on expired devel/rubygem-paperclip
+EXPIRATION_DATE=2021-08-26
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
