@@ -1,7 +1,7 @@
---- SConstruct.orig	2019-08-08 20:06:23 UTC
+--- SConstruct.orig	2021-07-07 09:17:06 UTC
 +++ SConstruct
-@@ -1068,9 +1068,9 @@ if has_option('variables-help'):
-     print((env_vars.GenerateHelpText(env)))
+@@ -1213,9 +1213,9 @@ if has_option('variables-help'):
+     print(env_vars.GenerateHelpText(env))
      Exit(0)
  
 -unknown_vars = env_vars.UnknownVariables()
@@ -11,9 +11,9 @@
 +#if unknown_vars:
 +#    env.FatalError("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
  
- def set_config_header_define(env, varname, varval = 1):
-     env['CONFIG_HEADER_DEFINES'][varname] = varval
-@@ -1851,7 +1851,7 @@ if env.TargetOSIs('posix'):
+ if get_option('install-action') != 'default' and get_option('ninja') != "disabled":
+     env.FatalError("Cannot use non-default install actions when generating Ninja.")
+@@ -2091,7 +2091,7 @@ if env.TargetOSIs('posix'):
              # If runtime hardening is requested, then build anything
              # destined for an executable with the necessary flags for PIE.
              env.AppendUnique(
@@ -22,7 +22,7 @@
                  PROGLINKFLAGS=['-pie'],
              )
  
-@@ -1865,7 +1865,7 @@ if env.TargetOSIs('posix'):
+@@ -2106,7 +2106,7 @@ if env.TargetOSIs('posix'):
                           "-Wno-unknown-pragmas",
                           "-Winvalid-pch"] )
      # env.Append( " -Wconversion" ) TODO: this doesn't really work yet
@@ -31,3 +31,13 @@
          if not has_option("disable-warnings-as-errors"):
              env.Append( CCFLAGS=["-Werror"] )
  
+@@ -3926,7 +3926,8 @@ def doConfigure(myenv):
+     myenv = conf.Finish()
+ 
+     if env['TARGET_ARCH'] == "aarch64":
+-        AddToCCFLAGSIfSupported(myenv, "-moutline-atomics")
++        # https://lists.freebsd.org/archives/freebsd-ports/2021-July/000431.html
++        AddToCCFLAGSIfSupported(myenv, "-mno-outline-atomics")
+ 
+     conf = Configure(myenv)
+     usdt_enabled = get_option('enable-usdt-probes')
