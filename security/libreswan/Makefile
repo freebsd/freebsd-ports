@@ -13,6 +13,7 @@ COMMENT=	IPsec and IKE based firewall
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	xmlto:textproc/xmlto # build requires xmlto, but manpages aren't installed: https://github.com/libreswan/libreswan/issues/479
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libevent.so:devel/libevent \
 		libldns.so:dns/ldns \
