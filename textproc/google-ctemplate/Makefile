@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	ctemplate
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	google-
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		libtool pathfix pkgconfig python:build shebangfix
+USES=		autoreconf gmake libtool pathfix pkgconfig python:build shebangfix
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	src/template-converter src/htmlparser/generate_fsm.py src/htmlparser/fsm_config.py
 USE_LDCONFIG=	yes
@@ -24,16 +24,13 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|$$(prefix)/share/doc/$$(PACKAGE)-$$(VERSION)|${DOCSDIR}|' \
-		${WRKSRC}/Makefile.in
 # XXX: undefining BSWAP32 breaks builds on big-endian systems for some reason
 	@${REINPLACE_CMD} -e 's|# undef BSWAP32|//&|' \
 		${WRKSRC}/src/base/macros.h
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e \
-		'/install-data-am/ s|install-dist_docDATA||' \
-		${WRKSRC}/Makefile.in
+		's|dist_doc_DATA|noinst_DOCDATA|' \
+		${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>

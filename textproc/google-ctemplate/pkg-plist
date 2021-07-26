@@ -25,12 +25,9 @@ lib/libctemplate_nothreads.so.3.0.0
 libdata/pkgconfig/libctemplate.pc
 libdata/pkgconfig/libctemplate_nothreads.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README_windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/auto_escape.html
 %%PORTDOCS%%%%DOCSDIR%%/designstyle.css
 %%PORTDOCS%%%%DOCSDIR%%/example.html
