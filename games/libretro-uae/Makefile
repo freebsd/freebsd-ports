@@ -8,8 +8,6 @@ COMMENT=	Libretro port of UAE
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: potgo_value
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: potgo_value
 BROKEN_riscv64=		fails to compile: ./sources/src/machdep/maccess.h:51:14: unrecognized instruction mnemonic
 
 USES=		compiler:c++11-lib gmake gl
@@ -19,6 +17,8 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_TAGNAME=	8333daa
+
+CFLAGS+=	-fcommon
 
 LDFLAGS_i386=	-Wl,-z,notext
 
