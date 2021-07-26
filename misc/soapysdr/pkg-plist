@@ -24,7 +24,7 @@ include/SoapySDR/Version.h
 include/SoapySDR/Version.hpp
 lib/libSoapySDR.so
 lib/libSoapySDR.so.0.8
-lib/libSoapySDR.so.0.8.0
+lib/libSoapySDR.so.0.8.1
 libdata/pkgconfig/SoapySDR.pc
 man/man1/SoapySDRUtil.1.gz
 share/cmake/SoapySDR/SoapySDRConfig.cmake
