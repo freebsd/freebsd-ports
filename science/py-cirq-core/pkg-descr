@@ -1,0 +1,4 @@
+Cirq is a Python library for writing, manipulating, and optimizing quantum
+circuits and running them against quantum computers and simulators.
+
+WWW: https://github.com/quantumlib/cirq
