@@ -1,6 +1,6 @@
 PORTNAME=	tome4
 DISTVERSION?=	1.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://te4.org/dl/t-engine/ \
 		SF/lifanov-ports-distfiles/${PORTNAME}/:icons
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	premake4:devel/premake4
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libpng.so:graphics/png
 
-USES=		compiler:c++11-lang gl gmake openal:al sdl tar:bzip2 xorg
+USES=		gl gmake openal:al sdl tar:bzip2 xorg
 USE_SDL=	image2 sdl2 ttf2
 USE_GL=		gl glu
 SUB_FILES=	tome4
@@ -33,9 +33,23 @@ WRKSRC=		${WRKDIR}/t-engine4-src-${DISTVERSION}
 MAKE_ARGS+=	config=release verbose=yes ARCH="" CC=${CC} CXX=${CXX}
 LDFLAGS_i386=	-Wl,-znotext
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lang
+.endif
+
 pre-build:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/premake4.lua
+.if ${ARCH} == aarch64 || ${ARCH:Mpowerpc64*} || ${ARCH} == riscv64
 	(cd ${WRKSRC} && premake4 --lua=default gmake)
+.else
+	(cd ${WRKSRC} && premake4 gmake)
+	@${ECHO} '.NOTPARALLEL:' >> ${WRKSRC}/build/buildvm.make
+	@${ECHO} '.NOTPARALLEL:' >> ${WRKSRC}/build/luajit2.make
+.endif
 	@${REINPLACE_CMD} 's|-lpthread|-pthread|' ${WRKSRC}/build/TEngine.make
 
 do-install:
