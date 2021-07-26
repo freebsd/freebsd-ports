@@ -9,6 +9,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_chacha20_poly1305.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_chacha20_poly1305_crypto.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_chacha20_poly1305_libsodium.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_chacha20_poly1305_unsupported.beam
+lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_crypto_compat.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_curve25519.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_curve25519_libdecaf.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_curve25519_libsodium.beam
@@ -127,6 +128,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_chacha20_poly1305.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_chacha20_poly1305_crypto.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_chacha20_poly1305_libsodium.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_chacha20_poly1305_unsupported.erl
+lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_crypto_compat.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_curve25519.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_curve25519_libdecaf.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_curve25519_libsodium.erl
