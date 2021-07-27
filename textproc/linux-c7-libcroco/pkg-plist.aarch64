@@ -1,0 +1,8 @@
+usr/bin/csslint-0.6
+usr/lib64/libcroco-0.6.so.3
+usr/lib64/libcroco-0.6.so.3.0.1
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/libcroco-0.6.12/COPYING
+usr/share/licenses/libcroco-0.6.12/COPYING.LIB

@@ -1,4 +1,6 @@
-TIMESTAMP = 1482094692
+TIMESTAMP = 1627368338
+SHA256 (centos/SDL_mixer-1.2.12-4.el7.aarch64.rpm) = cdda3bbf9a6928a71c8ad3ecd149f9359c1688d022b2d5adb7e606a6f3c12ff6
+SIZE (centos/SDL_mixer-1.2.12-4.el7.aarch64.rpm) = 91740
 SHA256 (centos/SDL_mixer-1.2.12-4.el7.x86_64.rpm) = 119bb1db9ec904b29857c2f9963a2d71587f3300d3fbc284f886d8d6e6b137d9
 SIZE (centos/SDL_mixer-1.2.12-4.el7.x86_64.rpm) = 92856
 SHA256 (centos/SDL_mixer-1.2.12-4.el7.src.rpm) = 2ca2b34eb09656f5c6b16a467d2310f78382157211e127b6c5276b5870b7d7af

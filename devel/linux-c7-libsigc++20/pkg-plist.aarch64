@@ -1,0 +1,6 @@
+usr/lib64/libsigc-2.0.so.0
+usr/lib64/libsigc-2.0.so.0.0.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/libsigc++20-2.10.0/COPYING

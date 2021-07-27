@@ -1,0 +1,14 @@
+usr/lib64/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.so
+usr/lib64/girepository-1.0/Rsvg-2.0.typelib
+usr/lib64/librsvg-2.so.2
+usr/lib64/librsvg-2.so.2.40.20
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/librsvg2-2.40.20/COPYING
+usr/share/licenses/librsvg2-2.40.20/COPYING.LIB
+usr/share/thumbnailers/librsvg.thumbnailer
+@postexec %D/usr/bin/gdk-pixbuf-query-loaders-32 --update-cache
+@postexec %D/usr/bin/gdk-pixbuf-query-loaders-64 --update-cache
+@postunexec %D/usr/bin/gdk-pixbuf-query-loaders-32 --update-cache
+@postunexec %D/usr/bin/gdk-pixbuf-query-loaders-64 --update-cache

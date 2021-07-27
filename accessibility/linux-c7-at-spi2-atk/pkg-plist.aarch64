@@ -1,0 +1,7 @@
+usr/lib64/gnome-settings-daemon-3.0/gtk-modules/at-spi2-atk.desktop
+usr/lib64/gtk-2.0/modules/libatk-bridge.so
+usr/lib64/libatk-bridge-2.0.so.0
+usr/lib64/libatk-bridge-2.0.so.0.0.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/at-spi2-atk-2.26.2/COPYING

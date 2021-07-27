@@ -1,4 +1,6 @@
-TIMESTAMP = 1614792401
+TIMESTAMP = 1627367894
+SHA256 (centos/libsndfile-1.0.25-12.el7.aarch64.rpm) = 5111a50303ba55c0c845d34374a964b61f46549570b343bb437c118701c32d25
+SIZE (centos/libsndfile-1.0.25-12.el7.aarch64.rpm) = 143440
 SHA256 (centos/libsndfile-1.0.25-12.el7.i686.rpm) = 2e12e9f2fe520030b1538d15366a2001e6cba0a086d2a3a550b5d2533aff33fe
 SIZE (centos/libsndfile-1.0.25-12.el7.i686.rpm) = 163396
 SHA256 (centos/libsndfile-1.0.25-12.el7.x86_64.rpm) = c8556fd59a3db79a605934e04eaed64db8ef7241b849e5de2e0d79506e5df30c

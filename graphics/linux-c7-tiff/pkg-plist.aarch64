@@ -1,0 +1,8 @@
+usr/lib64/libtiff.so.5
+usr/lib64/libtiff.so.5.2.0
+usr/lib64/libtiffxx.so.5
+usr/lib64/libtiffxx.so.5.2.0
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE-DATE
+%%PORTDOCS%%%%DOCSDIR%%/VERSION

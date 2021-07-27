@@ -1,0 +1,9 @@
+usr/lib64/libunwind-coredump.so.0
+usr/lib64/libunwind-coredump.so.0.0.0
+usr/lib64/libunwind-aarch64.so.8
+usr/lib64/libunwind-aarch64.so.8.0.1
+usr/lib64/libunwind.so.8
+usr/lib64/libunwind.so.8.0.1
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README

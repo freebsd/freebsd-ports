@@ -1,0 +1,6 @@
+usr/lib64/libcups.so.2
+usr/lib64/libcupscgi.so.1
+usr/lib64/libcupsimage.so.2
+usr/lib64/libcupsmime.so.1
+usr/lib64/libcupsppdc.so.1
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt

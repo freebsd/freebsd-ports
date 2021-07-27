@@ -10,7 +10,7 @@ DISTNAME=	SDL2-${DISTVERSIONFULL}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API (Linux CentOS ${LINUX_DIST_VER})
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 aarch64
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

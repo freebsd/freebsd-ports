@@ -1,0 +1,14 @@
+usr/bin/p11-kit
+usr/lib64/libp11-kit.so.0
+usr/lib64/libp11-kit.so.0.3.0
+usr/lib64/p11-kit-proxy.so
+usr/libexec/p11-kit/p11-kit-remote
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/pkcs11.conf.example
+usr/share/man/man5/pkcs11.conf.5.gz
+usr/share/man/man8/p11-kit.8.gz
+@dir etc/pkcs11/modules
+@dir %%DATADIR%%/modules

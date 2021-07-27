@@ -1,0 +1,9 @@
+usr/lib64/libpng15.so.15
+usr/lib64/libpng15.so.15.13.0
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/example.c
+%%PORTDOCS%%%%DOCSDIR%%/libpng-manual.txt
+usr/share/man/man5/png.5.gz

@@ -10,7 +10,7 @@ MASTER_SITES=	EPEL7/q
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Qt WebKit implementation (Linux CentOS ${LINUX_DIST_VER})
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 aarch64
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

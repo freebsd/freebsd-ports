@@ -1,0 +1,11 @@
+etc/tcsd.conf
+usr/lib/systemd/system/tcsd.service
+usr/lib64/libtspi.so.1
+usr/lib64/libtspi.so.1.2.0
+usr/sbin/tcsd
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/man/man5/tcsd.conf.5.gz
+usr/share/man/man8/tcsd.8.gz
+@dir var/lib/tpm
