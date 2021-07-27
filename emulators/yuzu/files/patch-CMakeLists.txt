@@ -1,23 +1,27 @@
 yuzu (Qt) currently needs SDL for input
 
---- CMakeLists.txt.orig	2021-05-19 22:47:48 UTC
+--- CMakeLists.txt.orig	2021-07-27 01:51:00 UTC
 +++ CMakeLists.txt
-@@ -293,10 +293,14 @@ if (ENABLE_SDL2)
-         add_library(SDL2 INTERFACE)
-         target_link_libraries(SDL2 INTERFACE "${SDL2_LIBRARY}")
+@@ -395,7 +395,10 @@ if (ENABLE_SDL2)
          target_include_directories(SDL2 INTERFACE "${SDL2_INCLUDE_DIR}")
+     elseif (YUZU_USE_EXTERNAL_SDL2)
+         message(STATUS "Using SDL2 from externals.")
 -    else()
 +    endif()
 +endif()
 +
-+if (NOT YUZU_USE_BUNDLED_SDL2)
-         if (YUZU_ALLOW_SYSTEM_SDL2)
-             find_package(SDL2 2.0.15 QUIET)
++if (NOT YUZU_USE_BUNDLED_SDL2 AND NOT YUZU_USE_EXTERNAL_SDL2)
+         find_package(SDL2 2.0.15 REQUIRED)
  
-+        if (TRUE)
-             if (SDL2_FOUND)
-                 # Some installations don't set SDL2_LIBRARIES
-                 if("${SDL2_LIBRARIES}" STREQUAL "")
+         # Some installations don't set SDL2_LIBRARIES
+@@ -407,7 +410,6 @@ if (ENABLE_SDL2)
+         include_directories(SYSTEM ${SDL2_INCLUDE_DIRS})
+         add_library(SDL2 INTERFACE)
+         target_link_libraries(SDL2 INTERFACE "${SDL2_LIBRARIES}")
+-    endif()
+ endif()
+ 
+ # Install any missing dependencies with conan install
 --- src/input_common/CMakeLists.txt.orig	2021-04-21 21:36:33 UTC
 +++ src/input_common/CMakeLists.txt
 @@ -62,7 +62,7 @@ else()

@@ -9,17 +9,17 @@ CMake Error at externals/CMakeLists.txt:54 (add_subdirectory):
 
   does not contain a CMakeLists.txt file.
 
---- CMakeLists.txt.orig	2021-05-19 22:47:48 UTC
+--- CMakeLists.txt.orig	2021-07-27 01:51:00 UTC
 +++ CMakeLists.txt
-@@ -297,7 +297,7 @@ endif()
+@@ -398,7 +398,7 @@ if (ENABLE_SDL2)
+ endif()
  
- if (NOT YUZU_USE_BUNDLED_SDL2)
-         if (YUZU_ALLOW_SYSTEM_SDL2)
--            find_package(SDL2 2.0.15 QUIET)
-+            find_package(SDL2 2.0.12 QUIET)
+ if (NOT YUZU_USE_BUNDLED_SDL2 AND NOT YUZU_USE_EXTERNAL_SDL2)
+-        find_package(SDL2 2.0.15 REQUIRED)
++        find_package(SDL2 2.0.12 REQUIRED)
  
-         if (TRUE)
-             if (SDL2_FOUND)
+         # Some installations don't set SDL2_LIBRARIES
+         if("${SDL2_LIBRARIES}" STREQUAL "")
 --- src/input_common/sdl/sdl_impl.cpp.orig	2021-06-02 22:29:09 UTC
 +++ src/input_common/sdl/sdl_impl.cpp
 @@ -64,6 +64,7 @@ class SDLJoystick { (public)
