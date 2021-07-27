@@ -1,3 +1,46 @@
+  <vuln vid="c561ce49-eabc-11eb-9c3f-0800270512f4">
+    <topic>redis -- Integer overflow issues with BITFIELD command on 32-bit systems</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><lt>6.0.15</lt></range>
+      </package>
+      <package>
+	<name>redis-devel</name>
+	<range><lt>6.2.5</lt></range>
+      </package>
+      <package>
+	<name>redis5</name>
+	<range><lt>5.0.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Huang Zhw reports:</p>
+	<blockquote cite="https://github.com/redis/redis/security/advisories/GHSA-8wxq-j7rp-g8wj">
+	  <p>
+	    On 32-bit versions, Redis BITFIELD command is vulnerable to integer
+	    overflow that can potentially be exploited to corrupt the heap,
+	    leak arbitrary heap contents or trigger remote code execution.
+	    The vulnerability involves constructing specially crafted bit
+	    commands which overflow the bit offset.
+	  </p>
+	  <p>
+	    This problem only affects 32-bit versions of Redis.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-32761</cvename>
+      <url>https://github.com/redis/redis/security/advisories/GHSA-8wxq-j7rp-g8wj</url>
+    </references>
+    <dates>
+      <discovery>2021-07-04</discovery>
+      <entry>2021-07-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ce79167f-ee1c-11eb-9785-b42e99a1b9c3">
     <topic>powerdns -- remotely triggered crash</topic>
     <affects>
