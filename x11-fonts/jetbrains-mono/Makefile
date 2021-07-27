@@ -1,5 +1,5 @@
 PORTNAME=	jetbrains-mono
-PORTVERSION=	2.225
+PORTVERSION=	2.241
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/JetBrains/JetBrainsMono/releases/download/v${PORTVERSION}/
