@@ -19,9 +19,9 @@ externals/./httplib/httplib.h:214:2: error: Sorry, OpenSSL versions prior to 1.1
      if (OPENSSL_FOUND)
          set(OPENSSL_LIBRARIES OpenSSL::SSL OpenSSL::Crypto)
      else()
---- externals/cpp-httplib/httplib.h.orig	2020-11-18 04:02:27 UTC
+--- externals/cpp-httplib/httplib.h.orig	2021-06-18 12:45:50 UTC
 +++ externals/cpp-httplib/httplib.h
-@@ -210,10 +210,6 @@ using socket_t = int;
+@@ -219,10 +219,6 @@ using socket_t = int;
  #include <iostream>
  #include <sstream>
  
@@ -32,3 +32,15 @@ externals/./httplib/httplib.h:214:2: error: Sorry, OpenSSL versions prior to 1.1
  #if OPENSSL_VERSION_NUMBER < 0x10100000L
  #include <openssl/crypto.h>
  inline const unsigned char *ASN1_STRING_get0_data(const ASN1_STRING *asn1) {
+@@ -6729,7 +6725,11 @@ static SSLInit sslinit_;
+ inline SSLServer::SSLServer(const char *cert_path, const char *private_key_path,
+                             const char *client_ca_cert_file_path,
+                             const char *client_ca_cert_dir_path) {
++#if OPENSSL_VERSION_NUMBER < 0x10100001L
++  ctx_ = SSL_CTX_new(SSLv23_server_method());
++#else
+   ctx_ = SSL_CTX_new(TLS_method());
++#endif
+ 
+   if (ctx_) {
+     SSL_CTX_set_options(ctx_,
