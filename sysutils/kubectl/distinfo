@@ -1,5 +1,5 @@
-TIMESTAMP = 1620943141
-SHA256 (kubernetes-kubernetes-v1.21.1_GH0.tar.gz) = a6b84fd47fcd5f341aa90994864622515d7173135458fb1b84c7f34d4ed82e95
-SIZE (kubernetes-kubernetes-v1.21.1_GH0.tar.gz) = 35982846
+TIMESTAMP = 1627419409
+SHA256 (kubernetes-kubernetes-v1.21.3_GH0.tar.gz) = 76efee33b02a85ea6e8e74dd7d95b9d5f78cdd29734c2d0f8a9bc0b20f20c755
+SIZE (kubernetes-kubernetes-v1.21.3_GH0.tar.gz) = 36090238
 SHA256 (golang-sys-22da62e12c0c_GH0.tar.gz) = 5a120a40c63be9383650b7757c00645b25d37a3b7daa523f2a85fac969e51b2a
 SIZE (golang-sys-22da62e12c0c_GH0.tar.gz) = 1106889
