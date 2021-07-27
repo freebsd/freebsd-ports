@@ -7,6 +7,9 @@ LoadModule auth_mellon_module %%APACHEMODDIR%%/mod_auth_mellon.so
 
 Then create your configuration.  Examples can be found here:
 https://github.com/latchset/mod_auth_mellon
+
+The metadata creation script can be found here:
+%%DATADIR%%/mellon_create_metadata.sh
 ===========================================================================
 EOM
 }
