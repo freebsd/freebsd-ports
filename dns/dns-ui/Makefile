@@ -25,7 +25,7 @@ OPTIONS_DEFAULT=	APACHE PGSQLSRV
 APACHE_DESC=		Use apache as webserver
 PGSQLSRV_DESC=		Use local postgres instance
 
-APACHE_USES=		apache:run,22+
+APACHE_USES=		apache:run,2.2+
 APACHE_RUN_DEPENDS=	mod_php74>0:www/mod_php74
 PGSQLSRV_VARS=		WANT_PGSQL=server
 
