@@ -1,7 +1,7 @@
 # Created by: Andrey Slusar <anray@FreeBSD.org>
 
 PORTNAME=	imagick
-PORTVERSION=	3.5.0
+PORTVERSION=	3.5.1
 CATEGORIES=	graphics
 
 MAINTAINER=	000.fbsd@quip.cz
@@ -11,7 +11,7 @@ LICENSE=	PHP301
 
 USES=		php:pecl localbase
 
-CONFLICTS_INSTALL?=	${PKGNAMEPREFIX}${PORTNAME}-im7-[0-9]*
+CONFLICTS_INSTALL?=	${PKGNAMEPREFIX}${PORTNAME}-im7
 
 OPTIONS_DEFINE=	X11
 
