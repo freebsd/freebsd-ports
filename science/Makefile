@@ -220,6 +220,7 @@
     SUBDIR += py-MDAnalysis
     SUBDIR += py-MDAnalysisTests
     SUBDIR += py-OpenFermion
+    SUBDIR += py-PubChemPy
     SUBDIR += py-PyFR
     SUBDIR += py-SimpleSpectral
     SUBDIR += py-abipy
