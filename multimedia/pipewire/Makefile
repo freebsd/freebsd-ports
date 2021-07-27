@@ -29,7 +29,8 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	PipeWire
 
-OPTIONS_DEFINE=	GSTREAMER MEDIASESSION PULSEAUDIO VULKAN
+OPTIONS_DEFINE=		GSTREAMER MEDIASESSION PULSEAUDIO VULKAN
+OPTIONS_DEFAULT=	MEDIASESSION
 OPTIONS_SUB=	yes
 
 GSTREAMER_MESON_ENABLED=gstreamer
@@ -55,5 +56,13 @@ MESON_ARGS=	-D bluez5=disabled \
 		-D systemd=disabled \
 		-D sdl2=disabled \
 		-D udevrulesdir="${LOCALBASE}/lib/udev/rules.d"
+
+post-patch-MEDIASESSION-on:
+# alsa-seq is not supported & causes SIGSEGV with media session
+	@${REINPLACE_CMD} 's| alsa-seq|\ #alsa-seq|g' \
+		${WRKSRC}/src/daemon/media-session.d/media-session.conf
+# start media session by default
+	@${REINPLACE_CMD} '/manager_args/ s/@comment@//g' \
+		${WRKSRC}/src/daemon/pipewire.conf.in
 
 .include <bsd.port.mk>
