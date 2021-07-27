@@ -1,6 +1,6 @@
 PORTNAME=	pipewire
 DISTVERSION=	0.3.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/-/commit/
