@@ -1,7 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 
 PORTNAME=	1password-client
-DISTVERSION=	1.10.2
+DISTVERSION=	1.11.2
 CATEGORIES=	security
 MASTER_SITES=	https://cache.agilebits.com/dist/1P/op/pkg/v${DISTVERSION}/ \
 		LOCAL/ler/op
@@ -9,7 +9,7 @@ MASTER_SITES=	https://cache.agilebits.com/dist/1P/op/pkg/v${DISTVERSION}/ \
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	1Password CLI client
 
-ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 
 USES=		zip
 
@@ -28,12 +28,15 @@ do-install:
 DISTNAME=	op_freebsd_amd64_v${DISTVERSION}
 .elif ${ARCH} == armv6 || ${ARCH} == armv7
 DISTNAME=	op_freebsd_arm_v${DISTVERSION}
+.elif ${ARCH} == aarch64
+DISTNAME=	op_freebsd_arm64_v${DISTVERSION}
 .elif ${ARCH} == i386
 DISTNAME=	op_freebsd_386_v${DISTVERSION}
 .endif
 
 .if ${.TARGETS} == "makesum"
 DISTFILES=	op_freebsd_amd64_v${DISTVERSION}${EXTRACT_SUFX} \
+		op_freebsd_arm64_v${DISTVERSION}${EXTRACT_SUFX} \
 		op_freebsd_arm_v${DISTVERSION}${EXTRACT_SUFX} \
 		op_freebsd_386_v${DISTVERSION}${EXTRACT_SUFX}
 .endif
