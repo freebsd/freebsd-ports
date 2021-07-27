@@ -1,6 +1,6 @@
---- SConstruct.orig	2021-04-29 23:06:52 UTC
+--- SConstruct.orig	2021-07-15 20:56:31 UTC
 +++ SConstruct
-@@ -1324,9 +1324,9 @@ if has_option('variables-help'):
+@@ -1328,9 +1328,9 @@ if has_option('variables-help'):
      print(env_vars.GenerateHelpText(env))
      Exit(0)
  
@@ -13,7 +13,7 @@
  
  if get_option('install-action') != 'default' and get_option('ninja') != "disabled":
      env.FatalError("Cannot use non-default install actions when generating Ninja.")
-@@ -2498,7 +2498,7 @@ if env.TargetOSIs('posix'):
+@@ -2507,7 +2507,7 @@ if env.TargetOSIs('posix'):
              # If runtime hardening is requested, then build anything
              # destined for an executable with the necessary flags for PIE.
              env.AppendUnique(
@@ -22,7 +22,7 @@
                  PROGLINKFLAGS=['-pie'],
              )
  
-@@ -2675,8 +2675,12 @@ if not env.TargetOSIs('windows') and (env.ToolchainIs(
+@@ -2684,8 +2684,12 @@ if not env.TargetOSIs('windows', 'macOS') and (env.Too
      # setting it for both C and C++ by setting both of CFLAGS and
      # CXXFLAGS.
  
@@ -36,3 +36,13 @@
          "i386"       : { "-march=" : "nocona",       "-mtune=" : "generic"                        },
          "ppc64le"    : { "-mcpu="  : "power8",       "-mtune=" : "power8", "-mcmodel=" : "medium" },
          "s390x"      : { "-march=" : "z196",         "-mtune=" : "zEC12"                          },
+@@ -4520,7 +4524,8 @@ def doConfigure(myenv):
+     myenv = conf.Finish()
+ 
+     if env['TARGET_ARCH'] == "aarch64":
+-        AddToCCFLAGSIfSupported(myenv, "-moutline-atomics")
++        # https://lists.freebsd.org/archives/freebsd-ports/2021-July/000431.html
++        AddToCCFLAGSIfSupported(myenv, "-mno-outline-atomics")
+ 
+     conf = Configure(myenv)
+     usdt_enabled = get_option('enable-usdt-probes')
