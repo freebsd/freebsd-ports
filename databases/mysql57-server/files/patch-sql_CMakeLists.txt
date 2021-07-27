@@ -1,11 +1,11 @@
---- sql/CMakeLists.txt.orig	2016-08-25 11:52:06 UTC
-+++ sql/CMakeLists.txt
-@@ -24,6 +24,8 @@ INCLUDE_DIRECTORIES(
-   ${ZLIB_INCLUDE_DIR}
+--- sql/CMakeLists.txt.orig	2021-07-26 19:53:15.028262000 +0200
++++ sql/CMakeLists.txt	2021-07-26 19:55:42.226384000 +0200
+@@ -30,6 +30,8 @@ INCLUDE_DIRECTORIES(
+   ${CMAKE_SOURCE_DIR}/regex 
    ${SSL_INCLUDE_DIRS}
    ${CMAKE_BINARY_DIR}/sql
 +  ${CMAKE_BINARY_DIR}/include
 +  ${CMAKE_BINARY_DIR}
-   ${LZ4_INCLUDE_DIR}
  )
  
+ SET(CONF_SOURCES

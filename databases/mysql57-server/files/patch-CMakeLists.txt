@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
-+++ CMakeLists.txt
-@@ -614,12 +614,10 @@ IF(UNIX)
+--- CMakeLists.txt.orig	2021-07-26 19:43:45.021975000 +0200
++++ CMakeLists.txt	2021-07-26 19:49:38.318138000 +0200
+@@ -715,12 +715,10 @@ IF(UNIX)
  ENDIF()
  
  IF(NOT WITHOUT_SERVER)
@@ -13,7 +13,7 @@
    ENDIF(WITH_EMBEDDED_SERVER)
  ENDIF()
  
-@@ -628,8 +626,6 @@ ENDIF()
+@@ -729,8 +727,6 @@ ENDIF()
  ADD_SUBDIRECTORY(scripts)
  
  IF(NOT WITHOUT_SERVER)
@@ -22,19 +22,19 @@
    ADD_SUBDIRECTORY(support-files)
    IF(EXISTS ${CMAKE_SOURCE_DIR}/internal/CMakeLists.txt)
      ADD_SUBDIRECTORY(internal)
-@@ -684,6 +680,7 @@ ENDIF()
+@@ -789,6 +785,7 @@ ENDIF()
  #
  # RPM installs documentation directly from the source tree
  #
 +IF(FALSE)
  IF(NOT INSTALL_LAYOUT MATCHES "RPM")
-   INSTALL(FILES COPYING LICENSE.mysql 
-   DESTINATION ${INSTALL_DOCREADMEDIR} 
-@@ -706,6 +703,7 @@ IF(NOT INSTALL_LAYOUT MATCHES "RPM")
+   INSTALL(FILES
+     README
+@@ -808,6 +805,7 @@ IF(NOT INSTALL_LAYOUT MATCHES "RPM")
+     PATTERN "mysql.info" EXCLUDE
      PATTERN "sp-imp-spec.txt" EXCLUDE
    )
- ENDIF()
 +ENDIF()
+ ENDIF()
  
  INCLUDE(CPack)
- 
