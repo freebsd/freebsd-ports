@@ -25,8 +25,13 @@ LIB_DISTNAMES=	freeglut-3.0.0-8.el7 \
 		mesa-libgbm-${DISTVERSIONFULL} \
 		mesa-libglapi-${DISTVERSIONFULL} \
 		mesa-vdpau-drivers-${DISTVERSIONFULL}
-#		mesa-vulkan-drivers-${DISTVERSIONFULL}
-#		mesa-libxatracker-${DISTVERSIONFULL} \
+
+LIB_DISTNAMES_amd64=	mesa-vulkan-drivers-${DISTVERSIONFULL} \
+		mesa-libxatracker-${DISTVERSIONFULL}
+
+LIB_DISTNAMES_i386=	mesa-vulkan-drivers-${DISTVERSIONFULL} \
+		mesa-libxatracker-${DISTVERSIONFULL}
+
 SRC_DISTFILES=	freeglut-3.0.0-8.el7${SRC_SUFX}:SOURCE \
 		llvm-private-7.0.1-1.el7${SRC_SUFX}:SOURCE \
 		mesa-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE \
