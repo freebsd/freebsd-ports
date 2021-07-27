@@ -1,5 +1,5 @@
 PORTNAME=	hfsfuse
-DISTVERSION=	0.126
+DISTVERSION=	0.132
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/0x09/hfsfuse/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	fusefs-
@@ -18,10 +18,13 @@ USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	0x09
 
+MAKE_ARGS=	CONFIG_CFLAGS="${CFLAGS}" \
+		WITH_UBLIO=system \
+		WITH_UTF8PROC=system
 ALL_TARGET=	config all
-MAKE_ARGS=	CONFIG_CFLAGS="${CFLAGS}" WITH_UBLIO=system WITH_UTF8PROC=system
 
-PLIST_FILES=	bin/hfsdump bin/hfsfuse
+PLIST_FILES=	bin/hfsdump \
+		bin/hfsfuse
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
