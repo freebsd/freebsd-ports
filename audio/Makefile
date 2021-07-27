@@ -669,6 +669,7 @@
     SUBDIR += py-tagpy
     SUBDIR += py-wavio
     SUBDIR += py-webrtcvad
+    SUBDIR += py-zita-audiotools
     SUBDIR += qaudiosonar
     SUBDIR += qjackctl
     SUBDIR += qmidiarp
