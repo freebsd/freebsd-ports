@@ -17,7 +17,6 @@ share/icons/hicolor/32x32/apps/plasmadiscover.png
 share/icons/hicolor/48x48/apps/plasmadiscover.png
 share/icons/hicolor/scalable/apps/plasmadiscover.svgz
 share/knotifications5/discoverabstractnotifier.notifyrc
-share/knsrcfiles/discover_ktexteditor_codesnippets_core.knsrc
 share/kpackage/kcms/kcm_updates/contents/ui/main.qml
 share/kpackage/kcms/kcm_updates/metadata.desktop
 share/kpackage/kcms/kcm_updates/metadata.json
