@@ -1,6 +1,6 @@
---- org/eclipse/swt/internal/gtk/OS.java.orig	2019-03-07 04:31:06 UTC
+--- org/eclipse/swt/internal/gtk/OS.java.orig	2021-06-11 17:24:22 UTC
 +++ org/eclipse/swt/internal/gtk/OS.java
-@@ -53,15 +53,16 @@
+@@ -61,15 +61,16 @@ import org.eclipse.swt.internal.*;
   */
  public class OS extends C {
  	/** OS Constants */
@@ -19,4 +19,4 @@
 +		IsLinux = isLinux;  IsWin32 = isWin32;  IsFreeBSD = isFreeBSD;
  
  		byte[] buffer = new byte[4];
- 		long /*int*/ ptr = C.malloc(4);
+ 		long ptr = C.malloc(4);

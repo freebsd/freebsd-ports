@@ -1,10 +1,9 @@
 # Created by: Robert C. Noland III <rnoland@FreeBSD.org>
 
 PORTNAME=	swt
-DISTVERSION=	4.11
-PORTREVISION=	2
+DISTVERSION=	4.20
 CATEGORIES=	x11-toolkits devel java
-MASTER_SITES=	http://archive.eclipse.org/eclipse/downloads/drops4/R-${DISTVERSION}-201903070500/
+MASTER_SITES=	http://archive.eclipse.org/eclipse/downloads/drops4/R-${DISTVERSION}-202106111600/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-gtk-linux-x86_64
 
 MAINTAINER=	makc@FreeBSD.org
@@ -23,7 +22,7 @@ USE_JAVA=	yes
 USE_XORG=	xtst
 JAVA_OS=	native
 
-SWT_VERSION=	4924r25
+SWT_VERSION=	4944r26
 
 MAKEFILE=	make_freebsd.mak
 MAKE_ENV=	SWT_VERSION=${SWT_VERSION}
@@ -35,9 +34,10 @@ OPTIONS_DEFINE=	CAIRO WEBKIT
 OPTIONS_DEFAULT=	CAIRO
 OPTIONS_SUB=	yes
 
-CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
+CAIRO_USE=		GNOME=cairo
 CAIRO_MAKE_ENV=		MAKE_CAIRO=make_cairo
 
+WEBKIT_IMPLIES=		CAIRO
 WEBKIT_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 			libwebkit2gtk-4.0.so:www/webkit2-gtk3
 WEBKIT_MAKE_ENV=	BUILD_WEBKIT2EXTENSION=yes
