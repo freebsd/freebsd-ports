@@ -2,6 +2,7 @@
 
 PORTNAME=	tg_owt
 PORTVERSION=	0.0.20210718
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -15,10 +16,12 @@ BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib \
 		v4l_compat>0:multimedia/v4l_compat \
 		yasm:devel/yasm
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
+		libevent.so:devel/libevent \
 		libjpeg.so:graphics/jpeg-turbo \
 		libopus.so:audio/opus \
 		libpipewire-0.3.so:multimedia/pipewire \
-		libusrsctp.so:net/libusrsctp
+		libusrsctp.so:net/libusrsctp \
+		libvpx.so:multimedia/libvpx
 
 USES=		cmake pkgconfig xorg
 USE_XORG=	x11 xcomposite xdamage xrender xrandr
