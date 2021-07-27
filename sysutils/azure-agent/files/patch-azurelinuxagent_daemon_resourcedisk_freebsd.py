@@ -1,4 +1,4 @@
---- azurelinuxagent/daemon/resourcedisk/freebsd.py.orig	2021-05-18 18:30:52 UTC
+--- azurelinuxagent/daemon/resourcedisk/freebsd.py.orig	2021-06-24 22:08:50 UTC
 +++ azurelinuxagent/daemon/resourcedisk/freebsd.py
 @@ -1,6 +1,7 @@
  # Microsoft Azure Linux Agent
@@ -76,7 +76,22 @@
  
          device = self.osutil.device_for_ide_port(1)
          if device is None or device not in disks:
-@@ -90,94 +101,195 @@ class FreeBSDResourceDiskHandler(ResourceDiskHandler):
+@@ -74,8 +85,12 @@ class FreeBSDResourceDiskHandler(ResourceDiskHandler):
+                 err, output = shellutil.run_get_output(
+                     'camcontrol periphlist 3:1:0')
+                 if err:
+-                    raise ResourceDiskError(
+-                        "Unable to detect resource disk device:{0}".format(output))
++                    # try again on "0:0:1"
++                    err, output = shellutil.run_get_output(
++                        'camcontrol periphlist 0:0:1')
++                    if err:
++                        raise ResourceDiskError(
++                            "Unable to detect resource disk device:{0}".format(output))
+ 
+             # 'da1:  generation: 4 index: 1 status: MORE\npass2:  generation: 4 index: 2 status: LAST\n'
+             for line in output.split('\n'):
+@@ -90,94 +105,195 @@ class FreeBSDResourceDiskHandler(ResourceDiskHandler):
              raise ResourceDiskError("Unable to detect resource disk device.")
          logger.info('Resource disk device {0} found.', device)
  
