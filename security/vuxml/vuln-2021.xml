@@ -1,3 +1,29 @@
+  <vuln vid="ce79167f-ee1c-11eb-9785-b42e99a1b9c3">
+    <topic>powerdns -- remotely triggered crash</topic>
+    <affects>
+      <package>
+	<name>powerdns</name>
+	<range><eq>4.5.0</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>powerdns reports:</p>
+	<blockquote cite="https://www.powerdns.com/news.html#20210726">
+	  <p>PowerDNS Security Advisory 2021-01: Specific query crashes Authoritative Server</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-36754</cvename>
+      <url>https://blog.powerdns.com/2021/07/26/security-advisory-2021-01-for-powerdns-authoritative-server-4-5-0/</url>
+    </references>
+    <dates>
+      <discovery>2021-07-26</discovery>
+      <entry>2021-07-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cc553d79-e1f0-4b94-89f2-bacad42ee826">
     <topic>mosquitto -- NULL pointer dereference</topic>
     <affects>
