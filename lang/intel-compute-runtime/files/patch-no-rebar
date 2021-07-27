@@ -1,0 +1,80 @@
+Limit resizable BAR to Linux as NEO doesn't use libpci.
+
+level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:15:10: fatal error: 'linux/pci_regs.h' file not found
+#include <linux/pci_regs.h>
+         ^~~~~~~~~~~~~~~~~~
+level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:157:20: error: use of undeclared identifier 'PCI_CFG_SPACE_SIZE'
+    uint32_t pos = PCI_CFG_SPACE_SIZE;
+                   ^
+level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:167:23: error: use of undeclared identifier 'PCI_CFG_SPACE_EXP_SIZE'
+    auto loopCount = (PCI_CFG_SPACE_EXP_SIZE - PCI_CFG_SPACE_SIZE) / 8;
+                      ^
+level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:167:48: error: use of undeclared identifier 'PCI_CFG_SPACE_SIZE'
+    auto loopCount = (PCI_CFG_SPACE_EXP_SIZE - PCI_CFG_SPACE_SIZE) / 8;
+                                               ^
+level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:174:13: error: use of undeclared identifier 'PCI_EXT_CAP_ID'
+        if (PCI_EXT_CAP_ID(header) == PCI_EXT_CAP_ID_REBAR) {
+            ^
+level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:174:39: error: use of undeclared identifier 'PCI_EXT_CAP_ID_REBAR'
+        if (PCI_EXT_CAP_ID(header) == PCI_EXT_CAP_ID_REBAR) {
+                                      ^
+level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:177:15: error: use of undeclared identifier 'PCI_EXT_CAP_NEXT'
+        pos = PCI_EXT_CAP_NEXT(header);
+              ^
+level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:178:19: error: use of undeclared identifier 'PCI_CFG_SPACE_SIZE'
+        if (pos < PCI_CFG_SPACE_SIZE) {
+                  ^
+level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:202:48: error: use of undeclared identifier 'PCI_CFG_SPACE_EXP_SIZE'
+    configMemory = std::make_unique<uint8_t[]>(PCI_CFG_SPACE_EXP_SIZE);
+                                               ^
+level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:203:35: error: use of undeclared identifier 'PCI_CFG_SPACE_EXP_SIZE'
+    memset(configMemory.get(), 0, PCI_CFG_SPACE_EXP_SIZE);
+                                  ^
+level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:204:55: error: use of undeclared identifier 'PCI_CFG_SPACE_EXP_SIZE'
+    this->preadFunction(fdConfig, configMemory.get(), PCI_CFG_SPACE_EXP_SIZE, 0);
+                                                      ^
+
+--- level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp.orig	2021-07-27 12:47:48 UTC
++++ level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp
+@@ -12,7 +12,9 @@
+ 
+ #include "sysman/pci/pci_imp.h"
+ 
++#ifdef __linux__
+ #include <linux/pci_regs.h>
++#endif
+ 
+ namespace L0 {
+ 
+@@ -154,6 +156,7 @@ ze_result_t LinuxPciImp::initializeBarProperties(std::
+ 
+ // Parse PCIe configuration space to see if resizable Bar is supported
+ bool LinuxPciImp::resizableBarSupported() {
++#ifdef __linux__
+     uint32_t pos = PCI_CFG_SPACE_SIZE;
+     uint32_t header = 0;
+ 
+@@ -180,6 +183,7 @@ bool LinuxPciImp::resizableBarSupported() {
+         }
+         header = getDwordFromConfig(pos);
+     }
++#endif
+     return false;
+ }
+ 
+@@ -192,6 +196,7 @@ ze_result_t LinuxPciImp::getState(zes_pci_state_t *sta
+ }
+ 
+ void LinuxPciImp::pciExtendedConfigRead() {
++#ifdef __linux__
+     std::string pciConfigNode;
+     pSysfsAccess->getRealPath("device/config", pciConfigNode);
+     int fdConfig = -1;
+@@ -203,6 +208,7 @@ void LinuxPciImp::pciExtendedConfigRead() {
+     memset(configMemory.get(), 0, PCI_CFG_SPACE_EXP_SIZE);
+     this->preadFunction(fdConfig, configMemory.get(), PCI_CFG_SPACE_EXP_SIZE, 0);
+     this->closeFunction(fdConfig);
++#endif
+ }
+ 
+ LinuxPciImp::LinuxPciImp(OsSysman *pOsSysman) {
