@@ -1,5 +1,5 @@
 PORTNAME=	websockets
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www net devel python
 
 MAINTAINER=	kde@FreeBSD.org

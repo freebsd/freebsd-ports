@@ -1,5 +1,5 @@
 PORTNAME=	webkit
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 
 MAINTAINER=	kde@FreeBSD.org
