@@ -1,7 +1,7 @@
 PORTNAME=	zrepl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -19,7 +19,7 @@ GO_BUILDFLAGS=	-ldflags "\
 		-s -w\
 		-X ${GO_MODULE}/version.${PORTNAME}Version=${DISTVERSIONFULL}"
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message 500.zrepl
 
 OPTIONS_DEFINE=		EXAMPLES MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
@@ -40,6 +40,9 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/newsyslog.conf ${STAGEDIR}${EXAMPLESDIR}/newsyslog.conf
 	${INSTALL_DATA} ${FILESDIR}/syslog.conf ${STAGEDIR}${EXAMPLESDIR}/syslog.conf
 	${INSTALL_DATA} ${FILESDIR}/zrepl.yml ${STAGEDIR}${ETCDIR}/zrepl.yml.sample
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/weekly
+	${INSTALL_SCRIPT} ${WRKDIR}/500.zrepl \
+		${STAGEDIR}${PREFIX}/etc/periodic/weekly/500.zrepl
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/hooks

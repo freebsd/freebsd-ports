@@ -22,6 +22,16 @@ DANGER - SNAPSHOT PRUNING REQUIRES EXPLICIT KEEP RULES:
 For any ZFS snapshot that you want to keep, at least one rule must match.
 This also applies to snapshots taken by means other than zrepl
 (e.g. snapshots taken manually or via boot environment tools).
+
+In order to automatically warn the operator of impending certificate
+expiration, add this line to /etc/periodic.conf:
+
+    weekly_zrepl_enable="YES"
+
+More config details in the zrepl periodic script:
+
+    %%LOCALBASE%%/etc/periodic/weekly/500.zrepl
+
 EOM
 }
 ]
