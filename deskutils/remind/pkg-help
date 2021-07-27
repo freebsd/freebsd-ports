@@ -1,0 +1,3 @@
+The LANGUAGE option selects what language the program's messages and
+user interface appears in.  Only one language is supported at once
+and must be selected at compile time.
