@@ -774,6 +774,7 @@ share/locale/eu/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/eu/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/eu/LC_MESSAGES/kcm_kwinrules.mo
 share/locale/eu/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/eu/LC_MESSAGES/kcm_virtualkeyboard.mo
 share/locale/eu/LC_MESSAGES/kcmkwincommon.mo
 share/locale/eu/LC_MESSAGES/kcmkwincompositing.mo
 share/locale/eu/LC_MESSAGES/kcmkwinscreenedges.mo
@@ -1285,6 +1286,7 @@ share/locale/ro/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/ro/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/ro/LC_MESSAGES/kcm_kwinrules.mo
 share/locale/ro/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/ro/LC_MESSAGES/kcm_virtualkeyboard.mo
 share/locale/ro/LC_MESSAGES/kcmkwincommon.mo
 share/locale/ro/LC_MESSAGES/kcmkwincompositing.mo
 share/locale/ro/LC_MESSAGES/kcmkwinscreenedges.mo
@@ -1530,6 +1532,7 @@ share/locale/vi/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/vi/LC_MESSAGES/kcmkwm.mo
 share/locale/vi/LC_MESSAGES/kwin.mo
 share/locale/vi/LC_MESSAGES/kwin_clients.mo
+share/locale/vi/LC_MESSAGES/kwin_effects.mo
 share/locale/wa/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/wa/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/wa/LC_MESSAGES/kcm_kwinrules.mo
