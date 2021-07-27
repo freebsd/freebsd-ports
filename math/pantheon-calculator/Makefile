@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	calculator
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	math
 PKGNAMEPREFIX=	pantheon-
 DIST_SUBDIR=	pantheon
