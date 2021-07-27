@@ -1,7 +1,7 @@
 # Created by: Securedog <securedog@users.sourceforge.jp>
 
 PORTNAME=	pkg_replace
-PORTVERSION=	20200821
+PORTVERSION=	20210726
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
