@@ -1,7 +1,7 @@
 # Created by: Stefan Wendler <stefan.wendler@tngtech.com>
 
 PORTNAME=	rubymine
-PORTVERSION=	2021.1.3
+PORTVERSION=	2021.2
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/ruby/ \
 		http://download.jetbrains.com/ruby/
@@ -38,26 +38,14 @@ SUB_LIST+=	DATADIR=${DATADIR}
 do-install:
 # Linux/Windows/OS X only so remove them
 	@${RM} -r ${WRKSRC}/bin/fsnotifier \
-		${WRKSRC}/bin/fsnotifier-arm \
-		${WRKSRC}/bin/fsnotifier64 \
 		${WRKSRC}/lib/pty4j-native/ \
-		${WRKSRC}/bin/lib*.so \
-		${WRKSRC}/bin/libyjpagent-linux*.so \
-		${WRKSRC}/jbr
-	@${RM} ${WRKSRC}/plugins/performanceTesting/lib/lib*.so
+		${WRKSRC}/bin/lib*.so
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	@${TAR} -czf - -C ${WRKDIST} . | ${TAR} xzf - -C ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/rubymine ${STAGEDIR}${PREFIX}/bin/rubymine
 	${INSTALL_MAN} ${FILESDIR}/rubymine.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/rubymine.desktop ${STAGEDIR}${PREFIX}/share/applications/
-	cd ${WRKDIST}/lib && ${JAVA_HOME}/bin/jar xf icons.jar
-	${INSTALL_DATA} ${WRKDIST}/lib/icon.png ${STAGEDIR}${DATADIR}/rubymine.png
 # Use fsnotifier replacement provided by java/intellij-fsnotifier
 	${ECHO} "idea.filewatcher.executable.path=${DATADIR}/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
-# Fix "Typeahead timeout is exceeded" error
-	${ECHO} "action.aware.typeAhead=false" >> ${STAGEDIR}${DATADIR}/bin/rubymine.properties
-# Fix slow render
-	${ECHO} "-Dsun.java2d.xrender=false" >> ${STAGEDIR}${DATADIR}/bin/rubymine.vmoptions
-	${ECHO} "-Dsun.java2d.xrender=false" >> ${STAGEDIR}${DATADIR}/bin/rubymine64.vmoptions
 
 .include <bsd.port.mk>
