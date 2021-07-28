@@ -1,7 +1,7 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
 
 PORTNAME=	Connector
-PORTVERSION=	1.37
+PORTVERSION=	1.41
 CATEGORIES=	devel perl5
 PKGNAMEPREFIX=	p5-
 
@@ -35,7 +35,7 @@ USES=		perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	mrscotty
 GH_PROJECT=	${PORTNAME:tl}
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
