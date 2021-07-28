@@ -1,6 +1,6 @@
 --- lib/title.c.orig	1999-08-28 16:54:19 UTC
 +++ lib/title.c
-@@ -88,6 +88,8 @@ title (stream, c, center_p, format, va_a
+@@ -88,6 +88,8 @@ title (stream, c, center_p, format, va_alist)
    if (center_p)
      for (padding = 0 ; padding < 79 - len ; padding += 2)
        putc (' ', stream);
