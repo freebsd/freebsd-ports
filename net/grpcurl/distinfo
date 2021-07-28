@@ -1,6 +1,6 @@
-TIMESTAMP = 1620836512
-SHA256 (fullstorydev-grpcurl-v1.8.1_GH0.tar.gz) = 1dae107fdd32042f4fe5803378c5e0db124d573d4b96fc39cc32464b8d5adfbb
-SIZE (fullstorydev-grpcurl-v1.8.1_GH0.tar.gz) = 137942
+TIMESTAMP = 1627492040
+SHA256 (fullstorydev-grpcurl-v1.8.2_GH0.tar.gz) = 89e56bc6cdbf180068b02cc46078ebc3319010f2050f04247e1d535c7f9bf19b
+SIZE (fullstorydev-grpcurl-v1.8.2_GH0.tar.gz) = 138274
 SHA256 (census-instrumentation-opencensus-proto-v0.2.1_GH0.tar.gz) = bfcefa6093fc2ecdf5c9effea86e6982d0d6f9a5178b17fcf73a62e0f3fb43d0
 SIZE (census-instrumentation-opencensus-proto-v0.2.1_GH0.tar.gz) = 151701
 SHA256 (cncf-udpa-5459f2c99403_GH0.tar.gz) = 2ec5d01e917868bac4e8ddc77cb5247e4e7969ae8efd6e0641688cd91e1124b4
