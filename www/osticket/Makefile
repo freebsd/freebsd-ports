@@ -1,8 +1,6 @@
-# Created by: Juraj Lutter <otis@FreeBSD.org>
-
 PORTNAME=	osticket
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.2
+DISTVERSION=	1.15.3.1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/osTicket/osTicket/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
