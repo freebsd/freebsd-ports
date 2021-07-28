@@ -11,6 +11,7 @@
 %%SITE_PERL%%/Workflow/Condition/HasUser.pm
 %%SITE_PERL%%/Workflow/Condition/LazyAND.pm
 %%SITE_PERL%%/Workflow/Condition/LazyOR.pm
+%%SITE_PERL%%/Workflow/Condition/Negated.pm
 %%SITE_PERL%%/Workflow/Condition/Nested.pm
 %%SITE_PERL%%/Workflow/Config.pm
 %%SITE_PERL%%/Workflow/Config/Perl.pm
@@ -49,6 +50,7 @@
 %%PERL5_MAN3%%/Workflow::Condition::LazyAND.3.gz
 %%PERL5_MAN3%%/Workflow::Condition::LazyOR.3.gz
 %%PERL5_MAN3%%/Workflow::Condition::Nested.3.gz
+%%PERL5_MAN3%%/Workflow::Condition::Negated.3.gz
 %%PERL5_MAN3%%/Workflow::Config.3.gz
 %%PERL5_MAN3%%/Workflow::Config::Perl.3.gz
 %%PERL5_MAN3%%/Workflow::Config::XML.3.gz
