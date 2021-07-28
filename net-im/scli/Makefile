@@ -1,6 +1,7 @@
 PORTNAME=	scli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	net-im python
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -31,6 +32,9 @@ OPTIONS_DEFAULT=	LINKING
 
 LINKING_DESC=		Linking support for the --link flag
 LINKING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyqrcode>=0:graphics/py-pyqrcode@${PY_FLAVOR}
+
+post-patch:
+	${REINPLACE_CMD} 's|%%DOCSDIR%%|${DOCSDIR}|g' ${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

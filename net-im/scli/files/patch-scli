@@ -1,0 +1,11 @@
+--- scli.orig	2021-07-28 12:44:13 UTC
++++ scli
+@@ -53,7 +53,7 @@ SCLI_CFG_FILE = os.path.join(CFG_FOLDER, 'sclirc')
+ SCLI_LOG_FILE = os.path.join(SCLI_DATA_FOLDER, 'log')
+ 
+ SCLI_EXEC_FOLDER = os.path.dirname(os.path.realpath(__file__))
+-SCLI_README_FILE = os.path.join(SCLI_EXEC_FOLDER, 'README.md')
++SCLI_README_FILE = os.path.join('%%DOCSDIR%%', 'README.md')
+ 
+ 
+ # #############################################################################
