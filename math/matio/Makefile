@@ -10,7 +10,9 @@ COMMENT=	Library for reading and writing Matlab MAT files
 
 LICENSE=	BSD2CLAUSE
 
-USES=		7z compiler:c11 libtool pathfix
+USES=		7z compiler:c11 cpe libtool pathfix
+
+CPE_VENDOR=	matio_project
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
