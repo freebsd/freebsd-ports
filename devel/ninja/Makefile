@@ -18,6 +18,8 @@ GH_ACCOUNT=	ninja-build
 CONFLICTS=	irc/ninja-[0-9]*
 USES=		python
 
+PORTSCOUT=	limit:^1\.
+
 PLIST_FILES=	bin/ninja
 PORTDOCS=	README.md manual.asciidoc
 
