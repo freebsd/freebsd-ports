@@ -1,4 +1,4 @@
---- configure.ac.orig	2020-01-17 11:05:36 UTC
+--- configure.ac.orig	2021-07-22 13:51:43 UTC
 +++ configure.ac
 @@ -2,7 +2,7 @@
  # Process this file with autoconf to produce a configure script.

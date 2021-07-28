@@ -865,6 +865,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/wa.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/zh.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/lite.sql
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/lite.new.sql
 sbin/%%PORTNAME%%ctl
 %%DATADIR%%/captcha.sh
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
