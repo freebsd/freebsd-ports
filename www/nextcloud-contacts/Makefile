@@ -1,10 +1,10 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	contacts
-DISTVERSION=	4.0.0
+DISTVERSION=	4.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/nextcloud/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
+MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}
