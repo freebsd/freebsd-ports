@@ -10,10 +10,12 @@ COMMENT=	Pipe throughput monitor
 
 LICENSE=	ART20
 
+USES=	tar:bzip2 gmake
+
 CONFLICTS=	waon-[0-9]*
 
-USES=	tar:bzip2 gmake
 GNU_CONFIGURE=	yes
+MAKE_ENV+=	LD=${LD}
 
 PLIST_FILES=	bin/pv man/man1/pv.1.gz
 
