@@ -1,5 +1,5 @@
-TIMESTAMP = 1617277707
-SHA256 (codership-galera-release_25.3.33_GH0.tar.gz) = d38ea040a55d7427fda8be3e944d9045a61803773a4b3e9a6d48bf86d26e2af3
-SIZE (codership-galera-release_25.3.33_GH0.tar.gz) = 3336112
+TIMESTAMP = 1627299446
+SHA256 (codership-galera-release_25.3.34_GH0.tar.gz) = 0a3c7d1b96c308172ab91a2a8fc597ca205bcc10b6710d354d5bad7b40fb1386
+SIZE (codership-galera-release_25.3.34_GH0.tar.gz) = 3338604
 SHA256 (codership-wsrep-API-eab2d5d5a31672c0b7d116ef1629ff18392fd7d0_GH0.tar.gz) = 3c235868ed330d8d702e7b7541c24c1926b1fd9e6b8aa673b032a2318896e8a0
 SIZE (codership-wsrep-API-eab2d5d5a31672c0b7d116ef1629ff18392fd7d0_GH0.tar.gz) = 47032
