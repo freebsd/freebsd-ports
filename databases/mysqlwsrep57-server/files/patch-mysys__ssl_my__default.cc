@@ -1,4 +1,4 @@
---- mysys_ssl/my_default.cc.orig	2019-10-21 05:21:41 UTC
+--- mysys_ssl/my_default.cc.orig	2021-06-16 10:56:53 UTC
 +++ mysys_ssl/my_default.cc
 @@ -132,7 +132,7 @@ char wsrep_defaults_group_suffix[FN_EXTLEN]={0,};
  #endif /* WITH_WREP */
@@ -24,7 +24,7 @@
    while (mysql_file_getline(buff, sizeof(buff) - 1, fp, is_login_file))
    {
      line++;
-@@ -1286,7 +1294,8 @@ void my_print_default_files(const char *conf_file)
+@@ -1290,7 +1298,8 @@ void my_print_default_files(const char *conf_file)
              end[(strlen(end)-1)] = ' ';
            else
              strxmov(end, conf_file, *ext , " ",  NullS);
@@ -34,7 +34,7 @@
          }
        }
      }
-@@ -1445,14 +1454,9 @@ static const char **init_default_directories(MEM_ROOT 
+@@ -1449,14 +1458,9 @@ static const char **init_default_directories(MEM_ROOT 
  
  #else
  
@@ -51,7 +51,7 @@
  #endif
  
    if ((env= getenv("MYSQL_HOME")))
-@@ -1522,7 +1526,7 @@ int check_file_permissions(const char *file_name, my_b
+@@ -1526,7 +1530,7 @@ int check_file_permissions(const char *file_name, my_b
    MY_STAT stat_info;
  
    if (!my_stat(file_name,&stat_info,MYF(0)))

@@ -1,10 +1,9 @@
 # Created by: Vasil Dimov <vd@FreeBSD.org>
 
 PORTNAME=	mysqlwsrep
-PORTVERSION?=	5.7.33
+PORTVERSION?=	5.7.34
 DISTVERSIONPREFIX?=	wsrep_
-DISTVERSIONSUFFIX?=	-25.25
-PORTREVISION?=	1
+DISTVERSIONSUFFIX?=	-25.26
 CATEGORIES=	databases
 MASTER_SITES+=	SF/boost/boost/1.59.0:boost
 PKGNAMESUFFIX=	57-server
@@ -186,6 +185,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .  if ${CHOSEN_COMPILER_TYPE} == clang
 CXXFLAGS+=	-Wno-c++11-narrowing
 .  endif
+.endif
+
+# Ensure that assertions are not turned on in non-debug builds.
+.if !defined(WITH_DEBUG)
+CFLAGS+=	-DNDEBUG
+CXXFLAGS+=	-DNDEBUG
 .endif
 
 # Plugin innodb_memcached requires -fcommon to avoid duplicate symbol linker
