@@ -2,6 +2,7 @@ PORTNAME=	icingaweb2-module-x509
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0-8
 DISTVERSIONSUFFIX=	-g39fd7e1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -21,6 +22,8 @@ USES=		php:web,flavors mysql:server
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Icinga
+
+USE_PHP=	gmp
 
 NO_BUILD=	yes
 NO_ARCH=	yes
