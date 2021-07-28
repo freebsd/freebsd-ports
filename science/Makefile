@@ -232,8 +232,11 @@
     SUBDIR += py-chainer
     SUBDIR += py-chainer-chemistry
     SUBDIR += py-chempy
+    SUBDIR += py-cirq-aqt
     SUBDIR += py-cirq-core
     SUBDIR += py-cirq-google
+    SUBDIR += py-cirq-ionq
+    SUBDIR += py-cirq-pasqal
     SUBDIR += py-coards
     SUBDIR += py-dipy
     SUBDIR += py-dlib

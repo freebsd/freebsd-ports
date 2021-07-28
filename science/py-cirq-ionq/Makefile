@@ -1,0 +1,27 @@
+PORTNAME=	cirq-ionq
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.11.1.20210726
+CATEGORIES=	science python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Cirq module to run on IonQ quantum computers
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cirq-core>0:science/py-cirq-core@${PY_FLAVOR}
+
+USES=		python:3.8+
+USE_PYTHON=	distutils autoplist
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	quantumlib
+GH_PROJECT=	Cirq
+GH_TAGNAME=	0f9fa3f
+
+WRKSRC_SUBDIR=	cirq-ionq
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>
