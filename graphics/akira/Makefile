@@ -1,8 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
-PORTNAME=	akira
-PORTVERSION=	0.0.14
-PORTREVISION=	1
+PORTNAME=	${GH_PROJECT:tl}
+PORTVERSION=	0.0.15
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -28,7 +27,7 @@ INSTALLS_ICONS=	yes
 SHEBANG_FILES=	build-aux/meson/post_install.py
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,The Linux,The UI/UX,' \
+	@${REINPLACE_CMD} -e 's,The Linux,The UI/UX,' ${WRKSRC}/po/*.po \
 		${WRKSRC}/data/com.github.akiraux.akira.appdata.xml.in.in \
 		${WRKSRC}/data/com.github.akiraux.akira.desktop.in.in \
 		${WRKSRC}/README.md ${WRKSRC}/src/Dialogs/SettingsDialog.vala
