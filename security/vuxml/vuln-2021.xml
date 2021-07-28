@@ -1,3 +1,31 @@
+  <vuln vid="cbfd1874-efea-11eb-8fe9-036bd763ff35">
+    <topic>fetchmail -- 6.4.19 and older denial of service or information disclosure</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><lt>6.4.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="https://sourceforge.net/p/fetchmail/mailman/message/37327392/">
+	  <p>When a log message exceeds c. 2 kByte in size, for instance, with very long
+	  header contents, and depending on verbosity option, fetchmail can crash or
+	  misreport each first log message that requires a buffer reallocation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-36386</cvename>
+      <url>https://sourceforge.net/p/fetchmail/mailman/message/37327392/</url>
+    </references>
+    <dates>
+      <discovery>2021-07-07</discovery>
+      <entry>2021-07-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c561ce49-eabc-11eb-9c3f-0800270512f4">
     <topic>redis -- Integer overflow issues with BITFIELD command on 32-bit systems</topic>
     <affects>
