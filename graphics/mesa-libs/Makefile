@@ -6,8 +6,6 @@ CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
 
-BROKEN_FreeBSD_11=	error: unknown type name 'Elf_Nhdr'
-
 BUILD_DEPENDS=	libglvnd>0:graphics/libglvnd
 
 OPTIONS_GROUP=			PLATFORM
