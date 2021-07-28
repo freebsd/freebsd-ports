@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	bhyve front-end manager
 
 LICENSE=	BSD2CLAUSE

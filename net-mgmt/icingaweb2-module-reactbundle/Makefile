@@ -4,7 +4,7 @@ DISTVERSION=	0.9.0
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Icinga Web 2 ReactPHP-based 3rd party libraries
 
 LICENSE=	MIT

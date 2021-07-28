@@ -3,7 +3,7 @@ PORTVERSION=	0.5.1
 PORTREVISION=	1
 CATEGORIES=	audio
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight volume control for the systray
 
 LICENSE=	GPLv3

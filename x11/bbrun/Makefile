@@ -6,7 +6,7 @@ PORTREVISION=	13
 CATEGORIES=	x11
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run box for Blackbox
 
 OPTIONS_DEFINE=	DOCS

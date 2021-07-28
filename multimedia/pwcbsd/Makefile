@@ -8,7 +8,7 @@ MASTER_SITES=	http://raaf.atspace.org/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/ \
 		LOCAL/miwi
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Linux pwc webcam driver ported to FreeBSD
 
 LICENSE=	GPLv2

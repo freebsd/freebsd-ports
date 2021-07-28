@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.vcpc.univie.ac.at/vcpc/jhm/code/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for encrypting and compacting C source code
 
 WRKSRC=		${WRKDIR}/cmunger

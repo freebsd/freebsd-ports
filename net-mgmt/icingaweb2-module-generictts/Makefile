@@ -5,7 +5,7 @@ PORTREVISION=	3
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic ticket system integration into Icinga web 2
 
 LICENSE=	GPLv2

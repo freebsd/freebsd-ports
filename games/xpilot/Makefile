@@ -5,7 +5,7 @@ PORTVERSION=	4.5.5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}game/${PORTNAME}-4/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xpilot(client) and xpilots(server)
 
 USES=		imake tar:bzip2 xorg

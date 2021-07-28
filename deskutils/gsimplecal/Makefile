@@ -3,7 +3,7 @@ PORTVERSION=	2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight calendar applet written in C++ using GTK
 
 LICENSE=	GPLv3

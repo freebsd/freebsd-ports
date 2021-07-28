@@ -4,7 +4,7 @@ DISTVERSION=	1.4.2
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add Grafana graphs into Icinga Web 2 to display performance metrics
 
 LICENSE=	GPLv2

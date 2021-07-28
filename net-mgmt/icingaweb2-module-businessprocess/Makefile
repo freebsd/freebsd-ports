@@ -5,7 +5,7 @@ PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manage Business Processes in Icinga Web 2
 
 LICENSE=	GPLv2

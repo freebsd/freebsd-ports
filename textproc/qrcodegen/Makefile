@@ -7,7 +7,7 @@ CATEGORIES=	textproc java
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI to generate QR codes
 
 LICENSE=	GPLv3
