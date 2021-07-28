@@ -1,9 +1,9 @@
 # Created by: Ville Eerola <ve@sci.fi>
 
 PORTNAME?=	fetchmail
-DISTVERSION=	6.4.19
+DISTVERSION=	6.4.20
 CATEGORIES=	mail
-# The next line is inherited by the fetchmailconf slave port,
+# The next line is inherited by the fetchmailconf dependent port,
 # do NOT replace fetchmail by ${PORTNAME}
 MASTER_SITES=	SF/fetchmail/branch_6.4/
 
