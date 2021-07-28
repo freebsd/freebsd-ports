@@ -1,5 +1,5 @@
 PORTNAME=	river
-PORTVERSION=	s20210726
+PORTVERSION=	s20210728
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,7 +21,7 @@ USES=		pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	ifreund
-GH_TAGNAME=	90008cf
+GH_TAGNAME=	f56c892
 GH_TUPLE=	ifreund:zig-pixman:135f223:zig_pixman/deps/zig-pixman \
 		ifreund:zig-wayland:a8e1efc:zig_wayland/deps/zig-wayland \
 		ifreund:zig-xkbcommon:10cdca6:zig_xkbcommon/deps/zig-xkbcommon \
@@ -34,7 +34,8 @@ NO_INSTALL=	yes # strip(1) breaks runtime
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}ctl \
 		bin/${PORTNAME}tile \
-		${DATADIR}/river-layout-v3.xml \
+		libdata/pkgconfig/${PORTNAME}-protocols.pc \
+		share/${PORTNAME}-protocols/${PORTNAME}-layout-v3.xml \
 		share/bash-completion/completions/${PORTNAME}ctl \
 		share/fish/vendor_completions.d/${PORTNAME}ctl.fish \
 		share/zsh/site-functions/_${PORTNAME}ctl \
@@ -55,6 +56,9 @@ X11_CONFIGURE_ON=	-Dxwayland=true
 X11_CONFIGURE_OFF=	-Dxwayland=false
 
 post-patch:
+# Respect devel/pkgconf default search
+	@${REINPLACE_CMD} -e '/pkgconfig/s/share/libdata/' \
+		${WRKSRC}/build.zig
 # Respect PREFIX in path references
 	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},' \
 		${WRKSRC}/doc/${PORTNAME}ctl.1.scd
