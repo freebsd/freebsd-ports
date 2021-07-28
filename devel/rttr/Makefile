@@ -20,4 +20,6 @@ GH_ACCOUNT=	rttrorg
 CMAKE_OFF=	BUILD_DOCUMENTATION \
 		BUILD_UNIT_TESTS
 
+PORTSCOUT=	limit:^0\.
+
 .include <bsd.port.mk>
