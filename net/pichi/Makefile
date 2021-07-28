@@ -1,5 +1,5 @@
 PORTNAME=	pichi
-DISTVERSION=	1.3.1
+DISTVERSION=	1.4.0
 CATEGORIES=	net
 
 MAINTAINER=	pichi@elude.in
@@ -24,12 +24,8 @@ CMAKE_ON=		BUILD_SERVER BUILD_TEST
 INSTALL_TARGET=		install/strip
 TEST_TARGET=		test
 
-OPTIONS_DEFINE=		DEVEL STATIC TLS
-OPTIONS_DEFAULT=	TLS
+OPTIONS_DEFINE=		DEVEL STATIC
 OPTIONS_SUB=		yes
-
-TLS_DESC=		Enable TLS support ( requiring OpenSSL )
-TLS_CMAKE_BOOL=		ENABLE_TLS
 
 STATIC_DESC=		Static linking
 STATIC_CMAKE_BOOL=	STATIC_LINK
@@ -53,12 +49,10 @@ DEVEL_CMAKE_BOOL=	INSTALL_DEVEL
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MTLS}
 .if ${PORT_OPTIONS:MSTATIC}
 USES+=		ssl:build
 .else
 USES+=		ssl
-.endif
 .endif
 
 post-install:
