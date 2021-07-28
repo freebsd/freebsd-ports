@@ -1,6 +1,6 @@
 PORTNAME=	terraform
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://people.freebsd.org/~0mp/distfiles/:tencentcloud_tencentcloud_sdk_go
 
@@ -49,11 +49,8 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v52.5.0:azure_azure_sdk_for_go/vendor/github.co
 		bgentry:go-netrc:9fd32a8b3d3d:bgentry_go_netrc/vendor/github.com/bgentry/go-netrc \
 		bgentry:speakeasy:v0.1.0:bgentry_speakeasy/vendor/github.com/bgentry/speakeasy \
 		bmatcuk:doublestar:v1.1.5:bmatcuk_doublestar/vendor/github.com/bmatcuk/doublestar \
-		boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		chzyer:readline:2972be24d48e:chzyer_readline/vendor/github.com/chzyer/readline \
-		coreos:bbolt:v1.3.0:coreos_bbolt/vendor/github.com/coreos/bbolt \
-		coreos:etcd:v3.3.10:coreos_etcd/vendor/github.com/coreos/etcd \
 		coreos:go-semver:v0.2.0:coreos_go_semver/vendor/github.com/coreos/go-semver \
 		coreos:go-systemd:c6f51f82210d:coreos_go_systemd/vendor/github.com/coreos/go-systemd \
 		coreos:pkg:399ea9e2e55f:coreos_pkg/vendor/github.com/coreos/pkg \
@@ -61,6 +58,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v52.5.0:azure_azure_sdk_for_go/vendor/github.co
 		dimchansky:utfbom:v1.1.1:dimchansky_utfbom/vendor/github.com/dimchansky/utfbom \
 		dylanmei:iso8601:v0.1.0:dylanmei_iso8601/vendor/github.com/dylanmei/iso8601 \
 		dylanmei:winrmtest:99b7fe2fddf1:dylanmei_winrmtest/vendor/github.com/dylanmei/winrmtest \
+		etcd-io:etcd:15715dcf1ace:etcd_io_etcd/vendor/go.etcd.io/etcd \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		form3tech-oss:jwt-go:v3.2.2:form3tech_oss_jwt_go/vendor/github.com/form3tech-oss/jwt-go \
 		go-inf:inf:v0.9.0:go_inf_inf/vendor/gopkg.in/inf.v0 \
@@ -97,10 +95,6 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v52.5.0:azure_azure_sdk_for_go/vendor/github.co
 		gophercloud:gophercloud:c3bfe50899e5:gophercloud_gophercloud/vendor/github.com/gophercloud/gophercloud \
 		gophercloud:utils:7c72efc7435d:gophercloud_utils/vendor/github.com/gophercloud/utils \
 		gopherjs:gopherjs:0766667cb4d1:gopherjs_gopherjs/vendor/github.com/gopherjs/gopherjs \
-		gorilla:websocket:v1.4.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
-		grpc-ecosystem:go-grpc-middleware:v1.0.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
-		grpc-ecosystem:go-grpc-prometheus:v1.2.0:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
-		grpc-ecosystem:grpc-gateway:v1.8.5:grpc_ecosystem_grpc_gateway/vendor/github.com/grpc-ecosystem/grpc-gateway \
 		grpc:grpc-go:v1.27.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:aws-sdk-go-base:v0.6.0:hashicorp_aws_sdk_go_base/vendor/github.com/hashicorp/aws-sdk-go-base \
 		hashicorp:consul:610f3c86a089:hashicorp_consul/vendor/github.com/hashicorp/consul \
@@ -123,7 +117,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v52.5.0:azure_azure_sdk_for_go/vendor/github.co
 		hashicorp:go-uuid:v1.0.1:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
 		hashicorp:go-version:v1.2.1:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
 		hashicorp:hcl:a4b07c25de5f:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
-		hashicorp:hcl:v2.10.0:hashicorp_hcl_v2/vendor/github.com/hashicorp/hcl/v2 \
+		hashicorp:hcl:v2.10.1:hashicorp_hcl_v2/vendor/github.com/hashicorp/hcl/v2 \
 		hashicorp:jsonapi:1e50d74c8db3:hashicorp_jsonapi/vendor/github.com/hashicorp/jsonapi \
 		hashicorp:memberlist:v0.1.0:hashicorp_memberlist/vendor/github.com/hashicorp/memberlist \
 		hashicorp:serf:e4ec8cc423bb:hashicorp_serf/vendor/github.com/hashicorp/serf \
@@ -133,7 +127,6 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v52.5.0:azure_azure_sdk_for_go/vendor/github.co
 		huandu:xstrings:v1.3.2:huandu_xstrings/vendor/github.com/huandu/xstrings \
 		imdario:mergo:v0.3.11:imdario_mergo/vendor/github.com/imdario/mergo \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
-		jonboulle:clockwork:v0.1.0:jonboulle_clockwork/vendor/github.com/jonboulle/clockwork \
 		joyent:triton-go:d8f9c0314926:joyent_triton_go/vendor/github.com/joyent/triton-go \
 		json-iterator:go:v1.1.7:json_iterator_go/vendor/github.com/json-iterator/go \
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
@@ -177,28 +170,23 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v52.5.0:azure_azure_sdk_for_go/vendor/github.co
 		pkg:browser:0426ae3fba23:pkg_browser/vendor/github.com/pkg/browser \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		posener:complete:v1.2.1:posener_complete/vendor/github.com/posener/complete \
-		prometheus:client_golang:3c4408c8b829:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
 		sean-:seed:e2103e2c3529:sean__seed/vendor/github.com/sean-/seed \
 		smartystreets:assertions:b2de0cb4f26d:smartystreets_assertions/vendor/github.com/smartystreets/assertions \
 		smartystreets:goconvey:ef6db91d284a:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey \
-		soheilhy:cmux:v0.1.4:soheilhy_cmux/vendor/github.com/soheilhy/cmux \
 		spf13:afero:v1.2.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
 		tencentcloud:tencentcloud-sdk-go:v3.0.82:tencentcloud_tencentcloud_sdk_go/vendor/github.com/tencentcloud/tencentcloud-sdk-go \
 		tencentyun:cos-go-sdk-v5:f07404cefc8c:tencentyun_cos_go_sdk_v5/vendor/github.com/tencentyun/cos-go-sdk-v5 \
-		tmc:grpc-websocket-proxy:830351dc03c6:tmc_grpc_websocket_proxy/vendor/github.com/tmc/grpc-websocket-proxy \
 		tombuildsstuff:giovanni:v0.15.1:tombuildsstuff_giovanni/vendor/github.com/tombuildsstuff/giovanni \
 		uber-go:atomic:v1.3.2:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.1.0:uber_go_multierr/vendor/go.uber.org/multierr \
-		uber-go:zap:v1.9.1:uber_go_zap/vendor/go.uber.org/zap \
-		ugorji:go:00b869d2f4a5:ugorji_go/vendor/github.com/ugorji/go \
+		uber-go:zap:v1.10.0:uber_go_zap/vendor/go.uber.org/zap \
 		ulikunitz:xz:v0.5.8:ulikunitz_xz/vendor/github.com/ulikunitz/xz \
 		vmihailenco:msgpack:v4.3.12:vmihailenco_msgpack_v4/vendor/github.com/vmihailenco/msgpack/v4 \
 		vmihailenco:tagparser:v0.1.1:vmihailenco_tagparser/vendor/github.com/vmihailenco/tagparser \
 		xanzy:ssh-agent:v0.2.1:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
-		xiang90:probing:07dd2e8dfe18:xiang90_probing/vendor/github.com/xiang90/probing \
 		xlab:treeprint:1d6e34225557:xlab_treeprint/vendor/github.com/xlab/treeprint \
 		zclconf:go-cty-debug:b22d67c1ba0b:zclconf_go_cty_debug/vendor/github.com/zclconf/go-cty-debug \
 		zclconf:go-cty-yaml:v1.0.2:zclconf_go_cty_yaml/vendor/github.com/zclconf/go-cty-yaml \
