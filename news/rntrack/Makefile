@@ -1,6 +1,6 @@
 PORTNAME=	rntrack
 PORTVERSION=	2.1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news mail
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	ftrack-as/RNtrack/${PORTVERSION}
@@ -16,7 +16,7 @@ USES=		compiler:c11 tar:bzip2
 
 MAKE_ENV=	CONFIG=${ETCDIR}/rntrack.cfg
 
-ETCDIR=		${PREFIX}/etc/fido
+ETCDIR=		${PREFIX}/etc/fido/rntrack
 
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/MakeFiles/FreeBSD
