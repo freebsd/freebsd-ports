@@ -1,8 +1,7 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	x42-plugins
-DISTVERSION=	20210409 # the version is published here: http://gareus.org/misc/x42-plugins.php
-PORTREVISION=	1
+DISTVERSION=	20210714 # the version is published here: http://gareus.org/misc/x42-plugins.php
 CATEGORIES=	audio
 MASTER_SITES=	http://gareus.org/misc/x42-plugins/
 PKGNAMESUFFIX=	-lv2
@@ -17,6 +16,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/fftw3.h:math/fftw3 \
 		bash:shells/bash
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
+		libharfbuzz.so:print/harfbuzz \
 		libjack.so:audio/jack \
 		liblo.so:audio/liblo \
 		libltc.so:audio/libltc \
