@@ -236,6 +236,7 @@
     SUBDIR += unmass
     SUBDIR += unrar
     SUBDIR += unrar-iconv
+    SUBDIR += unrpa
     SUBDIR += unshield
     SUBDIR += unzip
     SUBDIR += unzoo
