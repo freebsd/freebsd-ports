@@ -14,6 +14,6 @@ GH_ACCOUNT=	Kurento
 
 NO_ARCH=	yes
 
-PLIST_SUB=	CMAKE_VERSION=3.20
+PLIST_SUB=	CMAKE_VERSION=3.21
 
 .include <bsd.port.mk>
