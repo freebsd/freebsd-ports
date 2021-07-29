@@ -1,3 +1,7 @@
-TIMESTAMP = 1620189868
-SHA256 (hashicorp-packer-v1.7.2_GH0.tar.gz) = 913c5c572b23c7fd9f697ed09dbbdd6394591b4447ef8af89c99f2b9069fc5f4
-SIZE (hashicorp-packer-v1.7.2_GH0.tar.gz) = 17972088
+TIMESTAMP = 1627531530
+SHA256 (go/sysutils_packer/hashicorp-packer-v1.7.4_GH0/v1.7.4.mod) = 105849acbe44b31659e85d21646a3d9987efbb2c5482cdea420f5a32bbd24d2f
+SIZE (go/sysutils_packer/hashicorp-packer-v1.7.4_GH0/v1.7.4.mod) = 3671
+SHA256 (go/sysutils_packer/hashicorp-packer-v1.7.4_GH0/v1.7.4.zip) = 0a68a39895389bf7572a2ca7acc62ca5ce80947fa21d7b6734c95352b9d5cfac
+SIZE (go/sysutils_packer/hashicorp-packer-v1.7.4_GH0/v1.7.4.zip) = 2566091
+SHA256 (go/sysutils_packer/hashicorp-packer-v1.7.4_GH0/hashicorp-packer-v1.7.4_GH0.tar.gz) = 00a093fa302bde7b1eb01de85474524479126cc91309879f0c33f413918506a5
+SIZE (go/sysutils_packer/hashicorp-packer-v1.7.4_GH0/hashicorp-packer-v1.7.4_GH0.tar.gz) = 2108422
