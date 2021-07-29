@@ -37,13 +37,6 @@ JVERSION=	j807-release
 BIN_FILES=	jconsole
 LIB_FILES=	libj.so libtsdll.so
 
-OPTIONS_DEFINE=	OPENMP
-
-OPENMP_DESC=	Build with OpenMP support
-OPENMP_USES=	compiler:openmp
-OPENMP_MAKE_ENV=	USE_OPENMP=1
-OPENMP_LIB_DEPENDS=	libgomp.so:lang/gcc7
-
 # J wants to install jconsole, also provided by openjdk
 CONFLICTS_INSTALL=	openjdk[0-9]*
 
