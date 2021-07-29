@@ -1,54 +1,40 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	entangle
-PORTVERSION=	0.7.2
-PORTREVISION=	5
+PORTVERSION=	1.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://entangle-photo.org/download/sources/
+MASTER_SITES=	https://www.entangle-photo.org/download/sources/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Digital camera tethered control and capture program
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/share/icons/mate/scalable/devices/camera-photo-symbolic.svg:x11-themes/mate-icon-theme \
-		itstool:textproc/itstool
+BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
 LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2 \
-		libdbus-glib-1.so:devel/dbus-glib \
 		liblcms2.so:graphics/lcms2 \
 		libgexiv2.so:graphics/gexiv2 \
 		libraw_r.so:graphics/libraw \
 		libpeas-1.0.so:devel/libpeas
-RUN_DEPENDS:=	${BUILD_DEPENDS:Nitstool*} \
-		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas>0:devel/py-libpeas@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang gettext-tools gmake gnome libtool \
-		pkgconfig python:3.4+ xorg
-GNU_CONFIGURE=	yes
+USES=		compiler:c++11-lang gnome meson pkgconfig python tar:xz xorg
 USE_GNOME=	cairo gtk30 intltool introspection
 USE_GSTREAMER1=	core
 USE_XORG=	xext
 GLIB_SCHEMAS=	org.entangle-photo.manager.gschema.xml
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_OFF=	--disable-nls
-NLS_USES=		gettext-runtime
+NLS_USES=	gettext
 
 post-patch:
-	@${REINPLACE_CMD} -e '/checking for GUDEV/,+93d ; \
-		s,gstreamer-plugins-base-1,gstreamer-base-1, ; \
-		s,gnome-icon-theme-symbolic,mate-icon-theme, ; \
-		s,/usr/share/icons/gnome,${LOCALBASE}/share/icons/mate,' \
-			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,_udev,,' \
 		${WRKSRC}/src/backend/entangle-camera-list.c
+	@${REINPLACE_CMD} -e '/gudev_dep/d' \
+		${WRKSRC}/src/backend/meson.build
 
 .include <bsd.port.mk>
