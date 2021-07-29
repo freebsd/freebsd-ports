@@ -7036,6 +7036,7 @@
     SUBDIR += varconf
     SUBDIR += vasm
     SUBDIR += vc
+    SUBDIR += vc-intrinsics
     SUBDIR += vcglib
     SUBDIR += vera++
     SUBDIR += vexcl
