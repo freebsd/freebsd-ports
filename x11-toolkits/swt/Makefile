@@ -11,7 +11,7 @@ COMMENT=	Standard Widget Toolkit for Java
 
 LICENSE=	EPL
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 USES=		compiler:c++11-lang gl gmake gnome pkgconfig zip:infozip xorg
 
