@@ -141,6 +141,7 @@ PGSQL_CONFIGURE_ENABLE=	pgsql
 PGSQL_GH_TUPLE=	processone:p1_pgsql:${P1_PGSQL_VER}:p1_pgsql/deps/p1_pgsql
 REDIS_CONFIGURE_ENABLE=	redis
 REDIS_GH_TUPLE=	wooga:eredis:v${EREDIS_VER}:eredis/deps/eredis
+REDIS_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-deps_eredis_src_eredis.app.src
 SIP_CONFIGURE_ENABLE=	sip
 SIP_GH_TUPLE=	processone:esip:${ESIP_VER}:esip/deps/esip
 SIP_IMPLIES=	STUN
