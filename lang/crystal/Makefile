@@ -1,7 +1,7 @@
 PORTNAME=		crystal
-DISTVERSION=		0.36.1
+DISTVERSION=		1.1.1
 CATEGORIES=		lang
-MASTER_SITES=		https://unrelentingtech.s3.dualstack.eu-west-1.amazonaws.com/crystal/:bootstrap
+MASTER_SITES=		https://dl.unrelenting.technology/crystal/:bootstrap
 DISTFILES=		${BOOTSTRAP_PATH}:bootstrap
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -30,7 +30,7 @@ GH_ACCOUNT=	crystal-lang
 
 LLVM_VERSION=	10
 BOOTSTRAP_PATH=	crystal-${BOOTSTRAP_VER}-freebsd12-${ARCH}-llvm10
-BOOTSTRAP_VER?=	0.35.1
+BOOTSTRAP_VER?=	1.1.1
 
 MAKE_ARGS=	SHELL=sh \
 		LLVM_CONFIG="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
