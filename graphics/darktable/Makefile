@@ -31,7 +31,11 @@ LIB_DEPENDS=	libcolord-gtk.so:graphics/colord-gtk \
 		libsoup-2.4.so:devel/libsoup \
 		libtiff.so:graphics/tiff
 
-USES=		cmake compiler:c++14-lang desktop-file-utils gl gnome jpeg \
+# Fix build against cmake-3.21: the ninja generator in 3.21 suffers a regression
+# (see https://gitlab.kitware.com/cmake/cmake/-/issues/22487) appending an invalid
+# "-Wl,--no-as-needed" to the linker arguments for static libraries.
+# Once this regression has been fixed upstream, this can be switch back to USES=cmake
+USES=		cmake:noninja compiler:c++14-lang desktop-file-utils gl gnome jpeg \
 		perl5 pkgconfig shebangfix sqlite tar:xz xorg
 USE_GL=		glu
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
