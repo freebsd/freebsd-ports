@@ -1,10 +1,11 @@
 PORTNAME=	ciso8601
 DISTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rozhuk.im@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast ISO8601 date time parser for Python written in C
 
 LICENSE=	MIT
@@ -12,5 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ciso8601*.so
 
 .include <bsd.port.mk>
