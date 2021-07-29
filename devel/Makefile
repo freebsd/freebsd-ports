@@ -5084,6 +5084,7 @@
     SUBDIR += py-responses
     SUBDIR += py-retrying
     SUBDIR += py-retype
+    SUBDIR += py-rfc3339
     SUBDIR += py-robotframework
     SUBDIR += py-robotframework-databaselibrary
     SUBDIR += py-robotframework-pabot
