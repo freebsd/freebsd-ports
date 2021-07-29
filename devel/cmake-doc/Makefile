@@ -1,5 +1,5 @@
 PORTNAME=	cmake
-DISTVERSION=	3.21.0
+DISTVERSION=	3.21.2
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-doc

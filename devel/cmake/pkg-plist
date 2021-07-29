@@ -1353,6 +1353,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_ERROR_DEPRECATED.rst
 %%DATADIR%%/Help/variable/CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION.rst
 %%DATADIR%%/Help/variable/CMAKE_EXECUTABLE_SUFFIX.rst
+%%DATADIR%%/Help/variable/CMAKE_EXECUTABLE_SUFFIX_LANG.rst
 %%DATADIR%%/Help/variable/CMAKE_EXECUTE_PROCESS_COMMAND_ECHO.rst
 %%DATADIR%%/Help/variable/CMAKE_EXE_LINKER_FLAGS.rst
 %%DATADIR%%/Help/variable/CMAKE_EXE_LINKER_FLAGS_CONFIG.rst
@@ -2148,7 +2149,6 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Compiler/IAR-C.cmake
 %%DATADIR%%/Modules/Compiler/IAR-CXX.cmake
 %%DATADIR%%/Modules/Compiler/IAR-DetermineCompiler.cmake
-%%DATADIR%%/Modules/Compiler/IAR-FindBinUtils.cmake
 %%DATADIR%%/Modules/Compiler/IAR.cmake
 %%DATADIR%%/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake
 %%DATADIR%%/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake
@@ -2952,6 +2952,9 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Templates/MSBuild/FlagTables/v142_CL.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v142_CSharp.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v142_Link.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v143_CL.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v143_CSharp.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v143_Link.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v14_LIB.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v14_MASM.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v14_RC.json
