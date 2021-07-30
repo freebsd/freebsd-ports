@@ -38,6 +38,7 @@ include/ncpp/internal/Helpers.hh
 include/ncpp/ncpp.hh
 include/notcurses/direct.h
 include/notcurses/nckeys.h
+include/notcurses/ncport.h
 include/notcurses/ncseqs.h
 include/notcurses/notcurses.h
 include/notcurses/version.h
