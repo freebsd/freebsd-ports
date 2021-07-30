@@ -14,6 +14,7 @@ include/reflex/pattern.h
 include/reflex/posix.h
 include/reflex/ranges.h
 include/reflex/setop.h
+include/reflex/simd.h
 include/reflex/stdmatcher.h
 include/reflex/timer.h
 include/reflex/traits.h
