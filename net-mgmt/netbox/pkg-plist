@@ -26,6 +26,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/core-functionality/tenancy.md
 %%PORTDOCS%%%%DOCSDIR%%/core-functionality/virtualization.md
 %%PORTDOCS%%%%DOCSDIR%%/core-functionality/vlans.md
+%%PORTDOCS%%%%DOCSDIR%%/development/adding-models.md
 %%PORTDOCS%%%%DOCSDIR%%/development/application-registry.md
 %%PORTDOCS%%%%DOCSDIR%%/development/extending-models.md
 %%PORTDOCS%%%%DOCSDIR%%/development/getting-started.md
