@@ -3,7 +3,7 @@ DISTVERSION=	2.2.0
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Library to play Commodore 64 music derived from libsidplay2
 
 LICENSE=	GPLv2+
