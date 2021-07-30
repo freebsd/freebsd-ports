@@ -5,7 +5,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Fast ISO8601 date time parser for Python written in C
 
 LICENSE=	MIT
