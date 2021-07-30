@@ -1,4 +1,4 @@
-DISTVERSION=	2021-06-07
+DISTVERSION=	2021-07-29
 MASTER_SITES=	SF/schilytools
 DISTNAME=	schily-${DISTVERSION}
 
@@ -29,7 +29,7 @@ BUILD_DEPENDS+=	schilybase=${PORTVERSION}:devel/schilybase
 RUN_DEPENDS+=	schilybase=${PORTVERSION}:devel/schilybase
 .endif
 
-.if "${BOOTSTRAP_SMAKE:tl}" != "yes"
+.if "${BOOTSTRAP_SMAKE}" != "yes"
 BUILD_DEPENDS+=	smake:devel/smake
 .endif
 
@@ -48,22 +48,22 @@ MAKE_ARGS=	INS_BASE=${PREFIX} \
 		NOECHO=
 MAKE_CMD=	${"${BOOTSTRAP_SMAKE}" == "yes":?${WRKSRC}/psmake/smake:smake}
 
-PLIST_SUB+=	ARCH=${ARCH} COMPILER_TYPE=${COMPILER_TYPE}
+PLIST_SUB+=	OPSYS=${OPSYS:tl} ARCH=${ARCH} COMPILER_TYPE=${COMPILER_TYPE}
 PLIST=		${.CURDIR}/pkg-plist
-PKGMESSAGE=	${.CURDIR}/pkg-message
+PKGMESSAGE?=	${.CURDIR}/pkg-message
 DESCR=		${.CURDIR}/pkg-descr
 
 post-extract:
 	cd ${WRKSRC}/rmt && ${MV} rmt.dfl srmt.dfl
 	cd ${WRKSRC}/rmt && ${MV} default-rmt.sample default-srmt.sample
 
-.if "${BOOTSTRAP_SMAKE:tl}" == "yes"
-# build a bootstrap smake as MAKE_CMD
-pre-configure:
-	cd ${WRKSRC}/psmake && ${SETENV} ${MAKE_ENV} ${SH} ./MAKE-all
-.endif
 
 do-configure:
+.if "${BOOTSTRAP_SMAKE}" == "yes"
+	@${ECHO_MSG} "=> building a bootstrap smake"
+	cd ${WRKSRC}/psmake && ${SETENV} ${MAKE_ENV} ${SH} ./MAKE-all
+.endif
+	@${ECHO_MSG} "=> configuring components"
 	for component in ${COMPONENTS} ; \
 	do \
 		cd ${WRKSRC}/$$component && \

@@ -26,6 +26,9 @@ COMPONENTS=	cdda2wav \
 		scgcheck \
 		scgskeleton
 
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/share/doc/cdrecord/README.rscsi
+
 post-install-LAME-off:
 	${RM} ${STAGEDIR}${PREFIX}/bin/cdda2mp3 ${STAGEDIR}${PREFIX}share/man/man1/cdda2mp3.1
 

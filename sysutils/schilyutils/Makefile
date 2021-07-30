@@ -9,6 +9,8 @@ USES+=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	man2html/man2html cstyle/cstyle.pl
 
+CONFLICTS_INSTALL=	bsh
+
 MASTERDIR=	${.CURDIR}/../../devel/schilybase
 COMPONENTS=	bsh \
 		btcflash \

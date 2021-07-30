@@ -12,9 +12,9 @@ include/scg/scsitransp.h
 include/scg/spti-wnt.h
 include/scg/srb_os2.h
 include/schily/_regex.h
-include/schily/%%ARCH%%-freebsd-%%COMPILER_TYPE%%/align.h
-include/schily/%%ARCH%%-freebsd-%%COMPILER_TYPE%%/avoffset.h
-include/schily/%%ARCH%%-freebsd-%%COMPILER_TYPE%%/xconfig.h
+include/schily/%%ARCH%%-%%OPSYS%%-%%COMPILER_TYPE%%/align.h
+include/schily/%%ARCH%%-%%OPSYS%%-%%COMPILER_TYPE%%/avoffset.h
+include/schily/%%ARCH%%-%%OPSYS%%-%%COMPILER_TYPE%%/xconfig.h
 include/schily/align.h
 include/schily/alloca.h
 include/schily/archdefs.h
