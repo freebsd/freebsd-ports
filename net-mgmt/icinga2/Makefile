@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.12.3
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Monitoring and management system for hosts, services and networks
 
 LICENSE=	GPLv2

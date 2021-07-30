@@ -4,7 +4,7 @@ DISTVERSION=	1.2.0
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Import CSV, JSON, XML and YAML files for the Icinga Director
 
 LICENSE=	GPLv2

@@ -4,7 +4,7 @@ DISTVERSION=	1.1.1
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Drill-down view for Icinga web 2 based on custom variables
 
 LICENSE=	GPLv2

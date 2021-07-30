@@ -5,7 +5,7 @@ PORTREVISION=	3
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Display hosts on OpenStreetMap
 
 LICENSE=	GPLv2

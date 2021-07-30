@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Reporting module for Icinga Web 2
 
 LICENSE=	GPLv2
