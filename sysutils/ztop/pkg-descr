@@ -1,0 +1,8 @@
+Display ZFS dataset I/O in real time
+
+ztop is like top, but for ZFS datasets. It displays the real-time
+activity for datasets. The built-in zpool iostat can display real-time
+I/O statistics for pools, but until now there was no similar tool for
+datasets.
+
+WWW: https://github.com/asomers/ztop
