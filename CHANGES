@@ -10,6 +10,17 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20210730:
+AUTHOR: tcberner@FreeBSD.org
+
+  A new USES has been added to depend on the mlt multimedia framework.
+
+  Ports that depend on mlt should now use USES=mlt:<version> to specify
+  their dependency.
+
+  At the moment the supported version is 6, but will be extended to also 
+  allow for selection of mlt 7 shortly.
+
 20210604:
 AUTHOR: mat@FreeBSD.org
 

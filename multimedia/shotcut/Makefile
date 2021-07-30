@@ -1,7 +1,7 @@
 PORTNAME=	shotcut
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${FULLVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	vishwin@FreeBSD.org
@@ -9,11 +9,10 @@ COMMENT=	Free, open source, cross-platform video editor
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libmlt.so:multimedia/mlt
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		${LOCALBASE}/lib/libjack.so:audio/jack
 
-USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig \
+USES=		compiler:c++11-lang desktop-file-utils gl mlt:6 pkgconfig \
 		qmake qt:5 sdl shared-mime-info \
 		xorg
 

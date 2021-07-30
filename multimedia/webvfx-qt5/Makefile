@@ -1,6 +1,6 @@
 PORTNAME=	webvfx
 DISTVERSION=	0.4.4-20160823
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-qt5
 
@@ -10,13 +10,11 @@ COMMENT=	Video effects library based on HTML/QML
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libmlt.so:multimedia/mlt
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	mltframework
 GH_TAGNAME=	e918ce4
 
-USES=		compiler:c++11-lang pkgconfig qmake qt:5
+USES=		compiler:c++11-lang mlt:6 pkgconfig qmake qt:5
 USE_QT=		3d buildtools_build declarative opengl webkit
 USE_LDCONFIG=	yes
 

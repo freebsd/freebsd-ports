@@ -3,7 +3,7 @@
 PORTNAME=	synfig
 PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=v
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics devel multimedia
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -23,7 +23,6 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libltdl.so:devel/libltdl \
-		libmlt.so:multimedia/mlt \
 		libmng.so:graphics/libmng \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
@@ -31,7 +30,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 PORTSCOUT=	limitw:1,even
 
 USES=		autoreconf compiler:c++11-lang gmake gnome iconv jpeg \
-		libtool localbase pathfix pkgconfig
+		libtool localbase mlt:6 pathfix pkgconfig
 USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 USE_GNOME=	cairo glibmm intltool libxml++26 pango

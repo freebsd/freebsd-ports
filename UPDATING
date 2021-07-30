@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210730:
+  AFFECTS: users of multimedia/mlt, multimedia/mlt-qt and multimedia/py-mlt
+  AUTHOR:  kde@FreeBSD.org
+
+  multimedia/{py-,}mlt{-qt5,} has been moved to multimedia/{py-,}mlt6{-qt5,}
+  to make room for importin the next major version of the mlt framework.
+
 20210721:
   AFFECTS: users of x11/rxvt-unicode
   AUTHOR: thierry@FreeBSD.org

@@ -16471,3 +16471,6 @@ devel/rubygem-grape-entity07|devel/rubygem-grape-entity|2021-07-25|Obsolete, use
 net/rubygem-gitlab-fog-google|net/rubygem-fog-google|2021-07-25|Obsolete, use net/rubygem-fog-google
 devel/rubygem-gitlab-rdoc|devel/rubygem-rdoc|2021-07-25|Obsolete, use devel/rubygem-rdoc
 databases/rubygem-redis-namespace17|databases/rubygem-redis-namespace|2021-07-25|Obsolete, use databases/rubygem-redis-namespace
+multimedia/mlt|multimedia/mlt6|2021-07-30|Moved to a versioned directory to make place for future versions
+multimedia/mlt-qt5|multimedia/mlt6-qt5|2021-07-30|Moved to a versioned directory to make place for future versions
+multimedia/py-mlt|multimedia/py-mlt6|2021-07-30|Moved to a versioned directory to make place for future versions
