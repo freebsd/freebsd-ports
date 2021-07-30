@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2021-07-30 17:03:01 UTC
++++ CMakeLists.txt
+@@ -435,9 +435,6 @@ install(DIRECTORY presets profiles DESTINATION ${MLT_I
+ 
+ if(UNIX AND NOT APPLE)
+   install(FILES docs/melt.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1 RENAME melt-${MLT_VERSION_MAJOR}.1)
+-  install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink melt-${MLT_VERSION_MAJOR}.1 melt.1 \
+-                                WORKING_DIRECTORY ${CMAKE_INSTALL_FULL_MANDIR}/man1)"
+-  )
+ endif()
+ 
+ add_subdirectory(src)
