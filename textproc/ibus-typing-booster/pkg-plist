@@ -284,6 +284,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/zh_Hant.xml
 %%DATADIR%%/data/annotationsDerived/zh.xml
 %%DATADIR%%/data/annotationsDerived/zu.xml
+%%DATADIR%%/data/coin9.wav
 %%DATADIR%%/data/emoji-data.txt
 %%DATADIR%%/data/emoji-sequences.txt
 %%DATADIR%%/data/emoji-test.txt
