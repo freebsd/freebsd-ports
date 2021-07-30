@@ -1,7 +1,7 @@
 # Created by: Sergei Vyshenski
 
 PORTNAME=	Workflow
-PORTVERSION=	1.55
+PORTVERSION=	1.56
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
