@@ -3,15 +3,9 @@ From: Mohamad Safadieh <self@mhmd.sh>
 Date: Wed, 5 May 2021 12:38:26 -0400
 Subject: [PATCH] added sshpass_prompt, ssh_transfer_method, timeout
 
----
- sshjail.py | 42 ++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 42 insertions(+)
-
-diff --git a/sshjail.py b/sshjail.py
-index 5973380..0e26c68 100644
---- sshjail.py
+--- sshjail.py.orig	2021-01-07 19:31:49 UTC
 +++ sshjail.py
-@@ -49,6 +49,17 @@
+@@ -49,6 +49,17 @@ DOCUMENTATION = '''
            vars:
                - name: ansible_password
                - name: ansible_ssh_pass
@@ -29,7 +23,31 @@ index 5973380..0e26c68 100644
        ssh_args:
            description: Arguments to pass to all ssh cli tools
            default: '-C -o ControlMaster=auto -o ControlPersist=60s'
-@@ -247,6 +258,16 @@
+@@ -140,10 +151,9 @@ DOCUMENTATION = '''
+             - key: ssh_extra_args
+               section: ssh_connection
+               version_added: '2.7'
+-      retries:
+-          # constant: ANSIBLE_SSH_RETRIES
++      reconnection_retries:
+           description: Number of attempts to connect.
+-          default: 3
++          default: 0
+           type: integer
+           env:
+             - name: ANSIBLE_SSH_RETRIES
+@@ -153,8 +163,8 @@ DOCUMENTATION = '''
+             - section: ssh_connection
+               key: retries
+           vars:
+-              - name: ansible_ssh_retries
+-                version_added: '2.7'
++            - name: ansible_ssh_retries
++              version_added: '2.7'
+       port:
+           description: Remote port to connect to.
+           type: int
+@@ -247,6 +257,16 @@ DOCUMENTATION = '''
          vars:
            - name: ansible_sftp_batch_mode
              version_added: '2.7'
@@ -46,7 +64,7 @@ index 5973380..0e26c68 100644
        scp_if_ssh:
          default: smart
          description:
-@@ -270,6 +291,27 @@
+@@ -270,6 +290,27 @@ DOCUMENTATION = '''
          vars:
            - name: ansible_ssh_use_tty
              version_added: '2.7'
