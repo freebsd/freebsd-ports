@@ -83,6 +83,7 @@
 ### Text::Quoted 2.07
 ### Text::Template 1.44
 ### Text::WikiFormat 0.76
+### Text::WordDiff
 ### Text::Wrapper
 ### Time::HiRes                                perl std
 ### Time::ParseDate
@@ -160,6 +161,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Text-Quoted>=2.07:textproc/p5-Text-Quoted				\
 		p5-Text-Template>=1.44:textproc/p5-Text-Template			\
 		p5-Text-WikiFormat>=0.76:textproc/p5-Text-WikiFormat			\
+		p5-Text-WordDiff>0:textproc/p5-Text-WordDiff				\
 		p5-Text-Wrapper>0:textproc/p5-Text-Wrapper				\
 		p5-Time-modules>0:devel/p5-Time-modules					\
 		p5-Tree-Simple>=1.04:devel/p5-Tree-Simple				\
