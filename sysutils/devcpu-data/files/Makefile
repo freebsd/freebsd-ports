@@ -12,7 +12,7 @@ ucode:	ucode-split
 
 # Use the host cc to compile ucode-split in case of cross-compile
 ucode-split: ucode-split.c
-	cc ucode-split.c -o $@
+	${CC} ucode-split.c -o $@
 
 clean:
 	rm -rf $(OUTPUT_DIR) ucode-split
