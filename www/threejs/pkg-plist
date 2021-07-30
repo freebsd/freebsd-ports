@@ -338,6 +338,7 @@
 %%WWWDIR%%/renderers/webgl/WebGLCapabilities.js
 %%WWWDIR%%/renderers/webgl/WebGLClipping.js
 %%WWWDIR%%/renderers/webgl/WebGLCubeMaps.js
+%%WWWDIR%%/renderers/webgl/WebGLCubeUVMaps.js
 %%WWWDIR%%/renderers/webgl/WebGLExtensions.js
 %%WWWDIR%%/renderers/webgl/WebGLGeometries.js
 %%WWWDIR%%/renderers/webgl/WebGLIndexedBufferRenderer.js
