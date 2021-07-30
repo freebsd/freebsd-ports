@@ -430,6 +430,7 @@
     SUBDIR += maxima
     SUBDIR += mbasecalc
     SUBDIR += mcsim
+    SUBDIR += mdal
     SUBDIR += metis
     SUBDIR += mfem
     SUBDIR += mingw32-libgmp
