@@ -2,6 +2,7 @@
 
 PORTNAME=	SCIP
 DISTVERSION=	7.0.2
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	https://www.scipopt.org/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}

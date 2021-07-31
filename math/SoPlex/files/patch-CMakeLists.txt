@@ -1,0 +1,13 @@
+- Allow shared libraries by removing CMAKE_CXX_VISIBILITY_PRESET=hidden.
+
+--- CMakeLists.txt.orig	2021-07-31 19:54:04 UTC
++++ CMakeLists.txt
+@@ -68,7 +68,7 @@ set(CMAKE_MACOSX_RPATH ON)
+ set(CMAKE_CXX_STANDARD 11)
+ 
+ # set function visibility default to hidden
+-set(CMAKE_CXX_VISIBILITY_PRESET hidden)
++#set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+ set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
+ 
+ # create a target for updating the current git hash
