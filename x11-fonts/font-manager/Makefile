@@ -1,7 +1,7 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
 
 PORTNAME=	font-manager
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7
 CATEGORIES=	x11-fonts gnome
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -25,6 +25,8 @@ USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome \
 USE_GITHUB=	yes
 GH_ACCOUNT=	FontManager
 USE_GNOME=	cairo glib20 gtk30 libxml2 pango
+GLIB_SCHEMAS=	org.gnome.FontManager.gschema.xml \
+		org.gnome.FontViewer.gschema.xml
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
