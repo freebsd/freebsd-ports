@@ -1,5 +1,5 @@
 PORTNAME=	goland
-PORTVERSION=	2021.1.3
+PORTVERSION=	2021.2
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/go/
 PKGNAMEPREFIX=	jetbrains-
