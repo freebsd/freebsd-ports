@@ -1,7 +1,7 @@
 # Created by: eivind
 
 PORTNAME=	isync
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
