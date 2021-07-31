@@ -192,6 +192,7 @@
     SUBDIR += mdbx
     SUBDIR += mdcached
     SUBDIR += memcached
+    SUBDIR += metabase
     SUBDIR += mongodb-tools
     SUBDIR += mongodb36
     SUBDIR += mongodb36-tools

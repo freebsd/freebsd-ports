@@ -1,0 +1,69 @@
+#!/bin/sh
+
+#
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable %%PORTNAME%%
+# %%PORTNAME%%_enable="YES"
+#
+# %%PORTNAME%%_enable (bool): 	Set to YES to enable %%PORTNAME%%
+#				Default: NO
+# %%PORTNAME%%_env_file (str):	%%PORTNAME%% configration file
+#				Default: %%PREFIX%%/etc/%%PORTNAME%%.conf
+# %%PORTNAME%%_user (str):		%%PORTNAME%% daemon user
+#				Default: %%METABASE_USER%%
+# %%PORTNAME%%_group (str):		%%PORTNAME%% daemon group
+#				Default: %%METABASE_GROUP%%
+
+. /etc/rc.subr
+
+name="%%PORTNAME%%"
+rcvar=%%PORTNAME%%_enable
+load_rc_config $name
+
+: ${%%PORTNAME%%_enable:="NO"}
+: ${%%PORTNAME%%_user:="%%METABASE_USER%%"}
+: ${%%PORTNAME%%_group:="%%METABASE_GROUP%%"}
+: ${%%PORTNAME%%_flags=""}
+: ${%%PORTNAME%%_java_opts=""}
+: ${%%PORTNAME%%_java_home="%%JAVA_HOME%%"}
+: ${%%PORTNAME%%_env_file:="%%PREFIX%%/etc/${name}.conf"}
+: ${%%PORTNAME%%_log:="/var/log/${name}.log"}
+: ${%%PORTNAME%%_pidfile:="/var/run/${name}.pid"}
+: ${%%PORTNAME%%_datadir:="%%METABASEDATADIR%%"}
+
+required_files=${%%PORTNAME%%_env_file}
+java_command="${%%PORTNAME%%_java_home}/bin/java"
+procname="${java_command}"
+pidfile=${%%PORTNAME%%_pidfile}
+command=/usr/sbin/daemon
+command_args="-f -t ${name} -p ${pidfile} -o ${%%PORTNAME%%_log} ${java_command} ${%%PORTNAME%%_java_opts} -jar %%PREFIX%%/libexec/%%PORTNAME%%.jar ${%%PORTNAME%%_flags}"
+start_precmd="%%PORTNAME%%_precmd"
+
+%%PORTNAME%%_chdir=${%%PORTNAME%%_datadir}
+
+%%PORTNAME%%_precmd()
+{
+	if [ ! -d "${%%PORTNAME%%_datadir}/." ]; then
+		%%PORTNAME%%_create_datadir || return 1
+	fi
+
+	install -o ${%%PORTNAME%%_user} /dev/null ${%%PORTNAME%%_pidfile}
+
+	if [ ! -f "${%%PORTNAME%%_log}" ]; then
+		touch "${%%PORTNAME%%_log}"
+		chown "${%%PORTNAME%%_user}:${%%PORTNAME%%_group}" "${%%PORTNAME%%_log}"
+		chmod 640 "${%%PORTNAME%%_log}"
+	fi
+}
+
+%%PORTNAME%%_create_datadir()
+{
+	echo "Creating data directory"
+	eval mkdir -p ${%%PORTNAME%%_datadir}
+	[ $? -eq 0 ] && chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} ${%%PORTNAME%%_datadir}
+}
+
+run_rc_command "$1"
