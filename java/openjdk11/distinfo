@@ -1,3 +1,3 @@
-TIMESTAMP = 1619831556
-SHA256 (battleblow-openjdk-jdk11u-jdk-11.0.11+9-1_GH0.tar.gz) = 46b2c680c4f35da43258bbd77dfe52210d0c6be313b733f151d3ca94e8db181d
-SIZE (battleblow-openjdk-jdk11u-jdk-11.0.11+9-1_GH0.tar.gz) = 122607262
+TIMESTAMP = 1627697320
+SHA256 (battleblow-jdk11u-jdk-11.0.12+7-1_GH0.tar.gz) = 689b625a70f54096f8c193b441aa425be5c765d4db23825b461a84fd616be1cb
+SIZE (battleblow-jdk11u-jdk-11.0.12+7-1_GH0.tar.gz) = 122773821
