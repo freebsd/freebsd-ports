@@ -1155,6 +1155,6 @@
 %%DRUPAL_BASE%%/xmlrpc.php
 @dir %%DRUPAL_BASE%%/sites/all/libraries
 @dir %%DRUPAL_BASE%%/sites/default/files
-@unexec rm -f %%DRUPAL_BASE%%/files/.htaccess 2> /dev/null || true
+@postunexec rm -f %%DRUPAL_BASE%%/files/.htaccess 2> /dev/null || true
 @owner
 @group
