@@ -1,17 +1,17 @@
---- src/libsync/configfile.cpp.orig	2017-12-20 15:03:02 UTC
+--- src/libsync/configfile.cpp.orig	2020-12-21 16:16:36 UTC
 +++ src/libsync/configfile.cpp
-@@ -448,11 +448,22 @@ bool ConfigFile::skipUpdateCheck(const QString &connec
+@@ -526,11 +526,22 @@ bool ConfigFile::skipUpdateCheck(const QString &connec
      if (connection.isEmpty())
          con = defaultConnection();
  
 +#if 0
-     QVariant fallback = getValue(QLatin1String(skipUpdateCheckC), con, false);
+     QVariant fallback = getValue(skipUpdateCheckC(), con, false);
 +#else
-+    QVariant fallback = getValue(QLatin1String(skipUpdateCheckC), con, true);
++    QVariant fallback = getValue(skipUpdateCheckC(), con, true);
 +#endif
-     fallback = getValue(QLatin1String(skipUpdateCheckC), QString(), fallback);
+     fallback = getValue(skipUpdateCheckC(), QString(), fallback);
  
-     QVariant value = getPolicySetting(QLatin1String(skipUpdateCheckC), fallback);
+     QVariant value = getPolicySetting(skipUpdateCheckC(), fallback);
 +#if 0
      return value.toBool();
 +#else
