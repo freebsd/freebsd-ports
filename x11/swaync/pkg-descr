@@ -7,10 +7,10 @@ Features:
 - Do not disturb
 - Click notification to execute default action
 - Show alternative notification actions
+- Customization through a CSS file
 - The same features as any other basic notification daemon
 
 Planned Features:
-- Customization through a CSS file
 - Slick animations
 
 WWW: https://github.com/ErikReider/SwayNotificationCenter
