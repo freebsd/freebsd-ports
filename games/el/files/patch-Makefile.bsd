@@ -1,5 +1,5 @@
---- Makefile.bsd	2020-01-05 15:02:58.000000000 -0500
-+++ Makefile.bsd	2020-02-11 14:01:38.149884000 -0500
+--- Makefile.bsd.orig	2021-04-11 19:03:51 UTC
++++ Makefile.bsd
 @@ -2,23 +2,25 @@
  
  -include make.conf
@@ -19,7 +19,7 @@
  
  PNG_SCREENSHOT_LIBS = -lpng
 -LDFLAGS=$(shell sdl-config --libs) $(shell xml2-config --libs) -lSDL_net -lSDL_image -lopenal $(XDIR) -lGL -lGLU -lcal3d -lm $(EXTRA_LIBS) -lz -lpng -lvorbis -lvorbisfile \
-+LDFLAGS+=$(shell sdl2-config --libs) $(shell xml2-config --libs) -lSDL2_net -lSDL2_image -lopenal $(XDIR) -lGL -lGLU -lcal3d -lm $(EXTRA_LIBS) -lz -lpng -lvorbis -lvorbisfile \
++LDFLAGS+=$(shell sdl2-config --libs) $(shell xml2-config --libs) -lSDL2_net -lSDL2_image -lSDL2_ttf -lopenal $(XDIR) -lGL -lGLU -lcal3d -lm $(EXTRA_LIBS) -lz -lpng -lvorbis -lvorbisfile \
  	$(foreach FEATURE, $(FEATURES), $($(FEATURE)_LIBS))
 -_LDFLAGS=$(XDIR) -lGL -lpthread -lstdc++
 +_LDFLAGS=$(XDIR) -lGL -pthread
@@ -33,7 +33,7 @@
  
  # the objects we need
  ENCYCLOPEDIA_COBJ = books/fontdef.o books/parser.o books/symbol.o books/typesetter.o sort.o symbol_table.o
-@@ -84,16 +86,16 @@
+@@ -85,16 +87,16 @@ HEADER_DIRS = . books eye_candy io pawn fsaa engine xz
  DEP_FILES=$(foreach OBJ, $(COBJS), .deps/$(OBJ).P) $(foreach OBJ, $(CXXOBJS), .deps/$(OBJ).P)
  #(shell echo $OBJ |sed s/\.o/\.P/))
  

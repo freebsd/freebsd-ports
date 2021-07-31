@@ -1,14 +1,10 @@
-# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	data
-PORTVERSION=	1.9.5.7
+DISTVERSION=	1.9.5.9-1
 PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	https://github.com/raduprv/Eternal-Lands/releases/download/${PORTVERSION}/:data \
-		http://www.gm.fh-koeln.de/~linke/EL-Downloads/:sound \
-		http://www.gm.fh-koeln.de/~linke/EL-Downloads/:music
+MASTER_SITES=	https://github.com/raduprv/Eternal-Lands/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	el-
-DISTFILES=	${EL_DATA}:data
+DISTFILES=	${EL_DATA}
 DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -21,7 +17,7 @@ DOS2UNIX_GLOB=	*.ini *.txt
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX:S/-/_/}data
-EL_DATA=	${PKGNAMEPREFIX:S/-/_/}${PORTVERSION:S/.//g:S/7//g}_p7_data_files${EXTRACT_SUFX}
+EL_DATA=	eternallands-data_${DISTVERSION}${EXTRACT_SUFX}
 
 PORTDATA=	*
 
@@ -33,22 +29,22 @@ ELMUSIC_DESC=	Install additional music files
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MELSOUND}
-DISTFILES+=	EL_sound_191${EXTRACT_SUFX}:sound
+DISTFILES+=	eternallands-sound_${DISTVERSION:S/-1//}${EXTRACT_SUFX}
 .endif
 
 .if ${PORT_OPTIONS:MELMUSIC}
-DISTFILES+=	EL_music_full${EXTRACT_SUFX}:music
+DISTFILES+=	eternallands-music_${DISTVERSION:S/-1//}${EXTRACT_SUFX}
 .endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${UNZIP_CMD} -q ${_DISTDIR}/${EL_DATA} -d ${WRKDIR}
 .if ${PORT_OPTIONS:MELSOUND}
-	@${UNZIP_CMD} -q ${_DISTDIR}/EL_sound_191${EXTRACT_SUFX} -d ${WRKSRC}
+	@${UNZIP_CMD} -q ${_DISTDIR}/eternallands-sound_${DISTVERSION:S/-1//}${EXTRACT_SUFX} -d ${WRKSRC}
 .endif
 .if ${PORT_OPTIONS:MELMUSIC}
 	@${MKDIR} ${WRKSRC}/music
-	@${UNZIP_CMD} -q ${_DISTDIR}/EL_music_full${EXTRACT_SUFX} -d ${WRKSRC}/music
+	@${UNZIP_CMD} -q ${_DISTDIR}/eternallands-music_${DISTVERSION:S/-1//}${EXTRACT_SUFX} -d ${WRKSRC}/music
 .endif
 
 post-extract:
