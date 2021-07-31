@@ -35,6 +35,7 @@ CONFIGURE_ARGS+=--verbose \
 		--without-gettext --without-gettextpo \
 		--without-gphoto --without-gsm --without-gstreamer \
 		--without-inotify \
+		--without-jxrlib \
 		--without-krb5 \
 		--without-mingw \
 		--without-opencl \
