@@ -1,36 +1,32 @@
---- bin/neo4j.orig	2018-02-07 19:48:06 UTC
+--- bin/neo4j.orig	2021-04-13 07:41:35 UTC
 +++ bin/neo4j
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/usr/local/bin/bash
- # Copyright (c) 2002-2018 "Neo Technology,"
- # Network Engine for Objects in Lund AB [http://neotechnology.com]
+ # Copyright (c) "Neo4j"
+ # Neo4j Sweden AB [http://neo4j.com]
  #
-@@ -63,7 +63,9 @@ build_classpath() {
+@@ -74,6 +74,8 @@ build_classpath() {
  detect_os() {
    if uname -s | grep -q Darwin; then
      DIST_OS="macosx"
--  elif [[ -e /etc/gentoo-release ]]; then
 +  elif uname -s | grep -q FreeBSD; then
 +    DIST_OS="freebsd"
-+   elif [[ -e /etc/gentoo-release ]]; then
+   elif [[ -e /etc/gentoo-release ]]; then
      DIST_OS="gentoo"
    else
-     DIST_OS="other"
-@@ -146,7 +148,10 @@ _find_java_home() {
+@@ -203,6 +205,9 @@ _find_java_home() {
    [[ "${JAVA_HOME:-}" ]] && return
-
+ 
    case "${DIST_OS}" in
--    "macosx")
 +    "freebsd")
 +      JAVA_HOME="%%JAVA_HOME%%"
 +      ;;
-+     "macosx")
+     "macosx")
        JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
        ;;
-     "gentoo")
-@@ -162,9 +167,9 @@ _show_java_help() {
-
+@@ -219,9 +224,9 @@ _show_java_help() {
+ 
  _setup_calculated_paths() {
    if [[ -z "${NEO4J_HOME:-}" ]]; then
 -    NEO4J_HOME="$(cd "$(dirname "$0")"/.. && pwd)"
@@ -40,4 +36,4 @@
 +  : "${NEO4J_CONF:="${NEO4J_HOME}/../etc"}"
    readonly NEO4J_HOME NEO4J_CONF
  }
-
+ 

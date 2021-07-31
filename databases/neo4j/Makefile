@@ -1,5 +1,5 @@
 PORTNAME=	neo4j
-DISTVERSION=	3.3.2
+DISTVERSION=	3.5.28
 CATEGORIES=	databases java
 MASTER_SITES=	http://dist.neo4j.org/
 DISTNAME=	${PORTNAME}-community-${DISTVERSION}-unix
@@ -14,7 +14,7 @@ RUN_DEPENDS=	bash:shells/bash
 WRKSRC=		${WRKDIR}/${DISTNAME:S,-unix,,}
 NO_BUILD=	yes
 USES=		shebangfix
-SHEBANG_FILES=	bin/cypher-shell bin/neo4j-admin bin/neo4j-shell bin/neo4j-import
+SHEBANG_FILES=	bin/cypher-shell bin/neo4j-admin bin/neo4j-import
 USE_JAVA=	yes
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	${PORTNAME}.sh
@@ -36,7 +36,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/libexec/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tools/* \
 		${STAGEDIR}${PREFIX}/${PORTNAME}/libexec/tools
-.for name in cypher-shell neo4j neo4j-admin neo4j-import neo4j-shell
+.for name in cypher-shell neo4j neo4j-admin neo4j-import
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${name} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/plugins
