@@ -62,7 +62,6 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_misc_light.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_ui.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_video.png
-%%PORTDOCS%%%%DOCSDIR%%/graphics/options_video_dbgcolors.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_video_palettes.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_video_tv.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/pacman.png
