@@ -93,7 +93,7 @@ GH_TUPLE=	\
 		storj:private:af46b647eda5:storj_private/vendor/storj.io/private \
 		storj:uplink:e2e5889614a9:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		stripe:stripe-go:v70.15.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
+		stripe:stripe-go:v72.51.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v72 \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.6.0:uber_go_multierr/vendor/go.uber.org/multierr \
