@@ -2,11 +2,11 @@
 
 PORTNAME=	aircrack-ng
 DISTVERSION=	1.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://download.aircrack-ng.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	802.11 WEP and WPA-PSK keys cracking program
 
 LICENSE=	GPLv2 BSD3CLAUSE APACHE20
@@ -27,21 +27,24 @@ CPE_UPDATE=	${DISTVERSION:C/^[^-]*$//:C/.*-//}
 DOS2UNIX_FILES=	src/aircrack-osdep/byteorder.h
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
-# Don't call 'strip' target with WITH_DEBUG set
-#INSTALL_TARGET=	${STRIP:S/-s/strip/} install
+INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	PCRE SQLITE
-OPTIONS_DEFAULT=PCRE SQLITE
+OPTIONS_DEFINE=	HWLOC PCRE SQLITE
+OPTIONS_DEFAULT=	HWLOC PCRE SQLITE
 OPTIONS_SUB=	yes
 
+HWLOC_DESC=	Use Hardware Locality to improve performance
+HWLOC_LIB_DEPENDS=	libhwloc.so:devel/hwloc2
+HWLOC_CONFIGURE_OFF=	--disable-hwloc
+
 PCRE_DESC=	Use Perl Compatible Regular Expressions for wesside
-PCRE_MAKE_ARGS=	pcre=true
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_USES=	pkgconfig
+PCRE_CONFIGURE_OFF=	--disable-pcre
 
 SQLITE_DESC=	Use SQLite for storing pre-computed key tables
 SQLITE_USES=	sqlite
-SQLITE_MAKE_ARGS=	sqlite=true
+SQLITE_CONFIGURE_OFF=	--without-sqlite3
 
 .include <bsd.port.pre.mk>
 
@@ -54,8 +57,8 @@ PLIST_SUB+=	PPC="@comment " \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|%%ETCDIR%%|${ETCDIR}|' ${WRKSRC}/scripts/airodump-ng-oui-update
+	@${REINPLACE_CMD} -e 's,/usr/local/etc/aircrack-ng,${ETCDIR},' \
+		${WRKSRC}/scripts/airodump-ng-oui-update
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
