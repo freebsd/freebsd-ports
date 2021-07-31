@@ -1,6 +1,5 @@
 PORTNAME=	Redis-Fast
-PORTVERSION=	0.28
-PORTREVISION=	1
+PORTVERSION=	0.31
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,5 +26,8 @@ TEST_DEPENDS=	p5-Parallel-ForkManager>=0:devel/p5-Parallel-ForkManager \
 
 USES=		perl5
 USE_PERL5=	modbuild
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Redis/Fast/Fast.so
 
 .include <bsd.port.mk>
