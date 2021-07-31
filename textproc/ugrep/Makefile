@@ -1,6 +1,6 @@
 PORTNAME=	ugrep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.4
+DISTVERSION=	3.3.6
 CATEGORIES=	textproc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -30,13 +30,13 @@ PCRE2_LIB_DEPENDS=		libboost_regex.so:devel/boost-libs \
 LZ4_CONFIGURE_WITH=		lz4=${LOCALBASE}
 LZ4_LIB_DEPENDS=		liblz4.so:archivers/liblz4
 NEON_DESC=			ARM NEON/AArch64 optimizations
-NEON_CONFIGURE_ENABLE=		neon
-AVX_CONFIGURE_ENABLE=		avx
+NEON_CONFIGURE_OFF=		--disable-neon
+AVX_CONFIGURE_OFF=		--disable-avx
 AVX_DESC=			AVX optimizations
-SSE2_CONFIGURE_ENABLE=		sse2
+SSE2_CONFIGURE_OFF=		--disable-sse2
 SSE2_DESC=			SSE2 optimizations
 COLOR_DESC=			Colorized output by default
-COLOR_CONFIGURE_ENABLE=		color
+COLOR_CONFIGURE_OFF=		--disable-auto-color
 PRETTY_DESC=			Pretty output by default
 PRETTY_CONFIGURE_ENABLE=	pretty
 PAGER_DESC=			Pager enabled by default
