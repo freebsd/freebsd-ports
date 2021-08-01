@@ -1,9 +1,9 @@
 PORTNAME=	fossmixer
 PORTVERSION=	0.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/detroit
-DISTNAME=	detroit-0.2.2
+DISTNAME=	detroit-0.2.3
 
 MAINTAINER=	salojan@goto10.co
 COMMENT=	Graphical mixer application for OSS
@@ -40,6 +40,7 @@ CONFIGURE_ARGS=	--disable-bob \
 
 ALL_TARGET=
 INSTALL_TARGET=	install-strip
+CFLAGS_i386=	-msse2
 
 post-patch:
 	@(cd ${WRKSRC}/apps && ./build.sh fossmixer)
@@ -50,6 +51,7 @@ post-patch:
 
 	@${REINPLACE_CMD} -e "s|^.*bobs.*$$||" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|@echo Compiling engine/$$< ; ||" ${WRKSRC}/engine/Makefile.in
+	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|" ${WRKSRC}/configure
 
 post-install:
 	@for i in conf res; do \
