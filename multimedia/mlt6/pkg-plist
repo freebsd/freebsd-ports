@@ -78,6 +78,7 @@ lib/mlt/libmltcore.so
 %%PLUSGPL%%lib/mlt/libmltplusgpl.so
 %%RESAMPLE%%lib/mlt/libmltresample.so
 %%RTAUDIO%%lib/mlt/libmltrtaudio.so
+%%RUBBERBAND%%lib/mlt/libmltrubberband.so
 %%SDL2%%lib/mlt/libmltsdl2.so
 %%SOX%%lib/mlt/libmltsox.so
 %%VIDSTAB%%lib/mlt/libmltvidstab.so
@@ -515,6 +516,7 @@ man/man1/melt.1.gz
 %%DATADIR%%/profiles/vertical_hd_60
 %%RESAMPLE%%%%DATADIR%%/resample/filter_resample.yml
 %%RTAUDIO%%%%DATADIR%%/rtaudio/consumer_rtaudio.yml
+%%RUBBERBAND%%%%DATADIR%%/rubberband/filter_rbpitch.yml
 %%SDL2%%%%DATADIR%%/sdl2/consumer_sdl2.yml
 %%SDL2%%%%DATADIR%%/sdl2/consumer_sdl2_audio.yml
 %%SOX%%%%DATADIR%%/sox/filter_sox.yml

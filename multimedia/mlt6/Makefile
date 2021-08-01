@@ -125,6 +125,7 @@ RTAUDIO_LIB_DEPENDS=	librtaudio.so:audio/rtaudio \
 RTAUDIO_CMAKE_BOOL=	MOD_RTAUDIO
 
 RUBBERBAND_DESC=	Enable rubberband module
+RUBBERBAND_LIB_DEPENDS=	librubberband.so:audio/rubberband
 RUBBERBAND_CMAKE_BOOL=	MOD_RUBBERBAND
 
 SDL2_DESC=		Enable SDL2 module
