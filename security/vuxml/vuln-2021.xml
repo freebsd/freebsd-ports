@@ -2,9 +2,15 @@
     <topic>tomcat -- Remote Denial of Service in multiple versions</topic>
     <affects>
       <package>
-	<name></name>
+	<name>tomcat85</name>
 	<range><eq>8.5.64</eq></range>
+      </package>
+      <package>
+	<name>tomcat9</name>
 	<range><eq>9.0.44</eq></range>
+      </package>
+      <package>
+	<name>tomcat10</name>
 	<range><ge>10.0.3</ge><le>10.0.4</le></range>
       </package>
     </affects>
