@@ -2,6 +2,7 @@
 
 PORTNAME=	SCIP
 DISTVERSION=	7.0.3
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	https://www.scipopt.org/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -22,19 +23,23 @@ USES=		compiler:c11 cmake readline tar:tgz
 EXTRACT_CMD=	gtar
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	PAPILO ZIMPL
+CMAKE_OFF=	PAPILO
 
 CXXFLAGS+=	-I${LOCALBASE}/include/soplex
 
-OPTIONS_DEFINE=		IPOPT
+OPTIONS_DEFINE=		IPOPT ZIMPL
 OPTIONS_DEFAULT=	IPOPT
 
 IPOPT_DESC=		Non-linear optimization support via Ipopt
 IPOPT_USES=		fortran pkgconfig
+IPOPT_CMAKE_BOOL=	IPOPT
 IPOPT_LIB_DEPENDS=	libblas.so:math/blas \
 			libipopt.so:math/ipopt \
 			liblapack.so:math/lapack
 
-IPOPT_CMAKE_BOOL=	IPOPT
+ZIMPL_DESC=		Build with Zimpl to translate LP models
+ZIMPL_CMAKE_BOOL=	ZIMPL
+ZIMPL_LIB_DEPENDS=	libzimpl.so:math/zimpl
+ZIMPL_BROKEN=		see https://github.com/scipopt/scip/issues/4
 
 .include <bsd.port.mk>
