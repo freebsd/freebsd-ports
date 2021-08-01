@@ -1,6 +1,6 @@
 PORTNAME=	strawberry
 DISTVERSION=	0.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://files.jkvinge.net/packages/strawberry/
@@ -24,7 +24,8 @@ USES=		compiler:c++11-lang cmake desktop-file-utils gnome \
 USE_GNOME=	glib20
 USE_GSTREAMER1=	yes
 USE_QT=		buildtools_build concurrent core dbus gui network \
-		linguisttools qmake_build sql testlib_build widgets x11extras
+		linguisttools qmake_build sql sql-sqlite3 testlib_build \
+		widgets x11extras
 USE_XORG=	ice sm x11 xcb xext
 INSTALLS_ICONS=	yes
 
@@ -45,7 +46,7 @@ TEST_TARGET=	strawberry_test
 OPTIONS_DEFINE=		AUDIOCD IPOD MOODBAR MTPDEV MUSICBRAINZ \
 			SUBSONIC TIDAL VLC
 
-OPTIONS_DEFAULT=	PULSEAUDIO MOODBAR
+OPTIONS_DEFAULT=	ALSA MOODBAR
 
 OPTIONS_MULTI=		SOUND
 OPTIONS_MULTI_SOUND=	ALSA PULSEAUDIO
