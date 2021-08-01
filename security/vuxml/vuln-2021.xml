@@ -1,3 +1,37 @@
+  <vuln vid="d34bef0b-f312-11eb-b12b-fc4dd43e2b6a">
+    <topic>tomcat -- HTTP request smuggling in multiple versions</topic>
+    <affects>
+      <package>
+	<name>tomcat85</name>
+	<range><ge>8.5.0</ge><le>8.5.66</le></range>
+      </package>
+      <package>
+	<name>tomcat9</name>
+	<range><ge>9.0.0</ge><le>9.0.46</le></range>
+      </package>
+      <package>
+	<name>tomcat10</name>
+	<range><ge>10.0.0</ge><le>10.0.6</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bahruz Jabiyev, Steven Sprecher and Kaan Onarlioglu of NEU seclab reports:</p>
+	<blockquote cite="https://tomcat.apache.org/security.html">
+	  <p>Apache Tomcat did not correctly parse the HTTP transfer-encoding request header in some circumstances leading to the possibility to request smuggling when used with a reverse proxy. Specifically: Tomcat incorrectly ignored the transfer-encoding header if the client declared it would only accept an HTTP/1.0 response; Tomcat honoured the identify encoding; and Tomcat did not ensure that, if present, the chunked encoding was the final encoding.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-33037</cvename>
+      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33037</url>
+    </references>
+    <dates>
+      <discovery>2021-05-07</discovery>
+      <entry>2021-08-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8b571fb2-f311-11eb-b12b-fc4dd43e2b6a">
     <topic>tomcat -- JNDI Realm Authentication Weakness in multiple versions</topic>
     <affects>
