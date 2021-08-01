@@ -1,7 +1,7 @@
 # Created by: Johann Visagie <wjv@FreeBSD.org>
 
 PORTNAME=	twisted
-PORTVERSION=	21.2.0
+PORTVERSION=	21.7.0
 CATEGORIES=	devel net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -43,10 +43,14 @@ TLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}idna>=2.4:dns/py-idna@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}openssl>=16.0.0:security/py-openssl@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}service_identity>=18.1.0:security/py-service_identity@${PY_FLAVOR}
 
+# We need twisted.trial in PYTHONPATH
+# twisted.conch tests depend on finding certain scripts in PATH
+TEST_ENV=	PYTHONPATH=${WRKSRC}/src PATH=${STAGEDIR}/${PREFIX}/bin:$$PATH
+
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/ -name '*.so' -exec ${STRIP_CMD} {} +
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m twisted.trial -e twisted
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m twisted.trial -e twisted
 
 .include <bsd.port.mk>
