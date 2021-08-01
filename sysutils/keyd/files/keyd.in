@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: keyd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# keyd_enable (bool):	Set it to YES to run keyd on startup.
+#			Default: NO
+
+. /etc/rc.subr
+
+name="keyd"
+rcvar="${name}_enable"
+
+load_rc_config "$name"
+
+: ${keyd_enable="NO"}
+
+command="%%PREFIX%%/bin/${name}"
+command_args="-d"
+
+run_rc_command "$1"

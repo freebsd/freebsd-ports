@@ -576,6 +576,7 @@
     SUBDIR += kdf
     SUBDIR += kdialog
     SUBDIR += keyboard-daemon
+    SUBDIR += keyd
     SUBDIR += kf5-baloo
     SUBDIR += kf5-kwallet
     SUBDIR += kfloppy

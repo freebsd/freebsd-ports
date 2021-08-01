@@ -1,0 +1,12 @@
+keyd has several unique features many of which are traditionally only
+found in custom keyboard firmware like QMK. Some of the more
+interesting ones include:
+
+- Layers.
+- Key overloading (different behaviour on tap/hold).
+- Per keyboard configuration.
+- Instantaneous remapping (no flashing required).
+- A simple and intuitive config format.
+- Being display server agnostic (works on wayland and virtual console alike).
+
+WWW: https://github.com/rvaiya/keyd
