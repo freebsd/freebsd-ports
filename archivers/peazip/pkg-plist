@@ -3,6 +3,10 @@ bin/peazip
 share/applications/peazip.desktop
 share/icons/hicolor/256x256/apps/peazip.png
 %%DATADIR%%/peazip
+%%7Z%%%%DATADIR%%/res/7z/7z
+%%ARC%%%%DATADIR%%/res/arc/arc
+%%UNACE%%%%DATADIR%%/res/unace/unace
+%%ZPAQ%%%%DATADIR%%/res/zpaq/zpaq
 %%DATADIR%%/res/altconf.txt
 %%DATADIR%%/res/icons/PeaZip.ico
 %%DATADIR%%/res/icons/PeaZip_7z.ico
@@ -20,7 +24,6 @@ share/icons/hicolor/256x256/apps/peazip.png
 %%DATADIR%%/res/lang/chs.txt
 %%DATADIR%%/res/lang/cht.txt
 %%DATADIR%%/res/lang/cz.txt
-%%DATADIR%%/res/lang/de-uml-alt.txt
 %%DATADIR%%/res/lang/de-uml.txt
 %%DATADIR%%/res/lang/default.txt
 %%DATADIR%%/res/lang/en-gb.txt
@@ -38,6 +41,7 @@ share/icons/hicolor/256x256/apps/peazip.png
 %%DATADIR%%/res/lang/it.txt
 %%DATADIR%%/res/lang/ja.txt
 %%DATADIR%%/res/lang/ko.txt
+%%DATADIR%%/res/lang/lv.txt
 %%DATADIR%%/res/lang/nl.txt
 %%DATADIR%%/res/lang/no.txt
 %%DATADIR%%/res/lang/pl.txt
@@ -55,16 +59,17 @@ share/icons/hicolor/256x256/apps/peazip.png
 %%DATADIR%%/res/lang/uz.txt
 %%DATADIR%%/res/lang/vn.txt
 %%DATADIR%%/res/pea
+%%DATADIR%%/res/themes/KDE Breeze.theme.7z
+%%DATADIR%%/res/themes/Oxygen.theme.7z
 %%DATADIR%%/res/themes/classic.theme.7z
 %%DATADIR%%/res/themes/experience.theme.7z
 %%DATADIR%%/res/themes/firecrystal.theme.7z
+%%DATADIR%%/res/themes/graphite.theme.7z
+%%DATADIR%%/res/themes/mocha.theme.7z
 %%DATADIR%%/res/themes/nographic-embedded/fm-theme.bmp
 %%DATADIR%%/res/themes/nographic-embedded/readme.txt
+%%DATADIR%%/res/themes/senape.theme.7z
 %%DATADIR%%/res/themes/seven.theme.7z
 %%DATADIR%%/res/themes/ten-embedded/fm-theme.bmp
 %%DATADIR%%/res/themes/ten-embedded/readme.txt
 %%DATADIR%%/res/themes/ten.theme.7z
-%%7Z%%%%DATADIR%%/res/7z/7z
-%%ARC%%%%DATADIR%%/res/arc/arc
-%%UNACE%%%%DATADIR%%/res/unace/unace
-%%ZPAQ%%%%DATADIR%%/res/zpaq/zpaq
