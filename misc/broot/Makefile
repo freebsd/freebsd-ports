@@ -1,7 +1,6 @@
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
-PORTREVISION=	2
+DISTVERSION=	1.6.2
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -23,12 +22,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		ahash-0.4.7 \
 		ahash-0.7.4 \
 		aho-corasick-0.7.18 \
-		ansi_colours-1.0.3 \
+		ansi_colours-1.0.4 \
 		ansi_term-0.11.0 \
-		anyhow-1.0.41 \
-		argh-0.1.4 \
-		argh_derive-0.1.4 \
-		argh_shared-0.1.4 \
+		anyhow-1.0.42 \
+		argh-0.1.5 \
+		argh_derive-0.1.5 \
+		argh_shared-0.1.5 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		base64-0.13.0 \
@@ -36,9 +35,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		bincode-1.3.3 \
 		bitflags-1.2.1 \
 		bstr-0.2.16 \
-		bytemuck-1.7.0 \
+		bytemuck-1.7.2 \
 		byteorder-1.4.3 \
-		cc-1.0.68 \
+		cc-1.0.69 \
 		cfg-if-1.0.0 \
 		char_reader-0.1.0 \
 		chrono-0.4.19 \
@@ -55,7 +54,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		crossbeam-queue-0.3.2 \
 		crossbeam-utils-0.8.5 \
 		crossterm-0.19.0 \
+		crossterm-0.20.0 \
 		crossterm_winapi-0.7.0 \
+		crossterm_winapi-0.8.0 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
 		csv2svg-0.1.5 \
@@ -81,14 +82,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		glassbench-0.3.0 \
 		glob-0.3.0 \
 		hashbrown-0.9.1 \
+		hashbrown-0.11.2 \
 		hashlink-0.6.0 \
 		heck-0.3.3 \
-		hermit-abi-0.1.18 \
+		hermit-abi-0.1.19 \
 		id-arena-2.2.1 \
 		idna-0.2.3 \
 		image-0.23.14 \
-		indexmap-1.6.2 \
-		instant-0.1.9 \
+		indexmap-1.7.0 \
+		instant-0.1.10 \
 		is_executable-0.1.2 \
 		itoa-0.4.7 \
 		jobserver-0.1.22 \
@@ -97,8 +99,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		lazy-regex-proc_macros-2.2.1 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		lfs-core-0.3.4 \
-		libc-0.2.97 \
+		lfs-core-0.4.2 \
+		libc-0.2.98 \
 		libgit2-sys-0.12.21+1.1.0 \
 		libsqlite3-sys-0.20.1 \
 		libz-sys-1.1.3 \
@@ -125,7 +127,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		once_cell-1.8.0 \
 		onig-6.2.0 \
 		onig_sys-69.7.0 \
-		open-1.7.0 \
+		open-1.7.1 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.3 \
 		pathdiff-0.2.0 \
@@ -135,11 +137,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		phf_macros-0.8.0 \
 		phf_shared-0.8.0 \
 		pkg-config-0.3.19 \
-		plist-1.1.0 \
+		plist-1.2.0 \
 		png-0.16.8 \
 		ppv-lite86-0.2.10 \
 		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.27 \
+		proc-macro2-1.0.28 \
 		proc-status-0.1.1 \
 		quote-1.0.9 \
 		rand-0.7.3 \
@@ -165,38 +167,40 @@ CARGO_CRATES=	adler-1.0.2 \
 		same-file-1.0.6 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-1.1.0 \
-		secular-1.0.0 \
+		secular-1.0.1 \
 		serde-1.0.126 \
 		serde_derive-1.0.126 \
-		serde_json-1.0.64 \
+		serde_json-1.0.66 \
 		signal-hook-0.1.17 \
+		signal-hook-0.3.9 \
+		signal-hook-mio-0.2.1 \
 		signal-hook-registry-1.4.0 \
-		siphasher-0.3.5 \
+		siphasher-0.3.6 \
 		smallvec-1.6.1 \
 		splitty-0.1.0 \
 		str-buf-1.0.5 \
 		strict-0.1.4 \
 		strsim-0.8.0 \
 		svg-0.8.2 \
-		syn-1.0.73 \
+		syn-1.0.74 \
 		syntect-4.5.0 \
 		tempfile-3.2.0 \
 		termimad-0.10.3 \
-		termimad-0.11.1 \
+		termimad-0.14.0 \
 		terminal-clipboard-0.2.1 \
 		termux-clipboard-0.1.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.25 \
-		thiserror-impl-1.0.25 \
+		thiserror-1.0.26 \
+		thiserror-impl-1.0.26 \
 		tiff-0.6.1 \
 		time-0.1.43 \
-		tinyvec-1.2.0 \
+		tinyvec-1.3.1 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.8 \
 		umask-1.0.0 \
 		unicode-bidi-0.3.5 \
 		unicode-normalization-0.1.19 \
-		unicode-segmentation-1.7.1 \
+		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
 		url-2.2.2 \
@@ -208,14 +212,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
 		weezl-0.1.5 \
-		which-4.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		x11-clipboard-0.5.2 \
 		xcb-0.9.0 \
-		xml-rs-0.8.3 \
+		xml-rs-0.8.4 \
 		yaml-rust-0.4.5
 CARGO_FEATURES=	--no-default-features
 
