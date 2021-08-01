@@ -1,5 +1,5 @@
 PORTNAME=	xsimd
-DISTVERSION=	7.5.0
+DISTVERSION=	7.6.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -7,6 +7,8 @@ COMMENT=	C++ wrappers for SIMD intrinsics and mathematical functions
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake compiler:c++11-lang
 
