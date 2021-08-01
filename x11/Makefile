@@ -140,6 +140,7 @@
     SUBDIR += kf5-kwayland
     SUBDIR += kf5-kwindowsystem
     SUBDIR += kf5-plasma-framework
+    SUBDIR += kickoff
     SUBDIR += kitty
     SUBDIR += konsole
     SUBDIR += lavalauncher

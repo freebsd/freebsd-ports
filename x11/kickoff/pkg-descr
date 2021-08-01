@@ -1,0 +1,14 @@
+kickoff is a program launcher for Wayland. All programs found in $PATH
+are included in the search results. This list is then combined with
+your previous searches and sorted by amount of usage and if it fits
+the search query.
+
+Features:
+- Wayland native (only wlroots based compositors though)
+- Fuzzy search
+- Fast and snappy
+- Remembers often used applications
+- Argument support for launched programs
+- Paste support
+
+WWW: https://github.com/j0ru/kickoff
