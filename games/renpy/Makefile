@@ -1,5 +1,5 @@
 PORTNAME=	renpy
-PORTVERSION=	7.4.7
+PORTVERSION=	7.4.8
 DISTVERSIONSUFFIX=-sdk
 CATEGORIES=	games devel
 MASTER_SITES=	https://www.renpy.org/dl/${PORTVERSION}/
