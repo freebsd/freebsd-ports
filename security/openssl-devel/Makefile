@@ -17,8 +17,6 @@ CONFLICTS_INSTALL=	libressl-[0-9]* \
 			libressl-devel-[0-9]* \
 			openssl-[0-9]*
 
-BROKEN_i386=	ld: error: undefined symbol: __atomic_is_lock_free
-
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
 CONFIGURE_ENV=	PERL="${PERL}"
