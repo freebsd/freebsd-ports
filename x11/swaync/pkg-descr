@@ -2,6 +2,7 @@ swaync is a simple notification daemon with a GUI
 built for Sway (potentially any WM with wlroots).
 
 Features:
+- Keyboard shortcuts
 - A panel to view previous notifications
 - Show album art for notifications like Spotify
 - Do not disturb
