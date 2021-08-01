@@ -8,8 +8,9 @@ COMMENT=	Lightweight and cross-platform code editor for competitive programming
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++14-lang qt:5
-USE_QT=		core gui network widgets buildtools_build linguisttools_build qmake_build
+USES=		cmake:noninja compiler:c++14-lang qt:5
+USE_QT=		core gui network widgets \
+		buildtools_build linguisttools_build qmake_build
 USE_GITHUB=	yes
 GH_TUPLE=	\
 		cpeditor:QCodeEditor:ca5f949:cpeditor_QCodeEditor/third_party/QCodeEditor \
