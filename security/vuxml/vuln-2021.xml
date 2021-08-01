@@ -1,3 +1,32 @@
+  <vuln vid="cc7c85d9-f30a-11eb-b12b-fc4dd43e2b6a">
+    <topic>tomcat -- Remote Denial of Service in multiple versions</topic>
+    <affects>
+      <package>
+	<name></name>
+	<range><eq>8.5.64</eq></range>
+	<range><eq>9.0.44</eq></range>
+	<range><ge>10.0.3</ge><le>10.0.4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>rbeaudry reports:</p>
+	<blockquote cite="https://tomcat.apache.org/security.html">
+	  <p>A vulnerability in Apache Tomcat allows an attacker to remotely trigger a denial of service. An error introduced as part of a change to improve error handling during non-blocking I/O meant that the error flag associated with the Request object was not reset between requests. This meant that once a non-blocking I/O error occurred, all future requests handled by that request object would fail. Users were able to trigger non-blocking I/O errors, e.g. by dropping a connection, thereby creating the possibility of triggering a DoS.</p>
+	  <p>Applications that do not use non-blocking I/O are not exposed to this vulnerability. This issue affects Apache Tomcat 10.0.3 to 10.0.4; 9.0.44; 8.5.64.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-30639</cvename>
+      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-30639</url>
+    </references>
+    <dates>
+      <discovery>2021-07-12</discovery>
+      <entry>2021-08-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cbfd1874-efea-11eb-8fe9-036bd763ff35">
     <topic>fetchmail -- 6.4.19 and older denial of service or information disclosure</topic>
     <affects>
