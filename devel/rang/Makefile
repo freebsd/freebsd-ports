@@ -1,7 +1,6 @@
 PORTNAME=	rang
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.0-5
-DISTVERSIONSUFFIX=	-gcabe04d
+DISTVERSION=	3.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +16,9 @@ GH_ACCOUNT=	agauniyal
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-PLIST_FILES=	include/rang.hpp
+PLIST_FILES=	include/rang.hpp \
+		lib/cmake/rang/rang-config-version.cmake \
+		lib/cmake/rang/rang-config.cmake \
+		libdata/pkgconfig/rang.pc
 
 .include <bsd.port.mk>
