@@ -1,5 +1,6 @@
 PORTNAME=	ldap0
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,7 +11,6 @@ LICENSE=	PSFL
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.4.5:devel/py-pyasn1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyasn1-modules>=0.2.5:devel/py-pyasn1-modules@${PY_FLAVOR}
-# OpenLDAP needs SASL option enabled
 # Cyrus needs PLAIN / CRAM-MD5 / DIGEST-MD5 enabled
 TEST_DEPENDS=	${LOCALBASE}/libexec/slapd:net/openldap24-server
 
@@ -23,8 +23,6 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	ae-dir
 GL_PROJECT=	python-ldap0
 GL_COMMIT=	1bf10aa9ad4ab7755e02c9f74cfa9ad7b4368d34
-
-WANT_OPENLDAP_SASL=	yes
 
 PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS+=		--inplace

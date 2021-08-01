@@ -2,6 +2,7 @@
 
 PORTNAME=	adcli
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt net security
 MASTER_SITES=	https://www.freedesktop.org/software/realmd/releases/
 
@@ -10,7 +11,7 @@ COMMENT=	Tool for performing actions on an Active Directory domain
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libldap.so:net/openldap24-sasl-client
+USE_OPENLDAP=	yes
 BUILD_DEPENDS=	xsltproc:textproc/libxslt	\
 		docbook-xml>0:textproc/docbook-xml	\
 		docbook-xsl>0:textproc/docbook-xsl

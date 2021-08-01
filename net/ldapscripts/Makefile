@@ -2,6 +2,7 @@
 
 PORTNAME=	ldapscripts
 PORTVERSION=	2.0.8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/ldapscripts/
@@ -21,7 +22,6 @@ RUN_DEPENDS=	ldapadd:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client \
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	SASL DOCS
-SASL_VARS=	OPENLDAP_FLAVOUR=-sasl WANT_OPENLDAP_SASL=yes
 
 USES=		iconv tar:tgz
 USE_OPENLDAP=	yes

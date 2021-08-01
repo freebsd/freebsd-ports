@@ -174,13 +174,9 @@ CONFIGURE_ARGS+=--enable-json
 .endif
 
 .if ${PHP_MODNAME} == "ldap"
-CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
+CONFIGURE_ARGS+=--with-ldap=${LOCALBASE} --with-ldap-sasl=${LOCALBASE}
 
 USE_OPENLDAP=	yes
-
-. ifdef(WANT_OPENLDAP_SASL)
-CONFIGURE_ARGS+=--with-ldap-sasl=${LOCALBASE}
-. endif
 .endif
 
 .if ${PHP_MODNAME} == "mbstring"

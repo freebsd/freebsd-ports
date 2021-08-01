@@ -20,9 +20,6 @@ Database_Include_MAINTAINER=		ports@FreeBSD.org
 #				  Default: 24.
 # WANT_OPENLDAP_VER
 #				- Maintainer can set an arbitrary version of OpenLDAP by using it.
-# WANT_OPENLDAP_SASL
-#				- User-defined variable to depend upon SASL-enabled OpenLDAP
-#				  client. Must NOT be set in a port Makefile.
 # IGNORE_OPENLDAP_OPENLDAP
 #				- This variable can be defined if the ports doesn't support
 #				  one or more version of OpenLDAP.
@@ -64,14 +61,6 @@ IGNORE=	cannot install: OpenLDAP versions mismatch: openldap${_OPENLDAP_VER}-cli
 CFLAGS+=	-DLDAP_DEPRECATED
 
 _OPENLDAP_CLIENT_PKG!=	${PKG_INFO} -Ex openldap.\*-client 2>/dev/null; ${ECHO_CMD}
-_OPENLDAP_FLAVOUR=	${_OPENLDAP_CLIENT_PKG:C/openldap//:C/-client-.*//}
-
-.if defined(WANT_OPENLDAP_SASL)
-.if !empty(_OPENLDAP_CLIENT_PKG) && empty(_OPENLDAP_FLAVOUR)
-IGNORE= cannot install: SASL support requested and ${_OPENLDAP_CLIENT_PKG} is installed
-.endif
-_OPENLDAP_FLAVOUR=	-sasl
-.endif
 
 # And now we are checking if we can use it
 .if defined(OPENLDAP${OPENLDAP_VER}_LIB)
@@ -86,7 +75,7 @@ IGNORE=		cannot install: doesn't work with OpenLDAP version: ${OPENLDAP_VER} (Do
 .		endif
 .	endfor
 .endif # IGNORE_WITH_OPENLDAP
-LIB_DEPENDS+=	${OPENLDAP${OPENLDAP_VER}_LIB}:net/openldap${OPENLDAP_VER}${_OPENLDAP_FLAVOUR}-client
+LIB_DEPENDS+=	${OPENLDAP${OPENLDAP_VER}_LIB}:net/openldap${OPENLDAP_VER}-client
 .else
 IGNORE=		cannot install: unknown OpenLDAP version: ${OPENLDAP_VER}
 .endif # Check for correct libs

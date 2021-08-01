@@ -17,22 +17,14 @@ MASTER_SITES=		https://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/ \
 			http://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-release
 .if defined(CLIENT_ONLY)
-.if ${CLIENT_ONLY} == sasl
-PKGNAMESUFFIX=		-sasl-client
-.else
 PKGNAMESUFFIX=		-client
-.endif
 .else
 PKGNAMESUFFIX?=		-server
 .endif
 
 MAINTAINER=		delphij@FreeBSD.org
 .if defined(CLIENT_ONLY)
-.if ${CLIENT_ONLY} == sasl
-COMMENT=		Open source LDAP client implementation with SASL2 support
-.else
 COMMENT=		Open source LDAP client implementation
-.endif
 .else
 COMMENT=		Open source LDAP server implementation
 .endif
@@ -43,13 +35,7 @@ LICENSE_FILE=		${WRKSRC}/LICENSE
 LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 .if defined(CLIENT_ONLY)
-.if ${CLIENT_ONLY} == sasl
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.* \
-			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.[0-3].*
-.else
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[0-3].* \
-			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
-.endif
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[0-35-9].*
 .endif
 
 GNU_CONFIGURE=		yes
@@ -67,8 +53,8 @@ WANT_OPENLDAP_VER?=	24
 BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
-PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_CLIENT=	1
+PORTREVISION_SERVER=	1
 OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_SHLIB_MINOR=	11.7
 OPENLDAP_MAJOR=		${DISTVERSION:R}
@@ -76,7 +62,7 @@ OPENLDAP_MAJOR=		${DISTVERSION:R}
 OPTIONS_DEFINE=		DEBUG FETCH GSSAPI
 
 FETCH_DESC=		Enable fetch(3) support
-GSSAPI_DESC=		With GSSAPI support (implies SASL support)
+GSSAPI_DESC=		With GSSAPI support
 
 .if defined(CLIENT_ONLY)
 OPTIONS_DEFINE+=	DOCS
@@ -86,7 +72,7 @@ OPTIONS_DEFINE+=	SOCK ODBC RLOOKUPS SLP SLAPI TCP_WRAPPERS
 OPTIONS_DEFINE+=	ACCESSLOG AUDITLOG COLLECT CONSTRAINT DDS
 OPTIONS_DEFINE+=	DEREF DYNGROUP DYNLIST MEMBEROF PPOLICY PCACHE
 OPTIONS_DEFINE+=	REFINT RETCODE RWM SEQMOD SSSVLV SYNCPROV TRANSLUCENT
-OPTIONS_DEFINE+=	UNIQUE VALSORT SMBPWD SHA2 DYNAMIC_BACKENDS SASL
+OPTIONS_DEFINE+=	UNIQUE VALSORT SMBPWD SHA2 DYNAMIC_BACKENDS
 OPTIONS_DEFINE+=	LMPASSWD
 OPTIONS_DEFINE+=	PBKDF2
 OPTIONS_DEFINE+=	OUTLOOK
@@ -132,7 +118,6 @@ PCACHE_DESC=		With Proxy Cache overlay
 REFINT_DESC=		With Referential Integrity overlay
 RETCODE_DESC=		With Return Code testing overlay
 RWM_DESC=		With Rewrite/Remap overlay
-SASL_DESC=		With (Cyrus) SASL2 support
 SEQMOD_DESC=		With Sequential Modify overlay
 SSSVLV_DESC=		With ServerSideSort/VLV overlay
 SYNCPROV_DESC=		With Syncrepl Provider overlay
@@ -165,9 +150,6 @@ CONFIGURE_SED=		-e 's,uuid/uuid.h,xxuuid/uuid.h,g'
 .if defined(CLIENT_ONLY)
 PORTDOCS=		CHANGES drafts rfc
 
-.if ${CLIENT_ONLY} == sasl
-PORT_OPTIONS+=	SASL
-.endif
 .if defined(USE_OPENLDAP)
 BROKEN=			you have USE_OPENLDAP variable defined either in environment or in make(1) arguments; please undefine and try again
 .endif
@@ -176,22 +158,6 @@ USE_OPENLDAP=		yes
 WANT_OPENLDAP_VER=	24
 
 LIB_DEPENDS+=		libicudata.so:devel/icu
-
-.if ${PORT_OPTIONS:MGSSAPI} && empty(PORT_OPTIONS:MSASL)
-PORT_OPTIONS+=	SASL
-.endif
-
-.if ${PORT_OPTIONS:MSASL}
-WANT_OPENLDAP_SASL=	yes
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.*
-PKGNAMESUFFIX=		-sasl-server
-.if ${PORT_OPTIONS:MGSSAPI}
-RUN_DEPENDS+=		cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
-.endif
-.else
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
-.endif
-
 .endif
 
 DESCR=			${PKGDIR}/pkg-descr${OPENLDAP_PKGFILESUFX}
@@ -218,12 +184,11 @@ CONFIGURE_ARGS=		--with-threads=posix \
 			--disable-dependency-tracking \
 			--enable-dynamic
 
-.if ${PORT_OPTIONS:MSASL}
+
+GSSAPI_RUN_DEPENDS+=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
+
 LIB_DEPENDS+=		libsasl2.so:security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl
-.else
-CONFIGURE_ARGS+=	--without-cyrus-sasl
-.endif
 
 .if defined(CLIENT_ONLY)
 # client specific configuration
@@ -523,9 +488,7 @@ PLIST_SUB+=		BACK_PERL=${BACKEND_PLIST}
 PLIST_SUB+=		BACK_PERL="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MSASL}
 CONFIGURE_ARGS+=	--enable-spasswd
-.endif
 
 .if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=	--enable-sql=${BACKEND_ENABLE}

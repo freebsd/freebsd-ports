@@ -364,11 +364,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_OPENLDAP	- If set, this port uses the OpenLDAP libraries.
 #				  Implies: WANT_OPENLDAP_VER?=24
 # WANT_OPENLDAP_VER
-#				- Legal values are: 23, 24
+#				- Legal values are: 24
 #				  If set to an unknown value, the port is marked BROKEN.
-# WANT_OPENLDAP_SASL
-#				- If set, the system should use OpenLDAP libraries
-#				  with SASL support.
 ##
 # USE_JAVA		- If set, this port relies on the Java language.
 #				  Implies inclusion of bsd.java.mk.  (Also see

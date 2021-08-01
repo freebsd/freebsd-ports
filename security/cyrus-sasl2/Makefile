@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 

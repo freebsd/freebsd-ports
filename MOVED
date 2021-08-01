@@ -16474,3 +16474,4 @@ databases/rubygem-redis-namespace17|databases/rubygem-redis-namespace|2021-07-25
 multimedia/mlt|multimedia/mlt6|2021-07-30|Moved to a versioned directory to make place for future versions
 multimedia/mlt-qt5|multimedia/mlt6-qt5|2021-07-30|Moved to a versioned directory to make place for future versions
 multimedia/py-mlt|multimedia/py-mlt6|2021-07-30|Moved to a versioned directory to make place for future versions
+net/openldap24-sasl-client|net/openldap24-client|2021-08-01|SASL is always enabled for OpenLDAP

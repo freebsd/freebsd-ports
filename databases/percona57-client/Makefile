@@ -1,7 +1,7 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 PORTNAME=	percona
-PORTREVISION?=	0
+PORTREVISION?=	1
 PKGNAMESUFFIX=	57-client
 
 COMMENT=	Multithreaded SQL database (client)
@@ -36,7 +36,7 @@ OPTIONS_GROUP_PLUGINS=	SASLCLIENT
 SASLCLIENT_DESC=	SASL client plugin module
 SASLCLIENT_CMAKE_BOOL=	WITH_AUTHENTICATION_LDAP
 SASLCLIENT_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
-SASLCLIENT_BUILD_DEPENDS=	${LOCALBASE}/include/lber.h:net/openldap24-sasl-client
+SASLCLIENT_USE=		OPENLDAP=yes
 OPTIONS_DEFAULT+=	SASLCLIENT
 OPTIONS_SUB=	yes
 

@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210801:
+  AFFECTS: users of OpenLDAP
+  AUTHOR: delphij@FreeBSD.org
+
+  SASL is now always enabled for OpenLDAP.
+
+  If you use portmaster:
+        portmaster -o net/openldap24-client openldap24-sasl-client
+  If you use portupgrade:
+	portupgrade -fo net/openldap24-client openldap24-sasl-client
+  If you use pkg with binary packages:
+        pkg set -o net/openldap24-sasl-client:net/openldap24-client
+
 20210730:
   AFFECTS: users of multimedia/mlt, multimedia/mlt-qt and multimedia/py-mlt
   AUTHOR:  kde@FreeBSD.org

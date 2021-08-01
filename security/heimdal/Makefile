@@ -2,6 +2,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	7.7.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/heimdal/heimdal/releases/download/${DISTNAME}/
 
@@ -97,10 +98,6 @@ CRACKLIB_DESC=		Use CrackLib for password quality checking
 CRACKLIB_LIB_DEPENDS=	libcrack.so:security/cracklib
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLDAP}
-WANT_OPENLDAP_SASL?=	yes
-.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/kpasswdd-cracklib

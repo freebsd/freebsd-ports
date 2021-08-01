@@ -2,7 +2,7 @@
 
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	net
 MASTER_SITES=	http://www.padl.com/download/ \
 		LOCAL/martymac
@@ -21,12 +21,10 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
 
-OPTIONS_DEFINE=	LCLASS KERBEROS SASL
+OPTIONS_DEFINE=	LCLASS KERBEROS
 OPTIONS_DEFAULT=LCLASS KERBEROS
 
 LCLASS_DESC=	Enable login classes via the loginClass attribute
-
-SASL_DESC=	Use the SASL-enabled version of OpenLDAP
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib
@@ -47,10 +45,6 @@ CONFIGURE_ARGS+=--enable-configurable-krb5-ccname-gssapi \
 
 .if ${PORT_OPTIONS:MLCLASS}
 CFLAGS+="-DHAVE_LOGIN_CLASSES"
-.endif
-
-.if ${PORT_OPTIONS:MSASL}
-WANT_OPENLDAP_SASL=	 yes
 .endif
 
 post-extract:
