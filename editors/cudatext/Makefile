@@ -1,6 +1,5 @@
 PORTNAME=	cudatext
-PORTVERSION=	1.99.0
-PORTREVISION=	2
+PORTVERSION=	1.139.5
 CATEGORIES=	editors
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -15,20 +14,22 @@ USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	Alexey-T
 GH_PROJECT=	CudaText
-GH_TUPLE=	Alexey-T:Python-for-Lazarus:586eec1:python4lazarus/python4lazarus \
-		Alexey-T:ATFlatControls:968953e:atflatcontrols/atflatcontrols  \
-		Alexey-T:ATSynEdit:a07cb2e:atsynedit/atsynedit \
-		Alexey-T:Emmet-Pascal:52d11a7:emmet/emmet \
-		Alexey-T:EControl:0432319:econtrol/econtrol \
-		Alexey-T:ATSynEdit_Ex:6cce087:atsyneditex/atsyneditex \
-		Alexey-T:ATSynEdit_Cmp:bc1077a:atsyneditcmp/atsyneditcmp \
-		Alexey-T:ATBinHex-Lazarus:cad0408:atbinhex/atbinhex \
+GH_TUPLE=	bgrabitmap:bgrabitmap:ace7e0e:bgrabitmap/bgrabitmap \
+		Alexey-T:Python-for-Lazarus:24d15bb:python4lazarus/python4lazarus \
+		Alexey-T:ATFlatControls:cd99204:atflatcontrols/atflatcontrols  \
+		Alexey-T:ATSynEdit:7c3dbcd:atsynedit/atsynedit \
+		Alexey-T:Emmet-Pascal:fb5b116:emmet/emmet \
+		Alexey-T:EControl:f3c5b90:econtrol/econtrol \
+		Alexey-T:ATSynEdit_Ex:4b17f2e:atsyneditex/atsyneditex \
+		Alexey-T:ATSynEdit_Cmp:75f0621:atsyneditcmp/atsyneditcmp \
+		Alexey-T:ATBinHex-Lazarus:c63346b:atbinhex/atbinhex \
 		Alexey-T:UniqueInstance:753f823:uniqueinstance/uniqueinstance \
-		Alexey-T:EncConv:3eb181f:encconv/encconv
+		Alexey-T:EncConv:604d33a:encconv/encconv
 
 DOS2UNIX_FILES=	app/settings_default/default.json setup/debfiles/cudatext.desktop
 
-LAZARUS_PROJECT_FILES=	atflatcontrols/atflatcontrols/atflatcontrols_package.lpk
+LAZARUS_PROJECT_FILES=	bgrabitmap/bgrabitmap/bgrabitmappack.lpk
+LAZARUS_PROJECT_FILES+=	atflatcontrols/atflatcontrols/atflatcontrols_package.lpk
 LAZARUS_PROJECT_FILES+=	python4lazarus/python4lazarus/python4lazarus_package.lpk
 LAZARUS_PROJECT_FILES+= encconv/encconv/encconv_package.lpk
 LAZARUS_PROJECT_FILES+=	atsynedit/atsynedit/atsynedit_package.lpk
@@ -49,6 +50,8 @@ USE_FPC_gtk2=	cairo
 USE_GNOME_gtk2=	cairo
 USE_FPC+=	${USE_FPC_${FLAVOR}}
 USE_GNOME+=	${USE_GNOME_${FLAVOR}}
+
+#WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	${REINPLACE_CMD} 's|-512||g' ${WRKSRC}/setup/debfiles/${PORTNAME}.desktop
