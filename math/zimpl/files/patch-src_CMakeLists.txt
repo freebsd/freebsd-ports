@@ -1,0 +1,19 @@
+- Allow to build shared libs.
+
+--- src/CMakeLists.txt.orig	2021-08-01 07:59:48 UTC
++++ src/CMakeLists.txt
+@@ -116,12 +116,12 @@ if(MSVC)
+ endif()
+ 
+ #create zimpl with pic
+-add_library(libzimpl-pic STATIC ${libsources})
++add_library(libzimpl-pic ${libsources})
+ set_target_properties(libzimpl-pic PROPERTIES POSITION_INDEPENDENT_CODE on)
+ target_link_libraries(libzimpl-pic ${libs})
+ 
+ #create zimpl without pic
+-add_library(libzimpl STATIC ${libsources})
++add_library(libzimpl ${libsources})
+ target_link_libraries(libzimpl ${libs})
+ 
+ #create zimpl binary
