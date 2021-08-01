@@ -1,6 +1,7 @@
 PORTNAME=	zls
 DISTVERSION=	0.1.0-226
 DISTVERSIONSUFFIX=	-g39d8718
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,6 +24,11 @@ CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 NO_INSTALL=	yes # strip(1) breaks runtime
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/build_runner.zig
+
+post-patch:
+# Respect PREFIX for global_configuration
+	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
+		${WRKSRC_known_folders}/known-folders.zig
 
 do-build:
 	@(cd ${WRKSRC} && ${MAKE_ENV} zig build ${CONFIGURE_ARGS})
