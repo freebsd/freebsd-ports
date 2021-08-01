@@ -16475,3 +16475,4 @@ multimedia/mlt|multimedia/mlt6|2021-07-30|Moved to a versioned directory to make
 multimedia/mlt-qt5|multimedia/mlt6-qt5|2021-07-30|Moved to a versioned directory to make place for future versions
 multimedia/py-mlt|multimedia/py-mlt6|2021-07-30|Moved to a versioned directory to make place for future versions
 net/openldap24-sasl-client|net/openldap24-client|2021-08-01|SASL is always enabled for OpenLDAP
+textproc/py-python-language-server|textproc/py-python-lsp-server|2021-08-01|Has expired: Upstream forked and replaced by py-python-lsp-server
