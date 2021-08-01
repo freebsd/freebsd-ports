@@ -1,3 +1,42 @@
+  <vuln vid="8b571fb2-f311-11eb-b12b-fc4dd43e2b6a">
+    <topic>tomcat -- JNDI Realm Authentication Weakness in multiple versions</topic>
+    <affects>
+      <package>
+	<name>tomcat7</name>
+	<range><ge>7.0.0</ge><le>7.0.108</le></range>
+      </package>
+      <package>
+	<name>tomcat85</name>
+	<range><ge>8.5.0</ge><le>8.5.65</le></range>
+      </package>
+      <package>
+	<name>tomcat9</name>
+	<range><ge>9.0.0</ge><le>9.0.45</le></range>
+      </package>
+      <package>
+	<name>tomcat10</name>
+	<range><ge>10.0.0</ge><le>10.0.5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ilja.farber reports:</p>
+	<blockquote cite="https://tomcat.apache.org/security.html">
+	  <p>Queries made by the JNDI Realm did not always correctly escape parameters. Parameter values could be sourced from user provided data (eg user names) as well as configuration data provided by an administrator.
+In limited circumstances it was possible for users to authenticate using variations of their user name and/or to bypass some of the protection provided by the LockOut Realm.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-30640</cvename>
+      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-30640</url>
+    </references>
+    <dates>
+      <discovery>2021-04-08</discovery>
+      <entry>2021-08-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cc7c85d9-f30a-11eb-b12b-fc4dd43e2b6a">
     <topic>tomcat -- Remote Denial of Service in multiple versions</topic>
     <affects>
@@ -28,7 +67,7 @@
       <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-30639</url>
     </references>
     <dates>
-      <discovery>2021-07-12</discovery>
+      <discovery>2021-03-24</discovery>
       <entry>2021-08-01</entry>
     </dates>
   </vuln>
