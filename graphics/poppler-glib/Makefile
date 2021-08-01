@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	GLib bindings to poppler
 

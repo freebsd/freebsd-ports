@@ -2,7 +2,7 @@
 
 PORTNAME=	inkscape
 DISTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://inkscape.org/gallery/item/26932/
 
