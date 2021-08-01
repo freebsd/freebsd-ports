@@ -1,8 +1,12 @@
 PORTNAME=	wshowkeys
 PORTVERSION=	s20200330
 DISTVERSIONSUFFIX=	-0-g6388a49
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
+
+PATCH_SITES=	https://github.com/ammgws/${PORTNAME}/commit/
+PATCHFILES+=	35b6f15bd088.patch:-p1 # https://old.reddit.com/r/swaywm/comments/ovfzpv/new_custodianmaintainerbugfix_needed_for_wshowkeys/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Display keystrokes for screencasts on wlroots compositors
