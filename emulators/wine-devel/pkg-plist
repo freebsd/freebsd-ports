@@ -186,6 +186,7 @@ include/wine/windows/codecapi.h
 include/wine/windows/colinf.idl
 include/wine/windows/colordlg.h
 include/wine/windows/colrst.idl
+include/wine/windows/combaseapi.h
 include/wine/windows/comcat.h
 include/wine/windows/comcat.idl
 include/wine/windows/commctrl.h
