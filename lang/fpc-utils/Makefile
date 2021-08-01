@@ -8,7 +8,7 @@ USE_FPC=	chm dblib fastcgi fcl-async fcl-base fcl-db fcl-fpcunit fcl-js \
 		fcl-net fcl-passrc fcl-res fcl-xml fcl-web fcl-json fppkg \
 		httpd22 httpd24 ibase libcurl libmicrohttpd mysql odbc openssl \
 		oracle pastojs postgres pxlib rtl-extra rtl-generics rtl-objpas \
-		sqlite webidl
+		tplylib sqlite webidl
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/utils
