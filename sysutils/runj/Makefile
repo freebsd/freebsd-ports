@@ -1,5 +1,5 @@
 PORTNAME=	runj
-DISTVERSION=	g20210603
+DISTVERSION=	g20210724
 CATEGORIES=	sysutils
 
 MAINTAINER=	dch@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE_COMB=	multi
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	samuelkarp
-GH_TAGNAME=	9140284
+GH_TAGNAME=	4f12a0e
 
 .include "Makefile.deps"
 
