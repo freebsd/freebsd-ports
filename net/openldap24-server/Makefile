@@ -145,6 +145,8 @@ OPENLDAP_PKGFILESUFX=
 
 CONFIGURE_SED=		-e 's,uuid/uuid.h,xxuuid/uuid.h,g'
 
+GSSAPI_RUN_DEPENDS+=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
+
 .include <bsd.port.options.mk>
 
 .if defined(CLIENT_ONLY)
@@ -184,8 +186,6 @@ CONFIGURE_ARGS=		--with-threads=posix \
 			--disable-dependency-tracking \
 			--enable-dynamic
 
-
-GSSAPI_RUN_DEPENDS+=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 
 LIB_DEPENDS+=		libsasl2.so:security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl
