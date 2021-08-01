@@ -1,6 +1,6 @@
---- miconfig/MiConfigXML.pas	2018-04-26 21:42:01.343702000 -0500
-+++ miconfig/MiConfigXML.pas	2018-04-26 21:43:20.791884000 -0500
-@@ -20,7 +20,7 @@
+--- miconfig/MiConfigXML.pas.orig	2021-08-01 06:56:07 UTC
++++ miconfig/MiConfigXML.pas
+@@ -20,7 +20,7 @@ unit MiConfigXML;
  {$mode objfpc}{$H+}
  interface
  uses
@@ -9,7 +9,7 @@
  type
    { TMiConfigXML }
    {Clase base que es usada para manejar los campos de configuración.}
-@@ -75,7 +75,7 @@
+@@ -75,7 +75,7 @@ end;
  function TMiConfigXML.DefaultFileName: string;
  {Devuelve el nombre por defecto del archvio de configuración}
  begin

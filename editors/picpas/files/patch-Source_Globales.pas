@@ -1,6 +1,6 @@
---- Source/Globales.pas	2018-08-10 01:10:52.847492000 -0500
-+++ Source/Globales.pas	2018-08-10 01:19:30.813221000 -0500
-@@ -5,7 +5,7 @@
+--- Source/Globales.pas.orig	2021-08-01 06:56:07 UTC
++++ Source/Globales.pas
+@@ -5,7 +5,7 @@ unit Globales;
  {$mode objfpc}{$H+}
  interface
  uses  Classes, SysUtils, Forms, SynEdit, SynEditKeyCmds, MisUtils,
@@ -9,7 +9,7 @@
  
  const
    NOM_PROG = 'PicPas';   //nombre de programa
-@@ -29,6 +29,7 @@
+@@ -29,6 +29,7 @@ var
     archivoEnt  : string;    //archivo de entrada
     MostrarError: Boolean;   //Bandera para mostrar mensajesde error.
     ActConsSeg  : Boolean;   //Activa consultas en segundo plano
@@ -17,7 +17,7 @@
  
  /////////////// Campos para manejo del diccionario //////////
  var
-@@ -176,7 +177,11 @@
+@@ -176,7 +177,11 @@ End;
  
  initialization
    //inicia directorios de la aplicación
@@ -30,7 +30,7 @@
    patSamples  := patApp + 'samples';
    patUnits    := patApp + 'units';
    patTemp     := patApp + 'temp';
-@@ -189,41 +194,107 @@
+@@ -189,41 +194,107 @@ initialization
    archivoEnt  := '';    //archivo de entrada
    //verifica existencia de carpetas de trabajo
    try
@@ -42,7 +42,7 @@
 -       CreateDir(patSamples);
 +      {$ifdef freebsd}
 +       RunCommand('cp', ['-R',
-+        '%%DATADIR%%/samples',
++        '/usr/local/share/picpas/samples',
 +        patSamples
 +        ], S);
 +      {else}
@@ -54,7 +54,7 @@
 -       CreateDir(patUnits);
 +      {$ifdef freebsd}
 +       RunCommand('cp', ['-R',
-+        '%%DATADIR%%/units',
++        '/usr/local/share/picpas/units',
 +        patUnits
 +        ], S);
 +      {else}
@@ -66,7 +66,7 @@
 -       CreateDir(patDevices10);
 +      {$ifdef freebsd}
 +       RunCommand('cp', ['-R',
-+        '%%DATADIR%%/devices10',
++        '/usr/local/share/picpas/devices10',
 +        patDevices10
 +        ], S);
 +      {else}
@@ -78,7 +78,7 @@
 -       CreateDir(patDevices16);
 +      {$ifdef freebsd}
 +       RunCommand('cp', ['-R',
-+        '%%DATADIR%%/devices16',
++        '/usr/local/share/picpas/devices16',
 +        patDevices16
 +        ], S);
 +      {else}
@@ -90,7 +90,7 @@
 -       CreateDir(patDevices17);
 +      {$ifdef freebsd}
 +       RunCommand('cp', ['-R',
-+        '%%DATADIR%%/devices17',
++        '/usr/local/share/picpas/devices17',
 +        patDevices17
 +        ], S);
 +      {else}
@@ -102,7 +102,7 @@
 -       CreateDir(patDevices18);
 +      {$ifdef freebsd}
 +       RunCommand('cp', ['-R',
-+        '%%DATADIR%%/devices18',
++        '/usr/local/share/picpas/devices18',
 +        patDevices18
 +        ], S);
 +      {else}
@@ -114,7 +114,7 @@
 -       CreateDir(patTemp);
 +      {$ifdef freebsd}
 +       RunCommand('cp', ['-R',
-+        '%%DATADIR%%/temp',
++        '/usr/local/share/picpas/temp',
 +        patTemp
 +        ], S);
 +      {else}
@@ -126,7 +126,7 @@
 -       CreateDir(patSyntax);
 +      {$ifdef freebsd}
 +       RunCommand('cp', ['-R',
-+        '%%DATADIR%%/syntax',
++        '/usr/local/share/picpas/syntax',
 +        patSyntax
 +        ], S);
 +      {else}
@@ -138,7 +138,7 @@
 -      CreateDir(patThemes);
 +      {$ifdef freebsd}
 +       RunCommand('cp', ['-R',
-+        '%%DATADIR%%/themes',
++        '/usr/local/share/picpas/themes',
 +        patThemes
 +        ], S);
 +      {else}
