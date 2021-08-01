@@ -5,6 +5,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/dateutils.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/dateutils.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/fmtbcd.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/fmtbcd.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/nullable.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/rtti.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/rtti.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/rtti.rsj

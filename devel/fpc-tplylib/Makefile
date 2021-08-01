@@ -1,7 +1,7 @@
-CATEGORIES=	lang
-PKGNAMESUFFIX=	-rtl-objpas
+CATEGORIES=	devel lang
+PKGNAMESUFFIX=	-tplylib
 
-COMMENT=	Free Pascal compatibility unit with Delphi
+COMMENT=	Unit for a compiler generator for Turbo Pascal and compatibles
 
 USES=		fpc
 

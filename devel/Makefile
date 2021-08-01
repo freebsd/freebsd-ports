@@ -708,6 +708,7 @@
     SUBDIR += fpc-regexpr
     SUBDIR += fpc-sdl
     SUBDIR += fpc-symbolic
+    SUBDIR += fpc-tplylib
     SUBDIR += fpc-zlib
     SUBDIR += fpp
     SUBDIR += frama-c

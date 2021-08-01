@@ -33,9 +33,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/custapp.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/eventlog.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/eventlog.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/eventlog.rsj
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fileinfo.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fileinfo.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fileinfo.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpexprpars.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpexprpars.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpexprpars.rsj

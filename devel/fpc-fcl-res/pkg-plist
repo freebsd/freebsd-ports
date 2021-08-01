@@ -44,6 +44,10 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/machotypes.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/machotypes.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/machowriter.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/machowriter.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/rcparser.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/rcparser.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/rcreader.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/rcreader.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/resdatastream.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/resdatastream.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/resfactory.o

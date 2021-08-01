@@ -38,10 +38,6 @@ bin/unitdiff.rsj
 bin/webidl2pas
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/utils-lexyacc.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/utils-pas2js.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utils-lexyacc/lexlib.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utils-lexyacc/lexlib.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utils-lexyacc/yacclib.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utils-lexyacc/yacclib.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utils-pas2js/dirwatch.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utils-pas2js/dirwatch.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utils-pas2js/httpcompiler.o

@@ -1,6 +1,5 @@
 # Created by: John Merryweather Cooper
 
-PORTREVISION=	2
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-mysql
 

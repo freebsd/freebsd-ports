@@ -43,8 +43,8 @@ COROSYNC_DEFAULT?=	2
 FIREBIRD_DEFAULT?=	2.5
 # Possible values: flang (experimental), gfortran
 FORTRAN_DEFAULT?=	gfortran
-# Possible values: 3.2.0
-FPC_DEFAULT?=		3.2.0
+# Possible values: 3.2.2
+FPC_DEFAULT?=		3.2.2
 # Possible values: 8 (last to support powerpcspe), 9, 10, 11
 # (Any other version is completely unsupported and not meant for general use.)
 .if ${ARCH} == "powerpcspe"

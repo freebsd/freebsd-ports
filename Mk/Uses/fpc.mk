@@ -76,8 +76,8 @@ _FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dblib dbus dts fastcgi \
 		mysql ncurses newt numlib odata odbc oggvorbis openal opengl openssl \
 		oracle pasjpeg pastojs pcap postgres proj4 pthreads pxlib \
 		regexpr rexx rsvg rtl-console rtl-extra rtl-generics rtl-objpas \
-		rtl-unicode sdl sqlite svgalib symbolic syslog unzip users utmp \
-		uuid vcl-compat webidl x11 xforms zlib
+		rtl-unicode sdl sqlite svgalib symbolic syslog tplylib unzip \
+		users utmp uuid vcl-compat webidl x11 xforms zlib
 
 .if ${fpc_ARGS:Mbase}
 USE_FPC=	gdbint graph httpd22 httpd24 ibase mysql odbc oracle pasjpeg \
@@ -191,6 +191,7 @@ sdl_UNIT=	devel/fpc-sdl
 svgalib_UNIT=	graphics/fpc-svgalib
 symbolic_UNIT=	devel/fpc-symbolic
 syslog_UNIT=	sysutils/fpc-syslog
+tplylib_UNIT=	devel/fpc-tplylib
 unzip_UNIT=	archivers/fpc-unzip
 users_UNIT=	sysutils/fpc-users
 utmp_UNIT=	sysutils/fpc-utmp

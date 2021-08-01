@@ -1,8 +1,8 @@
 # Created by: John Merryweather Cooper et al
 
 PORTNAME=	fpc
-PORTVERSION=	3.2.0
-PORTREVISION?=	1
+PORTVERSION=	3.2.2
+PORTREVISION?=	0
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
 		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/source/:source \
@@ -102,6 +102,7 @@ do-extract:
 		${FPCSRCDIR}/packages/libtar \
 		${FPCSRCDIR}/packages/paszlib \
 		${FPCSRCDIR}/packages/rtl-objpas \
+		${FPCSRCDIR}/packages/tplylib \
 		${FPCSRCDIR}/utils/fpcm)
 
 post-patch:
@@ -136,7 +137,7 @@ do-build:
 	(cd ${WRKDIR}/${FPCSRCDIR}/packages/fpmkunit && ${SETENV} \
 		${MAKE_ENV} ${MAKE_CMD} bootstrap ${MAKE_ARGS} ${NEWPPC})
 	@${ECHO_MSG} "##### COMPLETE BOOTSTRAP FPMKUNIT #####"
-.for component in fcl-res rtl-objpas fcl-base
+.for component in rtl-objpas fcl-base tplylib fcl-res
 	@${ECHO_MSG} "##### STARTING ${component:tu} #####"
 	(cd ${WRKDIR}/${FPCSRCDIR}/packages/${component} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${NEWPPC})

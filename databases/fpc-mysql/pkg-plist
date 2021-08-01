@@ -53,3 +53,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql56dyn.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql57dyn.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql57dyn.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql57dyn.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql80dyn.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql80dyn.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql80dyn.rsj
