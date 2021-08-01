@@ -1,7 +1,7 @@
 # Created by: Kevin Bowling <kbowling@freebsd.org>
 
 PORTNAME=	timescaledb
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4.0
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_TSL=	${WRKSRC}/tsl/LICENSE-TIMESCALE
 LICENSE_PERMS_TSL=	dist-mirror pkg-mirror auto-accept
 
-USES=		compiler:c11 cmake pgsql:11,12,13
+USES=		compiler:c11 cmake pgsql:12,13
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	timescale
@@ -34,7 +34,7 @@ SSL_CMAKE_BOOL=		USE_OPENSSL
 SSL_USES=		ssl
 TSL_CMAKE_BOOL_OFF=	APACHE_ONLY
 
-CMAKE_OFF=	REGRESS_CHECKS WARNINGS_AS_ERRORS
+CMAKE_OFF=	REGRESS_CHECKS TAP_CHECKS WARNINGS_AS_ERRORS
 WANT_PGSQL=	lib server
 
 .include <bsd.port.mk>
