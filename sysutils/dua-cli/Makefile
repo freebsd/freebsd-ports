@@ -1,6 +1,6 @@
 PORTNAME=	dua-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.14.2
+DISTVERSION=	2.14.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -68,11 +68,12 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		numtoa-0.1.0 \
 		objc-0.2.7 \
 		once_cell-1.8.0 \
-		open-1.7.0 \
+		open-2.0.0 \
 		os_str_bytes-2.4.0 \
 		output_vt100-0.1.2 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.3 \
+		pathdiff-0.2.0 \
 		percent-encoding-2.1.0 \
 		petgraph-0.6.0 \
 		pretty_assertions-0.7.2 \
@@ -110,7 +111,6 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		vec_map-0.8.2 \
 		version_check-0.9.3 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
-		which-4.1.0 \
 		wild-2.0.4 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
