@@ -2,6 +2,7 @@
 
 PORTNAME=	mdal
 DISTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	math geography
 
 MAINTAINER=	wen@FreeBSD.org
@@ -13,9 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/gtest/gtest.h:devel/googletest
 LIB_DEPENDS=	libpdal_base.so:math/pdal \
 		libnetcdf.so:science/netcdf \
-		libsqlite3.so:databases/sqlite3
+		libsqlite3.so:databases/sqlite3 \
+		libgdal.so:graphics/gdal \
+		libhdf5.so:science/hdf5 \
+		libsz.so:science/szip
 
 USES=		cmake localbase
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/mdal_translate \
@@ -28,5 +33,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lutraconsulting
 GH_PROJECT=	MDAL
 GH_TAGNAME=	release-${DISTVERSION}
+
+CMAKE_ARGS=	-DSQLITE3_INCLUDE_DIRS="${LOCALBASE}/include" \
+		-DSQLITE3_LIBRARY="${LOCALBASE}/lib/libsqlite3.so"
 
 .include <bsd.port.mk>
