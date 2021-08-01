@@ -12,9 +12,9 @@ you update your ports collection, before attempting any port upgrades.
   SASL is now always enabled for OpenLDAP.
 
   If you use portmaster:
-        portmaster -o net/openldap24-client openldap24-sasl-client
+        portmaster -o net/openldap24-client openldap-sasl-client
   If you use portupgrade:
-	portupgrade -fo net/openldap24-client openldap24-sasl-client
+	portupgrade -fo net/openldap24-client openldap-sasl-client
   If you use pkg with binary packages:
         pkg set -o net/openldap24-sasl-client:net/openldap24-client
 
