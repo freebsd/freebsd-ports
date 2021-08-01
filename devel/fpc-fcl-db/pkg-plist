@@ -1,4 +1,3 @@
-/you/have/to/check/what/makeplist/gives/you
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-db.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/bufdataset.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/bufdataset.ppu
