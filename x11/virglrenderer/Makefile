@@ -3,7 +3,7 @@ DISTVERSION=	0.8.2
 PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VirGL virtual OpenGL renderer
 
 LICENSE=	MIT
