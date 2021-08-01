@@ -1,3 +1,5 @@
 TIMESTAMP = 1585574498
 SHA256 (wshowkeys-s20200330-0-g6388a49.tar.gz) = 1a32d4de6372464aa17f8da10688d03831edc838783ed72ee4ab15d830e0e808
 SIZE (wshowkeys-s20200330-0-g6388a49.tar.gz) = 26748
+SHA256 (35b6f15bd088.patch) = dea3c4bb80d3fa8647baedf315360ce7a129a81e80cfd9936adcaafbca15d8be
+SIZE (35b6f15bd088.patch) = 759
