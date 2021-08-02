@@ -1,19 +1,16 @@
-Avoid vendored OpenSSL dependencies.
+Enable "translations" feature to add the translations from the fluent repos.
 
---- rslib/Cargo.toml.orig	2020-09-04 08:35:57 UTC
+--- rslib/Cargo.toml.orig	2021-05-04 05:04:50 UTC
 +++ rslib/Cargo.toml
-@@ -61,10 +61,10 @@ features = ["trace", "functions", "collation"]
- version = "0.23.1"
- features = ["trace", "functions", "collation", "bundled"]
+@@ -7,6 +7,11 @@ license = "AGPL-3.0-or-later"
+ description = "Anki's Rust library code"
+ build = "build/main.rs"
  
--[target.'cfg(linux)'.dependencies.reqwest]
--git = "https://github.com/ankitects/reqwest.git"
--rev = "57665e2c2a39db85723ba860f1b570a608bb73f9"
--features = ["json", "socks", "stream", "native-tls-vendored"]
-+#[target.'cfg(linux)'.dependencies.reqwest]
-+#git = "https://github.com/ankitects/reqwest.git"
-+#rev = "57665e2c2a39db85723ba860f1b570a608bb73f9"
-+#features = ["json", "socks", "stream", "native-tls-vendored"]
- 
- [target.'cfg(not(linux))'.dependencies.reqwest]
- git = "https://github.com/ankitects/reqwest.git"
++[features]
++default = ["translations"]
++
++translations = []
++
+ [lib]
+ name = "anki"
+ path = "src/lib.rs"

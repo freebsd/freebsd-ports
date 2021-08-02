@@ -1,12 +1,11 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	anki
-DISTVERSION=	2.1.35
-PORTREVISION=	11
-# Don't forget to update ${_MY_BUILDHASH}
+DISTVERSION=	2.1.44
+# Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
-MASTER_SITES=	LOCAL/kai/:npmcache
-DISTFILES=	anki-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
+MASTER_SITES=	LOCAL/kai/:yarncache
+DISTFILES=	anki-yarn-cache-${DISTVERSION}${EXTRACT_SUFX}:yarncache
 DIST_SUBDIR=	python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -18,14 +17,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 DEPRECATED=	Uses EOL Python 2.7 via www/py-qt5-webengine
 EXPIRATION_DATE=2021-06-23
 
+NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc
+NOT_FOR_ARCHS_REASON=	the bazel build framework supports only 64-bit systems.
+
 BUILD_DEPENDS=	bash:shells/bash \
-		maturin:devel/py-maturin@${PY_FLAVOR} \
+		bazel:devel/bazel \
 		protoc:devel/protobuf \
-		npm:www/npm \
-		rsync:net/rsync \
+		yarn:www/yarn \
 		${PYTHON_PKGNAMEPREFIX}mypy-protobuf>=1.21:devel/py-mypy-protobuf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}stringcase==1.2.0:devel/py-stringcase@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}stringcase>0:devel/py-stringcase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}black>0:devel/py-black@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fluent>0:devel/py-fluent@${PY_FLAVOR} \
 		${RUN_DEPENDS}
 
 # For x64 architectures there's also a Python package "orjson" that still needs
@@ -51,295 +53,352 @@ RUN_DEPENDS=	lame:audio/lame \
 		${PYTHON_PKGNAMEPREFIX}waitress>0:www/py-waitress@${PY_FLAVOR}
 
 # USES=ssl is required for the compilation of the Rust code
-USES=		cargo desktop-file-utils gmake perl5 pyqt:5 python:3.7+ shebangfix ssl
+USES=		cargo desktop-file-utils pyqt:5 python:3.8+ shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ankitects
-GH_TUPLE=	ankitects:anki-core-i18n:fbda2ed:i18ncore \
-		ankitects:anki-desktop-ftl:f56e959:i18nfluent \
-		ankitects:anki-desktop-i18n:a93ccef:i18ndesktop \
-		ankitects:rust-coarsetime:f9e2c86216f0f4803bc75404828318fc206dab29:coarsetime \
-		ankitects:fluent-rs:f61c5e10a53161ef5261f3c87b62047f12e4aa74:fluent \
-		ankitects:hyper-timeout:664b6f9c387f6a7d75d1609a65c02554e8c55bc7:hypertimeout \
-		ankitects:reqwest:57665e2c2a39db85723ba860f1b570a608bb73f9:reqwest \
-		ankitects:tokio-io-timeout:96e1358555c49905de89170f2b1102a7d8b6c4c2:tokioiotimeout
-USE_PERL5=	build
+# Translation files
+GH_TUPLE=	ankitects:anki-core-i18n:30ab198:ftlrslib \
+		ankitects:anki-desktop-ftl:3920d26:ftlextra
+# Cargo crates
+GH_TUPLE+=	ankitects:hyper-timeout:anki-2020-11-03:hypertimeout \
+		ankitects:reqwest:anki-2020-11-03:reqwest \
+		ankitects:tokio-io-timeout:anki-2020-11-03:tokioiotimeout
+# Bazel Skylib framework and sets of bazel rules
+GH_TUPLE+=	bazelbuild:bazel-skylib:e59b620:bzlskylib \
+		bazelbuild:rules_cc:40548a2:bzlrcc \
+		bazelbuild:rules_java:c13e3ea:bzlrjava \
+		bazelbuild:rules_nodejs:1689fa1:bzlrnodejs \
+		bazelbuild:rules_proto:f7a30f6:bzlrproto \
+		ankitects:rules_pip:73953e0:bzlrpip \
+		ankitects:rules_python:3927c9b:bzlrpython \
+		ankitects:rules_rust:dfd1200:bzlrrust \
+		ankitects:rules_sass:275ace7:bzlrsass \
+		ankitects:rules_svelte:f09155c:bzlrsvelte
+
 USE_PYQT=	core gui network printsupport sip svg webchannel webengine widgets xml_build
 
-SHEBANG_FILES=	qt/po/scripts/build-mo-files \
-		qt/po/scripts/copy-qt-files \
-		qt/runanki \
-		qt/tools/build_ui.sh \
-		scripts/rename
+SHEBANG_FILES=	qt/tools/runanki.system.in
 
-CARGO_CRATES=	addr2line-0.13.0 \
-		adler-0.2.3 \
-		aho-corasick-0.7.14 \
-		anyhow-1.0.33 \
-		arc-swap-0.4.7 \
+CARGO_CRATES=	addr2line-0.15.2 \
+		adler-1.0.2 \
+		ahash-0.4.7 \
+		aho-corasick-0.7.18 \
+		ammonia-3.1.2 \
+		anyhow-1.0.42 \
+		arc-swap-1.3.0 \
 		arrayref-0.3.6 \
 		arrayvec-0.4.12 \
-		arrayvec-0.5.1 \
-		askama-0.10.3 \
-		askama_derive-0.10.3 \
+		arrayvec-0.5.2 \
+		askama-0.10.5 \
+		askama_derive-0.10.5 \
 		askama_escape-0.10.1 \
-		askama_shared-0.10.4 \
-		async-compression-0.3.5 \
+		askama_shared-0.11.1 \
+		async-compression-0.3.8 \
+		async-trait-0.1.50 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
-		backtrace-0.3.53 \
+		backtrace-0.3.60 \
 		base64-0.12.3 \
+		base64-0.13.0 \
 		bitflags-1.2.1 \
-		blake2b_simd-0.5.10 \
-		blake3-0.3.7 \
-		bumpalo-3.4.0 \
-		byteorder-1.3.4 \
+		bitvec-0.19.5 \
+		blake3-0.3.8 \
+		bumpalo-3.7.0 \
+		byteorder-1.4.3 \
 		bytes-0.4.12 \
 		bytes-0.5.6 \
-		cc-1.0.61 \
+		bytes-1.0.1 \
+		cc-1.0.69 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		cloudabi-0.1.0 \
+		coarsetime-0.1.19 \
 		constant_time_eq-0.1.5 \
-		core-foundation-0.7.0 \
-		core-foundation-sys-0.7.0 \
+		core-foundation-0.9.1 \
+		core-foundation-sys-0.8.2 \
 		crc32fast-1.2.1 \
-		crossbeam-channel-0.4.4 \
-		crossbeam-utils-0.7.2 \
+		crossbeam-channel-0.5.1 \
+		crossbeam-utils-0.8.5 \
 		crypto-mac-0.8.0 \
-		ctor-0.1.16 \
-		derivative-2.1.1 \
+		ctor-0.1.20 \
+		derivative-2.2.0 \
 		digest-0.9.0 \
-		dirs-2.0.2 \
-		dirs-sys-0.3.5 \
-		dtoa-0.4.6 \
+		dirs-next-2.0.0 \
+		dirs-sys-next-0.1.2 \
+		dtoa-0.4.8 \
 		either-1.6.1 \
-		encoding_rs-0.8.24 \
+		encoding_rs-0.8.28 \
+		env_logger-0.8.4 \
 		failure-0.1.8 \
 		failure_derive-0.1.8 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fixedbitset-0.2.0 \
-		flate2-1.0.18 \
-		fluent-langneg-0.12.1 \
-		fluent-syntax-0.9.3 \
+		flate2-1.0.20 \
+		fluent-0.13.1 \
+		fluent-bundle-0.13.2 \
+		fluent-langneg-0.13.0 \
+		fluent-syntax-0.10.3 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.0.1 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		futures-0.3.6 \
-		futures-channel-0.3.6 \
-		futures-core-0.3.6 \
-		futures-executor-0.3.6 \
-		futures-io-0.3.6 \
-		futures-macro-0.3.6 \
-		futures-sink-0.3.6 \
-		futures-task-0.3.6 \
-		futures-util-0.3.6 \
-		fxhash-0.2.1 \
+		funty-1.1.0 \
+		futf-0.1.4 \
+		futures-0.3.15 \
+		futures-channel-0.3.15 \
+		futures-core-0.3.15 \
+		futures-executor-0.3.15 \
+		futures-io-0.3.15 \
+		futures-macro-0.3.15 \
+		futures-sink-0.3.15 \
+		futures-task-0.3.15 \
+		futures-util-0.3.15 \
 		generic-array-0.14.4 \
-		getrandom-0.1.15 \
+		getopts-0.2.21 \
+		getrandom-0.1.16 \
+		getrandom-0.2.3 \
 		ghost-0.1.2 \
-		gimli-0.22.0 \
-		h2-0.2.6 \
+		gimli-0.24.0 \
+		h2-0.2.7 \
 		hashbrown-0.9.1 \
-		heck-0.3.1 \
-		hermit-abi-0.1.17 \
-		hex-0.4.2 \
+		hashbrown-0.11.2 \
+		hashlink-0.6.0 \
+		heck-0.3.3 \
+		hermit-abi-0.1.19 \
+		hex-0.4.3 \
+		html5ever-0.25.1 \
 		htmlescape-0.3.1 \
-		http-0.2.1 \
+		http-0.2.4 \
 		http-body-0.3.1 \
-		httparse-1.3.4 \
+		httparse-1.4.1 \
 		httpdate-0.3.2 \
-		humansize-1.1.0 \
-		hyper-0.13.8 \
+		humansize-1.1.1 \
+		humantime-2.1.0 \
+		hyper-0.13.10 \
+		hyper-rustls-0.21.0 \
 		hyper-tls-0.4.3 \
-		idna-0.2.0 \
-		indexmap-1.6.0 \
+		idna-0.2.3 \
+		indexmap-1.7.0 \
 		indoc-0.3.6 \
 		indoc-impl-0.3.6 \
-		instant-0.1.7 \
-		intl_pluralrules-6.0.0 \
-		inventory-0.1.9 \
-		inventory-impl-0.1.9 \
+		instant-0.1.10 \
+		intl-memoizer-0.5.1 \
+		intl_pluralrules-7.0.1 \
+		inventory-0.1.10 \
+		inventory-impl-0.1.10 \
 		iovec-0.1.4 \
-		itertools-0.8.2 \
+		ipnet-2.3.1 \
 		itertools-0.9.0 \
-		itoa-0.4.6 \
-		js-sys-0.3.45 \
+		itoa-0.4.7 \
+		js-sys-0.3.51 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
 		lexical-core-0.7.6 \
-		libc-0.2.79 \
-		libsqlite3-sys-0.18.0 \
-		linked-hash-map-0.5.3 \
-		lock_api-0.4.1 \
-		log-0.4.11 \
-		lru-cache-0.1.2 \
+		libc-0.2.98 \
+		libsqlite3-sys-0.20.1 \
+		lock_api-0.4.4 \
+		log-0.4.14 \
+		mac-0.1.1 \
+		maplit-1.0.2 \
+		markup5ever-0.10.1 \
+		markup5ever_rcdom-0.1.0 \
 		matches-0.1.8 \
-		maybe-uninit-2.0.0 \
-		memchr-2.3.3 \
+		memchr-2.4.0 \
 		mime-0.3.16 \
 		mime_guess-2.0.3 \
-		miniz_oxide-0.4.3 \
-		mio-0.6.22 \
-		miow-0.2.1 \
-		multimap-0.8.2 \
-		native-tls-0.2.4 \
-		net2-0.2.35 \
+		miniz_oxide-0.4.4 \
+		mio-0.6.23 \
+		miow-0.2.2 \
+		multimap-0.8.3 \
+		native-tls-0.2.7 \
+		net2-0.2.37 \
+		new_debug_unreachable-1.0.4 \
 		nodrop-0.1.14 \
-		nom-5.1.2 \
+		nom-6.1.2 \
 		num-format-0.4.0 \
-		num-integer-0.1.43 \
-		num-traits-0.2.12 \
+		num-integer-0.1.44 \
+		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
-		num_enum-0.5.1 \
-		num_enum_derive-0.5.1 \
-		object-0.21.1 \
-		once_cell-1.4.1 \
-		openssl-0.10.30 \
-		openssl-probe-0.1.2 \
-		openssl-sys-0.9.58 \
-		parking_lot-0.11.0 \
-		parking_lot_core-0.8.0 \
+		num_enum-0.5.2 \
+		num_enum_derive-0.5.2 \
+		object-0.25.3 \
+		once_cell-1.8.0 \
+		openssl-0.10.35 \
+		openssl-probe-0.1.4 \
+		openssl-sys-0.9.65 \
+		parking_lot-0.11.1 \
+		parking_lot_core-0.8.3 \
 		paste-0.1.18 \
 		paste-impl-0.1.18 \
 		percent-encoding-2.1.0 \
 		petgraph-0.5.1 \
-		pin-project-0.4.27 \
-		pin-project-internal-0.4.27 \
-		pin-project-lite-0.1.11 \
+		phf-0.8.0 \
+		phf_codegen-0.8.0 \
+		phf_generator-0.8.0 \
+		phf_shared-0.8.0 \
+		pin-project-1.0.8 \
+		pin-project-internal-1.0.8 \
+		pin-project-lite-0.1.12 \
+		pin-project-lite-0.2.7 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.19 \
-		podio-0.1.7 \
-		ppv-lite86-0.2.9 \
-		proc-macro-crate-0.1.5 \
-		proc-macro-hack-0.5.18 \
+		ppv-lite86-0.2.10 \
+		precomputed-hash-0.1.1 \
+		proc-macro-crate-1.0.0 \
+		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.6 \
-		proc-macro2-1.0.24 \
-		prost-0.6.1 \
-		prost-build-0.6.1 \
-		prost-derive-0.6.1 \
-		prost-types-0.6.1 \
-		pyo3-0.11.1 \
-		pyo3-derive-backend-0.11.1 \
-		pyo3cls-0.11.1 \
-		quote-1.0.7 \
+		proc-macro2-1.0.27 \
+		prost-0.7.0 \
+		prost-build-0.7.0 \
+		prost-derive-0.7.0 \
+		prost-types-0.7.0 \
+		pulldown-cmark-0.8.0 \
+		pyo3-0.13.2 \
+		pyo3-macros-0.13.2 \
+		pyo3-macros-backend-0.13.2 \
+		quote-1.0.9 \
+		radium-0.5.3 \
 		rand-0.7.3 \
+		rand-0.8.4 \
 		rand_chacha-0.2.2 \
+		rand_chacha-0.3.1 \
 		rand_core-0.5.1 \
+		rand_core-0.6.3 \
 		rand_hc-0.2.0 \
-		redox_syscall-0.1.57 \
-		redox_users-0.3.5 \
-		regex-1.4.1 \
-		regex-syntax-0.6.20 \
+		rand_hc-0.3.1 \
+		rand_pcg-0.2.1 \
+		redox_syscall-0.2.9 \
+		redox_users-0.4.0 \
+		regex-1.5.4 \
+		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
-		rental-0.5.5 \
+		rental-0.5.6 \
 		rental-impl-0.5.5 \
-		rusqlite-0.23.1 \
-		rust-argon2-0.8.2 \
-		rustc-demangle-0.1.18 \
+		ring-0.16.20 \
+		rusqlite-0.24.2 \
+		rustc-demangle-0.1.20 \
+		rustc-hash-1.1.0 \
+		rustls-0.18.1 \
+		rustversion-1.0.5 \
 		ryu-1.0.5 \
 		schannel-0.1.19 \
 		scopeguard-1.1.0 \
-		security-framework-0.4.4 \
-		security-framework-sys-0.4.3 \
-		serde-1.0.117 \
+		sct-0.6.1 \
+		security-framework-2.3.1 \
+		security-framework-sys-2.3.0 \
+		serde-1.0.126 \
 		serde-aux-0.6.1 \
-		serde_derive-1.0.117 \
-		serde_json-1.0.59 \
-		serde_repr-0.1.6 \
+		serde_derive-1.0.126 \
+		serde_json-1.0.64 \
+		serde_repr-0.1.7 \
 		serde_tuple-0.5.0 \
 		serde_tuple_macros-0.5.0 \
 		serde_urlencoded-0.6.1 \
 		sha1-0.6.0 \
-		slab-0.4.2 \
-		slog-2.5.2 \
-		slog-async-2.5.0 \
+		siphasher-0.3.5 \
+		slab-0.4.3 \
+		slog-2.7.0 \
+		slog-async-2.6.0 \
 		slog-envlogger-2.2.0 \
-		slog-scope-4.3.0 \
+		slog-scope-4.4.0 \
 		slog-stdlog-4.1.0 \
-		slog-term-2.6.0 \
-		smallvec-1.4.2 \
-		socket2-0.3.15 \
+		slog-term-2.8.0 \
+		smallvec-1.6.1 \
+		socket2-0.3.19 \
+		spin-0.5.2 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
-		subtle-2.3.0 \
-		syn-1.0.46 \
-		synstructure-0.12.4 \
+		string_cache-0.8.1 \
+		string_cache_codegen-0.5.1 \
+		subtle-2.4.1 \
+		syn-1.0.74 \
+		synstructure-0.12.5 \
 		take_mut-0.2.2 \
-		tempfile-3.1.0 \
-		term-0.6.1 \
-		thiserror-1.0.21 \
-		thiserror-impl-1.0.21 \
-		thread_local-1.0.1 \
-		time-0.1.44 \
+		tap-1.0.1 \
+		tempfile-3.2.0 \
+		tendril-0.4.2 \
+		term-0.7.0 \
+		termcolor-1.1.2 \
+		thiserror-1.0.26 \
+		thiserror-impl-1.0.26 \
+		thread_local-1.1.3 \
+		time-0.1.43 \
 		tinystr-0.3.4 \
-		tinyvec-0.3.4 \
-		tokio-0.2.22 \
-		tokio-socks-0.2.2 \
+		tinyvec-1.3.1 \
+		tinyvec_macros-0.1.0 \
+		tokio-0.2.25 \
+		tokio-rustls-0.14.1 \
+		tokio-socks-0.3.0 \
 		tokio-tls-0.3.1 \
 		tokio-util-0.3.1 \
-		toml-0.5.7 \
-		tower-service-0.3.0 \
-		tracing-0.1.21 \
-		tracing-core-0.1.17 \
+		toml-0.5.8 \
+		tower-service-0.3.1 \
+		tracing-0.1.26 \
+		tracing-core-0.1.18 \
+		tracing-futures-0.2.5 \
 		try-lock-0.2.3 \
-		type-map-0.3.0 \
-		typenum-1.12.0 \
-		unic-langid-0.8.0 \
-		unic-langid-impl-0.8.0 \
-		unic-langid-macros-0.8.0 \
-		unic-langid-macros-impl-0.8.0 \
+		type-map-0.4.0 \
+		typenum-1.13.0 \
+		unic-langid-0.9.0 \
+		unic-langid-impl-0.9.0 \
+		unic-langid-macros-0.9.0 \
+		unic-langid-macros-impl-0.9.0 \
 		unicase-2.6.0 \
-		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.13 \
-		unicode-segmentation-1.6.0 \
-		unicode-xid-0.2.1 \
+		unicode-bidi-0.3.5 \
+		unicode-normalization-0.1.19 \
+		unicode-segmentation-1.8.0 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.2 \
 		unindent-0.1.7 \
-		url-2.1.1 \
+		untrusted-0.7.1 \
+		url-2.2.2 \
+		utf-8-0.7.6 \
 		utime-0.3.1 \
-		vcpkg-0.2.10 \
-		version_check-0.9.2 \
+		vcpkg-0.2.15 \
+		version_check-0.9.3 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
-		wasi-0.10.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.68 \
-		wasm-bindgen-backend-0.2.68 \
-		wasm-bindgen-futures-0.4.18 \
-		wasm-bindgen-macro-0.2.68 \
-		wasm-bindgen-macro-support-0.2.68 \
-		wasm-bindgen-shared-0.2.68 \
-		web-sys-0.3.45 \
-		which-3.1.1 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.74 \
+		wasm-bindgen-backend-0.2.74 \
+		wasm-bindgen-futures-0.4.24 \
+		wasm-bindgen-macro-0.2.74 \
+		wasm-bindgen-macro-support-0.2.74 \
+		wasm-bindgen-shared-0.2.74 \
+		web-sys-0.3.51 \
+		webpki-0.21.4 \
+		webpki-roots-0.20.0 \
+		which-4.1.0 \
 		winapi-0.2.8 \
 		winapi-0.3.9 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winreg-0.6.2 \
+		winreg-0.7.0 \
 		ws2_32-sys-0.2.1 \
-		zip-0.5.6
+		wyz-0.2.0 \
+		xml5ever-0.16.1 \
+		zip-0.5.13
 CARGO_USE_GITHUB=	yes
-
-CARGO_CARGOLOCK=	${WRKSRC}/rspy/Cargo.lock
-CARGO_CARGOTOML=	${WRKSRC}/rspy/Cargo.toml
+CARGO_CARGOTOML=	${WRKSRC}/pylib/rsbridge/Cargo.toml
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 
-MAKE_ARGS=	DEVEL="rspy pylib ts qt" PYTHON_FILE="${PYTHON_CMD}" SHELL="${LOCALBASE}/bin/bash"
-# devel/py-maturin  acts as a wrapper for "cargo" and "rustc".  Ensure that it
-# uses the arguments/flags for Rust of the Ports framework.
-MAKE_ARGS+=	BUILDFLAGS="--cargo-extra-args='${CARGO_BUILD_ARGS} --verbose'"
-MAKE_ENV=	${CARGO_ENV} npm_config_offline=true
+# BAZEL=1 is required otherwise ${WRKSRC}/rslib/build/main.rs produces a dummy
+# buildinfo.txt that doesn't contain the actual build hash.
+CARGO_ENV=	BAZEL=1 \
+		BUILDINFO=${_MY_LOCALREPO}/rust_output/buildinfo.txt \
+		PYO3_PYTHON=${PYTHON_CMD} \
+		PROTOC=${LOCALBASE}/bin/protoc \
+		BACKEND_PROTO=${WRKSRC}/rslib/backend.proto \
+		RSLIB_FTL_ROOT=${_MY_LOCALREPO}/ftlrslib/l10n.toml \
+		EXTRA_FTL_ROOT=${_MY_LOCALREPO}/ftlextra/l10n.toml
 
-ALL_TARGET=		build
-
-PLIST_SUB=	_PY_SONAME=${_PY_SONAME}
-
-OPTIONS_DEFINE=		NLS
 OPTIONS_DEFAULT=	MPV
 OPTIONS_GROUP=		PLAYER
 OPTIONS_GROUP_PLAYER=	MPLAYER MPV
@@ -350,101 +409,164 @@ MPV_DESC=	mpv media player support
 MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 MPV_RUN_DEPENDS=	mpv:multimedia/mpv
 
-NLS_USES=	gettext
-
 # Should contain the most recent commit that reflects ${DISTVERSION} and must
 # be exactly 8 digits otherwise the check for newer versions won't work as
 # expected.
-_MY_BUILDHASH=	84dcaa86
+_MY_BUILDHASH=	b2b3275f
+# Path of the local bazel repositories
+_MY_LOCALREPO=	${WRKSRC}/local_repos
+# Path of cache that is used by www/yarn
+_MY_YARNCACHE=	${WRKDIR}/.yarn
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-_PY_SONAME=	.cpython-${PYTHON_SUFFIX}m
-.else
-_PY_SONAME=	${PYTHON_EXT_SUFFIX}
-.endif
-
-# Place the translation files to the appropriate directories
 post-extract:
-	@${RLN} ${WRKSRC_i18ncore} ${WRKSRC}/rslib/ftl/repo
-	@${RLN} ${WRKSRC_i18nfluent} ${WRKSRC}/qt/ftl/repo
-	@${RLN} ${WRKSRC_i18ndesktop} ${WRKSRC}/qt/po/repo
+	# Create a configuration file for bazel
+	@${ECHO_CMD} "startup --batch" > ${WRKSRC}/user.bazelrc
+	# Create local repositories which are used by bazel
+	@${MKDIR} ${_MY_LOCALREPO} \
+		${_MY_LOCALREPO}/local_node/node/bin \
+		${_MY_LOCALREPO}/local_node/node/lib \
+		${_MY_LOCALREPO}/local_node/yarn/bin \
+		${_MY_LOCALREPO}/protoc_bin_freebsd/bin \
+		${_MY_LOCALREPO}/pyqt5 \
+		${_MY_LOCALREPO}/rust_output/fluent_proto \
+		${_MY_LOCALREPO}/rust_output/librsbridge
+	# Create empty WORKSPACE files in the top directory of each local
+	# repository
+	@${TOUCH} ${_MY_LOCALREPO}/local_node/WORKSPACE \
+		${_MY_LOCALREPO}/protoc_bin_freebsd/WORKSPACE \
+		${_MY_LOCALREPO}/pyqt5/WORKSPACE \
+		${_MY_LOCALREPO}/rust_output/WORKSPACE
+	# Copy the bazel rules for NodeJS to the custom local repository as
+	# they need some patching
+	@${CP} -r ${WRKSRC_bzlrnodejs} ${_MY_LOCALREPO}/rules_nodejs
+	# Link the remaining bazel rules into the custom local repository as
+	# they don't need to be patched
+.for _dir in bzlskylib bzlrcc bzlrjava bzlrpip bzlrproto bzlrpython bzlrrust bzlrsass bzlrsvelte ftlextra ftlrslib
+	@${RLN} ${WRKSRC_${_dir}} ${_MY_LOCALREPO}/${_dir:S/bzlr/rules_/}
+.endfor
+	# Copy custom BUILD.bazel files to the local repositories
+	@${CP} ${FILESDIR}/bazel/BUILD.bazel-local_node \
+		${_MY_LOCALREPO}/local_node/BUILD.bazel
+	@${CP} ${FILESDIR}/bazel/BUILD.bazel-protoc_bin_freebsd \
+		${_MY_LOCALREPO}/protoc_bin_freebsd/BUILD.bazel
+	@${CP} ${FILESDIR}/bazel/BUILD.bazel-pyqt5 \
+		${_MY_LOCALREPO}/pyqt5/BUILD.bazel
+	@${CP} ${FILESDIR}/bazel/BUILD.bazel-rust_output-fluent_proto \
+		${_MY_LOCALREPO}/rust_output/fluent_proto/BUILD.bazel
+	@${CP} ${FILESDIR}/bazel/BUILD.bazel-rust_output-librsbridge \
+		${_MY_LOCALREPO}/rust_output/librsbridge/BUILD.bazel
+	@${CP} ${FILESDIR}/bazel/BUILD.bazel-i18n ${WRKSRC_ftlrslib}/BUILD.bazel
+	@${CP} ${FILESDIR}/bazel/BUILD.bazel-i18n ${WRKSRC_ftlextra}/BUILD.bazel
+	# Move some files out of the way as they will be replaced by custom copies.
+	@${MV} ${WRKSRC}/repos.bzl ${WRKSRC}/repos.bzl.dist
+	@${MV} ${WRKSRC}/pip/pyqt5/defs.bzl ${WRKSRC}/pip/pyqt5/defs.bzl.dist
+	@${MV} ${WRKSRC}/pylib/rsbridge/BUILD.bazel ${WRKSRC}/pylib/rsbridge/BUILD.bazel.dist
+	@${MV} ${WRKSRC}/rslib/BUILD.bazel ${WRKSRC}/rslib/BUILD.bazel.dist
+	# Required for a successful Rust compilation
+	@${MV} ${WRKSRC}/Cargo.lock ${WRKSRC}/Cargo.lock.dist
+	# Copy the replacement files
+	@${CP} ${FILESDIR}/bazel/repos.bzl ${WRKSRC}/
+	@${CP} ${FILESDIR}/bazel/pyqt5.bzl ${WRKSRC}/pip/pyqt5/defs.bzl
+	@${CP} ${FILESDIR}/bazel/BUILD.bazel-pylib-rsbridge \
+		${WRKSRC}/pylib/rsbridge/BUILD.bazel
+	@${CP} ${FILESDIR}/bazel/BUILD.bazel-rslib \
+		${WRKSRC}/rslib/BUILD.bazel
 
 post-patch:
-	# Add trailing directory names to cargo repositories
-	@${REINPLACE_CMD} -Ee '/^fluent =/ s|(${WRKSRC_fluent})|\1/fluent|; \
-		/^intl-memoizer =/ s|(${WRKSRC_fluent})|\1/intl-memoizer|' ${WRKSRC}/rslib/Cargo.toml
-	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/qt/runanki
-	@${REINPLACE_CMD} -e 's|%%MAKE_CMD%%|${MAKE_CMD}|' ${WRKSRC}/qt/Makefile
-	@${REINPLACE_CMD} -e 's|%%UNZIP_NATIVE_CMD%%|${UNZIP_NATIVE_CMD}|' ${WRKSRC}/rspy/Makefile
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${_MY_LOCALREPO}/rules_nodejs/internal/node/node_patches.js
+	@${REINPLACE_CMD} -e 's|\@PREFIX\@|${PREFIX}|' \
+		${WRKSRC}/qt/tools/runanki.system.in
+	@${REINPLACE_CMD} -e 's|%%_MY_BUILDHASH%%|${_MY_BUILDHASH}|' \
+		${WRKSRC}/scripts/status.sh
+	@${REINPLACE_CMD} -e 's|%%_MY_LOCALREPO%%|${_MY_LOCALREPO}|g' \
+		${WRKSRC}/repos.bzl ${WRKSRC}/protobuf.bzl
+	@${REINPLACE_CMD} -e 's|%%_MY_YARNCACHE%%|${_MY_YARNCACHE}|' \
+		${_MY_LOCALREPO}/rules_nodejs/internal/npm_install/npm_install.bzl
 
-post-patch-NLS-on:
-	@${REINPLACE_CMD} -e 's|### NLS ###||' ${WRKSRC}/qt/Makefile
-
-# Although PYTHON_FILE is set to ${PYTHON_CMD} via MAKE_ARGS to make the
-# compilation of the pyo3 crate possible there are also hardcoded "python"
-# occurences in too many places.
 pre-configure:
-	${MKDIR} ${WRKDIR}/.bin && ${LN} -s ${PYTHON_CMD} ${WRKDIR}/.bin/python
+	# Link the binaries of Node, Protobuf and Yarn into the local bazel
+	# repositories to provide them during build.
+	${LN} -s ${LOCALBASE}/bin/protoc-gen-mypy ${WRKSRC}/pylib/tools/protoc-gen-mypy
+	${LN} -s ${LOCALBASE}/bin/node ${_MY_LOCALREPO}/local_node/node/bin/node
+	${LN} -s ${LOCALBASE}/bin/yarn.js ${_MY_LOCALREPO}/local_node/yarn/bin/yarn.js
+	${LN} -s ${LOCALBASE}/bin/protoc ${_MY_LOCALREPO}/protoc_bin_freebsd/bin/protoc
 
 # Overview of the build process
 #
+# Steps 1 and 2 are built separately from the bazel build process.
+#
 # 1. rslib (Rust library, implictly built by step 2)
-#    `-> produces ${WRKSRC}/proto/fluent.proto
-# 2. rspy (Rust/Python bridge) which is built by devel/py-maturin
-#    `-> produces ${WRKSRC}/pylib/ankirspy.cpython-${PYTHON_SUFFIX}m.so
-# 3. pylib (Python-only library)
-# 4. ts (builds ${WRKSRC}/ts/node_modules/.bin/{tsc,sass})
-# 5. qt (Python library with Qt5 bindings)
+#    `-> produces ${_MY_LOCALREPO}/rust_output/fluent.proto
+# 2. pylib/rsbridge (Rust/Python bridge)
+#    `-> produces ${_MY_LOCALREPO}/rust_output/librsbridge.so
+# 3. The remaining components (Python, Qt5 and JS) are built by bazel
 pre-build:
-	# Set the buildhash that is used at various places during build.
-	${ECHO_CMD} ${_MY_BUILDHASH} > ${WRKSRC}/meta/buildhash
+	# Generate buildinfo.txt which is used via BUILDINFO in ${CARGO_ENV} during
+	# compilation.
+	${ECHO_CMD} -e "STABLE_VERSION ${DISTVERSION}\nSTABLE_BUILDHASH ${_MY_BUILDHASH}" >> ${_MY_LOCALREPO}/rust_output/buildinfo.txt
+	${CARGO_CARGO_RUN} build \
+		--manifest-path ${CARGO_CARGOTOML} \
+		--verbose \
+		${CARGO_BUILD_ARGS}
+	# These files are required for the remaining build process via bazel so copy
+	# them the local repository.
+	${CP} `${FIND} ${CARGO_TARGET_DIR} -name "fluent.proto"` ${_MY_LOCALREPO}/rust_output/fluent_proto/
+	${CP} `${FIND} ${CARGO_TARGET_DIR} -name "librsbridge.so"` ${_MY_LOCALREPO}/rust_output/librsbridge/
+
+do-build:
+	cd ${WRKSRC} && \
+		bazel --output_user_root="${WRKDIR}/.bazel" build \
+			--action_env=PYTHON_SITE_PACKAGES="${PYTHON_SITELIBDIR}" \
+			--action_env=PYTHON_SYS_EXECUTABLE="${PYTHON_CMD}" \
+			--compilation_mode opt \
+			--subcommands \
+		dist
 
 post-build:
+	${TAR} -xf `${FIND} ${WRKDIR}/.bazel -name "dist.tar"` -C ${WRKSRC}
+	cd ${WRKSRC}/bazel-dist && \
+		${UNZIP_NATIVE_CMD} anki-${DISTVERSION}-*.whl && \
+		${UNZIP_NATIVE_CMD} aqt-${DISTVERSION}-*.whl
 	# Compile Anki's Python libary (pylib) and Qt5 library (aqt) to prepare
 	# them for installation
-	${PYTHON_CMD} -m compileall ${WRKSRC}/pylib/anki
-	${PYTHON_CMD} -O -m compileall ${WRKSRC}/pylib/anki
-	${PYTHON_CMD} -m compileall ${WRKSRC}/qt/aqt
-	${PYTHON_CMD} -O -m compileall ${WRKSRC}/qt/aqt
+	${PYTHON_CMD} -m compileall ${WRKSRC}/bazel-dist/anki
+	${PYTHON_CMD} -O -m compileall ${WRKSRC}/bazel-dist/anki
+	${PYTHON_CMD} -m compileall ${WRKSRC}/bazel-dist/aqt
+	${PYTHON_CMD} -O -m compileall ${WRKSRC}/bazel-dist/aqt
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/anki \
 			${STAGEDIR}${DATADIR}/aqt \
-			${STAGEDIR}${DATADIR}/aqt_data \
 			${STAGEDIR}${PREFIX}/share/pixmaps \
 			${STAGEDIR}${PREFIX}/share/applications
-	cd ${WRKSRC}/pylib \
+	cd ${WRKSRC}/bazel-dist/ \
 		&& ${COPYTREE_SHARE} anki ${STAGEDIR}${DATADIR} "! -name .gitignore" \
-		&& ${INSTALL_LIB} *.so ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC}/qt \
-		&& ${COPYTREE_SHARE} aqt ${STAGEDIR}${DATADIR} "! -name .gitignore" \
-		&& ${COPYTREE_SHARE} aqt_data ${STAGEDIR}${DATADIR} "! -name .gitignore" \
+		&& ${COPYTREE_SHARE} aqt ${STAGEDIR}${DATADIR} "! -name .gitignore"
+	cd ${WRKSRC}/qt/linux \
 		&& ${INSTALL_DATA} anki.xpm anki.png ${STAGEDIR}${PREFIX}/share/pixmaps \
 		&& ${INSTALL_DATA} anki.desktop ${STAGEDIR}${PREFIX}/share/applications \
-		&& ${INSTALL_MAN} anki.1 ${STAGEDIR}${MANPREFIX}/man/man1 \
-		&& ${INSTALL_SCRIPT} runanki ${STAGEDIR}${PREFIX}/bin/anki
+		&& ${INSTALL_MAN} anki.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	cd ${WRKSRC}/qt/tools \
+		&& ${INSTALL_SCRIPT} runanki.system.in ${STAGEDIR}${PREFIX}/bin/anki
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/anki/_backend/rsbridge.so
 
-# Helper target to make the generation of the npm cache easier
-#
-# The command "npx pbjs" tries to install additional dependencies for the CLI
-# component of the "protobufjs" package and will fail during build because the
-# environment variable "npm_config_offline" is set to "true" via ${MAKE_ENV}.
-#
-# Thus "npx pbjs" is issued after "npm install" to get the remaining
-# dependencies to populate the cache with them.
-make-npm-cache:
+# Helper target to make the generation of the yarn cache easier
+make-yarn-cache:
 	# Run "make extract" before executing this target
-	@cd ${WRKDIR} && ${RM} -r .npm
+	@${RM} -r ${_MY_YARNCACHE}
 	@cd ${WRKSRC}/ts \
-		&& ${SETENV} HOME=${WRKDIR} npm install \
-		&& ${TOUCH} in.proto \
-		&& ${SETENV} HOME=${WRKDIR} npx --cache ${WRKDIR}/.npm pbjs -q -t static-module in.proto -o out.proto
-	@cd ${WRKDIR}/.npm \
-		&& ${RM} -r _locks anonymous-cli-metrics.json
+		&& ${LOCALBASE}/bin/yarn --cache-folder ${_MY_YARNCACHE} install
+	@cd ${WRKSRC_bzlrnodejs}/packages/labs/grpc_web/ \
+		&& ${LOCALBASE}/bin/yarn --cache-folder ${_MY_YARNCACHE} install
+	@cd ${WRKSRC_bzlrnodejs}/packages/labs/protobufjs/ \
+		&& ${LOCALBASE}/bin/yarn --cache-folder ${_MY_YARNCACHE} install
+	@cd ${WRKSRC_bzlrsass}/sass \
+		&& ${LOCALBASE}/bin/yarn --cache-folder ${_MY_YARNCACHE} install
+	@cd ${WRKSRC_bzlrsvelte}/internal \
+		&& ${LOCALBASE}/bin/yarn --cache-folder ${_MY_YARNCACHE} install
 	@cd ${WRKDIR} \
-		&& ${TAR} -czf ${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX} .npm \
-		&& ${ECHO} "Please upload the file ${WRKDIR}/${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}"
+		&& ${TAR} -czf ${PORTNAME}-yarn-cache-${DISTVERSION}${EXTRACT_SUFX} .yarn \
+		&& ${ECHO} "Please upload the file ${WRKDIR}/${PORTNAME}-yarn-cache-${DISTVERSION}${EXTRACT_SUFX}"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
