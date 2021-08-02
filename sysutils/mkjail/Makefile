@@ -1,5 +1,5 @@
 PORTNAME=	mkjail
-DISTVERSION=	0.0.1
+DISTVERSION=	0.0.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	fuz@fuz.su

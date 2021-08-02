@@ -3,5 +3,6 @@ bin/mkjail
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%DATADIR%%/create.sh
 %%DATADIR%%/getrelease.sh
+%%DATADIR%%/lib.sh
 %%DATADIR%%/update.sh
 %%DATADIR%%/upgrade.sh
