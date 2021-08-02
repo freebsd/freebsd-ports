@@ -12,6 +12,8 @@ include/jxl/jxl_export.h
 include/jxl/jxl_threads_export.h
 include/jxl/memory_manager.h
 include/jxl/parallel_runner.h
+include/jxl/resizable_parallel_runner.h
+include/jxl/resizable_parallel_runner_cxx.h
 include/jxl/thread_parallel_runner.h
 include/jxl/thread_parallel_runner_cxx.h
 include/jxl/types.h
@@ -19,12 +21,12 @@ include/jxl/types.h
 lib/libjxl.a
 lib/libjxl.so
 lib/libjxl.so.0
-lib/libjxl.so.0.3.7
+lib/libjxl.so.0.5.0
 lib/libjxl_dec.a
 lib/libjxl_threads.a
 lib/libjxl_threads.so
 lib/libjxl_threads.so.0
-lib/libjxl_threads.so.0.3.7
+lib/libjxl_threads.so.0.5.0
 libdata/pkgconfig/libjxl.pc
 libdata/pkgconfig/libjxl_threads.pc
 %%GIMP%%libexec/gimp/2.2/plug-ins/file-jxl/file-jxl

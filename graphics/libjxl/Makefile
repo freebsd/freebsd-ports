@@ -1,7 +1,6 @@
 PORTNAME=	libjxl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.7
-PORTREVISION=	3
+DISTVERSION=	0.5
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -22,7 +21,7 @@ USES=		cmake:testing compiler:c++11-lib localbase:ldflags pkgconfig shared-mime-
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_TUPLE=	barmco:skcms:6437475:skcms/third_party/skcms \
-		google:highway:0.11.1:highway/third_party/highway \
+		google:highway:0.12.2-4-ge239774:highway/third_party/highway \
 		lvandeve:lodepng:48e5364:lodepng/third_party/lodepng \
 		webmproject:sjpeg:868ab55:sjpeg/third_party/sjpeg \
 		${NULL}
@@ -58,7 +57,7 @@ LTO_LDFLAGS=		-fuse-ld=lld
 
 MANPAGES_BUILD_DEPENDS=	a2x:textproc/asciidoc
 MANPAGES_USES=		python:build
-MANPAGES_CMAKE_BOOL_OFF=CMAKE_DISABLE_FIND_PACKAGE_Python
+MANPAGES_CMAKE_BOOL=	JPEGXL_ENABLE_MANPAGES
 
 OPENEXR_LIB_DEPENDS=	libImath.so:math/Imath \
 			libOpenEXR.so:graphics/openexr

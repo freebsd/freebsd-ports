@@ -1,10 +1,10 @@
-TIMESTAMP = 1617017470
-SHA256 (libjxl-libjxl-v0.3.7_GH0.tar.gz) = 8318a5d1ce82e5683a52512b6f242d2b33a1191e89fc76f7c0ead0a1d60f6c60
-SIZE (libjxl-libjxl-v0.3.7_GH0.tar.gz) = 14563688
+TIMESTAMP = 1627921201
+SHA256 (libjxl-libjxl-v0.5_GH0.tar.gz) = 911cb4b50eb621131ca22382166f40d4914a4ff4453dd299ade1e3292f311f89
+SIZE (libjxl-libjxl-v0.5_GH0.tar.gz) = 16868006
 SHA256 (barmco-skcms-6437475_GH0.tar.gz) = 6818ea7aa053a964d1795d6d1d3c5e2aad5d30dff9817c8e604e324ef643ec01
 SIZE (barmco-skcms-6437475_GH0.tar.gz) = 9200034
-SHA256 (google-highway-0.11.1_GH0.tar.gz) = 4c4bb9501c02b27a0944afde8923aaab554384690d37e5b2a7f97553426ea641
-SIZE (google-highway-0.11.1_GH0.tar.gz) = 1444575
+SHA256 (google-highway-0.12.2-4-ge239774_GH0.tar.gz) = 27ae8a40f82874cb30bd62ef8f5567cc27838ee258ed0af47745685a15b23a8e
+SIZE (google-highway-0.12.2-4-ge239774_GH0.tar.gz) = 1488138
 SHA256 (lvandeve-lodepng-48e5364_GH0.tar.gz) = 41e0bcc686e31ee2d51a6c87c0089045f4805e4053d39026ad02e8aa90c782c1
 SIZE (lvandeve-lodepng-48e5364_GH0.tar.gz) = 239988
 SHA256 (webmproject-sjpeg-868ab55_GH0.tar.gz) = ffe757b376fed2fd94473f8625c25f82a3a23aa317fb1bbf1ac8159b6e0a7726
