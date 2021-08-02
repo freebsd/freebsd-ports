@@ -1,6 +1,7 @@
 bin/zrythm
 bin/zrythm_gdb
 bin/zrythm_launch
+bin/zrythm_lv2apply
 bin/zrythm_valgrind
 share/applications/org.zrythm.Zrythm.desktop
 share/fonts/zrythm/DSEG14-Classic-MINI/DSEG-LICENSE.txt
