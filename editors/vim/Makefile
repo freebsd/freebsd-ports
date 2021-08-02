@@ -2,6 +2,7 @@
 
 PORTNAME=	vim
 PORTVERSION=	8.2.3273
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -18,7 +19,9 @@ USE_GITHUB=	yes
 
 CONFLICTS_INSTALL?=	vim-console vim-tiny
 
-CONFIGURE_ARGS=	--enable-gui=${GUI} \
+# Vim will try to link against libcanberra if it's installed
+CONFIGURE_ARGS=	--disable-canberra \
+		--enable-gui=${GUI} \
 		--enable-multibyte \
 		--with-tlib=ncursesw
 MAKE_ARGS=	STRIP="${STRIP_CMD}" \
@@ -33,7 +36,7 @@ PORTSCOUT=	ignore:1
 SHEBANG_FILES=	runtime/tools/demoserver.py runtime/tools/efm_perl.pl
 VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
 
-# OPTIONS
+# OPTIONS for normal (non-tiny) vim
 # ### Make sure any new options are excluded below in CONSOLE/TINY
 OPTIONS_DEFAULT=	CSCOPE DEFAULT_VIMRC CTAGS_EXUBERANT GTK3 PERL PYTHON RUBY
 OPTIONS_DEFINE=		CSCOPE DEFAULT_VIMRC MAKE_JOBS NLS XTERM_SAVE
@@ -44,9 +47,9 @@ OPTIONS_GROUP=		LANGBIND
 OPTIONS_GROUP_LANGBIND=	LUA PERL PYTHON RUBY SCHEME TCL
 OPTIONS_SUB=		yes
 
+# vim-tiny excludes everything except CONSOLE, DEFAULT_VIMRC, MAKE_JOBS
 .if defined(CONSOLE) || defined(TINY)
 OPTIONS_SLAVE=		CONSOLE
-# Exclude everything except CONSOLE, DEFAULT_VIMRC, MAKE_JOBS
 OPTIONS_EXCLUDE:=	${OPTIONS_DEFINE:NDEFAULT_VIMRC:NMAKE_JOBS} \
 			${OPTIONS_SINGLE_UI:NCONSOLE} \
 			${OPTIONS_GROUP_LANGBIND} \
