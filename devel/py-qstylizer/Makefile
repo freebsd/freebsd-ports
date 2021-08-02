@@ -1,7 +1,7 @@
 # Created by: Rainer Hurling <rhurlin@gwdg.de>
 
 PORTNAME=	qstylizer
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
