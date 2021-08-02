@@ -9,9 +9,9 @@ PATCHFILES+=	adb32f3f8f37.patch:-p1 # https://github.com/libjxl/libjxl/pull/193
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	JPEG XL reference encoder/decoder
 
-LICENSE=	APACHE20 BSD3CLAUSE ZLIB
+LICENSE=	BSD3CLAUSE ZLIB
 LICENSE_COMB=	multi
-LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/third_party/skcms/LICENSE
+LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC}/third_party/lodepng/LICENSE
 
 LIB_DEPENDS=	libbrotlienc.so:archivers/brotli
