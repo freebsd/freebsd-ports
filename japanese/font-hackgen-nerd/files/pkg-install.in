@@ -5,7 +5,7 @@ catfontsdir()
     while read _IN
     do
       case "${_IN}" in
-      *-misc-hackgen*-*|[0-9]*|"") ;;
+      *-misc-hackgen*nerd*-*|[0-9]*|"") ;;
       *)       echo ${_IN} ;;
       esac
     done
@@ -48,14 +48,14 @@ addentries()
 {
 	for ENC in iso8859-1 iso10646-1 jisx0201.1976-0 jisx0208.1983-0 jisx0208.1990-0 jisx0208.1997-0 jisx0213.2004-1
 	do
-		make_xlfd $ENC HackGen-Regular.ttf misc "hackgen" m medium
-		make_xlfd $ENC HackGen-Bold.ttf misc "hackgen" m bold
-		make_xlfd $ENC HackGenConsole-Regular.ttf misc "hackgenconsole" m medium
-		make_xlfd $ENC HackGenConsole-Bold.ttf misc "hackgenconsole" m bold
-		make_xlfd $ENC HackGen35-Regular.ttf misc "hackgen35" m medium
-		make_xlfd $ENC HackGen35-Bold.ttf misc "hackgen35" m bold
-		make_xlfd $ENC HackGen35Console-Regular.ttf misc "hackgen35console" m medium
-		make_xlfd $ENC HackgEn35Console-Bold.ttf misc "hackgen35console" m bold
+		make_xlfd $ENC HackGenNerd-Regular.ttf misc "hackgennerd" m medium
+		make_xlfd $ENC HackGenNerd-Bold.ttf misc "hackgennerd" m bold
+		make_xlfd $ENC HackGenNerdConsole-Regular.ttf misc "hackgennerdconsole" m medium
+		make_xlfd $ENC HackGenNerdConsole-Bold.ttf misc "hackgennerdconsole" m bold
+		make_xlfd $ENC HackGen35Nerd-Regular.ttf misc "hackgen35nerd" m medium
+		make_xlfd $ENC HackGen35Nerd-Bold.ttf misc "hackgen35nerd" m bold
+		make_xlfd $ENC HackGen35NerdConsole-Regular.ttf misc "hackgen35nerdconsole" m medium
+		make_xlfd $ENC HackgEn35NerdConsole-Bold.ttf misc "hackgen35nerdconsole" m bold
 	done
 }
 

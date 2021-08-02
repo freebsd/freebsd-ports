@@ -5,7 +5,7 @@ catfontsdir()
     while read _IN
     do
       case "${_IN}" in
-      *-misc-hackgen*-*|[0-9]*|"") ;;
+      *-misc-hackgen(|35)(|console)-*|[0-9]*|"") ;;
       *)       echo ${_IN} ;;
       esac
     done
