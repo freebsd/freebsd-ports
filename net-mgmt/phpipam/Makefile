@@ -1,7 +1,7 @@
 # Created by: Jake Smith <jake@xz.cx>
 
 PORTNAME=	phpipam
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	jake@xz.cx
@@ -14,10 +14,10 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear@${PHP_FLAVOR}
 USES=		gettext php:web tar:
 
 USE_GITHUB=	yes
-GH_TAGNAME=	968a4d2
+GH_TAGNAME=	f6302da
 
-USE_PHP=	ctype curl filter gd gettext gmp iconv json mbstring openssl \
-		pcntl pdo pdo_mysql session simplexml sockets
+USE_PHP=	ctype curl filter gd gettext gmp iconv json mbstring mcrypt \
+		openssl pcntl pdo pdo_mysql session simplexml sockets
 
 NO_ARCH=	yes
 NO_BUILD=	yes
