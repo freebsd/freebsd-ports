@@ -1,8 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	darktable
-PORTVERSION=	3.4.1
-PORTREVISION=	7
+PORTVERSION=	3.6.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -121,7 +120,7 @@ PLIST_SUB+=	NO_OPENCL=""
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD || ${ARCH} == "i386"
-LLVM_DEFAULT=	10
+LLVM_DEFAULT=	12
 BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
 CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
