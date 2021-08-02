@@ -1,7 +1,7 @@
 # Created by: Alexander Kriventsov <avk@vl.ru>
 
 PORTNAME=	django-auth-ldap
-PORTVERSION=	2.4.0
+PORTVERSION=	3.0.0
 CATEGORIES=	www security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj31-
@@ -12,8 +12,6 @@ COMMENT=	LDAP integration for django.contrib.auth
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.4:devel/py-setuptools_scm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django31>=2.2:www/py-django31@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ldap>=3.1:net/py-ldap@${PY_FLAVOR}
 
