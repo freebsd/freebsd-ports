@@ -5,8 +5,10 @@ bin/notepad
 bin/regedit
 bin/regsvr32
 bin/widl
-%%WINE32%%bin/wine
+bin/wine
+%%WINE32%%bin/wine.bin
 %%WINE64%%bin/wine64
+%%WINE64%%bin/wine64.bin
 bin/wineboot
 bin/winebuild
 bin/winecfg
@@ -20,7 +22,8 @@ bin/winegcc
 bin/winemaker
 bin/winemine
 bin/winepath
-bin/wineserver
+%%WINE32%%bin/wineserver32
+%%WINE64%%bin/wineserver
 bin/wmc
 bin/wrc
 include/wine/debug.h
@@ -3505,6 +3508,7 @@ share/applications/wine.desktop
 %%DATADIR%%/nls/normnfkc.nls
 %%DATADIR%%/nls/normnfkd.nls
 %%DATADIR%%/nls/sortdefault.nls
+%%WINE64%%%%DATADIR%%/pkg32.sh
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
