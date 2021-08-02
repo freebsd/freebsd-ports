@@ -197,7 +197,6 @@ include/libzfs/sys/mmp.h
 include/libzfs/sys/mntent.h
 include/libzfs/sys/mod.h
 include/libzfs/sys/multilist.h
-include/libzfs/sys/note.h
 include/libzfs/sys/nvpair.h
 include/libzfs/sys/nvpair_impl.h
 include/libzfs/sys/objlist.h
@@ -1279,6 +1278,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_features_006_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_features_007_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_features_008_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_features_009_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_tempname.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_destroy/zpool_destroy.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_destroy/zpool_destroy_001_pos.ksh
@@ -1733,6 +1733,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_offline_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_online_001_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_online_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_replace_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_spare_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_spare_002_pos.ksh
@@ -1868,9 +1869,6 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/l2arc/persist_l2arc_003_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/l2arc/persist_l2arc_004_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/l2arc/persist_l2arc_005_pos.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/l2arc/persist_l2arc_006_pos.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/l2arc/persist_l2arc_007_pos.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/l2arc/persist_l2arc_008_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/l2arc/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/large_files/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/large_files/large_files_001_pos.ksh
