@@ -18,7 +18,9 @@ load_rc_config "$name"
 
 : ${keyd_enable="NO"}
 
-command="%%PREFIX%%/bin/${name}"
-command_args="-d"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/${name}"
+pidfile="/var/run/${name}.pid"
+command_args="-s err -T ${name} -p ${pidfile} ${procname}"
 
 run_rc_command "$1"
