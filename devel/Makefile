@@ -459,6 +459,7 @@
     SUBDIR += d-scanner
     SUBDIR += darts
     SUBDIR += dash.el
+    SUBDIR += dasm
     SUBDIR += datadraw
     SUBDIR += date
     SUBDIR += dbus
