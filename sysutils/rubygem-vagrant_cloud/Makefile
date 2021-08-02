@@ -1,5 +1,5 @@
 PORTNAME=	vagrant_cloud
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	sysutils rubygems devel
 MASTER_SITES=	RG
 
