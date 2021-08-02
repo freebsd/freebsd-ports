@@ -72,6 +72,7 @@
     SUBDIR += certmgr
     SUBDIR += cfs
     SUBDIR += cfssl
+    SUBDIR += cfv
     SUBDIR += chaosreader
     SUBDIR += checkpassword
     SUBDIR += checkpassword-pam
