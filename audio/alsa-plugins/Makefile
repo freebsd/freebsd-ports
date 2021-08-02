@@ -2,6 +2,7 @@
 
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.alsa-project.org/pub/plugins/ \
 		GENTOO

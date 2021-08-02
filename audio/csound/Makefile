@@ -2,6 +2,7 @@
 
 PORTNAME=	csound
 DISTVERSION=	6.15.0
+PORTREVISION=	1
 CATEGORIES=	audio lang
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	zita-njbridge
 DISTVERSION=	0.4.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 

@@ -3,7 +3,7 @@
 MASTERDIR=	${.CURDIR:H}/mlt6
 SLAVEPORT=	python
 
-PORTREVISION=	2
+PORTREVISION=	3
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Python bindings for the MLT multimedia framework

@@ -2,6 +2,7 @@
 
 PORTNAME=	pd
 DISTVERSION=	0.47-1
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	audio
 MASTER_SITES=	http://msp.ucsd.edu/Software/

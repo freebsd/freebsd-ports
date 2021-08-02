@@ -2,6 +2,7 @@
 
 PORTNAME=	darkice
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	https://github.com/rafael2k/darkice/releases/download/v${PORTVERSION}/
 

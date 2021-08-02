@@ -2,6 +2,7 @@
 
 PORTNAME=	jalv
 DISTVERSION=	1.6.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 

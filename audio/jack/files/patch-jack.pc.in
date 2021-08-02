@@ -1,9 +1,0 @@
---- jack.pc.in.orig	2013-10-04 00:45:25 UTC
-+++ jack.pc.in
-@@ -6,5 +6,5 @@ includedir=@includedir@
- Name: jack
- Description: the Jack Audio Connection Kit: a low-latency synchronous callback-based media server
- Version: @JACK_VERSION@
--Libs: -L${libdir} -ljack -lpthread @OS_LDFLAGS@
-+Libs: -L${libdir} -ljack -pthread
- Cflags: -I${includedir}
