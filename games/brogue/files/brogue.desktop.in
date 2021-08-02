@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=%%DISTVERSION%%
+Type=Application
+Name=Brogue
+GenericName=Roguelike
+Comment=Brave the Dungeons of Doom!
+Comment[de]=Meistere die Dungeons der Verdammnis!
+Comment[ru]=Бросьте вызов Подземельям Погибели!
+Exec=%%PREFIX%%/bin/brogue
+Path=%%DATADIR%%
+Icon=%%DATADIR%%/assets/icon.png
+Terminal=false
+Categories=Game;
