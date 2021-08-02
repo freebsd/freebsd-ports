@@ -1,0 +1,19 @@
+e2tools is a simple set of GPL'ed utilities to read, write, and
+manipulate files in an ext2/ext3 filesystem. These utilities access a
+filesystem directly using the ext2fs library. I wrote these tools in
+order to copy files into a linux filesystem on a machine that does not
+have ext2 support. Of course, they can also be used on a Linux machine
+to read/write to disk images or floppies without having to mount them
+or have root access.
+
+Supported functionality:
+
+ - copy files: e2cp
+ - move files: e2mv
+ - remove files: e2rm
+ - create directory: e2mkdir
+ - create hard links: e2ln
+ - list files/directories: e2ls
+ - output the last part of a file: e2tail
+
+WWW: https://e2tools.github.io/

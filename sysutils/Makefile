@@ -313,6 +313,7 @@
     SUBDIR += dwatch-json
     SUBDIR += dwatch-pwsnoop
     SUBDIR += e2fsprogs
+    SUBDIR += e2tools
     SUBDIR += ebsnvme-id
     SUBDIR += ec2-scripts
     SUBDIR += eclat
