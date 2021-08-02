@@ -1,5 +1,5 @@
 PORTNAME=	xeyes
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -9,7 +9,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		xorg xorg-cat:app
-USE_XORG=	x11 xt xext xmu xrender
+USE_XORG=	x11 xcb xext xi xmu xrender xt
 
 PLIST_FILES=	bin/xeyes man/man1/xeyes.1.gz
 
