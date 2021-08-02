@@ -1,4 +1,4 @@
-Takes a small amount of ramdon data from /dev/random and writes it to
+Takes a small amount of random data from /dev/random and writes it to
 some place inside the file passed as argument. Then you can test your
 FAM or checksuming system for integrity protection.
 
