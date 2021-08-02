@@ -17,6 +17,7 @@
     SUBDIR += alo-lv2
     SUBDIR += alsa-lib
     SUBDIR += alsa-plugins
+    SUBDIR += alsa-seq-server
     SUBDIR += alsa-sndio
     SUBDIR += alsa-utils
     SUBDIR += alure
