@@ -511,7 +511,7 @@ PLIST_SUB+=		OPENLDAP_MAJOR=${OPENLDAP_MAJOR}
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MFETCH} && defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != "" || ${SSL_DEFAULT} != base
+.if ${PORT_OPTIONS:MFETCH} && (defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != "" || ${SSL_DEFAULT} != base)
 BROKEN=	using OpenSSL from ports and OPTION FETCH together is not supported
 . endif
 
