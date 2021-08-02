@@ -1,6 +1,12 @@
 bin/openFPGALoader
+%%DATADIR%%/spiOverJtag_10cl025256.rbf
+%%DATADIR%%/spiOverJtag_5ce223.rbf
+%%DATADIR%%/spiOverJtag_ep4ce2217.rbf
+%%DATADIR%%/spiOverJtag_xc6slx100fgg484.bit
+%%DATADIR%%/spiOverJtag_xc6slx45csg324.bit
 %%DATADIR%%/spiOverJtag_xc7a100tfgg484.bit
 %%DATADIR%%/spiOverJtag_xc7a200tsbg484.bit
+%%DATADIR%%/spiOverJtag_xc7a35tcpg236.bit
 %%DATADIR%%/spiOverJtag_xc7a35tcsg324.bit
 %%DATADIR%%/spiOverJtag_xc7a35tftg256.bit
 %%DATADIR%%/spiOverJtag_xc7a50tcpg236.bit
