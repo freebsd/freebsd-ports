@@ -1,6 +1,5 @@
 PORTNAME=	uncertainties
-DISTVERSION=	3.1.5
-PORTREVISION=	1
+DISTVERSION=	3.1.6
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +12,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
+TEST_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
+
+do-test:
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} nosetests-${PYTHON_VER} -v
 
 .include <bsd.port.mk>
