@@ -2,7 +2,7 @@
 
 PORTNAME=	openscep
 PORTVERSION=	0.4.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	security
 MASTER_SITES=	http://openscep.othello.ch/download/
 

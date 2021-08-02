@@ -3,7 +3,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	2.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://pawsa.fedorapeople.org/balsa/
 

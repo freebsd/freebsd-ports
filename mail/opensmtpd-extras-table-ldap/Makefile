@@ -1,7 +1,7 @@
 # Created by: fluffy
 
 PKGNAMESUFFIX=		-table-ldap
-PORTREVISION=		0
+PORTREVISION=		1
 
 COMMENT=		LDAP table support for OpenSMTPD
 

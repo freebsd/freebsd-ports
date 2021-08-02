@@ -1,3 +1,4 @@
+PORTREVISION=	1
 PKGNAMESUFFIX?=	-ldap-sasl
 
 MAINTAINER=	otis@FreeBSD.org

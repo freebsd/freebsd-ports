@@ -2,6 +2,7 @@
 
 PORTNAME=	atheme-services
 PORTVERSION=	7.2.9
+PORTREVISION=	1
 CATEGORIES=	irc net
 MASTER_SITES=	https://github.com/atheme/atheme/releases/download/v${PORTVERSION}/
 DISTNAME=	atheme-${PORTVERSION}

@@ -2,7 +2,7 @@
 
 PORTNAME=	sssd
 PORTVERSION=	1.16.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	https://releases.pagure.org/SSSD/${PORTNAME}/
 

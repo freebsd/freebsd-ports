@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	mod_ldap
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net ftp
 PKGNAMEPREFIX=	proftpd-
 

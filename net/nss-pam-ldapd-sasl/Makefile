@@ -1,6 +1,7 @@
 # Created by: rflynn@acsalaska.net
 
 PORTNAME=	nss-pam-ldapd
+PORTREVISION=	1
 PKGNAMESUFFIX=	-sasl
 
 MAINTAINER=	zi@FreeBSD.org
