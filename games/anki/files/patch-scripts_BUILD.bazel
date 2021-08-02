@@ -1,0 +1,10 @@
+Avoid loading of "requirements.bzl" because it requires "pip_import" which
+is already disabled in "defs.bzl".
+
+--- scripts/BUILD.bazel.orig	2021-05-04 05:04:50 UTC
++++ scripts/BUILD.bazel
+@@ -1,4 +1,3 @@
+-load("@py_deps//:requirements.bzl", "requirement")
+ 
+ py_binary(
+     name = "buildinfo",

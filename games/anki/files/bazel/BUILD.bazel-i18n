@@ -1,0 +1,10 @@
+# Used for the fluent i18n translation bazel repositories:
+# - ftlextra
+# - ftlrslib
+
+filegroup(
+    name = "files",
+    srcs = glob(["**/*.ftl"]),
+    visibility = ["//visibility:public"],
+)
+exports_files(["l10n.toml"])

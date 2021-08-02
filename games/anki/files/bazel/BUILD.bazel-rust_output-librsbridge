@@ -1,0 +1,7 @@
+# Expose "librsbridge.so" to bazel
+
+filegroup(
+    name = "librsbridge",
+    srcs = ["librsbridge.so"],
+    visibility = ["//visibility:public"],
+)

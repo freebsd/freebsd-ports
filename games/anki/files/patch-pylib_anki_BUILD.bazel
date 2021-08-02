@@ -1,0 +1,34 @@
+Avoid loading of "requirements.bzl" because it requires "pip_import" which
+is already disabled in "defs.bzl".
+
+--- pylib/anki/BUILD.bazel.orig	2021-05-04 05:04:50 UTC
++++ pylib/anki/BUILD.bazel
+@@ -1,6 +1,5 @@
+ load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
+ load("@rules_python//python:defs.bzl", "py_library")
+-load("@py_deps//:requirements.bzl", "requirement")
+ load("@rules_python//experimental/python:wheel.bzl", "py_package", "py_wheel")
+ load("//:defs.bzl", "anki_version")
+ load("//pylib:orjson.bzl", "orjson_if_available")
+@@ -39,13 +38,6 @@ py_library(
+     ],
+     visibility = ["//visibility:public"],
+     deps = [
+-        requirement("beautifulsoup4"),
+-        requirement("decorator"),
+-        requirement("distro"),
+-        requirement("protobuf"),
+-        requirement("requests"),
+-        requirement("flask"),
+-        requirement("waitress"),
+     ] + orjson_if_available(),
+ )
+ 
+@@ -70,6 +62,7 @@ py_wheel(
+         "//platforms:windows_x86_64": "win_amd64",
+         "//platforms:macos_x86_64": "macosx_10_7_x86_64",
+         "//platforms:linux_x86_64": "manylinux2014_x86_64",
++        "//platforms:freebsd_x86_64": "freebsd_x86_64",
+         "//platforms:linux_arm64": "manylinux2014_aarch64",
+     }),
+     python_tag = "cp38",

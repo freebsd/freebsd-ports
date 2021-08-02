@@ -1,0 +1,7 @@
+# Expose "fluent.proto" to bazel
+
+filegroup(
+    name = "fluent_proto",
+    srcs = ["fluent.proto"],
+    visibility = ["//visibility:public"],
+)
