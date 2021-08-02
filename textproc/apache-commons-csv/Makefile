@@ -1,13 +1,13 @@
 # Created by: Pedro Giffuni <pfg@FreeBSD.org>
 
 PORTNAME=	commons-csv
-PORTVERSION=	1.8
+PORTVERSION=	1.9.0
 CATEGORIES=	textproc java devel
 MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java support for Comma Separated Value format
 
 LICENSE=	APACHE20
