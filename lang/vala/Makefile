@@ -1,7 +1,7 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 
 PORTNAME=	vala
-PORTVERSION=	0.48.10
+PORTVERSION=	0.48.18
 PORTEPOCH=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
