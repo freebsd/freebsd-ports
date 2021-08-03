@@ -54,7 +54,7 @@ OPTIONS_GROUP_NEEDX11=	CAIROPANGO GHOSTSCRIPT JPEG PNG TCLTK TEXDOCS TIFF
 OPTIONS_SINGLE=		BLAS
 OPTIONS_SINGLE_BLAS=	ATLAS NETLIB OPENBLAS RBLAS
 
-OPTIONS_SUB=		YES
+OPTIONS_SUB=	YES
 
 CAIROPANGO_DESC=	Cairo graphics device and Pango multi-language text
 FLANG_DESC=		Use experimental flang Fortran compiler
@@ -131,6 +131,7 @@ _MAJORVER=	${DISTVERSION:R:R}
 
 .include <bsd.port.options.mk>
 
+## Cannot use FLANG_USES_OFF=fortran because the FLANG option is only for amd64
 .if ! ${PORT_OPTIONS:MFLANG}
 USES+=		fortran
 .endif
