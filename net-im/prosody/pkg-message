@@ -8,13 +8,5 @@ interfaces = { 'x.x.x.x' }
 
 where 'x.x.x.x' is the public IP you wish Prosody to bind to.
 EOM
-},
-{ type: install
-  message: <<EOM
-Make sure your prosody.cfg.lua contains the following line
-or else the init script won't work:
-
-pidfile = "/var/run/prosody/prosody.pid"
-EOM
 }
 ]
