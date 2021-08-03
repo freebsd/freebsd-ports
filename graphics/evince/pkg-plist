@@ -164,6 +164,7 @@ share/help/C/evince/duplex-npages.page
 share/help/C/evince/editing.page
 share/help/C/evince/figures/add-text-annotation.png
 share/help/C/evince/figures/annotations-nav-to-page.png
+share/help/C/evince/figures/emblem-system-symbolic.svg
 share/help/C/evince/figures/evince-trail.png
 share/help/C/evince/figures/evincelogo.png
 share/help/C/evince/figures/print-select.png
@@ -194,7 +195,6 @@ share/help/C/evince/print-pagescaling.page
 share/help/C/evince/print-select.page
 share/help/C/evince/printing.page
 share/help/C/evince/reload.page
-share/help/C/evince/shortcuts.page
 share/help/C/evince/singlesided-13-16pages.page
 share/help/C/evince/singlesided-17-20pages.page
 share/help/C/evince/singlesided-3-4pages.page
@@ -242,6 +242,7 @@ share/help/bg/evince/duplex-npages.page
 share/help/bg/evince/editing.page
 share/help/bg/evince/figures/add-text-annotation.png
 share/help/bg/evince/figures/annotations-nav-to-page.png
+share/help/bg/evince/figures/emblem-system-symbolic.svg
 share/help/bg/evince/figures/evince-trail.png
 share/help/bg/evince/figures/evincelogo.png
 share/help/bg/evince/figures/print-select.png
@@ -272,7 +273,6 @@ share/help/bg/evince/print-pagescaling.page
 share/help/bg/evince/print-select.page
 share/help/bg/evince/printing.page
 share/help/bg/evince/reload.page
-share/help/bg/evince/shortcuts.page
 share/help/bg/evince/singlesided-13-16pages.page
 share/help/bg/evince/singlesided-17-20pages.page
 share/help/bg/evince/singlesided-3-4pages.page
@@ -320,6 +320,7 @@ share/help/ca/evince/duplex-npages.page
 share/help/ca/evince/editing.page
 share/help/ca/evince/figures/add-text-annotation.png
 share/help/ca/evince/figures/annotations-nav-to-page.png
+share/help/ca/evince/figures/emblem-system-symbolic.svg
 share/help/ca/evince/figures/evince-trail.png
 share/help/ca/evince/figures/evincelogo.png
 share/help/ca/evince/figures/print-select.png
@@ -350,7 +351,6 @@ share/help/ca/evince/print-pagescaling.page
 share/help/ca/evince/print-select.page
 share/help/ca/evince/printing.page
 share/help/ca/evince/reload.page
-share/help/ca/evince/shortcuts.page
 share/help/ca/evince/singlesided-13-16pages.page
 share/help/ca/evince/singlesided-17-20pages.page
 share/help/ca/evince/singlesided-3-4pages.page
@@ -398,6 +398,7 @@ share/help/cs/evince/duplex-npages.page
 share/help/cs/evince/editing.page
 share/help/cs/evince/figures/add-text-annotation.png
 share/help/cs/evince/figures/annotations-nav-to-page.png
+share/help/cs/evince/figures/emblem-system-symbolic.svg
 share/help/cs/evince/figures/evince-trail.png
 share/help/cs/evince/figures/evincelogo.png
 share/help/cs/evince/figures/print-select.png
@@ -428,7 +429,6 @@ share/help/cs/evince/print-pagescaling.page
 share/help/cs/evince/print-select.page
 share/help/cs/evince/printing.page
 share/help/cs/evince/reload.page
-share/help/cs/evince/shortcuts.page
 share/help/cs/evince/singlesided-13-16pages.page
 share/help/cs/evince/singlesided-17-20pages.page
 share/help/cs/evince/singlesided-3-4pages.page
@@ -476,6 +476,7 @@ share/help/da/evince/duplex-npages.page
 share/help/da/evince/editing.page
 share/help/da/evince/figures/add-text-annotation.png
 share/help/da/evince/figures/annotations-nav-to-page.png
+share/help/da/evince/figures/emblem-system-symbolic.svg
 share/help/da/evince/figures/evince-trail.png
 share/help/da/evince/figures/evincelogo.png
 share/help/da/evince/figures/print-select.png
@@ -506,7 +507,6 @@ share/help/da/evince/print-pagescaling.page
 share/help/da/evince/print-select.page
 share/help/da/evince/printing.page
 share/help/da/evince/reload.page
-share/help/da/evince/shortcuts.page
 share/help/da/evince/singlesided-13-16pages.page
 share/help/da/evince/singlesided-17-20pages.page
 share/help/da/evince/singlesided-3-4pages.page
@@ -554,6 +554,7 @@ share/help/de/evince/duplex-npages.page
 share/help/de/evince/editing.page
 share/help/de/evince/figures/add-text-annotation.png
 share/help/de/evince/figures/annotations-nav-to-page.png
+share/help/de/evince/figures/emblem-system-symbolic.svg
 share/help/de/evince/figures/evince-trail.png
 share/help/de/evince/figures/evincelogo.png
 share/help/de/evince/figures/print-select.png
@@ -584,7 +585,6 @@ share/help/de/evince/print-pagescaling.page
 share/help/de/evince/print-select.page
 share/help/de/evince/printing.page
 share/help/de/evince/reload.page
-share/help/de/evince/shortcuts.page
 share/help/de/evince/singlesided-13-16pages.page
 share/help/de/evince/singlesided-17-20pages.page
 share/help/de/evince/singlesided-3-4pages.page
@@ -632,6 +632,7 @@ share/help/el/evince/duplex-npages.page
 share/help/el/evince/editing.page
 share/help/el/evince/figures/add-text-annotation.png
 share/help/el/evince/figures/annotations-nav-to-page.png
+share/help/el/evince/figures/emblem-system-symbolic.svg
 share/help/el/evince/figures/evince-trail.png
 share/help/el/evince/figures/evincelogo.png
 share/help/el/evince/figures/print-select.png
@@ -662,7 +663,6 @@ share/help/el/evince/print-pagescaling.page
 share/help/el/evince/print-select.page
 share/help/el/evince/printing.page
 share/help/el/evince/reload.page
-share/help/el/evince/shortcuts.page
 share/help/el/evince/singlesided-13-16pages.page
 share/help/el/evince/singlesided-17-20pages.page
 share/help/el/evince/singlesided-3-4pages.page
@@ -710,6 +710,7 @@ share/help/en_GB/evince/duplex-npages.page
 share/help/en_GB/evince/editing.page
 share/help/en_GB/evince/figures/add-text-annotation.png
 share/help/en_GB/evince/figures/annotations-nav-to-page.png
+share/help/en_GB/evince/figures/emblem-system-symbolic.svg
 share/help/en_GB/evince/figures/evince-trail.png
 share/help/en_GB/evince/figures/evincelogo.png
 share/help/en_GB/evince/figures/print-select.png
@@ -740,7 +741,6 @@ share/help/en_GB/evince/print-pagescaling.page
 share/help/en_GB/evince/print-select.page
 share/help/en_GB/evince/printing.page
 share/help/en_GB/evince/reload.page
-share/help/en_GB/evince/shortcuts.page
 share/help/en_GB/evince/singlesided-13-16pages.page
 share/help/en_GB/evince/singlesided-17-20pages.page
 share/help/en_GB/evince/singlesided-3-4pages.page
@@ -788,6 +788,7 @@ share/help/es/evince/duplex-npages.page
 share/help/es/evince/editing.page
 share/help/es/evince/figures/add-text-annotation.png
 share/help/es/evince/figures/annotations-nav-to-page.png
+share/help/es/evince/figures/emblem-system-symbolic.svg
 share/help/es/evince/figures/evince-trail.png
 share/help/es/evince/figures/evincelogo.png
 share/help/es/evince/figures/print-select.png
@@ -818,7 +819,6 @@ share/help/es/evince/print-pagescaling.page
 share/help/es/evince/print-select.page
 share/help/es/evince/printing.page
 share/help/es/evince/reload.page
-share/help/es/evince/shortcuts.page
 share/help/es/evince/singlesided-13-16pages.page
 share/help/es/evince/singlesided-17-20pages.page
 share/help/es/evince/singlesided-3-4pages.page
@@ -866,6 +866,7 @@ share/help/eu/evince/duplex-npages.page
 share/help/eu/evince/editing.page
 share/help/eu/evince/figures/add-text-annotation.png
 share/help/eu/evince/figures/annotations-nav-to-page.png
+share/help/eu/evince/figures/emblem-system-symbolic.svg
 share/help/eu/evince/figures/evince-trail.png
 share/help/eu/evince/figures/evincelogo.png
 share/help/eu/evince/figures/print-select.png
@@ -896,7 +897,6 @@ share/help/eu/evince/print-pagescaling.page
 share/help/eu/evince/print-select.page
 share/help/eu/evince/printing.page
 share/help/eu/evince/reload.page
-share/help/eu/evince/shortcuts.page
 share/help/eu/evince/singlesided-13-16pages.page
 share/help/eu/evince/singlesided-17-20pages.page
 share/help/eu/evince/singlesided-3-4pages.page
@@ -944,6 +944,7 @@ share/help/fi/evince/duplex-npages.page
 share/help/fi/evince/editing.page
 share/help/fi/evince/figures/add-text-annotation.png
 share/help/fi/evince/figures/annotations-nav-to-page.png
+share/help/fi/evince/figures/emblem-system-symbolic.svg
 share/help/fi/evince/figures/evince-trail.png
 share/help/fi/evince/figures/evincelogo.png
 share/help/fi/evince/figures/print-select.png
@@ -974,7 +975,6 @@ share/help/fi/evince/print-pagescaling.page
 share/help/fi/evince/print-select.page
 share/help/fi/evince/printing.page
 share/help/fi/evince/reload.page
-share/help/fi/evince/shortcuts.page
 share/help/fi/evince/singlesided-13-16pages.page
 share/help/fi/evince/singlesided-17-20pages.page
 share/help/fi/evince/singlesided-3-4pages.page
@@ -1022,6 +1022,7 @@ share/help/fr/evince/duplex-npages.page
 share/help/fr/evince/editing.page
 share/help/fr/evince/figures/add-text-annotation.png
 share/help/fr/evince/figures/annotations-nav-to-page.png
+share/help/fr/evince/figures/emblem-system-symbolic.svg
 share/help/fr/evince/figures/evince-trail.png
 share/help/fr/evince/figures/evincelogo.png
 share/help/fr/evince/figures/print-select.png
@@ -1052,7 +1053,6 @@ share/help/fr/evince/print-pagescaling.page
 share/help/fr/evince/print-select.page
 share/help/fr/evince/printing.page
 share/help/fr/evince/reload.page
-share/help/fr/evince/shortcuts.page
 share/help/fr/evince/singlesided-13-16pages.page
 share/help/fr/evince/singlesided-17-20pages.page
 share/help/fr/evince/singlesided-3-4pages.page
@@ -1100,6 +1100,7 @@ share/help/gl/evince/duplex-npages.page
 share/help/gl/evince/editing.page
 share/help/gl/evince/figures/add-text-annotation.png
 share/help/gl/evince/figures/annotations-nav-to-page.png
+share/help/gl/evince/figures/emblem-system-symbolic.svg
 share/help/gl/evince/figures/evince-trail.png
 share/help/gl/evince/figures/evincelogo.png
 share/help/gl/evince/figures/print-select.png
@@ -1130,7 +1131,6 @@ share/help/gl/evince/print-pagescaling.page
 share/help/gl/evince/print-select.page
 share/help/gl/evince/printing.page
 share/help/gl/evince/reload.page
-share/help/gl/evince/shortcuts.page
 share/help/gl/evince/singlesided-13-16pages.page
 share/help/gl/evince/singlesided-17-20pages.page
 share/help/gl/evince/singlesided-3-4pages.page
@@ -1178,6 +1178,7 @@ share/help/hu/evince/duplex-npages.page
 share/help/hu/evince/editing.page
 share/help/hu/evince/figures/add-text-annotation.png
 share/help/hu/evince/figures/annotations-nav-to-page.png
+share/help/hu/evince/figures/emblem-system-symbolic.svg
 share/help/hu/evince/figures/evince-trail.png
 share/help/hu/evince/figures/evincelogo.png
 share/help/hu/evince/figures/print-select.png
@@ -1208,7 +1209,6 @@ share/help/hu/evince/print-pagescaling.page
 share/help/hu/evince/print-select.page
 share/help/hu/evince/printing.page
 share/help/hu/evince/reload.page
-share/help/hu/evince/shortcuts.page
 share/help/hu/evince/singlesided-13-16pages.page
 share/help/hu/evince/singlesided-17-20pages.page
 share/help/hu/evince/singlesided-3-4pages.page
@@ -1256,6 +1256,7 @@ share/help/id/evince/duplex-npages.page
 share/help/id/evince/editing.page
 share/help/id/evince/figures/add-text-annotation.png
 share/help/id/evince/figures/annotations-nav-to-page.png
+share/help/id/evince/figures/emblem-system-symbolic.svg
 share/help/id/evince/figures/evince-trail.png
 share/help/id/evince/figures/evincelogo.png
 share/help/id/evince/figures/print-select.png
@@ -1286,7 +1287,6 @@ share/help/id/evince/print-pagescaling.page
 share/help/id/evince/print-select.page
 share/help/id/evince/printing.page
 share/help/id/evince/reload.page
-share/help/id/evince/shortcuts.page
 share/help/id/evince/singlesided-13-16pages.page
 share/help/id/evince/singlesided-17-20pages.page
 share/help/id/evince/singlesided-3-4pages.page
@@ -1334,6 +1334,7 @@ share/help/it/evince/duplex-npages.page
 share/help/it/evince/editing.page
 share/help/it/evince/figures/add-text-annotation.png
 share/help/it/evince/figures/annotations-nav-to-page.png
+share/help/it/evince/figures/emblem-system-symbolic.svg
 share/help/it/evince/figures/evince-trail.png
 share/help/it/evince/figures/evincelogo.png
 share/help/it/evince/figures/print-select.png
@@ -1364,7 +1365,6 @@ share/help/it/evince/print-pagescaling.page
 share/help/it/evince/print-select.page
 share/help/it/evince/printing.page
 share/help/it/evince/reload.page
-share/help/it/evince/shortcuts.page
 share/help/it/evince/singlesided-13-16pages.page
 share/help/it/evince/singlesided-17-20pages.page
 share/help/it/evince/singlesided-3-4pages.page
@@ -1412,6 +1412,7 @@ share/help/ja/evince/duplex-npages.page
 share/help/ja/evince/editing.page
 share/help/ja/evince/figures/add-text-annotation.png
 share/help/ja/evince/figures/annotations-nav-to-page.png
+share/help/ja/evince/figures/emblem-system-symbolic.svg
 share/help/ja/evince/figures/evince-trail.png
 share/help/ja/evince/figures/evincelogo.png
 share/help/ja/evince/figures/print-select.png
@@ -1442,7 +1443,6 @@ share/help/ja/evince/print-pagescaling.page
 share/help/ja/evince/print-select.page
 share/help/ja/evince/printing.page
 share/help/ja/evince/reload.page
-share/help/ja/evince/shortcuts.page
 share/help/ja/evince/singlesided-13-16pages.page
 share/help/ja/evince/singlesided-17-20pages.page
 share/help/ja/evince/singlesided-3-4pages.page
@@ -1490,6 +1490,7 @@ share/help/ko/evince/duplex-npages.page
 share/help/ko/evince/editing.page
 share/help/ko/evince/figures/add-text-annotation.png
 share/help/ko/evince/figures/annotations-nav-to-page.png
+share/help/ko/evince/figures/emblem-system-symbolic.svg
 share/help/ko/evince/figures/evince-trail.png
 share/help/ko/evince/figures/evincelogo.png
 share/help/ko/evince/figures/print-select.png
@@ -1520,7 +1521,6 @@ share/help/ko/evince/print-pagescaling.page
 share/help/ko/evince/print-select.page
 share/help/ko/evince/printing.page
 share/help/ko/evince/reload.page
-share/help/ko/evince/shortcuts.page
 share/help/ko/evince/singlesided-13-16pages.page
 share/help/ko/evince/singlesided-17-20pages.page
 share/help/ko/evince/singlesided-3-4pages.page
@@ -1568,6 +1568,7 @@ share/help/lv/evince/duplex-npages.page
 share/help/lv/evince/editing.page
 share/help/lv/evince/figures/add-text-annotation.png
 share/help/lv/evince/figures/annotations-nav-to-page.png
+share/help/lv/evince/figures/emblem-system-symbolic.svg
 share/help/lv/evince/figures/evince-trail.png
 share/help/lv/evince/figures/evincelogo.png
 share/help/lv/evince/figures/print-select.png
@@ -1598,7 +1599,6 @@ share/help/lv/evince/print-pagescaling.page
 share/help/lv/evince/print-select.page
 share/help/lv/evince/printing.page
 share/help/lv/evince/reload.page
-share/help/lv/evince/shortcuts.page
 share/help/lv/evince/singlesided-13-16pages.page
 share/help/lv/evince/singlesided-17-20pages.page
 share/help/lv/evince/singlesided-3-4pages.page
@@ -1646,6 +1646,7 @@ share/help/nl/evince/duplex-npages.page
 share/help/nl/evince/editing.page
 share/help/nl/evince/figures/add-text-annotation.png
 share/help/nl/evince/figures/annotations-nav-to-page.png
+share/help/nl/evince/figures/emblem-system-symbolic.svg
 share/help/nl/evince/figures/evince-trail.png
 share/help/nl/evince/figures/evincelogo.png
 share/help/nl/evince/figures/print-select.png
@@ -1676,7 +1677,6 @@ share/help/nl/evince/print-pagescaling.page
 share/help/nl/evince/print-select.page
 share/help/nl/evince/printing.page
 share/help/nl/evince/reload.page
-share/help/nl/evince/shortcuts.page
 share/help/nl/evince/singlesided-13-16pages.page
 share/help/nl/evince/singlesided-17-20pages.page
 share/help/nl/evince/singlesided-3-4pages.page
@@ -1724,6 +1724,7 @@ share/help/oc/evince/duplex-npages.page
 share/help/oc/evince/editing.page
 share/help/oc/evince/figures/add-text-annotation.png
 share/help/oc/evince/figures/annotations-nav-to-page.png
+share/help/oc/evince/figures/emblem-system-symbolic.svg
 share/help/oc/evince/figures/evince-trail.png
 share/help/oc/evince/figures/evincelogo.png
 share/help/oc/evince/figures/print-select.png
@@ -1754,7 +1755,6 @@ share/help/oc/evince/print-pagescaling.page
 share/help/oc/evince/print-select.page
 share/help/oc/evince/printing.page
 share/help/oc/evince/reload.page
-share/help/oc/evince/shortcuts.page
 share/help/oc/evince/singlesided-13-16pages.page
 share/help/oc/evince/singlesided-17-20pages.page
 share/help/oc/evince/singlesided-3-4pages.page
@@ -1802,6 +1802,7 @@ share/help/pl/evince/duplex-npages.page
 share/help/pl/evince/editing.page
 share/help/pl/evince/figures/add-text-annotation.png
 share/help/pl/evince/figures/annotations-nav-to-page.png
+share/help/pl/evince/figures/emblem-system-symbolic.svg
 share/help/pl/evince/figures/evince-trail.png
 share/help/pl/evince/figures/evincelogo.png
 share/help/pl/evince/figures/print-select.png
@@ -1832,7 +1833,6 @@ share/help/pl/evince/print-pagescaling.page
 share/help/pl/evince/print-select.page
 share/help/pl/evince/printing.page
 share/help/pl/evince/reload.page
-share/help/pl/evince/shortcuts.page
 share/help/pl/evince/singlesided-13-16pages.page
 share/help/pl/evince/singlesided-17-20pages.page
 share/help/pl/evince/singlesided-3-4pages.page
@@ -1880,6 +1880,7 @@ share/help/pt_BR/evince/duplex-npages.page
 share/help/pt_BR/evince/editing.page
 share/help/pt_BR/evince/figures/add-text-annotation.png
 share/help/pt_BR/evince/figures/annotations-nav-to-page.png
+share/help/pt_BR/evince/figures/emblem-system-symbolic.svg
 share/help/pt_BR/evince/figures/evince-trail.png
 share/help/pt_BR/evince/figures/evincelogo.png
 share/help/pt_BR/evince/figures/print-select.png
@@ -1910,7 +1911,6 @@ share/help/pt_BR/evince/print-pagescaling.page
 share/help/pt_BR/evince/print-select.page
 share/help/pt_BR/evince/printing.page
 share/help/pt_BR/evince/reload.page
-share/help/pt_BR/evince/shortcuts.page
 share/help/pt_BR/evince/singlesided-13-16pages.page
 share/help/pt_BR/evince/singlesided-17-20pages.page
 share/help/pt_BR/evince/singlesided-3-4pages.page
@@ -1958,6 +1958,7 @@ share/help/ro/evince/duplex-npages.page
 share/help/ro/evince/editing.page
 share/help/ro/evince/figures/add-text-annotation.png
 share/help/ro/evince/figures/annotations-nav-to-page.png
+share/help/ro/evince/figures/emblem-system-symbolic.svg
 share/help/ro/evince/figures/evince-trail.png
 share/help/ro/evince/figures/evincelogo.png
 share/help/ro/evince/figures/print-select.png
@@ -1988,7 +1989,6 @@ share/help/ro/evince/print-pagescaling.page
 share/help/ro/evince/print-select.page
 share/help/ro/evince/printing.page
 share/help/ro/evince/reload.page
-share/help/ro/evince/shortcuts.page
 share/help/ro/evince/singlesided-13-16pages.page
 share/help/ro/evince/singlesided-17-20pages.page
 share/help/ro/evince/singlesided-3-4pages.page
@@ -2036,6 +2036,7 @@ share/help/ru/evince/duplex-npages.page
 share/help/ru/evince/editing.page
 share/help/ru/evince/figures/add-text-annotation.png
 share/help/ru/evince/figures/annotations-nav-to-page.png
+share/help/ru/evince/figures/emblem-system-symbolic.svg
 share/help/ru/evince/figures/evince-trail.png
 share/help/ru/evince/figures/evincelogo.png
 share/help/ru/evince/figures/print-select.png
@@ -2066,7 +2067,6 @@ share/help/ru/evince/print-pagescaling.page
 share/help/ru/evince/print-select.page
 share/help/ru/evince/printing.page
 share/help/ru/evince/reload.page
-share/help/ru/evince/shortcuts.page
 share/help/ru/evince/singlesided-13-16pages.page
 share/help/ru/evince/singlesided-17-20pages.page
 share/help/ru/evince/singlesided-3-4pages.page
@@ -2114,6 +2114,7 @@ share/help/sl/evince/duplex-npages.page
 share/help/sl/evince/editing.page
 share/help/sl/evince/figures/add-text-annotation.png
 share/help/sl/evince/figures/annotations-nav-to-page.png
+share/help/sl/evince/figures/emblem-system-symbolic.svg
 share/help/sl/evince/figures/evince-trail.png
 share/help/sl/evince/figures/evincelogo.png
 share/help/sl/evince/figures/print-select.png
@@ -2144,7 +2145,6 @@ share/help/sl/evince/print-pagescaling.page
 share/help/sl/evince/print-select.page
 share/help/sl/evince/printing.page
 share/help/sl/evince/reload.page
-share/help/sl/evince/shortcuts.page
 share/help/sl/evince/singlesided-13-16pages.page
 share/help/sl/evince/singlesided-17-20pages.page
 share/help/sl/evince/singlesided-3-4pages.page
@@ -2192,6 +2192,7 @@ share/help/sr/evince/duplex-npages.page
 share/help/sr/evince/editing.page
 share/help/sr/evince/figures/add-text-annotation.png
 share/help/sr/evince/figures/annotations-nav-to-page.png
+share/help/sr/evince/figures/emblem-system-symbolic.svg
 share/help/sr/evince/figures/evince-trail.png
 share/help/sr/evince/figures/evincelogo.png
 share/help/sr/evince/figures/print-select.png
@@ -2222,7 +2223,6 @@ share/help/sr/evince/print-pagescaling.page
 share/help/sr/evince/print-select.page
 share/help/sr/evince/printing.page
 share/help/sr/evince/reload.page
-share/help/sr/evince/shortcuts.page
 share/help/sr/evince/singlesided-13-16pages.page
 share/help/sr/evince/singlesided-17-20pages.page
 share/help/sr/evince/singlesided-3-4pages.page
@@ -2270,6 +2270,7 @@ share/help/sv/evince/duplex-npages.page
 share/help/sv/evince/editing.page
 share/help/sv/evince/figures/add-text-annotation.png
 share/help/sv/evince/figures/annotations-nav-to-page.png
+share/help/sv/evince/figures/emblem-system-symbolic.svg
 share/help/sv/evince/figures/evince-trail.png
 share/help/sv/evince/figures/evincelogo.png
 share/help/sv/evince/figures/print-select.png
@@ -2300,7 +2301,6 @@ share/help/sv/evince/print-pagescaling.page
 share/help/sv/evince/print-select.page
 share/help/sv/evince/printing.page
 share/help/sv/evince/reload.page
-share/help/sv/evince/shortcuts.page
 share/help/sv/evince/singlesided-13-16pages.page
 share/help/sv/evince/singlesided-17-20pages.page
 share/help/sv/evince/singlesided-3-4pages.page
@@ -2348,6 +2348,7 @@ share/help/te/evince/duplex-npages.page
 share/help/te/evince/editing.page
 share/help/te/evince/figures/add-text-annotation.png
 share/help/te/evince/figures/annotations-nav-to-page.png
+share/help/te/evince/figures/emblem-system-symbolic.svg
 share/help/te/evince/figures/evince-trail.png
 share/help/te/evince/figures/evincelogo.png
 share/help/te/evince/figures/print-select.png
@@ -2378,7 +2379,6 @@ share/help/te/evince/print-pagescaling.page
 share/help/te/evince/print-select.page
 share/help/te/evince/printing.page
 share/help/te/evince/reload.page
-share/help/te/evince/shortcuts.page
 share/help/te/evince/singlesided-13-16pages.page
 share/help/te/evince/singlesided-17-20pages.page
 share/help/te/evince/singlesided-3-4pages.page
@@ -2426,6 +2426,7 @@ share/help/uk/evince/duplex-npages.page
 share/help/uk/evince/editing.page
 share/help/uk/evince/figures/add-text-annotation.png
 share/help/uk/evince/figures/annotations-nav-to-page.png
+share/help/uk/evince/figures/emblem-system-symbolic.svg
 share/help/uk/evince/figures/evince-trail.png
 share/help/uk/evince/figures/evincelogo.png
 share/help/uk/evince/figures/print-select.png
@@ -2456,7 +2457,6 @@ share/help/uk/evince/print-pagescaling.page
 share/help/uk/evince/print-select.page
 share/help/uk/evince/printing.page
 share/help/uk/evince/reload.page
-share/help/uk/evince/shortcuts.page
 share/help/uk/evince/singlesided-13-16pages.page
 share/help/uk/evince/singlesided-17-20pages.page
 share/help/uk/evince/singlesided-3-4pages.page
@@ -2504,6 +2504,7 @@ share/help/vi/evince/duplex-npages.page
 share/help/vi/evince/editing.page
 share/help/vi/evince/figures/add-text-annotation.png
 share/help/vi/evince/figures/annotations-nav-to-page.png
+share/help/vi/evince/figures/emblem-system-symbolic.svg
 share/help/vi/evince/figures/evince-trail.png
 share/help/vi/evince/figures/evincelogo.png
 share/help/vi/evince/figures/print-select.png
@@ -2534,7 +2535,6 @@ share/help/vi/evince/print-pagescaling.page
 share/help/vi/evince/print-select.page
 share/help/vi/evince/printing.page
 share/help/vi/evince/reload.page
-share/help/vi/evince/shortcuts.page
 share/help/vi/evince/singlesided-13-16pages.page
 share/help/vi/evince/singlesided-17-20pages.page
 share/help/vi/evince/singlesided-3-4pages.page
@@ -2582,6 +2582,7 @@ share/help/zh_CN/evince/duplex-npages.page
 share/help/zh_CN/evince/editing.page
 share/help/zh_CN/evince/figures/add-text-annotation.png
 share/help/zh_CN/evince/figures/annotations-nav-to-page.png
+share/help/zh_CN/evince/figures/emblem-system-symbolic.svg
 share/help/zh_CN/evince/figures/evince-trail.png
 share/help/zh_CN/evince/figures/evincelogo.png
 share/help/zh_CN/evince/figures/print-select.png
@@ -2612,7 +2613,6 @@ share/help/zh_CN/evince/print-pagescaling.page
 share/help/zh_CN/evince/print-select.page
 share/help/zh_CN/evince/printing.page
 share/help/zh_CN/evince/reload.page
-share/help/zh_CN/evince/shortcuts.page
 share/help/zh_CN/evince/singlesided-13-16pages.page
 share/help/zh_CN/evince/singlesided-17-20pages.page
 share/help/zh_CN/evince/singlesided-3-4pages.page
@@ -2660,6 +2660,7 @@ share/help/zh_HK/evince/duplex-npages.page
 share/help/zh_HK/evince/editing.page
 share/help/zh_HK/evince/figures/add-text-annotation.png
 share/help/zh_HK/evince/figures/annotations-nav-to-page.png
+share/help/zh_HK/evince/figures/emblem-system-symbolic.svg
 share/help/zh_HK/evince/figures/evince-trail.png
 share/help/zh_HK/evince/figures/evincelogo.png
 share/help/zh_HK/evince/figures/print-select.png
@@ -2690,7 +2691,6 @@ share/help/zh_HK/evince/print-pagescaling.page
 share/help/zh_HK/evince/print-select.page
 share/help/zh_HK/evince/printing.page
 share/help/zh_HK/evince/reload.page
-share/help/zh_HK/evince/shortcuts.page
 share/help/zh_HK/evince/singlesided-13-16pages.page
 share/help/zh_HK/evince/singlesided-17-20pages.page
 share/help/zh_HK/evince/singlesided-3-4pages.page
@@ -2738,6 +2738,7 @@ share/help/zh_TW/evince/duplex-npages.page
 share/help/zh_TW/evince/editing.page
 share/help/zh_TW/evince/figures/add-text-annotation.png
 share/help/zh_TW/evince/figures/annotations-nav-to-page.png
+share/help/zh_TW/evince/figures/emblem-system-symbolic.svg
 share/help/zh_TW/evince/figures/evince-trail.png
 share/help/zh_TW/evince/figures/evincelogo.png
 share/help/zh_TW/evince/figures/print-select.png
@@ -2768,7 +2769,6 @@ share/help/zh_TW/evince/print-pagescaling.page
 share/help/zh_TW/evince/print-select.page
 share/help/zh_TW/evince/printing.page
 share/help/zh_TW/evince/reload.page
-share/help/zh_TW/evince/shortcuts.page
 share/help/zh_TW/evince/singlesided-13-16pages.page
 share/help/zh_TW/evince/singlesided-17-20pages.page
 share/help/zh_TW/evince/singlesided-3-4pages.page
