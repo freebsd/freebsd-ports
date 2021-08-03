@@ -18,6 +18,11 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	NLnetLabs
 
+.include <bsd.port.options.mk>
+.if ${OSVERSION} < 1200000 && ${SSL_DEFAULT} == base
+IGNORE=	Do not with with base ssl on RELEASE ${OSREL} ${OSVERSION}
+.endif
+
 USE_RC_SUBR=	${PORTNAME}
 
 # SUB_FILES=	pkg-message
