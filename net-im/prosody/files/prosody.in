@@ -24,6 +24,6 @@ prosody_group="%%GROUPS%%"
 load_rc_config $name
 
 prosody_enable=${prosody_enable:-"NO"}
-pidfile=${prosody_pidfile:-"/var/run/prosody/prosody.pid"}
+pidfile=${prosody_pidfile:+$prosody_pidfile}
 
 run_rc_command "$1"
