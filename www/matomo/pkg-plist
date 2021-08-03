@@ -604,6 +604,8 @@
 %%WWWDIR%%/core/Updates/4.0.0-rc4.php
 %%WWWDIR%%/core/Updates/4.0.1-b1.php
 %%WWWDIR%%/core/Updates/4.0.4-b1.php
+%%WWWDIR%%/core/Updates/4.1.2-b1.php
+%%WWWDIR%%/core/Updates/4.1.2-b2.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/UrlHelper.php
 %%WWWDIR%%/core/Validators/BaseValidator.php
@@ -880,7 +882,7 @@
 %%WWWDIR%%/misc/others/ExampleMatomoTracker.php
 %%WWWDIR%%/misc/others/geoipUpdateRows.php
 %%WWWDIR%%/misc/others/tracker_simpleImageTracker.php
-%%WWWDIR%%/misc/others/uninstall-delete-piwik-directory.php
+%%WWWDIR%%/misc/others/uninstall-delete-matomo-directory.php
 %%WWWDIR%%/misc/proxy-hide-piwik-url/README.md
 %%WWWDIR%%/misc/user/index.html
 %%WWWDIR%%/node_modules/angular-animate/LICENSE.md
@@ -989,6 +991,7 @@
 %%WWWDIR%%/offline-service-worker.js
 %%WWWDIR%%/package-lock.json
 %%WWWDIR%%/piwik.php
+%%WWWDIR%%/phpcs.xml
 %%WWWDIR%%/plugins/API/API.php
 %%WWWDIR%%/plugins/API/Controller.php
 %%WWWDIR%%/plugins/API/DataTable/MergeDataTables.php
@@ -1146,10 +1149,12 @@
 %%WWWDIR%%/plugins/Actions/lang/bs.json
 %%WWWDIR%%/plugins/Actions/lang/ca.json
 %%WWWDIR%%/plugins/Actions/lang/cs.json
+%%WWWDIR%%/plugins/Actions/lang/cy.json
 %%WWWDIR%%/plugins/Actions/lang/da.json
 %%WWWDIR%%/plugins/Actions/lang/de.json
 %%WWWDIR%%/plugins/Actions/lang/el.json
 %%WWWDIR%%/plugins/Actions/lang/en.json
+%%WWWDIR%%/plugins/Actions/lang/eo.json
 %%WWWDIR%%/plugins/Actions/lang/es-ar.json
 %%WWWDIR%%/plugins/Actions/lang/es.json
 %%WWWDIR%%/plugins/Actions/lang/et.json
@@ -5423,7 +5428,55 @@
 %%WWWDIR%%/plugins/PagePerformance/javascripts/PagePerformance.js
 %%WWWDIR%%/plugins/PagePerformance/javascripts/jqplotStackedBarEvolutionGraph.js
 %%WWWDIR%%/plugins/PagePerformance/javascripts/rowaction.js
+%%WWWDIR%%/plugins/PagePerformance/lang/am.json
+%%WWWDIR%%/plugins/PagePerformance/lang/ar.json
+%%WWWDIR%%/plugins/PagePerformance/lang/be.json
+%%WWWDIR%%/plugins/PagePerformance/lang/bg.json
+%%WWWDIR%%/plugins/PagePerformance/lang/ca.json
+%%WWWDIR%%/plugins/PagePerformance/lang/cs.json
+%%WWWDIR%%/plugins/PagePerformance/lang/da.json
+%%WWWDIR%%/plugins/PagePerformance/lang/de.json
+%%WWWDIR%%/plugins/PagePerformance/lang/el.json
 %%WWWDIR%%/plugins/PagePerformance/lang/en.json
+%%WWWDIR%%/plugins/PagePerformance/lang/es-ar.json
+%%WWWDIR%%/plugins/PagePerformance/lang/es.json
+%%WWWDIR%%/plugins/PagePerformance/lang/et.json
+%%WWWDIR%%/plugins/PagePerformance/lang/eu.json
+%%WWWDIR%%/plugins/PagePerformance/lang/fa.json
+%%WWWDIR%%/plugins/PagePerformance/lang/fi.json
+%%WWWDIR%%/plugins/PagePerformance/lang/fr.json
+%%WWWDIR%%/plugins/PagePerformance/lang/he.json
+%%WWWDIR%%/plugins/PagePerformance/lang/hi.json
+%%WWWDIR%%/plugins/PagePerformance/lang/hr.json
+%%WWWDIR%%/plugins/PagePerformance/lang/hu.json
+%%WWWDIR%%/plugins/PagePerformance/lang/id.json
+%%WWWDIR%%/plugins/PagePerformance/lang/is.json
+%%WWWDIR%%/plugins/PagePerformance/lang/it.json
+%%WWWDIR%%/plugins/PagePerformance/lang/ja.json
+%%WWWDIR%%/plugins/PagePerformance/lang/ka.json
+%%WWWDIR%%/plugins/PagePerformance/lang/ko.json
+%%WWWDIR%%/plugins/PagePerformance/lang/lt.json
+%%WWWDIR%%/plugins/PagePerformance/lang/lv.json
+%%WWWDIR%%/plugins/PagePerformance/lang/nb.json
+%%WWWDIR%%/plugins/PagePerformance/lang/nl.json
+%%WWWDIR%%/plugins/PagePerformance/lang/nn.json
+%%WWWDIR%%/plugins/PagePerformance/lang/pl.json
+%%WWWDIR%%/plugins/PagePerformance/lang/pt-br.json
+%%WWWDIR%%/plugins/PagePerformance/lang/pt.json
+%%WWWDIR%%/plugins/PagePerformance/lang/ro.json
+%%WWWDIR%%/plugins/PagePerformance/lang/ru.json
+%%WWWDIR%%/plugins/PagePerformance/lang/sk.json
+%%WWWDIR%%/plugins/PagePerformance/lang/sl.json
+%%WWWDIR%%/plugins/PagePerformance/lang/sq.json
+%%WWWDIR%%/plugins/PagePerformance/lang/sr.json
+%%WWWDIR%%/plugins/PagePerformance/lang/sv.json
+%%WWWDIR%%/plugins/PagePerformance/lang/th.json
+%%WWWDIR%%/plugins/PagePerformance/lang/tl.json
+%%WWWDIR%%/plugins/PagePerformance/lang/tr.json
+%%WWWDIR%%/plugins/PagePerformance/lang/uk.json
+%%WWWDIR%%/plugins/PagePerformance/lang/vi.json
+%%WWWDIR%%/plugins/PagePerformance/lang/zh-cn.json
+%%WWWDIR%%/plugins/PagePerformance/lang/zh-tw.json
 %%WWWDIR%%/plugins/PagePerformance/templates/getPagePerformancePopover.twig
 %%WWWDIR%%/plugins/PrivacyManager/API.php
 %%WWWDIR%%/plugins/PrivacyManager/Commands/AnonymizeRawData.php
@@ -5546,6 +5599,7 @@
 %%WWWDIR%%/plugins/ProfessionalServices/templates/promoSessionRecordings.twig
 %%WWWDIR%%/plugins/Provider/API.php
 %%WWWDIR%%/plugins/Provider/Archiver.php
+%%WWWDIR%%/plugins/Provider/CHANGELOG.md
 %%WWWDIR%%/plugins/Provider/Columns/Provider.php
 %%WWWDIR%%/plugins/Provider/Controller.php
 %%WWWDIR%%/plugins/Provider/Provider.php
@@ -6160,6 +6214,7 @@
 %%WWWDIR%%/plugins/TagManager/Dao/TriggersDao.php
 %%WWWDIR%%/plugins/TagManager/Dao/VariablesDao.php
 %%WWWDIR%%/plugins/TagManager/Diagnostic/ContainerWriteAccess.php
+%%WWWDIR%%/plugins/TagManager/Exception/EntityRecursionException.php
 %%WWWDIR%%/plugins/TagManager/Input/AccessValidator.php
 %%WWWDIR%%/plugins/TagManager/Input/Description.php
 %%WWWDIR%%/plugins/TagManager/Input/IdSite.php
@@ -6182,6 +6237,7 @@
 %%WWWDIR%%/plugins/TagManager/Model/Variable.php
 %%WWWDIR%%/plugins/TagManager/README.md
 %%WWWDIR%%/plugins/TagManager/Settings/Storage/Backend/TransientBackend.php
+%%WWWDIR%%/plugins/TagManager/SimulatorContext.php
 %%WWWDIR%%/plugins/TagManager/SystemSettings.php
 %%WWWDIR%%/plugins/TagManager/TagManager.php
 %%WWWDIR%%/plugins/TagManager/Tasks.php
@@ -6653,6 +6709,7 @@
 %%WWWDIR%%/plugins/Transitions/images/transitions_icon.png
 %%WWWDIR%%/plugins/Transitions/images/transitions_icon_hover.png
 %%WWWDIR%%/plugins/Transitions/javascripts/transitions.js
+%%WWWDIR%%/plugins/Transitions/lang/ar.json
 %%WWWDIR%%/plugins/Transitions/lang/bg.json
 %%WWWDIR%%/plugins/Transitions/lang/ca.json
 %%WWWDIR%%/plugins/Transitions/lang/cs.json
@@ -6660,25 +6717,32 @@
 %%WWWDIR%%/plugins/Transitions/lang/de.json
 %%WWWDIR%%/plugins/Transitions/lang/el.json
 %%WWWDIR%%/plugins/Transitions/lang/en.json
+%%WWWDIR%%/plugins/Transitions/lang/eo.json
 %%WWWDIR%%/plugins/Transitions/lang/es-ar.json
 %%WWWDIR%%/plugins/Transitions/lang/es.json
 %%WWWDIR%%/plugins/Transitions/lang/et.json
 %%WWWDIR%%/plugins/Transitions/lang/fa.json
 %%WWWDIR%%/plugins/Transitions/lang/fi.json
 %%WWWDIR%%/plugins/Transitions/lang/fr.json
+%%WWWDIR%%/plugins/Transitions/lang/he.json
 %%WWWDIR%%/plugins/Transitions/lang/hi.json
+%%WWWDIR%%/plugins/Transitions/lang/hr.json
+%%WWWDIR%%/plugins/Transitions/lang/hu.json
 %%WWWDIR%%/plugins/Transitions/lang/id.json
 %%WWWDIR%%/plugins/Transitions/lang/it.json
 %%WWWDIR%%/plugins/Transitions/lang/ja.json
 %%WWWDIR%%/plugins/Transitions/lang/ko.json
 %%WWWDIR%%/plugins/Transitions/lang/lt.json
+%%WWWDIR%%/plugins/Transitions/lang/lv.json
 %%WWWDIR%%/plugins/Transitions/lang/nb.json
 %%WWWDIR%%/plugins/Transitions/lang/nl.json
+%%WWWDIR%%/plugins/Transitions/lang/nn.json
 %%WWWDIR%%/plugins/Transitions/lang/pl.json
 %%WWWDIR%%/plugins/Transitions/lang/pt-br.json
 %%WWWDIR%%/plugins/Transitions/lang/pt.json
 %%WWWDIR%%/plugins/Transitions/lang/ro.json
 %%WWWDIR%%/plugins/Transitions/lang/ru.json
+%%WWWDIR%%/plugins/Transitions/lang/sk.json
 %%WWWDIR%%/plugins/Transitions/lang/sl.json
 %%WWWDIR%%/plugins/Transitions/lang/sq.json
 %%WWWDIR%%/plugins/Transitions/lang/sr.json
@@ -7305,6 +7369,7 @@
 %%WWWDIR%%/plugins/UsersManager/templates/userSecurity.twig
 %%WWWDIR%%/plugins/UsersManager/templates/userSettings.twig
 %%WWWDIR%%/plugins/VisitFrequency/API.php
+%%WWWDIR%%/plugins/VisitFrequency/Archiver.php
 %%WWWDIR%%/plugins/VisitFrequency/Columns/Metrics/ReturningMetric.php
 %%WWWDIR%%/plugins/VisitFrequency/Controller.php
 %%WWWDIR%%/plugins/VisitFrequency/Reports/Get.php
@@ -7679,7 +7744,6 @@
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/tests/README.md
 %%WWWDIR%%/vendor/autoload.php
-%%WWWDIR%%/vendor/bin/lessc
 %%WWWDIR%%/vendor/composer/ClassLoader.php
 %%WWWDIR%%/vendor/composer/InstalledVersions.php
 %%WWWDIR%%/vendor/composer/LICENSE
@@ -8672,10 +8736,10 @@
 %%WWWDIR%%/vendor/wikimedia/less.php/lib/Less/VisitorReplacing.php
 @(%%WWWOWN%%,%%WWWGRP%%,664) %%WWWDIR%%/piwik.js
 @(%%WWWOWN%%,%%WWWGRP%%,664) %%WWWDIR%%/matomo.js
-@dir %%WWWDIR%%/plugins/Contents/screenshots
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config
 @dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp
 @dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp/cache
 @dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp/cache/tracker
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config
+@dir %%WWWDIR%%/plugins/Contents/screenshots
 @dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Resources
 @dir %%WWWDIR%%/vendor/szymach/c-pchart/app/cache
