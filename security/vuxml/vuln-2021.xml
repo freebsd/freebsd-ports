@@ -1,3 +1,31 @@
+  <vuln vid="5ef14250-f47c-11eb-8f13-5b4de959822e">
+    <topic>Prosody -- Remote Information Disclosure</topic>
+    <affects>
+      <package>
+	<name>prosody</name>
+	<range><lt>0.11.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Prosody XMPP server advisory reports:</p>
+	<blockquote cite="https://prosody.im/security/advisory_20210722/">
+	<p>It was discovered that Prosody allows any entity to access the list of
+	admins, members, owners and banned entities of any federated XMPP group chat
+	of which they know the address.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-37601</cvename>
+      <url>https://prosody.im/security/advisory_20210722/</url>
+    </references>
+    <dates>
+      <discovery>2021-07-22</discovery>
+      <entry>2021-08-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c3c6c4a3-f47d-11eb-b632-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
