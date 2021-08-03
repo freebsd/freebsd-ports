@@ -113,6 +113,7 @@
     SUBDIR += brickshooter
     SUBDIR += brikx
     SUBDIR += briquolo
+    SUBDIR += brogue
     SUBDIR += brumbrumrally
     SUBDIR += brutalchess
     SUBDIR += bs
