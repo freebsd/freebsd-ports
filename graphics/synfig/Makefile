@@ -3,7 +3,7 @@
 PORTNAME=	synfig
 PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=v
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	graphics devel multimedia
 
 MAINTAINER=	portmaster@BSDforge.com

@@ -2,7 +2,7 @@
 
 PORTNAME=	exrtools
 PORTVERSION=	0.4
-PORTREVISION=	28
+PORTREVISION=	29
 CATEGORIES=	graphics
 MASTER_SITES=	http://scanline.ca/exrtools/ \
 		LOCAL/ehaupt

@@ -2,7 +2,7 @@
 
 PORTNAME=	enblend
 PORTVERSION=	4.2
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	graphics
 MASTER_SITES=	SF/enblend/enblend-enfuse/enblend-enfuse-${PORTVERSION}
 DISTNAME=	enblend-enfuse-${PORTVERSION}
