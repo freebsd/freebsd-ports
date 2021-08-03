@@ -1,7 +1,7 @@
 # Created by: Carlo Strub
 
 PORTNAME=	pijul
-PORTVERSION=	1.0.0.a52
+PORTVERSION=	1.0.0.a53
 CATEGORIES=	devel
 
 MAINTAINER=	cs@FreeBSD.org
@@ -14,8 +14,8 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd \
 
 USES=		cargo ssl
 CARGO_INSTALL=	no
-CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
-		addr2line-0.15.2 \
+CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
+		addr2line-0.16.0 \
 		adler-1.0.2 \
 		adler32-1.2.0 \
 		aes-0.7.4 \
@@ -25,10 +25,10 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
 		arrayvec-0.5.2 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
-		backtrace-0.3.60 \
+		backtrace-0.3.61 \
 		base64-0.13.0 \
 		base64ct-1.0.0 \
-		bcrypt-pbkdf-0.6.1 \
+		bcrypt-pbkdf-0.6.2 \
 		bincode-1.3.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.2.1 \
@@ -43,7 +43,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
 		byteorder-1.4.3 \
 		bytes-1.0.1 \
 		canonical-path-2.0.2 \
-		cc-1.0.68 \
+		cc-1.0.69 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
@@ -55,11 +55,11 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
 		core-foundation-sys-0.8.2 \
 		cpufeatures-0.1.5 \
 		crc32fast-1.2.1 \
-		crossbeam-deque-0.8.0 \
+		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.5 \
 		crossbeam-utils-0.8.5 \
 		crypto-mac-0.8.0 \
-		crypto-mac-0.11.0 \
+		crypto-mac-0.11.1 \
 		cryptovec-0.6.1 \
 		ctr-0.7.0 \
 		ctrlc-3.1.9 \
@@ -71,7 +71,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
 		dirs-next-2.0.0 \
 		dirs-sys-0.3.6 \
 		dirs-sys-next-0.1.2 \
-		ed25519-1.1.1 \
+		ed25519-1.2.0 \
 		ed25519-dalek-1.0.1 \
 		edit-0.1.3 \
 		either-1.6.1 \
@@ -86,20 +86,20 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.0.1 \
 		fs2-0.4.3 \
-		futures-0.3.15 \
-		futures-channel-0.3.15 \
-		futures-core-0.3.15 \
-		futures-executor-0.3.15 \
-		futures-io-0.3.15 \
-		futures-macro-0.3.15 \
-		futures-sink-0.3.15 \
-		futures-task-0.3.15 \
-		futures-util-0.3.15 \
+		futures-0.3.16 \
+		futures-channel-0.3.16 \
+		futures-core-0.3.16 \
+		futures-executor-0.3.16 \
+		futures-io-0.3.16 \
+		futures-macro-0.3.16 \
+		futures-sink-0.3.16 \
+		futures-task-0.3.16 \
+		futures-util-0.3.16 \
 		gcc-0.3.55 \
 		generic-array-0.14.4 \
 		getrandom-0.1.16 \
 		getrandom-0.2.3 \
-		gimli-0.24.0 \
+		gimli-0.25.0 \
 		git2-0.13.20 \
 		globset-0.4.8 \
 		h2-0.3.3 \
@@ -113,12 +113,12 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
 		httpdate-1.0.1 \
 		human-panic-1.0.3 \
 		humantime-2.1.0 \
-		hyper-0.14.10 \
+		hyper-0.14.11 \
 		hyper-tls-0.5.0 \
 		idna-0.2.3 \
 		ignore-0.4.18 \
 		indexmap-1.7.0 \
-		instant-0.1.9 \
+		instant-0.1.10 \
 		ipnet-2.3.1 \
 		itoa-0.4.7 \
 		jobserver-0.1.22 \
@@ -126,7 +126,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
 		lazy_static-1.4.0 \
 		libc-0.2.98 \
 		libgit2-sys-0.12.21+1.1.0 \
-		libpijul-1.0.0-alpha.45 \
+		libpijul-1.0.0-alpha.46 \
 		libsodium-sys-0.2.7 \
 		libssh2-sys-0.2.21 \
 		libz-sys-1.1.3 \
@@ -150,7 +150,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
-		object-0.25.3 \
+		object-0.26.0 \
 		once_cell-1.8.0 \
 		opaque-debug-0.3.0 \
 		openssl-0.10.35 \
@@ -161,7 +161,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
 		pager-0.16.0 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.3 \
-		password-hash-0.2.1 \
+		password-hash-0.2.2 \
 		path-slash-0.1.4 \
 		pbkdf2-0.8.0 \
 		percent-encoding-2.1.0 \
@@ -174,7 +174,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
-		proc-macro2-1.0.27 \
+		proc-macro2-1.0.28 \
 		quote-1.0.9 \
 		rand-0.7.3 \
 		rand-0.8.4 \
@@ -194,27 +194,27 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
 		rustc-demangle-0.1.20 \
 		ryu-1.0.5 \
 		same-file-1.0.6 \
-		sanakirja-1.2.5 \
-		sanakirja-core-1.2.9 \
+		sanakirja-1.2.9 \
+		sanakirja-core-1.2.12 \
 		schannel-0.1.19 \
 		scopeguard-1.1.0 \
 		security-framework-2.3.1 \
 		security-framework-sys-2.3.0 \
-		serde-1.0.126 \
+		serde-1.0.127 \
 		serde_bytes-0.11.5 \
-		serde_derive-1.0.126 \
-		serde_json-1.0.64 \
+		serde_derive-1.0.127 \
+		serde_json-1.0.66 \
 		serde_urlencoded-0.7.0 \
 		sha2-0.9.5 \
 		signal-hook-registry-1.4.0 \
 		signature-1.3.1 \
 		slab-0.4.3 \
 		smallvec-1.6.1 \
-		socket2-0.4.0 \
+		socket2-0.4.1 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
-		subtle-2.4.0 \
-		syn-1.0.73 \
+		subtle-2.4.1 \
+		syn-1.0.74 \
 		synstructure-0.12.5 \
 		tar-0.4.35 \
 		tempfile-3.2.0 \
@@ -230,9 +230,9 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
 		thrussh-keys-0.21.0 \
 		thrussh-libsodium-0.2.1 \
 		time-0.1.43 \
-		tinyvec-1.2.0 \
+		tinyvec-1.3.1 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.8.1 \
+		tokio-1.9.0 \
 		tokio-macros-1.3.0 \
 		tokio-native-tls-0.3.0 \
 		tokio-stream-0.1.7 \
@@ -265,7 +265,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
 		wasm-bindgen-macro-support-0.2.74 \
 		wasm-bindgen-shared-0.2.74 \
 		web-sys-0.3.51 \
-		which-4.1.0 \
+		which-4.2.2 \
 		whoami-0.9.0 \
 		whoami-1.1.2 \
 		winapi-0.3.9 \
@@ -282,7 +282,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.52 \
 PLIST_FILES=	bin/pijul
 
 post-patch:
-	${MV} ${WRKSRC}/cargo-crates/pijul-1.0.0-alpha.52/* ${WRKSRC}/
+	${MV} ${WRKSRC}/cargo-crates/pijul-1.0.0-alpha.53/* ${WRKSRC}/
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/target/release/pijul ${STAGEDIR}${PREFIX}/bin/pijul
