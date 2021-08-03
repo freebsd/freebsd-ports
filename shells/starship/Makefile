@@ -1,6 +1,5 @@
 PORTNAME=	starship
-DISTVERSION=	0.54.0
-PORTREVISION=	1
+DISTVERSION=	0.56.0
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -60,21 +59,25 @@ CARGO_CRATES=	\
 		crossbeam-epoch-0.9.4 \
 		crossbeam-utils-0.8.4 \
 		derivative-2.2.0 \
+		difference-2.0.0 \
 		digest-0.8.1 \
+		directories-next-2.0.0 \
 		dirs-1.0.5 \
-		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
 		dlv-list-0.2.3 \
+		downcast-0.10.0 \
 		dtoa-0.4.8 \
 		either-1.6.1 \
 		enumflags2-0.6.4 \
 		enumflags2_derive-0.6.4 \
 		fake-simd-0.1.2 \
 		fastrand-1.4.1 \
+		float-cmp-0.8.0 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.0.1 \
+		fragile-1.0.0 \
 		funty-1.1.0 \
 		futures-0.3.15 \
 		futures-channel-0.3.15 \
@@ -90,12 +93,13 @@ CARGO_CRATES=	\
 		gethostname-0.2.1 \
 		getrandom-0.1.16 \
 		getrandom-0.2.2 \
-		git2-0.13.19 \
+		git2-0.13.20 \
 		hashbrown-0.9.1 \
+		hashbrown-0.11.2 \
 		hermit-abi-0.1.18 \
 		http-0.2.4 \
 		idna-0.2.3 \
-		indexmap-1.6.2 \
+		indexmap-1.7.0 \
 		instant-0.1.9 \
 		itertools-0.10.0 \
 		itoa-0.4.7 \
@@ -103,8 +107,8 @@ CARGO_CRATES=	\
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		lexical-core-0.7.6 \
-		libc-0.2.94 \
-		libgit2-sys-0.12.20+1.1.0 \
+		libc-0.2.95 \
+		libgit2-sys-0.12.21+1.1.0 \
 		libz-sys-1.1.3 \
 		linked-hash-map-0.5.4 \
 		log-0.4.14 \
@@ -115,12 +119,15 @@ CARGO_CRATES=	\
 		matches-0.1.8 \
 		memchr-2.4.0 \
 		memoffset-0.6.3 \
+		mockall-0.10.2 \
+		mockall_derive-0.10.2 \
 		native-tls-0.2.7 \
 		nb-connect-1.2.0 \
 		nix-0.17.0 \
 		nix-0.19.1 \
-		nix-0.20.0 \
+		nix-0.21.0 \
 		nom-6.1.2 \
+		normalize-line-endings-0.3.0 \
 		notify-rust-4.5.2 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
@@ -128,7 +135,7 @@ CARGO_CRATES=	\
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
-		once_cell-1.7.2 \
+		once_cell-1.8.0 \
 		opaque-debug-0.2.3 \
 		open-1.7.0 \
 		openssl-0.10.34 \
@@ -136,7 +143,7 @@ CARGO_CRATES=	\
 		openssl-src-111.15.0+1.1.1k \
 		openssl-sys-0.9.63 \
 		ordered-multimap-0.3.1 \
-		os_info-3.0.5 \
+		os_info-3.0.6 \
 		parking-2.0.0 \
 		path-slash-0.1.4 \
 		percent-encoding-2.1.0 \
@@ -149,6 +156,9 @@ CARGO_CRATES=	\
 		pkg-config-0.3.19 \
 		polling-2.0.3 \
 		ppv-lite86-0.2.10 \
+		predicates-1.0.8 \
+		predicates-core-1.0.2 \
+		predicates-tree-1.0.2 \
 		proc-macro-crate-0.1.5 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
@@ -158,12 +168,12 @@ CARGO_CRATES=	\
 		quote-0.3.15 \
 		quote-1.0.9 \
 		radium-0.5.3 \
-		rand-0.8.3 \
+		rand-0.8.4 \
 		rand_chacha-0.3.0 \
 		rand_core-0.6.2 \
 		rand_hc-0.3.0 \
-		rayon-1.5.0 \
-		rayon-core-1.9.0 \
+		rayon-1.5.1 \
+		rayon-core-1.9.1 \
 		redox_syscall-0.1.57 \
 		redox_syscall-0.2.8 \
 		redox_users-0.3.5 \
@@ -179,15 +189,14 @@ CARGO_CRATES=	\
 		scopeguard-1.1.0 \
 		security-framework-2.2.0 \
 		security-framework-sys-2.2.0 \
-		semver-0.11.0 \
-		semver-parser-0.10.2 \
+		semver-1.0.3 \
 		serde-1.0.126 \
 		serde_derive-1.0.126 \
 		serde_json-1.0.64 \
 		serde_repr-0.1.7 \
 		serde_urlencoded-0.6.1 \
 		sha-1-0.8.2 \
-		shadow-rs-0.5.25 \
+		shadow-rs-0.6.2 \
 		shell-words-1.0.0 \
 		slab-0.4.3 \
 		socket2-0.4.0 \
@@ -209,22 +218,23 @@ CARGO_CRATES=	\
 		tinyvec-1.2.0 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.8 \
+		treeline-0.1.0 \
 		typenum-1.13.0 \
 		ucd-trie-0.1.3 \
 		unicode-bidi-0.3.5 \
 		unicode-normalization-0.1.17 \
-		unicode-segmentation-1.7.1 \
+		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.0.4 \
 		unicode-xid-0.2.2 \
 		uom-0.30.0 \
 		url-2.2.2 \
-		urlencoding-1.3.2 \
+		urlencoding-1.3.3 \
 		utf8-width-0.1.5 \
 		vcpkg-0.2.12 \
 		vec_map-0.8.2 \
 		version_check-0.9.3 \
-		versions-3.0.1 \
+		versions-3.0.2 \
 		void-1.0.2 \
 		waker-fn-1.1.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
