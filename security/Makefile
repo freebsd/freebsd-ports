@@ -1305,6 +1305,7 @@
     SUBDIR += vlock
     SUBDIR += vm-to-tor
     SUBDIR += vnccrack
+    SUBDIR += vouch-proxy
     SUBDIR += vpnc
     SUBDIR += vuls
     SUBDIR += vuxml
