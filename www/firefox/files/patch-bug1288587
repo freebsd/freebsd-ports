@@ -32,6 +32,6 @@ index 855214a..1e91d51 100644
 +                    del os.environ["PYTHON3"]
 +                except KeyError:
 +                    pass
-         # Homebrew on macOS will change Python's sys.executable to a custom
-         # value which messes with mach's virtualenv handling code. Override
-         # Homebrew's changes with the correct sys.executable value.
+         # Another quirk on macOS, with the system python, the virtualenv is
+         # not fully operational (missing entries in sys.path) if
+         # __PYVENV_LAUNCHER__ is set.
