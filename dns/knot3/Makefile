@@ -1,7 +1,7 @@
 # Created by: Leo Vandewoestijne <freebsd@dns.company>
 
 PORTNAME=	knot
-DISTVERSION=	3.0.8
+DISTVERSION=	3.1.0
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
@@ -88,9 +88,9 @@ DOH_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 FASTPARSER_DESC=		Fast zone parser (demanding compilation)
 FASTPARSER_CONFIGURE_ENABLE=	fastparser
 
-IDN_CONFIGURE_WITH=	libidn
-IDN_CONFIGURE_OFF=	--without-libidn
 IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
+IDN_CONFIGURE_OFF=	--without-libidn
+IDN_CONFIGURE_WITH=	libidn
 
 MAXMINDDB_DESC=			Enable MaxMind for geodb module
 MAXMINDDB_LIB_DEPENDS=		libmaxminddb.so:net/libmaxminddb
