@@ -190,7 +190,8 @@ In limited circumstances it was possible for users to authenticate using variati
     <affects>
       <package>
 	<name>fetchmail</name>
-	<range><lt>6.4.20</lt></range>
+	<range><lt>6.3.9</lt></range>
+	<range><ge>6.3.17</ge><lt>6.4.20</lt></range>
       </package>
     </affects>
     <description>
@@ -205,11 +206,13 @@ In limited circumstances it was possible for users to authenticate using variati
     </description>
     <references>
       <cvename>CVE-2021-36386</cvename>
+      <cvename>CVE-2008-2711</cvename>
       <url>https://sourceforge.net/p/fetchmail/mailman/message/37327392/</url>
     </references>
     <dates>
       <discovery>2021-07-07</discovery>
       <entry>2021-07-28</entry>
+      <modified>2021-08-03</modified>
     </dates>
   </vuln>
 
