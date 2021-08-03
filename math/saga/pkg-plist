@@ -33,8 +33,8 @@ lib/libsaga_api-%%PORTVERSION%%.so
 lib/libsaga_api.so
 lib/libsaga_gdi-%%PORTVERSION%%.so
 lib/libsaga_gdi.so
-%%PYTHON_SITELIBDIR%%/__pycache__/saga_api.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/__pycache__/saga_api.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/__pycache__/saga_api%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/__pycache__/saga_api%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/_saga_api-%%PORTVERSION%%.so
 %%PYTHON_SITELIBDIR%%/_saga_api.a
 %%PYTHON_SITELIBDIR%%/_saga_api.so
@@ -60,6 +60,7 @@ lib/saga/libgrid_tools.so
 lib/saga/libgrid_visualisation.so
 lib/saga/libgrids_tools.so
 lib/saga/libimagery_classification.so
+lib/saga/libimagery_isocluster.so
 lib/saga/libimagery_maxent.so
 lib/saga/libimagery_opencv.so
 lib/saga/libimagery_photogrammetry.so
