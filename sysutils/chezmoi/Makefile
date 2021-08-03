@@ -2,7 +2,7 @@
 
 PORTNAME=	chezmoi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.2
+DISTVERSION=	2.1.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	samir@noir.im
@@ -19,7 +19,7 @@ GH_TUPLE=	Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Maste
 		Masterminds:semver:v3.1.1:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		Masterminds:sprig:v3.2.2:masterminds_sprig_v3/vendor/github.com/Masterminds/sprig/v3 \
 		Microsoft:go-winio:v0.5.0:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
-		ProtonMail:go-crypto:c05353c2d58c:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
+		ProtonMail:go-crypto:52430bf6b52c:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
 		acomagu:bufpipe:v1.0.3:acomagu_bufpipe/vendor/github.com/acomagu/bufpipe \
 		alecthomas:chroma:v0.9.2:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		alecthomas:colour:v0.1.0:alecthomas_colour/vendor/github.com/alecthomas/colour \
@@ -30,7 +30,7 @@ GH_TUPLE=	Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Maste
 		bradenhilton:mozillainstallhash:v1.0.0:bradenhilton_mozillainstallhash/vendor/github.com/bradenhilton/mozillainstallhash \
 		charmbracelet:glamour:v0.3.0:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		coreos:go-semver:v0.3.0:coreos_go_semver/vendor/github.com/coreos/go-semver \
-		danieljoos:wincred:v1.1.0:danieljoos_wincred/vendor/github.com/danieljoos/wincred \
+		danieljoos:wincred:v1.1.1:danieljoos_wincred/vendor/github.com/danieljoos/wincred \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
@@ -47,18 +47,18 @@ GH_TUPLE=	Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Maste
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		godbus:dbus:v5.0.4:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:5ff15b29337e:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:04defd469f4e:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:a8dc77f794b6:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:crypto:a769d52b0f97:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:c6fcb2dbf985:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:a41e5a781914:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:59db8d763f22:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:0f9fa26af87c:golang_sys/vendor/golang.org/x/sys \
 		golang:term:6886f2dfbf5b:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		google:go-github:v36.0.0:google_go_github_v36/vendor/github.com/google/go-github/v36 \
 		google:go-querystring:v1.1.0:google_go_querystring/vendor/github.com/google/go-querystring \
-		google:gops:v0.3.18:google_gops/vendor/github.com/google/gops \
+		google:gops:v0.3.19:google_gops/vendor/github.com/google/gops \
 		google:renameio:v1.0.1:google_renameio/vendor/github.com/google/renameio \
-		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
+		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		gopherjs:gopherjs:fce0ec30dd00:gopherjs_gopherjs/vendor/github.com/gopherjs/gopherjs \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
@@ -71,7 +71,7 @@ GH_TUPLE=	Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Maste
 		magiconair:properties:v1.8.5:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-isatty:v0.0.13:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		microcosm-cc:bluemonday:v1.0.14:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
+		microcosm-cc:bluemonday:v1.0.15:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		mitchellh:copystructure:v1.2.0:mitchellh_copystructure/vendor/github.com/mitchellh/copystructure \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.4.1:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
@@ -84,7 +84,7 @@ GH_TUPLE=	Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Maste
 		pkg:diff:20ebb0f2a09e:pkg_diff/vendor/github.com/pkg/diff \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		protocolbuffers:protobuf-go:v1.27.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		rogpeppe:go-internal:v1.8.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		rs:zerolog:v1.23.0:rs_zerolog/vendor/github.com/rs/zerolog \
@@ -92,22 +92,21 @@ GH_TUPLE=	Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Maste
 		shopspring:decimal:v1.2.0:shopspring_decimal/vendor/github.com/shopspring/decimal \
 		smartystreets:assertions:v1.2.0:smartystreets_assertions/vendor/github.com/smartystreets/assertions \
 		spf13:afero:v1.6.0:spf13_afero/vendor/github.com/spf13/afero \
-		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
+		spf13:cast:v1.4.0:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v1.2.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.8.1:spf13_viper/vendor/github.com/spf13/viper \
-		stretchr:objx:v0.3.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		twpayne:go-shell:v0.3.0:twpayne_go_shell/vendor/github.com/twpayne/go-shell \
 		twpayne:go-vfs:v3.0.0:twpayne_go_vfs_v3/vendor/github.com/twpayne/go-vfs/v3 \
 		twpayne:go-xdg:v6.0.0:twpayne_go_xdg_v6/vendor/github.com/twpayne/go-xdg/v6 \
-		uber-go:atomic:v1.8.0:uber_go_atomic/vendor/go.uber.org/atomic \
+		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.7.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		xanzy:ssh-agent:v0.3.0:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
 		yuin:goldmark-emoji:v1.0.1:yuin_goldmark_emoji/vendor/github.com/yuin/goldmark-emoji \
-		yuin:goldmark:v1.3.8:yuin_goldmark/vendor/github.com/yuin/goldmark \
+		yuin:goldmark:v1.4.0:yuin_goldmark/vendor/github.com/yuin/goldmark \
 		zalando:go-keyring:v0.1.1:zalando_go_keyring/vendor/github.com/zalando/go-keyring \
 		DHowett:go-plist:1454fab16a06:go_plist/vendor/howett.net/plist
 
