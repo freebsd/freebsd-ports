@@ -1,3 +1,5 @@
-TIMESTAMP = 1626865003
-SHA256 (gabime-spdlog-v1.9.0_GH0.tar.gz) = 9ad181d75aaedbf47c8881e7b947a47cac3d306997e39de24dba60db633e70a7
-SIZE (gabime-spdlog-v1.9.0_GH0.tar.gz) = 327592
+TIMESTAMP = 1627825804
+SHA256 (gabime-spdlog-v1.9.1_GH0.tar.gz) = 9a452cfa24408baccc9b2bc2d421d68172a7630c99e9504a14754be840d31a62
+SIZE (gabime-spdlog-v1.9.1_GH0.tar.gz) = 327823
+SHA256 (6faa5fc95b4be3aa5161c25e5b68155a644dc358.patch) = 2084c8e7fafc1a62164d2adb7bf901d8726f6047fa4d404a8c0eec2e71572dd9
+SIZE (6faa5fc95b4be3aa5161c25e5b68155a644dc358.patch) = 663
