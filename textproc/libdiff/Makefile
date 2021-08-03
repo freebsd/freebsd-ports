@@ -12,5 +12,6 @@ PLIST_FILES=	lib/libdiff.a \
 		include/diff.h \
 		man/man3/diff.3.gz
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	PREFIX="${PREFIX}"
 
 .include <bsd.port.mk>
