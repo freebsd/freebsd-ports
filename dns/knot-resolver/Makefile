@@ -1,8 +1,7 @@
 # Created by: Leo Vandewoestijne <freebsd@dns.company>
 
 PORTNAME=	knot-resolver
-DISTVERSION=	5.3.0
-PORTREVISION=	1
+DISTVERSION=	5.4.0
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-resolver/ \
 		https://dns.company/downloads/knot-resolver/
@@ -42,16 +41,17 @@ SHEBANG_FILES=	scripts/bench.sh \
 		scripts/coverage_c_combine.sh \
 		scripts/coverage_env.sh \
 		scripts/gen-cdefs.sh \
+		scripts/gen-pgp-keyblock.sh \
 		scripts/get-date.sh \
 		scripts/luacov_gen_empty.sh \
-		scripts/make-dev-archive.sh \
-		scripts/make-distrofiles.sh \
+		scripts/make-archive.sh \
 		scripts/make-doc.sh \
-		scripts/make-srpm.sh \
-		scripts/obs-build.sh \
+		scripts/make-obs.sh \
 		scripts/run-pylint.sh \
+		scripts/run-scanbuild-with-args.sh \
 		scripts/test-config.sh \
 		scripts/test-integration-prepare.sh \
+		scripts/update-authors.sh \
 		scripts/update-root-hints.sh
 
 MESON_ARGS=	--buildtype=release \
@@ -60,7 +60,6 @@ MESON_ARGS=	--buildtype=release \
 		--pkg-config-path=${PREFIX}/libdata/pkgconfig \
 		--prefix=${LOCALBASE} \
 		-Dclient=enabled \
-		-Duser=${USERS} \
 		-Dgroup=${GROUPS} \
 		-Dinstall_kresd_conf=enabled \
 		-Dkeyfile_default=${ETCDIR}/root.keys \
@@ -74,17 +73,25 @@ CONFLICTS=	knot-1.* knot1-[0-6].*
 
 SUB_FILES=	pkg-message
 
-SUB_LIST=	USERS=${USERS} \
-		GROUPS=${GROUPS} \
-		RUNDIR=${RUNDIR}
+KRESD_USER=	kresd
+KRESD_GROUP=	kresd
+KRESD_RUNDIR=	/var/run/kresd
 
-USERS=		kresd
-GROUPS=		kresd
-RUNDIR=		/var/run/kresd
+SUB_LIST=	GROUPS=${GROUPS} \
+		RUNDIR=${RUNDIR} \
+		USERS=${USERS}
 
-PLIST_SUB=	USERS=${USERS} \
-		GROUPS=${GROUPS} \
-		RUNDIR=${RUNDIR}
+USERS=		${KRESD_USER}
+GROUPS=		${KRESD_GROUP}
+RUNDIR=		${KRESD_RUNDIR}
+
+PLIST_SUB=	GROUPS=${GROUPS} \
+		RUNDIR=${RUNDIR} \
+		USERS=${USERS}
+
+PORTDOCS=	AUTHORS COPYING CodingStyle NEWS README.md
+PORTEXAMPLES=	config.cluster config.docker config.internal config.isp \
+		config.personal config.privacy config.splitview
 
 OPTIONS_DEFINE=		DOCS EXAMPLES DNSTAP ROOTKEYS TRUSTANCHOR TEST TESTUNIT TESTCONF TESTEXTRA
 OPTIONS_DEFAULT=	DOCS EXAMPLES        ROOTKEYS TRUSTANCHOR TEST TESTUNIT
@@ -115,7 +122,8 @@ TESTCONF_MESON_OFF=	-Dconfig_tests=disabled
 TESTEXTRA_BROKEN=		CMake Error: The source directory misses CMakeLists.txt
 TESTEXTRA_BUILD_DEPENDS=	git:devel/git
 TESTEXTRA_USES=			cmake python:3
-TESTEXTRA_MESON_ON=		-Dextra_tests=enabled -Dsendmmsg=disabled
+TESTEXTRA_MESON_ON=		-Dextra_tests=enabled \
+				-Dsendmmsg=disabled
 TESTEXTRA_MESON_OFF=		-Dextra_tests=disabled
 
 TESTUNIT_BUILD_DEPENDS=	cmocka>=1.1.1:sysutils/cmocka
@@ -124,10 +132,6 @@ TESTUNIT_MESON_OFF=	-Dunit_tests=disabled
 
 TRUSTANCHOR_MESON_ON=	-Dmanaged_ta=enabled
 TRUSTANCHOR_MESON_OFF=	-Dmanaged_ta=disabled
-
-PORTDOCS=	AUTHORS COPYING CodingStyle NEWS README.md
-PORTEXAMPLES=	config.cluster config.docker config.internal config.isp \
-		config.personal config.privacy config.splitview
 
 STRIP_TARGETS=	sbin/kres-cache-gc \
 		sbin/kresc \

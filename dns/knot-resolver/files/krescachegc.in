@@ -20,7 +20,6 @@ rcvar=krescachegc_enable
 load_rc_config ${name}
 
 # set defaults
-
 krescachegc_enable=${krescachegc_enable:-"NO"}
 krescachegc_millis=${krescachegc_millis:-"1000"}
 
@@ -28,6 +27,6 @@ pidfile="%%RUNDIR%%/${name}.pid"
 procname="%%PREFIX%%/sbin/kres-cache-gc"
 
 command=/usr/sbin/daemon
-command_args="-c -f -r -P ${pidfile} -u %%USERS%% -- ${procname} -c %%RUNDIR%% -d ${krescachegc_millis}"
+command_args="-c -f -S -r -P ${pidfile} -T ${name} -u %%USERS%% -- ${procname} -d ${krescachegc_millis}"
 
 run_rc_command "$1"

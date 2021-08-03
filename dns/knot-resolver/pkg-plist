@@ -10,6 +10,7 @@ include/libkres/dnssec.h
 include/libkres/impl.h
 include/libkres/iterate.h
 include/libkres/layer.h
+include/libkres/log.h
 include/libkres/lru.h
 include/libkres/map.h
 include/libkres/module.h
