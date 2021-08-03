@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.186
 CATEGORIES=	graphics
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	653b0bce9243.patch:-p1 # https://github.com/KhronosGroup/Vulkan-ValidationLayers/pull/3121
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Validation layers for the Vulkan graphics API
 
