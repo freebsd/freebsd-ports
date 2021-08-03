@@ -589,6 +589,8 @@ include/agrum/tools/database/DBTranslator4ContinuousVariable.h
 include/agrum/tools/database/DBTranslator4ContinuousVariable_tpl.h
 include/agrum/tools/database/DBTranslator4DiscretizedVariable.h
 include/agrum/tools/database/DBTranslator4DiscretizedVariable_tpl.h
+include/agrum/tools/database/DBTranslator4IntegerVariable.h
+include/agrum/tools/database/DBTranslator4IntegerVariable_tpl.h
 include/agrum/tools/database/DBTranslator4LabelizedVariable.h
 include/agrum/tools/database/DBTranslator4LabelizedVariable_tpl.h
 include/agrum/tools/database/DBTranslator4RangeVariable.h
@@ -863,6 +865,8 @@ include/agrum/tools/variables/discreteVariable.h
 include/agrum/tools/variables/discreteVariable_inl.h
 include/agrum/tools/variables/discretizedVariable.h
 include/agrum/tools/variables/discretizedVariable_tpl.h
+include/agrum/tools/variables/integerVariable.h
+include/agrum/tools/variables/integerVariable_inl.h
 include/agrum/tools/variables/labelizedVariable.h
 include/agrum/tools/variables/labelizedVariable_inl.h
 include/agrum/tools/variables/rangeVariable.h
@@ -897,10 +901,6 @@ lib/libagrum.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/defaults.ini
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/deprecated.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/_utils/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/_utils/oslike.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/_utils/progress_bar.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/_utils/pyAgrum_header.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/bn2graph.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/bn2roc.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/bn2scores.py
