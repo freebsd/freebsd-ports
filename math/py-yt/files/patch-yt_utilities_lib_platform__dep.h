@@ -1,11 +1,14 @@
---- yt/utilities/lib/platform_dep.h.orig	2017-01-01 20:57:35 UTC
+--- yt/utilities/lib/platform_dep.h.orig	2021-08-02 20:27:17 UTC
 +++ yt/utilities/lib/platform_dep.h
-@@ -57,7 +57,7 @@ double erf(double x)
+@@ -59,6 +59,10 @@ double erf(double x)
  
  #else
  #include <stdint.h>
 -#include "alloca.h"
-+#include <stdlib.h>
++#if !defined(__FreeBSD__)
++#  include "alloca.h"
++#else
++#  include <stdlib.h>
++#endif
  #include <math.h>
  #endif
- 
