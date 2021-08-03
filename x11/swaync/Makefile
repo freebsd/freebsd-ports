@@ -1,6 +1,5 @@
 PORTNAME=	swaync
-PORTVERSION=	s20210802
-PORTREVISION=	1
+PORTVERSION=	s20210806
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,16 +9,18 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
-LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
+LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 
 USES=		compiler:c11 gnome localbase:ldflags meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	gdkpixbuf2 gtk30 introspection:build
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayNotificationCenter
-GH_TAGNAME=	9d5f328
+GH_TAGNAME=	399501c
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-client \
+		"@sample etc/xdg/${PORTNAME}/config.json.sample" \
 		"@sample etc/xdg/${PORTNAME}/style.css.sample"
 
 post-patch:
