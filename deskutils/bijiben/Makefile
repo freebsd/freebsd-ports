@@ -1,9 +1,9 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 
 PORTNAME=	bijiben
-PORTVERSION=	3.38.0
+PORTVERSION=	40.1
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libtracker-control-2.0.so:sysutils/tracker \
 		libical.so:devel/libical \
 		libzeitgeist-2.0.so:sysutils/zeitgeist \
 		libuuid.so:misc/e2fsprogs-libuuid \
-		libhandy-0.0.so:x11-toolkits/libhandy0
+		libhandy-1.so:x11-toolkits/libhandy
 
 PORTSCOUT=	limitw:1,even
 
