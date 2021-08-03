@@ -2,7 +2,9 @@ bin/gerbera
 %%DATADIR%%/js/common.js
 %%DATADIR%%/js/import.js
 %%DATADIR%%/js/playlists.js
+%%DATADIR%%/mysql-upgrade.xml
 %%DATADIR%%/mysql.sql
+%%DATADIR%%/sqlite3-upgrade.xml
 %%DATADIR%%/sqlite3.sql
 %%DATADIR%%/web/README.md
 %%DATADIR%%/web/assets/theme/colors.css
