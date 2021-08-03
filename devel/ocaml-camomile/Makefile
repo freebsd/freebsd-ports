@@ -1,11 +1,11 @@
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 
 PORTNAME=	camomile
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Comprehensive Unicode library for Objective Caml
 
 LICENSE=	LGPL21
@@ -21,9 +21,9 @@ USE_OCAML=	yes
 MAKE_ENV=	LIBDIR="${OCAML_SITELIBDIR}"
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 
-PORTDOCS=       CHANGES.md LICENSE.md README.md
+PORTDOCS=	CHANGES.md LICENSE.md README.md
 
-OPTIONS_DEFINE= DOCS
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^INSTALL_ARGS/ \
