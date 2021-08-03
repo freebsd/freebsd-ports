@@ -1,12 +1,18 @@
---- Makefile.am.orig	2020-01-25 04:04:36 UTC
+--- Makefile.am.orig	2021-06-09 09:17:54 UTC
 +++ Makefile.am
-@@ -27,7 +27,8 @@ configheaderdir = ${includedir}/singular
- nodist_configheader_HEADERS = singularconfig.h
- DISTCLEANFILES = $(nodist_configheader_HEADERS)
+@@ -5,10 +5,11 @@ libpolys gfanlib IntegerProgramming \
+ kernel Singular \
+ dox emacs redhat desktop
  
--dist_man1_MANS = doc/Singular.man doc/ESingular.man doc/TSingular.man
-+# man pages are broken, see https://github.com/Singular/Sources/issues/975
-+#dist_man1_MANS = doc/Singular.man doc/ESingular.man doc/TSingular.man
+-DIST_SUBDIRS = $(SUBDIRS) doc
+-if ENABLE_DOC_BUILD
+-SUBDIRS += doc
+-endif
++# doc does not exist any longer
++#DIST_SUBDIRS = $(SUBDIRS) doc
++#if ENABLE_DOC_BUILD
++#SUBDIRS += doc
++#endif
  
- pkgconfigdir = $(libdir)/pkgconfig
- pkgconfig_DATA = Singular.pc
+ EXTRA_DIST = README README.md README.pkg autogen.sh doxy redhat/singular.spec.in GPL2 GPL3
+ 

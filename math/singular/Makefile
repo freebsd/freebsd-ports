@@ -1,7 +1,6 @@
 PORTNAME=	singular
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	4-2-0
-PORTREVISION=	1
+DISTVERSION=	4-2-1
 CATEGORIES=	math
 #MASTER_SITES=	ftp://jim.mathematik.uni-kl.de/pub/Math/Singular/SOURCES/${PORTVERSION:C/\./-/g}/
 
@@ -23,7 +22,6 @@ GH_PROJECT=	Singular
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE} --disable-dependency-tracking --without-python
-MAKE_JOBS_UNSAFE=	yes
 SHEBANG_FILES=	Singular/surfex \
 		libpolys/libpolys-config.in \
 		libsingular-config.in
