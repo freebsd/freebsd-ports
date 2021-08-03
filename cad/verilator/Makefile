@@ -1,5 +1,5 @@
 PORTNAME=	verilator
-DISTVERSION=	4.204
+DISTVERSION=	4.210
 CATEGORIES=	cad
 MASTER_SITES=	https://www.veripool.org/ftp/
 
