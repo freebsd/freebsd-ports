@@ -2,7 +2,7 @@
 
 PORTNAME=	libmesh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
+DISTVERSION=	1.6.2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,8 +37,9 @@ INSTALL_TARGET=	install-strip
 USE_GITHUB=	yes
 GH_ACCOUNT=	libMesh
 GH_TUPLE=	\
-		libMesh:TIMPI:7fbe63d:TIMPI/contrib/timpi \
-		libMesh:autoconf-submodule:9bb972f:autoconf_submodule/m4/autoconf-submodule
+		libMesh:autoconf-submodule:a993d79:autoconf_submodule/m4/autoconf-submodule \
+		libMesh:TIMPI:5b3b387:TIMPI/contrib/timpi \
+		roystgnr:MetaPhysicL:30d13f2:MetaPhysicL/contrib/metaphysicl
 
 OPTIONS_DEFINE=			GLPK HDF5 MPI EXAMPLES
 OPTIONS_DEFAULT=		MPI
