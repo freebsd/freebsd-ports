@@ -1,3 +1,53 @@
+  <vuln vid="c3c6c4a3-f47d-11eb-b632-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>92.0.4515.131</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/search/label/Stable%20updates">
+	  <p>This release contains 10 security fixes, including:</p>
+	  <ul>
+	    <li>[1227777] High CVE-2021-30590: Heap buffer overflow in
+	      Bookmarks. Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2021-07-09</li>
+	    <li>[1229298] High CVE-2021-30591: Use after free in File System
+	      API. Reported by SorryMybad (@S0rryMybad) of Kunlun Lab on
+	      2021-07-14</li>
+	    <li>[1209469] High CVE-2021-30592: Out of bounds write in Tab
+	      Groups. Reported by David Erceg on 2021-05-15</li>
+	    <li>[1209616] High CVE-2021-30593: Out of bounds read in Tab Strip.
+	      Reported by David Erceg on 2021-05-16</li>
+	    <li>[1218468] High CVE-2021-30594: Use after free in Page Info UI.
+	      Reported by raven (@raid_akame) on 2021-06-10</li>
+	    <li>[1214481] Medium CVE-2021-30596: Incorrect security UI in
+	      Navigation. Reported by Mohit Raj (shadow2639) on 2021-05-29</li>
+	    <li>[1232617] Medium CVE-2021-30597: Use after free in Browser UI.
+	      Reported by raven (@raid_akame) on 2021-07-24</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-30590</cvename>
+      <cvename>CVE-2021-30591</cvename>
+      <cvename>CVE-2021-30592</cvename>
+      <cvename>CVE-2021-30593</cvename>
+      <cvename>CVE-2021-30594</cvename>
+      <cvename>CVE-2021-30596</cvename>
+      <cvename>CVE-2021-30597</cvename>
+      <url>https://chromereleases.googleblog.com/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2021-08-02</discovery>
+      <entry>2021-08-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b1aa54ae-74cb-42a0-b462-cbb6831c5c50">
     <topic>RabbitMQ -- Denial of Service in AMQP1.0 plugin</topic>
     <affects>
