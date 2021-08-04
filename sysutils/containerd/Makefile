@@ -12,11 +12,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	bash:shells/bash \
 		go:lang/go
 
-USES=		gmake
+USES=		cpe gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	containerd
 GH_SUBDIR=	src/github.com/containerd/containerd
+
+CPE_VENDOR=	linuxfoundation
 
 MAKE_ENV=	${GO_ENV} \
 		GOFLAGS="${GO_BUILDFLAGS}" \
