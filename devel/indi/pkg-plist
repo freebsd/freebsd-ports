@@ -3,6 +3,7 @@ bin/indi_activefocuser_focus
 bin/indi_arduinost4
 bin/indi_astromech_lpm
 bin/indi_astrometry
+bin/indi_astrotrac_telescope
 bin/indi_baader_dome
 bin/indi_celestron_gps
 bin/indi_celestron_sct_focus
@@ -12,6 +13,7 @@ bin/indi_deepskydad_af1_focus
 bin/indi_deepskydad_af2_focus
 bin/indi_deepskydad_af3_focus
 bin/indi_deepskydad_fp1
+bin/indi_deepskydad_fr1
 bin/indi_dmfc_focus
 bin/indi_domepro2_dome
 bin/indi_dsc_telescope
@@ -67,10 +69,12 @@ bin/indi_onfocus_focus
 bin/indi_openweathermap_weather
 bin/indi_optec_wheel
 bin/indi_paramount_telescope
+bin/indi_pegasus_flatmaster
 bin/indi_pegasus_focuscube
 bin/indi_pegasus_ppb
 bin/indi_pegasus_ppba
 bin/indi_pegasus_scopsoag
+bin/indi_pegasus_uch
 bin/indi_pegasus_upb
 bin/indi_perfectstar_focus
 bin/indi_planewave_deltat
@@ -98,8 +102,8 @@ bin/indi_simulator_dome
 bin/indi_simulator_focus
 bin/indi_simulator_gps
 bin/indi_simulator_guide
+bin/indi_simulator_receiver
 bin/indi_simulator_rotator
-bin/indi_simulator_spectrograph
 bin/indi_simulator_sqm
 bin/indi_simulator_telescope
 bin/indi_simulator_weather
@@ -182,6 +186,7 @@ include/libindi/indiguiderinterface.h
 include/libindi/indilightboxinterface.h
 include/libindi/indilogger.h
 include/libindi/indimacros.h
+include/libindi/indiproperties.h
 include/libindi/indiproperty.h
 include/libindi/indipropertybasic.h
 include/libindi/indipropertyblob.h
@@ -190,6 +195,7 @@ include/libindi/indipropertynumber.h
 include/libindi/indipropertyswitch.h
 include/libindi/indipropertytext.h
 include/libindi/indipropertyview.h
+include/libindi/indireceiver.h
 include/libindi/indirotator.h
 include/libindi/indirotatorinterface.h
 include/libindi/indisensorinterface.h
@@ -231,15 +237,15 @@ lib/indi/MathPlugins/libindi_SVD_MathPlugin.so
 lib/libindiAlignmentClient.a
 lib/libindiAlignmentDriver.so
 lib/libindiAlignmentDriver.so.1
-lib/libindiAlignmentDriver.so.1.9.0
+lib/libindiAlignmentDriver.so.1.9.1
 lib/libindiclient.a
 lib/libindidriver.a
 lib/libindidriver.so
 lib/libindidriver.so.1
-lib/libindidriver.so.1.9.0
+lib/libindidriver.so.1.9.1
 lib/libindilx200.so
 lib/libindilx200.so.1
-lib/libindilx200.so.1.9.0
+lib/libindilx200.so.1.9.1
+libdata/pkgconfig/libindi.pc
 %%DATADIR%%/drivers.xml
 %%DATADIR%%/indi_tcfs_sk.xml
-libdata/pkgconfig/libindi.pc
