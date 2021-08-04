@@ -636,6 +636,18 @@ In limited circumstances it was possible for users to authenticate using variati
 	<name>mysql80-server</name>
 	<range><lt>8.0.26</lt></range>
       </package>
+      <package>
+	<name>mariadb103-server</name>
+	<range><lt>10.3.31</lt></range>
+      </package>
+      <package>
+	<name>mariadb104-server</name>
+	<range><lt>10.4.21</lt></range>
+      </package>
+      <package>
+	<name>mariadb105-server</name>
+	<range><lt>10.5.12</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -647,15 +659,55 @@ In limited circumstances it was possible for users to authenticate using variati
 	    requiring user credentials.<br/>
 	    The highest CVSS v3.1 Base Score of vulnerabilities affecting Oracle
 	    MySQL is 8.8.</p>
+	  <p>MariaDB is affected by CVE-2021-2372 and CVE-2021-2389 only.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <url>https://www.oracle.com/security-alerts/cpujul2021.html</url>
+      <cvename>CVE-2019-17543</cvename>
+      <cvename>CVE-2021-2339</cvename>
+      <cvename>CVE-2021-2340</cvename>
+      <cvename>CVE-2021-2342</cvename>
+      <cvename>CVE-2021-2352</cvename>
+      <cvename>CVE-2021-2354</cvename>
+      <cvename>CVE-2021-2356</cvename>
+      <cvename>CVE-2021-2357</cvename>
+      <cvename>CVE-2021-2367</cvename>
+      <cvename>CVE-2021-2370</cvename>
+      <cvename>CVE-2021-2372</cvename>
+      <cvename>CVE-2021-2374</cvename>
+      <cvename>CVE-2021-2383</cvename>
+      <cvename>CVE-2021-2384</cvename>
+      <cvename>CVE-2021-2385</cvename>
+      <cvename>CVE-2021-2387</cvename>
+      <cvename>CVE-2021-2389</cvename>
+      <cvename>CVE-2021-2390</cvename>
+      <cvename>CVE-2021-2399</cvename>
+      <cvename>CVE-2021-2402</cvename>
+      <cvename>CVE-2021-2410</cvename>
+      <cvename>CVE-2021-2411</cvename>
+      <cvename>CVE-2021-2412</cvename>
+      <cvename>CVE-2021-2417</cvename>
+      <cvename>CVE-2021-2418</cvename>
+      <cvename>CVE-2021-2422</cvename>
+      <cvename>CVE-2021-2424</cvename>
+      <cvename>CVE-2021-2425</cvename>
+      <cvename>CVE-2021-2426</cvename>
+      <cvename>CVE-2021-2427</cvename>
+      <cvename>CVE-2021-2429</cvename>
+      <cvename>CVE-2021-2437</cvename>
+      <cvename>CVE-2021-2440</cvename>
+      <cvename>CVE-2021-2441</cvename>
+      <cvename>CVE-2021-2444</cvename>
+      <cvename>CVE-2021-3450</cvename>
+      <cvename>CVE-2021-22884</cvename>
+      <cvename>CVE-2021-22901</cvename>
     </references>
     <dates>
       <discovery>2021-07-20</discovery>
       <entry>2021-07-20</entry>
+      <modified>2021-08-04</modified>
     </dates>
   </vuln>
 
