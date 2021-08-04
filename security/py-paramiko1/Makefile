@@ -10,6 +10,9 @@ COMMENT=	Python SSH2 protocol library
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Out of date version.  No consumer now.  Use security/py-paramiko
+EXPIRATION_DATE=2021-09-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa@${PY_FLAVOR}
 
