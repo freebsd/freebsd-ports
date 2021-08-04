@@ -6,8 +6,10 @@ share/applications/net.drawpile.drawpile.desktop
 share/drawpile/drawpile/i18n/drawpile_cs.qm
 share/drawpile/drawpile/i18n/drawpile_de.qm
 share/drawpile/drawpile/i18n/drawpile_fi.qm
+share/drawpile/drawpile/i18n/drawpile_fr.qm
 share/drawpile/drawpile/i18n/drawpile_it.qm
 share/drawpile/drawpile/i18n/drawpile_ja.qm
+share/drawpile/drawpile/i18n/drawpile_pt.qm
 share/drawpile/drawpile/i18n/drawpile_ru.qm
 share/drawpile/drawpile/i18n/drawpile_uk.qm
 share/drawpile/drawpile/i18n/drawpile_vi.qm
@@ -29,7 +31,7 @@ share/drawpile/drawpile/sounds/unlock.wav
 share/drawpile/drawpile/theme/dark/application-exit.svg
 share/drawpile/drawpile/theme/dark/application-menu.svg
 share/drawpile/drawpile/theme/dark/color-picker.svg
-share/drawpile/drawpile/theme/dark/configure-shortcuts.svg
+share/drawpile/drawpile/theme/dark/configure.svg
 share/drawpile/drawpile/theme/dark/cursor-arrow.svg
 share/drawpile/drawpile/theme/dark/document-export.svg
 share/drawpile/drawpile/theme/dark/document-new.svg
@@ -81,6 +83,7 @@ share/drawpile/drawpile/theme/dark/irc-unvoice.svg
 share/drawpile/drawpile/theme/dark/layer-visible-off.svg
 share/drawpile/drawpile/theme/dark/layer-visible-on.svg
 share/drawpile/drawpile/theme/dark/list-add.svg
+share/drawpile/drawpile/theme/dark/list-remove.svg
 share/drawpile/drawpile/theme/dark/media-playback-pause.svg
 share/drawpile/drawpile/theme/dark/media-playback-start.svg
 share/drawpile/drawpile/theme/dark/media-record.svg
@@ -106,7 +109,7 @@ share/drawpile/drawpile/theme/icons.txt
 share/drawpile/drawpile/theme/light/application-exit.svg
 share/drawpile/drawpile/theme/light/application-menu.svg
 share/drawpile/drawpile/theme/light/color-picker.svg
-share/drawpile/drawpile/theme/light/configure-shortcuts.svg
+share/drawpile/drawpile/theme/light/configure.svg
 share/drawpile/drawpile/theme/light/cursor-arrow.svg
 share/drawpile/drawpile/theme/light/document-export.svg
 share/drawpile/drawpile/theme/light/document-new.svg
@@ -158,6 +161,7 @@ share/drawpile/drawpile/theme/light/irc-unvoice.svg
 share/drawpile/drawpile/theme/light/layer-visible-off.svg
 share/drawpile/drawpile/theme/light/layer-visible-on.svg
 share/drawpile/drawpile/theme/light/list-add.svg
+share/drawpile/drawpile/theme/light/list-remove.svg
 share/drawpile/drawpile/theme/light/media-playback-pause.svg
 share/drawpile/drawpile/theme/light/media-playback-start.svg
 share/drawpile/drawpile/theme/light/media-record.svg
