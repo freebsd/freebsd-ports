@@ -6,6 +6,10 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	87c026cfe4ac.patch:-p1 # meson 0.57
+PATCHFILES+=	cf3f8a67cd6f.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-dictionary/-/merge_requests/18
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 dictionary lookup application
 

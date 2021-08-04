@@ -1,3 +1,7 @@
 TIMESTAMP = 1628099354
 SHA256 (gnome3/gnome-dictionary-40.0.tar.xz) = 2e650c2a4cea8cc4d02d4a583c456cbbc9d1871e918c7dc4de081ded1d830db5
 SIZE (gnome3/gnome-dictionary-40.0.tar.xz) = 603388
+SHA256 (gnome3/87c026cfe4ac.patch) = 00458b28b3d00837c59468385e8698ee8846ab9517a8154e86b1fc7957a4824a
+SIZE (gnome3/87c026cfe4ac.patch) = 1772
+SHA256 (gnome3/cf3f8a67cd6f.patch) = 254f464c3a79a9dbd2a03c518fd288cc8b41de28c8817bc2c279ce9903617d15
+SIZE (gnome3/cf3f8a67cd6f.patch) = 1789
