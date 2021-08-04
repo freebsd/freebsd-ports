@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME?=	gitlab-shell
-PORTVERSION?=	13.19.0
+PORTVERSION?=	13.19.1
 PORTREVISION?=	0
 CATEGORIES=	devel
 
@@ -17,7 +17,7 @@ ALL_TARGET=	build
 USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT?=	e01ebb3bfa7afc0d2f26dd2f4bbadce56f325722
+GL_COMMIT?=	757aa7c0e0b8733c75c744f188b0136c1fe1830f
 
 USERS=		git
 GROUPS=		git

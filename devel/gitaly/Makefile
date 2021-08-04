@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	14.1.1
+DISTVERSION=	14.1.2
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -43,12 +43,12 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	756474b0aede2c6169cccbde1fea4b39d8a961a8
+GL_COMMIT=	1905b9707bd9c3ba5b47738b64a68a01f1f93c99
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 97dd
+# 100dd
 GH_TUPLE=	\
 		DataDog:datadog-go:v4.4.0:datadog_datadog_go/vendor/github.com/DataDog/datadog-go \
 		DataDog:dd-trace-go:v1.30.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
@@ -56,8 +56,11 @@ GH_TUPLE=	\
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		alexbrainman:sspi:4729b3d4d858:alexbrainman_sspi/vendor/github.com/alexbrainman/sspi \
 		avast:retry-go:v2.4.2:avast_retry_go/vendor/github.com/avast/retry-go \
+		aws:aws-sdk-go:v1.37.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
+		census-ecosystem:opencensus-go-exporter-stackdriver:v0.13.8:census_ecosystem_opencensus_go_exporter_stackdriver/vendor/contrib.go.opencensus.io/exporter/stackdriver \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		census-instrumentation:opencensus-proto:v0.3.0:census_instrumentation_opencensus_proto/vendor/github.com/census-instrumentation/opencensus-proto \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		client9:reopen:v1.0.0:client9_reopen/vendor/github.com/client9/reopen \
 		cloudflare:tableflip:v1.2.2:cloudflare_tableflip/vendor/github.com/cloudflare/tableflip \
@@ -77,8 +80,8 @@ GH_TUPLE=	\
 		godbus:dbus:v5.0.3:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:be400aefbc4c:golang_crypto/vendor/golang.org/x/crypto \
-		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:crypto:eec23a3978ad:golang_crypto/vendor/golang.org/x/crypto \
+		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:lint:83fdc39ff7b5:golang_lint/vendor/golang.org/x/lint \
 		golang:net:d523dce5a7f4:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:5e61552d6c78:golang_oauth2/vendor/golang.org/x/oauth2 \
@@ -107,6 +110,7 @@ GH_TUPLE=	\
 		jcmturner:gofork:v1.0.0:jcmturner_gofork/vendor/github.com/jcmturner/gofork \
 		jcmturner:gokrb5:v5.3.0:jcmturner_gokrb5/vendor/gopkg.in/jcmturner/gokrb5.v5 \
 		jcmturner:rpc:v0.0.2:jcmturner_rpc/vendor/gopkg.in/jcmturner/rpc.v0 \
+		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		kelseyhightower:envconfig:v1.3.0:kelseyhightower_envconfig/vendor/github.com/kelseyhightower/envconfig \
 		lib:pq:v1.2.0:lib_pq/vendor/github.com/lib/pq \
 		libgit2:git2go:v31.4.12:libgit2_git2go_v31/vendor/github.com/libgit2/git2go/v31 \
@@ -120,7 +124,6 @@ GH_TUPLE=	\
 		olekukonko:ts:78ecb04241c0:olekukonko_ts/vendor/github.com/olekukonko/ts \
 		opencontainers:runtime-spec:v1.0.2:opencontainers_runtime_spec/vendor/github.com/opencontainers/runtime-spec \
 		opentracing:opentracing-go:v1.2.0:opentracing_opentracing_go/vendor/github.com/opentracing/opentracing-go \
-		otiai10:curr:v1.0.0:otiai10_curr/vendor/github.com/otiai10/curr \
 		pelletier:go-toml:v1.8.1:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		philhofer:fwd:v1.0.0:philhofer_fwd/vendor/github.com/philhofer/fwd \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -144,8 +147,8 @@ GH_TUPLE=	\
 		uber:jaeger-client-go:v2.27.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
 		uber:jaeger-lib:v2.4.1:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
 
-GL_TUPLE=	gitlab-org:gitlab-shell:3f9890ef73dced430d86801a1efc0e93ec50890e:gitlab_org_gitlab_shell/vendor/gitlab.com/gitlab-org/gitlab-shell \
-		gitlab-org:labkit:bdc29f9e957c46d7b0a4747a4662879c7189bf08:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
+GL_TUPLE=	gitlab-org:gitlab-shell:a9c25c17ea0a511ec6554a4dd3bcd9f5012d59d5:gitlab_org_gitlab_shell/vendor/gitlab.com/gitlab-org/gitlab-shell \
+		gitlab-org:labkit:397363e2404ac0276b1959373a1c1c2bc1610d67:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
@@ -169,4 +172,3 @@ post-install:
 		s#${DATADIR_REL}/bin#@(,,555) ${DATADIR_REL}/bin#; ' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
-
