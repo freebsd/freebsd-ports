@@ -788,6 +788,8 @@ share/kservices5/kcm_workspace.desktop
 share/kservices5/kcmkded.desktop
 share/kservices5/kded/touchpad.desktop
 share/kservices5/mouse.desktop
+share/kservices5/plasma-dataengine-touchpad.desktop
+share/kservices5/qtquicksettings.desktop
 share/kservices5/solid-actions.desktop
 share/kservices5/spellchecking.desktop
 share/kservicetypes5/solid-device-type.desktop
