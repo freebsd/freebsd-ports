@@ -4,6 +4,7 @@
 %%ASDF_PATHNAME%%/command.lisp
 %%ASDF_PATHNAME%%/core.lisp
 %%ASDF_PATHNAME%%/debug.lisp
+%%ASDF_PATHNAME%%/dynamic-group.lisp
 %%ASDF_PATHNAME%%/dynamic-window.lisp
 %%ASDF_PATHNAME%%/events.lisp
 %%ASDF_PATHNAME%%/fdump.lisp
@@ -38,6 +39,7 @@
 %%ASDF_PATHNAME%%/sbclfasl/command.fasl
 %%ASDF_PATHNAME%%/sbclfasl/core.fasl
 %%ASDF_PATHNAME%%/sbclfasl/debug.fasl
+%%ASDF_PATHNAME%%/sbclfasl/dynamic-group.fasl
 %%ASDF_PATHNAME%%/sbclfasl/dynamic-window.fasl
 %%ASDF_PATHNAME%%/sbclfasl/events.fasl
 %%ASDF_PATHNAME%%/sbclfasl/fdump.fasl
