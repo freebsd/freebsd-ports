@@ -21,7 +21,7 @@ LIB_DEPENDS=	libwapcaplet.so:textproc/libwapcaplet \
 USES=		gmake iconv localbase pkgconfig
 USE_LDCONFIG=	yes
 
-MAKE_ENV=	COMPONENT_TYPE="lib-shared"
+MAKE_ENV=	BUILD_CC="${CC}" COMPONENT_TYPE="lib-shared"
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
