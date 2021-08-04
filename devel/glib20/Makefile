@@ -58,10 +58,6 @@ MESON_ARGS+=	-Diconv=libc
 MESON_ARGS+=	-Diconv=external
 .endif
 
-.if ${ARCH} == powerpc64
-EXTRA_PATCHES=	${FILESDIR}/extra-arch-powerpc64
-.endif
-
 pre-configure-FAM_ALTBACKEND-on:
 	@${REINPLACE_CMD} -e 's|kqueue-helper.c|kqueue_fnm.c|g ; \
 		s|.*kqueue-missing.c.*||g ; \
