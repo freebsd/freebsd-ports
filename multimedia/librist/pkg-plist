@@ -11,5 +11,5 @@ include/librist/udpsocket.h
 include/librist/version.h
 lib/librist.so
 lib/librist.so.4
-lib/librist.so.4.1.0
+lib/librist.so.4.1.4
 libdata/pkgconfig/librist.pc
