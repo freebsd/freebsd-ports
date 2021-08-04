@@ -2,7 +2,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2013.766
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	SF/alienarena.mirror/Alien%20Arena%207.66/ \
 		http://icculus.org/alienarena/Files/ \

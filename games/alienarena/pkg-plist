@@ -19,6 +19,6 @@
 %%LIBDIR%%/data1/sound
 %%LIBDIR%%/data1/textures
 %%LIBDIR%%/data1/vehicles
-@dirrm %%LIBDIR%%/data1
-@dirrm %%LIBDIR%%/arena
-@dirrm %%LIBDIR%%
+@dir %%LIBDIR%%/data1
+@dir %%LIBDIR%%/arena
+@dir %%LIBDIR%%

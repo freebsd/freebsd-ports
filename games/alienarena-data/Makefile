@@ -2,7 +2,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2013.766
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://ftp.jeuxlinux.fr/files/ \
@@ -37,7 +37,7 @@ pre-install:
 .	for DIRE in arena botinfo data1
 		@cd ${WRKSRC} && \
 			${FIND} ${DIRE} -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
-				${FIND} ${DIRE} -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
+				${FIND} ${DIRE} -type d | ${SORT} -r | ${SED} -e 's|^|@dir %%DATADIR%%/|' >> ${PLIST}
 .	endfor
 
 	@${ECHO_CMD} share/pixmaps/${PORTNAME}.png >> ${PLIST}
