@@ -13,6 +13,7 @@ include/KF5/KXmlGui/KShortcutsDialog
 include/KF5/KXmlGui/KShortcutsEditor
 include/KF5/KXmlGui/KToggleToolBarAction
 include/KF5/KXmlGui/KToolBar
+include/KF5/KXmlGui/KToolTipHelper
 include/KF5/KXmlGui/KUndoActions
 include/KF5/KXmlGui/KXMLGUIBuilder
 include/KF5/KXmlGui/KXMLGUIClient
@@ -32,6 +33,7 @@ include/KF5/KXmlGui/kshortcutseditor.h
 include/KF5/KXmlGui/kshortcutwidget.h
 include/KF5/KXmlGui/ktoggletoolbaraction.h
 include/KF5/KXmlGui/ktoolbar.h
+include/KF5/KXmlGui/ktooltiphelper.h
 include/KF5/KXmlGui/kundoactions.h
 include/KF5/KXmlGui/kxmlgui_export.h
 include/KF5/KXmlGui/kxmlguibuilder.h

@@ -132,8 +132,9 @@ lib/cmake/KF5CalendarCore/KF5CalendarCoreConfigVersion.cmake
 lib/cmake/KF5CalendarCore/KF5CalendarCoreTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5CalendarCore/KF5CalendarCoreTargets.cmake
 lib/libKF5CalendarCore.so
-lib/libKF5CalendarCore.so.5
 lib/libKF5CalendarCore.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libKF5CalendarCore.so.5
+libdata/pkgconfig/KF5CalendarCore.pc
 %%QT_MKSPECDIR%%/modules/qt_KCalendarCore.pri
 share/qlogging-categories5/kcalendarcore.categories
 share/qlogging-categories5/kcalendarcore.renamecategories

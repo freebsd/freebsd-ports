@@ -71,6 +71,8 @@ include/KF5/KWidgetsAddons/KToolBarLabelAction
 include/KF5/KWidgetsAddons/KToolBarPopupAction
 include/KF5/KWidgetsAddons/KToolBarSpacerAction
 include/KF5/KWidgetsAddons/KToolTipWidget
+include/KF5/KWidgetsAddons/KTwoFingerSwipe
+include/KF5/KWidgetsAddons/KTwoFingerTap
 include/KF5/KWidgetsAddons/KUrlLabel
 include/KF5/KWidgetsAddons/KViewStateMaintainerBase
 include/KF5/KWidgetsAddons/KViewStateSerializer
@@ -144,6 +146,8 @@ include/KF5/KWidgetsAddons/ktoolbarlabelaction.h
 include/KF5/KWidgetsAddons/ktoolbarpopupaction.h
 include/KF5/KWidgetsAddons/ktoolbarspaceraction.h
 include/KF5/KWidgetsAddons/ktooltipwidget.h
+include/KF5/KWidgetsAddons/ktwofingerswipe.h
+include/KF5/KWidgetsAddons/ktwofingertap.h
 include/KF5/KWidgetsAddons/kurllabel.h
 include/KF5/KWidgetsAddons/kviewstatemaintainerbase.h
 include/KF5/KWidgetsAddons/kviewstateserializer.h

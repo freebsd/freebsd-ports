@@ -390,6 +390,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/libplasma5.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libplasma5.mo
 share/locale/sr@latin/LC_MESSAGES/libplasma5.mo
 share/locale/sv/LC_MESSAGES/libplasma5.mo
+share/locale/ta/LC_MESSAGES/libplasma5.mo
 share/locale/tg/LC_MESSAGES/libplasma5.mo
 share/locale/tr/LC_MESSAGES/libplasma5.mo
 share/locale/ug/LC_MESSAGES/libplasma5.mo
@@ -442,6 +443,7 @@ share/plasma/desktoptheme/air/opaque/widgets/panel-background.svgz
 share/plasma/desktoptheme/air/opaque/widgets/tooltip.svgz
 share/plasma/desktoptheme/air/translucent/dialogs/background.svgz
 share/plasma/desktoptheme/air/translucent/dialogs/krunner.svgz
+share/plasma/desktoptheme/air/translucent/widgets/background.svgz
 share/plasma/desktoptheme/air/translucent/widgets/extender-background.svgz
 share/plasma/desktoptheme/air/translucent/widgets/panel-background.svgz
 share/plasma/desktoptheme/air/translucent/widgets/tooltip.svgz

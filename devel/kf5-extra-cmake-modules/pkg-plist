@@ -58,6 +58,7 @@ share/ECM/kde-modules/clang-format.cmake
 share/ECM/kde-modules/kde-git-commit-hooks/clang-format.sh
 share/ECM/kde-modules/kde-git-commit-hooks/pre-commit.in
 share/ECM/kde-modules/prefix.sh.cmake
+share/ECM/kde-modules/prefix.sh.fish.cmake
 share/ECM/modules/CheckAtomic.cmake
 share/ECM/modules/ECMAddAppIcon.cmake
 share/ECM/modules/ECMAddQch.cmake

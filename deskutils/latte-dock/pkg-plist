@@ -45,10 +45,7 @@ share/icons/hicolor/32x32/apps/latte-dock.svg
 share/icons/hicolor/48x48/apps/latte-dock.svg
 share/icons/hicolor/scalable/apps/latte-dock.svg
 share/knotifications5/lattedock.notifyrc
-share/kservices5/plasma-applet-org.kde.latte.containment.desktop
-share/kservices5/plasma-applet-org.kde.latte.plasmoid.desktop
 share/kservices5/plasma-containmentactions-lattecontextmenu.desktop
-share/kservices5/plasma-shell-org.kde.latte.shell.desktop
 share/kservicetypes5/latte-indicator.desktop
 share/latte/indicators/default/metadata.desktop
 share/latte/indicators/default/package/config/config.qml
