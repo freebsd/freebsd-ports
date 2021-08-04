@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20210802
+PORTVERSION=	s20210804
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -34,7 +34,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	ffe553edb
+GH_TAGNAME=	2868d4ba8
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-32-ga3fdfe8:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.180:Vulkan_Headers/externals/Vulkan-Headers \
@@ -51,6 +51,7 @@ GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 USES=		cmake:testing compiler:c++17-lang localbase:ldflags sdl ssl
 USE_GCC=	yes:build # libc++ lacks std::atomic_ref, std::ranges
 USE_SDL=	sdl2
+CMAKE_ON=	LIBVA_FOUND
 CMAKE_OFF=	YUZU_USE_EXTERNAL_SDL2 ENABLE_GNUTLS ENABLE_MBEDTLS
 LDFLAGS+=	-static-libstdc++ # avoid libc++ conflict, requires files/patch-fmt
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
