@@ -1,6 +1,6 @@
 PORTNAME=	mdbook
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.10
+DISTVERSION=	0.4.12
 CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -20,7 +20,6 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		anyhow-1.0.40 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
-		base64-0.12.3 \
 		base64-0.13.0 \
 		bit-set-0.5.2 \
 		bit-vec-0.6.3 \
@@ -30,7 +29,6 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		block-padding-0.1.5 \
 		byte-tools-0.3.1 \
 		byteorder-1.4.3 \
-		bytes-0.5.6 \
 		bytes-1.0.1 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
@@ -41,7 +39,6 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		difference-2.0.0 \
 		digest-0.8.1 \
 		digest-0.9.0 \
-		dtoa-0.4.8 \
 		either-1.6.1 \
 		elasticlunr-rs-2.3.11 \
 		env_logger-0.7.1 \
@@ -69,7 +66,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		getrandom-0.2.2 \
 		gitignore-1.0.7 \
 		glob-0.3.0 \
-		h2-0.2.7 \
+		h2-0.3.3 \
 		handlebars-4.0.0 \
 		hashbrown-0.9.1 \
 		headers-0.3.4 \
@@ -78,16 +75,16 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		hermit-abi-0.1.18 \
 		html5ever-0.25.1 \
 		http-0.2.4 \
-		http-body-0.3.1 \
+		http-body-0.4.2 \
 		httparse-1.4.0 \
-		httpdate-0.3.2 \
+		httpdate-1.0.1 \
 		humantime-1.3.0 \
-		hyper-0.13.10 \
+		hyper-0.14.11 \
 		idna-0.2.3 \
 		indexmap-1.6.2 \
 		inotify-0.7.1 \
 		inotify-sys-0.1.5 \
-		input_buffer-0.3.1 \
+		input_buffer-0.4.0 \
 		iovec-0.1.4 \
 		itoa-0.4.7 \
 		kernel32-sys-0.2.2 \
@@ -104,13 +101,17 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		mime-0.3.16 \
 		mime_guess-2.0.3 \
 		mio-0.6.23 \
+		mio-0.7.13 \
 		mio-extras-2.0.6 \
 		miow-0.2.2 \
+		miow-0.3.7 \
 		net2-0.2.37 \
 		new_debug_unreachable-1.0.4 \
 		notify-4.0.16 \
+		ntapi-0.3.6 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
+		num_cpus-1.13.0 \
 		opaque-debug-0.2.3 \
 		opaque-debug-0.3.0 \
 		open-1.7.0 \
@@ -124,11 +125,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		phf_codegen-0.8.0 \
 		phf_generator-0.8.0 \
 		phf_shared-0.8.0 \
-		pin-project-0.4.28 \
 		pin-project-1.0.7 \
-		pin-project-internal-0.4.28 \
 		pin-project-internal-1.0.7 \
-		pin-project-lite-0.1.12 \
 		pin-project-lite-0.2.6 \
 		pin-utils-0.1.0 \
 		ppv-lite86-0.2.10 \
@@ -163,13 +161,13 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		serde-1.0.125 \
 		serde_derive-1.0.125 \
 		serde_json-1.0.64 \
-		serde_urlencoded-0.6.1 \
+		serde_urlencoded-0.7.0 \
 		sha-1-0.8.2 \
 		sha-1-0.9.5 \
 		shlex-1.0.0 \
 		siphasher-0.3.5 \
 		slab-0.4.3 \
-		socket2-0.3.19 \
+		socket2-0.4.0 \
 		string_cache-0.8.1 \
 		string_cache_codegen-0.5.1 \
 		strsim-0.8.0 \
@@ -183,17 +181,17 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		time-0.1.43 \
 		tinyvec-1.2.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-0.2.25 \
-		tokio-macros-0.2.6 \
-		tokio-tungstenite-0.11.0 \
-		tokio-util-0.3.1 \
+		tokio-1.9.0 \
+		tokio-macros-1.3.0 \
+		tokio-stream-0.1.7 \
+		tokio-tungstenite-0.13.0 \
+		tokio-util-0.6.7 \
 		toml-0.5.8 \
 		tower-service-0.3.1 \
 		tracing-0.1.26 \
 		tracing-core-0.1.18 \
-		tracing-futures-0.2.5 \
 		try-lock-0.2.3 \
-		tungstenite-0.11.1 \
+		tungstenite-0.12.0 \
 		typenum-1.13.0 \
 		ucd-trie-0.1.3 \
 		unicase-2.6.0 \
@@ -203,13 +201,12 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
 		url-2.2.2 \
-		urlencoding-1.1.1 \
 		utf-8-0.7.6 \
 		vec_map-0.8.2 \
 		version_check-0.9.3 \
 		walkdir-2.3.2 \
 		want-0.3.0 \
-		warp-0.2.5 \
+		warp-0.3.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
 		which-4.1.0 \
