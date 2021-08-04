@@ -1,0 +1,18 @@
+[
+{
+	message: <<EOD
+When using the panel appmenu as an XFCE menu applet, you have to configure
+the appmenu to show in the panel applet, rather than on each individual window.
+
+This configuration should remove any 'double' menus you may experience:
+
+# xfconf-query -c xsettings -p /Gtk/ShellShowsMenubar -n -t bool -s true
+# xfconf-query -c xsettings -p /Gtk/ShellShowsAppmenu -n -t bool -s true
+
+This configuration will load the appmenu-gtk-module for XFCE: 
+
+# xfconf-query -c xsettings -p /Gtk/Modules -n -t string -s "appmenu-gtk-module"
+EOD,
+	type: install
+}
+]
