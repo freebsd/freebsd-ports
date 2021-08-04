@@ -6,23 +6,6 @@ MODE="$2" # PRE-INSTALL, POST-INSTALL, DEINSTALL, POST-DEINSTALL
 
 case "$MODE" in
 POST-INSTALL)
-	# try to replace the e2fsck and its wrapper, fsck_ext2fs, 
-	# symbolic links by hard links if possible (pkg ships them as symlinks)
-	d1=${PKG_ROOTDIR}/sbin/ ;              dev1=$(stat -Lf %Xd "$d1")
-	d2=${PKG_ROOTDIR}${PKG_PREFIX}/sbin/ ; dev2=$(stat -Lf %Xd "$d2")
-	if [ "$dev1" = "$dev2" ] && [ "$(realpath "$d1")" != "$(realpath "$d2")" ]; then
-		for i in e2fsck fsck_ext2fs ; do
-			ln -fhP ${d1}${i} ${d2}${i}
-		done
-		for i in ext2 ext3 ext4 ; do
-			ln -fhP ${d2}e2fsck ${d2}fsck.$i
-		done
-		echo >&2 "NOTE: replaced e2fsprogs symlinks by hard links, will recalculate checksums with a root at(1) job."
-		pid=$$
-		echo /bin/sh -c "\"set -x ; { while sleep 2 </dev/null ; do kill -0 $pid || break ; done ; \
-			pkg check -r "${PKG_NAME}" ; } </dev/null 2>&1 | logger -t pkg.e2fsprogs.POST-INSTALL \"" \
-			| at now
-	fi
 	#
 	# install configuration file and update config files from
 	# old "ext4dev" to current "ext4" name.
@@ -71,14 +54,14 @@ DEINSTALL)
 		${PKG_PREFIX}/etc/mke2fs.conf.dist
 	then
 		rm -f ${PKG_PREFIX}/etc/mke2fs.conf
-	else
+	elif [ "_${PKG_UPGRADE-upgrade}" = _upgrade ] ; then
 		echo "If and only if you are deleting e2fsprogs forever,"
 		echo "remember to delete ${PKG_PREFIX}/etc/mke2fs.conf."
 	fi
 	# e2fsck.conf is no longer part of the distribution, but still supported,
 	# => no pkg-list @sample line possible
 	#    and no reference e2fsck.conf.sample or e2fsck.conf.dist is available 
-	if test -f ${PKG_PREFIX}/etc/e2fsck.conf
+	if test -f ${PKG_PREFIX}/etc/e2fsck.conf -a "_${PKG_UPGRADE-upgrade}" = _upgrade
 	then
 		echo "If and only if you are deleting e2fsprogs forever,"
 		echo "remember to delete ${PKG_PREFIX}/etc/e2fsck.conf."

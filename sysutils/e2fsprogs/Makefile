@@ -1,4 +1,16 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
+# heavily modified by: Matthias Andree <mandree@FreeBSD.org>
+#
+# supported FLAVORS=	default nobootfsck roothardlinks
+# FLAVORS explained:
+# default 	- install e2fsck fsck_ext2fs into /sbin and symlink from PREFIX
+# 		- requires that / is writable
+#
+# roothardlinks - install e2fsck fsck_ext2fs into /sbin and hardlink from PREFIX
+# 		- requires that / is writable and the same file system as PREFIX
+#
+# nobootfsck	- does not install into /sbin, but will be unable to fsck
+# 		  ext2/ext3/ext4 file systems at boot, before PREFIX is mounted
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.46.3
@@ -97,6 +109,13 @@ PKGDEINSTALL=	${PKGINSTALL}
 MAKE_ARGS+=	V=1
 
 .include <bsd.port.options.mk>
+
+.if ${MASTERDIR} == ${.CURDIR}
+FLAVORS=	default nobootfsck roothardlinks
+FLAVOR?=	${FLAVORS:[1]}
+nobootfsck_PKGNAMESUFFIX=	-nobootfsck
+roothardlinks_PKGNAMESUFFIX=	-roothardlinks
+.endif
 
 . if ! empty(ARCH:Mpowerpc*)
 # Fix powerpc64/powerpc SIGSEGV,
@@ -197,7 +216,13 @@ post-patch::
 .if ${MASTERDIR} == ${.CURDIR}
 # NOTE: The previous .if block goes all the way to the end of the file.
 
-.if !empty(PORT_OPTIONS:MNOTESTS) && (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1200000 || ((${ARCH} != i386) && (${ARCH} != amd64)))
+.if ${FLAVOR} == nobootfsck
+PLIST_SUB+=	ROOTSBIN="@comment "
+.else
+PLIST_SUB+=	ROOTSBIN=""
+.endif
+
+.if !empty(PORT_OPTIONS:MNOTESTS) && (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1400000 || ((${ARCH} != i386) && (${ARCH} != amd64)))
 BROKEN=	it was not tested on your system by the maintainer; you must run self-tests
 .endif
 
@@ -295,13 +320,22 @@ post-install:
 	# in the regular hierarchy, normally $PREFIX/sbin. Hard links may
 	# crash the install if /usr[/local] is a separate file system from /,
 	# and pkg 1.15.4 can't automatically unroll or install relative symlinks.
+.if ${FLAVOR} != nobootfsck
 	${MKDIR} ${STAGEDIR}/sbin
 	${MV} -f ${STAGEDIR}${PREFIX}/sbin/e2fsck ${STAGEDIR}/sbin/ # from INSTALL_TARGET
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${STAGEDIR}/sbin/  # from port
-	# according to TPH 6.1.1 Handling Symbolic Links, these are to be absolute,
-	# yet stage-qa warns about these on 2020-09-16:
+	# according to TPH 6.1.1 Handling Symbolic Links, these are to be absolute
+	# for the default FLAVOR, yet stage-qa warns about these on 2020-09-16.
+. if ${FLAVOR} == roothardlinks
+	${LN} -f ${STAGEDIR}/sbin/fsck_ext2fs ${STAGEDIR}${PREFIX}/sbin/
+	${LN} -f ${STAGEDIR}/sbin/e2fsck      ${STAGEDIR}${PREFIX}/sbin/
+. else
 	${LN} -fs /sbin/fsck_ext2fs ${STAGEDIR}${PREFIX}/sbin/
 	${LN} -fs /sbin/e2fsck      ${STAGEDIR}${PREFIX}/sbin/
+. endif
+.else
+	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${STAGEDIR}${PREFIX}/sbin/
+.endif
 	# these are made hardlinks to symlinks - -P avoids following them to /sbin:
 	${LN} -fP ${STAGEDIR}${PREFIX}/sbin/e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext2
 	${LN} -fP ${STAGEDIR}${PREFIX}/sbin/e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext3
