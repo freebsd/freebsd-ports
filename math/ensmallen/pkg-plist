@@ -29,6 +29,7 @@ include/ensmallen_bits/callbacks/callbacks.hpp
 include/ensmallen_bits/callbacks/early_stop_at_min_loss.hpp
 include/ensmallen_bits/callbacks/print_loss.hpp
 include/ensmallen_bits/callbacks/progress_bar.hpp
+include/ensmallen_bits/callbacks/query_front.hpp
 include/ensmallen_bits/callbacks/report.hpp
 include/ensmallen_bits/callbacks/store_best_coordinates.hpp
 include/ensmallen_bits/callbacks/timer_stop.hpp
@@ -86,6 +87,14 @@ include/ensmallen_bits/lbfgs/lbfgs_impl.hpp
 include/ensmallen_bits/log.hpp
 include/ensmallen_bits/lookahead/lookahead.hpp
 include/ensmallen_bits/lookahead/lookahead_impl.hpp
+include/ensmallen_bits/moead/decomposition_policies/pbi_decomposition.hpp
+include/ensmallen_bits/moead/decomposition_policies/tchebycheff_decomposition.hpp
+include/ensmallen_bits/moead/decomposition_policies/weighted_decomposition.hpp
+include/ensmallen_bits/moead/moead.hpp
+include/ensmallen_bits/moead/moead_impl.hpp
+include/ensmallen_bits/moead/weight_init_policies/bbs_init.hpp
+include/ensmallen_bits/moead/weight_init_policies/dirichlet_init.hpp
+include/ensmallen_bits/moead/weight_init_policies/uniform_init.hpp
 include/ensmallen_bits/nsga2/nsga2.hpp
 include/ensmallen_bits/nsga2/nsga2_impl.hpp
 include/ensmallen_bits/padam/padam.hpp
@@ -162,6 +171,11 @@ include/ensmallen_bits/problems/three_hump_camel_function.hpp
 include/ensmallen_bits/problems/three_hump_camel_function_impl.hpp
 include/ensmallen_bits/problems/wood_function.hpp
 include/ensmallen_bits/problems/wood_function_impl.hpp
+include/ensmallen_bits/problems/zdt/zdt1_function.hpp
+include/ensmallen_bits/problems/zdt/zdt2_function.hpp
+include/ensmallen_bits/problems/zdt/zdt3_function.hpp
+include/ensmallen_bits/problems/zdt/zdt4_function.hpp
+include/ensmallen_bits/problems/zdt/zdt6_function.hpp
 include/ensmallen_bits/pso/init_policies/default_init.hpp
 include/ensmallen_bits/pso/pso.hpp
 include/ensmallen_bits/pso/pso_impl.hpp
@@ -223,6 +237,8 @@ include/ensmallen_bits/swats/swats_impl.hpp
 include/ensmallen_bits/swats/swats_update.hpp
 include/ensmallen_bits/utility/any.hpp
 include/ensmallen_bits/utility/arma_traits.hpp
+include/ensmallen_bits/utility/indicators/epsilon.hpp
+include/ensmallen_bits/utility/indicators/igd_plus.hpp
 include/ensmallen_bits/wn_grad/wn_grad.hpp
 include/ensmallen_bits/wn_grad/wn_grad_impl.hpp
 include/ensmallen_bits/wn_grad/wn_grad_update.hpp

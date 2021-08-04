@@ -1,5 +1,5 @@
 PORTNAME=	ensmallen
-DISTVERSION=	2.16.2
+DISTVERSION=	2.17.0
 CATEGORIES=	math
 MASTER_SITES=	https://ensmallen.org/files/
 
@@ -18,7 +18,7 @@ CMAKE_OFF=	BUILD_TESTS
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-do-test: # one test fails: https://github.com/mlpack/ensmallen/issues/264
+do-test: # due to a regression the test executable isn't built, see https://github.com/mlpack/ensmallen/issues/312
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
