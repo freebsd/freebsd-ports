@@ -1,3 +1,49 @@
+  <vuln vid="1d651770-f4f5-11eb-ba49-001b217b3468">
+    <topic>Gitlab -- Gitlab</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>14.1.0</ge><lt>14.1.2</lt></range>
+	<range><ge>14.0.0</ge><lt>14.0.7</lt></range>
+	<range><ge>0</ge><lt>13.12.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2021/08/03/security-release-gitlab-14-1-2-released/">
+	  <p>Stored XSS in Mermaid when viewing Markdown files</p>
+	  <p>Stored XSS in default branch name</p>
+	  <p>Perform Git actions with an impersonation token even if impersonation is disabled</p>
+	  <p>Tag and branch name confusion allows Developer to access protected CI variables</p>
+	  <p>New subscriptions generate OAuth tokens on an incorrect OAuth client application</p>
+	  <p>Ability to list and delete impersonation tokens for your own user</p>
+	  <p>Pipelines page is partially visible for users that have no right to see CI/CD</p>
+	  <p>Improper email validation on an invite URL</p>
+	  <p>Unauthorised user was able to add meta data upon issue creation</p>
+	  <p>Unauthorized user can trigger deployment to a protected environment</p>
+	  <p>Guest in private project can see CI/CD Analytics</p>
+	  <p>Guest users can create issues for Sentry errors and track their status</p>
+	  <p>Private user email disclosure via group invitation</p>
+	  <p>Projects are allowed to add members with email address domain that should be blocked by group settings</p>
+	  <p>Misleading username could lead to impersonation in using SSH Certificates</p>
+	  <p>Unauthorized user is able to access and view project vulnerability reports</p>
+	  <p>Denial of service in repository caused by malformed commit author</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-22237</cvename>
+      <cvename>CVE-2021-22236</cvename>
+      <cvename>CVE-2021-22239</cvename>
+      <url>https://about.gitlab.com/releases/2021/08/03/security-release-gitlab-14-1-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2021-08-03</discovery>
+      <entry>2021-08-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5ef14250-f47c-11eb-8f13-5b4de959822e">
     <topic>Prosody -- Remote Information Disclosure</topic>
     <affects>
