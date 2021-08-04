@@ -9,10 +9,15 @@ share/dbus-1/services/org.gnome.Maps.service
 %%DATADIR%%/icons/hicolor/16x16/apps/layer-not-visible-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/layer-visible-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/layers-button-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/map-marker-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/maps-point-end-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/maps-point-end.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/maps-point-start-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/maps-point-start.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/mountain-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/no-toilets-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/no-wheelchair-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/phone-oldschool-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/route-bike-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/route-button-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/route-car-symbolic.svg
@@ -28,6 +33,9 @@ share/dbus-1/services/org.gnome.Maps.service
 %%DATADIR%%/icons/hicolor/16x16/apps/route-transit-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/route-transit-train-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/route-transit-tram-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/toilets-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/wheelchair-limited-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/apps/wheelchair-symbolic.svg
 %%DATADIR%%/icons/hicolor/24x24/apps/user-location-compass.png
 %%DATADIR%%/icons/hicolor/24x24/apps/user-location.png
 %%DATADIR%%/icons/hicolor/32x32/apps/maps-direction-continue-symbolic.svg
