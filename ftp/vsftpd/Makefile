@@ -1,8 +1,7 @@
 # Created by: Neil Blakey-Milner
 
 PORTNAME=	vsftpd
-PORTVERSION=	3.0.3
-PORTREVISION=	2
+PORTVERSION=	3.0.5
 CATEGORIES=	ftp
 MASTER_SITES=	https://security.appspot.com/downloads/ \
 		GENTOO

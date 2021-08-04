@@ -1,2 +1,3 @@
-SHA256 (vsftpd-3.0.3.tar.gz) = 9d4d2bf6e6e2884852ba4e69e157a2cecd68c5a7635d66a3a8cf8d898c955ef7
-SIZE (vsftpd-3.0.3.tar.gz) = 196649
+TIMESTAMP = 1628025306
+SHA256 (vsftpd-3.0.5.tar.gz) = 26b602ae454b0ba6d99ef44a09b6b9e0dfa7f67228106736df1f278c70bc91d3
+SIZE (vsftpd-3.0.5.tar.gz) = 197778
