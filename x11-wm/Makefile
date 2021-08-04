@@ -90,6 +90,7 @@
     SUBDIR += rubygem-uh-layout
     SUBDIR += rubygem-uh-wm
     SUBDIR += sawfish
+    SUBDIR += sdorfehs
     SUBDIR += selectwm
     SUBDIR += skippy-xd
     SUBDIR += spectrwm
