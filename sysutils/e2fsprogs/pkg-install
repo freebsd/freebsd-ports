@@ -17,6 +17,11 @@ POST-INSTALL)
 		for i in ext2 ext3 ext4 ; do
 			ln -fhP ${d2}e2fsck ${d2}fsck.$i
 		done
+		echo >&2 "NOTE: replaced e2fsprogs symlinks by hard links, will recalculate checksums with a root at(1) job."
+		pid=$$
+		echo /bin/sh -c "\"set -x ; { while sleep 2 </dev/null ; do kill -0 $pid || break ; done ; \
+			pkg check -r "${PKG_NAME}" ; } </dev/null 2>&1 | logger -t pkg.e2fsprogs.POST-INSTALL \"" \
+			| at now
 	fi
 	#
 	# install configuration file and update config files from
@@ -59,6 +64,7 @@ POST-INSTALL)
 		cp -p   ${PKG_PREFIX}/etc/mke2fs.conf.dist \
 			${PKG_PREFIX}/etc/mke2fs.conf
 	fi
+
 	;;
 DEINSTALL)
 	if cmp -s ${PKG_PREFIX}/etc/mke2fs.conf \

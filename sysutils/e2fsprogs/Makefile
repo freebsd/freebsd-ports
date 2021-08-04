@@ -1,7 +1,7 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.46.2
+PORTVERSION=	1.46.3
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
@@ -37,7 +37,6 @@ CONFIGURE_ARGS?=--disable-fsck \
 		--libdir='${PREFIX}/lib/e2fsprogs/' \
 		--includedir='${PREFIX}/include/e2fsprogs/' \
 		--with-root-prefix='${PREFIX}' \
-		--without-included-gettext \
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib -Wl,--rpath -Wl,${LOCALBASE}/lib/e2fsprogs'
 CONFIGURE_ENV?=	LIBS='-Wl,--as-needed ${LIBS} -lexecinfo -lelf'
 # apparently HAVE_PTHREAD_H checks go missing if the FUSEFS option is unset, force it:
