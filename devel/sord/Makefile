@@ -1,12 +1,9 @@
 # Created by: Michael Beer <beerml@sigma6audio.de>
 
 PORTNAME=	sord
-PORTVERSION=	0.16.6
+PORTVERSION=	0.16.8
 CATEGORIES=	devel
 MASTER_SITES=	http://download.drobilla.net/
-
-PATCH_SITES=	https://github.com/drobilla/sord/commit/
-PATCHFILES=	dcf051c4c1e8.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight C library for storing RDF data in memory
@@ -14,12 +11,11 @@ COMMENT=	Lightweight C library for storing RDF data in memory
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libserd-0.so:devel/serd libpcre.so:devel/pcre
+LIB_DEPENDS=	libserd-0.so:devel/serd \
+		libpcre.so:devel/pcre
 
 USES=		pkgconfig python:build tar:bzip2 waf
-
 USE_LDCONFIG=	yes
-
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-install:
