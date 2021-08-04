@@ -2,8 +2,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	3_16_8
-PORTREVISION=	3
+DISTVERSION=	3_16_9
 CATEGORIES=	graphics geography
 PKGNAMESUFFIX=	-ltr
 
@@ -46,6 +45,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
 		liblazperf.so:archivers/lazperf \
+		libmdal.so:math/mdal \
 		libnetcdf.so:science/netcdf \
 		libOpenCL.so:devel/ocl-icd \
 		libproj.so:graphics/proj \
@@ -112,8 +112,8 @@ USE_GL=		gl
 USE_GNOME=	libxml2
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USE_PYQT=	core gui location network qml quick quickwidgets qscintilla2 \
-		pysip sip sql svg webkit_run webkitwidgets_run xml
+USE_PYQT=	core gui location network positioning qml quick quickwidgets \
+		qscintilla2 pysip sip sql svg webkit_run webkitwidgets_run xml
 USE_QT=		3d buildtools_build core concurrent dbus declarative \
 		designer doc gamepad gui linguist_build location \
 		network printsupport qmake_build script serialport \
@@ -123,15 +123,15 @@ USE_QT=		3d buildtools_build core concurrent dbus declarative \
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
+		-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW \
 		-DPYRCC_PROGRAM:FILEPATH=${LOCALBASE}/bin/pyrcc5-${PYTHON_VER} \
 		-DPYUIC_PROGRAM:FILEPATH=${LOCALBASE}/bin/pyuic5-${PYTHON_VER} \
 		-DQSCI_SIP_DIR:PATH=${PYQT_SIPDIR}/Qsci \
 		-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/include/qt5/qwt6 \
 		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt6.so \
-		-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW
+		-DWITH_INTERNAL_MDAL:BOOL=false
 CMAKE_ON=	BUILD_TESTING ENABLE_TESTS USE_OPENCL WITH_3D WITH_ASTYLE \
-		WITH_BINDINGS WITH_CUSTOM_WIDGETS WITH_INTERNAL_MDAL \
-		WITH_POSTGRESQL
+		WITH_BINDINGS WITH_CUSTOM_WIDGETS WITH_POSTGRESQL
 CMAKE_OFF=	WITH_GLOBE WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis
