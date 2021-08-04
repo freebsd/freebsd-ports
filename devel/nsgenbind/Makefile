@@ -17,7 +17,8 @@ BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem \
 
 USES=		bison gmake
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
-MAKE_ENV+=	COMPONENT_TYPE="lib-shared" \
+MAKE_ENV+=	BUILD_CC="${CC}" \
+		COMPONENT_TYPE="lib-shared" \
 		FLEX="${LOCALBASE}/bin/flex"
 PLIST_FILES=	bin/nsgenbind
 
