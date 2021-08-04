@@ -1,6 +1,6 @@
 PORTNAME=	rabs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.19.0
+DISTVERSION=	2.19.5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ USES=		compiler:c11 gmake localbase:ldflags sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	wrapl
 GH_TUPLE=	\
-		wrapl:minilang:4294215:wrapl_minilang/minilang \
+		wrapl:minilang:3f1cb68:wrapl_minilang/minilang \
 		rajamukherji:radb:398bb52:rajamukherji_radb/radb
 
 MAKE_ARGS=	PREFIX=${PREFIX}
