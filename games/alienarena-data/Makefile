@@ -44,7 +44,7 @@ pre-install:
 
 	@cd ${WRKSRC}/docs && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%PORTDOCS%%%%DOCSDIR%%/|' >> ${PLIST} && \
-		${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|%%PORTDOCS%%@dirrm %%DOCSDIR%%/|' >> ${PLIST}
+		${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|%%PORTDOCS%%@dir %%DOCSDIR%%/|' >> ${PLIST}
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "arena botinfo data1" ${STAGEDIR}${DATADIR}
