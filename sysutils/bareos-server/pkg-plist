@@ -119,8 +119,8 @@ lib/libbareossd.so
 lib/libbareossql.so
 lib/libbareossql.so.20
 lib/libbareossql.so.%%LIB_VERSION%%
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosdir.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/bareossd.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosdir%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/bareossd%%PYTHON_EXT_SUFFIX%%.so
 man/man1/bareos-tray-monitor.1.gz
 man/man1/bregex.1.gz
 man/man1/bsmtp.1.gz
