@@ -77,5 +77,5 @@ include/X11/Xaw3dxft/XawImP.h
 lib/libXaw3dxft.a
 lib/libXaw3dxft.so
 lib/libXaw3dxft.so.8
-lib/libXaw3dxft.so.8.0.3
+lib/libXaw3dxft.so.8.0.5
 libdata/pkgconfig/libxaw3dxft.pc
