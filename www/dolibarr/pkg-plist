@@ -25,7 +25,6 @@
 %%WWWDIR%%/htdocs/accountancy/admin/productaccount.php
 %%WWWDIR%%/htdocs/accountancy/admin/subaccount.php
 %%WWWDIR%%/htdocs/accountancy/bookkeeping/balance.php
-%%WWWDIR%%/htdocs/accountancy/bookkeeping/balancebymonth.php
 %%WWWDIR%%/htdocs/accountancy/bookkeeping/card.php
 %%WWWDIR%%/htdocs/accountancy/bookkeeping/index.html
 %%WWWDIR%%/htdocs/accountancy/bookkeeping/list.php
@@ -1521,7 +1520,6 @@
 %%WWWDIR%%/htdocs/expedition/tpl/index.html
 %%WWWDIR%%/htdocs/expedition/tpl/linkedobjectblock.tpl.php
 %%WWWDIR%%/htdocs/expensereport/ajax/ajaxik.php
-%%WWWDIR%%/htdocs/expensereport/ajax/ajaxprojet.php
 %%WWWDIR%%/htdocs/expensereport/ajax/index.html
 %%WWWDIR%%/htdocs/expensereport/card.php
 %%WWWDIR%%/htdocs/expensereport/class/api_expensereports.class.php
@@ -1646,7 +1644,6 @@
 %%WWWDIR%%/htdocs/hrm/establishment/card.php
 %%WWWDIR%%/htdocs/hrm/establishment/index.html
 %%WWWDIR%%/htdocs/hrm/establishment/info.php
-%%WWWDIR%%/htdocs/hrm/index.html
 %%WWWDIR%%/htdocs/hrm/index.php
 %%WWWDIR%%/htdocs/imports/class/import.class.php
 %%WWWDIR%%/htdocs/imports/class/index.html
