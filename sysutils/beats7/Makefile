@@ -1,6 +1,6 @@
 PORTNAME=	beats
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.13.4
+DISTVERSION=	7.14.0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	7
 
@@ -35,7 +35,7 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.0.0:azure_azure_amqp_common_go_v3/vendor
 		Masterminds:semver:v1.4.2:masterminds_semver/vendor/github.com/Masterminds/semver \
 		Microsoft:hcsshim:v0.8.7:microsoft_hcsshim/vendor/github.com/Microsoft/hcsshim \
 		StackExchange:wmi:9f32b5905fd6:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
-		adriansr:fsnotify:c9bbe1f46f1d:adriansr_fsnotify_1/vendor/github.com/fsnotify/fsnotify \
+		adriansr:fsnotify:c9bbe1f46f1d:adriansr_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		adriansr:gopacket:dd62abfa8a41:adriansr_gopacket/vendor/github.com/google/gopacket \
 		aerospike:aerospike-client-go:0f3b54da6bdc:aerospike_aerospike_client_go/vendor/github.com/aerospike/aerospike-client-go \
 		akavel:rsrc:v0.8.0:akavel_rsrc/vendor/github.com/akavel/rsrc \
@@ -69,7 +69,6 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.0.0:azure_azure_amqp_common_go_v3/vendor
 		containerd:containerd:v1.3.3:containerd_containerd/vendor/github.com/containerd/containerd \
 		containerd:continuity:26c1120b8d41:containerd_continuity/vendor/github.com/containerd/continuity \
 		containerd:fifo:bda0ff6ed73c:containerd_fifo/vendor/github.com/containerd/fifo \
-		containerd:fifo:bda0ff6ed73c:containerd_fifo_1/vendor/github.com/tonistiigi/fifo \
 		coreos:go-systemd:v22.0.0:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
 		coreos:pkg:97fdf19511ea:coreos_pkg/vendor/github.com/coreos/pkg \
 		cucumber:godog:v0.8.1:cucumber_godog/vendor/github.com/cucumber/godog \
@@ -91,6 +90,7 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.0.0:azure_azure_amqp_common_go_v3/vendor
 		docker:go-metrics:v0.0.1:docker_go_metrics/vendor/github.com/docker/go-metrics \
 		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
 		docker:spdystream:449fdfce4d96:docker_spdystream/vendor/github.com/docker/spdystream \
+		dolmen-go:contextio:68fc5150bcd5:dolmen_go_contextio/vendor/github.com/dolmen-go/contextio \
 		dominikh:go-tools:v0.0.1-2019.2.3:dominikh_go_tools/vendor/honnef.co/go/tools \
 		dop251:goja_nodejs:adff31b136e6:dop251_goja_nodejs/vendor/github.com/dop251/goja_nodejs \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
@@ -101,8 +101,8 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.0.0:azure_azure_amqp_common_go_v3/vendor
 		elastic:apm-agent-go:2aef45b9cf4b:elastic_apm_agent_go \
 		elastic:dhcp:57ec251c7eb3:elastic_dhcp/vendor/github.com/insomniacslk/dhcp \
 		elastic:ecs-logging-go-zap:v0.3.0:elastic_ecs_logging_go_zap/vendor/go.elastic.co/ecszap \
-		elastic:ecs:v1.8.0:elastic_ecs/vendor/github.com/elastic/ecs \
-		elastic:elastic-agent-client:7dd05ee2b5a5:elastic_elastic_agent_client_v7/vendor/github.com/elastic/elastic-agent-client/v7 \
+		elastic:ecs:v1.10.0:elastic_ecs/vendor/github.com/elastic/ecs \
+		elastic:elastic-agent-client:f0905d9377f6:elastic_elastic_agent_client_v7/vendor/github.com/elastic/elastic-agent-client/v7 \
 		elastic:fsevents:e1d381a4d270:elastic_fsevents/vendor/github.com/fsnotify/fsevents \
 		elastic:go-concert:v0.1.0:elastic_go_concert/vendor/github.com/elastic/go-concert \
 		elastic:go-fastjson:v1.1.0:elastic_go_fastjson/vendor/go.elastic.co/fastjson \
@@ -114,8 +114,8 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.0.0:azure_azure_amqp_common_go_v3/vendor
 		elastic:go-perf:9c656876f595:elastic_go_perf/vendor/github.com/elastic/go-perf \
 		elastic:go-plugins-helpers:bdf17607b79f:elastic_go_plugins_helpers/vendor/github.com/docker/go-plugins-helpers \
 		elastic:go-seccomp-bpf:v1.1.0:elastic_go_seccomp_bpf/vendor/github.com/elastic/go-seccomp-bpf \
-		elastic:go-structform:v0.0.8:elastic_go_structform/vendor/github.com/elastic/go-structform \
-		elastic:go-sysinfo:v1.6.0:elastic_go_sysinfo/vendor/github.com/elastic/go-sysinfo \
+		elastic:go-structform:v0.0.9:elastic_go_structform/vendor/github.com/elastic/go-structform \
+		elastic:go-sysinfo:v1.7.0:elastic_go_sysinfo/vendor/github.com/elastic/go-sysinfo \
 		elastic:go-txfile:v0.0.7:elastic_go_txfile/vendor/github.com/elastic/go-txfile \
 		elastic:go-ucfg:v0.8.3:elastic_go_ucfg/vendor/github.com/elastic/go-ucfg \
 		elastic:go-windows:v1.0.1:elastic_go_windows/vendor/github.com/elastic/go-windows \
@@ -143,7 +143,7 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.0.0:azure_azure_amqp_common_go_v3/vendor
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-sql:civil:cb61b32ac6fe:golang_sql_civil/vendor/github.com/golang-sql/civil \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:5c72a883971a:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:5ff15b29337e:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:da58074b4299:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:lint:910be7a94367:golang_lint/vendor/golang.org/x/lint \
@@ -153,7 +153,8 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.0.0:azure_azure_amqp_common_go_v3/vendor
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:43a5402ce75a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:88b6017d0656:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:665e8c7367d1:golang_sys/vendor/golang.org/x/sys \
+		golang:term:7de9c90e9dd1:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
 		golang:tools:c00d67ef29d0:golang_tools/vendor/golang.org/x/tools \
@@ -248,7 +249,6 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.0.0:azure_azure_amqp_common_go_v3/vendor
 		pierrre:gotestcover:924dca7d15f0:pierrre_gotestcover/vendor/github.com/pierrre/gotestcover \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		poy:eachers:23942921fe77:poy_eachers \
 		prometheus:client_golang:20428fa0bffc:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:14fe0d1b01d4:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.7.0:prometheus_common/vendor/github.com/prometheus/common \
@@ -277,6 +277,7 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.0.0:azure_azure_amqp_common_go_v3/vendor
 		uber-go:tools:2cfd321de3ee:uber_go_tools/vendor/go.uber.org/tools \
 		uber-go:zap:v1.14.0:uber_go_zap/vendor/go.uber.org/zap \
 		ugorji:go:v1.1.8:ugorji_go_codec/vendor/github.com/ugorji/go \
+		u-root:uio:e40b768296a7:u_root_uio/vendor/github.com/u-root/uio \
 		urso:diag:21b3cc8eb797:urso_diag/vendor/github.com/urso/diag \
 		urso:go-bin:781c575c9f0e:urso_go_bin/vendor/github.com/urso/go-bin \
 		urso:magetools:290c89e0c230:urso_magetools/vendor/github.com/urso/magetools \
@@ -339,8 +340,6 @@ post-extract:
 	@${RLN} ${WRKSRC_azure_go_autorest_logger}/logger ${WRKSRC}/vendor/github.com/Azure/go-autorest/logger
 	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/tracing
 	@${RLN} ${WRKSRC_azure_go_autorest_tracing}/tracing ${WRKSRC}/vendor/github.com/Azure/go-autorest/tracing
-	@${MKDIR} ${WRKSRC}/vendor/github.com/poy
-	@${RLN} ${WRKSRC_apoydence_eachers} ${WRKSRC}/vendor/github.com/poy/eachers
 	@${RLN} ${WRKSRC_elastic_apm_agent_go} ${WRKSRC}/vendor/go.elastic.co/apm
 
 post-patch:

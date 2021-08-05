@@ -227,6 +227,8 @@
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/mongodb/_meta/kibana/7/dashboard/Filebeat-Mongodb-overview.json
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/mongodb/log/_meta/fields.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/mongodb/log/config/log.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/mongodb/log/ingest/pipeline-json.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/mongodb/log/ingest/pipeline-plaintext.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/mongodb/log/ingest/pipeline.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/mongodb/log/manifest.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/mongodb/module.yml
@@ -607,6 +609,9 @@
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/docker/memory/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/docker/memory/_meta/fields.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/docker/module.yml
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/docker/network_summary/_meta/data.json
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/docker/network_summary/_meta/docs.asciidoc
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/docker/network_summary/_meta/fields.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/docker/network/_meta/data.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/docker/network/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/docker/network/_meta/fields.yml

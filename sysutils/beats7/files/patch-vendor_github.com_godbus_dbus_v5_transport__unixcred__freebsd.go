@@ -1,13 +1,12 @@
---- vendor/github.com/godbus/dbus/v5/transport_unixcred_freebsd.go.orig	2019-09-30 20:29:11 UTC
+--- vendor/github.com/godbus/dbus/v5/transport_unixcred_freebsd.go.orig	2021-08-05 12:40:47 UTC
 +++ vendor/github.com/godbus/dbus/v5/transport_unixcred_freebsd.go
-@@ -8,8 +8,9 @@
+@@ -8,7 +8,8 @@
  package dbus
  
  /*
 -const int sizeofPtr = sizeof(void*);
 +static const int sizeofPtr = sizeof(void*);
- #define _WANT_UCRED
 +#include <sys/types.h>
+ #define _WANT_UCRED
  #include <sys/ucred.h>
  */
- import "C"
