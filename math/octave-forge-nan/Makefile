@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	octave-forge-nan
-PORTVERSION=	3.5.3
-PORTREVISION=	2
+PORTVERSION=	3.6.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
