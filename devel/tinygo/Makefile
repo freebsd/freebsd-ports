@@ -1,6 +1,6 @@
 PORTNAME=	tinygo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.0
+DISTVERSION=	0.19.0
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,6 +23,7 @@ GH_TUPLE=	\
 		chromedp:chromedp:v0.6.4:chromedp_chromedp/vendor/github.com/chromedp/chromedp \
 		chromedp:sysutil:v1.0.0:chromedp_sysutil/vendor/github.com/chromedp/sysutil \
 		creack:goselect:v0.1.1:creack_goselect/vendor/github.com/creack/goselect \
+		davecgh:go-spew:v1.1.0:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		gobwas:httphead:v0.1.0:gobwas_httphead/vendor/github.com/gobwas/httphead \
 		gobwas:pool:v0.2.1:gobwas_pool/vendor/github.com/gobwas/pool \
 		gobwas:ws:v1.0.4:gobwas_ws/vendor/github.com/gobwas/ws \
@@ -34,17 +35,18 @@ GH_TUPLE=	\
 		marcinbor85:gohex:343a4b548892:marcinbor85_gohex/vendor/github.com/marcinbor85/gohex \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		tinygo-org:go-llvm:7fe719483a0f:tinygo_org_go_llvm/vendor/tinygo.org/x/go-llvm
+		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		tinygo-org:go-llvm:e7b85195e81c:tinygo_org_go_llvm/vendor/tinygo.org/x/go-llvm
 
 # Device files and runtime are distributed as submodules
 GH_TUPLE+=	ARM-software:CMSIS:9fe411cef1ce:cmsis/lib/CMSIS \
-		NordicSemiconductor:nrfx:d779b49fc59c:nrfx/lib/nrfx \
-		WebAssembly:wasi-libc:c82d116de0de:wasi_libc/lib/wasi-libc \
+		NordicSemiconductor:nrfx:b5399066bd7f:nrfx/lib/nrfx \
+		WebAssembly:wasi-libc:c7465d22096f:wasi_libc/lib/wasi-libc \
 		avr-rust:avr-mcu:40d15c1c56c3:avr/lib/avr \
-		llvm-mirror:compiler-rt:69445f095c22:compiler_rt/lib/compiler-rt \
-		picolibc:picolibc:73988df1ab59:picolibc/lib/picolibc \
-		tinygo-org:cmsis-svd:d9b58694cef3:cmsis_svd/lib/cmsis-svd \
-		tinygo-org:stm32-svd:c6b5be976f44:stm32_svd/lib/stm32-svd
+		llvm-mirror:compiler-rt:df52202e77b1:compiler_rt/lib/compiler-rt \
+		picolibc:picolibc:3bf0a107362b:picolibc/lib/picolibc \
+		tinygo-org:cmsis-svd:9c35b6d9df1f:cmsis_svd/lib/cmsis-svd \
+		tinygo-org:stm32-svd:3a0b0829b70b:stm32_svd/lib/stm32-svd
 
 # Bundled LLVM
 GH_TUPLE+=	llvm:llvm-project:llvmorg-11.1.0:llvm/llvm-project
