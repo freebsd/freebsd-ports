@@ -1,0 +1,12 @@
+--- configure.orig	2006-03-12 06:16:51 UTC
++++ configure
+@@ -20913,6 +20913,9 @@ else
+ fi
+ 
+ case "$os" in
++	FreeBSD)
++		MAP_FILTER="#"
++		MAPFLAGS="-Wl,-Map=mapfile" ;;
+ 	Linux)
+ 		MAP_FILTER="; #"
+ 		MAPFLAGS="-Wl,--version-script=mapfile" ;;
