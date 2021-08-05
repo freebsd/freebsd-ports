@@ -1,5 +1,5 @@
 PORTNAME=	flmsg
-DISTVERSION=	4.0.17
+DISTVERSION=	4.0.19
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/files/${PORTNAME}/
 
