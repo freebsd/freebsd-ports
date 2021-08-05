@@ -20,22 +20,24 @@
      # Generic vectors
      targ_selvecs="${targ_selvecs} mips_elf32_ntrad_be_vec mips_elf32_ntrad_le_vec mips_elf32_trad_be_vec mips_elf32_trad_le_vec mips_elf64_trad_be_vec mips_elf64_trad_le_vec"
      ;;
---- ld/configure.tgt.orig	2015-07-17 20:52:58.728911150 +0000
-+++ ld/configure.tgt	2015-07-17 21:03:29.559869219 +0000
-@@ -491,12 +491,12 @@
- 			targ_extra_emuls="elf32ltsmip elf32btsmipn32 elf64btsmip elf32ltsmipn32 elf64ltsmip"
- 			targ_extra_libpath=$targ_extra_emuls ;;
+
+--- ./ld/configure.tgt.orig	2021-01-09 19:47:34.000000000 +0900
++++ ./ld/configure.tgt	2021-05-13 16:24:16.129568000 +0900
+@@ -548,13 +548,13 @@
+ 			targ_extra_libpath=$targ_extra_emuls
+ 			;;
  mips64*el-*-freebsd* | mips64*el-*-kfreebsd*-gnu)
 -			targ_emul=elf32ltsmipn32_fbsd
 -			targ_extra_emuls="elf32ltsmip elf32btsmip elf32ltsmipn32 elf32btsmipn32 elf64ltsmip elf64btsmip elf32ltsmip_fbsd elf32btsmip_fbsd elf32btsmipn32_fbsd elf64ltsmip_fbsd elf64btsmip_fbsd"
 +			targ_emul=elf64ltsmip_fbsd
 +			targ_extra_emuls="elf32ltsmip_fbsd elf32btsmip_fbsd elf32ltsmipn32_fbsd elf32btsmipn32_fbsd elf64ltsmip_fbsd elf64btsmip_fbsd elf32ltsmip elf32btsmip elf32ltsmipn32 elf32btsmipn32 elf64ltsmip elf64btsmip"
- 			targ_extra_libpath=$targ_extra_emuls ;;
+ 			targ_extra_libpath=$targ_extra_emuls
+ 			;;
  mips64*-*-freebsd* | mips64*-*-kfreebsd*-gnu)
 -			targ_emul=elf32btsmipn32_fbsd
 -			targ_extra_emuls="elf32ltsmip elf32btsmip elf32ltsmipn32 elf32btsmipn32 elf64ltsmip elf64btsmip elf32ltsmip_fbsd elf32btsmip_fbsd elf32ltsmipn32_fbsd elf64ltsmip_fbsd elf64btsmip_fbsd"
 +			targ_emul=elf64btsmip_fbsd
 +			targ_extra_emuls="elf32btsmip_fbsd elf32ltsmip_fbsd elf32btsmipn32_fbsd elf32ltsmipn32_fbsd elf64btsmip_fbsd elf64ltsmip_fbsd elf32ltsmip elf32btsmip elf32ltsmipn32 elf32btsmipn32 elf64ltsmip elf64btsmip"
- 			targ_extra_libpath=$targ_extra_emuls ;;
+ 			targ_extra_libpath=$targ_extra_emuls
+ 			;;
  mips*el-*-freebsd* | mips*el-*-kfreebsd*-gnu)
- 			targ_emul=elf32ltsmip_fbsd

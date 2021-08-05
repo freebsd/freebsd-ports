@@ -1,9 +1,9 @@
---- ./ld/configure.tgt.orig	2019-01-19 16:01:33.000000000 +0000
-+++ ./ld/configure.tgt	2019-08-07 20:41:31.800693000 +0000
-@@ -651,6 +651,10 @@ rs6000-*-aix*)		targ_emul=aixrs6
+--- ./ld/configure.tgt.orig	2021-05-13 08:26:36.765168000 +0900
++++ ./ld/configure.tgt	2021-05-13 08:40:35.679397000 +0900
+@@ -787,6 +787,10 @@
+ s12z-*-*)		targ_emul=m9s12zelf
+ 			targ_extra_ofiles=ldelfgen.o
  			;;
- rl78-*-*)		targ_emul=elf32rl78 ;;
- rx-*-*)			targ_emul=elf32rx ;;
 +s390x-*-freebsd*)	targ_emul=elf64_s390
 +			targ_extra_emuls=elf_s390
 +			targ_extra_libpath=$targ_extra_emuls

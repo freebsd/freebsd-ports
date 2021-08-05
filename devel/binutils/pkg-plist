@@ -18,12 +18,17 @@ bin/strings
 bin/strip
 include/bfd.h
 include/bfdlink.h
-include/bfd_stdint.h
+include/ctf-api.h
+include/ctf.h
 include/diagnostics.h
 include/dis-asm.h
 %%GOLD%%include/plugin-api.h
 include/symcat.h
+%%STATIC%%lib/bfd-plugins/libdep.a
+%%NO_STATIC%%lib/bfd-plugins/libdep.so
 lib/libbfd.a
+lib/libctf-nobfd.a
+lib/libctf.a
 lib/libopcodes.a
 man/man1/addr2line.1.gz
 man/man1/ar.1.gz
@@ -117,6 +122,7 @@ man/man1/strip.1.gz
 %%NLS%%share/locale/rw/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/bfd.mo
+%%NLS%%%%GOLD%%share/locale/sr/LC_MESSAGES/gold.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bfd.mo

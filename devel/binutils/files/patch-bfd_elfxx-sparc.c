@@ -1,9 +1,9 @@
---- bfd/elfxx-sparc.c.orig	2013-11-08 11:13:48.000000000 +0100
-+++ bfd/elfxx-sparc.c	2014-10-10 16:30:23.316125000 +0200
-@@ -2942,12 +2942,14 @@
+--- bfd/elfxx-sparc.c.orig	2021-07-08 13:37:19.000000000 +0200
++++ bfd/elfxx-sparc.c	2021-07-21 09:32:51.373421000 +0200
+@@ -2784,12 +2784,14 @@
    Elf_Internal_Rela *relend;
    int num_relocs;
-   bfd_boolean is_vxworks_tls;
+   bool is_vxworks_tls;
 +  const struct elf_backend_data *bed;
  
    htab = _bfd_sparc_elf_hash_table (info);
@@ -15,9 +15,9 @@
  
    if (elf_hash_table (info)->hgot == NULL)
      got_base = 0;
-@@ -3528,6 +3530,8 @@
+@@ -3448,6 +3450,8 @@
  			      bfd_set_error (bfd_error_bad_value);
- 			      return FALSE;
+ 			      return false;
  			    }
 +			  if (bed->elf_osabi == ELFOSABI_FREEBSD)
 +			    outrel.r_addend -= osec->vma;

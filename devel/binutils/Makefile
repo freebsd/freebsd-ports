@@ -1,8 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	binutils
-PORTVERSION=	2.33.1
-PORTREVISION=	4
+PORTVERSION=	2.37
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
@@ -12,39 +11,43 @@ COMMENT?=	GNU binary tools
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING3
+LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING3.LIB
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:math/gmp \
+		${LOCALBASE}/lib/libmpfr.so:math/mpfr
 
 FLAVORS=	native aarch64 aarch64_none_elf amd64 arm_gnueabi arm_none_eabi \
 		avr i386 mingw32 mips mips64 powerpc powerpc64 powerpc64le riscv64 \
 		riscv64_none_elf s390x sparc64 riscv32_unknown_elf
 FLAVOR?=	native
 
-RELRO_CONFIGURE_ON=	--enable-relro
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:math/gmp \
-		${LOCALBASE}/lib/libmpfr.so:math/mpfr
-
-CONFLICTS=	libbfd-[0-9]*
-
-#TEST_DEPENDS+=	runtest:misc/dejagnu
-TEST_TARGET=	check
-
-OPTIONS_DEFINE=	NLS RELRO STATIC
-STATIC_PREVENTS=	NLS
-
-RELRO_DESC=	Enable relocation memory corruption mitigation (-z relro) by default
-
-LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING3
-LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING3.LIB
-
-USES=		bison:alias cpe gmake libtool tar:xz compiler:env
+USES=		bison:alias compiler:env cpe gmake libtool makeinfo perl5 tar:xz
+USE_PERL5=	build
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 
-RELRO_CONFIGURE_OFF=	--enable-relro=no
+#TEST_DEPENDS+=	runtest:misc/dejagnu
+CONFIGURE_ARGS+=	--disable-werror \
+			--enable-deterministic-archives \
+			--with-sysroot=/ \
+			--enable-x86-relax-relocations=no
+MAKE_ARGS+=	LIBDL=""
+MAKE_ENV+=	ac_cv_func_sbrk=0
+TEST_TARGET=	check
+
+CONFLICTS=	libbfd-[0-9]*
+
+OPTIONS_DEFINE=	NLS RELRO STATIC
 OPTIONS_SUB=	yes
+STATIC_PREVENTS=	NLS
+
+RELRO_DESC=	Enable relocation memory corruption mitigation (-z relro) by default
+RELRO_CONFIGURE_ON=	--enable-relro
+RELRO_CONFIGURE_OFF=	--enable-relro=no
+STATIC_LDFLAGS+=	-all-static
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-STATIC_LDFLAGS+=	-all-static
 
 aarch64_COMMENT=	GNU binutils for ${FLAVOR} development
 
@@ -68,6 +71,10 @@ BROKEN_mips64=		fails to configure: error: C compiler cannot create executables
 BUTARGET=	${FLAVOR:C/_/-/g}
 .elif ${FLAVOR} == amd64
 BUTARGET=	x86_64-unknown-${OPSYS:tl}${OSREL}
+.endif
+
+.if ${FLAVOR} == mingw32
+USES+=		iconv
 .endif
 
 CONFIGURE_ARGS+=	--disable-shared \
@@ -95,14 +102,6 @@ INFO=		as \
 		bfd \
 		ld
 .endif
-
-CONFIGURE_ARGS+=	--disable-werror \
-			--enable-deterministic-archives \
-			--with-sysroot=/ \
-			--enable-x86-relax-relocations=no
-
-MAKE_ENV+=	ac_cv_func_sbrk=0
-MAKE_ARGS+=	LIBDL=""
 
 .include <bsd.port.pre.mk>
 
@@ -140,6 +139,7 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/${BUTARGET}/lib/ldscripts/i386bsd.*
 	@if [ -d ${STAGEDIR}${PREFIX}/${INFO_PATH:H} ] ; then rm -rf ${STAGEDIR}${PREFIX}/${INFO_PATH:H}; fi
 	${LN} -fs ../../bin/${BUTARGET}-size ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/size
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/bfd-plugins
 .endif
 .for tool in ${BUREMOVE}
 	@${RM} ${STAGEDIR}${PREFIX}/bin/${BUTARGET}-${tool} \
