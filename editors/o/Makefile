@@ -1,5 +1,5 @@
 PORTNAME=	o
-DISTVERSION=	2.40.1
+DISTVERSION=	2.41.0
 CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,6 +9,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	xyproto
 GH_TUPLE=	\
@@ -24,8 +25,8 @@ GH_TUPLE=	\
 		xyproto:guessica:v1.1.0:xyproto_guessica/vendor/github.com/xyproto/guessica \
 		xyproto:syntax:v1.7.3:xyproto_syntax/vendor/github.com/xyproto/syntax \
 		xyproto:termtitle:v1.3.0:xyproto_termtitle/vendor/github.com/xyproto/termtitle \
-		xyproto:textoutput:v1.12.9:xyproto_textoutput/vendor/github.com/xyproto/textoutput \
-		xyproto:vt100:v1.9.2:xyproto_vt100/vendor/github.com/xyproto/vt100
+		xyproto:textoutput:b3f0f5b63cef:xyproto_textoutput/vendor/github.com/xyproto/textoutput \
+		xyproto:vt100:5536e49eac93:xyproto_vt100/vendor/github.com/xyproto/vt100
 
 PLIST_FILES=	bin/o
 
