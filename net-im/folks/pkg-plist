@@ -110,7 +110,7 @@ share/vala/vapi/folks-eds.deps
 share/vala/vapi/folks-eds.vapi
 share/vala/vapi/folks-telepathy.deps
 share/vala/vapi/folks-telepathy.vapi
-share/vala/vapi/folks-tracker.deps
-share/vala/vapi/folks-tracker.vapi
+%%TRACKER%%share/vala/vapi/folks-tracker.deps
+%%TRACKER%%share/vala/vapi/folks-tracker.vapi
 share/vala/vapi/folks.deps
 share/vala/vapi/folks.vapi
