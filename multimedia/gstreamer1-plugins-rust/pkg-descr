@@ -1,0 +1,52 @@
+Repository containing various GStreamer plugins and elements written
+in the Rust programming language:
+
+* generic
+  - file: A Rust implementation of the standard filesrc and filesink
+    elements
+
+  - sodium: Elements to perform encryption and decryption using
+    libsodium.
+
+  - threadshare: Some popular threaded elements reimplemented using common
+    thread-sharing infrastructure.
+
+* net
+  - reqwest: An HTTP source element based on the reqwest library.
+
+  - rusoto: A source and sink plugin to talk to the Amazon S3 object
+    storage system using the Rusoto library.
+
+* audio
+  - audiofx: Plugins to apply audio effects to a stream (such as
+    adding echo/reverb, removing noise or normalization).
+
+  - claxon: A FLAC decoder based on the Claxon library.
+
+  - csound: A plugin to implement audio effects using the Csound
+    library.
+
+  - lewton: A Vorbis decoder based on the lewton library.
+
+* video
+  - cdg: A parser and renderer for CD+G karaoke data.
+
+  - closedcaption: Plugins to deal with several closed caption formats
+    (MCC, SCC, EIA-608/CEA-608 and timed text).
+
+  - dav1d: AV1 decoder based on the dav1d library.
+
+  - flavors: FLV demuxer based on the flavors library.
+
+  - gif: A GIF encoder based on the gif library.
+
+  - rav1e: AV1 encoder based on the rav1e library.
+
+* utils
+  - fallbackswitch: Aggregator element that allows falling back to a
+    different sink pad after a timeout.
+
+  - togglerecord: Element to enable starting and stopping multiple
+    streams together.
+
+WWW: https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs

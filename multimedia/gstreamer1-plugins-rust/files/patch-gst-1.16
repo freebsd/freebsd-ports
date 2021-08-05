@@ -1,0 +1,38 @@
+Drop after multimedia/gstreamer1-plugins is updated to 1.18 or later
+
+Package dependency requirement 'gstreamer-1.0 >= 1.18' could not be satisfied.
+Package 'gstreamer-1.0' has version '1.16.2', required version is '>= 1.18'
+
+error[E0599]: no method named `pull_until_eos` found for struct `Harness` in the current scope
+   --> audio/audiofx/tests/ebur128level.rs:113:33
+    |
+113 |     while let Some(_buffer) = h.pull_until_eos().unwrap() {
+    |                                 ^^^^^^^^^^^^^^ method not found in `Harness`
+
+--- audio/audiofx/Cargo.toml
++++ audio/audiofx/Cargo.toml	2021-08-15 06:32:37.895468529 +0000
+@@ -25,7 +25,7 @@ crate-type = ["cdylib", "rlib"]
+ path = "src/lib.rs"
+ 
+ [dev-dependencies]
+-gst-check = { package = "gstreamer-check", version = "0.17", features = ["v1_18"] }
++gst-check = { package = "gstreamer-check", version = "0.17", features = ["v1_16"] }
+ gst-app = { package = "gstreamer-app", version = "0.17" }
+ 
+ [build-dependencies]
+--- audio/audiofx/tests/ebur128level.rs.orig	2021-08-05 15:13:43 UTC
++++ audio/audiofx/tests/ebur128level.rs
+@@ -110,7 +110,13 @@ fn run_test(layout: gst_audio::AudioLayout, format: gs
+ 
+     // Pull all buffers until EOS
+     let mut num_buffers = 0;
++    #[cfg(feature = "v1_18")]
+     while let Some(_buffer) = h.pull_until_eos().unwrap() {
++        num_buffers += 1;
++    }
++    #[cfg(not(feature = "v1_18"))]
++    for _ in 0..5 {
++        h.pull().unwrap();
+         num_buffers += 1;
+     }
+     assert_eq!(num_buffers, 5);
