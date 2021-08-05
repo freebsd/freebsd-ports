@@ -2925,9 +2925,9 @@ lib/python%%XYDOT%%/lib-dynload/unicodedata.cpython-%%XY%%.so
 lib/python%%XYDOT%%/lib-dynload/xxlimited_35.cpython-%%XY%%.so
 lib/python%%XYDOT%%/lib-dynload/zlib.cpython-%%XY%%.so
 lib/python%%XYDOT%%/lib2to3/Grammar.txt
-lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.beta.4.pickle
+lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.candidate.1.pickle
 lib/python%%XYDOT%%/lib2to3/PatternGrammar.txt
-lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.beta.4.pickle
+lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.candidate.1.pickle
 lib/python%%XYDOT%%/lib2to3/__init__.py
 lib/python%%XYDOT%%/lib2to3/__main__.py
 lib/python%%XYDOT%%/lib2to3/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
@@ -3538,6 +3538,9 @@ lib/python%%XYDOT%%/test/__pycache__/_test_embed_set_config.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/_test_multiprocessing.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/_test_multiprocessing.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/_test_multiprocessing.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/_typed_dict_helper.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/_typed_dict_helper.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/_typed_dict_helper.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/ann_module.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/ann_module.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/ann_module.cpython-%%XY%%.pyc
@@ -5003,6 +5006,7 @@ lib/python%%XYDOT%%/test/_test_atexit.py
 lib/python%%XYDOT%%/test/_test_eintr.py
 lib/python%%XYDOT%%/test/_test_embed_set_config.py
 lib/python%%XYDOT%%/test/_test_multiprocessing.py
+lib/python%%XYDOT%%/test/_typed_dict_helper.py
 lib/python%%XYDOT%%/test/allsans.pem
 lib/python%%XYDOT%%/test/ann_module.py
 lib/python%%XYDOT%%/test/ann_module2.py
