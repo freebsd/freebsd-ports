@@ -211,6 +211,7 @@
     SUBDIR += pagmo2
     SUBDIR += paje
     SUBDIR += pcmsolver
+    SUBDIR += phonopy
     SUBDIR += plumed
     SUBDIR += pnetcdf
     SUBDIR += pulseview
