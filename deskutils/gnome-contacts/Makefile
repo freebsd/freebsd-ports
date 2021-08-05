@@ -1,10 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	gnome-contacts
-PORTVERSION=	3.38.1
-PORTREVISION=	2
+PORTVERSION=	40.0
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Contacts manager for gnome
