@@ -21,13 +21,13 @@ man/man8/gdnsdctl.8.gz
 sbin/gdnsd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ControlSocket.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/Manual.md
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/Security.md
 %%PORTDOCS%%%%DOCSDIR%%/VERSION3.md
-%%PORTDOCS%%%%DOCSDIR%%/stats_example.html
 @dir %%ETCDIR%%/geoip
 @dir %%ETCDIR%%/zones
 @dir /var/db/gdnsd

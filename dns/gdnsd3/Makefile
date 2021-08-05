@@ -1,7 +1,7 @@
 # Created by: Allan Jude <allanjude@freebsd.org>
 
 PORTNAME=	gdnsd
-PORTVERSION=	3.5.1
+PORTVERSION=	3.7.0
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/gdnsd/gdnsd/releases/download/v${PORTVERSION}/ \
 		ZI \
