@@ -15,12 +15,14 @@ share/man/man6/scummvm.6.gz
 share/metainfo/scummvm.appdata.xml
 share/pixmaps/scummvm.xpm
 %%DATADIR%%/access.dat
+%%XENGINES%%%%DATADIR%%/cryo.dat
 %%DATADIR%%/cryomni3d.dat
 %%DATADIR%%/drascula.dat
 %%DATADIR%%/fonts.dat
 %%DATADIR%%/hugo.dat
 %%DATADIR%%/kyra.dat
 %%DATADIR%%/lure.dat
+%%XENGINES%%%%DATADIR%%/macventure.dat
 %%DATADIR%%/mort.dat
 %%DATADIR%%/neverhood.dat
 %%DATADIR%%/pred.dic
