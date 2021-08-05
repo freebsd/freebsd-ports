@@ -1,8 +1,8 @@
 PORTNAME=	logstash
-PORTVERSION=	7.13.4
+PORTVERSION=	7.14.0
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	sysutils java
-MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
+MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/
 PKGNAMESUFFIX=	7
 
 MAINTAINER=	elastic@FreeBSD.org
