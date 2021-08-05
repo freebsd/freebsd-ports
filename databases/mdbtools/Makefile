@@ -1,3 +1,5 @@
+# Created by: Anders Nordby <anders@fix.no>
+
 PORTNAME=	mdbtools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.4
