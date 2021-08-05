@@ -16,7 +16,7 @@ include/mdbtools.h
 lib/libmdb.a
 lib/libmdb.so
 lib/libmdb.so.3
-lib/libmdb.so.3.0.3
+lib/libmdb.so.3.0.4
 lib/libmdbodbc.a
 lib/libmdbodbc.so
 lib/libmdbodbcW.a
@@ -24,7 +24,7 @@ lib/libmdbodbcW.so
 lib/libmdbsql.a
 lib/libmdbsql.so
 lib/libmdbsql.so.3
-lib/libmdbsql.so.3.0.3
+lib/libmdbsql.so.3.0.4
 libdata/pkgconfig/libmdb.pc
 libdata/pkgconfig/libmdbsql.pc
 %%MANPAGES%%man/man1/mdb-array.1.gz
@@ -54,8 +54,7 @@ share/bash-completion/completions/mdb-sql
 share/bash-completion/completions/mdb-tables
 share/bash-completion/completions/mdb-ver
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/HACKING.md
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/TODO.md

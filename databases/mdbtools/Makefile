@@ -1,6 +1,6 @@
 PORTNAME=	mdbtools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.3
+DISTVERSION=	0.9.4
 CATEGORIES=	databases
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -10,8 +10,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash-completion>=0:shells/bash-completion \
 		flex:textproc/flex \
-		gawk:lang/gawk \
-		txt2man:textproc/txt2man
+		gawk:lang/gawk
 LIB_DEPENDS=	libodbcinst.so:databases/unixODBC
 RUN_DEPENDS=	bash-completion>=0:shells/bash-completion
 
@@ -39,7 +38,7 @@ LIBMSWSTR_LIB_DEPENDS=	libmswstr.so:databases/libmswstr
 LIBMSWSTR_CONFIGURE_ENV_OFF=	ac_cv_lib_mswstr_DBLCMapStringW=no
 MANPAGES_CONFIGURE_OFF=		--disable-man
 
-DOCS=		AUTHORS ChangeLog HACKING NEWS README TODO.md
+DOCS=		AUTHORS HACKING.md NEWS README.md TODO.md
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
