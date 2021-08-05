@@ -1,4 +1,4 @@
-bin/gnutar
+%%GNUTAR%%bin/gnutar
 bin/scpio
 bin/smt
 bin/spax
@@ -12,15 +12,6 @@ etc/default/srmt
 etc/default/star
 sbin/srmt
 share/doc/srmt/default-srmt.sample
-%%PORTDOCS%%share/doc/star/README
-%%PORTDOCS%%share/doc/star/README.ACL
-%%PORTDOCS%%share/doc/star/README.crash
-%%PORTDOCS%%share/doc/star/README.largefiles
-%%PORTDOCS%%share/doc/star/README.mtio
-%%PORTDOCS%%share/doc/star/README.otherbugs
-%%PORTDOCS%%share/doc/star/README.pattern
-%%PORTDOCS%%share/doc/star/README.posix-2001
-%%PORTDOCS%%share/doc/star/STARvsGNUTAR
 %%TARTEST%%share/doc/star/testscripts/00INDEX
 %%TARTEST%%share/doc/star/testscripts/100char_longlink.tar
 %%TARTEST%%share/doc/star/testscripts/100char_longlink.tar-non-compliant
@@ -77,7 +68,7 @@ share/doc/srmt/default-srmt.sample
 %%TARTEST%%share/doc/star/testscripts/ustar-bad-signedsum.tar
 %%TARTEST%%share/doc/star/testscripts/ustar-big-2g.tar.bz2
 %%TARTEST%%share/doc/star/testscripts/ustar-big-8g.tar.bz2
-share/man/man1/gnutar.1.gz
+%%GNUTAR%%share/man/man1/gnutar.1.gz
 share/man/man1/srmt.1.gz
 share/man/man1/scpio.1.gz
 share/man/man1/smt.1.gz

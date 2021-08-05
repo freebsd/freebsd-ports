@@ -3,8 +3,11 @@ CATEGORIES=	archivers
 
 COMMENT=	Unique standard tape archiver with many enhancements
 
-OPTIONS_DEFINE+=DOCS TARTEST
+PORTDOCS=	README* STARvsGNUTAR
+
+OPTIONS_DEFINE+=DOCS GNUTAR TARTEST
 OPTIONS_SUB=	yes
+GNUTAR_DESC=	Install a gnutar binary
 TARTEST_DESC=	Install tartest and test scripts
 TARTEST_VARS=	COMPONENTS+=tartest
 
@@ -14,9 +17,5 @@ COMPONENTS=	mt \
 		star \
 		star_sym \
 		strar
-
-post-install-DOCS-off:
-	${RM} ${STAGEDIR}share/doc/star/README*
-	${RM} ${STAGEDIR}share/doc/star/STARvsGNUTAR
 
 .include "${MASTERDIR}/Makefile.master"

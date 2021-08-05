@@ -27,7 +27,6 @@ etc/default/cdrecord
 %%PORTDOCS%%share/doc/cdrecord/README.multi
 %%PORTDOCS%%share/doc/cdrecord/README.parallel
 %%PORTDOCS%%share/doc/cdrecord/README.raw
-%%PORTDOCS%%share/doc/cdrecord/README.rscsi
 %%PORTDOCS%%share/doc/cdrecord/README.solaris-x86-ATAPI-DMA
 %%PORTDOCS%%share/doc/cdrecord/README.solaris-x86-ata-DMA
 %%PORTDOCS%%share/doc/cdrecord/README.sony

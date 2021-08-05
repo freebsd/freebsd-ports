@@ -5,6 +5,8 @@ COMMENT=	Parallel-execution enabled SunOS make program, enhanced to fit POSIX
 
 USE_LDCONFIG=	yes
 
+CONFLICTS=	dmake
+
 MASTERDIR=	${.CURDIR}/../../devel/schilybase
 COMPONENTS=	sunpro
 

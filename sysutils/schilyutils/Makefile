@@ -3,11 +3,11 @@ CATEGORIES=	sysutils converters deskutils textproc shells
 
 COMMENT=	Collection of utilities from J. Schilling
 
-RUN_DEPENDS=	schilybase=${PORTVERSION}:devel/schilybase
-
 USES+=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	man2html/man2html cstyle/cstyle.pl
+
+CONFLICTS_INSTALL=	bsh
 
 MASTERDIR=	${.CURDIR}/../../devel/schilybase
 COMPONENTS=	bsh \
