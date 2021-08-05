@@ -1,20 +1,20 @@
-@sample %%ETCDIR%%/bareos-fd.d/client/myself.conf.sample
-@group bareos
-@sample %%ETCDIR%%/bareos-fd.d/director/bareos-dir.conf.sample
-@group bareos
-@sample %%ETCDIR%%/bareos-fd.d/director/bareos-mon.conf.sample
-@group bareos
-@sample %%ETCDIR%%/bareos-fd.d/messages/Standard.conf.sample
-@group bareos
-%%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.sample
-%%PYTHON%%@group bareos
-%%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/job/backup-ldap.conf.sample
-%%PYTHON%%@group bareos
-%%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/job/restore-ldap.conf.sample
-%%PYTHON%%@group bareos
-@sample %%ETCDIR%%/bconsole.d/bconsole.conf.sample
-@group wheel
-%%LMDB%%@sample %%ETCDIR%%/plugin-python-ldap.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-fd.d/client/myself.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-fd.d/director/bareos-dir.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-fd.d/director/bareos-mon.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-fd.d/messages/Standard.conf.sample
+%%CEPHFS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-cephfs.conf.sample
+%%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-gfapi.conf.sample
+%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-rados.conf.sample
+%%CEPHFS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupCephfs.conf.sample
+%%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupGFAPI.conf.sample
+%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupRados.conf.sample
+%%CEPHFS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreCephfs.conf.sample
+%%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreGFAPI.conf.sample
+%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreRados.conf.sample
+%%PYTHON%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.sample
+%%PYTHON%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-ldap.conf.sample
+%%PYTHON%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/restore-ldap.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bconsole.d/bconsole.conf.sample
 bin/bconsole
 %%PYTHON%%lib/bareos/plugins/BareosFdPluginBaseclass.py
 %%PYTHON%%lib/bareos/plugins/BareosFdPluginLDAP.py
@@ -26,6 +26,9 @@ bin/bconsole
 %%PYTHON%%lib/bareos/plugins/bareos-fd.py.template
 %%PYTHON%%lib/bareos/plugins/bareos_fd_consts.py
 lib/bareos/plugins/bpipe-fd.so
+%%CEPHFS%%lib/bareos/plugins/cephfs-fd.so
+%%GFAPI%%lib/bareos/plugins/gfapi-fd.so
+%%RADOS%%lib/bareos/plugins/rados-fd.so
 %%PYTHON%%lib/bareos/plugins/python-fd.so
 lib/libbareos-%%LIB_VERSION%%.so
 lib/libbareos.la

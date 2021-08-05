@@ -1,5 +1,5 @@
---- src/plugins/filed/Makefile.in	2018-05-17 15:34:21.796332000 -0500
-+++ src/plugins/filed/Makefile.in	2018-05-17 15:35:50.843157000 -0500
+--- src/plugins/filed/Makefile.in	2020-07-09 12:30:11.000000000 -0500
++++ src/plugins/filed/Makefile.in	2021-08-05 02:19:31.479394000 -0500
 @@ -93,7 +93,8 @@
  
  install: all
@@ -10,7 +10,15 @@
  	$(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) bpipe-fd.la $(DESTDIR)$(plugindir)
  	$(RMF) $(DESTDIR)$(plugindir)/bpipe-fd.la
  	if test "x$(BUILD_PLUGINS)" != "x" ; then  \
-@@ -111,7 +112,7 @@
+@@ -104,14 +105,14 @@
+ 	   if [ -d "$$CONF" ]; then \
+ 	      for i in `find "$$CONF/" \( -name "*.conf" -o -name "*.conf.example" \) -print | cut -d'/' -f2-`; do \
+ 	         $(MKDIR) `dirname ${DESTDIR}${configtemplatedir}/$$i`; \
+-	         $(INSTALL_CONFIG) $$CONF/$$i ${DESTDIR}${configtemplatedir}/$$i; \
++	         $(INSTALL_CONFIG) $$CONF/$$i ${DESTDIR}${configtemplatedir}/`echo $$i | sed -e 's|example|sample|g'`; \
+ 	      done; \
+ 	   fi; \
+ 		if [ "$$plugin" = "python-fd.la" ]; then \
  			$(CP) *.py *.py.template $(DESTDIR)$(plugindir); \
  			for i in `find python-ldap-conf.d/ \( -name "*.conf" -o -name "*.conf.example" \) -print | cut -d'/' -f2-`; do \
  				$(MKDIR) `dirname ${DESTDIR}${configtemplatedir}/$$i`; \

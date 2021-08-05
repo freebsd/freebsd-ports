@@ -1,6 +1,6 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	17.2.9
+DISTVERSION=	17.2.10
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
@@ -43,11 +43,16 @@ NDMP_DESC=		Enable build of NDMP support
 SCSICRYPTO_DESC=	Build LTO AME crypto plugin
 
 .if ${PKGNAMESUFFIX} == "17-server"
-OPTIONS_DEFINE=		MTX PYTHON NDMP NLS SCSICRYPTO
-OPTIONS_DEFAULT+=	PGSQL SCSICRYPTO
-OPTIONS_SINGLE_DATABASE=	SQLITE3 MYSQL PGSQL
-OPTIONS_SINGLE+=		DATABASE
-DATABASE_DESC=		Database support
+OPTIONS_GROUP=  BACKENDS
+OPTIONS_GROUP_BACKENDS= CEPHFS GFAPI RADOS
+OPTIONS_DEFINE=         MTX PYTHON NDMP NLS SCSICRYPTO
+OPTIONS_DEFAULT+=       PGSQL SCSICRYPTO
+OPTIONS_SINGLE_DATABASE=        SQLITE3 MYSQL PGSQL
+OPTIONS_SINGLE+=                DATABASE
+DATABASE_DESC=          Database support
+CEPHFS_DESC=    CEPHFS backend support
+GFAPI_DESC=     GFAPI backend support
+RADOS_DESC=     RADOS backend support
 
 NDMP_CONFIGURE_ON=	--enable-ndmp=yes
 NDMP_CONFIGURE_OFF=	--enable-ndmp=no
@@ -135,6 +140,17 @@ SUB_LIST=	BAREOS_USER=${BAREOS_USER} \
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
+CEPHFS_CONFIGURE_ON=	--with-cephfs=yes
+CEPHFS_CONFIGURE_OFF=	--with-cephfs=no
+CEPHFS_LIB_DEPENDS=	libcephfs.so:net/ceph14
+GFAPI_CONFIGURE_ON=	--with-glusterfs=${LOCALBASE}
+GFAPI_CONFIGURE_OFF=	--with-glusterfs=no
+GFAPI_LIB_DEPENDS=	libglusterfs.so:net/glusterfs
+RADOS_CONFIGURE_ON=	--with-rados=yes \
+			--with-cephfs=yes
+RADOS_CONFIGURE_OFF=	--with-rados=no \
+			--with-cephfs=no
+RADOS_LIB_DEPENDS=	librados.so:net/ceph14
 
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
