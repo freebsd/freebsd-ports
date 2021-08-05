@@ -1,0 +1,10 @@
+--- tools/Makefile.in.orig	2021-08-05 10:46:29 UTC
++++ tools/Makefile.in
+@@ -1,5 +1,5 @@
+-CC?=gcc
+-DEBUG?=-g3
++CC?=cc
++DEBUG?=
+ OPTIMIZATION?=-O2 #-march=native
+ WARN?=-Wall
+ 
