@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210805:
+  AFFETCS: users of sysutils/beats7
+  AUTHOR: otis@FreeBSD.org
+
+  Beats may not be sending data to some distributions of Elasticsearc
+
+  In this release, Elastic is enabling a licensing change that was broadly
+  communicated earlier in 2021. This change would imply that 7.13 instances of
+  Beats would fail to connect to 7.10 or earlier open source distributions of
+  Elasticsearch and Kibana.
+
+  The most visible effect is that sysutils/beats7 users can expect
+  difficulities to send data to Elastic instances hosted in AWS.
+
+  For more information, see:
+  https://www.elastic.co/guide/en/beats/libbeat/current/breaking-changes-7.13.html
+
 20210801:
   AFFECTS: users of OpenLDAP
   AUTHOR: delphij@FreeBSD.org
