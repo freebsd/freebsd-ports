@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libasound.so:audio/alsa-lib
 
-USES=		gl gmake python sdl tcl
+USES=		gl gmake pkgconfig python sdl tcl
 USE_GCC=	yes
 USE_GL=		gl glew
 USE_SDL=	sdl2 ttf2
