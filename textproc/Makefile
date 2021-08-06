@@ -1434,6 +1434,7 @@
     SUBDIR += py-sphinx-inline-tabs
     SUBDIR += py-sphinx-intl
     SUBDIR += py-sphinx-issues
+    SUBDIR += py-sphinx-markdown-tables
     SUBDIR += py-sphinx-me
     SUBDIR += py-sphinx-tabs
     SUBDIR += py-sphinx_press_theme
