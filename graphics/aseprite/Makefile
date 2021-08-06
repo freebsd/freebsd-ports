@@ -12,7 +12,7 @@ COMMENT=		Animated sprite editor and pixel art tool
 LICENSE=		EULA
 LICENSE_NAME=		END-USER LICENSE AGREEMENT FOR ASEPRITE
 LICENSE_FILE=		${WRKSRC}/EULA.txt
-LICENSE_PERMS=		dist-mirror pkg-mirror auto-accept
+LICENSE_PERMS=		dist-mirror auto-accept
 
 BROKEN_armv6=		fails to compile: undefined reference to __va_copy
 BROKEN_armv7=		fails to compile: undefined reference to __va_copy
