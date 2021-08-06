@@ -17,6 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_i386=	typedef redefinition with different types ('ptrdiff_t' (aka 'int') vs 'khronos_intptr_t' (aka 'long'))
 BROKEN_powerpc=	typedef redefinition with different types ('ptrdiff_t' (aka 'int') vs 'khronos_intptr_t' (aka 'long'))
 
+DEPRECATED=	Upstream no longer maintained
+EXPIRATION_DATE=	2021-10-31
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libmikmod.so:audio/libmikmod \
 		libvorbis.so:audio/libvorbis \
