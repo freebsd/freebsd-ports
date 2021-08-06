@@ -1,5 +1,5 @@
---- /dev/null	2021-05-26 18:56:22.470788000 -0700
-+++ drivers/docker/driver_freebsd_test.go	2021-05-26 18:54:25.182401000 -0700
+--- drivers/docker/driver_freebsd_test.go.orig	2021-08-06 23:51:59 UTC
++++ drivers/docker/driver_freebsd_test.go
 @@ -0,0 +1,26 @@
 +package docker
 +

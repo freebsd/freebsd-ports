@@ -1,3 +1,4 @@
 bin/nomad
-@sample %%ETCDIR%%/client.hcl.sample
+@sample %%ETCDIR%%/client1.hcl.sample
+@sample %%ETCDIR%%/client2.hcl.sample
 @sample %%ETCDIR%%/server.hcl.sample
