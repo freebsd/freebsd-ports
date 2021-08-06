@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	hxtools
-PORTVERSION=	20201116
+PORTVERSION=	20210803
 CATEGORIES=	misc
 MASTER_SITES=	http://inai.de/files/hxtools/
 
@@ -42,7 +42,7 @@ post-patch:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/NEWS.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/changelog.rst ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

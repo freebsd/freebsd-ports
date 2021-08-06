@@ -111,7 +111,7 @@ man/man8/logontime.8.gz
 man/man8/utmp_register.8.gz
 man/man8/vcsaview.8.gz
 man/man8/xfs_irecover.8.gz
-%%PORTDOCS%%%%DOCSDIR%%/NEWS.txt
+%%PORTDOCS%%%%DOCSDIR%%/changelog.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colortable
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/git-deconstruct
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/neon
