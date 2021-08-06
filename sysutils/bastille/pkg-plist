@@ -29,6 +29,7 @@ bin/bastille
 %%DATADIR%%/template.sh
 %%DATADIR%%/templates/default/base/Bastillefile
 %%DATADIR%%/templates/default/empty/Bastillefile
+%%DATADIR%%/templates/default/linux/Bastillefile
 %%DATADIR%%/templates/default/thick/Bastillefile
 %%DATADIR%%/templates/default/thin/Bastillefile
 %%DATADIR%%/templates/default/vnet/Bastillefile
