@@ -1,5 +1,4 @@
-This is the port of QOwnNotes.
-QOwnNotes allows you to create and edit Notes in Markdown format,
-and sync tags with Nextcloud or Owncloud.
+QOwnNotes is a free, open-source plain text file markdown note taking
+application with Nextcloud or ownCloud integration.
 
-WWW: http://www.qownnotes.org
+WWW: https://www.qownnotes.org/
