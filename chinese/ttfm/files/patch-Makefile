@@ -1,0 +1,18 @@
+Fix build against modern freetype.
+
+- Freetype no longer installes fretype-config.
+- The compiler and linker flags can be gathered via pkg-config.
+
+--- Makefile.orig	2021-08-06 09:43:46 UTC
++++ Makefile
+@@ -4,8 +4,8 @@ FREETYPE_LIB=$(FREETYPE_BASE)/lib
+ prefix=/usr
+ 
+ CC=gcc
+-CFLAGS=$(RPM_OPT_FLAGS) -Wall -pedantic `freetype-config --cflags`
+-LDFALGS=`freetype-config --libs`
++CFLAGS=$(RPM_OPT_FLAGS) -Wall -pedantic `pkg-config --cflags freetype2`
++LDFALGS=`pkg-config --libs freetype2`
+ 
+ all: ttfinfo
+ 

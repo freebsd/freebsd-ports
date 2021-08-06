@@ -13,6 +13,8 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
+USES=		pkgconfig
+
 MAKE_ARGS=	FREETYPE_BASE=${LOCALBASE:Q} CC="${CC}"
 
 PORTDOCS=	README USAGE
