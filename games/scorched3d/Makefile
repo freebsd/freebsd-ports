@@ -48,6 +48,8 @@ PLIST_FILES=	bin/scorched3d \
 		bin/scorched3ds
 PORTDATA=	*
 
+BINARY_ALIAS=	freetype-config=true
+
 post-extract:
 	@${RM} ${WRKSRC}/src/client/GLEXT/[a-z]*
 
