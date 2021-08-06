@@ -1,16 +1,20 @@
 PORTNAME=	smart
-DISTVERSION=	0.0.11
+DISTVERSION=	0.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Output disk SMART values
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ctuffli
 
-PLIST_FILES=	sbin/atasmart sbin/nvmesmart sbin/scsismart sbin/smart
+PLIST_FILES=	sbin/atasmart \
+		sbin/nvmesmart \
+		sbin/scsismart \
+		sbin/smart
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|./${PORTNAME}|${PREFIX}/sbin/${PORTNAME}|" \
