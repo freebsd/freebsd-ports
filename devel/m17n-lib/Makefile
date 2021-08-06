@@ -31,6 +31,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--disable-nls
+BINARY_ALIAS=	freetype-config=true
 
 OPTIONS_DEFINE=	ANTHY ISPELL THAI
 
