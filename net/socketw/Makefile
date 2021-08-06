@@ -1,7 +1,7 @@
 # Created by: Thibault Payet <monwarez@mailoo.org>
 
 PORTNAME=	socketw
-PORTVERSION=	3.10.26.20180918
+DISTVERSION=	3.10.27
 CATEGORIES=	net
 
 MAINTAINER=	monwarez@mailoo.org
@@ -13,7 +13,6 @@ USES=		cmake ssl:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RigsOfRods
-GH_TAGNAME=	f8db442
 
 CFLAGS+=	-I${OPENSSLINC}
 
