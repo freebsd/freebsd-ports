@@ -1,5 +1,5 @@
 #!/bin/sh
-
+#
 # PROVIDE: pop3d
 # REQUIRE: DAEMON
 # BEFORE: mail

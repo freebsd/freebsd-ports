@@ -1,8 +1,7 @@
 # Created by: Attila Nagy <bra@fsn.hu>
 
 PORTNAME=	mailutils
-PORTVERSION=	3.12
-PORTREVISION=	1
+PORTVERSION=	3.13
 CATEGORIES=	mail
 MASTER_SITES=	GNU GNU_ALPHA
 
