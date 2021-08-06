@@ -10154,7 +10154,6 @@ audio/abcmidi||2018-06-07|Has expired: Broken for more than 6 months
 benchmarks/netpipe||2018-06-07|Has expired: Broken for more than 6 months
 science/orthanc-dicomweb||2018-06-07|Removed, depends on expired science/orthanc
 science/orthanc-postgresql||2018-06-07|Removed, depends on expired science/orthanc
-science/orthanc-webviewer||2018-06-07|Removed, depends on expired science/orthanc
 graphics/libkface||2018-06-09|Has expired: No longer maintained upstream
 math/scilab-toolbox-sivp||2018-06-09|Has expired: Cannot build with newer opencv
 math/clipper|graphics/polyclipping|2018-06-11|Duplicate port

@@ -1,0 +1,11 @@
+Orthanc can be extended by a plugin that brings a Web viewer of medical
+images. The Web viewer is based upon the two following projects:
+
+Cornerstone (https://github.com/chafey/cornerstone), a client-side JavaScript
+library to display medical images in Web browsers, by Chris Hafey, and
+
+GDCM (http://sourceforge.net/projects/gdcm/), an open-source implementation
+of the DICOM standard with advanced features for image decoding, by Mathieu
+Malaterre.
+
+WWW: https://www.orthanc-server.com/static.php?page=web-viewer
