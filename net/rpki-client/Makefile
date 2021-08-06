@@ -1,5 +1,5 @@
 PORTNAME=	rpki-client
-DISTVERSION=	7.1
+DISTVERSION=	7.2
 CATEGORIES=	net
 
 MAINTAINER=	zeising@FreeBSD.org
@@ -10,7 +10,8 @@ LICENSE=	ISCL
 BUILD_DEPENDS=	rsync>0:net/rsync
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libtls.so:security/libretls
-RUN_DEPENDS=	rsync>0:net/rsync
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
+		rsync>0:net/rsync
 
 USES=		autoreconf libtool pkgconfig ssl
 

@@ -1,5 +1,5 @@
-TIMESTAMP = 1625590584
-SHA256 (rpki-client-rpki-client-portable-7.1_GH0.tar.gz) = bcf24a19d9c8aaebaa74e17ac085cdf61f0b3295c021859c43ec8d0477218a32
-SIZE (rpki-client-rpki-client-portable-7.1_GH0.tar.gz) = 51679
-SHA256 (rpki-client-rpki-client-openbsd-rpki-client-7.1_GH0.tar.gz) = 501178a99922004cedebb5baae9dc3c5c45b1383c803d9ef39530b71f2940906
-SIZE (rpki-client-rpki-client-openbsd-rpki-client-7.1_GH0.tar.gz) = 629137
+TIMESTAMP = 1628259110
+SHA256 (rpki-client-rpki-client-portable-7.2_GH0.tar.gz) = 8e8ad9878a0b84b862d71f005c6fd9eca8285bf941d208bd01b9c5bc77891c45
+SIZE (rpki-client-rpki-client-portable-7.2_GH0.tar.gz) = 51833
+SHA256 (rpki-client-rpki-client-openbsd-rpki-client-7.2_GH0.tar.gz) = 8fb80ddf65fd4ced11391a6bfa4b1f42d27183671c5b1f9058b39d16ef81f6c5
+SIZE (rpki-client-rpki-client-openbsd-rpki-client-7.2_GH0.tar.gz) = 629212
