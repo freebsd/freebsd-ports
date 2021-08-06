@@ -46,6 +46,7 @@
     SUBDIR += R-cran-gbm
     SUBDIR += R-cran-gdata
     SUBDIR += R-cran-generics
+    SUBDIR += R-cran-gert
     SUBDIR += R-cran-getopt
     SUBDIR += R-cran-git2r
     SUBDIR += R-cran-glmnet
