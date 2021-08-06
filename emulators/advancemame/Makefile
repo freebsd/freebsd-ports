@@ -38,11 +38,18 @@ OPTIONS_DEFAULT_i386=	ASM
 ASM_BUILD_DEPENDS=	nasm:devel/nasm
 ASM_USE=		gcc=any
 ASM_CONFIGURE_ENABLE=	asm
+FREETYPE_USES=		pkgconfig
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
 SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
 SLANG_CONFIGURE_ENABLE=	slang
 SLANG_LDFLAGS=		-lncurses
+
+BINARY_ALIAS=		freetype-config=true
+
+DEPRECATED=	Heavily outdated and unmaintained
+EXPIRATION_DATE=	2021-10-31
+
 
 .include <bsd.port.options.mk>
 
