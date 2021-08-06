@@ -1,5 +1,6 @@
 PORTNAME=	swaync
 PORTVERSION=	s20210802
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,6 +20,11 @@ GH_PROJECT=	SwayNotificationCenter
 GH_TAGNAME=	9d5f328
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-client \
-		etc/xdg/${PORTNAME}/style.css
+		"@sample etc/xdg/${PORTNAME}/style.css.sample"
+
+post-patch:
+# Let @sample handle default files under etc/
+	@${REINPLACE_CMD} -e "/inst.*conf/s/'[^']*/&', rename: &.sample/1" \
+		${WRKSRC}/src/meson.build
 
 .include <bsd.port.mk>
