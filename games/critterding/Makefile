@@ -9,12 +9,10 @@ COMMENT=	Evolving Artificial Life
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		autoreconf gl libtool ncurses pkgconfig sdl tar:bzip2
+USES=		autoreconf gl libtool localbase:ldflags ncurses pkgconfig sdl tar:bzip2
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 USE_GL=		gl
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-system-ftgl
 USE_GCC=	yes
 
@@ -23,6 +21,8 @@ PORTDATA=	*
 PORTDOCS=	README AUTHORS Changelog
 
 OPTIONS_DEFINE=	DOCS
+
+BINARY_ALIAS=	freetype-config=true
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|../share/critterding|${DATADIR}|' \
