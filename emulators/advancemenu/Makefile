@@ -33,14 +33,23 @@ OPTIONS_DEFAULT_i386=	ASM
 ASM_BUILD_DEPENDS=	nasm:devel/nasm
 ASM_USE=		gcc=any
 ASM_CONFIGURE_ENABLE=	asm
+FREETYPE_USES=		pkgconfig
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
+
+DEPRECATED=	Heavily outdated and unmaintained
+EXPIRATION_DATE=	2021-10-31
+
+BINARY_ALIAS=		freetype-config=${WRKSRC}/freetype-config-dummy
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lpthread|-pthread|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|@@|@|' ${WRKSRC}/Makefile.in
+	# Mock freetype-config script
+	echo -e '#!/bin/sh\npkg-config freetype2 $$*' >> ${WRKSRC}/freetype-config-dummy
+	chmod +x ${WRKSRC}/freetype-config-dummy
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/advmenu ${STAGEDIR}${PREFIX}/bin
