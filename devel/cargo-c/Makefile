@@ -1,6 +1,6 @@
 PORTNAME=	cargo-c
-DISTVERSION=	0.9.1
-DISTVERSIONSUFFIX=	+cargo-0.54
+DISTVERSION=	0.9.2
+DISTVERSIONSUFFIX=	+cargo-0.55
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
@@ -26,18 +26,18 @@ PLIST_FILES=	bin/cargo-capi \
 CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
-		anyhow-1.0.41 \
+		anyhow-1.0.42 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
 		bitmaps-2.1.0 \
 		bstr-0.2.16 \
-		bytesize-1.0.1 \
-		cargo-0.54.0 \
-		cargo-platform-0.1.1 \
-		cargo-util-0.1.0 \
-		cbindgen-0.19.0 \
-		cc-1.0.68 \
+		bytesize-1.1.0 \
+		cargo-0.55.0 \
+		cargo-platform-0.1.2 \
+		cargo-util-0.1.1 \
+		cbindgen-0.20.0 \
+		cc-1.0.69 \
 		cfg-if-1.0.0 \
 		clap-2.33.3 \
 		commoncrypto-0.2.0 \
@@ -49,7 +49,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		crossbeam-utils-0.8.5 \
 		crypto-hash-0.3.4 \
 		curl-0.4.38 \
-		curl-sys-0.4.44+curl-7.77.0 \
+		curl-sys-0.4.45+curl-7.78.0 \
 		either-1.6.1 \
 		env_logger-0.8.4 \
 		filetime-0.2.14 \
@@ -77,10 +77,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		indexmap-1.7.0 \
 		itertools-0.10.1 \
 		itoa-0.4.7 \
-		jobserver-0.1.22 \
+		jobserver-0.1.23 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.97 \
+		libc-0.2.98 \
 		libgit2-sys-0.12.21+1.1.0 \
 		libnghttp2-sys-0.1.6+1.43.0 \
 		libssh2-sys-0.2.21 \
@@ -102,7 +102,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		ppv-lite86-0.2.10 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.27 \
+		proc-macro2-1.0.28 \
 		quote-1.0.9 \
 		rand-0.8.4 \
 		rand_chacha-0.3.1 \
@@ -119,26 +119,25 @@ CARGO_CRATES=	adler-1.0.2 \
 		ryu-1.0.5 \
 		same-file-1.0.6 \
 		schannel-0.1.19 \
-		semver-0.10.0 \
-		semver-parser-0.7.0 \
-		serde-1.0.126 \
-		serde_derive-1.0.126 \
+		semver-1.0.4 \
+		serde-1.0.127 \
+		serde_derive-1.0.127 \
 		serde_ignored-0.1.2 \
-		serde_json-1.0.64 \
+		serde_json-1.0.66 \
 		shell-escape-0.1.5 \
 		sized-chunks-0.6.5 \
-		socket2-0.4.0 \
+		socket2-0.4.1 \
 		strip-ansi-escapes-0.1.0 \
 		strsim-0.8.0 \
-		structopt-0.3.21 \
-		structopt-derive-0.4.14 \
-		syn-1.0.73 \
+		structopt-0.3.22 \
+		structopt-derive-0.4.15 \
+		syn-1.0.74 \
 		tar-0.4.35 \
 		tempfile-3.2.0 \
 		termcolor-1.1.2 \
 		textwrap-0.11.0 \
 		thread_local-1.1.3 \
-		tinyvec-1.2.0 \
+		tinyvec-1.3.1 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.8 \
 		typenum-1.13.0 \
