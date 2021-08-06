@@ -21,9 +21,9 @@ NVIDIA_BUMPREF_DESC=	NVidia extensions
 
 .include <bsd.port.options.mk>
 
-FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
+FREETYPE_CONFIG?=	pkg-config freetype2
 
-USES=		gmake xorg
+USES=		gmake pkgconfig xorg
 GNU_CONFIGURE=	yes
 USE_XORG=	xaw ice
 
