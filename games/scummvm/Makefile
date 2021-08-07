@@ -1,4 +1,4 @@
-# Created by: Alex Trull <freebsd.alex@trull.org>
+#_ Created by: Alex Trull <freebsd.alex@trull.org>
 
 PORTNAME=	scummvm
 PORTVERSION=	2.2.0
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfaad.so:audio/faad \
 		libmpeg2.so:multimedia/libmpeg2 \
 		libtheoradec.so:multimedia/libtheora
 
-USES=		gmake gnome iconv jpeg sdl tar:xz
+USES=		gmake gnome iconv jpeg pkgconfig sdl tar:xz
 HAS_CONFIGURE=	yes
 USE_SDL=	sdl2
 INSTALLS_ICONS=	yes
