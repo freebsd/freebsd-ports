@@ -1,6 +1,5 @@
 PORTNAME=	musicpd
-PORTVERSION=	0.22.9
-PORTREVISION=	1
+PORTVERSION=	0.22.10
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -52,7 +51,7 @@ OPTIONS_MULTI_FILE_FORMAT=	\
 OPTIONS_GROUP=	ACCESS PLAYBACK
 
 OPTIONS_GROUP_ACCESS=	CDPARANOIA CURL LAME MMS NFS PLAYLISTS QOBUZ \
-			SMB SOUNDCLOUD TIDAL YAJL
+			SMB SOUNDCLOUD YAJL
 
 OPTIONS_GROUP_PLAYBACK=	AO JACK OPENAL PULSEAUDIO \
 			SHOUTCAST SNDIO
@@ -68,7 +67,6 @@ QOBUZ_DESC=	Streaming service support: Qobuz
 SIDPLAY_DESC=	Sidplay support (C64 mono and stereo files)
 SMB_DESC=	SMB network support (currently strongly discouraged)
 SOUNDCLOUD_DESC=Streaming service support: SoundCloud
-TIDAL_DESC=	Streaming service support: TIDAL (currently defunct)
 TWOLAME_DESC=	TwoLAME support (mp2)
 VORBISENC_DESC=	Ogg Vorbis encoder
 WILDMIDI_DESC=	WildMIDI support (MIDI files)
@@ -193,8 +191,6 @@ QOBUZ_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 QOBUZ_IMPLIES=		CURL YAJL
 SOUNDCLOUD_MESON_ENABLED=	soundcloud
 SOUNDCLOUD_IMPLIES=	CURL YAJL
-TIDAL_MESON_ENABLED=	tidal
-TIDAL_IMPLIES=		CURL YAJL
 
 # Misc library support
 AVAHI_MESON_ON=		-Dzeroconf=avahi
