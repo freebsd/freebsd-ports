@@ -29,8 +29,8 @@ SOX_DESC=	Install SOX to play audio
 SOX_RUN_DEPENDS=	play:audio/sox
 
 XFT_USE=	XORG=xft
-XFT_CPPFLAGS=	$$(freetype-config --cflags) -DXFT_SUPPORT
-XFT_LDFLAGS=	$$(freetype-config --libs) -lXft
+XFT_CPPFLAGS=	$$(pkg-config freetype2 --cflags) -DXFT_SUPPORT
+XFT_LDFLAGS=	$$(pkg-config freetype2 --libs) -lXft
 
 post-patch:
 .for i in Dclock.c Dclock.ad dclock.1
