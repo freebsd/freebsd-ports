@@ -1,5 +1,5 @@
 PORTNAME=	croc
-PORTVERSION=	9.2.0
+PORTVERSION=	9.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -14,13 +14,13 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	schollz
 GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
-		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
+		cpuguy83:go-md2man:v2.0.1:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:crypto:5ff15b29337e:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:04defd469f4e:golang_net/vendor/golang.org/x/net \
-		golang:sys:59db8d763f22:golang_sys/vendor/golang.org/x/sys \
+		golang:crypto:a769d52b0f97:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:aaa1db679c0d:golang_net/vendor/golang.org/x/net \
+		golang:sys:e5e7981a1069:golang_sys/vendor/golang.org/x/sys \
 		golang:term:6886f2dfbf5b:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		kalafut:imohash:v1.0.2:kalafut_imohash/vendor/github.com/kalafut/imohash \
@@ -36,7 +36,7 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		schollz:peerdiscovery:v1.6.6:schollz_peerdiscovery/vendor/github.com/schollz/peerdiscovery \
 		schollz:progressbar:v3.8.2:schollz_progressbar_v3/vendor/github.com/schollz/progressbar/v3 \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
-		tscholl2:siec:8da93652b094:tscholl2_siec/vendor/github.com/tscholl2/siec \
+		tscholl2:siec:9bdfc483d499:tscholl2_siec/vendor/github.com/tscholl2/siec \
 		twmb:murmur3:v1.1.5:twmb_murmur3/vendor/github.com/twmb/murmur3
 
 PLIST_FILES=	bin/croc
