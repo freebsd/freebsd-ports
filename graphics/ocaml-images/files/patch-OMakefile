@@ -1,6 +1,6 @@
---- OMakefile.orig	2012-11-07 22:03:19.000000000 +0100
-+++ OMakefile	2012-11-07 22:04:26.000000000 +0100
-@@ -22,13 +22,13 @@
+--- OMakefile.orig	2011-06-22 18:04:32 UTC
++++ OMakefile
+@@ -22,13 +22,13 @@ if $(defined WithOMyApt)
  
  # Specify non standard include directories
  INCLUDES[]=
@@ -18,3 +18,20 @@
  
  # Specify directories where X's rgb.txt can be found
  PATH_RGB_TXT[]=
+@@ -175,13 +175,13 @@ print_configured() =
+     OCAMLPACKS+=graphics
+     export
+ 
+-  SUPPORT_FREETYPE = $(Check_prog_in_path freetype-config)
++  SUPPORT_FREETYPE = $(Check_prog_in_path pkg-config)
+   PATH_FREETYPE_CONFIG = $(WHERE)
+   LDFLAGS_freetype=
+   if $(SUPPORT_FREETYPE)
+     println(SUPPORT_FREETYPE=$(SUPPORT_FREETYPE)!)
+-    CFLAGS= $(CFLAGS) $(shell freetype-config --cflags)
+-    LDFLAGS_freetype= $(shell freetype-config --libs)
++    CFLAGS= $(CFLAGS) $(shell pkg-config freetype2 --cflags)
++    LDFLAGS_freetype= $(shell pkg-config freetype2 --libs)
+     export
+   if $(SUPPORT_FREETYPE)
+     SUPPORTED_NON_FORMATS+=freetype

@@ -51,6 +51,7 @@ XPM_CONFIGURE_WITH=	xpm
 GIF_CONFIGURE_WITH=	gif
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 
+FREETYPE_USES=		pkgconfig
 FREETYPE_CONFIGURE_WITH=freetype
 FREETYPE_LIB_DEPENDS=	libttf.so:print/freetype \
 			libfreetype.so:print/freetype2
@@ -61,6 +62,8 @@ GHOSTSCRIPT_USES=	ghostscript
 GTK2_CONFIGURE_WITH=	liblgtk2
 GTK2_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
 GTK2_RUN_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
+
+BINARY_ALIAS=		freetype-config=true
 
 .include <bsd.port.options.mk>
 
