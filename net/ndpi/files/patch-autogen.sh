@@ -1,6 +1,6 @@
---- autogen.sh.orig	2020-10-19 14:18:25 UTC
+--- autogen.sh.orig	2021-07-26 07:42:48 UTC
 +++ autogen.sh
-@@ -5,46 +5,6 @@ NDPI_MINOR="4"
+@@ -5,46 +5,6 @@ NDPI_MINOR="0"
  NDPI_PATCH="0"
  NDPI_VERSION_SHORT="$NDPI_MAJOR.$NDPI_MINOR.$NDPI_PATCH"
  
@@ -47,7 +47,7 @@
  cat configure.seed | sed \
      -e "s/@NDPI_MAJOR@/$NDPI_MAJOR/g" \
      -e "s/@NDPI_MINOR@/$NDPI_MINOR/g" \
-@@ -52,11 +12,3 @@ cat configure.seed | sed \
+@@ -52,12 +12,3 @@ cat configure.seed | sed \
      -e "s/@NDPI_VERSION_SHORT@/$NDPI_VERSION_SHORT/g" \
      -e "s/@FUZZY@/$FUZZY/g" \
      > configure.ac
@@ -56,6 +56,7 @@
 -cat configure | sed "s/#define PACKAGE/#define NDPI_PACKAGE/g" | sed "s/#define VERSION/#define NDPI_VERSION/g"  > configure.tmp
 -cat configure.tmp > configure
 -
+-echo "./configure $@"
 -chmod +x configure
 -./configure $@
 -
