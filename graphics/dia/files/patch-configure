@@ -1,0 +1,32 @@
+--- configure.orig	2021-08-07 06:00:14 UTC
++++ configure
+@@ -16849,7 +16849,7 @@ if ${ac_cv_lib_freetype_FT_Init_FreeType+:} false; the
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lfreetype `freetype-config --libs` $LIBS"
++LIBS="-lfreetype `pkg-config freetype2 --libs` $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -16889,7 +16889,7 @@ fi
+                 { $as_echo "$as_me:${as_lineno-$LINENO}: checking if FreeType version is 2.0.9 or higher" >&5
+ $as_echo_n "checking if FreeType version is 2.0.9 or higher... " >&6; }
+     old_CPPFLAGS="$CPPFLAGS"
+-    CPPFLAGS="$CPPFLAGS `freetype-config --cflags`"
++    CPPFLAGS="$CPPFLAGS `pkg-config freetype2 --cflags`"
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <ft2build.h>
+@@ -16902,9 +16902,9 @@ _ACEOF
+ if ac_fn_c_try_cpp "$LINENO"; then :
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+-	 FREETYPE_LIBS=`freetype-config --libs`
++	 FREETYPE_LIBS=`pkg-config freetype2 --libs`
+ 
+-	 FREETYPE_CFLAGS=`freetype-config --cflags`
++	 FREETYPE_CFLAGS=`pkg-config freetype2 --cflags`
+ 
+ 	 GTK_MODULES="$GTK_MODULES pangoft2"
+ 
