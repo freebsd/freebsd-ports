@@ -13,6 +13,7 @@ include/ags/audio/ags_char_buffer_util.h
 include/ags/audio/ags_devin.h
 include/ags/audio/ags_devout.h
 include/ags/audio/ags_diatonic_scale.h
+include/ags/audio/ags_envelope_util.h
 include/ags/audio/ags_fast_pitch_util.h
 include/ags/audio/ags_fifoout.h
 include/ags/audio/ags_filter_util.h
@@ -30,6 +31,7 @@ include/ags/audio/ags_frequency_map.h
 include/ags/audio/ags_frequency_map_manager.h
 include/ags/audio/ags_fx_factory.h
 include/ags/audio/ags_hq_pitch_util.h
+include/ags/audio/ags_generic_pitch_util.h
 include/ags/audio/ags_generic_recall_channel_run.h
 include/ags/audio/ags_generic_recall_recycling.h
 include/ags/audio/ags_input.h
@@ -41,6 +43,7 @@ include/ags/audio/ags_notation.h
 include/ags/audio/ags_note.h
 include/ags/audio/ags_output.h
 include/ags/audio/ags_pattern.h
+include/ags/audio/ags_peak_util.h
 include/ags/audio/ags_phase_shift_util.h
 include/ags/audio/ags_playback.h
 include/ags/audio/ags_playback_domain.h
@@ -67,10 +70,13 @@ include/ags/audio/ags_recall_recycling.h
 include/ags/audio/ags_recycling.h
 include/ags/audio/ags_recycling_context.h
 include/ags/audio/ags_sequencer_util.h
+include/ags/audio/ags_resample_util.h
 include/ags/audio/ags_sf2_synth_generator.h
 include/ags/audio/ags_sf2_synth_util.h
 include/ags/audio/ags_sfz_synth_generator.h
 include/ags/audio/ags_sfz_synth_util.h
+include/ags/audio/ags_sf2_util.h
+include/ags/audio/ags_sfz_util.h
 include/ags/audio/ags_sound_enums.h
 include/ags/audio/ags_sound_provider.h
 include/ags/audio/ags_soundcard_util.h
@@ -78,6 +84,7 @@ include/ags/audio/ags_synth_enums.h
 include/ags/audio/ags_synth_generator.h
 include/ags/audio/ags_synth_util.h
 include/ags/audio/ags_track.h
+include/ags/audio/ags_volume_util.h
 include/ags/audio/ags_wave.h
 include/ags/audio/audio-unit/ags_audio_unit_client.h
 include/ags/audio/audio-unit/ags_audio_unit_devin.h
