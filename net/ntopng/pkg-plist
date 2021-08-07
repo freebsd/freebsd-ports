@@ -1835,7 +1835,7 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/httpdocs/js/pages/datasource_list.js
 %%DATADIR%%/httpdocs/js/pages/endpoint-notifications-list.js
 %%DATADIR%%/httpdocs/js/pages/flowdevice_details.js
-%%DATADIR%%/httpdocs/js/pages/flowdevices_stats.js
+%%DATADIR%%/httpdocs/js/pages/flowdevices_page.js
 %%DATADIR%%/httpdocs/js/pages/import-export-config.js
 %%DATADIR%%/httpdocs/js/pages/manage-configurations.js
 %%DATADIR%%/httpdocs/js/pages/pools/host-members.js
@@ -2426,6 +2426,7 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/modules/snmp_consts.lua
 %%DATADIR%%/scripts/lua/modules/stats_utils.lua
 %%DATADIR%%/scripts/lua/modules/storage_utils.lua
+%%DATADIR%%/scripts/lua/modules/sys_utils.lua
 %%DATADIR%%/scripts/lua/modules/syslog_utils.lua
 %%DATADIR%%/scripts/lua/modules/system_utils.lua
 %%DATADIR%%/scripts/lua/modules/tcp_flow_state_utils.lua
