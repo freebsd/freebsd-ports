@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		help2man:misc/help2man
 
 ONLY_FOR_ARCHS=	amd64
-USES=		autoreconf:build bison cpe gettext gmake makeinfo python tar:xz
+USES=		autoreconf:build bison cpe gettext gmake makeinfo pkgconfig python tar:xz
 
 WRKSRC=		${WRKDIR}/grub-2.02
 CONFLICTS=	grub2-2*
@@ -42,6 +42,8 @@ OPTIONS_SUB=	yes
 
 MKFONT_DESC=	Build grub-mkfont (require freetype2)
 FUSE_DESC=	Build grub-mount (require FUSE)
+
+BINARY_ALIAS=	freetype-config=true
 
 .include <bsd.port.pre.mk>
 
