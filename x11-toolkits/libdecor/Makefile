@@ -4,7 +4,7 @@ CATEGORIES=	x11-toolkits
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	ca1dd07bbdbd.patch:-p1 # https://gitlab.gnome.org/jadahl/libdecor/-/merge_requests/74
-PATCHFILES+=	d5493ba96563.patch:-p1 # https://gitlab.gnome.org/jadahl/libdecor/-/merge_requests/75
+PATCHFILES+=	0c5daad652ae.patch:-p1 # https://gitlab.gnome.org/jadahl/libdecor/-/merge_requests/75
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Client-side decorations library for Wayland client
