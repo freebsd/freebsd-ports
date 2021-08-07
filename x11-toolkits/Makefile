@@ -69,6 +69,7 @@
     SUBDIR += libXt
     SUBDIR += libadwaita
     SUBDIR += libdazzle
+    SUBDIR += libdecor
     SUBDIR += libgdiplus
     SUBDIR += libhandy
     SUBDIR += libhandy0
