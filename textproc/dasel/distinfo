@@ -1,5 +1,5 @@
-TIMESTAMP = 1620924583
-SHA256 (go/textproc_dasel/dasel-v1.15.0/v1.15.0.mod) = 1fe9dac1d5135edfca3ab28f6ed3c731b1042fc96ce9b863319f2d70c81c655d
-SIZE (go/textproc_dasel/dasel-v1.15.0/v1.15.0.mod) = 215
-SHA256 (go/textproc_dasel/dasel-v1.15.0/v1.15.0.zip) = 5e048c7e15e7d19273a050f6d0519b0795f530cb1af2478731ede91cce6c9569
-SIZE (go/textproc_dasel/dasel-v1.15.0/v1.15.0.zip) = 2954784
+TIMESTAMP = 1628356122
+SHA256 (go/textproc_dasel/dasel-v1.16.1/v1.16.1.mod) = 1fe9dac1d5135edfca3ab28f6ed3c731b1042fc96ce9b863319f2d70c81c655d
+SIZE (go/textproc_dasel/dasel-v1.16.1/v1.16.1.mod) = 215
+SHA256 (go/textproc_dasel/dasel-v1.16.1/v1.16.1.zip) = eb3ca48f03d866c3e62493a58cbe33a43e5011946810315905a63573267b14a9
+SIZE (go/textproc_dasel/dasel-v1.16.1/v1.16.1.zip) = 2960410
