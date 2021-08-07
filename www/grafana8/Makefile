@@ -1,5 +1,5 @@
 PORTNAME=	grafana
-DISTVERSION=	8.0.5
+DISTVERSION=	8.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://dl.grafana.com/oss/release/:public \
@@ -25,234 +25,14 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 USES=		go:modules
 
 USE_GITHUB=	yes
-GH_TUPLE=	\
-		Azure:azure-sdk-for-go:023238f4c45f:azure_azure_sdk_for_go_azcore/vendor/github.com/Azure/azure-sdk-for-go \
-		Azure:azure-sdk-for-go:2bc7350b1dcd:azure_azure_sdk_for_go_azidentity \
-		Azure:azure-sdk-for-go:aa6ba0a4ce44:azure_azure_sdk_for_go_internal \
-		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
-		FZambia:eagle:v0.0.1:fzambia_eagle/vendor/github.com/FZambia/eagle \
-		FZambia:sentinel:v1.1.0:fzambia_sentinel/vendor/github.com/FZambia/sentinel \
-		Masterminds:semver:v1.5.0:masterminds_semver/vendor/github.com/Masterminds/semver \
-		PuerkitoBio:purell:v1.1.1:puerkitobio_purell/vendor/github.com/PuerkitoBio/purell \
-		PuerkitoBio:urlesc:de5bf2ad4578:puerkitobio_urlesc/vendor/github.com/PuerkitoBio/urlesc \
-		VividCortex:mysqlerr:6c6b55f8796f:vividcortex_mysqlerr/vendor/github.com/VividCortex/mysqlerr \
-		alexcesaro:quotedprintable:2caba252f4dc:alexcesaro_quotedprintable/vendor/gopkg.in/alexcesaro/quotedprintable.v3 \
-		apache:arrow:5bea62493d91:apache_arrow_arrow/vendor/github.com/apache/arrow \
-		apache:thrift:v0.14.1:apache_thrift/vendor/github.com/apache/thrift \
-		armon:go-metrics:v0.3.6:armon_go_metrics/vendor/github.com/armon/go-metrics \
-		asaskevich:govalidator:7a23bdc65eef:asaskevich_govalidator/vendor/github.com/asaskevich/govalidator \
-		aws:aws-sdk-go:v1.38.34:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
-		beevik:etree:v1.1.0:beevik_etree/vendor/github.com/beevik/etree \
-		benbjohnson:clock:v1.1.0:benbjohnson_clock/vendor/github.com/benbjohnson/clock \
-		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
-		bradfitz:gomemcache:a41fca850d0b:bradfitz_gomemcache/vendor/github.com/bradfitz/gomemcache \
-		c2h5oh:datasize:28bbd4740fee:c2h5oh_datasize/vendor/github.com/c2h5oh/datasize \
-		cenkalti:backoff:v4.1.0:cenkalti_backoff_v4/vendor/github.com/cenkalti/backoff/v4 \
-		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
-		centrifugal:centrifuge:v0.17.0:centrifugal_centrifuge/vendor/github.com/centrifugal/centrifuge \
-		centrifugal:protocol:v0.5.0:centrifugal_protocol/vendor/github.com/centrifugal/protocol \
-		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
-		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
-		cheekybits:genny:v1.0.0:cheekybits_genny/vendor/github.com/cheekybits/genny \
-		cockroachdb:apd:v2.0.1:cockroachdb_apd_v2/vendor/github.com/cockroachdb/apd/v2 \
-		cortexproject:cortex:d382e1d80eaf:cortexproject_cortex/vendor/github.com/cortexproject/cortex \
-		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
-		crewjam:saml:bca570abb2ce:crewjam_saml/vendor/github.com/crewjam/saml \
-		cuelang:cue:v0.3.2:cuelang_cue/vendor/cuelang.org/go \
-		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		deepmap:oapi-codegen:v1.3.13:deepmap_oapi_codegen/vendor/github.com/deepmap/oapi-codegen \
-		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
-		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
-		edsrzf:mmap-go:v1.0.0:edsrzf_mmap_go/vendor/github.com/edsrzf/mmap-go \
-		emicklei:proto:v1.6.15:emicklei_proto/vendor/github.com/emicklei/proto \
-		facebookgo:ensure:b4ab57deab51:facebookgo_ensure/vendor/github.com/facebookgo/ensure \
-		facebookgo:inject:f23751cae28b:facebookgo_inject/vendor/github.com/facebookgo/inject \
-		facebookgo:stack:751773369052:facebookgo_stack/vendor/github.com/facebookgo/stack \
-		facebookgo:structtag:217e25fb9691:facebookgo_structtag/vendor/github.com/facebookgo/structtag \
-		facebookgo:subset:8dac2c3c4870:facebookgo_subset/vendor/github.com/facebookgo/subset \
-		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
-		felixge:httpsnoop:v1.0.1:felixge_httpsnoop/vendor/github.com/felixge/httpsnoop \
-		gchaincl:sqlhooks:v1.3.0:gchaincl_sqlhooks/vendor/github.com/gchaincl/sqlhooks \
-		getsentry:sentry-go:v0.10.0:getsentry_sentry_go/vendor/github.com/getsentry/sentry-go \
-		go-asn1-ber:asn1-ber:f715ec2f112d:go_asn1_ber_asn1_ber/vendor/gopkg.in/asn1-ber.v1 \
-		go-ini:ini:v1.62.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
-		go-kit:kit:v0.10.0:go_kit_kit/vendor/github.com/go-kit/kit \
-		go-ldap:ldap:v3.1.0:go_ldap_ldap/vendor/gopkg.in/ldap.v3 \
-		go-logfmt:logfmt:v0.5.0:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
-		go-macaron:binding:0b4f37bab25b:go_macaron_binding/vendor/github.com/go-macaron/binding \
-		go-macaron:gzip:cad1c6580a07:go_macaron_gzip/vendor/github.com/go-macaron/gzip \
-		go-macaron:inject:d8a0b8677191:go_macaron_inject/vendor/github.com/go-macaron/inject \
-		go-macaron:macaron:v1.4.0:go_macaron_macaron/vendor/gopkg.in/macaron.v1 \
-		go-mail:mail:v2.3.1:go_mail_mail/vendor/gopkg.in/mail.v2 \
-		go-openapi:analysis:v0.20.0:go_openapi_analysis/vendor/github.com/go-openapi/analysis \
-		go-openapi:errors:v0.20.0:go_openapi_errors/vendor/github.com/go-openapi/errors \
-		go-openapi:jsonpointer:v0.19.5:go_openapi_jsonpointer/vendor/github.com/go-openapi/jsonpointer \
-		go-openapi:jsonreference:v0.19.5:go_openapi_jsonreference/vendor/github.com/go-openapi/jsonreference \
-		go-openapi:loads:v0.20.2:go_openapi_loads/vendor/github.com/go-openapi/loads \
-		go-openapi:runtime:v0.19.28:go_openapi_runtime/vendor/github.com/go-openapi/runtime \
-		go-openapi:spec:v0.20.3:go_openapi_spec/vendor/github.com/go-openapi/spec \
-		go-openapi:strfmt:v0.20.1:go_openapi_strfmt/vendor/github.com/go-openapi/strfmt \
-		go-openapi:swag:v0.19.15:go_openapi_swag/vendor/github.com/go-openapi/swag \
-		go-openapi:validate:v0.20.2:go_openapi_validate/vendor/github.com/go-openapi/validate \
-		go-redis:redis:v5.2.9:go_redis_redis/vendor/gopkg.in/redis.v5 \
-		go-sourcemap:sourcemap:v2.1.3:go_sourcemap_sourcemap/vendor/github.com/go-sourcemap/sourcemap \
-		go-sql-driver:mysql:v1.6.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
-		go-stack:stack:v1.8.0:go_stack_stack/vendor/github.com/go-stack/stack \
-		go-yaml:yaml:496545a6307b:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
-		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
-		gofrs:uuid:v4.0.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
-		gogo:googleapis:v1.1.0:gogo_googleapis/vendor/github.com/gogo/googleapis \
-		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		gogo:status:v1.0.3:gogo_status/vendor/github.com/gogo/status \
-		golang-sql:civil:cb61b32ac6fe:golang_sql_civil/vendor/github.com/golang-sql/civil \
-		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:c07d793c2f9a:golang_crypto/vendor/golang.org/x/crypto \
-		golang:exp:85be41e4509f:golang_exp/vendor/golang.org/x/exp \
-		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:lint:83fdc39ff7b5:golang_lint/vendor/golang.org/x/lint \
-		golang:mock:v1.5.0:golang_mock/vendor/github.com/golang/mock \
-		golang:mod:v0.4.1:golang_mod/vendor/golang.org/x/mod \
-		golang:net:fe42d452be8f:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:5e61552d6c78:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:snappy:v0.0.3:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:0cec03c779c1:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
-		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
-		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
-		gomodule:redigo:v2.0.0:gomodule_redigo/vendor/github.com/gomodule/redigo \
-		gonum:gonum:v0.9.1:gonum_gonum/vendor/gonum.org/v1/gonum \
-		google:btree:v1.0.0:google_btree/vendor/github.com/google/btree \
-		google:flatbuffers:v1.11.0:google_flatbuffers/vendor/github.com/google/flatbuffers \
-		google:go-cmp:v0.5.5:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:c14fb6ef47c3:google_go_genproto/vendor/google.golang.org/genproto \
-		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
-		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
-		googleapis:google-api-go-client:v0.45.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
-		googleapis:google-cloud-go:storage/v1.14.0:googleapis_google_cloud_go_storage \
-		googleapis:google-cloud-go:v0.81.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
-		gopherjs:gopherjs:ce3c9ade29de:gopherjs_gopherjs/vendor/github.com/gopherjs/gopherjs \
-		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
-		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
-		gosimple:slug:v1.9.0:gosimple_slug/vendor/github.com/gosimple/slug \
-		grafana:go-mssqldb:d0ce3c521036:grafana_go_mssqldb/vendor/github.com/denisenkom/go-mssqldb \
-		grafana:grafana-aws-sdk:v0.7.0:grafana_grafana_aws_sdk/vendor/github.com/grafana/grafana-aws-sdk \
-		grafana:grafana-live-sdk:v0.0.6:grafana_grafana_live_sdk/vendor/github.com/grafana/grafana-live-sdk \
-		grafana:grafana-plugin-sdk-go:v0.105.0:grafana_grafana_plugin_sdk_go/vendor/github.com/grafana/grafana-plugin-sdk-go \
-		grafana:loki:15d417efe103:grafana_loki/vendor/github.com/grafana/loki \
-		grpc-ecosystem:go-grpc-middleware:v1.3.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
-		grpc-ecosystem:go-grpc-prometheus:6af20e3a5340:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
-		grpc-ecosystem:grpc-gateway:v1.16.0:grpc_ecosystem_grpc_gateway/vendor/github.com/grpc-ecosystem/grpc-gateway \
-		grpc:grpc-go:v1.37.1:grpc_grpc_go/vendor/google.golang.org/grpc \
-		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
-		hashicorp:go-hclog:v0.16.0:hashicorp_go_hclog/vendor/github.com/hashicorp/go-hclog \
-		hashicorp:go-immutable-radix:v1.2.0:hashicorp_go_immutable_radix/vendor/github.com/hashicorp/go-immutable-radix \
-		hashicorp:go-msgpack:v0.5.5:hashicorp_go_msgpack/vendor/github.com/hashicorp/go-msgpack \
-		hashicorp:go-multierror:v1.1.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
-		hashicorp:go-plugin:v1.4.0:hashicorp_go_plugin/vendor/github.com/hashicorp/go-plugin \
-		hashicorp:go-sockaddr:v1.0.2:hashicorp_go_sockaddr/vendor/github.com/hashicorp/go-sockaddr \
-		hashicorp:go-version:v1.3.0:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
-		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
-		hashicorp:memberlist:v0.2.3:hashicorp_memberlist/vendor/github.com/hashicorp/memberlist \
-		hashicorp:yamux:df201c70410d:hashicorp_yamux/vendor/github.com/hashicorp/yamux \
-		igm:sockjs-go:v3.0.0:igm_sockjs_go_v3/vendor/github.com/igm/sockjs-go \
-		inconshreveable:log15:67afb5ed74ec:inconshreveable_log15/vendor/github.com/inconshreveable/log15 \
-		influxdata:influxdb-client-go:v2.2.3:influxdata_influxdb_client_go_v2/vendor/github.com/influxdata/influxdb-client-go/v2 \
-		influxdata:line-protocol:9aa0e372d097:influxdata_line_protocol/vendor/github.com/influxdata/line-protocol \
-		jessevdk:go-flags:v1.5.0:jessevdk_go_flags/vendor/github.com/jessevdk/go-flags \
-		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
-		jonboulle:clockwork:v0.2.2:jonboulle_clockwork/vendor/github.com/jonboulle/clockwork \
-		josharian:intern:v1.0.0:josharian_intern/vendor/github.com/josharian/intern \
-		jpillora:backoff:v1.0.0:jpillora_backoff/vendor/github.com/jpillora/backoff \
-		json-iterator:go:v1.1.11:json_iterator_go/vendor/github.com/json-iterator/go \
-		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
-		jtolds:gls:v4.20.0:jtolds_gls/vendor/github.com/jtolds/gls \
-		jung-kurt:gofpdf:v1.16.2:jung_kurt_gofpdf/vendor/github.com/jung-kurt/gofpdf \
-		klauspost:compress:v1.12.2:klauspost_compress/vendor/github.com/klauspost/compress \
-		kubernetes:client-go:v0.18.8:kubernetes_client_go/vendor/k8s.io/client-go \
-		lib:pq:v1.10.0:lib_pq/vendor/github.com/lib/pq \
-		linkedin:goavro:v2.10.0:linkedin_goavro_v2/vendor/github.com/linkedin/goavro/v2 \
-		magefile:mage:v1.11.0:magefile_mage/vendor/github.com/magefile/mage \
-		mailru:easyjson:v0.7.6:mailru_easyjson/vendor/github.com/mailru/easyjson \
-		mattermost:xml-roundtrip-validator:bcd7e1b9601e:mattermost_xml_roundtrip_validator/vendor/github.com/mattermost/xml-roundtrip-validator \
-		mattetti:filebuffer:v1.0.1:mattetti_filebuffer/vendor/github.com/mattetti/filebuffer \
-		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		mattn:go-sqlite3:v1.14.7:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
-		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
-		miekg:dns:v1.1.41:miekg_dns/vendor/github.com/miekg/dns \
-		mitchellh:go-testing-interface:v1.0.0:mitchellh_go_testing_interface/vendor/github.com/mitchellh/go-testing-interface \
-		mitchellh:mapstructure:v1.4.1:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
-		mna:redisc:v1.1.7:mna_redisc/vendor/github.com/mna/redisc \
-		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
-		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
-		mongodb:mongo-go-driver:v1.5.1:mongodb_mongo_go_driver/vendor/go.mongodb.org/mongo-driver \
-		mpvl:unique:cbe035fff7de:mpvl_unique/vendor/github.com/mpvl/unique \
-		mwitkow:go-conntrack:2f068394615f:mwitkow_go_conntrack/vendor/github.com/mwitkow/go-conntrack \
-		oklog:run:v1.1.0:oklog_run/vendor/github.com/oklog/run \
-		oklog:ulid:v1.3.1:oklog_ulid/vendor/github.com/oklog/ulid \
-		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
-		open-telemetry:opentelemetry-collector:v0.27.0:open_telemetry_opentelemetry_collector/vendor/go.opentelemetry.io/collector \
-		opentracing-contrib:go-grpc:73cb765af46e:opentracing_contrib_go_grpc/vendor/github.com/opentracing-contrib/go-grpc \
-		opentracing-contrib:go-stdlib:v1.0.0:opentracing_contrib_go_stdlib/vendor/github.com/opentracing-contrib/go-stdlib \
-		opentracing:opentracing-go:v1.2.0:opentracing_opentracing_go/vendor/github.com/opentracing/opentracing-go \
-		patrickmn:go-cache:v2.1.0:patrickmn_go_cache/vendor/github.com/patrickmn/go-cache \
-		pkg:browser:ce105d075bb4:pkg_browser/vendor/github.com/pkg/browser \
-		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		prometheus:alertmanager:v0.22.0:prometheus_alertmanager/vendor/github.com/prometheus/alertmanager \
-		prometheus:client_golang:v1.10.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
-		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
-		prometheus:common:v0.24.0:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:node_exporter:01054558c289:prometheus_node_exporter/vendor/github.com/prometheus/node_exporter \
-		prometheus:procfs:v0.6.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		prometheus:prometheus:2a4b8e12bbf2:prometheus_prometheus/vendor/github.com/prometheus/prometheus \
-		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
-		rainycape:unidecode:cb7f23ec59be:rainycape_unidecode/vendor/github.com/rainycape/unidecode \
-		robfig:cron:b41be1df6967:robfig_cron/vendor/github.com/robfig/cron \
-		robfig:cron:v3.0.1:robfig_cron_v3/vendor/github.com/robfig/cron/v3 \
-		rs:cors:v1.7.0:rs_cors/vendor/github.com/rs/cors \
-		russellhaering:goxmldsig:v1.1.0:russellhaering_goxmldsig/vendor/github.com/russellhaering/goxmldsig \
-		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
-		sean-:seed:e2103e2c3529:sean__seed/vendor/github.com/sean-/seed \
-		sercand:kuberesolver:v2.4.0:sercand_kuberesolver/vendor/github.com/sercand/kuberesolver \
-		sergi:go-diff:v1.0.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
-		shurcooL:httpfs:8d4bc4ba7749:shurcool_httpfs/vendor/github.com/shurcooL/httpfs \
-		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
-		shurcooL:vfsgen:0d455de96546:shurcool_vfsgen/vendor/github.com/shurcooL/vfsgen \
-		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		smartystreets:assertions:v1.0.1:smartystreets_assertions/vendor/github.com/smartystreets/assertions \
-		smartystreets:goconvey:v1.6.4:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey \
-		square:go-jose:v2.5.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
-		stretchr:objx:v0.2.0:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		teris-io:shortid:771a37caa5cf:teris_io_shortid/vendor/github.com/teris-io/shortid \
-		timberio:go-datemath:74ddef604fff:timberio_go_datemath/vendor/github.com/timberio/go-datemath \
-		ua-parser:uap-go:daf92ba38329:ua_parser_uap_go/vendor/github.com/ua-parser/uap-go \
-		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
-		uber-go:goleak:v1.1.10:uber_go_goleak/vendor/go.uber.org/goleak \
-		uber:jaeger-client-go:v2.27.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
-		uber:jaeger-lib:v2.4.1:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib \
-		unknwon:com:v1.0.1:unknwon_com/vendor/github.com/unknwon/com \
-		urfave:cli:v2.3.0:urfave_cli_v2/vendor/github.com/urfave/cli/v2 \
-		weaveworks:common:009d1eebd624:weaveworks_common/vendor/github.com/weaveworks/common \
-		weaveworks:promrus:v1.2.0:weaveworks_promrus/vendor/github.com/weaveworks/promrus \
-		xorcare:pointer:v1.1.0:xorcare_pointer/vendor/github.com/xorcare/pointer \
-		yudai:gojsondiff:v1.0.0:yudai_gojsondiff/vendor/github.com/yudai/gojsondiff \
-		yudai:golcs:ecda9a501e82:yudai_golcs/vendor/github.com/yudai/golcs
 
 USE_RC_SUBR=	grafana
-TAG=		cbb2aa5
+TAG=		62e720c
 
 GO_TARGET=	./pkg/cmd/grafana-server \
 		./pkg/cmd/grafana-cli
 GO_BUILDFLAGS=	-ldflags="-w -X main.version=${PORTVERSION} -X main.commit=${TAG}"
 
-SUB_FILES=	grafana.ini
 SUB_LIST=	GRAFANA_USER=${GRAFANA_USER} \
 		GRAFANA_GROUP=${GRAFANA_GROUP} \
 		GRAFANA_DATADIR=${GRAFANA_DATADIR} \
@@ -260,7 +40,7 @@ SUB_LIST=	GRAFANA_USER=${GRAFANA_USER} \
 		GRAFANA_LOGDIR=${GRAFANA_LOGDIR} \
 		GRAFANA_PLUGINDIR=${GRAFANA_PLUGINDIR} \
 		GRAFANA_PROVISIONINGDIR=${GRAFANA_PROVISIONINGDIR} \
-		GRAFANA_BUILDHASH=cb577348e5e011d82919
+		GRAFANA_BUILDHASH=d7cfb4e56c8be9229275
 
 GRAFANA_USER?=	grafana
 GRAFANA_GROUP?=	grafana
@@ -275,6 +55,9 @@ GRAFANA_HOMEDIR?=		${DATADIR}
 GRAFANA_LOGDIR?=		/var/log/${PORTNAME}
 GRAFANA_PLUGINDIR?=		${GRAFANA_DATADIR}/plugins
 GRAFANA_PROVISIONINGDIR?=	${ETCDIR}/provisioning
+
+# This file includes the GH_TUPLE. Generated by make gomod-vendor.
+.include "Makefile.modules"
 
 post-extract:
 	@${RM} -r ${WRKSRC}/public
@@ -297,7 +80,13 @@ post-install:
 		${COPYTREE_SHARE} public ${STAGEDIR}${GRAFANA_HOMEDIR} )
 	${INSTALL_DATA} ${WRKSRC}/conf/defaults.ini \
 		${STAGEDIR}${GRAFANA_HOMEDIR}/conf/defaults.ini
-	${INSTALL_DATA} ${WRKDIR}/grafana.ini \
-		${STAGEDIR}${ETCDIR}/grafana.ini.sample
+
+	${REINPLACE_CMD} \
+		-e 's|;data = /var/lib/grafana|data = ${GRAFANA_DATADIR}|g' \
+		-e 's|;logs = /var/log/grafana|logs = ${GRAFANA_LOGDIR}|g' \
+		-e 's|;plugins = /var/lib/grafana/plugins|plugins = ${GRAFANA_PLUGINDIR}|g' \
+		-e 's|;provisioning = conf/provisioning|provisioning = ${GRAFANA_PROVISIONINGDIR}|g' \
+		 ${WRKSRC}/conf/sample.ini
+	${INSTALL_DATA} ${WRKSRC}/conf/sample.ini ${STAGEDIR}${ETCDIR}/grafana.ini.sample
 
 .include <bsd.port.mk>
