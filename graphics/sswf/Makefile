@@ -29,6 +29,8 @@ OPTIONS_DEFINE=	DEBUG
 
 DEBUG_CONFIGURE_OFF=	--disable-debug --disable-yydebug
 
+BINARY_ALIAS=		freetype-config=true
+
 .include <bsd.port.pre.mk>
 
 .if empty(ICONV_LIB)

@@ -1,0 +1,13 @@
+--- configure.orig	2021-08-07 08:00:57 UTC
++++ configure
+@@ -22421,8 +22421,8 @@ fi
+ if test "x$FREETYPE_CONFIG" != "xno" ; then
+   { echo "$as_me:$LINENO: checking for freetype libraries" >&5
+ echo $ECHO_N "checking for freetype libraries... $ECHO_C" >&6; }
+-  FREETYPE_LIBS=`$FREETYPE_CONFIG --libs`
+-  FREETYPE_CFLAGS=`$FREETYPE_CONFIG --cflags`
++  FREETYPE_LIBS=`pkg-config freetype2 --libs`
++  FREETYPE_CFLAGS=`pkg-config freetype2 --cflags`
+   { echo "$as_me:$LINENO: result: $FREETYPE_LIBS" >&5
+ echo "${ECHO_T}$FREETYPE_LIBS" >&6; }
+ fi
