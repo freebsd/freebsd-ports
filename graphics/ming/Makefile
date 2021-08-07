@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgif.so:graphics/giflib \
 		libpng.so:graphics/png
 
-USES=		autoreconf bison gmake libtool localbase pathfix shebangfix
+USES=		autoreconf bison gmake libtool localbase pathfix pkgconfig shebangfix
 
 CFLAGS+=	-fcommon # https://github.com/libming/libming/issues/55
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/ming
@@ -39,6 +39,8 @@ PORTSCOUT=	limit:^ming-
 SHEBANG_FILES=	util/cws2fws
 
 OPTIONS_DEFINE=	DOCS
+
+BINARY_ALIAS=	freetype-config=true
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/ming/ ${STAGEDIR}${PREFIX}/include/ming/blocks/ ${STAGEDIR}${PREFIX}/include/ming/util/
