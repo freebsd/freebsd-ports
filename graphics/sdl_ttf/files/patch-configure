@@ -1,0 +1,13 @@
+--- configure.orig	2021-08-07 07:33:50 UTC
++++ configure
+@@ -12642,8 +12642,8 @@ echo "$as_me: error:
+ " >&2;}
+    { (exit 1); exit 1; }; }
+ else
+-    CFLAGS="$CFLAGS `$FREETYPE_CONFIG $freetypeconf_args --cflags`"
+-    LIBS="$LIBS `$FREETYPE_CONFIG $freetypeconf_args --libs`"
++    CFLAGS="$CFLAGS `pkg-config freetype2 --cflags`"
++    LIBS="$LIBS `pkg-config freetype2 --libs`"
+ fi
+ 
+ SDL_VERSION=1.2.4

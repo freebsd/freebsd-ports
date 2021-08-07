@@ -22,6 +22,8 @@ USE_GL=		gl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+BINARY_ALIAS=	freetype-config=true
+
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/glfont ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/showfont \
