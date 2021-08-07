@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		autoreconf tar:tgz
+USES=		autoreconf pkgconfig tar:tgz
 
 GNU_CONFIGURE=	yes
 
