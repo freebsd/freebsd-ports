@@ -65,6 +65,8 @@ SHEBANG_FILES=	texk/texlive/linked_scripts/accfonts/mkt1font \
 	texk/texlive/linked_scripts/urlbst/urlbst \
 	texk/texlive/linked_scripts/yplan/yplan
 
+BINARY_ALIAS=	freetype-config=true
+
 # during build phase gnu configure is run a lot
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-native-texlive-build \
@@ -128,7 +130,7 @@ post-patch:
 	    tl_scripts/texconfig-sys.sh \
 	    linked_scripts/texlive/updmap-sys.sh
 	${REINPLACE_CMD} -e 's|/usr/bin/python -O|${python_CMD}|' \
-		${WRKSRC}/texk/texlive/linked_scripts/de-macro/de-macro \
+		${WRKSRC}/texk/texlive/linked_scripts/de-macro/de-macro
 
 post-install-fmtutil:
 	for D in ${TEXHASHDIRS}; do \
