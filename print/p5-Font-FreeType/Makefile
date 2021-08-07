@@ -14,8 +14,10 @@ BUILD_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib \
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 TEST_DEPENDS=	p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
-USES=		perl5
+USES=		perl5 pkgconfig
 USE_PERL5=	configure
+
+BINARY_ALIAS=	freetype-config=true
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Font/FreeType/FreeType.so
