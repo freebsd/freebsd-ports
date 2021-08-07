@@ -1,5 +1,5 @@
---- work/sbcl-2.1.7/tests/seq.pure.lisp	2021-07-30 10:42:10.000000000 +0200
-+++ /home/krion/sbcl/tests/seq.pure.lisp	2021-08-06 22:34:09.303934000 +0200
+--- tests/seq.pure.lisp.orig	2021-07-30 08:42:10 UTC
++++ tests/seq.pure.lisp
 @@ -584,3 +584,18 @@
          ;; Try all other numeric array types
          (dolist (y arrays)

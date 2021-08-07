@@ -1,5 +1,5 @@
---- work/sbcl-2.1.7/src/code/seq.lisp	2021-07-30 10:42:09.000000000 +0200
-+++ /home/krion/sbcl/src/code/seq.lisp	2021-08-06 22:34:09.026438000 +0200
+--- src/code/seq.lisp.orig	2021-07-30 08:42:09 UTC
++++ src/code/seq.lisp
 @@ -722,52 +722,53 @@
              collect `(eq ,tag ,(sb-vm:saetp-typecode saetp)))))
  
