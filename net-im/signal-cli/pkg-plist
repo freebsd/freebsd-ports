@@ -8,7 +8,7 @@ share/man/man1/signal-cli.1.gz
 %%DATADIR%%/lib/asm-commons-9.0.jar
 %%DATADIR%%/lib/asm-tree-9.0.jar
 %%DATADIR%%/lib/asm-util-9.0.jar
-%%DATADIR%%/lib/bcprov-jdk15on-1.68.jar
+%%DATADIR%%/lib/bcprov-jdk15on-1.69.jar
 %%DATADIR%%/lib/dbus-java-3.3.0.jar
 %%DATADIR%%/lib/jackson-annotations-2.9.0.jar
 %%DATADIR%%/lib/jackson-core-2.9.9.jar
