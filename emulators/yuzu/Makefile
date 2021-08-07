@@ -1,10 +1,9 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20210805
+PORTVERSION=	s20210807
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	a2686843592e.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/4836 mainline-merge
 PATCHFILES+=	0acf96796cae.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6598 mainline-merge
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -34,7 +33,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	42d8e08f7
+GH_TAGNAME=	bd0e1d3a2
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-32-ga3fdfe8:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.180:Vulkan_Headers/externals/Vulkan-Headers \
