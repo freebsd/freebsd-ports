@@ -19,7 +19,7 @@ DIST_SUBDIR=	orthanc
 EXTRACT_ONLY=	OrthancWebViewer-${PORTVERSION}.tar.gz
 
 MAINTAINER=	maintainer.freebsd@xpoundit.com
-COMMENT=	Plugin to extend Orthanc with a Web viewer of medical images
+COMMENT=	Orthanc plugin to extend Orthanc with a Web viewer of medical images
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
