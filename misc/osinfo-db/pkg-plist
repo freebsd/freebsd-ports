@@ -84,6 +84,8 @@ share/osinfo/os/altlinux.org/alt-8.1.xml
 share/osinfo/os/altlinux.org/alt-8.2.xml
 share/osinfo/os/altlinux.org/alt-9.0.xml
 share/osinfo/os/altlinux.org/alt-9.1.xml
+share/osinfo/os/altlinux.org/alt-9.2.xml
+share/osinfo/os/altlinux.org/alt-p10.starterkits.xml
 share/osinfo/os/altlinux.org/alt-p8.starterkits.xml
 share/osinfo/os/altlinux.org/alt-p9.starterkits.xml
 share/osinfo/os/altlinux.org/alt-sisyphus.xml
@@ -368,6 +370,8 @@ share/osinfo/os/haiku-os.org/haiku-r1alpha2.xml
 share/osinfo/os/haiku-os.org/haiku-r1alpha3.xml
 share/osinfo/os/haiku-os.org/haiku-r1alpha4.1.xml
 share/osinfo/os/haiku-os.org/haiku-r1beta1.xml
+share/osinfo/os/haiku-os.org/haiku-r1beta2.xml
+share/osinfo/os/haiku-os.org/haiku-r1beta3.xml
 share/osinfo/os/libosinfo.org/linux-2016.xml
 share/osinfo/os/libosinfo.org/linux-2018.xml
 share/osinfo/os/libosinfo.org/linux-2020.xml
@@ -642,6 +646,7 @@ share/osinfo/os/redhat.com/rhel-8.1.xml
 share/osinfo/os/redhat.com/rhel-8.2.xml
 share/osinfo/os/redhat.com/rhel-8.3.xml
 share/osinfo/os/redhat.com/rhel-8.4.xml
+share/osinfo/os/redhat.com/rhel-8.5.xml
 share/osinfo/os/redhat.com/rhel-9-unknown.xml
 share/osinfo/os/redhat.com/rhel-9.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
