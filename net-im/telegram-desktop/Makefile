@@ -28,17 +28,22 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libdbus-1.so:devel/dbus \
 		libdbusmenu-qt5.so:devel/libdbusmenu-qt \
 		libenchant-2.so:textproc/enchant2 \
+		libevent.so:devel/libevent \
 		libhunspell-1.7.so:textproc/hunspell \
 		libjpeg.so:graphics/jpeg-turbo \
 		liblz4.so:archivers/liblz4 \
 		libminizip.so:archivers/minizip \
 		librnnoise.so:audio/rnnoise \
 		libopenal.so:audio/openal-soft \
+		libopenh264.so:multimedia/openh264 \
 		libopus.so:audio/opus \
+		libpipewire-0.3.so:multimedia/pipewire \
 		libqrcodegencpp.so:graphics/qr-code-generator \
 		libusrsctp.so:net/libusrsctp \
+		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxkbcommon.so:x11/libxkbcommon \
-		libxxhash.so:devel/xxhash
+		libxxhash.so:devel/xxhash \
+		libvpx.so:multimedia/libvpx
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gl \
 		gnome pkgconfig python:3.7+,build qt:5 ssl xorg
@@ -51,7 +56,7 @@ USE_GNOME=	glib20 glibmm
 INSTALLS_ICONS=	yes
 USE_QT=		core dbus gui imageformats network widgets buildtools_build \
 		qmake_build wayland
-USE_XORG=	x11 xcb
+USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrender xrandr xtst
 
 CMAKE_ARGS=	-DDESKTOP_APP_SPECIAL_TARGET="" -DTDESKTOP_LAUNCHER_BASENAME="telegramdesktop" \
 		-DTDESKTOP_API_ID=${TELEGRAM_API_ID} -DTDESKTOP_API_HASH=${TELEGRAM_API_HASH} \
