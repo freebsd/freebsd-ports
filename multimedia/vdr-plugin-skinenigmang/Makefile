@@ -16,6 +16,8 @@ COMMENT=	Video Disk Recorder - Enigma-NG skin plugin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		pkgconfig
+
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -23,9 +25,13 @@ PORTDOCS=	README HISTORY
 
 OPTIONS_DEFINE=	DOCS NLS
 
+BINARY_ALIAS=	freetype-config=true
+
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
+	${REINPLACE_CMD} 's|freetype-config |pkg-config freetype2 |g' \
+		${WRKSRC}/Makefile
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
