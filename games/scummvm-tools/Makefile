@@ -22,7 +22,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libvorbis.so:audio/libvorbis \
 		libfreetype.so:print/freetype2
 
-USES=		compiler:c++11-lang gmake iconv tar:bzip2
+USES=		compiler:c++11-lang gmake iconv pkgconfig tar:bzip2
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --enable-verbose-build
