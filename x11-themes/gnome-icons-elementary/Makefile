@@ -1,8 +1,7 @@
 # Created by: Nicole Reid <root@cooltrainer.org>
 
 PORTNAME=	elementary
-PORTVERSION=	5.3.0
-PORTREVISION=	1
+DISTVERSION=	6.0.0
 CATEGORIES=	x11-themes gnome
 PKGNAMEPREFIX=	gnome-icons-
 
@@ -22,8 +21,9 @@ GH_PROJECT=	icons
 USE_GNOME=	librsvg2
 INSTALLS_ICONS=	yes
 
-NO_ARCH=	yes
 MESON_ARGS=	-Dpalettes=false \
 		-Dvolume_icons=false
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
