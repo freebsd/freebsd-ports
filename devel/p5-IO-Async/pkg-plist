@@ -9,6 +9,7 @@
 %%SITE_PERL%%/IO/Async/Handle.pm
 %%SITE_PERL%%/IO/Async/Internals/ChildManager.pm
 %%SITE_PERL%%/IO/Async/Internals/Connector.pm
+%%SITE_PERL%%/IO/Async/Internals/FunctionWorker.pm
 %%SITE_PERL%%/IO/Async/Internals/TimeQueue.pm
 %%SITE_PERL%%/IO/Async/Listener.pm
 %%SITE_PERL%%/IO/Async/Loop.pm
