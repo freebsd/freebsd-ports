@@ -1,7 +1,7 @@
 # Created by: Robert Gogolok <gogo@cs.uni-sb.de>
 
 PORTNAME=	haml
-PORTVERSION=	5.2.1
+PORTVERSION=	5.2.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
