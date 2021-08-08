@@ -26,8 +26,6 @@ PORTDOCS=	CHANGES INSTALL README
 CPE_VENDOR=	gnu
 CPE_VERSION=	${PORTVERSION:R}
 
-OPTIONS_DEFINE=	DOCS
-
 # https://ftp.gnu.org/gnu/readline/readline-8.1-patches/
 PATCHES=	1
 .if defined(PATCHES)
@@ -39,6 +37,12 @@ PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:S|.*(...)$|\1|}
 .else
 PATCHLEVEL=	0
 .endif
+
+OPTIONS_DEFINE=	BRACKETEDPASTE DOCS
+OPTIONS_DEFAULT=BRACKETEDPASTE
+BRACKETEDPASTE_DESC=	Enable bracketed paste
+
+BRACKETEDPASTE_CONFIGURE_ENABLE=	bracketed-paste-default
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/rlconf.h ${WRKSRC}/doc/readline.3 ${WRKSRC}/doc/readline.info ${WRKSRC}/doc/rluserman.info
