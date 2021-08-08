@@ -1,7 +1,7 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
 
 PORTNAME=	WWW-Mechanize
-PORTVERSION=	2.03
+PORTVERSION=	2.04
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,7 +30,7 @@ TEST_DEPENDS=	p5-HTTP-Daemon>=6.12:www/p5-HTTP-Daemon \
 		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings \
 		p5-Test-Output>=0:devel/p5-Test-Output \
 		p5-Test-Taint>=0:devel/p5-Test-Taint \
-		p5-Test-Warn>=0.11:devel/p5-Test-Warn \
+		p5-Test-Warn>=0:devel/p5-Test-Warn \
 		p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
 USES=		perl5
