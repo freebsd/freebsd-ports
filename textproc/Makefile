@@ -1372,6 +1372,7 @@
     SUBDIR += py-pyahocorasick
     SUBDIR += py-pyaml
     SUBDIR += py-pybtex
+    SUBDIR += py-pybtex-docutils
     SUBDIR += py-pycountry
     SUBDIR += py-pyexcel
     SUBDIR += py-pyexcel-ezodf
