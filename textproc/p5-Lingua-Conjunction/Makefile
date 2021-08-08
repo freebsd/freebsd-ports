@@ -1,7 +1,7 @@
 # Created by: Seamus Venasse <svenasse@polaris.ca>
 
 PORTNAME=	Lingua-Conjunction
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
