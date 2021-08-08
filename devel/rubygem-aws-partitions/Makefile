@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	aws-partitions
-PORTVERSION=	1.479.0
+PORTVERSION=	1.482.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
