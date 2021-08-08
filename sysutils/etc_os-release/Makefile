@@ -9,6 +9,7 @@ EXTRACT_ONLY=	#
 MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	Operating system identification file
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	etc/os-release
