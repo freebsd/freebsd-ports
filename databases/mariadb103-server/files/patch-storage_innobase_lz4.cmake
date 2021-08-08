@@ -1,6 +1,6 @@
---- storage/innobase/lz4.cmake.orig	2017-05-14 23:13:18 UTC
+--- storage/innobase/lz4.cmake.orig	2021-08-02 10:58:57 UTC
 +++ storage/innobase/lz4.cmake
-@@ -17,21 +17,29 @@ SET(WITH_INNODB_LZ4 AUTO CACHE STRING
+@@ -17,9 +17,16 @@ SET(WITH_INNODB_LZ4 AUTO CACHE STRING
  
  MACRO (MYSQL_CHECK_LZ4)
    IF (WITH_INNODB_LZ4 STREQUAL "ON" OR WITH_INNODB_LZ4 STREQUAL "AUTO")
@@ -19,18 +19,18 @@
 +    CHECK_LIBRARY_EXISTS(lz4 LZ4_compress_default ${LZ4_LIBDIR} HAVE_LZ4_COMPRESS_DEFAULT)
  
      IF (HAVE_LZ4_SHARED_LIB AND HAVE_LZ4_H)
-       ADD_DEFINITIONS(-DHAVE_LZ4=1)
+       SET(HAVE_INNODB_LZ4 TRUE)
+@@ -27,11 +34,12 @@ MACRO (MYSQL_CHECK_LZ4)
        IF (HAVE_LZ4_COMPRESS_DEFAULT)
- 	ADD_DEFINITIONS(-DHAVE_LZ4_COMPRESS_DEFAULT=1)
+         ADD_DEFINITIONS(-DHAVE_LZ4_COMPRESS_DEFAULT=1)
        ENDIF()
 -      LINK_LIBRARIES(lz4)
-+      LINK_LIBRARIES(innobase ${LZ4_LIBRARY})
++      LINK_LIBRARIES(${LZ4_LIBRARY})
      ELSE()
        IF (WITH_INNODB_LZ4 STREQUAL "ON")
- 	MESSAGE(FATAL_ERROR "Required lz4 library is not found")
+         MESSAGE(FATAL_ERROR "Required lz4 library is not found")
        ENDIF()
-     ENDIF()
 +    ENDIF()
+     ENDIF()
    ENDIF()
- ENDMACRO()
- 
+   ADD_FEATURE_INFO(INNODB_LZ4 HAVE_INNODB_LZ4 "LZ4 compression in the InnoDB storage engine")
