@@ -1320,6 +1320,7 @@
     SUBDIR += py-langdetect
     SUBDIR += py-langid
     SUBDIR += py-laserhammer
+    SUBDIR += py-latexcodec
     SUBDIR += py-libxml2
     SUBDIR += py-license-expression
     SUBDIR += py-line-protocol-parser
