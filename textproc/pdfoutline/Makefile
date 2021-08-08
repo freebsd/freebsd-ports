@@ -1,7 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	pdfoutline
-PORTVERSION=	5.3
+PORTVERSION=	5.4
 DISTVERSIONPREFIX=	release/
 CATEGORIES=	textproc
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
+xRUN_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
 		p5-PDF-API2>=0:textproc/p5-PDF-API2
 
 USES=		perl5 shebangfix
@@ -28,11 +28,11 @@ GH_ACCOUNT=	eugmes
 GH_PROJECT=	fntsample
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	pdfoutline.pl
+SHEBANG_FILES=	scripts/pdfoutline.pl
 
 post-patch:
-	@${SED} -e 's|@CMAKE_PROJECT_NAME@|fntsample|; s|@CMAKE_INSTALL_FULL_LOCALEDIR@|${LOCALBASE}/share/locale|' ${WRKSRC}/pdfoutline.pl > ${WRKSRC}/pdfoutline
-	@${SED} -e 's|@DATE@|2018-12-26|' ${WRKSRC}/pdfoutline.1.in > ${WRKSRC}/pdfoutline.1
+	@${SED} -e 's|@CMAKE_PROJECT_NAME@|fntsample|; s|@CMAKE_INSTALL_FULL_LOCALEDIR@|${LOCALBASE}/share/locale|' ${WRKSRC}/scripts/pdfoutline.pl > ${WRKSRC}/pdfoutline
+	@${SED} -e 's|@DATE@|2021-08-01|; s|@CMAKE_PROJECT_VERSION@|${PORTVERSION}|; s|@CMAKE_PROJECT_NAME@|fntsample|; s|@CMAKE_PROJECT_HOMEPAGE_URL@|https://github.com/eugmes/fntsample|' ${WRKSRC}/scripts/pdfoutline.1.in > ${WRKSRC}/pdfoutline.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pdfoutline ${STAGEDIR}${PREFIX}/bin/
