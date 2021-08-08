@@ -23,6 +23,6 @@ GH_TAGNAME=	a14be4e
 USE_GITHUB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|0.1.0-DEV|${PORTVERSION}|' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
