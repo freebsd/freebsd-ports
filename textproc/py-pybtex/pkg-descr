@@ -1,0 +1,8 @@
+Pybtex is a BibTeX-compatible bibliography processor written in Python. You can
+simply type pybtex instead of bibtex.
+
+Pybtex aims to be 100% compatible with BibTeX. It accepts the same command line
+options, fully supports BibTeX's .bst styles and produces byte-identical output.
+
+WWW: https://pybtex.org/
+WWW: https://bitbucket.org/pybtex-devs/pybtex/

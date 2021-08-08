@@ -1371,6 +1371,7 @@
     SUBDIR += py-pyPEG2
     SUBDIR += py-pyahocorasick
     SUBDIR += py-pyaml
+    SUBDIR += py-pybtex
     SUBDIR += py-pycountry
     SUBDIR += py-pyexcel
     SUBDIR += py-pyexcel-ezodf
