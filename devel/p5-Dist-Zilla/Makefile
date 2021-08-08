@@ -1,5 +1,5 @@
 PORTNAME=	Dist-Zilla
-PORTVERSION=	6.023
+PORTVERSION=	6.024
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -37,7 +37,7 @@ RUN_DEPENDS=	p5-App-Cmd>=0.330:devel/p5-App-Cmd \
 		p5-Params-Util>=0:devel/p5-Params-Util \
 		p5-Path-Tiny>=0.052:devel/p5-Path-Tiny \
 		p5-Perl-PrereqScanner>=1.006:devel/p5-Perl-PrereqScanner \
-		p5-Software-License>=0.103014:misc/p5-Software-License \
+		p5-Software-License>=0.104001:misc/p5-Software-License \
 		p5-String-Formatter>=0.100680:devel/p5-String-Formatter \
 		p5-String-RewritePrefix>=0.006:textproc/p5-String-RewritePrefix \
 		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \

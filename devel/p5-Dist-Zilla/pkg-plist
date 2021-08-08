@@ -86,6 +86,7 @@ bin/dzil
 %%SITE_PERL%%/Dist/Zilla/Role/AfterBuild.pm
 %%SITE_PERL%%/Dist/Zilla/Role/AfterMint.pm
 %%SITE_PERL%%/Dist/Zilla/Role/AfterRelease.pm
+%%SITE_PERL%%/Dist/Zilla/Role/ArchiveBuilder.pm
 %%SITE_PERL%%/Dist/Zilla/Role/BeforeArchive.pm
 %%SITE_PERL%%/Dist/Zilla/Role/BeforeBuild.pm
 %%SITE_PERL%%/Dist/Zilla/Role/BeforeMint.pm
@@ -227,6 +228,7 @@ bin/dzil
 %%PERL5_MAN3%%/Dist::Zilla::Role::AfterBuild.3.gz
 %%PERL5_MAN3%%/Dist::Zilla::Role::AfterMint.3.gz
 %%PERL5_MAN3%%/Dist::Zilla::Role::AfterRelease.3.gz
+%%PERL5_MAN3%%/Dist::Zilla::Role::ArchiveBuilder.3.gz
 %%PERL5_MAN3%%/Dist::Zilla::Role::BeforeArchive.3.gz
 %%PERL5_MAN3%%/Dist::Zilla::Role::BeforeBuild.3.gz
 %%PERL5_MAN3%%/Dist::Zilla::Role::BeforeMint.3.gz
