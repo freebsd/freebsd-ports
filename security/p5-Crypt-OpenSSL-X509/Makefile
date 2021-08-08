@@ -1,7 +1,7 @@
 # Created by: kftseng@iyard.org
 
 PORTNAME=	Crypt-OpenSSL-X509
-PORTVERSION=	1.908
+PORTVERSION=	1.910
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
