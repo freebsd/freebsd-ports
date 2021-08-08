@@ -3992,6 +3992,7 @@
     SUBDIR += phpunit6
     SUBDIR += phpunit7
     SUBDIR += phpunit8
+    SUBDIR += phpunit9
     SUBDIR += physfs
     SUBDIR += pickle
     SUBDIR += picojson
