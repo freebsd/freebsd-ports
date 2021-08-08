@@ -1,7 +1,7 @@
 # Created by: Peter Haight <peterh@sapros.com>
 
 PORTNAME=	scons
-PORTVERSION=	4.1.0.post1
+PORTVERSION=	4.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
