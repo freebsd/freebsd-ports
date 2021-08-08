@@ -5793,6 +5793,7 @@
     SUBDIR += rubygem-aws-sdk-route53
     SUBDIR += rubygem-aws-sdk-route53domains
     SUBDIR += rubygem-aws-sdk-route53recoverycluster
+    SUBDIR += rubygem-aws-sdk-route53recoverycontrolconfig
     SUBDIR += rubygem-aws-sdk-route53resolver
     SUBDIR += rubygem-aws-sdk-s3
     SUBDIR += rubygem-aws-sdk-s3control
