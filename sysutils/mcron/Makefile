@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	mcron
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
