@@ -14,4 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		tar:xz
 GNU_CONFIGURE=	yes
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
