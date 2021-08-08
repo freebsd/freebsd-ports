@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	asset_sync
-PORTVERSION=	2.14.2
+PORTVERSION=	2.15.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
