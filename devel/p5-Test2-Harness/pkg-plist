@@ -32,6 +32,7 @@ bin/yath
 %%SITE_PERL%%/App/Yath/Options/Runner.pm
 %%SITE_PERL%%/App/Yath/Options/Workspace.pm
 %%SITE_PERL%%/App/Yath/Plugin.pm
+%%SITE_PERL%%/App/Yath/Plugin/Cover.pm
 %%SITE_PERL%%/App/Yath/Plugin/Git.pm
 %%SITE_PERL%%/App/Yath/Plugin/Notify.pm
 %%SITE_PERL%%/App/Yath/Plugin/SysInfo.pm
@@ -121,6 +122,7 @@ bin/yath
 %%PERL5_MAN3%%/App::Yath::Options::Runner.3.gz
 %%PERL5_MAN3%%/App::Yath::Options::Workspace.3.gz
 %%PERL5_MAN3%%/App::Yath::Plugin.3.gz
+%%PERL5_MAN3%%/App::Yath::Plugin::Cover.3.gz
 %%PERL5_MAN3%%/App::Yath::Plugin::Git.3.gz
 %%PERL5_MAN3%%/App::Yath::Plugin::Notify.3.gz
 %%PERL5_MAN3%%/App::Yath::Plugin::SysInfo.3.gz
