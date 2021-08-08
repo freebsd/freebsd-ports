@@ -1,6 +1,6 @@
---- wolfssh/test.h.orig	2020-08-31 18:13:34 UTC
+--- wolfssh/test.h.orig	2021-07-23 17:15:46 UTC
 +++ wolfssh/test.h
-@@ -436,8 +436,8 @@ static INLINE void build_addr(SOCKADDR_IN_T* addr, con
+@@ -441,8 +441,8 @@ static INLINE void build_addr(SOCKADDR_IN_T* addr, con
              memset(&hints, 0, sizeof(hints));
  
              hints.ai_family   = AF_INET_V;

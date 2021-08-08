@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	wolfssh
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 CATEGORIES=	security
 MASTER_SITES=	https://www.wolfssl.com/
 
