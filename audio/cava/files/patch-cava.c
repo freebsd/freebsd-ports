@@ -1,4 +1,4 @@
---- cava.c.orig	2020-10-07 16:30:24 UTC
+--- cava.c.orig	2021-05-18 18:13:38 UTC
 +++ cava.c
 @@ -36,13 +36,11 @@
  #include "util.h"
@@ -23,20 +23,20 @@
      }
  }
  
-@@ -291,8 +287,12 @@ as of 0.4.0 all options are specified in config file,
-             if (strncmp(ttyname(0), "/dev/ttys", 9) == 0)
-                 inAtty = 0;
+@@ -260,10 +256,10 @@ as of 0.4.0 all options are specified in config file, 
              if (inAtty) {
-+#ifdef __FreeBSD__
-+                system("/usr/sbin/vidcontrol -f " FONT_DIR "/cava.fnt >/dev/null 2>&1");
-+#else
-                 system("setfont cava.psf  >/dev/null 2>&1");
-                 system("setterm -blank 0");
-+#endif
-             }
- 
-             // We use unicode block characters to draw the bars and
-@@ -540,16 +540,6 @@ as of 0.4.0 all options are specified in config file,
+                 // checking if cava psf font is installed in FONTDIR
+                 FILE *font_file;
+-                font_file = fopen(FONTDIR "/cava.psf", "r");
++                font_file = fopen(FONTDIR "/cava.fnt", "r");
+                 if (font_file) {
+                     fclose(font_file);
+-                    system("setfont " FONTDIR "/cava.psf  >/dev/null 2>&1");
++		     system("/usr/sbin/vidcontrol -f " FONTDIR "/cava.fnt > /dev/null 2>&1");
+                 } else {
+                     // if not it might still be available, we dont know, must try
+                     system("setfont cava.psf  >/dev/null 2>&1");
+@@ -532,16 +528,6 @@ as of 0.4.0 all options are specified in config file, 
                  height = lines * 8;
                  break;
  #endif
@@ -52,21 +52,21 @@
 -
              case OUTPUT_RAW:
                  if (strcmp(p.raw_target, "/dev/stdout") != 0) {
-                     // checking if file exists
-@@ -785,11 +775,6 @@ as of 0.4.0 all options are specified in config file,
+                     int fptest;
+@@ -787,11 +773,6 @@ as of 0.4.0 all options are specified in config file, 
              if (p.xaxis != NONE) {
                  x_axis_info = 1;
                  double center_frequency;
 -                if (output_mode == OUTPUT_NONCURSES) {
 -                    printf("\r\033[%dB", lines + 1);
--                    if (rest)
--                        printf("\033[%dC", rest);
+-                    if (remainder)
+-                        printf("\033[%dC", remainder);
 -                }
-                 for (n = 0; n < number_of_bars; n++) {
+                 for (int n = 0; n < number_of_bars; n++) {
                      if (p.stereo) {
                          if (n < number_of_bars / 2)
-@@ -815,16 +800,6 @@ as of 0.4.0 all options are specified in config file,
-                             mvprintw(lines, n * (p.bar_width + p.bar_spacing) + rest, "%.1f",
+@@ -817,16 +798,6 @@ as of 0.4.0 all options are specified in config file, 
+                             mvprintw(lines, n * (p.bar_width + p.bar_spacing) + remainder, "%.1f",
                                       freq_kilohz);
  #endif
 -                    } else if (output_mode == OUTPUT_NONCURSES) {
@@ -82,13 +82,13 @@
                      }
                  }
                  printf("\r\033[%dA", lines + 1);
-@@ -1124,11 +1099,6 @@ as of 0.4.0 all options are specified in config file,
+@@ -1142,11 +1113,6 @@ as of 0.4.0 all options are specified in config file, 
                                                 p.gradient, x_axis_info);
                      break;
  #endif
 -                case OUTPUT_NONCURSES:
 -                    rc = draw_terminal_noncurses(inAtty, lines, width, number_of_bars, p.bar_width,
--                                                 p.bar_spacing, rest, bars, previous_frame,
+-                                                 p.bar_spacing, remainder, bars, previous_frame,
 -                                                 x_axis_info);
 -                    break;
                  case OUTPUT_RAW:
