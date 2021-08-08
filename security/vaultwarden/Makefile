@@ -2,6 +2,7 @@
 
 PORTNAME=	vaultwarden
 DISTVERSION=	1.22.2
+PORTREVISION=  1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/dani-garcia/bw_web_builds/releases/download/v${DISTVERSION_WV}/:web
 DISTFILES=	${WV_DISTFILE}:web
@@ -23,6 +24,8 @@ WV_DISTFILE=	bw_web_v${DISTVERSION_WV}.tar.gz
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
 SUB_LIST=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
+INSTALL_TARGET=install-strip
 
 # make makeplist > pkg-plist #One has to edit/review the generated plist
 # make generate-plist && make check-plist
