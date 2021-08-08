@@ -4,4 +4,4 @@ replacement for Python's original platform.linux_distribution function. It also
 provides much more functionality which isn't necessarily Python bound, like a
 command-line interface.
 
-WWW: https://github.com/nir0s/distro
+WWW: https://github.com/python-distro/distro
