@@ -30,7 +30,8 @@ x11_PKGNAMESUFFIX=		${_VERSIONSUFFIX}
 x11_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2 \
 			icotool:graphics/icoutils
 x11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-			libfreetype.so:print/freetype2
+			libfreetype.so:print/freetype2 \
+			libharfbuzz.so:print/harfbuzz
 x11_RUN_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
 x11_CONFLICTS_INSTALL=		unison${_VERSIONSUFFIX}-nox11
 
