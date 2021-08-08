@@ -1,7 +1,7 @@
 # Created by: Bernard Spil <brnrd@FreeBSD.org>
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.5.11
+PORTVERSION=	10.5.12
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
@@ -25,7 +25,7 @@ LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 # Ugly workaround for MariaDB/CMake library detection
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USES=		bison:build cmake:insource compiler:c++11-lib cpe iconv:translit libedit ncurses shebangfix ssl
+USES=		bison:build cmake:insource,noninja compiler:c++11-lib cpe iconv:translit libedit ncurses shebangfix ssl
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -211,13 +211,11 @@ PLIST_SUB+=	WSREP="@comment "
 .endif
 
 .if ${ARCH} == i386
-USE_GCC=	9
-CFLAGS+=	-DHAVE_GCC_C11_ATOMICS -latomic -DUSE_NEW_READLINE_INTERFACE
-CXXFLAGS+=	-fpermissive
+USE_GCC=	yes
+CFLAGS+=	-latomic -fasynchronous-unwind-tables
 .endif
 
 post-patch:
-	${MV} ${WRKSRC}/storage/mroonga/version ${WRKSRC}/storage/mroonga/version_txt
 .if ${OPSYS} == DragonFly
 	${CP} ${WRKSRC}/cmake/os/FreeBSD.cmake \
 		${WRKSRC}/cmake/os/DragonFly.cmake
