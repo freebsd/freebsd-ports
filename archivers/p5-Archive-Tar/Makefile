@@ -1,7 +1,7 @@
 # Created by: Roman Shterenzon <roman@xpert.com>
 
 PORTNAME=	Archive-Tar
-PORTVERSION=	2.38
+PORTVERSION=	2.40
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BINGOS
