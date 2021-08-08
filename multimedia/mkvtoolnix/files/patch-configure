@@ -1,6 +1,6 @@
---- configure.orig	2021-01-30 15:09:20 UTC
+--- configure.orig	2021-07-31 12:27:46 UTC
 +++ configure
-@@ -8886,13 +8886,9 @@ fi
+@@ -8969,14 +8969,10 @@ fi
  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_fmt" >&5
  printf "%s\n" "$ac_cv_fmt" >&6; }
  
@@ -11,7 +11,8 @@
 +{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: Using the internal version of fmt" >&5
  printf "%s\n" "$as_me: Using the internal version of fmt" >&6;}
    FMT_INTERNAL=yes
+   ac_cv_fmt_v8=yes
 -fi
  
- 
+ if test $ac_cv_fmt_v8 = yes; then
  
