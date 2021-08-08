@@ -27,6 +27,9 @@ CONFLICTS_INSTALL=	deforaos-todo devtodo
 
 SHEBANG_FILES=	todo.sh todo_completion
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/todo.sh
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/todo.sh ${STAGEDIR}${PREFIX}/bin/todo
 	${INSTALL_DATA} ${WRKSRC}/todo.cfg ${STAGEDIR}${PREFIX}/etc/todo.cfg
