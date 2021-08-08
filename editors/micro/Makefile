@@ -1,6 +1,6 @@
 PORTNAME=	micro
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.9
+DISTVERSION=	2.0.10
 CATEGORIES=	editors
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -39,12 +39,12 @@ GH_TUPLE=	blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		zyedidia:highlight:201131ce5cf5:zyedidia_highlight/vendor/github.com/zyedidia/highlight \
 		zyedidia:json5:2da050b1a98d:zyedidia_json5/vendor/github.com/zyedidia/json5 \
 		zyedidia:poller:v1.0.1:zyedidia_poller/vendor/github.com/zyedidia/poller \
-		zyedidia:pty:v2.0.0:zyedidia_pty/vendor/github.com/zyedidia/pty \
-		zyedidia:tcell:v2.0.7:zyedidia_tcell_v2/vendor/github.com/zyedidia/tcell/v2 \
+		zyedidia:pty:v1.1.15:zyedidia_pty/vendor/github.com/zyedidia/pty \
+		zyedidia:tcell:v2.0.8:zyedidia_tcell_v2/vendor/github.com/zyedidia/tcell/v2 \
 		zyedidia:terminal:533c623e2415:zyedidia_terminal/vendor/github.com/zyedidia/terminal
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_HASH=	6bc498e
+_BUILD_HASH=	b976385
 _BUILD_DATE=	$$(date '+%B %d, %Y')
 _BUILD_DEBUG=	OFF
 
@@ -66,6 +66,7 @@ DEBUG_VARS=	_BUILD_DEBUG=ON
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
