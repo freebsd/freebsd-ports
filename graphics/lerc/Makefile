@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	lerc
-PORTVERSION=	2.2.1
+PORTVERSION=	3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
