@@ -2,6 +2,9 @@ PORTNAME=	kitinerary
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	net kde kde-applications
 
+PATCH_SITES=	https://invent.kde.org/pim/kitinerary/-/commit/
+PATCHFILES=	e99d101e2bd4c32566e238ce1340a93781e19eee.diff:-p1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Data Model and Extraction System for Travel Reservation information
 
