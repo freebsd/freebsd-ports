@@ -9,6 +9,7 @@ bin/podofoimgextract
 bin/podofoimpose
 bin/podofoincrementalupdates
 bin/podofomerge
+bin/podofonooc
 bin/podofopages
 bin/podofopdfinfo
 bin/podofosign
@@ -48,6 +49,7 @@ include/podofo/base/PdfObject.h
 include/podofo/base/PdfObjectStreamParserObject.h
 include/podofo/base/PdfOutputDevice.h
 include/podofo/base/PdfOutputStream.h
+include/podofo/base/PdfOwnedDataType.h
 include/podofo/base/PdfParser.h
 include/podofo/base/PdfParserObject.h
 include/podofo/base/PdfRect.h
@@ -125,7 +127,7 @@ include/podofo/podofo.h
 lib/libpodofo.a
 lib/libpodofo.so
 lib/libpodofo.so.0
-libdata/pkgconfig/libpodofo-0.pc
+libdata/pkgconfig/libpodofo.pc
 man/man1/podofobox.1.gz
 man/man1/podofocolor.1.gz
 man/man1/podofocountpages.1.gz
