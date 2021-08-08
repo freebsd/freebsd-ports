@@ -27,6 +27,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}service_identity>0:security/py-service_iden
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	CONCH HTTP2 SERIAL TLS
 OPTIONS_DEFAULT=CONCH HTTP2 SERIAL TLS
 CONCH_DESC=	Conch secure shell SSH
