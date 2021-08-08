@@ -1,6 +1,6 @@
---- storage/rocksdb/CMakeLists.txt.orig	2019-05-16 05:06:00 UTC
-+++ storage/rocksdb/CMakeLists.txt
-@@ -23,8 +23,8 @@ ELSE ()
+--- storage/rocksdb/CMakeLists.txt.orig	2021-07-30 02:26:13.135102000 +0300
++++ storage/rocksdb/CMakeLists.txt	2021-07-30 02:29:42.990461000 +0300
+@@ -23,8 +23,8 @@
  ENDIF ()
  
  # check platform support, no 32 bit
@@ -11,13 +11,12 @@
    RETURN ()
  ENDIF ()
  
-@@ -123,38 +123,6 @@ EXECUTE_PROCESS(
- # split the list into lines
- STRING(REGEX MATCHALL "[^\n]+" ROCKSDB_LIB_SOURCES ${SCRIPT_OUTPUT})
+@@ -166,37 +166,6 @@
+   ${LZ4_INCLUDE_DIR}
+ )
  
 -# add bundled compression code
--SET(ROCKSDB_LIB_SOURCES
--  ${ROCKSDB_LIB_SOURCES}
+-SET(ZSTD_SOURCES
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/common/entropy_common.c
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/common/error_private.c
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/common/fse_decompress.c
@@ -47,13 +46,14 @@
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/dictBuilder/zdict.c
 -)
 -
- INCLUDE_DIRECTORIES(
-   ${CMAKE_CURRENT_SOURCE_DIR}/rocksdb
-   ${CMAKE_CURRENT_SOURCE_DIR}/rocksdb/include
-@@ -198,6 +166,7 @@ SET(ROCKSDB_SOURCES
- )
+ SET(ROCKSDB_SOURCES
+   ${ROCKSDB_SOURCES}
+   ${ZSTD_SOURCES}
+@@ -230,7 +199,7 @@
+   SET(rocksdb_static_libs ${rocksdb_static_libs} "${ROCKSDB_LIB_PATH}/${ROCKSDB_LIB_NAME}")
+ ENDIF()
  
- SET(rocksdb_static_libs ${rocksdb_static_libs} ${ZLIB_LIBRARY} ${LZ4_LIBRARY} "-lrt" "-ldl")
+-SET(rocksdb_static_libs ${rocksdb_static_libs} ${ZLIB_LIBRARY} ${LZ4_LIBRARY} "-lrt" "-ldl")
 +SET(rocksdb_static_libs ${rocksdb_static_libs} ${ZLIB_LIBRARY} ${LZ4_LIBRARY} "-lrt" "-ldl -llz4 -lzstd")
  
  MYSQL_ADD_PLUGIN(rocksdb ${ROCKSDB_SOURCES} STORAGE_ENGINE DEFAULT MODULE_ONLY

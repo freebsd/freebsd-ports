@@ -101,6 +101,8 @@ lib/mysql/plugin/auth.so
 lib/mysql/plugin/auth_test_plugin.so
 lib/mysql/plugin/connection_control.so
 lib/mysql/plugin/daemon_example.ini
+lib/mysql/plugin/data_masking.ini
+lib/mysql/plugin/data_masking.so
 lib/mysql/plugin/group_replication.so
 lib/mysql/plugin/ha_example.so
 lib/mysql/plugin/keyring_file.so

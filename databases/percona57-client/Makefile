@@ -1,7 +1,7 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 PORTNAME=	percona
-PORTREVISION?=	1
+PORTREVISION?=	0
 PKGNAMESUFFIX=	57-client
 
 COMMENT=	Multithreaded SQL database (client)
