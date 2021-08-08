@@ -27,3 +27,11 @@ do
 	mkdir -p ${GTK_EXE}/freebsd/${A}
 	touch ${GTK_EXE}/freebsd/${A}/eclipse
 done
+
+arch=`uname -p`
+
+if [ "$arch" == "powerpc64" ]
+then
+	sed -i '' -e 's/ppc64le/ppc64/g' eclipse.platform.swt/bundles/org.eclipse.swt/'Eclipse SWT'/gtk/org/eclipse/swt/graphics/Device.java
+	sed -i '' -e 's/ppc64le/ppc64/g' eclipse.platform.swt/bundles/org.eclipse.swt/'Eclipse SWT'/gtk/org/eclipse/swt/widgets/Control.java
+fi
