@@ -18,7 +18,9 @@ include/fdeep/layers/dense_layer.hpp
 include/fdeep/layers/depthwise_conv_2d_layer.hpp
 include/fdeep/layers/elu_layer.hpp
 include/fdeep/layers/embedding_layer.hpp
+include/fdeep/layers/exponential_layer.hpp
 include/fdeep/layers/flatten_layer.hpp
+include/fdeep/layers/gelu_layer.hpp
 include/fdeep/layers/global_average_pooling_1d_layer.hpp
 include/fdeep/layers/global_average_pooling_2d_layer.hpp
 include/fdeep/layers/global_max_pooling_1d_layer.hpp
@@ -46,6 +48,7 @@ include/fdeep/layers/separable_conv_2d_layer.hpp
 include/fdeep/layers/sigmoid_layer.hpp
 include/fdeep/layers/softmax_layer.hpp
 include/fdeep/layers/softplus_layer.hpp
+include/fdeep/layers/softsign_layer.hpp
 include/fdeep/layers/subtract_layer.hpp
 include/fdeep/layers/swish_layer.hpp
 include/fdeep/layers/tanh_layer.hpp
