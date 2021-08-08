@@ -1,7 +1,7 @@
 # Created by: nork@cityfujisawa.ne.jp
 
 PORTNAME=	DBD-SQLite
-PORTVERSION=	1.68
+PORTVERSION=	1.70
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
