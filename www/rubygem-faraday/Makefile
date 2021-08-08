@@ -1,7 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 
 PORTNAME=	faraday
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	rubygem-faraday-em_http>=1.0<2:www/rubygem-faraday-em_http \
 		rubygem-faraday-net_http>=1.0<2:www/rubygem-faraday-net_http \
 		rubygem-faraday-net_http_persistent>=1.1<2:www/rubygem-faraday-net_http_persistent \
 		rubygem-faraday-patron>=1.0<2:www/rubygem-faraday-patron \
+		rubygem-faraday-rack>=1.0<2:www/rubygem-faraday-rack \
 		rubygem-multipart-post>=1.2<3:www/rubygem-multipart-post \
 		rubygem-ruby2_keywords>=0.0.4:devel/rubygem-ruby2_keywords
 
