@@ -3,6 +3,7 @@
 PORTNAME=	pdfoutline
 PORTVERSION=	5.4
 DISTVERSIONPREFIX=	release/
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,21 +22,20 @@ USE_PERL5=	run
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/pdfoutline \
-		share/man/man1/pdfoutline.1.gz
-
 GH_ACCOUNT=	eugmes
 GH_PROJECT=	fntsample
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	scripts/pdfoutline.pl
+SHEBANG_FILES=	scripts/*.pl
 
 post-patch:
-	@${SED} -e 's|@CMAKE_PROJECT_NAME@|fntsample|; s|@CMAKE_INSTALL_FULL_LOCALEDIR@|${LOCALBASE}/share/locale|' ${WRKSRC}/scripts/pdfoutline.pl > ${WRKSRC}/pdfoutline
-	@${SED} -e 's|@DATE@|2021-08-01|; s|@CMAKE_PROJECT_VERSION@|${PORTVERSION}|; s|@CMAKE_PROJECT_NAME@|fntsample|; s|@CMAKE_PROJECT_HOMEPAGE_URL@|https://github.com/eugmes/fntsample|' ${WRKSRC}/scripts/pdfoutline.1.in > ${WRKSRC}/pdfoutline.1
+.for file in pdf-extract-outline pdfoutline
+	@${SED} -e 's|@CMAKE_PROJECT_NAME@|fntsample|; s|@CMAKE_INSTALL_FULL_LOCALEDIR@|${LOCALBASE}/share/locale|' ${WRKSRC}/scripts/${file}.pl > ${WRKSRC}/${file}
+	@${SED} -e 's|@DATE@|2021-08-01|; s|@CMAKE_PROJECT_VERSION@|${PORTVERSION}|; s|@CMAKE_PROJECT_NAME@|fntsample|; s|@CMAKE_PROJECT_HOMEPAGE_URL@|https://github.com/eugmes/fntsample|' ${WRKSRC}/scripts/${file}.1.in > ${WRKSRC}/${file}.1
+.endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pdfoutline ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/pdfoutline.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/pdf-extract-outline ${WRKSRC}/pdfoutline ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/pdf-extract-outline.1 ${WRKSRC}/pdfoutline.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>
