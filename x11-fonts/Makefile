@@ -120,6 +120,7 @@
     SUBDIR += gentium-basic
     SUBDIR += gentium-plus
     SUBDIR += genwan
+    SUBDIR += genyo
     SUBDIR += gnu-unifont
     SUBDIR += gnu-unifont-ttf
     SUBDIR += gofont-ttf
