@@ -1,3 +1,3 @@
-TIMESTAMP = 1628103586
-SHA256 (rubygem/aws-sdk-personalize-1.29.0.gem) = 246456ca3c01734fe53f8f935578b0bb964b9b1e53b203965666ae11d0a886aa
-SIZE (rubygem/aws-sdk-personalize-1.29.0.gem) = 51712
+TIMESTAMP = 1628439460
+SHA256 (rubygem/aws-sdk-personalize-1.30.0.gem) = a76314190ef4cc62baf6f3fbe3b4e903ec3b9adf1b2bbc9080d769c0c4e30662
+SIZE (rubygem/aws-sdk-personalize-1.30.0.gem) = 51712
