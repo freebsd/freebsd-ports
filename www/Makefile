@@ -260,6 +260,7 @@
     SUBDIR += ilias6
     SUBDIR += interchange
     SUBDIR += itop
+    SUBDIR += janus
     SUBDIR += jericho-html
     SUBDIR += jesred
     SUBDIR += jetty8

@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+You must set ws_ip and/or wss_ip in janus.transport.websockets.jcfg
+to IPv4 addresses if you need ipv4 for websockets.
+EOM
+}
+]

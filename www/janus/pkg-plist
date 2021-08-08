@@ -1,0 +1,186 @@
+bin/janus
+bin/janus-cfgconv
+%%POSTPROCESSING%%bin/janus-pp-rec
+%%POSTPROCESSING%%bin/mjr2pcap
+@sample %%ETCDIR%%/janus.eventhandler.gelfevh.jcfg.sample
+%%NANOMSG%%@sample %%ETCDIR%%/janus.eventhandler.nanomsgevh.jcfg.sample
+%%RABBITMQ%%@sample %%ETCDIR%%/janus.eventhandler.rabbitmqevh.jcfg.sample
+%%JAVASCRIPT%%@sample %%ETCDIR%%/janus.plugin.duktape.jcfg.sample
+%%NANOMSG%%@sample %%ETCDIR%%/janus.transport.nanomsg.jcfg.sample
+%%RABBITMQ%%@sample %%ETCDIR%%/janus.transport.rabbitmq.jcfg.sample
+@sample %%ETCDIR%%/janus.eventhandler.sampleevh.jcfg.sample
+@sample %%ETCDIR%%/janus.eventhandler.wsevh.jcfg.sample
+@sample %%ETCDIR%%/janus.jcfg.sample
+@sample %%ETCDIR%%/janus.logger.jsonlog.jcfg.sample
+@sample %%ETCDIR%%/janus.plugin.audiobridge.jcfg.sample
+@sample %%ETCDIR%%/janus.plugin.echotest.jcfg.sample
+%%LUA%%@sample %%ETCDIR%%/janus.plugin.lua.jcfg.sample
+@sample %%ETCDIR%%/janus.plugin.nosip.jcfg.sample
+@sample %%ETCDIR%%/janus.plugin.recordplay.jcfg.sample
+@sample %%ETCDIR%%/janus.plugin.sip.jcfg.sample
+@sample %%ETCDIR%%/janus.plugin.streaming.jcfg.sample
+@sample %%ETCDIR%%/janus.plugin.textroom.jcfg.sample
+@sample %%ETCDIR%%/janus.plugin.videocall.jcfg.sample
+@sample %%ETCDIR%%/janus.plugin.videoroom.jcfg.sample
+@sample %%ETCDIR%%/janus.plugin.voicemail.jcfg.sample
+@sample %%ETCDIR%%/janus.transport.http.jcfg.sample
+@sample %%ETCDIR%%/janus.transport.pfunix.jcfg.sample
+@sample %%ETCDIR%%/janus.transport.websockets.jcfg.sample
+include/janus/apierror.h
+include/janus/config.h
+include/janus/debug.h
+include/janus/events/eventhandler.h
+include/janus/ip-utils.h
+include/janus/log.h
+include/janus/loggers/logger.h
+include/janus/mutex.h
+include/janus/plugins/plugin.h
+include/janus/record.h
+include/janus/refcount.h
+include/janus/rtcp.h
+include/janus/rtp.h
+include/janus/rtpsrtp.h
+include/janus/sdp-utils.h
+include/janus/text2pcap.h
+include/janus/transports/transport.h
+include/janus/utils.h
+lib/janus/events/libjanus_gelfevh.so
+lib/janus/events/libjanus_gelfevh.so.0
+lib/janus/events/libjanus_gelfevh.so.0.0.0
+%%NANOMSG%%lib/janus/events/libjanus_nanomsgevh.so
+%%NANOMSG%%lib/janus/events/libjanus_nanomsgevh.so.0
+%%NANOMSG%%lib/janus/events/libjanus_nanomsgevh.so.0.0.0
+%%RABBITMQ%%lib/janus/events/libjanus_rabbitmqevh.so
+%%RABBITMQ%%lib/janus/events/libjanus_rabbitmqevh.so.0
+%%RABBITMQ%%lib/janus/events/libjanus_rabbitmqevh.so.0.0.0
+lib/janus/events/libjanus_sampleevh.so
+lib/janus/events/libjanus_sampleevh.so.0
+lib/janus/events/libjanus_sampleevh.so.0.0.0
+lib/janus/events/libjanus_wsevh.so
+lib/janus/events/libjanus_wsevh.so.0
+lib/janus/events/libjanus_wsevh.so.0.0.0
+lib/janus/loggers/libjanus_jsonlog.so
+lib/janus/loggers/libjanus_jsonlog.so.0
+lib/janus/loggers/libjanus_jsonlog.so.0.0.0
+lib/janus/plugins/libjanus_audiobridge.so
+lib/janus/plugins/libjanus_audiobridge.so.0
+lib/janus/plugins/libjanus_audiobridge.so.0.0.0
+lib/janus/plugins/libjanus_echotest.so
+lib/janus/plugins/libjanus_echotest.so.0
+lib/janus/plugins/libjanus_echotest.so.0.0.0
+%%JAVASCRIPT%%lib/janus/plugins/libjanus_duktape.so
+%%JAVASCRIPT%%lib/janus/plugins/libjanus_duktape.so.0
+%%JAVASCRIPT%%lib/janus/plugins/libjanus_duktape.so.0.0.0
+%%LUA%%lib/janus/plugins/libjanus_lua.so
+%%LUA%%lib/janus/plugins/libjanus_lua.so.0
+%%LUA%%lib/janus/plugins/libjanus_lua.so.0.0.0
+lib/janus/plugins/libjanus_nosip.so
+lib/janus/plugins/libjanus_nosip.so.0
+lib/janus/plugins/libjanus_nosip.so.0.0.0
+lib/janus/plugins/libjanus_recordplay.so
+lib/janus/plugins/libjanus_recordplay.so.0
+lib/janus/plugins/libjanus_recordplay.so.0.0.0
+lib/janus/plugins/libjanus_sip.so
+lib/janus/plugins/libjanus_sip.so.0
+lib/janus/plugins/libjanus_sip.so.0.0.0
+lib/janus/plugins/libjanus_streaming.so
+lib/janus/plugins/libjanus_streaming.so.0
+lib/janus/plugins/libjanus_streaming.so.0.0.0
+lib/janus/plugins/libjanus_textroom.so
+lib/janus/plugins/libjanus_textroom.so.0
+lib/janus/plugins/libjanus_textroom.so.0.0.0
+lib/janus/plugins/libjanus_videocall.so
+lib/janus/plugins/libjanus_videocall.so.0
+lib/janus/plugins/libjanus_videocall.so.0.0.0
+lib/janus/plugins/libjanus_videoroom.so
+lib/janus/plugins/libjanus_videoroom.so.0
+lib/janus/plugins/libjanus_videoroom.so.0.0.0
+lib/janus/plugins/libjanus_voicemail.so
+lib/janus/plugins/libjanus_voicemail.so.0
+lib/janus/plugins/libjanus_voicemail.so.0.0.0
+lib/janus/transports/libjanus_http.so
+lib/janus/transports/libjanus_http.so.0
+lib/janus/transports/libjanus_http.so.0.0.0
+%%NANOMSG%%lib/janus/transports/libjanus_nanomsg.so
+%%NANOMSG%%lib/janus/transports/libjanus_nanomsg.so.0
+%%NANOMSG%%lib/janus/transports/libjanus_nanomsg.so.0.0.0
+lib/janus/transports/libjanus_pfunix.so
+lib/janus/transports/libjanus_pfunix.so.0
+lib/janus/transports/libjanus_pfunix.so.0.0.0
+%%RABBITMQ%%lib/janus/transports/libjanus_rabbitmq.so
+%%RABBITMQ%%lib/janus/transports/libjanus_rabbitmq.so.0
+%%RABBITMQ%%lib/janus/transports/libjanus_rabbitmq.so.0.0.0
+lib/janus/transports/libjanus_websockets.so
+lib/janus/transports/libjanus_websockets.so.0
+lib/janus/transports/libjanus_websockets.so.0.0.0
+man/man1/janus-cfgconv.1.gz
+%%POSTPROCESSING%%man/man1/janus-pp-rec.1.gz
+man/man1/janus.1.gz
+%%POSTPROCESSING%%man/man1/mjr2pcap.1.gz
+share/doc/janus-gateway/README.md
+%%DATADIR%%/demos/admin.html
+%%DATADIR%%/demos/admin.js
+%%DATADIR%%/demos/audiobridgetest.html
+%%DATADIR%%/demos/audiobridgetest.js
+%%DATADIR%%/demos/canvas.html
+%%DATADIR%%/demos/canvas.js
+%%DATADIR%%/demos/citeus.html
+%%DATADIR%%/demos/css/demo.css
+%%DATADIR%%/demos/demos.html
+%%DATADIR%%/demos/devicetest.html
+%%DATADIR%%/demos/devicetest.js
+%%DATADIR%%/demos/docs/index.html
+%%DATADIR%%/demos/e2etest.html
+%%DATADIR%%/demos/e2etest.js
+%%DATADIR%%/demos/echotest.html
+%%DATADIR%%/demos/echotest.js
+%%DATADIR%%/demos/favicon.ico
+%%DATADIR%%/demos/footer.html
+%%DATADIR%%/demos/index.html
+%%DATADIR%%/demos/janus-logo.png
+%%DATADIR%%/demos/janus-logo-small.png
+%%DATADIR%%/demos/janus.js
+%%DATADIR%%/demos/meetecho-logo.png
+%%DATADIR%%/demos/multiopus.html
+%%DATADIR%%/demos/multiopus.js
+%%DATADIR%%/demos/navbar.html
+%%DATADIR%%/demos/nosiptest.html
+%%DATADIR%%/demos/nosiptest.js
+%%DATADIR%%/demos/recordplaytest.html
+%%DATADIR%%/demos/recordplaytest.js
+%%DATADIR%%/demos/screensharingtest.html
+%%DATADIR%%/demos/screensharingtest.js
+%%DATADIR%%/demos/siptest.html
+%%DATADIR%%/demos/siptest.js
+%%DATADIR%%/demos/streamingtest.html
+%%DATADIR%%/demos/streamingtest.js
+%%DATADIR%%/demos/support.html
+%%DATADIR%%/demos/surround/ChID-BLITS-EBU.mp4
+%%DATADIR%%/demos/surround/ChID-BLITS-EBU.txt
+%%DATADIR%%/demos/textroomtest.html
+%%DATADIR%%/demos/textroomtest.js
+%%DATADIR%%/demos/up_arrow.png
+%%DATADIR%%/demos/videocalltest.html
+%%DATADIR%%/demos/videocalltest.js
+%%DATADIR%%/demos/videoroomtest.html
+%%DATADIR%%/demos/videoroomtest.js
+%%DATADIR%%/demos/voicemailtest.html
+%%DATADIR%%/demos/voicemailtest.js
+%%DATADIR%%/demos/vp9svctest.html
+%%DATADIR%%/demos/vp9svctest.js
+%%JAVASCRIPT%%%%DATADIR%%/duktape/echotest.js
+%%JAVASCRIPT%%%%DATADIR%%/duktape/janus-sdp.js
+%%DATADIR%%/javascript/janus.js
+%%LUA%%%%DATADIR%%/lua/echotest.lua
+%%LUA%%%%DATADIR%%/lua/janus-logger.lua
+%%LUA%%%%DATADIR%%/lua/janus-sdp.lua
+%%LUA%%%%DATADIR%%/lua/videoroom.lua
+%%DATADIR%%/recordings/1234.nfo
+%%DATADIR%%/recordings/rec-sample-audio.mjr
+%%DATADIR%%/recordings/rec-sample-video.mjr
+%%DATADIR%%/streams/music.mulaw
+%%DATADIR%%/streams/radio.alaw
+%%DATADIR%%/streams/test_gstreamer.sh
+%%DATADIR%%/streams/test_gstreamer_1.sh
+@dir %%DATADIR%%/duktape
+@dir %%DATADIR%%/lua
