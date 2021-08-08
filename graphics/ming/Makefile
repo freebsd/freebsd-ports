@@ -40,8 +40,6 @@ SHEBANG_FILES=	util/cws2fws
 
 OPTIONS_DEFINE=	DOCS
 
-BINARY_ALIAS=	freetype-config=true
-
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/ming/ ${STAGEDIR}${PREFIX}/include/ming/blocks/ ${STAGEDIR}${PREFIX}/include/ming/util/
 	cd ${WRKSRC}/util/ && ${INSTALL_SCRIPT} cws2fws ming-config ${STAGEDIR}${PREFIX}/bin/
