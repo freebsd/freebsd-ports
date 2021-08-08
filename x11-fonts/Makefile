@@ -116,6 +116,7 @@
     SUBDIR += geminifonts
     SUBDIR += genryu
     SUBDIR += genseki
+    SUBDIR += gensen
     SUBDIR += gentium-basic
     SUBDIR += gentium-plus
     SUBDIR += gnu-unifont
