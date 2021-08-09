@@ -1,0 +1,15 @@
+--- lib/luajit-2.1.0-1e66d0f/src/Makefile.orig	2021-08-10 08:16:04.406803000 +0200
++++ lib/luajit-2.1.0-1e66d0f/src/Makefile	2021-08-10 08:16:22.458940000 +0200
+@@ -24,10 +24,10 @@
+ # removing the '#' in front of them. Make sure you force a full recompile
+ # with "make clean", followed by "make" if you change any options.
+ #
+-DEFAULT_CC = gcc
++#DEFAULT_CC = gcc
+ #
+ # LuaJIT builds as a native 32 or 64 bit binary by default.
+-CC= $(DEFAULT_CC)
++#CC= $(DEFAULT_CC)
+ #
+ # Use this if you want to force a 32 bit build on a 64 bit multilib OS.
+ #CC= $(DEFAULT_CC) -m32
