@@ -12,12 +12,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libLLVM-${DISTVERSION:R:R}.so:devel/llvm${DISTVERSION:R:R} \
 		libLLVMSPIRVLib.so.${DISTVERSION:R:R}:devel/spirv-llvm-translator
 
-USES=		cmake compiler:c++11-lib localbase:ldflags
+USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	intel
 CMAKE_OFF=	LLVMSPIRV_INCLUDED_IN_LLVM
-CMAKE_ARGS=	-DSPIRV_TRANSLATOR_DIR:PATH="${PREFIX}/lib"
+CMAKE_ARGS=	-DSPIRV_TRANSLATOR_DIR:PATH="${LOCALBASE}"
 PLIST_FILES=	include/cclang/common_clang.h \
 		lib/libopencl-clang.so \
 		lib/libopencl-clang.so.${DISTVERSION:R:R}
