@@ -1,7 +1,7 @@
 # Created by: Alexey Mikhailov <karma@ez.pereslavl.ru>
 
 PORTNAME=	xtrlock
-PORTVERSION=	2.8
+PORTVERSION=	2.15
 CATEGORIES=	x11
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/GPL-3.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		localbase xorg
+USES=		localbase tar:xz xorg
 USE_XORG=	x11
 
 LIBS+=		-lX11 -lcrypt
