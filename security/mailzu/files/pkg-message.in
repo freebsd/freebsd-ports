@@ -9,11 +9,6 @@ Please read: %%DOCSDIR%%/INSTALL
 
 Then, edit %%WWWDIR%%/config/config.php
 
-Also, please note that MailZu needs PHP's short_open_tag
-boolean to be "on" (this is detault in typical installations
-of PHP). To be certain, you can set "short_open_tag = on" in
-%%LOCALBASE%%/etc/php.ini.
-
 Finally, make MailZu available through your web site.  An
 example for httpd.conf:
 
@@ -26,6 +21,24 @@ Alias /mailzu/ "%%WWWDIR%%/"
     Deny from all
     Allow from 127.0.0.1 .example.org
 </Directory>
+
+An example for nginx.conf:
+
+location /mailzu/ {
+    alias %%WWWDIR%%/;
+    index index.php;
+    allow 127.0.0.0/8;
+    deny all;
+
+    location ~ \.php$ {
+        fastcgi_pass   unix:/var/run/php-fpm.socket;
+        fastcgi_param HTTPS on;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME $request_filename;
+        include        fastcgi_params;
+    }
+}
+
 EOM
 }
 ]

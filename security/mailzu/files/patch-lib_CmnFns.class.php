@@ -168,7 +168,7 @@
  		header("Refresh: $time; URL=$location");
  		if ($die) exit;
  	}
-@@ -352,7 +352,7 @@ class CmnFns {
+@@ -352,11 +352,11 @@ class CmnFns {
  	* Prints out the HTML to choose a language
  	* @param none
  	*/
@@ -177,6 +177,20 @@
  		global $conf;
  		?>
  		<select name="language" class="textbox" onchange="changeLanguage(this);">
+-		<?
++		<?php
+ 			$languages = get_language_list();
+ 			foreach ($languages as $lang => $settings) {
+ 				echo '<option value="' . $lang . '"'
+@@ -365,7 +365,7 @@ class CmnFns {
+ 			}
+ 		?>
+ 		</select>
+-		<?
++		<?php
+ 	}
+ 	
+ 	/**
 @@ -375,7 +375,7 @@ class CmnFns {
  	* @param string $str string to search for links to create
  	* @return string with 'URL-like' text changed into clickable links
@@ -231,6 +245,73 @@
  		global $conf;
  
  		$fields_array = array("f" => translate('From'), 
+@@ -514,11 +514,11 @@ class CmnFns {
+ 
+ 		?>	
+ 		<table border=0 width="100%">
+-		<form action="<? echo $submit_page ?>" method="get" name="quarantine">
++		<form action="<?php echo $submit_page ?>" method="get" name="quarantine">
+ 
+-			<tr><td colspan=2 align="center"><? echo translate('Search for messages whose:'); ?>&nbsp;</td></tr>
++			<tr><td colspan=2 align="center"><?php echo translate('Search for messages whose:'); ?>&nbsp;</td></tr>
+ 			<tr><td align="right">&nbsp;
+-		<?
++		<?php
+ 			$i = 1;
+ 			$array_size = count($fields_array);
+ 			foreach ($fields_array as $k => $name) {
+@@ -543,34 +543,34 @@ class CmnFns {
+ 				$i ++;
+ 			}
+ 		?>
+-			<? echo translate('Content Type'); ?>:
++			<?php echo translate('Content Type'); ?>:
+ 			<select name="ctype" class="button">
+-					<option value="A" <? echo ($content_type == 'A' ?  ' selected="true"':''); ?>>
+-					<? echo translate('All'); ?></option>
+-					<option value="S" <? echo ($content_type == 'S' ?  ' selected="true"':''); ?>>
+-					<? echo translate('Spam'); ?></option>
+-					<option value="B" <? echo ($content_type == 'B' ?  ' selected="true"':''); ?>>
+-					<? echo translate('Banned'); ?></option>
+-			<? if (Auth::isMailAdmin() || $conf['app']['allowViruses']) { ?>
+-					<option value="V" <? echo ($content_type == 'V' ?  ' selected="true"':''); ?>>
+-					<? echo translate('Virus'); ?></option>
+-			<? } 
++					<option value="A" <?php echo ($content_type == 'A' ?  ' selected="true"':''); ?>>
++					<?php echo translate('All'); ?></option>
++					<option value="S" <?php echo ($content_type == 'S' ?  ' selected="true"':''); ?>>
++					<?php echo translate('Spam'); ?></option>
++					<option value="B" <?php echo ($content_type == 'B' ?  ' selected="true"':''); ?>>
++					<?php echo translate('Banned'); ?></option>
++			<?php if (Auth::isMailAdmin() || $conf['app']['allowViruses']) { ?>
++					<option value="V" <?php echo ($content_type == 'V' ?  ' selected="true"':''); ?>>
++					<?php echo translate('Virus'); ?></option>
++			<?php } 
+ 				 if (Auth::isMailAdmin() || $conf['app']['allowBadHeaders']) { ?>
+-					<option value="H" <? echo ($content_type == 'H' ?  ' selected="true"':''); ?>>
+-					<? echo translate('Bad Header'); ?></option>				
+-			<? }
++					<option value="H" <?php echo ($content_type == 'H' ?  ' selected="true"':''); ?>>
++					<?php echo translate('Bad Header'); ?></option>				
++			<?php }
+ 			echo "</select>";
+ 			$i ++;
+ 			echo ($i % 2) ? "&nbsp;</td></tr>\n\t\t\t<tr><td colspan='2' align='center'>&nbsp\n" : "&nbsp;</td><td align='left'>&nbsp";
+ 			?>
+-			<input type="submit" class="button" name="search_action" value="<? echo translate('Search'); ?>" />
+-			<? if (CmnFns::didSearch()) 
++			<input type="submit" class="button" name="search_action" value="<?php echo translate('Search'); ?>" />
++			<?php if (CmnFns::didSearch()) 
+ 				echo "<input type=\"submit\" class=\"button\" name=\"search_action\" value=\"" . translate('Clear search results') . "\" />";
+ 			?>
+ 			&nbsp;</td></tr>
+ 		</form>
+ 		</table>
+-		<?
++		<?php
+ 
+ 	}
+ 
 @@ -579,7 +579,7 @@ class CmnFns {
          * @param none
          * @return value boolean
