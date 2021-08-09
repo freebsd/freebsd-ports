@@ -14,8 +14,8 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	%%DATADIR%%/cs_CZ.aff \
-		%%DATADIR%%/cs_CZ.dic
+PLIST_FILES=	${DATADIR}/cs_CZ.aff \
+		${DATADIR}/cs_CZ.dic
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

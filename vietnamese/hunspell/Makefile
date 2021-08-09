@@ -11,10 +11,10 @@ LICENSE=	GPLv3
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	%%DATADIR%%/vi-DauCu.aff \
-		%%DATADIR%%/vi-DauCu.dic \
-		%%DATADIR%%/vi-DauMoi.aff \
-		%%DATADIR%%/vi-DauMoi.dic
+PLIST_FILES=	${DATADIR}/vi-DauCu.aff \
+		${DATADIR}/vi-DauCu.dic \
+		${DATADIR}/vi-DauMoi.aff \
+		${DATADIR}/vi-DauMoi.dic
 
 GH_ACCOUNT=	1ec5
 GH_PROJECT=	${PORTNAME}-vi

@@ -15,8 +15,8 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
 
-PLIST_FILES=	%%DATADIR%%/ve.aff \
-		%%DATADIR%%/ve.dic
+PLIST_FILES=	${DATADIR}/ve.aff \
+		${DATADIR}/ve.dic
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

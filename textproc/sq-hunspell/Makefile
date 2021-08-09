@@ -17,8 +17,8 @@ USES=		zip
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	%%DATADIR%%/sq_AL.aff \
-		%%DATADIR%%/sq_AL.dic
+PLIST_FILES=	${DATADIR}/sq_AL.aff \
+		${DATADIR}/sq_AL.dic
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

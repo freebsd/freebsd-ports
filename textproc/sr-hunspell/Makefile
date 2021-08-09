@@ -17,10 +17,10 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
 
-PLIST_FILES=	%%DATADIR%%/sh_YU.aff \
-		%%DATADIR%%/sh_YU.dic \
-		%%DATADIR%%/sr_YU.aff \
-		%%DATADIR%%/sr_YU.dic
+PLIST_FILES=	${DATADIR}/sh_YU.aff \
+		${DATADIR}/sh_YU.dic \
+		${DATADIR}/sr_YU.aff \
+		${DATADIR}/sr_YU.dic
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

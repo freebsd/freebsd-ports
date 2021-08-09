@@ -20,8 +20,8 @@ USE_PERL5=	build
 USES=		gmake iconv:build shebangfix perl5 tar:tgz
 SHEBANG_FILES=	bin/*.pl
 
-PLIST_FILES=	%%DATADIR%%/uk_UA.aff \
-		%%DATADIR%%/uk_UA.dic
+PLIST_FILES=	${DATADIR}/uk_UA.aff \
+		${DATADIR}/uk_UA.dic
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/bin/true,/usr/bin/true,g" ${WRKSRC}/src/Dictionary/Makefile

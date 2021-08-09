@@ -29,18 +29,18 @@ SHEBANG_FILES=	bin/*.pl
 
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 
-PLIST_FILES=	%%DATADIR%%/de_AT.aff \
-		%%DATADIR%%/de_AT.dic \
-		%%DATADIR%%/de_CH.aff \
-		%%DATADIR%%/de_CH.dic \
-		%%DATADIR%%/de_DE.aff \
-		%%DATADIR%%/de_DE.dic
+PLIST_FILES=	${DATADIR}/de_AT.aff \
+		${DATADIR}/de_AT.dic \
+		${DATADIR}/de_CH.aff \
+		${DATADIR}/de_CH.dic \
+		${DATADIR}/de_DE.aff \
+		${DATADIR}/de_DE.dic
 
 CHALIASES=	de_LI
 DEALIASES=	de_BE de_LU
 .for ALIAS in ${CHALIASES} ${DEALIASES}
-PLIST_FILES+=	%%DATADIR%%/${ALIAS}.aff \
-		%%DATADIR%%/${ALIAS}.dic
+PLIST_FILES+=	${DATADIR}/${ALIAS}.aff \
+		${DATADIR}/${ALIAS}.dic
 .endfor
 
 post-patch:

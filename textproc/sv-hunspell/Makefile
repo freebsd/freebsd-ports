@@ -17,10 +17,10 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	%%DATADIR%%/sv_FI.aff \
-		%%DATADIR%%/sv_FI.dic \
-		%%DATADIR%%/sv_SE.aff \
-		%%DATADIR%%/sv_SE.dic
+PLIST_FILES=	${DATADIR}/sv_FI.aff \
+		${DATADIR}/sv_FI.dic \
+		${DATADIR}/sv_SE.aff \
+		${DATADIR}/sv_SE.dic
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

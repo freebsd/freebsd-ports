@@ -16,8 +16,8 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/hu_HU-${PORTVERSION}
 
-PLIST_FILES=	%%DATADIR%%/hu_HU.aff \
-		%%DATADIR%%/hu_HU.dic
+PLIST_FILES=	${DATADIR}/hu_HU.aff \
+		${DATADIR}/hu_HU.dic
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

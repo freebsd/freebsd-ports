@@ -15,8 +15,8 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
 
-PLIST_FILES=	%%DATADIR%%/ts_ZA.aff \
-		%%DATADIR%%/ts_ZA.dic
+PLIST_FILES=	${DATADIR}/ts_ZA.aff \
+		${DATADIR}/ts_ZA.dic
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

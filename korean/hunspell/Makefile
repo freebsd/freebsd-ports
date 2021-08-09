@@ -23,8 +23,8 @@ NO_ARCH=	yes
 USES=		python:3.3+,build,test shebangfix
 SHEBANG_FILES=	tests/runtest.py
 
-PLIST_FILES=	%%DATADIR%%/ko_KR.aff \
-		%%DATADIR%%/ko_KR.dic
+PLIST_FILES=	${DATADIR}/ko_KR.aff \
+		${DATADIR}/ko_KR.dic
 
 TEST_TARGET=	test
 TEST_ENV+=	GMAKE=${GMAKE} LC_ALL=en_US.UTF-8
