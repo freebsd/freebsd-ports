@@ -1,5 +1,5 @@
 PORTNAME=	gpaw
-DISTVERSION=	21.1.0
+DISTVERSION=	21.6.0
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,8 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libxc.so:science/libxc
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ase>0:science/py-ase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
-		${PYNUMPY}
+		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR}
 
 USES=		gettext-runtime localbase python:3.7+ shebangfix
 USE_PYTHON=	distutils concurrent autoplist
