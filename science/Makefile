@@ -177,6 +177,7 @@
     SUBDIR += opensph
     SUBDIR += opsin
     SUBDIR += orthanc
+    SUBDIR += orthanc-dicomweb
     SUBDIR += orthanc-mysql
     SUBDIR += orthanc-postgresql
     SUBDIR += orthanc-webviewer
