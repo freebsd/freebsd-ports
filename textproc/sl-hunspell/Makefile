@@ -2,6 +2,7 @@ PORTNAME=	hunspell
 PORTVERSION=	2020.12.31
 CATEGORIES=	textproc
 MASTER_SITES=	https://extensions.libreoffice.org/assets/downloads/752/
+PKGNAMEPREFIX=	sl-
 DISTNAME=	pack-sl
 EXTRACT_SUFX=	.oxt
 
