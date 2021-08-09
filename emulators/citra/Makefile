@@ -17,7 +17,7 @@ LICENSE_FILE_LGPL21+ =	${_LICENSE_STORE}/LGPL21 # soundtouch
 LICENSE_FILE_MIT=	${WRKSRC}/externals/enet/LICENSE
 LICENSE_FILE_OpenSSL=	${WRKSRC}/externals/libressl/COPYING
 
-LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
@@ -42,7 +42,7 @@ GH_TUPLE=	citra-emu:ext-boost:36603a1:boost/externals/boost \
 
 USES=		cmake:testing compiler:c++17-lang localbase:ldflags sdl
 USE_SDL=	sdl2
-CMAKE_ON=	USE_SYSTEM_BOOST
+CMAKE_ON=	USE_SYSTEM_BOOST Boost_USE_STATIC_LIBS
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 
 OPTIONS_DEFINE=	ALSA FFMPEG PULSEAUDIO JACK SNDIO
