@@ -2,6 +2,7 @@
 
 PORTNAME=	logcheck
 PORTVERSION=	1.3.23
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -13,46 +14,50 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	docbook-to-man>0:textproc/docbook-to-man
-RUN_DEPENDS=	mime-construct:mail/mime-construct \
+RUN_DEPENDS=	bash:shells/bash \
 		lockfile-create:sysutils/lockfile-progs \
-		bash:shells/bash
+		mime-construct:mail/mime-construct
 
 # Enable Perl dependency for logtail script
 USES=		perl5 shebangfix tar:xz
-
-LOGCHECK_USER=	logcheck
-LOGCHECK_GROUP=	${LOGCHECK_USER}
+SHEBANG_FILES=	src/detectrotate/*.dtr src/logcheck src/logtail src/logtail2
+BINMODE=	755
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
+SUB_LIST+=	CRON=${PORT_OPTIONS:MCRON} \
+		DBDIR=${DBDIR} \
+		LOGCHECK_GROUP=${LOGCHECK_GROUP} \
+		LOGCHECK_USER=${LOGCHECK_USER}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USERS=		${LOGCHECK_USER}
 GROUPS=		${LOGCHECK_GROUP}
-
-BASEDIR?=	# None. portlint compliance
-DBDIR=		${BASEDIR}/var/db/${PORTNAME}
-RUNDIR=		${BASEDIR}/var/run/${PORTNAME}
-
-OPTIONS_DEFINE=	CRON DOCS EXAMPLES
-CRON_DESC=	Install cron script automatically
-OPTIONS_DEFAULT=CRON
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-BINMODE=	755
-SUB_LIST+=	LOGCHECK_USER=${LOGCHECK_USER} \
+PLIST_SUB+=	CHGRP=${CHGRP} \
+		CHMOD=${CHMOD} \
+		DBDIR=${DBDIR} \
+		FIND=${FIND} \
 		LOGCHECK_GROUP=${LOGCHECK_GROUP} \
-		DBDIR=${DBDIR} CRON=${PORT_OPTIONS:MCRON}
-SUB_FILES=	pkg-install pkg-deinstall pkg-message
-PLIST_SUB+=	LOGCHECK_USER=${LOGCHECK_USER} \
-		LOGCHECK_GROUP=${LOGCHECK_GROUP} \
-		DBDIR=${DBDIR} RUNDIR=${RUNDIR}
-SHEBANG_FILES=	src/logcheck src/logtail src/logtail2 src/detectrotate/*.dtr
-CONFIG_DIRS=	cracking.d ignore.d.paranoid ignore.d.server \
-		ignore.d.workstation violations.d violations.ignore.d
-DOCS=		AUTHORS CHANGES CREDITS TODO docs/README*
+		LOGCHECK_USER=${LOGCHECK_USER} \
+		RUNDIR=${RUNDIR}
 PORTDOCS=	${DOCS:T}
-MAN1_FILES=	logcheck-test.1
-MAN8_FILES=	logcheck.8 logtail.8 logtail2.8
+
+OPTIONS_DEFINE=		CRON DOCS EXAMPLES
+OPTIONS_DEFAULT=	CRON
+CRON_DESC=		Install cron script automatically
+
+# None. portlint compliance
+BASEDIR?=
+CONFIG_DIRS=		cracking.d ignore.d.paranoid ignore.d.server \
+			ignore.d.workstation violations.d violations.ignore.d
+DBDIR=			${BASEDIR}/var/db/${PORTNAME}
+DOCS=			AUTHORS CHANGES CREDITS TODO docs/README*
+LOGCHECK_GROUP=		${LOGCHECK_USER}
+LOGCHECK_USER=		logcheck
+MAN1_FILES=		logcheck-test.1
+MAN8_FILES=		logcheck.8 logtail.8 logtail2.8
 REINPLACE_FILES=	debian/logcheck.cron.d docs/logcheck.sgml \
 			docs/logtail2.8 docs/README.logcheck \
 			docs/README.logcheck-database docs/README.logtail \
 			etc/logcheck.conf src/logcheck src/logtail2
+RUNDIR=			${BASEDIR}/var/run/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -87,9 +92,6 @@ do-install:
 		${STAGEDIR}${DATADIR}/detectrotate
 	${INSTALL_DATA} ${WRKSRC}/debian/logcheck.cron.d \
 		${STAGEDIR}${EXAMPLESDIR}/crontab.in
-	@${ECHO_CMD} '@exec ${CHGRP} -R ${LOGCHECK_GROUP} \
-		${ETCDIR:S|^${PREFIX}/|%D/|} \
-		${DATADIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
 .for i in ${MAN1_FILES}
 	${INSTALL_MAN} ${WRKSRC}/docs/$i ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
