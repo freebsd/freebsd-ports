@@ -1,9 +1,9 @@
 # Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 
 PORTNAME=	magit
-PORTVERSION=	3.2.0
+DISTVERSIONPREFIX=	v
+PORTVERSION=	3.2.1
 CATEGORIES=	devel elisp
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@utahime.org
@@ -22,6 +22,7 @@ RUN_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.14.1:devel/dash.el@${EMACS_FLAVOR}
 		with-editor${EMACS_PKGNAMESUFFIX}>=2.8.0:editors/with-editor@${EMACS_FLAVOR}
 
 USES=		emacs gmake makeinfo
+USE_GITHUB=	yes
 
 MAKE_ENV+=	docdir=${DOCSDIR} \
 		infodir=${PREFIX}/${INFO_PATH} \
