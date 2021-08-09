@@ -1,10 +1,7 @@
 PORTNAME=	intel-media-sdk
 DISTVERSIONPREFIX=	intel-mediasdk-
-DISTVERSION=	21.3.1
+DISTVERSION=	21.3.2
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	dbb517e22dc4.patch:-p1 # https://github.com/Intel-Media-SDK/MediaSDK/pull/2752
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hardware video decoding/encoding/filtering on Intel GPUs
