@@ -1,6 +1,6 @@
 PORTNAME=	zrythm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0-alpha.22.0.1
+DISTVERSION=	1.0.0-alpha.22.1.11
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,10 +18,12 @@ LIB_DEPENDS=	libaudec.so:audio/libaudec \
 		libcyaml.so:textproc/libcyaml \
 		libgtop-2.0.so:devel/libgtop \
 		libcgraph.so:graphics/graphviz \
+		libcurl.so:ftp/curl \
 		libfftw3_threads.so:math/fftw3 \
 		libfftw3f_threads.so:math/fftw3-float \
 		libguile-2.2.so:lang/guile2 \
 		libjack.so:audio/jack \
+		libjson-glib-1.0.so:devel/json-glib \
 		liblilv-0.so:audio/lilv \
 		libpcre.so:devel/pcre \
 		libpcre2-8.so:devel/pcre2 \
