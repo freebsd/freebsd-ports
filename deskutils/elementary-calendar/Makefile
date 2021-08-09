@@ -1,7 +1,7 @@
-PORTNAME=	elementary-calendar
-DISTVERSION=	5.1.1
-PORTREVISION=	2
+PORTNAME=	calendar
+DISTVERSION=	6.0.0
 CATEGORIES=	deskutils
+PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Desktop calendar app designed for elementary OS
@@ -13,7 +13,7 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libchamplain-0.12.so:graphics/libchamplain \
 		libclutter-1.0.so:graphics/clutter \
-		libedataserver-1.2.so:databases/evolution-data-server \
+		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 		libfolks.so:net-im/folks \
 		libgee-0.8.so:devel/libgee \
 		libgeoclue-2.so:net/geoclue \
@@ -21,13 +21,14 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libgranite.so:x11-toolkits/granite \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libical.so:devel/libical \
-		libnotify.so:devel/libnotify
+		libnotify.so:devel/libnotify \
+		libsoup-2.4.so:devel/libsoup
+RUN_DEPENDS=	consolekit2>0:sysutils/consolekit2
 
-USES=		gnome meson pkgconfig
+USES=		desktop-file-utils gnome meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
-GH_PROJECT=	calendar
-USE_GNOME=	glib20 gtk30
+USE_GNOME=	glib20 gtk30 evolutiondataserver3
 GLIB_SCHEMAS=	io.elementary.calendar.gschema.xml
 INSTALLS_ICONS=	yes
 
