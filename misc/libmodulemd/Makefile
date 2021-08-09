@@ -1,5 +1,5 @@
 PORTNAME=	libmodulemd
-DISTVERSION=	2.12.1
+DISTVERSION=	2.13.0
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/fedora-modularity/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	modulemd-${DISTVERSION}
