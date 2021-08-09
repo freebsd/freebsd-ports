@@ -3,6 +3,7 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.16.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,6 +35,29 @@ BINARY_ALIAS=	flex=${LOCALBASE}/bin/flex python=${PYTHON_CMD} m4=${LOCALBASE}/bi
 
 PLIST_FILES=	bin/ispc \
 		bin/check_isa
+
+OPTIONS_DEFINE_amd64=	GENX
+OPTIONS_DEFAULT_amd64=	GENX
+
+GENX_DESC=		Intel GPU 8/16-wide SIMD support
+GENX_BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_VERSION}/lib/libLLVMGenXIntrinsics.a:devel/vc-intrinsics@llvm${LLVM_VERSION}
+GENX_LIB_DEPENDS=	libze_loader.so:devel/level-zero \
+			libLLVMSPIRVLib.so.${LLVM_VERSION}:devel/spirv-llvm-translator@llvm${LLVM_VERSION}
+GENX_CMAKE_BOOL=	GENX_ENABLED
+GENX_CMAKE_BOOL_OFF=	ISPCRT_BUILD_TESTS
+GENX_CMAKE_ON=		-DGENX_DEPS_DIR:PATH="${LOCALBASE}/llvm${LLVM_VERSION}"
+GENX_PLIST_FILES=	include/ispcrt/ispcrt.h \
+			include/ispcrt/ispcrt.hpp \
+			include/ispcrt/ispcrt.isph \
+			lib/cmake/ispcrt-${PORTVERSION}/Findlevel_zero.cmake \
+			lib/cmake/ispcrt-${PORTVERSION}/ispc.cmake \
+			lib/cmake/ispcrt-${PORTVERSION}/ispcrtConfig.cmake \
+			lib/cmake/ispcrt-${PORTVERSION}/ispcrt_Exports-%%CMAKE_BUILD_TYPE%%.cmake \
+			lib/cmake/ispcrt-${PORTVERSION}/ispcrt_Exports.cmake \
+			lib/libispcrt.so \
+			lib/libispcrt.so.1 \
+			lib/libispcrt.so.${PORTVERSION} \
+			lib/libispcrt_static.a
 
 do-test: # some tests fail: https://github.com/ispc/ispc/issues/1868
 	@cd ${WRKSRC} && ISPC_HOME=${BUILD_WRKSRC}/bin ./run_tests.py
