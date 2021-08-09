@@ -1818,6 +1818,7 @@
     SUBDIR += sk-hyphen
     SUBDIR += sk-mythes
     SUBDIR += sl-aspell
+    SUBDIR += sl-hunspell
     SUBDIR += sl-hyphen
     SUBDIR += sl-mythes
     SUBDIR += slides
