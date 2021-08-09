@@ -1,6 +1,6 @@
 PORTNAME=	gpg-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.3
+DISTVERSION=	0.7.4
 CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
@@ -27,6 +27,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
 		block-0.1.6 \
+		block-buffer-0.9.0 \
 		bytemuck-1.5.1 \
 		byteorder-1.4.3 \
 		cassowary-0.3.0 \
@@ -41,30 +42,32 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		conv-0.3.3 \
 		copypasta-0.7.1 \
 		copypasta-ext-0.3.7 \
-		crossterm-0.19.0 \
+		cpufeatures-0.1.5 \
 		crossterm-0.20.0 \
-		crossterm_winapi-0.7.0 \
 		crossterm_winapi-0.8.0 \
 		cstr-argument-0.1.1 \
 		ctor-0.1.16 \
 		custom_derive-0.1.7 \
 		diff-0.1.12 \
+		digest-0.9.0 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
 		dlib-0.4.2 \
 		downcast-rs-1.2.0 \
+		generic-array-0.14.4 \
 		getrandom-0.2.2 \
 		gpg-error-0.5.2 \
-		gpgme-0.9.2 \
-		gpgme-sys-0.9.1 \
+		gpgme-0.10.0 \
+		gpgme-sys-0.10.0 \
 		heck-0.3.2 \
 		hermit-abi-0.1.17 \
+		hex-literal-0.3.3 \
 		image-0.23.14 \
 		instant-0.1.9 \
 		jpeg-decoder-0.1.22 \
 		lazy-bytes-cast-5.0.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.81 \
+		libc-0.2.98 \
 		libgpg-error-sys-0.5.2 \
 		libloading-0.6.7 \
 		lock_api-0.4.2 \
@@ -85,6 +88,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
 		once_cell-1.5.2 \
+		opaque-debug-0.3.0 \
 		output_vt100-0.1.2 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.2 \
@@ -97,14 +101,14 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		redox_syscall-0.1.57 \
 		redox_syscall-0.2.6 \
 		redox_users-0.4.0 \
-		rust-embed-5.9.0 \
-		rust-embed-impl-5.9.0 \
-		rust-embed-utils-5.1.0 \
+		rust-embed-6.0.0 \
+		rust-embed-impl-6.0.0 \
+		rust-embed-utils-6.0.0 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
+		sha2-0.9.5 \
 		shellexpand-2.1.0 \
-		signal-hook-0.1.17 \
 		signal-hook-0.3.9 \
 		signal-hook-mio-0.2.1 \
 		signal-hook-registry-1.4.0 \
@@ -122,7 +126,8 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		thiserror-1.0.23 \
 		thiserror-impl-1.0.23 \
 		time-0.1.44 \
-		tui-0.15.0 \
+		tui-0.16.0 \
+		typenum-1.13.0 \
 		unicode-segmentation-1.7.1 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
@@ -141,6 +146,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		winreg-0.7.0 \
+		winreg-0.9.0 \
 		x11-clipboard-0.5.1 \
 		xcb-0.9.0 \
 		xcursor-0.3.3 \
