@@ -10,6 +10,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Client.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::Config.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::SCEP.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::Service::Response.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::Simple.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Bulk.3.gz
@@ -65,7 +66,6 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::verify_cert.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Config.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Engine.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Engine::GOST.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Engine::OpenSSL.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Engine::PKCS11.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Engine::nCipher.3.gz
@@ -164,7 +164,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Crypto::password_quality::CheckStandardRole.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Crypto::password_quality::TopPasswords.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Crypto::password_quality::Validate.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Crypto::validate_key_params.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Crypto::validate_ruleset.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Datapool::Util.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Datapool::create_datapool_encryption_key.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Datapool::delete_data_pool_entry.3.gz
@@ -228,6 +228,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Workflow::get_workflow_log.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Workflow::get_workflow_type_for_id.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Workflow::list_workflow_titles.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Workflow::reset_workflow.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Workflow::search_workflow_instances.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Workflow::start_workflow.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Workflow::wakeup_resume_workflow.3.gz
@@ -412,10 +413,12 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::SubjectValid.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::SubjectsMatch.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::UserExists.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::ValidateRuleset.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::WFArray.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::WFHash.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::WorkflowCreator.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::WorkflowHasState.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Helpers.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Observer::Debug.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Observer::Log.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Pause.3.gz
@@ -479,8 +482,11 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI.pm
 %%SITE_PERL%%/OpenXPKI/Client.pm
 %%SITE_PERL%%/OpenXPKI/Client/Config.pm
-%%SITE_PERL%%/OpenXPKI/Client/RPC.pm
 %%SITE_PERL%%/OpenXPKI/Client/SCEP.pm
+%%SITE_PERL%%/OpenXPKI/Client/Service/Base.pm
+%%SITE_PERL%%/OpenXPKI/Client/Service/RPC.pm
+%%SITE_PERL%%/OpenXPKI/Client/Service/Response.pm
+%%SITE_PERL%%/OpenXPKI/Client/Service/Role/PickupWorkflow.pm
 %%SITE_PERL%%/OpenXPKI/Client/Simple.pm
 %%SITE_PERL%%/OpenXPKI/Client/UI.pm
 %%SITE_PERL%%/OpenXPKI/Client/UI/Bootstrap.pm
@@ -512,6 +518,8 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Connector/WorkflowContext.pm
 %%SITE_PERL%%/OpenXPKI/Control.pm
 %%SITE_PERL%%/OpenXPKI/Crypt/CRL.pm
+%%SITE_PERL%%/OpenXPKI/Crypt/DN.pm
+%%SITE_PERL%%/OpenXPKI/Crypt/PKCS7.pm
 %%SITE_PERL%%/OpenXPKI/Crypt/PKCS10.pm
 %%SITE_PERL%%/OpenXPKI/Crypt/PubKey.pm
 %%SITE_PERL%%/OpenXPKI/Crypt/X509.pm
@@ -547,7 +555,6 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/verify_cert.pm
 %%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL/Config.pm
 %%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine.pm
-%%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/GOST.pm
 %%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/OpenSSL.pm
 %%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/PKCS11.pm
 %%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/SafeNetProtectServer.pm
@@ -608,6 +615,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/MooseParams.pm
 %%SITE_PERL%%/OpenXPKI/Password.pm
 %%SITE_PERL%%/OpenXPKI/Random.pm
+%%SITE_PERL%%/OpenXPKI/Role/SubjectOID.pm
 %%SITE_PERL%%/OpenXPKI/SOAP.pm
 %%SITE_PERL%%/OpenXPKI/SOAP/Revoke.pm
 %%SITE_PERL%%/OpenXPKI/Serialization/Fast.pm
@@ -655,7 +663,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Crypto/password_quality/CheckStandardRole.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Crypto/password_quality/TopPasswords.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Crypto/password_quality/Validate.pm
-%%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Crypto/validate_key_params.pm
+%%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Crypto/validate_ruleset.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Datapool/Util.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Datapool/create_datapool_encryption_key.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Datapool/delete_data_pool_entry.pm
@@ -719,6 +727,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Workflow/get_workflow_log.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Workflow/get_workflow_type_for_id.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Workflow/list_workflow_titles.pm
+%%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Workflow/reset_workflow.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Workflow/search_workflow_instances.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Workflow/start_workflow.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Workflow/wakeup_resume_workflow.pm
@@ -906,10 +915,12 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/SubjectValid.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/SubjectsMatch.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/UserExists.pm
+%%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/ValidateRuleset.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/WFArray.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/WFHash.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/WorkflowCreator.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/WorkflowHasState.pm
+%%SITE_PERL%%/OpenXPKI/Server/Workflow/Helpers.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Observer/AddExecuteHistory.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Observer/Debug.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Observer/Log.pm

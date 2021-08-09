@@ -1,7 +1,7 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
 
 PORTNAME=	openxpki
-PORTVERSION=	3.12.0
+PORTVERSION=	3.14.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		p5-CGI>=4.21:www/p5-CGI \
 		p5-CGI-Fast>=2.10:www/p5-CGI-Fast \
 		p5-CGI-Session>=3.95:www/p5-CGI-Session \
+		p5-Cache-LRU>=0:devel/p5-Cache-LRU \
 		p5-Class-Accessor-Chained>=0:devel/p5-Class-Accessor-Chained \
 		p5-Class-Std>=0.0.8:devel/p5-Class-Std \
 		p5-Config-GitLike>=0:devel/p5-Config-GitLike \
@@ -30,6 +31,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		p5-Crypt-LibSCEP>=0.6:security/p5-Crypt-LibSCEP \
 		p5-Crypt-OpenSSL-AES>=0.02:security/p5-Crypt-OpenSSL-AES \
 		p5-Crypt-PKCS10>=2.000:security/p5-Crypt-PKCS10 \
+		p5-Crypt-Rijndael>=1.13:security/p5-Crypt-Rijndael \
 		p5-Crypt-SMIME>=0:security/p5-Crypt-SMIME \
 		p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
 		p5-Crypt-X509>=0.53:security/p5-Crypt-X509 \
