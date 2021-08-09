@@ -1,7 +1,7 @@
-@mode 640
 %%DATADIR%%/detectrotate/10-savelog.dtr
 %%DATADIR%%/detectrotate/20-logrotate.dtr
 %%DATADIR%%/detectrotate/30-logrotate-dateext.dtr
+@group %%LOGCHECK_GROUP%%
 %%ETCDIR%%/cracking.d/kernel
 %%ETCDIR%%/cracking.d/rlogind
 %%ETCDIR%%/cracking.d/rsh
@@ -194,7 +194,7 @@
 %%ETCDIR%%/violations.ignore.d/logcheck-sudo
 @sample %%ETCDIR%%/logcheck.conf.sample
 @sample %%ETCDIR%%/logcheck.logfiles.sample
-@mode
+@group
 bin/logcheck-test
 man/man1/logcheck-test.1.gz
 man/man8/logcheck.8.gz
@@ -206,3 +206,4 @@ sbin/logtail2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crontab.in
 @dir(%%LOGCHECK_USER%%,%%LOGCHECK_GROUP%%,) %%DBDIR%%
 @dir(%%LOGCHECK_USER%%,%%LOGCHECK_GROUP%%,) %%RUNDIR%%
+@postexec %%FIND%% %%PREFIX%%/%%ETCDIR%%/* -type d -exec %%CHMOD%% 750 {} +
