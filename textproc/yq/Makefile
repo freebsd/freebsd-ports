@@ -23,6 +23,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kislyuk
 USE_PYTHON=	distutils noflavors autoplist
 
+CONFLICTS_INSTALL=	go-yq
+
 NO_ARCH=	yes
 
 do-test: # tests fail: https://github.com/kislyuk/yq/issues/62
