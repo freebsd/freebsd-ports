@@ -11,9 +11,9 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	zip:archivers/zip \
+		boost-libs>0:devel/boost-libs \
 		${LOCALBASE}/include/utf8cpp/utf8.h:devel/utf8cpp
-LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
-		libphysfs.so:devel/physfs
+LIB_DEPENDS=	libphysfs.so:devel/physfs
 
 USES=		cmake compiler:c++11-lib gettext localbase:ldflags \
 		pkgconfig sdl shebangfix
@@ -22,6 +22,7 @@ USE_SDL=	image2 mixer2 ttf2
 GH_PROJECT=	${PORTNAME}-game
 SHEBANG_FILES=	packdata.sh source/misc/translation/*.sh
 bash_CMD=	/bin/sh
+CMAKE_ON=	Boost_USE_STATIC_LIBS
 CFLAGS+=	-I${LOCALBASE}/include/utf8cpp
 LDFLAGS+=	-lintl
 
