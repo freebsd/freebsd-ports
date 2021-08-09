@@ -1,0 +1,8 @@
+bin/jotta-cli
+sbin/jottad
+@dir etc/rc.d
+@owner jottad
+@group jottad
+@sample(jottad,jottad,644) etc/jottad/config.ini.sample
+@dir /var/lib/jottad
+@dir /var/lib

@@ -1,0 +1,18 @@
+#!/bin/sh
+# PROVIDE: jottad
+# REQUIRE: DAEMON FILESYSTEMS netif
+# KEYWORD:
+
+# Heavily copied from user gt2416 on the FreeNAS forums
+# Thread: https://www.ixsystems.com/community/threads/jottacloud-install-guide.69086/
+
+. /etc/rc.subr
+
+name=jottad
+jottad_user=jottad
+rcvar=jottad_enable
+command_args="datadir %%PREFIX%%/etc/jottad &"
+command="%%PREFIX%%/sbin/${name}"
+
+load_rc_config $name
+run_rc_command "$1"

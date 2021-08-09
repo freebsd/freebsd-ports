@@ -292,6 +292,7 @@
     SUBDIR += jicmp
     SUBDIR += jicmp6
     SUBDIR += jose
+    SUBDIR += jotta-cli
     SUBDIR += jrdesktop
     SUBDIR += jsch
     SUBDIR += jumpgate

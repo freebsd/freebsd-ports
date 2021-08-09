@@ -239,7 +239,7 @@ pydio:*:291:291::0:0:pydio cells user:/var/pydio:/bin/sh
 sftpgo:*:292:292::0:0:SFTPGo user:/nonexistent:/usr/sbin/nologin
 biboumi:*:293:293::0:0:biboumi:/nonexistent:/usr/sbin/nologin
 krill:*:294:294::0:0:krill Pseudo User:/nonexistent:/usr/sbin/nologin
-# free: 295
+jottad:*:295:295::0:0:Jotta Cloud Daemon:/nonexisten:/usr/sbin/nologin
 # free: 296
 # free: 297
 # free: 298
