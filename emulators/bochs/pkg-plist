@@ -8,10 +8,12 @@ man/man5/bochsrc.5.gz
 %%DATADIR%%/BIOS-bochs-latest
 %%DATADIR%%/BIOS-bochs-legacy
 %%DATADIR%%/SeaBIOS-README
+%%DATADIR%%/SeaVGABIOS-README
 %%DATADIR%%/VGABIOS-elpin-2.40
 %%DATADIR%%/VGABIOS-elpin-LICENSE
 %%DATADIR%%/VGABIOS-lgpl-README
 %%DATADIR%%/VGABIOS-lgpl-latest
+%%DATADIR%%/VGABIOS-lgpl-latest-banshee
 %%DATADIR%%/VGABIOS-lgpl-latest-cirrus
 %%DATADIR%%/VGABIOS-lgpl-latest-cirrus-debug
 %%DATADIR%%/VGABIOS-lgpl-latest-debug
@@ -28,6 +30,7 @@ man/man5/bochsrc.5.gz
 %%DATADIR%%/keymaps/x11-pc-it.map
 %%DATADIR%%/keymaps/x11-pc-ru.map
 %%DATADIR%%/keymaps/x11-pc-se.map
+%%DATADIR%%/keymaps/x11-pc-sg.map
 %%DATADIR%%/keymaps/x11-pc-si.map
 %%DATADIR%%/keymaps/x11-pc-uk.map
 %%DATADIR%%/keymaps/x11-pc-us.map
@@ -37,7 +40,6 @@ man/man5/bochsrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/bochsrc-sample.txt
 %%PORTDOCS%%%%DOCSDIR%%/cpu_configurability.txt
-%%PORTDOCS%%%%DOCSDIR%%/enh_dbg_user_man.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/bxdebugger.html
 %%PORTDOCS%%%%DOCSDIR%%/memory.txt
 %%PORTDOCS%%%%DOCSDIR%%/random.txt
