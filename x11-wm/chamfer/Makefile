@@ -9,13 +9,13 @@ COMMENT=	Tiling X11 window manager with Vulkan compositor
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	spirv-opt:graphics/spirv-tools \
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
+		${PYTHON_PKGNAMEPREFIX}boost-libs>0:devel/boost-python-libs@${PY_FLAVOR} \
+		spirv-opt:graphics/spirv-tools \
 		vulkan-headers>0:graphics/vulkan-headers \
 		glslc:graphics/shaderc \
 		glm>0:math/glm
-LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
-		${PY_BOOST} \
-		libvulkan.so:graphics/vulkan-loader \
+LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -42,6 +42,7 @@ post-patch:
 		`if [ ${PYTHON_REL} -lt 30800 ]; then \
 			printf "%s %s" -e '/python.*embed/d'; \
 		 fi` \
+		-e '/boost/s/,/,static:true,/' \
 		${WRKSRC}/meson.build
 
 do-install:
