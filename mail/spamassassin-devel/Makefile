@@ -10,8 +10,8 @@ COMMENT?=	Highly efficient mail filter for identifying spam
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
-GH_TAGNAME=	511938830
-SA_COMMIT_DATE=	2021.07.26
+GH_TAGNAME=	49a56ed61
+SA_COMMIT_DATE=	2021.08.09
 
 LICENSE=	APACHE20
 
