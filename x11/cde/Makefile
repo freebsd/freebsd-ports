@@ -1,16 +1,16 @@
 PORTNAME=	cde
-DISTVERSION=	2.3.2
+DISTVERSION=	2.4.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/cdesktopenv/src/
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Common Desktop Environment
 
 LICENSE=	LGPL21
 
 BROKEN_mips64=		fails to build: ./config/imake/imake: No such file or directory
 BROKEN_powerpc64=	fails to build: ./config/imake/imake: No such file or directory
-BROKEN_FreeBSD_14=	jams flex scanner
+BROKEN_i386=		cannot bind to a temporary of type va_list
 
 BUILD_DEPENDS=	ksh93:shells/ksh93			\
 		bdftopcf:x11-fonts/bdftopcf		\
@@ -85,11 +85,11 @@ post-patch:
 
 # we need to remove a few LOCALBASE
 	@${REINPLACE_CMD} -e 's|${LOCALBASE}/etc/dtinfogen|/etc/dtinfogen|g' \
-		${WRKSRC}/databases/CDE-RUN.udb \
+		${WRKSRC}/databases/CDE-RUN.src \
 		${WRKSRC}/config/cf/cde.tmpl
 	@${REINPLACE_CMD} -e 's|${LOCALBASE}/etc/dtsr|/etc/dtsr|g' -e \
 		's|${LOCALBASE}/etc/dtinfo_start|/etc/dtinfo_start|g' \
-		${WRKSRC}/databases/CDE-RUN.udb \
+		${WRKSRC}/databases/CDE-RUN.src \
 		${WRKSRC}/programs/tttypes/dtinfo_start.ptype \
 		${WRKSRC}/programs/tttypes/dtinfo.ptype
 	@${REINPLACE_CMD} -e 's|${LOCALBASE}||g' \
