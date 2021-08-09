@@ -733,6 +733,7 @@
     SUBDIR += pari_galpol
     SUBDIR += pari_nftables
     SUBDIR += pari_seadata
+    SUBDIR += paritwine
     SUBDIR += parmetis
     SUBDIR += parmgridgen
     SUBDIR += pdal
