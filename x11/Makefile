@@ -106,6 +106,7 @@
     SUBDIR += hsetroot
     SUBDIR += i3blocks
     SUBDIR += i3lock
+    SUBDIR += i3lock-color
     SUBDIR += i3status
     SUBDIR += iceauth
     SUBDIR += ico
