@@ -220,6 +220,8 @@ share/icons/hicolor/256x256/apps/carla-control.png
 share/icons/hicolor/256x256/apps/carla.png
 share/icons/hicolor/48x48/apps/carla-control.png
 share/icons/hicolor/48x48/apps/carla.png
+share/icons/hicolor/32x32/apps/carla-control.png
+share/icons/hicolor/32x32/apps/carla.png
 share/icons/hicolor/scalable/apps/carla-control.svg
 share/icons/hicolor/scalable/apps/carla.svg
 share/mime/packages/carla.xml
