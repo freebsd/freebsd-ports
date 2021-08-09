@@ -1,5 +1,5 @@
 PORTNAME=	bc
-PORTVERSION=	4.0.2
+PORTVERSION=	5.0.0
 CATEGORIES=	math lang
 PKGNAMEPREFIX=	gh-
 
@@ -10,21 +10,22 @@ LICENSE=	BSD2CLAUSE MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		compiler
+USES=		compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	gavinhoward
 
-HAS_CONFIGURE=	yes
+HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	configure.sh
-CONFIGURE_ARGS=	-G
+CONFIGURE_ARGS=		-G
+CFLAGS+=		-Dstatic_assert=_Static_assert
 
 .include <bsd.port.pre.mk>
 
-.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-CFLAGS+=	--std=c99
-.endif
+#.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
+#CFLAGS+=	--std=c99
+#.endif
 
-CONFLICTS_INSTALL=	gnubc-[0-9]*
+CONFLICTS_INSTALL=	gnubc
 
 pre-build:
 		${INSTALL_SCRIPT} ${WRKSRC}/gen/strgen.sh ${WRKSRC}/gen/strgen
@@ -35,7 +36,7 @@ do-install:
 		${INSTALL_MAN} ${WRKSRC}/manuals/bc.1 ${STAGEDIR}${MANPREFIX}/share/man/man1
 		${INSTALL_MAN} ${WRKSRC}/manuals/dc.1 ${STAGEDIR}${MANPREFIX}/share/man/man1
 		${MKDIR} ${STAGEDIR}${PREFIX}/share/nls/C
-		${WRKSRC}/locale_install.sh ${STAGEDIR}${PREFIX}/share/nls/%L/%N.cat ${PORTNAME}
+		${WRKSRC}/scripts/locale_install.sh ${STAGEDIR}${PREFIX}/share/nls/%L/%N.cat ${PORTNAME}
 		${MV} ${STAGEDIR}${PREFIX}/share/nls/en_US/bc.cat ${STAGEDIR}${PREFIX}/share/nls/C/
 		${RMDIR} ${STAGEDIR}${PREFIX}/share/nls/en_US
 
