@@ -1008,6 +1008,7 @@
     SUBDIR += voadi
     SUBDIR += volleyball
     SUBDIR += vor
+    SUBDIR += vt100-art-and-animations
     SUBDIR += vultures-eye
     SUBDIR += vvvvvv
     SUBDIR += wanderer
