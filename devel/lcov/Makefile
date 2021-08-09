@@ -1,7 +1,7 @@
 # Created by: Romain Tartiere <romain@FreeBSD.org>
 
 PORTNAME=	lcov
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	devel
 MASTER_SITES=	SF/ltp/Coverage%20Analysis/LCOV-${PORTVERSION}
 
