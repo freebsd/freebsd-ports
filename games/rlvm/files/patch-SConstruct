@@ -1,6 +1,6 @@
---- SConstruct~
+--- SConstruct.orig	2021-08-10 14:26:06 UTC
 +++ SConstruct
-@@ -19,7 +19,12 @@ AddOption('--fullstatic', action='store_
+@@ -19,8 +19,13 @@ AddOption('--fullstatic', action='store_true',
  
  # Set libraries used by all configurations and all binaries in rlvm.
  env = Environment(
@@ -8,20 +8,23 @@
    tools = ["default", "rlvm"],
 +  **dict((k, v.split()) for k, v in ARGUMENTS.items())
 +)
-+
-+env.Append(
  
++env.Append(
++
    LIBS = ["z"],
  
-@@ -278,6 +275,7 @@ if not config.CheckGuichan():
+   LOCAL_LIBS = [],
+@@ -284,7 +289,8 @@ if not config.CheckGuichan():
+ 
  # Get the configuration from sdl and freetype
  env.ParseConfig("sdl-config --cflags")
- env.ParseConfig("freetype-config --cflags --libs")
+-env.ParseConfig("freetype-config --cflags --libs")
++env.ParseConfig("pkg-config freetype2 --cflags --libs")
 +config.CheckLibWithHeader('intl', 'libintl.h', "cpp")
  
  env = config.Finish()
  
-@@ -314,7 +311,6 @@ if GetOption('release'):
+@@ -313,7 +319,6 @@ if GetOption('release'):
    # Now add release optimizations to the environment
    env.Append(
      CPPFLAGS = [
@@ -29,7 +32,7 @@
        "-DNDEBUG",
        "-DBOOST_DISABLE_ASSERTS"
      ]
-@@ -360,13 +356,7 @@ elif GetOption('pprof'):
+@@ -359,13 +364,7 @@ elif GetOption('pprof'):
               "profiler"]
    )
  else:
