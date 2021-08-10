@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 RUN_DEPENDS=	advancemame>=1.4:emulators/advancemame
 
-USES=		gmake ncurses sdl
+USES=		gmake ncurses pkgconfig sdl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-svgalib --disable-fb --disable-alsa --enable-oss \
@@ -46,6 +46,8 @@ SLANG_CONFIGURE_ENABLE=	slang
 SLANG_LDFLAGS=		-lncurses
 
 BROKEN_powerpc=		Does not compile on powerpc
+
+BINARY_ALIAS=		freetype-config=true
 
 post-patch:
 	@${REINPLACE_CMD} -e \
