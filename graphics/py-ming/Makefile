@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libming.so:graphics/ming \
 		libpng.so:graphics/png
 
-USES=		autoreconf libtool localbase:ldflags python:3.6+
+USES=		autoreconf libtool localbase:ldflags pkgconfig python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFIGURE_ARGS=	--enable-python
@@ -34,6 +34,8 @@ GH_ACCOUNT=	libming
 GH_PROJECT=	libming
 
 PORTSCOUT=	limit:^ming-
+
+BINARY_ALIAS=	freetype-config=true
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| --root ".*"||' ${WRKSRC}/py_ext/Makefile.am
