@@ -1,7 +1,7 @@
 # Created by: Miroslav Lachman
 
 PORTNAME=	base-audit
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	security
 MASTER_SITES=	# none
 DISTFILES=	# none
