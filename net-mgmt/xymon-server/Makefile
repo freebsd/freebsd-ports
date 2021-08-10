@@ -1,6 +1,6 @@
 PORTNAME=	xymon
 PORTVERSION=	4.3.30
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-server${PKGNAMESUFFIX2}
@@ -67,7 +67,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|web-build client|web-build|' ${WRKSRC}/build/Makefile.rules
 	${REINPLACE_CMD} -e 's|install-docs install-client|install-docs|' ${WRKSRC}/build/Makefile.rules
 	${REINPLACE_CMD} -e 's|$$(INSTALLETCDIR)/protocols.cfg|$$(INSTALLETCDIR)/protocols.cfg.DIST|' ${WRKSRC}/xymonnet/Makefile
-	${REINPLACE_CMD} -e 's|TRACEROUTE="traceroute"|TRACEROUTE="mtr -c 2 -n --report"|' ${WRKSRC}/xymond/etcfiles/xymonserver.cfg.DIST
+	${REINPLACE_CMD} -e 's|TRACEROUTE="traceroute"|TRACEROUTE="mtr"|' ${WRKSRC}/xymond/etcfiles/xymonserver.cfg.DIST
+	${REINPLACE_CMD} -e 's|TRACEROUTEOPTS="-n -q 2 -w 2 -m 15"|TRACEROUTEOPTS="-n -c 2 -w 2 -m 15 --report"|' ${WRKSRC}/xymond/etcfiles/xymonserver.cfg.DIST
 	${RM} ${WRKSRC}/docs/manpages/man1/xymonping.1.html
 	${RM} ${WRKSRC}/xymonnet/xymonping.1
 	${REINPLACE_CMD} -e 's|@CGIDIR@|${WWWDIR}/server/cgi-bin|g' \
