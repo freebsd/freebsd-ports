@@ -245,8 +245,10 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/figlet.fish
 %%DATADIR%%/completions/file.fish
 %%DATADIR%%/completions/find.fish
+%%DATADIR%%/completions/firewall-cmd.fish
 %%DATADIR%%/completions/fish.fish
 %%DATADIR%%/completions/fish_add_path.fish
+%%DATADIR%%/completions/fish_config.fish
 %%DATADIR%%/completions/fish_indent.fish
 %%DATADIR%%/completions/fish_key_reader.fish
 %%DATADIR%%/completions/flac.fish
@@ -357,7 +359,6 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/kitty.fish
 %%DATADIR%%/completions/kldload.fish
 %%DATADIR%%/completions/kldunload.fish
-%%DATADIR%%/completions/la.fish
 %%DATADIR%%/completions/latex.fish
 %%DATADIR%%/completions/latexmk.fish
 %%DATADIR%%/completions/launchctl.fish
@@ -366,7 +367,6 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/less.fish
 %%DATADIR%%/completions/light.fish
 %%DATADIR%%/completions/lightdm.fish
-%%DATADIR%%/completions/ll.fish
 %%DATADIR%%/completions/ln.fish
 %%DATADIR%%/completions/localectl.fish
 %%DATADIR%%/completions/locate.fish
@@ -649,6 +649,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/su.fish
 %%DATADIR%%/completions/subl.fish
 %%DATADIR%%/completions/sudo.fish
+%%DATADIR%%/completions/sv.fish
 %%DATADIR%%/completions/svn.fish
 %%DATADIR%%/completions/sylpheed.fish
 %%DATADIR%%/completions/synclient.fish
@@ -950,6 +951,8 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/functions/fish_clipboard_copy.fish
 %%DATADIR%%/functions/fish_clipboard_paste.fish
 %%DATADIR%%/functions/fish_command_not_found.fish
+%%DATADIR%%/functions/fish_commandline_append.fish
+%%DATADIR%%/functions/fish_commandline_prepend.fish
 %%DATADIR%%/functions/fish_config.fish
 %%DATADIR%%/functions/fish_default_key_bindings.fish
 %%DATADIR%%/functions/fish_default_mode_prompt.fish
@@ -990,6 +993,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/functions/prevd-or-backward-word.fish
 %%DATADIR%%/functions/prevd.fish
 %%DATADIR%%/functions/prompt_hostname.fish
+%%DATADIR%%/functions/prompt_login.fish
 %%DATADIR%%/functions/prompt_pwd.fish
 %%DATADIR%%/functions/psub.fish
 %%DATADIR%%/functions/pushd.fish
@@ -1051,8 +1055,10 @@ libdata/pkgconfig/fish.pc
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_greeting.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_hg_prompt.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_indent.1.gz
+%%MANPAGES%%%%DATADIR%%/man/man1/fish-interactive.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_is_root_user.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_key_reader.1.gz
+%%MANPAGES%%%%DATADIR%%/man/man1/fish-language.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_mode_prompt.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_opt.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_prompt.1.gz
@@ -1080,6 +1086,7 @@ libdata/pkgconfig/fish.pc
 %%MANPAGES%%%%DATADIR%%/man/man1/popd.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/prevd.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/printf.1.gz
+%%MANPAGES%%%%DATADIR%%/man/man1/prompt_login.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/prompt_pwd.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/psub.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/pushd.1.gz
@@ -1141,20 +1148,16 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/tools/web_config/partials/prompt.html
 %%DATADIR%%/tools/web_config/partials/variables.html
 %%DATADIR%%/tools/web_config/sample_prompts/acidhub.fish
-%%DATADIR%%/tools/web_config/sample_prompts/classic.fish
-%%DATADIR%%/tools/web_config/sample_prompts/classic_status.fish
-%%DATADIR%%/tools/web_config/sample_prompts/classic_vcs.fish
-%%DATADIR%%/tools/web_config/sample_prompts/debian_chroot.fish
+%%DATADIR%%/tools/web_config/sample_prompts/arrow.fish
+%%DATADIR%%/tools/web_config/sample_prompts/default.fish
+%%DATADIR%%/tools/web_config/sample_prompts/disco.fish
 %%DATADIR%%/tools/web_config/sample_prompts/informative.fish
 %%DATADIR%%/tools/web_config/sample_prompts/informative_vcs.fish
-%%DATADIR%%/tools/web_config/sample_prompts/justadollar.fish
-%%DATADIR%%/tools/web_config/sample_prompts/lonetwin.fish
 %%DATADIR%%/tools/web_config/sample_prompts/minimalist.fish
 %%DATADIR%%/tools/web_config/sample_prompts/nim.fish
 %%DATADIR%%/tools/web_config/sample_prompts/pythonista.fish
-%%DATADIR%%/tools/web_config/sample_prompts/robbyrussell.fish
-%%DATADIR%%/tools/web_config/sample_prompts/screen_savvy.fish
-%%DATADIR%%/tools/web_config/sample_prompts/sorin.fish
+%%DATADIR%%/tools/web_config/sample_prompts/scales.fish
+%%DATADIR%%/tools/web_config/sample_prompts/simple.fish
 %%DATADIR%%/tools/web_config/sample_prompts/terlar.fish
 %%DATADIR%%/tools/web_config/webconfig.py
 %%NLS%%share/locale/de/LC_MESSAGES/fish.mo

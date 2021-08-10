@@ -1,7 +1,7 @@
 # Created by: Kai Wang <kaiw27@gmail.com>
 
 PORTNAME=	fish
-DISTVERSION=	3.2.2
+DISTVERSION=	3.3.1
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/fish-shell/fish-shell/releases/download/${PORTVERSION}/
 
