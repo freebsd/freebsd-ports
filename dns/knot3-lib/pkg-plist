@@ -1,6 +1,7 @@
 include/knot/module.h
 include/libdnssec/binary.h
 include/libdnssec/crypto.h
+include/libdnssec/digest.h
 include/libdnssec/dnssec.h
 include/libdnssec/error.h
 include/libdnssec/key.h
@@ -23,6 +24,7 @@ include/libknot/db/db_lmdb.h
 include/libknot/db/db_trie.h
 include/libknot/descriptor.h
 include/libknot/dname.h
+include/libknot/dynarray.h
 include/libknot/endian.h
 include/libknot/errcode.h
 include/libknot/error.h
@@ -50,10 +52,12 @@ include/libknot/rrtype/rdname.h
 include/libknot/rrtype/rrsig.h
 include/libknot/rrtype/soa.h
 include/libknot/rrtype/tsig.h
+include/libknot/rrtype/zonemd.h
 include/libknot/tsig-op.h
 include/libknot/tsig.h
 include/libknot/version.h
 include/libknot/wire.h
+include/libknot/xdp.h
 include/libknot/yparser/yparser.h
 include/libknot/yparser/ypformat.h
 include/libknot/yparser/ypschema.h
@@ -67,12 +71,12 @@ lib/libdnssec.so.8
 lib/libdnssec.so.8.0.0
 lib/libknot.a
 lib/libknot.so
-lib/libknot.so.11
-lib/libknot.so.11.0.0
+lib/libknot.so.12
+lib/libknot.so.12.0.0
 lib/libzscanner.a
 lib/libzscanner.so
-lib/libzscanner.so.3
-lib/libzscanner.so.3.0.0
+lib/libzscanner.so.4
+lib/libzscanner.so.4.0.0
 libdata/pkgconfig/libdnssec.pc
 libdata/pkgconfig/libknot.pc
 libdata/pkgconfig/libzscanner.pc
