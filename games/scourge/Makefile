@@ -14,7 +14,7 @@ COMMENT=	Rogue-like game
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/config/scourge.cfg:games/scourge-data
 
-USES=		autoreconf compiler gettext gl gmake localbase sdl
+USES=		autoreconf compiler gettext gl gmake localbase pkgconfig sdl
 GNU_CONFIGURE=	yes
 USE_GL=		gl
 USE_SDL=	sdl image mixer net ttf
@@ -30,6 +30,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DEBUG
 DEBUG_CONFIGURE_ENABLE=	debug
+
+BINARY_ALIAS=	freetype-config=true
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|GLvoid|void|g' ${WRKSRC}/src/sdlhandler.cpp ${WRKSRC}/src/sdlhandler.h
