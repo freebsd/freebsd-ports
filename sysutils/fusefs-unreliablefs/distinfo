@@ -1,5 +1,5 @@
-TIMESTAMP = 1625486723
-SHA256 (ligurio-unreliablefs-0.1.0_GH0.tar.gz) = 4fc13b4cc4e947c72bd02c891b3be135083d57fba245a35808f9b2e039574074
-SIZE (ligurio-unreliablefs-0.1.0_GH0.tar.gz) = 33789
-SHA256 (a3caa832a5a63c69e18b8b66b503f9a460536539.patch) = d8acf168fb9fd3a1fe5ed1b19acafd5290b0e803cfc2848c3413db38b2f823c6
-SIZE (a3caa832a5a63c69e18b8b66b503f9a460536539.patch) = 1484
+TIMESTAMP = 1628591422
+SHA256 (ligurio-unreliablefs-0.2.0_GH0.tar.gz) = 51ea2bdd0ef2b9d4e0960e244ab34d50d8f01fc8f2acb34b13d58ab9208b03f5
+SIZE (ligurio-unreliablefs-0.2.0_GH0.tar.gz) = 34574
+SHA256 (e97d259b1cda3c1342c9cb472d31230e50b0776d.patch) = 42cbe74153bb90b1b528a5b738c45e6086f32bcfb691c7d66acabd9b05ff7746
+SIZE (e97d259b1cda3c1342c9cb472d31230e50b0776d.patch) = 830
