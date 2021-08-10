@@ -1,7 +1,7 @@
 # Created by: Jev Björsell <ports@ecadlabs.com>
 
 PORTNAME=	node_exporter
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -30,6 +30,7 @@ LD_FLAG_STRING=	-s \
 LD_FLAG_X_PREFIX=	-X ${GO_PKGNAME:H}/common/version
 
 # This Makefile includes the GH_TUPLE section.
+# Generated with: env M2T_GITHUB=$M2T_GITHUB make gomod-vendor > out
 .include "Makefile.modules"
 
 post-install-DOCS-on:

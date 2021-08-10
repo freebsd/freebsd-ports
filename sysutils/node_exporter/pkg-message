@@ -21,6 +21,18 @@ Collectors that are enabled, but are unable to find data to collect, now return
 EOM
 }
 {
+  type: upgrade
+  maximum_version: "1.2.2"
+  message: <<EOM
+Filesystem collector flags have been renamed.
+--collector.filesystem.ignored-mount-points is now
+--collector.filesystem.mount-points-exclude and
+--collector.filesystem.ignored-fs-types is now
+--collector.filesystem.fs-types-exclude.
+The old flags will be removed in 2.x.
+EOM
+}
+{
   type: install
   message: <<EOM
 If upgrading from a version of node_exporter <0.15.0 you'll need to update any
