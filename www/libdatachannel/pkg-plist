@@ -28,7 +28,8 @@ include/rtc/rtppacketizer.hpp
 include/rtc/track.hpp
 include/rtc/utils.hpp
 include/rtc/websocket.hpp
+include/rtc/websocketserver.hpp
 lib/libdatachannel.so
-lib/libdatachannel.so.0.14.1
+lib/libdatachannel.so.0.14.2
 share/cmake/libdatachannel/libdatachannel-config-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/libdatachannel/libdatachannel-config.cmake
