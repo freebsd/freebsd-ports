@@ -13,10 +13,12 @@ libexec/c-lightning/lightning_openingd
 libexec/c-lightning/plugins/autoclean
 libexec/c-lightning/plugins/bcli
 libexec/c-lightning/plugins/fetchinvoice
+libexec/c-lightning/plugins/funder
 libexec/c-lightning/plugins/keysend
 libexec/c-lightning/plugins/offers
 libexec/c-lightning/plugins/pay
 libexec/c-lightning/plugins/spenderp
+libexec/c-lightning/plugins/topology
 libexec/c-lightning/plugins/txprepare
 man/man1/lightning-cli.1.gz
 man/man5/lightningd-config.5.gz
@@ -33,7 +35,6 @@ man/man7/lightning-decodepay.7.gz
 man/man7/lightning-delexpiredinvoice.7.gz
 man/man7/lightning-delinvoice.7.gz
 man/man7/lightning-delpay.7.gz
-man/man7/lightning-dev-sendcustommsg.7.gz
 man/man7/lightning-disableoffer.7.gz
 man/man7/lightning-disconnect.7.gz
 man/man7/lightning-feerates.7.gz
@@ -42,6 +43,7 @@ man/man7/lightning-fundchannel.7.gz
 man/man7/lightning-fundchannel_cancel.7.gz
 man/man7/lightning-fundchannel_complete.7.gz
 man/man7/lightning-fundchannel_start.7.gz
+man/man7/lightning-funderupdate.7.gz
 man/man7/lightning-fundpsbt.7.gz
 man/man7/lightning-getinfo.7.gz
 man/man7/lightning-getlog.7.gz
@@ -72,10 +74,12 @@ man/man7/lightning-openchannel_bump.7.gz
 man/man7/lightning-openchannel_init.7.gz
 man/man7/lightning-openchannel_signed.7.gz
 man/man7/lightning-openchannel_update.7.gz
+man/man7/lightning-parsefeerate.7.gz
 man/man7/lightning-pay.7.gz
 man/man7/lightning-ping.7.gz
 man/man7/lightning-plugin.7.gz
 man/man7/lightning-reserveinputs.7.gz
+man/man7/lightning-sendcustommsg.7.gz
 man/man7/lightning-sendinvoice.7.gz
 man/man7/lightning-sendonion.7.gz
 man/man7/lightning-sendonionmessage.7.gz
