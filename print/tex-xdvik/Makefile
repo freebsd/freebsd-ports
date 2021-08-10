@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpaper.so:print/libpaper
 RUN_DEPENDS=	tex-dvipsk>=5.995:print/tex-dvipsk
 
-USES=		iconv motif xorg
+USES=		iconv motif pkgconfig xorg
 USE_TEX=	web2c kpathsea texmf texhash
 TEXHASHDIRS=	${TEXMFDISTDIR}
 USE_XORG=	ice sm x11 xmu xpm xt xi
@@ -50,6 +50,8 @@ PORTDOCS=	BUGS CHANGES INSTALL README README.CVS README.coding \
 		README.layout README.xdvik README_maintainer TODO
 
 OPTIONS_DEFINE=	DOCS
+
+BINARY_ALIAS=	freetype-config=true
 
 .include <bsd.port.options.mk>
 

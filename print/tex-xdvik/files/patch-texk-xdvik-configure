@@ -29,10 +29,22 @@
  ac_config_headers="$ac_config_headers c-auto.h:c-auto.in"
  
  
-@@ -18409,6 +18424,82 @@ ${top_builddir}/../../libs/freetype2/fre
+@@ -18393,8 +18408,8 @@ else
+   FT2_CONFIG="$ac_cv_prog_FT2_CONFIG"
+ fi
+ if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
+-  FREETYPE2_INCLUDES=`$FT2_CONFIG --cflags`
+-  FREETYPE2_LIBS=`$FT2_CONFIG --libs`
++  FREETYPE2_INCLUDES=`pkg-config freetype2 --cflags`
++  FREETYPE2_LIBS=`pkg-config freetype2 --libs`
+ elif test "x$need_freetype2:$with_system_freetype2" = xyes:yes; then
+   as_fn_error $? "did not find freetype-config required for system freetype2 library" "$LINENO" 5
+ fi
+@@ -18408,6 +18423,82 @@ $(FREETYPE2_DEPEND): ${top_builddir}/../../libs/freety
+ ${top_builddir}/../../libs/freetype2/freetype2/ft2build.h:
  	cd ${top_builddir}/../../libs/freetype2 && $(MAKE) $(AM_MAKEFLAGS) rebuild'
  fi
- 
++
 +## _KPSE_LIB_FLAGS: Setup zlib (-lz) flags
 +
 +# Check whether --with-system-zlib was given.
@@ -108,7 +120,6 @@
 +$as_echo "#define z_const /**/" >>confdefs.h
 + ;;
 +esac
-+
  
  
- # Check whether --with-default-gs-lib-path was given.
+ 
