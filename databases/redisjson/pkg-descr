@@ -1,0 +1,12 @@
+RedisJSON is a Redis module that implements ECMA-404 The JSON Data
+Interchange Standard as a native data type.  It allows storing,
+updating and fetching JSON values from Redis keys (documents).
+
+Primary features:
+- Full support of the JSON standard
+- JSONPath-like syntax for selecting elements inside documents
+- Documents are stored as binary data in a tree structure, allowing
+  fast access to sub-elements
+- Typed atomic operations for all JSON values types
+
+WWW: https://oss.redislabs.com/redisjson/
