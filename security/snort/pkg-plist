@@ -320,7 +320,7 @@ src/snort_dynamicsrc/stream_api.h
 src/snort_dynamicsrc/treenodes.h
 src/snort_dynamicsrc/util_unfold.c
 src/snort_dynamicsrc/util_unfold.h
-@unexec rmdir "/var/log/snort" >/dev/null 2>&1 || :
+@postunexec rmdir "/var/log/snort" >/dev/null 2>&1 || :
 @dir src/snort_dynamicsrc
 @dir src
 %%PORTDOCS%%@dir %%DOCSDIR%%
