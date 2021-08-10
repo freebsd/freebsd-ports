@@ -1,5 +1,5 @@
 PORTNAME=	ros-vcstool
-DISTVERSION=	0.2.15
+DISTVERSION=	0.3.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,12 +11,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3:devel/py-yaml@${PY_FLAVOR}
 
-USES=	python:3.6+
+USES=		python:3.6+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dirk-thomas
 GH_PROJECT=	vcstool
 
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
