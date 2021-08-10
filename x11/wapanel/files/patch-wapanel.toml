@@ -1,0 +1,19 @@
+--- wapanel.toml.orig	2021-04-23 06:00:30 UTC
++++ wapanel.toml
+@@ -16,11 +16,11 @@
+ 		file_manager = "thunar $HOME"
+ 
+ 		[panel.applet.logout]
+-			shutdown = "systemctl poweroff"
+-			restart = "systemctl reboot"
+-			logout = "loginctl terminate-user $USER"
+-			suspend = "systemctl suspend"
+-			hibernate = "systemctl hibernate"
++			shutdown = "shutdown -p now"
++			restart = "shutdown -r now"
++			logout = "kill -9 -1"
++			suspend = "zzz"
++			hibernate = "acpiconf -s 4"
+ 			lock = "swaylock"
+ 
+ 	[[panel.applet]]
