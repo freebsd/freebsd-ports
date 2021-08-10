@@ -1,0 +1,13 @@
+--- configure.in.orig	2021-08-10 14:43:41 UTC
++++ configure.in
+@@ -272,8 +272,8 @@ if test "$freetype_support" = "yes"; then
+         	ft_config="$freetype_config"
+ 	fi
+ 
+-	FREETYPE_CFLAGS="`$ft_config --cflags`"
+-	FREETYPE_LIBS="`$ft_config --libs`"
++	FREETYPE_CFLAGS="`pkg-config freetype2 --cflags`"
++	FREETYPE_LIBS="`pkg-config freetype2 --libs`"
+ 
+ 	AC_SUBST(FREETYPE_LIBS)
+ 	AC_SUBST(FREETYPE_CFLAGS)

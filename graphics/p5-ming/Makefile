@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libming.so:graphics/ming \
 		libpng.so:graphics/png
 
-USES=		autoreconf bison gmake libtool localbase perl5 shebangfix
+USES=		autoreconf bison gmake libtool localbase perl5 pkgconfig  shebangfix
 
 CONFIGURE_ARGS=	--enable-perl
 GNU_CONFIGURE=	yes
@@ -37,6 +37,8 @@ PORTSCOUT=	limit:^ming-
 SHEBANG_FILES=	perl_ext/examples/*.cgi
 
 OPTIONS_DEFINE=	EXAMPLES
+
+BINARY_ALIAS=	freetype-config=true
 
 post-patch:
 	@${REINPLACE_CMD} -e '/ming_is_compiled()/ s|^|#|; /LIBS/d' ${WRKSRC}/perl_ext/Makefile.PL
