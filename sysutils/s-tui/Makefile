@@ -4,7 +4,7 @@ DISTVERSION=	1.0.0-2
 DISTVERSIONSUFFIX=	-gfb91ef6
 CATEGORIES=	sysutils python
 
-MAINTAINER=	kai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stress Terminal UI: stress test and monitoring tool
 
 LICENSE=	GPLv2
