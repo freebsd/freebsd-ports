@@ -1,7 +1,6 @@
 PORTNAME=	vapoursynth-waifu2x-ncnn-vulkan
 DISTVERSION=	r4
 CATEGORIES=	graphics
-PKGNAMEPREFIX=	vapoursynth-
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Waifu2x (waifu2x-ncnn-vulkan) plugin for VapourSynth
