@@ -10,6 +10,8 @@ COMMENT=	Distinctly Useful Code Collection (DUCC)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_11=	ducc.o: file not recognized: File format not recognized
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR}
 
 USES=		python:3.6+
