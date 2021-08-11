@@ -1,6 +1,5 @@
 PORTNAME=	0ad
-PORTVERSION=	0.0.24b
-PORTREVISION=	7
+PORTVERSION=	0.0.25
 CATEGORIES=	games
 MASTER_SITES=	http://releases.wildfiregames.com/ \
 		SF/zero-ad/releases
@@ -68,10 +67,6 @@ post-patch:
 			-e '1441s/"execinfo",/& "ssp_nonshared",/' \
 		${WRKSRC}/build/premake/premake5.lua
 .endif
-	@${REINPLACE_CMD} 's,^\(Exec=\)/usr/local,\1${PREFIX},' \
-		${WRKSRC}/build/resources/0ad.desktop
-	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' \
-		${WRKSRC}/build/resources/0ad.sh
 
 pre-build:
 	(cd ${WRKSRC}/build/workspaces && ${SETENV} ${MAKE_ENV} ./update-workspaces.sh --bindir=${PREFIX}/bin --datadir=${DATADIR} --libdir=${PREFIX}/lib/${PORTNAME})
