@@ -1,7 +1,7 @@
 # Created by: Kirill Ponomarev <krion@FreeBSD.org>
 
 PORTNAME=	tiamat
-PORTVERSION=	7.7
+PORTVERSION=	7.10.2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,7 +22,7 @@ USES=		python:3.6+ shebangfix
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	saltstack/pop
-GL_COMMIT=	5e75fbc37c00cb891287022082c7822a3d300b9c
+GL_COMMIT=	aae63e8cc941d8fe9eef4297096eb905fce673f3
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
