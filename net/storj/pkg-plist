@@ -4,7 +4,6 @@ bin/crashcollect
 bin/inspector
 bin/metabase-orphaned-segments
 bin/metabase-verify
-bin/metainfo-loop-benchmark
 bin/metric-receiver
 bin/multinode
 bin/satellite

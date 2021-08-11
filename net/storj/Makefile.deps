@@ -6,6 +6,7 @@ GH_TUPLE=	\
 		alicebob:miniredis:v2.13.3:alicebob_miniredis/vendor/github.com/alicebob/miniredis/v2 \
 		apache:thrift:v0.12.0:apache_thrift/vendor/github.com/apache/thrift \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
+		boombuler:barcode:6c824513bacc:boombuler_barcode/vendor/github.com/boombuler/barcode \
 		btcsuite:btcutil:a53e38424cce:btcsuite_btcutil/vendor/github.com/btcsuite/btcutil \
 		calebcase:tmpfile:v1.0.2:calebcase_tmpfile/vendor/github.com/calebcase/tmpfile \
 		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
@@ -75,6 +76,7 @@ GH_TUPLE=	\
 		pelletier:go-toml:v1.9.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		pquerna:otp:v1.3.0:pquerna_otp/vendor/github.com/pquerna/otp \
 		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		segmentio:analytics-go:v3.1.0:segmentio_analytics_go/vendor/gopkg.in/segmentio/analytics-go.v3 \
 		segmentio:backo-go:23eae7c10bd3:segmentio_backo_go/vendor/github.com/segmentio/backo-go \
@@ -87,8 +89,8 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:4882a3ae3eda:storj_common/vendor/storj.io/common \
-		storj:drpc:v0.0.23:storj_drpc/vendor/storj.io/drpc \
+		storj:common:8e0feb09e92a:storj_common/vendor/storj.io/common \
+		storj:drpc:v0.0.24:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:debb1cbcbbd7:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:private:af46b647eda5:storj_private/vendor/storj.io/private \
 		storj:uplink:e2e5889614a9:storj_uplink/vendor/storj.io/uplink \
