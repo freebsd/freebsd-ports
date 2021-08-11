@@ -8,7 +8,7 @@ COMMENT=	LLVM intrinsics for SIMD on GPU
 
 LICENSE=	MIT
 
-FLAVORS=	${13 12 11 10 90 80 70:L:S/^/llvm/}
+FLAVORS=	${13 12 11:L:S/^/llvm/}
 
 BUILD_DEPENDS=	${FLAVOR}>0:devel/${FLAVOR}
 
