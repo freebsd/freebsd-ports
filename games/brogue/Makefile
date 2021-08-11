@@ -1,6 +1,6 @@
 PORTNAME=	brogue
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10
+DISTVERSION=	1.10.1
 CATEGORIES=	games
 
 MAINTAINER=	fuz@fuz.su
@@ -8,11 +8,11 @@ COMMENT=	Much-loved minimalist roguelike game (community edition)
 
 LICENSE=	AGPLv3+ CC-BY-SA-4.0
 LICENSE_COMB=	multi
-LICENSE_FILE_AGPLv3+ = ${WRKSRC}/LICENSE.txt
-LICENSE_FILE_CC-BY-SA-4.0= ${WRKSRC}/bin/assets/LICENSE.txt
+LICENSE_FILE_AGPLv3+ =	${WRKSRC}/LICENSE.txt
+LICENSE_FILE_CC-BY-SA-4.0=	${WRKSRC}/bin/assets/LICENSE.txt
 
-FLAVORS=	x11 nox11
-FLAVOR?=	${FLAVORS:[1]}
+FLAVORS=		x11 nox11
+FLAVOR?=		${FLAVORS:[1]}
 nox11_PKGNAMESUFFIX=	-nox11
 
 USES=		gmake
@@ -22,26 +22,23 @@ GH_PROJECT=	BrogueCE
 
 .if ${FLAVOR} == x11
 USES+=		sdl
-USE_SDL=	sdl2 image2
+USE_SDL=	image2 sdl2
 .endif
 
 MAKE_ARGS=	DATADIR=${DATADIR} \
-		RELEASE=YES \
-		GRAPHICS=${${FLAVOR:U} == x11:?YES:NO}
+		GRAPHICS=${${FLAVOR:U} == x11:?YES:NO} \
+		RELEASE=YES
 ALL_TARGET=	bin/brogue
 SUB_FILES=	brogue.desktop brogue.sh
-PLIST_SUB=	DISTVERSION=${DISTVERSION}
-
 PLIST_FILES=	bin/brogue \
 		libexec/brogue \
 		share/applications/brogue.desktop
-PORTDATA=	assets/LICENSE.txt \
-		assets/tiles.bin \
-		assets/icon.png \
-		assets/tiles.png \
-		keymap.txt
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
-OPTIONS_DEFINE=	DEBUG NCURSES WEBUI
+PORTDATA=	assets/LICENSE.txt assets/icon.png assets/tiles.bin \
+		assets/tiles.png keymap.txt
+
+OPTIONS_DEFINE=		DEBUG NCURSES WEBUI
 OPTIONS_DEFAULT=	NCURSES WEBUI
 DEBUG_MAKE_ARGS=	DEBUG=YES
 DEBUG_MAKE_ARGS_OFF=	DEBUG=NO
