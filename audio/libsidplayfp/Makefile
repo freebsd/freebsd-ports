@@ -1,5 +1,5 @@
 PORTNAME=	libsidplayfp
-DISTVERSION=	2.2.0
+DISTVERSION=	2.2.2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -38,7 +38,17 @@ DEBUG_CONFIGURE_ON=	--enable-debug=full
 DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_prog_HAVE_DOXYGEN=false
 
-SIDPLAYFP_SHLIB_VERSION=	6.3.19
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == "aarch64"
+CONFIGURE_ARGS+=	--with-simd=neon
+.endif
+
+.if ${ARCH} == "amd64"
+CONFIGURE_ARGS+=	--with-simd=sse2
+.endif
+
+SIDPLAYFP_SHLIB_VERSION=	6.3.21
 STILVIEW_SHLIB_VERSION=		0.0.4
 
 post-build-DOXYGEN-on:
