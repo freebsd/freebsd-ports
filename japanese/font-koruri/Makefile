@@ -1,8 +1,7 @@
 # Created by: Koichiro IWAO <meta@FreeBSD.org>
 
 PORTNAME=	koruri
-PORTVERSION=	20180915
-DISTVERSIONPREFIX=	Koruri-
+PORTVERSION=	20210720
 CATEGORIES=	japanese x11-fonts
 PKGNAMEPREFIX=	ja-font-
 
