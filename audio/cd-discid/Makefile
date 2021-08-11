@@ -6,7 +6,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://lly.org/~rcw/cd-discid/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	hcoyote@ghostar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backend utility to retrieve CDDB discid information
 
 WRKSRC=		${WRKDIR}/${PKGNAME}

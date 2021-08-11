@@ -7,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hcoyote@ghostar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for finding changes between two strings of HTML
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

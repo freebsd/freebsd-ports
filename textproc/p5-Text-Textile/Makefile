@@ -7,7 +7,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hcoyote@ghostar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl-based implementation of the Textile syntax by Dean Allen
 
 LICENSE=	ART10 GPLv1+

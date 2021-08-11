@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hcoyote@ghostar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allow other classes and objects to respond to events in yours
 
 LICENSE=	ART10 GPLv1+
