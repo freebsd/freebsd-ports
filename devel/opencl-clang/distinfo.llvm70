@@ -1,7 +1,0 @@
-TIMESTAMP = 1553516241
-SHA256 (intel-opencl-clang-v7.0.1_GH0.tar.gz) = 407800aceebebef8deaa1428d4b730a0f74329e0336a96fa1f1dd30a34b952e2
-SIZE (intel-opencl-clang-v7.0.1_GH0.tar.gz) = 49606
-SHA256 (3e753ba0cb0f.patch) = 805fbf620916e5efbfbd6c5160392ca88d43e2270e6d70539c767a6f9f6baacd
-SIZE (3e753ba0cb0f.patch) = 1211
-SHA256 (b28f74f9789f.patch) = 4a0ecba33d3b92ffa72a157330ab71aa20b93a6dede4336a03b09ae141e14057
-SIZE (b28f74f9789f.patch) = 1336
