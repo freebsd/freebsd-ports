@@ -36,6 +36,8 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e 's/lua5\.1/lua-${LUA_VER}/' \
 		${WRKSRC}/engine/SConscript
+	@${REINPLACE_CMD} -e "s/env\.has_key('prefix')/'prefix' in env/" \
+		${WRKSRC}/mrt/SConscript
 # Prevent the clash with /usr/include/semaphore.h
 	@${MV} ${WRKSRC}/sdlx/semaphore.h ${WRKSRC}/sdlx/sdlx_semaphore.h
 	@${REINPLACE_CMD} -e 's/semaphore\.h"/sdlx_&/' \
@@ -44,7 +46,7 @@ post-patch:
 pre-build:
 # Regenerate `sl08.h' after we patch `sl08.py' (patching the header itself
 # would've resulted in a larger diff and gratuitous difference with Debian)
-	cd ${WRKSRC} && ${PYTHON_CMD} engine/sl08/sl08.py > engine/sl08/sl08.h
+	cd ${WRKSRC}/engine/sl08 && ${PYTHON_CMD} sl08.py > sl08.h
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.6 \
