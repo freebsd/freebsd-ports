@@ -3,10 +3,6 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	${DISTVERSION_${FLAVOR}}
 DISTVERSION_llvm12=	12.0.0
 DISTVERSION_llvm11=	11.0.0
-DISTVERSION_llvm10=	10.0.0
-DISTVERSION_llvm90=	9.0.1-1
-DISTVERSION_llvm80=	8.0.1-3
-DISTVERSION_llvm70=	7.0.1-1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -18,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 LIB_DEPENDS=	libLLVM-${DISTVERSION:R:R}.so:devel/${FLAVOR}
 
-FLAVORS=	${12 11 10 90 80 70:L:S/^/llvm/}
+FLAVORS=	${12 11:L:S/^/llvm/}
 
 USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
@@ -36,12 +32,6 @@ _PLIST_FILES=	bin/llvm-spirv \
 		lib/libLLVMSPIRVLib.so \
 		lib/libLLVMSPIRVLib.so.${DISTVERSION:R:R} \
 		libdata/pkgconfig/LLVMSPIRVLib.pc
-.if ${FLAVOR:U:Mllvm[78]0}
-_PLIST_FILES:=	${_PLIST_FILES:N*Extensions*}
-.endif
-.if ${FLAVOR:U:Mllvm70}
-_PLIST_FILES:=	${_PLIST_FILES:N*Opts*}
-.endif
 PLIST_FILES=	${_PLIST_FILES:S,^,${FLAVOR}/,}
 
 post-patch:
