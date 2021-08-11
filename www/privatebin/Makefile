@@ -1,7 +1,7 @@
 # Created by: Stefan Esser <se@FreeBSD.org>
 
 PORTNAME=	privatebin
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	www security
 
 MAINTAINER=	dvl@FreeBSD.org
