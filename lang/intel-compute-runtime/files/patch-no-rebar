@@ -34,7 +34,7 @@ level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:204:55: error: use of un
     this->preadFunction(fdConfig, configMemory.get(), PCI_CFG_SPACE_EXP_SIZE, 0);
                                                       ^
 
---- level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp.orig	2021-07-27 12:47:48 UTC
+--- level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp.orig	2021-08-11 16:12:33 UTC
 +++ level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp
 @@ -12,7 +12,9 @@
  
@@ -46,23 +46,39 @@ level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:204:55: error: use of un
  
  namespace L0 {
  
-@@ -154,6 +156,7 @@ ze_result_t LinuxPciImp::initializeBarProperties(std::
+@@ -153,6 +155,7 @@ ze_result_t LinuxPciImp::initializeBarProperties(std::
+ }
  
- // Parse PCIe configuration space to see if resizable Bar is supported
- bool LinuxPciImp::resizableBarSupported() {
+ uint32_t LinuxPciImp::getRebarCapabilityPos() {
 +#ifdef __linux__
      uint32_t pos = PCI_CFG_SPACE_SIZE;
      uint32_t header = 0;
  
-@@ -180,6 +183,7 @@ bool LinuxPciImp::resizableBarSupported() {
+@@ -179,6 +182,7 @@ uint32_t LinuxPciImp::getRebarCapabilityPos() {
          }
          header = getDwordFromConfig(pos);
      }
 +#endif
-     return false;
+     return 0;
  }
  
-@@ -192,6 +196,7 @@ ze_result_t LinuxPciImp::getState(zes_pci_state_t *sta
+@@ -197,6 +201,7 @@ bool LinuxPciImp::resizableBarEnabled(uint32_t barInde
+     if (!rebarCapabilityPos) {
+         return false;
+     }
++#ifdef __linux__
+ 
+     // As per PCI spec, resizable BAR's capability structure's 52 byte length could be represented as:
+     // --------------------------------------------------------------
+@@ -249,6 +254,7 @@ bool LinuxPciImp::resizableBarEnabled(uint32_t barInde
+ 
+     // If current size is equal to larget possible BAR size, it indicates resizable BAR is enabled.
+     return (currentSize == largestPossibleBarSize);
++#endif
+ }
+ 
+ ze_result_t LinuxPciImp::getState(zes_pci_state_t *state) {
+@@ -256,6 +262,7 @@ ze_result_t LinuxPciImp::getState(zes_pci_state_t *sta
  }
  
  void LinuxPciImp::pciExtendedConfigRead() {
@@ -70,7 +86,7 @@ level_zero/tools/source/sysman/pci/linux/os_pci_imp.cpp:204:55: error: use of un
      std::string pciConfigNode;
      pSysfsAccess->getRealPath("device/config", pciConfigNode);
      int fdConfig = -1;
-@@ -203,6 +208,7 @@ void LinuxPciImp::pciExtendedConfigRead() {
+@@ -267,6 +274,7 @@ void LinuxPciImp::pciExtendedConfigRead() {
      memset(configMemory.get(), 0, PCI_CFG_SPACE_EXP_SIZE);
      this->preadFunction(fdConfig, configMemory.get(), PCI_CFG_SPACE_EXP_SIZE, 0);
      this->closeFunction(fdConfig);
