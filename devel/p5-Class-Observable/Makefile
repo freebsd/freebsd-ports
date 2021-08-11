@@ -1,13 +1,12 @@
 # Created by: Travis Campbell <hcoyote@ghostar.org>
 
 PORTNAME=	Class-Observable
-PORTVERSION=	1.04
-PORTREVISION=	1
+PORTVERSION=	2.000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Allow other classes and objects to respond to events in yours
 
 LICENSE=	ART10 GPLv1+
