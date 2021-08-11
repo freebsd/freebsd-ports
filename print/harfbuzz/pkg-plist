@@ -149,6 +149,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-set.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-shape-plan.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-shape.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-subset.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-unicode.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-uniscribe.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-version.html
@@ -185,6 +186,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/shaping-plans-and-caching.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/shaping-shaper-selection.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/style.css
+%%DOCS%%share/gtk-doc/html/harfbuzz/subset-api.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/terminology.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/text-runs.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/the-distinction-between-levels-0-and-1.html
