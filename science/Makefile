@@ -336,6 +336,7 @@
     SUBDIR += scidavis
     SUBDIR += segyio
     SUBDIR += shelxle
+    SUBDIR += siconos
     SUBDIR += siesta
     SUBDIR += sigrok-cli
     SUBDIR += sigrok-firmware
