@@ -6402,6 +6402,7 @@
     SUBDIR += rubygem-middleware
     SUBDIR += rubygem-mini_histogram
     SUBDIR += rubygem-mini_portile2
+    SUBDIR += rubygem-mini_portile2-25
     SUBDIR += rubygem-minitest
     SUBDIR += rubygem-mixlib-archive
     SUBDIR += rubygem-mixlib-authentication

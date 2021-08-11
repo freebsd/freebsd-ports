@@ -2,6 +2,7 @@
 
 PORTNAME=	ruby-magic
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	File Magic in ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-mini_portile2>=2.5.0<2.6:devel/rubygem-mini_portile2
+RUN_DEPENDS=	rubygem-mini_portile2-25>=2.5.0<2.6:devel/rubygem-mini_portile2-25
 
 USES=		gem
 USE_RUBY=	yes
