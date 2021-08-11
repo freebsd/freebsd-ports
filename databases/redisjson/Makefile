@@ -108,6 +108,6 @@ WRKSRC=		${WRKDIR}/RedisJSON-1ca78bc
 PLIST_FILES=	lib/librejson.so
 
 do-install:
-	${INSTALL_LIB} ${WRKDIR}//target/release/librejson.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKDIR}/target/release/librejson.so ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
