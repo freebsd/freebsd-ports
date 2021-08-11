@@ -2,6 +2,7 @@ PORTNAME=	compute-runtime
 DISTVERSION=	21.37.20939
 CATEGORIES=	lang
 PKGNAMEPREFIX=	intel-
+PKGNAMESUFFIX=	-${FLAVOR}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	aa5a39a2db79.patch:-p1 # https://github.com/intel/compute-runtime/pull/361
@@ -15,8 +16,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
 
-LIB_DEPENDS=	libigc.so:devel/intel-graphics-compiler \
+LIB_DEPENDS=	libigc.so:devel/intel-graphics-compiler@${FLAVOR} \
 		libigdgmm.so:multimedia/gmmlib
+
+FLAVORS=	${12 11:L:S/^/llvm/}
+
+CONFLICTS_INSTALL=	${PORTNAME}-*
 
 USES=		cmake compiler:c++17-lang localbase:ldflags pkgconfig
 USE_GITHUB=	yes
