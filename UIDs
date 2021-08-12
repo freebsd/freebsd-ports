@@ -397,7 +397,7 @@ callweaver:*:444:444::0:0:Callweaver account:/var/lib/callweaver:/usr/sbin/nolog
 ecartis:*:450:450::0:0:Ecartis Listserver:/usr/local/ecartis:/usr/sbin/nologin
 # free: 451
 # free: 452
-# free: 453
+yadifa:*:453:453::0:0:Yadifa DNS Server:/nonexistent:/usr/sbin/nologin
 # free: 454
 inadyn:*:455:455::0:0:inadyn user:/nonexistent:/usr/sbin/nologin
 # free: 456

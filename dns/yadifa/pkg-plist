@@ -35,8 +35,8 @@ include/dnscore/debug_config.h
 include/dnscore/digest.h
 include/dnscore/dns-udp.h
 include/dnscore/dns_resource_record.h
-include/dnscore/dnscore-config-features.h
 include/dnscore/dnscore.h
+include/dnscore/dnscore-release-date.h
 include/dnscore/dnsformat.h
 include/dnscore/dnskey-keyring.h
 include/dnscore/dnskey-signature.h
@@ -148,6 +148,7 @@ include/dnscore/zone_reader.h
 include/dnscore/zone_reader_axfr.h
 include/dnscore/zone_reader_text.h
 include/dnscore/zonefile_reader.h
+include/dnscore-config-features.h
 include/dnsdb/avl.h
 include/dnsdb/btree.h
 include/dnsdb/chain-replay.h
@@ -189,7 +190,6 @@ include/dnsdb/nsec_collection.h
 include/dnsdb/nsec_common.h
 include/dnsdb/rrsig.h
 include/dnsdb/xfr_copy.h
-include/dnsdb/zdb-config-features.h
 include/dnsdb/zdb-lock.h
 include/dnsdb/zdb-packed-ttlrdata.h
 include/dnsdb/zdb-zone-answer-axfr.h
@@ -225,9 +225,10 @@ include/dnsdb/zdb_zone_write.h
 include/dnslg/config-load.h
 include/dnslg/config-resolver.h
 include/dnslg/dns.h
-include/dnslg/dnslg-config-features.h
 include/dnslg/resolv-conf.h
 include/dnslg/resolv.h
+include/dnslg-config-features.h
+include/zdb-config-features.h
 lib/libdnscore.a
 lib/libdnsdb.a
 lib/libdnslg.a
@@ -243,8 +244,8 @@ sbin/yakeyrolld
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keys.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifa.bash_completion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifa.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad-master.conf.example
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad-slave.conf.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad-primary.conf.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad-secondary.conf.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.bash_completion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.init
@@ -262,12 +263,14 @@ sbin/yakeyrolld
 /var/yadifa/masters/localhost.zone
 /var/yadifa/masters/localhost6.zone
 /var/yadifa/masters/somedomain.eu.zone
-@dir /var/log/yadifa
-@dir /var/log/yadifad
-@dir /var/log/yakeyrolld
-@dir /var/plans
-@dir /var/yadifa
-@dir /var/yadifa/keys
-@dir /var/yadifa/masters
-@dir /var/yadifa/slaves
-@dir /var/yadifa/xfr
+@dir /var/log
+@dir(%%USERS%%,%%GROUPS%%,750) /var/log/yadifa
+@dir(%%USERS%%,%%GROUPS%%,750) /var/log/yadifad
+@dir(%%USERS%%,%%GROUPS%%,750) /var/log/yakeyrolld
+@dir(%%USERS%%,%%GROUPS%%,750) /var/plans
+@dir(%%USERS%%,%%GROUPS%%,750) /var/yadifa
+@dir(%%USERS%%,%%GROUPS%%,750) /var/yadifa/keys
+@dir(%%USERS%%,%%GROUPS%%,750) /var/yadifa/masters
+@dir(%%USERS%%,%%GROUPS%%,750) /var/yadifa/slaves
+@dir(%%USERS%%,%%GROUPS%%,750) /var/yadifa/xfr
+@postexec chown -R %%USERS%%:%%GROUPS%% /var/yadifa
