@@ -1,5 +1,6 @@
 PORTNAME=	siril
 DISTVERSION=	0.99.10.1
+PORTREVISION=	1
 CATEGORIES=	astro graphics
 MASTER_SITES=	https://free-astro.org/download/
 
@@ -15,7 +16,6 @@ BUILD_DEPENDS=	cmake:devel/cmake
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libcfitsio.so:astro/cfitsio \
 		libconfig.so:devel/libconfig \
-		libcurl.so:ftp/curl \
 		libexiv2.so:graphics/exiv2 \
 		libffms2.so:multimedia/ffms2 \
 		libfftw3.so:math/fftw3 \
@@ -41,9 +41,10 @@ INSTALLS_ICONS=	yes
 
 BINARY_ALIAS=	git=false
 
-OPTIONS_DEFINE=		OPENMP
-OPTIONS_DEFAULT=	OPENMP
+OPTIONS_DEFINE=		CURL OPENMP
+OPTIONS_DEFAULT=	CURL OPENMP
 
-OPENMP_MESON_OFF=	-Dopenmp=false
+CURL_MESON_YES=		enable-libcurl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 .include <bsd.port.mk>
