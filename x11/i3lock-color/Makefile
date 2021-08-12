@@ -1,3 +1,5 @@
+# Created by: Jacob House <jacob@jwfh.ca>
+
 PORTNAME=	i3lock-color
 DISTVERSION=	2.13.c.4
 CATEGORIES=	x11
@@ -8,11 +10,9 @@ COMMENT=	Enhanced i3lock with higher capacity
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/pam_helper:security/pam_helper
-LIB_DEPENDS=	libcairo.so:graphics/cairo \
-		libev.so:devel/libev \
+LIB_DEPENDS=	libev.so:devel/libev \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libjpeg.so:graphics/jpeg-turbo \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxcb-util.so:x11/xcb-util \
@@ -20,11 +20,12 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxkbfile.so:x11/libxkbfile
 
-USES=		autoreconf gmake iconv jpeg localbase pkgconfig tar:bzip2 xorg
+USES=		autoreconf gmake gnome iconv jpeg localbase pkgconfig tar:bzip2 xorg
 USE_CSTD=	c99
 USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Raymo111
+USE_GNOME=	cairo
 USE_XORG=	x11 xcb xext xinerama xorgproto xrandr xt
 
 GNU_CONFIGURE=	yes
@@ -43,8 +44,17 @@ INSTALL_WRKSRC=	${WRKSRC}/${CONFIGURE_TARGET}
 PLIST_FILES=	"@(,,4755) bin/i3lock" \
 		man/man1/i3lock.1.gz
 
+OPTIONS_DEFINE=	DOCS
+
+DOC_FILES=	CHANGELOG README.md
+DOCS_PLIST_FILES=	${DOC_FILES:S|^|${DOCSDIR_REL}/|}
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/i3lock
 	@${RM} ${STAGEDIR}${PREFIX}/etc/pam.d/i3lock
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
