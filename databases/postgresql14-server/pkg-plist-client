@@ -373,6 +373,7 @@ include/postgresql/server/executor/nodeIndexscan.h
 include/postgresql/server/executor/nodeLimit.h
 include/postgresql/server/executor/nodeLockRows.h
 include/postgresql/server/executor/nodeMaterial.h
+include/postgresql/server/executor/nodeMemoize.h
 include/postgresql/server/executor/nodeMergeAppend.h
 include/postgresql/server/executor/nodeMergejoin.h
 include/postgresql/server/executor/nodeModifyTable.h
@@ -381,7 +382,6 @@ include/postgresql/server/executor/nodeNestloop.h
 include/postgresql/server/executor/nodeProjectSet.h
 include/postgresql/server/executor/nodeRecursiveunion.h
 include/postgresql/server/executor/nodeResult.h
-include/postgresql/server/executor/nodeResultCache.h
 include/postgresql/server/executor/nodeSamplescan.h
 include/postgresql/server/executor/nodeSeqscan.h
 include/postgresql/server/executor/nodeSetOp.h

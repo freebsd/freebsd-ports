@@ -320,7 +320,7 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeProjectSet.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeRecursiveunion.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeResult.bc
-%%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeResultCache.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeMemoize.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeSamplescan.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeSeqscan.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeSetOp.bc
@@ -791,6 +791,8 @@ lib/postgresql/utf8_and_win.so
 %%NLS%%share/locale/el/LC_MESSAGES/pg_checksums-14.mo
 %%NLS%%share/locale/el/LC_MESSAGES/pg_controldata-14.mo
 %%NLS%%share/locale/el/LC_MESSAGES/pg_ctl-14.mo
+%%NLS%%share/locale/el/LC_MESSAGES/pg_resetwal-14.mo
+%%NLS%%share/locale/el/LC_MESSAGES/pg_rewind-14.mo
 %%NLS%%share/locale/el/LC_MESSAGES/pg_test_fsync-14.mo
 %%NLS%%share/locale/el/LC_MESSAGES/pg_test_timing-14.mo
 %%NLS%%share/locale/el/LC_MESSAGES/pg_waldump-14.mo

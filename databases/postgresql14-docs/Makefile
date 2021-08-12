@@ -15,7 +15,7 @@ DISTV=		${DISTVERSION:R}
 SLAVE_ONLY=	YES
 COMPONENT=	-docs
 
-PGDOCSREL?=	${DOCSDIR_REL}/release-${PGSQL_VER}
+PGDOCSREL?=	${DOCSDIR_REL}/release-${WANT_PGSQL_VER}
 PGDOCSDIR?=	${PREFIX}/${PGDOCSREL}
 
 sgmldir=	${LOCALBASE}/share/sgml
@@ -39,7 +39,5 @@ do-install:
 
 post-install:
 	@(cd ${STAGEDIR}${PREFIX} && ${FIND} ${PGDOCSREL} -type f) >> ${TMPPLIST}
-	@(cd ${STAGEDIR}${PREFIX} && ${FIND} ${PGDOCSREL} -type d) | ${SORT} -r | \
-	     ${SED} 's,.*,@unexec rmdir %D/& 2>/dev/null || true,' >>${TMPPLIST}
 
 .include "${MASTERDIR}/Makefile"

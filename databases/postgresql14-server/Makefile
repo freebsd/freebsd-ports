@@ -1,10 +1,10 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 
 PORTNAME?=	postgresql
-DISTVERSION?=	14beta2
+DISTVERSION?=	14beta3
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
@@ -256,8 +256,8 @@ LLVM_PORT_SUFFIX=	${COMPILER_VERSION:C/.$//}
 # sync LLVM to the preferred compiler if possible
 # or else use a lower version compiler that is compatible
 .if ${COMPILER_VERSION} > ${LLVM_DEFAULT_VERSION}
-# Highest LLVM version in ports:
-.  if ${LLVM_PORT_SUFFIX} <= 11
+# LLVM versions in ports are, in order, 70, 80 90, 10, 11, 12... where 10 > 90. [sic]
+.  if ${LLVM_PORT_SUFFIX} < 70
 PG_LLVM_VERSION=${LLVM_PORT_SUFFIX}
 PG_COMPILER_VERSION=${LLVM_PORT_SUFFIX}
 .  else
@@ -288,7 +288,7 @@ pre-build:
 do-build:
 	@ cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} symlinks
 	@ for dir in ${BUILD_DIRS}; do \
-		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS}; \
+		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ; \
 	done
 
 .  if exists(${FILESDIR}/pkg-message${COMPONENT}.in)
