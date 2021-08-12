@@ -1,6 +1,7 @@
 PORTNAME=	grafana
 DISTVERSION=	8.0.5
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES+=	https://dl.grafana.com/oss/release/:public \
 		https://gitea.com/xorm/builder/archive/:builder \
