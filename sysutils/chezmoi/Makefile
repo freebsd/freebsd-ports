@@ -2,7 +2,7 @@
 
 PORTNAME=	chezmoi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.3
+DISTVERSION=	2.1.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	samir@noir.im
@@ -104,7 +104,7 @@ GH_TUPLE=	Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Maste
 		twpayne:go-xdg:v6.0.0:twpayne_go_xdg_v6/vendor/github.com/twpayne/go-xdg/v6 \
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.7.0:uber_go_multierr/vendor/go.uber.org/multierr \
-		xanzy:ssh-agent:v0.3.0:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
+		xanzy:ssh-agent:v0.3.1:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
 		yuin:goldmark-emoji:v1.0.1:yuin_goldmark_emoji/vendor/github.com/yuin/goldmark-emoji \
 		yuin:goldmark:v1.4.0:yuin_goldmark/vendor/github.com/yuin/goldmark \
 		zalando:go-keyring:v0.1.1:zalando_go_keyring/vendor/github.com/zalando/go-keyring \
