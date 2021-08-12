@@ -1,6 +1,6 @@
 PORTNAME=	siconos
 DISTVERSION=	4.4.0.rc3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +22,8 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DFREEBSD_PYTHON_VER=${PYTHON_VER}
+
+CFLAGS+=	-DCLOCKTIME -DCLOCKS_PER_SEC=128 # workaround for 'Undefined symbol "ftime"', see https://github.com/siconos/siconos/issues/411
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
