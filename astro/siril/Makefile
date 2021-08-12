@@ -1,6 +1,6 @@
 PORTNAME=	siril
 DISTVERSION=	0.99.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro graphics
 MASTER_SITES=	https://free-astro.org/download/
 
@@ -43,6 +43,8 @@ BINARY_ALIAS=	git=false
 
 OPTIONS_DEFINE=		CURL OPENMP
 OPTIONS_DEFAULT=	CURL OPENMP
+
+OPENMP_MESON_OFF=	-Dopenmp=false
 
 CURL_MESON_YES=		enable-libcurl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
