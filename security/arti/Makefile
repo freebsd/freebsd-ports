@@ -1,5 +1,5 @@
 PORTNAME=	arti
-DISTVERSION=	0.0.0.20210720
+DISTVERSION=	0.0.0.20210812
 CATEGORIES=	security
 
 MAINTAINER=	cs@FreeBSD.org
@@ -11,7 +11,7 @@ USES=		cargo ssl sqlite
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.torproject.org
 GL_ACCOUNT=	tpo/core
-GL_COMMIT=	888296cca6b4bd33d776d44274d92cc41c1d4bba
+GL_COMMIT=	d2172b518d40f56d242d6803c16613a33af52e99
 CARGO_INSTALL=	no
 CARGO_CRATES=	adler-1.0.2 \
 		aes-0.7.4 \
@@ -24,23 +24,26 @@ CARGO_CRATES=	adler-1.0.2 \
 		arrayvec-0.5.2 \
 		async-channel-1.6.1 \
 		async-compression-0.3.8 \
+		async-ctrlc-1.2.0 \
 		async-executor-1.4.1 \
 		async-global-executor-2.0.2 \
 		async-io-1.6.0 \
 		async-lock-2.4.0 \
 		async-mutex-1.4.0 \
 		async-native-tls-0.3.3 \
-		async-process-1.1.0 \
+		async-process-1.2.0 \
 		async-std-1.9.0 \
 		async-task-4.0.3 \
-		async-trait-0.1.50 \
+		async-trait-0.1.51 \
 		async_executors-0.4.2 \
 		asynchronous-codec-0.6.0 \
+		atomic-0.5.0 \
 		atomic-waker-1.0.0 \
 		autocfg-0.1.7 \
 		autocfg-1.0.1 \
 		base64-0.13.0 \
-		bitflags-1.2.1 \
+		base64ct-1.0.0 \
+		bitflags-1.3.1 \
 		blanket-0.2.0 \
 		block-buffer-0.9.0 \
 		block-padding-0.2.1 \
@@ -57,16 +60,27 @@ CARGO_CRATES=	adler-1.0.2 \
 		cipher-0.3.0 \
 		concurrent-queue-1.2.2 \
 		config-0.11.0 \
+		const-oid-0.6.0 \
 		convert_case-0.4.0 \
 		core-foundation-0.9.1 \
 		core-foundation-sys-0.8.2 \
 		cpufeatures-0.1.5 \
 		crc32fast-1.2.1 \
+		crossbeam-queue-0.3.2 \
 		crossbeam-utils-0.8.5 \
+		crypto-bigint-0.2.2 \
 		crypto-mac-0.11.1 \
 		ctor-0.1.20 \
 		ctr-0.7.0 \
-		curve25519-dalek-3.1.0 \
+		ctrlc-3.2.0 \
+		curve25519-dalek-3.2.0 \
+		darling-0.12.4 \
+		darling_core-0.12.4 \
+		darling_macro-0.12.4 \
+		der-0.4.1 \
+		derive_builder-0.10.2 \
+		derive_builder_core-0.10.2 \
+		derive_builder_macro-0.10.2 \
 		derive_more-0.99.16 \
 		digest-0.9.0 \
 		directories-3.0.2 \
@@ -74,7 +88,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		dirs-next-2.0.0 \
 		dirs-sys-0.3.6 \
 		dirs-sys-next-0.1.2 \
-		ed25519-1.1.1 \
+		ed25519-1.2.0 \
 		ed25519-dalek-1.0.1 \
 		either-1.6.1 \
 		event-listener-2.5.1 \
@@ -86,20 +100,19 @@ CARGO_CRATES=	adler-1.0.2 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.0.1 \
-		fslock-0.1.6 \
-		fuchsia-cprng-0.1.1 \
-		futures-0.3.15 \
+		fslock-0.1.7 \
+		futures-0.3.16 \
 		futures-await-test-0.3.0 \
 		futures-await-test-macro-0.3.0 \
-		futures-channel-0.3.15 \
-		futures-core-0.3.15 \
-		futures-executor-0.3.15 \
-		futures-io-0.3.15 \
+		futures-channel-0.3.16 \
+		futures-core-0.3.16 \
+		futures-executor-0.3.16 \
+		futures-io-0.3.16 \
 		futures-lite-1.12.0 \
-		futures-macro-0.3.15 \
-		futures-sink-0.3.15 \
-		futures-task-0.3.15 \
-		futures-util-0.3.15 \
+		futures-macro-0.3.16 \
+		futures-sink-0.3.16 \
+		futures-task-0.3.16 \
+		futures-util-0.3.16 \
 		generic-array-0.14.4 \
 		getrandom-0.1.16 \
 		getrandom-0.2.3 \
@@ -117,29 +130,32 @@ CARGO_CRATES=	adler-1.0.2 \
 		httpdate-1.0.1 \
 		humantime-2.1.0 \
 		humantime-serde-1.0.1 \
+		ident_case-1.0.1 \
 		idna-0.2.3 \
 		instant-0.1.10 \
 		itertools-0.10.1 \
 		itoa-0.4.7 \
-		jobserver-0.1.22 \
-		js-sys-0.3.51 \
+		jobserver-0.1.23 \
+		js-sys-0.3.52 \
 		keccak-0.1.0 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
 		lexical-core-0.7.6 \
-		libc-0.2.98 \
+		libc-0.2.99 \
 		libm-0.2.1 \
 		libsqlite3-sys-0.22.2 \
 		log-0.4.14 \
 		lzma-sys-0.1.17 \
-		matches-0.1.8 \
+		matches-0.1.9 \
 		memchr-2.4.0 \
-		memmap-0.7.0 \
+		memmap2-0.3.0 \
+		memoffset-0.6.4 \
 		merlin-2.0.1 \
 		miniz_oxide-0.4.4 \
 		mio-0.7.13 \
 		miow-0.3.7 \
-		native-tls-0.2.7 \
+		native-tls-0.2.8 \
+		nix-0.22.0 \
 		nom-5.1.2 \
 		ntapi-0.3.6 \
 		num-bigint-0.4.0 \
@@ -154,56 +170,56 @@ CARGO_CRATES=	adler-1.0.2 \
 		openssl-probe-0.1.4 \
 		openssl-sys-0.9.65 \
 		parking-2.0.0 \
-		pem-0.8.3 \
+		pem-rfc7468-0.2.0 \
 		percent-encoding-2.1.0 \
 		pest-2.1.3 \
 		phf-0.9.0 \
-		phf_generator-0.9.0 \
+		phf_generator-0.9.1 \
 		phf_macros-0.9.0 \
 		phf_shared-0.9.0 \
-		pin-project-1.0.7 \
-		pin-project-internal-1.0.7 \
+		pin-project-1.0.8 \
+		pin-project-internal-1.0.8 \
 		pin-project-lite-0.2.7 \
 		pin-utils-0.1.0 \
+		pkcs1-0.2.3 \
+		pkcs8-0.7.5 \
 		pkg-config-0.3.19 \
 		polling-2.1.0 \
+		postage-0.4.1 \
 		ppv-lite86-0.2.10 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
-		proc-macro2-1.0.27 \
+		proc-macro2-1.0.28 \
 		quote-1.0.9 \
-		rand-0.4.6 \
 		rand-0.7.3 \
 		rand-0.8.4 \
 		rand_chacha-0.2.2 \
 		rand_chacha-0.3.1 \
-		rand_core-0.3.1 \
-		rand_core-0.4.2 \
 		rand_core-0.5.1 \
 		rand_core-0.6.3 \
 		rand_hc-0.2.0 \
 		rand_hc-0.3.1 \
-		rdrand-0.4.0 \
 		redox_syscall-0.1.57 \
-		redox_syscall-0.2.9 \
+		redox_syscall-0.2.10 \
 		redox_users-0.4.0 \
 		regex-1.5.4 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
-		rsa-0.4.0 \
+		rsa-0.5.0 \
 		rusqlite-0.25.3 \
 		rustc_version-0.3.3 \
 		rustc_version-0.4.0 \
 		ryu-1.0.5 \
+		sanitize-filename-0.3.0 \
 		schannel-0.1.19 \
 		security-framework-2.3.1 \
 		security-framework-sys-2.3.0 \
 		semver-0.11.0 \
-		semver-1.0.3 \
+		semver-1.0.4 \
 		semver-parser-0.10.2 \
-		serde-1.0.126 \
-		serde_derive-1.0.126 \
-		serde_test-1.0.126 \
+		serde-1.0.127 \
+		serde_derive-1.0.127 \
+		serde_test-1.0.127 \
 		sha-1-0.9.7 \
 		sha2-0.9.5 \
 		sha3-0.9.1 \
@@ -213,24 +229,25 @@ CARGO_CRATES=	adler-1.0.2 \
 		signature-1.3.1 \
 		simple-logging-2.0.2 \
 		simple_asn1-0.5.4 \
-		siphasher-0.3.5 \
-		slab-0.4.3 \
+		siphasher-0.3.6 \
+		slab-0.4.4 \
 		smallvec-1.6.1 \
-		socket2-0.4.0 \
+		socket2-0.4.1 \
 		spin-0.5.2 \
+		spki-0.4.0 \
 		static_assertions-1.1.0 \
+		strsim-0.10.0 \
 		subtle-2.4.1 \
-		syn-1.0.73 \
+		syn-1.0.74 \
 		synstructure-0.12.5 \
-		tempdir-0.3.7 \
 		tempfile-3.2.0 \
 		thiserror-1.0.26 \
 		thiserror-impl-1.0.26 \
 		thread-id-3.3.0 \
 		time-0.1.44 \
-		tinyvec-1.3.0 \
+		tinyvec-1.3.1 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.8.2 \
+		tokio-1.10.0 \
 		tokio-native-tls-0.3.0 \
 		tokio-util-0.6.7 \
 		toml-0.5.8 \
@@ -247,14 +264,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		waker-fn-1.1.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.74 \
-		wasm-bindgen-backend-0.2.74 \
-		wasm-bindgen-futures-0.4.24 \
-		wasm-bindgen-macro-0.2.74 \
-		wasm-bindgen-macro-support-0.2.74 \
-		wasm-bindgen-shared-0.2.74 \
+		wasm-bindgen-0.2.75 \
+		wasm-bindgen-backend-0.2.75 \
+		wasm-bindgen-futures-0.4.25 \
+		wasm-bindgen-macro-0.2.75 \
+		wasm-bindgen-macro-support-0.2.75 \
+		wasm-bindgen-shared-0.2.75 \
 		weak-table-0.3.0 \
-		web-sys-0.3.51 \
+		web-sys-0.3.52 \
 		wepoll-ffi-0.1.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
