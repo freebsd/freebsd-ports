@@ -1,3 +1,46 @@
+  <vuln vid="b471130b-fb86-11eb-87db-6cc21735f730">
+    <topic>PostgreSQL server -- Memory disclosure in certain queries</topic>
+    <affects>
+      <package>
+	<name>postgresql13-server</name>
+	<range><lt>13.4</lt></range>
+      </package>
+      <package>
+	<name>postgresql12-server</name>
+	<range><lt>12.8</lt></range>
+      </package>
+      <package>
+	<name>postgresql11-server</name>
+	<range><lt>11.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PostgreSQL Project reports:</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2021-3677/">
+	  <p>
+	   A purpose-crafted query can read arbitrary bytes of
+	   server memory. In the default configuration, any
+	   authenticated database user can complete this attack at
+	   will. The attack does not require the ability to create
+	   objects. If server settings include
+	   max_worker_processes=0, the known versions of this
+	   attack are infeasible. However, undiscovered variants of
+	   the attack may be independent of that setting.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-3677</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2021-3677/</url>
+    </references>
+    <dates>
+      <discovery>2021-08-12</discovery>
+      <entry>2021-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e80073d7-f8ba-11eb-b141-589cfc007716">
     <topic>xtrlock -- xtrlock does not block multitouch events</topic>
     <affects>
