@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.10
+DISTVERSION=	2.11.11
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	kai@FreeBSD.org
@@ -22,7 +22,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj32-django-tables2
 # - www/py-dj32-djangorestframework (in conjunction with www/py-dj32-drf-yasg)
 #
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2.5<3.3:www/py-django32@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2.6<3.3:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-cacheops>=6.0<7.0:www/py-dj32-django-cacheops@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-cors-headers>=3.7.0<3.8:www/py-dj32-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj32-django-debug-toolbar>=3.2.1<4:www/py-dj32-django-debug-toolbar@${PY_FLAVOR} \
