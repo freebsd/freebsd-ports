@@ -1,0 +1,7 @@
+CADO-NFS is a complete implementation in C/C++ of the Number Field Sieve (NFS)
+algorithm for factoring integers and computing discrete logarithms in finite
+fields. It consists in various programs corresponding to all the phases of the
+algorithm, and a general script that runs them, possibly in parallel over a
+network of computers.
+
+WWW: https://cado-nfs.gitlabpages.inria.fr/

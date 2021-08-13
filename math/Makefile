@@ -175,6 +175,7 @@
     SUBDIR += btor2tools
     SUBDIR += cadabra2
     SUBDIR += cadical
+    SUBDIR += cado-nfs
     SUBDIR += calc
     SUBDIR += calcoo
     SUBDIR += cantor
