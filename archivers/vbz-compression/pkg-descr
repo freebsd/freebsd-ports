@@ -1,0 +1,10 @@
+VBZ Compression uses variable byte integer encoding to compress Oxford
+Nanopore signal data.
+
+The performance of VBZ is achieved by taking advantage of the properties of the
+raw signal and therefore is most effective when applied to the signal dataset.
+Other datasets you may have in your Fast5 files will not be able to take
+advantage of the default VBZ settings for compression. VBZ will be used as the
+default compression scheme in a future release of MinKNOW.
+
+WWW: https://github.com/nanoporetech/vbz_compression

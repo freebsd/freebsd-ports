@@ -1,0 +1,37 @@
+--- CMakeLists.txt.orig	2020-06-19 15:45:38 UTC
++++ CMakeLists.txt
+@@ -139,34 +139,6 @@ find_package(HDF5 1.8.16)
+ find_package(zstd 1.3.1 REQUIRED)
+ find_package(Sanitizers)
+ 
+-get_filename_component(STREAMVBYTE_SOURCE_DIR
+-    third_party/streamvbyte
+-    ABSOLUTE
+-)
+-set(STREAMVBYTE_INSTALL_DIR "${CMAKE_BINARY_DIR}/streamvbyte_lib/")
+-set(STREAMVBYTE_PREFIX ${CMAKE_BINARY_DIR}/streamvbyte)
+-set(STREAMVBYTE_STATIC_LIB_NAME ${CMAKE_STATIC_LIBRARY_PREFIX}streamvbyte_static${CMAKE_STATIC_LIBRARY_SUFFIX})
+-set(STREAMVBYTE_STATIC_LIB_SUBDIR ".")
+-get_property(is_multi_config GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
+-if (is_multi_config)
+-    set(STREAMVBYTE_STATIC_LIB_SUBDIR "$<CONFIG>")
+-endif()
+-ExternalProject_Add(
+-    streamvbyte
+-    SOURCE_DIR ${STREAMVBYTE_SOURCE_DIR}
+-    UPDATE_DISCONNECTED TRUE
+-    PREFIX ${STREAMVBYTE_PREFIX}
+-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${STREAMVBYTE_INSTALL_DIR} -DSTREAMVBYTE_DISABLE_NATIVE=ON -DSTD_FLAGS="-std=c99"
+-    # We need to tell CMake about libraries we will link to, otherwise some generators (eg: Ninja)
+-    # complain about how knowing how to build libstreamvbyte_static.a, for example.
+-    # Ideally, we'd set a hypothetical INSTALL_BYPRODUCTS, and link to the installed file, but that
+-    # doesn't seem to be an option.
+-    BUILD_BYPRODUCTS "<BINARY_DIR>/${STREAMVBYTE_STATIC_LIB_NAME}"
+-)
+-ExternalProject_Get_Property(streamvbyte BINARY_DIR)
+-set(STREAMVBYTE_STATIC_LIB "${BINARY_DIR}/${STREAMVBYTE_STATIC_LIB_SUBDIR}/${STREAMVBYTE_STATIC_LIB_NAME}")
+-
+-
+ ########################################################################
+ #
+ # Warnings

@@ -1,0 +1,15 @@
+--- vbz/CMakeLists.txt.orig	2020-06-19 15:45:38 UTC
++++ vbz/CMakeLists.txt
+@@ -25,12 +25,6 @@ target_include_directories(vbz
+         ${STREAMVBYTE_INSTALL_DIR}/include
+ )
+ 
+-# This explicit dependency is required to make sure the header files are installed into the right
+-# location before we try building against them.
+-add_dependencies(vbz
+-    streamvbyte
+-)
+-
+ if (WIN32 OR APPLE OR "${CMAKE_SYSTEM_PROCESSOR}" MATCHES "x86_64")
+     if(NOT MSVC)
+         target_compile_options(vbz PRIVATE -mssse3)
