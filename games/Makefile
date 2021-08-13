@@ -486,6 +486,7 @@
     SUBDIR += libretro-beetle_pce_fast
     SUBDIR += libretro-beetle_pcfx
     SUBDIR += libretro-beetle_psx
+    SUBDIR += libretro-beetle_saturn
     SUBDIR += libretro-beetle_supergrafx
     SUBDIR += libretro-beetle_vb
     SUBDIR += libretro-beetle_wswan
