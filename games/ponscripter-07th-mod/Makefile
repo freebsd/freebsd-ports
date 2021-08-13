@@ -1,8 +1,8 @@
-PORTNAME=	ponscripter-sekai
+PORTNAME=	ponscripter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.6-162
-DISTVERSIONSUFFIX=	-g4f887b8
+DISTVERSION=	2.0.0
 CATEGORIES=	games
+PKGNAMESUFFIX=	-${GH_ACCOUNT}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	69068bf83653.patch:-p1 # https://github.com/sekaiproject/ponscripter-fork/pull/98
@@ -19,8 +19,8 @@ LIB_DEPENDS=	libsmpeg2.so:multimedia/smpeg2 \
 CONFLICTS=	ponscripter-[0-9]* # doesn't exist yet
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	sekaiproject
-GH_PROJECT=	${PORTNAME:S/sekai/fork/}
+GH_ACCOUNT=	07th-mod
+GH_PROJECT=	${PORTNAME}-fork
 
 USES=		compiler:c++11-lang gmake pkgconfig sdl shebangfix
 USE_SDL=	image2 mixer2

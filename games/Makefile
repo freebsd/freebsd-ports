@@ -756,7 +756,7 @@
     SUBDIR += pokerth
     SUBDIR += polyglot
     SUBDIR += pongix
-    SUBDIR += ponscripter-sekai
+    SUBDIR += ponscripter-07th-mod
     SUBDIR += popstar
     SUBDIR += pouetchess
     SUBDIR += powder
