@@ -1,0 +1,13 @@
+StreamVByte is an integer compression technique that applies SIMD
+instructions (vectorization) to Google's varint approach. The net result
+is faster than other byte-oriented compression techniques.
+
+The approach is patent-free, the code is available under the Apache License.
+
+It includes fast differential coding.
+
+It assumes a recent Intel processor (e.g., haswell or better, though we provide
+runtime dispatching for compatibility with legacy systems) or an ARM processor
+with NEON instructions (which is almost all of them).
+
+WWW: https://github.com/lemire/streamvbyte

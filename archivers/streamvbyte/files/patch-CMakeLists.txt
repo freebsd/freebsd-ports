@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2021-08-11 23:13:03 UTC
++++ CMakeLists.txt
+@@ -25,7 +25,6 @@ if(CMAKE_BUILD_TYPE MATCHES Debug)
+ else()
+   set(BASE_FLAGS
+     ${BASE_FLAGS}
+-    "-O3"
+     "-g"
+     )
+ endif()
+@@ -66,12 +65,6 @@ install(FILES
+ install(
+   TARGETS streamvbyte streamvbyte_static
+   DESTINATION lib)
+-## -march=native is not supported on some platforms
+-if(NOT MSVC)
+-if(NOT STREAMVBYTE_DISABLE_NATIVE)
+-set(OPT_FLAGS "-march=native")
+-endif()
+-endif()
+ 
+ set(CMAKE_C_FLAGS "${STD_FLAGS} ${OPT_FLAGS} ${INCLUDE_FLAGS} ${WARNING_FLAGS} ${SANITIZE_FLAGS} ")
+ 

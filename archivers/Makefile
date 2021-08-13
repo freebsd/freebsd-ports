@@ -216,6 +216,7 @@
     SUBDIR += snzip
     SUBDIR += squsq
     SUBDIR += star
+    SUBDIR += streamvbyte
     SUBDIR += stuffit
     SUBDIR += szip
     SUBDIR += tar-stream-chunker
