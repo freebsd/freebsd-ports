@@ -1,11 +1,11 @@
---- src/external/angelscript/sdk/angelscript/source/as_config.h.orig	2019-11-25 15:18:37 UTC
+--- src/external/angelscript/sdk/angelscript/source/as_config.h.orig	2021-08-10 01:31:47 UTC
 +++ src/external/angelscript/sdk/angelscript/source/as_config.h
-@@ -953,7 +953,7 @@
- 			#define COMPLEX_RETURN_MASK (asOBJ_APP_CLASS_DESTRUCTOR | asOBJ_APP_CLASS_COPY_CONSTRUCTOR | asOBJ_APP_ARRAY)
- 			#define THISCALL_PASS_OBJECT_POINTER_ON_THE_STACK
- 			#define AS_X86
--		#elif defined(__LP64__)
-+		#elif defined(__amd64__)
- 			#define AS_X64_GCC
- 			#define HAS_128_BIT_PRIMITIVES
- 			#define SPLIT_OBJS_BY_MEMBER_TYPES
+@@ -1008,7 +1008,7 @@
+ 	// Free BSD
+ 	#elif defined(__FreeBSD__) || defined(__DragonFly__) || defined(__OpenBSD__)
+ 		#define AS_BSD
+-		#if (defined(i386) || defined(__i386) || defined(__i386__)) && !defined(__LP64__)
++		#if (defined(i386) || defined(__i386) || defined(__i386__)) && !defined(__amd64__)
+ 			#undef COMPLEX_MASK
+ 			#define COMPLEX_MASK (asOBJ_APP_CLASS_DESTRUCTOR | asOBJ_APP_CLASS_COPY_CONSTRUCTOR | asOBJ_APP_ARRAY)
+ 			#undef COMPLEX_RETURN_MASK

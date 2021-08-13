@@ -1,4 +1,4 @@
---- src/external/angelscript/sdk/angelscript/source/as_callfunc_x86.cpp.orig	2017-08-02 20:09:54 UTC
+--- src/external/angelscript/sdk/angelscript/source/as_callfunc_x86.cpp.orig	2021-08-10 01:31:47 UTC
 +++ src/external/angelscript/sdk/angelscript/source/as_callfunc_x86.cpp
 @@ -340,7 +340,7 @@ endcopy:
  	volatile asPWORD a[] = {asPWORD(args), asPWORD(paramSize), asPWORD(func)};
@@ -6,9 +6,9 @@
  	asm __volatile__(
 -#ifdef __OPTIMIZE__
 +#if defined(__OPTIMIZE__) && !defined(__clang__)
- 		// When compiled with optimizations the stack unwind doesn't work properly, 
+ 		// When compiled with optimizations the stack unwind doesn't work properly,
  		// causing exceptions to crash the application. By adding this prologue
- 		// and the epilogue below, the stack unwind works as it should. 
+ 		// and the epilogue below, the stack unwind works as it should.
 @@ -385,7 +385,7 @@ endcopy:
  		// Pop the alignment bytes
  		"popl  %%esp            \n"
@@ -24,9 +24,9 @@
  	asm __volatile__ (
 -#ifdef __OPTIMIZE__
 +#if defined(__OPTIMIZE__) && !defined(__clang__)
- 		// When compiled with optimizations the stack unwind doesn't work properly, 
+ 		// When compiled with optimizations the stack unwind doesn't work properly,
  		// causing exceptions to crash the application. By adding this prologue
- 		// and the epilogue below, the stack unwind works as it should. 
+ 		// and the epilogue below, the stack unwind works as it should.
 @@ -508,7 +508,7 @@ endcopy:
  		// Pop the alignment bytes
  		"popl  %%esp            \n"
@@ -42,9 +42,9 @@
  	asm __volatile__ (
 -#ifdef __OPTIMIZE__
 +#if defined(__OPTIMIZE__) && !defined(__clang__)
- 		// When compiled with optimizations the stack unwind doesn't work properly, 
+ 		// When compiled with optimizations the stack unwind doesn't work properly,
  		// causing exceptions to crash the application. By adding this prologue
- 		// and the epilogue below, the stack unwind works as it should. 
+ 		// and the epilogue below, the stack unwind works as it should.
 @@ -631,7 +631,7 @@ endcopy:
  		// Pop the alignment bytes
  		"popl  %%esp            \n"
@@ -60,9 +60,9 @@
  	asm __volatile__ (
 -#ifdef __OPTIMIZE__
 +#if defined(__OPTIMIZE__) && !defined(__clang__)
- 		// When compiled with optimizations the stack unwind doesn't work properly, 
+ 		// When compiled with optimizations the stack unwind doesn't work properly,
  		// causing exceptions to crash the application. By adding this prologue
- 		// and the epilogue below, the stack unwind works as it should. 
+ 		// and the epilogue below, the stack unwind works as it should.
 @@ -767,7 +767,7 @@ endcopy:
  		// Pop the alignment bytes
  		"popl  %%esp            \n"
@@ -78,9 +78,9 @@
  	asm __volatile__ (
 -#ifdef __OPTIMIZE__
 +#if defined(__OPTIMIZE__) && !defined(__clang__)
- 		// When compiled with optimizations the stack unwind doesn't work properly, 
+ 		// When compiled with optimizations the stack unwind doesn't work properly,
  		// causing exceptions to crash the application. By adding this prologue
- 		// and the epilogue below, the stack unwind works as it should. 
+ 		// and the epilogue below, the stack unwind works as it should.
 @@ -896,7 +896,7 @@ endcopy:
  		// Pop the alignment bytes
  		"popl  %%esp            \n"
@@ -96,9 +96,9 @@
  	asm __volatile__ (
 -#ifdef __OPTIMIZE__
 +#if defined(__OPTIMIZE__) && !defined(__clang__)
- 		// When compiled with optimizations the stack unwind doesn't work properly, 
+ 		// When compiled with optimizations the stack unwind doesn't work properly,
  		// causing exceptions to crash the application. By adding this prologue
- 		// and the epilogue below, the stack unwind works as it should. 
+ 		// and the epilogue below, the stack unwind works as it should.
 @@ -1030,7 +1030,7 @@ endcopy:
  		// Pop the alignment bytes
  		"popl  %%esp            \n"
@@ -114,9 +114,9 @@
  	asm __volatile__ (
 -#ifdef __OPTIMIZE__
 +#if defined(__OPTIMIZE__) && !defined(__clang__)
- 		// When compiled with optimizations the stack unwind doesn't work properly, 
+ 		// When compiled with optimizations the stack unwind doesn't work properly,
  		// causing exceptions to crash the application. By adding this prologue
- 		// and the epilogue below, the stack unwind works as it should. 
+ 		// and the epilogue below, the stack unwind works as it should.
 @@ -1145,7 +1145,7 @@ endcopy:
  		// Pop the alignment bytes
  		"popl  %%esp            \n"
@@ -132,9 +132,9 @@
  	asm __volatile__ (
 -#ifdef __OPTIMIZE__
 +#if defined(__OPTIMIZE__) && !defined(__clang__)
- 		// When compiled with optimizations the stack unwind doesn't work properly, 
+ 		// When compiled with optimizations the stack unwind doesn't work properly,
  		// causing exceptions to crash the application. By adding this prologue
- 		// and the epilogue below, the stack unwind works as it should. 
+ 		// and the epilogue below, the stack unwind works as it should.
 @@ -1285,7 +1285,7 @@ endcopy:
  		// Pop the alignment bytes
  		"popl  %%esp            \n"
@@ -150,9 +150,9 @@
  	asm __volatile__ (
 -#ifdef __OPTIMIZE__
 +#if defined(__OPTIMIZE__) && !defined(__clang__)
- 		// When compiled with optimizations the stack unwind doesn't work properly, 
+ 		// When compiled with optimizations the stack unwind doesn't work properly,
  		// causing exceptions to crash the application. By adding this prologue
- 		// and the epilogue below, the stack unwind works as it should. 
+ 		// and the epilogue below, the stack unwind works as it should.
 @@ -1445,7 +1445,7 @@ endcopy:
  		// Pop the alignment bytes
  		"popl  %%esp           \n"
