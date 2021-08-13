@@ -1,8 +1,13 @@
 PORTNAME=	puppetboard
 PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCHFILES=	a9b1903bf0fd71c8d2c0d100396646856ff8fbe4.patch
+PATCH_SITES=	https://github.com/voxpupuli/puppetboard/commit/
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Web interface to PuppetDB
@@ -25,7 +30,7 @@ USE_PYTHON=	autoplist distutils
 CONFLICTS_INSTALL=puppetboard02-* puppetboard03-*
 
 GH_ACCOUNT=	voxpupuli
-PLIST_FILES=	"@sample etc/puppetboard/default_settings.py.sample"
+PLIST_FILES=	"@sample etc/puppetboard/settings.py.sample"
 
 post-patch:
 	${REINPLACE_CMD} -e '/requirements_for_tests/,+2d' \
@@ -33,6 +38,6 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/puppetboard
-	${CP} ${WRKSRC}/puppetboard/default_settings.py ${STAGEDIR}${PREFIX}/etc/puppetboard/default_settings.py.sample
+	${CP} ${WRKSRC}/settings.py.sample ${STAGEDIR}${PREFIX}/etc/puppetboard/settings.py.sample
 
 .include <bsd.port.mk>
