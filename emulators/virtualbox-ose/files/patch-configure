@@ -1,6 +1,6 @@
---- configure.orig	2021-01-07 15:31:21 UTC
+--- configure.orig	2021-07-28 16:13:45 UTC
 +++ configure
-@@ -140,10 +140,14 @@ CXX_FLAGS=""
+@@ -139,10 +139,14 @@ CXX_FLAGS=""
  if [ "$OS" = "freebsd" ]; then
    INCCURL="-I/usr/local/include"
    LIBCURL="-L/usr/local/lib -lcurl"
@@ -15,7 +15,7 @@
  else
    INCCURL=""
    LIBCURL="-lcurl"
-@@ -1258,7 +1262,7 @@ extern "C" int main(void)
+@@ -1257,7 +1261,7 @@ extern "C" int main(void)
  #endif
  }
  EOF
@@ -24,18 +24,15 @@
      test_execute
    fi
  }
-@@ -1563,9 +1567,7 @@ EOF
-         if [ $? -eq 0 ]; then
-           echo "(Qt5 from pkg-config)" >> $LOG
-           FLGQT5=`pkg-config Qt5Core --cflags`
--          # gcc 4.8 is able to compile with C++11 (see also VBOX_GCC_std in Config.kmk)
--          [ $cc_maj -eq 4 -a $cc_min -eq 8 ] && FLGQT5="$FLGQT5 -std=c++11"
--          INCQT5=`strip_I "$FLGQT5"`
-+          FLGQT5="$FLGQT5 -std=c++11"          INCQT5=`strip_I "$FLGQT5"`
+@@ -1564,6 +1568,7 @@ EOF
+           FLGQT5=`pkg-config Qt5Core Qt5Gui --cflags`
+           # gcc 4.8 is able to compile with C++11 (see also VBOX_GCC_std in Config.kmk)
+           [ $(($cc_maj * 100 + $cc_min)) -ge 408 ] && FLGQT5="$FLGQT5 -std=c++11"
++          FLGQT5="$FLGQT5 -std=c++11"
+           INCQT5=`strip_I "$FLGQT5"`
            LIBDIR5=`pkg-config Qt5Core --variable=libdir`
-           LIBQT5=`pkg-config Qt5Core --libs`
-           LIBQT5="-L$LIBDIR5 $LIBQT5"
-@@ -1703,7 +1705,7 @@ check_libopus()
+           LIBQT5=`pkg-config Qt5Core Qt5Gui --libs`
+@@ -1702,7 +1707,7 @@ check_libopus()
        fi
        cat > $ODIR.tmp_src.cc << EOF
  #include <cstdio>
@@ -44,7 +41,7 @@
  extern "C" int main(void)
  {
    OpusEncoder *test;
-@@ -2035,8 +2037,8 @@ EOF
+@@ -2034,8 +2039,8 @@ EOF
          echo "compiling the following source file:" >> $LOG
          cat $ODIR.tmp_src.cc >> $LOG
          echo "using the following command line:" >> $LOG
@@ -55,7 +52,16 @@
          if [ $? -eq 0 ]; then
            found=1
            break
-@@ -2512,7 +2514,7 @@ for option in "$@"; do
+@@ -2151,7 +2156,7 @@ check_gsoap()
+         else
+           cnf_append "VBOX_GSOAP_CXX_SOURCES" ""
+         fi
+-        cnf_append "VBOX_GSOAP_CXX_LIBS"    "`strip_l "$GSOAP_CXX_LIBS"`"
++        cnf_append "VBOX_GSOAP_CXX_LIBS"    "`strip_l "$GSOAP_CXX_LIBS"` z"
+         gsoap_version=`pkg-config gsoapssl++ --modversion`
+         log_success "found version $gsoap_version"
+         return
+@@ -2510,7 +2515,7 @@ for option in "$@"; do
      --with-openssl-dir=*)
        OPENSSLDIR=`echo $option | cut -d'=' -f2`
        INCCRYPTO="-I${OPENSSLDIR}/include"
@@ -64,7 +70,7 @@
        ;;
      --with-ow-dir=*)
        WATCOM=`echo $option | cut -d'=' -f2`
-@@ -2856,14 +2858,23 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
+@@ -2853,14 +2858,23 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
    [ $WITH_PYTHON -eq 1 ] && check_python
    [ $WITH_JAVA   -eq 1 ] && check_java
  
@@ -96,7 +102,7 @@
  fi
  
  # Linux-specific
-@@ -2878,14 +2889,6 @@ if [ "$OS" = "linux" ]; then
+@@ -2875,14 +2889,6 @@ if [ "$OS" = "linux" ]; then
      cnf_append "VBOX_WITHOUT_LINUX_TEST_BUILDS" "1"
    fi
    if [ $ONLY_ADDITIONS -eq 0 ]; then
