@@ -9,9 +9,10 @@ LIB_DEPENDS=	libcups.so:print/cups
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		dbusaddons ecm i18n iconthemes itemviews jobwidgets kcmutils \
-		kio notifications plasma-framework service widgetsaddons \
-		windowsystem
+		dbusaddons i18n iconthemes itemviews jobwidgets kcmutils \
+		kio notifications plasma-framework service solid widgetsaddons \
+		windowsystem \
+		ecm_build
 USE_QT=		concurrent core dbus declarative gui network widgets xml \
 		buildtools_build qmake_build
 

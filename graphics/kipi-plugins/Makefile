@@ -11,8 +11,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig \
 		qt:5 tar:xz
 USE_KDE=	kio libkipi solid archive auth bookmarks codecs completion \
-		config configwidgets coreaddons ecm i18n itemviews jobwidgets \
-		service widgetsaddons windowsystem xmlgui
+		config configwidgets coreaddons i18n itemviews jobwidgets \
+		service widgetsaddons windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus gui network printsupport widgets xml xmlpatterns \
 		buildtools_build qmake_build
 

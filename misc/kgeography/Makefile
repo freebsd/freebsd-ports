@@ -6,8 +6,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE geography trainer
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
-USE_KDE=	auth codecs config configwidgets coreaddons crash doctools ecm \
-		i18n iconthemes itemviews service widgetsaddons xmlgui
+USE_KDE=	auth codecs config configwidgets coreaddons crash doctools \
+		i18n iconthemes itemviews service widgetsaddons xmlgui \
+		ecm_build
 USE_QT=		core dbus gui widgets xml \
 		buildtools_build qmake_build
 

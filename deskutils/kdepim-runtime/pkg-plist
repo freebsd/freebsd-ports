@@ -51,9 +51,9 @@ lib/libmaildir.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/akonadi/config/tomboynotesconfig.so
 %%QT_PLUGINDIR%%/akonadi/config/vcardconfig.so
 %%QT_PLUGINDIR%%/akonadi/config/vcarddirconfig.so
-%%QT_PLUGINDIR%%/kcm_ldap.so
 %%QT_PLUGINDIR%%/kf5/kio/akonadi.so
 %%QT_PLUGINDIR%%/kf5/kio/pop3.so
+%%QT_PLUGINDIR%%/pim/kcms/kaddressbook/kcm_ldap.so
 share/akonadi/accountwizard/contacts/contactswizard.desktop
 share/akonadi/accountwizard/contacts/contactswizard.es
 share/akonadi/accountwizard/contacts/contactswizard.ui
@@ -132,7 +132,6 @@ share/knotifications5/akonadi_google_resource.notifyrc
 share/knotifications5/akonadi_maildispatcher_agent.notifyrc
 share/knotifications5/akonadi_newmailnotifier_agent.notifyrc
 share/knotifications5/akonadi_pop3_resource.notifyrc
-share/kservices5/akonadi.protocol
 share/kservices5/akonadi/davgroupware-providers/citadel.desktop
 share/kservices5/akonadi/davgroupware-providers/davical.desktop
 share/kservices5/akonadi/davgroupware-providers/egroupware.desktop
@@ -147,8 +146,6 @@ share/kservices5/akonadi/davgroupware-providers/yahoo.desktop
 share/kservices5/akonadi/davgroupware-providers/zarafa.desktop
 share/kservices5/akonadi/davgroupware-providers/zimbra.desktop
 share/kservices5/kcmldap.desktop
-share/kservices5/pop3.protocol
-share/kservices5/pop3s.protocol
 share/kservicetypes5/davgroupwareprovider.desktop
 share/locale/ar/LC_MESSAGES/accountwizard_contacts.mo
 share/locale/ar/LC_MESSAGES/accountwizard_ews.mo

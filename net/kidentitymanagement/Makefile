@@ -8,9 +8,10 @@ COMMENT=	KDE pim identities
 LICENSE=	LGPL21
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
-USE_KDE=	auth codecs completion config configwidgets coreaddons ecm \
+USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		emoticons i18n init itemmodels itemviews jobwidgets \
-		kdelibs4support kio service widgetsaddons xmlgui
+		kdelibs4support kio service solid widgetsaddons windowsystem xmlgui \
+		ecm_build
 # pim components
 USE_KDE+=	pimtextedit
 USE_QT=		concurrent core dbus gui network widgets xml \

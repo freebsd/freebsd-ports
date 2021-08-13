@@ -7,8 +7,9 @@ COMMENT=	${${PORTNAME:tu}_DESC}
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
-		dbusaddons doctools ecm i18n jobwidgets kdeclarative kio \
-		libkdegames newstuff service widgetsaddons xmlgui
+		dbusaddons doctools i18n jobwidgets kdeclarative kio \
+		libkdegames newstuff service solid widgetsaddons windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus declarative gui network svg testlib widgets xml \
 		buildtools_build qmake_build
 

@@ -7,8 +7,8 @@ COMMENT=	Shows free space of devices for KDE
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons doctools \
-		i18n iconthemes jobwidgets kcmutils kio notifications service \
-		widgetsaddons xmlgui
+		i18n iconthemes jobwidgets kcmutils kio notifications service solid \
+		widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
 

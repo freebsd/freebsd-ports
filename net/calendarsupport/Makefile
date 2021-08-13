@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		guiaddons i18n iconthemes itemmodels jobwidgets kio service \
-		widgetsaddons \
+		solid widgetsaddons windowsystem \
 		ecm_build
 # pim components
 USE_KDE+=	akonadi akonadicalendar akonadinotes calendarcore calendarutils \

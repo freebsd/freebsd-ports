@@ -18,10 +18,11 @@ RUN_DEPENDS=	kaccounts-providers>=0:net-im/kaccounts-providers
 
 USES=		cmake gettext gnome kde:5 pkgconfig qt:5 tar:xz
 USE_GNOME=	intltool
-USE_KDE=	completion config coreaddons ecm i18n jobwidgets kio \
-		notifications service widgetsaddons \
-		gapi
-USE_QT=		core dbus gui network widgets xml \
+USE_KDE=	completion config coreaddons i18n jobwidgets kio \
+		notifications service solid widgetsaddons windowsystem \
+		gapi \
+		ecm_build
+USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build  qmake_build
 
 OPTIONS_DEFINE=	DOCS

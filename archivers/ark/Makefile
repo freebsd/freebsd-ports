@@ -11,9 +11,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext libarchive kde:5 \
 		qt:5 shared-mime-info tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
-		coreaddons crash dbusaddons doctools ecm i18n iconthemes \
+		coreaddons crash dbusaddons doctools i18n iconthemes \
 		itemmodels itemviews jobwidgets khtml kio parts pty service \
-		solid sonnet textwidgets widgetsaddons xmlgui
+		solid sonnet textwidgets widgetsaddons windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
 
@@ -39,6 +40,6 @@ ZIP_LIB_DEPENDS=	libzip.so:archivers/libzip
 ZIP_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_LibZip
 
 # Override shared library version
-KDE_APPLICATIONS_SHLIB_VER=	21.4.3
+KDE_APPLICATIONS_SHLIB_VER=	${KDE_APPLICATIONS_VERSION}
 
 .include <bsd.port.mk>

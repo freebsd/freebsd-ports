@@ -13,9 +13,10 @@ LICENSE=	LGPL21+
 
 USES=		compiler:c++11-lang cmake gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		dbusaddons ecm i18n iconthemes jobwidgets kcmutils kio \
-		notifications notifyconfig people service wallet widgetsaddons \
-		windowsystem xmlgui
+		dbusaddons i18n iconthemes jobwidgets kcmutils kio \
+		notifications notifyconfig people service solid wallet widgetsaddons \
+		windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
 

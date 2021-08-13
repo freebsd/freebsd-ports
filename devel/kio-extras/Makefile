@@ -1,6 +1,5 @@
 PORTNAME=	kio-extras
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel kde kde-applications # kde kde-applications-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,11 +12,12 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 USES=		cmake compiler:c++11-lib gettext gperf kde:5 \
 		pkgconfig qt:5 shared-mime-info shebangfix tar:xz xorg
 USE_KDE=	activities archive auth bookmarks codecs completion config \
-		configwidgets coreaddons crash dbusaddons dnssd doctools ecm \
+		configwidgets coreaddons crash dbusaddons dnssd doctools \
 		emoticons guiaddons i18n iconthemes init itemmodels itemviews \
 		jobwidgets js kdelibs4support khtml kio notifications parts \
 		pty service solid sonnet syntaxhighlighting textwidgets unitconversion \
-		widgetsaddons windowsystem xmlgui
+		widgetsaddons windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus declarative gui location network phonon4 printsupport \
 		sql svg testlib webchannel widgets xml \
 		buildtools_build qmake_build

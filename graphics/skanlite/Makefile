@@ -1,8 +1,6 @@
 PORTNAME=	skanlite
-DISTVERSION=	2.2.0
-PORTREVISION=	2
-CATEGORIES=	graphics kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION:R}/
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Simple image scanning application

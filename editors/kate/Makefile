@@ -15,8 +15,8 @@ USE_KDE=	activities attica auth bookmarks codecs completion config \
 		configwidgets coreaddons crash dbusaddons \
 		guiaddons i18n iconthemes init itemmodels itemviews \
 		jobwidgets kio newstuff package parts plasma-framework \
-		service solid sonnet texteditor textwidgets threadweaver \
-		wallet widgetsaddons windowsystem xmlgui \
+		service solid sonnet syntaxhighlighting texteditor textwidgets \
+		threadweaver wallet widgetsaddons windowsystem xmlgui \
 		doctools_build ecm_build
 USE_QT=		concurrent core dbus gui network script sql widgets xml \
 		buildtools_build qmake_build testlib_build

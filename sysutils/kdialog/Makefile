@@ -8,10 +8,11 @@ COMMENT=	Show nice dialog boxes from shell scripts
 USES=		cmake compiler:c++11-lang gettext kde:5 pkgconfig \
 		qt:5 tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons crash dbusaddons ecm guiaddons i18n iconthemes \
+		coreaddons crash dbusaddons guiaddons i18n iconthemes \
 		itemviews jobwidgets kdelibs4support kio notifications parts \
 		service solid sonnet textwidgets unitconversion widgetsaddons \
-		windowsystem xmlgui
+		windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build
 USE_XORG=	x11

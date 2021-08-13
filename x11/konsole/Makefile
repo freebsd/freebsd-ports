@@ -17,7 +17,7 @@ USES=		cmake compiler:c++11-lang gettext pkgconfig kde:5 \
 USE_KDE=	auth attica bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons emoticons globalaccel guiaddons i18n \
 		iconthemes init itemmodels jobwidgets kio \
-		newstuff notifications notifyconfig parts pty service sonnet \
+		newstuff notifications notifyconfig parts pty service solid sonnet \
 		textwidgets widgetsaddons windowsystem xmlgui \
 		ecm_build
 USE_QT=		concurrent core dbus gui network printsupport script scripttools sql \

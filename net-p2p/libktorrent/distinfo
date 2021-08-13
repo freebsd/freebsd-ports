@@ -1,3 +1,3 @@
-TIMESTAMP = 1625868271
-SHA256 (KDE/release-service/21.04.3/libktorrent-21.04.3.tar.xz) = 5a4fd6715e14150fc21697f251d923a2e3407ef89ffdad3bc94135454087c3d9
-SIZE (KDE/release-service/21.04.3/libktorrent-21.04.3.tar.xz) = 607516
+TIMESTAMP = 1628244226
+SHA256 (KDE/release-service/21.08.0/libktorrent-21.08.0.tar.xz) = 7db0b3f2abed5bf254fdd49259d8468cd1ce35317bd15549f397b59e3980a78b
+SIZE (KDE/release-service/21.08.0/libktorrent-21.08.0.tar.xz) = 607036

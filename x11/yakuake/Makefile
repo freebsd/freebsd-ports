@@ -11,10 +11,11 @@ RUN_DEPENDS=	konsole:x11/konsole
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	attica auth archive codecs completion config configwidgets \
-		coreaddons crash dbusaddons ecm globalaccel i18n iconthemes \
+		coreaddons crash dbusaddons globalaccel i18n iconthemes \
 		jobwidgets kio newstuff notifications notifyconfig parts \
-		service sonnet textwidgets wayland widgetsaddons windowsystem \
-		xmlgui
+		service solid sonnet textwidgets wayland widgetsaddons windowsystem \
+		xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus gui network widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	x11

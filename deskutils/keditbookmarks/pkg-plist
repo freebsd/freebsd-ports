@@ -21,6 +21,7 @@ man/ru/man1/kbookmarkmerger.1.gz
 man/sr/man1/kbookmarkmerger.1.gz
 man/sv/man1/kbookmarkmerger.1.gz
 man/uk/man1/kbookmarkmerger.1.gz
+man/zh_CN/man1/kbookmarkmerger.1.gz
 share/applications/org.kde.keditbookmarks.desktop
 share/config.kcfg/keditbookmarks.kcfg
 share/locale/ar/LC_MESSAGES/keditbookmarks.mo

@@ -16,8 +16,9 @@ LIB_DEPENDS=	libtelepathy-qt5.so:net-im/telepathy-qt \
 
 USES=		compiler:c++11-lang cmake gettext kde:5 pkgconfig \
 		qca qt:5 tar:xz
-USE_KDE=	completion config coreaddons ecm i18n jobwidgets kdewebkit \
-		kio wallet service widgetsaddons
+USE_KDE=	completion config coreaddons i18n jobwidgets kdewebkit \
+		kio wallet service solid widgetsaddons windowsystem \
+		ecm_build
 USE_QT=		concurrent core dbus gui network webkit widgets xml \
 		buildtools_build qmake_build
 

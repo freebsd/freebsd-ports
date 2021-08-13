@@ -1,7 +1,6 @@
-%%QT_PLUGINDIR%%/kded_dnssdwatcher.so
+%%QT_PLUGINDIR%%/kf5/kded/dnssdwatcher.so
 %%QT_PLUGINDIR%%/kf5/kio/zeroconf.so
 share/dbus-1/interfaces/org.kde.kdnssd.xml
-share/kservices5/kded/dnssdwatcher.desktop
 share/locale/ar/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/be/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/bg/LC_MESSAGES/kio5_zeroconf.mo

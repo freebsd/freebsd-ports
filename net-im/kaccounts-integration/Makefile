@@ -14,10 +14,11 @@ RUN_DEPENDS=	signon-ui:sysutils/signon-ui
 
 USES=		cmake compiler:c++11-lang gettext pkgconfig kde:5 \
 		qt:5 tar:xz
-USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons ecm \
-		i18n iconthemes kcmutils kio service wallet widgetsaddons \
-		akonadi
-USE_QT=		dbus core declarative gui network widgets xml \
+USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
+		i18n iconthemes kcmutils kdeclarative kio service wallet widgetsaddons \
+		akonadi \
+		ecm_build
+USE_QT=		concurrent core dbus declarative gui network widgets xml \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>

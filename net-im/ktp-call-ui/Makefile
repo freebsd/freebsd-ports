@@ -22,9 +22,10 @@ USES=		cmake compiler:c++11-lang gettext gnome kde:5 pkgconfig \
 		python qt:5 tar:xz
 USE_GNOME=	glib20
 USE_GSTREAMER1=	yes
-USE_KDE=	auth codecs config configwidgets coreaddons ecm iconthemes \
+USE_KDE=	auth codecs config configwidgets coreaddons iconthemes \
 		i18n kcmutils kdeclarative notifications package service \
-		wallet widgetsaddons xmlgui
+		wallet widgetsaddons xmlgui \
+		ecm_build
 USE_QT=		core dbus declarative gui network widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes

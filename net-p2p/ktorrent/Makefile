@@ -13,7 +13,7 @@ LIB_DEPENDS=	libKF5Torrent.so:net-p2p/libktorrent \
 		libgmp.so:math/gmp \
 		libtag.so:audio/taglib
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 qt:5 tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons dnssd i18n iconthemes itemviews \
 		jobwidgets kcmutils kio kross notifications \
@@ -21,7 +21,8 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		solid sonnet syndication textwidgets widgetsaddons \
 		windowsystem xmlgui \
 		ecm_build
-USE_QT=		concurrent core dbus gui network phonon4 script widgets xml \
+USE_QT=		concurrent core dbus declarative gui location network phonon4 printsupport \
+		script webchannel widgets xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=		DOCS WORKSPACE

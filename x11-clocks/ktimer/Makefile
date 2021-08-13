@@ -7,8 +7,9 @@ COMMENT=	Countdown launcher for KDE
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		dbusaddons doctools ecm i18n iconthemes jobwidgets kio \
-		notifications service widgetsaddons xmlgui
+		dbusaddons doctools i18n iconthemes jobwidgets kio \
+		notifications service solid widgetsaddons windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
 

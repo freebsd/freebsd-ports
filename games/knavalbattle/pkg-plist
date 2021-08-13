@@ -13,8 +13,6 @@ share/kconf_update/knavalbattle.upd
 %%DATADIR%%/sounds/ship-player1-shoot.ogg
 %%DATADIR%%/sounds/ship-player2-shoot.ogg
 %%DATADIR%%/sounds/ship-sink.ogg
-share/kservices5/knavalbattle.protocol
-share/kxmlgui5/knavalbattle/knavalbattleui.rc
 share/locale/ar/LC_MESSAGES/knavalbattle.mo
 share/locale/be/LC_MESSAGES/knavalbattle.mo
 share/locale/bg/LC_MESSAGES/knavalbattle.mo

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 
 USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qca qt:5 tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
-		coreaddons i18n iconthemes imap itemmodels itemviews jobwidgets \
+		coreaddons guiaddons i18n iconthemes imap itemmodels itemviews jobwidgets \
 		kdewebkit kio service solid sonnet syntaxhighlighting \
 		textwidgets wallet widgetsaddons windowsystem xmlgui \
 		ecm_build

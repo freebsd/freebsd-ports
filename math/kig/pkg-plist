@@ -12,7 +12,7 @@ man/pt_BR/man1/kig.1.gz
 man/ru/man1/kig.1.gz
 man/sv/man1/kig.1.gz
 man/uk/man1/kig.1.gz
-%%QT_PLUGINDIR%%/kigpart.so
+%%QT_PLUGINDIR%%/kf5/parts/kigpart.so
 share/applications/org.kde.kig.desktop
 share/icons/hicolor/128x128/apps/kig.png
 share/icons/hicolor/128x128/mimetypes/application-x-kig.png

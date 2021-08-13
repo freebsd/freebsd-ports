@@ -1,5 +1,9 @@
+include/KF5/KSane/KSaneCore
+include/KF5/KSane/KSaneOption
 include/KF5/KSane/KSaneWidget
 include/KF5/KSane/ksane_export.h
+include/KF5/KSane/ksanecore.h
+include/KF5/KSane/ksaneoption.h
 include/KF5/KSane/ksanewidget.h
 include/KF5/ksane_version.h
 lib/cmake/KF5Sane/KF5SaneConfig.cmake

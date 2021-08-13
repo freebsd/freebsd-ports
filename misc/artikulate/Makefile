@@ -7,9 +7,9 @@ COMMENT=	Pronunciation trainer for KDE
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	archive attica auth codecs config configwidgets coreaddons \
-		crash ecm i18n kdeclarative newstuff service \
+		crash i18n kdeclarative newstuff service \
 		widgetsaddons xmlgui \
-		doctools_build
+		doctools_build ecm_build
 USE_QT=		core dbus declarative gui multimedia network sql testlib widgets \
 		xml xmlpatterns \
 		buildtools_build qmake_build

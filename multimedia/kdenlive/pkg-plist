@@ -127,7 +127,6 @@ share/knsrcfiles/kdenlive_luts.knsrc
 %%DATADIR%%/effects/audiospectrum.xml
 %%DATADIR%%/effects/audiowave.xml
 %%DATADIR%%/effects/audiowaveform.xml
-%%DATADIR%%/effects/automask.xml
 %%DATADIR%%/effects/avfilter_atadenoise.xml
 %%DATADIR%%/effects/avfilter_avgblur.xml
 %%DATADIR%%/effects/avfilter_boxblur.xml
@@ -316,6 +315,10 @@ share/knsrcfiles/kdenlive_luts.knsrc
 %%DATADIR%%/effects/loudness.xml
 %%DATADIR%%/effects/luma.xml
 %%DATADIR%%/effects/lumaliftgaingamma.xml
+%%DATADIR%%/effects/mask_apply.xml
+%%DATADIR%%/effects/mask_start_frei0r_alphaspot.xml
+%%DATADIR%%/effects/mask_start_rotoscoping.xml
+%%DATADIR%%/effects/mask_start_shape.xml
 %%DATADIR%%/effects/mirror.xml
 %%DATADIR%%/effects/mono.xml
 %%DATADIR%%/effects/movit_blur.xml

@@ -9,17 +9,19 @@ BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-
 		docbook-xml>0:textproc/docbook-xml
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		liblcms2.so:graphics/lcms2 \
-		libpng.so:graphics/png
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 RUN_DEPENDS=	kipi-plugins>=0:graphics/kipi-plugins
 
 USES=		compiler:c++11-lang cmake desktop-file-utils gettext jpeg pkgconfig \
 		kde:5 qt:5 tar:xz xorg
 USE_KDE=	activities auth baloo bookmarks codecs completion config \
-		configwidgets coreaddons ecm emoticons filemetadata i18n \
+		configwidgets coreaddons emoticons filemetadata guiaddons i18n \
 		iconthemes init itemmodels itemviews jobwidgets \
 		kdelibs4support kimageformats kio libkdcraw libkipi \
 		notifications parts service solid sonnet textwidgets \
-		widgetsaddons windowsystem xmlgui
+		widgetsaddons windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus gui network opengl phonon4 printsupport \
 		svg widgets x11extras xml \
 		buildtools_build qmake_build

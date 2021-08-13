@@ -36,7 +36,7 @@ lib/cmake/Okular5/Okular5Targets.cmake
 lib/libOkular5Core.so
 lib/libOkular5Core.so.9
 lib/libOkular5Core.so.9.0.0
-%%QT_PLUGINDIR%%/kio_msits.so
+%%QT_PLUGINDIR%%/kf5/kio/kio_msits.so
 %%QT_PLUGINDIR%%/okular/generators/okularGenerator_chmlib.so
 %%QT_PLUGINDIR%%/okular/generators/okularGenerator_comicbook.so
 %%QT_PLUGINDIR%%/okular/generators/okularGenerator_djvu.so
@@ -111,7 +111,6 @@ share/icons/hicolor/32x32/apps/okular.png
 share/icons/hicolor/48x48/apps/okular.png
 share/icons/hicolor/64x64/apps/okular.png
 share/kconf_update/okular.upd
-share/kservices5/ms-its.protocol
 share/kservices5/okularChm.desktop
 share/kservices5/okularComicbook.desktop
 share/kservices5/okularDjvu.desktop
@@ -143,11 +142,13 @@ share/locale/ar/LC_MESSAGES/okular_fax.mo
 share/locale/ar/LC_MESSAGES/okular_fictionbook.mo
 share/locale/ar/LC_MESSAGES/okular_ghostview.mo
 share/locale/ar/LC_MESSAGES/okular_kimgio.mo
+share/locale/ar/LC_MESSAGES/okular_markdown.mo
 share/locale/ar/LC_MESSAGES/okular_mobi.mo
 share/locale/ar/LC_MESSAGES/okular_plucker.mo
 share/locale/ar/LC_MESSAGES/okular_poppler.mo
 share/locale/ar/LC_MESSAGES/okular_txt.mo
 share/locale/ar/LC_MESSAGES/okular_xps.mo
+share/locale/ar/LC_MESSAGES/org.kde.active.documentviewer.mo
 share/locale/ast/LC_MESSAGES/okular_chm.mo
 share/locale/ast/LC_MESSAGES/okular_fax.mo
 share/locale/ast/LC_MESSAGES/okular_plucker.mo
@@ -849,6 +850,7 @@ share/locale/ro/LC_MESSAGES/okular_kimgio.mo
 share/locale/ro/LC_MESSAGES/okular_mobi.mo
 share/locale/ro/LC_MESSAGES/okular_plucker.mo
 share/locale/ro/LC_MESSAGES/okular_poppler.mo
+share/locale/ro/LC_MESSAGES/okular_tiff.mo
 share/locale/ro/LC_MESSAGES/okular_txt.mo
 share/locale/ro/LC_MESSAGES/okular_xps.mo
 share/locale/ro/LC_MESSAGES/org.kde.active.documentviewer.mo
@@ -964,6 +966,10 @@ share/locale/sv/LC_MESSAGES/okular_txt.mo
 share/locale/sv/LC_MESSAGES/okular_xps.mo
 share/locale/sv/LC_MESSAGES/org.kde.active.documentviewer.mo
 share/locale/ta/LC_MESSAGES/okular.mo
+share/locale/ta/LC_MESSAGES/okular_epub.mo
+share/locale/ta/LC_MESSAGES/okular_markdown.mo
+share/locale/ta/LC_MESSAGES/okular_poppler.mo
+share/locale/ta/LC_MESSAGES/okular_txt.mo
 share/locale/tg/LC_MESSAGES/okular.mo
 share/locale/tr/LC_MESSAGES/okular.mo
 share/locale/tr/LC_MESSAGES/okular_chm.mo

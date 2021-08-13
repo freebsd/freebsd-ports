@@ -10,11 +10,13 @@ LICENSE=	LGPL21
 DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
 EXPIRATION_DATE=2021-06-23
 
-LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
+		libqt5keychain.so:security/qtkeychain
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons i18n \
-		itemmodels jobwidgets kcmutils kio service wallet widgetsaddons
+		itemmodels jobwidgets kcmutils kio service solid wallet \
+		widgetsaddons windowsystem
 # pim components
 USE_KDE+=	akonadi akonadimime gapi ksmtp mime pimcommon
 USE_QT=		concurrent core dbus gui network widgets xml \

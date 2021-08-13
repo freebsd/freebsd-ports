@@ -10,7 +10,9 @@ BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth archive codecs completion config configwidgets coreaddons \
-		doctools ecm i18n jobwidgets kio newstuff service widgetsaddons
+		doctools i18n jobwidgets kio newstuff service solid \
+		widgetsaddons windowsystem \
+		ecm_build
 USE_QT=		concurrent core dbus gui network testlib widgets xml \
 		buildtools_build qmake_build
 

@@ -29,9 +29,9 @@ lib/libKPimAddressbookImportExport.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KAddressbookImportExport.pri
 lib/libkaddressbookprivate.so.5
 lib/libkaddressbookprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
-%%QT_PLUGINDIR%%/kaddressbook_config_plugins.so
 %%QT_PLUGINDIR%%/kaddressbookpart.so
 %%QT_PLUGINDIR%%/kontact5/kontact_kaddressbookplugin.so
+%%QT_PLUGINDIR%%/pim/kcms/kaddressbook/kaddressbook_config_plugins.so
 share/applications/kaddressbook-importer.desktop
 share/applications/kaddressbook-view.desktop
 share/applications/org.kde.kaddressbook.desktop

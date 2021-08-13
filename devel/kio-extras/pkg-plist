@@ -1,4 +1,6 @@
+%%MTP%%share/dbus-1/services/org.kde.kmtpd5.service
 share/qlogging-categories5/kio-extras.categories
+share/qlogging-categories5/kio-extras.renamecategories
 include/KF5/kio_archivebase.h
 include/KF5/libkioarchive_export.h
 lib/cmake/KioArchive/KioArchiveConfig.cmake
@@ -8,8 +10,6 @@ lib/cmake/KioArchive/KioArchiveTargets.cmake
 %%SAMBA%%lib/libexec/kf5/smbnotifier
 lib/libkioarchive.so.5
 lib/libkioarchive.so.5.97.0
-lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
-lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION%%
 %%TAGLIB%%%%QT_PLUGINDIR%%/audiothumbnail.so
 %%QT_PLUGINDIR%%/comicbookthumbnail.so
 %%QT_PLUGINDIR%%/cursorthumbnail.so
@@ -19,7 +19,6 @@ lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/imagethumbnail.so
 %%QT_PLUGINDIR%%/jpegthumbnail.so
 %%QT_PLUGINDIR%%/kf5/kded/filenamesearchmodule.so
-%%QT_PLUGINDIR%%/kf5/kded/networkwatcher.so
 %%QT_PLUGINDIR%%/kf5/kded/recentdocumentsnotifier.so
 %%SAMBA%%%%QT_PLUGINDIR%%/kf5/kded/smbwatcher.so
 %%QT_PLUGINDIR%%/kf5/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
@@ -33,7 +32,6 @@ lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kf5/kio/info.so
 %%QT_PLUGINDIR%%/kf5/kio/man.so
 %%MTP%%%%QT_PLUGINDIR%%/kf5/kio/mtp.so
-%%QT_PLUGINDIR%%/kf5/kio/network.so
 %%QT_PLUGINDIR%%/kf5/kio/recentdocuments.so
 %%QT_PLUGINDIR%%/kf5/kio/settings.so
 %%SSH%%%%QT_PLUGINDIR%%/kf5/kio/sftp.so
@@ -48,48 +46,27 @@ lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/windowsexethumbnail.so
 %%QT_PLUGINDIR%%/windowsimagethumbnail.so
 share/config.kcfg/jpegcreatorsettings5.kcfg
-share/dbus-1/interfaces/kf5_org.kde.network.kioslavenotifier.xml
-%%MTP%%share/dbus-1/services/org.kde.kmtp.daemon.service
 share/kio_bookmarks/kio_bookmarks.css
 share/kio_docfilter/kio_docfilter.css
 share/kio_info/kde-info2html
 share/kio_info/kde-info2html.conf
-share/konqsidebartng/virtual_folders/remote/virtualfolder_network.desktop
 %%MTP%%share/konqueror/dirtree/remote/mtp-network.desktop
 %%SAMBA%%share/konqueror/dirtree/remote/smb-network.desktop
-share/kservices5/about.protocol
-share/kservices5/activities.protocol
 %%TAGLIB%%share/kservices5/audiothumbnail.desktop
-share/kservices5/bookmarks.protocol
-share/kservices5/bzip.protocol
-share/kservices5/bzip2.protocol
 share/kservices5/cursorthumbnail.desktop
 share/kservices5/comicbookthumbnail.desktop
 share/kservices5/directorythumbnail.desktop
 share/kservices5/djvuthumbnail.desktop
 share/kservices5/ebookthumbnail.desktop
 %%EXR%%share/kservices5/exrthumbnail.desktop
-share/kservices5/filenamesearch.protocol
-share/kservices5/fish.protocol
-share/kservices5/gzip.protocol
 share/kservices5/imagethumbnail.desktop
-share/kservices5/info.protocol
 share/kservices5/jpegthumbnail.desktop
 share/kservices5/kraorathumbnail.desktop
-share/kservices5/lzma.protocol
-share/kservices5/man.protocol
-%%MTP%%share/kservices5/mtp.protocol
-share/kservices5/network.protocol
 share/kservices5/opendocumentthumbnail.desktop
-share/kservices5/recentdocuments.protocol
-share/kservices5/settings.protocol
-%%SSH%%share/kservices5/sftp.protocol
 share/kservices5/svgthumbnail.desktop
 share/kservices5/textthumbnail.desktop
-share/kservices5/thumbnail.protocol
 share/kservices5/windowsexethumbnail.desktop
 share/kservices5/windowsimagethumbnail.desktop
-share/kservices5/xz.protocol
 share/kservicetypes5/thumbcreator.desktop
 share/locale/ar/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/ar/LC_MESSAGES/kio5_activities.mo
@@ -107,7 +84,6 @@ share/locale/ar/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/ast/LC_MESSAGES/kio5_fish.mo
 share/locale/ast/LC_MESSAGES/kio5_info.mo
 share/locale/ast/LC_MESSAGES/kio5_mtp.mo
-share/locale/ast/LC_MESSAGES/kio5_network.mo
 share/locale/ast/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/be/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/be/LC_MESSAGES/kio5_archive.mo
@@ -150,7 +126,6 @@ share/locale/ca/LC_MESSAGES/kio5_fish.mo
 share/locale/ca/LC_MESSAGES/kio5_info.mo
 share/locale/ca/LC_MESSAGES/kio5_man.mo
 share/locale/ca/LC_MESSAGES/kio5_mtp.mo
-share/locale/ca/LC_MESSAGES/kio5_network.mo
 share/locale/ca/LC_MESSAGES/kio5_nfs.mo
 share/locale/ca/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ca/LC_MESSAGES/kio5_sftp.mo
@@ -164,7 +139,6 @@ share/locale/ca@valencia/LC_MESSAGES/kio5_fish.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_info.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_man.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_mtp.mo
-share/locale/ca@valencia/LC_MESSAGES/kio5_network.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_nfs.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_sftp.mo
@@ -178,7 +152,6 @@ share/locale/cs/LC_MESSAGES/kio5_fish.mo
 share/locale/cs/LC_MESSAGES/kio5_info.mo
 share/locale/cs/LC_MESSAGES/kio5_man.mo
 share/locale/cs/LC_MESSAGES/kio5_mtp.mo
-share/locale/cs/LC_MESSAGES/kio5_network.mo
 share/locale/cs/LC_MESSAGES/kio5_nfs.mo
 share/locale/cs/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/cs/LC_MESSAGES/kio5_sftp.mo
@@ -192,7 +165,6 @@ share/locale/da/LC_MESSAGES/kio5_fish.mo
 share/locale/da/LC_MESSAGES/kio5_info.mo
 share/locale/da/LC_MESSAGES/kio5_man.mo
 share/locale/da/LC_MESSAGES/kio5_mtp.mo
-share/locale/da/LC_MESSAGES/kio5_network.mo
 share/locale/da/LC_MESSAGES/kio5_nfs.mo
 share/locale/da/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/da/LC_MESSAGES/kio5_sftp.mo
@@ -206,7 +178,6 @@ share/locale/de/LC_MESSAGES/kio5_fish.mo
 share/locale/de/LC_MESSAGES/kio5_info.mo
 share/locale/de/LC_MESSAGES/kio5_man.mo
 share/locale/de/LC_MESSAGES/kio5_mtp.mo
-share/locale/de/LC_MESSAGES/kio5_network.mo
 share/locale/de/LC_MESSAGES/kio5_nfs.mo
 share/locale/de/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/de/LC_MESSAGES/kio5_sftp.mo
@@ -220,7 +191,6 @@ share/locale/el/LC_MESSAGES/kio5_fish.mo
 share/locale/el/LC_MESSAGES/kio5_info.mo
 share/locale/el/LC_MESSAGES/kio5_man.mo
 share/locale/el/LC_MESSAGES/kio5_mtp.mo
-share/locale/el/LC_MESSAGES/kio5_network.mo
 share/locale/el/LC_MESSAGES/kio5_nfs.mo
 share/locale/el/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/el/LC_MESSAGES/kio5_sftp.mo
@@ -234,7 +204,6 @@ share/locale/en_GB/LC_MESSAGES/kio5_fish.mo
 share/locale/en_GB/LC_MESSAGES/kio5_info.mo
 share/locale/en_GB/LC_MESSAGES/kio5_man.mo
 share/locale/en_GB/LC_MESSAGES/kio5_mtp.mo
-share/locale/en_GB/LC_MESSAGES/kio5_network.mo
 share/locale/en_GB/LC_MESSAGES/kio5_nfs.mo
 share/locale/en_GB/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/en_GB/LC_MESSAGES/kio5_sftp.mo
@@ -258,7 +227,6 @@ share/locale/es/LC_MESSAGES/kio5_fish.mo
 share/locale/es/LC_MESSAGES/kio5_info.mo
 share/locale/es/LC_MESSAGES/kio5_man.mo
 share/locale/es/LC_MESSAGES/kio5_mtp.mo
-share/locale/es/LC_MESSAGES/kio5_network.mo
 share/locale/es/LC_MESSAGES/kio5_nfs.mo
 share/locale/es/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/es/LC_MESSAGES/kio5_sftp.mo
@@ -272,7 +240,6 @@ share/locale/et/LC_MESSAGES/kio5_fish.mo
 share/locale/et/LC_MESSAGES/kio5_info.mo
 share/locale/et/LC_MESSAGES/kio5_man.mo
 share/locale/et/LC_MESSAGES/kio5_mtp.mo
-share/locale/et/LC_MESSAGES/kio5_network.mo
 share/locale/et/LC_MESSAGES/kio5_nfs.mo
 share/locale/et/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/et/LC_MESSAGES/kio5_sftp.mo
@@ -286,7 +253,6 @@ share/locale/eu/LC_MESSAGES/kio5_fish.mo
 share/locale/eu/LC_MESSAGES/kio5_info.mo
 share/locale/eu/LC_MESSAGES/kio5_man.mo
 share/locale/eu/LC_MESSAGES/kio5_mtp.mo
-share/locale/eu/LC_MESSAGES/kio5_network.mo
 share/locale/eu/LC_MESSAGES/kio5_nfs.mo
 share/locale/eu/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/eu/LC_MESSAGES/kio5_sftp.mo
@@ -311,7 +277,6 @@ share/locale/fi/LC_MESSAGES/kio5_fish.mo
 share/locale/fi/LC_MESSAGES/kio5_info.mo
 share/locale/fi/LC_MESSAGES/kio5_man.mo
 share/locale/fi/LC_MESSAGES/kio5_mtp.mo
-share/locale/fi/LC_MESSAGES/kio5_network.mo
 share/locale/fi/LC_MESSAGES/kio5_nfs.mo
 share/locale/fi/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/fi/LC_MESSAGES/kio5_sftp.mo
@@ -325,7 +290,6 @@ share/locale/fr/LC_MESSAGES/kio5_fish.mo
 share/locale/fr/LC_MESSAGES/kio5_info.mo
 share/locale/fr/LC_MESSAGES/kio5_man.mo
 share/locale/fr/LC_MESSAGES/kio5_mtp.mo
-share/locale/fr/LC_MESSAGES/kio5_network.mo
 share/locale/fr/LC_MESSAGES/kio5_nfs.mo
 share/locale/fr/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/fr/LC_MESSAGES/kio5_sftp.mo
@@ -351,7 +315,6 @@ share/locale/gl/LC_MESSAGES/kio5_fish.mo
 share/locale/gl/LC_MESSAGES/kio5_info.mo
 share/locale/gl/LC_MESSAGES/kio5_man.mo
 share/locale/gl/LC_MESSAGES/kio5_mtp.mo
-share/locale/gl/LC_MESSAGES/kio5_network.mo
 share/locale/gl/LC_MESSAGES/kio5_nfs.mo
 share/locale/gl/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/gl/LC_MESSAGES/kio5_sftp.mo
@@ -399,7 +362,6 @@ share/locale/hu/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/hu/LC_MESSAGES/kio5_fish.mo
 share/locale/hu/LC_MESSAGES/kio5_info.mo
 share/locale/hu/LC_MESSAGES/kio5_man.mo
-share/locale/hu/LC_MESSAGES/kio5_network.mo
 share/locale/hu/LC_MESSAGES/kio5_nfs.mo
 share/locale/hu/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/hu/LC_MESSAGES/kio5_sftp.mo
@@ -413,7 +375,6 @@ share/locale/ia/LC_MESSAGES/kio5_fish.mo
 share/locale/ia/LC_MESSAGES/kio5_info.mo
 share/locale/ia/LC_MESSAGES/kio5_man.mo
 share/locale/ia/LC_MESSAGES/kio5_mtp.mo
-share/locale/ia/LC_MESSAGES/kio5_network.mo
 share/locale/ia/LC_MESSAGES/kio5_nfs.mo
 share/locale/ia/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ia/LC_MESSAGES/kio5_sftp.mo
@@ -450,7 +411,6 @@ share/locale/it/LC_MESSAGES/kio5_fish.mo
 share/locale/it/LC_MESSAGES/kio5_info.mo
 share/locale/it/LC_MESSAGES/kio5_man.mo
 share/locale/it/LC_MESSAGES/kio5_mtp.mo
-share/locale/it/LC_MESSAGES/kio5_network.mo
 share/locale/it/LC_MESSAGES/kio5_nfs.mo
 share/locale/it/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/it/LC_MESSAGES/kio5_sftp.mo
@@ -464,7 +424,6 @@ share/locale/ja/LC_MESSAGES/kio5_fish.mo
 share/locale/ja/LC_MESSAGES/kio5_info.mo
 share/locale/ja/LC_MESSAGES/kio5_man.mo
 share/locale/ja/LC_MESSAGES/kio5_mtp.mo
-share/locale/ja/LC_MESSAGES/kio5_network.mo
 share/locale/ja/LC_MESSAGES/kio5_nfs.mo
 share/locale/ja/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ja/LC_MESSAGES/kio5_sftp.mo
@@ -502,7 +461,6 @@ share/locale/ko/LC_MESSAGES/kio5_fish.mo
 share/locale/ko/LC_MESSAGES/kio5_info.mo
 share/locale/ko/LC_MESSAGES/kio5_man.mo
 share/locale/ko/LC_MESSAGES/kio5_mtp.mo
-share/locale/ko/LC_MESSAGES/kio5_network.mo
 share/locale/ko/LC_MESSAGES/kio5_nfs.mo
 share/locale/ko/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ko/LC_MESSAGES/kio5_sftp.mo
@@ -516,7 +474,6 @@ share/locale/lt/LC_MESSAGES/kio5_fish.mo
 share/locale/lt/LC_MESSAGES/kio5_info.mo
 share/locale/lt/LC_MESSAGES/kio5_man.mo
 share/locale/lt/LC_MESSAGES/kio5_mtp.mo
-share/locale/lt/LC_MESSAGES/kio5_network.mo
 share/locale/lt/LC_MESSAGES/kio5_nfs.mo
 share/locale/lt/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/lt/LC_MESSAGES/kio5_sftp.mo
@@ -588,7 +545,6 @@ share/locale/nl/LC_MESSAGES/kio5_fish.mo
 share/locale/nl/LC_MESSAGES/kio5_info.mo
 share/locale/nl/LC_MESSAGES/kio5_man.mo
 share/locale/nl/LC_MESSAGES/kio5_mtp.mo
-share/locale/nl/LC_MESSAGES/kio5_network.mo
 share/locale/nl/LC_MESSAGES/kio5_nfs.mo
 share/locale/nl/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/nl/LC_MESSAGES/kio5_sftp.mo
@@ -602,7 +558,6 @@ share/locale/nn/LC_MESSAGES/kio5_fish.mo
 share/locale/nn/LC_MESSAGES/kio5_info.mo
 share/locale/nn/LC_MESSAGES/kio5_man.mo
 share/locale/nn/LC_MESSAGES/kio5_mtp.mo
-share/locale/nn/LC_MESSAGES/kio5_network.mo
 share/locale/nn/LC_MESSAGES/kio5_nfs.mo
 share/locale/nn/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/nn/LC_MESSAGES/kio5_sftp.mo
@@ -629,7 +584,6 @@ share/locale/pl/LC_MESSAGES/kio5_fish.mo
 share/locale/pl/LC_MESSAGES/kio5_info.mo
 share/locale/pl/LC_MESSAGES/kio5_man.mo
 share/locale/pl/LC_MESSAGES/kio5_mtp.mo
-share/locale/pl/LC_MESSAGES/kio5_network.mo
 share/locale/pl/LC_MESSAGES/kio5_nfs.mo
 share/locale/pl/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/pl/LC_MESSAGES/kio5_sftp.mo
@@ -643,7 +597,6 @@ share/locale/pt/LC_MESSAGES/kio5_fish.mo
 share/locale/pt/LC_MESSAGES/kio5_info.mo
 share/locale/pt/LC_MESSAGES/kio5_man.mo
 share/locale/pt/LC_MESSAGES/kio5_mtp.mo
-share/locale/pt/LC_MESSAGES/kio5_network.mo
 share/locale/pt/LC_MESSAGES/kio5_nfs.mo
 share/locale/pt/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/pt/LC_MESSAGES/kio5_sftp.mo
@@ -657,7 +610,6 @@ share/locale/pt_BR/LC_MESSAGES/kio5_fish.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_info.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_man.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_mtp.mo
-share/locale/pt_BR/LC_MESSAGES/kio5_network.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_nfs.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_sftp.mo
@@ -671,7 +623,6 @@ share/locale/ro/LC_MESSAGES/kio5_fish.mo
 share/locale/ro/LC_MESSAGES/kio5_info.mo
 share/locale/ro/LC_MESSAGES/kio5_man.mo
 share/locale/ro/LC_MESSAGES/kio5_mtp.mo
-share/locale/ro/LC_MESSAGES/kio5_network.mo
 share/locale/ro/LC_MESSAGES/kio5_nfs.mo
 share/locale/ro/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ro/LC_MESSAGES/kio5_sftp.mo
@@ -685,7 +636,6 @@ share/locale/ru/LC_MESSAGES/kio5_fish.mo
 share/locale/ru/LC_MESSAGES/kio5_info.mo
 share/locale/ru/LC_MESSAGES/kio5_man.mo
 share/locale/ru/LC_MESSAGES/kio5_mtp.mo
-share/locale/ru/LC_MESSAGES/kio5_network.mo
 share/locale/ru/LC_MESSAGES/kio5_nfs.mo
 share/locale/ru/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ru/LC_MESSAGES/kio5_sftp.mo
@@ -707,7 +657,6 @@ share/locale/sk/LC_MESSAGES/kio5_fish.mo
 share/locale/sk/LC_MESSAGES/kio5_info.mo
 share/locale/sk/LC_MESSAGES/kio5_man.mo
 share/locale/sk/LC_MESSAGES/kio5_mtp.mo
-share/locale/sk/LC_MESSAGES/kio5_network.mo
 share/locale/sk/LC_MESSAGES/kio5_nfs.mo
 share/locale/sk/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/sk/LC_MESSAGES/kio5_sftp.mo
@@ -721,7 +670,6 @@ share/locale/sl/LC_MESSAGES/kio5_fish.mo
 share/locale/sl/LC_MESSAGES/kio5_info.mo
 share/locale/sl/LC_MESSAGES/kio5_man.mo
 share/locale/sl/LC_MESSAGES/kio5_mtp.mo
-share/locale/sl/LC_MESSAGES/kio5_network.mo
 share/locale/sl/LC_MESSAGES/kio5_nfs.mo
 share/locale/sl/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/sl/LC_MESSAGES/kio5_sftp.mo
@@ -758,7 +706,6 @@ share/locale/sv/LC_MESSAGES/kio5_fish.mo
 share/locale/sv/LC_MESSAGES/kio5_info.mo
 share/locale/sv/LC_MESSAGES/kio5_man.mo
 share/locale/sv/LC_MESSAGES/kio5_mtp.mo
-share/locale/sv/LC_MESSAGES/kio5_network.mo
 share/locale/sv/LC_MESSAGES/kio5_nfs.mo
 share/locale/sv/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/sv/LC_MESSAGES/kio5_sftp.mo
@@ -816,19 +763,21 @@ share/locale/uk/LC_MESSAGES/kio5_fish.mo
 share/locale/uk/LC_MESSAGES/kio5_info.mo
 share/locale/uk/LC_MESSAGES/kio5_man.mo
 share/locale/uk/LC_MESSAGES/kio5_mtp.mo
-share/locale/uk/LC_MESSAGES/kio5_network.mo
 share/locale/uk/LC_MESSAGES/kio5_nfs.mo
 share/locale/uk/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/uk/LC_MESSAGES/kio5_sftp.mo
 share/locale/uk/LC_MESSAGES/kio5_smb.mo
 share/locale/uk/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/vi/LC_MESSAGES/kfileaudiopreview5.mo
+share/locale/vi/LC_MESSAGES/kio5_activities.mo
 share/locale/vi/LC_MESSAGES/kio5_archive.mo
 share/locale/vi/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/vi/LC_MESSAGES/kio5_fish.mo
 share/locale/vi/LC_MESSAGES/kio5_info.mo
 share/locale/vi/LC_MESSAGES/kio5_man.mo
+share/locale/vi/LC_MESSAGES/kio5_mtp.mo
 share/locale/vi/LC_MESSAGES/kio5_nfs.mo
+share/locale/vi/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/vi/LC_MESSAGES/kio5_sftp.mo
 share/locale/vi/LC_MESSAGES/kio5_smb.mo
 share/locale/vi/LC_MESSAGES/kio5_thumbnail.mo
@@ -851,7 +800,6 @@ share/locale/zh_CN/LC_MESSAGES/kio5_fish.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_info.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_man.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_mtp.mo
-share/locale/zh_CN/LC_MESSAGES/kio5_network.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_nfs.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_sftp.mo
@@ -865,14 +813,11 @@ share/locale/zh_TW/LC_MESSAGES/kio5_fish.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_info.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_man.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_mtp.mo
-share/locale/zh_TW/LC_MESSAGES/kio5_network.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_nfs.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_sftp.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_smb.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_thumbnail.mo
-share/mime/packages/kf5_network.xml
 %%MTP%%share/remoteview/mtp-network.desktop
-share/remoteview/network.desktop
 %%SAMBA%%share/remoteview/smb-network.desktop
 %%MTP%%share/solid/actions/solid_mtp.desktop

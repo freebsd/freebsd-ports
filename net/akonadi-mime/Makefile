@@ -8,8 +8,9 @@ COMMENT=	Libraries and daemons to implement basic email handling
 LICENSE=	LGPL21
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 shared-mime-info tar:xz
-USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons ecm \
-		i18n itemmodels kio service widgetsaddons xmlgui
+USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
+		i18n itemmodels kio service widgetsaddons xmlgui \
+		ecm_build
 # pim components
 USE_KDE+=	akonadi mime
 USE_QT=		concurrent core dbus gui network widgets xml \

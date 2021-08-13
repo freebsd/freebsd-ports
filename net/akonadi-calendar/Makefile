@@ -12,11 +12,12 @@ EXPIRATION_DATE=2021-06-23
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		dbusaddons ecm kdelibs4support i18n iconthemes itemmodels \
-		jobwidgets kio service wallet widgetsaddons xmlgui
+		dbusaddons kdelibs4support i18n iconthemes itemmodels \
+		jobwidgets kio service solid wallet widgetsaddons windowsystem xmlgui \
+		ecm_build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime calendarcore calendarutils \
-		contacts identitymanagement mailtransport mime pimtextedit
+		contacts grantleetheme identitymanagement mailtransport mime pimtextedit
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes

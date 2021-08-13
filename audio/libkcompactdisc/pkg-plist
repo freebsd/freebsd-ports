@@ -9,7 +9,6 @@ lib/cmake/KF5CompactDisc/KF5CompactDiscTargets.cmake
 lib/libKF5CompactDisc.so
 lib/libKF5CompactDisc.so.5
 lib/libKF5CompactDisc.so.5.0.0
-%%QT_MKSPECDIR%%/modules/qt_KCompactDisc.pri
 share/locale/ar/LC_MESSAGES/libkcompactdisc.mo
 share/locale/bg/LC_MESSAGES/libkcompactdisc.mo
 share/locale/bs/LC_MESSAGES/libkcompactdisc.mo

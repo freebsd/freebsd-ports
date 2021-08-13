@@ -16,9 +16,7 @@ share/config.kcfg/krdc.kcfg
 %%FREERDP%%share/kservices5/ServiceMenus/smb2rdc.desktop
 %%FREERDP%%share/kservices5/krdc_rdp_config.desktop
 share/kservices5/krdc_vnc_config.desktop
-%%FREERDP%%share/kservices5/rdp.protocol
-share/kservices5/vnc.protocol
-share/kxmlgui5/krdc/krdcui.rc
+share/kservicetypes5/krdc_plugin.desktop
 share/locale/ar/LC_MESSAGES/krdc.mo
 share/locale/be/LC_MESSAGES/krdc.mo
 share/locale/bg/LC_MESSAGES/krdc.mo
@@ -78,3 +76,4 @@ share/locale/vi/LC_MESSAGES/krdc.mo
 share/locale/zh_CN/LC_MESSAGES/krdc.mo
 share/locale/zh_TW/LC_MESSAGES/krdc.mo
 share/metainfo/org.kde.krdc.appdata.xml
+share/qlogging-categories5/krdc.categories

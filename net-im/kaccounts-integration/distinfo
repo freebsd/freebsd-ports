@@ -1,3 +1,3 @@
-TIMESTAMP = 1625868256
-SHA256 (KDE/release-service/21.04.3/kaccounts-integration-21.04.3.tar.xz) = e5e42fb65a6123bf86a3aa517c4c3436e666a64ccc5ed8c3a1cc1bb5de36962b
-SIZE (KDE/release-service/21.04.3/kaccounts-integration-21.04.3.tar.xz) = 85184
+TIMESTAMP = 1628244210
+SHA256 (KDE/release-service/21.08.0/kaccounts-integration-21.08.0.tar.xz) = e67a36b779cd435a5913fd24233dae89368091cbed5bb41bf87c914c47bc034f
+SIZE (KDE/release-service/21.08.0/kaccounts-integration-21.08.0.tar.xz) = 86388

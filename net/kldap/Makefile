@@ -1,6 +1,5 @@
 PORTNAME=	kldap
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +11,8 @@ LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libqt5keychain.so:security/qtkeychain
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
-USE_KDE=	ecm completion config coreaddons i18n kio widgetsaddons service
+USE_KDE=	completion config coreaddons i18n kio widgetsaddons service \
+		ecm_build
 # pim components
 USE_KDE+=	mbox
 USE_QT=		concurrent core dbus gui network widgets \

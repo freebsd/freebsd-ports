@@ -1,10 +1,9 @@
-share/qlogging-categories5/libkleo.categories
-share/qlogging-categories5/libkleo.renamecategories
 etc/xdg/libkleopatrarc
+include/KF5/Libkleo/Algorithm
 include/KF5/Libkleo/ChecksumDefinition
 include/KF5/Libkleo/Classify
 include/KF5/Libkleo/Compat
-include/KF5/Libkleo/CryptoConfigDialog
+include/KF5/Libkleo/CryptoConfig
 include/KF5/Libkleo/CryptoConfigModule
 include/KF5/Libkleo/DNAttributeOrderConfigWidget
 include/KF5/Libkleo/Debug
@@ -12,6 +11,7 @@ include/KF5/Libkleo/DefaultKeyFilter
 include/KF5/Libkleo/DefaultKeyGenerationJob
 include/KF5/Libkleo/DirectoryServicesWidget
 include/KF5/Libkleo/Dn
+include/KF5/Libkleo/EditDirectoryServiceDialog
 include/KF5/Libkleo/Enum
 include/KF5/Libkleo/FileNameRequester
 include/KF5/Libkleo/FileSystemWatcher
@@ -31,8 +31,10 @@ include/KF5/Libkleo/KeyListSortFilterProxyModel
 include/KF5/Libkleo/KeyRearrangeColumnsProxyModel
 include/KF5/Libkleo/KeyRequester
 include/KF5/Libkleo/KeyResolver
+include/KF5/Libkleo/KeyResolverCore
 include/KF5/Libkleo/KeySelectionCombo
 include/KF5/Libkleo/KeySelectionDialog
+include/KF5/Libkleo/KeyserverConfig
 include/KF5/Libkleo/KleoException
 include/KF5/Libkleo/MessageBox
 include/KF5/Libkleo/NewKeyApprovalDialog
@@ -41,11 +43,13 @@ include/KF5/Libkleo/Predicates
 include/KF5/Libkleo/ProgressDialog
 include/KF5/Libkleo/Stl_Util
 include/KF5/Libkleo/SubkeyListModel
+include/KF5/Libkleo/Test
 include/KF5/Libkleo/UserIDListModel
+include/KF5/libkleo/algorithm.h
 include/KF5/libkleo/checksumdefinition.h
 include/KF5/libkleo/classify.h
 include/KF5/libkleo/compat.h
-include/KF5/libkleo/cryptoconfigdialog.h
+include/KF5/libkleo/cryptoconfig.h
 include/KF5/libkleo/cryptoconfigmodule.h
 include/KF5/libkleo/debug.h
 include/KF5/libkleo/defaultkeyfilter.h
@@ -53,6 +57,7 @@ include/KF5/libkleo/defaultkeygenerationjob.h
 include/KF5/libkleo/directoryserviceswidget.h
 include/KF5/libkleo/dn.h
 include/KF5/libkleo/dnattributeorderconfigwidget.h
+include/KF5/libkleo/editdirectoryservicedialog.h
 include/KF5/libkleo/enum.h
 include/KF5/libkleo/filenamerequester.h
 include/KF5/libkleo/filesystemwatcher.h
@@ -72,8 +77,10 @@ include/KF5/libkleo/keylistsortfilterproxymodel.h
 include/KF5/libkleo/keyrearrangecolumnsproxymodel.h
 include/KF5/libkleo/keyrequester.h
 include/KF5/libkleo/keyresolver.h
+include/KF5/libkleo/keyresolvercore.h
 include/KF5/libkleo/keyselectioncombo.h
 include/KF5/libkleo/keyselectiondialog.h
+include/KF5/libkleo/keyserverconfig.h
 include/KF5/libkleo/kleo_export.h
 include/KF5/libkleo/kleoexception.h
 include/KF5/libkleo/messagebox.h
@@ -83,6 +90,7 @@ include/KF5/libkleo/predicates.h
 include/KF5/libkleo/progressdialog.h
 include/KF5/libkleo/stl_util.h
 include/KF5/libkleo/subkeylistmodel.h
+include/KF5/libkleo/test.h
 include/KF5/libkleo/useridlistmodel.h
 include/KF5/libkleo_version.h
 lib/cmake/KF5Libkleo/KF5LibkleoConfig.cmake
@@ -161,3 +169,5 @@ share/locale/ug/LC_MESSAGES/libkleopatra.mo
 share/locale/uk/LC_MESSAGES/libkleopatra.mo
 share/locale/zh_CN/LC_MESSAGES/libkleopatra.mo
 share/locale/zh_TW/LC_MESSAGES/libkleopatra.mo
+share/qlogging-categories5/libkleo.categories
+share/qlogging-categories5/libkleo.renamecategories

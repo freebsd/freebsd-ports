@@ -1,3 +1,3 @@
-TIMESTAMP = 1625868169
-SHA256 (KDE/release-service/21.04.3/kde-dev-utils-21.04.3.tar.xz) = ce0a6b955464c4c7ae851267aab2ebad980c9f455317cf7ce061b5172cf37f1c
-SIZE (KDE/release-service/21.04.3/kde-dev-utils-21.04.3.tar.xz) = 68048
+TIMESTAMP = 1628244118
+SHA256 (KDE/release-service/21.08.0/kde-dev-utils-21.08.0.tar.xz) = 9525394f4bc987345c71f30c163161ddd29e545794b1087f1b589fee227f8c9d
+SIZE (KDE/release-service/21.08.0/kde-dev-utils-21.08.0.tar.xz) = 68160

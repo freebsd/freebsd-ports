@@ -1,9 +1,9 @@
 bin/krfb
 lib/libkrfbprivate.so.5
 lib/libkrfbprivate.so.5.0
-%%QT_PLUGINDIR%%/krfb/krfb_framebuffer_qt.so
-%%QT_PLUGINDIR%%/krfb/krfb_framebuffer_xcb.so
-%%QT_PLUGINDIR%%/krfb/krfb_events_x11.so
+%%QT_PLUGINDIR%%/krfb/events/krfb_events_x11.so
+%%QT_PLUGINDIR%%/krfb/framebuffer/krfb_framebuffer_qt.so
+%%QT_PLUGINDIR%%/krfb/framebuffer/krfb_framebuffer_xcb.so
 share/applications/org.kde.krfb.desktop
 %%DATADIR%%/krfb.notifyrc
 share/icons/hicolor/48x48/apps/krfb.png

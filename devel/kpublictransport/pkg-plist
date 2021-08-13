@@ -2,6 +2,7 @@ include/KPublicTransport/AbstractQueryModel
 include/KPublicTransport/Attribution
 include/KPublicTransport/Backend
 include/KPublicTransport/BackendModel
+include/KPublicTransport/CoverageArea
 include/KPublicTransport/Datatypes
 include/KPublicTransport/Departure
 include/KPublicTransport/DepartureQueryModel
@@ -36,6 +37,7 @@ include/kpublictransport/abstractquerymodel.h
 include/kpublictransport/attribution.h
 include/kpublictransport/backend.h
 include/kpublictransport/backendmodel.h
+include/kpublictransport/coveragearea.h
 include/kpublictransport/datatypes.h
 include/kpublictransport/departure.h
 include/kpublictransport/departurequerymodel.h

@@ -12,10 +12,11 @@ LIB_DEPENDS=	libical.so:devel/libical
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons crash ecm guiaddons i18n iconthemes itemmodels \
+		coreaddons crash guiaddons i18n iconthemes itemmodels \
 		itemviews jobwidgets kdelibs4support kio notifications parts \
 		service solid sonnet textwidgets unitconversion widgetsaddons \
-		windowsystem xmlgui
+		windowsystem xmlgui \
+		ecm_build
 # pim components
 USE_KDE+=	akonadi akonadicalendar calendarsupport calendarcore calendarutils \
 		identitymanagement libkdepim mime pimtextedit

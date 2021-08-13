@@ -19,9 +19,10 @@ LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
 		localbase:ldflags pkgconfig qt:5 tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
-		coreaddons crash dbusaddons ecm i18n iconthemes itemviews \
+		coreaddons crash dbusaddons i18n iconthemes itemviews \
 		jobwidgets kio service solid sonnet textwidgets widgetsaddons \
-		xmlgui
+		windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus gui multimedia network widgets xml \
 		buildtools_build qmake_build
 

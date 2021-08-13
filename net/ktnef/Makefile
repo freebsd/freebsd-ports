@@ -8,7 +8,8 @@ COMMENT=	KDE API for the handling of TNEF data
 LICENSE=	LGPL21
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
-USE_KDE=	config coreaddons ecm i18n kdelibs4support
+USE_KDE=	config coreaddons i18n kdelibs4support \
+		ecm_build
 # pim components
 USE_KDE+=	calendarcore calendarutils contacts
 USE_QT=		core gui widgets xml \

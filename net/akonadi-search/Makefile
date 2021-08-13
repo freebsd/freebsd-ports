@@ -11,8 +11,9 @@ LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		crash ecm i18n itemmodels kcmutils package plasma-framework \
-		runner service widgetsaddons
+		crash i18n itemmodels kcmutils package plasma-framework \
+		runner service widgetsaddons \
+		ecm_build
 # pim components
 USE_KDE+=	akonadi akonadimime calendarcore contacts  mime
 USE_QT=		core dbus gui widgets xml \

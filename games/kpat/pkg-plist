@@ -32,6 +32,7 @@ share/icons/hicolor/64x64/apps/kpat.png
 %%DATADIR%%/previews/19.png
 %%DATADIR%%/previews/2.png
 %%DATADIR%%/previews/3.png
+%%DATADIR%%/previews/4.png
 %%DATADIR%%/previews/5.png
 %%DATADIR%%/previews/7.png
 %%DATADIR%%/previews/8.png
@@ -47,9 +48,9 @@ share/icons/hicolor/64x64/apps/kpat.png
 %%DATADIR%%/themes/greenblaze.desktop
 %%DATADIR%%/themes/greenblaze.png
 %%DATADIR%%/themes/greenblaze.svgz
-%%DATADIR%%/themes/oldertheme.desktop
-%%DATADIR%%/themes/oldertheme.png
-%%DATADIR%%/themes/oldertheme.svgz
+%%DATADIR%%/themes/royalhearts.desktop
+%%DATADIR%%/themes/royalhearts.png
+%%DATADIR%%/themes/royalhearts.svgz
 share/knsrcfiles/kcardtheme.knsrc
 share/knsrcfiles/kpat.knsrc
 share/locale/ar/LC_MESSAGES/kpat.mo

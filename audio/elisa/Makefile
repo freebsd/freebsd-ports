@@ -11,9 +11,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cmake compiler:c++14-lang desktop-file-utils gettext kde:5 \
 		pkgconfig qt:5 tar:xz
 USE_KDE=	auth baloo5 bookmarks codecs completion config configwidgets \
-		coreaddons crash dbusaddons filemetadata i18n itemviews \
+		coreaddons crash dbusaddons filemetadata i18n iconthemes itemviews \
 		jobwidgets kcmutils kdeclarative kio kirigami2 package \
-		service solid widgetsaddons xmlgui
+		service solid widgetsaddons windowsystem xmlgui
 USE_QT=		buildtools_build qmake_build testlib_build \
 		concurrent core dbus declarative gui multimedia network \
 		quickcontrols2 sql svg widgets xml

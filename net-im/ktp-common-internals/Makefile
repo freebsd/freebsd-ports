@@ -21,10 +21,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cmake compiler:c++11-lang gettext pkgconfig kde:5 \
 		qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons ecm i18n iconthemes itemviews jobwidgets kcmutils \
+		coreaddons i18n iconthemes itemviews jobwidgets kcmutils \
 		kio notifications notifyconfig parts people service solid \
-		sonnet texteditor textwidgets wallet widgetsaddons windowsystem \
-		xmlgui
+		sonnet syntaxhighlighting texteditor textwidgets wallet widgetsaddons \
+		windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus declarative gui network sql widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes

@@ -1,5 +1,3 @@
-TIMESTAMP = 1628411805
-SHA256 (KDE/release-service/21.04.3/kitinerary-21.04.3.tar.xz) = 5cee2f06b446997e0414e131618149f124c437aa50b6808494f4902f3178fc61
-SIZE (KDE/release-service/21.04.3/kitinerary-21.04.3.tar.xz) = 1823296
-SHA256 (KDE/release-service/21.04.3/e99d101e2bd4c32566e238ce1340a93781e19eee.diff) = 8da59b8b13a9a64eae74c5726bf44051cb222a952afee8050100ce61375eceef
-SIZE (KDE/release-service/21.04.3/e99d101e2bd4c32566e238ce1340a93781e19eee.diff) = 1379
+TIMESTAMP = 1628244241
+SHA256 (KDE/release-service/21.08.0/kitinerary-21.08.0.tar.xz) = 754e10ce09c929adfc75cce55988f19c6bfb9d211420db7236785ca10c45a241
+SIZE (KDE/release-service/21.08.0/kitinerary-21.08.0.tar.xz) = 1840500

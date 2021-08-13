@@ -17,9 +17,10 @@ USES=		cmake compiler:c++11-lib gettext gnome kde:5 qt:5 \
 		shared-mime-info tar:xz
 USE_GNOME=	libxml2
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
-		dbusaddons ecm guiaddons i18n iconthemes itemmodels itemviews \
+		dbusaddons guiaddons i18n iconthemes itemmodels itemviews \
 		kio service windowsystem widgetsaddons xmlgui \
-		designerplugin_build designerplugin_run
+		designerplugin_build ecm_build \
+		designerplugin_run
 USE_QT=		concurrent core dbus designer gui network sql testlib widgets xml \
 		buildtools_build qmake_build
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"

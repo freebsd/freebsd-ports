@@ -6,9 +6,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Handy timer for steeping tea
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
-USE_KDE=	auth codecs config configwidgets coreaddons crash doctools ecm \
+USE_KDE=	auth codecs config configwidgets coreaddons crash doctools \
 		i18n iconthemes notifications notifyconfig sonnet textwidgets \
-		widgetsaddons xmlgui
+		widgetsaddons xmlgui \
+		ecm_build
 USE_QT=		core dbus gui widgets xml \
 		buildtools_build qmake_build
 

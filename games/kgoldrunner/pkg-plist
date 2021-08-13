@@ -10,6 +10,7 @@ share/icons/hicolor/64x64/apps/kgoldrunner.png
 %%DATADIR%%/system/game_GMEP.txt
 %%DATADIR%%/system/game_GMGR.txt
 %%DATADIR%%/system/game_GRII.txt
+%%DATADIR%%/system/game_GotD.txt
 %%DATADIR%%/system/game_MAZ.txt
 %%DATADIR%%/system/game_blb.txt
 %%DATADIR%%/system/game_cnt.txt
@@ -30,6 +31,7 @@ share/icons/hicolor/64x64/apps/kgoldrunner.png
 %%DATADIR%%/system/rec_GMGR.txt
 %%DATADIR%%/system/rec_GRII.txt
 %%DATADIR%%/system/rec_demo.txt
+%%DATADIR%%/system/sol_GotD.txt
 %%DATADIR%%/system/sol_blb.txt
 %%DATADIR%%/system/sol_fd.txt
 %%DATADIR%%/system/sol_kgr.txt

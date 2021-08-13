@@ -136,7 +136,6 @@ share/konqsidebartng/entries/places.desktop
 share/konqsidebartng/entries/remote.desktop
 share/konqsidebartng/entries/root.desktop
 share/konqsidebartng/entries/services.desktop
-share/konqsidebartng/entries/settings.desktop
 share/konqsidebartng/plugins/konqsidebar_bookmarks.desktop
 share/konqsidebartng/plugins/konqsidebar_history.desktop
 share/konqsidebartng/plugins/konqsidebar_places.desktop

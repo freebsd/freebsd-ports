@@ -10,10 +10,11 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 USES=		cmake compiler:c++11-lang gettext kde:5 openal qt:5 \
 		tar:xz
 USE_KDE=	archive attica auth bookmarks codecs completion config \
-		configwidgets coreaddons crash dbusaddons dnssd ecm emoticons \
+		configwidgets coreaddons crash dbusaddons dnssd emoticons \
 		globalaccel guiaddons i18n iconthemes init itemmodels \
 		itemviews jobwidgets kdeclarative kdelibs4support kio newstuff \
-		package service textwidgets widgetsaddons xmlgui
+		package service textwidgets widgetsaddons xmlgui \
+		ecm_build
 USE_QT=		core dbus declarative gui network svg testlib widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes

@@ -20,11 +20,11 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		i18n iconthemes itemmodels itemviews jobwidgets kio \
-		service sonnet syntaxhighlighting textwidgets wallet \
+		service solid sonnet syntaxhighlighting textwidgets wallet \
 		widgetsaddons windowsystem xmlgui \
 		ecm_build
 # pim components
-USE_KDE+=	akonadi akonadicontacts akonadimime contacts identitymanagement \
+USE_KDE+=	akonadi akonadicontacts akonadimime contacts grantleetheme identitymanagement \
 		imap ldap libkdepim libkleo mailimporter \
 		mailtransport messagelib mime pimcommon pimtextedit
 USE_QT=		concurrent core dbus network xml designer gui multimedia \

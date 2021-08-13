@@ -9,9 +9,10 @@ RUN_DEPENDS=	kqtquickcharts>=${KDE_APPLICATIONS_VERSION}:graphics/kqtquickcharts
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons doctools \
-		ecm i18n iconthemes itemviews kcmutils kdeclarative kio newstuff package \
+		i18n iconthemes itemviews kcmutils kdeclarative kio newstuff package \
 		parts service sonnet texteditor textwidgets widgetsaddons \
-		windowsystem xmlgui
+		windowsystem xmlgui \
+		ecm_build
 USE_QT=		core dbus declarative gui network quickcontrols2 script sql \
 		testlib widgets x11extras xml xmlpatterns \
 		buildtools_build qmake_build

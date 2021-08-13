@@ -11,7 +11,8 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USES=		compiler:c++11-lang cmake gettext kde:5 qt:5 tar:xz
-USE_KDE=	ecm plasma-framework windowsystem
+USE_KDE=	plasma-framework windowsystem \
+		ecm_build
 USE_QT=		core dbus declarative gui network widgets \
 		buildtools_build qmake_build
 

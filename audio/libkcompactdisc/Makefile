@@ -6,9 +6,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE library for interfacing with audio CDs
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
-USE_KDE=	coreaddons ecm emoticons i18n itemmodels itemviews \
-		kdelibs4support solid
-USE_QT=		core dbus phonon4\
+USE_KDE=	coreaddons emoticons i18n itemmodels itemviews \
+		kdelibs4support solid \
+		ecm_build
+USE_QT=		core dbus gui phonon4 widgets \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

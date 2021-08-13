@@ -9,10 +9,11 @@ LICENSE=	LGPL21
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons crash ecm guiaddons holidays i18n iconthemes \
+		coreaddons crash guiaddons holidays i18n iconthemes \
 		itemmodels itemviews jobwidgets kdelibs4support kio \
 		notifications parts service solid sonnet textwidgets \
-		unitconversion widgetsaddons windowsystem xmlgui
+		unitconversion widgetsaddons windowsystem xmlgui \
+		ecm_build
 # pim components
 USE_KDE+=	akonadi calendarcore calendarutils holidays identitymanagement \
 		pimtextedit

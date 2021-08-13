@@ -6,11 +6,18 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries and daemons to implement Contact Management in Akonadi
 LICENSE=	LGPL21
 
+LIB_DEPENDS=	libassuan.so:security/libassuan \
+		libgpg-error.so:security/libgpg-error \
+		libgpgme.so:security/gpgme \
+		libgpgmepp.so:security/gpgme-cpp \
+		libqgpgme.so:security/gpgme-qt5
+
 USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 \
 		qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		dbusaddons ecm i18n iconthemes itemmodels jobwidgets kio \
-		prison service sonnet textwidgets widgetsaddons xmlgui
+		dbusaddons i18n iconthemes itemmodels jobwidgets kcmutils kio \
+		prison service solid sonnet textwidgets widgetsaddons windowsystem xmlgui \
+		ecm_build
 # pim components
 USE_KDE+=	akonadi akonadimime calendarcore contacts grantleetheme libkleo mime
 USE_QT=		concurrent core dbus gui network testlib widgets xml \

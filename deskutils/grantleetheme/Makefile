@@ -9,8 +9,9 @@ LICENSE=	LGPL21
 
 USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 \
 		pkgconfig qt:5 tar:xz
-USE_KDE=	attica auth codecs config configwidgets coreaddons ecm i18n \
-		iconthemes newstuff service widgetsaddons xmlgui
+USE_KDE=	attica auth codecs config configwidgets coreaddons guiaddons \
+		i18n iconthemes newstuff service widgetsaddons xmlgui \
+		ecm_build
 USE_QT=		core dbus gui network testlib widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes

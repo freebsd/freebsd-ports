@@ -1,6 +1,5 @@
 PORTNAME=	umbrello
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +12,7 @@ USE_GNOME=	libxml2 libxslt
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash guiaddons i18n iconthemes init itemviews \
 		jobwidgets kdelibs4support kio notifications parts service \
-		solid sonnet texteditor textwidgets unitconversion \
+		solid sonnet syntaxhighlighting texteditor textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui \
 		ecm_build
 USE_QT=		concurrent core dbus gui network printsupport svg webkit widgets xml \

@@ -99,7 +99,7 @@ lib/libKF5ContactEditor.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/akonadi/contacts/plugins/categorieseditwidgetplugin.so
 %%QT_PLUGINDIR%%/akonadi_serializer_addressee.so
 %%QT_PLUGINDIR%%/akonadi_serializer_contactgroup.so
-%%QT_PLUGINDIR%%/kcm_akonadicontact_actions.so
+%%QT_PLUGINDIR%%/pim/kcms/kaddressbook/kcm_akonadicontact_actions.so
 share/akonadi/plugins/serializer/akonadi_serializer_addressee.desktop
 share/akonadi/plugins/serializer/akonadi_serializer_contactgroup.desktop
 share/kf5/akonadi/contact/data/zone.tab

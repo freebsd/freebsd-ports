@@ -23,9 +23,10 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext iconv \
 		kde:5 pkgconfig qt:5 shared-mime-info tar:xz
 
 USE_KDE=	archive attica auth bookmarks codecs completion config \
-		configwidgets coreaddons ecm filemetadata i18n iconthemes \
+		configwidgets coreaddons filemetadata i18n iconthemes \
 		itemviews jobwidgets kcmutils kio newstuff notifications \
-		notifyconfig service solid widgetsaddons xmlgui
+		notifyconfig service solid widgetsaddons windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus gui network webkit widgets xml \
 		buildtools_build qmake_build
 

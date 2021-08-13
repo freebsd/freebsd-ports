@@ -11,13 +11,13 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 
 USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz
 USE_KDE=	archive attica auth codecs completion config configwidgets \
-		coreaddons dbusaddons emoticons i18n init iconthemes itemmodels \
-		jobwidgets kio newstuff service sonnet textwidgets \
-		wallet widgetsaddons xmlgui \
+		coreaddons dbusaddons emoticons i18n init iconthemes itemmodels itemviews \
+		jobwidgets kcmutils kio newstuff service solid sonnet textwidgets \
+		wallet widgetsaddons windowsystem xmlgui \
 		ecm_build
 # pim components
-USE_KDE+=	akonadi akonadicontacts contacts imap libkdepim mime \
-		pimtextedit purpose
+USE_KDE+=	akonadi akonadicontacts akonadisearch contacts grantleetheme imap ldap \
+		libkdepim mime pimtextedit purpose
 USE_QT=		concurrent core dbus designer gui network printsupport script testlib \
 		uiplugin uitools webkit widgets xml \
 		buildtools_build qmake_build

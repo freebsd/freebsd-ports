@@ -14,7 +14,7 @@ man/pt_BR/man1/kmplot.1.gz
 man/ru/man1/kmplot.1.gz
 man/sv/man1/kmplot.1.gz
 man/uk/man1/kmplot.1.gz
-%%QT_PLUGINDIR%%/kmplotpart.so
+%%QT_PLUGINDIR%%/kf5/parts/kmplotpart.so
 share/applications/org.kde.kmplot.desktop
 share/config.kcfg/kmplot.kcfg
 share/dbus-1/interfaces/org.kde.kmplot.KmPlot.xml

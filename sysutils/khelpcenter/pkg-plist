@@ -3,7 +3,6 @@ share/qlogging-categories5/khelpcenter.categories
 lib/libexec/khc_mansearch.pl
 lib/libexec/khc_xapianindexer
 lib/libexec/khc_xapiansearch
-lib/libkdeinit5_khelpcenter.so
 share/applications/org.kde.Help.desktop
 share/config.kcfg/khelpcenter.kcfg
 share/kde4/services/khelpcenter.desktop
@@ -37,7 +36,6 @@ share/kde4/services/khelpcenter.desktop
 %%DATADIR%%/templates/index.html
 %%DATADIR%%/templates/search.html
 share/kservices5/khelpcenter.desktop
-share/kxmlgui5/khelpcenter/khelpcenterui.rc
 share/locale/ar/LC_MESSAGES/khelpcenter5.mo
 share/locale/ast/LC_MESSAGES/khelpcenter5.mo
 share/locale/be/LC_MESSAGES/khelpcenter5.mo

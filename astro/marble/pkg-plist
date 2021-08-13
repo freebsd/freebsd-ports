@@ -180,7 +180,7 @@ lib/libastro.so.0.17.20
 lib/libastro.so.1
 lib/libmarbledeclarative.so
 lib/libmarblewidget-qt5.so
-lib/libmarblewidget-qt5.so.0.28.0
+lib/libmarblewidget-qt5.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libmarblewidget-qt5.so.28
 lib/marble/plugins/AnnotatePlugin.so
 lib/marble/plugins/AprsPlugin.so

@@ -12,13 +12,14 @@ LIB_DEPENDS=	libical.so:devel/libical
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 shebangfix tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons crash dbusaddons ecm guiaddons i18n iconthemes \
+		coreaddons crash dbusaddons guiaddons i18n iconthemes \
 		itemmodels itemviews jobwidgets kcmutils kdelibs4support kio \
 		notifications notifyconfig parts service solid sonnet textwidgets \
-		unitconversion wallet widgetsaddons windowsystem xmlgui
+		unitconversion wallet widgetsaddons windowsystem xmlgui \
+		ecm_build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime alarmcalendar calendarcore \
-		calendarutils contacts globalaccel holidays identitymanagement \
+		calendarutils contacts globalaccel grantleetheme holidays identitymanagement \
 		idletime libkdepim mailcommon mailtransport mime \
 		pimcommon pimtextedit imap \
 		kdepim-runtime5_run

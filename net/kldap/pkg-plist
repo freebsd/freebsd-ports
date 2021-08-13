@@ -49,8 +49,6 @@ lib/libKF5Ldap.so.5
 lib/libKF5Ldap.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_Ldap.pri
 %%QT_PLUGINDIR%%/kf5/kio/ldap.so
-share/kservices5/ldap.protocol
-share/kservices5/ldaps.protocol
 share/locale/ar/LC_MESSAGES/kio_ldap.mo
 share/locale/ar/LC_MESSAGES/libkldap5.mo
 share/locale/be/LC_MESSAGES/kio_ldap.mo

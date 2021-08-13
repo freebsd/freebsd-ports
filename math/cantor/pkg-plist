@@ -51,9 +51,10 @@ lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_runscriptassistant.so
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_solveassistant.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_kalgebrabackend.so
+%%QT_PLUGINDIR%%/cantor/backends/cantor_octavebackend.so
+%%QT_PLUGINDIR%%/cantor/panels/cantor_documentationpanelplugin.so
 %%LUAJIT%%%%QT_PLUGINDIR%%/cantor/backends/cantor_luabackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_maximabackend.so
-%%QT_PLUGINDIR%%/cantor/backends/cantor_octavebackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_pythonbackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_qalculatebackend.so
 %%R%%%%QT_PLUGINDIR%%/cantor/backends/cantor_rbackend.so
@@ -63,7 +64,7 @@ lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/cantor/panels/cantor_helppanelplugin.so
 %%QT_PLUGINDIR%%/cantor/panels/cantor_tocpanelplugin.so
 %%QT_PLUGINDIR%%/cantor/panels/cantor_variablemanagerplugin.so
-%%QT_PLUGINDIR%%/libcantorpart.so
+%%QT_PLUGINDIR%%/kf5/parts/cantorpart.so
 share/applications/org.kde.cantor.desktop
 %%DATADIR%%/latex/preview.sty
 %%DATADIR%%/maximabackend/cantor-initmaxima.lisp
@@ -80,7 +81,7 @@ share/config.kcfg/cantor_libs.kcfg
 %%LUAJIT%%share/config.kcfg/luabackend.kcfg
 share/config.kcfg/kalgebrabackend.kcfg
 share/config.kcfg/maximabackend.kcfg
-share/config.kcfg/octavebackend.kcfg
+share/config.kcfg/octavebackend.kcfg.in
 share/config.kcfg/pythonbackend.kcfg
 share/config.kcfg/qalculatebackend.kcfg
 %%R%%share/config.kcfg/rserver.kcfg
@@ -102,6 +103,7 @@ share/icons/hicolor/48x48/apps/rbackend.png
 share/icons/hicolor/48x48/apps/sagebackend.png
 share/icons/hicolor/48x48/apps/scilabbackend.png
 share/icons/hicolor/64x64/apps/cantor.png
+share/knsrcfiles/cantor-documentation.knsrc
 share/knsrcfiles/cantor.knsrc
 share/knsrcfiles/cantor_kalgebra.knsrc
 %%LUAJIT%%share/knsrcfiles/cantor_lua.knsrc

@@ -7,8 +7,9 @@ COMMENT=	Bookmark Organizer and Editor
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons ecm i18n iconthemes jobwidgets kio parts service \
-		sonnet textwidgets widgetsaddons windowsystem xmlgui
+		coreaddons i18n iconthemes jobwidgets kio parts service \
+		solid sonnet textwidgets widgetsaddons windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
 

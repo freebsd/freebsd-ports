@@ -11,9 +11,10 @@ LIB_DEPENDS=	libfreecell-solver.so:games/freecell-solver \
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 pkgconfig \
 		qt:5 shared-mime-info tar:xz
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
-		crash dbusaddons ecm guiaddons i18n iconthemes itemviews \
+		crash dbusaddons guiaddons i18n iconthemes itemviews \
 		kdeclarative kio libkdegames newstuff notifyconfig service \
-		textwidgets widgetsaddons xmlgui
+		textwidgets widgetsaddons xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus declarative gui network phonon4 svg widgets xml \
 		buildtools_build qmake_build
 CMAKE_ON=	WITH_BH_SOLVER

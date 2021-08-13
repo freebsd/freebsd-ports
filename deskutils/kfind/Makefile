@@ -7,10 +7,11 @@ COMMENT=	Find files and folders
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
-		coreaddons crash ecm filemetadata guiaddons i18n iconthemes itemviews \
+		coreaddons crash filemetadata guiaddons i18n iconthemes itemviews \
 		jobwidgets kdelibs4support kio notifications parts service \
 		solid sonnet textwidgets unitconversion widgetsaddons \
-		windowsystem xmlgui
+		windowsystem xmlgui \
+		ecm_build
 USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build
 

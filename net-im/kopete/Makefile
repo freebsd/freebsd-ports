@@ -18,7 +18,7 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons dnssd emoticons guiaddons i18n \
 		iconthemes itemviews jobwidgets js kcmutils kdelibs4support \
 		khtml kio notifications notifyconfig parts service solid sonnet \
-		texteditor textwidgets unitconversion wallet widgetsaddons \
+		syntaxhighlighting texteditor textwidgets unitconversion wallet widgetsaddons \
 		windowsystem xmlgui \
 		ecm_build
 # KDE PIM components

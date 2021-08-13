@@ -9,7 +9,6 @@ man/man1/spectacle.1.gz
 man/nl/man1/spectacle.1.gz
 man/sv/man1/spectacle.1.gz
 man/uk/man1/spectacle.1.gz
-share/qlogging-categories5/spectacle.categories
 share/applications/org.kde.spectacle.desktop
 share/dbus-1/interfaces/org.kde.Spectacle.xml
 share/dbus-1/services/org.kde.Spectacle.service
@@ -18,6 +17,8 @@ share/icons/hicolor/22x22/apps/spectacle.png
 share/icons/hicolor/32x32/apps/spectacle.png
 share/icons/hicolor/48x48/apps/spectacle.png
 share/icons/hicolor/scalable/apps/spectacle.svgz
+share/kconf_update/50-clipboard_settings_change.py
+share/kconf_update/spectacle_clipboard.upd
 share/kconf_update/spectacle_newConfig.upd
 share/kconf_update/spectacle_shortcuts.upd
 share/kglobalaccel/org.kde.spectacle.desktop
@@ -58,8 +59,10 @@ share/locale/sk/LC_MESSAGES/spectacle.mo
 share/locale/sl/LC_MESSAGES/spectacle.mo
 share/locale/sr/LC_MESSAGES/spectacle.mo
 share/locale/sv/LC_MESSAGES/spectacle.mo
+share/locale/ta/LC_MESSAGES/spectacle.mo
 share/locale/tr/LC_MESSAGES/spectacle.mo
 share/locale/uk/LC_MESSAGES/spectacle.mo
 share/locale/zh_CN/LC_MESSAGES/spectacle.mo
 share/locale/zh_TW/LC_MESSAGES/spectacle.mo
 share/metainfo/org.kde.spectacle.appdata.xml
+share/qlogging-categories5/spectacle.categories

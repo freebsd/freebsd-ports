@@ -1,11 +1,10 @@
 bin/kcalc
-lib/libkdeinit5_kcalc.so
 share/applications/org.kde.kcalc.desktop
 share/config.kcfg/kcalc.kcfg
 %%DATADIR%%/scienceconstants.xml
 share/kconf_update/kcalcrc.upd
-share/kxmlgui5/kcalc/kcalcui.rc
 share/locale/ar/LC_MESSAGES/kcalc.mo
+share/locale/az/LC_MESSAGES/kcalc.mo
 share/locale/be/LC_MESSAGES/kcalc.mo
 share/locale/bg/LC_MESSAGES/kcalc.mo
 share/locale/bs/LC_MESSAGES/kcalc.mo

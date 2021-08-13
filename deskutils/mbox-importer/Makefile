@@ -16,10 +16,11 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext kde:5 qt:5 tar:xz
 USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
-		crash ecm i18n itemmodels kio service widgetsaddons
+		crash i18n itemmodels kio service widgetsaddons \
+		ecm_build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime contacts \
-		identitymanagement imap libkdepim libkleo mailcommon \
+		grantleetheme identitymanagement imap libkdepim libkleo mailcommon \
 		mailimporter messagelib mime pimcommon pimtextedit
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build

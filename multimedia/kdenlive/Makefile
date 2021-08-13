@@ -1,6 +1,5 @@
 PORTNAME=	kdenlive
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,19 +11,21 @@ LIB_DEPENDS=	librttr_core.so:devel/rttr
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX} \
-		${LOCALBASE}/lib/mlt/libmltqt.so:multimedia/mlt6-qt5
+		${LOCALBASE}/lib/mlt-7/libmltqt.so:multimedia/mlt7-qt5
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext-tools \
-	gl mlt:6 pkgconfig qt:5 shared-mime-info kde:5 tar:xz xorg
+		gl mlt:7 pkgconfig qt:5 shared-mime-info kde:5 tar:xz xorg
 USE_GL=		gl glu
 USE_KDE=	archive attica auth bookmarks codecs completion config \
-		configwidgets coreaddons crash dbusaddons ecm filemetadata \
+		configwidgets coreaddons crash dbusaddons filemetadata \
 		guiaddons i18n iconthemes kio itemviews jobwidgets \
 		kdeclarative newstuff notifications notifyconfig package \
-		service solid sonnet textwidgets widgetsaddons xmlgui \
+		service solid sonnet textwidgets widgetsaddons windowsystem \
+		xmlgui \
+		ecm_build \
 		init_run
 USE_QT=		concurrent core dbus declarative gui multimedia network \
-		networkauth xml \
+		networkauth quickcontrols2 xml \
 		buildtools_build qmake_build \
 		quickcontrols_run script svg webkit widgets
 USE_XORG=	x11
