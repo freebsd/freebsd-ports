@@ -314,6 +314,7 @@
     SUBDIR += ggobi
     SUBDIR += gh-bc
     SUBDIR += giacxcas
+    SUBDIR += gismo
     SUBDIR += givaro
     SUBDIR += gkmap
     SUBDIR += glgraph

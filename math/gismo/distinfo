@@ -1,0 +1,7 @@
+TIMESTAMP = 1628817047
+SHA256 (gismo-gismo-v0.8.4-849-g8b36bfe5_GH0.tar.gz) = a5db6ef29024f0d4d34228228c1d84d72e21b546a37da9a0f14700c69d2ba9aa
+SIZE (gismo-gismo-v0.8.4-849-g8b36bfe5_GH0.tar.gz) = 4945758
+SHA256 (gismo-gsElasticity-7bfde6d_GH0.tar.gz) = 1f9e76b148670dad8ee5c7960218cf6f1d4ffc730ca20755ef0c66980bb3276f
+SIZE (gismo-gsElasticity-7bfde6d_GH0.tar.gz) = 280973
+SHA256 (gismo-gsUnitTest-7c42e58_GH0.tar.gz) = 67318cc0b685ad2d17199a78c916aa19ac306f3ce4e1679d01f398f117cf12ca
+SIZE (gismo-gsUnitTest-7c42e58_GH0.tar.gz) = 22779
