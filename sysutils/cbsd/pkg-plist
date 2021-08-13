@@ -125,6 +125,7 @@ cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-12.2.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-13.0.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-14.0-LATEST.conf
 cbsd/etc/defaults/vm-freebsd-GhostBSD-x64-21.conf
+cbsd/etc/defaults/vm-freebsd-HardenedBSD-x64-14.0-LATEST.conf
 cbsd/etc/defaults/vm-freebsd-OPNsense-21-RELEASE-amd64.conf
 cbsd/etc/defaults/vm-freebsd-pfSense-2-RELEASE-amd64.conf
 cbsd/etc/defaults/vm-freebsd-TrueNAS-x64-12.conf
@@ -854,6 +855,7 @@ cbsd/tools/checkrhost
 cbsd/tools/cluster
 cbsd/tools/copy-binlib
 cbsd/tools/cpu-topology
+cbsd/tools/cpuset
 cbsd/tools/destroy
 cbsd/tools/detachzfs
 cbsd/tools/dhcpd
