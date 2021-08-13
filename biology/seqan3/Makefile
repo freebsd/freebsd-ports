@@ -20,9 +20,17 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	seqan
 GH_TUPLE=	xxsds:sdsl-lite:9a0d567:sdsl_lite/submodules/sdsl-lite
 
+TEST_WRKSRC=	${WRKSRC}/.test
+
 NO_ARCH=	yes
 
 post-install:
 	@${RM} -r ${STAGEDIR}${DOCSDIR}
+
+do-test: # fail: https://github.com/seqan/seqan3/issues/2643
+	@${MKDIR} ${TEST_WRKSRC} && cd ${TEST_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} ${WRKSRC}/test/unit && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
+		ctest
 
 .include <bsd.port.mk>
