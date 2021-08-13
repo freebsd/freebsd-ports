@@ -2,5 +2,5 @@
 
 if [ "$2" = "DEINSTALL" ]; then
 	echo "Removing ssm-user"
-	pw userdel ssm-user -r
+	pw -R ${PKG_ROOTDIR} userdel ssm-user -r
 fi
