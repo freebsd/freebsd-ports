@@ -154,6 +154,7 @@
     SUBDIR += kodi-addon-visualization.fishbmc
     SUBDIR += kodi-addon-visualization.shadertoy
     SUBDIR += kodi-addon-visualization.spectrum
+    SUBDIR += kooha
     SUBDIR += kvazaar
     SUBDIR += l-smash
     SUBDIR += libaacs

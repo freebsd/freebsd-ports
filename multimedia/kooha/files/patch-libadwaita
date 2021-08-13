@@ -1,0 +1,159 @@
+Revert dependency on unreleased libadwaita
+https://github.com/SeaDve/Kooha/commit/426a703bba29
+https://gitlab.gnome.org/GNOME/libadwaita/-/commit/9b6efa65dabb
+https://github.com/SeaDve/Kooha/commit/ceffdede0670
+https://gitlab.gnome.org/GNOME/libadwaita/-/commit/ea7ef0f2e2ac
+
+--- data/resources/ui/window.ui.orig	2021-08-08 16:08:31 UTC
++++ data/resources/ui/window.ui
+@@ -10,9 +10,10 @@
+     <child>
+       <object class="GtkWindowHandle">
+         <child>
+-          <object class="AdwViewStack" id="main_stack">
++          <object class="GtkStack" id="main_stack">
++            <property name="transition-type">crossfade</property>
+             <child>
+-              <object class="AdwViewStackPage">
++              <object class="GtkStackPage">
+                 <property name="name">main-screen</property>
+                 <property name="child">
+                   <object class="GtkBox">
+@@ -35,12 +36,13 @@
+                           </object>
+                         </child>
+                         <child type="title">
+-                          <object class="AdwViewStack" id="title_stack">
++                          <object class="GtkStack" id="title_stack">
++                            <property name="transition-type">crossfade</property>
+                             <style>
+                               <class name="title"/>
+                             </style>
+                             <child>
+-                              <object class="AdwViewStackPage">
++                              <object class="GtkStackPage">
+                                 <property name="name">monitor-window</property>
+                                 <property name="child">
+                                   <object class="GtkLabel">
+@@ -50,7 +52,7 @@
+                               </object>
+                             </child>
+                             <child>
+-                              <object class="AdwViewStackPage">
++                              <object class="GtkStackPage">
+                                 <property name="name">selection</property>
+                                 <property name="child">
+                                   <object class="GtkLabel">
+@@ -139,7 +141,7 @@
+               </object>
+             </child>
+             <child>
+-              <object class="AdwViewStackPage">
++              <object class="GtkStackPage">
+                 <property name="name">recording</property>
+                 <property name="child">
+                   <object class="GtkBox">
+@@ -199,7 +201,7 @@
+               </object>
+             </child>
+             <child>
+-              <object class="AdwViewStackPage">
++              <object class="GtkStackPage">
+                 <property name="name">delay</property>
+                 <property name="child">
+                   <object class="GtkBox">
+@@ -245,7 +247,7 @@
+               </object>
+             </child>
+             <child>
+-              <object class="AdwViewStackPage">
++              <object class="GtkStackPage">
+                 <property name="name">flushing</property>
+                 <property name="child">
+                   <object class="GtkBox">
+--- src/application.rs.orig	2021-08-08 16:08:31 UTC
++++ src/application.rs
+@@ -1,7 +1,6 @@
+-use adw::subclass::prelude::*;
+ use gettextrs::gettext;
+ use gtk::{
+-    gio,
++    gdk, gio,
+     glib::{self, clone, WeakRef},
+     prelude::*,
+     subclass::prelude::*,
+@@ -29,7 +28,7 @@ mod imp {
+     impl ObjectSubclass for Application {
+         const NAME: &'static str = "Application";
+         type Type = super::Application;
+-        type ParentType = adw::Application;
++        type ParentType = gtk::Application;
+     }
+ 
+     impl ObjectImpl for Application {}
+@@ -55,17 +54,17 @@ mod imp {
+             self.parent_startup(app);
+             gtk::Window::set_default_icon_name(APP_ID);
+ 
++            app.setup_css();
+             app.setup_actions();
+         }
+     }
+ 
+     impl GtkApplicationImpl for Application {}
+-    impl AdwApplicationImpl for Application {}
+ }
+ 
+ glib::wrapper! {
+     pub struct Application(ObjectSubclass<imp::Application>)
+-        @extends gio::Application, gtk::Application, adw::Application,
++        @extends gio::Application, gtk::Application,
+         @implements gio::ActionMap, gio::ActionGroup;
+ }
+ 
+@@ -123,6 +122,21 @@ impl Application {
+         self.set_accels_for_action("win.toggle-record", &["<Primary>r"]);
+         self.set_accels_for_action("win.toggle-pause", &["<Primary>k"]);
+         self.set_accels_for_action("win.cancel-delay", &["<Primary>c"]);
++    }
++
++    fn setup_css(&self) {
++        let provider = gtk::CssProvider::new();
++        provider.load_from_resource("/io/github/seadve/Kooha/style.css");
++        if let Some(display) = gdk::Display::default() {
++            gtk::StyleContext::add_provider_for_display(
++                &display,
++                &provider,
++                gtk::STYLE_PROVIDER_PRIORITY_APPLICATION,
++            );
++
++            log::debug!("is_display_composited: {}", display.is_composited());
++            log::debug!("is_display_rgba: {}", display.is_rgba());
++        }
+     }
+ 
+     fn select_saving_location(&self) {
+--- src/main.rs.orig	2021-08-08 16:08:31 UTC
++++ src/main.rs
+@@ -35,6 +35,7 @@ fn main() {
+ 
+     gst::init().expect("Unable to start gstreamer.");
+     gtk::init().expect("Unable to start GTK4.");
++    adw::init();
+ 
+     gstgif::plugin_register_static().expect("Failed to register gif plugin.");
+ 
+--- src/widgets/window.rs.orig	2021-08-08 16:08:31 UTC
++++ src/widgets/window.rs
+@@ -34,9 +34,9 @@ mod imp {
+         #[template_child]
+         pub pause_record_button: TemplateChild<gtk::Button>,
+         #[template_child]
+-        pub main_stack: TemplateChild<adw::ViewStack>,
++        pub main_stack: TemplateChild<gtk::Stack>,
+         #[template_child]
+-        pub title_stack: TemplateChild<adw::ViewStack>,
++        pub title_stack: TemplateChild<gtk::Stack>,
+         #[template_child]
+         pub recording_label: TemplateChild<gtk::Label>,
+         #[template_child]
