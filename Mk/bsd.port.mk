@@ -1195,7 +1195,11 @@ _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 # Skip if OSVERSION specified on cmdline for testing. Only works for bmake.
 .if !defined(.MAKEOVERRIDES) || !${.MAKEOVERRIDES:MOSVERSION}
 .if ${_OSVERSION_MAJOR} != ${_OSRELEASE:R}
-.error UNAME_r (${_OSRELEASE}) and OSVERSION (${OSVERSION}) do not agree on major version number.
+.if defined(I_DONT_CARE_IF_MY_BUILDS_TARGET_THE_WRONG_RELEASE)
+WARNING+=	"I_DONT_CARE_IF_MY_BUILDS_TARGET_THE_WRONG_RELEASE set: Expect unexpected problems as the chroot/jail file versions do not match what `uname` returns. Thus buids will target the wrong release."
+.else
+.error UNAME_r (${_OSRELEASE}) and OSVERSION (${OSVERSION}) do not agree on major version number: This means your jail or chroot is misconfigured such that the installed files (OSVERION) do not match what `uname -r` (kernel) treturns. Likely setting UNAME_r will resolve the issue. OSVERSION should not be set as it will be read from /usr/include/sys/param.h.
+.endif
 .elif ${_OSVERSION_MAJOR} != ${OSREL:R}
 .error OSREL (${OSREL}) and OSVERSION (${OSVERSION}) do not agree on major version number.
 .endif
