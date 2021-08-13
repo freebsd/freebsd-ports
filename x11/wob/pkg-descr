@@ -1,4 +1,5 @@
-A lightweight overlay volume/backlight/progress/anything bar for
-Wayland. This project is inspired by xob - X Overlay Bar.
+A lightweight overlay volume/backlight/progress/anything bar for wlroots
+based Wayland compositors (requrires support for wlr_layer_shell_unstable_v1).
+This project is inspired by xob - X Overlay Bar.
 
 WWW: https://github.com/francma/wob
