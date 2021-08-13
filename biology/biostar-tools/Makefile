@@ -1,5 +1,5 @@
 PORTNAME=	biostar-tools
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	biology python
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -9,13 +9,15 @@ LICENSE=	BSD2CLAUSE
 
 # For a current list see http://data.biostarhandbook.com/install/conda.txt.
 # Also included are some programs not listed above, but mentioned in the text.
-# sra-tools is almost complete and will be added pending testing
+# TODO: Add hdfview
 RUN_DEPENDS=	wget>0:ftp/wget \
 		curl>0:ftp/curl \
 		nano>0:editors/nano \
 		parallel>0:sysutils/parallel \
 		seqkit>0:biology/seqkit \
 		csvtk>0:science/csvtk \
+		${PYTHON_PKGNAMEPREFIX}csvkit>0:textproc/py-csvkit@${PY_FLAVOR} \
+		miller>0:textproc/miller \
 		ncbi-entrez-direct>0:biology/ncbi-entrez-direct \
 		readseq>0:biology/readseq \
 		snpeff>0:biology/snpeff \
@@ -48,7 +50,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		vt>0:biology/vt \
 		${PYTHON_PKGNAMEPREFIX}crossmap>0:biology/py-crossmap@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}goatools>0:biology/py-goatools@${PY_FLAVOR} \
-		erminej>0:biology/erminej
+		erminej>0:biology/erminej \
+		${PYTHON_PKGNAMEPREFIX}ont-fast5-api>0:archivers/py-ont-fast5-api@${PY_FLAVOR} \
 
 USES=		metaport python
 
