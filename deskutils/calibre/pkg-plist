@@ -65,6 +65,7 @@ lib/calibre/calibre/db/errors.py
 lib/calibre/calibre/db/fields.py
 lib/calibre/calibre/db/lazy.py
 lib/calibre/calibre/db/legacy.py
+lib/calibre/calibre/db/listeners.py
 lib/calibre/calibre/db/locking.py
 lib/calibre/calibre/db/restore.py
 lib/calibre/calibre/db/schema_upgrades.py
