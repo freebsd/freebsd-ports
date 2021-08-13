@@ -499,6 +499,7 @@
     SUBDIR += libretro-fbneo
     SUBDIR += libretro-fceumm
     SUBDIR += libretro-fmsx
+    SUBDIR += libretro-freeintv
     SUBDIR += libretro-fuse
     SUBDIR += libretro-gambatte
     SUBDIR += libretro-genesis_plus_gx
