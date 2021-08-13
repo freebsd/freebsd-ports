@@ -1,7 +1,7 @@
 PORTNAME=	kooha
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1-610
-DISTVERSIONSUFFIX=	-ga756d91
+DISTVERSION=	1.2.1-615
+DISTVERSIONSUFFIX=	-gec6b216
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -150,7 +150,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
 		proc-macro2-1.0.28 \
-		pulsectl-rs-0.2.13 \
+		pulsectl-rs-0.2.14 \
 		quick-error-1.2.3 \
 		quote-1.0.9 \
 		rand-0.8.4 \
