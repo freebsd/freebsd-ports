@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 DISTVERSION=	12.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
 		https://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
@@ -240,6 +240,10 @@ EXTRAS_FILES=	index.js
 EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}|${EXTRAS_FILES:tW:C/  */|/g}
 
 .include <bsd.port.options.mk>
+
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-clang_lib_Driver_ToolChains_Clang.cpp
+.endif
 
 # keep in sync with /usr/src/lib/clang/clang.build.mk
 # ----------- start of sync block ------------------
