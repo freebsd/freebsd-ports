@@ -1,7 +1,7 @@
 Avoid loading of "requirements.bzl" because it requires "pip_import" which
 is already disabled in "defs.bzl".
 
---- pylib/tools/BUILD.bazel.orig	2021-05-04 05:04:50 UTC
+--- pylib/tools/BUILD.bazel.orig	2021-07-30 08:30:37 UTC
 +++ pylib/tools/BUILD.bazel
 @@ -1,5 +1,4 @@
  load("@rules_python//python:defs.bzl", "py_binary", "py_library")
@@ -22,6 +22,14 @@ is already disabled in "defs.bzl".
      visibility = ["//pylib:__subpackages__"],
      deps = [
 -        requirement("black"),
+-        requirement("stringcase"),
+     ],
+ )
+ 
+@@ -53,7 +49,6 @@ py_binary(
+     ],
+     tags = ["manual"],
+     deps = [
 -        requirement("stringcase"),
      ],
  )

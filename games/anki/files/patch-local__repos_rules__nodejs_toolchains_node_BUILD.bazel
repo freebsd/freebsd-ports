@@ -3,9 +3,9 @@ Add FreeBSD to the list of supported operating systems.
 At the moment only the "amd64" architecture is defined here but it should be
 possible to add more architectures here.
 
---- local_repos/rules_nodejs/toolchains/node/BUILD.bazel.orig	2021-02-20 14:13:32 UTC
+--- local_repos/rules_nodejs/toolchains/node/BUILD.bazel.orig	2021-08-02 17:50:39 UTC
 +++ local_repos/rules_nodejs/toolchains/node/BUILD.bazel
-@@ -26,6 +26,14 @@ platform(
+@@ -34,6 +34,14 @@ platform(
  )
  
  platform(
@@ -19,24 +19,24 @@ possible to add more architectures here.
 +platform(
      name = "linux_amd64",
      constraint_values = [
-         "@bazel_tools//platforms:linux",
-@@ -78,6 +86,7 @@ alias(
-     name = "toolchain",
+         "@platforms//os:linux",
+@@ -90,6 +98,7 @@ alias(
      actual = select({
-         "@bazel_tools//src/conditions:darwin": "@nodejs_darwin_amd64_config//:toolchain",
+         "@bazel_tools//src/conditions:darwin_arm64": "@nodejs_darwin_arm64_config//:toolchain",
+         "@bazel_tools//src/conditions:darwin_x86_64": "@nodejs_darwin_amd64_config//:toolchain",
 +        "@bazel_tools//src/conditions:freebsd_x86_64": "@nodejs_freebsd_amd64_config//:toolchain",
          "@bazel_tools//src/conditions:linux_aarch64": "@nodejs_linux_arm64_config//:toolchain",
          "@bazel_tools//src/conditions:linux_s390x": "@nodejs_linux_s390x_config//:toolchain",
          "@bazel_tools//src/conditions:linux_x86_64": "@nodejs_linux_amd64_config//:toolchain",
-@@ -92,6 +101,7 @@ alias(
-     name = "node_bin",
+@@ -105,6 +114,7 @@ alias(
      actual = select({
-         "@bazel_tools//src/conditions:darwin": "@nodejs_darwin_amd64//:node_bin",
+         "@bazel_tools//src/conditions:darwin_arm64": "@nodejs_darwin_arm64//:node_bin",
+         "@bazel_tools//src/conditions:darwin_x86_64": "@nodejs_darwin_amd64//:node_bin",
 +        "@bazel_tools//src/conditions:freebsd_x86_64": "@nodejs_freebsd_amd64//:node_bin",
          "@bazel_tools//src/conditions:linux_aarch64": "@nodejs_linux_arm64//:node_bin",
          "@bazel_tools//src/conditions:linux_s390x": "@nodejs_linux_s390x//:node_bin",
          "@bazel_tools//src/conditions:linux_x86_64": "@nodejs_linux_amd64//:node_bin",
-@@ -99,6 +109,16 @@ alias(
+@@ -112,6 +122,16 @@ alias(
          "//conditions:default": "@nodejs_linux_amd64//:node_bin",
      }),
      visibility = ["//visibility:public"],

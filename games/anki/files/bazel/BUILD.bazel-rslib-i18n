@@ -1,0 +1,10 @@
+# Handles the further processing of "strings.json" within bazel
+
+load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
+
+copy_file(
+    name = "strings_json",
+    src = "//local_repos/rust_output/strings_json",
+    out = "strings.json",
+    visibility = ["//visibility:public"],
+)

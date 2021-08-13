@@ -1,0 +1,7 @@
+# Expose "strings.json" to bazel
+
+filegroup(
+    name = "strings_json",
+    srcs = ["strings.json"],
+    visibility = ["//visibility:public"],
+)
