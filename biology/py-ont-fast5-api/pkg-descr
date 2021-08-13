@@ -1,0 +1,9 @@
+The ont_fast5_api is a simple interface to HDF5 files of the Oxford
+Nanopore .fast5 file format. It provides:
+
+    o Implementation of the fast5 file schema using h5py library
+    o Methods to interact with and reflect the fast5 file schema
+    o Tools to convert between multi_read and single_read formats
+    o Tools to compress/decompress raw data in files
+
+WWW: https://pypi.python.org/pypi/ont_fast5_api
