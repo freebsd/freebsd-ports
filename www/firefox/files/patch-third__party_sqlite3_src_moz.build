@@ -1,0 +1,12 @@
+--- third_party/sqlite3/src/moz.build.old	2021-08-09 16:08:59.381182000 -0500
++++ third_party/sqlite3/src/moz.build	2021-08-09 16:10:25.370954000 -0500
+@@ -92,7 +92,8 @@
+ 
+ # Enabling sqlite math functions
+ DEFINES['SQLITE_ENABLE_MATH_FUNCTIONS'] = True
+-if CONFIG["OS_TARGET"] == "Linux" or CONFIG["OS_TARGET"] == "Android":
++if CONFIG["OS_TARGET"] == "Linux" or CONFIG["OS_TARGET"] == "Android" or \
++        CONFIG["OS_TARGET"] == "FreeBSD":
+     OS_LIBS += [
+         "m"
+     ]
