@@ -13,7 +13,7 @@ def register_repos():
     # rust
     ########
     native.local_repository(
-	name = "io_bazel_rules_rust",
+	name = "rules_rust",
 	path = "%%_MY_LOCALREPO%%/rules_rust",
     )
 
@@ -45,18 +45,18 @@ def register_repos():
 	path = "%%_MY_LOCALREPO%%/rules_nodejs",
     )
 
+    # esbuild-toolchain
+    #####################
+    native.local_repository(
+	name = "esbuild_toolchain",
+	path = "%%_MY_LOCALREPO%%/esbuild_toolchain",
+    )
+
     # sass
     ########
     native.local_repository(
         name = "io_bazel_rules_sass",
 	path = "%%_MY_LOCALREPO%%/rules_sass",
-    )
-
-    # svelte
-    ##########
-    native.local_repository(
-        name = "build_bazel_rules_svelte",
-	path = "%%_MY_LOCALREPO%%/rules_svelte",
     )
 
     # i18n translation files

@@ -1,7 +1,7 @@
 Avoid loading of "requirements.bzl" because it requires "pip_import" which
 is already disabled in "defs.bzl".
 
---- pylib/anki/BUILD.bazel.orig	2021-05-04 05:04:50 UTC
+--- pylib/anki/BUILD.bazel.orig	2021-07-30 08:30:37 UTC
 +++ pylib/anki/BUILD.bazel
 @@ -1,6 +1,5 @@
  load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
@@ -10,10 +10,10 @@ is already disabled in "defs.bzl".
  load("@rules_python//experimental/python:wheel.bzl", "py_package", "py_wheel")
  load("//:defs.bzl", "anki_version")
  load("//pylib:orjson.bzl", "orjson_if_available")
-@@ -39,13 +38,6 @@ py_library(
-     ],
+@@ -41,15 +40,6 @@ py_library(
      visibility = ["//visibility:public"],
      deps = [
+         ":proto",
 -        requirement("beautifulsoup4"),
 -        requirement("decorator"),
 -        requirement("distro"),
@@ -21,10 +21,12 @@ is already disabled in "defs.bzl".
 -        requirement("requests"),
 -        requirement("flask"),
 -        requirement("waitress"),
+-        requirement("markdown"),
+-        requirement("stringcase"),
      ] + orjson_if_available(),
  )
  
-@@ -70,6 +62,7 @@ py_wheel(
+@@ -74,6 +64,7 @@ py_wheel(
          "//platforms:windows_x86_64": "win_amd64",
          "//platforms:macos_x86_64": "macosx_10_7_x86_64",
          "//platforms:linux_x86_64": "manylinux2014_x86_64",

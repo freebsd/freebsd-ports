@@ -1,0 +1,22 @@
+Avoid loading of "requirements.bzl" because it requires "pip_import" which
+is already disabled in "defs.bzl".
+
+--- ts/lib/BUILD.bazel.orig	2021-08-03 11:48:53 UTC
++++ ts/lib/BUILD.bazel
+@@ -17,7 +17,6 @@ protobufjs_library(
+ ################
+ 
+ load("@rules_python//python:defs.bzl", "py_binary")
+-load("@py_deps//:requirements.bzl", "requirement")
+ 
+ py_binary(
+     name = "genfluent",
+@@ -25,8 +24,6 @@ py_binary(
+         "genfluent.py",
+     ],
+     deps = [
+-        requirement("black"),
+-        requirement("stringcase"),
+     ],
+ )
+ 

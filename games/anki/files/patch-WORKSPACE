@@ -1,0 +1,9 @@
+--- WORKSPACE.orig	2021-08-03 06:38:55 UTC
++++ WORKSPACE
+@@ -13,6 +13,3 @@ load(":defs.bzl", "setup_deps")
+ 
+ setup_deps()
+ 
+-load(":late_deps.bzl", "setup_late_deps")
+-
+-setup_late_deps()
