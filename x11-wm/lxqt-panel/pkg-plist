@@ -12,7 +12,7 @@ lib/lxqt-panel/libdirectorymenu.so
 lib/lxqt-panel/libkbindicator.so
 %%MOUNT%%lib/lxqt-panel/libmount.so
 lib/lxqt-panel/libsysstat.so
-lib/lxqt-panel/libvolume.so
+%%SOUND%%lib/lxqt-panel/libvolume.so
 share/desktop-directories/lxqt-leave.directory
 share/desktop-directories/lxqt-settings.directory
 %%LXQT_SHAREDIR%%/lxqt-panel/backlight.desktop
@@ -30,7 +30,7 @@ share/desktop-directories/lxqt-settings.directory
 %%LXQT_SHAREDIR%%/lxqt-panel/sysstat.desktop
 %%LXQT_SHAREDIR%%/lxqt-panel/taskbar.desktop
 %%LXQT_SHAREDIR%%/lxqt-panel/tray.desktop
-%%LXQT_SHAREDIR%%/lxqt-panel/volume.desktop
+%%SOUND%%%%LXQT_SHAREDIR%%/lxqt-panel/volume.desktop
 %%LXQT_SHAREDIR%%/lxqt-panel/worldclock.desktop
 %%LXQT_SHAREDIR%%/panel.conf
 %%CPULOAD%%%%LXQT_TRANSLATIONS%%/lxqt-panel/cpuload/cpuload_ar.qm
