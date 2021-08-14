@@ -16,4 +16,8 @@ GO_TARGET=	./${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
+do-test: # from https://bioinf.shenwei.me/seqkit/benchmark/
+	@cd ${WRKSRC}/tests && \
+		${GO_WRKDIR_BIN}/seqkit stat *.fa
+
 .include <bsd.port.mk>
