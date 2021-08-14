@@ -1,11 +1,11 @@
 # Created by: will
 
 PORTNAME=	bftpd
-PORTVERSION=	5.7
+PORTVERSION=	6.0
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jsmith@resonatingmedia.com
 COMMENT=	Very configurable FTP server that can do chroot easily
 
 LICENSE=	GPLv2
