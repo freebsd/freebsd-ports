@@ -1,3 +1,41 @@
+  <vuln vid="e9200f8e-fd34-11eb-afb1-c85b76ce9b5a">
+    <topic>lynx -- SSL certificate validation error</topic>
+    <affects>
+      <package>
+	<name>ja-lynx</name>
+	<range><lt>2.8.10</lt></range>
+      </package>
+      <package>
+	<name>ja-lynx-current</name>
+	<range><lt>2.9.1</lt></range>
+      </package>
+      <package>
+	<name>lynx</name>
+	<range><lt>2.8.10</lt></range>
+      </package>
+      <package>
+	<name>lynx-current</name>
+	<range><lt>2.9.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Axel Beckert reports:</p>
+	<blockquote cite="https://lists.nongnu.org/archive/html/lynx-dev/2021-08/msg00002.html">
+	  <p>[...] I was able to capture the password given on the commandline in traffic
+of an TLS handshake using tcpdump and analysing it with Wireshark: [...]</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.nongnu.org/archive/html/lynx-dev/2021-08/msg00002.html</url>
+    </references>
+    <dates>
+      <discovery>2021-08-07</discovery>
+      <entry>2021-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b471130b-fb86-11eb-87db-6cc21735f730">
     <topic>PostgreSQL server -- Memory disclosure in certain queries</topic>
     <affects>
