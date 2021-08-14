@@ -542,6 +542,13 @@ share/locale/sv/LC_MESSAGES/purpose_phabricator.mo
 share/locale/sv/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/sv/LC_MESSAGES/purpose_saveas.mo
 share/locale/sv/LC_MESSAGES/purpose_youtube.mo
+share/locale/ta/LC_MESSAGES/libpurpose_widgets.mo
+share/locale/ta/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/ta/LC_MESSAGES/purpose_bluetooth.mo
+share/locale/ta/LC_MESSAGES/purpose_email.mo
+share/locale/ta/LC_MESSAGES/purpose_kdeconnectsms.mo
+share/locale/ta/LC_MESSAGES/purpose_pastebin.mo
+share/locale/ta/LC_MESSAGES/purpose_saveas.mo
 share/locale/tg/LC_MESSAGES/libpurpose_quick.mo
 share/locale/tg/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/tg/LC_MESSAGES/purpose-fileitemaction.mo

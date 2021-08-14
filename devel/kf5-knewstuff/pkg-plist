@@ -19,6 +19,7 @@ include/KF5/KNewStuff3/KNSCore/ErrorCode
 include/KF5/KNewStuff3/KNSCore/Installation
 include/KF5/KNewStuff3/KNSCore/ItemsModel
 include/KF5/KNewStuff3/KNSCore/Provider
+include/KF5/KNewStuff3/KNSCore/ProvidersModel
 include/KF5/KNewStuff3/KNSCore/Question
 include/KF5/KNewStuff3/KNSCore/QuestionListener
 include/KF5/KNewStuff3/KNSCore/QuestionManager
@@ -48,6 +49,7 @@ include/KF5/KNewStuff3/knscore/installation.h
 include/KF5/KNewStuff3/knscore/itemsmodel.h
 include/KF5/KNewStuff3/knscore/knewstuffcore_export.h
 include/KF5/KNewStuff3/knscore/provider.h
+include/KF5/KNewStuff3/knscore/providersmodel.h
 include/KF5/KNewStuff3/knscore/question.h
 include/KF5/KNewStuff3/knscore/questionlistener.h
 include/KF5/KNewStuff3/knscore/questionmanager.h
@@ -86,6 +88,7 @@ lib/libKF5NewStuffCore.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/newstuff/qml/NewStuffList.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qml/Page.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qml/QuestionAsker.qml
+%%QT_QMLDIR%%/org/kde/newstuff/qml/UploadPage.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qml/private/ConditionalLoader.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qml/private/EntryCommentDelegate.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qml/private/EntryCommentsPage.qml

@@ -16,6 +16,7 @@ include/KF5/KCoreAddons/KJobUiDelegate
 include/KF5/KCoreAddons/KListOpenFilesJob
 include/KF5/KCoreAddons/KMacroExpander
 include/KF5/KCoreAddons/KMessage
+include/KF5/KCoreAddons/KNetworkMounts
 include/KF5/KCoreAddons/KOSRelease
 include/KF5/KCoreAddons/KPluginFactory
 include/KF5/KCoreAddons/KPluginLoader
@@ -53,6 +54,7 @@ include/KF5/KCoreAddons/kjobuidelegate.h
 include/KF5/KCoreAddons/klistopenfilesjob.h
 include/KF5/KCoreAddons/kmacroexpander.h
 include/KF5/KCoreAddons/kmessage.h
+include/KF5/KCoreAddons/knetworkmounts.h
 include/KF5/KCoreAddons/kosrelease.h
 include/KF5/KCoreAddons/kpluginfactory.h
 include/KF5/KCoreAddons/kpluginloader.h

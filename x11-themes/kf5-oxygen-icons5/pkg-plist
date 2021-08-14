@@ -208,6 +208,7 @@ share/icons/oxygen/base/128x128/apps/preferences-desktop-icons.png
 share/icons/oxygen/base/128x128/apps/preferences-desktop-keyboard.png
 share/icons/oxygen/base/128x128/apps/preferences-desktop-locale.png
 share/icons/oxygen/base/128x128/apps/preferences-desktop-mouse.png
+share/icons/oxygen/base/128x128/apps/preferences-desktop-notification-bell.png
 share/icons/oxygen/base/128x128/apps/preferences-desktop-notification.png
 share/icons/oxygen/base/128x128/apps/preferences-desktop-printer.png
 share/icons/oxygen/base/128x128/apps/preferences-desktop-screensaver.png
@@ -4519,6 +4520,7 @@ share/icons/oxygen/base/256x256/apps/planner.png
 share/icons/oxygen/base/256x256/apps/preferences-desktop-display-color.png
 share/icons/oxygen/base/256x256/apps/preferences-desktop-display.png
 share/icons/oxygen/base/256x256/apps/preferences-desktop-locale.png
+share/icons/oxygen/base/256x256/apps/preferences-desktop-notification-bell.png
 share/icons/oxygen/base/256x256/apps/preferences-desktop-screensaver.png
 share/icons/oxygen/base/256x256/apps/preferences-desktop-search.png
 share/icons/oxygen/base/256x256/apps/preferences-desktop-thunderbolt.png
@@ -4547,6 +4549,7 @@ share/icons/oxygen/base/256x256/categories/preferences-desktop.png
 share/icons/oxygen/base/256x256/categories/preferences-devices-printer.png
 share/icons/oxygen/base/256x256/categories/preferences-kde-connect.png
 share/icons/oxygen/base/256x256/categories/preferences-other.png
+share/icons/oxygen/base/256x256/categories/preferences-system-network-ethernet.png
 share/icons/oxygen/base/256x256/categories/preferences-system-network.png
 share/icons/oxygen/base/256x256/categories/preferences-system-users.png
 share/icons/oxygen/base/256x256/categories/preferences-system.png
@@ -8137,6 +8140,7 @@ share/icons/oxygen/base/64x64/apps/preferences-desktop-icons.png
 share/icons/oxygen/base/64x64/apps/preferences-desktop-keyboard.png
 share/icons/oxygen/base/64x64/apps/preferences-desktop-locale.png
 share/icons/oxygen/base/64x64/apps/preferences-desktop-mouse.png
+share/icons/oxygen/base/64x64/apps/preferences-desktop-notification-bell.png
 share/icons/oxygen/base/64x64/apps/preferences-desktop-notification.png
 share/icons/oxygen/base/64x64/apps/preferences-desktop-printer.png
 share/icons/oxygen/base/64x64/apps/preferences-desktop-screensaver.png

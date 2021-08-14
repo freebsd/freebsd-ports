@@ -47,6 +47,12 @@ lib/libKF5QuickAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_QuickAddons.pri
 %%QT_QMLDIR%%/org/kde/draganddrop/libdraganddropplugin.so
 %%QT_QMLDIR%%/org/kde/draganddrop/qmldir
+%%QT_QMLDIR%%/org/kde/graphicaleffects/Lanczos.qml
+%%QT_QMLDIR%%/org/kde/graphicaleffects/lanczos2sharp.frag
+%%QT_QMLDIR%%/org/kde/graphicaleffects/lanczos2sharp_core.frag
+%%QT_QMLDIR%%/org/kde/graphicaleffects/preserveaspect.vert
+%%QT_QMLDIR%%/org/kde/graphicaleffects/preserveaspect_core.vert
+%%QT_QMLDIR%%/org/kde/graphicaleffects/qmldir
 %%QT_QMLDIR%%/org/kde/kcm/AbstractKCM.qml
 %%QT_QMLDIR%%/org/kde/kcm/ContextualHelpButton.qml
 %%QT_QMLDIR%%/org/kde/kcm/GridDelegate.qml

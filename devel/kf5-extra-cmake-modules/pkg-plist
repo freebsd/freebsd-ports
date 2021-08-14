@@ -7,9 +7,9 @@
 share/ECM/cmake/ECMConfig.cmake
 share/ECM/cmake/ECMConfigVersion.cmake
 share/ECM/find-modules/ECMFindModuleHelpersStub.cmake
+share/ECM/find-modules/Find7z.cmake
 share/ECM/find-modules/FindCanberra.cmake
 share/ECM/find-modules/FindEGL.cmake
-share/ECM/find-modules/FindLibMount.cmake
 share/ECM/find-modules/FindGLIB2.cmake
 share/ECM/find-modules/FindGperf.cmake
 share/ECM/find-modules/FindGradle.cmake
@@ -19,6 +19,7 @@ share/ECM/find-modules/FindIsoCodes.cmake
 share/ECM/find-modules/FindKF5.cmake
 share/ECM/find-modules/FindLibExiv2.cmake
 share/ECM/find-modules/FindLibGit2.cmake
+share/ECM/find-modules/FindLibMount.cmake
 share/ECM/find-modules/FindLibcap.cmake
 share/ECM/find-modules/FindOpenEXR.cmake
 share/ECM/find-modules/FindPhoneNumber.cmake
@@ -39,6 +40,7 @@ share/ECM/find-modules/FindWaylandScanner.cmake
 share/ECM/find-modules/FindX11_XCB.cmake
 share/ECM/find-modules/FindXCB.cmake
 share/ECM/find-modules/Findepoxy.cmake
+share/ECM/find-modules/Findgzip.cmake
 share/ECM/find-modules/GeneratePythonBindingUmbrellaModule.cmake
 share/ECM/find-modules/Qt5Ruleset.py
 share/ECM/find-modules/local.properties.cmake
@@ -49,6 +51,7 @@ share/ECM/find-modules/sip_generator.py
 share/ECM/kde-modules/KDECMakeSettings.cmake
 share/ECM/kde-modules/KDEClangFormat.cmake
 share/ECM/kde-modules/KDECompilerSettings.cmake
+share/ECM/kde-modules/KDEFrameworkCompilerLegacySettings.cmake
 share/ECM/kde-modules/KDEFrameworkCompilerSettings.cmake
 share/ECM/kde-modules/KDEGitCommitHooks.cmake
 share/ECM/kde-modules/KDEInstallDirs.cmake

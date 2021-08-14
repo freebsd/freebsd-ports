@@ -32,6 +32,7 @@ include/KF5/KPeople/kpeoplebackend/abstractpersonaction.h
 include/KF5/KPeople/kpeoplebackend/allcontactsmonitor.h
 include/KF5/KPeople/kpeoplebackend/basepersonsdatasource.h
 include/KF5/KPeople/kpeoplebackend/contactmonitor.h
+include/KF5/KPeople/kpeopleprivate/personmanager_p.h
 include/KF5/KPeople/kpeoplebackend/kpeoplebackend_export.h
 lib/cmake/KF5People/KF5PeopleConfig.cmake
 lib/cmake/KF5People/KF5PeopleConfigVersion.cmake

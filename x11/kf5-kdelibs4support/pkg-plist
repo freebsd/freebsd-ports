@@ -1799,7 +1799,6 @@ share/kf5/widgets/pics/kpushbutton.png
 share/kf5/widgets/pics/krestrictedline.png
 share/kf5/widgets/pics/ktextbrowser.png
 share/kservices5/kcm_ssl.desktop
-share/kservices5/metainfo.protocol
 share/kservices5/qimageioplugins/bmp.desktop
 share/kservices5/qimageioplugins/gif.desktop
 share/kservices5/qimageioplugins/ico.desktop
