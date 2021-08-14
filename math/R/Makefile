@@ -5,7 +5,7 @@ DISTVERSION=	4.1.1
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Language for statistical computing and graphics
 
 LICENSE=	GPLv2
