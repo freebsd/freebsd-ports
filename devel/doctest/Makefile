@@ -1,5 +1,5 @@
 PORTNAME=	doctest
-DISTVERSION=	2.4.5
+DISTVERSION=	2.4.6
 CATEGORIES=	devel
 
 MAINTAINER=	nickblack@linux.com
