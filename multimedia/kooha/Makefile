@@ -1,7 +1,7 @@
 PORTNAME=	kooha
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1-615
-DISTVERSIONSUFFIX=	-gec6b216
+DISTVERSION=	1.2.1-618
+DISTVERSIONSUFFIX=	-g0ea8edc
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,7 +25,7 @@ GLIB_SCHEMAS=	io.github.seadve.Kooha.gschema.xml
 INSTALLS_ICONS=	yes
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
-		anyhow-1.0.42 \
+		anyhow-1.0.43 \
 		ashpd-0.2.0-alpha-3 \
 		async-broadcast-0.3.3 \
 		async-channel-1.6.1 \
@@ -37,7 +37,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		atomic_refcell-0.1.7 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
-		bitflags-1.3.1 \
+		bitflags-1.2.1 \
 		block-0.1.6 \
 		byteorder-1.4.3 \
 		cache-padded-1.1.1 \
@@ -122,8 +122,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		memchr-2.4.0 \
 		memoffset-0.6.4 \
 		muldiv-1.0.0 \
-		nix-0.20.0 \
-		nix-0.21.0 \
+		nix-0.20.1 \
+		nix-0.21.1 \
 		num-derive-0.3.3 \
 		num-integer-0.1.44 \
 		num-rational-0.4.0 \
@@ -150,7 +150,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
 		proc-macro2-1.0.28 \
-		pulsectl-rs-0.2.14 \
+		pulsectl-rs-0.3.1 \
 		quick-error-1.2.3 \
 		quote-1.0.9 \
 		rand-0.8.4 \
