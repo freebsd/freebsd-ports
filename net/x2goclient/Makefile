@@ -2,7 +2,7 @@
 
 PORTNAME=	x2goclient
 PORTVERSION=	4.1.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
