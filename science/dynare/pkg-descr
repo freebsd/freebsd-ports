@@ -1,0 +1,16 @@
+Dynare is a software platform for handling a wide class of economic models, in
+particular dynamic stochastic general equilibrium (DSGE) and overlapping
+generations (OLG) models. The models solved by Dynare include those relying on
+the rational expectations hypothesis, wherein agents form their expectations
+about the future in a way consistent with the model. But Dynare is also able to
+handle models where expectations are formed differently: on one extreme, models
+where agents perfectly anticipate the future; on the other extreme, models where
+agents have limited rationality or imperfect knowledge of the state of the
+economy and, hence, form their expectations through a learning process. In terms
+of types of agents, models solved by Dynare can incorporate consumers,
+productive firms, governments, monetary authorities, investors and financial
+intermediaries. Some degree of heterogeneity can be achieved by including
+several distinct classes of agents in each of the aforementioned agent
+categories.
+
+WWW: https://www.dynare.org/

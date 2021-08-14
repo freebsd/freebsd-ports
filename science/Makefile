@@ -65,6 +65,7 @@
     SUBDIR += dlib-cpp
     SUBDIR += drawxtl
     SUBDIR += dvc
+    SUBDIR += dynare
     SUBDIR += eccodes
     SUBDIR += elk
     SUBDIR += elmerfem
