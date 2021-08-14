@@ -276,6 +276,7 @@
     SUBDIR += ip6_int
     SUBDIR += ipdecap
     SUBDIR += ipgrab
+    SUBDIR += ipinfo-cli
     SUBDIR += ipsumdump
     SUBDIR += ipsvd
     SUBDIR += ipxe
