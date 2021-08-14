@@ -1,0 +1,7 @@
+G15daemon takes control of the G15 keyboard, allowing the use of all keys 
+through the uinput device driver. It also controls the use of the 
+keyboard's LCD display, allows multiple, simultaneous client applications
+to connect, and gives the user the ability to switch between client apps 
+at the press of a button.
+
+WWW: https://gitlab.com/menelkir/g15daemon

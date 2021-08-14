@@ -1,0 +1,16 @@
+include/g15daemon.h
+include/g15daemon_client.h
+lib/g15daemon/3.0/plugins/g15plugin_clock.a
+lib/g15daemon/3.0/plugins/g15plugin_clock.so
+lib/g15daemon/3.0/plugins/g15plugin_tcpserver.a
+lib/g15daemon/3.0/plugins/g15plugin_tcpserver.so
+lib/g15daemon/3.0/plugins/g15plugin_uinput.a
+lib/g15daemon/3.0/plugins/g15plugin_uinput.so
+lib/libg15daemon_client.a
+lib/libg15daemon_client.so
+lib/libg15daemon_client.so.3
+lib/libg15daemon_client.so.3.0.0
+man/man1/g15daemon.1.gz
+man/man3/g15daemon_client_devel.3.gz
+sbin/g15daemon
+%%DATADIR%%/splash/g15logo3.wbmp
