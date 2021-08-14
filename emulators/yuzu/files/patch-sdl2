@@ -1,26 +1,25 @@
 https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=252371
 
--- SDL2 2.0.15 or newer not found, falling back to externals.
+CMake Error at CMakeLists.txt:397 (find_package):
+  Could not find a configuration file for package "SDL2" that is compatible
+  with requested version "2.0.16".
 
-CMake Error at externals/CMakeLists.txt:54 (add_subdirectory):
-  The source directory
+  The following configuration files were considered but not accepted:
 
-    externals/SDL
+    /usr/local/lib/cmake/SDL2/sdl2-config.cmake, version: 2.0.12
 
-  does not contain a CMakeLists.txt file.
-
---- CMakeLists.txt.orig	2021-07-27 01:51:00 UTC
+--- CMakeLists.txt.orig	2021-08-14 09:28:59 UTC
 +++ CMakeLists.txt
 @@ -398,7 +398,7 @@ if (ENABLE_SDL2)
  endif()
  
  if (NOT YUZU_USE_BUNDLED_SDL2 AND NOT YUZU_USE_EXTERNAL_SDL2)
--        find_package(SDL2 2.0.15 REQUIRED)
+-        find_package(SDL2 2.0.16 REQUIRED)
 +        find_package(SDL2 2.0.12 REQUIRED)
  
          # Some installations don't set SDL2_LIBRARIES
          if("${SDL2_LIBRARIES}" STREQUAL "")
---- src/input_common/sdl/sdl_impl.cpp.orig	2021-06-02 22:29:09 UTC
+--- src/input_common/sdl/sdl_impl.cpp.orig	2021-08-14 09:28:59 UTC
 +++ src/input_common/sdl/sdl_impl.cpp
 @@ -64,6 +64,7 @@ class SDLJoystick { (public)
      }
@@ -38,15 +37,15 @@ CMake Error at externals/CMakeLists.txt:54 (add_subdirectory):
      }
  
      void SetButton(int button, bool value) {
-@@ -82,6 +84,7 @@ class SDLJoystick { (public)
-         state.buttons.insert_or_assign(button, value);
+@@ -88,6 +90,7 @@ class SDLJoystick { (public)
+         }
      }
  
 +#if SDL_VERSION_ATLEAST(2,0,14)
      void SetMotion(SDL_ControllerSensorEvent event) {
          constexpr float gravity_constant = 9.80665f;
          std::lock_guard lock{mutex};
-@@ -109,6 +112,7 @@ class SDLJoystick { (public)
+@@ -115,6 +118,7 @@ class SDLJoystick { (public)
          motion.UpdateRotation(time_difference * 1000);
          motion.UpdateOrientation(time_difference * 1000);
      }
@@ -54,7 +53,7 @@ CMake Error at externals/CMakeLists.txt:54 (add_subdirectory):
  
      bool GetButton(int button) const {
          std::lock_guard lock{mutex};
-@@ -378,12 +382,14 @@ void SDLState::HandleGameControllerEvent(const SDL_Eve
+@@ -429,12 +433,14 @@ void SDLState::HandleGameControllerEvent(const SDL_Eve
          }
          break;
      }
@@ -69,17 +68,23 @@ CMake Error at externals/CMakeLists.txt:54 (add_subdirectory):
      case SDL_JOYDEVICEREMOVED:
          LOG_DEBUG(Input, "Controller removed with Instance_ID {}", event.jdevice.which);
          CloseJoystick(SDL_JoystickFromInstanceID(event.jdevice.which));
-@@ -823,7 +829,9 @@ SDLState::SDLState() {
+@@ -890,11 +896,15 @@ SDLState::SDLState() {
+     RegisterFactory<MotionDevice>("sdl", motion_factory);
+ 
+     // Disable raw input. When enabled this setting causes SDL to die when a web applet opens
++#if SDL_VERSION_ATLEAST(2,0,14)
+     SDL_SetHint(SDL_HINT_JOYSTICK_RAWINPUT, "0");
++#endif
  
      // Enable HIDAPI rumble. This prevents SDL from disabling motion on PS4 and PS5 controllers
      SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_PS4_RUMBLE, "1");
-+#if SDL_VERSION_ATLEAST(2,0,15)
++#if SDL_VERSION_ATLEAST(2,0,16)
      SDL_SetHint(SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE, "1");
 +#endif
  
      // Tell SDL2 to use the hidapi driver. This will allow joycons to be detected as a
      // GameController and not a generic one
-@@ -1037,6 +1045,7 @@ Common::ParamPackage SDLEventToMotionParamPackage(SDLS
+@@ -1108,6 +1118,7 @@ Common::ParamPackage SDLEventToMotionParamPackage(SDLS
          }
          break;
      }
@@ -87,7 +92,7 @@ CMake Error at externals/CMakeLists.txt:54 (add_subdirectory):
      case SDL_CONTROLLERSENSORUPDATE: {
          bool is_motion_shaking = false;
          constexpr float gyro_threshold = 5.0f;
-@@ -1066,6 +1075,7 @@ Common::ParamPackage SDLEventToMotionParamPackage(SDLS
+@@ -1137,6 +1148,7 @@ Common::ParamPackage SDLEventToMotionParamPackage(SDLS
          }
          break;
      }
@@ -95,7 +100,7 @@ CMake Error at externals/CMakeLists.txt:54 (add_subdirectory):
      }
      return {};
  }
-@@ -1169,6 +1179,7 @@ ButtonBindings SDLState::GetNintendoButtonBinding(
+@@ -1242,6 +1254,7 @@ ButtonBindings SDLState::GetNintendoButtonBinding(
      auto sl_button = SDL_CONTROLLER_BUTTON_LEFTSHOULDER;
      auto sr_button = SDL_CONTROLLER_BUTTON_RIGHTSHOULDER;
  
@@ -103,7 +108,7 @@ CMake Error at externals/CMakeLists.txt:54 (add_subdirectory):
      if (joystick->IsJoyconLeft()) {
          sl_button = SDL_CONTROLLER_BUTTON_PADDLE2;
          sr_button = SDL_CONTROLLER_BUTTON_PADDLE4;
-@@ -1177,6 +1188,7 @@ ButtonBindings SDLState::GetNintendoButtonBinding(
+@@ -1250,6 +1263,7 @@ ButtonBindings SDLState::GetNintendoButtonBinding(
          sl_button = SDL_CONTROLLER_BUTTON_PADDLE3;
          sr_button = SDL_CONTROLLER_BUTTON_PADDLE1;
      }
@@ -111,7 +116,7 @@ CMake Error at externals/CMakeLists.txt:54 (add_subdirectory):
  
      return {
          std::pair{Settings::NativeButton::A, SDL_CONTROLLER_BUTTON_A},
-@@ -1462,7 +1474,9 @@ class SDLMotionPoller final : public SDLPoller { (publ
+@@ -1550,7 +1564,9 @@ class SDLMotionPoller final : public SDLPoller { (publ
              [[fallthrough]];
          case SDL_JOYBUTTONUP:
          case SDL_JOYHATMOTION:
