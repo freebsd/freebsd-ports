@@ -1,6 +1,6 @@
 PORTNAME=	yubikey-agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.3
+DISTVERSION=	0.1.5
 CATEGORIES=	security sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -18,11 +18,11 @@ USES=		go:modules
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	FiloSottile
-		# github.com/go-piv/piv-go/commit/a3e5767 (Add FreeBSD Support)
-GH_TUPLE=	go-piv:piv-go:334df47:go_piv_piv_go/vendor/github.com/go-piv/piv-go \
-	golang:crypto:948cd5f:golang_crypto/vendor/golang.org/x/crypto \
-	golang:sys:ddb9806:golang_sys/vendor/golang.org/x/sys \
-	gopasspw:gopass:v1.9.1:gopasspw_gopass/vendor/github.com/gopasspw/gopass \
+GH_TUPLE=	go-piv:piv-go:v1.7.0:go_piv_piv_go/vendor/github.com/go-piv/piv-go \
+	golang:crypto:83a5a9bb288b:golang_crypto/vendor/golang.org/x/crypto \
+	golang:sys:9a76102bfb43:golang_sys/vendor/golang.org/x/sys \
+	golang:term:2321bbc49cbf:golang_term/vendor/golang.org/x/term \
+	gopasspw:pinentry:v0.0.2:gopasspw_pinentry/vendor/github.com/gopasspw/pinentry \
 	pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors
 
 PLIST_FILES=	bin/${PORTNAME}
