@@ -1,5 +1,5 @@
 PORTNAME=	iocage-devel
-PORTVERSION=	1.0.0.20210712
+PORTVERSION=	1.2.20210811
 PORTEPOCH=	1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +28,7 @@ USES=		python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	iocage
 GH_PROJECT=	iocage
-GH_TAGNAME=	433173f
+GH_TAGNAME=	85ce003
 
 USE_PYTHON=	autoplist distutils
 
@@ -41,7 +41,8 @@ PLIST_FILES=		${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VER
 			${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/PKG-INFO \
 			${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/requires.txt \
 			${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/SOURCES.txt \
-			${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/top_level.txt
+			${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/top_level.txt \
+			${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib/plugin_manifest.json
 
 OPTIONS_DEFAULT=		GIT
 OPTIONS_RADIO=			GIT_PACKAGE
