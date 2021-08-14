@@ -12,9 +12,6 @@ COMMENT=	Multiple DNA/protein sequence alignment editor
 
 LICENSE=	GPLv3
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: progname
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: progname
-
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png
@@ -40,6 +37,10 @@ post-patch:
 	${REINPLACE_CMD} -e \
 		's|^\(CC\) |#\1 | ; s|-ldl || ; \
 		s|^\(CXX\) |#\1 |' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -E \
+		'/firstplotblock|javarun|\*progname/s,^,extern ,' \
+		${WRKSRC}/csrc/phylip.h ${WRKSRC}/csrc/protpars.c
+	${ECHO_CMD} 'boolean javarun;' >> ${WRKSRC}/csrc/phylip.c
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} seaview \
