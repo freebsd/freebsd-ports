@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	homura
-PORTVERSION=	5.4
+PORTVERSION=	5.5
 CATEGORIES=	games
 MASTER_SITES=	https://codeberg.org/Alexander88207/Homura/archive/
 DISTNAME=	${PORTVERSION}
@@ -19,6 +19,7 @@ RUN_DEPENDS=	7z:archivers/p7zip \
 		bash:shells/bash \
 		glxinfo:graphics/mesa-demos \
 		vulkaninfo:graphics/vulkan-tools \
+		wine-proton>0:emulators/wine-proton \
 		winetricks:emulators/winetricks \
 		xdg-open:devel/xdg-utils \
 		zenity:x11/zenity
@@ -29,15 +30,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/Homura
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-RUN_DEPENDS+=	wine:emulators/wine-devel
-.else
-RUN_DEPENDS+=	wine:emulators/i386-wine-devel
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Homura ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
