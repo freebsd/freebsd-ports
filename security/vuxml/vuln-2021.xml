@@ -7,7 +7,7 @@
       </package>
       <package>
 	<name>ja-lynx-current</name>
-	<range><lt>2.9.1</lt></range>
+	<range><lt>2.9.0d9</lt></range>
       </package>
       <package>
 	<name>lynx</name>
@@ -15,7 +15,7 @@
       </package>
       <package>
 	<name>lynx-current</name>
-	<range><lt>2.9.1</lt></range>
+	<range><lt>2.9.0d9</lt></range>
       </package>
     </affects>
     <description>
@@ -33,6 +33,7 @@ of an TLS handshake using tcpdump and analysing it with Wireshark: [...]</p>
     <dates>
       <discovery>2021-08-07</discovery>
       <entry>2021-08-14</entry>
+      <modified>2021-08-15</modified>
     </dates>
   </vuln>
 
