@@ -42,7 +42,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libtinyxml.so:textproc/tinyxml \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cmake compiler:c++14-lang gettext \
+USES=		cpe cmake compiler:c++14-lang gettext \
 		gnome iconv jpeg pkgconfig python:3.5+ sqlite ssl
 
 KODI_CODENAME=	Matrix
