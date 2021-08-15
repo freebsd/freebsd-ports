@@ -20,13 +20,14 @@ RUN_DEPENDS=	gtar:archivers/gtar
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gnome libarchive localbase \
+USES=		cpe desktop-file-utils gettext gnome libarchive localbase \
 		meson pkgconfig python:3.5+,build tar:xz
 USE_GNOME=	cairo gtk30
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dpackagekit=false
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
+CPE_VENDOR=	gnome
 
 GLIB_SCHEMAS=	org.gnome.FileRoller.gschema.xml
 
