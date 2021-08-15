@@ -9,6 +9,8 @@ COMMENT=	Implementation of the Number Field Sieve Algorithm
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	pkg-static: Unable to access file /wrkdirs/usr/ports/math/cado-nfs/work/stage/usr/local/lib/cado-nfs-3.0.0/linalg/bwc/lingen_pz:No such file or directory
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		bash:shells/bash \
 		gmake:devel/gmake
