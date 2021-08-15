@@ -12,7 +12,7 @@ COMMENT=	Encrypted file sync tool
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/${PORTNAME}/LICENSE
 
-USES=		go
+USES=		cpe go
 
 USE_RC_SUBR=	syncthing syncthing-discosrv syncthing-relaysrv syncthing-relaypoolsrv
 
