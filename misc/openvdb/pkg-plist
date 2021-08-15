@@ -64,6 +64,7 @@ include/openvdb/points/PointSample.h
 include/openvdb/points/PointScatter.h
 include/openvdb/points/StreamCompression.h
 %%PYTHON%%include/openvdb/python/pyopenvdb.h
+include/openvdb/thread/Threading.h
 include/openvdb/tools/Activate.h
 include/openvdb/tools/ChangeBackground.h
 include/openvdb/tools/Clip.h
