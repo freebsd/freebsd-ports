@@ -12,7 +12,7 @@ COMMENT=	Utility for patching LDAP directories using LDIF files
 
 LICENSE=	GPLv3+
 
-USES=		iconv tar:tgz
+USES=		cpe iconv tar:tgz
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${LOCALBASE} \
