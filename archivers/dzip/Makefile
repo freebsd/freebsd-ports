@@ -11,7 +11,9 @@ COMMENT=	File compression utility specializing in Quake demo compression
 
 LICENSE=	ZLIB
 
-USES=		dos2unix zip
+USES=		cpe dos2unix zip
+
+CPE_VENDOR=	evan_wagner
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	${WRKSRC}/Makefile.linux
