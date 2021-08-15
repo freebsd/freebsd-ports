@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libJudy.so:devel/judy
 
-USES=		libtool localbase tar:xz
+USES=		cpe libtool localbase tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --enable-examplesdir=${EXAMPLESDIR}
 USE_LDCONFIG=	yes
