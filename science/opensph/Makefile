@@ -1,6 +1,6 @@
 PORTNAME=	OpenSPH
 DISTVERSION=	0.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +32,7 @@ BINARY_ALIAS=	wx-config=${LOCALBASE}/bin/wxgtk3u-3.1-config
 PLIST_FILES=	bin/opensph bin/opensph-cli bin/opensph-info
 
 OPTIONS_DEFINE=			CHAISCRIPT EIGEN HDF5 OPENMP TBB VDB
-OPTIONS_DEFAULT=		CHAISCRIPT EIGEN HDF5 OPENMP TBB VDB
+OPTIONS_DEFAULT=		CHAISCRIPT EIGEN HDF5 OPENMP # TBB VDB - disabled pending OneTBB support, see https://gitlab.com/sevecekp/sph/-/issues/36
 
 CHAISCRIPT_DESC=		Be able to read and modify particle data from a script
 CHAISCRIPT_QMAKE_ON=		CONFIG+=use_chaiscript
@@ -50,13 +50,15 @@ OPENMP_QMAKE_ON=		CONFIG+=use_openmp
 
 TBB_DESC=			Parallelize with Intel Threading Building Blocks
 TBB_QMAKE_ON=			CONFIG+=use_tbb
-TBB_LIB_DEPENDS=		libtbb.so:devel/tbb
+TBB_LIB_DEPENDS=		libtbb.so:devel/onetbb
+TBB_BROKEN=			OneTBB support is missing, but the dependency misc/openvdb already switched to OneTBB
 
 VDB_DESC=			Use OpenVDB for converting particles to volumetric data
 VDB_QMAKE_ON=			CONFIG+=use_vdb
 VDB_LIB_DEPENDS=		libImath.so:math/Imath \
 				libopenvdb.so:misc/openvdb \
-				libtbb.so:devel/tbb
+				libtbb.so:devel/onetbb
+VDB_BROKEN=			OneTBB support is missing, but the dependency misc/openvdb already switched to OneTBB
 
 do-test:
 	@${REINPLACE_CMD} -e 's|Path(.*|Path("${TEST_WRKSRC}");|' ${WRKSRC}/test/utils/Config.h
