@@ -15,6 +15,9 @@ LICENSE_NAME=	LHA
 LICENSE_TEXT=	No redistribution allowed
 LICENSE_PERMS=	auto-accept
 
+USES=		cpe
+CPE_VENDOR=	tsugio_okamoto
+
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/lha-ac
 PLIST_FILES+=	man/ja/man1/lha-ac.1.gz
