@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2021-08-15 07:11:00 UTC
++++ CMakeLists.txt
+@@ -34,7 +34,7 @@ add_definitions(
+ find_package(KF5 COMPONENTS CoreAddons I18n XmlGui ConfigWidgets Crash KExiv2 REQUIRED)
+ 
+ # Find Marble
+-find_package(Marble 0.28 REQUIRED)
++find_package(Marble 21.4.0 REQUIRED)
+ 
+ # Generate version.h
+ add_custom_target(
