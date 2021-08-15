@@ -1,9 +1,8 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	embree
-PORTVERSION=	3.13.0
+PORTVERSION=	3.13.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -48,7 +47,7 @@ TBB_VARS_OFF=		_ETS=INTERNAL
 
 # Disable parts that use _mm_cvtsi128_si64() which is not defined on i386
 .if ${ARCH} == i386
-CMAKE_ARGS+=	-DEMBREE_ISA_AVX512SKX:BOOL=OFF
+CMAKE_ARGS+=	-DEMBREE_ISA_AVX512:BOOL=OFF
 .endif
 
 post-patch:

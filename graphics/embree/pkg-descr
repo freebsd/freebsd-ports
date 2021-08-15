@@ -11,4 +11,4 @@ Embree supports applications written with the Intel SPMD Program Compiler
 (ISPC, available as `devel/ispc' port) by also providing an ISPC interface
 to the core ray tracing algorithms.
 
-WWW: https://embree.github.io/
+WWW: https://www.embree.org/
