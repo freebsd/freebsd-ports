@@ -15,6 +15,9 @@ LICENSE_NAME=	License of lha
 LICENSE_FILE=	${FILESDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell auto-accept
 
+USES=		cpe
+CPE_VENDOR=	tsugio_okamoto
+
 PLIST_FILES=	bin/lha
 PLIST_FILES+=	man/ja/man1/lha.1.gz
 
