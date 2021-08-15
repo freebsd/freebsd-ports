@@ -28,11 +28,12 @@ CONFLICTS=	py*-json-py-[0-9]*
 PORTSCOUT=	limitw:1,even
 
 NO_ARCH=	yes
-USES=		gettext gmake gnome localbase pathfix pkgconfig \
+USES=		cpe gettext gmake gnome localbase pathfix pkgconfig \
 		python:3.4+ tar:xz
 USE_GNOME=	gtk30 pygobject3
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
+CPE_VENDOR=	gnome
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
