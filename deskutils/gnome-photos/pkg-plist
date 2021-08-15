@@ -2,14 +2,11 @@ bin/gnome-photos
 lib/gnome-photos/libgnome-photos.so
 libexec/gnome-photos-thumbnailer
 share/applications/org.gnome.Photos.desktop
-share/dbus-1/services/org.gnome.Photos.Tracker1.Miner.Extract.service
-share/dbus-1/services/org.gnome.Photos.Tracker1.Miner.Files.service
-share/dbus-1/services/org.gnome.Photos.Tracker1.service
-share/dbus-1/services/org.gnome.Photos.service
 %%PORTDOCS%%%%DOCSDIR%%/ARTISTS
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/dbus-1/services/org.gnome.Photos.service
 share/gnome-shell/search-providers/org.gnome.Photos.search-provider.ini
 share/help/C/gnome-photos/favorites-set.page
 share/help/C/gnome-photos/favorites.page
@@ -276,6 +273,3 @@ share/locale/zh_CN/LC_MESSAGES/gnome-photos.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-photos.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-photos.mo
 share/metainfo/org.gnome.Photos.appdata.xml
-share/tracker/domain-ontologies/org.gnome.Photos.rule
-share/tracker/miners/org.gnome.Photos.Tracker1.Miner.Extract.service
-share/tracker/miners/org.gnome.Photos.Tracker1.Miner.Files.service
