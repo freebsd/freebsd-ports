@@ -73,6 +73,7 @@ man/man1/lynx.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/test/cp-1252.html
 %%PORTDOCS%%%%DOCSDIR%%/test/cp-1252a.html
 %%PORTDOCS%%%%DOCSDIR%%/test/image.jpg
+%%PORTDOCS%%%%DOCSDIR%%/test/idna-tr46.html
 %%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-1.html
 %%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-1a.html
 %%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-2.html
