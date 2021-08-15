@@ -2,7 +2,7 @@
 
 PORTNAME=	terragrunt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.0
+DISTVERSION=	0.31.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com
@@ -36,7 +36,7 @@ GH_TUPLE=	\
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		bmatcuk:doublestar:v1.1.5:bmatcuk_doublestar/vendor/github.com/bmatcuk/doublestar \
 		boombuler:barcode:6c824513bacc:boombuler_barcode/vendor/github.com/boombuler/barcode \
-		census-instrumentation:opencensus-go:v0.22.4:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		creack:pty:v1.1.11:creack_pty/vendor/github.com/creack/pty \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -48,32 +48,32 @@ GH_TUPLE=	\
 		go-ini:ini:v1.44.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:749611fa9fcc:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
+		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:lint:738671d3881b:golang_lint/vendor/golang.org/x/lint \
-		golang:mod:v0.3.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:e18ecbb05110:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:5d25da1a8d43:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:snappy:v0.0.2:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:67f06af15bc9:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:9a76102bfb43:golang_sys/vendor/golang.org/x/sys \
+		golang:lint:6edffad5e616:golang_lint/vendor/golang.org/x/lint \
+		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
+		golang:net:7fd8e65b6420:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:a41e5a781914:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:snappy:v0.0.3:golang_snappy/vendor/github.com/golang/snappy \
+		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:59db8d763f22:golang_sys/vendor/golang.org/x/sys \
 		golang:term:2321bbc49cbf:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
-		golang:tools:eafbe7b904eb:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.1.4:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
-		google:go-cmp:v0.5.5:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:0bd0a958aa1d:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-genproto:0f065b0b1eb9:google_go_genproto/vendor/google.golang.org/genproto \
 		google:shlex:c34317bd91bf:google_shlex/vendor/github.com/google/shlex \
 		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
-		googleapis:google-api-go-client:v0.35.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		googleapis:google-api-go-client:v0.50.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:storage/v1.10.0:googleapis_google_cloud_go_storage \
-		googleapis:google-cloud-go:v0.65.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
+		googleapis:google-cloud-go:v0.86.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		goware:prefixer:395022866408:goware_prefixer/vendor/github.com/goware/prefixer \
-		grpc:grpc-go:v1.31.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.39.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		gruntwork-io:go-commons:v0.7.0:gruntwork_io_go_commons/vendor/github.com/gruntwork-io/gruntwork-cli \
 		gruntwork-io:terratest:v0.32.6:gruntwork_io_terratest/vendor/github.com/gruntwork-io/terratest \
 		hashicorp:errwrap:v1.1.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
@@ -94,6 +94,7 @@ GH_TUPLE=	\
 		hashicorp:vault:405eced08457:hashicorp_vault_api/vendor/github.com/hashicorp/vault \
 		hashicorp:vault:b52b8b8c1264:hashicorp_vault_sdk \
 		howeyc:gopass:bf9dde6d0d2c:howeyc_gopass/vendor/github.com/howeyc/gopass \
+		imdario:mergo:v0.3.11:imdario_mergo/vendor/github.com/imdario/mergo \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
 		konsorten:go-windows-terminal-sequences:v1.0.3:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
@@ -110,8 +111,8 @@ GH_TUPLE=	\
 		pierrec:lz4:v2.5.2:pierrec_lz4/vendor/github.com/pierrec/lz4 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		pquerna:otp:v1.2.0:pquerna_otp/vendor/github.com/pquerna/otp \
-		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		pquerna:otp:468c2dd2b58d:pquerna_otp/vendor/github.com/pquerna/otp \
+		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		ryanuber:go-glob:v1.0.0:ryanuber_go_glob/vendor/github.com/ryanuber/go-glob \
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
