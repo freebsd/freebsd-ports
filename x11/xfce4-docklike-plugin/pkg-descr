@@ -1,0 +1,6 @@
+This is a taskbar panel plugin for xfce4, designed to mimic the look
+and functionality of docks and application bars used in Windows and
+MacOS. It includes optional features like window previews and launcher
+pinning.
+
+WWW: https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin
