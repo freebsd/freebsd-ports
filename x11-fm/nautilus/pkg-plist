@@ -21,9 +21,13 @@ lib/nautilus/extensions-3.0/libnautilus-image-properties.so
 lib/nautilus/extensions-3.0/libnautilus-sendto.so
 lib/nautilus/extensions-3.0/libtotem-properties-page.so
 libdata/pkgconfig/libnautilus-extension.pc
+%%DATADIR%%/ontology/nautilus.description
+%%DATADIR%%/ontology/nautilus.ontology
 share/applications/nautilus-autorun-software.desktop
 share/applications/org.gnome.Nautilus.desktop
 share/dbus-1/services/org.freedesktop.FileManager1.service
+share/dbus-1/services/org.gnome.Nautilus.Tracker3.Miner.Extract.service
+share/dbus-1/services/org.gnome.Nautilus.Tracker3.Miner.Files.service
 share/dbus-1/services/org.gnome.Nautilus.service
 share/gir-1.0/Nautilus-3.0.gir
 share/gnome-shell/search-providers/org.gnome.Nautilus.search-provider.ini
@@ -84,6 +88,7 @@ share/locale/is/LC_MESSAGES/nautilus.mo
 share/locale/it/LC_MESSAGES/nautilus.mo
 share/locale/ja/LC_MESSAGES/nautilus.mo
 share/locale/ka/LC_MESSAGES/nautilus.mo
+share/locale/kab/LC_MESSAGES/nautilus.mo
 share/locale/kk/LC_MESSAGES/nautilus.mo
 share/locale/km/LC_MESSAGES/nautilus.mo
 share/locale/kn/LC_MESSAGES/nautilus.mo
@@ -148,3 +153,4 @@ share/locale/zh_HK/LC_MESSAGES/nautilus.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 share/locale/zu/LC_MESSAGES/nautilus.mo
 share/metainfo/org.gnome.Nautilus.appdata.xml
+share/tracker3/domain-ontologies/org.gnome.Nautilus.domain.rule

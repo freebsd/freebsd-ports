@@ -1,14 +1,10 @@
 # Created by: ade, archie
 
 PORTNAME=	nautilus
-PORTVERSION=	3.36.3
+PORTVERSION=	40.2
 CATEGORIES=	x11-fm gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
-
-# Fix against glib 2.68.3
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/nautilus/-/commit/
-PATCHFILES=	9b733dd9df9d6d9805c56749d05ada15a7560ef4.diff:-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	File manager for the GNOME desktop
@@ -16,15 +12,17 @@ COMMENT=	File manager for the GNOME desktop
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgnome-autoar-0.so:archivers/gnome-autoar \
-		libgexiv2.so:graphics/gexiv2 \
-		libtracker-sparql-2.0.so:sysutils/tracker \
-		libtotem.so:multimedia/totem
+LIB_DEPENDS=	libgexiv2.so:graphics/gexiv2 \
+		libgnome-autoar-0.so:archivers/gnome-autoar \
+		libhandy-1.so:x11-toolkits/libhandy \
+		libportal.so:deskutils/libportal \
+		libtotem.so:multimedia/totem \
+		libtracker-sparql-3.0.so:sysutils/tracker3
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 desktop-file-utils gettext gnome \
-		localbase meson pkgconfig python:3.6+,build tar:xz xorg
+USES=		compiler:c11 desktop-file-utils gettext gnome localbase meson \
+		pkgconfig python:3.6+,build tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3
 USE_GSTREAMER1=	yes
 INSTALLS_ICONS=	yes
@@ -36,8 +34,8 @@ BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 GLIB_SCHEMAS=	org.gnome.nautilus.gschema.xml
 
-OPTIONS_DEFINE=	GVFS
-OPTIONS_DEFAULT=GVFS
+OPTIONS_DEFINE=		GVFS
+OPTIONS_DEFAULT=	GVFS
 
 GVFS_USE=	GNOME=gvfs
 
