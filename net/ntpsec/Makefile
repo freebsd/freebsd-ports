@@ -11,7 +11,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 
-USES=		bison gettext-runtime pkgconfig python shebangfix ssl waf
+USES=		cpe bison gettext-runtime pkgconfig python shebangfix ssl waf
 USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/lib/ntp
 
