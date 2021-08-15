@@ -1,7 +1,7 @@
 # Created by: Gabriel M. Dutra <0xdutra@gmail.com>
 
 PORTNAME=	terraform-switcher
-DISTVERSION=	0.12.1092
+DISTVERSION=	0.12.1168
 CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com
@@ -14,6 +14,7 @@ USES=	go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	warrensbox
+
 GH_TUPLE=	\
 		Masterminds:semver:v1.5.0:masterminds_semver/vendor/github.com/Masterminds/semver \
 		agext:levenshtein:v1.2.2:agext_levenshtein/vendor/github.com/agext/levenshtein \
@@ -22,7 +23,7 @@ GH_TUPLE=	\
 		chzyer:readline:f6d7a1f6fbf3:chzyer_readline/vendor/github.com/chzyer/readline \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:sys:a43fa875dd82:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:0f9fa26af87c:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.3.1:google_go_cmp/vendor/github.com/google/go-cmp \
 		hashicorp:hcl2:fb75b3253c80:hashicorp_hcl2/vendor/github.com/hashicorp/hcl2 \
