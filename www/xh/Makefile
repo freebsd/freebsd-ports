@@ -1,6 +1,6 @@
 PORTNAME=	xh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
+DISTVERSION=	0.12.0
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -42,6 +42,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		atomic-waker-1.0.0 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
+		base-x-0.2.8 \
 		base64-0.13.0 \
 		basic-cookies-0.1.4 \
 		bincode-1.3.3 \
@@ -63,7 +64,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		clap-2.33.3 \
 		concurrent-queue-1.2.2 \
 		console-0.14.1 \
+		const_fn-0.4.8 \
 		constant_time_eq-0.1.5 \
+		cookie-0.14.4 \
+		cookie-0.15.0 \
+		cookie_store-0.12.0 \
+		cookie_store-0.15.0 \
+		core-foundation-0.9.1 \
+		core-foundation-sys-0.8.2 \
 		crc32fast-1.2.1 \
 		crossbeam-utils-0.8.5 \
 		crunchy-0.2.2 \
@@ -75,6 +83,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		dirs-1.0.5 \
 		dirs-3.0.2 \
 		dirs-sys-0.3.6 \
+		discard-1.0.4 \
 		doc-comment-0.3.3 \
 		either-1.6.1 \
 		ena-0.14.0 \
@@ -82,12 +91,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		encoding_rs-0.8.28 \
 		encoding_rs_io-0.1.7 \
 		event-listener-2.5.1 \
-		exit_status-0.1.0 \
 		fastrand-1.4.1 \
 		fixedbitset-0.2.0 \
 		flate2-1.0.20 \
 		float-cmp-0.8.0 \
 		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.0.1 \
 		futures-channel-0.3.15 \
 		futures-core-0.3.15 \
@@ -103,6 +113,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		gloo-timers-0.2.1 \
 		h2-0.3.3 \
 		hashbrown-0.9.1 \
+		hashbrown-0.11.2 \
 		heck-0.3.2 \
 		hermit-abi-0.1.18 \
 		http-0.2.4 \
@@ -113,6 +124,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		humantime-2.1.0 \
 		hyper-0.14.8 \
 		hyper-rustls-0.22.1 \
+		hyper-tls-0.5.0 \
 		idna-0.2.3 \
 		indexmap-1.6.2 \
 		indicatif-0.15.0 \
@@ -144,6 +156,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		miniz_oxide-0.4.4 \
 		mio-0.7.11 \
 		miow-0.3.7 \
+		native-tls-0.2.7 \
 		netrc-rs-0.1.2 \
 		new_debug_unreachable-1.0.4 \
 		normalize-line-endings-0.3.0 \
@@ -155,6 +168,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		once_cell-1.7.2 \
 		onig-6.1.1 \
 		onig_sys-69.6.0 \
+		openssl-0.10.34 \
 		openssl-probe-0.1.4 \
 		openssl-sys-0.9.63 \
 		parking-2.0.0 \
@@ -180,6 +194,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
 		proc-macro2-1.0.27 \
+		psl-types-2.0.7 \
+		publicsuffix-1.5.6 \
+		publicsuffix-2.1.0 \
 		qstring-0.7.2 \
 		quote-1.0.9 \
 		rand-0.8.3 \
@@ -195,20 +212,27 @@ CARGO_CRATES=	adler-1.0.2 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
 		reqwest-0.11.4 \
+		reqwest_cookie_store-0.2.0 \
 		ring-0.16.20 \
 		rpassword-5.0.1 \
 		rust-argon2-0.8.3 \
+		rustc_version-0.2.3 \
 		rustls-0.19.1 \
 		ryu-1.0.5 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
 		schannel-0.1.19 \
 		sct-0.6.1 \
+		security-framework-2.2.0 \
+		security-framework-sys-2.2.0 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
 		serde-1.0.126 \
 		serde_derive-1.0.126 \
 		serde_json-1.0.64 \
 		serde_regex-1.1.0 \
 		serde_urlencoded-0.7.0 \
+		sha1-0.6.0 \
 		shell-escape-0.1.5 \
 		signal-hook-0.3.9 \
 		signal-hook-registry-1.4.0 \
@@ -217,6 +241,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		sluice-0.5.4 \
 		socket2-0.4.0 \
 		spin-0.5.2 \
+		standback-0.2.17 \
+		stdweb-0.4.20 \
+		stdweb-derive-0.5.3 \
+		stdweb-internal-macros-0.2.9 \
+		stdweb-internal-runtime-0.1.5 \
 		string_cache-0.8.1 \
 		strsim-0.8.0 \
 		structopt-0.3.21 \
@@ -231,11 +260,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		textwrap-0.11.0 \
 		thiserror-1.0.25 \
 		thiserror-impl-1.0.25 \
+		time-0.2.27 \
+		time-macros-0.1.1 \
+		time-macros-impl-0.1.2 \
 		tiny-keccak-2.0.2 \
 		tinyvec-1.2.0 \
 		tinyvec_macros-0.1.0 \
 		tokio-1.6.1 \
 		tokio-macros-1.2.0 \
+		tokio-native-tls-0.3.0 \
 		tokio-rustls-0.22.0 \
 		tokio-socks-0.5.1 \
 		tokio-util-0.6.7 \
