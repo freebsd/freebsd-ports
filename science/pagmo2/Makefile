@@ -1,6 +1,7 @@
 PORTNAME=	pagmo2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.18.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +15,7 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.lgpl3
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libipopt.so:math/ipopt \
 		libnlopt.so:math/nlopt \
-		libtbb.so:devel/tbb
+		libtbb.so:devel/onetbb
 
 USES=		cmake compiler:c++17-lang eigen:3,build,run
 USE_GITHUB=	yes
