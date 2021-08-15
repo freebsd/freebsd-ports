@@ -1,8 +1,7 @@
 # Created by: Dima Sivachenko <dima@Chg.RU>
 
 PORTNAME=	fltk
-PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTVERSION=	1.3.7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://www.fltk.org/pub/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -30,10 +29,6 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES
 
-post-extract:
-	@${MV} ${WRKSRC}/test/help.cxx ${WRKSRC}/test/help_dialog.cxx
-	@${MV} ${WRKSRC}/test/help-test.html ${WRKSRC}/test/help_dialog.html
-
 post-patch: .SILENT
 	prefix="${PREFIX}" ; plength=$$(($${#prefix}+10)) ; \
 	${REINPLACE_CMD} -e "\|/etc/fltk|{s||${PREFIX}&|;s|10|$${plength}|;}" \
@@ -42,9 +37,6 @@ post-patch: .SILENT
 		${WRKSRC}/test/Makefile
 	${REINPLACE_CMD} -e '/^INSTALL_BIN/s,-m,${STRIP} &, ; \
 		s,^\.SILENT,#&,' ${WRKSRC}/makeinclude.in
-	${REINPLACE_CMD} -E \
-		's,(.*)LDFLAGS(.*)LINKSHARED(.*),\1LINKSHARED\2LDFLAGS\3,' \
-			${WRKSRC}/fluid/Makefile
 
 post-install:
 .for x in fltk fltk_forms fltk_gl fltk_images
