@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libxine.so:multimedia/libxine
 
-USES=		desktop-file-utils gmake gnome iconv jpeg localbase pkgconfig \
+USES=		cpe desktop-file-utils gmake gnome iconv jpeg localbase pkgconfig \
 		readline shared-mime-info tar:xz xorg
 USE_XORG=	x11 xext xinerama xscrnsaver xt xtst xv xxf86vm
 GNU_CONFIGURE=	yes
