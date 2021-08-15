@@ -17,7 +17,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libwthttp.so:www/wt
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		cmake compiler:c++17-lang pkgconfig
+USES=		cmake compiler:c++17-lang cpe pkgconfig
 
 USER=		nobody
 GROUP=		nobody
