@@ -1,10 +1,11 @@
 # Created by: ache
 
 PORTNAME=	lynx
-PORTVERSION=	2.9.0d6
+PORTVERSION=	2.9.0d9
 CATEGORIES=	www
 MASTER_SITES=	http://invisible-mirror.net/archives/lynx/tarballs/ \
-		ftp://invisible-island.net/lynx/tarballs/
+		ftp://ftp.invisible-island.net/lynx/tarballs/
+
 PKGNAMESUFFIX=	-current
 DISTNAME=	${PORTNAME}${PORTVERSION:S/p/pre./:S/d/dev./}
 
