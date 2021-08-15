@@ -11,7 +11,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/lib/LICENSE
 LICENSE_FILE_GPLv2=	${WRKSRC}/programs/COPYING
 
-USES=		gmake
+USES=		cpe gmake
+CPE_VENDOR=	lizard_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	inikep
