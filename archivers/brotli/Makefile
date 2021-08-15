@@ -15,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 
-USES=		autoreconf:build compiler:c++0x gmake libtool pkgconfig
+USES=		autoreconf:build compiler:c++0x cpe gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CPE_VENDOR=	google
 
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	SHLIBVER=${PORTVERSION}
