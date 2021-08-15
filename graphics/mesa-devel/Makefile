@@ -1,6 +1,7 @@
 PORTNAME=	mesa
 DISTVERSION=	21.2-branchpoint-981
 DISTVERSIONSUFFIX=	-g38f39cc1e21
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -23,9 +24,9 @@ ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Limited scope: no old drivers and no software rendering. \
 			See also https://mesamatrix.net/
 
-BUILD_DEPENDS=	libglvnd>=1.3.2:graphics/libglvnd \
-		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
+		libOpenGL.so:graphics/libglvnd \
 		libexpat.so:textproc/expat2
 .if !exists(/usr/lib/libelf.so)
 # DragonFly doesn't install it yet
