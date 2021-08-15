@@ -34,11 +34,9 @@ OPTIONS_DEFINE=			OCTAVE
 OPTIONS_DEFAULT=		OCTAVE
 OPTIONS_SUB=			yes
 
-OCRAVE_DESC=			Integrate with Octave (main way to use Dynare)
-OCTAVE_CONFIGURE_ENABLE=	octave
-OCTAVE_CONFIGURE_ON=		--disable-mex-kalman-steady-state # Kalman Steady State MEX file for Octave
-
 OCTAVE_DESC=			Integrate with Octave (main way to use Dynare)
+OCTAVE_CONFIGURE_ENABLE=	octave
+OCTAVE_CONFIGURE_ON=		--disable-mex-kalman-steady-state # Kalman Steady State MEX file for Octave - requires the non-free library slicot-5.0
 OCTAVE_BUILD_DEPENDS=		octave:math/octave
 OCTAVE_LIB_DEPENDS=		libfftw3.so:math/fftw3 \
 				libfftw3f.so:math/fftw3-float \
