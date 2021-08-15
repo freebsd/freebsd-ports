@@ -15,7 +15,7 @@ LIB_DEPENDS=		libnspr4.so:devel/nspr \
 
 TEST_DEPENDS=		augparse:textproc/augeas
 
-USES=			gmake groff libtool pathfix pkgconfig
+USES=			cpe gmake groff libtool pathfix pkgconfig
 USE_BINUTILS=		yes
 USE_LDCONFIG=		yes
 USE_RC_SUBR=		${PORTNAME} ${PORTNAME}-notifyd
