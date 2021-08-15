@@ -8,10 +8,11 @@ COMMENT=	Assistive technology ATK bridge (Linux CentOS ${LINUX_DIST_VER})
 
 LICENSE=	LGPL20+
 
-USES=		linux:c7
+USES=		cpe linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	at-spi2-core atk dbuslibs
 USE_LINUX_RPM=	yes
+CPE_VENDOR=	gnome
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
