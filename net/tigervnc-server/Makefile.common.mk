@@ -8,7 +8,7 @@ MAINTAINER?=	meta@FreeBSD.org
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
-USES+=		cmake:insource,noninja
+USES+=		cmake:insource,noninja cpe
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	TigerVNC
