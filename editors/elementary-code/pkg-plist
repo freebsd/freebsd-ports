@@ -2,14 +2,14 @@ bin/io.elementary.code
 include/codecore.h
 lib/io.elementary.code/plugins/brackets-completion/brackets-completion.plugin
 lib/io.elementary.code/plugins/brackets-completion/libbrackets-completion.so
-lib/io.elementary.code/plugins/browser-preview/browser-preview.plugin
-lib/io.elementary.code/plugins/browser-preview/libbrowser-preview.so
 lib/io.elementary.code/plugins/detect-indent/detect-indent.plugin
 lib/io.elementary.code/plugins/detect-indent/libdetect-indent.so
 lib/io.elementary.code/plugins/editorconfig/editorconfig.plugin
 lib/io.elementary.code/plugins/editorconfig/libeditorconfig.so
 lib/io.elementary.code/plugins/highlight-word-selection/highlight-word-selection.plugin
 lib/io.elementary.code/plugins/highlight-word-selection/libhighlight-word-selection.so
+lib/io.elementary.code/plugins/markdown-actions/libmarkdown-actions.so
+lib/io.elementary.code/plugins/markdown-actions/markdown-actions.plugin
 lib/io.elementary.code/plugins/outline/liboutline.so
 lib/io.elementary.code/plugins/outline/outline.plugin
 lib/io.elementary.code/plugins/pastebin/libpastebin.so
@@ -68,6 +68,7 @@ share/locale/bo/LC_MESSAGES/io.elementary.code.mo
 share/locale/br/LC_MESSAGES/io.elementary.code.mo
 share/locale/bs/LC_MESSAGES/io.elementary.code.mo
 share/locale/ca/LC_MESSAGES/io.elementary.code.mo
+share/locale/ca@valencia/LC_MESSAGES/io.elementary.code.mo
 share/locale/ce/LC_MESSAGES/io.elementary.code.mo
 share/locale/ch/LC_MESSAGES/io.elementary.code.mo
 share/locale/ckb/LC_MESSAGES/io.elementary.code.mo
@@ -155,7 +156,6 @@ share/locale/mi/LC_MESSAGES/io.elementary.code.mo
 share/locale/mk/LC_MESSAGES/io.elementary.code.mo
 share/locale/ml/LC_MESSAGES/io.elementary.code.mo
 share/locale/mn/LC_MESSAGES/io.elementary.code.mo
-share/locale/mo/LC_MESSAGES/io.elementary.code.mo
 share/locale/mr/LC_MESSAGES/io.elementary.code.mo
 share/locale/ms/LC_MESSAGES/io.elementary.code.mo
 share/locale/mt/LC_MESSAGES/io.elementary.code.mo
@@ -186,6 +186,7 @@ share/locale/qu/LC_MESSAGES/io.elementary.code.mo
 share/locale/rm/LC_MESSAGES/io.elementary.code.mo
 share/locale/rn/LC_MESSAGES/io.elementary.code.mo
 share/locale/ro/LC_MESSAGES/io.elementary.code.mo
+share/locale/ro_MD/LC_MESSAGES/io.elementary.code.mo
 share/locale/ru/LC_MESSAGES/io.elementary.code.mo
 share/locale/rue/LC_MESSAGES/io.elementary.code.mo
 share/locale/rw/LC_MESSAGES/io.elementary.code.mo
@@ -242,5 +243,6 @@ share/locale/zh_HK/LC_MESSAGES/io.elementary.code.mo
 share/locale/zh_TW/LC_MESSAGES/io.elementary.code.mo
 share/locale/zu/LC_MESSAGES/io.elementary.code.mo
 share/metainfo/io.elementary.code.appdata.xml
+share/polkit-1/actions/io.elementary.code.policy
 share/vala/vapi/codecore.deps
 share/vala/vapi/codecore.vapi
