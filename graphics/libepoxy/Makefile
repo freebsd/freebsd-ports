@@ -1,6 +1,5 @@
 PORTNAME=	libepoxy
-DISTVERSION=	1.5.8
-PORTREVISION=	1
+DISTVERSION=	1.5.9
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/anholt/${PORTNAME}/releases/download/${DISTVERSION}/
 
