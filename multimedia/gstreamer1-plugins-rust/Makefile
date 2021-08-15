@@ -4,7 +4,7 @@ CATEGORIES=	multimedia
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	848b2963905c.patch:-p1 # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/merge_requests/543
-PATCHFILES+=	7e80994b136e.patch:-p1 # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/merge_requests/544
+PATCHFILES+=	f5cc0e50fee1.patch:-p1 # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/merge_requests/544
 PATCHFILES+=	fced787a63c5.patch:-p1 # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/merge_requests/545
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -418,7 +418,7 @@ DAV1D_LIB_DEPENDS=	libdav1d.so:multimedia/dav1d
 DAV1D_MESON_ENABLED=	dav1d
 
 PANGO_USE=		GNOME=cairo,pango
-PANGO_MESON_ENABLED=	pango
+PANGO_MESON_ENABLED=	closedcaption
 
 SODIUM_DESC=		File encryption and decryption via libsodium
 SODIUM_LIB_DEPENDS=	libsodium.so:security/libsodium

@@ -739,7 +739,7 @@ SHA256 (gstreamer-gst-plugins-rs-b345f18570bc3ffa1a176d47d57c4119ad931ce9_GL0.ta
 SIZE (gstreamer-gst-plugins-rs-b345f18570bc3ffa1a176d47d57c4119ad931ce9_GL0.tar.gz) = 733184
 SHA256 (848b2963905c.patch) = 21951b5e38eb84de324759158b1e2b0222a9cab6d0690543e20e37eb95ff9dd6
 SIZE (848b2963905c.patch) = 10161
-SHA256 (7e80994b136e.patch) = 9cbb021fa52ed6df9b26e0b3d433ac6feca7680dd3808b78de019dad33f2d98b
-SIZE (7e80994b136e.patch) = 1715
+SHA256 (f5cc0e50fee1.patch) = a2235b246f5d99f166c88a30fd2c61aff2fee963c91f2aebedf1d84397ae2808
+SIZE (f5cc0e50fee1.patch) = 1661
 SHA256 (fced787a63c5.patch) = dd62e283d94a4ee086dc84c91e1e677804fcedc3cf6e2d0c33523523fcce33ac
 SIZE (fced787a63c5.patch) = 978
