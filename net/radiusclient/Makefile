@@ -12,7 +12,7 @@ COMMENT=	Client library and basic utilities for RADIUS AAA
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool
+USES=		cpe gmake libtool
 USE_LDCONFIG=	yes
 ETCDIR=		${PREFIX}/etc/${PORTNAME}-ng
 
