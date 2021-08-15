@@ -18,6 +18,8 @@ USE_GITHUB=	nodefault
 GH_TUPLE=	RedisJSON:redisjson:1ca78bc:redisjson \
 		RedisJSON:jsonpath:14af7aa5435f3e676ceb3441ad78b9c8cb3ffa3a:jsonpath_lib
 
+LIB_DEPENDS=	libclang.so:devel/llvm${LLVM_DEFAULT}
+
 CARGO_CRATES=	aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
 		array_tool-1.0.3 \
