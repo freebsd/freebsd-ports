@@ -1,7 +1,7 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	python-djvulibre
-DISTVERSION=	0.8.6
+DISTVERSION=	0.8.7
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
