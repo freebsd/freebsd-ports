@@ -9,7 +9,7 @@ COMMENT=	Sync files to and from various cloud services
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	ncw
 GH_TUPLE=	Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
