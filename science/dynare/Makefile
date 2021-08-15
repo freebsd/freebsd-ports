@@ -23,6 +23,7 @@ USES=		bison compiler:c++17-lang fortran gmake localbase tar:xz
 USE_PDFLATEX=	yes
 USE_TEX=	pdftex
 USE_GCC=	any # clang-11 fails: error: reference to local binding 'ii1' declared in enclosing function 'ss2Iteration_pruning'
+		# Clang still doesn't support this c++20 feature, see https://bugs.llvm.org/show_bug.cgi?id=49238
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-matlab \
