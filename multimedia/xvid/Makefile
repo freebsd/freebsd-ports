@@ -13,7 +13,7 @@ COMMENT=	Opensource MPEG-4 codec, based on OpenDivx
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKDIR}/xvidcore/LICENSE
 
-USES=		gmake tar:bz2
+USES=		cpe gmake tar:bz2
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
