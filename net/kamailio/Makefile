@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libxml2.so:textproc/libxml2
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-USES=		compiler:c11 gmake ncurses pkgconfig python:3.5+ readline \
+USES=		compiler:c11 cpe gmake ncurses pkgconfig python:3.5+ readline \
 		shebangfix
 
 USE_LDCONFIG=	yes
