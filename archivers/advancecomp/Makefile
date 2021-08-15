@@ -14,7 +14,7 @@ LIB_DEPENDS=	libzopfli.so:archivers/zopfli
 
 USES=		cpe
 
-CPE_VENDOR=	advancedmame
+CPE_VENDOR=	advancemame
 
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	zopfli_SOURCES="" am__objects_3=""
