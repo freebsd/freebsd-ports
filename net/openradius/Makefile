@@ -22,7 +22,7 @@ CC?=		gcc
 CXX?=		g++
 MAKE_ENV=	INST_PREFIX=${STAGEDIR}
 
-USES=		gmake shebangfix
+USES=		cpe gmake shebangfix
 SHEBANG_FILES=	modules/ascfile/ascfile \
 		modules/radsql/radsql \
 		modules/unixpasswd/unixpasswd
