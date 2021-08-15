@@ -3,4 +3,4 @@ based on the XML-RPC standard. It features easy registration of methods
 and namespacing, connects seamlessly to your Flask app, and includes
 plenty of testing helpers.
 
-WWW: https://bitbucket.org/leafstorm/flask-xml-rpc/
+WWW: https://pythonhosted.org/Flask-XML-RPC/
