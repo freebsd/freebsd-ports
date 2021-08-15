@@ -1,7 +1,6 @@
 PORTNAME=	segyio
-DISTVERSION=	1.9.6
+DISTVERSION=	1.9.7
 CATEGORIES=	science python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +20,15 @@ RUN_DEPENDS=	${PYNUMPY}
 USES=		compiler:c++11-lang python:3.6+
 USE_PYTHON=	distutils autoplist
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	equinor
+
+WRKSRC_SUBDIR=	python
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/segyio/_segyio*.so
+
+do-test: # tests fail: https://github.com/equinor/segyio/issues/511
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>
