@@ -1,12 +1,12 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
-PORTNAME?=	gitlab-workhorse
-PORTVERSION?=	14.1.2
-PORTREVISION?=	0
+PORTNAME=	gitlab-workhorse
+PORTVERSION=	14.1.2
+PORTREVISION=	0
 CATEGORIES=	www
 
-MAINTAINER?=	mfechner@FreeBSD.org
-COMMENT?=	Smart reverse proxy for GitLab
+MAINTAINER=	mfechner@FreeBSD.org
+COMMENT=	Smart reverse proxy for GitLab
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,10 +20,10 @@ MAKE_ENV+=	${GO_ENV}
 WRKSRC_SUBDIR=	workhorse
 
 USE_GITLAB=	yes
-GL_ACCOUNT?=	gitlab-org
+GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT?=	8c67b4991465e92dcd6752cc42e54a9c5cd9f0f2
+GL_COMMIT=	8c67b4991465e92dcd6752cc42e54a9c5cd9f0f2
 
 # for go dependencies
 USE_GITHUB=	nodefault
