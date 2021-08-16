@@ -1,5 +1,5 @@
 PORTNAME=	PuLP
-DISTVERSION=	2.4
+DISTVERSION=	2.5.0
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,5 +22,9 @@ NO_ARCH=	yes
 post-patch:
 	@${CP} ${WRKSRC}/pulp/pulp.cfg.linux ${WRKSRC}/pulp/pulp.cfg.freebsd
 	@${REINPLACE_CMD} -E 's/^(CplexPath|PulpCbcPath) = .*/#&/' ${WRKSRC}/pulp/pulp.cfg.freebsd
+
+do-test: install # one test is known to fail: https://github.com/coin-or/pulp/issues/472
+	@cd ${TEST_WRKSRC} && py.test
+		
 
 .include <bsd.port.mk>

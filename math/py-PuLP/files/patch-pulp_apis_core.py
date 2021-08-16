@@ -10,10 +10,3 @@
  else:
      operating_system = "linux"
      PULPCFGFILE += ".linux"
-@@ -375,4 +378,4 @@ try:
-         return cList
- except(ImportError):
-     def ctypesArrayFill(myList, type = None):
--        return None
-\ No newline at end of file
-+        return None
