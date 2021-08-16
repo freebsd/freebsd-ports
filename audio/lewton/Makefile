@@ -82,10 +82,14 @@ CARGO_CRATES=	al-sys-0.6.1 \
 
 do-build:
 	@${CARGO_CARGO_RUN} cbuild \
+		--verbose \
+		--verbose \
 		${CARGO_BUILD_ARGS}
 
 do-install:
 	@${CARGO_CARGO_RUN} cinstall \
+		--verbose \
+		--verbose \
 		--destdir "${STAGEDIR}" \
 		--prefix "${PREFIX}" \
 		${CARGO_INSTALL_ARGS}
