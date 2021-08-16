@@ -7,14 +7,12 @@
 %%DATADIR%%/adodb-errorhandler.inc.php
 %%DATADIR%%/adodb-errorpear.inc.php
 %%DATADIR%%/adodb-exceptions.inc.php
-%%DATADIR%%/adodb-iterator.inc.php
 %%DATADIR%%/adodb-lib.inc.php
 %%DATADIR%%/adodb-loadbalancer.inc.php
 %%DATADIR%%/adodb-memcache.lib.inc.php
 %%DATADIR%%/adodb-pager.inc.php
 %%DATADIR%%/adodb-pear.inc.php
 %%DATADIR%%/adodb-perf.inc.php
-%%DATADIR%%/adodb-php4.inc.php
 %%DATADIR%%/adodb-time.inc.php
 %%DATADIR%%/adodb-xmlschema.inc.php
 %%DATADIR%%/adodb-xmlschema03.inc.php
