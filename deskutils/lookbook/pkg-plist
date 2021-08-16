@@ -12,4 +12,6 @@ share/icons/hicolor/48x48/apps/com.github.danrabbit.lookbook.svg
 share/icons/hicolor/48x48@2/apps/com.github.danrabbit.lookbook.svg
 share/icons/hicolor/64x64/apps/com.github.danrabbit.lookbook.svg
 share/icons/hicolor/64x64@2/apps/com.github.danrabbit.lookbook.svg
+share/locale/fr/LC_MESSAGES/com.github.danrabbit.lookbook.mo
+share/locale/pt/LC_MESSAGES/com.github.danrabbit.lookbook.mo
 share/metainfo/com.github.danrabbit.lookbook.appdata.xml
