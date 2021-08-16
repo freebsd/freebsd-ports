@@ -4,7 +4,7 @@
 
 PKGNAMESUFFIX=	-qt5-${FLAVOR:U:S/_/-/}
 DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	devel python
 
 DEPRECATED=	Uses EOL Python 2.7 via www/py-qt5-webengine
