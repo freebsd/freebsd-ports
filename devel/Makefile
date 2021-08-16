@@ -5232,6 +5232,7 @@
     SUBDIR += py-typechecks
     SUBDIR += py-typed-ast
     SUBDIR += py-typer
+    SUBDIR += py-types-MarkupSafe
     SUBDIR += py-types-PyYAML
     SUBDIR += py-types-Werkzeug
     SUBDIR += py-types-click
