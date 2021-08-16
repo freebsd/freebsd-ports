@@ -3,12 +3,14 @@ PORTVERSION=	r24
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	vapoursynth-
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	c6e76cb3ed83.patch:-p1 # https://github.com/EleonoreMizo/fmtconv/issues/23
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Format conversion tools for Vapoursynth
 
 LICENSE=	WTFPL
 
-BROKEN_i386=	https://github.com/EleonoreMizo/fmtconv/issues/23
 BROKEN_powerpc64=	fails to compile on powerpc64: \#error
 
 USE_GITHUB=	yes
