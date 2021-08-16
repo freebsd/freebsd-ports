@@ -1,7 +1,7 @@
 # Created by: John Chen <johnpupu@gmail.com>
 
 PORTNAME=	ev
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.4
 CATEGORIES=	devel
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -11,7 +11,5 @@ LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:pecl
-
-IGNORE_WITH_PHP=	80
 
 .include <bsd.port.mk>
