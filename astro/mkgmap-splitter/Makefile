@@ -1,5 +1,5 @@
 PORTNAME=	splitter
-PORTVERSION=	r615
+PORTVERSION=	r642
 CATEGORIES=	astro converters java
 MASTER_SITES=	http://www.mkgmap.org.uk/download/ \
 		https://mirror.amdmi3.ru/distfiles/
