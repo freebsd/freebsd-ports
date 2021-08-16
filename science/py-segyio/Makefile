@@ -29,6 +29,8 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/segyio/_segyio*.so
 
 do-test: # tests fail: https://github.com/equinor/segyio/issues/511
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+	@cd ${WRKSRC} && \
+		${PYTHON_CMD} ${PYSETUP} build_ext --inplace && \
+		${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>
