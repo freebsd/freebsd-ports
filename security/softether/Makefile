@@ -34,9 +34,6 @@ PLIST_SUB=	SE_DBDIR="${SE_DBDIR}" SE_LOGDIR="${SE_LOGDIR}" SE_PIDDIR="${SE_PIDDI
 SUB_LIST=	SE_DBDIR="${SE_DBDIR}" SE_LOGDIR="${SE_LOGDIR}" SE_PIDDIR="${SE_PIDDIR}"
 SUB_FILES=	pkg-message vpncmd
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 # a pity the source directory has such a naming scheme, but well
 WRKSRC=		${WRKDIR}/v${DISTVERSION}
 
