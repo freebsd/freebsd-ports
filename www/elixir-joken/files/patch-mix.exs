@@ -1,10 +1,10 @@
---- mix.exs.orig	2019-05-27 14:48:40 UTC
+--- mix.exs.orig	2021-08-16 02:01:52 UTC
 +++ mix.exs
-@@ -14,7 +14,6 @@ defmodule Joken.Mixfile do
+@@ -15,7 +15,6 @@ defmodule Joken.Mixfile do
        consolidate_protocols: Mix.env() != :test,
        description: description(),
        package: package(),
 -      deps: deps(),
-       source_ref: "v#{@version}",
-       source_url: "https://github.com/joken-elixir/joken",
-       docs: docs_config(),
+       docs: docs(),
+       dialyzer: [plt_add_deps: :apps_direct, plt_add_apps: [:jason]],
+       test_coverage: [tool: ExCoveralls],
