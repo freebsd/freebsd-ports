@@ -16,6 +16,7 @@ lib/libfreeciv-srv.so.0.0.0
 lib/libfreeciv.so
 lib/libfreeciv.so.0
 lib/libfreeciv.so.0.0.0
+man/man6/freeciv.6.gz
 %%CLIENT%%man/man6/freeciv-client.6.gz
 %%GTK2%%man/man6/freeciv-gtk2.6.gz
 @comment man/man6/freeciv-gtk3.22.6.gz
