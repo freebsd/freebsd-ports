@@ -5235,6 +5235,7 @@
     SUBDIR += py-types-Flask
     SUBDIR += py-types-Jinja2
     SUBDIR += py-types-MarkupSafe
+    SUBDIR += py-types-Pillow
     SUBDIR += py-types-PyYAML
     SUBDIR += py-types-Werkzeug
     SUBDIR += py-types-click
