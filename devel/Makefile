@@ -5236,6 +5236,7 @@
     SUBDIR += py-types-futures
     SUBDIR += py-types-protobuf
     SUBDIR += py-types-requests
+    SUBDIR += py-types-xxhash
     SUBDIR += py-typing-extensions
     SUBDIR += py-typing-inspect
     SUBDIR += py-tzlocal
