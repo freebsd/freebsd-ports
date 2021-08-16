@@ -1,6 +1,6 @@
 PORTNAME=	solana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.8
+DISTVERSION=	1.7.10
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,7 +34,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		arrayref-0.3.6 \
 		arrayvec-0.5.1 \
 		ascii-0.9.3 \
-		assert_cmd-1.0.2 \
+		assert_cmd-2.0.0 \
 		assert_matches-1.3.0 \
 		async-stream-0.3.0 \
 		async-stream-impl-0.3.0 \
@@ -53,6 +53,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		base64-0.13.0 \
 		bincode-1.3.3 \
 		bindgen-0.57.0 \
+		bit-set-0.5.2 \
+		bit-vec-0.6.3 \
 		bitflags-1.2.1 \
 		blake2b_simd-0.5.10 \
 		blake3-0.3.7 \
@@ -65,7 +67,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		borsh-derive-internal-0.9.0 \
 		borsh-schema-derive-internal-0.9.0 \
 		bs58-0.3.1 \
-		bstr-0.2.13 \
+		bstr-0.2.16 \
 		bumpalo-3.3.0 \
 		bv-0.11.1 \
 		byte-tools-0.3.1 \
@@ -127,7 +129,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		derivative-2.1.1 \
 		derive_more-0.99.11 \
 		dialoguer-0.6.2 \
-		difference-2.0.0 \
+		difflib-0.4.0 \
 		digest-0.8.1 \
 		digest-0.9.0 \
 		dir-diff-0.3.2 \
@@ -189,11 +191,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		goauth-0.10.0 \
 		goblin-0.3.0 \
 		h2-0.2.5 \
-		h2-0.3.0 \
+		h2-0.3.3 \
 		half-1.6.0 \
 		hash32-0.1.1 \
-		hashbrown-0.8.2 \
 		hashbrown-0.9.1 \
+		hashbrown-0.11.2 \
 		heck-0.3.3 \
 		hermit-abi-0.1.13 \
 		hex-0.4.2 \
@@ -207,12 +209,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		http-0.2.1 \
 		http-body-0.3.1 \
 		http-body-0.4.2 \
-		httparse-1.3.4 \
+		httparse-1.4.1 \
 		httpdate-0.3.2 \
+		httpdate-1.0.1 \
 		humantime-2.0.1 \
 		hyper-0.10.16 \
 		hyper-0.13.10 \
-		hyper-0.14.3 \
+		hyper-0.14.11 \
 		hyper-rustls-0.22.1 \
 		hyper-timeout-0.4.1 \
 		hyper-tls-0.5.0 \
@@ -220,7 +223,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		idna-0.2.0 \
 		ieee754-0.2.6 \
 		indexed-0.1.1 \
-		indexmap-1.5.1 \
+		indexmap-1.7.0 \
 		indicatif-0.15.0 \
 		input_buffer-0.3.1 \
 		instant-0.1.6 \
@@ -245,7 +248,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		language-tags-0.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
-		libc-0.2.81 \
+		libc-0.2.98 \
 		libloading-0.6.2 \
 		libloading-0.7.0 \
 		librocksdb-sys-6.17.3 \
@@ -262,7 +265,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
 		memchr-1.0.2 \
-		memchr-2.3.3 \
+		memchr-2.4.0 \
 		memmap2-0.1.0 \
 		memoffset-0.5.4 \
 		memoffset-0.6.1 \
@@ -323,12 +326,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pin-project-internal-0.4.23 \
 		pin-project-internal-1.0.1 \
 		pin-project-lite-0.1.5 \
-		pin-project-lite-0.2.4 \
+		pin-project-lite-0.2.7 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.17 \
 		plain-0.2.3 \
 		ppv-lite86-0.2.8 \
-		predicates-1.0.4 \
+		predicates-2.0.1 \
 		predicates-core-1.0.0 \
 		predicates-tree-1.0.0 \
 		pretty-hex-0.2.1 \
@@ -339,11 +342,14 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		proc-macro-nested-0.1.4 \
 		proc-macro2-0.4.30 \
 		proc-macro2-1.0.24 \
+		proptest-1.0.0 \
 		prost-0.8.0 \
 		prost-build-0.8.0 \
 		prost-derive-0.8.0 \
 		prost-types-0.8.0 \
 		qstring-0.7.2 \
+		quick-error-1.2.3 \
+		quick-error-2.0.1 \
 		quote-0.6.13 \
 		quote-1.0.9 \
 		rand-0.4.6 \
@@ -366,6 +372,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rand_pcg-0.1.2 \
 		rand_pcg-0.2.1 \
 		rand_xorshift-0.1.1 \
+		rand_xorshift-0.3.0 \
 		raptorq-1.4.2 \
 		rayon-1.5.0 \
 		rayon-core-1.9.0 \
@@ -388,6 +395,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rustc_version-0.2.3 \
 		rustls-0.19.0 \
 		rustversion-1.0.4 \
+		rusty-fork-0.3.0 \
 		ryu-1.0.4 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
@@ -426,6 +434,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		smallvec-1.6.1 \
 		smpl_jwt-0.6.1 \
 		socket2-0.3.17 \
+		socket2-0.4.1 \
 		solana-frozen-abi-1.7.6 \
 		solana-frozen-abi-macro-1.7.6 \
 		solana-logger-1.7.6 \
@@ -502,9 +511,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tower-0.4.8 \
 		tower-layer-0.3.1 \
 		tower-service-0.3.0 \
-		tracing-0.1.18 \
-		tracing-attributes-0.1.9 \
-		tracing-core-0.1.13 \
+		tracing-0.1.26 \
+		tracing-attributes-0.1.15 \
+		tracing-core-0.1.18 \
 		tracing-futures-0.2.4 \
 		traitobject-0.1.0 \
 		treeline-0.1.0 \
@@ -553,7 +562,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		websocket-base-0.24.0 \
 		which-4.0.2 \
 		winapi-0.2.8 \
-		winapi-0.3.8 \
+		winapi-0.3.9 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
