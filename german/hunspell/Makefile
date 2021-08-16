@@ -1,6 +1,6 @@
 PORTNAME=	hunspell
 PORTVERSION=	20161207
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	german textproc
 MASTER_SITES=	https://www.j3e.de/ispell/igerman98/dict/ \
 		LOCAL/sunpoet/${PORTNAME}
@@ -25,7 +25,11 @@ USE_PERL5=	build
 
 ALL_TARGET=	hunspell-all
 NO_ARCH=	yes
-SHEBANG_FILES=	bin/*.pl
+SHEBANG_FILES=	bin/*.pl \
+		bin/conv_dict_de_CH
+SHEBANG_LANG=	sed
+sed_OLD_CMD=	/bin/sed
+sed_CMD=	${LOCALBASE}/bin/gsed
 
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 
