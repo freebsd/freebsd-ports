@@ -3,7 +3,7 @@ PORTVERSION=	3.0.5.1
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-PKGNAMESUFFIX=	30-gtk3
+PKGNAMESUFFIX=	${_SHORT_WX_VER}-${FLAVOR}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	The wxWidgets GUI toolkit with GTK+ bindings
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/docs/gpl.txt
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libpng.so:graphics/png \
 		libsoup-2.4.so:devel/libsoup \
 		libtiff.so:graphics/tiff
@@ -26,7 +27,7 @@ USES=		compiler:c++11-lib gl gmake gnome iconv jpeg localbase \
 		pkgconfig xorg
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		gl glu
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf2
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
@@ -36,7 +37,6 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-zlib=sys \
 		--with-expat=sys \
 		--with-opengl \
-		--with-gtk=3 \
 		--without-gnomevfs \
 		--disable-epollloop \
 		--disable-joystick \
@@ -51,8 +51,8 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 CONFIGURE_ENV=	X11BASE="${LOCALBASE}" \
 		ac_cv_header_sys_inotify_h=no
 
-OPTIONS_DEFINE=	GSTREAMER NOTIFY MSPACK NLS WEBKIT
-OPTIONS_DEFAULT=GSTREAMER MSPACK WEBKIT
+OPTIONS_DEFINE=	GSTREAMER NOTIFY MSPACK NLS
+OPTIONS_DEFAULT=GSTREAMER MSPACK
 MSPACK_DESC=	Microsoft archives support
 OPTIONS_SUB=	yes
 
@@ -69,6 +69,27 @@ MSPACK_LIB_DEPENDS=	libmspack.so:archivers/libmspack
 
 WEBKIT_CONFIGURE_ENABLE=	webview
 WEBKIT_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
+
+FLAVORS=	gtk3 gtk2
+FLAVOR?=	${FLAVORS:[1]}
+
+.if ${FLAVOR} == gtk3
+USE_GNOME+=	gtk30
+CONFIGURE_ARGS+=	--with-gtk=3
+OPTIONS_DEFINE+=	WEBKIT
+OPTIONS_DEFAULT+=	WEBKIT
+PLIST_SUB+=	GTK2="@comment "
+.else
+USE_GNOME+=	gtk20
+CONFIGURE_ARGS+=	--with-gtk
+PLIST_SUB+=	GTK2="" WEBKIT="@comment "
+.endif
+PLIST_SUB+=	GTKVER=${FLAVOR}
+
+_SHORT_WX_VER=	${PORTVERSION:S/./ /g:[1..2]:ts}
+
+gtk3_CONFLICTS_INSTALL=	${PORTNAME}${_SHORT_WX_VER}-gtk2
+gtk2_CONFLICTS_INSTALL=	${PORTNAME}${_SHORT_WX_VER}-gtk3
 
 .include <bsd.port.pre.mk>
 
