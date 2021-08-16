@@ -1,13 +1,9 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	RetroArch
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	games emulators
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	618c83d4ca1b8144377747076e28ac962e492392.patch:-p1
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Cross-platform entertainment system based on libretro API
@@ -17,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 		libdrm.so:graphics/libdrm \
-		libass.so:multimedia/libass
+		libass.so:multimedia/libass \
+		libfribidi.so:converters/fribidi \
+		libfontconfig.so:x11-fonts/fontconfig
 BUILD_DEPENDS=	vulkan-loader>0:graphics/vulkan-loader \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 RUN_DEPENDS=	retroarch-assets<=0:games/retroarch-assets
@@ -25,7 +23,7 @@ RUN_DEPENDS=	retroarch-assets<=0:games/retroarch-assets
 USES=		compiler:c++11-lib gmake pkgconfig python:3.6+ shebangfix ssl
 
 OPTIONS_DEFINE=	CACA FFMPEG OSS JACK PULSEAUDIO ALSA SDL OPENGL OPENAL V4L FREETYPE WAYLAND UDEV QT X11 DOCS
-OPTIONS_DEFAULT=FFMPEG OSS PULSEAUDIO SDL OPENGL OPENAL V4L FREETYPE WAYLAND UDEV QT X11
+OPTIONS_DEFAULT=FFMPEG OSS SDL OPENGL OPENAL V4L FREETYPE WAYLAND UDEV QT X11
 FFMPEG_DESC=	On-the-fly recording of gameplay with libavcodec
 WAYLAND_DESC=	Wayland display support
 UDEV_DESC=	udev device hotplug support

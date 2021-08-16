@@ -4,7 +4,7 @@ etc/retroarch.cfg
 man/man6/retroarch-cg2glsl.6.gz
 man/man6/retroarch.6.gz
 share/applications/retroarch.desktop
-share/metainfo/com.libretro.RetroArch.appdata.xml
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+share/metainfo/com.libretro.RetroArch.appdata.xml
 share/pixmaps/retroarch.svg
