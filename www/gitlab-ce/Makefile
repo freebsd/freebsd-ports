@@ -266,10 +266,10 @@ USE_RUBY=	yes
 
 USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
-GL_ACCOUNT?=	gitlab-org
-GL_PROJECT?=	gitlab-foss
+GL_ACCOUNT=	gitlab-org
+GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT?=	8c67b4991465e92dcd6752cc42e54a9c5cd9f0f2
+GL_COMMIT=	8c67b4991465e92dcd6752cc42e54a9c5cd9f0f2
 
 USERS=	git
 GROUPS=	git
