@@ -119,5 +119,5 @@ SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 712e227841d057c1
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 2947998
 SHA256 (RustAudio-lewton-0.10.2_GH0.tar.gz) = a3779c5cbe0a4d7e1c158f57ebf6ad81ccf2e9f3fd047e50848c303682fcb113
 SIZE (RustAudio-lewton-0.10.2_GH0.tar.gz) = 79718
-SHA256 (dbcecbde0145.patch) = 5b8f9a18c766f57e82aa9cfee8e29745c657a7520b2d97cc4bc128e543beb516
-SIZE (dbcecbde0145.patch) = 672
+SHA256 (05f96f6e6976.patch) = fa5257a56791994cf6916a112c68c441ec7dd298eb8f7c6e8e2de50303fd9134
+SIZE (05f96f6e6976.patch) = 678
