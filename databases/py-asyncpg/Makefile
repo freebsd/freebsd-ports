@@ -1,7 +1,7 @@
 # Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
 
 PORTNAME=	asyncpg
-PORTVERSION=	0.23.0
+PORTVERSION=	0.24.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	High performance PostgreSQL Client Library for Python/asyncio
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		pgsql:9.2+ python:3.5+
+USES=		pgsql:9.2+ python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 OPTIONS_DEFINE=	DOCS
