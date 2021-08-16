@@ -1,7 +1,7 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 
 PORTNAME=	exabgp
-PORTVERSION=	4.2.11
+PORTVERSION=	4.2.13
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GH \
@@ -15,7 +15,7 @@ COMMENT=	BGP engine and route injector
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE.txt
 
-USES=		python:3.6-3.7 shebangfix
+USES=		python:3.6+ shebangfix
 USE_PYTHON=	distutils autoplist
 
 CONFLICTS_INSTALL=	exabgp-[0-9]*
