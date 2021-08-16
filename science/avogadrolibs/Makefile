@@ -1,6 +1,6 @@
 PORTNAME=	avogadrolibs
 DISTVERSION=	1.94.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
