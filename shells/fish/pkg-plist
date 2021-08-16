@@ -3,7 +3,7 @@ bin/fish_indent
 bin/fish_key_reader
 share/applications/fish.desktop
 share/pixmaps/fish.png
-%%ETCDIR%%/config.fish
+@sample %%ETCDIR%%/config.fish.sample
 libdata/pkgconfig/fish.pc
 %%MANPAGES%%man/man1/fish.1.gz
 %%MANPAGES%%man/man1/fish_indent.1.gz

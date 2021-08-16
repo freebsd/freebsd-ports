@@ -2,6 +2,7 @@
 
 PORTNAME=	fish
 DISTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/fish-shell/fish-shell/releases/download/${PORTVERSION}/
 
@@ -51,6 +52,7 @@ post-install:
 .for i in fish fish_indent fish_key_reader
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
+	@${MV} ${STAGEDIR}${ETCDIR}/config.fish ${STAGEDIR}${ETCDIR}/config.fish.sample
 
 post-stage-DOCS-on:
 	@${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo
