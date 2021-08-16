@@ -1,7 +1,7 @@
 # Created by: Sergey Matveychuk <sem@FreeBSD.org>
 
 PORTNAME=	unbound
-PORTVERSION=	1.13.1
+DISTVERSION=	1.13.2
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/unbound/ \
 		https://distfiles.crux.guru/
@@ -36,7 +36,7 @@ PORTDOCS=	CREDITS Changelog FEATURES LICENSE README \
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN_PLUGIN DOCS LIBEVENT \
 		FILTER_AAAA DNSTAP DNSCRYPT SUBNET EVAPI TFOCL TFOSE \
-		HIREDIS DOH
+		HIREDIS DOH DEP-RSA1024
 OPTIONS_DEFAULT=THREADS ECDSA LIBEVENT GOST DOH
 
 LIBEVENT_DESC=	Build against libevent
@@ -52,6 +52,7 @@ TFOCL_DESC=	Enable TCP Fast Open for client mode
 TFOSE_DESC=	Enable TCP Fast Open for server mode
 HIREDIS_DESC=	Enable hiredis support for the cachedb module
 DOH_DESC=	Enable DNS-over-HTTPS support
+DEP-RSA1024_DESC=	Deprecate the use of RSA 1024 keys
 
 STRIP_FILES=	.libs/libunbound.so unbound-checkconf unbound \
 		unbound-control .libs/unbound-host .libs/unbound-anchor
@@ -85,6 +86,7 @@ HIREDIS_CONFIGURE_ON=	--enable-cachedb --with-libhiredis
 HIREDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
 DOH_CONFIGURE_ON=	--with-libnghttp2
 DOH_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
+DEP-RSA1024_CONFIGURE_ON=	--with-deprecate-rsa-1024
 
 post-patch:
 	@${RM} ${WRKSRC}/util/configlexer.c
@@ -103,7 +105,7 @@ post-install-PYTHON-on:
 
 post-install-MUNIN_PLUGIN-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/munin/plugins
-	${INSTALL_SCRIPT} ${WRKDIR}/unbound-${PORTVERSION}/contrib/unbound_munin_ \
+	${INSTALL_SCRIPT} ${WRKDIR}/unbound-${DISTVERSION}/contrib/unbound_munin_ \
 		${STAGEDIR}${PREFIX}/share/munin/plugins/
 	@${ECHO_MSG}
 	@${ECHO_MSG} "============================================================="
