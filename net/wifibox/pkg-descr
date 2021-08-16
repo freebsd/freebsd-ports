@@ -1,0 +1,7 @@
+Wifibox deploys a Linux guest to drive a wireless networking card on
+the FreeBSD host system with the help of PCI pass-through.  There have
+been guides on the Internet to suggest the use of such techniques to
+improve the wireless networking experience on FreeBSD, of which
+Wifibox tries to implement as a single easy-to-use software package.
+
+WWW: https://github.com/pgj/freebsd-wifibox
