@@ -1,0 +1,6 @@
+include/lewton/lewton.h
+lib/liblewton.a
+lib/liblewton.so
+lib/liblewton.so.0
+lib/liblewton.so.%%VERSION%%
+libdata/pkgconfig/lewton.pc

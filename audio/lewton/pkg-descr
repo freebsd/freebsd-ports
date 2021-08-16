@@ -1,0 +1,3 @@
+Vorbis decoder written in pure Rust.
+
+WWW: https://github.com/RustAudio/lewton
