@@ -1,12 +1,12 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
-PORTNAME?=	gitlab-shell
-PORTVERSION?=	13.19.1
-PORTREVISION?=	0
+PORTNAME=	gitlab-shell
+PORTVERSION=	13.19.1
+PORTREVISION=	0
 CATEGORIES=	devel
 
-MAINTAINER?=	mfechner@FreeBSD.org
-COMMENT?=	GitLab Shell handles git commands for GitLab
+MAINTAINER=	mfechner@FreeBSD.org
+COMMENT=	GitLab Shell handles git commands for GitLab
 
 LICENSE=	MIT
 
@@ -15,9 +15,9 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 ALL_TARGET=	build
 
 USE_GITLAB=	yes
-GL_ACCOUNT?=	gitlab-org
+GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT?=	757aa7c0e0b8733c75c744f188b0136c1fe1830f
+GL_COMMIT=	757aa7c0e0b8733c75c744f188b0136c1fe1830f
 
 USERS=		git
 GROUPS=		git
@@ -95,7 +95,7 @@ GH_TUPLE=	\
 GL_TUPLE=	gitlab-org:gitaly:e078d5bd7c5eb37caa222faa15010ce6decc6aa6:gitlab_org_gitaly_v14/vendor/gitlab.com/gitlab-org/gitaly/v14 \
 		gitlab-org:labkit:b36f912635e66d2d043f57d0d2618fdc51002b87:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
-VARLOGDIR?=	/var/log/gitlab-shell
+VARLOGDIR=	/var/log/gitlab-shell
 
 PLIST_FILES+=	"@dir(git,,755) ${VARLOGDIR}"
 
