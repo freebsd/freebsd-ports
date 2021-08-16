@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman<5u623l20@gmail.com>
 
 PORTNAME=	antlr4
-PORTVERSION=	4.9
+PORTVERSION=	4.9.1
 DISTVERSIONPREFIX=	cpp-runtime-
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	devel
@@ -17,7 +17,7 @@ USES=		cmake compiler:c11 zip
 NO_WRKSUBDIR=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-LIBVERSION=	4.9
+LIBVERSION=	${PORTVERSION}
 PLIST_SUB+=	LIBVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
