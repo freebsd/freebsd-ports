@@ -5233,6 +5233,7 @@
     SUBDIR += py-typed-ast
     SUBDIR += py-typer
     SUBDIR += py-types-PyYAML
+    SUBDIR += py-types-Werkzeug
     SUBDIR += py-types-click
     SUBDIR += py-types-futures
     SUBDIR += py-types-protobuf
