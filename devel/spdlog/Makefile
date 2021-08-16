@@ -2,11 +2,8 @@
 
 PORTNAME=	spdlog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.1
+DISTVERSION=	1.9.2
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/gabime/spdlog/commit/
-PATCHFILES=	6faa5fc95b4be3aa5161c25e5b68155a644dc358.patch:-p1
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Super fast C++ logging library
