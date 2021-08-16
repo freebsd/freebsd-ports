@@ -85,8 +85,8 @@ TARGET_ORDER_OVERRIDE=	750:cargo-configure
 CARGO_CARGOTOML=	${BUILD_WRKSRC}/Cargo.toml
 
 post-patch:
-# Add --verbose after each cargo subcommand
-	@${REINPLACE_CMD} -e '/^cargo/s/"$$@"/--verbose &/' \
+# Make each cargo subcommand very verbose
+	@${REINPLACE_CMD} -e '/^cargo/s/"$$@"/--verbose --verbose &/' \
 		${WRKSRC}/cargo.sh
 
 post-configure:
