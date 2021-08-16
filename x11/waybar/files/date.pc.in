@@ -5,6 +5,6 @@ includedir=${prefix}/include
 
 Name: date
 Description: Date and time library based on the C++11/14/17 <chrono> header
-Version: 3.0.0
+Version: 3.0.1
 Cflags: -I${includedir}
 Libs: -L${libdir} -ldate-tz

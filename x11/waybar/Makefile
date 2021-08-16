@@ -1,6 +1,5 @@
 PORTNAME=	waybar
-DISTVERSION=	0.9.7
-PORTREVISION=	1
+DISTVERSION=	0.9.8
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,7 +13,8 @@ LIB_DEPENDS=	libdate-tz.so:devel/date \
 		libjsoncpp.so:devel/jsoncpp \
 		libfmt.so:devel/libfmt \
 		libspdlog.so:devel/spdlog \
-		libwayland-client.so:graphics/wayland
+		libwayland-client.so:graphics/wayland \
+		libxkbregistry.so:x11/libxkbcommon
 
 USES=		compiler:c++17-lang gnome meson pkgconfig
 USE_GITHUB=	yes
@@ -32,11 +32,16 @@ CONFIGURE_ENV+=	PKG_CONFIG_PATH="${WRKDIR}"
 SUB_FILES+=	date.pc
 .endif
 
-OPTIONS_DEFINE=	DBUS GLS ICONSFONT MANPAGES MPD PULSEAUDIO SNDIO UDEV
-OPTIONS_DEFAULT=DBUS GLS ICONSFONT MANPAGES MPD PULSEAUDIO SNDIO UDEV
+OPTIONS_DEFINE=	DBUS EVDEV GLS ICONSFONT MANPAGES MPD PULSEAUDIO SNDIO UDEV
+OPTIONS_DEFAULT=DBUS EVDEV GLS ICONSFONT MANPAGES MPD PULSEAUDIO SNDIO UDEV
 
 DBUS_LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu
 DBUS_MESON_ENABLED=	dbusmenu-gtk
+
+EVDEV_DESC=		Keyboard state via libevdev
+EVDEV_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
+EVDEV_LIB_DEPENDS=	libevdev.so:devel/libevdev
+EVDEV_MESON_ENABLED=	libevdev
 
 GLS_DESC=		Use gtk-layer-shell library for popups support
 GLS_LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
@@ -55,6 +60,7 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-custom.5.gz \
 			man/man5/${PORTNAME}-disk.5.gz \
 			man/man5/${PORTNAME}-idle-inhibitor.5.gz \
+			man/man5/${PORTNAME}-keyboard-state.5.gz \
 			man/man5/${PORTNAME}-memory.5.gz \
 			man/man5/${PORTNAME}-mpd.5.gz \
 			man/man5/${PORTNAME}-network.5.gz \
