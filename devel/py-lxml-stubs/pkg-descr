@@ -1,0 +1,4 @@
+This repository contains external type annotations (see PEP 484)
+for the lxml package.
+
+WWW: https://pypi.org/project/lxml-stubs/
