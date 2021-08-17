@@ -1,6 +1,7 @@
 PORTNAME=	xdg-desktop-portal-wlr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,12 +25,15 @@ PLIST_FILES=	libexec/${PORTNAME} \
 		share/dbus-1/services/org.freedesktop.impl.portal.desktop.wlr.service \
 		share/xdg-desktop-portal/portals/wlr.portal
 
-OPTIONS_DEFINE=	MANPAGES
-OPTIONS_DEFAULT=MANPAGES
+OPTIONS_DEFINE=	MANPAGES SLURP
+OPTIONS_DEFAULT=MANPAGES SLURP
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}.5.gz
+
+SLURP_DESC=		Simple output chooser
+SLURP_RUN_DEPENDS=	slurp:x11/slurp
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
