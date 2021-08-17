@@ -1,0 +1,5 @@
+ripgrep-all is a line-oriented search tool that allows you to look for a regex
+in a multitude of file types. rga wraps the awesome ripgrep and enables it to
+search in pdf, docx, sqlite, jpg, zip, tar.*, movie subtitles (mkv, mp4), etc.
+
+WWW: https://github.com/phiresky/ripgrep-all/

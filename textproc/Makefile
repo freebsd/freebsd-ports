@@ -1536,6 +1536,7 @@
     SUBDIR += retext
     SUBDIR += rfcdiff
     SUBDIR += ripgrep
+    SUBDIR += ripgrep-all
     SUBDIR += ripole
     SUBDIR += rl
     SUBDIR += rman
