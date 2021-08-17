@@ -1,6 +1,5 @@
 PORTNAME=	libadwaita
-PORTVERSION=	0.0.20210526
-PORTREVISION=	3
+PORTVERSION=	0.0.20210812
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,7 +18,7 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk40 introspection:build
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	GNOME
-GL_COMMIT=	7f61711633dfd067f4928df80afe6b14f16f886e
+GL_COMMIT=	8442d6097b36c17e87582525ceab3ce3d5bccd48
 
 PORTSCOUT=	limit:1,even
 
