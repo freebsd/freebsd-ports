@@ -1,5 +1,3 @@
-# Created by: Bernhard Froehlich <decke@bluelife.at>
-
 PORTNAME=	redmine
 PORTVERSION=	4.1.4
 CATEGORIES=	www
