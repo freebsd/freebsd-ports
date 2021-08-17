@@ -13,6 +13,7 @@
     SUBDIR += biococoa
     SUBDIR += biolibc
     SUBDIR += bioparser
+    SUBDIR += biosig
     SUBDIR += biosoup
     SUBDIR += biostar-tools
     SUBDIR += bolt-lmm

@@ -1,0 +1,10 @@
+BioSig is an open source software library for biomedical signal processing,
+featuring for example the analysis of biosignals such as the
+electroencephalogram (EEG), electrocorticogram (ECoG), electrocardiogram (ECG),
+electrooculogram (EOG), electromyogram (EMG), respiration, and so on. Major
+application areas are: Neuroinformatics, brain-computer interfaces,
+neurophysiology, psychology, cardiovascular systems and sleep research. The aim
+of the BioSig project is to foster research in biomedical signal processing by
+providing open source software tools for many different applications.
+
+WWW: http://biosig.sourceforge.net/
