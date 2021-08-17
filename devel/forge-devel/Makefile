@@ -1,7 +1,7 @@
 PORTNAME=	forge
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.1-7
-DISTVERSIONSUFFIX=	-g84ef3a7
+DISTVERSION=	0.2.1-14
+DISTVERSIONSUFFIX=	-g93c8005
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
@@ -11,12 +11,14 @@ COMMENT=	Work with Git forges from the comfort of Magit (Development Version)
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=1.0.0:databases/closql@${EMACS_FLAVOR} \
-		magit-devel${EMACS_PKGNAMESUFFIX}>=2.90.1:devel/magit-devel@${EMACS_FLAVOR} \
+BUILD_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=1.0.6:databases/closql@${EMACS_FLAVOR} \
+		ghub${EMACS_PKGNAMESUFFIX}>=3.5.2:devel/ghub@${EMACS_FLAVOR} \
+		magit-devel${EMACS_PKGNAMESUFFIX}>=3.0.0:devel/magit-devel@${EMACS_FLAVOR} \
 		markdown-mode.el${EMACS_PKGNAMESUFFIX}>=2.3:textproc/markdown-mode.el@${EMACS_FLAVOR} \
 		yaml.el${EMACS_PKGNAMESUFFIX}>=0.3.3:textproc/yaml.el@${EMACS_FLAVOR}
-RUN_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=1.0.0:databases/closql@${EMACS_FLAVOR} \
-		magit-devel${EMACS_PKGNAMESUFFIX}>=2.90.1:devel/magit-devel@${EMACS_FLAVOR} \
+RUN_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=1.0.6:databases/closql@${EMACS_FLAVOR} \
+		ghub${EMACS_PKGNAMESUFFIX}>=3.5.2:devel/ghub@${EMACS_FLAVOR} \
+		magit-devel${EMACS_PKGNAMESUFFIX}>=3.0.0:devel/magit-devel@${EMACS_FLAVOR} \
 		markdown-mode.el${EMACS_PKGNAMESUFFIX}>=2.3:textproc/markdown-mode.el@${EMACS_FLAVOR} \
 		yaml.el${EMACS_PKGNAMESUFFIX}>=0.3.3:textproc/yaml.el@${EMACS_FLAVOR}
 
