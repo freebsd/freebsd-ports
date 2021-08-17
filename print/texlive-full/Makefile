@@ -3,7 +3,7 @@ DISTVERSION=	20150521
 CATEGORIES=	print
 PKGNAMESUFFIX=	-full
 
-MAINTAINER=	freebsd-tex@FreeBSD.org
+MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live, Full Version
 
 USE_TEX=	full texhash
