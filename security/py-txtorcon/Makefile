@@ -1,7 +1,7 @@
 # Created by: Yuri Victorovich
 
 PORTNAME=	txtorcon
-DISTVERSION=	21.0.0
+DISTVERSION=	21.1.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +21,10 @@ RUN_DEPENDS=	\
 
 USES=		python:3.6+ shebangfix
 USE_PYTHON=	distutils autoplist
-NO_ARCH=	yes
+
 SHEBANG_FILES=	examples/*.py
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
