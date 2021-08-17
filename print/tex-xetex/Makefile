@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	TeX
 EXTRACT_ONLY=	texlive-${DISTVERSION_TEXLIVE_SOURCE}-source${EXTRACT_SUFX}
 
-MAINTAINER=	freebsd-tex@FreeBSD.org
+MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX System with Unicode and Modern Font Technologies
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
