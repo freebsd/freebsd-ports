@@ -1,0 +1,4 @@
+This is the official GUI for mdbtools. It is a standalone
+package that was ported to GTK+3.
+
+WWW: https://github.com/mdbtools/gmdb2/

@@ -99,6 +99,7 @@
     SUBDIR += gdbm
     SUBDIR += geoserver-mysql-plugin
     SUBDIR += gigabase
+    SUBDIR += gmdb2
     SUBDIR += gnats4
     SUBDIR += gnatsweb4
     SUBDIR += go-carbon
