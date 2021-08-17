@@ -1,7 +1,7 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
 
 PORTNAME=	redmine
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	42
@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-mini_mime>=1.0.1:mail/rubygem-mini_mime \
 		rubygem-actionpack-xml_parser-rails52>=0:textproc/rubygem-actionpack-xml_parser-rails52 \
 		rubygem-roadie-rails-rails52>=2.1.0:mail/rubygem-roadie-rails-rails52 \
-		rubygem-mimemagic>=0:misc/rubygem-mimemagic \
 		rubygem-mail>=2.7.1:mail/rubygem-mail \
 		rubygem-csv>=3.1.1:devel/rubygem-csv \
 		rubygem-nokogiri>=1.11.0:textproc/rubygem-nokogiri \
