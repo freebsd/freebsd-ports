@@ -1,8 +1,7 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
 
 PORTNAME=	redmine
-PORTVERSION=	4.1.2
-PORTREVISION=	1
+PORTVERSION=	4.1.4
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	4
@@ -13,6 +12,8 @@ COMMENT=	Flexible project management web application
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+PORTSCOUT=	limit:^4\.1\.
+
 RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-rails52>=5.2.5<5.3:www/rubygem-rails52 \
 		rubygem-rouge312>=3.12.0:textproc/rubygem-rouge312 \
@@ -20,7 +21,6 @@ RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-mini_mime>=1.0.1:mail/rubygem-mini_mime \
 		rubygem-actionpack-xml_parser-rails52>=0:textproc/rubygem-actionpack-xml_parser-rails52 \
 		rubygem-roadie-rails-rails52>=2.1.0:mail/rubygem-roadie-rails-rails52 \
-		rubygem-mimemagic>=0:misc/rubygem-mimemagic \
 		rubygem-mail>=2.7.1:mail/rubygem-mail \
 		rubygem-csv>=3.1.1:devel/rubygem-csv \
 		rubygem-nokogiri>=1.11.0:textproc/rubygem-nokogiri \
