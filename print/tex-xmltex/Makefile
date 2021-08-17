@@ -8,7 +8,7 @@ DISTNAME=	texlive-20150523-texmf
 DIST_SUBDIR=	TeX
 EXTRACT_ONLY=
 
-MAINTAINER=	freebsd-tex@FreeBSD.org
+MAINTAINER=	tex@FreeBSD.org
 COMMENT=	Non-validating XML parser, written in TeX
 
 USES=		tar:xz
