@@ -1,4 +1,4 @@
---- Makefile.orig	2021-06-06 09:27:52 UTC
+--- Makefile.orig	2021-08-05 11:49:41 UTC
 +++ Makefile
 @@ -42,7 +42,6 @@ endif
  ## Begin customization points for each OS and TOOLCHAIN we support.
@@ -16,20 +16,19 @@
  
  ifeq (${OS},mingw)
    CXXFLAGS_EARLY += -DWINDOWS -mwindows -D_A_VOLID=8
-@@ -79,28 +77,11 @@ ifeq (${OS},osx)
+@@ -79,29 +77,13 @@ ifeq (${OS},osx)
    hyper_RES :=
  endif
  
 -ifeq (${TOOLCHAIN},clang)
--  CXXFLAGS_STD = -std=c++11
+   CXXFLAGS_STD = -std=c++11
 -  CXXFLAGS_EARLY += -march=native -fPIC
--  CXXFLAGS_EARLY += -W -Wall -Wextra -Werror -pedantic
--  CXXFLAGS_EARLY += -Wno-unused-parameter -Wno-implicit-fallthrough -Wno-maybe-uninitialized -Wno-unknown-warning-option
+-  CXXFLAGS_EARLY += -W -Wall -Wextra -Wsuggest-override -Werror -pedantic
++  CXXFLAGS_EARLY += -fPIC
++  CXXFLAGS_EARLY += -W -Wall -Wextra -Wsuggest-override -pedantic
+   CXXFLAGS_EARLY += -Wno-unused-parameter -Wno-implicit-fallthrough -Wno-maybe-uninitialized -Wno-unknown-warning-option
+   CXXFLAGS_EARLY += -Wno-invalid-offsetof
 -endif
-+CXXFLAGS_STD = -std=c++11
-+CXXFLAGS_EARLY += -fPIC
-+CXXFLAGS_EARLY += -W -Wall -Wextra -pedantic
-+CXXFLAGS_EARLY += -Wno-unused-parameter -Wno-implicit-fallthrough -Wno-maybe-uninitialized -Wno-unknown-warning-option
  
 -ifeq (${TOOLCHAIN},gcc)
 -  CXXFLAGS_STD = -std=c++11
@@ -37,7 +36,7 @@
 -  CXXFLAGS_EARLY += -W -Wall -Wextra -Werror -pedantic
 -  CXXFLAGS_EARLY += -Wno-unused-parameter -Wno-implicit-fallthrough -Wno-maybe-uninitialized
 -endif
--
+ 
 -ifeq (${TOOLCHAIN},mingw)
 -  CXXFLAGS_STD = -std=c++11
 -  CXXFLAGS_EARLY += -march=native
@@ -49,12 +48,12 @@
  ## We have now finished OS-specific and TOOLCHAIN-specific computations.
  ## Begin customization points for user-specifiable HYPERROGUE_USE_XXX macros.
  
-@@ -138,19 +119,19 @@ override CXXFLAGS := $(CXXFLAGS_STD) $(CXXFLAGS_EARLY)
+@@ -139,19 +121,19 @@ override CXXFLAGS := $(CXXFLAGS_STD) $(CXXFLAGS_EARLY)
  override LDFLAGS := $(LDFLAGS_EARLY) $(LDFLAGS) ${EXTRA_LDFLAGS}
  
  hyperrogue$(EXE_EXTENSION): $(hyper_OBJS) $(hyper_RES)
 -	$(CXX) $(CXXFLAGS) $(hyper_OBJS) $(hyper_RES) $(LDFLAGS) $(hyper_LDFLAGS) -o $@
-+	$(CXX) $(hyper_OBJS) $(hyper_RES) $(LDFLAGS) $(hyper_LDFLAGS) -o $@
++	$(CXX) $(hyper_OBJS) $(hyper_RES) $(LDFLAGS) $(hyper_LDFLAGS) $(LDFLAGS) -o $@
  
  hyper$(OBJ_EXTENSION): *.cpp language-data.cpp autohdr.h
 -	$(CXX) -O2 $(CXXFLAGS) $(hyper_CXXFLAGS) -c hyper.cpp -o $@
@@ -73,3 +72,16 @@
  
  autohdr.h: makeh$(EXE_EXTENSION) language-data.cpp *.cpp
  	./makeh classes.cpp locations.cpp colors.cpp hyperpoint.cpp geometry.cpp goldberg.cpp init.cpp floorshapes.cpp cell.cpp multi.cpp shmup.cpp pattern2.cpp mapeditor.cpp graph.cpp textures.cpp hprint.cpp language.cpp util.cpp complex.cpp *.cpp > autohdr.h
+@@ -160,10 +142,10 @@ language-data.cpp: langen$(EXE_EXTENSION)
+ 	./langen > language-data.cpp
+ 
+ savepng$(OBJ_EXTENSION): savepng.cpp
+-	$(CXX) -O2 $(CXXFLAGS) -c savepng.cpp -o $@
++	$(CXX) $(CXXFLAGS) -c savepng.cpp -o $@
+ 
+ mymake$(EXE_EXTENSION): mymake.cpp
+-	$(CXX) -O2 $(CXXFLAGS) mymake.cpp -pthread -o $@
++	$(CXX) $(CXXFLAGS) mymake.cpp $(LDFLAGS) -pthread -o $@
+ 
+ emscripten: hyper.html
+ 
