@@ -1,0 +1,4 @@
+Libxdf is a cross-platform C++ library for loading multimodal, multi-rate
+signals stored in XDF files.
+
+WWW: https://github.com/xdf-modules/libxdf
