@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-base
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 DIST_SUBDIR=	TeX
 
-MAINTAINER=	freebsd-tex@FreeBSD.org
+MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, base binaries
 
 LIB_DEPENDS=	libicuio.so:devel/icu \
