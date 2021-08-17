@@ -5,8 +5,9 @@
 %%DATADIR%%/plugin/%%PORTNAME%%-plugin-threatintel-%%DISTVERSION%%.jar
 %%DATADIR%%/plugin/%%PORTNAME%%-storage-elasticsearch6-%%DISTVERSION%%.jar
 %%DATADIR%%/plugin/%%PORTNAME%%-storage-elasticsearch7-%%DISTVERSION%%.jar
-@dir %%ETCDIR%%
+@dir(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,750) %%ETCDIR%%/server
 @dir(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,750) %%GRAYLOG_DATA_DIR%%
+@dir(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,750) %%GRAYLOG_DATA_DIR%%/journal
 @dir(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,750) %%GRAYLOG_LOGS_DIR%%
 @sample(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,440) %%ETCDIR%%/graylog.conf.sample
 @sample(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,440) %%ETCDIR%%/log4j2.xml.sample

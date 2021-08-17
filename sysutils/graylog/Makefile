@@ -1,7 +1,7 @@
 # Created by: Thomas Bartelmess <thomas@bartelmess.io>
 
 PORTNAME=	graylog
-DISTVERSION=	4.1.2
+DISTVERSION=	4.1.3
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.graylog.org/releases/
 DISTFILES=	graylog/${DISTNAME}${EXTRACT_SUFX} \
@@ -48,10 +48,19 @@ PLIST_SUB=	DISTVERSION=${DISTVERSION} \
 		GRAYLOGGROUP=${GRAYLOGGROUP} \
 		PORTNAME=${PORTNAME}
 
+post-extract:
+	${REINPLACE_CMD} -E \
+		-e 's,^bin_dir .+,bin_dir = ${LOCALBASE}/share/graylog/bin,' \
+		-e 's,^data_dir .+,data_dir = /var/db/graylog,' \
+		-e 's,^message_journal_dir .+,message_journal_dir = ${GRAYLOG_DATA_DIR}/journal,' \
+		-e 's,^node_id_file .+,node_id_file = ${ETCDIR}/server/node-id,' \
+		-e 's,^plugin_dir .+,plugin_dir = ${LOCALBASE}/share/graylog/plugin,' \
+	${WRKSRC}/graylog.conf.example
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugin
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	@${MKDIR} ${STAGEDIR}${GRAYLOG_DATA_DIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/server
+	@${MKDIR} ${STAGEDIR}${GRAYLOG_DATA_DIR}/journal
 	@${MKDIR} ${STAGEDIR}${GRAYLOG_LOGS_DIR}
 	${INSTALL_DATA} ${WRKSRC}/graylog.jar ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/graylog.conf.example \
