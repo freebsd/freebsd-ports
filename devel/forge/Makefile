@@ -1,6 +1,7 @@
 PORTNAME=	forge
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -10,11 +11,13 @@ COMMENT=	Work with Git forges from the comfort of Magit
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=1.0.0:databases/closql@${EMACS_FLAVOR} \
-		magit${EMACS_PKGNAMESUFFIX}>=2.90.1:devel/magit@${EMACS_FLAVOR} \
+BUILD_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=1.0.6:databases/closql@${EMACS_FLAVOR} \
+		ghub${EMACS_PKGNAMESUFFIX}>=3.5.2:devel/ghub@${EMACS_FLAVOR} \
+		magit${EMACS_PKGNAMESUFFIX}>=3.0.0:devel/magit@${EMACS_FLAVOR} \
 		markdown-mode.el${EMACS_PKGNAMESUFFIX}>=2.3:textproc/markdown-mode.el@${EMACS_FLAVOR}
-RUN_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=1.0.0:databases/closql@${EMACS_FLAVOR} \
-		magit${EMACS_PKGNAMESUFFIX}>=2.90.1:devel/magit@${EMACS_FLAVOR} \
+RUN_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=1.0.6:databases/closql@${EMACS_FLAVOR} \
+		ghub${EMACS_PKGNAMESUFFIX}>=3.5.2:devel/ghub@${EMACS_FLAVOR} \
+		magit${EMACS_PKGNAMESUFFIX}>=3.0.0:devel/magit@${EMACS_FLAVOR} \
 		markdown-mode.el${EMACS_PKGNAMESUFFIX}>=2.3:textproc/markdown-mode.el@${EMACS_FLAVOR}
 
 USES=		emacs gmake makeinfo
