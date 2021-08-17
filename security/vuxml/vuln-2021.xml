@@ -1,3 +1,53 @@
+  <vuln vid="128deba6-ff56-11eb-8514-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>92.0.4515.159</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/08/stable-channel-update-for-desktop.html">
+	  <p>This release contains 9 security fixes, including:</p>
+	  <ul>
+	    <li>[1234764] High CVE-2021-30598: Type Confusion in V8. Reported by
+	      Manfred Paul on 2021-07-30</li>
+	    <li>[1234770] High CVE-2021-30599: Type Confusion in V8. Reported by
+	      Manfred Paul on 2021-07-30</li>
+	    <li>[1231134] High CVE-2021-30600: Use after free in Printing.
+	      Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2021-07-20</li>
+	    <li>[1234009] High CVE-2021-30601: Use after free in Extensions API.
+	      Reported by koocola(@alo_cook) and Nan Wang(@eternalsakura13) of
+	      360 Alpha Lab on 2021-07-28</li>
+	    <li>[1230767] High CVE-2021-30602: Use after free in WebRTC.
+	      Reported by Marcin Towalski of Cisco Talos on 2021-07-19</li>
+	    <li>[1233564] High CVE-2021-30603: Race in WebAudio. Reported by
+	      Sergei Glazunov of Google Project Zero on 2021-07-27</li>
+	    <li>[1234829] High CVE-2021-30604: Use after free in ANGLE. Reported
+	      by Seong-Hwan Park (SeHwa) of SecunologyLab on 2021-07-30</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-30598</cvename>
+      <cvename>CVE-2021-30599</cvename>
+      <cvename>CVE-2021-30600</cvename>
+      <cvename>CVE-2021-30601</cvename>
+      <cvename>CVE-2021-30602</cvename>
+      <cvename>CVE-2021-30603</cvename>
+      <cvename>CVE-2021-30604</cvename>
+      <url>https://chromereleases.googleblog.com/2021/08/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2021-08-16</discovery>
+      <entry>2021-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e9200f8e-fd34-11eb-afb1-c85b76ce9b5a">
     <topic>lynx -- SSL certificate validation error</topic>
     <affects>
