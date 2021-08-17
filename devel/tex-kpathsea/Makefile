@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-20150521-source
 DIST_SUBDIR=	TeX
 
-MAINTAINER=	freebsd-tex@FreeBSD.org
+MAINTAINER=	tex@FreeBSD.org
 COMMENT=	Path searching library for TeX
 
 LICENSE=	LGPL21+
