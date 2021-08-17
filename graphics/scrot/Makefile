@@ -1,7 +1,7 @@
 # Created by: Jeremy Norris <ishmael27@home.com>
 
 PORTNAME=	scrot
-DISTVERSION=	1.5
+DISTVERSION=	1.6
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -11,16 +11,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
-LIB_DEPENDS=	libgiblib.so:graphics/giblib \
-		libImlib2.so:graphics/imlib2
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	resurrecting-open-source-projects
 
-USES=		autoreconf xorg
-USE_CSTD=	c99
+USES=		autoreconf pkgconfig xorg
 GNU_CONFIGURE=	yes
-USE_XORG=	x11 xfixes xcomposite
+USE_XORG=	x11 xext xfixes xcomposite
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 PORTDOCS=	*
