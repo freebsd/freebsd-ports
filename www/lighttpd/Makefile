@@ -2,6 +2,7 @@
 
 PORTNAME?=	lighttpd
 PORTVERSION=	1.4.59
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES?=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -128,6 +129,7 @@ GROUPS=		${WWWGRP}
 CACHEDIR=	/var/cache/${PORTNAME}
 LOGDIR=		/var/log/${PORTNAME}
 HOMEDIR=	/var/run/${PORTNAME}
+RUNDIR=		/var/run
 PLIST_SUB+=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 PLIST_SUB+=	CACHEDIR="${CACHEDIR}" HOMEDIR="${HOMEDIR}" LOGDIR="${LOGDIR}"
 
@@ -152,6 +154,7 @@ post-patch:
 		-e "s|^(var.log_root.*=).*|\1 \"${LOGDIR}\"|" \
 		-e "s|^(var.server_root.*=).*|\1 \"${WWWDIR}\"|" \
 		-e "s|^(var.home_dir.*=).*|\1 \"${HOMEDIR}\"|" \
+		-e "s|^(var.state_dir.*=).*|\1 \"${RUNDIR}\"|" \
 		-e "s|^(var.cache_dir.*=).*|\1 \"${CACHEDIR}\"|" \
 		${WRKSRC}/doc/config/lighttpd.conf
 	@${REINPLACE_CMD} -e "s|/etc/lighttpd|${ETCDIR}|g" \
