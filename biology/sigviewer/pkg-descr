@@ -1,0 +1,5 @@
+SigViewer is a viewing application for biosignals such as EEG or MEG time
+series. In addition to viewing raw data, SigViewer can also create, edit, and
+display event information (such as annotations or artifact selections).
+
+WWW: https://github.com/cbrnr/sigviewer

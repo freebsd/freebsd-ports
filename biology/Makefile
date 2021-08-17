@@ -175,6 +175,7 @@
     SUBDIR += seqio
     SUBDIR += seqkit
     SUBDIR += seqtk
+    SUBDIR += sigviewer
     SUBDIR += sim4
     SUBDIR += slclust
     SUBDIR += smithwaterman
