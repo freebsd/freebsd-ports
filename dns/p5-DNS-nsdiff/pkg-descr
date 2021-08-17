@@ -1,0 +1,13 @@
+create an "nsupdate" script from DNS zone file differences
+
+The nsdiff program examines the old and new versions of a DNS zone,
+and outputs the differences as a script for use by BIND's nsupdate
+program. It provides a bridge between static zone files and dynamic
+updates.
+
+The nspatch script is a wrapper around nsdiff | nsupdate that checks
+and reports errors in a manner suitable for running from cron.
+
+The nsvi script makes it easy to edit a dynamic zone.
+
+WWW: https://dotat.at/prog/nsdiff/
