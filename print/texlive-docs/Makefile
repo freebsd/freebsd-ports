@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-docs
 DISTNAME=	${PORTNAME}-${PORTVERSION}-texmf
 DIST_SUBDIR=	TeX
 
-MAINTAINER=	freebsd-tex@FreeBSD.org
+MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, documentation
 
 USES=		tar:xz
