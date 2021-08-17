@@ -151,6 +151,7 @@
     SUBDIR += py-pandas-charm
     SUBDIR += py-pyfaidx
     SUBDIR += py-pysam
+    SUBDIR += py-python-libsbml
     SUBDIR += py-resdk
     SUBDIR += py-scikit-bio
     SUBDIR += py-xenaPython
