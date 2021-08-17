@@ -1,8 +1,8 @@
 PORTNAME=	biosig
 DISTVERSION=	2.3.3
-DISTVERSIONSUFFIX=	.src
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}/BioSig%20for%20C_C%2B%2B/src/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for reading and writing different biosignal data format
