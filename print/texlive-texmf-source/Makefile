@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-texmf-source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-texmf
 DIST_SUBDIR=	TeX
 
-MAINTAINER=	freebsd-tex@FreeBSD.org
+MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, texmf Tree (source)
 
 CONFLICTS_INSTALL=	texlive-base-201[234]*
