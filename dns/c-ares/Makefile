@@ -1,7 +1,7 @@
 # Created by: roam@FreeBSD.org
 
 PORTNAME=	c-ares
-PORTVERSION=	1.17.1
+PORTVERSION=	1.17.2
 CATEGORIES=	dns
 MASTER_SITES=	https://c-ares.haxx.se/download/ \
 		ZI

@@ -9,7 +9,7 @@ include/ares_version.h
 lib/libcares.a
 lib/libcares.so
 lib/libcares.so.2
-lib/libcares.so.2.4.2
+lib/libcares.so.2.4.3
 libdata/pkgconfig/libcares.pc
 man/man3/ares_cancel.3.gz
 man/man3/ares_create_query.3.gz
