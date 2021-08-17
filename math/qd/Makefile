@@ -1,7 +1,7 @@
 # Created by: Nakata Maho <maho@FreeBSD.org>
 
 PORTNAME=	qd
-DISTVERSION=	2.3.22
+DISTVERSION=	2.3.23
 CATEGORIES=	math
 MASTER_SITES=	http://crd-legacy.lbl.gov/~dhbailey/mpdist/
 
@@ -14,7 +14,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		fortran libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+TEST_WRKSRC=	${WRKSRC}/tests
+TEST_TARGET=	demo
 
 OPTIONS_DEFINE=	DOCS
 
