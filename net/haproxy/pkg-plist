@@ -39,6 +39,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/entities.pdf
 %%PORTDOCS%%%%DOCSDIR%%/internals/entities.svg
 %%PORTDOCS%%%%DOCSDIR%%/internals/entities.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/fd-migration.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/filters.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/hashing.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/header-parser-speed.txt
