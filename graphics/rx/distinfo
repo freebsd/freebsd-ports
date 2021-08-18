@@ -1,4 +1,4 @@
-TIMESTAMP = 1628201436
+TIMESTAMP = 1629306843
 SHA256 (rust/crates/adler32-1.0.4.crate) = 5d2e7343e7fc9de883d1b0341e0b13970f764c14101234857d2ddafa1cb1cac2
 SIZE (rust/crates/adler32-1.0.4.crate) = 5105
 SHA256 (rust/crates/arrayref-0.3.6.crate) = a4c527152e37cf757a3f78aae5a06fbeefdb07ccc535c980a3208ee3060dd544
@@ -167,5 +167,5 @@ SHA256 (rust/crates/xml-rs-0.8.0.crate) = 541b12c998c5b56aa2b4e6f18f03664eef9a4f
 SIZE (rust/crates/xml-rs-0.8.0.crate) = 50974
 SHA256 (rust/crates/zip-0.5.5.crate) = 6df134e83b8f0f8153a094c7b0fd79dfebe437f1d76e7715afa18ed95ebe2fd7
 SIZE (rust/crates/zip-0.5.5.crate) = 33064
-SHA256 (cloudhead-rx-v0.5.1_GH0.tar.gz) = ae811f11df678069846ebd3e20797a573df3dff3132abb827856d1e71b96dde5
-SIZE (cloudhead-rx-v0.5.1_GH0.tar.gz) = 234573
+SHA256 (cloudhead-rx-v0.5.2_GH0.tar.gz) = 1a2a28afd7ea8a0cde030a12cb5d0d8543a68829edd789215cc4f1eaa5cc4d12
+SIZE (cloudhead-rx-v0.5.2_GH0.tar.gz) = 234683
