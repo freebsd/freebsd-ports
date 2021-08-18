@@ -1,7 +1,7 @@
 # Created by: John Hixson <john@pcbsd.org>
 
 PORTNAME=	pithos
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	audio
 
 MAINTAINER=	jhixson@FreeBSD.org
