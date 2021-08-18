@@ -105,6 +105,8 @@ man/man8/poudriere-version.8.gz
 %%DATADIR%%/include/hash.sh
 %%DATADIR%%/include/html.sh
 %%DATADIR%%/include/parallel.sh
+%%DATADIR%%/include/pkg.sh
+%%DATADIR%%/include/pkgqueue.sh
 %%DATADIR%%/include/shared_hash.sh
 %%DATADIR%%/include/util.sh
 %%DATADIR%%/jail.sh
