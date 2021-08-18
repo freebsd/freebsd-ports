@@ -1,6 +1,5 @@
 PORTNAME=	ngs
-DISTVERSION=	2.11.0
-PORTREVISION=	2
+DISTVERSION=	2.11.1
 CATEGORIES=	biology
 PKGNAMESUFFIX=	-sdk
 
@@ -39,6 +38,6 @@ do-install: # install target from the project breaks: https://github.com/ncbi/ng
 		# The above command installs broken-looking static libs with symlinks.
 		# This is intentional, see comments https://github.com/ncbi/ncbi-vdb/issues/36#issuecomment-817990790 This may change in future versions.
 	# strip
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libngs-sdk.so.2.11.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libngs-sdk.so.${DISTVERSION}
 
 .include <bsd.port.mk>

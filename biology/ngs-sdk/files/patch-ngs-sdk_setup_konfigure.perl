@@ -1,14 +1,5 @@
---- ngs-sdk/setup/konfigure.perl.orig	2021-03-15 18:08:20 UTC
+--- ngs-sdk/setup/konfigure.perl.orig	2021-08-18 16:26:23 UTC
 +++ ngs-sdk/setup/konfigure.perl
-@@ -204,7 +204,7 @@ print "checking system type... " unless ($AUTORUN);
- my ($OS, $ARCH, $OSTYPE, $MARCH, @ARCHITECTURES) = OsArch();
- println $OSTYPE unless ($AUTORUN);
- 
--unless ($OSTYPE =~ /linux/i || $OSTYPE =~ /darwin/i || $OSTYPE eq 'win') {
-+unless ($OSTYPE =~ /linux/i || $OSTYPE =~ /freebsd/i || $OSTYPE =~ /darwin/i || $OSTYPE eq 'win') {
-     println "configure: error: unsupported system '$OSTYPE'";
-     exit 1;
- }
 @@ -225,7 +225,7 @@ if ($OS eq 'linux') {
  
  print "checking machine architecture... " unless ($AUTORUN);
@@ -27,7 +18,7 @@
  } elsif ($MARCH eq 'fat86') {
      $BITS = '32_64';
  } elsif ($MARCH =~ /i?86/i) {
-@@ -337,6 +339,25 @@ if ($OSTYPE =~ /linux/i) {
+@@ -337,6 +339,16 @@ if ($OSTYPE =~ /linux/i) {
      $OSINC = 'unix';
      $TOOLS = 'gcc' unless ($TOOLS);
      $PYTHON = 'python';
@@ -41,15 +32,6 @@
 +    $OSINC = 'unix';
 +    $TOOLS = 'clang' unless ($TOOLS);
 +    $PYTHON = $ENV{FREEBSD_PYTHON_CMD};
-+} elsif ($OSTYPE =~ /darwin/i) {
-+    $LPFX = 'lib';
-+    $OBJX = 'o';
-+    $LOBX = 'pic.o';
-+    $LIBX = 'a';
-+    $SHLX = 'dylib';
-+    $EXEX = '';
-+    $OSINC = 'unix';
-+    $TOOLS = 'clang' unless ($TOOLS);
  } elsif ($OSTYPE =~ /darwin/i) {
      $LPFX = 'lib';
      $OBJX = 'o';
