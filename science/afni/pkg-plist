@@ -1939,6 +1939,7 @@ lib/afni/plug_zeropad.so
 %%PORTDOCS%%%%DOCSDIR%%/README.render_scripts
 %%PORTDOCS%%%%DOCSDIR%%/README.roi
 %%PORTDOCS%%%%DOCSDIR%%/README.setup
+%%PORTDOCS%%%%DOCSDIR%%/README.texlike
 %%PORTDOCS%%%%DOCSDIR%%/README.volreg
 %%PORTDOCS%%%%DOCSDIR%%/README.web
 %%PORTDOCS%%%%DOCSDIR%%/README.ziad

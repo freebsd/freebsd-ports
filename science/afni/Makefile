@@ -1,6 +1,6 @@
 PORTNAME=		afni
 DISTVERSIONPREFIX=	AFNI_
-DISTVERSION=		21.2.01
+DISTVERSION=		21.2.06
 CATEGORIES=		science biology graphics perl5 python
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -30,7 +30,7 @@ RUN_DEPENDS=	endian:sysutils/endian \
 		R:math/R \
 		${CRAN_DEPENDS}
 
-USES=		compiler:openmp gettext gl gmake gnome iconv jpeg:run motif
+USES=		gettext gl gmake gnome iconv jpeg:run motif
 USES+=		perl5 python shebangfix tar:xz xorg
 USE_GITHUB=	yes
 USE_GL=		gl glu
@@ -50,6 +50,7 @@ SHEBANG_FILES=	scripts_install/* \
 
 MAKE_ENV=	CC="${CC}" R_SHARE_DIR=${LOCALBASE}/lib/R/share
 MAKE_JOBS_UNSAFE=yes
+CFLAGS+=	-fcommon
 
 ALL_TARGET=	vastness suma
 

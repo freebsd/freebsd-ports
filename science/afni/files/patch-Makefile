@@ -1,0 +1,12 @@
+--- Makefile.orig	2021-09-09 09:32:21 UTC
++++ Makefile
+@@ -48,9 +48,7 @@ LD?     = ${CC}
+ 
+ CCDEBS = -DAFNI_DEBUG -DIMSEQ_DEBUG -DDISPLAY_DEBUG -DTHD_DEBUG
+ CEXTRA = -DFreeBSD -DNO_GAMMA -DUSE_TRACING -DHAVE_XDBE -DSUMA_MOTIF_GLXAREA
+-ifeq (${ARCH}, amd64)
+ CEXTRA += -DPIC -fPIC
+-endif
+ ifeq (${ARCH}, ia64)
+ CEXTRA += -DPIC -fPIC
+ endif
