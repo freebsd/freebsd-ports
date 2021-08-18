@@ -18,6 +18,8 @@ include/cglm/call/clipspace/persp_lh_no.h
 include/cglm/call/clipspace/persp_lh_zo.h
 include/cglm/call/clipspace/persp_rh_no.h
 include/cglm/call/clipspace/persp_rh_zo.h
+include/cglm/call/clipspace/project_no.h
+include/cglm/call/clipspace/project_zo.h
 include/cglm/call/clipspace/view_lh_no.h
 include/cglm/call/clipspace/view_lh_zo.h
 include/cglm/call/clipspace/view_rh_no.h
@@ -49,6 +51,8 @@ include/cglm/clipspace/persp_lh_no.h
 include/cglm/clipspace/persp_lh_zo.h
 include/cglm/clipspace/persp_rh_no.h
 include/cglm/clipspace/persp_rh_zo.h
+include/cglm/clipspace/project_no.h
+include/cglm/clipspace/project_zo.h
 include/cglm/clipspace/view_lh.h
 include/cglm/clipspace/view_lh_no.h
 include/cglm/clipspace/view_lh_zo.h
@@ -133,5 +137,5 @@ lib/cmake/cglm/cglmConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cglm/cglmConfig.cmake
 lib/libcglm.so
 lib/libcglm.so.0
-lib/libcglm.so.0.8.3
+lib/libcglm.so.0.8.4
 libdata/pkgconfig/cglm.pc
