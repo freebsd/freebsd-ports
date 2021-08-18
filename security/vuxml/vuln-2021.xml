@@ -1,3 +1,34 @@
+  <vuln vid="f4c54b81-bcc8-11eb-a7a6-080027f515ea">
+    <topic>binutils -- excessive debug section size can cause excessive memory consumption in bfd's dwarf2.c read_section()</topic>
+    <affects>
+      <package>
+	<name>binutils</name>
+	<range><lt>2.33.1_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hao Wang reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3487">
+	  <p>
+	    There's a flaw in the BFD library of binutils in versions before 2.36.
+	    An attacker who supplies a crafted file to an application linked with BFD,
+	    and using the DWARF functionality, could cause an impact to system
+	    availability by way of excessive memory consumption.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-3487</cvename>
+      <url>https://sourceware.org/bugzilla/show_bug.cgi?id=26946</url>
+    </references>
+    <dates>
+      <discovery>2020-11-25</discovery>
+      <entry>2021-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="128deba6-ff56-11eb-8514-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
