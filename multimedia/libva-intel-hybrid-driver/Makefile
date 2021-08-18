@@ -1,6 +1,6 @@
 PORTNAME=	intel-hybrid-driver
 DISTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-
 
@@ -8,6 +8,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	dfa9c8eba295.patch:-p1
 PATCHFILES+=	b3b4d9a3a08d.patch:-p1 # https://github.com/intel/intel-hybrid-driver/pull/26
 PATCHFILES+=	821f87129662.patch:-p1 # https://github.com/intel/intel-hybrid-driver/pull/28
+PATCHFILES+=	7de7270e7f96.patch:-p1 # https://github.com/intel/intel-hybrid-driver/pull/32
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hybrid VP8 encoder and VP9 decoder for Intel GPUs
