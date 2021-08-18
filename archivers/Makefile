@@ -20,6 +20,7 @@
     SUBDIR += deco
     SUBDIR += deutex
     SUBDIR += dpkg
+    SUBDIR += draco
     SUBDIR += dzip
     SUBDIR += engrampa
     SUBDIR += erlang-snappy
