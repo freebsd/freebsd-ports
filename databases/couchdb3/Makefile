@@ -26,6 +26,7 @@ USE_RC_SUBR=	${PORTNAME}
 CONFLICTS=	couchdb[24]*
 
 CPE_VENDOR=	apache
+CPE_PRODUCT=	couchdb
 
 USERS=		couchdb
 GROUPS=		couchdb
