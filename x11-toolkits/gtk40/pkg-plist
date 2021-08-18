@@ -271,6 +271,7 @@ include/gtk-4.0/gtk/gtkpagesetup.h
 include/gtk-4.0/gtk/gtkpaned.h
 include/gtk-4.0/gtk/gtkpapersize.h
 include/gtk-4.0/gtk/gtkpasswordentry.h
+include/gtk-4.0/gtk/gtkpasswordentrybuffer.h
 include/gtk-4.0/gtk/gtkpicture.h
 include/gtk-4.0/gtk/gtkpopover.h
 include/gtk-4.0/gtk/gtkpopovermenu.h
@@ -382,7 +383,7 @@ lib/gtk-4.0/4.0.0/printbackends/libprintbackend-file.so
 %%NO_CUPS%%lib/gtk-4.0/4.0.0/printbackends/libprintbackend-lpr.so
 lib/libgtk-4.so
 lib/libgtk-4.so.1
-lib/libgtk-4.so.1.200.1
+lib/libgtk-4.so.1.302.0
 %%BROADWAY%%libdata/pkgconfig/gtk4-broadway.pc
 libdata/pkgconfig/gtk4-unix-print.pc
 %%WAYLAND%%libdata/pkgconfig/gtk4-wayland.pc
