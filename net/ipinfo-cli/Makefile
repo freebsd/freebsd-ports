@@ -2,7 +2,7 @@
 
 PORTNAME=	ipinfo
 DISTVERSIONPREFIX=	ipinfo-
-DISTVERSION=	2.0.2
+DISTVERSION=	2.1.1
 CATEGORIES=	net
 
 MAINTAINER=	0xdutra@gmail.com
@@ -15,8 +15,6 @@ USES=	go:modules
 
 USE_GITHUB=	yes
 GH_PROJECT=	cli
-GO_TARGET=	./ipinfo
-
 GH_TUPLE=	\
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
@@ -36,6 +34,8 @@ GH_TUPLE=	\
 		posener:script:v1.1.5:posener_script/vendor/github.com/posener/script \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify
+
+GO_TARGET=	./ipinfo
 
 PLIST_FILES=	bin/${PORTNAME}
 
