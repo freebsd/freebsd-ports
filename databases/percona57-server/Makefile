@@ -18,6 +18,7 @@ LICENSE?=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CPE_VENDOR=	percona
+CPE_PRODUCT=	percona_server
 
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		liblz4.so:archivers/liblz4 \
