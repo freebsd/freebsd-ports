@@ -1,6 +1,6 @@
---- lib/rcfile.c.orig	Fri Dec 24 15:02:25 1999
-+++ lib/rcfile.c	Fri Dec 24 15:06:09 1999
-@@ -101,8 +101,8 @@
+--- lib/rcfile.c.orig	1999-03-11 08:30:32 UTC
++++ lib/rcfile.c
+@@ -101,8 +101,8 @@ if ((!(strcmp(Args->LowerFont,""))) &&
      exit(ERR_NOLFONT) ;
    }
  

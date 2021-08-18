@@ -1,5 +1,5 @@
---- gstamp/gstamp.c.orig	2011-03-12 21:29:21.000000000 +0100
-+++ gstamp/gstamp.c	2011-03-12 21:29:42.000000000 +0100
+--- gstamp/gstamp.c.orig	1999-03-10 06:27:04 UTC
++++ gstamp/gstamp.c
 @@ -7,6 +7,7 @@
  
  #include <gtk/gtk.h>

@@ -1,5 +1,5 @@
---- lib/common.c.orig	2011-03-12 21:28:20.000000000 +0100
-+++ lib/common.c	2011-03-12 21:28:30.000000000 +0100
+--- lib/common.c.orig	1999-03-11 08:29:53 UTC
++++ lib/common.c
 @@ -1,5 +1,6 @@
  #include <stdio.h>
  #include <stdlib.h>

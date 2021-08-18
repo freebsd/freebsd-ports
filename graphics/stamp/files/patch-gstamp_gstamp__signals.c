@@ -1,5 +1,5 @@
---- gstamp/gstamp_signals.c.orig	2011-03-12 21:31:32.000000000 +0100
-+++ gstamp/gstamp_signals.c	2011-03-12 21:31:44.000000000 +0100
+--- gstamp/gstamp_signals.c.orig	1999-03-11 08:32:30 UTC
++++ gstamp/gstamp_signals.c
 @@ -3,6 +3,7 @@
     ebw@city-net.com
  */
