@@ -2,8 +2,7 @@
 
 PORTNAME=	json
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.9.1
-PORTREVISION=	2
+DISTVERSION=	3.10.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	nlohmann-
 
@@ -23,7 +22,7 @@ NO_ARCH=	yes
 CMAKE_ON=	JSON_MultipleHeaders
 CMAKE_OFF=	JSON_BuildTests
 
-do-test:
+do-test: # 2 tests are expected to fail, see https://github.com/nlohmann/json/issues/2951
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DJSON_BuildTests:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \

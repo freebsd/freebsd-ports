@@ -10,6 +10,8 @@ COMMENT=	Tool that generates a compilation database for clang tooling
 
 LICENSE=	GPLv3+
 
+BROKEN=		Incompatible with nlohmann-json-3.10.0, see https://github.com/rizsotto/Bear/issues/396
+
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libabsl_hash.so:devel/abseil \
 		libcares.so:dns/c-ares \
