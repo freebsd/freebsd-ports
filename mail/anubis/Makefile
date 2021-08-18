@@ -23,13 +23,12 @@ GNU_CONFIGURE=	yes
 INFO=		anubis
 PORTEXAMPLES=	1anubisrc 2anubisrc
 
-MAKE_JOBS_UNSAFE=	yes
-
 OPTIONS_DEFINE=		NLS EXAMPLES EMACS GUILE GNUPG GNUTLS \
 			GSASL LIBWRAP PCRE PAM SOCKS TEST
+DB_DESC=		Database backend
 OPTIONS_GROUP=		DB
 OPTIONS_GROUP_DB=	GDBM MYSQL PGSQL
-OPTIONS_DEFAULT=	GUILE GNUPG GNUTLS GSASL
+OPTIONS_DEFAULT=	GDBM GNUPG GNUTLS GSASL GUILE
 OPTIONS_EXCLUDE_aarch64=TEST
 OPTIONS_SUB=		yes
 NO_OPTIONS_SORT=	yes
@@ -46,7 +45,6 @@ EMACS_USES=		emacs:build
 EMACS_CONFIGURE_ON=	--with-lispdir=${PREFIX}/${EMACS_SITE_LISPDIR}/anubis
 EMACS_CONFIGURE_OFF=	--with-lispdir=no
 
-GDBM_DESC=		GDBM backend
 GDBM_IMPLIES=		GSASL
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_WITH=	gdbm
@@ -100,6 +98,9 @@ SUB_LIST+=	REQUIRE="${REQUIRE}"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|g" ${WRKSRC}/src/headers.h
+	@${REINPLACE_CMD} -e 's,gdbm_db_,db_gdbm_,g' \
+		${WRKSRC}/src/anubisadm.c ${WRKSRC}/src/gdbm.c \
+		${WRKSRC}/src/headers.h ${WRKSRC}/src/main.c
 
 post-patch-TEST-off:
 	@${REINPLACE_CMD} -e 's| testsuite||' ${WRKSRC}/Makefile.am
