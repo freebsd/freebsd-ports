@@ -1,5 +1,5 @@
---- gstamp/gstamp_misc.c.orig	2011-03-12 21:33:49.000000000 +0100
-+++ gstamp/gstamp_misc.c	2011-03-12 21:34:16.000000000 +0100
+--- gstamp/gstamp_misc.c.orig	1999-03-11 08:32:44 UTC
++++ gstamp/gstamp_misc.c
 @@ -2,6 +2,7 @@
     Eric Werner - 19 FEB 1999 
     ebw@city-net.com

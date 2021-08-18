@@ -1,6 +1,6 @@
---- Makefile.in.orig	2011-03-12 21:24:42.000000000 +0100
-+++ Makefile.in	2011-03-12 21:25:00.000000000 +0100
-@@ -329,12 +329,12 @@ maintainer-clean-generic clean mostlycle
+--- Makefile.in.orig	1999-03-10 10:54:42 UTC
++++ Makefile.in
+@@ -329,12 +329,12 @@ maintainer-clean-generic clean mostlyclean distclean m
  .PHONY: files
  
  files:
