@@ -1,7 +1,6 @@
 PORTNAME=	docker-credential-pass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.3
-PORTREVISION=	1
+DISTVERSION=	0.6.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -22,9 +21,5 @@ GH_ACCOUNT=	docker
 GH_PROJECT=	docker-credential-helpers
 
 PLIST_FILES=	bin/docker-credential-pass
-
-pre-build:
-	${LN} -s ${GO_WRKSRC}/pass/cmd/main_linux.go ${GO_WRKSRC}/pass/cmd/main_freebsd.go
-	${LN} -s ${GO_WRKSRC}/pass/pass_linux.go ${GO_WRKSRC}/pass/pass_freebsd.go
 
 .include <bsd.port.mk>
