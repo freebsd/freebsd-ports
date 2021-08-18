@@ -811,7 +811,6 @@
     SUBDIR += openipmi
     SUBDIR += opensbi
     SUBDIR += openseachest
-    SUBDIR += openshift-install-devel
     SUBDIR += openshift-install45
     SUBDIR += openshift-install46
     SUBDIR += openupsd
