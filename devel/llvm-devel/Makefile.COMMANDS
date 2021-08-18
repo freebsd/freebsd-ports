@@ -19,7 +19,6 @@ LLVM_COMMANDS=	\
 		llvm-dlltool \
 		llvm-dwarfdump \
 		llvm-dwp \
-		llvm-elfabi \
 		llvm-exegesis \
 		llvm-extract \
 		llvm-gsymutil \
@@ -36,6 +35,7 @@ LLVM_COMMANDS=	\
 		llvm-nm \
 		llvm-objcopy \
 		llvm-objdump \
+		llvm-omp-device-info \
 		llvm-opt-report \
 		llvm-otool \
 		llvm-pdbutil \
@@ -47,12 +47,14 @@ LLVM_COMMANDS=	\
 		llvm-readobj \
 		llvm-reduce \
 		llvm-rtdyld \
+		llvm-sim \
 		llvm-size \
 		llvm-split \
 		llvm-stress \
 		llvm-strings \
 		llvm-strip \
 		llvm-symbolizer \
+		llvm-tapi-diff \
 		llvm-tblgen \
 		llvm-undname \
 		llvm-windres \
@@ -62,6 +64,7 @@ LLVM_COMMANDS=	\
 		split-file
 
 CLANG_COMMANDS=	\
+		analyze-build \
 		c-index-test \
 		clang \
 		clang++ \
@@ -74,7 +77,9 @@ CLANG_COMMANDS=	\
 		clang-scan-deps \
 		diagtool \
 		hmaptool \
+		intercept-build \
 		scan-build \
+		scan-build-py \
 		scan-view
 
 EXTRAS_COMMANDS= \
@@ -93,7 +98,6 @@ EXTRAS_COMMANDS= \
 		pp-trace
 
 FLANG_COMMANDS=	\
-		f18 \
 		f18-parse-demo \
 		fir-opt \
 		flang \

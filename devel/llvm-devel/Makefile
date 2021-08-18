@@ -32,7 +32,15 @@ USES=		cmake compiler:c++11-lib shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 _USES_PYTHON?=	python:build,3.6+
 USES+=		${_USES_PYTHON}
-SHEBANG_FILES=	flang/tools/f18/flang \
+SHEBANG_FILES=	\
+		clang/tools/scan-build-py/bin/analyze-build \
+		clang/tools/scan-build-py/bin/intercept-build \
+		clang/tools/scan-build-py/bin/scan-build \
+		clang/tools/scan-build-py/libexec/analyze-cc \
+		clang/tools/scan-build-py/libexec/analyze-c++ \
+		clang/tools/scan-build-py/libexec/intercept-cc \
+		clang/tools/scan-build-py/libexec/intercept-c++ \
+		flang/tools/f18/flang \
 		llvm/utils/lit/lit.py \
 		llvm/utils/llvm-lit/llvm-lit.in \
 		llvm/tools/opt-viewer/optrecord.py \
@@ -273,7 +281,7 @@ COMMANDS+=	${CLANG_COMMANDS}
 MAN1SRCS+=	clang.1 \
 		diagtool.1 \
 		scan-build.1
-CLANG_PATTERN=	(c-index-test|clang|diagtool|hmaptool|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer)
+CLANG_PATTERN=	(c-index-test|clang|diagtool|hmaptool|intercept-|libear|libscanbuild|analyze-|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer)
 SHEBANG_FILES+= clang/tools/clang-format/git-clang-format \
 		clang/tools/clang-format/clang-format-diff.py \
 		clang/tools/scan-view/bin/scan-view \
@@ -490,16 +498,16 @@ post-install-LIT-on:
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/lit
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/llvm-lit
-	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
+	${LN} -fs ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
 	    ${STAGEDIR}${PREFIX}/bin/lit${LLVM_SUFFIX}
-	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
+	${LN} -fs ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
 	    ${STAGEDIR}${PREFIX}/bin/llvm-lit${LLVM_SUFFIX}
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}
 	${INSTALL_DATA} ${WRKSRC}/llvm/utils/lit/lit/*.py \
 	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/bin/FileCheck \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/
-	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/FileCheck \
+	${LN} -fs ${STAGEDIR}${LLVM_PREFIX}/bin/FileCheck \
 	    ${STAGEDIR}${PREFIX}/bin/FileCheck${LLVM_SUFFIX}
 
 post-install-LLD-on:
@@ -542,7 +550,7 @@ build-plist:
 	    -e 's|${LLVM_MAJOR:C/\./\\./}|%%LLVM_MAJOR%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
 	awk '{ \
-	    if ($$0 ~ /lib.lib[a-zA-Z].*\.a/) {printf "%%%%STATIC_LIBS%%%%"} \
+	    if ($$0 ~ /lib.lib[a-zA-Z].*\.a$$/) {printf "%%%%STATIC_LIBS%%%%"} \
 	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /${OPENMP_PATTERN}|${EXTRAS_PATTERN}|${COMPILER_RT_PATTERN}|libclang_rt/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
 		{printf "%%%%COMPILER_RT%%%%"} \
