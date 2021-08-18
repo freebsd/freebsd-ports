@@ -1,12 +1,12 @@
 PORTNAME=	dooble
-DISTVERSION=	2021.07.05
+DISTVERSION=	2021.08.05
 CATEGORIES=	www
 
 MAINTAINER=	eric@camachat.org
 COMMENT=	Dooble Web Browser
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/../LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c++17-lang desktop-file-utils gmake qmake qt:5 ssl tar \
 		xorg
@@ -19,7 +19,6 @@ USE_QT=		concurrent core gui network printsupport sql webengine widgets \
 USE_XORG=	xcb
 
 QMAKE_SOURCE_PATH=	${PORTNAME}.pro
-WRKSRC_SUBDIR=		2.x
 
 PLIST_FILES=	${PREFIX}/share/applications/${PORTNAME}.desktop \
 		${PREFIX}/share/pixmaps/${PORTNAME}.png \
