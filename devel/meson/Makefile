@@ -1,7 +1,7 @@
 # Created by: Ting-Wei Lan <lantw44@gmail.com>
 
 PORTNAME=	meson
-PORTVERSION=	0.58.1
+PORTVERSION=	0.59.1
 CATEGORIES=	devel python
 MASTER_SITES=	https://github.com/mesonbuild/${PORTNAME}/releases/download/${PORTVERSION}/
 
