@@ -1,6 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.2
+DISTVERSION=	1.13.1
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -15,13 +15,13 @@ BUILD_DEPENDS=	binutils>0:devel/binutils \
 		gn:devel/gn \
 		libunwind>0:devel/libunwind
 
-USES=		cargo gnome ninja:build pkgconfig:build python:3.6+,build
+USES=		cargo gmake gnome ninja:build pkgconfig:build python:3.6+,build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
 USE_GNOME=	glib20
 
-RUSTY_VERS=	0.25.3
+RUSTY_VERS=	0.26.0
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -34,6 +34,7 @@ PLIST_FILES=	bin/${PORTNAME}
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 CARGO_CRATES=	Inflector-0.11.4 \
+		abort_on_panic-2.0.0 \
 		adler-1.0.2 \
 		ahash-0.4.7 \
 		ahash-0.7.4 \
@@ -76,6 +77,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		clipboard-win-4.2.1 \
 		cocoa-foundation-0.1.0 \
 		codespan-reporting-0.11.1 \
+		const-oid-0.6.0 \
 		convert_case-0.4.0 \
 		copyless-0.1.5 \
 		core-foundation-0.9.1 \
@@ -86,6 +88,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crc32fast-1.2.1 \
 		crossbeam-channel-0.5.1 \
 		crossbeam-utils-0.8.5 \
+		crypto-bigint-0.2.2 \
 		d3d12-0.4.0 \
 		darling-0.10.2 \
 		darling_core-0.10.2 \
@@ -93,18 +96,21 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dashmap-4.0.2 \
 		data-encoding-2.3.2 \
 		data-url-0.1.0 \
-		deno_doc-0.9.0 \
-		deno_lint-0.11.0 \
+		deno-libffi-0.0.7 \
+		deno-libffi-sys-0.0.7 \
+		deno_doc-0.10.0 \
+		deno_lint-0.12.0 \
+		der-0.4.0 \
 		derive_more-0.99.16 \
 		digest-0.9.0 \
 		dissimilar-1.0.2 \
 		dlopen-0.1.8 \
 		dlopen_derive-0.1.4 \
-		dprint-core-0.43.0 \
-		dprint-plugin-json-0.12.1 \
-		dprint-plugin-markdown-0.9.2 \
-		dprint-plugin-typescript-0.49.0 \
-		dprint-swc-ecma-ast-view-0.24.0 \
+		dprint-core-0.44.0 \
+		dprint-plugin-json-0.12.3 \
+		dprint-plugin-markdown-0.9.4 \
+		dprint-plugin-typescript-0.50.2 \
+		dprint-swc-ecma-ast-view-0.25.0 \
 		drm-fourcc-2.1.1 \
 		either-1.6.1 \
 		encoding_rs-0.8.28 \
@@ -124,6 +130,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fd-lock-2.0.0 \
 		filetime-0.2.14 \
 		fixedbitset-0.2.0 \
+		flaky_test-0.1.0 \
 		flate2-1.0.20 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
@@ -207,6 +214,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lsp-types-0.89.2 \
 		lspower-1.1.0 \
 		lspower-macros-0.2.1 \
+		make-cmd-0.1.0 \
 		malloc_buf-0.0.6 \
 		match_cfg-0.1.0 \
 		matches-0.1.8 \
@@ -223,7 +231,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		notify-5.0.0-pre.10 \
 		ntapi-0.3.6 \
 		num-bigint-0.2.6 \
-		num-bigint-0.4.0 \
 		num-bigint-dig-0.7.0 \
 		num-integer-0.1.44 \
 		num-iter-0.1.42 \
@@ -233,11 +240,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		objc_exception-0.1.2 \
 		once_cell-1.8.0 \
 		opaque-debug-0.3.0 \
+		openssl-probe-0.1.4 \
 		os_pipe-0.9.2 \
 		owning_ref-0.4.1 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.3 \
-		pem-0.8.3 \
 		percent-encoding-2.1.0 \
 		pest-2.1.3 \
 		petgraph-0.5.1 \
@@ -249,6 +256,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pin-project-internal-1.0.7 \
 		pin-project-lite-0.2.7 \
 		pin-utils-0.1.0 \
+		pkcs1-0.2.3 \
+		pkcs8-0.7.5 \
 		pkg-config-0.3.19 \
 		pmutil-0.5.3 \
 		ppv-lite86-0.2.10 \
@@ -290,19 +299,23 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ring-0.16.20 \
 		ron-0.6.4 \
 		rose_tree-0.2.0 \
-		rsa-0.4.0 \
+		rsa-0.5.0 \
 		rusqlite-0.25.3 \
 		rustc_version-0.2.3 \
 		rustc_version-0.3.3 \
 		rustls-0.19.1 \
-		rusty_v8-0.25.3 \
+		rustls-native-certs-0.5.0 \
+		rusty_v8-0.26.0 \
 		rustyline-8.2.0 \
 		rustyline-derive-0.4.0 \
 		ryu-1.0.5 \
 		same-file-1.0.6 \
+		schannel-0.1.19 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
 		sct-0.6.1 \
+		security-framework-2.3.1 \
+		security-framework-sys-2.3.0 \
 		semver-0.9.0 \
 		semver-0.11.0 \
 		semver-parser-0.7.0 \
@@ -312,12 +325,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_json-1.0.64 \
 		serde_repr-0.1.7 \
 		serde_urlencoded-0.7.0 \
-		serde_v8-0.8.0 \
-		sha-1-0.9.6 \
+		serde_v8-0.9.0 \
+		sha-1-0.9.7 \
 		sha2-0.9.5 \
 		shell-escape-0.1.5 \
 		signal-hook-registry-1.4.0 \
-		simple_asn1-0.5.4 \
 		siphasher-0.3.5 \
 		slab-0.4.3 \
 		slotmap-0.4.2 \
@@ -328,6 +340,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		spin-0.5.2 \
 		spirv_cross-0.23.1 \
 		spirv_headers-1.5.0 \
+		spki-0.4.0 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		storage-map-0.3.0 \
@@ -339,24 +352,24 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strsim-0.9.3 \
 		subtle-2.4.0 \
 		swc_atoms-0.2.6 \
-		swc_bundler-0.46.0 \
-		swc_common-0.11.0 \
+		swc_bundler-0.50.0 \
+		swc_common-0.11.4 \
 		swc_ecma_ast-0.49.0 \
-		swc_ecma_codegen-0.62.0 \
+		swc_ecma_codegen-0.66.2 \
 		swc_ecma_codegen_macros-0.5.2 \
-		swc_ecma_dep_graph-0.31.0 \
-		swc_ecma_loader-0.11.0 \
-		swc_ecma_parser-0.63.0 \
-		swc_ecma_transforms-0.59.0 \
-		swc_ecma_transforms_base-0.22.1 \
-		swc_ecma_transforms_classes-0.8.0 \
-		swc_ecma_transforms_optimization-0.29.0 \
-		swc_ecma_transforms_proposal-0.26.0 \
-		swc_ecma_transforms_react-0.27.0 \
-		swc_ecma_transforms_typescript-0.28.0 \
-		swc_ecma_utils-0.40.0 \
+		swc_ecma_dep_graph-0.34.0 \
+		swc_ecma_loader-0.12.0 \
+		swc_ecma_parser-0.66.2 \
+		swc_ecma_transforms-0.63.0 \
+		swc_ecma_transforms_base-0.26.1 \
+		swc_ecma_transforms_classes-0.12.1 \
+		swc_ecma_transforms_optimization-0.33.0 \
+		swc_ecma_transforms_proposal-0.30.0 \
+		swc_ecma_transforms_react-0.31.1 \
+		swc_ecma_transforms_typescript-0.32.0 \
+		swc_ecma_utils-0.41.0 \
 		swc_ecma_visit-0.35.0 \
-		swc_ecmascript-0.46.0 \
+		swc_ecmascript-0.52.1 \
 		swc_eq_ignore_macros-0.1.0 \
 		swc_macros_common-0.3.3 \
 		swc_visit-0.2.4 \
