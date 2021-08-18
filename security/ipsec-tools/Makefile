@@ -7,7 +7,7 @@
 
 PORTNAME=	ipsec-tools
 PORTVERSION=	0.8.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -76,7 +76,7 @@ WCPSKEY_EXTRA_PATCHES=	${FILESDIR}/wildcard-psk.diff ${FILESDIR}/wildcard-psk-oa
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1100510
 REQUIREMOD?=	ipsec
 .endif
 
