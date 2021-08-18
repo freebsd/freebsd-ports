@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210818:
+  AFFECTS: users of databases/redis
+  AUTHOR: osa@FreeBSD.org
+
+  The databases/redis port has been updated to the recent stable release.
+  Users wanting to stay on v6.0 can replace databases/redis with
+  databases/redis6 with one of the following commands:
+
+  # pkg install databases/redis6
+    or
+  # portmaster -o databases/redis6 databases/redis
+    or
+  # portupgrade -o databases/redis6 databases/redis
+
 20210805:
   AFFECTS: users of sysutils/beats7
   AUTHOR: otis@FreeBSD.org

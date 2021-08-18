@@ -71,7 +71,7 @@ USES+=		tcl:build
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
 
-CONFLICTS?=	redis-6.* redis-devel-6.*
+CONFLICTS?=	redis-6.* redis-devel-6.* redis6-6.*
 
 USE_RC_SUBR=	redis sentinel
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-rdb \
