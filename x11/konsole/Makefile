@@ -1,6 +1,11 @@
 PORTNAME=	konsole
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-applications # kde kde-applications-applications
+
+PATCH_SITES=	https://invent.kde.org/utilities/konsole/-/commit/
+PATCHFILES=	fb7f838fd3138a39aea3bcb2e91f923741587137.diff:-p1 \
+		c78edfbac49852cec40efd5cbe73c341bc06c5ab.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE terminal emulator
