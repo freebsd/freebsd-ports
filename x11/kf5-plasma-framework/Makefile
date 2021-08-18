@@ -1,6 +1,10 @@
 PORTNAME=	plasma-framework
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-frameworks
+
+PATCH_SITES=	https://invent.kde.org/frameworks/plasma-framework/-/commit/
+PATCHFILES=	837bb6975f6a0661d211107823b7587808fc3d4e.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 plugin based UI runtime used to write user interfaces
