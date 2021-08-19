@@ -17,6 +17,7 @@ RUN_DEPENDS=	javaservicewrapper:sysutils/javaservicewrapper
 USES=		cpe
 
 CPE_VENDOR=	sonatype
+CPE_PRODUCT=	nexus
 
 NO_ARCH=	yes
 NO_BUILD=	yes
