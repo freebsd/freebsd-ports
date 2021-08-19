@@ -62,3 +62,12 @@
  
  $MDDS_PKG_ERRORS
  
+@@ -36014,7 +36019,7 @@ else $as_nop
+   as_fn_error $? "zxing headers not found." "$LINENO" 5
+ fi
+ 
+-        ZXING_CFLAGS=-I/usr/include/ZXing
++        ZXING_CFLAGS=-I/usr/local/include/ZXing
+         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for main in -lZXing" >&5
+ printf %s "checking for main in -lZXing... " >&6; }
+ if test ${ac_cv_lib_ZXing_main+y}
