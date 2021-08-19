@@ -1,5 +1,5 @@
-TIMESTAMP = 1619317943
-SHA256 (go/dns_doggo/doggo-v0.4.0/v0.4.0.mod) = 5a9b611dd335420f6a0766a384ad25e127996b4b09048d7e43e361ca3bccb99a
-SIZE (go/dns_doggo/doggo-v0.4.0/v0.4.0.mod) = 513
-SHA256 (go/dns_doggo/doggo-v0.4.0/v0.4.0.zip) = 7b916c06fbfca127924e28427a5145e2f3aefcebcb49a25caa8bb99db86da2aa
-SIZE (go/dns_doggo/doggo-v0.4.0/v0.4.0.zip) = 409376
+TIMESTAMP = 1629394688
+SHA256 (go/dns_doggo/doggo-v0.4.1/v0.4.1.mod) = 6011c9d90a7c335911e66b3744f0263c111e437b4f1002003645ce57ac116274
+SIZE (go/dns_doggo/doggo-v0.4.1/v0.4.1.mod) = 468
+SHA256 (go/dns_doggo/doggo-v0.4.1/v0.4.1.zip) = 19c1487fc903707fcb2b9505bd3c1516f5baa4d1b183be5259db650e3672c43f
+SIZE (go/dns_doggo/doggo-v0.4.1/v0.4.1.zip) = 401275
