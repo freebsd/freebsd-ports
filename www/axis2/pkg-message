@@ -1,0 +1,11 @@
+[
+{
+  type: upgrade
+  maximum_version: "1.8.0"
+  message: <<EOM
+From Apache Axis2 1.8.0 Release Note: Because of the HTTPClient 4.x changes and
+also JAX-WS changes in the 1.7.x series, users are strongly encouraged to
+update their axis2.xml.
+EOM
+}
+]
