@@ -131,7 +131,7 @@ include/nblib/topology.h
 include/nblib/util/setup.h
 lib/libgmxapi%%SUFFIX_MPI%%%%SUFFIX_D%%.so
 lib/libgmxapi%%SUFFIX_MPI%%%%SUFFIX_D%%.so.0
-lib/libgmxapi%%SUFFIX_MPI%%%%SUFFIX_D%%.so.0.2.0
+lib/libgmxapi%%SUFFIX_MPI%%%%SUFFIX_D%%.so.0.2.1
 lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so
 lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so.6
 lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so.6.0.0
