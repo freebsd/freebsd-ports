@@ -172,6 +172,7 @@
     SUBDIR += nwchem-data
     SUBDIR += octopus
     SUBDIR += openbabel
+    SUBDIR += openems
     SUBDIR += openkim
     SUBDIR += openkim-models
     SUBDIR += openmx
