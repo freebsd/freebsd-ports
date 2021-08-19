@@ -28,7 +28,6 @@ NODE_DESC=	Use www/node as backend
 NODE14_DESC=	Use www/node14 as backend
 
 CPE_VENDOR=	npmjs
-CPE_PRODUCT=	node_packaged_modules
 
 SHEBANG_GLOB=	*.py
 SHEBANG_FILES=	lib/node_modules/npm/node_modules/node-gyp/gyp/samples/samples
