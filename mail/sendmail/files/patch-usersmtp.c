@@ -1,6 +1,6 @@
---- sendmail/usersmtp.c.orig	2020-06-03 05:48:46 UTC
+--- sendmail/usersmtp.c.orig	2021-07-14 05:34:51 UTC
 +++ sendmail/usersmtp.c
-@@ -1842,6 +1842,9 @@ attemptauth(m, mci, e, sai)
+@@ -1870,6 +1870,9 @@ attemptauth(m, mci, e, sai)
  
  		if (saslresult != SASL_OK && saslresult != SASL_CONTINUE)
  		{
@@ -10,7 +10,7 @@
  			if (tTd(95, 5))
  				sm_dprintf("AUTH FAIL=%s (%d)\n",
  					sasl_errstring(saslresult, NULL, NULL),
-@@ -1987,9 +1990,11 @@ smtpauth(m, mci, e)
+@@ -2015,9 +2018,11 @@ smtpauth(m, mci, e)
  	do
  	{
  		result = attemptauth(m, mci, e, &(mci->mci_sai));

@@ -1,6 +1,6 @@
---- sendmail/daemon.c.orig	2015-02-28 00:50:03 UTC
+--- sendmail/daemon.c.orig	2021-07-14 05:34:51 UTC
 +++ sendmail/daemon.c
-@@ -754,6 +754,8 @@ getrequests(e)
+@@ -788,6 +788,8 @@ getrequests(e)
  						anynet_ntoa(&RealHostAddr));
  			}
  

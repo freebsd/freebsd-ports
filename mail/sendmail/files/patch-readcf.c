@@ -1,7 +1,7 @@
---- sendmail/readcf.c.orig	2020-06-02 09:41:43 UTC
+--- sendmail/readcf.c.orig	2021-07-14 05:34:51 UTC
 +++ sendmail/readcf.c
-@@ -2979,6 +2979,10 @@ static struct optioninfo
- 	{ "SetCertAltnames",			O_CHECKALTNAMES, OI_NONE },
+@@ -3056,6 +3056,10 @@ static struct optioninfo
+ 	{ "CipherSuites",		O_CIPHERSUITES,	OI_NONE	},
  #endif
  
 +#if USE_BLACKLIST
@@ -11,16 +11,16 @@
  	{ NULL,				'\0',		OI_NONE	}
  };
  
-@@ -4678,6 +4682,12 @@ setoption(opt, val, safe, sticky, e)
- 		SetCertAltnames = atobool(val);
+@@ -4795,6 +4799,12 @@ setoption(opt, val, safe, sticky, e)
  		break;
- # endif
-+
+ #endif
+ 
 +#if USE_BLACKLIST
 +	  case O_BLACKLIST:
 +		UseBlacklist = atobool(val);
 +		break;
 +#endif
- 
++
  	  default:
  		if (tTd(37, 1))
+ 		{

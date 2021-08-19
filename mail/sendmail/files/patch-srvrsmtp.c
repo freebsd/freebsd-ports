@@ -1,6 +1,6 @@
---- sendmail/srvrsmtp.c.orig	2020-06-08 08:35:03 UTC
+--- sendmail/srvrsmtp.c.orig	2021-08-03 10:35:09 UTC
 +++ sendmail/srvrsmtp.c
-@@ -906,6 +906,9 @@ smtp(nullserver, d_flags, e)
+@@ -940,6 +940,9 @@ smtp(nullserver, d_flags, e)
  #if _FFR_BADRCPT_SHUTDOWN
  	int n_badrcpts_adj;
  #endif
@@ -10,7 +10,7 @@
  
  	RESET_AUTH_FAIL_LOG_USER;
  	SevenBitInput_Saved = SevenBitInput;
-@@ -1408,6 +1411,7 @@ smtp(nullserver, d_flags, e)
+@@ -1442,6 +1445,7 @@ smtp(nullserver, d_flags, e)
  					  (int) tp.tv_sec +
  						(tp.tv_usec >= 500000 ? 1 : 0)
  					 );
@@ -18,7 +18,7 @@
  			}
  		}
  	}
-@@ -1510,6 +1514,10 @@ smtp(nullserver, d_flags, e)
+@@ -1544,6 +1548,10 @@ smtp(nullserver, d_flags, e)
  		SmtpPhase = "server cmd read";
  		sm_setproctitle(true, e, "server %s cmd read", CurSmtpClient);
  
@@ -29,7 +29,7 @@
  		/* handle errors */
  		if (sm_io_error(OutChannel) ||
  		    (p = sfgets(inp, sizeof(inp), InChannel,
-@@ -1823,8 +1831,11 @@ smtp(nullserver, d_flags, e)
+@@ -1860,8 +1868,11 @@ smtp(nullserver, d_flags, e)
  #define LOGAUTHFAIL	\
  	do	\
  	{	\
@@ -41,7 +41,7 @@
  		if (LogLevel >= 9)	\
  			sm_syslog(LOG_WARNING, e->e_id,	\
  				  "AUTH failure (%s): %s (%d) %s%s%.*s, relay=%.100s",	\
-@@ -1974,6 +1985,9 @@ smtp(nullserver, d_flags, e)
+@@ -2011,6 +2022,9 @@ smtp(nullserver, d_flags, e)
  			DELAY_CONN("AUTH");
  			if (!sasl_ok || n_mechs <= 0)
  			{
@@ -51,7 +51,7 @@
  				message("503 5.3.3 AUTH not available");
  				break;
  			}
-@@ -3602,10 +3616,17 @@ doquit:
+@@ -3704,10 +3718,17 @@ doquit:
  				**  timeouts for the same connection.
  				*/
  
@@ -69,7 +69,7 @@
  			if (tTd(93, 100))
  			{
  				/* return to handle next connection */
-@@ -3663,7 +3684,10 @@ doquit:
+@@ -3789,7 +3810,10 @@ doquit:
  #if MAXBADCOMMANDS > 0
  			if (++n_badcmds > MAXBADCOMMANDS)
  			{
@@ -80,7 +80,7 @@
  				message("421 4.7.0 %s Too many bad commands; closing connection",
  					MyHostName);
  
-@@ -3714,6 +3738,9 @@ doquit:
+@@ -3843,6 +3867,9 @@ doquit:
  		}
  #if SASL
  		}
