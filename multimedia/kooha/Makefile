@@ -1,7 +1,7 @@
 PORTNAME=	kooha
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1-621
-DISTVERSIONSUFFIX=	-gc843f2c
+DISTVERSION=	1.2.1-624
+DISTVERSIONSUFFIX=	-gba1f8e8
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,6 +26,7 @@ INSTALLS_ICONS=	yes
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
 		anyhow-1.0.43 \
+		approx-0.5.0 \
 		ashpd-0.2.0-alpha-3 \
 		async-broadcast-0.3.3 \
 		async-channel-1.6.1 \
