@@ -18,6 +18,7 @@
     SUBDIR += cascade
     SUBDIR += cascade-compiler
     SUBDIR += chipvault
+    SUBDIR += csxcad
     SUBDIR += cura
     SUBDIR += cura-engine
     SUBDIR += digital
