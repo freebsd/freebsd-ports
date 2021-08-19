@@ -1,5 +1,15 @@
 %%MONO%%bin/quassel
 %%CLIENT%%bin/quasselclient
+%%GUI%%lib/libquassel-client.so
+%%GUI%%lib/libquassel-client.so.%%LIBVERSION%%
+lib/libquassel-common.so
+lib/libquassel-common.so.%%LIBVERSION%%
+%%MONO%%lib/libquassel-core.so
+%%MONO%%lib/libquassel-core.so.%%LIBVERSION%%
+%%GUI%%lib/libquassel-qtui.so
+%%GUI%%lib/libquassel-qtui.so.%%LIBVERSION%%
+%%GUI%%lib/libquassel-uisupport.so
+%%GUI%%lib/libquassel-uisupport.so.%%LIBVERSION%%
 %%MONO%%share/applications/quassel.desktop
 %%CLIENT%%share/applications/quasselclient.desktop
 %%DATADIR%%/icons/breeze-dark/AUTHORS
@@ -27,6 +37,7 @@
 %%DATADIR%%/icons/breeze-dark/actions/16/format-text-bold.svg
 %%DATADIR%%/icons/breeze-dark/actions/16/format-text-color.svg
 %%DATADIR%%/icons/breeze-dark/actions/16/format-text-italic.svg
+%%DATADIR%%/icons/breeze-dark/actions/16/format-text-strikethrough.svg
 %%DATADIR%%/icons/breeze-dark/actions/16/format-text-underline.svg
 %%DATADIR%%/icons/breeze-dark/actions/16/go-down.svg
 %%DATADIR%%/icons/breeze-dark/actions/16/go-next-view.svg
@@ -82,6 +93,7 @@
 %%DATADIR%%/icons/breeze-dark/actions/22/format-text-bold.svg
 %%DATADIR%%/icons/breeze-dark/actions/22/format-text-color.svg
 %%DATADIR%%/icons/breeze-dark/actions/22/format-text-italic.svg
+%%DATADIR%%/icons/breeze-dark/actions/22/format-text-strikethrough.svg
 %%DATADIR%%/icons/breeze-dark/actions/22/format-text-underline.svg
 %%DATADIR%%/icons/breeze-dark/actions/22/go-down.svg
 %%DATADIR%%/icons/breeze-dark/actions/22/go-next-view.svg
@@ -143,6 +155,7 @@
 %%DATADIR%%/icons/breeze-dark/actions/24/format-text-bold.svg
 %%DATADIR%%/icons/breeze-dark/actions/24/format-text-color.svg
 %%DATADIR%%/icons/breeze-dark/actions/24/format-text-italic.svg
+%%DATADIR%%/icons/breeze-dark/actions/24/format-text-strikethrough.svg
 %%DATADIR%%/icons/breeze-dark/actions/24/format-text-underline.svg
 %%DATADIR%%/icons/breeze-dark/actions/24/go-down.svg
 %%DATADIR%%/icons/breeze-dark/actions/24/go-next-view.svg
@@ -205,6 +218,10 @@
 %%DATADIR%%/icons/breeze-dark/apps/64/quassel.svg
 %%DATADIR%%/icons/breeze-dark/devices/16/network-wired.svg
 %%DATADIR%%/icons/breeze-dark/devices/22/network-wired.svg
+%%DATADIR%%/icons/breeze-dark/emblems/16/emblem-information.svg
+%%DATADIR%%/icons/breeze-dark/emblems/16/emblem-question.svg
+%%DATADIR%%/icons/breeze-dark/emblems/16/emblem-success.svg
+%%DATADIR%%/icons/breeze-dark/emblems/16/emblem-unavailable.svg
 %%DATADIR%%/icons/breeze-dark/index.theme
 %%DATADIR%%/icons/breeze-dark/preferences/32/help-about.svg
 %%DATADIR%%/icons/breeze-dark/scalable/actions/connect-quassel.svg
@@ -279,6 +296,7 @@
 %%DATADIR%%/icons/breeze/actions/16/format-text-bold.svg
 %%DATADIR%%/icons/breeze/actions/16/format-text-color.svg
 %%DATADIR%%/icons/breeze/actions/16/format-text-italic.svg
+%%DATADIR%%/icons/breeze/actions/16/format-text-strikethrough.svg
 %%DATADIR%%/icons/breeze/actions/16/format-text-underline.svg
 %%DATADIR%%/icons/breeze/actions/16/go-down.svg
 %%DATADIR%%/icons/breeze/actions/16/go-next-view.svg
@@ -334,6 +352,7 @@
 %%DATADIR%%/icons/breeze/actions/22/format-text-bold.svg
 %%DATADIR%%/icons/breeze/actions/22/format-text-color.svg
 %%DATADIR%%/icons/breeze/actions/22/format-text-italic.svg
+%%DATADIR%%/icons/breeze/actions/22/format-text-strikethrough.svg
 %%DATADIR%%/icons/breeze/actions/22/format-text-underline.svg
 %%DATADIR%%/icons/breeze/actions/22/go-down.svg
 %%DATADIR%%/icons/breeze/actions/22/go-next-view.svg
@@ -395,6 +414,7 @@
 %%DATADIR%%/icons/breeze/actions/24/format-text-bold.svg
 %%DATADIR%%/icons/breeze/actions/24/format-text-color.svg
 %%DATADIR%%/icons/breeze/actions/24/format-text-italic.svg
+%%DATADIR%%/icons/breeze/actions/24/format-text-strikethrough.svg
 %%DATADIR%%/icons/breeze/actions/24/format-text-underline.svg
 %%DATADIR%%/icons/breeze/actions/24/go-down.svg
 %%DATADIR%%/icons/breeze/actions/24/go-next-view.svg
@@ -457,6 +477,10 @@
 %%DATADIR%%/icons/breeze/apps/64/quassel.svg
 %%DATADIR%%/icons/breeze/devices/16/network-wired.svg
 %%DATADIR%%/icons/breeze/devices/22/network-wired.svg
+%%DATADIR%%/icons/breeze/emblems/16/emblem-information.svg
+%%DATADIR%%/icons/breeze/emblems/16/emblem-question.svg
+%%DATADIR%%/icons/breeze/emblems/16/emblem-success.svg
+%%DATADIR%%/icons/breeze/emblems/16/emblem-unavailable.svg
 %%DATADIR%%/icons/breeze/index.theme
 %%DATADIR%%/icons/breeze/preferences/32/help-about.svg
 %%DATADIR%%/icons/breeze/scalable/actions/connect-quassel.svg
@@ -553,3 +577,4 @@ share/icons/hicolor/22x22/apps/quassel.png
 share/icons/hicolor/32x32/apps/quassel.png
 share/icons/hicolor/48x48/apps/quassel.png
 share/icons/hicolor/64x64/apps/quassel.png
+%%KDE%%share/knotifications5/quassel.notifyrc
