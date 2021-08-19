@@ -69,7 +69,6 @@ FNV_CONFIGURE_ON=	--with-hash-algorithm=fnv
 SIPHASH_CONFIGURE_ON=	--with-hash-algorithm=siphash24
 
 DEBUG_CONFIGURE_WITH=	pydebug
-DEBUG_BROKEN=		incorrect pkg-plist
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 LIBMPDEC_CONFIGURE_ON=	--with-system-libmpdec
