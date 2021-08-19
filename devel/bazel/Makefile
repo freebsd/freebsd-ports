@@ -1,7 +1,7 @@
 # Created by: Klaus Aehlig <aehlig@linta.de>
 
 PORTNAME=	bazel
-DISTVERSION=	4.1.0
+DISTVERSION=	4.2.0
 CATEGORIES=	devel java
 MASTER_SITES=	https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=	bazel-${PORTVERSION}rc${FINALRC}-dist
@@ -28,7 +28,7 @@ CONFLICTS_INSTALL=	bazel029
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
 # candidates.
-FINALRC=	5
+FINALRC=	4
 
 SHEBANG_REGEX=	.*(sh|txt|_stub|stub_.*|bazel|get_workspace_status|protobuf_support|_so)
 USE_JAVA=	yes
