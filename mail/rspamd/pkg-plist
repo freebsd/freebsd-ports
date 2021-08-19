@@ -25,6 +25,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/modules.d/antivirus.conf
 %%ETCDIR%%/modules.d/arc.conf
 %%ETCDIR%%/modules.d/asn.conf
+%%ETCDIR%%/modules.d/aws_s3.conf
 %%ETCDIR%%/modules.d/chartable.conf
 %%ETCDIR%%/modules.d/clickhouse.conf
 %%ETCDIR%%/modules.d/dcc.conf
@@ -33,6 +34,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/modules.d/dmarc.conf
 %%ETCDIR%%/modules.d/elastic.conf
 %%ETCDIR%%/modules.d/emails.conf
+%%ETCDIR%%/modules.d/external_relay.conf
 %%ETCDIR%%/modules.d/external_services.conf
 %%ETCDIR%%/modules.d/force_actions.conf
 %%ETCDIR%%/modules.d/forged_recipients.conf
@@ -153,12 +155,14 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/global_functions.lua
 %%DATADIR%%/lualib/lpegre.lua
 %%DATADIR%%/lualib/lua_auth_results.lua
+%%DATADIR%%/lualib/lua_aws.lua
 %%DATADIR%%/lualib/lua_bayes_learn.lua
 %%DATADIR%%/lualib/lua_cfg_transform.lua
 %%DATADIR%%/lualib/lua_clickhouse.lua
 %%DATADIR%%/lualib/lua_content/ical.lua
 %%DATADIR%%/lualib/lua_content/init.lua
 %%DATADIR%%/lualib/lua_content/pdf.lua
+%%DATADIR%%/lualib/lua_content/vcard.lua
 %%DATADIR%%/lualib/lua_dkim_tools.lua
 %%DATADIR%%/lualib/lua_ffi/common.lua
 %%DATADIR%%/lualib/lua_ffi/dkim.lua
@@ -175,6 +179,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_maps_expressions.lua
 %%DATADIR%%/lualib/lua_meta.lua
 %%DATADIR%%/lualib/lua_mime.lua
+%%DATADIR%%/lualib/lua_mime_types.lua
 %%DATADIR%%/lualib/lua_redis.lua
 %%DATADIR%%/lualib/lua_scanners/avast.lua
 %%DATADIR%%/lualib/lua_scanners/clamav.lua
@@ -187,6 +192,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_scanners/kaspersky_se.lua
 %%DATADIR%%/lualib/lua_scanners/oletools.lua
 %%DATADIR%%/lualib/lua_scanners/p0f.lua
+%%DATADIR%%/lualib/lua_scanners/pyzor.lua
 %%DATADIR%%/lualib/lua_scanners/razor.lua
 %%DATADIR%%/lualib/lua_scanners/savapi.lua
 %%DATADIR%%/lualib/lua_scanners/sophos.lua
@@ -206,6 +212,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_util.lua
 %%DATADIR%%/lualib/lua_verdict.lua
 %%DATADIR%%/lualib/lupa.lua
+%%DATADIR%%/lualib/plugins/dmarc.lua
 %%DATADIR%%/lualib/plugins/neural.lua
 %%DATADIR%%/lualib/plugins/rbl.lua
 %%DATADIR%%/lualib/plugins_stats.lua
@@ -216,6 +223,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/rspamadm/configwizard.lua
 %%DATADIR%%/lualib/rspamadm/cookie.lua
 %%DATADIR%%/lualib/rspamadm/corpus_test.lua
+%%DATADIR%%/lualib/rspamadm/dmarc_report.lua
 %%DATADIR%%/lualib/rspamadm/dns_tool.lua
 %%DATADIR%%/lualib/rspamadm/fuzzy_convert.lua
 %%DATADIR%%/lualib/rspamadm/fuzzy_stat.lua
@@ -224,12 +232,14 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/rspamadm/mime.lua
 %%DATADIR%%/lualib/rspamadm/rescore.lua
 %%DATADIR%%/lualib/rspamadm/stat_convert.lua
+%%DATADIR%%/lualib/rspamadm/statistics_dump.lua
 %%DATADIR%%/lualib/rspamadm/template.lua
 %%DATADIR%%/lualib/rspamadm/vault.lua
 %%DATADIR%%/lualib/tableshape.lua
 %%DATADIR%%/plugins/antivirus.lua
 %%DATADIR%%/plugins/arc.lua
 %%DATADIR%%/plugins/asn.lua
+%%DATADIR%%/plugins/aws_s3.lua
 %%DATADIR%%/plugins/bayes_expiry.lua
 %%DATADIR%%/plugins/clickhouse.lua
 %%DATADIR%%/plugins/clustering.lua
@@ -239,6 +249,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/plugins/dynamic_conf.lua
 %%DATADIR%%/plugins/elastic.lua
 %%DATADIR%%/plugins/emails.lua
+%%DATADIR%%/plugins/external_relay.lua
 %%DATADIR%%/plugins/external_services.lua
 %%DATADIR%%/plugins/force_actions.lua
 %%DATADIR%%/plugins/forged_recipients.lua
@@ -328,7 +339,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/js/lib/d3pie.min.js
 %%DATADIR%%/www/js/lib/fontawesome.min.js
 %%DATADIR%%/www/js/lib/footable.min.js
-%%DATADIR%%/www/js/lib/jquery-3.5.1.min.js
+%%DATADIR%%/www/js/lib/jquery-3.6.0.min.js
 %%DATADIR%%/www/js/lib/jquery.stickytabs.min.js
 %%DATADIR%%/www/js/lib/linenumbers.min.js
 %%DATADIR%%/www/js/lib/nprogress.min.js
