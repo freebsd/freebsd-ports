@@ -103,6 +103,7 @@
     SUBDIR += py-pyfda
     SUBDIR += python-gdsii
     SUBDIR += qcad
+    SUBDIR += qcsxcad
     SUBDIR += qelectrotech
     SUBDIR += qflow
     SUBDIR += qmls

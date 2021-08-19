@@ -1,0 +1,15 @@
+include/QCSXCAD/QCSGridEditor.h
+include/QCSXCAD/QCSPrimEditor.h
+include/QCSXCAD/QCSPropEditor.h
+include/QCSXCAD/QCSTreeWidget.h
+include/QCSXCAD/QCSXCAD.h
+include/QCSXCAD/QCSXCAD_Global.h
+include/QCSXCAD/QParameterGui.h
+include/QCSXCAD/QVTKStructure.h
+include/QCSXCAD/VTKPrimitives.h
+include/QCSXCAD/export_pov.h
+include/QCSXCAD/export_x3d.h
+include/QCSXCAD/vtkInteractorStyleRubberBand2DPlane.h
+lib/libQCSXCAD.so
+lib/libQCSXCAD.so.0
+lib/libQCSXCAD.so.0.6.2
