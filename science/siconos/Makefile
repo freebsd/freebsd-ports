@@ -10,6 +10,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_i386=	non-constant-expression cannot be narrowed from type 'unsigned int' to 'npy_intp', see https://github.com/siconos/siconos/issues/416
+BROKEN_11=	error: use of undeclared identifier 'RTLD_DEEPBIND'
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
