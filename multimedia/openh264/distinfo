@@ -1,3 +1,5 @@
 TIMESTAMP = 1590049824
 SHA256 (cisco-openh264-v2.1.1_GH0.tar.gz) = af173e90fce65f80722fa894e1af0d6b07572292e76de7b65273df4c0a8be678
 SIZE (cisco-openh264-v2.1.1_GH0.tar.gz) = 60239654
+SHA256 (6cc269bebccc.patch) = a62721d2d2bb14c7a3f7b9d4d9da0922db15c9a854b431e47587be689f1c50e8
+SIZE (6cc269bebccc.patch) = 1151
