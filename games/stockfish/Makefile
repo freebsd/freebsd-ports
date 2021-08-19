@@ -2,7 +2,7 @@
 
 PORTNAME=	stockfish
 DISTVERSIONPREFIX=	sf_
-DISTVERSION=	13
+DISTVERSION=	14
 CATEGORIES=	games
 MASTER_SITES=	https://tests.stockfishchess.org/api/nn/:nnue
 DISTFILES=	nn-${_NNUE_VER}.nnue:nnue
@@ -27,7 +27,7 @@ MAKE_ARGS=	ARCH=${MYARCH} \
 ALL_TARGET=	build
 LDFLAGS+=	-fuse-ld=lld
 
-_NNUE_VER=	62ef826d1a6d
+_NNUE_VER=	3475407dc199
 
 WRKSRC_SUBDIR=	src
 
