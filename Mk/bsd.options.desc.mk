@@ -492,6 +492,7 @@ TOMCAT7_DESC?=		Tomcat 7.x support
 TOMCAT8_DESC?=		Tomcat 8.x support
 TOMCAT85_DESC?=		Tomcat 8.5.x support
 TOMCAT9_DESC?=		Tomcat 9.x support
+TOMCAT10_DESC?=		Tomcat 10.x support
 TOOLAME_DESC?=		TooLAME MP2 audio encoder support
 TREMOR_DESC?=		Tremor audio decoder support
 TTA_DESC?=		TTA lossless audio format support
