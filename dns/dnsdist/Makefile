@@ -28,6 +28,8 @@ USES=		bison:alias compiler:c++14-lang cpe gmake libedit libtool \
 		localbase pkgconfig tar:bz2
 USE_RC_SUBR=	dnsdist
 
+CPE_VENDOR=	powerdns
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--enable-dns-over-https \
