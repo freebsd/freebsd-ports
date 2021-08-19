@@ -1,5 +1,5 @@
 PORTNAME=	checkbashisms
-DISTVERSION=	2.19.6
+DISTVERSION=	2.21.4
 CATEGORIES=	devel perl5
 MASTER_SITES=	DEBIAN/pool/main/d/devscripts/
 DISTNAME=	devscripts_${PORTVERSION}
@@ -11,11 +11,12 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5 shebangfix tar:xz
-SHEBANG_FILES=	scripts/checkbashisms.pl
 USE_PERL5=	run
 
-NO_BUILD=	yes
+SHEBANG_FILES=	scripts/checkbashisms.pl
+
 NO_ARCH=	yes
+NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/devscripts-${PORTVERSION}
 
 PLIST_FILES=	bin/checkbashisms \
