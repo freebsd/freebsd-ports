@@ -1,7 +1,7 @@
 # Created by: Michael Williams <ports@mgwsoftware.com>
 
 PORTNAME=	dwarffortress
-DISTVERSION=	0.47.04
+DISTVERSION=	0.47.05
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.bay12games.com/dwarves/
 PKGNAMEPREFIX=	linux-
