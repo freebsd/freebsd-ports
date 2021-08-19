@@ -19,6 +19,8 @@ LICENSE_FILE_LGPL3=		${WRKSRC}/image_LICENSE_OOo.txt
 LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE_YORICK.txt
 LICENSE_FILE_APACHE11=		${WRKSRC}/LICENSE_COLORBREWER.txt
 
+BROKEN_i386=	Building TVTK classes... Fatal Python error: Segmentation fault # might be specific to Mayavi or Python versions
+
 BUILD_DEPENDS=	vtk9>0:math/vtk9 \
 		${PYNUMPY} \
 		${PY_SPHINX} \
