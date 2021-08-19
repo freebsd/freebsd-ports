@@ -1,5 +1,5 @@
 PORTNAME=	fts-xapian
-DISTVERSION=	1.4.11
+DISTVERSION=	1.4.12
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/grosjo/fts-xapian/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	dovecot-
