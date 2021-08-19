@@ -286,7 +286,6 @@ include/wine/windows/d3dvec.inl
 include/wine/windows/d3dx10.h
 include/wine/windows/d3dx10async.h
 include/wine/windows/d3dx10core.h
-include/wine/windows/d3dx10core.idl
 include/wine/windows/d3dx10math.h
 include/wine/windows/d3dx10tex.h
 include/wine/windows/d3dx11.h
@@ -972,6 +971,7 @@ include/wine/windows/wincred.h
 include/wine/windows/wincrypt.h
 include/wine/windows/windef.h
 include/wine/windows/windns.h
+include/wine/windows/windot11.h
 include/wine/windows/windows.foundation.collections.h
 include/wine/windows/windows.foundation.collections.idl
 include/wine/windows/windows.foundation.h
@@ -1551,6 +1551,7 @@ lib/wine/%%WINEARCH%%-unix/dxdiagn.dll.so
 lib/wine/%%WINEARCH%%-unix/dxgi.dll.so
 %%STAGING%%lib/wine/%%WINEARCH%%-unix/dxgkrnl.sys.so
 %%STAGING%%lib/wine/%%WINEARCH%%-unix/dxgmms1.sys.so
+lib/wine/%%WINEARCH%%-unix/dxtrans.dll.so
 lib/wine/%%WINEARCH%%-unix/dxva2.dll.so
 lib/wine/%%WINEARCH%%-unix/eject.exe.so
 lib/wine/%%WINEARCH%%-unix/esent.dll.so
@@ -2327,6 +2328,7 @@ lib/wine/%%WINEARCH%%-unix/wpcap.dll.so
 lib/wine/%%WINEARCH%%-unix/wpcap.so
 lib/wine/%%WINEARCH%%-unix/write.exe.so
 lib/wine/%%WINEARCH%%-unix/ws2_32.dll.so
+lib/wine/%%WINEARCH%%-unix/ws2_32.so
 lib/wine/%%WINEARCH%%-unix/wscript.exe.so
 lib/wine/%%WINEARCH%%-unix/wsdapi.dll.so
 lib/wine/%%WINEARCH%%-unix/wshom.ocx.so
@@ -2800,6 +2802,7 @@ lib/wine/%%WINEARCH%%-windows/dxdiagn.dll
 lib/wine/%%WINEARCH%%-windows/dxgi.dll
 %%STAGING%%lib/wine/%%WINEARCH%%-windows/dxgkrnl.sys
 %%STAGING%%lib/wine/%%WINEARCH%%-windows/dxgmms1.sys
+lib/wine/%%WINEARCH%%-windows/dxtrans.dll
 lib/wine/%%WINEARCH%%-windows/dxva2.dll
 lib/wine/%%WINEARCH%%-windows/eject.exe
 lib/wine/%%WINEARCH%%-windows/esent.dll
