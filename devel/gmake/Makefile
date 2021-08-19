@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--program-prefix=g \
 
 USES=		cpe tar:lz
 CPE_VENDOR=	gnu
+CPE_PRODUCT=	make
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
