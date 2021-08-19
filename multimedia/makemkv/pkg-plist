@@ -9,5 +9,6 @@ sbin/update-makemkv-drives
 share/MakeMKV/appdata.tar
 share/MakeMKV/blues.jar
 share/MakeMKV/blues.policy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/update-makemkv-key.sh
 @postexec update-makemkv-drives
 @preunexec rm -fr %%LINUXBASE%%/etc/makemkv

@@ -1,7 +1,7 @@
 # Created by: Felix Palmen <felix@palmen-it.de>
 
 PORTNAME=	makemkv
-PORTVERSION=	1.16.3
+PORTVERSION=	1.16.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.makemkv.com/download/:makemkv \
 		http://www.makemkv.com/download/old/:makemkv \
@@ -51,8 +51,8 @@ SUB_FILES=	update-makemkv-drives
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 PLIST_SUB=	LINUXBASE=${LINUXBASE}
 
-FDKAACVERSION=	2.0.1
-FFMPEGVERSION=	4.3.2
+FDKAACVERSION=	2.0.2
+FFMPEGVERSION=	4.4
 OPENSSLVERSION=	1.0.2
 OPENSSLPATCHLEVEL=	k
 OPENSSLFULLVER=	${OPENSSLVERSION}${OPENSSLPATCHLEVEL}
@@ -61,6 +61,8 @@ LINUXARCH=	${ARCH:S/amd64/x86_64/}
 LINUXTRIPLET=	${LINUXARCH}-redhat-linux
 LINUXLIBDIR=	${LINUXBASE}/${"${LINUXARCH:Mx86_64}" != "":?lib64:lib}
 OPENSSLTARGET=	${"${LINUXARCH:Mx86_64}" != "":?linux-x86_64:linux-elf}
+
+OPTIONS_DEFINE=	EXAMPLES
 
 PATCHELF_CMD?=	${LOCALBASE}/bin/patchelf
 
@@ -155,4 +157,15 @@ post-install:
 		${INSTALL_SCRIPT} ${WRKDIR}/update-makemkv-drives \
 			${STAGEDIR}${PREFIX}/sbin
 
-.include <bsd.port.mk>
+post-install-EXAMPLES-on:
+		${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+		${INSTALL_DATA} ${FILESDIR}/update-makemkv-key.sh \
+			${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+MAKE_JOBS_UNSAFE=	yes
+.endif
+
+.include <bsd.port.post.mk>
