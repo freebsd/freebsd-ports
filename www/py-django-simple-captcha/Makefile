@@ -1,8 +1,7 @@
 # Created by: John Hixson <john@ixsystems.com>
 
 PORTNAME=	django-simple-captcha
-PORTVERSION=	0.5.12
-PORTREVISION=	2
+PORTVERSION=	0.5.14
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
