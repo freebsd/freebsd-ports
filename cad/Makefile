@@ -6,6 +6,7 @@
     SUBDIR += admesh
     SUBDIR += adms
     SUBDIR += alliance
+    SUBDIR += appcsxcad
     SUBDIR += archimedes
     SUBDIR += astk-client
     SUBDIR += astk-serveur
