@@ -25,6 +25,9 @@ PYDISTUTILS_BUILD_TARGET=	build build_ext
 PYDISTUTILS_BUILDARGS+=	--include-dirs=${LOCALBASE}/include \
 			--library-dirs=${LOCALBASE}/lib
 
+post-extract:
+	@${RM} ${WRKSRC}/playhouse/*.c
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/playhouse/*.so
 
