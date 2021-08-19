@@ -290,6 +290,7 @@
     SUBDIR += flintqs
     SUBDIR += flopc++
     SUBDIR += form
+    SUBDIR += fparser
     SUBDIR += fpc-fftw
     SUBDIR += fpc-gmp
     SUBDIR += fpc-numlib

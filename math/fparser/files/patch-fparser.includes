@@ -1,0 +1,14 @@
+- same as https://src.fedoraproject.org/rpms/fparser/blob/f26/f/fparser.includes.patch
+
+diff -urN extrasrc/fptypes.hh extrasrc/fptypes.hh
+--- extrasrc/fptypes.hh	2012-11-11 09:25:15.000000000 +0100
++++ extrasrc/fptypes.hh	2014-04-16 18:54:52.813675207 +0200
+@@ -16,7 +16,7 @@
+ #ifndef ONCE_FPARSER_TYPES_H_
+ #define ONCE_FPARSER_TYPES_H_
+ 
+-#include "../fpconfig.hh"
++#include "fpconfig.hh"
+ #include <cstring>
+ 
+ #ifdef ONCE_FPARSER_H_
