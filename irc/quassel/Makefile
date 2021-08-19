@@ -10,6 +10,8 @@ COMMENT?=	Qt 5 based distributed IRC client (client and monolithic binary)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=  ${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs
+
 USES=		cmake compiler:c++11-lib cpe pkgconfig qca qt:5 tar:bzip2
 USE_GITHUB=	yes
 USE_OPENLDAP=	yes
