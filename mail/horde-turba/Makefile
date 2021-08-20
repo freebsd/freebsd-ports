@@ -40,6 +40,8 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Url \
 		Horde_Util \
 		Horde_View
+
+CPE_VENDOR=	horde
 NO_ARCH=	yes
 
 FACEBOOK_USE=	HORDE_RUN=Horde_Service_Facebook
