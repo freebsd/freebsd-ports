@@ -1,3 +1,33 @@
+  <vuln vid="733afd81-01cf-11ec-aec9-0800273f11ea">
+    <topic>gitea -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.14.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea Team reports for release 1.14.6:</p>
+	<blockquote cite="https://blog.gitea.io/2021/08/gitea-1.14.6-is-released/">
+	  <ul>
+	    <li>Bump github.com/markbates/goth from v1.67.1 to v1.68.0 (#16538) (#16540)</li>
+	    <li>Switch to maintained JWT lib (#16532) (#16535)</li>
+	    <li>Upgrade to latest version of golang-jwt (as forked for 1.14) (#16590) (#16607)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.14.6</url>
+      <freebsdpr>ports/257973</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2021-07-24</discovery>
+      <entry>2021-08-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="70e71a24-0151-11ec-bf0c-080027eedc6a">
     <topic>bouncycastle15 -- bcrypt password checking vulnerability</topic>
     <affects>
