@@ -1,8 +1,8 @@
 PORTNAME=	softether
-DISTVERSION=	4.34-9745
-PORTREVISION=	3
+DISTVERSION=	4.38-9760
+PORTREVISION=	0
 CATEGORIES=	security net-vpn
-MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-rtm-2020.04.05-tree/Source_Code/
+MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-rtm-2020.08.17-tree/Source_Code/
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}-rtm
 
 MAINTAINER=	meta@FreeBSD.org
