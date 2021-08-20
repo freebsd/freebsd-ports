@@ -1,8 +1,7 @@
 # Created by: Eugene Grosbein <ports@grosbein.net>
 
 PORTNAME=	bouncycastle
-PORTVERSION=	1.61
-PORTREVISION=	1
+PORTVERSION=	1.69
 CATEGORIES=	java security
 MASTER_SITES=	http://www.bouncycastle.org/download/ \
 		http://polydistortion.net/bc/download/
