@@ -1,6 +1,6 @@
 PORTNAME=	soju
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.2.20210709
 CATEGORIES=	irc
 MASTER_SITES=	https://git.sr.ht/~emersion/go-scfg/archive/:goscfg \
 		https://git.sr.ht/~sircmpwn/go-bare/archive/:gobare
@@ -20,6 +20,7 @@ OPTIONS_DEFINE=		DOCS
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	emersion
+GH_TAGNAME=	c5d52592
 GH_TUPLE=	emersion:go-sasl:7bfe0ed36a21:emersion_go_sasl/vendor/github.com/emersion/go-sasl \
 		go-irc:irc:v3.1.4:go_irc_irc/vendor/gopkg.in/irc.v3 \
 		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \

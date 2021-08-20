@@ -1,10 +1,10 @@
-TIMESTAMP = 1623672450
+TIMESTAMP = 1629439976
 SHA256 (142a8aa629fc.tar.gz) = e4207bf970ca3bee03c7e71759af7dbe8f937fcf7a34a541af10ea2c7109a216
 SIZE (142a8aa629fc.tar.gz) = 3112
 SHA256 (46f9b5e5bcf9.tar.gz) = 01aa61b23e1e4e01443ccfaf94b3dded8b3e6b9f5d05aee9a25854968a675489
 SIZE (46f9b5e5bcf9.tar.gz) = 24957
-SHA256 (emersion-soju-v0.1.2_GH0.tar.gz) = 47c8a0e65675a4d5dff6e0716a55f8e13293a3dfc43326ec4d22745886d2317e
-SIZE (emersion-soju-v0.1.2_GH0.tar.gz) = 76291
+SHA256 (emersion-soju-v0.1.2.20210709-c5d52592_GH0.tar.gz) = 836a8ecefc39a2605b05e60d47334b08343c23af93997b0ebfc99444f5c2dc41
+SIZE (emersion-soju-v0.1.2.20210709-c5d52592_GH0.tar.gz) = 86810
 SHA256 (emersion-go-sasl-7bfe0ed36a21_GH0.tar.gz) = 81a37103a797ba674f0d023c98165ec84a45799971d8834e345077d084abbbb7
 SIZE (emersion-go-sasl-7bfe0ed36a21_GH0.tar.gz) = 7106
 SHA256 (go-irc-irc-v3.1.4_GH0.tar.gz) = 80d869495bbc0e732cb33760833a7d3c35a25e0dbd3a720f57bfbf86884d2f87
