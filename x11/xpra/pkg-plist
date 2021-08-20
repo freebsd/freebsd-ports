@@ -1400,7 +1400,6 @@ share/pixmaps/xpra.png
 %%DATADIR%%/icons/close.png
 %%DATADIR%%/icons/compressed.png
 %%DATADIR%%/icons/connect.png
-%%DATADIR%%/icons/device.png
 %%DATADIR%%/icons/disconnected.png
 %%DATADIR%%/icons/display.png
 %%DATADIR%%/icons/download.png

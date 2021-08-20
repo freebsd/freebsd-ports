@@ -1,6 +1,5 @@
 PORTNAME=	xpra
-PORTVERSION=	4.2
-PORTREVISION=	1
+PORTVERSION=	4.2.2
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -11,7 +10,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	brotli:archivers/brotli \
 		pandoc:textproc/hs-pandoc
-LIB_DEPENDS=	libwebp.so:graphics/webp
+LIB_DEPENDS=	libwebp.so:graphics/webp \
+		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}bencode.py>1:converters/py-bencode.py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}brotli>1:archivers/py-brotli@${PY_FLAVOR} \
