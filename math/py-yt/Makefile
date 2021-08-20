@@ -12,6 +12,8 @@ COMMENT=	Analysis and visualization toolkit for volumetric data
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+BROKEN_i386=	call to 'countOnes' is ambiguous, see https://github.com/yt-project/yt/issues/3477
+
 # dependencies are in setup.cfg
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	\
