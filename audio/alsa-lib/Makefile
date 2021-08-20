@@ -12,7 +12,8 @@ COMMENT=	ALSA compatibility library
 LICENSE=	LGPL21+
 
 USES=		cpe libtool:keepla tar:bzip2
-CPE_VENDOR=	alsa
+CPE_VENDOR=	alsa-project
+CPE_PRODUCT=	alsa
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfdir="\$${prefix}/libdata/pkgconfig"
