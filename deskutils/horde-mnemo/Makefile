@@ -32,6 +32,8 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Text_Filter \
 		Horde_Util
 
+CPE_VENDOR=	horde
+
 OPTIONS_DEFAULT=	PDF
 OPTIONS_DEFINE=		PDF
 PDF_DESC=		Support PDF generation
