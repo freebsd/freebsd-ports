@@ -11,7 +11,7 @@ COMMENT=	Web caching proxy server based on haproxy
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-USES=		compiler:c++11-lang cpe gmake
+USES=		compiler:c++11-lang gmake
 USE_RC_SUBR=	nuster
 USE_GITHUB=	yes
 GH_ACCOUNT=	jiangwenyuan
