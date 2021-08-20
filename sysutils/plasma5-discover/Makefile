@@ -20,4 +20,6 @@ USE_QT=		concurrent core dbus declarative gui network svg \
 		widgets x11extras xml \
 		buildtools_build qmake_build testlib_build
 
+CPE_VENDOR=	kde
+
 .include <bsd.port.mk>
