@@ -1,3 +1,65 @@
+  <vuln vid="70e71a24-0151-11ec-bf0c-080027eedc6a">
+    <topic>bouncycastle15 -- bcrypt password checking vulnerability</topic>
+    <affects>
+      <package>
+	<name>bouncycastle15</name>
+	<range><lt>1.67</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Bouncy Castle team reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28052">
+	  <p>
+	    The OpenBSDBCrypt.checkPassword utility method compared incorrect
+	    data when checking the password, allowing incorrect passwords to
+	    indicate they were matching with previously hashed ones that were
+	    different.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-28052</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28052</url>
+    </references>
+    <dates>
+      <discovery>2020-11-02</discovery>
+      <entry>2021-08-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="89d5bca6-0150-11ec-bf0c-080027eedc6a">
+    <topic>bouncycastle15 -- EC math vulnerability</topic>
+    <affects>
+      <package>
+	<name>bouncycastle15</name>
+	<range><lt>1.66</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Bouncy Castle team reports::</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15522">
+	  <p>
+	    Bouncy Castle BC Java before 1.66 has a timing issue within the EC
+	    math library that can expose information about the private key when
+	    an attacker is able to observe timing information for the generation
+	    of multiple deterministic ECDSA signatures.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-15522</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15522</url>
+    </references>
+    <dates>
+      <discovery>2020-07-04</discovery>
+      <entry>2021-08-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f4c54b81-bcc8-11eb-a7a6-080027f515ea">
     <topic>binutils -- excessive debug section size can cause excessive memory consumption in bfd's dwarf2.c read_section()</topic>
     <affects>
