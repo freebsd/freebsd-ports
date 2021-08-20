@@ -34,7 +34,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/clang-\$$/s//clang$$/' \
 		${WRKSRC}/IGC/cmake/igc_find_opencl_clang.cmake
 # No need to abort on every benign warning enabled by default
+# Disable debug symbols unless WITH_DEBUG passed via CXXFLAGS
 	@${REINPLACE_CMD} -e 's/"-Werror"//; /-Werror/d' \
+		-e 's/"-g"//' \
 		${WRKSRC}/IGC/CMakeLists.txt
 
 pre-configure:
