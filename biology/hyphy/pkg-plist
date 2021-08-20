@@ -91,6 +91,7 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/CodonModelCompare.bf
 %%DATADIR%%/TemplateBatchFiles/CodonToProtein.bf
 %%DATADIR%%/TemplateBatchFiles/ConvertDataFile.bf
+%%DATADIR%%/TemplateBatchFiles/DirectionalREL.bf
 %%DATADIR%%/TemplateBatchFiles/DistanceMatrix.bf
 %%DATADIR%%/TemplateBatchFiles/Distances/CodonTools.def
 %%DATADIR%%/TemplateBatchFiles/Distances/CodonTools2.def
