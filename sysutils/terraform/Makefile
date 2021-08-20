@@ -10,8 +10,8 @@ COMMENT=	Provides a common configuration to launch infrastructure
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
-
+USES=		cpe go:modules
+CPE_VENDOR=	hashicorp
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
 GH_TUPLE=	Azure:azure-sdk-for-go:v52.5.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
