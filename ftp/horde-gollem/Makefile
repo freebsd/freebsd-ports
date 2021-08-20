@@ -36,4 +36,6 @@ USE_HORDE_RUN=	Horde_Role \
 USE_HORDE_RUN+=	Horde_Db \
 		Horde_Share
 
+CPE_VENDOR=	horde
+
 .include <bsd.port.mk>
