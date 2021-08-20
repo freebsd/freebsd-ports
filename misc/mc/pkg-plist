@@ -267,6 +267,7 @@ man/man1/mcview.1.gz
 %%EDITOR%%%%DATADIR%%/syntax/jal.syntax
 %%EDITOR%%%%DATADIR%%/syntax/java.syntax
 %%EDITOR%%%%DATADIR%%/syntax/js.syntax
+%%EDITOR%%%%DATADIR%%/syntax/json.syntax
 %%EDITOR%%%%DATADIR%%/syntax/kotlin.syntax
 %%EDITOR%%%%DATADIR%%/syntax/latex.syntax
 %%EDITOR%%%%DATADIR%%/syntax/lisp.syntax

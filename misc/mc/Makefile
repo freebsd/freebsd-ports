@@ -1,8 +1,7 @@
-# Created by: torstenb@FreeBSD.org
+# Created by: Torsten Blum <torstenb@FreeBSD.org>
 
 PORTNAME=	mc
-PORTVERSION=	4.8.26
-PORTREVISION=	2
+PORTVERSION=	4.8.27
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		https://ftp.osuosl.org/pub/midnightcommander/
@@ -72,10 +71,8 @@ X11_VARS=		CONFLICTS_INSTALL+="mc-nox11-[0-9]*"
 X11_VARS_OFF=		CONFLICTS_INSTALL+="mc-[0-9]*"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|missing-parameter-type|unused-variable|; \
-		s|but-set-variable|variable|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|x$$UNRAR_VERSION = x|$$UNRAR_VERSION -ge |' \
+	@${REINPLACE_CMD} -e 's|clang||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|x$$UNRAR_VERSION.*x|$$UNRAR_VERSION -ge |' \
 		${WRKSRC}/src/vfs/extfs/helpers/urar.in
 
 post-patch-EXTATTR-off:
