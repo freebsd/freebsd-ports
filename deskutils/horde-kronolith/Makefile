@@ -53,6 +53,8 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Util \
 		Horde_View
 
+CPE_VENDOR=	horde
+
 RUN_DEPENDS+=	${PEARDIR}/Date.php:devel/pear-Date@${PHP_FLAVOR}
 
 DATE_HOLIDAYS_RUN_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays@${PHP_FLAVOR}
