@@ -17,6 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jeromerobert
 
 CPE_VENDOR=	kdirstat_project
+CPE_PRODUCT=	kdirstat
 USE_KDE=	auth codecs completion config configwidgets coreaddons doctools \
 		i18n iconthemes jobwidgets kio service widgetsaddons xmlgui
 USE_QT=		buildtools_build core gui dbus network qmake_build widgets xml
