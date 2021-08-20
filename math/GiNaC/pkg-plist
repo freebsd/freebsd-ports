@@ -1,9 +1,5 @@
 bin/ginsh
 bin/viewgar
-include/ginac/compiler.h
-include/ginac/factor.h
-include/ginac/parse_context.h
-include/ginac/parser.h
 include/ginac/add.h
 include/ginac/archive.h
 include/ginac/assertion.h
@@ -11,6 +7,7 @@ include/ginac/basic.h
 include/ginac/class_info.h
 include/ginac/clifford.h
 include/ginac/color.h
+include/ginac/compiler.h
 include/ginac/constant.h
 include/ginac/container.h
 include/ginac/ex.h
@@ -18,6 +15,7 @@ include/ginac/excompiler.h
 include/ginac/expair.h
 include/ginac/expairseq.h
 include/ginac/exprseq.h
+include/ginac/factor.h
 include/ginac/fail.h
 include/ginac/fderivative.h
 include/ginac/flags.h
@@ -28,6 +26,7 @@ include/ginac/idx.h
 include/ginac/indexed.h
 include/ginac/inifcns.h
 include/ginac/integral.h
+include/ginac/integration_kernel.h
 include/ginac/lst.h
 include/ginac/matrix.h
 include/ginac/mul.h
@@ -35,6 +34,8 @@ include/ginac/ncmul.h
 include/ginac/normal.h
 include/ginac/numeric.h
 include/ginac/operators.h
+include/ginac/parse_context.h
+include/ginac/parser.h
 include/ginac/power.h
 include/ginac/print.h
 include/ginac/pseries.h
@@ -49,8 +50,8 @@ include/ginac/version.h
 include/ginac/wildcard.h
 lib/libginac.a
 lib/libginac.so
-lib/libginac.so.6
-lib/libginac.so.6.4.5
+lib/libginac.so.11
+lib/libginac.so.11.1.0
 libdata/pkgconfig/ginac.pc
 libexec/ginac-excompiler
 man/man1/ginsh.1.gz
