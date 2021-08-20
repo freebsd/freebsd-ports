@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.ginac.de/CLN/ \
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Class Library for Numbers
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 GNU_CONFIGURE=	yes
