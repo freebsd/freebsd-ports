@@ -3,14 +3,18 @@
   message: <<EOM
 You installed Dynare: Economics software package.
 
-Dynare runs as a 'dynare' command from the Octave prompt.
+Dynare runs as the 'dynare {example}.mod {args}' command
+in Octave.
 
-In order to make this command available you should:
-1. In the beginning of session run the command
-   'addpath %%PREFIX%%/lib/dynare/matlab'
-   from the Octave prompt
+In order to make Dynare available in Octave you should:
+1. Add the line 'addpath %%PREFIX%%/lib/dynare/matlab'
+   to ~/.octaverc
 or
-2. Add the same command to ~/.octaverc
+2. Run the same command in the beginning of each Octave
+   session.
+
+You can also run Dynare using one command:
+$ octave -c 'dynare {example}.mod {args}'
 
 EOM
 }
