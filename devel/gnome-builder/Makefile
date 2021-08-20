@@ -32,7 +32,7 @@ PORTDOCS=	*
 
 CONFLICTS_BUILD=	gnome-builder-3.16.*
 
-USES=		compiler:c++11-lang cpe desktop-file-utils gettext gnome \
+USES=		compiler:c++11-lang desktop-file-utils gettext gnome \
 		localbase:lfdlags meson pkgconfig python:3.6+,build tar:xz \
 		shebangfix
 USE_GNOME=	cairo gtksourceview4 introspection libxml2 vte3
@@ -40,7 +40,6 @@ SHEBANG_FILES=	${WRKSRC}/src/plugins/maven/maven_plugin.py \
 		${WRKSRC}/src/plugins/gradle/gradle_plugin.py
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-CPE_VENDOR=	gnome
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 MESON_ARGS=	-Dplugin_color_picker=false \
