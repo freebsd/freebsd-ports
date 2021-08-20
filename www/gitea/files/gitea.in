@@ -31,6 +31,12 @@ pidfile="/var/run/${name}.pid"
 start_cmd="${name}_start"
 
 gitea_start() {
+	for d in /var/db/gitea /var/log/gitea; do
+		if [ ! -e "$d" ]; then
+			mkdir "$d"
+			chown ${gitea_user} "$d"
+		fi
+	done
 	/usr/sbin/daemon %%DAEMONARGS%% \
 		-u ${gitea_user} -p ${pidfile} \
 		/usr/bin/env -i \
