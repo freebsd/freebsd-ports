@@ -18,4 +18,6 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Rdo \
 		Horde_Util
 
+CPE_VENDOR=	horde
+
 .include <bsd.port.mk>
