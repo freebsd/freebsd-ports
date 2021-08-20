@@ -1,8 +1,3 @@
 @sample %%ETCDIR%%/conf/app.ini.sample
 %%ETCDIR%%/conf/app.ini.defaults
 sbin/gitea
-@owner git
-@group git
-@dir /var/db/gitea
-@dir /var/log/gitea
-@dir /var/run/gitea
