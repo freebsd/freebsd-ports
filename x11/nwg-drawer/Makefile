@@ -1,6 +1,6 @@
 PORTNAME=	nwg-drawer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.6
+DISTVERSION=	0.1.7
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		gnome go:modules pkgconfig
 USE_GITHUB=	yes
