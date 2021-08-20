@@ -8,7 +8,7 @@ COMMENT=	Plasma5 KWallet PAM Integration
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
-USES=		cmake cpe gettext kde:5 qt:5 tar:xz
+USES=		cmake gettext kde:5 qt:5 tar:xz
 USE_KDE=	ecm wallet
 USE_QT=		gui \
 		buildtools_build qmake_build
