@@ -39,7 +39,8 @@ USE_GNOME=	glib20
 USE_XORG=	pixman
 USE_LDCONFIG=	yes
 
-CPE_VENDOR=	redhat
+CPE_VENDOR=	spice_project
+CPE_PRODUCT=	spice
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-celt051 \
