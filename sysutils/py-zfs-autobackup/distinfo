@@ -1,3 +1,3 @@
-TIMESTAMP = 1598460232
-SHA256 (zfs_autobackup-3.0.tar.gz) = cd3add432fbcc7aab4007bd065e03b7102f92bae8b027f4e10bec261ba78717c
-SIZE (zfs_autobackup-3.0.tar.gz) = 61704
+TIMESTAMP = 1629584604
+SHA256 (zfs_autobackup-3.1.tar.gz) = 42c22001717b3d7cfdae6297fedc11b2dd1eb2a4bd25b6bb1c9232dd3b70ad67
+SIZE (zfs_autobackup-3.1.tar.gz) = 71646
