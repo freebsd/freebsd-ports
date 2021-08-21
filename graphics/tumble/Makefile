@@ -6,7 +6,7 @@ DISTVERSION=	0.36
 PORTREVISION=	1
 CATEGORIES=	graphics print
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates a PDF file from image files
 
 LICENSE=	GPLv2
