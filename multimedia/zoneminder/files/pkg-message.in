@@ -171,6 +171,11 @@ To perform an upgrade from any version:
 	
 3. Start ZoneMinder
 	service zoneminder start
+
+If you see error ERROR 1419 (HY000) during database update, set 
+log_bin_trust_function_creators = 1 in runtime or in mysql server config;
+
+For example, login as root and issue SET GLOBAL log_bin_trust_function_creators = 1;
 EOM
 }
 ]
