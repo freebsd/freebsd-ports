@@ -2,7 +2,7 @@
 
 PORTNAME=	hypre
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.22.0
+DISTVERSION=	2.22.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,10 +15,11 @@ LICENSE_FILE_MIT=	${WRKSRC}/../LICENSE-MIT
 
 BROKEN_powerpc64=	fails to compile: ./DistributedMatrixPilutSolver.h:97:20: expected ')' before '->' token
 
-USES=		blaslapack fortran gmake localbase # gmake is only for the 'test' target
+USES=		blaslapack fortran gmake localbase
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	hypre-space
-USE_LDCONFIG=	yes
 
 WRKSRC_SUBDIR=	src
 
