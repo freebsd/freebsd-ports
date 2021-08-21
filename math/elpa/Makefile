@@ -15,10 +15,13 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING/lgpl.txt
 LIB_DEPENDS=	libopenblas.so:math/openblas
 
 USES=		compiler:c11 fortran gmake libtool localbase perl5 shebangfix
-SHEBANG_GLOB=	*.pl
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-avx --disable-avx2 --disable-static
 USE_LDCONFIG=	yes
+
+SHEBANG_GLOB=	*.pl
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-avx --disable-avx2 --disable-static \
+		--disable-c-tests
 
 INSTALL_TARGET=	install-strip
 
@@ -36,6 +39,9 @@ MPI_LIB_DEPENDS=		libmpich.so:net/mpich \
 				libscalapack.so:math/scalapack
 
 PORTDOCS=	*
+
+post-patch: # workaround for: https://github.com/marekandreas/elpa/issues/6
+	@${FIND} ${WRKSRC} -name "*.mk" | ${XARGS} ${REINPLACE_CMD} -e 's|-Werror| |'
 
 .include <bsd.port.options.mk>
 
