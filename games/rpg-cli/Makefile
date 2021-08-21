@@ -1,5 +1,5 @@
 PORTNAME=	rpg-cli
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	games
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -12,7 +12,8 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	facundoolano
 
-CARGO_CRATES=	atty-0.2.14 \
+CARGO_CRATES=	anyhow-1.0.42 \
+		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bincode-1.3.3 \
 		bitflags-1.2.1 \
@@ -23,19 +24,21 @@ CARGO_CRATES=	atty-0.2.14 \
 		ctor-0.1.20 \
 		dirs-3.0.2 \
 		dirs-sys-0.3.6 \
+		dtoa-0.4.8 \
 		dunce-1.0.2 \
-		erased-serde-0.3.15 \
+		erased-serde-0.3.16 \
 		getrandom-0.2.3 \
 		ghost-0.1.2 \
-		hashbrown-0.9.1 \
+		hashbrown-0.11.2 \
 		heck-0.3.3 \
-		hermit-abi-0.1.18 \
-		indexmap-1.6.2 \
+		hermit-abi-0.1.19 \
+		indexmap-1.7.0 \
 		inventory-0.1.10 \
 		inventory-impl-0.1.10 \
 		itoa-0.4.7 \
 		lazy_static-1.4.0 \
-		libc-0.2.97 \
+		libc-0.2.98 \
+		linked-hash-map-0.5.4 \
 		once_cell-1.8.0 \
 		os_str_bytes-2.4.0 \
 		ppv-lite86-0.2.10 \
@@ -43,23 +46,24 @@ CARGO_CRATES=	atty-0.2.14 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.27 \
 		quote-1.0.9 \
-		rand-0.8.3 \
+		rand-0.8.4 \
 		rand_chacha-0.3.1 \
-		rand_core-0.6.2 \
-		rand_hc-0.3.0 \
-		redox_syscall-0.2.8 \
+		rand_core-0.6.3 \
+		rand_hc-0.3.1 \
+		redox_syscall-0.2.9 \
 		redox_users-0.4.0 \
 		ryu-1.0.5 \
 		serde-1.0.126 \
 		serde_derive-1.0.126 \
 		serde_json-1.0.64 \
+		serde_yaml-0.8.17 \
 		strsim-0.10.0 \
 		syn-1.0.73 \
 		termcolor-1.1.2 \
 		textwrap-0.12.1 \
 		typetag-0.1.7 \
 		typetag-impl-0.1.7 \
-		unicode-segmentation-1.7.1 \
+		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
 		vec_map-0.8.2 \
@@ -68,7 +72,8 @@ CARGO_CRATES=	atty-0.2.14 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		yaml-rust-0.4.5
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
