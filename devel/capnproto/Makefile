@@ -1,8 +1,7 @@
 # Created by: Felix Hanley
 
 PORTNAME=	capnproto
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -17,12 +16,15 @@ USES=		autoreconf compiler:c++14-lang gmake libtool ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	capnproto
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_lib_ssl_OPENSSL_init_ssl=yes
+
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 WRKSRC_SUBDIR=	c++
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 .include <bsd.port.mk>
