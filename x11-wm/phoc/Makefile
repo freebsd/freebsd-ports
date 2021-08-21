@@ -5,14 +5,14 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	4912c5a9454b.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
-PATCHFILES+=	00e5da6dd7a2.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
-PATCHFILES+=	b278fd6b4f57.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
-PATCHFILES+=	3f418c11d813.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
-PATCHFILES+=	39da5a00f3b3.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
-PATCHFILES+=	4a688ffec053.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
-PATCHFILES+=	8010e3d9ca00.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
-PATCHFILES+=	8ec2886673d3.patch:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
+PATCHFILES+=	4912c5a9454b.patch:-p1 # https://gitlab.gnome.org/World/Phosh/phoc/-/merge_requests/241
+PATCHFILES+=	00e5da6dd7a2.patch:-p1 # https://gitlab.gnome.org/World/Phosh/phoc/-/merge_requests/241
+PATCHFILES+=	b278fd6b4f57.patch:-p1 # https://gitlab.gnome.org/World/Phosh/phoc/-/merge_requests/241
+PATCHFILES+=	3f418c11d813.patch:-p1 # https://gitlab.gnome.org/World/Phosh/phoc/-/merge_requests/241
+PATCHFILES+=	39da5a00f3b3.patch:-p1 # https://gitlab.gnome.org/World/Phosh/phoc/-/merge_requests/241
+PATCHFILES+=	4a688ffec053.patch:-p1 # https://gitlab.gnome.org/World/Phosh/phoc/-/merge_requests/241
+PATCHFILES+=	8010e3d9ca00.patch:-p1 # https://gitlab.gnome.org/World/Phosh/phoc/-/merge_requests/241
+PATCHFILES+=	8ec2886673d3.patch:-p1 # https://gitlab.gnome.org/World/Phosh/phoc/-/merge_requests/241
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Phone compositor
@@ -33,8 +33,8 @@ USE_GITLAB=	yes
 USE_GL=		glesv2
 USE_GNOME=	gnomedesktop3
 USE_XORG=	pixman xcb
-GL_SITE=	https://source.puri.sm
-GL_ACCOUNT=	Librem5
+GL_SITE=	https://gitlab.gnome.org
+GL_ACCOUNT=	World/Phosh
 GL_COMMIT=	8e51b02c7fb9b103d8e80fb77145dddfb4b5b3a2
 SHEBANG_FILES=	build-aux/post_install.py
 CFLAGS+=	-Wno-error=format-nonliteral # clang
