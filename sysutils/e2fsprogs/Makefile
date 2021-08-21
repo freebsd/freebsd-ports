@@ -13,7 +13,7 @@
 # 		  ext2/ext3/ext4 file systems at boot, before PREFIX is mounted
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.46.3
+PORTVERSION=	1.46.4
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
@@ -336,10 +336,9 @@ post-install:
 .else
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${STAGEDIR}${PREFIX}/sbin/
 .endif
-	# these are made hardlinks to symlinks - -P avoids following them to /sbin:
-	${LN} -fP ${STAGEDIR}${PREFIX}/sbin/e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext2
-	${LN} -fP ${STAGEDIR}${PREFIX}/sbin/e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext3
-	${LN} -fP ${STAGEDIR}${PREFIX}/sbin/e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext4
+	${LN} -fs e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext2
+	${LN} -fs e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext3
+	${LN} -fs e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext4
 	# now the remainder of the usual post-install jobs:
 	${INSTALL_MAN} ${FILESDIR}/fsck_ext2fs.8 ${STAGEDIR}${PREFIX}/man/man8/
 .if ${PORT_OPTIONS:MDOCS}
