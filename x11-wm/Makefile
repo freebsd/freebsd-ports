@@ -40,7 +40,6 @@
     SUBDIR += fvwm2
     SUBDIR += fvwm3
     SUBDIR += gamescope
-    SUBDIR += gcompmgr
     SUBDIR += herbstluftwm
     SUBDIR += hikari
     SUBDIR += hs-xmonad

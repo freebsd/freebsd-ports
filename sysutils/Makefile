@@ -475,7 +475,6 @@
     SUBDIR += gotop
     SUBDIR += gpart
     SUBDIR += graffer
-    SUBDIR += graid5
     SUBDIR += graveman
     SUBDIR += graylog
     SUBDIR += grub2-bhyve

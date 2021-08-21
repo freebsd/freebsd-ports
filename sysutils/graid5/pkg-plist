@@ -1,4 +1,0 @@
-man/man8/graid5.8.gz
-/%%KMODDIR%%/geom_raid5.ko
-/lib/geom/geom_raid5.so
-/sbin/graid5

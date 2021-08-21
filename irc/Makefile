@@ -54,7 +54,6 @@
     SUBDIR += konversation
     SUBDIR += kvirc
     SUBDIR += libircclient
-    SUBDIR += lostirc
     SUBDIR += miau
     SUBDIR += muh
     SUBDIR += ngircd

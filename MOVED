@@ -16469,3 +16469,6 @@ multimedia/py-mlt|multimedia/py-mlt6|2021-07-30|Moved to a versioned directory t
 net/openldap24-sasl-client|net/openldap24-client|2021-08-01|SASL is always enabled for OpenLDAP
 textproc/py-python-language-server|textproc/py-python-lsp-server|2021-08-01|Has expired: Upstream forked and replaced by py-python-lsp-server
 games/ponscripter-sekai|games/ponscripter-07th-mod|2021-08-13|Switch to active fork
+sysutils/graid5||2021-08-21|Has expired: Module contains subtile errors and is obsolete by ZFS raidz. Consider migrating to ZFS.
+x11-wm/gcompmgr||2021-08-21|Has expired: Abandonware since 2005, using discontinued libraries
+irc/lostirc||2021-08-21|Has expired: Abandonware since 2005, dependens on discontinued libraries
