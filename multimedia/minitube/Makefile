@@ -8,6 +8,8 @@ COMMENT=	TV-like client for YouTube
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_14=	clang breaks: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=257978
+
 LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
 USES=		compiler:c++11-lang gl qmake qt:5
