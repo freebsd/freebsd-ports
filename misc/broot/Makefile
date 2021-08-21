@@ -1,6 +1,6 @@
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.2
+DISTVERSION=	1.6.3
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -49,7 +49,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		crc32fast-1.2.1 \
 		crossbeam-0.8.1 \
 		crossbeam-channel-0.5.1 \
-		crossbeam-deque-0.8.0 \
+		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.5 \
 		crossbeam-queue-0.3.2 \
 		crossbeam-utils-0.8.5 \
@@ -62,7 +62,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		csv2svg-0.1.5 \
 		custom_error-1.9.2 \
 		deflate-0.8.6 \
-		deser-hjson-1.0.1 \
+		deser-hjson-1.0.2 \
 		directories-3.0.2 \
 		directories-next-2.0.0 \
 		dirs-sys-0.3.6 \
@@ -168,8 +168,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-1.1.0 \
 		secular-1.0.1 \
-		serde-1.0.126 \
-		serde_derive-1.0.126 \
+		serde-1.0.127 \
+		serde_derive-1.0.127 \
 		serde_json-1.0.66 \
 		signal-hook-0.1.17 \
 		signal-hook-0.3.9 \
@@ -183,7 +183,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		strsim-0.8.0 \
 		svg-0.8.2 \
 		syn-1.0.74 \
-		syntect-4.5.0 \
+		syntect-4.6.0 \
 		tempfile-3.2.0 \
 		termimad-0.10.3 \
 		termimad-0.14.0 \
