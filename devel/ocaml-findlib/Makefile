@@ -44,7 +44,7 @@ post-install:
 	    ${OCAML_SITELIBDIR}/findlib/findlib_dynload.cmxs \
 	    ${OCAML_SITELIBDIR}/findlib/findlib_top.cmxs
 # Spacetime profiling is only available for native code on 64-bit targets
-.if ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH} == powerpcspe
+.if ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH} == powerpcspe
 	@${REINPLACE_CMD} -e '/raw_spacetime/d' ${TMPPLIST}
 .endif
 
