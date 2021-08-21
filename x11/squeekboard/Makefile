@@ -24,8 +24,8 @@ RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 USES=		cargo compiler:c11 gettext-tools gnome meson pkgconfig
 USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 gtk30
-GL_SITE=	https://source.puri.sm
-GL_ACCOUNT=	Librem5
+GL_SITE=	https://gitlab.gnome.org
+GL_ACCOUNT=	World/Phosh
 GL_COMMIT=	8293c5f10dbd5c1fdb071e1f7e4a97a4cd52d592
 MAKE_ENV=	${CARGO_ENV}
 MESON_ARGS=	-Dstrict=false

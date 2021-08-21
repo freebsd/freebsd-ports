@@ -87,5 +87,5 @@ SHA256 (rust/crates/xkbcommon-0.4.0.crate) = fda0ea5f7ddabd51deeeda7799bee062741
 SIZE (rust/crates/xkbcommon-0.4.0.crate) = 57500
 SHA256 (rust/crates/yaml-rust-0.4.5.crate) = 56c1936c4cc7a1c9ab21a1ebb602eb942ba868cbd44a99cb7cdc5892335e1c85
 SIZE (rust/crates/yaml-rust-0.4.5.crate) = 47783
-SHA256 (Librem5-squeekboard-8293c5f10dbd5c1fdb071e1f7e4a97a4cd52d592_GL0.tar.gz) = b537780956075fde35458ff25ed05c7e7b29a0568de182fd9d2ee5fccfd9bf16
-SIZE (Librem5-squeekboard-8293c5f10dbd5c1fdb071e1f7e4a97a4cd52d592_GL0.tar.gz) = 172266
+SHA256 (World/Phosh-squeekboard-8293c5f10dbd5c1fdb071e1f7e4a97a4cd52d592_GL0.tar.gz) = b537780956075fde35458ff25ed05c7e7b29a0568de182fd9d2ee5fccfd9bf16
+SIZE (World/Phosh-squeekboard-8293c5f10dbd5c1fdb071e1f7e4a97a4cd52d592_GL0.tar.gz) = 172266
