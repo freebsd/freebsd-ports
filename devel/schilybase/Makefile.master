@@ -1,4 +1,4 @@
-DISTVERSION=	2021-07-29
+DISTVERSION=	2021-08-14
 MASTER_SITES=	SF/schilytools
 DISTNAME=	schily-${DISTVERSION}
 
@@ -25,8 +25,8 @@ LICENSE_PERMS_BSD1CLAUSE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 # schilybase has all the libraries
 .if ${PORTNAME} != "schilybase"
-BUILD_DEPENDS+=	schilybase=${PORTVERSION}:devel/schilybase
-RUN_DEPENDS+=	schilybase=${PORTVERSION}:devel/schilybase
+BUILD_DEPENDS+=	schilybase=${PORTVERSION}_${PORTREVISION}:devel/schilybase
+RUN_DEPENDS+=	schilybase=${PORTVERSION}_${PORTREVISION}:devel/schilybase
 .endif
 
 .if "${BOOTSTRAP_SMAKE}" != "yes"
@@ -54,8 +54,8 @@ PKGMESSAGE?=	${.CURDIR}/pkg-message
 DESCR=		${.CURDIR}/pkg-descr
 
 post-extract:
-	cd ${WRKSRC}/rmt && ${MV} rmt.dfl srmt.dfl
-	cd ${WRKSRC}/rmt && ${MV} default-rmt.sample default-srmt.sample
+	@cd ${WRKSRC}/rmt && ${MV} rmt.dfl srmt.dfl
+	@cd ${WRKSRC}/rmt && ${MV} default-rmt.sample default-srmt.sample
 
 
 do-configure:
