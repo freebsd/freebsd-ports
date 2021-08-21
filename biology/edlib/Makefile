@@ -1,5 +1,5 @@
 PORTNAME=	edlib
-DISTVERSION=	1.2.6.20201202
+DISTVERSION=	1.2.7
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,7 +8,7 @@ COMMENT=	Fast C++ library for sequence alignment using edit distance
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++14-lang
+USES=		cmake:testing compiler:c++14-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
