@@ -28,6 +28,7 @@ BB_COMMIT=	4dc83e28e998
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 
+CFLAGS_armv7=		-fPIC
 CFLAGS_powerpc=		-fPIC
 CFLAGS_powerpc64=	-fPIC
 CFLAGS_powerpc64le=	-fPIC
