@@ -1,0 +1,321 @@
+PORTNAME=	shortwave
+DISTVERSION=	2.0.1
+CATEGORIES=	audio
+
+MAINTAINER=	jbeich@FreeBSD.org
+COMMENT=	Listen to internet radio
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING.md
+
+LIB_DEPENDS=	libdbus-1.so:devel/dbus
+
+USES=		cargo gettext gnome meson pkgconfig python:build shebangfix sqlite ssl
+USE_GITHUB=	nodefault
+USE_GITLAB=	yes
+USE_GSTREAMER1=	good bad libav soup
+USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
+GH_TUPLE=	gtk-rs:gtk3-rs:1ca4fbcc30ec882f6079f26018c30ef1ceb8a2e2:gtk3 \
+		gtk-rs:gtk4-rs:534f63e66a2a3883770fe110a8a556a4b40f84b3:gtk4
+GL_SITE=	https://gitlab.gnome.org
+GL_ACCOUNT=	World
+GL_PROJECT=	Shortwave
+GL_COMMIT=	9bfc5ee2d857035cf0d3c72e211b3d76b85d7414
+GL_TUPLE=	https://gitlab.freedesktop.org:gstreamer:gstreamer-rs:f00c57cd6f2a0912e04c10887cedbe95be7d5dea:gstreamer \
+		bilelmoussaoui:libadwaita-rs:2d09b6b566bc0fa2497612768cf0c41f582acdd7:libadwaita
+SHEBANG_FILES=	build-aux/meson/postinstall.py
+MAKE_ENV=	${CARGO_ENV}
+GLIB_SCHEMAS=	de.haeckerfelix.Shortwave.gschema.xml
+INSTALLS_ICONS=	yes
+
+CARGO_CRATES=	addr2line-0.14.1 \
+		adler-1.0.2 \
+		aho-corasick-0.7.15 \
+		anyhow-1.0.40 \
+		array-init-2.0.0 \
+		async-channel-1.6.1 \
+		async-executor-1.4.0 \
+		async-global-executor-2.0.2 \
+		async-io-1.4.0 \
+		async-lock-2.4.0 \
+		async-mutex-1.4.0 \
+		async-std-1.9.0 \
+		async-std-resolver-0.20.2 \
+		async-task-4.0.3 \
+		async-trait-0.1.50 \
+		atomic-waker-1.0.0 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		backtrace-0.3.57 \
+		bitflags-1.2.1 \
+		block-0.1.6 \
+		blocking-1.0.2 \
+		bumpalo-3.6.1 \
+		byteorder-1.4.3 \
+		bytes-1.0.1 \
+		c_linked_list-1.1.1 \
+		cache-padded-1.1.1 \
+		cc-1.0.67 \
+		cfg-expr-0.7.4 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		chrono-0.4.19 \
+		concurrent-queue-1.2.2 \
+		crossbeam-utils-0.8.3 \
+		ctor-0.1.20 \
+		curl-0.4.35 \
+		curl-sys-0.4.42+curl-7.76.0 \
+		data-encoding-2.3.2 \
+		dbus-0.6.5 \
+		diesel-1.4.6 \
+		diesel_derives-1.4.1 \
+		diesel_migrations-1.4.0 \
+		dns-parser-0.8.0 \
+		either-1.6.1 \
+		encoding_rs-0.8.28 \
+		enum-as-inner-0.3.3 \
+		env_logger-0.7.1 \
+		error-chain-0.12.4 \
+		event-listener-2.5.1 \
+		fastrand-1.4.0 \
+		field-offset-0.3.3 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.0.1 \
+		fuchsia-zircon-0.3.3 \
+		fuchsia-zircon-sys-0.3.3 \
+		futures-0.3.14 \
+		futures-channel-0.3.14 \
+		futures-core-0.3.14 \
+		futures-executor-0.3.14 \
+		futures-io-0.3.14 \
+		futures-lite-1.11.3 \
+		futures-macro-0.3.14 \
+		futures-sink-0.3.14 \
+		futures-task-0.3.14 \
+		futures-util-0.3.14 \
+		gcc-0.3.55 \
+		get_if_addrs-0.5.3 \
+		get_if_addrs-sys-0.1.1 \
+		getrandom-0.2.2 \
+		gettext-rs-0.5.0 \
+		gettext-sys-0.19.9 \
+		gimli-0.23.0 \
+		glib-0.10.3 \
+		glib-macros-0.10.1 \
+		glib-sys-0.10.1 \
+		gloo-timers-0.2.1 \
+		gobject-sys-0.10.0 \
+		gtk-macros-0.3.0 \
+		hashbrown-0.9.1 \
+		heck-0.3.2 \
+		hermit-abi-0.1.18 \
+		hostname-0.3.1 \
+		http-0.2.4 \
+		humantime-1.3.0 \
+		idna-0.2.3 \
+		indexmap-1.6.2 \
+		instant-0.1.9 \
+		iovec-0.1.4 \
+		ipconfig-0.2.2 \
+		ipnet-2.3.0 \
+		isahc-1.3.1 \
+		itertools-0.9.0 \
+		itertools-0.10.0 \
+		itoa-0.4.7 \
+		js-sys-0.3.50 \
+		kernel32-sys-0.2.2 \
+		kv-log-macro-1.0.7 \
+		lazy_static-1.4.0 \
+		libc-0.2.93 \
+		libdbus-sys-0.2.1 \
+		libnghttp2-sys-0.1.6+1.43.0 \
+		libsqlite3-sys-0.20.1 \
+		libz-sys-1.1.2 \
+		linked-hash-map-0.5.4 \
+		locale_config-0.3.0 \
+		lock_api-0.4.3 \
+		log-0.4.14 \
+		lru-cache-0.1.2 \
+		malloc_buf-0.0.6 \
+		match_cfg-0.1.0 \
+		matches-0.1.8 \
+		mdns-0.3.2 \
+		memchr-2.3.4 \
+		memoffset-0.6.3 \
+		migrations_internals-1.4.1 \
+		migrations_macros-1.4.2 \
+		mime-0.3.16 \
+		miniz_oxide-0.4.4 \
+		mio-0.6.23 \
+		miow-0.2.2 \
+		mpris-player-0.6.1 \
+		muldiv-1.0.0 \
+		net2-0.2.37 \
+		num-integer-0.1.44 \
+		num-rational-0.4.0 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.0 \
+		objc-0.2.7 \
+		objc-foundation-0.1.1 \
+		objc_id-0.1.1 \
+		object-0.23.0 \
+		once_cell-1.7.2 \
+		open-1.7.0 \
+		openssl-0.10.33 \
+		openssl-probe-0.1.2 \
+		openssl-sys-0.9.61 \
+		parking-2.0.0 \
+		parking_lot-0.11.1 \
+		parking_lot_core-0.8.3 \
+		paste-1.0.5 \
+		percent-encoding-2.1.0 \
+		pest-2.1.3 \
+		pin-project-1.0.7 \
+		pin-project-internal-1.0.7 \
+		pin-project-lite-0.2.6 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.19 \
+		polling-2.0.3 \
+		ppv-lite86-0.2.10 \
+		pretty-hex-0.2.1 \
+		pretty_env_logger-0.4.0 \
+		proc-macro-crate-0.1.5 \
+		proc-macro-crate-1.0.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.19 \
+		proc-macro-nested-0.1.7 \
+		proc-macro2-1.0.26 \
+		protobuf-2.20.0 \
+		protobuf-codegen-2.20.0 \
+		protoc-2.20.0 \
+		protoc-rust-2.20.0 \
+		quick-error-1.2.3 \
+		quote-1.0.9 \
+		r2d2-0.8.9 \
+		rand-0.8.3 \
+		rand_chacha-0.3.0 \
+		rand_core-0.6.2 \
+		rand_hc-0.3.0 \
+		redox_syscall-0.2.6 \
+		regex-1.4.6 \
+		regex-syntax-0.6.23 \
+		remove_dir_all-0.5.3 \
+		resolv-conf-0.7.0 \
+		rust_cast-0.16.0 \
+		rustc-demangle-0.1.18 \
+		rustc_version-0.3.3 \
+		ryu-1.0.5 \
+		sanitize-filename-0.3.0 \
+		schannel-0.1.19 \
+		scheduled-thread-pool-0.2.5 \
+		scopeguard-1.1.0 \
+		semver-0.11.0 \
+		semver-parser-0.10.2 \
+		serde-1.0.125 \
+		serde_derive-1.0.125 \
+		serde_json-1.0.64 \
+		serde_urlencoded-0.7.0 \
+		slab-0.4.3 \
+		sluice-0.5.4 \
+		smallvec-1.6.1 \
+		socket2-0.3.19 \
+		socket2-0.4.0 \
+		strum-0.18.0 \
+		strum-0.20.0 \
+		strum_macros-0.18.0 \
+		strum_macros-0.20.1 \
+		syn-1.0.70 \
+		system-deps-1.3.2 \
+		system-deps-3.1.1 \
+		tempfile-3.2.0 \
+		termcolor-1.1.2 \
+		thiserror-1.0.24 \
+		thiserror-impl-1.0.24 \
+		time-0.1.44 \
+		tinyvec-1.2.0 \
+		tinyvec_macros-0.1.0 \
+		toml-0.5.8 \
+		tracing-0.1.25 \
+		tracing-attributes-0.1.15 \
+		tracing-core-0.1.17 \
+		tracing-futures-0.2.5 \
+		trust-dns-proto-0.20.2 \
+		trust-dns-resolver-0.20.2 \
+		ucd-trie-0.1.3 \
+		unicode-bidi-0.3.5 \
+		unicode-normalization-0.1.17 \
+		unicode-segmentation-1.7.1 \
+		unicode-xid-0.2.1 \
+		url-2.2.1 \
+		value-bag-1.0.0-alpha.6 \
+		vcpkg-0.2.12 \
+		vec-arena-1.1.0 \
+		version-compare-0.0.10 \
+		version-compare-0.0.11 \
+		version_check-0.9.3 \
+		waker-fn-1.1.0 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.73 \
+		wasm-bindgen-backend-0.2.73 \
+		wasm-bindgen-futures-0.4.23 \
+		wasm-bindgen-macro-0.2.73 \
+		wasm-bindgen-macro-support-0.2.73 \
+		wasm-bindgen-shared-0.2.73 \
+		web-sys-0.3.50 \
+		wepoll-sys-3.0.1 \
+		which-4.1.0 \
+		widestring-0.4.3 \
+		winapi-0.2.8 \
+		winapi-0.3.9 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		winreg-0.6.2 \
+		ws2_32-sys-0.2.1
+CARGO_USE_GITHUB=	yes
+CARGO_USE_GITLAB=	yes
+CARGO_GIT_SUBDIR=	gstreamer:gstreamer-audio:gstreamer-audio \
+			gstreamer:gstreamer:gstreamer \
+			gtk3:cairo-rs:cairo \
+			gtk3:cairo-sys-rs:cairo/sys \
+			gtk3:gdk-pixbuf-sys:gdk-pixbuf/sys \
+			gtk3:gdk-pixbuf:gdk-pixbuf \
+			gtk3:gdk:gdk \
+			gtk3:gio-sys:gio/sys \
+			gtk3:gio:gio \
+			gtk3:glib-sys:glib/sys \
+			gtk3:glib:glib \
+			gtk3:gobject-sys:glib/gobject-sys \
+			gtk3:graphene-sys:graphene/sys \
+			gtk3:graphene:graphene \
+			gtk3:gtk:gtk \
+			gtk3:pango-sys:pango/sys \
+			gtk3:pango:pango \
+			gtk4:gdk-sys:gdk4/sys \
+			gtk4:gdk:gdk4 \
+			gtk4:gtk-sys:gtk4/sys \
+			gtk4:gtk:gtk4 \
+			gtk4:gtk:gtk4 \
+			libadwaita:adw:libadwaita
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+CARGO_TEST=	no
+
+pre-patch:
+# Chase gtk-rs -> gtk3-rs rename for USES=cargo patching
+	@${GREP} --include='*/Cargo.toml' -lr 'git.*gtk-rs' ${WRKDIR} | ${XARGS} ${REINPLACE_CMD} \
+		's,\(gtk-rs\)/gtk-rs,\1/gtk3-rs,'
+
+post-patch:
+	@${REINPLACE_CMD} -e '/dependency.*openssl/d' \
+		-e "/vcs_tag/s/=.*/= '${DISTVERSIONFULL}'/" \
+		${WRKSRC}/meson.build
+# Make each cargo subcommand very verbose
+	@${REINPLACE_CMD} -e '/cargo/s/ --/&verbose&verbose&/' \
+		${WRKSRC}/build-aux/cargo.sh
+
+.include <bsd.port.mk>
