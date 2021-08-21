@@ -1,0 +1,4 @@
+RapidFuzz is a fast string matching library for Python and C++, which is using
+the string similarity calculations from FuzzyWuzzy.
+
+WWW: https://github.com/maxbachmann/rapidfuzz-cpp
