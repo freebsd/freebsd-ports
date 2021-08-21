@@ -214,4 +214,9 @@ CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
 
+post-patch:
+# Make each cargo subcommand very verbose
+	@${REINPLACE_CMD} -e '/cargo/s/ --/&verbose&verbose&/' \
+		${WRKSRC}/build-aux/cargo.sh
+
 .include <bsd.port.mk>
