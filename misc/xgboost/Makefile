@@ -1,6 +1,6 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1
+DISTVERSION=	1.4.2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,16 +11,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libdmlc.so:devel/dmlc-core
 
-USES=		cmake compiler:c++11-lang localbase:ldflags
+USES=		cmake:testing compiler:c++11-lang localbase:ldflags
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dmlc
 GH_TUPLE=	\
 		NVlabs:cub:af39ee2:NVlabs_cub/cub \
-		rapidsai:gputreeshap:3310a30:rapidsai_gputreeshap/gputreeshap
+		rapidsai:gputreeshap:5bba198:rapidsai_gputreeshap/gputreeshap
 
 LDFLAGS+=	${LOCALBASE}/lib/libdmlc.so -lexecinfo
+
+CMAKE_TESTING_ON=	GOOGLE_TEST
 
 OPTIONS_DEFINE=		OPENMP
 
