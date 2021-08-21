@@ -1,7 +1,7 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.46.3
+PORTVERSION=	1.46.4
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
@@ -302,10 +302,9 @@ post-install:
 	# yet stage-qa warns about these on 2020-09-16:
 	${LN} -fs /sbin/fsck_ext2fs ${STAGEDIR}${PREFIX}/sbin/
 	${LN} -fs /sbin/e2fsck      ${STAGEDIR}${PREFIX}/sbin/
-	# these are made hardlinks to symlinks - -P avoids following them to /sbin:
-	${LN} -fP ${STAGEDIR}${PREFIX}/sbin/e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext2
-	${LN} -fP ${STAGEDIR}${PREFIX}/sbin/e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext3
-	${LN} -fP ${STAGEDIR}${PREFIX}/sbin/e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext4
+	${LN} -fs e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext2
+	${LN} -fs e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext3
+	${LN} -fs e2fsck ${STAGEDIR}${PREFIX}/sbin/fsck.ext4
 	# now the remainder of the usual post-install jobs:
 	${INSTALL_MAN} ${FILESDIR}/fsck_ext2fs.8 ${STAGEDIR}${PREFIX}/man/man8/
 .if ${PORT_OPTIONS:MDOCS}
