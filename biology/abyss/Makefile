@@ -9,6 +9,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	result of comparison of constant 18446744073709551615 with expression of type 'size_t', see https://github.com/bcgsc/abyss/issues/310
+BROKEN_FreeBSD_11=	error: use of undeclared identifier 'getline'; did you mean 'std::getline'?
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:devel/boost-libs \
 		ghc:lang/ghc \
