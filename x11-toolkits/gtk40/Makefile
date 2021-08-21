@@ -1,5 +1,6 @@
 PORTNAME=	gtk
 PORTVERSION=	4.3.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -47,7 +48,7 @@ GLIB_SCHEMAS=	org.gtk.Demo4.gschema.xml \
 LDFLAGS+=	-fuse-ld=lld
 .endif
 
-OPTIONS_DEFINE=	CUPS CLOUDPRINT COLORD DEBUG BROADWAY FFMPEG \
+OPTIONS_DEFINE=	CUPS COLORD DEBUG BROADWAY FFMPEG \
 		GSTREAMER VULKAN WAYLAND X11
 OPTIONS_DEFAULT=CUPS COLORD BROADWAY VULKAN WAYLAND X11
 OPTIONS_SUB=	yes
@@ -60,14 +61,7 @@ COLORD_LIB_DEPENDS=	libcolord.so:graphics/colord
 COLORD_MESON_ENABLED=	colord
 
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
-CUPS_MESON_ENABLED=	cups
-
-CLOUDPRINT_DESC=	Cloud printing support
-CLOUDPRINT_MESON_ENABLED=	cloudprint
-CLOUDPRINT_USE=		gnome=libxml2
-CLOUDPRINT_LIB_DEPENDS=	librest-0.7.so:devel/librest \
-			libsoup-2.4.so:devel/libsoup \
-			libjson-glib-1.0.so:devel/json-glib
+CUPS_MESON_ENABLED=	print-cups
 
 FFMPEG_DESC=		FFmpeg multimedia backend
 FFMPEG_MESON_ENABLED=	media-ffmpeg
