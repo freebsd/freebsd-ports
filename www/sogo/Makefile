@@ -1,6 +1,5 @@
 PORTNAME=		sogo
-PORTVERSION=		5.1.1
-PORTREVISION=		1
+PORTVERSION=		5.2.0
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}
@@ -14,7 +13,9 @@ LIB_DEPENDS=		libmemcached.so:databases/libmemcached \
 			libcurl.so:ftp/curl \
 			libsodium.so:security/libsodium \
 			libzip.so:archivers/libzip \
-			libDOM.so:devel/sope
+			libDOM.so:devel/sope \
+			libytnef.so:converters/ytnef
+
 RUN_DEPENDS=		zip:archivers/zip
 
 OPTIONS_DEFAULT=	MFA
