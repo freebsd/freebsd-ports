@@ -1,0 +1,19 @@
+#!/bin/sh
+
+PREFIX=${PKG_PREFIX-/usr/local}
+
+case $2 in
+DEINSTALL)
+	if grep -Fxq "greeter-session=lightdm-gtk-greeter" ${PREFIX}/etc/lightdm/lightdm.conf
+	then
+		echo ":: Removing greeter configuration in ${PREFIX}/etc/lightdm/lightdm.conf"
+		echo ":: Configure another greeter if you plan to keep using lightdm."
+		/usr/bin/sed -i ".bak" "s/^greeter-session=lightdm-gtk-greeter$/#greeter-session=example-gtk-gnome/g" \
+			${PREFIX}/etc/lightdm/lightdm.conf
+	else
+		echo ":: lightdm-gtk-greeter is not the configured greeter in ${PREFIX}/etc/lightdm/lightdm.conf"
+		echo ":: Leaving the lightdm greeter configuration unchanged."
+	fi
+	echo ":: $(grep greeter-session= ${PREFIX}/etc/lightdm/lightdm.conf)"
+	;;
+esac

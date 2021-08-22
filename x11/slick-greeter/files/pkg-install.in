@@ -1,0 +1,18 @@
+#!/bin/sh
+
+PREFIX=${PKG_PREFIX-/usr/local}
+
+case $2 in
+POST-INSTALL)
+	if grep -Fxq "#greeter-session=example-gtk-gnome" ${PREFIX}/etc/lightdm/lightdm.conf
+	then
+		echo ":: Setting slick-greeter as greeter session in ${PREFIX}/etc/lightdm/lightdm.conf"
+		/usr/bin/sed -i ".bak" "s/^#greeter-session=example-gtk-gnome$/greeter-session=slick-greeter/g" \
+			${PREFIX}/etc/lightdm/lightdm.conf
+	else
+		echo ":: A greeter has already been configured in ${PREFIX}/etc/lightdm/lightdm.conf"
+		echo ":: Leaving the lightdm greeter configuration unchanged."
+	fi
+	echo ":: $(grep greeter-session= ${PREFIX}/etc/lightdm/lightdm.conf)"
+	;;
+esac

@@ -3,7 +3,7 @@
 PORTNAME=	slick-greeter
 PORTVERSION=	1.5.3
 CATEGORIES=	x11
-PORTREVISION=	1
+PORTREVISION=	2
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Slick-looking LightDM greeter
@@ -34,6 +34,7 @@ SHEBANG_FILES=	files/usr/bin/slick-greeter-check-hidpi \
 		makepot
 bash_OLD_CMD=	/usr/bin/bash
 bash_CMD=	/bin/sh
+SUB_FILES=	pkg-deinstall pkg-install
 
 GLIB_SCHEMAS=	x.dm.slick-greeter.gschema.xml
 

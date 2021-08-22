@@ -2,7 +2,7 @@
 
 PORTNAME=	lightdm-gtk-greeter
 PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/Xubuntu/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 
@@ -23,6 +23,7 @@ USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+SUB_FILES=	pkg-deinstall pkg-install
 
 CONFIGURE_ARGS+=--disable-indicator-services-command \
 	--enable-at-spi-command=${LOCALBASE}/libexec/at-spi-bus-launcher
