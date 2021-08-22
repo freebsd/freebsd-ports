@@ -9,4 +9,12 @@ app.ini.sample), or allow Gitea to make the change for you by making the
 config file writable to the git user.
 EOM
 }
+{ type: upgrade
+  maximum_version: 1.15.0
+  message: <<EOM
+Some config file options have been changed in Gitea 1.15. Please refer to
+the documentation at https://docs.gitea.io/en-us/customizing-gitea/ and
+the release notes.
+EOM
+}
 ]
