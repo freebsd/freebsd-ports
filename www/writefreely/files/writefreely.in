@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# PROVIDE: writefreely
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# writefreely_enable (bool):	Set to NO by default.
+#				Set it to YES to enable writefreely.
+# writefreely_home (path):	Where writefreely's assets, keys,
+#				config file, and databases are kept.
+# writefreely_user (str):	User to run writefreely as.
+#				Set to writefreely by default.
+
+. /etc/rc.subr
+
+load_rc_config $name
+
+: ${writefreely_enable:="NO"}
+: ${writefreely_home:="%%WWWDIR%%"}
+: ${writefreely_config:="config.ini"}
+: ${writefreely_user:="writefreely"}
+: ${writefreely_group:="writefreely"}
+: ${writefreely_pidfile:="/var/run/writefreely/writefreely.pid"}
+: ${writefreely_syslog_tag:="writefreely"}
+: ${writefreely_syslog_priority:="info"}
+: ${writefreely_syslog_facility:="daemon"}
+
+
+pidfile="${writefreely_pidfile}"
+
+name=writefreely
+rcvar=writefreely_enable
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -S -T ${writefreely_syslog_tag} -s ${writefreely_syslog_priority} -l ${writefreely_syslog_facility} -- %%PREFIX%%/bin/writefreely -c $writefreely_config serve"
+writefreely_chdir="$writefreely_home"
+extra_commands="setup"
+start_precmd="start_precmd"
+setup_cmd="setup_cmd"
+
+start_precmd()
+{
+	if [ ! -f "$writefreely_home/$writefreely_config" ]
+	then
+		echo $writefreely_config missing.
+		echo Run service writefreely setup to generate it.
+		return 1
+	fi
+
+	su -m "$writefreely_user" -c "%%PREFIX%%/bin/writefreely -c '$writefreely_config' keys generate" >/dev/null
+
+	install -d -m 755 -o "${writefreely_user}" /var/run/writefreely
+}
+
+setup_cmd()
+{
+	su -m "$writefreely_user" -c "%%PREFIX%%/bin/writefreely -c '$writefreely_config' config start"
+	[ -f "$writefreely_home/writefreely.db" ] && chmod 700 "$writefreely_home/writefreely.db"
+}
+
+cd "$writefreely_home"
+
+run_rc_command "$1"

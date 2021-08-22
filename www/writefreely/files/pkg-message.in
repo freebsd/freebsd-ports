@@ -1,0 +1,15 @@
+WriteFreely has been installed.  The static files, configuration,
+and databases can be found in %%WWWDIR%%.
+To enable the WriteFreely daemon, add
+
+    writefreely_enable="YES"
+
+to /etc/rc.conf.  Next type
+
+    %%PREFIX%%/etc/rc.d/writefreely setup
+
+to interactively generate a configuration.  Finally type
+
+    %%PREFIX%%/etc/rc.d/writefreely start
+
+to start the writefreely service.
