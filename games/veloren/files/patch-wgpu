@@ -1,4 +1,4 @@
-Reformat for CARGO_GIT_SUBDIR
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=256581
 
 --- ../wgpu-rs-7486bdad64bb5d17b709ecccb41e063469efff88/Cargo.toml.orig	2021-05-14 04:23:09 UTC
 +++ ../wgpu-rs-7486bdad64bb5d17b709ecccb41e063469efff88/Cargo.toml
