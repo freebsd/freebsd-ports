@@ -1,6 +1,6 @@
 PORTNAME=		minimap2
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.20
+DISTVERSION=		2.22
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -20,7 +20,5 @@ GH_ACCOUNT=	lh3
 MAKE_ARGS+=	CFLAGS+=-Wextra
 ALL_TARGET=	extra
 INSTALL_TARGET=	install-strip
-
-PLIST_FILES=	bin/minimap2 bin/minimap2-lite bin/sdust man/man1/minimap2.1.gz
 
 .include <bsd.port.mk>
