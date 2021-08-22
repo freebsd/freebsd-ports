@@ -1,0 +1,11 @@
+Simple application for generating Two-Factor Authentication Codes.
+
+Features:
+- Time-based/Counter-based/Steam methods support
+- SHA-1/SHA-256/SHA-512 algorithms support
+- QR code scanner using a camera or from a screenshot
+- Lock the application with a password
+- Beautiful UI
+- Backup/Restore from/into known applications like FreeOTP+, andOTP
+
+WWW: https://gitlab.gnome.org/World/Authenticator
