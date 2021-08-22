@@ -1,0 +1,6 @@
+Normaliz is an open source tool for computations in affine monoids, vector
+configurations, lattice polytopes, and rational cones. Normaliz also computes
+algebraic polyhedra, i.e., polyhedra defined over real algebraic extensions
+of Q.
+
+WWW: https://www.normaliz.uni-osnabrueck.de/

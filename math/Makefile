@@ -469,6 +469,7 @@
     SUBDIR += nfft
     SUBDIR += ngraph
     SUBDIR += nlopt
+    SUBDIR += normaliz
     SUBDIR += ntl
     SUBDIR += numdiff
     SUBDIR += ocaml-ocamlgraph
