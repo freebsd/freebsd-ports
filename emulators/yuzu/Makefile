@@ -18,8 +18,9 @@ LICENSE_FILE_LGPL21+ =	${_LICENSE_STORE}/LGPL21 # soundtouch
 LICENSE_FILE_LGPL3+ =	${_LICENSE_STORE}/LGPL3 # sirit
 LICENSE_FILE_MIT=	${WRKSRC}/externals/sirit/externals/SPIRV-Headers/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64
-ONLY_FOR_ARCHS_REASON=	requires int128
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	requires int128 and dynarmic backend
+BROKEN_aarch64=	https://github.com/yuzu-emu/yuzu/issues/5290
 
 BUILD_DEPENDS=	catch>0:devel/catch \
 		boost-libs>0:devel/boost-libs \
