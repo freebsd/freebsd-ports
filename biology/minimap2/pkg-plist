@@ -1,0 +1,10 @@
+bin/minimap2
+bin/minimap2-lite
+bin/sdust
+man/man1/minimap2.1.gz
+%%DATADIR%%/test/MT-human.fa
+%%DATADIR%%/test/MT-orang.fa
+%%DATADIR%%/test/q-inv.fa
+%%DATADIR%%/test/q2.fa
+%%DATADIR%%/test/t-inv.fa
+%%DATADIR%%/test/t2.fa
