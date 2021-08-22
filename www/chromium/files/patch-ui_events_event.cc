@@ -1,6 +1,6 @@
---- ui/events/event.cc.orig	2021-05-12 22:06:46 UTC
+--- ui/events/event.cc.orig	2021-07-19 18:45:44 UTC
 +++ ui/events/event.cc
-@@ -450,7 +450,7 @@ std::string LocatedEvent::ToString() const {
+@@ -455,7 +455,7 @@ std::string LocatedEvent::ToString() const {
  MouseEvent::MouseEvent(const PlatformEvent& native_event)
      : LocatedEvent(native_event),
        changed_button_flags_(GetChangedMouseButtonFlagsFromNative(native_event)),

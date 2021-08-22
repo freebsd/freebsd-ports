@@ -1,4 +1,4 @@
---- base/process/process_metrics_posix.cc.orig	2021-04-14 18:40:48 UTC
+--- base/process/process_metrics_posix.cc.orig	2021-07-19 18:45:05 UTC
 +++ base/process/process_metrics_posix.cc
 @@ -20,6 +20,8 @@
  
@@ -9,10 +9,10 @@
  #else
  #include <malloc.h>
  #endif
-@@ -126,7 +128,7 @@ size_t ProcessMetrics::GetMallocUsage() {
- #else
-   return minfo.hblkhd + minfo.arena;
- #endif
+@@ -136,7 +138,7 @@ size_t ProcessMetrics::GetMallocUsage() {
+   return stats.size_in_use;
+ #elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
+   return GetMallocUsageMallinfo();
 -#elif defined(OS_FUCHSIA)
 +#elif defined(OS_FUCHSIA) || defined(OS_BSD)
    // TODO(fuchsia): Not currently exposed. https://crbug.com/735087.

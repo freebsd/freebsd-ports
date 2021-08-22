@@ -1,6 +1,6 @@
---- base/test/launcher/test_launcher.cc.orig	2021-04-14 18:40:48 UTC
+--- base/test/launcher/test_launcher.cc.orig	2021-07-19 18:45:05 UTC
 +++ base/test/launcher/test_launcher.cc
-@@ -58,6 +58,7 @@
+@@ -60,6 +60,7 @@
  #include "testing/gtest/include/gtest/gtest.h"
  
  #if defined(OS_POSIX)
@@ -8,7 +8,7 @@
  #include <fcntl.h>
  
  #include "base/files/file_descriptor_watcher_posix.h"
-@@ -599,7 +600,7 @@ ChildProcessResults DoLaunchChildTestProcess(
+@@ -601,7 +602,7 @@ ChildProcessResults DoLaunchChildTestProcess(
  #if !defined(OS_FUCHSIA)
    options.new_process_group = true;
  #endif
@@ -17,7 +17,7 @@
    options.kill_on_parent_death = true;
  #endif
  
-@@ -1515,7 +1516,7 @@ bool TestLauncher::Init(CommandLine* command_line) {
+@@ -1523,7 +1524,7 @@ bool TestLauncher::Init(CommandLine* command_line) {
    results_tracker_.AddGlobalTag("OS_IOS");
  #endif
  

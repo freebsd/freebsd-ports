@@ -1,7 +1,7 @@
---- chrome/test/base/in_process_browser_test.cc.orig	2021-05-12 22:05:46 UTC
+--- chrome/test/base/in_process_browser_test.cc.orig	2021-07-19 18:45:11 UTC
 +++ chrome/test/base/in_process_browser_test.cc
 @@ -83,6 +83,10 @@
- #include "services/device/public/cpp/test/fake_geolocation_system_permission.h"
+ #include "services/device/public/cpp/test/fake_geolocation_manager.h"
  #endif
  
 +#if defined(OS_FREEBSD)
@@ -20,7 +20,7 @@
    OSCryptMocker::SetUp();
  #endif
  
-@@ -400,7 +404,7 @@ void InProcessBrowserTest::TearDown() {
+@@ -403,7 +407,7 @@ void InProcessBrowserTest::TearDown() {
    com_initializer_.reset();
  #endif
    BrowserTestBase::TearDown();

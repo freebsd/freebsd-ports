@@ -1,6 +1,6 @@
---- ui/base/cursor/cursor_factory.cc.orig	2021-05-12 22:06:46 UTC
+--- ui/base/cursor/cursor_factory.cc.orig	2021-07-19 18:45:43 UTC
 +++ ui/base/cursor/cursor_factory.cc
-@@ -69,7 +69,7 @@ void CursorFactory::ObserveThemeChanges() {
+@@ -80,7 +80,7 @@ void CursorFactory::ObserveThemeChanges() {
  
  void CursorFactory::SetDeviceScaleFactor(float scale) {}
  
@@ -9,7 +9,7 @@
  
  // Returns a cursor name compatible with either X11 or the FreeDesktop.org
  // cursor spec ([1] and [2]), followed by fallbacks that can work as
-@@ -190,6 +190,6 @@ std::vector<std::string> CursorNamesFromType(mojom::Cu
+@@ -201,6 +201,6 @@ std::vector<std::string> CursorNamesFromType(mojom::Cu
    return {"left_ptr"};
  }
  

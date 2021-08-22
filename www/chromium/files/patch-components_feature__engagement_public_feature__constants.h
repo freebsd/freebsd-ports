@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.h.orig	2021-05-12 22:05:49 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2021-07-19 18:45:13 UTC
 +++ components/feature_engagement/public/feature_constants.h
 @@ -16,7 +16,7 @@ extern const base::Feature kIPHDemoMode;
  // A feature to ensure all arrays can contain at least one feature.
@@ -9,10 +9,10 @@
      defined(OS_CHROMEOS)
  extern const base::Feature kIPHDesktopTabGroupsNewGroupFeature;
  extern const base::Feature kIPHFocusModeFeature;
-@@ -30,7 +30,7 @@ extern const base::Feature kIPHWebUITabStripFeature;
- extern const base::Feature kIPHDesktopSnoozeFeature;
+@@ -31,7 +31,7 @@ extern const base::Feature kIPHDesktopSnoozeFeature;
  extern const base::Feature kIPHDesktopPwaInstallFeature;
  extern const base::Feature kIPHProfileSwitchFeature;
+ extern const base::Feature kIPHUpdatedConnectionSecurityIndicatorsFeature;
 -#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||
 +#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) ||
          // defined(OS_CHROMEOS)

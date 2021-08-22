@@ -1,6 +1,6 @@
---- chrome/browser/task_manager/task_manager_observer.h.orig	2021-05-12 22:05:45 UTC
+--- chrome/browser/task_manager/task_manager_observer.h.orig	2021-07-19 18:45:09 UTC
 +++ chrome/browser/task_manager/task_manager_observer.h
-@@ -47,11 +47,11 @@ enum RefreshType {
+@@ -46,11 +46,11 @@ enum RefreshType {
    // or backgrounded.
    REFRESH_TYPE_PRIORITY = 1 << 13,
  

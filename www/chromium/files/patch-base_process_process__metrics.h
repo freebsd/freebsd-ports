@@ -1,6 +1,15 @@
---- base/process/process_metrics.h.orig	2021-05-12 22:05:40 UTC
+--- base/process/process_metrics.h.orig	2021-07-19 18:45:05 UTC
 +++ base/process/process_metrics.h
-@@ -47,7 +47,7 @@ namespace base {
+@@ -37,7 +37,7 @@
+ #include "base/win/windows_types.h"
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD) || \
+     defined(OS_AIX)
+ #include <string>
+ #include <utility>
+@@ -55,7 +55,7 @@ class Value;
  // Full declaration is in process_metrics_iocounters.h.
  struct IoCounters;
  
@@ -9,7 +18,7 @@
  // Minor and major page fault counts since the process creation.
  // Both counts are process-wide, and exclude child processes.
  //
-@@ -57,7 +57,7 @@ struct PageFaultCounts {
+@@ -65,7 +65,7 @@ struct PageFaultCounts {
    int64_t minor;
    int64_t major;
  };
@@ -18,7 +27,7 @@
  
  // Convert a POSIX timeval to microseconds.
  BASE_EXPORT int64_t TimeValToMicroseconds(const struct timeval& tv);
-@@ -98,7 +98,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -106,7 +106,7 @@ class BASE_EXPORT ProcessMetrics {
    // convenience wrapper for CreateProcessMetrics().
    static std::unique_ptr<ProcessMetrics> CreateCurrentProcessMetrics();
  
@@ -27,16 +36,16 @@
    // Resident Set Size is a Linux/Android specific memory concept. Do not
    // attempt to extend this to other platforms.
    BASE_EXPORT size_t GetResidentSetSize() const;
-@@ -124,7 +124,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -132,7 +132,7 @@ class BASE_EXPORT ProcessMetrics {
    // will result in a time delta of 2 seconds/per 1 wall-clock second.
-   TimeDelta GetCumulativeCPUUsage();
+   TimeDelta GetCumulativeCPUUsage() WARN_UNUSED_RESULT;
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD) || \
      defined(OS_AIX)
    // Emits the cumulative CPU usage for all currently active threads since they
    // were started into the output parameter (replacing its current contents).
-@@ -159,7 +159,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -167,7 +167,7 @@ class BASE_EXPORT ProcessMetrics {
    bool ParseProcTimeInState(const std::string& content,
                              PlatformThreadId tid,
                              TimeInStatePerThread& time_in_state_per_thread);
@@ -45,7 +54,7 @@
          // defined(OS_AIX)
  
    // Returns the number of average idle cpu wakeups per second since the last
-@@ -208,14 +208,14 @@ class BASE_EXPORT ProcessMetrics {
+@@ -216,14 +216,14 @@ class BASE_EXPORT ProcessMetrics {
    int GetOpenFdSoftLimit() const;
  #endif  // defined(OS_POSIX)
  
@@ -62,7 +71,7 @@
  
    // Returns total memory usage of malloc.
    size_t GetMallocUsage();
-@@ -227,7 +227,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -235,7 +235,7 @@ class BASE_EXPORT ProcessMetrics {
    ProcessMetrics(ProcessHandle process, PortProvider* port_provider);
  #endif  // !defined(OS_MAC)
  
@@ -71,7 +80,7 @@
      defined(OS_AIX)
    int CalculateIdleWakeupsPerSecond(uint64_t absolute_idle_wakeups);
  #endif
-@@ -238,10 +238,10 @@ class BASE_EXPORT ProcessMetrics {
+@@ -246,10 +246,10 @@ class BASE_EXPORT ProcessMetrics {
        uint64_t absolute_package_idle_wakeups);
  #endif
  
@@ -84,7 +93,7 @@
          // defined(OS_AIX)
  
  #if defined(OS_WIN)
-@@ -263,7 +263,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -271,7 +271,7 @@ class BASE_EXPORT ProcessMetrics {
    // Number of bytes transferred to/from disk in bytes.
    uint64_t last_cumulative_disk_usage_ = 0;
  

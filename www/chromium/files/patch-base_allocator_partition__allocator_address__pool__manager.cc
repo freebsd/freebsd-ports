@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/address_pool_manager.cc.orig	2021-04-14 18:40:48 UTC
+--- base/allocator/partition_allocator/address_pool_manager.cc.orig	2021-07-19 18:45:05 UTC
 +++ base/allocator/partition_allocator/address_pool_manager.cc
 @@ -8,6 +8,13 @@
  #include <sys/mman.h>
@@ -27,5 +27,5 @@
 +  PA_PCHECK(ptr == address);
 +  HANDLE_EINTR(close(fd));
  #else
+   static_assert(DecommittedMemoryIsAlwaysZeroed(), "");
    DecommitSystemPages(address, size, PageUpdatePermissions);
- #endif

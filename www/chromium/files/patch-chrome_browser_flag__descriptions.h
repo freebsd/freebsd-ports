@@ -1,4 +1,4 @@
---- chrome/browser/flag_descriptions.h.orig	2021-06-09 22:13:55 UTC
+--- chrome/browser/flag_descriptions.h.orig	2021-07-19 18:45:08 UTC
 +++ chrome/browser/flag_descriptions.h
 @@ -22,9 +22,9 @@
  #include "printing/buildflags/buildflags.h"
@@ -12,7 +12,7 @@
  
  // This file declares strings used in chrome://flags. These messages are not
  // translated, because instead of end-users they target Chromium developers and
-@@ -2919,7 +2919,7 @@ extern const char kEnableNewBadgeOnMenuItemsDescriptio
+@@ -2928,7 +2928,7 @@ extern const char kInstallableInkDropDescription[];
  
  // Random platform combinations -----------------------------------------------
  
@@ -21,9 +21,9 @@
      defined(OS_CHROMEOS)
  
  extern const char kEnableOopPrintDriversName[];
-@@ -2940,10 +2940,10 @@ extern const char kRemoteCopyProgressNotificationDescr
- extern const char kDirectManipulationStylusName[];
- extern const char kDirectManipulationStylusDescription[];
+@@ -2943,10 +2943,10 @@ extern const char kWebuiFeedbackDescription[];
+ extern const char kSettingsLandingPageRedesignName[];
+ extern const char kSettingsLandingPageRedesignDescription[];
  
 -#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
 +#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) ||
@@ -34,7 +34,7 @@
  
  extern const char kCommanderName[];
  extern const char kCommanderDescription[];
-@@ -2954,7 +2954,7 @@ extern const char kDesktopRestructuredLanguageSettings
+@@ -2957,7 +2957,7 @@ extern const char kDesktopRestructuredLanguageSettings
  extern const char kDesktopDetailedLanguageSettingsName[];
  extern const char kDesktopDetailedLanguageSettingsDescription[];
  
@@ -43,7 +43,7 @@
  
  #if defined(OS_CHROMEOS) || defined(OS_LINUX)
  #if BUILDFLAG(USE_TCMALLOC)
-@@ -2975,17 +2975,17 @@ extern const char kWebShareDescription[];
+@@ -2978,17 +2978,17 @@ extern const char kWebShareDescription[];
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -65,7 +65,7 @@
  
  // Feature flags --------------------------------------------------------------
  
-@@ -3041,12 +3041,12 @@ extern const char kAutofillCreditCardUploadDescription
+@@ -3046,12 +3046,12 @@ extern const char kAutofillCreditCardUploadDescription
  
  #endif  // defined(TOOLKIT_VIEWS) || defined(OS_ANDROID)
  

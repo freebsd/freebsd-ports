@@ -1,6 +1,6 @@
---- chrome/common/channel_info_posix.cc.orig	2021-05-12 22:05:46 UTC
+--- chrome/common/channel_info_posix.cc.orig	2021-07-19 18:45:10 UTC
 +++ chrome/common/channel_info_posix.cc
-@@ -90,7 +90,7 @@ std::string GetChannelSuffixForDataDir() {
+@@ -93,7 +93,7 @@ std::string GetChannelSuffixForDataDir() {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
  std::string GetDesktopName(base::Environment* env) {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
    // Google Chrome packaged as a snap is a special case: the application name
-@@ -120,7 +120,7 @@ std::string GetDesktopName(base::Environment* env) {
+@@ -123,7 +123,7 @@ std::string GetDesktopName(base::Environment* env) {
    return "chromium-browser.desktop";
  #endif
  }

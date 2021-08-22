@@ -1,6 +1,15 @@
---- chrome/app/chrome_main.cc.orig	2021-04-14 18:40:49 UTC
+--- chrome/app/chrome_main.cc.orig	2021-07-19 18:45:06 UTC
 +++ chrome/app/chrome_main.cc
-@@ -130,12 +130,12 @@ int ChromeMain(int argc, const char** argv) {
+@@ -22,7 +22,7 @@
+ #include "chrome/app/chrome_main_mac.h"
+ #endif
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+ #include "base/base_switches.h"
+ #endif
+ 
+@@ -133,12 +133,12 @@ int ChromeMain(int argc, const char** argv) {
    MainThreadStackSamplingProfiler scoped_sampling_profiler;
  
    // Chrome-specific process modes.
@@ -14,4 +23,4 @@
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || defined(OS_BSD) ||
          // defined(OS_WIN)
  
-   int rv = content::ContentMain(params);
+ #if defined(OS_LINUX)

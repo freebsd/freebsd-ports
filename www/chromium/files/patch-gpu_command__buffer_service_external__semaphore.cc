@@ -1,8 +1,8 @@
---- gpu/command_buffer/service/external_semaphore.cc.orig	2021-04-14 18:41:04 UTC
+--- gpu/command_buffer/service/external_semaphore.cc.orig	2021-07-19 18:45:17 UTC
 +++ gpu/command_buffer/service/external_semaphore.cc
-@@ -39,7 +39,7 @@ GLuint ImportSemaphoreHandleToGLSemaphore(SemaphoreHan
-       },
-       base::Time::Now()));
+@@ -27,7 +27,7 @@ GLuint ImportSemaphoreHandleToGLSemaphore(SemaphoreHan
+   if (!handle.is_valid())
+     return 0;
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)

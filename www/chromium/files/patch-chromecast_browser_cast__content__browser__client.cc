@@ -1,6 +1,6 @@
---- chromecast/browser/cast_content_browser_client.cc.orig	2021-05-12 22:05:48 UTC
+--- chromecast/browser/cast_content_browser_client.cc.orig	2021-07-19 18:45:12 UTC
 +++ chromecast/browser/cast_content_browser_client.cc
-@@ -130,9 +130,9 @@
+@@ -131,9 +131,9 @@
  #include "chromecast/external_mojo/broker_service/broker_service.h"  // nogncheck
  #endif
  
@@ -12,7 +12,7 @@
  
  #if BUILDFLAG(ENABLE_CAST_RENDERER)
  #include "base/sequenced_task_runner.h"
-@@ -479,7 +479,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
+@@ -475,7 +475,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
                                            switches::kAudioOutputChannels));
      }
    } else if (process_type == switches::kGpuProcess) {
@@ -21,7 +21,7 @@
      // Necessary for accelerated 2d canvas.  By default on Linux, Chromium
      // assumes GLES2 contexts can be lost to a power-save mode, which breaks GPU
      // canvas apps.
-@@ -876,12 +876,12 @@ CastContentBrowserClient::CreateThrottlesForNavigation
+@@ -867,12 +867,12 @@ CastContentBrowserClient::CreateThrottlesForNavigation
              handle, general_audience_browsing_service_.get()));
    }
  

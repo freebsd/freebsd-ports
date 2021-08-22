@@ -1,4 +1,4 @@
---- base/process/process_metrics_freebsd.cc.orig	2021-04-14 18:40:48 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2021-07-19 18:45:05 UTC
 +++ base/process/process_metrics_freebsd.cc
 @@ -3,8 +3,10 @@
  // found in the LICENSE file.
@@ -11,9 +11,11 @@
  #include <sys/sysctl.h>
  #include <sys/user.h>
  #include <unistd.h>
-@@ -14,11 +16,29 @@
+@@ -13,12 +15,31 @@
+ #include "base/memory/ptr_util.h"
  #include "base/process/process_metrics_iocounters.h"
  #include "base/stl_util.h"
++#include "base/values.h"
  
 +#include <unistd.h> /* getpagesize() */
 +#include <fcntl.h>  /* O_RDONLY */
@@ -43,7 +45,7 @@
  
  // static
  std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
-@@ -69,4 +89,216 @@ size_t GetSystemCommitCharge() {
+@@ -69,4 +90,216 @@ size_t GetSystemCommitCharge() {
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
  }
  

@@ -1,8 +1,8 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 
 PORTNAME=	chromium
-PORTVERSION=	91.0.4472.164
-CATEGORIES=	www java
+PORTVERSION=	92.0.4515.159
+CATEGORIES=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/rene/chromium/:fonts
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -14,6 +14,7 @@ LICENSE=	BSD3CLAUSE LGPL21 MPL11
 LICENSE_COMB=	multi
 
 BROKEN_FreeBSD_11_aarch64=	components/safe_browsing_db/v4_rice.cc:120:18: use of overloaded operator '&' is ambiguous
+BROKEN_i386=			../../base/files/file_util_posix.cc:1258:29: error: no matching function for call to 'sendfile' (ssize_t vs off_t)
 ONLY_FOR_ARCHS=			aarch64 amd64 i386
 
 BUILD_DEPENDS=	bash:shells/bash \
@@ -28,7 +29,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
 		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR} \
-		${LOCALBASE}/include/va/va.h:multimedia/libva
+		${LOCALBASE}/include/va/va.h:multimedia/libva \
+		${LOCALBASE}/bin/python2.7:lang/python27
 
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libatspi.so:accessibility/at-spi2-core \
@@ -66,7 +68,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
 
 USES=		bison compiler:c++17-lang cpe desktop-file-utils dos2unix gl gnome jpeg localbase:ldflags \
-		ninja perl5 pkgconfig python:2.7,build shebangfix tar:xz xorg
+		ninja perl5 pkgconfig python:build shebangfix tar:xz xorg
 
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
@@ -84,7 +86,8 @@ SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper buildtools/linux64/clang-
 MAKE_ARGS=	-C out/${BUILDTYPE}
 ALL_TARGET=	chrome
 
-BINARY_ALIAS=	python=${PYTHON_CMD}
+BINARY_ALIAS=	python=${LOCALBASE}/bin/python2.7 \
+		python3=${PYTHON_CMD}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 
 # TODO bz@ : install libwidevinecdm.so (see third_party/widevine/cdm/BUILD.gn)
@@ -261,14 +264,6 @@ pre-configure:
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
 		ffmpeg flac fontconfig freetype harfbuzz-ng libdrm libpng libwebp libxml libxslt openh264 opus snappy || ${FALSE}
 
-	# We need the site package from xcbgen, which installs as python3.x (really: default version), while the chromium
-	# build still needs to use python2.7. It works, because xcbgen can run with both versions, but we want to avoid
-	# having the pre-compiled pyc files from 2.7 in the 3.x site packages
-	# Remove this as soon as chromium uses python3.x as well
-	@${MKDIR} ${WRKDIR}/site-packages/xcbgen
-	${CP} ${PYTHONBASE}/lib/python${PYTHON_DEFAULT}/site-packages/xcbgen/*.py \
-		${WRKDIR}/site-packages/xcbgen
-
 do-configure:
 	# GN generator bootstrapping and generating ninja files
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} LD=${CXX} \
@@ -285,6 +280,7 @@ do-configure:
 	@${MKDIR} ${WRKSRC}/buildtools/freebsd
 	${LN} -sf ${WRKSRC}/buildtools/linux64/clang-format ${WRKSRC}/buildtools/freebsd
 	${LN} -sf ${WRKSRC}/out/${BUILDTYPE}/gn ${WRKSRC}/buildtools/freebsd
+	${LN} -sf /usr/bin/strip ${WRKSRC}/buildtools/freebsd/strip
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

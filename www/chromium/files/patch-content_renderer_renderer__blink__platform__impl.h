@@ -1,4 +1,4 @@
---- content/renderer/renderer_blink_platform_impl.h.orig	2021-05-12 22:05:53 UTC
+--- content/renderer/renderer_blink_platform_impl.h.orig	2021-07-19 18:45:16 UTC
 +++ content/renderer/renderer_blink_platform_impl.h
 @@ -29,7 +29,7 @@
  #include "third_party/blink/public/mojom/cache_storage/cache_storage.mojom.h"
@@ -9,7 +9,7 @@
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -183,7 +183,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -194,7 +194,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
        const blink::WebURL& top_document_web_url) override;
    gpu::GpuMemoryBufferManager* GetGpuMemoryBufferManager() override;
    blink::WebString ConvertIDNToUnicode(const blink::WebString& host) override;
@@ -18,16 +18,16 @@
    void SetDisplayThreadPriority(base::PlatformThreadId thread_id) override;
  #endif
    blink::BlameContext* GetTopLevelBlameContext() override;
-@@ -230,7 +230,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
-   // Return the mojo interface for making CodeCache calls.
-   blink::mojom::CodeCacheHost& GetCodeCacheHost();
+@@ -268,7 +268,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+   void Collect3DContextInformation(blink::Platform::GraphicsInfo* gl_info,
+                                    const gpu::GPUInfo& gpu_info) const;
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || defined(OS_BSD)
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  
-@@ -251,7 +251,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -289,7 +289,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    mojo::PendingRemote<blink::mojom::CodeCacheHost> code_cache_host_remote_;
    mojo::SharedRemote<blink::mojom::CodeCacheHost> code_cache_host_;
  

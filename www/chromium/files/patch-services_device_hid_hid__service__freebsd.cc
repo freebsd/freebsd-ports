@@ -1,4 +1,4 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2021-06-10 13:30:27 UTC
+--- services/device/hid/hid_service_freebsd.cc.orig	2021-07-28 08:43:36 UTC
 +++ services/device/hid/hid_service_freebsd.cc
 @@ -0,0 +1,391 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
@@ -98,7 +98,7 @@
 +
 +    task_runner_->PostTask(
 +        FROM_HERE,
-+        base::Bind(&HidServiceFreeBSD::FirstEnumerationComplete, service_));
++        base::BindOnce(&HidServiceFreeBSD::FirstEnumerationComplete, service_));
 +  }
 +
 +  bool HaveReadWritePermissions(std::string device_id) {
@@ -186,8 +186,8 @@
 +    base::ScopedBlockingCall scoped_blocking_call(
 +        FROM_HERE, base::BlockingType::MAY_BLOCK);
 +    task_runner_->PostTask(
-+        FROM_HERE, base::Bind(&HidServiceFreeBSD::RemoveDevice, service_,
-+                              device_id));
++        FROM_HERE, base::BindOnce(&HidServiceFreeBSD::RemoveDevice, service_,
++                                  device_id));
 +  }
 +
 + private:
@@ -236,8 +236,8 @@
 +
 +    devd_fd_.reset(devd_fd);
 +    file_watcher_ = base::FileDescriptorWatcher::WatchReadable(
-+        devd_fd_.get(), base::Bind(&BlockingTaskRunnerHelper::OnDevdMessageCanBeRead,
-+                                   base::Unretained(this)));
++        devd_fd_.get(), base::BindRepeating(&BlockingTaskRunnerHelper::OnDevdMessageCanBeRead,
++                                            base::Unretained(this)));
 +  }
 +
 +  void OnDevdMessageCanBeRead() {

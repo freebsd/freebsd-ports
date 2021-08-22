@@ -1,4 +1,4 @@
---- content/shell/BUILD.gn.orig	2021-04-14 18:41:03 UTC
+--- content/shell/BUILD.gn.orig	2021-07-19 18:45:16 UTC
 +++ content/shell/BUILD.gn
 @@ -87,7 +87,7 @@ static_library("content_shell_app") {
        "//content/web_test:web_test_renderer",
@@ -18,7 +18,7 @@
      deps += [
        "//components/crash/content/browser",
        "//components/crash/core/app",
-@@ -522,7 +522,7 @@ if (is_android) {
+@@ -523,7 +523,7 @@ if (is_android) {
        }
      }
  
@@ -27,7 +27,7 @@
        data_deps +=
            [ "//third_party/crashpad/crashpad/handler:crashpad_handler" ]
      }
-@@ -808,7 +808,7 @@ group("content_shell_crash_test") {
+@@ -837,7 +837,7 @@ group("content_shell_crash_test") {
        mac_bin_path + "otool-classic",
      ]
    }
@@ -36,7 +36,7 @@
      data += [
        "//components/crash/content/tools/generate_breakpad_symbols.py",
        "//components/crash/content/tools/dmp2minidump.py",
-@@ -817,7 +817,7 @@ group("content_shell_crash_test") {
+@@ -846,7 +846,7 @@ group("content_shell_crash_test") {
    if (is_win) {
      data_deps += [ "//build/win:copy_cdb_to_output" ]
    }

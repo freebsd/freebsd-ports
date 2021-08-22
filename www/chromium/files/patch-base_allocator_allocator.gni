@@ -1,6 +1,6 @@
---- base/allocator/allocator.gni.orig	2021-05-24 22:05:31 UTC
+--- base/allocator/allocator.gni.orig	2021-07-19 18:45:05 UTC
 +++ base/allocator/allocator.gni
-@@ -63,7 +63,7 @@ declare_args() {
+@@ -60,7 +60,7 @@ declare_args() {
    # not, and redesign or remove the flag accordingly.  We may want to assert a
    # possible conflict between |use_allocator = "partition"| and
    # |use_partition_alloc = true| rather than prioritizing use_partition_alloc.

@@ -1,6 +1,6 @@
---- chrome/browser/download/chrome_download_manager_delegate.cc.orig	2021-05-12 22:05:43 UTC
+--- chrome/browser/download/chrome_download_manager_delegate.cc.orig	2021-07-19 18:45:08 UTC
 +++ chrome/browser/download/chrome_download_manager_delegate.cc
-@@ -1436,7 +1436,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
+@@ -1439,7 +1439,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
          target_info->is_filetype_handled_safely)
        DownloadItemModel(item).SetShouldPreferOpeningInBrowser(true);
  
@@ -9,7 +9,7 @@
      if (item->GetOriginalMimeType() == "application/x-x509-user-cert")
        DownloadItemModel(item).SetShouldPreferOpeningInBrowser(true);
  #endif
-@@ -1489,7 +1489,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
+@@ -1494,7 +1494,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
  
  bool ChromeDownloadManagerDelegate::IsOpenInBrowserPreferreredForFile(
      const base::FilePath& path) {
@@ -18,7 +18,7 @@
      defined(OS_MAC)
    if (path.MatchesExtension(FILE_PATH_LITERAL(".pdf"))) {
      return !download_prefs_->ShouldOpenPdfInSystemReader();
-@@ -1586,7 +1586,7 @@ void ChromeDownloadManagerDelegate::CheckDownloadAllow
+@@ -1598,7 +1598,7 @@ void ChromeDownloadManagerDelegate::CheckDownloadAllow
      bool content_initiated,
      content::CheckDownloadAllowedCallback check_download_allowed_cb) {
    DCHECK_CURRENTLY_ON(BrowserThread::UI);
@@ -27,7 +27,7 @@
      defined(OS_MAC)
    // Don't download pdf if it is a file URL, as that might cause an infinite
    // download loop if Chrome is not the system pdf viewer.
-@@ -1628,7 +1628,7 @@ ChromeDownloadManagerDelegate::GetQuarantineConnection
+@@ -1640,7 +1640,7 @@ ChromeDownloadManagerDelegate::GetQuarantineConnection
  std::unique_ptr<download::DownloadItemRenameHandler>
  ChromeDownloadManagerDelegate::GetRenameHandlerForDownload(
      download::DownloadItem* download_item) {

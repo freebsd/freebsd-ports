@@ -1,6 +1,6 @@
---- components/safe_browsing/core/resources/gen_file_type_proto.py.orig	2021-04-14 18:41:00 UTC
+--- components/safe_browsing/core/resources/gen_file_type_proto.py.orig	2021-07-19 18:45:14 UTC
 +++ components/safe_browsing/core/resources/gen_file_type_proto.py
-@@ -31,6 +31,7 @@ def PlatformTypes():
+@@ -33,6 +33,7 @@ def PlatformTypes():
      "android": download_file_types_pb2.DownloadFileType.PLATFORM_ANDROID,
      "chromeos": download_file_types_pb2.DownloadFileType.PLATFORM_CHROME_OS,
      "linux": download_file_types_pb2.DownloadFileType.PLATFORM_LINUX,
@@ -8,7 +8,7 @@
      "mac": download_file_types_pb2.DownloadFileType.PLATFORM_MAC,
      "win": download_file_types_pb2.DownloadFileType.PLATFORM_WINDOWS,
    }
-@@ -169,7 +170,7 @@ class DownloadFileTypeProtoGenerator(BinaryProtoGenera
+@@ -171,7 +172,7 @@ class DownloadFileTypeProtoGenerator(BinaryProtoGenera
                        'Outfile must have a %d for version and %s for platform.')
      parser.add_option('-t', '--type',
                        help='The platform type. One of android, chromeos, ' +

@@ -1,4 +1,4 @@
---- net/base/network_change_notifier.cc.orig	2021-04-14 18:41:06 UTC
+--- net/base/network_change_notifier.cc.orig	2021-07-19 18:45:19 UTC
 +++ net/base/network_change_notifier.cc
 @@ -38,7 +38,7 @@
  #include "net/base/network_change_notifier_linux.h"
@@ -18,4 +18,22 @@
 +      /*dns_config_notifier*/nullptr);
  #else
    NOTIMPLEMENTED();
+   return NULL;
+@@ -435,7 +438,7 @@ const char* NetworkChangeNotifier::ConnectionTypeToStr
+   return kConnectionTypeNames[type];
+ }
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ // static
+ const internal::AddressTrackerLinux*
+ NetworkChangeNotifier::GetAddressTracker() {
+@@ -773,7 +776,7 @@ NetworkChangeNotifier::NetworkChangeNotifier(
+   can_add_observers_ = true;
+ }
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ const internal::AddressTrackerLinux*
+ NetworkChangeNotifier::GetAddressTrackerInternal() const {
    return NULL;

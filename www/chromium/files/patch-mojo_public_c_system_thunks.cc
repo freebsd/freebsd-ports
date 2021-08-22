@@ -1,4 +1,4 @@
---- mojo/public/c/system/thunks.cc.orig	2021-04-14 18:41:06 UTC
+--- mojo/public/c/system/thunks.cc.orig	2021-07-19 18:45:18 UTC
 +++ mojo/public/c/system/thunks.cc
 @@ -20,7 +20,7 @@
  #include "mojo/public/c/system/core.h"
@@ -8,7 +8,7 @@
 +#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
  #include "base/environment.h"
  #include "base/files/file_path.h"
- #include "base/optional.h"
+ #include "base/scoped_native_library.h"
 @@ -68,7 +68,7 @@ class CoreLibraryInitializer {
    ~CoreLibraryInitializer() = default;
  
@@ -41,6 +41,6 @@
   private:
 -#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_WIN)
 +#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
-   base::Optional<base::ScopedNativeLibrary> library_;
+   absl::optional<base::ScopedNativeLibrary> library_;
  #endif
  };

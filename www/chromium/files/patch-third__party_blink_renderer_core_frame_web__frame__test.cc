@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/frame/web_frame_test.cc.orig	2021-05-12 22:06:00 UTC
+--- third_party/blink/renderer/core/frame/web_frame_test.cc.orig	2021-07-19 18:45:21 UTC
 +++ third_party/blink/renderer/core/frame/web_frame_test.cc
-@@ -6057,7 +6057,7 @@ TEST_F(WebFrameTest, DISABLED_PositionForPointTest) {
+@@ -6064,7 +6064,7 @@ TEST_F(WebFrameTest, DISABLED_PositionForPointTest) {
    EXPECT_EQ(64, ComputeOffset(layout_object, 1000, 1000));
  }
  
@@ -9,7 +9,7 @@
  TEST_F(WebFrameTest, SelectRangeStaysHorizontallyAlignedWhenMoved) {
    RegisterMockedHttpURLLoad("move_caret.html");
  
-@@ -6426,7 +6426,7 @@ TEST_P(CompositedSelectionBoundsTest, SVGBasic) {
+@@ -6433,7 +6433,7 @@ TEST_P(CompositedSelectionBoundsTest, SVGBasic) {
  TEST_P(CompositedSelectionBoundsTest, SVGTextWithFragments) {
    RunTest("composited_selection_bounds_svg_text_with_fragments.html");
  }

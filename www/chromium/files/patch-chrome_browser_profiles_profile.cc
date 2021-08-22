@@ -1,6 +1,6 @@
---- chrome/browser/profiles/profile.cc.orig	2021-05-12 22:05:44 UTC
+--- chrome/browser/profiles/profile.cc.orig	2021-07-19 18:45:09 UTC
 +++ chrome/browser/profiles/profile.cc
-@@ -376,7 +376,7 @@ bool Profile::IsIncognitoProfile() const {
+@@ -385,7 +385,7 @@ bool Profile::IsIncognitoProfile() const {
  bool Profile::IsEphemeralGuestProfileEnabled() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

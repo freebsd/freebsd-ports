@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.h.orig	2021-06-09 22:13:57 UTC
+--- chrome/common/chrome_features.h.orig	2021-07-19 18:45:10 UTC
 +++ chrome/common/chrome_features.h
-@@ -70,10 +70,10 @@ extern const base::Feature kAppShimNewCloseBehavior;
+@@ -69,10 +69,10 @@ extern const base::Feature kAppShimNewCloseBehavior;
  
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
  
@@ -13,7 +13,7 @@
  
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kBorealis;
-@@ -234,11 +234,11 @@ extern const base::Feature kEnableAmbientAuthenticatio
+@@ -250,11 +250,11 @@ extern const base::Feature kEnableAmbientAuthenticatio
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -27,9 +27,9 @@
          // BUILDFLAG(IS_CHROMEOS_LACROS)) ||  defined(OS_MAC)
  
  #if defined(OS_WIN)
-@@ -358,7 +358,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
- extern const base::Feature kIncompatibleApplicationsWarning;
- #endif  // defined(OS_ANDROID)
+@@ -374,7 +374,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kIncognitoBrandConsistencyForAndroid;
+ #endif
  
 -#if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
 +#if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \

@@ -1,6 +1,6 @@
---- gpu/config/gpu_control_list.cc.orig	2021-04-14 18:41:04 UTC
+--- gpu/config/gpu_control_list.cc.orig	2021-07-19 18:45:17 UTC
 +++ gpu/config/gpu_control_list.cc
-@@ -18,7 +18,11 @@
+@@ -19,7 +19,11 @@
  #include "build/build_config.h"
  #include "build/chromeos_buildflags.h"
  #include "gpu/config/gpu_util.h"
@@ -12,7 +12,7 @@
  
  namespace gpu {
  namespace {
-@@ -276,7 +280,7 @@ bool GpuControlList::More::GLVersionInfoMismatch(
+@@ -277,7 +281,7 @@ bool GpuControlList::More::GLVersionInfoMismatch(
  GpuControlList::GLType GpuControlList::More::GetDefaultGLType() {
  #if BUILDFLAG(IS_CHROMEOS_ASH)
    return kGLTypeGL;

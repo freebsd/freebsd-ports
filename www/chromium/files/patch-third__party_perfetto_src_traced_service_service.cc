@@ -1,6 +1,6 @@
---- third_party/perfetto/src/traced/service/service.cc.orig	2021-04-14 18:43:07 UTC
+--- third_party/perfetto/src/traced/service/service.cc.orig	2021-07-19 18:47:29 UTC
 +++ third_party/perfetto/src/traced/service/service.cc
-@@ -28,7 +28,8 @@
+@@ -29,7 +29,8 @@
  #include "src/traced/service/builtin_producer.h"
  
  #if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \

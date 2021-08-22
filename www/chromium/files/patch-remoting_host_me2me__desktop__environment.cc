@@ -1,6 +1,19 @@
---- remoting/host/me2me_desktop_environment.cc.orig	2021-05-12 22:05:58 UTC
+--- remoting/host/me2me_desktop_environment.cc.orig	2021-07-19 18:45:20 UTC
 +++ remoting/host/me2me_desktop_environment.cc
-@@ -131,7 +131,7 @@ bool Me2MeDesktopEnvironment::InitializeSecurity(
+@@ -86,10 +86,10 @@ std::string Me2MeDesktopEnvironment::GetCapabilities()
+   }
+ #endif  // defined(OS_WIN)
+ 
+-#if !defined(NDEBUG) && defined(OS_LINUX)
++#if !defined(NDEBUG) && (defined(OS_LINUX) || defined(OS_BSD))
+   capabilities += " ";
+   capabilities += protocol::kRemoteOpenUrlCapability;
+-#endif  // !defined(NDEBUG) && defined(OS_LINUX)
++#endif  // !defined(NDEBUG) && (defined(OS_LINUX) || defined(OS_BSD))
+ 
+   return capabilities;
+ }
+@@ -136,7 +136,7 @@ bool Me2MeDesktopEnvironment::InitializeSecurity(
  
    // Otherwise, if the session is shared with the local user start monitoring
    // the local input and create the in-session UI.

@@ -1,4 +1,4 @@
---- ui/platform_window/platform_window_init_properties.h.orig	2021-04-14 18:41:39 UTC
+--- ui/platform_window/platform_window_init_properties.h.orig	2021-07-19 18:45:44 UTC
 +++ ui/platform_window/platform_window_init_properties.h
 @@ -47,7 +47,7 @@ enum class PlatformWindowShadowType {
  
@@ -17,4 +17,4 @@
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    bool prefer_dark_theme = false;
    gfx::ImageSkia* icon = nullptr;
-   base::Optional<int> background_color;
+   absl::optional<int> background_color;

@@ -1,6 +1,6 @@
---- chrome/browser/search/drive/drive_service.cc.orig	2021-06-10 11:15:16 UTC
+--- chrome/browser/search/drive/drive_service.cc.orig	2021-07-19 18:45:09 UTC
 +++ chrome/browser/search/drive/drive_service.cc
-@@ -19,6 +19,8 @@ namespace {
+@@ -27,6 +27,8 @@ namespace {
  constexpr char kDriveScope[] = "https://www.googleapis.com/auth/drive.readonly";
  #if OS_LINUX
  constexpr char kPlatform[] = "LINUX";

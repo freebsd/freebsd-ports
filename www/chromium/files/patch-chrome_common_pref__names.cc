@@ -1,6 +1,6 @@
---- chrome/common/pref_names.cc.orig	2021-05-12 22:05:46 UTC
+--- chrome/common/pref_names.cc.orig	2021-07-19 18:45:10 UTC
 +++ chrome/common/pref_names.cc
-@@ -1123,7 +1123,7 @@ const char kAllowedDomainsForApps[] = "settings.allowe
+@@ -1125,7 +1125,7 @@ const char kAllowedDomainsForApps[] = "settings.allowe
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
  // Linux specific preference on whether we should match the system theme.
  const char kUsesSystemTheme[] = "extensions.theme.use_system";
  #endif
-@@ -1264,7 +1264,7 @@ const char kShowUpdatePromotionInfoBar[] =
+@@ -1228,7 +1228,7 @@ const char kShowUpdatePromotionInfoBar[] =
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -18,7 +18,7 @@
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  const char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -1722,7 +1722,7 @@ const char kDownloadDefaultDirectory[] = "download.def
+@@ -1686,7 +1686,7 @@ const char kDownloadDefaultDirectory[] = "download.def
  // upgrade a unsafe location to a safe location.
  const char kDownloadDirUpgraded[] = "download.directory_upgrade";
  
@@ -27,7 +27,7 @@
      defined(OS_MAC)
  const char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
-@@ -1993,7 +1993,7 @@ const char kWebAppsUninstalledDefaultChromeApps[] =
+@@ -1958,7 +1958,7 @@ const char kWebAppsUninstalledDefaultChromeApps[] =
  const char kWebAppsPreferences[] = "web_apps.web_app_ids";
  
  #if defined(OS_WIN) || defined(OS_MAC) || \
@@ -36,7 +36,7 @@
  // Dictionary that maps origins to web apps that can act as URL handlers.
  const char kWebAppsUrlHandlerInfo[] = "web_apps.url_handler_info";
  #endif
-@@ -2109,12 +2109,12 @@ const char kAmbientAuthenticationInPrivateModesEnabled
+@@ -2074,12 +2074,12 @@ const char kAmbientAuthenticationInPrivateModesEnabled
  // requests.
  const char kBasicAuthOverHttpEnabled[] = "auth.basic_over_http_enabled";
  
@@ -51,7 +51,7 @@
  
  #if defined(OS_POSIX)
  // Boolean that specifies whether NTLMv2 is enabled.
-@@ -3015,7 +3015,7 @@ const char kBlockAutoplayEnabled[] = "media.block_auto
+@@ -2993,7 +2993,7 @@ const char kBlockAutoplayEnabled[] = "media.block_auto
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

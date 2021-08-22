@@ -1,6 +1,6 @@
---- third_party/blink/renderer/modules/peerconnection/webrtc_audio_renderer_test.cc.orig	2021-05-12 22:06:01 UTC
+--- third_party/blink/renderer/modules/peerconnection/webrtc_audio_renderer_test.cc.orig	2021-07-19 18:45:22 UTC
 +++ third_party/blink/renderer/modules/peerconnection/webrtc_audio_renderer_test.cc
-@@ -286,7 +286,7 @@ TEST_F(MAYBE_WebRtcAudioRendererTest, DISABLED_Multipl
+@@ -287,7 +287,7 @@ TEST_F(MAYBE_WebRtcAudioRendererTest, DISABLED_Multipl
  TEST_F(MAYBE_WebRtcAudioRendererTest, DISABLED_VerifySinkParameters) {
    SetupRenderer(kDefaultOutputDeviceId);
    renderer_proxy_->Start();

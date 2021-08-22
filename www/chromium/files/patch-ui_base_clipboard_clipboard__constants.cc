@@ -1,8 +1,8 @@
---- ui/base/clipboard/clipboard_constants.cc.orig	2021-04-14 18:41:37 UTC
+--- ui/base/clipboard/clipboard_constants.cc.orig	2021-07-19 18:45:43 UTC
 +++ ui/base/clipboard/clipboard_constants.cc
-@@ -18,11 +18,11 @@ const char kMimeTypeSvg[] = "image/svg+xml";
- const char kMimeTypeRTF[] = "text/rtf";
- const char kMimeTypePNG[] = "image/png";
+@@ -20,11 +20,11 @@ const char kMimeTypePNG[] = "image/png";
+ // Used for image drag & drop from LaCrOS.
+ const char kMimeTypeOctetStream[] = "application/octet-stream";
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)

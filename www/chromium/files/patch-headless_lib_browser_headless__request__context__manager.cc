@@ -1,6 +1,6 @@
---- headless/lib/browser/headless_request_context_manager.cc.orig	2021-04-14 18:41:04 UTC
+--- headless/lib/browser/headless_request_context_manager.cc.orig	2021-07-19 18:45:17 UTC
 +++ headless/lib/browser/headless_request_context_manager.cc
-@@ -35,7 +35,7 @@ namespace {
+@@ -36,7 +36,7 @@ namespace {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
  constexpr char kProductName[] = "HeadlessChrome";
  #endif
  
-@@ -73,7 +73,7 @@ void SetCryptConfigOnce(const base::FilePath& user_dat
+@@ -74,7 +74,7 @@ void SetCryptConfigOnce(const base::FilePath& user_dat
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

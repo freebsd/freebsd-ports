@@ -1,6 +1,6 @@
---- ui/gl/gl_features.cc.orig	2021-04-14 18:41:39 UTC
+--- ui/gl/gl_features.cc.orig	2021-07-19 18:45:44 UTC
 +++ ui/gl/gl_features.cc
-@@ -23,8 +23,8 @@ const base::Feature kGpuVsync{"GpuVsync", base::FEATUR
+@@ -71,8 +71,8 @@ bool IsDeviceBlocked(const char* field, const std::str
  // Launched on Windows, still experimental on other platforms.
  const base::Feature kDefaultPassthroughCommandDecoder{
    "DefaultPassthroughCommandDecoder",

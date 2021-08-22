@@ -1,6 +1,6 @@
---- ui/gfx/render_text.cc.orig	2021-05-12 22:06:47 UTC
+--- ui/gfx/render_text.cc.orig	2021-07-19 18:45:44 UTC
 +++ ui/gfx/render_text.cc
-@@ -1203,23 +1203,24 @@ void RenderText::SetDisplayOffset(Vector2d offset) {
+@@ -1201,23 +1201,24 @@ void RenderText::SetDisplayOffset(Vector2d offset) {
    const int extra_content = GetContentWidth() - display_rect_.width();
    const int cursor_width = cursor_enabled_ ? 1 : 0;
  
@@ -31,7 +31,7 @@
          break;
        default:
          break;
-@@ -1227,7 +1228,7 @@ void RenderText::SetDisplayOffset(Vector2d offset) {
+@@ -1225,7 +1226,7 @@ void RenderText::SetDisplayOffset(Vector2d offset) {
    }
  
    const int horizontal_offset =

@@ -1,7 +1,7 @@
---- chrome/browser/BUILD.gn.orig	2021-05-12 22:05:42 UTC
+--- chrome/browser/BUILD.gn.orig	2021-07-19 18:45:07 UTC
 +++ chrome/browser/BUILD.gn
-@@ -2427,9 +2427,18 @@ static_library("browser") {
-       ]
+@@ -2456,9 +2456,18 @@ static_library("browser") {
+       deps += [ "//chromeos/services/libassistant/public/mojom" ]
      }
    }
 -  if (is_linux || is_chromeos) {
@@ -20,7 +20,7 @@
    if (use_ozone) {
      deps += [
        "//ui/events/ozone",
-@@ -5134,6 +5143,17 @@ static_library("browser") {
+@@ -5310,6 +5319,18 @@ static_library("browser") {
      }
    }
  
@@ -35,10 +35,11 @@
 +    ]
 +  }
 +
-   if (is_chromeos_ash) {
-     if (use_allocator == "tcmalloc") {
-       deps += [ "//chrome/common/performance_manager/mojom" ]
-@@ -5361,7 +5381,7 @@ static_library("browser") {
++
+   if (is_posix || is_fuchsia) {
+     deps += [ "//chrome/app:shutdown_signal_handlers" ]
+   }
+@@ -5468,7 +5489,7 @@ static_library("browser") {
      ]
    }
  

@@ -1,4 +1,4 @@
---- net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2021-04-14 18:41:07 UTC
+--- net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2021-07-19 18:45:19 UTC
 +++ net/tools/cert_verify_tool/cert_verify_tool.cc
 @@ -29,7 +29,7 @@
  #include "net/url_request/url_request_context_builder.h"
@@ -18,7 +18,7 @@
    // On Linux, use a fixed ProxyConfigService, since the default one
    // depends on glib.
    //
-@@ -192,7 +192,7 @@ std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFr
+@@ -183,7 +183,7 @@ std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFr
      base::StringPiece impl_name,
      scoped_refptr<net::CertNetFetcher> cert_net_fetcher,
      bool use_system_roots) {

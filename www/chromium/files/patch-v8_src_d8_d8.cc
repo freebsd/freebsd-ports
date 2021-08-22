@@ -1,4 +1,4 @@
---- v8/src/d8/d8.cc.orig	2021-05-12 22:13:52 UTC
+--- v8/src/d8/d8.cc.orig	2021-07-19 18:47:38 UTC
 +++ v8/src/d8/d8.cc
 @@ -73,7 +73,7 @@
  #include "unicode/locid.h"
@@ -27,7 +27,7 @@
  
  v8::Platform* g_default_platform;
  std::unique_ptr<v8::Platform> g_platform;
-@@ -4099,7 +4099,7 @@ bool Shell::SetOptions(int argc, char* argv[]) {
+@@ -4171,7 +4171,7 @@ bool Shell::SetOptions(int argc, char* argv[]) {
    options.mock_arraybuffer_allocator = i::FLAG_mock_arraybuffer_allocator;
    options.mock_arraybuffer_allocator_limit =
        i::FLAG_mock_arraybuffer_allocator_limit;
@@ -36,7 +36,7 @@
    options.multi_mapped_mock_allocator = i::FLAG_multi_mapped_mock_allocator;
  #endif
  
-@@ -4735,19 +4735,19 @@ int Shell::Main(int argc, char* argv[]) {
+@@ -4808,19 +4808,19 @@ int Shell::Main(int argc, char* argv[]) {
        memory_limit >= options.mock_arraybuffer_allocator_limit
            ? memory_limit
            : std::numeric_limits<size_t>::max());

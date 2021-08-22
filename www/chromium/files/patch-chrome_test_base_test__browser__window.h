@@ -1,6 +1,6 @@
---- chrome/test/base/test_browser_window.h.orig	2021-05-24 22:05:36 UTC
+--- chrome/test/base/test_browser_window.h.orig	2021-07-19 18:45:11 UTC
 +++ chrome/test/base/test_browser_window.h
-@@ -179,7 +179,7 @@ class TestBrowserWindow : public BrowserWindow {
+@@ -188,7 +188,7 @@ class TestBrowserWindow : public BrowserWindow {
    void MaybeShowProfileSwitchIPH() override {}
  
  #if defined(OS_CHROMEOS) || defined(OS_MAC) || defined(OS_WIN) || \

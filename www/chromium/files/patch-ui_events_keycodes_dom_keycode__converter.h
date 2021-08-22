@@ -1,6 +1,6 @@
---- ui/events/keycodes/dom/keycode_converter.h.orig	2021-04-22 08:32:20 UTC
+--- ui/events/keycodes/dom/keycode_converter.h.orig	2021-07-19 18:45:44 UTC
 +++ ui/events/keycodes/dom/keycode_converter.h
-@@ -59,18 +59,20 @@ class KeycodeConverter {
+@@ -63,18 +63,20 @@ class KeycodeConverter {
    // Convert a DomCode into a native keycode.
    static int DomCodeToNativeKeycode(DomCode code);
  
@@ -21,4 +21,4 @@
 +#endif
  #endif
  
-   // Convert a UI Events |code| string value into a DomCode.
+ #if defined(OS_CHROMEOS)

@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/web_app_install_task.cc.orig	2021-05-12 22:05:46 UTC
+--- chrome/browser/web_applications/web_app_install_task.cc.orig	2021-07-19 18:45:10 UTC
 +++ chrome/browser/web_applications/web_app_install_task.cc
-@@ -861,7 +861,7 @@ void WebAppInstallTask::OnInstallFinalizedCreateShortc
+@@ -862,7 +862,7 @@ void WebAppInstallTask::OnInstallFinalizedCreateShortc
    options.os_hooks[OsHookType::kProtocolHandlers] = true;
    options.os_hooks[OsHookType::kUninstallationViaOsSettings] = true;
  #if defined(OS_WIN) || defined(OS_MAC) || \

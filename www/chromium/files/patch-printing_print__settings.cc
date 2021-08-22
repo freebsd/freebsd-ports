@@ -1,4 +1,4 @@
---- printing/print_settings.cc.orig	2021-04-14 18:41:07 UTC
+--- printing/print_settings.cc.orig	2021-07-19 18:45:19 UTC
 +++ printing/print_settings.cc
 @@ -278,9 +278,9 @@ void PrintSettings::Clear() {
  #endif
@@ -9,6 +9,6 @@
    advanced_settings_.clear();
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- #if BUILDFLAG(IS_CHROMEOS_ASH)
+ #if defined(OS_CHROMEOS)
    send_user_info_ = false;
    username_.clear();

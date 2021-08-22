@@ -1,6 +1,6 @@
---- components/invalidation/impl/invalidation_switches.cc.orig	2021-04-14 18:40:59 UTC
+--- components/invalidation/impl/invalidation_switches.cc.orig	2021-07-19 18:45:13 UTC
 +++ components/invalidation/impl/invalidation_switches.cc
-@@ -28,7 +28,7 @@ const base::Feature kFCMInvalidationsForSyncDontCheckV
+@@ -20,7 +20,7 @@ const int kDefaultInstanceIDTokenTTLSeconds = 14 * 24 
  
  const base::Feature kSyncInstanceIDTokenTTL {
    "SyncInstanceIDTokenTTL",

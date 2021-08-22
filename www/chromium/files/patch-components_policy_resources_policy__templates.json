@@ -1,4 +1,4 @@
---- components/policy/resources/policy_templates.json.orig	2021-05-12 22:05:50 UTC
+--- components/policy/resources/policy_templates.json.orig	2021-07-19 18:45:14 UTC
 +++ components/policy/resources/policy_templates.json
 @@ -1246,7 +1246,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
@@ -45,7 +45,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -9103,7 +9103,7 @@
+@@ -9137,7 +9137,7 @@
        'owners': ['file://net/cert/OWNERS', 'rsleevi@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -54,7 +54,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -10808,7 +10808,7 @@
+@@ -10851,7 +10851,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pmarko@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -63,7 +63,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -11618,7 +11618,7 @@
+@@ -11698,7 +11698,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'bartfab@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },

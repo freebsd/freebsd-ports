@@ -1,7 +1,7 @@
---- third_party/crashpad/crashpad/client/BUILD.gn.orig	2021-04-14 18:41:33 UTC
+--- third_party/crashpad/crashpad/client/BUILD.gn.orig	2021-07-19 18:45:40 UTC
 +++ third_party/crashpad/crashpad/client/BUILD.gn
-@@ -78,6 +78,12 @@ crashpad_static_library("client") {
-     sources += [ "crashpad_client_fuchsia.cc" ]
+@@ -44,6 +44,12 @@ crashpad_static_library("client") {
+     ]
    }
  
 +  if (crashpad_is_posix) {
@@ -11,5 +11,5 @@
 +  }
 +
    if (crashpad_is_linux || crashpad_is_android || crashpad_is_fuchsia) {
-     sources += [ "crash_report_database_generic.cc" ]
-   }
+     sources += [
+       "client_argv_handling.cc",

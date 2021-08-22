@@ -1,6 +1,6 @@
---- base/BUILD.gn.orig	2021-05-24 22:05:31 UTC
+--- base/BUILD.gn.orig	2021-07-19 18:45:05 UTC
 +++ base/BUILD.gn
-@@ -963,7 +963,7 @@ component("base") {
+@@ -972,7 +972,7 @@ component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
@@ -9,7 +9,7 @@
        sources += [
          "cpu_affinity_posix.cc",
          "cpu_affinity_posix.h",
-@@ -974,6 +974,11 @@ component("base") {
+@@ -983,6 +983,11 @@ component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
@@ -21,7 +21,7 @@
    }
  
    if (is_win) {
-@@ -1377,7 +1382,7 @@ component("base") {
+@@ -1394,7 +1399,7 @@ component("base") {
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
    if (!use_sysroot &&
@@ -30,7 +30,7 @@
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
-@@ -1430,7 +1435,7 @@ component("base") {
+@@ -1447,7 +1452,7 @@ component("base") {
            "allocator/allocator_shim_default_dispatch_to_mac_zoned_malloc.cc",
          ]
        }
@@ -39,7 +39,7 @@
          sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
        }
        if (is_win) {
-@@ -2064,6 +2069,34 @@ component("base") {
+@@ -2119,6 +2124,34 @@ component("base") {
      }
    }
  
@@ -74,21 +74,21 @@
    # iOS
    if (is_ios) {
      sources -= [
-@@ -3273,7 +3306,7 @@ if (build_base_unittests) {
-       }
+@@ -3339,7 +3372,7 @@ test("base_unittests") {
      }
+   }
  
--    if (is_linux || is_chromeos) {
-+    if ((is_linux || is_chromeos) && !is_bsd) {
-       sources += [ "debug/proc_maps_linux_unittest.cc" ]
-     }
- 
-@@ -3313,7 +3346,7 @@ if (build_base_unittests) {
-         "posix/unix_domain_socket_unittest.cc",
-         "task/thread_pool/task_tracker_posix_unittest.cc",
-       ]
--      if (!is_nacl && !is_apple) {
-+      if (!is_nacl && !is_apple && !is_bsd) {
-         sources += [
-           "cpu_affinity_posix_unittest.cc",
-           "profiler/stack_copier_signal_unittest.cc",
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "debug/proc_maps_linux_unittest.cc",
+       "files/scoped_file_linux_unittest.cc",
+@@ -3382,7 +3415,7 @@ test("base_unittests") {
+       "posix/unix_domain_socket_unittest.cc",
+       "task/thread_pool/task_tracker_posix_unittest.cc",
+     ]
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
+       sources += [
+         "cpu_affinity_posix_unittest.cc",
+         "profiler/stack_copier_signal_unittest.cc",
