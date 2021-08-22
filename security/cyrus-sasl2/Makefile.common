@@ -21,7 +21,8 @@ CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--includedir=${PREFIX}/include \
 		--enable-static \
-		--with-rc4=openssl
+		--with-rc4=openssl \
+		--with-sphinx-build=no
 CONFIGURE_ARGS+=--disable-anon \
 		--disable-cram \
 		--disable-digest \
