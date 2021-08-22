@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	scrypt
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.tarsnap.com/scrypt/
 
