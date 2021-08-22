@@ -1,5 +1,5 @@
 PORTNAME=	bbmap
-DISTVERSION=	38.90
+DISTVERSION=	38.92
 CATEGORIES=	biology java
 MASTER_SITES=	SF/bbmap/
 DISTNAME=	BBMap_${PORTVERSION}
@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-LIBEXEC_DIR=    ${PREFIX}/libexec/bbmap
+LIBEXEC_DIR=	${PREFIX}/libexec/bbmap
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|"$$DIR""current/"|${JAVAJARDIR}/bbmap|g' \
@@ -32,13 +32,15 @@ pre-configure:
 		-e 's|"$$DIR""/calcmem.sh"|${LIBEXEC_DIR}/bbmap/calcmem.sh|g' \
 		${WRKSRC}/*.sh
 
+# FIXME: Find out which scripts are meant to be part of the CLI
 do-install:
 	@${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/bbmap
 	${INSTALL_SCRIPT} ${WRKSRC}/*.sh ${STAGEDIR}${LIBEXEC_DIR}
 	cd ${WRKSRC}/current && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${JAVAJARDIR}/bbmap
-.for f in bbduk.sh bbnorm.sh dedupe.sh bbmap.sh bloomfilter.sh reformat.sh
+.for f in bbduk.sh bbnorm.sh dedupe.sh bbmap.sh bloomfilter.sh reformat.sh \
+	bbmerge.sh tadpole.sh
 	${RLN} ${STAGEDIR}${LIBEXEC_DIR}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 

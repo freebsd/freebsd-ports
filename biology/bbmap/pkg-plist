@@ -1,9 +1,11 @@
 bin/bbduk.sh
 bin/bbmap.sh
+bin/bbmerge.sh
 bin/bbnorm.sh
 bin/bloomfilter.sh
 bin/dedupe.sh
 bin/reformat.sh
+bin/tadpole.sh
 libexec/bbmap/a_sample_mt.sh
 libexec/bbmap/addadapters.sh
 libexec/bbmap/addssu.sh
@@ -1184,6 +1186,8 @@ libexec/bbmap/webcheck.sh
 %%JAVAJARDIR%%/bbmap/jgi/Seal$ProcessThread.class
 %%JAVAJARDIR%%/bbmap/jgi/Seal.class
 %%JAVAJARDIR%%/bbmap/jgi/Seal.java
+%%JAVAJARDIR%%/bbmap/jgi/SealRefInfo.class
+%%JAVAJARDIR%%/bbmap/jgi/SealRefInfo.java
 %%JAVAJARDIR%%/bbmap/jgi/Shred.class
 %%JAVAJARDIR%%/bbmap/jgi/Shred.java
 %%JAVAJARDIR%%/bbmap/jgi/SmallKmerFrequency$CountComparator.class
@@ -1233,8 +1237,6 @@ libexec/bbmap/webcheck.sh
 %%JAVAJARDIR%%/bbmap/kmer/AbstractKmerTable.java
 %%JAVAJARDIR%%/bbmap/kmer/AbstractKmerTableSet.class
 %%JAVAJARDIR%%/bbmap/kmer/AbstractKmerTableSet.java
-%%JAVAJARDIR%%/bbmap/kmer/AtomicShortArray.class
-%%JAVAJARDIR%%/bbmap/kmer/AtomicShortArray.java
 %%JAVAJARDIR%%/bbmap/kmer/DumpThread.class
 %%JAVAJARDIR%%/bbmap/kmer/DumpThread.java
 %%JAVAJARDIR%%/bbmap/kmer/HashArray.class
@@ -1553,6 +1555,12 @@ libexec/bbmap/webcheck.sh
 %%JAVAJARDIR%%/bbmap/sort/SortReadsByID$Block.class
 %%JAVAJARDIR%%/bbmap/sort/SortReadsByID.class
 %%JAVAJARDIR%%/bbmap/sort/SortReadsByID.java
+%%JAVAJARDIR%%/bbmap/star/Ship.class
+%%JAVAJARDIR%%/bbmap/star/Ship.java
+%%JAVAJARDIR%%/bbmap/star/Simulate.class
+%%JAVAJARDIR%%/bbmap/star/Simulate.java
+%%JAVAJARDIR%%/bbmap/star/Weapon.class
+%%JAVAJARDIR%%/bbmap/star/Weapon.java
 %%JAVAJARDIR%%/bbmap/stream/ArrayListSet$Pack.class
 %%JAVAJARDIR%%/bbmap/stream/ArrayListSet.class
 %%JAVAJARDIR%%/bbmap/stream/ArrayListSet.java
@@ -1726,6 +1734,10 @@ libexec/bbmap/webcheck.sh
 %%JAVAJARDIR%%/bbmap/structures/LongHeapSetInterface.java
 %%JAVAJARDIR%%/bbmap/structures/LongList.class
 %%JAVAJARDIR%%/bbmap/structures/LongList.java
+%%JAVAJARDIR%%/bbmap/structures/LongList2.class
+%%JAVAJARDIR%%/bbmap/structures/LongList2.java
+%%JAVAJARDIR%%/bbmap/structures/LongList3.class
+%%JAVAJARDIR%%/bbmap/structures/LongList3.java
 %%JAVAJARDIR%%/bbmap/structures/LongListSet$LongListSetIterator.class
 %%JAVAJARDIR%%/bbmap/structures/LongListSet.class
 %%JAVAJARDIR%%/bbmap/structures/LongListSet.java
