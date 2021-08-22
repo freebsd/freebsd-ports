@@ -1,12 +1,6 @@
-Cargo bug?  "vendored" feature seems to leak even outside of targeting
-arm-unknown-linux-gnu-eabhif or aarch64-unknown-linux-gnu.
-
-This makes sure we are building with the system OpenSSL instead of
-the bundled one.
-
---- Cargo.toml.orig	2021-05-14 20:19:41 UTC
+--- Cargo.toml.orig	2021-08-22 18:49:02 UTC
 +++ Cargo.toml
-@@ -23,15 +23,6 @@ rayon = "1.5.0"
+@@ -24,15 +24,6 @@ rayon = "1.5.1"
  config = { version = "0.11.0", features = ["yaml", "json", "toml", "hjson", "ini"] }
  headless_chrome = { git = "https://github.com/Edu4rdSHL/rust-headless-chrome" }
  
