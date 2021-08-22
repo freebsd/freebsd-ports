@@ -64,6 +64,7 @@
 %%DATADIR%%/Q/Q310-vip-w
 %%DATADIR%%/Q/Q310-vip-w-am
 %%DATADIR%%/X/X-hpterm
+%%DATADIR%%/X/X-hpterm-color2
 %%DATADIR%%/a/a210
 %%DATADIR%%/a/a80
 %%DATADIR%%/a/a980
@@ -115,6 +116,7 @@
 %%DATADIR%%/a/abm85e
 %%DATADIR%%/a/abm85h
 %%DATADIR%%/a/abm85h-old
+%%DATADIR%%/a/absolute
 %%DATADIR%%/a/act4
 %%DATADIR%%/a/act5
 %%DATADIR%%/a/addrinfo
@@ -208,6 +210,7 @@
 %%DATADIR%%/a/ansi+local1
 %%DATADIR%%/a/ansi+pp
 %%DATADIR%%/a/ansi+rca
+%%DATADIR%%/a/ansi+rca2
 %%DATADIR%%/a/ansi+rep
 %%DATADIR%%/a/ansi+sgr
 %%DATADIR%%/a/ansi+sgrbold
@@ -349,6 +352,8 @@
 %%DATADIR%%/a/att605-pc
 %%DATADIR%%/a/att605-w
 %%DATADIR%%/a/att610
+%%DATADIR%%/a/att610+cvis
+%%DATADIR%%/a/att610+cvis0
 %%DATADIR%%/a/att610-103k
 %%DATADIR%%/a/att610-103k-w
 %%DATADIR%%/a/att610-w
@@ -908,6 +913,9 @@
 %%DATADIR%%/f/fenix
 %%DATADIR%%/f/fenixw
 %%DATADIR%%/f/fixterm
+%%DATADIR%%/f/foot
+%%DATADIR%%/f/foot+base
+%%DATADIR%%/f/foot-direct
 %%DATADIR%%/f/fortune
 %%DATADIR%%/f/fos
 %%DATADIR%%/f/fox
@@ -1089,7 +1097,9 @@
 %%DATADIR%%/h/hp9837
 %%DATADIR%%/h/hp9845
 %%DATADIR%%/h/hp98550
+%%DATADIR%%/h/hp98550-color
 %%DATADIR%%/h/hp98550a
+%%DATADIR%%/h/hp98550a-color
 %%DATADIR%%/h/hp98720
 %%DATADIR%%/h/hp98721
 %%DATADIR%%/h/hpansi
@@ -1099,6 +1109,9 @@
 %%DATADIR%%/h/hpsub
 %%DATADIR%%/h/hpterm
 %%DATADIR%%/h/hpterm-color
+%%DATADIR%%/h/hpterm-color2
+%%DATADIR%%/h/hterm
+%%DATADIR%%/h/hterm-256color
 %%DATADIR%%/h/htx11
 %%DATADIR%%/h/hurd
 %%DATADIR%%/h/hz1000
@@ -1892,6 +1905,8 @@
 %%DATADIR%%/s/screen5
 %%DATADIR%%/s/screwpoint
 %%DATADIR%%/s/scrhp
+%%DATADIR%%/s/scrt
+%%DATADIR%%/s/securecrt
 %%DATADIR%%/s/sibo
 %%DATADIR%%/s/simpleterm
 %%DATADIR%%/s/simterm
@@ -2016,6 +2031,7 @@
 %%DATADIR%%/t/terminology
 %%DATADIR%%/t/terminology-0.6.1
 %%DATADIR%%/t/terminology-1.0.0
+%%DATADIR%%/t/terminology-1.8.1
 %%DATADIR%%/t/termite
 %%DATADIR%%/t/tgtelnet
 %%DATADIR%%/t/ti700
@@ -2314,9 +2330,14 @@
 %%DATADIR%%/v/vt200-old
 %%DATADIR%%/v/vt200-w
 %%DATADIR%%/v/vt220
+%%DATADIR%%/v/vt220+cvis
+%%DATADIR%%/v/vt220+cvis8
 %%DATADIR%%/v/vt220+keypad
+%%DATADIR%%/v/vt220+pcedit
+%%DATADIR%%/v/vt220+vtedit
 %%DATADIR%%/v/vt220-8
 %%DATADIR%%/v/vt220-8bit
+%%DATADIR%%/v/vt220-base
 %%DATADIR%%/v/vt220-js
 %%DATADIR%%/v/vt220-nam
 %%DATADIR%%/v/vt220-old
@@ -2692,6 +2713,7 @@
 %%DATADIR%%/x/xterm+meta
 %%DATADIR%%/x/xterm+noalt
 %%DATADIR%%/x/xterm+noapp
+%%DATADIR%%/x/xterm+nofkeys
 %%DATADIR%%/x/xterm+osc104
 %%DATADIR%%/x/xterm+pc+edit
 %%DATADIR%%/x/xterm+pcc0
@@ -2711,6 +2733,7 @@
 %%DATADIR%%/x/xterm+sm+1006
 %%DATADIR%%/x/xterm+titlestack
 %%DATADIR%%/x/xterm+tmux
+%%DATADIR%%/x/xterm+tmux2
 %%DATADIR%%/x/xterm+vt+edit
 %%DATADIR%%/x/xterm+x10mouse
 %%DATADIR%%/x/xterm+x11hilite
