@@ -226,6 +226,7 @@
     SUBDIR += showdown
     SUBDIR += simpleagenda
     SUBDIR += sliderule
+    SUBDIR += solanum
     SUBDIR += sowon
     SUBDIR += spice-gtk
     SUBDIR += synapse
