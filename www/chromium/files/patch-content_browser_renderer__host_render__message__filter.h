@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_message_filter.h.orig	2021-05-12 22:05:52 UTC
+--- content/browser/renderer_host/render_message_filter.h.orig	2021-07-19 18:45:15 UTC
 +++ content/browser/renderer_host/render_message_filter.h
-@@ -77,14 +77,14 @@ class CONTENT_EXPORT RenderMessageFilter
+@@ -76,14 +76,14 @@ class CONTENT_EXPORT RenderMessageFilter
    void GenerateRoutingID(GenerateRoutingIDCallback routing_id) override;
    void GenerateFrameRoutingID(GenerateFrameRoutingIDCallback callback) override;
    void HasGpuProcess(HasGpuProcessCallback callback) override;

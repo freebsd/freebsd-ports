@@ -1,6 +1,6 @@
---- build/config/compiler/BUILD.gn.orig	2021-06-09 22:13:52 UTC
+--- build/config/compiler/BUILD.gn.orig	2021-07-19 18:45:05 UTC
 +++ build/config/compiler/BUILD.gn
-@@ -133,7 +133,7 @@ declare_args() {
+@@ -144,7 +144,7 @@ declare_args() {
    #
    # TODO(crbug.com/977230): Enabling this when 'use_xcode_clang' is true may
    # call an old clang that doesn't support auto-init.
@@ -9,7 +9,7 @@
  
    # This argument is to control whether enabling text section splitting in the
    # final binary. When enabled, the separated text sections with prefix
-@@ -333,7 +333,7 @@ config("compiler") {
+@@ -347,7 +347,7 @@ config("compiler") {
      }
  
      # Linker warnings.
@@ -18,7 +18,7 @@
        ldflags += [ "-Wl,--fatal-warnings" ]
      }
      if (fatal_linker_warnings && is_apple) {
-@@ -428,7 +428,7 @@ config("compiler") {
+@@ -442,7 +442,7 @@ config("compiler") {
  
      # Compiler instrumentation can introduce dependencies in DSOs to symbols in
      # the executable they are loaded into, so they are unresolved at link-time.
@@ -27,7 +27,7 @@
        ldflags += [
          "-Wl,-z,defs",
          "-Wl,--as-needed",
-@@ -518,7 +518,7 @@ config("compiler") {
+@@ -532,7 +532,7 @@ config("compiler") {
      ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
@@ -36,7 +36,7 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
  
      # TODO(hans): Remove this once Clang generates better optimized debug info
-@@ -661,7 +661,12 @@ config("compiler") {
+@@ -675,7 +675,12 @@ config("compiler") {
        # and let it use all cores.
        # TODO(thakis): Check if '=0' (that is, number of cores, instead
        # of "all" which means number of hardware threads) is faster.
@@ -50,7 +50,7 @@
  
        ldflags += [
          "-Wl,--thinlto-cache-dir=" +
-@@ -851,7 +856,7 @@ config("compiler_cpu_abi") {
+@@ -861,7 +866,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -59,7 +59,7 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1201,7 +1206,7 @@ config("compiler_deterministic") {
+@@ -1211,7 +1216,7 @@ config("compiler_deterministic") {
        "-Xclang",
        ".",
      ]
@@ -68,7 +68,7 @@
        # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
        asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
      }
-@@ -1584,7 +1589,7 @@ config("default_warnings") {
+@@ -1594,7 +1599,7 @@ config("default_warnings") {
          cflags += [ "-Wno-nonportable-include-path" ]
        }
  
@@ -77,7 +77,7 @@
          # Flags NaCl (Clang 3.7) and Xcode 9.2 (Clang clang-900.0.39.2) do not
          # recognize.
          cflags += [
-@@ -1625,6 +1630,18 @@ config("default_warnings") {
+@@ -1635,6 +1640,18 @@ config("default_warnings") {
            cflags += [ "-Wno-max-tokens" ]
          }
        }
@@ -96,16 +96,16 @@
      }
    }
  }
-@@ -1754,7 +1771,7 @@ config("no_chromium_code") {
+@@ -1769,7 +1786,7 @@ config("no_chromium_code") {
        # suppressing them individually, we just blanket suppress them here.
        "-Wno-unused-variable",
      ]
 -    if (!is_nacl && (current_toolchain == host_toolchain || !use_xcode_clang)) {
 +    if (!is_nacl && (current_toolchain == host_toolchain || !use_xcode_clang) && !is_bsd) {
        cflags += [
-         # TODO(https://crbug.com/1031169): Clean up and enable.
+         # TODO(https://crbug.com/1202159): Clean up and enable.
          "-Wno-misleading-indentation",
-@@ -1832,7 +1849,7 @@ config("export_dynamic") {
+@@ -1847,7 +1864,7 @@ config("export_dynamic") {
  config("thin_archive") {
    # The macOS and iOS default linker ld64 does not support reading thin
    # archives.
@@ -114,7 +114,7 @@
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2373,7 +2390,7 @@ config("symbols") {
+@@ -2381,7 +2398,7 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {
@@ -123,7 +123,7 @@
      }
  
      # TODO(https://crbug.com/1050118): Investigate missing debug info on mac.
-@@ -2406,7 +2423,7 @@ config("symbols") {
+@@ -2414,7 +2431,7 @@ config("symbols") {
      # DWARF info may be corrupt; offsets in a range list entry are in different
      # sections" there.  Maybe just a bug in nacl_switch_32.S.
      if (!is_apple && !is_nacl && current_cpu != "x86" &&

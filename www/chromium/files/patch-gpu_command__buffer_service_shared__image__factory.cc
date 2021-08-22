@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image_factory.cc.orig	2021-04-22 08:17:28 UTC
+--- gpu/command_buffer/service/shared_image_factory.cc.orig	2021-07-19 18:45:17 UTC
 +++ gpu/command_buffer/service/shared_image_factory.cc
-@@ -29,12 +29,12 @@
+@@ -28,12 +28,12 @@
  #include "ui/gl/gl_implementation.h"
  #include "ui/gl/trace_util.h"
  

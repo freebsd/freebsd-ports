@@ -1,6 +1,6 @@
---- base/process/memory.h.orig	2021-04-14 18:40:48 UTC
+--- base/process/memory.h.orig	2021-07-19 18:45:05 UTC
 +++ base/process/memory.h
-@@ -31,7 +31,7 @@ BASE_EXPORT void TerminateBecauseOutOfMemory(size_t si
+@@ -32,7 +32,7 @@ BASE_EXPORT void TerminateBecauseOutOfMemory(size_t si
  // TODO: this can be removed when Breakpad is no longer supported.
  BASE_EXPORT extern size_t g_oom_size;
  

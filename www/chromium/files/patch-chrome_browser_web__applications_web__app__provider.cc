@@ -1,8 +1,8 @@
---- chrome/browser/web_applications/web_app_provider.cc.orig	2021-05-12 22:05:46 UTC
+--- chrome/browser/web_applications/web_app_provider.cc.orig	2021-07-19 18:45:10 UTC
 +++ chrome/browser/web_applications/web_app_provider.cc
-@@ -237,7 +237,7 @@ void WebAppProvider::CreateWebAppsSubsystems(Profile* 
+@@ -229,7 +229,7 @@ void WebAppProvider::CreateWebAppsSubsystems(Profile* 
  
-     std::unique_ptr<UrlHandlerManager> url_handler_manager = nullptr;
+     std::unique_ptr<UrlHandlerManager> url_handler_manager;
  #if defined(OS_WIN) || defined(OS_MAC) || \
 -    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
 +    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)

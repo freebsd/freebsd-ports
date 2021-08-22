@@ -1,6 +1,6 @@
---- third_party/angle/BUILD.gn.orig	2021-05-12 22:13:33 UTC
+--- third_party/angle/BUILD.gn.orig	2021-07-19 18:47:19 UTC
 +++ third_party/angle/BUILD.gn
-@@ -201,7 +201,7 @@ config("extra_warnings") {
+@@ -206,7 +206,7 @@ config("extra_warnings") {
        "-Wunreachable-code",
        "-Wshorten-64-to-32",
      ]
@@ -8,8 +8,8 @@
 +    if (!use_xcode_clang && !is_bsd) {
        # Mac catalyst uses a clang version that doesn't have these.
        cflags += [
-         "-Wdeprecated-copy",
-@@ -454,6 +454,7 @@ angle_static_library("angle_gpu_info_util") {
+         "-Wsuggest-destructor-override",
+@@ -470,6 +470,7 @@ angle_static_library("angle_gpu_info_util") {
          "X11",
          "Xi",
          "Xext",

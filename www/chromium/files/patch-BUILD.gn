@@ -1,6 +1,6 @@
---- BUILD.gn.orig	2021-05-12 22:05:39 UTC
+--- BUILD.gn.orig	2021-07-19 18:45:04 UTC
 +++ BUILD.gn
-@@ -429,7 +429,7 @@ group("gn_all") {
+@@ -443,7 +443,7 @@ group("gn_all") {
      ]
    }
  
@@ -9,7 +9,7 @@
      deps += [
        "//third_party/breakpad:breakpad_unittests",
        "//third_party/breakpad:core-2-minidump",
-@@ -474,8 +474,6 @@ group("gn_all") {
+@@ -488,8 +488,6 @@ group("gn_all") {
        "//net:disk_cache_memory_test",
        "//net:quic_client",
        "//net:quic_server",
@@ -18,7 +18,7 @@
        "//testing:empty_main",
      ]
  
-@@ -530,10 +528,6 @@ group("gn_all") {
+@@ -544,10 +542,6 @@ group("gn_all") {
          "//chrome/test:load_library_perf_tests",
          "//chrome/test:sync_performance_tests",
          "//chrome/test/chromedriver:chromedriver",
@@ -29,7 +29,7 @@
          "//media/cast:generate_barcode_video",
          "//media/cast:generate_timecode_audio",
          "//net:crash_cache",
-@@ -592,10 +586,6 @@ group("gn_all") {
+@@ -606,10 +600,6 @@ group("gn_all") {
        "//mojo:mojo_perftests",
        "//services/service_manager/public/cpp",
        "//testing/gmock:gmock_main",
@@ -40,7 +40,7 @@
      ]
  
      if (!is_android) {
-@@ -673,7 +663,7 @@ group("gn_all") {
+@@ -687,7 +677,7 @@ group("gn_all") {
          host_os == "win") {
        deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
      }
@@ -49,7 +49,7 @@
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -688,7 +678,7 @@ group("gn_all") {
+@@ -702,7 +692,7 @@ group("gn_all") {
      }
    }
  
@@ -58,7 +58,7 @@
      deps += [
        "//third_party/crashpad/crashpad:crashpad_tests",
        "//third_party/crashpad/crashpad/handler:crashpad_handler",
-@@ -803,7 +793,6 @@ group("gn_all") {
+@@ -819,7 +809,6 @@ group("gn_all") {
        "//chrome/browser/vr:vr_common_perftests",
        "//chrome/browser/vr:vr_common_unittests",
        "//chrome/browser/vr:vr_pixeltests",
@@ -66,7 +66,7 @@
      ]
      if (is_android) {
        deps += [ "//chrome/browser/android/vr:vr_android_unittests" ]
-@@ -1102,7 +1091,7 @@ if (!is_ios) {
+@@ -1118,7 +1107,7 @@ if (!is_ios) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -75,7 +75,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1111,7 +1100,7 @@ if (!is_ios) {
+@@ -1127,7 +1116,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -84,7 +84,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1355,9 +1344,6 @@ group("chromium_builder_perf") {
+@@ -1371,9 +1360,6 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]

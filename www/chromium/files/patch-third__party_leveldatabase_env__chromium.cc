@@ -1,8 +1,8 @@
---- third_party/leveldatabase/env_chromium.cc.orig	2021-04-14 18:41:34 UTC
+--- third_party/leveldatabase/env_chromium.cc.orig	2021-07-19 18:45:41 UTC
 +++ third_party/leveldatabase/env_chromium.cc
-@@ -39,7 +39,11 @@
+@@ -38,7 +38,11 @@
+ #include "third_party/leveldatabase/chromium_logger.h"
  #include "third_party/leveldatabase/leveldb_chrome.h"
- #include "third_party/leveldatabase/leveldb_features.h"
  #include "third_party/leveldatabase/src/include/leveldb/options.h"
 +#if defined(OS_BSD)
 +#include <re2/re2.h>

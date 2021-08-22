@@ -1,6 +1,6 @@
---- weblayer/app/content_main_delegate_impl.cc.orig	2021-05-12 22:06:47 UTC
+--- weblayer/app/content_main_delegate_impl.cc.orig	2021-07-19 18:45:45 UTC
 +++ weblayer/app/content_main_delegate_impl.cc
-@@ -229,8 +229,8 @@ bool ContentMainDelegateImpl::ShouldCreateFeatureList(
+@@ -242,8 +242,8 @@ bool ContentMainDelegateImpl::ShouldCreateFeatureList(
  void ContentMainDelegateImpl::PreSandboxStartup() {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

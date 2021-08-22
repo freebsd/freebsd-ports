@@ -1,6 +1,6 @@
---- base/threading/platform_thread_posix.cc.orig	2021-06-09 22:13:52 UTC
+--- base/threading/platform_thread_posix.cc.orig	2021-07-19 18:45:05 UTC
 +++ base/threading/platform_thread_posix.cc
-@@ -32,6 +32,10 @@
+@@ -33,6 +33,10 @@
  #include <sys/syscall.h>
  #endif
  
@@ -11,7 +11,7 @@
  #if defined(OS_FUCHSIA)
  #include <zircon/process.h>
  #else
-@@ -181,6 +185,8 @@ PlatformThreadId PlatformThread::CurrentId() {
+@@ -194,6 +198,8 @@ PlatformThreadId PlatformThread::CurrentId() {
    // into the kernel.
  #if defined(OS_APPLE)
    return pthread_mach_thread_np(pthread_self());

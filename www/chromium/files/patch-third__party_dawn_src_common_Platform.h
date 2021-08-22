@@ -1,6 +1,6 @@
---- third_party/dawn/src/common/Platform.h.orig	2021-06-11 10:04:56 UTC
+--- third_party/dawn/src/common/Platform.h.orig	2021-07-19 18:47:20 UTC
 +++ third_party/dawn/src/common/Platform.h
-@@ -45,6 +45,11 @@
+@@ -53,6 +53,11 @@
  #    define DAWN_PLATFORM_EMSCRIPTEN 1
  #    define DAWN_PLATFORM_POSIX 1
  

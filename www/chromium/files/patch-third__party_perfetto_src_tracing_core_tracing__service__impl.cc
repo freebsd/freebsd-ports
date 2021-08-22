@@ -1,6 +1,6 @@
---- third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig	2021-05-12 22:13:43 UTC
+--- third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig	2021-07-19 18:47:29 UTC
 +++ third_party/perfetto/src/tracing/core/tracing_service_impl.cc
-@@ -42,7 +42,8 @@
+@@ -43,7 +43,8 @@
  
  #if PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) || \
      PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) ||   \
@@ -10,7 +10,7 @@
  #define PERFETTO_HAS_CHMOD
  #include <sys/stat.h>
  #endif
-@@ -2743,8 +2744,9 @@ bool TracingServiceImpl::SnapshotClocks(
+@@ -2846,8 +2847,9 @@ bool TracingServiceImpl::SnapshotClocks(
  
    TracingSession::ClockSnapshotData new_snapshot_data;
  

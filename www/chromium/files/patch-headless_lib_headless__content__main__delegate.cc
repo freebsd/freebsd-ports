@@ -1,6 +1,6 @@
---- headless/lib/headless_content_main_delegate.cc.orig	2021-05-12 22:05:54 UTC
+--- headless/lib/headless_content_main_delegate.cc.orig	2021-07-19 18:45:17 UTC
 +++ headless/lib/headless_content_main_delegate.cc
-@@ -323,7 +323,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
+@@ -327,7 +327,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
      const base::CommandLine& command_line) {
    if (command_line.HasSwitch(::switches::kDisableBreakpad))
      return;

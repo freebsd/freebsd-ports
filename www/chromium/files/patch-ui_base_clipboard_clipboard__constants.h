@@ -1,7 +1,7 @@
---- ui/base/clipboard/clipboard_constants.h.orig	2021-04-14 18:41:37 UTC
+--- ui/base/clipboard/clipboard_constants.h.orig	2021-07-19 18:45:43 UTC
 +++ ui/base/clipboard/clipboard_constants.h
-@@ -37,14 +37,14 @@ COMPONENT_EXPORT(UI_BASE_CLIPBOARD_TYPES) extern const
- COMPONENT_EXPORT(UI_BASE_CLIPBOARD_TYPES) extern const char kMimeTypePNG[];
+@@ -38,14 +38,14 @@ COMPONENT_EXPORT(UI_BASE_CLIPBOARD_TYPES)
+ extern const char kMimeTypeOctetStream[];
  
  // Linux-specific MIME type constants (also used in Fuchsia).
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA)

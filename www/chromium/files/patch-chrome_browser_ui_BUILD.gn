@@ -1,7 +1,7 @@
---- chrome/browser/ui/BUILD.gn.orig	2021-05-12 22:05:45 UTC
+--- chrome/browser/ui/BUILD.gn.orig	2021-07-19 18:45:09 UTC
 +++ chrome/browser/ui/BUILD.gn
-@@ -648,11 +648,18 @@ static_library("ui") {
-     deps += [ "//components/autofill/content/browser/webauthn" ]
+@@ -615,7 +615,7 @@ static_library("ui") {
+     deps += [ "//chrome/browser/vr:vr_base" ]
    }
  
 -  if (!is_fuchsia) {
@@ -9,14 +9,26 @@
      # TODO(crbug.com/753619): Enable crash reporting on Fuchsia.
      deps += [
        "//components/crash/core/app",
-       "//components/crash/core/browser",
-+    ]
-+  }
-+
+@@ -623,6 +623,13 @@ static_library("ui") {
+     ]
+   }
+ 
 +  if (is_bsd) {
 +    sources -= [
 +      "webui/crashes_ui.cc",
 +      "webui/crashes_ui.h",
-     ]
++    ]
++  }
++
+   if (is_win || is_android || is_linux || is_chromeos) {
+     sources += [
+       "webui/sandbox/sandbox_internals_ui.cc",
+@@ -3425,7 +3432,7 @@ static_library("ui") {
+     }
    }
  
+-  if (is_linux || is_chromeos_lacros || is_mac) {
++  if ((is_linux || is_chromeos_lacros || is_mac) && !is_bsd) {
+     # The first run dialog shows only on Linux and macOS.
+     sources += [
+       "views/first_run_dialog.cc",

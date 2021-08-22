@@ -1,6 +1,6 @@
---- components/viz/test/fake_output_surface.h.orig	2021-04-14 18:41:02 UTC
+--- components/viz/test/fake_output_surface.h.orig	2021-07-19 18:45:15 UTC
 +++ components/viz/test/fake_output_surface.h
-@@ -89,7 +89,7 @@ class FakeOutputSurface : public OutputSurface {
+@@ -88,7 +88,7 @@ class FakeOutputSurface : public OutputSurface {
    gfx::OverlayTransform GetDisplayTransform() override;
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

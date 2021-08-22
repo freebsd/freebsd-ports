@@ -43,17 +43,17 @@ SndioAudioInputStream::~SndioAudioInputStream() {
     Close();
 }
 
-bool SndioAudioInputStream::Open() {
+AudioInputStream::OpenOutcome SndioAudioInputStream::Open() {
   struct sio_par par;
   int sig;
 
   if (state != kClosed)
-    return false;
+    return OpenOutcome::kFailed;
 
   if (params.format() != AudioParameters::AUDIO_PCM_LINEAR &&
       params.format() != AudioParameters::AUDIO_PCM_LOW_LATENCY) {
     LOG(WARNING) << "Unsupported audio format.";
-    return false;
+    return OpenOutcome::kFailed;
   }
 
   sio_initpar(&par);
@@ -69,7 +69,7 @@ bool SndioAudioInputStream::Open() {
 
   if (hdl == NULL) {
     LOG(ERROR) << "Couldn't open audio device.";
-    return false;
+    return OpenOutcome::kFailed;
   }
 
   if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &par)) {
@@ -89,10 +89,10 @@ bool SndioAudioInputStream::Open() {
   state = kStopped;
   buffer = new char[audio_bus->frames() * params.GetBytesPerFrame(kSampleFormat)];
   sio_onmove(hdl, &OnMoveCallback, this);
-  return true;
+  return OpenOutcome::kSuccess;
 bad_close:
   sio_close(hdl);
-  return false;
+  return OpenOutcome::kFailed;
 }
 
 void SndioAudioInputStream::Start(AudioInputCallback* cb) {

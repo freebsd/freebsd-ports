@@ -1,4 +1,4 @@
---- base/debug/stack_trace_posix.cc.orig	2021-04-14 18:40:48 UTC
+--- base/debug/stack_trace_posix.cc.orig	2021-07-19 18:45:05 UTC
 +++ base/debug/stack_trace_posix.cc
 @@ -35,7 +35,7 @@
  #include <AvailabilityMacros.h>
@@ -9,7 +9,7 @@
  #include "base/debug/proc_maps_linux.h"
  #endif
  
-@@ -659,13 +659,21 @@ class SandboxSymbolizeHelper {
+@@ -667,13 +667,21 @@ class SandboxSymbolizeHelper {
      // Reads /proc/self/maps.
      std::string contents;
      if (!ReadProcMaps(&contents)) {
@@ -31,7 +31,7 @@
        return false;
      }
  
-@@ -696,7 +704,11 @@ class SandboxSymbolizeHelper {
+@@ -704,7 +712,11 @@ class SandboxSymbolizeHelper {
            // Skip regions with empty file names.
            continue;
          }

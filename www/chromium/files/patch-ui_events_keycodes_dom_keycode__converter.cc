@@ -1,4 +1,4 @@
---- ui/events/keycodes/dom/keycode_converter.cc.orig	2021-04-20 18:58:56 UTC
+--- ui/events/keycodes/dom/keycode_converter.cc.orig	2021-07-19 18:45:44 UTC
 +++ ui/events/keycodes/dom/keycode_converter.cc
 @@ -24,7 +24,7 @@ namespace {
  #if defined(OS_WIN)
@@ -33,4 +33,4 @@
 +#endif
  #endif
  
- // static
+ #if defined(OS_CHROMEOS)

@@ -1,6 +1,6 @@
---- content/shell/browser/shell_browser_main_parts.cc.orig	2021-04-14 18:41:03 UTC
+--- content/shell/browser/shell_browser_main_parts.cc.orig	2021-07-19 18:45:16 UTC
 +++ content/shell/browser/shell_browser_main_parts.cc
-@@ -56,7 +56,7 @@
+@@ -57,7 +57,7 @@
  #if defined(USE_AURA) && defined(USE_X11)
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
@@ -9,7 +9,7 @@
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -142,7 +142,7 @@ void ShellBrowserMainParts::PostMainMessageLoopStart()
+@@ -137,7 +137,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
  }
  
  int ShellBrowserMainParts::PreEarlyInitialization() {

@@ -1,6 +1,6 @@
---- v8/BUILD.gn.orig	2021-05-12 22:13:52 UTC
+--- v8/BUILD.gn.orig	2021-07-19 18:47:37 UTC
 +++ v8/BUILD.gn
-@@ -4600,9 +4600,15 @@ v8_component("v8_libbase") {
+@@ -4667,9 +4667,15 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -17,7 +17,7 @@
        "src/base/platform/platform-linux.cc",
      ]
  
-@@ -5097,6 +5103,7 @@ if (current_toolchain == v8_generator_toolchain) {
+@@ -5204,6 +5210,7 @@ if (current_toolchain == v8_generator_toolchain) {
        "src/interpreter/bytecodes.cc",
        "src/interpreter/bytecodes.h",
      ]

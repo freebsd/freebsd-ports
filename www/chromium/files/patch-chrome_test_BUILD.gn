@@ -1,6 +1,17 @@
---- chrome/test/BUILD.gn.orig	2021-06-09 22:13:57 UTC
+--- chrome/test/BUILD.gn.orig	2021-07-19 18:45:11 UTC
 +++ chrome/test/BUILD.gn
-@@ -1666,7 +1666,7 @@ if (!is_android) {
+@@ -476,6 +476,10 @@ static_library("test_support") {
+     ]
+   }
+ 
++  if (is_bsd) {
++    public_deps -= [ "//components/crash/core/app" ]
++  }
++
+   if (is_chromeos_lacros) {
+     deps += [
+       "//chromeos/lacros",
+@@ -1799,7 +1803,7 @@ if (!is_android) {
        ]
      }
  
@@ -9,7 +20,7 @@
        sources += [
          "../browser/error_reporting/webui_js_error_reporting_browsertest.cc",
        ]
-@@ -5193,7 +5193,7 @@ test("unit_tests") {
+@@ -5425,7 +5429,7 @@ test("unit_tests") {
      ]
    }
  
@@ -18,7 +29,7 @@
      deps += [ "//chrome/browser/error_reporting:unit_test" ]
    }
  
-@@ -7031,7 +7031,7 @@ test("chrome_app_unittests") {
+@@ -7354,7 +7358,7 @@ test("chrome_app_unittests") {
      "//components/safe_browsing:buildflags",
      "//pdf:pdf_ppapi",
    ]

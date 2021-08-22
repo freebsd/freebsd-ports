@@ -1,6 +1,6 @@
---- chrome/browser/after_startup_task_utils.cc.orig	2021-05-12 22:05:42 UTC
+--- chrome/browser/after_startup_task_utils.cc.orig	2021-07-19 18:45:07 UTC
 +++ chrome/browser/after_startup_task_utils.cc
-@@ -35,7 +35,7 @@
+@@ -22,7 +22,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,16 +9,16 @@
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -113,7 +113,7 @@ void QueueTask(std::unique_ptr<AfterStartupTask> queue
+@@ -103,7 +103,7 @@ void SetBrowserStartupIsComplete() {
+     return;
  
- void SetBrowserStartupIsComplete() {
-   DCHECK_CURRENTLY_ON(BrowserThread::UI);
+   g_startup_complete_flag.Get().Set();
 -#if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
 +#if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
      defined(OS_CHROMEOS)
    // Process::Current().CreationTime() is not available on all platforms.
    const base::Time process_creation_time =
-@@ -122,7 +122,7 @@ void SetBrowserStartupIsComplete() {
+@@ -112,7 +112,7 @@ void SetBrowserStartupIsComplete() {
      UMA_HISTOGRAM_LONG_TIMES("Startup.AfterStartupTaskDelayedUntilTime",
                               base::Time::Now() - process_creation_time);
    }
@@ -27,7 +27,7 @@
          // defined(OS_CHROMEOS)
    UMA_HISTOGRAM_COUNTS_10000("Startup.AfterStartupTaskCount",
                               g_after_startup_tasks.Get().size());
-@@ -134,7 +134,7 @@ void SetBrowserStartupIsComplete() {
+@@ -123,7 +123,7 @@ void SetBrowserStartupIsComplete() {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

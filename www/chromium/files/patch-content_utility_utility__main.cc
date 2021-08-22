@@ -1,8 +1,8 @@
---- content/utility/utility_main.cc.orig	2021-06-11 14:43:47 UTC
+--- content/utility/utility_main.cc.orig	2021-07-19 18:45:16 UTC
 +++ content/utility/utility_main.cc
-@@ -89,6 +89,11 @@ int UtilityMain(const MainFunctionParams& parameters) 
-   if (parameters.command_line.HasSwitch(switches::kUtilityStartupDialog))
-     WaitForDebugger("Utility");
+@@ -113,6 +113,11 @@ int UtilityMain(const MainFunctionParams& parameters) 
+     }
+   }
  
 +#if defined(OS_FREEBSD)
 +  sandbox::policy::Sandbox::Initialize(

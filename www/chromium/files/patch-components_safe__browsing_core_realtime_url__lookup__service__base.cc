@@ -1,6 +1,6 @@
---- components/safe_browsing/core/realtime/url_lookup_service_base.cc.orig	2021-04-14 18:41:00 UTC
+--- components/safe_browsing/core/realtime/url_lookup_service_base.cc.orig	2021-07-19 18:45:14 UTC
 +++ components/safe_browsing/core/realtime/url_lookup_service_base.cc
-@@ -108,7 +108,7 @@ RTLookupRequest::OSType GetRTLookupRequestOSType() {
+@@ -107,7 +107,7 @@ RTLookupRequest::OSType GetRTLookupRequestOSType() {
    return RTLookupRequest::OS_TYPE_FUCHSIA;
  #elif defined(OS_IOS)
    return RTLookupRequest::OS_TYPE_IOS;

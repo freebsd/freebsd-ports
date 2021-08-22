@@ -1,4 +1,4 @@
---- chromecast/browser/cast_browser_main_parts.cc.orig	2021-05-12 22:05:48 UTC
+--- chromecast/browser/cast_browser_main_parts.cc.orig	2021-07-19 18:45:12 UTC
 +++ chromecast/browser/cast_browser_main_parts.cc
 @@ -77,7 +77,7 @@
  #include "ui/base/ui_base_switches.h"
@@ -63,7 +63,7 @@
    base::FilePath dir_font = GetApplicationFontsDir();
    const FcChar8 *dir_font_char8 = reinterpret_cast<const FcChar8*>(dir_font.value().data());
    if (!FcConfigAppFontAddDir(gfx::GetGlobalFontConfig(), dir_font_char8)) {
-@@ -668,7 +668,7 @@ int CastBrowserMainParts::PreMainMessageLoopRun() {
+@@ -671,7 +671,7 @@ int CastBrowserMainParts::PreMainMessageLoopRun() {
        cast_browser_process_->browser_context());
  #endif
  
@@ -72,7 +72,7 @@
    wayland_server_controller_ =
        std::make_unique<WaylandServerController>(window_manager_.get());
  #endif
-@@ -749,7 +749,7 @@ void CastBrowserMainParts::PostMainMessageLoopRun() {
+@@ -752,7 +752,7 @@ void CastBrowserMainParts::PostMainMessageLoopRun() {
  
    cast_browser_process_->cast_service()->Stop();
  

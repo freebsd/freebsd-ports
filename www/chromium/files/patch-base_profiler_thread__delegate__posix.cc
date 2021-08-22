@@ -1,16 +1,17 @@
---- base/profiler/thread_delegate_posix.cc.orig	2021-04-14 18:40:48 UTC
+--- base/profiler/thread_delegate_posix.cc.orig	2021-07-19 18:45:05 UTC
 +++ base/profiler/thread_delegate_posix.cc
-@@ -12,6 +12,9 @@
- #include "base/profiler/thread_delegate_posix.h"
- #include "base/stl_util.h"
+@@ -13,6 +13,10 @@
  #include "build/build_config.h"
-+#if defined(OS_FREEBSD)
+ #include "third_party/abseil-cpp/absl/types/optional.h"
+ 
++#if defined(OS_BSD)
 +#include <pthread_np.h>
 +#endif
- 
++
  #if defined(OS_ANDROID)
  #include "base/files/file_util.h"
-@@ -43,7 +46,12 @@ base::Optional<uintptr_t> GetAndroidMainThreadStackBas
+ #include "base/files/scoped_file.h"
+@@ -43,7 +47,12 @@ absl::optional<uintptr_t> GetAndroidMainThreadStackBas
  uintptr_t GetThreadStackBaseAddressImpl(
      SamplingProfilerThreadToken thread_token) {
    pthread_attr_t attr;
@@ -23,7 +24,7 @@
    // See crbug.com/617730 for limitations of this approach on Linux.
    void* address;
    size_t size;
-@@ -130,16 +138,33 @@ std::vector<uintptr_t*> ThreadDelegatePosix::GetRegist
+@@ -130,16 +139,33 @@ std::vector<uintptr_t*> ThreadDelegatePosix::GetRegist
    return {
        // Return the set of callee-save registers per the i386 System V ABI
        // section 2.2.3, plus the stack pointer.
@@ -57,7 +58,7 @@
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_RBP]),
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_RBX]),
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_R12]),
-@@ -147,6 +172,7 @@ std::vector<uintptr_t*> ThreadDelegatePosix::GetRegist
+@@ -147,6 +173,7 @@ std::vector<uintptr_t*> ThreadDelegatePosix::GetRegist
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_R14]),
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_R15]),
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_RSP]),

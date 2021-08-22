@@ -1,6 +1,6 @@
---- remoting/host/host_main.cc.orig	2021-04-14 18:41:08 UTC
+--- remoting/host/host_main.cc.orig	2021-07-19 18:45:20 UTC
 +++ remoting/host/host_main.cc
-@@ -48,9 +48,9 @@ int DesktopProcessMain();
+@@ -47,9 +47,9 @@ int DesktopProcessMain();
  int FileChooserMain();
  int RdpDesktopSessionMain();
  #endif  // defined(OS_WIN)
@@ -12,7 +12,7 @@
  
  namespace {
  
-@@ -61,10 +61,14 @@ const char kUsageMessage[] =
+@@ -60,10 +60,14 @@ const char kUsageMessage[] =
      "\n"
      "Options:\n"
  
@@ -29,7 +29,7 @@
  
  #if defined(OS_APPLE)
      "  --list-audio-devices     - List all audio devices and their device "
-@@ -148,10 +152,10 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
+@@ -147,10 +151,10 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
    } else if (process_type == kProcessTypeRdpDesktopSession) {
      main_routine = &RdpDesktopSessionMain;
  #endif  // defined(OS_WIN)

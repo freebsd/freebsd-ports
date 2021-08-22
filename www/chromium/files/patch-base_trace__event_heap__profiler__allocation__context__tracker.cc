@@ -1,4 +1,4 @@
---- base/trace_event/heap_profiler_allocation_context_tracker.cc.orig	2021-04-14 18:40:48 UTC
+--- base/trace_event/heap_profiler_allocation_context_tracker.cc.orig	2021-07-19 18:45:05 UTC
 +++ base/trace_event/heap_profiler_allocation_context_tracker.cc
 @@ -30,6 +30,10 @@
  #include <sys/prctl.h>
@@ -11,7 +11,7 @@
  namespace base {
  namespace trace_event {
  
-@@ -61,13 +65,23 @@ ThreadLocalStorage::Slot& AllocationContextTrackerTLS(
+@@ -62,13 +66,23 @@ ThreadLocalStorage::Slot& AllocationContextTrackerTLS(
  // with id. This function intentionally leaks the allocated strings since they
  // are used to tag allocations even after the thread dies.
  const char* GetAndLeakThreadName() {

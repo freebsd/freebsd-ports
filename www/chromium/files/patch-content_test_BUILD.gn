@@ -1,6 +1,6 @@
---- content/test/BUILD.gn.orig	2021-05-12 22:05:53 UTC
+--- content/test/BUILD.gn.orig	2021-07-19 18:45:16 UTC
 +++ content/test/BUILD.gn
-@@ -1502,10 +1502,12 @@ test("content_browsertests") {
+@@ -1528,10 +1528,12 @@ test("content_browsertests") {
    }
  
    if (is_linux || is_chromeos) {
@@ -14,10 +14,10 @@
 +        "../browser/zygote_host/zygote_browsertest.cc",
 +      ]
 +    }
-     deps += [ "//ui/gfx:test_support" ]
- 
-     if (use_atk) {
-@@ -1754,7 +1756,7 @@ static_library("run_all_unittests") {
+     deps += [
+       "//printing/buildflags",
+       "//ui/gfx:test_support",
+@@ -1786,7 +1788,7 @@ static_library("run_all_unittests") {
      ":test_support",
      "//base/test:test_support",
    ]
@@ -26,7 +26,7 @@
      deps += [ "//content/common:set_process_title_linux" ]
    }
  }
-@@ -2613,7 +2615,7 @@ test("content_unittests") {
+@@ -2674,7 +2676,7 @@ test("content_unittests") {
      deps += [ "//ui/gfx/x" ]
    }
  

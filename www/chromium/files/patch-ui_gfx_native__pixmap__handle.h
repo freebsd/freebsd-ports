@@ -1,7 +1,7 @@
---- ui/gfx/native_pixmap_handle.h.orig	2021-04-14 18:41:39 UTC
+--- ui/gfx/native_pixmap_handle.h.orig	2021-07-19 18:45:44 UTC
 +++ ui/gfx/native_pixmap_handle.h
 @@ -15,7 +15,7 @@
- #include "build/build_config.h"
+ #include "third_party/abseil-cpp/absl/types/optional.h"
  #include "ui/gfx/gfx_export.h"
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)

@@ -1,4 +1,4 @@
---- services/device/hid/hid_connection_freebsd.cc.orig	2021-04-15 08:13:27 UTC
+--- services/device/hid/hid_connection_freebsd.cc.orig	2021-07-28 08:43:36 UTC
 +++ services/device/hid/hid_connection_freebsd.cc
 @@ -0,0 +1,241 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
@@ -49,8 +49,8 @@
 +    base::internal::AssertBlockingAllowed();
 +
 +    file_watcher_ = base::FileDescriptorWatcher::WatchReadable(
-+        fd_.get(), base::Bind(&BlockingTaskRunnerHelper::OnFileCanReadWithoutBlocking,
-+                              base::Unretained(this)));
++        fd_.get(), base::BindRepeating(&BlockingTaskRunnerHelper::OnFileCanReadWithoutBlocking,
++                                       base::Unretained(this)));
 +  }
 +
 +  void Write(scoped_refptr<base::RefCountedBytes> buffer,

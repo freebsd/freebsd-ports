@@ -1,6 +1,6 @@
---- chrome/common/webui_url_constants.h.orig	2021-05-12 22:05:46 UTC
+--- chrome/common/webui_url_constants.h.orig	2021-07-19 18:45:10 UTC
 +++ chrome/common/webui_url_constants.h
-@@ -308,12 +308,12 @@ extern const char kChromeUIOSSettingsHost[];
+@@ -309,12 +309,12 @@ extern const char kChromeUIOSSettingsHost[];
  extern const char kChromeUIOSSettingsURL[];
  #endif
  
@@ -15,7 +15,7 @@
      defined(OS_CHROMEOS)
  extern const char kChromeUIDiscardsHost[];
  extern const char kChromeUIDiscardsURL[];
-@@ -328,7 +328,7 @@ extern const char kChromeUINearbyShareURL[];
+@@ -329,7 +329,7 @@ extern const char kChromeUINearbyShareURL[];
  extern const char kChromeUILinuxProxyConfigHost[];
  #endif
  
@@ -24,7 +24,7 @@
      defined(OS_ANDROID)
  extern const char kChromeUISandboxHost[];
  #endif
-@@ -336,7 +336,7 @@ extern const char kChromeUISandboxHost[];
+@@ -337,7 +337,7 @@ extern const char kChromeUISandboxHost[];
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \
@@ -33,7 +33,7 @@
  extern const char kChromeUIBrowserSwitchHost[];
  extern const char kChromeUIBrowserSwitchURL[];
  extern const char kChromeUIEnterpriseProfileWelcomeHost[];
-@@ -348,7 +348,7 @@ extern const char kChromeUIProfilePickerUrl[];
+@@ -349,7 +349,7 @@ extern const char kChromeUIProfilePickerUrl[];
  extern const char kChromeUIProfilePickerStartupQuery[];
  #endif
  

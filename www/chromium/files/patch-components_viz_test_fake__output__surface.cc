@@ -1,6 +1,6 @@
---- components/viz/test/fake_output_surface.cc.orig	2021-04-14 18:41:02 UTC
+--- components/viz/test/fake_output_surface.cc.orig	2021-07-19 18:45:15 UTC
 +++ components/viz/test/fake_output_surface.cc
-@@ -118,7 +118,7 @@ gfx::OverlayTransform FakeOutputSurface::GetDisplayTra
+@@ -119,7 +119,7 @@ gfx::OverlayTransform FakeOutputSurface::GetDisplayTra
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

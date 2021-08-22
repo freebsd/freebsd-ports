@@ -1,4 +1,4 @@
---- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2021-04-14 18:41:00 UTC
+--- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2021-07-19 18:45:13 UTC
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
 @@ -18,7 +18,7 @@
  #include <wincred.h>
@@ -38,7 +38,7 @@
  #elif defined(OS_IOS)
    // Use the Vendor ID as the machine name.
    return ios::device_util::GetVendorId();
-@@ -156,7 +160,7 @@ std::string GetMachineName() {
+@@ -158,7 +162,7 @@ std::string GetMachineName() {
  }
  
  std::string GetOSVersion() {
@@ -47,7 +47,7 @@
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -179,7 +183,7 @@ std::string GetOSArchitecture() {
+@@ -183,7 +187,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {

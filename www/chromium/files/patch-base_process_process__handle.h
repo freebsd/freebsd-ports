@@ -1,6 +1,6 @@
---- base/process/process_handle.h.orig	2021-04-14 18:40:48 UTC
+--- base/process/process_handle.h.orig	2021-07-19 18:45:05 UTC
 +++ base/process/process_handle.h
-@@ -103,7 +103,7 @@ BASE_EXPORT ProcessId GetCurrentProcId();
+@@ -106,7 +106,7 @@ BASE_EXPORT ProcessId GetCurrentProcId();
  // processes may be reused.
  BASE_EXPORT UniqueProcId GetUniqueIdForProcess();
  

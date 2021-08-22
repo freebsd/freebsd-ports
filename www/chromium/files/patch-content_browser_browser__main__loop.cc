@@ -1,6 +1,6 @@
---- content/browser/browser_main_loop.cc.orig	2021-05-12 22:05:52 UTC
+--- content/browser/browser_main_loop.cc.orig	2021-07-19 18:45:15 UTC
 +++ content/browser/browser_main_loop.cc
-@@ -562,7 +562,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -559,7 +559,7 @@ int BrowserMainLoop::EarlyInitialization() {
  
    // Up the priority of the UI thread unless it was already high (since Mac
    // and recent versions of Android (O+) do this automatically).
@@ -9,7 +9,7 @@
    if (base::FeatureList::IsEnabled(
            features::kBrowserUseDisplayThreadPriority) &&
        base::PlatformThread::GetCurrentThreadPriority() <
-@@ -572,7 +572,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -569,7 +569,7 @@ int BrowserMainLoop::EarlyInitialization() {
    }
  #endif  // !defined(OS_MAC)
  
@@ -18,7 +18,7 @@
      defined(OS_ANDROID)
    // We use quite a few file descriptors for our IPC as well as disk the disk
    // cache,and the default limit on the Mac is low (256), so bump it up.
-@@ -582,7 +582,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -579,7 +579,7 @@ int BrowserMainLoop::EarlyInitialization() {
    // users can easily hit this limit with many open tabs. Bump up the limit to
    // an arbitrarily high number. See https://crbug.com/539567
    base::IncreaseFdLimitTo(8192);

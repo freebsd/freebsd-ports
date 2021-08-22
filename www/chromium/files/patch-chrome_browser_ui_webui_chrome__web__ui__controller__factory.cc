@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2021-05-12 22:05:46 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2021-07-19 18:45:10 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-@@ -30,7 +30,9 @@
+@@ -31,7 +31,9 @@
  #include "chrome/browser/ui/webui/bluetooth_internals/bluetooth_internals_ui.h"
  #include "chrome/browser/ui/webui/components/components_ui.h"
  #include "chrome/browser/ui/webui/constrained_web_dialog_ui.h"
@@ -10,7 +10,7 @@
  #include "chrome/browser/ui/webui/device_log_ui.h"
  #include "chrome/browser/ui/webui/domain_reliability_internals_ui.h"
  #include "chrome/browser/ui/webui/download_internals/download_internals_ui.h"
-@@ -272,12 +274,12 @@
+@@ -280,12 +282,12 @@
  #include "chrome/browser/ui/webui/conflicts/conflicts_ui.h"
  #endif
  
@@ -25,7 +25,7 @@
      defined(OS_ANDROID)
  #include "chrome/browser/ui/webui/sandbox/sandbox_internals_ui.h"
  #endif
-@@ -496,7 +498,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -523,7 +525,7 @@ bool IsAboutUI(const GURL& url) {
  #if !defined(OS_ANDROID)
            || url.host_piece() == chrome::kChromeUITermsHost
  #endif
@@ -34,7 +34,7 @@
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -545,8 +547,10 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -572,8 +574,10 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
      return &NewWebUI<ComponentsUI>;
    if (url.spec() == chrome::kChromeUIConstrainedHTMLTestURL)
      return &NewWebUI<ConstrainedWebDialogUI>;
@@ -45,7 +45,7 @@
    if (url.host_piece() == chrome::kChromeUIDeviceLogHost)
      return &NewWebUI<chromeos::DeviceLogUI>;
    if (url.host_piece() == chrome::kChromeUIDomainReliabilityInternalsHost)
-@@ -927,7 +931,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -969,7 +973,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
@@ -54,7 +54,7 @@
      defined(USE_AURA)
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
      return &NewWebUI<ConstrainedWebDialogUI>;
-@@ -971,13 +975,13 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -1019,13 +1023,13 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
      return &NewWebUI<media_router::MediaRouterInternalsUI>;
    }
  #endif
@@ -70,7 +70,7 @@
      defined(OS_CHROMEOS)
    if (url.host_piece() == chrome::kChromeUIDiscardsHost)
      return &NewWebUI<DiscardsUI>;
-@@ -985,7 +989,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -1033,7 +1037,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \
@@ -79,7 +79,7 @@
    if (url.host_piece() == chrome::kChromeUIBrowserSwitchHost)
      return &NewWebUI<BrowserSwitchUI>;
  #endif
-@@ -1181,8 +1185,10 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
+@@ -1221,8 +1225,10 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
      return ConflictsUI::GetFaviconResourceBytes(scale_factor);
  #endif
  
