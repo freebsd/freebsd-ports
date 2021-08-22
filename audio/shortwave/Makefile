@@ -5,7 +5,7 @@ CATEGORIES=	audio
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Listen to internet radio
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus
