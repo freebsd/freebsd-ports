@@ -1,7 +1,6 @@
 PORTNAME=	stlink
-PORTVERSION=	1.7.0
+DISTVERSION=	1.7.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	lev@FreeBSD.org
@@ -9,27 +8,25 @@ COMMENT=	STM32 ST-Link JTAG variant tools
 
 LICENSE=	BSD3CLAUSE
 
-OPTIONS_DEFINE=		GTK3 DOCS
-OPTIONS_SUB=		yes
-GTK3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-pacth-turn-off-gtk
-GTK3_USES=		gnome
-GTK3_USE=		GNOME=gtk30
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	stlink-org
-
 USES=		cmake pkgconfig
 USE_CSTD=	c99
+USE_GITHUB=	yes
+GH_ACCOUNT=	stlink-org
 USE_LDCONFIG=	yes
 
-PORTDOCS=	README.md ${ALLDOCS}
+PORTDOCS=	${ALLDOCS} README.md
 
 ALLDOCS=	compiling.md dev/developer.txt devices_boards.md \
-		flashloaders.md release.md tutorial.md \
-		version_support.md
-		
-FLASHLOADERS=	cleanroom.md linker.ld Makefile stm32f0.s stm32f4.s \
-		stm32f4lv.s stm32f7.s stm32f7lv.s stm32l4.s stm32lx.s \
+		flashloaders.md release.md tutorial.md version_support.md
+
+FLASHLOADERS=	cleanroom.md linker.ld Makefile stm32f0.s stm32f4.s stm32f4lv.s \
+		stm32f7.s stm32f7lv.s stm32l4.s stm32lx.s
+
+OPTIONS_DEFINE=		DOCS GTK3
+OPTIONS_SUB=		yes
+GTK3_USES=		gnome
+GTK3_USE=		GNOME=gtk30
+GTK3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-pacth-turn-off-gtk
 
 .include <bsd.port.pre.mk>
 
