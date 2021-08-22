@@ -1,5 +1,5 @@
-/usr/bin/slick-greeter-check-hidpi
-/usr/bin/slick-greeter-set-keyboard-layout
+bin/slick-greeter-check-hidpi
+bin/slick-greeter-set-keyboard-layout
 man/man1/slick-greeter-check-hidpi.1.gz
 man/man1/slick-greeter-set-keyboard-layout.1.gz
 man/man8/slick-greeter.8.gz
