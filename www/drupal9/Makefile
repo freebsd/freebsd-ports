@@ -1,5 +1,5 @@
 PORTNAME=	drupal9
-PORTVERSION=	9.0.14
+PORTVERSION=	9.2.4
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
@@ -18,7 +18,7 @@ SHEBANG_FILES=	core/scripts/password-hash.sh
 NO_ARCH=	yes
 NO_BUILD=	yes
 DOCS=		core/CHANGELOG.txt core/INSTALL.mysql.txt core/INSTALL.sqlite.txt \
-		LICENSE.txt README.txt core/COPYRIGHT.txt core/INSTALL.pgsql.txt \
+		LICENSE.txt core/COPYRIGHT.txt core/INSTALL.pgsql.txt \
 		core/INSTALL.txt core/MAINTAINERS.txt core/UPDATE.txt
 
 OPTIONS_DEFINE=		MYSQL SQLITE3 PGSQL DOCS
