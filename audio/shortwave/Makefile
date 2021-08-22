@@ -299,7 +299,6 @@ CARGO_GIT_SUBDIR=	gstreamer:gstreamer-audio:gstreamer-audio \
 			gtk4:gdk:gdk4 \
 			gtk4:gtk-sys:gtk4/sys \
 			gtk4:gtk:gtk4 \
-			gtk4:gtk:gtk4 \
 			libadwaita:adw:libadwaita
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
