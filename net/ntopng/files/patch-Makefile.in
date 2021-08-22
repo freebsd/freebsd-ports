@@ -1,7 +1,17 @@
---- Makefile.in.orig	2018-12-21 18:58:17 UTC
+--- Makefile.in.orig	2021-08-20 09:38:15 UTC
 +++ Makefile.in
-@@ -95,7 +95,7 @@ ifeq (@NEDGE@, 0)
-  HAS_ZEROMQ=$(shell pkg-config --exists libzmq; echo $$?)
+@@ -39,7 +39,8 @@ else ifeq ($(OS),Darwin)
+ 	LUA_PLATFORM=macosx
+ else ifeq ($(OS), $(filter $(OS), FreeBSD))
+ 	LUA_PLATFORM=freebsd
+-	LUA_LIB=/usr/local/lib/liblua-5.3.a
++        LUA_INC=-I%%LOCALBASE%%/include/lua53
++	LUA_LIB=-llua-5.3
+ endif
+ 
+ 
+@@ -87,7 +88,7 @@ ifeq (@NEDGE@, 0)
+  HAS_ZEROMQ=$(shell pkg-config --exists libzmq && echo 0)
   ifeq ($(HAS_ZEROMQ), 0)
  	ZEROMQ_INC = $(shell pkg-config --cflags libzmq)
 -	ZMQ_STATIC=/usr/local/lib/libzmq.a
@@ -9,3 +19,12 @@
  	ifeq ($(wildcard $(ZMQ_STATIC)),)
  		ZEROMQ_LIB = $(shell pkg-config --libs libzmq)
  	else
+@@ -123,7 +124,7 @@ RPM_PKG = $(TARGET)-$(NTOPNG_VERSION)-@REVISION@.$(PLA
+ RPM_DATA_PKG = $(TARGET)-data-$(NTOPNG_VERSION)-@REVISION@.noarch.rpm
+ ######
+ 
+-LIB_TARGETS = $(LUA_LIB)
++# LIB_TARGETS = $(LUA_LIB)
+ 
+ ifneq ($(HAS_ZEROMQ), 0)
+ LIB_TARGETS += $(ZEROMQ_LIB)

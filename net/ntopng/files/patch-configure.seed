@@ -1,15 +1,15 @@
---- configure.seed.orig	2021-03-10 17:29:02 UTC
+--- configure.seed.orig	2021-08-20 09:38:15 UTC
 +++ configure.seed
-@@ -4,7 +4,7 @@ dnl> Do not add anything above
- 
- AC_ARG_WITH(sanitizer,     [  --with-sanitizer   Build with support for the LLVM address sanitizer])
+@@ -5,7 +5,7 @@ dnl> Do not add anything above
+ HERE=`pwd`
+ SYSTEM=`uname -s`
  
 -CPPFLAGS="${CPPFLAGS} -Wno-address-of-packed-member -Wno-unused-function"
 +CPPFLAGS="${CPPFLAGS} -Wno-unused-function"
  AC_PROG_CPP
  AC_PROG_CXX
  
-@@ -128,33 +128,8 @@ fi
+@@ -142,33 +142,8 @@ fi
  # On CentOS 6 `git rev-list HEAD --count` does not work
  #
  #
@@ -44,7 +44,7 @@
  SHORT_MACHINE=`uname -m | cut -b1-3`
  
  GIT_RELEASE="@GIT_RELEASE@"
-@@ -298,7 +273,7 @@ else
+@@ -312,7 +287,7 @@ else
    fi
  fi
  
@@ -53,7 +53,16 @@
  
  AC_MSG_CHECKING(for ntopng professional edition)
  
-@@ -716,11 +691,6 @@ AC_DEFINE_UNQUOTED(_CRT_SECURE_NO_WARNINGS, 1, [Disabl
+@@ -454,7 +429,7 @@ if test "${with_nedge+set}" != set; then
+  PF_RING_HOME=${HOME}/PF_RING
+ 
+   if test $SYSTEM = "FreeBSD"; then
+-     LIBPCAP="${PF_RING_HOME}/userland/libpcap/libpcap.a"
++     # Use pcap from base
+   else
+     if test -d ${PF_RING_HOME}; then
+       AC_MSG_CHECKING(for PF_RING source installed in $PF_RING_HOME)
+@@ -730,11 +705,6 @@ AC_DEFINE_UNQUOTED(_CRT_SECURE_NO_WARNINGS, 1, [Disabl
  GMAKE=`which gmake`
  if test x$GMAKE = x; then
    GMAKE="make"
