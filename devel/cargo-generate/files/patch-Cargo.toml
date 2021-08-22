@@ -1,8 +1,8 @@
---- Cargo.toml.orig	2021-04-18 21:24:57 UTC
+--- Cargo.toml.orig	2021-08-22 18:42:16 UTC
 +++ Cargo.toml
-@@ -46,9 +46,6 @@ features = ["derive"]
- predicates = "1.0.7"
- assert_cmd = "1.0.3"
+@@ -48,9 +48,6 @@ features = ["derive"]
+ predicates = "2.0.1"
+ assert_cmd = "1.0.7"
  
 -[features]
 -vendored-openssl = ['openssl/vendored']

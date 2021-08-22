@@ -1,7 +1,6 @@
 PORTNAME=	cargo-generate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1	
-PORTREVISION=	2
+DISTVERSION=	0.8.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -21,11 +20,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ashleygwilliams
 
 CARGO_CRATES=	adler-1.0.2 \
-		aho-corasick-0.7.15 \
+		aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
-		anyhow-1.0.40 \
+		anyhow-1.0.42 \
 		anymap-0.12.1 \
-		assert_cmd-1.0.3 \
+		assert_cmd-1.0.7 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
@@ -36,8 +35,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		byte-tools-0.3.1 \
 		byteorder-1.4.3 \
 		bytesize-1.0.1 \
-		cargo-0.52.0 \
+		cargo-0.54.0 \
 		cargo-platform-0.1.1 \
+		cargo-util-0.1.0 \
 		cc-1.0.67 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
@@ -49,16 +49,18 @@ CARGO_CRATES=	adler-1.0.2 \
 		core-foundation-sys-0.8.2 \
 		crates-io-0.33.0 \
 		crc32fast-1.2.1 \
-		crossbeam-channel-0.5.0 \
+		crossbeam-channel-0.5.1 \
 		crossbeam-deque-0.8.0 \
-		crossbeam-epoch-0.9.3 \
-		crossbeam-utils-0.8.3 \
+		crossbeam-epoch-0.9.5 \
+		crossbeam-utils-0.8.5 \
 		crypto-hash-0.3.4 \
 		curl-0.4.35 \
 		curl-sys-0.4.41+curl-7.75.0 \
 		dialoguer-0.8.0 \
-		difference-2.0.0 \
+		difflib-0.4.0 \
 		digest-0.8.1 \
+		dirs-3.0.2 \
+		dirs-sys-0.3.6 \
 		doc-comment-0.3.3 \
 		either-1.6.1 \
 		encode_unicode-0.3.6 \
@@ -66,7 +68,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		fake-simd-0.1.2 \
 		filetime-0.2.14 \
 		flate2-1.0.20 \
-		float-cmp-0.8.0 \
+		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -74,20 +76,20 @@ CARGO_CRATES=	adler-1.0.2 \
 		fwdansi-1.1.0 \
 		generic-array-0.12.4 \
 		getrandom-0.2.2 \
-		git2-0.13.17 \
+		git2-0.13.20 \
 		git2-curl-0.14.1 \
 		glob-0.3.0 \
-		globset-0.4.6 \
-		heck-0.3.2 \
+		globset-0.4.8 \
+		heck-0.3.3 \
 		hermit-abi-0.1.18 \
 		hex-0.3.2 \
 		hex-0.4.3 \
 		home-0.5.3 \
 		humantime-2.1.0 \
 		idna-0.2.2 \
-		ignore-0.4.17 \
+		ignore-0.4.18 \
 		im-rc-15.0.0 \
-		indicatif-0.15.0 \
+		indicatif-0.16.2 \
 		itertools-0.10.0 \
 		itoa-0.4.7 \
 		jobserver-0.1.21 \
@@ -95,7 +97,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		libc-0.2.92 \
-		libgit2-sys-0.12.18+1.1.0 \
+		libgit2-sys-0.12.21+1.1.0 \
 		libnghttp2-sys-0.1.6+1.43.0 \
 		libssh2-sys-0.2.21 \
 		libz-sys-1.1.2 \
@@ -106,21 +108,21 @@ CARGO_CRATES=	adler-1.0.2 \
 		log-0.4.14 \
 		maplit-1.0.2 \
 		matches-0.1.8 \
-		memchr-2.3.4 \
-		memoffset-0.6.3 \
+		memchr-2.4.0 \
+		memoffset-0.6.4 \
 		miniz_oxide-0.4.4 \
 		miow-0.3.7 \
 		normalize-line-endings-0.3.0 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
-		number_prefix-0.3.0 \
+		number_prefix-0.4.0 \
 		once_cell-1.7.2 \
 		opaque-debug-0.2.3 \
 		opener-0.4.1 \
-		openssl-0.10.33 \
+		openssl-0.10.35 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.61 \
+		openssl-sys-0.9.65 \
 		percent-encoding-2.1.0 \
 		pest-2.1.3 \
 		pest_derive-2.1.0 \
@@ -128,7 +130,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		pest_meta-2.1.3 \
 		pkg-config-0.3.19 \
 		ppv-lite86-0.2.10 \
-		predicates-1.0.7 \
+		predicates-2.0.1 \
 		predicates-core-1.0.2 \
 		predicates-tree-1.0.2 \
 		proc-macro-error-1.0.4 \
@@ -144,18 +146,20 @@ CARGO_CRATES=	adler-1.0.2 \
 		rand_core-0.6.2 \
 		rand_hc-0.3.0 \
 		rand_xoshiro-0.4.0 \
-		rayon-1.5.0 \
-		rayon-core-1.9.0 \
+		rayon-1.5.1 \
+		rayon-core-1.9.1 \
 		redox_syscall-0.2.5 \
-		regex-1.4.5 \
+		redox_users-0.4.0 \
+		regex-1.5.4 \
 		regex-automata-0.1.9 \
-		regex-syntax-0.6.23 \
+		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
 		remove_dir_all-0.7.0 \
 		rustc-workspace-hack-1.0.0 \
 		rustfix-0.5.1 \
 		ryu-1.0.5 \
 		same-file-1.0.6 \
+		sanitize-filename-0.3.0 \
 		schannel-0.1.19 \
 		scopeguard-1.1.0 \
 		semver-0.10.0 \
@@ -170,16 +174,16 @@ CARGO_CRATES=	adler-1.0.2 \
 		socket2-0.3.19 \
 		strip-ansi-escapes-0.1.0 \
 		strsim-0.8.0 \
-		structopt-0.3.21 \
-		structopt-derive-0.4.14 \
+		structopt-0.3.22 \
+		structopt-derive-0.4.15 \
 		syn-1.0.67 \
 		tar-0.4.33 \
 		tempfile-3.2.0 \
 		termcolor-1.1.2 \
 		terminal_size-0.1.16 \
 		textwrap-0.11.0 \
-		thiserror-1.0.24 \
-		thiserror-impl-1.0.24 \
+		thiserror-1.0.26 \
+		thiserror-impl-1.0.26 \
 		thread_local-1.1.3 \
 		time-0.1.43 \
 		tinyvec-1.1.1 \
@@ -193,7 +197,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-segmentation-1.7.1 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
-		url-2.2.1 \
+		url-2.2.2 \
 		utf8parse-0.1.1 \
 		vcpkg-0.2.11 \
 		vec_map-0.8.2 \
