@@ -1,0 +1,6 @@
+This Sphinx extension allows you to generate OpenGraph metadata.
+
+The Open Graph protocol enables any web page to become a rich object
+in a social graph (see https://ogp.me/).
+
+WWW: https://github.com/wpilibsuite/sphinxext-opengraph
