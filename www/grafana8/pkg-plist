@@ -176,8 +176,6 @@ bin/grafana-server
 %%DATADIR%%/public/app/core/components/sidemenu/__snapshots__/BottomSection.test.tsx.snap
 %%DATADIR%%/public/app/core/components/sidemenu/__snapshots__/DropDownChild.test.tsx.snap
 %%DATADIR%%/public/app/core/components/sidemenu/__snapshots__/SideMenuDropDown.test.tsx.snap
-%%DATADIR%%/public/app/core/components/sidemenu/__snapshots__/TopSection.test.tsx.snap
-%%DATADIR%%/public/app/core/components/sidemenu/__snapshots__/TopSectionItem.test.tsx.snap
 %%DATADIR%%/public/app/core/components/sidemenu/utils.test.ts
 %%DATADIR%%/public/app/core/components/sidemenu/utils.ts
 %%DATADIR%%/public/app/core/components/sql_part/sql_part.ts
@@ -1423,6 +1421,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/variables/state/setOptionFromUrl.test.ts
 %%DATADIR%%/public/app/features/variables/state/sharedReducer.test.ts
 %%DATADIR%%/public/app/features/variables/state/sharedReducer.ts
+%%DATADIR%%/public/app/features/variables/state/templateVarsChangedInUrl.test.ts
 %%DATADIR%%/public/app/features/variables/state/transactionReducer.test.ts
 %%DATADIR%%/public/app/features/variables/state/transactionReducer.ts
 %%DATADIR%%/public/app/features/variables/state/types.ts
@@ -2534,6 +2533,8 @@ bin/grafana-server
 %%DATADIR%%/public/app/polyfills/old-mediaquerylist.ts
 %%DATADIR%%/public/app/routes/GrafanaCtrl.ts
 %%DATADIR%%/public/app/routes/routes.tsx
+%%DATADIR%%/public/app/routes/utils.test.ts
+%%DATADIR%%/public/app/routes/utils.ts
 %%DATADIR%%/public/app/store/configureStore.ts
 %%DATADIR%%/public/app/store/store.ts
 %%DATADIR%%/public/app/types/accessControl.ts
