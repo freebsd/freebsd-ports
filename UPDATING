@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210823:
+  AFFECTS: users of mail/postfixadmin
+  AUTHOR: ports.maintainer@evilphi.com
+
+  The 3.2->3.3 upgrade requires generating a new setup password hash.
+  The normal post-upgrade visit to setup.php will walk you through the
+  steps.
+
+  For more information, see the "Version 3.3" section of the change log:
+  https://github.com/postfixadmin/postfixadmin/blob/postfixadmin-3.3.9/CHANGELOG.TXT
+
 20210818:
   AFFECTS: users of databases/redis
   AUTHOR: osa@FreeBSD.org
