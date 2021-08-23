@@ -4,7 +4,7 @@ https://gitlab.gnome.org/GNOME/libadwaita/-/commit/9b6efa65dabb
 https://github.com/SeaDve/Kooha/commit/ceffdede0670
 https://gitlab.gnome.org/GNOME/libadwaita/-/commit/ea7ef0f2e2ac
 
---- data/resources/ui/window.ui.orig	2021-08-08 16:08:31 UTC
+--- data/resources/ui/window.ui.orig	2021-08-23 01:13:16 UTC
 +++ data/resources/ui/window.ui
 @@ -10,9 +10,10 @@
      <child>
@@ -16,7 +16,7 @@ https://gitlab.gnome.org/GNOME/libadwaita/-/commit/ea7ef0f2e2ac
              <child>
 -              <object class="AdwViewStackPage">
 +              <object class="GtkStackPage">
-                 <property name="name">main-screen</property>
+                 <property name="name">main</property>
                  <property name="child">
                    <object class="GtkBox">
 @@ -35,12 +36,13 @@
@@ -71,7 +71,7 @@ https://gitlab.gnome.org/GNOME/libadwaita/-/commit/ea7ef0f2e2ac
                  <property name="name">flushing</property>
                  <property name="child">
                    <object class="GtkBox">
---- src/application.rs.orig	2021-08-08 16:08:31 UTC
+--- src/application.rs.orig	2021-08-23 01:13:16 UTC
 +++ src/application.rs
 @@ -1,7 +1,6 @@
 -use adw::subclass::prelude::*;
@@ -84,19 +84,20 @@ https://gitlab.gnome.org/GNOME/libadwaita/-/commit/ea7ef0f2e2ac
      subclass::prelude::*,
 @@ -29,7 +28,7 @@ mod imp {
      impl ObjectSubclass for Application {
-         const NAME: &'static str = "Application";
+         const NAME: &'static str = "KoohaApplication";
          type Type = super::Application;
 -        type ParentType = adw::Application;
 +        type ParentType = gtk::Application;
      }
  
      impl ObjectImpl for Application {}
-@@ -55,17 +54,17 @@ mod imp {
+@@ -55,18 +54,18 @@ mod imp {
              self.parent_startup(app);
              gtk::Window::set_default_icon_name(APP_ID);
  
 +            app.setup_css();
-             app.setup_actions();
+             app.setup_gactions();
+             app.setup_accels();
          }
      }
  
@@ -111,12 +112,10 @@ https://gitlab.gnome.org/GNOME/libadwaita/-/commit/ea7ef0f2e2ac
          @implements gio::ActionMap, gio::ActionGroup;
  }
  
-@@ -123,6 +122,21 @@ impl Application {
-         self.set_accels_for_action("win.toggle-record", &["<Primary>r"]);
-         self.set_accels_for_action("win.toggle-pause", &["<Primary>k"]);
-         self.set_accels_for_action("win.cancel-delay", &["<Primary>c"]);
-+    }
-+
+@@ -80,6 +79,21 @@ impl Application {
+         .expect("Failed to create Application.")
+     }
+ 
 +    fn setup_css(&self) {
 +        let provider = gtk::CssProvider::new();
 +        provider.load_from_resource("/io/github/seadve/Kooha/style.css");
@@ -130,6 +129,21 @@ https://gitlab.gnome.org/GNOME/libadwaita/-/commit/ea7ef0f2e2ac
 +            log::debug!("is_display_composited: {}", display.is_composited());
 +            log::debug!("is_display_rgba: {}", display.is_rgba());
 +        }
++    }
++
+     fn setup_gactions(&self) {
+         let action_launch_default_for_file = gio::SimpleAction::new(
+             "launch-default-for-file",
+@@ -118,9 +132,9 @@ impl Application {
+         self.set_accels_for_action("win.record-speaker", &["<primary>a"]);
+         self.set_accels_for_action("win.record-mic", &["<primary>m"]);
+         self.set_accels_for_action("win.show-pointer", &["<primary>p"]);
+-        self.set_accels_for_action("win.toggle-record", &["<primary>r"]);
+-        self.set_accels_for_action("win.toggle-pause", &["<primary>k"]);
+-        self.set_accels_for_action("win.cancel-delay", &["<primary>c"]);
++        self.set_accels_for_action("win.toggle-record", &["<Primary>r"]);
++        self.set_accels_for_action("win.toggle-pause", &["<Primary>k"]);
++        self.set_accels_for_action("win.cancel-delay", &["<Primary>c"]);
      }
  
      fn select_saving_location(&self) {
