@@ -1,6 +1,6 @@
 PORTNAME=	cloudquery
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.4
+DISTVERSION=	0.14.5
 CATEGORIES=	net
 
 MAINTAINER=	nc@FreeBSD.org
@@ -25,7 +25,7 @@ GH_TUPLE=	\
 		agext:levenshtein:v1.2.3:agext_levenshtein/vendor/github.com/agext/levenshtein \
 		apparentlymart:go-textseg:v13.0.0:apparentlymart_go_textseg_v13/vendor/github.com/apparentlymart/go-textseg/v13 \
 		aws:aws-lambda-go:v1.23.0:aws_aws_lambda_go/vendor/github.com/aws/aws-lambda-go \
-		cloudquery:cq-provider-sdk:v0.3.1:cloudquery_cq_provider_sdk/vendor/github.com/cloudquery/cq-provider-sdk \
+		cloudquery:cq-provider-sdk:v0.3.3-rc3:cloudquery_cq_provider_sdk/vendor/github.com/cloudquery/cq-provider-sdk \
 		creasty:defaults:v1.5.1:creasty_defaults/vendor/github.com/creasty/defaults \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		doug-martin:goqu:v9.13.0:doug_martin_goqu_v9/vendor/github.com/doug-martin/goqu/v9 \
@@ -41,6 +41,7 @@ GH_TUPLE=	\
 		go-yaml:yaml:496545a6307b:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gofrs:uuid:v4.0.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
+		golang-migrate:migrate:v4.14.0:golang_migrate_migrate_v4/vendor/github.com/golang-migrate/migrate/v4 \
 		golang:crypto:38f3c27a63bf:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:4163338589ed:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
@@ -49,12 +50,14 @@ GH_TUPLE=	\
 		golang:term:7de9c90e9dd1:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.5.5:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:cb27e3aa2013:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:24207fddd1c3:google_go_genproto/vendor/google.golang.org/genproto \
 		google:go-github:v35.1.0:google_go_github_v35/vendor/github.com/google/go-github/v35 \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
-		grpc:grpc-go:v1.29.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.33.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-hclog:v0.16.1:hashicorp_go_hclog/vendor/github.com/hashicorp/go-hclog \
+		hashicorp:go-multierror:v1.1.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
 		hashicorp:go-plugin:v1.4.1:hashicorp_go_plugin/vendor/github.com/hashicorp/go-plugin \
 		hashicorp:go-version:v1.3.0:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
@@ -78,6 +81,7 @@ GH_TUPLE=	\
 		kevinburke:ssh_config:4977a11b4351:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
 		lann:builder:47ae307949d0:lann_builder/vendor/github.com/lann/builder \
 		lann:ps:62de8c46ede0:lann_ps/vendor/github.com/lann/ps \
+		lib:pq:v1.10.1:lib_pq/vendor/github.com/lib/pq \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
@@ -99,8 +103,8 @@ GH_TUPLE=	\
 		rs:zerolog:v1.20.0:rs_zerolog/vendor/github.com/rs/zerolog \
 		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
 		sergi:go-diff:v1.2.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
-		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
-		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
+		spf13:afero:v1.6.0:spf13_afero/vendor/github.com/spf13/afero \
+		spf13:cast:v1.4.0:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v1.1.3:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
@@ -113,8 +117,10 @@ GH_TUPLE=	\
 		vmihailenco:msgpack:v5.3.4:vmihailenco_msgpack_v5/vendor/github.com/vmihailenco/msgpack/v5 \
 		vmihailenco:tagparser:v2.0.0:vmihailenco_tagparser_v2/vendor/github.com/vmihailenco/tagparser/v2 \
 		xanzy:ssh-agent:v0.3.0:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
+		xo:dburl:v0.8.4:xo_dburl/vendor/github.com/xo/dburl \
 		zclconf:go-cty:v1.9.0:zclconf_go_cty/vendor/github.com/zclconf/go-cty
 
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
+
