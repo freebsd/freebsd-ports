@@ -6,7 +6,7 @@ CATEGORIES=	lang scheme
 MASTER_SITES=	https://code.call-cc.org/releases/${DISTVERSION}/
 PKGNAMESUFFIX=	5
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Scheme-to-C compiler
 
 LICENSE=	BSD3CLAUSE PD
