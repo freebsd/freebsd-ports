@@ -1,7 +1,7 @@
 # Created by: rea@FreeBSD.org
 
 PORTNAME=	mu
-PORTVERSION=	1.2
+PORTVERSION=	1.6.4
 CATEGORIES=	mail
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -32,10 +32,6 @@ GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 GUILE_USE=		ldconfig=yes
 GUILE_CONFIGURE_ENABLE=	guile
 GUILE_INFO=		mu-guile
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,guile-2\.0,guile-2.2,' \
-	    ${WRKSRC}/configure.ac
 
 post-install:
 	cd ${FILESDIR} && ${INSTALL_SCRIPT} mu-ask \

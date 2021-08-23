@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20210823:
+  AFFECTS: users of mail/mu
+  AUTHOR: hrs@FreeBSD.org
+
+  mail/mu now uses XDG Base Directory Specification for the default
+  locations for various files.  The mu database now lives under
+  ~/.cache/mu rather than ~/.mu by default.  After upgrading,
+  move the contents under ~/.mu to ~/.cache/mu.
+
+20210823:
   AFFECTS: users of mail/postfixadmin
   AUTHOR: ports.maintainer@evilphi.com
 
