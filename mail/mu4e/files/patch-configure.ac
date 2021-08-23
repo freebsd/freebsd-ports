@@ -1,38 +1,42 @@
---- configure.ac.orig	2019-04-07 07:54:18 UTC
+--- configure.ac.orig	2021-08-21 13:27:15 UTC
 +++ configure.ac
-@@ -37,31 +37,31 @@ AC_SUBST(prefix)
+@@ -34,13 +34,13 @@ AC_SUBST(prefix)
  
  # AC_PROG_CXX *before* AC_PROG_CC, otherwise configure won't error out
  # when a c++ compiler is not found. Weird, huh?
 -AC_PROG_CXX
 -AC_PROG_CC
+-AC_PROG_CPP
 -AC_PROG_CC_STDC
 -AC_PROG_CC_C99
 +#AC_PROG_CXX
 +#AC_PROG_CC
++#AC_PROG_CPP
 +#AC_PROG_CC_STDC
 +#AC_PROG_CC_C99
  AC_PROG_INSTALL
 -AC_HEADER_STDC
 +#AC_HEADER_STDC
  
- extra_flags="-Wformat-security		\
-              -Wstack-protector		\
- 	     -Wstack-protector-all	\
- 	     -Wno-cast-function-type"
+ extra_flags="-Wformat-security                                        \
+          -Wstack-protector                                        \
+@@ -48,22 +48,22 @@ extra_flags="-Wformat-security                        
+          -Wno-cast-function-type                                  \
+          -Wno-bad-function-cast"
  
 -AX_CXX_COMPILE_STDCXX_14
--m4_ifdef([AX_COMPILER_FLAGS],[AX_COMPILER_FLAGS(,,[yes],${extra_flags})])
+-AX_COMPILER_FLAGS_CXXFLAGS([],[],[${extra_cflags}])
+-AX_APPEND_COMPILE_FLAGS([-Wno-inline ],[CXXFLAGS])
 -AX_VALGRIND_CHECK
 +#AX_CXX_COMPILE_STDCXX_14
-+#m4_ifdef([AX_COMPILER_FLAGS],[AX_COMPILER_FLAGS(,,[yes],${extra_flags})])
++#AX_COMPILER_FLAGS_CXXFLAGS([],[],[${extra_cflags}])
++#AX_APPEND_COMPILE_FLAGS([-Wno-inline ],[CXXFLAGS])
 +#AX_VALGRIND_CHECK
  
- # for now, use AM_PROG_LIBTOOL, as we don't want to require
- # a too new setup for autotools/libtool
--AM_PROG_LIBTOOL
-+#AM_PROG_LIBTOOL
- #LT_INIT([disable-shared])
+-LT_INIT
++#LT_INIT
+ 
+ AX_CODE_COVERAGE
  
  AC_PROG_AWK
  AC_CHECK_PROG(SORT,sort,sort)
@@ -41,109 +45,80 @@
 +#AC_CHECK_HEADERS([wordexp.h])
  
  # use the 64-bit versions
- AC_SYS_LARGEFILE
-@@ -150,19 +150,19 @@ AS_IF([test "x$PKG_CONFIG" = "xno"],[
+-AC_SYS_LARGEFILE
++#AC_SYS_LARGEFILE
+ 
+ # asan is somewhat similar to valgrind, but has low enough overhead so it
+ # can be used during normal operation.
+@@ -144,43 +144,13 @@ AS_IF([test -z "$PKG_CONFIG"],
+ )
  
  # glib2?
- # we pick some late-2012 version
--PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.32 gobject-2.0 gio-2.0)
-+# PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.32 gobject-2.0 gio-2.0)
- AC_SUBST(GLIB_CFLAGS)
- AC_SUBST(GLIB_LIBS)
- glib_version="`$PKG_CONFIG --modversion glib-2.0`"
+-PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.50 gobject-2.0 gio-2.0)
+-glib_version="$($PKG_CONFIG --modversion glib-2.0)"
++# PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.50 gobject-2.0 gio-2.0)
++# glib_version="$($PKG_CONFIG --modversion glib-2.0)"
  
  # gmime, version 3.0 or higher
 -PKG_CHECK_MODULES(GMIME,gmime-3.0)
+-gmime_version="$($PKG_CONFIG --modversion gmime-3.0)"
 +# PKG_CHECK_MODULES(GMIME,gmime-3.0)
- AC_SUBST(GMIME_CFLAGS)
- AC_SUBST(GMIME_LIBS)
- gmime_version="`$PKG_CONFIG --modversion gmime-3.0`"
++# gmime_version="$($PKG_CONFIG --modversion gmime-3.0)"
  
- # gmime, version 3.0 or higher
--PKG_CHECK_MODULES(JSON_GLIB,json-glib-1.0 >= 1.4,[have_json_glib=yes],[have_json_glib=no])
-+# PKG_CHECK_MODULES(JSON_GLIB,json-glib-1.0 >= 1.4,[have_json_glib=yes],[have_json_glib=no])
- AS_IF([test "x$have_json_glib" = "xyes"],[
-   AC_SUBST(JSON_GLIB_CFLAGS)
-   AC_SUBST(JSON_GLIB_LIBS)
-@@ -172,21 +172,21 @@ AS_IF([test "x$have_json_glib" = "xyes"],[
- AM_CONDITIONAL(HAVE_JSON_GLIB,[test "x$have_json_glib" = "xyes"])
- 
- # xapian checking - we need 1.4 at least
--AC_CHECK_PROG(XAPIAN_CONFIG,xapian-config,xapian-config,no)
--AM_CONDITIONAL(HAVE_XAPIAN,test "x$XAPIAN_CONFIG" != "xno")
--AS_IF([test "x$XAPIAN_CONFIG" = "xno"],[
--   AC_MSG_ERROR([
--   *** xapian could not be found; please install it
--   *** e.g., in debian/ubuntu the package would be 'libxapian-dev'
--   *** If you compiled it yourself, you should ensure that xapian-config
--   *** is in your PATH.])],
--   [xapian_version=$($XAPIAN_CONFIG --version | sed -e 's/.* //')])
+-# xapian checking - we need 1.4 at least
+-PKG_CHECK_MODULES(XAPIAN,xapian-core >= 1.4,[
+-  have_xapian=yes
+-  xapian_version=$($PKG_CONFIG xapian-core --modversion)
+-  AC_SUBST(XAPIAN_CXXFLAGS,${XAPIAN_CFLAGS})
+-],[
+-  # fall back to the xapian-config script. Not sure if there are cases where the
+-  # pkgconfig does not work, but xapian-config does, so keep this for now.
+-  AC_MSG_NOTICE([falling back to xapian-config])
+-  AC_CHECK_PROG(XAPIAN_CONFIG,xapian-config,xapian-config,no)
+-  AS_IF([test "x$XAPIAN_CONFIG" = "xno"],[
+-     AC_MSG_ERROR([
+-     *** xapian could not be found; please install it
+-     *** e.g., in debian/ubuntu the package would be 'libxapian-dev'
+-     *** If you compiled it yourself, you should ensure that xapian-config
+-     *** is in your PATH.])],
+-     [xapian_version=$($XAPIAN_CONFIG --version | sed -e 's/.* //')])
 -
--AS_CASE([$xapian_version],
--	[1.[[4-9]].[[0-9]]*],
--	  [AC_DEFINE([XAPIAN_HAVE_OP_WILDCARD],[1],[Xapian::Query::OP_WILDCARD?])],
--	[AC_MSG_ERROR([*** xapian version >= 1.4 needed, but version $xapian_version found.])])
+-  AS_CASE([$xapian_version],
+-      [1.[[4-9]].[[0-9]]*],
+-    [AC_MSG_NOTICE([xapian $xapian_version found.])],
+-    [AC_MSG_ERROR([*** xapian version >= 1.4 needed, but version $xapian_version found.])])
 -
-+# AC_CHECK_PROG(XAPIAN_CONFIG,xapian-config,xapian-config,no)
-+# AM_CONDITIONAL(HAVE_XAPIAN,test "x$XAPIAN_CONFIG" != "xno")
-+# AS_IF([test "x$XAPIAN_CONFIG" = "xno"],[
-+#   AC_MSG_ERROR([
-+#    *** xapian could not be found; please install it
-+#    *** e.g., in debian/ubuntu the package would be 'libxapian-dev'
-+#    *** If you compiled it yourself, you should ensure that xapian-config
-+#    *** is in your PATH.])],
-+#    [xapian_version=$($XAPIAN_CONFIG --version | sed -e 's/.* //')])
-+#
-+#AS_CASE([$xapian_version],
-+#	[1.[[4-9]].[[0-9]]*],
-+#	  [AC_DEFINE([XAPIAN_HAVE_OP_WILDCARD],[1],[Xapian::Query::OP_WILDCARD?])],
-+#	[AC_MSG_ERROR([*** xapian version >= 1.4 needed, but version $xapian_version found.])])
-+#
- XAPIAN_CXXFLAGS="$($XAPIAN_CONFIG --cxxflags)"
- XAPIAN_LIBS="$($XAPIAN_CONFIG --libs)"
- have_xapian="yes"
-@@ -261,37 +261,19 @@ AC_SUBST(MU_DOC_DIR, "${prefix}/share/doc/mu")
- 
+-  XAPIAN_CXXFLAGS="$($XAPIAN_CONFIG --cxxflags)"
+-  XAPIAN_LIBS="$($XAPIAN_CONFIG --libs)"
+-  have_xapian="yes"
+-
+-  AC_SUBST(XAPIAN_CXXFLAGS)
+-  AC_SUBST(XAPIAN_LIBS)
+-])
  ###############################################################################
- # check for pmccabe
--AC_PATH_PROG([PMCCABE],[pmccabe],[no])
--AS_IF([test "x$PMCCABE" = "xno"],[
--   have_pmccabe="no"
--   AC_MSG_WARN([
--   *** Developers: you do not seem to have the pmccabe tool installed.
--   *** Please install it if you want to run the automated code checks])
--],[have_pmccabe="yes"])
-+#AC_PATH_PROG([PMCCABE],[pmccabe],[no])
-+#AS_IF([test "x$PMCCABE" = "xno"],[
-+#   have_pmccabe="no"
-+#   AC_MSG_WARN([
-+#   *** Developers: you do not seem to have the pmccabe tool installed.
-+#   *** Please install it if you want to run the automated code checks])
-+#],[have_pmccabe="yes"])
- ###############################################################################
+ # we set the set the version of the MuStore (Xapian database) layout
+ # here; it will become part of the db name, so we can automatically
+@@ -272,23 +242,8 @@ AC_SUBST(MU_DOC_DIR, "${prefix}/share/doc/mu")
  
  AC_CONFIG_FILES([
  Makefile
 -mu/Makefile
--mu/tests/Makefile
 -lib/Makefile
 -lib/doxyfile
--lib/parser/Makefile
--lib/tests/Makefile
+-lib/utils/Makefile
+-lib/index/Makefile
  mu4e/Makefile
  mu4e/mu4e-meta.el
 -guile/Makefile
--guile/texi.texi
 -guile/mu/Makefile
 -guile/examples/Makefile
 -guile/tests/Makefile
 -guile/scripts/Makefile
 -toys/Makefile
 -toys/mug/Makefile
--toys/msg2pdf/Makefile
 -man/Makefile
 -m4/Makefile
 -contrib/Makefile
  ])
- AC_OUTPUT
+ AC_CONFIG_FILES([mu/mu-memcheck], [chmod +x mu/mu-memcheck])
  
