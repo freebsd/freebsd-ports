@@ -1001,6 +1001,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # PKG_CREATE_VERBOSE		- If set, pass the -v option to pkg create which
 #				  ensures periodic output during packaging and
 #				  will help prevent timeouts by build monitors
+# PKG_COMPRESSION_FORMAT
+#				  the compression format used when creating a package, see
+#				  pkg-create(8) for valid formats
 #
 # End of the list of all variables that need to be defined in a port.
 # Most port authors should not need to understand anything after this point.
