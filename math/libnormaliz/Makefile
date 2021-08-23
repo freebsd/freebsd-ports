@@ -9,6 +9,8 @@ DISTNAME=	normaliz-${PORTVERSION}
 MAINTAINER=	moritz@schmi.tt
 COMMENT=	Compute Hilbert bases and enumerative data of rational polyhedra
 
+CONFLICTS_BUILD=	e-antic # math/e-antic should be a dependency but it fails: https://github.com/Normaliz/Normaliz/issues/380
+
 # LICENSE block
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
