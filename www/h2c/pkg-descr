@@ -1,0 +1,4 @@
+h2c stands for headers 2 curl. Provided a set of HTTP request headers,
+it outputs the curl command line for generating the desired request.
+
+WWW: https://curl.se/h2c/
