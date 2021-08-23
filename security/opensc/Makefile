@@ -1,7 +1,7 @@
 # Created by: Bruce M Simpson
 
 PORTNAME=	opensc
-DISTVERSION=	0.21.0
+DISTVERSION=	0.22.0
 CATEGORIES=	security devel
 
 MAINTAINER=	ale@FreeBSD.org

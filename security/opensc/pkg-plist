@@ -48,11 +48,11 @@ etc/bash_completion.d/westcos-tool
 etc/xdg/autostart/pkcs11-register.desktop
 lib/libopensc.a
 lib/libopensc.so
-lib/libopensc.so.7
-lib/libopensc.so.7.0.0
+lib/libopensc.so.8
+lib/libopensc.so.8.0.0
 %%SM%%lib/libsmm-local.so
-%%SM%%lib/libsmm-local.so.7
-%%SM%%lib/libsmm-local.so.7.0.0
+%%SM%%lib/libsmm-local.so.8
+%%SM%%lib/libsmm-local.so.8.0.0
 lib/onepin-opensc-pkcs11.so
 lib/opensc-pkcs11.so
 lib/pkcs11-spy.so
