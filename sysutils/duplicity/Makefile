@@ -1,9 +1,9 @@
 # Created by: Gerhard Häring <gh@ghaering.de>
 
 PORTNAME=	duplicity
-PORTVERSION=	0.8.19
+PORTVERSION=	0.8.20
 CATEGORIES=	sysutils
-MASTER_SITES=	https://code.launchpad.net/duplicity/0.8-series/${PORTVERSION}/+download/
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Backup tool that uses librsync and GnuPG
@@ -59,6 +59,7 @@ post-patch:
 .for f in cfbackend _cf_cloudfiles _cf_pyrax giobackend
 	@${RM} ${WRKSRC}/${PORTNAME}/backends/${f}.py
 .endfor
+	@${REINPLACE_CMD} '/self.inplace = True/d' ${WRKSRC}/setup.py
 
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e '109,133d' \
