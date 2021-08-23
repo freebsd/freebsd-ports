@@ -16472,3 +16472,4 @@ games/ponscripter-sekai|games/ponscripter-07th-mod|2021-08-13|Switch to active f
 sysutils/graid5||2021-08-21|Has expired: Module contains subtile errors and is obsolete by ZFS raidz. Consider migrating to ZFS.
 x11-wm/gcompmgr||2021-08-21|Has expired: Abandonware since 2005, using discontinued libraries
 irc/lostirc||2021-08-21|Has expired: Abandonware since 2005, dependens on discontinued libraries
+math/normaliz|math/libnormaliz|2021-08-21|Remove duplicate
