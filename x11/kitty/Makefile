@@ -1,6 +1,6 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.2
+DISTVERSION=	0.23.1
 CATEGORIES=	x11
 
 MAINTAINER=	alexis.praga@free.fr
@@ -9,7 +9,11 @@ COMMENT=	Cross-platform, fast, featureful, GPU-based terminal emulator
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>0:textproc/py-sphinx-copybutton@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx-inline-tabs>0:textproc/py-sphinx-inline-tabs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinxext-opengraph>0:textproc/py-sphinxext-opengraph@${PY_FLAVOR} \
+		sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
 		wayland-protocols>=0:graphics/wayland-protocols
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libfontconfig.so:x11-fonts/fontconfig \

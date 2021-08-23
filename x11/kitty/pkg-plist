@@ -7,6 +7,7 @@ lib/kitty/kittens/broadcast/__init__.py
 lib/kitty/kittens/broadcast/main.py
 lib/kitty/kittens/choose/__init__.py
 lib/kitty/kittens/choose/main.py
+lib/kitty/kittens/choose/match.py
 lib/kitty/kittens/choose/subseq_matcher.so
 lib/kitty/kittens/clipboard/__init__.py
 lib/kitty/kittens/clipboard/main.py
@@ -48,6 +49,9 @@ lib/kitty/kittens/show_key/main.py
 lib/kitty/kittens/ssh/__init__.py
 lib/kitty/kittens/ssh/completion.py
 lib/kitty/kittens/ssh/main.py
+lib/kitty/kittens/themes/__init__.py
+lib/kitty/kittens/themes/collection.py
+lib/kitty/kittens/themes/main.py
 lib/kitty/kittens/tui/__init__.py
 lib/kitty/kittens/tui/dircolors.py
 lib/kitty/kittens/tui/handler.py
@@ -62,6 +66,7 @@ lib/kitty/kittens/unicode_input/__init__.py
 lib/kitty/kittens/unicode_input/main.py
 lib/kitty/kittens/unicode_input/unicode_names.so
 lib/kitty/kitty/__init__.py
+lib/kitty/kitty/actions.py
 lib/kitty/kitty/bgimage_fragment.glsl
 lib/kitty/kitty/bgimage_vertex.glsl
 lib/kitty/kitty/blit_fragment.glsl
@@ -141,6 +146,7 @@ lib/kitty/kitty/rc/launch.py
 lib/kitty/kitty/rc/ls.py
 lib/kitty/kitty/rc/new_window.py
 lib/kitty/kitty/rc/remove_marker.py
+lib/kitty/kitty/rc/resize_os_window.py
 lib/kitty/kitty/rc/resize_window.py
 lib/kitty/kitty/rc/scroll_window.py
 lib/kitty/kitty/rc/send_text.py
@@ -174,6 +180,7 @@ lib/kitty/logo/kitty.png
 lib/kitty/terminfo/x/xterm-kitty
 share/applications/kitty.desktop
 share/icons/hicolor/256x256/apps/kitty.png
+share/icons/hicolor/scalable/apps/kitty.svg
 share/man/man1/kitty.1.gz
 share/man/man5/kitty.conf.5.gz
 share/misc/kitty.terminfo
