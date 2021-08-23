@@ -321,11 +321,9 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/listeners/ContextListener.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/listeners/SessionListener.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/listeners/SessionListener.java
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter$1.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter$CounterListener.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter.java
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter$1.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter$NumberWriterListener.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter.java
@@ -335,7 +333,6 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/sessions/DummyCart.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers.java
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers$1.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers$TrailerFieldSupplier.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/util/CookieFilter.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/util/CookieFilter.java
@@ -378,11 +375,9 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/StringWebsocketMessage.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.java
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation$1.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation$CompletedFuture.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation.java
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$1.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerBinary.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerText.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.class
