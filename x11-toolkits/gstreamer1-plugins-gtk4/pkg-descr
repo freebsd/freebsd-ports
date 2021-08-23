@@ -1,0 +1,6 @@
+GTK4 plugin features:
+
+- gtk4glsink: A video sink that renders to a GtkWidget using OpenGL
+- gtk4sink: A video sink that renders to a GtkWidget
+
+WWW: https://gstreamer.freedesktop.org/documentation/gtk/gtksink.html
