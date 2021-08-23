@@ -1002,8 +1002,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ensures periodic output during packaging and
 #				  will help prevent timeouts by build monitors
 # PKG_COMPRESSION_FORMAT
-#				  the compression format used when creating a package, see
+#				- the compression format used when creating a package, see
 #				  pkg-create(8) for valid formats
+# PKG_COMPRESSION_LEVEL
+#				- the compression level to use when creating a package, see
+#				  pkg-create(8) for valid values
 #
 # End of the list of all variables that need to be defined in a port.
 # Most port authors should not need to understand anything after this point.
@@ -3486,6 +3489,9 @@ _EXTRA_PACKAGE_TARGET_DEP+=	${WRKDIR_PKGFILE}
 
 .if !target(do-package)
 PKG_CREATE_ARGS+= -f ${PKG_COMPRESSION_FORMAT}
+.if defined(PKG_COMPRESSION_LEVEL)
+PKG_CREATE_ARGS+= -l ${PKG_COMPRESSION_LEVEL}
+.endif
 PKG_CREATE_ARGS+=	-r ${STAGEDIR}
 .  if defined(PKG_CREATE_VERBOSE)
 PKG_CREATE_ARGS+=	-v
