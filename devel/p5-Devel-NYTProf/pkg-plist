@@ -32,8 +32,9 @@ bin/nytprofpf
 %%SITE_ARCH%%/Devel/NYTProf/js/jit/gradient50.png
 %%SITE_ARCH%%/Devel/NYTProf/js/jit/jit-yc.js
 %%SITE_ARCH%%/Devel/NYTProf/js/jit/jit.js
+%%SITE_ARCH%%/Devel/NYTProf/js/jquery.floatThead.min.js
+%%SITE_ARCH%%/Devel/NYTProf/js/jquery.tablesorter.min.js
 %%SITE_ARCH%%/Devel/NYTProf/js/jquery-min.js
-%%SITE_ARCH%%/Devel/NYTProf/js/jquery-tablesorter-min.js
 %%SITE_ARCH%%/Devel/NYTProf/js/style-tablesorter.css
 %%SITE_ARCH%%/Devel/auto/Devel/NYTProf/NYTProf.so
 %%SITE_ARCH%%/auto/Devel/NYTProf/NYTProf.so
