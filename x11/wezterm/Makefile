@@ -1,6 +1,6 @@
 PORTNAME=	wezterm
 DISTVERSION=	20210502-154244-3f7122cb
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -246,7 +246,6 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		nanorand-0.5.2 \
 		nb-connect-1.2.0 \
 		net2-0.2.37 \
-		nix-0.17.0 \
 		nix-0.18.0 \
 		nix-0.19.1 \
 		nix-0.20.0 \
@@ -431,7 +430,6 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		vcpkg-0.2.12 \
 		vec_map-0.8.2 \
 		version_check-0.9.3 \
-		void-1.0.2 \
 		vswhom-0.1.0 \
 		vswhom-sys-0.1.0 \
 		waker-fn-1.1.0 \
