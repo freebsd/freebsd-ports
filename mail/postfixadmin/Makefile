@@ -2,7 +2,7 @@
 
 PORTNAME=	postfixadmin
 DISTVERSIONPREFIX=	postfixadmin-
-DISTVERSION=	3.2.4
+DISTVERSION=	3.3.10
 CATEGORIES=	mail www
 
 MAINTAINER=	ports.maintainer@evilphi.com
@@ -11,55 +11,62 @@ COMMENT=	PHP web-based management tool for Postfix virtual domains and users
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL-LICENSE.TXT
 
-RUN_DEPENDS+=	p5-DBI>=1.634:databases/p5-DBI \
-		p5-Email-Sender>=1.300031:mail/p5-Email-Sender \
-		p5-Email-Valid>=0.12:mail/p5-Email-Valid \
-		p5-Log-Dispatch>=1.79:devel/p5-Log-Dispatch \
-		p5-Log-Log4perl>=0.26:devel/p5-Log-Log4perl \
-		p5-MIME-EncWords>=0.040:mail/p5-MIME-EncWords
-
-USES=		cpe perl5 shebangfix php
-USE_GITHUB=	yes
+USES=		cpe shebangfix php
 CPE_VENDOR=	postfix_admin_project
 CPE_PRODUCT=	postfix_admin
+USE_GITHUB=	yes
+USE_PHP=	mbstring openssl pcre session spl
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
 SUB_FILES+=	pkg-message
-PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+PLIST_SUB=	WWWGRP=${WWWGRP} \
+		WWWOWN=${WWWOWN}
 
-OPTIONS_DEFINE=	DOCS
-OPTIONS_MULTI=	DB
-OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
-OPTIONS_DEFAULT=	PGSQL
+OPTIONS_DEFINE=		DOCS IMAP VACATION
+OPTIONS_DEFAULT=	IMAP MYSQL PGSQL SQLITE VACATION
+OPTIONS_MULTI=		DATABASE
+OPTIONS_MULTI_DATABASE=	MYSQL PGSQL SQLITE
+OPTIONS_SUB=		yes
 
-USE_PERL5=	run
+IMAP_DESC=	Support automated sub-folder creation for new mailboxes
+VACATION_DESC=	Install virtual vacation postfix script
 
-USE_PHP=	mbstring openssl pcre phar session spl xmlrpc
-
-MYSQL_USE=	php=mysqli
-PGSQL_USE=	php=pgsql
-SQLITE_USE=	php=sqlite3
+IMAP_USE=	php=imap
+MYSQL_USE=	php=pdo_mysql
+PGSQL_USE=	php=pdo_pgsql
+SQLITE_USE=	php=pdo_sqlite
+VACATION_RUN_DEPENDS=	p5-DBI>=1.634:databases/p5-DBI \
+			p5-Email-Sender>=1.300031:mail/p5-Email-Sender \
+			p5-Email-Simple>=1.998:mail/p5-Email-Simple \
+			p5-Email-Valid>=0.12:mail/p5-Email-Valid \
+			p5-Log-Log4perl>=0.26:devel/p5-Log-Log4perl \
+			p5-MIME-EncWords>=0.040:mail/p5-MIME-EncWords \
+			p5-Net-DNS>=1.32:dns/p5-Net-DNS \
+			p5-Try-Tiny>=0.30:lang/p5-Try-Tiny
+VACATION_USES=	perl5
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	@${MKDIR} ${STAGEDIR}${WWWDIR}/templates_c
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}/templates_c
 	${INSTALL_DATA} ${WRKSRC}/*.php ${STAGEDIR}${WWWDIR}
 .for i in configs languages lib model public scripts templates tests
-	@cd ${WRKSRC}/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/${i}
+	(cd ${WRKSRC}/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/${i})
 .endfor
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/GPL-LICENSE.TXT ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE.TXT ${STAGEDIR}${DATADIR}
-.for i in ADDITIONS VIRTUAL_VACATION
-	@cd ${WRKSRC}/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${i}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/ADDITIONS && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/ADDITIONS)
+.for i in GPL-LICENSE.TXT LICENSE.TXT check_mailpass_expiration.sh password_expiration.sql postfixadmin.my.cnf
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}
 .endfor
 
 do-install-DOCS-on:
-	@cd ${WRKSRC}/DOCUMENTS && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/DOCUMENTS && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .for i in CHANGELOG.TXT INSTALL.TXT README.md
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+do-install-VACATION-on:
+	(cd ${WRKSRC}/VIRTUAL_VACATION && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/VIRTUAL_VACATION)
 
 .include <bsd.port.mk>
