@@ -1,5 +1,6 @@
 PORTNAME=	starship
 DISTVERSION=	0.56.0
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -44,7 +45,6 @@ CARGO_CRATES=	\
 		bytes-1.0.1 \
 		cache-padded-1.1.1 \
 		cc-1.0.67 \
-		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		clap-2.33.3 \
@@ -123,7 +123,6 @@ CARGO_CRATES=	\
 		mockall_derive-0.10.2 \
 		native-tls-0.2.7 \
 		nb-connect-1.2.0 \
-		nix-0.17.0 \
 		nix-0.19.1 \
 		nix-0.21.0 \
 		nom-6.1.2 \
@@ -235,7 +234,6 @@ CARGO_CRATES=	\
 		vec_map-0.8.2 \
 		version_check-0.9.3 \
 		versions-3.0.2 \
-		void-1.0.2 \
 		waker-fn-1.1.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
@@ -254,6 +252,7 @@ CARGO_CRATES=	\
 		zbus_macros-1.9.1 \
 		zvariant-2.6.0 \
 		zvariant_derive-2.6.0
+CARGO_FEATURES=	notify-rust
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=		FONTS
