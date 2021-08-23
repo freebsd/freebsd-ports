@@ -997,8 +997,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # DISABLE_SIZE	- Do not check the size of a distfile even if the SIZE field
 #				  has been specified in distinfo.  This is useful
 #				  when using an alternate FETCH_CMD.
-#
-# PKG_CREATE_VERBOSE		- If set, pass the -v option to pkg create which
+# PKG_CREATE_VERBOSE
+#				- If set, pass the -v option to pkg create which
 #				  ensures periodic output during packaging and
 #				  will help prevent timeouts by build monitors
 # PKG_COMPRESSION_FORMAT
