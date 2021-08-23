@@ -126,8 +126,6 @@ pre-patch:
 		's,\(gtk-rs\)/gtk-rs,\1/gtk3-rs,'
 
 post-patch:
-	@${REINPLACE_CMD} -e "/vcs_tag/s/=.*/= '${DISTVERSIONFULL}'/" \
-		${WRKSRC}/meson.build
 # Make each cargo subcommand very verbose
 	@${REINPLACE_CMD} -e '/cargo/s/ --/&verbose&verbose&/' \
 		${WRKSRC}/build-aux/cargo.sh
