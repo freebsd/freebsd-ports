@@ -43,5 +43,8 @@ bin/underlyingg
 bin/vcolg
 bin/watercluster2
 include/nauty/nauty.h
+include/nauty/nausparse.h
+include/nauty/naugroup.h
+include/nauty/traces.h
 lib/libnauty.a
 lib/libnauty.so

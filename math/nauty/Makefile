@@ -2,7 +2,7 @@
 
 PORTNAME=	nauty
 PORTVERSION=	27r1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://users.cecs.anu.edu.au/~bdm/nauty/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -15,7 +15,10 @@ LICENSE=	APACHE20
 USES=		gmake
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-tls # math/libnormaliz requires nauty with tls
+
 MAKEFILE=	makefile
+
 TEST_TARGET=	check
 
 CFLAGS+=	-fPIC
@@ -29,7 +32,9 @@ post-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/nauty
-	${INSTALL_DATA} ${WRKSRC}/nauty.h ${STAGEDIR}${PREFIX}/include/nauty
+.for h in  nauty.h nausparse.h traces.h naugroup.h
+	${INSTALL_DATA} ${WRKSRC}/${h} ${STAGEDIR}${PREFIX}/include/nauty
+.endfor
 	# Do not use ${INSTALL_LIB} to strip the library!
 	${INSTALL_DATA} ${WRKSRC}/nauty.a ${STAGEDIR}${PREFIX}/lib/libnauty.a
 	${INSTALL_LIB} ${WRKSRC}/libnauty.so ${STAGEDIR}${PREFIX}/lib
