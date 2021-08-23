@@ -1,7 +1,7 @@
 PORTNAME=	cbc
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	2.10.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -18,15 +18,19 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libcoinmumps.so:math/ipopt \
 		libCoinUtils.so:math/coinutils \
 		liblapack.so:math/lapack \
+		libnauty.so:math/nauty \
 		libopenblas.so:math/openblas \
 		libOsi.so:math/osi
 
 USES=		compiler:c++11-lang fortran gmake libtool pkgconfig
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or
 GH_PROJECT=	Cbc
+
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--with-nauty-lib="-L${LOCALBASE}/lib -lnauty" --with-nauty-incdir=${LOCALBASE}/include/nauty
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
