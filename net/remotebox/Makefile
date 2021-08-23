@@ -1,8 +1,7 @@
 # Created by: Haowu Ge <ghw@7axu.com>
 
 PORTNAME=	remotebox
-DISTVERSION=	2.5
-PORTREVISION=	3
+DISTVERSION=	2.7
 CATEGORIES=	net
 MASTER_SITES=	http://remotebox.knobgoblin.org.uk/downloads/
 DISTNAME=	RemoteBox-${DISTVERSION}
