@@ -1,0 +1,6 @@
+BFC is a standalone high-performance tool for correcting sequencing
+errors from Illumina sequencing data. It is specifically designed for
+high-coverage whole-genome human data, though also performs well for
+small genomes.
+
+WWW: https://github.com/lh3/bfc

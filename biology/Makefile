@@ -9,6 +9,7 @@
     SUBDIR += bbmap
     SUBDIR += bcftools
     SUBDIR += bedtools
+    SUBDIR += bfc
     SUBDIR += bioawk
     SUBDIR += biococoa
     SUBDIR += biolibc
