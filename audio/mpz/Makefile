@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	mpz
-PORTVERSION=	1.0.14
+PORTVERSION=	1.0.15
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
