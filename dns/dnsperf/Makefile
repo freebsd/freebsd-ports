@@ -14,7 +14,7 @@ LIB_DEPENDS=	libnghttp2.so:www/libnghttp2 \
 		libck.so:devel/concurrencykit \
 		libldns.so:dns/ldns
 
-USES=		autoreconf compiler:c11 libtool ssl
+USES=		autoreconf compiler:c11 libtool pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	DNS-OARC
 
