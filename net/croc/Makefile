@@ -1,5 +1,5 @@
 PORTNAME=	croc
-PORTVERSION=	9.2.1
+PORTVERSION=	9.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -18,11 +18,11 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:crypto:a769d52b0f97:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:aaa1db679c0d:golang_net/vendor/golang.org/x/net \
-		golang:sys:e5e7981a1069:golang_sys/vendor/golang.org/x/sys \
+		golang:crypto:0a44fdfbc16e:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:60bc85c4be6d:golang_net/vendor/golang.org/x/net \
+		golang:sys:1e6c022a8912:golang_sys/vendor/golang.org/x/sys \
 		golang:term:6886f2dfbf5b:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		kalafut:imohash:v1.0.2:kalafut_imohash/vendor/github.com/kalafut/imohash \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mitchellh:colorstring:d06e56a500db:mitchellh_colorstring/vendor/github.com/mitchellh/colorstring \
