@@ -2,7 +2,7 @@ PORTNAME=	i2pd
 PORTVERSION=	2.38.0
 CATEGORIES=	security net-p2p
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ implementation of I2P client
 
 LICENSE=	BSD3CLAUSE
