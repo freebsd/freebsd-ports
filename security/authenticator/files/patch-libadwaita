@@ -1,0 +1,36 @@
+https://gitlab.gnome.org/GNOME/libadwaita/-/commit/0509755b80d8
+https://gitlab.gnome.org/World/Rust/libadwaita-rs/-/commit/986f12d5170d
+
+$ RUST_BACKTRACE=1 authenticator
+(<unknown>:1234): GLib-GObject-WARNING **: specified class size for type 'UrlRow' is smaller than the parent type's 'AdwActionRow' class size
+(<unknown>:1234): GLib-GObject-WARNING **: cannot add private field to invalid (non-instantiatable) type '<invalid>'
+thread 'main' panicked at 'assertion failed: type_.is_valid()', src/widgets/url_row.rs:17:5
+stack backtrace:
+   0: rust_begin_unwind
+   1: core::panicking::panic_fmt
+   2: core::panicking::panic
+   3: <authenticator::widgets::url_row::imp::UrlRow as glib::subclass::types::ObjectSubclassType>::get_type
+             at src/widgets/url_row.rs:17:5
+   4: <authenticator::widgets::url_row::UrlRow as glib::types::StaticType>::static_type
+             at src/widgets/url_row.rs:86:1
+   5: <gtk4::subclass::widget::TemplateChild<T> as core::default::Default>::default
+             at gtk4-rs-13a8317a2ef8738362b9fa7f55a29dd5d3dbc459/gtk4/src/subclass/widget.rs:1124:9
+   6: <authenticator::widgets::accounts::details::imp::AccountDetailsPage as glib::subclass::types::ObjectSubclass>::new
+             at src/widgets/accounts/details.rs:36:30
+   7: glib::subclass::types::ObjectSubclass::with_class
+             at gtk3-rs-6e3c8739f9f5b8dc0a234f4a485e254574af5953/glib/src/subclass/types.rs:531:9
+   8: glib::subclass::types::instance_init
+             at gtk3-rs-6e3c8739f9f5b8dc0a234f4a485e254574af5953/glib/src/subclass/types.rs:722:15
+[...]
+
+--- ../libadwaita-rs-6ae4d3670565064acc9da2f51434eca0a0c51ac9/libadwaita/sys/src/lib.rs.orig	2021-03-12 01:18:14 UTC
++++ ../libadwaita-rs-6ae4d3670565064acc9da2f51434eca0a0c51ac9/libadwaita/sys/src/lib.rs
+@@ -68,7 +68,7 @@ pub type AdwAvatarImageLoadFunc =
+ #[repr(C)]
+ #[derive(Copy, Clone)]
+ pub struct AdwActionRowClass {
+-    pub parent_class: gtk::GtkListBoxRowClass,
++    pub parent_class: AdwPreferencesRowClass,
+     pub activate: Option<unsafe extern "C" fn(*mut AdwActionRow)>,
+     pub padding: [gpointer; 4],
+ }
