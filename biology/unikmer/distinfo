@@ -1,5 +1,5 @@
-TIMESTAMP = 1627492000
-SHA256 (go/biology_unikmer/unikmer-v0.18.3/v0.18.3.mod) = 6ccade17e0fdfc86ebaa0683f7aab4e3c94019032e0d0f4c78bf957a2a8f9c1b
-SIZE (go/biology_unikmer/unikmer-v0.18.3/v0.18.3.mod) = 881
-SHA256 (go/biology_unikmer/unikmer-v0.18.3/v0.18.3.zip) = 11302e47c018908a9c6dfc140b9d45d744dee6d9aca36a863661d67be0262825
-SIZE (go/biology_unikmer/unikmer-v0.18.3/v0.18.3.zip) = 4271855
+TIMESTAMP = 1629820531
+SHA256 (go/biology_unikmer/unikmer-v0.18.4/v0.18.4.mod) = 956b67a0534170f141452b9756e629f91eb3fdd5dcb5fe02ad20b14cd3dceafa
+SIZE (go/biology_unikmer/unikmer-v0.18.4/v0.18.4.mod) = 881
+SHA256 (go/biology_unikmer/unikmer-v0.18.4/v0.18.4.zip) = cb2a3d4eb307b1a421243eeb9d7db217d575c0761998565a980703eeea1e19ce
+SIZE (go/biology_unikmer/unikmer-v0.18.4/v0.18.4.zip) = 4271857
