@@ -15,6 +15,7 @@ USES=		cargo fuse
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhaledEmaraDev
 GH_PROJECT=	xfuse
+GH_TAGNAME=	9c8824
 
 CARGO_CRATES=	ansi_term-0.11.0 \
 		atty-0.2.14 \
