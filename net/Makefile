@@ -1197,6 +1197,7 @@
     SUBDIR += rscsi
     SUBDIR += rsocket-cpp
     SUBDIR += rsplib
+    SUBDIR += rssguard
     SUBDIR += rsync
     SUBDIR += rsync-bpc
     SUBDIR += rtg
