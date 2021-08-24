@@ -1,0 +1,26 @@
+--- test/Makefile.orig	2021-08-24 16:49:33 UTC
++++ test/Makefile
+@@ -1,5 +1,5 @@
+ #CXX = clang++
+-CXXFLAGS = -g -std=c++11 -I. -Wall -Wextra -Wtype-limits -Wconversion #-fsanitize=address
++CXXFLAGS += -g -std=c++11 -I. -Wall -Wextra -Wtype-limits -Wconversion #-fsanitize=address
+ 
+ OPENSSL_DIR = /usr/local/opt/openssl@1.1
+ OPENSSL_SUPPORT = -DCPPHTTPLIB_OPENSSL_SUPPORT -I$(OPENSSL_DIR)/include -L$(OPENSSL_DIR)/lib -lssl -lcrypto
+@@ -20,13 +20,13 @@ proxy : test_proxy
+ 	./test_proxy
+ 
+ test : test.cc include_httplib.cc ../httplib.h Makefile cert.pem
+-	$(CXX) -o $@ -I.. $(CXXFLAGS) test.cc include_httplib.cc $(TEST_ARGS)
++	$(CXX) -o $@ -I.. $(CXXFLAGS) test.cc include_httplib.cc ${LDFLAGS} $(TEST_ARGS)
+ 
+ test_split : test.cc ../httplib.h httplib.cc Makefile cert.pem
+-	$(CXX) -o $@ $(CXXFLAGS) test.cc httplib.cc $(TEST_ARGS)
++	$(CXX) -o $@ $(CXXFLAGS) test.cc httplib.cc ${LDFLAGS} $(TEST_ARGS)
+ 
+ test_proxy : test_proxy.cc ../httplib.h Makefile cert.pem
+-	$(CXX) -o $@ -I.. $(CXXFLAGS) test_proxy.cc $(TEST_ARGS)
++	$(CXX) -o $@ -I.. $(CXXFLAGS) test_proxy.cc ${LDFLAGS} $(TEST_ARGS)
+ 
+ httplib.cc : ../httplib.h
+ 	python3 ../split.py -o .
