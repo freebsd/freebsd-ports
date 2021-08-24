@@ -583,6 +583,7 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/BN_RECP_CTX_free.3.gz
 %%MAN3%%man/man3/BN_RECP_CTX_new.3.gz
 %%MAN3%%man/man3/BN_RECP_CTX_set.3.gz
+%%MAN3%%man/man3/BN_abs_is_word.3.gz
 %%MAN3%%man/man3/BN_add.3.gz
 %%MAN3%%man/man3/BN_add_word.3.gz
 %%MAN3%%man/man3/BN_bin2bn.3.gz

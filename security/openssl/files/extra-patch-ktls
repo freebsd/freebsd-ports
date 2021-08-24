@@ -2573,11 +2573,12 @@ index 4a27ee1ba2..1388219551 100644
  #include <string.h>
  
  #include <openssl/opensslconf.h>
-@@ -17,11 +18,13 @@
+@@ -17,12 +18,14 @@
  #include <openssl/srp.h>
  #include <openssl/txt_db.h>
  #include <openssl/aes.h>
 +#include <openssl/rand.h>
+ #include <openssl/x509v3.h>
  
  #include "ssltestlib.h"
  #include "testutil.h"
