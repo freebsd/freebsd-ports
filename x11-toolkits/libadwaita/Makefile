@@ -1,6 +1,6 @@
 PORTNAME=	libadwaita
 PORTVERSION=	0.0.20210526
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	sassc:textproc/sassc \
 		valac:lang/vala
 
-USES=		gnome meson ninja pkgconfig
+USES=		gettext gnome meson ninja pkgconfig
 USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk40
 GL_SITE=	https://gitlab.gnome.org
