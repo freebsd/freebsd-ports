@@ -28,7 +28,6 @@ include/thrift/lib/cpp/async/TZlibAsyncChannel.h
 include/thrift/lib/cpp/concurrency/Exception.h
 include/thrift/lib/cpp/concurrency/FunctionRunner.h
 include/thrift/lib/cpp/concurrency/InitThreadFactory.h
-include/thrift/lib/cpp/concurrency/Monitor.h
 include/thrift/lib/cpp/concurrency/Mutex-impl.h
 include/thrift/lib/cpp/concurrency/Mutex-portability.h
 include/thrift/lib/cpp/concurrency/Mutex.h
@@ -166,6 +165,7 @@ include/thrift/lib/cpp2/frozen/Frozen.h
 include/thrift/lib/cpp2/frozen/FrozenAssociative-inl.h
 include/thrift/lib/cpp2/frozen/FrozenBool-inl.h
 include/thrift/lib/cpp2/frozen/FrozenEnum-inl.h
+include/thrift/lib/cpp2/frozen/FrozenExcluded-inl.h
 include/thrift/lib/cpp2/frozen/FrozenFixedSizeString-inl.h
 include/thrift/lib/cpp2/frozen/FrozenHashTable-inl.h
 include/thrift/lib/cpp2/frozen/FrozenIntegral-inl.h
@@ -290,6 +290,7 @@ include/thrift/lib/cpp2/server/RequestsRegistry.h
 include/thrift/lib/cpp2/server/ServerAttribute.h
 include/thrift/lib/cpp2/server/ServerConfigs.h
 include/thrift/lib/cpp2/server/ServerInstrumentation.h
+include/thrift/lib/cpp2/server/StatusServerInterface.h
 include/thrift/lib/cpp2/server/ThriftProcessor.h
 include/thrift/lib/cpp2/server/ThriftServer.h
 include/thrift/lib/cpp2/server/TransportRoutingHandler.h
@@ -373,6 +374,7 @@ include/thrift/lib/cpp2/transport/util/ConnectionThread.h
 include/thrift/lib/cpp2/util/BucketedRate.h
 include/thrift/lib/cpp2/util/Checksum.h
 include/thrift/lib/cpp2/util/DebugString.h
+include/thrift/lib/cpp2/util/EmptyAsyncProcessor.h
 include/thrift/lib/cpp2/util/Ewma.h
 include/thrift/lib/cpp2/util/EwmaRate.h
 include/thrift/lib/cpp2/util/Frozen2ViewHelpers.h
@@ -391,7 +393,6 @@ include/thrift/lib/py3/client_wrapper.h
 include/thrift/lib/py3/clientcallbacks.h
 include/thrift/lib/py3/enums.h
 include/thrift/lib/py3/exceptions.h
-include/thrift/lib/py3/metadata.h
 include/thrift/lib/py3/serializer.h
 include/thrift/lib/py3/server.h
 include/thrift/lib/py3/ssl.h
