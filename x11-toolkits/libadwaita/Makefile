@@ -6,7 +6,8 @@ CATEGORIES=	x11-toolkits
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Building blocks for modern GNOME applications
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	sassc:textproc/sassc \
 		valac:lang/vala
