@@ -1,5 +1,6 @@
 %%LUA_MODLIBDIR%%/lualdap.so
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/license.html
-%%PORTDOCS%%%%DOCSDIR%%/lualdap.png
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/contributors.md
+%%PORTDOCS%%%%DOCSDIR%%/index.md
+%%PORTDOCS%%%%DOCSDIR%%/license.md
+%%PORTDOCS%%%%DOCSDIR%%/manual.md
+%%PORTDOCS%%%%DOCSDIR%%/news.md

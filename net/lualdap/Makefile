@@ -1,18 +1,18 @@
 # Created by: Piotr Florczyk <pf@itwf.pl>
 
 PORTNAME=	lualdap
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	0
 CATEGORIES=	net
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LDAP support for the Lua language
 
-LICENSE=        MIT
+LICENSE=	MIT
 
-USES=		gmake lua:-52,module
+USES=		gmake lua:module
 USE_OPENLDAP=	yes
 USE_GITHUB=	yes
 
@@ -32,6 +32,6 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/us/* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
