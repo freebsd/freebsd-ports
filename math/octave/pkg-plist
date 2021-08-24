@@ -802,7 +802,6 @@ share/icons/hicolor/48x48/apps/octave.png
 share/icons/hicolor/512x512/apps/octave.png
 share/icons/hicolor/64x64/apps/octave.png
 share/icons/hicolor/scalable/apps/octave.svg
-%%PORTDOCS%%share/info/dir
 share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/data/penny.mat
 %%DATADIR%%/%%OCTAVE_VERSION%%/doc/octave_interpreter.qch
