@@ -1,0 +1,8 @@
+polymake is open source software for research in polyhedral geometry. It deals
+with polytopes, polyhedra and fans as well as simplicial complexes, matroids,
+graphs, tropical hypersurfaces, and other objects.
+
+polymake provides an interactive command line interface with an extensive help
+system as well as a C++ library interface.
+
+WWW: https://www.polymake.org/
