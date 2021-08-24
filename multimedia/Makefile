@@ -28,6 +28,7 @@
     SUBDIR += ccextractor
     SUBDIR += cclive
     SUBDIR += celluloid
+    SUBDIR += celluloid-devel
     SUBDIR += cheese
     SUBDIR += chilitags
     SUBDIR += cineencoder
