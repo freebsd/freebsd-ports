@@ -7,7 +7,7 @@
       </package>
       <package>
 	<name>openssl-devel</name>
-	<range><lt>3.0.0b2</lt></range>
+	<range><lt>3.0.0.b3</lt></range>
       </package>
     </affects>
     <description>
@@ -29,6 +29,7 @@
     <dates>
       <discovery>2021-08-24</discovery>
       <entry>2021-08-24</entry>
+      <modified>2021-08-24</modified>
     </dates>
   </vuln>
 
