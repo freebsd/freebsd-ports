@@ -27,7 +27,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
 		-e '/systemd/d' \
 		-e '/^CFLAGS/s/=/+=/' \
-		-e '/-o/s/$$/$$(LDFLAGS)/' \
+		-e '/-o/s/$$/ $$(LDFLAGS)/' \
 		-e 's/ -O3//' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
