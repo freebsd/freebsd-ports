@@ -233,6 +233,7 @@
     SUBDIR += gmusicbrowser
     SUBDIR += gnaural
     SUBDIR += gnome-music
+    SUBDIR += gnome-podcasts
     SUBDIR += gnormalize
     SUBDIR += gnuitar
     SUBDIR += gnupod
