@@ -21,7 +21,7 @@ LIB_DEPENDS=	libecm.so:math/gmp-ecm \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		cmake:noninja compiler:c++11-lang perl5 python shebangfix # noninja because: bad $-escape (literal $ must be written as $$)
-USE_GCC=	any # fails in clang-11 with various STL and C++ errors. Reported to the upstream author Emmanuel Thomé on 2021-08-13.
+USE_GCC=	yes # fails in clang-11 with various STL and C++ errors. Reported to the upstream author Emmanuel Thomé on 2021-08-13.
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.inria.fr
