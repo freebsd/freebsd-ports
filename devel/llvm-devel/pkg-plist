@@ -36,7 +36,6 @@ bin/llvm-mt-devel
 bin/llvm-nm-devel
 bin/llvm-objcopy-devel
 bin/llvm-objdump-devel
-bin/llvm-omp-device-info-devel
 bin/llvm-opt-report-devel
 bin/llvm-otool-devel
 bin/llvm-pdbutil-devel
@@ -117,6 +116,7 @@ bin/split-file-devel
 %%MLIR%%bin/mlir-reduce-devel
 %%MLIR%%bin/mlir-tblgen-devel
 %%MLIR%%bin/mlir-translate-devel
+%%OPENMP%%bin/llvm-omp-device-info-devel
 %%LIT%%bin/FileCheck-devel
 %%LIT%%llvm-devel/bin/FileCheck
 %%LIT%%bin/lit-devel
@@ -230,7 +230,7 @@ llvm-devel/bin/llvm-mt
 llvm-devel/bin/llvm-nm
 llvm-devel/bin/llvm-objcopy
 llvm-devel/bin/llvm-objdump
-llvm-devel/bin/llvm-omp-device-info
+%%OPENMP%%llvm-devel/bin/llvm-omp-device-info
 llvm-devel/bin/llvm-opt-report
 llvm-devel/bin/llvm-otool
 llvm-devel/bin/llvm-pdbutil
@@ -4642,7 +4642,7 @@ llvm-devel/lib/cmake/llvm/VersionFromVCS.cmake
 %%MLIR%%llvm-devel/lib/cmake/mlir/MLIRDetectPythonEnv.cmake
 %%MLIR%%llvm-devel/lib/cmake/mlir/MLIRTargets-%%CMAKE_BUILD_TYPE%%.cmake
 %%MLIR%%llvm-devel/lib/cmake/mlir/MLIRTargets.cmake
-llvm-devel/lib/cmake/openmp/FindOpenMPTarget.cmake
+%%OPENMP%%llvm-devel/lib/cmake/openmp/FindOpenMPTarget.cmake
 %%STATIC_LIBS%%%%FLANG%%llvm-devel/lib/libFIROptimizer.a
 %%STATIC_LIBS%%%%FLANG%%llvm-devel/lib/libFortranCommon.a
 %%STATIC_LIBS%%%%FLANG%%llvm-devel/lib/libFortranDecimal.a

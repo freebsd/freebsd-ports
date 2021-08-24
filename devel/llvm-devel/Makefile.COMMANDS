@@ -35,7 +35,6 @@ LLVM_COMMANDS=	\
 		llvm-nm \
 		llvm-objcopy \
 		llvm-objdump \
-		llvm-omp-device-info \
 		llvm-opt-report \
 		llvm-otool \
 		llvm-pdbutil \
@@ -133,3 +132,6 @@ MLIR_COMMANDS=	\
 		mlir-reduce \
 		mlir-tblgen \
 		mlir-translate
+
+OPENMP_COMMANDS=	\
+		llvm-omp-device-info
