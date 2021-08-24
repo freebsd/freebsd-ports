@@ -47,6 +47,7 @@
     SUBDIR += dnsmasq
     SUBDIR += dnsmasq-devel
     SUBDIR += dnsmax-perl
+    SUBDIR += dnsperf
     SUBDIR += dnsproxy
     SUBDIR += dnsrecon
     SUBDIR += dnsreflector
