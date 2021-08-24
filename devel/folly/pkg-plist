@@ -123,7 +123,6 @@ include/folly/concurrency/CoreCachedSharedPtr.h
 include/folly/concurrency/DeadlockDetector.h
 include/folly/concurrency/DynamicBoundedQueue.h
 include/folly/concurrency/PriorityUnboundedQueueSet.h
-include/folly/concurrency/QueueObserver.h
 include/folly/concurrency/UnboundedQueue.h
 include/folly/concurrency/detail/AtomicSharedPtr-detail.h
 include/folly/concurrency/detail/ConcurrentHashMap-detail.h
@@ -204,6 +203,7 @@ include/folly/executors/IOThreadPoolExecutor.h
 include/folly/executors/InlineExecutor.h
 include/folly/executors/ManualExecutor.h
 include/folly/executors/MeteredExecutor.h
+include/folly/executors/QueueObserver.h
 include/folly/executors/QueuedImmediateExecutor.h
 include/folly/executors/ScheduledExecutor.h
 include/folly/executors/SequencedExecutor.h
@@ -275,6 +275,8 @@ include/folly/experimental/channels/ChannelCallbackHandle.h
 include/folly/experimental/channels/ConsumeChannel-inl.h
 include/folly/experimental/channels/ConsumeChannel.h
 include/folly/experimental/channels/FanoutChannel-inl.h
+include/folly/experimental/channels/FanoutSender-inl.h
+include/folly/experimental/channels/FanoutSender.h
 include/folly/experimental/channels/FanoutChannel.h
 include/folly/experimental/channels/Merge-inl.h
 include/folly/experimental/channels/Merge.h
@@ -286,6 +288,7 @@ include/folly/experimental/channels/Transform-inl.h
 include/folly/experimental/channels/Transform.h
 include/folly/experimental/channels/detail/AtomicQueue.h
 include/folly/experimental/channels/detail/ChannelBridge.h
+include/folly/experimental/channels/detail/PointerVariant.h
 include/folly/experimental/channels/detail/Utility.h
 include/folly/experimental/coro/Accumulate-inl.h
 include/folly/experimental/coro/Accumulate.h
@@ -525,6 +528,7 @@ include/folly/io/async/Request.h
 include/folly/io/async/SSLContext.h
 include/folly/io/async/SSLOptions.h
 include/folly/io/async/ScopedEventBaseThread.h
+include/folly/io/async/TerminateCancellationToken.h
 include/folly/io/async/TimeoutManager.h
 include/folly/io/async/VirtualEventBase.h
 include/folly/io/async/WriteChainAsyncTransportWrapper.h
