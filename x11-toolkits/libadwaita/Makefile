@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	sassc:textproc/sassc \
 		valac:lang/vala
 
-USES=		gnome meson ninja pkgconfig python:env
+USES=		gnome meson ninja pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk40
 
 PORTSCOUT=	limit:1,even
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${_COMMIT}/
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gi-docgen>=0:textproc/py-gi-docgen
+DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
 DOCS_MESON_TRUE=	gtk_doc
 
 _COMMIT=		7f61711633dfd067f4928df80afe6b14f16f886e/
