@@ -156,7 +156,6 @@ post-install:
 
 	${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/lib/libpolymake.so.${DISTVERSION} \
-		${STAGEDIR}${PREFIX}/libexec/polymake/lib/ideal.so
 
 .for _lp in libpolymake-apps libpolymake-apps-rt
 	${RLN} ${STAGEDIR}${PREFIX}/lib/${_lp}.so.${DISTVERSION} \
@@ -179,7 +178,7 @@ post-install:
 
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/polymake/perlx/${PERL_VERSION}/${PERL_ARCHNAME}/auto/Polymake/Ext/Ext.so
 
-.for l in common fan fulton graph group matroid polytope topaz tropical
+.for l in common fan fulton graph group ideal matroid polytope topaz tropical
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/polymake/lib/${l}.so
 .endfor
 
