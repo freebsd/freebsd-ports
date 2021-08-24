@@ -1,0 +1,20 @@
+[Driver] Default to libc++ on FreeBSD
+
+Downstream may naively translate between DSL and LLVM target
+triple. If OS version is lost in the process then Clang would
+default to a version that's no longer supported by OS vendor.
+
+https://reviews.llvm.org/D77776
+
+--- clang/lib/Driver/ToolChains/FreeBSD.cpp.orig	2019-12-11 19:15:30 UTC
++++ clang/lib/Driver/ToolChains/FreeBSD.cpp
+@@ -351,7 +351,8 @@ FreeBSD::FreeBSD(const Driver &D, const llvm::Triple &
+ }
+ 
+ ToolChain::CXXStdlibType FreeBSD::GetDefaultCXXStdlibType() const {
+-  if (getTriple().getOSMajorVersion() >= 10)
++  unsigned Major = getTriple().getOSMajorVersion();
++  if (Major >= 10 || Major == 0)
+     return ToolChain::CST_Libcxx;
+   return ToolChain::CST_Libstdcxx;
+ }
