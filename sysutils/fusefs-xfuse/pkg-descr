@@ -1,0 +1,13 @@
+This is read-only implementation of the XFS filesystem, a high-performance
+64-bit journaling file system created by Silicon Graphics, Inc (SGI) in 1993,
+and popular in various Linux distributions.
+
+While the implementation is in early stages, it should be useful enough for
+migration purposes.
+
+This project runs in userland through the use of the FUSE kernel module. This is
+the only run-time requirement.
+
+This project was done as part of Google Summer of Code 2021.
+
+WWW: https://github.com/KhaledEmaraDev/xfuse
