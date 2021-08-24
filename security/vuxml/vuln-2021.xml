@@ -1,3 +1,37 @@
+  <vuln vid="96811d4a-04ec-11ec-9b84-d4c9ef517024">
+    <topic>OpenSSL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.1.1l,1</lt></range>
+      </package>
+      <package>
+	<name>openssl-devel</name>
+	<range><lt>3.0.0b2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20210824.txt">
+	  <p>SM2 Decryption Buffer Overflow (CVE-2021-3711: High)</p>
+	  <p>Read buffer overruns processing ASN.1 strings (CVE-2021-3712:
+	    Moderate)
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-3711</cvename>
+      <cvename>CVE-2021-3712</cvename>
+      <url>https://www.openssl.org/news/secadv/20210824.txt</url>
+    </references>
+    <dates>
+      <discovery>2021-08-24</discovery>
+      <entry>2021-08-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d3180f02-031e-11ec-875f-0800273f11ea">
     <topic>gitea -- multiple vulnerabilities</topic>
     <affects>
