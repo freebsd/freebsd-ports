@@ -156,6 +156,8 @@ include/proxygen/lib/http/session/TTLBAStats.h
 include/proxygen/lib/http/session/TransactionByteEvents.h
 include/proxygen/lib/http/stats/ConnectionStats.h
 include/proxygen/lib/http/stats/HeaderCodecStats.h
+include/proxygen/lib/http/stats/HTTPCodecStats.h
+include/proxygen/lib/http/stats/HTTPCodecStatsFilter.h
 include/proxygen/lib/http/stats/ResponseCodeStatsMinute.h
 include/proxygen/lib/http/stats/SPDYStats.h
 include/proxygen/lib/http/stats/SPDYStatsFilter.h
