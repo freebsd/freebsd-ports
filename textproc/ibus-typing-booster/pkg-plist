@@ -111,6 +111,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotations/rw.xml
 %%DATADIR%%/data/annotations/sa.xml
 %%DATADIR%%/data/annotations/sat.xml
+%%DATADIR%%/data/annotations/sc.xml
 %%DATADIR%%/data/annotations/sd.xml
 %%DATADIR%%/data/annotations/si.xml
 %%DATADIR%%/data/annotations/sk.xml
