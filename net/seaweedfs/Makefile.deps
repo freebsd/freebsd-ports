@@ -16,7 +16,6 @@ GH_TUPLE=	\
 		coreos:go-semver:v0.3.0:coreos_go_semver/vendor/github.com/coreos/go-semver \
 		coreos:go-systemd:v22.0.0:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
 		disintegration:imaging:v1.6.2:disintegration_imaging/vendor/github.com/disintegration/imaging \
 		dominikh:go-tools:v0.0.1-2020.1.4:dominikh_go_tools/vendor/honnef.co/go/tools \
@@ -41,21 +40,22 @@ GH_TUPLE=	\
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		go-zookeeper:zk:v1.0.2:go_zookeeper_zk/vendor/github.com/go-zookeeper/zk \
-		gocql:gocql:e163eff7a8c6:gocql_gocql/vendor/github.com/gocql/gocql \
+		gocql:gocql:9a3953d1826d:gocql_gocql/vendor/github.com/gocql/gocql \
 		gogo:protobuf:28a6bbf47e48:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		golang-jwt:jwt:v3.2.1:golang_jwt_jwt/vendor/github.com/golang-jwt/jwt \
 		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:image:58c23975cae1:golang_image/vendor/golang.org/x/image \
 		golang:lint:738671d3881b:golang_lint/vendor/golang.org/x/lint \
 		golang:mod:v0.3.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:c7110b5ffcbb:golang_net/vendor/golang.org/x/net \
+		golang:net:60bc85c4be6d:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
+		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:09787c993a3a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:ebe580a85c40:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
+		golang:sys:7d9622a276b7:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:tools:2c860bdd6e78:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:btree:v1.0.0:google_btree/vendor/github.com/google/btree \
@@ -76,6 +76,8 @@ GH_TUPLE=	\
 		grpc-ecosystem:grpc-gateway:v1.11.0:grpc_ecosystem_grpc_gateway/vendor/github.com/grpc-ecosystem/grpc-gateway \
 		grpc:grpc-go:v1.29.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hailocab:go-hostpool:e80d13ce29ed:hailocab_go_hostpool/vendor/github.com/hailocab/go-hostpool \
+		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
+		hashicorp:go-multierror:v1.0.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
 		hashicorp:go-uuid:v1.0.1:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		jcmturner:aescts:v1.0.1:jcmturner_aescts/vendor/gopkg.in/jcmturner/aescts.v1 \
@@ -92,7 +94,6 @@ GH_TUPLE=	\
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		klauspost:compress:v1.10.9:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v1.2.1:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
-		klauspost:crc32:v1.2.0:klauspost_crc32/vendor/github.com/klauspost/crc32 \
 		klauspost:reedsolomon:v1.9.2:klauspost_reedsolomon/vendor/github.com/klauspost/reedsolomon \
 		konsorten:go-windows-terminal-sequences:v1.0.3:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		kurin:blazer:v0.5.3:kurin_blazer/vendor/github.com/kurin/blazer \
@@ -106,18 +107,19 @@ GH_TUPLE=	\
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
-		mongodb:mongo-go-driver:v1.3.2:mongodb_mongo_go_driver/vendor/go.mongodb.org/mongo-driver \
+		mongodb:mongo-go-driver:v1.7.0:mongodb_mongo_go_driver/vendor/go.mongodb.org/mongo-driver \
 		nats-io:jwt:v1.0.1:nats_io_jwt/vendor/github.com/nats-io/jwt \
 		nats-io:nats.go:v1.10.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.2.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
 		olivere:elastic:v7.0.19:olivere_elastic_v7/vendor/github.com/olivere/elastic/v7 \
 		open-telemetry:opentelemetry-go:v0.15.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
-		pelletier:go-toml:v1.4.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
+		pelletier:go-toml:v1.7.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		peterh:liner:v1.1.0:peterh_liner/vendor/github.com/peterh/liner \
 		pierrec:lz4:v2.2.7:pierrec_lz4/vendor/github.com/pierrec/lz4 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		posener:complete:v1.2.3:posener_complete/vendor/github.com/posener/complete \
 		pquerna:cachecontrol:v0.1.0:pquerna_cachecontrol/vendor/github.com/pquerna/cachecontrol \
 		prometheus:client_golang:v1.11.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
@@ -126,12 +128,12 @@ GH_TUPLE=	\
 		protocolbuffers:protobuf-go:v1.26.0-rc.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rcrowley:go-metrics:cac0b30c2563:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
 		remyoudompheng:bigfft:eec4a21b6bb0:remyoudompheng_bigfft/vendor/github.com/remyoudompheng/bigfft \
-		seaweedfs:fuse:v1.1.7:seaweedfs_fuse/vendor/github.com/seaweedfs/fuse \
+		seaweedfs:fuse:v1.2.0:seaweedfs_fuse/vendor/github.com/seaweedfs/fuse \
 		seaweedfs:goexif:v1.0.2:seaweedfs_goexif/vendor/github.com/seaweedfs/goexif \
 		sirupsen:logrus:v1.6.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		skip2:go-qrcode:da1b6568686e:skip2_go_qrcode/vendor/github.com/skip2/go-qrcode \
 		spaolacci:murmur3:v1.1.0:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
-		spf13:afero:v1.3.1:spf13_afero/vendor/github.com/spf13/afero \
+		spf13:afero:v1.6.0:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
@@ -140,9 +142,9 @@ GH_TUPLE=	\
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		syndtr:goleveldb:v1.0.0:syndtr_goleveldb/vendor/github.com/syndtr/goleveldb \
 		tecbot:gorocksdb:f0fad39f321c:tecbot_gorocksdb/vendor/github.com/tecbot/gorocksdb \
-		tidwall:gjson:v1.3.2:tidwall_gjson/vendor/github.com/tidwall/gjson \
-		tidwall:match:v1.0.1:tidwall_match/vendor/github.com/tidwall/match \
-		tidwall:pretty:v1.0.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
+		tidwall:gjson:v1.8.1:tidwall_gjson/vendor/github.com/tidwall/gjson \
+		tidwall:match:v1.0.3:tidwall_match/vendor/github.com/tidwall/match \
+		tidwall:pretty:v1.1.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
 		tsuna:gohbase:348991136365:tsuna_gohbase/vendor/github.com/tsuna/gohbase \
 		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.5.0:uber_go_multierr/vendor/go.uber.org/multierr \
@@ -153,8 +155,10 @@ GH_TUPLE=	\
 		viant:toolbox:v0.33.2:viant_toolbox/vendor/github.com/viant/toolbox \
 		willf:bitset:v1.1.10:willf_bitset/vendor/github.com/willf/bitset \
 		willf:bloom:v2.0.3:willf_bloom/vendor/github.com/willf/bloom \
-		xdg:scram:7eeb5667e42c:xdg_scram/vendor/github.com/xdg/scram \
-		xdg:stringprep:v1.0.0:xdg_stringprep/vendor/github.com/xdg/stringprep
+		xdg-go:pbkdf2:v1.0.0:xdg_go_pbkdf2/vendor/github.com/xdg-go/pbkdf2 \
+		xdg-go:scram:v1.0.2:xdg_go_scram/vendor/github.com/xdg-go/scram \
+		xdg-go:stringprep:v1.0.2:xdg_go_stringprep/vendor/github.com/xdg-go/stringprep \
+		youmark:pkcs8:1be2e3e5546d:youmark_pkcs8/vendor/github.com/youmark/pkcs8
 
 GL_TUPLE=	\
 		cznic:b:e2c6d3c5e5f25b4f5a667952d78e934528620d0f:cznic_b/vendor/modernc.org/b \
