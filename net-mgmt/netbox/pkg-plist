@@ -496,6 +496,7 @@
 %%DATADIR%%/extras/tests/test_changelog.py
 %%DATADIR%%/extras/tests/test_customfields.py
 %%DATADIR%%/extras/tests/test_filtersets.py
+%%DATADIR%%/extras/tests/test_forms.py
 %%DATADIR%%/extras/tests/test_models.py
 %%DATADIR%%/extras/tests/test_plugins.py
 %%DATADIR%%/extras/tests/test_registry.py
