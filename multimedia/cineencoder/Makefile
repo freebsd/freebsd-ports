@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	${GH_ACCOUNT:tl}
-PORTVERSION=	3.3
+PORTVERSION=	3.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	danfe@FreeBSD.org
