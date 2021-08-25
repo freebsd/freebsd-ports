@@ -1,6 +1,6 @@
---- io/hpmud/musb.c.orig	2016-08-26 10:05:31 UTC
+--- io/hpmud/musb.c.orig	2022-02-23 07:41:04 UTC
 +++ io/hpmud/musb.c
-@@ -139,10 +139,16 @@ static int get_string_descriptor(libusb_
+@@ -139,10 +139,16 @@ static int get_string_descriptor(libusb_device_handle 
                  0x409,
                  tbuf, sizeof(tbuf), LIBUSB_CONTROL_REQ_TIMEOUT);
  
@@ -20,7 +20,7 @@
              continue;
          }
          break;
-@@ -385,7 +391,7 @@ static int detach(libusb_device_handle *
+@@ -385,7 +391,7 @@ static int detach(libusb_device_handle *hd, int interf
  {
      int ret ;
      /* If any kernel module has claimed this interface, detach it. */

@@ -1,4 +1,4 @@
---- prnt/hpcups/ErnieFilter.cpp.orig	2016-08-26 10:03:22 UTC
+--- prnt/hpcups/ErnieFilter.cpp.orig	2022-02-23 07:41:04 UTC
 +++ prnt/hpcups/ErnieFilter.cpp
 @@ -50,7 +50,8 @@
  #include "ErnieFilter.h"

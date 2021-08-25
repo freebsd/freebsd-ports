@@ -1,4 +1,4 @@
---- scan/sane/orblite.c.orig	2019-10-22 06:25:58 UTC
+--- scan/sane/orblite.c.orig	2022-03-07 20:11:09 UTC
 +++ scan/sane/orblite.c
 @@ -315,7 +315,7 @@ orblite_open (SANE_String_Const devicename, SANE_Handl
  void

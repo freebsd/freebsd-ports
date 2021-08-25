@@ -1,4 +1,4 @@
---- prnt/hpcups/genJPEGStrips.cpp.orig	2017-12-19 19:39:29 UTC
+--- prnt/hpcups/genJPEGStrips.cpp.orig	2022-02-23 07:41:04 UTC
 +++ prnt/hpcups/genJPEGStrips.cpp
 @@ -28,7 +28,6 @@ extern "C"
  

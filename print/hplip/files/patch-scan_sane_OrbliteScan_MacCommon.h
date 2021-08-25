@@ -1,26 +1,21 @@
---- scan/sane/OrbliteScan/MacCommon.h.orig	2019-10-22 06:21:36 UTC
+--- scan/sane/OrbliteScan/MacCommon.h.orig	2022-02-23 07:41:05 UTC
 +++ scan/sane/OrbliteScan/MacCommon.h
-@@ -1,7 +1,7 @@
+@@ -1,12 +1,12 @@
  #ifndef H_MacCommon
  #define H_MacCommon
  
 -#ifndef __linux__
-+#if !defined(__linux__) && !defined(__FreeBSD__)
++#ifdef __APPLE__
  #include <CoreFoundation/CFPlugInCOM.h>
  #define __CFPlugInCOM_Included__
  #endif
-@@ -10,6 +10,10 @@
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(__FreeBSD__)
  #    include "LinuxCommon.h"
  #endif
  
-+#if defined(__FreeBSD__)
-+#    include "BSDCommon.h"
-+#endif
-+
- #include <stdio.h>
- #include <string.h>
- #include <stdlib.h>
-@@ -257,7 +261,7 @@ typedef struct _GUID {
+@@ -257,7 +257,7 @@ typedef struct _GUID {
  
  typedef GUID	CLSID;
  

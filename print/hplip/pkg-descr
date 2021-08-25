@@ -1,8 +1,7 @@
-HPLIP is an HP developed solution for printing, scanning,
-and faxing with HP inkjet and laser based printers in Linux.
-
-The HP driver project provides printing support for nearly
-1000 printer models, including Deskjet, Officejet, Photosmart,
-PSC (Print Scan Copy), Business Inkjet, LaserJet, and LaserJet MFP.
+HPLIP (HP Linux Imaging & Printing) is an HP-developed solution for printing,
+scanning, and faxing with HP inkjet and laser printers in Linux. The HPLIP
+project provides printing support for 3,171 printer and scanner models,
+including Deskjet, Officejet, Photosmart, PSC (Print Scan Copy), Business
+Inkjet, LaserJet, Edgeline Multi-function Printers,LaserJet MFPs and ScanJets.
 
 WWW: https://developers.hp.com/hp-linux-imaging-and-printing

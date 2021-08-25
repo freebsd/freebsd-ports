@@ -1,7 +1,7 @@
 # Created by: amistry@am-productions.biz
 
 PORTNAME=	hplip-plugin
-PORTVERSION=	3.20.6
+PORTVERSION=	3.22.2
 CATEGORIES=	print
 MASTER_SITES=	https://developers.hp.com/sites/default/files/
 DISTNAME=	hplip-${DISTVERSION}-plugin
