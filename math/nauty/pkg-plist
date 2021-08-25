@@ -1,4 +1,3 @@
-%%PORTDOCS%%%%DOCSDIR%%/nug27.pdf
 bin/NRswitchg
 bin/addedgeg
 bin/amtog
@@ -42,9 +41,11 @@ bin/twohamg
 bin/underlyingg
 bin/vcolg
 bin/watercluster2
-include/nauty/nauty.h
-include/nauty/nausparse.h
 include/nauty/naugroup.h
+include/nauty/nausparse.h
+include/nauty/nauty.h
+include/nauty/nautycliquer.h
 include/nauty/traces.h
 lib/libnauty.a
 lib/libnauty.so
+%%PORTDOCS%%%%DOCSDIR%%/nug27.pdf

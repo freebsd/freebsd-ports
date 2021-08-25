@@ -2,7 +2,7 @@
 
 PORTNAME=	nauty
 PORTVERSION=	27r1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	https://users.cecs.anu.edu.au/~bdm/nauty/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -32,7 +32,7 @@ post-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/nauty
-.for h in  nauty.h nausparse.h traces.h naugroup.h
+.for h in  nauty.h nautycliquer.h nausparse.h traces.h naugroup.h
 	${INSTALL_DATA} ${WRKSRC}/${h} ${STAGEDIR}${PREFIX}/include/nauty
 .endfor
 	# Do not use ${INSTALL_LIB} to strip the library!
