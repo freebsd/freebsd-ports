@@ -3,6 +3,7 @@ bin/spirv-cfg
 bin/spirv-dis
 bin/spirv-lesspipe.sh
 bin/spirv-link
+bin/spirv-lint
 bin/spirv-opt
 bin/spirv-reduce
 bin/spirv-val
@@ -14,6 +15,9 @@ include/spirv-tools/optimizer.hpp
 lib/cmake/SPIRV-Tools-link/SPIRV-Tools-linkConfig.cmake
 lib/cmake/SPIRV-Tools-link/SPIRV-Tools-linkTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SPIRV-Tools-link/SPIRV-Tools-linkTargets.cmake
+lib/cmake/SPIRV-Tools-lint/SPIRV-Tools-lintConfig.cmake
+lib/cmake/SPIRV-Tools-lint/SPIRV-Tools-lintTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SPIRV-Tools-lint/SPIRV-Tools-lintTargets.cmake
 lib/cmake/SPIRV-Tools-opt/SPIRV-Tools-optConfig.cmake
 lib/cmake/SPIRV-Tools-opt/SPIRV-Tools-optTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SPIRV-Tools-opt/SPIRV-Tools-optTargets.cmake
@@ -24,6 +28,7 @@ lib/cmake/SPIRV-Tools/SPIRV-ToolsConfig.cmake
 lib/cmake/SPIRV-Tools/SPIRV-ToolsTarget-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SPIRV-Tools/SPIRV-ToolsTarget.cmake
 lib/libSPIRV-Tools-link.a
+lib/libSPIRV-Tools-lint.a
 lib/libSPIRV-Tools-opt.a
 lib/libSPIRV-Tools-reduce.a
 lib/libSPIRV-Tools-shared.so
