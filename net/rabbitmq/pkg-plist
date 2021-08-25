@@ -522,6 +522,8 @@ lib/rabbitmq_server-%%VERSION%%/plugins/rabbit-%%VERSION%%/ebin/rabbit_credentia
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbit-%%VERSION%%/ebin/rabbit_credential_validator_password_regexp.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbit-%%VERSION%%/ebin/rabbit_dead_letter.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbit-%%VERSION%%/ebin/rabbit_definitions.beam
+lib/rabbitmq_server-%%VERSION%%/plugins/rabbit-%%VERSION%%/ebin/rabbit_definitions_import_https.beam
+lib/rabbitmq_server-%%VERSION%%/plugins/rabbit-%%VERSION%%/ebin/rabbit_definitions_import_local_filesystem.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbit-%%VERSION%%/ebin/rabbit_diagnostics.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbit-%%VERSION%%/ebin/rabbit_direct.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbit-%%VERSION%%/ebin/rabbit_direct_reply_to.beam
@@ -666,6 +668,7 @@ lib/rabbitmq_server-%%VERSION%%/plugins/rabbit_common-%%VERSION%%/ebin/file_hand
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbit_common-%%VERSION%%/ebin/file_handle_cache_stats.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbit_common-%%VERSION%%/ebin/gen_server2.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbit_common-%%VERSION%%/ebin/mirrored_supervisor.beam
+lib/rabbitmq_server-%%VERSION%%/plugins/rabbit_common-%%VERSION%%/ebin/mirrored_supervisor_locks.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbit_common-%%VERSION%%/ebin/mnesia_sync.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbit_common-%%VERSION%%/ebin/pmon.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbit_common-%%VERSION%%/ebin/priority_queue.beam
@@ -1113,6 +1116,7 @@ lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_prelaunch-%%VERSION%%/ebin/rabb
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_prelaunch-%%VERSION%%/ebin/rabbit_prelaunch_sighandler.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_prelaunch-%%VERSION%%/ebin/rabbit_prelaunch_sup.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_prelaunch-%%VERSION%%/ebin/rabbitmq_prelaunch.app
+lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_prometheus-%%VERSION%%/ebin/prometheus_rabbitmq_alarm_metrics_collector.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_prometheus-%%VERSION%%/ebin/prometheus_rabbitmq_core_metrics_collector.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_prometheus-%%VERSION%%/ebin/prometheus_rabbitmq_global_metrics_collector.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_prometheus-%%VERSION%%/ebin/rabbit_prometheus_app.beam
@@ -1380,5 +1384,6 @@ sbin/rabbitmq-diagnostics
 sbin/rabbitmq-env
 sbin/rabbitmq-plugins
 sbin/rabbitmq-server
+sbin/rabbitmq-streams
 sbin/rabbitmq-upgrade
 sbin/rabbitmqctl

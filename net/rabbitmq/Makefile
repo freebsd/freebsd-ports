@@ -1,7 +1,7 @@
 # Created by: Phillip Neumann <pneumann@gmail.com>
 
 PORTNAME=	rabbitmq
-DISTVERSION=	3.9.1
+DISTVERSION=	3.9.4
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -78,7 +78,7 @@ post-install:
 	${STAGEDIR}${PREFIX}/etc/rabbitmq/advanced.config.sample
 	${INSTALL_DATA} ${WRKSRC}/deps/rabbit/docs/rabbitmq.conf.example \
 	${STAGEDIR}${PREFIX}/etc/rabbitmq/rabbitmq.conf.sample
-.for _file in rabbitmq-defaults rabbitmq-diagnostics rabbitmq-env rabbitmq-plugins rabbitmq-server rrabbitmq-streams rabbitmq-upgrade rabbitmqctl
+.for _file in rabbitmq-defaults rabbitmq-diagnostics rabbitmq-env rabbitmq-plugins rabbitmq-server rabbitmq-streams rabbitmq-upgrade rabbitmqctl
 	${LN} -s ../lib/rabbitmq_server-${PORTVERSION}/sbin/${_file} ${STAGEDIR}${PREFIX}/sbin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/deps/rabbit/docs/*.8  ${STAGEDIR}${MAN1PREFIX}/man/man8
