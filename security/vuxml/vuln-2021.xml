@@ -1,3 +1,36 @@
+  <vuln vid="a6d5d4c1-0564-11ec-b69d-4062311215d5">
+    <topic>FreeBSD -- Missing error handling in bhyve(8) device models</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.0</ge><lt>13.0_4</lt></range>
+	<range><ge>12.2</ge><lt>12.2_10</lt></range>
+	<range><ge>11.4</ge><lt>11.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Certain VirtIO-based device models failed to handle errors when fetching
+	I/O descriptors.  Such errors could be triggered by a malicious guest.
+	As a result, the device model code could be tricked into operating on
+	uninitialized I/O vectors, leading to memory corruption.</p>
+	<h1>Impact:</h1>
+	<p>A malicious guest may be able to crash the bhyve process.  It may be
+	possible to exploit the memory corruption bugs to achieve arbitrary code
+	execution in the bhyve process.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-29631</cvename>
+      <freebsdsa>SA-21:13.bhyve</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2021-08-24</discovery>
+      <entry>2021-08-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="96811d4a-04ec-11ec-9b84-d4c9ef517024">
     <topic>OpenSSL -- multiple vulnerabilities</topic>
     <affects>
