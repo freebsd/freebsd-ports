@@ -1,3 +1,41 @@
+  <vuln vid="d22b336d-0567-11ec-b69d-4062311215d5">
+    <topic>FreeBSD -- libfetch out of bounds read</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.0</ge><lt>13.0_4</lt></range>
+	<range><ge>12.2</ge><lt>12.2_10</lt></range>
+	<range><ge>11.4</ge><lt>11.4_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The passive mode in FTP communication allows an out of boundary read while
+	libfetch uses strtol to parse the relevant numbers into address bytes.  It
+	does not check if the line ends prematurely.  If it does, the for-loop
+	condition checks for *p == '\0' one byte too late because p++ was already
+	performed.</p>
+	<h1>Impact:</h1>
+	<p>The connection buffer size can be controlled by a malicious FTP server
+	because the size is increased until a newline is encountered (or no more
+	characters are read).  This also allows to move the buffer into more
+	interesting areas within the address space, potentially parsing relevant
+	numbers for the attacker.  Since these bytes become available to the server
+	in form of a new TCP connection to a constructed port number or even part of
+	the IPv6 address this is a potential information leak.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-36159</cvename>
+      <freebsdsa>SA-21:15.libfetch</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2021-08-24</discovery>
+      <entry>2021-08-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3e9d2fde-0567-11ec-b69d-4062311215d5">
     <topic>FreeBSD -- Remote code execution in ggatec(8)</topic>
     <affects>
