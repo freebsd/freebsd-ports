@@ -1,7 +1,11 @@
 PORTNAME=	verilator
 DISTVERSION=	4.210
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://www.veripool.org/ftp/
+
+PATCH_SITES=	https://github.com/verilator/verilator/commit/
+PATCHFILES=	9907d211ff5fa408a7eb6387ef0ceaedaeea2d32.patch:-p1 # backport of bug fix: https://github.com/verilator/verilator/commit/9907d211ff5fa408a7eb6387ef0ceaedaeea2d32
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Synthesizable Verilog to C++ compiler
