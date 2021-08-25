@@ -1,6 +1,6 @@
 PORTNAME=	go-ethereum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.6
+DISTVERSION=	1.10.7
 CATEGORIES=	net-p2p
 
 MAINTAINER=	me@enriquefynn.com
@@ -58,7 +58,7 @@ GH_TUPLE=	\
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:ac73e9fd8988:golang_sys/vendor/golang.org/x/sys \
 		golang:term:7de9c90e9dd1:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:time:7e3f01d25324:golang_time/vendor/golang.org/x/time \
 		google:gofuzz:c04b05f3adfa:google_gofuzz/vendor/github.com/google/gofuzz \
 		google:uuid:v1.1.5:google_uuid/vendor/github.com/google/uuid \
@@ -68,7 +68,7 @@ GH_TUPLE=	\
 		hashicorp:golang-lru:80c98217689d:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		holiman:bloomfilter:v2.0.3:holiman_bloomfilter_v2/vendor/github.com/holiman/bloomfilter \
 		holiman:uint256:v1.2.0:holiman_uint256/vendor/github.com/holiman/uint256 \
-		huin:goupnp:33cdcbb30dda:huin_goupnp/vendor/github.com/huin/goupnp \
+		huin:goupnp:v1.0.2:huin_goupnp/vendor/github.com/huin/goupnp \
 		influxdata:influxdb:v1.8.3:influxdata_influxdb/vendor/github.com/influxdata/influxdb \
 		jackpal:go-nat-pmp:1fa385a6f458:jackpal_go_nat_pmp/vendor/github.com/jackpal/go-nat-pmp \
 		jedisct1:go-minisign:45766022959e:jedisct1_go_minisign/vendor/github.com/jedisct1/go-minisign \
@@ -101,6 +101,12 @@ GH_TUPLE=	\
 		tklauser:numcpus:v0.2.2:tklauser_numcpus/vendor/github.com/tklauser/numcpus \
 		tyler-smith:go-bip39:dbb3b84ba2ef:tyler_smith_go_bip39/vendor/github.com/tyler-smith/go-bip39 \
 		urfave:cli:v1.20.0:urfave_cli/vendor/gopkg.in/urfave/cli.v1
+
+post-extract:
+	@${RM} -r ${WRKSRC}/vendor/github.com/aws/aws-sdk-go-v2/config
+	@${RLN} ${WRKSRC_aws_aws_sdk_go_v2_config}/config ${WRKSRC}/vendor/github.com/aws/aws-sdk-go-v2/config
+	@${RM} -r ${WRKSRC}/vendor/github.com/aws/aws-sdk-go-v2/credentials
+	@${RLN} ${WRKSRC_aws_aws_sdk_go_v2_credentials}/credentials ${WRKSRC}/vendor/github.com/aws/aws-sdk-go-v2/credentials
 
 TMPDIR=	${WRKDIR}
 
