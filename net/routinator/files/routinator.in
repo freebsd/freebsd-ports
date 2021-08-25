@@ -9,7 +9,7 @@
 
 name=routinator
 desc="RPKI signed route collector and validator"
-rcvar="routinator_enable"
+rcvar=routinator_enable
 start_precmd=check_init
 command="%%PREFIX%%/bin/${name}"
 
