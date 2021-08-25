@@ -1,7 +1,6 @@
 PORTNAME=	freeorion
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.10.1
-PORTREVISION=	1
+DISTVERSION=	0.4.10.2
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 USE_GITHUB=	yes
 
-USES=		cmake compiler:c++14-lang python:3.5+
+USES=		cmake compiler:c++14-lang python:3.5-3.9  # inherited from boost-python-libs
 CMAKE_ARGS=	-Wno-dev
 
 LDFLAGS_i386=	-Wl,-znotext
@@ -40,10 +39,18 @@ HEADLESS_LIB_DEPENDS_OFF= \
 			libvorbis.so:audio/libvorbis \
 			libpng.so:graphics/png
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VER} != ${PYTHON_DEFAULT}
+# unable to detect boost_python otherwise since required files are
+# not installed by boost-python-libs
+CMAKE_ARGS+=	-DBoost_NO_BOOST_CMAKE:BOOL=YES
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
