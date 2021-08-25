@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	ulauncher
-PORTVERSION=	5.12.1
+PORTVERSION=	5.12.2
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/Ulauncher/Ulauncher/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -33,11 +33,6 @@ OPTIONS_DEFAULT=	APPINDICATOR
 
 APPINDICATOR_DESC=	AppIndicator support
 APPINDICATOR_RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/AppIndicator3-0.1.gir:devel/libappindicator
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^#!/s,usr/bin/env ba,bin/,' \
-		${WRKSRC}/bin/ulauncher-toggle
-	@${RM} ${WRKSRC}/bin/ulauncher-toggle.bak
 
 .include <bsd.port.mk>
 
