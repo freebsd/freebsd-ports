@@ -6783,6 +6783,11 @@ raptor_xml_writer_start_element_common.</p>
 	<name>openssl-devel</name>
 	<range><lt>3.0.0a12</lt></range>
       </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>12.2</ge><lt>12.2_10</lt></range>
+	<range><ge>11.4</ge><lt>11.4_13</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -6813,11 +6818,12 @@ raptor_xml_writer_start_element_common.</p>
       <cvename>CVE-2021-23841</cvename>
       <cvename>CVE-2021-23840</cvename>
       <cvename>CVE-2021-23839</cvename>
+      <freebsdsa>SA-21:17.openssl</freebsdsa>
     </references>
     <dates>
       <discovery>2021-02-16</discovery>
       <entry>2021-02-16</entry>
-      <modified>2021-02-18</modified>
+      <modified>2021-08-25</modified>
     </dates>
   </vuln>
 
