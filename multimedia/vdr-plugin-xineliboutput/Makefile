@@ -14,6 +14,8 @@ COMMENT=	Video Disk Recorder - xineliboutput plugin/viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		does not build: invalid suffix on literal; C++11 requires a space between literal and identifier
+
 LIB_DEPENDS=	libxine.so:multimedia/libxine \
 		libavutil.so:multimedia/ffmpeg \
 		libdbus-glib-1.so:devel/dbus-glib \
