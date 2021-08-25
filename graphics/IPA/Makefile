@@ -12,6 +12,8 @@ COMMENT=	Image Processing Algorithms
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BROKEN=		does not build: use of undeclared identifier 'nilHandle'
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Prima>1.24:x11-toolkits/p5-Prima
 
