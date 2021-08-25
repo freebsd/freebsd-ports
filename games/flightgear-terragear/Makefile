@@ -8,6 +8,8 @@ COMMENT=	Tools for building scenery for the FlightGear project
 
 LICENSE=	GPLv2
 
+BROKEN=		does not build: use of undeclared identifier 'sgClearWriteError'
+
 BUILD_DEPENDS=	cgal>0:math/cgal
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libmpfr.so:math/mpfr \
