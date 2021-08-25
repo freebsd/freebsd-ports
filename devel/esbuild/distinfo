@@ -1,5 +1,5 @@
-TIMESTAMP = 1627468015
-SHA256 (evanw-esbuild-v0.12.16_GH0.tar.gz) = e805a5e1aa3ba6b38ad8cfedeedb52ac669e17efb39c7ae4a718be035e426c2e
-SIZE (evanw-esbuild-v0.12.16_GH0.tar.gz) = 1543643
+TIMESTAMP = 1629876678
+SHA256 (evanw-esbuild-v0.12.22_GH0.tar.gz) = 3b67771db6405a84c6e919bca201228ed9b7d6133b3eae80d490a0e44b5c2a64
+SIZE (evanw-esbuild-v0.12.22_GH0.tar.gz) = 1552597
 SHA256 (golang-sys-bc7a7d42d5c3_GH0.tar.gz) = 1afc5531fd57571cf230abd4d69b76b7ce3ec223f84e926e25cc20a8281bc984
 SIZE (golang-sys-bc7a7d42d5c3_GH0.tar.gz) = 1053418
