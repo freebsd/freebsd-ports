@@ -1,7 +1,7 @@
 # Created by: Brian Buchanan <brian@CSUA.Berkeley.EDU>
 
 PORTNAME=	flightgear-data
-PORTVERSION=	2020.3.9
+PORTVERSION=	2020.3.11
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 DISTNAME=	FlightGear-${PORTVERSION}-data
@@ -30,7 +30,7 @@ pre-install:
 	@${RM} ${PLIST}
 	@cd ${WRKSRC} && \
 	${FIND} * -type d -empty | ${SORT} \
-		| ${SED} -e 's|^|@exec ${MKDIR} %D/share/flightgear/|' >> ${PLIST} && \
+		| ${SED} -e 's|^|@preexec ${MKDIR} %D/share/flightgear/|' >> ${PLIST} && \
 	${FIND} * -type f | ${SORT} \
 		| ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
 	${FIND} * -type d -empty | ${SORT} -r \

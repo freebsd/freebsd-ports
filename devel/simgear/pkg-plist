@@ -286,6 +286,7 @@ include/simgear/scene/util/SGEnlargeBoundingBox.hxx
 include/simgear/scene/util/SGImageUtils.hxx
 include/simgear/scene/util/SGNodeMasks.hxx
 include/simgear/scene/util/SGPickCallback.hxx
+include/simgear/scene/util/SGProgram.hxx
 include/simgear/scene/util/SGReaderWriterOptions.hxx
 include/simgear/scene/util/SGSceneFeatures.hxx
 include/simgear/scene/util/SGSceneUserData.hxx

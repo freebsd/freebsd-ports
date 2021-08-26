@@ -1,8 +1,7 @@
 # Created by: Brian Buchanan <brian@CSUA.Berkeley.EDU>
 
 PORTNAME=	flightgear
-PORTVERSION=	2020.3.9
-PORTREVISION=	1
+PORTVERSION=	2020.3.11
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
