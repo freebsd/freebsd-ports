@@ -1,5 +1,6 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,9 +16,10 @@ LIB_DEPENDS=	libcln.so:math/cln \
 		libxcb-util.so:x11/xcb-util
 RUN_DEPENDS=	ck-launch-session:sysutils/consolekit2\
 		iceauth:x11/iceauth \
-		xsetroot:x11/xsetroot \
-		xset:x11/xset \
 		xmessage:x11/xmessage \
+		xrdb:x11/xrdb \
+		xset:x11/xset \
+		xsetroot:x11/xsetroot \
 		${LOCALBASE}/libdata/pkgconfig/xkeyboard-config.pc:x11/xkeyboard-config \
 		iso-codes>=0:misc/iso-codes \
 		${LOCALBASE}/bin/genv:sysutils/coreutils
