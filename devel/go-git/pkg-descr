@@ -1,9 +1,10 @@
-go-git aims to reach the completeness of libgit2 or jgit, nowadays covers the
-majority of the plumbing read operations and some of the main write operations,
-but lacks the main porcelain operations such as merges.
+go-git is a highly extensible git implementation library written in pure
+Go.  It can be used to manipulate git repositories at low level
+(plumbing) or high level (porcelain), through an idiomatic Go API. It
+also supports several types of storage, such as in-memory filesystems,
+or custom implementations, thanks to the Storer interface.
 
-It is highly extensible, we have been following the open/close principle in its
-design to facilitate extensions, mainly focusing the efforts on the persistence
-of the objects.
+It's being actively developed since 2015 and is being used extensively
+by Keybase, Gitea or Pulumi, and by many other libraries and tools.
 
-WWW: https://github.com/src-d/go-git
+WWW: https://github.com/go-git/go-git
