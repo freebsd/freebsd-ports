@@ -1,0 +1,17 @@
+--- ftpd/Makefile.FreeBSD.orig	2005-01-11 22:49:16 UTC
++++ ftpd/Makefile.FreeBSD
+@@ -78,12 +78,12 @@ LDADD+=	-lm
+ ### TLS/SSL support
+ .if defined(SSL_SUPPORT)
+ CFLAGS+=-DUSE_SSL
+-LDADD+= -lssl -lcrypto ../port/libbsdport.a
++LDADD+= -L${OPENSSLLIB} -lssl -lcrypto ../port/libbsdport.a
+ .endif
+ ## Next lines must present regardless of TLS/SSL support state
+ .PATH:	${.CURDIR}/../ssl
+ SRCS+=	sslapp.c ssl_port.c ssl_port_ftpd.c
+-CFLAGS+=-I../ssl -I../port
++CFLAGS+= -I${OPENSSLINC} -I../ssl -I../port
+ ###
+ 
+ ### PAM support

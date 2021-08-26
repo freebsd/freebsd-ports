@@ -1,0 +1,25 @@
+--- ftp/Makefile.FreeBSD.orig	2005-01-11 10:06:55 UTC
++++ ftp/Makefile.FreeBSD
+@@ -17,11 +17,11 @@ CFLAGS+=-DINET6
+ ### TLS/SSL support
+ ## Comment lines below to disable TLS/SSL support
+ CFLAGS+=-DUSE_SSL
+-LDADD+=	-lssl -lcrypto
++LDADD+=	-L${OPENSSLLIB} -lssl -lcrypto
+ ## Next lines must present regardless of TLS/SSL support state
+ .PATH:	${.CURDIR}/../ssl
+ SRCS+= sslapp.c ssl_port.c ssl_port_ftps.c
+-CFLAGS+=-I../ssl
++CFLAGS+= -I${OPENSSLINC} -I../ssl
+ ###
+ 
+ ###
+@@ -31,7 +31,7 @@ PROG=	ftps
+ SRCS+=	cmds.c cmdtab.c complete.c domacro.c fetch.c ftp.c main.c ruserpass.c \
+ 	util.c
+ 
+-CFLAGS+= -I../port -Wall
++CFLAGS+= -I../port -Wall -fcommon
+ 
+ LDADD+=	../port/libedit.a
+ .if defined(BSDTYPE) && ( ${BSDTYPE} == "NetBSD" )
