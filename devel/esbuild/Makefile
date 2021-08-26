@@ -1,6 +1,6 @@
 PORTNAME=	esbuild
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.22
+DISTVERSION=	0.12.23
 CATEGORIES=	devel www
 
 MAINTAINER=	dch@FreeBSD.org
@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	evanw
-GH_TUPLE=	golang:sys:bc7a7d42d5c3:golang_sys/vendor/golang.org/x/sys
+
+.include "${.CURDIR}/Makefile.deps"
 
 GO_TARGET=	./cmd/esbuild:esbuild
 
