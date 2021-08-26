@@ -1,6 +1,6 @@
 PORTNAME=	mothur
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.45.3
+DISTVERSION=	1.46.0
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,17 +13,16 @@ BUILD_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++11-lang gmake localbase readline
 USE_GITHUB=	yes
+
+MAKE_ARGS=	INSTALL_DIR=${STAGEDIR}${PREFIX}/bin
+
 ALL_TARGET=	${PORTNAME}
 
 BINARY_ALIAS=	g++=${CXX}
 
-EXES=		${PORTNAME} uchime
+PLIST_FILES=	bin/${PORTNAME}
 
-PLIST_FILES=	${EXES:S/^/bin\//}
-
-do-install: # https://github.com/mothur/mothur/issues/615
-.for e in ${EXES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${e} ${STAGEDIR}${PREFIX}/bin
-.endfor
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
