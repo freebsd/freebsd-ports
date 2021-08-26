@@ -1,6 +1,7 @@
 PORTNAME=	xdotool
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.20210804.2
+PORTEPOCH=	1
 CATEGORIES=	x11
 
 MAINTAINER=	gregf@beastie.tech
@@ -26,7 +27,6 @@ PLIST_FILES=	bin/xdotool \
 		lib/libxdo.so.3 \
 		libdata/pkgconfig/libxdo.pc \
 		man/man1/xdotool.1.gz
-
 
 # Older GCC on RELENG_6 doesn't like -Wno-missing-field-initializers
 post-patch:
