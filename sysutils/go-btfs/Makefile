@@ -1,5 +1,5 @@
 PORTNAME=	go-btfs
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 DISTVERSIONPREFIX=	btfs-v
 CATEGORIES=	sysutils
 
@@ -25,7 +25,7 @@ GH_TUPLE=	\
 		TRON-US:go-btfs-api:v0.3.0:tron_us_go_btfs_api/vendor/github.com/TRON-US/go-btfs-api \
 		TRON-US:go-btfs-chunker:v0.3.0:tron_us_go_btfs_chunker/vendor/github.com/TRON-US/go-btfs-chunker \
 		TRON-US:go-btfs-cmds:v0.2.13:tron_us_go_btfs_cmds/vendor/github.com/TRON-US/go-btfs-cmds \
-		TRON-US:go-btfs-config:v0.7.0:tron_us_go_btfs_config/vendor/github.com/TRON-US/go-btfs-config \
+		TRON-US:go-btfs-config:v0.11.1:tron_us_go_btfs_config/vendor/github.com/TRON-US/go-btfs-config \
 		TRON-US:go-btfs-files:v0.2.0:tron_us_go_btfs_files/vendor/github.com/TRON-US/go-btfs-files \
 		TRON-US:go-btfs-pinner:v0.1.1:tron_us_go_btfs_pinner/vendor/github.com/TRON-US/go-btfs-pinner \
 		TRON-US:go-btns:v0.1.1:tron_us_go_btns/vendor/github.com/TRON-US/go-btns \
