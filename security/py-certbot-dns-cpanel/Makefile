@@ -1,5 +1,6 @@
 PORTNAME=	certbot-dns-cpanel
 DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,6 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
-
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	"${PREFIX}/etc/certbot-dns-cpanel/credentials.ini.sample"
