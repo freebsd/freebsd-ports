@@ -1564,6 +1564,7 @@
     SUBDIR += rubygem-amatch
     SUBDIR += rubygem-asciidoctor
     SUBDIR += rubygem-asciidoctor-diagram
+    SUBDIR += rubygem-asciidoctor-epub3
     SUBDIR += rubygem-asciidoctor-include-ext
     SUBDIR += rubygem-asciidoctor-kroki
     SUBDIR += rubygem-asciidoctor-pdf

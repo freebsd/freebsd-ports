@@ -1,0 +1,5 @@
+Asciidoctor EPUB3 is a set of Asciidoctor extensions for converting AsciiDoc
+documents directly to the EPUB3 and KF8/MOBI e-book formats. It's a tool for
+creating highly aesthetic, professional, easy-to-read e-books.
+
+WWW: https://github.com/asciidoctor/asciidoctor-epub3
