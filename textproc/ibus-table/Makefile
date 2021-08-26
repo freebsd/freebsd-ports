@@ -1,7 +1,7 @@
 # Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
 
 PORTNAME=	ibus-table
-DISTVERSION=	1.14.0
+DISTVERSION=	1.14.1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
