@@ -34,7 +34,7 @@ pre-install:
 	@${RM} ${PLIST}
 	@cd ${WRKSRC} && \
 	${FIND} * -type d -empty | ${SORT} \
-		| ${SED} -e 's|^|@exec ${MKDIR} %D/share/flightgear/Aircraft/|' >> ${PLIST} && \
+		| ${SED} -e 's|^|@preexec ${MKDIR} %D/share/flightgear/Aircraft/|' >> ${PLIST} && \
 	${FIND} * -type f | ${SORT} \
 		| ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
 	${FIND} * -type d -empty | ${SORT} -r \
