@@ -151,6 +151,7 @@ include/palisade/core/utils/blockAllocator/xstring.h
 include/palisade/core/utils/blockAllocator/xvector.h
 include/palisade/core/utils/caller_info.h
 include/palisade/core/utils/debug.h
+include/palisade/core/utils/defines.h
 include/palisade/core/utils/exception.h
 include/palisade/core/utils/hashutil.h
 include/palisade/core/utils/inttypes.h
@@ -203,10 +204,10 @@ lib/Palisade/PalisadeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/Palisade/PalisadeTargets.cmake
 lib/libPALISADEbinfhe.so
 lib/libPALISADEbinfhe.so.1
-lib/libPALISADEbinfhe.so.1.11.3
+lib/libPALISADEbinfhe.so.1.11.4
 lib/libPALISADEcore.so
 lib/libPALISADEcore.so.1
-lib/libPALISADEcore.so.1.11.3
+lib/libPALISADEcore.so.1.11.4
 lib/libPALISADEpke.so
 lib/libPALISADEpke.so.1
-lib/libPALISADEpke.so.1.11.3
+lib/libPALISADEpke.so.1.11.4
