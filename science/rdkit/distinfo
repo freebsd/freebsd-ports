@@ -1,7 +1,7 @@
-TIMESTAMP = 1626048545
-SHA256 (rdkit-2021.03.4/Comic_Neue.zip) = 9f254e5cd219c1aa9b1f18e73c2588d8cd8587ac16997eeff9adb0d556fa6461
-SIZE (rdkit-2021.03.4/Comic_Neue.zip) = 179735
-SHA256 (rdkit-2021.03.4/rdkit-rdkit-Release_2021_03_4_GH0.tar.gz) = bed309df7f1e2ea25736a986cf951325681142ee49468b1c62d020a109d2ef52
-SIZE (rdkit-2021.03.4/rdkit-rdkit-Release_2021_03_4_GH0.tar.gz) = 78194236
-SHA256 (rdkit-2021.03.4/rareylab-RingDecomposerLib-v1.1.3_rdkit_GH0.tar.gz) = 944b5816712a48bbf88aa25d4300ce11871ddf6e971218eac08f90ed2192f715
-SIZE (rdkit-2021.03.4/rareylab-RingDecomposerLib-v1.1.3_rdkit_GH0.tar.gz) = 137931
+TIMESTAMP = 1629948497
+SHA256 (rdkit-2021.03.5/Comic_Neue.zip) = 9f254e5cd219c1aa9b1f18e73c2588d8cd8587ac16997eeff9adb0d556fa6461
+SIZE (rdkit-2021.03.5/Comic_Neue.zip) = 179735
+SHA256 (rdkit-2021.03.5/rdkit-rdkit-Release_2021_03_5_GH0.tar.gz) = ee7ed4189ab03cf805ab9db59121ab3ebcba4c799389d053046d7cab4dd8401e
+SIZE (rdkit-2021.03.5/rdkit-rdkit-Release_2021_03_5_GH0.tar.gz) = 78195566
+SHA256 (rdkit-2021.03.5/rareylab-RingDecomposerLib-v1.1.3_rdkit_GH0.tar.gz) = 944b5816712a48bbf88aa25d4300ce11871ddf6e971218eac08f90ed2192f715
+SIZE (rdkit-2021.03.5/rareylab-RingDecomposerLib-v1.1.3_rdkit_GH0.tar.gz) = 137931
