@@ -60,8 +60,12 @@ GHOSTSCRIPT_DEFAULT?=	agpl
 IMAGEMAGICK_DEFAULT?=	7
 # Possible values: 7, 8, 11, 12, 13, 14, 15, 16
 JAVA_DEFAULT?=		8
-# Possible values: 2.0.12
-LAZARUS_DEFAULT?=	2.0.12
+# Possible values: 2.0.12, 2.3.0
+.if !defined(WANT_LAZARUS_DEVEL)
+LAZARUS_DEFAULT?=       2.0.12
+.else
+LAZARUS_DEFAULT?=       2.3.0
+.endif
 # Possible values: rust, legacy
 .if empty(ARCH:Naarch64:Narmv6:Narmv7:Namd64:Ni386:Npowerpc64:Npowerpc64le:Npowerpc)
 LIBRSVG2_DEFAULT?=	rust

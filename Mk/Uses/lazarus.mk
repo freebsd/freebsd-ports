@@ -94,6 +94,12 @@ FLAVOR=		${FLAVORS:[1]}
 
 LAZARUS_PKGNAMESUFFIX=	-${FLAVOR}
 
+.if !defined(WANT_LAZARUS_DEVEL)
+LAZARUS_DEVELSUFFIX=	#
+.else
+LAZARUS_DEVELSUFFIX=	-devel
+.endif
+
 .if ${lazarus_ARGS:Mgtk2} || ${FLAVOR} == gtk2
 BUILD_DEPENDS+=	${MKINSTDIR}/gtk2.fpm:x11-toolkits/fpc-gtk2
 LIB_DEPENDS+=	libglib-2.0.so:devel/glib20 \
@@ -102,13 +108,13 @@ LIB_DEPENDS+=	libglib-2.0.so:devel/glib20 \
 		libpango-1.0.so:x11-toolkits/pango \
 		libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2
 LCL_PLATFORM=	gtk2
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus${LAZARUS_DEVELSUFFIX}
 .endif
 
 .if ${lazarus_ARGS:Mqt5} || ${FLAVOR} == qt5
 LIB_DEPENDS+=	libQt5Pas.so:x11-toolkits/qt5pas
 LCL_PLATFORM=	qt5
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-qt5
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-qt5${LAZARUS_DEVELSUFFIX}
 .endif
 
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild
