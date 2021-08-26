@@ -75,7 +75,9 @@
     SUBDIR += kile
     SUBDIR += komodo-edit
     SUBDIR += lazarus
+    SUBDIR += lazarus-devel
     SUBDIR += lazarus-qt5
+    SUBDIR += lazarus-qt5-devel
     SUBDIR += le
     SUBDIR += leafpad
     SUBDIR += led
