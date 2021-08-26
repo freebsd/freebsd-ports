@@ -1,8 +1,8 @@
 # Created by: Mahdi Mokhtari <mokhi64@gmail.com>
 
 PORTNAME?=		mysql
-PORTVERSION=		8.0.25
-PORTREVISION?=		2
+PORTVERSION=		8.0.26
+PORTREVISION?=		0
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
 PKGNAMESUFFIX?=		80-server

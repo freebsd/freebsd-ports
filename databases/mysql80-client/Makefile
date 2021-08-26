@@ -1,7 +1,7 @@
 # Created by: "Mahdi Mokhtari <mokhi64@gmail.com>"
 
 PORTNAME=	mysql
-PORTREVISION=	3
+PORTREVISION=	0
 PKGNAMESUFFIX=	80-client
 
 COMMENT=	Multithreaded SQL database (client)

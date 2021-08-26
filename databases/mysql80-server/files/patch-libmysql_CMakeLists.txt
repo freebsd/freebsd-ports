@@ -1,6 +1,6 @@
---- libmysql/CMakeLists.txt.orig	2019-09-20 08:30:51 UTC
+--- libmysql/CMakeLists.txt.orig	2021-07-01 07:53:49 UTC
 +++ libmysql/CMakeLists.txt
-@@ -192,6 +192,11 @@ IF (WIN32 AND OPENSSL_APPLINK_C)
+@@ -197,6 +197,11 @@ IF (WIN32 AND OPENSSL_APPLINK_C)
    )
  ENDIF()
  
@@ -12,30 +12,33 @@
  #
  # Include protocol tracing infrastructure and the test
  # trace plugin if enabled by build options.
-@@ -242,11 +247,18 @@ IF(WIN32)
+@@ -270,8 +275,15 @@ IF(WIN32)
    LIST(APPEND LIBS_TO_MERGE auth_win_client)
  ENDIF()
  
--# LDAP authentication SASL client plugin
+-# LDAP authentication SASL client plug-in
 -ADD_SUBDIRECTORY(authentication_ldap)
 +IF(WITHOUT_CLIENTLIBS)
 +  # Merge several convenience libraries into one big mysqlclient
-+  MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development SKIP_INSTALL)
++  MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE}
++  COMPONENT Development
++  SKIP_INSTALL)
 +ELSE(WITHOUT_CLIENTLIBS)
 +  # LDAP authentication SASL client plugin
 +  MESSAGE(STATUS "Creating LDAP authentication SASL client library.")
 +  ADD_SUBDIRECTORY(authentication_ldap)
  
--# Merge several convenience libraries into one big mysqlclient
--MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development)
-+  # Merge several convenience libraries into one big mysqlclient
-+  MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development)
+ # authentication kerberos client plug-in
+ ADD_SUBDIRECTORY(authentication_kerberos)
+@@ -281,6 +293,7 @@ MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERG
+   COMPONENT Development
+   LINK_LIBRARIES ${LIBS_TO_LINK}
+   )
 +ENDIF(WITHOUT_CLIENTLIBS)
-+
- TARGET_LINK_LIBRARIES(mysqlclient PRIVATE ${LIBS_TO_LINK})
  
  # Visual Studio users need debug  static library for debug projects
-@@ -281,12 +291,22 @@ ENDIF()
+ IF(MSVC)
+@@ -327,17 +340,27 @@ ENDIF()
  
  # Merge several convenience libraries into one big mysqlclient
  # and link them together into shared library.
@@ -45,7 +48,7 @@
    ${CLIENT_API_FUNCTIONS}
    ${CLIENT_API_FUNCTIONS_UNDOCUMENTED}
    ${CLIENT_API_NONBLOCKING_FUNCTIONS}
-+  COMPONENT SharedLibraries
+   COMPONENT SharedLibraries
 +  SKIP_INSTALL )
 +ELSE(WITHOUT_CLIENTLIBS)
 +MERGE_LIBRARIES_SHARED(libmysql ${LIBS_TO_MERGE}
@@ -53,17 +56,13 @@
 +  ${CLIENT_API_FUNCTIONS}
 +  ${CLIENT_API_FUNCTIONS_UNDOCUMENTED}
 +  ${CLIENT_API_NONBLOCKING_FUNCTIONS}
-   COMPONENT SharedLibraries)
++  COMPONENT SharedLibraries
+   LINK_LIBRARIES ${LIBS_TO_LINK}
+   ${UNIX_OUTPUT_NAME}
+   ${UNIX_SOVERSION}
+   ${UNIX_VERSION}
+   )
 +ENDIF(WITHOUT_CLIENTLIBS)
- TARGET_LINK_LIBRARIES(libmysql PRIVATE ${LIBS_TO_LINK})
  
- IF(WIN32)
-@@ -300,7 +320,7 @@ ENDIF()
- 
- IF(UNIX)
-   # libtool compatability
--  IF(FREEBSD OR APPLE)
-+  IF(FREEBSD OR APPLE OR CMAKE_SYSTEM_NAME MATCHES "FreeBSD|DragonFly")
-     SET(OS_SHARED_LIB_VERSION "${SHARED_LIB_MAJOR_VERSION}")
-   ELSE()
-     SET(OS_SHARED_LIB_VERSION
+ IF(LINUX_STANDALONE AND KERBEROS_CUSTOM_LIBRARY)
+   ADD_DEPENDENCIES(libmysql ${kerberos_target})
