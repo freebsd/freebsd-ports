@@ -1,3 +1,32 @@
+  <vuln vid="1d6410e8-06c1-11ec-a35d-03ca114d16d6">
+    <topic>fetchmail -- STARTTLS bypass vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><lt>6.4.22.r1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem:</p>
+	<blockquote cite="https://www.fetchmail.info/fetchmail-SA-2021-02.txt">
+	  <p>In certain circumstances, fetchmail 6.4.21 and older would
+	    not encrypt the session using STARTTLS/STLS, and might not have
+	    cleared session state across the TLS negotiation.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-39272</cvename>
+      <url>https://www.fetchmail.info/fetchmail-SA-2021-02.txt</url>
+    </references>
+    <dates>
+      <discovery>2021-08-10</discovery>
+      <entry>2021-08-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d22b336d-0567-11ec-b69d-4062311215d5">
     <topic>FreeBSD -- libfetch out of bounds read</topic>
     <affects>
