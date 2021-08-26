@@ -76,6 +76,7 @@ lib/mysql/plugin/component_test_component_deinit.so
 lib/mysql/plugin/component_test_host_application_signal.so
 lib/mysql/plugin/component_test_mysql_current_thread_reader.so
 lib/mysql/plugin/component_test_mysql_runtime_error.so
+lib/mysql/plugin/component_test_mysql_system_variable_set.so
 lib/mysql/plugin/component_test_pfs_notification.so
 lib/mysql/plugin/component_test_pfs_resource_group.so
 lib/mysql/plugin/component_test_status_var_service.so
@@ -91,6 +92,7 @@ lib/mysql/plugin/component_test_sys_var_service_int.so
 lib/mysql/plugin/component_test_sys_var_service_same.so
 lib/mysql/plugin/component_test_sys_var_service_str.so
 lib/mysql/plugin/component_test_system_variable_source.so
+lib/mysql/plugin/component_test_table_access.so
 lib/mysql/plugin/component_test_udf_registration.so
 @comment lib/mysql/plugin/component_test_udf_services.so
 lib/mysql/plugin/component_udf_reg_3_func.so
@@ -149,7 +151,9 @@ lib/mysql/plugin/replication_observers_example_plugin.so
 lib/mysql/plugin/rewrite_example.so
 lib/mysql/plugin/rewriter.so
 lib/mysql/plugin/semisync_master.so
+lib/mysql/plugin/semisync_replica.so
 lib/mysql/plugin/semisync_slave.so
+lib/mysql/plugin/semisync_source.so
 lib/mysql/plugin/test_security_context.so
 lib/mysql/plugin/test_services_host_application_signal.so
 lib/mysql/plugin/test_services_plugin_registry.so
