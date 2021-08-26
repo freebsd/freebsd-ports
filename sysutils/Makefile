@@ -339,6 +339,7 @@
     SUBDIR += exfat-utils
     SUBDIR += extipl
     SUBDIR += ezjail
+    SUBDIR += f2
     SUBDIR += f3
     SUBDIR += facter
     SUBDIR += fanout
