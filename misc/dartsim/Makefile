@@ -1,7 +1,6 @@
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.11.0
-PORTREVISION=	1
+DISTVERSION=	6.11.1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,16 +32,18 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 
 USES=		cmake compiler:c++17-lang eigen:3,build,run gl localbase:ldflags \
 		pkgconfig xorg
-USE_GITHUB=	yes
-GH_PROJECT=	dart
 USE_GL=		gl glu glut
 USE_XORG=	xi xmu
 USE_CXXSTD=	c++17 # missing in the project, it uses std::void_t (through pagmo2) which is a c++17 feature
 USE_LDCONFIG=	yes
 
+USE_GITHUB=	yes
+GH_PROJECT=	dart
+
 CXXFLAGS+=	-I${LOCALBASE}/include/coin # because of pagmo2 headers include <IpReturnCodes.hpp>
 
 CMAKE_ON=	BUILD_SHARED_LIBS # DART_VERBOSE
+CMAKE_ARGS=	-DODE_DIR=${LOCALBASE}
 
 DATADIR=	share/dart
 DOCSDIR=	${PREFIX}/share/doc/dart
