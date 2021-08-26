@@ -3,6 +3,7 @@ DISTVERSION=	g20210824
 CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/ \
 		https://ziglang.org/builds/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Language designed for robustness, optimality, and maintainability
