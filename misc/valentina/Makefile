@@ -5,7 +5,7 @@ CATEGORIES=	misc
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sewing pattern drafting tool aiming to remake the garment industry
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE_GPL.txt
 
 USES=		compiler:c++11-lang desktop-file-utils dos2unix gl gmake qmake qt:5
