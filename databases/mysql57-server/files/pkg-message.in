@@ -6,7 +6,7 @@ ie. when you want to use "mysql -u root -p" first you should see password
 in /root/.mysql_secret
 
 MySQL57 has a default %%ETCDIR%%/my.cnf,
-remember to replace it wit your own
+remember to replace it with your own
 or set `mysql_optfile="$YOUR_CNF_FILE` in rc.conf.
 EOM
 }
