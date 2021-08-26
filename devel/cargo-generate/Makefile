@@ -1,6 +1,6 @@
 PORTNAME=	cargo-generate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
+DISTVERSION=	0.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -22,9 +22,9 @@ GH_ACCOUNT=	ashleygwilliams
 CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
-		anyhow-1.0.42 \
+		anyhow-1.0.43 \
 		anymap-0.12.1 \
-		assert_cmd-1.0.7 \
+		assert_cmd-2.0.0 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
@@ -35,9 +35,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		byte-tools-0.3.1 \
 		byteorder-1.4.3 \
 		bytesize-1.0.1 \
-		cargo-0.54.0 \
+		cargo-0.55.0 \
 		cargo-platform-0.1.1 \
-		cargo-util-0.1.0 \
+		cargo-util-0.1.1 \
 		cc-1.0.67 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
@@ -76,7 +76,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		fwdansi-1.1.0 \
 		generic-array-0.12.4 \
 		getrandom-0.2.2 \
-		git2-0.13.20 \
+		git2-0.13.21 \
 		git2-curl-0.14.1 \
 		glob-0.3.0 \
 		globset-0.4.8 \
@@ -90,6 +90,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		ignore-0.4.18 \
 		im-rc-15.0.0 \
 		indicatif-0.16.2 \
+		indoc-1.0.3 \
 		itertools-0.10.0 \
 		itoa-0.4.7 \
 		jobserver-0.1.21 \
@@ -97,7 +98,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		libc-0.2.92 \
-		libgit2-sys-0.12.21+1.1.0 \
+		libgit2-sys-0.12.22+1.1.0 \
 		libnghttp2-sys-0.1.6+1.43.0 \
 		libssh2-sys-0.2.21 \
 		libz-sys-1.1.2 \
@@ -120,9 +121,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		once_cell-1.7.2 \
 		opaque-debug-0.2.3 \
 		opener-0.4.1 \
-		openssl-0.10.35 \
+		openssl-0.10.36 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.65 \
+		openssl-sys-0.9.66 \
 		percent-encoding-2.1.0 \
 		pest-2.1.3 \
 		pest_derive-2.1.0 \
@@ -130,7 +131,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		pest_meta-2.1.3 \
 		pkg-config-0.3.19 \
 		ppv-lite86-0.2.10 \
-		predicates-2.0.1 \
+		predicates-2.0.2 \
 		predicates-core-1.0.2 \
 		predicates-tree-1.0.2 \
 		proc-macro-error-1.0.4 \
@@ -162,8 +163,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		sanitize-filename-0.3.0 \
 		schannel-0.1.19 \
 		scopeguard-1.1.0 \
-		semver-0.10.0 \
-		semver-parser-0.7.0 \
+		semver-1.0.4 \
 		serde-1.0.125 \
 		serde_derive-1.0.125 \
 		serde_ignored-0.1.2 \
@@ -177,7 +177,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		structopt-0.3.22 \
 		structopt-derive-0.4.15 \
 		syn-1.0.67 \
-		tar-0.4.33 \
+		tar-0.4.35 \
 		tempfile-3.2.0 \
 		termcolor-1.1.2 \
 		terminal_size-0.1.16 \
@@ -197,6 +197,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-segmentation-1.7.1 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
+		unindent-0.1.7 \
 		url-2.2.2 \
 		utf8parse-0.1.1 \
 		vcpkg-0.2.11 \
