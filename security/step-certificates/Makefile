@@ -1,6 +1,6 @@
 PORTNAME=	step-certificates
-DISTVERSIONPREFIX=v
-DISTVERSION=	0.16.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.16.2
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -31,8 +31,8 @@ GH_TUPLE=	\
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
 		chzyer:readline:2972be24d48e:chzyer_readline/vendor/github.com/chzyer/readline \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
-		dgraph-io:badger:5d1bab4fc658:dgraph_io_badger_v2/vendor/github.com/dgraph-io/badger/v2 \
 		dgraph-io:badger:v1.6.2:dgraph_io_badger/vendor/github.com/dgraph-io/badger \
+		dgraph-io:badger:v2.2007.3:dgraph_io_badger_v2/vendor/github.com/dgraph-io/badger/v2 \
 		dgraph-io:ristretto:41ebdbffecfd:dgraph_io_ristretto/vendor/github.com/dgraph-io/ristretto \
 		dgryski:go-farm:a6ae2369ad13:dgryski_go_farm/vendor/github.com/dgryski/go-farm \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
@@ -85,7 +85,7 @@ GH_TUPLE=	\
 		smallstep:cli-utils:v0.4.1:smallstep_cli_utils/vendor/go.step.sm/cli-utils \
 		smallstep:crypto:v0.9.0:smallstep_crypto/vendor/go.step.sm/crypto \
 		smallstep:linkedca:27424aae8d25:smallstep_linkedca/vendor/go.step.sm/linkedca \
-		smallstep:nosql:v0.3.6:smallstep_nosql/vendor/github.com/smallstep/nosql \
+		smallstep:nosql:v0.3.7:smallstep_nosql/vendor/github.com/smallstep/nosql \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
 		square:go-jose:v2.5.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \

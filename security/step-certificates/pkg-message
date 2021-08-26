@@ -11,6 +11,15 @@ The hard way would be via the step command.
 
 Ensure to set the STEPPATH environment variable. This makes using the
 commands much simpler.
+
+Following are the defaults for step certificates and can be overridden by rc.conf variables::
+* The service is run under user step customizable by step_ca_user
+* The service is run inder group step customizable by step_ca_group
+* The base directory used for storing CA information is step_ca_stepdir (%%PREFIX%%/etc/step)
+* The CA informations is held under step_ca_steppath (%%PREFIX%%/etc/step/ca)
+* The password required for automatic startup is in step_ca_password (%%PREFIX%%/etc/step/password.txt)
+* By default step certificates logs to syslog with a tag of step_ca
+
 ================================================================================
 EOM
 }
