@@ -3,7 +3,6 @@ man/man1/rubymine.1.gz
 share/applications/rubymine.desktop
 %%DATADIR%%/Install-Linux-tar.txt
 %%DATADIR%%/RMlogo.svg
-%%DATADIR%%/bin/appInfo.xml
 %%DATADIR%%/bin/brokenPlugins.db
 %%DATADIR%%/bin/format.sh
 %%DATADIR%%/bin/icons.db
@@ -460,7 +459,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler-2.1-ea-2.jar
 %%DATADIR%%/lib/bootstrap.jar
-%%DATADIR%%/lib/build-marker-RM-212.4746.90
+%%DATADIR%%/lib/build-marker-RM-212.5080.58
 %%DATADIR%%/lib/byte-buddy-agent-1.10.1.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/classpath.txt
@@ -568,7 +567,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/DatabaseTools/lib/mssql-1.19.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/oracle-1.54.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/postgres-1.35.jar
-%%DATADIR%%/plugins/DatabaseTools/lib/redshift-1.39.jar
+%%DATADIR%%/plugins/DatabaseTools/lib/redshift-1.70.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/snowflake-1.17.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/tips-database-plugin-212.78.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/unidecode-0.0.7.jar
@@ -622,8 +621,8 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-d5a2cc0426b1.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-d5a2cc0426b1.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-185d743362b6.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-185d743362b6.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
