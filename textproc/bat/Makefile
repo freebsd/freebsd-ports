@@ -1,7 +1,7 @@
 PORTNAME=	bat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.2
-PORTREVISION=	1
+DISTVERSION=	0.18.3
+PORTREVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -34,7 +34,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		bit-vec-0.6.3 \
 		bitflags-1.2.1 \
 		bstr-0.2.16 \
-		bugreport-0.4.0 \
+		bugreport-0.4.1 \
 		byteorder-1.4.3 \
 		cc-1.0.67 \
 		cfg-if-1.0.0 \
@@ -66,7 +66,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		getrandom-0.2.2 \
 		git-version-0.3.4 \
 		git-version-macro-0.3.4 \
-		git2-0.13.19 \
+		git2-0.13.20 \
 		glob-0.3.0 \
 		globset-0.4.8 \
 		grep-cli-0.1.6 \
@@ -80,7 +80,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		libc-0.2.95 \
-		libgit2-sys-0.12.20+1.1.0 \
+		libgit2-sys-0.12.21+1.1.0 \
 		libz-sys-1.1.3 \
 		line-wrap-0.1.1 \
 		linked-hash-map-0.5.4 \
