@@ -28,7 +28,6 @@ share/applications/crossfire-client.desktop
 %%DATADIR%%/sounds/gong.wav
 %%DATADIR%%/sounds/knife.ogg
 %%DATADIR%%/sounds/lightning1.wav
-%%DATADIR%%/sounds/magic-thorns-2.ogg
 %%DATADIR%%/sounds/magic.wav
 %%DATADIR%%/sounds/miss-1.ogg
 %%DATADIR%%/sounds/ouch1.wav
@@ -39,9 +38,6 @@ share/applications/crossfire-client.desktop
 %%DATADIR%%/sounds/sounds.conf
 %%DATADIR%%/sounds/squish.wav
 %%DATADIR%%/sounds/step_lth1.ogg
-%%DATADIR%%/sounds/step_lth2.ogg
-%%DATADIR%%/sounds/step_lth3.ogg
-%%DATADIR%%/sounds/step_lth4.ogg
 %%DATADIR%%/sounds/su-fanf.wav
 %%DATADIR%%/sounds/swish.wav
 %%DATADIR%%/sounds/sword-1.ogg

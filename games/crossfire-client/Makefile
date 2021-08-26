@@ -1,7 +1,7 @@
 # Created by: Andreas Klemm <andreas@klemm.gtn.com>
 
 PORTNAME=	crossfire-client
-PORTVERSION=	1.75.0
+PORTVERSION=	1.75.1
 CATEGORIES=	games
 MASTER_SITES=	SF/crossfire/${PORTNAME}/${PORTVERSION}
 
