@@ -1,7 +1,7 @@
 # Created by: Andrew Thompson <andy@fud.org.nz>
 
 PORTNAME=	handbrake
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	multimedia
 DIST_SUBDIR=	${PORTNAME}
 
