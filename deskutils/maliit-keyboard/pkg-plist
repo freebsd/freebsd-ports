@@ -271,7 +271,6 @@ share/doc/maliit-keyboard/COPYING
 share/doc/maliit-keyboard/COPYING.BSD
 share/doc/maliit-keyboard/COPYING.CC-BY
 share/doc/maliit-keyboard/README.md
-share/glib-2.0/schemas/org.maliit.keyboard.maliit.gschema.xml
 share/maliit/keyboard2/devices/default.json
 share/maliit/keyboard2/devices/tablet.json
 share/maliit/keyboard2/icons/erase.png

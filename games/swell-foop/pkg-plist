@@ -1,7 +1,6 @@
 bin/swell-foop
 share/applications/org.gnome.SwellFoop.desktop
 share/dbus-1/services/org.gnome.SwellFoop.service
-share/glib-2.0/schemas/org.gnome.SwellFoop.gschema.xml
 share/help/C/swell-foop/figures/logo.png
 share/help/C/swell-foop/figures/start-game.png
 share/help/C/swell-foop/index.page

@@ -2,6 +2,7 @@
 
 PORTNAME=	gnome-tweaks
 PORTVERSION=	40.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 
@@ -21,6 +22,7 @@ RUN_DEPENDS=	gnome-shell>=3.28:x11/gnome-shell \
 USES=		gettext gnome localbase meson pkgconfig python:3.4+ shebangfix \
 		tar:xz
 USE_GNOME=	gtk30 nautilus3 pygobject3
+GLIB_SCHEMAS=	org.gnome.tweaks.gschema.xml
 SHEBANG_FILES=	gnome-tweak-tool-lid-inhibitor gnome-tweaks \
 		meson-postinstall.py
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

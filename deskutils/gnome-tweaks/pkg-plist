@@ -73,7 +73,6 @@ bin/gnome-tweaks
 %%PYTHON_SITELIBDIR%%/gtweak/widgets.py
 libexec/gnome-tweak-tool-lid-inhibitor
 share/applications/org.gnome.tweaks.desktop
-share/glib-2.0/schemas/org.gnome.tweaks.gschema.xml
 %%DATADIR%%/shell.css
 %%DATADIR%%/shell.ui
 share/icons/hicolor/scalable/apps/org.gnome.tweaks.svg

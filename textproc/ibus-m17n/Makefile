@@ -2,6 +2,7 @@
 
 PORTNAME=	ibus-m17n
 DISTVERSION=	1.4.7
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,6 +25,7 @@ GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ibus
 USE_GNOME=	glib20 gtk20 atk gdkpixbuf2 cairo pango intltool
+GLIB_SCHEMAS=	org.freedesktop.ibus.engine.m17n.gschema.xml
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
