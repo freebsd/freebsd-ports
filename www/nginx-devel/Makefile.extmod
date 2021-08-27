@@ -226,7 +226,7 @@ LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUA_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
-LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.19:lua
+LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.20:lua
 LUA_VARS=		DSO_EXTMODS+=lua
 
 LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.4:link
@@ -239,7 +239,7 @@ MEMC_VARS=		DSO_EXTMODS+=memc
 
 MODSECURITY3_IMPLIES=		HTTP_ADDITION HTTP_IMAGE_FILTER HTTP_GUNZIP_FILTER HTTP_XSLT
 MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
-MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:v1.0.1:modsecurity3
+MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:v1.0.2:modsecurity3
 MODSECURITY3_VARS=		DSO_EXTMODS+=modsecurity3
 
 NAXSI_NGINX_VER=	1.3
