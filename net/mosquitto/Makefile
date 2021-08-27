@@ -2,7 +2,7 @@
 
 PORTNAME=	mosquitto
 PORTVERSION=	2.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://mosquitto.org/files/source/
 
