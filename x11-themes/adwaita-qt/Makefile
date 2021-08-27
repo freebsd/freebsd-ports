@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	adwaita-qt
-DISTVERSION=	1.3.1
+DISTVERSION=	1.4.0
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	5
 
@@ -10,6 +10,8 @@ COMMENT=	Adwaita theme for Qt applications
 
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
+
+BUILD_DEPENDS=	sassc:textproc/sassc
 
 USES=		cmake compiler:c++11-lib localbase pkgconfig qt:5 xorg
 USE_QT=		core dbus gui widgets x11extras \
