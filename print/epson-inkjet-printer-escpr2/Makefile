@@ -1,10 +1,10 @@
 PORTNAME=	epson-inkjet-printer-escpr2
-DISTVERSION=	1.1.34
+DISTVERSION=	1.1.41
 DISTVERSIONSUFFIX=	-1lsb3.2
 CATEGORIES=	print
-MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/12/85/50/51035a6037dc07e002069d6cd9219ff70f22270e/:i386 \
-		https://download3.ebz.epson.net/dsc/f/03/00/12/85/50/33989da474fd3f2c2c918666257fe4c80518bb91/:amd64 \
-		https://download3.ebz.epson.net/dsc/f/03/00/12/85/50/9c54658828fe3ee8409df62f73fe36a68fe7194c/:SOURCE
+MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/13/00/77/d5e14297c53bd6a0cbcbf05f954c8dbf44cab976/:i386 \
+		https://download3.ebz.epson.net/dsc/f/03/00/13/00/77/d6e01eedf357b2333f219e79e86206800e4f1107/:amd64 \
+		https://download3.ebz.epson.net/dsc/f/03/00/13/00/77/a75e7121d6af634913b09a476118395422f9f479/:SOURCE
 EXTRACT_SUFX=	.rpm
 DISTFILES_amd64=	${DISTNAME}.x86_64${EXTRACT_SUFX}:amd64
 DISTFILES_i386=	${DISTNAME}.i486${EXTRACT_SUFX}:i386
