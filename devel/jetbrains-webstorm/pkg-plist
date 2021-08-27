@@ -2,7 +2,6 @@ bin/webstorm
 man/man1/webstorm.1.gz
 share/applications/webstorm.desktop
 %%DATADIR%%/Install-Linux-tar.txt
-%%DATADIR%%/bin/appInfo.xml
 %%DATADIR%%/bin/brokenPlugins.db
 %%DATADIR%%/bin/format.sh
 %%DATADIR%%/bin/icons.db
@@ -30,7 +29,7 @@ share/applications/webstorm.desktop
 %%DATADIR%%/lib/async-profiler-2.1-ea-2.jar
 %%DATADIR%%/lib/bootstrap.jar
 %%DATADIR%%/lib/branding.jar
-%%DATADIR%%/lib/build-marker-WS-212.4746.80
+%%DATADIR%%/lib/build-marker-WS-212.5080.54
 %%DATADIR%%/lib/byte-buddy-agent-1.10.1.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/classpath.txt
@@ -87,7 +86,7 @@ share/applications/webstorm.desktop
 %%DATADIR%%/lib/rngom-20051226-patched.jar
 %%DATADIR%%/lib/slf4j.jar
 %%DATADIR%%/lib/stats.jar
-%%DATADIR%%/lib/tips-webstorm-203.2.jar
+%%DATADIR%%/lib/tips-webstorm-212.6.jar
 %%DATADIR%%/lib/trang-core.jar
 %%DATADIR%%/lib/util.jar
 %%DATADIR%%/lib/webstorm.jar
@@ -196,8 +195,8 @@ share/applications/webstorm.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-d5a2cc0426b1.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-d5a2cc0426b1.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-185d743362b6.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-185d743362b6.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -1708,6 +1707,7 @@ share/applications/webstorm.desktop
 %%DATADIR%%/plugins/svn4idea/lib/sqlite-jdbc-3.34.0.jar
 %%DATADIR%%/plugins/svn4idea/lib/svn4idea.jar
 %%DATADIR%%/plugins/tailwindcss/lib/tailwindcss.jar
+%%DATADIR%%/plugins/tailwindcss/server/tailwindServer.js
 %%DATADIR%%/plugins/tasks-time-tracking/lib/tasks-time-tracking.jar
 %%DATADIR%%/plugins/tasks/lib/axis-1.4.jar
 %%DATADIR%%/plugins/tasks/lib/axis-jaxrpc-1.4.jar
