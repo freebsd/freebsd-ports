@@ -3,7 +3,7 @@ PORTVERSION=	1.0.0.b3.20201016
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Open source ARC implementation
+COMMENT=	Library to validate use of certain identifiers in messages
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
