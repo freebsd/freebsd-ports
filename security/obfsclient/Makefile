@@ -13,6 +13,9 @@ LICENSE=	BSD2CLAUSE MIT ISCL BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	https://github.com/Yawning/obfsclient/issues/37
+EXPIRATION_DATE=	2021-12-31
+
 LIB_DEPENDS=	liballium-1.0.so:devel/liballium \
 		libevent.so:devel/libevent
 
