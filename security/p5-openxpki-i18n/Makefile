@@ -1,8 +1,8 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
 
 PORTNAME=	openxpki
-PORTVERSION=	3.14.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	3.14.4
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	-i18n
@@ -20,7 +20,8 @@ USE_GITHUB=	yes
 
 ALL_TARGET=	scan default
 NO_ARCH=	yes
-PORTSCOUT=	limitw:1,even # stay with stable versions only
+# stay with stable versions only:
+PORTSCOUT=	limitw:1,even
 
 WRKSRC_SUBDIR=	core/i18n
 
