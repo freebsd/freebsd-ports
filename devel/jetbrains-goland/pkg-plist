@@ -2,7 +2,6 @@ bin/goland
 man/man1/goland.1.gz
 share/applications/goland.desktop
 %%DATADIR%%/Install-Linux-tar.txt
-%%DATADIR%%/bin/appInfo.xml
 %%DATADIR%%/bin/brokenPlugins.db
 %%DATADIR%%/bin/format.sh
 %%DATADIR%%/bin/goland.png
@@ -29,7 +28,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler-2.1-ea-2.jar
 %%DATADIR%%/lib/bootstrap.jar
-%%DATADIR%%/lib/build-marker-GO-212.4746.93
+%%DATADIR%%/lib/build-marker-GO-212.5080.40
 %%DATADIR%%/lib/byte-buddy-agent-1.10.1.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/classpath.txt
@@ -140,7 +139,7 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/DatabaseTools/lib/mssql-1.19.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/oracle-1.54.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/postgres-1.35.jar
-%%DATADIR%%/plugins/DatabaseTools/lib/redshift-1.39.jar
+%%DATADIR%%/plugins/DatabaseTools/lib/redshift-1.70.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/snowflake-1.17.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/tips-database-plugin-212.78.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/unidecode-0.0.7.jar
@@ -194,8 +193,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-d5a2cc0426b1.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-d5a2cc0426b1.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-185d743362b6.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-185d743362b6.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -347,8 +346,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/git4idea/lib/git4idea.jar
 %%DATADIR%%/plugins/github/lib/github.jar
 %%DATADIR%%/plugins/go-ide/lib/go-ide.jar
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-ba6d009e1807-dab9960ad90b.ijx
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-ba6d009e1807-dab9960ad90b.txt
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-2ac2f442b3f8-dab9960ad90b.ijx
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-2ac2f442b3f8-dab9960ad90b.txt
 %%DATADIR%%/plugins/go-sharedIndexes-bundled/lib/go-sharedIndexes-bundled.jar
 %%DATADIR%%/plugins/go-template/lib/go-template.jar
 %%DATADIR%%/plugins/go/lib/completion-ranking-go-0.2.2.jar
