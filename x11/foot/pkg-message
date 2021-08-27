@@ -11,9 +11,8 @@ or providing a separate entry for "foot --term=foot" e.g.,
   foot|foot terminal emulator:\
   	:bw:hs:\
   	:it#8:\
-  	:SF=\E[%dS:SR=\E[%dT:bt=\E[Z:ds=\E]2;\E\\:ec=\E[%dX:\
-  	:fs=\E\\:kb=\177:mb=\E[5m:me=\E[0m:mh=\E[2m:mm=\E[?1034h:\
-  	:mo=\E[?1034l:nw@:\
+  	:IC=\E[%d@:K2@:SF=\E[%dS:SR=\E[%dT:bt=\E[Z:ds=\E]2;\E\\:\
+  	:ec=\E[%dX:fs=\E\\:kb=\177:mb=\E[5m:me=\E[0m:mh=\E[2m:nw@:\
   	:te=\E[?1049l\E[23;0;0t:ti=\E[?1049h\E[22;0;0t:\
   	:ts=\E]2;:vb=\E]555\E\\:tc=xterm-256color:
 EOM

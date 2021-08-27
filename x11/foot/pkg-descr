@@ -14,7 +14,7 @@ Features:
 - Color emoji support
 - IME (via text-input-v3)
 - Multi-seat
-- TrueColors (32bpp)
+- True Color (24bpp)
 - Synchronized Updates
 - Sixel image support
 
