@@ -4,7 +4,7 @@ PORTNAME=	stress
 PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://repository.timesys.com/buildsources/s/stress/
+MASTER_SITES=	http://repository.timesys.com/buildsources/s/stress/stress-${PORTVERSION}/
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Tool to impose load on and stress test Unix-like systems
