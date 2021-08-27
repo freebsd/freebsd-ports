@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	granite
-DISTVERSION=	6.1.0
+DISTVERSION=	6.1.1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -13,9 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 RUN_DEPENDS=	contractor:sysutils/contractor \
-		gsettings-desktop-schemas>=3.28.1:devel/gsettings-desktop-schemas
+		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USES=		gettext gnome meson pkgconfig python:3.5+,build tar:xz
+USES=		gettext gnome meson pkgconfig python:3.6+,build tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 USE_GNOME=	cairo glib20 gtk30 introspection:build
