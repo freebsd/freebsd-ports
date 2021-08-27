@@ -99,6 +99,7 @@ OPTIONS_DEFAULT_powerpc64=	${OPTIONS_DEFAULT_powerpc64_${OSREL:R}} OPENMP
 OPTIONS_DEFAULT_powerpc64_13=	GOLD
 OPTIONS_DEFAULT_powerpc64_14=	GOLD
 OPTIONS_DEFAULT_powerpc64le=	GOLD OPENMP
+OPTIONS_EXCLUDE_FreeBSD_11=	COMPILER_RT
 OPTIONS_EXCLUDE_i386=	FLANG
 OPTIONS_EXCLUDE_powerpc=	FLANG
 OPTIONS_DEFAULT_riscv64=	OPENMP
@@ -391,7 +392,7 @@ _BE_LIBS_PowerPC=	AsmParser Disassembler
 _BE_LIBS_RISCV=		AsmParser Disassembler
 _BE_LIBS_Sparc=		AsmParser Disassembler
 _BE_LIBS_SystemZ=	AsmParser Disassembler
-_BE_LIBS_WebAssembly=	AsmParser Disassembler
+_BE_LIBS_WebAssembly=	AsmParser Disassembler Utils
 _BE_LIBS_X86=		AsmParser Disassembler
 _BE_LIBS_XCore=		Disassembler
 .for BE in FREEBSD NATIVE STANDARD
@@ -444,6 +445,7 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.msan-x86_64.a.syms \
 	libclang_rt.msan_cxx-x86_64.a \
 	libclang_rt.msan_cxx-x86_64.a.syms \
+	libclang_rt.orc-x86_64.a \
 	libclang_rt.profile-x86_64.a \
 	libclang_rt.safestack-x86_64.a \
 	libclang_rt.stats-x86_64.a \
@@ -598,6 +600,7 @@ do-test:
 	fi
 
 build-plist:
+	@[ -d ${STAGEDIR} ] || (echo "Can't make plist before package is staged ${STAGEDIR}" && exit 1)
 	${RM} ${PLIST} ${PLIST}.tmp
 	${ECHO_CMD} "@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<" >> ${PLIST}.tmp
 	${ECHO_CMD} "@comment Alter build-plist target and regenerate as required" >> ${PLIST}.tmp

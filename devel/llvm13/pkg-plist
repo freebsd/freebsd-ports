@@ -4559,7 +4559,6 @@ llvm%%LLVM_SUFFIX%%/lib/libLLVMTarget.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMTextAPI.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMTransformUtils.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMVectorize.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMWebAssemblyUtils.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMWindowsManifest.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMXRay.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMipo.a
