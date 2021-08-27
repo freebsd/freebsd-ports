@@ -1,0 +1,9 @@
+include/openarc/arc.h
+lib/libopenarc.a
+lib/libopenarc.so
+lib/libopenarc.so.0
+lib/libopenarc.so.0.0.0
+libdata/pkgconfig/openarc.pc
+man/man5/openarc.conf.5.gz
+man/man8/openarc.8.gz
+sbin/openarc

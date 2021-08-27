@@ -467,6 +467,7 @@
     SUBDIR += oneshot
     SUBDIR += onionbalance
     SUBDIR += onionshare
+    SUBDIR += openarc
     SUBDIR += opencart
     SUBDIR += orangehrm
     SUBDIR += osrm-backend
