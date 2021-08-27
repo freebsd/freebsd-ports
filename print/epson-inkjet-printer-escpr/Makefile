@@ -1,8 +1,8 @@
 PORTNAME=	epson-inkjet-printer-escpr
-DISTVERSION=	1.7.11
+DISTVERSION=	1.7.17
 DISTVERSIONSUFFIX=	-1lsb3.2
 CATEGORIES=	print
-MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/12/84/42/69bb076469542fe702ada5ea53a4ea4773d407b0/
+MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/12/99/78/73605b3f8aac63694fdabee6bd43389731696cd9/
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	Epson Inkjet Printer Driver (ESC/P-R) for Linux
