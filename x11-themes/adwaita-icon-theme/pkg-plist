@@ -2121,6 +2121,7 @@ share/icons/Adwaita/cursors/not-allowed
 share/icons/Adwaita/cursors/ns-resize
 share/icons/Adwaita/cursors/nw-resize
 share/icons/Adwaita/cursors/nwse-resize
+share/icons/Adwaita/cursors/openhand
 share/icons/Adwaita/cursors/pencil
 share/icons/Adwaita/cursors/pirate
 share/icons/Adwaita/cursors/plus
@@ -2550,6 +2551,7 @@ share/icons/Adwaita/scalable/status/battery-level-90-symbolic.svg
 share/icons/Adwaita/scalable/status/battery-missing-symbolic.svg
 share/icons/Adwaita/scalable/status/bluetooth-active-symbolic.svg
 share/icons/Adwaita/scalable/status/bluetooth-disabled-symbolic.svg
+share/icons/Adwaita/scalable/status/bluetooth-disconnected-symbolic.svg
 share/icons/Adwaita/scalable/status/bluetooth-hardware-disabled-symbolic.svg
 share/icons/Adwaita/scalable/status/call-incoming-symbolic.svg
 share/icons/Adwaita/scalable/status/call-missed-symbolic.svg
@@ -2561,7 +2563,6 @@ share/icons/Adwaita/scalable/status/changes-prevent-symbolic.svg
 share/icons/Adwaita/scalable/status/channel-insecure-symbolic.svg
 share/icons/Adwaita/scalable/status/channel-secure-symbolic.svg
 share/icons/Adwaita/scalable/status/computer-fail-symbolic.svg
-share/icons/Adwaita/scalable/status/contact-new-symbolic.svg
 share/icons/Adwaita/scalable/status/content-loading-symbolic.svg
 share/icons/Adwaita/scalable/status/daytime-sunrise-symbolic.svg
 share/icons/Adwaita/scalable/status/daytime-sunset-symbolic.svg
@@ -2595,6 +2596,7 @@ share/icons/Adwaita/scalable/status/microphone-sensitivity-muted-symbolic.svg
 share/icons/Adwaita/scalable/status/network-cellular-2g-symbolic.svg
 share/icons/Adwaita/scalable/status/network-cellular-3g-symbolic.svg
 share/icons/Adwaita/scalable/status/network-cellular-4g-symbolic.svg
+share/icons/Adwaita/scalable/status/network-cellular-5g-symbolic.svg
 share/icons/Adwaita/scalable/status/network-cellular-acquiring-symbolic.svg
 share/icons/Adwaita/scalable/status/network-cellular-connected-symbolic.svg
 share/icons/Adwaita/scalable/status/network-cellular-disabled-symbolic.svg
@@ -2636,6 +2638,7 @@ share/icons/Adwaita/scalable/status/network-wireless-signal-good-symbolic.svg
 share/icons/Adwaita/scalable/status/network-wireless-signal-none-symbolic.svg
 share/icons/Adwaita/scalable/status/network-wireless-signal-ok-symbolic.svg
 share/icons/Adwaita/scalable/status/network-wireless-signal-weak-symbolic.svg
+share/icons/Adwaita/scalable/status/night-light-disabled-symbolic.svg
 share/icons/Adwaita/scalable/status/night-light-symbolic.svg
 share/icons/Adwaita/scalable/status/non-starred-symbolic.svg
 share/icons/Adwaita/scalable/status/notifications-disabled-symbolic.svg
@@ -2643,6 +2646,9 @@ share/icons/Adwaita/scalable/status/orientation-landscape-inverse-symbolic.svg
 share/icons/Adwaita/scalable/status/orientation-landscape-symbolic.svg
 share/icons/Adwaita/scalable/status/orientation-portrait-left-symbolic.svg
 share/icons/Adwaita/scalable/status/orientation-portrait-right-symbolic.svg
+share/icons/Adwaita/scalable/status/power-profile-balanced-symbolic.svg
+share/icons/Adwaita/scalable/status/power-profile-performance-symbolic.svg
+share/icons/Adwaita/scalable/status/power-profile-power-saver-symbolic.svg
 share/icons/Adwaita/scalable/status/printer-error-symbolic.svg
 share/icons/Adwaita/scalable/status/printer-printing-symbolic.svg
 share/icons/Adwaita/scalable/status/printer-warning-symbolic.svg

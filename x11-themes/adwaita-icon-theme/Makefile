@@ -1,9 +1,9 @@
 # Created by: Gustau Pérez i Querol <gustau.perez@gmail.com>
 
 PORTNAME=	adwaita-icon-theme
-PORTVERSION=	3.38.0
+DISTVERSION=	40.1.1
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R:R}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
