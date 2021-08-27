@@ -221,6 +221,7 @@
     SUBDIR += meta1
     SUBDIR += metamail
     SUBDIR += mew
+    SUBDIR += mew-devel
     SUBDIR += milter-bogom
     SUBDIR += milter-callback
     SUBDIR += milter-greylist

@@ -1,0 +1,27 @@
+--- info/Makefile.orig	2021-01-31 07:40:24 UTC
++++ info/Makefile
+@@ -15,7 +15,7 @@
+ ## EDIT THE FOLLOWINGS
+ ##
+ 
+-prefix=/usr/local
++prefix=${PREFIX}
+ infodir=$(prefix)/info
+ 
+ EMACS=emacs
+@@ -59,6 +59,7 @@ mew.info: tmp.texi
+ 	$(EMACS) -batch -q -no-site-file \
+ 		--eval "(set-default-coding-systems 'utf-8-unix)" \
+ 		-l texinfmt -f batch-texinfo-format $?
++	$(RM) tmp.text
+ 
+ tmpj.texi: mew.texi
+ 	sed -e 's/@setfilename mew.info/@setfilename mew.ja.info/' \
+@@ -69,6 +70,7 @@ mew.ja.info: tmpj.texi
+ 	$(EMACS) -batch -q -no-site-file \
+ 		--eval "(set-default-coding-systems 'utf-8-unix)" \
+ 		-l texinfmt -f batch-texinfo-format $?
++	$(RM) tmpj.text
+ 
+ install: install-info
+ install-info:
