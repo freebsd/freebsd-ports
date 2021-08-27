@@ -201,6 +201,7 @@
     SUBDIR += viewfax
     SUBDIR += vrflash
     SUBDIR += wsjtx
+    SUBDIR += wsjtz
     SUBDIR += wwl
     SUBDIR += wy60
     SUBDIR += xastir

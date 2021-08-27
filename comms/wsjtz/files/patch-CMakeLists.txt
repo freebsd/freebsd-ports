@@ -1,0 +1,78 @@
+--- CMakeLists.txt.orig	2021-02-08 14:51:20 UTC
++++ CMakeLists.txt
+@@ -141,6 +141,12 @@ attach a debugger which will then receive the console 
+ # install locations
+ #
+ 
++if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++  set (FREEBSD TRUE)
++  link_directories("/usr/lib" "${LOCALBASE}/lib")
++  include_directories("/usr/include" "${LOCALBASE}/include")
++endif()
++
+ if (APPLE)
+   set (CMAKE_INSTALL_BINDIR ${CMAKE_PROJECT_NAME}.app/Contents/MacOS)
+   set (CMAKE_INSTALL_DATAROOTDIR ${CMAKE_PROJECT_NAME}.app/Contents/Resources)
+@@ -847,8 +853,20 @@ find_package (Boost 1.62 REQUIRED COMPONENTS log_setup
+ #
+ # OpenMP
+ #
+-find_package (OpenMP)
++#    OpenMP_C_FLAGS - flags to add to the C compiler for OpenMP support
++#    OpenMP_CXX_FLAGS - flags to add to the CXX compiler for OpenMP support
++#    OpenMP_Fortran_FLAGS - flags to add to the Fortran compiler for OpenMP support
++#    OPENMP_FOUND - true if openmp is detected
+ 
++if (FREEBSD)
++  set (OpenMP_C_FLAGS "-openmp")
++  set (OpenMP_CXX_FLAGS "-openmp")
++  set (OpenMP_Fortran_FLAGS "-openmp")
++  set (OPENMP_FOUND TRUE)
++else()
++  find_package (OpenMP)
++endif()
++
+ #
+ # fftw3 single precision library
+ #
+@@ -1135,7 +1153,7 @@ add_executable (encode77 lib/77bit/encode77.f90)
+ target_link_libraries (encode77 wsjt_fort wsjt_cxx)
+ 
+ add_executable (wsprsim ${wsprsim_CSRCS})
+-target_link_libraries (wsprsim ${LIBM_LIBRARIES})
++target_link_libraries (wsprsim ${LIBM_LIBRARIES} -lm)
+ 
+ add_executable (jt4code lib/jt4code.f90)
+ target_link_libraries (jt4code wsjt_fort wsjt_cxx)
+@@ -1177,6 +1195,12 @@ target_link_libraries (ldpcsim240_74 wsjt_fort wsjt_cx
+ 
+ endif(WSJT_BUILD_UTILS)
+ 
++if(FREEBSD)
++   set (extraLIBS "ltdl" "usb")
++ else()
++   set (extraLIBS "")
++endif()
++
+ add_executable (fmtave lib/fmtave.f90)
+ 
+ add_executable (fcal lib/fcal.f90)
+@@ -1561,12 +1585,12 @@ install (PROGRAMS
+   RENAME rigctld-wsjtx${CMAKE_EXECUTABLE_SUFFIX}
+   )
+ 
+-install (PROGRAMS
+-  ${RIGCTLCOM_EXE}
+-  DESTINATION ${CMAKE_INSTALL_BINDIR}
+-  #COMPONENT runtime
+-  RENAME rigctlcom-wsjtx${CMAKE_EXECUTABLE_SUFFIX}
+-  )
++#install (PROGRAMS
++#  ${RIGCTLCOM_EXE}
++#  DESTINATION ${CMAKE_INSTALL_BINDIR}
++#  #COMPONENT runtime
++#  RENAME rigctlcom-wsjtx${CMAKE_EXECUTABLE_SUFFIX}
++#  )
+ 
+ install (FILES
+   README
