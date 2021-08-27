@@ -1,6 +1,5 @@
 PORTNAME=	mandelbulber
-PORTVERSION=	2.25
-PORTREVISION=	1
+PORTVERSION=	2.26
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -21,7 +20,7 @@ GH_PROJECT=	${PORTNAME}2
 
 USES=		cmake compiler:c++11-lang gnome jpeg localbase:ldflags \
 		pkgconfig qt:5
-USE_QT=		core widgets network gui multimedia testlib \
+USE_QT=		core widgets network gui multimedia testlib concurrent \
 		qmake_build buildtools_build uitools_build
 INSTALLS_ICONS=	yes
 
