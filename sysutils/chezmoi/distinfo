@@ -1,6 +1,6 @@
-TIMESTAMP = 1629399188
-SHA256 (twpayne-chezmoi-v2.1.5_GH0.tar.gz) = 50d1ea421806969b0214acfc5df76d9093ae1b568d00cb7bd7bfd91bb8023387
-SIZE (twpayne-chezmoi-v2.1.5_GH0.tar.gz) = 2295979
+TIMESTAMP = 1630080736
+SHA256 (twpayne-chezmoi-v2.1.6_GH0.tar.gz) = 8de3af40225154d3018187d33034eaa92006b0d4a6ebea7c56119e9fba5083c3
+SIZE (twpayne-chezmoi-v2.1.6_GH0.tar.gz) = 2302728
 SHA256 (Masterminds-goutils-v1.1.1_GH0.tar.gz) = 6eed023c54f386a71f360e19d34f7a43e640ac44dfc39c22ad4afd7ae04aaa3d
 SIZE (Masterminds-goutils-v1.1.1_GH0.tar.gz) = 14847
 SHA256 (Masterminds-semver-v3.1.1_GH0.tar.gz) = d029a39800f201d5b95ec5dbf653e5b20aab757783a6876be1b3017d1c4a444f
