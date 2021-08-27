@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	rehex
-PORTVERSION=	0.3.91
+PORTVERSION=	0.3.92
 CATEGORIES=	editors
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -22,10 +22,6 @@ GH_ACCOUNT=	solemnwarning
 PORTDOCS=	CHANGES.txt
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,OpenBSD,${OPSYS},' \
-		${WRKSRC}/include/portable_endian.h
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
