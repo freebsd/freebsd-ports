@@ -20,7 +20,6 @@ LIB_DEPENDS=	libfaad.so:audio/faad \
 USES=		gmake ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ralph-irving
-GH_PROJECT=	squeezelite
 GH_TAGNAME=	7b13fd9
 
 OPTIONS_DEFINE=	SSL FFMPEG RESAMPLE DSD SELFPIPE OPUS LINKALL

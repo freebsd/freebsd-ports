@@ -21,7 +21,6 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
-GH_PROJECT=	pulseaudio-module-xrdp
 
 PLIST_FILES=	`${PULSE_MODDIR}`/module-xrdp-sink.so \
 		`${PULSE_MODDIR}`/module-xrdp-source.so

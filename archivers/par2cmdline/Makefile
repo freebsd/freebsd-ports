@@ -15,7 +15,6 @@ GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Parchive
-GH_PROJECT=	par2cmdline
 
 PORTDOCS=	README
 CONFLICTS=	par2cmdline-tbb-[0-9]*

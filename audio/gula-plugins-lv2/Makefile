@@ -16,7 +16,6 @@ USES=		gmake localbase pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	steveb
-GH_PROJECT=	gula-plugins
 GH_TAGNAME=	67578fa01a6b1a4d883ab0fe8ceaa4afe4e3af06
 
 CXXFLAGS+=	-fPIC

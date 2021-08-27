@@ -18,7 +18,6 @@ USES=		cmake:insource compiler:c++11-lang pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	zynaddsubfx
 GH_TUPLE=	DISTRHO:DPF:e0d8e14a14d407648768da7e34bcf31812245387:d/DPF \
 		fundamental:rtosc:a86bb27bd16d796b10104f264e8ea96130c1d61c:e/rtosc \
 		zynaddsubfx:instruments:39e17e1c5c3db56fe9d0308af28be90f172e455e:f/instruments
