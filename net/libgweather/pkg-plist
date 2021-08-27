@@ -14,8 +14,6 @@ lib/libgweather-3.so.16.0.0
 lib/libgweather/Locations.bin
 libdata/pkgconfig/gweather-3.0.pc
 share/gir-1.0/GWeather-3.0.gir
-share/glib-2.0/schemas/org.gnome.GWeather.enums.xml
-share/glib-2.0/schemas/org.gnome.GWeather.gschema.xml
 %%DATADIR%%/Locations.xml
 %%DATADIR%%/locations.dtd
 share/locale/af/LC_MESSAGES/libgweather-3.0.mo
