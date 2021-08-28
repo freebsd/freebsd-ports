@@ -1,8 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	libsoup
-PORTVERSION=	2.72.0
-PORTREVISION=	4
+DISTVERSION=	2.74.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -58,7 +57,7 @@ MESON_ARGS=	-Dvapi=disabled \
 		-Dgnome=true \
 		-Dbrotli=disabled
 
-LIBVERSION=	1.11.0
+LIBVERSION=	1.11.1
 PLIST_SUB=	VERSION="2.4" LIBVERSION=${LIBVERSION}
 
 PORTSCOUT=	limitw:1,even
