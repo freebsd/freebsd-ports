@@ -14,6 +14,9 @@ COMMENT=	VoIP and video conferencing application
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Last release in 2013, not actively maintained
+EXPIRATION_DATE=	2021-09-30
+
 BUILD_DEPENDS=	boost-libs>=1.53:devel/boost-libs \
 		v4l_compat>=0:multimedia/v4l_compat \
 		gnome-icon-theme>=3.0.0:misc/gnome-icon-theme

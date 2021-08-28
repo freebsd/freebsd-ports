@@ -1,6 +1,7 @@
 bin/ekiga
 bin/ekiga-config-tool
 %%DBUS%%bin/ekiga-helper
+%%ETCDIR%%/ekiga.schemas
 lib/ekiga/%%VERSION%%/libekiga.so
 man/man1/ekiga.1.gz
 %%AVAHI%%lib/ekiga/%%VERSION%%/plugins/libgmavahi.so
