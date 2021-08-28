@@ -10,8 +10,7 @@ DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Distributed document-oriented "NoSQL" database (5.0.x Branch)
 
-# mongodb is SSPLv1, C++ driver is APACHE20
-LICENSE=	SSPLv1 APACHE20
+LICENSE=	SSPLv1 APACHE20 # mongodb is SSPLv1, C++ driver is APACHE20
 LICENSE_COMB=	multi
 LICENSE_NAME_SSPLv1=	Server Side Public License Version 1
 LICENSE_FILE_SSPLv1=	${WRKSRC}/LICENSE-Community.txt
@@ -28,13 +27,18 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
 		libsnappy.so:archivers/snappy
 
-USES=		compiler:c++17-lang cpe python:3.5+,build scons
+USES=		compiler:c++17-lang cpe python:3.5+,build scons shebangfix
 USE_RC_SUBR=	mongod
 
 CONFLICTS_INSTALL=	mongodb36 mongodb4[024]
 
 OPTIONS_DEFINE=	LTO SASL SSL
 OPTIONS_DEFAULT=LTO SASL SSL
+OPTIONS_EXCLUDE_aarch64=        ${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
+OPTIONS_EXCLUDE_aarch64_14=     LTO # Does not work with llvm12 on aarch64.
+
+SHEBANG_FILES=  buildscripts/scons.py
+python_OLD_CMD= @python_interpreter@
 
 MAKE_ARGS=	--use-system-zlib \
 		--use-system-pcre \
@@ -79,9 +83,12 @@ CPE_PRODUCT=	mongodb
 pre-patch:
 	${MV} ${WRKSRC}/src/third_party/wiredtiger/src/checksum/power8/crc32.sx ${WRKSRC}/src/third_party/wiredtiger/src/checksum/power8/crc32.S
 
+do-build:
+	${WRKSRC}/buildscripts/scons.py	-C ${WRKSRC} ${MAKE_ARGS}
+
 do-install:
 .for f in mongo mongod mongos
-	${INSTALL_PROGRAM} ${WRKSRC}/build/install${PREFIX}/bin/${f} ${STAGEDIR}${PREFIX}/bin
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/rpm/mongod.conf ${STAGEDIR}${PREFIX}/etc/mongodb.conf.sample
 
