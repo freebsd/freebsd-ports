@@ -1,7 +1,7 @@
 # Created by: Timothy Beyer <beyert@cs.ucr.edu>
 
 PORTNAME=	racer
-DISTVERSION=	2.1.46
+DISTVERSION=	2.1.48
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -16,7 +16,6 @@ USES=		cargo
 CARGO_CRATES=	aho-corasick-0.7.10 \
 		annotate-snippets-0.8.0 \
 		ansi_term-0.11.0 \
-		arrayvec-0.5.2 \
 		arrayvec-0.7.0 \
 		atty-0.2.14 \
 		autocfg-1.0.0 \
@@ -71,7 +70,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		psm-0.1.8 \
 		quick-error-1.2.3 \
 		quote-1.0.3 \
-		racer-2.1.45 \
+		racer-2.1.47 \
 		racer-cargo-metadata-0.1.2 \
 		racer-interner-0.1.0 \
 		racer-testutils-0.1.0 \
@@ -85,40 +84,40 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		regex-syntax-0.6.17 \
 		remove_dir_all-0.5.2 \
 		rls-span-0.5.2 \
-		rustc-ap-rustc_arena-712.0.0 \
 		rustc-ap-rustc_arena-718.0.0 \
-		rustc-ap-rustc_ast-712.0.0 \
+		rustc-ap-rustc_arena-722.0.0 \
 		rustc-ap-rustc_ast-718.0.0 \
-		rustc-ap-rustc_ast_pretty-712.0.0 \
+		rustc-ap-rustc_ast-722.0.0 \
 		rustc-ap-rustc_ast_pretty-718.0.0 \
-		rustc-ap-rustc_data_structures-712.0.0 \
+		rustc-ap-rustc_ast_pretty-722.0.0 \
 		rustc-ap-rustc_data_structures-718.0.0 \
-		rustc-ap-rustc_errors-712.0.0 \
+		rustc-ap-rustc_data_structures-722.0.0 \
 		rustc-ap-rustc_errors-718.0.0 \
-		rustc-ap-rustc_feature-712.0.0 \
+		rustc-ap-rustc_errors-722.0.0 \
 		rustc-ap-rustc_feature-718.0.0 \
-		rustc-ap-rustc_fs_util-712.0.0 \
+		rustc-ap-rustc_feature-722.0.0 \
 		rustc-ap-rustc_fs_util-718.0.0 \
-		rustc-ap-rustc_graphviz-712.0.0 \
+		rustc-ap-rustc_fs_util-722.0.0 \
 		rustc-ap-rustc_graphviz-718.0.0 \
-		rustc-ap-rustc_index-712.0.0 \
+		rustc-ap-rustc_graphviz-722.0.0 \
 		rustc-ap-rustc_index-718.0.0 \
-		rustc-ap-rustc_lexer-712.0.0 \
+		rustc-ap-rustc_index-722.0.0 \
 		rustc-ap-rustc_lexer-718.0.0 \
-		rustc-ap-rustc_lint_defs-712.0.0 \
+		rustc-ap-rustc_lexer-722.0.0 \
 		rustc-ap-rustc_lint_defs-718.0.0 \
-		rustc-ap-rustc_macros-712.0.0 \
+		rustc-ap-rustc_lint_defs-722.0.0 \
 		rustc-ap-rustc_macros-718.0.0 \
-		rustc-ap-rustc_parse-712.0.0 \
+		rustc-ap-rustc_macros-722.0.0 \
 		rustc-ap-rustc_parse-718.0.0 \
-		rustc-ap-rustc_serialize-712.0.0 \
+		rustc-ap-rustc_parse-722.0.0 \
 		rustc-ap-rustc_serialize-718.0.0 \
-		rustc-ap-rustc_session-712.0.0 \
+		rustc-ap-rustc_serialize-722.0.0 \
 		rustc-ap-rustc_session-718.0.0 \
-		rustc-ap-rustc_span-712.0.0 \
+		rustc-ap-rustc_session-722.0.0 \
 		rustc-ap-rustc_span-718.0.0 \
-		rustc-ap-rustc_target-712.0.0 \
+		rustc-ap-rustc_span-722.0.0 \
 		rustc-ap-rustc_target-718.0.0 \
+		rustc-ap-rustc_target-722.0.0 \
 		rustc-hash-1.1.0 \
 		rustc-rayon-0.3.1 \
 		rustc-rayon-core-0.3.1 \

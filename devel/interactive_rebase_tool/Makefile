@@ -31,7 +31,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		crossterm_winapi-0.7.0 \
 		form_urlencoded-1.0.0 \
 		getrandom-0.2.2 \
-		git2-0.13.18 \
+		git2-0.13.20 \
 		hermit-abi-0.1.18 \
 		idna-0.2.0 \
 		instant-0.1.9 \
@@ -39,7 +39,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		jobserver-0.1.21 \
 		lazy_static-1.4.0 \
 		libc-0.2.82 \
-		libgit2-sys-0.12.19+1.1.0 \
+		libgit2-sys-0.12.21+1.1.0 \
 		libz-sys-1.1.2 \
 		lock_api-0.4.2 \
 		log-0.4.14 \
