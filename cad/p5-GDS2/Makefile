@@ -1,6 +1,5 @@
 PORTNAME=	GDS2
-PORTVERSION=	3.29
-PORTREVISION=	1
+PORTVERSION=	3.35
 CATEGORIES=	cad perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,9 +15,9 @@ RUN_DEPENDS=	p5-Tk>=804.027:x11-toolkits/p5-Tk \
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 SHEBANG_FILES=	Examples/*
-PLIST_FILES=	%%SITE_PERL%%/GDS2.pm \
+PLIST_FILES=	${SITE_PERL}/GDS2.pm \
 		${PROGRAMS:S,^,bin/,} \
-		%%PERL5_MAN3%%/GDS2.3.gz
+		${MAN3PREFIX}/man/man3/GDS2.3.gz
 
 PROGRAMS=	gds2dump gdsdump2gds modgds2 gdslayers testgds2 \
 		gdspath4topath0 testgdt
