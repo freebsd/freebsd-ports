@@ -19,7 +19,7 @@ GH_ACCOUNT=	recp
 pre-test:
 	@if [ ! -e ${WRKDIR}/.meson_build_testing ]; then \
 		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
-		${MAKE} -C${.CURDIR} build MESON_ARGS="`make -V MESON_ARGS` --reconfigure -Dbuild_tests=true"; \
+		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dbuild_tests=true"; \
 		${TOUCH} ${WRKDIR}/.meson_build_testing; \
 	fi
 
