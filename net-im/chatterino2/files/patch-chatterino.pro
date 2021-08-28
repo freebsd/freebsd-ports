@@ -1,11 +1,9 @@
---- chatterino.pro.orig	2020-08-31 14:42:30 UTC
+--- chatterino.pro.orig	2021-05-16 17:29:27 UTC
 +++ chatterino.pro
-@@ -565,6 +567,21 @@ linux {
-     target.path = $$PREFIX/bin
- 
+@@ -624,6 +624,21 @@ linux {
      INSTALLS += desktop build_icons icon target
-+}
-+
+ }
+ 
 +freebsd {
 +    desktop.path = $$PREFIX/share/applications
 +    desktop.files = resources/com.chatterino.chatterino.desktop
@@ -19,6 +17,8 @@
 +    target.path = $$PREFIX/bin
 +
 +    INSTALLS += desktop icon target xml
- }
- 
++}
++
  git_commit=$$(GIT_COMMIT)
+ git_release=$$(GIT_RELEASE)
+ # Git data
