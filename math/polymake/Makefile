@@ -2,6 +2,7 @@
 
 PORTNAME=	polymake
 DISTVERSION=	4.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://polymake.org/lib/exe/fetch.php/download/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-minimal
@@ -95,14 +96,9 @@ BLISS_CONFIGURE_OFF=	--without-bliss
 BLISS_BUILD_DEPENDS=	bliss-graph-tool>=0.73:math/bliss
 BLISS_RUN_DEPENDS=	bliss-graph-tool>=0.73:math/bliss
 
-NAUTY_WRKSRC=	${:!${MAKE} -V WRKSRC -C ${.CURDIR:H:H}/math/nauty!}
-NAUTY_CONFIGURE_ON=	--with-nauty-src=${NAUTY_WRKSRC}
-NAUTY_BUILD_DEPENDS=	${NONEXISTENT}:math/nauty:patch
-NAUTY_RUN_DEPENDS=	nauty>=27:math/nauty
-# Do not explicitly disable nauty. polymake's configure script currently fails
-# if a reconfiguration is triggered. However, it is aware that bliss and nauty
-# are mutually exclusive and disables nauty if BLISS=on.
-#NAUTY_CONFIGURE_OFF=	--without-nauty
+NAUTY_CONFIGURE_ON=	--with-nauty=${LOCALBASE}
+NAUTY_CONFIGURE_OFF=	--without-nauty
+NAUTY_LIB_DEPENDS=	libnauty.so:math/nauty
 
 LRS_CONFIGURE_ON=	--with-lrs=${LOCALBASE} \
 			--with-lrs-include=${LOCALBASE}/include/lrslib
@@ -139,6 +135,8 @@ TESTS_VARS=	USE_PERL5+=test
 # The port uses the minimal distribution tarball without bundled libraries.
 # Set WRKSRC accordingly.
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
+.include <bsd.port.options.mk>
 
 # Deal with site specific installation directory
 # polymake installs a perlxs module which depends on the perl configuration
@@ -178,9 +176,15 @@ post-install:
 
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/polymake/perlx/${PERL_VERSION}/${PERL_ARCHNAME}/auto/Polymake/Ext/Ext.so
 
-.for l in common fan fulton graph group ideal matroid polytope topaz tropical
+.for l in common fan fulton graph group matroid polytope topaz tropical
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/polymake/lib/${l}.so
 .endfor
+
+# only strip libexec/polymake/lib/ideal.so iff SINGULAR=on, if SINGULAR=off it
+# is an empty file and stripping fails
+.if ${PORT_OPTIONS:MSINGULAR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/polymake/lib/ideal.so
+.endif
 
 .for lp in libpolymake-apps libpolymake-apps-rt
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/polymake/lib/${lp}.so.${DISTVERSION}
