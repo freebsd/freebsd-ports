@@ -1,6 +1,6 @@
---- build.sh.orig	2019-02-23 17:34:47 UTC
+--- build.sh.orig	2021-07-23 08:00:26 UTC
 +++ build.sh
-@@ -482,7 +482,7 @@ echo "    Build directory: $BUILD"
+@@ -576,7 +576,7 @@ echo "    Build directory: $BUILD"
  mkdir -p $BUILD
  
  # source the version script
@@ -9,7 +9,7 @@
  
  # qmake needs absolute paths, so we get them now:
  #   OSX does not have `readlink -f` command. Use equivalent Perl script.
-@@ -495,11 +495,7 @@ else
+@@ -589,11 +589,7 @@ else
  fi
  
  if [ "$IS_MAC" = "no" ]; then
@@ -21,7 +21,7 @@
  else
    MAKE_PRG=make
  fi
-@@ -521,9 +517,9 @@ cd $BUILD
+@@ -615,9 +611,9 @@ cd $BUILD
  
  # chose the right qmake
  if [ $HAVE_QT5 = 0 ]; then
@@ -33,28 +33,38 @@
  fi
  
  $QMAKE -v
-@@ -531,54 +527,55 @@ $QMAKE -v
+@@ -625,82 +621,85 @@ $QMAKE -v
  # Force a minimum rebuild because of version info
  touch $CURR_DIR/src/version/version.h
  
 -qmake_options=(
-+## XXX
-+##  CONFIG=\"$CONFIG\"
++# XXX
++#  CONFIG=\"$CONFIG\"
 +qmake_options="
    -recursive
 -  CONFIG+="$CONFIG"
 -  RUBYLIBFILE="$RUBYLIBFILE"
--  RUBYINCLUDE="$RUBYINCLUDE"
--  RUBYINCLUDE2="$RUBYINCLUDE2"
 -  RUBYVERSIONCODE="$RUBYVERSIONCODE"
 -  HAVE_RUBY="$HAVE_RUBY"
+-  PYTHON="$PYTHON"
 -  PYTHONLIBFILE="$PYTHONLIBFILE"
 -  PYTHONINCLUDE="$PYTHONINCLUDE"
+-  PYTHONEXTSUFFIX="$PYTHONEXTSUFFIX"
 -  HAVE_PYTHON="$HAVE_PYTHON"
 -  HAVE_QTBINDINGS="$HAVE_QTBINDINGS"
+-  HAVE_QT_UITOOLS="$HAVE_QT_UITOOLS"
+-  HAVE_QT_NETWORK="$HAVE_QT_NETWORK"
+-  HAVE_QT_SQL="$HAVE_QT_SQL"
+-  HAVE_QT_SVG="$HAVE_QT_SVG"
+-  HAVE_QT_PRINTSUPPORT="$HAVE_QT_PRINTSUPPORT"
+-  HAVE_QT_MULTIMEDIA="$HAVE_QT_MULTIMEDIA"
+-  HAVE_QT_DESIGNER="$HAVE_QT_DESIGNER"
+-  HAVE_QT_XML="$HAVE_QT_XML"
 -  HAVE_64BIT_COORD="$HAVE_64BIT_COORD"
+-  HAVE_QT="$HAVE_QT"
 -  HAVE_QT5="$HAVE_QT5"
 -  HAVE_CURL="$HAVE_CURL"
+-  HAVE_EXPAT="$HAVE_EXPAT"
 -  PREFIX="$BIN"
 -  RPATH="$RPATH"
 -  KLAYOUT_VERSION="$KLAYOUT_VERSION"
@@ -62,23 +72,56 @@
 -  KLAYOUT_VERSION_REV="$KLAYOUT_VERSION_REV"
 -)
 +  RUBYLIBFILE=\"$RUBYLIBFILE\"
-+  RUBYINCLUDE=\"$RUBYINCLUDE\"
-+  RUBYINCLUDE2=\"$RUBYINCLUDE2\"
 +  RUBYVERSIONCODE=\"$RUBYVERSIONCODE\"
 +  HAVE_RUBY=\"$HAVE_RUBY\"
++  PYTHON=\"$PYTHON\"
 +  PYTHONLIBFILE=\"$PYTHONLIBFILE\"
 +  PYTHONINCLUDE=\"$PYTHONINCLUDE\"
++  PYTHONEXTSUFFIX=\"$PYTHONEXTSUFFIX\"
 +  HAVE_PYTHON=\"$HAVE_PYTHON\"
 +  HAVE_QTBINDINGS=\"$HAVE_QTBINDINGS\"
++  HAVE_QT_UITOOLS=\"$HAVE_QT_UITOOLS\"
++  HAVE_QT_NETWORK=\"$HAVE_QT_NETWORK\"
++  HAVE_QT_SQL=\"$HAVE_QT_SQL\"
++  HAVE_QT_SVG=\"$HAVE_QT_SVG\"
++  HAVE_QT_PRINTSUPPORT=\"$HAVE_QT_PRINTSUPPORT\"
++  HAVE_QT_MULTIMEDIA=\"$HAVE_QT_MULTIMEDIA\"
++  HAVE_QT_DESIGNER=\"$HAVE_QT_DESIGNER\"
++  HAVE_QT_XML=\"$HAVE_QT_XML\"
 +  HAVE_64BIT_COORD=\"$HAVE_64BIT_COORD\"
++  HAVE_QT=\"$HAVE_QT\"
 +  HAVE_QT5=\"$HAVE_QT5\"
 +  HAVE_CURL=\"$HAVE_CURL\"
++  HAVE_EXPAT=\"$HAVE_EXPAT\"
 +  PREFIX=\"$BIN\"
 +  RPATH=\"$RPATH\"
 +  KLAYOUT_VERSION=\"$KLAYOUT_VERSION\"
 +  KLAYOUT_VERSION_DATE=\"$KLAYOUT_VERSION_DATE\"
 +  KLAYOUT_VERSION_REV=\"$KLAYOUT_VERSION_REV\"
 +"
+ 
+ # NOTE: qmake does not like include paths which clash with paths built into the compiler
+ # hence we don't add RUBYINCLUDE or RUBYINCLUDE2 in this case (found on CentOS 8 where Ruby
+ # headers are installed in /usr/include)
+ if [ "$RUBYINCLUDE" != "/usr/include" ] && [  "$RUBYINCLUDE" != "/usr/local/include" ]; then
+-  qmake_options+=( RUBYINCLUDE="$RUBYINCLUDE" )
++  qmake_options="$qmake_options RUBYINCLUDE=\"$RUBYINCLUDE\""
+ fi
+ if [ "$RUBYINCLUDE2" != "/usr/include" ] && [  "$RUBYINCLUDE2" != "/usr/local/include" ]; then
+-  qmake_options+=( RUBYINCLUDE2="$RUBYINCLUDE2" )
++  qmake_options="$qmake_options RUBYINCLUDE2=\"$RUBYINCLUDE2\""
+ fi
+ 
+ # This should speed up build time considerably
+ # https://ortogonal.github.io/ccache-and-qmake-qtcreator/
+ if [ "$QMAKE_CCACHE" = 1 ]; then
+-  qmake_options+=(
+-    CONFIG+="ccache"
+-  )
++  qmake_options="$qmake_options
++    CONFIG+=\"ccache\"
++  "
+ fi
  
  if [ $BUILD_EXPERT = 1 ]; then
 -  qmake_options+=(
@@ -119,8 +162,10 @@
  
 -echo $QMAKE "$CURR_DIR/src/klayout.pro" "${qmake_options[@]}"
 -$QMAKE "$CURR_DIR/src/klayout.pro" "${qmake_options[@]}"
-+echo $QMAKE "$CURR_DIR/src/klayout.pro" ${qmake_options} QMAKE_CFLAGS="$CFLAGS"
-+$QMAKE "$CURR_DIR/src/klayout.pro" ${qmake_options} QMAKE_CXXFLAGS="$CXXFLAGS" QMAKE_CFLAGS="$CFLAGS" QMAKE_LFLAGS="$LDFLAGS"
++echo $QMAKE "$CURR_DIR/src/klayout.pro" ${qmake_options} \
++  QMAKE_CXXFLAGS="$CXXFLAGS" QMAKE_CFLAGS="$CFLAGS" QMAKE_LFLAGS="$LDFLAGS"
++$QMAKE "$CURR_DIR/src/klayout.pro" ${qmake_options} \
++  QMAKE_CXXFLAGS="$CXXFLAGS" QMAKE_CFLAGS="$CFLAGS" QMAKE_LFLAGS="$LDFLAGS"
  
  cd $CURR_DIR
  echo ""

@@ -1,20 +1,21 @@
---- src/laybasic/laybasic/laybasic.pro.orig	2019-02-23 17:34:47 UTC
+--- src/laybasic/laybasic/laybasic.pro.orig	2021-08-28 16:13:49 UTC
 +++ src/laybasic/laybasic/laybasic.pro
-@@ -6,6 +6,8 @@ include($$PWD/../../lib.pri)
+@@ -303,15 +303,15 @@ HEADERS = \
  
- DEFINES += MAKE_LAYBASIC_LIBRARY
+ INCLUDEPATH += $$TL_INC $$GSI_INC $$DB_INC $$RDB_INC $$LYM_INC
+ DEPENDPATH += $$TL_INC $$GSI_INC $$DB_INC $$RDB_INC $$LYM_INC
+-LIBS += -L$$DESTDIR -lklayout_tl -lklayout_gsi -lklayout_db -lklayout_rdb -lklayout_lym
++LIBS += $$DESTDIR/libklayout_tl.so $$DESTDIR/libklayout_gsi.so $$DESTDIR/libklayout_db.so $$DESTDIR/libklayout_rdb.so $$DESTDIR/libklayout_lym.so
  
-+QT += widgets gui
-+
- FORMS = \
-   AlignCellOptionsDialog.ui \
-   BookmarkManagementForm.ui \
-@@ -273,7 +275,7 @@ HEADERS = \
-   laybasicConfig.h \
-   layBackgroundAwareTreeStyle.h
+ INCLUDEPATH += $$QTBASIC_INC
+ DEPENDPATH += $$QTBASIC_INC
  
--INCLUDEPATH += $$TL_INC $$GSI_INC $$DB_INC $$RDB_INC
-+INCLUDEPATH += . $$TL_INC $$GSI_INC $$DB_INC $$RDB_INC
- DEPENDPATH += $$TL_INC $$GSI_INC $$DB_INC $$RDB_INC
- LIBS += -L$$DESTDIR -lklayout_tl -lklayout_gsi -lklayout_db -lklayout_rdb
+ equals(HAVE_QTBINDINGS, "1") {
+-  LIBS += -lklayout_qtbasic -lklayout_QtGui -lklayout_QtCore
++  LIBS += $$DESTDIR/libklayout_qtbasic.so $$DESTDIR/libklayout_QtGui.so $$DESTDIR/libklayout_QtCore.so
+   equals(HAVE_QT5, "1") {
+-    LIBS += -lklayout_QtWidgets
++    LIBS += $$DESTDIR/libklayout_QtWidgets.so
+   }
+ }
  
