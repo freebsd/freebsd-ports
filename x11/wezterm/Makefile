@@ -1,6 +1,6 @@
 PORTNAME=	wezterm
 DISTVERSION=	20210814-124438-54e29167
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -39,6 +39,11 @@ PLIST_FILES=	bin/strip-ansi-escapes \
 		share/icons/hicolor/scalable/apps/org.wezfurlong.wezterm.svg \
 		share/metainfo/org.wezfurlong.wezterm.appdata.xml \
 		${NULL}
+
+.if exists(/usr/bin/tic)
+PKGMESSAGE=	${NONEXISTENT}
+PLIST_FILES+=	share/site-terminfo/${PORTNAME:C,^.,&/&,}
+.endif
 
 CARGO_CRATES=	addr2line-0.16.0 \
 		adler-1.0.2 \
@@ -556,5 +561,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/assets/${f:R}.${f:E} \
 		${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}}
 .endfor
+.if exists(/usr/bin/tic)
+	tic -x -o ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*terminfo*:[1]:H:H} \
+		${WRKSRC}/termwiz/data/${PORTNAME}.terminfo
+.endif
 
 .include <bsd.port.mk>
