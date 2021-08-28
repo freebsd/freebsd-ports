@@ -1,0 +1,6 @@
+The Stan Math Library is a C++, reverse-mode automatic differentiation library
+designed to be usable, extensive and extensible, efficient, scalable, stable,
+portable, and redistributable in order to facilitate the construction and
+utilization of algorithms that utilize derivatives.
+
+WWW: https://mc-stan.org/math/
