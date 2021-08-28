@@ -5,7 +5,7 @@ PORTVERSION=	10.12
 CATEGORIES=	www
 MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	christopher.petrik@usm.edu
 COMMENT=	Advanced and secure webserver for Unix
 
 LICENSE=	GPLv2
