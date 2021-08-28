@@ -75,6 +75,7 @@
     SUBDIR += chpasswd
     SUBDIR += chrome-gnome-shell
     SUBDIR += chromium
+    SUBDIR += cinny
     SUBDIR += civetweb
     SUBDIR += ckeditor
     SUBDIR += cl-lml
