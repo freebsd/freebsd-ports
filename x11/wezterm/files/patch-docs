@@ -1,0 +1,33 @@
+Drop installation chapter as it requires network during build
+
+--- ci/generate-docs.py.orig	2021-08-14 19:44:38 UTC
++++ ci/generate-docs.py
+@@ -114,17 +114,6 @@ TOC = [
+         "wezterm",
+         "index.md",
+         children=[
+-            Page(
+-                "Install",
+-                "installation.md",
+-                children=[
+-                    Page("Windows", "install/windows.md"),
+-                    Page("macOS", "install/macos.md"),
+-                    Page("Linux", "install/linux.md"),
+-                    Page("FreeBSD", "install/freebsd.md"),
+-                    Page("Build from source", "install/source.md"),
+-                ],
+-            ),
+             Page("Features", "features.md"),
+             Page("Change Log", "changelog.md"),
+             Page(
+--- docs/contributing.md.orig	2021-08-14 19:44:38 UTC
++++ docs/contributing.md
+@@ -8,7 +8,7 @@ If you're thinking of helping out, then the following 
+ * [WezTerm on GitHub](https://github.com/wez/wezterm)
+ * [GitHub Discussions](https://github.com/wez/wezterm/discussions)
+ * [Realtime conversation with wez on Element.io/Gitter](help.html)
+-* [Building from Source](install/source.html)
++* [Building from Source](https://github.com/wez/wezterm/blob/main/docs/install/source.markdown)
+ * [Where to find things and hacking on wezterm](https://github.com/wez/wezterm/blob/master/CONTRIBUTING.md#contributing-to-wezterm)
+ 
+ I like to think that I have an open mind and I try to be open to ideas,
