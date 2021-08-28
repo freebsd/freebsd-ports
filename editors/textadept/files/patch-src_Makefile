@@ -6,12 +6,12 @@
 -CC = gcc
 -CFLAGS = -Os
 -CXX = g++
--CXXFLAGS = -Os -std=c++11
+-CXXFLAGS = -Os -std=c++17
 -MAKE = make
 +CC ?= gcc
 +CFLAGS ?= -Os
 +CXX ?= g++
-+CXXFLAGS ?= -Os -std=c++11
++CXXFLAGS ?= -Os -std=c++17
  ifeq (win, $(findstring win, $(MAKECMDGOALS)))
    # Cross-compile for Win32.
    CROSS = i686-w64-mingw32-
@@ -56,8 +56,8 @@
  
  # Install/uninstall.
  
--install: $(install_targets) | ../core ../doc ../init.lua ../lexers ../LICENSE \
-+install: $(install_targets) | ../core ../doc ../init.lua ../lexers \
+-install: $(install_targets) | ../core ../docs ../init.lua ../lexers ../LICENSE \
++install: $(install_targets) | ../core ../docs ../init.lua ../lexers \
                                ../modules ../themes
  	install -d $(DESTDIR)$(bin_dir) $(DESTDIR)$(data_dir)
  	install $^ $(DESTDIR)$(data_dir)
