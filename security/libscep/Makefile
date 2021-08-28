@@ -1,9 +1,8 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
 
 PORTNAME=	libscep
-PORTVERSION=	0.08
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	0.09
 CATEGORIES=	security
 
 MAINTAINER=	svysh.fbsd@gmail.com
@@ -12,15 +11,15 @@ COMMENT=	Client side SCEP library w/o clients
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/README.md
 
-BUILD_DEPENDS=	check>=0.12.0:devel/check \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
+		check>=0.12.0:devel/check \
 		curl>=7.64:ftp/curl \
-		uriparser>=0.9.1:net/uriparser \
-		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
+		uriparser>=0.9.1:net/uriparser
 RUN_DEPENDS=	check>=0.12.0:devel/check \
 		curl>=7.64:ftp/curl \
 		uriparser>=0.9.1:net/uriparser
 
-USES=		cmake:noninja gmake ssl pkgconfig libtool python:build,3.6+
+USES=		cmake:noninja gmake libtool pkgconfig python:build,3.6+ ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
 USE_LDCONFIG=	yes
