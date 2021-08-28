@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: minio
+# REQUIRE: DAEMON NETWORKING
 # KEYWORD: shutdown
 
 #
@@ -16,6 +17,8 @@
 #                               Set it to directory to store minio data
 # minio_address (str):          Set to ":9000" by default.
 #                               Set it to address for minio to listen on
+# minio_console_address (str):  Not set by default
+#                               Set it to address for minio to listen on for console
 # minio_user (str):             Set to "minio" by default.
 #                               Set it to user to run minio under
 # minio_group (str):            Set to "minio" by default.
@@ -43,6 +46,7 @@ load_rc_config ${name}
 : ${minio_certs="%%ETCDIR%%/certs"}
 : ${minio_disks="%%DBDIR%%"}
 : ${minio_address=":9000"}
+: ${minio_console_address=""}
 : ${minio_user:="%%USER%%"}
 : ${minio_group:="%%GROUP%%"}
 : ${minio_syslog_enable:="YES"}
@@ -71,10 +75,16 @@ if [ -n "${minio_config}" ]; then
     minio_config_flag="-C \"${minio_config}\""
 fi
 
+if [ ! -z "${minio_console_address}" ]; then
+    minio_console_address_arg="--console-address \"${minio_console_address}\""
+else
+    minio_console_address_arg=""
+fi
+
 pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/bin/minio"
 command="/usr/sbin/daemon"
-command_args="-f -t ${name} ${minio_syslog_output_flags} -p ${pidfile} /usr/bin/env ${minio_env} ${procname} ${minio_config_flag} -S \"${minio_certs}\" --quiet server --address=\"${minio_address}\" ${minio_disks} ${minio_args}"
+command_args="-f -t ${name} ${minio_syslog_output_flags} -p ${pidfile} /usr/bin/env ${minio_env} ${procname} ${minio_config_flag} -S \"${minio_certs}\" --quiet server --address=\"${minio_address}\" ${minio_console_address_arg} ${minio_disks} ${minio_args}"
 
 minio_start_precmd()
 {

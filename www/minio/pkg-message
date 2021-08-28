@@ -1,0 +1,8 @@
+[
+{ type: upgrade
+  maximum_version: 2.0
+  message: <<EOM
+Minio console now requires extra configuration via minio_console_address
+EOM
+}
+]
