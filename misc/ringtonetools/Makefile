@@ -3,7 +3,7 @@
 PORTNAME=	ringtonetools
 PORTVERSION=	2.26
 CATEGORIES=	misc
-MASTER_SITES=	http://downloads.mikekohn.net/${PORTNAME}/
+MASTER_SITES=	https://www.mikekohn.net/downloads/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create/convert/listen to ringtones and logos for mobile phones
