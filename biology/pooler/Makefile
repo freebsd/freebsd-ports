@@ -1,6 +1,6 @@
 PORTNAME=		pooler
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.77
+DISTVERSION=		1.78
 CATEGORIES=		biology
 
 MAINTAINER=	ssb22@cam.ac.uk
@@ -21,6 +21,6 @@ WRKSRC_SUBDIR=	pooler
 CFLAGS+=	-fopenmp
 
 INSTALL_TARGET=	install-strip
-PLIST_FILES=	bin/pooler man/man1/pooler.1.gz
+PLIST_FILES=	bin/pooler man/man1/pooler.1.gz share/applications/pooler.desktop
 
 .include <bsd.port.mk>
