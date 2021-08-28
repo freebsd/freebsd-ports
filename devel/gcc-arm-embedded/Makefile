@@ -11,7 +11,6 @@ COMMENT=	Complete gcc-based toolcahin for embedded ARM development
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BROKEN_aarch64=		fails to build
 NOT_FOR_ARCHS=		arm armeb armv6 armv7 \
 			mips mips64 mips64el mipsel mipsn32
 NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
