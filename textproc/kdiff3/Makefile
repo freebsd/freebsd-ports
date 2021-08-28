@@ -1,6 +1,5 @@
 PORTNAME=	kdiff3
-DISTVERSION=	1.9.2
-PORTREVISION=	2
+DISTVERSION=	1.9.3
 CATEGORIES=	textproc kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 
@@ -14,10 +13,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons crash ecm i18n iconthemes jobwidgets kio \
-		parts service sonnet textwidgets widgetsaddons windowsystem \
+		coreaddons crash i18n iconthemes jobwidgets kio \
+		parts service solid sonnet textwidgets widgetsaddons windowsystem \
 		xmlgui \
-		doctools_build
+		doctools_build ecm_build
 USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build
 
