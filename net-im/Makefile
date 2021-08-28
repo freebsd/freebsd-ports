@@ -144,6 +144,7 @@
     SUBDIR += scudcloud
     SUBDIR += sendxmpp
     SUBDIR += signal-cli
+    SUBDIR += signald
     SUBDIR += slack-term
     SUBDIR += spectral
     SUBDIR += ssh-chat
