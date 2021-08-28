@@ -1711,7 +1711,6 @@
     SUBDIR += rubygem-reverse_markdown
     SUBDIR += rubygem-rexml
     SUBDIR += rubygem-ri_cal
-    SUBDIR += rubygem-rich
     SUBDIR += rubygem-rly
     SUBDIR += rubygem-rmmseg-cpp
     SUBDIR += rubygem-ronn

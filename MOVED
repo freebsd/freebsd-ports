@@ -16469,3 +16469,5 @@ sysutils/graid5||2021-08-21|Has expired: Module contains subtile errors and is o
 x11-wm/gcompmgr||2021-08-21|Has expired: Abandonware since 2005, using discontinued libraries
 irc/lostirc||2021-08-21|Has expired: Abandonware since 2005, dependens on discontinued libraries
 math/normaliz|math/libnormaliz|2021-08-21|Remove duplicate
+devel/rubygem-paperclip||2021-08-28|Has expired: Use ActiveStorage or a fork kt-paperclip
+textproc/rubygem-rich||2021-08-28|Has expired: Depends on expired devel/rubygem-paperclip
