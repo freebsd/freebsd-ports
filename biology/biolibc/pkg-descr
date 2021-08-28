@@ -4,4 +4,4 @@ general-purpose functions which could be used by a wide variety of
 applications.  These include functions for streaming common file formats such
 as SAM and VCF, string functions specific to bioinformatics, etc.
 
-WWW: https://github.com/auerlab/vcfio
+WWW: https://github.com/auerlab/biolibc
