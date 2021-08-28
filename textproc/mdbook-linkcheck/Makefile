@@ -1,0 +1,228 @@
+PORTNAME=	mdbook-linkcheck
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.7.4
+CATEGORIES=	textproc
+
+MAINTAINER=	jbeich@FreeBSD.org
+COMMENT=	mdBook backend to check links
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo ssl
+USE_GITHUB=	yes
+GH_ACCOUNT=	Michael-F-Bryan
+PLIST_FILES=	bin/${PORTNAME}
+
+CARGO_CRATES=	adler32-1.2.0 \
+		aho-corasick-0.7.15 \
+		ansi_term-0.11.0 \
+		anyhow-1.0.38 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		base64-0.13.0 \
+		bincode-1.3.2 \
+		bitflags-1.2.1 \
+		block-buffer-0.7.3 \
+		block-padding-0.1.5 \
+		build-info-0.0.21 \
+		build-info-build-0.0.21 \
+		build-info-common-0.0.21 \
+		build-info-proc-0.0.21 \
+		bumpalo-3.6.1 \
+		byte-tools-0.3.1 \
+		byteorder-1.3.4 \
+		bytes-1.0.1 \
+		bzip2-0.3.3 \
+		bzip2-sys-0.1.10+1.0.8 \
+		cargo-platform-0.1.1 \
+		cargo_metadata-0.12.3 \
+		cc-1.0.67 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		chrono-0.4.19 \
+		clap-2.33.3 \
+		codespan-0.11.1 \
+		codespan-reporting-0.11.1 \
+		core-foundation-0.9.1 \
+		core-foundation-sys-0.8.2 \
+		crc32fast-1.2.1 \
+		ctor-0.1.19 \
+		derive_more-0.99.11 \
+		difference-2.0.0 \
+		digest-0.8.1 \
+		dunce-1.0.1 \
+		encoding_rs-0.8.28 \
+		env_logger-0.7.1 \
+		env_logger-0.8.3 \
+		fake-simd-0.1.2 \
+		flate2-1.0.14 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.0.1 \
+		format-buf-1.0.0 \
+		futures-0.3.13 \
+		futures-channel-0.3.13 \
+		futures-core-0.3.13 \
+		futures-executor-0.3.13 \
+		futures-io-0.3.13 \
+		futures-macro-0.3.13 \
+		futures-sink-0.3.13 \
+		futures-task-0.3.13 \
+		futures-util-0.3.13 \
+		generic-array-0.12.3 \
+		getopts-0.2.21 \
+		getrandom-0.2.2 \
+		git2-0.13.17 \
+		glob-0.3.0 \
+		h2-0.3.0 \
+		handlebars-3.5.3 \
+		hashbrown-0.9.1 \
+		heck-0.3.2 \
+		hermit-abi-0.1.18 \
+		http-0.2.3 \
+		http-body-0.4.0 \
+		httparse-1.3.5 \
+		httpdate-0.3.2 \
+		humantime-1.3.0 \
+		humantime-2.1.0 \
+		hyper-0.14.4 \
+		hyper-tls-0.5.0 \
+		idna-0.2.2 \
+		indexmap-1.6.1 \
+		ipnet-2.3.0 \
+		itoa-0.4.7 \
+		jobserver-0.1.21 \
+		js-sys-0.3.47 \
+		lazy_static-1.4.0 \
+		libc-0.2.86 \
+		libgit2-sys-0.12.18+1.1.0 \
+		libz-sys-1.1.2 \
+		linkcheck-0.4.0 \
+		linkify-0.5.0 \
+		log-0.4.14 \
+		lzma-sys-0.1.17 \
+		maplit-1.0.2 \
+		matches-0.1.8 \
+		mdbook-0.4.7 \
+		memchr-2.3.4 \
+		mime-0.3.16 \
+		miniz_oxide-0.3.7 \
+		mio-0.7.9 \
+		miow-0.3.6 \
+		native-tls-0.2.7 \
+		ntapi-0.3.6 \
+		num-bigint-0.3.1 \
+		num-integer-0.1.44 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.0 \
+		once_cell-1.7.0 \
+		opaque-debug-0.2.3 \
+		open-1.4.0 \
+		openssl-0.10.32 \
+		openssl-probe-0.1.2 \
+		openssl-sys-0.9.60 \
+		output_vt100-0.1.2 \
+		percent-encoding-2.1.0 \
+		pest-2.1.3 \
+		pest_derive-2.1.0 \
+		pest_generator-2.1.3 \
+		pest_meta-2.1.3 \
+		pin-project-1.0.5 \
+		pin-project-internal-1.0.5 \
+		pin-project-lite-0.2.4 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.19 \
+		ppv-lite86-0.2.10 \
+		pretty_assertions-0.6.1 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.19 \
+		proc-macro-nested-0.1.7 \
+		proc-macro2-1.0.24 \
+		pulldown-cmark-0.7.2 \
+		pulldown-cmark-0.8.0 \
+		quick-error-1.2.3 \
+		quick-error-2.0.0 \
+		quote-1.0.9 \
+		rand-0.8.3 \
+		rand_chacha-0.3.0 \
+		rand_core-0.6.2 \
+		rand_hc-0.3.0 \
+		redox_syscall-0.2.5 \
+		regex-1.4.3 \
+		regex-syntax-0.6.22 \
+		remove_dir_all-0.5.3 \
+		reqwest-0.11.1 \
+		rustc_version-0.3.3 \
+		ryu-1.0.5 \
+		schannel-0.1.19 \
+		security-framework-2.1.1 \
+		security-framework-sys-2.1.1 \
+		semver-0.11.0 \
+		semver-parser-0.10.2 \
+		serde-1.0.123 \
+		serde_derive-1.0.123 \
+		serde_json-1.0.63 \
+		serde_urlencoded-0.7.0 \
+		sha-1-0.8.2 \
+		shlex-1.0.0 \
+		slab-0.4.2 \
+		socket2-0.3.19 \
+		strsim-0.8.0 \
+		structopt-0.3.21 \
+		structopt-derive-0.4.14 \
+		syn-1.0.60 \
+		tempfile-3.2.0 \
+		termcolor-1.1.2 \
+		textwrap-0.11.0 \
+		thiserror-1.0.24 \
+		thiserror-impl-1.0.24 \
+		thread_local-1.1.3 \
+		time-0.1.43 \
+		tinyvec-1.1.1 \
+		tinyvec_macros-0.1.0 \
+		tokio-1.2.0 \
+		tokio-native-tls-0.3.0 \
+		tokio-util-0.6.3 \
+		toml-0.5.8 \
+		tower-service-0.3.1 \
+		tracing-0.1.25 \
+		tracing-core-0.1.17 \
+		tracing-futures-0.2.5 \
+		try-lock-0.2.3 \
+		typenum-1.12.0 \
+		ucd-trie-0.1.3 \
+		unicase-2.6.0 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.17 \
+		unicode-segmentation-1.7.1 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		url-2.2.1 \
+		vcpkg-0.2.11 \
+		vec_map-0.8.2 \
+		version_check-0.9.2 \
+		want-0.3.0 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.70 \
+		wasm-bindgen-backend-0.2.70 \
+		wasm-bindgen-futures-0.4.20 \
+		wasm-bindgen-macro-0.2.70 \
+		wasm-bindgen-macro-support-0.2.70 \
+		wasm-bindgen-shared-0.2.70 \
+		web-sys-0.3.47 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		winreg-0.7.0 \
+		xz2-0.1.6 \
+		zip-0.5.10
+
+post-patch:
+	@${REINPLACE_CMD} -e '/native-tls/s/-vendored//' \
+		${WRKSRC}/Cargo.toml
+
+.include <bsd.port.mk>

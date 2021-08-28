@@ -439,6 +439,7 @@
     SUBDIR += mathml-xsd
     SUBDIR += md4c
     SUBDIR += mdbook
+    SUBDIR += mdbook-linkcheck
     SUBDIR += mdocml
     SUBDIR += meld
     SUBDIR += metauml
