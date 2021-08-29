@@ -19,6 +19,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 DEPRECATED=	Tcl/Tk 8.5 is nearing EOL, please consider switching to Tcl/Tk 8.6
 
+USES=		cpe
+
 OPTIONS_DEFINE=	TCLMAN TZDATA THREADS
 OPTIONS_DEFAULT=TCLMAN TZDATA THREADS
 TCLMAN_DESC=	Install Tcl function manpages
