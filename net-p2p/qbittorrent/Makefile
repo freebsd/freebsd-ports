@@ -21,7 +21,7 @@ FLAVOR?=	${FLAVORS:[1]}
 nox_PKGNAMESUFFIX=	-nox
 nox_PLIST=		${MASTERDIR}/pkg-plist-nox
 
-USES=			compiler:c++14-lang pkgconfig qmake:no_env qt:5 ssl tar:xz
+USES=			compiler:c++14-lang cpe pkgconfig qmake:no_env qt:5 ssl tar:xz
 GNU_CONFIGURE=		yes
 USE_QT=			core network xml buildtools_build linguisttools_build qmake_build
 DESTDIRNAME=		INSTALL_ROOT
