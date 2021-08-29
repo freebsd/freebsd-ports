@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		gmake go:no_targets
+USES=		cpe gmake go:no_targets
 USE_RC_SUBR=	gitea
 
 SUB_FILES+=	app.ini.sample
