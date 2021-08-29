@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiberty.a:devel/gnulibiberty
 LIB_DEPENDS=	libpopt.so:devel/popt
 
-USES=		alias autoreconf gmake libtool localbase pkgconfig
+USES=		alias autoreconf cpe gmake libtool localbase pkgconfig
 USE_GITHUB=	yes
 USE_RC_SUBR=	distccd
 
