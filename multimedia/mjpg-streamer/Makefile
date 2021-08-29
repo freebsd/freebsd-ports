@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:multimedia/v4l_compat
 
-USES=		cmake localbase jpeg
+USES=		cmake jpeg localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jacksonliam
@@ -23,6 +23,8 @@ WRKSRC_SUBDIR=	mjpg-streamer-experimental
 
 USE_RC_SUBR=	mjpg_streamer
 SUB_FILES+=	pkg-message
+
+PORTCOUT=	skip:^1\.0\.0
 
 post-build:
 	cd ${WRKSRC}/plugins/input_testpicture && \
