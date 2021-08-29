@@ -28,7 +28,7 @@ RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-Finance-Quote>=0:finance/p5-Finance-Quote
 
-USES=		cmake:insource compiler:c++11-lib desktop-file-utils \
+USES=		cmake:insource compiler:c++11-lib cpe desktop-file-utils \
 		gettext-tools gnome libtool localbase perl5 pkgconfig \
 		shebangfix tar:bzip2 xorg
 USE_XORG=	x11
