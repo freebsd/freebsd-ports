@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}pycryptodomex>0:security/py-pycryptodomex@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		python:3.5+ shebangfix
+USES=		cpe python:3.5+ shebangfix
 USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}
 
