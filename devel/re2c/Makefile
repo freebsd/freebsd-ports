@@ -10,6 +10,8 @@ COMMENT=	Compile regular expression to C (much faster final code than flex)
 
 LICENSE=	PD
 
+USES=		cpe
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 GNU_CONFIGURE=	yes
