@@ -8,7 +8,7 @@ COMMENT=	Amazon S3 compatible object storage server
 
 LICENSE=	APACHE20
 
-USES=		compiler go:modules
+USES=		compiler cpe go:modules
 
 USE_GITHUB=	yes
 GHTAG=		RELEASE.2021-08-25T00-41-18Z
