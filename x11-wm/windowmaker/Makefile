@@ -23,7 +23,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libexif.so:graphics/libexif
 RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:graphics/wmicons
 
-USES=		gnome jpeg libtool shebangfix pathfix perl5 pkgconfig xorg
+USES=		cpe gnome jpeg libtool shebangfix pathfix perl5 pkgconfig xorg
 USE_CSTD=	c99
 USE_GNOME=	pango
 USE_LDCONFIG=	yes
