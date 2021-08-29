@@ -1,5 +1,6 @@
 PORTNAME=	haskell-language-server
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 EXTRACT_ONLY=	hsyl20-ghc-api-compat-8fee87eac97a538dbe81ff1ab18cff10f2f9fa15_GH0${EXTRACT_SUFX}
 
@@ -219,11 +220,12 @@ EXECUTABLES=		${PORTNAME} \
 
 NOT_FOR_ARCHS=		i386
 PLIST_FILES=		bin/${PORTNAME} \
-			bin/${PORTNAME}-8.10.5 \
+			bin/${PORTNAME}-8.10.7 \
 			bin/${PORTNAME}-wrapper
 
 post-extract:
 	${MV} ${WRKDIR}/ghc-api-compat-8fee87eac97a538dbe81ff1ab18cff10f2f9fa15 ${WRKSRC}/ghc-api-compat
+	${MV} ${WRKSRC}/stack-8.10.5.yaml ${WRKSRC}/stack-8.10.7.yaml
 
 do-build:
 	cd ${WRKSRC} && \
@@ -233,7 +235,7 @@ do-install:
 .for exe in ${EXECUTABLES}
 	${INSTALL_PROGRAM} ${CABAL_HOME}/.cabal/bin/${exe} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${LN} -s ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-8.10.5
+	${LN} -s ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-8.10.7
 
 cabal-extract-deps:
 	cd ${WRKSRC} && \
