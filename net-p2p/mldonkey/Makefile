@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/Copying.txt
 
 CONFLICTS=	mldonkey{-{core,gui},}-devel-[0-9]*
 
-USES=		compiler:c++11-lang gmake iconv pkgconfig tar:bzip2
+USES=		compiler:c++11-lang cpe gmake iconv pkgconfig tar:bzip2
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
 GNU_CONFIGURE=	yes
