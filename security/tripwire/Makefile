@@ -16,7 +16,7 @@ GH_PROJECT=	tripwire-open-source
 
 NO_LICENSES_INSTALL=	yes
 MAKE_JOBS_UNSAFE=	yes
-USES=		gmake ssl
+USES=		cpe gmake ssl
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	SYSPRE=${ARCH}-unknown-freebsd \
 		DESTDIR=${STAGEDIR}
