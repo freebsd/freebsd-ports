@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
-USES=		iconv
+USES=		cpe iconv
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	ac_cv_lib_iconv_main=yes
