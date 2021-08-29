@@ -59,7 +59,7 @@ MANJADATE=	20050813
 
 FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
-USES=		gmake iconv ncurses shebangfix autoreconf fakeroot ssl
+USES=		cpe gmake iconv ncurses shebangfix autoreconf fakeroot ssl
 SHEBANG_FILES=	smime_keys.pl contrib/smime_keys_test.pl
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/mutt-${VERSION}
