@@ -29,7 +29,7 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
 BUILD_DEPENDS=
 
-USES=		cmake compiler:c++11-lib shebangfix
+USES=		cmake compiler:c++11-lib cpe shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 _USES_PYTHON?=	python:build,3.6+
 USES+=		${_USES_PYTHON}
