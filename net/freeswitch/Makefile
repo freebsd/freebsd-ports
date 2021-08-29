@@ -32,7 +32,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libtiff.so:graphics/tiff \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		compiler:c11 gmake iconv jpeg libedit autoreconf libtool lua \
+USES=		compiler:c11 cpe gmake iconv jpeg libedit autoreconf libtool lua \
 		perl5 pkgconfig shebangfix ssl
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	freeswitch
