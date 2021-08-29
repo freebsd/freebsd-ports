@@ -8,7 +8,7 @@ COMMENT=	Interactive C source code browser
 
 LICENSE=	BSD3CLAUSE
 
-USES=		ncurses
+USES=		cpe ncurses
 
 GNU_CONFIGURE=	yes
 
