@@ -13,6 +13,8 @@ COMMENT=	Bloody 2D action deathmatch-like game in ASCII art
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+USES=		cpe
+
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	X11 DOCS
