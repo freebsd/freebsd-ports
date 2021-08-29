@@ -22,7 +22,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4@${PHP_FLAVO
 		snmpget:net-mgmt/net-snmp \
 		sudo:security/sudo
 
-USES=		php python shebangfix
+USES=		cpe php python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	librenms
