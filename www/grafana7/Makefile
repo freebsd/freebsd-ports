@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		go:modules
+USES=		cpe go:modules
 
 USE_GITHUB=	yes
 GH_TUPLE=	\
