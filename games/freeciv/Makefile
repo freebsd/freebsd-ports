@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libltdl.so:devel/libltdl
 
-USES=		autoreconf compiler:c++11-lang gmake iconv libtool lua:53 \
+USES=		autoreconf compiler:c++11-lang cpe gmake iconv libtool lua:53 \
 		pkgconfig readline ssl tar:bzip2
 
 GNU_CONFIGURE=	yes
