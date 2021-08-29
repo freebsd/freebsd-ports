@@ -11,7 +11,7 @@ COMMENT=	Color vt102 terminal emulator with transparency support
 
 MAKE_JOBS_UNSAFE= yes
 
-USES=	dos2unix xorg
+USES=		cpe dos2unix xorg
 DOS2UNIX_FILES=	src/rxvt.h
 
 USE_XORG=	xpm
