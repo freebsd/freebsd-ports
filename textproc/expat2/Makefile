@@ -13,9 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		libtool pathfix python:test tar:xz
+USES=		cpe libtool pathfix python:test tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CPE_VENDOR=	libexpat
 
 CONFIGURE_ARGS=	--without-docbook --without-examples
 INSTALL_TARGET=	install-strip
