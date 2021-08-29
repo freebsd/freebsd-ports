@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	gtar:archivers/gtar
 
-USES=		perl5
+USES=		cpe perl5
 MAKE_ARGS=	PERLPATH=${PERL} CONFFILE=${PREFIX}/etc/flexbackup.conf
 TAR_CMD=	${PREFIX}/bin/gtar
 NO_ARCH=	yes
