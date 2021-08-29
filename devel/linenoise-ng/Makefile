@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	arangodb
-GH_PROJECT=	linenoise-ng
 
 CFLAGS+=	-fPIC
 

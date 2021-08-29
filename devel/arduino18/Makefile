@@ -1,4 +1,4 @@
-PORTNAME=	arduino
+PORTNAME=	${GH_PROJECT:tl}
 PORTVERSION=	1.8.5
 PORTREVISION=	1
 CATEGORIES=	devel java
@@ -40,7 +40,6 @@ BUNDLE_LIBRARIES=	Firmata:2.5.6:firmata \
 GH_TUPLE+=	${BUNDLE_GH_ACCOUNT}:WiFi101-FirmwareUpdater-Plugin:v0.9.2:wifi10/linux/work/tools/WiFi101
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	arduino
 GH_PROJECT=	Arduino
 
 .for blib in ${BUNDLE_LIBRARIES}

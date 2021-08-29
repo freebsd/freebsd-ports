@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c11 gmake
 USE_GITHUB=	yes
-GH_ACCOUNT=	termbox
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/termbox.h \

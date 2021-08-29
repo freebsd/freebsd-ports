@@ -14,7 +14,6 @@ USES=		go:modules
 PLIST_FILES=	sbin/nextdns
 USE_GITHUB=	yes
 GO_TARGET=	.:${PREFIX}/sbin/nextdns
-GH_ACCOUNT=	nextdns
 GH_TAGNAME=	v1.32.2
 GH_TUPLE=	\
 		Microsoft:go-winio:v0.4.19:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \

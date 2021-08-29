@@ -79,7 +79,6 @@ CXXFLAGS+=	-DNDEBUG
 
 USE_GITHUB=	yes
 GH_PROJECT=	llvm-project
-GH_ACCOUNT=	llvm
 GH_TAGNAME=	${LLVM_PROJECT_COMMIT}
 
 .include "Makefile.snapshot"

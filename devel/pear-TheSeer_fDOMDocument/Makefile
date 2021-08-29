@@ -11,10 +11,9 @@ COMMENT=	Extension to PHP standard DOM
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	php:flavors pear:env
+USES=		php:flavors pear:env
 USE_GITHUB=	yes
 GH_ACCOUNT=	theseer
-GH_PROJECT=	fDOMDocument
 
 USE_PHP=	dom xml
 PEAR_CHANNEL=	theseer

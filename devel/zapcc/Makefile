@@ -16,7 +16,6 @@ BUILD_DEPENDS=	googletest>0:devel/googletest
 USES=		cmake compiler:c++11-lang gnome libedit python:3.4+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	yrnkrn
-GH_PROJECT=	zapcc
 GH_TAGNAME=	b4c31cc
 SHEBANG_GLOB=	*.sh *.py *.pl
 SHEBANG_FILES=	tools/clang/tools/clang-format/git-clang-format tools/clang/tools/scan-view/bin/scan-view utils/llvm-lit/llvm-lit.in

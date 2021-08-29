@@ -38,7 +38,6 @@ RUN_DEPENDS+=	gpg2:security/gnupg \
 USES=		python:3.5+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	the-paperless-project
-GH_PROJECT=	paperless
 USE_RC_SUBR=	paperless-consumer
 
 SHEBANG_FILES=	${WRKSRC}/src/manage.py

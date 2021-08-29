@@ -9,10 +9,8 @@ COMMENT=	Elm source code formatter based on the official Elm Style Guide
 LICENSE=	BSD3CLAUSE
 
 USES=		cabal
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	avh4
-GH_PROJECT=	elm-format
 
 USE_CABAL=	ansi-terminal-0.8.2 \
 		ansi-wl-pprint-0.6.8.2_2 \

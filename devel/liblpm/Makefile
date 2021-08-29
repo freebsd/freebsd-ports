@@ -12,7 +12,6 @@ USES=		compiler:c11 gmake libtool:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rmind
-GH_PROJECT=	liblpm
 GH_TAGNAME=	4119bb7
 WRKSRC_SUBDIR=	src
 USE_LDCONFIG=	yes

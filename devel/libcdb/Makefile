@@ -9,7 +9,6 @@ USES=		compiler:c11 gmake libtool:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rmind
-GH_PROJECT=	libcdb
 GH_TAGNAME=	a187cec
 WRKSRC_SUBDIR=	src
 USE_LDCONFIG=	yes

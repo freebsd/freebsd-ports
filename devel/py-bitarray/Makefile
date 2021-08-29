@@ -12,12 +12,9 @@ LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:3.6+
-
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist distutils
-
 GH_ACCOUNT=	ilanschnell
-GH_PROJECT=	bitarray
+USE_PYTHON=	autoplist distutils
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}

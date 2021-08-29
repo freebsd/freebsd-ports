@@ -15,8 +15,6 @@ ONLY_FOR_ARCHS_REASON=	see definitions in include/Zycore/Defines.h
 USES=		cmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	zyantific
-GH_PROJECT=	zydis
-
 GH_TUPLE=	zyantific:zycore-c:273e26a:zydis/dependencies/zycore
 
 .include <bsd.port.mk>

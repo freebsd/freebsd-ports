@@ -14,13 +14,10 @@ LIB_DEPENDS=	libminizip.so:archivers/minizip \
 		libboost_filesystem.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
 
-USES=	cmake gnome
+USES=		cmake gnome
 USE_LDCONFIG=	yes
-
 USE_GNOME=	libxml2
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	rdiankov
-GH_PROJECT=	collada-dom
 
 .include <bsd.port.mk>

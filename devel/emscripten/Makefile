@@ -18,7 +18,6 @@ RUN_DEPENDS=	llvm-devel>0:devel/llvm-devel \
 USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	emscripten-core
-GH_PROJECT=	emscripten
 SHEBANG_FILES=	${PYSCRIPTS} emcmake tools/emdump system/bin/sdl-config system/bin/sdl2-config third_party/websockify/run
 SHEBANG_GLOB=	*.py *.sh
 

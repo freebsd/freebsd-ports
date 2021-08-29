@@ -11,11 +11,8 @@ LICENSE=	LGPL3
 
 BUILD_DEPENDS=	${LOCALBASE}/gcc-arm-embedded-${TOOLCHAIN_FULL_VERSION}/bin/arm-none-eabi-gcc:devel/gcc-arm-embedded
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	libopencm3
-
 USES=		gmake python:build shebangfix
-
+USE_GITHUB=	yes
 SHEBANG_FILES=	scripts/irq2nvic_h \
 		scripts/lpcvtcksum
 

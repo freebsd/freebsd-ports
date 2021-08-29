@@ -12,7 +12,6 @@ RUN_DEPENDS=	git:devel/git
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	brooksdavis
-GH_PROJECT=	mergify
 GH_TAGNAME=	606ffbe2df73e4c4edfe399573d2f1df782aefbc
 
 NO_ARCH=	yes

@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	rbenv
 
 NO_BUILD=	yes
 

@@ -15,7 +15,6 @@ USE_QT=		buildtools_build concurrent core gui \
 USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	lumina-desktop
-GH_PROJECT=	lumina-pdf
 GH_TAGNAME=	645ed591ef91c3607d3ab87dd86f7acfd08b05c9
 
 OPTIONS_DEFINE=	NLS

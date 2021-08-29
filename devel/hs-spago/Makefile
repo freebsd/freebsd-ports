@@ -19,11 +19,8 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
 USES=		cabal
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	purescript
-GH_PROJECT=	spago
-
 USE_LOCALE=	en_US.UTF-8
 
 USE_CABAL=	Diff-0.4.0 \

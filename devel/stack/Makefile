@@ -12,12 +12,9 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		gmake:devel/gmake \
 		${LOCALBASE}/lib/compat/libffi.so.6:devel/libffi321
 
+USES=		cabal gmake perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	commercialhaskell
-GH_PROJECT=	stack
-
-USES=		cabal gmake perl5
-
 USE_PERL5=	run
 
 CABAL_FLAGS=	-support_aesni

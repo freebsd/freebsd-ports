@@ -11,7 +11,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 USES=		go:modules
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	taskctl
 GO_TARGET=	./cmd/taskctl
 GH_TUPLE=	bmatcuk:doublestar:v1.1.5:bmatcuk_doublestar/vendor/github.com/bmatcuk/doublestar \
 		briandowns:spinner:6dc224009eae:briandowns_spinner/vendor/github.com/briandowns/spinner \

@@ -16,7 +16,6 @@ LIB_DEPENDS=	libicudata.so:devel/icu \
 USES=		pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	benlaurie
-GH_PROJECT=	objecthash
 GH_TAGNAME=	770874c
 
 USE_LDCONFIG=	yes

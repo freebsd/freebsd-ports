@@ -11,10 +11,9 @@ COMMENT=	Recursive directory scanner and filter
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	php:flavors pear:env
+USES=		php:flavors pear:env
 USE_GITHUB=	yes
 GH_ACCOUNT=	theseer
-GH_PROJECT=	DirectoryScanner
 
 USE_PHP=	fileinfo
 PEAR_CHANNEL=	theseer

@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
-RUN_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
-		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gettext gmake gnome pkgconfig
 USE_GNOME=	glib20
@@ -23,7 +22,6 @@ USE_GITHUB=	yes
 GLIB_SCHEMAS=	org.gnome.shell.extensions.windowoverlay-icons.gschema.xml
 
 GH_ACCOUNT=	sustmi
-GH_PROJECT=	gnome-shell-extension-windowoverlay-icons
 GH_TAGNAME=	ad7366d
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves

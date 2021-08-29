@@ -11,8 +11,6 @@ LICENSE=	GPLv2
 
 USES=		shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	colorgcc
-
 SHEBANG_FILES=	colorgcc.pl
 
 NO_BUILD=	yes

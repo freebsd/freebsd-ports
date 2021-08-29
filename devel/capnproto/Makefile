@@ -12,11 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 USES=		autoreconf compiler:c++14-lang gmake libtool ssl
-
 USE_GITHUB=	yes
-GH_ACCOUNT=	capnproto
 USE_LDCONFIG=	yes
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_lib_ssl_OPENSSL_init_ssl=yes
 
