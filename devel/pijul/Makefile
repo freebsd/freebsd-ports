@@ -1,8 +1,7 @@
 # Created by: Carlo Strub
 
 PORTNAME=	pijul
-PORTVERSION=	1.0.0.a53
-PORTREVISION=	1
+PORTVERSION=	1.0.0.a54
 CATEGORIES=	devel
 
 MAINTAINER=	cs@FreeBSD.org
@@ -15,25 +14,25 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd \
 
 USES=		cargo ssl
 CARGO_INSTALL=	no
-CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
+CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.54 \
 		addr2line-0.16.0 \
 		adler-1.0.2 \
 		adler32-1.2.0 \
 		aes-0.7.4 \
 		aho-corasick-0.7.18 \
-		anyhow-1.0.42 \
+		anyhow-1.0.43 \
 		arrayref-0.3.6 \
-		arrayvec-0.5.2 \
+		arrayvec-0.7.1 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		backtrace-0.3.61 \
 		base64-0.13.0 \
-		base64ct-1.0.0 \
+		base64ct-1.0.1 \
 		bcrypt-pbkdf-0.6.2 \
 		bincode-1.3.3 \
 		bit-vec-0.6.3 \
-		bitflags-1.2.1 \
-		blake3-0.3.8 \
+		bitflags-1.3.2 \
+		blake3-1.0.0 \
 		block-buffer-0.9.0 \
 		block-modes-0.8.1 \
 		block-padding-0.2.1 \
@@ -45,12 +44,11 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		bytes-1.0.1 \
 		canonical-path-2.0.2 \
 		cc-1.0.69 \
-		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		cipher-0.3.0 \
-		clap-3.0.0-beta.2 \
-		clap_derive-3.0.0-beta.2 \
+		clap-3.0.0-beta.4 \
+		clap_derive-3.0.0-beta.4 \
 		constant_time_eq-0.1.5 \
 		core-foundation-0.9.1 \
 		core-foundation-sys-0.8.2 \
@@ -59,12 +57,11 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.5 \
 		crossbeam-utils-0.8.5 \
-		crypto-mac-0.8.0 \
 		crypto-mac-0.11.1 \
 		cryptovec-0.6.1 \
 		ctr-0.7.0 \
-		ctrlc-3.1.9 \
-		curve25519-dalek-3.1.0 \
+		ctrlc-3.2.0 \
+		curve25519-dalek-3.2.0 \
 		data-encoding-2.3.2 \
 		diffs-0.4.1 \
 		digest-0.9.0 \
@@ -80,7 +77,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		env_logger-0.8.4 \
 		errno-0.2.7 \
 		errno-dragonfly-0.1.1 \
-		filetime-0.2.14 \
+		filetime-0.2.15 \
 		flate2-1.0.20 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
@@ -101,7 +98,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		getrandom-0.1.16 \
 		getrandom-0.2.3 \
 		gimli-0.25.0 \
-		git2-0.13.20 \
+		git2-0.13.21 \
 		globset-0.4.8 \
 		h2-0.3.3 \
 		hashbrown-0.11.2 \
@@ -109,7 +106,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		hermit-abi-0.1.19 \
 		hmac-0.11.0 \
 		http-0.2.4 \
-		http-body-0.4.2 \
+		http-body-0.4.3 \
 		httparse-1.4.1 \
 		httpdate-1.0.1 \
 		human-panic-1.0.3 \
@@ -122,12 +119,12 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		instant-0.1.10 \
 		ipnet-2.3.1 \
 		itoa-0.4.7 \
-		jobserver-0.1.22 \
-		js-sys-0.3.51 \
+		jobserver-0.1.24 \
+		js-sys-0.3.52 \
 		lazy_static-1.4.0 \
-		libc-0.2.98 \
-		libgit2-sys-0.12.21+1.1.0 \
-		libpijul-1.0.0-alpha.46 \
+		libc-0.2.99 \
+		libgit2-sys-0.12.22+1.1.0 \
+		libpijul-1.0.0-alpha.48 \
 		libsodium-sys-0.2.7 \
 		libssh2-sys-0.2.21 \
 		libz-sys-1.1.3 \
@@ -135,7 +132,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		lock_api-0.4.4 \
 		log-0.4.14 \
 		lru-cache-0.1.2 \
-		matches-0.1.8 \
+		matches-0.1.9 \
 		md5-0.7.0 \
 		memchr-2.4.0 \
 		memmap-0.7.0 \
@@ -144,8 +141,8 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		miniz_oxide-0.4.4 \
 		mio-0.7.13 \
 		miow-0.3.7 \
-		native-tls-0.2.7 \
-		nix-0.20.0 \
+		native-tls-0.2.8 \
+		nix-0.22.0 \
 		ntapi-0.3.6 \
 		num-bigint-0.4.0 \
 		num-integer-0.1.44 \
@@ -157,7 +154,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		openssl-0.10.35 \
 		openssl-probe-0.1.4 \
 		openssl-sys-0.9.65 \
-		os_str_bytes-2.4.0 \
+		os_str_bytes-3.1.0 \
 		os_type-2.3.0 \
 		pager-0.16.0 \
 		parking_lot-0.11.1 \
@@ -185,7 +182,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		rand_core-0.6.3 \
 		rand_hc-0.2.0 \
 		rand_hc-0.3.1 \
-		redox_syscall-0.2.9 \
+		redox_syscall-0.2.10 \
 		redox_users-0.4.0 \
 		regex-1.5.4 \
 		regex-syntax-0.6.25 \
@@ -195,7 +192,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		rustc-demangle-0.1.20 \
 		ryu-1.0.5 \
 		same-file-1.0.6 \
-		sanakirja-1.2.9 \
+		sanakirja-1.2.10 \
 		sanakirja-core-1.2.12 \
 		schannel-0.1.19 \
 		scopeguard-1.1.0 \
@@ -209,7 +206,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		sha2-0.9.5 \
 		signal-hook-registry-1.4.0 \
 		signature-1.3.1 \
-		slab-0.4.3 \
+		slab-0.4.4 \
 		smallvec-1.6.1 \
 		socket2-0.4.1 \
 		static_assertions-1.1.0 \
@@ -217,11 +214,11 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		subtle-2.4.1 \
 		syn-1.0.74 \
 		synstructure-0.12.5 \
-		tar-0.4.35 \
+		tar-0.4.37 \
 		tempfile-3.2.0 \
 		termcolor-1.1.2 \
 		terminal_size-0.1.17 \
-		textwrap-0.12.1 \
+		textwrap-0.14.2 \
 		thiserror-1.0.26 \
 		thiserror-impl-1.0.26 \
 		thread_local-1.1.3 \
@@ -233,7 +230,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		time-0.1.43 \
 		tinyvec-1.3.1 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.9.0 \
+		tokio-1.10.0 \
 		tokio-macros-1.3.0 \
 		tokio-native-tls-0.3.0 \
 		tokio-stream-0.1.7 \
@@ -243,9 +240,9 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		tracing-0.1.26 \
 		tracing-core-0.1.18 \
 		try-lock-0.2.3 \
-		twox-hash-1.6.0 \
+		twox-hash-1.6.1 \
 		typenum-1.13.0 \
-		unicode-bidi-0.3.5 \
+		unicode-bidi-0.3.6 \
 		unicode-normalization-0.1.19 \
 		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.8 \
@@ -259,13 +256,13 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.74 \
-		wasm-bindgen-backend-0.2.74 \
-		wasm-bindgen-futures-0.4.24 \
-		wasm-bindgen-macro-0.2.74 \
-		wasm-bindgen-macro-support-0.2.74 \
-		wasm-bindgen-shared-0.2.74 \
-		web-sys-0.3.51 \
+		wasm-bindgen-0.2.75 \
+		wasm-bindgen-backend-0.2.75 \
+		wasm-bindgen-futures-0.4.25 \
+		wasm-bindgen-macro-0.2.75 \
+		wasm-bindgen-macro-support-0.2.75 \
+		wasm-bindgen-shared-0.2.75 \
+		web-sys-0.3.52 \
 		which-4.2.2 \
 		whoami-0.9.0 \
 		whoami-1.1.2 \
@@ -283,7 +280,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-alpha.53 \
 PLIST_FILES=	bin/pijul
 
 post-patch:
-	${MV} ${WRKSRC}/cargo-crates/pijul-1.0.0-alpha.53/* ${WRKSRC}/
+	${MV} ${WRKSRC}/cargo-crates/pijul-1.0.0-alpha.54/* ${WRKSRC}/
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/target/release/pijul ${STAGEDIR}${PREFIX}/bin/pijul
