@@ -12,10 +12,11 @@ COMMENT=	Fast MP3 encoder kit
 LICENSE=		LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake iconv libtool
+USES=		cpe gmake iconv libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp --disable-gtktest
+CPE_VENDOR=	lame_project
 
 DOC_FILES=	API LICENSE README TODO USAGE
 
