@@ -1,9 +1,9 @@
 # Created by: blubee <hello@blubee.me>
 
-PORTNAME=		pycangjie
-PORTVERSION=		1.3
+PORTNAME=	pycangjie
+PORTVERSION=	1.3
 DISTVERSIONPREFIX=	v
-CATEGORIES=		chinese
+CATEGORIES=	chinese
 
 MAINTAINER=	hello@blubee.me
 COMMENT=	Python wrapper to libcangjie
@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CYTHON=${LOCALBASE}/bin/cython-${PYTHON_VER}
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cangjians
-GH_PROJECT=	pycangjie
 
 post-install:
 	(cd ${STAGEDIR}${PREFIX} \

@@ -1,10 +1,10 @@
 # Created by: blubee <hello@blubee.me>
 
-PORTNAME=		libcangjie
-PORTVERSION=		1.3
-PORTREVISION=		1
+PORTNAME=	libcangjie
+PORTVERSION=	1.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
-CATEGORIES=		chinese
+CATEGORIES=	chinese
 
 MAINTAINER=	hello@blubee.me
 COMMENT=	C library implementing the Cangjie input method
@@ -17,15 +17,12 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3		\
 		libdbus-1.so:devel/dbus
 
 USES=		autoreconf gmake libtool localbase pkgconfig sqlite xorg
-
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
 USE_XORG=	xi
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cangjians
-GH_PROJECT=	libcangjie
 
 post-install:
 	@(${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so)
