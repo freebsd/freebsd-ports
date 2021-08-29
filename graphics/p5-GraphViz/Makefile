@@ -20,7 +20,7 @@ RUN_DEPENDS=	dot:graphics/graphviz \
 		p5-XML-Twig>=3.52:textproc/p5-XML-Twig
 TEST_DEPENDS=	p5-Test2-Suite>=0.000030:devel/p5-Test2-Suite
 
-USES=		perl5 tar:tgz
+USES=		cpe perl5 tar:tgz
 USE_PERL5=	configure
 
 NO_ARCH=	yes
