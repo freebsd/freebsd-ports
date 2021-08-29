@@ -21,7 +21,7 @@ IGNORE_riscv64=		fails to compile: lj_arch.h:55:2: No support for this architect
 CONFLICTS_INSTALL=	luajit-openresty
 
 WRKSRC=		${WRKDIR}/LuaJIT-${DISTVERSION}
-USES=		gmake
+USES=		cpe gmake
 USE_LDCONFIG=	yes
 MAKE_ARGS=	CC=${CC} CCOPT= CCOPT_x86=
 
