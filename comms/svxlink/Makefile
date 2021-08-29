@@ -24,7 +24,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 USES+=		cmake:noninja compiler:c++11-lang groff pkgconfig tcl
 USE_GITHUB=	yes
 GH_ACCOUNT=	sm0svx
-GH_PROJECT=	svxlink
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 CMAKE_ARGS+=	-DMAN_INSTALL_DIR:FILEPATH=${PREFIX}/share/man \

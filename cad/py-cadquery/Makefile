@@ -1,4 +1,4 @@
-PORTNAME=	cadquery
+PORTNAME=	${GH_ACCOUNT:tl}
 DISTVERSION=	2.0.1
 CATEGORIES=	cad
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,6 @@ USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CadQuery
-GH_PROJECT=	cadquery
 
 post-extract:
 # Move into a sub-directory so that we don't pollute site-packages.

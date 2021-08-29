@@ -11,12 +11,10 @@ LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		autoreconf
+GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	kosfango
-GH_PROJECT=	qico
 GH_TAGNAME=	15673bf
-
-GNU_CONFIGURE=	yes
 
 CONFDIR?=	${PREFIX}/etc/fido/qico
 QBASEDIR?=	/var/spool/fido/qico

@@ -51,10 +51,6 @@ USES=		cmake compiler:c++11-lang desktop-file-utils fortran gnome \
 		iconv perl5 pkgconfig pyqt:5 python:3.5+ qt:5 shared-mime-info \
 		shebangfix
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	gnuradio
-GH_PROJECT=	gnuradio
-
 SHEBANG_FILES=	grc/scripts/freedesktop/grc_setup_freedesktop.in \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-ctrlport-monitor \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-perf-monitorx
@@ -72,6 +68,7 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_RPATH:STRING="${LOCALBASE}/lib/gcc${_GCC_VER}" \
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=	--debug-output --trace
 USE_CXXSTD=	c++11
+USE_GITHUB=	yes
 USE_PYQT=	core gui opengl
 USE_WX=		3.0
 USE_QT=		buildtools core gui xml qmake widgets

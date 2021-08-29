@@ -14,7 +14,6 @@ USES=		cmake
 USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	jketterl
-GH_PROJECT=	digiham
 
 post-install:
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}

@@ -20,7 +20,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVO
 USES=		python:3.6+,run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	rsj56
-GH_PROJECT=	apitran
 GH_TAGNAME=	d209347
 
 NO_BUILD=	yes
