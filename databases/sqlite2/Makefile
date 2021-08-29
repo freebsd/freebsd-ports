@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SQL database engine in a C library
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig readline
+USES=		cpe gmake libtool pathfix pkgconfig readline
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--with-hints=freebsd.hints
