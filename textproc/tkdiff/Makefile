@@ -12,7 +12,7 @@ COMMENT=	Tk frontend for diff(1)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		tar:txz tk:wrapper
+USES=		cpe tar:txz tk:wrapper
 NO_BUILD=	yes
 
 DESKTOP_ENTRIES=	"Tkdiff" "Tk frontend for the diff command" \
