@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.ecartis.net/pub/ecartis/ \
 MAINTAINER=	jtrigg@spamcop.net
 COMMENT=	The Ecartis Listserver / Mailing List Manager
 
-USES=		gmake
+USES=		cpe gmake
 
 USERS=		ecartis
 GROUPS=		ecartis
