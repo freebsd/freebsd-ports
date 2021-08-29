@@ -41,7 +41,7 @@ GECKO_DESC=     Bundle Gecko MSI package for Wine
 MONO_DESC=      Bundle Mono MSI package for Wine
 
 GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine-gecko-2.47.1-x86.msi:emulators/wine-gecko
-MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-5.1.1-x86.msi:emulators/wine-mono
+MONO_RUN_DEPENDS=	wine-mono>0:emulators/wine-mono
 
 do-extract:
 	@${RM} -r ${WRKDIR}
