@@ -12,7 +12,9 @@ COMMENT=	Getopt(3) like library with a number of enhancements, from Redhat
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		iconv libtool pathfix
+USES=		cpe iconv libtool pathfix
+
+CPE_VENDOR=	popt_project
 
 TEST_TARGET=	check
 
