@@ -36,7 +36,6 @@ LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
 USES=		gl gmake gnome iconv xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	NatronGitHub
-GH_PROJECT=	openfx-arena
 GH_TUPLE=	NatronGitHub:openfx-supportext:e600cae:openfx_supportext/SupportExt \
 		NatronGitHub:openfx:a85dc34:openfx/OpenFX \
 		NatronGitHub:openfx-io:Natron-2.3.12:OpenFX_IO/OpenFX-IO \

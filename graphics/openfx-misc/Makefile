@@ -11,15 +11,13 @@ LICENSE=	GPLv2
 ONLY_FOR_ARCHS=	amd64 powerpc64
 
 USES=		gl gmake
+USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	NatronGitHub
-GH_PROJECT=	openfx-misc
 GH_TAGNAME=	3ab0531
 GH_TUPLE=	NatronGitHub:openfx-supportext:e600cae:openfx_supportext/SupportExt \
-			NatronGitHub:openfx:a85dc34:openfx/openfx
-
+		NatronGitHub:openfx:a85dc34:openfx/openfx
 MAKE_ENV+=	CONFIG=release
-USE_GL=	gl
 
 pre-patch:
 	@${RM} ${WRKSRC}/CImg/CImg.h.orig

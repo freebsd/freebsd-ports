@@ -18,11 +18,9 @@ LICENSE_PERMS_FROGATTO=	dist-mirror pkg-mirror auto-accept
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpng.so:graphics/png
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	frogatto
-
 USES=		compiler:c++11-lang dos2unix gl gmake pkgconfig sdl
 ALL_TARGET=	game server
+USE_GITHUB=	yes
 USE_GL=		glew glu
 USE_SDL=	sdl image mixer ttf
 USE_CXXSTD=	c++11

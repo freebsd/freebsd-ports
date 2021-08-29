@@ -17,11 +17,10 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		autoreconf compiler:c++11-lang desktop-file-utils gettext gmake \
-		gnome jpeg pkgconfig
+USES=		autoreconf compiler:c++11-lang desktop-file-utils gettext \
+		gmake gnome jpeg pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	sergiomb2
-GH_PROJECT=	ufraw
 GH_TAGNAME=	f34669b
 USE_GNOME+=	cairo gdkpixbuf2 glib20 gtk20
 

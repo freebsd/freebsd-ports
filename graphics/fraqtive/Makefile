@@ -15,10 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		compiler:c++11-lang dos2unix gl qmake qt:5
 USE_QT=		core gui opengl widgets xml buildtools_build
 USE_GL=		gl glu
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	mimecorg
-GH_PROJECT=	fraqtive
 
 OPTIONS_DEFINE=	SSE2
 SSE2_DESC=	Enable SSE2 optimization

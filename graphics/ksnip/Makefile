@@ -15,7 +15,6 @@ LIB_DEPENDS=	libkColorPicker.so:graphics/kcolorpicker \
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 xorg
 USE_GITHUB=	yes
-GH_ACCOUNT=	ksnip
 USE_KDE=	ecm_build
 USE_QT=		concurrent core dbus gui network printsupport svg testlib \
 		widgets x11extras xml \

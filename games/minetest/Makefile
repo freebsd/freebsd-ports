@@ -9,14 +9,12 @@ COMMENT=	Near-infinite-world block sandbox game
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/doc/lgpl-2.1.txt
 
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
-		libgmp.so:math/gmp \
+LIB_DEPENDS=	libgmp.so:math/gmp \
 		libjsoncpp.so:devel/jsoncpp
 
+USES=		cmake compiler:c11 iconv:wchar_t sqlite
 USE_GITHUB=	yes
-GH_ACCOUNT=	minetest
 
-USES=		cmake compiler:c11 iconv:wchar_t
 CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \
 		-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc" \
 		-DENABLE_SYSTEM_JSONCPP=ON

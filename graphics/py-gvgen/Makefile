@@ -15,7 +15,6 @@ USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	stricaud
-GH_PROJECT=	gvgen
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS

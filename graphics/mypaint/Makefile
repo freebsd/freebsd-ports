@@ -28,10 +28,7 @@ RUN_DEPENDS=	mypaint-brushes2>0:graphics/mypaint-brushes2 \
 
 USES=		compiler:c++11-lib desktop-file-utils gettext gnome localbase \
 		pkgconfig python:3.6+ tar:xz
-
 USE_GITHUB=	yes
-GH_ACCOUNT=	mypaint
-
 USE_GNOME=	gtk30 pygobject3 cairo librsvg2:run
 USE_PYTHON=	distutils py3kplist noflavors
 PYDISTUTILS_BUILD_TARGET=	build build_ext
