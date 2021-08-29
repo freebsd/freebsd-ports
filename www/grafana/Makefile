@@ -11,6 +11,8 @@ COMMENT=	Dashboard and graph editor for Graphite, InfluxDB & OpenTSDB
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+USES=		cpe
+
 NO_BUILD=	yes
 
 do-install:
