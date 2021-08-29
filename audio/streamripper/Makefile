@@ -19,7 +19,7 @@ LIB_DEPENDS=	libmad.so:audio/libmad \
 OPTIONS_DEFINE=	FAAD VORBIS
 OPTIONS_DEFAULT=FAAD VORBIS
 
-USES=		gnome iconv ncurses pkgconfig
+USES=		cpe gnome iconv ncurses pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-libmad \
