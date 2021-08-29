@@ -1,7 +1,5 @@
-TIMESTAMP = 1623621016
-SHA256 (07th-mod-ponscripter-fork-v2.2.0_test-3-gfd57193_GH0.tar.gz) = 1f739caaee42415c1e4160298849e3610929dad21352aed5a834162c194fa87e
-SIZE (07th-mod-ponscripter-fork-v2.2.0_test-3-gfd57193_GH0.tar.gz) = 34656322
+TIMESTAMP = 1630208856
+SHA256 (07th-mod-ponscripter-fork-v2.2.0_test-5-g14d0cb1_GH0.tar.gz) = 3db23490be777d299f3a88670c8fd43fcbb91a0258d5449b4ac0054af7b667fe
+SIZE (07th-mod-ponscripter-fork-v2.2.0_test-5-g14d0cb1_GH0.tar.gz) = 34656416
 SHA256 (69068bf83653.patch) = ab7ace6c01bff5690c58dcf7e824d1bed5211f52e5984510c114a78d01f62de7
 SIZE (69068bf83653.patch) = 826
-SHA256 (6a8795f0dc4e.patch) = bc6bc0351bc23b9961156d3d0bbe3381dffb104b45f02a149b36cbb24aa75a8e
-SIZE (6a8795f0dc4e.patch) = 1039

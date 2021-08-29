@@ -1,13 +1,12 @@
 PORTNAME=	ponscripter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0_test-3
-DISTVERSIONSUFFIX=	-gfd57193
+DISTVERSION=	2.2.0_test-5
+DISTVERSIONSUFFIX=	-g14d0cb1
 CATEGORIES=	games
 PKGNAMESUFFIX=	-${GH_ACCOUNT}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	69068bf83653.patch:-p1 # https://github.com/sekaiproject/ponscripter-fork/pull/98
-PATCHFILES+=	6a8795f0dc4e.patch:-p1 # https://github.com/07th-mod/ponscripter-fork/pull/7
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	NScripter-like novel-game interpreter with Unicode support
