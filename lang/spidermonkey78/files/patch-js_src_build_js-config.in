@@ -1,0 +1,18 @@
+--- js/src/build/js-config.in.orig	2021-08-28 22:43:38 UTC
++++ js/src/build/js-config.in
+@@ -8,7 +8,6 @@ mozilla_version='@MOZILLA_VERSION@'
+ JS_LIBRARY_NAME='@JS_LIBRARY_NAME@'
+ NSPR_CFLAGS='@NSPR_CFLAGS@'
+ JS_CONFIG_LIBS='@JS_CONFIG_LIBS@'
+-MOZ_JS_LIBS='@JS_CONFIG_MOZ_JS_LIBS@'
+ 
+ FILENAME=`basename "$0"`
+ 
+@@ -111,6 +110,7 @@ if test "$echo_cflags" = "yes"; then
+     echo "-std=gnu++11 -include $includedir/$JS_LIBRARY_NAME/js/RequiredDefines.h -isystem $includedir/$JS_LIBRARY_NAME $NSPR_CFLAGS"
+ fi
+ 
++MOZ_JS_LIBS="@JS_CONFIG_MOZ_JS_LIBS@"
+ if test "$echo_libs" = "yes"; then
+     echo "$MOZ_JS_LIBS $JS_CONFIG_LIBS"
+ fi
