@@ -13,13 +13,15 @@ LICENSE_NAME=	Redis Source Available License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+BROKEN_i386=	fails to compile: json.get_long() expected i32, found i64
+
+LIB_DEPENDS=	libclang.so:devel/llvm${LLVM_DEFAULT}
+
 USES=		cargo
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	RedisJSON:redisjson:1ca78bc:redisjson \
 		RedisJSON:jsonpath:14af7aa5435f3e676ceb3441ad78b9c8cb3ffa3a:jsonpath_lib
-
-LIB_DEPENDS=	libclang.so:devel/llvm${LLVM_DEFAULT}
 
 CARGO_CRATES=	aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
