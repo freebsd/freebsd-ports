@@ -16,7 +16,7 @@ COMMENT=	KAME racoon IKE daemon, ipsec-tools version
 
 LICENSE=	BSD3CLAUSE
 
-USES=		libtool tar:bzip2 ssl
+USES=		cpe libtool tar:bzip2 ssl
 
 CONFLICTS=	racoon-[0-9]*
 INSTALL_TARGET=	install-strip
