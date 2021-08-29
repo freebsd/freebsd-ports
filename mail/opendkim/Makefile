@@ -21,7 +21,7 @@ LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
 NO_OPTIONS_SORT=yes
-USES=		autoreconf libtool perl5 pkgconfig shebangfix ssl
+USES=		autoreconf cpe libtool perl5 pkgconfig shebangfix ssl
 USE_PERL5=	run
 SHEBANG_FILES=	opendkim/opendkim-genkey* reputation/opendkim-* stats/opendkim-* \
 		reprrd/opendkim-reprrdimport*
