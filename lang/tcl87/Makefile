@@ -17,7 +17,7 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		compiler:c11 localbase pathfix
+USES=		compiler:c11 cpe localbase pathfix
 
 LIB_DEPENDS=	libtommath.so:math/libtommath
 
