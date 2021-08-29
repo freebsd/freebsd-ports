@@ -1,6 +1,5 @@
 PORTNAME=	shake
-PORTVERSION=	0.19.4
-PORTREVISION=	1
+PORTVERSION=	0.19.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,7 +13,7 @@ USE_CABAL=	clock-0.8 \
 		extra-1.7.2 \
 		file-embed-0.0.12.0 \
 		filepattern-0.1.2 \
-		hashable-1.3.0.0_1 \
+		hashable-1.3.0.0_2 \
 		heaps-0.3.6.1 \
 		js-dgtable-0.5.2 \
 		js-flot-0.8.3 \
