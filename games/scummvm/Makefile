@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfaad.so:audio/faad \
 		libmpeg2.so:multimedia/libmpeg2 \
 		libtheoradec.so:multimedia/libtheora
 
-USES=		gmake gnome iconv jpeg pkgconfig sdl tar:xz
+USES=		cpe gmake gnome iconv jpeg pkgconfig sdl tar:xz
 HAS_CONFIGURE=	yes
 USE_SDL=	sdl2
 INSTALLS_ICONS=	yes
