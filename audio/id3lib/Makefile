@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_mips=	fails to link: '_ZTSN12_GLOBAL__N_117ConstIteratorImplE' referenced in section '.data.rel.ro' of tag.lo: defined in discarded section
 BROKEN_mips64=	fails to link: '_ZTSN12_GLOBAL__N_117ConstIteratorImplE' referenced in section '.data.rel.ro' of tag.lo: defined in discarded section
 
-USES=		compiler:c11 iconv libtool localbase
+USES=		compiler:c11 cpe iconv libtool localbase
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
