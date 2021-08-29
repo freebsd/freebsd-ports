@@ -24,7 +24,7 @@ GH_TUPLE=	CTSRD-CHERI:qemu:${QEMU_COMMIT} \
 		qemu:keycodemapdb:6b3d716:qemu/ui/keycodemapdb \
 
 HAS_CONFIGURE=	yes
-USES=		compiler:c11 gettext-runtime gl gmake gnome iconv:wchar_t perl5 \
+USES=		compiler:c11 cpe gettext-runtime gl gmake gnome iconv:wchar_t perl5 \
 		pkgconfig python:build xorg
 USE_XORG=	pixman
 USE_GNOME+=	glib20 libxml2
