@@ -14,7 +14,7 @@ LIB_DEPENDS=	libadns.so:dns/adns \
 		libpcre.so:devel/pcre \
 		libexpat.so:textproc/expat2
 
-USES=		gettext libtool
+USES=		cpe gettext libtool
 
 OPTIONS_DEFINE=	DOCS MYSQL
 
