@@ -20,7 +20,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 CONFLICTS=	play-[0-9]*
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf libtool localbase:ldflags pkgconfig
+USES=		autoreconf cpe libtool localbase:ldflags pkgconfig
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	AMRNB AMRWB FLAC GSM ID3TAG LADSPA LAME MAD OPUS PNG \
