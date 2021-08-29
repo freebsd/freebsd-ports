@@ -18,7 +18,9 @@ CONFIGURE_ARGS=	--disable-debugging --enable-sso
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		libtool
+USES=		cpe libtool
+
+CPE_VENDOR=	underbit
 
 SUB_LIST=	VERSION=${PORTVERSION}
 SUB_FILES=	mad.pc
