@@ -11,7 +11,7 @@ COMMENT=	Apache realtime log stats
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf ncurses readline
+USES=		autoreconf cpe ncurses readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	tessus
 
