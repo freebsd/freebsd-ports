@@ -12,7 +12,8 @@ COMMENT=	Portable audio output library
 
 LICENSE=	GPLv2
 
-USES=		libtool pathfix pkgconfig
+USES=		cpe libtool pathfix pkgconfig
+CPE_VENDOR=	xiph
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
