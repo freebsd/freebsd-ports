@@ -17,7 +17,9 @@ LICENSE_FILE_GFDL=	${WRKSRC}/COPYING.FDL
 
 LIB_DEPENDS=	libogg.so:audio/libogg
 
-USES=		autoreconf compiler:c11 iconv libtool pathfix pkgconfig tar:xz
+USES=		autoreconf compiler:c11 cpe iconv libtool pathfix pkgconfig tar:xz
+
+CPE_VENDOR=	flac_project
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
