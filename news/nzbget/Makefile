@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
-USES=		autoreconf compiler:c++14-lang gmake localbase ncurses \
+USES=		autoreconf compiler:c++14-lang cpe gmake localbase ncurses \
 		pkgconfig python:build shebangfix ssl
 USE_GITHUB=	yes
 USE_RC_SUBR=	nzbget
