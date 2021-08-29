@@ -14,7 +14,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 CONFLICTS_INSTALL=	xloadimage-*
 
-USES=		imake jpeg xorg
+USES=		cpe imake jpeg xorg
 USE_XORG=	xi
 WRKSRC=		${WRKDIR}/xli-${XLI_SNAPVER}
 
