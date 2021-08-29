@@ -12,15 +12,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/curl:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/bin/automake:devel/automake \
 		${LOCALBASE}/bin/curl:ftp/curl
 
-USES=	uidfix autoreconf
-
-LDFLAGS+=	-L${LOCALBASE}/lib/
-CFLAGS+=	-I${LOCALBASE}/include/
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	roswell
-
+USES=		autoreconf localbase uidfix
 GNU_CONFIGURE=	yes
+USE_GITHUB=	yes
 
 pre-configure:
 	(cd ${WRKSRC}/ && ${SH} bootstrap)
