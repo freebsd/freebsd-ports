@@ -5,7 +5,7 @@ MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	monitor-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	christopher.petrik@usm.edu
 COMMENT=	Monitoring tool for the Hiawatha webserver
 
 LICENSE=	GPLv3
