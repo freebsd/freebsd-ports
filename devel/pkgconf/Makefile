@@ -15,7 +15,7 @@ LICENSE=	ISCL
 
 TEST_DEPENDS=	kyua:devel/kyua
 
-USES=		tar:xz libtool pathfix
+USES=		cpe tar:xz libtool pathfix
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
