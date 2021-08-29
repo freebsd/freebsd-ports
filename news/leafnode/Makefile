@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		tar:xz
+USES=		cpe tar:xz
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	newsx-1* s-news-0*
