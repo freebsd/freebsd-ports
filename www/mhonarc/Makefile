@@ -10,7 +10,7 @@ COMMENT=	WWW front end for mail archives
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2 perl5
+USES=		cpe tar:bzip2 perl5
 USE_GITHUB=	YES
 GH_ACCOUNT=	sympa-community
 GH_PROJECT=	MHonArc
