@@ -17,7 +17,7 @@ GTK2_DESC=	Enable to have the gmp3info
 PORTSCOUT=	skipv:0.8.5
 
 ALL_TARGET=	mp3info
-USES=		ncurses tar:tgz
+USES=		cpe ncurses tar:tgz
 
 PLIST_FILES=	bin/mp3info share/man/man1/mp3info.1.gz
 PORTDOCS=	ChangeLog README mp3info.txt
