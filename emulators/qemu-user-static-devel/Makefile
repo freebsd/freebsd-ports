@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libglib-2.0.a:devel/glib20 \
 		bash:shells/bash \
 		meson>=0.57.1_1:devel/meson
 
-USES=		bison compiler:c11 gmake ninja:build perl5 pkgconfig python:build
+USES=		bison compiler:c11 cpe gmake ninja:build perl5 pkgconfig python:build
 
 USE_GITHUB=	yes
 GH_TUPLE=	qemu-bsd-user:qemu-bsd-user:38bb64abdce3606c823ea8f9d1c7e7176fdf20c9 \
