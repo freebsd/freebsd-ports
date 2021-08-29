@@ -23,7 +23,7 @@ USES=			autoreconf compiler:c11 gmake iconv:patch,translit \
 USE_LOCALE=		en_US.UTF-8
 USE_PERL5=		build
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CC=${CC} LD=${LD} PATH=${SLAVES_PREFIX}/bin:${PATH}
+CONFIGURE_ENV=		PATH=${SLAVES_PREFIX}/bin:${PATH}
 MAKE_ENV=		PATH=${SLAVES_PREFIX}/bin:${PATH}
 
 SUB_FILES=		build.mk
@@ -71,7 +71,7 @@ BOOT_SUB_LIST_OFF=	HSC2HS=${BOOT_HSC2HS}
 PROFILE_SUB_LIST=	WITH_PROFILE="YES"
 PROFILE_SUB_LIST_OFF=	WITH_PROFILE="NO"
 
-GHC_VERSION=		8.10.5
+GHC_VERSION=		8.10.6
 CABAL_VERSION=		3.2.1.0
 HSCOLOUR_VERSION=	1.24.4
 LLVM_VERSION=		10
@@ -83,6 +83,8 @@ PLIST_SUB=		GHC_VERSION=${GHC_VERSION} CABAL_VERSION=${CABAL_VERSION}
 PORTDOCS=		*
 
 .include <bsd.port.pre.mk>
+
+CONFIGURE_TARGET=	${GHC_ARCH}-portbld-${OPSYS:tl}
 
 # This version of ncurses is needed by bootstrap compiler
 .if ${OSVERSION} > 1300078 && empty(PORT_OPTIONS:MBOOT) && ${ARCH} != powerpc64
@@ -186,11 +188,6 @@ SLAVES_PREFIX=		${WRKDIR}/slaves_prefix
 SLAVES_WRKDIRPREFIX=	${WRKDIR}/slaves_wrkdirprefix
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|; \
-		s|%%AR%%|${AR}|; \
-		s|%%LD%%|${LD}|' \
-		${WRKSRC}/libraries/Cabal/Cabal/Distribution/Simple/Program/Builtin.hs
-
 .if empty(PORT_OPTIONS:MBOOT)
 	@${REINPLACE_CMD} -e '/^mandir/d' ${BOOT_DIR}/mk/build.mk
 	@${REINPLACE_CMD} -e '/^infodir/d' ${BOOT_DIR}/mk/build.mk
