@@ -10,7 +10,7 @@ COMMENT=	Text web browser, ambitious, in active development
 
 RUN_DEPENDS=	wget:ftp/wget
 
-USES=		gmake ncurses
+USES=		cpe gmake ncurses
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/netrik \
