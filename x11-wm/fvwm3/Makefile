@@ -15,10 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
 		libevent.so:devel/libevent
 
-USES=		compiler:c11 pkgconfig python:3.7+ readline xorg
+USES=		compiler:c11 cpe pkgconfig python:3.7+ readline xorg
 USE_XORG=	ice x11 xext xrandr xrender xt
 
 CONFLICTS_INSTALL=	fvwm-2.*
+
+CPE_VENDOR=	fvwm
+CPE_PRODUCT=	fvwm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_path_PYTHON=${PYTHON_CMD} \
