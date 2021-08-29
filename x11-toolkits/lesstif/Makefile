@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 CONFLICTS?=	open-motif-*
 
-USES=		tar:bzip2 libtool xorg
+USES=		cpe tar:bzip2 libtool xorg
 USE_XORG=	sm ice xt x11 xext xorgproto xrender xft
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
