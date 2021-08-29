@@ -4,13 +4,14 @@ PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	ceea85bbabaafa0be700.diff:-p1
+
 MAINTAINER=	stefan@gronke.net
 COMMENT=	Library to manage jails with iocage and iocell
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-BROKEN=		fails to build
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gitpython>0:devel/py-gitpython@${PY_FLAVOR} \
@@ -21,10 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gitpython>0:devel/py-gitpython@${PY_FLAVOR} 
 		rsync:net/rsync
 
 USES=		python:3.6+
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsdci
-GH_PROJECT=	libioc
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils py3kplist

@@ -1,3 +1,5 @@
-TIMESTAMP = 1565256016
+TIMESTAMP = 1565249199
 SHA256 (bsdci-libioc-0.8.2_GH0.tar.gz) = d3cfbae1bb20763b4a5e3fa5ab8d50ee95bbe10eb34305e3958b8906c1d5e442
 SIZE (bsdci-libioc-0.8.2_GH0.tar.gz) = 147829
+SHA256 (ceea85bbabaafa0be700.diff) = 5533f44630cefe88f8a251f0c185109f60f74f4e5418f1c7ed9e237e98bd7451
+SIZE (ceea85bbabaafa0be700.diff) = 1142
