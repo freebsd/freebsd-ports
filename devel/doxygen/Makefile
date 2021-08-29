@@ -14,7 +14,7 @@ COMMENT=	Documentation system for C, C++, and other languages
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		bison cmake:noninja compiler:c++14-lang dos2unix \
+USES=		bison cmake:noninja compiler:c++14-lang cpe dos2unix \
 		iconv python shebangfix
 
 ALL_TARGET=	all
