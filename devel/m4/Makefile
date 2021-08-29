@@ -12,7 +12,7 @@ COMMENT=	GNU M4
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		iconv makeinfo tar:xz
+USES=		cpe iconv makeinfo tar:xz
 
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/gm4
 INFO=		m4
+
+CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=	EXAMPLES LIBSIGSEGV NLS
 OPTIONS_SUB=	yes
