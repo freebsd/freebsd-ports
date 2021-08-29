@@ -17,11 +17,12 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		gmake libtool localbase perl5 ssl tar:tgz
+USES=		cpe gmake libtool localbase perl5 ssl tar:tgz
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-zlib --with-ssl=${OPENSSLBASE}
+CPE_VENDOR=	w3c
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
