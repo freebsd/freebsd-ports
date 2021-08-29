@@ -28,7 +28,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libcourier-unicode.so:devel/courier-unicode \
 		libidn.so:dns/libidn
 
-USES=		compiler:c++11-lang iconv localbase:ldflags perl5 pkgconfig \
+USES=		compiler:c++11-lang cpe iconv localbase:ldflags perl5 pkgconfig \
 		tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
