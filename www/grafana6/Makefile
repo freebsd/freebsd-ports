@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_RC_SUBR=	grafana
 
 USE_GITHUB=	yes
