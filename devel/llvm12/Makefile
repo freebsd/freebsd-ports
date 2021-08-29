@@ -29,7 +29,7 @@ LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
-USES=		cmake compiler:c++11-lib perl5 tar:xz \
+USES=		cmake compiler:c++11-lib cpe perl5 tar:xz \
 		shebangfix
 _USES_PYTHON?=	python:3.6-3.9,build
 USES+=		${_USES_PYTHON}
