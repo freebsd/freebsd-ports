@@ -14,7 +14,7 @@ LICENSE_NAME=	License for Scintilla and SciTE
 LICENSE_FILE=	${WRKSRC}/../License.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		compiler:c++17-lang gmake gnome iconv pkgconfig tar:tgz
+USES=		compiler:c++17-lang cpe gmake gnome iconv pkgconfig tar:tgz
 
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
