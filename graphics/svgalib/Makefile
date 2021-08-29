@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		gmake uidfix dos2unix shebangfix
+USES=		cpe gmake uidfix dos2unix shebangfix
 DOS2UNIX_FILES=	utils/gtf/gtf.h utils/gtf/scitech.h
 SHEBANG_FILES=	utils/svgakeymap
 USE_LDCONFIG=	yes
