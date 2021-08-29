@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	bazaar-1.*
 
-USES=		tar:xz pkgconfig pathfix libtool:keepla shebangfix
+USES=		cpe tar:xz pkgconfig pathfix libtool:keepla shebangfix
 SHEBANG_FILES=	${WRKSRC}/src/bdftogd
 GNU_CONFIGURE=	yes
 SUB_FILES=	gdlib-config
