@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
-USES=		autoreconf gettext gmake iconv libtool:keepla pkgconfig readline tar:bzip2
+USES=		autoreconf cpe gettext gmake iconv libtool:keepla pkgconfig readline tar:bzip2
 
 TDS_VER?=	7.4
 
