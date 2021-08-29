@@ -16,7 +16,7 @@ LIB_DEPENDS=	libestr.so:devel/libestr \
 		libcurl.so:ftp/curl
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR}
 
-USES=		libtool pkgconfig autoreconf python:env
+USES=		cpe libtool pkgconfig autoreconf python:env
 USE_LDCONFIG=	yes
 
 PORTSCOUT=	limit:^8\.
