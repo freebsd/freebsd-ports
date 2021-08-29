@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/Experimental%20Versions/${PORTNAME}%20${PORTVERSION
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tool for converting pdf-files into html
 
-USES=		ghostscript gmake
+USES=		cpe ghostscript gmake
 
 PLIST_FILES=	bin/pdf-to-html
 
