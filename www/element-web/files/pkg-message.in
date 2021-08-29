@@ -5,4 +5,5 @@
 }
 { type: install
   message: "Please serve files in %%WWWDIR%% with a webserver of your choice. (eg. www/nginx)"
+}
 ]
