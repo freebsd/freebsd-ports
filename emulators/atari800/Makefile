@@ -25,7 +25,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-USES=		gmake
+USES=		cpe gmake
 GNU_CONFIGURE=	yes
 NO_OPTIONS_SORT=yes
 
