@@ -14,7 +14,7 @@ COMMENT=	Sybase/Microsoft TDS protocol library
 
 LICENSE=	LGPL20
 
-USES=		autoreconf compiler:c11 gettext-tools gmake iconv \
+USES=		autoreconf compiler:c11 cpe gettext-tools gmake iconv \
 		libtool:keepla pkgconfig tar:bzip2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-dev.${PORTVERSION}
