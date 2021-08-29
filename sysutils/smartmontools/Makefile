@@ -12,7 +12,7 @@ COMMENT=	S.M.A.R.T. disk monitoring tools
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		alias compiler:c++11-lib shebangfix
+USES=		alias compiler:c++11-lib cpe shebangfix
 USE_RC_SUBR=	smartd
 
 SHEBANG_FILES=	examplescripts/Example5
