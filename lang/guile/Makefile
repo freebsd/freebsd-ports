@@ -17,9 +17,11 @@ LIB_DEPENDS=	libffi.so:devel/libffi \
 		libltdl.so:devel/libltdl \
 		libunistring.so:devel/libunistring
 
-USES=		charsetfix compiler:c11 gmake iconv libtool makeinfo pathfix pkgconfig \
+USES=		charsetfix compiler:c11 cpe gmake iconv libtool makeinfo pathfix pkgconfig \
 	readline tar:lz
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	gnu
 
 CONFLICTS_INSTALL=	guile1-[0-9]* guile2-[0-9]*
 
