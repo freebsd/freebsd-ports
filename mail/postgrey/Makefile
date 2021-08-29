@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-BerkeleyDB>=0:databases/p5-BerkeleyDB \
 		p5-Net-Server>=0:net/p5-Net-Server \
 		p5-NetAddr-IP>=0:net-mgmt/p5-NetAddr-IP
 
-USES=		perl5 shebangfix
+USES=		cpe perl5 shebangfix
 USE_PERL5=	run
 USE_RC_SUBR=	${PORTNAME}
 
