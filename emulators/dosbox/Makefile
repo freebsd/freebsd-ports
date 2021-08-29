@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		sdl
+USES=		cpe sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-core-inline
 USE_SDL=	sdl net sound
