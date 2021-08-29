@@ -17,6 +17,8 @@ LICENSE_NAME=	tripwire
 LICENSE_TEXT=	Cannot be redistributed for more than the cost of duplication
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+USES=		cpe
+
 NO_PACKAGE=	requires local database to be built
 # XXX should also work on other 32-bit architectures.
 ONLY_FOR_ARCHS=	i386
