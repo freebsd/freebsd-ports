@@ -11,6 +11,8 @@ COMMENT=	Program for uu/xx/Base64/BinHex/yEnc de-/encoding
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cpe
+
 LIB_DEPENDS=	libuu.so:converters/uulib
 
 GNU_CONFIGURE=	yes
