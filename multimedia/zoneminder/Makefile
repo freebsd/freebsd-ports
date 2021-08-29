@@ -37,7 +37,6 @@ RUN_DEPENDS=	${ZM_DEPENDS} \
 
 USES=		cmake:insource,noninja jpeg mysql perl5 php shebangfix ssl
 USE_GITHUB=	yes
-GH_PROJECT=	zoneminder
 GH_TUPLE=	FriendsOfCake:crud:0bd63fb:crud/web/api/app/Plugin/Crud \
 		ZoneMinder:CakePHP-Enum-Behavior:ea90c0c:crud_plugin/web/api/app/Plugin/CakePHP-Enum-Behavior \
 		ZoneMinder:RtspServer:cd7fd49:rtsp_server/dep/RtspServer

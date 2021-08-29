@@ -15,7 +15,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.0:textproc/py-feedparser@${P
 
 USES=		python:3.6+
 USE_GITHUB=	yes
-GH_ACCOUNT=	rss2email
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes

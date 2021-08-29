@@ -20,15 +20,14 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		xmlto:textproc/xmlto \
 		docbook-sgml>0:textproc/docbook-sgml
 
-USES=		autoreconf gmake gnome libtool localbase pkgconfig shebangfix ssl
+USES=		autoreconf gmake gnome libtool localbase pkgconfig \
+		shebangfix ssl
 USE_GITHUB=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 
 CONFLICTS=	dbmail22-[0-9]*
-
-GH_ACCOUNT=	dbmail
 
 OPTIONS_DEFINE=	DOCS LDAP SIEVE
 OPTIONS_DEFAULT=	SIEVE

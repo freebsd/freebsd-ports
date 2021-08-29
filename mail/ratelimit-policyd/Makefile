@@ -13,7 +13,6 @@ USES+=		perl5 shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MirLach
-GH_PROJECT=	ratelimit-policyd
 #GH_TAGNAME=	65154a2
 
 RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql

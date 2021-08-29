@@ -17,7 +17,6 @@ LIB_DEPENDS=	libccd.so:math/libccd \
 USES=		cmake compiler:c++11-lang eigen:3 pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	flexible-collision-library
-GH_PROJECT=	fcl
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	FCL_BUILD_TESTS BUILD_TESTING

@@ -25,7 +25,6 @@ INSTALLS_ICONS=		yes
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		AravisProject
-GH_PROJECT=		aravis
 
 CONFIGURE_ARGS=		--enable-packet-socket=no --enable-viewer=yes	\
 			--enable-gst-plugin=no --enable-gst-0.10-plugin=no \

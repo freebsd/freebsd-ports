@@ -22,8 +22,6 @@ BROKEN_riscv64=	fails to compile: No rule to make target riscv64/Make.files
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	JuliaMath
-GH_PROJECT=	openlibm
-
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>
