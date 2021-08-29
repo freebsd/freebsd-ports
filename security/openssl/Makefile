@@ -165,4 +165,8 @@ post-install-SHARED-on:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/openssl
 
+post-install-MAN3-on:
+	( cd ${STAGEDIR}/${PREFIX} ; ${FIND} man/man3 man/man7 -not -type d ) | \
+		${SED} 's/$$/.gz/' >>${TMPPLIST}
+
 .include <bsd.port.post.mk>
