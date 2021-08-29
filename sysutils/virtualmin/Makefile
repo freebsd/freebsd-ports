@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/lib/webmin/webmin-init:sysutils/webmin
 
-USES=		shebangfix
+USES=		cpe shebangfix
 SHEBANG_FILES=	*.cgi
 NO_ARCH=	yes
 NO_BUILD=	yes
