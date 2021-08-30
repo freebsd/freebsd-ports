@@ -1,9 +1,11 @@
 Augustus is a fork of the Julius project that intends to incorporate gameplay
 changes.
 
-The aim of this project is to provide enhanced, customizable gameplay to Caesar 3 using project Julius UI enhancements.
+The aim of this project is to provide enhanced, customizable gameplay to
+Caesar 3 using project Julius UI enhancements.
 
-Augustus is able to load Caesar 3 and Julius saves, however saves made with Augustus will not work outside Augustus.
+Augustus is able to load Caesar 3 and Julius saves, however saves made with
+Augustus will not work outside Augustus.
 
 Gameplay enhancements include:
 *  Roadblocks
