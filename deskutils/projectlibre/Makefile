@@ -1,8 +1,7 @@
 # Created by: Joseph Benden <joe@thrallingpenguin.com>
 
 PORTNAME=	projectlibre
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.9.3
 CATEGORIES=	deskutils editors java
 MASTER_SITES=	SF/${PORTNAME}/ProjectLibre/${PORTVERSION:S/.0$//} \
 		LOCAL/cpm/projectlibre/:icons
@@ -18,20 +17,18 @@ LICENSE=	CPAL-1.0
 
 USE_JAVA=	yes
 
-NO_ARCH=	yes
-NO_BUILD=	yes
-
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}-${PORTVERSION}
-DATAFILES=	lib projectlibre.jar readme.html
-
 DESKTOP_ENTRIES="ProjectLibre" \
 		"" \
 		"${PREFIX}/share/pixmaps/projectlibre.png" \
 		"${PORTNAME}" \
 		"Office;ProjectManagement;" \
 		false
-
+NO_ARCH=	yes
+NO_BUILD=	yes
 SUB_FILES=	projectlibre.sh
+
+DATAFILES=	lib projectlibre.jar readme.html
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATAFILES}" ${STAGEDIR}${DATADIR}
