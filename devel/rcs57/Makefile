@@ -9,9 +9,6 @@ COMMENT=	Version control system (as was in FreeBSD prior to removal)
 
 LICENSE=	GPLv2
 
-BROKEN_armv6=		fails to build: runaway build
-BROKEN_armv7=		fails to build: runaway build
-
 CONFLICTS=	rcs-5.[89]*
 
 OPTIONS_DEFINE=	FREEBSD
