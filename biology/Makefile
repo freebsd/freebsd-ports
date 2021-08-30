@@ -13,6 +13,7 @@
     SUBDIR += bioawk
     SUBDIR += biococoa
     SUBDIR += biolibc
+    SUBDIR += biolibc-tools
     SUBDIR += bioparser
     SUBDIR += biosig
     SUBDIR += biosoup

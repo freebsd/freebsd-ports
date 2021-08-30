@@ -1,0 +1,6 @@
+Biolibc-tools is a collection of simple fast, memory-efficient,
+programs for processing biological data.  These are simple programs
+built on biolibc that are not complex enough to warrant a separate
+project.
+
+WWW: https://github.com/auerlab/biolibc-tools
