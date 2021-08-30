@@ -18,15 +18,6 @@
  
  /* Define to 1 if you have the `faccessat' function. */
  #define HAVE_FACCESSAT 1
-@@ -336,7 +336,7 @@
- #define HAVE_MEMORY_H 1
- 
- /* Define to 1 if you have the `mempcpy' function. */
--#define HAVE_MEMPCPY 1
-+/* #undef HAVE_MEMPCPY */
- 
- /* Define to 1 if you have a working `mmap' system call. */
- #define HAVE_MMAP 1
 @@ -411,7 +411,7 @@
  #define HAVE_SYSCONF 1
  
