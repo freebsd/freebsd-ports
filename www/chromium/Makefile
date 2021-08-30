@@ -204,6 +204,11 @@ TEST_ALL_TARGET=	${TEST_TARGETS}
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
+BASE_MEMPCPY!=	${GREP} mempcpy ${CROSS_SYSROOT}/usr/include/string.h
+.if empty(BASE_MEMPCPY)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-no-mempcpy-nasm
+.endif
+
 .if ${PORT_OPTIONS:MHEIMDAL_BASE} && !exists(/usr/lib/libkrb5.so)
 IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in base
 .endif
