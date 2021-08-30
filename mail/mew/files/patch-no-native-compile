@@ -1,0 +1,863 @@
+From e3545580eb51d37142267bc8d6c39b934a0eaf0d Mon Sep 17 00:00:00 2001
+From: Yasuhiro Kimura <yasu@utahime.org>
+Date: Mon, 30 Aug 2021 19:12:41 +0900
+Subject: [PATCH] Prevent .el files from being native compiled.
+
+Mew doesn't work correctly if Emacs supports native compilation and
+.el files are compiled to .eln ones. So prevent .el files from being
+native compiled by adding following lines at the end of them.
+
+;; Local Variables:
+;; no-native-compile: t
+;; End:
+---
+ mew-addrbook.el   | 4 ++++
+ mew-attach.el     | 4 ++++
+ mew-auth.el       | 4 ++++
+ mew-blvs.el       | 4 ++++
+ mew-bq.el         | 4 ++++
+ mew-cache.el      | 4 ++++
+ mew-complete.el   | 4 ++++
+ mew-config.el     | 4 ++++
+ mew-const.el      | 4 ++++
+ mew-darwin.el     | 4 ++++
+ mew-decode.el     | 4 ++++
+ mew-demo.el       | 4 ++++
+ mew-draft.el      | 4 ++++
+ mew-edit.el       | 4 ++++
+ mew-encode.el     | 4 ++++
+ mew-env.el        | 4 ++++
+ mew-exec.el       | 4 ++++
+ mew-ext.el        | 4 ++++
+ mew-fib.el        | 4 ++++
+ mew-func.el       | 4 ++++
+ mew-gemacs.el     | 4 ++++
+ mew-header.el     | 4 ++++
+ mew-highlight.el  | 4 ++++
+ mew-imap.el       | 4 ++++
+ mew-imap2.el      | 4 ++++
+ mew-key.el        | 4 ++++
+ mew-lang-jp.el    | 4 ++++
+ mew-lang-kr.el    | 4 ++++
+ mew-lang-latin.el | 4 ++++
+ mew-local.el      | 4 ++++
+ mew-mark.el       | 4 ++++
+ mew-message.el    | 4 ++++
+ mew-mime.el       | 4 ++++
+ mew-minibuf.el    | 4 ++++
+ mew-mule.el       | 4 ++++
+ mew-mule3.el      | 4 ++++
+ mew-net.el        | 4 ++++
+ mew-nntp.el       | 4 ++++
+ mew-nntp2.el      | 4 ++++
+ mew-passwd.el     | 4 ++++
+ mew-pgp.el        | 4 ++++
+ mew-pick.el       | 4 ++++
+ mew-pop.el        | 4 ++++
+ mew-refile.el     | 4 ++++
+ mew-scan.el       | 4 ++++
+ mew-search.el     | 4 ++++
+ mew-smime.el      | 4 ++++
+ mew-smtp.el       | 4 ++++
+ mew-sort.el       | 4 ++++
+ mew-ssh.el        | 4 ++++
+ mew-ssl.el        | 4 ++++
+ mew-summary.el    | 4 ++++
+ mew-summary2.el   | 4 ++++
+ mew-summary3.el   | 4 ++++
+ mew-summary4.el   | 4 ++++
+ mew-syntax.el     | 4 ++++
+ mew-thread.el     | 4 ++++
+ mew-unix.el       | 4 ++++
+ mew-vars.el       | 4 ++++
+ mew-vars2.el      | 4 ++++
+ mew-vars3.el      | 4 ++++
+ mew-varsx.el      | 4 ++++
+ mew-virtual.el    | 4 ++++
+ mew-win32.el      | 4 ++++
+ mew.el            | 4 ++++
+ 65 files changed, 260 insertions(+)
+
+diff --git mew-addrbook.el mew-addrbook.el
+index e9d5c6b..9a94143 100644
+--- mew-addrbook.el
++++ mew-addrbook.el
+@@ -574,3 +574,7 @@ reflected."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-addrbook.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-attach.el mew-attach.el
+index a405d6a..1f69b7c 100644
+--- mew-attach.el
++++ mew-attach.el
+@@ -876,3 +876,7 @@ Input decrypters' addresses."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-attach.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-auth.el mew-auth.el
+index eaf6677..3b8a564 100644
+--- mew-auth.el
++++ mew-auth.el
+@@ -100,3 +100,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-auth.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-blvs.el mew-blvs.el
+index e454e03..b0537d8 100644
+--- mew-blvs.el
++++ mew-blvs.el
+@@ -88,3 +88,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-blvs.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-bq.el mew-bq.el
+index f5a6846..f1ed957 100644
+--- mew-bq.el
++++ mew-bq.el
+@@ -1197,3 +1197,7 @@ That is, each line may be more than 75."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-bq.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-cache.el mew-cache.el
+index da85f90..b1d9e0a 100644
+--- mew-cache.el
++++ mew-cache.el
+@@ -263,3 +263,7 @@ if decode fails."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-cache.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-complete.el mew-complete.el
+index afbcd40..876443a 100644
+--- mew-complete.el
++++ mew-complete.el
+@@ -810,3 +810,7 @@ the name exists."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-complete.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-config.el mew-config.el
+index 7a80b4e..0e9fde4 100644
+--- mew-config.el
++++ mew-config.el
+@@ -640,3 +640,7 @@ fields in the header according to the new value."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-config.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-const.el mew-const.el
+index 9ff390d..c8b284b 100644
+--- mew-const.el
++++ mew-const.el
+@@ -364,3 +364,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-const.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-darwin.el mew-darwin.el
+index b1ab3aa..f9dda96 100644
+--- mew-darwin.el
++++ mew-darwin.el
+@@ -135,3 +135,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-darwin.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-decode.el mew-decode.el
+index cc74a74..276e627 100644
+--- mew-decode.el
++++ mew-decode.el
+@@ -1156,3 +1156,7 @@ Return a part syntax after moving the beginning of the content body."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-decode.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-demo.el mew-demo.el
+index e8ba169..bca4f60 100644
+--- mew-demo.el
++++ mew-demo.el
+@@ -143,3 +143,7 @@ Please send comments to Kazu@Mew.org.
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-demo.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-draft.el mew-draft.el
+index 40584ff..55defa1 100644
+--- mew-draft.el
++++ mew-draft.el
+@@ -1030,3 +1030,7 @@ Set privacy service which will be effective when \\[mew-draft-make-message]."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-draft.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-edit.el mew-edit.el
+index 36c63f2..b77bc85 100644
+--- mew-edit.el
++++ mew-edit.el
+@@ -1204,3 +1204,7 @@ mew-summary-reedit."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-edit.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-encode.el mew-encode.el
+index 70af9e9..2fa1313 100644
+--- mew-encode.el
++++ mew-encode.el
+@@ -1383,3 +1383,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-encode.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-env.el mew-env.el
+index 7b1aa9e..0333a3e 100644
+--- mew-env.el
++++ mew-env.el
+@@ -360,3 +360,7 @@ requires PTY.")
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-env.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-exec.el mew-exec.el
+index dff3d24..592f65c 100644
+--- mew-exec.el
++++ mew-exec.el
+@@ -690,3 +690,7 @@ the queue, type '\\[mew-summary-send-message]' in the queue online."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-exec.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-ext.el mew-ext.el
+index 3428b08..acc6459 100644
+--- mew-ext.el
++++ mew-ext.el
+@@ -521,3 +521,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-ext.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-fib.el mew-fib.el
+index 385f95d..67cf1b4 100644
+--- mew-fib.el
++++ mew-fib.el
+@@ -121,3 +121,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-fib.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-func.el mew-func.el
+index 14340ab..02b9e6a 100644
+--- mew-func.el
++++ mew-func.el
+@@ -1673,3 +1673,7 @@ by side-effect."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-func.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-gemacs.el mew-gemacs.el
+index 47e8df0..f1d5021 100644
+--- mew-gemacs.el
++++ mew-gemacs.el
+@@ -463,3 +463,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-gemacs.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-header.el mew-header.el
+index d832d1b..84ee46e 100644
+--- mew-header.el
++++ mew-header.el
+@@ -545,3 +545,7 @@ Remove anonymous addresses."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-header.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-highlight.el mew-highlight.el
+index 729283e..d7a4da8 100644
+--- mew-highlight.el
++++ mew-highlight.el
+@@ -383,3 +383,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-highlight.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-imap.el mew-imap.el
+index c07dc93..842d2c4 100644
+--- mew-imap.el
++++ mew-imap.el
+@@ -1917,3 +1917,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-imap.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-imap2.el mew-imap2.el
+index 49b8231..c542f95 100644
+--- mew-imap2.el
++++ mew-imap2.el
+@@ -657,3 +657,7 @@ with '*' in the region are handled."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-imap2.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-key.el mew-key.el
+index 4b753f6..40f9635 100644
+--- mew-key.el
++++ mew-key.el
+@@ -688,3 +688,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-key.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-lang-jp.el mew-lang-jp.el
+index cfc63a8..95ac02e 100644
+--- mew-lang-jp.el
++++ mew-lang-jp.el
+@@ -217,3 +217,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-lang-jp.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-lang-kr.el mew-lang-kr.el
+index d7c3a35..ec1b58c 100644
+--- mew-lang-kr.el
++++ mew-lang-kr.el
+@@ -41,3 +41,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-lang-kr.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-lang-latin.el mew-lang-latin.el
+index 233ef99..d3ead60 100644
+--- mew-lang-latin.el
++++ mew-lang-latin.el
+@@ -86,3 +86,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-lang-latin.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-local.el mew-local.el
+index 7257b31..f6d6ccb 100644
+--- mew-local.el
++++ mew-local.el
+@@ -424,3 +424,7 @@ Binary search is used for speed reasons."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-local.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-mark.el mew-mark.el
+index 477fa6e..187175e 100644
+--- mew-mark.el
++++ mew-mark.el
+@@ -929,3 +929,7 @@ The 'o' mark is not exchangeable."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-mark.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-message.el mew-message.el
+index 91c5b35..ef52cb7 100644
+--- mew-message.el
++++ mew-message.el
+@@ -339,3 +339,7 @@ confused. Please use '\\[mew-message-forward]' instead."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-message.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-mime.el mew-mime.el
+index 98843ca..266bf69 100644
+--- mew-mime.el
++++ mew-mime.el
+@@ -987,3 +987,7 @@ See 'mew-mime-content-type' to know how actions can be defined."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-mime.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-minibuf.el mew-minibuf.el
+index 705bde0..14864f9 100644
+--- mew-minibuf.el
++++ mew-minibuf.el
+@@ -1056,3 +1056,7 @@ it is deleted automatically."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-minibuf.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-mule.el mew-mule.el
+index aabebf3..c56da2e 100644
+--- mew-mule.el
++++ mew-mule.el
+@@ -168,3 +168,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-mule.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-mule3.el mew-mule3.el
+index 3b0dc8a..e71f672 100644
+--- mew-mule3.el
++++ mew-mule3.el
+@@ -424,3 +424,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-mule3.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-net.el mew-net.el
+index 2206b28..3ebf1d1 100644
+--- mew-net.el
++++ mew-net.el
+@@ -910,3 +910,7 @@ The messages in the server side is always retained."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-net.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-nntp.el mew-nntp.el
+index e9c3352..5f8b291 100644
+--- mew-nntp.el
++++ mew-nntp.el
+@@ -742,3 +742,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-nntp.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-nntp2.el mew-nntp2.el
+index 4c12458..57ab6f0 100644
+--- mew-nntp2.el
++++ mew-nntp2.el
+@@ -446,3 +446,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-nntp2.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-passwd.el mew-passwd.el
+index 9604901..08962da 100644
+--- mew-passwd.el
++++ mew-passwd.el
+@@ -351,3 +351,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-passwd.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-pgp.el mew-pgp.el
+index 6f53cdd..ac55657 100644
+--- mew-pgp.el
++++ mew-pgp.el
+@@ -1296,3 +1296,7 @@ according to a URL in a field specified by 'mew-x-pgp-key-list'."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-pgp.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-pick.el mew-pick.el
+index 74ff9a8..2a48f4e 100644
+--- mew-pick.el
++++ mew-pick.el
+@@ -851,3 +851,7 @@ If you want to change the stored keyword, execute this command with '\\[universa
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-pick.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-pop.el mew-pop.el
+index 9e2db7c..e78b099 100644
+--- mew-pop.el
++++ mew-pop.el
+@@ -989,3 +989,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-pop.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-refile.el mew-refile.el
+index 1ed35e5..02a278f 100644
+--- mew-refile.el
++++ mew-refile.el
+@@ -946,3 +946,7 @@ This is very convenient to refile all messages picked by '\\[mew-summary-pick]'.
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-refile.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-scan.el mew-scan.el
+index a251ac5..c72e1cf 100644
+--- mew-scan.el
++++ mew-scan.el
+@@ -928,3 +928,7 @@ non-nil, only headers of messages are cached. If executed with
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-scan.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-search.el mew-search.el
+index cd2985c..01f85d9 100644
+--- mew-search.el
++++ mew-search.el
+@@ -813,3 +813,7 @@ from scratch."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-search.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-smime.el mew-smime.el
+index c720ad4..7842728 100644
+--- mew-smime.el
++++ mew-smime.el
+@@ -499,3 +499,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-smime.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-smtp.el mew-smtp.el
+index e3dbbdc..ab6ff38 100644
+--- mew-smtp.el
++++ mew-smtp.el
+@@ -791,3 +791,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-smtp.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-sort.el mew-sort.el
+index 391476c..912a54b 100644
+--- mew-sort.el
++++ mew-sort.el
+@@ -525,3 +525,7 @@ local cache messages are packed."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-sort.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-ssh.el mew-ssh.el
+index 7aa3adc..fbd4c37 100644
+--- mew-ssh.el
++++ mew-ssh.el
+@@ -256,3 +256,7 @@ after ':'."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-ssh.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-ssl.el mew-ssl.el
+index 608ab79..30327c2 100644
+--- mew-ssl.el
++++ mew-ssl.el
+@@ -323,3 +323,7 @@ A local port number can be obtained the process name after ':'. "
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-ssl.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-summary.el mew-summary.el
+index 06b575e..31fcfcb 100644
+--- mew-summary.el
++++ mew-summary.el
+@@ -426,3 +426,7 @@ and return (beg . end)."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-summary.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-summary2.el mew-summary2.el
+index 7434d27..e2c3fbb 100644
+--- mew-summary2.el
++++ mew-summary2.el
+@@ -817,3 +817,7 @@ over the window. Type '\\[mew-summary-prev-page]' to see them when a message is
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-summary2.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-summary3.el mew-summary3.el
+index e9b3a4c..5625181 100644
+--- mew-summary3.el
++++ mew-summary3.el
+@@ -490,3 +490,7 @@ attached."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-summary3.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-summary4.el mew-summary4.el
+index 3e900cc..a524f2c 100644
+--- mew-summary4.el
++++ mew-summary4.el
+@@ -1227,3 +1227,7 @@ Executing this command enables searching such information."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-summary4.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-syntax.el mew-syntax.el
+index 9a6ea2f..f2b03b1 100644
+--- mew-syntax.el
++++ mew-syntax.el
+@@ -1055,3 +1055,7 @@ system."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-syntax.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-thread.el mew-thread.el
+index 7e575cb..7523e90 100644
+--- mew-thread.el
++++ mew-thread.el
+@@ -1180,3 +1180,7 @@ The thread/message is specified with the mark(\\[set-mark-command])."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-thread.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-unix.el mew-unix.el
+index 7c40726..26f9948 100644
+--- mew-unix.el
++++ mew-unix.el
+@@ -145,3 +145,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-unix.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-vars.el mew-vars.el
+index 92ea41e..0c32ed5 100644
+--- mew-vars.el
++++ mew-vars.el
+@@ -3322,3 +3322,7 @@ Level 2: syntax error."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-vars.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-vars2.el mew-vars2.el
+index c7d629e..fead654 100644
+--- mew-vars2.el
++++ mew-vars2.el
+@@ -1013,3 +1013,7 @@ An example is as follows:
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-vars2.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-vars3.el mew-vars3.el
+index a35ec18..68b6223 100644
+--- mew-vars3.el
++++ mew-vars3.el
+@@ -223,3 +223,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-vars.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-varsx.el mew-varsx.el
+index a66afd9..e02207b 100644
+--- mew-varsx.el
++++ mew-varsx.el
+@@ -268,3 +268,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-varsx.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-virtual.el mew-virtual.el
+index da0c794..23a56f0 100644
+--- mew-virtual.el
++++ mew-virtual.el
+@@ -243,3 +243,7 @@ If called with '\\[universal-argument]', you can specify a target mark."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-virtual.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew-win32.el mew-win32.el
+index 4d33cd4..49cf792 100644
+--- mew-win32.el
++++ mew-win32.el
+@@ -266,3 +266,7 @@
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew-win32.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+diff --git mew.el mew.el
+index 64c19b0..5884bfa 100644
+--- mew.el
++++ mew.el
+@@ -773,3 +773,7 @@ Mew remain, so you can resume with buffer operations."
+ ;; IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ ;;; mew.el ends here
++
++;; Local Variables:
++;; no-native-compile: t
++;; End:
+-- 
+2.33.0
+
