@@ -1,11 +1,11 @@
---- Cargo.toml.orig	2021-08-06 21:04:49 UTC
+--- Cargo.toml.orig	2021-08-30 07:17:30 UTC
 +++ Cargo.toml
 @@ -14,7 +14,7 @@ bson = "0.14"
  serde_json = "1.0"
  serde = "1.0"
  libc = "0.2"
--jsonpath_lib = { git="https://github.com/RedisJSON/jsonpath.git", branch="generic_json_path" }
+-jsonpath_lib = { git = "https://github.com/RedisJSON/jsonpath.git", branch = "generic_json_path" }
 +jsonpath_lib = { path="../jsonpath-14af7aa5435f3e676ceb3441ad78b9c8cb3ffa3a/" }
- redis-module = { version="0.22", features = ["experimental-api"]}
+ redis-module = { version="0.23", features = ["experimental-api"]}
  [features]
  # Workaround to allow cfg(feature = "test") in redismodue-rs dependencies:

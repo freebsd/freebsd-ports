@@ -1,8 +1,7 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME=	redisjson
-PORTVERSION=	0.0.0.0.2021.08.10.01
-PORTREVISION=	1
+PORTVERSION=	0.0.0.0.2021.08.30.01
 CATEGORIES=	databases
 
 MAINTAINER=	osa@FreeBSD.org
@@ -13,14 +12,12 @@ LICENSE_NAME=	Redis Source Available License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-BROKEN_i386=	fails to compile: json.get_long() expected i32, found i64
-
-LIB_DEPENDS=	libclang.so:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
 
 USES=		cargo
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	RedisJSON:redisjson:1ca78bc:redisjson \
+GH_TUPLE=	RedisJSON:redisjson:90bc4a0:redisjson \
 		RedisJSON:jsonpath:14af7aa5435f3e676ceb3441ad78b9c8cb3ffa3a:jsonpath_lib
 
 CARGO_CRATES=	aho-corasick-0.7.15 \
@@ -29,7 +26,7 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bindgen-0.59.1 \
-		bitflags-1.2.1 \
+		bitflags-1.3.2 \
 		bitvec-0.19.5 \
 		bson-0.14.1 \
 		byteorder-1.4.3 \
@@ -50,10 +47,10 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		hex-0.3.2 \
 		humantime-2.1.0 \
 		indexmap-1.7.0 \
-		itoa-0.4.7 \
+		itoa-0.4.8 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.98 \
+		libc-0.2.100 \
 		libloading-0.7.0 \
 		linked-hash-map-0.5.4 \
 		log-0.4.14 \
@@ -73,19 +70,19 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
-		redis-module-0.22.0 \
+		redis-module-0.23.0 \
 		regex-1.4.6 \
 		regex-syntax-0.6.25 \
 		rustc-hash-1.1.0 \
 		ryu-1.0.5 \
-		serde-1.0.127 \
-		serde_derive-1.0.127 \
+		serde-1.0.128 \
+		serde_derive-1.0.128 \
 		serde_json-1.0.66 \
 		shlex-1.0.0 \
 		strsim-0.8.0 \
 		strum_macros-0.21.1 \
 		syn-0.11.11 \
-		syn-1.0.74 \
+		syn-1.0.75 \
 		synom-0.11.3 \
 		tap-1.0.1 \
 		termcolor-1.1.2 \
@@ -108,7 +105,7 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 
 CARGO_USE_GITHUB=	yes
 
-WRKSRC=		${WRKDIR}/RedisJSON-1ca78bc
+WRKSRC=		${WRKDIR}/RedisJSON-90bc4a0
 
 PLIST_FILES=	lib/librejson.so
 
