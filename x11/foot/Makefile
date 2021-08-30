@@ -1,5 +1,6 @@
 PORTNAME=	foot
 DISTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -22,11 +23,19 @@ USES=		compiler:c11 meson pkgconfig xorg
 USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS_DEFINE=	DOCS NOTIFY UTF8PROC XDG
-OPTIONS_DEFAULT=NOTIFY UTF8PROC XDG
+OPTIONS_DEFINE=	DOCS LTO NOTIFY UTF8PROC XDG
+OPTIONS_DEFAULT=LTO NOTIFY UTF8PROC XDG
+OPTIONS_EXCLUDE+=	${CC:T:Mgcc*:C/.+/LTO/} # undefined reference to `xstrdup'
+OPTIONS_EXCLUDE_powerpc64=	${"${/usr/bin/ld:L:tA}"==/usr/bin/ld.lld:?LTO:} # LLVM bug 47353
 
 DOCS_BUILD_DEPENDS=	scdoc:textproc/scdoc
 DOCS_MESON_ENABLED=	docs
+
+LTO_MESON_TRUE=		b_lto
+.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
+# --plugin isn't supported by old GNU ld.bfd in base
+LTO_LDFLAGS=		-fuse-ld=lld
+.endif
 
 NOTIFY_RUN_DEPENDS=	notify-send:devel/libnotify
 
