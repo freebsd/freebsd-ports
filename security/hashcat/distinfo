@@ -1,6 +1,6 @@
-TIMESTAMP = 1626533035
-SHA256 (hashcat-hashcat-v6.2.3_GH0.tar.gz) = c0be1c6693ee1f35c7bef1f79bf9e30a954f717ef42d00e37787aaeff3271e51
-SIZE (hashcat-hashcat-v6.2.3_GH0.tar.gz) = 6222424
+TIMESTAMP = 1630312515
+SHA256 (hashcat-hashcat-v6.2.4_GH0.tar.gz) = 9020396ff933693e310b479b641e86f1783d9819d60d1d907752ad8d24a60c31
+SIZE (hashcat-hashcat-v6.2.4_GH0.tar.gz) = 6269444
 SHA256 (KhronosGroup-OpenCL-Headers-1d3dc4e_GH0.tar.gz) = 21ddb21f6643e5c76aec7a78c9c2aaac6f5e4c82cd4603b437c899026c833977
 SIZE (KhronosGroup-OpenCL-Headers-1d3dc4e_GH0.tar.gz) = 59767
 SHA256 (Cyan4973-xxHash-c0e86bc_GH0.tar.gz) = 7dc0343140d92f19d5b436591bdb8313b6cb2c686bccb7ff5caafcbc136fe468
