@@ -1,0 +1,17 @@
+Augustus is a fork of the Julius project that intends to incorporate gameplay
+changes.
+
+The aim of this project is to provide enhanced, customizable gameplay to Caesar 3 using project Julius UI enhancements.
+
+Augustus is able to load Caesar 3 and Julius saves, however saves made with Augustus will not work outside Augustus.
+
+Gameplay enhancements include:
+*  Roadblocks
+*  Market special orders
+*  Global labour pool
+*  Partial warehouse storage
+*  Increased game limits
+*  Zoom controls
+*  And more!
+
+WWW: https://github.com/Keriew/augustus
