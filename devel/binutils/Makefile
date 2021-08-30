@@ -2,6 +2,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.37
+PORTREVISION=	1
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
@@ -124,6 +125,8 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 	${REINPLACE_CMD} -e "s/-ldl//g" ${WRKSRC}/gold/testsuite/Makefile.in
+# Force the generation of man pages
+	${RM} ${WRKSRC}/binutils/doc/*.1
 
 post-install:
 .if ${FLAVOR} == native
