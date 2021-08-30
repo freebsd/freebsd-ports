@@ -137,21 +137,12 @@ post-patch:
 		${WRKSRC}/Makefile ${WRKSRC}/Makefile.tools \
 		${WRKSRC}/asmrun/Makefile \
 		${WRKSRC}/otherlibs/systhreads/Makefile \
-		${WRKSRC}/testsuite/makefiles/Makefile.common \
 		${WRKSRC}/testsuite/tests/asmcomp/Makefile
 
 post-configure:
 	@${REINPLACE_CMD} -E \
 		-e '/^PTHREAD_LINK/s,-pthread,${THR_LD},g' \
 		${WRKSRC}/config/Makefile
-# INSTALL* safeness (which preserves the correct permissions despite
-# user's umask(1)
-	@${FIND} ${WRKDIR} -type f -name Makefile -print0 | \
-		${XARGS} -0 -n 5 -x ${REINPLACE_CMD} -E \
-		-e 's,^(${PATTERN}+.*INSTALLDIR),\1\$${BSD_INSTALL_DATA} \4,' \
-		-e 's,^(${PATTERN}+.*BINDIR),\1\$${BSD_INSTALL_PROGRAM} \4,' \
-		-e 's,^(${PATTERN}+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \4,' \
-		-e 's,(${PATTERN}+.*(MANDIR|MANODIR|MANEXT)),\1\$${BSD_INSTALL_MAN} \4,'
 
 check-test: do-install
 	@cd ${WRKSRC}/testsuite; ${RM} _log; for d in tests/* ; do \
