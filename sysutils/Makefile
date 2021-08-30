@@ -1291,6 +1291,7 @@
     SUBDIR += smenu
     SUBDIR += smp_utils
     SUBDIR += snap
+    SUBDIR += snapraid
     SUBDIR += snmp_exporter
     SUBDIR += snooze
     SUBDIR += sockaddr
