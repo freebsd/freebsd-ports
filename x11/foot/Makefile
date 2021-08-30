@@ -41,8 +41,8 @@ XDG_RUN_DEPENDS=	xdg-open:devel/xdg-utils
 # Add site- suffix to avoid conflict with terminfo-db (part of ncurses)
 MESON_ARGS+=	-Dcustom-terminfo-install-location="${PLIST_FILES:M*terminfo*:[1]:H:H}"
 PKGMESSAGE=	${NONEXISTENT}
-PLIST_FILES+=	share/site-terminfo/f/${PORTNAME} \
-		share/site-terminfo/f/${PORTNAME}-direct
+PLIST_FILES+=	share/site-terminfo/${PORTNAME:C,^.,&/&,} \
+		share/site-terminfo/${PORTNAME:C,^.,&/&,}-direct
 .else
 MESON_ARGS+=	-Dterminfo=disabled -Ddefault-terminfo=xterm-256color
 .endif
