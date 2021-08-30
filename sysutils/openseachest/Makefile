@@ -1,5 +1,5 @@
 PORTNAME=	openseachest
-PORTVERSION=	21.03.01
+PORTVERSION=	21.06.21
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -9,17 +9,18 @@ COMMENT=	Utilities for managing storage devices
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		gmake
+USES=		dos2unix gmake
 ALL_TARGET=	release
+
+DOS2UNIX_FILES=	src/openseachest_util_options.c
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Seagate
 GH_PROJECT=	openSeaChest
-GH_TUPLE=	Seagate:opensea-common:1df13e2:common/opensea-common \
-		Seagate:opensea-operations:2dd600a:operations/opensea-operations \
-		Seagate:opensea-transport:0d04cf7:transport/opensea-transport \
+GH_TUPLE=	Seagate:opensea-common:dc89150:common/opensea-common \
+		Seagate:opensea-operations:cfd7678:operations/opensea-operations \
+		Seagate:opensea-transport:a2ea73c:transport/opensea-transport \
 		Seagate:wingetopt:1b5b5ad:wingetopt/wingetopt
-
 BUILD_WRKSRC=	${WRKSRC}/Make/gcc
 INSTALL_WRKSRC=	${WRKSRC}/Make/gcc
 CFLAGS+=	-Wall -c -std=gnu99
