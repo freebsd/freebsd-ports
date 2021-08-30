@@ -1,3 +1,3 @@
-TIMESTAMP = 1629330173
-SHA256 (llvm-project-13.0.0rc1.src.tar.xz) = 164d66fdadcba32260cc1e3363931e898bac50aeb42fe131d0669de1d2b36faf
-SIZE (llvm-project-13.0.0rc1.src.tar.xz) = 97541252
+TIMESTAMP = 1630085619
+SHA256 (llvm-project-13.0.0rc2.src.tar.xz) = 62c80357c23630365758656753268949e81ac12c15e077699919713998514e41
+SIZE (llvm-project-13.0.0rc2.src.tar.xz) = 97559008
