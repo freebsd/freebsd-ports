@@ -12,9 +12,6 @@ COMMENT=	Open Source Distributed Filesystem
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_13=	fails to build
-BROKEN_i386=	fails to build
-
 BUILD_DEPENDS=	a2x:textproc/asciidoc \
 		spdlog>=1.4.2:devel/spdlog
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
@@ -26,8 +23,6 @@ USE_RC_SUBR=	mfscgiserv \
 	mfsmaster \
 	mfsmetalogger \
 	mfspingserv
-
-GH_ACCOUNT=	lizardfs
 
 USERS=	mfs
 GROUPS=	mfs
