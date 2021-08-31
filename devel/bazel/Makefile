@@ -1,7 +1,7 @@
 # Created by: Klaus Aehlig <aehlig@linta.de>
 
 PORTNAME=	bazel
-DISTVERSION=	4.2.0
+DISTVERSION=	4.2.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=	bazel-${PORTVERSION}rc${FINALRC}-dist
@@ -22,25 +22,25 @@ BUILD_DEPENDS=	bash:shells/bash \
 		zip:archivers/zip
 
 USES=		python:3.3+ shebangfix zip:infozip
+SHEBANG_REGEX=	.*(sh|txt|_stub|stub_.*|bazel|get_workspace_status|protobuf_support|_so)
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.8
+JAVA_VENDOR=	openjdk
+JAVA_BUILD=	yes
+JAVA_RUN=	yes
 
 CONFLICTS_INSTALL=	bazel029
+
+# The bazel binary is also a zip archive (extracted by the elf part), it must not be stripped
+STRIP=
+
+NO_WRKSUBDIR=	YES
 
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
 # candidates.
-FINALRC=	4
-
-SHEBANG_REGEX=	.*(sh|txt|_stub|stub_.*|bazel|get_workspace_status|protobuf_support|_so)
-USE_JAVA=	yes
-JAVA_VENDOR=	openjdk
-JAVA_VERSION=	1.8
-JAVA_BUILD=	yes
-JAVA_RUN=	yes
-
-NO_WRKSUBDIR=	YES
-
-# The bazel binary is also a zip archive (extracted by the elf part), it must not be stripped
-STRIP=
+FINALRC=	2
 
 .include <bsd.port.pre.mk>
 
