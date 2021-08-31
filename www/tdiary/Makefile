@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-bundler>=2.0.2:sysutils/rubygem-bundler \
 		rubygem-rack>=2.2.3,3:www/rubygem-rack \
 		rubygem-rake>=12.3.3:devel/rubygem-rake
 
-USES=		shebangfix
+USES=		cpe shebangfix
 USE_RUBY=	yes
 
 SHEBANG_FILES=	bin/tdiary index.fcgi index.rb misc/convert2.rb misc/migrate.rb \
