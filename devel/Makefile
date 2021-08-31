@@ -6813,6 +6813,7 @@
     SUBDIR += rubygem-virtus
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-warden
+    SUBDIR += rubygem-warning
     SUBDIR += rubygem-wdm
     SUBDIR += rubygem-weakref
     SUBDIR += rubygem-web-console-rails60

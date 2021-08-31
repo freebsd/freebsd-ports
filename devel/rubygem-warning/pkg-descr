@@ -1,0 +1,7 @@
+ruby-warning adds custom processing for warnings, including the ability to
+ignore specific warning messages, ignore warnings in specific
+files/directories, include backtraces with warnings, treat warnings as
+errors, deduplicate warnings, and add custom handling for all warnings in
+specific files/directories.
+
+WWW: https://github.com/jeremyevans/ruby-warning
