@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	85
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Tool Command Language (Linux CentOS ${LINUX_DIST_VER})
 
-USES=		linux:c7
+USES=		cpe linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 USE_LINUX_RPM_BAD_PERMS=	yes
