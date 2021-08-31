@@ -224,6 +224,7 @@ include/thrift/lib/cpp2/protocol/TableBasedSerializer.h
 include/thrift/lib/cpp2/protocol/TableBasedSerializerImpl.h
 include/thrift/lib/cpp2/protocol/Traits.h
 include/thrift/lib/cpp2/protocol/VirtualProtocol.h
+include/thrift/lib/cpp2/protocol/detail/ReservedId.h
 include/thrift/lib/cpp2/protocol/detail/index.h
 include/thrift/lib/cpp2/protocol/detail/protocol_methods.h
 include/thrift/lib/cpp2/protocol/nimble/BufferingNimbleDecoder.h
@@ -397,6 +398,8 @@ include/thrift/lib/py3/serializer.h
 include/thrift/lib/py3/server.h
 include/thrift/lib/py3/ssl.h
 include/thrift/lib/py3/stream.h
+include/thrift/lib/py3/tablebased/PythonTableBased.h
+include/thrift/lib/py3/tablebased/Serializer.h
 include/thrift/lib/py3/test/BinaryTypes.h
 include/thrift/lib/py3/test/client_event_handlers/handler.h
 include/thrift/lib/py3/test/cpp_handler.h
