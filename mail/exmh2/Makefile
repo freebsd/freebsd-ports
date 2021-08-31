@@ -4,7 +4,7 @@
 
 PORTNAME=	exmh
 PORTVERSION=	2.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	mail tk
 # XXX: Standard SF fails with a hung download
 MASTER_SITES=	https://sourceforge.net/projects/${PORTNAME}/files/${PORTNAME}/${PORTVERSION}/
