@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	mediawiki13[5-6]-[0-9]*
 
-USES=		php:flavors shebangfix
+USES=		cpe php:flavors shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
 		maintenance/postgres/*.pl \
 		maintenance/storage/make-blobs \
