@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-USES=		autoreconf bison gmake libtool localbase ncurses xorg
+USES=		autoreconf cpe bison gmake libtool localbase ncurses xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	marcIhm
 
