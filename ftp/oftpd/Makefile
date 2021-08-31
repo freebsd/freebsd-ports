@@ -12,6 +12,8 @@ COMMENT=	Threaded, anonymous only FTP server designed for security
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cpe
+
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README AUTHORS ChangeLog NEWS TODO BUGS
