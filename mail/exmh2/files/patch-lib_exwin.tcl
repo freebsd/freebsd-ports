@@ -1,0 +1,28 @@
+--- lib/exwin.tcl.orig	2017-11-09 20:42:24.000000000 -0800
++++ lib/exwin.tcl	2021-08-30 21:28:25.291533000 -0700
+@@ -101,12 +101,19 @@
+ }
+ 
+ proc mscroll {bindtag num} {
+-    bind $bindtag <Button-5> [list %W yview scroll $num units]
+-    bind $bindtag <Button-4> [list %W yview scroll -$num units]
+-    bind $bindtag <Shift-Button-5> [list %W yview scroll 1 units]
+-    bind $bindtag <Shift-Button-4> [list %W yview scroll -1 units]
+-    bind $bindtag <Control-Button-5> [list %W yview scroll 1 pages]
+-    bind $bindtag <Control-Button-4> [list %W yview scroll -1 pages]
++    # Prior to tcl 8.7a5:
++    # bind $bindtag <Button-5> [list %W yview scroll $num units]
++    # bind $bindtag <Button-4> [list %W yview scroll -$num units]
++    # bind $bindtag <Shift-Button-5> [list %W yview scroll 1 units]
++    # bind $bindtag <Shift-Button-4> [list %W yview scroll -1 units]
++    # bind $bindtag <Control-Button-5> [list %W yview scroll 1 pages]
++    # bind $bindtag <Control-Button-4> [list %W yview scroll -1 pages]
++
++    # tcl 8.7a5 and later (units can be pixels/units/pages). See
++    # https://core.tcl-lang.org/tips/doc/trunk/tip/474.md for more info:
++    bind $bindtag <MouseWheel> [ list tk::MouseWheel %W y %D -$num units ]
++    bind $bindtag <Shift-MouseWheel> { tk::MouseWheel %W y %D -1 units }
++    bind $bindtag <Shift-MouseWheel> { tk::MouseWheel %W y %D -1 pages }
+ }
+ 
+ 
