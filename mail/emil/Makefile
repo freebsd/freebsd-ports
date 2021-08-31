@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-2.1.0-beta9
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail format/encoding converter
 
+USES=		cpe
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC=byacc
 
