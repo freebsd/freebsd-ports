@@ -25,7 +25,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		bison:alias cmake:insource gl pathfix pkgconfig python:env \
+USES=		bison:alias cmake:insource cpe gl pathfix pkgconfig python:env \
 		tar:bzip2 tk xorg
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xau xcb xdamage xdmcp xext xfixes xft xi \
