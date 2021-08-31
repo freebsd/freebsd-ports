@@ -113,6 +113,7 @@ include/universal/native/integers.hpp
 include/universal/native/manipulators.hpp
 include/universal/native/native.hpp
 include/universal/native/nonconstexpr/clang_long_double.hpp
+include/universal/native/nonconstexpr/extract_fp_components.hpp
 include/universal/native/nonconstexpr/gcc_long_double.hpp
 include/universal/native/nonconstexpr/hpcc_long_double.hpp
 include/universal/native/nonconstexpr/ibmxlc_long_double.hpp
@@ -140,6 +141,8 @@ include/universal/number/areal/manipulators.hpp
 include/universal/number/areal/math_functions.hpp
 include/universal/number/areal/numeric_limits.hpp
 include/universal/number/areal/table.hpp
+include/universal/number/blocktriple-design.txt
+include/universal/number/cfloat-design.txt
 include/universal/number/cfloat/cfloat.hpp
 include/universal/number/cfloat/cfloat_fwd.hpp
 include/universal/number/cfloat/cfloat_impl.hpp
@@ -160,9 +163,10 @@ include/universal/number/cfloat/math/sqrt.hpp
 include/universal/number/cfloat/math/sqrt_tables.hpp
 include/universal/number/cfloat/math/trigonometry.hpp
 include/universal/number/cfloat/math/truncate.hpp
-include/universal/number/cfloat/math_functions.hpp
+include/universal/number/cfloat/mathlib.hpp
 include/universal/number/cfloat/numeric_limits.hpp
 include/universal/number/cfloat/table.hpp
+include/universal/number/cfloat/trace_constants.hpp
 include/universal/number/decimal/decimal.hpp
 include/universal/number/decimal/decimal_impl.hpp
 include/universal/number/decimal/exceptions.hpp
@@ -172,7 +176,22 @@ include/universal/number/fixpnt/exceptions.hpp
 include/universal/number/fixpnt/fixpnt.hpp
 include/universal/number/fixpnt/fixpnt_impl.hpp
 include/universal/number/fixpnt/manipulators.hpp
-include/universal/number/fixpnt/math_functions.hpp
+include/universal/number/fixpnt/math/classify.hpp
+include/universal/number/fixpnt/math/complex.hpp
+include/universal/number/fixpnt/math/error_and_gamma.hpp
+include/universal/number/fixpnt/math/exponent.hpp
+include/universal/number/fixpnt/math/fractional.hpp
+include/universal/number/fixpnt/math/hyperbolic.hpp
+include/universal/number/fixpnt/math/hypot.hpp
+include/universal/number/fixpnt/math/logarithm.hpp
+include/universal/number/fixpnt/math/minmax.hpp
+include/universal/number/fixpnt/math/next.hpp
+include/universal/number/fixpnt/math/pow.hpp
+include/universal/number/fixpnt/math/sqrt.hpp
+include/universal/number/fixpnt/math/sqrt_tables.hpp
+include/universal/number/fixpnt/math/trigonometry.hpp
+include/universal/number/fixpnt/math/truncate.hpp
+include/universal/number/fixpnt/mathlib.hpp
 include/universal/number/fixpnt/numeric_limits.hpp
 include/universal/number/float/exceptions.hpp
 include/universal/number/float/float_functions.hpp
@@ -213,7 +232,7 @@ include/universal/number/posit/math/sqrt.hpp
 include/universal/number/posit/math/sqrt_tables.hpp
 include/universal/number/posit/math/trigonometry.hpp
 include/universal/number/posit/math/truncate.hpp
-include/universal/number/posit/math_functions.hpp
+include/universal/number/posit/mathlib.hpp
 include/universal/number/posit/numeric_limits.hpp
 include/universal/number/posit/posit.hpp
 include/universal/number/posit/posit_c_api.h
@@ -300,6 +319,7 @@ include/universal/verification/blockbinary_test_status.hpp
 include/universal/verification/blocktriple_test_status.hpp
 include/universal/verification/cfloat_math_test_suite.hpp
 include/universal/verification/cfloat_test_suite.hpp
+include/universal/verification/fixpnt_math_test_suite.hpp
 include/universal/verification/fixpnt_test_suite.hpp
 include/universal/verification/integer_test_suite.hpp
 include/universal/verification/performance_runner.hpp
@@ -308,6 +328,7 @@ include/universal/verification/posit_test_randoms.hpp
 include/universal/verification/posit_test_suite.hpp
 include/universal/verification/quire_test_suite.hpp
 include/universal/verification/skeleton_test_suite.hpp
+include/universal/verification/test_case.hpp
 include/universal/verification/test_reporters.hpp
 include/universal/verification/test_status.hpp
 include/universal/verification/test_suite.hpp
