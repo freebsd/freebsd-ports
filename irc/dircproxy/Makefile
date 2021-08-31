@@ -17,7 +17,7 @@ GH_TAGNAME=	dc563b3
 
 GNU_CONFIGURE=	yes
 SUB_FILES+=	pkg-message
-USES=		autoreconf
+USES=		autoreconf cpe
 
 post-install:
 	@cd ${WRKSRC}/doc && ${MAKE_CMD} install-man DESTDIR=${STAGEDIR}
