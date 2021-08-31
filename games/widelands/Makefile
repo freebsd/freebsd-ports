@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libicuuc.so:devel/icu \
 		libboost_regex.so:devel/boost-libs
 
-USES=		cmake compiler:c++11-lib gettext gl python:build sdl
+USES=		cmake compiler:c++11-lib cpe gettext gl python:build sdl
 CMAKE_ARGS=	-DWL_INSTALL_BASEDIR="${PREFIX}" \
 		-DWL_INSTALL_DATADIR="${DATADIR}" \
 		-DWL_INSTALL_DOCDIR="${DOCSDIR}" \
