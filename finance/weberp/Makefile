@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
 
 PORTSCOUT=	skipv:3.12
 
-USES=		gettext php shebangfix zip
+USES=		cpe gettext php shebangfix zip
 SHEBANG_FILES=	report_runner.php \
 		build/make_release.sh \
 		build/check_syntax.sh
