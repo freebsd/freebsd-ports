@@ -13,11 +13,12 @@ COMMENT=	Send print jobs to lpd servers anywhere on a network
 
 LICENSE=	GPLv2
 
+USES=		cpe
 GNU_CONFIGURE=	yes
 # rlpr supports gettext/libintl, but does not currently come with ANY
 # translation .po files. When this changes, it would make sense to
 # enable the use of gettext in this port:
-#USES=	gettext
+#USES+=	gettext
 #CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -lintl"
 CONFIGURE_ARGS=	--disable-nls --without-catgets
 PLIST_FILES=	bin/rlpr bin/rlpq bin/rlprm bin/rlprd
