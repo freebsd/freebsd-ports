@@ -2,7 +2,7 @@
 
 PORTNAME=	gopass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.7
+DISTVERSION=	1.12.8
 CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -21,25 +21,27 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	gopasspw
 GH_TUPLE=	FiloSottile:age:v1.0.0-rc.3:filosottile_age/vendor/filippo.io/age \
-		FiloSottile:edwards25519:v1.0.0-beta.3:filosottile_edwards25519/vendor/filippo.io/edwards25519 \
+		FiloSottile:edwards25519:v1.0.0-rc.1:filosottile_edwards25519/vendor/filippo.io/edwards25519 \
 		atotto:clipboard:v0.1.4:atotto_clipboard/vendor/github.com/atotto/clipboard \
 		blang:semver:v4.0.0:blang_semver_v4/vendor/github.com/blang/semver \
 		caspr-io:yamlpath:502e8d113a9b:caspr_io_yamlpath/vendor/github.com/caspr-io/yamlpath \
 		cenkalti:backoff:v2.2.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
 		chzyer:readline:2972be24d48e:chzyer_readline/vendor/github.com/chzyer/readline \
-		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
+		cpuguy83:go-md2man:v2.0.1:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		fatih:color:v1.12.0:fatih_color/vendor/github.com/fatih/color \
+		go-check:check:10cb98267c6c:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:496545a6307b:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		godbus:dbus:8a1682060722:godbus_dbus/vendor/github.com/godbus/dbus \
 		gokyle:twofactor:v1.0.1:gokyle_twofactor/vendor/github.com/gokyle/twofactor \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:4f45737414dc:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:e915ea6b2b7d:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:5e61552d6c78:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:crypto:32db794688a5:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:e898025ed96a:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:2bc19b11175f:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:37df388d1f33:golang_sys/vendor/golang.org/x/sys \
-		golang:term:72f3dc4e9b72:golang_term/vendor/golang.org/x/term \
+		golang:sys:63515b42dcdf:golang_sys/vendor/golang.org/x/sys \
+		golang:term:6886f2dfbf5b:golang_term/vendor/golang.org/x/term \
 		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-github:v17.0.0:google_go_github/vendor/github.com/google/go-github \
 		google:go-github:v33.0.0:google_go_github_v33/vendor/github.com/google/go-github/v33 \
@@ -51,6 +53,7 @@ GH_TUPLE=	FiloSottile:age:v1.0.0-rc.3:filosottile_age/vendor/filippo.io/age \
 		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		jsimonetti:pwscheme:76804708ecad:jsimonetti_pwscheme/vendor/github.com/jsimonetti/pwscheme \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
+		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
 		martinhoefling:goxkcdpwgen:7dc3d102eca3:martinhoefling_goxkcdpwgen/vendor/github.com/martinhoefling/goxkcdpwgen \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.13:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
@@ -60,7 +63,8 @@ GH_TUPLE=	FiloSottile:age:v1.0.0-rc.3:filosottile_age/vendor/filippo.io/age \
 		nbutton23:zxcvbn-go:fa2cb2858354:nbutton23_zxcvbn_go/vendor/github.com/nbutton23/zxcvbn-go \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		rogpeppe:go-internal:v1.8.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		rsc:qr:v0.2.0:rsc_qr/vendor/rsc.io/qr \
 		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		schollz:closestmatch:1fbe626be92e:schollz_closestmatch/vendor/github.com/schollz/closestmatch \
@@ -68,6 +72,7 @@ GH_TUPLE=	FiloSottile:age:v1.0.0-rc.3:filosottile_age/vendor/filippo.io/age \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		urfave:cli:v2.3.0:urfave_cli_v2/vendor/github.com/urfave/cli/v2 \
 		xrash:smetrics:039620a65673:xrash_smetrics/vendor/github.com/xrash/smetrics
+
 # Usage examples are in a separate repo
 GH_TUPLE+=	gopasspw:password-store-example:8db75ba3b69c:password_store_example
 
