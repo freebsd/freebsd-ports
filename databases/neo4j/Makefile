@@ -13,7 +13,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,-unix,,}
 NO_BUILD=	yes
-USES=		shebangfix
+USES=		cpe shebangfix
 SHEBANG_FILES=	bin/cypher-shell bin/neo4j-admin bin/neo4j-import
 USE_JAVA=	yes
 USE_RC_SUBR=	${PORTNAME}
