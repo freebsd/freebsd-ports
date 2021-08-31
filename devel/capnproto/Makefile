@@ -11,7 +11,7 @@ COMMENT=	Serialization/RPC system
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-USES=		autoreconf compiler:c++14-lang gmake libtool ssl
+USES=		autoreconf compiler:c++14-lang cpe gmake libtool ssl
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
