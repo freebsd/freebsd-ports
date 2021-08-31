@@ -287,6 +287,7 @@ include/wine/windows/d3dx10.h
 include/wine/windows/d3dx10async.h
 include/wine/windows/d3dx10core.h
 include/wine/windows/d3dx10math.h
+include/wine/windows/d3dx10mesh.h
 include/wine/windows/d3dx10tex.h
 include/wine/windows/d3dx11.h
 include/wine/windows/d3dx11async.h
@@ -1107,6 +1108,7 @@ include/wine/windows/ddk/csq.h
 include/wine/windows/ddk/d3dkmthk.h
 include/wine/windows/ddk/fltkernel.h
 include/wine/windows/ddk/hidclass.h
+include/wine/windows/ddk/hidpddi.h
 include/wine/windows/ddk/hidpi.h
 include/wine/windows/ddk/hidport.h
 include/wine/windows/ddk/hidsdi.h
@@ -1237,6 +1239,7 @@ lib/wine/%%WINEARCH%%-unix/api-ms-win-core-profile-l1-1-0.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-core-psapi-ansi-l1-1-0.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-core-psapi-l1-1-0.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-core-psapi-obsolete-l1-1-0.dll.so
+lib/wine/%%WINEARCH%%-unix/api-ms-win-core-psm-appnotify-l1-1-0.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-core-quirks-l1-1-0.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-core-realtime-l1-1-0.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-core-registry-l1-1-0.dll.so
@@ -1640,6 +1643,7 @@ lib/wine/%%WINEARCH%%-unix/hh.exe.so
 lib/wine/%%WINEARCH%%-unix/hhctrl.ocx.so
 lib/wine/%%WINEARCH%%-unix/hid.dll.so
 lib/wine/%%WINEARCH%%-unix/hidclass.sys.so
+lib/wine/%%WINEARCH%%-unix/hidparse.sys.so
 lib/wine/%%WINEARCH%%-unix/hlink.dll.so
 lib/wine/%%WINEARCH%%-unix/hnetcfg.dll.so
 lib/wine/%%WINEARCH%%-unix/hostname.exe.so
@@ -1722,7 +1726,11 @@ lib/wine/%%WINEARCH%%-unix/libd3d9.def
 lib/wine/%%WINEARCH%%-unix/libd3dcompiler.def
 lib/wine/%%WINEARCH%%-unix/libd3drm.def
 lib/wine/%%WINEARCH%%-unix/libd3dx10.def
+lib/wine/%%WINEARCH%%-unix/libd3dx10_40.def
+lib/wine/%%WINEARCH%%-unix/libd3dx10_41.def
+lib/wine/%%WINEARCH%%-unix/libd3dx10_42.def
 lib/wine/%%WINEARCH%%-unix/libd3dx11.def
+lib/wine/%%WINEARCH%%-unix/libd3dx11_42.def
 lib/wine/%%WINEARCH%%-unix/libd3dx9.def
 lib/wine/%%WINEARCH%%-unix/libd3dxof.def
 lib/wine/%%WINEARCH%%-unix/libdbgeng.def
@@ -1752,6 +1760,7 @@ lib/wine/%%WINEARCH%%-unix/libglu32.def
 lib/wine/%%WINEARCH%%-unix/libhal.def
 lib/wine/%%WINEARCH%%-unix/libhid.def
 lib/wine/%%WINEARCH%%-unix/libhidclass.def
+lib/wine/%%WINEARCH%%-unix/libhidparse.def
 lib/wine/%%WINEARCH%%-unix/libhlink.def
 lib/wine/%%WINEARCH%%-unix/libhtmlhelp.def
 lib/wine/%%WINEARCH%%-unix/libhttpapi.def
@@ -2492,6 +2501,7 @@ lib/wine/%%WINEARCH%%-windows/api-ms-win-core-profile-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-core-psapi-ansi-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-core-psapi-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-core-psapi-obsolete-l1-1-0.dll
+lib/wine/%%WINEARCH%%-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-core-quirks-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-core-realtime-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-core-registry-l1-1-0.dll
@@ -2890,6 +2900,7 @@ lib/wine/%%WINEARCH%%-windows/hh.exe
 lib/wine/%%WINEARCH%%-windows/hhctrl.ocx
 lib/wine/%%WINEARCH%%-windows/hid.dll
 lib/wine/%%WINEARCH%%-windows/hidclass.sys
+lib/wine/%%WINEARCH%%-windows/hidparse.sys
 lib/wine/%%WINEARCH%%-windows/hlink.dll
 lib/wine/%%WINEARCH%%-windows/hnetcfg.dll
 lib/wine/%%WINEARCH%%-windows/hostname.exe
