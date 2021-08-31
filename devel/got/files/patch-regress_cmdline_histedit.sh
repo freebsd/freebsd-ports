@@ -1,6 +1,6 @@
---- regress/cmdline/histedit.sh.orig	2021-03-22 10:05:11 UTC
+--- regress/cmdline/histedit.sh.orig	2021-08-30 22:15:20 UTC
 +++ regress/cmdline/histedit.sh
-@@ -1507,7 +1507,7 @@ test_histedit_fold_only() {
+@@ -1539,7 +1539,7 @@ test_histedit_fold_only() {
  
  	cat > $testroot/editor.sh <<EOF
  #!/bin/sh
@@ -9,7 +9,7 @@
  EOF
  	chmod +x $testroot/editor.sh
  
-@@ -1623,7 +1623,7 @@ test_histedit_fold_only_empty_logmsg() {
+@@ -1655,7 +1655,7 @@ test_histedit_fold_only_empty_logmsg() {
  
  	cat > $testroot/editor.sh <<EOF
  #!/bin/sh

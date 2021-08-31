@@ -1,6 +1,6 @@
---- regress/cmdline/commit.sh.orig	2021-03-22 15:59:28 UTC
+--- regress/cmdline/commit.sh.orig	2021-08-30 22:15:20 UTC
 +++ regress/cmdline/commit.sh
-@@ -1376,7 +1376,7 @@ test_commit_prepared_logmsg() {
+@@ -1377,7 +1377,7 @@ test_commit_prepared_logmsg() {
  
  	cat > $testroot/editor.sh <<EOF
  #!/bin/sh
