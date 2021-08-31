@@ -19,7 +19,7 @@ OPTIONS_DEFAULT=APP HPACK
 OPTIONS_SUB=	yes
 APP_DESC=	Build h2load, nghttp, nghttpd and nghttpx
 
-USES=		compiler:c++14-lang gmake libtool localbase pathfix pkgconfig ssl tar:xz
+USES=		compiler:c++14-lang cpe gmake libtool localbase pathfix pkgconfig ssl tar:xz
 
 CONFIGURE_ARGS=	--disable-python-bindings --with-jemalloc
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
