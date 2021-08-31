@@ -41,6 +41,7 @@
     SUBDIR += conlecterm
     SUBDIR += controllermap
     SUBDIR += cool-retro-term
+    SUBDIR += coreterminal
     SUBDIR += deforaos-desktop
     SUBDIR += deforaos-keyboard
     SUBDIR += deforaos-libdesktop
