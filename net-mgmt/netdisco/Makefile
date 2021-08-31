@@ -88,7 +88,7 @@ RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-IO-Socket-SSL>=2.048:security/p5-IO-Socket-SSL \
 		p5-File-Slurper>=0:devel/p5-File-Slurper
 
-USES=		perl5 pgsql
+USES=		cpe perl5 pgsql
 USE_PERL5=	modbuild
 USE_RC_SUBR=	netdisco
 
