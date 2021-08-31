@@ -11,7 +11,7 @@ COMMENT=	GTK based system monitor
 
 LICENSE=	GPLv3
 
-USES=		gmake gnome pkgconfig tar:bzip2
+USES=		cpe gmake gnome pkgconfig tar:bzip2
 USE_RC_SUBR=	gkrellmd
 
 OPTIONS_DEFINE=		DOCS CLIENT NLS NTLM OPENSSL
