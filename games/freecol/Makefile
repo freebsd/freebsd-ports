@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		zip
+USES=		cpe zip
 NO_BUILD=	yes
 SUB_FILES=	freecol
 USE_JAVA=	yes
