@@ -12,7 +12,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libevent.so:devel/libevent
 
-USES=		autoreconf compiler:c++11-lib gmake libtool pkgconfig qt:5 shebangfix ssl
+USES=		autoreconf compiler:c++11-lib cpe gmake libtool pkgconfig qt:5 shebangfix ssl
 
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
