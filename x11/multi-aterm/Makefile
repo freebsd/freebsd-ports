@@ -12,7 +12,7 @@ COMMENT=	Multi terminal based on aterm
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		xorg
+USES=		cpe xorg
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-xpm=${LOCALBASE}
