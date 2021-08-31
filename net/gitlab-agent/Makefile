@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME?=	gitlab-agent
-PORTVERSION?=	14.1.0
+PORTVERSION?=	14.2.2
 PORTREVISION?=	0
 CATEGORIES=	net
 
@@ -19,7 +19,7 @@ USES=		go:modules
 USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org/cluster-integration
 # Find the commit hash here: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/tags
-GL_COMMIT?=	34409ad04b6a76c68dc51038585a22c378725adf
+GL_COMMIT?=	2b22fa677a333d86c52cbc01d059b0f5a7d1f311
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -42,7 +42,7 @@ GH_TUPLE=	\
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		asaskevich:govalidator:21a406dcc535:asaskevich_govalidator/vendor/github.com/asaskevich/govalidator \
 		ash2k:cobra:e91bfee91527:ash2k_cobra/vendor/github.com/spf13/cobra \
-		ash2k:stager:v0.2.1:ash2k_stager/vendor/github.com/ash2k/stager \
+		ash2k:stager:v0.3.0:ash2k_stager/vendor/github.com/ash2k/stager \
 		aws:aws-sdk-go:v1.37.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
@@ -56,15 +56,14 @@ GH_TUPLE=	\
 		cilium:kafka:01ce283b732b:cilium_kafka/vendor/github.com/optiopay/kafka \
 		client9:reopen:v1.0.0:client9_reopen/vendor/github.com/client9/reopen \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		dgrijalva:jwt-go:c66185887605:dgrijalva_jwt_go_v4/vendor/github.com/dgrijalva/jwt-go/v4 \
 		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
 		envoyproxy:protoc-gen-validate:v0.6.1:envoyproxy_protoc_gen_validate/vendor/github.com/envoyproxy/protoc-gen-validate \
 		evanphx:json-patch:v4.9.0:evanphx_json_patch/vendor/github.com/evanphx/json-patch \
 		exponent-io:jsonpath:d6023ce2651d:exponent_io_jsonpath/vendor/github.com/exponent-io/jsonpath \
 		form3tech-oss:jwt-go:v3.2.2:form3tech_oss_jwt_go/vendor/github.com/form3tech-oss/jwt-go \
 		fsnotify:fsnotify:7f4cf4dd2b52:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		getsentry:sentry-go:v0.10.0:getsentry_sentry_go/vendor/github.com/getsentry/sentry-go \
-		go-errors:errors:v1.4.0:go_errors_errors/vendor/github.com/go-errors/errors \
+		getsentry:sentry-go:v0.11.0:getsentry_sentry_go/vendor/github.com/getsentry/sentry-go \
+		go-errors:errors:v1.0.1:go_errors_errors/vendor/github.com/go-errors/errors \
 		go-inf:inf:v0.9.1:go_inf_inf/vendor/gopkg.in/inf.v0 \
 		go-ini:ini:v1.51.1:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-logr:logr:v0.4.0:go_logr_logr/vendor/github.com/go-logr/logr \
@@ -86,6 +85,7 @@ GH_TUPLE=	\
 		go-yaml:yaml:496545a6307b:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		golang-jwt:jwt:v4.0.0:golang_jwt_jwt_v4/vendor/github.com/golang-jwt/jwt/v4 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:5ea612d1eb83:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
@@ -127,7 +127,7 @@ GH_TUPLE=	\
 		klauspost:compress:v1.10.3:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.2.0:kr_pretty/vendor/github.com/kr/pretty \
 		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
-		kubernetes-sigs:cli-utils:da80fcc751ec:kubernetes_sigs_cli_utils/vendor/sigs.k8s.io/cli-utils \
+		kubernetes-sigs:cli-utils:8ccd6e63e141:kubernetes_sigs_cli_utils/vendor/sigs.k8s.io/cli-utils \
 		kubernetes-sigs:controller-runtime:7181f1162e79:kubernetes_sigs_controller_runtime/vendor/sigs.k8s.io/controller-runtime \
 		kubernetes-sigs:kustomize:kyaml/v0.10.17:kubernetes_sigs_kustomize_1/vendor/sigs.k8s.io/kustomize/kyaml \
 		kubernetes-sigs:kustomize:api/v0.8.8:kubernetes_sigs_kustomize/vendor/sigs.k8s.io/kustomize/api \
@@ -238,4 +238,5 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/kas ${STAGEDIR}${PREFIX}/bin/kas
 
 .include <bsd.port.mk>
+
 
