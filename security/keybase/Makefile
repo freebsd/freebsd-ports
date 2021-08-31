@@ -10,7 +10,7 @@ COMMENT=	Keybase.io client and Keybase Filesystem (KBFS)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-USES=		go tar:xz
+USES=		cpe go tar:xz
 
 GO_BUILDFLAGS=	-tags production
 GO_PKGNAME=	github.com/keybase/client/go
