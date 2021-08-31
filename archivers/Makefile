@@ -54,6 +54,7 @@
     SUBDIR += lib1541img
     SUBDIR += libarc
     SUBDIR += libarchive
+    SUBDIR += libarchive-qt
     SUBDIR += libcabinet
     SUBDIR += libcomprex
     SUBDIR += libdeflate
