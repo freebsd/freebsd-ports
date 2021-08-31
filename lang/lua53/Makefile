@@ -11,7 +11,7 @@ COMMENT=	Powerful, efficient, lightweight, embeddable scripting language
 
 LICENSE=	MIT
 
-USES=		lua:core,53
+USES=		cpe lua:core,53
 USE_LDCONFIG=	yes
 
 # Overriding __MAKE_CONF makes sure that we don't re-parse
