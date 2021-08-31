@@ -24,7 +24,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libopenblas.so:math/openblas
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++14-lang fortran python:3.7+ shebangfix
+USES=		compiler:c++14-lang cpe fortran python:3.7+ shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
 FFLAGS+=	-std=legacy
