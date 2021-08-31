@@ -10,7 +10,7 @@ COMMENT=	Webmail system which access POP3 and IMAP mail servers
 
 LICENSE=	GPLv2
 
-USES=		php:web
+USES=		cpe php:web
 
 OPTIONS_DEFINE=	DOCS
 
