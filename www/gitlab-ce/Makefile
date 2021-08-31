@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	14.1.2
+PORTVERSION=	14.2.1
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # which makes maintaining this long list much easier!
 MY_DEPENDS=	git>=2.32.0:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
-	gitlab-agent>=14.1.0:net/gitlab-agent \
-	gitlab-elasticsearch-indexer>=2.12.0:textproc/gitlab-elasticsearch-indexer \
-	gitlab-pages>=1.40.0:www/gitlab-pages \
+	gitlab-elasticsearch-indexer>=2.13.0:textproc/gitlab-elasticsearch-indexer \
+	gitlab-agent>=14.2.2:net/gitlab-agent \
+	gitlab-pages>=1.42.0:www/gitlab-pages \
 	gitlab-shell>=13.19.1:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
 	redis>=6.0.14:databases/redis \
@@ -57,7 +57,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-omniauth-twitter>=1.4<2.0:net/rubygem-omniauth-twitter \
 	rubygem-omniauth_crowd>=2.4.0<2.5:devel/rubygem-omniauth_crowd \
 	rubygem-omniauth-authentiq>=0.3.3<0.4.0:net/rubygem-omniauth-authentiq \
-	rubygem-gitlab-omniauth-openid-connect>=0.4.0<0.5.0:net/rubygem-gitlab-omniauth-openid-connect \
+	rubygem-gitlab-omniauth-openid-connect>=0.8.0<0.9.0:net/rubygem-gitlab-omniauth-openid-connect \
 	rubygem-omniauth-ultraauth>=0.0.2<0.1.0:net/rubygem-omniauth-ultraauth \
 	rubygem-omniauth-salesforce>=1.0.5<1.1.0:net/rubygem-omniauth-salesforce \
 	rubygem-omniauth-atlassian-oauth2>=0.2.0<0.3:security/rubygem-omniauth-atlassian-oauth2 \
@@ -151,7 +151,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-settingslogic>=2.0.9<2.1.0:devel/rubygem-settingslogic \
 	rubygem-re2>=1.2.0<1.3.0:devel/rubygem-re2 \
 	rubygem-version_sorter>=2.2.4<2.3.0:textproc/rubygem-version_sorter \
-	rubygem-js_regex>=3.4<4.0:textproc/rubygem-js_regex \
+	rubygem-js_regex>=3.7<4.0:textproc/rubygem-js_regex \
 	rubygem-device_detector>=0:devel/rubygem-device_detector \
 	rubygem-redis>=4.1.4<5:databases/rubygem-redis \
 	rubygem-connection_pool>=2.0<3.0:net/rubygem-connection_pool \
@@ -188,7 +188,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-sentry-raven>=3.1<4.0:devel/rubygem-sentry-raven \
 	rubygem-pg_query>=2.1<3:databases/rubygem-pg_query \
 	rubygem-premailer-rails-rails61>=1.10.3<1.11.0:mail/rubygem-premailer-rails-rails61 \
-	rubygem-gitlab-labkit>=0.20.0<0.21:devel/rubygem-gitlab-labkit \
+	rubygem-gitlab-labkit>=0.21.0<0.22:devel/rubygem-gitlab-labkit \
 	rubygem-thrift>=0.14.0:devel/rubygem-thrift \
 	rubygem-ruby_parser>=3.15<4.0:devel/rubygem-ruby_parser \
 	rubygem-rails-i18n-rails61>=6.0<7.0:devel/rubygem-rails-i18n-rails61 \
@@ -201,6 +201,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-method_source>=1.0<2:devel/rubygem-method_source \
 	rubygem-webrick>=1.6.1:www/rubygem-webrick \
 	rubygem-prometheus-client-mmap>=0.12.0<0.13.0:devel/rubygem-prometheus-client-mmap \
+	rubygem-warning>=1.2.0<1.3:devel/rubygem-warning \
 	rubygem-octokit>=4.20<5.0:net/rubygem-octokit \
 	rubygem-gitlab-mail_room>=0.0.9<0.1.0:mail/rubygem-gitlab-mail_room \
 	rubygem-email_reply_trimmer>=0.1<1.0:mail/rubygem-email_reply_trimmer \
@@ -221,16 +222,16 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-ed25519>=1.2<2.0:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0<2.0:security/rubygem-bcrypt_pbkdf \
 	rubygem-spamcheck>=0.1.0<0.2:net/rubygem-spamcheck \
-	rubygem-gitaly>=14.1.0.pre.rc3<14.2.0:net/rubygem-gitaly \
+	rubygem-gitaly>=14.2.0.pre.rc2<14.3.0:net/rubygem-gitaly \
 	rubygem-kas-grpc>=0.0.2<0.1:net/rubygem-kas-grpc \
-	rubygem-grpc>=1.30.2<2:net/rubygem-grpc \
+	rubygem-grpc>=1.38.0<2:net/rubygem-grpc \
 	rubygem-google-protobuf>=3.17.1<3.18:devel/rubygem-google-protobuf \
 	rubygem-toml-rb>=2.0.1<3:www/rubygem-toml-rb \
 	rubygem-flipper021>=0.21.0<0.22:devel/rubygem-flipper021 \
 	rubygem-flipper-active_record-rails61>=0.21.0<0.22:databases/rubygem-flipper-active_record-rails61 \
 	rubygem-flipper-active_support_cache_store-rails61>=0.21.0<0.22:devel/rubygem-flipper-active_support_cache_store-rails61 \
-	rubygem-unleash>=0.1.5<0.2.0:devel/rubygem-unleash \
-	rubygem-gitlab-experiment>=0.6.1<0.7:devel/rubygem-gitlab-experiment \
+	rubygem-unleash>=3.2.2<3.3:devel/rubygem-unleash \
+	rubygem-gitlab-experiment>=0.6.4<0.7:devel/rubygem-gitlab-experiment \
 	rubygem-lograge-rails61>=0.11.2<1.0:www/rubygem-lograge-rails61 \
 	rubygem-grape_logging>=1.7<2.0:devel/rubygem-grape_logging \
 	rubygem-gitlab-net-dns>=0.9.1<0.10:dns/rubygem-gitlab-net-dns \
@@ -242,7 +243,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-lockbox>=0.6.2<0.7:security/rubygem-lockbox \
 	rubygem-valid_email>=0.1<1:mail/rubygem-valid_email \
 	rubygem-json>=2.3.0<2.4:devel/rubygem-json \
-	rubygem-json_schemer>=0.2.12<0.3:devel/rubygem-json_schemer \
+	rubygem-json_schemer>=0.2.18<0.3:devel/rubygem-json_schemer \
 	rubygem-oj310>=3.10.6<3.11:devel/rubygem-oj310 \
 	rubygem-multi_json114>=1.14.1<1.15:devel/rubygem-multi_json114 \
 	rubygem-yajl-ruby>=1.4.1<1.5:devel/rubygem-yajl-ruby \
@@ -269,7 +270,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	8c67b4991465e92dcd6752cc42e54a9c5cd9f0f2
+GL_COMMIT=	2da7c8579601c14a93d4291b8cf5fa39c6eeabd8
 
 USERS=	git
 GROUPS=	git

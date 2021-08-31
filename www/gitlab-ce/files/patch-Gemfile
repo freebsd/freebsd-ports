@@ -1,4 +1,4 @@
---- Gemfile.orig	2021-07-21 12:00:21 UTC
+--- Gemfile.orig	2021-08-23 16:27:44 UTC
 +++ Gemfile
 @@ -88,7 +88,7 @@ gem 'gpgme', '~> 2.0.19'
  # GitLab fork with several improvements to original library. For full list of changes
@@ -17,7 +17,7 @@
  gem 'graphlient', '~> 0.4.0' # Used by BulkImport feature (group::import)
  
  gem 'hashie'
-@@ -229,7 +228,7 @@ gem 'js_regex', '~> 3.4'
+@@ -229,7 +228,7 @@ gem 'js_regex', '~> 3.7'
  gem 'device_detector'
  
  # Redis
@@ -26,7 +26,7 @@
  gem 'connection_pool', '~> 2.0'
  
  # Redis session store
-@@ -332,104 +331,9 @@ gem 'snowplow-tracker', '~> 0.6.1'
+@@ -332,105 +331,10 @@ gem 'snowplow-tracker', '~> 0.6.1'
  
  # Metrics
  gem 'method_source', '~> 1.0', require: false
@@ -34,9 +34,11 @@
 +gem 'webrick', '~> 1.6', require: false
  gem 'prometheus-client-mmap', '~> 0.12.0', require: 'prometheus/client'
  
+ gem 'warning', '~> 1.2.0'
+-
 -group :development do
 -  gem 'lefthook', '~> 0.7.0', require: false
--  gem 'solargraph', '~> 0.42', require: false
+-  gem 'solargraph', '~> 0.43', require: false
 -
 -  gem 'letter_opener_web', '~> 1.4.0'
 -
@@ -57,7 +59,7 @@
 -  gem 'awesome_print', require: false
 -
 -  gem 'database_cleaner', '~> 1.7.0'
--  gem 'factory_bot_rails', '~> 6.1.0'
+-  gem 'factory_bot_rails', '~> 6.2.0'
 -  gem 'rspec-rails', '~> 5.0.1'
 -
 -  # Prevent occasions where minitest is not bundled in packaged versions of ruby (see #3826)
@@ -93,7 +95,7 @@
 -end
 -
 -group :development, :test, :danger do
--  gem 'gitlab-dangerfiles', '~> 2.2.2', require: false
+-  gem 'gitlab-dangerfiles', '~> 2.3.0', require: false
 -end
 -
 -group :development, :test, :coverage do
@@ -128,16 +130,6 @@
 -  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
 -  gem 'derailed_benchmarks', require: false
 -end
--
+ 
  gem 'octokit', '~> 4.15'
- 
- # https://gitlab.com/gitlab-org/gitlab/issues/207207
-@@ -477,7 +381,7 @@ gem 'gitaly', '~> 14.1.0.pre.rc3'
- # KAS GRPC protocol definitions
- gem 'kas-grpc', '~> 0.0.2'
- 
--gem 'grpc', '~> 1.30.2'
-+gem 'grpc', '~> 1.30'
- 
- gem 'google-protobuf', '~> 3.17.1'
  

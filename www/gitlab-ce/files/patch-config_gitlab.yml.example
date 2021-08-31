@@ -1,6 +1,6 @@
---- config/gitlab.yml.example.orig	2021-07-21 12:00:21 UTC
+--- config/gitlab.yml.example.orig	2021-08-23 16:27:44 UTC
 +++ config/gitlab.yml.example
-@@ -1114,8 +1114,8 @@ production: &base
+@@ -1123,8 +1123,8 @@ production: &base
      # real path not the symlink.
      storages: # You must have at least a `default` storage path.
        default:
@@ -11,7 +11,7 @@
          # gitaly_token: 'special token' # Optional: override global gitaly.token for this storage.
  
    ## Backup settings
-@@ -1162,12 +1162,12 @@ production: &base
+@@ -1171,12 +1171,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -27,7 +27,7 @@
  
      # Git over HTTP
      upload_pack: true
-@@ -1182,13 +1182,13 @@ production: &base
+@@ -1191,13 +1191,13 @@ production: &base
    workhorse:
      # File that contains the secret key for verifying access for gitlab-workhorse.
      # Default is '.gitlab_workhorse_secret' relative to Rails.root (i.e. root of the GitLab app).
@@ -43,7 +43,7 @@
  
      # The URL to the external KAS API (used by the Kubernetes agents)
      # external_url: wss://kas.example.com
-@@ -1198,13 +1198,13 @@ production: &base
+@@ -1207,13 +1207,13 @@ production: &base
  
    ## GitLab Elasticsearch settings
    elasticsearch:
@@ -59,7 +59,7 @@
  
    ## Webpack settings
    # If enabled, this will tell rails to serve frontend assets from the webpack-dev-server running
-@@ -1431,7 +1431,7 @@ test:
+@@ -1440,7 +1440,7 @@ test:
          gitaly_address: unix:tmp/tests/gitaly/praefect.socket
  
    gitaly:
