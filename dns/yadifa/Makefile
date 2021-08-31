@@ -11,7 +11,7 @@ COMMENT=	Authoritative nameserver with DNSSEC capabilities
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 libtool ssl
+USES=		compiler:c11 cpe libtool ssl
 USE_RC_SUBR=	${PORTNAME}d
 
 GNU_CONFIGURE=	yes
