@@ -12,7 +12,7 @@ COMMENT=	HTTP/2.0 C Library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++14-lang libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++14-lang cpe libtool pathfix pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--enable-lib-only
 GNU_CONFIGURE=	yes
