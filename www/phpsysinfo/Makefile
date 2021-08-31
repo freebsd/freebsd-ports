@@ -11,7 +11,7 @@ COMMENT=	PHP script for displaying system information
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		php:web shebangfix
+USES=		cpe php:web shebangfix
 USE_GITHUB=	yes
 USE_PHP=	dom mbstring pcre simplexml xml
 
