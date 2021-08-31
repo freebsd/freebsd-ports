@@ -10,7 +10,7 @@ COMMENT=	Framework for developing PHP web applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		php:web
+USES=		cpe php:web
 USE_PHP=	mcrypt pcre session
 
 USE_GITHUB=	yes
