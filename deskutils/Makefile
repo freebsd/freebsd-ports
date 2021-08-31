@@ -37,6 +37,7 @@
     SUBDIR += conkyforecast
     SUBDIR += coolreader
     SUBDIR += copyq
+    SUBDIR += coregarage
     SUBDIR += countdown
     SUBDIR += dailystrips
     SUBDIR += deforaos-todo
