@@ -1,7 +1,7 @@
 # Created by: Fumihiko Kimura <jfkimura@yahoo.co.jp>
 
 PORTNAME=	tdiary
-PORTVERSION=	5.1.6
+PORTVERSION=	5.1.7
 CATEGORIES?=	www ruby
 MASTER_SITES=	https://github.com/tdiary/tdiary-core/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -99,14 +99,5 @@ do-install:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-
-x-generate-plist: stage
-	${ECHO_CMD} bin/%%TDIARY_SCRIPT%% > pkg-plist.new
-	${ECHO_CMD} @owner %%WWWOWN%% >> pkg-plist.new
-	${ECHO_CMD} @group %%WWWGRP%% >> pkg-plist.new
-	${FIND} ${STAGEDIR}${WWWDIR} -type f -o -type l | ${SORT} | ${SED} -e 's,${STAGEDIR}${WWWDIR},%%WWWDIR%%,g' >> pkg-plist.new
-	${FIND} ${STAGEDIR}${WWWDIR} -type d -depth | ${SORT} -r | ${SED} -e 's,${STAGEDIR}${WWWDIR},@dir %%WWWDIR%%,g' >> pkg-plist.new
-	${ECHO_CMD} @owner >> pkg-plist.new
-	${ECHO_CMD} @group >> pkg-plist.new
 
 .include <bsd.port.mk>
