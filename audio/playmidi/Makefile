@@ -11,7 +11,7 @@ COMMENT=	MIDI player
 
 LICENSE=	GPLv2
 
-USES=		ncurses
+USES=		cpe ncurses
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.4
 
 ONLY_FOR_ARCHS=	i386 amd64
