@@ -11,7 +11,7 @@ COMMENT=	Set of PHP-scripts to manage FTP over the web
 
 LICENSE=	GPLv2
 
-USES=		php zip
+USES=		cpe php zip
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	ftp
