@@ -12,7 +12,7 @@ COMMENT=	X11 arcade game
 
 LICENSE=	MIT
 
-USES=		imake xorg
+USES=		cpe imake xorg
 USE_XORG=	xpm xext x11
 WRKSRC=		${WRKDIR}/xboing
 
