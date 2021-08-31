@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PHP_PKGNAMEPREFIX}libawl>=0.60:devel/php-libawl@${PHP_FLAVOR} \
 		p5-YAML>=0:textproc/p5-YAML \
 		pwgen:sysutils/pwgen
 
-USES=		pgsql php:flavors shebangfix
+USES=		cpe pgsql php:flavors shebangfix
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	davical-project
