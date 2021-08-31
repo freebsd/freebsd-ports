@@ -18,7 +18,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libhadoop.so:devel/hadoop2
 RUN_DEPENDS=	hbase>0:databases/hbase
 
-USES=		gmake python shebangfix
+USES=		cpe gmake python shebangfix
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 SHEBANG_FILES=	tools/check_tsd tools/opentsdb_restart.py \
