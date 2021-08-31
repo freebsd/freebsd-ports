@@ -16,7 +16,7 @@ BUILD_DEPENDS=	ldns>=1.6.16:dns/ldns
 LIB_DEPENDS=	libldns.so:dns/ldns \
 		libxml2.so:textproc/libxml2
 
-USES=		libtool autoreconf ssl
+USES=		autoreconf cpe libtool ssl
 USE_RC_SUBR=	opendnssec
 
 GNU_CONFIGURE=	yes
