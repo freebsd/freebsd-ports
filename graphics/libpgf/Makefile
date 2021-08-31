@@ -11,7 +11,7 @@ COMMENT=	Progressive Graphics Format (PGF) library
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf dos2unix libtool pathfix zip
+USES=		autoreconf cpe dos2unix libtool pathfix zip
 USE_LDCONFIG=	yes
 
 DOS2UNIX_FILES=	configure.ac
