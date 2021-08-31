@@ -1,9 +1,9 @@
 PORTNAME=	gerbera
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.0
+DISTVERSION=	1.9.1
 CATEGORIES=	net multimedia
 
-MAINTAINER=	daniel.engberg.lists@pyret.net
+MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	Media server compatible with DLNA and UPnP
 
 LICENSE=	GPLv2
