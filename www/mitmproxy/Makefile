@@ -38,7 +38,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.2.10<3.4:www/py-asgiref@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}zstandard>=0.11<0.16:archivers/py-zstandard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		cpe python:3.8+
 USE_PYTHON=	distutils autoplist noflavors
 USE_GITHUB=	yes
 
