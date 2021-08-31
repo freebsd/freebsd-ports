@@ -18,7 +18,7 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libjson-c.so:devel/json-c \
 		libgdal.so:graphics/gdal
 
-USES=		alias compiler:c++11-lang gmake gnome iconv:wchar_t libtool:keepla \
+USES=		alias compiler:c++11-lang cpe gmake gnome iconv:wchar_t libtool:keepla \
 		localbase perl5 pkgconfig pgsql:9.5+ shebangfix
 USE_GNOME=	libxml2
 USE_PERL5=	build
