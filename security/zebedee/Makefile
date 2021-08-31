@@ -11,7 +11,7 @@ COMMENT=	Encrypted, secure compressed TCP tunnel
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL2.txt
 
-USES=		perl5 ssl
+USES=		cpe perl5 ssl
 USE_PERL5=	build
 
 PORTEXAMPLES=	vncviewer.zbd vncserver.zbd server.key server.id client1.key \
