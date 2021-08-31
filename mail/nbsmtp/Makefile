@@ -11,7 +11,7 @@ COMMENT=	Simple program for outgoing SMTP delivery
 
 LICENSE=	GPLv2
 
-USES=		ssl
+USES=		cpe ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ssl --enable-ipv6
 CPPFLAGS+=	-I${OPENSSLINC}
