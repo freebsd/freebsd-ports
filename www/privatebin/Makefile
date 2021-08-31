@@ -10,7 +10,7 @@ COMMENT=	Simple end-to-end encrypting zero-knowledge paste-bin server
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		php
+USES=		cpe php
 
 NO_BUILD=	yes
 NO_ARCH=	yes
