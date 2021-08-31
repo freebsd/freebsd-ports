@@ -1,3 +1,41 @@
+  <vuln vid="6c22bb39-0a9a-11ec-a265-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>14.2.0</ge><lt>14.2.2</lt></range>
+	<range><ge>14.1.0</ge><lt>14.1.4</lt></range>
+	<range><ge>0</ge><lt>14.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2021/08/31/security-release-gitlab-14-2-2-released/">
+	  <p>Stored XSS in DataDog Integration</p>
+	  <p>Invited group members continue to have project access even after invited group is deleted</p>
+	  <p>Specially crafted requests to apollo_upload_server middleware leads to denial of service</p>
+	  <p>Privilege escalation of an external user through project token</p>
+	  <p>Missing access control allows non-admin users to add/remove Jira Connect Namespaces</p>
+	  <p>User enumeration on private instances</p>
+	  <p>Member e-mails can be revealed via project import/export feature</p>
+	  <p>Stored XSS in Jira integration</p>
+	  <p>Stored XSS in markdown via the Design reference</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-22257</cvename>
+      <cvename>CVE-2021-22258</cvename>
+      <cvename>CVE-2021-22238</cvename>
+      <url>https://about.gitlab.com/releases/2021/08/31/security-release-gitlab-14-2-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2021-08-31</discovery>
+      <entry>2021-08-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1d6410e8-06c1-11ec-a35d-03ca114d16d6">
     <topic>fetchmail -- STARTTLS bypass vulnerabilities</topic>
     <affects>
