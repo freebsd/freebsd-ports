@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_odbc.so:databases/php${PHP_VE
 		${LOCALBASE}/bin/freeswitch:net/freeswitch \
 		${LOCALBASE}/bin/memcached:databases/memcached
 
-USES=		sqlite php fakeroot
+USES=		cpe sqlite php fakeroot
 USE_PHP=	phar pdo pdo_odbc pdo_sqlite json gd imap \
 		ldap openssl sockets simplexml xml session odbc
 
