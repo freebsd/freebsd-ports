@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} --with-zlib=/usr
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	${PREFIX}/lib/httrack
-USES=		alias gmake iconv libtool shebangfix ssl
+USES=		alias cpe gmake iconv libtool shebangfix ssl
 
 SHEBANG_FILES=	src/webhttrack
 
