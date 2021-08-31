@@ -1,6 +1,5 @@
 PORTNAME=	hspec-discover
-PORTVERSION=	2.7.8
-PORTREVISION=	1
+PORTVERSION=	2.8.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
