@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/Documentation/artistic-2_0.txt
 RUN_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
 		p5-Danga-Socket>=0:devel/p5-Danga-Socket
 
-USES=		perl5 shebangfix tar:tgz
+USES=		cpe perl5 shebangfix tar:tgz
 NO_BUILD=	yes
 NO_ARCH=	yes
 
