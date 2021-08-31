@@ -14,7 +14,7 @@ GNU_CONFIGURE=	yes
 # disable RT signal handling.
 CFLAGS+=	-DUNUSABLE_RT_SIGNALS
 
-USES=		gmake
+USES=		cpe gmake
 
 PLIST_FILES=	bin/dash \
 		man/man1/dash.1.gz
