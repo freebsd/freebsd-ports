@@ -23,3 +23,8 @@ Local_Post_Include=	bsd.local.mk
 #
 
 .endif # defined(_POSTMKINCLUDED) && !defined(Local_Post_Include)
+
+# Added by freebsd-wip-checkout
+VALID_CATEGORIES+=wip
+# End addition
+

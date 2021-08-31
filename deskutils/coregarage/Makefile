@@ -1,6 +1,5 @@
 PORTNAME=	coregarage
 DISTVERSION=	4.3.0
-PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
