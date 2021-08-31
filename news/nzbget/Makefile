@@ -5,7 +5,7 @@ PORTVERSION=	21.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	news
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alexis.praga@free.fr
 COMMENT=	Binary newsreader supporting NZB files
 
 LICENSE=	GPLv2
