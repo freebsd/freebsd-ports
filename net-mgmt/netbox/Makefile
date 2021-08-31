@@ -1,7 +1,7 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.11.12
-CATEGORIES=	net-mgmt
+CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	IP address management tool
@@ -47,7 +47,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2.6<3.3:www/py-django32@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.4.1<6:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=19.9.0<21:www/py-gunicorn@${PY_FLAVOR}
 
-USES=		pgsql:9.6+ python:3.7+
+USES=		cpe pgsql:9.6+ python:3.7+
+CPE_VENDOR=	netbox_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	netbox-community
 
