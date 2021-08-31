@@ -9,6 +9,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Common logging library for Bourne shell scripts
 
+USES=		cpe
+
 OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	lib/log4sh
