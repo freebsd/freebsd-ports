@@ -13,7 +13,7 @@ COMMENT=	First person shooter based on Cube
 LICENSE=	MIT ZLIB
 LICENSE_COMB=	multi
 
-USES=		compiler:c++11-lang gmake tar:bzip2
+USES=		compiler:c++11-lang cpe gmake tar:bzip2
 BUILD_WRKSRC=	${WRKSRC}/src
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	libenet
