@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=	gmake pkgconfig
+USES=		cpe gmake pkgconfig
 HAS_CONFIGURE=	yes
 
 PORTDOCS=	CHANGELOG README.md
