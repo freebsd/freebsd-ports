@@ -12,6 +12,8 @@ COMMENT=	Minimal secure webserver. Fast and efficient, no cgi-bin support
 
 LICENSE=	GPLv2
 
+USES=		cpe
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.02-4
 BUILD_WRKSRC=	${WRKSRC}/src
 
