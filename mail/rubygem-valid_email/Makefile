@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	valid_email
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activemodel60>=0:databases/rubygem-activemodel60 \
-		rubygem-mail>=2.6.1:mail/rubygem-mail
+		rubygem-mail>=2.6.1:mail/rubygem-mail \
+		rubygem-simpleidn>=0:dns/rubygem-simpleidn
 
 USES=		gem
 USE_RUBY=	yes
