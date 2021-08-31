@@ -17,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC
 
-USES=		perl5 shebangfix zip
+USES=		cpe perl5 shebangfix zip
 USE_PERL5=	run
 NO_BUILD=	yes
 NO_ARCH=	yes
