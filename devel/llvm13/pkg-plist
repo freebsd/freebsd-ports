@@ -94,6 +94,7 @@ bin/intercept-build%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/modularize%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/pp-trace%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/run-clang-tidy%%LLVM_SUFFIX%%
+%%FLANG%%bin/f18%%LLVM_SUFFIX%%
 %%FLANG%%bin/f18-parse-demo%%LLVM_SUFFIX%%
 %%FLANG%%bin/fir-opt%%LLVM_SUFFIX%%
 %%FLANG%%bin/flang%%LLVM_SUFFIX%%
@@ -176,7 +177,7 @@ llvm%%LLVM_SUFFIX%%/bin/bugpoint
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/clangd
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/diagtool
 llvm%%LLVM_SUFFIX%%/bin/dsymutil
-llvm%%LLVM_SUFFIX%%/bin/f18
+%%FLANG%%llvm%%LLVM_SUFFIX%%/bin/f18
 %%FLANG%%llvm%%LLVM_SUFFIX%%/bin/f18-parse-demo
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/find-all-symbols
 %%FLANG%%llvm%%LLVM_SUFFIX%%/bin/fir-opt

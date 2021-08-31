@@ -99,6 +99,7 @@ EXTRAS_COMMANDS= \
 		run-clang-tidy
 
 FLANG_COMMANDS= \
+		f18 \
 		f18-parse-demo \
 		fir-opt \
 		flang \
