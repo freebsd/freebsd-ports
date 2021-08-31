@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/leptonica-license.txt
 
 CONFLICTS=	leptonlib-[0-9]*
 
-USES=		autoreconf libtool localbase:ldflags pathfix pkgconfig
+USES=		autoreconf cpe libtool localbase:ldflags pathfix pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DanBloomberg
