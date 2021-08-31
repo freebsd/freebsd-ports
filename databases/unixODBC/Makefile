@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--enable-static --enable-shared \
 		${ICONV_CONFIGURE_ARG}
 INSTALL_TARGET=	install-strip
 # :keepla because port uses lt_dlopen
-USES=		iconv libtool:keepla
+USES=		cpe iconv libtool:keepla
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
