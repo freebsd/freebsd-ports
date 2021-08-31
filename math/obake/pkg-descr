@@ -1,0 +1,5 @@
+obake is a C++ computer algebra library for the symbolic manipulation of sparse
+multivariate polynomials and other closely-related symbolic objects (such as
+truncated power series, Poisson series, etc.).
+
+WWW: https://bluescarni.github.io/obake/
