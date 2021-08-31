@@ -11,7 +11,7 @@ COMMENT=	Visualization addon for Nagios
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext php:web
+USES=		cpe gettext php:web
 USE_PHP=	gd gettext mbstring session json pdo pdo_sqlite
 
 NO_BUILD=	yes
