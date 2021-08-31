@@ -11,8 +11,11 @@ COMMENT=	Secure, Simple and Scalable Video Conferences
 
 LICENSE=	APACHE20
 
-USES=		tar:bzip2
+USES=		cpe tar:bzip2
 NO_BUILD=	yes
+
+CPE_VENDOR=	jitsi
+CPE_PRODUCT=	meet
 
 SUB_FILES+=	pkg-message
 
