@@ -12,7 +12,7 @@ COMMENT=	Tiny shell that only permits scp and sftp
 
 LICENSE=	BSD2CLAUSE
 
-USES=		tar:tgz
+USES=		cpe tar:tgz
 
 PORTDOCS=	BUILDING-JAILS.TXT INSTALL README SECURITY
 GNU_CONFIGURE=	yes
