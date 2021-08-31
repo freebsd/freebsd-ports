@@ -1,4 +1,4 @@
---- Gemfile.orig	2021-08-23 16:27:44 UTC
+--- Gemfile.orig	2021-08-31 13:57:34 UTC
 +++ Gemfile
 @@ -88,7 +88,7 @@ gem 'gpgme', '~> 2.0.19'
  # GitLab fork with several improvements to original library. For full list of changes
@@ -12,7 +12,7 @@
 @@ -102,7 +102,6 @@ gem 'graphql', '~> 1.11.8'
  # https://gitlab.com/gitlab-org/gitlab/issues/31747
  gem 'graphiql-rails', '~> 1.4.10'
- gem 'apollo_upload_server', '~> 2.0.2'
+ gem 'apollo_upload_server', '~> 2.1.0'
 -gem 'graphql-docs', '~> 1.6.0', group: [:development, :test]
  gem 'graphlient', '~> 0.4.0' # Used by BulkImport feature (group::import)
  

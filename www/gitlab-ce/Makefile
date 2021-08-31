@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	14.2.1
+PORTVERSION=	14.2.2
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -84,7 +84,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-rack-cors>=1.0.6<1.1.0:www/rubygem-rack-cors \
 	rubygem-graphql>=1.11.8<1.12:devel/rubygem-graphql \
 	rubygem-graphiql-rails>=1.4.10<1.5.0:devel/rubygem-graphiql-rails \
-	rubygem-apollo_upload_server>=2.0.2<2.1:net/rubygem-apollo_upload_server \
+	rubygem-apollo_upload_server>=2.1.0<2.2:net/rubygem-apollo_upload_server \
 	rubygem-graphql-docs>=1.6.0<1.7.0:devel/rubygem-graphql-docs \
 	rubygem-graphlient>=0.4.0<0.5:devel/rubygem-graphlient \
 	rubygem-hashie>=4.1.0:devel/rubygem-hashie \
@@ -270,7 +270,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	2da7c8579601c14a93d4291b8cf5fa39c6eeabd8
+GL_COMMIT=	8d08c6cbe51a88fbdc5065aba6e459768e98e63b
 
 USERS=	git
 GROUPS=	git

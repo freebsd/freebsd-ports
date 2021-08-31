@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	14.2.1
+DISTVERSION=	14.2.2
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -19,7 +19,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 		rubygem-rdoc>=6.3.2<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.1<4.2.8:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.4.gitlab.1<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
-		rubygem-grpc>=1.38.0<2:net/rubygem-grpc \
+		rubygem-grpc>=1.30.2<2:net/rubygem-grpc \
 		rubygem-sentry-raven>=3.0<4:devel/rubygem-sentry-raven \
 		rubygem-faraday>=1.0.1<2:www/rubygem-faraday \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
@@ -43,7 +43,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	b01470ef32862f7ef17384b646fc8085e4947988
+GL_COMMIT=	94000ca352ea7d2c730cd913e7365690463a61b6
 
 # for go dependencies
 USE_GITHUB=	nodefault
