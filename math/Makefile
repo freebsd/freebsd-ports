@@ -822,6 +822,7 @@
     SUBDIR += py-gym
     SUBDIR += py-hdbscan
     SUBDIR += py-hdmedians
+    SUBDIR += py-heyoka
     SUBDIR += py-iminuit
     SUBDIR += py-intspan
     SUBDIR += py-iohexperimenter
