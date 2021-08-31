@@ -13,7 +13,7 @@ LIB_DEPENDS=	libgd.so:graphics/gd
 USE_GITHUB=	yes
 GH_ACCOUNT=	ansilove
 
-USES=		cmake
+USES=		cpe cmake
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
