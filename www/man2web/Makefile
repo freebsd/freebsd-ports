@@ -10,6 +10,7 @@ COMMENT=	Convert man pages to HTML
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/GPL
 
+USES=		cpe
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir="${PREFIX}/${CGIDIR}" \
 		--sysconfdir="${PREFIX}/etc" \
