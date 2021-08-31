@@ -1,0 +1,13 @@
+heyoka is a C++ library for the integration of ordinary differential equations
+(ODEs) via Taylor's method. Notable features include:
+* support for both double-precision and extended-precision floating-point types
+  (80-bit and 128-bit),
+* the ability to maintain machine precision accuracy over tens of billions of
+  timesteps,
+* high-precision zero-cost dense output,
+* accurate and reliable event detection,
+* batch mode integration to harness the power of modern SIMD instruction sets,
+* a high-performance implementation of Taylor's method based on automatic
+  differentiation techniques and aggressive just-in-time compilation via LLVM.
+
+WWW: https://bluescarni.github.io/heyoka/
