@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 MAINTAINER=	gugod@gugod.org
 COMMENT=	Color vt102 terminal emulator with transparency support
 
-USES=		xorg
+USES=		cpe xorg
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-xim --enable-big5
