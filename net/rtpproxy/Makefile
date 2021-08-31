@@ -12,7 +12,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libgsm.so:audio/gsm
 
-USES+=		libtool
+USES+=		cpe libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	sippy
 
