@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 RUN_DEPENDS=	ldraw>0:cad/ldraw
 
-USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5 shared-mime-info xorg
+USES=		compiler:c++11-lang cpe desktop-file-utils gl qmake qt:5 shared-mime-info xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	leozide
 USE_QT=		core gui concurrent network opengl printsupport widgets xml buildtools_build linguisttools_build
