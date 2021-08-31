@@ -30,6 +30,6 @@ include/rtc/utils.hpp
 include/rtc/websocket.hpp
 include/rtc/websocketserver.hpp
 lib/libdatachannel.so
-lib/libdatachannel.so.0.14.2
+lib/libdatachannel.so.0.14.3
 share/cmake/libdatachannel/libdatachannel-config-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/libdatachannel/libdatachannel-config.cmake
