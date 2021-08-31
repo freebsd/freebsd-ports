@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls
 
-USES=		perl5 gmake tar:tgz
+USES=		cpe perl5 gmake tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc --with-ipv6 \
 		--with-gnutls=${LOCALBASE} \
