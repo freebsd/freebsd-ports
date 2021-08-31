@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	gitlab-elasticsearch-indexer
-PORTVERSION=	2.12.0
+PORTVERSION=	2.13.0
 PORTREVISION=	0
 CATEGORIES=	textproc
 
@@ -21,7 +21,7 @@ USES=		gmake go:modules pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-elasticsearch-indexer/-/tags
-GL_COMMIT=	30d52c4119cbc45bbae57217df75c7602d294615
+GL_COMMIT=	31d8f69fc3155cfb266d2d8828722bf25dc8f22e
 
 # for go dependencies
 USE_GITHUB=	nodefault
