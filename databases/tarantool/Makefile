@@ -22,7 +22,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libyaml.so:textproc/libyaml \
 		libzstd.so:archivers/zstd
 
-USES=		cmake:noninja compiler:c++11-lang gettext-runtime gmake iconv perl5 readline ssl
+USES=		cmake:noninja compiler:c++11-lang cpe gettext-runtime gmake iconv perl5 readline ssl
 USE_PERL5=	build
 
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
