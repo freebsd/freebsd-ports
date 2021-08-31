@@ -12,7 +12,7 @@ COMMENT=	Web-based Audio file manager
 
 LICENSE=	AGPLv3+
 
-USES=		zip gettext php:flavors mysql
+USES=		cpe zip gettext php:flavors mysql
 USE_PHP=	pdo pdo_mysql hash session json intl simplexml curl dom xml
 
 NO_WRKSUBDIR=	yes
