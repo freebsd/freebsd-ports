@@ -1,7 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	anki
-DISTVERSION=	2.1.46
+DISTVERSION=	2.1.47
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:yarncache
@@ -58,8 +58,8 @@ USES=		cargo desktop-file-utils pyqt:5 python:3.8+ shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ankitects
 # Translation files
-GH_TUPLE=	ankitects:anki-core-i18n:dd67ac7:ftlrslib \
-		ankitects:anki-desktop-ftl:54188b8:ftlextra
+GH_TUPLE=	ankitects:anki-core-i18n:45cff34:ftlrslib \
+		ankitects:anki-desktop-ftl:596d1fb:ftlextra
 # Cargo crates
 GH_TUPLE+=	ankitects:hyper-timeout:0cb6f7d14c62819e37cd221736f8b0555e823712:hypertimeout \
 		ankitects:linkcheck:2f20798ce521cc594d510d4e417e76d5eac04d4b:linkcheck \
@@ -434,7 +434,7 @@ MPV_RUN_DEPENDS=	mpv:multimedia/mpv
 # Should contain the most recent commit that reflects ${DISTVERSION} and must
 # be exactly 8 digits otherwise the check for newer versions won't work as
 # expected.
-_MY_BUILDHASH=	94913ec2
+_MY_BUILDHASH=	dc156f34
 # Path of the local bazel repositories
 _MY_LOCALREPO=	${WRKSRC}/local_repos
 # Path of cache that is used by www/yarn
