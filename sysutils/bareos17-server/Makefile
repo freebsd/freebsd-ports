@@ -17,7 +17,7 @@ CONFLICTS?=	bacula*-server-* bareos16-server-*
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson
 
-USES+=		libtool:keepla pkgconfig readline shebangfix
+USES+=		cpe libtool:keepla pkgconfig readline shebangfix
 USE_GITHUB=	yes
 
 USERS=		bareos
