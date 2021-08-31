@@ -18,11 +18,11 @@
 +    # bind $bindtag <Control-Button-5> [list %W yview scroll 1 pages]
 +    # bind $bindtag <Control-Button-4> [list %W yview scroll -1 pages]
 +
-+    # tcl 8.7a5 and later (units can be pixels/units/pages). See
++    # tcl 8.7a5 and later. See
 +    # https://core.tcl-lang.org/tips/doc/trunk/tip/474.md for more info:
-+    bind $bindtag <MouseWheel> [ list tk::MouseWheel %W y %D -$num units ]
-+    bind $bindtag <Shift-MouseWheel> { tk::MouseWheel %W y %D -1 units }
-+    bind $bindtag <Shift-MouseWheel> { tk::MouseWheel %W y %D -1 pages }
++    bind $bindtag <MouseWheel> [ list tk::MouseWheel %W y %D [ expr 10/-$num ] pixels ]
++    bind $bindtag <Shift-MouseWheel> { tk::MouseWheel %W y %D -10 pixels }
++    bind $bindtag <Control-MouseWheel> { tk::MouseWheel %W y %D -1 pixels }
  }
  
  
