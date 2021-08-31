@@ -11,7 +11,7 @@ COMMENT=	Web-based RSS/RDF/ATOM news aggregator
 
 LICENSE=	GPLv2
 
-USES=		php
+USES=		cpe php
 USE_PHP=	gettext iconv mbstring session xml zlib
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
