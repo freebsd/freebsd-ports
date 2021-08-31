@@ -32,7 +32,7 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 
 #CONFLICTS=	openscad-devel
 
-USES=		bison compiler:c++14-lang desktop-file-utils eigen:3 gettext \
+USES=		bison compiler:c++14-lang cpe desktop-file-utils eigen:3 gettext \
 		gl gnome pkgconfig qmake qt:5 shared-mime-info xorg
 USE_GITHUB=	yes
 USE_GL=		gl glu glew
