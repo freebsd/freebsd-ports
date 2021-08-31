@@ -26,7 +26,7 @@ RUN_DEPENDS=	p5-Term-ReadKey>=2.30:devel/p5-Term-ReadKey \
 		OpenSP>0:textproc/opensp \
 		msgmerge:devel/gettext-tools
 
-USES=		gettext perl5
+USES=		cpe gettext perl5
 USE_PERL5=	modbuild
 
 USE_GITHUB=	yes
