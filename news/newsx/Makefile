@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/news/lib/libinn.so:news/inn
 RUN_DEPENDS=	${LOCALBASE}/news/lib/libinn.so:news/inn
 .endif
 
+USES=		cpe
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fcommon
 
