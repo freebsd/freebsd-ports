@@ -17,7 +17,7 @@ HAS_CONFIGURE=	yes
 MAKE_ENV+=	OSTYPE=FreeBSD
 CONFIGURE_ARGS+=	"--prefix=${PREFIX}"
 
-USES=		perl5
+USES=		cpe perl5
 USE_RC_SUBR=	${PORTNAME}
 
 MYSQL_USES=	mysql
