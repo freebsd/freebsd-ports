@@ -20,7 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		php:cli,flavors python:3.5+ shebangfix
+USES=		cpe php:cli,flavors python:3.5+ shebangfix
 SHEBANG_FILES=	\
 		poller-wrapper.py \
 		poller.php \
