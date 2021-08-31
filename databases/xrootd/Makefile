@@ -15,7 +15,7 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPL
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cmake gnome localbase:ldflags pkgconfig readline shebangfix ssl
+USES=		cmake cpe gnome localbase:ldflags pkgconfig readline shebangfix ssl
 SHEBANG_GLOB=	*.sh
 SHEBANG_FILES=	utils/cms_monPerf
 USE_GNOME=	libxml2
