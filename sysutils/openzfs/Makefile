@@ -13,7 +13,7 @@ BROKEN_riscv64=	fails to compile: btree_test.c:462:49: result of comparison of c
 
 RUN_DEPENDS=	openzfs-kmod>=0:sysutils/openzfs-kmod
 
-USES+=		autoreconf:build libtool gmake gettext-runtime python:3.3+,build shebangfix
+USES+=		autoreconf:build cpe libtool gmake gettext-runtime python:3.3+,build shebangfix
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-config="user"
