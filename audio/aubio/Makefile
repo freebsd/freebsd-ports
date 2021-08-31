@@ -12,7 +12,7 @@ COMMENT?=	Library for audio labelling
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES+=		pkgconfig tar:bzip2
+USES+=		cpe pkgconfig tar:bzip2
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
