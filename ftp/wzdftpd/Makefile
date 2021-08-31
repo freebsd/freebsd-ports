@@ -12,7 +12,7 @@ COMMENT=	Modular FTP server configurable online using SITE commands
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gettext-tools libtool localbase pkgconfig
+USES=		autoreconf cpe gettext-tools libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} --disable-bonjour --disable-static
 INSTALL_TARGET=	install-strip
