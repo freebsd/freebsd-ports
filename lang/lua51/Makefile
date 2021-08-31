@@ -12,7 +12,7 @@ COMMENT=	Small, compilable scripting language providing easy access to C code
 
 LICENSE=	MIT
 
-USES=		libedit lua:core,51
+USES=		cpe libedit lua:core,51
 USE_LDCONFIG=	yes
 
 # Overriding __MAKE_CONF makes sure that we don't re-parse
