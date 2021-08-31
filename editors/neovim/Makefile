@@ -25,7 +25,7 @@ TEST_DEPENDS=	autoconf>=0:devel/autoconf \
 		gmake:devel/gmake \
 		libtool:devel/libtool
 
-USES=		cmake iconv pathfix pkgconfig
+USES=		cmake cpe iconv pathfix pkgconfig
 USE_GITHUB=	yes
 GH_TUPLE=	libmpack:libmpack:1.0.5:libmpack \
 		libmpack:libmpack-lua:1.0.7:libmpack_lua
