@@ -10,12 +10,9 @@ COMMENT=	Fido-Internet Gateway and Tosser
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	autoreconf perl5 iconv
-
+USES=		autoreconf perl5 iconv
 USE_GITHUB=	yes
 GH_ACCOUNT=	ykaliuta
-GH_PROJECT=	fidogate
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libexec=${PREFIX}/libexec/fidogate \
 		--sysconfdir=${PREFIX}/etc/fido/gate \

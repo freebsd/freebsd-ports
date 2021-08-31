@@ -15,8 +15,6 @@ LICENSE_PERMS_RIPE_NCC=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		autoreconf bison gmake libtool
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	irrtoolset
-GH_PROJECT=	irrtoolset
 
 PLIST_FILES=	bin/rpslcheck bin/peval bin/rtconfig \
 		man/man1/rtconfig.1.gz man/man1/peval.1.gz \

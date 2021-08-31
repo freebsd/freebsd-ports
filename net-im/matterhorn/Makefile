@@ -12,7 +12,6 @@ USES=		cabal
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	matterhorn-chat
-GH_PROJECT=	matterhorn
 
 USE_CABAL=	HTTP-4000.3.15_2 \
 		Hclip-3.0.0.4 \

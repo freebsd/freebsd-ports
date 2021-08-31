@@ -25,7 +25,6 @@ USES=		ncurses pkgconfig ssl python readline autoreconf libtool gnome
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 GH_ACCOUNT=	profanity-im
-GH_PROJECT=	profanity
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-otr --enable-python-plugins --enable-c-plugins \

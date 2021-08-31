@@ -12,7 +12,6 @@ LICENSE=	ART20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jpoliv
-GH_PROJECT=	wakeonlan
 GH_TAGNAME=	4beb45d
 
 USES=		perl5

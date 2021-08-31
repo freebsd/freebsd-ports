@@ -12,7 +12,6 @@ LICENSE=	MIT
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	nats-io
-GH_PROJECT=	nats-top
 GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		gizak:termui:e62b5929642a:gizak_termui/vendor/gopkg.in/gizak/termui.v1 \
 		golang:crypto:0ec3e9974c59:golang_crypto/vendor/golang.org/x/crypto \

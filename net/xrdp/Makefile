@@ -28,7 +28,6 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
-GH_PROJECT=	xrdp
 GH_TUPLE=	neutrinolabs:librfxcodec:v0.1.5:librfxcodec/librfxcodec \
 		neutrinolabs:libpainter:v0.1.1:libpainter/libpainter
 

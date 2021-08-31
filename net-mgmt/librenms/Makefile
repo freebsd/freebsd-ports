@@ -23,13 +23,10 @@ RUN_DEPENDS+=	${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4@${PHP_FLAVO
 		sudo:security/sudo
 
 USES=		cpe php python shebangfix
-
 USE_GITHUB=	yes
-GH_ACCOUNT=	librenms
-
 USE_PHP=	ctype curl dom fileinfo filter gd hash json ldap mbstring \
-		mysqli openssl pdo pdo_mysql phar posix session simplexml snmp \
-		sockets tokenizer xml xmlwriter zip
+		mysqli openssl pdo pdo_mysql phar posix session simplexml \
+		snmp sockets tokenizer xml xmlwriter zip
 USE_RC_SUBR=	librenms
 
 SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \

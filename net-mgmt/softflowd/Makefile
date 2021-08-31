@@ -11,12 +11,9 @@ COMMENT=	Flow-based network traffic analyzer and exporter
 LICENSE=	BSD2CLAUSE
 
 USES=		gmake autoreconf
-
+GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	irino
-GH_PROJECT=	softflowd
-
-GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 PLIST_FILES=	bin/softflowd bin/softflowctl \

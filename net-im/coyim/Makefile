@@ -14,18 +14,15 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		gnome go pkgconfig
-
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
+USE_GITHUB=	yes
+GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	coyim
-GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
 GO_BUILDFLAGS=	-tags ${GTK_BUILD_TAG}
 

@@ -11,9 +11,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	Cisco-Talos
-GH_PROJECT=	file2pcap
 
 ALL_TARGET=	file2pcap
 

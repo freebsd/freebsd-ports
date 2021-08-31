@@ -21,7 +21,7 @@ QMAKE_ARGS=	CONFIG+="configure"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
-GH_PROJECT=	diligent
+
 PLIST_FILES=	bin/diligent \
 		share/applications/diligent.desktop \
 		share/icons/diligent.png
