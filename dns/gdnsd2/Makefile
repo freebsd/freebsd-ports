@@ -21,7 +21,7 @@ FETCH_ARGS=	-Fpr
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 USE_LDCONFIG=	yes
-USES=		pkgconfig libtool tar:xz perl5 gmake
+USES=		cpe pkgconfig libtool tar:xz perl5 gmake
 USE_PERL5=	build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
