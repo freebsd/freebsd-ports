@@ -17,7 +17,7 @@ TEST_DEPENDS=	p5-IO-Socket-Socks>=0.64:net/p5-IO-Socket-Socks \
 		p5-YAML-LibYAML>0:textproc/p5-YAML-LibYAML \
 		${JSONXS_BUILD_DEPENDS}
 
-USES=		perl5
+USES=		cpe perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
