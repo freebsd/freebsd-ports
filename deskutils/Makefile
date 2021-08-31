@@ -144,6 +144,7 @@
     SUBDIR += ktimetracker
     SUBDIR += kuserfeedback
     SUBDIR += latte-dock
+    SUBDIR += libcprime
     SUBDIR += libkdepim
     SUBDIR += libportal
     SUBDIR += ljclive
