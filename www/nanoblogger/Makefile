@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	bash:shells/bash
 
+USES=		cpe
+
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
