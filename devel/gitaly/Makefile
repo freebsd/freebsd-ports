@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	14.1.2
+DISTVERSION=	14.2.1
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -16,14 +16,14 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 		rubygem-github-linguist>=7.12.1<8:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.7.1<1.8.0:textproc/rubygem-gitlab-markup \
 		rubygem-activesupport61>=6.1.3.2<6.2:devel/rubygem-activesupport61 \
-		rubygem-rdoc>=6.1<7.0:devel/rubygem-rdoc \
+		rubygem-rdoc>=6.3.2<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.1<4.2.8:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.4.gitlab.1<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
-		rubygem-grpc>=1.30.2<2:net/rubygem-grpc \
+		rubygem-grpc>=1.38.0<2:net/rubygem-grpc \
 		rubygem-sentry-raven>=3.0<4:devel/rubygem-sentry-raven \
 		rubygem-faraday>=1.0.1<2:www/rubygem-faraday \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
-		rubygem-gitlab-labkit>=0.20<0.21:devel/rubygem-gitlab-labkit \
+		rubygem-gitlab-labkit>=0.21<0.22:devel/rubygem-gitlab-labkit \
 		rubygem-licensee>=9.14.1<9.15:devel/rubygem-licensee \
 		rubygem-google-protobuf>=3.17.3<3.18:devel/rubygem-google-protobuf
 BUILD_DEPENDS=	gem:devel/ruby-gems \
@@ -43,20 +43,28 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	1905b9707bd9c3ba5b47738b64a68a01f1f93c99
+GL_COMMIT=	b01470ef32862f7ef17384b646fc8085e4947988
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 100dd
+# 115dd
 GH_TUPLE=	\
+		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
+		Azure:azure-storage-blob-go:v0.13.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
+		Azure:go-autorest:79a63e70c4d8:azure_go_autorest_adal \
+		Azure:go-autorest:autorest/v0.11.18:azure_go_autorest_autorest \
+		Azure:go-autorest:b3a0b30a7423:azure_go_autorest_date \
+		Azure:go-autorest:logger/v0.2.1:azure_go_autorest_logger \
+		Azure:go-autorest:tracing/v0.6.0:azure_go_autorest_tracing \
+		Azure:go-autorest:v14.2.0:azure_go_autorest/vendor/github.com/Azure/go-autorest \
 		DataDog:datadog-go:v4.4.0:datadog_datadog_go/vendor/github.com/DataDog/datadog-go \
 		DataDog:dd-trace-go:v1.30.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
 		Microsoft:go-winio:v0.4.19:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		alexbrainman:sspi:4729b3d4d858:alexbrainman_sspi/vendor/github.com/alexbrainman/sspi \
 		avast:retry-go:v2.4.2:avast_retry_go/vendor/github.com/avast/retry-go \
-		aws:aws-sdk-go:v1.37.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.38.35:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-ecosystem:opencensus-go-exporter-stackdriver:v0.13.8:census_ecosystem_opencensus_go_exporter_stackdriver/vendor/contrib.go.opencensus.io/exporter/stackdriver \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
@@ -65,10 +73,11 @@ GH_TUPLE=	\
 		client9:reopen:v1.0.0:client9_reopen/vendor/github.com/client9/reopen \
 		cloudflare:tableflip:v1.2.2:cloudflare_tableflip/vendor/github.com/cloudflare/tableflip \
 		containerd:cgroups:2819c83ced99:containerd_cgroups/vendor/github.com/containerd/cgroups \
-		coreos:go-systemd:v22.0.0:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
+		coreos:go-systemd:v22.3.1:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
 		dpotapov:go-spnego:c2c609116ad0:dpotapov_go_spnego/vendor/github.com/dpotapov/go-spnego \
+		form3tech-oss:jwt-go:v3.2.2:form3tech_oss_jwt_go/vendor/github.com/form3tech-oss/jwt-go \
 		getsentry:sentry-go:v0.10.0:getsentry_sentry_go/vendor/github.com/getsentry/sentry-go \
 		git-lfs:git-lfs:2e1d981afbe3:git_lfs_git_lfs/vendor/github.com/git-lfs/git-lfs \
 		git-lfs:gitobj:v2.0.1:git_lfs_gitobj_v2/vendor/github.com/git-lfs/gitobj/v2 \
@@ -77,27 +86,31 @@ GH_TUPLE=	\
 		go-gorp:gorp:v1.7.2:go_gorp_gorp/vendor/gopkg.in/gorp.v1 \
 		go-ole:go-ole:v1.2.4:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		godbus:dbus:v5.0.3:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
+		godbus:dbus:v5.0.4:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:eec23a3978ad:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:38f3c27a63bf:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:lint:83fdc39ff7b5:golang_lint/vendor/golang.org/x/lint \
-		golang:net:d523dce5a7f4:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:5e61552d6c78:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
+		golang:net:0714010a04ed:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:81ed05c6b58c:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:f1c623a9e750:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
-		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
+		golang:sys:0981d6026fa6:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
+		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
+		google:go-cloud:v0.23.0:google_go_cloud/vendor/gocloud.dev \
 		google:go-cmp:v0.5.5:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:c14fb6ef47c3:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:4a47615972c2:google_go_genproto/vendor/google.golang.org/genproto \
 		google:pprof:cbba55b83ad5:google_pprof/vendor/github.com/google/pprof \
-		google:uuid:v1.1.2:google_uuid/vendor/github.com/google/uuid \
+		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
+		google:wire:v0.5.0:google_wire/vendor/github.com/google/wire \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
-		googleapis:google-api-go-client:v0.45.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		googleapis:google-api-go-client:v0.46.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:storage/v1.15.0:googleapis_google_cloud_go_storage \
 		googleapis:google-cloud-go:v0.81.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		grpc-ecosystem:go-grpc-middleware:v1.3.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:go-grpc-prometheus:v1.2.0:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
@@ -111,12 +124,14 @@ GH_TUPLE=	\
 		jcmturner:gokrb5:v5.3.0:jcmturner_gokrb5/vendor/gopkg.in/jcmturner/gokrb5.v5 \
 		jcmturner:rpc:v0.0.2:jcmturner_rpc/vendor/gopkg.in/jcmturner/rpc.v0 \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
+		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
 		kelseyhightower:envconfig:v1.3.0:kelseyhightower_envconfig/vendor/github.com/kelseyhightower/envconfig \
-		lib:pq:v1.2.0:lib_pq/vendor/github.com/lib/pq \
+		lib:pq:v1.10.1:lib_pq/vendor/github.com/lib/pq \
 		libgit2:git2go:v31.4.12:libgit2_git2go_v31/vendor/github.com/libgit2/git2go/v31 \
 		lightstep:lightstep-tracer-common:a8dfcb80d3a7:lightstep_lightstep_tracer_common_gogo/vendor/github.com/lightstep/lightstep-tracer-common \
 		lightstep:lightstep-tracer-go:v0.24.0:lightstep_lightstep_tracer_go/vendor/github.com/lightstep/lightstep-tracer-go \
-		mattn:go-isatty:v0.0.9:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
+		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		oklog:ulid:v2.0.2:oklog_ulid_v2/vendor/github.com/oklog/ulid/v2 \
@@ -139,16 +154,31 @@ GH_TUPLE=	\
 		shirou:gopsutil:v2.20.1:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
 		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		ssgelm:cookiejarparser:v1.0.1:ssgelm_cookiejarparser/vendor/github.com/ssgelm/cookiejarparser \
-		stretchr:objx:v0.1.1:stretchr_objx/vendor/github.com/stretchr/objx \
+		stretchr:objx:v0.2.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		tinylib:msgp:v1.1.2:tinylib_msgp/vendor/github.com/tinylib/msgp \
-		uber-go:atomic:v1.5.0:uber_go_atomic/vendor/go.uber.org/atomic \
+		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:goleak:v1.1.10:uber_go_goleak/vendor/go.uber.org/goleak \
 		uber:jaeger-client-go:v2.27.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
 		uber:jaeger-lib:v2.4.1:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
 
-GL_TUPLE=	gitlab-org:gitlab-shell:a9c25c17ea0a511ec6554a4dd3bcd9f5012d59d5:gitlab_org_gitlab_shell/vendor/gitlab.com/gitlab-org/gitlab-shell \
+GL_TUPLE=	gitlab-org:gitlab-shell:50da611814d256c77e689977265ec7e07633a4dc:gitlab_org_gitlab_shell/vendor/gitlab.com/gitlab-org/gitlab-shell \
 		gitlab-org:labkit:397363e2404ac0276b1959373a1c1c2bc1610d67:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
+
+# 13dd
+post-extract:
+	@${RM} -r ${WRKSRC}/vendor/cloud.google.com/go/storage
+	@${RLN} ${WRKSRC_googleapis_google_cloud_go_storage}/storage ${WRKSRC}/vendor/cloud.google.com/go/storage
+	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest
+	@${RLN} ${WRKSRC_azure_go_autorest_autorest}/autorest ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest
+	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/adal
+	@${RLN} ${WRKSRC_azure_go_autorest_adal}/autorest/adal ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/adal
+	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/date
+	@${RLN} ${WRKSRC_azure_go_autorest_date}/autorest/date ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/date
+	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/logger
+	@${RLN} ${WRKSRC_azure_go_autorest_logger}/logger ${WRKSRC}/vendor/github.com/Azure/go-autorest/logger
+	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/tracing
+	@${RLN} ${WRKSRC_azure_go_autorest_tracing}/tracing ${WRKSRC}/vendor/github.com/Azure/go-autorest/tracing
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
