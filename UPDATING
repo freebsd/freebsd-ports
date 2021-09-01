@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210901:
+  AFFECTS: users of audio/ampache
+  AUTHOR: crees@FreeBSD.org
+
+  With the upgrade to Ampache 5.0.0, the root Ampache folder has changed
+  to %%WWWDIR%%/ampache/public.  Please update your web server aliases,
+  for example if you use Apache, then in httpd.conf make sure the lines
+  look like this:
+
+  Alias /ampache /usr/local/www/ampache/public
+
+  <Directory "/usr/local/www/ampache/public">
+
+  If you have customised your .htaccess files to allow for a different
+  alias, you'll need to move them to the new location after upgrading:
+
+  # sh -c 'cd /usr/local/www/ampache && for f in */.htaccess; do mv $f public/$f; done'
+
+  More upgrade notes can be found on Github:
+
+  https://github.com/ampache/ampache/releases/tag/5.0.0
+
 20210823:
   AFFECTS: users of mail/mu
   AUTHOR: hrs@FreeBSD.org

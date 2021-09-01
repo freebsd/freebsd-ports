@@ -1,7 +1,7 @@
 # Created by: Philippe Audeoud <jadawin@tuxaco.net>
 
 PORTNAME=	ampache
-PORTVERSION=	4.3.0
+PORTVERSION=	5.0.0
 DISTVERSIONSUFFIX=	_all
 CATEGORIES=	audio www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
@@ -14,10 +14,12 @@ LICENSE=	AGPLv3+
 
 USES=		cpe zip gettext php:flavors mysql
 USE_PHP=	pdo pdo_mysql hash session json intl simplexml curl dom xml
+IGNORE_WITH_PHP=73 80
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 SUB_FILES=	500.ampache-cron
+SUB_LIST=	WWWOWN="${WWWOWN}"
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 OPTIONS_DEFINE=	DOCS
@@ -25,7 +27,7 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 .for h in channel play rest
 	${REINPLACE_CMD} 's,[[:space:]]*RewriteRule [^[:space:]]*[[:space:]],&/ampache,'	\
-		${WRKSRC}/$h/.htaccess.dist
+		${WRKSRC}/public/$h/.htaccess.dist
 .endfor
 	${REINPLACE_CMD} 's,^;web_path = "",web_path = "/${PORTNAME}",'	\
 		${WRKSRC}/config/ampache.cfg.php.dist

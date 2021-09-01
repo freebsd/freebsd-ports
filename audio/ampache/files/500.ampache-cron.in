@@ -12,10 +12,11 @@ case "${daily_ampache_gc_enable:-no}" in
 	;;
 *)
 	phpcmd=%%LOCALBASE%%/bin/php
-	cronscript=%%WWWDIR%%/bin/cron.inc
+	cronscript="%%WWWDIR%%/bin/cli run:cronProcess"
 
-	if ! $phpcmd $cronscript >/dev/null 2>&1 ; then
+	if ! su -m %%WWWOWN%% -c "$phpcmd $cronscript" >/dev/null 2>&1 ; then
 		echo 'ampache cron script failed- try running it manually'
+		echo "# $phpcmd $cronscript"
 		rc=2
 	fi
 	;;
