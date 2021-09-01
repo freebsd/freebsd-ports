@@ -1,3 +1,43 @@
+  <vuln vid="3d915d96-0b1f-11ec-8d9f-080027415d17">
+    <topic>cyrus-imapd -- multiple-minute daemon hang via input that is mishandled during hash-table interaction</topic>
+    <affects>
+      <package>
+	<name>cyrus-imapd34</name>
+	<range><lt>3.4.2</lt></range>
+      </package>
+      <package>
+	<name>cyrus-imapd32</name>
+	<range><lt>3.2.8</lt></range>
+      </package>
+      <package>
+	<name>cyrus-imapd30</name>
+	<range><lt>3.0.16</lt></range>
+      </package>
+      <package>
+	<name>cyrus-imapd25</name>
+	<name>cyrus-imapd24</name>
+	<name>cyrus-imapd23</name>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cyrus IMAP 3.4.2 Release Notes states:</p>
+	<blockquote cite="https://www.cyrusimap.org/imap/download/release-notes/3.4/x/3.4.2.html">
+	  <p>Fixed CVE-2021-33582: Certain user inputs are used as hash table keys during processing. A poorly chosen string hashing algorithm meant that the user could control which bucket their data was stored in, allowing a malicious user to direct many inputs to a single bucket. Each subsequent insertion to the same bucket requires a strcmp of every other entry in it. At tens of thousands of entries, each new insertion could keep the CPU busy in a strcmp loop for minutes.
+The string hashing algorithm has been replaced with a better one, and now also uses a random seed per hash table, so malicious inputs cannot be precomputed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-33582</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33582</url>
+    </references>
+    <dates>
+      <discovery>2021-05-26</discovery>
+      <entry>2021-09-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6c22bb39-0a9a-11ec-a265-001b217b3468">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
