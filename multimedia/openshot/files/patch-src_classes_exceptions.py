@@ -1,6 +1,6 @@
---- src/classes/exceptions.py.orig	2021-06-09 04:36:57 UTC
+--- src/classes/exceptions.py.orig	2021-08-24 18:04:45 UTC
 +++ src/classes/exceptions.py
-@@ -141,6 +141,8 @@ def libopenshot_crash_recovery():
+@@ -109,6 +109,8 @@ def libopenshot_crash_recovery():
          # Format last log line based on OS (since each OS can be formatted differently)
          if platform.system() == "Darwin":
              last_log_line = "mac-%s" % last_log_line[58:].strip()

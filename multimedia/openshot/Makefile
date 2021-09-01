@@ -2,8 +2,7 @@
 
 PORTNAME=	openshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.1-891
-DISTVERSIONSUFFIX=	-gd014ca48
+DISTVERSION=	2.6.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	tatsuki_makino@hotmail.com
@@ -12,7 +11,8 @@ COMMENT=	OpenShot Video Editor
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libopenshot>=0.2.5:multimedia/libopenshot@${PY_FLAVOR} \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libopenshot>=0.2.6:multimedia/libopenshot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sentry-sdk>=0:devel/py-sentry-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=0:net/py-pyzmq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>=0:sysutils/py-distro@${PY_FLAVOR} \
@@ -28,6 +28,6 @@ USE_PYTHON=	distutils optsuffix
 SHEBANG_FILES=	src/language/generate_translations.py\
 		src/language/show_translations.py\
 		src/language/test_translations.py
-
 NO_ARCH=	yes
+
 .include <bsd.port.mk>
