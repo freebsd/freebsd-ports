@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-05-09 14:57:33 UTC
+--- CMakeLists.txt.orig	2021-08-19 20:33:46 UTC
 +++ CMakeLists.txt
-@@ -170,6 +170,13 @@ set_target_properties(openshot-audio PROPERTIES
+@@ -171,6 +171,13 @@ set_target_properties(openshot-audio PROPERTIES
    EXPORT_NAME Audio  # Exports as OpenShot::Audio target
  )
  
@@ -14,7 +14,7 @@
  # Require language features we use
  if(CMAKE_VERSION VERSION_GREATER 3.8)
    target_compile_features(openshot-audio PUBLIC
-@@ -188,7 +195,8 @@ endif()
+@@ -189,7 +196,8 @@ endif()
  # Enable stack-unwinding support in c objects on gcc-based platforms.
  # Failing to do so will cause your program to be terminated when a png
  # or a jpeg exception is thrown on linux or macosx.
@@ -24,7 +24,7 @@
    target_compile_options(openshot-audio PRIVATE -fexceptions)
  endif()
  
-@@ -249,8 +257,8 @@ if(UNIX AND NOT APPLE)
+@@ -250,8 +258,8 @@ if(UNIX AND NOT APPLE)
        INTERFACE_INCLUDE_DIRECTORIES ${ALSA_INCLUDE_DIR}
        INTERFACE_LINK_LIBRARIES ${ALSA_LIBRARIES})
    endif()
@@ -35,7 +35,7 @@
  else()
    # For EXPORTED Config
    set(NEED_ALSA FALSE)
-@@ -258,10 +266,24 @@ endif()
+@@ -259,10 +267,24 @@ endif()
  
  # ZLIB -- uses IMPORTED target ZLIB::ZLIB which has existed since CMake 3.1
  find_package(ZLIB REQUIRED)
