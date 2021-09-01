@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: nut
-# REQUIRE: NETWORKING
+# REQUIRE: NETWORKING devfs
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 
