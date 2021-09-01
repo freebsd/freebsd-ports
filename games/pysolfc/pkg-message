@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOD
+Please note that only the default set of cards was installed.  If you would
+like to install more cardsets, please proceed as follows:
+
+$ fetch https://github.com/shlomif/PySolFC-Cardsets/archive/refs/tags/2.0.tar.gz
+$ tar xf 2.0.tar.gz
+$ mkdir -p ~/.PySolFC/cardsets
+$ cp -r PySolFC-Cardsets-2.0/cardsets* ~/.PySolFC/cardsets/
+EOD
+}
+{ type: upgrade
+  maximum_version: 2.12.0
+  message: <<EOD
+Please note that the new version of PySolFC contains only a default set of
+cards.  If you should miss one or more cardsets, you can set them up as
+follows:
+
+$ fetch https://github.com/shlomif/PySolFC-Cardsets/archive/refs/tags/2.0.tar.gz
+$ tar xf 2.0.tar.gz
+$ cp -r PySolFC-Cardsets-2.0/cardsets* ~/.PySolFC/cardsets/
+EOD
+}
+]

@@ -1,59 +1,32 @@
 PORTNAME=	pysolfc
-DISTVERSION=	2.6.4
-PORTREVISION=	2
+DISTVERSION=	2.12.0
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/PySolFC/${PYSOLFCDIR} \
-		SF/${PORTNAME}/PySolFC-Cardsets/${CARDSETDIR}:cardsets
+		SF/${PORTNAME}/PySolFC-Cardsets/minimal/:cardsets \
+		SF/${PORTNAME}/PySol-Music/${MUSICDIR}/:music
 DISTFILES=	${PYSOLFCDIST} \
-		${CARDSETDIST}:cardsets
+		${CARDSETDIST}:cardsets \
+		${MUSICDIST}:music
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Solitaire game, written in Python and the successor of PySol
 
-LICENSE=	GPLv2+ GPLv3+ MIT PCW PD UCP UCJ ULG
+LICENSE=	GPLv2+ GPLv3+
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}random2>=0:math/py-random2@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>0:devel/py-attrs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pysol-cards>0:games/py-pysol-cards@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}random2>=0:math/py-random2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
-		${PY_PILLOW}
+		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
 LICENSE_FILE_GPLv3+ =		${WRKSRC}/COPYING
 LICENSE_DISTFILES_GPLv3+ =	${PYSOLFCDIST}
-
-LICENSE_FILE_MIT=	${WRKDIR}/${CARDSETDIR}/cardset-spider/COPYRIGHT
-LICENSE_DISTFILES_MIT=	${CARDSETDIST}
-
-# This applies also to following cardsets:
-# - ${WRKDIR}/${CARDSETDIR}/cardset-rangoon-e/COPYRIGHT
-# - ${WRKDIR}/${CARDSETDIR}/cardset-rangoon-r/COPYRIGHT
-LICENSE_FILE_PCW=	${WRKDIR}/${CARDSETDIR}/cardset-rangoon-d/COPYRIGHT
-LICENSE_NAME_PCW=	Postcardware
-LICENSE_PERMS_PCW=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
-LICENSE_DISTFILES_PCW=	${CARDSETDIST}
-
-LICENSE_FILE_PD=	${WRKDIR}/${CARDSETDIR}/cardset-tksol/COPYRIGHT
-LICENSE_DISTFILES_PD=	${CARDSETDIST}
-
-LICENSE_FILE_UCP=	${WRKDIR}/${CARDSETDIR}/cardset-patience/COPYRIGHT
-LICENSE_NAME_UCP=	Unknown Copyright / Cardset "Patience"
-LICENSE_PERMS_UCP=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
-LICENSE_DISTFILES_UCP=	${CARDSETDIST}
-
-LICENSE_FILE_UCJ=	${WRKDIR}/${CARDSETDIR}/cardset-jacoby/COPYRIGHT
-LICENSE_NAME_UCJ=	Unknown Copyright / Cardset "Jacoby"
-LICENSE_PERMS_UCJ=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
-LICENSE_DISTFILES_UCJ=	${CARDSETDIST}
-
-LICENSE_FILE_ULG=	${WRKDIR}/${CARDSETDIR}/cardset-greywyvern/COPYRIGHT
-LICENSE_NAME_ULG=	Unknown License / Cardset "Greywyvern"
-LICENSE_PERMS_ULG=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
-LICENSE_DISTFILES_ULG=	${CARDSETDIST}
-
-# The rest of the cardsets are licensed with the GPLv+2
-LICENSE_FILE_GPLv2+ =		${WRKDIR}/${CARDSETDIR}/cardset-1567/COPYRIGHT
-LICENSE_DISTFILES_GPLv2+ =	${CARDSETDIST}
+LICENSE_FILE_GPLv2+ =		${WRKDIR}/${CARDSETDIR}/cardset-2000/COPYRIGHT
+LICENSE_DISTFILES_GPLv2+ =	${CARDSETDIST} ${MUSICDIST}
 
 USES=		python:3.6+ shebangfix tar:xz
 USE_PYTHON=	distutils noflavors autoplist
@@ -64,14 +37,23 @@ PLIST_FILES=	share/pixmaps/pysolfc.png
 DATADIR=	${PREFIX}/share/PySolFC
 WRKSRC=		${WRKDIR}/${PYSOLFCDIR}
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	NLS PILLOW SOUND
+OPTIONS_DEFAULT=	PILLOW SOUND
 OPTIONS_SUB=	yes
+
+PILLOW_DESC=	Enhanced graphics support
+
 NLS_USES=	gettext
+
+PILLOW_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
+SOUND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${PY_FLAVOR}
 
 PYSOLFCDIR=	PySolFC-${DISTVERSION}
 PYSOLFCDIST=	${PYSOLFCDIR}${EXTRACT_SUFX}
-CARDSETDIR=	PySolFC-Cardsets-2.0
-CARDSETDIST=	${CARDSETDIR}.tar.bz2
+CARDSETDIR=	PySolFC-Cardsets--Minimal-2.0.2
+CARDSETDIST=	${CARDSETDIR}.tar.xz
+MUSICDIR=	PySol-Music-4.50
+MUSICDIST=	${MUSICDIR:tl}.tar.xz
 
 post-patch:
 	@${MV} ${WRKSRC}/pysol.py ${WRKSRC}/pysolfc
@@ -83,16 +65,21 @@ post-patch:
 		${XARGS} ${RM} -r
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
-post-patch-NLS-off:
-	@${REINPLACE_CMD} -e "s|for l in ('ru', 'ru_RU')|for l in ()|" \
-		${WRKSRC}/setup.py
+post-patch-NLS-on:
+	@${REINPLACE_CMD} -e 's|^#%%NLS%%||' ${WRKSRC}/setup.py
 
 post-install:
-	${RLN} ${STAGEDIR}${PREFIX}/share/icons/pysol01.png \
+	${RLN} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/pysol.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 	(cd ${WRKDIR}/${CARDSETDIR} && \
 		${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
 	(cd ${WRKDIR}/${CARDSETDIR} && \
+		${FIND} . -type f | ${SED} -e 's|^./|${DATADIR_REL}/|' >> ${TMPPLIST})
+
+post-install-SOUND-on:
+	(cd ${WRKDIR}/${MUSICDIR:tl}/data && \
+		${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
+	(cd ${WRKDIR}/${MUSICDIR:tl}/data && \
 		${FIND} . -type f | ${SED} -e 's|^./|${DATADIR_REL}/|' >> ${TMPPLIST})
 
 .include <bsd.port.mk>
