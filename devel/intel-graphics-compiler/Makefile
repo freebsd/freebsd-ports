@@ -38,11 +38,6 @@ post-patch:
 		-e '/IGC_PYTHON/s/"python"/"${PYTHON_CMD:T}"/' \
 		${WRKSRC}/IGC/CMakeLists.txt \
 		${WRKSRC}/IGC/BiFModule/linux/CMakeLists.txt
-# devel/llvm* have different naming from upstream under PATH
-	@${REINPLACE_CMD} -e '/clang-\$$/s//clang$$/' \
-		-e '/llvm-\$$/s//llvm$$/' \
-		${WRKSRC}/IGC/cmake/igc_find_liblldELF.cmake \
-		${WRKSRC}/IGC/cmake/igc_find_opencl_clang.cmake
 # No need to abort on every benign warning enabled by default
 # Disable debug symbols unless WITH_DEBUG passed via CXXFLAGS
 	@${REINPLACE_CMD} -e 's/"-Werror"//; /-Werror/d' \
