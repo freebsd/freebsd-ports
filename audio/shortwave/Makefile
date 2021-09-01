@@ -1,6 +1,6 @@
 PORTNAME=	shortwave
 DISTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -304,6 +304,11 @@ CARGO_GIT_SUBDIR=	gstreamer:gstreamer-audio:gstreamer-audio \
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
+
+OPTIONS_DEFINE=	PULSEAUDIO
+OPTIONS_DEFAULT=PULSEAUDIO
+
+PULSEAUDIO_USE=	GSTREAMER1=pulse
 
 pre-patch:
 # Chase gtk-rs -> gtk3-rs rename for USES=cargo patching

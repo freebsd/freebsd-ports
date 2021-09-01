@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Known issues:
-- Requires `pkg install gstreamer1-plugins-pulse` + `pulseaudio &` to avoid
-  https://gitlab.gnome.org/World/Shortwave/-/issues/602
-EOM
-}
-]
