@@ -197,7 +197,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs.service
 %%DATADIR%%/%%EMACS_VER%%/etc/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/enriched.txt
-%%DATADIR%%/%%EMACS_VER%%/etc/facemenu-removal.txt
 %%DATADIR%%/%%EMACS_VER%%/etc/forms/README
 %%DATADIR%%/%%EMACS_VER%%/etc/forms/forms-d2.dat
 %%DATADIR%%/%%EMACS_VER%%/etc/forms/forms-d2.el
@@ -2582,8 +2581,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc2047.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc2231.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc2231.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc2368.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc2368.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc6068.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc6068.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc822.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc822.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmail-loaddefs.el
@@ -2997,6 +2996,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/pgg.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rcompile.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rcompile.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rfc2368.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rfc2368.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/s-region.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/s-region.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sb-image.el.gz
