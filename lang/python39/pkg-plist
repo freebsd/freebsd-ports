@@ -2186,8 +2186,8 @@ lib/python%%XYDOT%%/ensurepip/_bundled/__init__.py
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/ensurepip/_bundled/pip-21.1.3-py3-none-any.whl
-lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-56.0.0-py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/pip-21.2.3-py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-57.4.0-py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_uninstall.py
 lib/python%%XYDOT%%/enum.py
 lib/python%%XYDOT%%/filecmp.py
@@ -3496,6 +3496,9 @@ lib/python%%XYDOT%%/test/__pycache__/__init__.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/__main__.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/__main__.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/__main__.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/_typed_dict_helper.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/_typed_dict_helper.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/_typed_dict_helper.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/_test_multiprocessing.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/_test_multiprocessing.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/_test_multiprocessing.cpython-%%XY%%.pyc
@@ -4943,6 +4946,7 @@ lib/python%%XYDOT%%/test/__pycache__/xmltests.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/xmltests.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/xmltests.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/_test_multiprocessing.py
+lib/python%%XYDOT%%/test/_typed_dict_helper.py
 lib/python%%XYDOT%%/test/allsans.pem
 lib/python%%XYDOT%%/test/ann_module.py
 lib/python%%XYDOT%%/test/ann_module2.py
@@ -5405,12 +5409,16 @@ lib/python%%XYDOT%%/test/support/__pycache__/socket_helper.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/support/__pycache__/testresult.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/support/__pycache__/testresult.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/support/__pycache__/testresult.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/support/__pycache__/warnings_helper.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/support/__pycache__/warnings_helper.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/support/__pycache__/warnings_helper.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/support/bytecode_helper.py
 lib/python%%XYDOT%%/test/support/hashlib_helper.py
 lib/python%%XYDOT%%/test/support/logging_helper.py
 lib/python%%XYDOT%%/test/support/script_helper.py
 lib/python%%XYDOT%%/test/support/socket_helper.py
 lib/python%%XYDOT%%/test/support/testresult.py
+lib/python%%XYDOT%%/test/support/warnings_helper.py
 lib/python%%XYDOT%%/test/talos-2019-0758.pem
 lib/python%%XYDOT%%/test/test___all__.py
 lib/python%%XYDOT%%/test/test___future__.py
