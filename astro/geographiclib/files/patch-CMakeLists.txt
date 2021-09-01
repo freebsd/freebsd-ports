@@ -4,7 +4,7 @@
  # directory is present you get this behavior regardless.
  option (CONVERT_WARNINGS_TO_ERRORS "Convert warnings into errors?" OFF)
  
-+# (12) Allow perl usage to be explicitly disabled. It might exist on the
++# (+) Allow perl usage to be explicitly disabled. It might exist on the
 +# system, but the user may not necessarily want it to be used for one reason
 +# or another.
 +option (GEOGRAPHICLIB_NO_PERL "Disable usage of pod2man and pod2html" OFF)

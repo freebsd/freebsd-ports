@@ -1,10 +1,10 @@
 # Created by: Tatsuki Makino <tatsuki_makino@hotmail.com>
 
 PORTNAME=	geographiclib
-DISTVERSION=	1.51
+DISTVERSION=	1.52
 CATEGORIES=	astro
-MASTER_SITES=	SF/geographiclib/distrib\
-		SF/geographiclib/distrib/archive\
+MASTER_SITES=	SF/geographiclib/distrib \
+		SF/geographiclib/distrib/archive \
 		SF/geographiclib:geoids,gravity,magnetic
 DISTNAME=	GeographicLib-${DISTVERSIONFULL}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}	#
@@ -17,16 +17,20 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cmake compiler:c++14-lang localbase python:env
-PORTDOCS=	*
 USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DGEOGRAPHICLIB_DATA:STRING=${DATADIR:Q}\
-		-DGEOGRAPHICLIB_LIB_TYPE:STRING=BOTH\
-		-DINSTALL_PYTHON_DIR:STRING=${PYTHON_SITELIBDIR:Q}\
-		-DINSTALL_DOC_DIR:STRING=${DOCSDIR:Q}
 USE_PYTHON=	optsuffix
+CMAKE_ARGS=	-DGEOGRAPHICLIB_DATA:STRING=${DATADIR:Q} \
+		-DGEOGRAPHICLIB_LIB_TYPE:STRING=BOTH \
+		-DINSTALL_PYTHON_DIR:STRING=${PYTHON_SITELIBDIR:Q} \
+		-DINSTALL_DOC_DIR:STRING=${DOCSDIR:Q}
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS DOXYGEN PERL
 OPTIONS_DEFAULT=	DOXYGEN PERL PREC2
+OPTIONS_GROUP=	DATASETS
+OPTIONS_SINGLE=	PRECISION
+OPTIONS_SINGLE_PRECISION=	PREC1 PREC2 PREC3 PREC4 PREC5
+OPTIONS_SUB=	yes
 DATASETS_DESC=	geoid datasets, gravity models and magnetic field models
 PERL_DESC=	Build documentation with pod2man and pod2html
 PREC1_DESC=	1 = float
@@ -35,32 +39,28 @@ PREC3_DESC=	3 = extended
 PREC4_DESC=	4 = quadruple
 PREC5_DESC=	5 = variable
 PRECISION_DESC=	default "real" precision
-OPTIONS_SINGLE=	PRECISION
-OPTIONS_GROUP=	DATASETS
-OPTIONS_SINGLE_PRECISION=	PREC1 PREC2 PREC3 PREC4 PREC5
-OPTIONS_SUB=	yes
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
+			${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
 DOXYGEN_CMAKE_BOOL=	GEOGRAPHICLIB_DOCUMENTATION
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen\
-			sphinx-build:textproc/py-sphinx
-PERL_CMAKE_BOOL_OFF=	GEOGRAPHICLIB_NO_PERL
-PERL_USE=	PERL5=build
-PERL_USES=	perl5
 PERL_BUILD_DEPENDS=	nroff:textproc/groff
+PERL_USES=	perl5
+PERL_USE=	PERL5=build
+PERL_CMAKE_BOOL_OFF=	GEOGRAPHICLIB_NO_PERL
 PREC1_CMAKE_ON=	-DGEOGRAPHICLIB_PRECISION:STRING=1
 PREC2_CMAKE_ON=	-DGEOGRAPHICLIB_PRECISION:STRING=2
 PREC3_CMAKE_ON=	-DGEOGRAPHICLIB_PRECISION:STRING=3
-PREC4_CMAKE_ON=	-DGEOGRAPHICLIB_PRECISION:STRING=4
-PREC4_USE=	GCC=yes
 PREC4_BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:devel/boost-libs
 PREC4_RUN_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:devel/boost-libs
-PREC5_CMAKE_ON=	-DGEOGRAPHICLIB_PRECISION:STRING=5
-PREC5_USE=	GCC=yes
+PREC4_USE=	GCC=yes
+PREC4_CMAKE_ON=	-DGEOGRAPHICLIB_PRECISION:STRING=4
 PREC5_BROKEN=	error: call of overloaded 'max' is ambiguous\
 		error: '*' was not declared in this scope
 PREC5_BUILD_DEPENDS=	${LOCALBASE}/include/mpreal.h:math/mpfrc++
-PREC5_LIB_DEPENDS=	libgmp.so:math/gmp\
-		libmpfr.so:math/mpfr
+PREC5_LIB_DEPENDS=	libgmp.so:math/gmp \
+			libmpfr.so:math/mpfr
 PREC5_RUN_DEPENDS=	${LOCALBASE}/include/mpreal.h:math/mpfrc++
+PREC5_USE=	GCC=yes
+PREC5_CMAKE_ON=	-DGEOGRAPHICLIB_PRECISION:STRING=5
 
 GEOID_NAMES=		egm84-30 egm84-15 egm96-15 egm96-5\
 			egm2008-5 egm2008-2_5 egm2008-1
@@ -104,9 +104,11 @@ DEF_DATASETS_OPTIONS+=	MAGNETIC_${n:C/[^0-9A-Z_a-z]/_/g:tu}
 . endif
 .endfor
 
+# list of targets that require all distfiles
 .ifmake makesum || makeplist || distclean
 OPTIONS_DEFAULT+=	${ALL_DATASETS_OPTIONS}
-_OPTIONS_OK=	yes	# to prevent recursive execution
+# _OPTIONS_OK=yes to prevent recursive execution
+_OPTIONS_OK=	yes
 .else
 OPTIONS_DEFAULT+=	${DEF_DATASETS_OPTIONS}
 .endif

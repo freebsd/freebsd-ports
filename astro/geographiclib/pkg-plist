@@ -54,14 +54,14 @@ include/GeographicLib/UTMUPS.hpp
 include/GeographicLib/Utility.hpp
 lib/cmake/GeographicLib/geographiclib-config-version.cmake
 lib/cmake/GeographicLib/geographiclib-config.cmake
-lib/cmake/GeographicLib/geographiclib-namespace-targets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/GeographicLib/geographiclib-namespace-targets.cmake
+lib/cmake/GeographicLib/geographiclib-legacy-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/GeographicLib/geographiclib-legacy-targets.cmake
 lib/cmake/GeographicLib/geographiclib-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/GeographicLib/geographiclib-targets.cmake
 lib/libGeographic.a
 lib/libGeographic.so
 lib/libGeographic.so.19
-lib/libGeographic.so.19.1.0
+lib/libGeographic.so.19.2.0
 lib/node_modules/geographiclib/LICENSE.txt
 lib/node_modules/geographiclib/README.md
 lib/node_modules/geographiclib/geographiclib.js
@@ -73,6 +73,7 @@ lib/node_modules/geographiclib/src/GeodesicLine.js
 lib/node_modules/geographiclib/src/Math.js
 lib/node_modules/geographiclib/src/PolygonArea.js
 lib/node_modules/geographiclib/test/geodesictest.js
+lib/node_modules/geographiclib/types/geographiclib.d.ts
 %%PYTHON_SITELIBDIR%%/geographiclib/__init__.py
 %%PYTHON_SITELIBDIR%%/geographiclib/accumulator.py
 %%PYTHON_SITELIBDIR%%/geographiclib/constants.py
