@@ -5,11 +5,14 @@ DISTVERSION=	1.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://he.fi/bchunk/
 
-MAINTAINER=	kai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts .bin/.cue files to .iso/audio
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cpe
+CPE_VENDOR=	bchunk_project
 
 PLIST_FILES=	bin/bchunk man/man1/bchunk.1.gz
 
