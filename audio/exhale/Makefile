@@ -1,8 +1,8 @@
 PORTNAME=	exhale
-DISTVERSION=	1.1.6
+DISTVERSION=	1.1.7
 CATEGORIES=	audio
 
-MAINTAINER=	daniel.engberg.lists@pyret.net
+MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	Open source xHE-AAC (Extended HE-AAC/USAC) encoder
 
 LICENSE=	EXHALE
@@ -14,7 +14,7 @@ USES=		cmake compiler:c++11-lang
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	ecodis
-GL_COMMIT=	b11042a0f080ab5b0baa98644faabafb3d4b0b95
+GL_COMMIT=	acd53a21980828f202792567694b47d4362a910f
 
 USE_LDCONFIG=	yes
 
