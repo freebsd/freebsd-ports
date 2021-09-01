@@ -99,6 +99,9 @@ include/fluent-bit/flb_utf8.h
 include/fluent-bit/flb_utils.h
 include/fluent-bit/flb_version.h
 include/fluent-bit/flb_worker.h
+include/fluent-bit/flb_custom.h
+include/fluent-bit/flb_custom_plugin.h
+include/fluent-bit/flb_net_dns.h
 include/fluent-bit/tls/flb_tls.h
 include/libco.h
 include/monkey/mk_core.h
