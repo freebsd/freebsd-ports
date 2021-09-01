@@ -3,6 +3,11 @@
 # PROVIDE: yarr
 # REQUIRE: NETWORKING
 
+# To set various configuration parameters it's recommended to set yarr_env
+# in rc.conf.
+#
+# yarr_env="YARR_ADDR=... YARR_BASE=..."
+
 . /etc/rc.subr
 
 name="yarr"
