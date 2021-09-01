@@ -1,6 +1,6 @@
 PORTNAME=	softether
-DISTVERSION=	5.02.${SE_BUILD_NUMBER}
-PORTEPOCH=	1
+DISTVERSION=	5.02.5180
+PORTEPOCH=	2
 CATEGORIES=	security net-vpn
 PKGNAMESUFFIX=	5
 DIST_SUBDIR=	${PORTNAME}
@@ -8,9 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 # Some patches are managed in my GitHub fork
 PATCH_SITES=	https://github.com/metalefty/${GH_PROJECT}/commit/
 PATCHFILES=	f4baf91.patch:-p1 5890ce9.patch:-p1 ddaffd5.patch:-p1 \
-		57aa471.patch:-p1 5b91032.patch:-p1 7a208d6.patch:-p1 \
-		89ca29f.patch:-p1 b4817fd.patch:-p1 28c90b1.patch:-p1
-
+		57aa471.patch:-p1
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	SoftEther VPN 5 (Developer Edition)
 
@@ -28,13 +26,11 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	SoftEtherVPN
 GH_PROJECT=	SoftEtherVPN
-GH_TUPLE=	SoftEtherVPN:SoftEtherVPN:5.02.0 \
-		SoftEtherVPN:libhamcore:b7f5d8d:libhamcore/src/libhamcore \
+GH_TUPLE=	SoftEtherVPN:libhamcore:2951ae5:libhamcore/src/libhamcore \
 		BLAKE2:BLAKE2:b52178a:BLAKE2/3rdparty/BLAKE2 \
 		cxong:tinydir:ec6bff2:tinydir/3rdparty/tinydir
 
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
-		-DBUILD_NUMBER=${SE_BUILD_NUMBER} \
 		-DSE_DBDIR="${SE_DBDIR}" \
 		-DSE_LOGDIR="${SE_LOGDIR}" \
 		-DSE_PIDDIR="${SE_PIDDIR}"
@@ -44,10 +40,6 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	DISCLAIMER.md WARNING.TXT
 CONFLICTS_INSTALL=	softether-4.[0-9]* softether-devel-4.[0-9]*
 
-# The build number must be a monotonically increasing value but upstream
-# accidentally reset it to zero. So reset to the correct value.
-# See also: SoftEtherVPN/SoftEtherVPN#1392
-SE_BUILD_NUMBER=	9675
 SE_DBDIR?=	/var/db/${PORTNAME}
 SE_LOGDIR?=	/var/log/${PORTNAME}
 SE_PIDDIR?=	/var/run/${PORTNAME}
