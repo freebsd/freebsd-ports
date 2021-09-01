@@ -3,9 +3,9 @@ using any cubeb backends other than pulse-rust to play media. The loss of
 such change will be that users will not be able to do profiling on threads
 created by libcubeb.
 
---- dom/media/AudioStream.cpp.orig	2021-03-20 22:57:21.194862000 +0100
-+++ dom/media/AudioStream.cpp	2021-03-20 23:00:50.527112000 +0100
-@@ -26,7 +26,6 @@
+--- dom/media/AudioStream.cpp.orig	2021-09-01 15:26:18.998745000 +0200
++++ dom/media/AudioStream.cpp	2021-09-01 15:34:45.227435000 +0200
+@@ -27,7 +27,6 @@
  #endif
  #include "Tracing.h"
  #include "webaudio/blink/DenormalDisabler.h"
@@ -13,29 +13,27 @@ created by libcubeb.
  
  // Use abort() instead of exception in SoundTouch.
  #define ST_NO_EXCEPTION_HANDLING 1
-@@ -139,9 +138,7 @@
+@@ -140,9 +139,7 @@
        mTimeStretcher(nullptr),
        mState(INITIALIZED),
        mDataSource(aSource),
 -      mPrefillQuirk(false),
--      mAudioThreadId(0),
+-      mAudioThreadId(ProfilerThreadId{}),
 -      mSandboxed(CubebUtils::SandboxEnabled()) {}
 +      mPrefillQuirk(false) {}
  
  AudioStream::~AudioStream() {
    LOG("deleted, state %d", mState);
-@@ -565,21 +562,7 @@
+@@ -582,19 +579,7 @@
        aWriter.Available());
  }
  
 -bool AudioStream::CheckThreadIdChanged() {
--#ifdef MOZ_GECKO_PROFILER
--  auto id = profiler_current_thread_id();
+-  ProfilerThreadId id = profiler_current_thread_id();
 -  if (id != mAudioThreadId) {
 -    mAudioThreadId = id;
 -    return true;
 -  }
--#endif
 -  return false;
 -}
 -
@@ -46,7 +44,7 @@ created by libcubeb.
    WebCore::DenormalDisabler disabler;
  
    TRACE_AUDIO_CALLBACK_BUDGET(aFrames, mAudioClock.GetInputRate());
-@@ -635,9 +618,6 @@
+@@ -650,9 +635,6 @@
    mDumpFile.Write(static_cast<const AudioDataValue*>(aBuffer),
                    aFrames * mOutChannels);
  
@@ -56,9 +54,9 @@ created by libcubeb.
    return aFrames - writer.Available();
  }
  
---- dom/media/AudioStream.h.orig	2021-03-20 23:01:10.169773000 +0100
-+++ dom/media/AudioStream.h	2021-03-20 23:01:56.622691000 +0100
-@@ -294,7 +294,6 @@
+--- dom/media/AudioStream.h.orig	2021-09-01 15:26:35.926655000 +0200
++++ dom/media/AudioStream.h	2021-09-01 15:35:53.435096000 +0200
+@@ -297,7 +297,6 @@
  
    template <typename Function, typename... Args>
    int InvokeCubeb(Function aFunction, Args&&... aArgs);
@@ -66,12 +64,12 @@ created by libcubeb.
  
    // The monitor is held to protect all access to member variables.
    Monitor mMonitor;
-@@ -328,9 +327,6 @@
+@@ -331,9 +330,6 @@
    // the default device is used. It is set
    // during the Init() in decoder thread.
    RefPtr<AudioDeviceInfo> mSinkInfo;
--  /* Contains the id of the audio thread, from profiler_get_thread_id. */
--  std::atomic<int> mAudioThreadId;
+-  // Contains the id of the audio thread, from profiler_get_thread_id.
+-  std::atomic<ProfilerThreadId> mAudioThreadId;
 -  const bool mSandboxed = false;
  
    MozPromiseHolder<MediaSink::EndedPromise> mEndedPromise;
