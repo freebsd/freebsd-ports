@@ -1,4 +1,4 @@
-TIMESTAMP = 1623861767
+TIMESTAMP = 1630485511
 SHA256 (rust/crates/adler32-1.2.0.crate) = aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234
 SIZE (rust/crates/adler32-1.2.0.crate) = 6411
 SHA256 (rust/crates/aho-corasick-0.7.15.crate) = 7404febffaa47dac81aa44dba71523c9d069b1bdc50a77db41195149e17f68e5
@@ -201,5 +201,5 @@ SHA256 (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.crate) = ac3b87c63620426dd9
 SIZE (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.crate) = 2918815
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 2947998
-SHA256 (ul-kak-lsp-v10.0.0_GH0.tar.gz) = 6e674c2299a11938474100a15ce2c1052320d32b7b7cd1817fe8428b23bf3a18
-SIZE (ul-kak-lsp-v10.0.0_GH0.tar.gz) = 70483
+SHA256 (ul-kak-lsp-v11.0.0_GH0.tar.gz) = 33dc3b1e8ff6bd1dc45b569045d58f778931443b699fc0d51cfcbf13bae9148f
+SIZE (ul-kak-lsp-v11.0.0_GH0.tar.gz) = 83998
