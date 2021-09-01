@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2021-06-07 02:42:27 UTC
+--- src/CMakeLists.txt.orig	2021-08-19 20:40:39 UTC
 +++ src/CMakeLists.txt
-@@ -469,6 +469,15 @@ See https://github.com/opencv/opencv/issues/19260]])
+@@ -494,6 +494,15 @@ See https://github.com/opencv/opencv/issues/19260]])
  endif()  # ENABLE_OPENCV
  add_feature_info("OpenCV algorithms" ENABLE_OPENCV "Use OpenCV algorithms")
  
