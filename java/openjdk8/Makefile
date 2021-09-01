@@ -1,5 +1,6 @@
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER}.${BSD_JDK_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/jkim:jtreg
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
@@ -191,7 +192,7 @@ CONFIGURE_ARGS+=	--disable-jfr
 MAKE_ENV+=	LFLAGS="-Wl,-z,notext"
 .endif
 
-.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH:Mpowerpc64*}
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH:Mpowerpc64*}
 JDK_BUILD_JVM=	server
 .else
 JDK_BUILD_JVM=	zero
