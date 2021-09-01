@@ -1501,7 +1501,6 @@
     SUBDIR += mage
     SUBDIR += magit
     SUBDIR += magit-devel
-    SUBDIR += magit-popup
     SUBDIR += make++
     SUBDIR += makedepend
     SUBDIR += marisa-trie
