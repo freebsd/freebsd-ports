@@ -15,15 +15,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}texttable>0:textproc/py-texttable@${PY_FLAVOR}
 
 USES=		python:3.6+
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsdci
-GH_PROJECT=	ioc
+USE_RC_SUBR=	ioc
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-
-USE_RC_SUBR=	ioc
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#LIB_DIR =.*#LIB_DIR = \"${PREFIX}/lib/ioc\"#" ${WRKSRC}/bin/ioc

@@ -13,7 +13,6 @@ LICENSE=	MIT
 
 USES=		python:3.6+ shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	pydicom
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

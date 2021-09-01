@@ -12,9 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	bash:shells/bash
 
 USES=		gmake go:modules
-
 USE_GITHUB=	yes
-GH_ACCOUNT=	direnv
 GH_SUBDIR=	src/github.com/direnv/direnv
 MAKE_ENV=	GOPATH=${WRKSRC}
 MAKEFILE=	GNUmakefile

@@ -14,7 +14,6 @@ USE_RC_SUBR=	mackerel_agent
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	mackerelio
-GH_PROJECT=	mackerel-agent
 GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		Djarvur:go-err113:aea10b59be24:djarvur_go_err113/vendor/github.com/Djarvur/go-err113 \

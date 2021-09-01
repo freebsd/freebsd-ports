@@ -11,12 +11,10 @@ COMMENT=	Submission utility for transparency logs
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	go
-
+USES=		go
 USE_GITHUB=	yes
-GH_ACCOUNT= grahamedgecombe
-GH_PROJECT= ct-submit
-GH_TAGNAME= 7bb2541
+GH_ACCOUNT=	grahamedgecombe
+GH_TAGNAME=	7bb2541
 
 PLIST_FILES=	bin/ct-submit
 

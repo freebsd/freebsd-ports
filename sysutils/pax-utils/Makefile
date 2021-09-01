@@ -15,9 +15,7 @@ BUILD_DEPENDS=	xmlto:textproc/xmlto
 
 USES=		gmake tar:xz
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	gentoo
-GH_PROJECT=	pax-utils
 
 PLIST_FILES=	bin/dumpelf \
 		bin/pspax \

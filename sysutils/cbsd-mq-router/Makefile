@@ -10,10 +10,8 @@ LICENSE=	BSD2CLAUSE
 RUN_DEPENDS=	beanstalkd:net/beanstalkd
 
 USES=		go
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	cbsd
-GH_PROJECT=	cbsd-mq-router
 USE_RC_SUBR=	cbsd-mq-router
 
 PLIST_FILES=	bin/cbsd-mq-router "@sample etc/cbsd-mq-router.json.sample"

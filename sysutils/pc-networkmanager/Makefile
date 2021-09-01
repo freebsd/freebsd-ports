@@ -27,7 +27,6 @@ QMAKE_ARGS=	CONFIG+="configure"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
-GH_PROJECT=	pc-networkmanager
 GH_TAGNAME=	ae50abf3ba522a7685f275157455f6d424453bb2
 
 .include <bsd.port.mk>

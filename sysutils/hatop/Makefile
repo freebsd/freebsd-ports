@@ -15,7 +15,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/haproxy:net/haproxy
 USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jhunt
-GH_PROJECT=	hatop
 
 SHEBANG_FILES=	bin/hatop
 NO_ARCH=	yes

@@ -16,7 +16,6 @@ USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	miracle2k
-GH_PROJECT=	tarsnapper
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \

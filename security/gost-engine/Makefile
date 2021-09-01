@@ -15,16 +15,14 @@ BROKEN_SSL_REASON_libressl=	needs features only available in OpenSSL 1.1.1+
 BROKEN_SSL_REASON_libressl-devel=needs features only available in OpenSSL 1.1.1+
 
 USES=		cmake ssl
+USE_GITHUB=	yes
+GH_PROJECT=	engine
+GH_TAGNAME=	7ed64cd
 
 ENGINESDIR?=	${PREFIX}/lib/engines-1.1
 
 CMAKE_ARGS+=	-DOPENSSL_ROOT_DIR=${OPENSSLBASE} \
 		-DOPENSSL_ENGINES_DIR=${ENGINESDIR}
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	gost-engine
-GH_PROJECT=	engine
-GH_TAGNAME=	7ed64cd
 
 SUB_FILES=	pkg-message
 

@@ -13,7 +13,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/gmond:sysutils/ganglia-monitor-core
 
 USES=		php:web
 USE_GITHUB=	yes
-GH_ACCOUNT=	ganglia
 GH_PROJECT=	ganglia-web
 USE_PHP=	filter gd session xml
 

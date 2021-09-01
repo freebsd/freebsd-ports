@@ -12,7 +12,6 @@ RUN_DEPENDS=	bash:shells/bash gawk:lang/gawk git:devel/git gpg2:security/gnupg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sobolevn
-GH_PROJECT=	git-secret
 GH_TAGNAME=	94d5ae4
 
 NO_ARCH=	yes

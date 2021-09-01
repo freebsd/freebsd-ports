@@ -8,10 +8,8 @@ COMMENT=	Android Boot image extraction tool
 LICENSE=	GPLv2
 
 USES=		gmake
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	csimmonds
-GH_PROJECT=	boot-extract
 GH_TAGNAME=	486995f
 
 PLIST_FILES=	bin/boot-extract

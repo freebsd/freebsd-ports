@@ -10,7 +10,6 @@ COMMENT=	Graphically display output of du
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vlasovskikh
-GH_PROJECT=	xdu
 
 USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt

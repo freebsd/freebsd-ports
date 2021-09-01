@@ -8,10 +8,8 @@ COMMENT=	Self Encrypting Drive utility
 LICENSE=	GPLv3+
 
 USES=		gmake pkgconfig
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	kendmerry
-GH_PROJECT=	sedutil
 GH_TAGNAME=	3122ba0
 
 BUILD_WRKSRC=	${WRKSRC}/freebsd/CLI

@@ -9,11 +9,8 @@ COMMENT=	Generate documentation from Terraform modules
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	go:modules
-
+USES=		go:modules
 USE_GITHUB=	yes
-GH_ACCOUNT=	terraform-docs
-
 GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		agext:levenshtein:v1.2.2:agext_levenshtein/vendor/github.com/agext/levenshtein \

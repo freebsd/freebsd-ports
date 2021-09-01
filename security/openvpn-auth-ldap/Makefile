@@ -21,17 +21,14 @@ BUILD_DEPENDS=	re2c:devel/re2c \
 # appears to document issues on some systems when --with-openssl
 # is missing.
 USES=		autoreconf objc ssl tar:xz
-
+USE_GITHUB=	yes
+GH_ACCOUNT=	threerings
 GNU_CONFIGURE=	yes
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE} \
 			--with-openvpn=${LOCALBASE}/include \
 			--with-objc-runtime=GNU \
 			--with-openssl=${OPENSSLBASE}
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	threerings
-GH_PROJECT=	openvpn-auth-ldap
 
 PORTDOCS=	README
 PORTEXAMPLES=	auth-ldap.conf

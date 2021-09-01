@@ -13,7 +13,6 @@ BUILD_DEPENDS=		bash:shells/bash
 
 USES=			go
 USE_GITHUB=		yes
-GH_PROJECT=		sensu-go
 GH_ACCOUNT=		sensu
 
 GO_PKGNAME=		github.com/${GH_ACCOUNT}/${GH_PROJECT}

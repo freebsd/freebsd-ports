@@ -24,7 +24,6 @@ TESTS_DESC=	Install the ZFS Test Suite
 OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	openzfs
 GH_PROJECT=	zfs
 GH_TAGNAME=	7eebcd2be
 
