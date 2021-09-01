@@ -9,10 +9,10 @@ USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons emoticons globalaccel guiaddons \
 		hotkeys i18n iconthemes init itemmodels itemviews jobwidgets \
-		kio notifications parts service solid sonnet \
-		textwidgets unitconversion widgetsaddons windowsystem xmlgui \
+		kio notifications parts service solid sonnet textwidgets \
+		unitconversion widgetsaddons windowsystem xmlgui \
 		doctools_build ecm_build
-USE_QT=		concurrent core dbus gui network printsupport widgets xml\
+USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>

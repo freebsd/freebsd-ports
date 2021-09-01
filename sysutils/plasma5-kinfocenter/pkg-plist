@@ -923,7 +923,14 @@ share/locale/uz@cyrillic/LC_MESSAGES/kcmsamba.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kcmusb.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kcmview1394.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kinfocenter.mo
+share/locale/vi/LC_MESSAGES/kcm-about-distro.mo
+share/locale/vi/LC_MESSAGES/kcm_energyinfo.mo
+share/locale/vi/LC_MESSAGES/kcm_memory.mo
+share/locale/vi/LC_MESSAGES/kcm_nic.mo
+share/locale/vi/LC_MESSAGES/kcm_pci.mo
+share/locale/vi/LC_MESSAGES/kcmdevinfo.mo
 share/locale/vi/LC_MESSAGES/kcminfo.mo
+share/locale/vi/LC_MESSAGES/kcmopengl.mo
 share/locale/vi/LC_MESSAGES/kcmsamba.mo
 share/locale/vi/LC_MESSAGES/kcmusb.mo
 share/locale/vi/LC_MESSAGES/kcmview1394.mo

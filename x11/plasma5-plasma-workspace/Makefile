@@ -1,6 +1,5 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -25,27 +24,26 @@ RUN_DEPENDS=	ck-launch-session:sysutils/consolekit2\
 		${LOCALBASE}/bin/genv:sysutils/coreutils
 
 
-USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext kde:5 pkgconfig \
-		qt:5 tar:xz xorg
-USE_KDE=	activities activities-stats activitymanagerd attica archive auth baloo bookmarks \
-		codecs completion config configwidgets coreaddons crash \
-		dbusaddons emoticons filemetadata globalaccel \
+USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext kde:5 \
+		pkgconfig qt:5 tar:xz xorg
+USE_KDE=	activities activities-stats activitymanagerd archive attica \
+		auth baloo bookmarks codecs completion config configwidgets \
+		coreaddons crash dbusaddons emoticons filemetadata globalaccel \
 		guiaddons holidays i18n iconthemes idletime init itemmodels \
-		itemviews jobwidgets js jsembed kcmutils kdeclarative \
-		kdesu kdewebkit kio kscreenlocker \
-		notifications package pty kwin libkscreen libksysguard \
-		newstuff notifyconfig parts people plasma-framework \
-		plasma-integration prison runner service solid sonnet \
-		texteditor textwidgets unitconversion wallet wayland \
-		widgetsaddons windowsystem xmlgui xmlrpcclient \
+		itemviews jobwidgets js jsembed kcmutils kdeclarative kdesu \
+		kdewebkit kio kscreenlocker kwin libkscreen libksysguard \
+		newstuff notifications notifyconfig package parts people \
+		plasma-framework plasma-integration prison pty runner service \
+		solid sonnet texteditor textwidgets unitconversion wallet \
+		wayland widgetsaddons windowsystem xmlgui xmlrpcclient \
 		doctools_build ecm_build \
-		breeze_run breeze-icons_run kquickcharts_run oxygen-icons5_run \
-		kded_run milou_run
-USE_QT=		concurrent core declarative dbus graphicaleffects gui network phonon4 \
-		printsupport qdbus quickcontrols_run script svg sql \
-		wayland webkit widgets x11extras xml \
+		breeze-icons_run breeze_run kded_run kquickcharts_run \
+		milou_run oxygen-icons5_run
+USE_QT=		concurrent core dbus declarative graphicaleffects gui network \
+		phonon4 printsupport qdbus script sql svg wayland webkit \
+		widgets x11extras xml \
 		buildtools_build qmake_build testlib_build \
-		paths_run
+		paths_run quickcontrols_run
 USE_XORG=	ice sm x11 xau xcb xcomposite xcursor xext xfixes xft xkbfile xrender xtst
 
 CMAKE_OFF=	BUILD_TESTING

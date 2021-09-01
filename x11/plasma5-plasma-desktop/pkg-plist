@@ -3561,11 +3561,6 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
-share/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_rename_timezonedisplay_key.js
-share/plasma/shells/org.kde.plasma.desktop/contents/updates/klipper_clear_config.js
-share/qlogging-categories5/kcm_kded.categories
-share/qlogging-categories5/kcm_keyboard.categories
-share/qlogging-categories5/kcm_mouse.categories
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.kimpanel.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.minimizeall.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
@@ -3581,6 +3576,11 @@ share/locale/zh_TW/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/zh_TW/LC_MESSAGES/plasmaactivitymanager.mo
+share/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_rename_timezonedisplay_key.js
+share/plasma/shells/org.kde.plasma.desktop/contents/updates/klipper_clear_config.js
+share/qlogging-categories5/kcm_kded.categories
+share/qlogging-categories5/kcm_keyboard.categories
+share/qlogging-categories5/kcm_mouse.categories
 share/metainfo/org.kde.desktopcontainment.appdata.xml
 share/metainfo/org.kde.desktoptoolbox.appdata.xml
 share/metainfo/org.kde.paneltoolbox.appdata.xml

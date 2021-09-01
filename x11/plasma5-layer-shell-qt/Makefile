@@ -8,8 +8,8 @@ COMMENT=	Qt component to make use of the Wayland wl-layer-shell protoco
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake compiler:c++11-lang cpe gettext kde:5 qt:5 \
-		pkgconfig tar:xz
+USES=		cmake compiler:c++11-lang cpe gettext kde:5 pkgconfig qt:5 \
+		tar:xz
 USE_KDE=	ecm
 USE_QT=		core wayland \
 		buildtools_build qmake_build

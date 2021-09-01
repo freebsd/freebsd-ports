@@ -24,11 +24,12 @@ RUN_DEPENDS=	smartmontools>0:sysutils/smartmontools
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
 
-USE_KDE=	activities config configwidgets coreaddons ecm ksysguard \
-		plasma-framework codecs service kio windowsystem auth i18n \
-		kdeclarative solid notifications dbusaddons widgetsaddons
-USE_QT=		core dbus buildtools_build qmake_build quickcontrols network \
-		gui xml concurrent declarative widgets
+USE_KDE=	activities auth codecs config configwidgets coreaddons \
+		dbusaddons ecm i18n kdeclarative kio ksysguard notifications \
+		plasma-framework service solid widgetsaddons windowsystem
+USE_QT=		concurrent core dbus declarative gui network quickcontrols \
+		widgets xml \
+		buildtools_build qmake_build
 
 post-patch:
 	${REINPLACE_CMD} "s|LOCALBASE|${LOCALBASE}|" \

@@ -12,9 +12,9 @@ BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		sassc:textproc/sassc
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
-USES=		cmake compiler:c++11-lib gettext gnome \
-		kde:5 pkgconfig qt:5 tar:xz xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk20 gtk30 glib20
+USES=		cmake compiler:c++11-lib gettext gnome kde:5 pkgconfig qt:5 \
+		tar:xz xorg
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 gtk30
 USE_KDE=	archive attica auth codecs completion config configwidgets \
 		coreaddons dbusaddons decoration guiaddons i18n iconthemes \
 		jobwidgets kcmutils kio newstuff service widgetsaddons xmlgui \

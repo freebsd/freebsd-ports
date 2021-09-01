@@ -2538,6 +2538,7 @@ share/locale/hi/LC_MESSAGES/klipper.mo
 share/locale/hi/LC_MESSAGES/krdb.mo
 share/locale/hi/LC_MESSAGES/krunner.mo
 share/locale/hi/LC_MESSAGES/ksmserver.mo
+share/locale/hi/LC_MESSAGES/libkicker.mo
 share/locale/hi/LC_MESSAGES/libkworkspace.mo
 share/locale/hi/LC_MESSAGES/libnotificationmanager.mo
 share/locale/hi/LC_MESSAGES/phonon_kde_plugin.mo
@@ -2617,7 +2618,6 @@ share/locale/hr/LC_MESSAGES/freespacenotifier.mo
 share/locale/hr/LC_MESSAGES/kcm5_icons.mo
 share/locale/hr/LC_MESSAGES/kcm_autostart.mo
 share/locale/hr/LC_MESSAGES/kcm_colors.mo
-share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.systemmonitor.mo
 share/locale/hr/LC_MESSAGES/kcm_cursortheme.mo
 share/locale/hr/LC_MESSAGES/kcm_desktoptheme.mo
 share/locale/hr/LC_MESSAGES/kcm_fonts.mo
@@ -2626,6 +2626,7 @@ share/locale/hr/LC_MESSAGES/kcmformats.mo
 share/locale/hr/LC_MESSAGES/kcminit.mo
 share/locale/hr/LC_MESSAGES/kfontinst.mo
 share/locale/hr/LC_MESSAGES/kio5_applications.mo
+share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.systemmonitor.mo
 share/locale/hr/LC_MESSAGES/klipper.mo
 share/locale/hr/LC_MESSAGES/krdb.mo
 share/locale/hr/LC_MESSAGES/ksmserver.mo

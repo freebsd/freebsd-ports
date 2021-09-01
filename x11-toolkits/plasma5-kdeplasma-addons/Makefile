@@ -5,17 +5,18 @@ CATEGORIES=	x11-toolkits kde kde-plasma
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 addons to improve the Plasma experience
 
-USES=		cmake compiler:c++11-lib cpe gettext \
-		kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake compiler:c++11-lib cpe gettext kde:5 pkgconfig qt:5 \
+		tar:xz
 USE_KDE=	activities archive attica auth bookmarks codecs completion \
 		config configwidgets coreaddons crash emoticons guiaddons \
-		holidays i18n iconthemes init itemmodels itemviews jobwidgets kcmutils \
-		kdeclarative kio kross newstuff notifications package parts\
-		plasma-framework plasma-workspace runner service solid \
-		sonnet textwidgets unitconversion widgetsaddons windowsystem xmlgui \
+		holidays i18n iconthemes init itemmodels itemviews jobwidgets \
+		kcmutils kdeclarative kio kross newstuff notifications package \
+		parts plasma-framework plasma-workspace runner service solid \
+		sonnet textwidgets unitconversion widgetsaddons windowsystem \
+		xmlgui \
 		ecm_build
-USE_QT=		concurrent core dbus declarative graphicaleffects gui location network \
-		printsupport script webchannel widgets x11extras xml \
+USE_QT=		concurrent core dbus declarative graphicaleffects gui location \
+		network printsupport script webchannel widgets x11extras xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	PURPOSE QTWEBENGINE
