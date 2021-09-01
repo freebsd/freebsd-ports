@@ -12,7 +12,7 @@ COMMENT=	Non-interactive FTP client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-USES=		autoreconf gettext-tools gmake ssl
+USES=		autoreconf cpe gettext-tools gmake ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cafile=${LOCALBASE}/share/certs/ca-root-nss.crt
