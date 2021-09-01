@@ -10,7 +10,6 @@ MASTER_SITES=	https://www.scintilla.org/:sci \
 DISTFILES=	scintilla${SCI_VER}.tgz:sci \
 		lua-${LUA_VER}.tar.gz:lua \
 		lpeg-${LPEG_VER}.tar.gz:lpeg
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast, minimalist, extensible cross-platform text editor
