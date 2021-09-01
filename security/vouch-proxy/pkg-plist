@@ -11,4 +11,6 @@ bin/vouch-proxy
 %%ETCDIR%%/config.yml_example_nextcloud
 %%ETCDIR%%/config.yml_example_oidc
 %%ETCDIR%%/config.yml_example_scopes_and_claims
+%%ETCDIR%%/config.yml_example_secureauth
 %%ETCDIR%%/config.yml_example_slack
+%%ETCDIR%%/config.yml_example_twitch
