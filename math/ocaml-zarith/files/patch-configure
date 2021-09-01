@@ -1,17 +1,6 @@
---- configure.orig	2013-06-12 07:13:59 UTC
+--- configure.orig	2021-03-03 09:00:00 UTC
 +++ configure
-@@ -127,6 +127,10 @@ searchbin()
- {
-     if test "x$1" = "x"; then return 0; fi
-     echo_n "binary $1: "
-+    if test -x "$1"; then
-+        echo "found"
-+        return 1
-+    fi
-     IFS=':'
-     for i in $PATH
-     do
-@@ -258,7 +262,7 @@ searchbin ocamlfind
+@@ -268,7 +268,7 @@ searchbin ocamlfind
  if test $? -eq 1 -a $ocamlfind != "no"; then 
      instmeth='findlib'
      if test "$installdir" = "auto"
@@ -20,27 +9,12 @@
  else
      searchbin install
      if test $? -eq 1; then instmeth='install'
-@@ -304,6 +308,14 @@ case $host in
-             arch='i686'
-         fi
- 	;;
-+    i386-*freebsd* | i386-*dragonfly*)
-+        ccdef="-DZ_ELF -DZ_DOT_LABEL_PREFIX $ccdef"
-+        arch='i686'
-+        ;;
-+    amd64-*freebsd* | x86_64-*dragonfly*)
-+        ccdef="-DZ_ELF -DZ_DOT_LABEL_PREFIX $ccdef"
-+        arch='x86_64'
-+        ;;
-     i386-*darwin* | x86_64-*darwin*)
-         ccdef="-DZ_UNDERSCORE_PREFIX -DZ_MACOS $ccdef"
-         if test "x$wordsize" = "x64"; then
-@@ -401,7 +413,7 @@ CFLAGS=$ccinc $ccdef $ccopt
- ASFLAGS=$ccdef $asopt
+@@ -365,7 +365,7 @@ OCAMLOPTFLAGS=$mloptflags
+ OCAMLINC=$mlinc
+ CFLAGS=$ccinc $ccdef $ccopt
  LIBS=$cclib
- ARCH=$arch
 -INSTALLDIR=$installdir
 +INSTALLDIR=${DESTDIR}$installdir
- AR=$ar
  INSTALL=install
  OCAMLFIND=ocamlfind
+ INSTMETH=$instmeth

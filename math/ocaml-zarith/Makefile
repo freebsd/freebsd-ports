@@ -1,12 +1,12 @@
 # Created by: John Marino <marino@FreeBSD.org>
 
-PORTNAME=	zarith
-PORTVERSION=	1.4.1
+PORTNAME=	${GH_PROJECT:tl}
+PORTVERSION=	1.12
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	math
-MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/1574/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	OCaml arithmetic library for arbitrary precision integers
 
 LICENSE=	LGPL20
@@ -14,14 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		gmake localbase:ldflags perl5 shebangfix tar:tgz
-USE_PERL5=	build
+USES=		gmake localbase:ldflags tar:tgz
+USE_GITHUB=	yes
+GH_ACCOUNT=	ocaml
+GH_PROJECT=	Zarith
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 OCAMLFIND_LDCONF=	/dev/null
 HAS_CONFIGURE=	yes
 ALL_TARGET=	all
-SHEBANG_FILES=	z_pp.pl
 CONFIGURE_ENV=	DESTDIR=${STAGEDIR}
 
 MAKE_JOBS_UNSAFE=	yes
