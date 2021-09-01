@@ -1,3 +1,98 @@
+  <vuln vid="a7732806-0b2a-11ec-836b-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>93.0.4577.63</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/08/stable-channel-update-for-desktop_31.html">
+	  <p>This release contains 27 security fixes, including:</p>
+	  <ul>
+	    <li>[1233975] High CVE-2021-30606: Use after free in Blink. Reported
+	      by Nan Wang (@eternalsakura13) and koocola (@alo_cook) of 360
+	      Alpha Lab on 2021-07-28</li>
+	    <li>[1235949] High CVE-2021-30607: Use after free in Permissions.
+	      Reported by Weipeng Jiang (@Krace) from Codesafe Team of
+	      Legendsec at Qi'anxin Group on 2021-08-03</li>
+	    <li>[1219870] High CVE-2021-30608: Use after free in Web Share.
+	      Reported by Huyna at Viettel Cyber Security on 2021-06-15</li>
+	    <li>[1239595] High CVE-2021-30609: Use after free in Sign-In.
+	      Reported by raven (@raid_akame) on 2021-08-13</li>
+	    <li>[1200440] High CVE-2021-30610: Use after free in Extensions API.
+	      Reported by Igor Bukanov from Vivaldi on 2021-04-19</li>
+	    <li>[1233942] Medium CVE-2021-30611: Use after free in WebRTC.
+	      Reported by Nan Wang (@eternalsakura13) and koocola (@alo_cook) of
+	      360 Alpha Lab on 2021-07-28</li>
+	    <li>[1234284] Medium CVE-2021-30612: Use after free in WebRTC.
+	      Reported by Nan Wang (@eternalsakura13) and koocola (@alo_cook) of
+	      360 Alpha Lab on 2021-07-29</li>
+	    <li>[1209622] Medium CVE-2021-30613: Use after free in Base
+	      internals. Reported by Yangkang (@dnpushme) of 360 ATA on
+	      2021-05-16</li>
+	    <li>[1207315] Medium CVE-2021-30614: Heap buffer overflow in
+	      TabStrip. Reported by Huinian Yang (@vmth6) of Amber Security Lab,
+	      OPPO Mobile Telecommunications Corp. Ltd. on 2021-05-10</li>
+	    <li>[1208614] Medium CVE-2021-30615: Cross-origin data leak in
+	      Navigation. Reported by NDevTK on 2021-05-12</li>
+	    <li>[1231432] Medium CVE-2021-30616: Use after free in Media.
+	      Reported by Anonymous on 2021-07-21</li>
+	    <li>[1226909] Medium CVE-2021-30617: Policy bypass in Blink.
+	      Reported by NDevTK on 2021-07-07</li>
+	    <li>[1232279] Medium CVE-2021-30618: Inappropriate implementation in
+	      DevTools. Reported by @DanAmodio and @mattaustin from Contrast
+	      Security on 2021-07-23</li>
+	    <li>[1235222] Medium CVE-2021-30619: UI Spoofing in Autofill.
+	      Reported by Alesandro Ortiz on 2021-08-02</li>
+	    <li>[1063518] Medium CVE-2021-30620: Insufficient policy enforcement
+	      in Blink. Reported by Jun Kokatsu, Microsoft Browser Vulnerability
+	      Research on 2020-03-20</li>
+	    <li>[1204722] Medium CVE-2021-30621: UI Spoofing in Autofill.
+	      Reported by Abdulrahman Alqabandi, Microsoft Browser Vulnerability
+	      Research on 2021-04-30</li>
+	    <li>[1224419] Medium CVE-2021-30622: Use after free in WebApp
+	      Installs. Reported by Jun Kokatsu, Microsoft Browser Vulnerability
+	      Research on 2021-06-28</li>
+	    <li>[1223667] Low CVE-2021-30623: Use after free in Bookmarks.
+	      Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2021-06-25</li>
+	    <li>[1230513] Low CVE-2021-30624: Use after free in Autofill.
+	      Reported by Wei Yuan of MoyunSec VLab on 2021-07-19</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-30606</cvename>
+      <cvename>CVE-2021-30607</cvename>
+      <cvename>CVE-2021-30608</cvename>
+      <cvename>CVE-2021-30609</cvename>
+      <cvename>CVE-2021-30610</cvename>
+      <cvename>CVE-2021-30611</cvename>
+      <cvename>CVE-2021-30612</cvename>
+      <cvename>CVE-2021-30613</cvename>
+      <cvename>CVE-2021-30614</cvename>
+      <cvename>CVE-2021-30615</cvename>
+      <cvename>CVE-2021-30616</cvename>
+      <cvename>CVE-2021-30617</cvename>
+      <cvename>CVE-2021-30618</cvename>
+      <cvename>CVE-2021-30619</cvename>
+      <cvename>CVE-2021-30620</cvename>
+      <cvename>CVE-2021-30621</cvename>
+      <cvename>CVE-2021-30622</cvename>
+      <cvename>CVE-2021-30623</cvename>
+      <cvename>CVE-2021-30624</cvename>
+      <url>https://chromereleases.googleblog.com/2021/08/stable-channel-update-for-desktop_31.html</url>
+    </references>
+    <dates>
+      <discovery>2021-08-31</discovery>
+      <entry>2021-09-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3d915d96-0b1f-11ec-8d9f-080027415d17">
     <topic>cyrus-imapd -- multiple-minute daemon hang via input that is mishandled during hash-table interaction</topic>
     <affects>
@@ -25,7 +120,7 @@
 	<blockquote cite="https://www.cyrusimap.org/imap/download/release-notes/3.4/x/3.4.2.html">
 	  <p>Fixed CVE-2021-33582: Certain user inputs are used as hash table keys during processing. A poorly chosen string hashing algorithm meant that the user could control which bucket their data was stored in, allowing a malicious user to direct many inputs to a single bucket. Each subsequent insertion to the same bucket requires a strcmp of every other entry in it. At tens of thousands of entries, each new insertion could keep the CPU busy in a strcmp loop for minutes.
 The string hashing algorithm has been replaced with a better one, and now also uses a random seed per hash table, so malicious inputs cannot be precomputed.</p>
-	</blockquote>
+        </blockquote>
       </body>
     </description>
     <references>
