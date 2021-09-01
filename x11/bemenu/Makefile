@@ -1,5 +1,5 @@
 PORTNAME=	bemenu
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.3
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://github.com/Cloudef/bemenu/releases/download/${DISTVERSION}/
 
