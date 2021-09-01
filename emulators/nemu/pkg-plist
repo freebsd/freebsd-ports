@@ -1,5 +1,6 @@
 bin/nemu
 bin/ntty
+man/man1/nemu.1.gz
 share/bash-completion/completions/nemu
 share/locale/ru/LC_MESSAGES/nemu.mo
 %%DATADIR%%/scripts/42-net-macvtap-perm.rules
