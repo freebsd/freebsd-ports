@@ -1,4 +1,5 @@
 - patch from the upstream allowing to link to libnauty.so: https://github.com/polymake/polymake/issues/10#issuecomment-906184045
+- updated to fix a testsuite regression: https://forum.polymake.org/viewtopic.php?f=10&p=3838#p3838
 
 commit 3d5f15812247c37e1821d30a24e69acc308bc54b
 Author: Benjamin Lorenz <lorenz@math.tu-berlin.de>
@@ -11,9 +12,7 @@ Date:   Tue Aug 24 21:20:40 2021 +0200
     without any options this will try to run a test-program and fall back
     to the bundled nauty if that fails.
 
-diff --git bundled/nauty/apps/graph/src/GraphIso.cc bundled/nauty/apps/graph/src/GraphIso.cc
-index 26779977ff..26a0b689bf 100644
---- bundled/nauty/apps/graph/src/GraphIso.cc
+--- bundled/nauty/apps/graph/src/GraphIso.cc.orig	2021-05-18 08:50:05 UTC
 +++ bundled/nauty/apps/graph/src/GraphIso.cc
 @@ -29,8 +29,8 @@
  #define set nauty_set
@@ -26,9 +25,7 @@ index 26779977ff..26a0b689bf 100644
  #include <memory>
  
  namespace {
-diff --git bundled/nauty/apps/graph/src/build_flags.pl bundled/nauty/apps/graph/src/build_flags.pl
-index 1b6fac03e2..9efd0a0cd0 100644
---- bundled/nauty/apps/graph/src/build_flags.pl
+--- bundled/nauty/apps/graph/src/build_flags.pl.orig	2021-05-18 08:50:05 UTC
 +++ bundled/nauty/apps/graph/src/build_flags.pl
 @@ -1,6 +1,6 @@
  # input for generate_ninja_targets.pl
@@ -38,7 +35,7 @@ index 1b6fac03e2..9efd0a0cd0 100644
  my $nauty_src = $foreign_src ? '${bundled.nauty.NautySrc}' : '${root}/bundled/nauty/external/nauty';
  my $generated_dir = '${buildroot}/staticlib/nauty';
  my @generated_headers = qw( nauty.h naututil.h gtools.h );
-@@ -9,17 +9,21 @@ my @generated_out = map { "$generated_dir/$_" } @generated_headers;
+@@ -9,17 +9,21 @@ my @generated_out = map { "$generated_dir/$_" } @gener
  my $include_generated = ($foreign_src && grep { -f "$foreign_src/$_" } @generated_headers)
                          ? join(" ", map { "-include $_" } @generated_out)
                          : "-I$generated_dir";
@@ -71,9 +68,7 @@ index 1b6fac03e2..9efd0a0cd0 100644
 +      } )
 +  : ()
  )
-diff --git bundled/nauty/support/configure.pl bundled/nauty/support/configure.pl
-index 73ac8c2b22..e8b9eec126 100644
---- bundled/nauty/support/configure.pl
+--- bundled/nauty/support/configure.pl.orig	2021-05-18 08:50:05 UTC
 +++ bundled/nauty/support/configure.pl
 @@ -14,19 +14,19 @@
  #  GNU General Public License for more details.
@@ -101,7 +96,7 @@ index 73ac8c2b22..e8b9eec126 100644
  }
  
  sub check_nauty {
-@@ -36,17 +36,100 @@ sub check_nauty {
+@@ -36,17 +36,101 @@ sub check_nauty {
  
  sub proceed {
     my ($options)=@_;
@@ -185,7 +180,6 @@ index 73ac8c2b22..e8b9eec126 100644
 +               check_nauty() and !defined($nauty_path) or
 +                  die "Your nauty version $nautyver is too old, at least version $nautymin is required.\n";
 +            } else {
-+               $LIBS = "-lnauty";
 +               undef $NautySrc;
 +            }
 +         }
@@ -204,6 +198,8 @@ index 73ac8c2b22..e8b9eec126 100644
            "with the minimal tarball please specify a nauty source directory\n",
 -          "via --with-nauty-src=PATH.";
 +          "via --with-nauty-src=PATH, or a nauty installation with --with-nauty=PATH.";
++   } elsif (!defined($NautySrc)) {
++      $LIBS = "-lnauty";
     }
  
 -   return $NautySrc ? "$NautySrc" : "bundled";
