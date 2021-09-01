@@ -1,0 +1,36 @@
+https://gitlab.gnome.org/GNOME/libadwaita/-/commit/0509755b80d8
+https://gitlab.gnome.org/World/Rust/libadwaita-rs/-/commit/986f12d5170d
+
+$ RUST_BACKTRACE=1 shortwave
+(de.haeckerfelix.Shortwave:1234): GLib-GObject-WARNING **: specified class size for type 'SwSongRow' is smaller than the parent type's 'AdwActionRow' class size
+(de.haeckerfelix.Shortwave:1234): GLib-GObject-WARNING **: cannot add private field to invalid (non-instantiatable) type '<invalid>'
+thread 'main' panicked at 'assertion failed: type_.is_valid()', src/ui/song_row.rs:49:5
+stack backtrace:
+   0: rust_begin_unwind
+   1: core::panicking::panic_fmt
+   2: core::panicking::panic
+   3: glib::object::Object::new
+   4: shortwave::ui::song_row::SwSongRow::new
+   5: shortwave::ui::song_listbox::SongListBox::add_song
+   6: shortwave::audio::backend::song_backend::SongBackend::add_song
+   7: shortwave::audio::player::Player::process_gst_message
+   8: glib::main_context_channel::dispatch
+   9: g_main_context_dispatch
+  10: g_main_context_iterate
+  11: g_main_context_iteration
+  12: g_application_run
+  13: shortwave::app::SwApplication::run
+  14: shortwave::main
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+--- ../libadwaita-rs-2d09b6b566bc0fa2497612768cf0c41f582acdd7/libadwaita/sys/src/lib.rs.orig	2021-04-20 20:15:58 UTC
++++ ../libadwaita-rs-2d09b6b566bc0fa2497612768cf0c41f582acdd7/libadwaita/sys/src/lib.rs
+@@ -69,7 +69,7 @@ pub type AdwAvatarImageLoadFunc =
+ #[repr(C)]
+ #[derive(Copy, Clone)]
+ pub struct AdwActionRowClass {
+-    pub parent_class: gtk::GtkListBoxRowClass,
++    pub parent_class: AdwPreferencesRowClass,
+     pub activate: Option<unsafe extern "C" fn(*mut AdwActionRow)>,
+     pub padding: [gpointer; 4],
+ }
