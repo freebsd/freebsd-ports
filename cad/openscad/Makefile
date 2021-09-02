@@ -2,14 +2,11 @@
 
 PORTNAME=	openscad
 PORTVERSION=	2021.01.01
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	cad
 
-#PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-#PATCHFILES+=	b6c170cc5dd1.patch:-p1 \
-#		15acf6700674.patch:-p1 \
-#		9c4d5ae7ab05.patch:-p1 \
-#		07a56df933a3.patch:-p1
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	cc49ad8dac24.patch:-p1
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Programmer's solid 3D CAD modeller #'
