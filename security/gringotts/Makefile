@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gettext gnome localbase pkgconfig
+USES=		cpe gettext gnome localbase pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 GNU_CONFIGURE=	yes
 
