@@ -1,3 +1,3 @@
-TIMESTAMP = 1628244224
-SHA256 (KDE/release-service/21.08.0/ktp-text-ui-21.08.0.tar.xz) = e1c4cbded6a460ecba39cd5b54dec4169bab1186a9cef5fedab3969fbf19677f
-SIZE (KDE/release-service/21.08.0/ktp-text-ui-21.08.0.tar.xz) = 474600
+TIMESTAMP = 1630583953
+SHA256 (KDE/release-service/21.08.1/ktp-text-ui-21.08.1.tar.xz) = 58d616b6ca57051f106259abfd1d933d9ba41d6d597679fa28a97c899071d631
+SIZE (KDE/release-service/21.08.1/ktp-text-ui-21.08.1.tar.xz) = 474568

@@ -1,10 +1,6 @@
 PORTNAME=	elisa
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	audio kde kde-applications
-
-PATCH_SITES=	https://invent.kde.org/multimedia/elisa/-/commit/
-PATCHFILES=	618cf9b589ef9dd58e3ec3dd7450a80f10e118f8.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Audio player with QML and KDE Plasma integration

@@ -1,9 +1,3 @@
-TIMESTAMP = 1629538848
-SHA256 (KDE/release-service/21.08.0/konsole-21.08.0.tar.xz) = 5bdd16aadfe3e45a353dfac31c66cc769232f31dea8d4735a6de61f1384abebf
-SIZE (KDE/release-service/21.08.0/konsole-21.08.0.tar.xz) = 1373652
-SHA256 (KDE/release-service/21.08.0/fb7f838fd3138a39aea3bcb2e91f923741587137.diff) = 6e384ba94c1f3a2e7b2678a2c87d8c5c524270717f98df722a45afc60dbab4cd
-SIZE (KDE/release-service/21.08.0/fb7f838fd3138a39aea3bcb2e91f923741587137.diff) = 1463
-SHA256 (KDE/release-service/21.08.0/c78edfbac49852cec40efd5cbe73c341bc06c5ab.diff) = 14e9408e4244f79e6ada9bc2c62cc10c1ede74329b74ea5663cebf34227f1e67
-SIZE (KDE/release-service/21.08.0/c78edfbac49852cec40efd5cbe73c341bc06c5ab.diff) = 2594
-SHA256 (KDE/release-service/21.08.0/f24dd6acc28393ba6f731be1360731c01a9a1ef0.diff) = 9a9d3a64c4fb2fa614d3b701adaf851f65cb41f0adc500b31517223ff04b7804
-SIZE (KDE/release-service/21.08.0/f24dd6acc28393ba6f731be1360731c01a9a1ef0.diff) = 1099
+TIMESTAMP = 1630586266
+SHA256 (KDE/release-service/21.08.1/konsole-21.08.1.tar.xz) = 5b3ac5407f0c975ce00a2543e59c7e5b795c214db2747281af6b2a4e57f6e46c
+SIZE (KDE/release-service/21.08.1/konsole-21.08.1.tar.xz) = 1374720

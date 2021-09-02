@@ -1,5 +1,3 @@
-TIMESTAMP = 1629951678
-SHA256 (KDE/release-service/21.08.0/elisa-21.08.0.tar.xz) = d57b46c0d1518b50f2875c5eca20006389f64e91560146fda7f0a87852e7f493
-SIZE (KDE/release-service/21.08.0/elisa-21.08.0.tar.xz) = 1738180
-SHA256 (KDE/release-service/21.08.0/618cf9b589ef9dd58e3ec3dd7450a80f10e118f8.diff) = cbf8f206f5b827caaaa1c7aadb8160f299763e574972ab205fffe4ceab3723c3
-SIZE (KDE/release-service/21.08.0/618cf9b589ef9dd58e3ec3dd7450a80f10e118f8.diff) = 327
+TIMESTAMP = 1630587653
+SHA256 (KDE/release-service/21.08.1/elisa-21.08.1.tar.xz) = f9f92b3e167bf385a6579875edc3358f4ffb2b072d1ab985afed15dea32a798a
+SIZE (KDE/release-service/21.08.1/elisa-21.08.1.tar.xz) = 1738088

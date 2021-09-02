@@ -1,3 +1,3 @@
-TIMESTAMP = 1628244211
-SHA256 (KDE/release-service/21.08.0/kaccounts-providers-21.08.0.tar.xz) = af86d50851556fb719ad07707ca600a3a247c02034bf04bd285f003f74ddd475
-SIZE (KDE/release-service/21.08.0/kaccounts-providers-21.08.0.tar.xz) = 63496
+TIMESTAMP = 1630583942
+SHA256 (KDE/release-service/21.08.1/kaccounts-providers-21.08.1.tar.xz) = e0365b037483273ccfeef19b4840db2ab9e1d4b9910fc588a3e14ed5913fb3f0
+SIZE (KDE/release-service/21.08.1/kaccounts-providers-21.08.1.tar.xz) = 63456

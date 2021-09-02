@@ -15,6 +15,6 @@ USE_QT=		concurrent core dbus gui network testlib widgets xml \
 USE_LDCONFIG=	yes
 
 # Override shared library version
-KDE_APPLICATIONS_SHLIB_VER=	21.8.0
+KDE_APPLICATIONS_SHLIB_VER=	21.8.1
 
 .include <bsd.port.mk>

@@ -1,3 +1,3 @@
-TIMESTAMP = 1628244181
-SHA256 (KDE/release-service/21.08.0/libkdcraw-21.08.0.tar.xz) = 8c7244e9a0238a11e9ee9c2fc5592ad078325f55cc392bdf8b6c0a1989b8dc9c
-SIZE (KDE/release-service/21.08.0/libkdcraw-21.08.0.tar.xz) = 37212
+TIMESTAMP = 1630583914
+SHA256 (KDE/release-service/21.08.1/libkdcraw-21.08.1.tar.xz) = 95d7c72853e1529391c105b4d2c2ae2dc2a3aeb43f34db6a28a86628e9bb329e
+SIZE (KDE/release-service/21.08.1/libkdcraw-21.08.1.tar.xz) = 37188
