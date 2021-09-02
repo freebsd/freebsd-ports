@@ -62,7 +62,7 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}ofxparse>=0.20:finance/py-ofxparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ebaysdk>=2.1.3:finance/py-ebaysdk@${PY_FLAVOR}
 
-USES=		python:3.5+ pgsql shebangfix
+USES=		cpe python:3.5+ pgsql shebangfix
 USE_PYTHON=	distutils
 USE_OPENLDAP=	yes
 
