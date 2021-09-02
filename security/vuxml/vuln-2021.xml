@@ -112,6 +112,7 @@
 	<name>cyrus-imapd25</name>
 	<name>cyrus-imapd24</name>
 	<name>cyrus-imapd23</name>
+	<range><gt>0</gt></range>
       </package>
     </affects>
     <description>
