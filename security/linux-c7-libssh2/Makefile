@@ -9,7 +9,7 @@ CATEGORIES=	security linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Library implementing the SSH2 protocol (Linux CentOS ${LINUX_DIST_VER})
 
-USES=		linux:c7
+USES=		cpe linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 
