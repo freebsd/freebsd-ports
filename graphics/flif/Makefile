@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE_Apache2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake compiler:c++11-lang gettext-runtime gnome localbase:ldflags pkgconfig sdl shared-mime-info
+USES=		cmake compiler:c++11-lang cpe gettext-runtime gnome localbase:ldflags pkgconfig sdl shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	FLIF-hub
 GH_PROJECT=	FLIF
