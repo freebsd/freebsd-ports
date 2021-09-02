@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	bash:shells/bash \
 		gsed:textproc/gsed
 
-USES=		autoreconf python shebangfix ncurses:port
+USES=		autoreconf cpe python shebangfix ncurses:port
 
 SHEBANG_FILES=	usr/lib/byobu/include/notify_osd \
 		usr/lib/byobu/include/config.py.in \
