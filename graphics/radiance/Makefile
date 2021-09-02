@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		librtmidi.so:audio/rtmidi \
 		libsamplerate.so:audio/libsamplerate
 
-USES=		cmake compiler:c++14-lang gl localbase:ldflags qt:5
+USES=		cmake compiler:c++14-lang cpe gl localbase:ldflags qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	zbanks
 GH_TUPLE=	zbanks:BTrack:1c5b72e:bt/BTrack
