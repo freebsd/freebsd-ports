@@ -11,7 +11,7 @@ COMMENT=	Complete ODBC driver manager (Linux CentOS ${LINUX_DIST_VER})
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 
-USES=		linux:c7
+USES=		cpe linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 
