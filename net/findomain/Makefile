@@ -260,6 +260,8 @@ CARGO_CRATES=	addr2line-0.16.0 \
 CARGO_USE_GITHUB=	yes
 CARGO_GIT_SUBDIR=	dns_resolver:trust-dns-resolver:crates/resolver
 
+WRKSRC=		${WRKDIR}/Findomain-${DISTVERSION}
+
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 _DOCS=		docs/create_telegram_webhook.md README.md
