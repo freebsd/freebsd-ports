@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libnss3.so:security/nss \
 		libunbound.so:dns/unbound
 
-USES=		bison gmake pkgconfig python
+USES=		bison cpe gmake pkgconfig python
 
 CFLAGS+=	-I${WRKSRC}/include/unbound
 
