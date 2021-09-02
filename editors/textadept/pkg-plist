@@ -1,4 +1,5 @@
 bin/textadept
+%%NCURSES%%bin/textadept-curses
 share/applications/textadept-curses.desktop
 share/applications/textadept.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_layouts/default.html
@@ -267,6 +268,7 @@ share/pixmaps/textadept.svg
 %%DATADIR%%/modules/textadept/session.lua
 %%DATADIR%%/modules/textadept/snippets.lua
 %%DATADIR%%/textadept
+%%NCURSES%%%%DATADIR%%/textadept-curses
 %%DATADIR%%/themes/dark.lua
 %%DATADIR%%/themes/light.lua
 %%DATADIR%%/themes/term.lua

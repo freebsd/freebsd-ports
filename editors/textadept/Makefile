@@ -30,29 +30,43 @@ GH_TAGNAME=	scintillua_${SCILUA_VER}:scilua v${LFS_VER}:lfs \
 
 SCI_VER=	446
 SCILUA_VER=	4.4.5-2
+SCINTERM_HASH=	6a77415
 LUA_VER=	5.3.5
 LPEG_VER=	1.0.2
 LFS_VER=	1_8_0
 GTD_HASH=	6458754
+CDK_VER=	5.0-20200923
+TERMKEY_VER=	0.20
 
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
+MAKE_ARGS=	TA_TARGETS="${_TARGETS}"
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=		DOCS NCURSES
 OPTIONS_SINGLE=		UI
 OPTIONS_SINGLE_UI=	GTK2 GTK3
-OPTIONS_DEFAULT=	GTK2
+OPTIONS_DEFAULT=	GTK2 NCURSES
+OPTIONS_SUB=		yes
 
 UI_DESC=	GTK version
 GTK2_USE=	GNOME=gtk20
 GTK3_USE=	GNOME=gtk30
 GTK3_MAKE_ARGS=	GTK3=yes
+_TARGETS=	gtk
 
 # HTML files require patched https://keplerproject.github.io/luadoc/ to
 # build, which is also seemingly deprecated upstream, so just grab them
 # from the textadept package for GNU/Linux.
 DOCS_MASTER_SITES=	https://github.com/orbitalquark/${PORTNAME}/releases/download/${PORTNAME}_${PORTVERSION}/:docs
 DOCS_DISTFILES=		${PORTNAME}_${PORTVERSION}.linux.tgz:docs
+
+NCURSES_MASTER_SITES=	https://invisible-mirror.net/archives/cdk/:cdk \
+			http://www.leonerd.org.uk/code/libtermkey/:tk
+NCURSES_DISTFILES=	cdk-${CDK_VER}.tgz:cdk \
+			libtermkey-${TERMKEY_VER}.tar.gz:tk
+NCURSES_GH_PROJECT=	scinterm:scitrm
+NCURSES_GH_TAGNAME=	${SCINTERM_HASH}:scitrm
+NCURSES_VARS=		_TARGETS+=curses
 
 post-patch:
 	${LN} -s ${WRKDIR}/scintilla ${BUILD_WRKSRC}
@@ -73,6 +87,25 @@ post-patch:
 # Fix build with glib 2.68.3: see https://github.com/orbitalquark/textadept/issues/110
 	${REINPLACE_CMD} -e '/static volatile/s|volatile||g' \
 		${BUILD_WRKSRC}/scintilla/gtk/ScintillaGTKAccessible.cxx
+
+post-patch-NCURSES-on:
+	@${MKDIR} ${BUILD_WRKSRC}/scintilla/curses
+	${LN} -s ${WRKSRC_scitrm}/*.cxx ${WRKSRC_scitrm}/*.h \
+		${BUILD_WRKSRC}/scintilla/curses
+	@${MKDIR} ${BUILD_WRKSRC}/cdk
+	${LN} -s ${WRKDIR}/cdk-${CDK_VER}/include/*.h \
+		${WRKDIR}/cdk-${CDK_VER}/*.c ${BUILD_WRKSRC}/cdk
+.for ext in h c
+	cd ${BUILD_WRKSRC}/cdk && ${SH} \
+		${WRKDIR}/cdk-${CDK_VER}/gen-scale.sh SLIDER Slider \
+		Int int gen-slider.${ext} > slider.${ext}
+.endfor
+	${PATCH} -d ${BUILD_WRKSRC}/cdk -N -p1 < ${BUILD_WRKSRC}/cdk.patch
+	@${MKDIR} ${BUILD_WRKSRC}/termkey
+	${LN} -s ${WRKDIR}/libtermkey-${TERMKEY_VER}/*.[ch] \
+		${BUILD_WRKSRC}/termkey
+	${PATCH} -d ${BUILD_WRKSRC}/termkey -N -p1 < \
+		${BUILD_WRKSRC}/termkey.patch
 
 post-install-DOCS-on:
 	${INSTALL_DATA} \

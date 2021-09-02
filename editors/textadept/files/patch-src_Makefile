@@ -1,7 +1,7 @@
---- src/Makefile.orig	2020-08-01 05:21:40 UTC
+--- src/Makefile.orig	2021-01-29 18:38:35 UTC
 +++ src/Makefile
 @@ -1,10 +1,9 @@
- # Copyright 2007-2020 Mitchell mitchell.att.foicica.com. See LICENSE.
+ # Copyright 2007-2021 Mitchell. See LICENSE.
  
 -CC = gcc
 -CFLAGS = -Os
@@ -15,7 +15,7 @@
  ifeq (win, $(findstring win, $(MAKECMDGOALS)))
    # Cross-compile for Win32.
    CROSS = i686-w64-mingw32-
-@@ -60,20 +59,21 @@ else ifeq (osx, $(findstring osx, $(MAKECMDGOALS)))
+@@ -62,20 +61,21 @@ else ifeq (osx, $(findstring osx, $(MAKECMDGOALS)))
  else
    # Build for Linux/BSD.
    LUA_CFLAGS = -DLUA_USE_LINUX
@@ -43,7 +43,7 @@
    desktop_files := $(wildcard *.desktop)
    ifeq (, $(findstring curses, $(MAKECMDGOALS)))
      plat_flag = -DGTK
-@@ -101,7 +101,7 @@ else
+@@ -103,7 +103,7 @@ else
  endif
  version = $(shell grep -m 1 _RELEASE ../core/init.lua | cut -d ' ' -f4- | \
                    tr ' ' '_' | tr -d "'")
@@ -52,12 +52,25 @@
  
  # Scintilla.
  
-@@ -236,20 +236,21 @@ textadept-curses.exe: $(sci_objs) $(sci_lex_objs) LexL
+@@ -164,7 +164,11 @@ endif
+ 
+ # Build.
+ 
+-all: textadept
++all:
++	for tgt in $(TA_TARGETS) ; do $(MAKE) $$tgt ; \
++	find . -type f -name \*.o -delete ; done
++
++gtk: textadept
+ curses: textadept-curses
+ win32: textadept.exe
+ win32-curses: textadept-curses.exe
+@@ -239,20 +243,21 @@ textadept-curses.exe: $(sci_objs) $(sci_lex_objs) LexL
  
  # Install/uninstall.
  
 -install: $(install_targets) | ../core ../docs ../init.lua ../lexers ../LICENSE \
-+install: $(install_targets) | ../core ../docs ../init.lua ../lexers \
++install: $(wildcard ../textadept*) | ../core ../docs ../init.lua ../lexers \
                                ../modules ../themes
  	install -d $(DESTDIR)$(bin_dir) $(DESTDIR)$(data_dir)
  	install $^ $(DESTDIR)$(data_dir)
