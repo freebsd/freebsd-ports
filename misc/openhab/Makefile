@@ -11,7 +11,7 @@ COMMENT=	Vendor and technology agnostic open source smart-home software
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-USES=		zip
+USES=		cpe zip
 USE_JAVA=	yes
 JAVA_VERSION=	11
 JAVA_RUN=	yes
