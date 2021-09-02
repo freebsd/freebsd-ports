@@ -13,6 +13,8 @@ COMMENT=	Simple and powerful analytics tool that supports multiple data stores
 
 LICENSE=	AGPLv3
 
+USES=		cpe
+
 USE_JAVA=	yes
 JAVA_RUN=	yes
 USE_RC_SUBR=	${PORTNAME}
