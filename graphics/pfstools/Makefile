@@ -19,7 +19,7 @@ CONFLICTS=	pfstmo-1.* pfscalibration-1.*
 CFLAGS+=	-I${LOCALBASE}/include/Imath
 LDFLAGS+=	-lthr
 
-USES=		cmake tar:tgz dos2unix jpeg perl5
+USES=		cmake cpe tar:tgz dos2unix jpeg perl5
 USE_PERL5=	run
 USE_LDCONFIG=	yes
 
