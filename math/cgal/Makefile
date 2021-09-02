@@ -1,8 +1,7 @@
 # Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 
 PORTNAME=	cgal
-PORTVERSION=	5.2.1
-PORTREVISION=	1
+PORTVERSION=	5.3
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${PORTNAME:tu}/${PORTNAME}/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
