@@ -1,13 +1,12 @@
 # Created by: David O'Brien <obrien@cs.ucdavis.edu>
 
 PORTNAME=	vim
-PORTVERSION=	8.2.3273
-PORTREVISION=	1
+PORTVERSION=	8.2.3394
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT?=	Improved version of the vi editor
+COMMENT=	Improved version of the vi editor (${FLAVOR:U} flavor)
 
 LICENSE=	VIM
 LICENSE_NAME=	VIM License
@@ -17,10 +16,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		cpe iconv ncurses pkgconfig shebangfix
 USE_GITHUB=	yes
 
-CONFLICTS_INSTALL?=	vim-console vim-tiny
-
 # Vim will try to link against libcanberra if it's installed
 CONFIGURE_ARGS=	--disable-canberra \
+		--enable-cscope \
 		--enable-gui=${GUI} \
 		--enable-multibyte \
 		--with-tlib=ncursesw
@@ -31,25 +29,92 @@ MAKE_ARGS=	STRIP="${STRIP_CMD}" \
 CPE_VERSION=	${PORTVERSION:R}
 GNU_CONFIGURE=	yes
 PLIST_SUB=	VIM_VER=${VIM_VER}
-PORTDATA?=	${VIM_VER}
+PORTDATA=	${VIM_VER}
 PORTSCOUT=	ignore:1
 SHEBANG_FILES=	runtime/tools/demoserver.py runtime/tools/efm_perl.pl
 VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
 
-# OPTIONS for normal (non-tiny) vim
-# ### Make sure any new options are excluded below in CONSOLE/TINY
-OPTIONS_DEFAULT=	CSCOPE DEFAULT_VIMRC CTAGS_EXUBERANT GTK3 PERL PYTHON RUBY
-OPTIONS_DEFINE=		CSCOPE DEFAULT_VIMRC MAKE_JOBS NLS XTERM_SAVE
-OPTIONS_SINGLE=		CTAGS UI
+# Flavors {{{1
+# FLAVORS are used to build various Vim GUIs. The default flavor (`vim') is
+# console-only.
+FLAVORS=	console athena gtk2 gtk3 motif x11 tiny
+
+# GUI flavors
+.if ${FLAVOR:U} == console
+GUI=		no
+PLIST_SUB+=	GUI="@comment " DESKTOP="@comment "
+CONFLICTS_INSTALL=	vim-athena vim-gtk2 vim-gtk3 vim-motif vim-tiny vim-x11
+
+.elif ${FLAVOR:U} == tiny
+PKGNAMESUFFIX=	-tiny
+GUI=		no
+PLIST=		${.CURDIR}/pkg-plist-tiny
+CONFLICTS_INSTALL=	vim-athena vim-console vim-gtk2 vim-gtk3 vim-motif vim-x11
+
+.elif ${FLAVOR:U} == athena
+PKGNAMESUFFIX=	-athena
+GUI=		athena
+CONFIGURE_ARGS+=--enable-xim --enable-fontset
+PLIST_SUB+=	GUI="" DESKTOP="@comment "
+USES+=		xorg
+USE_XORG+=	ice sm x11 xaw xmu xpm xt
+CONFLICTS_INSTALL=	vim-console vim-gtk2 vim-gtk3 vim-motif vim-tiny vim-x11
+
+.elif ${FLAVOR:U} == gtk2
+PKGNAMESUFFIX=	-gtk2
+GUI=		gtk2
+INSTALLS_ICONS=	yes
+CONFIGURE_ARGS+=--enable-xim --enable-fontset
+PLIST_SUB+=	GUI="" DESKTOP=""
+USES+=		desktop-file-utils gnome xorg
+USE_GNOME=	gdkpixbuf2 gtk20
+USE_XORG=	ice sm x11 xpm xt
+CONFLICTS_INSTALL=	vim-athena vim-console vim-gtk3 vim-motif vim-tiny vim-x11
+
+.elif ${FLAVOR:U} == gtk3
+PKGNAMESUFFIX=	-gtk3
+GUI=		gtk3
+INSTALLS_ICONS=	yes
+CONFIGURE_ARGS+=--enable-xim --enable-fontset
+PLIST_SUB+=	GUI="" DESKTOP=""
+USES+=		desktop-file-utils gnome xorg
+USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_XORG=	ice sm x11 xpm xt
+CONFLICTS_INSTALL=	vim-athena vim-console vim-gtk2 vim-motif vim-tiny vim-x11
+
+.elif ${FLAVOR:U} == motif
+PKGNAMESUFFIX=	-motif
+GUI=		motif
+CONFIGURE_ARGS+=--enable-xim --enable-fontset --with-motif=lib="${MOTIFLIB}"
+CONFIGURE_ENV+=	MOTIFHOME=${LOCALBASE}
+PLIST_SUB+=	GUI="" DESKTOP="@comment "
+USES+=		motif xorg
+USE_XORG=	ice sm x11 xmu xt
+CONFLICTS_INSTALL=	vim-athena vim-console vim-gtk2 vim-gtk3 vim-tiny vim-x11
+
+.elif ${FLAVOR:U} == x11
+PKGNAMESUFFIX=	-x11
+GUI=		no
+CONFIGURE_ARGS+=--enable-xim --enable-fontset --with-x
+PLIST_SUB+=	GUI="@comment " DESKTOP="@comment "
+USES+=		xorg
+USE_XORG=	ice sm x11 xt
+CONFLICTS_INSTALL=	vim-athena vim-console vim-gtk2 vim-gtk3 vim-motif vim-tiny
+.endif
+
+# Options {{{1
+# The bulk of the OPTIONS are for normal (non-tiny) vim
+### Make sure any new options are excluded below in CONSOLE/TINY
+OPTIONS_DEFAULT=	CTAGS_BASE DEFAULT_VIMRC PYTHON
+OPTIONS_DEFINE=		DEFAULT_VIMRC MAKE_JOBS NLS XTERM_SAVE
+OPTIONS_SINGLE=		CTAGS
 OPTIONS_SINGLE_CTAGS=	CTAGS_BASE CTAGS_EXUBERANT CTAGS_UNIVERSAL
-OPTIONS_SINGLE_UI=	ATHENA CONSOLE GTK2 GTK3 MOTIF X11
 OPTIONS_GROUP=		LANGBIND
 OPTIONS_GROUP_LANGBIND=	LUA PERL PYTHON RUBY SCHEME TCL
 OPTIONS_SUB=		yes
 
 # vim-tiny excludes everything except CONSOLE, DEFAULT_VIMRC, MAKE_JOBS
-.if defined(CONSOLE) || defined(TINY)
-OPTIONS_SLAVE=		CONSOLE
+.if ${FLAVOR:U} == tiny
 OPTIONS_EXCLUDE:=	${OPTIONS_DEFINE:NDEFAULT_VIMRC:NMAKE_JOBS} \
 			${OPTIONS_SINGLE_UI:NCONSOLE} \
 			${OPTIONS_GROUP_LANGBIND} \
@@ -64,22 +129,11 @@ CTAGS_BASE_DESC=	Use system ctags
 CTAGS_EXUBERANT_DESC=	Use exctags instead of ctags
 CTAGS_UNIVERSAL_DESC=	Use uctags instead of ctags
 
-UI_DESC=		User interface
-ATHENA_DESC=		Athena GUI toolkit
-CSCOPE_DESC=		cscope support
-CONSOLE_DESC=		Console/terminal mode
-
-LANGBIND_DESC=		Optional language bindings
-SCHEME_DESC=		MzScheme (Racket) bindings
-
 # BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
 OPTIONS_EXCLUDE_powerpc64=	RUBY
 OPTIONS_EXCLUDE_powerpc64le=	RUBY
 
 # GENERAL OPTIONS
-CSCOPE_CONFIGURE_ENABLE=cscope
-CSCOPE_RUN_DEPENDS=	cscope:devel/cscope
-
 CTAGS_EXUBERANT_RUN_DEPENDS=	exctags:devel/ctags
 CTAGS_UNIVERSAL_RUN_DEPENDS=	uctags:devel/universal-ctags
 
@@ -88,40 +142,9 @@ MAKE_JOBS_VARS_OFF=	MAKE_JOBS_UNSAFE=yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
-# UI
-ATHENA_PLIST_SUB=	GUI="" DESKTOP="@comment "
-ATHENA_USES=		xorg
-ATHENA_USE=		XORG=ice,sm,x11,xaw,xmu,xpm,xt
-ATHENA_VARS=		GUI=athena
-
-CONSOLE_CONFIGURE_OFF=	--enable-xim --enable-fontset
-CONSOLE_PLIST_SUB=	GUI="@comment " DESKTOP="@comment "
-CONSOLE_VARS=		GUI=no
-
-GTK2_PLIST_SUB=		GUI="" DESKTOP=""
-GTK2_USE=		GNOME=gdkpixbuf2,gtk20 XORG=ice,sm,x11,xpm,xt
-GTK2_USES=		desktop-file-utils gnome xorg
-GTK2_VARS=		GUI=gtk2 INSTALLS_ICONS=yes
-
-GTK3_PLIST_SUB=		GUI="" DESKTOP=""
-GTK3_USE=		GNOME=cairo,gdkpixbuf2,gtk30 XORG=ice,sm,x11,xpm,xt
-GTK3_USES=		desktop-file-utils gnome xorg
-GTK3_VARS=		GUI=gtk3 INSTALLS_ICONS=yes
-
-MOTIF_CONFIGURE_ENV=	MOTIFHOME=${LOCALBASE}
-MOTIF_CONFIGURE_WITH=	motif-lib="${MOTIFLIB}"
-MOTIF_PLIST_SUB=	GUI="" DESKTOP="@comment "
-MOTIF_USE=		XORG=ice,sm,x11,xmu,xt
-MOTIF_USES=		motif xorg
-MOTIF_VARS=		GUI=motif
-
-X11_CONFIGURE_WITH=	x
-X11_PLIST_SUB=		GUI="@comment " DESKTOP="@comment "
-X11_USE=		XORG=ice,sm,x11,xt
-X11_USES=		xorg
-X11_VARS=		GUI=no
-
 # LANGUAGE BINDINGS
+LANGBIND_DESC=		Optional language bindings
+
 LUA_CONFIGURE_ENABLE=	luainterp
 LUA_CONFIGURE_WITH=	lua-prefix=${LOCALBASE}
 LUA_USES=		lua
@@ -129,12 +152,14 @@ LUA_USES=		lua
 PERL_CONFIGURE_ENABLE=	perlinterp
 PERL_USES=		perl5
 
-PYTHON_USES=		python
+PYTHON_USES=		python:3.6+
 PYTHON_USES_OFF=	python:env
+PYTHON_CONFIGURE_ARGS=	--enable-python3interp --with-python3-command=${PYTHON_CMD}
 
 RUBY_CONFIGURE_ENABLE=	rubyinterp
 RUBY_USE=		RUBY=yes
 
+SCHEME_DESC=		MzScheme (Racket) bindings
 SCHEME_CONFIGURE_ENABLE=mzschemeinterp
 SCHEME_BUILD_DEPENDS=	mzscheme:lang/racket
 SCHEME_RUN_DEPENDS=	${SCHEME_BUILD_DEPENDS}
@@ -143,17 +168,11 @@ TCL_CONFIGURE_ENABLE=	tclinterp
 TCL_CONFIGURE_WITH=	tclsh=tclsh${TCL_VER}
 TCL_USES=		tcl
 
+# Targets {{{1
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MPYTHON}
-.  if !empty(WITH_DEBUG)
+.if ${PORT_OPTIONS:MPYTHON} && !empty(WITH_DEBUG)
 CFLAGS+=		-DPy_DEBUG -DPy_DEBUG_NO_PYMALLOC
-.  endif
-.  if ${PYTHON_MAJOR_VER} == 3
-CONFIGURE_ARGS+=	--enable-python3interp --with-python3-command=${PYTHON_CMD}
-.  else
-CONFIGURE_ARGS+=	--enable-pythoninterp  --with-python-command=${PYTHON_CMD}
-.  endif
 .endif
 
 post-extract:
@@ -173,13 +192,20 @@ post-install-DEFAULT_VIMRC-on:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${FILESDIR}/vimrc ${STAGEDIR}${ETCDIR}/vimrc.sample
 
-.if !defined(TINY)
+.if ${FLAVOR:U} == tiny
+do-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}/${VIM_VER}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/vim ${STAGEDIR}${PREFIX}/bin
+	${TOUCH} ${STAGEDIR}${DATADIR}/${VIM_VER}/defaults.vim
+	${INSTALL_MAN} ${WRKSRC}/runtime/doc/vim.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+
+.else  # flavor != tiny
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/ex
 	${RM} ${STAGEDIR}${PREFIX}/bin/view
-.for F in eview evim gview gvim gvimdiff rgview rgvim rview rvim vimdiff
+.  for F in eview evim gview gvim gvimdiff rgview rgvim rview rvim vimdiff
 	${LN} -sf vim ${STAGEDIR}${PREFIX}/bin/$F
-.endfor
+.  endfor
 
 # OPTIONS
 post-patch-CTAGS_BASE-on:
