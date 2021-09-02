@@ -12,7 +12,7 @@ COMMENT?=	Web-Based Bug And Patch-Set Tracking System For CVS
 
 LICENSE=	GPLv2
 
-USES=		gmake pkgconfig sqlite
+USES=		cpe gmake pkgconfig sqlite
 MAKEFILE=	bsd-gcc.mk
 MAKE_ARGS+=	BCC="${CC} ${CPPFLAGS}" TCC="${CC} ${CPPFLAGS}" \
 		LIBSQLITE="${LDFLAGS}"
