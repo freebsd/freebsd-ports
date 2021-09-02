@@ -1,7 +1,7 @@
 # Created by: John MacFarlane <jgm@berkeley.edu>
 
 PORTNAME=	pandoc
-PORTVERSION=	2.13
+PORTVERSION=	2.14.2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -30,13 +30,13 @@ TRYPANDOC_USE_CABAL=	HUnit-1.6.2.0 auto-update-0.1.6 byteorder-1.0.4 \
 TRYPANDOC_EXECUTABLES=	trypandoc
 
 USE_CABAL=	Diff-0.4.0 \
-		Glob-0.10.1 \
+		Glob-0.10.1_1 \
 		HTTP-4000.3.16 \
 		HsYAML-0.2.1.0_2 \
 		JuicyPixels-3.3.5 \
 		QuickCheck-2.14.2 \
 		SHA-1.6.4.4 \
-		aeson-1.5.6.0_1 \
+		aeson-1.5.6.0_2 \
 		aeson-pretty-0.8.8 \
 		ansi-terminal-0.11 \
 		ansi-wl-pprint-0.6.9_2 \
@@ -53,7 +53,7 @@ USE_CABAL=	Diff-0.4.0 \
 		base16-bytestring-1.0.1.0 \
 		base64-bytestring-1.2.0.1 \
 		basement-0.0.12_1 \
-		bifunctors-5.5.11 \
+		bifunctors-5.5.11_1 \
 		blaze-builder-0.4.2.1 \
 		blaze-html-0.9.1.2_1 \
 		blaze-markup-0.8.2.8 \
@@ -62,13 +62,13 @@ USE_CABAL=	Diff-0.4.0 \
 		call-stack-0.3.0 \
 		case-insensitive-1.2.1.0 \
 		cereal-0.5.8.1 \
-		citeproc-0.3.0.9 \
+		citeproc-0.5 \
 		clock-0.8.2 \
 		colour-2.3.5 \
-		commonmark-0.1.1.4 \
-		commonmark-extensions-0.2.0.4 \
-		commonmark-pandoc-0.2.0.1 \
-		comonad-5.0.8 \
+		commonmark-0.2.1 \
+		commonmark-extensions-0.2.1.2 \
+		commonmark-pandoc-0.2.1.1 \
+		comonad-5.0.8_1 \
 		conduit-1.3.4.1 \
 		conduit-extra-1.3.5 \
 		connection-0.3.1_1 \
@@ -81,14 +81,14 @@ USE_CABAL=	Diff-0.4.0 \
 		data-default-instances-old-locale-0.0.1 \
 		data-fix-0.3.1 \
 		digest-0.0.1.2 \
-		distributive-0.6.2.1 \
+		distributive-0.6.2.1_1 \
 		dlist-1.0 \
 		doclayout-0.3.0.2 \
-		doctemplates-0.9 \
+		doctemplates-0.10 \
 		emojis-0.1 \
-		errors-2.3.0 \
+		errors-2.3.0_1 \
 		file-embed-0.0.14.0 \
-		haddock-library-1.9.0 \
+		haddock-library-1.10.0 \
 		hashable-1.3.1.0 \
 		hourglass-0.2.12 \
 		hsc2hs-0.68.7_1 \
@@ -99,35 +99,35 @@ USE_CABAL=	Diff-0.4.0 \
 		http-client-0.7.8 \
 		http-client-tls-0.3.5.3_1 \
 		http-types-0.12.3 \
-		indexed-traversable-0.1.1 \
+		indexed-traversable-0.1.1_1 \
 		integer-logarithms-1.0.3.1 \
 		iproute-1.7.11 \
 		ipynb-0.1.0.1 \
-		jira-wiki-markup-1.3.4 \
+		jira-wiki-markup-1.4.0 \
 		memory-0.16.0 \
 		mime-types-0.1.0.9 \
-		mono-traversable-1.0.15.1 \
+		mono-traversable-1.0.15.1_1 \
 		network-3.1.2.1_1 \
 		network-uri-2.6.4.1 \
 		old-locale-1.0.0.7_2 \
-		optparse-applicative-0.16.1.0 \
+		optparse-applicative-0.16.1.0_1 \
 		pandoc-types-1.22 \
 		pem-0.2.4 \
 		primitive-0.7.1.0_3 \
-		random-1.2.0_5 \
+		random-1.2.0_6 \
 		resourcet-1.2.4.2 \
 		rfc5051-0.2 \
 		safe-0.3.19 \
 		scientific-0.3.6.2 \
-		skylighting-0.10.5.1 \
-		skylighting-core-0.10.5.1 \
+		skylighting-0.11 \
+		skylighting-core-0.11 \
 		socks-0.6.1 \
 		split-0.2.3.4_1 \
 		splitmix-0.1.0.3 \
 		streaming-commons-0.2.2.1 \
-		strict-0.4.0.1 \
+		strict-0.4.0.1_1 \
 		syb-0.7.2.1 \
-		tagged-0.8.6.1_1 \
+		tagged-0.8.6.1_2 \
 		tagsoup-0.14.8 \
 		tasty-1.4.1 \
 		tasty-golden-2.3.4 \
@@ -135,20 +135,23 @@ USE_CABAL=	Diff-0.4.0 \
 		tasty-lua-0.2.3.2 \
 		tasty-quickcheck-0.10.1.2 \
 		temporary-1.3 \
-		texmath-0.12.2 \
+		texmath-0.12.3.1 \
 		text-conversions-0.3.1 \
 		th-abstraction-0.4.2.0_1 \
 		th-compat-0.1.2 \
-		these-1.1.1.1_1 \
+		th-lift-0.8.2 \
+		th-lift-instances-0.1.18 \
+		these-1.1.1.1_2 \
 		time-compat-1.9.5_1 \
 		tls-1.5.5 \
 		transformers-compat-0.6.6 \
 		typed-process-0.2.6.0 \
 		unbounded-delays-0.1.1.1 \
-		unicode-transforms-0.3.7.1_1 \
+		unicode-collation-0.1.3 \
+		unicode-transforms-0.3.7.1_2 \
 		uniplate-1.6.13_1 \
 		unix-compat-0.5.3 \
-		unliftio-core-0.2.0.1_1 \
+		unliftio-core-0.2.0.1_2 \
 		unordered-containers-0.2.13.0 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.5 \
