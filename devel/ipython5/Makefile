@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplegeneric>0.8:devel/py-simplegeneric@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=4.2:devel/py-traitlets@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		cpe python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 USE_GCC=	yes # To be removed - Needed as a work-around for numpy, see PR ports/188114
 
