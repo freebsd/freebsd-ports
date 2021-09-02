@@ -9,7 +9,7 @@ COMMENT=	Open Knowledgebase of Interatomic Models
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	xxd:editors/vim-console
+BUILD_DEPENDS=	xxd:editors/vim
 LIB_DEPENDS=	libkim-api.so:science/kim-api
 
 USES=		cmake:noninja compiler:c++11-lang fortran tar:txz

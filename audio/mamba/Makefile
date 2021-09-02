@@ -10,7 +10,7 @@ COMMENT=	Virtual MIDI keyboard
 LICENSE=	BSD0CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	xxd:editors/vim-console
+BUILD_DEPENDS=	xxd:editors/vim
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfluidsynth.so:audio/fluidsynth \
 		libjack.so:audio/jack \

@@ -9,7 +9,7 @@ COMMENT=	Framework for reliable, reproducible, portable molecular simulations
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/LICENSE.CDDL
 
-BUILD_DEPENDS=	xxd:editors/vim-console
+BUILD_DEPENDS=	xxd:editors/vim
 
 USES=		cmake:noninja fortran tar:txz
 USE_LDCONFIG=	yes

@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
-		xxd:editors/vim-console
+		xxd:editors/vim
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 
 USES=		compiler:c++11-lang gettext-runtime gmake gnome localbase pkgconfig xorg

@@ -30,7 +30,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64 i386
 IGNORE_DragonFly=	requires linuxulator for Android NDK
 
-BUILD_DEPENDS=	xxd:editors/vim-console \
+BUILD_DEPENDS=	xxd:editors/vim \
 		${BASH_CMD}:shells/${BASH_CMD:T}
 RUN_DEPENDS=	adb:devel/android-tools-adb
 

@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-highline1>=1.6.1:devel/rubygem-highline1 \
 		rubygem-sequel>=3.24.1:devel/rubygem-sequel \
 		rubygem-sqlite3>=1.3.3:databases/rubygem-sqlite3 \
 		rubygem-versionomy>=0.4.4:devel/rubygem-versionomy \
-		vim:editors/vim-console
+		vim:editors/vim
 
 NO_ARCH=	yes
 USE_RUBY=	yes

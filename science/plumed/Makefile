@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 BROKEN_i386=	undefined reference to `__atomic_load'
 
 BUILD_DEPENDS=	bash:shells/bash \
-		xxd:editors/vim-console
+		xxd:editors/vim
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf compiler:c++11-lang gmake pkgconfig shebangfix
