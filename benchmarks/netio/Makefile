@@ -3,22 +3,20 @@
 PORTNAME=	netio
 PORTVERSION=	1.33
 CATEGORIES=	benchmarks net
-MASTER_SITES=	http://www.ars.de/ \
-		LOCAL/arved
 DISTNAME=	netio133
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Network benchmark
 
-USES=		dos2unix gmake zip
+USES=		dos2unix gmake
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	unknown
 LICENSE_TEXT=	Usage permitted for non-commercial purposes only. Sale for profit is not permitted.
 LICENSE_PERMS=	auto-accept
 
-DOS2UNIX_FILES=	Makefile netio.c
-NO_WRKSUBDIR=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	kai-uwe-rommel
 PLIST_FILES=	bin/netio
 CFLAGS+=	-DUNIX -DSOCKLEN_T
 LIBS+=		-pthread
