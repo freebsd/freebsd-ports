@@ -15,10 +15,13 @@ LICENSE=	APACHE20
 
 BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 
-USES=		autoreconf:build gmake ncurses perl5
+USES=		autoreconf:build cpe gmake ncurses perl5
 USE_GITHUB=	yes
 GH_PROJECT=	otp
 USE_PERL5=	build
+
+CPE_VENDOR=	erlang
+CPE_PRODUCT=	erlang/otp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-smp-support
