@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 
 BROKEN_powerpc64=	fails to link: libicuuc.so. undefined reference to __cxa_throw_bad_array_new_length
 
-USES=		compiler:c++11-lang desktop-file-utils gettext gmake \
+USES=		compiler:c++11-lang cpe desktop-file-utils gettext gmake \
 		gnome jpeg libtool localbase pathfix pkgconfig sqlite
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 libxml2 gconf2
