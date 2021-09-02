@@ -33,7 +33,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}treq>0:www/py-treq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}moto>0:devel/py-moto@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		cpe python:3.5+
 USE_RC_SUBR=	buildbot
 USE_PYTHON=	autoplist concurrent distutils
 
