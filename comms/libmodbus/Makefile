@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 BUILD_DEPENDS=	a2x:textproc/asciidoc \
 		xmlto:textproc/xmlto
 
-USES=		gmake libtool pathfix
+USES=		cpe gmake libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
