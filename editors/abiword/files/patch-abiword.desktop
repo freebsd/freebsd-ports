@@ -1,6 +1,6 @@
---- abiword.desktop.orig	2010-04-14 23:50:18.000000000 +0200
-+++ abiword.desktop	2010-05-22 09:08:45.000000000 +0200
-@@ -6,7 +6,7 @@
+--- abiword.desktop.orig	2021-07-03 15:46:07 UTC
++++ abiword.desktop
+@@ -6,7 +6,7 @@ Type=Application
  Categories=Office;WordProcessor;GNOME;GTK;X-Red-Hat-Base;
  StartupNotify=true
  X-Desktop-File-Install-Version=0.9

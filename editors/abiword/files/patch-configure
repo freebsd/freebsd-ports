@@ -1,6 +1,6 @@
---- configure.orig	2019-11-27 02:22:30.000000000 +0100
-+++ configure	2020-12-13 23:23:09.835350000 +0100
-@@ -22697,7 +22697,7 @@
+--- configure.orig	2021-07-03 15:48:11 UTC
++++ configure
+@@ -23069,7 +23069,7 @@ fi
  
  
  
@@ -9,16 +9,7 @@
  wpg_deps="no"
  
  if test "$enable_wpg" != ""; then
-@@ -23424,7 +23424,7 @@
- 	COLLAB_RCFLAGS="$COLLAB_RCFLAGS -DABICOLLAB_HANDLER_SUGAR"
- fi
- if test "$enable_collab_backend_service" = "yes"; then
--	COLLAB_CFLAGS="$COLLAB_CFLAGS -DABICOLLAB_HANDLER_SERVICE -DSOUP24"
-+	COLLAB_CFLAGS="$COLLAB_CFLAGS -DABICOLLAB_HANDLER_SERVICE -DSOUP24 -DASIO_ENABLE_BOOST"
- 	COLLAB_RCFLAGS="$COLLAB_RCFLAGS -DABICOLLAB_HANDLER_SERVICE"
- fi
- if test "$enable_collab_backend_sipsimple" = "yes"; then
-@@ -23448,7 +23448,7 @@
+@@ -23820,7 +23820,7 @@ fi
  test "$enable_collab" = "auto" && PLUGINS="$PLUGINS collab"
  
  COLLAB_CFLAGS="$COLLAB_CFLAGS "'${PLUGIN_CFLAGS}'
@@ -27,7 +18,7 @@
  
  fi # plugin conditional
  
-@@ -25939,8 +25939,8 @@
+@@ -26311,8 +26311,8 @@ fi
  
  
  
@@ -38,7 +29,7 @@
  wordperfect_deps="no"
  
  WORDPERFECT_CFLAGS=
-@@ -25983,7 +25983,7 @@
+@@ -26355,7 +26355,7 @@ if test -n "$PKG_CONFIG" && \
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
  
