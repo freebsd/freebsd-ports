@@ -1,3 +1,39 @@
+  <vuln vid="032643d7-0ba7-11ec-a689-080027e50e6d">
+    <topic>Python -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>python39</name>
+	<range><lt>3.9.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Python reports:</p>
+	<blockquote cite="https://docs.python.org/release/3.9.7/whatsnew/changelog.html">
+	  <p>bpo-42278: Replaced usage of tempfile.mktemp() with TemporaryDirectory to avoid
+	    a potential race condition.</p>
+	  <p>bpo-41180: Add auditing events to the marshal module, and stop raising
+	    code.__init__ events for every unmarshalled code object. Directly instantiated
+	    code objects will continue to raise an event, and audit event handlers should
+	    inspect or collect the raw marshal data. This reduces a significant performance
+	    overhead when loading from .pyc files.</p>
+	  <p>bpo-44394: Update the vendored copy of libexpat to 2.4.1 (from 2.2.8) to get the
+	    fix for the CVE-2013-0340 "Billion Laughs" vulnerability. This copy is most used
+	    on Windows and macOS.</p>
+	  <p>bpo-43124: Made the internal putcmd function in smtplib sanitize input for
+	    presence of \r and \n characters to avoid (unlikely) command injection.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://docs.python.org/release/3.9.7/whatsnew/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2021-08-30</discovery>
+      <entry>2021-09-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a7732806-0b2a-11ec-836b-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
@@ -121,7 +157,7 @@
 	<blockquote cite="https://www.cyrusimap.org/imap/download/release-notes/3.4/x/3.4.2.html">
 	  <p>Fixed CVE-2021-33582: Certain user inputs are used as hash table keys during processing. A poorly chosen string hashing algorithm meant that the user could control which bucket their data was stored in, allowing a malicious user to direct many inputs to a single bucket. Each subsequent insertion to the same bucket requires a strcmp of every other entry in it. At tens of thousands of entries, each new insertion could keep the CPU busy in a strcmp loop for minutes.
 The string hashing algorithm has been replaced with a better one, and now also uses a random seed per hash table, so malicious inputs cannot be precomputed.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
