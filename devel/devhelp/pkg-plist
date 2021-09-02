@@ -23,8 +23,6 @@ include/devhelp-3/devhelp/dh-sidebar.h
 include/devhelp-3/devhelp/dh-tab-label.h
 include/devhelp-3/devhelp/dh-tab.h
 include/devhelp-3/devhelp/dh-web-view.h
-lib/gedit/plugins/devhelp.plugin
-lib/gedit/plugins/devhelp.py
 lib/girepository-1.0/Devhelp-3.0.typelib
 lib/libdevhelp-3.so
 lib/libdevhelp-3.so.6
@@ -101,6 +99,11 @@ share/help/sv/devhelp/index-file-format.page
 share/help/sv/devhelp/index.page
 share/help/sv/devhelp/installing-api-documentation.page
 share/help/sv/devhelp/search.page
+share/help/tr/devhelp/book-format.page
+share/help/tr/devhelp/index-file-format.page
+share/help/tr/devhelp/index.page
+share/help/tr/devhelp/installing-api-documentation.page
+share/help/tr/devhelp/search.page
 share/help/uk/devhelp/book-format.page
 share/help/uk/devhelp/index-file-format.page
 share/help/uk/devhelp/index.page
