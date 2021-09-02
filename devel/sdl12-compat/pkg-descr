@@ -1,0 +1,6 @@
+This code is a compatibility layer; it provides a binary and source
+compatible API for programs written against SDL 1.2, but it uses SDL 2.0
+behind the scenes. If you are writing new code, please target SDL 2.0
+directly and do not use this layer.
+
+WWW: https://github.com/libsdl-org/sdl12-compat

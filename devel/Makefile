@@ -6863,6 +6863,7 @@
     SUBDIR += scons
     SUBDIR += sd-mux-ctrl
     SUBDIR += sdl12
+    SUBDIR += sdl12-compat
     SUBDIR += sdl20
     SUBDIR += sdl2pp
     SUBDIR += sdl_console
