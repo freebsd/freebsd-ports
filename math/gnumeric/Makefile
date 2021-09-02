@@ -1,7 +1,7 @@
 # Created by: Yukihiro Nakai <Nakai@technologist.com>
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.12.48
+PORTVERSION=	1.12.50
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
