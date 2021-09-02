@@ -1,5 +1,5 @@
 PORTNAME=	vkquake
-DISTVERSION=	1.05.2
+DISTVERSION=	1.11.0
 CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
@@ -9,8 +9,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
-LIB_DEPENDS=	libX11-xcb.so:x11/libX11 \
-		libvulkan.so:graphics/vulkan-loader
+LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
 WRKSRC_SUBDIR=	Quake
 
