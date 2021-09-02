@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	git:devel/git
 
 NO_BUILD=	yes
-USES=		php:web
+USES=		cpe php:web
 USE_PHP=	ctype hash json simplexml
 
 PLIST=		${WRKDIR}/plist
