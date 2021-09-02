@@ -1,6 +1,7 @@
 PORTNAME=	mako
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -35,5 +36,11 @@ MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
 
 PIXBUF_USE=		GNOME=gdkpixbuf2
 PIXBUF_MESON_ENABLED=	icons
+
+post-patch:
+# Respect PREFIX for icons
+	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},g' \
+		${WRKSRC}/icon.c \
+		${WRKSRC}/${PORTNAME}.5.scd
 
 .include <bsd.port.mk>
