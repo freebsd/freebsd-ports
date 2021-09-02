@@ -9,7 +9,7 @@ CATEGORIES=	net linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	LDAP libraries (Linux CentOS ${LINUX_DIST_VER})
 
-USES=		linux:c7
+USES=		cpe linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	cyrus-sasl2 nspr nss
 USE_LINUX_RPM=	yes
