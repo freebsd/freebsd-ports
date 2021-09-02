@@ -11,7 +11,7 @@ COMMENT=	Vendor and technology agnostic open source smart-home software
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-USES=		zip
+USES=		cpe zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.8
 JAVA_RUN=	yes
@@ -19,6 +19,8 @@ USE_RC_SUBR=	openhab2
 SUB_FILES=	pkg-message update.freebsd
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes
+
+CPE_PRODUCT=	openhab
 
 USERS=	openhab
 GROUPS=	openhab
