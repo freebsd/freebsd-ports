@@ -43,6 +43,7 @@ man/man1/profanity-blocked.1.gz
 man/man1/profanity-bookmark.1.gz
 man/man1/profanity-caps.1.gz
 man/man1/profanity-carbons.1.gz
+man/man1/profanity-changepassword.1.gz
 man/man1/profanity-charset.1.gz
 man/man1/profanity-clear.1.gz
 man/man1/profanity-close.1.gz
@@ -54,6 +55,7 @@ man/man1/profanity-correct.1.gz
 man/man1/profanity-correction.1.gz
 man/man1/profanity-disco.1.gz
 man/man1/profanity-disconnect.1.gz
+man/man1/profanity-editor.1.gz
 man/man1/profanity-executable.1.gz
 man/man1/profanity-export.1.gz
 man/man1/profanity-flash.1.gz
@@ -72,6 +74,7 @@ man/man1/profanity-lastactivity.1.gz
 man/man1/profanity-log.1.gz
 man/man1/profanity-logging.1.gz
 man/man1/profanity-mainwin.1.gz
+man/man1/profanity-mam.1.gz
 man/man1/profanity-msg.1.gz
 man/man1/profanity-nick.1.gz
 man/man1/profanity-notify.1.gz
@@ -102,6 +105,7 @@ man/man1/profanity-save.1.gz
 man/man1/profanity-script.1.gz
 man/man1/profanity-sendfile.1.gz
 man/man1/profanity-serversoftware.1.gz
+man/man1/profanity-silence.1.gz
 man/man1/profanity-slashguard.1.gz
 man/man1/profanity-software.1.gz
 man/man1/profanity-splash.1.gz
