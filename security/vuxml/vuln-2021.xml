@@ -1,3 +1,42 @@
+  <vuln vid="a67e358c-0bf6-11ec-875e-901b0e9408dc">
+    <topic>py-matrix-synapse -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py36-matrix-synapse</name>
+	<name>py37-matrix-synapse</name>
+	<name>py38-matrix-synapse</name>
+	<name>py39-matrix-synapse</name>
+	<name>py310-matrix-synapse</name>
+	<range><lt>1.41.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matrix developers report:</p>
+	<blockquote cite="https://matrix.org/blog/2021/08/31/synapse-1-41-1-released">
+	  <p>This release patches two moderate severity issues which
+	  could reveal metadata about private rooms:</p>
+	  <ul>
+	    <li>CVE-2021-39164: Enumerating a private room's list of
+	    members and their display names.</li>
+	    <li>CVE-2021-39163: Disclosing a private room's name,
+	    avatar, topic, and number of members.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/258187</freebsdpr>
+      <cvename>CVE-2021-39164</cvename>
+      <cvename>CVE-2021-39163</cvename>
+      <url>https://matrix.org/blog/2021/08/31/synapse-1-41-1-released</url>
+    </references>
+    <dates>
+      <discovery>2021-08-31</discovery>
+      <entry>2021-09-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="032643d7-0ba7-11ec-a689-080027e50e6d">
     <topic>Python -- multiple vulnerabilities</topic>
     <affects>
