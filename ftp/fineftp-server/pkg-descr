@@ -1,0 +1,15 @@
+FineFTP is a minimal FTP server library for Windows and Unix flavors.
+
+You can easily embed this library into your own project in order to create an
+embedded FTP Server.
+
+Features:
+* FTP Passive mode (the only mode you need nowadays)
+* Listing directories
+* Uploading and downloading files
+* Creating and removing files and directories
+* User authentication (and anonymous user without authentication)
+* Individual local home path for each user
+* Access control on a per-user-basis
+
+WWW: https://github.com/continental/fineftp-server
