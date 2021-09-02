@@ -1,3 +1,3 @@
-TIMESTAMP = 1603754234
-SHA256 (gnome/lightsoff-3.38.0.tar.xz) = d0b6ebd7172e5a948e49d6b5813aaa1473fd664f2c39043cb861fab011b7f636
-SIZE (gnome/lightsoff-3.38.0.tar.xz) = 528764
+TIMESTAMP = 1630554401
+SHA256 (gnome/lightsoff-40.0.1.tar.xz) = acd38d4706f11c6cbb18a1afae77637afbf481d02e0eebfe407595f088f1f1ab
+SIZE (gnome/lightsoff-40.0.1.tar.xz) = 562340
