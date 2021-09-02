@@ -24,7 +24,7 @@ WRKSRC_SUBDIR=	mjpg-streamer-experimental
 USE_RC_SUBR=	mjpg_streamer
 SUB_FILES+=	pkg-message
 
-PORTSCOUT=	skip:^1\.0\.0
+PORTSCOUT=	skip:^v1\.0\.0
 
 post-build:
 	cd ${WRKSRC}/plugins/input_testpicture && \
