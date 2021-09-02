@@ -14,6 +14,7 @@ BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 		autoconf>=2.69:devel/autoconf \
 		automake>=1.16.1:devel/automake \
 		a2x:textproc/asciidoc \
+		boost-libs>0:devel/boost-libs \
 		libtool:devel/libtool \
 		${LOCALBASE}/share/xsl/docbook:textproc/docbook-xsl
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
