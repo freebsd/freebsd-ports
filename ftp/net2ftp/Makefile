@@ -13,7 +13,7 @@ COMMENT=	Web-based FTP client written in PHP
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/files_to_upload/LICENSE.txt
 
-USES=		php zip
+USES=		cpe php zip
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	ftp mysqli pcre session zlib
 .endif
