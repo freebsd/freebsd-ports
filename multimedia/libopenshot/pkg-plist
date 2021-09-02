@@ -38,7 +38,7 @@ include/libopenshot/ImageWriter.h
 include/libopenshot/Json.h
 include/libopenshot/KeyFrame.h
 include/libopenshot/MagickUtilities.h
-include/libopenshot/OpenCVUtilities.h
+%%OPENCV%%include/libopenshot/OpenCVUtilities.h
 include/libopenshot/OpenMPUtilities.h
 include/libopenshot/OpenShot.h
 include/libopenshot/OpenShotVersion.h
