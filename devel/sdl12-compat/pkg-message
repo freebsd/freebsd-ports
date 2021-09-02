@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+To enable replace sdl12 dependency e.g.,
+  $ pkg install cage xmoto
+  $ pkg set -n sdl:sdl12-compat
+  $ pkg set -o devel/sdl12:devel/sdl12-compat
+  $ pkg upgrade -f sdl12-compat
+  $ pkg autoremove
+  $ SDL_VIDEODRIVER=wayland XDG_RUNTIME_DIR=/tmp cage -s xmoto
+EOM
+}
+]
