@@ -1,4 +1,4 @@
---- compare/Makefile.orig	2021-06-21 15:02:35 UTC
+--- compare/Makefile.orig	2021-08-19 10:00:38 UTC
 +++ compare/Makefile
 @@ -6,7 +6,7 @@ include		$(SRCROOT)/$(RULESDIR)/rules.top
  ###########################################################################
@@ -8,4 +8,4 @@
 +TARGET=		scompare
  CPPOPTS +=	-DUSE_LARGEFILES
  CPPOPTS +=	-DSCHILY_PRINT
- 
+ CPPOPTS +=	-DUSE_NLS		# Include locale support
