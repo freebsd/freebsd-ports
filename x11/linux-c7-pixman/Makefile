@@ -8,7 +8,7 @@ CATEGORIES=	x11 linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Low-level pixel manipulation library (Linux CentOS ${LINUX_DIST_VER})
 
-USES=		linux:c7
+USES=		cpe linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 
