@@ -16473,3 +16473,5 @@ devel/rubygem-paperclip||2021-08-28|Has expired: Use ActiveStorage or a fork kt-
 textproc/rubygem-rich||2021-08-28|Has expired: Depends on expired devel/rubygem-paperclip
 devel/magit-popup||2021-09-01|Has expired: No consumer in the ports tree any more.
 databases/mongodb49|databases/mongodb50|2021-09-01|Has expired: This was a developer version which became MongoDB 5.0.
+editors/vim-console|editors/vim|2021-09-02|The "vim" package is now console-only
+editors/vim-tiny|editors/vim@tiny|2021-09-02|The vim-tiny package is now a vim flavor
