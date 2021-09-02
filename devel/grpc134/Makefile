@@ -20,7 +20,7 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libprotobuf.so:devel/protobuf \
 		libre2.so:devel/re2
 
-USES=		cmake compiler:c++17-lang localbase:ldflags pkgconfig ssl
+USES=		cmake compiler:c++17-lang cpe localbase:ldflags pkgconfig ssl
 
 USE_GITHUB=	yes
 
