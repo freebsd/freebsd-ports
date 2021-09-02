@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210902:
+  AFFECTS: users of editors/vim
+  AUTHOR: adamw@FreeBSD.org
+
+  The vim ports have been completely reworked to take advantage of flavors.
+
+  The biggest change is that the `vim' package is now console-only. If
+  you want the GTk3 GUI, you'll need to install the `vim-gtk3' package
+  instead. All the GUI toolkits have their own package now: vim-gtk3,
+  vim-gtk2, -athena, -motif, and -x11. The vim-tiny package still exists.
+
+  Also: only python3 bindings are included now. There are very few plugins
+  written in Perl or Ruby, so there really wasn't a need to bundle those
+  languages with Vim. They still exist as OPTIONS, so you can still enable
+  them if you'd like. Also, support for py27 has been dropped.
+
 20210901:
   AFFECTS: users of audio/ampache
   AUTHOR: crees@FreeBSD.org
