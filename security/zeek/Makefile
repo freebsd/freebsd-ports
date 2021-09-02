@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 BROKEN_FreeBSD_11_powerpc64=	Does not build: error: zero-size array 'names'
 BROKEN_FreeBSD_12_powerpc64=	Does not build: error: zero-size array 'names'
 
-USES=		bison cmake compiler:c++11-lang gettext-runtime ninja perl5 \
+USES=		bison cmake compiler:c++11-lang cpe gettext-runtime ninja perl5 \
 		python shebangfix ssl
 USE_LDCONFIG=	yes
 
