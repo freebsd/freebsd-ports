@@ -11,7 +11,7 @@ COMMENT=	Library that implements an embeddable SQL database engine (Linux CentOS
 
 LICENSE=	PD
 
-USES=		linux:c7
+USES=		cpe linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 
