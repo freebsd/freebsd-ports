@@ -38,30 +38,30 @@ VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
 # FLAVORS are used to build various Vim GUIs. The default flavor (`vim') is
 # console-only.
 FLAVORS=	console athena gtk2 gtk3 motif x11 tiny
+# Register conflicts with all other flavors
+CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:S/^/vim-/}
+
+.for f in ${FLAVORS:Nconsole}
+${f}_PKGNAMESUFFIX=	-${f}
+.endfor
 
 # GUI flavors
 .if ${FLAVOR:U} == console
 GUI=		no
 PLIST_SUB+=	GUI="@comment " DESKTOP="@comment "
-CONFLICTS_INSTALL=	vim-athena vim-gtk2 vim-gtk3 vim-motif vim-tiny vim-x11
 
 .elif ${FLAVOR:U} == tiny
-PKGNAMESUFFIX=	-tiny
 GUI=		no
 PLIST=		${.CURDIR}/pkg-plist-tiny
-CONFLICTS_INSTALL=	vim-athena vim-console vim-gtk2 vim-gtk3 vim-motif vim-x11
 
 .elif ${FLAVOR:U} == athena
-PKGNAMESUFFIX=	-athena
 GUI=		athena
 CONFIGURE_ARGS+=--enable-xim --enable-fontset
 PLIST_SUB+=	GUI="" DESKTOP="@comment "
 USES+=		xorg
 USE_XORG+=	ice sm x11 xaw xmu xpm xt
-CONFLICTS_INSTALL=	vim-console vim-gtk2 vim-gtk3 vim-motif vim-tiny vim-x11
 
 .elif ${FLAVOR:U} == gtk2
-PKGNAMESUFFIX=	-gtk2
 GUI=		gtk2
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS+=--enable-xim --enable-fontset
@@ -69,10 +69,8 @@ PLIST_SUB+=	GUI="" DESKTOP=""
 USES+=		desktop-file-utils gnome xorg
 USE_GNOME=	gdkpixbuf2 gtk20
 USE_XORG=	ice sm x11 xpm xt
-CONFLICTS_INSTALL=	vim-athena vim-console vim-gtk3 vim-motif vim-tiny vim-x11
 
 .elif ${FLAVOR:U} == gtk3
-PKGNAMESUFFIX=	-gtk3
 GUI=		gtk3
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS+=--enable-xim --enable-fontset
@@ -80,26 +78,21 @@ PLIST_SUB+=	GUI="" DESKTOP=""
 USES+=		desktop-file-utils gnome xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	ice sm x11 xpm xt
-CONFLICTS_INSTALL=	vim-athena vim-console vim-gtk2 vim-motif vim-tiny vim-x11
 
 .elif ${FLAVOR:U} == motif
-PKGNAMESUFFIX=	-motif
 GUI=		motif
 CONFIGURE_ARGS+=--enable-xim --enable-fontset --with-motif=lib="${MOTIFLIB}"
 CONFIGURE_ENV+=	MOTIFHOME=${LOCALBASE}
 PLIST_SUB+=	GUI="" DESKTOP="@comment "
 USES+=		motif xorg
 USE_XORG=	ice sm x11 xmu xt
-CONFLICTS_INSTALL=	vim-athena vim-console vim-gtk2 vim-gtk3 vim-tiny vim-x11
 
 .elif ${FLAVOR:U} == x11
-PKGNAMESUFFIX=	-x11
 GUI=		no
 CONFIGURE_ARGS+=--enable-xim --enable-fontset --with-x
 PLIST_SUB+=	GUI="@comment " DESKTOP="@comment "
 USES+=		xorg
 USE_XORG=	ice sm x11 xt
-CONFLICTS_INSTALL=	vim-athena vim-console vim-gtk2 vim-gtk3 vim-motif vim-tiny
 .endif
 
 # Options {{{1
