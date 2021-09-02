@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 RUN_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 
-USES=		compiler:c++0x gl gmake pkgconfig sdl
+USES=		compiler:c++0x cpe gl gmake pkgconfig sdl
 GNU_CONFIGURE=	yes
 USE_GL=		glew gl glu
 USE_SDL=	image2 sdl2
