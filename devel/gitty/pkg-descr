@@ -1,0 +1,8 @@
+Gitty is a smart little CLI helper for git projects, that shows you all
+the relevant issues, pull requests and changes at a quick glance. It
+currently only supports the GitHub API.
+
+It requires you to set a GitHub Token as an environment variable called
+either GITHUB_TOKEN or GITTY_TOKEN.
+
+WWW: https://github.com/muesli/gitty
