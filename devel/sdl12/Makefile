@@ -16,8 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	nasm:devel/nasm
 
-CONFLICTS_INSTALL=	sdl12-compat
-
 USES=		gmake iconv libtool localbase:ldflags pathfix pkgconfig
 
 USE_LDCONFIG=	yes
