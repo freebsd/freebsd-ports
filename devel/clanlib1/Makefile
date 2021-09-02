@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg
 
-USES=		alias gl gmake jpeg libtool localbase:ldflags pathfix pkgconfig \
+USES=		alias cpe gl gmake jpeg libtool localbase:ldflags pathfix pkgconfig \
 		sdl tar:tgz xorg
 USE_CXXSTD=	c++98
 USE_XORG=	x11 xi xxf86vm
