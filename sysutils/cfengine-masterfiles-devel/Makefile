@@ -19,6 +19,7 @@ GH_ACCOUNT=	cfengine
 GH_PROJECT=     masterfiles
 GH_TAGNAME=     ${HASH}
 CPE_VENDOR=	gnu
+CPE_PRODUCT=	cfengine
 
 CONFLICTS=	cfengine-masterfiles3[0-9]-* cfengine-masterfiles31[02-9]-* \
 		cfengine-masterfiles-3.*
