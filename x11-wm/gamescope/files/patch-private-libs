@@ -1,0 +1,27 @@
+libliftoff is untagged and has no other consumers. Keep it private to
+gamescope package for now.
+
+--- subprojects/libliftoff/meson.build.orig	2020-05-26 19:30:31 UTC
++++ subprojects/libliftoff/meson.build
+@@ -38,7 +38,7 @@ liftoff_lib = library(
+ 	include_directories: liftoff_inc,
+ 	version: meson.project_version(),
+ 	dependencies: liftoff_deps,
+-	install: true,
++	install: not meson.is_subproject(),
+ )
+ 
+ liftoff = declare_dependency(
+@@ -47,6 +47,7 @@ liftoff = declare_dependency(
+ 	dependencies: liftoff_deps,
+ )
+ 
++if not meson.is_subproject()
+ install_headers('include/libliftoff.h')
+ 
+ pkgconfig = import('pkgconfig')
+@@ -60,3 +61,4 @@ pkgconfig.generate(
+ 
+ subdir('example')
+ subdir('test')
++endif
