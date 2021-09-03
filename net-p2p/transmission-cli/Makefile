@@ -10,6 +10,11 @@ COMMENT=	Meta-port for Transmission BitTorrent client
 
 LICENSE+=	MIT
 
+USES+=		cpe
+
+CPE_VENDOR=	transmissionbt
+CPE_PRODUCT=	transmission
+
 .if ${SLAVEPORT:Ncli}
 LICENSE+=	GPLv2+
 LICENSE_COMB=	multi
@@ -25,7 +30,7 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libutp.so:net/libutp \
 		libminiupnpc.so:net/miniupnpc
 
-USES+=		cmake cpe iconv libtool localbase pkgconfig ssl
+USES+=		cmake iconv libtool localbase pkgconfig ssl
 
 # Workaround: PR 248326
 # https://github.com/transmission/transmission/issues/1359
@@ -34,8 +39,6 @@ CFLAGS+=	-DNDEBUG
 .  if ${SLAVEPORT:Mcli}
 NLS_USES=	gettext-runtime:run
 .  endif
-
-CPE_VENDOR=	transmissionbt
 .endif
 
 USE_GITHUB=	yes
