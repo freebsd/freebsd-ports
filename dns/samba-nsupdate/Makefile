@@ -20,6 +20,7 @@ USES=			autoreconf compiler:c11 cpe libedit libtool pkgconfig ssl tar:xz
 ISCVERSION=		9.16.5
 
 CPE_VENDOR=		isc
+CPE_PRODUCT=		bind
 CPE_VERSION=		${ISCVERSION:C/-.*//}
 .if ${ISCVERSION:M*-*}
 CPE_UPDATE=		${ISCVERSION:C/.*-//:tl}
