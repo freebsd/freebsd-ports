@@ -2,6 +2,7 @@
 
 PORTNAME=	redis
 PORTVERSION=	6.2.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 PKGNAMESUFFIX=	-devel
@@ -62,7 +63,7 @@ USE_GCC=	yes
 CFLAGS+=	-march=i586
 .endif
 
-.if defined(_addflags)
+.if defined(_ADDFLAGS)
 CFLAGS=		-fPIC
 LDFLAGS=	-Wl,-E
 .endif
