@@ -1,5 +1,5 @@
 PORTNAME=	purescript
-PORTVERSION=	0.14.3
+PORTVERSION=	0.14.4
 CATEGORIES=	lang
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,7 +14,7 @@ USE_LOCALE=	en_US.UTF-8
 USE_CABAL=	Glob-0.10.1_1 \
 		SHA-1.6.4.4 \
 		StateVar-1.2.2 \
-		aeson-1.5.6.0_1 \
+		aeson-1.5.6.0_2 \
 		aeson-better-errors-0.9.1.0 \
 		aeson-pretty-0.8.8 \
 		alex-3.2.6 \
@@ -43,7 +43,7 @@ USE_CABAL=	Glob-0.10.1_1 \
 		byteorder-1.0.4 \
 		bytestring-builder-0.10.8.2.0 \
 		case-insensitive-1.2.1.0 \
-		cborg-0.2.5.0 \
+		cborg-0.2.5.0_1 \
 		cheapskate-0.1.1.2_1 \
 		clock-0.8.2 \
 		colour-2.3.6 \
@@ -71,7 +71,7 @@ USE_CABAL=	Glob-0.10.1_1 \
 		fsnotify-0.3.0.1_1 \
 		half-0.3.1 \
 		happy-1.20.0 \
-		hashable-1.3.2.0 \
+		hashable-1.3.2.0_1 \
 		haskeline-0.8.2 \
 		hourglass-0.2.12 \
 		hsc2hs-0.68.7_1 \
@@ -107,7 +107,7 @@ USE_CABAL=	Glob-0.10.1_1 \
 		primitive-0.7.2.0 \
 		protolude-0.3.0 \
 		psqueues-0.2.7.2_1 \
-		purescript-cst-0.3.0.0 \
+		purescript-cst-0.4.0.0 \
 		random-1.2.0_6 \
 		regex-base-0.94.0.1_1 \
 		regex-tdfa-1.3.1.1_1 \
