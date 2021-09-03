@@ -3,4 +3,6 @@ CFENGINE_VERSION?=	318
 
 MASTERDIR=		${.CURDIR}/../cfengine-masterfiles${CFENGINE_VERSION}
 
+CPE_PRODUCT=		cfengine
+
 .include "${MASTERDIR}/Makefile"
