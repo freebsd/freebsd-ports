@@ -1,7 +1,7 @@
 # Created by: Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
 
 PORTNAME=	wordpress
-DISTVERSION=	5.5.5
+DISTVERSION=	5.8
 DISTVERSIONSUFFIX=	-fr_FR
 PORTEPOCH=	1
 CATEGORIES=	french www
