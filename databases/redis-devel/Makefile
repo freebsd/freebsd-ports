@@ -1,8 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	redis
-PORTVERSION=	6.2.5
-PORTREVISION=	1
+PORTVERSION=	7.0.0.20210902
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 PKGNAMESUFFIX=	-devel
@@ -14,6 +13,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES+=		compiler:c11 gmake
+USE_GITHUB=	yes
+GH_TUPLE=	redis:redis:6aa2285
 
 OPTIONS_DEFINE=	JEMALLOC TESTS TLS TRIB
 OPTIONS_RADIO=	EXTLUA
