@@ -27,6 +27,9 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
 
 PROFTPD_VERSION=	1.3.7c
 
+CPE_VENDOR=	proftpd
+CPE_PRODUCT=	proftpd
+
 .if defined(_BUILDING_PROFTPD_MODULE)
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY+=	${DISTNAME}${EXTRACT_SUFX}
@@ -48,11 +51,11 @@ PORTDOCS=	*
 .endif
 
 MAKE_JOBS_UNSAFE=	yes
-USES+=		cpe gmake libtool
+USES+=		gmake libtool
 GNU_CONFIGURE=	yes
 
 .if !defined(_BUILDING_PROFTPD_MODULE)
-USES+=		ssl
+USES+=		cpe ssl
 USE_RC_SUBR=	proftpd
 .endif
 
