@@ -23,6 +23,8 @@ USE_QT=		core dbus declarative gui network qdbus widgets x11extras xml \
 		buildtools_build qmake_build testlib_build
 USE_XORG=	ice sm x11 xcb xcursor xext xi
 
+CPE_VENDOR=	kde
+
 SHEBANG_FILES=	updaters/ksreenlocker_5_3_separate_autologin.pl
 
 .include <bsd.port.mk>
