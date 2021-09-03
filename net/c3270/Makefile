@@ -9,4 +9,6 @@ C3270=	YES
 
 MASTERDIR=	${.CURDIR}/../../x11/x3270
 
+CPE_PRODUCT=	x3270
+
 .include "${MASTERDIR}/Makefile"
