@@ -7,6 +7,7 @@
     SUBDIR += chatterino2
     SUBDIR += climm
     SUBDIR += coccinella
+    SUBDIR += conduit
     SUBDIR += convey
     SUBDIR += coyim
     SUBDIR += cutegram
