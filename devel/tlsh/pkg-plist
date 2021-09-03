@@ -1,0 +1,8 @@
+bin/tlsh
+bin/tlsh_unittest
+include/tlsh/tlsh.h
+include/tlsh/version.h
+lib/libtlsh.a
+lib/libtlsh.so
+lib/libtlsh.so.%%SHLIBVERMAJ%%
+lib/libtlsh.so.%%SHLIBVER%%

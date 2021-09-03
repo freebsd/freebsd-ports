@@ -1,0 +1,8 @@
+TLSH is a fuzzy matching program and library.  Given a file (min 50 bytes),
+TLSH generates a hash value which can be used for similarity comparisons.
+Similar files will have similar hash values which allows for the detection of
+similar objects by comparing their hash values.
+
+This port only includes the core C++ library.
+
+WWW: https://tlsh.org
