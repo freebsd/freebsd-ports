@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cmake:testing compiler:c++14-lang
 USE_GITHUB=	yes
-USE_GCC=	any # clang-11 crashes: https://bugs.llvm.org/show_bug.cgi?id=51468
+USE_GCC=	yes # clang-11 crashes: https://bugs.llvm.org/show_bug.cgi?id=51468
 USE_LDCONFIG=	yes
 
 CMAKE_TESTING_ON=	GISMO_BUILD_UNITTESTS # one test is known to fail: https://github.com/gismo/gismo/issues/466
