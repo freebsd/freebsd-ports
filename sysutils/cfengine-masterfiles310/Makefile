@@ -16,6 +16,7 @@ DEPRECATED=		cfengine310 will retire at FreeBSD 11 EOL
 EXPIRATION_DATE=	2021-09-30
 
 CPE_VENDOR=	gnu
+CPE_PRODUCT=	cfengine
 
 CONFLICTS=	cfengine-masterfiles3[0-9]-* cfengine-masterfiles31[1-9]-*
 .if !defined(MASTERDIR)
