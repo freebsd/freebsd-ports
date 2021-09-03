@@ -17,7 +17,6 @@ include/vips/almostdeprecated.h
 include/vips/arithmetic.h
 include/vips/basic.h
 include/vips/buf.h
-include/vips/cimg_funcs.h
 include/vips/colour.h
 include/vips/connection.h
 include/vips/conversion.h
@@ -61,18 +60,17 @@ include/vips/util.h
 include/vips/vector.h
 include/vips/version.h
 include/vips/video.h
-include/vips/vips-operators.h
 include/vips/vips.h
 include/vips/vips7compat.h
 include/vips/vips8
 lib/libvips-cpp.a
 lib/libvips-cpp.so
 lib/libvips-cpp.so.42
-lib/libvips-cpp.so.42.12.7
+lib/libvips-cpp.so.42.13.2
 lib/libvips.a
 lib/libvips.so
 lib/libvips.so.42
-lib/libvips.so.42.12.7
+lib/libvips.so.42.13.2
 libdata/pkgconfig/vips-cpp.pc
 libdata/pkgconfig/vips.pc
 man/man1/batch_crop.1.gz
@@ -129,6 +127,7 @@ man/man1/vipsthumbnail.1.gz
 %%PORTDOCS%%share/gtk-doc/html/libvips/libvips-draw.html
 %%PORTDOCS%%share/gtk-doc/html/libvips/libvips-error.html
 %%PORTDOCS%%share/gtk-doc/html/libvips/libvips-freqfilt.html
+%%PORTDOCS%%share/gtk-doc/html/libvips/libvips-from-C++.md.html
 %%PORTDOCS%%share/gtk-doc/html/libvips/libvips-generate.html
 %%PORTDOCS%%share/gtk-doc/html/libvips/libvips-header.html
 %%PORTDOCS%%share/gtk-doc/html/libvips/libvips-histogram.html
@@ -154,7 +153,6 @@ man/man1/vipsthumbnail.1.gz
 %%PORTDOCS%%share/gtk-doc/html/libvips/up.png
 %%PORTDOCS%%share/gtk-doc/html/libvips/using-cli.html
 %%PORTDOCS%%share/gtk-doc/html/libvips/using-from-c.html
-%%PORTDOCS%%share/gtk-doc/html/libvips/using-from-cpp.html
 %%PORTDOCS%%share/gtk-doc/html/libvips/using-threads.html
 share/locale/de/LC_MESSAGES/vips%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/vips%%VERSION%%.mo

@@ -1,8 +1,7 @@
 # Created by: Lev Serebryakov <lev@FreeBSD.org>
 
 PORTNAME=	vips
-PORTVERSION=	8.10.6
-PORTREVISION=	7
+PORTVERSION=	8.11.3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
@@ -16,6 +15,7 @@ RUN_DEPENDS=	bash:shells/bash
 #LIB_DEPENDS=	libgirepository-1.0.so:devel/gobject-introspection
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libexpat.so:textproc/expat2
 
 USES=		compiler:c++11-lang cpe gettext gmake gnome libtool localbase \
@@ -104,6 +104,7 @@ PNG_LIB_DEPENDS=	libpng.so:graphics/png
 
 JPEG_CONFIGURE_WITH=	jpeg
 JPEG_USES=		jpeg
+JPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 
 LIBEXIF_CONFIGURE_WITH=	libexif
 LIBEXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
