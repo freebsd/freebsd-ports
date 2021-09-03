@@ -48,12 +48,12 @@ gdnsd_prestart()
 
 gdnsd_reload()
 {
-  gdnsdctl reload-zones
+  %%PREFIX%%/bin/gdnsdctl reload-zones
 }
 
 gdnsd_restart()
 {
-  gdnsdctl replace
+  %%PREFIX%%/bin/gdnsdctl replace
 }
 
 gdnsd_checkconf()
@@ -63,7 +63,7 @@ gdnsd_checkconf()
 
 gdnsd_stats()
 {
-  gdnsdctl stats
+  %%PREFIX%%/bin/gdnsdctl stats
 }
 
 run_rc_command "$1"
