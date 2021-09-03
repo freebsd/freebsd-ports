@@ -2,6 +2,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.26
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -57,7 +58,7 @@ OPTIONS_DEFINE=	AIO ALSA DBUS DEBUG GUESTADDITIONS MANUAL NLS OPUS PULSEAUDIO \
 OPTIONS_DEFAULT=	AIO DBUS QT5 UDPTUNNEL VNC WEBSERVICE X11
 # Since version 6.1.24 pulseaudio is broken at runtime, preventing
 # virtual machines from starting if configured to use it.
-OPTIONS_EXCLUDE=	PULSEAUDIO
+OPTIONS_EXCLUDE+=	PULSEAUDIO
 OPTIONS_SUB=	yes
 
 AIO_DESC=	Enable Asyncronous IO support (check pkg-message)
