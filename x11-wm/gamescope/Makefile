@@ -1,13 +1,11 @@
 PORTNAME=	gamescope
-DISTVERSION=	3.8.4
+DISTVERSION=	3.9
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	8fae1ff56a62.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
-PATCHFILES+=	f36133f27fbc.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
-PATCHFILES+=	01ac6a8e2699.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
-PATCHFILES+=	43f743fcfbd0.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
-PATCHFILES+=	9ebb1c16d3ad.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
+PATCHFILES+=	98bc90ecf55c.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
+PATCHFILES+=	acc8a1bed4e8.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
+PATCHFILES+=	afa1c085ebbf.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
 PATCHFILES+=	d59836199ebe.patch:-p1 # https://github.com/Plagman/gamescope/issues/120
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -33,9 +31,17 @@ USE_GITHUB=	yes
 USE_SDL=	sdl2
 USE_XORG=	x11 xcomposite xdamage xext xfixes xrender xres xtst xxf86vm
 GH_ACCOUNT=	Plagman
-GH_TUPLE=	emersion:libliftoff:b08bbaa:libliftoff/subprojects/libliftoff
+GH_TUPLE=	emersion:libliftoff:v0.1.0-3-g516cf94:libliftoff/subprojects/libliftoff \
+		nothings:stb:c0c9826:stb/subprojects/stb
 CPPFLAGS+=	-D_WITH_DPRINTF # XXX Remove after FreeBSD 11 EOL
 PLIST_FILES=	bin/${PORTNAME}
+
+OPTIONS_DEFINE=	PIPEWIRE
+OPTIONS_DEFAULT=PIPEWIRE
+
+PIPEWIRE_DESC=		Screen capture via PipeWire
+PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
+PIPEWIRE_MESON_ENABLED=	pipewire
 
 # Bundle wlroots due to breaking changes:
 # https://github.com/swaywm/wlroots/commit/9ecfa4343a6d
