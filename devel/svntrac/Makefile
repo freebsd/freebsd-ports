@@ -12,4 +12,6 @@ MASTERDIR=	${.CURDIR}/../cvstrac
 MAKE_ARGS=	APPNAME=svntrac
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
+CPE_PRODUCT=	cvstrac
+
 .include "${MASTERDIR}/Makefile"
