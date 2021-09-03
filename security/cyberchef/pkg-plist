@@ -44,6 +44,8 @@
 %%WWWDIR%%/modules/OCR.js.LICENSE.txt
 %%WWWDIR%%/modules/PGP.js
 %%WWWDIR%%/modules/PGP.js.LICENSE.txt
+%%WWWDIR%%/modules/Protobuf.js
+%%WWWDIR%%/modules/Protobuf.js.LICENSE.txt
 %%WWWDIR%%/modules/PublicKey.js
 %%WWWDIR%%/modules/PublicKey.js.LICENSE.txt
 %%WWWDIR%%/modules/Regex.js
