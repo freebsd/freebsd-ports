@@ -39,6 +39,7 @@ VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
 # FLAVORS are used to build various Vim GUIs. The default flavor (`vim') is
 # console-only.
 FLAVORS=	console athena gtk2 gtk3 motif x11 tiny
+FLAVOR?=	${FLAVORS:[1]}
 # Register conflicts with all other flavors
 CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:S/^/vim-/}
 
