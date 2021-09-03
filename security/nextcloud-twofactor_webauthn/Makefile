@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	twofactor_webauthn
 PORTVERSION=	0.2.10
 CATEGORIES=	security

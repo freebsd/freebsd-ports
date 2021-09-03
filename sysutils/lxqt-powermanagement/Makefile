@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	lxqt-powermanagement
 PORTVERSION=	0.17.0
 CATEGORIES=	sysutils

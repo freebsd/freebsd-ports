@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	celery-progress
 PORTVERSION=	0.1.1
 CATEGORIES=	devel
