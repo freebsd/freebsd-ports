@@ -5488,6 +5488,7 @@
     SUBDIR += resolv_wrapper
     SUBDIR += revive
     SUBDIR += rgbds
+    SUBDIR += rgxg
     SUBDIR += rhtvision
     SUBDIR += rinutils
     SUBDIR += riscv32-unknown-elf-gcc
