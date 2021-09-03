@@ -2,8 +2,8 @@
 
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	22.3.4.20
-PORTREVISION=	1
+DISTVERSION=	22.3.4.21
+PORTREVISION=	0
 # NB when bumping OTP versions also bump PORTREVISION in databases/couchdb3
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime22
