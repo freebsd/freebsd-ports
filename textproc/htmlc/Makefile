@@ -12,13 +12,12 @@ COMMENT=	Text file generator
 BUILD_DEPENDS=	ocamlc:lang/ocaml
 
 USES=		gmake tar:tgz
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix ${LOCALBASE}
 
 PLIST_FILES=	bin/htmlc bin/htmlc.byt share/htmlc/env
 PORTDOCS=	LICENSE INSTALL README JoeCaml.gif rocq.gif copyright-eng.htm \
 		copyright-fra.htm eng.htm fra.htm index.htm
-
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix ${LOCALBASE}
 
 OPTIONS_DEFINE=	DOCS
 

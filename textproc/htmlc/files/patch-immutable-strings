@@ -1,0 +1,66 @@
+--- compiler/execute.ml.orig	2009-02-19 20:28:11 UTC
++++ compiler/execute.ml
+@@ -18,11 +18,11 @@
+ 
+ let htmlc_command htmlc_add_string src_name ob command_name =
+   let ic = Unix.open_process_in command_name in
+-  let ib = String.create Configuration.line_buffer_length in
++  let ib = Bytes.create Configuration.line_buffer_length in
+   let status =
+     let rec loop () =
+       let n = input ic ib 0 Configuration.line_buffer_length in
+-      if n > 0 then (htmlc_add_string ob (String.sub ib 0 n); loop ())
++      if n > 0 then (htmlc_add_string ob (Bytes.sub_string ib 0 n); loop ())
+       else raise End_of_file in
+     try loop () with
+     | End_of_file ->
+--- compiler/htmlc.ml.orig	2009-08-13 14:27:53 UTC
++++ compiler/htmlc.ml
+@@ -236,11 +236,11 @@ let decimal_to_hexa i =
+ ;;
+ 
+ let hexa_char c =
+-  let s = String.make 3 '%'
++  let s = Bytes.make 3 '%'
+   and i = int_of_char c in
+   s.[1] <- decimal_to_hexa (i / 16);
+   s.[2] <- decimal_to_hexa (i mod 16);
+-  s
++  Bytes.to_string s
+ ;;
+ 
+ let url_encode ob s =
+--- compiler/lib_strings.ml.orig	2008-11-05 10:42:35 UTC
++++ compiler/lib_strings.ml
+@@ -95,25 +95,25 @@ let center_gen c s len_in =
+   let len_s = String.length s in
+   if len_in < len_s then not_enough_room "center" len_s len_in else
+   let idx = (len_in - len_s) / 2 in
+-  let b = String.make len_in c in
++  let b = Bytes.make len_in c in
+   String.blit s 0 b idx len_s;
+-  b;;
++  Bytes.to_string b;;
+ let center s len_in = center_gen ' ' s len_in;;
+ 
+ let flush_left_gen c s len_in =
+   let len_s = String.length s in
+   if len_in < len_s then not_enough_room "flush_left" len_s len_in else
+   let idx = 0 in
+-  let b = String.make len_in c in
++  let b = Bytes.make len_in c in
+   String.blit s 0 b idx len_s;
+-  b;;
++  Bytes.to_string b;;
+ let flush_left s len_in = flush_left_gen ' ' s len_in;;
+ 
+ let flush_right_gen c s len_in =
+   let len_s = String.length s in
+   if len_in < len_s then not_enough_room "flush_right" len_s len_in else
+   let idx = len_in - len_s in
+-  let b = String.make len_in c in
++  let b = Bytes.make len_in c in
+   String.blit s 0 b idx len_s;
+-  b;;
++  Bytes.to_string b;;
+ let flush_right s len_in = flush_right_gen ' ' s len_in;;
