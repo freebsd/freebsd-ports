@@ -21,7 +21,7 @@ desc="Dendrite (Monolith Server)"
 load_rc_config $name
 
 : ${dendrite_enable:=NO}
-: ${dendrite_config="%%PREFIX%%/etc/dendrite/dendrite.yaml"}
+: ${dendrite_config:="%%PREFIX%%/etc/dendrite/dendrite.yaml"}
 
 command=/usr/sbin/daemon
 procname=%%PREFIX%%/dendrite/bin/dendrite-monolith-server
