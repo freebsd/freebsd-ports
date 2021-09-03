@@ -15,6 +15,8 @@ DESCR=		${.CURDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../../ftp/proftpd
 
+USES=		cpe
+
 CONFIGURE_ARGS=	LIBS=-liodbc \
 		LD_LIBRARY_PATH="${LOCALBASE}/lib" \
 		LDFLAGS="-L${LOCALBASE}/lib"
