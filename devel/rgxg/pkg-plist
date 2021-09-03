@@ -1,0 +1,17 @@
+bin/rgxg
+include/rgxg/net.h
+include/rgxg/number.h
+include/rgxg/types.h
+include/rgxg/utils.h
+lib/librgxg.so
+lib/librgxg.so.0
+lib/librgxg.so.0.0.1
+libdata/pkgconfig/rgxg.pc
+man/man1/rgxg.1.gz
+man/man3/rgxg_net_cidr_ipv4.3.gz
+man/man3/rgxg_net_cidr_ipv6.3.gz
+man/man3/rgxg_net_cidr_string.3.gz
+man/man3/rgxg_number_greaterequal.3.gz
+man/man3/rgxg_number_range.3.gz
+man/man3/rgxg_utils_alternation.3.gz
+man/man3/rgxg_utils_escape_string.3.gz

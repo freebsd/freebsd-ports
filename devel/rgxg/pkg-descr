@@ -1,0 +1,4 @@
+rgxg (ReGular eXpression Generator) is a C library and a command-line tool
+to generate (extended) regular expressions.
+
+WWW: https://rgxg.github.io
