@@ -1,7 +1,7 @@
 # Based on the graphics/ilmbase port that was done by: nork@FreeBSD.org
 
 PORTNAME=	Imath
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 CATEGORIES=	math devel graphics
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -41,7 +41,7 @@ PYTHON_CMAKE_BOOL=	PYTHON
 
 _MAJORVER=	3_1
 _VER=		29
-_MINVER=	1
+_MINVER=	2
 _PLVER=		0
 
 post-install:
