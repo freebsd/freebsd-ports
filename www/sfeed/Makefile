@@ -1,9 +1,9 @@
 PORTNAME=	sfeed
-PORTVERSION=	0.9.19
+PORTVERSION=	1.0
 CATEGORIES=	www
 MASTER_SITES=	https://codemadness.org/releases/sfeed/
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RSS and Atom parser
 
 LICENSE=	ISCL
