@@ -67,6 +67,7 @@ CONFIGURE_ARGS+=--without-doxygen --without-xmlto --without-fop \
 		--with-fallback-input-driver=libinput
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	x.org
+CPE_PRODUCT=	xorg-server
 
 .if ${SLAVE_PORT} == "no" || ${PORTNAME} == "xephyr" || ${PORTNAME} == "xwayland"
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
