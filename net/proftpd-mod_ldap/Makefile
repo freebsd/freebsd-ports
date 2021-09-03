@@ -15,7 +15,7 @@ DESCR=		${.CURDIR}/pkg-descr
 MASTERDIR=	${.CURDIR}/../../ftp/proftpd
 
 USE_OPENLDAP=	yes
-USES=		ssl
+USES=		cpe ssl
 
 INCLUDEDIRS=	${LOCALBASE}/include
 LIBDIRS=	${LOCALBASE}/lib
