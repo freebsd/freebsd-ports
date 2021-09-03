@@ -3,7 +3,6 @@
 PORTNAME=	redis
 PORTVERSION=	7.0.0.20210902
 CATEGORIES=	databases
-MASTER_SITES=	https://download.redis.io/releases/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	osa@FreeBSD.org
