@@ -16,5 +16,7 @@ PATCHDIR=	${.CURDIR}/../inn/files
 PLIST=		${.CURDIR}/../inn/pkg-plist
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+CPE_PRODUCT=	inn
+
 .include "${.CURDIR}/../inn/Makefile"
 
