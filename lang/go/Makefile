@@ -2,7 +2,7 @@
 
 PORTNAME=	go
 PORTVERSION?=	1.17
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES=	lang
 MASTER_SITES?=	https://golang.org/dl/ \
@@ -10,6 +10,10 @@ MASTER_SITES?=	https://golang.org/dl/ \
 		LOCAL/dmgk:bootstrap
 DISTFILES?=	go${PORTVERSION}.src.tar.gz \
 		go-${OPSYS:tl}-${GOARCH_${ARCH}}${GOARM_${ARCH}}-${BOOTSTRAP_TAG}.tar.xz:bootstrap
+
+# backport https://go-review.googlesource.com/c/go/+/346872/ to go1.17
+PATCH_SITES?=	https://github.com/golang/go/commit/
+PATCHFILES?=	782aa42255163559c5e1c4c2d98c8f28da8cf96b.patch:-p1
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT?=	Go programming language
