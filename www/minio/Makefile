@@ -11,8 +11,8 @@ LICENSE=	APACHE20
 USES=		compiler cpe go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2021-08-31T05-46-54Z
-COMMIT_ID=	2077d2705324bb83d7998a26740565a517252438
+GHTAG=		RELEASE.2021-09-03T03-56-13Z
+COMMIT_ID=	a19e3bc9d9dd08299229e49081780c79e6cf6a2b
 
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
@@ -160,7 +160,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:argon2:v1.0.0:minio_argon2/vendor/github.com/minio/argon2 \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:colorjson:v1.0.1:minio_colorjson/vendor/github.com/minio/colorjson \
-		minio:console:v0.9.4:minio_console/vendor/github.com/minio/console \
+		minio:console:v0.9.6:minio_console/vendor/github.com/minio/console \
 		minio:csvparser:v1.0.0:minio_csvparser/vendor/github.com/minio/csvparser \
 		minio:direct-csi:f7776f7961bf:minio_direct_csi/vendor/github.com/minio/direct-csi \
 		minio:filepath:v1.0.0:minio_filepath/vendor/github.com/minio/filepath \
@@ -172,7 +172,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:minio-go:cee488b95ff2:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
 		minio:operator:26350f153661:minio_operator/vendor/github.com/minio/operator \
 		minio:parquet-go:v1.0.0:minio_parquet_go/vendor/github.com/minio/parquet-go \
-		minio:pkg:v1.0.11:minio_pkg/vendor/github.com/minio/pkg \
+		minio:pkg:v1.1.2:minio_pkg/vendor/github.com/minio/pkg \
 		minio:selfupdate:v0.3.1:minio_selfupdate/vendor/github.com/minio/selfupdate \
 		minio:sha256-simd:v1.0.0:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:simdjson-go:v0.2.1:minio_simdjson_go/vendor/github.com/minio/simdjson-go \
@@ -239,11 +239,11 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/cloud.google.com/go/storage
 	@${RLN} ${WRKSRC_googleapis_google_cloud_go_storage}/storage ${WRKSRC}/vendor/cloud.google.com/go/storage
-	${MKDIR} ${WRKSRC}/vendor/go.etcd.io/etcd/api
-	${RLN} ${WRKSRC}/vendor/go.etcd.io/etcd/etcd-3.5.0-beta.4/api ${WRKSRC}/vendor/go.etcd.io/etcd/api/v3
-	${MKDIR} ${WRKSRC}/vendor/go.etcd.io/etcd/client/pkg
-	${RLN} ${WRKSRC}/vendor/go.etcd.io/etcd/etcd-3.5.0-beta.4/client/v3 ${WRKSRC}/vendor/go.etcd.io/etcd/client/v3
-	${RLN} ${WRKSRC}/vendor/go.etcd.io/etcd/etcd-3.5.0-beta.4/client/pkg ${WRKSRC}/vendor/go.etcd.io/etcd/client/pkg/v3
+	@${MKDIR} ${WRKSRC}/vendor/go.etcd.io/etcd/api
+	@${RLN} ${WRKSRC}/vendor/go.etcd.io/etcd/etcd-3.5.0-beta.4/api ${WRKSRC}/vendor/go.etcd.io/etcd/api/v3
+	@${MKDIR} ${WRKSRC}/vendor/go.etcd.io/etcd/client/pkg
+	@${RLN} ${WRKSRC}/vendor/go.etcd.io/etcd/etcd-3.5.0-beta.4/client/v3 ${WRKSRC}/vendor/go.etcd.io/etcd/client/v3
+	@${RLN} ${WRKSRC}/vendor/go.etcd.io/etcd/etcd-3.5.0-beta.4/client/pkg ${WRKSRC}/vendor/go.etcd.io/etcd/client/pkg/v3
 
 GO_BUILDFLAGS=	-ldflags=' \
 		-X github.com/minio/minio/cmd.Version=${GH_TAGNAME:C/RELEASE\.//:C|(..)-(..)-(..)Z|\1:\2:\3Z|} \
