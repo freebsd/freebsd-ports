@@ -1,6 +1,5 @@
 PORTNAME=	pandoc-crossref
-PORTVERSION=	0.3.9.1
-PORTREVISION=	1
+PORTVERSION=	0.3.12.0
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -10,13 +9,13 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
-USE_CABAL=	Glob-0.10.1 \
+USE_CABAL=	Glob-0.10.1_1 \
 		HTTP-4000.3.15_2 \
-		HsYAML-0.2.1.0_1 \
+		HsYAML-0.2.1.0_2 \
 		JuicyPixels-3.3.5 \
 		QuickCheck-2.14.2 \
 		SHA-1.6.4.4 \
-		aeson-1.5.6.0 \
+		aeson-1.5.6.0_2 \
 		aeson-pretty-0.8.8 \
 		ansi-terminal-0.11 \
 		ansi-wl-pprint-0.6.9_2 \
@@ -25,17 +24,17 @@ USE_CABAL=	Glob-0.10.1 \
 		asn1-types-0.3.4 \
 		assoc-1.0.2_1 \
 		async-2.2.3 \
-		attoparsec-0.13.2.5 \
+		attoparsec-0.13.2.5_1 \
 		base-compat-0.11.2 \
 		base-compat-batteries-0.11.2 \
 		base-orphans-0.8.4 \
 		base-unicode-symbols-0.2.4.2 \
 		base16-bytestring-1.0.1.0 \
 		base64-bytestring-1.1.0.0 \
-		basement-0.0.11_2 \
+		basement-0.0.11_3 \
 		bifunctors-5.5.10 \
 		blaze-builder-0.4.2.1 \
-		blaze-html-0.9.1.2 \
+		blaze-html-0.9.1.2_1 \
 		blaze-markup-0.8.2.7 \
 		cabal-doctest-1.0.8_2 \
 		case-insensitive-1.2.1.0 \
@@ -45,12 +44,12 @@ USE_CABAL=	Glob-0.10.1 \
 		commonmark-0.1.1.4 \
 		commonmark-extensions-0.2.0.4 \
 		commonmark-pandoc-0.2.0.1 \
-		comonad-5.0.8 \
+		comonad-5.0.8_1 \
 		conduit-1.3.4 \
 		conduit-extra-1.3.5 \
 		connection-0.3.1_1 \
 		cookie-0.4.5 \
-		cryptonite-0.28 \
+		cryptonite-0.28_1 \
 		data-accessor-0.2.3 \
 		data-accessor-template-0.2.1.16_1 \
 		data-accessor-transformers-0.2.1.7 \
@@ -61,12 +60,12 @@ USE_CABAL=	Glob-0.10.1 \
 		data-default-instances-old-locale-0.0.1 \
 		data-fix-0.3.1 \
 		digest-0.0.1.2 \
-		distributive-0.6.2.1 \
+		distributive-0.6.2.1_1 \
 		dlist-1.0 \
 		doclayout-0.3 \
 		doctemplates-0.9 \
 		emojis-0.1 \
-		errors-2.3.0 \
+		errors-2.3.0_1 \
 		file-embed-0.0.13.0 \
 		gitrev-1.3.1 \
 		haddock-library-1.9.0 \
@@ -79,22 +78,25 @@ USE_CABAL=	Glob-0.10.1 \
 		http-client-0.7.6 \
 		http-client-tls-0.3.5.3_1 \
 		http-types-0.12.3 \
-		indexed-traversable-0.1.1 \
+		indexed-traversable-0.1.1_1 \
 		integer-logarithms-1.0.3.1 \
 		ipynb-0.1.0.1 \
 		jira-wiki-markup-1.3.3 \
-		memory-0.15.0_1 \
+		memory-0.15.0_2 \
+		microlens-0.4.12.0 \
+		microlens-mtl-0.2.0.1 \
+		microlens-th-0.4.3.10 \
 		mime-types-0.1.0.9 \
-		mono-traversable-1.0.15.1 \
+		mono-traversable-1.0.15.1_1 \
 		network-3.1.2.1_1 \
 		network-uri-2.6.4.1 \
 		old-locale-1.0.0.7_2 \
 		open-browser-0.2.1.0 \
-		optparse-applicative-0.16.1.0 \
+		optparse-applicative-0.16.1.0_1 \
 		pandoc-2.11.4 \
 		pandoc-types-1.22 \
 		pem-0.2.4 \
-		primitive-0.7.1.0_2 \
+		primitive-0.7.1.0_3 \
 		random-1.1_1 \
 		resourcet-1.2.4.2 \
 		rfc5051-0.2 \
@@ -107,23 +109,23 @@ USE_CABAL=	Glob-0.10.1 \
 		split-0.2.3.4_1 \
 		splitmix-0.1.0.3 \
 		streaming-commons-0.2.2.1 \
-		strict-0.4.0.1 \
+		strict-0.4.0.1_1 \
 		syb-0.7.2.1 \
-		tagged-0.8.6.1 \
+		tagged-0.8.6.1_2 \
 		tagsoup-0.14.8 \
 		temporary-1.3 \
 		texmath-0.12.1.1 \
 		text-conversions-0.3.1 \
-		th-abstraction-0.4.2.0 \
+		th-abstraction-0.4.2.0_1 \
 		th-compat-0.1.1 \
-		these-1.1.1.1_1 \
+		these-1.1.1.1_2 \
 		time-compat-1.9.5_1 \
 		tls-1.5.5 \
 		transformers-compat-0.6.6 \
 		typed-process-0.2.6.0 \
-		unicode-transforms-0.3.7.1 \
+		unicode-transforms-0.3.7.1_2 \
 		uniplate-1.6.13_1 \
-		unliftio-core-0.2.0.1_1 \
+		unliftio-core-0.2.0.1_2 \
 		unordered-containers-0.2.13.0 \
 		utf8-string-1.0.2 \
 		utility-ht-0.0.15 \
