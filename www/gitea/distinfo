@@ -1,3 +1,3 @@
-TIMESTAMP = 1629616193
-SHA256 (gitea-src-1.15.0.tar.gz) = 5aee6bb55a10aa5ff45d692ccd83aa138409c4a518fc2b02a668e4681f84e877
-SIZE (gitea-src-1.15.0.tar.gz) = 48537339
+TIMESTAMP = 1630697036
+SHA256 (gitea-src-1.15.2.tar.gz) = cef589d50f27270e218cf7819ee569ae39f6352945c2fe01c2d1f08301c7bd22
+SIZE (gitea-src-1.15.2.tar.gz) = 48648887
