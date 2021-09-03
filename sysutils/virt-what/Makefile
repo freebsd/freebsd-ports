@@ -8,7 +8,7 @@ COMMENT=	Utility to determine whether it is being run in virtual environment
 
 LICENSE=	GPLv1
 
-USES=		cpe perl5
+USES=		perl5
 
 GNU_CONFIGURE=	yes
 
