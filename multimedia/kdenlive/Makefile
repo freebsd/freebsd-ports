@@ -29,7 +29,7 @@ USE_QT=		concurrent core dbus declarative gui multimedia network \
 		buildtools_build qmake_build \
 		quickcontrols_run script svg webkit widgets
 USE_XORG=	x11
-CFLAGS+=	-I${LOCALBASE}/include # linux/input.h
+CFLAGS+=	-isystem${LOCALBASE}/include # linux/input.h
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
 
 # Keep in sync with multimedia/mlt, possibly.
