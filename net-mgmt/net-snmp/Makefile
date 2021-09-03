@@ -46,7 +46,7 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	snmpd snmptrapd
 USE_LDCONFIG=	yes
 USES=		cpe libtool perl5 ssl
-CPE_VENDOR=	net-snmp
+CPE_PRODUCT=	net-snmp
 USE_PERL5=	build run
 USE_CSTD=	c99
 
