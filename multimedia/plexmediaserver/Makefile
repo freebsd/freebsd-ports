@@ -1,8 +1,8 @@
 # Created by: KalleDK <plexmaintainer@k-moeller.dk>
 
 PORTNAME=	plexmediaserver
-PORTVERSION?=	1.24.0.4930
-DISTVERSIONSUFFIX?=ab6e1a058
+PORTVERSION?=	1.24.1.4931
+DISTVERSIONSUFFIX?=1a38e63c6
 PORTREVISION?=	0
 CATEGORIES=	multimedia
 MASTER_SITES?=	https://downloads.plex.tv/plex-media-server-new/${DISTVERSION}-${DISTVERSIONSUFFIX}/freebsd/
