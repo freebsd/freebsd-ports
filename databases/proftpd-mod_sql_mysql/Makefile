@@ -13,7 +13,7 @@ DESCR=		${.CURDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../../ftp/proftpd
 
-USES=		mysql
+USES=		cpe mysql
 
 INCLUDEDIRS=	${LOCALBASE}/include:${LOCALBASE}/include/mysql
 LIBDIRS=	${LOCALBASE}/lib
