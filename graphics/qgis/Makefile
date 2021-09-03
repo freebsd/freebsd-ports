@@ -103,7 +103,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.3.1:devel/py-yaml@${PY_FLAVOR}
 
 ### Fortran is needed by numpy, GRASS, etc.
-USES=		bison cmake compiler:features cpe desktop-file-utils \
+USES=		bison cmake compiler:features desktop-file-utils \
 		fortran gl gmake gnome pgsql pyqt:5 python:3.7+ qca qt:5 \
 		shebangfix sqlite:3
 USE_GITHUB=	yes
