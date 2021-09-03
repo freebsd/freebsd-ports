@@ -75,8 +75,6 @@ EXTRA_PATCHES=	${FILESDIR}/${ARCH}
 
 ALL_TARGET=	install-core
 
-PORTSCOUT=	limitw:1,even
-
 CPE_PRODUCT=	mongodb
 
 pre-patch:

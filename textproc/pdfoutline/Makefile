@@ -3,7 +3,7 @@
 PORTNAME=	pdfoutline
 PORTVERSION=	5.4
 DISTVERSIONPREFIX=	release/
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-xRUN_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
+RUN_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
 		p5-PDF-API2>=0:textproc/p5-PDF-API2
 
 USES=		perl5 shebangfix

@@ -60,7 +60,7 @@ PETSC_CMAKE_ON=		-DPETSC_DIR=${LOCALBASE} \
 PETSC_LIB_DEPENDS=	libpetsc.so:science/PETSc
 PETSC_IMPLIES=		MPI
 PETSC_PREVENTS=		LAPACK  # error: Incompatible sunindextype for LAPACK; disable LAPACK and rebuild
-PERSC_BROKEN=		ERROR: PETSc not functional due to index size mismatch: SUNDIALS_INDEX_SIZE=64, but PETSc was built with 32-bit indices
+PETSC_BROKEN=		ERROR: PETSc not functional due to index size mismatch: SUNDIALS_INDEX_SIZE=64, but PETSc was built with 32-bit indices
 
 PORTEXAMPLES=	*
 

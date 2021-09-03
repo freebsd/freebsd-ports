@@ -26,8 +26,6 @@ HEADER_DEPENDS=	${LOCALBASE}/include/boost/numeric/conversion/cast.hpp:devel/boo
 		${LOCALBASE}/include/gmp.h:math/gmp \
 		${LOCALBASE}/include/mpfr.h:math/mpfr
 
-TEST_USES=	compiler:c++14-lang
-
 do-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTS=ON ${CMAKE_SOURCE_PATH} && \

@@ -1,5 +1,6 @@
 PORTNAME=	biboumi
 DISTVERSION=	9.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://git.louiz.org/biboumi/snapshot/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -46,7 +47,7 @@ SQLITE3_CMAKE_OFF=	-DWITHOUT_SQLITE3=1
 
 TLS_LIB_DEPENDS=	libbotan-2.so:security/botan2
 TLS_LIB_DEPENDS_OFF=	libgcrypt.so:security/libgcrypt
-TLS_RUN_DEPENDS_ON=	ca_root_nss>0:security/ca_root_nss
+TLS_RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 TLS_CMAKE_ON=		-DWITH_BOTAN=1
 TLS_CMAKE_OFF=		-DWITHOUT_BOTAN=1
 

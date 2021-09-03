@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
 USES=		go:modules
-GO_TARGET=	./cmd/caddy
 
 USE_RC_SUBR=	caddy
 SUB_FILES=	Caddyfile.sample caddy pkg-message

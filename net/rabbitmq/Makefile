@@ -44,7 +44,6 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 CPE_VENDOR=	pivotal_software
 
 REINPLACE_ARGS=	-i ""
-SCRIPTS_DIR=	${WRKSRC}/deps/rabbit/scripts
 SHEBANG_FILES=	deps/rabbitmq_management/bin/rabbitmqadmin
 MAKE_ARGS+=	PYTHON=${PYTHON_CMD}
 MAKE_ENV+=	PATH="${LOCALBASE}/lib/${ERLANG_LIB}/bin:${PATH}" \

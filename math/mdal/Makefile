@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpdal_base.so:math/pdal \
 		libhdf5.so:science/hdf5 \
 		libsz.so:science/szip
 
-USES=		cmake localbase
+USES=		cmake gnome localbase
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

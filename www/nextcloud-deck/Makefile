@@ -22,9 +22,6 @@ USES=		php:flavors
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-NEXTCLOUD_USERNAME?=	${WWWOWN}
-NEXTCLOUD_GROUPNAME?=	${WWWGRP}
-
 WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
 
 do-install:

@@ -11,14 +11,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	csvtk:science/csvtk
 
-USES=		go:modules
+USES=		go:modules perl5
+USE_PERL5=	test
 
 GO_MODULE=	github.com/shenwei356/unikmer
 GO_TARGET=	./${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
-
-TEST_USES=	perl5
 
 do-test: # from the benchmark section in README
 	@cd ${WRKSRC} && \
