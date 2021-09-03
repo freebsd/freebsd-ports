@@ -241,7 +241,7 @@ biboumi:*:293:293::0:0:biboumi:/nonexistent:/usr/sbin/nologin
 krill:*:294:294::0:0:krill Pseudo User:/nonexistent:/usr/sbin/nologin
 jottad:*:295:295::0:0:Jotta Cloud Daemon:/nonexisten:/usr/sbin/nologin
 writefreely:*:296:296::0:0:WriteFreely daemon:/var/db/writefreely:/usr/sbin/nologin
-# free: 297
+conduit:*:297:297::0:0:Conduit daemon:/var/db/conduit:/usr/sbin/nologin
 # free: 298
 owncast:*:299:299::0:0:& daemon:/nonexistent:/usr/sbin/nologin
 backuppc:*:300:300::0:0:BackupPC pseudo-user:/nonexistent:/usr/sbin/nologin

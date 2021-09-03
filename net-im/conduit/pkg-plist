@@ -1,0 +1,3 @@
+bin/%%PORTNAME%%
+@sample etc/conduit.toml.sample
+@dir %%DBDIR%%
