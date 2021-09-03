@@ -1,10 +1,10 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	groupfolders
-PORTVERSION=	9.0.2
+PORTVERSION=	10.0.0
 CATEGORIES=	www
 DISTVERSIONPREFIX=	v
-MASTER_SITES=	https://github.com/nextcloud/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
+MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}
