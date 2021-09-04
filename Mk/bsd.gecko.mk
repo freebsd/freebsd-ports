@@ -248,11 +248,7 @@ MOZ_OPTIONS+=	--disable-libproxy
 .endif
 
 .if ${PORT_OPTIONS:MLTO}
-.if ${ARCH} == powerpc64le
-MOZ_OPTIONS+=	--enable-lto=thin
-.else
 MOZ_OPTIONS+=	--enable-lto=cross
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
