@@ -1,10 +1,10 @@
 # This port opens too many files during build, more than the default setting.
-# Its build is known to succeed with MAX_FILES_RStudio=4096 and MAX_FILES_RStudio_server=4096 in poudriere.conf
+# Its build is known to succeed with MAX_FILES_RStudio=4096 in poudriere.conf
 
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1717
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
@@ -114,7 +114,6 @@ post-patch:
 pre-build:
 	@${CP} ${FILESDIR}/global-setenv.h ${WRKSRC}/src/cpp/desktop/
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/cpp/desktop/global-setenv.h
-	@${ECHO} "Current max open files (ulimit -n) setting is $$(ulimit -n)." # since build is likely to fail when it is lower than 4096
 
 post-install:
 	@(echo "#!/bin/sh"; \
@@ -137,6 +136,12 @@ post-install:
 	# Some functions expect the pandoc symlink.
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${INSTALL_SUBDIR}/bin/pandoc
 	@cd ${STAGEDIR}${PREFIX}/lib/${INSTALL_SUBDIR}/bin/pandoc && ${LN} -s ../../../../bin/pandoc
+	# Add $LOCALBASE/bin to PATH to allow RStudio-server to run gmake (R_HOME/etc/Renviron.site is installed, see https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html)
+.if ${FLAVOR:U} == server
+	#@${MKDIR} ${STAGEDIR}${LOCALBASE}/lib/R/etc
+	#@${ECHO} "PATH=\"${LOCALBASE}/bin:\$$PATH\"" > ${STAGEDIR}${LOCALBASE}/lib/R/etc/Renviron.site # it should be this way, but this fails: https://github.com/rstudio/rstudio/issues/9815
+	@${LN} -s ${LOCALBASE}/bin/${GMAKE} ${STAGEDIR}${PREFIX}/lib/rstudio-server/bin/postback/${GMAKE} # hack, should be as above, but at least gmake is in the path now
+.endif
 	# There is a variability in .js file names due to use of random numbers, so we use the automatic plist.
 	@${SETENV} ${CO_ENV} ${SH} ${SCRIPTSDIR}/check-stagedir.sh makeplist | ${GREP} -v ^\/ | ${SED} -e 's|%%WWWDIR%%|www/rstudio| ; s|%%CMAKE_BUILD_TYPE%%|${CMAKE_BUILD_TYPE:tl}|' > ${TMPPLIST}
 

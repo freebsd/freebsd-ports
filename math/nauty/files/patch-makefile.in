@@ -1,0 +1,13 @@
+- allow to add additional CFLAGS to build shared libraries
+
+--- makefile.in.orig	2021-09-03 17:45:35 UTC
++++ makefile.in
+@@ -3,7 +3,7 @@
+ 
+ SHELL=@SHELL@
+ CC=@CC@
+-CFLAGS=@CFLAGS@ @MORECFLAGS@
++CFLAGS=@CFLAGS@ @MORECFLAGS@ ${FREEBSD_EXTRA_CFLAGS}
+ SAFECFLAGS=@CFLAGS@
+ LDFLAGS=@LDFLAGS@ @LIBS@
+ THREADLIB=@threadlib@
