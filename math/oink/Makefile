@@ -12,8 +12,6 @@ COMMENT=	Modern parity game solvers written in C++
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	error: use of undeclared identifier 'mfence'
-
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
 USES=		cmake:testing

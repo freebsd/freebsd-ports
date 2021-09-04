@@ -4,7 +4,7 @@
  #endif
  
  #ifndef mfence
-+#ifdef __amd64__
++#if defined(__amd64__) || defined(__i386__)
  #define mfence() { asm volatile("mfence" ::: "memory"); }
 +#elif defined(__powerpc__)
 +#define mfence() { asm volatile("sync" ::: "memory"); }
