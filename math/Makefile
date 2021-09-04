@@ -759,6 +759,7 @@
     SUBDIR += picosat
     SUBDIR += piranha
     SUBDIR += planarity
+    SUBDIR += plantri
     SUBDIR += plman
     SUBDIR += ploticus
     SUBDIR += ploticus-nox11

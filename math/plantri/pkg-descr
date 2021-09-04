@@ -1,0 +1,12 @@
+plantri and fullgen are programs for generation of certain types of planar
+graph.
+
+Exactly one member of each isomorphism class is output, using an amount of
+memory almost independent of the number of graphs produced. This, together with
+the exceptionally fast operation and careful validation, makes the program
+suitable for processing very large numbers of graphs.
+
+Isomorphisms are defined with respect to the embeddings, so in some cases
+outputs may be isomorphic as abstract graphs.
+
+WWW: https://users.cecs.anu.edu.au/~bdm/plantri/
