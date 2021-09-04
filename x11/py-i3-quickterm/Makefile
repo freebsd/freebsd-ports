@@ -11,7 +11,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}i3ipc>2.0:x11/py-i3ipc@${PY_FLAVOR} \
 
-USES=		cpe python:3.4+
+USES=		python:3.4+
 USE_PYTHON=	distutils autoplist concurrent
 
 NO_ARCH=	yes
