@@ -1,4 +1,3 @@
-bin/cvs_realclean
 bin/omake
 bin/osh
 lib/omake/OMakefile.default
@@ -14,7 +13,9 @@ lib/omake/configure/Configure.om
 lib/omake/configure/X.om
 lib/omake/configure/fam.om
 lib/omake/configure/fs_case_sensitive.om
+lib/omake/configure/moncontrol.om
 lib/omake/configure/ncurses.om
+lib/omake/configure/posix_spawn.om
 lib/omake/configure/readline.om
 lib/omake/configure/snprintf.om
 lib/omake/parse/C/Lex.om
@@ -24,6 +25,7 @@ lib/omake/parse/LaTeX/Macros.om
 lib/omake/parse/LaTeX/Parse.om
 lib/omake/parse/LaTeX/Spell.om
 lib/omake/web/simple-xml.om
+%%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/omake-all-index.html
 %%PORTDOCS%%%%DOCSDIR%%/omake-autoconf.html
 %%PORTDOCS%%%%DOCSDIR%%/omake-base.html
