@@ -1,5 +1,5 @@
 PORTNAME=	hlint
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -9,7 +9,7 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
-USE_CABAL=	aeson-1.5.6.0_1 \
+USE_CABAL=	aeson-1.5.6.0_2 \
 		alex-3.2.6 \
 		ansi-terminal-0.11 \
 		assoc-1.0.2_1 \
