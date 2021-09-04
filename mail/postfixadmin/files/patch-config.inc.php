@@ -1,6 +1,6 @@
---- config.inc.php.orig	2021-08-09 08:41:35 UTC
+--- config.inc.php.orig	2021-08-09 14:34:09 UTC
 +++ config.inc.php
-@@ -210,10 +210,11 @@ $CONF['authlib_default_flavor'] = 'md5raw';
+@@ -212,10 +212,11 @@ $CONF['authlib_default_flavor'] = 'md5raw';
  // for dovecot 1.x
  // $CONF['dovecotpw'] = "/usr/sbin/dovecotpw";
  // for dovecot 2.x (dovecot 2.0.0 - 2.0.7 is not supported!)

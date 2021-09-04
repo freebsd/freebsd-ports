@@ -2,7 +2,7 @@
 
 PORTNAME=	postfixadmin
 DISTVERSIONPREFIX=	postfixadmin-
-DISTVERSION=	3.3.10
+DISTVERSION=	3.4.dev.20210902
 CATEGORIES=	mail www
 
 MAINTAINER=	ports.maintainer@evilphi.com
@@ -11,10 +11,11 @@ COMMENT=	PHP web-based management tool for Postfix virtual domains and users
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL-LICENSE.TXT
 
-USES=		cpe shebangfix php
+USES=		cpe php shebangfix
 CPE_VENDOR=	postfix_admin_project
 CPE_PRODUCT=	postfix_admin
 USE_GITHUB=	yes
+GH_TAGNAME=	cd73f275
 USE_PHP=	mbstring openssl pcre session spl
 
 NO_ARCH=	yes
@@ -33,10 +34,10 @@ OPTIONS_SUB=		yes
 IMAP_DESC=	Support automated sub-folder creation for new mailboxes
 VACATION_DESC=	Install virtual vacation postfix script
 
-IMAP_USE=	php=imap
-MYSQL_USE=	php=pdo_mysql
-PGSQL_USE=	php=pdo_pgsql
-SQLITE_USE=	php=pdo_sqlite
+IMAP_USE=		PHP=imap
+MYSQL_USE=		PHP=pdo_mysql
+PGSQL_USE=		PHP=pdo_pgsql
+SQLITE_USE=		PHP=pdo_sqlite
 VACATION_RUN_DEPENDS=	p5-DBI>=1.634:databases/p5-DBI \
 			p5-Email-Sender>=1.300031:mail/p5-Email-Sender \
 			p5-Email-Simple>=1.998:mail/p5-Email-Simple \
@@ -45,7 +46,7 @@ VACATION_RUN_DEPENDS=	p5-DBI>=1.634:databases/p5-DBI \
 			p5-MIME-EncWords>=0.040:mail/p5-MIME-EncWords \
 			p5-Net-DNS>=1.32:dns/p5-Net-DNS \
 			p5-Try-Tiny>=0.30:lang/p5-Try-Tiny
-VACATION_USES=	perl5
+VACATION_USES=		perl5
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
@@ -56,7 +57,7 @@ do-install:
 .endfor
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/ADDITIONS && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/ADDITIONS)
-.for i in GPL-LICENSE.TXT LICENSE.TXT check_mailpass_expiration.sh password_expiration.sql postfixadmin.my.cnf
+.for i in GPL-LICENSE.TXT LICENSE.TXT password_expiration.sql postfixadmin.my.cnf
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}
 .endfor
 
