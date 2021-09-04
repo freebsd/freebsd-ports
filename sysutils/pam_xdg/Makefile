@@ -1,5 +1,5 @@
 PORTNAME=	pam_xdg
-PORTVERSION=	s20210801
+PORTVERSION=	s20210901
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,7 +11,7 @@ USES=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jbeich # mirror
 GH_PROJECT=	s-toolbox
-GH_TAGNAME=	43445d6
+GH_TAGNAME=	dbede63
 PLIST_FILES=	lib/${PORTNAME}.so \
 		share/man/man8/${PORTNAME}.8.gz
 
