@@ -10,6 +10,8 @@ COMMENT=	NCBI C++ Toolkit
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/doc/public/LICENSE
 
+BROKEN_FreeBSD_11=	libxconnserv.so, not found (try using -rpath or -rpath-link)
+
 LIB_DEPENDS=	libcdd.so:math/cddlib \
 		liblmdb.so:databases/lmdb \
 		libpcre.so:devel/pcre
