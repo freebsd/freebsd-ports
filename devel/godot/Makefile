@@ -17,7 +17,8 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	yasm:devel/yasm
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpcre2-8.so:devel/pcre2 \
-		libpng.so:graphics/png
+		libpng.so:graphics/png \
+		libvpx.so:multimedia/libvpx
 RUN_DEPENDS=	xdg-user-dir:devel/xdg-user-dirs \
 		xdg-open:devel/xdg-utils \
 		xmessage:x11/xmessage
@@ -30,8 +31,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	godotengine
 
 MAKE_ARGS+=		platform=x11 builtin_freetype=False \
-			builtin_libpng=False builtin_pcre2=False \
-			builtin_zlib=False verbose=True
+			builtin_libpng=False builtin_libvpx=False \
+			builtin_pcre2=False builtin_zlib=False verbose=True
 MAKE_ARGS+=		${MAKE_ARGS_${CHOSEN_COMPILER_TYPE}}
 MAKE_ARGS_clang=	use_llvm=True use_lld=True
 CXXFLAGS_i386=		${CXXFLAGS_i386_${CHOSEN_COMPILER_TYPE}}
@@ -82,14 +83,6 @@ PLIST_FILES=		bin/${GODOTFILE}
 .MAKEFLAGS:	WITH="${OPTIONS_DEFINE}" OPTIONS_EXCLUDE=
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != aarch64 && ${ARCH} != amd64 && ${ARCH} != i386 && ${ARCH} != armv6 && ${ARCH} != armv7
-# use system libvpx on archs that break with built-in
-LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
-MAKE_ARGS+=	builtin_libvpx=False
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|custom_build|${OPSYS}_Ports_build|' \
 		${WRKSRC}/methods.py
@@ -122,4 +115,4 @@ do-install-TOOLS-on:
 	${INSTALL_DATA} ${WRKSRC}/icon.svg \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${GODOTFILE}.svg
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
