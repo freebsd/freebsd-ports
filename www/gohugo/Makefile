@@ -1,6 +1,6 @@
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.87.0
+DISTVERSION=	0.88.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -38,11 +38,11 @@ GH_TUPLE=	\
 		disintegration:gift:v1.2.1:disintegration_gift/vendor/github.com/disintegration/gift \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
-		evanw:esbuild:v0.12.17:evanw_esbuild/vendor/github.com/evanw/esbuild \
+		evanw:esbuild:v0.12.24:evanw_esbuild/vendor/github.com/evanw/esbuild \
 		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
-		frankban:quicktest:v1.13.0:frankban_quicktest/vendor/github.com/frankban/quicktest \
+		frankban:quicktest:v1.13.1:frankban_quicktest/vendor/github.com/frankban/quicktest \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		getkin:kin-openapi:v0.68.0:getkin_kin_openapi/vendor/github.com/getkin/kin-openapi \
+		getkin:kin-openapi:v0.75.0:getkin_kin_openapi/vendor/github.com/getkin/kin-openapi \
 		ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
 		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-ini:ini:v1.62.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
@@ -65,7 +65,7 @@ GH_TUPLE=	\
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:0f9fa26af87c:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:tools:v0.1.5:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cloud:v0.20.0:google_go_cloud/vendor/gocloud.dev \
@@ -85,8 +85,8 @@ GH_TUPLE=	\
 		jdkato:prose:v1.2.1:jdkato_prose/vendor/github.com/jdkato/prose \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
-		kr:pretty:v0.2.1:kr_pretty/vendor/github.com/kr/pretty \
-		kr:text:v0.1.0:kr_text/vendor/github.com/kr/text \
+		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
+		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
 		kylelemons:godebug:v1.1.0:kylelemons_godebug/vendor/github.com/kylelemons/godebug \
 		kyokomi:emoji:v2.2.8:kyokomi_emoji_v2/vendor/github.com/kyokomi/emoji/v2 \
 		magefile:mage:v1.11.0:magefile_mage/vendor/github.com/magefile/mage \
@@ -113,7 +113,7 @@ GH_TUPLE=	\
 		sanity-io:litter:v1.5.1:sanity_io_litter/vendor/github.com/sanity-io/litter \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		spf13:afero:v1.6.0:spf13_afero/vendor/github.com/spf13/afero \
-		spf13:cast:v1.4.0:spf13_cast/vendor/github.com/spf13/cast \
+		spf13:cast:v1.4.1:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v1.2.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:fsync:v0.9.0:spf13_fsync/vendor/github.com/spf13/fsync \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
@@ -161,7 +161,8 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		b0c541e4
+# COMMIT_ID should be the first 8 positions of the commit hash, characters should be UPPERCASE
+COMMIT_ID=		ACC5EB5B
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
