@@ -61,7 +61,6 @@ libdata/pkgconfig/ibus-1.0.pc
 %%GTK3%%libexec/ibus-extension-gtk3
 %%GTK3%%libexec/ibus-ui-gtk3
 %%XIM%%libexec/ibus-x11
-%%GCONF%%libexec/ibus-gconf
 %%DCONF%%libexec/ibus-dconf
 %%ENGINE%%libexec/ibus-engine-simple
 libexec/ibus-portal
@@ -70,7 +69,7 @@ libexec/ibus-portal
 man/man1/ibus-daemon.1.gz
 man/man1/ibus-setup.1.gz
 man/man1/ibus.1.gz
-man/man5/ibus.5.gz
+%%DCONF%%man/man5/ibus.5.gz
 %%EMOJI%%man/man7/ibus-emoji.7.gz
 share/applications/org.freedesktop.IBus.Setup.desktop
 %%EMOJI%%share/applications/org.freedesktop.IBus.Panel.Emojier.desktop
@@ -79,7 +78,6 @@ share/dbus-1/services/org.freedesktop.IBus.service
 share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%GTK3%%%%DATADIR%%/component/gtkextension.xml
 %%GTK3%%%%DATADIR%%/component/gtkpanel.xml
-%%GCONF%%%%DATADIR%%/component/gconf.xml
 %%DCONF%%%%DATADIR%%/component/dconf.xml
 %%ENGINE%%%%DATADIR%%/component/simple.xml
 %%EMOJI%%%%DATADIR%%/dicts/emoji-af.dict

@@ -5,7 +5,7 @@ PORTVERSION=	1.5.24
 CATEGORIES=	textproc
 
 MAINTAINER=	henry.hu.sh@gmail.com
-COMMENT=	Intelligent Input Bus for Linux / Unix OS
+COMMENT=	Intelligent Input Bus for Unix-like systems
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -27,11 +27,7 @@ USE_GNOME=	glib20 intltool librsvg2 pygobject3
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
-
-
 SHEBANG_GLOB=	*.sh
-
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc	\
 		--with-ucd-dir=${LOCALBASE}/share/unicode/ucd \
@@ -40,18 +36,17 @@ CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc	\
 
 MAKE_JOBS_UNSAFE=yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+TEST_WRKSRC=	${WRKSRC}/src/tests
 
-OPTIONS_DEFINE=	ENGINE VALA GTK2 GTK3 GINTRO XIM EMOJI DOCS NLS WAYLAND
+OPTIONS_DEFINE=	ENGINE VALA GTK2 GTK3 GINTRO DCONF XIM EMOJI DOCS NLS WAYLAND
 OPTIONS_DEFAULT=	GTK2 GTK3 VALA GINTRO DCONF XIM ENGINE EMOJI
-OPTIONS_RADIO=	CONFIG
-OPTIONS_RADIO_CONFIG=	GCONF DCONF
 NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=	yes
 
 DCONF_DESC=	Use dconf for configuration
 EMOJI_DESC=	Install emoji dictionary
 ENGINE_DESC=	Install ibus simple engine
-GCONF_DESC=	Use GConf for configuration
 GINTRO_DESC=	Install GObject Introspection data
 GTK2_DESC=	Install GTK2 client
 GTK3_DESC=	Install GTK3 client and panel
@@ -70,9 +65,6 @@ EMOJI_CONFIGURE_ON=	--with-unicode-emoji-dir=${LOCALBASE}/share/unicode/emoji \
 			--with-emoji-annotation-dir=${LOCALBASE}/share/unicode/cldr/common/annotations
 EMOJI_CONFIGURE_ENABLE=	emoji-dict
 ENGINE_CONFIGURE_ENABLE=	engine
-GCONF_USE=		GNOME=gconf2
-GCONF_CONFIGURE_ENABLE=	gconf
-GCONF_VARS=		GCONF_SCHEMAS=ibus.schemas
 GINTRO_BUILD_DEPENDS=	gobject-introspection>=0.6.8:devel/gobject-introspection
 GINTRO_RUN_DEPENDS=	gobject-introspection>=0.6.8:devel/gobject-introspection
 GINTRO_CONFIGURE_ENABLE=	introspection
@@ -107,7 +99,7 @@ EMOJIONE_TAG=		ba845a7e24aac26cf3cf22abc19bea215d94fbf3 # 2.2.7
 USE_GCC=	yes
 .endif
 
-.if ${PORT_OPTIONS:MENGINE} || ${PORT_OPTIONS:MGTK3} || ${PORT_OPTIONS:MGCONF} || ${PORT_OPTIONS:MDCONF}
+.if ${PORT_OPTIONS:MENGINE} || ${PORT_OPTIONS:MGTK3} || ${PORT_OPTIONS:MDCONF}
 PLIST_SUB+=	COMPDIR=""
 .else
 PLIST_SUB+=	COMPDIR="@comment "
@@ -119,8 +111,5 @@ pre-configure:
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart
 	${INSTALL_DATA} ${PATCHDIR}/ibus.desktop ${STAGEDIR}${PREFIX}/etc/xdg/autostart
-
-do-test:
-	${MAKE} -C ${WRKSRC}/src/tests check
 
 .include <bsd.port.post.mk>

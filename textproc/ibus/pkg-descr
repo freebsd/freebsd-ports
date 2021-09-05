@@ -1,6 +1,6 @@
-Intelligent Input Bus for Linux / Unix OS, iBus, is the next generation input
-framework, developed by the developer of scim-python, includes all its
-function, and much more.
+Intelligent Input Bus for Unix-like systems, iBus, is the next generation
+input framework, developed by the developer of scim-python, includes all
+its function, and much more.
 
 This is the base port, you need input methods such as pinyin to input text.
 
