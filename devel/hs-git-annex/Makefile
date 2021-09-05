@@ -1,7 +1,7 @@
 # Created by: frase@frase.id.au
 
 PORTNAME=	git-annex
-PORTVERSION=	8.20210803
+PORTVERSION=	8.20210903
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -26,8 +26,8 @@ USE_CABAL=	DAV-1.3.4 \
 		QuickCheck-2.14_1 \
 		SafeSemaphore-0.10.1_1 \
 		StateVar-1.2 \
-	 	adjunctions-4.4_2 \
-		aeson-1.4.7.1_1 \
+		adjunctions-4.4_2 \
+		aeson-1.4.7.1_2 \
 		ansi-terminal-0.10.3 \
 		ansi-wl-pprint-0.6.9_2 \
 		asn1-encoding-0.9.6_2 \
@@ -35,13 +35,13 @@ USE_CABAL=	DAV-1.3.4 \
 		asn1-types-0.3.4 \
 		async-2.2.2_1 \
 		attoparsec-0.13.2.4_1 \
-		attoparsec-iso8601-1.0.1.0_1 \
+		attoparsec-iso8601-1.0.1.0_2 \
 		auto-update-0.1.6 \
 		aws-0.22 \
 		base-compat-0.11.1 \
 		base-compat-batteries-0.11.1 \
 		base-orphans-0.8.2 \
-		base16-bytestring-0.1.1.7 \
+		base16-bytestring-0.1.1.7_3 \
 		base64-bytestring-1.0.0.3_1 \
 		basement-0.0.11_3 \
 		bencode-0.6.1.1 \
@@ -93,8 +93,8 @@ USE_CABAL=	DAV-1.3.4 \
 		http-conduit-2.3.7.3_1 \
 		http-types-0.12.3 \
 		integer-logarithms-1.0.3_2 \
-		invariant-0.5.3_1 \
-		kan-extensions-5.2 \
+		invariant-0.5.3_2 \
+		kan-extensions-5.2.3 \
 		lens-4.19.1 \
 		lifted-base-0.2.3.12 \
 		magic-1.1 \
@@ -113,7 +113,7 @@ USE_CABAL=	DAV-1.3.4 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.3_2 \
 		optparse-applicative-0.15.1.0_1 \
-		parallel-3.2.2.0_2 \
+		parallel-3.2.2.0_3 \
 		path-pieces-0.2.1_1 \
 		pem-0.2.4 \
 		persistent-2.10.5.2 \
@@ -124,7 +124,7 @@ USE_CABAL=	DAV-1.3.4 \
 		random-1.1_1 \
 		reflection-2.1.5 \
 		regex-base-0.94.0.0_1 \
-		regex-tdfa-1.3.1.0_1 \
+		regex-tdfa-1.3.1.0_2 \
 		resource-pool-0.2.3.2 \
 		resourcet-1.2.4.1 \
 		safe-0.3.19 \
@@ -132,7 +132,7 @@ USE_CABAL=	DAV-1.3.4 \
 		scientific-0.3.6.2 \
 		securemem-0.1.10 \
 		semigroupoids-5.3.4_2 \
-		semigroups-0.19.1 \
+		semigroups-0.19.1_1 \
 		shakespeare-2.0.24 \
 		silently-1.2.5.1 \
 		socks-0.6.1 \
@@ -177,7 +177,7 @@ USE_CABAL=	DAV-1.3.4 \
 		x509-validation-1.6.11 \
 		xml-conduit-1.9.0.0 \
 		xml-hamlet-0.5.0.1 \
-		xml-types-0.3.7 \
+		xml-types-0.3.8 \
 		zlib-0.6.2.1_1
 
 OPTIONS_DEFINE=		ASSISTANT WEBAPP PAIRING DBUS
@@ -190,8 +190,7 @@ ASSISTANT_USE_CABAL=	mountpoints-1.0.2
 WEBAPP_DESC=		Web application (implies ASSISTANT, PAIRING and WEBDAV)
 WEBAPP_IMPLIES=		ASSISTANT PAIRING WEBDAV
 WEBAPP_CABAL_FLAGS=	webapp
-WEBAPP_USE_CABAL=	adjunctions-4.4_2 \
-			alex-3.2.5 \
+WEBAPP_USE_CABAL=	alex-3.2.5 \
 			appar-0.1.8 \
 			bsb-http-chunked-0.0.0.4_2 \
 			byteorder-1.0.4 \
@@ -208,12 +207,10 @@ WEBAPP_USE_CABAL=	adjunctions-4.4_2 \
 			hjsmin-0.2.0.4 \
 			http-date-0.0.8 \
 			http2-2.0.4 \
-			invariant-0.5.3_1 \
 			iproute-1.7.9 \
 			language-javascript-0.7.1.0 \
 			libyaml-0.1.2 \
 			network-byte-order-0.1.4.0 \
-			parallel-3.2.2.0_2 \
 			psqueues-0.2.7.2_1 \
 			setenv-0.1.1.3_1 \
 			simple-sendfile-0.2.30 \
@@ -228,7 +225,6 @@ WEBAPP_USE_CABAL=	adjunctions-4.4_2 \
 			warp-3.3.9 \
 			warp-tls-3.2.11 \
 			word8-0.1.3 \
-			xml-hamlet-0.5.0.1 \
 			xss-sanitize-0.3.6 \
 			yaml-0.11.3.0 \
 			yesod-1.6.0.1 \
@@ -243,15 +239,10 @@ PAIRING_USE_CABAL=	network-multicast-0.3.2
 
 DBUS_DESC=		D-Bus support
 DBUS_CABAL_FLAGS=	dbus
-DBUS_USE_CABAL=		adjunctions-4.4_2 \
-			dbus-1.2.15.1 \
+DBUS_USE_CABAL=		dbus-1.2.15.1 \
 			fdo-notify-0.3.1 \
-			invariant-0.5.3_1 \
-			kan-extensions-5.2 \
-			lens-4.19.1 \
-			parallel-3.2.2.0_2 \
+			kan-extensions-5.2.3 \
 			reflection-2.1.5 \
-			semigroups-0.19.1 \
 			void-0.7.3
 
 CABAL_FLAGS=		production torrentparser magicmime \
