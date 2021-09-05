@@ -1,3 +1,3 @@
-TIMESTAMP = 1587248778
-SHA256 (FreeBSDDesktop-libudev-devd-v0.4.2_GH0.tar.gz) = b6d9b694b49e0b1010fdd7ef03edd4832682dcd972751ada214f4042f9a7d1db
-SIZE (FreeBSDDesktop-libudev-devd-v0.4.2_GH0.tar.gz) = 17945
+TIMESTAMP = 1630762683
+SHA256 (wulf7-libudev-devd-v0.5.0_GH0.tar.gz) = ad66a4e8f082d793691286a57263ff57ee7f96ae920d9b26205ed0bd7c5bf1a6
+SIZE (wulf7-libudev-devd-v0.5.0_GH0.tar.gz) = 32648
