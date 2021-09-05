@@ -2,6 +2,7 @@
 
 PORTNAME=	fontconfig
 DISTVERSION=	2.13.94
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://www.freedesktop.org/software/fontconfig/release/
@@ -30,13 +31,14 @@ TEST_TARGET=	test
 FCDEFAULTFONTS=	${PREFIX}/share/fonts
 FCADDFONTS=	${LOCALBASE}/lib/X11/fonts
 
-# To avoid circular depdency docs (including manpages) needs to be disabled as
-# they depend on textproc/docbook-utils which requires fontconfig
+# To avoid circular dependency rebuild of docs (including manpages) needs to be
+# disabled as they depend on textproc/docbook-utils which requires fontconfig
 MESON_ARGS=	-Ddefault_library=both -Ddoc=disabled
 
 PLIST_SUB=	PREFERRED_HINTING=${PREFERRED_HINTING}
+PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt
 
-OPTIONS_DEFINE=	NLS BITMAPS TEST
+OPTIONS_DEFINE=	DOCS NLS BITMAPS TEST
 OPTIONS_DEFAULT=BITMAPS HINTING_SLIGHT
 OPTIONS_SUB=	yes
 
@@ -64,8 +66,15 @@ post-patch:
 	    ${PATCH_WRKSRC}/conf.d/meson.build
 
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/fc-*/*.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/*.3 ${STAGEDIR}${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/doc/*.5 ${STAGEDIR}${PREFIX}/man/man5
 	${MV} ${STAGEDIR}${PREFIX}/etc/fonts/fonts.conf ${STAGEDIR}${PREFIX}/etc/fonts/fonts.conf.sample
 	@${MKDIR} ${STAGEDIR}/var/db/fontconfig
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 post-install-BITMAPS-off:
 	${RLN} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail/70-no-bitmaps.conf ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/70-no-bitmaps.conf
