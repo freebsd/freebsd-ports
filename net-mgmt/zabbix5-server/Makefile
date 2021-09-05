@@ -1,7 +1,7 @@
 # Created by: Pakhom Golynga <pg@pakhom.spb.ru>
 
 PORTNAME=	zabbix5
-DISTVERSION=	5.0.14
+DISTVERSION=	5.0.15
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
@@ -148,18 +148,24 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#/tmp/zabbix_server.pid#/var/run/zabbix/zabbix_server.pid#g' \
 		${WRKSRC}/conf/zabbix_server.conf \
 		${WRKSRC}/src/zabbix_server/server.c
+	@${REINPLACE_CMD} -e 's#/tmp/zabbix_server.log#/var/log/zabbix/zabbix_server.log#g' \
+		${WRKSRC}/conf/zabbix_server.conf
 .endif
 
 .if ${ZABBIX_BUILD} == "proxy"
 	@${REINPLACE_CMD} -e 's#/tmp/zabbix_proxy.pid#/var/run/zabbix/zabbix_proxy.pid#g' \
 		${WRKSRC}/conf/zabbix_proxy.conf \
 		${WRKSRC}/src/zabbix_proxy/proxy.c
+	@${REINPLACE_CMD} -e 's#/tmp/zabbix_proxy.log#/var/log/zabbix/zabbix_proxy.log#g' \
+		${WRKSRC}/conf/zabbix_proxy.conf
 .endif
 
 .if ${ZABBIX_BUILD} == "agent"
 	@${REINPLACE_CMD} -e 's#/tmp/zabbix_agentd.pid#/var/run/zabbix/zabbix_agentd.pid#g' \
 		${WRKSRC}/conf/zabbix_agentd.conf \
 		${WRKSRC}/src/zabbix_agent/zabbix_agentd.c
+	@${REINPLACE_CMD} -e 's#/tmp/zabbix_agentd.log#/var/log/zabbix/zabbix_agentd.log#g' \
+		${WRKSRC}/conf/zabbix_agentd.conf
 .endif
 
 .if ${ZABBIX_BUILD} == "java"

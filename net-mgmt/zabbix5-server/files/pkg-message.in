@@ -1,6 +1,9 @@
 [
 { type: install
   message: <<EOM
+Log files are now under /var/log/zabbix directory instead of /tmp as it was
+previously.
+
 For Zabbix server and proxy daemons, as well as Zabbix frontend, a database is
 required. It is not needed to run Zabbix agent.
 
