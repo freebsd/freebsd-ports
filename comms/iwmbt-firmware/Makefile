@@ -2,7 +2,7 @@
 
 PORTNAME=	iwmbt-firmware
 PORTVERSION=	20210315
-DEB_REVISION=	2
+DEB_REVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	DEBIAN/pool/non-free/f/firmware-nonfree/
 DISTNAME=	firmware-iwlwifi_${PORTVERSION}-${DEB_REVISION}_all
