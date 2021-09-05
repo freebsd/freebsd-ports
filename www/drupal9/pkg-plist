@@ -65,7 +65,6 @@
 %%WWWDIR%%/core/assets/vendor/backbone/backbone.js
 %%WWWDIR%%/core/assets/vendor/ckeditor/CHANGES.md
 %%WWWDIR%%/core/assets/vendor/ckeditor/LICENSE.md
-%%WWWDIR%%/core/assets/vendor/ckeditor/bender-runner.config.json
 %%WWWDIR%%/core/assets/vendor/ckeditor/build-config.js
 %%WWWDIR%%/core/assets/vendor/ckeditor/ckeditor.js
 %%WWWDIR%%/core/assets/vendor/ckeditor/lang/_translationstatus.txt
@@ -4500,7 +4499,6 @@
 %%WWWDIR%%/core/modules/editor/tests/src/Functional/Hal/EditorHalJsonAnonTest.php
 %%WWWDIR%%/core/modules/editor/tests/src/Functional/Hal/EditorHalJsonBasicAuthTest.php
 %%WWWDIR%%/core/modules/editor/tests/src/Functional/Hal/EditorHalJsonCookieTest.php
-%%WWWDIR%%/core/modules/editor/tests/src/Functional/QuickEditIntegrationLoadingTest.php
 %%WWWDIR%%/core/modules/editor/tests/src/Functional/Rest/EditorJsonAnonTest.php
 %%WWWDIR%%/core/modules/editor/tests/src/Functional/Rest/EditorJsonBasicAuthTest.php
 %%WWWDIR%%/core/modules/editor/tests/src/Functional/Rest/EditorJsonCookieTest.php
@@ -4514,7 +4512,6 @@
 %%WWWDIR%%/core/modules/editor/tests/src/Kernel/EditorFilterIntegrationTest.php
 %%WWWDIR%%/core/modules/editor/tests/src/Kernel/EditorImageDialogTest.php
 %%WWWDIR%%/core/modules/editor/tests/src/Kernel/EditorManagerTest.php
-%%WWWDIR%%/core/modules/editor/tests/src/Kernel/QuickEditIntegrationTest.php
 %%WWWDIR%%/core/modules/editor/tests/src/Unit/EditorConfigEntityUnitTest.php
 %%WWWDIR%%/core/modules/editor/tests/src/Unit/EditorXssFilter/StandardTest.php
 %%WWWDIR%%/core/modules/entity_reference/entity_reference.info.yml
@@ -5629,7 +5626,6 @@
 %%WWWDIR%%/core/modules/image/tests/src/Functional/ImageStyleDeleteTest.php
 %%WWWDIR%%/core/modules/image/tests/src/Functional/ImageStyleFlushTest.php
 %%WWWDIR%%/core/modules/image/tests/src/Functional/ImageStylesPathAndUrlTest.php
-%%WWWDIR%%/core/modules/image/tests/src/Functional/QuickEditImageControllerTest.php
 %%WWWDIR%%/core/modules/image/tests/src/Functional/Rest/ImageStyleJsonAnonTest.php
 %%WWWDIR%%/core/modules/image/tests/src/Functional/Rest/ImageStyleJsonBasicAuthTest.php
 %%WWWDIR%%/core/modules/image/tests/src/Functional/Rest/ImageStyleJsonCookieTest.php
@@ -5641,8 +5637,6 @@
 %%WWWDIR%%/core/modules/image/tests/src/FunctionalJavascript/ImageFieldTestBase.php
 %%WWWDIR%%/core/modules/image/tests/src/FunctionalJavascript/ImageFieldValidateTest.php
 %%WWWDIR%%/core/modules/image/tests/src/FunctionalJavascript/ImageFieldWidgetMultipleTest.php
-%%WWWDIR%%/core/modules/image/tests/src/FunctionalJavascript/QuickEditImageEditorTestTrait.php
-%%WWWDIR%%/core/modules/image/tests/src/FunctionalJavascript/QuickEditImageTest.php
 %%WWWDIR%%/core/modules/image/tests/src/Kernel/ImageEffectsTest.php
 %%WWWDIR%%/core/modules/image/tests/src/Kernel/ImageFieldCreationTrait.php
 %%WWWDIR%%/core/modules/image/tests/src/Kernel/ImageFormatterTest.php
@@ -5668,7 +5662,6 @@
 %%WWWDIR%%/core/modules/inline_form_errors/src/RenderElementHelper.php
 %%WWWDIR%%/core/modules/inline_form_errors/tests/src/Functional/FormErrorHandlerFileUploadTest.php
 %%WWWDIR%%/core/modules/inline_form_errors/tests/src/FunctionalJavascript/FormErrorHandlerCKEditorTest.php
-%%WWWDIR%%/core/modules/inline_form_errors/tests/src/FunctionalJavascript/FormErrorHandlerQuickEditTest.php
 %%WWWDIR%%/core/modules/inline_form_errors/tests/src/Kernel/FormElementInlineErrorTest.php
 %%WWWDIR%%/core/modules/inline_form_errors/tests/src/Unit/FormErrorHandlerTest.php
 %%WWWDIR%%/core/modules/jsonapi/config/install/jsonapi.settings.yml
@@ -6251,7 +6244,6 @@
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Functional/LayoutBuilderAccessTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Functional/LayoutBuilderFieldBlockEntityReferenceCacheTagsTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Functional/LayoutBuilderPrepareLayoutTest.php
-%%WWWDIR%%/core/modules/layout_builder/tests/src/Functional/LayoutBuilderQuickEditTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Functional/LayoutBuilderSectionStorageTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Functional/LayoutBuilderTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Functional/LayoutBuilderThemeSuggestionsTest.php
@@ -6281,7 +6273,6 @@
 %%WWWDIR%%/core/modules/layout_builder/tests/src/FunctionalJavascript/LayoutBuilderDisableInteractionsTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/FunctionalJavascript/LayoutBuilderNestedFormUiTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/FunctionalJavascript/LayoutBuilderOptInTest.php
-%%WWWDIR%%/core/modules/layout_builder/tests/src/FunctionalJavascript/LayoutBuilderQuickEditTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/FunctionalJavascript/LayoutBuilderSortTrait.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/FunctionalJavascript/LayoutBuilderTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/FunctionalJavascript/LayoutBuilderToolbarTest.php
@@ -6713,6 +6704,7 @@
 %%WWWDIR%%/core/modules/media/tests/src/Kernel/Views/RevisionUserTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Traits/MediaTypeCreationTrait.php
 %%WWWDIR%%/core/modules/media/tests/src/Traits/OEmbedTestTrait.php
+%%WWWDIR%%/core/modules/media/tests/src/Unit/EndpointTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Unit/IFrameUrlHelperTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Unit/ResourceFetcherTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Unit/ResourceTest.php
@@ -7915,16 +7907,26 @@
 %%WWWDIR%%/core/modules/quickedit/tests/modules/quickedit_test.module
 %%WWWDIR%%/core/modules/quickedit/tests/modules/src/MockQuickEditEntityFieldAccessCheck.php
 %%WWWDIR%%/core/modules/quickedit/tests/modules/src/Plugin/InPlaceEditor/WysiwygEditor.php
+%%WWWDIR%%/core/modules/quickedit/tests/src/Functional/EditorIntegrationLoadingTest.php
+%%WWWDIR%%/core/modules/quickedit/tests/src/Functional/LayoutBuilderQuickEditTest.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/Functional/QuickEditCustomPipelineTest.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/Functional/QuickEditEndPointAccessTest.php
+%%WWWDIR%%/core/modules/quickedit/tests/src/Functional/QuickEditImageControllerTest.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/Functional/QuickEditMinimalTest.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/FieldTest.php
+%%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/InlineFormErrorsIntegrationTest.php
+%%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/LayoutBuilderQuickEditTest.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/QuickEditAutocompleteTermTest.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/QuickEditFileTest.php
+%%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/QuickEditImageEditorTestTrait.php
+%%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/QuickEditImageTest.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/QuickEditIntegrationTest.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/QuickEditJavascriptTestBase.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/QuickEditLoadingTest.php
+%%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/SettingsTrayIntegrationTest.php
+%%WWWDIR%%/core/modules/quickedit/tests/src/Kernel/EditorIntegrationTest.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/Kernel/EditorSelectionTest.php
+%%WWWDIR%%/core/modules/quickedit/tests/src/Kernel/MediaEmbedFilterDisabledIntegrationsTest.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/Kernel/MetadataGeneratorTest.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/Kernel/QuickEditLoadingTest.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/Kernel/QuickEditTestBase.php
@@ -8369,7 +8371,6 @@
 %%WWWDIR%%/core/modules/settings_tray/tests/src/Functional/SettingsTrayTest.php
 %%WWWDIR%%/core/modules/settings_tray/tests/src/FunctionalJavascript/ConfigAccessTest.php
 %%WWWDIR%%/core/modules/settings_tray/tests/src/FunctionalJavascript/OverriddenConfigurationTest.php
-%%WWWDIR%%/core/modules/settings_tray/tests/src/FunctionalJavascript/QuickEditIntegrationTest.php
 %%WWWDIR%%/core/modules/settings_tray/tests/src/FunctionalJavascript/SettingsTrayBlockFormTest.php
 %%WWWDIR%%/core/modules/settings_tray/tests/src/FunctionalJavascript/SettingsTrayTestBase.php
 %%WWWDIR%%/core/modules/settings_tray/tests/src/Unit/Access/BlockPluginHasSettingsTrayFormAccessCheckTest.php
@@ -13189,6 +13190,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Database/SelectSubqueryTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Database/SelectTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Database/SerializeQueryTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Database/SqlModeTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Database/StatementTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Database/StatementWrapperLegacyTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Database/TaggingTest.php
