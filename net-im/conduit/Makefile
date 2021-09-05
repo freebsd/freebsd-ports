@@ -2,6 +2,7 @@ PORTNAME=	conduit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
 CATEGORIES=	net-im
+PKGNAMEPREFIX=	matrix-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Simple, fast and reliable chat server powered by Matrix
