@@ -48,7 +48,8 @@
 %%WWWDIR%%/app/controllers/CControllerFavouriteDelete.php
 %%WWWDIR%%/app/controllers/CControllerGuiEdit.php
 %%WWWDIR%%/app/controllers/CControllerGuiUpdate.php
-%%WWWDIR%%/app/controllers/CControllerHintBox.php
+%%WWWDIR%%/app/controllers/CControllerHintboxActionlist.php
+%%WWWDIR%%/app/controllers/CControllerHintboxEventlist.php
 %%WWWDIR%%/app/controllers/CControllerHost.php
 %%WWWDIR%%/app/controllers/CControllerHostDashboardView.php
 %%WWWDIR%%/app/controllers/CControllerHostMacrosList.php
@@ -316,7 +317,8 @@
 %%WWWDIR%%/app/views/dashboard.page.properties.edit.php
 %%WWWDIR%%/app/views/dashboard.properties.edit.php
 %%WWWDIR%%/app/views/dashboard.share.edit.php
-%%WWWDIR%%/app/views/hint.box.php
+%%WWWDIR%%/app/views/hintbox.actionlist.php
+%%WWWDIR%%/app/views/hintbox.eventlist.php
 %%WWWDIR%%/app/views/hostmacros.list.php
 %%WWWDIR%%/app/views/js/administration.authentication.edit.js.php
 %%WWWDIR%%/app/views/js/administration.autoreg.edit.js.php
