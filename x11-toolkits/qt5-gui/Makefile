@@ -1,6 +1,6 @@
 PORTNAME=	gui
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits graphics
 PKGNAMEPREFIX=	qt5-
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libinput.so:x11/libinput \
+		libmtdev.so:devel/libmtdev \
 		libpng.so:graphics/png \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-image.so:x11/xcb-util-image \
