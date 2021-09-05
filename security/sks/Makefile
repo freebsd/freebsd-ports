@@ -33,6 +33,8 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC=/d; /^CFLAGS=/s/=/+=/' ${WRKSRC}/bdb/Makefile
+	@${REINPLACE_CMD} -E '/^\+OCAML(C|OPT)=/s,$$, -unsafe-string,' \
+		${WRKSRC}/cryptokit-1.7-sks.patch
 
 pre-build:
 	@cd ${WRKSRC} && test -f .depend || ${MAKE_CMD} dep

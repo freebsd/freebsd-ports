@@ -1,6 +1,6 @@
---- Makefile.orig	2019-06-06 15:28:32 UTC
+--- Makefile.orig	2021-09-05 17:11:36 UTC
 +++ Makefile
-@@ -15,9 +15,8 @@
+@@ -15,16 +15,15 @@
  #   USA
  #
  CINCLUDES=-I`ocamlc -where`
@@ -11,6 +11,14 @@
  CXXFLAGS=-O3 $(CINCLUDES) -I .
  
  ifndef OCAMLC
+ 	OCAMLC=ocamlc
+ endif
+ ifndef OCAMLOPT
+-	OCAMLOPT=ocamlopt
++	OCAMLOPT=ocamlopt -unsafe-string
+ endif
+ ifndef CAMLP4O
+ 	CAMLP4O=camlp4o
 @@ -135,16 +134,16 @@ keyMerge.cmx: keyMerge.ml
  # Special targets
  
