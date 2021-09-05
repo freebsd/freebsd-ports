@@ -1,6 +1,6 @@
 PORTNAME=	indiwebmanagerapp
 DISTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 
 MAINTAINER=	acm@FreeBSD.org
@@ -20,5 +20,11 @@ USE_QT=		buildtools concurrent core dbus gui qmake_build network widgets \
 USE_GITHUB=	yes
 GH_ACCOUNT=	rlancaste
 GH_PROJECT=	INDIWebManagerApp
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e \
+		's|python3|${PYTHON_VERSION}|g' ${WRKSRC}/src/mainwindow.cpp
+	${REINPLACE_CMD} -e 's|On Linux|On Linux\/FreeBSD|g' \
+		${WRKSRC}/src/opsconfiguration.cpp
 
 .include <bsd.port.mk>
