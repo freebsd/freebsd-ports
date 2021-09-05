@@ -153,5 +153,5 @@ lib/cmake/StellarSolver/StellarSolverConfig.cmake
 lib/cmake/StellarSolver/StellarSolverConfigVersion.cmake
 lib/libstellarsolver.so
 lib/libstellarsolver.so.1
-lib/libstellarsolver.so.1.5
+lib/libstellarsolver.so.1.8
 libdata/pkgconfig/stellarsolver.pc
