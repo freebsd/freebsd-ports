@@ -100,6 +100,7 @@ cbsd/etc/defaults/rctl-litejail.conf
 cbsd/etc/defaults/rsyncd.conf
 cbsd/etc/defaults/spice.conf
 cbsd/etc/defaults/src-lite.conf
+cbsd/etc/defaults/src-make-DragonFly.conf
 cbsd/etc/defaults/src-make-FreeBSD.conf
 cbsd/etc/defaults/src-make-HardenedBSD.conf
 cbsd/etc/defaults/src-pxe.conf
@@ -124,6 +125,8 @@ cbsd/etc/defaults/vm-freebsd-HardenedBSD-x64-14.0-LATEST.conf
 cbsd/etc/defaults/vm-freebsd-OPNsense-21-RELEASE-amd64.conf
 cbsd/etc/defaults/vm-freebsd-TrueNAS-x64-12.conf
 cbsd/etc/defaults/vm-freebsd-XigmaNAS-12.conf
+cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ghrunner-ufs-x64-13.0.conf
+cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ghrunner-zfs-x64-13.0.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-12.2.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-13.0.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-12.2.conf
@@ -145,6 +148,7 @@ cbsd/etc/defaults/vm-linux-Kali-2021-amd64.conf
 cbsd/etc/defaults/vm-linux-OracleLinux-7.conf
 cbsd/etc/defaults/vm-linux-OracleLinux-8.conf
 cbsd/etc/defaults/vm-linux-Parrot-security-4-x64.conf
+cbsd/etc/defaults/vm-linux-Rocky-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-TinyCore-x86-12.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-stream-8-x86_64.conf
@@ -152,6 +156,7 @@ cbsd/etc/defaults/vm-linux-cloud-Debian-x86-10.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-11.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-9.conf
 cbsd/etc/defaults/vm-linux-cloud-kubernetes-20.conf
+cbsd/etc/defaults/vm-linux-cloud-Rocky-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-20.04.conf
 cbsd/etc/defaults/vm-linux-fedora-server-33-x86_64.conf
 cbsd/etc/defaults/vm-linux-fedora-server-34-x86_64.conf
@@ -307,6 +312,7 @@ cbsd/misc/dump_iscsi_discovery
 cbsd/misc/elf_tables
 cbsd/misc/fmagic
 cbsd/misc/ipv6range
+cbsd/misc/mtree
 cbsd/misc/next-vale-port
 cbsd/misc/nics-list
 %%X86%%cbsd/misc/popcnttest
@@ -401,6 +407,7 @@ cbsd/rc.d/cbsdrsyncd
 cbsd/rc.d/jails-astart
 cbsd/README.DragonflyBSD.md
 cbsd/README.HardenedBSD.md
+cbsd/README.OpenBSD.md
 cbsd/README.md
 cbsd/release/generate-release.sh
 cbsd/release/install.sh
@@ -758,6 +765,7 @@ cbsd/subr/time.subr
 cbsd/subr/tools.subr
 cbsd/subr/TrueOS.subr
 cbsd/subr/universe.subr
+cbsd/subr/upgrade.subr
 cbsd/subr/virtual.subr
 cbsd/subr/virtualbox.subr
 cbsd/subr/vnet.subr
@@ -969,6 +977,12 @@ cbsd/upgrade/patch/bhyve-vesa-fb-13.0/patch-13x-usr.sbin-bhyve-pci_fbuf.c
 cbsd/upgrade/patch/efi.fd
 cbsd/upgrade/patch/efirefd.fd
 cbsd/upgrade/patch/efirefn.fd
+cbsd/upgrade/patch/iov-13.0/README.md
+cbsd/upgrade/patch/iov-13.0/patch-usr-sbin-bhyve-block_if.h
+cbsd/upgrade/patch/iov-13.0/patch-usr-sbin-bhyve-virtio.c
+cbsd/upgrade/patch/iov-14.0/README.md
+cbsd/upgrade/patch/iov-14.0/patch-usr-sbin-bhyve-block_if.h
+cbsd/upgrade/patch/iov-14.0/patch-usr-sbin-bhyve-virtio.c
 cbsd/upgrade/patch/kmem-10.2/patch-11x-sys-dev-drm-drmP.h
 cbsd/upgrade/patch/kmem-10.2/patch-11x-sys-dev-drm2-drm_os_freebsd.h
 cbsd/upgrade/patch/kmem-10.2/patch-11x-sys-kern-kern_jail.c
