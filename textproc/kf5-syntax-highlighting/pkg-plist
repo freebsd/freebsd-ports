@@ -8,6 +8,7 @@ include/KF5/KSyntaxHighlighting/Repository
 include/KF5/KSyntaxHighlighting/State
 include/KF5/KSyntaxHighlighting/SyntaxHighlighter
 include/KF5/KSyntaxHighlighting/Theme
+include/KF5/KSyntaxHighlighting/WildcardMatcher
 include/KF5/KSyntaxHighlighting/abstracthighlighter.h
 include/KF5/KSyntaxHighlighting/definition.h
 include/KF5/KSyntaxHighlighting/definitiondownloader.h
@@ -18,6 +19,7 @@ include/KF5/KSyntaxHighlighting/repository.h
 include/KF5/KSyntaxHighlighting/state.h
 include/KF5/KSyntaxHighlighting/syntaxhighlighter.h
 include/KF5/KSyntaxHighlighting/theme.h
+include/KF5/KSyntaxHighlighting/wildcardmatcher.h
 include/KF5/ksyntaxhighlighting_version.h
 lib/cmake/KF5SyntaxHighlighting/KF5SyntaxHighlightingConfig.cmake
 lib/cmake/KF5SyntaxHighlighting/KF5SyntaxHighlightingConfigVersion.cmake

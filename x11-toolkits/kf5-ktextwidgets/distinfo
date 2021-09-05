@@ -1,3 +1,3 @@
-TIMESTAMP = 1628252809
-SHA256 (KDE/frameworks/5.85.0/ktextwidgets-5.85.0.tar.xz) = fe1bac3c4a68bb97e8f0f003a6d59f0477012be5fd8ba13f885868e015931289
-SIZE (KDE/frameworks/5.85.0/ktextwidgets-5.85.0.tar.xz) = 326548
+TIMESTAMP = 1630824711
+SHA256 (KDE/frameworks/5.86.0/ktextwidgets-5.86.0.tar.xz) = d61fbad6bf7ce7890d94ba15d4ae257f4af4a8465f8ce78c6ffb787827c1bcc1
+SIZE (KDE/frameworks/5.86.0/ktextwidgets-5.86.0.tar.xz) = 326588

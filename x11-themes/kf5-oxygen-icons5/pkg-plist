@@ -1390,6 +1390,8 @@ share/icons/oxygen/base/16x16/actions/meeting-participant-request-response.png
 share/icons/oxygen/base/16x16/actions/milestone.png
 share/icons/oxygen/base/16x16/actions/network-connect.png
 share/icons/oxygen/base/16x16/actions/network-disconnect.png
+share/icons/oxygen/base/16x16/actions/new-audio-alarm.png
+share/icons/oxygen/base/16x16/actions/new-command-alarm.png
 share/icons/oxygen/base/16x16/actions/news-subscribe.png
 share/icons/oxygen/base/16x16/actions/news-unsubscribe.png
 share/icons/oxygen/base/16x16/actions/node-add.png
@@ -3040,6 +3042,8 @@ share/icons/oxygen/base/22x22/actions/irc-operator.png
 share/icons/oxygen/base/22x22/actions/irc-remove-operator.png
 share/icons/oxygen/base/22x22/actions/irc-unvoice.png
 share/icons/oxygen/base/22x22/actions/irc-voice.png
+share/icons/oxygen/base/22x22/actions/kalarm-disabled.png
+share/icons/oxygen/base/22x22/actions/kalarm-partdisabled.png
 share/icons/oxygen/base/22x22/actions/kdenlive-add-slide-clip.png
 share/icons/oxygen/base/22x22/actions/kdenlive-align-bottom.png
 share/icons/oxygen/base/22x22/actions/kdenlive-align-hor.png
@@ -3183,6 +3187,8 @@ share/icons/oxygen/base/22x22/actions/mixer-surround.png
 share/icons/oxygen/base/22x22/actions/mixer-video.png
 share/icons/oxygen/base/22x22/actions/network-connect.png
 share/icons/oxygen/base/22x22/actions/network-disconnect.png
+share/icons/oxygen/base/22x22/actions/new-audio-alarm.png
+share/icons/oxygen/base/22x22/actions/new-command-alarm.png
 share/icons/oxygen/base/22x22/actions/news-subscribe.png
 share/icons/oxygen/base/22x22/actions/news-unsubscribe.png
 share/icons/oxygen/base/22x22/actions/node-add.png
