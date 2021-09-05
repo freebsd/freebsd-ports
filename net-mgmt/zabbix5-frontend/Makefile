@@ -6,24 +6,23 @@ PKGNAMESUFFIX=	-frontend
 
 MASTERDIR=	${.CURDIR}/../zabbix5-server
 
-NO_BUILD=	yes
-NO_ARCH=	yes
+USES+=		php:web
+USE_PHP=	bcmath ctype dom fileinfo filter gd gettext hash json ldap \
+		mbstring pcre session simplexml snmp sockets xml xmlreader \
+		xmlwriter
+
 PATCHDIR=
+NO_ARCH=	yes
+NO_BUILD=	yes
 PLIST=		${PKGDIR}/pkg-plist.frontend
 
-USE_PHP=	bcmath ctype dom fileinfo filter gd gettext hash json ldap mbstring \
-		pcre session simplexml snmp sockets xml xmlreader xmlwriter
-USES+=		php:web
-
-OPTIONS_DEFINE=		MYSQLI PGSQL ORACLE
+OPTIONS_DEFINE=		MYSQLI ORACLE PGSQL
 OPTIONS_DEFAULT=	MYSQLI
 MYSQLI_DESC=		MySQLI backend
 
-MYSQLI_USE=	PHP=mysqli
-
-PGSQL_USE=	PHP=pgsql
-
+MYSQLI_USE=		PHP=mysqli
 ORACLE_CONFIGURE_WITH=	oracle
+PGSQL_USE=		PHP=pgsql
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
