@@ -7,6 +7,8 @@ lib/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfigVersion.cmake
 %%DATADIR%%/fake-input.xml
 %%DATADIR%%/fullscreen-shell.xml
 %%DATADIR%%/idle.xml
+%%DATADIR%%/kde-output-device-v2.xml
+%%DATADIR%%/kde-output-management-v2.xml
 %%DATADIR%%/keystate.xml
 %%DATADIR%%/output-management.xml
 %%DATADIR%%/outputdevice.xml
