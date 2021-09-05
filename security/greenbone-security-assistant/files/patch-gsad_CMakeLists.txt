@@ -1,30 +1,31 @@
---- gsad/CMakeLists.txt	2020-08-11 10:23:07.000000000 -0500
-+++ gsad/CMakeLists.txt	2021-01-05 18:03:53.919183000 -0500
-@@ -86,7 +86,7 @@
+--- gsad/CMakeLists.txt	2021-08-03 07:18:37.000000000 -0500
++++ gsad/CMakeLists.txt	2021-09-04 19:24:39.154779000 -0500
+@@ -96,7 +96,7 @@
  set (GSAD_CONFIG_DIR "${SYSCONFDIR}/gvm/")
  
- if (NOT GSAD_PID_DIR)
--  set (GSAD_PID_DIR "${LOCALSTATEDIR}/run")
-+  set (GSAD_PID_DIR "${LOCALSTATEDIR}/run/gvm")
- endif (NOT GSAD_PID_DIR)
- 
  if (NOT GVM_RUN_DIR)
-@@ -124,15 +124,14 @@
+-  set (GVM_RUN_DIR  "/run/gvm")
++  set (GVM_RUN_DIR  "${LOCALSTATEDIR}/run/gvm")
+ endif (NOT GVM_RUN_DIR)
+ 
+ if (NOT GSAD_PID_DIR)
+@@ -135,15 +135,15 @@
  endif (NOT GVM_CA_CERTIFICATE)
  
  
 -configure_file (src/gsad_log_conf.cmake_in src/gsad_log.conf)
-+#configure_file (src/gsad_log_conf.cmake_in src/gsad_log.conf.sample)
++#configure_file (src/gsad_log_conf.cmake_in src/gsad_log.conf)
  
  ## Install
  
 -install (FILES ${CMAKE_CURRENT_BINARY_DIR}/src/gsad_log.conf
 -         DESTINATION ${GSAD_CONFIG_DIR})
-+#install (FILES ${CMAKE_CURRENT_BINARY_DIR}/src/gsad_log.conf.sample
++#install (FILES ${CMAKE_CURRENT_BINARY_DIR}/src/gsad_log.conf
 +#         DESTINATION ${GSAD_CONFIG_DIR})
  
  add_subdirectory (src)
 -add_subdirectory (config)
++#add_subdirectory (config)
  
  add_subdirectory (doc)
  
