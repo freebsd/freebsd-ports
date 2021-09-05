@@ -1,4 +1,5 @@
 include/symengine/add.h
+include/symengine/assumptions.h
 include/symengine/basic-inl.h
 include/symengine/basic-methods.inc
 include/symengine/basic.h
@@ -32,10 +33,12 @@ include/symengine/mp_wrapper.h
 include/symengine/mul.h
 include/symengine/nan.h
 include/symengine/ntheory.h
+include/symengine/ntheory_funcs.h
 include/symengine/number.h
 include/symengine/parser.h
 include/symengine/parser/parser.h
-include/symengine/parser/parser_stype.h
+include/symengine/parser/sbml/sbml_parser.h
+include/symengine/parser/sbml/sbml_tokenizer.h
 include/symengine/parser/tokenizer.h
 include/symengine/polys/basic_conversions.h
 include/symengine/polys/cancel.h
@@ -48,14 +51,18 @@ include/symengine/polys/upolybase.h
 include/symengine/polys/uratpoly.h
 include/symengine/polys/usymenginepoly.h
 include/symengine/pow.h
+include/symengine/prime_sieve.h
 include/symengine/printers.h
 include/symengine/printers/codegen.h
 include/symengine/printers/latex.h
 include/symengine/printers/mathml.h
+include/symengine/printers/sbml.h
 include/symengine/printers/strprinter.h
+include/symengine/printers/unicode.h
 include/symengine/rational.h
 include/symengine/real_double.h
 include/symengine/real_mpfr.h
+include/symengine/refine.h
 include/symengine/rings.h
 include/symengine/series.h
 include/symengine/series_flint.h
@@ -81,5 +88,5 @@ lib/cmake/symengine/SymEngineConfigVersion.cmake
 lib/cmake/symengine/SymEngineTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/symengine/SymEngineTargets.cmake
 lib/libsymengine.so
-lib/libsymengine.so.0.7
-lib/libsymengine.so.0.7.0
+lib/libsymengine.so.0.8
+lib/libsymengine.so.0.8.0
