@@ -1,5 +1,3 @@
 TIMESTAMP = 1630704333
 SHA256 (NVIDIA-egl-wayland-1.1.8_GH0.tar.gz) = 12bee9accf121987b0f0d6fb1a4e3b1fc5855b116c50d8d9e035edd02c82f88c
 SIZE (NVIDIA-egl-wayland-1.1.8_GH0.tar.gz) = 53776
-SHA256 (KhronosGroup-EGL-Registry-745e9ad_GH0.tar.gz) = 062ee7f4e30a867c6d6657bfe8b605536a176c8856136dfb26c9b96f326aeb07
-SIZE (KhronosGroup-EGL-Registry-745e9ad_GH0.tar.gz) = 3359483

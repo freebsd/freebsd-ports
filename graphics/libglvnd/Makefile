@@ -1,5 +1,5 @@
 PORTNAME=	libglvnd
-DISTVERSION=	1.3.3
+DISTVERSION=	1.3.4
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,7 +14,7 @@ USE_LDCONFIG=	yes
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	glvnd
-GL_COMMIT=	0f0d49f0f3707f26f68bc44f4cd83144f5f4de86
+GL_COMMIT=	dc084876b411366c3785b7584c216356169bb45e
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
@@ -35,7 +35,5 @@ USES+=		compiler:c++11-lib
 # Lots of software expects gl.pc even when it can build with EGL only
 post-install-X11-off:
 	${LN} -s opengl.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/gl.pc
-	${REINPLACE_CMD} -e '/Cflags:/s/$$/ -DEGL_NO_X11/' \
-		${STAGEDIR}${PREFIX}/libdata/pkgconfig/egl.pc
 
 .include <bsd.port.mk>

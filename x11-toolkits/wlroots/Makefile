@@ -1,5 +1,6 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.14.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
