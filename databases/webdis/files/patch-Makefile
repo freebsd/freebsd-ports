@@ -1,13 +1,13 @@
---- Makefile.orig	2019-09-30 09:33:34 UTC
+--- Makefile.orig	2021-09-05 02:05:39 UTC
 +++ Makefile
-@@ -5,8 +5,8 @@ B64_OBJS?=b64/cencode.o
- FORMAT_OBJS?=formats/json.o formats/raw.o formats/common.o formats/custom-type.o
- HTTP_PARSER_OBJS?=http-parser/http_parser.o
+@@ -5,8 +5,8 @@ B64_OBJS?=src/b64/cencode.o
+ FORMAT_OBJS?=src/formats/json.o src/formats/raw.o src/formats/common.o src/formats/custom-type.o
+ HTTP_PARSER_OBJS?=src/http-parser/http_parser.o
  
--CFLAGS ?= -O3 -Wall -Wextra -Isrc -Isrc/jansson/src -Isrc/http-parser -MD
+-CFLAGS ?= -Wall -Wextra -Isrc -Isrc/jansson/src -Isrc/http-parser -MD
 -LDFLAGS ?= -levent -pthread
 +CFLAGS += -Isrc -Isrc/jansson/src -Isrc/http-parser -MD -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/event2
 +LDFLAGS += -levent -pthread -L%%LOCALBASE%%/lib
-
- # check for MessagePack
- MSGPACK_LIB=$(shell ls /usr/lib/libmsgpack.so 2>/dev/null)
+ 
+ # Pass preprocessor macros to the compile invocation
+ CFLAGS += $(CPPFLAGS)
