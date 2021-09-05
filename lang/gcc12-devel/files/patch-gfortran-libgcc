@@ -57,12 +57,12 @@ anything wrong.)
      {
        unsigned int i;
 
---- libgfortran/Makefile.in.orig	2019-02-22 14:22:13.000000000 +0000
-+++ libgfortran/Makefile.in	2019-02-27 16:27:08.856408000 +0000
-@@ -625,7 +625,7 @@
+--- libgfortran/Makefile.in.orig
++++ libgfortran/Makefile.in
+@@ -736,7 +736,7 @@
  	$(LTLDFLAGS) $(LIBQUADLIB) ../libbacktrace/libbacktrace.la \
  	$(HWCAP_LDFLAGS) \
- 	-lm $(extra_ldflags_libgfortran) \
+	$(LIBM) $(extra_ldflags_libgfortran) \
 -	$(version_arg) -Wc,-shared-libgcc
 +	$(version_arg)
  
