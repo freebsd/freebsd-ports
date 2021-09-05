@@ -1,0 +1,11 @@
+--- Makefile.rules.orig	2020-07-22 09:42:09 UTC
++++ Makefile.rules
+@@ -27,7 +27,7 @@ endif
+ 	$(Q)$(CC) $(CFLAGS) $(DEFS) -c $< -o $@
+ 
+ %.d: %.c $(ALLDEP)
+-	@set -e; $(MKDEP) $(DEFS) $< \
++	@set -e; $(MKDEP) $(CFLAGS) $(DEFS) $< \
+ 	|  sed 's#\(\($*D)\)\?$(*F)\)\.o[ :]*#$*.o $@ : #g' > $@; \
+ 	[ -s $@ ] || rm -f $@
+ 

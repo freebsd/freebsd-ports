@@ -1,0 +1,17 @@
+--- modules/xml/Makefile.orig	2020-07-22 09:42:09 UTC
++++ modules/xml/Makefile
+@@ -5,8 +5,12 @@ auto_gen=
+ NAME=xml.so
+ 
+ ifeq ($(CROSS_COMPILE),)
+-LIBS=-lxml2
+-DEFS+=-I$(SYSBASE)/include/libxml2
++HAS_XML2CFG=$(shell if which xml2-config >/dev/null 2>/dev/null;then echo YES; fi)
++endif
++
++ifeq ($(HAS_XML2CFG),YES)
++LIBS=$(shell xml2-config --libs)
++DEFS+=$(shell xml2-config --cflags)
+ else
+ DEFS+=-I$(SYSBASE)/include/libxml2 -I$(LOCALBASE)/include/libxml2 \
+       -I$(LOCALBASE)/include

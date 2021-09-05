@@ -555,6 +555,7 @@
     SUBDIR += openpgm
     SUBDIR += openradius
     SUBDIR += openrsync
+    SUBDIR += opensips31
     SUBDIR += openslp
     SUBDIR += opentracker
     SUBDIR += openvswitch

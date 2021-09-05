@@ -1,0 +1,21 @@
+--- modules/aaa_radius/Makefile.orig	2020-07-22 09:42:09 UTC
++++ modules/aaa_radius/Makefile
+@@ -12,10 +12,15 @@ ETC_DIR?=../../etc/
+ 
+ # Find the radius library we shall use
+ #
++ifeq ($(OS), freebsd)
++	LDCONFIG=ldconfig -r
++else
++	LDCONFIG=ldconfig -p
++endif
+ ifeq ($(RADIUSCLIENT),)
+-RADIUSCLIENT=$(shell if [ -n "`ldconfig -p | grep radcli`" ]; then echo "RADCLI"; \
+-	elif [ -n "`ldconfig -p | grep freeradius`" ]; then echo "FREERADIUS"; \
+-	elif [ -n "`ldconfig -p | grep radiusclient-ng`" ];then echo "RADIUSCLIENT"; fi)
++RADIUSCLIENT=$(shell if [ -n "`${LDCONFIG} | grep radcli`" ]; then echo "RADCLI"; \
++	elif [ -n "`${LDCONFIG} | grep freeradius`" ]; then echo "FREERADIUS"; \
++	elif [ -n "`${LDCONFIG} | grep radiusclient-ng`" ];then echo "RADIUSCLIENT"; fi)
+ endif
+ 
+ 

@@ -1,0 +1,65 @@
+--- Makefile.orig	2020-11-17 13:37:23 UTC
++++ Makefile
+@@ -502,16 +502,16 @@ mk-install-dirs: $(cfg_prefix)/$(cfg_dir) $(bin_prefix
+ 
+ # note: on solaris 8 sed: ? or \(...\)* (a.s.o) do not work
+ install-cfg: $(cfg_prefix)/$(cfg_dir)
+-		sed -e "s#/usr/.*lib/$(NAME)/modules/#$(modules_target)#g" \
+-			< etc/$(NAME).cfg > $(cfg_prefix)/$(cfg_dir)$(NAME).cfg.sample0
+-		umask 0077; sed -e "s#/usr/.*etc/$(NAME)/tls/#$(cfg_target)tls/#g" \
+-			< $(cfg_prefix)/$(cfg_dir)$(NAME).cfg.sample0 \
+-			> $(cfg_prefix)/$(cfg_dir)$(NAME).cfg.sample
+-		rm -fr $(cfg_prefix)/$(cfg_dir)$(NAME).cfg.sample0
++		sed -e "s#/usr/.*lib/opensips/modules/#$(modules_target)#g" \
++			< etc/opensips.cfg > $(cfg_prefix)/$(cfg_dir)opensips.cfg.sample0
++		umask 0077; sed -e "s#/usr/.*etc/opensips/tls/#$(cfg_target)tls/#g" \
++			< $(cfg_prefix)/$(cfg_dir)opensips.cfg.sample0 \
++			> $(cfg_prefix)/$(cfg_dir)opensips.cfg.sample
++		rm -fr $(cfg_prefix)/$(cfg_dir)opensips.cfg.sample0
+ 		if [ -z "${skip_cfg_install}" -a \
+-				! -f $(cfg_prefix)/$(cfg_dir)$(NAME).cfg ]; then \
+-			mv -f $(cfg_prefix)/$(cfg_dir)$(NAME).cfg.sample \
+-				$(cfg_prefix)/$(cfg_dir)$(NAME).cfg; \
++				! -f $(cfg_prefix)/$(cfg_dir)opensips.cfg ]; then \
++			cp $(cfg_prefix)/$(cfg_dir)opensips.cfg.sample \
++				$(cfg_prefix)/$(cfg_dir)opensips.cfg; \
+ 		fi
+ 
+ install-bin: app $(bin_prefix)/$(bin_dir) opensipsmc utils
+@@ -519,8 +519,8 @@ install-bin: app $(bin_prefix)/$(bin_dir) opensipsmc u
+ 		$(INSTALL_TOUCH) $(bin_prefix)/$(bin_dir)/$(NAME)
+ 		$(INSTALL_BIN) $(NAME) $(bin_prefix)/$(bin_dir)
+ 		# install opensips menuconfig
+-		$(INSTALL_TOUCH) $(bin_prefix)/$(bin_dir)/osipsconfig
+-		$(INSTALL_BIN) menuconfig/configure $(bin_prefix)/$(bin_dir)/osipsconfig
++		$(INSTALL_TOUCH) $(bin_prefix)/$(bin_dir)/osipsconfig$(NAME_SUFFIX)
++		$(INSTALL_BIN) menuconfig/configure $(bin_prefix)/$(bin_dir)/osipsconfig$(NAME_SUFFIX)
+ 
+ .PHONY: utils
+ utils:
+@@ -571,17 +571,17 @@ install-modules-doc: $(doc_prefix)/$(doc_dir)
+ 
+ 
+ install-man: $(man_prefix)/$(man_dir)/man8 $(man_prefix)/$(man_dir)/man5
+-		sed -e "s#/etc/$(NAME)/$(NAME)\.cfg#$(cfg_target)$(NAME).cfg#g" \
++		sed -e "s#/etc/opensips/opensips\.cfg#$(cfg_target)opensips.cfg#g" \
+ 			-e "s#/usr/sbin/#$(bin-target)#g" \
+-			-e "s#/usr/lib/$(NAME)/modules/#$(modules_target)#g" \
+-			-e "s#/usr/share/doc/$(NAME)/#$(doc-target)#g" \
+-			< $(NAME).8 >  $(man_prefix)/$(man_dir)/man8/$(NAME).8
++			-e "s#/usr/lib/opensips/modules/#$(modules_target)#g" \
++			-e "s#/usr/share/doc/opensips/#$(doc-target)#g" \
++			< opensips.8 >  $(man_prefix)/$(man_dir)/man8/$(NAME).8
+ 		chmod 644  $(man_prefix)/$(man_dir)/man8/$(NAME).8
+-		sed -e "s#/etc/$(NAME)/$(NAME)\.cfg#$(cfg_target)$(NAME).cfg#g" \
++		sed -e "s#/etc/opensips/opensips\.cfg#$(cfg_target)opensips.cfg#g" \
+ 			-e "s#/usr/sbin/#$(bin-target)#g" \
+-			-e "s#/usr/lib/$(NAME)/modules/#$(modules_target)#g" \
+-			-e "s#/usr/share/doc/$(NAME)/#$(doc-target)#g" \
+-			< $(NAME).cfg.5 >  $(man_prefix)/$(man_dir)/man5/$(NAME).cfg.5
++			-e "s#/usr/lib/opensips/modules/#$(modules_target)#g" \
++			-e "s#/usr/share/doc/opensips/#$(doc-target)#g" \
++			< opensips.cfg.5 >  $(man_prefix)/$(man_dir)/man5/$(NAME).cfg.5
+ 		chmod 644  $(man_prefix)/$(man_dir)/man5/$(NAME).cfg.5
+ 
+ install-modules-docbook: $(doc_prefix)/$(doc_dir)

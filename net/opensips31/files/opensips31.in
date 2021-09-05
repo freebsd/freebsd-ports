@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD: net/opensips/files/opensips.in
+#
+# PROVIDE: opensips31
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable this service
+# at system startup:
+#
+# opensips_enable (bool): Set to NO by default.
+#                         Set it to YES to enable opensips.
+#
+
+prefix=/usr/local
+
+. /etc/rc.subr
+
+name=opensips31
+rcvar=`set_rcvar`
+
+load_rc_config opensips31
+
+opensips_enable=${opensips_enable:-"NO"}
+opensips_shmem_size=${opensips_shmem_size:-"64"}
+opensips_pkmem_size=${opensips_pkmem_size:-"4"}
+opensips_user=${opensips_user:-"opensips"}
+opensips_group=${opensips_group:-"opensips"}
+
+command="${prefix}/sbin/opensips31"
+command_args="-m ${opensips_shmem_size} -M ${opensips_pkmem_size}"
+required_files="${prefix}/etc/opensips31/opensips.cfg"
+
+run_rc_command "${1}"
