@@ -42,4 +42,3 @@ share/qt5/qsci/api/python/micropython.bas
 @dir %%DATADIR%%/DTDs
 @dir %%DATADIR%%/i18n
 %%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
-
