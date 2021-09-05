@@ -1,0 +1,217 @@
+#!/bin/sh
+
+# PROVIDE: slapd
+# REQUIRE: FILESYSTEMS ldconfig netif
+# BEFORE: SERVERS kdc
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable slapd:
+#
+#slapd_enable="YES"
+#slapd_flags='-h "ldapi://%2fvar%2frun%2fopenldap%2fldapi/ ldap://0.0.0.0/"'
+#slapd_sockets="/var/run/openldap/ldapi"
+#
+# See slapd(8) for more flags
+#
+# The `-u' and `-g' flags are automatically extracted from slapd_owner,
+# by default slapd runs under the non-privileged user id `ldap'. If you
+# want to run slapd as root, override this in /etc/rc.conf with
+#
+#slapd_owner="DEFAULT"
+#
+# To use the cn=config style configuration add the following
+# line to /etc/rc.conf:
+#
+#slapd_cn_config="YES"
+#
+# To specify alternative Kerberos 5 Key Table, add the following
+# rc.conf(5) configuration:
+#
+#slapd_krb5_ktname="/path/to/ldap.keytab"
+#
+#slapd_autobackup_enable="YES"
+# To enable automatic backup of OpenLDAP data after successful shutdown
+# in the form of LDIF.
+#
+#slapd_autobackup_num="8"
+# How many automatic backups should this script keep.
+#
+#slapd_autobackup_compress="YES"
+# Compress backup data with zstd (if present) or gzip.
+#
+#slapd_autobackup_name="backup"
+# Name to be used for backups
+
+. /etc/rc.subr
+
+name="slapd"
+rcvar=slapd_enable
+
+# read settings, set defaults
+load_rc_config ${name}
+
+: ${slapd_enable="NO"}
+if [ -n "${slapd_args+set}" ]; then
+  warn "slapd_args is deprecated, use slapd_flags"
+  : ${slapd_flags="$slapd_args"}
+fi
+: ${slapd_owner="%%LDAP_USER%%:%%LDAP_GROUP%%"}
+: ${slapd_sockets_mode="666"}
+: ${slapd_cn_config="NO"}
+: ${slapd_autobackup_enable="YES"}
+: ${slapd_autobackup_num="8"}
+: ${slapd_autobackup_compress="YES"}
+: ${slapd_autobackup_name="backup"}
+
+command="%%PREFIX%%/libexec/slapd"
+pidfile="%%LDAP_RUN_DIR%%/slapd.pid"
+
+# set required_dirs, required_files and DATABASEDIR
+if checkyesno slapd_cn_config; then
+  required_dirs="%%PREFIX%%/etc/openldap/slapd.d"
+  required_files="%%PREFIX%%/etc/openldap/slapd.d/cn=config.ldif"
+  DATABASEDIR=`grep olcDbDirectory %%PREFIX%%/etc/openldap/slapd.d/cn=config/olcDatabase=* | awk '{ print $2 }'`
+else
+  required_files="%%PREFIX%%/etc/openldap/slapd.conf"
+  DATABASEDIR=`awk '$1 == "directory" { print $2 }' "%%PREFIX%%/etc/openldap/slapd.conf" 2>&1 /dev/null`
+fi
+
+start_precmd=start_precmd
+start_postcmd=start_postcmd
+stop_postcmd=stop_postcmd
+
+# extract user and group, adjust ownership of directories and database
+
+start_precmd()
+{
+  local slapd_ownername slapd_groupname
+
+  mkdir -p %%LDAP_RUN_DIR%%
+
+  case "$slapd_owner" in
+  ""|[Nn][Oo][Nn][Ee]|[Dd][Ee][Ff][Aa][Uu][Ll][Tt])
+    ;;
+  *)
+    local DBDIR
+    for DBDIR in ${DATABASEDIR}; do
+       if [ ! -d "${DBDIR}" ]; then
+          mkdir -p "${DBDIR}"
+          [ -f "%%PREFIX%%/etc/openldap/DB_CONFIG.example" ] && cp "%%PREFIX%%/etc/openldap/DB_CONFIG.example" "${DBDIR}/DB_CONFIG"
+       fi
+       chown -RL "$slapd_owner" "${DBDIR}"
+       chmod 700 "${DBDIR}"
+    done
+    chown "$slapd_owner" "%%LDAP_RUN_DIR%%"
+
+    if checkyesno slapd_cn_config; then
+        chown -R $slapd_owner "%%PREFIX%%/etc/openldap/slapd.d"
+    else
+        chown $slapd_owner "%%PREFIX%%/etc/openldap/slapd.conf"
+    fi
+
+    slapd_ownername="${slapd_owner%:*}"
+    slapd_groupname="${slapd_owner#*:}"
+
+    if [ -n "$slapd_ownername" ]; then
+      rc_flags="$rc_flags -u $slapd_ownername"
+    fi
+    if [ -n "$slapd_groupname" ]; then
+      rc_flags="$rc_flags -g $slapd_groupname"
+    fi
+    if [ -n "${slapd_krb5_ktname}" ]; then
+      export KRB5_KTNAME=${slapd_krb5_ktname}
+    fi
+    ;;
+  esac
+  echo -n "Performing sanity check on slap configuration: "
+
+  if ${command} -Tt -u >/dev/null 2>&1; then
+    echo "OK"
+  else
+    echo "FAILED"
+    return 1
+  fi
+}
+
+# adjust ownership of created unix sockets
+
+start_postcmd()
+{
+  local socket seconds
+
+  for socket in $slapd_sockets; do
+    for seconds in 1 2 3 4 5; do
+      [ -e "$socket" ] && break
+      sleep 1
+    done
+    if [ -S "$socket" ]; then
+      case "$slapd_owner" in
+      ""|[Nn][Oo][Nn][Ee]|[Dd][Ee][Ff][Aa][Uu][Ll][Tt])
+        ;;
+      *)
+        chown "$slapd_owner" "$socket"
+        ;;
+      esac
+      chmod "$slapd_sockets_mode" "$socket"
+    else
+      warn "slapd: Can't find socket $socket"
+    fi
+  done
+}
+
+stop_postcmd()
+{
+  local compress_program compress_suffix
+
+  if checkyesno slapd_autobackup_enable; then
+    if checkyesno slapd_autobackup_compress; then
+      if [ -x /usr/bin/zstd ]; then
+        compress_program="/usr/bin/zstd"
+        compress_suffix=".zstd"
+      else
+        compress_program="/usr/bin/gzip"
+        compress_suffix=".gz"
+      fi
+    else
+      compress_program="cat"
+      compress_suffix=""
+    fi
+
+    umask 077
+    mkdir -p %%BACKUPDIR%%
+    chmod 700 %%BACKUPDIR%%
+
+    n=0
+    while [ ${n} -lt ${slapd_autobackup_num} ]; do
+      backup_file="%%BACKUPDIR%%/${slapd_autobackup_name}.ldif.${n}${compress_suffix}"
+      if [ ! -e "${backup_file}" -o -f "${backup_file}" ]; then
+        break
+      fi
+      n=$(( ${n} + 1 ))
+    done
+    if [ -f "${backup_file}" ]; then
+      n=$(( ${n} + 1 ))
+      while [ ${n} -lt ${slapd_autobackup_num} ]; do
+        next_backup_file="%%BACKUPDIR%%/${slapd_autobackup_name}.ldif.${n}${compress_suffix}"
+        if [ -f "${next_backup_file}" ]; then
+          [ "${next_backup_file}" -ot "${backup_file}" ] && \
+            backup_file=${next_backup_file}
+        elif [ ! -e "${next_backup_file}" ]; then
+          backup_file=${next_backup_file}
+          break
+        fi
+        n=$(( ${n} + 1 ))
+      done
+    fi
+    if [ -e "${backup_file}" -a ! -f "${backup_file}" ]; then
+      err 1 "Unable to backup OpenLDAP data"
+    else
+      info "Backing up OpenLDAP data to ${backup_file}"
+    fi
+
+    %%PREFIX%%/sbin/slapcat | ${compress_program} > ${backup_file}
+  fi
+}
+
+run_rc_command "$1"

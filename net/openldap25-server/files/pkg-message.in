@@ -1,0 +1,37 @@
+[
+{ type: install
+  message: <<EOM
+The OpenLDAP server package has been successfully installed.
+
+In order to run the LDAP server, you need to edit
+  %%PREFIX%%/etc/openldap/slapd.conf
+to suit your needs and add the following lines to /etc/rc.conf:
+  slapd_enable="YES"
+  slapd_flags='-h "ldapi://%2fvar%2frun%2fopenldap%2fldapi/ ldap://0.0.0.0/"'
+  slapd_sockets="/var/run/openldap/ldapi"
+
+Then start the server with
+  %%PREFIX%%/etc/rc.d/slapd start
+or reboot.
+
+Try `man slapd' and the online manual at
+  http://www.OpenLDAP.org/doc/
+for more information.
+
+slapd runs under a non-privileged user id (by default `ldap'),
+see %%PREFIX%%/etc/rc.d/slapd for more information.
+
+PLEASE NOTE:
+
+Upgrading from %%PORTNAME%%%%PKGNAMESUFFIX%% 2.4 to 2.5 requires a full dump
+and reimport of database.
+
+Starting from %%PORTNAME%%%%PKGNAMESUFFIX%% 2.4.59_3, automatic data dumps
+are saved at %%BACKUPDIR%% when shutting down slapd.
+
+Please refer to OpenLDAP Software 2.5 Administrator's Guide at
+  https://www.openldap.org/doc/admin25/appendix-upgrading.html
+for additional upgrade instructions.
+EOM
+}
+]

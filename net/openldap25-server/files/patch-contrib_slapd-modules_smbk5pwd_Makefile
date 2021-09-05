@@ -1,0 +1,11 @@
+--- contrib/slapd-modules/smbk5pwd/Makefile.orig	2021-07-27 17:44:47 UTC
++++ contrib/slapd-modules/smbk5pwd/Makefile
+@@ -30,7 +30,7 @@
+ # Omit DO_KRB5, DO_SAMBA or DO_SHADOW if you don't want to support it.
+ DEFS = -DDO_KRB5 -DDO_SAMBA -DDO_SHADOW
+ INCS = $(LDAP_INC) $(HEIMDAL_INC) $(SSL_INC)
+-LIBS = $(LDAP_LIB) $(HEIMDAL_LIB) $(SSL_LIB)
++LIBS = $(LDAP_LIB) $(SSL_LIB)
+ 
+ PROGRAMS = smbk5pwd.la
+ LTVER = 0:0:0
