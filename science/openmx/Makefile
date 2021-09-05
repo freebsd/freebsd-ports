@@ -31,15 +31,14 @@ MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}${DISTVERSION:R}
 
 CFLAGS+=	-Dkcomp -fcommon
-LDFLAGS+=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so ${LOCALBASE}/lib/libmpifort.so
+LDFLAGS+=	-lmpifort
 FFLAGS+=	-fallow-argument-mismatch
 
 WRKSRC_SUBDIR=	source
 
 MAKE_ENV=	MPICH_CC=${CC}
-MAKE_ARGS+=	CFLAGS="${CFLAGS}" FFLAGS="${FFLAGS}" LDFLAGS="${LDFLAGS}" GCC_LIB=${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgfortran.so
 
-BINARY_ALIAS=	gcc=${CXX} gcc7=${CXX}
+BINARY_ALIAS=	gcc=${CXX}
 
 UTIL_PROGS=	DosMain jx analysis_example esp polB bandgnu13 bin2txt cube2xsf intensity_map md2axsf
 
