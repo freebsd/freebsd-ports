@@ -37,7 +37,7 @@ Odoo ERP was installed
 7) If you want securizing Odoo access from web browser (https), you can use a 
    web server like proxy. Look at following documentation:
 
-   https://www.odoo.com/documentation/13.0/setup/deploy.html#https
+   https://www.odoo.com/documentation/14.0/setup/deploy.html#https
 
 EOM
 }

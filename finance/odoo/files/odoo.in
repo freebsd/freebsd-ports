@@ -52,7 +52,7 @@ odoo_start()
 {
 	daemon -p ${pidfile} -u ${odoo_user} \
 		${command} ${command_args}
-		echo "Started"
+		echo "Starting ${name}"
 }
 
 odoo_datadir_check()
@@ -60,7 +60,7 @@ odoo_datadir_check()
         if [ ! -d "${odoo_datadir}" ]; then
                 ${mkdir_cmd} -p ${odoo_datadir}
                 ${chown_cmd} -R ${odoo_user}:${odoo_user} ${odoo_datadir}
-		echo "Data directory created"
+		echo "${name} data directory created"
         fi
 }
 
@@ -78,12 +78,12 @@ odoo_initdb()
 	odoo_start_precmd
 	daemon -p ${pidfile} -u ${odoo_user} \
                 ${command} ${command_args} -i all
-        echo "Initializing database and starting odoo server"
+        echo "Initializing database and starting ${name} server"
 }
 
 odoo_restart()
 {
-        echo "Performing restart"
+        echo "Performing restart ${name}"
         odoo_stop
         sleep 5
         odoo_start
@@ -106,7 +106,7 @@ odoo_stop()
         then
                 kill `cat ${pidfile}`
                 rm ${pidfile}
-                echo "Stopped"
+                echo "Stopping ${name}"
         fi
 }
 
