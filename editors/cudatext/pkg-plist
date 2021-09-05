@@ -510,6 +510,21 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/toolbaricons/default_24x24/opt.png
 %%DATADIR%%/data/toolbaricons/default_24x24/unindent.png
 %%DATADIR%%/data/toolbaricons/default_24x24/unpri.png
+%%DATADIR%%/data/toolbaricons/light_24x24/case.png
+%%DATADIR%%/data/toolbaricons/light_24x24/comment.png
+%%DATADIR%%/data/toolbaricons/light_24x24/e_copy.png
+%%DATADIR%%/data/toolbaricons/light_24x24/e_cut.png
+%%DATADIR%%/data/toolbaricons/light_24x24/e_paste.png
+%%DATADIR%%/data/toolbaricons/light_24x24/e_redo.png
+%%DATADIR%%/data/toolbaricons/light_24x24/e_undo.png
+%%DATADIR%%/data/toolbaricons/light_24x24/f_new.png
+%%DATADIR%%/data/toolbaricons/light_24x24/f_open.png
+%%DATADIR%%/data/toolbaricons/light_24x24/f_save.png
+%%DATADIR%%/data/toolbaricons/light_24x24/indent.png
+%%DATADIR%%/data/toolbaricons/light_24x24/map.png
+%%DATADIR%%/data/toolbaricons/light_24x24/opt.png
+%%DATADIR%%/data/toolbaricons/light_24x24/unindent.png
+%%DATADIR%%/data/toolbaricons/light_24x24/unpri.png
 %%DATADIR%%/py/cuda_addonman/__init__.py
 %%DATADIR%%/py/cuda_addonman/install.inf
 %%DATADIR%%/py/cuda_addonman/opt.py
@@ -562,7 +577,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_prefs/icons/cb_unckecked.png
 %%DATADIR%%/py/cuda_prefs/icons/desc.png
 %%DATADIR%%/py/cuda_prefs/install.inf
-%%DATADIR%%/py/cuda_prefs/readme/history.txt
 %%DATADIR%%/py/cuda_prefs/readme/readme.txt
 %%DATADIR%%/py/cuda_prefs/tests/test_options_editor.py
 %%DATADIR%%/py/cuda_project_man/__init__.py
@@ -785,6 +799,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-tabs-left_.png
 %%DATADIR%%/readme/wiki/cudatext-tabs-multiline.png
 %%DATADIR%%/readme/wiki/cudatext-tabs-path-suffix.png
+%%DATADIR%%/readme/wiki/cudatext-tabs-red-marker.png
 %%DATADIR%%/readme/wiki/cudatext-toolbar.png
 %%DATADIR%%/readme/wiki/cudatext-tools-menuitem.png
 %%DATADIR%%/readme/wiki/cudatext-tools-props.png
