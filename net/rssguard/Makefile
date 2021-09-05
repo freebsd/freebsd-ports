@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	rssguard
-PORTVERSION=	3.9.2
+PORTVERSION=	4.0.1
 CATEGORIES=	net www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -11,7 +11,8 @@ LICENSE=	GPLv3+
 
 USES=		qmake qt:5
 USE_QT=		buildtools_build linguisttools_build \
-		core declarative gui network sql widgets xml
+		core dbus declarative gui multimedia network sql \
+		widgets xml
 USE_GITHUB=	yes
 GH_ACCOUNT=	martinrotter
 
@@ -23,16 +24,13 @@ WEBENGINE_USE=	QT=location,printsupport,webchannel,webengine
 WEBENGINE_QMAKE_OFF=	USE_WEBENGINE=false
 
 post-patch:
-# Remove unused #include <QtConcurrent/QtConcurrentRun> to avoid needless
-# USE_QT+=concurrent_build dependency
-	${REINPLACE_CMD} -e '/QtConcurrent/d' \
-		${WRKSRC}/src/librssguard/miscellaneous/feedreader.cpp \
-		${WRKSRC}/src/librssguard/services/gmail/gui/formaddeditemail.cpp
-# Drop executable bits to prevent bogus stripping attempts
-	cd ${WRKSRC}/src/librssguard/services/abstract && ${CHMOD} -x \
-		gui/authenticationdetails.h importantnode.h label.h \
-		labelsnode.h
-	${CHMOD} -x ${WRKSRC}/resources/graphics/rssguard.png
+	@${GREP} -Rl --null Q_OS_LINUX ${WRKSRC}/src | ${XARGS} -0 \
+		${REINPLACE_CMD} -e 's,Q_OS_LINUX,Q_OS_UNIX,'
+# Avoid potential linking errors when previous version of the port
+# is installed.
+	@${REINPLACE_CMD} -e '/^unix: LIBS/ { s,-L,, ; \
+		s, -lrssguard,librssguard.so, ; }' \
+		${WRKSRC}/src/rssguard/rssguard.pro
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librssguard.so

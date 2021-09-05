@@ -1,6 +1,6 @@
 RSS Guard is simple, lightweight, and easy-to-use RSS/Atom feed aggregator
 developed using Qt framework which supports online feed synchronization
-with several services: Feedly, Gmail, Google Reader, Inoreader, Nextcloud
-News, and Tiny Tiny RSS.
+with various services, e.g. Bazqux, Feedly, FreshRSS, Gmail, Google Reader,
+Inoreader, Nextcloud News, Reedah, Tiny Tiny RSS.
 
 WWW: https://github.com/martinrotter/rssguard
