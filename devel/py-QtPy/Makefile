@@ -1,5 +1,5 @@
 PORTNAME=	QtPy
-DISTVERSION=	1.10.0
+DISTVERSION=	1.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
