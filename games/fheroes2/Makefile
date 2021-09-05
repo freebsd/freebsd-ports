@@ -1,5 +1,5 @@
 PORTNAME=	fheroes2
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -19,7 +19,8 @@ SHEBANG_FILES=	script/demo/demo_unix.sh
 
 OPTIONS_DEFINE=	DOCS
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		${DATADIR}/files/data/resurrection.h2d
 PORTDOCS=	LICENSE \
 		README.txt \
 		changelog.txt \
