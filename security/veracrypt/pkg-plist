@@ -51,13 +51,13 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/Disclaimers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_Bank.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_BitcoinCash.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Bitcoin_small.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Ethereum.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Litecoin.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Monero.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_CHF.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_Dollars.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_Euros.gif
