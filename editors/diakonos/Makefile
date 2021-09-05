@@ -6,7 +6,7 @@ DISTVERSION=	0.9.7
 PORTREVISION=	1
 CATEGORIES=	editors ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	christopher.petrik@usm.edu
 COMMENT=	Console editor for the masses
 
 LICENSE=	MIT
