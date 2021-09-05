@@ -1,5 +1,6 @@
 PORTNAME=	augustus
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -9,7 +10,8 @@ COMMENT=	Open source re-implementation of Caesar III
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libexpat.so:textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libpng.so:graphics/png
 
 USES=		cmake sdl
 
