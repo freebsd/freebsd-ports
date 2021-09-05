@@ -1,6 +1,6 @@
 PORTNAME=	cpp-httplib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.3
+DISTVERSION=	0.9.4
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +9,8 @@ COMMENT=	C++ header-only HTTP/HTTPS server and client library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	gmake:devel/gmake
+TEST_DEPENDS=	gmake:devel/gmake \
+		googletest>0:devel/googletest
 
 USES=		cmake localbase:ldflags python:test # localbase only for tests
 
@@ -38,7 +39,7 @@ BROTLI_RUN_DEPENDS=	brotli>0:archivers/brotli
 SSL_USES=		ssl
 SSL_CMAKE_BOOL=		HTTPLIB_REQUIRE_OPENSSL HTTPLIB_USE_OPENSSL_IF_AVAILABLE
 
-do-test: install # 3 tests are known to fail: https://github.com/yhirose/cpp-httplib/issues/1028
+do-test: install
 	@cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${GMAKE} CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.mk>
