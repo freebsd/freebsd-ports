@@ -1,6 +1,6 @@
 PORTNAME=	xbyak
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.995
+DISTVERSION=	5.996
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,8 +23,9 @@ PLIST_FILES=	include/xbyak/xbyak.h \
 		include/xbyak/xbyak_bin2hex.h \
 		include/xbyak/xbyak_mnemonic.h \
 		include/xbyak/xbyak_util.h \
-		lib/cmake/xbyak/xbyak-targets.cmake \
-		lib/cmake/xbyak/xbyakConfig.cmake
+		lib/cmake/xbyak/xbyak-config-version.cmake \
+		lib/cmake/xbyak/xbyak-config.cmake \
+		lib/cmake/xbyak/xbyak-targets.cmake
 
 do-test: install
 	@cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} test
