@@ -1,3 +1,29 @@
+  <vuln vid="65f05b71-0e3c-11ec-b335-d4c9ef517024">
+    <topic>WeeChat -- Crash when decoding a malformed websocket frame in relay plugin.</topic>
+    <affects>
+      <package>
+	<name>weechat</name>
+	<range><lt>3.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The WeeChat project reports:</p>
+	<blockquote cite="https://weechat.org/doc/security/">
+	  <p>Crash when decoding a malformed websocket frame in relay plugin.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://weechat.org/doc/security/</url>
+      <url>https://github.com/weechat/weechat/commit/8b1331f98de1714bae15a9ca2e2b393ba49d735b</url>
+    </references>
+    <dates>
+      <discovery>2021-09-04</discovery>
+      <entry>2021-09-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a67e358c-0bf6-11ec-875e-901b0e9408dc">
     <topic>py-matrix-synapse -- several vulnerabilities</topic>
     <affects>
