@@ -16475,3 +16475,4 @@ devel/magit-popup||2021-09-01|Has expired: No consumer in the ports tree any mor
 databases/mongodb49|databases/mongodb50|2021-09-01|Has expired: This was a developer version which became MongoDB 5.0.
 editors/vim-console|editors/vim|2021-09-02|The "vim" package is now console-only
 editors/vim-tiny|editors/vim@tiny|2021-09-02|The vim-tiny package is now a vim flavor
+lang/gcc7|lang/gcc10|2021-09-05|Has expired: Unsupported by upstream. Use GCC 10 or newer instead.
