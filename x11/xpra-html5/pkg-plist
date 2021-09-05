@@ -41,6 +41,8 @@ share/xpra/www/favicon.png
 share/xpra/www/icons/close.png
 share/xpra/www/icons/default_cursor.png
 share/xpra/www/icons/empty.png
+share/xpra/www/icons/eye-slash.png
+share/xpra/www/icons/eye.png
 share/xpra/www/icons/fullscreen.png
 share/xpra/www/icons/materialicons-regular.ttf
 share/xpra/www/icons/materialicons-regular.ttf.br
@@ -65,6 +67,9 @@ share/xpra/www/index.html.gz
 share/xpra/www/js/Client.js
 share/xpra/www/js/Client.js.br
 share/xpra/www/js/Client.js.gz
+share/xpra/www/js/DecodeWorker.js
+share/xpra/www/js/DecodeWorker.js.br
+share/xpra/www/js/DecodeWorker.js.gz
 share/xpra/www/js/Keycodes.js
 share/xpra/www/js/Keycodes.js.br
 share/xpra/www/js/Keycodes.js.gz
