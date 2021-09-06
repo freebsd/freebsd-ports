@@ -10,7 +10,7 @@ LIB_DEPENDS:=	${LIB_DEPENDS:N*wlroots*} \
 		libxcb-icccm.so:x11/xcb-util-wm
 RUN_DEPENDS+=	xwayland-devel>0:x11-servers/xwayland-devel
 USES+=		gl
-USE_XORG+=	pixman xcb
 USE_GL+=	gbm egl
+USE_XORG+=	pixman xcb
 GH_TUPLE+=	swaywm:wlroots:0.13.0:wlroots/subprojects/wlroots
 PLIST_FILES+=	"@comment libdata/pkgconfig/wlroots.pc"
