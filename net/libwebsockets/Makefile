@@ -2,8 +2,7 @@
 
 PORTNAME=	libwebsockets
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.0
-PORTREVISION=	1
+DISTVERSION=	4.2.1
 CATEGORIES=	net devel
 MASTER_SITES=	https://libwebsockets.org/git/libwebsockets/snapshot/
 
@@ -62,7 +61,7 @@ MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
 MBEDTLS_CMAKE_BOOL=	LWS_WITH_MBEDTLS
 OPENSSL_USES=		ssl
 OPENSSL_CMAKE_BOOL=	LWS_WITHOUT_BUILTIN_SHA1
-# WolfSSL need to be compiled with --enable-libwebsockets to be compatible
+# WolfSSL needs to be compiled with --enable-libwebsockets to work
 # WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
 # WOLFSSL_CMAKE_BOOL=	LWS_WITH_SSL LWS_WITH_WOLFSSL
 # WOLFSSL_CMAKE_ON=	-DLWS_WOLFSSL_INCLUDE_DIRS=${LOCALBASE}/include \

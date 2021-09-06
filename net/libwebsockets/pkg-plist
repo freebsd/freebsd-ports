@@ -102,14 +102,10 @@ libdata/pkgconfig/libwebsockets_static.pc
 %%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_deaddrop.so
 %%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_dumb_increment.so
 %%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_lws_mirror.so
+%%WEBSERVER%%%%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_lws_openmetrics_export.so
 %%WEBSERVER%%%%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_lws_raw_proxy.so
 %%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_lws_raw_test.so
-%%WEBSERVER%%%%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_lws_server_status.so
 %%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_lws_ssh_base.so
 %%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_lws_sshd_demo.so
 %%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_lws_status.so
 %%PLUGINS%%%%DATADIR%%-test-server/plugins/libprotocol_post_demo.so
-%%WEBSERVER%%%%PLUGINS%%%%DATADIR%%-test-server/server-status/lwsws-logo.png
-%%WEBSERVER%%%%PLUGINS%%%%DATADIR%%-test-server/server-status/server-status.css
-%%WEBSERVER%%%%PLUGINS%%%%DATADIR%%-test-server/server-status/server-status.html
-%%WEBSERVER%%%%PLUGINS%%%%DATADIR%%-test-server/server-status/server-status.js
