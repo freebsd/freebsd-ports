@@ -11,12 +11,13 @@ COMMENT=	Zip library and programs from Zlib distribution
 
 LICENSE=	ZLIB
 
-USES=		autoreconf libtool pathfix tar:xz
+USES=		autoreconf cpe libtool pathfix tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-demos
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/zlib-${PORTVERSION}/contrib/minizip
+CPE_VENDOR=	minizip_project
 
 post-patch:
 	@${REINPLACE_CMD} 's/#ifdef unix || __APPLE__/#ifdef unix/' ${WRKSRC}/mini???.c
