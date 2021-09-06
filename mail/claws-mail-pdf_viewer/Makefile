@@ -1,7 +1,7 @@
 # Created by: Pawel Pekala <c0rn@o2.pl>
 
 PORTNAME=	pdf_viewer
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	PDF and PostScript viewer plugin for Claws Mail
 
