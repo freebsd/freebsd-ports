@@ -1,4 +1,3 @@
-include/dune/uggrid/commands.h
 include/dune/uggrid/domain/domain.h
 include/dune/uggrid/domain/std_domain.h
 include/dune/uggrid/gm/algebra.h
@@ -15,10 +14,8 @@ include/dune/uggrid/gm/shapes.h
 include/dune/uggrid/gm/ugm.h
 include/dune/uggrid/initug.h
 include/dune/uggrid/low/debug.h
-include/dune/uggrid/low/defaults.h
 include/dune/uggrid/low/dimension.h
 include/dune/uggrid/low/fileopen.h
-include/dune/uggrid/low/general.h
 include/dune/uggrid/low/heaps.h
 include/dune/uggrid/low/misc.h
 include/dune/uggrid/low/namespace.h
@@ -27,11 +24,6 @@ include/dune/uggrid/low/ugenv.h
 include/dune/uggrid/low/ugstruct.h
 include/dune/uggrid/low/ugtimer.h
 include/dune/uggrid/low/ugtypes.h
-include/dune/uggrid/numerics/disctools.h
-include/dune/uggrid/numerics/formats.h
-include/dune/uggrid/numerics/np.h
-include/dune/uggrid/numerics/sm.h
-include/dune/uggrid/numerics/udm.h
 include/dune/uggrid/parallel/ddd/basic/lowcomm.h
 include/dune/uggrid/parallel/ddd/basic/notify.h
 include/dune/uggrid/parallel/ddd/basic/oopp.h
@@ -56,9 +48,7 @@ lib/cmake/dune-uggrid/dune-uggrid-config.cmake
 lib/cmake/dune-uggrid/dune-uggrid-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/dune-uggrid/dune-uggrid-targets.cmake
 lib/dunecontrol/dune-uggrid/dune.module
-lib/libugL.so
-lib/libugS2.so
-lib/libugS3.so
+lib/libduneuggrid.so
 libdata/pkgconfig/dune-uggrid.pc
 share/RefRules.data
 %%DATADIR%%/config.h.cmake
