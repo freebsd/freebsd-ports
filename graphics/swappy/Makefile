@@ -1,6 +1,6 @@
 PORTNAME=	swappy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1
+DISTVERSION=	1.4.0
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,6 +18,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
 		share/locale/de/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/en/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/fr/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/pt_BR/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/tr/LC_MESSAGES/${PORTNAME}.mo \
 		${NULL}
