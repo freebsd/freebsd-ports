@@ -1,8 +1,7 @@
 # Created by: Oliver Lehmann <oliver@FreeBSD.org>
 
 PORTNAME=	libxfce4menu
-PORTVERSION=	4.16.0
-PORTREVISION=	2
+PORTVERSION=	4.16.1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DISTNAME=	libxfce4ui-${DISTVERSIONFULL}
