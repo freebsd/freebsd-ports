@@ -5,7 +5,7 @@ CATEGORIES=	x11 kde kde-plasma
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 screen management library
 
-USES=		cmake compiler:c++11-lib cpe kde:5 pathfix pkgconfig qt:5 \
+USES=		cmake compiler:c++11-lib kde:5 pathfix pkgconfig qt:5 \
 		tar:xz xorg
 USE_KDE=	wayland \
 		ecm_build
