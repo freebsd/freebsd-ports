@@ -5,7 +5,7 @@ CATEGORIES=	x11-toolkits kde kde-plasma
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 addons to improve the Plasma experience
 
-USES=		cmake compiler:c++11-lib cpe gettext kde:5 pkgconfig qt:5 \
+USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 \
 		tar:xz
 USE_KDE=	activities archive attica auth bookmarks codecs completion \
 		config configwidgets coreaddons crash emoticons guiaddons \
