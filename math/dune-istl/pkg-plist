@@ -1,7 +1,10 @@
 include/dune/istl/allocator.hh
 include/dune/istl/basearray.hh
+include/dune/istl/bccsmatrix.hh
+include/dune/istl/bccsmatrixinitializer.hh
 include/dune/istl/bcrsmatrix.hh
 include/dune/istl/bdmatrix.hh
+include/dune/istl/blocklevel.hh
 include/dune/istl/btdmatrix.hh
 include/dune/istl/bvector.hh
 include/dune/istl/cholmod.hh
@@ -10,6 +13,7 @@ include/dune/istl/common/counter.hh
 include/dune/istl/common/registry.hh
 include/dune/istl/eigenvalue/arpackpp.hh
 include/dune/istl/eigenvalue/poweriteration.hh
+include/dune/istl/foreach.hh
 include/dune/istl/gsetc.hh
 include/dune/istl/ildl.hh
 include/dune/istl/ilu.hh
@@ -51,7 +55,6 @@ include/dune/istl/paamg/renumberer.hh
 include/dune/istl/paamg/smoother.hh
 include/dune/istl/paamg/transfer.hh
 include/dune/istl/paamg/twolevelmethod.hh
-include/dune/istl/pardiso.hh
 include/dune/istl/preconditioner.hh
 include/dune/istl/preconditioners.hh
 include/dune/istl/repartition.hh
@@ -61,6 +64,7 @@ include/dune/istl/schwarz.hh
 include/dune/istl/solver.hh
 include/dune/istl/solvercategory.hh
 include/dune/istl/solverfactory.hh
+include/dune/istl/solverregistry.hh
 include/dune/istl/solvers.hh
 include/dune/istl/solvertype.hh
 include/dune/istl/spqr.hh
@@ -76,7 +80,6 @@ include/dune/istl/vbvector.hh
 lib/cmake/dune-istl/dune-istl-config-version.cmake
 lib/cmake/dune-istl/dune-istl-config.cmake
 lib/dunecontrol/dune-istl/dune.module
-lib/duneistlam2cmake.lib
 libdata/pkgconfig/dune-istl.pc
 %%DATADIR%%/config.h.cmake
 share/dune/cmake/modules/AddARPACKPPFlags.cmake
