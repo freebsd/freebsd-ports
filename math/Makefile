@@ -774,6 +774,7 @@
     SUBDIR += primme
     SUBDIR += prng
     SUBDIR += pspp
+    SUBDIR += psurface
     SUBDIR += py-CyLP
     SUBDIR += py-Diofant
     SUBDIR += py-GridDataFormats

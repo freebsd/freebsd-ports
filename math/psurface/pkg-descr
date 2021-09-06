@@ -1,0 +1,12 @@
+Psurface is a C++ library that handles piecewise linear bijections between
+triangulated surfaces. These surfaces can be of arbitrary shape and need not
+even be manifolds.
+
+There are two main uses for psurface. When doing adaptive finite element
+simulations on grids with parametrized boundaries, psurface can store the
+parametrization. Boundary parametrizations are practically mappings from the
+coarse grid boundary to the actual boundary, and if that actual boundary is a
+triangulated surface then psurface can handle it. This is implemented, for
+example, in the dune-grid module of Dune.
+
+WWW: https://github.com/psurface/psurface
