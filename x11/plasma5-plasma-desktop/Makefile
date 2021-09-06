@@ -43,6 +43,8 @@ USE_QT=		concurrent core dbus declarative gui network phonon4 \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xcb xcursor xext xfixes xft xi xrender
 
+CPE_VENDOR=	kde
+
 CMAKE_ON=	WANT_SYNAPTICS
 
 SHEBANG_FILES=	kcms/ksmserver/kconf_update/*.py \
