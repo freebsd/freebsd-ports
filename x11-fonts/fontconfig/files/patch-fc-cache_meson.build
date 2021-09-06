@@ -1,0 +1,10 @@
+--- fc-cache/meson.build.orig	2021-01-28 11:53:32 UTC
++++ fc-cache/meson.build
+@@ -8,6 +8,6 @@ fccache = executable('fc-cache', ['fc-cache.c', fcstdi
+ tools_man_pages += ['fc-cache']
+ 
+ # Do not try to execute target's fc-cache on host when cross compiling
+-if not meson.is_cross_build()
++if get_option('fc-cache').enabled() and not meson.is_cross_build()
+   meson.add_install_script(fccache, '-s', '-f', '-v')
+ endif

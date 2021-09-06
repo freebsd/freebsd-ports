@@ -26,6 +26,8 @@ SHEBANG_FILES=	conf.d/link_confs.py \
 		fc-lang/fc-lang.py
 
 TEST_TARGET=	test
+SUB_FILES=	pkg-install
+SUB_LIST=	PREFIX=${PREFIX}
 
 # Custom configuration variables
 FCDEFAULTFONTS=	${PREFIX}/share/fonts
@@ -33,7 +35,7 @@ FCADDFONTS=	${LOCALBASE}/lib/X11/fonts
 
 # To avoid circular dependency rebuild of docs (including manpages) needs to be
 # disabled as they depend on textproc/docbook-utils which requires fontconfig
-MESON_ARGS=	-Ddefault_library=both -Ddoc=disabled
+MESON_ARGS=	-Ddefault_library=both -Ddoc=disabled -Dfc-cache=disabled
 
 PLIST_SUB=	PREFERRED_HINTING=${PREFERRED_HINTING}
 PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt

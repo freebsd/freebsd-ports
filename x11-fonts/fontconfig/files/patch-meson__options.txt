@@ -1,0 +1,8 @@
+--- meson_options.txt.orig	2020-12-03 11:45:00 UTC
++++ meson_options.txt
+@@ -11,3 +11,5 @@ option('tests', type : 'feature', value : 'auto', yiel
+   description: 'Enable unit tests')
+ option('tools', type : 'feature', value : 'auto', yield : true,
+   description: 'Build command-line tools (fc-list, fc-query, etc.)')
++option('fc-cache', type: 'feature', value : 'enabled',
++  description : 'Run fc-cache on install')
