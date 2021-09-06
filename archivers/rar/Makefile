@@ -18,6 +18,9 @@ LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
 ONLY_FOR_ARCHS=	amd64 i386
 
+USES=		cpe
+CPE_VENDOR=	rarlab
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
 
