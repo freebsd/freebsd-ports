@@ -17,10 +17,11 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-asm
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		alias libtool pathfix perl5 shebangfix tar:bzip2
+USES=		alias cpe libtool pathfix perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/lrztar
 USE_PERL5=	build
 USE_LDCONFIG=	yes
+CPE_VENDOR=	lrzip_project
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblrzip.so.0.0.0
