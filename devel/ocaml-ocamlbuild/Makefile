@@ -16,5 +16,8 @@ GH_ACCOUNT=	ocaml
 USE_OCAML=	yes
 
 ALL_TARGET=	configure all
+MAKE_ENV=	OCAMLBUILD_LIBDIR=${PREFIX}/${OCAML_LIBDIR}
+TEST_TARGET=	test
+TEST_ENV=	VERBOSE=1
 
 .include <bsd.port.mk>
