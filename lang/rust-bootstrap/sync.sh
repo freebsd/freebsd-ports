@@ -16,7 +16,7 @@ export PKG_DBDIR="${DATADIR}/pkgdb"
 pkg update -f -r FreeBSD
 pkg fetch -r FreeBSD -o "${DATADIR}" -yg "*-rust-bootstrap-${version}*"
 
-find "${DATADIR}/All" -name "*rust-bootstrap-${version}*.txz" \
+find "${DATADIR}/All" -name "*rust-bootstrap-${version}*.*" \
 	-execdir tar -xvf {} \;
 
 dir="public_distfiles/rust/${date}"
