@@ -1,0 +1,12 @@
+--- configure.orig	2016-11-18 13:04:45 UTC
++++ configure
+@@ -516,7 +516,8 @@ fi
+ 
+ # bytes?
+ 
+-if [ -f "${ocaml_core_stdlib}/bytes.cmi" ]; then
++if [ -f "${ocaml_core_stdlib}/bytes.cmi" -o \
++     -f "${ocaml_core_stdlib}/stdlib__bytes.cmi" ]; then
+     echo "bytes: found, installing fake library"
+     lbytes="bytes"
+     cbytes=0

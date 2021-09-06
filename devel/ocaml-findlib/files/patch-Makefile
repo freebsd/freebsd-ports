@@ -11,10 +11,10 @@
  	$(MAKE) install-config
  	for p in $(PARTS); do ( cd src/$$p; $(MAKE) install ); done
  	$(MAKE) install-meta
- 	cd src/findlib; $(MAKE) install-num-top
+ 	test -z "$(NUMTOP)" || { cd src/findlib; $(MAKE) install-num-top; }
  	if [ $(INSTALL_CAMLP4) -eq 1 ]; then \
 -		cp tools/safe_camlp4 "$(prefix)$(OCAMLFIND_BIN)"; \
-+		${BSD_INSTALL_SCRIPT}  tools/safe_camlp4 "$(DESTDIR)$(prefix)$(OCAMLFIND_BIN)"; \
++		${BSD_INSTALL_SCRIPT} tools/safe_camlp4 "$(DESTDIR)$(prefix)$(OCAMLFIND_BIN)"; \
  	fi
  	$(MAKE) install-doc
  
@@ -22,8 +22,8 @@
  	USE_CYGPATH="$(USE_CYGPATH)"; \
  	export USE_CYGPATH; \
  	cat findlib.conf.in | \
--		tools/patch '@SITELIB@' '$(OCAML_SITELIB)' >findlib.conf
-+		tools/patch '@SITELIB@' '$(OCAML_SITELIB):$(OCAML_LIBDIR)' >findlib.conf
+-	    $(SH) tools/patch '@SITELIB@' '$(OCAML_SITELIB)' >findlib.conf
++	    $(SH) tools/patch '@SITELIB@' '$(OCAML_SITELIB):$(OCAML_LIBDIR)' >findlib.conf
  	if ./tools/cmd_from_same_dir ocamlc; then \
  		echo 'ocamlc="ocamlc.opt"' >>findlib.conf; \
  	fi
@@ -58,7 +58,7 @@
 -	test -f "$(prefix)$(OCAMLFIND_CONF)" || cp findlib.conf "$(prefix)$(OCAMLFIND_CONF)"
 +	mkdir -p "`dirname \"$(DESTDIR)$(prefix)$(OCAMLFIND_CONF)\"`"
 +	@if [ -f "$(DESTDIR)$(prefix)$(OCAMLFIND_CONF)" ]; then echo "!!! Keeping old $(DESTDIR)$(prefix)$(OCAMLFIND_CONF) !!!"; fi
-+	test -f "$(DESTDIR)$(prefix)$(OCAMLFIND_CONF)" || ${BSD_INSTALL_DATA}  findlib.conf "$(DESTDIR)$(prefix)$(OCAMLFIND_CONF)"
++	test -f "$(DESTDIR)$(prefix)$(OCAMLFIND_CONF)" || ${BSD_INSTALL_DATA} findlib.conf "$(DESTDIR)$(prefix)$(OCAMLFIND_CONF)"
  
  .PHONY: uninstall-config
  uninstall-config:

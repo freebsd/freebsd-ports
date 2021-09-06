@@ -35,11 +35,11 @@ bin/safe_camlp4
 %%OCAML_SITELIBDIR%%/findlib/topfind.mli
 %%OCAML_SITELIBDIR%%/graphics/META
 %%TOOLBOX%%%%OCAML_SITELIBDIR%%/labltk/META
-%%OCAML_SITELIBDIR%%/num-top/META
-%%OCAML_SITELIBDIR%%/num-top/num_top.cma
-%%OCAML_SITELIBDIR%%/num-top/num_top.cmi
-%%OCAML_SITELIBDIR%%/num-top/num_top_printers.cmi
-%%OCAML_SITELIBDIR%%/num/META
+%%NUM%%%%OCAML_SITELIBDIR%%/num-top/META
+%%NUM%%%%OCAML_SITELIBDIR%%/num-top/num_top.cma
+%%NUM%%%%OCAML_SITELIBDIR%%/num-top/num_top.cmi
+%%NUM%%%%OCAML_SITELIBDIR%%/num-top/num_top_printers.cmi
+%%NUM%%%%OCAML_SITELIBDIR%%/num/META
 %%OCAML_SITELIBDIR%%/ocamldoc/META
 %%OCAML_SITELIBDIR%%/raw_spacetime/META
 %%OCAML_SITELIBDIR%%/stdlib/META
