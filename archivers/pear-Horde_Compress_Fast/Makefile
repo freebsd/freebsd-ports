@@ -5,7 +5,8 @@ CATEGORIES=	archivers www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Fast Compression Library
 
-USES=	horde
+USES=		cpe horde
 USE_HORDE_RUN=	Horde_Exception
+CPE_VENDOR=	horde
 
 .include <bsd.port.mk>
