@@ -6,7 +6,7 @@ lib/cmake/SampleRate/SampleRateTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SampleRate/SampleRateTargets.cmake
 lib/libsamplerate.so
 lib/libsamplerate.so.0
-lib/libsamplerate.so.0.2.1
+lib/libsamplerate.so.0.2.2
 libdata/pkgconfig/samplerate.pc
 %%PORTDOCS%%%%DOCSDIR%%/SRC.png
 %%PORTDOCS%%%%DOCSDIR%%/api.md
