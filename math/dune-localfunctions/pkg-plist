@@ -97,6 +97,9 @@ include/dune/localfunctions/monomial.hh
 include/dune/localfunctions/monomial/monomiallocalbasis.hh
 include/dune/localfunctions/monomial/monomiallocalcoefficients.hh
 include/dune/localfunctions/monomial/monomiallocalinterpolation.hh
+include/dune/localfunctions/nedelec.hh
+include/dune/localfunctions/nedelec/nedelec1stkindcube.hh
+include/dune/localfunctions/nedelec/nedelec1stkindsimplex.hh
 include/dune/localfunctions/orthonormal.hh
 include/dune/localfunctions/orthonormal/orthonormalbasis.hh
 include/dune/localfunctions/orthonormal/orthonormalcompute.hh
@@ -112,6 +115,10 @@ include/dune/localfunctions/raviartthomas/raviartthomas02d.hh
 include/dune/localfunctions/raviartthomas/raviartthomas02d/raviartthomas02dlocalbasis.hh
 include/dune/localfunctions/raviartthomas/raviartthomas02d/raviartthomas02dlocalcoefficients.hh
 include/dune/localfunctions/raviartthomas/raviartthomas02d/raviartthomas02dlocalinterpolation.hh
+include/dune/localfunctions/raviartthomas/raviartthomas03d.hh
+include/dune/localfunctions/raviartthomas/raviartthomas03d/raviartthomas03dlocalbasis.hh
+include/dune/localfunctions/raviartthomas/raviartthomas03d/raviartthomas03dlocalcoefficients.hh
+include/dune/localfunctions/raviartthomas/raviartthomas03d/raviartthomas03dlocalinterpolation.hh
 include/dune/localfunctions/raviartthomas/raviartthomas0cube2d.hh
 include/dune/localfunctions/raviartthomas/raviartthomas0cube2d/raviartthomas0cube2dall.hh
 include/dune/localfunctions/raviartthomas/raviartthomas0cube3d.hh
