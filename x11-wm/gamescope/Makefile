@@ -43,9 +43,7 @@ PIPEWIRE_DESC=		Screen capture via PipeWire
 PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
 PIPEWIRE_MESON_ENABLED=	pipewire
 
-# Bundle wlroots due to breaking changes:
-# https://github.com/swaywm/wlroots/commit/9ecfa4343a6d
-# https://github.com/swaywm/wlroots/commit/a109a80dca50
+# https://github.com/Plagman/gamescope/pull/202
 BUILD_DEPENDS:=	${BUILD_DEPENDS:N*wlroots*} \
 		xwayland-devel>0:x11-servers/xwayland-devel
 LIB_DEPENDS:=	${LIB_DEPENDS:N*wlroots*} \
