@@ -54,7 +54,8 @@ pre-install:
 	@ ${REINPLACE_CMD} -e 's#%%DATADIR%%#${PREFIX}/share/${PORTNAME:tu}#' ${CONFIG_FILE}
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/emboss-shell ${STAGEDIR}${LOCALBASE}/bin
 	${INSTALL_DATA} ${CONFIG_FILE} ${STAGEDIR}${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/emboss-shell ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -20,7 +20,7 @@ EOM
 export PATH=${emboss_bin}:$PATH
 
 # Invoke the user's chosen shell
-if echo $SHELL | grep -q '/t?csh'; then
+if echo $SHELL | egrep -q '/t?csh'; then
     args='-f'
 fi
 exec $SHELL $args
