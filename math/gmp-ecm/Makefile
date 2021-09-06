@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	https://gforge.inria.fr/frs/download.php/file/36224/
 DISTNAME=	ecm-${DISTVERSION}
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Elliptic Curve Method for Integer Factorization
 
 LICENSE=	GPLv2+ LGPL21+

@@ -3,7 +3,7 @@ PORTVERSION=	0.4
 PORTREVISION=	5
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end to pkg(8)
 
 LICENSE=	BSD2CLAUSE

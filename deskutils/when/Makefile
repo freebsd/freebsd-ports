@@ -4,7 +4,7 @@ PORTNAME=	when
 PORTVERSION=	1.1.40
 CATEGORIES=	deskutils
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple personal calendar
 
 LICENSE=	ART10 GPLv1+

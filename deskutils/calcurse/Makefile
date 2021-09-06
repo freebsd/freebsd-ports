@@ -5,7 +5,7 @@ PORTVERSION=	4.5.1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://calcurse.org/files/
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-based calendar and scheduling application
 
 LICENSE=	BSD2CLAUSE

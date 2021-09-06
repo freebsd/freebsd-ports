@@ -5,7 +5,7 @@ PORTVERSION=	20120131
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/culot
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Textmode remake of Broderbund's LodeRunner
 
 LICENSE=	BSD2CLAUSE

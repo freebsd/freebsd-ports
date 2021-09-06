@@ -5,7 +5,7 @@ PORTVERSION=	4.6.0
 CATEGORIES=	games
 MASTER_SITES=	http://tomenet.eu/downloads/
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online multiplayer rogue-like role-playing game
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: lite_later

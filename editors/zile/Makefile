@@ -6,7 +6,7 @@ PORTREVISION=	8
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small emacs-like text editor
 
 LICENSE=	GPLv3

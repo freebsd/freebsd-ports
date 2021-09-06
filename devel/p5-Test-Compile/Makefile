@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR=	CPAN:EGILES
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Check whether Perl module files compile correctly
 
 LICENSE=	ART10 GPLv1+

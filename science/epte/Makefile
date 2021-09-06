@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.toddmiller.com/epte/
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Periodic Table of the Elements
 
 USES=		ncurses

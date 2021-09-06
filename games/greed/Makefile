@@ -6,7 +6,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://catb.org/~esr/greed/
 PKGNAMESUFFIX=	-game
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text puzzle game with the aim of clearing the game field
 
 LICENSE=	BSD2CLAUSE

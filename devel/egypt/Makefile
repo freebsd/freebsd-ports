@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://www.gson.org/egypt/download/
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create call graphs of C programs
 
 LICENSE=	ART10 GPLv1+

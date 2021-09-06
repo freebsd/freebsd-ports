@@ -6,7 +6,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Abstract interface to bit.ly, one of URL shortening sites
 
 LICENSE=	ART10 GPLv1+

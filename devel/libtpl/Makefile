@@ -5,7 +5,7 @@ PORTVERSION=	1.6
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for serializing C data
 
 LICENSE=	GPLv3 MIT

@@ -5,7 +5,7 @@ PORTVERSION=	20100905
 CATEGORIES=	french
 MASTER_SITES=	LOCAL/culot
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compilation of quotes from Nietzsche's Thus spoke Zarathustra
 
 LICENSE=	NONE

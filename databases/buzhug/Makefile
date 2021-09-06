@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure-Python database engine
 
 USES=		python:3.6+ zip

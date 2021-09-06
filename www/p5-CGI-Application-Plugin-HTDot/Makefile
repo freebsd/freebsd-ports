@@ -7,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Enable "magic dot" notation in CGI::Application-derived applications
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

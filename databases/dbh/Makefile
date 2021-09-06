@@ -7,7 +7,7 @@ CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	libdbh2-${PORTVERSION}
 
-MAINTAINER=	culot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disk Based Hashtables
 
 LICENSE=	GPLv3
