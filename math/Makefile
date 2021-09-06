@@ -134,6 +134,7 @@
     SUBDIR += add
     SUBDIR += adept
     SUBDIR += adol-c
+    SUBDIR += alberta
     SUBDIR += algae
     SUBDIR += alglib
     SUBDIR += alps
