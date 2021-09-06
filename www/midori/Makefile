@@ -23,10 +23,12 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext gnome \
+USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext gnome \
 		libarchive localbase:ldflags pkgconfig sqlite tar:bzip2
 USE_GNOME=	cairo glib20 gtk30 intltool introspection librsvg2:build \
 		libxml2
+
+CPE_VENDOR=	midori-browser
 
 CFLAGS+=	-Wno-return-type
 CMAKE_ARGS=	-DUSE_APIDOCS:BOOL=OFF
