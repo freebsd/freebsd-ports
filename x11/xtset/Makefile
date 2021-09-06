@@ -5,7 +5,7 @@ PORTVERSION=	1.1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.lemis.com/pub/
 
-MAINTAINER=	grog@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to set title on an xterm
 
 # LICENSE=	NONE
