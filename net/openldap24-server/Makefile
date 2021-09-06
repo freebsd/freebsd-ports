@@ -17,9 +17,9 @@ MASTER_SITES=		https://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/ \
 			http://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-release
 .if defined(CLIENT_ONLY)
-PKGNAMESUFFIX=		-client
+PKGNAMESUFFIX=		24-client
 .else
-PKGNAMESUFFIX=		-server
+PKGNAMESUFFIX=		24-server
 .endif
 
 MAINTAINER=		delphij@FreeBSD.org
@@ -34,7 +34,8 @@ LICENSE_NAME=		OpenLDAP Public License
 LICENSE_FILE=		${WRKSRC}/LICENSE
 LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-2.[0-35-9].*
+CONFLICTS_INSTALL=	${PORTNAME}2[0-3][5-9]-client-* ${PORTNAME}-client-* \
+			${PORTNAME}2[0-3][5-9]-server-* ${PORTNAME}-server-*
 
 GNU_CONFIGURE=		yes
 # :keepla because port uses lt_dlopen
