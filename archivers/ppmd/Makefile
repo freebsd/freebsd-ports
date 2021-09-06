@@ -10,6 +10,10 @@ COMMENT=	Fast archiver with good compression ratio
 
 LICENSE=	PD
 
+USES=		cpe
+
+CPE_VENDOR=	ppmd_project
+
 PORTDOCS=	read_me.txt
 PLIST_FILES=	bin/ppmd man/man1/ppmd.1.gz
 
