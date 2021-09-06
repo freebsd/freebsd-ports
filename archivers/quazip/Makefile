@@ -11,9 +11,10 @@ COMMENT=	Qt/C++ wrapper for ZIP/UNZIP package
 
 LICENSE=	LGPL21
 
-USES=		cmake compiler:c++11-lang qt:5
+USES=		cmake compiler:c++11-lang cpe qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	stachenov
+CPE_VENDOR=	quazip_project
 USE_LDCONFIG=	yes
 USE_QT=		core network testlib \
 		buildtools_build qmake_build
