@@ -9,7 +9,7 @@
 +#if defined(__linux__)
 +  hwcap = getauxval(AT_HWCAP);
 +#elif defined(__FreeBSD__)
-+  hwcap = elf_aux_info(AT_HWCAP, &hwcap, sizeof(unsigned long));
++  elf_aux_info(AT_HWCAP, &hwcap, sizeof(unsigned long));
 +#endif
    __aarch64_have_lse_atomics = (hwcap & HWCAP_ATOMICS) != 0;
  }

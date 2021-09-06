@@ -2,7 +2,7 @@
 
 PORTNAME=	rust
 PORTVERSION?=	1.54.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://dev-static.rust-lang.org/dist/:src \
