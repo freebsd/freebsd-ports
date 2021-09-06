@@ -1,24 +1,15 @@
 PORTNAME=	labwc
-DISTVERSION=	0.3.0
-PORTREVISION=	2
+DISTVERSION=	0.3.0-376
+DISTVERSIONSUFFIX=	-gd5532ac
 CATEGORIES=	x11-wm
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	a1ae16c1cf17.patch:-p1 # wlroots 0.15
-PATCHFILES+=	6fe058358dbc.patch:-p1 # wlroots 0.15
-PATCHFILES+=	3d15444b3aa8.patch:-p1 # wlroots 0.15
-PATCHFILES+=	d11643bea5a4.patch:-p1 # wlroots 0.15
-PATCHFILES+=	329ca691da63.patch:-p1 # wlroots 0.15
-PATCHFILES+=	940577cb643b.patch:-p1 # wlroots 0.15
-PATCHFILES+=	73b8f06a262b.patch:-p1 # wlroots 0.15
-PATCHFILES+=	5db2ee171c54.patch:-p1 # wlroots 0.15
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland stacking compositor
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols \
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		wayland-protocols>0:graphics/wayland-protocols \
 		wlroots>=0.15.0<0.16.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
@@ -29,7 +20,8 @@ USES=		compiler:c11 gnome meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_GNOME=	cairo libxml2 pango
 USE_XORG=	pixman
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/wayland-sessions/${PORTNAME}.desktop
 
 OPTIONS_DEFINE=	MANPAGES X11
 OPTIONS_DEFAULT=MANPAGES X11
