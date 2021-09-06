@@ -2,6 +2,7 @@
 
 PORTNAME=	emacs
 DISTVERSION=	28.0.50.20210901
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -169,10 +170,10 @@ MAILUTILS_CONFIGURE_WITH=	mailutils
 MAILUTILS_CONFIGURE_ENV_OFF=	ac_cv_lib_lockfile_maillock=no \
 				ac_cv_prog_liblockfile=no
 MODULES_CONFIGURE_WITH=		modules
-NATIVECOMP_LIB_DEPENDS=		libgccjit.so:lang/gcc11
+NATIVECOMP_LIB_DEPENDS=		libgccjit.so:lang/${_GCC_PORT}
 NATIVECOMP_CONFIGURE_WITH=	native-compilation
 NATIVECOMP_MAKE_ARGS=		NATIVE_FULL_AOT=1
-NATIVECOMP_LDFLAGS=		-L${LOCALBASE}/lib/gcc11
+NATIVECOMP_LDFLAGS=		-L${LOCALBASE}/lib/${_GCC_PORT}
 OSS_CONFIGURE_ON=		--with-sound=oss
 OTF_IMPLIES=			XFT
 OTF_LIB_DEPENDS=		libotf.so:print/libotf
@@ -209,6 +210,10 @@ XWIDGETS_USE=			XORG=xcomposite
 XWIDGETS_CONFIGURE_WITH=	xwidgets
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNATIVECOMP} && !defined(_GCC_PORT_CHOSEN)
+_GCC_PORT!=	${BSDMAKE} -V_GCC_PORT USE_GCC=11+ _GCC_PORT_CHOSEN=yes
+.endif
 
 .if ${ARCH} == powerpc64le
 USE_GCC=	yes
