@@ -1,12 +1,12 @@
---- CMakeLists.txt.orig	2020-03-14 17:13:03 UTC
+--- CMakeLists.txt.orig	2021-08-31 14:25:00 UTC
 +++ CMakeLists.txt
-@@ -21,7 +21,9 @@ add_subdirectory("lib")
- add_subdirectory("share")
- add_subdirectory("dune")
- add_subdirectory("bin")
+@@ -16,7 +16,9 @@ dune_project()
+ # add subdirectories to execute CMakeLists.txt there
+ add_subdirectory(bin)
+ add_subdirectory(cmake)
 +if (FREEBSD_INSTALL_DOCS)
- add_subdirectory("doc")
+ add_subdirectory(doc)
 +endif()
- add_subdirectory("cmake/modules")
- add_subdirectory("cmake/scripts")
- 
+ add_subdirectory(dune)
+ add_subdirectory(lib)
+ add_subdirectory(share)
