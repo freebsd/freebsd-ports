@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/panotools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	grog@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform library behind Panorama Tools and other photo stitchers
 
 LICENSE=	GPLv2+
