@@ -9,6 +9,7 @@ LIB_DEPENDS:=	${LIB_DEPENDS:N*wlroots*} \
 		libxcb-render-util.so:x11/xcb-util-renderutil \
 		libxcb-icccm.so:x11/xcb-util-wm
 RUN_DEPENDS+=	xwayland-devel>0:x11-servers/xwayland-devel
+USES+=		gl
 USE_XORG+=	pixman xcb
 USE_GL+=	gbm egl
 GH_TUPLE+=	swaywm:wlroots:0.13.0:wlroots/subprojects/wlroots
