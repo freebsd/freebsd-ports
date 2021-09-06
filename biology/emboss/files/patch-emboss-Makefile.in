@@ -1,6 +1,6 @@
---- emboss/Makefile.in.orig	2014-05-29 14:42:20.540406535 +0600
-+++ emboss/Makefile.in	2014-05-29 14:42:42.364404204 +0600
-@@ -3216,7 +3216,6 @@
+--- emboss/Makefile.in.orig	2013-07-15 21:27:30 UTC
++++ emboss/Makefile.in
+@@ -3216,7 +3216,6 @@ LDADD = ../nucleus/libnucleus.la ../ajax/acd/libacd.la
  	$(am__append_3) ../ajax/pcre/libepcre.la \
  	../plplot/libeplplot.la $(XLIB)
  dist_pkgdata_DATA = \

@@ -1,5 +1,5 @@
---- emboss/emboss.default.template.orig	Wed Feb  8 00:43:42 2006
-+++ emboss/emboss.default.template	Wed Feb  8 00:40:34 2006
+--- emboss/emboss.default.template.orig	2011-03-11 09:04:31 UTC
++++ emboss/emboss.default.template
 @@ -4,7 +4,7 @@
  # By default this is /usr/local/share/EMBOSS/test but the directory can
  # be changed with --prefix when you configure EMBOSS.

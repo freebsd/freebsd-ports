@@ -2,7 +2,7 @@
 
 PORTNAME=	emboss
 PORTVERSION=	6.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
@@ -18,15 +18,16 @@ BUILD_DEPENDS=	clustalw:biology/clustalw \
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libpng.so:graphics/png
 
+USES=		gmake libtool iconv mysql pgsql ssl
+USE_SUBMAKE=	yes
+
 CONFLICTS=	qmail-ldap-[0-9]* digest-[0-9]*
 
 PREFIX?=	${LOCALBASE}/emboss
 NO_MTREE=	yes
-USES=		gmake libtool iconv
-USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message emboss-shell
 SUB_LIST=	PREFIX=${PREFIX} DATADIR=${DATADIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=${ICONV_CONFIGURE_ARG}
@@ -54,5 +55,6 @@ pre-install:
 
 post-install:
 	${INSTALL_DATA} ${CONFIG_FILE} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/emboss-shell ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
