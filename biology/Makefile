@@ -156,6 +156,7 @@
     SUBDIR += py-pyfaidx
     SUBDIR += py-pysam
     SUBDIR += py-python-libsbml
+    SUBDIR += py-pywgsim
     SUBDIR += py-resdk
     SUBDIR += py-scikit-bio
     SUBDIR += py-xenaPython
