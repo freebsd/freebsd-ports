@@ -19,7 +19,7 @@ USES=		cpe gmake libtool tar:bzip2 ssl pkgconfig autoreconf
 USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	openssl_LIBS="-L${OPENSSLLIB} -lcrypto" openssl_CFLAGS=-I${OPENSSLBASE}
 
-CPE_PRODUCT=	xml_security_for_c\+\+
+CPE_PRODUCT=	xml_security_for_c++
 CPE_VENDOR=	apache
 
 .include <bsd.port.mk>
