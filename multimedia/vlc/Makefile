@@ -2,7 +2,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	3.0.16
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -19,14 +19,16 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libidn.so:dns/libidn \
-		libmatroska.so:multimedia/libmatroska
+		libmatroska.so:multimedia/libmatroska \
+		libgpg-error.so:security/libgpg-error \
+		libebml.so:textproc/libebml
 BUILD_DEPENDS=	gsed:textproc/gsed \
 		ffmpeg>=3.4.1,1:multimedia/ffmpeg \
 		yasm:devel/yasm
 RUN_DEPENDS=	ffmpeg>=3.4.1,1:multimedia/ffmpeg
 
 USES=		compiler:c++17-lang desktop-file-utils gettext-tools gmake gnome \
-		iconv libtool localbase pathfix pkgconfig tar:xz
+		iconv:wchar_t libtool localbase pathfix pkgconfig tar:xz
 
 # VLC git (post 2.2.4) requires C++11 support and passes the appropriate flag
 # to the compiler. Until the port is updated, we explicitly pass -std=c++11 to
@@ -47,7 +49,7 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 		--disable-alsa --disable-archive --disable-chromaprint --disable-crystalhd \
 		--disable-dc1394 --disable-decklink --disable-dsm \
 		--disable-dv1394 --disable-fdkaac --disable-gst-decode \
-		--disable-gles2 --disable-kai --disable-kva \
+		--disable-gles2 --disable-kai --disable-kva --disable-mpg123 \
 		--disable-vnc --disable-opencv --disable-projectm \
 		--disable-secret --disable-soxr --disable-telx \
 		--disable-tiger --disable-tremor --disable-udev \
@@ -71,7 +73,7 @@ OPTIONS_DEFINE=	A52 AALIB AOM ASS AVAHI CACA CHROMECAST DAV1D DBUS DCA DOCS DVDR
 		TWOLAME UPNP V4L VAAPI VCD VDPAU VPX VORBIS WAYLAND X11 X264 X265 ZVBI
 OPTIONS_DEFINE_powerpc=	ALTIVEC
 OPTIONS_DEFINE_powerpc64=	ALTIVEC
-OPTIONS_DEFAULT=AVAHI DAV1D DBUS DVDREAD DVDNAV GNUTLS JPEG \
+OPTIONS_DEFAULT=ASS AVAHI DAV1D DBUS DVDREAD DVDNAV GNUTLS HARFBUZZ JPEG \
 		LIVEMEDIA LUA OGG OPTIMIZED_CFLAGS \
 		OPUS PNG QT5 SAMPLERATE STREAM SPEEX TAGLIB THEORA TWOLAME \
 		V4L VAAPI VCD VDPAU VORBIS WAYLAND X11
@@ -317,7 +319,8 @@ SMB_CONFIGURE_ENABLE=	smbclient
 
 STREAM_CONFIGURE_ENABLE=sout
 
-SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex \
+			libspeexdsp.so:audio/speexdsp
 SPEEX_CONFIGURE_ENABLE=	speex
 
 TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib
