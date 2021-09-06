@@ -1,4 +1,4 @@
-%%ETCDIR%%/zabbix_agentd.conf.sample
+@sample %%ETCDIR%%/zabbix_agentd.conf.sample
 bin/zabbix_get
 bin/zabbix_sender
 man/man1/zabbix_get.1.gz

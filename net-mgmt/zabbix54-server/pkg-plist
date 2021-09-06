@@ -14,7 +14,7 @@
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/data.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/images.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/schema.sql
-%%ETCDIR%%/zabbix_%%ZABBIX_BUILD%%.conf.sample
+@sample %%ETCDIR%%/zabbix_%%ZABBIX_BUILD%%.conf.sample
 %%PROXY%%@dir %%ETCDIR%%/zabbix_proxy.conf.d
 %%SERVER%%@dir %%ETCDIR%%/zabbix_server.conf.d
 %%SERVER%%@dir %%ETCDIR%%/zabbix/alertscripts
