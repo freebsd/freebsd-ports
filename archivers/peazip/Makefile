@@ -10,9 +10,11 @@ COMMENT=	Free archiver and file compressor
 
 LICENSE=	LGPL3
 
-USES=		desktop-file-utils dos2unix fpc lazarus:flavors zip xorg
+USES=		cpe desktop-file-utils dos2unix fpc lazarus:flavors zip xorg
 USE_FPC=	cairo chm fcl-base fcl-image fcl-xml pasjpeg rtl-objpas x11
 USE_XORG=	x11
+
+CPE_VENDOR=	giorgio_tani
 
 SUB_FILES=	pea peazip
 
