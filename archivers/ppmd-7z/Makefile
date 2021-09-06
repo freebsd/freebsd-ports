@@ -18,13 +18,15 @@ LICENSE_FILE_UNRAR=	${WRKSRC}/DOCS/unRarLicense.txt
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/DOCS/copying.txt
 LICENSE_PERMS_UNRAR=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		tar:bzip2 gmake
+USES=		cpe tar:bzip2 gmake
 WRKSRC=		${WRKDIR}/p7zip_${DISTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Compress/PPMD_Alone
 MAKEFILE=	makefile
 PLIST_FILES=	bin/${PKGBASE}
 MAKE_ARGS=	PROG=${PORTNAME} CXX="${CXX}" LIB="-pthread"
 TEST_TARGET=	test
+CPE_VENDOR=	7-zip
+CPE_PRODUCT=	p7zip
 
 post-patch:
 	@${REINPLACE_CMD} -e '/bool Open(LPCTSTR fileName, DWORD creationDisposition)/,/}/d'\
