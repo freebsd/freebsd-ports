@@ -46,6 +46,8 @@ USE_QT=		concurrent core dbus declarative graphicaleffects gui network \
 		paths_run quickcontrols_run
 USE_XORG=	ice sm x11 xau xcb xcomposite xcursor xext xfixes xft xkbfile xrender xtst
 
+CPE_VENDOR=	kde
+
 CMAKE_OFF=	BUILD_TESTING
 
 # In 5.15 a file was moved from x11/plasma5-plasma-desktop to x11/plasma5-plasma-workspace:
