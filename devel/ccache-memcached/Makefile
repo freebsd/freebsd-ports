@@ -40,7 +40,7 @@ TINDERBOX_DESC=	Create tarball for tinderbox usage
 
 USES=		autoreconf compiler gmake pkgconfig
 
-CONFIGURE_ENABLE+=	memcached
+CONFIGURE_ARGS+=	--enable-memcached
 LIB_DEPENDS+=	libmemcached.so:databases/libmemcached
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include

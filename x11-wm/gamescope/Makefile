@@ -26,7 +26,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libwlroots.so:x11-toolkits/wlroots \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c++11-lib meson pkgconfig sdl xorg
+USES=		compiler:c++11-lib gl meson pkgconfig sdl xorg
 USE_GITHUB=	yes
 USE_SDL=	sdl2
 USE_XORG=	x11 xcomposite xdamage xext xfixes xrender xres xtst xxf86vm
