@@ -31,18 +31,5 @@ CFLAGS+=	-Wno-error=format-nonliteral # clang
 PLIST_FILES=	bin/${PORTNAME}
 GLIB_SCHEMAS=	sm.puri.phoc.gschema.xml
 
-# https://gitlab.gnome.org/World/Phosh/phoc/-/merge_requests/241
-BUILD_DEPENDS:=	${BUILD_DEPENDS:N*wlroots*}
-LIB_DEPENDS:=	${LIB_DEPENDS:N*wlroots*} \
-		libudev.so:devel/libudev-devd \
-		libdrm.so:graphics/libdrm \
-		libseat.so:sysutils/seatd \
-		libxcb-errors.so:x11/xcb-util-errors \
-		libxcb-icccm.so:x11/xcb-util-wm
-RUN_DEPENDS+=	xwayland-devel>0:x11-servers/xwayland-devel
-USE_XORG+=	x11
-USE_GL+=	gbm egl
-GL_TUPLE+=	https://source.puri.sm:Librem5:wlroots:b2fd6d8dd88d67ee48be67f5be4ee614a5826b13:wlroots/subprojects/wlroots
-PLIST_FILES+=	"@comment libdata/pkgconfig/wlroots.pc"
-
+.include "${.CURDIR}/Makefile.wlroots"
 .include <bsd.port.mk>

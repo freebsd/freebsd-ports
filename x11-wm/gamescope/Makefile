@@ -43,20 +43,5 @@ PIPEWIRE_DESC=		Screen capture via PipeWire
 PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
 PIPEWIRE_MESON_ENABLED=	pipewire
 
-# https://github.com/Plagman/gamescope/pull/202
-BUILD_DEPENDS:=	${BUILD_DEPENDS:N*wlroots*} \
-		xwayland-devel>0:x11-servers/xwayland-devel
-LIB_DEPENDS:=	${LIB_DEPENDS:N*wlroots*} \
-		libudev.so:devel/libudev-devd \
-		libseat.so:sysutils/seatd \
-		libinput.so:x11/libinput \
-		libxcb-errors.so:x11/xcb-util-errors \
-		libxcb-render-util.so:x11/xcb-util-renderutil \
-		libxcb-icccm.so:x11/xcb-util-wm
-RUN_DEPENDS+=	xwayland-devel>0:x11-servers/xwayland-devel
-USE_XORG+=	pixman xcb
-USE_GL+=	gbm egl
-GH_TUPLE+=	swaywm:wlroots:0.13.0:wlroots/subprojects/wlroots
-PLIST_FILES+=	"@comment libdata/pkgconfig/wlroots.pc"
-
+.include "${.CURDIR}/Makefile.wlroots"
 .include <bsd.port.mk>
