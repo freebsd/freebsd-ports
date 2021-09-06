@@ -26,7 +26,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		xwayland-devel>0:x11-servers/xwayland-devel
 RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel
 
-USES=		cmake compiler:c++11-lib cpe gettext gl gnome kde:5 pkgconfig \
+USES=		cmake compiler:c++11-lib gettext gl gnome kde:5 pkgconfig \
 		python:3.5+,run qt:5 shebangfix tar:xz xorg
 USE_GL=		egl
 USE_GNOME=	glib20
