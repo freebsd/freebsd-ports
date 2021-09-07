@@ -1,3 +1,37 @@
+  <vuln vid="0e561173-0fa9-11ec-a2fa-080027948c12">
+    <topic>Python -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>python36</name>
+	<range><lt>3.6.15</lt></range>
+      </package>
+      <package>
+	<name>python37</name>
+	<range><lt>3.7.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Python reports:</p>
+	<blockquote cite="https://docs.python.org/3.6/whatsnew/changelog.html#changelog">
+	  <p>bpo-44394: Update the vendored copy of libexpat to 2.4.1 (from 2.2.8) to get the
+	    fix for the CVE-2013-0340 "Billion Laughs" vulnerability. This copy is most used
+	    on Windows and macOS.</p>
+	  <p>bpo-43124: Made the internal putcmd function in smtplib sanitize input for
+	    presence of \r and \n characters to avoid (unlikely) command injection.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://docs.python.org/3.6/whatsnew/changelog.html#changelog</url>
+      <url>https://docs.python.org/3.7/whatsnew/changelog.html#changelog</url>
+    </references>
+    <dates>
+      <discovery>2021-08-30</discovery>
+      <entry>2021-09-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="65f05b71-0e3c-11ec-b335-d4c9ef517024">
     <topic>WeeChat -- Crash when decoding a malformed websocket frame in relay plugin.</topic>
     <affects>
