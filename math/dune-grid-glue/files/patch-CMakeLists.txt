@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2021-09-07 15:43:33 UTC
++++ CMakeLists.txt
+@@ -22,7 +22,9 @@ dune_register_package_flags(LIBRARIES dunegridglue)
+ 
+ add_subdirectory("dune")
+ add_subdirectory("doc")
++if (FREEBSD_BUILD_EXAMPLES)
+ add_subdirectory("examples")
++endif()
+ 
+ # finalize the dune project, e.g. generating config.h etc.
+ finalize_dune_project(GENERATE_CONFIG_H_CMAKE)

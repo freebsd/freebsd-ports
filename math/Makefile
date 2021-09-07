@@ -247,6 +247,7 @@
     SUBDIR += dune-functions
     SUBDIR += dune-geometry
     SUBDIR += dune-grid
+    SUBDIR += dune-grid-glue
     SUBDIR += dune-istl
     SUBDIR += dune-localfunctions
     SUBDIR += dune-metagrid

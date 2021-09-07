@@ -1,0 +1,11 @@
+The dune-grid-glue module provides infrastructure for the coupling of two
+unrelated Dune grids. The coupling may be overlapping or nonoverlapping,
+conforming or nonconforming. The two grids are not requested to be of the same
+type, and they may even be of different dimensions.
+
+Couplings are described as sets of remote intersections. Conceptually, these
+remote intersections are very close to what the regular intersections in the
+Dune grid interface are, with the difference that the inside and outside
+entities are taken from different grids.
+
+WWW: https://www.dune-project.org/
