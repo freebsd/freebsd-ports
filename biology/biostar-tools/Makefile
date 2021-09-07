@@ -1,5 +1,5 @@
 PORTNAME=	biostar-tools
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	biology python
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -58,7 +58,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		Jellyfish>0:biology/jellyfish \
 		mafft>0:biology/mafft \
 		clustal-omega>0:biology/clustal-omega \
-		${PYTHON_PKGNAMEPREFIX}pywgsim>0:biology/py-pywgsim@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pywgsim>0:biology/py-pywgsim@${PY_FLAVOR} \
+		sam2pairwise:biology/sam2pairwise
 
 USES=		metaport python
 
