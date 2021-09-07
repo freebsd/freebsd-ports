@@ -1,6 +1,6 @@
 PORTNAME=	dune-typetree
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.1
+DISTVERSION=	2.8.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,7 @@ USE_GITLAB=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	staging
-GL_COMMIT=	50603353e821c1139f74871b575011fa44d13701
+GL_COMMIT=	cf6b5b4d3abe5dfa748815a69f6a8bda02af36f0
 
 NO_ARCH=	yes
 

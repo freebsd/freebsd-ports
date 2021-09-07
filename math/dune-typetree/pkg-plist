@@ -1,6 +1,7 @@
 include/dune/typetree/accumulate_static.hh
 include/dune/typetree/childextraction.hh
 include/dune/typetree/compositenode.hh
+include/dune/typetree/dynamicpowernode.hh
 include/dune/typetree/exceptions.hh
 include/dune/typetree/filteredcompositenode.hh
 include/dune/typetree/filters.hh
