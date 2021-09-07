@@ -1,0 +1,5 @@
+A simple statusbar for x11-wm/dwm
+
+Shows load averages, date-time and battery life.
+
+WWW: https://github.com/sakhmatd/sdwmbar

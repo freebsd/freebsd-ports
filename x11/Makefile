@@ -319,6 +319,7 @@
     SUBDIR += screenkey
     SUBDIR += scripts
     SUBDIR += sddm
+    SUBDIR += sdwmbar
     SUBDIR += sessreg
     SUBDIR += setlayout
     SUBDIR += setxkbmap
