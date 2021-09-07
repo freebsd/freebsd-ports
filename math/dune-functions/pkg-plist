@@ -33,12 +33,15 @@ include/dune/functions/functionspacebases/defaultlocalview.hh
 include/dune/functions/functionspacebases/defaultnodetorangemap.hh
 include/dune/functions/functionspacebases/flatmultiindex.hh
 include/dune/functions/functionspacebases/flatvectorview.hh
+include/dune/functions/functionspacebases/hierarchicallagrangebasis.hh
 include/dune/functions/functionspacebases/hierarchicnodetorangemap.hh
 include/dune/functions/functionspacebases/hierarchicvectorwrapper.hh
 include/dune/functions/functionspacebases/interpolate.hh
 include/dune/functions/functionspacebases/lagrangebasis.hh
 include/dune/functions/functionspacebases/lagrangedgbasis.hh
+include/dune/functions/functionspacebases/nedelecbasis.hh
 include/dune/functions/functionspacebases/nodes.hh
+include/dune/functions/functionspacebases/periodicbasis.hh
 include/dune/functions/functionspacebases/powerbasis.hh
 include/dune/functions/functionspacebases/rannacherturekbasis.hh
 include/dune/functions/functionspacebases/sizeinfo.hh
@@ -47,6 +50,7 @@ include/dune/functions/functionspacebases/subspacebasis.hh
 include/dune/functions/functionspacebases/subspacelocalview.hh
 include/dune/functions/functionspacebases/taylorhoodbasis.hh
 include/dune/functions/functionspacebases/test/basistest.hh
+include/dune/functions/functionspacebases/transformedindexbasis.hh
 include/dune/functions/gridfunctions/analyticgridviewfunction.hh
 include/dune/functions/gridfunctions/discreteglobalbasisfunction.hh
 include/dune/functions/gridfunctions/gridfunction.hh

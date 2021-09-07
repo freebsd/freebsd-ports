@@ -1,6 +1,6 @@
 PORTNAME=	dune-functions
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.1
+DISTVERSION=	2.8.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ USE_GITLAB=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	staging
-GL_COMMIT=	534900aa256aeef9d025d5b8776ff1c0f0e144da
+GL_COMMIT=	1882b3ec0a14b211dd077f0d5e6455495e28c35d
 
 NO_ARCH=	yes
 
