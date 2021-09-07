@@ -24,7 +24,11 @@ SHEBANG_FILES=	bin/opensearch bin/opensearch-cli \
 		bin/opensearch-env bin/opensearch-env-from-file \
 		bin/opensearch-keystore bin/opensearch-node \
 		bin/opensearch-plugin bin/opensearch-shard \
-		bin/performance-analyzer-agent-cli
+		bin/performance-analyzer-agent-cli \
+		plugins/opensearch-security/tools/audit_config_migrater.sh \
+		plugins/opensearch-security/tools/hash.sh \
+		plugins/opensearch-security/tools/install_demo_configuration.sh \
+		plugins/opensearch-security/tools/securityadmin.sh
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -70,6 +74,7 @@ do-install:
 
 do-install-PLUGINS-on:
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "plugins" ${STAGEDIR}${PREFIX}/lib/opensearch/)
+	(cd ${WRKSRC}/plugins/opensearch-security/tools && ${COPYTREE_BIN} "*.sh" ${STAGEDIR}${PREFIX}/lib/opensearch/plugins/opensearch-security/tools)
 
 post-install:
 .for f in ${CONFIG_FILES}
