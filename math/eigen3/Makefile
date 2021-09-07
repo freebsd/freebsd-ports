@@ -12,17 +12,21 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
 LICENSE_FILE_MPL20=	${WRKSRC}/COPYING.MPL2
 
 CMAKE_ARGS=	-DPKGCONFIG_INSTALL_DIR:PATH="libdata/pkgconfig"
+# This is to set the C++ standard to C++11, instead of 03
+CMAKE_ON=	EIGEN_TEST_CXX11
 USES=		cmake tar:bzip2
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	FULL
-OPTIONS_DEFAULT=FULL
+OPTIONS_DEFINE=	BLAS TEST
+OPTIONS_DEFAULT=BLAS
 
-FULL_DESC=	Add the support for math dependencies
-FULL_CMAKE_ON=	-DBLAS_DIR:PATH="${LOCALBASE}"
-FULL_USES=	blaslapack:openblas pkgconfig
-FULL_LIB_DEPENDS=	libcholmod.so:math/suitesparse-cholmod	\
+BLAS_DESC=	Adds math dependencies
+BLAS_CMAKE_ARGS=-DBLAS_DIR:PATH="${LOCALBASE}"
+BLAS_USES=	blaslapack pkgconfig
+
+TEST_CMAKE_ON=	EIGEN_TEST_CUDA EIGEN_TEST_CUDA_CLANG
+TEST_LIB_DEPENDS=	libcholmod.so:math/suitesparse-cholmod	\
 			libumfpack.so:math/suitesparse-umfpack	\
 			libsuperlu.so:math/superlu	\
 			libadolc.so:math/adol-c		\

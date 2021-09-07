@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210907:
+  AFFECTS: consumers of math/eigen[23]
+  AUTHOR: adridg@FreeBSD.org
+
+  math/eigen2 has been marked deprecated. There do not seem to be any
+  consumers in FreeBSD ports.
+
+  math/eigen3 has had its options re-vamped. The default options previously
+  pulled in multiple useless library dependencies. The options also forced
+  a specific BLAS implementation. The new options depend only on the
+  default BLAS (whatever USES=blaslapack picks), but this can be turned
+  off. The previous multiple useless libraries -- which are not useless
+  when running the tests in Eigen -- are now hidden behind the default-off
+  TEST option.
+
+  Users of a carefully-tuned Eigen build should re-evaluate the options
+  available.
+
 20210902:
   AFFECTS: users of editors/vim
   AUTHOR: adamw@FreeBSD.org
