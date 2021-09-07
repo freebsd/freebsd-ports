@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 BUILD_DEPENDS=	libtextstyle>=${PORTVERSION}:devel/libtextstyle
 LIB_DEPENDS=	libtextstyle.so:devel/libtextstyle
 
-USES=		charsetfix cpe gettext-runtime iconv libtool tar:xz
+USES=		charsetfix cpe gettext-runtime iconv libtool localbase tar:xz
 USE_LDCONFIG=	yes
 
 CPE_PRODUCT=	gettext
