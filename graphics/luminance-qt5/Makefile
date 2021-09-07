@@ -2,7 +2,7 @@
 
 PORTNAME=	luminance-hdr
 DISTVERSION=	2.6.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION}
 
@@ -11,8 +11,7 @@ COMMENT=	Complete open source solution for HDR photography
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3 \
-		${LOCALBASE}/include/eigen3/Eigen/Sparse:math/eigen3
+BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libImath.so:math/Imath \
 		libtiff.so:graphics/tiff \
 		libraw_r.so:graphics/libraw \
@@ -26,19 +25,19 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 
 CFLAGS+=	-I${LOCALBASE}/include/Imath
 
-USES=		cmake desktop-file-utils jpeg pkgconfig qt:5 tar:bzip2
+USES=		cmake desktop-file-utils eigen:3 jpeg pkgconfig qt:5 tar:bzip2
 USE_QT=		concurrent core declarative gui location network \
 		printsupport sql svg widgets xml \
 		buildtools_build linguisttools_build qmake_build
 
-OPTIONS_DEFINE=	CFITSIO DOCS HELPBROWSER
+OPTIONS_DEFINE=		CFITSIO DOCS HELPBROWSER
 OPTIONS_DEFAULT=	CFITSIO HELPBROWSER
 
 CFITSIO_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
 
 HELPBROWSER_DESC=	Build help browser (requires QtWebEngine)
 HELPBROWSER_USE=	QT=webchannel,webengine
-HELPBROWSER_CMAKE_ON=	-DWITH_HELPBROWSER:BOOL=ON
+HELPBROWSER_CMAKE_ON=	WITH_HELPBROWSER
 
 .include <bsd.port.options.mk>
 
