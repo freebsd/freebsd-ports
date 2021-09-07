@@ -612,6 +612,7 @@
     SUBDIR += pd
     SUBDIR += pear-Text_Spell_Audio
     SUBDIR += penguinsap
+    SUBDIR += phaserotate-lv2
     SUBDIR += pianobar
     SUBDIR += pianobooster
     SUBDIR += pianod2
