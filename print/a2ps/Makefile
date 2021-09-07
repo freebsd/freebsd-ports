@@ -51,6 +51,10 @@ EMACS_CONFIGURE_ON=	--with-lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}
 CONFIGURE_ENV+=	EMACS=no
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1400000
+CFLAGS+=	-DHAVE_MEMPCPY
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|^DESTDIR|#DESTDIR|' \
 		`${FIND} ${WRKSRC} -name "Makefile.in"`
