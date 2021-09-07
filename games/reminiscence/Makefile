@@ -1,5 +1,5 @@
 PORTNAME=	REminiscence
-PORTVERSION=	0.4.8
+PORTVERSION=	0.4.9
 CATEGORIES=	games
 MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
 		https://mirror.amdmi3.ru/distfiles/
@@ -7,18 +7,17 @@ MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Rewritten engine for Flashback
 
-LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
-		libvorbisidec.so:audio/libtremor
+LIB_DEPENDS=	libmodplug.so:audio/libmodplug
+BUILD_DEPENDS=	${LOCALBASE}/include/stb/stb_vorbis.c:devel/stb
 
 USES=		compiler:c++11-lang gmake pkgconfig sdl tar:bzip2
 USE_SDL=	sdl2
-
 ALL_TARGET=	rs
+CPPFLAGS+=	-I${LOCALBASE}/include/stb
 
 SUB_FILES=	pkg-message
 
 PORTDOCS=	README.txt
-
 PLIST_FILES=	bin/remin
 PLIST_DIRS=	%%DATADIR%%/data
 
