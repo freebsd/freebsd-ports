@@ -8,6 +8,8 @@ COMMENT=	TLS library designed to ease writing foolproof applications
 
 LICENSE=	ISCL
 
+BROKEN_FreeBSD_11=	requires newer OpenSSL
+
 USES=	libtool ssl pkgconfig
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
