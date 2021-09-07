@@ -9,8 +9,11 @@ PKGNAMESUFFIX=	2
 DISTNAME=	${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight library for vector and matrix math
+
+DEPRECATED=	No longer available upstream, no consumers in ports
+EXPIRATION_DATE=2021-12-07
 
 USES=		cmake tar:bzip2
 
