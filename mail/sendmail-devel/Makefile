@@ -14,6 +14,7 @@ LICENSE_NAME=	Sendmail License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+IGNORE=		snapshot removed, use mail/sendmail
 CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-*
 
 USERS=		smmsp
@@ -143,7 +144,7 @@ SITE+=	${FILESDIR}/site.config.m4.smtputf8
 SITE+=	${FILESDIR}/site.config.m4.milter
 .endif
 .if ${PORT_OPTIONS:MGDBM}
-NO_PACKAGE=	GPLv3 license conflict
+LICENSE_PERMS=	dist-mirror dist-sell no-pkg-mirror no-pkg-sell auto-accept
 SITE+=	${FILESDIR}/site.config.m4.gdbm
 .endif
 
