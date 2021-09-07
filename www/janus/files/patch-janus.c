@@ -1,6 +1,6 @@
---- janus.c.orig	2021-08-02 14:04:13 UTC
+--- janus.c.orig	2021-09-06 10:07:06 UTC
 +++ janus.c
-@@ -4282,6 +4282,7 @@ gint main(int argc, char *argv[])
+@@ -4338,6 +4338,7 @@ gint main(int argc, char *argv[])
  			if (!event) {
  				JANUS_LOG(LOG_ERR, "\tCouldn't load logger plugin '%s': %s\n", eventent->d_name, dlerror());
  			} else {

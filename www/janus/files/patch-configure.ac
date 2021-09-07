@@ -1,4 +1,4 @@
---- configure.ac.orig	2021-06-15 12:25:22 UTC
+--- configure.ac.orig	2021-09-06 10:07:06 UTC
 +++ configure.ac
 @@ -363,8 +363,6 @@ freebsd*)
                      libconfig
@@ -9,3 +9,12 @@
                      zlib"
  esac
  PKG_CHECK_MODULES([JANUS],"$PKGCHECKMODULES")
+@@ -954,8 +952,6 @@ AS_IF([test "x$enable_post_processing" = "xyes"],
+                          [
+                            glib-2.0 >= $glib_version
+                            jansson >= $jansson_version
+-                           libssl >= $ssl_version
+-                           libcrypto
+                            libavutil
+                            libavcodec
+                            libavformat
