@@ -1,6 +1,6 @@
 PermLib is a C++ library for permutation computations. Currently it supports set
 stabilizer and in-orbit computations, based on bases and strong generating sets
-(BSGS). Additionally, it computes automorphisms of symmetric matrices and find
+(BSGS). Additionally, it computes automorphisms of symmetric matrices and finds
 the lexicographically smallest set in an orbit of sets. It also features a very
 basic recognition of permutation group types.
 
