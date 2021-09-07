@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2018-08-20 20:54:13 UTC
+--- CMakeLists.txt.orig	2021-08-24 13:32:47 UTC
 +++ CMakeLists.txt
-@@ -27,7 +27,10 @@ dune_project()
- include(DuneMPI)
+@@ -34,7 +34,10 @@ if( DUNE_ENABLE_PYTHONBINDINGS )
+ endif()
  
  #add sub_directories
--dune_add_subdirs(dune lib doc cmake/modules)
-+dune_add_subdirs(dune lib cmake/modules)
+-dune_add_subdirs(dune lib doc cmake/modules ${PYDEMO_DIR})
++dune_add_subdirs(dune lib cmake/modules ${PYDEMO_DIR})
 +if (FREEBSD_INSTALL_DOCS)
 +dune_add_subdirs(doc)
 +endif()

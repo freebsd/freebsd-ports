@@ -1,5 +1,5 @@
 PORTNAME=	dune-fem
-DISTVERSION=	2.6.0rc3
+DISTVERSION=	2.8.0rc1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,15 +14,28 @@ BUILD_DEPENDS=	arpack++>0:math/arpack++ \
 		dune-spgrid>0:math/dune-spgrid \
 		vc>0:devel/vc \
 		${LOCALBASE}/mpi/openmpi/lib/libmpi.so:net/openmpi
-LIB_DEPENDS=	libarpack.so:math/arpack-ng \
+LIB_DEPENDS=	libpsurface.so:math/psurface \
+		libarpack.so:math/arpack-ng \
 		libdunealugrid.so:math/dune-alugrid \
 		libdunecommon.so:math/dune-common \
 		libdunegeometry.so:math/dune-geometry \
 		libdunegrid.so:math/dune-grid \
-		libugS2.so:math/dune-uggrid \
+		libdunepolygongrid.so:math/dune-polygongrid \
+		libduneuggrid.so:math/dune-uggrid \
+		libgmp.so:math/gmp \
 		libmetis.so:math/metis \
 		libopenblas.so:math/openblas \
-		libtbb.so:devel/tbb
+		libsuitesparseconfig.so:math/suitesparse-config \
+		libsuperlu.so:math/superlu \
+		libamd.so:math/suitesparse-amd \
+		libcamd.so:math/suitesparse-camd \
+		libccolamd.so:math/suitesparse-ccolamd \
+		libcholmod.so:math/suitesparse-cholmod \
+		libcolamd.so:math/suitesparse-colamd \
+		libldl.so:math/suitesparse-ldl \
+		libspqr.so:math/suitesparse-spqr \
+		libumfpack.so:math/suitesparse-umfpack \
+		libtbb.so:devel/onetbb
 RUN_DEPENDS=	dune-istl>=2.6:math/dune-istl \
 		dune-localfunctions>=2.6:math/dune-localfunctions \
 		dune-spgrid>0:math/dune-spgrid \
@@ -34,7 +47,7 @@ USE_LDCONFIG=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	dune-fem
-GL_COMMIT=	d1b565ab01047e44508c23bb9ba3e3b4491cd8a7
+GL_COMMIT=	d1c625e6d51167d0cce57de6adcef21f548a8f82
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
