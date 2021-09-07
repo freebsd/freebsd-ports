@@ -2,6 +2,7 @@ include/dune/vtk/datacollectorinterface.hh
 include/dune/vtk/datacollectorinterface.impl.hh
 include/dune/vtk/datacollectors/continuousdatacollector.hh
 include/dune/vtk/datacollectors/discontinuousdatacollector.hh
+include/dune/vtk/datacollectors/lagrangedatacollector.hh
 include/dune/vtk/datacollectors/quadraticdatacollector.hh
 include/dune/vtk/datacollectors/spdatacollector.hh
 include/dune/vtk/datacollectors/structureddatacollector.hh
@@ -29,6 +30,7 @@ include/dune/vtk/pvdwriter.hh
 include/dune/vtk/pvdwriter.impl.hh
 include/dune/vtk/types.hh
 include/dune/vtk/utility/arguments.hh
+include/dune/vtk/utility/concepts.hh
 include/dune/vtk/utility/enum.hh
 include/dune/vtk/utility/errors.hh
 include/dune/vtk/utility/filesystem.hh

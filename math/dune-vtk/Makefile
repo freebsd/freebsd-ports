@@ -1,5 +1,5 @@
 PORTNAME=	dune-vtk
-DISTVERSION=	g20201220
+DISTVERSION=	g20210623
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,12 +20,22 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libdunegeometry.so:math/dune-geometry \
 		libdunegrid.so:math/dune-grid \
 		libdunepolygongrid.so:math/dune-polygongrid \
-		libugL.so:math/dune-uggrid \
+		libduneuggrid.so:math/dune-uggrid \
 		libgmp.so:math/gmp \
 		libmetis.so:math/metis \
 		libopenblas.so:math/openblas \
+		libpsurface.so:math/psurface \
+		libamd.so:math/suitesparse-amd \
+		libcamd.so:math/suitesparse-camd \
+		libccolamd.so:math/suitesparse-ccolamd \
+		libcholmod.so:math/suitesparse-cholmod \
+		libcolamd.so:math/suitesparse-colamd \
+		libsuitesparseconfig.so:math/suitesparse-config \
+		libldl.so:math/suitesparse-ldl \
+		libspqr.so:math/suitesparse-spqr \
+		libumfpack.so:math/suitesparse-umfpack \
 		libsuperlu.so:math/superlu \
-		libtbb.so:devel/tbb
+		libtbb.so:devel/onetbb
 RUN_DEPENDS=	${HPP_DEPENDS} \
 		suitesparse>0:math/suitesparse \
 		${LOCALBASE}/mpi/openmpi/lib/libmpi.so:net/openmpi
@@ -36,7 +46,7 @@ USE_LDCONFIG=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	extensions
-GL_COMMIT=	847c3e5d0e5ff48ac3aad14adf6218b6578599af
+GL_COMMIT=	38f79c23ef8f29210d41353a8380e42b78422f2f
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
