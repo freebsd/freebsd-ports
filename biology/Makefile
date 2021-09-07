@@ -171,6 +171,7 @@
     SUBDIR += rubygem-bio-executables
     SUBDIR += rubygem-bio-old-biofetch-emulator
     SUBDIR += rubygem-bio-shell
+    SUBDIR += sam2pairwise
     SUBDIR += samtools
     SUBDIR += scrm
     SUBDIR += seaview
