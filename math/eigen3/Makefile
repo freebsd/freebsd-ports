@@ -1,5 +1,6 @@
 PORTNAME=	eigen
 PORTVERSION=	3.3.9
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://gitlab.com/libeigen/eigen/-/archive/${PORTVERSION}/
 
