@@ -38,6 +38,7 @@ include/dune/grid/albertagrid/misc.hh
 include/dune/grid/albertagrid/persistentcontainer.hh
 include/dune/grid/albertagrid/projection.hh
 include/dune/grid/albertagrid/refinement.hh
+include/dune/grid/albertagrid/structuredgridfactory.hh
 include/dune/grid/albertagrid/transformation.hh
 include/dune/grid/albertagrid/treeiterator.hh
 include/dune/grid/albertagrid/undefine-2.0.hh
@@ -68,7 +69,6 @@ include/dune/grid/common/partitionset.hh
 include/dune/grid/common/rangegenerators.hh
 include/dune/grid/common/scsgmapper.hh
 include/dune/grid/common/sizecache.hh
-include/dune/grid/common/universalmapper.hh
 include/dune/grid/geometrygrid.hh
 include/dune/grid/geometrygrid/backuprestore.hh
 include/dune/grid/geometrygrid/cachedcoordfunction.hh
@@ -258,6 +258,9 @@ lib/cmake/dune-grid/dune-grid-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/dune-grid/dune-grid-targets.cmake
 lib/dunecontrol/dune-grid/dune.module
 lib/dunegridam2cmake.lib
+lib/libdunealbertagrid1d.so
+lib/libdunealbertagrid2d.so
+lib/libdunealbertagrid3d.so
 lib/libdunegrid.so
 libdata/pkgconfig/dune-grid.pc
 %%DATADIR%%/config.h.cmake
