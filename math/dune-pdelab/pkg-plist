@@ -201,7 +201,10 @@ include/dune/pdelab/instationary/implicitonestep.hh
 include/dune/pdelab/instationary/onestep.hh
 include/dune/pdelab/instationary/onestepparameter.hh
 include/dune/pdelab/localoperator/blockdiagonal.hh
+include/dune/pdelab/localoperator/blockdiagonalwrapper.hh
+include/dune/pdelab/localoperator/blockoffdiagonalwrapper.hh
 include/dune/pdelab/localoperator/callswitch.hh
+include/dune/pdelab/localoperator/combinedoperator.hh
 include/dune/pdelab/localoperator/convectiondiffusionccfv.hh
 include/dune/pdelab/localoperator/convectiondiffusiondg.hh
 include/dune/pdelab/localoperator/convectiondiffusionfem.hh
@@ -220,6 +223,7 @@ include/dune/pdelab/localoperator/eval.hh
 include/dune/pdelab/localoperator/flags.hh
 include/dune/pdelab/localoperator/idefault.hh
 include/dune/pdelab/localoperator/interface.hh
+include/dune/pdelab/localoperator/jacobianapplyhelper.hh
 include/dune/pdelab/localoperator/l2.hh
 include/dune/pdelab/localoperator/l2volumefunctional.hh
 include/dune/pdelab/localoperator/linearacousticsdg.hh
@@ -236,6 +240,7 @@ include/dune/pdelab/localoperator/numericalnonlinearjacobianapply.hh
 include/dune/pdelab/localoperator/numericalresidual.hh
 include/dune/pdelab/localoperator/pattern.hh
 include/dune/pdelab/localoperator/permeability_adapter.hh
+include/dune/pdelab/localoperator/pointdiagonalwrapper.hh
 include/dune/pdelab/localoperator/scaled.hh
 include/dune/pdelab/localoperator/stokesparameter.hh
 include/dune/pdelab/localoperator/sum.hh
@@ -245,10 +250,6 @@ include/dune/pdelab/localoperator/variablefactories.hh
 include/dune/pdelab/localoperator/weightedsum.hh
 include/dune/pdelab/localoperator/zero.hh
 include/dune/pdelab/newton/newton.hh
-include/dune/pdelab/newton/newtonerrors.hh
-include/dune/pdelab/newton/newtonlinesearch.hh
-include/dune/pdelab/newton/newtonterminate.hh
-include/dune/pdelab/newton/utility.hh
 include/dune/pdelab/ordering/chunkedblockordering.hh
 include/dune/pdelab/ordering/decorator.hh
 include/dune/pdelab/ordering/directleaflocalordering.hh
@@ -266,6 +267,11 @@ include/dune/pdelab/ordering/singlecodimleafordering.hh
 include/dune/pdelab/ordering/subordering.hh
 include/dune/pdelab/ordering/transformations.hh
 include/dune/pdelab/ordering/utility.hh
+include/dune/pdelab/solver/linesearch.hh
+include/dune/pdelab/solver/newton.hh
+include/dune/pdelab/solver/newtonerrors.hh
+include/dune/pdelab/solver/terminate.hh
+include/dune/pdelab/solver/utility.hh
 include/dune/pdelab/stationary/linearproblem.hh
 lib/cmake/dune-pdelab/dune-pdelab-config-version.cmake
 lib/cmake/dune-pdelab/dune-pdelab-config.cmake
@@ -275,10 +281,5 @@ lib/dunecontrol/dune-pdelab/dune.module
 lib/libdunepdelab.so
 libdata/pkgconfig/dune-pdelab.pc
 %%DATADIR%%/config.h.cmake
-share/dune/cmake/modules/CorrectWindowsPaths.cmake
 share/dune/cmake/modules/DunePdelabMacros.cmake
-share/dune/cmake/modules/FindPETSc.cmake
-share/dune/cmake/modules/FindPackageMultipass.cmake
-share/dune/cmake/modules/ResolveCompilerPaths.cmake
 share/dune/cmake/modules/UseEigen.cmake
-share/dune/cmake/modules/UsePETSc.cmake
