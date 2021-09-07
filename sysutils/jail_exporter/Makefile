@@ -17,9 +17,6 @@ USE_RC_SUBR=	jail_exporter
 
 OPTIONS_DEFINE=	DOCS
 
-# This Makefile contains the CARGO_CRATES section.
-.include "Makefile.crates"
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.8 \
 		${STAGEDIR}${MANPREFIX}/man/man8

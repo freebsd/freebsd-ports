@@ -21,8 +21,6 @@ CARGO_TEST=	yes
 
 RUSTFLAGS+=	-C link-arg=-fuse-ld=lld
 
-.include "${.CURDIR}/Makefile.crates"
-
 CARGO_GIT_SUBDIR=	rethutil:reth-util:crates/util
 
 post-install:

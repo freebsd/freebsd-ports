@@ -14,6 +14,8 @@ _INCLUDE_USES_CARGO_MK=	yes
 IGNORE+=	USES=cargo takes no arguments
 .endif
 
+.sinclude "${MASTERDIR}/Makefile.crates"
+
 # List of static dependencies.  The format is cratename-version.
 # CARGO_CRATES will be downloaded from MASTER_SITE_CRATESIO.
 CARGO_CRATES?=

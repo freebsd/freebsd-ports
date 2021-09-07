@@ -18,7 +18,6 @@ USES=		cargo
 PLIST_FILES=	bin/doh-proxy
 
 # make cargo-crates > Makefile.crates
-.include "Makefile.crates"
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/doh-proxy

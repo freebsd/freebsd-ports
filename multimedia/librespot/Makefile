@@ -45,8 +45,6 @@ TREMOR_VARS=		CARGO_FEATURES+=with-tremor
 VORBIS_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 VORBIS_VARS=		CARGO_FEATURES+=with-vorbis
 
-.include "Makefile.crates"
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/librespot
 
