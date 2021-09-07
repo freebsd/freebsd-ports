@@ -483,6 +483,7 @@
     SUBDIR += odt2txt
     SUBDIR += openfts
     SUBDIR += openjade
+    SUBDIR += opensearch
     SUBDIR += opensp
     SUBDIR += openvanilla-framework
     SUBDIR += or-aspell

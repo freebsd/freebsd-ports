@@ -795,7 +795,7 @@ cassandra:*:851:
 p0f:*:852:
 _geodns:*:853:
 ebusd:*:854:
-# free: 855
+opensearch:*:855:
 # free: 856
 # free: 857
 # free: 858

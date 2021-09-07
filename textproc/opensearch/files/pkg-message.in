@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+Please see %%ETCDIR%% for a sample version of
+opensearch.yml.
+
+OpenSearch requires memory locking of large amounts of RAM.
+You may need to set:
+
+sysctl security.bsd.unprivileged_mlock=1
+
+When running within a jail, it's highly advisable to set:
+
+enforce_statfs = 1
+
+for the jail running opensearch instance.
+
+If OpenSearch was built with the PLUGINS option enabled (default) it will not
+start until the security plugin is properly configured.  Please refer to the
+OpenSearch documentation for setting-up TLS:
+
+https://opensearch.org/docs/security-plugin/configuration/tls
+EOM
+}
+]

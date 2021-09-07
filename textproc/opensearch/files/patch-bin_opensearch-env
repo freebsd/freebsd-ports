@@ -1,0 +1,17 @@
+--- bin/opensearch-env.orig	2021-07-30 13:39:40 UTC
++++ bin/opensearch-env
+@@ -40,13 +40,7 @@ if [ ! -z "$JAVA_HOME" ]; then
+   JAVA="$JAVA_HOME/bin/java"
+   JAVA_TYPE="JAVA_HOME"
+ else
+-  if [ "$(uname -s)" = "Darwin" ]; then
+-    # macOS has a different structure
+-    JAVA="$OPENSEARCH_HOME/jdk.app/Contents/Home/bin/java"
+-  else
+-    JAVA="$OPENSEARCH_HOME/jdk/bin/java"
+-  fi
+-  JAVA_TYPE="bundled jdk"
++  JAVA="/usr/local/bin/java"
+ fi
+ 
+ if [ ! -x "$JAVA" ]; then

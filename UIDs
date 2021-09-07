@@ -800,7 +800,7 @@ cassandra:*:851:851::0:0:Cassandra DB Daemon User:/var/db/cassandra:/usr/sbin/no
 p0f:*:852:852::0:0:p0f unprivileged user:/var/empty:/usr/sbin/nologin
 _geodns:*:853:853::0:0:GeoDNS User:/var/empty:/usr/sbin/nologin
 ebusd:*:854:854::0:0:eBUS Daemon user:/nonexistent:/usr/sbin/nologin
-# free: 855
+opensearch:*:855:855::0:0:opensearch user:/nonexistent:/usr/sbin/nologin
 # free: 856
 # free: 857
 # free: 858
