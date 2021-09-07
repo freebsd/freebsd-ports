@@ -7,6 +7,8 @@ MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		GH
 PKGNAMESUFFIX=	-devel
 
+BROKEN=		causes failed builds https://github.com/freebsd/poudriere/issues/917
+
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Port build and test system
 
