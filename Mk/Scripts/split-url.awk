@@ -1,4 +1,5 @@
-function split_url(s,	url_scheme, url_fragment, url_query, url_authority, url_auth, url_user, url_host) {
+function split_url(s,	url_scheme, url_fragment, url_query, url_query_parts, i, url_query_part, url_authority, url_auth, url_user, url_host) {
+	delete url
 	# scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]
 	split(s, url_scheme, "://")
 	url["scheme"] = url_scheme[1]
@@ -7,7 +8,15 @@ function split_url(s,	url_scheme, url_fragment, url_query, url_authority, url_au
 	url["fragment"] = url_fragment[2]
 
 	split(url_fragment[1], url_query, "?")
-	url["query"] = url_query[2]
+
+	split(url_query[2], url_query_parts, "&")
+	# url["query"] list of query keys (space separated)
+	# url["query", key] value
+	for (i = 1; i <= length(url_query_parts); i++) {
+		split(url_query_parts[i], url_query_part, "=")
+		url["query"] = url["query"] " " url_query_part[1]
+		url["query", url_query_part[1]] = url_query_part[2]
+	}
 
 	split(url_query[1], url_authority, "/")
 	url["path"] = substr(url_query[1], length(url_authority[1]) + 1)
