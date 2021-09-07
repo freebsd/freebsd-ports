@@ -1,7 +1,7 @@
 # Created by: Glenn Johnson
 
 PORTNAME=	tinker
-DISTVERSION=	8.9.3
+DISTVERSION=	8.9.4
 CATEGORIES=	science
 MASTER_SITES=	https://dasher.wustl.edu/tinker/downloads/
 
