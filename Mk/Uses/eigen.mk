@@ -4,8 +4,7 @@
 # Usage:	USES=eigen:ARGS
 # Valid ARGS:	<version>,[build,run]
 #
-# version	The chooseable versions are 2 and 3.
-#		USES=eigen:2 # Use eigen 2.x
+# version	The chooseable versions are 3 (only 3).
 #		USES=eigen:3 # Use eigen 3.x
 #
 # build		Add build depends [default]
@@ -17,7 +16,7 @@
 .if ! defined(_INCLUDE_USES_EIGEN_MK)
 _INCLUDE_USES_EIGEN_MK=	YES
 
-_EIGEN_SUPPORTED=	2 3
+_EIGEN_SUPPORTED=	3
 
 _eigen_version=	#
 .  for _ver in ${_EIGEN_SUPPORTED:O:u}
