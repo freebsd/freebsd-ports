@@ -46,15 +46,52 @@ CARGO_CRATE_EXT=	.crate
 # slow grep runs for every CARGO_CRATE_EXT access.
 CARGO_CRATE_EXT=	${defined(_CARGO_CRATE_EXT_CACHE):?${_CARGO_CRATE_EXT_CACHE}:${:!if ${GREP} -q '\(${CARGO_DIST_SUBDIR}/.*\.tar\.gz\)' "${DISTINFO_FILE}" 2>/dev/null; then ${ECHO_CMD} .tar.gz; else ${ECHO_CMD} .crate; fi!:_=_CARGO_CRATE_EXT_CACHE}}
 .endif
+
+_CARGO_CRATES:=		${CARGO_CRATES:N*@git+*}
+_CARGO_GIT_SOURCES:=	${CARGO_CRATES:M*@git+*}
 # enumerate crates for unqiue and sane distfile group names
-_CARGO_CRATES:=	${empty(CARGO_CRATES):?:${CARGO_CRATES:range:@i@$i ${CARGO_CRATES:[$i]}@}}
+_CARGO_CRATES:=		${empty(_CARGO_CRATES):?:${_CARGO_CRATES:range:@i@$i ${_CARGO_CRATES:[$i]}@}}
 # split up crates into (index, crate, name, version) 4-tuples
-_CARGO_CRATES:=	${_CARGO_CRATES:C/^([-_a-zA-Z0-9]+)-([0-9].*)/\0 \1 \2/}
+_CARGO_CRATES:=		${_CARGO_CRATES:C/^([-_a-zA-Z0-9]+)-([0-9].*)/\0 \1 \2/}
+
 .for _index _crate _name _version in ${_CARGO_CRATES}
 # Resolving CRATESIO alias is very inefficient with many MASTER_SITES, consume MASTER_SITE_CRATESIO directly
 MASTER_SITES+=	${MASTER_SITE_CRATESIO:S,%SUBDIR%,${_name}/${_version},:S,$,:_cargo_${_index},}
 DISTFILES+=	${CARGO_DIST_SUBDIR}/${_crate}${CARGO_CRATE_EXT}:_cargo_${_index}
+
+# Provide pointer to the crate's extraction dir
+WRKSRC_crate_${_name}=	${CARGO_VENDOR_DIR}/${_crate}
+# ...  also with version suffix in case of multiple versions of the
+# same crate
+WRKSRC_crate_${_crate}=	${CARGO_VENDOR_DIR}/${_crate}
 .endfor
+
+_CARGO_AWK=	${AWK} -vCP="${CP}" -vFIND="${FIND}" -vGREP="${GREP}" \
+		-vCARGO_VENDOR_DIR="${CARGO_VENDOR_DIR}" \
+		-vGIT_SOURCES="${_CARGO_GIT_SOURCES}" \
+		-vWRKDIR="${WRKDIR}" -vWRKSRC="${WRKSRC}" \
+		-f${SCRIPTSDIR}/split-url.awk \
+		-f${SCRIPTSDIR}/cargo-crates-git-common.awk -f
+
+.if !empty(_CARGO_GIT_SOURCES)
+.  for _index _site _filename _wrksrc _crates in ${:!${_CARGO_AWK} ${SCRIPTSDIR}/cargo-crates-git-fetch.awk /dev/null!}
+MASTER_SITES+=	${_site}:_cargo_git${_index}
+DISTFILES+=	${_filename}:_cargo_git${_index}
+.    for _crate in ${_crates:S/,/ /g}
+# Make sure the build dependencies checks below can work for git sourced crates too
+_CARGO_CRATES+=	@git ${_crate} ${_crate} @git
+
+# Provide pointer to the crate's extraction dir
+#
+# This might not point to the actual crate's sources since a
+# single git source can contain multiple crates.  We cannot collect
+# subdir information until after the full extraction is done and we
+# cannot set make variables at that point.  This is better than
+# nothing.
+WRKSRC_crate_${_crate}=	${WRKDIR}/${_wrksrc}
+.    endfor
+.  endfor
+.endif
 
 # Build dependencies.
 
@@ -106,9 +143,8 @@ STRIP_CMD=	${LOCALBASE}/bin/strip # unsupported e_type with base strip
 .endif
 
 # Helper to shorten cargo calls.
-CARGO_CARGO_RUN= \
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${CARGO_ENV} \
-		${CARGO_CARGO_BIN}
+_CARGO_RUN=		${SETENV} ${MAKE_ENV} ${CARGO_ENV} ${CARGO_CARGO_BIN}
+CARGO_CARGO_RUN=	cd ${WRKSRC}; ${SETENV} CARGO_FREEBSD_PORTS_SKIP_GIT_UPDATE=1 ${_CARGO_RUN}
 
 # User arguments for cargo targets.
 CARGO_BUILD_ARGS?=
@@ -122,15 +158,6 @@ CARGO_BUILD?=	yes
 CARGO_CONFIGURE?=	yes
 CARGO_INSTALL?=	yes
 CARGO_TEST?=	yes
-
-# Set CARGO_USE_GIT{HUB,LAB} to yes if your application requires
-# some dependencies from git repositories hosted on GitHub or
-# GitLab instances.  All Cargo.toml files will be patched to point
-# to the right offline sources based on what is defined in
-# {GH,GL}_TUPLE.  This makes sure that cargo does not attempt to
-# access the network during the build.
-CARGO_USE_GITHUB?=	no
-CARGO_USE_GITLAB?=	no
 
 # rustc stashes intermediary files in TMPDIR (default /tmp) which
 # might cause issues for users that for some reason space limit
@@ -235,7 +262,8 @@ cargo-extract:
 # the local crates directory.
 	@${ECHO_MSG} "===>  Moving crates to ${CARGO_VENDOR_DIR}"
 	@${MKDIR} ${CARGO_VENDOR_DIR}
-.for _crate in ${CARGO_CRATES}
+.for _index _crate _name _version in ${_CARGO_CRATES}
+.  if ${_index} != @git
 	@${MV} ${WRKDIR}/${_crate} ${CARGO_VENDOR_DIR}/${_crate}
 	@${PRINTF} '{"package":"%s","files":{}}' \
 		$$(${SHA256} -q ${DISTDIR}/${CARGO_DIST_SUBDIR}/${_crate}${CARGO_CRATE_EXT}) \
@@ -244,43 +272,8 @@ cargo-extract:
 		${MV} ${CARGO_VENDOR_DIR}/${_crate}/Cargo.toml.orig \
 			${CARGO_VENDOR_DIR}/${_crate}/Cargo.toml.orig-cargo; \
 	fi
+.  endif
 .endfor
-
-_CARGO_GIT_PATCH_CARGOTOML=
-.if ${CARGO_USE_GITHUB:tl} == "yes"
-.  for _group in ${GH_TUPLE:C@^[^:]*:[^:]*:[^:]*:(([^:/]*)?)((/.*)?)@\2@}
-.    if empty(CARGO_GIT_SUBDIR:M${_group}\:*)
-_CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
-	-e "s@git *= *['\"](https|http|git)://github.com/${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}(\.git)?/?[\"']@path = \"${WRKSRC_${_group}}\"@"
-.    else
-.      for _group2 _crate _subdir in ${CARGO_GIT_SUBDIR:M${_group}\:*:S,:, ,g}
-_CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
-	-e "/^${_crate} =/ s@git *= *['\"](https|http|git)://github.com/${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}(\.git)?/?[\"']@path = \"${WRKSRC_${_group}}/${_subdir}\"@"
-.	endfor
-.    endif
-.  endfor
-.endif
-.if ${CARGO_USE_GITLAB:tl} == "yes"
-.  for _group in ${GL_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\8@:S/^://}
-.    if empty(CARGO_GIT_SUBDIR:M${_group}\:*)
-_CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
-	-e "s@git *= *['\"]${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}(\.git)?/?['\"]@path = \"${WRKSRC_${_group}}\"@"
-.    else
-.      for _group2 _crate _subdir in ${CARGO_GIT_SUBDIR:M${_group}\:*:S,:, ,g}
-_CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
-	-e "/^${_crate} = / s@git *= *['\"]${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}(\.git)?/?['\"]@path = \"${WRKSRC_${_group}}/${_subdir}\"@"
-.      endfor
-.    endif
-.  endfor
-.endif
-
-.if !empty(_CARGO_GIT_PATCH_CARGOTOML)
-_USES_patch+=	600:cargo-patch-git
-
-cargo-patch-git:
-	@${FIND} ${WRKDIR} -name Cargo.toml -type f -exec \
-		${SED} -i.dist -E ${_CARGO_GIT_PATCH_CARGOTOML} {} +
-.endif
 
 .if ${CARGO_CONFIGURE:tl} == "yes"
 _USES_configure+=	250:cargo-configure
@@ -291,17 +284,25 @@ cargo-configure:
 # Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64
 	@${SETENV} CC="${CC}" OPSYS="${OPSYS}" OSVERSION="${OSVERSION}" WRKDIR="${WRKDIR}" \
 		${SH} ${SCRIPTSDIR}/rust-compat11-canary.sh
+	@${ECHO_MSG} "===>   Cargo config:"
 	@${MKDIR} ${WRKDIR}/.cargo
-	@${ECHO_CMD} "[source.cargo]" > ${WRKDIR}/.cargo/config
-	@${ECHO_CMD} "directory = '${CARGO_VENDOR_DIR}'" >> ${WRKDIR}/.cargo/config
-	@${ECHO_CMD} "[source.crates-io]" >> ${WRKDIR}/.cargo/config
-	@${ECHO_CMD} "replace-with = 'cargo'" >> ${WRKDIR}/.cargo/config
+	@: > ${WRKDIR}/.cargo/config.toml
+	@${ECHO_CMD} "[source.cargo]" >> ${WRKDIR}/.cargo/config.toml
+	@${ECHO_CMD} "directory = '${CARGO_VENDOR_DIR}'" >> ${WRKDIR}/.cargo/config.toml
+	@${ECHO_CMD} "[source.crates-io]" >> ${WRKDIR}/.cargo/config.toml
+	@${ECHO_CMD} "replace-with = 'cargo'" >> ${WRKDIR}/.cargo/config.toml
+.if !empty(_CARGO_GIT_SOURCES)
+	@${_CARGO_AWK} ${SCRIPTSDIR}/cargo-crates-git-configure.awk \
+		/dev/null >> ${WRKDIR}/.cargo/config.toml
+.endif
+	@${CAT} ${WRKDIR}/.cargo/config.toml
 	@if ! ${GREP} -qF '[profile.release]' ${CARGO_CARGOTOML}; then \
 		${ECHO_CMD} "" >> ${CARGO_CARGOTOML}; \
 		${ECHO_CMD} "[profile.release]" >> ${CARGO_CARGOTOML}; \
 		${ECHO_CMD} "opt-level = 2" >> ${CARGO_CARGOTOML}; \
 		${ECHO_CMD} "debug = false" >> ${CARGO_CARGOTOML}; \
 	fi
+	@${ECHO_MSG} "===>   Updating Cargo.lock"
 	@${CARGO_CARGO_RUN} update \
 		--manifest-path ${CARGO_CARGOTOML} \
 		--verbose \
@@ -349,12 +350,11 @@ do-test:
 cargo-crates: extract
 	@if [ ! -r "${CARGO_CARGOLOCK}" ]; then \
 		${ECHO_MSG} "===> ${CARGO_CARGOLOCK} not found.  Trying to generate it..."; \
-		${CARGO_CARGO_RUN} generate-lockfile \
+		cd ${WRKSRC}; ${_CARGO_RUN} generate-lockfile \
 			--manifest-path ${CARGO_CARGOTOML} \
 			--verbose; \
 	fi
-	@${SETENV} USE_GITHUB=${USE_GITHUB} USE_GITLAB=${USE_GITLAB} GL_SITE=${GL_SITE} \
-		${AWK} -f ${SCRIPTSDIR}/split-url.awk -f ${SCRIPTSDIR}/cargo-crates.awk ${CARGO_CARGOLOCK}
+	@${_CARGO_AWK} ${SCRIPTSDIR}/cargo-crates.awk ${CARGO_CARGOLOCK}
 
 # cargo-crates-licenses will try to grab license information from
 # all downloaded crates.
