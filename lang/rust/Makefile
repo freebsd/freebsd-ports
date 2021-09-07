@@ -1,8 +1,8 @@
 # Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 
 PORTNAME=	rust
-PORTVERSION?=	1.54.0
-PORTREVISION?=	2
+PORTVERSION?=	1.55.0
+PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://dev-static.rust-lang.org/dist/:src \
@@ -68,8 +68,10 @@ WASM_VARS=		_RUST_BUILD_WASM=true \
 WASM_VARS_OFF=		_RUST_BUILD_WASM=false
 
 # See WRKSRC/src/stage0.txt for the date and version values.
-BOOTSTRAPS_DATE?=		2021-06-17
-RUST_BOOTSTRAP_VERSION?=	1.53.0
+BOOTSTRAPS_DATE?=			2021-07-29
+BOOTSTRAPS_DATE_powerpc?=		2021-09-09
+RUST_BOOTSTRAP_VERSION?=		1.54.0
+RUST_BOOTSTRAP_VERSION_powerpc?=	1.55.0
 
 BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
 BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
@@ -173,9 +175,7 @@ do-configure:
 	@${ECHO_CMD} 'sysconfdir="${PREFIX}/etc"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[rust]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'channel="${PKGNAMESUFFIX:Ustable:S/^-//}"' >> ${WRKSRC}/config.toml
-.if defined(NIGHTLY_DATE)
 	@${ECHO_CMD} 'codegen-units=1' >> ${WRKSRC}/config.toml
-.endif
 	@${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'deny-warnings=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'verbose-tests=true' >> ${WRKSRC}/config.toml

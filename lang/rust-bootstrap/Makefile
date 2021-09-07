@@ -2,7 +2,7 @@
 # to upload them to ~/public_distfiles on freefall in preparation
 # for the next lang/rust update.
 PORTNAME=	rust
-PORTVERSION=	1.54.0
+PORTVERSION=	1.55.0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:rust \
 		LOCAL/tobik/rust:${FLAVOR} \
@@ -34,7 +34,6 @@ FLAVORS=	aarch64 amd64 armv6 armv7 i386 powerpc64_elfv1 powerpc64_elfv2 \
 FLAVOR?=	${FLAVORS:[1]}
 
 aarch64_PKGNAMEPREFIX=		aarch64-
-aarch64_BUILD_DEPENDS=		llvm90>0:devel/llvm90
 amd64_PKGNAMEPREFIX=		amd64-
 armv6_PKGNAMEPREFIX=		armv6-
 armv7_PKGNAMEPREFIX=		armv7-
@@ -52,10 +51,6 @@ USE_GCC=	9:build
 .endif
 # for openssl-src crate
 USE_PERL5=	build
-.if ${FLAVOR} == aarch64
-CC=		clang90
-CXX=		clang++90
-.endif
 PATCHDIR=	${.CURDIR}/../rust/files
 # rustc stashes intermediary files in TMPDIR (default /tmp) which
 # might cause issues for users that for some reason space limit
@@ -112,6 +107,7 @@ _RUST_LLVM_TARGET_powerpc64_elfv2=	PowerPC
 _RUST_LLVM_TARGET_powerpc64le=		PowerPC
 _RUST_LLVM_TARGET_powerpc=		PowerPC
 _RUST_LLVM_TRIPLE=			${_RUST_LLVM_TRIPLE_${FLAVOR}:U${_RUST_TARGET}}
+_RUST_LLVM_TRIPLE_aarch64=		aarch64-unknown-freebsd12.0
 _RUST_LLVM_TRIPLE_armv6=		armv6-gnueabihf-freebsd
 _RUST_LLVM_TRIPLE_armv7=		armv7-gnueabihf-freebsd
 _RUST_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd13.0 # secure-plt
