@@ -1,6 +1,7 @@
 PORTNAME=	croc
 PORTVERSION=	9.3.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -38,6 +39,7 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		tscholl2:siec:9bdfc483d499:tscholl2_siec/vendor/github.com/tscholl2/siec \
 		twmb:murmur3:v1.1.5:twmb_murmur3/vendor/github.com/twmb/murmur3
+USE_RC_SUBR=	croc
 
 PLIST_FILES=	bin/croc
 

@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: croc
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable croc relaying:
+#
+# croc_enable (bool):	Set to NO by default.
+# 			Set it to YES to enable croc relaying.
+# croc_ports (string):	List of comma-separated ports to be used.
+#			Service requires at least *two* ports.
+#			Default is "9009,9010,9011,9012,9013"
+
+. /etc/rc.subr
+
+name=croc
+rcvar=croc_enable
+
+load_rc_config $name
+
+: ${croc_enable:="NO"}
+: ${croc_ports="9009,9010,9011,9012,9013"}
+
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/bin/croc"
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} -T ${name} -p ${pidfile} /usr/bin/env ${croc_env} ${procname} relay --ports \"${croc_ports}\""
+
+run_rc_command "$1"
