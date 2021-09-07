@@ -349,7 +349,7 @@ cargo-crates: extract
 			--verbose; \
 	fi
 	@${SETENV} USE_GITHUB=${USE_GITHUB} USE_GITLAB=${USE_GITLAB} GL_SITE=${GL_SITE} \
-		${AWK} -f ${SCRIPTSDIR}/cargo-crates.awk ${CARGO_CARGOLOCK}
+		${AWK} -f ${SCRIPTSDIR}/split-url.awk -f ${SCRIPTSDIR}/cargo-crates.awk ${CARGO_CARGOLOCK}
 
 # cargo-crates-licenses will try to grab license information from
 # all downloaded crates.
