@@ -43,6 +43,7 @@
     SUBDIR += R-cran-filelock
     SUBDIR += R-cran-foreach
     SUBDIR += R-cran-future
+    SUBDIR += R-cran-future.apply
     SUBDIR += R-cran-gbRd
     SUBDIR += R-cran-gbm
     SUBDIR += R-cran-gdata
