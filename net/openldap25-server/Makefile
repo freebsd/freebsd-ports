@@ -318,6 +318,10 @@ PLIST_SUB+=		OPENLDAP_MAJOR=${OPENLDAP_MAJOR}
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} == base
+BROKEN=			Requires OpenSSL 1.1.1+
+.endif
+
 .if ${PORT_OPTIONS:MFETCH} && (defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != "" || ${SSL_DEFAULT} != base)
 BROKEN=	using OpenSSL from ports and OPTION FETCH together is not supported
 . endif
