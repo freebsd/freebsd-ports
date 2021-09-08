@@ -1,0 +1,4 @@
+GoKart is a static analysis tool for Go that finds vulnerabilities
+using the SSA (single static assignment) form of Go source code.
+
+WWW: https://github.com/praetorian-inc/gokart

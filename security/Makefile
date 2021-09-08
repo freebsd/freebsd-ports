@@ -189,6 +189,7 @@
     SUBDIR += gnupg1
     SUBDIR += gnutls
     SUBDIR += go-cve-dictionary
+    SUBDIR += gokart
     SUBDIR += gonepass
     SUBDIR += gopass
     SUBDIR += gorilla
