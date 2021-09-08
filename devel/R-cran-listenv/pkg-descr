@@ -1,0 +1,9 @@
+List environments are environments that have list-like properties.
+For instance, the elements of a list environment are ordered and
+can be accessed and iterated over using index subsetting,
+ e.g.
+ 'x <- listenv(a = 1, b = 2);
+  for (i in seq_along(x)) x[[i]] <- x[[i]] ^ 2;
+  y <- as.list(x)'.
+
+WWW: https://cran.r-project.org/web/packages/listenv/

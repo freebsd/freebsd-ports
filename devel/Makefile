@@ -60,6 +60,7 @@
     SUBDIR += R-cran-itertools
     SUBDIR += R-cran-later
     SUBDIR += R-cran-lifecycle
+    SUBDIR += R-cran-listenv
     SUBDIR += R-cran-lubridate
     SUBDIR += R-cran-magrittr
     SUBDIR += R-cran-memoise
