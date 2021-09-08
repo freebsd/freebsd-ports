@@ -15,7 +15,7 @@ bin/u2spewfoo
 include/snort/actions/actions.h
 include/snort/codecs/codec_module.h
 include/snort/control/control.h
-include/snort/daqs/daq_user.h
+include/snort/daq/daq_user.h
 include/snort/decompress/file_decomp.h
 include/snort/detection/detect.h
 include/snort/detection/detect_trace.h
@@ -227,8 +227,8 @@ include/snort/utils/util.h
 include/snort/utils/util_cstring.h
 include/snort/utils/util_unfold.h
 include/snort/utils/util_utf.h
-lib/snort/daqs/daq_file.so
-lib/snort/daqs/daq_hext.so
+lib/snort/daq/daq_file.so
+lib/snort/daq/daq_hext.so
 libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.u2boat
 %%PORTDOCS%%%%DOCSDIR%%/active.txt
