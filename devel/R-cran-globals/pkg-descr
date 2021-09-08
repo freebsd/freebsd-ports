@@ -1,0 +1,7 @@
+Identifies global ("unknown" or "free") objects in R expressions
+by code inspection using various strategies (ordered, liberal, or
+conservative). The objective of this package is to make it as simple
+as possible to identify global objects for the purpose of exporting
+them in parallel, distributed compute environments.
+
+WWW: https://cran.r-project.org/web/packages/globals/
