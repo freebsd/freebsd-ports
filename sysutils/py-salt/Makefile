@@ -2,6 +2,7 @@
 
 PORTNAME=	salt
 PORTVERSION=	3003.3
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -60,8 +61,8 @@ SUB_FILES=	pkg-message
 # Upstream archive contains files with UTF-8 names
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
-OPTIONS_DEFINE=	AWS BASH TCP ZEROMQ ZSH
-OPTIONS_DEFAULT=	BASH ZEROMQ ZSH
+OPTIONS_DEFINE=	AWS BASH FISH TCP ZEROMQ ZSH
+OPTIONS_DEFAULT=	BASH FISH ZEROMQ ZSH
 
 AWS_DESC=	Install dependencies required for Amazon Web Services
 TCP_DESC=	Install dependencies required for TCP transport
@@ -79,6 +80,15 @@ ZEROMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:net/py-pyzmq@${PY_FLAVOR
 			${PYTHON_PKGNAMEPREFIX}pycryptodomex>=3.9.7:security/py-pycryptodomex@${PY_FLAVOR}
 
 BASH_PLIST_FILES=	share/bash-completion/completions/salt
+FISH_PLIST_FILES=	share/fish/completions/salt-call.fish \
+					share/fish/completions/salt-cp.fish \
+					share/fish/completions/salt-key.fish \
+					share/fish/completions/salt-master.fish \
+					share/fish/completions/salt-minion.fish \
+					share/fish/completions/salt-run.fish \
+					share/fish/completions/salt-syndic.fish \
+					share/fish/completions/salt.fish \
+					share/fish/completions/salt_common.fish
 ZSH_PLIST_FILES=	share/zsh/site-functions/_salt
 
 post-patch:
@@ -96,6 +106,11 @@ do-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions/
 	${INSTALL_DATA} ${WRKSRC}/pkg/salt.bash \
 		${STAGEDIR}${PREFIX}/share/bash-completion/completions/salt
+
+do-install-FISH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions/
+	${INSTALL_DATA} ${WRKSRC}/pkg/fish-completions/*.fish \
+		${STAGEDIR}${PREFIX}/share/fish/completions
 
 do-install-ZSH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
