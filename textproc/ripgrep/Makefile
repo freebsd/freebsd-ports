@@ -107,10 +107,7 @@ PCRE2_DESC=	${PCRE_DESC} version 2
 PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 PCRE2_VARS=	CARGO_FEATURES+=pcre2
 
-# simd crate uses cfg_target_feature which isn't stable yet, so unlock
-# unstable features similar to how lang/rust bootstraps. www/firefox
-# uses the same hack when building with --enable-rust-simd.
-SIMD_MAKE_ENV=	RUSTC_BOOTSTRAP=1
+SIMD_MAKE_ENV=	RUSTC_BOOTSTRAP=encoding_rs,packed_simd_2
 SIMD_VARS=	CARGO_FEATURES+=simd-accel ${SIMD_VARS_${ARCH}}
 SIMD_VARS_i386=	RUSTFLAGS+="-C target-feature=+sse2"
 
