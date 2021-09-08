@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	SUNSITE/apps/editors/X/cooledit
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of utilities, including a GUI editor
 
 LICENSE=	GPLv2
