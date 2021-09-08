@@ -66,6 +66,7 @@
     SUBDIR += R-cran-microbenchmark
     SUBDIR += R-cran-mockery
     SUBDIR += R-cran-optparse
+    SUBDIR += R-cran-parallelly
     SUBDIR += R-cran-pillar
     SUBDIR += R-cran-pkgbuild
     SUBDIR += R-cran-pkgcache
