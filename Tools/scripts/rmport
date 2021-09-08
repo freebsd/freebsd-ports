@@ -352,10 +352,6 @@ usage()
 
 # main
 
-if ! ${GIT} diff --exit-code remotes/origin/main ; then
-	echo "you have local commits, exiting" >&2
-	exit 65
-fi
 if [ ! -r ${INDEX} ] ; then
 	echo "${INDEX} not readable, exiting" >&2
 	exit 66
@@ -368,6 +364,10 @@ if [ ${exitcode} -ne 0 ] ; then
 	exit
 else
 	cd "${git_dir}/.." || exit 1
+fi
+if ! ${GIT} diff --exit-code remotes/origin/main ; then
+	echo "you have local commits, exiting" >&2
+	exit 65
 fi
 
 if [ ${#} -eq 0 ] || [ "${1}" = "-h" ] || [ "${1}" = "--help" ] ; then
