@@ -8,4 +8,4 @@ command line options per information to be printed, transparent IPv6 support,
 and in addition it will use libGeoIP if available to provide geographic
 information.
 
-WWW: https://github.com/nmav/ipcalc/
+WWW: https://gitlab.com/ipcalc/ipcalc/

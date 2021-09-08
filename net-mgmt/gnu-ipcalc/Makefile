@@ -1,8 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	ipcalc
-PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	gnu-
 
@@ -12,18 +11,19 @@ COMMENT=	Modern network address calculation tool for IPv4 and IPv6
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		localbase meson pkgconfig
+USE_GITLAB=	yes
+GL_ACCOUNT=	ipcalc
+GL_COMMIT=	8dfa28013234755ef3ce3e157b3940eeaaa2b7df
+
 CONFLICTS_INSTALL=	ipcalc-[0-9]*
 
-USES=		gmake localbase
-USE_GITHUB=	yes
-GH_ACCOUNT=	nmav
+OPTIONS_DEFINE=	DOCS MAXMINDDB
+OPTIONS_SUB=	yes
+MAXMINDDB_DESC=	Enable GeoIP1 + GeoIP2 Support
 
-MAKE_ENV+=	USE_GEOIP=no USE_DYN_GEOIP=no
-
-PLIST_FILES=	bin/ipcalc man/man1/ipcalc.1.gz
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+DOCS_BUILD_DEPENDS=		ronn:textproc/rubygem-ronn
+MAXMINDDB_LIB_DEPENDS=		libmaxminddb.so:net/libmaxminddb
+MAXMINDDB_MESON_ENABLED=	use_maxminddb
 
 .include <bsd.port.mk>
