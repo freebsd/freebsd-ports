@@ -1,5 +1,5 @@
 PORTNAME=	zig
-DISTVERSION=	0.8.0
+DISTVERSION=	0.8.1
 CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/
 
