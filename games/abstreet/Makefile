@@ -474,7 +474,7 @@ update-data: configure
 		${ECHO} "Please upload the file ${DISTDIR}/${PORTNAME}-data-${DISTVERSION}.tgz"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/target/release/game ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-game
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/game ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-game
 	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	cd ${WRKDIR}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 

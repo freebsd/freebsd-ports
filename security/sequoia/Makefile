@@ -309,17 +309,16 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d \
 		${STAGEDIR}${PREFIX}/share/fish/completions \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
-.for f in ffi ffi_macros openpgp_ffi
-	${STRIP_CMD} ${CARGO_TARGET_DIR}/release/libsequoia_${f}.so
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/release/libsequoia_${f}.so ${STAGEDIR}${PREFIX}/lib/libsequoia_${f}.so.${SOVERS}
+.for f in ffi openpgp_ffi
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/libsequoia_${f}.so ${STAGEDIR}${PREFIX}/lib/libsequoia_${f}.so.${SOVERS}
 	${LN} -sf libsequoia_${f}.so.${SOVERS} ${STAGEDIR}${PREFIX}/lib/libsequoia_${f}.so
 .endfor
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/*/libsequoia_ffi_macros.so ${STAGEDIR}${PREFIX}/lib/libsequoia_ffi_macros.so.${SOVERS}
+	${LN} -sf libsequoia_ffi_macros.so.${SOVERS} ${STAGEDIR}${PREFIX}/lib/libsequoia_ffi_macros.so
 .for f in sq sqop sqv
-	${STRIP_CMD} ${CARGO_TARGET_DIR}/release/${f}
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/release/${f} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${STRIP_CMD} ${CARGO_TARGET_DIR}/release/sequoia-public-key-store
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/release/sequoia-public-key-store ${STAGEDIR}${PREFIX}/lib/sequoia/sequoia-public-key-store
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/sequoia-public-key-store ${STAGEDIR}${PREFIX}/lib/sequoia/sequoia-public-key-store
 
 	(cd ${WRKSRC}/ffi/include && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include)
 	(cd ${WRKSRC}/openpgp-ffi/include/sequoia && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/sequoia)

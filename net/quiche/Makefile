@@ -148,10 +148,10 @@ do-build:
 # install quiche apps and libquiche
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/quiche.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/release/libquiche.so ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/release/libquiche.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/release/quiche-server ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/release/quiche-client ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/libquiche.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/libquiche.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/quiche-server ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/quiche-client ${STAGEDIR}${PREFIX}/bin
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

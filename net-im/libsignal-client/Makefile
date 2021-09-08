@@ -234,7 +234,7 @@ MAKE_ENV=		CARGO_PROFILE_RELEASE_LTO=thin \
 PLIST_FILES=		lib/libsignal_jni.so
 
 do-install:
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/release/libsignal_jni.so \
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/libsignal_jni.so \
 		${STAGEDIR}${PREFIX}/lib/
 
 .include <bsd.port.mk>
