@@ -1,3 +1,35 @@
+function join_url(	s, query_keys, i) {
+	s = url["scheme"] "://"
+	if (url["user"]) {
+		s = s url["user"]
+		if (url["password"]) {
+			s = s ":" url["password"]
+		}
+		s = s "@"
+	}
+	s = s url["host"]
+	if (url["port"]) {
+		s = s ":" url["port"]
+	}
+	if (url["path"]) {
+		s = s url["path"]
+	}
+	if (url["query"]) {
+		split(url["query"], query_keys)
+		s = s "?"
+		for (i = 1; i <= length(query_keys); i++) {
+			s = s query_keys[i] "=" url["query", query_keys[i]]
+			if (i != length(query_keys)) {
+				s = s ";"
+			}
+		}
+	}
+	if (url["fragment"]) {
+		s = s "#" url["fragment"]
+	}
+	return s
+}
+
 function split_url(s,	url_scheme, url_fragment, url_query, url_query_parts, i, url_query_part, url_authority, url_auth, url_user, url_host) {
 	delete url
 	# scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]
