@@ -9,9 +9,6 @@ MASTER_SITES=	https://dri.freedesktop.org/libdrm/
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Userspace interface to kernel Direct Rendering Module services
 
-PATCH_SITES=	https://gitlab.freedesktop.org/manu/drm/-/commit/
-PATCHFILES+=	e41ca0a00f88ef8.patch:-p1
-
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
