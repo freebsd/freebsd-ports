@@ -15,12 +15,13 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
-USES=		gmake gnome libtool localbase pathfix pkgconfig tar:xz
+USES=		cpe gmake gnome libtool localbase pathfix pkgconfig tar:xz
 USE_GNOME=	gdkpixbuf2 intlhack introspection:build libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-introspection
+CPE_VENDOR=	gnome
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_DEFAULT=NLS
