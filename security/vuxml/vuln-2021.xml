@@ -1,3 +1,31 @@
+  <vuln vid="f55921aa-10c9-11ec-8647-00e0670f2660">
+    <topic>MPD5 PPPoE Server remotely exploitable crash</topic>
+    <affects>
+      <package>
+	<name>mpd5</name>
+	<range><ge>5.0</ge></range>
+	<range><lt>5.9_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Version 5.9_2 contains security fix for PPPoE servers.
+	Insufficient validation of incoming PPPoE Discovery request
+	specially crafted by unauthenticated user might lead to unexpected
+	termination of the process. The problem affects mpd versions
+	since 5.0. Installations not using PPPoE server configuration
+	were not affected.</p>
+      </body>
+    </description>
+    <references>
+	<url>http://mpd.sourceforge.net/doc5/mpd4.html#4</url>
+    </references>
+    <dates>
+      <discovery>2021-09-04</discovery>
+      <entry>2021-09-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0e561173-0fa9-11ec-a2fa-080027948c12">
     <topic>Python -- multiple vulnerabilities</topic>
     <affects>
