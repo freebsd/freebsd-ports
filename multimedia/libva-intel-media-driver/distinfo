@@ -1,6 +1,6 @@
-TIMESTAMP = 1629790808
-SHA256 (intel-media-driver-intel-media-21.3.3_GH0.tar.gz) = 10d57dc1e1e15b6d97af62340296fbc1936c5962692a4e8b2d0ebb2337bdc9d1
-SIZE (intel-media-driver-intel-media-21.3.3_GH0.tar.gz) = 23092541
+TIMESTAMP = 1631081356
+SHA256 (intel-media-driver-intel-media-21.3.4_GH0.tar.gz) = 4a8233c6a39d7ef7ccd22e43d3d3b890df71501844705783a6c364167a69cae2
+SIZE (intel-media-driver-intel-media-21.3.4_GH0.tar.gz) = 23113810
 SHA256 (a65683be3d3a.patch) = d99421c562366497fcb9ab0a08cc15147bd6d9b3cca732fa690b6560f1adf933
 SIZE (a65683be3d3a.patch) = 1239
 SHA256 (9783808c766f.patch) = 9fca99d28508fe2431c785d79d97af3a09f2d07d80d2296bcf326e2897b1fc3c
