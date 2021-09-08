@@ -1675,6 +1675,9 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cp_files/cp_files
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cp_files/cp_files_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cp_files/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/crtime/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/crtime/crtime_001_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/crtime/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/ctime/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/ctime/ctime
 %%TESTS%%share/zfs/zfs-tests/tests/functional/ctime/ctime_001_pos.ksh

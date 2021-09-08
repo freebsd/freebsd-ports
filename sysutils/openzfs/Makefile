@@ -1,5 +1,5 @@
 PORTNAME=	openzfs
-PORTVERSION=	2021073000
+PORTVERSION=	2021090800
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -25,7 +25,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_PROJECT=	zfs
-GH_TAGNAME=	7eebcd2be
+GH_TAGNAME=	ab15b1fc0
 
 .include <bsd.port.pre.mk>
 
