@@ -6,6 +6,10 @@ COMMENT=	Tools for ripping from and recording to CDs and DVDs
 LAME_RUN_DEPENDS=	lame:audio/lame
 VORBIS_RUN_DEPENDS=	oggenc:audio/vorbis-tools
 
+USES=		cpe
+
+CPE_VENDOR=	cdrtools_project
+
 OPTIONS_DEFINE=	DOCS LAME VORBIS SETUID
 OPTIONS_DEFAULT=DOCS LAME VORBIS
 OPTIONS_SUB=	yes
