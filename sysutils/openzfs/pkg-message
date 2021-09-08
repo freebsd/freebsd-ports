@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+Ensure that any zfs-related commands, such as zpool, zfs, as used in scripts
+and in your terminal sessions, use the correct path of /usr/local/sbin/ and
+not the /sbin/ commands provided by the FreeBSD base system.
+
+Consider setting this in your shell profile defaults!
+EOM
+}
+]
