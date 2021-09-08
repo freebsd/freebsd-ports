@@ -15,7 +15,9 @@ MASTER_SITES=	http://imagemagick.mirrorcatalogs.com/delegates/	\
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Library routines for working with Flashpix images
 
-USES=		tar:xz uidfix
+USES=		cpe tar:xz uidfix
+
+CPE_VENDOR=	libfpx_project
 
 PLIST_FILES=	lib/libfpx.so.2 lib/libfpx.so lib/libfpx.a include/fpxlib.h
 USE_LDCONFIG=	yes
