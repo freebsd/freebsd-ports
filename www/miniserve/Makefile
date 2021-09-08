@@ -1,6 +1,6 @@
 PORTNAME=	miniserve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
+DISTVERSION=	0.17.0
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -59,7 +59,7 @@ CARGO_CRATES=	actix-codec-0.4.0 \
 		bzip2-0.4.3 \
 		bzip2-sys-0.1.11+1.0.8 \
 		c_linked_list-1.1.1 \
-		cc-1.0.69 \
+		cc-1.0.70 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		chrono-humanize-0.2.1 \
@@ -74,7 +74,7 @@ CARGO_CRATES=	actix-codec-0.4.0 \
 		cpufeatures-0.2.1 \
 		crc32fast-1.2.1 \
 		crossbeam-utils-0.8.5 \
-		ctor-0.1.20 \
+		ctor-0.1.21 \
 		derive_more-0.99.16 \
 		diff-0.1.12 \
 		difflib-0.4.0 \
@@ -155,7 +155,7 @@ CARGO_CRATES=	actix-codec-0.4.0 \
 		new_debug_unreachable-1.0.4 \
 		normalize-line-endings-0.3.0 \
 		ntapi-0.3.6 \
-		num-bigint-0.4.1 \
+		num-bigint-0.4.2 \
 		num-integer-0.1.44 \
 		num-rational-0.4.0 \
 		num-traits-0.2.14 \
@@ -193,7 +193,7 @@ CARGO_CRATES=	actix-codec-0.4.0 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
-		proc-macro2-1.0.28 \
+		proc-macro2-1.0.29 \
 		qrcodegen-1.7.0 \
 		quote-1.0.9 \
 		rand-0.7.3 \
@@ -237,7 +237,7 @@ CARGO_CRATES=	actix-codec-0.4.0 \
 		sha2-0.9.6 \
 		signal-hook-registry-1.4.0 \
 		simplelog-0.10.0 \
-		siphasher-0.3.6 \
+		siphasher-0.3.7 \
 		slab-0.4.4 \
 		smallvec-1.6.1 \
 		socket2-0.4.1 \
@@ -253,7 +253,7 @@ CARGO_CRATES=	actix-codec-0.4.0 \
 		strsim-0.10.0 \
 		strum-0.21.0 \
 		strum_macros-0.21.1 \
-		syn-1.0.75 \
+		syn-1.0.76 \
 		tar-0.4.37 \
 		tempfile-3.2.0 \
 		tendril-0.4.2 \
@@ -270,16 +270,16 @@ CARGO_CRATES=	actix-codec-0.4.0 \
 		time-macros-impl-0.1.2 \
 		tinyvec-1.3.1 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.10.1 \
+		tokio-1.11.0 \
 		tokio-rustls-0.22.0 \
-		tokio-util-0.6.7 \
+		tokio-util-0.6.8 \
 		tower-service-0.3.1 \
 		tracing-0.1.26 \
 		tracing-core-0.1.19 \
 		treeline-0.1.0 \
 		try-lock-0.2.3 \
 		twoway-0.2.2 \
-		typenum-1.13.0 \
+		typenum-1.14.0 \
 		ucd-trie-0.1.3 \
 		unchecked-index-0.2.2 \
 		unicase-2.6.0 \
@@ -321,9 +321,6 @@ CARGO_CRATES=	actix-codec-0.4.0 \
 		zstd-safe-3.1.0+zstd.1.4.9 \
 		zstd-sys-1.5.0+zstd.1.4.9
 CARGO_USE_GITHUB=	yes
-
-# maud_macros uses feature(proc_macro)
-MAKE_ENV=	RUSTC_BOOTSTRAP=1
 
 PLIST_FILES=	bin/miniserve
 PORTDOCS=	README.md
