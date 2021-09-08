@@ -16,8 +16,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libogg.so:audio/libogg
 
-USES=		libtool pathfix tar:xz
+USES=		cpe libtool pathfix tar:xz
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	xiph.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
