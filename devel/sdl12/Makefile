@@ -16,7 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	nasm:devel/nasm
 
-USES=		gmake iconv libtool localbase:ldflags pathfix pkgconfig
+USES=		cpe gmake iconv libtool localbase:ldflags pathfix pkgconfig
+
+CPE_VENDOR=	libsdl
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
