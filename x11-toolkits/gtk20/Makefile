@@ -13,9 +13,11 @@ COMMENT=	Gimp Toolkit for X11 GUI (previous stable version)
 
 LICENSE=	LGPL20
 
-USES=		tar:xz
+USES=		cpe tar:xz
 
 PORTSCOUT=	limitw:0,even
+
+CPE_VENDOR=	gnome
 
 RUN_DEPENDS+=	update-mime-database:misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
