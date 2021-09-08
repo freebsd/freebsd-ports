@@ -13,9 +13,11 @@ COMMENT?=	Multithreaded SQL database (server)
 LICENSE=	GPLv2
 
 SLAVEDIRS=	databases/mysql55-client
-USES=		cmake:insource,noninja readline shebangfix
+USES=		cmake:insource,noninja cpe readline shebangfix
 CXXFLAGS+=	${CPPFLAGS}
 NO_OPTIONS_SORT=yes
+
+CPE_VENDOR=	oracle
 
 OPTIONS_DEFINE=	SSL FASTMTX
 OPTIONS_DEFAULT=SSL
