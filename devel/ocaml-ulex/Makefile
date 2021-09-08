@@ -29,6 +29,10 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_ALL_TARGET=	doc
 
+post-patch:
+	@${REINPLACE_CMD} -e '/^let latin1_sub_lexeme/,+3 \
+		s,^  s,  Bytes.to_string s,' ${WRKSRC}/ulexing.ml
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.css ${STAGEDIR}${DOCSDIR}
