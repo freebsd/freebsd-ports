@@ -1,16 +1,5 @@
 --- sshd_config.5.orig	2017-03-19 19:39:27.000000000 -0700
 +++ sshd_config.5	2017-03-20 11:48:37.553620000 -0700
-@@ -373,7 +373,9 @@ By default, no banner is displayed.
- .It Cm ChallengeResponseAuthentication
- Specifies whether challenge-response authentication is allowed (e.g. via
- PAM or through authentication styles supported in
--.Xr login.conf 5 )
-+.Xr login.conf 5 ) .
-+See also
-+.Cm UsePAM .
- The default is
- .Cm yes .
- .It Cm ChrootDirectory
 @@ -671,7 +673,9 @@ ssh-ed25519,ssh-rsa
  The list of available key types may also be obtained using
  .Qq ssh -Q key .

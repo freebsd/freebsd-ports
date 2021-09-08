@@ -384,8 +384,8 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  void     enable_compat13(void);
  void     enable_compat20(void);
---- configure.ac.orig	2020-03-22 11:06:53.034550000 -0700
-+++ configure.ac	2020-03-22 11:07:10.017487000 -0700
+--- work/openssh/configure.ac.orig	2020-03-22 11:06:53.034550000 -0700
++++ work/openssh/configure.ac	2020-03-22 11:07:10.017487000 -0700
 @@ -4778,6 +4778,25 @@ AC_ARG_WITH([maildir],
      ]
  ) # maildir
@@ -524,8 +524,8 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  #if !defined(WITH_OPENSSL)
  # undef BIGNUM
  # undef EC_KEY
---- work/openssh/readconf.c.orig	2021-04-28 13:58:36.413806000 -0700
-+++ work/openssh/readconf.c	2021-04-28 14:39:31.145856000 -0700
+--- work/openssh/readconf.c.orig	2021-09-08 09:56:20.567664000 -0700
++++ work/openssh/readconf.c	2021-09-08 09:57:31.560617000 -0700
 @@ -67,6 +67,9 @@
  #include "uidswap.h"
  #include "myproposal.h"
@@ -539,17 +539,17 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 @@ -168,6 +171,12 @@ typedef enum {
  	oLocalCommand, oPermitLocalCommand, oRemoteCommand,
  	oVisualHostKey,
- 	oKexAlgorithms, oIPQoS, oRequestTTY, oIgnoreUnknown, oProxyUseFdpass,
+ 	oKexAlgorithms, oIPQoS, oRequestTTY, oSessionType, oStdinNull,
 +#ifdef HPN_ENABLED
 +	oHPNDisabled, oHPNBufferSize, oTcpRcvBufPoll, oTcpRcvBuf,
 +#endif
 +#ifdef NONE_CIPHER_ENABLED
 +	oNoneSwitch, oNoneEnabled, 
 +#endif
+ 	oForkAfterAuthentication, oIgnoreUnknown, oProxyUseFdpass,
  	oCanonicalDomains, oCanonicalizeHostname, oCanonicalizeMaxDots,
  	oCanonicalizeFallbackLocal, oCanonicalizePermittedCNAMEs,
- 	oStreamLocalBindMask, oStreamLocalBindUnlink, oRevokedHostKeys,
-@@ -312,6 +321,16 @@ static struct {
+@@ -316,6 +325,16 @@ static struct {
  	{ "hostbasedkeytypes", oHostbasedAcceptedAlgorithms }, /* obsolete */
  	{ "pubkeyacceptedalgorithms", oPubkeyAcceptedAlgorithms },
  	{ "pubkeyacceptedkeytypes", oPubkeyAcceptedAlgorithms }, /* obsolete */
@@ -566,7 +566,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	{ "ignoreunknown", oIgnoreUnknown },
  	{ "proxyjump", oProxyJump },
  	{ "securitykeyprovider", oSecurityKeyProvider },
-@@ -1091,6 +1110,44 @@ parse_time:
+@@ -1125,6 +1144,44 @@ parse_time:
  		intptr = &options->check_host_ip;
  		goto parse_flag;
  
@@ -611,7 +611,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	case oVerifyHostKeyDNS:
  		intptr = &options->verify_host_key_dns;
  		multistate_ptr = multistate_yesnoask;
-@@ -2262,6 +2319,16 @@ initialize_options(Options * options)
+@@ -2386,6 +2443,16 @@ initialize_options(Options * options)
  	options->ip_qos_interactive = -1;
  	options->ip_qos_bulk = -1;
  	options->request_tty = -1;
@@ -625,10 +625,10 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +	options->tcp_rcv_buf_poll = -1;
 +	options->tcp_rcv_buf = -1;
 +#endif
- 	options->proxy_use_fdpass = -1;
- 	options->ignored_unknown = NULL;
- 	options->num_canonical_domains = 0;
-@@ -2432,6 +2499,34 @@ fill_default_options(Options * options)
+ 	options->session_type = -1;
+ 	options->stdin_null = -1;
+ 	options->fork_after_authentication = -1;
+@@ -2557,6 +2624,34 @@ fill_default_options(Options * options)
  		options->server_alive_interval = 0;
  	if (options->server_alive_count_max == -1)
  		options->server_alive_count_max = 3;
@@ -1119,8 +1119,8 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		sshpkt_fatal(ssh, r, "banner exchange");
  
  	/* Put the connection into non-blocking mode. */
---- work/openssh/sshconnect2.c.orig	2021-04-15 20:55:25.000000000 -0700
-+++ work/openssh/sshconnect2.c	2021-04-28 14:51:57.237202000 -0700
+--- work/openssh/sshconnect2.c.orig	2021-08-19 21:03:49.000000000 -0700
++++ work/openssh/sshconnect2.c	2021-09-08 10:02:03.037982000 -0700
 @@ -84,7 +84,13 @@
  extern char *client_version_string;
  extern char *server_version_string;
@@ -1157,7 +1157,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	if ((s = kex_names_cat(options.kex_algorithms, "ext-info-c")) == NULL)
  		fatal_f("kex_names_cat");
  	myproposal[PROPOSAL_KEX_ALGS] = compat_kex_proposal(ssh, s);
-@@ -489,6 +497,30 @@ ssh_userauth2(struct ssh *ssh, const char *local_user,
+@@ -487,6 +495,29 @@ ssh_userauth2(struct ssh *ssh, const char *local_user,
  
  	if (!authctxt.success)
  		fatal("Authentication failed.");
@@ -1184,13 +1184,12 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +		}
 +	}
 +#endif
-+
- 	debug("Authentication succeeded (%s).", authctxt.method->name);
- }
- 
---- work/openssh/sshd.c.orig	2020-11-10 21:36:31.340159000 -0800
-+++ work/openssh/sshd.c	2020-11-10 21:37:10.097038000 -0800
-@@ -1065,6 +1065,10 @@ listen_on_addrs(struct listenaddr *la)
+ 	if (ssh_packet_connection_is_on_socket(ssh)) {
+ 		verbose("Authenticated to %s ([%s]:%d) using \"%s\".", host,
+ 		    ssh_remote_ipaddr(ssh), ssh_remote_port(ssh),
+--- work/openssh/sshd.c.orig	2021-09-08 10:00:01.411822000 -0700
++++ work/openssh/sshd.c	2021-09-08 10:03:02.820813000 -0700
+@@ -1042,6 +1042,10 @@ listen_on_addrs(struct listenaddr *la)
  	int ret, listen_sock;
  	struct addrinfo *ai;
  	char ntop[NI_MAXHOST], strport[NI_MAXSERV];
@@ -1201,7 +1200,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  	for (ai = la->addrs; ai; ai = ai->ai_next) {
  		if (ai->ai_family != AF_INET && ai->ai_family != AF_INET6)
-@@ -1110,6 +1114,13 @@ listen_on_addrs(struct listenaddr *la)
+@@ -1087,6 +1091,13 @@ listen_on_addrs(struct listenaddr *la)
  
  		debug("Bind to port %s on %s.", strport, ntop);
  
@@ -1215,7 +1214,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		/* Bind the socket to the desired port. */
  		if (bind(listen_sock, ai->ai_addr, ai->ai_addrlen) == -1) {
  			error("Bind to port %s on %s failed: %.200s.",
-@@ -1753,6 +1764,15 @@ main(int ac, char **av)
+@@ -1760,6 +1771,15 @@ main(int ac, char **av)
  	/* Fill in default values for those options not explicitly set. */
  	fill_default_server_options(&options);
  
@@ -1228,10 +1227,10 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +	}
 +#endif
 +
- 	/* challenge-response is implemented via keyboard interactive */
- 	if (options.challenge_response_authentication)
- 		options.kbd_interactive_authentication = 1;
-@@ -2220,6 +2240,11 @@ main(int ac, char **av)
+ 	/* Check that options are sensible */
+ 	if (options.authorized_keys_command_user == NULL &&
+ 	    (options.authorized_keys_command != NULL &&
+@@ -2216,6 +2236,11 @@ main(int ac, char **av)
  	    rdomain == NULL ? "" : "\"");
  	free(laddr);
  
@@ -1243,7 +1242,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	/*
  	 * We don't want to listen forever unless the other side
  	 * successfully authenticates itself.  So we set up an alarm which is
-@@ -2233,7 +2258,7 @@ main(int ac, char **av)
+@@ -2229,7 +2254,7 @@ main(int ac, char **av)
  		alarm(options.login_grace_time);
  
  	if ((r = kex_exchange_identification(ssh, -1,
@@ -1252,7 +1251,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		sshpkt_fatal(ssh, r, "banner exchange");
  
  	ssh_packet_set_nonblocking(ssh);
-@@ -2397,6 +2422,11 @@ do_ssh2_kex(struct ssh *ssh)
+@@ -2392,6 +2417,11 @@ do_ssh2_kex(struct ssh *ssh)
  	char *myproposal[PROPOSAL_MAX] = { KEX_SERVER };
  	struct kex *kex;
  	int r;
@@ -1262,7 +1261,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +                debug ("WARNING: None cipher enabled");
 +#endif
  
- 	myproposal[PROPOSAL_KEX_ALGS] = compat_kex_proposal(
+ 	myproposal[PROPOSAL_KEX_ALGS] = compat_kex_proposal(ssh,
  	    options.kex_algorithms);
 --- work.clean/openssh-6.8p1/sshd_config	2015-04-01 22:07:18.248858000 -0500
 +++ work/openssh-6.8p1/sshd_config	2015-04-01 22:16:49.932279000 -0500

@@ -24,13 +24,3 @@ Document FreeBSD/port-specific paths
  (unless root).
  .It
  Changes to run with normal user privileges.
-@@ -407,7 +408,8 @@
- exists, runs it; else if
- .Pa /etc/ssh/sshrc
- exists, runs
--it; otherwise runs xauth.
-+it; otherwise runs
-+.Xr xauth 1 .
- The
- .Dq rc
- files are given the X11
