@@ -17,7 +17,7 @@ LIB_DEPENDS=	libffi.so:devel/libffi \
 
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
-USES=		compiler:c11 gettext gnome iconv:wchar_t localbase:ldflags \
+USES=		compiler:c11 cpe gettext gnome iconv:wchar_t localbase:ldflags \
 		meson perl5 pkgconfig python:3.6+ tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build
@@ -31,6 +31,7 @@ MESON_ARGS=	-Db_lundef=false \
 		-Dxattr=false
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 PORTSCOUT=	limitw:1,even
+CPE_VENDOR=	gnome
 
 _LIBVERSION=	0.6800.4
 PLIST_SUB=	LIBVERSION=${_LIBVERSION}
