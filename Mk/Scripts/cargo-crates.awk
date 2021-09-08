@@ -48,7 +48,7 @@ function add_crate() {
 
 !gh_tuple_seen[$0] && /^source = "git\+(https|http|git):\/\/.*\/.*#.*"/ {
 	gh_tuple_seen[$0] = 1
-	split_url(substr($3, 1 + length("\"git+"), length($3) - 1 - length("\"git+")))
+	split_url(url, substr($3, 1 + length("\"git+"), length($3) - 1 - length("\"git+")))
 
 	split(url["path"], path, "/")
 	account = path[2]

@@ -1,4 +1,4 @@
-function join_url(	s, query_keys, i) {
+function join_url(url,	s, query_keys, i) {
 	s = url["scheme"] "://"
 	if (url["user"]) {
 		s = s url["user"]
@@ -30,7 +30,7 @@ function join_url(	s, query_keys, i) {
 	return s
 }
 
-function split_url(s,	url_scheme, url_fragment, url_query, url_query_parts, i, url_query_part, url_authority, url_auth, url_user, url_host) {
+function split_url(url, s,	url_scheme, url_fragment, url_query, url_query_parts, i, url_query_part, url_authority, url_auth, url_user, url_host) {
 	delete url
 	# scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]
 	split(s, url_scheme, "://")
