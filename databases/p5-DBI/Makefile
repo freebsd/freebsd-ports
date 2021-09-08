@@ -16,8 +16,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 OPTIONS_DEFINE=	PROXY
 PROXY_DESC=	Build DBI::Proxy
 
-USES=		perl5 shebangfix
+USES=		cpe perl5 shebangfix
 USE_PERL5=	configure
+
+CPE_VENDOR=	perl
 
 SHEBANG_FILES=	dbixs_rev.pl
 
