@@ -15,7 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Netflix
 
 PLIST_FILES=	lib/libbbparse.a \
-		lib/libbbparse_p.a \
 		include/bbparse.h \
 		man/man3/libbbparse.3.gz
 
@@ -35,7 +34,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib
 	${MKDIR} ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libbbparse.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libbbparse_p.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/bbparse.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_MAN} ${WRKSRC}/libbbparse.3.gz ${STAGEDIR}${PREFIX}/man/man3
 .for l in ${MANPAGE_LINKS}
