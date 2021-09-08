@@ -73,8 +73,8 @@ CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 		--enable-default-binary
 CONFIGURE_ENV=	GIMP_THREAD_LIBS=-lpthread
 LIBS+=		-lexecinfo -lm
+CPE_VENDOR=	gimp
 CPE_PRODUCT=	gimp
-CPE_VENDOR=	gnu
 
 SHEBANG_FILES=	plug-ins/pygimp/plug-ins/*.py
 
