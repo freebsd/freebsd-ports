@@ -1,7 +1,6 @@
 PORTNAME=	cyipopt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.9
-PORTREVISION=	3
+DISTVERSION=	1.1.0
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,8 +23,5 @@ USES=		fortran python:3.6+ pkgconfig # fortran because ipopt's pkg-config return
 USE_GITHUB=	yes
 GH_ACCOUNT=	matthias-k
 USE_PYTHON=	distutils cython autoplist
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}*.so
 
 .include <bsd.port.mk>
