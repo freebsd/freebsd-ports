@@ -1,7 +1,7 @@
 # Created by: Carey Jones <mcj@acquiesce.org>
 
 PORTNAME=	mpg123
-PORTVERSION=	1.28.2
+PORTVERSION=	1.29.0
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		https://www.mpg123.de/download/
