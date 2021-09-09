@@ -26,6 +26,8 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 USE_QT=		concurrent core dbus gui network sql widgets xml \
 		buildtools_build qmake_build
 
+PORTSCOUT=	ignore:1
+
 post-patch:
 	${REINPLACE_CMD} -e 's#%%EXECINFO%%#${EXECINFO_LDFLAGS} -lexecinfo#' \
 		${PATCH_WRKSRC}/src/svnqt/cmake/FindSubversion.cmake
