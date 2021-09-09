@@ -2,7 +2,6 @@ bin/phpstorm
 man/man1/phpstorm.1.gz
 share/applications/phpstorm.desktop
 %%DATADIR%%/Install-Linux-tar.txt
-%%DATADIR%%/bin/appInfo.xml
 %%DATADIR%%/bin/brokenPlugins.db
 %%DATADIR%%/bin/format.sh
 %%DATADIR%%/bin/icons.db
@@ -29,7 +28,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler-2.1-ea-2.jar
 %%DATADIR%%/lib/bootstrap.jar
-%%DATADIR%%/lib/build-marker-PS-212.4746.100
+%%DATADIR%%/lib/build-marker-PS-212.5080.71
 %%DATADIR%%/lib/byte-buddy-agent-1.10.1.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/classpath.txt
@@ -88,7 +87,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/slf4j.jar
 %%DATADIR%%/lib/stats.jar
 %%DATADIR%%/lib/testFramework.jar
-%%DATADIR%%/lib/tips-phpstorm-211.27.jar
+%%DATADIR%%/lib/tips-phpstorm-212.30.jar
 %%DATADIR%%/lib/trang-core.jar
 %%DATADIR%%/lib/util.jar
 %%DATADIR%%/lib/winp-1.28.jar
@@ -151,7 +150,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/DatabaseTools/lib/mssql-1.19.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/oracle-1.54.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/postgres-1.35.jar
-%%DATADIR%%/plugins/DatabaseTools/lib/redshift-1.39.jar
+%%DATADIR%%/plugins/DatabaseTools/lib/redshift-1.70.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/snowflake-1.17.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/tips-database-plugin-212.78.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/unidecode-0.0.7.jar
@@ -205,8 +204,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-d5a2cc0426b1.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-d5a2cc0426b1.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-185d743362b6.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-185d743362b6.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -427,8 +426,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/php/lib/completion-ranking-php-0.3.0.jar
 %%DATADIR%%/plugins/php/lib/php-openapi-src.jar
 %%DATADIR%%/plugins/php/lib/php.jar
-%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-37da0dac166b.ijx
-%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-37da0dac166b.txt
+%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-348f3915624a.ijx
+%%DATADIR%%/plugins/php/php/php-predefined-a9dfff28de4e-348f3915624a.txt
 %%DATADIR%%/plugins/phpspec/lib/phpspec.jar
 %%DATADIR%%/plugins/phpstan/lib/phpstan.jar
 %%DATADIR%%/plugins/phpstorm-docker/lib/phpstorm-docker.jar
@@ -450,6 +449,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/swagger/lib/swagger-ui-3.32.5.jar
 %%DATADIR%%/plugins/swagger/lib/swagger.jar
 %%DATADIR%%/plugins/tailwindcss/lib/tailwindcss.jar
+%%DATADIR%%/plugins/tailwindcss/server/tailwindServer.js
 %%DATADIR%%/plugins/tasks-time-tracking/lib/tasks-time-tracking.jar
 %%DATADIR%%/plugins/tasks/lib/axis-1.4.jar
 %%DATADIR%%/plugins/tasks/lib/axis-jaxrpc-1.4.jar
