@@ -1,0 +1,7 @@
+munkres-cpp is an implementation of the Kuhn-Munkres algorithm in C++.
+
+The Kuhn-Munkres algorithm, also called the Hungarian method, is a combinatorial
+optimization algorithm that solves the assignment problem in polynomial time and
+which anticipated later primal-dual methods.
+
+WWW: https://github.com/saebyn/munkres-cpp

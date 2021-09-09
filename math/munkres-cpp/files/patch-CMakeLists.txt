@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2021-09-09 03:19:37 UTC
++++ CMakeLists.txt
+@@ -31,7 +31,7 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/src/adapters)
+ 
+ # Library.
+ add_library (
+-    munkres STATIC
++    munkres
+     ${MunkresCppLib_SOURCES}
+ )
+ 
