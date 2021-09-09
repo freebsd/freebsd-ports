@@ -1,7 +1,7 @@
 # Created by: Johannes Dieterich <jmd@FreeBSD.org>
 
 PORTNAME=	drm-devel-kmod
-PORTVERSION=	5.5.19.g20210709
+PORTVERSION=	5.5.19.g20210909
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
@@ -24,12 +24,13 @@ USES=		kmod uidfix compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	drm-kmod
-GH_TAGNAME=	drm_v5.5.19_0
+GH_TAGNAME=	drm_v5.5.19_3
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400024
-IGNORE=		not supported on older CURRENT, no kernel support
+.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1300513 || \
+	(${OSVERSION} < 1400024 && ${OSVERSION} >= 1400000))
+IGNORE=		not supported on older CURRENT/STABLE, no kernel support
 .endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD (missing linuxkpi functionality)
