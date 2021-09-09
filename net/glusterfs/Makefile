@@ -6,8 +6,10 @@ MASTER_SITES=	http://bits.gluster.org/pub/gluster/glusterfs/src/
 MAINTAINER=	daniel@morante.net
 COMMENT=	GlusterFS distributed file system
 
-LICENSE=	GPLv2 LGPL3
+LICENSE=	GPLv2 LGPL3+
 LICENSE_COMB=	dual
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING-GPLV2
+LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING-LGPLV3
 
 BROKEN_SSL=	libressl
 
