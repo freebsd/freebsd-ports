@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	qogir-gtk-themes
-DISTVERSION=	2021-06-25
+DISTVERSION=	2021-08-02
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
