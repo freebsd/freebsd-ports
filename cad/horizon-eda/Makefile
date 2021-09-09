@@ -1,6 +1,6 @@
 PORTNAME=	horizon-eda
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
+DISTVERSION=	2.1.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs \
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libepoxy.so:graphics/libepoxy \
 		libgit2.so:devel/libgit2 \
+		libharfbuzz.so:print/harfbuzz \
 		libpng16.so:graphics/png \
 		libpodofo.so:graphics/podofo \
 		libTKSTEP.so:cad/opencascade \
@@ -32,12 +33,6 @@ MAKE_ARGS=	DEBUGFLAGS= OPTIMIZE=
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 INSTALLS_ICONS=	yes
-
-LLVM_VER=	10 # workaround for bug#253551
-BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
-CPP=		clang-cpp${LLVM_VER}
-CC=		clang${LLVM_VER}
-CXX=		clang++${LLVM_VER}
 
 post-install: # https://github.com/horizon-eda/horizon/issues/558
 	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} horizon-eda
