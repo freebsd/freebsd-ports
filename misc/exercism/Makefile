@@ -17,7 +17,7 @@ GH_TUPLE=	exercism:cli:v${PORTVERSION}:DEFAULT \
 		fsnotify:fsnotify:v1.4.2:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-yaml:yaml:25c4ec802a7d:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:net:f5079bd7f6f7:golang_net/vendor/golang.org/x/net \
-		golang:sys:d8f5ea21b929:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:fead7900131:golang_sys/vendor/golang.org/x/sys \
 		golang:text:3bd178b88a81:golang_text/vendor/golang.org/x/text \
 		hashicorp:hcl:392dba7d905e:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:go-update:8152e7eb6ccf:inconshreveable_go_update/vendor/github.com/inconshreveable/go-update \
