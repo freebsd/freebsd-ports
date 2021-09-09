@@ -2187,6 +2187,7 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/input.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/intel-iommu.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/io-64-nonatomic-lo-hi.h
+%%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/kconfig.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/kfifo.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/kgdb.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/list_sort.h
