@@ -1,5 +1,5 @@
-TIMESTAMP = 1620925755
-SHA256 (go/www_oneshot/oneshot-v1.5.0/v1.5.0.mod) = a6f3b5b7eb6ce37bc0886068ed434c221b2c7347d9f245946d3c96606e6494ea
-SIZE (go/www_oneshot/oneshot-v1.5.0/v1.5.0.mod) = 309
-SHA256 (go/www_oneshot/oneshot-v1.5.0/v1.5.0.zip) = a7c7a9248025ba5ee5b44b2b71a5bfb856863d929fb394b605a70fd2dde9bba4
-SIZE (go/www_oneshot/oneshot-v1.5.0/v1.5.0.zip) = 663281
+TIMESTAMP = 1631183436
+SHA256 (go/www_oneshot/oneshot-v1.5.1/v1.5.1.mod) = a6f3b5b7eb6ce37bc0886068ed434c221b2c7347d9f245946d3c96606e6494ea
+SIZE (go/www_oneshot/oneshot-v1.5.1/v1.5.1.mod) = 309
+SHA256 (go/www_oneshot/oneshot-v1.5.1/v1.5.1.zip) = 6cc3c397610c0c7d1ec0327520ede8cec0adff862952ee161d7612e9a3537b64
+SIZE (go/www_oneshot/oneshot-v1.5.1/v1.5.1.zip) = 663396
