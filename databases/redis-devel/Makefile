@@ -1,7 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	redis
-PORTVERSION=	7.0.0.20210902
+PORTVERSION=	7.0.0.20210909
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-devel
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES+=		compiler:c11 gmake
 USE_GITHUB=	yes
-GH_TUPLE=	redis:redis:6aa2285
+GH_TUPLE=	redis:redis:f560531
 
 OPTIONS_DEFINE=	JEMALLOC TESTS TLS TRIB
 OPTIONS_RADIO=	EXTLUA
