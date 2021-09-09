@@ -1,7 +1,7 @@
 # Created by: neuroworker@gmail.com
 
 PORTNAME=	instead
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
