@@ -1,48 +1,45 @@
 PORTNAME=	micropython
-PORTVERSION=	1.5.1
+PORTVERSION=	1.17
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	lang python
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Implementation of the Python language for microcontrollers
 
 LICENSE=	MIT
-
-LIB_DEPENDS=	libffi.so:devel/libffi
-
-USES=		gmake pkgconfig python:3.4+,build readline shebangfix
-
-USE_GITHUB=	yes
-
-PLIST_FILES=	bin/micropython
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv6=	fails to assemble: error: invalid operand for instruction
 BROKEN_armv7=	fails to assemble: error: invalid operand for instruction
 
-WRKSRC_SUBDIR=	unix
+LIB_DEPENDS=	libffi.so:devel/libffi
 
-SHEBANG_FILES=	../tools/make-frozen.py
-MAKE_ARGS+=	V=1
-MAKE_ENV+=	PYTHON=${PYTHON_CMD} CFLAGS_EXTRA="${CPPFLAGS} ${CFLAGS}"
+USES=		gmake pkgconfig python:,build
+USE_GCC=	yes
+USE_GITHUB=	yes
+GH_TUPLE=	micropython:axtls:531cab9:axtls \
+		pfalcon:berkeley-db-1.xx:35aaec4:bdb
+
+MAKE_ARGS+=	CC=${CC} CPP="${CC} -E" V=1
+MAKE_ENV+=	CFLAGS_EXTRA="${CPPFLAGS} ${CFLAGS} -Wno-float-conversion" COPT=""
+
+# With aarch64 (QEMU) the float_parse and the float_parse_doubleprec tests
+# fail as they give a different output.
 TEST_TARGET=	test
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-Werror||;/^COPT =/d; \
-		s|ls -1 -v|ls -1|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|re_exec|mp_re_exec|' \
-		${WRKSRC}/../extmod/modure.c
-	@${REINPLACE_CMD} -e 's|AS =|AS ?=|;s|LD =|LD ?=|; \
-		s|CC =|CC ?=|;s|PYTHON =|PYTHON ?=|' \
-		${WRKSRC}/../py/mkenv.mk
-	@${REINPLACE_CMD} -e 's|libc\.so\.6|libc\.so\.7|;' \
-		${WRKSRC}/../tests/unix/ffi_callback.py \
-		${WRKSRC}/../tests/unix/ffi_float.py
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+BUILD_WRKSRC=	${WRKSRC}/ports/unix
+TEST_WRKSRC=	${WRKSRC}/ports/unix
+
+PLIST_FILES=	bin/micropython
+
+post-extract:
+	@${RM} -r ${WRKSRC}/lib/axtls ${WRKSRC}/lib/berkeley-db-1.xx
+	@${RLN} ${WRKSRC_axtls} ${WRKSRC}/lib/axtls
+	@${RLN} ${WRKSRC_bdb} ${WRKSRC}/lib/berkeley-db-1.xx
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/micropython ${STAGEDIR}${PREFIX}/bin
-
-pre-test:
-	@${RM} ${WRKSRC}/../tests/basics/memoryerror.py
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/micropython ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

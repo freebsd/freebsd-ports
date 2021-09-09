@@ -1,2 +1,7 @@
-SHA256 (micropython-micropython-v1.5.1_GH0.tar.gz) = 95cc34089a1e40a992065ff9c9b67c121674c3bd6136a50882054fcac27485c2
-SIZE (micropython-micropython-v1.5.1_GH0.tar.gz) = 6635550
+TIMESTAMP = 1630664518
+SHA256 (micropython-micropython-v1.17_GH0.tar.gz) = c21dbf8144237b3dbe3847c9ad5264cd0f3104eb078c810b3986004cce8fcd70
+SIZE (micropython-micropython-v1.17_GH0.tar.gz) = 6467563
+SHA256 (micropython-axtls-531cab9_GH0.tar.gz) = cd1b9bf60d34e86e62046dd595ddb34b3960d36f44bf7a31d67e253a5bc24fe1
+SIZE (micropython-axtls-531cab9_GH0.tar.gz) = 1325384
+SHA256 (pfalcon-berkeley-db-1.xx-35aaec4_GH0.tar.gz) = 9c696582ce47557556c7d6a14c96236ae5913124d15a63d3a78b384336d1a817
+SIZE (pfalcon-berkeley-db-1.xx-35aaec4_GH0.tar.gz) = 273515
