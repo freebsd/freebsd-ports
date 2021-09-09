@@ -10,6 +10,9 @@ COMMENT=	Yet Another Swagger Generator
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
+DEPRECATED=	Extended support of Django 3.1 ends December 2021, upgrade to the Django 3.2+ version of this port. See https://www.djangoproject.com/download/
+EXPIRATION_DATE=	2021-12-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.0.6:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django31>=2.2.16:www/py-django31@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj31-djangorestframework>=3.10.3:www/py-dj31-djangorestframework@${PY_FLAVOR} \
