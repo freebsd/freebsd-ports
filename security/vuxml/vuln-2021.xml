@@ -1,3 +1,40 @@
+  <vuln vid="145ce848-1165-11ec-ac7e-08002789875b">
+    <topic>Python -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>python38</name>
+	<range><lt>3.8.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Python reports:</p>
+	<blockquote cite="https://docs.python.org/3.8/whatsnew/changelog.html#changelog">
+	  <p>bpo-42278: Replaced usage of tempfile.mktemp() with TemporaryDirectory to avoid
+	    a potential race condition.</p>
+	<p>bpo-44394: Update the vendored copy of libexpat to 2.4.1 (from 2.2.8) to get the
+	    fix for the CVE-2013-0340 "Billion Laughs" vulnerability. This copy is most used
+	    on Windows and macOS.</p>
+	<p>bpo-43124: Made the internal putcmd function in smtplib sanitize input for
+	    presence of \r and \n characters to avoid (unlikely) command injection.</p>
+	<p>bpo-36384: ipaddress module no longer accepts any leading zeros in IPv4 address
+	    strings. Leading zeros are ambiguous and interpreted as octal notation by some
+	    libraries. For example the legacy function socket.inet_aton() treats leading
+	    zeros as octal notation. glibc implementation of modern inet_pton() does not
+	    accept any leading zeros. For a while the ipaddress module used to accept ambiguous
+	    leading zeros.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://docs.python.org/3.8/whatsnew/changelog.html#changelog</url>
+    </references>
+    <dates>
+      <discovery>2021-08-30</discovery>
+      <entry>2021-09-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f55921aa-10c9-11ec-8647-00e0670f2660">
     <topic>MPD5 PPPoE Server remotely exploitable crash</topic>
     <affects>
