@@ -21,6 +21,6 @@ include/coordgen/sketcherMinimizerStretchInteraction.h
 lib/cmake/coordgen-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/coordgen-config.cmake
 lib/libcoordgen.so
-lib/libcoordgen.so.2
-lib/libcoordgen.so.2.0.3
+lib/libcoordgen.so.3
+lib/libcoordgen.so.3.0.0
 %%DATADIR%%/templates.mae
