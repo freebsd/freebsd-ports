@@ -1,6 +1,5 @@
 PORTNAME=	lagrange
-DISTVERSION=	1.2.2
-PORTREVISION=	1
+DISTVERSION=	1.6.5
 CATEGORIES=	www
 MASTER_SITES=	https://git.skyjake.fi/skyjake/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -13,7 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BROKEN_SSL=	libressl
 BROKEN_SSL_REASON_libressl=	needs features only available in OpenSSL
 
-LIB_DEPENDS=	libmpg123.so:audio/mpg123 \
+LIB_DEPENDS=	libfribidi.so:converters/fribidi \
+		libharfbuzz.so:print/harfbuzz \
+		libmpg123.so:audio/mpg123 \
 		libpcre.so:devel/pcre \
 		libunistring.so:devel/libunistring
 
