@@ -1,7 +1,7 @@
 PORTNAME=	tealdeer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -200,7 +200,7 @@ CARGO_FEATURES=	--no-default-features
 PLIST_FILES=	bin/tldr \
 		etc/bash_completion.d/tldr.bash \
 		share/fish/completions/tldr.fish \
-		share/zsh/site_functions/_tldr
+		share/zsh/site-functions/_tldr
 PORTDOCS=	CHANGELOG.md README.md
 
 OPTIONS_DEFINE=	DOCS LOGGER
@@ -210,18 +210,20 @@ LOGGER_VARS=	CARGO_FEATURES+=logging
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tldr
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
+		${STAGEDIR}${PREFIX}/share/fish/completions \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions
+
 	${INSTALL_DATA} ${WRKSRC}/bash_${PORTNAME} \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/tldr.bash
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
 	${INSTALL_DATA} ${WRKSRC}/fish_${PORTNAME} \
 		${STAGEDIR}${PREFIX}/share/fish/completions/tldr.fish
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site_functions
 	${INSTALL_DATA} ${WRKSRC}/zsh_${PORTNAME} \
-		${STAGEDIR}${PREFIX}/share/zsh/site_functions/_tldr
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_tldr
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
