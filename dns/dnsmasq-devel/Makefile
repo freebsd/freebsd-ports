@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 
+IGNORE=		please use dns/dnsmasq, which is newer
+
 LICENSE=	GPLv2
 
 DEPRECATED=	Short-lived test branch, to be removed after v2.86 release
