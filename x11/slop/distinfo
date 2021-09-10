@@ -1,3 +1,5 @@
 TIMESTAMP = 1586688391
 SHA256 (naelstrof-slop-v7.5_GH0.tar.gz) = 94d8b6270217cd7f56ce7d4a9a75069025262830a2f91c3239b7fc07da5ea8da
 SIZE (naelstrof-slop-v7.5_GH0.tar.gz) = 51060
+SHA256 (38886dd13ccb.patch) = 9bf386a35d9dbfdec805665ba729cea0f9b06c2130cd8e923aeb5b435376d00e
+SIZE (38886dd13ccb.patch) = 1132
