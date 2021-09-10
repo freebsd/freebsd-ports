@@ -13,11 +13,13 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYINGv2
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LESSERv3
 
-USES=		gmake iconv libtool localbase makeinfo pathfix perl5 pkgconfig
+USES=		cpe gmake iconv libtool localbase makeinfo pathfix perl5 pkgconfig
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USE_PERL5=	build
+
+CPE_VENDOR=	gnu
 
 INFO=		libidn
 
