@@ -15,7 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	minixmlto:textproc/minixmlto
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
 
-USES=		gmake
+USES=		cpe gmake
+
+CPE_VENDOR=	freedesktop
 
 CONFIGURE_ENV=	XMLTO=${LOCALBASE}/bin/minixmlto
 GNU_CONFIGURE=	yes
