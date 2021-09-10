@@ -15,7 +15,7 @@ COMMENT=	Securely execute PHP scripts under Apache
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		apache:2.2+ autoreconf libtool php:cgi,flavors
+USES=		apache:2.2+ autoreconf cpe libtool php:cgi,flavors
 SUB_FILES=	pkg-message
 
 CFLAGS+=	-I${LOCALBASE}/include
