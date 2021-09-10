@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=3.1.3:security/py-bcrypt@${PY_FLAVOR
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
 USE_PYTHON=	autoplist distutils
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}paramiko1
