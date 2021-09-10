@@ -79,6 +79,8 @@ sbin/auto-mark-package-critical
 sbin/auto-media-format
 sbin/auto-mount-any
 sbin/auto-mount-noautos
+sbin/auto-network-config
+sbin/auto-network-manager
 sbin/auto-network-restart
 sbin/auto-nfs-add-share
 sbin/auto-nfs-client-setup
@@ -102,6 +104,7 @@ sbin/auto-pkgsrc-wip-checkout
 sbin/auto-ports-branch
 sbin/auto-ports-checkout
 sbin/auto-ports-setup
+sbin/auto-power-manager
 sbin/auto-print-make-variable
 sbin/auto-print-timezone
 sbin/auto-pxe-installer-setup
