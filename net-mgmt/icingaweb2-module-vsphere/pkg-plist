@@ -1,4 +1,5 @@
 %%WWWDIR%%/.gitignore
+%%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
 %%WWWDIR%%/application/clicommands/CommandBase.php
 %%WWWDIR%%/application/clicommands/FetchCommand.php
