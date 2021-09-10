@@ -6947,6 +6947,7 @@
     SUBDIR += strace
     SUBDIR += string_theory
     SUBDIR += stringencoders
+    SUBDIR += stuffbin
     SUBDIR += stxxl
     SUBDIR += subversion
     SUBDIR += subversion-book
