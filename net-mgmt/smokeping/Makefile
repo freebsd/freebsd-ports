@@ -32,7 +32,7 @@ BUILD_DEPENDS=	p5-CGI-Fast>=0:www/p5-CGI-Fast \
 		curl>=0:ftp/curl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake perl5 autoreconf
+USES=		cpe gmake perl5 autoreconf
 
 CONFLICTS_INSTALL=	nfsping
 
