@@ -13,6 +13,9 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libid3tag.so:audio/libid3tag \
 		libmad.so:audio/libmad
 
+USES=		cpe
+
+CPE_VENDOR=	mpg321_project
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mpg123-symlink
 CPPFLAGS+=	-I${LOCALBASE}/include
