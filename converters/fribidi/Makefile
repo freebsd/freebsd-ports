@@ -11,9 +11,11 @@ COMMENT=	Free Implementation of the Unicode Bidirectional Algorithm
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		meson tar:xz
+USES=		cpe meson tar:xz
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dtests=false
+
+CPE_VENDOR=	gnu
 
 post-patch:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' < \
