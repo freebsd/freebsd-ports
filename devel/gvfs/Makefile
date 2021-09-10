@@ -24,7 +24,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 RUN_DEPENDS=	bsdisks>0:sysutils/bsdisks
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gnome libarchive localbase meson \
+USES=		cpe gettext gnome libarchive localbase meson \
 		pkgconfig python:3.5+,build shebangfix tar:xz
 USE_GNOME=	glib20 libxml2 libxslt:build
 SHEBANG_FILES=	meson_post_install.py
@@ -35,6 +35,7 @@ MESON_ARGS=	-Dsystemduserunitdir=no \
 		-Dlibusb=false \
 		-Dman=true
 USE_LDCONFIG=	yes
+CPE_VENDOR=	gnome
 
 GLIB_SCHEMAS=	org.gnome.system.gvfs.enums.xml
 
