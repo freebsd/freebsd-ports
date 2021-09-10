@@ -15,11 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_riscv64=		fails to configure: libffi has not been ported to riscv64-portbld-freebsd13.0.
 
-USES=		libtool
+USES=		cpe libtool
 USE_LDCONFIG=	${PREFIX}/lib/compat
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/compat \
 		--disable-static
+CPE_VENDOR=	libffi_project
 
 INSTALL_TARGET=	install-strip
 
