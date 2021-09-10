@@ -18,7 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.* openssh-portable-devel-*
 
-USES=			alias autoreconf compiler:c11 localbase ncurses \
+USES=			alias autoreconf compiler:c11 cpe localbase ncurses \
 			pkgconfig ssl
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--prefix=${PREFIX} \
@@ -27,6 +27,8 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--with-Werror
 
 ETCOLD=			${PREFIX}/etc
+
+CPE_VENDOR=		openbsd
 
 FLAVORS=			default hpn gssapi
 default_CONFLICTS_INSTALL=	openssh-portable-hpn openssh-portable-gssapi \
