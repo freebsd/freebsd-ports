@@ -20,7 +20,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libgoffice-0.10.so:devel/goffice
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSerif.ttf:x11-fonts/dejavu
 
-USES=		compiler:c++11-lang desktop-file-utils gmake gnome iconv jpeg \
+USES=		compiler:c++11-lang cpe desktop-file-utils gmake gnome iconv jpeg \
 		libtool pathfix pkgconfig
 USE_GNOME=	libxml2 gtk30 librsvg2 libxslt
 GNU_CONFIGURE=	yes
@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--without-gnomevfs --enable-plugins="${ABIWORD_PLUGINS}" \
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	abisource
 
 PLIST_SUB+=	ABIVERSION=3.0
 
