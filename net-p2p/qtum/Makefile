@@ -22,7 +22,7 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libprotobuf.so:devel/protobuf \
 		libqrencode.so:graphics/libqrencode
 
-USES=		autoreconf bdb:5+ compiler:c++14-lang gmake libtool pkgconfig qt:5 ssl
+USES=		autoreconf bdb:5+ compiler:c++14-lang cpe gmake libtool pkgconfig qt:5 ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	BDB_CFLAGS="-I${BDB_INCLUDE_DIR}" \
