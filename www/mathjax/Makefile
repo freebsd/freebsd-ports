@@ -10,6 +10,8 @@ COMMENT=	Cross-browser JavaScript display engine for mathematics
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		cpe
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 
