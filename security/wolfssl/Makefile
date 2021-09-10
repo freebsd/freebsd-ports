@@ -10,7 +10,7 @@ COMMENT=	Embedded SSL C-Library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool zip
+USES=		cpe libtool zip
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
