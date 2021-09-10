@@ -15,11 +15,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgraphite2.so:graphics/graphite2
 
-USES=		compiler:c++11-lib gnome meson \
+USES=		compiler:c++11-lib cpe gnome meson \
 		pkgconfig python:build shebangfix tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 SHEBANG_GLOB=	*.py
+CPE_VENDOR=	harfbuzz_project
 
 MESON_ARGS=	-Dglib=enabled -Dgobject=enabled -Dgraphite=enabled \
 		-Dfreetype=enabled -Dbenchmark=disabled
