@@ -28,9 +28,7 @@ include/thrift/lib/cpp/async/TZlibAsyncChannel.h
 include/thrift/lib/cpp/concurrency/Exception.h
 include/thrift/lib/cpp/concurrency/FunctionRunner.h
 include/thrift/lib/cpp/concurrency/InitThreadFactory.h
-include/thrift/lib/cpp/concurrency/Mutex-impl.h
 include/thrift/lib/cpp/concurrency/Mutex-portability.h
-include/thrift/lib/cpp/concurrency/Mutex.h
 include/thrift/lib/cpp/concurrency/PosixThreadFactory.h
 include/thrift/lib/cpp/concurrency/SFQThreadManager.h
 include/thrift/lib/cpp/concurrency/Thread.h
