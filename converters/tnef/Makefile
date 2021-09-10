@@ -10,6 +10,10 @@ COMMENT=	Unpack data in MS Outlook TNEF format
 
 LICENSE=	GPLv2
 
+USES=		cpe
+
+CPE_VENDOR=	tnef_project
+
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
