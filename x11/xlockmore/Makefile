@@ -13,8 +13,10 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		tar:xz xorg
+USES=		cpe tar:xz xorg
 USE_XORG=	ice sm x11 xaw xext xpm xorgproto
+
+CPE_VENDOR=	sillycycle
 
 CONFIGURE_ARGS=	--without-motif --without-editres \
 		--without-dtsaver --without-rplay --without-nas \
