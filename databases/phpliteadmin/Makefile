@@ -11,7 +11,7 @@ COMMENT=	Web-based database management tool for Sqlite
 
 LICENSE=	GPLv3
 
-USES=		php:web zip
+USES=		cpe php:web zip
 
 NO_ARCH=	yes
 NO_BUILD=	yes
