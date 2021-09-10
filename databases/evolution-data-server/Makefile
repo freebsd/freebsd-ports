@@ -31,12 +31,13 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		bdb:5 cmake compiler:c++11-lib gettext gnome gperf \
+USES=		bdb:5 cmake compiler:c++11-lib cpe gettext gnome gperf \
 		iconv localbase pathfix pkgconfig python:3.6+,build\
 		sqlite tar:xz
 USE_CXXSTD=	gnu++11
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build libxml2
 USE_LDCONFIG=	yes
+CPE_VENDOR=	gnome
 
 CMAKE_ARGS=	-DENABLE_VALA_BINDINGS=ON \
 		-DENABLE_INTROSPECTION=ON \
