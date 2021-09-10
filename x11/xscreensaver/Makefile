@@ -19,13 +19,14 @@ LIB_DEPENDS=	libgle.so:graphics/gle \
 
 CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
-USES=		autoreconf gettext gl gmake gnome jpeg localbase:ldflags perl5 \
+USES=		autoreconf cpe gettext gl gmake gnome jpeg localbase:ldflags perl5 \
 		pkgconfig xorg
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool libglade2 libxml2
 USE_PERL5=	run
 USE_XORG=	ice sm x11 xext xi xinerama xmu xrandr xrender xpm xt xxf86vm
 USE_CSTD=	gnu99
+CPE_VENDOR=	xscreensaver_project
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PERL="${PERL}"
