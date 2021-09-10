@@ -15,8 +15,10 @@ COMMENT=	Python packages installer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:2.7 zip
+USES=		cpe python:2.7 zip
 USE_PYTHON=	allflavors autoplist concurrent distutils
+
+CPE_VENDOR=	python
 
 MAKE_ENV+=	SETUPTOOLS_DISABLE_VERSIONED_EASY_INSTALL_SCRIPT=1
 NO_ARCH=	yes
