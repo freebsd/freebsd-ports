@@ -15,8 +15,10 @@ LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pkgconfig
+USES=		cpe libtool pkgconfig
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	libid3tag_project
 
 BUILD_DEPENDS=	gsed:textproc/gsed
 
