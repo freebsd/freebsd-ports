@@ -9,7 +9,7 @@ COMMENT=	User friendly IRC client for KDE
 
 LICENSE=	GPLv2+
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
+USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext kde:5 \
 		python:run qca qt:5 shebangfix tar:xz
 USE_KDE=	archive attica auth bookmarks codecs completion config \
 		configwidgets coreaddons crash dbusaddons doctools \
