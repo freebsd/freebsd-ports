@@ -322,8 +322,8 @@
  			ssh_packet_clear_keys(ssh);
  			errno = oerrno;
  			logdie("Unable to negotiate with %s: %s. "
---- sshd.c.orig	2021-04-15 20:55:25.000000000 -0700
-+++ sshd.c	2021-04-28 13:37:18.741786000 -0700
+--- sshd.c.orig	2021-08-19 21:03:49.000000000 -0700
++++ sshd.c	2021-09-10 10:37:17.926747000 -0700
 @@ -123,6 +123,7 @@
  #include "version.h"
  #include "ssherr.h"
@@ -338,10 +338,10 @@
  
 +	BLACKLIST_NOTIFY(BLACKLIST_AUTH_FAIL, the_active_state, "ssh");
 +
- 	/* XXX pre-format ipaddr/port so we don't need to access active_state */
  	/* Log error and exit. */
- 	sigdie("Timeout before authentication for %s port %d",
-@@ -2209,6 +2212,9 @@ main(int ac, char **av)
+ 	if (use_privsep && pmonitor != NULL && pmonitor->m_pid <= 0)
+ 		cleanup_exit(255); /* don't log in privsep child */
+@@ -2225,6 +2228,9 @@ main(int ac, char **av)
  	if ((loginmsg = sshbuf_new()) == NULL)
  		fatal_f("sshbuf_new failed");
  	auth_debug_reset();
