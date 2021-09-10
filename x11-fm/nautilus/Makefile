@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgexiv2.so:graphics/gexiv2 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 desktop-file-utils gettext gnome localbase meson \
+USES=		compiler:c11 cpe desktop-file-utils gettext gnome localbase meson \
 		pkgconfig python:3.6+,build tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3
 USE_GSTREAMER1=	yes
@@ -31,6 +31,7 @@ USE_XORG=	x11
 MESON_ARGS=	-Denable-packagekit=false \
 		-Denable-selinux=false
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
+CPE_VENDOR=	gnome
 
 GLIB_SCHEMAS=	org.gnome.nautilus.gschema.xml
 
