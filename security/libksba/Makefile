@@ -16,8 +16,10 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPLv3
 
 LIB_DEPENDS=	libgpg-error.so:security/libgpg-error
 
-USES=		libtool perl5 tar:bzip2
+USES=		cpe libtool perl5 tar:bzip2
 USE_PERL5=	build
+
+CPE_VENDOR=	libksba_project
 
 CONFIGURE_ARGS=	--enable-static
 INSTALL_TARGET=	install-strip
