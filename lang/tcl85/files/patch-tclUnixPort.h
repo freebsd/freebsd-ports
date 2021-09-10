@@ -1,6 +1,6 @@
---- tclUnixPort.h.orig	2015-02-12 15:13:16 UTC
+--- tclUnixPort.h.orig	2015-10-23 11:50:57 UTC
 +++ tclUnixPort.h
-@@ -625,7 +625,9 @@ typedef int socklen_t;
+@@ -622,7 +622,9 @@ typedef int socklen_t;
  #  include <pthread.h>
  /* #define localtime(x)	TclpLocaltime(x)
   * #define gmtime(x)	TclpGmtime(x)    */

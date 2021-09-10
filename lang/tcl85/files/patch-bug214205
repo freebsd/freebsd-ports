@@ -1,33 +1,6 @@
-Index: ../generic/tclListObj.c
-==================================================================
---- ../generic/tclListObj.c
+--- ../generic/tclListObj.c.orig	2021-09-10 06:40:10 UTC
 +++ ../generic/tclListObj.c
-@@ -853,12 +853,15 @@
- 	 */
- 	count = numElems - first;
-     }
- 
-     if (objc > LIST_MAX - (numElems - count)) {
--	Tcl_SetObjResult(interp, Tcl_ObjPrintf(
--		"max length of a Tcl list (%d elements) exceeded", LIST_MAX));
-+	if (interp != NULL) {
-+	    Tcl_SetObjResult(interp, Tcl_ObjPrintf(
-+		    "max length of a Tcl list (%d elements) exceeded",
-+		    LIST_MAX));
-+	}
- 	return TCL_ERROR;
-     }
-     isShared = (listRepPtr->refCount > 1);
-     numRequired = numElems - count + objc; /* Known <= LIST_MAX */
- 
-
-Index: ../generic/tclListObj.c
-==================================================================
---- ../generic/tclListObj.c
-+++ ../generic/tclListObj.c
-@@ -844,15 +844,12 @@
-     if (first >= numElems) {
- 	first = numElems;	/* So we'll insert after last element. */
+@@ -846,11 +846,8 @@
      }
      if (count < 0) {
  	count = 0;
@@ -41,6 +14,3 @@ Index: ../generic/tclListObj.c
  	count = numElems - first;
      }
  
-     if (objc > LIST_MAX - (numElems - count)) {
- 	if (interp != NULL) {
-

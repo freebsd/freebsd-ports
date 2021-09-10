@@ -1,6 +1,6 @@
---- Makefile.in.orig	2016-01-26 17:50:13 UTC
+--- Makefile.in.orig	2016-02-08 20:44:53 UTC
 +++ Makefile.in
-@@ -54,6 +54,8 @@ SCRIPT_INSTALL_DIR	= $(INSTALL_ROOT)$(TC
+@@ -54,6 +54,8 @@ SCRIPT_INSTALL_DIR	= $(INSTALL_ROOT)$(TCL_LIBRARY)
  
  # Directory in which to install the include file tcl.h:
  INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
@@ -9,7 +9,7 @@
  
  # Path to the private tcl header dir:
  PRIVATE_INCLUDE_DIR	= @PRIVATE_INCLUDE_DIR@
-@@ -546,7 +548,7 @@ SRCS = $(GENERIC_SRCS) $(TOMMATH_SRCS) $
+@@ -546,7 +548,7 @@ SRCS = $(GENERIC_SRCS) $(TOMMATH_SRCS) $(UNIX_SRCS) $(
  
  all: binaries libraries doc
  
@@ -18,7 +18,7 @@
  
  libraries:
  
-@@ -557,6 +559,15 @@ doc:
+@@ -557,7 +559,16 @@ doc:
  ${LIB_FILE}: ${STUB_LIB_FILE} ${OBJS}
  	rm -f $@
  	@MAKE_LIB@
@@ -26,14 +26,15 @@
 +	if test "x@DL_OBJS@" = "xtclLoadAout.o"; then \
 +		$(RANLIB) ${LIB_FILE}; \
 +	fi;
-+
+ 
 +libtcl${SHORT_TCL_VER}.a: ${OBJS}
 +	rm -f libtcl${SHORT_TCL_VER}.a
 +	ar cr libtcl${SHORT_TCL_VER}.a ${OBJS}
 +	$(RANLIB) libtcl${SHORT_TCL_VER}.a
- 
++
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	@if test "x${LIB_FILE}" = "xlibtcl${MAJOR_VERSION}.${MINOR_VERSION}.dll"; then \
+ 	    (cd ${TOP_DIR}/win; ${MAKE} winextensions); \
 @@ -701,7 +712,7 @@ gentommath_h:
  dltest.marker: ${STUB_LIB_FILE}
  	cd dltest ; $(MAKE)
@@ -79,7 +80,7 @@
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
-@@ -749,7 +768,7 @@ install-libraries: libraries $(INSTALL_T
+@@ -749,7 +768,7 @@ install-libraries: libraries $(INSTALL_TZDATA) install
  		else true; \
  		fi; \
  	    done;
@@ -88,7 +89,7 @@
  	    do \
  	    if [ ! -d "$(SCRIPT_INSTALL_DIR)"/$$i ] ; then \
  		echo "Making directory $(SCRIPT_INSTALL_DIR)/$$i"; \
-@@ -758,50 +777,64 @@ install-libraries: libraries $(INSTALL_T
+@@ -758,50 +777,64 @@ install-libraries: libraries $(INSTALL_TZDATA) install
  		fi; \
  	    done;
  	@echo "Installing header files to $(INCLUDE_INSTALL_DIR)/";
