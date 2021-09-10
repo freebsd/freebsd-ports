@@ -15,7 +15,7 @@ LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}-${PORTVERSION:S/./-/g}-open
 
-USES=		gmake tar:tgz
+USES=		cpe gmake tar:tgz
 MAKE_ARGS=	CC="${CC}" DFLAGS="${CFLAGS}" STRIP="${TEST}"
 USE_LDCONFIG=	yes
 
