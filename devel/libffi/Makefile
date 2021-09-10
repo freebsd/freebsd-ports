@@ -20,9 +20,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	runtest:misc/dejagnu
 
-USES=		compiler:c11 libtool pathfix
+USES=		compiler:c11 cpe libtool pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CPE_VENDOR=	libffi_project
 
 CONFIGURE_ARGS=	--disable-multi-os-directory
 INSTALL_TARGET=	install-strip
