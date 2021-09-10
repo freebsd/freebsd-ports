@@ -19,7 +19,7 @@ BUILD_DEPENDS=	\
 	spamassassin>=3.0:mail/spamassassin
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5 shebangfix
+USES=		cpe perl5 shebangfix
 perl_OLD_CMD=	perl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc \
