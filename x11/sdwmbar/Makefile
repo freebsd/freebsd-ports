@@ -1,6 +1,6 @@
 PORTNAME=	sdwmbar
 PORTVERSION=	1.3
-CATEGORIES=	x11-wm
+CATEGORIES=	x11
 
 MAINTAINER=	sakhmatd@darkn.space
 COMMENT=	Simple statusbar for the dwm window manager
