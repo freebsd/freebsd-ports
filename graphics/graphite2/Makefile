@@ -12,8 +12,9 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools3>0:print/py-fonttools3@${PY_FLAVOR}
 
-USES=		cmake compiler:c++11-lib python:test tar:tgz
+USES=		cmake compiler:c++11-lib cpe python:test tar:tgz
 USE_LDCONFIG=	yes
+CPE_VENDOR=	sil
 
 TEST_TARGET=	test
 
