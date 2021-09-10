@@ -15,13 +15,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		gl jpeg localbase pkgconfig tar:bz2 xorg
+USES=		cpe gl jpeg localbase pkgconfig tar:bz2 xorg
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	NROFF=echo
+CPE_VENDOR=	fltk_project
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
