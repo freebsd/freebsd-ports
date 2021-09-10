@@ -19,12 +19,13 @@ COMMENT=	Library for posting electronic mail
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-USES=		autoreconf gmake libtool tar:bzip2
+USES=		autoreconf cpe gmake libtool tar:bzip2
 GNU_CONFIGURE=	yes
 # require-all-recipients (implied by enable-all) is required for Balsa
 CONFIGURE_ARGS=	--enable-all --disable-isoc
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+CPE_VENDOR=	libesmtp_project
 
 OPTIONS_DEFINE=	OPENSSL DEBUG DOCS EXAMPLES
 OPTIONS_DEFAULT=OPENSSL
