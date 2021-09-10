@@ -35,7 +35,7 @@ RUN_DEPENDS=	${ZM_DEPENDS} \
 		p5-Data-Entropy>=0:security/p5-Data-Entropy \
 		zip:archivers/zip
 
-USES=		cmake:insource,noninja jpeg mysql perl5 php shebangfix ssl
+USES=		cmake:insource,noninja cpe jpeg mysql perl5 php shebangfix ssl
 USE_GITHUB=	yes
 GH_TUPLE=	FriendsOfCake:crud:0bd63fb:crud/web/api/app/Plugin/Crud \
 		ZoneMinder:CakePHP-Enum-Behavior:ea90c0c:crud_plugin/web/api/app/Plugin/CakePHP-Enum-Behavior \
