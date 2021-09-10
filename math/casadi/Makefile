@@ -1,6 +1,6 @@
 PORTNAME=	casadi
 DISTVERSION=	3.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,7 +35,14 @@ BONMIN_CMAKE_BOOL=	WITH_BONMIN
 BONMIN_USES=		blaslapack:netlib fortran
 BONMIN_LIB_DEPENDS=	libbonmin.so:math/bonmin \
 			libCbcSolver.so:math/cbc \
-			libipopt.so:math/ipopt
+			libCgl.so:math/cgl \
+			libClp.so:math/clp \
+			libcoinasl.so:math/asl \
+			libCoinUtils.so:math/coinutils \
+			libipopt.so:math/ipopt \
+			libnauty.so:math/nauty \
+			libopenblas.so:math/openblas \
+			libOsi.so:math/osi
 
 CLANG_DESC=		Build with clang for JIT
 CLANG_CMAKE_BOOL=	WITH_CLANG
