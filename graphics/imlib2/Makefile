@@ -16,10 +16,12 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		libtool pathfix pkgconfig tar:bzip2
+USES=		cpe libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+
+CPE_VENDOR=	enlightenment
 
 CONFIGURE_ARGS=	--enable-visibility-hiding --disable-static \
 		--with-zlib --with-bzip2
