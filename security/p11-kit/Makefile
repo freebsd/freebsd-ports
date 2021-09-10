@@ -17,8 +17,10 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 LIB_DEPENDS=	libffi.so:devel/libffi \
 		libtasn1.so:security/libtasn1
 
-USES=		localbase meson pkgconfig tar:xz
+USES=		cpe localbase meson pkgconfig tar:xz
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	p11-kit_project
 
 MESON_ARGS=	-Dbash_completion=enabled \
 		-Dlibffi=enabled \
