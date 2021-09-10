@@ -11,7 +11,7 @@ COMMENT=	Single sign-on multi-factor portal for web apps
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
 GH_TUPLE=	\
 		Azure:go-ntlmssp:66371956d46c:azure_go_ntlmssp/vendor/github.com/Azure/go-ntlmssp \
