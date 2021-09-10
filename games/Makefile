@@ -18,6 +18,7 @@
     SUBDIR += OpenDiablo2
     SUBDIR += OpenLara
     SUBDIR += OpenTomb
+    SUBDIR += SRB2
     SUBDIR += abbayedesmorts
     SUBDIR += abe
     SUBDIR += abstreet
