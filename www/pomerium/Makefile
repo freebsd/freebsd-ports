@@ -10,7 +10,7 @@ COMMENT=	Identity-aware access proxy
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
 GO_TARGET=	./cmd/${PORTNAME}:${PREFIX}/libexec/${PORTNAME} ./cmd/${PORTNAME}-cli:${PREFIX}/bin/${PORTNAME}-cli
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
