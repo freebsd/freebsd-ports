@@ -13,11 +13,12 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LIB
 LICENSE_FILE_GFDL=	${WRKSRC}/doc/libunistring.texi
 
-USES=		alias charsetfix iconv libtool tar:xz
+USES=		alias charsetfix cpe iconv libtool tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 INFO=		${PORTNAME}
+CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=	DOCS
 CONFIGURE_ARGS=	--disable-static
