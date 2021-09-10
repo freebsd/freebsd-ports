@@ -196,6 +196,15 @@ lib/spa-0.2/volume/libspa-volume.so
 %%MEDIASESSION%%lib/udev/rules.d/90-pipewire-alsa.rules
 libdata/pkgconfig/libpipewire-0.3.pc
 libdata/pkgconfig/libspa-0.2.pc
+%%MANPAGES%%man/man1/pipewire.1.gz
+%%MANPAGES%%man/man1/pw-cat.1.gz
+%%MANPAGES%%man/man1/pw-cli.1.gz
+%%MANPAGES%%man/man1/pw-dot.1.gz
+%%MANPAGES%%man/man1/pw-metadata.1.gz
+%%MANPAGES%%man/man1/pw-mididump.1.gz
+%%MANPAGES%%man/man1/pw-mon.1.gz
+%%MANPAGES%%man/man1/pw-profiler.1.gz
+%%MANPAGES%%man/man5/pipewire.conf.5.gz
 %%MEDIASESSION%%share/alsa-card-profile/mixer/paths/analog-input-aux.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/paths/analog-input-dock-mic.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/paths/analog-input-fm.conf
