@@ -13,13 +13,14 @@ COMMENT=	Simple library to load images of various formats as SDL surfaces
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool localbase pkgconfig pathfix sdl
+USES=		cpe gmake libtool localbase pkgconfig pathfix sdl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-jpg-shared --disable-png-shared \
 		--disable-tif-shared --disable-webp-shared
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+CPE_VENDOR=	libsdl
 
 OPTIONS_DEFINE=	JPEG PNG TIFF WEBP
 OPTIONS_DEFAULT=JPEG PNG TIFF WEBP
