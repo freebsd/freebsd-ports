@@ -9,7 +9,7 @@ MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/libcaca/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Graphics library that outputs text instead of pixels
 
-USES=		libtool ncurses pathfix pkgconfig
+USES=		cpe libtool ncurses pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-doc \
@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--disable-doc \
 		--disable-zzuf
 MAKE_ENV=	V=1
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	libcaca_project
 
 DOCS=		AUTHORS COPYING COPYING.GPL COPYING.LGPL ChangeLog NEWS \
 		NOTES README THANKS
