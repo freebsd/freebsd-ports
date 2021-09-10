@@ -19,9 +19,10 @@ LIB_DEPENDS=	libgs.so:print/ghostscript9-agpl-base \
 		libXaw3d.so:x11-toolkits/Xaw3d
 RUN_DEPENDS=	fig2dev:print/fig2dev
 
-USES=		desktop-file-utils gmake jpeg localbase:ldflags tar:xz xorg
+USES=		cpe desktop-file-utils gmake jpeg localbase:ldflags tar:xz xorg
 USE_CSTD=	gnu89
 USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
+CPE_VENDOR=	xfig_project
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-return-type
