@@ -18,10 +18,11 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		desktop-file-utils gettext gmake gnome iconv libtool pkgconfig \
+USES=		cpe desktop-file-utils gettext gmake gnome iconv libtool pkgconfig \
 		tar:bzip2
 USE_GNOME=	gtk20 cairo gdkpixbuf2
 USE_LDCONFIG=	yes
+CPE_VENDOR=	sylpheed_project
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
