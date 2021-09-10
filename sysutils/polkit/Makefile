@@ -18,11 +18,12 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 USERS=		polkitd
 GROUPS=		polkitd
 
-USES=		compiler:c++11-lib gettext gnome libtool localbase meson \
+USES=		compiler:c++11-lib cpe gettext gnome libtool localbase meson \
 		pathfix pkgconfig shebangfix
 USE_GNOME=	glib20 intltool introspection:build
 SHEBANG_FILES=	${WRKSRC}/src/polkitbackend/toarray.pl
 USE_LDCONFIG=	yes
+CPE_VENDOR=	polkit_project
 
 MESON_ARGS=	-Dpam_include=system \
 		-Dpolkitd_user=${USERS} \
