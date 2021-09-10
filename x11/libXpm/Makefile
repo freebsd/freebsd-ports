@@ -9,9 +9,11 @@ COMMENT=	X Pixmap library
 
 LICENSE=	MIT
 
-USES=		xorg xorg-cat:lib
+USES=		cpe xorg xorg-cat:lib
 USE_XORG=	xorgproto x11 xext xt
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+CPE_VENDOR=	libxpm_project
 
 OPTIONS_DEFINE=		NLS
 NLS_USES=		gettext
