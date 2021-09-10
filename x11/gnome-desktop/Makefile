@@ -25,7 +25,7 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		cantarell-fonts>=0:x11-fonts/cantarell-fonts \
 		xkeyboard-config>=0:x11/xkeyboard-config
 
-USES=		bison gettext gnome localbase:ldflags meson \
+USES=		bison cpe gettext gnome localbase:ldflags meson \
 		pkgconfig python:3.4+ tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build
 USE_XORG=	x11
@@ -34,5 +34,6 @@ MESON_ARGS=	-Dgnome_distributor="FreeBSD GNOME Project" \
 		-Dudev=disabled \
 		-Dsystemd=disabled \
 		-Dgtk_doc=false
+CPE_VENDOR=	gnome
 
 .include <bsd.port.mk>
