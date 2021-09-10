@@ -259,6 +259,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TARGET_DIR=	${WRKSRC}/target
+MAKE_ENV=	${CARGO_ENV}
 
 # The binary is usually built via setup.py which uses different compiler flags.
 # That line is patched out there to use the compiler flags from the Ports

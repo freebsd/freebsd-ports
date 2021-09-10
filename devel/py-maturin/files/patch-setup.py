@@ -11,7 +11,7 @@ itself.  Also change the destination directory to honor ${PREFIX}.
 -                ["cargo", "rustc", "--bin", "maturin", "--", "-C", "link-arg=-s"]
 -            )
 -            source = os.path.join(source_dir, "target", "debug", executable_name)
-+            source = os.path.join(source_dir, "target", "release", executable_name)
++            source = os.path.join(source_dir, "target", os.getenv("CARGO_BUILD_TARGET", ""), "release", executable_name)
 +            #subprocess.check_call(
 +            #    ["cargo", "rustc", "--bin", "maturin", "--", "-C", "link-arg=-s"]
 +            #)
