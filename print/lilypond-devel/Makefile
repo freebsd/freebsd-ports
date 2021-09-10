@@ -30,7 +30,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu \
 		mftrace:print/mftrace
 
-USES=		bison:build compiler:c++11-lib ghostscript gmake gnome perl5 \
+USES=		bison:build compiler:c++11-lib cpe ghostscript gmake gnome perl5 \
 		pkgconfig python:3.5+
 USE_CXXSTD=	c++11
 USE_GNOME=	pango
