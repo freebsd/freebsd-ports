@@ -18,7 +18,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libtag-extras.so:audio/taglib-extras \
 		liblz4.so:archivers/liblz4
 
-USES=		cmake compiler:c++11-lang desktop-file-utils \
+USES=		cmake compiler:c++11-lang cpe desktop-file-utils \
 		kde:5 mysql:client,embedded pkgconfig qca qt:5 shebangfix ssl xorg
 
 USE_QT=		core concurrent declarative dbus gui location network phonon4 \
@@ -35,6 +35,8 @@ USE_KDE=	archive auth attica bookmarks codecs config configwidgets \
 		doctools_build ecm_build
 USE_XORG=	ice sm x11 xext
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	kde
 
 KDE_INVENT=	3e11ccdd1417e70486eaaa84d8475182eec44c20 multimedia
 
