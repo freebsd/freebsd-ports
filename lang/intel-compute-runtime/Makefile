@@ -1,10 +1,10 @@
 PORTNAME=	compute-runtime
-DISTVERSION=	21.36.20889
+DISTVERSION=	21.37.20939
 CATEGORIES=	lang
 PKGNAMEPREFIX=	intel-
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	4a926516c3ea.patch:-p1 # https://github.com/intel/compute-runtime/pull/361
+PATCHFILES+=	aa5a39a2db79.patch:-p1 # https://github.com/intel/compute-runtime/pull/361
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	OpenCL implementation for Intel HD 5000 (Gen8) or newer

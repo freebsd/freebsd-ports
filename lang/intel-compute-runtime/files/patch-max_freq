@@ -3,11 +3,11 @@
   $ clinfo | fgrep clock
     Max clock frequency                             0MHz
 
---- shared/source/os_interface/linux/drm_query.cpp.orig	2021-07-16 13:20:44 UTC
-+++ shared/source/os_interface/linux/drm_query.cpp
-@@ -15,6 +15,13 @@
- 
- #include <fstream>
+--- shared/source/os_interface/linux/drm_neo.cpp.orig	2021-09-10 14:22:47 UTC
++++ shared/source/os_interface/linux/drm_neo.cpp
+@@ -34,6 +34,13 @@
+ #include <cstdio>
+ #include <cstring>
  
 +#if defined(__FreeBSD__)
 +#include <sys/param.h>
@@ -19,13 +19,13 @@
  namespace NEO {
  
  namespace IoctlHelper {
-@@ -35,6 +42,26 @@ std::string getIoctlParamStringRemaining(int param) {
+@@ -800,6 +807,26 @@ bool Drm::sysmanQueryEngineInfo() {
  
- int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int &maxGpuFrequency) {
+ int getMaxGpuFrequencyOfDevice(Drm &drm, std::string &sysFsPciPath, int &maxGpuFrequency) {
      maxGpuFrequency = 0;
 +#if defined(__FreeBSD__)
 +    char name[SPECNAMELEN + 1];
-+    if (!fdevname_r(getFileDescriptor(), name, sizeof(name))) {
++    if (!fdevname_r(drm.getFileDescriptor(), name, sizeof(name))) {
 +        return 0;
 +    }
 +    int id;
@@ -43,61 +43,10 @@
 +
 +    maxGpuFrequency = std::stoi(max_freq);
 +#else
-     std::string clockSysFsPath = getSysFsPciPath();
+     std::string clockSysFsPath = sysFsPciPath + "/gt_max_freq_mhz";
  
-     clockSysFsPath += "/gt_max_freq_mhz";
-@@ -46,6 +73,7 @@ int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int 
- 
-     ifs >> maxGpuFrequency;
-     ifs.close();
-+#endif
-     return 0;
- }
- 
---- shared/source/os_interface/linux/drm_query_dg1.cpp.orig	2021-07-16 13:20:44 UTC
-+++ shared/source/os_interface/linux/drm_query_dg1.cpp
-@@ -16,6 +16,13 @@
- 
- #include <fstream>
- 
-+#if defined(__FreeBSD__)
-+#include <sys/param.h>
-+#include <sys/sysctl.h>
-+#include <cstdio>
-+#include <cstdlib>
-+#endif
-+
- namespace NEO {
- class OsContext;
- 
-@@ -37,6 +44,26 @@ std::string getIoctlParamStringRemaining(int param) {
- 
- int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int &maxGpuFrequency) {
-     maxGpuFrequency = 0;
-+#if defined(__FreeBSD__)
-+    char name[SPECNAMELEN + 1];
-+    if (!fdevname_r(getFileDescriptor(), name, sizeof(name))) {
-+        return 0;
-+    }
-+    int id;
-+    if (!sscanf(name, "drm/%d", &id) && !sscanf(name, "dri/renderD%d", &id)) {
-+        return 0;
-+    }
-+
-+    char oid[MAXPATHLEN + 1];
-+    char max_freq[PAGE_SIZE];
-+    size_t len = sizeof(max_freq);
-+    snprintf(oid, sizeof(oid), "sys.class.drm.card%d.gt_max_freq_mhz", id - 128);
-+    if (sysctlbyname(oid, &max_freq, &len, NULL, 0)) {
-+        return 0;
-+    }
-+
-+    maxGpuFrequency = std::stoi(max_freq);
-+#else
-     std::string clockSysFsPath = getSysFsPciPath();
- 
-     clockSysFsPath += "/gt_max_freq_mhz";
-@@ -48,6 +75,7 @@ int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int 
+     std::ifstream ifs(clockSysFsPath.c_str(), std::ifstream::in);
+@@ -809,6 +836,7 @@ int getMaxGpuFrequencyOfDevice(Drm &drm, std::string &
  
      ifs >> maxGpuFrequency;
      ifs.close();
