@@ -65,9 +65,10 @@ _BUILD_DATE=	$$(date +%s)
 GO_TARGET=	./cmd/${GH_PROJECT} ./cmd/${GH_PROJECT}-authproxy
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
-        	-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/version.Version=${_BUILD_VERSION}  \
+		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/version.Version=${_BUILD_VERSION}  \
 		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/version.buildDate=${_BUILD_DATE}"
 
+PORTSCOUT=	skipv:latest
 SUB_FILES=	pkg-message
 PLIST_FILES=	${GO_TARGET:C/.\/cmd/bin/}
 _DOCS=		CONTRIBUTING.md README.md code_of_conduct.md doc/commands.md \
