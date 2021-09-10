@@ -1,5 +1,5 @@
 ### External modules
-AJP_GH_TUPLE=		yaoweibin:nginx_ajp_module:a964a0b:ajp
+AJP_GH_TUPLE=		yaoweibin:nginx_ajp_module:fcbb2cc:ajp
 AJP_CONFIGURE_ON=	--add-module=${WRKSRC_ajp}
 
 ARRAYVAR_IMPLIES=	DEVEL_KIT

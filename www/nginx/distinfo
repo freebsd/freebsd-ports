@@ -1,4 +1,4 @@
-TIMESTAMP = 1625614897
+TIMESTAMP = 1631279314
 SHA256 (nginx-1.20.1.tar.gz) = e462e11533d5c30baa05df7652160ff5979591d291736cfa5edb9fd2edb48c49
 SIZE (nginx-1.20.1.tar.gz) = 1061461
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -11,8 +11,8 @@ SHA256 (ngx_http_response-0.3.tar.gz) = 0835584029f053051c624adbe33a826ab0205c9d
 SIZE (ngx_http_response-0.3.tar.gz) = 2244
 SHA256 (passenger-6.0.8.tar.gz) = 1e73767025b299c6f8421c2a0df1ca7163b767de47ffab0c6239deb7b809d16d
 SIZE (passenger-6.0.8.tar.gz) = 7567855
-SHA256 (yaoweibin-nginx_ajp_module-a964a0b_GH0.tar.gz) = 0c786660ce2e5c6d23cf02e957786ad581a04cc6315145eb144ec271f7f81326
-SIZE (yaoweibin-nginx_ajp_module-a964a0b_GH0.tar.gz) = 109940
+SHA256 (yaoweibin-nginx_ajp_module-fcbb2cc_GH0.tar.gz) = 522e94c59f5783f281d868ede2adf325bf2f8ffb9e62cf8451d4b9ac0516916c
+SIZE (yaoweibin-nginx_ajp_module-fcbb2cc_GH0.tar.gz) = 110807
 SHA256 (openresty-array-var-nginx-module-v0.05_GH0.tar.gz) = c949d4be6f3442c8e2937046448dc8d8def25c0e0fa6f4e805144cea45eabe80
 SIZE (openresty-array-var-nginx-module-v0.05_GH0.tar.gz) = 11280
 SHA256 (anomalizer-ngx_aws_auth-21931b2_GH0.tar.gz) = d8a2422da96a638e9a911e4edb592954d9c0fe1576456fec9809ef4e2a0a863d

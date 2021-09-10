@@ -2,7 +2,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.20.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
