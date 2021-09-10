@@ -14,7 +14,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgnutls.so:security/gnutls \
 		libidn.so:dns/libidn
 
-USES=		bison cmake tar:bzip2
+USES=		bison cmake cpe tar:bzip2
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DSCTP_USE_MAPPED_ADDRESSES:BOOL=ON
 CMAKE_ARGS+=	-DDISABLE_SCTP:BOOL=ON
