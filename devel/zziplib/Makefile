@@ -16,7 +16,9 @@ LICENSE_FILE_MPL11=	${WRKSRC}/docs/COPYING.MPL
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		cmake compiler:c11
+USES=		cmake compiler:c11 cpe
+
+CPE_VENDOR=	zziplib_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gdraheim
