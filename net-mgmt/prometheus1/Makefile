@@ -13,7 +13,7 @@ COMMENT=	Systems monitoring and alerting toolkit
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		cpe go
 USE_GITHUB=	yes
 GH_TUPLE=	golang:sys:fead79001313:golang_sys/vendor/golang.org/x/sys_fead79001313
 
