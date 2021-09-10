@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		cmake pkgconfig ssl
+USES=		cmake cpe pkgconfig ssl
 USE_LDCONFIG=	yes
 CMAKE_OFF=	BUILD_CLAR
 
