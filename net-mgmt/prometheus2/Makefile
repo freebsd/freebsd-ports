@@ -10,7 +10,7 @@ COMMENT=	Systems monitoring and alerting toolkit
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake go:modules
+USES=		cpe gmake go:modules
 
 USE_GITHUB=	yes
 GH_TUPLE=	ports-assets:net-mgmt_prometheus2:${DISTVERSIONFULL}:assets
