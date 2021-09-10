@@ -1,0 +1,35 @@
+--- SConstruct.orig	2021-09-03 11:33:59 UTC
++++ SConstruct
+@@ -312,7 +312,7 @@ elif 'icc' in env.subst('$CC'):
+     defaults.warningFlags = '-Wcheck'
+     env['openmp_flag'] = ['-openmp']
+ 
+-elif 'clang' in env.subst('$CC'):
++elif 'clang' in env.subst('$CC') or 'cc' in env.subst('$CC'):
+     defaults.ccFlags = '-fcolor-diagnostics'
+     defaults.cxxFlags = '-std=c++11'
+     defaults.buildPch = True
+@@ -718,17 +718,18 @@ valid_arguments = (set(opt[0] for opt in windows_compi
+ for arg in ARGUMENTS:
+     if arg not in valid_arguments:
+         print('Encountered unexpected command line argument: %r' % arg)
+-        sys.exit(1)
++        #sys.exit(1)
+ 
+ env["cantera_version"] = "2.6.0a2"
+ # For use where pre-release tags are not permitted (MSI, sonames)
+ env['cantera_pure_version'] = re.match(r'(\d+\.\d+\.\d+)', env['cantera_version']).group(0)
+ env['cantera_short_version'] = re.match(r'(\d+\.\d+)', env['cantera_version']).group(0)
+ 
+-try:
+-    env["git_commit"] = get_command_output("git", "rev-parse", "--short", "HEAD")
+-except subprocess.CalledProcessError:
+-    env["git_commit"] = "unknown"
++#try:
++#    env["git_commit"] = get_command_output("git", "rev-parse", "--short", "HEAD")
++#except subprocess.CalledProcessError:
++#    env["git_commit"] = "unknown"
++env["git_commit"] = "unknown"
+ 
+ # Print values of all build options:
+ print("Configuration variables read from 'cantera.conf' and command line:")

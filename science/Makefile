@@ -34,6 +34,7 @@
     SUBDIR += berkeleygw
     SUBDIR += bodr
     SUBDIR += buddy
+    SUBDIR += cantera
     SUBDIR += cdcl
     SUBDIR += cdf
     SUBDIR += cdk
