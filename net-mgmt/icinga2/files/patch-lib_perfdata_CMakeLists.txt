@@ -1,6 +1,6 @@
---- lib/perfdata/CMakeLists.txt.orig	2020-08-03 13:43:47 UTC
-+++ lib/perfdata/CMakeLists.txt
-@@ -30,32 +30,32 @@ set_target_properties (
+--- lib/perfdata/CMakeLists.txt.orig	2021-09-09 09:49:26.077173000 +0200
++++ lib/perfdata/CMakeLists.txt	2021-09-09 09:51:19.916439000 +0200
+@@ -34,37 +34,37 @@ set_target_properties (
  )
  
  install_if_not_exists(
@@ -18,6 +18,12 @@
  install_if_not_exists(
 -  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/influxdb.conf
 +  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/influxdb.conf.sample
+   ${ICINGA2_CONFIGDIR}/features-available
+ )
+ 
+ install_if_not_exists(
+-  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/influxdb2.conf
++  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/influxdb2.conf.sample
    ${ICINGA2_CONFIGDIR}/features-available
  )
  

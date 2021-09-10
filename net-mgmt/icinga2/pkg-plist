@@ -22,6 +22,7 @@ etc/bash_completion.d/icinga2
 %%MYSQL%%@sample(%%ICINGA2USER%%,%%ICINGA2GROUP%%,0640) %%ETCDIR%%/features-available/ido-mysql.conf.sample
 %%PGSQL%%@sample(%%ICINGA2USER%%,%%ICINGA2GROUP%%,0640) %%ETCDIR%%/features-available/ido-pgsql.conf.sample
 @sample %%ETCDIR%%/features-available/influxdb.conf.sample
+@sample %%ETCDIR%%/features-available/influxdb2.conf.sample
 @sample %%ETCDIR%%/features-available/livestatus.conf.sample
 @sample %%ETCDIR%%/features-available/mainlog.conf.sample
 @sample %%ETCDIR%%/features-available/notification.conf.sample
@@ -38,9 +39,9 @@ etc/bash_completion.d/icinga2
 @sample %%ETCDIR%%/zones.conf.sample
 %%ETCDIR%%/zones.d/README
 %%MYSQL%%lib/icinga2/libmysql_shim.so
-%%MYSQL%%lib/icinga2/libmysql_shim.so.2.12.3
+%%MYSQL%%lib/icinga2/libmysql_shim.so.2.13.1
 %%PGSQL%%lib/icinga2/libpgsql_shim.so
-%%PGSQL%%lib/icinga2/libpgsql_shim.so.2.12.3
+%%PGSQL%%lib/icinga2/libpgsql_shim.so.2.13.1
 lib/icinga2/sbin/icinga2
 libexec/nagios/check_nscp_api
 man/man8/icinga2.8.gz
@@ -134,6 +135,7 @@ sbin/icinga2
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.0.2.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.1.0.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.11.0.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.13.0.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.2.0.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.3.0.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.4.0.sql
@@ -175,6 +177,7 @@ sbin/icinga2
 %%DATADIR%%/include/plugins-contrib.d/raid-controller.conf
 %%DATADIR%%/include/plugins-contrib.d/smart-attributes.conf
 %%DATADIR%%/include/plugins-contrib.d/storage.conf
+%%DATADIR%%/include/plugins-contrib.d/systemd.conf
 %%DATADIR%%/include/plugins-contrib.d/virtualization.conf
 %%DATADIR%%/include/plugins-contrib.d/vmware.conf
 %%DATADIR%%/include/plugins-contrib.d/web.conf
