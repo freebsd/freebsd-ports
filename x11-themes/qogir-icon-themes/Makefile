@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	qogir-icon-themes
-DISTVERSION=	2020-11-22
+DISTVERSION=	2021-07-14
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
