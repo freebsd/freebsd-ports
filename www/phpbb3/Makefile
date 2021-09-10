@@ -13,7 +13,7 @@ COMMENT=	PHP-based bulletin board / discussion forum system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.txt
 
-USES=		php tar:bzip2
+USES=		cpe php tar:bzip2
 USE_PHP=	ctype dom filter hash json tokenizer
 
 CONFLICTS=	phpbb-[0-2]*
