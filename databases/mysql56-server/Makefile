@@ -18,6 +18,8 @@ SLAVEDIRS=	databases/mysql56-client
 USES=		bison:build cmake:noninja cpe groff:run libedit localbase \
 		perl5 shebangfix ssl
 
+CPE_VENDOR=	oracle
+
 USE_PERL5=	run
 
 MY_DBDIR=	/var/db/mysql
