@@ -19,7 +19,7 @@ COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 
 RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 
-USES=		desktop-file-utils gnome linux shared-mime-info tar:xz
+USES=		cpe desktop-file-utils gnome linux shared-mime-info tar:xz
 USE_LINUX=	gtk2 sqlite3 xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 INSTALLS_ICONS=	yes
