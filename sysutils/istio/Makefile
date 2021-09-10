@@ -11,7 +11,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	kubectl:sysutils/kubectl
 
-USES=		go:modules
+USES=		cpe go:modules
 
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SUB=	yes
