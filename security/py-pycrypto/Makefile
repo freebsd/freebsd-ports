@@ -15,8 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pycryptodome-*
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
 USE_PYTHON=	distutils autoplist
+
+CPE_VENDOR=	dlitz
 
 GNU_CONFIGURE=	yes
 
