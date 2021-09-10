@@ -11,8 +11,9 @@ COMMENT=	Inter Client Exchange library for X11
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		xorg xorg-cat:lib
+USES=		cpe xorg xorg-cat:lib
 USE_XORG=	xorgproto xtrans
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	freedesktop
 
 .include <bsd.port.mk>
