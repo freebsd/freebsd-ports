@@ -2,6 +2,7 @@ PORTNAME=	cantera
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.1-552
 DISTVERSIONSUFFIX=	-gcf085e47e
+PORTREVISION=	1
 CATEGORIES=	science # chemistry physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libsundials_cvodes.so:math/sundials \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		compiler:c++11-lang eigen:3 python scons
+USES=		compiler:c++11-lang eigen:3 scons
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -26,7 +27,7 @@ MAKE_ARGS=	system_eigen='y' \
 		system_fmt='y' \
 		system_yamlcpp='y' \
 		googletest='system' \
-		sundials_include='/usr/local/include/sundials' \
+		sundials_include='${LOCALBASE}/include/sundials' \
 		extra_inc_dirs="${LOCALBASE}/include:${LOCALBASE}/include/eigen3" \
 		extra_lib_dirs="${LOCALBASE}/lib" \
 		debug='no' \
@@ -38,6 +39,7 @@ TEST_TARGET=	test # some tests fail, see https://github.com/Cantera/cantera/issu
 
 OPTIONS_DEFINE=		PYTHON
 
+PYTHON_USES=		python
 PYTHON_MAKE_ARGS=	python_cmd="${PYTHON_CMD}"
 PYTHON_MAKE_ARGS_OFF=	python_package="none"
 PYTHON_BROKEN=		installs *.cpython-38.pyc files referring to the stage directory, see https://github.com/Cantera/cantera/issues/1094
