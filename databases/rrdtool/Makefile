@@ -19,9 +19,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 USE_RC_SUBR=	rrdcached
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake gnome libtool pathfix pkgconfig shebangfix
+USES=		cpe gmake gnome libtool pathfix pkgconfig shebangfix
 USE_GNOME=	glib20 libxml2
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	rrdtool_project
 
 PORTEXAMPLES=	cgi-demo.cgi
 
