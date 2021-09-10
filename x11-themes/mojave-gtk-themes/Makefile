@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	mojave-gtk-themes
-DISTVERSION=	2021-06-23
+DISTVERSION=	2021-07-20
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
