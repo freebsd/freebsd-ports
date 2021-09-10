@@ -15,7 +15,7 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libefl.so:devel/efl \
 		libpulse.so:audio/pulseaudio
 
-USES=		compiler:c11 desktop-file-utils gettext-tools gnome \
+USES=		compiler:c11 cpe desktop-file-utils gettext-tools gnome \
 		localbase:ldflags meson ninja iconv libtool pathfix pkgconfig \
 		tar:xz xorg
 USE_XORG=	xcb
