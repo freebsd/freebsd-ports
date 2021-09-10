@@ -2,6 +2,7 @@
 
 PORTNAME=	ipcalc
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	gnu-
 
@@ -25,5 +26,10 @@ MAXMINDDB_DESC=	Enable GeoIP1 + GeoIP2 Support
 DOCS_BUILD_DEPENDS=		ronn:textproc/rubygem-ronn
 MAXMINDDB_LIB_DEPENDS=		libmaxminddb.so:net/libmaxminddb
 MAXMINDDB_MESON_ENABLED=	use_maxminddb
+MAXMINDDB_SUB_FILES=		pkg-message
+
+post-patch-MAXMINDDB-on:
+	@${REINPLACE_CMD} -e "s|/usr/share|${LOCALBASE}/share|g" \
+		${WRKSRC}/ipcalc-maxmind.c
 
 .include <bsd.port.mk>

@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+To obtain MaxMind's GeoIP tables, install net/geoipupdate
+and run %%LOCALBASE%%/bin/geoipupdate manually.
+EOM
+}
+]
