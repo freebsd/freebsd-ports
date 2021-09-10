@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	lrz:comms/lrzsz
 
-USES=		iconv localbase ncurses
+USES=		cpe iconv localbase ncurses
+CPE_VENDOR=	minicom_project
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-dfl-baud=57600 \
 		--enable-dfl-port=/dev/cuau0 \
