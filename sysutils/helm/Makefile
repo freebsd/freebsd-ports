@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	kubectl:sysutils/kubectl
 
-USES=		go:modules tar:xz
+USES=		cpe go:modules tar:xz
 
 USE_GITHUB=	yes
 
