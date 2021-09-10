@@ -1,7 +1,7 @@
 # Created by: Frank Fischer
 
 PORTNAME=	abcl
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	lang lisp java
 MASTER_SITES=	http://abcl.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
