@@ -13,9 +13,10 @@ LICENSE=	LGPL21
 
 PORTSCOUT=	limitw:1,even
 
-USES=		bison gettext-runtime gmake gnome libtool \
+USES=		bison cpe gettext-runtime gmake gnome libtool \
 		localbase pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomeprefix libxslt:build
+CPE_VENDOR=	gnome
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-valadoc
