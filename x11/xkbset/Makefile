@@ -2,6 +2,8 @@
 
 PORTNAME=	xkbset
 PORTVERSION=	0.6
+DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://faculty.missouri.edu/~stephen/software/xkbset/
 
@@ -9,6 +11,10 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Manage various XKB features of X Window
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	stephenmontgomerysmith
 
 USES=		perl5 xorg
 USE_XORG=	x11
