@@ -1,9 +1,9 @@
 PORTNAME=	zfs-snap-diff
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	ben.lavery@hashbang0.com
+MAINTAINER=	ben@lavery-griffiths.com
 COMMENT=	View ZFS snapshot differences via a web browser
 
 LICENSE=	MIT
