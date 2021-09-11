@@ -1654,6 +1654,7 @@
     SUBDIR += py-grip
     SUBDIR += py-gunicorn
     SUBDIR += py-h2
+    SUBDIR += py-habanero
     SUBDIR += py-horizon
     SUBDIR += py-hpack
     SUBDIR += py-hstspreload

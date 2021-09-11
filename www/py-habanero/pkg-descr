@@ -1,0 +1,5 @@
+This is a low level client for working with Crossref's search API. It's been
+named to be more generic, as other organizations are/will adopt Crossref's
+search API, making it possible to interact with all from one client.
+
+WWW: https://github.com/sckott/habanero
