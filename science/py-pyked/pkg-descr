@@ -1,0 +1,6 @@
+PyKED is a Python package that provides the reference implementation of the
+interface to ChemKED files. PyKED reads ChemKED files, validates their structure
+and content, and allows the user to interact with the data contained in the
+ChemKED file.
+
+WWW: https://pr-omethe-us.github.io/PyKED/

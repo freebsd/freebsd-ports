@@ -290,6 +290,7 @@
     SUBDIR += py-pygeodesy
     SUBDIR += py-pygeometa
     SUBDIR += py-pygmo2
+    SUBDIR += py-pyked
     SUBDIR += py-pymatgen
     SUBDIR += py-pymol
     SUBDIR += py-pyosf
