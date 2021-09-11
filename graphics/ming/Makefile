@@ -17,7 +17,9 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgif.so:graphics/giflib \
 		libpng.so:graphics/png
 
-USES=		autoreconf bison gmake libtool localbase pathfix pkgconfig shebangfix
+USES=		autoreconf bison cpe gmake libtool localbase pathfix pkgconfig shebangfix
+
+CPE_VENDOR=	libming
 
 CFLAGS+=	-fcommon # https://github.com/libming/libming/issues/55
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/ming
