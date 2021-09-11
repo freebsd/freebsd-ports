@@ -74,6 +74,7 @@ include/igc/ocl_igc_interface/impl/ocl_translation_output_impl.cpp
 include/igc/ocl_igc_interface/impl/ocl_translation_output_impl.h
 include/igc/ocl_igc_interface/impl/platform_impl.cpp
 include/igc/ocl_igc_interface/impl/platform_impl.h
+include/igc/ocl_igc_interface/impl/version_in.h
 include/igc/ocl_igc_interface/ocl_gen_binary.h
 include/igc/ocl_igc_interface/ocl_translation_output.h
 include/igc/ocl_igc_interface/platform.h
