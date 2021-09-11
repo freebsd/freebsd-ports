@@ -12,6 +12,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 DEPRECATED=	newer version available in net-mgmt/p0f
+EXPIRATION_DATE=	2021-12-31
 
 USES=		gmake tar:tgz
 USE_RC_SUBR=	p0f2
