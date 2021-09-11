@@ -2,6 +2,7 @@
 
 PORTNAME=	prosody
 PORTVERSION=	0.11.10
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://prosody.im/downloads/source/
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${LUA_REFMODLIBDIR}/socket/core.so:net/luasocket@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR}
 LIB_DEPENDS=	libidn.so:dns/libidn
 
-USES=		compiler:c11 cpe gmake lua:52 shebangfix ssl
+USES=		cpe gmake lua:52 shebangfix ssl
 SHEBANG_FILES=	prosody prosodyctl tools/migration/prosody-migrator.lua
 LUA_PREMK=	yes
 HAS_CONFIGURE=	yes
@@ -31,7 +32,7 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--with-random=arc4random \
 		--c-compiler="${CC}" \
 		--cflags="${CFLAGS}" \
-		--add-cflags="-fPIC -std=c99 -I${LOCALBASE}/include -I${OPENSSLINC}" \
+		--add-cflags="-fPIC -I${LOCALBASE}/include -I${OPENSSLINC}" \
 		--linker="${CC}" \
 		--ldflags="${LDFLAGS}" \
 		--add-ldflags="-shared -L${LOCALBASE}/lib -L${OPENSSLLIB}" \

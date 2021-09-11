@@ -1,9 +1,10 @@
---- util-src/time.c.orig	2020-01-02 09:49:37 UTC
+--- util-src/time.c.orig	2021-08-03 09:53:04 UTC
 +++ util-src/time.c
-@@ -1,5 +1,5 @@
- #ifndef _POSIX_C_SOURCE
+@@ -1,7 +1,3 @@
+-#ifndef _POSIX_C_SOURCE
 -#define _POSIX_C_SOURCE 199309L
-+#define _POSIX_C_SOURCE 200809L
- #endif
- 
+-#endif
+-
  #include <time.h>
+ #include <lua.h>
+ 
