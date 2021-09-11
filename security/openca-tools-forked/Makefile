@@ -3,7 +3,7 @@
 PORTNAME=	openca-tools-forked
 PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 
 MAINTAINER=	svysh.fbsd@gmail.com
@@ -11,15 +11,16 @@ COMMENT=	Tools to deal with SCEP and PKCS7 messages
 
 LICENSE=	APACHE20
 
-BROKEN_SSL=	openssl
+DEPRECATED=	Use modern port security/libscep instead
+EXPIRATION_DATE=	2021-09-30
 
 USES=		gmake perl5 ssl
-
-GNU_CONFIGURE=	yes
+BROKEN_SSL=	openssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-openssl-prefix=${OPENSSLBASE}
 
 # security/openssl already has a verify.1 manpage.
