@@ -1,4 +1,4 @@
-%%MAYBE_SUID%%bin/sway
+bin/sway
 bin/swaybar
 bin/swaymsg
 bin/swaynag

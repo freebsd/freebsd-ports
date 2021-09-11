@@ -1,4 +1,4 @@
-%%MAYBE_SUID%%bin/wayfire
+bin/wayfire
 include/wayfire/bindings.hpp
 include/wayfire/compositor-surface.hpp
 include/wayfire/compositor-view.hpp

@@ -1,6 +1,6 @@
 PORTNAME=	seatd
 DISTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -25,8 +25,8 @@ PLIST_FILES=	bin/${PORTNAME} \
 		lib/libseat.so.1 \
 		libdata/pkgconfig/libseat.pc
 
-OPTIONS_DEFINE=	BASU MANPAGES SUID
-OPTIONS_DEFAULT=BASU MANPAGES SUID
+OPTIONS_DEFINE=	BASU MANPAGES
+OPTIONS_DEFAULT=BASU MANPAGES
 
 # https://lists.sr.ht/~kennylevinsen/seatd-devel/%3CQHZRRQ.73ZI29COPK131%40unrelenting.technology%3E
 BASU_DESC=		ConsoleKit2 support via basu (experimental)
@@ -43,8 +43,5 @@ MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
 			man/man1/${PORTNAME}-launch.1.gz
-
-SUID_DESC=		Fall back to builtin server when running as root
-SUID_MESON_ENABLED=	libseat-builtin
 
 .include <bsd.port.mk>

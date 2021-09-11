@@ -1,5 +1,5 @@
-%%MAYBE_SUID%%bin/hikari
-%%MAYBE_SUID%%bin/hikari-unlocker
+bin/hikari
+@(,,4755) bin/hikari-unlocker
 etc/pam.d/hikari-unlocker
 @sample %%ETCDIR%%/hikari.conf.sample
 share/backgrounds/hikari/hikari_wallpaper.png

@@ -5,6 +5,38 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210912:
+  AFFECTS: x11-wm/cage, x11-wm/hikari, x11-wm/labwc, x11-wm/sway, x11-wm/wayfire
+  AUTHOR: jbeich@FreeBSD.org
+
+  SUID option has been removed in favor of seatd-launch(1) which doesn't
+  require special handling in every consumer and doesn't bypass group
+  permissions. If you've already enabled seatd service or use consolekit2
+  then nothing changes. Otherwise,
+
+    $ sway
+    00:00:00.001 [ERROR] [wlr] [libseat] [libseat/libseat.c:83] No backend was able to open a seat
+    00:00:00.001 [ERROR] [wlr] [backend/session/session.c:84] Unable to create seat: Function not implemented
+    00:00:00.001 [ERROR] [wlr] [backend/session/session.c:218] Failed to load session backend
+    00:00:00.001 [ERROR] [wlr] [backend/backend.c:353] Failed to start a DRM session
+    00:00:00.001 [ERROR] [sway/server.c:53] Unable to create backend
+
+  can be fixed by
+
+    $ ck-launch-session sway
+
+  or
+
+    $ seatd-launch sway
+
+  or
+
+    # sysrc seatd_enable=YES
+    # service seatd start
+    $ sway
+
+  Replace "sway" with your compositor e.g., "cage", "hikari", "labwc", "wayfire".
+
 20210907:
   AFFECTS: consumers of math/eigen[23]
   AUTHOR: adridg@FreeBSD.org
