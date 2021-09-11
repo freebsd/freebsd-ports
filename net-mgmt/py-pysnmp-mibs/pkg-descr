@@ -2,4 +2,4 @@ PySNMP is fully functional SNMP v1, v2c and v3 engine (agent and manager)
 written entirely in Python.  The -mibs distribution contains MIB modules
 built from publicly available MIBs compiled to work with the pysnmp tools.
 
-WWW: http://snmplabs.com/pysnmp/
+WWW: https://github.com/etingof/pysnmp-mibs
