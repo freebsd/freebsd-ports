@@ -21,6 +21,7 @@
 #					Default is "info". See daemon(8).
 # vault_syslog_output_facility (str):	Set syslog facility if syslog enabled.
 #					Default is "daemon". See daemon(8).
+# vault_limits_mlock (size): allowd memorylocked value in size. Default is 1024M
 
 . /etc/rc.subr
 
@@ -33,6 +34,8 @@ load_rc_config $name
 : ${vault_user:="vault"}
 : ${vault_group:="vault"}
 : ${vault_config:="%%PREFIX%%/etc/vault.hcl"}
+: ${vault_limits_mlock:="1024M"}
+: ${vault_limits:="-l ${vault_limits_mlock}"}
 
 DAEMON=$(/usr/sbin/daemon 2>&1 | grep -q syslog ; echo $?)
 if [ ${DAEMON} -eq 0 ]; then
