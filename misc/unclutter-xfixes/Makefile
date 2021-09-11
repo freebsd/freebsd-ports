@@ -1,7 +1,7 @@
 # Created by: Oleh Hushchenkov <gor@clogic.com.ua>
 
 PORTNAME=	unclutter-xfixes
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
