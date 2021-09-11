@@ -1,0 +1,13 @@
+sphinxcontrib-issuetracker is a Sphinx extension to reference issues in issue
+trackers, either explicitly with an "issue" role or optionally implicitly by
+issue ids like #10 in plaintext.
+
+Currently the following issue trackers are supported:
+* GitHub
+* BitBucket
+* Launchpad
+* Google Code
+* Debian BTS
+* Jira
+
+WWW: https://github.com/ignatenkobrain/sphinxcontrib-issuetracker
