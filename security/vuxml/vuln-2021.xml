@@ -1,3 +1,33 @@
+  <vuln vid="376df2f1-1295-11ec-859e-000c292ee6b8">
+    <topic>consul -- rpc: authorize raft requests</topic>
+    <affects>
+      <package>
+	<name>consul</name>
+	<range><lt>1.10.2</lt></range>
+	<range><lt>1.9.9</lt></range>
+	<range><lt>1.8.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hashicorp reports:</p>
+	<blockquote cite="https://github.com/hashicorp/consul/releases/tag/v1.9.9">
+	  <p>HashiCorp Consul Raft RPC layer allows non-server agents with a
+	    valid certificate signed by the same CA to access server-only
+	    functionality, enabling privilege escalation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-37219</cvename>
+      <url>https://github.com/hashicorp/consul/releases/tag/v1.9.9</url>
+    </references>
+    <dates>
+      <discovery>2021-08-27</discovery>
+      <entry>2021-09-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4ea1082a-1259-11ec-b4fa-dd5a552bdd17">
     <topic>go -- archive/zip: overflow in preallocation check can cause OOM panic</topic>
     <affects>
