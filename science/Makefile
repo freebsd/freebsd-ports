@@ -104,6 +104,7 @@
     SUBDIR += hdf5
     SUBDIR += hdf5-18
     SUBDIR += healpix
+    SUBDIR += helfem
     SUBDIR += hepmc3
     SUBDIR += highfive
     SUBDIR += hypre
