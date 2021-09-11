@@ -10,7 +10,9 @@ COMMENT=	Free library for arbitrary precision arithmetic
 
 LICENSE=	LGPL3
 
-USES=		libtool makeinfo tar:xz
+USES=		cpe libtool makeinfo tar:xz
+
+CPE_VENDOR=	gmplib
 
 OPTIONS_DEFINE=	CPU_OPTS
 CPU_OPTS_DESC=	Enable assembly optimizations for your CPU
