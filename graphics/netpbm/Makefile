@@ -21,9 +21,10 @@ TEST_DEPENDS=	bash:shells/bash
 # http://netpbm.sourceforge.net/getting_netpbm.php.  To checkout the
 # sources yourself see the netpbm-version-check and netpbm-fetch
 # targets below.
-USES=		ghostscript:test gmake perl5 shebangfix tar:xz
+USES=		cpe ghostscript:test gmake perl5 shebangfix tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build test
+CPE_VENDOR=	netpbm_project
 
 SHEBANG_FILES=	buildtools/makeman converter/pbm/pbmtox10bm editor/pnmflip \
 		editor/pnmquant editor/ppmfade editor/ppmquant editor/ppmshadow \
