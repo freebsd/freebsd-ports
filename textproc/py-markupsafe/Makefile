@@ -1,8 +1,7 @@
 # Created by: wen@FreeBSD.org
 
 PORTNAME=	markupsafe
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +13,7 @@ COMMENT=	Implements XML/HTML/XHTML Markup safe string for Python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=		python:2.7+
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
