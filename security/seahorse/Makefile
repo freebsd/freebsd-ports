@@ -24,7 +24,7 @@ LIB_DEPENDS=	libgcr-base-3.so:security/gcr \
 		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS=	gnupg>=2.1.4:security/gnupg
 
-USES=		gettext gnome localbase:ldflags meson pkgconfig \
+USES=		cpe gettext gnome localbase:ldflags meson pkgconfig \
 		python:3.5+,build tar:xz xorg
 USE_CSTD=	c99
 USE_GNOME=	gtk30
@@ -34,6 +34,7 @@ GLIB_SCHEMAS=	org.gnome.seahorse.gschema.xml \
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	sm
+CPE_VENDOR=	gnome
 
 MESON_ARGS=	-Dcheck-compatible-gpg=false \
 		-Dhkp-support=true \
