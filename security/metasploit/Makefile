@@ -97,7 +97,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-eventmachine>=0:devel/rubygem-eventmachine \
 		rubygem-zeitwerk>=0:devel/rubygem-zeitwerk
 
-USES=		python shebangfix
+USES=		cpe python shebangfix
 USE_RUBY=	yes
 SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		data/exploits/CVE-2017-17562/install-deps.sh \
@@ -146,6 +146,8 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 USE_GITHUB=	yes
 GH_ACCOUNT=	rapid7
 GH_PROJECT=	metasploit-framework
+
+CPE_VENDOR=	rapid7
 
 NO_ARCH=	yes
 NO_ARCH_IGNORE=	template_x64_bsd.bin template_x86_bsd.bin CVE-2013-2171.bin
