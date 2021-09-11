@@ -1,6 +1,6 @@
 PORTNAME=	nomad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.3
+DISTVERSION=	1.1.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org
@@ -80,7 +80,7 @@ GH_TUPLE=	\
 		docker:cli:eb310fca4956:docker_cli/vendor/github.com/docker/cli \
 		docker:docker-credential-helpers:73e5f5dbfea3:docker_credential_helpers/vendor/github.com/docker/docker-credential-helpers \
 		docker:distribution:v2.7.1:docker_distribution/vendor/github.com/docker/distribution \
-		docker:engine:7f8b4b621b5d:docker_docker/vendor/github.com/docker/docker \
+		docker:engine:v17.12.0-ce-rc1:docker_docker/vendor/github.com/docker/docker \
 		docker:go-connections:v0.4.0:docker_go_connections/vendor/github.com/docker/go-connections \
 		docker:go-metrics:v0.0.1:docker_go_metrics/vendor/github.com/docker/go-metrics \
 		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
@@ -113,7 +113,7 @@ GH_TUPLE=	\
 		golang:protobuf:v1.5.0:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.2:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:77fc1eacc6aa:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:00dd8d7831e7:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
 		golang:tools:cb1345f3a375:golang_tools/vendor/golang.org/x/tools \
@@ -254,6 +254,8 @@ GH_TUPLE=	\
 post-extract:
 	@${MKDIR} ${WRKSRC}/vendor/github.com/hashicorp/nomad
 	@${RLN} ${WRKSRC}/api ${WRKSRC}/vendor/github.com/hashicorp/nomad/api
+	@${MKDIR} ${WRKSRC}/vendor/github.com/Nvveen
+	@${RLN} ${WRKSRC_docker_docker}/vendor/github.com/Nvveen/Gotty ${WRKSRC}/vendor/github.com/Nvveen/Gotty
 	@${RM} -r ${WRKSRC}/vendor/cloud.google.com/go/storage
 	@${RLN} ${WRKSRC_googleapis_google_cloud_go_storage}/storage ${WRKSRC}/vendor/cloud.google.com/go/storage
 	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest
