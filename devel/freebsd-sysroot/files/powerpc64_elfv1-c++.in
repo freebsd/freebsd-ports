@@ -1,0 +1,4 @@
+#!/bin/sh
+: ${FREEBSD_SYSROOT_CXX:="%%FREEBSD_SYSROOT_CXX_ELFV1%%"}
+: ${FREEBSD_SYSROOT:="%%FREEBSD_SYSROOT%%"}
+exec "${FREEBSD_SYSROOT_CXX}" --sysroot="${FREEBSD_SYSROOT}" -Wl,-rpath=/usr/local/lib/gcc9 -L"${FREEBSD_SYSROOT}/usr/local/lib/gcc9" -isystem="%%LOCALBASE%%/lib/gcc9/include/c++" -isystem="%%FREEBSD_SYSROOT_CXXINC_ELFV1%%" "$@"
