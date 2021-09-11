@@ -17,6 +17,8 @@ USE_GITHUB=	yes
 USE_GL=		egl
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	NVIDIA
+GH_TUPLE=	KhronosGroup:EGL-Registry:745e9ad:egl_registry
+CPPFLAGS+=	-I${WRKSRC_egl_registry}/api -isystem${LOCALBASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e "/install/s/datadir')/prefix'), 'libdata'/" \
