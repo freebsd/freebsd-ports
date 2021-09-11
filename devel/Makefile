@@ -385,6 +385,7 @@
     SUBDIR += commoncpp
     SUBDIR += compiler-rt
     SUBDIR += compiz-bcop
+    SUBDIR += concurrencpp
     SUBDIR += concurrencykit
     SUBDIR += configkit
     SUBDIR += cons

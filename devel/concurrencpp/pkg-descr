@@ -1,0 +1,9 @@
+concurrencpp is a tasking library for C++ allowing developers to write highly
+concurrent applications easily and safely by using tasks, executors and
+coroutines. By using concurrencpp applications can break down big procedures
+that need to be processed asynchronously into smaller tasks that run
+concurrently and work in a co-operative manner to achieve the wanted result.
+concurrencpp also allows applications to write parallel algorithms easily by
+using parallel coroutines.
+
+WWW: https://github.com/David-Haim/concurrencpp
