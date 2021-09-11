@@ -1588,6 +1588,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/FiltersSettingsEditor/state/reducer.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/FiltersSettingsEditor/state/types.ts
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/FiltersSettingsEditor/utils.ts
+%%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/TermsSettingsEditor.test.tsx
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/TermsSettingsEditor.tsx
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/index.tsx
 %%DATADIR%%/public/app/plugins/datasource/elasticsearch/components/QueryEditor/BucketAggregationsEditor/SettingsEditor/useDescription.ts
@@ -1792,6 +1793,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/types/logAnalyticsMetadata.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/types/query.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/types/types.ts
+%%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/utils/common.test.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/utils/common.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/utils/messageFromError.test.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/utils/messageFromError.ts
@@ -4296,6 +4298,7 @@ bin/grafana-server
 %%DATADIR%%/public/img/plugins/appdynamics.svg
 %%DATADIR%%/public/img/plugins/datadog.png
 %%DATADIR%%/public/img/plugins/dynatrace.png
+%%DATADIR%%/public/img/plugins/honeycomb.png
 %%DATADIR%%/public/img/plugins/mongodb.svg
 %%DATADIR%%/public/img/plugins/newrelic.svg
 %%DATADIR%%/public/img/plugins/oracle.png
