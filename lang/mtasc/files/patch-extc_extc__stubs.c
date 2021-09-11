@@ -1,5 +1,5 @@
---- extc/extc_stubs.c.orig	2007-03-05 14:09:37.000000000 +0300
-+++ extc/extc_stubs.c	2009-04-11 12:57:23.000000000 +0400
+--- extc/extc_stubs.c.orig	2007-03-05 11:09:37 UTC
++++ extc/extc_stubs.c
 @@ -32,6 +32,11 @@
  #	include <sys/syslimits.h>
  #	include <mach-o/dyld.h>
@@ -12,7 +12,7 @@
  
  #define zval(z)		((z_streamp)(z))
  
-@@ -125,7 +130,26 @@
+@@ -125,7 +130,26 @@ CAMLprim value zlib_inflate_end(value zv) {
  }
  
  CAMLprim value executable_path(value u) {

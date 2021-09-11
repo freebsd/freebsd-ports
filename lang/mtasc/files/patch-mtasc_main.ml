@@ -1,6 +1,6 @@
---- mtasc/main.ml.orig	2008-08-31 15:14:17.000000000 +0400
-+++ mtasc/main.ml	2009-04-11 12:38:50.000000000 +0400
-@@ -112,8 +112,8 @@
+--- mtasc/main.ml.orig	2008-08-31 11:14:17 UTC
++++ mtasc/main.ml
+@@ -112,8 +112,8 @@ let report ?(do_exit=true) (msg,p) etype printer =
  	if do_exit then exit 1
  ;;
  try	
@@ -11,7 +11,7 @@
  	let files = ref [] in
  	let time = Sys.time() in
  	Plugin.class_path := [base_path;"";"/"];
-@@ -132,8 +132,8 @@
+@@ -132,8 +132,8 @@ try	
  		),": use precompiled mx package");
  	] @ !Plugin.options in
  	Arg.parse args_spec (fun file -> files := file :: !files) usage;
