@@ -28,4 +28,6 @@ CONFIGURE_ARGS=	--enable-bin \
 		--enable-python \
 		--enable-special
 
+CXXFLAGS_i386=	-msse -msse2 -mfpmath=sse
+
 .include <bsd.port.mk>
