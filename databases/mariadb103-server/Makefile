@@ -164,12 +164,6 @@ ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 CMAKE_ARGS+=		-DPLUGIN_${PLUGIN}=NO
 .endfor
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
-SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
-.else
-SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
-.endif
-
 .endif # ${PKGNAMESUFFIX:M*-client}
 
 .if defined(WITH_OPENSSL_PORT)

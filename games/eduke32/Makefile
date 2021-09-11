@@ -76,7 +76,7 @@ FULL_PLIST_FILES=	${DATADIR}/duke3d.grp ${DATADIR}/duke.rts
 
 .include <bsd.port.options.mk>
 
-.if (${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == riscv64) || ${OSVERSION} < 1202000
+.if ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == riscv64
 MAKE_ARGS+=	LTO=0
 .endif
 

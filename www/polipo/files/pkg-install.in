@@ -65,12 +65,4 @@ elif [ "$2" = "POST-INSTALL" ]; then
 
 fi
 
-OSVER=`uname -r | sed -e 's/\..*//'`
-if [ ${OSVER} = "8" -o ${OSVER} = "9" ]; then
-    CACHEPARENT=`dirname ${POLIPOCACHE}`
-    echo "You will need to manually run:"
-    echo "  chmod o+x %%DESTDIR%%$CACHEPARENT"
-    echo "to ensure the cache is useable."
-fi
-
 exit 0

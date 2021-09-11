@@ -245,7 +245,7 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|return pci_lookup_name|disabled broken|g' \
 		${WRKSRC}/configure
-.if (${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085) || ${SSL_DEFAULT:Mopenssl}
+.if ${OPSYS} == FreeBSD || ${SSL_DEFAULT:Mopenssl}
 	@${REINPLACE_CMD} -E -e 's|SSL_library_init|OPENSSL_init_ssl|g' \
 		${WRKSRC}/configure
 .endif

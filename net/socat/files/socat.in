@@ -97,7 +97,6 @@ EOCFF
 }
 
 # Check if daemon(8) handles title and syslog parameters
-# (as in FreeBSD 11).
 if [ "${1%start}" != "${1}" ]; then
 	daemon_extended_args=" -l daemon"
 	${command} -t "test" ${daemon_extended_args} -f -u nobody true \

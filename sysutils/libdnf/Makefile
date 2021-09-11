@@ -8,8 +8,6 @@ COMMENT=	Dandified YUM, the next-generation version of YUM
 LICENSE=	LGPL21 # no LICENSE tag for Version 2.1
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_11=	fatal error: sys/auxv.h: No such file or directory
-
 BUILD_DEPENDS=	check>0:devel/check
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpgme.so:security/gpgme \

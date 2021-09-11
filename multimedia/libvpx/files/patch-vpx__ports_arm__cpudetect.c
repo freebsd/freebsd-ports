@@ -1,4 +1,4 @@
---- vpx_ports/arm_cpudetect.c.orig	2017-01-12 20:27:27 UTC
+--- vpx_ports/arm_cpudetect.c.orig	2021-03-18 19:59:46 UTC
 +++ vpx_ports/arm_cpudetect.c
 @@ -38,7 +38,7 @@ static int arm_cpu_env_mask(void) {
    return env && *env ? (int)strtol(env, NULL, 0) : ~0;
@@ -9,42 +9,14 @@
  
  int arm_cpu_caps(void) {
    /* This function should actually be a no-op. There is no way to adjust any of
-@@ -147,7 +147,57 @@ int arm_cpu_caps(void) {
+@@ -147,7 +147,25 @@ int arm_cpu_caps(void) {
    }
    return flags & mask;
  }
 -#else  /* end __linux__ */
 +#elif defined(__FreeBSD__)
 +
-+#if __FreeBSD__ < 12
-+#include <sys/param.h>
-+#include <sys/sysctl.h>
-+#include <elf.h>
-+#include <errno.h>
-+#include <unistd.h>
-+
-+static unsigned long getauxval(unsigned long type) {
-+  Elf_Auxinfo auxv[AT_COUNT];
-+  size_t len = sizeof(auxv);
-+  int mib[] = {
-+    CTL_KERN,
-+    KERN_PROC,
-+    KERN_PROC_AUXV,
-+    getpid(),
-+  };
-+
-+  if (sysctl(mib, nitems(mib), auxv, &len, NULL, 0) != -1) {
-+    for (size_t i = 0; i < nitems(auxv); i++)
-+      if ((unsigned long)auxv[i].a_type == type)
-+        return auxv[i].a_un.a_val;
-+
-+    errno = ENOENT;
-+  }
-+  return 0;
-+}
-+#else
 +#include <sys/auxv.h>
-+#endif
 +
 +int arm_cpu_caps(void) {
 +  int flags;
@@ -54,11 +26,7 @@
 +    return flags;
 +  }
 +  mask = arm_cpu_env_mask();
-+#if __FreeBSD__ < 12
-+  hwcap = getauxval(AT_HWCAP);
-+#else
 +  elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
-+#endif
 +#if HAVE_NEON || HAVE_NEON_ASM
 +  if (hwcap & HWCAP_NEON) flags |= HAS_NEON;
 +#endif

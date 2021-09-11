@@ -9,9 +9,7 @@ COMMENT=	Bash pipeline for RAD sequencing
 
 LICENSE=	MIT
 
-# ddocent test data do not unpack with FreeBSD 11.1 /usr/bin/unzip
-RUN_DEPENDS=	unzip>=0:archivers/unzip \
-		mawk>=0:lang/mawk \
+RUN_DEPENDS=	mawk>=0:lang/mawk \
 		gawk>=0:lang/gawk \
 		coreutils>=0:sysutils/coreutils \
 		gnuplot>=0:math/gnuplot \

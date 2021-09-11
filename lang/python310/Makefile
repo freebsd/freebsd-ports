@@ -112,8 +112,8 @@ PLIST_SUB+=	NO_NIS=""
 .endif
 
 # Python 3.10 requires OpenSSL >= 1.1.1 (PEP 644), so with
-# older OpenSSL or libressl, some modules are not built
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000 && !${SSL_DEFAULT:Mopenssl*} || ${SSL_DEFAULT:Mlibressl*}
+# libressl, some modules are not built
+.if ${SSL_DEFAULT:Mlibressl*}
 PLIST_SUB+=	SUPPORTED_OPENSSL="@comment "
 .else
 PLIST_SUB+=	SUPPORTED_OPENSSL=""

@@ -27,17 +27,12 @@ OPTIONS_DEFINE=	DOCS LTO NOTIFY PGO UTF8PROC XDG
 OPTIONS_DEFAULT=LTO NOTIFY PGO UTF8PROC XDG
 OPTIONS_EXCLUDE+=	${CC:T:Mgcc*:C/.+/LTO/} # undefined reference to `xstrdup'
 OPTIONS_EXCLUDE_powerpc64=	${"${/usr/bin/ld:L:tA}"==/usr/bin/ld.lld:?LTO:} # LLVM bug 47353
-OPTIONS_EXCLUDE_FreeBSD_11=	${WAYLAND_DISPLAY:UPGO} # ./pgo hangs
 OPTIONS_EXCLUDE_FreeBSD_12=	${WAYLAND_DISPLAY:UPGO} # ./pgo hangs
 
 DOCS_BUILD_DEPENDS=	scdoc:textproc/scdoc
 DOCS_MESON_ENABLED=	docs
 
 LTO_MESON_TRUE=		b_lto
-.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-# --plugin isn't supported by old GNU ld.bfd in base
-LTO_LDFLAGS=		-fuse-ld=lld
-.endif
 
 NOTIFY_RUN_DEPENDS=	notify-send:devel/libnotify
 

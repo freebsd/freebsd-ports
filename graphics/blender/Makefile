@@ -44,10 +44,6 @@ CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
 CFLAGS_gcc=	-Wno-float-conversion
 CFLAGS_i386=	-march=i586
 CXXFLAGS_i386=	-march=i586
-# Use LLVM linker where available
-.if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
-LDFLAGS+=	-fuse-ld=lld
-.endif
 
 PLIST_SUB+=	VER=${DISTVERSION:R}
 OPTIONS_SUB=	yes

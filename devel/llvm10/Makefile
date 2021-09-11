@@ -423,12 +423,6 @@ _COMPILER_RT_LIBS+= \
 	libclang_rt.ubsan_standalone_cxx-i386.a
 .endif
 
-# Use lld for armv6 on clang 7 and up to avoid binutils ld issues
-# PR: 235282
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 70
-LDFLAGS_armv6=-fuse-ld=lld
-.endif
-
 .if ${ARCH} == "armv6"
 BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin

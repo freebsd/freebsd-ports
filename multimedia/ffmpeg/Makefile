@@ -233,9 +233,6 @@ FDK_AAC_IMPLIES=	NONFREE
 # flite
 FLITE_LIB_DEPENDS=	libflite.so:audio/flite
 FLITE_CONFIGURE_ENABLE=	libflite
-.if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
-FLITE_LDFLAGS=		-fuse-ld=lld
-.endif
 
 # fontconfig
 FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
@@ -468,10 +465,6 @@ SRT_CONFIGURE_ENABLE=	libsrt
 # svt-av1
 SVTAV1_LIB_DEPENDS=	libSvtAv1Enc.so:multimedia/svt-av1
 SVTAV1_CONFIGURE_ON=	--enable-libsvtav1
-.if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
-# https://github.com/OpenVisualCloud/SVT-AV1/issues/691
-SVTAV1_LDFLAGS=		-fuse-ld=lld
-.endif
 
 # svt-hevc
 SVTHEVC_LIB_DEPENDS=	libSvtHevcEnc.so:multimedia/svt-hevc
@@ -479,9 +472,6 @@ SVTHEVC_CONFIGURE_ON=	--enable-libsvthevc
 SVTHEVC_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-HEVC/raw/v1.5.0-3-g86b58f77/ffmpeg_plugin/:svthevc
 SVTHEVC_PATCHFILES=	0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.patch:-p1:svthevc \
 			0002-doc-Add-libsvt_hevc-encoder-docs.patch:-p1:svthevc
-.if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
-SVTHEVC_LDFLAGS=	-fuse-ld=lld
-.endif
 .if make(makesum)
 .MAKEFLAGS:		WITH+=SVTHEVC
 .endif
@@ -491,9 +481,6 @@ SVTVP9_LIB_DEPENDS=	libSvtVp9Enc.so:multimedia/svt-vp9
 SVTVP9_CONFIGURE_ON=	--enable-libsvtvp9
 SVTVP9_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-VP9/raw/v0.3.0-4-gabd5c59/ffmpeg_plugin/:svtvp9
 SVTVP9_PATCHFILES=	master-0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch:-p1:svtvp9
-.if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
-SVTVP9_LDFLAGS=		-fuse-ld=lld
-.endif
 .if make(makesum)
 .MAKEFLAGS:		WITH+=SVTVP9
 .endif

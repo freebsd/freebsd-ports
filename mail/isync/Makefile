@@ -27,16 +27,10 @@ MAKE_ARGS+=	SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
 LDFLAGS+=	-L${BDB_LIB_DIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} == base
-BROKEN=		requires OpenSSL 1.1.1, upgrade to FreeBSD 12.x/13.x or add DEFAULT_VERSIONS+=ssl=openssl to /etc/make.conf
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|\$$(docdir)/examples|\$$(sysconfdir)|g' \
 	    ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|-ansi||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

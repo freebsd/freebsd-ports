@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
+.if ${OPSYS} == FreeBSD
 LDFLAGS+=	-Wl,-E
 .endif
 

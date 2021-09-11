@@ -81,10 +81,6 @@ PKGHELP=	${.CURDIR}/pkg-help
 PKGINSTALL=	${.CURDIR}/pkg-install
 PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src_util_build__id.c
-.endif
-
 .include <bsd.port.pre.mk>
 
 BINARY_ALIAS+=	python3=${PYTHON_VERSION}

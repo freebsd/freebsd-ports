@@ -29,8 +29,6 @@ TEST_TARGET=	check
 
 # XXX bug 214593: SNA crashes on pre-SandyBridge hardware
 CONFIGURE_ARGS+=--with-default-accel=uxa
-# XXX Remove after FreeBSD 11 EOL
-CPPFLAGS+=	-D_WITH_GETLINE
 
 OPTIONS_DEFINE=	UDEV XVMC
 OPTIONS_DEFAULT=UDEV XVMC

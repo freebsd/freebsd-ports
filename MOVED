@@ -16498,3 +16498,5 @@ multimedia/sms1xxx-kmod|multimedia/webcamd|2021-09-30|Has expired: Supports DVB 
 sysutils/cfengine311|sysutils/cfengine317|2021-09-30|Has expired: OpenSSL 1.1.X is not supported.
 sysutils/cfengine-masterfiles311|sysutils/cfengine-masterfiles317|2021-09-30|Has expired: cfengine311 will retire at FreeBSD 11 EOL
 mail/postfix35|mail/postfix|2021-09-30|Has expired: It is only here until FreeBSD 11 is EoL (Postfix >= 3.6 requires OpenSSL >= 1.1.x)
+graphics/drm-fbsd11.2-kmod||2021-09-30|Removed, only useful on EOL FreeBSD 11.4
+devel/qca-legacy|devel/qca|2021-09-30|Removed, only useful on EOL FreeBSD 11.4

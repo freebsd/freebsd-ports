@@ -11,10 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl crypto extension to OpenSSL
 
-BROKEN_SSL=    openssl ${BROKEN_SSL_${OSREL:R}}
+BROKEN_SSL=    base openssl
 BROKEN_SSL_REASON_openssl=  incomplete definition of type 'struct x509_st'
-BROKEN_SSL_12=	base
-BROKEN_SSL_13=	base
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
@@ -27,7 +25,7 @@ MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base
+.if ${OPSYS} == FreeBSD && (${SSL_DEFAULT} == base || ${SSL_DEFAULT} == openssl)
 BROKEN=        Does not support OpenSSL 1.1
 .endif
 

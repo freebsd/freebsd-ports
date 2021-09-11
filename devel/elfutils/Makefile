@@ -14,7 +14,6 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING-GPLV2
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING-LGPLV3
 
-IGNORE_FreeBSD_11=	fails to build: fails to compile dwarf_abbrev_hash.c
 BROKEN_armv6=		fails to build: fails to compile i386_disasm.c
 BROKEN_sparc64=		sparc patch does not apply cleanly to 0.172
 

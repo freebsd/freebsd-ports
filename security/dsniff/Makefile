@@ -34,11 +34,7 @@ X11_CONFIGURE_WITH=x
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085
-USES+=		ssl
-.endif
-
-.if (${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085) || ${SSL_DEFAULT} == openssl
+.if ${OPSYS} == FreeBSD || ${SSL_DEFAULT} == openssl
 # Requires LibreSSL for old SSL interface
 BUILD_DEPENDS+=		${NONEXISTENT}:security/libressl:stage
 CPPFLAGS+=		-nostdinc -I/usr/include -I${WRKDIR}/libressl/include

@@ -18,7 +18,6 @@ RUN_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER} \
 		p5-Sys-CPU>=0:devel/p5-Sys-CPU \
 		p5-Getopt-Tabular>=0:devel/p5-Getopt-Tabular
 
-BROKEN_FreeBSD_11_powerpc64=	fails to configure: cannot compile and link test program with selected LLVM
 BROKEN_FreeBSD_12_powerpc64=	fails to configure: cannot compile and link test program with selected LLVM
 
 GNU_CONFIGURE=	yes

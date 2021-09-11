@@ -61,7 +61,6 @@ SRCS+=	FileMap.cpp
 .PATH:	${.CURDIR}/../libziparchive
 SRCS+=	zip_archive.cc
 
-CPPFLAGS+=	-D_WITH_GETLINE
 CPPFLAGS+=	-DUSE_BIONIC_UAPI_HEADERS
 CPPFLAGS+=	-Doff64_t=off_t
 CPPFLAGS+=	-Dftruncate64=ftruncate

@@ -34,8 +34,6 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		compiler:c++11-lib gettext gnome localbase pkgconfig python:3.7+ shebangfix uniquefiles:dirs
 USE_PYTHON=	distutils
 
-LDFLAGS+=	-fuse-ld=lld
-
 PLIST_SUB=	VER=${PORTVERSION}
 PORTEXAMPLES=	*
 

@@ -14,8 +14,6 @@ LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/lib/bpf/LICENSE.BSD-2-Clause
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/lib/bpf/LICENSE.LPGL-2.1
 
-IGNORE_FreeBSD_11=	inherited from dependency devel/elfutils
-
 BUILD_DEPENDS=	gnulib>=0:devel/gnulib
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libdw.so:devel/elfutils

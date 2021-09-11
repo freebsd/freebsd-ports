@@ -20,10 +20,4 @@ CONFIGURE_ARGS=	--disable-hardening --disable-fapi
 
 BROKEN_SSL=	openssl
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085
-BROKEN_SSL+=	base
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

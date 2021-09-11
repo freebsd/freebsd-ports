@@ -14,7 +14,6 @@ LICENSE=	APACHE20
 
 BROKEN_aarch64=		ld: error: undefined symbol: fpsetround
 BROKEN_riscv64=		fails to compile: src/gui/tcltk/tcl/unix/tclUnixInit.c:401:16: error: use of undeclared identifier 'FP_RN'
-BROKEN_FreeBSD_11=	perl: No such file or directory
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:devel/gperf \
 		${LOCALBASE}/include/tommath.h:math/libtommath \

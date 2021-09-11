@@ -1,6 +1,6 @@
 - Implement VSX detection on FreeBSD
 
---- aom_ports/ppc_cpudetect.c.orig	2018-06-25 14:54:59 UTC
+--- aom_ports/ppc_cpudetect.c.orig	2021-07-20 22:23:15 UTC
 +++ aom_ports/ppc_cpudetect.c
 @@ -9,12 +9,6 @@
   * PATENTS file, you can obtain it at www.aomedia.org/license/patent.
@@ -29,17 +29,12 @@
  int ppc_simd_caps(void) {
    int flags;
    int mask;
-@@ -75,6 +76,44 @@ out_close:
+@@ -75,6 +76,34 @@ out_close:
    close(fd);
    return flags & mask;
  }
 +#elif defined(__FreeBSD__)
-+#if __FreeBSD__ < 12
-+#include <sys/types.h>
-+#include <sys/sysctl.h>
-+#else
 +#include <sys/auxv.h>
-+#endif
 +#include <machine/cpu.h>
 +
 +int ppc_simd_caps(void) {
@@ -54,12 +49,7 @@
 +
 +  mask = cpu_env_mask();
 +
-+#if __FreeBSD__ < 12
-+  size_t sz = sizeof(hwcap);
-+  sysctlbyname("hw.cpu_features", &hwcap, &sz, NULL, 0);
-+#else
 +  elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
-+#endif
 +#if HAVE_VSX
 +  if (hwcap & PPC_FEATURE_HAS_VSX) flags |= HAS_VSX;
 +#endif

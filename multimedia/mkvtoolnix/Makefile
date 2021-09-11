@@ -13,7 +13,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_sparc64=	does not install
-BROKEN_FreeBSD_11=	requires non-building qt5 libs even in the non-GUI builds
 
 BUILD_DEPENDS=	rake:devel/rubygem-rake \
 		docbook-xsl>=0:textproc/docbook-xsl \

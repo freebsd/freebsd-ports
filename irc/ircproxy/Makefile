@@ -41,10 +41,8 @@ SSL_USES=		ssl
 post-patch:
 	@${REINPLACE_CMD} -e 's|EUSER="ircproxy"|EUSER="ircproxyd"|g; \
 		s|EGROUP="users"|EGROUP="ircproxyd"|g' ${WRKSRC}/data/${PORTNAME}d.conf
-.if ${OSVERSION} > 1200084
 	@${REINPLACE_CMD} -e '/gnutls/!s,SSL_library_init,OPENSSL_init_ssl,' \
 		${WRKSRC}/configure.in
-.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/imkpasswd ${STAGEDIR}${PREFIX}/bin/ircproxyd

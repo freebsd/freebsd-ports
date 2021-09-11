@@ -18,7 +18,6 @@ USE_LDCONFIG=	yes
 MESON_ARGS=	-Denable-docs=false \
 		-Dx-locale-root="${PREFIX}/lib/X11/locale" \
 		${MESON_ARGS_${OPSYS}_${OSREL:R}}
-MESON_ARGS_FreeBSD_11=	-Ddefault-rules=xorg
 CPE_VENDOR=	xkbcommon
 
 OPTIONS_DEFINE=	EVDEV WAYLAND X11

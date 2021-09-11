@@ -27,13 +27,7 @@ USERS=		_rpki-client
 GROUPS=		${USERS}
 PLIST_SUB=	USERS="${USERS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSREL:R} < 12 && ${SSL_DEFAULT} == "base"
-BROKEN=		requires OpenSSL 1.1.1, upgrade to FreeBSD 12.x/13.x or add DEFAULT_VERSIONS+=ssl=[openssl|libressl*] to /etc/make.conf
-.endif
-
 pre-configure:
 	cd ${WRKSRC} && ${SH} update.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -78,7 +78,7 @@ NO_BUILD=	yes
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1200031
+.if ${OPSYS} == FreeBSD
 # lstat calls are no longer available on 12.0+
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-dtruss
 .endif

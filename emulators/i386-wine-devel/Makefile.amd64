@@ -21,7 +21,7 @@ USES=		desktop-file-utils tar:txz
 BUNDLE_LIBS=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.for osrel in 11 12 13 14
+.for osrel in 12 13 14
 .if ${OSREL:C/\..*//} == ${osrel}
 PLIST_SUB+=	OSREL${osrel}=""
 PLIST_SUB+=	NOOSREL${osrel}="@comment "
@@ -31,8 +31,8 @@ PLIST_SUB+=	NOOSREL${osrel}=""
 .endif
 .endfor
 
-.if ${OPSYS} != FreeBSD || (!(${OSVERSION} >= 1104001 && ${OSVERSION} < 1200000) && !(${OSVERSION} >= 1202000 && ${OSVERSION} < 1300000) && !(${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000) && !(${OSVERSION} >= 1400024))
-IGNORE=		binaries compiled for FreeBSD 11.4+, 12.2+, 13.0+ and 14.0+ only
+.if ${OPSYS} != FreeBSD || (!(${OSVERSION} >= 1202000 && ${OSVERSION} < 1300000) && !(${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000) && !(${OSVERSION} >= 1400024))
+IGNORE=		binaries compiled for FreeBSD 12.2+, 13.0+ and 14.0+ only
 .endif
 
 OPTIONS_DEFINE=	GECKO MONO

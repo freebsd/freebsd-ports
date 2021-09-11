@@ -30,11 +30,6 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085
-BROKEN_SSL+=			base
-BROKEN_SSL_REASON_base=		needs features only available in OpenSSL 1.1.1+
-.endif
-
 post-patch:
 	${REINPLACE_CMD} 's/-Werror //' ${WRKSRC}/CMakeLists.txt
 

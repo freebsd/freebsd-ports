@@ -28,7 +28,6 @@ UNICODE_LIB_DEPENDS=	libicudata.so:devel/icu
 UNICODE_USES=	localbase:ldflags pkgconfig
 
 HAS_CONFIGURE=	yes
-CFLAGS+=	-D_WITH_GETLINE
 CONFIGURE_ARGS+=--with-verbose-compile
 MAKE_ARGS+=	prefix=${PREFIX:Q} mandir="${MANPREFIX}/man" docdir=${DOCSDIR:Q}
 

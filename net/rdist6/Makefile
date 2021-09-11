@@ -20,7 +20,7 @@ PLIST_SUB=	RDIST_NAME=${RDIST_NAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200050
+.if ${OPSYS} == FreeBSD
 RUN_DEPENDS+=	rsh:net/bsdrcmds
 .endif
 

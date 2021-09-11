@@ -19,8 +19,6 @@ PLIST_FILES=	bin/${PORTNAME}
 CARGO_FEATURES=	final
 CARGO_TEST=	yes
 
-RUSTFLAGS+=	-C link-arg=-fuse-ld=lld
-
 CARGO_GIT_SUBDIR=	rethutil:reth-util:crates/util
 
 post-install:

@@ -9,7 +9,6 @@ COMMENT=	Kernel crypto driver using Intel(R) ISA-L crypto
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/isa-l_crypto/LICENSE
 
-IGNORE_FreeBSD_11=	requires FreeBSD 13.0 or later
 IGNORE_FreeBSD_12=	requires FreeBSD 13.0 or later
 ONLY_FOR_ARCHS=	amd64
 

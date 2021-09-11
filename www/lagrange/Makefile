@@ -28,10 +28,4 @@ SSE41_CMAKE_ON=	-DTFDN_ENABLE_SSE41:BOOL=ON
 
 OPENSSL_LDFLAGS=	-lssl -lcrypto
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} == base
-BROKEN=		requires at least OpenSSL version 1.1.1 to build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

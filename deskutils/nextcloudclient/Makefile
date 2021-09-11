@@ -51,10 +51,6 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Debug
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && !${SSL_DEFAULT:Mopenssl}
-BROKEN=	nextcloudclient requires OpenSSL 1.1.0, add DEFAULT_VERSIONS+=ssl=openssl to /etc/make.conf
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|.lst |.lst.sample |' ${WRKSRC}/CMakeLists.txt

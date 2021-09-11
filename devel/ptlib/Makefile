@@ -48,7 +48,7 @@ OPTIONS_DEFINE+=	BSDVIDEO
 OPTIONS_DEFAULT+=	BSDVIDEO
 .endif
 
-.if (${OPSYS} == FreeBSD && ${OSVERSION} > 1200085 && ${SSL_DEFAULT} == base) || ${SSL_DEFAULT} == openssl
+.if (${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base) || ${SSL_DEFAULT} == openssl
 EXTRA_PATCHES+= ${FILESDIR}/extra-patch-src_ptclib_pssl.cxx-openssl111
 .else
 EXTRA_PATCHES+= ${FILESDIR}/extra-patch-src_ptclib_pssl.cxx

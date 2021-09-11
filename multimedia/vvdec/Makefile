@@ -21,6 +21,4 @@ GH_ACCOUNT=	fraunhoferhhi
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	FREEBSD_VVDEC_ENABLE_X86_SIMD
 
-BROKEN_FreeBSD_11=	/usr/bin/ld: unrecognized option '-plugin'
-
 .include <bsd.port.mk>

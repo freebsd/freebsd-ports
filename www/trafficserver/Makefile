@@ -62,12 +62,6 @@ MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
 IMAGEMAGICK_DESC=	Enable ats-magick & webp convert plugin
 
-# Can be removed after 11 EoL'd
-.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-# --build-id isn't supported by old GNU ld.bfd in base
-LDFLAGS+=	-fuse-ld=lld
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}

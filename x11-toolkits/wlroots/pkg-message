@@ -2,8 +2,6 @@
 { type: install
   message: <<EOM
 Known issues:
-- On FreeBSD 11.* kernel needs to be rebuilt with EVDEV_SUPPORT
-- On FreeBSD 11.* drm-kmod needs https://github.com/FreeBSDDesktop/kms-drm/pull/213
 - NVIDIA may be affected by https://github.com/aritger/eglstreams-kms-example/issues/7
 - VULKAN currently requires vulkan-validation-layers
 EOM

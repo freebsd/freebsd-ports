@@ -24,9 +24,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200019
-IGNORE=		needs oid_label member of struct sysctl_oid defined in sysctl.h which was first introduced in FreeBSD 12
-.endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD
 .endif

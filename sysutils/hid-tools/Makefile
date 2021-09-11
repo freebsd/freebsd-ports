@@ -10,8 +10,6 @@ COMMENT=	Python scripts to manipulate HID data
 
 LICENSE=	GPLv2
 
-IGNORE_FreeBSD_11=	Is missing a hidraw(4) driver
-
 RUN_DEPENDS_FreeBSD_12=	iichid>=0.0.6:sysutils/iichid
 RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}click>=0:devel/py-click@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}parse>=0:textproc/py-parse@${PY_FLAVOR} \

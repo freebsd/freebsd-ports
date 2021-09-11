@@ -60,8 +60,6 @@ DOXYGEN_CMAKE_BOOL=	BUILD_DOCUMENTATION
 # /usr/bin/ld -melf_amd64 -r -b binary -o blocksdat.o blocks.dat
 # See Bug 226996 - net-p2p/monero-cli: fails to link with lld as the system linker
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=226996
-.if ${OSVERSION} >= 1200000
-
 .if ${ARCH} == aarch64
 LD_EMULATION=	aarch64elf
 .elif ${ARCH} == amd64
@@ -75,8 +73,6 @@ LD_EMULATION=	elf64ppc
 .endif
 
 CMAKE_ARGS+=	-DLD_RAW_FLAGS:STRING=-m${LD_EMULATION}
-
-.endif
 
 # keep in sync with all platforms where libunwind is available
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le

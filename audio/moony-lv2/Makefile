@@ -10,8 +10,6 @@ PKGNAMESUFFIX=	-lv2
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Realtime Lua as programmable glue in LV2
 
-BROKEN_FreeBSD_11=	undefined reference to `clog', see bug#237771
-
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/COPYING
 

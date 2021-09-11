@@ -10,8 +10,6 @@ COMMENT=	Display ZFS dataset I/O in real time
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_FreeBSD_11=	lacks required kernel functionality
-
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	asomers

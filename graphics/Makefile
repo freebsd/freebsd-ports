@@ -144,7 +144,6 @@
     SUBDIR += drawpile
     SUBDIR += drm-current-kmod
     SUBDIR += drm-devel-kmod
-    SUBDIR += drm-fbsd11.2-kmod
     SUBDIR += drm-fbsd12.0-kmod
     SUBDIR += drm-fbsd13-kmod
     SUBDIR += drm-kmod

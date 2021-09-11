@@ -40,10 +40,6 @@ USE_RC_SUBR=	${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-lib_luajit__src__lj_prng.c
-.endif
-
 .if ${ARCH:Mpowerpc64*}
 CMAKE_ARGS+=	-DFLB_LUAJIT:BOOL=OFF
 .elif ${ARCH} == powerpc

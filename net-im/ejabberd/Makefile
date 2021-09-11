@@ -170,10 +170,6 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's,^convert,${LOCALBASE}/bin/convert,' ${WRKSRC}/tools/captcha.sh
 	@${REINPLACE_CMD} -e 's,%%PORTVERSION%%,${PORTVERSION},' ${WRKSRC}/configure.ac
-.if ${OSVERSION} < 1200000
-	# Disable LTO required by dependency, not available by default in < 12.x
-	@${REINPLACE_CMD} -e 's/$$FLTO_FLAG//' ${WRKSRC}/deps/jiffy/rebar.config
-.endif
 
 pre-configure:
 	cd ${WRKSRC} && ${SH} autogen.sh

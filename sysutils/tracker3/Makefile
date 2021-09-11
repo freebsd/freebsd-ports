@@ -46,9 +46,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's^/etc/asciidoc^${PREFIX}/etc/asciidoc^' \
 		${WRKSRC}/docs/manpages/meson.build
 
-# This can be removed after 11.x is no longer supported
-.if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
-LDFLAGS+=	-fuse-ld=lld
-.endif
-
 .include <bsd.port.mk>

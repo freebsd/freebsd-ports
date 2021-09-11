@@ -63,10 +63,6 @@ CONFIGURE_ARGS+=	--enable-multithreading=pthreads
 CONFIGURE_ARGS+=	--enable-multithreading=no
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200060
-IGNORE=			requires a newer linker such as lld
-.endif
-
 .if !(defined(USE_GCC) || !empty(CC:M*gcc4*))
 CONFIGURE_ARGS+=	--disable-autodetect-f77-ldflags \
 			--disable-autodetect-f77-name-mangling

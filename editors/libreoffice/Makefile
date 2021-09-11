@@ -120,11 +120,6 @@ USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
 OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA KF5 LTO MMEDIA PGSQL MARIADB QT5 SDK TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS JAVA MMEDIA QT5
 
-.if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mssl=*}
-# Blocked by net/qt5-network: cannot use QT5 with default OpenSSL
-OPTIONS_EXCLUDE_FreeBSD_11+=	QT5
-.endif
-
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
 GTK3_DESC=	GTK+ 3 GUI toolkit support
 GTK4_DESC=	GTK+ 4 GUI toolkit support

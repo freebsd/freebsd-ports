@@ -61,7 +61,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
+.if ${OPSYS} == FreeBSD
 CONFIGURE_ARGS+=	--enable-tls
 USES+=			ssl
 .endif

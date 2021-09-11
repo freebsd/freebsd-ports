@@ -11,7 +11,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	clang segfault
-BROKEN_FreeBSD_11_powerpc64=	runaway build
 BROKEN_FreeBSD_12_powerpc64=	runaway build
 
 BUILD_DEPENDS=	${LOCALBASE}/share/trellis/database:devel/trellis \

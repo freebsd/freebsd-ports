@@ -131,8 +131,7 @@ REMOVE_FILES=	bin/chfn bin/chsh bin/findmnt bin/login bin/lsblk bin/lscpu \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1201524 \
- || (${OSVERSION} >= 1300000 && ${OSVERSION} < 1300077))
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1300000 && ${OSVERSION} < 1300077)
 GLIBC_VER=	2.17-292.el7
 MASTER_SITE_SUBDIR+=	centos/7.7.1908/os/x86_64/Packages/:DEFAULT,amd64 \
 			centos/7.7.1908/updates/x86_64/Packages/:DEFAULT,amd64 \

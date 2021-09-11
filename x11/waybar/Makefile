@@ -21,7 +21,6 @@ USE_GITHUB=	yes
 USE_GNOME=	gtkmm30
 GH_ACCOUNT=	Alexays
 GH_PROJECT=	Waybar
-CPPFLAGS+=	-D_WITH_GETLINE # XXX Remove after FreeBSD 11 EOL
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/xdg/${PORTNAME}/config \
 		etc/xdg/${PORTNAME}/style.css

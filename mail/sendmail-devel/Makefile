@@ -165,12 +165,6 @@ do-configure:
 	  ${FALSE}; \
 	  fi)
 .endif
-.if ${PORT_OPTIONS:MBLACKLISTD}
-	@(if [ ! -e "${DESTDIR}/usr/lib/libblacklist.so" ] ; then \
-	  ${ECHO_MSG} "===> libblacklist.so not found. Please update to FreeBSD 11"; \
-	  ${FALSE}; \
-	  fi)
-.endif
 	${REINPLACE_CMD} ${SED_SCRIPT} ${WRKSRC}/devtools/OS/FreeBSD
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
 		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \

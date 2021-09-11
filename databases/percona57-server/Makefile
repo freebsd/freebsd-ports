@@ -140,12 +140,6 @@ CMAKE_ARGS+=	-DWITH_AUTHENTICATION_LDAP=0
 #MY_TESTDIR=	""
 #.endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
-SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
-.else
-SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
-.endif
-
 post-install:
 	${MKDIR} ${STAGEDIR}/var/db/mysql
 	${MKDIR} ${STAGEDIR}${ETCDIR}/keyring

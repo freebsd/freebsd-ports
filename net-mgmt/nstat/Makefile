@@ -25,10 +25,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nstat ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/nstat.1.gz ${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 1200027
-BROKEN=		Does not build without clock_nanosleep
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

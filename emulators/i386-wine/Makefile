@@ -26,7 +26,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 distinfo-update:
 	${RM} ${.CURDIR}/distinfo ${.CURDIR}/distinfo~
-.for osrel in 11 12 13 14
+.for osrel in 12 13 14
 	${MAKE} fetch OSREL=${osrel} OSVERSION=${osrel}99999 _OSRELEASE=${osrel}
 	${MAKE} makesum OSREL=${osrel} OSVERSION=${osrel}99999 _OSRELEASE=${osrel}
 	${CAT} ${.CURDIR}/distinfo >> ${.CURDIR}/distinfo~

@@ -29,15 +29,7 @@ Jitsi Video Bridge was installed
 
    https://github.com/jitsi/jitsi-videobridge/blob/master/doc/tcp.md
 
-6) If you want use jitsi-videobridge on FreeBSD 11.x, please apply the
-   following patch file:
-
-   https://reviews.freebsd.org/D14453
-
-   jitsi-videobridge rc script use ${name}_env_file funcitonality, which is only
-   available on FreeBSD >= 12.x
-
-7) Enjoy it
+6) Enjoy it
 EOM
 }
 ]

@@ -65,10 +65,6 @@ DOCS_INSTALL_TARGET=	install-docs
 IGNORE=		only supported on FreeBSD
 .endif
 
-.if ${OSVERSION} < 1200074
-IGNORE=		only supported on FreeBSD 12.0 or newer
-.endif
-
 .if ${PORT_OPTIONS:MSPICE} && ${OSVERSION} < 1300008
 BROKEN=	SPICE support requires FreeBSD version 13.0 or higher
 .endif

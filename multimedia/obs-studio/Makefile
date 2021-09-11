@@ -57,7 +57,6 @@ GH_TUPLE=	obsproject:obs-browser:f1a61c5:obs_browser/plugins/obs-browser \
 CMAKE_ON=	UNIX_STRUCTURE
 CMAKE_OFF=	ENABLE_PIPEWIRE # beginning with 27.0.1 (PR#4287) the linux-capture plugin optionally requires the piperware library and in this case expects the linux/dma-buf.h header
 CMAKE_ARGS=	-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}"
-CFLAGS+=	-D_WITH_GETLINE
 
 LDFLAGS+=	-fPIC # pending https://github.com/obsproject/obs-studio/issues/3436
 

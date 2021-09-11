@@ -37,10 +37,4 @@ CMAKE_OFF=	BUILD_SHARED_LIBS
 # Disable DCHECKs, otherwise video calls will crash.
 CXXFLAGS+=	-DNDEBUG
 
-.include <bsd.port.options.mk>
-
-.if ${SSL_DEFAULT} == "base" && ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085
-BROKEN=		This port requires OpenSSL 1.1.0. Try DEFAULT_VERSIONS+=ssl=[openssl|libressl*]
-.endif
-
 .include <bsd.port.mk>

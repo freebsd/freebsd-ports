@@ -39,7 +39,7 @@ PLIST_FILES=	bin/dspdfviewer \
 CFLAGS+=	-Wno-error=undefined-func-template
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200039 && ${CHOSEN_COMPILER_TYPE} == clang
+.if ${OPSYS} == FreeBSD && ${CHOSEN_COMPILER_TYPE} == clang
 # (rene) also related to issue #191 which is still open as of 2020-10-21
 CFLAGS+=	-Wno-error=zero-as-null-pointer-constant
 .endif

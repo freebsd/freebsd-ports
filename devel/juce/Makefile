@@ -11,8 +11,6 @@ LICENSE_NAME=	JUCE 6 End User License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
-BROKEN_FreeBSD_11=	error: use of undeclared identifier 'pthread_setname_np'
-
 BUILD_DEPENDS=	ladspa>0:audio/ladspa
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfreetype.so:print/freetype2 \

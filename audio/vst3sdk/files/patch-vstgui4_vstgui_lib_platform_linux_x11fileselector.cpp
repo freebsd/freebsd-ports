@@ -2,11 +2,10 @@
 
 --- vstgui4/vstgui/lib/platform/linux/x11fileselector.cpp.orig	2020-08-20 14:14:27 UTC
 +++ vstgui4/vstgui/lib/platform/linux/x11fileselector.cpp
-@@ -6,6 +6,9 @@
+@@ -6,6 +6,8 @@
  #include <unistd.h>
  #include <string>
  
-+#define _WITH_GETLINE // this is still required on FreeBSD 11
 +#include <stdio.h>
 +
  //------------------------------------------------------------------------

@@ -31,7 +31,8 @@ USE_RC_SUBR=	pdns-recursor
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/pdns \
 		--without-net-snmp \
-		--without-systemd
+		--without-systemd \
+		--with-libsodium=no
 
 SUB_FILES=	pkg-message
 
@@ -59,18 +60,7 @@ LUAJIT_CONFIGURE_ON=	--with-lua=luajit
 
 LUA_USES=	lua
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} != openssl
-CONFIGURE_ARGS+=	--with-libdecaf \
-			--with-libsodium
-LIB_DEPENDS+=		libdecaf.so:security/libdecaf \
-			libsodium.so:security/libsodium
-.else
-CONFIGURE_ARGS+=	--with-libsodium=no
-.endif
-
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/pdns-recursor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

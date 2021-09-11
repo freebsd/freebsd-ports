@@ -26,11 +26,6 @@ USE_ASDF=	yes
 
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1200000
-IGNORE=         does not build on FreeBSD < 12.0
-.endif
 BUILD_DEPENDS+=	as:devel/binutils
 
 LISP_ARCH=	x8664
@@ -64,4 +59,4 @@ do-install:
 	done
 	${INSTALL_SCRIPT} ${WRKDIR}/ccl.sh ${STAGEDIR}${PREFIX}/bin/ccl
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

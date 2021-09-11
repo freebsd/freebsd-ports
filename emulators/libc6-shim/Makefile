@@ -8,7 +8,6 @@ COMMENT=	ABI-compatible glibc shim library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_FreeBSD_11=not supported
 ONLY_FOR_ARCHS=	amd64
 
 USE_GITHUB=	yes

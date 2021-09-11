@@ -42,19 +42,6 @@ post-install:
 # use libtls from libretls.
 .if ${SSL_DEFAULT:Mlibressl*}
 #	/* empty */
-
-# Drop after FreeBSD 11 EOL: requires libtls from LibreSSL
-.elif ${SSL_DEFAULT:Mbase} && exists(/usr/include/openssl/ssl23.h)
-BUILD_DEPENDS+=		${NONEXISTENT}:security/libressl:stage
-CPPFLAGS+=		-I${WRKDIR}/libressl/include
-LDFLAGS+=		-L${WRKDIR}/libressl/lib
-
-# Don't use COPYTREE_SHARE here as it hard links files, and the original files
-# are owned by root, which creates problems of its own.
-pre-configure:
-	@cd `${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl`${PREFIX} \
-	    && ${FIND} . ! -name *.so\* | ${CPIO} -dump ${WRKDIR}/libressl >/dev/null 2>&1
-
 .else
 LIB_DEPENDS+=	libtls.so:security/libretls
 .endif # SSL_DEFAULT

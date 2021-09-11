@@ -100,7 +100,7 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/src/racoon/doc/* ${STAGEDIR}/${DOCSDIR}
 
 .if ${OPSYS} == FreeBSD
-.  if ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} != openssl
+.  if ${SSL_DEFAULT} != openssl
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ipsec-tools
 PLIST_FILES+=	include/racoon/openssl_compat.h
 .  endif

@@ -55,12 +55,6 @@ SSL_MAKE_ARGS=	--ssl
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
-SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
-.else
-SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
-.endif
-
 .if ${ARCH} == aarch64
 EXTRA_PATCHES=	${FILESDIR}/aarch64
 .endif

@@ -44,7 +44,7 @@ LDCVER=		${PORTVERSION}
 CFLAGS+=		-fPIC
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1200029
+.if ${OPSYS} == FreeBSD
 EXTRA_PATCHES=	${PATCHDIR}/fbsd12-*
 .endif
 

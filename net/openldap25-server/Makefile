@@ -316,12 +316,6 @@ PLIST_SUB+=		SHLIB_MAJOR=${OPENLDAP_SHLIB_MAJOR}
 PLIST_SUB+=		SHLIB_MINOR=${OPENLDAP_SHLIB_MINOR}
 PLIST_SUB+=		OPENLDAP_MAJOR=${OPENLDAP_MAJOR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} == base
-BROKEN=			Requires OpenSSL 1.1.1+
-.endif
-
 .if ${PORT_OPTIONS:MFETCH} && (defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != "" || ${SSL_DEFAULT} != base)
 BROKEN=	using OpenSSL from ports and OPTION FETCH together is not supported
 . endif
@@ -439,4 +433,4 @@ post-install-SLAPI-on:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib$${library}-${OPENLDAP_MAJOR}.so.${OPENLDAP_SHLIB_MAJOR}; \
 	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

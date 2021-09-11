@@ -92,10 +92,6 @@ FREETYPE_CFLAGS=	-I${LOCALBASE}/include/gltt
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MFREETYPE}
-IGNORE_FreeBSD_11=	FREETYPE support requires FreeBSD version 12+
-.endif
-
 .if defined(XLOCKMORE_LANG)
 CONFIGURE_ARGS+=	--with-lang=${XLOCKMORE_LANG}
 .endif

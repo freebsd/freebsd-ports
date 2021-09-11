@@ -7,8 +7,6 @@ COMMENT=	Network stack testing tool
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_11=	TCP Fast Open struct changes
-
 USES=		bison python:run uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd-net

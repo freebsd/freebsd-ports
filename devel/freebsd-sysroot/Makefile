@@ -95,8 +95,6 @@ DISTFILES:=	${FLAVORS:O:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -V'DIST
 
 .if ${OPSYS} != FreeBSD
 IGNORE=		is only for FreeBSD
-.elif ${OSVERSION} < 1202000
-IGNORE=		is only for FreeBSD 12.2-RELEASE or greater
 .elif ${FLAVOR} == powerpc64le && ${OSVERSION} < 1300139
 IGNORE=		is only for FreeBSD 13.0-RELEASE or greater
 .endif

@@ -11,8 +11,6 @@ COMMENT=	WireGuard implementation for the FreeBSD kernel
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-IGNORE_FreeBSD_11=	only for FreeBSD 12.1 and newer
-
 USES=		kmod tar:xz uidfix
 
 WRKSRC_SUBDIR=	src

@@ -196,12 +196,6 @@ CMAKE_ARGS+=		-DPLUGIN_${PLUGIN}=NO
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
-SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
-.else
-SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
-.endif
-
 .if ${SSL_DEFAULT} != base && ${PORT_OPTIONS:MGSSAPI_BASE}
 GSSAPI_BASE_IGNORE=	GSSAPI_BASE is not compatible with OpenSSL from ports. Use other GSSAPI options or OpenSSL from base system
 .endif

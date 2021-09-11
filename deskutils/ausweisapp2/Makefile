@@ -26,10 +26,4 @@ USE_QT=		concurrent core declarative gui network quickcontrols2 svg \
 CMAKE_ARGS=	-DVENDOR=${PORTNAME}
 MAKE_ENV=	DESTDIR=${STAGEDIR}
 
-.include <bsd.port.options.mk>
-
-.if ${SSL_DEFAULT} == base && ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085
-CMAKE_ON+=	FORCE_LEGACY_OPENSSL
-.endif
-
 .include <bsd.port.mk>

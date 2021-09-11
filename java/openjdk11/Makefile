@@ -12,7 +12,7 @@ COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	zip:archivers/zip \
 		autoconf>0:devel/autoconf \
@@ -113,11 +113,6 @@ ALL_TARGET=		images
 JDK_BUILD_TYPE=		release
 
 .include <bsd.port.pre.mk>
-
-# Support aarch64, armv6 and armv7 on FreeBSD 12 and up
-.if ${OSVERSION} >= 1200500
-ONLY_FOR_ARCHS+=aarch64 armv6 armv7
-.endif
 
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk11 \
 		${LOCALBASE}/bootstrap-openjdk11

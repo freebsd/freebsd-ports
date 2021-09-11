@@ -9,7 +9,6 @@ CATEGORIES=	security
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
 
-BROKEN_FreeBSD_11_powerpc64=	fails to configure on powerpc64 elfv1: libz library not found
 BROKEN_FreeBSD_12_powerpc64=	fails to configure on powerpc64 elfv1: libz library not found
 
 LIB_DEPENDS=	libxslt.so:textproc/libxslt \

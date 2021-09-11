@@ -173,13 +173,4 @@ post-install-EXAMPLES-on:
 		${INSTALL_DATA} ${_EXAMPLES} \
 		${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.pre.mk>
-
-# XXX: getentropy(3) did not appear until FreeBSD 12, anything lower will
-# not compile, throwing an undefined reference to `getentropy'.  We can
-# safely remove this once FreeBSD 11 is EOL.
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
-EXTRA_PATCHES=	${PATCHDIR}/extra-cargo-crates_luajit-src-210.2.0+resty5f13855_luajit2_src_lj__prng.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

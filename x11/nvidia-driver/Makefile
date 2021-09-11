@@ -155,12 +155,10 @@ post-patch: .SILENT
 		${WRKSRC}/src/nvidia-modeset/nvidia-modeset-freebsd.c
 .endif
 # KPI of kmem_alloc_contig(),kmem_free() changed in FreeBSD src r338143,r338318
-.if ${OSVERSION} >= 1200079
 	${REINPLACE_CMD} \
 	    -e 's/kmem_alloc_contig(kmem_arena, /kmem_alloc_contig(/' \
 	    -e 's/kmem_free(kmem_arena, /kmem_free(/' \
 		${WRKSRC}/src/${NVSRC}/nvidia_subr.c
-.endif
 # Pull the right header after FreeBSD src r347984
 .if ${OSVERSION} >= 1300029 && ${NVVERSION} >= 358.009
 	${REINPLACE_CMD} -e '/^#include/s:lock\.h:mutex.h:' \

@@ -8,7 +8,6 @@ COMMENT=	Paravirtualized Linux KVM clock support
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_FreeBSD_11=	fails to build: pvclock.c:248:30: error: too many arguments
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet tested for non-x86
 

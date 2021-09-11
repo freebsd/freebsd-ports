@@ -53,7 +53,7 @@ post-install-DOCS-on:
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base
+.if ${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base
 BROKEN=	Does not build with OpenSSL 1.1
 .endif
 

@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=		fails to compile: invokes x86 asm
-BROKEN_FreeBSD_11=	undefined reference to __atomic_load
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \

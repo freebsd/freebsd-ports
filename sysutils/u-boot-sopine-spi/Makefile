@@ -10,7 +10,6 @@ NO_METADATA=		yes
 UBOOT_PLIST=		u-boot-sunxi-with-spl.bin \
 			boot.scr
 PLIST_EXTRAS=		sopine-spi-flasher.img
-IGNORE_FreeBSD_11=	No makefs msdos support
 
 post-build:
 	mkimage -C none -A arm64 -T script -d ${.CURDIR}/../u-boot-sopine-spi/files/boot.cmd ${WRKSRC}/boot.scr

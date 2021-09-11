@@ -24,8 +24,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-IGNORE_FreeBSD_11_powerpc64=	is missing a bootstrap for FreeBSD 11.x powerpc64
-IGNORE_FreeBSD_11_powerpc=	is missing a bootstrap for FreeBSD 11.x powerpc
 IGNORE_FreeBSD_12_powerpc=	is missing a bootstrap for FreeBSD 12.x powerpc
 ONLY_FOR_ARCHS?=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le \
 			powerpc
@@ -111,11 +109,6 @@ USE_GCC=	yes
 STRIP_CMD=	${LOCALBASE}/bin/strip # unsupported e_type with base strip
 .endif
 
-# remove when 11.4 is EOL
-.if ${ARCH} == aarch64 && ${OSVERSION} < 1202000
-IGNORE=	fails to run due to a bug in rtld, update to 12.2-RELEASE or newer
-.endif
-
 .ifdef QEMU_EMULATING
 IGNORE=	fails to build with qemu-user-static
 .endif
@@ -187,11 +180,7 @@ do-configure:
 	@${ECHO_CMD} 'ccache=false' >> ${WRKSRC}/config.toml
 .endif
 	@${ECHO_CMD} 'ninja=true' >> ${WRKSRC}/config.toml
-.if ${ARCH} == armv6
-# fails to link with base ld.bfd: rustc_codegen_llvm.e2557spx-cgu.11:(.text._ZN89_$LT$rustc_target..abi..call..CastTarget$u20$as$u20$rustc_codegen_llvm..abi..LlvmType$GT$9llvm_type17h1296210ab461fc57E+0x54): relocation truncated to fit: R_ARM_CALL against symbol `__aeabi_uldivmod' defined in .text.__aeabi_uldivmod section in /tmp/rustcdnGbao/libcompiler_builtins-ee65b414e4115a8f.rlib(compiler_builtins-ee65b414e4115a8f.compiler_builtins.ay8p39ey-cgu.13.rcgu.o)
-	@${PRINTF} '#!/bin/sh\nexec ${CC} -fuse-ld=lld "$$@"' > ${WRKDIR}/cc-wrapper
-	@${CHMOD} +x ${WRKDIR}/cc-wrapper
-.elif ${ARCH} == powerpc
+.if ${ARCH} == powerpc
 # Rust doesn't call the system compiler with the full version of the target.
 # This makes powerpc miscompile due to the secure-plt ABI change.
 # Additionally, force using ld.bfd to work around a linking problem in rustc_mir

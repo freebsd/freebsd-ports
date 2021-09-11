@@ -18,7 +18,7 @@ RUN_DEPENDS=	gocr:graphics/gocr \
 		transcode:multimedia/transcode
 
 USES=		gmake tar:tgz
-CFLAGS+=	-D_WITH_GETLINE=1 -DHAVE_GETLINE=1 \
+CFLAGS+=	-DHAVE_GETLINE=1 \
 		-I${LOCALBASE}/include/netpbm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

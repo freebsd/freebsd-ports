@@ -49,16 +49,13 @@ CONFIGURE_ARGS+=	\
 		--with-gxx-include-dir=/usr/include/c++/v1/ \
 		--with-sysroot="/" \
 		--with-build-sysroot=${CROSS_SYSROOT} \
-		-with-pkgversion="GNU Collection for FreeBSD"
+		-with-pkgversion="GNU Collection for FreeBSD" \
+		--enable-initfini-array
 
 ALL_TARGET?=	all-gcc
 INSTALL_TARGET?=	install-gcc
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1200000
-CONFIGURE_ARGS+= --enable-initfini-array
-.endif
 
 .if ${HOSTARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-unknown-${OPSYS:tl}${OSREL}

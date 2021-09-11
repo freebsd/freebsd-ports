@@ -54,10 +54,4 @@ SHEBANG_FILES=	post_install.py
 
 PLIST_SUB+=	EPHY_VERSION=${PORTVERSION:R}
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-lib_ephy-sync-utils.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

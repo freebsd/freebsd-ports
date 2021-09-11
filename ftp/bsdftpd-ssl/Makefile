@@ -29,10 +29,6 @@ LDFLAGS+=	-lpam
 
 .include <bsd.port.options.mk>
 
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_11=	undefined reference to `X509_OBJECT_new'
-.endif
-
 .if ${PORT_OPTIONS:MSERVER} && ${PORT_OPTIONS:MEXAMPLES}
 SUB_FILES=	pkg-message
 .endif

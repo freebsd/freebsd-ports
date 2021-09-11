@@ -8,7 +8,6 @@ COMMENT=	Distributed, transactional key-value store
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_11=	requires newer OpenSSL
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything else
 

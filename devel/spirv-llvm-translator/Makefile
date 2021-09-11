@@ -44,11 +44,6 @@ _PLIST_FILES:=	${_PLIST_FILES:N*Opts*}
 .endif
 PLIST_FILES=	${_PLIST_FILES:S,^,${FLAVOR}/,}
 
-.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-# undefined reference to `llvm::cfg::Update<llvm::BasicBlock*>::dump() const'
-LDFLAGS+=	-fuse-ld=lld
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/pkgconfig/s/lib/&data/' \
 		${WRKSRC}/CMakeLists.txt

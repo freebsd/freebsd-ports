@@ -15,7 +15,6 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libavcodec.so:multimedia/ffmpeg
 
 USES=		compiler:c11 meson pkgconfig
-CPPFLAGS+=	-D_WITH_GETLINE # XXX Remove after FreeBSD 11 EOL
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>

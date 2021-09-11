@@ -51,10 +51,6 @@ JPEG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_JPEG
 
 LTO_CMAKE_BOOL=		CMAKE_INTERPROCEDURAL_OPTIMIZATION
 LTO_CMAKE_ON=		-DCMAKE_POLICY_DEFAULT_CMP0069:STRING=NEW
-.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-# --plugin isn't supported by old GNU ld.bfd in base
-LTO_LDFLAGS=		-fuse-ld=lld
-.endif
 
 MANPAGES_BUILD_DEPENDS=	a2x:textproc/asciidoc
 MANPAGES_USES=		python:build

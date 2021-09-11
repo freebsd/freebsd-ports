@@ -35,10 +35,6 @@ BINARY_ALIAS=	install=ginstall
 OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES GCC LIBDISLOCATOR LLVM PYTHON
 OPTIONS_DEFAULT=	GCC LIBDISLOCATOR LLVM PYTHON
 
-# libdislocator fails to build on FreeBSD 11.x
-# error: typedef redefinition with different types ('struct max_align_t' vs '__max_align_t')
-OPTIONS_EXCLUDE_FreeBSD_11=	LIBDISLOCATOR
-
 # On non-x86 architectures LLVM is mandatory
 OPTIONS_SLAVE=	${ARCH:Namd64:Ni386:S/${ARCH}/LLVM/}
 OPTIONS_SUB=	yes

@@ -25,7 +25,6 @@ MAKE_ARGS=	ARCH=${MYARCH} \
 		CXX="${CXX}" \
 		PREFIX=${PREFIX}
 ALL_TARGET=	build
-LDFLAGS+=	-fuse-ld=lld
 
 _NNUE_VER=	3475407dc199
 

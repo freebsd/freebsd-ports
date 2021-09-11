@@ -26,11 +26,6 @@ OPTIONS_DEFAULT=	EXAMPLES
 
 .include <bsd.port.pre.mk>
 
-# Once the sysctlinfo interface (review D21700) lands into the base tree the
-# following statement needs to be expanded
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200019
-IGNORE=		needs oid_label member of struct sysctl_oid defined in sysctl.h which was first introduced in FreeBSD 12
-.endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD
 .endif

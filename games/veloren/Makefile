@@ -49,11 +49,6 @@ PLIST_FILES=	bin/${PORTNAME}-server-cli \
 		share/pixmaps/net.veloren.veloren.png
 PORTDATA=	*
 
-.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-# veloren_voxygen*rcgu* has 71718 section headers, breaking old GNU ld.bfd in base
-LDFLAGS+=	-fuse-ld=lld
-.endif
-
 CARGO_CRATES=	ab_glyph-0.2.11 \
 		ab_glyph_rasterizer-0.1.4 \
 		addr2line-0.15.2 \

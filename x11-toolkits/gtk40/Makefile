@@ -42,11 +42,6 @@ GLIB_SCHEMAS=	org.gtk.Demo4.gschema.xml \
 		org.gtk.gtk4.Settings.EmojiChooser.gschema.xml \
 		org.gtk.gtk4.Settings.FileChooser.gschema.xml
 
-.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-# undefined reference to symbol `g_module_symbol' (try adding -lgmodule-2.0)
-LDFLAGS+=	-fuse-ld=lld
-.endif
-
 OPTIONS_DEFINE=	CUPS COLORD DEBUG BROADWAY FFMPEG \
 		GSTREAMER VULKAN WAYLAND X11
 OPTIONS_DEFAULT=CUPS COLORD BROADWAY VULKAN WAYLAND X11

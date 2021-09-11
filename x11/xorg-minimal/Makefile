@@ -14,14 +14,8 @@ VIDEO_DRIVER?=	vesa
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/Xorg:x11-servers/xorg-server \
 		${LOCALBASE}/bin/xinit:x11/xinit \
-		${LOCALBASE}/bin/xauth:x11/xauth
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
-RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/input/mouse_drv.so:x11-drivers/xf86-input-mouse
-RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/input/kbd_drv.so:x11-drivers/xf86-input-keyboard
-.else
-RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/input/libinput_drv.so:x11-drivers/xf86-input-libinput
-.endif
+		${LOCALBASE}/bin/xauth:x11/xauth \
+		${LOCALBASE}/lib/xorg/modules/input/libinput_drv.so:x11-drivers/xf86-input-libinput
 
 .if ${VIDEO_DRIVER} == "nvidia"
 RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/nvidia_drv.so:x11/nvidia-driver

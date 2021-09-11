@@ -103,11 +103,6 @@ INSTALL_TARGET=	install-lib install-h install-config
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MDANETAUSAGE} && \
-    ((${OSVERSION} < 1200084 && ${SSL_DEFAULT} == base))
-BROKEN=		this option requires openssl >= 1.1.0 ${OSVERSION} ${SSL_DEFAULT}
-.endif
-
 .if ! ${PORT_OPTIONS:MGOST}
 NO_GOST=	--disable-gost
 .endif

@@ -8,7 +8,6 @@ COMMENT=	C library for quantum-resistant cryptography
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_FreeBSD_11=	Could NOT find OpenSSL, try to set the path to OpenSSL root folder [...]
 BROKEN_i386=	Unknown or unsupported processor: i386
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}

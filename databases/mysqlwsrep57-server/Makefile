@@ -162,12 +162,6 @@ SUB_LIST+=	PERFSCHEMRC=""
 SUB_LIST+=	PERFSCHEMRC="--skip-performance-schema"
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
-SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
-.else
-SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
@@ -178,13 +172,11 @@ CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}
 
 # ${LOCALBASE}/include/lz4.h does not compile with Clang 6.
 # Also MySQL code itself needs -Wno-c++11-narrowing when Clang 6 is used.
-.if ${OSVERSION} >= 1200056
 CFLAGS+=	-DLZ4_DISABLE_DEPRECATE_WARNINGS
 CXXFLAGS+=	-DLZ4_DISABLE_DEPRECATE_WARNINGS
 LDFLAGS+=	-L${LOCALBASE}/lib
-.  if ${CHOSEN_COMPILER_TYPE} == clang
+.if ${CHOSEN_COMPILER_TYPE} == clang
 CXXFLAGS+=	-Wno-c++11-narrowing
-.  endif
 .endif
 
 # Ensure that assertions are not turned on in non-debug builds.

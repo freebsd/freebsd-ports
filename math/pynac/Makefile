@@ -33,10 +33,4 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGIAC}
-BROKEN_FreeBSD_11=	libgiac is broken (undefined reference to `__divmodti4@GCC_7.0.0')
-.endif
-
 .include <bsd.port.mk>

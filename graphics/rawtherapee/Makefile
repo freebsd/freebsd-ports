@@ -103,19 +103,6 @@ OPENMP_CMAKE_BOOL=	OPTION_OMP
 
 # -------------------------------------------------------------------
 
-.if (${OPSYS} == FreeBSD) && (${OSVERSION} <  1200000)
-# can't save 16-bit TIFF on FreeBSD 11.3 and 11.4 i386
-# "TIFFWriteDirectoryTagIfdIfd8Array: Attempt to write value
-# larger than 0xFFFFFFFF in Classic TIFF file"
-#
-# And no, the maintainer is not going to spend any time on it
-# unless there is a tested proven well-integrated patch offered.
-#
-# Tier-2 only supported on the latest stable FreeBSD release.
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=On i386, rawtherapee malfunctions under FreeBSD 11.x - upgrade to 12.x
-.endif
-
 .if (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1400000)
 # don't waste everybody's time with Tier-2 and moving targets.
 # might add ARM64 later on if they are established by the

@@ -83,11 +83,6 @@ OPTIONS_DEFAULT_powerpc=	ALTIVEC
 OPTIONS_DEFAULT_powerpc64=	ALTIVEC
 OPTIONS_SUB=	yes
 
-.if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mssl=*}
-# Blocked by net/qt5-network: cannot use QT5 with default OpenSSL
-OPTIONS_EXCLUDE_FreeBSD_11+=	QT5
-.endif
-
 AOM_DESC=	AV1 video encoding/decoding via libaom
 ASS_DESC=	ASS/SSA subtitle rendering
 CHROMECAST_DESC=Streaming to Chromecast devices

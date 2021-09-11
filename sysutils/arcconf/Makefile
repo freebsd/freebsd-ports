@@ -25,13 +25,8 @@ SUB_FILES+=	${PERIODICSCRIPT}
 
 PERIODICSCRIPT=	410.status-aac-raid
 
-.include <bsd.port.pre.mk>
-.if ${OSREL:R} >= 12
 DIST_TYPE=	12_x64
 RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libncurses.so.8:misc/compat12x
-.else
-DIST_TYPE=	11_x64
-.endif
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -44,4 +39,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODICSCRIPT} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

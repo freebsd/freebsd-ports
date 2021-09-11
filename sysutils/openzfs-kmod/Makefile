@@ -29,7 +29,7 @@ INVARIANTS_IMPLIES=	DEBUG
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} < 1200504) || (${OSVERSION} >= 1300000 && ${OSVERSION} < 1300013)
+.if ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300013
 IGNORE=	needs FreeBSD 12/13 with AES-CCM support
 .endif
 

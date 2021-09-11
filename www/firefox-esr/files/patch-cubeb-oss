@@ -61,7 +61,7 @@ https://github.com/kinetiknz/cubeb/pull/600
  #endif
 --- /dev/null
 +++ media/libcubeb/src/cubeb_oss.c
-@@ -0,0 +1,1263 @@
+@@ -0,0 +1,1260 @@
 +/*
 + * Copyright © 2019-2020 Nia Alarie <nia@NetBSD.org>
 + * Copyright © 2020 Ka Ho Ng <khng300@gmail.com>
@@ -74,9 +74,6 @@ https://github.com/kinetiknz/cubeb/pull/600
 + * accompanying file LICENSE for details.
 + */
 +
-+#if defined(__FreeBSD__) && __FreeBSD__ < 12
-+#define _WITH_GETLINE
-+#endif
 +#include <assert.h>
 +#include <ctype.h>
 +#include <limits.h>

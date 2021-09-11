@@ -55,14 +55,7 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/mail/ \
 			--with-user-queue=_smtpq \
 			--with-group-queue=_smtpq
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && \
-    (${OSVERSION} < 1200084 && ${SSL_DEFAULT} == "base")
-BROKEN=		Openssl 1.0 API is EoL, upgrade to FreeBSD 12.x/13.x or add DEFAULT_VERSIONS+=ssl=[openssl|libressl*] to /etc/make.conf
-.endif
-
 post-install-TABLE_DB-on:
 	@${LN} -sf ${PREFIX}/sbin/smtpctl ${STAGEDIR}${PREFIX}/libexec/opensmtpd/makemap
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -50,10 +50,4 @@ TEST_CMAKE_BOOL=	BUILD_TESTS
 TEST_TEST_TARGET=	test
 TEST_USE=		QT=network,testlib
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} == base
-IGNORE=			Does not support OpenSSL < 1.1
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

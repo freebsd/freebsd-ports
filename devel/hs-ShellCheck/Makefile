@@ -47,10 +47,6 @@ EXECUTABLES=	shellcheck
 
 OPTIONS_DEFINE=		MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
-# hs-pandoc is broken on 11.4 i386 due to missing __atomic_load_8;
-# make sure we still have a package (just without a manual) there
-# anyway.
-OPTIONS_EXCLUDE=	${${ARCH} == i386 && ${OPSYS} == FreeBSD && ${OSVERSION} < 1201525:?MANPAGES:}
 
 MANPAGES_BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
 MANPAGES_PLIST_FILES=	share/man/man1/shellcheck.1.gz

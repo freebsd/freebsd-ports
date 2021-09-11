@@ -163,12 +163,6 @@ MAKE_ARGS+=	ARCH=ppc64
 CONFIGURE_ARGS+=	--sparc_cpu=v9
 .endif
 
-.if ${OSVERSION} < 1200000
-PKGMESSAGE=	${.CURDIR}/pkg-message-11
-.else
-PKGMESSAGE=	${.CURDIR}/pkg-message
-.endif
-
 PLIST_SUB+=	LINUXBOOT_DMA=""
 
 # XXX need to disable usb host code on head while it's not ported to the

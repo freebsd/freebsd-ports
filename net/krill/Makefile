@@ -20,9 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	NLnetLabs
 
 .include <bsd.port.options.mk>
-.if ${OSVERSION} < 1200000 && ${SSL_DEFAULT} == base
-IGNORE=	Does not build with base ssl on RELEASE ${OSREL} ${OSVERSION}
-.endif
 
 USE_RC_SUBR=	${PORTNAME}
 

@@ -19,9 +19,6 @@ GH_ACCOUNT=	kAworu
 CMAKE_ARGS=	-DMAN_PATH=${PREFIX}/man
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 
-LDFLAGS_FreeBSD_11=	-fuse-ld=lld
-LDFLAGS+=	${LDFLAGS_${OPSYS}_${OSREL:R}}
-
 PLIST_FILES=	bin/tagutil \
 		man/man1/tagutil.1.gz
 

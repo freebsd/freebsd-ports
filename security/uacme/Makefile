@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--datadir=${EXAMPLESDIR:H} \
 		--sysconfdir=${PREFIX}/etc
 
 OPTIONS_DEFINE=		DOCS EXAMPLES MANPAGES UALPN
-_OPENSSL_SAFE=		${(${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} == base) || ${SSL_DEFAULT} == libressl || ${SSL_DEFAULT} == libressl-devel:?no:yes}
+_OPENSSL_SAFE=		${${SSL_DEFAULT} == libressl || ${SSL_DEFAULT} == libressl-devel:?no:yes}
 OPTIONS_DEFAULT=	${${_OPENSSL_SAFE} == no:?GNUTLS:OPENSSL} MANPAGES \
 			UALPN
 OPTIONS_SINGLE=		CRYPTO

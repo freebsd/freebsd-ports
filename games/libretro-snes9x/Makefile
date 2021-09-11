@@ -11,8 +11,6 @@ LICENSE_NAME=	PS
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-BROKEN_FreeBSD_11=	linker error: unrecognized option '-plugin'
-
 USES=		compiler:c++11-lib gmake
 USE_LDCONFIG=	yes
 

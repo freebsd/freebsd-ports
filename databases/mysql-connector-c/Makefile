@@ -25,7 +25,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 CFLAGS+=	-march=i586
 .endif
 
-.if (${OPSYS} == FreeBSD && ${OSVERSION} > 1200085 && ${SSL_DEFAULT} == base) || ${SSL_DEFAULT} == openssl
+.if (${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base) || ${SSL_DEFAULT} == openssl
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-vio_viosslfactories.c \
 		${FILESDIR}/extra-patch-mysys__ssl_my__aes__openssl.cc
 .endif

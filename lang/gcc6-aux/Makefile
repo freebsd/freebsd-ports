@@ -50,17 +50,7 @@ BOOTSTRAP_DESC=		Create bootstrap compiler (overrides other options)
 .if ${OPSYS} == FreeBSD
 ONLY_FOR_ARCHS=		aarch64 amd64 i386
 MODERN_BINUTILS=	yes
-.  if ${ARCH} == aarch64 && ${OSVERSION} > 1200075 #ino64
-BOOTSTRAP_COMPILER=	ada-bootstrap.aarch64.freebsd.120.tar.bz2
-.  elif ${ARCH} == aarch64
-BOOTSTRAP_COMPILER=	ada-bootstrap.aarch64.freebsd.111.tar.bz2
-.  elif ${ARCH} == amd64 && ${OSVERSION} > 1200030 #ino64
-BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.freebsd.120.tar.bz2
-.  elif ${ARCH} == i386  && ${OSVERSION} > 1200030 #ino64
-BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.freebsd.120.tar.bz2
-.  else
-BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.freebsd.100B.tar.bz2
-.  endif
+BOOTSTRAP_COMPILER=	ada-bootstrap.${ARCH}.freebsd.120.tar.bz2
 .endif
 .if ${OPSYS} == DragonFly
 ONLY_FOR_ARCHS=		x86_64

@@ -33,15 +33,6 @@ CPE_PRODUCT=	py${PORTNAME}
 
 # We need to keep old py-cryptography and py-penssl for 11.x release
 # due to outdated OpenSSL version in base
-.if ${OPSYS} == FreeBSD && ${SSL_DEFAULT} == "base"
-. if ${OSVERSION} >= 1103500 && ${OSVERSION} < 1200085
-# 1103500	352193 2019-09-10	11.3-STABLE got OpenSSL 1.0.2t
-# 1200085	339270 2018-10-19	12.0-STABLE got OpenSSL 1.1.1
-#.sinclude "${.CURDIR}/Makefile.${OPSYS}-${OSREL:R}" 
-PORTVERSION=	19.1.0
-PORTEPOCH=	1
-. endif
-.endif
 
 # These tests will be skipped due the following reasons:
 #

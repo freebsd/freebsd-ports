@@ -13,8 +13,6 @@ COMMENT=	Visualization tool for genomic datasets
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BROKEN_FreeBSD_11=	FAILURE: Build failed with an exception.
-
 BUILD_DEPENDS=	openjfx14>0:java/openjfx14 \
 		gradle:devel/gradle6
 RUN_DEPENDS=	openjfx14>0:java/openjfx14

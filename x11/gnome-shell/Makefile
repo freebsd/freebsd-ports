@@ -68,11 +68,6 @@ CPE_VENDOR=	gnome
 GLIB_SCHEMAS=	00_org.gnome.shell.gschema.override \
 		org.gnome.shell.gschema.xml
 
-.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-# Work around "New rpath must not be longer than the old one."
-LDFLAGS+=	-fuse-ld=lld
-.endif
-
 post-extract:
 	${CP} ${FILESDIR}/*.xml ${WRKSRC}/data/dbus-interfaces
 

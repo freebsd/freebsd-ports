@@ -65,10 +65,6 @@ CONFIGURE_ARGS+=	--cc-abi="-march=armv8-a+crypto"
 CONFIGURE_ARGS+=	--cpu="ppc64"
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
-CONFIGURE_ARGS+=	--without-os-features=getentropy,elf_aux_info
-.endif
-
 .if ${ARCH} == i386 || ${ARCH} == amd64
 PLIST_SUB+=	HAS_RDRAND_RNG=""
 .else

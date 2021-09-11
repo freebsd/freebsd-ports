@@ -26,23 +26,10 @@ USE_SDL=	sdl2
 MAKEFILE=	makefile
 MAKE_ARGS=	MESENPLATFORM=${MESEN_ARCH} \
 		CC="${CC}" CPPC="${CXX}" \
+		FSLIB=-lc++experimental \
+		LTO=true \
 		SYSTEM_LIBEVDEV=true
 MESEN_ARCH=	${ARCH:S/amd64/x64/:S/i386/x86/}
-
-.if exists(/usr/lib/libc++fs.a)
-MAKE_ARGS+=	FSLIB=-lc++fs
-.elif exists(/usr/lib/libc++experimental.a)
-# XXX Remove after FreeBSD 12.0 EOL
-MAKE_ARGS+=	FSLIB=-lc++experimental
-.else
-# XXX Remove after FreeBSD 11.2 EOL
-USE_GCC=	yes
-.endif
-
-# XXX Always enable LTO after FreeBSD 11.2 and 12.0 EOL
-.if defined(USE_GCC) || (${/usr/bin/ld:L:tA} == /usr/bin/ld.lld)
-MAKE_ARGS+=	LTO=true
-.endif
 
 OPTIONS_MULTI=			FRONTENDS
 OPTIONS_MULTI_FRONTENDS=	MONO LIBRETRO

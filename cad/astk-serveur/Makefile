@@ -61,8 +61,7 @@ conf_dir=	${WRKSRC}/etc/astkrc
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ((${OSREL:R} <= 12 && ${OSVERSION} < 1201506)	\
-			|| (${OSREL:R} > 12 && ${OSVERSION} < 1300068))
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300068
 # ASTK is not useful without french/aster
 IGNORE=	a larger value of ARG_MAX is needed for Code_Aster, please upgrade your system
 .endif

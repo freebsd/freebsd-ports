@@ -84,9 +84,6 @@ LTO_USES=			compiler:c11
 LTO_CONFIGURE_ENABLE=		lto
 
 .include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:MLTO} && ${OPSYS}_${OSREL:R} == FreeBSD_11
-BROKEN=		Link-Time Optimization breaks compilation on FreeBSD 11
-.endif
 
 .if ${PORT_OPTIONS:MLTO} && ${ARCH} == powerpc64
 USE_GCC=	yes

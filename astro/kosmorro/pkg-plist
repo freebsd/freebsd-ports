@@ -68,5 +68,5 @@ bin/kosmorro
 %%PYTHON_SITELIBDIR%%/_kosmorro/locales/nl/LC_MESSAGES/messages.po
 %%PYTHON_SITELIBDIR%%/_kosmorro/locales/ru/LC_MESSAGES/messages.po
 %%PYTHON_SITELIBDIR%%/_kosmorro/main.py
-%%MAN%%man/man1/kosmorro.1.gz
-%%MAN%%man/man7/kosmorro.7.gz
+man/man1/kosmorro.1.gz
+man/man7/kosmorro.7.gz

@@ -27,7 +27,6 @@ ERROR_ADDRESS=root@localhost
 # Location of ports tree and source trees
 export BASEDIR=/a/tindex
 export PORTSDIR=${BASEDIR}/ports
-export SRCDIR11=${BASEDIR}/src.11
 export SRCDIR12=${BASEDIR}/src.12
 export SRCDIR13=${BASEDIR}/src.13
 export SRCDIR14=${BASEDIR}/src.14
@@ -114,9 +113,6 @@ export INDEX_JOBS=3
 export INDEX_QUIET=1
 
 # First update the source trees to get current OSVERSION
-${SVN} -q up ${SRCDIR11}/sys/sys
-OSVERSION11=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR11}/sys/sys/param.h)
-
 ${SVN} -q up ${SRCDIR12}/sys/sys
 OSVERSION12=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR12}/sys/sys/param.h)
 
@@ -127,7 +123,7 @@ ${GIT} -C ${SRCDIR14} pull --rebase -q
 OSVERSION14=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR14}/sys/sys/param.h)
 
 cd ${PORTSDIR}
-rm -f INDEX-11 INDEX-11.bz2 INDEX-12 INDEX-12.bz2 INDEX-13 INDEX-13.bz2 INDEX-14 INDEX-14.bz2
+rm -f INDEX-12 INDEX-12.bz2 INDEX-13 INDEX-13.bz2 INDEX-14 INDEX-14.bz2
 OLD_HEAD=$(${GIT} rev-parse HEAD)
 if ! ${GIT} pull --ff-only > git.log 2>&1 ; then
   (echo "Git update failed with conflicts:";
@@ -135,7 +131,7 @@ if ! ${GIT} pull --ff-only > git.log 2>&1 ; then
     exit 1
 fi
 
-for branch in 11.x 12.x 13.x 14.x; do
+for branch in 12.x 13.x 14.x; do
     release=$(echo $branch | sed -e 's,.x,,')
 
     eval _osver=\$OSVERSION${release}

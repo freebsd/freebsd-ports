@@ -43,7 +43,8 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl -Dusenm=n \
 	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none \
 	-Dcf_by=${MAINTAINER:C,@.*,,} -Dcf_email=${MAINTAINER} \
-	-Dcf_time="`${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`"
+	-Dcf_time="`${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`" \
+	-Accflags='-DUSE_THREAD_SAFE_LOCALE'
 # Keep the following two in sync.
 # lddlflags is used for all .so linking
 # shrpldflags is used for libperl.so, so remove all the extra bits inherited from lddlflags.
@@ -165,10 +166,6 @@ _PERL5_DEFAULT_FILE=	/tmp/PERL5_DEFAULT
 # Get the default version, and possibly, overwrite it.
 .include <bsd.port.options.mk>
 .sinclude "${_PERL5_DEFAULT_FILE}"
-
-.if ${OSVERSION} >= 1200004
-CONFIGURE_ARGS+=	-Accflags='-DUSE_THREAD_SAFE_LOCALE'
-.endif
 
 # if this port is default due PERL5_DEFAULT
 # change PKGNAME to reflect this

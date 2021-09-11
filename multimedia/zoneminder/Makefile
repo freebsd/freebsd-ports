@@ -87,7 +87,7 @@ CMAKE_ARGS+=	-DZM_PERL_MM_PARMS=INSTALLDIRS=site \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1200000
+.if ${OPSYS} == FreeBSD
     EXTRA_PATCHES=	${PATCHDIR}/extra-patch-CMakeLists.txt
 .endif
 

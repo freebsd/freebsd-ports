@@ -45,7 +45,7 @@ USES+=		ssl
 MAKE_ENV+=	SSL=no
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
+.if ${OPSYS} == FreeBSD
 MAKE_ENV+=	TFO=yes
 .endif
 

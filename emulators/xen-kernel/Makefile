@@ -34,10 +34,6 @@ EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-mtrr-remove-stale-function-prototype.patch:
 IGNORE=		only supported on FreeBSD
 .endif
 
-.if ${OSVERSION} < 1200074
-IGNORE=		only supported on FreeBSD 12.0 or newer
-.endif
-
 # The ports native 'build' target cannot be used because it sets
 # CFLAGS, and that breaks the Xen build system.
 do-build:

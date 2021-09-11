@@ -33,7 +33,6 @@ USE_XORG=	x11 xcomposite xdamage xext xfixes xrender xres xtst xxf86vm
 GH_ACCOUNT=	Plagman
 GH_TUPLE=	emersion:libliftoff:v0.1.0-3-g516cf94:libliftoff/subprojects/libliftoff \
 		nothings:stb:af1a5bc:stb/subprojects/stb
-CPPFLAGS+=	-D_WITH_DPRINTF # XXX Remove after FreeBSD 11 EOL
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	PIPEWIRE

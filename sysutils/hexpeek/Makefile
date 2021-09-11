@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		libedit ncurses tar:bzip2
 USE_CSTD=	c99
 
-CFLAGS+=	-D_WITH_GETLINE -Isrc -L${LOCALBASE}/lib
+CFLAGS+=	-Isrc -L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/hexdiff \
 		bin/hexDump \

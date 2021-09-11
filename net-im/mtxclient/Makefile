@@ -9,8 +9,6 @@ COMMENT=	Client API library for the Matrix protocol
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_FreeBSD_11=	unsupported SSL in base
-
 BUILD_DEPENDS=	nlohmann-json>=3:devel/nlohmann-json
 LIB_DEPENDS=	libsodium.so:security/libsodium \
 		libboost_date_time.so:devel/boost-libs \

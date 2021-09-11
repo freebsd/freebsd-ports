@@ -10,8 +10,6 @@ RACOON2_COMMIT_DATE=202000908
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Racoon2 IPsec daemon
 
-BROKEN_FreeBSD_11=	Requires openssl to build
-
 CONFLICTS=	racoon2-legacy-*
 
 USE_GITHUB=     yes

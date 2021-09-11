@@ -12,7 +12,6 @@ COMMENT=	John Wiegley's command line accounting program
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_FreeBSD_11_powerpc64=	fails to link on powerpc64 elfv1: ibledger.so.3: undefined reference to boost::match_results
 BROKEN_FreeBSD_12_powerpc64=	fails to link on powerpc64 elfv1: ibledger.so.3: undefined reference to boost::match_results
 
 BUILD_DEPENDS=	${LOCALBASE}/include/utf8cpp/utf8.h:devel/utf8cpp

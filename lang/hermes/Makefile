@@ -25,12 +25,6 @@ CMAKE_OFF=	HERMES_ENABLE_TEST_SUITE
 
 BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1201518
-BROKEN=		needs pthread_getname_np from OSVERSION 1201518 or above
-.endif
-
 do-test: # some tests are known to fail: https://github.com/facebook/hermes/issues/347
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DHERMES_ENABLE_TEST_SUITE:BOOL=ON ${CMAKE_SOURCE_PATH} && \

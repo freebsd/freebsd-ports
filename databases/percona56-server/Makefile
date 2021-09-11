@@ -97,12 +97,6 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 # Workaround to clang11/gcc10 with -fno-common by default
 CFLAGS+=        -fcommon
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
-SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
-.else
-SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
-.endif
-
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/db/mysql
 .endif

@@ -11,7 +11,6 @@ COMMENT=	Language designed for robustness, optimality, and maintainability
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_FreeBSD_11=	expects getrandom(2) which is unavailable on FreeBSD < 12.0
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	not yet supported
 

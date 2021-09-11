@@ -40,11 +40,6 @@ SHEBANG_GLOB=	*.py
 TEST_ENV=	PATH="${STAGEDIR}${PREFIX}/bin:${PATH}"
 TEST_TARGET=	test
 
-.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-# --build-id isn't supported by old GNU ld.bfd in base
-LDFLAGS+=	-fuse-ld=lld
-.endif
-
 BINARY_ALIAS=	python3=${PYTHON_CMD} python=${PYTHON_CMD}
 
 INSTALL_WRKSRC=	${WRKSRC}/linux-package

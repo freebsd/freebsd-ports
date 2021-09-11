@@ -20,8 +20,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=		EXAMPLES GUI
 OPTIONS_DEFAULT=	GUI
-# no GUI option on 11.x with base SSL since qt5-network is not available
-OPTIONS_EXCLUDE=	${${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} == base:?GUI:}
 OPTIONS_SUB=		yes
 
 GUI_DESC=	Build configuration utility (requires Qt 5)

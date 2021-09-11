@@ -132,10 +132,7 @@ _EXECUTABLES+=	${GHC_LIBDIR}/bin/ghc-iserv-dyn
 .if empty(PORT_OPTIONS:MBOOT)
 BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
 BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
-.  if ${OSVERSION} < 1200000 && (${ARCH} == amd64 || ${ARCH} == i386)
-ELEVEN_SUFX=		11
-.  endif
-DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${BOOTSTRAPS_SUFFIX}${ELEVEN_SUFX}${EXTRACT_SUFX}:boot
+DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:boot
 .endif # MBOOT
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}
@@ -162,9 +159,6 @@ CONFIGURE_ENV_BOOTSTRAP=LLC=llc${BOOT_LLVM_VERSION} \
 .endif
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*} || ${ARCH} == powerpc64
-.  if ${OSVERSION} < 1202000
-IGNORE=	lang/ghc requires at least FreeBSD 12.2-RELEASE
-.  endif
 .  ifdef QEMU_EMULATING
 IGNORE=	qemu-user-static isn't able to build lang/ghc, but it builds fine on a real hardware
 .  endif

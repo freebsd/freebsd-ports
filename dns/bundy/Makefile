@@ -18,7 +18,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_armv6=		fails to build: Child process terminated abnormally: Segmentation fault
 BROKEN_armv7=		fails to build: Child process terminated abnormally: Segmentation fault
-BROKEN_FreeBSD_11_powerpc64=	fails to configure on powerpc64 elfv1: checking for botan/botan.h... no
 BROKEN_FreeBSD_12_powerpc64=	fails to configure on powerpc64 elfv1: checking for botan/botan.h... no
 BROKEN_FreeBSD_14=	fails to build: error: Boost shared memory does not compile on this system.
 

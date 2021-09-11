@@ -58,7 +58,7 @@ SASLKMIT_LIB_DEPENDS=	libkrb5.so:security/krb5
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SQLITE_USES=		sqlite
 
-BLACKLISTD_DESC=	Enable blacklistd support (FreeBSD 11.0 and later only)
+BLACKLISTD_DESC=	Enable blacklistd support
 CDB_DESC=	CDB maps lookups
 EAI_DESC=	Email Address Internationalization (SMTPUTF8) support
 INST_BASE_DESC=	Install into /usr and /etc/postfix
@@ -87,7 +87,7 @@ MAKEFILEFLAGS+=	DEBUG=
 
 MAKEFILEFLAGS+=	pie=yes CC="${CC}" OPT="${CFLAGS}"
 
-.if (${OSREL:R} < 12 && ${SSL_DEFAULT} == base) || (${SSL_DEFAULT} == libressl)
+.if ${SSL_DEFAULT} == libressl
 BROKEN=		error: OpenSSL-1.1.1 is the minimum supported version. \
 		LibreSSL is not supported
 .endif
@@ -203,7 +203,7 @@ POSTFIX_AUXLIBS+=	-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}
 . if ${OPSYS} == FreeBSD
 POSTFIX_AUXLIBS+=	-lblacklist
 . else
-IGNORE=	blacklistd is only supported on FreeBSD >= 11.0
+IGNORE=	blacklistd is only supported on FreeBSD
 . endif
 .endif
 

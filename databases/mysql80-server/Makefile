@@ -180,22 +180,6 @@ FEDERATED_SUB_LIST_OFF+=	FEDER=""
 CMAKE_ARGS+=	-DDISABLE_PSI_MEMORY=1
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
-SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
-.else
-SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386" && ${OSVERSION} < 1200000
-# clang 7.x and 8.x do not build properly on 11i386
-CPP=		clang-cpp${LLVM_DEFAULT}
-CC=		clang${LLVM_DEFAULT}
-CXX=		clang++${LLVM_DEFAULT}
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-.endif
-
 post-extract:
 	@${RM} -rv ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
 
@@ -208,4 +192,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}${MY_TMPDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

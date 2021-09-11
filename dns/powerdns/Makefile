@@ -28,7 +28,8 @@ CONFIGURE_ARGS=	--disable-static \
 		--sysconfdir="${PREFIX}/etc/pdns" \
 		--with-boost="${LOCALBASE}" \
 		--with-dynmodules="pipe bind ${MODULES}" \
-		--with-modules=""
+		--with-modules="" \
+		--with-libsodium=no
 
 SCRIPTS_ENV=	CURDIR2="${.CURDIR}" \
 		DISTNAME="${DISTNAME}" \
@@ -124,20 +125,9 @@ ZEROMQ_IMPLIES=		REMOTE
 ZEROMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
 ZEROMQ_CONFIGURE_ON=	--enable-remotebackend-zeromq
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} != openssl
-CONFIGURE_ARGS+=	--with-libdecaf \
-			--with-libsodium
-LIB_DEPENDS+=		libdecaf.so:security/libdecaf \
-			libsodium.so:security/libsodium
-.else
-CONFIGURE_ARGS+=	--with-libsodium=no
-.endif
-
 post-install::
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}/var/run/pdns
 	@${STAGEDIR}${PREFIX}/sbin/pdns_server --module-dir=${STAGEDIR}${PREFIX}/lib/pdns --launch="pipe bind ${MODULES}" --config > ${STAGEDIR}${EXAMPLESDIR}/pdns.conf
 	@${REINPLACE_CMD} -e 's;${STAGEDIR};;' -i '' ${STAGEDIR}${EXAMPLESDIR}/pdns.conf
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

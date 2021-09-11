@@ -45,20 +45,9 @@ TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 # We need to keep old py-cryptography and py-openssl for 11.x release
 # due to outdated OpenSSL version in base
-.if ${OPSYS} == FreeBSD && ${SSL_DEFAULT} == "base"
-. if ${OSVERSION} >= 1103500 && ${OSVERSION} < 1200085
-# 1103500	352193 2019-09-10	11.3-STABLE got OpenSSL 1.0.2t
-# 1200085	339270 2018-10-19	12.0-STABLE got OpenSSL 1.1.1
-PORTVERSION=	2.9.2
-EXTRA_PATCHES=	${PATCHDIR}/openssl102u
-. endif
-.endif
 
 # Apply LibreSSL upstream patch that conflicts with above patch for 2.9.2
-# XXX convert back to unconditional when FreeBSD 11 goes EOL
-.if ${SSL_DEFAULT:Mlibressl*}
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Fix-build-with-LibreSSL-3.3.2-5988
-.endif
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
 post-patch:

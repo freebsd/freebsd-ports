@@ -30,7 +30,7 @@ PYTHON_CONFIGURE_ENABLE=	python-bindings
 PYTHON_USE=			PYTHON=py3kplist
 
 GNU_CONFIGURE=  yes
-CFLAGS+=	-D_WITH_DPRINTF -include stdlib.h -include limits.h
+CFLAGS+=	-include stdlib.h -include limits.h
 USE_LDCONFIG=   yes
 INSTALL_TARGET=	install-strip
 REINPLACE_ARGS=	-i ''

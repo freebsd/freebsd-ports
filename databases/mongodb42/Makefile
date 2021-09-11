@@ -57,7 +57,6 @@ MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 USERS=		mongodb
 GROUPS=		mongodb
 
-LTO_LDFLAGS=	-fuse-ld=lld
 LTO_MAKE_ARGS=	--lto=on
 
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
@@ -71,12 +70,6 @@ SSL_MAKE_ARGS=	--ssl
 .if ${OPSYS} == FreeBSD && ((${OSREL:R} >= 14 && ${OSVERSION} < 1400033) \
                         && ${ARCH} == "aarch64")
 BROKEN=	Aarch64 needs LSE atomics which was fixed in https://cgit.freebsd.org/src/commit/?id=efe67f33c322265eb303ec0ab40275100795b22a
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
-SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
-.else
-SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 .endif
 
 .if ${ARCH} == aarch64 || ${ARCH} == powerpc64le

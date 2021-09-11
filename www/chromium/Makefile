@@ -14,7 +14,6 @@ COMMENT=	Google web browser based on WebKit
 LICENSE=	BSD3CLAUSE LGPL21 MPL11
 LICENSE_COMB=	multi
 
-BROKEN_FreeBSD_11_aarch64=	components/safe_browsing_db/v4_rice.cc:120:18: use of overloaded operator '&' is ambiguous
 BROKEN_i386=			../../base/files/file_util_posix.cc:1258:29: error: no matching function for call to 'sendfile' (ssize_t vs off_t)
 ONLY_FOR_ARCHS=			aarch64 amd64 i386
 

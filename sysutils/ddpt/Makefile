@@ -11,8 +11,6 @@ COMMENT=	dd tool that specializes in files that are block devices
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_11=	lack of NVME_STATUS_GET_SCT and NVME_STATUS_GET_SC
-
 USES=		gmake tar:tgz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

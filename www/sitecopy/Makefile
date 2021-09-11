@@ -42,7 +42,7 @@ post-patch:
 		${WRKSRC}/src/sitestore.c
 	@${REINPLACE_CMD} -e 's|25 26 27 28|& 29 30 31|g' \
 		${WRKSRC}/configure
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200072
+.if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -e '/#define ksize_t /d' \
 		${WRKSRC}/configure
 .endif

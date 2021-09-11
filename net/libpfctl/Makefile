@@ -11,7 +11,6 @@ COMMENT=	Library for interaction with pf(4)
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_FreeBSD_11=	Will not work until nvlist-ified ioctls are available
 BROKEN_FreeBSD_12=	Will not work until nvlist-ified ioctls are available
 BROKEN_FreeBSD_13=	Will not work until nvlist-ified ioctls are available
 

@@ -66,11 +66,6 @@ CHEESE_MESON_TRUE=	cheese
 WAYLAND_MESON_TRUE=	wayland
 WAYLAND_LIB_DEPENDS=	libgudev-1.0.so:devel/libgudev
 
-# This can be removed after 11.x is no longer supported
-.if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
-LDFLAGS+=      -fuse-ld=lld
-.endif
-
 .include <bsd.port.pre.mk>
 
 # FreeBSD base gained an os-release in r354922, but that does not exist

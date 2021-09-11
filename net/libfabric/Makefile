@@ -34,10 +34,8 @@ OPTIONS_DEFAULT=		${OPTIONS_MULTI_PROVIDERS}
 OPTIONS_SUB=			yes
 PROVIDERS_DESC=			Providers to build:
 
-.if exists(/usr/include/infiniband/verbs.h) # some earlier FreeBSD 11 systems don't have it
 OPTIONS_MULTI_PROVIDERS+=	VERBS
 VERBS_PLIST_FILES=		man/man7/fi_verbs.7.gz
-.endif
 
 .for p in ${OPTIONS_MULTI_PROVIDERS}
 ${p}_DESC=			'${p:tl}' provider

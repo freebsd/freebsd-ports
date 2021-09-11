@@ -22,11 +22,6 @@ PLIST_FILES=	bin/quark \
 
 .include <bsd.port.options.mk>
 
-# _WITH_DPRINTF support was removed precisely in r303524.
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200002
-CFLAGS+=	-D_WITH_DPRINTF
-.endif
-
 _COMMIT_HASH=	3c7049e9063edebbd1934178f263f9f3c9b8ddf5
 
 pre-everything::

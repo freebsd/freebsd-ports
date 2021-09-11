@@ -118,11 +118,6 @@ USES=		autoreconf:build bison compiler:c++14-lang cpe desktop-file-utils \
 OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 I18N JAVA KF5 MMEDIA PGSQL QT5 SDK TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS MMEDIA QT5
 
-.if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mssl=*}
-# Blocked by net/qt5-network: cannot use QT5 with default OpenSSL
-OPTIONS_EXCLUDE_FreeBSD_11+=	QT5
-.endif
-
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
 GTK3_DESC=	GTK+ 3 GUI toolkit support (incomplete visual style)
 I18N_DESC=	Build i18n resources

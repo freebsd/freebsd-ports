@@ -122,7 +122,7 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
 # openssl-1.1.1 no longer has SSLv2 support
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085
+.if ${OPSYS} == FreeBSD
 CFLAGS+=		-DOPENSSL_NO_SSL2
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}"
 .endif
