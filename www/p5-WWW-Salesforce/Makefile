@@ -1,7 +1,7 @@
 # Created by: Matthew Seaman <matthew@FreeBSD.org>
 
 PORTNAME=	WWW-Salesforce
-PORTVERSION=	0.303
+PORTVERSION=	0.304
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
