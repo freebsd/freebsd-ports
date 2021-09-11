@@ -1,8 +1,8 @@
 # Created by: Slaven Rezic <slaven@rezic.de>
 
 PORTNAME=	merkaartor
-PORTVERSION=	0.18.2
-PORTREVISION=	31
+PORTVERSION=	0.19.0
+PORTREVISION=	0
 CATEGORIES=	astro
 
 MAINTAINER=	dev2@heesakkers.info
