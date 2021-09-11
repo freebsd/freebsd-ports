@@ -2,4 +2,4 @@ This is the collection of command-line SNMP tools written in pure-Python
 and tightly aligned with the de-facto standard SNMP tools that come with
 Net-SNMP e.g. snmpget, snmpwalk and many others.
 
-WWW: http://snmplabs.com/snmpclitools/
+WWW: https://github.com/etingof/snmpclitools
