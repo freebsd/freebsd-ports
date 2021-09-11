@@ -21,9 +21,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libidn2.so:dns/libidn2
 
-USES=		compiler:c++11-lang charsetfix iconv libtool localbase \
+USES=		compiler:c++11-lang charsetfix cpe iconv libtool localbase \
 		readline shebangfix
 GNU_CONFIGURE=	yes
+CPE_VENDOR=	lftp_project
 
 PORTDOCS=	AUTHORS BUGS ChangeLog FAQ FEATURES INSTALL \
 		MIRRORS NEWS README README.debug-levels README.modules \
