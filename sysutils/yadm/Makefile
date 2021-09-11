@@ -1,5 +1,5 @@
 PORTNAME=	yadm
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	vendion@gmail.com
