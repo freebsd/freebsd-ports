@@ -11,6 +11,8 @@ COMMENT=	Passive OS fingerprinting tool
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+DEPRECATED=	newer version available in net-mgmt/p0f
+
 USES=		gmake tar:tgz
 USE_RC_SUBR=	p0f2
 ALL_TARGET=	all p0fq tools
