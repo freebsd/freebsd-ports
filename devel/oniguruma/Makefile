@@ -11,7 +11,7 @@ COMMENT=	Regular expressions library compatible with POSIX/GNU/Perl
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=			autoreconf pathfix libtool  # configure provided in the tarball breaks: https://github.com/kkos/oniguruma/issues/73
+USES=			autoreconf cpe pathfix libtool  # configure provided in the tarball breaks: https://github.com/kkos/oniguruma/issues/73
 USE_GITHUB=		yes
 GH_ACCOUNT=		kkos
 GNU_CONFIGURE=		yes
@@ -21,6 +21,7 @@ USE_LDCONFIG=		yes
 INSTALL_TARGET=		install-strip
 TEST_WRKSRC=		${WRKSRC}/test
 TEST_TARGET=		test
+CPE_VENDOR=		oniguruma_project
 
 OPTIONS_DEFINE=			STATISTICS DOCS EXAMPLES
 STATISTICS_DESC=		Take matching time statistical data (debug feature)
