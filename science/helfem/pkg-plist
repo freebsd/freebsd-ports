@@ -3,8 +3,8 @@ bin/diatomic
 bin/diatomic_cbasis
 bin/diatomic_cpl
 bin/gensap
-bin/libhelfem-common.a
-bin/liblegendre.a
+bin/libhelfem-common.so
+bin/liblegendre.so
 include/helfem.h
 include/helfem/GaussianNucleus.h
 include/helfem/HollowNucleus.h
@@ -13,4 +13,4 @@ include/helfem/PointNucleus.h
 include/helfem/PolynomialBasis.h
 include/helfem/RadialBasis.h
 include/helfem/SphericalNucleus.h
-lib/libhelfem.a
+lib/libhelfem.so

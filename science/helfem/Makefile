@@ -1,5 +1,5 @@
 PORTNAME=	helfem
-DISTVERSION=	g20210807
+DISTVERSION=	g20210912
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,8 +19,8 @@ USES=		cmake fortran
 USE_GITHUB=	yes
 GH_ACCOUNT=	susilehtola
 GH_PROJECT=	HelFEM
-GH_TAGNAME=	b6d8c11
+GH_TAGNAME=	21461e9
 
-CMAKE_ON=	HELFEM_FIND_DEPS # BUILD_SHARED_LIBS is broken, see https://github.com/susilehtola/HelFEM/issues/5
+CMAKE_ON=	HELFEM_FIND_DEPS BUILD_SHARED_LIBS
 
 .include <bsd.port.mk>
