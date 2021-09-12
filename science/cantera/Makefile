@@ -2,7 +2,7 @@ PORTNAME=	cantera
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.1-552
 DISTVERSIONSUFFIX=	-gcf085e47e
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science # chemistry physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,8 @@ COMMENT=	Chemical kinetics, thermodynamics, and transport tool suite
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-BUILD_DEPENDS=	googletest>0:devel/googletest
+BUILD_DEPENDS=	googletest>0:devel/googletest \
+		${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libsundials_cvodes.so:math/sundials \
 		libyaml-cpp.so:devel/yaml-cpp
