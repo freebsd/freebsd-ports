@@ -2,6 +2,7 @@
 
 PORTNAME?=	mariadb
 PORTVERSION=	10.4.21
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
