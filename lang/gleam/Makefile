@@ -1,14 +1,13 @@
 PORTNAME=	gleam
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.1
-PORTREVISION=	2
+DISTVERSION=	0.17.0
 CATEGORIES=	lang
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	ML-flavoured type-safe language using Erlang's BEAM runtime
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENCE
+LICENSE_FILE=	${WRKSRC}/compiler-core/LICENCE
 
 RUN_DEPENDS=	rebar3:devel/rebar3
 
@@ -25,6 +24,14 @@ PLIST_FILES=	bin/gleam
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
+
+do-build:
+	(cd ${WRKSRC} && cargo build --release)
+	(cd ${WRKSRC}/compiler-cli && cargo install --path . --force --locked)
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin/
+	${MV} ${WRKSRC}/target/release/gleam ${STAGEDIR}${PREFIX}/bin/
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gleam
