@@ -1,3 +1,3 @@
-TIMESTAMP = 1559777946
-SHA256 (azure-mgmt-containerinstance-1.5.0.zip) = b055386f04ba8433112b0df7fcbc260b5208828d7bb8c057e760fe596aa7a8cd
-SIZE (azure-mgmt-containerinstance-1.5.0.zip) = 113856
+TIMESTAMP = 1631471338
+SHA256 (azure-mgmt-containerinstance-8.0.0.zip) = 7aeb380af71fc35a71d6752fa25eb5b95fdb2a0027fa32e6f50bce87e2622916
+SIZE (azure-mgmt-containerinstance-8.0.0.zip) = 80825
