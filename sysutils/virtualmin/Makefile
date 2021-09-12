@@ -1,5 +1,5 @@
 PORTNAME=	virtualmin
-PORTVERSION=	6.16
+PORTVERSION=	6.17
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/download/virtualmin/
