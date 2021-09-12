@@ -1,7 +1,7 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	waldo
-DISTVERSION=	0.2.5
+DISTVERSION=	0.3.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
-		R-cran-diffobj>0:devel/R-cran-diffobj \
+		R-cran-diffobj>=0.3.4:devel/R-cran-diffobj \
 		R-cran-fansi>0:devel/R-cran-fansi \
 		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-rematch2>0:devel/R-cran-rematch2 \
@@ -20,7 +20,8 @@ RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-tibble>0:devel/R-cran-tibble
 TEST_DEPENDS=	R-cran-R6>0:devel/R-cran-R6 \
 		R-cran-covr>0:devel/R-cran-covr \
-		R-cran-testthat>=3.0.0:devel/R-cran-testthat
+		R-cran-testthat>=3.0.0:devel/R-cran-testthat \
+		R-cran-xml2>0:textproc/R-cran-xml2
 
 USES=		cran:auto-plist
 
