@@ -9,7 +9,7 @@ COMMENT=	Ultra fast and sensitive sequence search and clustering suite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_i386=	https://github.com/soedinglab/MMseqs2/issues/418
+NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
