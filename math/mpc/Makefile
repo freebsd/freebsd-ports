@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	mpc
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	math devel
 MASTER_SITES=	GNU
 
@@ -24,6 +24,6 @@ USE_LDCONFIG=	yes
 
 INFO=		mpc
 PLIST_FILES=	include/mpc.h \
-		lib/libmpc.a lib/libmpc.so lib/libmpc.so.3 lib/libmpc.so.3.2.0
+		lib/libmpc.a lib/libmpc.so lib/libmpc.so.3 lib/libmpc.so.3.2.1
 
 .include <bsd.port.mk>
