@@ -13,6 +13,8 @@ COMMENT=	Translates GB/Big5 encoding to tone pinyin
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	c2t.tar.gz
 
+CFLAGS+=	-Dregister=
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/chinese/gb
 	${INSTALL_PROGRAM} ${WRKSRC}/c2t ${STAGEDIR}${PREFIX}/bin
