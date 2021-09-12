@@ -119,6 +119,7 @@
     SUBDIR += bfs
     SUBDIR += bhyve-firmware
     SUBDIR += bhyve-rc
+    SUBDIR += bhyve+
     SUBDIR += biosfont
     SUBDIR += bkpupsd
     SUBDIR += bksh

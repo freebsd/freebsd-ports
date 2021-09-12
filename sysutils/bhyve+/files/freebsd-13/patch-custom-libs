@@ -1,0 +1,21 @@
+--- usr.sbin/bhyve/Makefile.orig	2021-09-04 02:15:16.364660000 +0200
++++ usr.sbin/bhyve/Makefile	2021-09-04 02:21:26.014446000 +0200
+@@ -3,7 +3,7 @@
+ #
+ 
+ .include <src.opts.mk>
+-CFLAGS+=-I${.CURDIR}/../../contrib/lib9p
++CFLAGS+=-I${SRCTOP}/contrib/lib9p
+ CFLAGS+=-I${SRCTOP}/sys
+ .PATH:  ${SRCTOP}/sys/cam/ctl
+ 
+@@ -83,7 +83,8 @@
+ .PATH:  ${BHYVE_SYSDIR}/sys/amd64/vmm
+ SRCS+=	vmm_instruction_emul.c
+ 
+-LIBADD=	vmmapi md pthread z util sbuf cam 9p
++LIBADD=	md pthread z util sbuf cam
++LDADD=	../../contrib/lib9p/lib9p.so.1.1 ../../lib/libvmmapi/libvmmapi.so.5.1
+ 
+ .if ${MK_CASPER} != "no"
+ LIBADD+=	casper

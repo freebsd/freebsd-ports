@@ -1,0 +1,24 @@
+--- contrib/lib9p/Makefile.orig	2021-01-08 21:21:39.000000000 UTC
++++ contrib/lib9p/Makefile
+@@ -5,7 +5,7 @@
+ .include <src.opts.mk>
+ 
+ LIB=		9p
+-SHLIB_MAJOR=	1
++SHLIB_MAJOR=	1.1
+ SRCS=		pack.c \
+ 		connection.c \
+ 		request.c log.c \
+@@ -23,11 +23,9 @@
+ LIBADD=		sbuf
+ 
+ .if ${MK_CASPER} != "no"
+-LIBADD+=	libcasper libcap_pwd libcap_grp
++LIBADD+=	casper cap_pwd cap_grp
+ CFLAGS+=	-DWITH_CASPER
+ .endif
+-
+-SUBDIR=		example
+ 
+ cscope: .PHONY
+ 	cd ${.CURDIR}; cscope -buq $$(find . -name '*.[ch]' -print)
