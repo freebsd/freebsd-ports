@@ -387,6 +387,7 @@
     SUBDIR += compiz-bcop
     SUBDIR += concurrencpp
     SUBDIR += concurrencykit
+    SUBDIR += concurrentqueue
     SUBDIR += configkit
     SUBDIR += cons
     SUBDIR += cons-test

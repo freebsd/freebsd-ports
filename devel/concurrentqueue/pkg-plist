@@ -1,0 +1,7 @@
+include/concurrentqueue/moodycamel/LICENSE.md
+include/concurrentqueue/moodycamel/blockingconcurrentqueue.h
+include/concurrentqueue/moodycamel/concurrentqueue.h
+include/concurrentqueue/moodycamel/lightweightsemaphore.h
+lib/cmake/concurrentqueue/concurrentqueueConfig.cmake
+lib/cmake/concurrentqueue/concurrentqueueConfigVersion.cmake
+lib/cmake/concurrentqueue/concurrentqueueTargets.cmake
