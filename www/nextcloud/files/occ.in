@@ -1,0 +1,13 @@
+#/bin/sh
+
+args=
+for arg in "$@" ; do
+    if [ "${arg#* }" != "${arg}" ] ; then
+       args="${args} '${arg}'"
+    else
+       args="${args} ${arg}"
+    fi
+done
+
+cd %%WWWDIR%%
+su -m %%NEXTCLOUD_USERNAME%% -c "%%LOCALBASE%%/bin/php %%WWWDIR%%/occ ${args}"

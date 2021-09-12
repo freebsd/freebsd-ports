@@ -36,14 +36,13 @@ EOM
 After a version migration you should upgrade your nextcloud instance
 using command line:
 
-  cd %%WWWDIR%%
-  su -m www -c "php ./occ upgrade"
+  occ upgrade
 
 Merge any changes to %%WWWDIR%%/.htaccess.dist into .htaccess (above the
 '#### DO NOT CHANGE ANYTHING ABOVE THIS LINE ####' divider if it exists)
 and update the dynamic part of the file using the commandline:
 
-  su -m www -c "php ./occ maintenance:update:htaccess"
+  occ maintenance:update:htaccess
 EOM
 }
 ]
