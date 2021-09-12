@@ -1,5 +1,5 @@
 PORTNAME=	firge-nerd
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 PORTREVISION=	0
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	https://github.com/yuru7/Firge/releases/download/v${PORTVERSION}/
