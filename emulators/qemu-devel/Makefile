@@ -129,7 +129,9 @@ MAKE_ARGS+=	ARCH=x86_64
 .endif
 
 .if ${ARCH} == "powerpc"
+CFLAGS+=	-D_CALL_SYSV
 MAKE_ARGS+=	ARCH=ppc
+USE_GCC=	yes
 .endif
 
 .if ${ARCH} == "powerpc64"
