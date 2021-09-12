@@ -18,6 +18,7 @@ USES=		gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 
+LDFLAGS_powerpc=	-lm
 #OPTIONS=	GUCHARMAP	"Compile with gucharmap"		on
 
 .include <bsd.port.options.mk>
