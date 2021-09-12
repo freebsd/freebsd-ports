@@ -1,7 +1,7 @@
 # Created by: Dirk Froemberg <dirk@FreeBSD.org>
 
 PORTNAME=	openssl
-PORTVERSION=	3.0.0.b1
+PORTVERSION=	3.0.0
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	-quictls
 
@@ -28,7 +28,7 @@ USES=		cpe perl5
 USE_PERL5=	build
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PKGNAMESUFFIX:S/-//}
-GH_TAGNAME=	2204ca4a
+GH_TAGNAME=	0ce9b022cb421b564bed9ebc9469e96258ec175d
 
 TEST_TARGET=	test
 
@@ -137,6 +137,8 @@ SHARED_VARS=		shlibs+="lib/libcrypto.so.${OPENSSL_SHLIBVER} \
 SSL3_CONFIGURE_ON+=	enable-ssl3-method
 ZLIB_CONFIGURE_ON=	zlib-dynamic
 
+SHLIBS=			lib/engines-${OPENSSL_SHLIBVER}/loader_attic.so
+
 .include <bsd.port.pre.mk>
 .if ${PREFIX} == /usr
 IGNORE=	the OpenSSL port can not be installed over the base version
@@ -181,5 +183,9 @@ post-install-SHARED-off:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/openssl
+
+post-install-MAN3-on:
+	( cd ${STAGEDIR}/${PREFIX} ; find man/man3 -not -type d ; \
+		find man/man7 -not -type d ) | sed 's/$$/.gz/' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
