@@ -5462,6 +5462,7 @@
     SUBDIR += qt5-testlib
     SUBDIR += qt5-uitools
     SUBDIR += qtcreator
+    SUBDIR += quantum
     SUBDIR += quickcheck++
     SUBDIR += quilt
     SUBDIR += rabs

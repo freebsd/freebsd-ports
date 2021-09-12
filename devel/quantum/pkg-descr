@@ -1,0 +1,6 @@
+Quantum is a full-featured and powerful C++ framework build on top of the Boost
+coroutine library. The framework allows users to dispatch units of work
+(a.k.a. tasks) as coroutines and execute them concurrently using the 'reactor'
+pattern.
+
+WWW: https://github.com/bloomberg/quantum
