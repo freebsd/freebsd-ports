@@ -1,0 +1,11 @@
+OpenTimer is a new static timing analysis (STA) tool to help IC designers
+quickly verify the circuit timing. It is developed completely from the ground up
+using C++17 to efficiently support parallel and incremental timing.
+
+Key features are:
+* Industry standard format (.lib, .v, .spef, .sdc) support
+* Graph- and path-based timing analysis
+* Parallel incremental timing for fast timing closure
+* Award-winning tools and golden timers in CAD Contests
+
+WWW: https://github.com/OpenTimer/OpenTimer

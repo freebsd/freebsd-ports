@@ -88,6 +88,7 @@
     SUBDIR += openroad
     SUBDIR += openscad
     SUBDIR += openscad-devel
+    SUBDIR += opentimer
     SUBDIR += openvsp
     SUBDIR += oregano
     SUBDIR += p5-GDS2
