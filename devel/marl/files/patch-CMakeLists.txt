@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2021-09-12 17:56:22 UTC
++++ CMakeLists.txt
+@@ -72,13 +72,13 @@ set_if_not_defined(MARL_BENCHMARK_DIR ${MARL_THIRD_PAR
+ ###########################################################
+ # Submodules
+ ###########################################################
+-if(MARL_BUILD_TESTS)
++if(FALSE AND MARL_BUILD_TESTS)
+     if(NOT EXISTS ${MARL_GOOGLETEST_DIR}/.git)
+         message(WARNING "third_party/googletest submodule missing.")
+         message(WARNING "Run: `git submodule update --init` to build tests.")
+         set(MARL_BUILD_TESTS OFF)
+     endif()
+-endif(MARL_BUILD_TESTS)
++endif(FALSE AND MARL_BUILD_TESTS)
+ 
+ if(MARL_BUILD_BENCHMARKS)
+     if(NOT EXISTS ${MARL_BENCHMARK_DIR}/.git)

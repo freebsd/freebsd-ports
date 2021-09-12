@@ -1,0 +1,7 @@
+Marl is a C++11 library that provides a fluent interface for running tasks
+across a number of threads.
+
+Marl uses a combination of fibers and threads to allow efficient execution of
+tasks that can block, while keeping a fixed number of hardware threads.
+
+WWW: https://github.com/google/marl

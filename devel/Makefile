@@ -1514,6 +1514,7 @@
     SUBDIR += make++
     SUBDIR += makedepend
     SUBDIR += marisa-trie
+    SUBDIR += marl
     SUBDIR += mate-common
     SUBDIR += matreshka
     SUBDIR += maven
