@@ -3,7 +3,7 @@
 PORTNAME=	seqan-apps
 DISTVERSIONPREFIX=	seqan-v
 DISTVERSION=	2.4.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	biology
 
 MAINTAINER=	h2+fbsdports@fsfe.org
@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
-USES=		cmake compiler:openmp # once #199603 is resolved, add c++14-lang
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	seqan
 GH_PROJECT=	seqan

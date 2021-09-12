@@ -1,7 +1,7 @@
 PORTNAME=	tmv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.75
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	Fast, intuitive linear algebra library for C++
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/TMV_LICENSE
 
-USES=		compiler:openmp gmake blaslapack:netlib localbase
+USES=		gmake blaslapack:netlib localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	rmjarvis
 USE_LDCONFIG=	yes

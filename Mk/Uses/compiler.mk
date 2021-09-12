@@ -2,7 +2,7 @@
 #
 # Feature:	compiler
 # Usage:	USES=compiler or USES=compiler:ARGS
-# Valid ARGS:	env (default, implicit) c++0x c++11-lib c++11-lang c11 openmp nestedfct features
+# Valid ARGS:	env (default, implicit) c++0x c++11-lib c++11-lang c11 nestedfct features
 #
 # c++0x:	The port needs a compiler understanding C++0X
 # c++11-lang:	The port needs a compiler understanding C++11
@@ -11,7 +11,6 @@
 # gcc-c++11-lib:The port needs g++ compiler with a C++11 library
 # c++11-lib:	The port needs a compiler understanding C++11 and with a C++11 ready standard library
 # c11:		The port needs a compiler understanding C11
-# openmp:	The port needs a compiler understanding openmp
 # nestedfct:	The port needs a compiler understanding nested functions
 # features:	The port will determine the features supported by the default compiler
 #
@@ -34,7 +33,7 @@ _INCLUDE_USES_COMPILER_MK=	yes
 compiler_ARGS=	env
 .endif
 
-VALID_ARGS=	c++11-lib c++11-lang c++14-lang c++17-lang c11 features openmp env nestedfct c++0x gcc-c++11-lib
+VALID_ARGS=	c++11-lib c++11-lang c++14-lang c++17-lang c11 features env nestedfct c++0x gcc-c++11-lib
 
 _CC_hash:=	${CC:hash}
 _CXX_hash:=	${CXX:hash}
@@ -57,8 +56,6 @@ _COMPILER_ARGS+=	features c11
 _COMPILER_ARGS+=	features
 .elif ${compiler_ARGS} == env
 _COMPILER_ARGS+=	env
-.elif ${compiler_ARGS} == openmp
-_COMPILER_ARGS+=	env openmp
 .elif ${compiler_ARGS} == nestedfct
 _COMPILER_ARGS+=	env nestedfct
 .else
@@ -109,13 +106,6 @@ ALT_COMPILER_TYPE=	gcc
 .endif
 
 CHOSEN_COMPILER_TYPE=	${COMPILER_TYPE}
-
-.if ${_COMPILER_ARGS:Mopenmp}
-.if ${COMPILER_TYPE} == clang
-USE_GCC=	yes
-CHOSEN_COMPILER_TYPE=	gcc
-.endif
-.endif
 
 .if ${_COMPILER_ARGS:Mnestedfct}
 .if ${COMPILER_TYPE} == clang

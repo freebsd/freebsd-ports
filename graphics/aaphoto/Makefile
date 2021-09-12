@@ -3,7 +3,7 @@
 PORTNAME=	aaphoto
 PORTVERSION=	0.43.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 
 MAINTAINER=	mail@log69.com
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	log69
 
 GNU_CONFIGURE=	yes
-USES=		compiler:openmp jpeg
+USES=		jpeg
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -27,7 +27,7 @@ PLIST_FILES=	bin/aaphoto
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == amd64 || ${ARCH} == i386) && ${CHOSEN_COMPILER_TYPE} == gcc
+.if (${ARCH} == amd64 || ${ARCH} == i386)
 CFLAGS+=	-fopenmp -D__OPENMP__
 .endif
 
