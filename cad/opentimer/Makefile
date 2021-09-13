@@ -8,13 +8,17 @@ COMMENT=	High-performance timing analysis tool for VLSI systems
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++17-lang tcl
+USES=		cmake compiler:c++17-lang python:test shebangfix tcl
 USE_GCC=	yes # fails to build with clang-11: https://github.com/OpenTimer/OpenTimer/issues/48
+
+SHEBANG_FILES=	inttest/*.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenTimer
 GH_PROJECT=	OpenTimer
 GH_TAGNAME=	18d28ff
+
+TEST_TARGET=	test
 
 PLIST_FILES=	bin/ot-shell \
 		bin/ot-tau15 \
@@ -26,7 +30,7 @@ do-install: # see https://github.com/OpenTimer/OpenTimer/issues/47
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${e} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
-do-test: # runs the script suggested in https://github.com/OpenTimer/OpenTimer
+quick-test: # runs the script suggested in https://github.com/OpenTimer/OpenTimer
 	@cd ${WRKSRC} && \
 		bin/ot-shell < ${FILESDIR}/test.txt
 
