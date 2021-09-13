@@ -1,3 +1,47 @@
+  <vuln vid="93eb0e48-14ba-11ec-875e-901b0e9408dc">
+    <topic>Matrix clients -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cinny</name>
+	<range><lt>1.2.1</lt></range>
+      </package>
+      <package>
+	<name>element-web</name>
+	<range><lt>1.8.3</lt></range>
+      </package>
+      <package>
+	<name>nheko</name>
+	<range><le>0.8.2_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matrix developers report:</p>
+	<blockquote cite="https://matrix.org/blog/2021/09/13/vulnerability-disclosure-key-sharing">
+	  <p>Today we are disclosing a critical security issue affecting
+	  multiple Matrix clients and libraries including Element
+	  (Web/Desktop/Android), FluffyChat, Nheko, Cinny, and SchildiChat.</p>
+	  <p>Specifically, in certain circumstances it may be possible to
+	  trick vulnerable clients into disclosing encryption keys for
+	  messages previously sent by that client to user accounts later
+	  compromised by an attacker.</p>
+	  <p>Exploiting this vulnerability to read encrypted messages requires
+	  gaining control over the recipient’s account. This requires either
+	  compromising their credentials directly or compromising their homeserver.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-40823</cvename>
+      <cvename>CVE-2021-40824</cvename>
+      <url>https://matrix.org/blog/2021/09/13/vulnerability-disclosure-key-sharing</url>
+    </references>
+    <dates>
+      <discovery>2021-08-23</discovery>
+      <entry>2021-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="376df2f1-1295-11ec-859e-000c292ee6b8">
     <topic>consul -- rpc: authorize raft requests</topic>
     <affects>
