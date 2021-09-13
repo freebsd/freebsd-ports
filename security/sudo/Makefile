@@ -1,7 +1,7 @@
 # Created by: erich@rrnet.com
 
 PORTNAME=	sudo
-PORTVERSION=	1.9.7p2
+PORTVERSION=	1.9.8
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
