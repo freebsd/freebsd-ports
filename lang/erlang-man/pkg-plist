@@ -2,6 +2,7 @@ etc/man.d/erlang.conf
 lib/erlang/man/man1/cdv.1
 lib/erlang/man/man1/ct_run.1
 lib/erlang/man/man1/diameterc.1
+lib/erlang/man/man1/edoc.1
 lib/erlang/man/man1/epmd.1
 lib/erlang/man/man1/erl.1
 lib/erlang/man/man1/erl_call.1
@@ -12,6 +13,7 @@ lib/erlang/man/man1/run_erl.1
 lib/erlang/man/man1/snmpc.1
 lib/erlang/man/man1/start.1
 lib/erlang/man/man1/start_erl.1
+lib/erlang/man/man1/typer.1
 lib/erlang/man/man1/werl.1
 lib/erlang/man/man3/alarm_handler.3
 lib/erlang/man/man3/application.3
@@ -24,6 +26,9 @@ lib/erlang/man/man3/beam_lib.3
 lib/erlang/man/man3/binary.3
 lib/erlang/man/man3/c.3
 lib/erlang/man/man3/calendar.3
+lib/erlang/man/man3/cerl.3
+lib/erlang/man/man3/cerl_clauses.3
+lib/erlang/man/man3/cerl_trees.3
 lib/erlang/man/man3/code.3
 lib/erlang/man/man3/compile.3
 lib/erlang/man/man3/counters.3
@@ -43,6 +48,7 @@ lib/erlang/man/man3/ct_rpc.3
 lib/erlang/man/man3/ct_slave.3
 lib/erlang/man/man3/ct_snmp.3
 lib/erlang/man/man3/ct_ssh.3
+lib/erlang/man/man3/ct_suite.3
 lib/erlang/man/man3/ct_telnet.3
 lib/erlang/man/man3/ct_testspec.3
 lib/erlang/man/man3/dbg.3
@@ -65,12 +71,15 @@ lib/erlang/man/man3/driver_entry.3
 lib/erlang/man/man3/dyntrace.3
 lib/erlang/man/man3/edoc.3
 lib/erlang/man/man3/edoc_doclet.3
+lib/erlang/man/man3/edoc_doclet_chunks.3
 lib/erlang/man/man3/edoc_extract.3
 lib/erlang/man/man3/edoc_layout.3
+lib/erlang/man/man3/edoc_layout_chunks.3
 lib/erlang/man/man3/edoc_lib.3
 lib/erlang/man/man3/edoc_run.3
 lib/erlang/man/man3/ei.3
 lib/erlang/man/man3/ei_connect.3
+lib/erlang/man/man3/ei_global.3
 lib/erlang/man/man3/eldap.3
 lib/erlang/man/man3/epp.3
 lib/erlang/man/man3/epp_dodger.3
@@ -78,21 +87,15 @@ lib/erlang/man/man3/eprof.3
 lib/erlang/man/man3/erl_anno.3
 lib/erlang/man/man3/erl_boot_server.3
 lib/erlang/man/man3/erl_comment_scan.3
-lib/erlang/man/man3/erl_connect.3
 lib/erlang/man/man3/erl_ddll.3
 lib/erlang/man/man3/erl_driver.3
 lib/erlang/man/man3/erl_epmd.3
 lib/erlang/man/man3/erl_error.3
-lib/erlang/man/man3/erl_eterm.3
 lib/erlang/man/man3/erl_eval.3
 lib/erlang/man/man3/erl_expand_records.3
-lib/erlang/man/man3/erl_format.3
-lib/erlang/man/man3/erl_global.3
 lib/erlang/man/man3/erl_id_trans.3
 lib/erlang/man/man3/erl_internal.3
 lib/erlang/man/man3/erl_lint.3
-lib/erlang/man/man3/erl_malloc.3
-lib/erlang/man/man3/erl_marshal.3
 lib/erlang/man/man3/erl_nif.3
 lib/erlang/man/man3/erl_parse.3
 lib/erlang/man/man3/erl_pp.3
@@ -104,11 +107,11 @@ lib/erlang/man/man3/erl_scan.3
 lib/erlang/man/man3/erl_syntax.3
 lib/erlang/man/man3/erl_syntax_lib.3
 lib/erlang/man/man3/erl_tar.3
-lib/erlang/man/man3/erl_tidy.3
 lib/erlang/man/man3/erl_tracer.3
 lib/erlang/man/man3/erlang.3
 lib/erlang/man/man3/erlang_mode.3
 lib/erlang/man/man3/erlang_stub.3
+lib/erlang/man/man3/erpc.3
 lib/erlang/man/man3/error_handler.3
 lib/erlang/man/man3/error_logger.3
 lib/erlang/man/man3/erts_alloc.3
@@ -148,7 +151,6 @@ lib/erlang/man/man3/httpd_custom_api.3
 lib/erlang/man/man3/httpd_socket.3
 lib/erlang/man/man3/httpd_util.3
 lib/erlang/man/man3/i.3
-lib/erlang/man/man3/igor.3
 lib/erlang/man/man3/inet.3
 lib/erlang/man/man3/inet_res.3
 lib/erlang/man/man3/inets.3
@@ -158,6 +160,7 @@ lib/erlang/man/man3/instrument.3
 lib/erlang/man/man3/int.3
 lib/erlang/man/man3/io.3
 lib/erlang/man/man3/io_lib.3
+lib/erlang/man/man3/jinterface.3
 lib/erlang/man/man3/lcnt.3
 lib/erlang/man/man3/leex.3
 lib/erlang/man/man3/lists.3
@@ -194,6 +197,7 @@ lib/erlang/man/man3/mod_esi.3
 lib/erlang/man/man3/mod_security.3
 lib/erlang/man/man3/ms_transform.3
 lib/erlang/man/man3/msacc.3
+lib/erlang/man/man3/net.3
 lib/erlang/man/man3/net_adm.3
 lib/erlang/man/man3/net_kernel.3
 lib/erlang/man/man3/nteventlog.3
@@ -202,11 +206,9 @@ lib/erlang/man/man3/odbc.3
 lib/erlang/man/man3/orddict.3
 lib/erlang/man/man3/ordsets.3
 lib/erlang/man/man3/os.3
-lib/erlang/man/man3/os_mon_mib.3
 lib/erlang/man/man3/os_sup.3
-lib/erlang/man/man3/otp_mib.3
 lib/erlang/man/man3/persistent_term.3
-lib/erlang/man/man3/pg2.3
+lib/erlang/man/man3/pg.3
 lib/erlang/man/man3/pool.3
 lib/erlang/man/man3/prettypr.3
 lib/erlang/man/man3/proc_lib.3
@@ -218,7 +220,6 @@ lib/erlang/man/man3/rand.3
 lib/erlang/man/man3/random.3
 lib/erlang/man/man3/rb.3
 lib/erlang/man/man3/re.3
-lib/erlang/man/man3/registry.3
 lib/erlang/man/man3/release_handler.3
 lib/erlang/man/man3/reltool.3
 lib/erlang/man/man3/rpc.3
@@ -227,6 +228,7 @@ lib/erlang/man/man3/seq_trace.3
 lib/erlang/man/man3/sets.3
 lib/erlang/man/man3/shell.3
 lib/erlang/man/man3/shell_default.3
+lib/erlang/man/man3/shell_docs.3
 lib/erlang/man/man3/slave.3
 lib/erlang/man/man3/snmp.3
 lib/erlang/man/man3/snmp_community_mib.3
@@ -262,8 +264,10 @@ lib/erlang/man/man3/snmpm_mpd.3
 lib/erlang/man/man3/snmpm_network_interface.3
 lib/erlang/man/man3/snmpm_network_interface_filter.3
 lib/erlang/man/man3/snmpm_user.3
+lib/erlang/man/man3/socket.3
 lib/erlang/man/man3/sofs.3
 lib/erlang/man/man3/ssh.3
+lib/erlang/man/man3/ssh_agent.3
 lib/erlang/man/man3/ssh_client_channel.3
 lib/erlang/man/man3/ssh_client_key_api.3
 lib/erlang/man/man3/ssh_connection.3
@@ -286,7 +290,6 @@ lib/erlang/man/man3/tags.3
 lib/erlang/man/man3/tftp.3
 lib/erlang/man/man3/timer.3
 lib/erlang/man/man3/ttb.3
-lib/erlang/man/man3/typer.3
 lib/erlang/man/man3/unicode.3
 lib/erlang/man/man3/unix_telnet.3
 lib/erlang/man/man3/uri_string.3
@@ -309,6 +312,8 @@ lib/erlang/man/man3/wxAuiTabArt.3
 lib/erlang/man/man3/wxBitmap.3
 lib/erlang/man/man3/wxBitmapButton.3
 lib/erlang/man/man3/wxBitmapDataObject.3
+lib/erlang/man/man3/wxBookCtrlBase.3
+lib/erlang/man/man3/wxBookCtrlEvent.3
 lib/erlang/man/man3/wxBoxSizer.3
 lib/erlang/man/man3/wxBrush.3
 lib/erlang/man/man3/wxBufferedDC.3
@@ -368,11 +373,13 @@ lib/erlang/man/man3/wxFrame.3
 lib/erlang/man/man3/wxGBSizerItem.3
 lib/erlang/man/man3/wxGCDC.3
 lib/erlang/man/man3/wxGLCanvas.3
+lib/erlang/man/man3/wxGLContext.3
 lib/erlang/man/man3/wxGauge.3
 lib/erlang/man/man3/wxGenericDirCtrl.3
 lib/erlang/man/man3/wxGraphicsBrush.3
 lib/erlang/man/man3/wxGraphicsContext.3
 lib/erlang/man/man3/wxGraphicsFont.3
+lib/erlang/man/man3/wxGraphicsGradientStops.3
 lib/erlang/man/man3/wxGraphicsMatrix.3
 lib/erlang/man/man3/wxGraphicsObject.3
 lib/erlang/man/man3/wxGraphicsPath.3
@@ -437,7 +444,7 @@ lib/erlang/man/man3/wxMoveEvent.3
 lib/erlang/man/man3/wxMultiChoiceDialog.3
 lib/erlang/man/man3/wxNavigationKeyEvent.3
 lib/erlang/man/man3/wxNotebook.3
-lib/erlang/man/man3/wxNotebookEvent.3
+lib/erlang/man/man3/wxNotificationMessage.3
 lib/erlang/man/man3/wxNotifyEvent.3
 lib/erlang/man/man3/wxOverlay.3
 lib/erlang/man/man3/wxPageSetupDialog.3
@@ -516,6 +523,8 @@ lib/erlang/man/man3/wxTreeCtrl.3
 lib/erlang/man/man3/wxTreeEvent.3
 lib/erlang/man/man3/wxTreebook.3
 lib/erlang/man/man3/wxUpdateUIEvent.3
+lib/erlang/man/man3/wxWebView.3
+lib/erlang/man/man3/wxWebViewEvent.3
 lib/erlang/man/man3/wxWindow.3
 lib/erlang/man/man3/wxWindowCreateEvent.3
 lib/erlang/man/man3/wxWindowDC.3
@@ -542,6 +551,7 @@ lib/erlang/man/man4/diameter_dict.4
 lib/erlang/man/man4/rel.4
 lib/erlang/man/man4/relup.4
 lib/erlang/man/man4/script.4
+lib/erlang/man/man6/SSH.6
 lib/erlang/man/man6/common_test.6
 lib/erlang/man/man6/crypto.6
 lib/erlang/man/man6/erl_docgen.6
@@ -552,7 +562,6 @@ lib/erlang/man/man6/public_key.6
 lib/erlang/man/man6/runtime_tools.6
 lib/erlang/man/man6/sasl.6
 lib/erlang/man/man6/snmp.6
-lib/erlang/man/man6/ssh.6
 lib/erlang/man/man6/ssl.6
 lib/erlang/man/man6/stdlib.6
 lib/erlang/man/man7/INET-ADDRESS-MIB.7

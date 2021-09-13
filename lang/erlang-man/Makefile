@@ -1,6 +1,6 @@
 PORTNAME=	erlang
-PORTVERSION=	21.3
-PORTREVISION=	2
+PORTVERSION=	24.0
+PORTREVISION=	0
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/
 PKGNAMESUFFIX=	-man
