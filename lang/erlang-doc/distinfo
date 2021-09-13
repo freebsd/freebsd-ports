@@ -1,6 +1,6 @@
-TIMESTAMP = 1555197535
-SHA256 (erlang/otp_doc_html_21.3.tar.gz) = 258b1e0ed1d07abbf08938f62c845450e90a32ec542e94455e5d5b7c333da362
-SIZE (erlang/otp_doc_html_21.3.tar.gz) = 33069226
+TIMESTAMP = 1631539777
+SHA256 (erlang/otp_doc_html_24.0.tar.gz) = 6ceaa2cec97fa5a631779544a3c59afe9e146084e560725b823c476035716e73
+SIZE (erlang/otp_doc_html_24.0.tar.gz) = 39731398
 SHA256 (erlang/armstrong_thesis_2003.pdf) = da585b914eb07350e2d6f727db5eb0fb1551f49fc1270f7d4dc079f2c8c1ab7a
 SIZE (erlang/armstrong_thesis_2003.pdf) = 859249
 SHA256 (erlang/bjarnelic.pdf) = 9544d4af5cea324e5c9cf77e670d9561ad61ddc240cdb5c2afecebc0a3d7429b
