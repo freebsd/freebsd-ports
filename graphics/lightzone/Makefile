@@ -25,6 +25,7 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	jhindexer:java/javahelp
 
+BROKEN_aarch64=		fails to link: /usr/local/bin/ld: LC_JNIUtils.o: relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol
 BROKEN_armv6=		fails to compile: build.xml: exec returned: 1
 BROKEN_armv7=		fails to compile: build.xml: exec returned: 1
 
