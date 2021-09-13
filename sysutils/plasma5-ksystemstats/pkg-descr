@@ -1,0 +1,7 @@
+KSystemStats is a daemon that collects statistics about the running system.
+
+On FreeBSD, KSystemStats implements low-overhead sysctl-based
+monitoring for KDE Plasma applications that report on system resource
+usage (e.g. ksysguard and system-monitor and widgets).
+
+WWW: https://invent.kde.org/plasma/ksystemstats

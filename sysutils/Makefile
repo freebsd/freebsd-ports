@@ -967,6 +967,7 @@
     SUBDIR += plasma5-kinfocenter
     SUBDIR += plasma5-kmenuedit
     SUBDIR += plasma5-ksysguard
+    SUBDIR += plasma5-ksystemstats
     SUBDIR += plasma5-libksysguard
     SUBDIR += plasma5-plasma-disks
     SUBDIR += plasma5-plasma-systemmonitor

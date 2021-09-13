@@ -263,7 +263,7 @@ _USE_PLASMA_ALL=	activitymanagerd breeze breeze-gtk \
 			decoration discover drkonqi hotkeys \
 			infocenter kde-cli-tools kde-gtk-config \
 			kdeplasma-addons kgamma5 kmenuedit kscreen \
-			kscreenlocker ksshaskpass ksysguard kwallet-pam \
+			kscreenlocker ksshaskpass ksysguard ksystemstats kwallet-pam \
 			kwayland-integration kwin kwrited layer-shell-qt libkscreen \
 			libksysguard milou oxygen plasma-browser-integration \
 			plasma-desktop plasma-disks plasma-integration plasma-pa \
@@ -589,6 +589,9 @@ kde-ksshaskpass_PATH=		${KDE_PREFIX}/bin/ksshaskpass
 
 kde-ksysguard_PORT=		sysutils/plasma5-ksysguard
 kde-ksysguard_PATH=		${KDE_PREFIX}/bin/ksysguard
+
+kde-ksystemstats_PORT=		sysutils/plasma5-ksystemstats
+kde-ksysguard_PATH=		${KDE_PREFIX}/bin/ksystemstats
 
 kde-kwallet-pam_PORT=		security/plasma5-kwallet-pam
 kde-kwallet-pam_PATH=		${KDE_PREFIX}/lib/pam_kwallet5.so
