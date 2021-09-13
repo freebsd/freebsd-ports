@@ -1,11 +1,11 @@
 PORTNAME=	gamescope
-DISTVERSION=	3.9
+DISTVERSION=	3.9.1
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	98bc90ecf55c.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
-PATCHFILES+=	acc8a1bed4e8.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
-PATCHFILES+=	afa1c085ebbf.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
+PATCHFILES+=	63cd0609e14a.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
+PATCHFILES+=	80a01b036545.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
+PATCHFILES+=	b62b583e810a.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
 PATCHFILES+=	d59836199ebe.patch:-p1 # https://github.com/Plagman/gamescope/issues/120
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -32,7 +32,7 @@ USE_SDL=	sdl2
 USE_XORG=	x11 xcomposite xdamage xext xfixes xrender xres xtst xxf86vm
 GH_ACCOUNT=	Plagman
 GH_TUPLE=	emersion:libliftoff:v0.1.0-3-g516cf94:libliftoff/subprojects/libliftoff \
-		nothings:stb:c0c9826:stb/subprojects/stb
+		nothings:stb:af1a5bc:stb/subprojects/stb
 CPPFLAGS+=	-D_WITH_DPRINTF # XXX Remove after FreeBSD 11 EOL
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -60,5 +60,9 @@ USE_XORG+=	pixman xcb
 USE_GL+=	gbm egl
 GH_TUPLE+=	swaywm:wlroots:0.13.0:wlroots/subprojects/wlroots
 PLIST_FILES+=	"@comment libdata/pkgconfig/wlroots.pc"
+
+post-extract:
+# Merge patch_directory for subprojects without meson.build
+	@(cd ${WRKSRC}/subprojects/packagefiles && ${COPYTREE_SHARE} . ..)
 
 .include <bsd.port.mk>
