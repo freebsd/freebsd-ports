@@ -1,4 +1,4 @@
---- hls-test-utils/hls-test-utils.cabal.orig	2021-06-13 09:19:43 UTC
+--- hls-test-utils/hls-test-utils.cabal.orig	2021-09-15 07:36:17 UTC
 +++ hls-test-utils/hls-test-utils.cabal
 @@ -34,7 +34,6 @@ library
      , aeson
@@ -8,21 +8,15 @@
      , bytestring
      , containers
      , data-default
-@@ -44,17 +43,9 @@ library
+@@ -44,11 +43,8 @@ library
      , ghcide                  ^>=1.4
      , hls-graph
-     , hls-plugin-api          ^>=1.1
+     , hls-plugin-api          ^>=1.2
 -    , hspec                   <2.8
 -    , hspec-core
      , lens
      , lsp                     ^>=1.2
--    , lsp-test                ==0.14.0.0
-     , lsp-types               ^>=1.2
--    , tasty
--    , tasty-expected-failure
--    , tasty-golden
--    , tasty-hunit
--    , tasty-rerun
-     , temporary
-     , text
-     , unordered-containers
+-    , lsp-test                ^>=0.14
+     , lsp-types               >=1.2  && <1.4
+     , tasty
+     , tasty-expected-failure

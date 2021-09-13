@@ -1,8 +1,6 @@
 PORTNAME=	haskell-language-server
-DISTVERSION=	1.2.0
-PORTREVISION=	1
+DISTVERSION=	1.4.0
 CATEGORIES=	devel haskell
-EXTRACT_ONLY=	hsyl20-ghc-api-compat-8fee87eac97a538dbe81ff1ab18cff10f2f9fa15_GH0${EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	LSP provider implementation for Haskell language
@@ -15,18 +13,17 @@ USES=		cabal
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haskell
-GH_TUPLE=	hsyl20:ghc-api-compat:8fee87eac97a538dbe81ff1ab18cff10f2f9fa15:ghcapicompat
 
 USE_CABAL=	Diff-0.4.0 \
-		Glob-0.10.1 \
+		Glob-0.10.1_1 \
 		HsYAML-0.2.1.0_2 \
 		HsYAML-aeson-0.2.0.0_3 \
-		MonadRandom-0.5.2 \
+		MonadRandom-0.5.2_1 \
 		Only-0.1_1 \
 		QuickCheck-2.14.2 \
 		StateVar-1.2.1 \
 		adjunctions-4.4_2 \
-		aeson-1.5.6.0_1 \
+		aeson-1.5.6.0_2 \
 		aeson-pretty-0.8.8 \
 		alex-3.2.6 \
 		algebraic-graphs-0.5 \
@@ -35,6 +32,7 @@ USE_CABAL=	Diff-0.4.0 \
 		apply-refact-0.9.3.0 \
 		assoc-1.0.2_1 \
 		async-2.2.3 \
+		atomic-primops-0.8.4 \
 		attoparsec-0.13.2.5_1 \
 		base-compat-0.11.2 \
 		base-compat-batteries-0.11.2 \
@@ -51,16 +49,16 @@ USE_CABAL=	Diff-0.4.0 \
 		case-insensitive-1.2.1.0 \
 		clock-0.8.2 \
 		cmdargs-0.10.21 \
-		colour-2.3.5 \
-		comonad-5.0.8 \
+		colour-2.3.6 \
+		comonad-5.0.8_1 \
 		conduit-1.3.4.1 \
 		conduit-extra-1.3.5 \
 		constraints-0.12 \
-		constraints-extras-0.3.1.0 \
+		constraints-extras-0.3.1.0_1 \
 		contravariant-1.5.3 \
 		cpphs-1.20.9.1 \
-		cryptohash-md5-0.11.100.1_5 \
-		cryptohash-sha1-0.11.100.1_5 \
+		cryptohash-md5-0.11.100.1_6 \
+		cryptohash-sha1-0.11.100.1_6 \
 		czipwith-1.0.1.3 \
 		data-default-0.7.1.1 \
 		data-default-class-0.1.2.0 \
@@ -74,9 +72,9 @@ USE_CABAL=	Diff-0.4.0 \
 		dependent-sum-template-0.1.0.3 \
 		deque-0.4.3 \
 		direct-sqlite-2.3.26 \
-		distributive-0.6.2.1 \
+		distributive-0.6.2.1_1 \
 		dlist-1.0 \
-		entropy-0.4.1.6 \
+		entropy-0.4.1.6_1 \
 		extra-1.7.9 \
 		file-embed-0.0.13.0 \
 		filemanip-0.3.6.3 \
@@ -84,17 +82,18 @@ USE_CABAL=	Diff-0.4.0 \
 		fingertree-0.1.4.2 \
 		floskell-0.10.5 \
 		foldl-1.4.11 \
-		fourmolu-0.3.0.0_1 \
+		fourmolu-0.3.0.0_2 \
 		free-5.1.6 \
 		fuzzy-0.1.0.0 \
 		generic-lens-2.1.0.0 \
 		generic-lens-core-2.1.0.0 \
+		ghc-api-compat-8.10.7 \
 		ghc-check-0.5.0.5 \
 		ghc-exactprint-0.6.4 \
-		ghc-lib-parser-8.10.4.20210206 \
+		ghc-lib-parser-8.10.7.20210828 \
 		ghc-lib-parser-ex-8.10.0.19 \
 		ghc-paths-0.1.0.12_2 \
-		ghc-source-gen-0.4.0.0 \
+		ghc-source-gen-0.4.1.0 \
 		ghc-trace-events-0.1.2.2 \
 		githash-0.1.5.0 \
 		gitrev-1.3.1 \
@@ -106,28 +105,28 @@ USE_CABAL=	Diff-0.4.0 \
 		heaps-0.4 \
 		heapsize-0.3.0.1 \
 		hie-bios-0.7.5 \
-		hiedb-0.3.0.1 \
-		hlint-3.2.7 \
+		hiedb-0.4.0.0 \
+		hlint-3.2.7_1 \
 		hsc2hs-0.68.7_1 \
 		hscolour-1.24.4 \
-		hslogger-1.3.1.0_2 \
+		hslogger-1.3.1.0_3 \
 		hyphenation-0.8.2 \
-		implicit-hie-0.1.2.5 \
-		implicit-hie-cradle-0.3.0.2 \
+		implicit-hie-0.1.2.6 \
+		implicit-hie-cradle-0.3.0.5 \
 		indexed-profunctors-0.1 \
-		indexed-traversable-0.1.1 \
+		indexed-traversable-0.1.1_1 \
 		indexed-traversable-instances-0.1 \
 		integer-logarithms-1.0.3.1 \
 		invariant-0.5.4 \
 		js-dgtable-0.5.2 \
 		js-flot-0.8.3 \
 		js-jquery-3.3.1 \
-		kan-extensions-5.2.2 \
-		lens-5.0.1 \
+		kan-extensions-5.2.2_1 \
+		lens-5.0.1_2 \
 		libyaml-0.1.2 \
 		logict-0.7.0.3_1 \
-		lsp-1.2.0.0 \
-		lsp-types-1.2.0.0 \
+		lsp-1.2.0.1 \
+		lsp-types-1.3.0.1 \
 		lucid-2.9.12.1 \
 		math-functions-0.3.4.2 \
 		megaparsec-9.0.1_1 \
@@ -137,12 +136,12 @@ USE_CABAL=	Diff-0.4.0 \
 		monad-control-1.0.2.3 \
 		monad-dijkstra-0.1.1.3 \
 		monad-memo-0.5.3 \
-		mono-traversable-1.0.15.1 \
+		mono-traversable-1.0.15.1_1 \
 		monoid-subclasses-1.1 \
 		multistate-0.8.0.3 \
 		mwc-random-0.15.0.1_2 \
 		network-3.1.0.1 \
-		network-bsd-2.8.1.0_3 \
+		network-bsd-2.8.1.0_4 \
 		network-info-0.2.0.10_1 \
 		network-uri-2.6.4.1 \
 		old-locale-1.0.0.7_2 \
@@ -157,15 +156,15 @@ USE_CABAL=	Diff-0.4.0 \
 		prettyprinter-1.7.0 \
 		prettyprinter-ansi-terminal-1.1.2 \
 		primes-0.2.1.0 \
-		primitive-0.7.1.0_2 \
-		profunctors-5.6.2 \
+		primitive-0.7.1.0_3 \
+		profunctors-5.6.2_1 \
 		psqueues-0.2.7.2_1 \
-		random-1.2.0_5 \
+		random-1.2.0_6 \
 		random-shuffle-0.0.4 \
 		refact-0.3.0.2 \
-		refinery-0.3.0.0 \
+		refinery-0.4.0.0 \
 		reflection-2.1.6 \
-		regex-base-0.94.0.1 \
+		regex-base-0.94.0.1_1 \
 		regex-tdfa-1.3.1.0_2 \
 		resourcet-1.2.4.2 \
 		retrie-0.1.1.1 \
@@ -173,8 +172,8 @@ USE_CABAL=	Diff-0.4.0 \
 		safe-0.3.19 \
 		safe-exceptions-0.1.7.1 \
 		scientific-0.3.6.2 \
-		semigroupoids-5.3.5 \
-		semigroups-0.19.1 \
+		semigroupoids-5.3.5_1 \
+		semigroups-0.19.1_1 \
 		shake-0.19.4 \
 		some-1.0.2 \
 		sorted-list-0.2.1.0 \
@@ -182,25 +181,33 @@ USE_CABAL=	Diff-0.4.0 \
 		splitmix-0.1.0.3 \
 		sqlite-simple-0.4.18.0 \
 		streaming-commons-0.2.2.1 \
-		strict-0.4.0.1 \
+		strict-0.4.0.1_1 \
 		strict-list-0.1.5 \
 		stylish-haskell-0.12.2.0 \
 		syb-0.7.2.1 \
-		tagged-0.8.6.1 \
+		tagged-0.8.6.1_2 \
+		tasty-1.4.2 \
+		tasty-expected-failure-0.12.3 \
+		tasty-golden-2.3.4 \
+		tasty-hunit-0.10.0.3 \
+		tasty-rerun-1.1.18_2 \
 		temporary-1.3 \
-		th-abstraction-0.4.2.0 \
+		terminal-size-0.3.2.1 \
+		th-abstraction-0.4.2.0_1 \
 		th-compat-0.1.2 \
 		th-extras-0.0.0.4 \
-		these-1.1.1.1_1 \
+		these-1.1.1.1_2 \
 		time-compat-1.9.5_1 \
-		transformers-base-0.4.5.2 \
+		transformers-base-0.4.5.2_1 \
 		transformers-compat-0.6.6 \
 		type-equality-1_2 \
 		typed-process-0.2.6.0 \
+		unagi-chan-0.4.1.3 \
+		unbounded-delays-0.1.1.1 \
 		uniplate-1.6.13_1 \
 		unix-compat-0.5.3 \
 		unliftio-0.2.14 \
-		unliftio-core-0.2.0.1_1 \
+		unliftio-core-0.2.0.1_2 \
 		unordered-containers-0.2.13.0 \
 		unsafe-0.0 \
 		utf8-string-1.0.2 \
@@ -209,8 +216,9 @@ USE_CABAL=	Diff-0.4.0 \
 		vector-0.12.2.0 \
 		vector-algorithms-0.8.0.4_1 \
 		void-0.7.3 \
+		wcwidth-0.0.2 \
 		yaml-0.11.5.0 \
-		zlib-0.6.2.3
+		zlib-0.6.2.3_1
 
 SKIP_CABAL_PLIST=	yes
 CABAL_PROJECT=		append
@@ -222,10 +230,6 @@ NOT_FOR_ARCHS=		i386
 PLIST_FILES=		bin/${PORTNAME} \
 			bin/${PORTNAME}-8.10.7 \
 			bin/${PORTNAME}-wrapper
-
-post-extract:
-	${MV} ${WRKDIR}/ghc-api-compat-8fee87eac97a538dbe81ff1ab18cff10f2f9fa15 ${WRKSRC}/ghc-api-compat
-	${MV} ${WRKSRC}/stack-8.10.5.yaml ${WRKSRC}/stack-8.10.7.yaml
 
 do-build:
 	cd ${WRKSRC} && \
