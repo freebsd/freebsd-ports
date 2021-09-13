@@ -1,8 +1,8 @@
 bin/bear
 bin/citnames
 bin/intercept
-libexec/bear/libexec.so
-libexec/bear/wrapper
+lib/bear/libexec.so
+lib/bear/wrapper
 man/man1/bear.1.gz
 man/man1/citnames.1.gz
 man/man1/intercept.1.gz
@@ -11,4 +11,4 @@ man/man1/intercept.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-@dir libexec/bear/wrapper.d
+@dir lib/bear/wrapper.d

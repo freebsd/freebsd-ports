@@ -1,0 +1,11 @@
+--- source/config.h.in.orig	2021-09-17 02:20:21 UTC
++++ source/config.h.in
+@@ -132,7 +132,7 @@ namespace cmd {
+         // And use the `libexec.so` path default value with a single path,
+         // that matches both. (The match can be achieved by the $LIB token
+         // expansion from the dynamic loader. See `man ld.so` for more.)
+-        constexpr char DEFAULT_PATH[] = "@ROOT_INSTALL_PREFIX@/$LIB/bear/@CMAKE_SHARED_LIBRARY_PREFIX@exec@CMAKE_SHARED_LIBRARY_SUFFIX@";
++        constexpr char DEFAULT_PATH[] = "@ROOT_INSTALL_PREFIX@/lib/bear/@CMAKE_SHARED_LIBRARY_PREFIX@exec@CMAKE_SHARED_LIBRARY_SUFFIX@";
+ 
+         constexpr char KEY_REPORTER[] = "INTERCEPT_REPORT_COMMAND";
+         constexpr char KEY_DESTINATION[] = "INTERCEPT_REPORT_DESTINATION";

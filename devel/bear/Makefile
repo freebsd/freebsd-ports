@@ -1,7 +1,7 @@
 # Created by: Jov <amutu@amutu.com>
 
 PORTNAME=	bear
-DISTVERSION=	3.0.14
+DISTVERSION=	3.0.15
 CATEGORIES=	devel
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -22,7 +22,7 @@ USES=		cmake compiler:c++17-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	rizsotto
 GH_PROJECT=	Bear
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_DOCDIR=${DOCSDIR} \
 		-DENABLE_FUNC_TESTS=OFF \
@@ -42,7 +42,7 @@ pre-install:
 	${RM} -r ${STAGEDIR}/wrkdirs
 
 post-install:
-.for l in bin/citnames bin/intercept libexec/bear/libexec.so libexec/bear/wrapper
+.for l in bin/citnames bin/intercept lib/bear/libexec.so lib/bear/wrapper
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${l}
 .endfor
 
