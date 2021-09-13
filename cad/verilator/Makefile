@@ -11,7 +11,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	see https://github.com/verilator/verilator/issues/3037
 
-BUILD_DEPENDS=	autoconf>0:devel/autoconf
+BUILD_DEPENDS=	autoconf>0:devel/autoconf \
+		bash:shells/bash
 LIB_DEPENDS=	libsystemc.so:devel/systemc
 RUN_DEPENDS=	gmake:devel/gmake # verilator runs gmake for the --hierarchical option when the 'gmake' method is chosen
 
@@ -22,7 +23,7 @@ SHEBANG_FILES=	bin/verilator_ccache_report
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_SCRIPT}"
-#CONFIGURE_SHELL=	${LOCALBASE}/bin/bash # see https://github.com/verilator/verilator/issues/3132
+CONFIGURE_SHELL=	${LOCALBASE}/bin/bash # see https://github.com/verilator/verilator/issues/3132
 
 TEST_TARGET=	test
 
