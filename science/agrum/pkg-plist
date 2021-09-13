@@ -597,9 +597,9 @@ include/agrum/tools/database/DBTranslator4RangeVariable.h
 include/agrum/tools/database/DBTranslator4RangeVariable_tpl.h
 include/agrum/tools/database/DBTranslatorSet.h
 include/agrum/tools/database/DBTranslatorSet_tpl.h
-include/agrum/tools/database/DBTranslator_tpl.h
 include/agrum/tools/database/DBTranslatorUtils.h
 include/agrum/tools/database/DBTranslatorUtils_tpl.h
+include/agrum/tools/database/DBTranslator_tpl.h
 include/agrum/tools/database/IDBInitializer.h
 include/agrum/tools/database/IDBInitializer_tpl.h
 include/agrum/tools/database/IDatabaseTable.h
