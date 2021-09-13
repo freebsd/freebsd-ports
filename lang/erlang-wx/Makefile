@@ -1,7 +1,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	21.3.8.24
-PORTREVISION=	1
+DISTVERSION=	24.0.6
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	lang parallel
 PKGNAMESUFFIX=	-wx
@@ -12,8 +12,8 @@ COMMENT=	Erlang bindings for wxWindows
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	erlang>=21.3.8:lang/erlang
-RUN_DEPENDS=	erlang>=21.3.8:lang/erlang
+BUILD_DEPENDS=	erlang>=24.0:lang/erlang
+RUN_DEPENDS=	erlang>=24.0:lang/erlang
 
 USES=		autoreconf:build gl gmake perl5 xorg
 USE_GITHUB=	yes
@@ -24,18 +24,14 @@ USE_WX=		3.1+
 
 WX_COMPS=	wx
 
-GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
-
-WX_APPS=	wx debugger et observer
-
+GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-threads \
 			--with-wx-config=${WX_CONFIG} \
 			--without-javac \
 			--without-odbc
+MAKE_JOBS_UNSAFE=	yes
 
-pre-configure:
-	@cd ${WRKSRC} && ./otp_build autoconf
+WX_APPS=	wx debugger et observer
 
 do-build:
 .for app in wx debugger et observer
