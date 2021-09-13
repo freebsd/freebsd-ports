@@ -9,6 +9,8 @@ COMMENT=	Parallel TCP for pipe transport
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	ld: error: /usr/lib/dtrace/drti.o is incompatible with dtrace_viamillipede.o.xxx
+
 USES=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	agokhale
