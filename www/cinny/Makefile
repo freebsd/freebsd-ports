@@ -1,14 +1,16 @@
 PORTNAME=	cinny
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/ajbura/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
+MASTER_SITES=	https://distfiles.pirateparty.in/ashish/ \
+		LOCAL/ashish
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Yet another Matrix client for the web
 
 LICENSE=	MIT
 
+USES=		tar:xz
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
