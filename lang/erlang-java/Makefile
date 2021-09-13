@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	21.3.8.24
+DISTVERSION=	24.0.6
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-java
@@ -24,7 +24,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	APP_VERSION=${APP_VERSION}
 
-APP_VERSION=	1.9.1
+APP_VERSION=	1.12
 APP_DIR=	${PREFIX}/lib/erlang/lib/jinterface-${APP_VERSION}
 
 CONFIGURE_ARGS+=	--enable-threads \
@@ -37,7 +37,6 @@ pre-configure:
 	@if [ ! $$(${CAT} ${WRKSRC}/lib/jinterface/vsn.mk | ${GREP} -E "JINTERFACE_VSN *=" | ${CUT} -w -f3) = ${APP_VERSION} ]; then \
 		${ECHO_MSG} "===>  APP_VERSION (${APP_VERSION}) in Makefile does not match value in lib/jinterface/vsn.mk"; exit 1; \
 	fi
-	@cd ${WRKSRC} && ./otp_build autoconf
 
 do-build:
 	@${MKDIR} ${WRKSRC}/lib/jinterface/ebin
