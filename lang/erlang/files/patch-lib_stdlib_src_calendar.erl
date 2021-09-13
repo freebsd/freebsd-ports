@@ -1,6 +1,6 @@
---- lib/stdlib/src/calendar.erl.orig	2015-03-31 12:32:52 UTC
+--- lib/stdlib/src/calendar.erl.orig	2021-09-02 10:21:16 UTC
 +++ lib/stdlib/src/calendar.erl
-@@ -279,11 +279,19 @@ local_time_to_universal_time(DateTime, I
+@@ -297,11 +297,19 @@ local_time_to_universal_time(DateTime, IsDst) ->
        DateTime1 :: datetime1970(),
        DateTime :: datetime1970().
  local_time_to_universal_time_dst(DateTime) ->

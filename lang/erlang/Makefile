@@ -2,8 +2,8 @@
 
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	21.3.8.24
-PORTREVISION=	1
+DISTVERSION=	24.0.6
+PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	lang parallel java
 DIST_SUBDIR=	erlang
@@ -15,18 +15,23 @@ LICENSE=	APACHE20
 
 BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 
-USES=		autoreconf:build compiler:c11 cpe gmake ncurses perl5
+USES=		autoreconf:build cpe gmake ncurses perl5
+CPE_VENDOR=	erlang
+CPE_PRODUCT=	erlang/otp
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	erlang:otp,corba
 GH_PROJECT=	otp:otp corba:corba
-GH_TAGNAME=	4.5.2:corba
+GH_TAGNAME=	5.0.2:corba
 USE_PERL5=	build
 USE_RC_SUBR=	epmd
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-smp-support
+CONFIGURE_ARGS=	--enable-dirty-schedulers \
+		--enable-kernel-poll \
+		--enable-smp-support \
+		--enable-threads
+MAKE_ARGS=	all
 
-MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
@@ -34,67 +39,60 @@ SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
 WRKSRC=		${WRKSRC_otp}
 
 ERLANG_LIB=	${PORTNAME}
-EI_VSN=		3.11.3.2
-SNMP_VSN=	5.2.12
-TOOLS_VSN=	3.1.0.1
+EI_VSN=		5.0.1
+SNMP_VSN=	5.9.1
+TOOLS_VSN=	3.5
 
-# On Erlang 22, native code generation does not currently work for all modules
-# due to new BEAM instructions not supported by HiPE the native compiler.
-# Remove HIPE from OPTIONS_DEFAULT if this is still the case when the port is
-# upgraded to such version.
-
-OPTIONS_DEFINE=		CORBA DIRTY DTRACE FOP HIPE JAVA KQUEUE MANPAGES NATIVE \
-			ODBC OPENSSL PDF SCTP THREADS WX
-OPTIONS_DEFAULT=	CORBA DIRTY DTRACE HIPE KQUEUE MANPAGES OPENSSL SCTP \
-			THREADS
+OPTIONS_DEFINE=		CHUNKS CORBA DIRTY DTRACE FOP JAVA KQUEUE MANPAGES ODBC \
+			OPENSSL PDF SCTP SHARING WX
+OPTIONS_DEFAULT=	CHUNKS CORBA DIRTY DTRACE KQUEUE MANPAGES OPENSSL SCTP
 
 .if !exists(/usr/sbin/dtrace)
 OPTIONS_EXCLUDE+=	DTRACE
 .endif
 
-OPTIONS_EXCLUDE_DragonFly=	HIPE NATIVE SCTP
+OPTIONS_EXCLUDE_DragonFly=	SCTP
 # ld(1) fails to link probes: missing __dtrace_erlang___* symbols
+# see also https://reviews.freebsd.org/D22360
 OPTIONS_EXCLUDE_aarch64=	DTRACE
 OPTIONS_EXCLUDE_armv6=	DTRACE
 OPTIONS_EXCLUDE_armv7=	DTRACE
-OPTIONS_EXCLUDE_i386=	DTRACE HIPE NATIVE
-OPTIONS_EXCLUDE_powerpc64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}} HIPE
+OPTIONS_EXCLUDE_i386=	DTRACE
+OPTIONS_EXCLUDE_powerpc64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
 OPTIONS_EXCLUDE_powerpc64_11=	DTRACE
 OPTIONS_EXCLUDE_powerpc64_12=	DTRACE
-OPTIONS_EXCLUDE_powerpc64le=	HIPE
 OPTIONS_EXCLUDE_riscv64=	DTRACE
 OPTIONS_SUB=			yes
 
+CHUNKS_DESC=	Enable in-line documentation in Erlang console
 CORBA_DESC=	Enable Corba support
-DIRTY_DESC=	Enable Dirty schedulers
+DIRTY_DESC=	Enable dirty schedulers
 FOP_DESC=	Build full documentation with Apache FOP
-HIPE_DESC=	Build native HiPE compiler
 KQUEUE_DESC=	Enable Kernel Poll (kqueue) support
-NATIVE_DESC=	Enable native libraries
 PDF_DESC=	Build PDF documentation
 SCTP_DESC=	Enable SCTP support
+SHARING_DESC=	Enable term copy-and-share support
 WX_DESC=	Enable WX application
 
 # If you run Erlang and get a message resembling "WARNING: number of
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
 
-DIRTY_CONFIGURE_ENABLE=		dirty-schedulers
+CHUNKS_MAKE_ARGS+=		docs DOC_TARGETS=chunks
+DIRTY_CONFIGURE_WITH=		dirty-schedulers
 DTRACE_CONFIGURE_WITH=		dynamic-trace=dtrace
 DTRACE_CFLAGS=			-fno-omit-frame-pointer
 DTRACE_VARS=			STRIP=""
 FOP_PREVENTS=			MANPAGES
 FOP_BUILD_DEPENDS=		fop:textproc/fop \
 				xsltproc:textproc/libxslt
-HIPE_CONFIGURE_ENABLE=		hipe
 JAVA_CONFIGURE_WITH=		javac
 JAVA_CONFIGURE_ENV=		ac_cv_prog_JAVAC="${JAVAC}"
 JAVA_VARS=			USE_JAVA=yes
 KQUEUE_CONFIGURE_ENABLE=	kernel-poll
 MANPAGES_RUN_DEPENDS=		${LOCALBASE}/etc/man.d/erlang.conf:lang/erlang-man
-NATIVE_IMPLIES=			HIPE
-NATIVE_CONFIGURE_ENABLE=	native-libs
 ODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
+ODBC_USES=			localbase
 ODBC_CONFIGURE_WITH=		odbc
 ODBC_CFLAGS=			-I/usr/local/include
 ODBC_LDFLAGS=			-L/usr/local/lib
@@ -102,7 +100,7 @@ OPENSSL_USES=			ssl
 OPENSSL_CONFIGURE_WITH=		ssl=${OPENSSLBASE}
 PDF_IMPLIES=			FOP
 SCTP_CONFIGURE_ENABLE=		sctp
-THREADS_CONFIGURE_ENABLE=	threads
+SHARING_CONFIGURE_ENABLE=	sharing-preserving
 WX_USES=			gl
 WX_CONFIGURE_WITH=		wx-config=${WX_CONFIG}
 WX_VARS=			USE_GL="gl glu" \
@@ -133,7 +131,6 @@ pre-configure:
 	@if [ ! $$(${CAT} ${WRKSRC}/lib/snmp/vsn.mk | ${GREP} -E "SNMP_VSN *=" | ${CUT} -w -f3) = ${SNMP_VSN} ]; then \
 		${ECHO_MSG} "===>  SNMP_VSN (${SNMP_VSN}) in Makefile does not match value in lib/snmp/vsn.mk"; exit 1; \
 	fi
-	@cd ${WRKSRC} && ./otp_build autoconf
 
 pre-configure-WX-off:
 	echo "disabled by port options" > ${WRKSRC}/lib/debugger/SKIP
@@ -144,8 +141,8 @@ pre-configure-WX-off:
 post-configure-ODBC-on:
 	${RM} ${WRKSRC}/lib/odbc/SKIP
 
-pre-build-NATIVE-on:
-	@cd ${WRKSRC} && ${MAKE_CMD} clean
+post-configure-ODBC-off:
+	echo "disabled by port options" > ${WRKSRC}/lib/odbc/SKIP
 
 post-build-CORBA-on:
 	cd ${WRKSRC_corba} \
@@ -184,7 +181,7 @@ post-install-FOP-on:
 	${INSTALL_DATA} ${WRKDIR}/erlang.conf ${STAGEDIR}${PREFIX}/etc/man.d/erlang.conf
 	for SECTION in 1 3 4 6 7; do \
 		${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/man/man$${SECTION}; \
-	  	${FIND} ${WRKSRC}/erts ${WRKSRC}/lib -type f | ${GREP} doc/man$${SECTION} \
+		${FIND} ${WRKSRC}/erts ${WRKSRC}/lib -type f | ${GREP} doc/man$${SECTION} \
 			| ${XARGS} -J % ${CP} -v % ${STAGEDIR}${PREFIX}/lib/erlang/man/man$${SECTION}; \
 	done
 .if ${PORT_OPTIONS:MCORBA}
