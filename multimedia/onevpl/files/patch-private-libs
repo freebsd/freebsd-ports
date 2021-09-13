@@ -1,0 +1,13 @@
+Reduce overlinking when not using static library
+
+--- dispatcher/CMakeLists.txt.orig	2021-09-13 22:51:02 UTC
++++ dispatcher/CMakeLists.txt
+@@ -174,7 +174,7 @@ if(BUILD_DEV)
+   if(NOT MSVC)
+     set(CXX_LIB "-lstdc++")
+   endif()
+-  set(VPL_PKGCONFIG_DEPENDENT_LIBS
++  set(VPL_PKGCONFIG_PRIVATE_LIBS
+       "${DL_LIBS} ${CMAKE_THREAD_LIBS_INIT} ${MINGW_LIBS} ${CXX_LIB}")
+   configure_file("pkgconfig/vpl.pc.in" "pkgconfig/vpl.pc" @ONLY)
+   install(

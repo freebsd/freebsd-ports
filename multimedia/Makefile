@@ -287,6 +287,7 @@
     SUBDIR += ogmtools
     SUBDIR += olive
     SUBDIR += omxplayer
+    SUBDIR += onevpl
     SUBDIR += openh264
     SUBDIR += openshot
     SUBDIR += opentoonz

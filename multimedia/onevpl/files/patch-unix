@@ -1,0 +1,320 @@
+Relax Linux checks for the code works on any non-Windows platform.
+
+dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp:171:16: error: use of undeclared identifier 'MFX'
+    sts      = MFX::SelectImplementationType(adapterID, &implTest, &VendorID, &DeviceID, luid);
+               ^
+dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp:322:5: error: use of undeclared identifier 'strncpy_s'
+    strncpy_s(m_id.ImplName, sizeof(m_id.ImplName), strImplName, sizeof(strImplName));
+    ^
+dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp:323:5: error: use of undeclared identifier 'strncpy_s'
+    strncpy_s(m_id.License, sizeof(m_id.License), strLicense, sizeof(strLicense));
+    ^
+dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp:324:5: error: use of undeclared identifier 'strncpy_s'
+    strncpy_s(m_id.Keywords, sizeof(m_id.Keywords), strKeywords, sizeof(strKeywords));
+    ^
+dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp:339:28: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+    if (IsVersionSupported(MAKE_MFX_VERSION(1, 19), m_id.ApiVersion)) {
+                           ^~~~~~~~~~~~~~~~~~~~~~~
+dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared identifier 'MSDK_LIB_NAME'
+            if (libInfo->libNameFull.find(MSDK_LIB_NAME) != std::string::npos) {
+                                          ^
+
+--- api/vpl/mfxdefs.h.orig	2021-09-13 22:51:02 UTC
++++ api/vpl/mfxdefs.h
+@@ -64,7 +64,7 @@ extern "C"
+     #define MFX_PACK_BEGIN_STRUCT_W_PTR()    MFX_PACK_BEGIN_X(8)
+     #define MFX_PACK_BEGIN_STRUCT_W_L_TYPE() MFX_PACK_BEGIN_X(8)
+ /* 32-bit ILP32 data model Windows* (Intel(r) architecture) */
+-#elif defined(_WIN32) || defined(_M_IX86) && !defined(__linux__)
++#elif defined(_WIN32) || defined(_M_IX86) && !defined(__unix__)
+     #define MFX_PACK_BEGIN_STRUCT_W_PTR()    MFX_PACK_BEGIN_X(4)
+     #define MFX_PACK_BEGIN_STRUCT_W_L_TYPE() MFX_PACK_BEGIN_X(8)
+ /* 32-bit ILP32 data model Linux* */
+@@ -99,7 +99,7 @@ extern "C"
+        #define MFX_DEPRECATED __declspec(deprecated)
+        #define MFX_DEPRECATED_ENUM_FIELD_INSIDE(arg) arg
+        #define MFX_DEPRECATED_ENUM_FIELD_OUTSIDE(arg) __pragma(deprecated(arg))
+-     #elif defined(__linux__)
++     #elif defined(__unix__)
+        #define MFX_DEPRECATED __attribute__((deprecated))
+        #if defined(__cplusplus)
+          #define MFX_DEPRECATED_ENUM_FIELD_INSIDE(arg) arg __attribute__((deprecated))
+--- dispatcher/vpl/mfx_dispatcher_vpl.h.orig	2021-09-13 22:51:02 UTC
++++ dispatcher/vpl/mfx_dispatcher_vpl.h
+@@ -47,7 +47,7 @@ typedef char CHAR_TYPE;
+         // Windows x64
+         #define MSDK_LIB_NAME L"libmfxhw64."
+     #endif
+-#elif defined(__linux__)
++#elif defined(__unix__)
+     // Linux x64
+     #define MSDK_LIB_NAME "libmfxhw64."
+ #endif
+--- dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp.orig	2021-09-13 22:51:02 UTC
++++ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp
+@@ -400,7 +400,9 @@ mfxU32 LoaderCtxVPL::GetSearchPathsSystemDefault(std::
+ #ifdef __linux__
+     // Add the standard path for libmfx1 install in Ubuntu
+     searchDirs.push_back("/usr/lib/x86_64-linux-gnu");
++#endif
+ 
++#ifdef __unix__
+     // Add other default paths
+     searchDirs.push_back("/lib");
+     searchDirs.push_back("/usr/lib");
+@@ -1057,7 +1059,7 @@ mfxStatus LoaderCtxVPL::QueryLibraryCaps() {
+                 // update number of valid MSDK adapters
+                 numImplMSDK++;
+ 
+-#ifdef __linux__
++#ifdef __unix__
+                 // currently only one adapter on Linux (avoid multiple copies)
+                 break;
+ #endif
+--- dispatcher/vpl/mfx_dispatcher_vpl_lowlatency.cpp.orig	2021-09-13 22:51:02 UTC
++++ dispatcher/vpl/mfx_dispatcher_vpl_lowlatency.cpp
+@@ -18,7 +18,7 @@
+         #define LIB_ONEVPL L"libmfx64-gen.dll"
+         #define LIB_MSDK   L"libmfxhw64.dll"
+     #endif
+-#elif defined(__linux__)
++#elif defined(__unix__)
+     // Linux x64
+     #define LIB_ONEVPL "libmfx-gen.so.1.2"
+     #define LIB_MSDK   "libmfxhw64.so.1"
+--- dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp.orig	2021-09-13 22:51:02 UTC
++++ dispatcher/vpl/mfx_dispatcher_vpl_msdk.cpp
+@@ -10,7 +10,7 @@
+     #include "vpl/mfx_dispatcher_vpl_win.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <pthread.h>
+     #define strncpy_s(dst, size, src, cnt) strcpy((dst), (src)) // NOLINT
+ #endif
+@@ -155,7 +155,7 @@ mfxAccelerationMode LoaderCtxMSDK::CvtAccelType(mfxIMP
+ }
+ 
+ mfxStatus LoaderCtxMSDK::GetDefaultAccelType(mfxU32 adapterID, mfxIMPL *implDefault, mfxU64 *luid) {
+-#ifdef __linux__
++#ifdef __unix__
+     // VAAPI only
+     *implDefault = MFX_IMPL_VIA_VAAPI;
+     *luid        = 0;
+@@ -242,7 +242,7 @@ mfxStatus LoaderCtxMSDK::QueryMSDKCaps(STRING_TYPE lib
+ 
+     m_libNameFull = libNameFull;
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     // require pthreads to be linked in for MSDK RT to load
+     pthread_key_t pkey;
+     if (pthread_key_create(&pkey, NULL) == 0) {
+--- examples/coreAPI/legacy-decode/src/util.h.orig	2021-09-13 22:51:02 UTC
++++ examples/coreAPI/legacy-decode/src/util.h
+@@ -30,7 +30,7 @@ enum {
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+     #include <unistd.h>
+ #endif
+--- examples/coreAPI/legacy-encode/src/util.h.orig	2021-09-13 22:51:02 UTC
++++ examples/coreAPI/legacy-encode/src/util.h
+@@ -30,7 +30,7 @@ enum {
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+     #include <unistd.h>
+ #endif
+--- examples/coreAPI/legacy-vpp/src/util.h.orig	2021-09-13 22:51:02 UTC
++++ examples/coreAPI/legacy-vpp/src/util.h
+@@ -30,7 +30,7 @@ enum {
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+     #include <unistd.h>
+ #endif
+--- examples/hello/hello-createsession/src/util.h.orig	2021-09-13 22:51:02 UTC
++++ examples/hello/hello-createsession/src/util.h
+@@ -30,7 +30,7 @@ enum {
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+     #include <unistd.h>
+ #endif
+--- examples/hello/hello-decvpp/src/util.h.orig	2021-09-13 22:51:02 UTC
++++ examples/hello/hello-decvpp/src/util.h
+@@ -30,7 +30,7 @@ enum {
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+     #include <unistd.h>
+ #endif
+--- examples/hello/hello-transcode/src/util.h.orig	2021-09-13 22:51:02 UTC
++++ examples/hello/hello-transcode/src/util.h
+@@ -30,7 +30,7 @@ enum {
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+ #endif
+ 
+--- examples/interop/advanced-decvpp-infer/src/util.h.orig	2021-09-13 22:51:02 UTC
++++ examples/interop/advanced-decvpp-infer/src/util.h
+@@ -30,7 +30,7 @@ enum {
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+     #include <unistd.h>
+ #endif
+--- examples/interop/hello-decode-infer/src/util.h.orig	2021-09-13 22:51:02 UTC
++++ examples/interop/hello-decode-infer/src/util.h
+@@ -30,7 +30,7 @@ enum {
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+ #endif
+ 
+--- examples/interop/legacy-decode-infer/src/util.h.orig	2021-09-13 22:51:02 UTC
++++ examples/interop/legacy-decode-infer/src/util.h
+@@ -30,7 +30,7 @@ enum {
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+     #include <unistd.h>
+ #endif
+--- preview/cplusplus/examples/hello-decode-cpp/src/util.hpp.orig	2021-09-13 22:51:02 UTC
++++ preview/cplusplus/examples/hello-decode-cpp/src/util.hpp
+@@ -21,7 +21,7 @@
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+     #include <unistd.h>
+ #endif
+@@ -63,7 +63,7 @@ const struct {
+                 X = NULL;        \
+             }                    \
+         }
+-#elif defined(__linux__)
++#elif defined(__unix__)
+     #ifdef LIBVA_SUPPORT
+         #include "va/va.h"
+         #include "va/va_drm.h"
+--- preview/cplusplus/examples/hello-encode-cpp/src/util.hpp.orig	2021-09-13 22:51:02 UTC
++++ preview/cplusplus/examples/hello-encode-cpp/src/util.hpp
+@@ -21,7 +21,7 @@
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+     #include <unistd.h>
+ #endif
+@@ -63,7 +63,7 @@ const struct {
+                 X = NULL;        \
+             }                    \
+         }
+-#elif defined(__linux__)
++#elif defined(__unix__)
+     #ifdef LIBVA_SUPPORT
+         #include "va/va.h"
+         #include "va/va_drm.h"
+--- preview/python/binding/vpl_python.hpp.orig	2021-09-13 22:51:02 UTC
++++ preview/python/binding/vpl_python.hpp
+@@ -15,6 +15,6 @@
+ 
+ namespace py = pybind11;
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #define strncpy_s(dst, size, src, cnt) strncpy((dst), (src), cnt) // NOLINT
+ #endif
+--- tools/cli/decvpp_tool/util.hpp.orig	2021-09-13 22:51:02 UTC
++++ tools/cli/decvpp_tool/util.hpp
+@@ -31,7 +31,7 @@ enum {
+     #include "vpl/mfxdispatcher.h"
+ #endif
+ 
+-#ifdef __linux__
++#ifdef __unix__
+     #include <fcntl.h>
+     #include <unistd.h>
+ #endif
+@@ -62,7 +62,7 @@ const struct {
+                 X = NULL;        \
+             }                    \
+         }
+-#elif defined(__linux__)
++#elif defined(__unix__)
+     #ifdef LIBVA_SUPPORT
+         #include "va/va.h"
+         #include "va/va_drm.h"
+@@ -541,7 +541,7 @@ mfxStatus InitAcceleratorHandle(mfxSession session, in
+     if (sts != MFX_ERR_NONE)
+         return sts;
+ 
+-#if defined(__linux)
++#if defined(__unix)
+     #ifdef LIBVA_SUPPORT
+     if ((impl & MFX_IMPL_VIA_VAAPI) == MFX_IMPL_VIA_VAAPI) {
+         if (!fd)
+@@ -579,7 +579,7 @@ mfxStatus InitAcceleratorHandle(mfxSession session, in
+ }
+ 
+ void FreeAcceleratorHandle(void *accelHandle, int fd) {
+-#if defined(__linux)
++#if defined(__unix)
+     #ifdef LIBVA_SUPPORT
+     vaTerminate((VADisplay)accelHandle);
+     close(fd);
+--- tools/legacy/sample_encode/src/sample_encode.cpp.orig	2021-09-13 22:51:02 UTC
++++ tools/legacy/sample_encode/src/sample_encode.cpp
+@@ -53,7 +53,7 @@ void PrintHelp(msdk_char* strAppName, const msdk_char*
+ 
+     msdk_printf(MSDK_STRING("   If codecid is jpeg, -q option is mandatory.)\n"));
+     msdk_printf(MSDK_STRING("Options: \n"));
+-#if __linux__
++#if __unix__
+     msdk_printf(MSDK_STRING("   [-device /path/to/device] - set graphics device for processing\n"));
+     msdk_printf(
+         MSDK_STRING("                                 For example: '-device /dev/dri/card0'\n"));
+@@ -532,7 +532,7 @@ mfxStatus ParseInputString(msdk_char* strInput[], mfxU
+                 return MFX_ERR_UNSUPPORTED;
+             }
+         }
+-#if __linux__
++#if __unix__
+         else if (0 == msdk_strcmp(strInput[i], MSDK_STRING("-device"))) {
+             if (!pParams->strDevicePath.empty()) {
+                 msdk_printf(MSDK_STRING("error: you can specify only one device\n"));

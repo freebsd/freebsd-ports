@@ -1,0 +1,22 @@
+POSIX basename allows modifying the argument, so make a local copy
+
+tools/legacy/sample_common/src/vaapi_utils.cpp:30:28: error: no matching function for call to 'basename'
+        so_handle = dlopen(basename(name), RTLD_GLOBAL | RTLD_NOW);
+                           ^~~~~~~~
+/usr/include/libgen.h:39:7: note: candidate function not viable: 1st argument ('const char *') would lose const qualifier
+char    *basename(char *);
+         ^
+
+--- tools/legacy/sample_common/src/vaapi_utils.cpp.orig	2021-09-13 22:51:02 UTC
++++ tools/legacy/sample_common/src/vaapi_utils.cpp
+@@ -26,7 +26,9 @@ SimpleLoader::SimpleLoader(const char* name) {
+     dlerror();
+     so_handle = dlopen(name, RTLD_GLOBAL | RTLD_NOW);
+     if (NULL == so_handle) {
+-        so_handle = dlopen(basename(name), RTLD_GLOBAL | RTLD_NOW);
++        char dlname[PATH_MAX + 1];
++        strncpy(dlname, name, sizeof(dlname));
++        so_handle = dlopen(basename(dlname), RTLD_GLOBAL | RTLD_NOW);
+         if (NULL == so_handle) {
+             std::cerr << dlerror() << std::endl;
+             throw std::runtime_error("Can't load library");

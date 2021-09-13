@@ -1,0 +1,82 @@
+/sys/class/drm/renderD*/device/device is Linux-only, so use a BSD extension
+to get vendor/device identifiers from rendor nodes. Based on libdrm code.
+
+$ ffmpeg -hide_banner -init_hw_device qsv=auto -i foo.y4m -vf hwupload=extra_hw_frames=64,format=qsv -c:v h264_qsv -y foo.mkv
+[AVHWDeviceContext @ 0x8062d0140] Error initializing an MFX session: -3.
+Device creation failed: -1313558101.
+Failed to set value 'qsv=auto' for option 'init_hw_device': Unknown error occurred
+Error parsing global options: Unknown error occurred
+
+--- dispatcher/linux/device_ids.h.orig	2021-09-13 22:51:02 UTC
++++ dispatcher/linux/device_ids.h
+@@ -420,7 +420,62 @@ static inline eMFXHWType get_platform(unsigned int dev
+     return MFX_HW_UNKNOWN;
+ }
+ 
++#if defined(__DragonFly__) || defined(__FreeBSD__) || defined(__OpenBSD__)
++#if defined(__FreeBSD__) && __FreeBSD__ < 13
++#include <sys/sysctl.h>
++#else
++#include <sys/ioctl.h>
++#include <fcntl.h>
++#include <unistd.h>
++#endif // defined(__FreeBSD__) && __FreeBSD__ < 13
++
++struct drm_pciinfo {
++	uint16_t	domain;
++	uint8_t		bus;
++	uint8_t		dev;
++	uint8_t		func;
++	uint16_t	vendor_id;
++	uint16_t	device_id;
++	uint16_t	subvendor_id;
++	uint16_t	subdevice_id;
++	uint8_t		revision_id;
++};
++
++#define DRM_IOCTL_BASE		'd'
++#define DRM_IOR(nr,type)	_IOR(DRM_IOCTL_BASE,nr,type)
++#define DRM_IOCTL_GET_PCIINFO	DRM_IOR(0x15, struct drm_pciinfo)
++#endif
++
+ static mfxStatus get_devices(std::vector<Device> &allDevices) {
++#ifdef DRM_IOCTL_GET_PCIINFO
++    std::vector <Device> result;
++    for (int i = 0; i < 64; ++i) {
++#if defined(__FreeBSD__) && __FreeBSD__ < 13
++        std::string mib = "dev.drm." + std::to_string(128 + i) + ".PCI_ID";
++        char pci_id[20];
++        size_t len = sizeof(pci_id);
++        if (sysctlbyname(mib.c_str(), pci_id, &len, NULL, 0)) continue;
++        Device device;
++        sscanf(pci_id, "%x:%x", &device.vendor_id, &device.device_id);
++#else
++        std::string path = "/dev/dri/renderD" + std::to_string(128 + i);
++        int fd = open(path.c_str(), O_RDONLY);
++        if (fd == -1) continue;
++        struct drm_pciinfo pinfo;
++        if (ioctl(fd, DRM_IOCTL_GET_PCIINFO, &pinfo)) {
++            close(fd);
++            continue;
++        }
++        Device device = { .vendor_id = pinfo.vendor_id, .device_id = pinfo.device_id };
++        close(fd);
++#endif // defined(__FreeBSD__) && __FreeBSD__ < 13
++        if (device.vendor_id != 0x8086) {  // Filter out non-Intel devices
++            continue;
++        }
++        device.platform = get_platform(device.device_id);
++        allDevices.emplace_back(device);
++    }
++#else
+     const char *dir            = "/sys/class/drm";
+     const char *device_id_file = "/device/device";
+     const char *vendor_id_file = "/device/vendor";
+@@ -456,6 +511,7 @@ static mfxStatus get_devices(std::vector<Device> &allD
+ 
+         allDevices.emplace_back(device);
+     }
++#endif
+ 
+     // sort by device_id
+     std::sort(allDevices.begin(), allDevices.end(), [](const Device &a, const Device &b) {
