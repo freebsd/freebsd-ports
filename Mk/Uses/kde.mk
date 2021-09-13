@@ -591,7 +591,7 @@ kde-ksysguard_PORT=		sysutils/plasma5-ksysguard
 kde-ksysguard_PATH=		${KDE_PREFIX}/bin/ksysguard
 
 kde-ksystemstats_PORT=		sysutils/plasma5-ksystemstats
-kde-ksysguard_PATH=		${KDE_PREFIX}/bin/ksystemstats
+kde-ksystemstats_PATH=		${KDE_PREFIX}/bin/ksystemstats
 
 kde-kwallet-pam_PORT=		security/plasma5-kwallet-pam
 kde-kwallet-pam_PATH=		${KDE_PREFIX}/lib/pam_kwallet5.so
