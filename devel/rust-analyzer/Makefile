@@ -1,6 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2021-09-06
-PORTREVISION=	1
+DISTVERSION=	2021-09-13
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -31,10 +30,10 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		cargo_metadata-0.14.0 \
 		cc-1.0.70 \
 		cfg-if-1.0.0 \
-		chalk-derive-0.70.0 \
-		chalk-ir-0.70.0 \
-		chalk-recursive-0.70.0 \
-		chalk-solve-0.70.0 \
+		chalk-derive-0.71.0 \
+		chalk-ir-0.71.0 \
+		chalk-recursive-0.71.0 \
+		chalk-solve-0.71.0 \
 		countme-2.0.4 \
 		cov-mark-2.0.0-pre.1 \
 		crc32fast-1.2.1 \
@@ -105,7 +104,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		pin-project-lite-0.2.7 \
 		proc-macro2-1.0.29 \
 		pulldown-cmark-0.8.0 \
-		pulldown-cmark-to-cmark-6.0.2 \
+		pulldown-cmark-to-cmark-6.0.3 \
 		quote-1.0.9 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
@@ -148,7 +147,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		tracing-core-0.1.19 \
 		tracing-log-0.1.2 \
 		tracing-subscriber-0.2.20 \
-		tracing-tree-0.1.9 \
+		tracing-tree-0.1.10 \
 		ungrammar-1.14.4 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.6 \
@@ -165,8 +164,8 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		write-json-0.1.2 \
 		xflags-0.2.3 \
 		xflags-macros-0.2.3 \
-		xshell-0.1.15 \
-		xshell-macros-0.1.15
+		xshell-0.1.17 \
+		xshell-macros-0.1.17
 
 CARGO_INSTALL_PATH=	crates/rust-analyzer
 
