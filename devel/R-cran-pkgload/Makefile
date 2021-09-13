@@ -1,7 +1,7 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	pkgload
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -23,6 +23,6 @@ TEST_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp \
 		R-cran-pkgbuild>0:devel/R-cran-pkgbuild \
 		R-cran-testthat>0:devel/R-cran-testthat
 
-USES=		cran:auto-plist,compiles
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
