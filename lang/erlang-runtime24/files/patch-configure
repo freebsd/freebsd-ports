@@ -1,5 +1,5 @@
---- configure.src.orig	2021-05-27 09:36:50 UTC
-+++ configure.src
+--- configure.orig	2021-09-13 14:43:59 UTC
++++ configure
 @@ -55,7 +55,7 @@ skip_applications=
  while test $# != 0; do
      case $1 in
