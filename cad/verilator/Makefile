@@ -1,11 +1,7 @@
 PORTNAME=	verilator
-DISTVERSION=	4.210
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	4.212
 CATEGORIES=	cad
-MASTER_SITES=	https://www.veripool.org/ftp/
-
-PATCH_SITES=	https://github.com/verilator/verilator/commit/
-PATCHFILES=	9907d211ff5fa408a7eb6387ef0ceaedaeea2d32.patch:-p1 # backport of bug fix: https://github.com/verilator/verilator/commit/9907d211ff5fa408a7eb6387ef0ceaedaeea2d32
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Synthesizable Verilog to C++ compiler
@@ -15,15 +11,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	see https://github.com/verilator/verilator/issues/3037
 
+BUILD_DEPENDS=	autoconf>0:devel/autoconf
 LIB_DEPENDS=	libsystemc.so:devel/systemc
 RUN_DEPENDS=	gmake:devel/gmake # verilator runs gmake for the --hierarchical option when the 'gmake' method is chosen
 
 USES=		bison compiler:c++14-lang gmake localbase:ldflags pathfix perl5 python:build,run,test shebangfix tar:tgz
+USE_GITHUB=	yes
 
 SHEBANG_FILES=	bin/verilator_ccache_report
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_SCRIPT}"
+#CONFIGURE_SHELL=	${LOCALBASE}/bin/bash # see https://github.com/verilator/verilator/issues/3132
 
 TEST_TARGET=	test
 
@@ -41,6 +40,10 @@ LEAK_CHECKS_BROKEN=		compilation will be fixed in the next release
 post-patch:
 	${REINPLACE_CMD} -e 's|@pkgconfigdir@|${PREFIX}/libdata/pkgconfig|' \
 	    ${WRKSRC}/Makefile.in
+
+pre-configure:
+	cd ${WRKSRC} && \
+		autoconf
 
 post-build:
 	@${STRIP_CMD} ${WRKSRC}/bin/verilator_bin
