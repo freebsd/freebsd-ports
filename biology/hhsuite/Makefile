@@ -21,7 +21,9 @@ LDFLAGS+=	-Wl,-rpath,${LOCALBASE}/mpi/openmpi/lib -L${LOCALBASE}/mpi/openmpi/lib
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == aarch64
+CMAKE_ON=	HAVE_ARM8
+.elif ${ARCH} == amd64 || ${ARCH} == i386
 CMAKE_ON=	HAVE_SSE2
 .elif ${ARCH:Mpowerpc64*}
 CMAKE_ON=	HAVE_POWER8
