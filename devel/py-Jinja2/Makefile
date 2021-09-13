@@ -19,7 +19,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markupsafe>=0.23:textproc/py-markupsafe@${P
 
 NO_ARCH=	yes
 .if empty(PKGNAMESUFFIX)
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 .endif
 .if ${PKGNAMESUFFIX} == -doc
