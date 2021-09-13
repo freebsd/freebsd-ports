@@ -1,6 +1,6 @@
 PORTNAME=	zita-jclient
 DISTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
@@ -22,6 +22,11 @@ WRKSRC_SUBDIR=	source
 PLIST_FILES=	include/zita-jclient.h \
 		lib/libzita-jclient.so \
 		lib/libzita-jclient.so.${PORTVERSION}
+
+OPTIONS_DEFINE=	NATIVE
+
+NATIVE_DESC=		Build with native optimizations (-march=native)
+NATIVE_MAKE_ARGS=	FREEBSD_CXXFLAGS_EXTRA="-march=native"
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libzita-jclient.so.${PORTVERSION}
