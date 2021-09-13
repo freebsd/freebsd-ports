@@ -1,3 +1,3 @@
-TIMESTAMP = 1615950130
-SHA256 (jenkins-job-builder-3.9.0.tar.gz) = 4a53e146843d567c375c2e61e70a840d75a412402fd78c1dd3da5642a6aaa375
-SIZE (jenkins-job-builder-3.9.0.tar.gz) = 614067
+TIMESTAMP = 1629795293
+SHA256 (jenkins-job-builder-3.10.0.tar.gz) = f0c3fc607224c43aa33ec518bfa44e9ae4707063333e9b15091c3181add77585
+SIZE (jenkins-job-builder-3.10.0.tar.gz) = 629197
