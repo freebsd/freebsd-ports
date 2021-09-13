@@ -97,6 +97,9 @@
     SUBDIR += font-myricam
     SUBDIR += font-naga10
     SUBDIR += font-nasu
+    SUBDIR += font-plemoljp
+    SUBDIR += font-plemoljp-hs
+    SUBDIR += font-plemoljp-nf
     SUBDIR += font-ricty
     SUBDIR += font-ricty-discord
     SUBDIR += font-rounded-mgenplus
