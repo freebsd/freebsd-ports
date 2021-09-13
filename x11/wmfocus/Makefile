@@ -12,9 +12,9 @@ COMMENT=	Visually focus windows by label
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	libxkbcommon>0:x11/libxkbcommon
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libxcb-keysyms.so:x11/xcb-util-keysyms \
-		libxkbcommon.so:x11/libxkbcommon
+		libxcb-keysyms.so:x11/xcb-util-keysyms
 
 USES=		cargo gnome python:3.4+,build xorg
 USE_GITHUB=	yes
