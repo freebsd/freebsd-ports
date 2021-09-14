@@ -26,7 +26,7 @@ XZ_DESC=	XZ (LZMA2) compression support
 WRKSRC=		${WRKDIR}/${DISTNAME}/squashfs-tools
 
 CPE_PRODUCT=	squashfs
-CPE_VENDOR=	phillip_lougher
+CPE_VENDOR=	squashfs_project
 
 USE_CSTD=	gnu89
 
