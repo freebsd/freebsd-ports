@@ -11,7 +11,7 @@ COMMENT=	Go implementation of the Ethereum 2.0
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 BUILD_DEPENDS=	nasm>0:devel/nasm
 

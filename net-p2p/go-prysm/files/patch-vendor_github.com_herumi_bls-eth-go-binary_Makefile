@@ -1,0 +1,13 @@
+--- vendor/github.com/herumi/bls-eth-go-binary/Makefile.orig	2021-07-21 15:06:06.914104000 +0200
++++ vendor/github.com/herumi/bls-eth-go-binary/Makefile	2021-07-21 15:07:24.522733000 +0200
+@@ -35,6 +35,10 @@ endif
+ 
+ ifeq ($(CPU),aarch64)
+   _ARCH=arm64
++ifeq ($(OS),freebsd)
++  _OS=freebsd
++  MIN_CFLAGS+=-fPIC
++endif
+ ifeq ($(OS),Linux)
+   _OS=linux
+   MIN_CFLAGS+=-fPIC
