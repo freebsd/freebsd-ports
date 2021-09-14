@@ -1,8 +1,7 @@
 # Created by: Tony Shadwick <tshadwick@oss-solutions.com>
 
 PORTNAME=	htop
-DISTVERSION=	3.0.4
-PORTREVISION=	1
+DISTVERSION=	3.0.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	gaod@hychen.org
