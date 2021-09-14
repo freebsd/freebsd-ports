@@ -1,4 +1,5 @@
 bin/pluma
+include/pluma/pluma-app-activatable.h
 include/pluma/pluma-app.h
 include/pluma/pluma-commands.h
 include/pluma/pluma-debug.h
@@ -11,17 +12,16 @@ include/pluma/pluma-message-type.h
 include/pluma/pluma-message.h
 include/pluma/pluma-notebook.h
 include/pluma/pluma-panel.h
-include/pluma/pluma-prefs-manager-app.h
-include/pluma/pluma-prefs-manager.h
 include/pluma/pluma-progress-message-area.h
 include/pluma/pluma-status-combo-box.h
 include/pluma/pluma-statusbar.h
 include/pluma/pluma-tab.h
 include/pluma/pluma-utils.h
+include/pluma/pluma-view-activatable.h
 include/pluma/pluma-view.h
+include/pluma/pluma-window-activatable.h
 include/pluma/pluma-window.h
 lib/girepository-1.0/Pluma-1.0.typelib
-lib/pluma/plugins/changecase.plugin
 lib/pluma/plugins/docinfo.plugin
 lib/pluma/plugins/externaltools.plugin
 lib/pluma/plugins/externaltools/__init__.py
@@ -49,7 +49,6 @@ lib/pluma/plugins/externaltools/linkparsing.py
 lib/pluma/plugins/externaltools/manager.py
 lib/pluma/plugins/externaltools/outputpanel.py
 lib/pluma/plugins/filebrowser.plugin
-lib/pluma/plugins/libchangecase.so
 lib/pluma/plugins/libdocinfo.so
 lib/pluma/plugins/libfilebrowser.so
 lib/pluma/plugins/libmodelines.so
