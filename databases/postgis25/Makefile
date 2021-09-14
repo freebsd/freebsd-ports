@@ -2,7 +2,7 @@
 
 PORTNAME=	postgis
 PORTVERSION=	2.5.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases geography
 MASTER_SITES=	https://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	25

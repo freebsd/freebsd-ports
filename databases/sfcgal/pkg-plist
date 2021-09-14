@@ -61,7 +61,6 @@ include/SFCGAL/detail/ForceValidityVisitor.h
 include/SFCGAL/detail/GeometrySet.h
 include/SFCGAL/detail/GetPointsVisitor.h
 include/SFCGAL/detail/Interval.h
-include/SFCGAL/detail/Point_inside_polyhedron.h
 include/SFCGAL/detail/TestGeometry.h
 include/SFCGAL/detail/TypeForDimension.h
 include/SFCGAL/detail/algorithm/coversPoints.h
