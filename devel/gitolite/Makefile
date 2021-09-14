@@ -14,7 +14,6 @@ RUN_DEPENDS=	git>=0:devel/git \
 		p5-JSON>=0:converters/p5-JSON
 
 USES=		cpe perl5 shebangfix
-CPE_VENDOR=	sitaram_chamarty
 USE_GITHUB=	yes
 GH_ACCOUNT=	sitaramc
 
