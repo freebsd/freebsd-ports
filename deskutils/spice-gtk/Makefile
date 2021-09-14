@@ -24,7 +24,7 @@ USE_XORG=	pixman x11
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 intltool introspection:build
 USE_GSTREAMER1=	yes
 
-CPE_VENDOR=	redhat
+CPE_VENDOR=	spice-gtk_project
 
 SPICE_SSL_CFLAGS=	-I${OPENSSLINC}
 SPICE_SSL_LIBS=		-L${OPENSSLLIB} -lcrypto -lssl
