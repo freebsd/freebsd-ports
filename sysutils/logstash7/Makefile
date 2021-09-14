@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USES=		cpe shebangfix
 
-CPE_VENDOR=	elasticsearch
+CPE_VENDOR=	elastic
 USE_JAVA=	yes
 JAVA_VERSION=	8+
 JAVA_RUN=	yes
