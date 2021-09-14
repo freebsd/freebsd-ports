@@ -19,7 +19,7 @@ LIB_DEPENDS=		libgd.so:graphics/gd \
 
 USES=			compiler:c++11-lang cpe cmake gnome jpeg \
 			localbase:ldflags
-CPE_VENDOR=		umn
+CPE_VENDOR=		osgeo
 LDFLAGS+=		-pthread
 CMAKE_ARGS+=		-DCMAKE_PREFIX_PATH=${LOCALBASE} \
 			-DCMAKE_INSTALL_PREFIX=${PREFIX} \
