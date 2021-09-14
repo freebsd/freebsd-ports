@@ -8,6 +8,8 @@ COMMENT=	Erlang project focused on all aspects of reusable components
 
 LICENSE=	MIT
 
+BROKEN=		ambiguous call of overridden auto-imported BIF error/3
+
 USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	erlware
