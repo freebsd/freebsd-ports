@@ -20,8 +20,6 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 USES=		alias cmake compiler:c++11-lib cpe gettext gnome localbase pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 
-CPE_VENDOR=	freerdp_project
-
 PATCHVERSION=	${PORTVERSION}
 MAJORVERSION=	${PORTVERSION:R:R}
 
