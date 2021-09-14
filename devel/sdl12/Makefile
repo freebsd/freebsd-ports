@@ -19,6 +19,7 @@ BUILD_DEPENDS=	nasm:devel/nasm
 USES=		cpe gmake iconv libtool localbase:ldflags pathfix pkgconfig
 
 CPE_VENDOR=	libsdl
+CPE_PRODUCT=	simple_directmedia_layer
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
