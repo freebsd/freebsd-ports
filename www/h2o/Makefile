@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 USE_PERL5=	run
 USE_LDCONFIG=  yes
 
-CPE_VENDOR=	h2o_project
+CPE_VENDOR=	dena
 
 CONFLICTS=	h2o-devel-*
 
