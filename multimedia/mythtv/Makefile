@@ -13,7 +13,7 @@ COMMENT?=	Homebrew PVR project
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 .if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
 BROKEN_i386=	ld: error: can't create dynamic relocation R_386_32 against local symbol in readonly segment
 .endif
@@ -60,6 +60,7 @@ NOPRECIOUSMAKEVARS=	# don't override ARCH in ffmpeg makefiles
 DESTDIRNAME=	INSTALL_ROOT
 CPPFLAGS+=	${QTCPPFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS_aarch64=-Wl,-z,notext
 
 REINPLACE_ARGS=	-i ""
 WRKSRC_SUBDIR=	${PORTNAME}
