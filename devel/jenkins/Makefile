@@ -13,7 +13,6 @@ COMMENT=	Open-source continuous integration server
 LICENSE=	MIT
 
 USES=		cpe
-CPE_VENDOR=	cloudbees
 USE_JAVA=	yes
 USE_RC_SUBR=	jenkins
 
