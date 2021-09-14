@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gmake libtool localbase pathfix pkgconfig tar:xz
 
-CPE_VENDOR=	curtis_galloway
+CPE_VENDOR=	libexif_project
 
 CONFIGURE_ARGS=	--disable-docs
 GNU_CONFIGURE=	yes
