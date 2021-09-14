@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${PATCH_WRKSRC}/LICENCE
 
 USES=		cpe gmake pkgconfig
-CPE_VENDOR=	simon_tatham
 
 MAKEFILE=	Makefile.gtk
 MAKE_ARGS+=	"prefix=${PREFIX}"
