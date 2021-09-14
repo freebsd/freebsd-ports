@@ -13,8 +13,7 @@ LICENSE=	MIT
 USES=		cpe xorg xorg-cat:lib
 USE_XORG=	x11 xext xfixes xorgproto
 INSTALL_TARGET=	install-strip
-CPE_PRODUCT=	libxi
-CPE_VENDOR=	x
+CPE_VENDOR=	x.org
 
 CONFIGURE_ARGS+=--disable-docs \
 		--disable-specs \
