@@ -19,6 +19,8 @@ USES=		compiler:c11 cpe tar:xz gmake perl5
 USE_PERL5=	build
 MAKE_ARGS+=	INSTALLROOT=${STAGEDIR}
 INSTALL_TARGET=	install #needed for RDOFF_INSTALL_TARGET
+CPE_VENDOR=	nasm
+CPE_PRODUCT=	netwide_assembler
 
 OPTIONS_DEFINE=	RDOFF DOCS
 OPTIONS_SUB=	yes
