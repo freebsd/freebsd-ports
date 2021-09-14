@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe iconv
 
+CPE_VENDOR=	cabextract_project
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/cabextract \
