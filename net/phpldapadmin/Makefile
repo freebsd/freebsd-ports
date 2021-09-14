@@ -19,7 +19,7 @@ GH_PROJECT=	phpLDAPadmin
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-CPE_VENDOR=	deon_george
+CPE_VENDOR=	phpldapadmin_project
 
 OPTIONS_DEFINE=	MCRYPT
 
