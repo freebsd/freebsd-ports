@@ -71,13 +71,18 @@ post-patch:
 	${REINPLACE_CMD} -e "s|-llzma|${LIBLZMA_LIBS}|g" ${WRKSRC}/auto.def \
 		${WRKSRC}/src/Makefile.autosetup ${WRKSRC}/tests/Makefile.autosetup
 
+.if ${PORT_OPTIONS:MSAN}
+post-build:
+	@(cd ${WRKSRC}/src && \
+		${LN} -fs pkg pkg-static)
+.endif
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}/NEWS
 .if ${PORT_OPTIONS:MSAN}
-	@(cd ${STAGEDIR}${PREFIX}/sbin/ && \
-		${LN} -fs pkg pkg-static)
+	@${CP} ${STAGEDIR}${PREFIX}/sbin/pkg ${STAGEDIR}${PREFIX}/sbin/pkg-static
 .endif
 
 .include <bsd.port.post.mk>
