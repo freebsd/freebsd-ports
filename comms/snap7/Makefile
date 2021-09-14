@@ -12,8 +12,6 @@ COMMENT=	Multi-platform Ethernet S7 PLC communication suite
 
 LICENSE=	GPLv3
 
-ONLY_FOR_ARCHS=	amd64 armv6 i386 mips powerpc64 powerpc64le powerpc
-
 USES=		gmake
 USE_LDCONFIG=	yes
 
