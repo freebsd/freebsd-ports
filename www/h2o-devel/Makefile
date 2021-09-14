@@ -20,7 +20,7 @@ BROKEN_FreeBSD_12_powerpc64=	fails to link on powerpc64 elfv1: unrecognized opti
 LIB_DEPENDS=	libuv.so:devel/libuv
 
 USES=		cmake:noninja compiler:c11 cpe perl5 shebangfix ssl pkgconfig
-CPE_VENDOR=	h2o_project
+CPE_VENDOR=	dena
 USE_GITHUB=	yes
 USE_PERL5=	run
 USE_LDCONFIG=	yes
