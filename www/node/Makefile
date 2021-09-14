@@ -1,6 +1,6 @@
 PORTNAME=	node
 DISTVERSIONPREFIX=	v
-DISTVERSION=	16.9.0
+DISTVERSION=	16.9.1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${DISTVERSION}/
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_SSL=		libressl libressl-devel
-BROKEN_SSL_REASON=	Node.js 15.x requires OpenSSL 1.1.x or the BUNDLED_SSL option enabled
+BROKEN_SSL_REASON=	Node.js 16.x requires OpenSSL 1.1.x or the BUNDLED_SSL option enabled
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
 USES=		compiler:c++11-lib gmake python:3.6-3.9,build pkgconfig \
@@ -70,7 +70,7 @@ MAKE_ENV+=	CC.host=${CC} CFLAGS.host="${CFLAGS}" \
 
 BUILD_DEPENDS+=	brotli>=1.0.9,1:archivers/brotli \
 		c-ares>=1.17.1:dns/c-ares \
-		libuv>=1.41.0:devel/libuv \
+		libuv>=1.42.0:devel/libuv \
 		libnghttp2>=1.42.0:www/libnghttp2 \
 		objdump:devel/binutils
 LIB_DEPENDS+=	libbrotlidec.so:archivers/brotli \
