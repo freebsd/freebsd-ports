@@ -9,6 +9,8 @@ COMMENT=	Configuration library for Erlang
 
 LICENSE=	APACHE20
 
+BROKEN=		does not build with Erlang 24
+
 USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	basho
