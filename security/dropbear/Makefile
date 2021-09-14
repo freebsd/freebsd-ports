@@ -12,8 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe gmake tar:bzip2
-CPE_VENDOR=	matt_johnston
-CPE_PRODUCT=	dropbear_ssh_server
+CPE_VENDOR=	dropbear_ssh_project
+CPE_PRODUCT=	dropbear_ssh
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
