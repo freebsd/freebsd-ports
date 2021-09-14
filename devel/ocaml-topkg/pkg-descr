@@ -1,0 +1,6 @@
+Topkg is a packager for distributing OCaml software.  It provides an API
+to describe the files a package installs in a given build configuration
+and to specify information about the package's distribution, creation,
+and publication procedures.
+
+WWW: https://erratique.ch/software/topkg
