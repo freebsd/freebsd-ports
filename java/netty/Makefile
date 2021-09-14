@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		cpe tar:bzip2
 USE_JAVA=	yes
 
-CPE_VENDOR=	netty_project
 JAVA_VERSION=	8+
 JAVA_EXTRACT=	yes
 NO_ARCH=	yes
