@@ -75,5 +75,9 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}/NEWS
+.if ${PORT_OPTIONS:MSAN}
+	@(cd ${STAGEDIR}${PREFIX}/sbin/ && \
+		${LN} -fs pkg pkg-static)
+.endif
 
 .include <bsd.port.post.mk>
