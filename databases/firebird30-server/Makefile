@@ -27,6 +27,7 @@ USES=		cpe gmake pkgconfig localbase:ldflags libedit tar:bzip2
 USE_CXXSTD=	gnu++03
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
+CPE_VENDOR=	firebirdsql
 
 CONFIGURE_ARGS=	--prefix=${LOCALSTATEDIR} \
 		--exec-prefix=${PREFIX} \
