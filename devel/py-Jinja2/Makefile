@@ -1,7 +1,7 @@
 # Created by: Nicola Vitale <nivit@FreeBSD.org>
 
 PORTNAME=	Jinja2
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -14,8 +14,8 @@ COMMENT?=	Fast and easy to use stand-alone template engine
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markupsafe>=0.23:textproc/py-markupsafe@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markupsafe>=0.23:textproc/py-markupsafe@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markupsafe>=2.0.0:textproc/py-markupsafe@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markupsafe>=2.0.0:textproc/py-markupsafe@${PY_FLAVOR}
 
 NO_ARCH=	yes
 .if empty(PKGNAMESUFFIX)
@@ -33,10 +33,7 @@ OPTIONS_DEFINE?=	BABEL EXAMPLES
 OPTIONS_DEFAULT?=	BABEL
 BABEL_DESC=		Enable Babel extension
 
-BABEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR}
-
-PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
-PY2TO3_ARGS=	--fix=all --no-diffs --nobackups --verbose --write
+BABEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.7:devel/py-babel@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
@@ -62,9 +59,6 @@ do-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	*
 post-build:
-.	if ${PYTHON_REL} >= 30000
-	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/examples
-.	endif
 	${PYTHON_CMD} -m compileall ${WRKSRC}/examples ; \
 	${PYTHON_CMD} -O -m compileall ${WRKSRC}/examples
 
