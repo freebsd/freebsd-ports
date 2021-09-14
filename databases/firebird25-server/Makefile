@@ -24,6 +24,7 @@ USES=		cpe gmake pkgconfig tar:bzip2
 USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
+CPE_VENDOR=	firebirdsql
 
 CONFIGURE_ARGS=	--with-system-icu \
 		--prefix=${LOCALSTATEDIR} \
