@@ -1,7 +1,7 @@
 # Created by: Denis Shaposhnikov <dsh@vlink.ru>
 
 PORTNAME=	decorator
-PORTVERSION=	5.0.9
+PORTVERSION=	5.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
