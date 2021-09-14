@@ -1,5 +1,5 @@
 PORTNAME=	freebsd-sysroot
-DISTVERSION=	a2021-09-12
+DISTVERSION=	a2021-09-14
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/tobik:${FLAVOR} \
 		${_SYSROOT_DIST:@f@https://download.freebsd.org/ftp/$f?dummy=/:${FLAVOR}@}
@@ -81,8 +81,8 @@ _SYSROOT_ARCH_powerpc64_elfv1=		powerpc64
 _SYSROOT_ARCH_powerpc64_elfv2=		powerpc64
 _SYSROOT_LLVM_TRIPLE=			${_SYSROOT_LLVM_TRIPLE_${FLAVOR}:U${_SYSROOT_ARCH_${FLAVOR}:U${FLAVOR}}-unknown-${OPSYS:tl}}
 _SYSROOT_LLVM_TRIPLE_aarch64=		aarch64-unknown-freebsd12.0
-_SYSROOT_LLVM_TRIPLE_armv6=		armv6-gnueabihf-freebsd
-_SYSROOT_LLVM_TRIPLE_armv7=		armv7-gnueabihf-freebsd
+_SYSROOT_LLVM_TRIPLE_armv6=		armv6-unknown-freebsd12.2-gnueabihf
+_SYSROOT_LLVM_TRIPLE_armv7=		armv7-unknown-freebsd12.2-gnueabihf
 _SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd13.0 # secure-plt
 
 .if make(distclean) || make(makesum)
