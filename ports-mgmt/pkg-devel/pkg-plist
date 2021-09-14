@@ -1,6 +1,7 @@
 etc/bash_completion.d/_pkg.bash
 etc/periodic/daily/411.pkg-backup
 etc/periodic/daily/490.status-pkg-changes
+etc/periodic/security/405.pkg-base-audit
 etc/periodic/security/410.pkg-audit
 etc/periodic/security/460.pkg-checksum
 etc/periodic/weekly/400.status-pkg
