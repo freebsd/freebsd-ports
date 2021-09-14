@@ -687,11 +687,6 @@ CARGO_ENV+=		RUSTC_BOOTSTRAP=1
 # XXX https://github.com/rust-lang/cargo/issues/4101
 CARGO_INSTALL_PATH=	server-cli voxygen
 
-post-extract:
-# XXX GitLab failed to export some LFS objects
-	@${CP} ${FILESDIR}/open.png ${WRKSRC}/assets/voxygen/element/ui/generic/buttons/bag/
-	@${CP} ${FILESDIR}/press.png ${WRKSRC}/assets/voxygen/element/ui/generic/buttons/checkbox/
-
 post-patch:
 # .git/ directory is missing, so don't abort if git binary is also missing
 	@${REINPLACE_CMD} -e 's/"git"/"${TRUE}"/' \
