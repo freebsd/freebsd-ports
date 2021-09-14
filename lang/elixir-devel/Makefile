@@ -3,9 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.12.3
 CATEGORIES=	lang
 MASTER_SITES+=	https://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/:doc
+PKGNAMESUFFIX=	-devel
 DISTFILES=	Docs.zip:doc
 DIST_SUBDIR=	elixir/${PORTVERSION}
-PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Functional, meta-programming aware language built on top of Erlang VM
@@ -20,17 +20,19 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
 
+USE_LOCALE=	en_US.UTF-8
+ALL_TARGET=	# empty
+
 CONFLICTS=	elixir
 
-USE_LOCALE=		en_US.UTF-8
-ALL_TARGET=		# empty
-REINPLACE_ARGS=		-i ""
-NO_ARCH=		yes
-OPTIONS_SUB=		yes
-MAKE_ENV+=		MAN_PREFIX=${PREFIX}/man \
-			PATH="${LOCALBASE}/lib/erlang${ERLANG_VER}/bin:${PATH}"
+REINPLACE_ARGS=	-i ""
+NO_ARCH=	yes
+MAKE_ENV+=	MAN_PREFIX=${PREFIX}/man \
+		PATH="${LOCALBASE}/lib/erlang${ERLANG_VER}/bin:${PATH}"
+
 OPTIONS_DEFINE=		DOCS SRC
 OPTIONS_DEFAULT=	DOCS SRC
+OPTIONS_SUB=		yes
 
 SRC_DESC=	Install source code
 
