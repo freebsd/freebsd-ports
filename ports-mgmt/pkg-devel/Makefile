@@ -25,13 +25,18 @@ CONFIGURE_ENV=	CC_FOR_BUILD="${CC}"
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS SAN
+SAN_DESC=	Enable sanitizers (ASAN and UBSAN)
 
 .if !exists(/usr/include/jail.h)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MSAN}
+CONFIGURE_ARGS+=	--with-asan --with-ubsan
+.endif
 
 # TODO: activate in april 2021
 #.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1400000
