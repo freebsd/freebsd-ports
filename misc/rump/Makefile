@@ -2,7 +2,7 @@
 
 PORTNAME=	rump
 PORTVERSION=	20170822
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -19,6 +19,7 @@ GH_PROJECT=	buildrump.sh
 GH_TAGNAME=	b914579
 GH_TUPLE=	rumpkernel:src-netbsd:82f3a69:netbsd/src
 USE_LDCONFIG=	yes
+USES=		compiler
 
 .include <bsd.port.pre.mk>
 
@@ -28,10 +29,13 @@ PLIST_SUB+=	X8664=""
 PLIST_SUB+=	X8664="@comment "
 .endif
 
-CFLAGS+=	-Wno-address-of-packed-member
+CWARNFLAGS+=	-Wno-address-of-packed-member
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 130
+CWARNFLAGS+=	-Wno-unused-but-set-variable
+.endif
 
 do-build:
-	cd ${WRKSRC}; ${SETENV} CC=${CC} AR=${AR} NM=${NM} OBJCOPY=${OBJCOPY} ./buildrump.sh -F CFLAGS="${CFLAGS}" -r fullbuild
+	cd ${WRKSRC}; ${SETENV} CC=${CC} AR=${AR} NM=${NM} OBJCOPY=${OBJCOPY} ./buildrump.sh -F CFLAGS="${CFLAGS}" -F CWARNFLAGS="${CWARNFLAGS}" -r fullbuild
 
 do-install:
 	cd ${WRKSRC}/rump; ${PAX} -wr lib include ${STAGEDIR}${PREFIX}/
