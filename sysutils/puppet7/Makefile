@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
 		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
 
 USES=		cpe
-CPE_VENDOR=	puppetlabs
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs
 
