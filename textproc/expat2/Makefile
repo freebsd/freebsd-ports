@@ -16,7 +16,8 @@ TEST_DEPENDS=	bash:shells/bash
 USES=		cpe libtool pathfix python:test tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPE_VENDOR=	libexpat
+CPE_VENDOR=	libexpat_project
+CPE_PRODUCT=	libexpat
 
 CONFIGURE_ARGS=	--without-docbook --without-examples
 INSTALL_TARGET=	install-strip
