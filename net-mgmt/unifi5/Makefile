@@ -31,7 +31,7 @@ EXTRACT_CMD=	/usr/bin/ar
 EXTRACT_BEFORE_ARGS=	-p
 EXTRACT_AFTER_ARGS=	data.tar.xz | ${TAR} -xf -
 
-CPE_VENDOR=	ubnt
+CPE_VENDOR=	ui
 CPE_PRODUCT=	unifi_controller
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
