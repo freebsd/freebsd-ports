@@ -12,7 +12,7 @@ COMMENT=	Extract, view & test ACE archives
 MAKE_JOBS_UNSAFE=	yes
 
 USES=		cpe gmake
-CPE_VENDOR=	unace_project
+CPE_VENDOR=	winace
 ALL_TARGET=	clean unace
 PLIST_FILES=	bin/unace
 
