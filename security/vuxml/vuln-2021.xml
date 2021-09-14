@@ -1,3 +1,61 @@
+  <vuln vid="47b571f2-157b-11ec-ae98-704d7b472482">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>93.0.4577.82</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/09/stable-channel-update-for-desktop.html">
+	  <p>This release includes 11 security fixes, including:</p>
+	  <ul>
+	    <li>[1237533] High CVE-2021-30625: Use after free in Selection API.
+	      Reported by Marcin Towalski of Cisco Talos on 2021-08-06</li>
+	    <li>[1241036] High CVE-2021-30626: Out of bounds memory access in
+	      ANGLE. Reported by Jeonghoon Shin of Theori on 2021-08-18</li>
+	    <li>[1245786] High CVE-2021-30627: Type Confusion in Blink layout.
+	      Reported by Aki Helin of OUSPG on 2021-09-01</li>
+	    <li>[1241123] High CVE-2021-30628: Stack buffer overflow in ANGLE.
+	      Reported by Jaehun Jeong(@n3sk) of Theori on 2021-08-18</li>
+	    <li>[1243646] High CVE-2021-30629: Use after free in Permissions.
+	      Reported by Weipeng Jiang (@Krace) from Codesafe Team of Legendsec
+	      at Qi'anxin Group on 2021-08-26</li>
+	    <li>[1244568] High CVE-2021-30630: Inappropriate implementation in
+	      Blink. Reported by SorryMybad (@S0rryMybad) of Kunlun Lab on
+	      2021-08-30</li>
+	    <li>[1246932] High CVE-2021-30631: Type Confusion in Blink layout.
+	      Reported by Atte Kettunen of OUSPG on 2021-09-06</li>
+	    <li>[1247763] High CVE-2021-30632: Out of bounds write in V8.
+	      Reported by Anonymous on 2021-09-08</li>
+	    <li>[1247766] High CVE-2021-30633: Use after free in Indexed DB API.
+	      Reported by Anonymous on 2021-09-08</li>
+	  </ul>
+	  <p>Google is aware that exploits for CVE-2021-30632 and CVE-2021-30633
+	     exist in the wild.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-30625</cvename>
+      <cvename>CVE-2021-30626</cvename>
+      <cvename>CVE-2021-30627</cvename>
+      <cvename>CVE-2021-30628</cvename>
+      <cvename>CVE-2021-30629</cvename>
+      <cvename>CVE-2021-30630</cvename>
+      <cvename>CVE-2021-30631</cvename>
+      <cvename>CVE-2021-30632</cvename>
+      <cvename>CVE-2021-30633</cvename>
+      <url>https://chromereleases.googleblog.com/2021/09/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2021-09-13</discovery>
+      <entry>2021-09-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="93eb0e48-14ba-11ec-875e-901b0e9408dc">
     <topic>Matrix clients -- several vulnerabilities</topic>
     <affects>
