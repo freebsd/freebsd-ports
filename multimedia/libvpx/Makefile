@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	webmproject
 
 USES=		compiler:c++11-lib cpe gmake perl5 shebangfix
-CPE_VENDOR=	john_koleszar
+CPE_VENDOR=	webmproject
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
 USE_LDCONFIG=	yes
