@@ -28,7 +28,8 @@ QA_ENV=		IGNORE_QA_baselibs=1 \
 		IGNORE_QA_no_arch=1 \
 		IGNORE_QA_proxydeps=1 \
 		IGNORE_QA_stripped=1
-EXTRACT_AFTER_ARGS=	-C${STAGEDIR}${_SYSROOT} ${_SYSROOT_INCLUDE:@x@--include=$x@} \
+EXTRACT_AFTER_ARGS=	-C${STAGEDIR}${_SYSROOT} --no-same-permissions \
+			${_SYSROOT_INCLUDE:@x@--include=$x@} \
 			${_SYSROOT_EXCLUDE:@x@--exclude=$x@}
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -119,6 +120,7 @@ do-extract:
 		dump -0f - ${WRKDIR}/base.img | \
 		restore -rf -
 	@${RM} ${WRKDIR}/base.img
+	@chflags -R noschg ${WRKDIR}/base
 	@${TAR} -C${WRKDIR}/base -cf - . | \
 		${TAR} -xf - ${EXTRACT_AFTER_ARGS}
 .endif
