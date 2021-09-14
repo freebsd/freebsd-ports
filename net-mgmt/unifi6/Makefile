@@ -18,7 +18,7 @@ RUN_DEPENDS=	mongodb36>0:databases/mongodb36 \
 
 USES=		cpe
 
-CPE_VENDOR=	ubnt
+CPE_VENDOR=	ui
 CPE_PRODUCT=	unifi_controller
 USE_JAVA=	yes
 JAVA_VERSION=	8+
