@@ -22,7 +22,8 @@ GNU_CONFIGURE=	yes
 USES=		gmake cpe localbase xorg
 USE_XORG=	ice sm x11 xext xt
 
-CPE_VENDOR=	foolabs
+CPE_VENDOR=	glyphandcog
+CPE_PRODUCT=	xpdfreader
 CONFIGURE_ARGS=	--enable-opi \
 		--with-freetype2-library="${LOCALBASE}/lib" \
 		--with-freetype2-includes="${LOCALBASE}/include/freetype2" \
