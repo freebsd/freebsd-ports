@@ -19,6 +19,8 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 
 USES=		cmake cpe
 
+CPE_VENDOR=	uclouvain
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
