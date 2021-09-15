@@ -1,6 +1,6 @@
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v
-DISTVERSION=		6.1.52
+DISTVERSION=		6.1.53
 CATEGORIES=		audio science
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -10,6 +10,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libasound.so:audio/alsa-lib
 # These are recommended but I can't tell the difference
 RUN_DEPENDS=	CharisSIL>=0:x11-fonts/charis \
