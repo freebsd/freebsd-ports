@@ -67,6 +67,7 @@
 ### Module::Versions::Report 1.05
 ### Net::CIDR
 ### Net::IP
+### Fork::Manager
 ### Plack 1.0002
 ### Plack::Handler::Starlet
 ### Pod::Select
@@ -148,6 +149,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Module-Versions-Report>=1.05:devel/p5-Module-Versions-Report		\
 		p5-Net-CIDR>0:net-mgmt/p5-Net-CIDR					\
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP						\
+		p5-Parallel-ForkManager>=0:devel/p5-Parallel-ForkManager		\
 		p5-Plack>=1.0002:www/p5-Plack						\
 		${P5_POD_PARSER}							\
 		p5-Starlet>0:www/p5-Starlet						\

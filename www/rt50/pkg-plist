@@ -94,6 +94,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Condition/StatusChange.pm
 %%SITE_PERL%%/RT/Condition/TimeWorkedChange.pm
 %%SITE_PERL%%/RT/Condition/UserDefined.pm
+%%SITE_PERL%%/RT/Condition/ViaInterface.pm
 %%SITE_PERL%%/RT/Config.pm
 %%SITE_PERL%%/RT/Configuration.pm
 %%SITE_PERL%%/RT/Configurations.pm
@@ -220,6 +221,8 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/REST2/Resource/Collection.pm
 %%SITE_PERL%%/RT/REST2/Resource/Collection/ProcessPOSTasGET.pm
 %%SITE_PERL%%/RT/REST2/Resource/Collection/QueryByJSON.pm
+%%SITE_PERL%%/RT/REST2/Resource/Collection/QueryBySQL.pm
+%%SITE_PERL%%/RT/REST2/Resource/Collection/Search.pm
 %%SITE_PERL%%/RT/REST2/Resource/CustomField.pm
 %%SITE_PERL%%/RT/REST2/Resource/CustomFieldValue.pm
 %%SITE_PERL%%/RT/REST2/Resource/CustomFieldValues.pm
@@ -242,6 +245,8 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/REST2/Resource/Record/WithETag.pm
 %%SITE_PERL%%/RT/REST2/Resource/Record/Writable.pm
 %%SITE_PERL%%/RT/REST2/Resource/Role/RequestBodyIsJSON.pm
+%%SITE_PERL%%/RT/REST2/Resource/Search.pm
+%%SITE_PERL%%/RT/REST2/Resource/Searches.pm
 %%SITE_PERL%%/RT/REST2/Resource/Ticket.pm
 %%SITE_PERL%%/RT/REST2/Resource/Tickets.pm
 %%SITE_PERL%%/RT/REST2/Resource/TicketsBulk.pm
@@ -311,6 +316,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Test.pm
 %%SITE_PERL%%/RT/Test/Apache.pm
 %%SITE_PERL%%/RT/Test/Assets.pm
+%%SITE_PERL%%/RT/Test/Crypt.pm
 %%SITE_PERL%%/RT/Test/Email.pm
 %%SITE_PERL%%/RT/Test/ExternalStorage.pm
 %%SITE_PERL%%/RT/Test/GnuPG.pm
@@ -327,6 +333,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/URI.pm
 %%SITE_PERL%%/RT/URI/a.pm
 %%SITE_PERL%%/RT/URI/asset.pm
+%%SITE_PERL%%/RT/URI/attribute.pm
 %%SITE_PERL%%/RT/URI/base.pm
 %%SITE_PERL%%/RT/URI/fsck_com_article.pm
 %%SITE_PERL%%/RT/URI/fsck_com_rt.pm
@@ -452,6 +459,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/images/status-change-condition.png
 %%PORTDOCS%%%%DOCSDIR%%/images/subscriptions.png
 %%PORTDOCS%%%%DOCSDIR%%/images/theme_editor_defaults.png
+%%PORTDOCS%%%%DOCSDIR%%/images/user-time-worked-report.png
 %%PORTDOCS%%%%DOCSDIR%%/images/with-created-before.png
 %%PORTDOCS%%%%DOCSDIR%%/images/with-newline.png
 %%PORTDOCS%%%%DOCSDIR%%/images/without-newline.png
@@ -463,6 +471,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/query_builder.pod
 %%PORTDOCS%%%%DOCSDIR%%/reminders.pod
 %%PORTDOCS%%%%DOCSDIR%%/reporting/feeds.pod
+%%PORTDOCS%%%%DOCSDIR%%/reporting/user_time_worked.pod
 %%PORTDOCS%%%%DOCSDIR%%/rt_perl.pod
 %%PORTDOCS%%%%DOCSDIR%%/schema.dot
 %%PORTDOCS%%%%DOCSDIR%%/security.pod
@@ -682,6 +691,7 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/4.4.2/schema.Pg
 %%DOCSDIR%%/upgrade/4.4.2/schema.SQLite
 %%DOCSDIR%%/upgrade/4.4.2/schema.mysql
+%%DOCSDIR%%/upgrade/4.4.5/content
 %%DOCSDIR%%/upgrade/4.5.0/schema.Oracle
 %%DOCSDIR%%/upgrade/4.5.0/schema.Pg
 %%DOCSDIR%%/upgrade/4.5.0/schema.mysql
@@ -705,6 +715,7 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/4.5.7/schema.SQLite
 %%DOCSDIR%%/upgrade/4.5.7/schema.mysql
 %%DOCSDIR%%/upgrade/4.5.8/content
+%%DOCSDIR%%/upgrade/5.0.2/content
 %%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%DOCSDIR%%/upgrade/reset-sequences
 %%DOCSDIR%%/upgrade/sanity-check-stylesheets
@@ -778,6 +789,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Elements/EditCustomFieldValuesCanonicalizer
 %%DATADIR%%/html/Admin/Elements/EditCustomFieldValuesSource
 %%DATADIR%%/html/Admin/Elements/EditCustomFields
+%%DATADIR%%/html/Admin/Elements/EditCustomRoles
 %%DATADIR%%/html/Admin/Elements/EditLinks
 %%DATADIR%%/html/Admin/Elements/EditQueueWatcherGroup
 %%DATADIR%%/html/Admin/Elements/EditQueueWatchers
@@ -833,6 +845,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Groups/UserRights.html
 %%DATADIR%%/html/Admin/Groups/autohandler
 %%DATADIR%%/html/Admin/Groups/index.html
+%%DATADIR%%/html/Admin/Helpers/ClearMasonCache
 %%DATADIR%%/html/Admin/Lifecycles/Actions.html
 %%DATADIR%%/html/Admin/Lifecycles/Advanced.html
 %%DATADIR%%/html/Admin/Lifecycles/Create.html
@@ -843,6 +856,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Lifecycles/index.html
 %%DATADIR%%/html/Admin/Queues/CustomField.html
 %%DATADIR%%/html/Admin/Queues/CustomFields.html
+%%DATADIR%%/html/Admin/Queues/CustomRoles.html
 %%DATADIR%%/html/Admin/Queues/DefaultValues.html
 %%DATADIR%%/html/Admin/Queues/GroupRights.html
 %%DATADIR%%/html/Admin/Queues/History.html
@@ -867,6 +881,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Tools/ConfigHistory.html
 %%DATADIR%%/html/Admin/Tools/Configuration.html
 %%DATADIR%%/html/Admin/Tools/EditConfig.html
+%%DATADIR%%/html/Admin/Tools/GnuPG.html
 %%DATADIR%%/html/Admin/Tools/Queries.html
 %%DATADIR%%/html/Admin/Tools/RightsInspector.html
 %%DATADIR%%/html/Admin/Tools/Shredder/Dumps/dhandler
@@ -978,6 +993,8 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Asset/Search/Bulk.html
 %%DATADIR%%/html/Asset/Search/index.html
 %%DATADIR%%/html/Asset/index.html
+%%DATADIR%%/html/Crypt/GetGPGPubkey.html
+%%DATADIR%%/html/Crypt/GetSMIMECert.html
 %%DATADIR%%/html/Dashboards/Elements/DashboardsForObject
 %%DATADIR%%/html/Dashboards/Elements/Deleted
 %%DATADIR%%/html/Dashboards/Elements/HiddenSearches
@@ -1027,6 +1044,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/EditCustomFieldCustomGroupings
 %%DATADIR%%/html/Elements/EditCustomFieldDate
 %%DATADIR%%/html/Elements/EditCustomFieldDateTime
+%%DATADIR%%/html/Elements/EditCustomFieldDisplay
 %%DATADIR%%/html/Elements/EditCustomFieldFreeform
 %%DATADIR%%/html/Elements/EditCustomFieldIPAddress
 %%DATADIR%%/html/Elements/EditCustomFieldIPAddressRange
@@ -1063,6 +1081,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/MakeClicky
 %%DATADIR%%/html/Elements/Menu
 %%DATADIR%%/html/Elements/MessageBox
+%%DATADIR%%/html/Elements/MultiUserRoleInput
 %%DATADIR%%/html/Elements/MyAdminQueues
 %%DATADIR%%/html/Elements/MyAssets
 %%DATADIR%%/html/Elements/MyRT
@@ -1073,6 +1092,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/QueriesAsComment
 %%DATADIR%%/html/Elements/QueryString
 %%DATADIR%%/html/Elements/QueueList
+%%DATADIR%%/html/Elements/QueueListAllStatuses
 %%DATADIR%%/html/Elements/QueueSummaryByLifecycle
 %%DATADIR%%/html/Elements/QueueSummaryByStatus
 %%DATADIR%%/html/Elements/QuickCreate
@@ -1105,6 +1125,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/SelectCustomDateRangeField
 %%DATADIR%%/html/Elements/SelectCustomFieldOperator
 %%DATADIR%%/html/Elements/SelectCustomFieldValue
+%%DATADIR%%/html/Elements/SelectDashboard
 %%DATADIR%%/html/Elements/SelectDate
 %%DATADIR%%/html/Elements/SelectDateRelation
 %%DATADIR%%/html/Elements/SelectDateType
@@ -1189,9 +1210,11 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Helpers/AddTimeWorked
 %%DATADIR%%/html/Helpers/Admin/EditCustomFieldValue
 %%DATADIR%%/html/Helpers/Autocomplete/Articles
+%%DATADIR%%/html/Helpers/Autocomplete/Assets
 %%DATADIR%%/html/Helpers/Autocomplete/CustomFieldValues
 %%DATADIR%%/html/Helpers/Autocomplete/Groups
 %%DATADIR%%/html/Helpers/Autocomplete/Owners
+%%DATADIR%%/html/Helpers/Autocomplete/Principals
 %%DATADIR%%/html/Helpers/Autocomplete/Queues
 %%DATADIR%%/html/Helpers/Autocomplete/Tickets
 %%DATADIR%%/html/Helpers/Autocomplete/Users
@@ -1283,6 +1306,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Reports/CreatedByDates.html
 %%DATADIR%%/html/Reports/ResolvedByDates.html
 %%DATADIR%%/html/Reports/ResolvedByOwner.html
+%%DATADIR%%/html/Reports/TimeWorkedReport.html
 %%DATADIR%%/html/Reports/index.html
 %%DATADIR%%/html/Search/Article.html
 %%DATADIR%%/html/Search/Build.html
