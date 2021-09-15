@@ -6,6 +6,10 @@ You installed Authelia: Single sign-on multi-factor portal for web apps.
 In order to use it please start the service 'authelia' and
 then access the URL http://0.0.0.0:9091/ in your favorite browser.
 
+You can try a simplified config file %%PREFIX%%/etc/simplified-authelia.yml
+instead of %%PREFIX%%/etc/authelia.yml if simplified setup suits you
+better.
+
 EOM
 }
 ]

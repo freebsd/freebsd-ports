@@ -1,0 +1,180 @@
+# yamllint disable rule:comments-indentation
+---
+###############################################################################
+#                           Authelia Configuration                            #
+###############################################################################
+
+theme: light
+jwt_secret: a_very_important_secret
+default_redirection_url: https://home.example.com/
+
+##
+## Server Configuration
+##
+server:
+
+  host: 0.0.0.0
+  port: 9091
+  path: ""
+  read_buffer_size: 4096
+  write_buffer_size: 4096
+  enable_pprof: false
+  enable_expvars: false
+  disable_healthcheck: true
+  tls:
+    key: ""
+    certificate: ""
+
+##
+## Log Configuration
+##
+log:
+  level: debug
+
+  ## Format the logs are written as: json, text.
+  # format: json
+
+  ## File path where the logs will be written. If not set logs are written to stdout.
+  # file_path: /config/authelia.log
+
+  ## Whether to also log to stdout when a log_file_path is defined.
+  # keep_stdout: false
+
+##
+## TOTP Configuration
+##
+## Parameters used for TOTP generation.
+totp:
+  issuer: authelia.com
+  period: 30
+  skew: 1
+
+##
+## Authentication Backend Provider Configuration
+##
+## Used for verifying user passwords and retrieve information such as email address and groups users belong to.
+##
+## The available providers are: `file`, `ldap`. You must use only one of these providers.
+authentication_backend:
+  disable_reset_password: false
+  refresh_interval: 5m
+
+  ##
+  ## File (Authentication Provider)
+  ##
+  file:
+    path: /var/db/authelia-users_database.yml
+    password:
+      algorithm: argon2id
+      iterations: 1
+      key_length: 32
+      salt_length: 16
+      memory: 128
+      parallelism: 8
+
+##
+## Access Control Configuration
+##
+access_control:
+  default_policy: deny
+
+  networks:
+    - name: internal
+      networks:
+        - 10.10.0.0/16
+        - 192.168.2.0/24
+    - name: VPN
+      networks: 10.9.0.0/16
+
+  rules:
+    - domain: public.example.com
+      policy: bypass
+
+    - domain: secure.example.com
+      policy: one_factor
+      networks:
+        - internal
+        - VPN
+        - 192.168.1.0/24
+        - 10.0.0.1
+
+    - domain:
+        - secure.example.com
+        - private.example.com
+      policy: two_factor
+
+    - domain: singlefactor.example.com
+      policy: one_factor
+
+    - domain: "mx2.mail.example.com"
+      subject: "group:admins"
+      policy: deny
+
+    - domain: "*.example.com"
+      subject:
+        - "group:admins"
+        - "group:moderators"
+      policy: two_factor
+
+    - domain: dev.example.com
+      resources:
+        - "^/groups/dev/.*$"
+      subject: "group:dev"
+      policy: two_factor
+
+    - domain: dev.example.com
+      resources:
+        - "^/users/john/.*$"
+      subject: "user:john"
+      policy: two_factor
+
+    - domain: dev.example.com
+      resources:
+        - "^/users/harry/.*$"
+      subject: "user:harry"
+      policy: two_factor
+
+    - domain: "*.mail.example.com"
+      subject: "user:bob"
+      policy: two_factor
+    - domain: "dev.example.com"
+      resources:
+        - "^/users/bob/.*$"
+      subject: "user:bob"
+      policy: two_factor
+
+##
+## Session Provider Configuration
+##
+session:
+  name: authelia_session
+  domain: example.com
+  same_site: lax
+  secret: insecure_session_secret
+  expiration: 1h
+  inactivity: 5m
+  remember_me_duration: 1M
+
+##
+## Regulation Configuration
+##
+regulation:
+  max_retries: 3
+  find_time: 2m
+  ban_time: 5m
+
+##
+## Storage Provider Configuration
+##
+storage:
+  local:
+    path: /var/db/authelia.sqlite3
+
+##
+## Notification Provider
+##
+notifier:
+  disable_startup_check: false
+  filesystem:
+    filename: /var/log/authelia-notification.txt
+...

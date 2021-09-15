@@ -1,2 +1,3 @@
 bin/authelia
 @sample etc/authelia.yml.sample
+etc/simplified-authelia.yml
