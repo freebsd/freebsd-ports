@@ -1,5 +1,5 @@
 PORTNAME=	graphene
-DISTVERSION=	1.10.4
+DISTVERSION=	1.10.6
 CATEGORIES=	graphics devel
 MASTER_SITES=	https://github.com/ebassi/${PORTNAME}/releases/download/${DISTVERSION}/
 
