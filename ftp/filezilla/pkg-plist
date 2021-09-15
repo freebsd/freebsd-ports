@@ -1,6 +1,10 @@
 bin/filezilla
 bin/fzputtygen
 bin/fzsftp
+lib/libfzclient-commonui-private-3.55.1.so
+lib/libfzclient-commonui-private.so
+lib/libfzclient-private-3.55.1.so
+lib/libfzclient-private.so
 man/man1/filezilla.1.gz
 man/man1/fzputtygen.1.gz
 man/man1/fzsftp.1.gz
@@ -680,14 +684,8 @@ share/applications/filezilla.desktop
 %%DATADIR%%/resources/tango/48x48/upload.png
 %%DATADIR%%/resources/tango/48x48/uploadadd.png
 %%DATADIR%%/resources/tango/theme.xml
-%%DATADIR%%/resources/xrc/certificate.xrc
 %%DATADIR%%/resources/xrc/dialogs.xrc
-%%DATADIR%%/resources/xrc/inputdialog.xrc
 %%DATADIR%%/resources/xrc/netconfwizard.xrc
-%%DATADIR%%/resources/xrc/settings.xrc
-%%DATADIR%%/resources/xrc/sitemanager.xrc
-%%DATADIR%%/resources/xrc/storj.xrc
-%%DATADIR%%/resources/xrc/update.xrc
 share/icons/hicolor/16x16/apps/filezilla.png
 share/icons/hicolor/32x32/apps/filezilla.png
 share/icons/hicolor/480x480/apps/filezilla.png
@@ -744,6 +742,7 @@ share/icons/hicolor/scalable/apps/filezilla.svg
 %%NLS%%share/locale/sl_SI/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/th_TH/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/uk_UA/LC_MESSAGES/filezilla.mo
