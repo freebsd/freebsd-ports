@@ -1,15 +1,24 @@
---- loader/vk_loader_platform.h.orig	2021-04-20 16:45:05 UTC
+--- loader/vk_loader_platform.h.orig	2021-09-15 16:41:50 UTC
 +++ loader/vk_loader_platform.h
-@@ -35,7 +35,7 @@
- #include "vulkan/vk_platform.h"
- #include "vulkan/vk_sdk_platform.h"
+@@ -37,7 +37,7 @@
+ #include "dlopen_fuchsia.h"
+ #endif  // defined(__Fuchsia__)
+ 
+-#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__)
++#if defined(__unix__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__)
+ #include <unistd.h>
+ // Note: The following file is for dynamic loading:
+ #include <dlfcn.h>
+@@ -97,7 +97,7 @@
+ // Override layer information
+ #define VK_OVERRIDE_LAYER_NAME "VK_LAYER_LUNARG_override"
  
 -#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__)
 +#if defined(__unix__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__)
  /* Linux-specific common code: */
  
- // Headers:
-@@ -120,6 +120,26 @@ static inline char *loader_platform_executable_path(ch
+ // VK Library Filenames, Paths, etc.:
+@@ -168,6 +168,26 @@ static inline char *loader_platform_executable_path(ch
      int ret = proc_pidpath(pid, buffer, size);
      if (ret <= 0) return NULL;
      buffer[ret] = '\0';
