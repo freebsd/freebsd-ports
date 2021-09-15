@@ -1,9 +1,9 @@
-# Created by: rbt@zort.on.ca
+# Created by: Rod Taylor <rbt@zort.on.ca>
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	1.1.15
-DISTVERSIONPREFIX=v
+PORTVERSION=	1.2.1
 CATEGORIES=	net-p2p
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK based Gnutella client
@@ -11,12 +11,10 @@ COMMENT=	GTK based Gnutella client
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
-USES=		gnome iconv localbase:ldflags pkgconfig tar:xz
-USE_GITHUB=	yes
+USES=		gmake gnome iconv localbase:ldflags pkgconfig tar:xz
 USE_GNOME=	glib20 libxml2
-
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-O -Dyacc='byacc' \
@@ -59,6 +57,10 @@ CONFIGURE_ARGS+=	-ders
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.SH" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|@exit 0|@echo done|'
+# Use memory alignment constraints as in version 1.1.15 to unbreak the
+# build on 32-bit architectures
+	@${REINPLACE_CMD} -e 's,^#ifdef XMALLOC_IS_MALLOC,#if __SIZE_WIDTH__\
+		== 32,' ${WRKSRC}/src/lib/xmalloc.h
 
 post-patch-DEBUG-off:
 	@${REINPLACE_CMD} 's/(INSTALL) -c -m 555/(INSTALL) -c -s -m 555/g' \
