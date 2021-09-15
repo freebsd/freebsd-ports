@@ -6,7 +6,7 @@ bin/jk_uchroot
 %%ETCDIR%%/jk_socketd.ini
 %%ETCDIR%%/jk_uchroot.ini
 %%ETCDIR%%/jk_update.ini
-man/man8/jailkit.8.gz
+man/man7/jailkit.7.gz
 man/man8/jk_check.8.gz
 man/man8/jk_chrootlaunch.8.gz
 man/man8/jk_chrootsh.8.gz

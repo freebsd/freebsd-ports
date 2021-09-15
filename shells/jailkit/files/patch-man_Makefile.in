@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	2021-02-03 13:57:43 UTC
++++ man/Makefile.in
+@@ -20,7 +20,7 @@ SRCS = \
+ 
+ @HAVEPROCMAIL_TRUE@SRCS += jk_procmailwrapper.8
+ 
+-MANS = $(SRCS:.8=.8.gz)
++MANS = $(SRCS:N*.7:.8=.8.gz)
+ MANS7 = $(SRCS:.7=.7.gz)
+ 
+ 
