@@ -1,5 +1,6 @@
 PORTNAME=	gamescope
 DISTVERSION=	3.10.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 		evdev-proto>0:devel/evdev-proto \
 		vulkan-headers>0:graphics/vulkan-headers \
 		wayland-protocols>=1.17:graphics/wayland-protocols \
-		wlroots>=0.15.0<0.16.0:x11-toolkits/wlroots
+		wlroots>=0.14.0.1<0.16.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libdrm.so:graphics/libdrm \
 		libvulkan.so:graphics/vulkan-loader \
@@ -35,6 +36,7 @@ GH_ACCOUNT=	Plagman
 GH_TUPLE=	nothings:stb:af1a5bc:stb/subprojects/stb
 GL_TUPLE=	https://gitlab.freedesktop.org:emersion:libliftoff:2e1dd93b60224e77f6a49ad8fb36d184e3a9a3bc:libliftoff/subprojects/libliftoff
 PLIST_FILES=	bin/${PORTNAME}
+MESON_ARGS=	--force-fallback-for=libliftoff # allow system wlroots
 
 OPTIONS_DEFINE=	PIPEWIRE
 OPTIONS_DEFAULT=PIPEWIRE
@@ -47,5 +49,4 @@ post-extract:
 # Merge patch_directory for subprojects without meson.build
 	@(cd ${WRKSRC}/subprojects/packagefiles && ${COPYTREE_SHARE} . ..)
 
-.include "${.CURDIR}/Makefile.wlroots"
 .include <bsd.port.mk>
