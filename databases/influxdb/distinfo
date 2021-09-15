@@ -1,5 +1,5 @@
-TIMESTAMP = 1621764252
-SHA256 (go/databases_influxdb/influxdb-v1.8.6/v1.8.6.mod) = 243a917b438ef4eb5a69e81727583917a2c5ac21cf868fcf41cd1856d5c72e1c
-SIZE (go/databases_influxdb/influxdb-v1.8.6/v1.8.6.mod) = 2536
-SHA256 (go/databases_influxdb/influxdb-v1.8.6/v1.8.6.zip) = 8e1c59818d4deb65ec5f637f9247e45013f4f9b1244f9af8f55d1b4f86048748
-SIZE (go/databases_influxdb/influxdb-v1.8.6/v1.8.6.zip) = 12519721
+TIMESTAMP = 1631722942
+SHA256 (go/databases_influxdb/influxdb-v1.8.9/v1.8.9.mod) = d8c7e25a7f3d2390d6d80dbca209feea6f326e59a5461c6deda66e6fe1a70053
+SIZE (go/databases_influxdb/influxdb-v1.8.9/v1.8.9.mod) = 2637
+SHA256 (go/databases_influxdb/influxdb-v1.8.9/v1.8.9.zip) = 10051bf038c94f86eea61a2dcbf746f3593b40e263c7e744d29cc0914e9462ca
+SIZE (go/databases_influxdb/influxdb-v1.8.9/v1.8.9.zip) = 12511820
