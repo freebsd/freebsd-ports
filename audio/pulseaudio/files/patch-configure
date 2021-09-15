@@ -1,0 +1,22 @@
+Use gm4 instead of m4; this is probably just a work-around
+for some cross-build issues on ARM. However, it also means
+that we use the same GNU m4 as upstream developers presumably
+also use for processing these files and avoids future surprises.
+
+--- configure.orig	2020-06-23 06:37:52 UTC
++++ configure
+@@ -32212,10 +32212,10 @@ _LT_EOF
+  ;;
+     "src/esdcompat":F) chmod +x src/esdcompat ;;
+     "src/start-pulseaudio-x11":F) chmod +x src/start-pulseaudio-x11 ;;
+-    "src/daemon.conf":F) m4 src/daemon.conf > src/daemon.conf.gen && mv src/daemon.conf.gen src/daemon.conf ;;
+-    "src/default.pa":F) m4 src/default.pa > src/default.pa.gen && mv src/default.pa.gen src/default.pa ;;
+-    "src/system.pa":F) m4 src/system.pa > src/system.pa.gen && mv src/system.pa.gen src/system.pa ;;
+-    "PulseAudioConfig.cmake":F) m4 PulseAudioConfig.cmake > PulseAudioConfig.cmake.gen && mv PulseAudioConfig.cmake.gen PulseAudioConfig.cmake ;;
++    "src/daemon.conf":F) gm4 src/daemon.conf > src/daemon.conf.gen && mv src/daemon.conf.gen src/daemon.conf ;;
++    "src/default.pa":F) gm4 src/default.pa > src/default.pa.gen && mv src/default.pa.gen src/default.pa ;;
++    "src/system.pa":F) gm4 src/system.pa > src/system.pa.gen && mv src/system.pa.gen src/system.pa ;;
++    "PulseAudioConfig.cmake":F) gm4 PulseAudioConfig.cmake > PulseAudioConfig.cmake.gen && mv PulseAudioConfig.cmake.gen PulseAudioConfig.cmake ;;
+ 
+   esac
+ done # for ac_tag

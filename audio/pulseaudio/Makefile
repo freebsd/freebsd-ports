@@ -5,7 +5,7 @@
 
 PORTNAME=	pulseaudio
 DISTVERSION=	14.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://freedesktop.org/software/pulseaudio/releases/
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libltdl.so:devel/libltdl \
 		libck-connector.so:sysutils/consolekit2
 
-USES=		compiler:c11 cpe gettext gmake gnome iconv libtool localbase:ldflags \
+USES=		compiler:c11 cpe gettext gmake gnome iconv libtool:build localbase:ldflags \
 		pathfix pkgconfig python:run shebangfix ssl tar:xz
 
 USE_GNOME=	glib20
