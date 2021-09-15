@@ -1,8 +1,7 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
 
 PORTNAME=	survey
-DISTVERSION=	4.0
-PORTREVISION=	1
+DISTVERSION=	4.1-1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
