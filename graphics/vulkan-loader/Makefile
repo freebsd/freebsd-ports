@@ -1,7 +1,6 @@
 PORTNAME=	vulkan-loader
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.191
-PORTREVISION=	1
+DISTVERSION=	1.2.192
 CATEGORIES=	graphics devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -38,5 +37,10 @@ XLIB_CMAKE_BOOL=	BUILD_WSI_XLIB_SUPPORT
 post-patch:
 # _XOPEN_SOURCE enforces X/Open-compliance but alloca isn't there
 	@${REINPLACE_CMD} '/_XOPEN_SOURCE/d' ${WRKSRC}/loader/CMakeLists.txt
+# Extract (snapshot) version from the port
+	@${REINPLACE_CMD} -e '/find_.*Git/d' \
+		-e '/BRANCH/s/--unknown--/main/' \
+		-e '/TAG/s/--unknown--/${DISTVERSIONFULL}/' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
