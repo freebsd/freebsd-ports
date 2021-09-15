@@ -1,5 +1,5 @@
 PORTNAME=	latte-dock
-DISTVERSION=	0.10.1
+DISTVERSION=	0.10.2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/stable/latte-dock
 
@@ -18,7 +18,8 @@ USE_KDE=	activities archive attica auth codecs completion config \
 		libksysguard newstuff notifications package plasma-framework \
 		service solid wayland widgetsaddons windowsystem xmlgui \
 		ecm_build
-USE_QT=		core dbus declarative gui network widgets x11extras xml \
+USE_QT=		concurrent core dbus declarative gui network widgets \
+		x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xcb xext
 

@@ -240,6 +240,7 @@ share/locale/gl/LC_MESSAGES/plasma_containmentactions_lattecontextmenu.mo
 share/locale/ia/LC_MESSAGES/latte-dock.mo
 share/locale/ia/LC_MESSAGES/latte_indicator_org.kde.latte.default.mo
 share/locale/ia/LC_MESSAGES/latte_indicator_org.kde.latte.plasma.mo
+share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.latte.containment.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.latte.plasmoid.mo
 share/locale/ia/LC_MESSAGES/plasma_containmentactions_lattecontextmenu.mo
 share/locale/id/LC_MESSAGES/latte-dock.mo
