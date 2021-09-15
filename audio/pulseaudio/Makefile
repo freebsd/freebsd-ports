@@ -5,7 +5,7 @@
 
 PORTNAME=	pulseaudio
 DISTVERSION=	14.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://freedesktop.org/software/pulseaudio/releases/
 
