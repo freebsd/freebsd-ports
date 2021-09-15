@@ -12,5 +12,5 @@ RUN_DEPENDS+=	xwayland-devel>0:x11-servers/xwayland-devel
 USES+=		gl
 USE_GL+=	gbm egl
 USE_XORG+=	pixman xcb
-GH_TUPLE+=	swaywm:wlroots:0.13.0:wlroots/subprojects/wlroots
+GH_TUPLE+=	swaywm:wlroots:0.14.0-239-g9579d62a:wlroots/subprojects/wlroots
 PLIST_FILES+=	"@comment libdata/pkgconfig/wlroots.pc"

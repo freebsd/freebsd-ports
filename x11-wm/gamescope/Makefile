@@ -1,12 +1,12 @@
 PORTNAME=	gamescope
-DISTVERSION=	3.9.1
+DISTVERSION=	3.9.2
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	63cd0609e14a.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
-PATCHFILES+=	80a01b036545.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
-PATCHFILES+=	b62b583e810a.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
-PATCHFILES+=	d59836199ebe.patch:-p1 # https://github.com/Plagman/gamescope/issues/120
+PATCHFILES+=	ec8e547be135.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
+PATCHFILES+=	ea415ae28442.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
+PATCHFILES+=	7c188b24afaa.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
+PATCHFILES+=	a618ea074660.patch:-p1 # https://github.com/Plagman/gamescope/issues/120
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Micro-compositor from SteamOS
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 		evdev-proto>0:devel/evdev-proto \
 		vulkan-headers>0:graphics/vulkan-headers \
 		wayland-protocols>=1.17:graphics/wayland-protocols \
-		wlroots>=0.13.0<0.14.0:x11-toolkits/wlroots
+		wlroots>=0.15.0<0.16.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libdrm.so:graphics/libdrm \
 		libvulkan.so:graphics/vulkan-loader \
