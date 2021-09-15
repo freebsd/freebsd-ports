@@ -17,6 +17,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 USES=		bdb gmake libtool ncurses tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+TEST_TARGET=	check
+TEST_ENV=	TESTSUITEFLAGS=--jobs=${MAKE_JOBS_NUMBER}
 
 INFO=		gnucobol
 DATADIR=	${PREFIX}/share/gnucobol
