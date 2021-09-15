@@ -45,6 +45,7 @@ SUB_FILES=	config.yml
 
 post-patch:
 	for f in `${FIND} ${WRKSRC}/tailer -name '*darwin*'`; do ${LN} -sf $${f} `echo $${f} | ${SED} 's/darwin/freebsd/g'`; done
+	cd ${WRKSRC}/tailer/fswatcher && ${LN} -sf fswatcher_darwin_amd64.go fswatcher_freebsd_arm64.go
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
