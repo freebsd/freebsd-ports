@@ -514,7 +514,45 @@
  {
      List *bp = blocks;
      Blox *xp;
-@@ -1524,7 +1512,7 @@ static void addForVars(Token *cmd)
+@@ -1476,7 +1464,6 @@ static void checkVar(Token *cmd, char *nm)
+ static void addForVars(Token *cmd)
+ {
+     Token *vr, *vp, *ap;
+-    VarData *rp;
+ 
+     switch (cmd->type)
+     {
+@@ -1484,12 +1471,12 @@ static void addForVars(Token *cmd)
+ 	checkVar(cmd, cmd->text);
+ 	if ((ap = isArray(cmd)) != noToken)
+ 	{
+-	    rp = setVar(ap, VFOR, 1);
++	    setVar(ap, VFOR, 1);
+ 	    freeToken(ap);
+ 	}
+ 	else
+ 	{
+-	    rp = setVar(cmd, VFOR, 0);
++	    setVar(cmd, VFOR, 0);
+ 	}
+ 	break;
+ 
+@@ -1506,12 +1493,12 @@ static void addForVars(Token *cmd)
+ 		checkVar(vp, vp->text);
+ 		if ((ap = isArray(vp)) != noToken)
+ 		{
+-		    rp = setVar(ap, VFOR, 1);
++		    setVar(ap, VFOR, 1);
+ 		    freeToken(ap);
+ 		}
+ 		else
+ 		{
+-		    rp = setVar(vp, VFOR, 0);
++		    setVar(vp, VFOR, 0);
+ 		}
+ 	    }
+ 	    vp = vp->next;
+@@ -1524,7 +1511,7 @@ static void addForVars(Token *cmd)
      }
  }
  
@@ -523,7 +561,7 @@
  {
      failIfNullToken(cmd, "varName", "foreach", 0);
      loopstart(0, 0);
-@@ -1534,7 +1522,7 @@ Token *doforeach(Token *cmd, Token *leadin)
+@@ -1534,7 +1521,7 @@ Token *doforeach(Token *cmd, Token *leadin)
  	addForVars(cmd);
  	cmd = cmd->next;
  	failIfNullToken(cmd, "list", "foreach", 0);
@@ -532,7 +570,7 @@
  	cmd = cmd->next;
      }
      while (cmd != noToken && cmd->next != noToken && cmd->next->type != SCOMMENT);
-@@ -1546,7 +1534,7 @@ Token *doforeach(Token *cmd, Token *leadin)
+@@ -1546,7 +1533,7 @@ Token *doforeach(Token *cmd, Token *leadin)
      return noToken;
  }
  
@@ -541,7 +579,7 @@
  {
      Token *tp;
      if (!tclX)
-@@ -1556,15 +1544,15 @@ Token *doloop(Token *cmd, Token *leadin)
+@@ -1556,15 +1543,15 @@ Token *doloop(Token *cmd, Token *leadin)
      else
      {
  	failIfNullToken(cmd, "var", "loop", 0);
@@ -560,7 +598,7 @@
  
  	tp = tp->next;
  	failIfNullToken(tp, "body", "loop", 0);
-@@ -1572,7 +1560,7 @@ Token *doloop(Token *cmd, Token *leadin)
+@@ -1572,7 +1559,7 @@ Token *doloop(Token *cmd, Token *leadin)
  	if (tp->next != noToken)
  	{
  	    warnExpr(cmd, "Unbracketed loop \"incr\"");
@@ -569,7 +607,7 @@
  	    tp = tp->next;
  	}
  	loopstart(0, 0);
-@@ -1584,7 +1572,7 @@ Token *doloop(Token *cmd, Token *leadin)
+@@ -1584,7 +1571,7 @@ Token *doloop(Token *cmd, Token *leadin)
      return noToken;
  } 
  
@@ -578,7 +616,7 @@
  {
      if (!doExpr)
      {
-@@ -1599,7 +1587,7 @@ Token *doexpr(Token *cmd, Token *leadin)
+@@ -1599,7 +1586,7 @@ Token *doexpr(Token *cmd, Token *leadin)
  	else if (cmd->next == noToken)
  	{
  	    warnExpr(cmd, "expr body not braced.");
@@ -587,7 +625,7 @@
  	}
  	else
  	{
-@@ -1610,7 +1598,7 @@ Token *doexpr(Token *cmd, Token *leadin)
+@@ -1610,7 +1597,7 @@ Token *doexpr(Token *cmd, Token *leadin)
      return noToken;
  }
  
@@ -596,7 +634,7 @@
  {
      int pCount = 1;
  
-@@ -1641,7 +1629,7 @@ Token *dounset(Token *cmd, Token *leadin)
+@@ -1641,7 +1628,7 @@ Token *dounset(Token *cmd, Token *leadin)
      return noToken;
  }
  
@@ -605,7 +643,7 @@
  {
      int paramCount = 0;
      int ln = leadin->lineNo;
-@@ -1672,7 +1660,7 @@ Token *doupvar(Token *cmd, Token *leadin)
+@@ -1672,7 +1659,7 @@ Token *doupvar(Token *cmd, Token *leadin)
      return noToken;
  }
  
@@ -614,7 +652,7 @@
  {
      int paramCount = 1;
  
-@@ -1776,7 +1764,7 @@ static int valuecheck(ParamData *pdp, Token *cmd)
+@@ -1776,7 +1763,7 @@ static int valuecheck(ParamData *pdp, Token *cmd)
      return 0;
  }
  
@@ -623,7 +661,7 @@
  {
      List *sp, *llp, *lp;
      ParamData *pt, *pdp;
-@@ -1793,7 +1781,7 @@ void doBasic(ConfigData *cpt, Token *hd, Token *cmd)
+@@ -1793,7 +1780,7 @@ void doBasic(ConfigData *cpt, Token *hd, Token *cmd)
  	pt = (ParamData *) lpeek(lp);
  	if (pt != (ParamData *) 0 && pt->values != noList)
  	{
@@ -632,7 +670,7 @@
  	}
  	else
  	{
-@@ -1850,7 +1838,7 @@ void doBasic(ConfigData *cpt, Token *hd, Token *cmd)
+@@ -1850,7 +1837,7 @@ void doBasic(ConfigData *cpt, Token *hd, Token *cmd)
  	    }
  	    else
  	    {
@@ -641,7 +679,7 @@
  	    }
  	    break;
  
-@@ -1862,7 +1850,7 @@ void doBasic(ConfigData *cpt, Token *hd, Token *cmd)
+@@ -1862,7 +1849,7 @@ void doBasic(ConfigData *cpt, Token *hd, Token *cmd)
  	    else
  	    {
  		warnExpr(cmd, "Unbracketed expression");
@@ -650,7 +688,7 @@
  	    }
  	    break;
  
-@@ -1883,7 +1871,7 @@ void doBasic(ConfigData *cpt, Token *hd, Token *cmd)
+@@ -1883,7 +1870,7 @@ void doBasic(ConfigData *cpt, Token *hd, Token *cmd)
  		{
  		    ptpar |= SPACEOUT;
  		}
@@ -659,7 +697,7 @@
  		loopstart(infloop, 1);
  	    }
  	    break;
-@@ -2085,7 +2073,7 @@ void doBasic(ConfigData *cpt, Token *hd, Token *cmd)
+@@ -2085,7 +2072,7 @@ void doBasic(ConfigData *cpt, Token *hd, Token *cmd)
  	pt = (ParamData *) lpeek(lp);
  	if ((sp = pt->values) != noList)
  	{
@@ -668,7 +706,7 @@
  	}
  	else
  	{
-@@ -2140,7 +2128,8 @@ void doBasic(ConfigData *cpt, Token *hd, Token *cmd)
+@@ -2140,7 +2127,8 @@ void doBasic(ConfigData *cpt, Token *hd, Token *cmd)
      }
  }
  

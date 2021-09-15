@@ -2,7 +2,7 @@
 
 PORTNAME=	frink
 PORTVERSION=	2.2.2p4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://BSDforge.COM/projects/source/devel/frink/
 

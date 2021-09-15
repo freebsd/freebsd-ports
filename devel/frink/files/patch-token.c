@@ -233,13 +233,32 @@
 +	{ NULL,			0,		1},
      };
      struct pragma_s *prp;
-     int label, mode = 1;
+-    int label, mode = 1;
 -    char *cp;
++    int mode = 1;
 +    const char *cp;
      Token *token, *chars = newToken(CONST);
      Input *pfile;
  
-@@ -1347,9 +1329,6 @@ int handle(Token *line)
+@@ -1277,16 +1259,8 @@ static void handlePragma(Token *tp)
+     chars->length = strlen(cp);
+     pfile=tokenise(chars, 0);
+     token = getToken(pfile);
+-    if (tokNEqual(token, "PRAGMA", 6))
++    if (!tokNEqual(token, "PRAGMA", 6) && !tokNEqual(token, "FRINK", 5))
+     {
+-        label = 1;
+-    }
+-    else if (tokNEqual(token, "FRINK", 5))
+-    {
+-        label = 2;
+-    }
+-    else
+-    {
+         warn(tp, "Pragma syntax weirdness");
+     }
+     freeToken(token);
+@@ -1347,9 +1321,6 @@ int handle(Token *line)
  {
      Token *hd;
  
@@ -249,7 +268,7 @@
      if (line == noToken)
      {
  	if (!minimise)
-@@ -1575,7 +1554,7 @@ void lprocess(Token *lst, int nls)
+@@ -1575,7 +1546,7 @@ void lprocess(Token *lst, int nls)
      if (line != noToken) { handle(line); }
  }
  
@@ -258,7 +277,7 @@
  {
      Token *line = noToken, *hd = noToken;
      TokenType last = NL;
-@@ -1652,16 +1631,16 @@ Token *tokacc(Token *tp, int flag, int nl)
+@@ -1652,16 +1623,16 @@ Token *tokacc(Token *tp, int flag, int nl)
      return lp;
  }
  
@@ -278,7 +297,7 @@
      TBuff *tb;
  
      if (token != noToken && token->type == CONC)
-@@ -1694,7 +1673,7 @@ int isVarToken(Token *token)
+@@ -1694,7 +1665,7 @@ int isVarToken(Token *token)
      return chkVarToken(token);
  }
  
@@ -287,7 +306,7 @@
  {
      if (token != noToken)
      {
-@@ -1715,7 +1694,7 @@ int isSingleCall(Token *token, char *proc)
+@@ -1715,7 +1686,7 @@ int isSingleCall(Token *token, char *proc)
      return 0;
  }
  
@@ -296,7 +315,7 @@
  {
      if (token != noToken)
      {
-@@ -1739,14 +1718,15 @@ int isSwitch(Token *token)
+@@ -1739,14 +1710,15 @@ int isSwitch(Token *token)
      return 0;
  }
  
@@ -315,7 +334,7 @@
      {
  	switch (tp->type)
  	{
-@@ -1776,9 +1756,7 @@ Token *isArray(Token *tp)
+@@ -1776,9 +1748,7 @@ Token *isArray(Token *tp)
  	        ch = *cp;
  	        if (ch == '(')
  		{
@@ -326,7 +345,7 @@
  		    break;
  		}
  		if (ch == '\0') { break; }
-@@ -1790,7 +1768,7 @@ Token *isArray(Token *tp)
+@@ -1790,7 +1760,7 @@ Token *isArray(Token *tp)
      return res;
  }
  
