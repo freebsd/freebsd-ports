@@ -1,15 +1,20 @@
---- CMakeLists.txt.orig	2018-11-17 21:20:10 UTC
+--- CMakeLists.txt.orig	2021-09-09 15:34:30 UTC
 +++ CMakeLists.txt
-@@ -55,10 +55,10 @@ endif()
+@@ -81,7 +81,7 @@ endif()
  
- # Whether to enable SSE
  set(SSE_FLAGS "")
--option(FCL_USE_X64_SSE "Whether FCL should x64 SSE instructions" ON)
-+option(FCL_USE_X64_SSE "Whether FCL should x64 SSE instructions" OFF)
- if(FCL_USE_X64_SSE)
-   if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
--    set(SSE_FLAGS -mfpmath=sse -msse -msse2 -msse3 -mssse3)
-+    set(SSE_FLAGS -mfpmath=sse ${OPT_SSE_SSE2} ${OPT_SSE_SSE3} ${OPT_SSE_SSSE3} ${OPT_SSE_SSE4} ${OPT_SSE_SSE41} ${OPT_SSE_SSE42} ${OPT_SSE_SSE4A})
-   elseif(MSVC)
-     # Win64 will add the flag automatically
-     if(CMAKE_VS_PLATFORM_NAME STREQUAL "Win32")
+ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+-  set(SSE_FLAGS -mfpmath=sse -msse -msse2 -msse3 -mssse3)
++  set(SSE_FLAGS -mfpmath=sse ${OPT_SSE_SSE2} ${OPT_SSE_SSE3} ${OPT_SSE_SSSE3} ${OPT_SSE_SSE4} ${OPT_SSE_SSE41} ${OPT_SSE_SSE42} ${OPT_SSE_SSE4A})
+ elseif(MSVC)
+   # Win64 will add the flag automatically
+   if(CMAKE_VS_PLATFORM_NAME STREQUAL "Win32")
+@@ -102,7 +102,7 @@ else()
+   check_cxx_compiler_flag("${SSE_FLAGS}" _compiler_supports_sse)
+ 
+   if(_has_sse AND _has_sse2 AND _compiler_supports_sse)
+-    set(FCL_TARGET_SUPPORT_X64_SSE ON)
++    set(FCL_TARGET_SUPPORT_X64_SSE ${FREEBSD_ENABLE_SSE})
+   else()
+     set(FCL_TARGET_SUPPORT_X64_SSE OFF)
+   endif()
