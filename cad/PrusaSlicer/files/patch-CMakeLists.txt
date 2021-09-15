@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2021-01-11 13:01:51 UTC
+--- CMakeLists.txt.orig	2021-04-16 11:41:00 UTC
 +++ CMakeLists.txt
 @@ -3,6 +3,7 @@ project(PrusaSlicer)
  
@@ -8,7 +8,7 @@
  
  set(SLIC3R_RESOURCES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/resources")
  file(TO_NATIVE_PATH "${SLIC3R_RESOURCES_DIR}" SLIC3R_RESOURCES_DIR_WIN)
-@@ -154,7 +155,7 @@ if (APPLE)
+@@ -166,7 +167,7 @@ if (APPLE)
      endif ()
  endif ()
  
@@ -17,7 +17,7 @@
      find_package(PkgConfig REQUIRED)
  
      if (CMAKE_VERSION VERSION_LESS "3.1")
-@@ -513,8 +514,8 @@ elseif (SLIC3R_FHS)
+@@ -525,8 +526,8 @@ elseif (SLIC3R_FHS)
      # CMAKE_INSTALL_FULL_DATAROOTDIR: read-only architecture-independent data root (share)
      set(SLIC3R_FHS_RESOURCES "${CMAKE_INSTALL_FULL_DATAROOTDIR}/PrusaSlicer")
      install(DIRECTORY "${SLIC3R_RESOURCES_DIR}/" DESTINATION "${SLIC3R_FHS_RESOURCES}")
