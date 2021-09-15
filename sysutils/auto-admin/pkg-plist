@@ -32,7 +32,6 @@ sbin/auto-denyhosts-setup
 sbin/auto-detect-laptops
 sbin/auto-disable-file-transfers
 sbin/auto-disable-host-key-prompt
-sbin/auto-disable-hyperthreading
 sbin/auto-disable-service
 sbin/auto-disable-tcp-timestamps
 sbin/auto-enable-autologout
@@ -44,6 +43,7 @@ sbin/auto-enable-service
 sbin/auto-fastest-mirror
 sbin/auto-fetch-install-media
 sbin/auto-file-secure
+sbin/auto-filesys-manager
 sbin/auto-firewall-setup
 sbin/auto-fix-date
 sbin/auto-freebsd-wip-checkout
@@ -56,6 +56,7 @@ sbin/auto-gpu-setup
 sbin/auto-group-check
 sbin/auto-harden
 sbin/auto-hex-to-octet
+sbin/auto-hyperthreading-toggle
 sbin/auto-idrac-config
 sbin/auto-idrac-passwd
 sbin/auto-insert-line
@@ -117,6 +118,7 @@ sbin/auto-restore-pw
 sbin/auto-restore-user
 sbin/auto-root-check
 sbin/auto-secure-directory
+sbin/auto-security-manager
 sbin/auto-service-enabled
 sbin/auto-set-conf-var
 sbin/auto-set-hostname
@@ -129,6 +131,7 @@ sbin/auto-sound-driver-setup
 sbin/auto-ssh-authorize
 sbin/auto-ssh-reverse-authorize
 sbin/auto-su+j-toggle
+sbin/auto-sys-manager
 sbin/auto-transfer-pw
 sbin/auto-unlock-local-pw
 sbin/auto-unlock-user
