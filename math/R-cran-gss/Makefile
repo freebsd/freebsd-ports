@@ -1,7 +1,7 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
 
 PORTNAME=	gss
-DISTVERSION=	2.2-2
+DISTVERSION=	2.2-3
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
