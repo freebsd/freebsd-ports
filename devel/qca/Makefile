@@ -1,7 +1,7 @@
 # Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
 
 PORTNAME=	qca
-DISTVERSION=	2.3.3
+DISTVERSION=	2.3.4
 CATEGORIES=	devel
 MASTER_SITES=	KDE/stable/qca/${PORTVERSION}
 PKGNAMESUFFIX=	-qt5
