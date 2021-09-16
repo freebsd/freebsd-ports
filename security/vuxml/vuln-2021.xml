@@ -1,5 +1,5 @@
   <vuln vid="49c35943-0eeb-421c-af4f-78e04582e5fb">
-    <topic>seatd-launch: privilege escalation with SUID</topic>
+    <topic>seatd-launch -- privilege escalation with SUID</topic>
     <affects>
       <package>
 	<name>seatd</name>
