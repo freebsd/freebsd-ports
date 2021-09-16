@@ -22,7 +22,9 @@
 %%DATADIR%%/tables/bel.utb
 %%DATADIR%%/tables/bengali.cti
 %%DATADIR%%/tables/bg.ctb
+%%DATADIR%%/tables/bg.dis
 %%DATADIR%%/tables/bg.tbl
+%%DATADIR%%/tables/bg.utb
 %%DATADIR%%/tables/bh.ctb
 %%DATADIR%%/tables/bh.tbl
 %%DATADIR%%/tables/bn.tbl
@@ -160,8 +162,6 @@
 %%DATADIR%%/tables/gurumuki.cti
 %%DATADIR%%/tables/gu.tbl
 %%DATADIR%%/tables/haw-us-g1.ctb
-%%DATADIR%%/tables/he.ctb
-%%DATADIR%%/tables/he.tbl
 %%DATADIR%%/tables/he-IL-comp8.utb
 %%DATADIR%%/tables/he-IL.utb
 %%DATADIR%%/tables/hi-in-g1.utb
@@ -213,6 +213,9 @@
 %%DATADIR%%/tables/kannada.cti
 %%DATADIR%%/tables/kha.tbl
 %%DATADIR%%/tables/kh-in-g1.utb
+%%DATADIR%%/tables/kk.utb
+%%DATADIR%%/tables/km-g1.utb
+%%DATADIR%%/tables/kmr.tbl
 %%DATADIR%%/tables/kn.tbl
 %%DATADIR%%/tables/ko-2006.cti
 %%DATADIR%%/tables/ko-2006-g1.ctb
@@ -259,6 +262,8 @@
 %%DATADIR%%/tables/mun.tbl
 %%DATADIR%%/tables/mwr.ctb
 %%DATADIR%%/tables/mwr.tbl
+%%DATADIR%%/tables/my-g1.utb
+%%DATADIR%%/tables/my-g2.ctb
 %%DATADIR%%/tables/ne.ctb
 %%DATADIR%%/tables/nemethdefs.cti
 %%DATADIR%%/tables/ne.tbl
@@ -284,6 +289,8 @@
 %%DATADIR%%/tables/no-no-generic.dis
 %%DATADIR%%/tables/no-no-latinLetterDef6Dots_diacritics.uti
 %%DATADIR%%/tables/no.tbl
+%%DATADIR%%/tables/nso-za-g1.utb
+%%DATADIR%%/tables/nso-za-g2.ctb
 %%DATADIR%%/tables/np-in-g1.utb
 %%DATADIR%%/tables/or-in-g1.utb
 %%DATADIR%%/tables/oriya.cti
@@ -308,9 +315,11 @@
 %%DATADIR%%/tables/ru-litbrl.ctb
 %%DATADIR%%/tables/ru-litbrl-detailed.utb
 %%DATADIR%%/tables/ru-ru.dis
+%%DATADIR%%/tables/ru-ru-g1.ctb
 %%DATADIR%%/tables/ru-unicode.dis
 %%DATADIR%%/tables/sa-in-g1.utb
 %%DATADIR%%/tables/sa.tbl
+%%DATADIR%%/tables/sah.utb
 %%DATADIR%%/tables/sd.tbl
 %%DATADIR%%/tables/se-se.ctb
 %%DATADIR%%/tables/se-se.dis
@@ -327,6 +336,7 @@
 %%DATADIR%%/tables/sl-si-g1.utb
 %%DATADIR%%/tables/sl.tbl
 %%DATADIR%%/tables/sot-za-g1.ctb
+%%DATADIR%%/tables/sot-za-g2.ctb
 %%DATADIR%%/tables/spaces.uti
 %%DATADIR%%/tables/sr-chardefs.cti
 %%DATADIR%%/tables/sr-g1.ctb
@@ -348,6 +358,8 @@
 %%DATADIR%%/tables/tr-g2.tbl
 %%DATADIR%%/tables/tr.tbl
 %%DATADIR%%/tables/tsn-za-g1.ctb
+%%DATADIR%%/tables/tsn-za-g2.ctb
+%%DATADIR%%/tables/tt.utb
 %%DATADIR%%/tables/ukchardefs.cti
 %%DATADIR%%/tables/ukmaths_single_cell_defs.cti
 %%DATADIR%%/tables/ukmaths_unicode_defs.cti
@@ -361,11 +373,20 @@
 %%DATADIR%%/tables/ur-pk-g2.ctb
 %%DATADIR%%/tables/us-table.dis
 %%DATADIR%%/tables/uz-g1.utb
+%%DATADIR%%/tables/ve-za-g1.utb
+%%DATADIR%%/tables/ve-za-g2.ctb
+%%DATADIR%%/tables/vi-charsdef.uti
+%%DATADIR%%/tables/vi-lettersdef.uti
+%%DATADIR%%/tables/vi-puncsdef.uti
+%%DATADIR%%/tables/vi-saigon-g1.ctb
+%%DATADIR%%/tables/vi-vn-g0.utb
+%%DATADIR%%/tables/vi-vn-g1.ctb
+%%DATADIR%%/tables/vi-vn-g2.ctb
 %%DATADIR%%/tables/vi.ctb
-%%DATADIR%%/tables/vi-g1.ctb
-%%DATADIR%%/tables/vi.tbl
 %%DATADIR%%/tables/wiskunde-chardefs.cti
 %%DATADIR%%/tables/wordcx.dis
+%%DATADIR%%/tables/xh-za-g1.utb
+%%DATADIR%%/tables/xh-za-g2.ctb
 %%DATADIR%%/tables/zh_CHN.tbl
 %%DATADIR%%/tables/zh_HK.tbl
 %%DATADIR%%/tables/zh_TW.tbl
@@ -374,6 +395,8 @@
 %%DATADIR%%/tables/zh-tw.ctb
 %%DATADIR%%/tables/zhcn-g1.ctb
 %%DATADIR%%/tables/zhcn-g2.ctb
+%%DATADIR%%/tables/zu-za-g1.utb
+%%DATADIR%%/tables/zu-za-g2.ctb
 bin/lou_allround
 bin/lou_checkhyphens
 bin/lou_checktable
@@ -398,7 +421,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.20
-lib/liblouis.so.20.0.5
+lib/liblouis.so.20.0.7
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
 man/man1/lou_checktable.1.gz
