@@ -1,5 +1,6 @@
 include/elfio/elf_types.hpp
 include/elfio/elfio.hpp
+include/elfio/elfio_array.hpp
 include/elfio/elfio_dump.hpp
 include/elfio/elfio_dynamic.hpp
 include/elfio/elfio_header.hpp
