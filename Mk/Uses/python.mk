@@ -655,9 +655,9 @@ PY_PILLOW=	${PYTHON_PKGNAMEPREFIX}pillow>=7.0.0:graphics/py-pillow@${PY_FLAVOR}
 .endif
 
 .if ${PYTHON_VER} != ${PYTHON_DEFAULT}
-PY_MERCURIAL=	${PYTHON_PKGNAMEPREFIX}mercurial>=5.5:devel/mercurial@${PY_FLAVOR}
+PY_MERCURIAL=	${PYTHON_PKGNAMEPREFIX}mercurial>=5.9:devel/mercurial@${PY_FLAVOR}
 .else
-PY_MERCURIAL=	mercurial>=5.5:devel/mercurial@${PY_FLAVOR}
+PY_MERCURIAL=	mercurial>=5.9:devel/mercurial@${PY_FLAVOR}
 .endif
 
 CMAKE_ARGS+=	-DBOOST_PYTHON_SUFFIX:STRING=${PYTHON_SUFFIX}
