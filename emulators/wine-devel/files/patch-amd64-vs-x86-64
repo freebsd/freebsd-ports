@@ -1,0 +1,17 @@
+index 59857762edd..ed7a58ed1f9 100644
+--- tools/makedep.c
++++ tools/makedep.c
+@@ -4446,6 +4446,13 @@ int main( int argc, char *argv[] )
+     if (!man_ext) man_ext = "3w";
+     if (arch)
+     {
++        /* For historic reasons FreeBSD calls x86-64 by the name of amd64
++         * and features a variable ARCH with that value in the environment
++         * when building ports. This breaks Wine in interesting ways, so
++         * revert to the industry standard name when we enouncter amd64.
++         */
++        if ( !strcmp(arch,"amd64") )
++            arch = "x86-64";
+         so_dir = strmake( "$(dlldir)/%s-unix", arch );
+         pe_dir = strmake( "$(dlldir)/%s-windows", arch );
+     }
