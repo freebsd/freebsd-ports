@@ -1,3 +1,35 @@
+  <vuln vid="49c35943-0eeb-421c-af4f-78e04582e5fb">
+    <topic>seatd-launch: privilege escalation with SUID</topic>
+    <affects>
+      <package>
+	<name>seatd</name>
+	<range><ge>0.6.0</ge><lt>0.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kenny Levinsen reports:</p>
+	<blockquote cite="https://lists.sr.ht/~kennylevinsen/seatd-announce/%3CGJ2IZQ.HCKS1J0LSI803%40kl.wtf%3E">
+	  <p>seatd-launch used execlp, which reads the PATH environment variable to
+	     search for the requested executable, to execute seatd. This meant that
+	     the caller could freely control what executable was loaded by adding a
+	     user-writable directory to PATH.</p>
+	  <p>If seatd-launch had the SUID bit set, this could be used by a
+	     malicious user with the ability to execute seatd-launch to mount a
+	     privilege escalation attack to the owner of seatd-launch, which is
+	     likely root.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.sr.ht/~kennylevinsen/seatd-announce/%3CGJ2IZQ.HCKS1J0LSI803%40kl.wtf%3E</url>
+    </references>
+    <dates>
+      <discovery>2021-09-16</discovery>
+      <entry>2021-09-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="47b571f2-157b-11ec-ae98-704d7b472482">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
