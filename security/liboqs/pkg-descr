@@ -1,0 +1,14 @@
+liboqs provides:
+* a collection of open source implementations of quantum-safe key encapsulation
+  mechanism (KEM) and digital signature algorithms; the full list can be found
+  below
+* a common API for these algorithms
+* a test harness and benchmarking routines
+
+liboqs is part of the Open Quantum Safe (OQS) project led by Douglas Stebila and
+Michele Mosca, which aims to develop and integrate into applications
+quantum-safe cryptography to facilitate deployment and testing in real world
+contexts. In particular, OQS provides prototype integrations of liboqs into TLS
+and SSH, through OpenSSL and OpenSSH.
+
+WWW: https://openquantumsafe.org/
