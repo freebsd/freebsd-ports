@@ -228,6 +228,7 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/cmdline/hmm2-build.uwl
 %%DATADIR%%/cmdline/hmm2-search.uwl
 %%DATADIR%%/cmdline/hmm3-build-and-search.uwl
+%%DATADIR%%/cmdline/hmm3-search.uwl
 %%DATADIR%%/cmdline/join-quality.uwl
 %%DATADIR%%/cmdline/local-blast+.uwl
 %%DATADIR%%/cmdline/pfm-build.uwl
@@ -1033,6 +1034,7 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/samples/PDB/3INS.PDB
 %%DATADIR%%/samples/Raw/raw.seq
 %%DATADIR%%/samples/SCF/90-JRI-07.scf
+%%DATADIR%%/samples/Sanger/alignment.ugenedb
 %%DATADIR%%/samples/Stockholm/CBS.sto
 %%DATADIR%%/samples/Stockholm/UPSK.sto
 %%DATADIR%%/samples/Swiss-Prot/D0VTW9.txt

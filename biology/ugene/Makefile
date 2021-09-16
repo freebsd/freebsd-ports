@@ -1,7 +1,7 @@
 # Created by: Hannes Hauswedell <h2+fbsdports@fsfe.org>
 
 PORTNAME=	ugene
-PORTVERSION=	39.0
+PORTVERSION=	40.0
 CATEGORIES=	biology science
 
 MAINTAINER=	h2+fbsdports@fsfe.org
@@ -47,7 +47,7 @@ post-patch:
 # yes, bash is required, stuff will not execute with sh
 	@${REINPLACE_CMD} -e 's|/bin/bash|/usr/bin/env bash|' \
 		${WRKSRC}/src/gen_bin_script.cmd \
-		${WRKSRC}/installer/_common_data/ugene
+		${WRKSRC}/etc/shared/ugene ${WRKSRC}/etc/shared/ugened
 	@${REINPLACE_CMD} -e 's|-bit version|& for ${OPSYS}/${ARCH}|' \
 		${WRKSRC}/src/ugeneui/src/main_window/AboutDialogController.cpp
 	@${REINPLACE_CMD} 's, -lbreakpad$$$$D,,' \
@@ -55,13 +55,8 @@ post-patch:
 		${WRKSRC}/src/plugins_checker/plugins_checker.pri \
 		${WRKSRC}/src/ugenecl/ugenecl.pri \
 		${WRKSRC}/src/ugeneui/ugeneui.pri
-	@${REINPLACE_CMD} -e '218,220s|NULL)|false)|' \
-		${WRKSRC}/src/plugins/GUITestBase/src/GTUtilsMdi.cpp
-	@${REINPLACE_CMD} -e '/--no-pie/s,unix:!macx,linux-g++,' \
-		${WRKSRC}/src/plugins_checker/plugins_checker.pri \
-		${WRKSRC}/src/ugenecl/ugenecl.pri \
-		${WRKSRC}/src/ugenem/ugenem.pro \
-		${WRKSRC}/src/ugeneui/ugeneui.pri
+	@${REINPLACE_CMD} -e '/ugene\.desktop/s,share,&d,' \
+		${WRKSRC}/ugene.pri
 
 post-stage:
 	@cd ${STAGEDIR}${PREFIX} && ${RM} bin/ecp.* lib/ugene/ecp.*
