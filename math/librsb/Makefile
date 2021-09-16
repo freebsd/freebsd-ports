@@ -1,7 +1,7 @@
 # Created by: stephen@FreeBSD.org
 
 PORTNAME=	librsb
-PORTVERSION=	1.2.0.9
+PORTVERSION=	1.2.0.10
 CATEGORIES=	math
 MASTER_SITES=	SF/librsb
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-rc/}
