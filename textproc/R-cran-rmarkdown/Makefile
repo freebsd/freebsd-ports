@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	rmarkdown
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -17,6 +17,7 @@ CRAN_DEPENDS=	R-cran-knitr>=1.22:print/R-cran-knitr \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-tinytex>=0.31:print/R-cran-tinytex \
 		R-cran-xfun>=0.21:misc/R-cran-xfun \
+		R-cran-jquerylib>0:www/R-cran-jquerylib \
 		R-cran-stringr>=1.2.0:textproc/R-cran-stringr
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	hs-pandoc>=1.14:textproc/hs-pandoc \
