@@ -1,7 +1,7 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	waldo
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 TEST_DEPENDS=	R-cran-R6>0:devel/R-cran-R6 \
 		R-cran-covr>0:devel/R-cran-covr \
 		R-cran-testthat>=3.0.0:devel/R-cran-testthat \
+		R-cran-withr>0:devel/R-cran-withr \
 		R-cran-xml2>0:textproc/R-cran-xml2
 
 USES=		cran:auto-plist
