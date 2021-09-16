@@ -1,6 +1,6 @@
 PORTNAME=	cado-nfs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0.20210806
+DISTVERSION=	2.3.0.20210915
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,11 +22,10 @@ LIB_DEPENDS=	libecm.so:math/gmp-ecm \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		cmake:noninja compiler:c++11-lang perl5 python shebangfix # noninja because: bad $-escape (literal $ must be written as $$)
-USE_GCC=	yes # fails in clang-11 with various STL and C++ errors. Reported to the upstream author Emmanuel Thomé on 2021-08-13.
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.inria.fr
-GL_COMMIT=	c5b20eac12ea225a325d582923ef058832cda28e
+GL_COMMIT=	f4284e2391121b2bfb97bc4880b6273c7250dc2f
 
 SHEBANG_GLOB=	*.py
 
