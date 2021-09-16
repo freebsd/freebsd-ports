@@ -1,5 +1,5 @@
 PORTNAME=	pam_xdg
-PORTVERSION=	s20210901
+PORTVERSION=	s20210916
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,7 +11,7 @@ USES=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jbeich # mirror
 GH_PROJECT=	s-toolbox
-GH_TAGNAME=	dbede63
+GH_TAGNAME=	cdbe3ce
 PLIST_FILES=	lib/${PORTNAME}.so \
 		share/man/man8/${PORTNAME}.8.gz
 
@@ -20,15 +20,9 @@ MAKEFILE=	bsd.lib.mk
 MAKE_ARGS+=	SHLIB_NAME="${PORTNAME}.so" MAN="${PORTNAME}.8" \
 		SRCS="${PORTNAME}.c" LDADD="-lpam" \
 		LIBDIR="${PREFIX}/lib" SHAREDIR="${PREFIX}/share"
+CFLAGS+=	-DXDG_CONFIG_DIR="${PREFIX}/etc" \
+		-DXDG_DATA_DIR_LOCAL="${PREFIX}" \
+		-DXDG_RUNTIME_DIR_OUTER="/var/run"
 LDFLAGS+=	-Wl,-z,defs
-
-post-patch:
-	@${REINPLACE_CMD} \
-		-e '/#define/ { \
-			s,/etc,${PREFIX}&,; \
-			s,/usr/local,${PREFIX},; \
-			s,/run,/var&,; \
-		}' \
-		${WRKSRC}/${PORTNAME}.c
 
 .include <bsd.port.mk>
