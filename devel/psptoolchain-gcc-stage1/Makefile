@@ -13,7 +13,7 @@ COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 LICENSE=		GPLv3
 
-ONLY_FOR_ARCHS=		amd64 armv7 i386 powerpc powerpc64 powerpc64le
+ONLY_FOR_ARCHS=		aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=		libgmp.so:math/gmp \
 			libmpfr.so:math/mpfr \
