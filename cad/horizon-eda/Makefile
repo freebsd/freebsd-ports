@@ -1,6 +1,7 @@
 PORTNAME=	horizon-eda
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,6 +34,12 @@ MAKE_ARGS=	DEBUGFLAGS= OPTIMIZE=
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 INSTALLS_ICONS=	yes
+
+LLVM_VER=	10 # workaround for bug#253551
+BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
+CPP=		clang-cpp${LLVM_VER}
+CC=		clang${LLVM_VER}
+CXX=		clang++${LLVM_VER}
 
 post-install: # https://github.com/horizon-eda/horizon/issues/558
 	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} horizon-eda
