@@ -114,6 +114,7 @@
     SUBDIR += hiredis
     SUBDIR += hsqldb
     SUBDIR += influxdb
+    SUBDIR += influxdb2-cli
     SUBDIR += innotop
     SUBDIR += iowow
     SUBDIR += ip4r
