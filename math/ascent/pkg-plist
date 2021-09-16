@@ -7,6 +7,7 @@ include/ascent/System.h
 include/ascent/Utility.h
 include/ascent/Vector.h
 include/ascent/algorithms/Derivative.h
+include/ascent/containers/flat_id_map.h
 include/ascent/containers/stack.h
 include/ascent/direct/State.h
 include/ascent/integrators/DOPRI45.h
@@ -32,10 +33,10 @@ include/ascent/integrators_modular/RK4.h
 include/ascent/integrators_modular/RTAM2.h
 include/ascent/integrators_modular/RTAM3.h
 include/ascent/integrators_modular/RTAM4.h
+include/ascent/integrators_modular/Ralston4.h
 include/ascent/modular/Link.h
 include/ascent/modular/Module.h
 include/ascent/threading/Pool.h
-include/ascent/threading/Queue.h
 include/ascent/timing/Sampler.h
 include/ascent/timing/TimeAdvanced.h
 include/ascent/timing/Timing.h
