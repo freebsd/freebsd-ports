@@ -42,7 +42,7 @@ GNUPG_DESC=		GnuPG support (for pgpverify control message)
 UUCP_RNEWS_DESC=	Install rnews suitable for use with net/freebsd-uucp
 SETGID_INEWS_DESC=	Enable posting articles locally for all users
 
-.if ${BRANCH:U} == CURRENT
+.if ${BRANCH:U} == 2.7
 OPTIONS_DEFINE+=	SQLITE
 OPTIONS_DEFAULT+=	SQLITE
 SQLITE_DESC=		Enable SQLite (for ovsqlite overview method)
