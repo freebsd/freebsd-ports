@@ -1,21 +1,6 @@
---- vcl/qt5/Qt5Instance.cxx.orig	2020-05-13 11:19:20 UTC
+--- vcl/qt5/Qt5Instance.cxx.orig	2021-09-08 17:53:20 UTC
 +++ vcl/qt5/Qt5Instance.cxx
-@@ -287,7 +287,13 @@ SalFrame* Qt5Instance::CreateChildFrame(SystemParentDa
- SalFrame* Qt5Instance::CreateFrame(SalFrame* pParent, SalFrameStyleFlags nStyle)
- {
-     assert(!pParent || dynamic_cast<Qt5Frame*>(pParent));
--    return new Qt5Frame(static_cast<Qt5Frame*>(pParent), nStyle, m_bUseCairo);
-+    SalFrame* pRet(nullptr);
-+    bool bUseCairo = m_bUseCairo;
-+    RunInMainThread([&pRet, pParent, nStyle, bUseCairo]() {
-+        pRet = new Qt5Frame(static_cast<Qt5Frame*>(pParent), nStyle, bUseCairo);
-+    });
-+    assert(pRet);
-+    return pRet;
- }
- 
- void Qt5Instance::DestroyFrame(SalFrame* pFrame)
-@@ -458,7 +464,7 @@ Qt5Instance::createPicker(css::uno::Reference<css::uno
+@@ -476,7 +476,7 @@ Qt5Instance::createPicker(css::uno::Reference<css::uno
      {
          SolarMutexGuard g;
          rtl::Reference<Qt5FilePicker> pPicker;
@@ -24,7 +9,7 @@
          assert(pPicker);
          return pPicker;
      }
-@@ -663,7 +669,7 @@ std::unique_ptr<QApplication> Qt5Instance::CreateQAppl
+@@ -681,7 +681,7 @@ std::unique_ptr<QApplication> Qt5Instance::CreateQAppl
  extern "C" {
  VCLPLUG_QT5_PUBLIC SalInstance* create_SalInstance()
  {
