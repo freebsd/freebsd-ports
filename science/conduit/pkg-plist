@@ -65,6 +65,7 @@ include/conduit/conduit_relay.hpp
 include/conduit/conduit_relay.mod
 include/conduit/conduit_relay_config.h
 include/conduit/conduit_relay_exports.h
+include/conduit/conduit_relay_hdf5.hpp
 include/conduit/conduit_relay_io.h
 include/conduit/conduit_relay_io.hpp
 include/conduit/conduit_relay_io_blueprint.hpp
@@ -72,12 +73,19 @@ include/conduit/conduit_relay_io_handle.hpp
 include/conduit/conduit_relay_io_handle_api.hpp
 include/conduit/conduit_relay_io_handle_sidre.hpp
 include/conduit/conduit_relay_io_handle_sidre_api.hpp
+include/conduit/conduit_relay_io_hdf5.hpp
+include/conduit/conduit_relay_io_hdf5_api.hpp
 include/conduit/conduit_relay_io_identify_protocol.hpp
 include/conduit/conduit_relay_io_identify_protocol_api.hpp
+include/conduit/conduit_relay_io_silo.hpp
+include/conduit/conduit_relay_io_silo_api.hpp
 include/conduit/conduit_relay_mpi.hpp
 include/conduit/conduit_relay_mpi_io.h
 include/conduit/conduit_relay_mpi_io.hpp
 include/conduit/conduit_relay_mpi_io_blueprint.hpp
+include/conduit/conduit_relay_mpi_io_hdf5.hpp
+include/conduit/conduit_relay_mpi_io_silo.hpp
+include/conduit/conduit_relay_silo.hpp
 include/conduit/conduit_relay_web.hpp
 include/conduit/conduit_relay_web_node_viewer_server.hpp
 include/conduit/conduit_schema.hpp

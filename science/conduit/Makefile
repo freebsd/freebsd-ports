@@ -1,7 +1,7 @@
 PORTNAME=	conduit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,10 @@ COMMENT=	Simplified data exchange for HPC simulations
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-LIB_DEPENDS=	libmpi_cxx.so:net/openmpi
+LIB_DEPENDS=	libhdf5.so:science/hdf5 \
+		libmpi_cxx.so:net/openmpi \
+		libsiloh5.so:science/silo \
+		libsz.so:science/szip
 
 USES=		cmake compiler:c++11-lang fortran
 USE_LDCONFIG=	yes
@@ -24,6 +27,9 @@ WRKSRC_SUBDIR=	src
 
 CMAKE_ON=	ENABLE_FORTRAN ENABLE_MPI
 CMAKE_OFF=	CONDUIT_ENABLE_TESTS ENABLE_DOCS ENABLE_EXAMPLES ENABLE_GIT ENABLE_TESTS ENABLE_VALGRIND
-CMAKE_ARGS=	-DFREEBSD_EXAMPLESDIR=${EXAMPLESDIR}
+CMAKE_ARGS=	-DHDF5_DIR=${LOCALBASE} \
+		-DSILO_DIR=${LOCALBASE} \
+		-DFREEBSD_EXAMPLESDIR=${EXAMPLESDIR} # complete list of optional dependencies (enabled with *_DIR): https://llnl-conduit.readthedocs.io/en/latest/building.html
+#CMAKE_ARGS+=	-DADIOS_DIR=${LOCALBASE} # broken, see https://github.com/LLNL/conduit/issues/841
 
 .include <bsd.port.mk>
