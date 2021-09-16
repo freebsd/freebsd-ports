@@ -1,6 +1,5 @@
 PORTNAME=	rt
-DISTVERSION=	4.4.4
-PORTREVISION=	2
+DISTVERSION=	4.4.5
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	44
@@ -161,8 +160,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's!%%PREFIX%%!${PREFIX}!g' ${WRKSRC}/config.layout
 	@${REINPLACE_CMD} -e 's!%%SITE_PERL%%!${PREFIX}/${SITE_PERL_REL}!g' ${WRKSRC}/config.layout
 	@${REINPLACE_CMD} -e 's!/path/to/your/etc!${RT_ETC_PATH}!g' ${WRKSRC}/etc/RT_SiteConfig.pm
-	@${REINPLACE_CMD} -e 's!/bin:/usr/bin!/bin:/usr/bin:${LOCALBASE}/bin!' ${WRKSRC}/lib/RT/Interface/CLI.pm && \
-	    ${RM} ${WRKSRC}/lib/RT/Interface/CLI.pm.bak
 
 pre-install:
 	@${RM} ${WRKSRC}/lib/RT.pm.in
