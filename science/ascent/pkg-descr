@@ -1,0 +1,11 @@
+Ascent is an easy-to-use flyweight in situ visualization and analysis library
+for HPC simulations.
+
+It supports:
+* Supports: Making Pictures, Transforming Data, and Capturing Data for use
+  outside of Ascent
+* Young effort, yet already includes most common visualization operations
+* Provides a simple infrastructure to integrate custom analysis
+* Provides C++, C, Python, and Fortran APIs
+
+WWW: https://ascent.readthedocs.io/en/latest/

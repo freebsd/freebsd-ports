@@ -25,6 +25,7 @@
     SUBDIR += aircraft-datcom
     SUBDIR += antioch
     SUBDIR += apbs
+    SUBDIR += ascent
     SUBDIR += atompaw
     SUBDIR += avogadro2
     SUBDIR += avogadrolibs
