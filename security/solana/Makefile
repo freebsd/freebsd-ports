@@ -1,7 +1,6 @@
 PORTNAME=	solana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.10
-PORTREVISION=	1
+DISTVERSION=	1.7.11
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -108,13 +107,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		criterion-stats-0.3.0 \
 		crossbeam-channel-0.4.4 \
 		crossbeam-channel-0.5.0 \
-		crossbeam-deque-0.7.3 \
-		crossbeam-deque-0.8.0 \
-		crossbeam-epoch-0.8.2 \
-		crossbeam-epoch-0.9.1 \
-		crossbeam-queue-0.2.3 \
+		crossbeam-deque-0.8.1 \
+		crossbeam-epoch-0.9.5 \
 		crossbeam-utils-0.7.2 \
-		crossbeam-utils-0.8.1 \
+		crossbeam-utils-0.8.5 \
 		crunchy-0.2.2 \
 		crypto-mac-0.7.0 \
 		crypto-mac-0.8.0 \
@@ -191,7 +187,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		globset-0.4.5 \
 		goauth-0.10.0 \
 		goblin-0.3.0 \
-		h2-0.2.5 \
 		h2-0.3.3 \
 		half-1.6.0 \
 		hash32-0.1.1 \
@@ -208,14 +203,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hmac-0.10.1 \
 		hmac-drbg-0.3.0 \
 		http-0.2.1 \
-		http-body-0.3.1 \
 		http-body-0.4.2 \
 		httparse-1.4.1 \
-		httpdate-0.3.2 \
 		httpdate-1.0.1 \
 		humantime-2.0.1 \
 		hyper-0.10.16 \
-		hyper-0.13.10 \
 		hyper-0.14.11 \
 		hyper-rustls-0.22.1 \
 		hyper-timeout-0.4.1 \
@@ -235,15 +227,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		itoa-0.4.5 \
 		jobserver-0.1.21 \
 		js-sys-0.3.47 \
-		jsonrpc-client-transports-17.1.0 \
-		jsonrpc-core-17.1.0 \
-		jsonrpc-core-client-17.1.0 \
-		jsonrpc-derive-17.1.0 \
-		jsonrpc-http-server-17.1.0 \
-		jsonrpc-ipc-server-17.1.0 \
-		jsonrpc-pubsub-17.1.0 \
-		jsonrpc-server-utils-17.1.0 \
-		jsonrpc-ws-server-17.1.0 \
+		jsonrpc-client-transports-18.0.0 \
+		jsonrpc-core-18.0.0 \
+		jsonrpc-core-client-18.0.0 \
+		jsonrpc-derive-18.0.0 \
+		jsonrpc-http-server-18.0.0 \
+		jsonrpc-ipc-server-18.0.0 \
+		jsonrpc-pubsub-18.0.0 \
+		jsonrpc-server-utils-18.0.0 \
+		jsonrpc-ws-server-18.0.0 \
 		keccak-0.1.0 \
 		kernel32-sys-0.2.2 \
 		language-tags-0.2.2 \
@@ -268,7 +260,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		memchr-1.0.2 \
 		memchr-2.4.0 \
 		memmap2-0.1.0 \
-		memoffset-0.5.4 \
 		memoffset-0.6.1 \
 		mime-0.2.6 \
 		mime-0.3.16 \
@@ -276,8 +267,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		mio-0.6.22 \
 		mio-0.7.6 \
 		mio-extras-2.0.6 \
-		mio-named-pipes-0.1.7 \
-		mio-uds-0.6.8 \
 		miow-0.2.2 \
 		miow-0.3.6 \
 		multimap-0.8.3 \
@@ -305,8 +294,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		openssl-sys-0.9.57 \
 		ouroboros-0.10.0 \
 		ouroboros_macro-0.10.0 \
-		parity-tokio-ipc-0.8.0 \
-		parity-ws-0.10.0 \
+		parity-tokio-ipc-0.9.0 \
+		parity-ws-0.11.0 \
 		parking_lot-0.9.0 \
 		parking_lot-0.10.2 \
 		parking_lot-0.11.0 \
@@ -326,7 +315,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pin-project-1.0.1 \
 		pin-project-internal-0.4.23 \
 		pin-project-internal-1.0.1 \
-		pin-project-lite-0.1.5 \
 		pin-project-lite-0.2.7 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.17 \
@@ -462,7 +450,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		synstructure-0.12.3 \
 		sysctl-0.4.0 \
 		systemstat-0.1.5 \
-		tar-0.4.28 \
+		tar-0.4.37 \
 		tarpc-0.24.1 \
 		tarpc-plugins-0.9.0 \
 		tempfile-3.1.0 \
@@ -481,16 +469,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tiny-bip39-0.8.0 \
 		tinyvec-1.1.1 \
 		tinyvec_macros-0.1.0 \
-		tokio-0.1.22 \
-		tokio-0.2.22 \
 		tokio-1.8.1 \
 		tokio-codec-0.1.2 \
-		tokio-current-thread-0.1.7 \
 		tokio-executor-0.1.10 \
-		tokio-fs-0.1.7 \
 		tokio-io-0.1.13 \
 		tokio-io-timeout-1.1.1 \
-		tokio-macros-0.2.6 \
 		tokio-macros-1.3.0 \
 		tokio-native-tls-0.3.0 \
 		tokio-reactor-0.1.12 \
@@ -499,12 +482,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tokio-stream-0.1.2 \
 		tokio-sync-0.1.8 \
 		tokio-tcp-0.1.4 \
-		tokio-threadpool-0.1.18 \
-		tokio-timer-0.2.13 \
 		tokio-tls-0.2.1 \
-		tokio-udp-0.1.6 \
-		tokio-uds-0.2.6 \
-		tokio-util-0.3.1 \
 		tokio-util-0.6.3 \
 		toml-0.5.6 \
 		tonic-0.5.0 \
@@ -583,7 +561,7 @@ XARCH=		${ARCH:S/amd64/x86_64/:tu}
 MAKE_ENV=	${XARCH}_UNKNOWN_FREEBSD_OPENSSL_INCLUDE_DIR=${OPENSSLINC} \
 		${XARCH}_UNKNOWN_FREEBSD_OPENSSL_LIB_DIR=${OPENSSLLIB}
 
-LLVM_VERSION=	10
+LLVM_VERSION=	12
 
 BINARY_ALIAS=	llvm-config=${PREFIX}/bin/llvm-config${LLVM_VERSION}
 
