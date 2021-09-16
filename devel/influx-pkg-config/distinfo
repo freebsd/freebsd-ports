@@ -1,0 +1,5 @@
+TIMESTAMP = 1643140363
+SHA256 (go/devel_influx-pkg-config/pkg-config-v0.2.11/v0.2.11.mod) = cb101f1b8f52a9d96c246dd29d91110d4fe712b2ad9e15bcbe127af5ba64c63f
+SIZE (go/devel_influx-pkg-config/pkg-config-v0.2.11/v0.2.11.mod) = 277
+SHA256 (go/devel_influx-pkg-config/pkg-config-v0.2.11/v0.2.11.zip) = e744271589b353552719f93fe61b28390925ea3ed4602236264af7305071e9dd
+SIZE (go/devel_influx-pkg-config/pkg-config-v0.2.11/v0.2.11.zip) = 51287

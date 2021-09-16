@@ -1021,6 +1021,7 @@
     SUBDIR += include-what-you-use
     SUBDIR += indi
     SUBDIR += indicators
+    SUBDIR += influx-pkg-config
     SUBDIR += inifiled
     SUBDIR += inih
     SUBDIR += inilib
