@@ -88,6 +88,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Condition/StatusChange.pm
 %%SITE_PERL%%/RT/Condition/TimeWorkedChange.pm
 %%SITE_PERL%%/RT/Condition/UserDefined.pm
+%%SITE_PERL%%/RT/Condition/ViaInterface.pm
 %%SITE_PERL%%/RT/Config.pm
 %%SITE_PERL%%/RT/Crypt.pm
 %%SITE_PERL%%/RT/Crypt/GnuPG.pm
@@ -247,6 +248,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Test.pm
 %%SITE_PERL%%/RT/Test/Apache.pm
 %%SITE_PERL%%/RT/Test/Assets.pm
+%%SITE_PERL%%/RT/Test/Crypt.pm
 %%SITE_PERL%%/RT/Test/Email.pm
 %%SITE_PERL%%/RT/Test/ExternalStorage.pm
 %%SITE_PERL%%/RT/Test/GnuPG.pm
@@ -262,6 +264,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/URI.pm
 %%SITE_PERL%%/RT/URI/a.pm
 %%SITE_PERL%%/RT/URI/asset.pm
+%%SITE_PERL%%/RT/URI/attribute.pm
 %%SITE_PERL%%/RT/URI/base.pm
 %%SITE_PERL%%/RT/URI/fsck_com_article.pm
 %%SITE_PERL%%/RT/URI/fsck_com_rt.pm
@@ -311,7 +314,6 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/assets.pod
 %%PORTDOCS%%%%DOCSDIR%%/authentication.pod
 %%PORTDOCS%%%%DOCSDIR%%/automating_rt.pod
-%%PORTDOCS%%%%DOCSDIR%%/backups.pod
 %%PORTDOCS%%%%DOCSDIR%%/charts.pod
 %%PORTDOCS%%%%DOCSDIR%%/custom_roles.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/approvals.pod
@@ -339,6 +341,12 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/images/action-decline.png
 %%PORTDOCS%%%%DOCSDIR%%/images/added-terms.png
 %%PORTDOCS%%%%DOCSDIR%%/images/advanced-search.png
+%%PORTDOCS%%%%DOCSDIR%%/images/asset-cfs.png
+%%PORTDOCS%%%%DOCSDIR%%/images/asset-date-details.png
+%%PORTDOCS%%%%DOCSDIR%%/images/asset-search.png
+%%PORTDOCS%%%%DOCSDIR%%/images/asset-ticket-create-selfservice.png
+%%PORTDOCS%%%%DOCSDIR%%/images/asset-ticket-create.png
+%%PORTDOCS%%%%DOCSDIR%%/images/catalog-rights.png
 %%PORTDOCS%%%%DOCSDIR%%/images/complicated-search-arrows.png
 %%PORTDOCS%%%%DOCSDIR%%/images/create-setowner-action.png
 %%PORTDOCS%%%%DOCSDIR%%/images/current-search.png
@@ -355,6 +363,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/images/dashboards-search-results.png
 %%PORTDOCS%%%%DOCSDIR%%/images/delete-term.png
 %%PORTDOCS%%%%DOCSDIR%%/images/deleted-term.png
+%%PORTDOCS%%%%DOCSDIR%%/images/edit-catalog.png
 %%PORTDOCS%%%%DOCSDIR%%/images/general-owner-chart.png
 %%PORTDOCS%%%%DOCSDIR%%/images/general-owner-lastupdated-chart.png
 %%PORTDOCS%%%%DOCSDIR%%/images/general-status-chart.png
@@ -370,6 +379,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/images/status-change-condition.png
 %%PORTDOCS%%%%DOCSDIR%%/images/subscriptions.png
 %%PORTDOCS%%%%DOCSDIR%%/images/theme_editor_defaults.png
+%%PORTDOCS%%%%DOCSDIR%%/images/user-time-worked-report.png
 %%PORTDOCS%%%%DOCSDIR%%/images/with-created-before.png
 %%PORTDOCS%%%%DOCSDIR%%/images/with-newline.png
 %%PORTDOCS%%%%DOCSDIR%%/images/without-newline.png
@@ -381,10 +391,12 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/query_builder.pod
 %%PORTDOCS%%%%DOCSDIR%%/reminders.pod
 %%PORTDOCS%%%%DOCSDIR%%/reporting/feeds.pod
+%%PORTDOCS%%%%DOCSDIR%%/reporting/user_time_worked.pod
 %%PORTDOCS%%%%DOCSDIR%%/rt_perl.pod
 %%PORTDOCS%%%%DOCSDIR%%/schema.dot
 %%PORTDOCS%%%%DOCSDIR%%/security.pod
 %%PORTDOCS%%%%DOCSDIR%%/subscriptions_feeds.pod
+%%PORTDOCS%%%%DOCSDIR%%/system_administration/database.pod
 %%PORTDOCS%%%%DOCSDIR%%/ticket_metadata.pod
 %%DOCSDIR%%/upgrade/3.1.0/acl.Oracle
 %%DOCSDIR%%/upgrade/3.1.0/acl.Pg
@@ -598,6 +610,7 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/4.4.2/schema.Pg
 %%DOCSDIR%%/upgrade/4.4.2/schema.SQLite
 %%DOCSDIR%%/upgrade/4.4.2/schema.mysql
+%%DOCSDIR%%/upgrade/4.4.5/content
 %%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%DOCSDIR%%/upgrade/reset-sequences
 %%DOCSDIR%%/upgrade/sanity-check-stylesheets
@@ -666,6 +679,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Elements/EditCustomFieldValuesCanonicalizer
 %%DATADIR%%/html/Admin/Elements/EditCustomFieldValuesSource
 %%DATADIR%%/html/Admin/Elements/EditCustomFields
+%%DATADIR%%/html/Admin/Elements/EditCustomRoles
 %%DATADIR%%/html/Admin/Elements/EditQueueWatcherGroup
 %%DATADIR%%/html/Admin/Elements/EditQueueWatchers
 %%DATADIR%%/html/Admin/Elements/EditRights
@@ -718,8 +732,10 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Groups/UserRights.html
 %%DATADIR%%/html/Admin/Groups/autohandler
 %%DATADIR%%/html/Admin/Groups/index.html
+%%DATADIR%%/html/Admin/Helpers/ClearMasonCache
 %%DATADIR%%/html/Admin/Queues/CustomField.html
 %%DATADIR%%/html/Admin/Queues/CustomFields.html
+%%DATADIR%%/html/Admin/Queues/CustomRoles.html
 %%DATADIR%%/html/Admin/Queues/DefaultValues.html
 %%DATADIR%%/html/Admin/Queues/GroupRights.html
 %%DATADIR%%/html/Admin/Queues/History.html
@@ -738,6 +754,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Scrips/Objects.html
 %%DATADIR%%/html/Admin/Scrips/index.html
 %%DATADIR%%/html/Admin/Tools/Configuration.html
+%%DATADIR%%/html/Admin/Tools/GnuPG.html
 %%DATADIR%%/html/Admin/Tools/Queries.html
 %%DATADIR%%/html/Admin/Tools/Shredder/Dumps/dhandler
 %%DATADIR%%/html/Admin/Tools/Shredder/Elements/DumpFileLink
@@ -847,6 +864,8 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Asset/Search/Results.tsv
 %%DATADIR%%/html/Asset/Search/index.html
 %%DATADIR%%/html/Asset/index.html
+%%DATADIR%%/html/Crypt/GetGPGPubkey.html
+%%DATADIR%%/html/Crypt/GetSMIMECert.html
 %%DATADIR%%/html/Dashboards/Elements/DashboardsForObject
 %%DATADIR%%/html/Dashboards/Elements/Deleted
 %%DATADIR%%/html/Dashboards/Elements/HiddenSearches
@@ -891,6 +910,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/EditCustomFieldCustomGroupings
 %%DATADIR%%/html/Elements/EditCustomFieldDate
 %%DATADIR%%/html/Elements/EditCustomFieldDateTime
+%%DATADIR%%/html/Elements/EditCustomFieldDisplay
 %%DATADIR%%/html/Elements/EditCustomFieldFreeform
 %%DATADIR%%/html/Elements/EditCustomFieldIPAddress
 %%DATADIR%%/html/Elements/EditCustomFieldIPAddressRange
@@ -925,6 +945,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/Menu
 %%DATADIR%%/html/Elements/MessageBox
 %%DATADIR%%/html/Elements/Modal
+%%DATADIR%%/html/Elements/MultiUserRoleInput
 %%DATADIR%%/html/Elements/MyAdminQueues
 %%DATADIR%%/html/Elements/MyAssets
 %%DATADIR%%/html/Elements/MyRT
@@ -1032,6 +1053,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Helpers/Autocomplete/CustomFieldValues
 %%DATADIR%%/html/Helpers/Autocomplete/Groups
 %%DATADIR%%/html/Helpers/Autocomplete/Owners
+%%DATADIR%%/html/Helpers/Autocomplete/Principals
 %%DATADIR%%/html/Helpers/Autocomplete/Queues
 %%DATADIR%%/html/Helpers/Autocomplete/Tickets
 %%DATADIR%%/html/Helpers/Autocomplete/Users
@@ -1118,6 +1140,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Reports/CreatedByDates.html
 %%DATADIR%%/html/Reports/ResolvedByDates.html
 %%DATADIR%%/html/Reports/ResolvedByOwner.html
+%%DATADIR%%/html/Reports/TimeWorkedReport.html
 %%DATADIR%%/html/Reports/index.html
 %%DATADIR%%/html/Search/Article.html
 %%DATADIR%%/html/Search/Build.html
@@ -1738,7 +1761,7 @@ sbin/standalone_httpd
 %%DATADIR%%/static/js/forms.js
 %%DATADIR%%/static/js/history-folding.js
 %%DATADIR%%/static/js/i18n.js
-%%DATADIR%%/static/js/jquery-1.12.4p1.min.js
+%%DATADIR%%/static/js/jquery-1.1%%APACHE_VERSION%%p1.min.js
 %%DATADIR%%/static/js/jquery-ui-patch-datepicker.js
 %%DATADIR%%/static/js/jquery-ui-timepicker-addon.js
 %%DATADIR%%/static/js/jquery-ui.min.js
