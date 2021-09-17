@@ -1,6 +1,6 @@
 PORTNAME=	nmsg
-PORTVERSION=	0.15.1
-PORTREVISION=	1
+PORTVERSION=	1.0.0
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -11,9 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libprotobuf-c.so:devel/protobuf-c \
-		libxs.so:devel/libxs \
-		libwdns.so:dns/wdns \
-		libyajl.so:devel/yajl
+		libwdns.so:dns/wdns
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix pkgconfig
@@ -25,11 +23,16 @@ PORTDOCS=	*
 
 # The DOXYGEN option is best effort.
 # If doxygen is installed, it will get used if the option is set to NO.
-OPTIONS_DEFINE=		DOXYGEN EXAMPLES MANPAGES DOCS
-OPTIONS_DEFAULT=	DOXYGEN MANPAGES
+OPTIONS_DEFINE=		YAJL ZEROMQ DOXYGEN EXAMPLES MANPAGES DOCS
+OPTIONS_DEFAULT=	YAJL ZEROMQ DOXYGEN MANPAGES
 OPTIONS_SUB=		yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include/yajl
+YAJL_DESC=		JSON support via libyajl
+YAJL_CONFIGURE_WITH=	yajl
+YAJL_LIB_DEPENDS=	libyajl.so:devel/yajl
+ZEROMQ_DESC=		ZeroMQ support
+ZEROMQ_CONFIGURE_WITH=	libzmq
+ZEROMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
 
 ALL_TARGET=	all
 DOXYGEN_IMPLIES=	DOCS

@@ -1,5 +1,6 @@
 PORTNAME=	dnstable-convert
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 

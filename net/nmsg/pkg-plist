@@ -44,8 +44,8 @@ include/nmsg/version.h
 include/nmsg/zbuf.h
 lib/libnmsg.a
 lib/libnmsg.so
-lib/libnmsg.so.6
-lib/libnmsg.so.6.1.0
+lib/libnmsg.so.8
+lib/libnmsg.so.8.0.0
 lib/nmsg/nmsg_flt1_sample.so
 lib/nmsg/nmsg_msg9_base.so
 libdata/pkgconfig/libnmsg.pc
