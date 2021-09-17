@@ -121,7 +121,6 @@
     SUBDIR += e2guardian
     SUBDIR += edbrowse
     SUBDIR += eden
-    SUBDIR += efront
     SUBDIR += element-web
     SUBDIR += elgg
     SUBDIR += elinks
@@ -1550,7 +1549,6 @@
     SUBDIR += py-django-redis
     SUBDIR += py-django-registration
     SUBDIR += py-django-registration-redux
-    SUBDIR += py-django-rest-swagger
     SUBDIR += py-django-reversion
     SUBDIR += py-django-reversion-compare
     SUBDIR += py-django-sekizai
@@ -1567,7 +1565,6 @@
     SUBDIR += py-django-tables2
     SUBDIR += py-django-tagging
     SUBDIR += py-django-taggit
-    SUBDIR += py-django-taggit-serializer
     SUBDIR += py-django-tastypie
     SUBDIR += py-django-templatetag-sugar
     SUBDIR += py-django-timezone-field
