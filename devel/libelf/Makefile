@@ -1,53 +1,41 @@
 # Created by: roam@FreeBSD.org
 
 PORTNAME=	libelf
-PORTVERSION=	0.8.13
+DISTVERSION=	0.8.13
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.mr511.de/software/ \
-		SUNSITE/libs
+MASTER_SITES=	NETBSD
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Public ELF file access library similar to libelf(3) in Solaris
 
 LICENSE=	LGPL20
 
+USES=		desthack pathfix
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=		--enable-shared --disable-compat
+
 CONFLICTS_INSTALL=	elfutils
 
-OPTIONS_DEFINE=	EXTENDED NLS SANITY
+OPTIONS_DEFINE=		EXTENDED NLS SANITY
 OPTIONS_DEFAULT=	EXTENDED SANITY
 
-EXTENDED_DESC=	ELF format extensions
-SANITY_DESC=	Avoid loading invalid ELF files
+EXTENDED_DESC=		ELF format extensions
+SANITY_DESC=		Avoid loading invalid ELF files
+
+EXTENDED_CONFIGURE_ENABLE=	extended-format
+NLS_USES=			gettext localbase:ldflags
+NLS_CONFIGURE_ENABLE=		nls
+NLS_LDFLAGS=			-lintl
+SANITY_CONFIGURE_ENABLE=	sanity-checks
 
 .include <bsd.port.options.mk>
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-shared --disable-compat
-USE_LDCONFIG=	yes
-USES=		desthack pathfix
-
 .if ${PORT_OPTIONS:MNLS}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-CONFIGURE_ARGS+=	--enable-nls
-USES+=		gettext
 PLIST_SUB+=	GETTEXT=""
 .else
-CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	GETTEXT="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MEXTENDED}
-CONFIGURE_ARGS+=	--enable-extended-format
-.else
-CONFIGURE_ARGS+=	--disable-extended-format
-.endif
-
-.if ${PORT_OPTIONS:MSANITY}
-CONFIGURE_ARGS+=	--enable-sanity-checks
-.else
-CONFIGURE_ARGS+=	--disable-sanity-checks
 .endif
 
 .include <bsd.port.mk>
