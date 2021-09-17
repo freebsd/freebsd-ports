@@ -1,29 +1,34 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	closure-compiler
-PORTVERSION=	20180805
+PORTVERSION=	20210808
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www java
-MASTER_SITES=	http://dl.google.com/closure-compiler/
-DISTNAME=	compiler-${PORTVERSION}
+MASTER_SITES=	https://repo1.maven.org/maven2/com/google/javascript/${PORTNAME}/v${DISTVERSION}/
+EXTRACT_SUFX=	.jar
+EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bryan@frimin.fr
 COMMENT=	Closure Compiler
 
 LICENSE=	APACHE20
 
+USE_JAVA=	13
+
 NO_ARCH=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 SUB_FILES=	closure-compiler
-SUB_LIST=	JAVA="${JAVA}" PORTVERSION=${PORTVERSION}
-USE_JAVA=	yes
+SUB_LIST=	JAVA="${JAVA}" \
+		PORTVERSION=${PORTVERSION}
 
-PLIST_FILES=	bin/closure-compiler \
-		${DATADIR}/closure-compiler-v${PORTVERSION}.jar
+NO_WRKSUBDIR=	yes
+
+PLIST_FILES=	${DATADIR}/closure-compiler-v${PORTVERSION}.jar \
+		bin/closure-compiler
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/closure-compiler-v${PORTVERSION}.jar ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${STAGEDIR}${DATADIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/closure-compiler ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
