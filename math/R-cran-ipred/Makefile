@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	ipred
-DISTVERSION=	0.9-11
+DISTVERSION=	0.9-12
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
