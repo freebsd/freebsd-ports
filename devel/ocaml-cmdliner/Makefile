@@ -1,5 +1,5 @@
 PORTNAME=	cmdliner
-PORTVERSION=	0.9.8
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://erratique.ch/software/cmdliner/releases/
 PKGNAMEPREFIX=	ocaml-
@@ -7,23 +7,18 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml module for handling of command line interfaces
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
-
-USES=			tar:tbz
+USES=		gmake tar:tbz
 USE_OCAML=		yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAMLFIND_PLIST=	yes
 USE_OCAML_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	tes
+MAKE_ARGS=	DOCDIR=${STAGEDIR}${OCAML_DOCSDIR}/${PORTNAME} \
+		LIBDIR=${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}
+INSTALL_TARGET=	install
 
-do-build:
-	cd ${WRKSRC} && ocamlbuild cmdliner.cmxs cmdliner.cma cmdliner.a
-
-do-install:
-	${MKDIR} ${STAGEDIR}${OCAMLFIND_DESTDIR}/cmdliner
-	cd ${WRKSRC} && ocamlfind install -destdir ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib cmdliner pkg/META _build/src/cmdliner.a _build/src/cmdliner.cma _build/src/cmdliner.cmi _build/src/cmdliner.cmx _build/src/cmdliner.cmxa _build/src/cmdliner.cmxs _build/src/cmdliner.mli
-	${INSTALL_LIB} ${WRKSRC}/_build/src/cmdliner.cmxs \
-		${STAGEDIR}${OCAMLFIND_DESTDIR}/cmdliner
+OPTIONS_DEFINE=	DOCS
+DOCS_INSTALL_TARGET=	install-doc
 
 .include <bsd.port.mk>
