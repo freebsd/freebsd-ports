@@ -123,6 +123,7 @@ include/glib-2.0/gio/gpermission.h
 include/glib-2.0/gio/gpollableinputstream.h
 include/glib-2.0/gio/gpollableoutputstream.h
 include/glib-2.0/gio/gpollableutils.h
+include/glib-2.0/gio/gpowerprofilemonitor.h
 include/glib-2.0/gio/gpropertyaction.h
 include/glib-2.0/gio/gproxy.h
 include/glib-2.0/gio/gproxyaddress.h
@@ -211,6 +212,7 @@ include/glib-2.0/glib/gi18n.h
 include/glib-2.0/glib/giochannel.h
 include/glib-2.0/glib/gkeyfile.h
 include/glib-2.0/glib/glib-autocleanups.h
+include/glib-2.0/glib/glib-typeof.h
 include/glib-2.0/glib/glist.h
 include/glib-2.0/glib/gmacros.h
 include/glib-2.0/glib/gmain.h
