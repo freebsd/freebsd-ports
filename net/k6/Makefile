@@ -1,6 +1,6 @@
 PORTNAME=	k6
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.34.0
+DISTVERSION=	0.34.1
 CATEGORIES=	net
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 USES=		go:modules
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
-_BUILD_HASH=	db6415a
+_BUILD_HASH=	0628db0	
 
 GO_MODULE=	github.com/grafana/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
