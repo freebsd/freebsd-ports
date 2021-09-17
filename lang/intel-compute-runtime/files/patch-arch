@@ -1,0 +1,19 @@
+Add more architecture names
+
+CMake Error at CMakeLists.txt:164 (message):
+  Unsupported target processor: amd64
+  Unsupported target processor: i386
+
+--- CMakeLists.txt.orig	2021-09-17 14:06:15 UTC
++++ CMakeLists.txt
+@@ -154,6 +154,10 @@ if(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "x86_64")
+   set(NEO_TARGET_PROCESSOR "x86_64")
+ elseif(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "AMD64")
+   set(NEO_TARGET_PROCESSOR "x86_64")
++elseif(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "amd64")
++  set(NEO_TARGET_PROCESSOR "x86_64")
++elseif(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "i386")
++  set(NEO_TARGET_PROCESSOR "x86_64") # pre-895e9e511653 code
+ elseif(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "aarch64")
+   set(NEO_TARGET_PROCESSOR "aarch64")
+   include_directories(${CMAKE_CURRENT_SOURCE_DIR}/third_party/sse2neon)

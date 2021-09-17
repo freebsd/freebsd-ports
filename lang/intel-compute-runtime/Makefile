@@ -1,5 +1,5 @@
 PORTNAME=	compute-runtime
-DISTVERSION=	21.37.20939
+DISTVERSION=	21.39.21127
 CATEGORIES=	lang
 PKGNAMEPREFIX=	intel-
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -15,6 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
+BROKEN_i386=	shared/source/kernel/implicit_args.h:35:1: error: static_assert failed \
+		due to requirement '(sizeof(NEO::ImplicitArgs) & 31) == 0' \
+		"Implicit args size need to be aligned to 32"
 
 LIB_DEPENDS=	libigc.so:devel/intel-graphics-compiler@${FLAVOR} \
 		libigdgmm.so:multimedia/gmmlib
