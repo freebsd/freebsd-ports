@@ -94,10 +94,12 @@
     </description>
     <references>
       <url>https://lists.sr.ht/~kennylevinsen/seatd-announce/%3CGJ2IZQ.HCKS1J0LSI803%40kl.wtf%3E</url>
+      <cvename>CVE-2021-41387</cvename>
     </references>
     <dates>
-      <discovery>2021-09-16</discovery>
+      <discovery>2021-09-15</discovery>
       <entry>2021-09-16</entry>
+      <modified>2021-09-18</modified>
     </dates>
   </vuln>
 
