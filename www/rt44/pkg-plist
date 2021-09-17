@@ -1761,7 +1761,7 @@ sbin/standalone_httpd
 %%DATADIR%%/static/js/forms.js
 %%DATADIR%%/static/js/history-folding.js
 %%DATADIR%%/static/js/i18n.js
-%%DATADIR%%/static/js/jquery-1.1%%APACHE_VERSION%%p1.min.js
+%%DATADIR%%/static/js/jquery-1.12.4p1.min.js
 %%DATADIR%%/static/js/jquery-ui-patch-datepicker.js
 %%DATADIR%%/static/js/jquery-ui-timepicker-addon.js
 %%DATADIR%%/static/js/jquery-ui.min.js
