@@ -1,11 +1,12 @@
 PORTNAME=	cmdliner
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://erratique.ch/software/cmdliner/releases/
+MASTER_SITES=	https://erratique.ch/software/cmdliner/releases/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	OCaml module for handling of command line interfaces
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	OCaml module for handling command-line interfaces
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -15,7 +16,7 @@ USE_OCAML=		yes
 USE_OCAML_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	tes
 MAKE_ARGS=	DOCDIR=${STAGEDIR}${OCAML_DOCSDIR}/${PORTNAME} \
-		LIBDIR=${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}
+		LIBDIR=${STAGEDIR}${PREFIX}/${OCAML_LDLIBS}
 INSTALL_TARGET=	install
 
 OPTIONS_DEFINE=	DOCS
