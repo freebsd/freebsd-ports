@@ -150,7 +150,7 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 # --libdir is required since Wine defaults to "${PREFIX}/lib64" on amd64.
 CONFIGURE_ARGS+=	--enable-win64 --libdir=${PREFIX}/lib
-PLIST_SUB+=		WINE32="@comment " WINE64="" WINEARCH="x86-64"
+PLIST_SUB+=		WINE32="@comment " WINE64="" WINEARCH="x86_64"
 
 # Wine assumes a WoW64 package is available, which is not the case on
 # FreeBSD yet.
