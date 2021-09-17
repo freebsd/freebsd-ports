@@ -1,3 +1,41 @@
+  <vuln vid="882a38f9-17dd-11ec-b335-d4c9ef517024">
+    <topic>Apache httpd -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.49</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache project reports:</p>
+	<blockquote cite="http://httpd.apache.org/security/vulnerabilities_24.html">
+	  <ul>
+	    <li>moderate: Request splitting via HTTP/2 method injection and
+	      mod_proxy (CVE-2021-33193)</li>
+	    <li>moderate: NULL pointer dereference in httpd core
+	      (CVE-2021-34798)</li>
+	    <li>moderate: mod_proxy_uwsgi out of bound read (CVE-2021-36160)</li>
+	    <li>low: ap_escape_quotes buffer overflow (CVE-2021-39275)</li>
+	    <li>high: mod_proxy SSRF (CVE-2021-40438)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-CVE-2021-33193</cvename>
+      <cvename>CVE-CVE-2021-34798</cvename>
+      <cvename>CVE-CVE-2021-36160</cvename>
+      <cvename>CVE-CVE-2021-39275</cvename>
+      <cvename>CVE-CVE-2021-40438</cvename>
+      <url>http://httpd.apache.org/security/vulnerabilities_24.html</url>
+    </references>
+    <dates>
+      <discovery>2021-09-16</discovery>
+      <entry>2021-09-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c9221ec9-17a2-11ec-b335-d4c9ef517024">
     <topic>cURL -- Multiple vulnerabilities</topic>
     <affects>
