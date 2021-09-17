@@ -8,6 +8,9 @@ MASTER_SITES=	GENTOO
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library for manipulating hash tables
 
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=	2021-12-31
+
 WRKSRC=		${WRKDIR}/libhash
 
 USES=		uidfix
