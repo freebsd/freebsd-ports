@@ -1,7 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	harfbuzz
-DISTVERSION=	2.9.1
+DISTVERSION=	3.0.0
 PORTREVISION?=	0
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/harfbuzz/harfbuzz/releases/download/${DISTVERSION}/
@@ -25,7 +25,7 @@ CPE_VENDOR=	harfbuzz_project
 MESON_ARGS=	-Dglib=enabled -Dgobject=enabled -Dgraphite=enabled \
 		-Dfreetype=enabled -Dbenchmark=disabled
 
-PLIST_SUB+=	LIBVER=0.20901.0
+PLIST_SUB+=	LIBVER=0.30000.0
 
 HARFBUZZ_SLAVE?=	no
 
