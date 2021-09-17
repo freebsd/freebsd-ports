@@ -1,3 +1,36 @@
+  <vuln vid="c9221ec9-17a2-11ec-b335-d4c9ef517024">
+    <topic>cURL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>curl</name>
+       <range><lt>7.79.0</lt></range>
+       <range><ge>7.20.0</ge></range>
+     </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The cURL project reports:</p>
+	<blockquote cite="https://curl.se/docs/security.html">
+	  <ul>
+	    <li>UAF and double-free in MQTT sending (CVE-2021-22945)</li>
+	    <li>Protocol downgrade required TLS bypassed (CVE-2021-22946)</li>
+	    <li>STARTTLS protocol injection via MITM (CVE-2021-22945)</li>
+	  </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-22945</cvename>
+      <cvename>CVE-2021-22946</cvename>
+      <cvename>CVE-2021-22947</cvename>
+      <url>https://curl.se/docs/security.html</url>
+    </references>
+    <dates>
+      <discovery>2021-09-15</discovery>
+      <entry>2021-09-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="49c35943-0eeb-421c-af4f-78e04582e5fb">
     <topic>seatd-launch -- privilege escalation with SUID</topic>
     <affects>
