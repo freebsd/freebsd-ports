@@ -1,7 +1,6 @@
 PORTNAME=	xh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
-PORTREVISION=	1
+DISTVERSION=	0.13.0
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -119,11 +118,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		hermit-abi-0.1.18 \
 		http-0.2.4 \
 		http-body-0.4.2 \
-		httparse-1.4.1 \
+		httparse-1.5.1 \
 		httpdate-1.0.1 \
 		httpmock-0.5.8 \
 		humantime-2.1.0 \
-		hyper-0.14.8 \
+		hyper-0.14.12 \
 		hyper-rustls-0.22.1 \
 		hyper-tls-0.5.0 \
 		idna-0.2.3 \
