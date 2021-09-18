@@ -12,6 +12,8 @@ COMMENT=	Single sign-on multi-factor portal for web apps
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	imports modernc.org/libc/errno: build constraints exclude all Go files
+
 USES=		go:modules
 
 GO_MODULE=	github.com/authelia/authelia/v4
