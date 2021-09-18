@@ -50,10 +50,12 @@ ${f}_PKGNAMESUFFIX=	-${f}
 # GUI flavors
 .if ${FLAVOR:U} == console
 GUI=		no
+CONFIGURE_ARGS+=--without-x
 PLIST_SUB+=	GUI="@comment " DESKTOP="@comment "
 
 .elif ${FLAVOR:U} == tiny
 GUI=		no
+CONFIGURE_ARGS+=--without-x
 PLIST=		${.CURDIR}/pkg-plist-tiny
 
 .elif ${FLAVOR:U} == athena
