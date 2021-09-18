@@ -1,7 +1,7 @@
 # Created by: Oliver Lehmann <oliver@FreeBSD.org>
 
 PORTNAME=	thunar
-DISTVERSION=	4.16.9
+DISTVERSION=	4.16.10
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
