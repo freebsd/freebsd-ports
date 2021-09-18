@@ -1,7 +1,7 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 
 PORTNAME=	dcfldd
-DISTVERSION=	1.7
+DISTVERSION=	1.7.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
