@@ -72,7 +72,7 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler-2.1-ea-2.jar
 %%DATADIR%%/lib/bootstrap.jar
-%%DATADIR%%/lib/build-marker-CL-212.5080.54
+%%DATADIR%%/lib/build-marker-CL-212.5284.51
 %%DATADIR%%/lib/byte-buddy-agent-1.10.1.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/classpath.txt
@@ -131,7 +131,7 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/slf4j.jar
 %%DATADIR%%/lib/stats.jar
 %%DATADIR%%/lib/testFramework.jar
-%%DATADIR%%/lib/tips-clion-212.21.jar
+%%DATADIR%%/lib/tips-clion-212.27.jar
 %%DATADIR%%/lib/trang-core.jar
 %%DATADIR%%/lib/util.jar
 %%DATADIR%%/lib/winp-1.28.jar
@@ -341,12 +341,18 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/typescript/ts-session-latest.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/typescript/ts-session-provider.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/typescript/util.js
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint-api.js
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint-common.js
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint-plugin-provider.js
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint-plugin.js
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint8-plugin.js
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/package-lock.json
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/package.json
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint-api.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint-common.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint-plugin-provider.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint-plugin.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint8-plugin.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/typings/js-lanuage-api.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/tsconfig.json
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar
@@ -416,7 +422,6 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/grazie/lib/commons-text-1.8.jar
 %%DATADIR%%/plugins/grazie/lib/dx-1.7.jar
 %%DATADIR%%/plugins/grazie/lib/emoji-java-5.1.1.jar
-%%DATADIR%%/plugins/grazie/lib/grazi-language-detector-0.1.13.jar
 %%DATADIR%%/plugins/grazie/lib/grazie.jar
 %%DATADIR%%/plugins/grazie/lib/hppc-0.8.2.jar
 %%DATADIR%%/plugins/grazie/lib/hunspell-1.1.1.jar
@@ -430,6 +435,7 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/grazie/lib/morfologik-speller-2.1.7.jar
 %%DATADIR%%/plugins/grazie/lib/morfologik-stemming-2.1.7.jar
 %%DATADIR%%/plugins/grazie/lib/nlp-common-0.1.26.jar
+%%DATADIR%%/plugins/grazie/lib/nlp-detector-jvm-0.0.2.jar
 %%DATADIR%%/plugins/grazie/lib/nlp-tokenizer-0.1.26.jar
 %%DATADIR%%/plugins/grazie/lib/segment-2.0.1.jar
 %%DATADIR%%/plugins/grazie/lib/unit-api-1.0.jar
