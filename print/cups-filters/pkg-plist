@@ -1,7 +1,6 @@
 bin/driverless
 bin/driverless-fax
 bin/foomatic-rip
-bin/ttfread
 @sample etc/cups/cups-browsed.conf.sample
 include/cupsfilters/colord.h
 include/cupsfilters/colormanager.h
