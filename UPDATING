@@ -5,6 +5,34 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20211007:
+  AFFECTS: user of security/clamav
+  AUTHOR: yasu@FreeBSD.org
+
+  Upstream changed end-of-life policy and introduced long time support
+  (LTS) feature release.
+
+  * LTS feature release will be identified approximately every two
+    years and supported for at least three years from the initial
+    publication date of that LTS feature version.
+  * Regular (non-LTS) feature releases will be supported for at least
+    four months from the initial publication date of the next feature
+    release or until the feature release after that is published.
+
+  According to it new port security/clamav-lts is added for users who
+  want to use LTS version of ClamAV.
+
+  Users wanting to switch to LTS version can replace security/clamav
+  with security/clamav-lts with one of following commands.
+
+  If you use pkg with binary packages:
+    # pkg set -o security/clamav:security/clamav-lts
+    # pkg upgrade
+  If you use portmaster:
+    # portmaster -o security/clamav-lts security/clamav
+  If you use portupgrade:
+    # portupgrade -o security/clamav-lts security/clamav
+
 20211006:
 AFFECTS: users of misc/freebsd-doc-*
 AUTHOR: blackend@FreeBSD.org

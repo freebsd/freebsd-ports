@@ -3,6 +3,7 @@ PORTVERSION=	0.103.3
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.clamav.net/downloads/production/
+PKGNAMESUFFIX=	-lts
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
@@ -15,18 +16,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libmspack.so:archivers/libmspack
 
 USES=		compiler cpe gmake gnome libtool ncurses pathfix pkgconfig ssl
-USE_RC_SUBR=	clamav-clamd clamav-freshclam
 USE_LDCONFIG=	yes
+USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-
-PLIST_SUB+=	CLAMAVGROUP=${CLAMAVGROUP} \
-		CLAMAVUSER=${CLAMAVUSER} \
-		DBDIR=${DBDIR} \
-		LOGDIR=${LOGDIR} \
-		RUNDIR=${RUNDIR}
-
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-bigstack \
 		--enable-clamdtop \
@@ -36,8 +29,8 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-openssl=${OPENSSLBASE} \
 		--with-system-libmspack=${LOCALBASE}/lib/libmspack.so
 
+INSTALL_TARGET=	install-strip
 CFLAGS_i386=	-march=i486
-
 # This port has a problem with -pthread,
 # force to use -lthr until it's not fixed.
 LDFLAGS+=	-lthr
@@ -56,8 +49,22 @@ SUB_LIST+=	CHMOD=${CHMOD} \
 		LOGDIR=${LOGDIR} \
 		RUNDIR=${RUNDIR}
 
+CLAMAVUSER?=	clamav
+CLAMAVGROUP?=	clamav
+
+.if ${CLAMAVUSER} == "clamav"
+USERS=		clamav
+.endif
+
+.if ${CLAMAVGROUP} == "clamav"
+GROUPS=		clamav mail
+.endif
+
 PLIST_SUB+=	CLAMAVGROUP=${CLAMAVGROUP} \
-		CLAMAVUSER=${CLAMAVUSER}
+		CLAMAVUSER=${CLAMAVUSER} \
+		DBDIR=${DBDIR} \
+		LOGDIR=${LOGDIR} \
+		RUNDIR=${RUNDIR}
 
 OPTIONS_DEFINE=	ARC ARJ DMG_XAR DOCS EXPERIMENTAL ICONV IPV6 JSON LDAP LHA \
 		MILTER PCRE STDERR TESTS UNRAR UNZOO
@@ -77,48 +84,39 @@ UNZOO_DESC=		Enable zoo archives support
 
 ARC_RUN_DEPENDS=		arc:archivers/arc
 ARJ_RUN_DEPENDS=		arj:archivers/arj
-DMG_XAR_CONFIGURE_WITH=		xml=${LOCALBASE}
 DMG_XAR_USE=			GNOME=libxml2
+DMG_XAR_CONFIGURE_WITH=		xml=${LOCALBASE}
 EXPERIMENTAL_CONFIGURE_ENABLE=	experimental
-ICONV_CONFIGURE_WITH=		iconv
 ICONV_USES=			iconv
+ICONV_CONFIGURE_WITH=		iconv
 IPV6_CONFIGURE_ENABLE=		ipv6
-JSON_CONFIGURE_WITH=		libjson=${LOCALBASE}
 JSON_LIB_DEPENDS=		libjson-c.so:devel/json-c
-LDAP_LDFLAGS=			-lldap -L${LOCALBASE}/lib
+JSON_CONFIGURE_WITH=		libjson=${LOCALBASE}
 LDAP_USE=			OPENLDAP=yes
+LDAP_LDFLAGS=			-lldap -L${LOCALBASE}/lib
 LHA_RUN_DEPENDS=		lha:archivers/lha
-MILTER_CONFIGURE_WITH=		sendmail=/usr/sbin/sendmail
-MILTER_CONFIGURE_ENABLE=	milter
 .if !exists(/usr/lib/libmilter.so)
-MILTER_CFLAGS=			-I${LOCALBASE}/include
-MILTER_LDFLAGS=			-L${LOCALBASE}/lib
 MILTER_LIB_DEPENDS+=		libmilter.so:mail/libmilter
 .endif
 MILTER_USE=			RC_SUBR=clamav-milter
-PCRE_CONFIGURE_WITH=		pcre
+MILTER_CONFIGURE_ENABLE=	milter
+MILTER_CONFIGURE_WITH=		sendmail=/usr/sbin/sendmail
+.if !exists(/usr/lib/libmilter.so)
+MILTER_CFLAGS=			-I${LOCALBASE}/include
+MILTER_LDFLAGS=			-L${LOCALBASE}/lib
+.endif
 PCRE_LIB_DEPENDS=		libpcre2-8.so:devel/pcre2
+PCRE_CONFIGURE_WITH=		pcre
 STDERR_EXTRA_PATCHES=		${FILESDIR}/extra-patch-shared_output.c
-TESTS_CONFIGURE_ENABLE=		check
 TESTS_BUILD_DEPENDS=		${LOCALBASE}/include/check.h:devel/check
 TESTS_USES=			python:build
+TESTS_CONFIGURE_ENABLE=		check
 UNRAR_CONFIGURE_ENABLE=		unrar
 UNZOO_RUN_DEPENDS=		unzoo:archivers/unzoo
-
-CLAMAVUSER?=	clamav
-CLAMAVGROUP?=	clamav
 
 CLAMAV_CLAMD_SOCKET?=	${RUNDIR}/clamd.sock
 CLAMAV_CLAMD_PIDFILE?=	${RUNDIR}/clamd.pid
 CLAMAV_MILTER_SOCKET?=	${RUNDIR}/clmilter.sock
-
-.if ${CLAMAVUSER} == "clamav"
-USERS=		clamav
-.endif
-
-.if ${CLAMAVGROUP} == "clamav"
-GROUPS=		clamav mail
-.endif
 
 DBDIR=		/var/db/clamav
 LOGDIR=		/var/log/clamav
