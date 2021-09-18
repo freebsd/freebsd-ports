@@ -1,0 +1,169 @@
+PORTNAME=	helix
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.4.1
+CATEGORIES=	editors
+
+MAINTAINER=	ashish@FreeBSD.org
+COMMENT=	Post-modern modal text editor
+
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	helix-editor
+GH_TUPLE=	\
+		ikatyang:tree-sitter-toml:7cff70b:tree_sitter_toml/helix-syntax/languages/tree-sitter-toml \
+		tree-sitter:tree-sitter-agda:ca69cdf:tree_sitter_agda/helix-syntax/languages/tree-sitter-agda \
+		tree-sitter:tree-sitter-bash:a8eb5cb:tree_sitter_bash/helix-syntax/languages/tree-sitter-bash \
+		tree-sitter:tree-sitter-c-sharp:53a65a9:tree_sitter_c_sharp/helix-syntax/languages/tree-sitter-c-sharp \
+		tree-sitter:tree-sitter-c:f05e279:tree_sitter_c/helix-syntax/languages/tree-sitter-c \
+		tree-sitter:tree-sitter-cpp:c612124:tree_sitter_cpp/helix-syntax/languages/tree-sitter-cpp \
+		tree-sitter:tree-sitter-css:94e1023:tree_sitter_css/helix-syntax/languages/tree-sitter-css \
+		IceDragon200:tree-sitter-elixir:295e62a:tree_sitter_elixir/helix-syntax/languages/tree-sitter-elixir \
+		tree-sitter:tree-sitter-go:2a83dfd:tree_sitter_go/helix-syntax/languages/tree-sitter-go \
+		tree-sitter:tree-sitter-haskell:237f4eb:tree_sitter_haskell/helix-syntax/languages/tree-sitter-haskell \
+		tree-sitter:tree-sitter-html:d93af48:tree_sitter_html/helix-syntax/languages/tree-sitter-html \
+		tree-sitter:tree-sitter-java:bd6186c:tree_sitter_java/helix-syntax/languages/tree-sitter-java \
+		tree-sitter:tree-sitter-javascript:4a95461:tree_sitter_javascript/helix-syntax/languages/tree-sitter-javascript \
+		tree-sitter:tree-sitter-json:65bceef:tree_sitter_json/helix-syntax/languages/tree-sitter-json \
+		tree-sitter:tree-sitter-julia:0ba7a24:tree_sitter_julia/helix-syntax/languages/tree-sitter-julia \
+		latex-lsp:tree-sitter-latex:7f72066:tree_sitter_latex/helix-syntax/languages/tree-sitter-latex \
+		cstrahan:tree-sitter-nix:50f38ce:tree_sitter_nix/helix-syntax/languages/tree-sitter-nix \
+		tree-sitter:tree-sitter-php:0d63eaf:tree_sitter_php/helix-syntax/languages/tree-sitter-php \
+		tree-sitter:tree-sitter-python:d6210ce:tree_sitter_python/helix-syntax/languages/tree-sitter-python \
+		tree-sitter:tree-sitter-ruby:dfff673:tree_sitter_ruby/helix-syntax/languages/tree-sitter-ruby \
+		tree-sitter:tree-sitter-rust:a360da0:tree_sitter_rust/helix-syntax/languages/tree-sitter-rust \
+		tree-sitter:tree-sitter-scala:fb23ed9:tree_sitter_scala/helix-syntax/languages/tree-sitter-scala \
+		tree-sitter:tree-sitter-swift:a22fa5e:tree_sitter_swift/helix-syntax/languages/tree-sitter-swift \
+		tree-sitter:tree-sitter-typescript:3e897ea:tree_sitter_typescript/helix-syntax/languages/tree-sitter-typescript
+CARGO_CARGOTOML=	${WRKSRC}/helix-term/Cargo.toml
+CARGO_INSTALL_PATH=	./helix-term
+CARGO_CRATES=	aho-corasick-0.7.18 \
+		anyhow-1.0.42 \
+		arc-swap-1.3.0 \
+		autocfg-1.0.1 \
+		bitflags-1.3.1 \
+		bstr-0.2.16 \
+		bytes-1.0.1 \
+		cassowary-0.3.0 \
+		cc-1.0.69 \
+		cfg-if-1.0.0 \
+		chardetng-0.1.14 \
+		chrono-0.4.19 \
+		clipboard-win-4.2.1 \
+		crossbeam-utils-0.8.5 \
+		crossterm-0.20.0 \
+		crossterm_winapi-0.8.0 \
+		dirs-next-2.0.0 \
+		dirs-sys-next-0.1.2 \
+		either-1.6.1 \
+		encoding_rs-0.8.28 \
+		error-code-2.3.0 \
+		etcetera-0.3.2 \
+		fern-0.6.0 \
+		fnv-1.0.7 \
+		form_urlencoded-1.0.1 \
+		futf-0.1.4 \
+		futures-core-0.3.16 \
+		futures-executor-0.3.16 \
+		futures-task-0.3.16 \
+		futures-util-0.3.16 \
+		fuzzy-matcher-0.3.7 \
+		getrandom-0.2.3 \
+		globset-0.4.8 \
+		hermit-abi-0.1.19 \
+		idna-0.2.3 \
+		ignore-0.4.18 \
+		instant-0.1.10 \
+		itoa-0.4.7 \
+		jsonrpc-core-18.0.0 \
+		lazy_static-1.4.0 \
+		libc-0.2.99 \
+		libloading-0.7.0 \
+		lock_api-0.4.4 \
+		log-0.4.14 \
+		lsp-types-0.89.2 \
+		mac-0.1.1 \
+		matches-0.1.9 \
+		memchr-2.4.0 \
+		mio-0.7.13 \
+		miow-0.3.7 \
+		new_debug_unreachable-1.0.4 \
+		ntapi-0.3.6 \
+		num-integer-0.1.44 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.0 \
+		once_cell-1.8.0 \
+		parking_lot-0.11.1 \
+		parking_lot_core-0.8.3 \
+		percent-encoding-2.1.0 \
+		pin-project-lite-0.2.7 \
+		pin-utils-0.1.0 \
+		proc-macro2-1.0.28 \
+		pulldown-cmark-0.8.0 \
+		quickcheck-1.0.3 \
+		quote-1.0.9 \
+		rand-0.8.4 \
+		rand_core-0.6.3 \
+		redox_syscall-0.2.10 \
+		redox_users-0.4.0 \
+		regex-1.5.4 \
+		regex-syntax-0.6.25 \
+		ropey-1.3.1 \
+		ryu-1.0.5 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		serde-1.0.127 \
+		serde_derive-1.0.127 \
+		serde_json-1.0.66 \
+		serde_repr-0.1.7 \
+		signal-hook-0.3.9 \
+		signal-hook-mio-0.2.1 \
+		signal-hook-registry-1.4.0 \
+		signal-hook-tokio-0.3.0 \
+		similar-1.3.0 \
+		slab-0.4.4 \
+		slotmap-1.0.5 \
+		smallvec-1.6.1 \
+		str-buf-1.0.5 \
+		syn-1.0.74 \
+		tendril-0.4.2 \
+		thiserror-1.0.26 \
+		thiserror-impl-1.0.26 \
+		thread_local-1.1.3 \
+		threadpool-1.8.1 \
+		tinyvec-1.3.1 \
+		tinyvec_macros-0.1.0 \
+		tokio-1.10.0 \
+		tokio-macros-1.3.0 \
+		tokio-stream-0.1.7 \
+		toml-0.5.8 \
+		tree-sitter-0.19.5 \
+		unicase-2.6.0 \
+		unicode-bidi-0.3.6 \
+		unicode-general-category-0.4.0 \
+		unicode-normalization-0.1.19 \
+		unicode-segmentation-1.8.0 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.2 \
+		url-2.2.2 \
+		utf-8-0.7.6 \
+		version_check-0.9.3 \
+		walkdir-2.3.2 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		which-4.2.2 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0
+
+post-patch:
+	${GREP} -F -Rl '%%DATADIR%%' ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},'
+
+post-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} runtime ${STAGEDIR}${DATADIR}
+
+.include <bsd.port.mk>

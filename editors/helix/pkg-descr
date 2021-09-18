@@ -1,0 +1,14 @@
+A kakoune / neovim inspired editor, written in Rust.
+
+Features:
+
+ o Vim-like modal editing
+
+ o Multiple selections
+
+ o Built-in language server support
+
+ o Smart, incremental syntax highlighting and code
+   editing via tree-sitter
+
+WWW: https://helix-editor.com/
