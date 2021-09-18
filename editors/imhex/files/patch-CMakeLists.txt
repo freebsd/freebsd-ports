@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2021-09-12 06:27:55 UTC
++++ CMakeLists.txt
+@@ -101,7 +101,7 @@ target_link_directories(imhex PRIVATE ${CAPSTONE_LIBRA
+ if (WIN32)
+     target_link_libraries(imhex ${CMAKE_DL_LIBS} capstone LLVMDemangle libimhex ${Python_LIBRARIES} wsock32 ws2_32 libyara Dwmapi.lib dl)
+ else ()
+-    target_link_libraries(imhex ${CMAKE_DL_LIBS} capstone LLVMDemangle libimhex ${Python_LIBRARIES} dl pthread libyara)
++    target_link_libraries(imhex ${CMAKE_DL_LIBS} capstone LLVMDemangle libimhex ${Python_LIBRARIES} dl pthread yara)
+ endif ()
+ 
+ createPackage()
