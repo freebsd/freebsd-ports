@@ -1,6 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
+DISTVERSION=	0.17.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -19,9 +19,9 @@ GH_ACCOUNT=	zellij-org
 
 PLIST_FILES=	bin/zellij
 
-CARGO_CRATES=	addr2line-0.16.0 \
+CARGO_CRATES=	addr2line-0.15.2 \
 		adler-1.0.2 \
-		aho-corasick-0.7.18 \
+		aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
 		anyhow-1.0.42 \
@@ -40,7 +40,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		atomic-waker-1.0.0 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
-		backtrace-0.3.61 \
+		backtrace-0.3.59 \
 		base64-0.13.0 \
 		bincode-1.3.3 \
 		bitflags-1.2.1 \
@@ -80,6 +80,8 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		darling-0.13.0 \
 		darling_core-0.13.0 \
 		darling_macro-0.13.0 \
+		darwin-libproc-0.2.0 \
+		darwin-libproc-sys-0.2.0 \
 		derivative-2.2.0 \
 		directories-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
@@ -109,7 +111,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		getrandom-0.2.3 \
 		ghost-0.1.2 \
 		gimli-0.22.0 \
-		gimli-0.25.0 \
+		gimli-0.24.0 \
 		gloo-timers-0.2.1 \
 		hashbrown-0.11.2 \
 		heck-0.3.3 \
@@ -139,7 +141,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		log-mdc-0.1.0 \
 		log4rs-1.0.0 \
 		mach-0.3.2 \
-		memchr-2.4.0 \
+		memchr-2.3.4 \
 		memmap2-0.2.3 \
 		memoffset-0.6.4 \
 		miniz_oxide-0.4.4 \
@@ -154,7 +156,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		num_cpus-1.13.0 \
 		numtoa-0.1.0 \
 		object-0.22.0 \
-		object-0.26.0 \
+		object-0.24.0 \
 		once_cell-1.8.0 \
 		openssl-sys-0.9.65 \
 		ordered-float-2.7.0 \
@@ -191,7 +193,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		redox_termios-0.1.2 \
 		redox_users-0.4.0 \
 		regalloc-0.0.31 \
-		regex-1.5.4 \
+		regex-1.4.6 \
 		regex-syntax-0.6.25 \
 		region-2.2.0 \
 		remove_dir_all-0.5.3 \
