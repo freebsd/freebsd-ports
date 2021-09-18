@@ -24,22 +24,11 @@ load_rc_config ${name}
 
 : ${clamav_freshclam_enable:=NO}
 : ${clamav_freshclam_pidfile=%%RUNDIR%%/freshclam.pid}
-: ${clamav_freshclam_user=%%CLAMAVUSER%%}
 
 command=%%PREFIX%%/bin/freshclam
 pidfile=${clamav_freshclam_pidfile}
 command_args="--daemon -p ${pidfile}"
 required_dirs=%%DBDIR%%
 required_files=%%PREFIX%%/etc/freshclam.conf
-
-start_precmd=clamav_freshclam_precmd
-
-clamav_freshclam_precmd()
-{
-	local rundir=${clamav_freshclam_pidfile%/*}
-	if [ ! -d $rundir ] ; then
-		install -d -m 0755 -o ${clamav_freshclam_user} -g ${clamav_freshclam_user} $rundir
-	fi
-}
 
 run_rc_command "$1"
