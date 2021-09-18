@@ -1,7 +1,7 @@
 Index: src/l2tp.c
 ===================================================================
 --- src/l2tp.c	(revision 2418)
-+++ src/l2tp.c	(revision 2419)
++++ src/l2tp.c	(revision 2420)
 @@ -1415,9 +1415,21 @@ L2tpServerEvent(int type, void *arg)
  	tun->self_port = s->self_port;
  	tun->alive = 1;
@@ -49,7 +49,7 @@ Index: src/l2tp.c
 Index: src/util.c
 ===================================================================
 --- src/util.c	(revision 2418)
-+++ src/util.c	(revision 2419)
++++ src/util.c	(revision 2420)
 @@ -16,8 +16,9 @@
  #include <netdb.h>
  #include <tcpd.h>
@@ -76,13 +76,13 @@ Index: src/util.c
 +	struct {
 +		struct  msghdr msg;
 +		struct	iovec iov;
-+		union {		/* ensure correct alignment for space */
-+			struct cmsghdr cm;
-+			char space[CMSG_SPACE(sizeof(struct in_addr))];
-+		} buf;
-+		char	io[1024];
 +	} b;
++	union {	/* ensure correct alignment for space */
++		struct cmsghdr cm;
++		char space[CMSG_SPACE(sizeof(struct in_addr))];
++	} buf;
 +
++	char	io[1024];
 +	struct	cmsghdr *p;
 +	ssize_t	size;
 +
@@ -93,10 +93,10 @@ Index: src/util.c
 +	memset(&b, 0, sizeof(b));
 +	b.msg.msg_iov = &b.iov;
 +	b.msg.msg_iovlen = 1;
-+	b.msg.msg_control = &b.buf;
-+	b.msg.msg_controllen = sizeof(b.buf);
-+	b.iov.iov_base = &b.io;
-+	b.iov.iov_len = sizeof(b.io);
++	b.msg.msg_control = &buf;
++	b.msg.msg_controllen = sizeof(buf);
++	b.iov.iov_base = &io;
++	b.iov.iov_len = sizeof(io);
 +
 +	if ((size = recvmsg(sock, &b.msg, 0)) < 0) {
 +		Perror("%s: recvmsg: %s", __FUNCTION__, strerror(errno));
@@ -113,7 +113,7 @@ Index: src/util.c
 Index: src/util.h
 ===================================================================
 --- src/util.h	(revision 2418)
-+++ src/util.h	(revision 2419)
++++ src/util.h	(revision 2420)
 @@ -98,6 +98,7 @@ extern u_long GenerateMagic(void);
  extern int GetAnyIpAddress(struct u_addr *ipaddr, const char *ifname);
  extern int GetEther(struct u_addr *addr, struct sockaddr_dl *hwaddr);
