@@ -82,6 +82,7 @@ include/lean_ext/library/ac_match.h
 include/lean_ext/library/aliases.h
 include/lean_ext/library/annotation.h
 include/lean_ext/library/app_builder.h
+include/lean_ext/library/ast_exporter.h
 include/lean_ext/library/attribute_manager.h
 include/lean_ext/library/aux_definition.h
 include/lean_ext/library/aux_recursors.h
@@ -255,6 +256,7 @@ include/lean_ext/library/tactic/smt/theory_ac.h
 include/lean_ext/library/tactic/smt/util.h
 include/lean_ext/library/tactic/subst_tactic.h
 include/lean_ext/library/tactic/tactic_evaluator.h
+include/lean_ext/library/tactic/tactic_log.h
 include/lean_ext/library/tactic/tactic_state.h
 include/lean_ext/library/tactic/unfold_tactic.h
 include/lean_ext/library/tactic/user_attribute.h
@@ -328,6 +330,7 @@ include/lean_ext/util/init_module.h
 include/lean_ext/util/int64.h
 include/lean_ext/util/interrupt.h
 include/lean_ext/util/lbool.h
+include/lean_ext/util/lean_json.h
 include/lean_ext/util/lean_path.h
 include/lean_ext/util/line_endings.h
 include/lean_ext/util/list.h
