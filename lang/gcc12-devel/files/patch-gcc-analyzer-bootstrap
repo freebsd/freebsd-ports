@@ -1,0 +1,16 @@
+commit 745781d24cd7562202687cfbe05597ee673d4537
+Author: Maxim Blinov <maxim.blinov@embecosm.com>
+Date:   Fri Sep 17 00:32:58 2021 +0200
+
+    analyzer: Fix bootstrap with clang
+    
+--- gcc/analyzer/engine.cc
++++ gcc/analyzer/engine.cc
+@@ -19,6 +19,7 @@ along with GCC; see the file COPYING3.  If not see
+ <http://www.gnu.org/licenses/>.  */
+ 
+ #include "config.h"
++#define INCLUDE_UNIQUE_PTR
+ #include "system.h"
+ #include "coretypes.h"
+ #include "tree.h"

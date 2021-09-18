@@ -1,0 +1,11 @@
+--- libgfortran/ISO_Fortran_binding.h.orig	2021-09-12 22:32:09.000000000 +0000
++++ libgfortran/ISO_Fortran_binding.h	2021-09-18 04:42:43.658569000 +0000
+@@ -227,7 +227,7 @@
+ #define CFI_type_long_double_Complex CFI_type_double_Complex
+ 
+ /* This is the 80-bit encoding on x86; Fortran assigns it kind 10.  */
+-#elif (LDBL_MANT_DIG == 64 \
++#elif ((LDBL_MANT_DIG == 64 || LDBL_MANT_DIG == 53) \
+        && LDBL_MIN_EXP == -16381 \
+        && LDBL_MAX_EXP == 16384)
+ #define CFI_type_long_double (CFI_type_Real + (10 << CFI_type_kind_shift))
