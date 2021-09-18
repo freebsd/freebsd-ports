@@ -459,7 +459,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler-2.1-ea-2.jar
 %%DATADIR%%/lib/bootstrap.jar
-%%DATADIR%%/lib/build-marker-RM-212.5080.58
+%%DATADIR%%/lib/build-marker-RM-212.5284.50
 %%DATADIR%%/lib/byte-buddy-agent-1.10.1.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/classpath.txt
@@ -728,12 +728,18 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/typescript/ts-session-latest.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/typescript/ts-session-provider.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/typescript/util.js
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint-api.js
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint-common.js
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint-plugin-provider.js
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint-plugin.js
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/bin/eslint8-plugin.js
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/package-lock.json
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/package.json
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint-api.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint-common.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint-plugin-provider.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint-plugin.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/eslint8-plugin.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/typings/js-lanuage-api.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/tsconfig.json
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar
