@@ -1,0 +1,6 @@
+Python binding libSEDML.
+
+The libSEDML project makes use of libSBML XML layer as well as code generation
+as starting point to produce a library for reading and writing of SED-ML models.
+
+WWW: https://github.com/fbergmann/libSEDML

@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2021-09-19 17:41:37 UTC
++++ CMakeLists.txt
+@@ -49,6 +49,7 @@ ADD_CUSTOM_COMMAND(  
+     OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/libsedml_wrap.cpp
+     COMMAND "${SWIG_EXECUTABLE}"
+     ARGS  -I${CMAKE_CURRENT_SOURCE_DIR}/../swig/
++      -I${CMAKE_INSTALL_PREFIX}/include
+       -I${CMAKE_CURRENT_SOURCE_DIR}/../../
+       -I${CMAKE_CURRENT_BINARY_DIR}/../../
+       -I${CMAKE_CURRENT_SOURCE_DIR}/../../sedml
+@@ -125,9 +126,9 @@ if (PYTHON_USE_DYNAMIC_LOOKUP)
+   if (APPLE)
+     set_target_properties (binding_python_lib PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
+   endif()
+-  target_link_libraries(binding_python_lib ${LIBSEDML_LIBRARY}-static)
++  target_link_libraries(binding_python_lib ${LIBSEDML_LIBRARY})
+ else()
+-  target_link_libraries(binding_python_lib ${LIBSEDML_LIBRARY}-static ${PYTHON_LIBRARIES})
++  target_link_libraries(binding_python_lib ${LIBSEDML_LIBRARY} ${PYTHON_LIBRARIES})
+ endif()
+ 
+ # 
