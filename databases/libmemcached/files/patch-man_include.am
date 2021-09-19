@@ -1,0 +1,10 @@
+--- man/include.am.orig	2014-02-09 11:52:42 UTC
++++ man/include.am
+@@ -4,7 +4,6 @@
+ 
+ # Build rule for documentation
+ $(dist_man_MANS): $(top_srcdir)/configure.ac
+-	$(MAKE) $(AM_MAKEFLAGS) man
+ 
+ .NOTPARALLEL: $(dist_man_MANS)
+ 
