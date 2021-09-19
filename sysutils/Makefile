@@ -117,9 +117,9 @@
     SUBDIR += beats6
     SUBDIR += beats7
     SUBDIR += bfs
+    SUBDIR += bhyve+
     SUBDIR += bhyve-firmware
     SUBDIR += bhyve-rc
-    SUBDIR += bhyve+
     SUBDIR += biosfont
     SUBDIR += bkpupsd
     SUBDIR += bksh
