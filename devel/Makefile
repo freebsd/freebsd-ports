@@ -4108,7 +4108,6 @@
     SUBDIR += py-apispec
     SUBDIR += py-apns2
     SUBDIR += py-appdirs
-    SUBDIR += py-application
     SUBDIR += py-applicationinsights
     SUBDIR += py-apptools
     SUBDIR += py-apscheduler
@@ -5029,6 +5028,7 @@
     SUBDIR += py-pytest-xdist
     SUBDIR += py-pytest-xprocess
     SUBDIR += py-python-Levenshtein
+    SUBDIR += py-python-application
     SUBDIR += py-python-bugzilla
     SUBDIR += py-python-dbusmock
     SUBDIR += py-python-distutils-extra
