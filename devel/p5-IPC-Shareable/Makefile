@@ -1,7 +1,7 @@
 # Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 
 PORTNAME=	IPC-Shareable
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
