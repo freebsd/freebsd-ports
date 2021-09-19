@@ -19,13 +19,13 @@ LIB_DEPENDS=	libgpg-error.so:security/libgpg-error
 USES=		cpe libtool perl5 tar:bzip2
 USE_PERL5=	build
 
-CPE_VENDOR=	libksba_project
-
 CONFIGURE_ARGS=	--enable-static
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 INFO=		ksba
+
+CPE_VENDOR=	libksba_project
 
 .include <bsd.port.mk>
