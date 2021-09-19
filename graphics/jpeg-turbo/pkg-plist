@@ -7,6 +7,10 @@
 %%JPEG%%include/jerror.h
 %%JPEG%%include/jmorecfg.h
 %%JPEG%%include/jpeglib.h
+%%JPEG%%lib/cmake/libjpeg-turbo/libjpeg-turboConfig.cmake
+%%JPEG%%lib/cmake/libjpeg-turbo/libjpeg-turboConfigVersion.cmake
+%%JPEG%%lib/cmake/libjpeg-turbo/libjpeg-turboTargets-%%CMAKE_BUILD_TYPE%%.cmake
+%%JPEG%%lib/cmake/libjpeg-turbo/libjpeg-turboTargets.cmake
 %%JPEG%%lib/libjpeg.a
 %%JPEG%%lib/libjpeg.so
 %%JPEG%%lib/libjpeg.so.8
