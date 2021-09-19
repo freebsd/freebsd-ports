@@ -1,5 +1,6 @@
 bin/foreman-node
-sbin/upload-salt-reports
-share/foreman-proxy/bundler.d/salt.rb
+bin/salt_python_wrapper
 @sample etc/foreman-proxy/settings.d/salt.yml.sample
 @sample etc/salt/foreman.yaml.sample
+sbin/upload-salt-reports
+share/foreman-proxy/bundler.d/salt.rb

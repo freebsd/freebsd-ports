@@ -1,7 +1,7 @@
 # Created by: Michael Moll <kvedulv@kvedulv.de>
 
 PORTNAME=	smart_proxy_salt
-PORTVERSION=	3.1.2
+PORTVERSION=	4.0.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -11,7 +11,8 @@ COMMENT=	SaltStack Plug-In for Foreman's Smart Proxy
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	foreman-proxy>=1.8.0:net/foreman-proxy \
-		${PYTHON_PKGNAMEPREFIX}salt>0:sysutils/py-salt@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}salt>0:sysutils/py-salt@${PY_FLAVOR} \
+		rubygem-smart_proxy_dynflow>=0.5.0:sysutils/rubygem-smart_proxy_dynflow
 
 USES=		gem python shebangfix
 USE_RUBY=	yes
@@ -20,6 +21,7 @@ NO_ARCH=	yes
 
 SHEBANG_FILES=	bin/foreman-node \
 		sbin/upload-salt-reports
+python_OLD_CMD=	/usr/bin/salt_python_wrapper
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/bin/foreman-node ${WRKSRC}/sbin/upload-salt-reports
