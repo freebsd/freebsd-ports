@@ -1,0 +1,4 @@
+JPM is the Janet Project Manager tool.  It is for automating builds
+and downloading dependencies of Janet projects.
+
+WWW: https://github.com/janet-lang/jpm

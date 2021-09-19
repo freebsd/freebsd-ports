@@ -1,0 +1,15 @@
+bin/jpm
+lib/janet/.manifests/jpm.jdn
+lib/janet/jpm/cc.janet
+lib/janet/jpm/cgen.janet
+lib/janet/jpm/cli.janet
+lib/janet/jpm/commands.janet
+lib/janet/jpm/config.janet
+lib/janet/jpm/dagbuild.janet
+lib/janet/jpm/declare.janet
+lib/janet/jpm/default-config.janet
+lib/janet/jpm/init.janet
+lib/janet/jpm/pm.janet
+lib/janet/jpm/rules.janet
+lib/janet/jpm/shutil.janet
+share/man/man1/jpm.1.gz

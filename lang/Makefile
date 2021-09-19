@@ -141,6 +141,7 @@
     SUBDIR += itcl4
     SUBDIR += janet
     SUBDIR += jimtcl
+    SUBDIR += jpm
     SUBDIR += jruby
     SUBDIR += jython
     SUBDIR += kawa
