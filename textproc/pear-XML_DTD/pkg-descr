@@ -1,9 +1,8 @@
-PEAR::XML_DTD parsing of DTD files and DTD validation of XML files.
-The XML validation is done with the php sax parser, the xml extension, it
-does not use the domxml extension.
+Parsing of DTD files and DTD validation of XML files. The XML validation is done
+with the php sax parser, the xml extension, it does not use the domxml
+extension.
 
-Currently supports most of the current XML spec, including entities,
-elements and attributes. Some uncommon parts of the spec may still be
-unsupported.
+Currently supports most of the current XML spec, including entities, elements
+and attributes. Some uncommon parts of the spec may still be unsupported.
 
 WWW: https://pear.php.net/package/XML_DTD
