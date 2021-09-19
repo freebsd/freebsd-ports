@@ -1,8 +1,8 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	closure-compiler
-PORTVERSION=	20210808
 DISTVERSIONPREFIX=	v
+DISTVERSION=	20210907
 CATEGORIES=	www java
 MASTER_SITES=	https://repo1.maven.org/maven2/com/google/javascript/${PORTNAME}/v${DISTVERSION}/
 EXTRACT_SUFX=	.jar
