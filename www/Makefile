@@ -1467,6 +1467,7 @@
     SUBDIR += py-dj32-django-tables2
     SUBDIR += py-dj32-django-taggit
     SUBDIR += py-dj32-django-timezone-field
+    SUBDIR += py-dj32-django-treebeard
     SUBDIR += py-dj32-djangorestframework
     SUBDIR += py-dj32-drf-yasg
     SUBDIR += py-django

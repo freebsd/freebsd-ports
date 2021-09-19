@@ -1,0 +1,16 @@
+django-treebeard is a library that implements efficient tree implementations for
+the Django Web Framework 1.8 and later.
+
+Features:
+
+- Flexible: Includes 3 different tree implementations with the same API:
+  * Adjacency List
+  * Materialized Path
+  * Nested Sets
+- Fast: Optimized non-naive tree operations
+- Easy: Uses Django Model Inheritance with abstract classes to define your own
+	models.
+- Clean: Testable and well tested code base. Code/branch test coverage is
+	 above 96%.
+
+WWW: https://github.com/django-treebeard/django-treebeard
