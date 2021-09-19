@@ -188,8 +188,8 @@ bin/gem%%RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/rubygems/version_option.rb
 %%RUBY_SITELIBDIR%%/ubygems.rb
 @dir lib/ruby/gems/%%RUBY_VER%%/build_info
-@dir %%EXT_DIR%%
 @dir %%CACHE_DIR%%
+@dir %%DOC_DIR%%
+@dir %%EXT_DIR%%
 @dir %%GEMS_DIR%%
 @dir %%SPEC_DIR%%
-@dir %%DOC_DIR%%
