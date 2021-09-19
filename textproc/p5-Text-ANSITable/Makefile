@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Text-ANSITable
-PORTVERSION=	0.602
+PORTVERSION=	0.603
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,6 +28,7 @@ RUN_DEPENDS=	p5-BorderStyles-Standard>=0:devel/p5-BorderStyles-Standard \
 		p5-Parse-VarName>=0:devel/p5-Parse-VarName \
 		p5-Term-App-Roles>=0.031:devel/p5-Term-App-Roles \
 		p5-Text-ANSI-Util>=0.22:textproc/p5-Text-ANSI-Util \
+		p5-alias-module>=0:devel/p5-alias-module \
 		p5-namespace-clean>=0:devel/p5-namespace-clean
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Needs>=0:devel/p5-Test-Needs
