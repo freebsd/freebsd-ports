@@ -1,7 +1,7 @@
 # Created by: bf@FreeBSD.org
 
 PORTNAME=	reflex
-PORTVERSION=	20210510
+PORTVERSION=	20210808
 CATEGORIES=	textproc
 MASTER_SITES=	https://invisible-mirror.net/archives/reflex/ \
 		LOCAL/sunpoet
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:tgz
 
-CONFIGURE_ENV=	YACC="${YACC}"
 GNU_CONFIGURE=	yes
 TEST_TARGET=	bigcheck
 
