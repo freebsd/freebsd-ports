@@ -33,7 +33,7 @@ ${_l:tu}_DEFAULT=	${lang:C/.*=//g}
 
 # Possible values: 2.4
 APACHE_DEFAULT?=	2.4
-# Possible values: 5, 6, 18
+# Possible values: 5, 18
 BDB_DEFAULT?=		5
 # Possible values: 2, 3
 COROSYNC_DEFAULT?=	2
