@@ -16,6 +16,7 @@ LICENSE_COMB=	dual
 
 USES=		cpe perl5
 USE_PERL5=	configure
+
 CPE_VENDOR=	perl
 
 post-install:
