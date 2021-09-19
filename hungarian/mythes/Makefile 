@@ -16,8 +16,8 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	${DATADIR}/th_hu_HU.dat \
-		${DATADIR}/th_hu_HU.idx
+PLIST_FILES=	%%DATADIR%%/th_hu_HU.dat \
+		%%DATADIR%%/th_hu_HU.idx
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

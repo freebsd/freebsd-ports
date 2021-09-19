@@ -17,14 +17,14 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	${DATADIR}/th_en_US_v2.dat \
-		${DATADIR}/th_en_US_v2.idx
+PLIST_FILES=	%%DATADIR%%/th_en_US_v2.dat \
+		%%DATADIR%%/th_en_US_v2.idx
 
 USALIASES=	en_AG en_AU en_BS en_BW en_BZ en_CA en_DK en_GB en_GH en_IE \
 		en_IN en_JM en_NA en_NG en_NZ en_PH en_SG en_TT en_ZA en_ZW
 .for ALIAS in ${USALIASES}
-PLIST_FILES+=	${DATADIR}/th_${ALIAS}_v2.dat \
-		${DATADIR}/th_${ALIAS}_v2.idx
+PLIST_FILES+=	%%DATADIR%%/th_${ALIAS}_v2.dat \
+		%%DATADIR%%/th_${ALIAS}_v2.idx
 .endfor
 
 do-install:
