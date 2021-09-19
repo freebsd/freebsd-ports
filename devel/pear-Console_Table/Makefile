@@ -1,11 +1,11 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
 PORTNAME=	Console_Table
-DISTVERSION=	1.3.1
+PORTVERSION=	1.3.1
 CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	PHP class that makes it easy to build console style tables
+COMMENT=	Library that makes it easy to build console style tables
 
 LICENSE=	BSD3CLAUSE
 
