@@ -1,0 +1,20 @@
+When writing desktop application, finding the right location to store user data
+and configuration varies per platform. Even for single-platform apps, there may
+by plenty of nuances in figuring out the right location.
+
+This kind of thing is what the platformdirs module is for. platformdirs will
+help you choose an appropriate:
+- user data dir (user_data_dir)
+- user config dir (user_config_dir)
+- user cache dir (user_cache_dir)
+- site data dir (site_data_dir)
+- site config dir (site_config_dir)
+- user log dir (user_log_dir)
+- user runtime dir (user_runtime_dir)
+
+And also:
+- Is a single module so other Python packages can vendor their own private copy.
+- Is slightly opinionated on the directory names used. Look for "OPINION" in
+  documentation and code for when an opinion is being applied.
+
+WWW: https://github.com/platformdirs/platformdirs
