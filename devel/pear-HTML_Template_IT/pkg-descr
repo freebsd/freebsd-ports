@@ -1,15 +1,15 @@
 HTML_Template_IT is a templating engine designed to allow easy separation of
-concerns. It does this by clearly separating the presentational code from
-the PHP code. The presentation code may be of any format, however generally
-XML or HTML is used.
+concerns. It does this by clearly separating the presentational code from the
+PHP code. The presentation code may be of any format, however generally XML or
+HTML is used.
 
-This engine works on the foundation of blocks and placeholders.
-It uses the hierarchy of blocks to determine which presentational code is
-instantiated when blocks are parsed. The placeholders allow the insertion
-of "dynamic" information.
+This engine works on the foundation of blocks and placeholders. It uses the
+hierarchy of blocks to determine which presentational code is instantiated when
+blocks are parsed. The placeholders allow the insertion of "dynamic"
+information.
 
 There are two classes to use for templating. HTML_Template_IT is used for basic
 templating needs. HTML_Template_ITX gives you full power over the templating
 engine, allowing blocks to be added, and function callbacks to be used.
 
-WWW: https://pear.php.net/package/html_template_it
+WWW: https://pear.php.net/package/HTML_Template_IT
