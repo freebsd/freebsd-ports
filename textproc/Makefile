@@ -484,6 +484,7 @@
     SUBDIR += openfts
     SUBDIR += openjade
     SUBDIR += opensearch
+    SUBDIR += opensearch-dashboards
     SUBDIR += opensp
     SUBDIR += openvanilla-framework
     SUBDIR += or-aspell
