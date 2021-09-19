@@ -1,7 +1,7 @@
 # Created by: Michael Moll <kvedulv@kvedulv.de>
 
 PORTNAME=	hammer_cli
-PORTVERSION=	2.5.1
+PORTVERSION=	3.0.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
