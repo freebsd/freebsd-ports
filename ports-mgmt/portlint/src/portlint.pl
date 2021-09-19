@@ -49,7 +49,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 7;
+my $micro = 8;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1916,7 +1916,7 @@ sub checkmakefile {
 	# whole file: BROKEN et al.
 	#
 	my ($var);
-	foreach $var (qw(IGNORE BROKEN COMMENT FORBIDDEN MANUAL_PACKAGE_BUILD NO_CDROM NO_PACKAGE RESTRICTED)) {
+	foreach $var (qw(IGNORE BROKEN(_[\w\d]+)? COMMENT FORBIDDEN MANUAL_PACKAGE_BUILD NO_CDROM NO_PACKAGE RESTRICTED)) {
 		print "OK: checking ${var}.\n" if ($verbose);
 		if ($whole =~ /\n${var}[+?]?=[ \t]+"/) {
 			my $lineno = &linenumber($`);
@@ -1937,8 +1937,8 @@ sub checkmakefile {
 			"with a lowercase letter and end without a period.");
 	}
 
-	if ($whole =~ /\nBROKEN[+?]=[ \t]+[^a-z \t]/ ||
-		$whole =~ /^BROKEN[+?]?=[ \t]+.*\.$/m) {
+	if ($whole =~ /\nBROKEN(_[\w\d]+)?[+?]?=[ \t]+[^a-z \t]/ ||
+		$whole =~ /^BROKEN(_[\w\d]+)?[+?]?=[ \t]+.*\.$/m) {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "BROKEN messages should begin ".
 			"with a lowercase letter and end without a period.");
@@ -2223,7 +2223,7 @@ xargs xmkmf
 				&& $lm !~ /^COMMENT(.)?=[^\n]+($i\d*)/m) {
 					&perror("WARN", $file, $lineno, "possible direct use of ".
 						"command \"$sm\" found. Use $autocmdnames{$i} ".
-						"instead and set according USE_AUTOTOOLS=<tool> macro");
+						"instead and set USES=autoreconf and GNU_CONFIGURE=yes");
 			}
 		}
 	}
@@ -2231,6 +2231,14 @@ xargs xmkmf
 	if ($makevar{'USE_AUTOTOOLS'} =~ /\blibtool\b/) {
 		&perror("WARN", $file, -1, "USE_AUTOTOOLS=libtool is deprecated.  ".
 			"Use USES=libtool instead.");
+	}
+
+	if ($makevar{'USE_AUTOTOOLS'} =~ /\blibtoolize\b/) {
+		&perror("WARN", $file, -1, "USE_AUTOTOOLS=libtoolize is deprecated. ".
+			"Use \"USES=autoreconf libtool\" instead.");
+	} elsif ($makevar{'USE_AUTOCONF'}) {
+		&perror("WARN", $file, -1, "USE_AUTOTOOLS is deprecated. ".
+			"Use USES=autoreconf and set GNU_CONFIGURE=yes instead.");
 	}
 
 	#
