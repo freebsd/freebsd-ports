@@ -1,0 +1,4 @@
+include/llhttp.h
+lib/cmake/llhttp/llhttp-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/llhttp/llhttp-config.cmake
+lib/libllhttp.so

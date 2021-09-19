@@ -1,0 +1,9 @@
+llhttp is a port of http_parser to llparse.
+
+This project aims to:
+- Make it maintainable
+- Verifiable
+- Improving benchmarks where possible
+
+WWW: https://llhttp.org/
+WWW: https://github.com/nodejs/llhttp

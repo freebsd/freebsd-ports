@@ -311,6 +311,7 @@
     SUBDIR += linux-opera
     SUBDIR += litmus
     SUBDIR += ljdeps
+    SUBDIR += llhttp
     SUBDIR += logswan
     SUBDIR += logtools
     SUBDIR += ls-qpack
