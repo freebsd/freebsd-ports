@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	octave-forge-sparsersb
-PORTVERSION=	1.0.8
-PORTREVISION=	2
+PORTVERSION=	1.0.9
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
