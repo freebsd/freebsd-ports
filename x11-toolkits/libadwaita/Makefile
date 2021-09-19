@@ -2,6 +2,7 @@ PORTNAME=	libadwaita
 PORTVERSION=	0.0.20210812
 CATEGORIES=	x11-toolkits
 
+# WARNING: ABI is unstable, often breaks Rust-based consumers e.g., solanum, authenticator.
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Building blocks for modern GNOME applications
 
