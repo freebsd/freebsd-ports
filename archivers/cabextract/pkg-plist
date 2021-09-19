@@ -1,0 +1,12 @@
+bin/cabextract
+man/ja/man1/cabextract.1.gz
+man/man1/cabextract.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/magic
+%%PORTDOCS%%%%DOCSDIR%%/wince_cab_format.html
+%%PORTDOCS%%%%DOCSDIR%%/wince_info
+%%PORTDOCS%%%%DOCSDIR%%/wince_rename
