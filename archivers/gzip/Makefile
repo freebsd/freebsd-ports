@@ -1,7 +1,7 @@
 # Created by: Cyrille Lefevre <cyrille.lefevre@laposte.net>
 
 PORTNAME=	gzip
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	archivers
 MASTER_SITES=	GNU
 
