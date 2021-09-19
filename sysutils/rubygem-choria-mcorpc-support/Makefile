@@ -15,6 +15,8 @@ RUN_DEPENDS=	choria>=0.20.1:sysutils/choria \
 		rubygem-nats-pure>=0.6:net/rubygem-nats-pure \
 		rubygem-systemu>=2.6.4:devel/rubygem-systemu
 
+NO_ARCH=	yes
+
 PLIST_FILES=	bin/mco
 
 .include <bsd.port.mk>
