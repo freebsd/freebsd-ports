@@ -1,7 +1,7 @@
 # Created by: estith
 
 PORTNAME=	Geo-ShapeFile
-PORTVERSION=	3.00
+PORTVERSION=	3.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
