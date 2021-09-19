@@ -1,0 +1,7 @@
+django-modelcluster extends Django's foreign key relations to make this
+possible. It introduces a new type of relation, ParentalKey, where the related
+models are stored locally to the 'parent' model until the parent is explicitly
+saved. Up to that point, the related models can still be accessed through a
+subset of the QuerySet API.
+
+WWW: https://github.com/wagtail/django-modelcluster
