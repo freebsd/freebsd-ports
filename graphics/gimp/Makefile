@@ -1,7 +1,7 @@
 # Created by: erich@FreeBSD.org
 
 PORTNAME=	gimp
-DISTVERSION?=	2.10.24
+DISTVERSION?=	2.10.28
 PORTEPOCH?=	2
 CATEGORIES=	graphics gnome
 

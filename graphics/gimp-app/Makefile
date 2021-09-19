@@ -1,12 +1,12 @@
 # Created by: erich@FreeBSD.org
 
-PORTNAME?=	gimp-app
-PORTVERSION=	2.10.24
-PORTREVISION=	12
+PORTNAME?=	gimp
+PORTVERSION=	2.10.28
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	GIMP/gimp/v${PORTVERSION:R}
-DISTNAME=	gimp-${PORTVERSION}
+PKGNAMESUFFIX=	-app
+#DISTNAME=	gimp-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNU Image Manipulation Program
