@@ -1,11 +1,7 @@
-PEAR generic classes for representation and manipulation of dates,
-times and time zones without the need of timestamps, which is a
-huge limitation for php programs. Includes time zone data, time
-zone conversions and many date/time conversions.
-
-It does not rely on 32-bit system date stamps, so you can display
-calendars and compare dates that date pre 1970 and post 2038. This
-package also provides a class to convert date strings between
-Gregorian and Human calendar formats.
+Generic classes for representation and manipulation of dates, times and time
+zones without the need of timestamps, which is a huge limitation for PHP
+programs. Includes time zone data, time zone conversions and many date/time
+conversions. It does not rely on 32-bit system date stamps, so you can display
+calendars and compare dates that date pre 1970 and post 2038.
 
 WWW: https://pear.php.net/package/Date
