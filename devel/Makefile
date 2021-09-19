@@ -3854,7 +3854,6 @@
     SUBDIR += pear-PEAR_PackageFileManager
     SUBDIR += pear-PEAR_PackageFileManager2
     SUBDIR += pear-PEAR_PackageFileManager_Plugins
-    SUBDIR += pear-PHPDoc
     SUBDIR += pear-PHPTAL
     SUBDIR += pear-PHPUnit_MockObject
     SUBDIR += pear-PHP_ArrayOf

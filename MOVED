@@ -16479,3 +16479,4 @@ lang/gcc7|lang/gcc10|2021-09-05|Has expired: Unsupported by upstream. Use GCC 10
 www/py-django-rest-swagger|www/py-drf-yasg|2021-09-17|Has expired: Has expired: Upstream no longer maintained, please use www/py-drf-yasg instead
 www/py-django-taggit-serializer|www/py-django-taggit|2021-09-17|Has expired: Obsolete, please use www/py-django-taggit instead
 www/efront||2021-09-17|Has expired: Unsupported by upstream
+devel/pear-PHPDoc|devel/pear-PhpDocumentor|2021-09-19|This package is not maintained anymore and has been superseded. Use devel/pear-PhpDocumentor instead
