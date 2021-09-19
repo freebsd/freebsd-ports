@@ -36,6 +36,8 @@ USE_RUBY=	yes
 ruby_OLD_CMD+=	/opt/puppetlabs/puppet/bin/ruby
 SHEBANG_FILES=	libexec/*
 
+NO_ARCH=	yes
+
 PLIST_FILES=	bin/bolt \
 		etc/bash_completion.d/bolt
 
