@@ -18,13 +18,13 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 
 USES=		cmake cpe pkgconfig
 
-CPE_VENDOR=	uclouvain
-
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} VER=${PORTVERSION:R}
 
 GH_ACCOUNT=	uclouvain
 USE_GITHUB=	yes
+
+CPE_VENDOR=	uclouvain
 
 .include <bsd.port.mk>
