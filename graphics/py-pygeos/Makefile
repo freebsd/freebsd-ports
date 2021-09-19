@@ -2,6 +2,7 @@
 
 PORTNAME=	pygeos
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.13,1:math/py-numpy@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent cython distutils
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pygeos/*.so
 
 .include <bsd.port.mk>
