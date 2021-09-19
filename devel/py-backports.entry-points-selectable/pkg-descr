@@ -1,0 +1,13 @@
+Compatibility shim to ease adoption of importlib_metadata 3.6. Supplies
+forward-compatibility of "selectable" entry points even on older versions of
+importlib_metadata and importlib.metadata, and avoids usage that triggers
+deprecation warnings.
+
+Use this shim for libraries or applications invoking entry_points() that run on
+Python older than 3.10 or where importlib_metadata is older than 3.6. In most
+cases, this shim is unnecessary and the easiest thing to do is simply require
+importlib_metadata >= 3.6 on all Pythons (or only those prior to 3.10a7). In
+some environments, a library may be constrained on which versions of
+importlib_metadata can be required, so this library bridges that gap.
+
+WWW: https://github.com/jaraco/backports.entry_points_selectable
