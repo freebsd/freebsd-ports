@@ -1,4 +1,9 @@
-PHP_UML is a reverse-engineering package that scans PHP files and directories,
-and delivers an UML/XMI representation of the classes and packages found.
+PHP_UML is a PHP parser, an XMI generator and a documentation tool.
+
+Practically, with PHP_UML, you will be able to feed a UML CASE tool, like
+Rational Rose or Argouml, with a UML representation of existing PHP source code.
+This way, you get an instant overview of a PHP application, with all the usual
+functions of a software design tool (such as class diagrams exportation,
+refactoring of object-oriented applications, or automatic code generation).
 
 WWW: https://pear.php.net/package/PHP_UML
