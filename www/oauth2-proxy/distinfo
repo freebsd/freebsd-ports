@@ -1,12 +1,14 @@
-TIMESTAMP = 1617706959
-SHA256 (oauth2-proxy-oauth2-proxy-v7.1.2_GH0.tar.gz) = cf2a921179a23542e74e12e1ecfd2b17e9fd7958382ab952e17f94ec0ac69f2b
-SIZE (oauth2-proxy-oauth2-proxy-v7.1.2_GH0.tar.gz) = 780923
+TIMESTAMP = 1619629263
+SHA256 (oauth2-proxy-oauth2-proxy-v7.1.3_GH0.tar.gz) = b6d45f3b44a98002ce8f3b581ffd79ade33fb19f374093df43564464439257ad
+SIZE (oauth2-proxy-oauth2-proxy-v7.1.3_GH0.tar.gz) = 794192
 SHA256 (Bose-minisentinel-917c5a9223bb_GH0.tar.gz) = c765c12a0ed631ae864f74ee606279a0962f3a87c4274cea6e8d922b0ad8a98e
 SIZE (Bose-minisentinel-917c5a9223bb_GH0.tar.gz) = 8352
 SHA256 (alicebob-gopher-json-a9ecdc9d1d3a_GH0.tar.gz) = ce51bf794d26ef3a8a4d0e4e8a4b477ce4e78bbad6d317fd7c839af9ebfcc68a
 SIZE (alicebob-gopher-json-a9ecdc9d1d3a_GH0.tar.gz) = 3630
 SHA256 (alicebob-miniredis-v2.13.0_GH0.tar.gz) = 4ff3ca22c22bab47966ab7465a89bf44b70341bd4f3242970f141b66c9424b12
 SIZE (alicebob-miniredis-v2.13.0_GH0.tar.gz) = 124631
+SHA256 (benbjohnson-clock-c97fc7b6bee0_GH0.tar.gz) = 82111d59e6d3fa3fbcbaf0d6b93ad8b0390da2de733a91063862d80c5d3a26e0
+SIZE (benbjohnson-clock-c97fc7b6bee0_GH0.tar.gz) = 6449
 SHA256 (beorn7-perks-v1.0.1_GH0.tar.gz) = 98db84bb0224a26094e6adba91b7ee7a1a7ace28cb648d818f8e779e6a19f825
 SIZE (beorn7-perks-v1.0.1_GH0.tar.gz) = 10867
 SHA256 (bitly-go-simplejson-v0.5.0_GH0.tar.gz) = 44196c95263e74277372319e5a6cb7f53b29ef7ddab8c7fed6ce6fc80144d465
