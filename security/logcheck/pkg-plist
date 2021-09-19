@@ -206,4 +206,5 @@ sbin/logtail2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crontab.in
 @dir(%%LOGCHECK_USER%%,%%LOGCHECK_GROUP%%,) %%DBDIR%%
 @dir(%%LOGCHECK_USER%%,%%LOGCHECK_GROUP%%,) %%RUNDIR%%
+@postexec %%FIND%% %%PREFIX%%/%%ETCDIR%%/* -type d -exec %%CHGRP%% %%LOGCHECK_GROUP%% {} +
 @postexec %%FIND%% %%PREFIX%%/%%ETCDIR%%/* -type d -exec %%CHMOD%% 750 {} +
