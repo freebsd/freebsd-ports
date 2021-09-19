@@ -19,8 +19,6 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 
 USES=		autoreconf bison cpe gmake libtool localbase pathfix pkgconfig shebangfix
 
-CPE_VENDOR=	libming
-
 CFLAGS+=	-fcommon # https://github.com/libming/libming/issues/55
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/ming
 GNU_CONFIGURE=	yes
@@ -35,6 +33,8 @@ GH_ACCOUNT=	libming
 GH_PROJECT=	libming
 
 CONFLICTS_INSTALL=	ja-ming
+
+CPE_VENDOR=	libming
 
 PORTSCOUT=	limit:^ming-
 
