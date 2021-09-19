@@ -31,6 +31,8 @@ RUN_DEPENDS=    rubygem-bundler>=1.15:sysutils/rubygem-bundler \
 USES=		gem
 USE_RUBY=	yes
 
+NO_ARCH=	yes
+
 PLIST_FILES=	bin/pdk
 
 .include <bsd.port.mk>
