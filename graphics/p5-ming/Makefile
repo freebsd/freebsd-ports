@@ -38,8 +38,6 @@ SHEBANG_FILES=	perl_ext/examples/*.cgi
 
 OPTIONS_DEFINE=	EXAMPLES
 
-BINARY_ALIAS=	freetype-config=true
-
 post-patch:
 	@${REINPLACE_CMD} -e '/ming_is_compiled()/ s|^|#|; /LIBS/d' ${WRKSRC}/perl_ext/Makefile.PL
 	@${REINPLACE_CMD} -e 's|\.3pm|.3|g' ${WRKSRC}/perl_ext/Makefile.PL ${WRKSRC}/perl_ext/mkdoc
