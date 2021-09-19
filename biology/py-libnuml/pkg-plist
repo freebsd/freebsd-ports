@@ -1,0 +1,3 @@
+%%PYTHON_SITELIBDIR%%/libnuml.pth
+%%PYTHON_SITELIBDIR%%/libnuml/_libnuml.so
+%%PYTHON_SITELIBDIR%%/libnuml/libnuml.py

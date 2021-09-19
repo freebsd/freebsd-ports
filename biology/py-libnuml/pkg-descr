@@ -1,0 +1,8 @@
+This is a Python binding for libnuml, the Numerical Markup Language library.
+
+The Numerical Markup Language (NuML) aims to standardize the exchange and
+archiving of numerical results. NuML originates from the numerical aspects of
+the Systems Biology Results Markup Language (SBRML) with the aim of re-using it
+in multiple other standardization efforts.
+
+WWW: https://github.com/NuML/NuML
