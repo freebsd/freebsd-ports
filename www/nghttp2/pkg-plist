@@ -17,3 +17,17 @@ man/man1/h2load.1.gz
 man/man1/nghttp.1.gz
 man/man1/nghttpd.1.gz
 man/man1/nghttpx.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README.rst
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asio-cl.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asio-cl2.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asio-sv.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asio-sv2.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/client
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/client.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deflate
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deflate.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libevent-client
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libevent-client.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libevent-server
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libevent-server.c
+%%DATADIR%%/fetch-ocsp-response

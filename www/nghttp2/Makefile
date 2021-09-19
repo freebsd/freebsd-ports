@@ -29,10 +29,6 @@ INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++14
 USE_RC_SUBR=	nghttpx
 
-PORTDATA=	fetch-ocsp-response
-PORTDOCS=	*
-PORTEXAMPLES=	*
-
 APP_BUILD_DEPENDS=	c-ares>=1.7.5:dns/c-ares \
 			libev>=4.11:devel/libev
 APP_CONFIGURE_ENABLE=	app
