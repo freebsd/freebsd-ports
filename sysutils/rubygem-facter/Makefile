@@ -18,6 +18,8 @@ RUN_DEPENDS=	rubygem-ffi>=1.0:devel/rubygem-ffi \
 USES=		gem
 USE_RUBY=	yes
 
+NO_ARCH=	yes
+
 PLIST_FILES=	bin/facter ${GEMS_DIR}/facter
 
 .include <bsd.port.pre.mk>
