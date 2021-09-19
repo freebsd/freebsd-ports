@@ -1,6 +1,6 @@
 PORTNAME=	librespeed-go
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.3
+DISTVERSION=	1.1.4
 CATEGORIES=	net www
 
 MAINTAINER=	driesm.michiels@gmail.com
@@ -26,16 +26,14 @@ OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
 	${REINPLACE_CMD} -e 's|"."|"${ETCDIR}"|g' ${WRKSRC}/config/config.go
-	${REINPLACE_CMD} -e 's|"./assets"|"${WWWDIR}"|g' ${WRKSRC}/config/config.go
 
 pre-install:
-	${REINPLACE_CMD} -e 's|"./assets"|"${WWWDIR}"|g' ${WRKSRC}/settings.toml
-	${REINPLACE_CMD} -e 's|"speedtest.db"|"/var/db/${PORTNAME}/speedtest.db"|g' ${WRKSRC}/settings.toml
+	${REINPLACE_CMD} -e 's|assets_path=""|assets_path="${WWWDIR}"|g' ${WRKSRC}/settings.toml
+	${REINPLACE_CMD} -e 's|speedtest.db|/var/db/${PORTNAME}/speedtest.db|g' ${WRKSRC}/settings.toml
 
 post-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
-	${CP} -a ${WRKSRC}/assets/*.js ${STAGEDIR}${WWWDIR}
-	${CP} -a ${WRKSRC}/assets/*.ttf ${STAGEDIR}${WWWDIR}
+	${CP} -a ${WRKSRC}/web/assets/*.js ${STAGEDIR}${WWWDIR}
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/settings.toml ${STAGEDIR}${ETCDIR}/settings.toml.sample
 	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
@@ -43,6 +41,6 @@ post-install:
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${CP} -a ${WRKSRC}/assets/*.html ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -a ${WRKSRC}/web/assets/*.html ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
