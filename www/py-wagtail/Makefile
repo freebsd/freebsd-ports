@@ -2,6 +2,7 @@
 
 PORTNAME=	wagtail
 PORTVERSION=	2.13.4
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.8<4.10:www/py-beautifulsoup@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.8<4.11:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django22>=2.1<3.3:www/py-django22@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-modelcluster>=5.1<6.0:www/py-django-modelcluster@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-taggit>=1.0<2.0:www/py-django-taggit@${PY_FLAVOR} \
