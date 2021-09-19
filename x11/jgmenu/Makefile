@@ -1,6 +1,6 @@
 PORTNAME=	jgmenu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.0
+DISTVERSION=	4.4.0
 CATEGORIES=	x11
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -9,7 +9,8 @@ COMMENT=	Simple X11 menu
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng.so:graphics/png
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
+		libpng.so:graphics/png
 
 USES=		compiler:c11 gmake gnome pkgconfig python:3.4+ shebangfix xorg
 USE_GITHUB=	yes
@@ -55,6 +56,8 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${_DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} ${_DOCS} \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
