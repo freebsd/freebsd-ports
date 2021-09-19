@@ -4,13 +4,11 @@
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown
 
-#
-# Add the following lines to /etc/rc.conf to enable aria2:
+# Add the following line to /etc/rc.conf.local or /etc/rc.conf to enable aria2:
 #
 # aria2_enable="YES"
 #
 # You can define flags for aria2 running. See aria2c(1) for details.
-#
 
 . /etc/rc.subr
 
