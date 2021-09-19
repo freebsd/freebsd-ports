@@ -14,6 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/xml/xmlcharent/catalog.xml:textproc/xmlcharent
 RUN_DEPENDS=	${LOCALBASE}/share/xml/xmlcharent/catalog.xml:textproc/xmlcharent \
 		xmlcatmgr:textproc/xmlcatmgr
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 DBFILES=4.1.2:docbkx412 4.2:docbook-xml-4.2 4.3:docbook-xml-4.3 \
