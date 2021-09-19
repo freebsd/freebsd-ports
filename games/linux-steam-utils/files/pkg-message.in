@@ -26,7 +26,7 @@ For the list of tested Linux games see https://github.com/shkhln/linuxulator-ste
 Native Proton setup (optional, semi-experimental):
 
 1. Run `sudo pkg install wine-proton libc6-shim python3`.
-2. Run `/usr/local/wine-proton/bin/pkg32.sh install wine-proton mesa-dri`.
+2. Run `%%LOCALBASE%%/wine-proton/bin/pkg32.sh install wine-proton mesa-dri`.
 3. In Steam install Proton 6.3 (appid 1580130).
 4. Run `lsu-register-proton` to register emulators/wine-proton as a compatibility tool.
 5. Restart Steam.
