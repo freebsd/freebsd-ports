@@ -1,6 +1,6 @@
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.0
+DISTVERSION=	2.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -12,16 +12,71 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	git:devel/git
 
 USES=		go:modules
+USE_GITHUB=	yes
+GH_ACCOUNT=	cli
+GH_PROJECT=	${GH_ACCOUNT}
+GH_TUPLE=	AlecAivazis:survey:v2.3.1:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
+		MakeNowJust:heredoc:v1.0.0:makenowjust_heredoc/vendor/github.com/MakeNowJust/heredoc \
+		alecthomas:chroma:v0.8.2:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
+		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
+		briandowns:spinner:v1.11.1:briandowns_spinner/vendor/github.com/briandowns/spinner \
+		charmbracelet:glamour:v0.3.0:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
+		cli:browser:v1.1.0:cli_browser/vendor/github.com/cli/browser \
+		cli:oauth:v0.8.0:cli_oauth/vendor/github.com/cli/oauth \
+		cli:safeexec:v1.0.0:cli_safeexec/vendor/github.com/cli/safeexec \
+		cli:shurcooL-graphql:0f7232a2bf7e:cli_shurcool_graphql/vendor/github.com/shurcooL/graphql \
+		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
+		creack:pty:v1.1.13:creack_pty/vendor/github.com/creack/pty \
+		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
+		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
+		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
+		gabriel-vasile:mimetype:v1.1.2:gabriel_vasile_mimetype/vendor/github.com/gabriel-vasile/mimetype \
+		go-yaml:yaml:496545a6307b:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
+		golang:crypto:9e8e0b390897:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:a5a99cb37ef4:golang_net/vendor/golang.org/x/net \
+		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:7ecdf8ef093b:golang_sys/vendor/golang.org/x/sys \
+		golang:term:a79de5458b56:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
+		google:go-cmp:v0.5.5:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
+		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
+		hashicorp:go-version:v1.2.1:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
+		henvic:httpretty:v0.0.6:henvic_httpretty/vendor/github.com/henvic/httpretty \
+		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
+		itchyny:gojq:v0.12.4:itchyny_gojq/vendor/github.com/itchyny/gojq \
+		itchyny:timefmt-go:v0.1.3:itchyny_timefmt_go/vendor/github.com/itchyny/timefmt-go \
+		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
+		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
+		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.13:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.10:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mgutz:ansi:d51e80ef957d:mgutz_ansi/vendor/github.com/mgutz/ansi \
+		microcosm-cc:bluemonday:v1.0.6:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
+		muesli:reflow:c80126ec2ad5:muesli_reflow/vendor/github.com/muesli/reflow \
+		muesli:termenv:v0.8.1:muesli_termenv/vendor/github.com/muesli/termenv \
+		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
+		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
+		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
+		shurcooL:githubv4:d292edc3691b:shurcool_githubv4/vendor/github.com/shurcooL/githubv4 \
+		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
+		spf13:cobra:v1.2.1:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
+		stretchr:objx:v0.1.1:stretchr_objx/vendor/github.com/stretchr/objx \
+		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		yuin:goldmark-emoji:v1.0.1:yuin_goldmark_emoji/vendor/github.com/yuin/goldmark-emoji \
+		yuin:goldmark:v1.3.5:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 _BUILD_VERSION=	${DISTVERSION}
 _BUILD_DATE=	$$(date +%Y-%m-%d)
 
-GO_MODULE=	github.com/cli/cli
 GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
-		-X ${GO_MODULE}/internal/build.Version=${_BUILD_VERSION} \
-		-X ${GO_MODULE}/internal/build.Date=${_BUILD_DATE}"
+		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/internal/build.Version=${_BUILD_VERSION} \
+		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/internal/build.Date=${_BUILD_DATE}"
 
 _DOCS=		README.md docs/gh-vs-hub.md docs/releasing.md \
 		docs/command-line-syntax.md docs/source.md
