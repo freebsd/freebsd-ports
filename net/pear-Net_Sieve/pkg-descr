@@ -1,6 +1,5 @@
-Net_Sieve is a PEAR class which handles talking to timsieved.
+This package provides an API to talk to servers implementing the managesieve
+protocol. It can be used to install and remove sieve scripts, mark them active
+etc.
 
-Provides an API to talk to the timsieved server that comes with Cyrus
-IMAPd. Can be used to install, remove, mark active, etc. SIEVE scripts.
-
-WWW: https://pear.php.net/package-info.php?package=Net_Sieve
+WWW: https://pear.php.net/package/Net_Sieve
