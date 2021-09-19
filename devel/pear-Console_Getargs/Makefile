@@ -1,7 +1,7 @@
 # Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 
 PORTNAME=	Console_Getargs
-DISTVERSION=	1.4.0
+PORTVERSION=	1.4.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
