@@ -78,6 +78,7 @@
     SUBDIR += libgtextutils
     SUBDIR += libnuml
     SUBDIR += libsbml
+    SUBDIR += libsedml
     SUBDIR += linux-foldingathome
     SUBDIR += mafft
     SUBDIR += mapm3
