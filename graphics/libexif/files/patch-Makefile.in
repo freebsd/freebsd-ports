@@ -1,0 +1,29 @@
+--- Makefile.in.orig	2020-05-18 19:51:57 UTC
++++ Makefile.in
+@@ -170,7 +170,7 @@ am__uninstall_files_from_dir = { \
+     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
+          $(am__cd) "$$dir" && rm -f $$files; }; \
+   }
+-am__installdirs = "$(DESTDIR)$(docdir)" "$(DESTDIR)$(pkgconfigdir)"
++am__installdirs = "$(DESTDIR)" "$(DESTDIR)$(pkgconfigdir)"
+ DATA = $(doc_DATA) $(noinst_DATA) $(pkgconfig_DATA)
+ RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+   distclean-recursive maintainer-clean-recursive
+@@ -393,7 +393,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = m4m po libexif test doc binary-dist contrib
++SUBDIRS = m4m po libexif test binary-dist contrib # doc
+ EXTRA_DIST = @PACKAGE_TARNAME@.spec README-Win32.txt libexif.pc.in \
+ 	libexif-uninstalled.pc.in SECURITY.md
+ pkgconfigdir = $(libdir)/pkgconfig
+@@ -881,7 +881,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-pkgconfigDATA
++install-data-am: install-pkgconfigDATA # install-docDATA
+ 
+ install-dvi: install-dvi-recursive
+ 
