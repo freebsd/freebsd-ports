@@ -1,0 +1,5 @@
+alias::module aliases one module name to another. It is useful if you want to
+let users access a module's functionality under a different (usually shorter)
+name.
+
+WWW: https://metacpan.org/dist/alias-module
