@@ -10,9 +10,10 @@ COMMENT=	PEAR RSS parser
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}XML_Parser>=1.3.7:devel/pear-XML_Parser@${PHP_FLAVOR}
+
+USES=		pear
 
 NO_ARCH=	yes
-USES=		pear
 
 .include <bsd.port.mk>

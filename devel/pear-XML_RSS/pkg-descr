@@ -1,4 +1,3 @@
-Parser for Resource Description Framework (RDF) Site Summary (RSS)
-documents.
+Parser for Resource Description Framework (RDF) Site Summary (RSS) documents.
 
-WWW: https://pear.php.net/package-info.php?package=XML_RSS
+WWW: https://pear.php.net/package/XML_RSS
