@@ -11,19 +11,20 @@ COMMENT=	Libmad library (part of MAD project)
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	SPEED
-SPEED_DESC=	Optimize for speed over accuracy
+USES=		cpe libtool
 
 CONFIGURE_ARGS=	--disable-debugging --enable-sso
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		cpe libtool
-
-CPE_VENDOR=	underbit
 
 SUB_LIST=	VERSION=${PORTVERSION}
 SUB_FILES=	mad.pc
+
+CPE_VENDOR=	underbit
+
+OPTIONS_DEFINE=	SPEED
+SPEED_DESC=	Optimize for speed over accuracy
 
 SPEED_CONFIGURE_ON=	--enable-speed
 SPEED_CONFIGURE_OFF=	--enable-accuracy
