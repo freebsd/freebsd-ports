@@ -1,9 +1,9 @@
 # Created by: Franz Bettag <franz@bett.ag>
 
 PORTNAME=	oscam
-PORTVERSION=	1.20.20201119
+PORTVERSION=	1.20.20210729
 CATEGORIES=	multimedia
-MASTER_SITES=	https://repo.or.cz/oscam.git/snapshot/877648ea724dac9c9d608e5b1f14fefeb263500e.tar.gz?/
+MASTER_SITES=	https://repo.or.cz/oscam.git/snapshot/ef7f844739120f6119d7197e7be9c9b8a8da0b5f.tar.gz?/
 
 MAINTAINER=	franz@bett.ag
 COMMENT=	Softcam software to decrypt digital TV channels
@@ -24,7 +24,7 @@ MAKE_ARGS=	CC="${CC}" HOSTCC="${CC}" \
 		OSCAM_BIN="Distribution/oscam" CONF_DIR="${PREFIX}/etc/oscam" \
 		V=1
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-877648e
+WRKSRC=		${WRKDIR}/${PORTNAME}-ef7f844
 
 .include <bsd.port.pre.mk>
 
