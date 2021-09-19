@@ -1,7 +1,7 @@
 # Created by: will
 
 PORTNAME=	String-Random
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
