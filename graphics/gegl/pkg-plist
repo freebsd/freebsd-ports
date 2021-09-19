@@ -1,5 +1,6 @@
 bin/gegl
 bin/gegl-imgcmp
+include/gegl-%%GEGL_VER%%/ctx.h
 include/gegl-%%GEGL_VER%%/gegl-apply.h
 include/gegl-%%GEGL_VER%%/gegl-audio-fragment.h
 include/gegl-%%GEGL_VER%%/gegl-buffer-backend.h
@@ -121,7 +122,6 @@ lib/gegl-%%GEGL_VER%%/seamless-clone.so
 %%TIFF%%lib/gegl-%%GEGL_VER%%/tiff-save.so
 lib/gegl-%%GEGL_VER%%/transformops.so
 %%V4L%%lib/gegl-%%GEGL_VER%%/v4l.so
-%%CAIRO%%lib/gegl-%%GEGL_VER%%/vector-fill.so
 %%CAIRO%%lib/gegl-%%GEGL_VER%%/vector-stroke.so
 %%WEBP%%lib/gegl-%%GEGL_VER%%/webp-load.so
 %%WEBP%%lib/gegl-%%GEGL_VER%%/webp-save.so
@@ -170,3 +170,5 @@ share/locale/sv/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/tr/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/uk/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/zh_CN/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
+%%VAPI%%share/vala/vapi/gegl-%%GEGL_VER%%.deps
+%%VAPI%%share/vala/vapi/gegl-%%GEGL_VER%%.vapi
