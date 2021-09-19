@@ -11,7 +11,7 @@ COMMENT=	Fast, multithreaded and highly concurrent ruby web server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-nio4r>=2<3:devel/rubygem-nio4r
+RUN_DEPENDS=	rubygem-nio4r>=2.0<3:devel/rubygem-nio4r
 
 USES=		gem ssl
 USE_RUBY=	yes
