@@ -1,0 +1,45 @@
+--- _deps/uvwasi-src/CMakeLists.txt.orig	2021-03-20 19:00:07 UTC
++++ _deps/uvwasi-src/CMakeLists.txt
+@@ -25,19 +25,19 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+   list(APPEND uvwasi_defines _GNU_SOURCE _POSIX_C_SOURCE=200112)
+ endif()
+ 
+-include(FetchContent)
++#include(FetchContent)
+ ## https://libuv.org
+-FetchContent_Declare(
+-        libuv
+-        GIT_REPOSITORY https://github.com/libuv/libuv.git
+-        GIT_TAG ${LIBUV_VERSION})
++#FetchContent_Declare(
++#        libuv
++#        GIT_REPOSITORY https://github.com/libuv/libuv.git
++#        GIT_TAG ${LIBUV_VERSION})
+ 
+-FetchContent_GetProperties(libuv)
+-if(NOT libuv_POPULATED)
+-    FetchContent_Populate(libuv)
+-    include_directories("${libuv_SOURCE_DIR}/include")
+-    add_subdirectory(${libuv_SOURCE_DIR} ${libuv_BINARY_DIR} EXCLUDE_FROM_ALL)
+-endif()
++#FetchContent_GetProperties(libuv)
++#if(NOT libuv_POPULATED)
++#    FetchContent_Populate(libuv)
++#    include_directories("${libuv_SOURCE_DIR}/include")
++#    add_subdirectory(${libuv_SOURCE_DIR} ${libuv_BINARY_DIR} EXCLUDE_FROM_ALL)
++#endif()
+ 
+ ## uvwasi source code files.
+ set(uvwasi_sources
+@@ -87,9 +87,9 @@ target_compile_definitions(uvwasi_a PRIVATE ${uvwasi_d
+ target_compile_options(uvwasi_a PRIVATE ${uvwasi_cflags})
+ target_include_directories(uvwasi_a PRIVATE ${PROJECT_SOURCE_DIR}/include)
+ if(CODE_COVERAGE)
+-    target_link_libraries(uvwasi_a PUBLIC uv_a coverage_config)
++    target_link_libraries(uvwasi_a PUBLIC uv coverage_config)
+ else()
+-    target_link_libraries(uvwasi_a PRIVATE uv_a)
++    target_link_libraries(uvwasi_a PRIVATE uv)
+ endif()
+ 
+ 

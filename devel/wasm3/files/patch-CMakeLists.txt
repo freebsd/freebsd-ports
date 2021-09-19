@@ -1,0 +1,27 @@
+--- CMakeLists.txt.orig	2021-06-02 10:40:14 UTC
++++ CMakeLists.txt
+@@ -188,21 +188,10 @@ if(BUILD_WASI MATCHES "simple")
+ elseif(BUILD_WASI MATCHES "metawasi")
+   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Dd_m3HasMetaWASI")
+ elseif(BUILD_WASI MATCHES "uvwasi")
+-  include(FetchContent)
+-  FetchContent_Declare(
+-    uvwasi
+-    GIT_REPOSITORY https://github.com/vshymanskyy/uvwasi.git
+-    GIT_TAG b063d686848c32a26119513056874f051c74258a
+-  )
+-
+-  FetchContent_GetProperties(uvwasi)
+-  if(NOT uvwasi_POPULATED)
+-    FetchContent_Populate(uvwasi)
+-    include_directories("${uvwasi_SOURCE_DIR}/include")
+-    add_subdirectory(${uvwasi_SOURCE_DIR} ${uvwasi_BINARY_DIR} EXCLUDE_FROM_ALL)
+-  endif()
++  add_subdirectory("_deps/uvwasi-src")
++  include_directories("_deps/uvwasi-src/include")
+   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Dd_m3HasUVWASI")
+-  target_link_libraries(${OUT_FILE} uvwasi_a uv_a)
++  target_link_libraries(${OUT_FILE} uvwasi_a)
+ endif()
+ 
+ check_ipo_supported(RESULT result)

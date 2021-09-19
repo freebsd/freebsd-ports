@@ -7083,6 +7083,7 @@
     SUBDIR += wasi-compiler-rt11
     SUBDIR += wasi-libc
     SUBDIR += wasi-libcxx
+    SUBDIR += wasm3
     SUBDIR += websocketpp
     SUBDIR += websvn
     SUBDIR += wf-config
