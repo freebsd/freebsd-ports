@@ -2,7 +2,7 @@ The phpDocumentor tool is a standalone auto-documentor similar to JavaDoc
 written in PHP. It differs from PHPDoc in that it is MUCH faster, parses a much
 wider range of php files, and comes with many customizations including 11 HTML
 templates, Windows help file CHM output, PDF output, and XML DocBook peardoc2
-output for use with documenting PEAR. In addition, it can do PHPXref source
-code highlighting and linking.
+output for use with documenting PEAR. In addition, it can do PHPXref source code
+highlighting and linking.
 
 WWW: https://pear.php.net/package/PhpDocumentor

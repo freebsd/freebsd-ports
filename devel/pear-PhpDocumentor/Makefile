@@ -7,20 +7,18 @@ CATEGORIES=	devel www pear
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides automatic documenting of php-api from the source
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear@${PHP_FLAVOR}
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-CONFLICTS=	pear-PHPDoc-[0-9]*
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		pear
+
+NO_ARCH=	yes
+
+CONFLICTS_INSTALL=	pear-PHPDoc
+
 OPTIONS_DEFINE=	XML_BEAUTIFIER
 XML_BEAUTIFIER_DESC=	XML_Beautifier support
 
-XML_BEAUTIFIER_RUN_DEPENDS=	${PEARDIR}/XML/Beautifier.php:textproc/pear-XML_Beautifier@${PHP_FLAVOR}
-
-post-extract:
-.for dir in ${DUMMYDIRS}
-	${TOUCH} ${WRKSRC}/${dir}/.peardummy
-.endfor
+XML_BEAUTIFIER_RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}XML_Beautifier>=1.1:textproc/pear-XML_Beautifier@${PHP_FLAVOR}
 
 .include <bsd.port.mk>
