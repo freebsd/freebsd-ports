@@ -15,6 +15,8 @@ RUN_DEPENDS=	rubygem-cri>0:devel/rubygem-cri \
 USES=		gem
 USE_RUBY=	yes
 
+NO_ARCH=	yes
+
 PLIST_FILES=	bin/puppet-db \
 		bin/puppet-query
 
