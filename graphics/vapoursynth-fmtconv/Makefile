@@ -1,10 +1,7 @@
 PORTNAME=	fmtconv
-PORTVERSION=	r24
+PORTVERSION=	r25
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	vapoursynth-
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	c6e76cb3ed83.patch:-p1 # https://github.com/EleonoreMizo/fmtconv/issues/23
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Format conversion tools for Vapoursynth and Avisyth+

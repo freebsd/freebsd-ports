@@ -1,5 +1,3 @@
-TIMESTAMP = 1629133588
-SHA256 (EleonoreMizo-fmtconv-r24_GH0.tar.gz) = d82099e1f9037f61c67951f141390a93bb89113e4690a2d7c39fd994bf1c7e50
-SIZE (EleonoreMizo-fmtconv-r24_GH0.tar.gz) = 319658
-SHA256 (c6e76cb3ed83.patch) = be055187102b93b4e5b6e088521e3033a94f6739c5b7676abb683e0fb888ed8a
-SIZE (c6e76cb3ed83.patch) = 683
+TIMESTAMP = 1632070163
+SHA256 (EleonoreMizo-fmtconv-r25_GH0.tar.gz) = 24d9fcbdd52b0f488e3e764cafdbf64c4c88e27bf67492fa89aafeb07d2a8248
+SIZE (EleonoreMizo-fmtconv-r25_GH0.tar.gz) = 328110
