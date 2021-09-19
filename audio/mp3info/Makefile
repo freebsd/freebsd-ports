@@ -11,16 +11,17 @@ COMMENT=	MP3 technical info viewer and ID3 1.x tag editor
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	GTK2 DOCS
-GTK2_DESC=	Enable to have the gmp3info
-
-PORTSCOUT=	skipv:0.8.5
+USES=		cpe ncurses tar:tgz
 
 ALL_TARGET=	mp3info
-USES=		cpe ncurses tar:tgz
 
 PLIST_FILES=	bin/mp3info share/man/man1/mp3info.1.gz
 PORTDOCS=	ChangeLog README mp3info.txt
+
+PORTSCOUT=	skipv:0.8.5
+
+OPTIONS_DEFINE=	GTK2 DOCS
+GTK2_DESC=	Enable to have the gmp3info
 
 GTK2_ALL_TARGET=	gmp3info
 GTK2_PLIST_FILES=	bin/gmp3info
