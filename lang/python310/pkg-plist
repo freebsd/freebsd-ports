@@ -2178,8 +2178,8 @@ lib/python%%XYDOT%%/ensurepip/_bundled/__init__.py
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/ensurepip/_bundled/pip-21.1.3-py3-none-any.whl
-lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-56.0.0-py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/pip-21.2.3-py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-57.4.0-py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_uninstall.py
 lib/python%%XYDOT%%/enum.py
 lib/python%%XYDOT%%/filecmp.py
@@ -2925,9 +2925,9 @@ lib/python%%XYDOT%%/lib-dynload/xxlimited.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/xxlimited_35.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/zlib.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib2to3/Grammar.txt
-lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.candidate.1.pickle
+lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.candidate.2.pickle
 lib/python%%XYDOT%%/lib2to3/PatternGrammar.txt
-lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.candidate.1.pickle
+lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.candidate.2.pickle
 lib/python%%XYDOT%%/lib2to3/__init__.py
 lib/python%%XYDOT%%/lib2to3/__main__.py
 lib/python%%XYDOT%%/lib2to3/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
