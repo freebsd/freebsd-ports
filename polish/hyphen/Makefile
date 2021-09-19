@@ -16,7 +16,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	%%DATADIR%%/hyph_pl_PL.dic
+PLIST_FILES=	${DATADIR}/hyph_pl_PL.dic
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

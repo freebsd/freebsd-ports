@@ -1,14 +1,13 @@
 PORTNAME=	hyphen
-PORTVERSION=	2004.04.15
+PORTVERSION=	2005.03.08
 PORTREVISION=	1
-CATEGORIES=	textproc
+CATEGORIES=	ukrainian textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
-PKGNAMEPREFIX=	is-
-DISTNAME=	hyph_is_IS-${PORTVERSION:C/\.//g}
+DISTNAME=	hyph_uk_UA-${PORTVERSION:C/\.//g}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Icelandic hyphenation rules
+COMMENT=	Ukrainian hyphenation rules
 
 LICENSE=	LGPL21
 
@@ -17,10 +16,10 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	${DATADIR}/hyph_is_IS.dic
+PLIST_FILES=	%%DATADIR%%/hyph_uk_UA.dic
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/hyph_is_IS.dic ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/hyph_uk_UA.dic ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
