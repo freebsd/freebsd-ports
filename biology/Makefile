@@ -76,6 +76,7 @@
     SUBDIR += lamarc
     SUBDIR += libbigwig
     SUBDIR += libgtextutils
+    SUBDIR += libnuml
     SUBDIR += libsbml
     SUBDIR += linux-foldingathome
     SUBDIR += mafft
