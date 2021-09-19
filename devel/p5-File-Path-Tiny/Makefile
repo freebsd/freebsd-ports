@@ -1,7 +1,7 @@
 # Created by: ports@c0decafe.net <ports@c0decafe.net>
 
 PORTNAME=	File-Path-Tiny
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
