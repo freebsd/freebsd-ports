@@ -1,0 +1,17 @@
+SANE backend for AirScan (eSCL) and WSD document scanner
+
+Similar to how most modern network printers support "driverless" printing,
+using the universal vendor-neutral printing protocol, many modern network
+scanners and MFPs support "driverless" scanning.
+
+Driverless scanning comes in two flavors:
+
+* Apple AirScan or AirPrint scanning (official protocol name is eSCL)
+* Microsoft WSD, or WS-Scan (term WSD means "Web Services for Devices)
+
+This backend implements both protocols, choosing automatically between them.
+It was successfully tested with many devices from Brother, Canon, Dell,
+Kyocera, Lexmark, Epson, HP, OKI, Panasonic, Pantum, Ricoh, Samsung and
+Xerox both in WSD and eSCL modes.
+
+WWW: https://github.com/alexpevzner/sane-airscan

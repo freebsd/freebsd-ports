@@ -1002,6 +1002,7 @@
     SUBDIR += sage
     SUBDIR += sam2p
     SUBDIR += sampleicc
+    SUBDIR += sane-airscan
     SUBDIR += sane-backends
     SUBDIR += sane-epkowa
     SUBDIR += scale2x
