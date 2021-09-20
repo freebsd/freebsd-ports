@@ -1,9 +1,10 @@
 # Created by: Herbert J. Skuhra <h.skuhra@gmail.com>
 
 PORTNAME=	calcurse
-PORTVERSION=	4.5.1
+DISTVERSION=	4.7.1
 CATEGORIES=	deskutils
-MASTER_SITES=	https://calcurse.org/files/
+MASTER_SITES=	https://calcurse.org/files/ \
+		https://fossies.org/linux/privat/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-based calendar and scheduling application
@@ -11,11 +12,7 @@ COMMENT=	Text-based calendar and scheduling application
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	CALDAV DOCS NLS
-OPTIONS_DEFAULT=CALDAV
-OPTIONS_SUB=	yes
-
-USES=		gmake ncurses shebangfix
+USES=		ncurses shebangfix
 SHEBANG_FILES=	contrib/caldav/calcurse-caldav \
 		contrib/caldav/calcurse-caldav.py \
 		contrib/vdir/calcurse-vdir \
@@ -23,15 +20,22 @@ SHEBANG_FILES=	contrib/caldav/calcurse-caldav \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-asciidoc
 
-DOCS_CONFIGURE_ENABLE=	docs
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext
+OPTIONS_DEFINE=	CALDAV DOCS NLS
+OPTIONS_DEFAULT=CALDAV
+OPTIONS_SUB=	yes
 
-CALDAV_DESC=		Support Calendaring Extensions to WebDAV
-CALDAV_USES=		python:3.4+
-CALDAV_USES_OFF=	python:3.4+,env
+CALDAV_DESC=	Support Calendaring Extensions to WebDAV
+
+CALDAV_USES=		python:3.6+
+CALDAV_USES_OFF=	python:3.6+,env
 CALDAV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py-httplib2@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}oauth2client>=0:security/py-oauth2client@${PY_FLAVOR}
+
+DOCS_USES=		gmake
+DOCS_CONFIGURE_ENABLE=	docs
+
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^docdir = .*|docdir = ${DOCSDIR}|' ${WRKSRC}/doc/Makefile.in
