@@ -45,7 +45,7 @@ OPTIONS_DEFINE=		PYTHON
 OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
 
-PYTHON_USES=		python
+PYTHON_USES=		python:3.6+
 PYTHON_USE=		PYTHON=cython
 PYTHON_MAKE_ARGS=	python_cmd="${PYTHON_CMD}"
 PYTHON_MAKE_ARGS_OFF=	python_package="none"
@@ -64,6 +64,6 @@ do-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcantera_shared.so.2.6.0
 
 do-install-PYTHON-on:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cantera/_cantera.cpython-38.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cantera/_cantera.cpython-${PYTHON_VER:S/.//}.so
 
 .include <bsd.port.mk>
