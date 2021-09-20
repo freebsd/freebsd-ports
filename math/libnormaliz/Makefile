@@ -1,6 +1,7 @@
 # PORTNAME block
 PORTNAME=	libnormaliz
 DISTVERSION=	3.9.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Normaliz/Normaliz/releases/download/v${PORTVERSION}/
 DISTNAME=	normaliz-${PORTVERSION}

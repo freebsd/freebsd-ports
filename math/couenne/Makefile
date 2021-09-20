@@ -1,7 +1,7 @@
 PORTNAME=	couenne
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	0.5.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -11,7 +11,6 @@ COMMENT=	Convex Over and Under Envelopes for NonliNear Estimation
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Couenne/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnauty.a:math/nauty
 LIB_DEPENDS=	libbonmin.so:math/bonmin \
 		libCbc.so:math/cbc \
 		libCgl.so:math/cgl \
@@ -19,7 +18,9 @@ LIB_DEPENDS=	libbonmin.so:math/bonmin \
 		libcoinasl.so:math/asl \
 		libCoinUtils.so:math/coinutils \
 		libipopt.so:math/ipopt \
-		libopenblas.so:math/openblas
+		libnauty.so:math/nauty \
+		libopenblas.so:math/openblas \
+		libOsi.so:math/osi
 
 USES=		blaslapack:netlib fortran gmake libtool pkgconfig
 USE_LDCONFIG=	yes
@@ -29,7 +30,7 @@ GH_ACCOUNT=	coin-or
 GH_PROJECT=	Couenne
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-nauty-incdir=${LOCALBASE}/include/nauty --with-nauty-lib=${LOCALBASE}/lib/libnauty.a
+CONFIGURE_ARGS=	--with-nauty-incdir=${LOCALBASE}/include/nauty --with-nauty-lib=${LOCALBASE}/lib/libnauty.so # see https://github.com/coin-or/Couenne/issues/58
 
 INSTALL_TARGET=	install-strip
 

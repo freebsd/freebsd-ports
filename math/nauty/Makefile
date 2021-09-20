@@ -1,51 +1,67 @@
 # Created by: bremner@unb.ca
 
 PORTNAME=	nauty
-PORTVERSION=	27r1
-PORTREVISION=	3
+PORTVERSION=	27r3
 CATEGORIES=	math
 MASTER_SITES=	https://users.cecs.anu.edu.au/~bdm/nauty/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	moritz@schmi.tt
-COMMENT=	Nauty & Traces are programs for computing graph automorphisms
+COMMENT=	Nauty & Traces are programs for computing graph automorphism
 
 LICENSE=	APACHE20
 
 USES=		gmake
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-tls # math/libnormaliz requires nauty with tls
+CONFIGURE_ARGS=	--enable-tls # this makes nauty thread-safe, math/libnormaliz requires nauty with tls
 
 MAKEFILE=	makefile
+MAKE_ARGS=	includedir=${PREFIX}/include/${PORTNAME} # place headers into a dedicated directory
 
 TEST_TARGET=	check
 
-CFLAGS+=	-fPIC
+OPTIONS_DEFINE=	DOCS NATIVE
 
-OPTIONS_DEFINE=	DOCS
+NATIVE_DESC=		Build with native optimizations (-march=native, etc)
+NATIVE_CONFIGURE_ON=	--disable-generic --enable-clz --enable-popcnt
+NATIVE_CONFIGURE_OFF=	--enable-generic --disable-clz --disable-popcnt
 
-post-build:
-	@cd ${WRKSRC} && ${CC} ${LDFLAGS} -shared -o libnauty.so \
-		gtnauty.o gtools.o gutil1.o gutil2.o naugraph.o naugroup.o naurng.o nausparse.o nautil.o nautinv.o \
-		naututil.o nauty.o nautycliquer.o schreier.o traces.o
+post-build: # build shared libraries: based on how static libraries are created
+	# rebuild .o files with -fPIC
+	@cd ${WRKSRC} ; \
+		objects=$$(ls *.o) ; \
+		${RM} $${objects} ; \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS} FREEBSD_EXTRA_CFLAGS="-fPIC" $${objects}
+	# build libraries
+	cd ${WRKSRC} && ${CC} ${LDFLAGS} -shared -o libnauty.so -Wl,-soname,libnauty.so \
+		nauty.o nautil.o nausparse.o naugraph.o schreier.o naurng.o traces.o gtools.o naututil.o \
+		nautinv.o gutil1.o gutil2.o gtnauty.o naugroup.o nautycliquer.o
+	cd ${WRKSRC} && ${CC} ${LDFLAGS} -shared -o libnauty1.so -Wl,-soname,libnauty1.so \
+		nauty1.o nautil1.o nausparse.o naugraph1.o schreier.o naurng.o traces.o gtools.o naututil1.o \
+		nautinv1.o gutil1.o gutil2.o gtnauty.o naugroup.o nautycliquer.o
+	cd ${WRKSRC} && ${CC} ${LDFLAGS} -shared -o libnautyW.so -Wl,-soname,libnautyW.so \
+		nautyW.o nautilW.o nausparseW.o naugraphW.o schreierW.o naurng.o traces.o gtoolsW.o naututilW.o \
+		nautinvW.o gutil1W.o gutil2W.o gtnautyW.o naugroupW.o nautycliquerW.o
+	cd ${WRKSRC} && ${CC} ${LDFLAGS} -shared -o libnautyW1.so -Wl,-soname,libnautyW1.so \
+		nautyW1.o nautilW1.o nausparseW.o naugraphW1.o schreierW.o naurng.o traces.o gtoolsW.o naututilW1.o \
+		nautinvW1.o gutil1W1.o gutil2W1.o gtnautyW1.o naugroupW.o nautycliquerW.o
+	cd ${WRKSRC} && ${CC} ${LDFLAGS} -shared -o libnautyL.so -Wl,-soname,libnautyL.so \
+		nautyL.o nautilL.o nausparseL.o naugraphL.o schreierL.o naurng.o traces.o gtoolsL.o naututilL.o \
+		nautinvL.o gutil1L.o gutil2L.o gtnautyL.o naugroupL.o nautycliquerL.o
+	cd ${WRKSRC} && ${CC} ${LDFLAGS} -shared -o libnautyL1.so -Wl,-soname,libnautyL1.so \
+		nautyL1.o nautilL1.o nausparseL.o naugraphL1.o schreierL.o naurng.o traces.o gtoolsL.o naututilL1.o \
+		nautinvL1.o gutil1L1.o gutil2L1.o gtnautyL1.o naugroupL.o nautycliquerL.o
 
-do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/nauty
-.for h in  nauty.h nautycliquer.h nausparse.h traces.h naugroup.h
-	${INSTALL_DATA} ${WRKSRC}/${h} ${STAGEDIR}${PREFIX}/include/nauty
+post-install:
+	# install shared libraries
+.for l in libnauty.so libnauty1.so libnautyW.so libnautyW1.so libnautyL.so libnautyL1.so
+	${INSTALL_LIB} ${WRKSRC}/${l} ${STAGEDIR}${PREFIX}/lib
 .endfor
-	# Do not use ${INSTALL_LIB} to strip the library!
-	${INSTALL_DATA} ${WRKSRC}/nauty.a ${STAGEDIR}${PREFIX}/lib/libnauty.a
-	${INSTALL_LIB} ${WRKSRC}/libnauty.so ${STAGEDIR}${PREFIX}/lib
-.for e in \
-	NRswitchg addedgeg amtog assembleg biplabg catg complg converseg copyg countg \
-	cubhamg deledgeg delptg directg dreadnaut dretodot dretog edgetransg genbg genbgL \
-	geng gengL genquarticg genrang genspecialg gentourng gentreeg hamheuristic labelg linegraphg \
-	listg multig newedgeg pickg planarg ranlabg shortg showg subdivideg twohamg \
-	underlyingg vcolg watercluster2
-	${INSTALL_PROGRAM} ${WRKSRC}/${e} ${STAGEDIR}${PREFIX}/bin
-.endfor
+	# correct the include path in .pc files
+	@${REINPLACE_CMD} -i '' -e 's|-I$${includedir}|&/${PORTNAME}|' ${STAGEDIR}${PREFIX}/libdata/pkgconfig/*.pc
+	# strip executables
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

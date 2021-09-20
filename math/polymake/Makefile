@@ -2,7 +2,7 @@
 
 PORTNAME=	polymake
 DISTVERSION=	4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://polymake.org/lib/exe/fetch.php/download/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-minimal
