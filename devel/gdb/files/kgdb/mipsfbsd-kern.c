@@ -23,8 +23,6 @@
  * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * from: src/gnu/usr.bin/gdb/kgdb/trgt_alpha.c,v 1.2.2.1 2005/09/15 05:32:10 marcel
  */
 
 #include "defs.h"
@@ -238,6 +236,7 @@ mipsfbsd_trapframe_sniffer (const struct frame_unwind *self,
 }
 
 static const struct frame_unwind mipsfbsd_trapframe_unwind = {
+  "mips FreeBSD kernel trap",
   SIGTRAMP_FRAME,
   default_frame_unwind_stop_reason,
   mipsfbsd_trapframe_this_id,
@@ -283,9 +282,9 @@ mipsfbsd_kernel_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
   fbsd_vmcore_set_cpu_pcb_addr (gdbarch, kgdb_trgt_stop_pcb);
 }
 
-void _initialize_mips_kgdb_tdep(void);
+void _initialize_mips_kgdb_tdep ();
 void
-_initialize_mips_kgdb_tdep (void)
+_initialize_mips_kgdb_tdep  ()
 {
   gdbarch_register_osabi_sniffer(bfd_arch_mips,
 				 bfd_target_elf_flavour,

@@ -24,8 +24,6 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
-
 #include "defs.h"
 #include "frame-unwind.h"
 #include "gdbcore.h"
@@ -201,6 +199,7 @@ ppcfbsd_trapframe_sniffer (const struct frame_unwind *self,
 
 static const struct frame_unwind ppcfbsd_trapframe_unwind =
 {
+  "ppc FreeBSD kernel trap",
   SIGTRAMP_FRAME,
   default_frame_unwind_stop_reason,
   ppcfbsd_trapframe_this_id,
@@ -239,9 +238,9 @@ ppcfbsd_kernel_init_abi(struct gdbarch_info info, struct gdbarch *gdbarch)
     }
 }
 
-void _initialize_ppc_kgdb_tdep(void);
+void _initialize_ppc_kgdb_tdep ();
 void
-_initialize_ppc_kgdb_tdep(void)
+_initialize_ppc_kgdb_tdep ()
 {
 	gdbarch_register_osabi_sniffer(bfd_arch_powerpc,
 				       bfd_target_elf_flavour,

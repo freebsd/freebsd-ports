@@ -24,8 +24,6 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
-
 #include "defs.h"
 #include "frame-unwind.h"
 #include "gdbcore.h"
@@ -217,6 +215,7 @@ amd64fbsd_trapframe_sniffer (const struct frame_unwind *self,
 }
 
 static const struct frame_unwind amd64fbsd_trapframe_unwind = {
+  "amd64 FreeBSD kernel trap",
   SIGTRAMP_FRAME,
   default_frame_unwind_stop_reason,
   amd64fbsd_trapframe_this_id,
@@ -240,9 +239,9 @@ amd64fbsd_kernel_init_abi(struct gdbarch_info info, struct gdbarch *gdbarch)
 	fbsd_vmcore_set_cpu_pcb_addr(gdbarch, kgdb_trgt_stop_pcb);
 }
 
-void _initialize_amd64_kgdb_tdep(void);
+void _initialize_amd64_kgdb_tdep ();
 void
-_initialize_amd64_kgdb_tdep(void)
+_initialize_amd64_kgdb_tdep ()
 {
 	gdbarch_register_osabi (bfd_arch_i386, bfd_mach_x86_64,
 	    GDB_OSABI_FREEBSD_KERNEL, amd64fbsd_kernel_init_abi);

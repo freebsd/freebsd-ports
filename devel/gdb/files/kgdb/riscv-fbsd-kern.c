@@ -22,7 +22,6 @@
  * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
  */
 
 /* Target-dependent code for FreeBSD/riscv64 kernels.  */
@@ -170,6 +169,7 @@ riscv_fbsd_trapframe_sniffer (const struct frame_unwind *self,
 }
 
 static const struct frame_unwind riscv_fbsd_trapframe_unwind = {
+  "riscv FreeBSD kernel trap",
   SIGTRAMP_FRAME,
   default_frame_unwind_stop_reason,
   riscv_fbsd_trapframe_this_id,
@@ -193,11 +193,9 @@ riscv_fbsd_kernel_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
   fbsd_vmcore_set_cpu_pcb_addr (gdbarch, kgdb_trgt_stop_pcb);
 }
 
-/* Provide a prototype to silence -Wmissing-prototypes.  */
-extern initialize_file_ftype _initialize_riscv_kgdb_tdep;
-
+void _initialize_riscv_kgdb_tdep ();
 void
-_initialize_riscv_kgdb_tdep (void)
+_initialize_riscv_kgdb_tdep  ()
 {
   gdbarch_register_osabi_sniffer(bfd_arch_riscv,
 				 bfd_target_elf_flavour,

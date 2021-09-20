@@ -24,8 +24,6 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
-
 #include "defs.h"
 #include "gdbarch.h"
 #include "gdbcore.h"
@@ -99,18 +97,19 @@ sparc64fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
 
   cache->saved_regs = trad_frame_alloc_saved_regs (this_frame);
 
-  cache->saved_regs[SPARC_SP_REGNUM].addr = trapframe_addr + OFF_TF_SP;
+  cache->saved_regs[SPARC_SP_REGNUM].set_addr (trapframe_addr + OFF_TF_SP);
 #ifdef notyet
-  cache->saved_regs[SPARC64_STATE_REGNUM].addr = trapframe_addr + OFF_TF_TSTATE;
+  cache->saved_regs[SPARC64_STATE_REGNUM].set_addr (trapframe_addr
+						    + OFF_TF_TSTATE);
 #endif
-  cache->saved_regs[SPARC64_PC_REGNUM].addr = trapframe_addr + OFF_TF_TPC;
-  cache->saved_regs[SPARC64_NPC_REGNUM].addr = trapframe_addr + OFF_TF_TNPC;
+  cache->saved_regs[SPARC64_PC_REGNUM].set_addr (trapframe_addr + OFF_TF_TPC);
+  cache->saved_regs[SPARC64_NPC_REGNUM].set_addr (trapframe_addr + OFF_TF_TNPC);
   for (regnum = SPARC_O0_REGNUM; regnum <= SPARC_O7_REGNUM; regnum++)
-    cache->saved_regs[regnum].addr =
-      trapframe_addr + OFF_TF_OUT + (regnum - SPARC_O0_REGNUM) * 8;
+    cache->saved_regs[regnum].set_addr (trapframe_addr + OFF_TF_OUT
+					+ (regnum - SPARC_O0_REGNUM) * 8);
   for (regnum = SPARC_L0_REGNUM; regnum <= SPARC_I7_REGNUM; regnum++)
-    cache->saved_regs[regnum].addr =
-      sp + BIAS + (regnum - SPARC_L0_REGNUM) * 8;
+    cache->saved_regs[regnum].set_addr (sp + BIAS
+					+ (regnum - SPARC_L0_REGNUM) * 8);
 
   return cache;
 }
@@ -156,6 +155,7 @@ sparc64fbsd_trapframe_sniffer (const struct frame_unwind *self,
 
 static const struct frame_unwind sparc64fbsd_trapframe_unwind =
 {
+  "sparc64 FreeBSD kernel trap",
   SIGTRAMP_FRAME,
   default_frame_unwind_stop_reason,
   sparc64fbsd_trapframe_this_id,
@@ -302,9 +302,9 @@ sparc64fbsd_kernel_init_abi(struct gdbarch_info info, struct gdbarch *gdbarch)
 #endif
 }
 
-void _initialize_sparc64_kgdb_tdep(void);
+void _initialize_sparc64_kgdb_tdep ();
 void
-_initialize_sparc64_kgdb_tdep(void)
+_initialize_sparc64_kgdb_tdep ()
 {
 	gdbarch_register_osabi_sniffer(bfd_arch_sparc,
 				       bfd_target_elf_flavour,

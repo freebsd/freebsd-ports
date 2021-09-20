@@ -22,7 +22,6 @@
  * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
  */
 
 /* Target-dependent code for FreeBSD/arm kernels.  */
@@ -170,6 +169,7 @@ arm_fbsd_trapframe_sniffer (const struct frame_unwind *self,
 }
 
 static const struct frame_unwind arm_fbsd_trapframe_unwind = {
+  "arm FreeBSD kernel trap",
   SIGTRAMP_FRAME,
   default_frame_unwind_stop_reason,
   arm_fbsd_trapframe_this_id,
@@ -199,11 +199,9 @@ arm_fbsd_kernel_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
   set_gdbarch_software_single_step (gdbarch, arm_software_single_step);
 }
 
-/* Provide a prototype to silence -Wmissing-prototypes.  */
-extern initialize_file_ftype _initialize_arm_kgdb_tdep;
-
+void _initialize_arm_kgdb_tdep ();
 void
-_initialize_arm_kgdb_tdep (void)
+_initialize_arm_kgdb_tdep  ()
 {
   gdbarch_register_osabi_sniffer(bfd_arch_arm,
 				 bfd_target_elf_flavour,
