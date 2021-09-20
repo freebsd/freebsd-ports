@@ -1,4 +1,4 @@
---- bolt.gemspec.orig	2021-07-27 00:01:52 UTC
+--- bolt.gemspec.orig	2021-09-20 22:59:20 UTC
 +++ bolt.gemspec
 @@ -26,7 +26,7 @@ Gem::Specification.new do |s|
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
@@ -12,7 +12,7 @@
 @@ -42,7 +42,7 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<puppet-resource_api>.freeze, [">= 1.8.1"])
        s.add_runtime_dependency(%q<puppet-strings>.freeze, ["~> 2.3"])
-       s.add_runtime_dependency(%q<r10k>.freeze, ["~> 3.1"])
+       s.add_runtime_dependency(%q<r10k>.freeze, ["~> 3.10"])
 -      s.add_runtime_dependency(%q<ruby_smb>.freeze, ["~> 1.0"])
 +      s.add_runtime_dependency(%q<ruby_smb>.freeze, [">= 1.0"])
        s.add_runtime_dependency(%q<terminal-table>.freeze, ["~> 1.8"])
@@ -30,7 +30,7 @@
 @@ -70,7 +70,7 @@ Gem::Specification.new do |s|
        s.add_dependency(%q<puppet-resource_api>.freeze, [">= 1.8.1"])
        s.add_dependency(%q<puppet-strings>.freeze, ["~> 2.3"])
-       s.add_dependency(%q<r10k>.freeze, ["~> 3.1"])
+       s.add_dependency(%q<r10k>.freeze, ["~> 3.10"])
 -      s.add_dependency(%q<ruby_smb>.freeze, ["~> 1.0"])
 +      s.add_dependency(%q<ruby_smb>.freeze, [">= 1.0"])
        s.add_dependency(%q<terminal-table>.freeze, ["~> 1.8"])
@@ -48,7 +48,7 @@
 @@ -99,7 +99,7 @@ Gem::Specification.new do |s|
      s.add_dependency(%q<puppet-resource_api>.freeze, [">= 1.8.1"])
      s.add_dependency(%q<puppet-strings>.freeze, ["~> 2.3"])
-     s.add_dependency(%q<r10k>.freeze, ["~> 3.1"])
+     s.add_dependency(%q<r10k>.freeze, ["~> 3.10"])
 -    s.add_dependency(%q<ruby_smb>.freeze, ["~> 1.0"])
 +    s.add_dependency(%q<ruby_smb>.freeze, [">= 1.0"])
      s.add_dependency(%q<terminal-table>.freeze, ["~> 1.8"])
