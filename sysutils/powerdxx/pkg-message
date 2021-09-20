@@ -9,3 +9,16 @@ Command line arguments can be set via powerdxx_flags. See powerd++(8)
 EOM
 }
 ]
+
+***************************************************************************
+
+For CPUs that are supported by the hwpstate driver powerd++ is obsolete and
+in fact not possible, because the driver discards frequencies set via the
+sysctl interface.
+
+There is a loader tunable that lets you turn it off:
+
+	hint.hwpstate_intel.0.disabled
+
+You can use that if you have issues with hwpstate controlling your CPU
+frequency.
