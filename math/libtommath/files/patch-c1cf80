@@ -1,0 +1,57 @@
+From c1cf80738219dbd70cba0c0c1244698aad842ec7 Mon Sep 17 00:00:00 2001
+From: Steffen Jaeckel <s@jaeckel.eu>
+Date: Thu, 5 Mar 2020 13:57:07 +0100
+Subject: [PATCH] introduce MP_HAS_SET_DOUBLE
+
+---
+ demo/test.c       | 4 ++--
+ mp_set_double.c   | 2 +-
+ tommath_private.h | 7 +++++++
+ 3 files changed, 10 insertions(+), 3 deletions(-)
+
+--- demo/test.c.orig	2019-10-22 09:44:44.000000000 +0000
++++ demo/test.c	2021-09-20 10:02:00.103699000 +0000
+@@ -625,7 +625,7 @@
+ 
+ }
+ 
+-#if defined(__STDC_IEC_559__) || defined(__GCC_IEC_559)
++#if defined(MP_HAS_SET_DOUBLE)
+ static int test_mp_set_double(void)
+ {
+    int i;
+@@ -2461,7 +2461,7 @@
+       T1(mp_read_write_sbin, MP_TO_SBIN),
+       T1(mp_reduce_2k, MP_REDUCE_2K),
+       T1(mp_reduce_2k_l, MP_REDUCE_2K_L),
+-#if defined(__STDC_IEC_559__) || defined(__GCC_IEC_559)
++#if defined(MP_HAS_SET_DOUBLE)
+       T1(mp_set_double, MP_SET_DOUBLE),
+ #endif
+       T1(mp_signed_rsh, MP_SIGNED_RSH),
+--- bn_mp_set_double.c.orig	2019-10-22 09:44:44.000000000 +0000
++++ bn_mp_set_double.c	2021-09-20 10:05:36.466235000 +0000
+@@ -3,7 +3,7 @@
+ /* LibTomMath, multiple-precision integer library -- Tom St Denis */
+ /* SPDX-License-Identifier: Unlicense */
+ 
+-#if defined(__STDC_IEC_559__) || defined(__GCC_IEC_559)
++#if defined(MP_HAS_SET_DOUBLE)
+ mp_err mp_set_double(mp_int *a, double b)
+ {
+    uint64_t frac;
+--- tommath_private.h.orig
++++ tommath_private.h
+@@ -164,6 +164,13 @@ MP_STATIC_ASSERT(prec_geq_min_prec, MP_DEFAULT_DIGIT_COUNT >= MP_MIN_DIGIT_COUNT
+  */
+ #define MP_MAX_DIGIT_COUNT ((INT_MAX - 2) / MP_DIGIT_BIT)
+ 
++#if defined(__STDC_IEC_559__) || defined(__GCC_IEC_559) \
++   || defined(__x86_64__) || defined(_M_X64) || defined(_M_AMD64) \
++   || defined(__i386__) || defined(_M_X86) \
++   || defined(__aarch64__) || defined(__arm__)
++#define MP_HAS_SET_DOUBLE
++#endif
++
+ /* random number source */
+ extern MP_PRIVATE mp_err(*s_mp_rand_source)(void *out, size_t size);
