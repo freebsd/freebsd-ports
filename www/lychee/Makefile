@@ -1,7 +1,7 @@
 PORTNAME=	lychee
-#DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
-PORTREVISION=	4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.7.1
+PORTREVISION=	0
 CATEGORIES=	www net
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -25,7 +25,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		anyhow-1.0.40 \
 		arrayvec-0.5.2 \
 		ascii_utils-0.9.3 \
-		assert_cmd-1.0.3 \
+		assert_cmd-1.0.4 \
 		async-channel-1.6.1 \
 		async-compression-0.3.7 \
 		async-executor-1.4.0 \
@@ -142,7 +142,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		lexical-core-0.7.5 \
 		libc-0.2.93 \
 		linked-hash-map-0.5.4 \
-		linkify-0.6.0 \
+		linkify-0.7.0 \
 		lock_api-0.4.3 \
 		log-0.4.14 \
 		lru-cache-0.1.2 \
@@ -172,7 +172,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		opaque-debug-0.3.0 \
 		openssl-0.10.33 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.61 \
+		openssl-sys-0.9.63 \
 		output_vt100-0.1.2 \
 		pad-0.1.6 \
 		parking-2.0.0 \
@@ -192,7 +192,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		polling-2.0.3 \
 		ppv-lite86-0.2.10 \
 		precomputed-hash-0.1.1 \
-		predicates-1.0.7 \
+		predicates-1.0.8 \
 		predicates-core-1.0.2 \
 		predicates-tree-1.0.2 \
 		pretty_assertions-0.7.2 \
@@ -215,7 +215,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		rand_pcg-0.2.1 \
 		redox_syscall-0.2.6 \
 		redox_users-0.4.0 \
-		regex-1.4.5 \
+		regex-1.4.6 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.23 \
 		remove_dir_all-0.5.3 \
@@ -261,7 +261,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		time-0.1.43 \
 		tinyvec-1.2.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.5.0 \
+		tokio-1.6.0 \
 		tokio-macros-1.1.0 \
 		tokio-native-tls-0.3.0 \
 		tokio-socks-0.5.1 \
@@ -283,7 +283,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
 		untrusted-0.7.1 \
-		url-2.2.1 \
+		url-2.2.2 \
 		utf-8-0.7.5 \
 		uuid-0.8.2 \
 		value-bag-1.0.0-alpha.6 \
