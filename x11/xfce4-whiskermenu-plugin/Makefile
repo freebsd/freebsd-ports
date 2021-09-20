@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	xfce4-whiskermenu-plugin
-PORTVERSION=	2.5.3
+PORTVERSION=	2.6.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
