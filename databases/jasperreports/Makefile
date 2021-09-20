@@ -19,6 +19,9 @@ RUN_DEPENDS=	${JAVALIBDIR}/itext.jar:devel/itext			\
 		${JAVALIBDIR}/commons-beanutils.jar:java/apache-commons-beanutils\
 		${JAVALIBDIR}/commons-digester.jar:textproc/apache-commons-digester
 
+USES=		cpe
+CPE_VENDOR=	jaspersoft
+
 OPTIONS_DEFINE=	MYSQL PGSQL HSQLDB
 OPTIONS_DEFAULT=MYSQL PGSQL
 
