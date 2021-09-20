@@ -1,6 +1,6 @@
 PORTNAME=	libfshfs
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20210602
+DISTVERSION=	experimental-20210722
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libfshfs/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
