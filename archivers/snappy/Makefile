@@ -10,11 +10,12 @@ COMMENT=	Fast compressor/decompressor library
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++11-lang cpe
 USE_LDCONFIG=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	SNAPPY_BUILD_TESTS SNAPPY_BUILD_BENCHMARKS
 CMAKE_BUILD_TYPE=	Release
+CPE_VENDOR=	google
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
