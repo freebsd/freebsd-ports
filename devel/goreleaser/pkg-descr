@@ -1,0 +1,15 @@
+GoReleaser builds Go binaries for several platforms, creates a GitHub
+release and then pushes a Homebrew formula to a tap repository.  All
+that wrapped in your favorite CI.
+
+With GoReleaser, you can:
+
+ - Cross-compile your Go project
+ - Release to GitHub, GitLab and Gitea
+ - Create Docker images and manifests
+ - Create Linux packages and Homebrew taps
+ - Sign artifacts, checksums and Docker images
+ - Announce new releases on Twitter, Slack, Discord and Microsoft Teams
+ - ... and much more!
+
+WWW: https://goreleaser.com/

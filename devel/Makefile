@@ -892,6 +892,7 @@
     SUBDIR += googletest
     SUBDIR += goprotobuf
     SUBDIR += goredo
+    SUBDIR += goreleaser
     SUBDIR += gorm
     SUBDIR += goswagger
     SUBDIR += got
