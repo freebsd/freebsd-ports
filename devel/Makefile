@@ -4064,6 +4064,7 @@
     SUBDIR += ptmalloc2
     SUBDIR += ptypes
     SUBDIR += publib
+    SUBDIR += purescript-language-server
     SUBDIR += pushmi
     SUBDIR += py-Automat
     SUBDIR += py-BTrees

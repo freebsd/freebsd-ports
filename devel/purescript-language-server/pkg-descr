@@ -1,0 +1,6 @@
+PureScript language server is an implementation of the LSP protocol for
+PureScript programming language. It is a Node application features type
+information, a formatting provider, code autocompletion and other common LSP
+features.
+
+WWW: https://github.com/nwolverson/purescript-language-server/
