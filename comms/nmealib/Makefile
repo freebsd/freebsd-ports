@@ -12,7 +12,9 @@ LICENSE=	LGPL21
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake zip
+USES=		cpe gmake zip
+
+CPE_VENDOR=	nmealib_project
 
 INCLUDES=	config.h context.h generate.h generator.h gmath.h info.h nmea.h \
 		parse.h parser.h sentence.h time.h tok.h units.h
