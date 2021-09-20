@@ -2,8 +2,12 @@
 
 PORTNAME=	libsndfile
 DISTVERSION=	1.0.31
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	cc342f9e45315f9f3de12ae493bc6b3a2bd0a0b1.patch:-p1
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
