@@ -1,7 +1,7 @@
 # Created by: Dominic Mitchell <dom@happygiraffe.net>
 
 PORTNAME=	RPC-XML
-PORTVERSION=	0.80
+PORTVERSION=	0.82
 CATEGORIES=	net www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
