@@ -3,7 +3,7 @@
 PORTNAME=	qd
 DISTVERSION=	2.3.23
 CATEGORIES=	math
-MASTER_SITES=	http://crd-legacy.lbl.gov/~dhbailey/mpdist/
+MASTER_SITES=	https://www.davidhbailey.com/dhbsoftware/
 
 MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	Double-Double and Quad-Double Arithmetic
