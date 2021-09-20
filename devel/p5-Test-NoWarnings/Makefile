@@ -1,8 +1,7 @@
 # Created by: Alex Kapranoff <alex@kapranoff.ru>
 
 PORTNAME=	Test-NoWarnings
-PORTVERSION=	1.04
-PORTREVISION=	2
+PORTVERSION=	1.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
