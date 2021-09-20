@@ -1,6 +1,6 @@
 Fix tests for modified files.
 
---- t/porting/customized.dat.orig	2021-05-25 05:25:01 UTC
+--- t/porting/customized.dat.orig	2021-09-05 12:09:49 UTC
 +++ t/porting/customized.dat
 @@ -2,6 +2,7 @@
  #     cd t
@@ -13,7 +13,7 @@ Fix tests for modified files.
 @@ -17,7 +18,7 @@ Net::Ping dist/Net-Ping/t/010_pingecho.t 218d7a9ee5b6d
  Net::Ping dist/Net-Ping/t/450_service.t f6578680f2872d7fc9f24dd75388d55654761875
  Net::Ping dist/Net-Ping/t/500_ping_icmp.t 3eeb60181c01b85f876bd6658644548fdf2e24d4
- Net::Ping dist/Net-Ping/t/501_ping_icmpv6.t 54373de5858f8fb7e078e4998a4b3b8dbca91783
+ Net::Ping dist/Net-Ping/t/501_ping_icmpv6.t cd719bca662b054b676dd2ee6e0c73c7a5e50cf9
 -Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm 582be34c077c9ff44d99914724a0cc2140bcd48c
 +Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm 8b35c5a137791b0cfedcffd2937cb3b5fb984cac
  Test::Harness cpan/Test-Harness/t/source.t aaa3939591114c0c52ecd44159218336d1f762b9
