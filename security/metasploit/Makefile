@@ -1,7 +1,7 @@
 # Created by: Yonatan <onatan@gmail.com>
 
 PORTNAME=	metasploit
-PORTVERSION=	6.0.23
+PORTVERSION=	6.1.6
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -97,12 +97,18 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-eventmachine>=0:devel/rubygem-eventmachine \
 		rubygem-zeitwerk>=0:devel/rubygem-zeitwerk
 
-USES=		cpe python shebangfix
+USES=		cpe go python shebangfix
 USE_RUBY=	yes
+SHEBANG_LANG=	go
 SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		data/exploits/CVE-2017-17562/install-deps.sh \
 		data/exploits/CVE-2017-7494/build.sh \
 		data/exploits/CVE-2017-7494/install-deps.sh \
+		data/exploits/CVE-2021-3156/nss_generic2.py \
+		data/exploits/CVE-2021-3156/nss_u14.py \
+		data/exploits/CVE-2021-3156/nss_u16.py \
+		data/exploits/CVE-2021-3156/userspec_c7.py \
+		data/exploits/CVE-2021-3156/userspec_generic.py \
 		docker/entrypoint.sh \
 		external/source/exploits/CVE-2020-9850/payload/loader/make.py \
 		external/source/exploits/CVE-2020-9850/payload/sbx/build-threadexec.sh \
@@ -118,6 +124,7 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		external/source/metsvc/test.rb \
 		docker/bin/msfvenom \
 		docker/bin/msfconsole \
+		modules/auxiliary/example.py \
 		modules/auxiliary/admin/http/cisco_7937g_ssh_privesc.py \
 		modules/auxiliary/admin/http/grafana_auth_bypass.py \
 		modules/auxiliary/admin/teradata/teradata_odbc_sql.py \
@@ -129,14 +136,18 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		modules/auxiliary/gather/mikrotik_winbox_fileread.py \
 		modules/auxiliary/gather/office365userenum.py \
 		modules/auxiliary/scanner/http/onion_omega2_login.py \
+		modules/auxiliary/scanner/http/rdp_web_login.py \
+		modules/auxiliary/scanner/msmail/exchange_enum.go \
+		modules/auxiliary/scanner/msmail/host_id.go \
+		modules/auxiliary/scanner/msmail/onprem_enum.go \
 		modules/auxiliary/scanner/smb/impacket/dcomexec.py \
 		modules/auxiliary/scanner/smb/impacket/secretsdump.py \
 		modules/auxiliary/scanner/smb/impacket/wmiexec.py \
 		modules/auxiliary/scanner/ssl/bleichenbacher_oracle.py \
 		modules/auxiliary/scanner/teradata/teradata_odbc_login.py \
 		modules/auxiliary/scanner/wproxy/att_open_proxy.py \
+		modules/exploits/example.py \
 		modules/exploits/linux/smtp/haraka.py \
-		modules/exploits/windows/smb/ms17_010_eternalblue_win8.py \
 		tools/dev/import-dev-keys.sh \
 		tools/dev/update_joomla_components.py \
 		tools/dev/sign-dev-keys.sh \
