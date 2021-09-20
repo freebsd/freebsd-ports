@@ -71,6 +71,7 @@ include/pipewire-0.3/pipewire/protocol.h
 include/pipewire-0.3/pipewire/proxy.h
 include/pipewire-0.3/pipewire/resource.h
 include/pipewire-0.3/pipewire/stream.h
+include/pipewire-0.3/pipewire/thread.h
 include/pipewire-0.3/pipewire/thread-loop.h
 include/pipewire-0.3/pipewire/type.h
 include/pipewire-0.3/pipewire/utils.h
@@ -103,6 +104,7 @@ include/spa-0.2/spa/node/type-info.h
 include/spa-0.2/spa/node/utils.h
 include/spa-0.2/spa/param/audio/format-utils.h
 include/spa-0.2/spa/param/audio/format.h
+include/spa-0.2/spa/param/audio/iec958.h
 include/spa-0.2/spa/param/audio/layout.h
 include/spa-0.2/spa/param/audio/raw.h
 include/spa-0.2/spa/param/audio/type-info.h
@@ -139,7 +141,9 @@ include/spa-0.2/spa/support/log-impl.h
 include/spa-0.2/spa/support/log.h
 include/spa-0.2/spa/support/loop.h
 include/spa-0.2/spa/support/plugin.h
+include/spa-0.2/spa/support/plugin-loader.h
 include/spa-0.2/spa/support/system.h
+include/spa-0.2/spa/support/thread.h
 include/spa-0.2/spa/utils/ansi.h
 include/spa-0.2/spa/utils/defs.h
 include/spa-0.2/spa/utils/dict.h
@@ -158,7 +162,7 @@ include/spa-0.2/spa/utils/type.h
 %%GSTREAMER%%lib/gstreamer-1.0/libgstpipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.331.0
+lib/libpipewire-0.3.so.0.335.0
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
@@ -306,6 +310,7 @@ share/locale/ko/LC_MESSAGES/pipewire.mo
 share/locale/lt/LC_MESSAGES/pipewire.mo
 share/locale/ml/LC_MESSAGES/pipewire.mo
 share/locale/mr/LC_MESSAGES/pipewire.mo
+share/locale/my/LC_MESSAGES/pipewire.mo
 share/locale/nl/LC_MESSAGES/pipewire.mo
 share/locale/nn/LC_MESSAGES/pipewire.mo
 share/locale/oc/LC_MESSAGES/pipewire.mo
@@ -332,6 +337,8 @@ share/locale/zh_TW/LC_MESSAGES/pipewire.mo
 %%DATADIR%%/filter-chain/sink-dolby-surround.conf
 %%DATADIR%%/filter-chain/sink-eq6.conf
 %%DATADIR%%/filter-chain/sink-matrix-spatialiser.conf
+%%DATADIR%%/filter-chain/sink-virtual-surround-5.1-kemar.conf
+%%DATADIR%%/filter-chain/sink-virtual-surround-7.1-hesuvi.conf
 %%DATADIR%%/filter-chain/source-rnnoise.conf
 %%DATADIR%%/jack.conf
 %%MEDIASESSION%%%%DATADIR%%/media-session.d/alsa-monitor.conf

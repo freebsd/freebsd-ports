@@ -1,17 +1,6 @@
 PORTNAME=	pipewire
-DISTVERSION=	0.3.31
-PORTREVISION=	4
+DISTVERSION=	0.3.36
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/-/commit/
-PATCHFILES+=	91988acb6b6a.patch:-p1 # https://gitlab.freedesktop.org/pipewire/pipewire/-/merge_requests/815
-PATCHFILES+=	d51634a2f1a7.patch:-p1 # https://gitlab.freedesktop.org/pipewire/pipewire/-/merge_requests/816
-PATCHFILES+=	d6bb69f2bd88.patch:-p1 # https://gitlab.freedesktop.org/pipewire/pipewire/-/merge_requests/816
-PATCHFILES+=	765bd417decc.patch:-p1 # https://gitlab.freedesktop.org/pipewire/pipewire/-/merge_requests/816
-PATCHFILES+=	488150fac6c9.patch:-p1 # https://gitlab.freedesktop.org/pipewire/pipewire/-/merge_requests/816
-PATCHFILES+=	2488e87fde51.patch:-p1 # https://gitlab.freedesktop.org/pipewire/pipewire/-/merge_requests/852
-PATCHFILES+=	e41187d64345.patch:-p1 # https://gitlab.freedesktop.org/pipewire/pipewire/-/merge_requests/906
-PATCHFILES+=	40cbcf288775.patch:-p1 # https://gitlab.freedesktop.org/pipewire/pipewire/-/merge_requests/906
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Server and user space API to deal with multimedia pipelines
@@ -47,7 +36,9 @@ MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
 MANPAGES_MESON_ENABLED=	man
 
 MEDIASESSION_DESC=	Session manager support
-MEDIASESSION_MESON_ENABLED=	alsa pipewire-alsa media-session pw-cat
+MEDIASESSION_MESON_ENABLED=	alsa pipewire-alsa pw-cat
+MEDIASESSION_MESON_ON=		-Dsession-managers=media-session
+MEDIASESSION_MESON_OFF=		-Dsession-managers=''
 MEDIASESSION_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
 PULSEAUDIO_MESON_ENABLED=	libpulse
@@ -66,19 +57,9 @@ MESON_ARGS=	-D bluez5=disabled \
 		-D sdl2=disabled \
 		-D udevrulesdir="${LOCALBASE}/lib/udev/rules.d"
 
-post-extract:
-.if defined(PATCHFILES) && ${PATCHFILES:Me41187d64345*}
-	@${REINPLACE_CMD} -e '/_TAG/s/06-02/07-06/' \
-		-e '/which/a'$$'\\\n      valgrind' \
-		${WRKSRC}/.gitlab-ci.yml
-.endif
-
 post-patch-MEDIASESSION-on:
 # alsa-seq is not supported & causes SIGSEGV with media session
 	@${REINPLACE_CMD} 's| alsa-seq|\ #alsa-seq|g' \
 		${WRKSRC}/src/daemon/media-session.d/media-session.conf
-# start media session by default
-	@${REINPLACE_CMD} '/manager_args/ s/@comment@//g' \
-		${WRKSRC}/src/daemon/pipewire.conf.in
 
 .include <bsd.port.mk>
