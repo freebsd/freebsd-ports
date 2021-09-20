@@ -1,5 +1,5 @@
 PORTNAME=	rex-random_identifier
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.8
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
