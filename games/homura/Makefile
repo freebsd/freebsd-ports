@@ -1,10 +1,10 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	homura
-PORTVERSION=	5.5
+DISTVERSION=	5.6
 CATEGORIES=	games
 MASTER_SITES=	https://codeberg.org/Alexander88207/Homura/archive/
-DISTNAME=	${PORTVERSION}
+DISTNAME=	${DISTVERSION}
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Wine-based Game Launcher for FreeBSD
@@ -28,9 +28,12 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	bin/Homura
+PLIST_FILES=	bin/Homura \
+		share/Homura/Data/Framework
 
 do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/Homura/Data
 	${INSTALL_SCRIPT} ${WRKSRC}/Homura ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/Data/Framework ${STAGEDIR}${PREFIX}/share/Homura/Data
 
 .include <bsd.port.mk>
