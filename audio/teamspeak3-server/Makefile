@@ -1,7 +1,7 @@
 # Created by: Daniel O'Connor
 
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.13.5
+PORTVERSION=	3.13.6
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	https://files.teamspeak-services.com/releases/server/${PORTVERSION}/
