@@ -4,10 +4,6 @@ bin/named-checkzone
 bin/named-compilezone
 bin/named-journalprint
 %%LMDB%%bin/named-nzd2nzf
-%%NATIVE_PKCS11%%bin/pkcs11-destroy
-%%NATIVE_PKCS11%%bin/pkcs11-keygen
-%%NATIVE_PKCS11%%bin/pkcs11-list
-%%NATIVE_PKCS11%%bin/pkcs11-tokens
 @sample etc/mtree/BIND.chroot.dist.sample
 @sample etc/mtree/BIND.chroot.local.dist.sample
 %%ETCDIR%%/bind.keys
@@ -163,7 +159,6 @@ include/isc/interfaceiter.h
 include/isc/iterated_hash.h
 include/isc/lang.h
 include/isc/lex.h
-include/isc/lib.h
 include/isc/likely.h
 include/isc/list.h
 include/isc/log.h
@@ -256,28 +251,22 @@ include/ns/stats.h
 include/ns/types.h
 include/ns/update.h
 include/ns/xfrout.h
-include/pk11/constants.h
-include/pk11/internal.h
-include/pk11/pk11.h
-include/pk11/result.h
-include/pk11/site.h
-include/pkcs11/pkcs11.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
 lib/libbind9.so
-lib/libbind9-9.17.15.so
+lib/libbind9-9.17.18.so
 lib/libdns.so
-lib/libdns-9.17.15.so
+lib/libdns-9.17.18.so
 lib/libirs.so
-lib/libirs-9.17.15.so
+lib/libirs-9.17.18.so
 lib/libisc.so
-lib/libisc-9.17.15.so
+lib/libisc-9.17.18.so
 lib/libisccc.so
-lib/libisccc-9.17.15.so
+lib/libisccc-9.17.18.so
 lib/libisccfg.so
-lib/libisccfg-9.17.15.so
+lib/libisccfg-9.17.18.so
 lib/libns.so
-lib/libns-9.17.15.so
+lib/libns-9.17.18.so
 @comment man/man1/arpaname.1.gz
 @comment man/man1/delv.1.gz
 @comment man/man1/dig.1.gz
@@ -302,10 +291,6 @@ lib/libns-9.17.15.so
 @comment man/man1/nsec3hash.1.gz
 @comment man/man1/nslookup.1.gz
 @comment man/man1/nsupdate.1.gz
-%%MANPAGES%%%%NATIVE_PKCS11%%man/man1/pkcs11-destroy.1.gz
-%%MANPAGES%%%%NATIVE_PKCS11%%man/man1/pkcs11-keygen.1.gz
-%%MANPAGES%%%%NATIVE_PKCS11%%man/man1/pkcs11-list.1.gz
-%%MANPAGES%%%%NATIVE_PKCS11%%man/man1/pkcs11-tokens.1.gz
 %%MANPAGES%%man/man5/named.conf.5.gz
 %%MANPAGES%%man/man5/rndc.conf.5.gz
 %%MANPAGES%%man/man8/ddns-confgen.8.gz

@@ -49,13 +49,13 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 # XXX: remove tar:bz2
 USES=		autoreconf compiler:c11 cpe libedit libtool pkgconfig ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.17.15a0.2021.07.06
+ISCVERSION=	9.17.18a0.2021.09.20
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	f663701b1deab34415f86cfef4172ac71e164edc
+GL_COMMIT=	be99fc92b63ef2463cadb2f90162982ed3ed289d
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -98,9 +98,6 @@ OPTIONS_DEFINE=		DNSTAP DOCS FIXED_RRSET GEOIP IDN JSON LARGE_FILE LMDB \
 			MANPAGES OVERRIDECACHE PORTREVISION QUERYTRACE \
 			START_LATE TCP_FASTOPEN
 
-OPTIONS_RADIO=		CRYPTO
-OPTIONS_RADIO_CRYPTO=	NATIVE_PKCS11
-
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_BDB DLZ_FILESYSTEM DLZ_LDAP DLZ_MYSQL \
 			DLZ_POSTGRESQL DLZ_STUB
@@ -133,7 +130,6 @@ GSSAPI_NONE_DESC=	Disable
 LARGE_FILE_DESC=	64-bit file support
 LMDB_DESC=		Use LMDB for zone management
 OVERRIDECACHE_DESC=	Use the override-cache patch
-NATIVE_PKCS11_DESC=	Use PKCS\#11 native API (**READ HELP**)
 PORTREVISION_DESC=	Show PORTREVISION in the version string
 QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 START_LATE_DESC=	Start BIND late in the boot process (see help)
@@ -197,8 +193,6 @@ LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
 OVERRIDECACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
-
-NATIVE_PKCS11_CONFIGURE_ENABLE=	native-pkcs11
 
 QUERYTRACE_CONFIGURE_ENABLE=	querytrace
 

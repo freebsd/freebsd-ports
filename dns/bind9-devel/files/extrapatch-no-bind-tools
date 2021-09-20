@@ -1,16 +1,13 @@
 Exclude the "tools" from building and installing.
 
---- bin/Makefile.am.orig	2021-01-04 06:21:13 UTC
+--- bin/Makefile.am.orig	2021-09-17 07:10:48 UTC
 +++ bin/Makefile.am
-@@ -1,4 +1,4 @@
+@@ -1 +1 @@
 -SUBDIRS = named rndc dig delv dnssec tools nsupdate check confgen tests plugins
 +SUBDIRS = named rndc tools check confgen tests plugins
- 
- if HAVE_PKCS11
- SUBDIRS += pkcs11
---- bin/tools/Makefile.am.orig	2021-01-04 06:21:13 UTC
+--- bin/tools/Makefile.am.orig	2021-09-17 07:10:48 UTC
 +++ bin/tools/Makefile.am
-@@ -9,11 +9,7 @@ LDADD =				\
+@@ -9,11 +9,7 @@ LDADD +=			\
  	$(LIBISC_LIBS)
  
  bin_PROGRAMS =			\

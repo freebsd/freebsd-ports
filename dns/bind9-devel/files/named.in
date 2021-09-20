@@ -21,7 +21,6 @@
 # named_wait_host (str):	    Hostname to check if named_wait is enabled
 # named_auto_forward (str):	    Set up forwarders from /etc/resolv.conf
 # named_auto_forward_only (str):    Do "forward only" instead of "forward first"
-%%NATIVE_PKCS11%%# named_pkcs11_engine (str):	    Path to the PKCS#11 library to use.
 #
 
 . /etc/rc.subr
@@ -52,7 +51,6 @@ named_wait=${named_wait:-"NO"}
 named_wait_host=${named_wait_host:-"localhost"}
 named_auto_forward=${named_auto_forward:-"NO"}
 named_auto_forward_only=${named_auto_forward_only:-"NO"}
-%%NATIVE_PKCS11%%named_pkcs11_engine=${named_pkcs11_engine:-""}
 
 # Not configuration variables but having them here keeps rclint happy
 required_dirs="${named_chrootdir}"
@@ -333,16 +331,6 @@ named_prestart()
 	fi
 
 	command_args="-u ${named_uid:=root} -c ${named_conf} ${command_args}"
-
-%%NATIVE_PKCS11%%	if [ -z "${named_pkcs11_engine}"]; then
-%%NATIVE_PKCS11%%		err 3 "named_pkcs11_engine has to be set to the PKCS#11 engine's library you want to use"
-%%NATIVE_PKCS11%%	elif [ ! -f ${named_pkcs11_engine} ]; then
-%%NATIVE_PKCS11%%		err 3 "named_pkcs11_engine the PKCS#11 engine's library you want to use doesn't exist"
-%%NATIVE_PKCS11%%	else
-%%NATIVE_PKCS11%%		mkdir -p ${named_chrootdir}${named_pkcs11_engine%/*}
-%%NATIVE_PKCS11%%		cp -p ${named_pkcs11_engine} ${named_chrootdir}${named_pkcs11_engine}
-%%NATIVE_PKCS11%%		command_args="-E ${named_pkcs11_engine} ${command_args}"
-%%NATIVE_PKCS11%%	fi
 
 	local line nsip firstns
 
