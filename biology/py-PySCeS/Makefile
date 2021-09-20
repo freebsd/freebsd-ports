@@ -1,13 +1,15 @@
 PORTNAME=	PySCeS
-DISTVERSION=	0.9.8a
+DISTVERSION=	1.0.0
 CATEGORIES=	biology python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python Simulator for Cellular Systems
 
-LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENCE.txt
 
 PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR} \
@@ -20,9 +22,6 @@ RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		fortran python
 USE_PYTHON=	distutils autoplist
-
-USE_GITHUB=	yes
-GH_PROJECT=	${PORTNAME:tl}
 
 LDFLAGS+=	-lpython${PYTHON_VER} -shared # see https://github.com/PySCeS/pysces/issues/29
 
