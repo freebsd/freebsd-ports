@@ -40,6 +40,8 @@ cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-13.0
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-13.1
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-14
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-14.0
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-14
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-14.0
 cbsd/etc/defaults/FreeBSD-kernels.conf
 cbsd/etc/defaults/FreeBSD-sources.conf
 cbsd/etc/defaults/FreeBSD-srvbrowser.conf
@@ -67,6 +69,7 @@ cbsd/etc/defaults/etcupdate.conf
 cbsd/etc/defaults/fetch.conf
 cbsd/etc/defaults/fetch_iso.conf
 cbsd/etc/defaults/forms_env.conf
+cbsd/etc/defaults/forms_export_vars.conf
 cbsd/etc/defaults/geli.conf
 cbsd/etc/defaults/global.conf
 cbsd/etc/defaults/helpers.conf
@@ -125,8 +128,6 @@ cbsd/etc/defaults/vm-freebsd-HardenedBSD-x64-14.0-LATEST.conf
 cbsd/etc/defaults/vm-freebsd-OPNsense-21-RELEASE-amd64.conf
 cbsd/etc/defaults/vm-freebsd-TrueNAS-x64-12.conf
 cbsd/etc/defaults/vm-freebsd-XigmaNAS-12.conf
-cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ghrunner-ufs-x64-13.0.conf
-cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ghrunner-zfs-x64-13.0.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-12.2.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-13.0.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-12.2.conf
@@ -156,6 +157,8 @@ cbsd/etc/defaults/vm-linux-cloud-Debian-x86-10.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-11.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-9.conf
 cbsd/etc/defaults/vm-linux-cloud-kubernetes-20.conf
+cbsd/etc/defaults/vm-linux-cloud-Oracle-7-x86_64.conf
+cbsd/etc/defaults/vm-linux-cloud-Oracle-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Rocky-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-20.04.conf
 cbsd/etc/defaults/vm-linux-fedora-server-33-x86_64.conf
@@ -885,6 +888,7 @@ cbsd/tools/getnics-by-ip
 cbsd/tools/help
 cbsd/tools/history
 cbsd/tools/images
+cbsd/tools/images-list
 cbsd/tools/imghelper
 cbsd/tools/imghelper-tui
 cbsd/tools/imgpart
@@ -1025,8 +1029,6 @@ cbsd/upgrade/patch/p9-13.0/patch-13x-usr.sbin-bhyve-virtio.h
 cbsd/upgrade/patch/vxlan-13.0/patch-sys-net-if_vxlan.c
 cbsd/upgrade/patch/vxlan-14.0/patch-sys-net-if_vxlan.c
 cbsd/upgrade/post-patch-11.0.6.0
-cbsd/upgrade/pre-patch-11.1.11.0
-cbsd/upgrade/pre-patch-11.1.12.0
 cbsd/upgrade/pre-patch-11.1.15.0
 cbsd/upgrade/pre-patch-11.1.17.0
 cbsd/upgrade/pre-patch-11.1.17.1
