@@ -1,8 +1,7 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	gsl
-DISTVERSION=	2.1-6
-PORTREVISION=	1
+DISTVERSION=	2.1-7
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
