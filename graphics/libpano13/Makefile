@@ -1,12 +1,11 @@
 # Created by: Vasil Dimov <vd@FreeBSD.org>
 
 PORTNAME=	libpano13
-PORTVERSION=	2.9.19
-PORTREVISION=	1
+DISTVERSION=	2.9.20
 CATEGORIES=	graphics java
-MASTER_SITES=	SF/panotools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/panotools/${PORTNAME}/${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@fuz.su
 COMMENT=	Cross-platform library behind Panorama Tools and other photo stitchers
 
 LICENSE=	GPLv2+
@@ -15,32 +14,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USE_GNOME=	gtk20 glib20 pango atk
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_GnuTar
 
-USES=		autoreconf gnome jpeg libtool pathfix
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include/gtk-2.0 \
-		-I${LOCALBASE}/include/glib-2.0 \
-		-I${LOCALBASE}/include/pango-1.0 \
-		-I${LOCALBASE}/include/atk-1.0
-CONFIGURE_ARGS=	--with-png=${LOCALBASE} \
-		--with-jpeg=${LOCALBASE} \
-		--with-tiff=${LOCALBASE}
-INSTALL_TARGET=	install-strip
-
+USES=		cmake jpeg libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	JAVA
+OPTIONS_DEFINE=	DOCS JAVA STATIC
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+JAVA_USE=		java=yes
+JAVA_CMAKE_BOOL=	SUPPORT_JAVA_PROGRAMS
+JAVA_VARS=		JAVA_OS=native
 
-.if ${PORT_OPTIONS:MJAVA}
-USE_JAVA=	yes
-JAVA_OS=	native
-CONFIGURE_ARGS+=	--with-java=${JAVA_HOME}
-.else
-CONFIGURE_ARGS+=	--without-java
-.endif
+post-install-STATIC-off:
+	${RM} ${STAGEDIR}${PREFIX}/lib/libpano13.a
 
 .include <bsd.port.mk>
