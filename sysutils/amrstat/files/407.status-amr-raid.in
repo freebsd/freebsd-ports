@@ -46,7 +46,7 @@ case "$daily_status_amr_raid_enable" in
 		esac
 		fi
 		lines=`wc -l ${ctrl_log}.today | awk '{ print $1 }'`
-		diff -u -${lines} ${ctrl_log}.yesterday ${ctrl_log}.today
+		diff -U ${lines} ${ctrl_log}.yesterday ${ctrl_log}.today
 		raid_rc=$?
 		if test $raid_rc -eq 0; then
 			cat  ${ctrl_log}.today
