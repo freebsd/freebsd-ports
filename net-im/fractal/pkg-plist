@@ -5,6 +5,7 @@ share/icons/hicolor/symbolic/apps/org.gnome.Fractal-symbolic.svg
 share/locale/ca/LC_MESSAGES/fractal.mo
 share/locale/cs/LC_MESSAGES/fractal.mo
 share/locale/de/LC_MESSAGES/fractal.mo
+share/locale/el/LC_MESSAGES/fractal.mo
 share/locale/en_GB/LC_MESSAGES/fractal.mo
 share/locale/eo/LC_MESSAGES/fractal.mo
 share/locale/es/LC_MESSAGES/fractal.mo
@@ -15,6 +16,7 @@ share/locale/fur/LC_MESSAGES/fractal.mo
 share/locale/hu/LC_MESSAGES/fractal.mo
 share/locale/id/LC_MESSAGES/fractal.mo
 share/locale/it/LC_MESSAGES/fractal.mo
+share/locale/kk/LC_MESSAGES/fractal.mo
 share/locale/nl/LC_MESSAGES/fractal.mo
 share/locale/pl/LC_MESSAGES/fractal.mo
 share/locale/pt_BR/LC_MESSAGES/fractal.mo
@@ -22,5 +24,7 @@ share/locale/ro/LC_MESSAGES/fractal.mo
 share/locale/ru/LC_MESSAGES/fractal.mo
 share/locale/sk/LC_MESSAGES/fractal.mo
 share/locale/sv/LC_MESSAGES/fractal.mo
+share/locale/tr/LC_MESSAGES/fractal.mo
 share/locale/uk/LC_MESSAGES/fractal.mo
-share/metainfo/org.gnome.Fractal.appdata.xml
+share/locale/zh_CN/LC_MESSAGES/fractal.mo
+share/metainfo/org.gnome.Fractal.metainfo.xml
