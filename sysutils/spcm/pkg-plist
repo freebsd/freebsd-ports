@@ -122,6 +122,7 @@ sbin/slurm-drain-all
 sbin/slurm-node-resume
 sbin/slurm-node-suspend
 sbin/slurm-restart
+sbin/slurm-resume-all-updated-nodes
 sbin/slurm-resume-nodes
 sbin/slurm-resume-updated-nodes
 sbin/slurm-sync-backup
