@@ -12,8 +12,10 @@ COMMENT=	Multi-platform Ethernet S7 PLC communication suite
 
 LICENSE=	GPLv3
 
-USES=		gmake
+USES=		cpe gmake
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	snap7_project
 
 WRKSRC_SUBDIR=	build/unix
 
