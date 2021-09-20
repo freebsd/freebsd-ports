@@ -1,5 +1,6 @@
 PORTNAME=	plasma
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 PKGNAMEPREFIX=	plasma5-
 
@@ -15,7 +16,7 @@ USES=		kde:5 metaport qt:5
 USE_KDE=	${_USE_PLASMA_ALL:Nplasma-pa}
 
 OPTIONS_DEFINE=	PHONON PULSEAUDIO
-OPTIONS_DEFAULT=	PHONON
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 # Different from PHONON, because this is about the output plugins
 PHONON_DESC=	Include phonon-gstreamer, for sound output
