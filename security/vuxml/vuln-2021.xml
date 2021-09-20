@@ -69,6 +69,32 @@
     </dates>
   </vuln>
 
+  <vuln vid="15e74795-0fd7-11ec-9f2e-dca632b19f10">
+    <topic>libpano13 -- arbitrary memory access through format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>libpano13</name>
+	<range><lt>2.9.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>libpano13 developers reports:</p>
+	<blockquote cite="https://sourceforge.net/projects/panotools/files/libpano13/libpano13-2.9.20/README.txt">
+	  <p>Fix crash and security issue caused by malformed filename prefix</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-20307</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2021-20307</url>
+    </references>
+    <dates>
+      <discovery>2021-05-04</discovery>
+      <entry>2021-09-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="49c35943-0eeb-421c-af4f-78e04582e5fb">
     <topic>seatd-launch -- privilege escalation with SUID</topic>
     <affects>
