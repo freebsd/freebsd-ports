@@ -1,8 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	rasterio
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.2.8
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,6 +35,6 @@ PLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_F
 S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>=1.2.4:www/py-boto3@${PY_FLAVOR}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rasterio/*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
