@@ -53,6 +53,7 @@ bin/arm-elf-readelf
 bin/arm-elf-size
 bin/arm-elf-strings
 bin/arm-elf-strip
+lib/bfd-plugins/libdep.so
 man/man1/arm-elf-addr2line.1.gz
 man/man1/arm-elf-ar.1.gz
 man/man1/arm-elf-as.1.gz
