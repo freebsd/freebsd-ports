@@ -15,7 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 OPTIONS_DEFINE=	JPEG PNG WEBP
 OPTIONS_DEFAULT=JPEG PNG WEBP
 
-USES=		libtool
+USES=		cpe libtool
+
+CPE_VENDOR=	entropymine
 
 CONFIGURE_ARGS=	--with-zlib-include-dir=${INCLUDEDIR} \
 		--with-zlib-lib-dir=${LIBDIR}
