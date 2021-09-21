@@ -9,9 +9,10 @@ COMMENT=	Web framework for Elixir
 
 LICENSE=	MIT
 
-USES=		elixir
+USES=		cpe elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	phoenixframework
+CPE_VENDOR=	phoenixframework
 
 OPTIONS_DEFINE=	COWBOY DOCS
 COWBOY_DESC=	Use Cowboy library
