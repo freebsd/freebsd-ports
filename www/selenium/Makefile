@@ -11,6 +11,10 @@ COMMENT=	Selenium Standalone Server, allows browser testing
 
 LICENSE=	APACHE20
 
+USES=		cpe
+
+CPE_VENDOR=	jenkins
+
 NO_ARCH=	yes
 
 USE_JAVA=	yes
