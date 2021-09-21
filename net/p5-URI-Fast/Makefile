@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	URI-Fast
-PORTVERSION=	0.50
+PORTVERSION=	0.55
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +16,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-URI-Encode-XS>=0.11:net/p5-URI-Encode-XS \
 		p5-URI>=0:net/p5-URI \
 		p5-Unicode-LineBreak>=0:textproc/p5-Unicode-LineBreak
-TEST_DEPENDS=	p5-Test-LeakTrace>=0.16:devel/p5-Test-LeakTrace \
-		p5-Test2-Suite>=0.000100:devel/p5-Test2-Suite
+TEST_DEPENDS=	${P5_POD_PARSER} \
+		p5-Test-LeakTrace>=0.16:devel/p5-Test-LeakTrace \
+		p5-Test2-Suite>=0.000141:devel/p5-Test2-Suite
 
 USES=		perl5
 USE_PERL5=	configure
