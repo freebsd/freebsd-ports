@@ -1,8 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	libmediainfo
-PORTVERSION=	21.03
-PORTREVISION=	1
+PORTVERSION=	21.09
 CATEGORIES=	multimedia
 MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -24,6 +23,7 @@ TINYXML2_DESC=	Use textproc/tinyxml2 instead of bundled one
 
 USES=		alias compiler:c++11-lang libtool localbase pathfix pkgconfig tar:xz
 
+CFLAGS+=	-D_POSIX_PRIORITY_SCHEDULING
 CONFIGURE_ARGS=	--enable-shared --enable-static
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
