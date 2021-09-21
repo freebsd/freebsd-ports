@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	webdrivers
-PORTVERSION=	4.6.0
+PORTVERSION=	4.6.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
