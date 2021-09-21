@@ -15,8 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		pathfix cmake:noninja tar:xz
+USES=		pathfix cmake:noninja cpe tar:xz
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	uriparser_project
 
 CMAKE_OFF=	URIPARSER_BUILD_DOCS # will fetch prebuilds from the upstream, if DOCS is selected
 
