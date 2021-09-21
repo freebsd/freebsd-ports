@@ -12,8 +12,9 @@ COMMENT=	Static analysis tool for Java source code
 LICENSE=	APACHE20 BSD4CLAUSE
 LICENSE_COMB=	dual
 
-USES=		zip
+USES=		cpe zip
 
+CPE_VENDOR=	pmd_project
 USE_JAVA=	yes
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
