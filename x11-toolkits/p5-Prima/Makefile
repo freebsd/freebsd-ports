@@ -1,7 +1,7 @@
 # Created by: dmitry@karasik.eu.org
 
 PORTNAME=	Prima
-PORTVERSION=	1.62
+PORTVERSION=	1.63
 CATEGORIES=	x11-toolkits graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
