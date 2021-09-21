@@ -30,7 +30,7 @@ if needed:
 
 The controllable properties are listed in the section "Controlling FreeType
 Modules" in the reference's table of contents
-(%%DOCSDIR%%/reference/site/index.html, if documentation was installed).
+(%%DOCSDIR%%/reference/index.html, if documentation was installed).
 EOM
 }
 ]

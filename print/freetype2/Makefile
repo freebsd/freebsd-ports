@@ -1,15 +1,11 @@
 # Created by: jseger@FreeBSD.org
 
 PORTNAME=	freetype2
-DISTVERSION=	2.10.4
+DISTVERSION=	2.11.0
 CATEGORIES=	print
-MASTER_SITES=	http://savannah.nongnu.org/download/freetype/ \
-		SF/freetype/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/ \
-		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/ \
-		http://www.funet.fi/pub/mirrors/ftp.freetype.org/freetype2/ \
-		http://ftp.sunet.se/pub/text-processing/freetype/freetype2/ \
-		ftp://ftp.freetype.org/freetype/freetype2/
-DISTNAME=	${PORTNAME:S/2//}-${PORTVERSION}
+MASTER_SITES=	SAVANNAH/${PORTNAME:S/2//} \
+		SF/freetype/${PORTNAME}/${DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/
+DISTNAME=	${PORTNAME:S/2//}-${DISTVERSION}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Free and portable TrueType font rendering engine
@@ -21,59 +17,62 @@ LICENSE_FILE_FTL=	${WRKSRC}/docs/FTL.TXT
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/docs/GPLv2.TXT
 LICENSE_PERMS_FTL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cpe gmake libtool tar:xz
-MAKE_ENV=	TOP=""
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-harfbuzz
-CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix
-
-SUB_FILES=	pkg-message
-
-PORTDOCS=	reference CHANGES formats.txt LICENSE.TXT raster.txt
+USES=		cmake cpe localbase pathfix pkgconfig tar:xz
 
 CPE_PRODUCT=	freetype
 CPE_VENDOR=	freetype
+USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=		BROTLI CONFIG DEBUG DOCS LONG_PCF_NAMES PNG \
-		TABLE_VALIDATION
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		FT_WITH_BZIP2 \
+		CMAKE_DISABLE_FIND_PACKAGE_HarfBuzz \
+		FT_WITH_ZLIB
+
+CMAKE_OFF=	FT_WITH_HARFBUZZ
+
+SUB_FILES=	pkg-message
+
+PORTDOCS=	CHANGES FTL.TXT formats.txt raster.txt reference
+
+OPTIONS_DEFINE=		BROTLI DEBUG DOCS LONG_PCF_NAMES PNG TABLE_VALIDATION
+OPTIONS_DEFAULT=	LCD_RENDERING LONG_PCF_NAMES PNG V40
+OPTIONS_SUB=		yes
+
+OPTIONS_SINGLE=		RENDERING
+OPTIONS_SINGLE_RENDERING=	LCD_FILTERING LCD_RENDERING
+
 OPTIONS_GROUP=		SUBPIXEL_HINTING
 OPTIONS_GROUP_SUBPIXEL_HINTING=	V38 V40
-OPTIONS_SINGLE=	RENDERING
-OPTIONS_SINGLE_RENDERING=	LCD_FILTERING LCD_RENDERING
+
 OPTIONS_RADIO=		SIZE_METRICS_CHOICE
 OPTIONS_RADIO_SIZE_METRICS_CHOICE=	FIX_SIZE_METRICS TT_SIZE_METRICS
-OPTIONS_DEFAULT=	CONFIG LCD_RENDERING LONG_PCF_NAMES PNG V40
-OPTIONS_SUB=	yes
-
-BROTLI_CONFIGURE_WITH=	brotli
-BROTLI_LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
-BROTLI_USES=		pkgconfig
-CONFIG_DESC=	Install freetype-config
-CONFIG_CONFIGURE_ENABLE=freetype-config
-PNG_DESC=		Png compressed OpenType embedded bitmaps support
-PNG_LIB_DEPENDS=	libpng.so:graphics/png
-PNG_CONFIGURE_WITH=	png
-
-TABLE_VALIDATION_DESC=	TrueType GX/AAT and OpenType table validation
-
-SIZE_METRICS_CHOICE_DESC=	Size metrics for TrueType fonts
-FIX_SIZE_METRICS_DESC=	Fix metrics on size request for scalable fonts (alternative method)
-FIX_SIZE_METRICS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-fix_size_metrics.diff
-TT_SIZE_METRICS_DESC=	TrueType-like size metrics for 'light' auto-hinting
-
-RENDERING_DESC=		Rendering technology
-LCD_FILTERING_DESC?=	Subpixel rendering (patented)
-LCD_FILTERING_CFLAGS=	-DFT_CONFIG_OPTION_SUBPIXEL_RENDERING
-LCD_RENDERING_DESC=	Harmony LCD rendering
 
 LONG_PCF_NAMES_DESC=	Enable long PCF family names
-
+TABLE_VALIDATION_DESC=	TrueType GX/AAT and OpenType table validation
+RENDERING_DESC=		Rendering technology
+LCD_FILTERING_DESC=	Subpixel rendering (patented)
+LCD_RENDERING_DESC=	Harmony LCD rendering
 SUBPIXEL_HINTING_DESC=	Subpixel hinting support
-V38_DESC=	v38 mode (Infinality code)
+V38_DESC=		v38 mode (Infinality code)
+V40_DESC=		v40 mode (minimal code, a.k.a. ClearType hinting, faster)
+SIZE_METRICS_CHOICE_DESC=	Size metrics for TrueType fonts
+FIX_SIZE_METRICS_DESC=	Fix metrics on size request for scalable fonts (alternative method)
+TT_SIZE_METRICS_DESC=	TrueType-like size metrics for 'light' auto-hinting
+
+BROTLI_LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
+BROTLI_CMAKE_BOOL=	FT_WITH_BROTLI
+BROTLI_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_BrotliDec
+
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+PNG_CMAKE_BOOL=		FT_WITH_PNG
+PNG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_PNG
+
+LCD_FILTERING_CFLAGS=	-DFT_CONFIG_OPTION_SUBPIXEL_RENDERING
+
 V38_VARS=	SUBPIXEL_HINTING_MODE+=1
-V40_DESC=	v40 mode (minimal code, a.k.a. ClearType hinting, faster)
 V40_VARS=	SUBPIXEL_HINTING_MODE+=2
+
+FIX_SIZE_METRICS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-fix_size_metrics.diff
 
 .include <bsd.port.pre.mk>
 
@@ -83,10 +82,6 @@ SELECTED_MODE=	\
 		do r=$$(($$r | $$m)); \
 	done; \
 	${ECHO_CMD} $$r
-
-pre-patch:
-	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/builds/unix/install.mk
 
 post-patch:
 .if defined(SUBPIXEL_HINTING_MODE)
@@ -119,13 +114,6 @@ post-patch-TT_SIZE_METRICS-on:
 	@${REINPLACE_CMD} -i '.metrics.bak' \
 		-e 's|.*\(#define AF_CONFIG_OPTION_TT_SIZE_METRICS\).*|\1|' \
 		${WRKSRC}/include/freetype/config/ftoption.h
-
-post-configure:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
-		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} setup)
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfreetype.so.*
 
 post-install-DOCS-on:
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})

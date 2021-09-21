@@ -1,4 +1,5 @@
-%%CONFIG%%bin/freetype-config
+include/freetype2/dlg/dlg.h
+include/freetype2/dlg/output.h
 include/freetype2/freetype/config/ftconfig.h
 include/freetype2/freetype/config/ftheader.h
 include/freetype2/freetype/config/ftmodule.h
@@ -29,6 +30,7 @@ include/freetype2/freetype/ftimage.h
 include/freetype2/freetype/ftincrem.h
 include/freetype2/freetype/ftlcdfil.h
 include/freetype2/freetype/ftlist.h
+include/freetype2/freetype/ftlogging.h
 include/freetype2/freetype/ftlzw.h
 include/freetype2/freetype/ftmac.h
 include/freetype2/freetype/ftmm.h
@@ -52,10 +54,10 @@ include/freetype2/freetype/ttnameid.h
 include/freetype2/freetype/tttables.h
 include/freetype2/freetype/tttags.h
 include/freetype2/ft2build.h
-lib/libfreetype.a
+lib/cmake/freetype/freetype-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/freetype/freetype-config-version.cmake
+lib/cmake/freetype/freetype-config.cmake
 lib/libfreetype.so
 lib/libfreetype.so.6
-lib/libfreetype.so.6.17.4
+lib/libfreetype.so.6.18.0
 libdata/pkgconfig/freetype2.pc
-%%CONFIG%%man/man1/freetype-config.1.gz
-share/aclocal/freetype2.m4
