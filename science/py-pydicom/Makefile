@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	pydicom
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
