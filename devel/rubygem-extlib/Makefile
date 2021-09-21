@@ -13,6 +13,8 @@ LICENSE=	MIT
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	dan_kubb
 
 .include <bsd.port.mk>
