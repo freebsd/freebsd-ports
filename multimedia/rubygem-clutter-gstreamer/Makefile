@@ -1,5 +1,5 @@
 PORTNAME=	clutter-gstreamer
-PORTVERSION=	3.4.7
+PORTVERSION=	3.4.9
 CATEGORIES=	multimedia rubygems
 MASTER_SITES=	RG
 
