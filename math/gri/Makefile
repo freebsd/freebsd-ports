@@ -13,10 +13,11 @@ COMMENT=	Extensible plotting language for producing scientific graphs
 
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
-USES=		gmake readline shebangfix makeinfo
+USES=		cpe gmake readline shebangfix makeinfo
 SHEBANG_FILES=	doc/examples/FEM.pl src/gri_merge src/gri_unpage
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-FreeBSD
+CPE_VENDOR=	gri_project
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
