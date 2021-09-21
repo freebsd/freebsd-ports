@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Tickit
-PORTVERSION=	0.71
+PORTVERSION=	0.72
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	libtickit>=0.4.0:devel/libtickit \
+BUILD_DEPENDS=	libtickit>=0.4.2:devel/libtickit \
 		p5-Module-Build-Using-PkgConfig>=0:devel/p5-Module-Build-Using-PkgConfig \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	libtickit.so:devel/libtickit
