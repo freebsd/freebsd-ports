@@ -23,7 +23,6 @@ share/icons/hicolor/64x64/apps/wesnoth-icon.png
 %%NLS%%%%SERVER%%man/id/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/it/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/ja/man6/wesnothd.6.gz
-%%NLS%%%%SERVER%%man/lt/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/pl/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/pt_BR/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/pt/man6/wesnothd.6.gz
@@ -39,6 +38,7 @@ share/icons/hicolor/64x64/apps/wesnoth-icon.png
 %%NLS%%%%SERVER%%man/zh_CN/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/zh_TW/man6/wesnothd.6.gz
 %%NLS%%man/ca/man6/wesnoth.6.gz
+%%NLS%%man/cs/man6/wesnoth.6.gz
 %%NLS%%man/de/man6/wesnoth.6.gz
 %%NLS%%man/en_GB/man6/wesnoth.6.gz
 %%NLS%%man/es/man6/wesnoth.6.gz
@@ -1734,4 +1734,4 @@ share/icons/hicolor/64x64/apps/wesnoth-icon.png
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-tutorial.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-units.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-utbs.mo
-%%SERVER%%@unexec rmdir /var/run/wesnothd 2>/dev/null || echo "If you are permanently removing this port, you should do a 'rm -rf /var/run/wesnothd' to remove it." | fmt
+%%SERVER%%@dir /var/run/wesnothd
