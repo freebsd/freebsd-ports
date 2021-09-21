@@ -1,0 +1,9 @@
+Syntax::Keyword::Dynamically provides a syntax plugin that implements a single
+keyword, dynamically, which alters the behaviour of a scalar assignment
+operation. Syntactically and semantically it is similar to the built-in perl
+keyword local, but is implemented somewhat differently to give two key
+advantages over regular local:
+- You can dynamically assign to lvalue functions and accessors.
+- You can dynamically assign to regular lexical variables.
+
+WWW: https://metacpan.org/dist/Syntax-Keyword-Dynamically
