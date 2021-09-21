@@ -1,6 +1,11 @@
+%%SITE_ARCH%%/XS/Parse/Infix.pm
+%%SITE_ARCH%%/XS/Parse/Infix/Builder.pm
+%%SITE_ARCH%%/XS/Parse/Infix/Builder_data.pm
 %%SITE_ARCH%%/XS/Parse/Keyword.pm
 %%SITE_ARCH%%/XS/Parse/Keyword/Builder.pm
 %%SITE_ARCH%%/XS/Parse/Keyword/Builder_data.pm
 %%SITE_ARCH%%/auto/XS/Parse/Keyword/Keyword.so
+%%PERL5_MAN3%%/XS::Parse::Infix.3.gz
+%%PERL5_MAN3%%/XS::Parse::Infix::Builder.3.gz
 %%PERL5_MAN3%%/XS::Parse::Keyword.3.gz
 %%PERL5_MAN3%%/XS::Parse::Keyword::Builder.3.gz
