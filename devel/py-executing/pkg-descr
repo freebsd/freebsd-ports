@@ -1,0 +1,4 @@
+This mini-package lets you get information about what a frame is currently
+doing, particularly the AST node being executed.
+
+WWW: https://github.com/alexmojaki/executing

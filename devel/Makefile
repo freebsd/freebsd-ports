@@ -4441,6 +4441,7 @@
     SUBDIR += py-eventlib
     SUBDIR += py-ewmh
     SUBDIR += py-exam
+    SUBDIR += py-executing
     SUBDIR += py-expiringdict
     SUBDIR += py-extras
     SUBDIR += py-extremes
