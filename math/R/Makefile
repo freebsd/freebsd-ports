@@ -25,10 +25,12 @@ RUN_DEPENDS=	gmake:devel/gmake
 # - Create ports for each of the recommended packages
 # - Create a meta-port for the recommended packages
 
-USES=		compiler:c++11-lang gmake iconv libtool localbase pathfix perl5 \
+USES=		compiler:c++11-lang cpe gmake iconv libtool localbase pathfix perl5 \
 		readline
 USE_LDCONFIG=	${PREFIX}/lib/R/lib
 USE_PERL5=	build
+
+CPE_VENDOR=	r-project
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-java \
