@@ -32,8 +32,10 @@ RUN_DEPENDS=	sudo:security/sudo
 
 WRKSRC=		${WRKDIR}/truecrypt-${PORTVERSION}-source
 
-USES=		fuse iconv pkgconfig gmake
+USES=		cpe fuse iconv pkgconfig gmake
 NO_PACKAGE=	May not be redistributed.  Must accept license to download.
+
+CPE_VENDOR=	truecrypt_project
 
 TC_SRCFILE=	TrueCrypt_${PORTVERSION}_Source.tar.gz
 WX_VER=		2.8.12
