@@ -1,7 +1,7 @@
 # Created by: Bill "I hate Perl" Fumerola
 
 PORTNAME=	Text-Template
-PORTVERSION=	1.59
+PORTVERSION=	1.60
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
