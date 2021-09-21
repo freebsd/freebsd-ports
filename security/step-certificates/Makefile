@@ -1,6 +1,6 @@
 PORTNAME=	step-certificates
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.2
+DISTVERSION=	0.17.2
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -21,7 +21,6 @@ GH_PROJECT=	certificates
 
 GH_TUPLE=	\
 		AndreasBriese:bbloom:46b345b51c96:andreasbriese_bbloom/vendor/github.com/AndreasBriese/bbloom \
-		DataDog:zstd:v1.4.5:datadog_zstd/vendor/github.com/DataDog/zstd \
 		Masterminds:goutils:v1.1.0:masterminds_goutils/vendor/github.com/Masterminds/goutils \
 		Masterminds:semver:v3.1.0:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		Masterminds:sprig:v3.1.0:masterminds_sprig_v3/vendor/github.com/Masterminds/sprig/v3 \
@@ -32,7 +31,7 @@ GH_TUPLE=	\
 		chzyer:readline:2972be24d48e:chzyer_readline/vendor/github.com/chzyer/readline \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		dgraph-io:badger:v1.6.2:dgraph_io_badger/vendor/github.com/dgraph-io/badger \
-		dgraph-io:badger:v2.2007.3:dgraph_io_badger_v2/vendor/github.com/dgraph-io/badger/v2 \
+		dgraph-io:badger:v2.2007.4:dgraph_io_badger_v2/vendor/github.com/dgraph-io/badger/v2 \
 		dgraph-io:ristretto:41ebdbffecfd:dgraph_io_ristretto/vendor/github.com/dgraph-io/ristretto \
 		dgryski:go-farm:a6ae2369ad13:dgryski_go_farm/vendor/github.com/dgryski/go-farm \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
@@ -43,26 +42,27 @@ GH_TUPLE=	\
 		go-piv:piv-go:v1.7.0:go_piv_piv_go/vendor/github.com/go-piv/piv-go \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:9e8e0b390897:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:32db794688a5:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mock:v1.5.0:golang_mock/vendor/github.com/golang/mock \
-		golang:net:7fd8e65b6420:golang_net/vendor/golang.org/x/net \
+		golang:net:e898025ed96a:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:f6687ab2804c:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.3:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:e8d321eab015:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:665e8c7367d1:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:f16073e35f0c:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:1d5a45f8e492:google_go_genproto/vendor/google.golang.org/genproto \
 		google:uuid:v1.1.2:google_uuid/vendor/github.com/google/uuid \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.47.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.83.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
-		grpc:grpc-go:v1.38.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.39.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		huandu:xstrings:v1.3.1:huandu_xstrings/vendor/github.com/huandu/xstrings \
 		imdario:mergo:v0.3.8:imdario_mergo/vendor/github.com/imdario/mergo \
 		jmespath:go-jmespath:v0.3.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		juju:ansiterm:720a0952cc2a:juju_ansiterm/vendor/github.com/juju/ansiterm \
+		klauspost:compress:v1.12.3:klauspost_compress/vendor/github.com/klauspost/compress \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		lunixbochs:vtclean:v1.0.0:lunixbochs_vtclean/vendor/github.com/lunixbochs/vtclean \
 		manifoldco:promptui:v0.8.0:manifoldco_promptui/vendor/github.com/manifoldco/promptui \
@@ -75,7 +75,7 @@ GH_TUPLE=	\
 		newrelic:go-agent:v2.15.0:newrelic_go_agent/vendor/github.com/newrelic/go-agent \
 		omorsi:pkcs7:a7b80a2a8568:omorsi_pkcs7/vendor/go.mozilla.org/pkcs7 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rs:xid:v1.2.1:rs_xid/vendor/github.com/rs/xid \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		samfoo:ansi:b6bd2ded7189:samfoo_ansi/vendor/github.com/samfoo/ansi \
@@ -83,15 +83,13 @@ GH_TUPLE=	\
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		smallstep:assert:82e2b9b3b262:smallstep_assert/vendor/github.com/smallstep/assert \
 		smallstep:cli-utils:v0.4.1:smallstep_cli_utils/vendor/go.step.sm/cli-utils \
-		smallstep:crypto:v0.9.0:smallstep_crypto/vendor/go.step.sm/crypto \
-		smallstep:linkedca:27424aae8d25:smallstep_linkedca/vendor/go.step.sm/linkedca \
-		smallstep:nosql:v0.3.7:smallstep_nosql/vendor/github.com/smallstep/nosql \
+		smallstep:crypto:v0.9.2:smallstep_crypto/vendor/go.step.sm/crypto \
+		smallstep:linkedca:v0.5.0:smallstep_linkedca/vendor/go.step.sm/linkedca \
+		smallstep:nosql:v0.3.8:smallstep_nosql/vendor/github.com/smallstep/nosql \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
 		square:go-jose:v2.5.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
-		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		thales-e-security:pool:v0.0.2:thales_e_security_pool/vendor/github.com/thales-e-security/pool \
 		urfave:cli:v1.22.4:urfave_cli/vendor/github.com/urfave/cli
-
 USE_RC_SUBR=	step-ca
 
 GO_TARGET=	./cmd/step-ca:${PREFIX}/sbin/step-ca  \
