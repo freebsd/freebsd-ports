@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	googleauth
-PORTVERSION=	0.17.0
+PORTVERSION=	0.17.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -16,13 +16,11 @@ RUN_DEPENDS=	rubygem-faraday>=0.17.3<2.0:www/rubygem-faraday \
 		rubygem-memoist>=0.16<1:devel/rubygem-memoist \
 		rubygem-multi_json>=1.11<2:devel/rubygem-multi_json \
 		rubygem-os>=0.9<2.0:devel/rubygem-os \
-		rubygem-signet>=0.14<1:security/rubygem-signet
+		rubygem-signet>=0.15<1:security/rubygem-signet
 
-USES=		gem shebangfix
+USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
-
-SHEBANG_FILES=	.kokoro/*.sh
 
 .include <bsd.port.mk>
