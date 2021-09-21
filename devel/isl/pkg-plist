@@ -49,6 +49,7 @@ include/isl/space_type.h
 include/isl/stdint.h
 include/isl/stream.h
 include/isl/stride_info.h
+include/isl/typed_cpp.h
 include/isl/union_map.h
 include/isl/union_map_type.h
 include/isl/union_set.h
@@ -62,6 +63,6 @@ include/isl/vertices.h
 lib/libisl.a
 lib/libisl.so
 lib/libisl.so.23
-lib/libisl.so.23.0.0
-lib/libisl.so.23.0.0-gdb.py
+lib/libisl.so.23.1.0
+lib/libisl.so.23.1.0-gdb.py
 libdata/pkgconfig/isl.pc

@@ -1,11 +1,11 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	isl
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	devel math
 MASTER_SITES=	http://isl.gforge.inria.fr/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integer Set Library
 
 LICENSE=	MIT
