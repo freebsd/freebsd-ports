@@ -1,7 +1,7 @@
 # Created by: Rui Lopes (<rgl ruilopes com>)
 
 PORTNAME=	daemons
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
