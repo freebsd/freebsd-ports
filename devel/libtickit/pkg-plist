@@ -184,6 +184,8 @@ share/man/man3/tickit_utf8_seqlen.3.gz
 share/man/man3/tickit_watch_cancel.3.gz
 share/man/man3/tickit_watch_io.3.gz
 share/man/man3/tickit_watch_later.3.gz
+share/man/man3/tickit_watch_process.3.gz
+share/man/man3/tickit_watch_signal.3.gz
 share/man/man3/tickit_watch_timer_after_msec.3.gz
 share/man/man3/tickit_watch_timer_after_tv.3.gz
 share/man/man3/tickit_watch_timer_at_epoch.3.gz

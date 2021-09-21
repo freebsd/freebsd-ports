@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	libtickit
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.leonerd.org.uk/code/libtickit/
 
@@ -18,5 +18,8 @@ USES=		compiler:c11 gmake libtool:build ncurses pathfix pkgconfig
 MAKE_ARGS=	MANDIR=${PREFIX}/share/man
 PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtickit.so
 
 .include <bsd.port.mk>
