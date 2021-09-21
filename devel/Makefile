@@ -2461,6 +2461,7 @@
     SUBDIR += p5-File-Temp
     SUBDIR += p5-File-Tempdir
     SUBDIR += p5-File-Touch
+    SUBDIR += p5-File-TreeCreate
     SUBDIR += p5-File-Type
     SUBDIR += p5-File-Util
     SUBDIR += p5-File-Write-Rotate

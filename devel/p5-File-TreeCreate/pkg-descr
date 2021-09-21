@@ -1,0 +1,4 @@
+File::TreeCreate was extracted from several near-identical copies used in the
+tests of some of my CPAN distributions.
+
+WWW: https://metacpan.org/dist/File-TreeCreate
