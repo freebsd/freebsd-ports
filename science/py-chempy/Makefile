@@ -1,6 +1,5 @@
 PORTNAME=	chempy
-DISTVERSION=	0.8.1
-PORTREVISION=	1
+DISTVERSION=	0.8.2
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}dot2tex>=2.11.3:print/dot2tex@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.2.3:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PuLP>=1.6.8:math/py-PuLP@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyneqsys>=0.5.5:math/py-pyneqsys@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyodesys>=0.13.1:math/py-pyodesys@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyodesys>=0.14.1:math/py-pyodesys@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.3:devel/py-pyparsing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}quantities>=0.12.1:science/py-quantities@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.0.1:science/py-scipy@${PY_FLAVOR} \
@@ -31,6 +30,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 
 USES=		python:3.7+
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pymol # https://github.com/schrodinger/pymol-open-source/issues/100
@@ -46,7 +46,7 @@ EXTRAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVO
 			${PYTHON_PKGNAMEPREFIX}pygslodeiv2>=0.9.1:math/py-pygslodeiv2@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyodeint>=0.10.1:math/py-pyodeint@${PY_FLAVOR}
 
-do-test:
+do-test: # 7 tests are known to fail: https://github.com/bjodah/chempy/issues/198
 	@cd ${WRKSRC} && pytest -rs --pyargs chempy
 
 .include <bsd.port.mk>
