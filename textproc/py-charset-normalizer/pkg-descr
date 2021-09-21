@@ -1,0 +1,6 @@
+A library that helps you read text from an unknown charset encoding. Motivated
+by chardet, I'm trying to resolve the issue by taking a new approach. All IANA
+character set names for which the Python core library provides codecs are
+supported.
+
+WWW: https://github.com/Ousret/charset_normalizer

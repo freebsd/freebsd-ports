@@ -1257,6 +1257,7 @@
     SUBDIR += py-bracex
     SUBDIR += py-cchardet
     SUBDIR += py-chardet
+    SUBDIR += py-charset-normalizer
     SUBDIR += py-citeproc-py
     SUBDIR += py-citeproc-py-styles
     SUBDIR += py-cjkwrap
