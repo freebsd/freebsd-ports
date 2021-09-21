@@ -1,3 +1,41 @@
+  <vuln vid="57b1ee25-1a7c-11ec-9376-0800272221cc">
+    <topic>libssh -- possible heap-buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>libssh</name>
+	<range><ge>0.9.1</ge><le>0.9.5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>libssh security advisories:</p>
+	<blockquote cite="https://www.libssh.org/security/advisories/CVE-2021-3634.txt">
+	  <p>The SSH protocol keeps track of two shared secrets during the lifetime
+	    of the session. One of them is called `secret_hash` and and the other
+	    `session_id`. Initially, both of them are the same, but after key
+	    re-exchange, previous `session_id` is kept and used as an input to new
+	    `secret_hash`.</p>
+	  <p>Historically, both of these buffers had shared length variable, which
+	    worked as long as these buffers were same. But the key re-exchange
+	    operation can also change the key exchange method, which can be based on
+	    hash of different size, eventually creating `secret_hash` of different
+	    size than the `session_id` has.</p>
+	  <p>This becomes an issue when the `session_id` memory is zeroized or when
+	    it is used again during second key re-exchange.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-3634</cvename>
+      <url>https://www.libssh.org/security/advisories/CVE-2021-3634.txt</url>
+      <url>https://www.libssh.org/2021/08/26/libssh-0-9-6-security-release/</url>
+    </references>
+    <dates>
+      <discovery>2021-08-26</discovery>
+      <entry>2021-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="882a38f9-17dd-11ec-b335-d4c9ef517024">
     <topic>Apache httpd -- multiple vulnerabilities</topic>
     <affects>
