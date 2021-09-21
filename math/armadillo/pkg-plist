@@ -113,6 +113,7 @@ include/armadillo_bits/eop_core_meat.hpp
 include/armadillo_bits/fft_engine.hpp
 include/armadillo_bits/field_bones.hpp
 include/armadillo_bits/field_meat.hpp
+include/armadillo_bits/fill.hpp
 include/armadillo_bits/fn_accu.hpp
 include/armadillo_bits/fn_all.hpp
 include/armadillo_bits/fn_any.hpp
@@ -222,7 +223,7 @@ include/armadillo_bits/fn_strans.hpp
 include/armadillo_bits/fn_sum.hpp
 include/armadillo_bits/fn_svd.hpp
 include/armadillo_bits/fn_svds.hpp
-include/armadillo_bits/fn_syl_lyap.hpp
+include/armadillo_bits/fn_sylvester.hpp
 include/armadillo_bits/fn_symmat.hpp
 include/armadillo_bits/fn_toeplitz.hpp
 include/armadillo_bits/fn_trace.hpp
@@ -328,6 +329,10 @@ include/armadillo_bits/newarp_GenEigsSolver_meat.hpp
 include/armadillo_bits/newarp_SortEigenvalue.hpp
 include/armadillo_bits/newarp_SparseGenMatProd_bones.hpp
 include/armadillo_bits/newarp_SparseGenMatProd_meat.hpp
+include/armadillo_bits/newarp_SparseGenRealShiftSolve_bones.hpp
+include/armadillo_bits/newarp_SparseGenRealShiftSolve_meat.hpp
+include/armadillo_bits/newarp_SymEigsShiftSolver_bones.hpp
+include/armadillo_bits/newarp_SymEigsShiftSolver_meat.hpp
 include/armadillo_bits/newarp_SymEigsSolver_bones.hpp
 include/armadillo_bits/newarp_SymEigsSolver_meat.hpp
 include/armadillo_bits/newarp_TridiagEigen_bones.hpp
@@ -359,6 +364,8 @@ include/armadillo_bits/op_cumsum_bones.hpp
 include/armadillo_bits/op_cumsum_meat.hpp
 include/armadillo_bits/op_cx_scalar_bones.hpp
 include/armadillo_bits/op_cx_scalar_meat.hpp
+include/armadillo_bits/op_det_bones.hpp
+include/armadillo_bits/op_det_meat.hpp
 include/armadillo_bits/op_diagmat_bones.hpp
 include/armadillo_bits/op_diagmat_meat.hpp
 include/armadillo_bits/op_diagvec_bones.hpp
@@ -389,6 +396,8 @@ include/armadillo_bits/op_index_min_bones.hpp
 include/armadillo_bits/op_index_min_meat.hpp
 include/armadillo_bits/op_inv_bones.hpp
 include/armadillo_bits/op_inv_meat.hpp
+include/armadillo_bits/op_log_det_bones.hpp
+include/armadillo_bits/op_log_det_meat.hpp
 include/armadillo_bits/op_logmat_bones.hpp
 include/armadillo_bits/op_logmat_meat.hpp
 include/armadillo_bits/op_max_bones.hpp
@@ -525,6 +534,8 @@ include/armadillo_bits/spop_min_bones.hpp
 include/armadillo_bits/spop_min_meat.hpp
 include/armadillo_bits/spop_misc_bones.hpp
 include/armadillo_bits/spop_misc_meat.hpp
+include/armadillo_bits/spop_norm_bones.hpp
+include/armadillo_bits/spop_norm_meat.hpp
 include/armadillo_bits/spop_normalise_bones.hpp
 include/armadillo_bits/spop_normalise_meat.hpp
 include/armadillo_bits/spop_repmat_bones.hpp
@@ -584,7 +595,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.10
-lib/libarmadillo.so.10.1.1
+lib/libarmadillo.so.10.6.2
 libdata/pkgconfig/armadillo.pc
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake

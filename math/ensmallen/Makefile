@@ -1,5 +1,6 @@
 PORTNAME=	ensmallen
 DISTVERSION=	2.17.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://ensmallen.org/files/
 

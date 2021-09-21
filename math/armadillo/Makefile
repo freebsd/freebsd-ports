@@ -1,9 +1,9 @@
 PORTNAME=	armadillo
-PORTVERSION=	10.1.1
+PORTVERSION=	10.6.2
 CATEGORIES=	math
 MASTER_SITES=	SF/arma
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ linear algebra library
 
 LICENSE=	APACHE20
