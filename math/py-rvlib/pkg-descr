@@ -1,0 +1,14 @@
+Anyone who has used Distributions.jl will tell you how nice the interface is
+relative to the "exotic" (the most polite word we can think of) interface to
+distributions exposed by scipy.stats. Distributions.jl also brings better
+performace, particularly when its methods are used inside loops.
+
+For these reason we've put together rvlib, which mimics the interface of
+Distributions.jl, while at the same time attaining similar performance by
+exploiting numba.
+
+This package was inspired by Joshua Adelman's (@synapticarbors) blog post
+describing how to call the Rmath C library from numba using CFFI, and utilizes
+his build script to set up the CFFI interface.
+
+WWW: https://github.com/QuantEcon/rvlib
