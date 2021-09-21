@@ -1,7 +1,7 @@
 # Created by: Kris Kennaway <kris@FreeBSD.org>
 
 PORTNAME=	nbtscan
-PORTVERSION=	1.6
+PORTVERSION=	1.7.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,10 +18,10 @@ PLIST_FILES=	bin/nbtscan \
 		man/man1/nbtscan.1.gz
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=	DOCS
-
 GH_ACCOUNT=	resurrecting-open-source-projects
 USE_GITHUB=	yes
+
+OPTIONS_DEFINE=	DOCS
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
