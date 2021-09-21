@@ -1,7 +1,7 @@
 # Created by: Joe Horn <joehorn@gmail.com>
 
 PORTNAME=	yourls
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org

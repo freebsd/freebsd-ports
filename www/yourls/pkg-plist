@@ -63,6 +63,7 @@
 %%WWWDIR%%/includes/Database/Profiler.php
 %%WWWDIR%%/includes/Database/YDB.php
 %%WWWDIR%%/includes/Exceptions/ConfigException.php
+%%WWWDIR%%/includes/Views/AdminParams.php
 %%WWWDIR%%/includes/auth.php
 %%WWWDIR%%/includes/class-mysql.php
 %%WWWDIR%%/includes/functions-api.php
