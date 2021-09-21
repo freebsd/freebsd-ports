@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	parallel
-PORTVERSION=	1.20.1
+PORTVERSION=	1.21.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
