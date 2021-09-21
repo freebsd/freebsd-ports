@@ -19,12 +19,13 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libming.so:graphics/ming \
 		libpng.so:graphics/png
 
-USES=		autoreconf libtool localbase:ldflags pkgconfig python:3.6+
+USES=		autoreconf cpe libtool localbase:ldflags pkgconfig python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFIGURE_ARGS=	--enable-python
 CONFIGURE_ENV=	PYTHON_LDFLAGS="-L${PYTHON_LIBDIR} -l${PYTHON_VERSION}${PYTHON_ABIVER}"
 GNU_CONFIGURE=	yes
+CPE_VENDOR=	libming
 
 BUILD_WRKSRC=	${WRKSRC}/py_ext
 INSTALL_WRKSRC=	${WRKSRC}/py_ext
