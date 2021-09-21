@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	elasticsearch-persistence
-PORTVERSION=	7.1.1
+PORTVERSION=	7.2.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
