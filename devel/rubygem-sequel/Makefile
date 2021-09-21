@@ -1,7 +1,7 @@
 # Created by: Wen Heping<wenheping@gmail.com>
 
 PORTNAME=	sequel
-PORTVERSION=	5.47.0
+PORTVERSION=	5.48.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
