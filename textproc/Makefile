@@ -1292,6 +1292,7 @@
     SUBDIR += py-fastavro
     SUBDIR += py-feedparser
     SUBDIR += py-fingerprints
+    SUBDIR += py-fluent.syntax
     SUBDIR += py-ftfy
     SUBDIR += py-furo
     SUBDIR += py-gambit-elasticsearch

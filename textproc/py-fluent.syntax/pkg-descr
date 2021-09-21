@@ -1,0 +1,9 @@
+Project Fluent is a collection of Python packages to use the Fluent localization
+system.
+
+The syntax package includes the parser, serializer, and traversal utilities like
+Visitor and Transformer. You're looking for this package if you work on tooling
+for Fluent in Python.
+
+WWW: https://github.com/projectfluent/python-fluent
+WWW: https://github.com/projectfluent/python-fluent/tree/master/fluent.syntax
