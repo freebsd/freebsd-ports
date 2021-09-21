@@ -1,0 +1,5 @@
+Convert::Scalar exports various internal perl methods that change the internal
+representation or state of a perl scalar. All of these work in-place, that is,
+they modify their scalar argument. No functions are exported by default.
+
+WWW: https://metacpan.org/dist/Convert-Scalar
