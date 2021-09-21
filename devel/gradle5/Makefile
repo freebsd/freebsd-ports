@@ -13,7 +13,7 @@ COMMENT=	Project automation tool
 LICENSE=	APACHE20
 
 NO_ARCH=	yes
-USES=		zip
+USES=		cpe zip
 JAVA_VERSION=	1.7+
 USE_JAVA=	yes
 NO_BUILD=	yes
