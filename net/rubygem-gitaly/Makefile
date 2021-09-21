@@ -12,9 +12,11 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-grpc>=1.0<2.0:net/rubygem-grpc \
 		gitaly>=14.2:devel/gitaly
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	gitlab
 
 .include <bsd.port.mk>
