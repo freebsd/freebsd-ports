@@ -18,8 +18,10 @@ RUN_DEPENDS=	rubygem-activesupport61>=${PORTVERSION}:devel/rubygem-activesupport
 		rubygem-rails-dom-testing-rails61>=2.0<3:textproc/rubygem-rails-dom-testing-rails61 \
 		rubygem-rails-html-sanitizer>=1.2.0<2:textproc/rubygem-rails-html-sanitizer
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
+
+CPE_VENDOR=	rubyonrails
 
 NO_ARCH=	yes
 
