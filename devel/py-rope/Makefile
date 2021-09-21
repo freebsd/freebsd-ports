@@ -12,8 +12,10 @@ COMMENT=	Python refactoring library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
 USE_PYTHON=	autoplist distutils
+
+CPE_VENDOR=	rope_project
 
 NO_ARCH=	yes
 
