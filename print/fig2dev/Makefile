@@ -14,8 +14,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libpng.so:graphics/png
 RUN_DEPENDS=	ppmtogif:graphics/netpbm
 
-USES=		alias ghostscript:run iconv tar:xz xorg
+USES=		alias cpe ghostscript:run iconv tar:xz xorg
 USE_XORG=	xpm
+
+CPE_VENDOR=	xfig_project
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-transfig \
