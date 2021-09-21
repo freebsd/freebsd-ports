@@ -21,7 +21,7 @@ LIB_DEPENDS=	libchm.so:misc/chmlib \
 		libtiff.so:graphics/tiff \
 		libzip.so:archivers/libzip
 
-USES=		cmake compiler:c++11-lib desktop-file-utils \
+USES=		cmake compiler:c++11-lib cpe desktop-file-utils \
 		gettext jpeg kde:5 pkgconfig qca qt:5 tar:xz
 USE_KDE=	activities archive auth bookmarks codecs completion config \
 		configwidgets coreaddons crash dbusaddons emoticons i18n \
@@ -33,6 +33,7 @@ USE_KDE=	activities archive auth bookmarks codecs completion config \
 USE_QT=		concurrent core dbus declarative gui network phonon4 printsupport speech \
 		svg widgets xml \
 		buildtools_build qmake_build
+CPE_VENDOR=	kde
 
 OPTIONS_DEFINE=	DOCS PURPOSE
 OPTIONS_DEFAULT=	PURPOSE
