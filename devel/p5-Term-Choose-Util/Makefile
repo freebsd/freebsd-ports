@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Term-Choose-Util
-PORTVERSION=	0.129
+PORTVERSION=	0.131
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Encode-Locale>=0:converters/p5-Encode-Locale \
 		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
-		p5-Term-Choose>=1.734:devel/p5-Term-Choose
+		p5-Term-Choose>=1.737:devel/p5-Term-Choose
 
 USES=		perl5
 USE_PERL5=	configure
