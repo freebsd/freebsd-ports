@@ -6,5 +6,5 @@ include/ttfautohint.h
 lib/libttfautohint.a
 lib/libttfautohint.so
 lib/libttfautohint.so.1
-lib/libttfautohint.so.1.0.2
+lib/libttfautohint.so.1.0.3
 libdata/pkgconfig/ttfautohint.pc
