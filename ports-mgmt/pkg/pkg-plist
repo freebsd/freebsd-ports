@@ -18,6 +18,7 @@ man/man5/pkg-repository.5.gz
 man/man5/pkg-keywords.5.gz
 man/man5/pkg-lua-script.5.gz
 man/man5/pkg-script.5.gz
+man/man5/pkg-triggers.5.gz
 man/man5/pkg.conf.5.gz
 man/man8/pkg-add.8.gz
 man/man8/pkg-alias.8.gz
@@ -46,6 +47,7 @@ man/man8/pkg-shlib.8.gz
 man/man8/pkg-ssh.8.gz
 man/man8/pkg-static.8.gz
 man/man8/pkg-stats.8.gz
+man/man8/pkg-triggers.8.gz
 man/man8/pkg-unlock.8.gz
 man/man8/pkg-update.8.gz
 man/man8/pkg-updating.8.gz
