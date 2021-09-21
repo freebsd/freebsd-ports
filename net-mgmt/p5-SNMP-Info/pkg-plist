@@ -122,6 +122,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/Timetra.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/VMware.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/VyOS.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Whiterabbit.pm
 %%SITE_PERL%%/SNMP/Info/Layer7.pm
 %%SITE_PERL%%/SNMP/Info/Layer7/APC.pm
 %%SITE_PERL%%/SNMP/Info/Layer7/Arbor.pm
@@ -260,6 +261,7 @@
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Timetra.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::VMware.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::VyOS.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Layer3::Whiterabbit.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer7.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer7::APC.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer7::Arbor.3.gz
