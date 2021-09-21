@@ -14,9 +14,12 @@ RUN_DEPENDS=	rubygem-activemodel5>=5.0<7:databases/rubygem-activemodel5 \
 		rubygem-activemodel-serializers-xml>=1.0<2:databases/rubygem-activemodel-serializers-xml \
 		rubygem-activesupport5>=5.0<7:devel/rubygem-activesupport5
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	rubyonrails
+CPE_PRODUCT=	active_resource
 
 .include <bsd.port.mk>
