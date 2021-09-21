@@ -1,7 +1,7 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
 
 PORTNAME=	terminal-table
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
