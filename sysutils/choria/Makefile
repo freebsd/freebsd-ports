@@ -1,5 +1,5 @@
 PORTNAME=	choria
-PORTVERSION=	0.23.0
+PORTVERSION=	0.24.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -19,12 +19,11 @@ GH_PROJECT=	go-choria
 USE_RC_SUBR=	choria-broker choria-server
 
 GH_TUPLE=	\
-		AlecAivazis:survey:v2.3.1:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
+		AlecAivazis:survey:v2.3.2:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
 		Freman:eventloghook:e4d803b6b48b:freman_eventloghook/vendor/github.com/Freman/eventloghook \
 		Masterminds:goutils:v1.1.0:masterminds_goutils/vendor/github.com/Masterminds/goutils \
 		Masterminds:semver:v1.5.0:masterminds_semver/vendor/github.com/Masterminds/semver \
 		Masterminds:sprig:v2.22.0:masterminds_sprig/vendor/github.com/Masterminds/sprig \
-		Netflix:go-expect:ef0bf57d82b3:netflix_go_expect/vendor/github.com/Netflix/go-expect \
 		OneOfOne:xxhash:v1.2.8:oneofone_xxhash/vendor/github.com/OneOfOne/xxhash \
 		achanda:go-sysctl:6be7678c45d2:achanda_go_sysctl/vendor/github.com/achanda/go-sysctl \
 		aelsabbahy:GOnetstat:edf89f784e08:aelsabbahy_gonetstat/vendor/github.com/aelsabbahy/GOnetstat \
@@ -39,8 +38,8 @@ GH_TUPLE=	\
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		brutella:dnssd:v1.2.0:brutella_dnssd/vendor/github.com/brutella/dnssd \
 		brutella:hc:v1.2.4:brutella_hc/vendor/github.com/brutella/hc \
-		bytecodealliance:wasmtime-go:v0.28.0:bytecodealliance_wasmtime_go/vendor/github.com/bytecodealliance/wasmtime-go \
-		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
+		bytecodealliance:wasmtime-go:v0.30.0:bytecodealliance_wasmtime_go/vendor/github.com/bytecodealliance/wasmtime-go \
+		cespare:xxhash:v2.1.2:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		cheekybits:genny:v1.0.0:cheekybits_genny/vendor/github.com/cheekybits/genny \
 		choria-io:go-updater:v0.0.3:choria_io_go_updater/vendor/github.com/choria-io/go-updater \
 		cloudevents:sdk-go:v2.5.0:cloudevents_sdk_go_v2/vendor/github.com/cloudevents/sdk-go \
@@ -56,16 +55,16 @@ GH_TUPLE=	\
 		gofrs:uuid:v4.0.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-jwt:jwt:v3.2.2:golang_jwt_jwt/vendor/github.com/golang-jwt/jwt \
-		golang:crypto:32db794688a5:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:84f357641f63:golang_crypto/vendor/golang.org/x/crypto \
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
-		golang:mod:v0.5.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:abc453219eb5:golang_net/vendor/golang.org/x/net \
+		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
+		golang:net:978cfadd31cf:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:63515b42dcdf:golang_sys/vendor/golang.org/x/sys \
-		golang:term:6886f2dfbf5b:golang_term/vendor/golang.org/x/term \
+		golang:sys:d61c044b1678:golang_sys/vendor/golang.org/x/sys \
+		golang:term:140adaaadfaf:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.1.5:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.1.6:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
@@ -73,12 +72,11 @@ GH_TUPLE=	\
 		gosuri:uilive:v0.0.4:gosuri_uilive/vendor/github.com/gosuri/uilive \
 		gosuri:uiprogress:v0.0.1:gosuri_uiprogress/vendor/github.com/gosuri/uiprogress \
 		guptarohit:asciigraph:v0.5.2:guptarohit_asciigraph/vendor/github.com/guptarohit/asciigraph \
-		hinshun:vt10x:d55458df857c:hinshun_vt10x/vendor/github.com/hinshun/vt10x \
 		huandu:xstrings:v1.3.0:huandu_xstrings/vendor/github.com/huandu/xstrings \
 		imdario:mergo:v0.3.8:imdario_mergo/vendor/github.com/imdario/mergo \
 		json-iterator:go:v1.1.11:json_iterator_go/vendor/github.com/json-iterator/go \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
-		klauspost:compress:v1.13.4:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.13.6:klauspost_compress/vendor/github.com/klauspost/compress \
 		looplab:fsm:v0.3.0:looplab_fsm/vendor/github.com/looplab/fsm \
 		lucasb-eyer:go-colorful:v1.0.3:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
@@ -90,16 +88,16 @@ GH_TUPLE=	\
 		miekg:pkcs11:v1.0.3:miekg_pkcs11/vendor/github.com/miekg/pkcs11 \
 		minio:highwayhash:v1.0.1:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		mitchellh:copystructure:v1.0.0:mitchellh_copystructure/vendor/github.com/mitchellh/copystructure \
-		mitchellh:mapstructure:v1.4.1:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
+		mitchellh:mapstructure:v1.4.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		mitchellh:reflectwalk:v1.0.0:mitchellh_reflectwalk/vendor/github.com/mitchellh/reflectwalk \
 		moby:moby:v1.13.1:moby_moby/vendor/github.com/docker/docker \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
-		nats-io:jsm.go:aec587a14205:nats_io_jsm_go/vendor/github.com/nats-io/jsm.go \
+		nats-io:jsm.go:1aa453c3cd08:nats_io_jsm_go/vendor/github.com/nats-io/jsm.go \
 		nats-io:jwt:v2.0.3:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
-		nats-io:nats-server:104e2168106f:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats-server:29037a4f5cd6:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
 		nats-io:nats-streaming-server:v0.22.1:nats_io_nats_streaming_server/vendor/github.com/nats-io/nats-streaming-server \
-		nats-io:nats.go:fc13b0b1218c:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
+		nats-io:nats.go:v1.12.3:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
 		nats-io:stan.go:v0.10.0:nats_io_stan_go/vendor/github.com/nats-io/stan.go \
@@ -108,7 +106,7 @@ GH_TUPLE=	\
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		onsi:ginkgo:v1.16.4:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
 		onsi:gomega:v1.16.0:onsi_gomega/vendor/github.com/onsi/gomega \
-		open-policy-agent:opa:v0.31.0:open_policy_agent_opa/vendor/github.com/open-policy-agent/opa \
+		open-policy-agent:opa:v0.32.1:open_policy_agent_opa/vendor/github.com/open-policy-agent/opa \
 		opencontainers:runc:8779fa57eb4a:opencontainers_runc/vendor/github.com/opencontainers/runc \
 		patrickmn:go-cache:v2.1.0:patrickmn_go_cache/vendor/github.com/patrickmn/go-cache \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -116,13 +114,13 @@ GH_TUPLE=	\
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.29.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.7.1:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rcrowley:go-metrics:10cdbea86bc0:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
 		robfig:cron:v1.2.0:robfig_cron/vendor/github.com/robfig/cron \
 		rsc:goversion:v1.2.0:rsc_goversion/vendor/rsc.io/goversion \
 		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		tadglines:go-pkgs:1f86682992f1:tadglines_go_pkgs/vendor/github.com/tadglines/go-pkgs \
-		tidwall:gjson:v1.8.1:tidwall_gjson/vendor/github.com/tidwall/gjson \
+		tidwall:gjson:v1.9.1:tidwall_gjson/vendor/github.com/tidwall/gjson \
 		tidwall:match:v1.0.3:tidwall_match/vendor/github.com/tidwall/match \
 		tidwall:pretty:v1.2.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
@@ -138,10 +136,6 @@ x-post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/nats-io/jwt/v2
 	@${RLN} ${WRKSRC_nats_io_jwt_v2}/v2 ${WRKSRC}/vendor/github.com/nats-io/jwt/v2
 
-# Missing dependency
-GH_TUPLE+=	choria-io:go-updater:v0.0.3:choria_io_go_updater/vendor/github.com/choria-io/go-updater \
-		fatih:structtag:v1.2.0:fatih_structtag/vendor/github.com/fatih/structtag
-
 post-patch:
 	${REINPLACE_CMD} -e 's/{{cpkg_name}}/choria-broker/' \
 		${WRKSRC}/packager/templates/debian/global/broker.conf
@@ -150,7 +144,7 @@ post-patch:
 
 pre-build:
 	(cd ${GO_WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} generate ${GO_BUILDFLAGS})
+		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} generate ${GO_BUILDFLAGS} -run plugin)
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/choria
