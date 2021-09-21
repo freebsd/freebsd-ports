@@ -1,4 +1,4 @@
---- ttp/returners/terminal_returner.py.orig	2020-12-24 20:13:53 UTC
+--- ttp/returners/terminal_returner.py.orig	2020-10-29 23:14:41 UTC
 +++ ttp/returners/terminal_returner.py
 @@ -33,12 +33,12 @@ def terminal_returner(data, **kwargs):
          for yeallow_word in yeallow_words:
