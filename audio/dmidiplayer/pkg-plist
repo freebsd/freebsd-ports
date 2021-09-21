@@ -2,7 +2,10 @@ bin/dmidiplayer
 man/man1/dmidiplayer.1.gz
 share/applications/net.sourceforge.dmidiplayer.desktop
 %%DATADIR%%/dmidiplayer_cs.qm
+%%DATADIR%%/dmidiplayer_de.qm
 %%DATADIR%%/dmidiplayer_es.qm
+%%DATADIR%%/dmidiplayer_fr.qm
+%%DATADIR%%/dmidiplayer_it.qm
 %%DATADIR%%/dmidiplayer_ru.qm
 %%DATADIR%%/examples.lst
 %%DATADIR%%/haendel_hallelujah.mid
