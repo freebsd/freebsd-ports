@@ -1,6 +1,6 @@
---- configure.orig	2021-07-19 12:47:17 UTC
+--- configure.orig	2021-09-13 14:46:32 UTC
 +++ configure
-@@ -3738,9 +3738,10 @@ $as_echo "$as_me: LIBS note: LIBS should only be used 
+@@ -4161,9 +4161,10 @@ printf "%s\n" "$as_me: LIBS note: LIBS should only be 
        -I*)
          xc_bad_var_ldflags=yes
          ;;
@@ -14,7 +14,7 @@
      esac
    done
    if test $xc_bad_var_ldflags = yes; then
-@@ -3810,9 +3811,10 @@ $as_echo "$as_me: $xc_bad_var_msg libraries. Use LIBS 
+@@ -4233,9 +4234,10 @@ printf "%s\n" "$as_me: $xc_bad_var_msg libraries. Use 
    xc_bad_var_cflags=no
    for xc_word in $CFLAGS; do
      case "$xc_word" in
@@ -28,7 +28,7 @@
        -U*)
          xc_bad_var_cflags=yes
          ;;
-@@ -17213,6 +17215,8 @@ $as_echo "$honor_optimize_option" >&6; }
+@@ -18092,6 +18094,8 @@ printf "%s\n" "$honor_optimize_option" >&6; }
      #
      if test "$honor_optimize_option" = "yes"; then
  
@@ -37,15 +37,15 @@
      ac_var_stripped=""
    for word1 in $tmp_CFLAGS; do
      ac_var_strip_word="no"
-@@ -17243,6 +17247,7 @@ $as_echo "$honor_optimize_option" >&6; }
+@@ -18122,6 +18126,7 @@ printf "%s\n" "$honor_optimize_option" >&6; }
    done
      tmp_CPPFLAGS="$ac_var_stripped"
    squeeze tmp_CPPFLAGS
 +fi
  
        if test "$want_optimize" = "yes"; then
-         { $as_echo "$as_me:${as_lineno-$LINENO}: checking if compiler accepts optimizer enabling options" >&5
-@@ -28147,30 +28152,30 @@ $as_echo "found" >&6; }
+         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if compiler accepts optimizer enabling options" >&5
+@@ -29490,31 +29495,31 @@ printf "%s\n" "found" >&6; }
      ;;
    off)
          LIB_RTMP="-lrtmp"
@@ -72,20 +72,21 @@
    CPPFLAGS="$CPPFLAGS $CPP_RTMP"
    LIBS="$LIB_RTMP $LIBS"
  
--  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for RTMP_Init in -lrtmp" >&5
--$as_echo_n "checking for RTMP_Init in -lrtmp... " >&6; }
-+  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for RTMP_Init in $LIB_RTMP" >&5
-+$as_echo_n "checking for RTMP_Init in $LIB_RTMP... " >&6; }
- if ${ac_cv_lib_rtmp_RTMP_Init+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for RTMP_Init in -lrtmp" >&5
+-printf %s "checking for RTMP_Init in -lrtmp... " >&6; }
++  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for RTMP_Init in $LIB_RTMP" >&5
++printf %s "checking for RTMP_Init in $LIB_RTMP... " >&6; }
+ if test ${ac_cv_lib_rtmp_RTMP_Init+y}
+ then :
+   printf %s "(cached) " >&6
+ else $as_nop
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lrtmp  $LIBS"
 +LIBS="$LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -43354,9 +43359,10 @@ $as_echo "$as_me: LIBS note: LIBS should only be used 
+@@ -46199,9 +46204,10 @@ printf "%s\n" "$as_me: LIBS note: LIBS should only be 
        -I*)
          xc_bad_var_ldflags=yes
          ;;
@@ -99,7 +100,7 @@
      esac
    done
    if test $xc_bad_var_ldflags = yes; then
-@@ -43426,9 +43432,10 @@ $as_echo "$as_me: $xc_bad_var_msg libraries. Use LIBS 
+@@ -46271,9 +46277,10 @@ printf "%s\n" "$as_me: $xc_bad_var_msg libraries. Use 
    xc_bad_var_cflags=no
    for xc_word in $CFLAGS; do
      case "$xc_word" in
