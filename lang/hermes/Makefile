@@ -14,8 +14,9 @@ LIB_DEPENDS=	libicui18n.so:devel/icu
 TEST_DEPENDS=	googletest>0:devel/googletest \
 		zip:archivers/zip
 
-USES=		cmake compiler:c++14-lang python:build readline
+USES=		cmake compiler:c++14-lang cpe python:build readline
 USE_LDCONFIG=	yes
+CPE_VENDOR=	facebook
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
