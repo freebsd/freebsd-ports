@@ -1,6 +1,8 @@
 [
 { type: install
   message: <<EOM
+Read pam_xdg(8) manpage for instructions how to configure PAM.
+
 XDG_RUNTIME_DIR on Wayland maybe used as a fallback for anonymous
 shared memory. For better performance and to avoid posix_fallocate(2)
 issues on ZFS moving the directory under tmpfs(5) is recommended:
