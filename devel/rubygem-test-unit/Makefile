@@ -1,7 +1,7 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
 
 PORTNAME=	test-unit
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
