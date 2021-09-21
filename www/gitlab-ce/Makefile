@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	14.2.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -225,7 +225,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-gitaly>=14.2.0.pre.rc2<14.3.0:net/rubygem-gitaly \
 	rubygem-kas-grpc>=0.0.2<0.1:net/rubygem-kas-grpc \
 	rubygem-grpc>=1.38.0<2:net/rubygem-grpc \
-	rubygem-google-protobuf>=3.17.1<3.18:devel/rubygem-google-protobuf \
+	rubygem-google-protobuf317>=3.17.1<3.18:devel/rubygem-google-protobuf317 \
 	rubygem-toml-rb>=2.0.1<3:www/rubygem-toml-rb \
 	rubygem-flipper021>=0.21.0<0.22:devel/rubygem-flipper021 \
 	rubygem-flipper-active_record-rails61>=0.21.0<0.22:databases/rubygem-flipper-active_record-rails61 \
