@@ -17,11 +17,13 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libyajl.so:devel/yajl \
 		libmaxminddb.so:net/libmaxminddb
 
-USES=		compiler:c++11-lang gmake gnome libtool pkgconfig:build
+USES=		compiler:c++11-lang cpe gmake gnome libtool pkgconfig:build
 USE_GNOME=	libxml2
 # GCC because of https://github.com/SpiderLabs/ModSecurity/issues/1411
 USE_GCC=	yes
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	trustwave
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-lmdb --without-ssdeep --without-lua
