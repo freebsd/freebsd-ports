@@ -1933,7 +1933,6 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/CMakeHIPCompilerABI.hip
 %%DATADIR%%/Modules/CMakeHIPCompilerId.hip.in
 %%DATADIR%%/Modules/CMakeHIPInformation.cmake
-%%DATADIR%%/Modules/CMakeHIPRuntime.cmake.in
 %%DATADIR%%/Modules/CMakeIOSInstallCombined.cmake
 %%DATADIR%%/Modules/CMakeISPCCompiler.cmake.in
 %%DATADIR%%/Modules/CMakeISPCCompilerABI.ispc
@@ -2201,15 +2200,6 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Compiler/QCC-CXX-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/QCC-CXX.cmake
 %%DATADIR%%/Modules/Compiler/QCC.cmake
-%%DATADIR%%/Modules/Compiler/ROCMClang-ASM.cmake
-%%DATADIR%%/Modules/Compiler/ROCMClang-C.cmake
-%%DATADIR%%/Modules/Compiler/ROCMClang-CXX.cmake
-%%DATADIR%%/Modules/Compiler/ROCMClang-DetermineCompiler.cmake
-%%DATADIR%%/Modules/Compiler/ROCMClang-FindBinUtils.cmake
-%%DATADIR%%/Modules/Compiler/ROCMClang-HIP.cmake
-%%DATADIR%%/Modules/Compiler/ROCMClang-OBJC.cmake
-%%DATADIR%%/Modules/Compiler/ROCMClang-OBJCXX.cmake
-%%DATADIR%%/Modules/Compiler/ROCMClang.cmake
 %%DATADIR%%/Modules/Compiler/SCO-C.cmake
 %%DATADIR%%/Modules/Compiler/SCO-CXX.cmake
 %%DATADIR%%/Modules/Compiler/SCO-DetermineCompiler.cmake
