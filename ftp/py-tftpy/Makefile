@@ -1,7 +1,7 @@
 # Created by: Ju Pengfei <jupengfei@gmail.com>
 
 PORTNAME=	tftpy
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	ftp python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
