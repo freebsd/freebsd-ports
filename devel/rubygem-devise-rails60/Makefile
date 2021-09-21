@@ -18,8 +18,10 @@ RUN_DEPENDS=	rubygem-bcrypt>=3.0<4:security/rubygem-bcrypt \
 		rubygem-responders-rails60>=0:www/rubygem-responders-rails60 \
 		rubygem-warden>=1.2.3<1.3:devel/rubygem-warden
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
+
+CPE_VENDOR=	plataformatec
 
 NO_ARCH=	yes
 
