@@ -16,6 +16,8 @@ TEST_DEPENDS=	${PKGNAMEPREFIX}pytest:devel/py-pytest@${PY_FLAVOR} \
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest test
 
