@@ -2,6 +2,7 @@
 
 PORTNAME=	translate-toolkit
 PORTVERSION=	3.4.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -26,10 +27,11 @@ SHEBANG_FILES=	tools/*
 
 MANPAGES=	csv2po csv2tbx dtd2po flatxml2po html2po idml2po json2po moz2po mozlang2po odf2xliff oo2po oo2xliff po2csv po2dtd po2flatxml po2html po2idml po2json po2moz po2mozlang po2oo po2prop po2resx po2sub po2symb po2tiki po2tmx po2ts po2txt po2web2py po2wordfast po2xliff pot2po prop2po resx2po sub2po symb2po tbx2po tiki2po ts2po txt2po web2py2po xliff2odf xliff2oo
 
-OPTIONS_DEFINE=	ENCODING ICAL INI LANGUAGES LEVENSHTEIN PHP RC SPELLCHECK SUBTITLES TMSERVER TRADOS YAML
-OPTIONS_DEFAULT=ENCODING ICAL INI LANGUAGES LEVENSHTEIN PHP RC SPELLCHECK SUBTITLES TMSERVER TRADOS YAML
+OPTIONS_DEFINE=	ENCODING FLUENT ICAL INI LANGUAGES LEVENSHTEIN PHP RC SPELLCHECK SUBTITLES TMSERVER TRADOS YAML
+OPTIONS_DEFAULT=ENCODING FLUENT ICAL INI LANGUAGES LEVENSHTEIN PHP RC SPELLCHECK SUBTITLES TMSERVER TRADOS YAML
 OPTIONS_SUB=	yes
 ENCODING_DESC=	Encoding detection
+FLUENT_DESC=	Fluent translation format support
 ICAL_DESC=	iCal format support
 INI_DESC=	INI format support
 LANGUAGES_DESC=	Languages names
@@ -43,6 +45,7 @@ TRADOS_DESC=	Trados format support
 YAML_DESC=	YAML format support
 
 ENCODING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=4.0.0,1:textproc/py-chardet@${PY_FLAVOR}
+FLUENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fluent.syntax>=0.18.1:textproc/py-fluent.syntax@${PY_FLAVOR}
 ICAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6.1:deskutils/py-vobject@${PY_FLAVOR}
 ICAL_VARS=		MANPAGES+="ical2po po2ical"
 INI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}iniparse>=0.5:devel/py-iniparse@${PY_FLAVOR}
