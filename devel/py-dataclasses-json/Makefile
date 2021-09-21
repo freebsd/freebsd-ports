@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	dataclasses-json
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,6 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}marshmallow>=3.3.0<4.0.0:devel/py-marshmallow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}marshmallow-enum>=1.5.1<2.0.0:devel/py-marshmallow-enum@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}stringcase>=1.2.0<2.0.0:devel/py-stringcase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-inspect>=0.4.0:devel/py-typing-inspect@${PY_FLAVOR}
 
 USES=		python:3.6+
