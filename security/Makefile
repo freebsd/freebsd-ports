@@ -1088,6 +1088,7 @@
     SUBDIR += rubygem-hkdf
     SUBDIR += rubygem-hkdf0
     SUBDIR += rubygem-hrr_rb_ssh
+    SUBDIR += rubygem-hrr_rb_ssh-ed25519
     SUBDIR += rubygem-lockbox
     SUBDIR += rubygem-metasploit-aggregator
     SUBDIR += rubygem-metasploit-concern
