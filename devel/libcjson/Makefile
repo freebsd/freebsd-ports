@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	libcjson
-PORTVERSION=	1.7.14
+PORTVERSION=	1.7.15
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
