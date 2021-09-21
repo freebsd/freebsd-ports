@@ -19,15 +19,14 @@ USES=		localbase python:3.6+ sqlite:3 zip
 USE_PYTHON=	autoplist concurrent distutils
 
 OPTIONS_DEFINE=	EXTENSION
-OPTIONS_DEFAULT=	EXTENSION
-
+OPTIONS_DEFAULT=EXTENSION
 EXTENSION_DESC=	Allow loadable extensions
 
-EXTENSION_VARS=	PYDISTUTILS_BUILDARGS+=--enable=load_extension
+EXTENSION_VARS=		PYDISTUTILS_BUILDARGS+=--enable=load_extension
 EXTENSION_VARS_OFF=	PYDISTUTILS_BUILDARGS+=--omit=load_extension
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/apsw*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 do-test:
 	cd ${WRKSRC}/ && ${PYTHON_CMD} setup.py test
