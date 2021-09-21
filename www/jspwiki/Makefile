@@ -13,10 +13,12 @@ COMMENT=	Feature-rich and extensible Wiki engine built around J2EE
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKDIR}/jspwiki/LICENSE
 
-USES=		zip
+USES=		cpe zip
 USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+CPE_VENDOR=	apache
 
 TOMCATDIR=	${PREFIX}/${TOMCATVER}
 APPHOME=	${LOCALBASE}/${TOMCATVER}
