@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Basic building blocks for python applications
 
+LICENSE=	LGPL20+
+
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
