@@ -12,10 +12,11 @@ COMMENT=	Libraries for accessing D-BUS (Linux CentOS ${LINUX_DIST_VER})
 
 LICENSE=	GPLv2+
 
-USES=		linux:c7
+USES=		cpe linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	systemd-libs
 USE_LINUX_RPM=	yes
+CPE_VENDOR=	freedesktop
 
 LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}
 
