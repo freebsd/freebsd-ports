@@ -1,7 +1,7 @@
 # Created by: Autrijus Tang <autrijus@autrijus.org>
 
 PORTNAME=	Module-CoreList
-PORTVERSION=	5.20210723
+PORTVERSION=	5.20210820
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
