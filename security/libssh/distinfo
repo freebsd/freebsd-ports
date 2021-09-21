@@ -1,3 +1,3 @@
-TIMESTAMP = 1599924229
-SHA256 (libssh-0.9.5.tar.xz) = acffef2da98e761fc1fd9c4fddde0f3af60ab44c4f5af05cd1b2d60a3fa08718
-SIZE (libssh-0.9.5.tar.xz) = 502876
+TIMESTAMP = 1632036902
+SHA256 (libssh-0.9.6.tar.xz) = 86bcf885bd9b80466fe0e05453c58b877df61afa8ba947a58c356d7f0fab829b
+SIZE (libssh-0.9.6.tar.xz) = 1053056
