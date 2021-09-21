@@ -12,7 +12,9 @@ COMMENT=	Proxy for using WebDriver clients with Gecko-based browsers
 
 LICENSE=	MPL20
 
-USES=		cargo
+USES=		cargo cpe
+
+CPE_VENDOR=	mozilla
 
 WRKSRC=		${WRKDIR}/mozilla-central-${DISTNAME}/testing/geckodriver
 
