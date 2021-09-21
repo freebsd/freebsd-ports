@@ -1,6 +1,6 @@
 PORTNAME=	gitaly
 DISTVERSION=	14.2.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -25,7 +25,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
 		rubygem-gitlab-labkit>=0.21<0.22:devel/rubygem-gitlab-labkit \
 		rubygem-licensee>=9.14.1<9.15:devel/rubygem-licensee \
-		rubygem-google-protobuf>=3.17.3<3.18:devel/rubygem-google-protobuf
+		rubygem-google-protobuf317>=3.17.3<3.18:devel/rubygem-google-protobuf317
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 		bash>0:shells/bash \
 		${MY_DEPENDS}
