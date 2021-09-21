@@ -14,7 +14,9 @@ LIB_DEPENDS=	libbtor2parser.so:math/btor2tools \
 		libpicosat.so:math/picosat
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cmake:noninja compiler:c++11-lang python:test # ninja fails to build tests
+USES=		cmake:noninja compiler:c++11-lang cpe python:test # ninja fails to build tests
+
+CPE_VENDOR=	boolector_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Boolector
