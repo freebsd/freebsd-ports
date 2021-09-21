@@ -2,6 +2,7 @@
 
 PORTNAME=	metasploit
 PORTVERSION=	6.1.6
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -12,9 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	nmap:security/nmap \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
-		rubygem-activerecord52>=5.2.2:databases/rubygem-activerecord52 \
-		rubygem-activesupport52>=5.2.2:devel/rubygem-activesupport52 \
-		rubygem-actionpack52>=5.2.2:www/rubygem-actionpack52 \
+		rubygem-activerecord60>=6.0:databases/rubygem-activerecord60 \
+		rubygem-activesupport60>=6.0:devel/rubygem-activesupport60 \
+		rubygem-actionpack60>=6.0:www/rubygem-actionpack60 \
 		rubygem-bcrypt>=0:security/rubygem-bcrypt \
 		rubygem-bson>=0:devel/rubygem-bson \
 		rubygem-bundler>=0:sysutils/rubygem-bundler \
@@ -26,8 +27,8 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=2.0.24:security/rubygem-metasploit-payloads \
-		rubygem-metasploit_payloads-mettle>=1.0.2:security/rubygem-metasploit_payloads-mettle \
+		rubygem-metasploit-payloads>=2.0.54:security/rubygem-metasploit-payloads \
+		rubygem-metasploit_payloads-mettle>=1.0.10:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack>=0:devel/rubygem-msgpack \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
@@ -35,7 +36,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-packetfu>=0:net/rubygem-packetfu \
 		rubygem-pcaprub>=0:net/rubygem-pcaprub \
 		rubygem-pg>=0:databases/rubygem-pg \
-		rubygem-railties52>=5.2.2:www/rubygem-railties52 \
+		rubygem-railties60>=6.0:www/rubygem-railties60 \
 		rubygem-recog>=0:security/rubygem-recog \
 		rubygem-openssl-ccm>=0:security/rubygem-openssl-ccm \
 		rubygem-octokit>=0:net/rubygem-octokit \
@@ -45,21 +46,24 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-thin>=0:www/rubygem-thin \
 		rubygem-sinatra>=0:www/rubygem-sinatra \
 		rubygem-warden>=0:devel/rubygem-warden \
+		rubygem-swagger-blocks>=0:devel/rubygem-swagger-blocks \
 		rubygem-em-http-request>=0:www/rubygem-em-http-request \
 		rubygem-tzinfo-data>=0:devel/rubygem-tzinfo-data \
 		rubygem-sshkey>=0:security/rubygem-sshkey \
-		rubygem-bit-struct>=0:devel/rubygem-bit-struct \
 		rubygem-windows_error>=0:devel/rubygem-windows_error \
 		rubygem-xmlrpc>=0:net/rubygem-xmlrpc \
+		rubygem-http-cookie>=0:www/rubygem-http-cookie \
+		rubygem-unix-crypt>=0:security/rubygem-unix-crypt \
 		rubygem-pdf-reader>=0:print/rubygem-pdf-reader \
 		rubygem-ruby-macho>=0:devel/rubygem-ruby-macho \
 		rubygem-dnsruby>=0:dns/rubygem-dnsruby \
 		rubygem-mqtt>=0:net/rubygem-mqtt \
-		rubygem-net-ldap>=0:net/rubygem-net-ldap \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
 		rubygem-ed25519>=0:security/rubygem-ed25519 \
 		rubygem-bcrypt_pbkdf>=0:security/rubygem-bcrypt_pbkdf \
 		rubygem-ruby_smb>=0:net/rubygem-ruby_smb \
+		rubygem-net-ldap>=0:net/rubygem-net-ldap \
+		rubygem-winrm>=0:sysutils/rubygem-winrm \
 		rubygem-rex-arch>=0:security/rubygem-rex-arch \
 		rubygem-rex-bin_tools>=0:security/rubygem-rex-bin_tools \
 		rubygem-rex-core>=0:security/rubygem-rex-core \
@@ -88,8 +92,9 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-xdr>=0:converters/rubygem-xdr \
 		rubygem-faker>=0:devel/rubygem-faker \
 		rubygem-concurrent-ruby>=0:devel/rubygem-concurrent-ruby \
-		rubygem-hrr_rb_ssh>=0:security/rubygem-hrr_rb_ssh \
+		rubygem-hrr_rb_ssh-ed25519>=0:security/rubygem-hrr_rb_ssh-ed25519 \
 		rubygem-irb>=0:devel/rubygem-irb \
+		rubygem-reline>=0:devel/rubygem-reline \
 		rubygem-aws-sdk-s3>=0:devel/rubygem-aws-sdk-s3 \
 		rubygem-aws-sdk-ec2>=0:devel/rubygem-aws-sdk-ec2 \
 		rubygem-aws-sdk-iam>=0:devel/rubygem-aws-sdk-iam \
@@ -97,7 +102,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-eventmachine>=0:devel/rubygem-eventmachine \
 		rubygem-zeitwerk>=0:devel/rubygem-zeitwerk
 
-USES=		cpe go python shebangfix
+USES=		cpe go:run python shebangfix
 USE_RUBY=	yes
 SHEBANG_LANG=	go
 SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
@@ -168,7 +173,8 @@ post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
 		/rb-readline/d' \
 		${WRKSRC}/metasploit-framework.gemspec
-	${REINPLACE_CMD} "/concurrent-ruby/s|,'1.0.5'||" ${WRKSRC}/metasploit-framework.gemspec
+	${REINPLACE_CMD} "/concurrent-ruby/s|,'1.0.5'|| ; /reline/s|, '0.2.5'|| ; /pcaprub/s|, '0.12.4'||" \
+		${WRKSRC}/metasploit-framework.gemspec
 
 do-build:
 	${RM} ${WRKSRC}/Gemfile.lock
