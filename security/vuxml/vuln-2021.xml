@@ -1,3 +1,36 @@
+  <vuln vid="7062bce0-1b17-11ec-9d9d-0022489ad614">
+    <topic>Node.js -- August 2021 Security Releases (2)</topic>
+    <affects>
+      <package>
+	<name>node14</name>
+	<range><lt>14.17.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Node.js reports:</p>
+	<blockquote cite="https://nodejs.org/en/blog/vulnerability/aug-2021-security-releases2/">
+	  <h1>npm 6 update - node-tar, arborist, npm cli modules</h1>
+	  <p>These are vulnerabilities in the node-tar, arborist, and npm cli modules which are related to the initial reports and subsequent remediation of node-tar vulnerabilities CVE-2021-32803 and CVE-2021-32804. Subsequent internal security review of node-tar and additional external bounty reports have resulted in another 5 CVE being remediated in core npm CLI dependencies including node-tar, and npm arborist.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-32803</cvename>
+      <cvename>CVE-2021-32804</cvename>
+      <cvename>CVE-2021-37701</cvename>
+      <cvename>CVE-2021-37712</cvename>
+      <cvename>CVE-2021-37713</cvename>
+      <cvename>CV#-2021-39134</cvename>
+      <cvename>CVE-2021-39135</cvename>
+      <url>https://nodejs.org/en/blog/vulnerability/aug-2021-security-releases2/</url>
+    </references>
+    <dates>
+      <discovery>2021-08-31</discovery>
+      <entry>2021-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b092bd4f-1b16-11ec-9d9d-0022489ad614">
     <topic>Node.js -- August 2021 Security Releases</topic>
     <affects>
