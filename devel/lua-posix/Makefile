@@ -1,7 +1,7 @@
 # Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
 
 PORTNAME=	posix
-PORTVERSION=	35.0
+PORTVERSION=	35.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -15,11 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}stdlib-normalize>=0:devel/lua-stdlib-normalize@${LUA_FLAVOR}
 
 USES=		lua:module shebangfix
-SHEBANG_FILES=	build-aux/luke
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	luaposix
 GH_PROJECT=	luaposix
+
+SHEBANG_FILES=	build-aux/luke
 
 do-build:
 	@cd ${WRKSRC} && build-aux/luke all \
