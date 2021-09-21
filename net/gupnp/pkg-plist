@@ -1,5 +1,6 @@
 bin/gupnp-binding-tool-1.2
 include/gupnp-1.2/libgupnp/gupnp-acl.h
+include/gupnp-1.2/libgupnp/gupnp-context-filter.h
 include/gupnp-1.2/libgupnp/gupnp-context-manager.h
 include/gupnp-1.2/libgupnp/gupnp-context.h
 include/gupnp-1.2/libgupnp/gupnp-control-point.h
@@ -21,8 +22,8 @@ include/gupnp-1.2/libgupnp/gupnp-xml-doc.h
 include/gupnp-1.2/libgupnp/gupnp.h
 lib/girepository-1.0/GUPnP-1.2.typelib
 lib/libgupnp-1.2.so
-lib/libgupnp-1.2.so.0
-lib/libgupnp-1.2.so.0.103.0
+lib/libgupnp-1.2.so.1
+lib/libgupnp-1.2.so.1.103.1
 libdata/pkgconfig/gupnp-1.2.pc
 share/gir-1.0/GUPnP-1.2.gir
 %%VAPI%%share/vala/vapi/gupnp-1.2.deps

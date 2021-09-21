@@ -2,6 +2,7 @@
 
 PORTNAME=	caja-extensions
 PORTVERSION=	1.24.1
+PORTREVISION=	1
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
