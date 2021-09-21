@@ -25,10 +25,12 @@ RUN_DEPENDS=	rubygem-addressable>=2.4<3:www/rubygem-addressable \
 		rubygem-rouge>=1.7<4:textproc/rubygem-rouge \
 		rubygem-safe_yaml>=1.0<2:devel/rubygem-safe_yaml
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	jekyllrb
 
 PLIST_FILES=	bin/jekyll
 
