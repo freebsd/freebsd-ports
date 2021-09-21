@@ -1,7 +1,7 @@
 # Created by: Frederic Culot <frederic@culot.org>
 
 PORTNAME=	Tie-Hash-MultiValue
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,9 +11,11 @@ COMMENT=	Store multiple values per key
 
 LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
