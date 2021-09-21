@@ -2,9 +2,10 @@
 
 PORTNAME=	fntsample
 PORTVERSION=	5.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	release/
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://unicode.org/Public/13.0.0/ucd/:unidata
+MASTER_SITES=	https://unicode.org/Public/14.0.0/ucd/:unidata
 DISTFILES=	Blocks.txt:unidata
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
