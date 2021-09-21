@@ -1,3 +1,3 @@
-TIMESTAMP = 1629364672
-SHA256 (mypy-protobuf-2.9.tar.gz) = 278172935d7121c2f8c7c0a05518dd565a2b76d9e9c4a0a3fcd08a21fa685d43
-SIZE (mypy-protobuf-2.9.tar.gz) = 22407
+TIMESTAMP = 1632037098
+SHA256 (mypy-protobuf-2.10.tar.gz) = 1fed214e16351b09946770794a321a818abb744078b1d863a479da070028684c
+SIZE (mypy-protobuf-2.10.tar.gz) = 21839
