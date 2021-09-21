@@ -1,5 +1,5 @@
 PORTNAME=	metasploit-credential
-PORTVERSION=	4.0.3
+PORTVERSION=	5.0.4
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -10,11 +10,11 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-metasploit-concern>=0:security/rubygem-metasploit-concern \
-		rubygem-metasploit_data_models>=3.0.0:security/rubygem-metasploit_data_models \
+		rubygem-metasploit_data_models>=5.0.0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
 		rubygem-pg>=0:databases/rubygem-pg \
-		rubygem-railties52>=5.2.2:www/rubygem-railties52 \
+		rubygem-railties60>=6.0:www/rubygem-railties60 \
 		rubygem-rex-socket>=0:security/rubygem-rex-socket \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
 		rubygem-rubyzip>=0:archivers/rubygem-rubyzip
