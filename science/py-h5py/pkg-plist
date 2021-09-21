@@ -37,6 +37,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.1.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.2.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.3.rst
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.4.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/index.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bytesio.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/collective_io.py
