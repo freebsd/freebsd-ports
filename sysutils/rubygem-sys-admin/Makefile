@@ -1,7 +1,7 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
 
 PORTNAME=	sys-admin
-PORTVERSION=	1.7.6
+PORTVERSION=	1.8.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
