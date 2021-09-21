@@ -1,3 +1,3 @@
-TIMESTAMP = 1628439044
-SHA256 (jupyter_server-1.10.2.tar.gz) = d3a3b68ebc6d7bfee1097f1712cf7709ee39c92379da2cc08724515bb85e72bf
-SIZE (jupyter_server-1.10.2.tar.gz) = 417665
+TIMESTAMP = 1632037086
+SHA256 (jupyter_server-1.11.0.tar.gz) = 8ab4f484a4a2698f757cff0769d27b5d991e0232a666d54f4d6ada4e6a61330b
+SIZE (jupyter_server-1.11.0.tar.gz) = 419795
