@@ -1,0 +1,11 @@
+AnyEvent::Fork allows you to create new processes, without actually forking them
+from your current process (avoiding the problems of forking), but preserving
+most of the advantages of fork.
+
+It can be used to create new worker processes or new independent subprocesses
+for short- and long-running jobs, process pools (e.g. for use in pre-forked
+servers) but also to spawn new external processes (such as CGI scripts from a
+web server), which can be faster (and more well behaved) than using fork+exec in
+big processes.
+
+WWW: https://metacpan.org/dist/AnyEvent-Fork
