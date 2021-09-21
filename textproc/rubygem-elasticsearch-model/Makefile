@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	elasticsearch-model
-PORTVERSION=	7.1.1
+PORTVERSION=	7.2.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-activesupport5>=3:devel/rubygem-activesupport5 \
-		rubygem-elasticsearch>=1:textproc/rubygem-elasticsearch \
+		rubygem-elasticsearch>=7<8:textproc/rubygem-elasticsearch \
 		rubygem-hashie>=0:devel/rubygem-hashie
 
 USES=		gem
