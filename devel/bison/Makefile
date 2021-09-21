@@ -30,9 +30,9 @@ CPE_VENDOR=	gnu
 OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes
 
+NLS_BUILD_DEPENDS=	libtextstyle>=0.21:devel/libtextstyle
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_OFF=	ac_cv_libtextstyle=no
-NLS_BUILD_DEPENDS=	libtextstyle>=0.21:devel/libtextstyle
 NLS_LIB_DEPENDS=	libtextstyle.so:devel/libtextstyle
 NLS_USES=		gettext
 
