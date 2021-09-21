@@ -1,8 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Mozilla-PublicSuffix
-PORTVERSION=	1.0.4
-PORTREVISION=	3
+PORTVERSION=	1.0.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
