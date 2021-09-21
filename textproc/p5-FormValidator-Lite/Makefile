@@ -1,7 +1,7 @@
 # Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 
 PORTNAME=	FormValidator-Lite
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
