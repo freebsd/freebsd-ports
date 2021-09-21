@@ -1,7 +1,7 @@
 # Created by: johans
 
 PORTNAME=	webp
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.webmproject.org/releases/webp/ \
 		https://storage.googleapis.com/downloads.webmproject.org/releases/webp/
@@ -34,8 +34,8 @@ OPTIONS_SUB=	yes
 
 X11_CONFIGURE_OFF=	build_vwebp=no
 X11_CONFIGURE_ON=	build_vwebp=yes
-X11_USES=		gl
 X11_USE=		GL=glut
+X11_USES=		gl
 
 post-patch:
 	@${REINPLACE_CMD} '/build_vwebp=yes/d' ${WRKSRC}/configure
