@@ -1,3 +1,3 @@
-TIMESTAMP = 1628439498
-SHA256 (rubygem/aws-sdk-rekognition-1.53.0.gem) = c7637dc52b5c44d8cc69b419d10ee8a9b1b92cfda4a49c5c12bb210292d72ade
-SIZE (rubygem/aws-sdk-rekognition-1.53.0.gem) = 96256
+TIMESTAMP = 1632037728
+SHA256 (rubygem/aws-sdk-rekognition-1.56.0.gem) = 840ce83bcc03c7a17f1f8480bf7145a9c33b7ba8f5e247761b85cc766649b55e
+SIZE (rubygem/aws-sdk-rekognition-1.56.0.gem) = 99840
