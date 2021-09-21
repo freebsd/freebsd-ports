@@ -29,9 +29,6 @@ SPEED_DESC=	Optimize for speed over accuracy
 SPEED_CONFIGURE_ON=	--enable-speed
 SPEED_CONFIGURE_OFF=	--enable-accuracy
 
-post-patch:
-	@${REINPLACE_CMD} -e 's| -fforce-mem||' ${WRKSRC}/configure
-
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/mad.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
