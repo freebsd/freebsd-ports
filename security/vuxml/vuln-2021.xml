@@ -1,3 +1,40 @@
+  <vuln vid="b092bd4f-1b16-11ec-9d9d-0022489ad614">
+    <topic>Node.js -- August 2021 Security Releases</topic>
+    <affects>
+      <package>
+	<name>node14</name>
+	<range><lt>14.17.4</lt></range>
+      </package>
+      <package>
+	<name>node</name>
+	<range><lt>16.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Node.js reports:</p>
+	<blockquote cite="https://nodejs.org/en/blog/vulnerability/aug-2021-security-releases/">
+	  <h1>cares upgrade - Improper handling of untypical characters in domain names (High) (CVE-2021-22931)</h1>
+	  <p>Node.js was vulnerable to Remote Code Execution, XSS, application crashes due to missing input validation of host names returned by Domain Name Servers in the Node.js DNS library which can lead to output of wrong hostnames (leading to Domain Hijacking) and injection vulnerabilities in applications using the library.</p>
+	  <h1>Use after free on close http2 on stream canceling (High) (CVE-2021-22940)</h1>
+	  <p>Node.js was vulnerable to a use after free attack where an attacker might be able to exploit memory corruption to change process behavior. The issue is a follow on to CVE-2021-22930 as the issue was not completely resolved in the fix for CVE-2021-22930.</p>
+	  <h1>Incomplete validation of rejectUnauthorized parameter (Low) (CVE-2021-22939)</h1>
+	  <p>If the Node.js https API was used incorrectly and "undefined" was in passed for the "rejectUnauthorized" parameter, no error was returned and connections to servers with an expired certificate would have been accepted.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-22931</cvename>
+      <cvename>CVE-2021-22940</cvename>
+      <cvename>CVE-2021-22939</cvename>
+      <url>https://nodejs.org/en/blog/vulnerability/aug-2021-security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2021-08-11</discovery>
+      <entry>2021-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f53dab71-1b15-11ec-9d9d-0022489ad614">
     <topic>Node.js -- July 2021 Security Releases (2)</topic>
     <affects>
