@@ -1,7 +1,7 @@
 # Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 
 PORTNAME=	gettext
-PORTVERSION=	3.3.8
+PORTVERSION=	3.4.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/doc/text/lgpl-3.0.txt
 LICENSE_FILE_RUBY=	${WRKSRC}/doc/text/ruby-license.txt
 
 RUN_DEPENDS=	rubygem-locale>=2.0.5:devel/rubygem-locale \
-		rubygem-red-datasets>=0:devel/rubygem-red-datasets \
 		rubygem-text>=1.3.0:textproc/rubygem-text
 
 USES=		gem shebangfix
