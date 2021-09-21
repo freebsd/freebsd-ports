@@ -1,7 +1,7 @@
 # Created by: Charlie Kester <corky1951@comcast.net>
 
 PORTNAME=	moreutils
-PORTVERSION=	0.65
+PORTVERSION=	0.66
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.joeyh.name/index.cgi/moreutils.git/snapshot/ \
 		LOCAL/sunpoet
