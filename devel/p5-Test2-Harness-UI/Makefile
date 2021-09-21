@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Test2-Harness-UI
-PORTVERSION=	0.000075
+PORTVERSION=	0.000084
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -20,6 +20,7 @@ RUN_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
 		p5-Crypt-Eksblowfish>=0:security/p5-Crypt-Eksblowfish \
 		p5-DBI>=0:databases/p5-DBI \
 		p5-DBIx-Class>=0:databases/p5-DBIx-Class \
+		p5-DBIx-Class-Helpers>=0:databases/p5-DBIx-Class-Helpers \
 		p5-DBIx-Class-InflateColumn-Serializer>=0:databases/p5-DBIx-Class-InflateColumn-Serializer \
 		p5-DBIx-Class-Schema-Loader>=0:databases/p5-DBIx-Class-Schema-Loader \
 		p5-DBIx-Class-Tree>=0:databases/p5-DBIx-Class-Tree \
@@ -37,7 +38,7 @@ RUN_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
 		p5-Router-Simple>=0:www/p5-Router-Simple \
 		p5-Starman>=0:www/p5-Starman \
 		p5-Statistics-Basic>=0:math/p5-Statistics-Basic \
-		p5-Test2-Harness>=1.000058:devel/p5-Test2-Harness \
+		p5-Test2-Harness>=1.000065:devel/p5-Test2-Harness \
 		p5-Test2-Suite>=0.000126:devel/p5-Test2-Suite \
 		p5-Text-Xslate>=0:textproc/p5-Text-Xslate
 

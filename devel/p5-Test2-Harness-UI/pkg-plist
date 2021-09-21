@@ -14,8 +14,11 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Events.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Failed.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Job.pm
+%%SITE_PERL%%/Test2/Harness/UI/Controller/JobField.pm
+%%SITE_PERL%%/Test2/Harness/UI/Controller/Project.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Query.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Run.pm
+%%SITE_PERL%%/Test2/Harness/UI/Controller/RunField.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Stream.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Sweeper.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Upload.pm
@@ -36,14 +39,17 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/EmailVerificationCode.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Event.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Job.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/Result/JobField.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/LogFile.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Permission.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/PrimaryEmail.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Project.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Run.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/Result/RunField.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Session.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/SessionHost.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/User.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/ResultSet.pm
 %%SITE_PERL%%/Test2/Harness/UI/Sweeper.pm
 %%SITE_PERL%%/Test2/Harness/UI/Util.pm
 %%SITE_PERL%%/Test2/Harness/UI/Util/Errors.pm
@@ -55,6 +61,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/css/job.css
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/css/json-formatter.css
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/css/main.css
+%%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/css/project.css
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/css/theme.css
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/css/upload.css
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/css/user.css
@@ -64,6 +71,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/img/coverage.png
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/img/coveragedel.png
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/img/data.png
+%%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/img/delete.png
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/img/dotdotdot.png
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/img/download.png
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/img/error.png
@@ -72,7 +80,9 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/img/link.png
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/img/locked.png
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/img/orphan.png
+%%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/img/stats.png
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/img/unlocked.png
+%%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/chart.min.js
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/datatables.min.js
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/eventtable.js
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/fieldtable.js
@@ -82,6 +92,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/jquery.js
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/json-formatter.umd.js
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/main.js
+%%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/project.js
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/runtable.js
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/upload.js
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/js/view.js
@@ -90,6 +101,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/schema/PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/login.tx
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/main.tx
+%%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/project.tx
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/upload.tx
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/user.tx
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/view.tx
@@ -103,8 +115,11 @@ bin/yath-ui-sweeper.pl
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Events.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Failed.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Job.3.gz
+%%PERL5_MAN3%%/Test2::Harness::UI::Controller::JobField.3.gz
+%%PERL5_MAN3%%/Test2::Harness::UI::Controller::Project.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Query.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Run.3.gz
+%%PERL5_MAN3%%/Test2::Harness::UI::Controller::RunField.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Stream.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Sweeper.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Upload.3.gz
@@ -120,6 +135,7 @@ bin/yath-ui-sweeper.pl
 %%PERL5_MAN3%%/Test2::Harness::UI::Schema::Result::Job.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Schema::Result::Run.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Schema::Result::User.3.gz
+%%PERL5_MAN3%%/Test2::Harness::UI::Schema::ResultSet.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Util.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Util::Errors.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Util::HashBase.3.gz
