@@ -1,0 +1,11 @@
+The purpose of this small (in scope and footprint) module is simple: spawn a
+subprocess asynchronously as efficiently and/or fast as possible. Basically the
+same as calling fork+exec (on POSIX), but hopefully faster than those two
+syscalls.
+
+Apart from fork overhead, this module also allows you to fork+exec programs when
+otherwise you couldn't - for example, when you use POSIX threads in your perl
+process then it generally isn't safe to call fork from perl, but it is safe to
+use this module to execute external processes.
+
+WWW: https://metacpan.org/dist/Proc-FastSpawn
