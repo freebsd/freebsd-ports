@@ -8,5 +8,5 @@ include/libvmaf/version.h
 lib/libvmaf.a
 lib/libvmaf.so
 lib/libvmaf.so.1
-lib/libvmaf.so.1.1.1
+lib/libvmaf.so.1.1.2
 libdata/pkgconfig/libvmaf.pc
