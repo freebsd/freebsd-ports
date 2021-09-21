@@ -1,6 +1,5 @@
 PORTNAME=	cvxopt
-DISTVERSION=	1.2.6
-PORTREVISION=	2
+DISTVERSION=	1.2.7
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,9 +9,14 @@ COMMENT=	Python software for convex optimization
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libblas.so:math/blas \
+LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
+		libblas.so:math/blas \
+		libcholmod.so:math/suitesparse-cholmod \
+		libcolamd.so:math/suitesparse-colamd \
 		liblapack.so:math/lapack \
+		libsuitesparseconfig.so:math/suitesparse-config \
 		libumfpack.so:math/suitesparse-umfpack
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.6+ localbase:ldflags
 USE_GITHUB=	yes
@@ -41,5 +45,8 @@ DSDP_LIB_DEPENDS=	libdsdp.so:math/dsdp
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/cvxopt/*.so
+
+do-test: install
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest
 
 .include <bsd.port.mk>
