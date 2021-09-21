@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	https://fs-uae.net/stable/${PORTVERSION}/
 
-MAINTAINER=	ndowens@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI launcher for the FS-UAE Amiga emulator
 
 LICENSE=	GPLv2+

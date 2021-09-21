@@ -5,7 +5,7 @@ PORTVERSION=	0.5.2
 CATEGORIES=	comms
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ndowens@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for Evation's Irman infrared receiver
 
 LICENSE=	LGPL20

@@ -5,7 +5,7 @@ PORTVERSION=	0.8.0
 CATEGORIES=	devel
 MASTER_SITES=	http://hyperdex.org/src/
 
-MAINTAINER=	ndowens@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX wrappers for C++
 
 LICENSE=	BSD3CLAUSE

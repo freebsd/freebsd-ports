@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	devel scheme
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	ndowens@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Renderer for User Interfaces in Ncurses
 
 LICENSE=	GPLv3+

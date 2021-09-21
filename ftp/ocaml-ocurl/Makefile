@@ -5,7 +5,7 @@ PORTVERSION=	0.8.2
 CATEGORIES=	ftp
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ndowens@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface for OCaml to the curl lib
 
 LICENSE=	MIT

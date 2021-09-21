@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	devel scheme
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	ndowens@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Repository of useful code written in Guile Scheme
 
 LICENSE=	LGPL3 GPLv3
