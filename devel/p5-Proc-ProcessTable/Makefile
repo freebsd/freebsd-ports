@@ -1,7 +1,7 @@
 # Created by: Michael Johnson <ahze@ahze.net>
 
 PORTNAME=	Proc-ProcessTable
-PORTVERSION=	0.59
+PORTVERSION=	0.62
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JWB
