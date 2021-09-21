@@ -15,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}serpent>=1.27:devel/py-serpent@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
+CPE_VENDOR=	pyro_project
 NO_ARCH=	yes
 PORTDOCS=	*
 PORTEXAMPLES=	*
