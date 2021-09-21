@@ -1,7 +1,7 @@
 # Created by: Felippe de Meirelles Motta <lippemail@gmail.com>
 
 PORTNAME=	ExtUtils-Manifest
-PORTVERSION=	1.72
+PORTVERSION=	1.73
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -12,9 +12,11 @@ COMMENT=	Utilities to write and check a MANIFEST file
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
