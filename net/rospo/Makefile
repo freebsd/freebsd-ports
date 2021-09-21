@@ -1,6 +1,6 @@
 PORTNAME=	rospo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	net net-vpn sysutils
 MASTER_SITES=	https://github.com/ferama/rospo/releases/download/v${DISTVERSION}/ui-artifacts.tar.gz?dummy=/:artifacts
 DISTFILES=	${PORTNAME}-ui-artifacts-${DISTVERSION}.tar.gz:artifacts
@@ -41,6 +41,7 @@ GO_BUILDFLAGS=	-ldflags="-X github.com/ferama/rospo/cmd.Version=${DISTVERSION}"
 
 PLIST_FILES=	bin/rospo
 PORTDOCS=	README.md \
+		configs/config_template.yaml \
 		img/home.png \
 		img/pipes.png \
 		img/tunnels.png
@@ -51,6 +52,7 @@ post-extract:
 	@${MV} ${WRKDIR}/pkg/web/ui/build ${WRKSRC}/pkg/web/ui/build
 
 post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/configs
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/img
 .for doc in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}/`dirname ${doc}`
