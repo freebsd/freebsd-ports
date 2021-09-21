@@ -1,7 +1,7 @@
 # Created by: clement
 
 PORTNAME=	weechat
-DISTVERSION=	3.2.1
+DISTVERSION=	3.3
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -24,14 +24,15 @@ CMAKE_ARGS=	-DLIBDATADIR=${LOCALBASE}/libdata
 OPTIONS_DEFINE=		BACKTRACE DOCS CA_BUNDLE HEADLESS ICON ICONV \
 			MANPAGES NLS
 OPTIONS_DEFAULT=	ASPELL BACKTRACE CA_BUNDLE CHARSET HEADLESS \
-			ICON LUA MANPAGES PERL PYTHON RUBY TCL
+			ICON LUA MANPAGES PERL PYTHON RUBY TCL TYPING
 OPTIONS_SUB=		yes
 
 # BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
 OPTIONS_EXCLUDE_powerpc64=	RUBY
 
 OPTIONS_GROUP=		PLUGINS
-OPTIONS_GROUP_PLUGINS=	ASPELL CHARSET GUILE JAVASCRIPT LUA PERL PHP PYTHON RUBY TCL
+OPTIONS_GROUP_PLUGINS=	ASPELL CHARSET GUILE JAVASCRIPT LUA PERL PHP PYTHON \
+			RUBY TCL TYPING
 
 BACKTRACE_DESC=		Provide crash backtraces
 CA_BUNDLE_DESC=		Include CA bundle for certificate verification
@@ -43,6 +44,7 @@ JAVASCRIPT_DESC=	Javascript script support
 PLUGINS_DESC=		Weechat Plugins
 PYTHON_DESC=		Python script support
 RUBY_DESC=		Ruby script support
+TYPING_DESC=		Typing status plugin
 
 .for _opt in ${OPTIONS_GROUP_PLUGINS} BACKTRACE HEADLESS ICONV GNUTLS NLS
 ${_opt}_CMAKE_BOOL=	ENABLE_${_opt}
@@ -50,13 +52,11 @@ ${_opt}_CMAKE_BOOL=	ENABLE_${_opt}
 
 ASPELL_CMAKE_BOOL=	ENABLE_SPELL
 ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
-CA_BUNDLE_CMAKE_ON=	-DCA_FILE=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 CHARSET_IMPLIES=	ICONV
 DOCS_CMAKE_BOOL=	ENABLE_DOC
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/asciidoctor:textproc/rubygem-asciidoctor
 GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
-GUILE_CMAKE_BOOL=	ENABLE_GUILE
 ICONV_USES=		iconv
 JAVASCRIPT_LIB_DEPENDS=	libv8.so:lang/v8
 LUA_USES=		lua pkgconfig
