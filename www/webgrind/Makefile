@@ -18,7 +18,9 @@ OPTIONS_DEFINE=	CALLGRAPH
 USE_GITHUB=	yes
 GH_ACCOUNT=	jokkedk
 
-USES=		php
+USES=		cpe php
+
+CPE_VENDOR=	webgrind_project
 
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
