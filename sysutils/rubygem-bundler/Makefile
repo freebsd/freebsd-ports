@@ -1,7 +1,7 @@
 # Created by: Robert Gogolok <gogo@cs.uni-sb.de>
 
 PORTNAME=	bundler
-PORTVERSION=	2.2.25
+PORTVERSION=	2.2.27
 PORTEPOCH=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
