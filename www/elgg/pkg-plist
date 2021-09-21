@@ -12333,6 +12333,7 @@
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/CacheItem.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/DoctrineProvider.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/InvalidArgument.php
+%%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/Psr6/TypedCacheItem.php
 %%WWWDIR%%/vendor/doctrine/dbal/LICENSE
 %%WWWDIR%%/vendor/doctrine/dbal/README.md
 %%WWWDIR%%/vendor/doctrine/dbal/SECURITY.md
