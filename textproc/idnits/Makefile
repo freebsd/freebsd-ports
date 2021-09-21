@@ -1,7 +1,7 @@
 # Created by: fenner@FreeBSD.org
 
 PORTNAME=	idnits
-PORTVERSION=	2.16.05
+PORTVERSION=	2.17.00
 CATEGORIES=	textproc
 MASTER_SITES=	https://tools.ietf.org/tools/idnits/ \
 		LOCAL/sunpoet
