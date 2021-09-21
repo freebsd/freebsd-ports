@@ -1,5 +1,5 @@
 PORTNAME?=	alpine
-DISTVERSION=	2.24.2
+DISTVERSION=	2.25
 CATEGORIES?=	mail news
 MASTER_SITES=	https://repo.or.cz/alpine.git/snapshot/${GIT_COMMIT}${EXTRACT_SUFX}?dummy=/
 
@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=	--with-debug-level=2 \
 MAKE_ARGS+=		CC="${CC}" CXX="${CXX}" GCCCFLAGS="${CFLAGS}"
 # When you update please double check that the commit corresponds to
 # the actual version you've set in PORTVERSION.
-GIT_COMMIT=		9121164149cdeac438762406514df10f459e8918
+GIT_COMMIT=		465e23b898e5a3393b9ae52fc7620002541b2e75
 GIT_COMMIT_SHORT=	${GIT_COMMIT:C/^(.......).*/\1/}
 WRKSRC=			${WRKDIR}/alpine-${GIT_COMMIT_SHORT}
 
@@ -62,7 +62,7 @@ LDAP_CFLAGS=			-I${LOCALBASE}/include
 LDAP_LDFLAGS=			-L${LOCALBASE}/lib
 
 # Option MAILDIR
-MAILDIR_PATCH_SITES=		http://alpine.x10host.com/alpine/patches/alpine-2.24/
+MAILDIR_PATCH_SITES=		http://alpine.x10host.com/alpine/patches/alpine-2.25/
 MAILDIR_PATCHFILES+=		maildir.patch.gz:-p1
 
 # Option MOUSE
