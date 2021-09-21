@@ -1,0 +1,8 @@
+Quilt is for data-driven teams and offers features for coders (data scientists,
+data engineers, developers) and business users alike.
+
+Quilt consists of a Python client, web catalog, lambda functions -- all of which
+are open source -- plus a suite of backend services and Docker containers
+orchestrated by CloudFormation.
+
+WWW: https://github.com/quiltdata/quilt

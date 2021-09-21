@@ -1728,6 +1728,7 @@
     SUBDIR += py-qt5-webkit
     SUBDIR += py-qt5-webkitwidgets
     SUBDIR += py-qt5-websockets
+    SUBDIR += py-quilt3
     SUBDIR += py-rackspace-monitoring
     SUBDIR += py-recaptcha
     SUBDIR += py-requests
