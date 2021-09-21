@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	gdal
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.2
 CATEGORIES=	graphics python
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -29,6 +29,6 @@ NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.0.0,1:math/py-numpy@${PY_FLAV
 NUMPY_USES=		fortran
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/osgeo/*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
