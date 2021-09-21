@@ -1,3 +1,91 @@
+  <vuln vid="3551e106-1b17-11ec-a8a7-704d7b472482">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>94.0.4606.54</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/09/stable-channel-update-for-desktop_21.html">
+	  <p>This update contains 19 security fixes, including:</p>
+	  <ul>
+	    <li>[1243117] High CVE-2021-37956: Use after free in Offline use.
+	      Reported by Huyna at Viettel Cyber Security on 2021-08-24</li>
+	    <li>[1242269] High CVE-2021-37957: Use after free in WebGPU.
+	      Reported by Looben Yang on 2021-08-23</li>
+	    <li>[1223290] High CVE-2021-37958: Inappropriate implementation in
+	      Navigation. Reported by James Lee (@Windowsrcer) on
+	      2021-06-24</li>
+	    <li>[1229625] High CVE-2021-37959: Use after free in Task Manager.
+	      Reported by raven (@raid_akame) on 2021-07-15</li>
+	    <li>[1247196] High CVE-2021-37960: Inappropriate implementation in
+	      Blink graphics. Reported by Atte Kettunen of OUSPG on
+	      2021-09-07</li>
+	    <li>[1228557] Medium CVE-2021-37961: Use after free in Tab Strip.
+	      Reported by Khalil Zhani on 2021-07-13</li>
+	    <li>[1231933] Medium CVE-2021-37962: Use after free in Performance
+	      Manager. Reported by Sri on 2021-07-22</li>
+	    <li>[1199865] Medium CVE-2021-37963: Side-channel information
+	      leakage in DevTools. Reported by Daniel Genkin and Ayush Agarwal,
+	      University of Michigan, Eyal Ronen and Shaked Yehezkel, Tel Aviv
+	      University, Sioli O'Connell, University of Adelaide, and Jason
+	      Kim, Georgia Institute of Technology  on 2021-04-16</li>
+	    <li>[1203612] Medium CVE-2021-37964: Inappropriate implementation in
+	      ChromeOS Networking. Reported by Hugo Hue and Sze Yiu Chau of the
+	      Chinese University of Hong Kong on 2021-04-28</li>
+	    <li>[1239709] Medium CVE-2021-37965: Inappropriate implementation in
+	      Background Fetch API. Reported by Maurice Dauer on 2021-08-13</li>
+	    <li>[1238944] Medium CVE-2021-37966: Inappropriate implementation in
+	      Compositing. Reported by Mohit Raj (shadow2639) on 2021-08-11</li>
+	    <li>[1243622] Medium CVE-2021-37967: Inappropriate implementation in
+	      Background Fetch API. Reported by SorryMybad (@S0rryMybad) of
+	      Kunlun Lab on 2021-08-26</li>
+	    <li>[1245053] Medium CVE-2021-37968: Inappropriate implementation in
+	      Background Fetch API. Reported by Maurice Dauer on 2021-08-30</li>
+	    <li>[1245879] Medium CVE-2021-37969: Inappropriate implementation in
+	      Google Updater. Reported by Abdelhamid Naceri (halov) on
+	      2021-09-02</li>
+	    <li>[1248030] Medium CVE-2021-37970: Use after free in File System
+	      API. Reported by SorryMybad (@S0rryMybad) of Kunlun Lab on
+	      2021-09-09</li>
+	    <li>[1219354] Low CVE-2021-37971: Incorrect security UI in Web
+	      Browser UI. Reported by Rayyan Bijoora on 2021-06-13</li>
+	    <li>[1234259] Low CVE-2021-37972: Out of bounds read in
+	      libjpeg-turbo. Reported by Xu Hanyu and Lu Yutao from
+	      Panguite-Forensics-Lab of Qianxin on 2021-07-29</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-37956</cvename>
+      <cvename>CVE-2021-37957</cvename>
+      <cvename>CVE-2021-37958</cvename>
+      <cvename>CVE-2021-37959</cvename>
+      <cvename>CVE-2021-37960</cvename>
+      <cvename>CVE-2021-37961</cvename>
+      <cvename>CVE-2021-37962</cvename>
+      <cvename>CVE-2021-37963</cvename>
+      <cvename>CVE-2021-37964</cvename>
+      <cvename>CVE-2021-37965</cvename>
+      <cvename>CVE-2021-37966</cvename>
+      <cvename>CVE-2021-37967</cvename>
+      <cvename>CVE-2021-37968</cvename>
+      <cvename>CVE-2021-37969</cvename>
+      <cvename>CVE-2021-37970</cvename>
+      <cvename>CVE-2021-37971</cvename>
+      <cvename>CVE-2021-37972</cvename>
+      <url>https://chromereleases.googleblog.com/2021/09/stable-channel-update-for-desktop_21.html</url>
+    </references>
+    <dates>
+      <discovery>2021-09-21</discovery>
+      <entry>2021-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="57b1ee25-1a7c-11ec-9376-0800272221cc">
     <topic>libssh -- possible heap-buffer overflow vulnerability</topic>
     <affects>
