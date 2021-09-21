@@ -15,6 +15,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS_DEFINE=	DOCS
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	troydhanson
