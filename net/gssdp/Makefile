@@ -1,7 +1,7 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	gssdp
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0.1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
