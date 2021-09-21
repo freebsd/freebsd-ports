@@ -11,7 +11,7 @@ COMMENT=	Highly-available key value store and service discovery
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
 
 CONFLICTS_INSTALL=	coreos-etcd-* coreos-etcd31-* coreos-etcd32-* \
 			coreos-etcd33-* coreos-etcdctl-0.*
