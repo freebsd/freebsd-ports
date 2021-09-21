@@ -1,0 +1,5 @@
+Performs the UNIX crypt(3) algorithm using DES (standard 13 character
+passwords), MD5 (starting with $1$), SHA256 (starting with $5$) and
+SHA512 (starting with $6$)
+
+WWW: https://github.com/mogest/unix-crypt
