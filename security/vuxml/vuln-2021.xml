@@ -1,3 +1,34 @@
+  <vuln vid="f53dab71-1b15-11ec-9d9d-0022489ad614">
+    <topic>Node.js -- July 2021 Security Releases (2)</topic>
+    <affects>
+      <package>
+	<name>node14</name>
+	<range><lt>14.17.4</lt></range>
+      </package>
+      <package>
+	<name>node</name>
+	<range><lt>16.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Node.js reports:</p>
+	<blockquote cite="ihttps://nodejs.org/en/blog/vulnerability/july-2021-security-releases-2/">
+	  <h1>Use after free on close http2 on stream canceling (High) (CVE-2021-22930)</h1>
+	  <p>Node.js is vulnerable to a use after free attack where an attacker might be able to exploit the memory corruption, to change process behavior.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-22930</cvename>
+      <url>https://nodejs.org/en/blog/vulnerability/july-2021-security-releases-2/</url>
+    </references>
+    <dates>
+      <discovery>2021-07-29</discovery>
+      <entry>2021-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c174118e-1b11-11ec-9d9d-0022489ad614">
     <topic>Node.js -- July 2021 Security Releases</topic>
     <affects>
