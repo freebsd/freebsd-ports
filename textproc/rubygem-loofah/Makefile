@@ -1,7 +1,7 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
 
 PORTNAME=	loofah
-PORTVERSION=	2.11.0
+PORTVERSION=	2.12.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
