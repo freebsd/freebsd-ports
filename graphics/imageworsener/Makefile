@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	imageworsener
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	graphics
 MASTER_SITES=	https://entropymine.com/imageworsener/ \
 		LOCAL/sunpoet
@@ -22,8 +22,6 @@ CONFIGURE_ARGS=	--with-zlib-include-dir=${INCLUDEDIR} \
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 JPEG_CONFIGURE_WITH=	jpeg
 JPEG_USES=		jpeg
