@@ -16,10 +16,12 @@ CONFLICTS=	lucene4-[0-9].*
 
 PORTSCOUT=	limit:^3\.
 
-USES=		tar:tgz
+USES=		cpe tar:tgz
 USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+CPE_VENDOR=	apache
 
 OPTIONS_DEFINE=	CONTRIB DOCS EXAMPLES
 CONTRIB_DESC=	Install contributed jars
