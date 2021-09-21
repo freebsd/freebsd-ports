@@ -1,5 +1,6 @@
 PORTNAME=	arel-helpers
 PORTVERSION=	2.12.1
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -8,7 +9,7 @@ COMMENT=	Helpers to construct database queries with ActiveRecord and Arel
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activerecord52>=3.1.0:databases/rubygem-activerecord52
+RUN_DEPENDS=	rubygem-activerecord60>=6.0:databases/rubygem-activerecord60
 
 USES=		gem
 USE_RUBY=	yes
