@@ -1,18 +1,21 @@
 # Created by: Neil Blakey-Milner <nbm@FreeBSD.org>
 
 PORTNAME=	scgi
-DISTVERSION=	2.0
+PORTVERSION=	2.2
 CATEGORIES=	www python
-MASTER_SITES=	http://python.ca/scgi/releases/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Python server implementation of the Simple Common Gateway Protocol
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Python package for implementing SCGI servers
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
