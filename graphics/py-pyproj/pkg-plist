@@ -1,3 +1,4 @@
+%%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/advanced_examples.rst
 %%PORTDOCS%%%%DOCSDIR%%/api/aoi.rst
@@ -20,8 +21,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/show_versions.rst
 %%PORTDOCS%%%%DOCSDIR%%/api/sync.rst
 %%PORTDOCS%%%%DOCSDIR%%/api/transformer.rst
-%%PORTDOCS%%%%DOCSDIR%%/build_crs_cf.rst
 %%PORTDOCS%%%%DOCSDIR%%/build_crs.rst
+%%PORTDOCS%%%%DOCSDIR%%/build_crs_cf.rst
 %%PORTDOCS%%%%DOCSDIR%%/cli.rst
 %%PORTDOCS%%%%DOCSDIR%%/conf.py
 %%PORTDOCS%%%%DOCSDIR%%/crs_compatibility.rst
@@ -31,7 +32,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/index.rst
 %%PORTDOCS%%%%DOCSDIR%%/installation.rst
 %%PORTDOCS%%%%DOCSDIR%%/make.bat
-%%PORTDOCS%%%%DOCSDIR%%/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/media/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/media/icon.svg
+%%PORTDOCS%%%%DOCSDIR%%/media/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/media/logo.svg
 %%PORTDOCS%%%%DOCSDIR%%/optimize_transformations.rst
 %%PORTDOCS%%%%DOCSDIR%%/past_versions.rst
 %%PORTDOCS%%%%DOCSDIR%%/transformation_grids.rst
@@ -41,8 +45,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_cli.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_database.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_datadir.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_datum_shift.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_datum.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_datum_shift.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_doctest_wrapper.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_exception_logging.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_geod.py
