@@ -10,10 +10,12 @@ LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.rdoc
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	ruby-lang
 
 .include <bsd.port.pre.mk>
 
