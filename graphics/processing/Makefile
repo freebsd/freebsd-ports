@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	jikes>=1.22:java/jikes \
 		${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:comms/rxtx
 
-USES=		tar:tgz
+USES=		cpe tar:tgz
 USE_JAVA=	yes
 NO_BUILD=	yes
 
