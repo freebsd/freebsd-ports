@@ -1,7 +1,7 @@
 # Created by: Aaron Dalton <aaron@FreeBSD.org>
 
 PORTNAME=	Carp-Assert-More
-PORTVERSION=	1.26
+PORTVERSION=	2.0.1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,8 +11,6 @@ COMMENT=	Convenience wrappers around Carp::Assert
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Carp-Assert>=0:devel/p5-Carp-Assert
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5
