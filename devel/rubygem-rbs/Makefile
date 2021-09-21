@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	rbs
-PORTVERSION=	1.3.3
+PORTVERSION=	1.6.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
