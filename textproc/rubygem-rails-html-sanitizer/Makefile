@@ -11,9 +11,12 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-loofah>=2.3<3:textproc/rubygem-loofah
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	rubyonrails
+CPE_PRODUCT=	html_sanitizer
 
 .include <bsd.port.mk>
