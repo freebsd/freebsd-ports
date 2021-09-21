@@ -110,6 +110,7 @@
 %%SITE_PERL%%/PDF/API2/Resource/uniglyph.txt
 %%SITE_PERL%%/PDF/API2/UniWrap.pm
 %%SITE_PERL%%/PDF/API2/Util.pm
+%%SITE_PERL%%/PDF/API2/ViewerPreferences.pm
 %%SITE_PERL%%/PDF/API2/Win32.pm
 %%PERL5_MAN3%%/PDF::API2.3.gz
 %%PERL5_MAN3%%/PDF::API2::Annotation.3.gz
@@ -143,11 +144,10 @@
 %%PERL5_MAN3%%/PDF::API2::Resource::Font::BdFont.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::Font::CoreFont.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::Font::SynFont.3.gz
-%%PERL5_MAN3%%/PDF::API2::Resource::UniFont.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::XObject.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::XObject::Form.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::XObject::Form::BarCode.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::XObject::Form::BarCode::code128.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::XObject::Image.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::XObject::Image::TIFF.3.gz
-%%PERL5_MAN3%%/PDF::API2::Util.3.gz
+%%PERL5_MAN3%%/PDF::API2::ViewerPreferences.3.gz
