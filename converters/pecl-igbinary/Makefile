@@ -1,7 +1,7 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	igbinary
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.6
 CATEGORIES=	converters
 
 MAINTAINER=	sunpoet@FreeBSD.org
