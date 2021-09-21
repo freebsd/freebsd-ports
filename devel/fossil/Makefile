@@ -12,10 +12,11 @@ COMMENT=	DSCM with built-in wiki, http interface and server, tickets database
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT-BSD2.txt
 
-USES=		ssl
+USES=		cpe ssl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 
+CPE_VENDOR=	fossil-scm
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-openssl=${OPENSSLBASE}
 USE_RC_SUBR=	fossil
