@@ -1,8 +1,16 @@
---- GNUmakefile.orig	2017-10-17 22:17:55 UTC
+--- GNUmakefile.orig	2021-09-21 09:42:55 UTC
 +++ GNUmakefile
-@@ -81,26 +81,14 @@ install :
+@@ -83,27 +83,15 @@ install :
+ 	 @ for DIR in $(INSTDIR) ; do \
  	     $(MAKE) -k -C $$DIR $@ ; \
  	   done
+-	   if [ ! -d "$(LIBDIR)/pkgconfig" ] ; then \
+-	     $(INSTALL) -d -m 775 $(LIBDIR)/pkgconfig ; \
++	   if [ ! -d "%%PKGDIR%%/pkgconfig" ] ; then \
++	     $(INSTALL) -d -m 775 %%PKGDIR%%/pkgconfig ; \
+ 	   fi
+-	   $(INSTALL) -m 444 wcslib.pc $(LIBDIR)/pkgconfig/wcslib.pc
++	   $(INSTALL) -m 444 wcslib.pc %%PKGDIR%%/pkgconfig/wcslib.pc
  	   $(INSTALL) -m 444 wcsconfig.h wcsconfig_f77.h $(INCDIR)
 -	-  if [ ! -d "$(DOCDIR)" ] ; then \
 -	     $(INSTALL) -d -m 775 $(DOCDIR) ; \
@@ -14,19 +22,12 @@
  	   fi
 -	-  if [ ! -d "$(PDFDIR)" ] ; then \
 -	     $(INSTALL) -d -m 775 $(PDFDIR) ; \
-+	   if [ ! -d "%%PKGDIR%%/pkgconfig" ] ; then \
-+	     $(INSTALL) -d -m 775 "%%PKGDIR%%/pkgconfig" ; \
- 	   fi
+-	   fi
 -	   $(INSTALL) -m 444 wcslib.pdf $(PDFDIR)
 -	-  if [ ! -d "$(HTMLDIR)/html" ] ; then \
 -	     $(INSTALL) -d -m 775 $(HTMLDIR)/html ; \
 -	   fi
 -	   $(INSTALL) -m 444 html/* $(HTMLDIR)/html
--	   if [ ! -d "$(LIBDIR)/pkgconfig" ] ; then \
--	     $(INSTALL) -d -m 775 $(LIBDIR)/pkgconfig ; \
--	   fi
--	   $(INSTALL) -m 444 wcslib.pc $(LIBDIR)/pkgconfig/wcslib.pc
-+	   $(INSTALL) -m 444 wcslib.pc %%PKGDIR%%/pkgconfig/wcslib.pc
  
- clean cleaner :
- 	   for DIR in $(SUBDIRS) doxygen ; do \
+ uninstall :
+ 	 @ for DIR in $(INSTDIR) ; do \

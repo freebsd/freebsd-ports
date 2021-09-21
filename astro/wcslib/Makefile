@@ -1,12 +1,11 @@
 # Created by: Tony Maher <tonymaher@optusnet.com.au>
 
 PORTNAME=	wcslib
-PORTVERSION=	7.3.1
-PORTREVISION=	1
+PORTVERSION=	7.7
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing/generating FITS headers
 
 LICENSE=	GPLv3
