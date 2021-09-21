@@ -1,7 +1,7 @@
 # Created by: peter.schuller@infidyne.com
 
 PORTNAME=	liquid
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
