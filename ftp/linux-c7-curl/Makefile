@@ -11,10 +11,12 @@ COMMENT=	Tool for transferring files with URL syntax (Linux CentOS ${LINUX_DIST_
 
 LICENSE=	MIT
 
-USES=		linux:c7
+USES=		cpe linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	libssh2 nspr nss openldap
 USE_LINUX_RPM=	nolib
+
+CPE_VENDOR=	haxx
 
 LIB_DISTNAMES=	lib${DISTNAME}
 
