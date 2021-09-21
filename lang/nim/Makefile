@@ -16,7 +16,9 @@ BROKEN_sparc64=		fails to build: build.sh: clang: not found
 LIB_DEPENDS=	libpcre.so:devel/pcre
 TEST_DEPENDS=	node>=0:www/node
 
-USES=		compiler:c11 tar:xz
+USES=		compiler:c11 cpe tar:xz
+
+CPE_VENDOR=	nim-lang
 
 CONFLICTS_INSTALL=	nimble
 
