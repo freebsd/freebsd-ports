@@ -1,0 +1,5 @@
+Time::Elapsed transforms the elapsed seconds into a human readable string. It
+can be used for (for example) rendering uptime values into a human readable
+form. The resulting string will be an approximation.
+
+WWW: https://metacpan.org/dist/Time-Elapsed

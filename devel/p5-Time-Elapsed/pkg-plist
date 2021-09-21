@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Time/Elapsed.pm
+%%SITE_PERL%%/Time/Elapsed/Lang/DA.pm
+%%SITE_PERL%%/Time/Elapsed/Lang/DE.pm
+%%SITE_PERL%%/Time/Elapsed/Lang/EN.pm
+%%SITE_PERL%%/Time/Elapsed/Lang/FR.pm
+%%SITE_PERL%%/Time/Elapsed/Lang/TR.pm
+%%PERL5_MAN3%%/Time::Elapsed.3.gz
+%%PERL5_MAN3%%/Time::Elapsed::Lang::DA.3.gz
+%%PERL5_MAN3%%/Time::Elapsed::Lang::DE.3.gz
+%%PERL5_MAN3%%/Time::Elapsed::Lang::EN.3.gz
+%%PERL5_MAN3%%/Time::Elapsed::Lang::FR.3.gz
+%%PERL5_MAN3%%/Time::Elapsed::Lang::TR.3.gz

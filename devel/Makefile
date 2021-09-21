@@ -3590,6 +3590,7 @@
     SUBDIR += p5-Time-Crontab
     SUBDIR += p5-Time-Duration
     SUBDIR += p5-Time-Duration-Parse
+    SUBDIR += p5-Time-Elapsed
     SUBDIR += p5-Time-Format
     SUBDIR += p5-Time-HiRes
     SUBDIR += p5-Time-Interval
