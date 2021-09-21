@@ -1,3 +1,43 @@
+  <vuln vid="c174118e-1b11-11ec-9d9d-0022489ad614">
+    <topic>Node.js -- July 2021 Security Releases</topic>
+    <affects>
+      <package>
+	<name>node14</name>
+	<range><lt>14.17.2</lt></range>
+      </package>
+      <package>
+	<name>node</name>
+	<range><lt>16.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Node.js reports:</p>
+	<blockquote cite="https://nodejs.org/en/blog/vulnerability/july-2021-security-releases/">
+	  <h1>libuv upgrade - Out of bounds read (Medium) (CVE-2021-22918)</h1>
+	  <p>Node.js is vulnerable to out-of-bounds read in libuv's uv__idna_toascii() function which is used to convert strings to ASCII. This is called by Node's dns module's lookup() function and can lead to information disclosures or crashes.</p>
+	  <h1>Windows installer - Node Installer Local Privilege Escalation (Medium) (CVE-2021-22921)</h1>
+	  <p>Node.js is vulnerable to local privilege escalation attacks under certain conditions on Windows platforms. More specifically, improper configuration of permissions in the installation directory allows an attacker to perform two different escalation attacks: PATH and DLL hijacking.</p>
+	  <h1>npm upgrade - ssri Regular Expression Denial of Service (ReDoS) (High) (CVE-2021-27290)</h1>
+	  <p>This is a vulnerability in the ssri npm module which may be vulnerable to denial of service attacks.</p>
+	  <h1>npm upgrade - hosted-git-info Regular Expression Denial of Service (ReDoS) (Medium) (CVE-2021-23362)</h1>
+	  <p>This is a vulnerability in the hosted-git-info npm module which may be vulnerable to denial of service attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-22918</cvename>
+      <cvename>CVE-2021-22921</cvename>
+      <cvename>CVE-2021-27290</cvename>
+      <cvename>CVE-2021-23362</cvename>
+      <url>https://nodejs.org/en/blog/vulnerability/july-2021-security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2021-07-01</discovery>
+      <entry>2021-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3551e106-1b17-11ec-a8a7-704d7b472482">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
