@@ -20,9 +20,10 @@ BROKEN_powerpc64=	Does not build: Error: unsupported relocation against r3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-java --without-python
 INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		cpe libtool
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
+CPE_VENDOR=	beecrypt_project
 
 OPTIONS_DEFINE=	OPENMP
 OPENMP_CONFIGURE_ENABLE=	openmp
