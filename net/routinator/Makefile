@@ -15,9 +15,10 @@ ONLY_FOR_ARCHS_REASON=	ring crate not ported to other architectures
 
 RUN_DEPENDS=	rsync:net/rsync
 
-USES=		cargo
+USES=		cargo cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	NLnetLabs
+CPE_VENDOR=	nlnetlabs
 
 USE_RC_SUBR=	routinator
 
