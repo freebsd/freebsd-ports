@@ -17,7 +17,9 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
-USES=		go:modules
+USES=		cpe go:modules
+
+CPE_VENDOR=	protocol
 
 GO_TARGET=	./cmd/ipfs:ipfs-go
 
