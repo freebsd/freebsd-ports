@@ -12,7 +12,9 @@ COMMENT=	C implementation of the Markdown markup language
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		pkgconfig
+USES=		cpe pkgconfig
+
+CPE_VENDOR=	discount_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Orc
