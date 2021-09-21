@@ -1,5 +1,5 @@
 PORTNAME=	minitube
-DISTVERSION=	3.9
+DISTVERSION=	3.9.1
 CATEGORIES=	multimedia www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,12 +14,12 @@ USES=		compiler:c++11-lang gl qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	flaviotordini
 GH_TUPLE=	\
-		flaviotordini:http:11e1ad8:flaviotordini_http/lib/http \
+		flaviotordini:http:68b9cf0:flaviotordini_http/lib/http \
 		flaviotordini:idle:6aa092d:flaviotordini_idle/lib/idle \
 		flaviotordini:js:acf3f87:flaviotordini_js/lib/js \
 		flaviotordini:media:edfcc8c:flaviotordini_media/lib/media \
-		flaviotordini:promises:a5789eb:flaviotordini_promises/lib/promises \
-		flaviotordini:updater:18ce1d0:flaviotordini_updater/lib/updater
+		flaviotordini:promises:e6e5653:flaviotordini_promises/lib/promises \
+		flaviotordini:updater:17b8f7b:flaviotordini_updater/lib/updater
 
 USE_GL=		gl
 USE_QT=		core dbus declarative gui network script sql widgets \
