@@ -13,9 +13,10 @@ LICENSE=	GPLv3+
 
 OPTIONS_DEFINE=	DOCS
 
-USES=	gmake
+USES=		cpe gmake
 MAKEFILE=	makefile
 ALL_TARGET=	lout prg2lout
 INSTALL_TARGET=	install installman installdoc
+CPE_VENDOR=	lout_project
 
 .include <bsd.port.mk>
