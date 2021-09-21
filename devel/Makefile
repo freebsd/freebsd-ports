@@ -6760,6 +6760,7 @@
     SUBDIR += rubygem-sumbur
     SUBDIR += rubygem-sundawg_country_codes
     SUBDIR += rubygem-svn2git
+    SUBDIR += rubygem-swagger-blocks
     SUBDIR += rubygem-sync
     SUBDIR += rubygem-sysinfo
     SUBDIR += rubygem-syslog
