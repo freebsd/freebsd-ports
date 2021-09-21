@@ -2,6 +2,7 @@
 %%WWWDIR%%/LICENSE.md
 %%WWWDIR%%/README.md
 %%WWWDIR%%/adapters/jquery.js
+%%WWWDIR%%/bender-runner.config.json
 %%WWWDIR%%/build-config.js
 %%WWWDIR%%/ckeditor.js
 %%WWWDIR%%/config.js
