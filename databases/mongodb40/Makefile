@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.0.25
+DISTVERSION=	4.0.27
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -27,10 +27,13 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libsnappy.so:archivers/snappy
 
-USES=		compiler:c++14-lang cpe python:3.5+,build scons
+USES=		compiler:c++14-lang cpe python:3.5+,build scons shebangfix
 USE_RC_SUBR=	mongod
 
-CONFLICTS_INSTALL=	mongodb36 mongodb4[24]
+CONFLICTS_INSTALL=	mongodb36 mongodb4[24] mongodb50
+
+SHEBANG_FILES=	src/mongo/installer/compass/install_compass
+python_OLD_CMD=	@python_interpreter@
 
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--use-system-pcre --use-system-snappy \
