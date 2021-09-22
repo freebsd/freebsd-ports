@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-shell
-PORTVERSION=	13.19.1
+PORTVERSION=	13.21.0
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -10,14 +10,12 @@ COMMENT=	GitLab Shell handles git commands for GitLab
 
 LICENSE=	MIT
 
-USES=		gmake go:modules,no_targets
-MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
-ALL_TARGET=	build
+USES=		gmake go:modules
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT=	757aa7c0e0b8733c75c744f188b0136c1fe1830f
+GL_COMMIT=	81e580997d07a7a9d3dddbd42cbb39f305c63b8b
 
 USERS=		git
 GROUPS=		git
@@ -27,14 +25,17 @@ GROUPS=		git
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 66dd
+# 70dd
 GH_TUPLE=	\
 		DataDog:datadog-go:v4.4.0:datadog_datadog_go/vendor/github.com/DataDog/datadog-go \
 		DataDog:dd-trace-go:v1.30.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
 		Microsoft:go-winio:v0.4.19:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
+		aws:aws-sdk-go:v1.37.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
+		census-ecosystem:opencensus-go-exporter-stackdriver:v0.13.8:census_ecosystem_opencensus_go_exporter_stackdriver/vendor/contrib.go.opencensus.io/exporter/stackdriver \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		census-instrumentation:opencensus-proto:v0.3.0:census_instrumentation_opencensus_proto/vendor/github.com/census-instrumentation/opencensus-proto \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		client9:reopen:v1.0.0:client9_reopen/vendor/github.com/client9/reopen \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -44,7 +45,7 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:eec23a3978ad:golang_crypto/vendor/golang.org/x/crypto \
-		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:lint:83fdc39ff7b5:golang_lint/vendor/golang.org/x/lint \
 		golang:net:d523dce5a7f4:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:5e61552d6c78:golang_oauth2/vendor/golang.org/x/oauth2 \
@@ -66,6 +67,7 @@ GH_TUPLE=	\
 		grpc-ecosystem:go-grpc-prometheus:v1.2.0:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
 		grpc:grpc-go:v1.37.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:yamux:a95892c5f864:hashicorp_yamux/vendor/github.com/hashicorp/yamux \
+		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		lightstep:lightstep-tracer-common:a8dfcb80d3a7:lightstep_lightstep_tracer_common_gogo/vendor/github.com/lightstep/lightstep-tracer-common \
 		lightstep:lightstep-tracer-go:v0.24.0:lightstep_lightstep_tracer_go/vendor/github.com/lightstep/lightstep-tracer-go \
 		mattn:go-shellwords:v1.0.11:mattn_go_shellwords/vendor/github.com/mattn/go-shellwords \
@@ -75,7 +77,7 @@ GH_TUPLE=	\
 		opentracing:opentracing-go:v1.2.0:opentracing_opentracing_go/vendor/github.com/opentracing/opentracing-go \
 		otiai10:copy:v1.4.2:otiai10_copy/vendor/github.com/otiai10/copy \
 		philhofer:fwd:v1.0.0:philhofer_fwd/vendor/github.com/philhofer/fwd \
-		pires:go-proxyproto:v0.5.0:pires_go_proxyproto/vendor/github.com/pires/go-proxyproto \
+		pires:go-proxyproto:v0.6.0:pires_go_proxyproto/vendor/github.com/pires/go-proxyproto \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		prometheus:client_golang:v1.10.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
@@ -93,7 +95,19 @@ GH_TUPLE=	\
 		uber:jaeger-lib:v2.4.1:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
 
 GL_TUPLE=	gitlab-org:gitaly:e078d5bd7c5eb37caa222faa15010ce6decc6aa6:gitlab_org_gitaly_v14/vendor/gitlab.com/gitlab-org/gitaly/v14 \
-		gitlab-org:labkit:b36f912635e66d2d043f57d0d2618fdc51002b87:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
+		gitlab-org:labkit:dc97d99c35488e59727a3da089f764df901ba56f:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
+
+_BUILD_DATE=	$$(date -u "+%Y-%m-%d-%H%M UTC")
+
+GO_BUILDFLAGS=	-tags="tracer_static,tracer_static_jaeger,continuous_profiler_stackdriver" \
+		-ldflags=" \
+		-X 'main.Version=v${PORTVERSION}' \
+		-X 'main.BuildTime=${_BUILD_DATE}'"
+GO_TARGET=	./cmd/gitlab-shell \
+		./cmd/gitlab-shell-authorized-keys-check \
+		./cmd/gitlab-shell-authorized-principals-check \
+		./cmd/gitlab-sshd \
+		./cmd/check
 
 VARLOGDIR=	/var/log/gitlab-shell
 
@@ -104,19 +118,18 @@ post-patch:
 	${CP} ${WRKSRC}/config.yml.sample ${WRKSRC}/config.yml
 	${REINPLACE_CMD} -e 's|VERSION_STRING :=.*|VERSION_STRING := v${PORTVERSION}|g' ${WRKSRC}/Makefile
 
-pre-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} build)
-
 pre-install:
 	${RM} -rf ${WRKSRC}/config.yml
-	#${RM} -rf ${WRKSRC}/go_build
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for x in .codeclimate.yml .gitignore .gitlab-ci.yml .ruby-version CHANGELOG CONTRIBUTING.md Gemfile Gemfile.lock LICENSE README.md VERSION config.yml.sample
+	${MKDIR} ${STAGEDIR}${DATADIR}/bin
+	${FIND} ${WRKSRC} -name '*.orig' -delete
+	(cd ${WRKDIR}/bin/ && ${COPYTREE_BIN} .  ${STAGEDIR}${DATADIR}/bin)
+.for x in CHANGELOG LICENSE README.md VERSION config.yml.sample
 	${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DATADIR}/
 .endfor
-.for x in bin spec support .gitlab
+.for x in support
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${x}
 	(cd ${WRKSRC}/${x} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${x})
 .endfor
