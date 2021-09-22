@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	14.2.2
+PORTVERSION=	14.3.0
 PORTREVISION=	0
 CATEGORIES=	www
 
@@ -23,7 +23,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	8d08c6cbe51a88fbdc5065aba6e459768e98e63b
+GL_COMMIT=	ceec8accb09a4c43d70896440d3662bf6dc765dc
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -56,7 +56,6 @@ GH_TUPLE=	\
 		client9:reopen:v1.0.0:client9_reopen/vendor/github.com/client9/reopen \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		disintegration:imaging:v1.6.2:disintegration_imaging/vendor/github.com/disintegration/imaging \
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dominikh:go-tools:v0.1.3:dominikh_go_tools/vendor/honnef.co/go/tools \
@@ -65,9 +64,9 @@ GH_TUPLE=	\
 		go-ole:go-ole:v1.2.4:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		golang-jwt:jwt:v4.0.0:golang_jwt_jwt_v4/vendor/github.com/golang-jwt/jwt/v4 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:be400aefbc4c:golang_crypto/vendor/golang.org/x/crypto \
-		golang:exp:e8c3332aa8e5:golang_exp/vendor/golang.org/x/exp \
 		golang:gddo:af0f2af80721:golang_gddo/vendor/github.com/golang/gddo \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:image:e7c1f5e7dbb8:golang_image/vendor/golang.org/x/image \
@@ -135,6 +134,7 @@ GH_TUPLE=	\
 
 GL_TUPLE=	gitlab-org:gitaly:e078d5bd7c5eb37caa222faa15010ce6decc6aa6:gitlab_org_gitaly_v14/vendor/gitlab.com/gitlab-org/gitaly/v14 \
 		gitlab-org:labkit:9205b46eea68f47a36cefa783a306476f0b2dbfd:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
+
 
 PLIST_FILES=	bin/gitlab-resize-image \
 		bin/gitlab-workhorse \
