@@ -58,6 +58,7 @@
     SUBDIR += dzen2
     SUBDIR += eaglemode
     SUBDIR += editres
+    SUBDIR += elementary-terminal
     SUBDIR += emprint
     SUBDIR += erun
     SUBDIR += eterm
