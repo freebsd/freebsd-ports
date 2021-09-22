@@ -1,12 +1,12 @@
 # Created by: Alex Varju <freebsd-ports@varju.ca>
 
 PORTNAME=	pmd
-PORTVERSION=	6.37.0
+PORTVERSION=	6.38.0
 CATEGORIES=	devel java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Static analysis tool for Java source code
 
 LICENSE=	APACHE20 BSD4CLAUSE

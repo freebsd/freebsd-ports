@@ -1,7 +1,7 @@
 bin/pmd
 %%DATADIR%%/animal-sniffer-annotations-1.14.jar
-%%DATADIR%%/ant-1.10.9.jar
-%%DATADIR%%/ant-launcher-1.10.9.jar
+%%DATADIR%%/ant-1.10.11.jar
+%%DATADIR%%/ant-launcher-1.10.11.jar
 %%DATADIR%%/antlr-2.7.7.jar
 %%DATADIR%%/antlr-runtime-3.5.2.jar
 %%DATADIR%%/antlr4-runtime-4.7.2.jar
@@ -51,7 +51,7 @@ bin/pmd
 %%DATADIR%%/pmd-ruby-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-scala_2.13-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-swift-%%PORTVERSION%%.jar
-%%DATADIR%%/pmd-ui-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-ui-6.37.0.jar
 %%DATADIR%%/pmd-visualforce-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-vm-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-xml-%%PORTVERSION%%.jar
