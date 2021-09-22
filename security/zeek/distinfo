@@ -1,5 +1,5 @@
-TIMESTAMP = 1625606511
-SHA256 (zeek-4.0.3.tar.gz) = 33ee6b2aa96d127b7273ce337552bc7b2abf4910aa7a431dfc9ec606a4e233db
-SIZE (zeek-4.0.3.tar.gz) = 29432987
+TIMESTAMP = 1632345196
+SHA256 (zeek-4.0.4.tar.gz) = d9991de344fa8ed8c92d130837309655dc9e22c4f5e53c141dce6deee5c0505c
+SIZE (zeek-4.0.4.tar.gz) = 30981125
 SHA256 (zeek-zeek-netmap-v2.0.0_GH0.tar.gz) = d37a69babfbb62a51a2413d6b83ae792ce1e7f1ccb1d51bd6b209a10fe5c4d75
 SIZE (zeek-zeek-netmap-v2.0.0_GH0.tar.gz) = 9100
