@@ -1,7 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.0
-PORTREVISION=	1
+DISTVERSION=	1.14.1
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -43,6 +42,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		alloc-no-stdlib-2.0.3 \
 		alloc-stdlib-0.2.1 \
 		ansi_term-0.11.0 \
+		ansi_term-0.12.1 \
 		anyhow-1.0.43 \
 		arrayvec-0.5.2 \
 		arrayvec-0.7.1 \
@@ -90,6 +90,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crossbeam-channel-0.5.1 \
 		crossbeam-utils-0.8.5 \
 		crypto-bigint-0.2.4 \
+		ctor-0.1.20 \
 		d3d12-0.4.1 \
 		darling-0.10.2 \
 		darling_core-0.10.2 \
@@ -105,6 +106,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		deno_lint-0.16.0 \
 		der-0.4.1 \
 		derive_more-0.99.16 \
+		diff-0.1.12 \
 		digest-0.9.0 \
 		dissimilar-1.0.2 \
 		dlopen-0.1.8 \
@@ -121,10 +123,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		enum_kind-0.2.1 \
 		env_logger-0.8.4 \
 		errno-0.1.8 \
-		errno-0.2.7 \
-		errno-dragonfly-0.1.1 \
 		error-code-2.3.0 \
-		exec-0.3.1 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.7.1 \
@@ -153,7 +152,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		futures-util-0.3.17 \
 		fwdansi-1.1.0 \
 		fxhash-0.2.1 \
-		gcc-0.3.55 \
 		generic-array-0.14.4 \
 		getrandom-0.1.16 \
 		getrandom-0.2.3 \
@@ -239,6 +237,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		opaque-debug-0.3.0 \
 		openssl-probe-0.1.4 \
 		os_pipe-0.9.2 \
+		output_vt100-0.1.2 \
 		owning_ref-0.4.1 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.3 \
@@ -260,6 +259,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pmutil-0.5.3 \
 		ppv-lite86-0.2.10 \
 		precomputed-hash-0.1.1 \
+		pretty_assertions-0.7.2 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
@@ -387,13 +387,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tokio-macros-1.3.0 \
 		tokio-rustls-0.22.0 \
 		tokio-stream-0.1.7 \
-		tokio-test-0.4.2 \
 		tokio-tungstenite-0.14.0 \
 		tokio-util-0.6.7 \
 		toml-0.5.8 \
-		tower-layer-0.3.1 \
 		tower-service-0.3.1 \
-		tower-test-0.4.0 \
 		tracing-0.1.26 \
 		tracing-core-0.1.19 \
 		trust-dns-client-0.20.3 \
