@@ -1,4 +1,4 @@
---- Gemfile.orig	2021-08-31 13:57:34 UTC
+--- Gemfile.orig	2021-09-21 10:06:28 UTC
 +++ Gemfile
 @@ -88,7 +88,7 @@ gem 'gpgme', '~> 2.0.19'
  # GitLab fork with several improvements to original library. For full list of changes
@@ -26,16 +26,15 @@
  gem 'connection_pool', '~> 2.0'
  
  # Redis session store
-@@ -332,105 +331,10 @@ gem 'snowplow-tracker', '~> 0.6.1'
+@@ -332,106 +331,10 @@ gem 'snowplow-tracker', '~> 0.6.1'
  
  # Metrics
  gem 'method_source', '~> 1.0', require: false
 -gem 'webrick', '~> 1.6.1', require: false
-+gem 'webrick', '~> 1.6', require: false
- gem 'prometheus-client-mmap', '~> 0.12.0', require: 'prometheus/client'
+ gem 'prometheus-client-mmap', '~> 0.15.0', require: 'prometheus/client'
  
  gem 'warning', '~> 1.2.0'
--
+ 
 -group :development do
 -  gem 'lefthook', '~> 0.7.0', require: false
 -  gem 'solargraph', '~> 0.43', require: false
@@ -71,7 +70,7 @@
 -  gem 'spring', '~> 2.1.0'
 -  gem 'spring-commands-rspec', '~> 1.0.4'
 -
--  gem 'gitlab-styles', '~> 6.2.0', require: false
+-  gem 'gitlab-styles', '~> 6.3.0', require: false
 -
 -  gem 'haml_lint', '~> 0.36.0', require: false
 -  gem 'bundler-audit', '~> 0.7.0.1', require: false
@@ -130,6 +129,16 @@
 -  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
 -  gem 'derailed_benchmarks', require: false
 -end
- 
+-
  gem 'octokit', '~> 4.15'
+ 
+ # https://gitlab.com/gitlab-org/gitlab/issues/207207
+@@ -479,7 +382,7 @@ gem 'gitaly', '~> 14.3.0.pre.rc1'
+ # KAS GRPC protocol definitions
+ gem 'kas-grpc', '~> 0.0.2'
+ 
+-gem 'grpc', '~> 1.30.2'
++gem 'grpc', '~> 1.30'
+ 
+ gem 'google-protobuf', '~> 3.17.1'
  
