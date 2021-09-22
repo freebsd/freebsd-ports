@@ -1,5 +1,5 @@
 PORTNAME=	pysolfc
-DISTVERSION=	2.12.0
+DISTVERSION=	2.14.0
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/PySolFC/${PYSOLFCDIR} \
 		SF/${PORTNAME}/PySolFC-Cardsets/minimal/:cardsets \
@@ -14,6 +14,10 @@ COMMENT=	Solitaire game, written in Python and the successor of PySol
 
 LICENSE=	GPLv2+ GPLv3+
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =		${WRKDIR}/${CARDSETDIR}/cardset-2000/COPYRIGHT
+LICENSE_FILE_GPLv3+ =		${WRKSRC}/COPYING
+LICENSE_DISTFILES_GPLv2+ =	${CARDSETDIST} ${MUSICDIST}
+LICENSE_DISTFILES_GPLv3+ =	${PYSOLFCDIST}
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj@${PY_FLAVOR} \
@@ -22,11 +26,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}random2>=0:math/py-random2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
-
-LICENSE_FILE_GPLv3+ =		${WRKSRC}/COPYING
-LICENSE_DISTFILES_GPLv3+ =	${PYSOLFCDIST}
-LICENSE_FILE_GPLv2+ =		${WRKDIR}/${CARDSETDIR}/cardset-2000/COPYRIGHT
-LICENSE_DISTFILES_GPLv2+ =	${CARDSETDIST} ${MUSICDIST}
 
 USES=		python:3.6+ shebangfix tar:xz
 USE_PYTHON=	distutils noflavors autoplist
