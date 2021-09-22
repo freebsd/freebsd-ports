@@ -3,8 +3,8 @@
 PORTNAME=	ix
 PORTVERSION=	3.3.24
 PORTEPOCH=	0
-MASTER_SITES?=	https://downloadmirror.intel.com/14688/eng/ \
-		http://downloadmirror.intel.com/14688/eng/ \
+MASTER_SITES?=	https://downloadmirror.intel.com/30645/eng/ \
+		http://downloadmirror.intel.com/30645/eng/ \
 		https://downloadmirror.intel.com/29625/eng/:man \
 		http://downloadmirror.intel.com/29625/eng/:man
 
