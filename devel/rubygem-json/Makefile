@@ -1,7 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 
 PORTNAME=	json
-PORTVERSION=	2.3.1
+PORTVERSION=	2.5.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
