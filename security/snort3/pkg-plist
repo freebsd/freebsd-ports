@@ -236,6 +236,7 @@ libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/appid.txt
 %%PORTDOCS%%%%DOCSDIR%%/binder.txt
 %%PORTDOCS%%%%DOCSDIR%%/building.txt
+%%PORTDOCS%%%%DOCSDIR%%/builtin_stubs.txt
 %%PORTDOCS%%%%DOCSDIR%%/byte_extract.txt
 %%PORTDOCS%%%%DOCSDIR%%/byte_jump.txt
 %%PORTDOCS%%%%DOCSDIR%%/byte_math.txt
