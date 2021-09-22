@@ -93,6 +93,19 @@ share/help/es/baobab/scan-file-system.page
 share/help/es/baobab/scan-folder.page
 share/help/es/baobab/scan-home.page
 share/help/es/baobab/scan-remote.page
+share/help/eu/baobab/index.page
+share/help/eu/baobab/introduction.page
+share/help/eu/baobab/legal.xml
+share/help/eu/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/eu/baobab/pref-view-chart.page
+share/help/eu/baobab/problem-permissions.page
+share/help/eu/baobab/problem-slow-scan.page
+share/help/eu/baobab/question-open-folder.page
+share/help/eu/baobab/question-trash.page
+share/help/eu/baobab/scan-file-system.page
+share/help/eu/baobab/scan-folder.page
+share/help/eu/baobab/scan-home.page
+share/help/eu/baobab/scan-remote.page
 share/help/fi/baobab/index.page
 share/help/fi/baobab/introduction.page
 share/help/fi/baobab/legal.xml
@@ -339,6 +352,7 @@ share/locale/fa/LC_MESSAGES/baobab.mo
 share/locale/fi/LC_MESSAGES/baobab.mo
 share/locale/fr/LC_MESSAGES/baobab.mo
 share/locale/fur/LC_MESSAGES/baobab.mo
+share/locale/fy/LC_MESSAGES/baobab.mo
 share/locale/ga/LC_MESSAGES/baobab.mo
 share/locale/gd/LC_MESSAGES/baobab.mo
 share/locale/gl/LC_MESSAGES/baobab.mo
