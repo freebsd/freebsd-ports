@@ -1,12 +1,10 @@
 # Created by: Corey Smith <corsmith@gmail.com>
 
 PORTNAME=	zerotier
-DISTVERSION=	1.6.5
+DISTVERSION=	1.6.6
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/zerotier/zerotierone/pull/
-# PATCHFILES=	1043.patch:-p1
-PATCHFILES=	1304.patch:-p1
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Network virtualization everywhere
