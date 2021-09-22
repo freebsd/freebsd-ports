@@ -12,6 +12,7 @@ bin/pot
 %%DATADIR%%/common-flv.sh
 %%DATADIR%%/config.sh
 %%DATADIR%%/copy-in.sh
+%%DATADIR%%/copy-out.sh
 %%DATADIR%%/create-base.sh
 %%DATADIR%%/create-fscomp.sh
 %%DATADIR%%/create-private-bridge.sh
