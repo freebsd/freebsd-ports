@@ -1,6 +1,6 @@
 PORTNAME=	mongodb40-tools
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.0.24
+DISTVERSION=	4.0.27
 CATEGORIES=	databases
 
 MAINTAINER=	dev.ashevchuk@gmail.com
