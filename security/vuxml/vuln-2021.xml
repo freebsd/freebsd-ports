@@ -1,3 +1,31 @@
+  <vuln vid="7bba5b3b-1b7f-11ec-b335-d4c9ef517024">
+    <topic>mod_auth_mellon -- Redirect URL validation bypass</topic>
+    <affects>
+      <package>
+	<name>mod_auth_mellon</name>
+	<range><lt>0.18.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jakub Hrozek reports:</p>
+	<blockquote cite="https://github.com/latchset/mod_auth_mellon/releases/tag/v0.18.0">
+	  <p>Version 0.17.0 and older of mod_auth_mellon allows the redirect URL
+	    validation to be bypassed by specifying an URL formatted as
+	    ///fishing-site.example.com/logout.html</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2019-13038</cvename>
+      <url>https://github.com/latchset/mod_auth_mellon/releases/tag/v0.18.0</url>
+    </references>
+    <dates>
+      <discovery>2021-07-30</discovery>
+      <entry>2021-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7062bce0-1b17-11ec-9d9d-0022489ad614">
     <topic>Node.js -- August 2021 Security Releases (2)</topic>
     <affects>
