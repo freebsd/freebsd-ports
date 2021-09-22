@@ -1,11 +1,11 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 
 PORTNAME=	tnftp
-PORTVERSION=	20200705
+PORTVERSION=	20210827
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced FTP client from NetBSD
 
 USES=		libedit ncurses ssl
