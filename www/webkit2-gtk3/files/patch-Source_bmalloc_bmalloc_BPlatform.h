@@ -1,6 +1,6 @@
---- Source/bmalloc/bmalloc/BPlatform.h.orig	2020-08-12 09:17:57 UTC
+--- Source/bmalloc/bmalloc/BPlatform.h.orig	2021-09-22 23:05:58 UTC
 +++ Source/bmalloc/bmalloc/BPlatform.h
-@@ -159,6 +159,7 @@
+@@ -163,6 +163,7 @@
  #elif defined(__ARM_ARCH_6__) \
  || defined(__ARM_ARCH_6J__) \
  || defined(__ARM_ARCH_6K__) \

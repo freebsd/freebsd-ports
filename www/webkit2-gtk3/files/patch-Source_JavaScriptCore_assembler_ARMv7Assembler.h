@@ -1,6 +1,6 @@
---- Source/JavaScriptCore/assembler/ARMv7Assembler.h.orig	2020-08-12 09:17:52 UTC
+--- Source/JavaScriptCore/assembler/ARMv7Assembler.h.orig	2021-09-22 23:05:58 UTC
 +++ Source/JavaScriptCore/assembler/ARMv7Assembler.h
-@@ -2396,6 +2396,8 @@ class ARMv7Assembler { (public)
+@@ -2402,6 +2402,8 @@ class ARMv7Assembler { (public)
      {
  #if OS(DARWIN)
          sys_cache_control(kCacheFunctionPrepareForExecution, code, size);

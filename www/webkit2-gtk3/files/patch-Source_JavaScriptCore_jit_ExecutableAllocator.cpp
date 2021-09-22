@@ -1,6 +1,6 @@
---- Source/JavaScriptCore/jit/ExecutableAllocator.cpp.orig	2021-02-07 10:45:05 UTC
+--- Source/JavaScriptCore/jit/ExecutableAllocator.cpp.orig	2021-09-22 23:05:58 UTC
 +++ Source/JavaScriptCore/jit/ExecutableAllocator.cpp
-@@ -76,7 +76,7 @@ namespace JSC {
+@@ -95,7 +95,7 @@ namespace JSC {
  
  using namespace WTF;
  

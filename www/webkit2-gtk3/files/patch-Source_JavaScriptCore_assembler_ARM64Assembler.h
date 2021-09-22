@@ -1,6 +1,6 @@
---- Source/JavaScriptCore/assembler/ARM64Assembler.h.orig	2020-08-12 09:17:52 UTC
+--- Source/JavaScriptCore/assembler/ARM64Assembler.h.orig	2021-09-22 23:05:58 UTC
 +++ Source/JavaScriptCore/assembler/ARM64Assembler.h
-@@ -2825,6 +2825,8 @@ class ARM64Assembler { (public)
+@@ -2950,6 +2950,8 @@ class ARM64Assembler { (public)
      {
  #if OS(DARWIN)
          sys_cache_control(kCacheFunctionPrepareForExecution, code, size);

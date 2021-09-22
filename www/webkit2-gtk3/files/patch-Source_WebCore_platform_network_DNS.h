@@ -1,6 +1,6 @@
---- Source/WebCore/platform/network/DNS.h.orig	2020-09-30 07:03:48 UTC
+--- Source/WebCore/platform/network/DNS.h.orig	2021-09-22 23:05:58 UTC
 +++ Source/WebCore/platform/network/DNS.h
-@@ -29,6 +29,7 @@
+@@ -33,6 +33,7 @@
  #include <winsock2.h>
  #include <ws2tcpip.h>
  #else
