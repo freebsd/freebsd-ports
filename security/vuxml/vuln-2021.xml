@@ -1,3 +1,40 @@
+  <vuln vid="d4d21998-bdc4-4a09-9849-2898d9b41459">
+    <topic>zeek -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name></name>
+	<range><lt>4.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v4.0.4">
+	  <p> Paths from log stream make it into system() unchecked,
+	  potentially leading to commands being run on the system
+	  unintentionally. This requires either bad scripting or a
+	  malicious package to be installed, and is considered low
+	  severity. </p>
+	  <p> Fix potential unbounded state growth in the PIA
+	  analyzer when receiving a connection with either a large
+	  number of zero-length packets, or one which continues
+	  ack-ing unseen segments. It is possible to run Zeek out
+	  of memory in these instances and cause it to crash. Due
+	  to the possibility of this happening with packets received
+	  from the network, this is a potential DoS vulnerability.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v4.0.4</url>
+    </references>
+    <dates>
+      <discovery>2021-08-26</discovery>
+      <entry>2021-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7bba5b3b-1b7f-11ec-b335-d4c9ef517024">
     <topic>mod_auth_mellon -- Redirect URL validation bypass</topic>
     <affects>
