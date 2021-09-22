@@ -8,6 +8,9 @@ COMMENT=	Easy way to work around problems in Wine
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	Wine only runs on x86 architecture
+
 RUN_DEPENDS=	cabextract:archivers/cabextract
 
 USES=		perl5
