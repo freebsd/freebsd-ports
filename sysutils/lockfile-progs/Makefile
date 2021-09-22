@@ -1,7 +1,7 @@
 # Created by: Yasuhiro KIMURA <yasu@utahime.org>
 
 PORTNAME=	lockfile-progs
-PORTVERSION=	0.1.18
+DISTVERSION=	0.1.19
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -17,9 +17,9 @@ LIB_DEPENDS=	liblockfile.so:devel/liblockfile
 ALL_TARGET=	lockfile-create
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
-OPTIONS_DEFINE=	DOCS
-
 PORTDOCS=	TODO changelog
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lockfile-create ${STAGEDIR}${PREFIX}/bin
