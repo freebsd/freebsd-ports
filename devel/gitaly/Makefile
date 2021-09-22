@@ -1,6 +1,6 @@
 PORTNAME=	gitaly
-DISTVERSION=	14.2.2
-PORTREVISION=	1
+DISTVERSION=	14.3.0
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -33,7 +33,7 @@ RUN_DEPENDS=	${MY_DEPENDS} \
 		gitlab-shell>=9.3.0:devel/gitlab-shell
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
-USES=		gmake go:modules,no_targets pkgconfig
+USES=		cpe gmake go:modules,no_targets pkgconfig
 USE_RUBY=	yes
 
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
@@ -43,12 +43,12 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	94000ca352ea7d2c730cd913e7365690463a61b6
+GL_COMMIT=	1a0e5d9b50a5ae76b5a11fd09cf66d2213ffbef6
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 115dd
+# 137dd
 GH_TUPLE=	\
 		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.13.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -75,21 +75,30 @@ GH_TUPLE=	\
 		containerd:cgroups:2819c83ced99:containerd_cgroups/vendor/github.com/containerd/cgroups \
 		coreos:go-systemd:v22.3.1:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		dgryski:go-minhash:7fe510aff544:dgryski_go_minhash/vendor/github.com/dgryski/go-minhash \
 		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
 		dpotapov:go-spnego:c2c609116ad0:dpotapov_go_spnego/vendor/github.com/dpotapov/go-spnego \
+		ekzhu:minhash-lsh:5c06ee8586a1:ekzhu_minhash_lsh/vendor/github.com/ekzhu/minhash-lsh \
+		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
 		form3tech-oss:jwt-go:v3.2.2:form3tech_oss_jwt_go/vendor/github.com/form3tech-oss/jwt-go \
 		getsentry:sentry-go:v0.10.0:getsentry_sentry_go/vendor/github.com/getsentry/sentry-go \
 		git-lfs:git-lfs:2e1d981afbe3:git_lfs_git_lfs/vendor/github.com/git-lfs/git-lfs \
 		git-lfs:gitobj:v2.0.1:git_lfs_gitobj_v2/vendor/github.com/git-lfs/gitobj/v2 \
 		git-lfs:go-netrc:e0e9ca483a18:git_lfs_go_netrc/vendor/github.com/git-lfs/go-netrc \
 		git-lfs:wildmatch:v1.0.4:git_lfs_wildmatch/vendor/github.com/git-lfs/wildmatch \
+		go-enry:go-license-detector:v4.3.0:go_enry_go_license_detector_v4/vendor/github.com/go-enry/go-license-detector/v4 \
+		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
+		go-git:go-billy:v5.1.0:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
+		go-git:go-git:v5.3.0:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
 		go-gorp:gorp:v1.7.2:go_gorp_gorp/vendor/gopkg.in/gorp.v1 \
 		go-ole:go-ole:v1.2.4:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
+		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		godbus:dbus:v5.0.4:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:38f3c27a63bf:golang_crypto/vendor/golang.org/x/crypto \
+		golang:exp:e8c3332aa8e5:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:lint:83fdc39ff7b5:golang_lint/vendor/golang.org/x/lint \
 		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
@@ -118,14 +127,19 @@ GH_TUPLE=	\
 		hashicorp:go-uuid:v1.0.1:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
 		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		hashicorp:yamux:a95892c5f864:hashicorp_yamux/vendor/github.com/hashicorp/yamux \
+		hhatto:gorst:ca9f730cac5b:hhatto_gorst/vendor/github.com/hhatto/gorst \
+		imdario:mergo:v0.3.12:imdario_mergo/vendor/github.com/imdario/mergo \
+		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
 		jcmturner:aescts:v1.0.1:jcmturner_aescts/vendor/gopkg.in/jcmturner/aescts.v1 \
 		jcmturner:dnsutils:v1.0.1:jcmturner_dnsutils/vendor/gopkg.in/jcmturner/dnsutils.v1 \
 		jcmturner:gofork:v1.0.0:jcmturner_gofork/vendor/github.com/jcmturner/gofork \
 		jcmturner:gokrb5:v5.3.0:jcmturner_gokrb5/vendor/gopkg.in/jcmturner/gokrb5.v5 \
 		jcmturner:rpc:v0.0.2:jcmturner_rpc/vendor/gopkg.in/jcmturner/rpc.v0 \
+		jdkato:prose:v1.1.0:jdkato_prose/vendor/github.com/jdkato/prose \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
 		kelseyhightower:envconfig:v1.3.0:kelseyhightower_envconfig/vendor/github.com/kelseyhightower/envconfig \
+		kevinburke:ssh_config:4977a11b4351:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
 		lib:pq:v1.10.1:lib_pq/vendor/github.com/lib/pq \
 		libgit2:git2go:v31.4.12:libgit2_git2go_v31/vendor/github.com/libgit2/git2go/v31 \
 		lightstep:lightstep-tracer-common:a8dfcb80d3a7:lightstep_lightstep_tracer_common_gogo/vendor/github.com/lightstep/lightstep-tracer-common \
@@ -134,6 +148,9 @@ GH_TUPLE=	\
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
+		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
+		montanaflynn:stats:eeaced052adb:montanaflynn_stats/vendor/github.com/montanaflynn/stats \
+		neurosnap:sentences:v1.0.6:neurosnap_sentences/vendor/gopkg.in/neurosnap/sentences.v1 \
 		oklog:ulid:v2.0.2:oklog_ulid_v2/vendor/github.com/oklog/ulid/v2 \
 		olekukonko:tablewriter:v0.0.2:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		olekukonko:ts:78ecb04241c0:olekukonko_ts/vendor/github.com/olekukonko/ts \
@@ -150,8 +167,12 @@ GH_TUPLE=	\
 		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rubenv:sql-migrate:06338513c237:rubenv_sql_migrate/vendor/github.com/rubenv/sql-migrate \
 		rubyist:tracerx:787959303086:rubyist_tracerx/vendor/github.com/rubyist/tracerx \
+		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		sebest:xff:671bd2870b3a:sebest_xff/vendor/github.com/sebest/xff \
+		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		shirou:gopsutil:v2.20.1:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
+		shogo82148:go-shuffle:59829097ff3b:shogo82148_go_shuffle/vendor/github.com/shogo82148/go-shuffle \
+		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		ssgelm:cookiejarparser:v1.0.1:ssgelm_cookiejarparser/vendor/github.com/ssgelm/cookiejarparser \
 		stretchr:objx:v0.2.0:stretchr_objx/vendor/github.com/stretchr/objx \
@@ -160,7 +181,9 @@ GH_TUPLE=	\
 		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:goleak:v1.1.10:uber_go_goleak/vendor/go.uber.org/goleak \
 		uber:jaeger-client-go:v2.27.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
-		uber:jaeger-lib:v2.4.1:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
+		uber:jaeger-lib:v2.4.1:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib \
+		xanzy:ssh-agent:v0.3.0:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
+		gonum:gonum:v0.8.2:gonum/vendor/gonum.org/v1/gonum
 
 GL_TUPLE=	gitlab-org:gitlab-shell:50da611814d256c77e689977265ec7e07633a4dc:gitlab_org_gitlab_shell/vendor/gitlab.com/gitlab-org/gitlab-shell \
 		gitlab-org:labkit:397363e2404ac0276b1959373a1c1c2bc1610d67:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit

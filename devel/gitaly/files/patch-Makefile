@@ -1,15 +1,15 @@
---- Makefile.orig	2021-08-23 16:25:31 UTC
+--- Makefile.orig	2021-09-21 10:03:53 UTC
 +++ Makefile
-@@ -242,7 +242,7 @@ help:
+@@ -287,7 +287,7 @@ help:
  
  .PHONY: build
  ## Build Go binaries and install required Ruby Gems.
 -build: ${SOURCE_DIR}/.ruby-bundle libgit2
 +build: ${SOURCE_DIR}/.ruby-bundle
  	go install ${GO_LDFLAGS} -tags "${GO_BUILD_TAGS}" $(addprefix ${GITALY_PACKAGE}/cmd/, $(call find_commands))
- 	# We use version suffix for the gitaly-git2go binary to support compatibility contract between
- 	# gitaly and gitaly-git2go during upgrade deployment.
-@@ -433,9 +433,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
+ 	${Q}# We use version suffix for the gitaly-git2go binary to support compatibility contract between
+ 	${Q}# gitaly and gitaly-git2go during upgrade deployment.
+@@ -468,9 +468,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile
@@ -20,7 +20,7 @@
  	${Q}touch $@
  
  ${SOURCE_DIR}/NOTICE: ${BUILD_DIR}/NOTICE
-@@ -503,7 +501,7 @@ ${TOOLS_DIR}/protoc.zip: TOOL_VERSION = ${PROTOC_VERSI
+@@ -546,7 +544,7 @@ ${TOOLS_DIR}/protoc.zip: TOOL_VERSION = ${PROTOC_VERSI
  ${TOOLS_DIR}/protoc.zip: ${TOOLS_DIR}/protoc.version
  	${Q}if [ -z "${PROTOC_URL}" ]; then echo "Cannot generate protos on unsupported platform ${OS}" && exit 1; fi
  	curl -o $@.tmp --silent --show-error -L ${PROTOC_URL}
