@@ -1,0 +1,15 @@
+TIMESTAMP = 1632271728
+SHA256 (flaviotordini-musique-1.10.1_GH0.tar.gz) = 51ccbcdaee6394d3d0a4691143cb88ff7657e6df2f1cf7860ef165e14f30d903
+SIZE (flaviotordini-musique-1.10.1_GH0.tar.gz) = 505160
+SHA256 (flaviotordini-http-b85c564_GH0.tar.gz) = 9d758d1927c8f69d915c9ea32d289ef497aa737a044e9d1a9490d0471d4c44b4
+SIZE (flaviotordini-http-b85c564_GH0.tar.gz) = 11014
+SHA256 (flaviotordini-idle-6aa092d_GH0.tar.gz) = 9aa3ac940f900d8b6924492905ff1351e9af6224fdcb2d1b6e5a55af920c81eb
+SIZE (flaviotordini-idle-6aa092d_GH0.tar.gz) = 1675
+SHA256 (flaviotordini-js-13c9544_GH0.tar.gz) = e6dd9a47017f7893de6151acddf7f8d88fb44c46348b9dcdb86de1e0ec80474e
+SIZE (flaviotordini-js-13c9544_GH0.tar.gz) = 16200
+SHA256 (flaviotordini-media-65afcf5_GH0.tar.gz) = d7aabf768be14d41b2a46bc02c63acf6236a62dc952d3c24485b231706a1013e
+SIZE (flaviotordini-media-65afcf5_GH0.tar.gz) = 25066
+SHA256 (flaviotordini-sharedcache-024e759_GH0.tar.gz) = d723ed007010212fa1949e74721664c154c370864a8bbbefba79673636d0230c
+SIZE (flaviotordini-sharedcache-024e759_GH0.tar.gz) = 2443
+SHA256 (flaviotordini-updater-18ce1d0_GH0.tar.gz) = d134aceec7558fe477a2daf11fa768371de832425c0d762d6c78b2d351b46856
+SIZE (flaviotordini-updater-18ce1d0_GH0.tar.gz) = 24261
