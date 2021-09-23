@@ -21,4 +21,10 @@ LDFLAGS+=	-fopenmp
 
 PLIST_FILES=	bin/ParaFly
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USES+=		compiler:gcc-c++11-lib
+.endif
+
 .include <bsd.port.mk>
