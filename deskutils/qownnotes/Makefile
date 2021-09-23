@@ -1,5 +1,5 @@
 PORTNAME=	qownnotes
-PORTVERSION=	21.9.4
+PORTVERSION=	21.9.9
 CATEGORIES=	deskutils
 MASTER_SITES=	https://download.tuxfamily.org/qownnotes/src/
 
