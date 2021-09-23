@@ -1,5 +1,6 @@
 PORTNAME=	pipewire
 DISTVERSION=	0.3.36
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -61,5 +62,8 @@ post-patch-MEDIASESSION-on:
 # alsa-seq is not supported & causes SIGSEGV with media session
 	@${REINPLACE_CMD} 's| alsa-seq|\ #alsa-seq|g' \
 		${WRKSRC}/src/daemon/media-session.d/media-session.conf
+# start media session by default
+	@${REINPLACE_CMD} '/manager_args/ s/@sm_comment@//g' \
+		${WRKSRC}/src/daemon/pipewire.conf.in
 
 .include <bsd.port.mk>
