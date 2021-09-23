@@ -18,6 +18,7 @@ share/applications/gnome-location-panel.desktop
 share/applications/gnome-lock-panel.desktop
 share/applications/gnome-microphone-panel.desktop
 share/applications/gnome-mouse-panel.desktop
+share/applications/gnome-multitasking-panel.desktop
 share/applications/gnome-notifications-panel.desktop
 share/applications/gnome-online-accounts-panel.desktop
 share/applications/gnome-power-panel.desktop
@@ -45,6 +46,8 @@ share/gettext/its/sounds.loc
 %%DATADIR%%/keybindings/50-accessibility.xml
 %%DATADIR%%/pixmaps/noise-texture-light.png
 share/gnome-shell/search-providers/gnome-control-center-search-provider.ini
+share/icons/gnome-logo-text-dark.svg
+share/icons/gnome-logo-text.svg
 share/icons/hicolor/16x16/apps/gnome-power-manager.png
 share/icons/hicolor/16x16/apps/goa-panel.png
 share/icons/hicolor/16x16/apps/preferences-color.png
@@ -73,6 +76,7 @@ share/icons/hicolor/48x48/apps/goa-panel.png
 share/icons/hicolor/48x48/apps/preferences-color.png
 share/icons/hicolor/48x48/apps/preferences-system-time.png
 share/icons/hicolor/64x64/apps/preferences-color.png
+share/icons/hicolor/scalable/apps/org.gnome.Settings-multitasking-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings.svg
 share/icons/hicolor/scalable/apps/preferences-color.svg
@@ -80,6 +84,7 @@ share/icons/hicolor/scalable/apps/preferences-desktop-display.svg
 share/icons/hicolor/scalable/apps/preferences-system-time.svg
 share/icons/hicolor/scalable/categories/slideshow-symbolic.svg
 share/icons/hicolor/scalable/emblems/slideshow-emblem.svg
+share/icons/hicolor/scalable/status/info-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Settings-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
