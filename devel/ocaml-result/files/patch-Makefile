@@ -1,0 +1,8 @@
+--- Makefile.orig	2020-02-20 07:48:47 UTC
++++ Makefile
+@@ -1,4 +1,5 @@
+ INSTALL_ARGS := $(if $(PREFIX),--prefix $(PREFIX),)
++INSTALL_ARGS += $(if $(LIBDIR),--libdir $(LIBDIR),)
+ 
+ default:
+ 	dune build @install

@@ -1,11 +1,14 @@
 %%OCAML_SITELIBDIR%%/result/META
+%%OCAML_SITELIBDIR%%/result/dune-package
+%%OCAML_SITELIBDIR%%/result/opam
 %%OCAML_SITELIBDIR%%/result/result.a
 %%OCAML_SITELIBDIR%%/result/result.cma
 %%OCAML_SITELIBDIR%%/result/result.cmi
-%%OCAML_SITELIBDIR%%/result/result.cmo
+%%OCAML_SITELIBDIR%%/result/result.cmt
 %%OCAML_SITELIBDIR%%/result/result.cmx
 %%OCAML_SITELIBDIR%%/result/result.cmxa
 %%OCAML_SITELIBDIR%%/result/result.cmxs
-%%OCAML_SITELIBDIR%%/result/result.install
 %%OCAML_SITELIBDIR%%/result/result.ml
-%%OCAML_SITELIBDIR%%/result/result.o
+%%PORTDOCS%%share/doc/ocaml/result/CHANGES.md
+%%PORTDOCS%%share/doc/ocaml/result/LICENSE.md
+%%PORTDOCS%%share/doc/ocaml/result/README.md
