@@ -2,7 +2,7 @@
     <topic>zeek -- several vulnerabilities</topic>
     <affects>
       <package>
-	<name></name>
+	<name>zeek</name>
 	<range><lt>4.0.4</lt></range>
       </package>
     </affects>
