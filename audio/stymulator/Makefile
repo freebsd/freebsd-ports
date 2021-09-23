@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MANPAGE1=	ymplayer.1 ym2wav.1
 PLIST_FILES=	bin/ym2wav bin/ymplayer bin/stymulator man/man1/ymplayer.1.gz \
 		man/man1/ym2wav.1.gz
+LDFLAGS+=	${NCURSESLIBS}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lncurses|$$(LDFLAGS) -lncurses|' \

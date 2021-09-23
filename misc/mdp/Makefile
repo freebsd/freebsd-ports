@@ -14,7 +14,7 @@ USES=		gmake ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	visit1985
 
-MAKE_ARGS=	CURSES=${NCURSES_IMPL}
+MAKE_ARGS=	LDLIBS="${NCURSESLIBS}"
 
 PLIST_FILES=	bin/mdp \
 		share/man/man1/mdp.1.gz

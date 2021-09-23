@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 USES=		gmake ncurses pkgconfig
 
 ALL_TARGET=	tty-clock
-LDFLAGS+=	-l${NCURSES_IMPL}
+LDFLAGS+=	${NCURSESLIBS}
 
 PLIST_FILES=	bin/tty-clock \
 		share/man/man1/tty-clock.1.gz

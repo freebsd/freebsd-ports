@@ -16,7 +16,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libunistring.so:devel/libunistring
 
 USES=		cmake:noninja compiler:c++17-lang localbase \
-		ncurses:port pkgconfig readline
+		ncurses:ports pkgconfig readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	dankamongmen
 USE_LDCONFIG=	yes

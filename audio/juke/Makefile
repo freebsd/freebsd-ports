@@ -15,6 +15,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	VI_BINDINGS
 VI_BINDINGS_DESC=	Use vi-like key bindings
+MAKE_ARGS+=	LIBS="${NCURSESLIBS}"
 
 VI_BINDINGS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-vi
 

@@ -20,7 +20,7 @@ OPTIONS_SUB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR}	\
 		--enable-docdir=${DOCSDIR}	\
-		--enable-curses=${NCURSES_IMPL} \
+		--enable-curses="${NCURSESLIBS}" \
 		--enable-static
 
 USE_LDCONFIG=	yes

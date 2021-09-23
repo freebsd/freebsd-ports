@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/doc/copying.txt
 
 USES=		gmake ncurses
 MAKE_ARGS=	EXT= PREFIX=${PREFIX} docsubdir=${PORTNAME} \
-		mandir=${PREFIX}/man LIB_CURSES=-l${NCURSES_IMPL}
+		mandir=${PREFIX}/man LIB_CURSES="${NCURSESILBS}
 CFLAGS+=	-I${NCURSESINC}
 
 OPTIONS_DEFINE=	DOCS NLS

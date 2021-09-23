@@ -15,7 +15,7 @@ GH_ACCOUNT=	mpereira
 USES=		gmake ncurses
 TEST_TARGET=	test
 
-MAKE_ARGS=	NCURSES=-l${NCURSES_IMPL}
+MAKE_ARGS=	NCURSES="${NCURSESLIBS}"
 
 PORTDOCS=	*
 PLIST_FILES=	bin/ttysolitaire

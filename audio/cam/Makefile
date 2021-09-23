@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		ncurses tar:tgz
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
-		LIBS="${LDFLAGS} -lncurses" \
+		LIBS="${LDFLAGS} ${NCURSESLIBS}" \
 		BINDIR="${PREFIX}/bin" \
 		MANDIR="${PREFIX}/share/man/man1" \
 		XEFILE=""

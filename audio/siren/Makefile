@@ -69,7 +69,7 @@ CONFIGURE_ARGS=	alsa=no \
 		portaudio=no
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lcurses|-lncurses|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lcurses|${NCURSESLIBS}|' ${WRKSRC}/configure
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/siren

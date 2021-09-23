@@ -133,7 +133,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,fail "ncursesw",true,; s,fail "libcrypto",true,' \
 		-e 's,fail "libssl",true,' \
 		${WRKSRC}/config.sh
-	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB} -lcrypto -l${NCURSES_IMPL}|;s|-Werror||' \
+	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB} -lcrypto ${NCURSESLIBS}|;s|-Werror||' \
 		${WRKSRC}/Makefile
 
 post-install:

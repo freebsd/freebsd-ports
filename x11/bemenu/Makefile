@@ -26,7 +26,7 @@ BACKEND_DESC=	Backend
 
 NCURSES_USES=		ncurses
 NCURSES_MAKE_ARGS=	curses_CFLAGS="-I${NCURSESINC}" \
-			curses_LIBS="-L${NCURSESLIB} -l${NCURSES_IMPL}"
+			curses_LIBS="-L${NCURSESLIB} ${NCURSESLIBS}"
 NCURSES_VARS=		_BEMENU_RENDERERS+=curses
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \

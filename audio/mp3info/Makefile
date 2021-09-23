@@ -27,6 +27,7 @@ GTK2_ALL_TARGET=	gmp3info
 GTK2_PLIST_FILES=	bin/gmp3info
 GTK2_USE=		GNOME=gtk20
 GTK2_USES=		gnome pkgconfig
+MAKE_ARGS=	LIBS="\$${LDFLAGS} ${NCURSESLIBS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp3info ${STAGEDIR}${PREFIX}/bin/

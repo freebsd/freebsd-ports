@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 USES=		ncurses sdl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
+MAKE_ARGS=	LIBS="${NCURSESLIBS}"
 
 PLIST_FILES=	bin/tcd \
 		man/man1/tcd.1.gz

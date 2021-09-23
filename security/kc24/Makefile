@@ -41,6 +41,6 @@ PLIST_FILES=		bin/kc man/man1/kc.1.gz
 MAKE_ENV+=		BUNDLED_BCRYPT=y
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lncursesw|-l${NCURSES_IMPL}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-lncursesw|${NCURSESLIBS}|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

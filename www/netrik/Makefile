@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} "s|^CFLAGS =|CFLAGS?=|" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} "s|ncursesw|${NCURSES_IMPL}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} "s|-lncursesw|${NCURSESLIBS}|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} "s/#include <ncursesw\//#include </" \
 		${WRKSRC}/*.c
 

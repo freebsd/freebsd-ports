@@ -20,7 +20,7 @@ USES=		gmake ncurses
 PLIST_FILES=	man/man8/powermon.8.gz sbin/powermon
 
 post-patch:
-	${REINPLACE_CMD} 's/cursesw/${NCURSES_IMPL}/g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's/-lcursesw/${NCURSESLIBS}/g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/release/powermon \

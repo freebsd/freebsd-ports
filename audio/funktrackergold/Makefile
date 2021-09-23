@@ -18,7 +18,7 @@ BROKEN_armv7=		fails to compile: function definition is not allowed here
 USES=		compiler:nestedfct ncurses tar:tgz
 
 WRKSRC=		${WRKDIR}/funkgold
-MAKE_ARGS=	EXTRA_LDFLAGS="-lpthread"
+MAKE_ARGS=	EXTRA_LDFLAGS="-lpthread ${NCURSESLIBS}"
 
 PORTDOCS=	INSTALL
 PLIST_FILES=	bin/funkgold
