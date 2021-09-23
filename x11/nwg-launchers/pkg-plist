@@ -3,7 +3,7 @@ bin/nwgdmenu
 bin/nwggrid
 bin/nwggrid-server
 %%DATADIR%%/icon-missing.png
-%%LIBRSVG2%%%%DATADIR%%/icon-missing.svg
+%%DATADIR%%/icon-missing.svg
 %%DATADIR%%/nwgbar/bar.json
 %%DATADIR%%/nwgbar/style.css
 %%DATADIR%%/nwgdmenu/style.css

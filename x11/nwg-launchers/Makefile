@@ -1,7 +1,10 @@
 PORTNAME=	nwg-launchers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.2
 CATEGORIES=	x11
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	7dc2a48e79a0.patch:-p1 # https://github.com/nwg-piotr/nwg-launchers/pull/187
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GTK-based launchers: application grid, button bar, dmenu for sway and other window managers
@@ -16,16 +19,12 @@ USE_GITHUB=	yes
 USE_GNOME=	gtkmm30
 GH_ACCOUNT=	nwg-piotr
 
-OPTIONS_DEFINE=	GLS LIBRSVG2
-OPTIONS_DEFAULT=GLS LIBRSVG2
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	GLS
+OPTIONS_DEFAULT=GLS
 
 GLS_DESC=		Layer-shell support
 GLS_LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 GLS_MESON_ENABLED=	layer-shell
-
-LIBRSVG2_USE=		GNOME=librsvg2
-LIBRSVG2_MESON_ENABLED=	support-svg
 
 post-patch:
 # Respect PREFIX when looking for .desktop files
