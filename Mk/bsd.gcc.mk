@@ -21,8 +21,8 @@
 # If no arguments are specified, GCC is added as both a build dependency
 # and a run time dependency.
 #
-# (USE_GCC=any is deprecated, must not be used for new ports, and should
-# be migrated to USE_GCC=yes or completely removed if possible.)
+# (USE_GCC=any is deprecated - and now an odd way to write USE_GCC=yes.
+# Do *not* use! It will be removed shortly.)
 #
 #
 # Examples:
