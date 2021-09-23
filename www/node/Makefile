@@ -1,8 +1,8 @@
 PORTNAME=	node
 DISTVERSIONPREFIX=	v
-DISTVERSION=	16.9.1
+DISTVERSION=	16.10.0
 CATEGORIES=	www
-MASTER_SITES=	http://nodejs.org/dist/v${DISTVERSION}/
+MASTER_SITES=	https://nodejs.org/dist/v${DISTVERSION}/
 
 MAINTAINER=	bhughes@FreeBSD.org
 COMMENT=	V8 JavaScript for client and server
@@ -69,7 +69,7 @@ MAKE_ENV+=	CC.host=${CC} CFLAGS.host="${CFLAGS}" \
 		LINK.host=${CXX} LDFLAGS.host="${LDFLAGS}"
 
 BUILD_DEPENDS+=	brotli>=1.0.9,1:archivers/brotli \
-		c-ares>=1.17.1:dns/c-ares \
+		c-ares>=1.17.2:dns/c-ares \
 		libuv>=1.42.0:devel/libuv \
 		libnghttp2>=1.42.0:www/libnghttp2 \
 		objdump:devel/binutils
