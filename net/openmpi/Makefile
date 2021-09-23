@@ -9,8 +9,6 @@ COMMENT=	High Performance Message Passing Library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv6=		fails to package: pkg-static: mca_patcher_overwrite.la: No such file or directory
-BROKEN_armv7=		fails to package: pkg-static: mca_patcher_overwrite.la: No such file or directory
 BROKEN_sparc64=		fails to compile on sparc64
 
 LIB_DEPENDS=	libhwloc.so.15:devel/hwloc2 \
@@ -108,6 +106,12 @@ SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 
 .if ${FORTRAN_DEFAULT} == gfortran && ${GCC_DEFAULT} >= 10
 FCFLAGS+=	-fallow-argument-mismatch
+.endif
+
+.if ${ARCH} != aarch64 && ${ARCH} != amd64 && ${ARCH} != i386 && !${ARCH:Mpowerpc*}
+PLIST_SUB+=	NO_MCA_PATCHER_OVERWRITE="@comment "
+.else
+PLIST_SUB+=	NO_MCA_PATCHER_OVERWRITE=""
 .endif
 
 post-patch:

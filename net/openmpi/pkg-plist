@@ -237,8 +237,8 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/lib/openmpi/mca_osc_rdma.so
 %%MPIDIR%%/lib/openmpi/mca_osc_sm.la
 %%MPIDIR%%/lib/openmpi/mca_osc_sm.so
-%%MPIDIR%%/lib/openmpi/mca_patcher_overwrite.la
-%%MPIDIR%%/lib/openmpi/mca_patcher_overwrite.so
+%%NO_MCA_PATCHER_OVERWRITE%%%%MPIDIR%%/lib/openmpi/mca_patcher_overwrite.la
+%%NO_MCA_PATCHER_OVERWRITE%%%%MPIDIR%%/lib/openmpi/mca_patcher_overwrite.so
 %%MPIDIR%%/lib/openmpi/mca_plm_isolated.la
 %%MPIDIR%%/lib/openmpi/mca_plm_isolated.so
 %%MPIDIR%%/lib/openmpi/mca_plm_rsh.la
