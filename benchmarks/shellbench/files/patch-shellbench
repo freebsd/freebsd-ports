@@ -1,0 +1,80 @@
+--- shellbench.orig	2020-08-06 15:07:20 UTC
++++ shellbench
+@@ -12,6 +12,8 @@ COUNT_WIDTH=${SHELLBENCH_COUNT_WIDTH:-10}
+ SHOW_ERROR=''
+ CORRECTION_MODE=''
+ NULLLOOP_COUNT=''
++ALL_SAMPLES=''
++SAMPLE_DIR=%%DATADIR%%
+ 
+ usage() {
+ cat<<HERE
+@@ -20,10 +22,19 @@ Usage: shellbench [options] files...
+   -s, --shell SHELL[,SHELL...]  The shell(s) to run the benchmark. [default: sh]
+   -t, --time SECONDS            Benchmark execution time. (SECONDS > 0) [default: 3]
+   -w, --warmup SECONDS          Benchmark preparation time. (SECONDS > 0) [default: 1]
++  -a, --allsamples              Execute all sample scripts
+   -c, --correct                 Enable correction mode to eliminate loop overhead.
+   -e, --error                   Display error details.
+   -h, --help                    You're looking at it.
++  -l, --listsamples             List names of the sample scripts
++
++The sample scripts can be found in %%DATADIR%% .
+ HERE
++if [ -r "%%DOCSDIR%%/README.md" ]; then
++cat<<HERE
++Their format is documented in %%DOCSDIR%%/README.md .
++HERE
++fi
+ }
+ 
+ preprocess() {
+@@ -313,6 +324,14 @@ display_footer() {
+ 
+ PARAMS=''
+ 
++all_samples() {
++  PARAMS="$PARAMS "$(echo %%DATADIR%%/*.sh)
++}
++
++list_samples() {
++  cd %%DATADIR%%; echo *.sh
++}
++
+ abort() { echo "$@" >&2; exit 1; }
+ unknown() { abort "Unrecognized option '$1'"; }
+ required() { [ $# -gt 1 ] || abort "Option '$1' requires an argument"; }
+@@ -327,9 +346,11 @@ parse_options() {
+       -s | --shell  ) required "$@" && shift; SHELLS=$1 ;;
+       -t | --time   ) required "$@" && shift; BENCHMARK_TIME=$1 ;;
+       -w | --warmup ) required "$@" && shift; WARMUP_TIME=$1 ;;
++      -a | --allsamples ) ALL_SAMPLES=1 ;;
+       -c | --correct) CORRECTION_MODE=1 ;;
+       -e | --error  ) SHOW_ERROR=1 ;;
+       -h | --help   ) usage; exit ;;
++      -l | --listsamples ) list_samples; exit ;;
+       --) shift; params PARAMS $(($OPTIND - $#)) $OPTIND; break ;;
+       -?*) unknown "$@" ;;
+       *) param PARAMS $(($OPTIND - $#))
+@@ -342,6 +363,11 @@ ${__SOURCED__:+return}
+ 
+ trap '' HUP
+ parse_options "$@"
++
++[ "$ALL_SAMPLES" ] && all_samples
++
++[ -z "$PARAMS" ] && { usage; exit; }
++
+ eval "set -- $PARAMS"
+ 
+ [ "$CORRECTION_MODE" ] && NULLLOOP_COUNT=${SHELLBENCH_NULLLOOP_COUNT:-}
+@@ -352,6 +378,9 @@ display_header "$SHELLS"
+   $(printf '%s\n' '#bench "loop only"' '@begin' '@end' | preprocess)
+ HERE
+ for file in "$@"; do
++  [ -r "$file" ] || if [ -r "%%DATADIR%%/$file" ]; then
++     file="%%DATADIR%%/$file"
++  fi
+   preprocess < "$file" | process "${file##*/}"
+ done
+ display_footer

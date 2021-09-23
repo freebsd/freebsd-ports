@@ -1,0 +1,7 @@
+Shellbench is a benchmark utility for POSIX shell comparison.
+
+It allows to compare the performance of shell commands and operations
+and comes with a set of sample scripts. Supported shells are sh, bash,
+dash, ksh, zsh and many more.
+
+WWW: https://github.com/shellspec/shellbench

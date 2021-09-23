@@ -1,0 +1,10 @@
+bin/shellbench
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%DATADIR%%/assign.sh
+%%DATADIR%%/cmp.sh
+%%DATADIR%%/count.sh
+%%DATADIR%%/eval.sh
+%%DATADIR%%/func.sh
+%%DATADIR%%/null.sh
+%%DATADIR%%/output.sh
+%%DATADIR%%/subshell.sh

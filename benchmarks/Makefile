@@ -85,6 +85,7 @@
     SUBDIR += scimark2c
     SUBDIR += siege
     SUBDIR += sipp
+    SUBDIR += shellbench
     SUBDIR += slowloris
     SUBDIR += smhasher
     SUBDIR += spp
