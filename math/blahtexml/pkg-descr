@@ -1,0 +1,11 @@
+Blahtex is a program written in C++, which converts an equation given in a
+syntax close to TeX into MathML. It is designed by David Harvey and is aimed at
+supporting equations in MediaWiki.
+
+Blahtexml is a simple extension of blahtex, written by Gilles Van Assche. In
+addition to the functionality of blahtex, blahtexml has XML processing in mind
+and is able to process a whole XML document into another XML document. Instead
+of converting only one formula at a time, blahtexml can convert all the formulas
+of the given XML file into MathML.
+
+WWW: http://gva.noekeon.org/blahtexml/

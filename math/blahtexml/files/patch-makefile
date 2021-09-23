@@ -1,0 +1,11 @@
+--- makefile.orig	2021-09-23 07:29:40 UTC
++++ makefile
+@@ -120,7 +120,7 @@ blahtex-mac: $(BINDIR) $(OBJECTS)  $(HEADERS)
+ 	$(CXX) $(CFLAGS) -o blahtex -liconv $(OBJECTS)
+ 
+ blahtexml-linux:  $(BINDIR_XMLIN) $(OBJECTS_XMLIN)  $(HEADERS_XMLIN)
+-	$(CXX) $(CFLAGS) -o blahtexml $(OBJECTS_XMLIN) -lxerces-c
++	$(CXX) $(CFLAGS) $(LDFLAGS) -o blahtexml $(OBJECTS_XMLIN) -lxerces-c
+ 
+ blahtexml-mac: $(BINDIR_XMLIN) $(OBJECTS_XMLIN)  $(HEADERS_XMLIN)
+ 	$(CXX) $(CFLAGS) -o blahtexml -liconv $(OBJECTS_XMLIN) -lxerces-c
