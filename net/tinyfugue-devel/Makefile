@@ -1,11 +1,10 @@
-# Created by: mike@binghamton.edu
+# $FreeBSD: head/net/tinyfugue/Makefile 525173 2020-02-04 16:17:25Z dinoex $
 
-PORTNAME=	tf
-PORTVERSION=	5.0b8
-PORTREVISION=	4
+PORTNAME=	tinyfugue
+PORTVERSION=	5.1.3
+PORTREVISION=	0
 CATEGORIES=	net games
-MASTER_SITES=	SF/tinyfugue/tinyfugue/5.0%20beta%208
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
+PKGNAMESUFFIX=	-devel${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Popular programmable MUD client, with macro support and more
@@ -15,22 +14,24 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	ingwarsw
+
 USES=		ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-manpage --enable-version --enable-symlink \
+		--exec-prefix=${PREFIX} \
+		--bindir=${PREFIX}/bin \
+		--mandir=${PREFIX}/man \
 		--datadir=${PREFIX}/lib --with-inclibpfx=${LOCALBASE}
 LDFLAGS+=	-L${LOCALBASE}
-
-PLIST_SUB=	DISTNAME=${DISTNAME}
-
-post-patch:
-	${REINPLACE_CMD} 's:@.*dir@:$${DESTDIR}&:' ${WRKSRC}/unix/vars.mak.in
-	${REINPLACE_CMD} '/ln -s/s@(TF)@(TF:T)@' ${WRKSRC}/unix/unix.mak
+PLIST_SUB=	DISTNAME=tf-development
 
 post-build:
 	${STRIP_CMD} ${WRKSRC}/src/tf
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/src/tf.1.nroffman ${STAGEDIR}${PREFIX}/man/man1/tf.1
+	${INSTALL_MAN} ${WRKSRC}/src/tf.1.nroffman ${STAGEDIR}${PREFIX}/man/man1/tf-development.1
+	${RM} ${STAGEDIR}${PREFIX}/bin/tf
 
 .include <bsd.port.mk>
