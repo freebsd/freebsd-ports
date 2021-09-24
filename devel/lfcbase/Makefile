@@ -10,12 +10,10 @@ LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		autoreconf libtool
+USES=		libtool ncurses
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	${REINPLACE_CMD} 's|-O3||g' ${WRKSRC}/src/Makefile.in
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblfcbase.so.2
 
 .include <bsd.port.mk>
