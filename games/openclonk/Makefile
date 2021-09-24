@@ -14,6 +14,7 @@ LICENSE=	ISCL CC0-1.0
 LICENSE_COMB=	multi
 LICENSE_FILE_ISCL=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		fails to compile: mmintrin.h:50:12: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
 BROKEN_powerpc64=	fails to compile: C4Texture.cpp:260:13: error: 'stoul' is not a member of 'std'
 
 LIB_DEPENDS=	libalut.so:audio/freealut \
