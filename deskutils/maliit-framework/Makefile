@@ -1,5 +1,5 @@
 PORTNAME=	framework
-DISTVERSION=	2.0.0
+DISTVERSION=	2.1.1
 CATEGORIES=	deskutils kde
 PKGNAMEPREFIX=	maliit-
 

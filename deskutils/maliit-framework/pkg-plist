@@ -1,4 +1,3 @@
-bin/maliit-exampleapp-plainqt
 bin/maliit-server
 include/maliit-2/maliit-glib/maliitattributeextension.h
 include/maliit-2/maliit-glib/maliitattributeextensionregistry.h
@@ -38,10 +37,10 @@ lib/cmake/MaliitPlugins/MaliitPluginsTargets.cmake
 lib/gtk-3.0/3.0.0/immodules/libim-wayland.so
 lib/libmaliit-glib.so
 lib/libmaliit-glib.so.2
-lib/libmaliit-glib.so.2.0.0
+lib/libmaliit-glib.so.2.1.1
 lib/libmaliit-plugins.so
 lib/libmaliit-plugins.so.2
-lib/libmaliit-plugins.so.2.0.0
+lib/libmaliit-plugins.so.2.1.1
 lib/qt5/mkspecs/features/maliit-defines.prf
 lib/qt5/mkspecs/features/maliit-framework.prf
 lib/qt5/mkspecs/features/maliit-plugins.prf
@@ -55,4 +54,4 @@ share/dbus-1/services/org.maliit.server.service
 share/doc/maliit-framework/INSTALL.local
 share/doc/maliit-framework/LICENSE.LGPL
 share/doc/maliit-framework/NEWS
-share/doc/maliit-framework/README
+share/doc/maliit-framework/README.md
