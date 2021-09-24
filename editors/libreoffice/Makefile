@@ -329,6 +329,7 @@ post-patch:
 
 pre-configure:
 	@${TOUCH} ${WRKSRC}/autogen.lastrun
+	${CP} ${FILESDIR}/skia-freetype2.11.patch ${WRKSRC}/external/skia
 
 post-configure:
 	@${TOUCH} ${WRKSRC}/src.downloaded
