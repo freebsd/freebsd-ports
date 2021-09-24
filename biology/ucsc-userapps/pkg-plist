@@ -1,3 +1,4 @@
+bin/kent
 bin/ucsc-shell
 userapps/bin/aNotB
 userapps/bin/addCols
