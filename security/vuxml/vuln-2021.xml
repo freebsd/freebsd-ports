@@ -1,3 +1,33 @@
+  <vuln vid="b6c875f1-1d76-11ec-ae80-704d7b472482">
+    <topic>chromium -- use after free in Portals</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>94.0.4606.61</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/09/stable-channel-update-for-desktop_24.html">
+	  <p>][1251727] High CVE-2021-37973 : Use after free in Portals.
+	    Reported by Clement Lecigne from Google TAG, with technical
+	    assistance from Sergei Glazunov and Mark Brand from Google Project
+	    Zero on 2021-09-21</p>
+	  <p>Google is aware that an exploit for CVE-2021-37973 exists in the wild.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-37973</cvename>
+      <url>https://chromereleases.googleblog.com/2021/09/stable-channel-update-for-desktop_24.html</url>
+    </references>
+    <dates>
+      <discovery>2021-09-24</discovery>
+      <entry>2021-09-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d4d21998-bdc4-4a09-9849-2898d9b41459">
     <topic>zeek -- several vulnerabilities</topic>
     <affects>
