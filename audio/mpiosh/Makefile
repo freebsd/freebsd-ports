@@ -10,6 +10,9 @@ DISTNAME=	mpio-${PORTVERSION:S|.p|_pre|}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digit@lway MPIO MP3 player tool
 
+DEPRECATED=	Abandoned upstream, no new release since 2004
+EXPIRATION_DATE=2021-12-31
+
 USES=		autoreconf iconv libtool readline
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
