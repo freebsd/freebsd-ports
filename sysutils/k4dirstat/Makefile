@@ -1,10 +1,10 @@
 # Created by: Stefan Jahn <stefan.jahn@nemesis-sektor.de>
 
 PORTNAME=	k4dirstat
-PORTVERSION=	3.2.2
+PORTVERSION=	3.3.0
 CATEGORIES=	sysutils kde
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE utility that sums up disk usage for directory trees
 
 LICENSE=	GPLv2
