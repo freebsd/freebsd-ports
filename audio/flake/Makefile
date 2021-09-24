@@ -10,6 +10,9 @@ COMMENT=	FLAC audio encoder
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Abandoned upstream, no new release since 2007
+EXPIRATION_DATE=2021-12-31
+
 CONFIGURE_ARGS+=	--cc="${CC}"
 HAS_CONFIGURE=	yes
 USES=		gmake tar:bzip2
