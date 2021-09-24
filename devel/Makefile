@@ -41,6 +41,7 @@
     SUBDIR += R-cran-evaluate
     SUBDIR += R-cran-fansi
     SUBDIR += R-cran-filelock
+    SUBDIR += R-cran-fontawesome
     SUBDIR += R-cran-foreach
     SUBDIR += R-cran-future
     SUBDIR += R-cran-future.apply
