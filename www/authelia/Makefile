@@ -12,6 +12,9 @@ COMMENT=	Single sign-on multi-factor portal for web apps
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	imports modernc.org/libc/errno: build constraints exclude all Go files
+BROKEN_armv6=	imports modernc.org/libc/errno: build constraints exclude all Go files
+BROKEN_armv7=	imports modernc.org/libc/errno: build constraints exclude all Go files
 BROKEN_i386=	imports modernc.org/libc/errno: build constraints exclude all Go files
 
 USES=		go:modules
