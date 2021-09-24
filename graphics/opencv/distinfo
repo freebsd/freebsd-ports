@@ -1,4 +1,4 @@
-TIMESTAMP = 1626600231
+TIMESTAMP = 1632464301
 SHA256 (opencv-opencv-4.5.3_GH0.tar.gz) = 77f616ae4bea416674d8c373984b20c8bd55e7db887fd38c6df73463a0647bab
 SIZE (opencv-opencv-4.5.3_GH0.tar.gz) = 89168276
 SHA256 (WeChatCV-opencv_3rdparty-a8b69ccc738421293254aec5ddb38bd523503252_GH0.tar.gz) = 7a16ad6ca511c620c2a4cbef2c7cf1ff5c31bd530ac7b43ee2ea8481683df20a
@@ -15,3 +15,5 @@ SHA256 (opencv-opencv_3rdparty-8afa57abc8229d611c4937165d20e2a2d9fc5a12_GH0.tar.
 SIZE (opencv-opencv_3rdparty-8afa57abc8229d611c4937165d20e2a2d9fc5a12_GH0.tar.gz) = 63301261
 SHA256 (opencv-opencv_3rdparty-a56b6ac6f030c312b2dce17430eef13aed9af274_GH0.tar.gz) = 6d3552455d927dd28cdd6a78470398208ff2167b19b0dd51ab30a241d900cb4c
 SIZE (opencv-opencv_3rdparty-a56b6ac6f030c312b2dce17430eef13aed9af274_GH0.tar.gz) = 135706483
+SHA256 (998406d20e93aa36b26fd56506f3ea8a82b43c24.patch) = bce0f541613ac800c9f84bffde2f21b035b0528035e89495e7a49c94546334b7
+SIZE (998406d20e93aa36b26fd56506f3ea8a82b43c24.patch) = 1074
