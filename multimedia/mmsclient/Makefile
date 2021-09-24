@@ -12,6 +12,9 @@ COMMENT=	Tool to download Microsoft Media streams
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandoned upstream, Microsoft deprecated MMS in 2003
+EXPIRATION_DATE=2021-12-31
+
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mmsclient man/man1/mmsclient.1.gz
 
