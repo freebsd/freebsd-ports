@@ -5076,6 +5076,7 @@
     SUBDIR += py-pyvisa
     SUBDIR += py-pyvisa-py
     SUBDIR += py-pyxb
+    SUBDIR += py-pyyaml-env-tag
     SUBDIR += py-pyyaml-include
     SUBDIR += py-pyzipper
     SUBDIR += py-q

@@ -1,0 +1,8 @@
+This package was inspired by the Ruby package "yaml-env-tag".  Its main
+purpose is to reference environment variables in YAML scripts.
+
+In contrast to other Python packages, that provide similar functionality, e.g.
+"pyyaml-tags" it also offers to define defaults and to have the values not only
+as strings.
+
+WWW: https://github.com/waylan/pyyaml-env-tag
