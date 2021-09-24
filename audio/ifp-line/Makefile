@@ -12,6 +12,9 @@ COMMENT=	Command line interface to iRiver music players
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandoned upstream, no new release since 2005
+EXPIRATION_DATE=2021-12-31
+
 USES=		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LIBUSB_LIBS=-lusb
