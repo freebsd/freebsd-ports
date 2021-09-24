@@ -8,6 +8,9 @@ MASTER_SITES=	http://fredrik.hubbe.net/plugger/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia front-end plugin for Mozilla or Opera
 
+DEPRECATED=	Uses incompatible plugin interface NPAPI
+EXPIRATION_DATE=2021-12-31
+
 USES=		webplugin:native xorg
 USE_XORG=	xext xt sm ice xext x11
 GNU_CONFIGURE=	yes
