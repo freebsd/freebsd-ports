@@ -29,26 +29,26 @@ include/saga/saga_core/saga_gdi/sgdi_diagram.h
 include/saga/saga_core/saga_gdi/sgdi_dialog.h
 include/saga/saga_core/saga_gdi/sgdi_helper.h
 include/saga/saga_core/saga_gdi/sgdi_layout_items.h
-lib/libsaga_api-%%PORTVERSION%%.so
 lib/libsaga_api.so
-lib/libsaga_gdi-%%PORTVERSION%%.so
+lib/libsaga_api.so.8
+lib/libsaga_api.so.%%PORTVERSION%%
 lib/libsaga_gdi.so
-%%PYTHON_SITELIBDIR%%/__pycache__/saga_api%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/__pycache__/saga_api%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/_saga_api-%%PORTVERSION%%.so
-%%PYTHON_SITELIBDIR%%/_saga_api.a
+lib/libsaga_gdi.so.8
+lib/libsaga_gdi.so.%%PORTVERSION%%
 %%PYTHON_SITELIBDIR%%/_saga_api.so
 %%PYTHON_SITELIBDIR%%/saga_api.py
+%%PYTHON_SITELIBDIR%%/saga_helper.py
 lib/saga/libclimate_tools.so
 lib/saga/libcontrib_perego.so
 lib/saga/libdb_odbc.so
 %%PGSQL%%lib/saga/libdb_pgsql.so
+lib/saga/libdev_exercises.so
+lib/saga/libdev_tools.so
 lib/saga/libdocs_html.so
 lib/saga/libdocs_pdf.so
 lib/saga/libgarden_3d_viewer.so
 lib/saga/libgarden_fractals.so
 lib/saga/libgarden_games.so
-lib/saga/libgarden_learn_to_program.so
 lib/saga/libgarden_webservices.so
 lib/saga/libgrid_analysis.so
 lib/saga/libgrid_calculus.so
@@ -73,6 +73,7 @@ lib/saga/libio_gdal.so
 lib/saga/libio_gps.so
 lib/saga/libio_grid.so
 lib/saga/libio_grid_image.so
+lib/saga/libio_pdal.so
 lib/saga/libio_shapes.so
 lib/saga/libio_shapes_dxf.so
 lib/saga/libio_shapes_las.so
@@ -80,6 +81,7 @@ lib/saga/libio_table.so
 lib/saga/libio_virtual.so
 lib/saga/libio_webservices.so
 lib/saga/libpj_georeference.so
+lib/saga/libpj_geotrans.so
 lib/saga/libpj_proj4.so
 lib/saga/libpointcloud_tools.so
 lib/saga/libpointcloud_viewer.so
@@ -117,8 +119,6 @@ lib/saga/libtable_calculus.so
 lib/saga/libtable_tools.so
 lib/saga/libtin_tools.so
 lib/saga/libtin_viewer.so
-man/man1/saga_cmd.1.gz
-man/man1/saga_gui.1.gz
 share/applications/saga.desktop
 share/icons/hicolor/128x128/apps/saga.png
 share/icons/hicolor/16x16/apps/saga.png
@@ -133,14 +133,16 @@ share/icons/hicolor/72x72/apps/saga.png
 share/icons/hicolor/80x80/apps/saga.png
 share/icons/hicolor/8x8/apps/saga.png
 share/icons/hicolor/96x96/apps/saga.png
+share/man/man1/saga_cmd.1.gz
+share/man/man1/saga_gui.1.gz
 share/metainfo/org.saga-gis.saga-gui.appdata.xml
 share/pixmaps/saga.png
-@mode 0777
-@dir %%DATADIR%%
-@mode 0666
 %%DATADIR%%/docs/saga_on_mac.odt
 %%DATADIR%%/docs/saga_toolchains_cheat_sheet.xml
 %%DATADIR%%/docs/saga_toolchains_manual.odt
+@mode 0777
+@dir %%DATADIR%%
+@mode 0666
 %%DATADIR%%/helper/doxygen_saga_api_chm
 %%DATADIR%%/helper/doxygen_saga_api_html
 %%DATADIR%%/helper/make_arcsaga_toolboxes.bat
@@ -226,7 +228,6 @@ share/pixmaps/saga.png
 %%DATADIR%%/toolchains/ta_flow_accumulation.xml
 %%DATADIR%%/toolchains/ta_ls_factor.xml
 %%DATADIR%%/toolchains/ta_summits.xml
-%%DATADIR%%/toolchains/temperature_downscaling.xml
 %%DATADIR%%/toolchains/temperature_downscaling_bulk.xml
 %%DATADIR%%/toolchains/terrain_analysis.xml
 %%DATADIR%%/toolchains/terrain_segmentation.xml
