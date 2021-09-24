@@ -1,11 +1,11 @@
 # Created by: Lev Serebryakov <lev@FreeBSD.org>
 
 PORTNAME=	vips
-PORTVERSION=	8.11.3
+PORTVERSION=	8.11.4
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free image processing system
 
 LICENSE=	LGPL21
@@ -28,6 +28,7 @@ CONFIGURE_ARGS+=	--without-nifti \
 			--without-openslide \
 			--without-pdfium \
 			--without-imagequant \
+			--without-doxygen \
 			--disable-introspection
 
 USE_LDCONFIG=	yes
