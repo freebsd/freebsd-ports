@@ -3,8 +3,8 @@ lib/libmousepad.so
 lib/libmousepad.so.0
 lib/libmousepad.so.0.0.0
 %%SPELL%%lib/mousepad/plugins/libmousepad-plugin-gspell.so
-share/applications/mousepad-settings.desktop
-share/applications/mousepad.desktop
+share/applications/org.xfce.mousepad-settings.desktop
+share/applications/org.xfce.mousepad.desktop
 share/icons/hicolor/128x128/apps/org.xfce.mousepad.png
 share/icons/hicolor/16x16/apps/org.xfce.mousepad.png
 share/icons/hicolor/48x48/apps/org.xfce.mousepad.png
@@ -62,5 +62,5 @@ share/icons/hicolor/scalable/apps/org.xfce.mousepad.svg
 %%NLS%%share/locale/uk/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/mousepad.mo
-share/metainfo/mousepad.appdata.xml
+share/metainfo/org.xfce.mousepad.appdata.xml
 share/polkit-1/actions/org.xfce.mousepad.policy
