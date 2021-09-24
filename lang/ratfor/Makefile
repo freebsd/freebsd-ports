@@ -15,6 +15,8 @@ LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/README
 
 BROKEN_aarch64=		./ratfor -o test.f test.r keeps creating huge output file
+BROKEN_armv6=		./ratfor -o test.f test.r keeps creating huge output file
+BROKEN_armv7=		./ratfor -o test.f test.r keeps creating huge output file
 BROKEN_powerpc=		./ratfor -o test.f test.r keeps creating huge output file
 BROKEN_powerpc64=	./ratfor -o test.f test.r keeps creating huge output file
 BROKEN_powerpc64le=	./ratfor -o test.f test.r keeps creating huge output file
