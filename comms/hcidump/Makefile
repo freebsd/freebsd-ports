@@ -10,6 +10,8 @@ COMMENT=	Bluetooth traffic dumper, similar to tcpdump
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=	fails to link: can't create dynamic relocation R_AARCH64_ABS64 against local symbol in readonly segment
+
 USES=		uidfix
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_WRKSRC=	${WRKSRC}/${PORTNAME}
