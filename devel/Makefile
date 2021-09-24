@@ -4711,6 +4711,7 @@
     SUBDIR += py-medikit
     SUBDIR += py-meliae
     SUBDIR += py-memory-profiler
+    SUBDIR += py-mergedeep
     SUBDIR += py-microversion-parse
     SUBDIR += py-milc
     SUBDIR += py-mime

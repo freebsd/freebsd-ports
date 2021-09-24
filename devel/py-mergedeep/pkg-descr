@@ -1,0 +1,14 @@
+This package makes the merging of Python dictonaries easier.  It offers
+following features:
+
+* Deep merge without mutating the source dicts.
+* Deep merge into an existing dict.
+
+The functions provide merge strategies as well:
+
+* Replace (default)
+* Additive
+* Typesafe replace
+* Typesafe additive
+
+WWW: https://github.com/clarketm/mergedeep
