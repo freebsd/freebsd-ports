@@ -46,6 +46,8 @@ lib/libnvidia-ml.so
 lib/libnvidia-ml.so.1
 lib/libnvidia-tls.so
 lib/libnvidia-tls.so.1
+lib/libnvidia-vulkan-producer.so
+lib/libnvidia-vulkan-producer.so.1
 lib/libvdpau_nvidia.so
 lib/vdpau/libvdpau_nvidia.so.1
 lib32/libEGL.so

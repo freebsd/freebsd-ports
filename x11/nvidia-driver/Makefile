@@ -14,9 +14,9 @@
 # ``make DISTVERSION=xxx.yy.zz -DNO_CHECKSUM'' should typically work.
 
 PORTNAME?=	nvidia-driver
-DISTVERSION?=	470.63.01
+DISTVERSION?=	470.74
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
@@ -290,6 +290,9 @@ post-install: .SILENT
 	${REINPLACE_CMD} -e '/lib32\//d' ${TMPPLIST}
 .elif ${NVVERSION} < 465.01901
 	${REINPLACE_CMD} -e '/lib32\/libnvidia-glvkspirv\.so/d' ${TMPPLIST}
+.endif
+.if ${NVVERSION} < 470.074
+	${REINPLACE_CMD} -e '/libnvidia-vulkan-producer\.so/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} < 410.057
 # Rename some libraries and install a libmap file to resolve conflict with
