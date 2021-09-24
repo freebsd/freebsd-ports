@@ -1,3 +1,29 @@
+  <vuln vid="576aa394-1d85-11ec-8b7d-4f5b624574e2">
+    <topic>webkit2-gtk3 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>webkit2-gtk3</name>
+	<range><lt>2.32.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The WebKitGTK project reports vulnerabilities:</p>
+	<blockquote cite="https://webkitgtk.org/security/WSA-2021-0005.html">
+		<ul><li>CVE-2021-30858: Processing maliciously crafted web content may lead to arbitrary code execution.</li></ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-30858</cvename>
+      <url>https://webkitgtk.org/security/WSA-2021-0005.html</url>
+    </references>
+    <dates>
+      <discovery>2021-09-20</discovery>
+      <entry>2021-09-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b6c875f1-1d76-11ec-ae80-704d7b472482">
     <topic>chromium -- use after free in Portals</topic>
     <affects>
