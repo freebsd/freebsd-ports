@@ -13,6 +13,8 @@ USES=		compiler:c11 gmake tar:xz
 
 EXTRA_PATCHES=	${FILESDIR}/extra-${CHOSEN_COMPILER_TYPE}-patch-Makefile
 
+TEST_TARGET=	test
+
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc
