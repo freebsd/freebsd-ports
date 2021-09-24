@@ -10,6 +10,8 @@ COMMENT=	In-memory geolocation data store, spatial index, and realtime geofence
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	fails to build: vendor/golang.org/x/sys/unix/cap_freebsd.go:18:23: undefined: CAP_RIGHTS_VERSION_00
+
 BUILD_DEPENDS=	bash:shells/bash
 
 USES=		go shebangfix
