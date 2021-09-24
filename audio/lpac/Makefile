@@ -16,6 +16,10 @@ LICENSE_NAME=	lpac
 LICENSE_TEXT=	No commercial use
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandoned upstream in 2003
+EXPIRATION_DATE=2021-12-31
+
 NO_BUILD=	yes
 USES=		linux
 PLIST_FILES=	bin/lpac
