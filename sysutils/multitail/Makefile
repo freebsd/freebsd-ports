@@ -21,9 +21,6 @@ MAKE_ARGS=	NCURSES_IMPL="${NCURSES_IMPL}"
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	${REINPLACE_CMD} -e "s/NCURSES_LIB:/LDFLAGS+/g" ${WRKSRC}/Makefile
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/multitail ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/multitail.1 ${STAGEDIR}${MANPREFIX}/man/man1

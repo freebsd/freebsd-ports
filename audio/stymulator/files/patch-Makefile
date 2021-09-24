@@ -13,7 +13,7 @@
  
  ymplayer: ymplayer.o sound.o ui.o
 -	$(CC) -o ymplayer $(INCLUDE) ymplayer.o sound.o ui.o -lasound -lym -llzh -lncurses
-+	$(CXX) $(CXXFLAGS) -o ymplayer $(INCLUDE) ymplayer.o sound.o ui.o -lym -llzh ${LFFLAGS} -lncurses
++	$(CXX) $(CXXFLAGS) -o ymplayer $(INCLUDE) ymplayer.o sound.o ui.o -lym -llzh -lncurses
  
  ym2wav: ym2wav.o
 -	$(CC) -o ym2wav $(INCLUDE) ym2wav.o -lym -llzh	

@@ -30,7 +30,6 @@ pre-patch:
 	@${CP} ${WRKSRC}/xmcd_d/XMcd.ad ${WRKSRC}/xmcd_d/XMcd.ad.in
 
 post-patch:
-	${REINPLACE_CMD} -e "s/-lncurses/${NCURSESLIBS}/g" ${WRKSRC}/cda_d/Imakefile
 	@${SED} -e "s;@PREFIX@;${STAGDIR}${PREFIX};g" ${WRKSRC}/xmcd_d/XMcd.ad.in \
 		> ${WRKSRC}/xmcd_d/XMcd.ad
 

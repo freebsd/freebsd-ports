@@ -17,7 +17,6 @@ RUN_DEPENDS=	mp3info:audio/mp3info \
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
-MAKE_ARGS+=	LIBS="${NCURSESLIBS}"
 
 DEFAULT_CDROM_DEVICE?=	cd0
 

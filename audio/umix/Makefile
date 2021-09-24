@@ -11,7 +11,6 @@ COMMENT=	Advanced tool for adjusting soundcard mixers, replacement for aumix
 
 USES=		alias ncurses
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	LIBS="${NCURSESLIBS}"
 
 PLIST_FILES=	bin/umix \
 		man/man1/umix.1.gz

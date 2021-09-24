@@ -12,6 +12,5 @@ LICENSE=	GPLv2
 
 USES=		ncurses
 PLIST_FILES=	bin/rexima man/man1/rexima.1.gz
-LDFLAGS+=	${NCURSESLIBS}
 
 .include <bsd.port.mk>

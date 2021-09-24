@@ -19,8 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-kenrevs
 
 USES=		gmake ncurses
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	install_directory=${STAGEDIR}${PREFIX}/bin \
-		LIBS="${NCURSESLIBS} -lform"
+MAKE_ARGS=	install_directory=${STAGEDIR}${PREFIX}/bin
 
 PORTDOCS=	README sample.cmp3rc
 PLIST_FILES=	bin/cmp3 bin/rnmp3

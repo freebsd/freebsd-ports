@@ -18,7 +18,6 @@ LIB_DEPENDS=	libtag.so:audio/taglib
 USES=		ncurses
 ALL_TARGET=	vitunes
 PLIST_FILES=	bin/vitunes man/man1/${PORTNAME}.1.gz
-LDFLAGS+=	${NCURSESLIBS}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
