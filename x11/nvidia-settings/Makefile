@@ -1,7 +1,7 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 
 PORTNAME=	nvidia-settings
-PORTVERSION=	470.63.01
+PORTVERSION=	470.74
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -15,6 +15,7 @@ ONLY_FOR_ARCHS_REASON=	Nvidia driver is only available on x86
 BUILD_DEPENDS=	${LOCALBASE}/include/dbus-1.0/dbus/dbus.h:devel/dbus
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libjansson.so:devel/jansson \
 		libvdpau.so:multimedia/libvdpau
 
@@ -38,17 +39,16 @@ SUB_FILES=	nvidia-settings
 LDFLAGS+=	-pthread
 LLD_UNSAFE=	yes
 MAKE_ENV=	NV_USE_BUNDLED_LIBJANSSON=0 \
-		NV_VERBOSE= \
+		NV_VERBOSE=1 \
 		GTK3_AVAILABLE=0 \
 		INSTALL_DOC_ARGS="${INSTALL_MAN:Ninstall}" \
 		XNVCTRL_CFLAGS=-I${LOCALBASE}/include \
 		XNVCTRL_LDFLAGS=-L${LOCALBASE}/lib
 
 post-patch:	.SILENT
-	${REINPLACE_CMD} \
-		 -e '/^MANDIR/s|share/||' ${WRKSRC}/utils.mk
+	${REINPLACE_CMD} -e '/^MANDIR/s|share/||' ${WRKSRC}/utils.mk
 	${REINPLACE_CMD} -E -e 's,__(PIXMAP|UTILS)_PATH__/,,' \
-		-e '/^Categories/ s,=.*,=  Settings;HardwareSettings;,' \
+		-e 's|__NVIDIA_SETTINGS_DESKTOP_CATEGORIES__|Settings;HardwareSettings;|' \
 		${WRKSRC}/doc/nvidia-settings.desktop
 	${REINPLACE_CMD} -e 's|/usr/share/nvidia/|${LOCALBASE}/share/doc/NVIDIA_GLX-1.0/|' \
 		${WRKSRC}/src/gtk+-2.x/ctkappprofile.c
