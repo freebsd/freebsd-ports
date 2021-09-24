@@ -1,12 +1,7 @@
-PREFIX=		%%PREFIX%%
-STAGEDIR=	%%STAGEDIR%%
-CC=			%%CC%%
-CFLAGS=		%%CFLAGS%%
-
 default:	all
 all:		predict vocalizer/vocalizer
 
-LIBS = ${LDFLAGS} -pthread -lm -lncurses
+LIBS = ${LDFLAGS} -pthread -lm -lncursesw
 predict:	predict.c predict.h
 		${CC} ${CFLAGS} -o predict predict.c ${LIBS}
 
