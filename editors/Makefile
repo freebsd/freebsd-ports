@@ -219,6 +219,7 @@
     SUBDIR += pico-alpine
     SUBDIR += picpas
     SUBDIR += pluma
+    SUBDIR += pluma-plugins   
     SUBDIR += poedit
     SUBDIR += poke
     SUBDIR += psgml

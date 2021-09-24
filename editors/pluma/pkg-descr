@@ -1,4 +1,4 @@
-mate-text-editor (pluma) is a Gtk+-2 text editor. Its features include:
+mate-text-editor (Pluma) is a Gtk3 text editor. Its features include:
 
 	* Complete integration with the MATE Environment, including MateMDI
 	* Global Search and Replace
