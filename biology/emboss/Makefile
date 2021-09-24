@@ -2,7 +2,7 @@
 
 PORTNAME=	emboss
 PORTVERSION=	6.6.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
@@ -50,6 +50,9 @@ CONFIG_FILE=	${WRKSRC}/emboss/emboss.default.template
 post-patch:
 	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
 
+post-build:
+	${CC} -DEMBOSS_PREFIX="\"${PREFIX}\"" ${FILESDIR}/emboss.c -o ${WRKDIR}/emboss
+
 pre-install:
 	@ ${REINPLACE_CMD} -e 's#%%DATADIR%%#${PREFIX}/share/${PORTNAME:tu}#' ${CONFIG_FILE}
 
@@ -57,5 +60,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/emboss-shell ${STAGEDIR}${LOCALBASE}/bin
 	${INSTALL_DATA} ${CONFIG_FILE} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKDIR}/emboss ${STAGEDIR}${LOCALBASE}/bin
 
 .include <bsd.port.mk>
