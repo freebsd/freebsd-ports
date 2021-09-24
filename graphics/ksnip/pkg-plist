@@ -1,5 +1,6 @@
 bin/ksnip
 share/applications/org.ksnip.ksnip.desktop
+%%DATADIR%%/translations/ksnip_ar.qm
 %%DATADIR%%/translations/ksnip_bn_BD.qm
 %%DATADIR%%/translations/ksnip_cs.qm
 %%DATADIR%%/translations/ksnip_da.qm
@@ -8,6 +9,7 @@ share/applications/org.ksnip.ksnip.desktop
 %%DATADIR%%/translations/ksnip_es.qm
 %%DATADIR%%/translations/ksnip_eu.qm
 %%DATADIR%%/translations/ksnip_fa.qm
+%%DATADIR%%/translations/ksnip_fi.qm
 %%DATADIR%%/translations/ksnip_fr.qm
 %%DATADIR%%/translations/ksnip_fr_CA.qm
 %%DATADIR%%/translations/ksnip_gl.qm
@@ -22,6 +24,7 @@ share/applications/org.ksnip.ksnip.desktop
 %%DATADIR%%/translations/ksnip_pl.qm
 %%DATADIR%%/translations/ksnip_pt.qm
 %%DATADIR%%/translations/ksnip_pt_BR.qm
+%%DATADIR%%/translations/ksnip_ro.qm
 %%DATADIR%%/translations/ksnip_ru.qm
 %%DATADIR%%/translations/ksnip_si.qm
 %%DATADIR%%/translations/ksnip_sv.qm
