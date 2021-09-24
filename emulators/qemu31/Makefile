@@ -13,6 +13,8 @@ COMMENT?=	QEMU CPU Emulator - 3.1.X version
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=	fails to build: accel/tcg/user-exec.c:486:36: error: no member named 'pc' in 'struct __mcontext'
+
 LIB_DEPENDS?=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
