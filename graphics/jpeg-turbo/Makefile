@@ -40,10 +40,14 @@ OPTIONS_DEFINE=	DOCS
 BUILD_DEPENDS+=	nasm:devel/nasm
 .endif
 
+.if ${ARCH} == armv6
+CMAKE_OFF=	WITH_SIMD
+.endif
+
 .if ${SLAVE_PORT} == yes
 PLIST_SUB+=	JPEG="@comment " LIBTURBOJPEG=""
 .else
-CMAKE_OFF=	WITH_TURBOJPEG
+CMAKE_OFF+=	WITH_TURBOJPEG
 CONFLICTS_INSTALL=	jpeg-[0-9]*
 PLIST_SUB+=	JPEG="" LIBTURBOJPEG="@comment "
 .endif
