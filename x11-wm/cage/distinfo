@@ -3,3 +3,5 @@ SHA256 (Hjdskes-cage-v0.1.4_GH0.tar.gz) = dfe27fb0c7d43db72d6c82f01e2736580a0791
 SIZE (Hjdskes-cage-v0.1.4_GH0.tar.gz) = 25430
 SHA256 (70ecdcb02ea0.patch) = 2dd0e99d181986c6b2d5e04e89f692e3d77b8bd2a3a08f94cf8a27b38489eb3c
 SIZE (70ecdcb02ea0.patch) = 2137
+SHA256 (31a3571a7798.patch) = 2bedfc37fd7ef5e623e1ba4202be8c2fe2837a495d716c05ae19c41f561f69aa
+SIZE (31a3571a7798.patch) = 880

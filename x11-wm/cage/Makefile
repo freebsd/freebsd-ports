@@ -1,11 +1,12 @@
 PORTNAME=	cage
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	70ecdcb02ea0.patch:-p1 # https://github.com/Hjdskes/cage/pull/148
+PATCHFILES+=	31a3571a7798.patch:-p1 # https://github.com/Hjdskes/cage/pull/209
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland kiosk
