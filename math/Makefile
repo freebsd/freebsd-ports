@@ -1033,6 +1033,7 @@
     SUBDIR += tetgen
     SUBDIR += teyjus
     SUBDIR += timbl
+    SUBDIR += tiny-bignum-c
     SUBDIR += tmv
     SUBDIR += tomsfastmath
     SUBDIR += topaz
