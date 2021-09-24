@@ -12,6 +12,8 @@ COMMENT=	Demo programs for FreeType2
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 
+BROKEN=		Doesn't build with FreeType 2.11.0
+
 BUILD_DEPENDS=	${NONEXISTENT}:print/freetype2:build
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
