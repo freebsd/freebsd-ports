@@ -127,7 +127,7 @@ _USES_POST+=		qt
 _QT_MK_POST_INCLUDED=	qt.mk
 
 # The Qt components supported by qt.mk: list of shared, and version specific ones
-_USE_QT_ALL=		assistant dbus declarative designer doc gui help \
+_USE_QT_ALL=		assistant dbus declarative declarative-test designer doc gui help \
 			imageformats l10n linguist linguisttools multimedia \
 			network opengl pixeltool qdbusviewer qmake script \
 			scripttools sql sql-mysql sql-odbc sql-pgsql \
@@ -176,6 +176,9 @@ qt-dbus_LIB=		libQt${_QT_LIBVER}DBus.so
 
 qt-declarative_PORT=	x11-toolkits/${_QT_RELNAME}-declarative
 qt-declarative_LIB=	libQt${_QT_LIBVER}Qml.so
+
+qt-declarative-test_PORT=	x11-toolkits/${_QT_RELNAME}-declarative-test
+qt-declarative-test_LIB=	libQt${_QT_LIBVER}QuickTest.so
 
 qt-designer_PORT=	devel/${_QT_RELNAME}-designer
 qt-designer_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/designer

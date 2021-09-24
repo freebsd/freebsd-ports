@@ -14,9 +14,9 @@ USE_KDE=	auth baloo5 bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons filemetadata i18n iconthemes itemviews \
 		jobwidgets kcmutils kdeclarative kio kirigami2 package \
 		service solid widgetsaddons windowsystem xmlgui
-USE_QT=		buildtools_build qmake_build testlib_build \
-		concurrent core dbus declarative gui multimedia network \
-		quickcontrols2 sql svg widgets xml
+USE_QT=		concurrent core dbus declarative gui multimedia network \
+		quickcontrols2 sql svg widgets xml \
+		buildtools_build declarative-test_build qmake_build testlib_build
 
 OPTIONS_DEFINE=	DOCS VLC
 OPTIONS_DEFAULT=	DOCS VLC

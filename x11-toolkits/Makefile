@@ -168,6 +168,7 @@
     SUBDIR += qt5-charts
     SUBDIR += qt5-datavis3d
     SUBDIR += qt5-declarative
+    SUBDIR += qt5-declarative-test
     SUBDIR += qt5-gamepad
     SUBDIR += qt5-gui
     SUBDIR += qt5-quick3d
