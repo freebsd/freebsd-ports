@@ -13,7 +13,9 @@ LICENSE=	GPLv2
 FLAVORS=	ipv4 ipv6
 ipv6_PKGNAMESUFFIX=	6
 
-USES=		autoreconf bison gmake ncurses readline
+USES=		autoreconf bison cpe gmake ncurses readline
+
+CPE_VENDOR=	nic
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
