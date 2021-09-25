@@ -21,11 +21,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	snappyjava>=0:archivers/snappy-java \
 		netty>0:java/netty
 
-USES=		python:3.7+
+USES=		cpe python:3.7+
 USE_JAVA=	yes
 USE_ANT=	yes
 USE_RC_SUBR=	cassandra
 TEST_TARGET=	test
+CPE_VENDOR=	apache
 
 CONFLICTS=	cassandra3
 
