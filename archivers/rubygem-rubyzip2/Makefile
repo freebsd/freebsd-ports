@@ -11,6 +11,9 @@ COMMENT=	Ruby compatible Zip library
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem
+USES=		cpe gem
+
+CPE_VENDOR=	rubyzip_project
+CPE_PRODUCT=	rubyzip
 
 .include <bsd.port.mk>
