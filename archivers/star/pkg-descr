@@ -5,15 +5,19 @@ Main advantages over other tar implementations:
 	pattern matcher		- For a convenient user interface.
 	sophisticated diff	- User tailorable interface for comparing tar
 				  archives against file trees.
-	no namelen limitation	- Pathnames up to 1024 Bytes may be archived.
+	no namelen limitation	- Pathnames of arbitrary length may be archived.
 	deals with all 3 times	- Stores/restores all 3 times of a file.
 	does not clobber files	- More recent copies on disk will not be
 				  clobbered from tape.
 	automatic byte swap	- star automatically detects swapped archives.
 	automatic format detect	- Automatically detects archive formats:
 				  old tar, gnu tar, ansi tar, star.
+        support for ACLS and	- star supports Access Control Lists as well as
+	file flags		  extended file flags
 	fully ansi compatible	- star is fully ANSI/Posix 1003.1 compatible.
+	sophisticated error	- Allows to tell star which error types should be
+	control			  ignored for which file name pattern
+	true incremental	- star uses the same method as dump(8)/restore(8)
+	dump/restore features	  but acts OS and FS independent
 
-Please mail bugs and suggestions to:
-Author: Joerg Schilling <js@cs.tu-berlin.de>
 WWW: https://sourceforge.net/projects/s-tar/
