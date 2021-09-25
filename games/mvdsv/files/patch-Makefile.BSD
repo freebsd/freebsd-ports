@@ -1,6 +1,6 @@
---- build/make/Makefile.BSD.orig	2018-06-30 09:20:48 UTC
-+++ build/make/Makefile.BSD
-@@ -17,12 +17,11 @@ SV_DIR = ../../src
+--- Makefile.BSD.orig	2021-09-21 22:21:56 UTC
++++ Makefile.BSD
+@@ -17,12 +17,11 @@ SV_DIR = ./src
  # for gcc its like: make mvdsv FORCE32BITFLAGS=-m32
  # configure script add FORCE32BITFLAGS=-m32
  
