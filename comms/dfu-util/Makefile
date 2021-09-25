@@ -1,7 +1,7 @@
 # Created by: Bruce Cran <bruce@cran.org.uk>
 
 PORTNAME=	dfu-util
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	comms
 MASTER_SITES=	http://dfu-util.sourceforge.net/releases/
 
