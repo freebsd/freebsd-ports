@@ -14,9 +14,11 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		gnome libtool pathfix pkgconfig tar:bzip2
+USES=		cpe gnome libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	videolan
 
 GNU_CONFIGURE=	yes
 
