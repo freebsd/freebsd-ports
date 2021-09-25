@@ -1,7 +1,7 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
 
 PORTNAME=	fastICA
-DISTVERSION=	1.2-2
+DISTVERSION=	1.2-3
 CATEGORIES=	science math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
