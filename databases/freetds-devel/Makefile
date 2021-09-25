@@ -1,7 +1,7 @@
 # Created by: Domas Mituzas <midom@dammit.lt>
 
 PORTNAME=	freetds
-PORTVERSION=	1.2.140
+PORTVERSION=	1.3.7
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/current/ \
@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-dev.${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	Sybase/Microsoft TDS protocol library
+COMMENT=	Sybase/Microsoft TDS protocol library - nightly snapshot
 
 LICENSE=	LGPL20
 
@@ -36,16 +36,16 @@ OPTIONS_DEFAULT=	OPENSSL
 OPTIONS_RADIO=		ODBC
 OPTIONS_RADIO_ODBC=	IODBC UNIXODBC
 ODBCWIDE_DESC=		Enable Wide ODBC Support
-OPENSSL_USES=		ssl
-OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_ON=	--with-gnutls
 IODBC_LIB_DEPENDS=	libiodbc.so:databases/libiodbc
 IODBC_CONFIGURE_ON=	--with-iodbc=${LOCALBASE}
 IODBC_CPPFLAGS=		-I${LOCALBASE}/include/libiodbc
-UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
-UNIXODBC_CONFIGURE_ON=	--with-unixodbc=${LOCALBASE}
 ODBCWIDE_CONFIGURE_ON=	--enable-odbc-wide
+OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
+OPENSSL_USES=		ssl
+UNIXODBC_CONFIGURE_ON=	--with-unixodbc=${LOCALBASE}
+UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 PORTDOCS=	*
 
