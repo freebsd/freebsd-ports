@@ -13,8 +13,9 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
 
-USES=		gmake perl5 shebangfix
+USES=		cpe gmake perl5 shebangfix
 SHEBANG_FILES=	check-module
+CPE_VENDOR=	gnu
 
 PLIST_FILES=	bin/check-module bin/gnulib-tool
 INFO=		${PORTNAME}
