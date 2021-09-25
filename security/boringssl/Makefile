@@ -9,7 +9,9 @@ COMMENT=	Fork of OpenSSL
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:insource go:no_targets localbase perl5
+USES=		cmake:insource cpe go:no_targets localbase perl5
+
+CPE_VENDOR=	google
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
