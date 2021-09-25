@@ -17,10 +17,12 @@ BROKEN_sparc64=	fails to build
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libsnappy.so:archivers/snappy
 
-USES=		cmake compiler:c++11-lang pathfix pkgconfig
+USES=		cmake compiler:c++11-lang cpe pathfix pkgconfig
 
 USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	lang/c
+
+CPE_VENDOR=	apache
 
 GH_ACCOUNT=	apache
 USE_GITHUB=	yes
