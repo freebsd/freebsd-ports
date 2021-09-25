@@ -10,6 +10,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2
+BUILD_DEPENDS=	sqlite3>=3.0.0:databases/sqlite3
 
 USES=		go:modules pkgconfig
 USE_GITHUB=	yes
