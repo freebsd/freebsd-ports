@@ -1,6 +1,6 @@
 PORTNAME=	cloudquery
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.6
+DISTVERSION=	0.15.4
 CATEGORIES=	net
 
 MAINTAINER=	nc@FreeBSD.org
@@ -25,7 +25,7 @@ GH_TUPLE=	\
 		agext:levenshtein:v1.2.3:agext_levenshtein/vendor/github.com/agext/levenshtein \
 		apparentlymart:go-textseg:v13.0.0:apparentlymart_go_textseg_v13/vendor/github.com/apparentlymart/go-textseg/v13 \
 		aws:aws-lambda-go:v1.23.0:aws_aws_lambda_go/vendor/github.com/aws/aws-lambda-go \
-		cloudquery:cq-provider-sdk:v0.3.3-rc3:cloudquery_cq_provider_sdk/vendor/github.com/cloudquery/cq-provider-sdk \
+		cloudquery:cq-provider-sdk:v0.4.5:cloudquery_cq_provider_sdk/vendor/github.com/cloudquery/cq-provider-sdk \
 		creasty:defaults:v1.5.1:creasty_defaults/vendor/github.com/creasty/defaults \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		doug-martin:goqu:v9.13.0:doug_martin_goqu_v9/vendor/github.com/doug-martin/goqu/v9 \
@@ -54,7 +54,7 @@ GH_TUPLE=	\
 		google:go-github:v35.1.0:google_go_github_v35/vendor/github.com/google/go-github/v35 \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
-		grpc:grpc-go:v1.33.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.40.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-hclog:v0.16.1:hashicorp_go_hclog/vendor/github.com/hashicorp/go-hclog \
 		hashicorp:go-multierror:v1.1.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
@@ -70,6 +70,7 @@ GH_TUPLE=	\
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jackc:chunkreader:v2.0.1:jackc_chunkreader_v2/vendor/github.com/jackc/chunkreader/v2 \
 		jackc:pgconn:v1.8.1:jackc_pgconn/vendor/github.com/jackc/pgconn \
+		jackc:pgerrcode:a0d42d470451:jackc_pgerrcode/vendor/github.com/jackc/pgerrcode \
 		jackc:pgio:v1.0.0:jackc_pgio/vendor/github.com/jackc/pgio \
 		jackc:pgpassfile:v1.0.0:jackc_pgpassfile/vendor/github.com/jackc/pgpassfile \
 		jackc:pgproto3:v2.0.7:jackc_pgproto3_v2/vendor/github.com/jackc/pgproto3/v2 \
