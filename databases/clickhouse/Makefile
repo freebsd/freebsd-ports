@@ -17,7 +17,9 @@ ONLY_FOR_ARCHS_REASON=	"Only supported on amd64"
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake:insource localbase python shebangfix
+USES=		cmake:insource cpe localbase python shebangfix
+
+CPE_VENDOR=	yandex
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yandex
