@@ -1,4 +1,4 @@
-DISTVERSION=	2021-09-01
+DISTVERSION=	2021-09-18
 MASTER_SITES=	SF/schilytools
 DISTNAME=	schily-${DISTVERSION}
 
@@ -80,5 +80,10 @@ do-install:
 .if "${COMPONENTS:Mlib}" != ""
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*.* 
 .endif
+
+do-test:
+.for component in ${COMPONENTS}
+	cd ${WRKSRC}/${component} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} tests
+.endfor
 
 .include <bsd.port.mk>

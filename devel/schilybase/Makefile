@@ -41,7 +41,7 @@ COMPONENTS=	conf \
 		man/man4
 
 post-build-NLS-on:
-	${SETENV} LC_ALL=de_DE.ISO8859-1 msgfmt -o ${WRKDIR}/SCHILY_utils.mo ${FILESDIR}/SCHILY_utils.po
+	${SETENV} LC_ALL=de_DE.ISO8859-1 msgfmt -o ${WRKDIR}/SCHILY_utils.mo ${WRKSRC}/SCHILY_utils.po
 
 # all languages supported by FreeBSD
 _LANGUAGES=	af am ar be bg ca cs da de el en es et eu fi fr ga he hi hr hu \
@@ -54,7 +54,7 @@ post-install-NLS-on:
 	${INSTALL_DATA} ${WRKDIR}/SCHILY_utils.mo ${STAGEDIR}${PREFIX}/share/locale/de/LC_MESSAGES/SCHILY_utils.mo
 .for lang in ${_LANGUAGES:Nde}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES
-	${RLN} ${STAGEDIR}${PREFIX}/share/locale/de/LC_MESSAGES/SCHILY_utils.mo \
+	${LN} ${STAGEDIR}${PREFIX}/share/locale/de/LC_MESSAGES/SCHILY_utils.mo \
 	    ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/SCHILY_utils.mo
 .endfor
 
