@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	fails to build: tests fail with error code 2
 
-USES=		libedit makeinfo
+USES=		cpe libedit makeinfo
+CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libedit
 INFO=		bc \
