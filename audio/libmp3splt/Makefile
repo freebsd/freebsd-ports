@@ -15,11 +15,12 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-cutter --disable-doxygen_doc
-USES=		libtool pathfix pkgconfig
+USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
+CPE_VENDOR=	libmp3splt_project
 
 OPTIONS_MULTI=	PLUGIN
 OPTIONS_MULTI_PLUGIN=	MAD FLAC VORBIS
