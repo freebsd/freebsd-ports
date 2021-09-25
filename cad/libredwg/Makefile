@@ -10,12 +10,13 @@ COMMENT=	Library and command line tools to handle DWG files
 
 LICENSE=	GPLv3+
 
-USES=		libtool tar:xz
+USES=		cpe libtool tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-trace --with-perl-install=no
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
+CPE_VENDOR=	gnu
 
 INFO=		LibreDWG
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
