@@ -12,13 +12,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	xkeyboard-config>0:x11/xkeyboard-config
 
-USES=		bison compiler:c11 gnome meson pkgconfig tar:xz
+USES=		bison compiler:c11 cpe gnome meson pkgconfig tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Denable-docs=false \
 		-Dx-locale-root="${PREFIX}/lib/X11/locale" \
 		${MESON_ARGS_${OPSYS}_${OSREL:R}}
 MESON_ARGS_FreeBSD_11=	-Ddefault-rules=xorg
+CPE_VENDOR=	xkbcommon
 
 OPTIONS_DEFINE=	EVDEV WAYLAND X11
 OPTIONS_DEFAULT=EVDEV WAYLAND X11
