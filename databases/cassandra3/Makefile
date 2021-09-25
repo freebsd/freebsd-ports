@@ -16,11 +16,12 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAV
 		bash>0:shells/bash \
 		git>0:devel/git
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.8
 JAVA_VENDOR=	openjdk
+CPE_VENDOR=	apache
 
 USE_RC_SUBR=	cassandra
 
