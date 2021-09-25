@@ -10,13 +10,15 @@ DISTFILES=	${DISTNAME:S,-,_,}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AacPlus v2 command-line encoder
 
-USES=		gmake
+USES=		cpe gmake
 
 # Converted from RESTRICTED
 LICENSE=	AACPLUSENC
 LICENSE_NAME=	aacplusenc
 LICENSE_TEXT=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 LICENSE_PERMS=	auto-accept
+
+CPE_VENDOR=	aacplusenc_project
 
 OPTIONS_DEFINE=	FFTW3
 OPTIONS_DEFAULT=	FFTW3
