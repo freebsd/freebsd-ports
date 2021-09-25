@@ -10,8 +10,10 @@ COMMENT=	Personal information dashboard for your terminal
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		go:modules
+USES=		cpe go:modules
 MASTER_SITES=	https://bitbucket.org/${GH_ACCOUNT}/${GH_PROJECT}/get/${GH_COMMIT}.tar.gz?dummy=/
+
+CPE_VENDOR=	wtfutil
 
 CONFLICTS=	wtf
 
