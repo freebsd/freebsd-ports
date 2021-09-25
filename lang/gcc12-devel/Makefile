@@ -1,7 +1,7 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 
 PORTNAME=	gcc
-PORTVERSION=	12.0.0.s20210912
+PORTVERSION=	12.0.0.s20210919
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -13,7 +13,6 @@ COMMENT=	GNU Compiler Collection 12
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BROKEN_amd64=	internal compiler error (since addressed)
 ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
