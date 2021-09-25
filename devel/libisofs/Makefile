@@ -1,7 +1,7 @@
 # Created by: J.R. Oldroyd <fbsd@opal.com>
 
 PORTNAME=	libisofs
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.4
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 
