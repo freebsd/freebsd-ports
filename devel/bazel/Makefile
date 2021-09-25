@@ -21,8 +21,10 @@ BROKEN_FreeBSD_12_powerpc64=	fails to compile: Action failed to execute: java.io
 BUILD_DEPENDS=	bash:shells/bash \
 		zip:archivers/zip
 
-USES=		python:3.3+ shebangfix zip:infozip
+USES=		cpe python:3.3+ shebangfix zip:infozip
 SHEBANG_REGEX=	.*(sh|txt|_stub|stub_.*|bazel|get_workspace_status|protobuf_support|_so)
+
+CPE_VENDOR=	google
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.8
