@@ -12,7 +12,7 @@ COMMENT=	PHP compiling template engine
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		php:web,flavors
+USES=		cpe php:web,flavors
 USE_PHP=	pcre
 USE_GITHUB=	yes
 GH_ACCOUNT=	smarty-php
