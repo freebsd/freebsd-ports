@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	digest
-PORTVERSION=	0.6.27
+PORTVERSION=	0.6.28
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
