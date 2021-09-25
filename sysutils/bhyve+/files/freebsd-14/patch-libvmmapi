@@ -1,0 +1,9 @@
+--- lib/libvmmapi/Makefile.orig	2021-09-04 01:05:23.110816000 UTC
++++ lib/libvmmapi/Makefile
+@@ -6,6 +6,7 @@
+ INCS=	vmmapi.h
+ 
++SHLIB_MAJOR?= 5.1
+ 
+ LIBADD=	util
+ 

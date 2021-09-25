@@ -1,0 +1,11 @@
+--- usr.sbin/bhyveload/Makefile.orig    2021-09-25 15:07:46.189926000 +0000
++++ usr.sbin/bhyveload/Makefile 2021-09-25 15:08:40.718294000 +0000
+@@ -5,7 +5,7 @@
+ MAN=   bhyveload.8
+ PACKAGE=       bhyve
+ 
+-LIBADD=	vmmapi
++LDADD=		${SRCTOP}/lib/libvmmapi/libvmmapi.so.5.1
+ 
+ WARNS?=        3
+ 

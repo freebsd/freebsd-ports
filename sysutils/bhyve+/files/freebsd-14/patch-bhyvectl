@@ -1,0 +1,12 @@
+--- usr.sbin/bhyvectl/Makefile.orig	2021-09-04 02:33:12.704720000 +0200
++++ usr.sbin/bhyvectl/Makefile	2021-09-04 02:34:28.740202000 +0200
+@@ -10,7 +10,8 @@
+ 
+ MAN=	bhyvectl.8
+ 
+-LIBADD=	vmmapi util
++LIBADD=	util
++LDADD=		${SRCTOP}/lib/libvmmapi/libvmmapi.so.5.1
+ 
+ WARNS?=	3
+ 

@@ -37,8 +37,10 @@ USE_LDCONFIG=	yes
 EXTRA_PATCHES=	${PATCHDIR}/freebsd-11
 .elif 1200000 <= ${OSVERSION} && ${OSVERSION} < 1300000
 EXTRA_PATCHES=	${PATCHDIR}/freebsd-12
-.elif 1300000 <= ${OSVERSION}
+.elif 1300000 <= ${OSVERSION} && ${OSVERSION} < 1400000
 EXTRA_PATCHES=	${PATCHDIR}/freebsd-13
+.elif 1400000 <= ${OSVERSION} && ${OSVERSION} < 1500000
+EXTRA_PATCHES=	${PATCHDIR}/freebsd-14
 .else
 .  if empty(IGNORE)
 IGNORE+=	cannot build: unsupported system
@@ -51,6 +53,7 @@ _LINKS=		sys/cam/ctl \
 		sys/dev/e1000 \
 		sys/dev/mii \
 		sys/dev/usb/controller \
+		sys/dev/virtio \
 		sys/amd64/include \
 		sys/x86/include \
 		stand/userboot
