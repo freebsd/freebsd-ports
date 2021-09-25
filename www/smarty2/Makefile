@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	DOCS
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		php:web,flavors
+USES=		cpe php:web,flavors
 USE_PHP=	pcre
 
 SUB_FILES=	pkg-message
