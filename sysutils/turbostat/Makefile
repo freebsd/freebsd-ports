@@ -7,7 +7,7 @@ MASTER_SITES=	https://raw.githubusercontent.com/torvalds/linux/v${PORTVERSION}/t
 DISTFILES=	${PORTNAME}.c ${PORTNAME}.8 msr-index.h intel-family.h
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	d.scott.phillips@intel.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Report power statistics for Intel CPUs
 
 LICENSE=	GPLv2

@@ -2,7 +2,7 @@ PORTNAME=	pmdk
 DISTVERSION=	1.6.1
 CATEGORIES=	devel
 
-MAINTAINER=	d.scott.phillips@intel.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries and tools to manage and access persistent memory devices
 
 # PMDK code is BSD3CLAUSE, jemalloc is BSD2CLAUSE,
