@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		pathfix pkgconfig gmake perl5 shebangfix autoreconf
+USES=		cpe pathfix pkgconfig gmake perl5 shebangfix autoreconf
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
