@@ -1,0 +1,16 @@
+This port contains utilities to analyse and publish Go benchmark
+results.  The main use case is to compare two series of benchmarks
+for minuscule performance improvements.  Four programs are included:
+
+ - benchstat is a command-line tool that computes and compares
+   statistics about benchmarks
+
+ - benchsave is a command-line tool for publishing benchmark results
+
+ - localperfdata is a local version of the https://perfdata.golang.org/
+   benchmark result storage system
+
+ - localperf is a local version of the https://perf.golang.org/
+   benchmark result analysis system.
+
+WWW: https://golang.org/x/perf
