@@ -22,11 +22,12 @@ LICENSE_DISTFILES_3GPP=	${SRC26410}
 CONFLICTS=	aacplusenc-0*
 
 USE_CSTD=	gnu89
-USES=		autoreconf pathfix pkgconfig libtool
+USES=		autoreconf cpe pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	libaacplus_project
 
 OPTIONS_DEFINE=	FFTW3
 OPTIONS_DEFAULT=FFTW3
