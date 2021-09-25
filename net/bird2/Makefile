@@ -12,10 +12,12 @@ COMMENT=	Dynamic IP routing daemon
 
 LICENSE=	GPLv2
 
-USES=		bison gmake ncurses readline
+USES=		bison cpe gmake ncurses readline
 
 CONFLICTS=	bird-[0-9]*
 CONFLICTS+=	bird6-[0-9]*
+
+CPE_VENDOR=	nic
 
 USE_CSTD=	gnu99
 GNU_CONFIGURE=	yes
