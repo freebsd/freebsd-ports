@@ -100,6 +100,9 @@ bin/grafana-server
 %%DATADIR%%/public/app/core/components/TransformersUI/SeriesToFieldsTransformerEditor.tsx
 %%DATADIR%%/public/app/core/components/TransformersUI/SeriesToRowsTransformerEditor.tsx
 %%DATADIR%%/public/app/core/components/TransformersUI/SortByTransformerEditor.tsx
+%%DATADIR%%/public/app/core/components/TransformersUI/prepareTimeSeries/PrepareTimeSeriesEditor.tsx
+%%DATADIR%%/public/app/core/components/TransformersUI/prepareTimeSeries/prepareTimeSeries.test.ts
+%%DATADIR%%/public/app/core/components/TransformersUI/prepareTimeSeries/prepareTimeSeries.ts
 %%DATADIR%%/public/app/core/components/WithFeatureToggle.tsx
 %%DATADIR%%/public/app/core/components/code_editor/brace.d.ts
 %%DATADIR%%/public/app/core/components/code_editor/code_editor.ts
@@ -314,7 +317,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/admin/partials/stats.html
 %%DATADIR%%/public/app/features/admin/partials/styleguide.html
 %%DATADIR%%/public/app/features/admin/state/actions.ts
-%%DATADIR%%/public/app/features/admin/state/apis.ts
+%%DATADIR%%/public/app/features/admin/state/apis.tsx
 %%DATADIR%%/public/app/features/admin/state/reducers.test.ts
 %%DATADIR%%/public/app/features/admin/state/reducers.ts
 %%DATADIR%%/public/app/features/alerting/AlertRuleItem.test.tsx
@@ -2649,13 +2652,13 @@ bin/grafana-server
 @owner %%GRAFANA_USER%%
 @group %%GRAFANA_GROUP%%
 @mode 750
-@dir %%GRAFANA_DATADIR%%
 @dir %%GRAFANA_PLUGINDIR%%
-@dir %%GRAFANA_PROVISIONINGDIR%%
 @dir %%GRAFANA_PROVISIONINGDIR%%/dashboards
 @dir %%GRAFANA_PROVISIONINGDIR%%/datasources
 @dir %%GRAFANA_PROVISIONINGDIR%%/notifiers
 @dir %%GRAFANA_PROVISIONINGDIR%%/plugins
+@dir %%GRAFANA_PROVISIONINGDIR%%
+@dir %%GRAFANA_DATADIR%%
 @dir %%GRAFANA_LOGDIR%%
 @mode
 @group
