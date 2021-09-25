@@ -9,7 +9,9 @@ COMMENT?=	Mail and news client descended from Pine
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES+=			ssl libtool ncurses gettext-runtime
+USES+=			cpe ssl libtool ncurses gettext-runtime
+
+CPE_VENDOR=		alpine_project
 
 GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
