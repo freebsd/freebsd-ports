@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	greybird
-PORTVERSION=	3.22.14
+PORTVERSION=	3.22.15
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
