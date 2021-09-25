@@ -14,6 +14,8 @@ CRAN_DEPENDS=	R-cran-DBI>=0.4:databases/R-cran-DBI
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist,compiles mysql
+USES=		cpe cran:auto-plist,compiles mysql
+
+CPE_VENDOR=	r-consortium
 
 .include <bsd.port.mk>
