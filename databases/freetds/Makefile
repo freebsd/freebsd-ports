@@ -1,7 +1,7 @@
 # Created by: Domas Mituzas <midom@dammit.lt>
 
 PORTNAME=	freetds
-PORTVERSION=	1.2.21
+PORTVERSION=	1.3.3
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/stable/ \
@@ -60,11 +60,12 @@ post-extract:
 	@cd ${WRKSRC}/src/pool && ${LN} -s pool.conf pool.conf.sample
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.am" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|/freetds.conf|/freetds.conf.sample|g ; \
+	@${REINPLACE_CMD} -e 's|/freetds.conf|/freetds.conf.sample|g ; \
 		 s|/locales.conf|/locales.conf.sample|g ; \
-		 s|/pool.conf|/pool.conf.sample|g ; \
-		 s| common.h||g'
+		 s| common.h||g' \
+		 ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's|/pool.conf|/pool.conf.sample|g' \
+		 ${WRKSRC}/src/pool/Makefile.am
 	@${REINPLACE_CMD} -e 's|\($$with_iodbc/include\)|\1/libiodbc|g' \
 		${WRKSRC}/configure.ac
 
