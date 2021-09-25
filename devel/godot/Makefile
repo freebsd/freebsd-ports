@@ -23,9 +23,11 @@ RUN_DEPENDS=	xdg-user-dir:devel/xdg-user-dirs \
 		xdg-open:devel/xdg-utils \
 		xmessage:x11/xmessage
 
-USES=		compiler:c++14-lang gl pkgconfig scons xorg
+USES=		compiler:c++14-lang cpe gl pkgconfig scons xorg
 USE_XORG=	x11 xcursor xi xinerama xrandr xrender
 USE_GL=		gl glew glu
+
+CPE_VENDOR=	godotengine
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	godotengine
