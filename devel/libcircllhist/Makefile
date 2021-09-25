@@ -10,6 +10,8 @@ COMMENT=	Circonus log-linear histogram C implementation
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_aarch64=	fails to configure: error: cannot compute sizeof (char)
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	circonus-labs
 GH_TAGNAME=	b7c6248
