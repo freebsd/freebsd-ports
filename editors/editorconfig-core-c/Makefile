@@ -1,7 +1,7 @@
 # Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 
 PORTNAME=	editorconfig-core-c
-PORTVERSION=	0.12.4
+PORTVERSION=	0.12.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
