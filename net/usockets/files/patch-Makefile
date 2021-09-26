@@ -1,18 +1,30 @@
---- Makefile.orig	2020-09-05 12:33:36 UTC
+--- Makefile.orig	2021-09-05 06:06:00 UTC
 +++ Makefile
-@@ -39,12 +39,12 @@ override LDFLAGS += uSockets.a
+@@ -46,22 +46,22 @@ override LDFLAGS += uSockets.a
  # By default we build the uSockets.a static library
  default:
  	rm -f *.o
 -	$(CC) $(CFLAGS) -flto -O3 -c src/*.c src/eventing/*.c src/crypto/*.c
 +	$(CC) $(CFLAGS) -fPIC -flto -c src/*.c src/eventing/*.c src/crypto/*.c
+ # Also link in Boost Asio support
+ ifeq ($(WITH_ASIO),1)
+-	$(CXX) $(CXXFLAGS) -Isrc -std=c++14 -flto -O3 -c src/eventing/asio.cpp
++	$(CXX) $(CXXFLAGS) -Isrc -fPIC -std=c++14 -flto -c src/eventing/asio.cpp
+ endif
+ 
  # For now we do rely on C++17 for OpenSSL support but we will be porting this work to C11
  ifeq ($(WITH_OPENSSL),1)
 -	$(CXX) $(CXXFLAGS) -std=c++17 -flto -O3 -c src/crypto/*.cpp
-+	$(CXX) $(CXXFLAGS) -fPIC -std=c++17 -flto -O3 -c src/crypto/*.cpp
++	$(CXX) $(CXXFLAGS) -fPIC -std=c++17 -flto -c src/crypto/*.cpp
  endif
 -	$(AR) rvs uSockets.a *.o
 +	$(CXX) -shared -o libuSockets.so *.o -lssl
  
  # Builds all examples
  .PHONY: examples
+ examples: default
+-	for f in examples/*.c; do $(CC) -flto -O3 $(CFLAGS) -o $$(basename "$$f" ".c") "$$f" $(LDFLAGS); done
++	for f in examples/*.c; do $(CC) -fPIC -flto $(CFLAGS) -o $$(basename "$$f" ".c") "$$f" $(LDFLAGS); done
+ 
+ swift_examples:
+ 	swiftc -O -I . examples/swift_http_server/main.swift uSockets.a -o swift_http_server
