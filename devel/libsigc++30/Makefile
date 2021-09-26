@@ -16,8 +16,6 @@ USE_LDCONFIG=	yes
 MESON_ARGS=	-Dbuild-documentation=false \
 		-Dbuild-examples=false
 
-INSTALL_TARGET=	install-strip
-
 PLIST_SUB=	API_VERSION="3.0"
 
 .include <bsd.port.mk>
