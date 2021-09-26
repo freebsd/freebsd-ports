@@ -1,5 +1,5 @@
 PORTNAME=	mohawk
-PORTVERSION=	2.0.20
+PORTVERSION=	2.0.21
 CATEGORIES=	www
 MASTER_SITES=	http://fossil.bsdsx.fr/mohawk/tarball/
 DISTFILES=	${DISTNAME}.tar.gz?uuid=${PORTVERSION}
