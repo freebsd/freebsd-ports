@@ -12,6 +12,8 @@ LICENSE_NAME=	Educational Community License (ECL) 2.0
 LICENSE_FILE=	${WRKSRC}/../LICENSE.TXT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_aarch64=	fails to build: gfortran10: error: unrecognized command-line option '-m64'
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libblas.so:math/blas \
 		libga.so:devel/ga \
