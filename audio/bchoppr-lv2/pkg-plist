@@ -1,0 +1,11 @@
+lib/lv2/BChoppr.lv2/BChoppr.so
+lib/lv2/BChoppr.lv2/BChoppr.ttl
+lib/lv2/BChoppr.lv2/BChoppr_Basic_tremolo.ttl
+lib/lv2/BChoppr.lv2/BChoppr_Faster_louder_chopper.ttl
+lib/lv2/BChoppr.lv2/BChoppr_GUI.so
+lib/lv2/BChoppr.lv2/BChoppr_Jittery_Jim.ttl
+lib/lv2/BChoppr.lv2/BChoppr_Raving_loony.ttl
+lib/lv2/BChoppr.lv2/BChoppr_Stall_the_engine.ttl
+lib/lv2/BChoppr.lv2/BChoppr_Waltz_through_Vienna.ttl
+lib/lv2/BChoppr.lv2/manifest.ttl
+lib/lv2/BChoppr.lv2/surface.png

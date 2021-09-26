@@ -1,5 +1,5 @@
 PORTNAME=	bchoppr
-DISTVERSION=	1.10.8
+DISTVERSION=	1.10.10
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -22,12 +22,6 @@ GH_ACCOUNT=	sjaehn
 GH_PROJECT=	BChoppr
 
 MAKEFILE=	makefile
-
-PLIST_FILES=	lib/lv2/BChoppr.lv2/BChoppr.so \
-		lib/lv2/BChoppr.lv2/BChoppr.ttl \
-		lib/lv2/BChoppr.lv2/BChoppr_GUI.so \
-		lib/lv2/BChoppr.lv2/manifest.ttl \
-		lib/lv2/BChoppr.lv2/surface.png
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/lib/lv2/BChoppr.lv2/LICENSE
