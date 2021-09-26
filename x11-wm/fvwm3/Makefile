@@ -1,7 +1,7 @@
 # Created by: Felix Palmen <felix@palmen-it.de>
 
 PORTNAME=	fvwm3
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm3/releases/download/${PORTVERSION}/ \
 		http://fvwm.sourceforge.net/generated/icon_download/:icons
@@ -12,28 +12,35 @@ COMMENT=	F? Virtual Window Manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
-		libevent.so:devel/libevent
+LIB_DEPENDS=	libevent.so:devel/libevent \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		compiler:c11 cpe pkgconfig python:3.7+ readline xorg
-USE_XORG=	ice x11 xext xrandr xrender xt
+USE_XORG=	ice sm x11 xext xft xrandr xrender xt
 
 CONFLICTS_INSTALL=	fvwm-2.*
 
 CPE_VENDOR=	fvwm
 CPE_PRODUCT=	fvwm
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	ac_cv_path_PYTHON=${PYTHON_CMD} \
-		--disable-golang
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=	FRIBIDI ICONS ICONV MANPAGES NLS PERL PNG SVG \
-		XCURSOR XFT XPM XSM
-OPTIONS_DEFAULT=	FRIBIDI ICONV MANPAGES PERL PNG XCURSOR XFT XSM
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	ac_cv_path_PYTHON=${PYTHON_CMD}
+
+OPTIONS_DEFINE=	FRIBIDI GO ICONS ICONV MANPAGES NLS PERL PNG SVG \
+		XCURSOR XPM
+OPTIONS_DEFAULT=	FRIBIDI GO ICONV MANPAGES PERL PNG XCURSOR
 OPTIONS_SUB=	yes
 
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 FRIBIDI_CONFIGURE_ENABLE=	bidi
+
+GO_DESC=	Build and install modules written in Go
+GO_USES=	go:no_targets
+GO_CONFIGURE_ENABLE=	golang
+GO_MAKE_ARGS=	GOBUILD="go build -ldflags=\"-s -w\""
 
 FVWM_ICONS=	fvwm_icons-20070101
 ICONS_DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${FVWM_ICONS}.tar.bz2:icons
@@ -64,17 +71,8 @@ SVG_CONFIGURE_ENABLE=	rsvg
 XCURSOR_USE=	xorg=xcursor
 XCURSOR_CONFIGURE_ENABLE=	xcursor
 
-XFT_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-			libfontconfig.so:x11-fonts/fontconfig
-XFT_USE=	xorg=xft
-XFT_CONFIGURE_ENABLE=	xft
-
 XPM_USE=	xorg=xpm
 XPM_CONFIGURE_OFF=	--with-xpm-library=no
-
-XSM_DESC=	X11 session management support
-XSM_USE=	xorg=sm
-XSM_CONFIGURE_ENABLE=	sm
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/,${LOCALBASE}/etc/,g' \
