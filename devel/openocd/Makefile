@@ -8,6 +8,8 @@ MASTER_SITES=	SF
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Open On-Chip Debugger
 
+BROKEN_aarch64=	fails to build: src/target/nds32_tlb.h:25:2: error: expected identifier PAGE_SIZE_4K = 0
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	libusb_CFLAGS=" " libusb_LIBS="-lusb"
 CONFIGURE_ARGS+=	--disable-werror
