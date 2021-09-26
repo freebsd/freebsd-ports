@@ -7,6 +7,8 @@ COMMENT=	MAME (0.37b5) for libretro
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=	fails to build: src/libretro/libretro-common/libco/aarch64.c:25:1: error: meaningless 'volatile' on asm outside function
+
 USES=		compiler:c++11-lib dos2unix gmake
 DOS2UNIX_FILES=	src/cpu/tms9900/99xxstat.h
 USE_LDCONFIG=	yes
