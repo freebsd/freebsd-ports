@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.9.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Command-line tool for rendering templates before executing binaries
 
 LICENSE=	MIT
