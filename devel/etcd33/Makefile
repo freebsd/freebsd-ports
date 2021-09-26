@@ -1,8 +1,8 @@
 PORTNAME=	etcd
 PORTVERSION=	3.3.23
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
-PKGNAMEPREFIX=	coreos-
 PKGNAMESUFFIX=	33
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -12,16 +12,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe go:modules
-
-CONFLICTS_INSTALL=	coreos-etcd-* coreos-etcd31-* coreos-etcd32-* \
-			coreos-etcd34-* coreos-etcdctl-0.*
-
-GO_PKGNAME=	github.com/coreos/etcd
-GO_TARGET=	. ./etcdctl
 USE_GITHUB=	yes
 GH_ACCOUNT=	coreos
-GH_TUPLE=	\
-		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
+GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bgentry:speakeasy:v0.1.0:bgentry_speakeasy/vendor/github.com/bgentry/speakeasy \
 		cheggaaa:pb:v1.0.2:cheggaaa_pb/vendor/gopkg.in/cheggaaa/pb.v1 \
 		coreos:bbolt:v1.3.3:coreos_bbolt/vendor/github.com/coreos/bbolt \
@@ -75,6 +68,11 @@ GH_TUPLE=	\
 		uber-go:zap:v1.10.0:uber_go_zap/vendor/go.uber.org/zap \
 		urfave:cli:v1.18.0:urfave_cli/vendor/github.com/urfave/cli \
 		xiang90:probing:07dd2e8dfe18:xiang90_probing/vendor/github.com/xiang90/probing
+
+GO_PKGNAME=	github.com/coreos/etcd
+GO_TARGET=	. ./etcdctl
+
+CONFLICTS_INSTALL=	etcd-* etcd31-* etcd32-* etcd34-* etcdctl-0.*
 
 PLIST_FILES=	bin/etcd \
 		bin/etcdctl
