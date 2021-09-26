@@ -15,6 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	zip:archivers/zip
 
+.if ${:!diff --version 2>/dev/null | grep -c GNU\ diffutils || :!} < 1
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_diffviewer_ydiff.c
+RUN_DEPENDS+=	gdiff:textproc/diffutils
+.endif
+
 USES=		gmake gnome libtool perl5 pkgconfig python shebangfix tar:xz
 SHEBANG_FILES=	${WRKSRC}/src/vfs/extfs/helpers/s3+.in \
 		${WRKSRC}/src/vfs/extfs/helpers/uc1541
@@ -32,7 +37,7 @@ OPTIONS_SINGLE_SCREEN=	SLANG NCURSES
 OPTIONS_SUB=	yes
 
 ASPELL_DESC=	Aspell support for internal editor
-EDITOR_DESC=	Build with internal editor
+EDITOR_DESC=	Build with internal text editor
 EXTATTR_DESC=	Extended attributes support
 SCREEN_DESC=	Screen library
 SFTP_DESC=	Support for SFTP (via libssh)
@@ -94,11 +99,4 @@ post-install-X11-on:
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200030
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_diffviewer_ydiff.c
-RUN_DEPENDS+=	gdiff:textproc/diffutils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
