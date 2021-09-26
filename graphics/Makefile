@@ -957,6 +957,7 @@
     SUBDIR += rigsofrods-caelum
     SUBDIR += rigsofrods-pagedgeometry
     SUBDIR += ristretto
+    SUBDIR += rlottie
     SUBDIR += ruby-gd
     SUBDIR += rubygem-cairo
     SUBDIR += rubygem-captcha

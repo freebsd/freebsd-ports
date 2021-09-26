@@ -1,0 +1,8 @@
+rlottie is a platform independent standalone c++ library for rendering vector
+based animations and art in realtime.
+
+Lottie loads and renders animations and vectors exported in the bodymovin JSON
+format. Bodymovin JSON can be created and exported from After Effects with
+bodymovin, Sketch with Lottie Sketch Export, and from Haiku.
+
+WWW: https://github.com/Samsung/rlottie
