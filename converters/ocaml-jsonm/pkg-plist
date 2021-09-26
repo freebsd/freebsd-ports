@@ -1,0 +1,16 @@
+bin/jsontrip
+%%OCAML_SITELIBDIR%%/jsonm/META
+%%OCAML_SITELIBDIR%%/jsonm/jsonm.a
+%%OCAML_SITELIBDIR%%/jsonm/jsonm.cma
+%%OCAML_SITELIBDIR%%/jsonm/jsonm.cmi
+%%OCAML_SITELIBDIR%%/jsonm/jsonm.cmti
+%%OCAML_SITELIBDIR%%/jsonm/jsonm.cmx
+%%OCAML_SITELIBDIR%%/jsonm/jsonm.cmxa
+%%OCAML_SITELIBDIR%%/jsonm/jsonm.cmxs
+%%OCAML_SITELIBDIR%%/jsonm/jsonm.mli
+%%OCAML_SITELIBDIR%%/jsonm/opam
+%%PORTDOCS%%share/doc/ocaml/jsonm/CHANGES.md
+%%PORTDOCS%%share/doc/ocaml/jsonm/LICENSE.md
+%%PORTDOCS%%share/doc/ocaml/jsonm/README.md
+%%PORTDOCS%%share/doc/ocaml/jsonm/examples.ml
+%%PORTDOCS%%share/doc/ocaml/jsonm/jtree.ml

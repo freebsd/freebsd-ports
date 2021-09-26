@@ -22,7 +22,7 @@ USE_OCAML_FINDLIB=	yes
 OPTIONS_DEFINE=	DOCS
 
 do-build:
-	cd ${WRKSRC} && ocaml pkg/pkg.ml build
+	cd ${BUILD_WRKSRC} && ocaml pkg/pkg.ml build
 
 do-install:
 	cd ${INSTALL_WRKSRC} && opam-installer -i \

@@ -1,35 +1,41 @@
 # Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 
 PORTNAME=	jsonm
-PORTVERSION=	0.9.1
+PORTVERSION=	1.0.1
 CATEGORIES=	converters
-MASTER_SITES=	http://erratique.ch/software/jsonm/releases/
+MASTER_SITES=	https://erratique.ch/software/jsonm/releases/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Non-blocking streaming JSON codec for OCaml
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	${SA_DIR}/uutf/uutf.a:devel/ocaml-uutf
-BUILD_DEPENDS+=	ocamlbuild:devel/ocaml-ocamlbuild
-RUN_DEPENDS=	${SA_DIR}/uutf/uutf.a:devel/ocaml-uutf
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild \
+		opam-installer:devel/ocaml-opam \
+		${SA_DIR}/topkg/META:devel/ocaml-topkg \
+		${SA_DIR}/uchar/META:devel/ocaml-uchar \
+		${SA_DIR}/uutf/META:devel/ocaml-uutf
+RUN_DEPENDS=	${SA_DIR}/uchar/META:devel/ocaml-uchar \
+		${SA_DIR}/uutf/META:devel/ocaml-uutf
 
 USES=	tar:tbz
 USE_OCAML=		yes
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 
 USE_OCAML_FINDLIB=	yes
-USE_OCAMLFIND_PLIST=	yes
 USE_OCAML_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
-	cd ${WRKSRC} && ocamlbuild src/jsonm.cmxs src/jsonm.cma src/jsonm.a
+	cd ${BUILD_WRKSRC} && ocaml pkg/pkg.ml build
 
 do-install:
-	${MKDIR} ${STAGEDIR}${OCAMLFIND_DESTDIR}/jsonm
-	cd ${WRKSRC} && ocamlfind install -destdir ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib jsonm src/META _build/src/jsonm.a _build/src/jsonm.cma _build/src/jsonm.cmi _build/src/jsonm.cmx _build/src/jsonm.cmxa _build/src/jsonm.cmxs _build/src/jsonm.mli
-	${INSTALL_LIB} ${WRKSRC}/_build/src/jsonm.cmxs \
-		${STAGEDIR}${OCAMLFIND_DESTDIR}/jsonm
+	cd ${INSTALL_WRKSRC} && opam-installer -i \
+		--prefix=${STAGEDIR}${PREFIX} \
+		--docdir=${OCAML_DOCSDIR:S,^${PREFIX}/,,} \
+		--libdir=${OCAML_SITELIBDIR} ${PORTNAME}.install
 
 .include <bsd.port.mk>
