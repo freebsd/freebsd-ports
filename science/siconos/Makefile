@@ -1,5 +1,5 @@
 PORTNAME=	siconos
-DISTVERSION=	4.4.0.rc4
+DISTVERSION=	4.4.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +32,7 @@ CFLAGS+=	-DCLOCKTIME -DCLOCKS_PER_SEC=128 # workaround for 'Undefined symbol "ft
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 OPTIONS_DEFINE=		PYTHON
-OPTIONS_DEFAULT=	PYTHON
+OPTIONS_DEFAULT=	#PYTHON
 OPTIONS_SUB=		yes
 
 PYTHON_CMAKE_BOOL=	WITH_PYTHON_WRAPPER
@@ -43,5 +43,6 @@ PYTHON_PY_DEPENDS=	${PYNUMPY} \
 PYTHON_BUILD_DEPENDS=	${PYTHON_PY_DEPENDS} \
 			swig:devel/swig
 PYTHON_RUN_DEPENDS=	${PYTHON_PY_DEPENDS}
+PYTHON_BROKEN=		Fails to import, see https://github.com/siconos/siconos/issues/420
 
 .include <bsd.port.mk>
