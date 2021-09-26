@@ -1,7 +1,7 @@
 # Created by: Marc Fonvieille <blackend@FreeBSD.org>
 
 PORTNAME=	freebsd-doc
-PORTVERSION=	20210125
+PORTVERSION=	20210918
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -12,24 +12,15 @@ COMMENT?=	Documentation from the FreeBSD Documentation Project
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_FreeBSD_11_powerpc64=	fails to build: Java Runtime Environment: SIGSEGV happened inside stack but outside yellow and red zone.
-BROKEN_FreeBSD_12_powerpc64=	fails to build: Java Runtime Environment: SIGSEGV happened inside stack but outside yellow and red zone.
+BUILD_DEPENDS=	docproj>=4.0:textproc/docproj
 
-BUILD_DEPENDS=	docproj>=2.0_6:textproc/docproj \
-		docproj-legacy>0:textproc/docproj-legacy
-
-USES=		groff uidfix
-WRKSRC=		${WRKDIR}/doc
+USES=		python:build,3.6+
+WRKSRC=		${WRKDIR}/doc/documentation
 PLIST_SUB=	DOCSDIR=${DOCBASE} \
 		DOCLANG=${DOCLANG} \
 		DOCLANG_PREFIX=${DOCLANG_PREFIX}
-MAKE_ARGS=	FORMATS="${DOCFORMAT}" \
-		DOC_LANG="${DOCLANG}" \
-		INSTALL_COMPRESSED= \
-		DOCDIR=${STAGEDIR}${PREFIX}/${DOCBASE} \
-		DOCOWN=${SHAREOWN} \
-		DOCGRP=${SHAREGRP} \
-		DISPLAY=""
+MAKE_ARGS=	${DOCFORMAT} \
+		DOC_LANG="${DOCLANG}"
 NO_ARCH=	yes
 
 # To populate correctly the stage directory
@@ -38,18 +29,16 @@ DESTDIRNAME=	TMPDESTDIR
 
 PLIST=		${WRKDIR}/pkg-plist
 
-DOCLANG?=		en_US.ISO8859-1
+DOCLANG?=		en
 DOCLANG_PREFIX?=	${DOCLANG:C/_.*$//}
 DOCBASE?=		share/doc/freebsd
 
-AVAILABLEFORMATS=	HTML HTML_SPLIT PDF TXT
+AVAILABLEFORMATS=	HTML PDF
 
 OPTIONS_DEFINE=		${AVAILABLEFORMATS}
-OPTIONS_DEFAULT=	HTML_SPLIT PDF
+OPTIONS_DEFAULT=	PDF
 HTML_DESC=		Single HTML file per document
-HTML_SPLIT_DESC=	The default HTML format used on www.FreeBSD.org
 PDF_DESC=		PDF format
-TXT_DESC=		Plain text
 
 # if PACKAGE_BUILDING=yes, enable all of $AVAILABLEFORMATS.
 .if defined(PACKAGE_BUILDING)
@@ -60,20 +49,13 @@ OPTIONS_DEFAULT+=	${AVAILABLEFORMATS}
 
 .for O in ${AVAILABLEFORMATS}
 .if ${PORT_OPTIONS:M${O}}
-DOCFORMAT+=	${O:tl:S,_,-,}
-PLIST_FORMATS+=	${O:tl:S,_,-,}
+DOCFORMAT+=	${O:tl}
+PLIST_FORMATS+=	${O:tl}
 .endif
 .endfor
 
-.if ${PORT_OPTIONS:MPDF}
-BUILD_DEPENDS+=	fop:textproc/fop \
-		${LOCALBASE}/share/fonts/GentiumPlus/GentiumPlus-Regular.ttf:x11-fonts/gentium-plus \
-		${LOCALBASE}/share/fonts/Droid/DroidSans.ttf:x11-fonts/droid-fonts-ttf \
-		${LOCALBASE}/share/fonts/dejavu/DejaVuSansMono.ttf:x11-fonts/dejavu
-.endif
-
-# when html or html-split is defined as the format, add HTML_COMMON.
-.if ${PORT_OPTIONS:MHTML} || ${PORT_OPTIONS:MHTML_SPLIT}
+# when html is defined as the format, add HTML_COMMON.
+.if ${PORT_OPTIONS:MHTML}
 PLIST_FORMATS+=	html-common
 .endif
 
@@ -87,15 +69,14 @@ pre-build:
 		${CAT} ${i} >> ${PLIST}; \
 	fi
 .endfor
+	${REINPLACE_CMD} -e 's/python3/${PYTHON_CMD:T}/' ${WRKSRC}/Makefile
 
-# For HTML files, images links are hardcoded during the build
-# with absolute pathnames.  Make these pathnames relative.
-post-build:
-.if ${PORT_OPTIONS:MHTML} || ${PORT_OPTIONS:MHTML_SPLIT}
-	${FIND} ${WRKSRC} -name "*.html" -exec \
-		${REINPLACE_CMD} -e 's,img src=\"${WRKSRC}.*share/images,img src=\"../..,g' {} \;
-	${FIND} ${WRKSRC} -name "*.html" -exec \
-		${REINPLACE_CMD} -e 's,img src=\"${WRKSRC}.*imagelib,img src=\"imagelib,g' {} \;
-.endif
+do-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
+
+do-install:
+	${MKDIR} ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}
+	${CP} -R ${WRKSRC}/public/* ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}
 
 .include <bsd.port.mk>

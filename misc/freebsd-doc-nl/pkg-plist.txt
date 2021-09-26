@@ -1,6 +1,0 @@
-%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/book.txt

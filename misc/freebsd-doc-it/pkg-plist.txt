@@ -1,2 +1,0 @@
-%%DOCSDIR%%/%%DOCLANG%%/articles/bsdl-gpl/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/book.txt

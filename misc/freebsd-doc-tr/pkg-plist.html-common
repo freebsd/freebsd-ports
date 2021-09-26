@@ -1,1 +1,8 @@
-%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/css/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/css/font-awesome-min.css
+%%DOCSDIR%%/%%DOCLANG%%/fonts/FontAwesome.otf
+%%DOCSDIR%%/%%DOCLANG%%/fonts/fontawesome-webfont.eot
+%%DOCSDIR%%/%%DOCLANG%%/fonts/fontawesome-webfont.svg
+%%DOCSDIR%%/%%DOCLANG%%/fonts/fontawesome-webfont.ttf
+%%DOCSDIR%%/%%DOCLANG%%/fonts/fontawesome-webfont.woff
+%%DOCSDIR%%/%%DOCLANG%%/fonts/fontawesome-webfont.woff2

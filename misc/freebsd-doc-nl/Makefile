@@ -9,6 +9,6 @@ COMMENT=	Dutch translation of the FreeBSD Documentation Project
 MASTERDIR=	${.CURDIR}/../freebsd-doc-en
 PLIST=		${.CURDIR}/pkg-plist
 
-DOCLANG=	nl_NL.ISO8859-1
+DOCLANG=	nl
 
 .include "${MASTERDIR}/Makefile"

@@ -1,7 +1,9 @@
+%%DOCSDIR%%/%%DOCLANG%%/articles/bsdl-gpl/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/building-products/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributors/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.pdf
-%%DOCSDIR%%/%%DOCLANG%%/articles/fdp-es/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/article.pdf
@@ -10,12 +12,13 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.pdf
-%%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/remote-install/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/vinum/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/book.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/book.pdf

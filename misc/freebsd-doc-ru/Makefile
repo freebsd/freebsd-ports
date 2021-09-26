@@ -9,6 +9,6 @@ COMMENT=	Russian translation of the FreeBSD Documentation Project
 MASTERDIR=	${.CURDIR}/../freebsd-doc-en
 PLIST=		${.CURDIR}/pkg-plist
 
-DOCLANG=	ru_RU.KOI8-R
+DOCLANG=	ru
 
 .include "${MASTERDIR}/Makefile"

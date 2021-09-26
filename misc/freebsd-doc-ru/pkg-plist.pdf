@@ -16,6 +16,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/book.pdf
+%%DOCSDIR%%/%%DOCLANG%%/books/design-44bsd/book.pdf
+%%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/book.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/book.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/book.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/book.pdf
