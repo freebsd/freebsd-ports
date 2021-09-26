@@ -13,6 +13,7 @@ LICENSE_NAME_BITSTREAM_VERA=	Bitstream Vera Sans - Roman Release 1.10
 LICENSE_FILE_BITSTREAM_VERA=	${WRKSRC}/mupen64plus-core/doc/font-license
 LICENSE_PERMS_BITSTREAM_VERA=	auto-accept
 
+BROKEN_aarch64=	fails to build: mupen64plus-core/src/r4300/new_dynarec/arm64/assem_arm64.h:141:8: error: unknown type name 'u_int'
 BROKEN_i386=	Doesn't build.
 
 USES=		compiler:c++11-lang gmake gl localbase
