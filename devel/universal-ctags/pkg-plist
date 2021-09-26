@@ -13,5 +13,6 @@ bin/uoptscript
 %%MANPAGES%%man/man7/uctags-lang-python.7.gz
 %%MANPAGES%%man/man7/uctags-lang-r.7.gz
 %%MANPAGES%%man/man7/uctags-lang-sql.7.gz
+%%MANPAGES%%man/man7/uctags-lang-tcl.7.gz
 %%MANPAGES%%man/man7/uctags-lang-verilog.7.gz
 %%MANPAGES%%man/man7/uctags-optlib.7.gz
