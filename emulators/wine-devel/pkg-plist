@@ -1444,7 +1444,7 @@ lib/wine/%%WINEARCH%%-unix/d3d10.dll.so
 lib/wine/%%WINEARCH%%-unix/d3d10_1.dll.so
 lib/wine/%%WINEARCH%%-unix/d3d10core.dll.so
 lib/wine/%%WINEARCH%%-unix/d3d11.dll.so
-%%VKD3D%%lib/wine/%%WINEARCH%%-unix/d3d12.dll.so
+lib/wine/%%WINEARCH%%-unix/d3d12.dll.so
 lib/wine/%%WINEARCH%%-unix/d3d8.dll.so
 lib/wine/%%WINEARCH%%-unix/d3d8thk.dll.so
 lib/wine/%%WINEARCH%%-unix/d3d9.dll.so
@@ -1722,7 +1722,7 @@ lib/wine/%%WINEARCH%%-unix/libd3d10.def
 lib/wine/%%WINEARCH%%-unix/libd3d10_1.def
 lib/wine/%%WINEARCH%%-unix/libd3d10core.def
 lib/wine/%%WINEARCH%%-unix/libd3d11.def
-%%VKD3D%%lib/wine/%%WINEARCH%%-unix/libd3d12.def
+lib/wine/%%WINEARCH%%-unix/libd3d12.def
 lib/wine/%%WINEARCH%%-unix/libd3d8.def
 lib/wine/%%WINEARCH%%-unix/libd3d9.def
 lib/wine/%%WINEARCH%%-unix/libd3dcompiler.def
@@ -2715,7 +2715,7 @@ lib/wine/%%WINEARCH%%-windows/d3d10.dll
 lib/wine/%%WINEARCH%%-windows/d3d10_1.dll
 lib/wine/%%WINEARCH%%-windows/d3d10core.dll
 lib/wine/%%WINEARCH%%-windows/d3d11.dll
-%%VKD3D%%lib/wine/%%WINEARCH%%-windows/d3d12.dll
+lib/wine/%%WINEARCH%%-windows/d3d12.dll
 lib/wine/%%WINEARCH%%-windows/d3d8.dll
 lib/wine/%%WINEARCH%%-windows/d3d8thk.dll
 lib/wine/%%WINEARCH%%-windows/d3d9.dll
