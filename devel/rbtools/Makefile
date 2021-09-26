@@ -5,7 +5,7 @@ MASTER_SITES=	http://downloads.reviewboard.org/releases/${ORIGNAME}/${DISTVERSIO
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${ORIGNAME}-${DISTVERSION}
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of client tools to use with Review Board
 
 LICENSE=	MIT
