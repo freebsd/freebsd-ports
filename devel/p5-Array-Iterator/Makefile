@@ -1,7 +1,7 @@
 # Created by: Aaron Dalton <aaron@daltons.ca>
 
 PORTNAME=	Array-Iterator
-PORTVERSION=	0.130
+PORTVERSION=	0.131
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
