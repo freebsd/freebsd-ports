@@ -1,0 +1,4 @@
+This is the backend for PDM projects, while you can also use it alone. It reads
+the metadata of PEP 621 format and coverts it to Core metadata.
+
+WWW: https://github.com/pdm-project/pdm-pep517

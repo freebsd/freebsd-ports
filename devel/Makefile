@@ -4843,6 +4843,7 @@
     SUBDIR += py-paver
     SUBDIR += py-pbr
     SUBDIR += py-pdm
+    SUBDIR += py-pdm-pep517
     SUBDIR += py-pebble
     SUBDIR += py-pefile
     SUBDIR += py-pendulum
