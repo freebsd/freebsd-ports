@@ -1,7 +1,7 @@
 # Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 
 PORTNAME=	fpart
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/fpart/
@@ -15,7 +15,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-embfts
 
 PLIST_FILES=	bin/fpart man/man1/fpart.1.gz
-PORTDOCS=	Changelog README TODO
+PORTDOCS=	Changelog.md README.md TODO
 
 OPTIONS_DEFINE=	FPSYNC DOCS
 OPTIONS_DEFAULT=	FPSYNC
