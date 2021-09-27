@@ -6984,6 +6984,7 @@
     SUBDIR += stringencoders
     SUBDIR += stuffbin
     SUBDIR += stxxl
+    SUBDIR += stylua
     SUBDIR += subversion
     SUBDIR += subversion-book
     SUBDIR += subversion-lts
