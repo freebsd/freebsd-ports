@@ -83,9 +83,9 @@
     SUBDIR += rubygem-railsbench
     SUBDIR += scimark2
     SUBDIR += scimark2c
+    SUBDIR += shellbench
     SUBDIR += siege
     SUBDIR += sipp
-    SUBDIR += shellbench
     SUBDIR += slowloris
     SUBDIR += smhasher
     SUBDIR += spp
