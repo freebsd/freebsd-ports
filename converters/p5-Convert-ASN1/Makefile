@@ -1,7 +1,7 @@
 # Created by: Marc Fournier <scrappy@FreeBSD.org>
 
 PORTNAME=	Convert-ASN1
-PORTVERSION=	0.31
+PORTVERSION=	0.33
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
