@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Test2-Harness
-PORTVERSION=	1.000072
+PORTVERSION=	1.000073
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -20,7 +20,6 @@ RUN_DEPENDS=	p5-Data-UUID>=0:devel/p5-Data-UUID \
 		p5-Long-Jump>=0.000001:devel/p5-Long-Jump \
 		p5-Scope-Guard>=0:devel/p5-Scope-Guard \
 		p5-Term-Table>=0.015:devel/p5-Term-Table \
-		p5-Test2-Plugin-Cover>=0.000022:devel/p5-Test2-Plugin-Cover \
 		p5-Test2-Plugin-MemUsage>=0.002002:devel/p5-Test2-Plugin-MemUsage \
 		p5-Test2-Plugin-UUID>=0.002001:devel/p5-Test2-Plugin-UUID \
 		p5-Test2-Suite>=0.000127:devel/p5-Test2-Suite \
@@ -40,7 +39,7 @@ RECOMMENDED_BUILD_DEPENDS=	p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS \
 			p5-HTTP-Tiny-Multipart>=0.08:www/p5-HTTP-Tiny-Multipart \
 			p5-IO-Pager>=1.00:devel/p5-IO-Pager \
 			p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
-			p5-Test2-Plugin-Cover>=0.000024:devel/p5-Test2-Plugin-Cover \
+			p5-Test2-Plugin-Cover>=0.000025:devel/p5-Test2-Plugin-Cover \
 			p5-Test2-Plugin-DBIProfile>=0.002002:devel/p5-Test2-Plugin-DBIProfile \
 			p5-Test2-Plugin-IOEvents>=0.001001:devel/p5-Test2-Plugin-IOEvents
 RECOMMENDED_RUN_DEPENDS=p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS \
@@ -48,7 +47,7 @@ RECOMMENDED_RUN_DEPENDS=p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS \
 			p5-HTTP-Tiny-Multipart>=0.08:www/p5-HTTP-Tiny-Multipart \
 			p5-IO-Pager>=1.00:devel/p5-IO-Pager \
 			p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
-			p5-Test2-Plugin-Cover>=0.000024:devel/p5-Test2-Plugin-Cover \
+			p5-Test2-Plugin-Cover>=0.000025:devel/p5-Test2-Plugin-Cover \
 			p5-Test2-Plugin-DBIProfile>=0.002002:devel/p5-Test2-Plugin-DBIProfile \
 			p5-Test2-Plugin-IOEvents>=0.001001:devel/p5-Test2-Plugin-IOEvents
 
