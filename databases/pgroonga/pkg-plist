@@ -26,6 +26,7 @@
 %%OLDPG%%include/postgresql/server/contrib/pgroonga_check/pgrn-result-converter.h
 %%OLDPG%%include/postgresql/server/contrib/pgroonga_check/pgrn-search.h
 %%OLDPG%%include/postgresql/server/contrib/pgroonga_check/pgrn-sequential-search.h
+%%OLDPG%%include/postgresql/server/contrib/pgroonga_check/pgrn-string.h
 %%OLDPG%%include/postgresql/server/contrib/pgroonga_check/pgrn-tokenize.h
 %%OLDPG%%include/postgresql/server/contrib/pgroonga_check/pgrn-value.h
 %%OLDPG%%include/postgresql/server/contrib/pgroonga_check/pgrn-variables.h
@@ -60,6 +61,7 @@
 %%OLDPG%%include/postgresql/server/extension/pgroonga/pgrn-result-converter.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga/pgrn-search.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga/pgrn-sequential-search.h
+%%OLDPG%%include/postgresql/server/extension/pgroonga/pgrn-string.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga/pgrn-tokenize.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga/pgrn-value.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga/pgrn-variables.h
@@ -95,6 +97,7 @@
 %%OLDPG%%include/postgresql/server/extension/pgroonga_database/pgrn-result-converter.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga_database/pgrn-search.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga_database/pgrn-sequential-search.h
+%%OLDPG%%include/postgresql/server/extension/pgroonga_database/pgrn-string.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga_database/pgrn-tokenize.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga_database/pgrn-value.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga_database/pgrn-variables.h
@@ -157,7 +160,8 @@ share/postgresql/extension/pgroonga--2.2.5--2.2.6.sql
 share/postgresql/extension/pgroonga--2.2.6--2.2.7.sql
 share/postgresql/extension/pgroonga--2.2.7--2.2.8.sql
 share/postgresql/extension/pgroonga--2.2.8--2.2.9.sql
-share/postgresql/extension/pgroonga--2.2.9--%%MVER%%.sql
+share/postgresql/extension/pgroonga--2.2.9--2.3.0.sql
+share/postgresql/extension/pgroonga--2.3.0--%%MVER%%.sql
 share/postgresql/extension/pgroonga--%%MVER%%.sql
 share/postgresql/extension/pgroonga_database--%%MVER%%.sql
 share/postgresql/extension/pgroonga_database.control
