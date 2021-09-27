@@ -1,7 +1,7 @@
 # Created by: Dreamcat4 <dreamcat4@gmail.com>
 
 PORTNAME=	dtv-scan-tables
-PORTVERSION=	20200902
+PORTVERSION=	20210430
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/decke
 
