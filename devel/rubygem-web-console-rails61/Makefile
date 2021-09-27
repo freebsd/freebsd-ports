@@ -15,9 +15,12 @@ RUN_DEPENDS=	rubygem-activemodel61>=6.0.0:databases/rubygem-activemodel61 \
 		rubygem-bindex>=0.4.0:devel/rubygem-bindex \
 		rubygem-railties61>=6.0.0:www/rubygem-railties61
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	rubyonrails
+CPE_PRODUCT=	web_console
 
 .include <bsd.port.mk>
