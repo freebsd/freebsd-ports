@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	grpc-google-iam-v1
-PORTVERSION=	0.6.11
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Google IAM gRPC client library
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	rubygem-google-protobuf>=3.14<4:devel/rubygem-google-protobuf \
-		rubygem-googleapis-common-protos>=1.3.11<2.0:devel/rubygem-googleapis-common-protos \
+		rubygem-googleapis-common-protos>=1.3.12<2.0:devel/rubygem-googleapis-common-protos \
 		rubygem-grpc>=1.27<2:net/rubygem-grpc
 
 USES=		gem
