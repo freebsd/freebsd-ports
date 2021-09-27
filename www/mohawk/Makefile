@@ -1,8 +1,7 @@
 PORTNAME=	mohawk
-PORTVERSION=	2.0.21
+DISTVERSION=	2.0.21
 CATEGORIES=	www
-MASTER_SITES=	http://fossil.bsdsx.fr/mohawk/tarball/
-DISTFILES=	${DISTNAME}.tar.gz?uuid=${PORTVERSION}
+MASTER_SITES=	https://fossil.bsdsx.fr/mohawk/tarball/?r=${DISTVERSION}&name=/
 
 MAINTAINER=	dsx+mohawk@bsdsx.fr
 COMMENT=	Simple and lightweight HTTP daemon
@@ -11,19 +10,19 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-PLIST_FILES+=	bin/mhtpasswd \
+USES=		localbase uidfix
+USE_RC_SUBR=	mohawk
+
+CFLAGS+=	-I${LOCALBASE}/include/event2/compat
+
+PLIST_FILES=	bin/mhtpasswd \
 		man/man5/mohawk.conf.5.gz \
 		man/man8/mhtpasswd.8.gz \
 		man/man8/mohawk.8.gz \
 		sbin/mohawk \
 		etc/mohawk.conf.sample
 
-USES=	uidfix
-
 PORTEXAMPLES=	*
-USE_RC_SUBR=	mohawk
-
-CFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	EXAMPLES
 

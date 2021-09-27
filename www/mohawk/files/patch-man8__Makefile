@@ -1,7 +1,8 @@
---- ./man8/Makefile.orig	2012-05-28 13:27:10.000000000 +0200
-+++ ./man8/Makefile	2012-05-28 13:27:22.000000000 +0200
-@@ -1,3 +1,4 @@
+--- man8/Makefile.orig	2021-09-25 06:45:21 UTC
++++ man8/Makefile
+@@ -1,4 +1,5 @@
+ MAN= mhtpasswd.8 mohawk.8
 +SHAREDIR=	${PREFIX}
- MAN8= mhtpasswd.8 mohawk.8
+ NO_OBJ=
  
  .include <bsd.prog.mk>
