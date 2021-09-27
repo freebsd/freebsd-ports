@@ -18,10 +18,12 @@ RUN_DEPENDS=	rubygem-activesupport50>=${PORTVERSION}:devel/rubygem-activesupport
 		rubygem-rails-dom-testing-rails50>=2.0<3:textproc/rubygem-rails-dom-testing-rails50 \
 		rubygem-rails-html-sanitizer>=1.0.3<2:textproc/rubygem-rails-html-sanitizer
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	rubyonrails
 
 PORTSCOUT=	limit:^5\.0\.
 
