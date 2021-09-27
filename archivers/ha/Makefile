@@ -2,7 +2,7 @@
 
 PORTNAME=	ha
 PORTVERSION=	0.999b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	https://aklv.github.io/distfiles/
 DISTNAME=	ha0999
@@ -25,6 +25,8 @@ post-patch:
 		-e 's|LDFLAGS = -O2||' \
 		-e 's|CFLAGS = -Wall -O2|CFLAGS += -Wall|' \
 		${WRKSRC}/makefile.nix
+	@${REINPLACE_CMD} -e 's|OBJS =  machine.o info.o|OBJS = machine.o info.o sanitize.o|' \
+		${WRKSRC}/nix/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ha ${STAGEDIR}${PREFIX}/bin
