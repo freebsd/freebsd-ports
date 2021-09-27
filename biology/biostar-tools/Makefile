@@ -1,5 +1,5 @@
 PORTNAME=	biostar-tools
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	biology python
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -24,8 +24,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		picard-tools>0:biology/picard-tools \
 		bbmap>0:biology/bbmap \
 		minimap2>0:biology/minimap2 \
-		bwa>=0:biology/bwa \
-		bowtie2>=0:biology/bowtie2 \
+		bwa>0:biology/bwa \
+		bowtie2>0:biology/bowtie2 \
 		samtools>0:biology/samtools \
 		emboss>0:biology/emboss \
 		bedtools>0:biology/bedtools \
@@ -59,7 +59,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		mafft>0:biology/mafft \
 		clustal-omega>0:biology/clustal-omega \
 		${PYTHON_PKGNAMEPREFIX}pywgsim>0:biology/py-pywgsim@${PY_FLAVOR} \
-		sam2pairwise:biology/sam2pairwise
+		sam2pairwise>0:biology/sam2pairwise \
+		kallisto>0:biology/kallisto
 
 USES=		metaport python
 
