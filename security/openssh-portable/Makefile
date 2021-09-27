@@ -2,7 +2,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	8.7p1
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -191,10 +191,15 @@ VERSION_ADDENDUM_DEFAULT?=	${OPSYS}-${PKGNAME}
 CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
 CFLAGS_gcc=	-Wno-stringop-truncation -Wno-stringop-overflow
 
+SSH_ASKPASS_PATH?=	${LOCALBASE}/bin/ssh-askpass
+
 post-patch:
 	@${REINPLACE_CMD} \
 	    -e 's|install: \(.*\) host-key check-config|install: \1|g' \
 	    ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} \
+	    -e 's|$$[{(]libexecdir[})]/ssh-askpass|${SSH_ASKPASS_PATH}|' \
+	    ${WRKSRC}/Makefile.in ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} \
 	    -e 's|\(VersionAddendum\) none|\1 ${VERSION_ADDENDUM_DEFAULT}|' \
 	    ${WRKSRC}/sshd_config
