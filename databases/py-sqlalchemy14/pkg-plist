@@ -6,6 +6,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/association/proxied_association.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/asyncio/async_orm.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/asyncio/basic.html
+%%PORTDOCS%%%%DOCSDIR%%/_modules/examples/asyncio/gather_orm_statements.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/asyncio/greenlet_orm.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/custom_attributes/active_column_defaults.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/custom_attributes/custom_management.html
@@ -428,6 +429,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/asyncio/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/asyncio/async_orm.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/asyncio/basic.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asyncio/gather_orm_statements.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/asyncio/greenlet_orm.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom_attributes/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom_attributes/active_column_defaults.py
