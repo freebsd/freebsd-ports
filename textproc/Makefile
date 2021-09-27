@@ -1337,6 +1337,7 @@
     SUBDIR += py-markdown-it-py
     SUBDIR += py-markdown-math
     SUBDIR += py-markdown2
+    SUBDIR += py-marko
     SUBDIR += py-markuppy
     SUBDIR += py-markups
     SUBDIR += py-markupsafe

@@ -1,0 +1,17 @@
+Marko is a markdown parser written in pure Python that complies with
+CommonMark's spec v0.30. It is designed to be highly extensible.
+
+Among all implementations of Python's markdown parser, it is a common issue that
+user can't easily extend it to add his own features. Furthermore,
+Python-Markdown and mistune don't comply with CommonMark's spec. It is a good
+reason for me to develop a new markdown parser.
+
+Respecting that Marko complies with CommonMark's spec at the same time, which is
+a super complicated spec, Marko's performance will be affected. However, using a
+parser which doesn't comply with the CommonMark spec may give you unexpected
+rendered results from time to time. A benchmark result shows that Marko is 3
+times slower than Python-Markdown, but a bit faster than Commonmark-py, much
+slower than mistune. If performance is a bigger concern to you than spec
+compliance, you'd better choose another parser.
+
+WWW: https://github.com/frostming/marko
