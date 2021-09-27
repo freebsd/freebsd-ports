@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	storj
-PORTVERSION=	1.37.2
+PORTVERSION=	1.39.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -9,9 +9,6 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Decentralized cloud object storage
 
 LICENSE=	AGPLv3
-
-DEPRECATED=	Deprecated in favour of net/storj due to v3 rearchitecture
-EXPIRATION_DATE=2021-12-31
 
 USES=		go:modules
 USE_GITHUB=	yes

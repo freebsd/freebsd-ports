@@ -8,7 +8,7 @@ GH_TUPLE=	\
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		boombuler:barcode:6c824513bacc:boombuler_barcode/vendor/github.com/boombuler/barcode \
 		btcsuite:btcutil:a53e38424cce:btcsuite_btcutil/vendor/github.com/btcsuite/btcutil \
-		calebcase:tmpfile:v1.0.2:calebcase_tmpfile/vendor/github.com/calebcase/tmpfile \
+		calebcase:tmpfile:v1.0.3:calebcase_tmpfile/vendor/github.com/calebcase/tmpfile \
 		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v2.1.1:cespare_xxhash/vendor/github.com/cespare/xxhash/v2 \
 		cheekybits:genny:v1.0.0:cheekybits_genny/vendor/github.com/cheekybits/genny \
@@ -21,20 +21,20 @@ GH_TUPLE=	\
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-ini:ini:v1.62.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-redis:redis:v8.7.1:go_redis_redis/vendor/github.com/go-redis/redis/v8 \
-		go-rod:rod:v0.100.0:go_rod_rod/vendor/github.com/go-rod/rod \
 		go-task:slim-sprig:348f09dbbbc0:go_task_slim_sprig/vendor/github.com/go-task/slim-sprig \
 		go-tomb:tomb:dd632973f1e7:go_tomb_tomb/vendor/gopkg.in/tomb.v1 \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_0/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:4f45737414dc:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:32db794688a5:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
 		golang:net:89ef3d95e781:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:977fb7262007:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:f4d43177bf5e:golang_sys/vendor/golang.org/x/sys \
 		golang:term:7de9c90e9dd1:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
@@ -64,15 +64,14 @@ GH_TUPLE=	\
 		jtolds:monkit-hw:141a0da276b3:jtolds_monkit_hw/vendor/github.com/jtolds/monkit-hw/v2 \
 		jtolds:tracetagger:v2.0.0-rc5:jtolds_tracetagger/vendor/github.com/jtolds/tracetagger/v2 \
 		loov:hrtime:v1.0.3:loov_hrtime/vendor/github.com/loov/hrtime \
-		lucas-clemente:quic-go:v0.22.0:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
+		lucas-clemente:quic-go:v0.23.0:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
 		magiconair:properties:v1.8.5:magiconair_properties/vendor/github.com/magiconair/properties \
-		marten-seemann:qtls-go1-15:v0.1.5:marten_seemann_qtls_go1_15/vendor/github.com/marten-seemann/qtls-go1-15 \
 		marten-seemann:qtls-go1-16:v0.1.4:marten_seemann_qtls_go1_16/vendor/github.com/marten-seemann/qtls-go1-16 \
-		marten-seemann:qtls-go1-17:v0.1.0-rc.1:marten_seemann_qtls_go1_17/vendor/github.com/marten-seemann/qtls-go1-17 \
+		marten-seemann:qtls-go1-17:v0.1.0:marten_seemann_qtls_go1_17/vendor/github.com/marten-seemann/qtls-go1-17 \
 		mattn:go-colorable:v0.1.6:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.7:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		mattn:go-sqlite3:v2.0.3:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
+		mattn:go-sqlite3:v1.14.8:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		mitchellh:mapstructure:v1.4.1:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		nsf:jsondiff:f29ed568f4ce:nsf_jsondiff/vendor/github.com/nsf/jsondiff \
 		nsf:termbox-go:38ba6e5628f1:nsf_termbox_go/vendor/github.com/nsf/termbox-go \
@@ -87,7 +86,7 @@ GH_TUPLE=	\
 		segmentio:analytics-go:v3.1.0:segmentio_analytics_go/vendor/gopkg.in/segmentio/analytics-go.v3 \
 		segmentio:backo-go:23eae7c10bd3:segmentio_backo_go/vendor/github.com/segmentio/backo-go \
 		shopspring:decimal:v1.2.0:shopspring_decimal/vendor/github.com/shopspring/decimal \
-		spacemonkeygo:monkit:v3.0.14:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
+		spacemonkeygo:monkit:v3.0.15:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
 		spacemonkeygo:spacelog:2296661a0572:spacemonkeygo_spacelog/vendor/github.com/spacemonkeygo/spacelog \
 		spf13:afero:v1.6.0:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
@@ -95,11 +94,11 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:70ba30f208a9:storj_common/vendor/storj.io/common \
-		storj:drpc:v0.0.24:storj_drpc/vendor/storj.io/drpc \
+		storj:common:56ad343b6a7e:storj_common/vendor/storj.io/common \
+		storj:drpc:v0.0.26:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:debb1cbcbbd7:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:private:af46b647eda5:storj_private/vendor/storj.io/private \
-		storj:uplink:799c214b35ac:storj_uplink/vendor/storj.io/uplink \
+		storj:uplink:4aeb0a767a86:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v72.51.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v72 \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
@@ -108,9 +107,6 @@ GH_TUPLE=	\
 		uber-go:zap:v1.16.0:uber_go_zap/vendor/go.uber.org/zap \
 		vivint:infectious:25a574ae18a3:vivint_infectious/vendor/github.com/vivint/infectious \
 		xtgo:uuid:a0b114877d4c:xtgo_uuid/vendor/github.com/xtgo/uuid \
-		ysmood:goob:v0.3.0:ysmood_goob/vendor/github.com/ysmood/goob \
-		ysmood:gson:v0.6.4:ysmood_gson/vendor/github.com/ysmood/gson \
-		ysmood:leakless:v0.7.0:ysmood_leakless/vendor/github.com/ysmood/leakless \
 		yuin:gopher-lua:ab39c6098bdb:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua \
 		zeebo:admission:v3.0.2:zeebo_admission/vendor/github.com/zeebo/admission/v3 \
 		zeebo:assert:v1.3.0:zeebo_assert/vendor/github.com/zeebo/assert \
