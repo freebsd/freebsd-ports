@@ -1,7 +1,7 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
 
 PORTNAME=	WWW-Mechanize
-PORTVERSION=	2.04
+PORTVERSION=	2.05
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
