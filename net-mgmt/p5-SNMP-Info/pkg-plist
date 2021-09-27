@@ -115,7 +115,9 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/Redlion.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Scalance.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/SonicWALL.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Steelfusion.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Steelhead.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/SteelheadEx.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Sun.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Tasman.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Teltonika.pm
@@ -254,7 +256,9 @@
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Redlion.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Scalance.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::SonicWALL.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Layer3::Steelfusion.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Steelhead.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Layer3::SteelheadEx.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Sun.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Tasman.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Teltonika.3.gz
