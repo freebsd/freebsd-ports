@@ -4400,6 +4400,7 @@
     SUBDIR += py-ddt
     SUBDIR += py-ddtrace
     SUBDIR += py-debtcollector
+    SUBDIR += py-debugpy
     SUBDIR += py-debugtools
     SUBDIR += py-decorator
     SUBDIR += py-decorator4

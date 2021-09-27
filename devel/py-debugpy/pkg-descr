@@ -1,0 +1,5 @@
+This debugger implements the Debug Adapter Protocol: debugProtocol.json [1].
+
+[1] https://github.com/microsoft/vscode-debugadapter-node/blob/main/debugProtocol.json
+
+WWW: https://github.com/microsoft/debugpy
