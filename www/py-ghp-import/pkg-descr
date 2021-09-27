@@ -1,0 +1,16 @@
+GitHub Pages is a pretty awesome service that GitHub provides for hosting
+project documentation. The only thing is that it requires a gh-pages branch that
+is the site's document root. This means that keeping documentation sources in
+the branch with code is a bit difficult. And it really turns into a head
+scratcher for things like Sphinx that want to access documentation sources and
+code sources at the same time.
+
+Then I stumbled across an interesting looking package called github-tools that
+looked almost like what I wanted. It was a tad complicated and more involved
+than I wanted but it gave me an idea. Why not just write a script that can copy
+a directory to the gh-pages branch of the repository. This saves me from even
+having to think about the branch and everything becomes magical.
+
+This is what ghp-import was written for.
+
+WWW: https://github.com/c-w/ghp-import
