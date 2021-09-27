@@ -1,7 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 
 PORTNAME=	neovim
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	editors rubygems
 MASTER_SITES=	RG
 

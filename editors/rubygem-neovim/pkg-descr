@@ -1,4 +1,4 @@
 These are ruby bindings to interact with neovim. This package is NOT
 required to edit or highlight ruby files from within neovim.
 
-WWW: https://github.com/alexgenco/neovim-ruby
+WWW: https://github.com/neovim/neovim-ruby
