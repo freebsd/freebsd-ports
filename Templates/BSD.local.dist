@@ -290,6 +290,8 @@
             vendor_completions.d
             ..
         ..
+        icons
+        ..
         info
         ..
         java
