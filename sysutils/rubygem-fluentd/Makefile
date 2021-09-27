@@ -1,5 +1,6 @@
 PORTNAME=	fluentd
 PORTVERSION=	1.13.3
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	\
 	rubygem-bundler>=0:sysutils/rubygem-bundler \
 	rubygem-cool.io>=1.4.5<2.0.0:devel/rubygem-cool.io \
-	rubygem-http_parser.rb>=0.5.1<0.8.0:net/rubygem-http_parser.rb \
+	rubygem-http_parser.rb>=0.5.1<0.9.0:net/rubygem-http_parser.rb \
 	rubygem-msgpack>=1.3.1<2.0.0:devel/rubygem-msgpack \
 	rubygem-serverengine>=2.2.2<3.0.0:net/rubygem-serverengine \
 	rubygem-sigdump>=0.2.2<0.3:devel/rubygem-sigdump \
