@@ -30,9 +30,9 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-CPE_VENDOR=	jekyllrb
-
 PLIST_FILES=	bin/jekyll
+
+CPE_VENDOR=	jekyllrb
 
 PORTSCOUT=	limit:^3\.
 
