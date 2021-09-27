@@ -1,7 +1,7 @@
 # Created by: Carlos J Puga Medina <cpm@FreeBSD.org>
 
 PORTNAME=	josepy
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
