@@ -5,13 +5,13 @@ GH_TUPLE=	\
 		VictoriaMetrics:metrics:v1.18.0:victoriametrics_metrics/vendor/github.com/VictoriaMetrics/metrics \
 		VictoriaMetrics:metricsql:v0.24.0:victoriametrics_metricsql/vendor/github.com/VictoriaMetrics/metricsql \
 		VividCortex:ewma:v1.2.0:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
-		aws:aws-sdk-go:v1.40.45:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.40.47:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v2.1.2:cespare_xxhash/vendor/github.com/cespare/xxhash/v2 \
 		cheggaaa:pb:v3.0.8:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
 		cpuguy83:go-md2man:v2.0.1:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man/v2 \
-		fatih:color:v1.12.0:fatih_color/vendor/github.com/fatih/color \
+		fatih:color:v1.13.0:fatih_color/vendor/github.com/fatih/color \
 		go-kit:kit:v0.11.0:go_kit_kit/vendor/github.com/go-kit/kit \
 		go-logfmt:logfmt:v0.5.1:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
@@ -22,19 +22,19 @@ GH_TUPLE=	\
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:d61c044b1678:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:b8560ed6a9b7:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:b395a37504d4:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:181ce0d877f6:google_go_genproto/vendor/google.golang.org/genproto \
 		googleapis:gax-go:v2.1.1:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.57.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:storage/v1.16.1:googleapis_google_cloud_go_storage \
-		googleapis:google-cloud-go:v0.93.3:googleapis_google_cloud_go/vendor/cloud.google.com/go \
+		googleapis:google-cloud-go:v0.95.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		grpc:grpc-go:v1.40.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		influxdata:influxdb:v1.9.4:influxdata_influxdb/vendor/github.com/influxdata/influxdb \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		klauspost:compress:v1.13.6:klauspost_compress/vendor/github.com/klauspost/compress \
-		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-colorable:v0.1.9:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
@@ -54,6 +54,6 @@ GH_TUPLE=	\
 		valyala:fastjson:v1.6.3:valyala_fastjson/vendor/github.com/valyala/fastjson \
 		valyala:fastrand:v1.1.0:valyala_fastrand/vendor/github.com/valyala/fastrand \
 		valyala:fasttemplate:v1.2.1:valyala_fasttemplate/vendor/github.com/valyala/fasttemplate \
-		valyala:gozstd:v1.12.0:valyala_gozstd/vendor/github.com/valyala/gozstd \
+		valyala:gozstd:v1.13.0:valyala_gozstd/vendor/github.com/valyala/gozstd \
 		valyala:histogram:v1.2.0:valyala_histogram/vendor/github.com/valyala/histogram \
 		valyala:quicktemplate:v1.7.0:valyala_quicktemplate/vendor/github.com/valyala/quicktemplate
