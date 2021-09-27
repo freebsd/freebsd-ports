@@ -2,8 +2,7 @@
 
 PORTNAME=	qhull
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.3.2
-PORTEPOCH=	1
+DISTVERSION=	8.0.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -18,7 +17,7 @@ USES=		cmake
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS=	qhull-8.* afni qhull5
+CONFLICTS=	qhull-7.* afni qhull5
 
 OPTIONS_DEFINE=	DOCS
 
