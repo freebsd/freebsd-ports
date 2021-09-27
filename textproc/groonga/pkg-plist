@@ -84,6 +84,7 @@ include/groonga/groonga/type.h
 include/groonga/groonga/util.h
 include/groonga/groonga/vector.h
 include/groonga/groonga/version.h
+include/groonga/groonga/wal.h
 include/groonga/groonga/windows.h
 include/groonga/groonga/windows_event_logger.h
 include/groonga/groonga/window_function.h
