@@ -923,6 +923,7 @@
     SUBDIR += py-kerberos
     SUBDIR += py-keyring
     SUBDIR += py-keyrings.alt
+    SUBDIR += py-krb5
     SUBDIR += py-libnacl
     SUBDIR += py-m2crypto
     SUBDIR += py-maec

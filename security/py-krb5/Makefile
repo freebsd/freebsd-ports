@@ -1,0 +1,31 @@
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+
+PORTNAME=	krb5
+PORTVERSION=	0.1.1
+CATEGORIES=	security python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Kerberos API bindings for Python
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		python:3.6+
+USE_PYTHON=	autoplist concurrent cython distutils
+
+MAKE_ENV=	KRB5_KRB5CONFIG=${KRB5CONFIG}
+
+OPTIONS_SINGLE=	GSSAPI
+OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
+OPTIONS_DEFAULT=GSSAPI_BASE
+
+GSSAPI_BASE_USES=	gssapi
+GSSAPI_HEIMDAL_USES=	gssapi:heimdal
+GSSAPI_MIT_USES=	gssapi:mit
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
+
+.include <bsd.port.mk>

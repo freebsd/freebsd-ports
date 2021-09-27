@@ -1,0 +1,5 @@
+This library provides Python functions that wraps the Kerberos 5 C API. Due to
+the complex nature of this API it is highly recommended to use something like
+python-gssapi which exposes the Kerberos authentication details through GSSAPI.
+
+WWW: https://github.com/jborean93/pykrb5
