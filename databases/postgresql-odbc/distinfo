@@ -1,3 +1,3 @@
-TIMESTAMP = 1620410005
-SHA256 (postgresql/psqlodbc-13.01.0000.tar.gz) = 435de2ea38109b8384ed76d327032b73a53a915379a752a34b0f9c7539055da7
-SIZE (postgresql/psqlodbc-13.01.0000.tar.gz) = 941064
+TIMESTAMP = 1632761882
+SHA256 (postgresql/psqlodbc-13.02.0000.tar.gz) = b39b7e5c41fd6475c551112fa724bf57c4a446175ec4188a90e2844cc1612585
+SIZE (postgresql/psqlodbc-13.02.0000.tar.gz) = 944327
