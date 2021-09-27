@@ -1,44 +1,36 @@
 # Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 
 PORTNAME=	res
-PORTVERSION=	4.0.4
+PORTVERSION=	5.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://cdn.bitbucket.org/mmottl/res/downloads/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Automatically Resizing Contiguous Memory for OCaml
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	OCaml library for resizable arrays and strings
 
-LICENSE=	LGPL20+ # source says LGPL20+, COPYING says LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
+LICENSE=	LGPL21+ # with a special exception to clause 6
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+BUILD_DEPENDS=	dune:devel/ocaml-dune
 
 USE_OCAML=	yes
-USE_OCAML_FINDLIB=yes
-USE_OCAMLFIND_PLIST=yes
-USE_OCAML_WASH=	yes
-
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix ${PREFIX} --disable-docs --disable-examples
-MAKE_JOBS_UNSAFE=yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	mmottl
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in AUTHORS.txt CHANGES.txt README.md TODO.md
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+do-build:
+	cd ${BUILD_WRKSRC} && dune build -p ${PORTNAME} -j ${MAKE_JOBS_NUMBER}
+
+do-install:
+	cd ${INSTALL_WRKSRC} && dune install --destdir=${STAGEDIR} \
+		--libdir=${OCAML_SITELIBDIR}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.ml ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
