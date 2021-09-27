@@ -16,10 +16,13 @@ RUN_DEPENDS=	rubygem-activemodel4>=4.0:databases/rubygem-activemodel4 \
 		rubygem-railties4>=4.0:www/rubygem-railties4 \
 		rubygem-sprockets-rails-rails4>=2.0:devel/rubygem-sprockets-rails-rails4
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	rubyonrails
+CPE_PRODUCT=	web_console
 
 PORTSCOUT=	limit:^2\.
 
