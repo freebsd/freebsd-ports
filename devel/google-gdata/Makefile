@@ -9,14 +9,18 @@ COMMENT=	DOT NET library for the Google Data API
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Google is no longer using GoogleData APIs
+EXPIRATION_DATE=2021-10-27
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/Newtonsoft.Json.pc:devel/newtonsoft-json
 NUGET_DEPENDS=	nunit.framework=2.63.0
 
+USES=		dos2unix gmake mono:nuget pathfix
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	google
 GH_TAGNAME=	b716bbc
 
-USES=		dos2unix gmake mono:nuget pathfix
 NUGET_LAYOUT=	flat
 PATHFIX_MAKEFILEIN=	Makefile
 WRKSRC_SUBDIR=	clients/cs
