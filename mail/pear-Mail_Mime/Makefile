@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
 PORTNAME=	Mail_Mime
-PORTVERSION=	1.10.10
+PORTVERSION=	1.10.11
 PORTEPOCH=	2
 CATEGORIES=	mail www pear
 
