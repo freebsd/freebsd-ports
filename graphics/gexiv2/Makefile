@@ -1,7 +1,7 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 
 PORTNAME=	gexiv2
-PORTVERSION=	0.12.1
+PORTVERSION=	0.12.3
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
