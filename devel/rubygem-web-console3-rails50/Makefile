@@ -15,10 +15,13 @@ RUN_DEPENDS=	rubygem-activemodel50>=5.0:databases/rubygem-activemodel50 \
 		rubygem-bindex>=0.4.0:devel/rubygem-bindex \
 		rubygem-railties50>=5.0:www/rubygem-railties50
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	rubyonrails
+CPE_PRODUCT=	web_console
 
 # web-console 4.0.0+ requires Rails 6.0.0+
 PORTSCOUT=	limit:^3\.
