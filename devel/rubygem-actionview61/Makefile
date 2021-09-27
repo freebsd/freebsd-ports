@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	actionview
-PORTVERSION=	6.1.3.2
+PORTVERSION=	6.1.4.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	61
@@ -21,9 +21,9 @@ RUN_DEPENDS=	rubygem-activesupport61>=${PORTVERSION}:devel/rubygem-activesupport
 USES=		cpe gem
 USE_RUBY=	yes
 
-CPE_VENDOR=	rubyonrails
-
 NO_ARCH=	yes
+
+CPE_VENDOR=	rubyonrails
 
 PORTSCOUT=	limit:^6\.1\.
 
