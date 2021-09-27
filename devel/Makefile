@@ -4842,6 +4842,7 @@
     SUBDIR += py-pathtools
     SUBDIR += py-paver
     SUBDIR += py-pbr
+    SUBDIR += py-pdm
     SUBDIR += py-pebble
     SUBDIR += py-pefile
     SUBDIR += py-pendulum
