@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	pyspnego
-PORTVERSION=	0.1.6
+PORTVERSION=	0.2.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,14 @@ OPTIONS_DEFINE=	KERBEROS YAML
 KERBEROS_DESC=	Kerberos authentication support
 YAML_DESC=	YAML output support
 
-KERBEROS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gssapi>=1.5.0:security/py-gssapi@${PY_FLAVOR}
+KERBEROS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gssapi>=1.5.0:security/py-gssapi@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}krb5>=0:security/py-krb5@${PY_FLAVOR}
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0:devel/py-ruamel.yaml@${PY_FLAVOR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 30700
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dataclasses>=0:devel/py-dataclasses@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
