@@ -21,9 +21,9 @@ RUN_DEPENDS=	rubygem-activesupport4>=${PORTVERSION}:devel/rubygem-activesupport4
 USES=		cpe gem
 USE_RUBY=	yes
 
-CPE_VENDOR=	rubyonrails
-
 NO_ARCH=	yes
+
+CPE_VENDOR=	rubyonrails
 
 PORTSCOUT=	limit:^4\.2\.
 
