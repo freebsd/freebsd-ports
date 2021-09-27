@@ -16,9 +16,11 @@ RUN_DEPENDS=	rubygem-rails-dom-testing-rails50>=1<3:textproc/rubygem-rails-dom-t
 		rubygem-railties50>=4.2.0:www/rubygem-railties50 \
 		rubygem-thor>=0.14<2.0:devel/rubygem-thor
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	rubyonrails
 
 .include <bsd.port.mk>
