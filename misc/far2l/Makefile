@@ -4,12 +4,13 @@ PORTNAME=	far2l
 # Upstream tags (pre-)releases very rarely and irregularly, so keep using
 # the g${DATE} format even for tagged releases to avoid bumping PORTEPOCH
 # in case we'd have to use raw commit hashes again in the future.
-PORTVERSION=	g20210426
-PORTREVISION=	1
+PORTVERSION=	g20210921
 CATEGORIES=	misc
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of FAR v2 to Unix-like systems
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gawk:lang/gawk gm4:devel/m4 \
 		${LOCALBASE}/include/spdlog/spdlog.h:devel/spdlog
@@ -21,7 +22,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elfmz
-GH_TAGNAME=	v2021-04-26_alpha
+GH_TAGNAME=	v2021-09-21_alpha
 
 USES=		cmake compiler:c++11-lang libarchive pkgconfig shebangfix ssl
 SHEBANG_FILES=	far2l/bootstrap/view.sh
