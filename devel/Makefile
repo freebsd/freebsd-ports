@@ -5071,6 +5071,7 @@
     SUBDIR += py-python-subunit
     SUBDIR += py-pythonbrew
     SUBDIR += py-pythondialog
+    SUBDIR += py-pythonfinder
     SUBDIR += py-pytimeparse
     SUBDIR += py-pytools
     SUBDIR += py-pytrie
