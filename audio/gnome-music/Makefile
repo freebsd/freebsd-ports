@@ -1,7 +1,7 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 
 PORTNAME=	gnome-music
-PORTVERSION=	40.1.1
+PORTVERSION=	41.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
 LIB_DEPENDS=	libdazzle-1.0.so:x11-toolkits/libdazzle \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libgrilo-0.3.so:net/grilo \
+		libhandy-1.so:x11-toolkits/libhandy \
 		libmediaart-2.0.so:multimedia/libmediaart \
 		libtracker-sparql-3.0.so:sysutils/tracker3
 RUN_DEPENDS=	grilo-plugins>0:net/grilo-plugins
