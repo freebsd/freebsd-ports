@@ -61,10 +61,6 @@ USES+=			gettext-runtime gnome
 PLIST_SUB+=		X11=""
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk2)@\1site-lib/\2@' \
-		${WRKSRC}/Makefile.OCaml
-
 post-build:
 	d=$$(mktemp -d) && trap "rm -rf $$d" 0 && ( cd ${WRKSRC} && HOME=$$d ./unison -selftest -ui text -batch )
 .if ${FLAVOR} == x11

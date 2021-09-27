@@ -1,0 +1,29 @@
+--- Makefile.OCaml.orig	2009-06-18 09:29:40 UTC
++++ Makefile.OCaml
+@@ -65,7 +65,7 @@ OCAMLLIBDIR=$(shell ocamlc -v | tail -n -1 | sed -e 's
+ # This should be set to an appropriate value automatically, depending
+ # on whether the lablgtk library is available
+ LABLGTKLIB=$(OCAMLLIBDIR)/lablgtk
+-LABLGTK2LIB=$(OCAMLLIBDIR)/lablgtk2
++LABLGTK2LIB=$(OCAMLLIBDIR)/site-lib/lablgtk2
+ ##BCP [3/2007]: Removed temporarily, since the OSX UI is not working well 
+ ## at the moment and we don't want to confuse people by building it by default
+ ifeq ($(OSARCH),osx)
+@@ -84,7 +84,7 @@ buildexecutable::
+ ### Default parameters
+ 
+ INCLFLAGS=-I lwt -I ubase
+-CAMLFLAGS+=$(INCLFLAGS)
++CAMLFLAGS+=$(INCLFLAGS) -unsafe-string
+ 
+ ifeq ($(OSARCH),win32)
+   # Win32 system
+@@ -246,7 +246,7 @@ endif
+ 
+ # Gtk2 GUI
+ ifeq ($(UISTYLE), gtk2)
+-  CAMLFLAGS+=-I +lablgtk2
++  CAMLFLAGS+=-I +site-lib/lablgtk2
+   OCAMLOBJS+=pixmaps.cmo uigtk2.cmo linkgtk2.cmo
+   OCAMLLIBS+=lablgtk.cma
+ endif
