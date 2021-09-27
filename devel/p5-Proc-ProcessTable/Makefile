@@ -1,11 +1,12 @@
 # Created by: Michael Johnson <ahze@ahze.net>
 
 PORTNAME=	Proc-ProcessTable
-PORTVERSION=	0.62
+PORTVERSION=	0.63.4
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JWB
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to the unix process table
