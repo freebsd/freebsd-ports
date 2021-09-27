@@ -1,5 +1,5 @@
 PORTNAME=	dynflow
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,7 @@ RUN_DEPENDS=	rubygem-algebrick>=0.7.0<0.8:devel/rubygem-algebrick \
 		rubygem-apipie-params>=0:devel/rubygem-apipie-params \
 		rubygem-concurrent-ruby>=1.1.3<1.2:devel/rubygem-concurrent-ruby \
 		rubygem-concurrent-ruby-edge>=0.6.0<0.7:devel/rubygem-concurrent-ruby-edge \
+		rubygem-msgpack>=1.3.3<2:devel/rubygem-msgpack \
 		rubygem-multi_json>=0:devel/rubygem-multi_json \
 		rubygem-sequel>=4.0.0:devel/rubygem-sequel
 
