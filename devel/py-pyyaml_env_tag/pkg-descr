@@ -1,0 +1,4 @@
+pyyaml_env_tag is a custom YAML tag for referencing environment variables in
+YAML files.
+
+WWW: https://github.com/waylan/pyyaml-env-tag
