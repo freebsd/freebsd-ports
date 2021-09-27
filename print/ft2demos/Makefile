@@ -6,7 +6,7 @@ CATEGORIES=	print
 MASTER_SITES=	SAVANNAH/freetype/ \
 		SF/freetype/freetype-demos/${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Demo programs for FreeType2
 
 LICENSE=	BSD3CLAUSE GPLv2
