@@ -16,8 +16,7 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/ha
 MAKEFILE=	makefile.nix
 ALL_TARGET=	ha
-USES=		cpe gmake tar:tgz
-CPE_VENDOR=	linux-ha
+USES=		gmake tar:tgz
 
 post-patch:
 	@${REINPLACE_CMD} 's,<malloc.h>,<stdlib.h>,' \
