@@ -749,6 +749,7 @@
     SUBDIR += py-aiosqlite
     SUBDIR += py-alembic
     SUBDIR += py-apsw
+    SUBDIR += py-asyncmy
     SUBDIR += py-asyncpg
     SUBDIR += py-berkeleydb
     SUBDIR += py-bsddb3

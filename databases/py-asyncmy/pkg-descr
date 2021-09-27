@@ -1,0 +1,4 @@
+asyncmy is a fast asyncio MySQL driver, which reuse most of pymysql and aiomysql
+but rewrite core protocol with cython to speedup.
+
+WWW: https://github.com/long2ice/asyncmy
