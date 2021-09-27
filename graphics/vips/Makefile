@@ -5,123 +5,100 @@ PORTVERSION=	8.11.4
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Free image processing system
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	bash:shells/bash
-#LIB_DEPENDS=	libgirepository-1.0.so:devel/gobject-introspection
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libharfbuzz.so:print/harfbuzz \
-		libexpat.so:textproc/expat2
+		libharfbuzz.so:print/harfbuzz
+RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++11-lang cpe gettext gmake gnome libtool localbase \
-		pathfix pkgconfig python shebangfix
-
-SHEBANG_FILES=	tools/vips-${PORTVERSION:R} tools/vipsprofile
+USES=		compiler:c++11-lang cpe gettext gmake gnome libtool localbase pathfix pkgconfig python shebangfix
 USE_GNOME=	glib20
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--without-nifti \
-			--without-openslide \
-			--without-pdfium \
-			--without-imagequant \
-			--without-doxygen \
-			--disable-introspection
 
+CONFIGURE_ARGS=	--disable-introspection \
+		--without-doxygen \
+		--without-imagequant \
+		--without-nifti \
+		--without-openslide \
+		--without-pdfium
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	VERSION="${PORTVERSION:R}"
+PLIST_SUB=	VERSION=${PORTVERSION:R}
 
-OPTIONS_DEFINE=		DEBUG DOCS X11 GSF FFTW ORC LCMS2 OPENEXR HEIF POPPLER LIBRSVG2 MATIO CFITSIO WEBP PANGO TIFF GIF PNG JPEG LIBEXIF
-OPTIONS_RADIO=		MAGICK
+SHEBANG_FILES=	tools/vips-${PORTVERSION:R} tools/vipsprofile
+
+OPTIONS_DEFINE=	CFITSIO DEBUG DOCS FFTW GIF GSF HEIF JPEG LCMS2 LIBEXIF LIBRSVG2 MATIO OPENEXR ORC PANGO PNG POPPLER TIFF WEBP X11
+OPTIONS_RADIO=	MAGICK
 OPTIONS_RADIO_MAGICK=	IMAGEMAGICK GRAPHMAGICK
-OPTIONS_DEFAULT=	X11 GSF FFTW ORC LCMS2 OPENEXR HEIF POPPLER LIBRSVG2 MATIO CFITSIO WEBP PANGO TIFF GIF PNG JPEG LIBEXIF IMAGEMAGICK
-
-DEBUG_CONFIGURE_ENABLE=	debug
-DEBUG_INSTALL_TARGET_OFF=	install-strip
-
-DOCS_CONFIGURE_ENABLE=	gtk-doc gtk-doc-html
-DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
-
-X11_CONFIGURE_WITH=	x
-
-IMAGEMAGICK_CONFIGURE_ON=	--with-magickpackage=MagickCore
-GRAPHMAGICK_CONFIGURE_ON=	--with-magickpackage=GraphicsMagick
-
-GSF_DESC=		Structured file formats support
-GSF_CONFIGURE_WITH=	gsf
-GSF_USE=		GNOME=libgsf
-
-FFTW_CONFIGURE_WITH=	fftw
-FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
-
-ORC_DESC=		ORC language support
-ORC_CONFIGURE_WITH=	orc
-ORC_LIB_DEPENDS=	liborc-0.4.so:devel/orc
-
-LCMS2_CONFIGURE_WITH=	lcms
-LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
-
-OPENEXR_CONFIGURE_WITH=	OpenEXR
-OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
-			libImath.so:math/Imath
-
-HEIF_DESC=		HEIF image format support
-HEIF_CONFIGURE_WITH=	heif
-HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
-
-POPPLER_CONFIGURE_WITH=	poppler
-POPPLER_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
-POPPLER_USE=		GNOME=cairo
-
-LIBRSVG2_CONFIGURE_WITH=rsvg
-LIBRSVG2_USE=		GNOME=librsvg2 GNOME=cairo
-
-MATIO_DESC=		Matlab MAT format support
-MATIO_CONFIGURE_WITH=	matio
-MATIO_LIB_DEPENDS=	libmatio.so:math/matio \
-			libhdf5.so:science/hdf5
+OPTIONS_DEFAULT=CFITSIO FFTW GIF GSF HEIF IMAGEMAGICK JPEG LCMS2 LIBEXIF LIBRSVG2 MATIO OPENEXR ORC PANGO PNG POPPLER TIFF WEBP X11
+GSF_DESC=	Structured file formats support
+ORC_DESC=	ORC language support
+HEIF_DESC=	HEIF image format support
+MATIO_DESC=	Matlab MAT format support
 
 CFITSIO_CONFIGURE_WITH=	cfitsio
 CFITSIO_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
-
-WEBP_CONFIGURE_WITH=	libwebp
-WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
-
-PANGO_CONFIGURE_WITH=	pangoft2
-PANGO_USE=		GNOME=pango
-
-TIFF_CONFIGURE_WITH=	tiff
-TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
-
+DEBUG_CONFIGURE_ENABLE=	debug
+DEBUG_INSTALL_TARGET_OFF=	install-strip
+DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
+DOCS_CONFIGURE_ENABLE=	gtk-doc gtk-doc-html
+FFTW_CONFIGURE_WITH=	fftw
+FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
 GIF_CONFIGURE_WITH=	giflib
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
-
-PNG_CONFIGURE_WITH=	png
-PNG_LIB_DEPENDS=	libpng.so:graphics/png
-
+GRAPHMAGICK_CONFIGURE_ON=	--with-magickpackage=GraphicsMagick
+GRAPHMAGICK_LIB_DEPENDS=libGraphicsMagick.so:graphics/GraphicsMagick
+GSF_CONFIGURE_WITH=	gsf
+GSF_USE=		GNOME=libgsf
+HEIF_CONFIGURE_WITH=	heif
+HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
+IMAGEMAGICK_CONFIGURE_ON=	--with-magickpackage=MagickCore
 JPEG_CONFIGURE_WITH=	jpeg
-JPEG_USES=		jpeg
 JPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
-
+JPEG_USES=		jpeg
+LCMS2_CONFIGURE_WITH=	lcms
+LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 LIBEXIF_CONFIGURE_WITH=	libexif
 LIBEXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
+LIBRSVG2_CONFIGURE_WITH=rsvg
+LIBRSVG2_USE=		GNOME=cairo,librsvg2
+MATIO_CONFIGURE_WITH=	matio
+MATIO_LIB_DEPENDS=	libmatio.so:math/matio
+OPENEXR_CONFIGURE_WITH=	OpenEXR
+OPENEXR_LIB_DEPENDS=	libImath.so:math/Imath libOpenEXR.so:graphics/openexr
+ORC_CONFIGURE_WITH=	orc
+ORC_LIB_DEPENDS=	liborc-0.4.so:devel/orc
+PANGO_CONFIGURE_WITH=	pangoft2
+PANGO_USE=		GNOME=pango
+PNG_CONFIGURE_WITH=	png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+POPPLER_CONFIGURE_WITH=	poppler
+POPPLER_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
+POPPLER_USE=		GNOME=cairo
+TIFF_CONFIGURE_WITH=	tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
+WEBP_CONFIGURE_WITH=	libwebp
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
+X11_CONFIGURE_WITH=	x
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
-. if ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=		libMagickCore-7.so:graphics/ImageMagick7
-. else
-LIB_DEPENDS+=		libMagickCore-7.so:graphics/ImageMagick7-nox11
-. endif
-.elif ${PORT_OPTIONS:MGRAPHMAGICK}
-LIB_DEPENDS+=		libGraphicsMagick.so:graphics/GraphicsMagick
+.if ${PORT_OPTIONS:MX11}
+LIB_DEPENDS+=	libMagickCore-7.so:graphics/ImageMagick7
 .else
-CONFIGURE_ARGS+=	--without-magick
+LIB_DEPENDS+=	libMagickCore-7.so:graphics/ImageMagick7-nox11
+.endif
+.endif
+
+.if !${PORT_OPTIONS:MGRAPHMAGICK} && !${PORT_OPTIONS:MIMAGEMAGICK}
+CONFIGURE_ARGS+=--without-magick
 .endif
 
 .include <bsd.port.mk>
