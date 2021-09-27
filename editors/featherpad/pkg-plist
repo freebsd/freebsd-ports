@@ -13,6 +13,7 @@ share/applications/featherpad.desktop
 %%DATADIR%%/translations/featherpad_el.qm
 %%DATADIR%%/translations/featherpad_eo.qm
 %%DATADIR%%/translations/featherpad_es.qm
+%%DATADIR%%/translations/featherpad_et.qm
 %%DATADIR%%/translations/featherpad_fa.qm
 %%DATADIR%%/translations/featherpad_fi.qm
 %%DATADIR%%/translations/featherpad_fr.qm
@@ -32,6 +33,8 @@ share/applications/featherpad.desktop
 %%DATADIR%%/translations/featherpad_si.qm
 %%DATADIR%%/translations/featherpad_sk_SK.qm
 %%DATADIR%%/translations/featherpad_tr.qm
+%%DATADIR%%/translations/featherpad_uk.qm
 %%DATADIR%%/translations/featherpad_zh_CN.qm
 %%DATADIR%%/translations/featherpad_zh_TW.qm
 share/icons/hicolor/scalable/apps/featherpad.svg
+share/metainfo/featherpad.metainfo.xml
