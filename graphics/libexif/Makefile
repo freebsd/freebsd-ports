@@ -1,9 +1,9 @@
 # Created by: Peter Schmiedeskamp <pschmied@qwest.net>
 
 PORTNAME=	libexif
-PORTVERSION=	0.6.22
+PORTVERSION=	0.6.23
 CATEGORIES=	graphics
-MASTER_SITES=	https://github.com/libexif/libexif/releases/download/libexif-${PORTVERSION:S|.|_|g}-release/
+MASTER_SITES=	https://github.com/libexif/libexif/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library to read digital camera file meta-data
