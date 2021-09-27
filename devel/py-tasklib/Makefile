@@ -1,5 +1,5 @@
 PORTNAME=	tasklib
-DISTVERSION=	2.3.0
+DISTVERSION=	2.4.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	task:deskutils/taskwarrior
 
 USES=		python:3.5+,run
-USE_PYTHON=	distutils concurrent autoplist
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 .include <bsd.port.mk>
