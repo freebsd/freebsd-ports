@@ -1,7 +1,7 @@
 # Created by: Johannes Meixner <johannes@perceivon.net>
 
 PORTNAME=	globalid
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails52
@@ -12,7 +12,7 @@ COMMENT=	URIs for your models makes it easy to pass references around
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport52>=4.2.0:devel/rubygem-activesupport52
+RUN_DEPENDS=	rubygem-activesupport52>=5.0:devel/rubygem-activesupport52
 
 USES=		gem
 USE_RUBY=	yes
