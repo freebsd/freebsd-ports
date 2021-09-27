@@ -1067,6 +1067,7 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/icons/hicolor/24x24/actions/gnc-split-trans.png
 %%DATADIR%%/icons/hicolor/24x24/actions/gnc-sx-new.png
 %%DATADIR%%/icons/hicolor/24x24/actions/gnc-transfer.png
+%%DATADIR%%/migratable-prefs.xml
 %%DATADIR%%/pixmaps/gnucash-icon-48x48.bmp
 %%DATADIR%%/pixmaps/gnucash-icon.ico
 %%DATADIR%%/pixmaps/gnucash_splash.png
