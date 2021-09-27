@@ -18,7 +18,7 @@ USE_PERL5=	configure
 
 OPTIONS_DEFINE=	DOCS
 
-PORTSCOUT=	limit:^[0-9\.]*$$
+PORTSCOUT=	limit:^[0-9\.]*$$ skipv:0.611,0.612
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Proc/ProcessTable/ProcessTable.so
