@@ -1,0 +1,16 @@
+https://github.com/sharow/libconcurrent/pull/15
+
+--- makefile.orig	2021-09-27 11:43:44 UTC
++++ makefile
+@@ -66,6 +66,11 @@ else ifeq ($(LIBCONCURRENT_ARCH),arm64) # MacOS, iOS, 
+   LIBCONCURRENT_ARCH_BITS=64
+   AS=as
+   ASFLAGS=
++ else ifeq ($(SYSTEM), FreeBSD)
++  ARCH=aarch64
++  ARCH_BITS=64
++  AS=as
++  ASFLAGS=
+  endif
+ else ifeq ($(LIBCONCURRENT_ARCH), aarch64) # Linux
+  LIBCONCURRENT_ARCH=aarch64
