@@ -54,6 +54,7 @@ man/man1/hugin.1.gz
 man/man1/hugin_executor.1.gz
 man/man1/hugin_hdrmerge.1.gz
 man/man1/hugin_lensdb.1.gz
+man/man1/hugin_stacker.1.gz
 man/man1/hugin_stitch_project.1.gz
 man/man1/icpfind.1.gz
 man/man1/linefind.1.gz
@@ -70,9 +71,6 @@ man/man1/pto_var.1.gz
 man/man1/tca_correct.1.gz
 man/man1/verdandi.1.gz
 man/man1/vig_optimize.1.gz
-share/appdata/PTBatcherGUI.appdata.xml
-share/appdata/calibrate_lens_gui.appdata.xml
-share/appdata/hugin.appdata.xml
 share/applications/PTBatcherGUI.desktop
 share/applications/calibrate_lens_gui.desktop
 share/applications/hugin.desktop
@@ -564,7 +562,7 @@ share/applications/pto_gen.desktop
 %%DATADIR%%/xrc/pref_dialog.xrc
 %%DATADIR%%/xrc/preview_frame.xrc
 %%DATADIR%%/xrc/reset_dialog.xrc
-share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ptoptimizer-script.png
+share/icons/gnome/48x48/mimetypes/application-x-ptoptimizer-script.png
 share/icons/hicolor/128x128/apps/hugin.png
 share/icons/hicolor/128x128/apps/ptbatcher.png
 share/icons/hicolor/16x16/apps/hugin.png
@@ -599,4 +597,7 @@ share/locale/sk/LC_MESSAGES/hugin.mo
 share/locale/sv/LC_MESSAGES/hugin.mo
 share/locale/zh_CN/LC_MESSAGES/hugin.mo
 share/locale/zh_TW/LC_MESSAGES/hugin.mo
+share/metainfo/PTBatcherGUI.appdata.xml
+share/metainfo/calibrate_lens_gui.appdata.xml
+share/metainfo/hugin.appdata.xml
 share/mime/packages/hugin.xml

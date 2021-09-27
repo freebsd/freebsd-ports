@@ -1,13 +1,14 @@
 # Created by: Carlos Eduardo G. Carvalho <cartola@openit.com.br>
 
 PORTNAME=	hugin
-PORTVERSION=	2019.2.0
-PORTREVISION=	14
+PORTVERSION=	2020.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@fuz.su
 COMMENT=	GUI for Panorama Tools, to stitch panoramic images
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
 		libImath.so:math/Imath \
@@ -24,24 +25,19 @@ RUN_DEPENDS=	enblend>=4.1.4:graphics/enblend \
 		exiftool:graphics/p5-Image-ExifTool \
 		gmake:devel/gmake
 
-LICENSE=	GPLv2
-
-CFLAGS+=	-I${LOCALBASE}/include/Imath
-
-BROKEN_i386=	Fails to build: ld: error: src/hugin_base/libhuginbase.so.0.0: undefined reference to __atomic_load
-
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl gnome \
-	jpeg pkgconfig shared-mime-info shebangfix sqlite tar:bzip2 xorg
-CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
+		jpeg pkgconfig shared-mime-info shebangfix sqlite tar:bzip2 xorg
 USE_GL=		gl glew glu glut
+INSTALLS_ICONS=	yes
 USE_WX=		3.0+
 USE_XORG=	x11
-
-INSTALLS_ICONS=	yes
 
 SHEBANG_FILES=	src/hugin_script_interface/hpi.py \
 		src/hugin_script_interface/plugins/*.py \
 		src/hugin_script_interface/plugins-dev/*.py
+
+CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
+CFLAGS+=	-I${LOCALBASE}/include/Imath
 
 OPTIONS_DEFINE=		PANOMATIC AUTOPANOSIFTC PYTHON
 OPTIONS_DEFAULT=	PANOMATIC PYTHON
@@ -54,8 +50,8 @@ AUTOPANOSIFTC_DESC=	Install graphics/autopano-sift-c
 AUTOPANOSIFTC_RUN_DEPENDS=	autopano:graphics/autopano-sift-c
 
 PYTHON_DESC=		Python Scripting Interface
-PYTHON_USES=		python
 PYTHON_BUILD_DEPENDS=	swig:devel/swig
+PYTHON_USES=		python
 PYTHON_CMAKE_ON=	-DBUILD_HSI=ON
 PYTHON_CMAKE_OFF=	-DBUILD_HSI=OFF
 
