@@ -2,6 +2,7 @@
 
 PORTNAME=	Crypt-OpenSSL-RSA
 PORTVERSION=	0.32
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,5 +21,8 @@ RUN_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:security/p5-Crypt-OpenSSL-Bignum \
 
 USES=		perl5 ssl
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/OpenSSL/RSA/RSA.so
 
 .include <bsd.port.mk>
