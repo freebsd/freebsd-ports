@@ -1,6 +1,6 @@
---- setup.py.orig	2019-04-10 15:00:42 UTC
+--- setup.py.orig	2021-08-12 11:55:42 UTC
 +++ setup.py
-@@ -11,17 +11,6 @@ from io import open
+@@ -11,19 +11,8 @@ from io import open
  
  
  cmdclass = {}
@@ -10,14 +10,16 @@
 -    print("warning: wheel package is not installed", file=sys.stderr)
 -else:
 -    class UniversalBdistWheel(bdist_wheel):
--
+ 
 -        def get_tag(self):
 -            return ('py2.py3', 'none',) + bdist_wheel.get_tag(self)[2:]
--
+ 
 -    cmdclass['bdist_wheel'] = UniversalBdistWheel
- 
- 
+-
+-
  class SharedLibrary(Extension):
+ 
+     if sys.platform == "darwin":
 @@ -74,7 +63,6 @@ class SharedLibBuildExt(build_ext):
                    verbose=self.verbose, dry_run=self.dry_run)
  
@@ -26,7 +28,7 @@
  
  env = dict(os.environ)
  if sys.platform == "win32":
-@@ -109,7 +97,7 @@ with open("README.rst", "r", encoding="u
+@@ -109,7 +97,7 @@ with open("README.rst", "r", encoding="utf-8") as read
  
  setup(
      name="ttfautohint-py",
