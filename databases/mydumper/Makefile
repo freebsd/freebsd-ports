@@ -1,7 +1,7 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	mydumper
-DISTVERSION=	0.10.7-2
+DISTVERSION=	0.11.1-3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
