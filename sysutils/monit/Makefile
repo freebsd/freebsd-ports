@@ -2,6 +2,7 @@
 
 PORTNAME=	monit
 DISTVERSION=	5.29.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://mmonit.com/monit/dist/
 
@@ -34,6 +35,9 @@ SSL_CONFIGURE_OFF=	--without-ssl
 
 post-install:
 	${INSTALL} -m 600 ${WRKSRC}/monitrc ${STAGEDIR}${PREFIX}/etc/monitrc.sample
+	@${REINPLACE_CMD} -i '' -e \
+		"s|include /etc/monit.d|include ${PREFIX}/etc/monit.d|" \
+		${STAGEDIR}${PREFIX}/etc/monitrc.sample
 	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL} -m 644 ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
