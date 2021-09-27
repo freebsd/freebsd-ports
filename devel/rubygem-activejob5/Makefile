@@ -15,10 +15,13 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-activesupport5>=${PORTVERSION}:devel/rubygem-activesupport5 \
 		rubygem-globalid-rails5>=0.3.6:databases/rubygem-globalid-rails5
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	rubyonrails
+CPE_PRODUCT=	active_job
 
 PORTSCOUT=	limit:^5\.1\.
 
