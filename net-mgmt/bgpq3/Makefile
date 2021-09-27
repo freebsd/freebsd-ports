@@ -1,7 +1,7 @@
 # Created by: Alexandre Snarskii <snar@snar.spb.ru>
 
 PORTNAME=	bgpq3
-PORTVERSION=	0.1.35
+PORTVERSION=	0.1.36
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
