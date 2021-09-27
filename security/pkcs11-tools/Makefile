@@ -1,6 +1,6 @@
 PORTNAME=	pkcs11-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1
+DISTVERSION=	2.4.2
 CATEGORIES=	security
 
 MAINTAINER=	eric.devolder@gmail.com
