@@ -1,13 +1,13 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	gnome-desktop
-PORTVERSION=	3.38.2
+PORTVERSION=	41.0
 CATEGORIES=	x11 gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Additional UI API for GNOME 3
+COMMENT=	Additional UI API for GNOME
 
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi
