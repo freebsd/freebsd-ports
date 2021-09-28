@@ -1,3 +1,3 @@
-TIMESTAMP = 1622400542
-SHA256 (gnome/gnome-system-monitor-40.1.tar.xz) = fdb30f4367907aab86d7c2bb76a7b773ba850b765c9666a39f42abfe22691d1a
-SIZE (gnome/gnome-system-monitor-40.1.tar.xz) = 763720
+TIMESTAMP = 1632867184
+SHA256 (gnome/gnome-system-monitor-41.0.tar.xz) = c7fc44c61949b794b0289968ebbbcc0c15f8cfc3d9e45bfaa81ed45c12139e5f
+SIZE (gnome/gnome-system-monitor-41.0.tar.xz) = 774644
