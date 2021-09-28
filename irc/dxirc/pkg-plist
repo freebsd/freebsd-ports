@@ -31,6 +31,15 @@
 %%DATADIR%%/icons/dxirc.png
 %%DATADIR%%/icons/file.png
 %%DATADIR%%/icons/find.png
+%%DATADIR%%/icons/flags/ad.png
+%%DATADIR%%/icons/flags/ae.png
+%%DATADIR%%/icons/flags/af.png
+%%DATADIR%%/icons/flags/ag.png
+%%DATADIR%%/icons/flags/ai.png
+%%DATADIR%%/icons/flags/al.png
+%%DATADIR%%/icons/flags/am.png
+%%DATADIR%%/icons/flags/an.png
+%%DATADIR%%/icons/flags/ao.png
 %%DATADIR%%/icons/flags/ar.png
 %%DATADIR%%/icons/flags/as.png
 %%DATADIR%%/icons/flags/at.png

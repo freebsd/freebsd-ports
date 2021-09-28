@@ -1,6 +1,6 @@
 --- fox/CMakeLists.txt.orig	2015-11-16 14:35:35 UTC
 +++ fox/CMakeLists.txt
-@@ -20,8 +20,17 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_C
+@@ -16,8 +16,17 @@
  
  if(PKG_CONFIG_FOUND)
      pkg_check_modules(FOX fox)
@@ -20,7 +20,7 @@
  endif(PKG_CONFIG_FOUND)
  
  if(NOT FOX_FOUND)
-@@ -47,16 +56,14 @@ endif()
+@@ -43,16 +52,14 @@
  
  set(HAVE_X11 FALSE)
  if(NOT WIN32)
@@ -39,12 +39,14 @@
  else(NOT WIN32)
      list(APPEND DXIRCFOX_LIBS "ws2_32" "winmm")
  endif(NOT WIN32)
-@@ -89,8 +96,17 @@ endif(HAVE_LUA)
- if(HAVE_ENCHANT)
+@@ -86,21 +93,21 @@
+ set(HAVE_ENCHANT2 FALSE)
+ if(USE_ENCHANT)
      if(PKG_CONFIG_FOUND)
-         pkg_check_modules(ENCHANT enchant)
+-        pkg_check_modules(ENCHANT enchant-2)
 -        list(APPEND DXIRCFOX_LIBS ${ENCHANT_LIBRARIES})
 -        list(APPEND DXIRCFOX_INCLUDE_DIRS ${ENCHANT_INCLUDE_DIRS})
++         pkg_check_modules(ENCHANT enchant)
 +        find_path(ENCHANT_INCLUDE_DIR enchant++.h
 +        PATHS
 +        ${ENCHANT_INCLUDE_DIRS}
@@ -56,6 +58,19 @@
 +        /usr/local/lib)
 +        list(APPEND DXIRCFOX_LIBS ${ENCHANT_LIBRARY})
 +        list(APPEND DXIRCFOX_INCLUDE_DIRS ${ENCHANT_INCLUDE_DIR})
+         set(HAVE_ENCHANT TRUE)
+         if(${ENCHANT_VERSION} VERSION_GREATER "1.6")
+             set(HAVE_ENCHANT2 TRUE)
+-        endif()
+-        if(NOT ENCHANT_FOUND)
+-            pkg_check_modules(ENCHANT enchant)
+-            list(APPEND DXIRCFOX_LIBS ${ENCHANT_LIBRARIES})
+-            list(APPEND DXIRCFOX_INCLUDE_DIRS ${ENCHANT_INCLUDE_DIRS})
+-            set(HAVE_ENCHANT TRUE)
+-            if(${ENCHANT_VERSION} VERSION_GREATER "1.6")
+-                set(HAVE_ENCHANT2 TRUE)
+-            endif()
+         endif()
      endif(PKG_CONFIG_FOUND)
      if(NOT ENCHANT_FOUND)
-         set(ENCHANT_INCLUDE_DIR "" CACHE PATH "Path to enchant include dir")
+

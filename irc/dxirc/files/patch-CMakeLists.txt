@@ -1,7 +1,7 @@
---- CMakeLists.txt.orig	2015-10-28 18:53:26 UTC
+--- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -5,13 +5,17 @@ set(PROJECT_VERSION "1.30.0")
- list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+@@ -22,13 +22,17 @@
+ endif()
  
  find_package(PkgConfig)
 -find_package(Libintl)
@@ -22,7 +22,7 @@
  
  if(NOT WIN32)
      option(HAVE_ENCHANT "Enable spellchecking" FALSE)
-@@ -23,11 +27,14 @@ if(APPLE)
+@@ -40,11 +40,14 @@
  option(ENABLE_OSX_BUNDLE "Package dxirc as an OSX bundle (ignored on other platforms)." OFF)
  endif(APPLE)
  

@@ -1,10 +1,9 @@
 PORTNAME=	dxirc
-PORTVERSION=	1.30.0
-PORTREVISION=	3
+PORTVERSION=	1.40.0
 CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	arch_dvx@users.sourceforge.net
+MAINTAINER=	archdvx@dxsolutions.org
 COMMENT=	Simple IRC client
 
 LICENSE=	GPLv3+
@@ -42,6 +41,5 @@ NOTIFY_RUN_DEPENDS=	notify-send:devel/libnotify
 QT5_USES=	qt:5
 QT5_USE=		QT=core,gui,multimedia,network,widgets \
 			QT=buildtools_build,qmake_build
-QT5_CMAKE_ON=		-DQT5:BOOL=ON
 
 .include <bsd.port.mk>
