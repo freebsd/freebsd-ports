@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	recipes
-PORTVERSION=	0.1.16
+PORTVERSION=	0.1.17
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -15,7 +15,7 @@ CRAN_DEPENDS=	R-cran-dplyr>0:math/R-cran-dplyr \
 		R-cran-generics>=0.1.0:devel/R-cran-generics \
 		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-gower>0:math/R-cran-gower \
-		R-cran-ipred>0:math/R-cran-ipred \
+		R-cran-ipred>=0.9.12:math/R-cran-ipred \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle \
 		R-cran-lubridate>0:devel/R-cran-lubridate \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
@@ -25,6 +25,7 @@ CRAN_DEPENDS=	R-cran-dplyr>0:math/R-cran-dplyr \
 		R-cran-tidyr>=1.0.0:devel/R-cran-tidyr \
 		R-cran-tidyselect>=1.1.0:devel/R-cran-tidyselect \
 		R-cran-timeDate>0:finance/R-cran-timeDate \
+		R-cran-vctrs>0:devel/R-cran-vctrs \
 		R-cran-withr>0:devel/R-cran-withr
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
