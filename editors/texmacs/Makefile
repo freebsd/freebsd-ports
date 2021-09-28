@@ -7,7 +7,7 @@ CATEGORIES=	editors print
 MASTER_SITES=	http://www.texmacs.org/Download/ftp/tmftp/source/
 DISTNAME=	TeXmacs-${PORTVERSION}-src
 
-MAINTAINER=	bofhs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG scientific text editor
 
 LICENSE=	GPLv3
