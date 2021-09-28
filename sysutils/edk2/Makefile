@@ -11,7 +11,7 @@ ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	This port only provides firmware for aarch64 and amd64 machine
 
 PKGNAMESUFFIX=	-${FLAVOR:C/_/-/g}
-FLAVORS=	fvp macchiatobin rpi3 rpi4 xen_x64
+FLAVORS=	macchiatobin fvp rpi3 rpi4 xen_x64
 FLAVOR?=	macchiatobin
 
 USES=	gmake python:3.7+,build
