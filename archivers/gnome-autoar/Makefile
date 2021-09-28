@@ -1,7 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	gnome-autoar
-DISTVERSION=	0.3.3
+DISTVERSION=	0.4.0
 CATEGORIES=	archivers
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,10 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
 
-USES=		cpe gettext-runtime gmake gnome libarchive libtool pkgconfig tar:xz
+USES=		cpe gettext-runtime gmake gnome libarchive meson pkgconfig \
+		tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 CPE_VENDOR=	gnome
 
 .include <bsd.port.mk>
