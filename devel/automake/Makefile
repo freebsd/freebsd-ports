@@ -1,7 +1,7 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 
 PORTNAME=	automake
-PORTVERSION=	1.16.3
+PORTVERSION=	1.16.4
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
