@@ -1,7 +1,7 @@
 # Created by: chris
 
 PORTNAME=	spampd
-PORTVERSION=	2.53
+PORTVERSION=	2.61
 CATEGORIES=	mail perl5
 
 MAINTAINER=	des@FreeBSD.org
