@@ -328,6 +328,7 @@ usr/bin/yes
 usr/lib/dracut/dracut.conf.d/50-nss-softokn.conf
 usr/lib/dracut/modules.d/05nss-softokn/module-setup.sh
 @rmtry usr/lib/gio/modules/giomodule.cache
+usr/lib/ld-linux-aarch64.so.1
 usr/lib/locale/locale-archive
 usr/lib/lsb/init-functions
 usr/lib/lsb/install_initd
