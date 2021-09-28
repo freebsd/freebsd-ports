@@ -34,6 +34,7 @@ share/metainfo/peg-e.appdata.xml
 %%DATADIR%%/translations/pege_de.qm
 %%DATADIR%%/translations/pege_el.qm
 %%DATADIR%%/translations/pege_en.qm
+%%DATADIR%%/translations/pege_eo.qm
 %%DATADIR%%/translations/pege_es.qm
 %%DATADIR%%/translations/pege_fr.qm
 %%DATADIR%%/translations/pege_he.qm
@@ -44,6 +45,7 @@ share/metainfo/peg-e.appdata.xml
 %%DATADIR%%/translations/pege_pt.qm
 %%DATADIR%%/translations/pege_ro.qm
 %%DATADIR%%/translations/pege_ru.qm
+%%DATADIR%%/translations/pege_sv.qm
+%%DATADIR%%/translations/pege_te.qm
 %%DATADIR%%/translations/pege_tr.qm
 %%DATADIR%%/translations/pege_zh.qm
-share/pixmaps/peg-e.xpm
