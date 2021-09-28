@@ -1,7 +1,7 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 
 PORTNAME=	gnote
-PORTVERSION=	40.2
+PORTVERSION=	41.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 
@@ -12,8 +12,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libgtkspell3-3.so:textproc/gtkspell3 \
-		libenchant.so:textproc/enchant \
+LIB_DEPENDS=	libenchant.so:textproc/enchant \
+		libgtkspell3-3.so:textproc/gtkspell3 \
 		libsecret-1.so:security/libsecret \
 		libuuid.so:misc/e2fsprogs-libuuid
 
@@ -21,18 +21,18 @@ PORTSCOUT=	limitw:1,even
 
 USE_GNOME=	gtkmm30 intltool libxml2 libxslt
 USE_XORG=	x11
-USES=		desktop-file-utils compiler:c++11-lib gettext gmake \
-		gnome libtool localbase pathfix pkgconfig tar:xz xorg
+USES=		compiler:c++11-lib desktop-file-utils gettext gnome localbase \
+		meson pathfix pkgconfig python:3.6+,build tar:xz xorg
 INSTALLS_ICONS=	yes
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 GLIB_SCHEMAS=	org.gnome.gnote.gschema.xml
 
 DOCS=		AUTHORS ChangeLog NEWS README TODO
 
-PLIST_SUB+=	VERSION=${PORTVERSION} SVER=${PORTVERSION:R}
+PLIST_SUB+=	SVER=${PORTVERSION:R} \
+		VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
