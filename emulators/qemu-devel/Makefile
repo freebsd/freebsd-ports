@@ -1,8 +1,7 @@
 # Created by: Juergen Lock <nox@jelal.kn-bremen.de>
 
 PORTNAME=	qemu
-DISTVERSION=	5.1.0.20201019
-PORTREVISION=	1
+DISTVERSION=	6.1.0.20210928
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -16,27 +15,29 @@ ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64 powerpc64le
 IGNORE_FreeBSD_11=	Unable to produce Position Independent Code
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
 		bash:shells/bash
-LIB_DEPENDS=	libnettle.so:security/nettle \
+LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libepoxy.so:graphics/libepoxy \
-		libpcre2-8.so:devel/pcre2
+		libnettle.so:security/nettle \
+		libpcre2-8.so:devel/pcre2 \
+		libzstd.so:archivers/zstd
 
 USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t ninja perl5 \
 		pkgconfig python:build tar:xz xorg
-USE_GITHUB=	yes
+USE_GITLAB=	yes
 USE_GNOME=	cairo glib20 libxml2
 USE_PERL5=	build
 USE_PYTHON=	distutils noflavors
 USE_XORG=	pixman
 
-GH_TUPLE=	qemu:qemu:22d30b3 \
-		qemu:keycodemapdb:6b3d716:keycodemapdb/ui/keycodemapdb \
-		qemu:dtc:85e5d83:dtc/dtc \
-		mesonbuild:meson:776acd2:meson/meson \
-		cota:berkeley-softfloat-3:b64af41:berkeleysoftfloat3/tests/fp/berkeley-softfloat-3 \
-		cota:berkeley-testfloat-3:5a59dce:berkeleytestfloat3/tests/fp/berkeley-testfloat-3
+GL_COMMIT=	de8ed1055c2ce18c95f597eb10df360dcb534f99
+GL_TUPLE=	qemu-project:keycodemapdb:d21009b1c9f94b740ea66be8e48a1d8ad8124023:keycodemapdb/ui/keycodemapdb \
+		qemu-project:dtc:e33ce1d6a8c7e54e3ad12cff33690b6da0aee1dc:dtc/dtc \
+		qemu-project:meson:5fa0fd3b473f792bd7333cf6ae6e2f4c851b6108:meson/meson \
+		qemu-project:berkeley-softfloat-3:b64af41c3276f97f0e181920400ee056b9c88037:berkeleysoftfloat3/tests/fp/berkeley-softfloat-3 \
+		qemu-project:berkeley-testfloat-3:5a59dcec19327396a011a17fd924aed4fec416b3:berkeleytestfloat3/tests/fp/berkeley-testfloat-3
 #BROKEN_powerpc64=	fails to compile: In function aio_bh_poll: internal compiler error: Segmentation fault
 
 #.if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
@@ -84,7 +85,7 @@ NCURSES_DEFAULT_USES=	ncurses
 NCURSES_BASE_USES=	ncurses:base
 NCURSES_PORT_USES=	ncurses:port
 OPENGL_CONFIGURE_OFF=	--disable-opengl
-OPENGL_USE=	GL=gl
+OPENGL_USE=	GL=gbm,gl
 OPENGL_USES=	gl
 PNG_CONFIGURE_OFF=	--disable-vnc-png
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
@@ -104,9 +105,9 @@ X11_CONFIGURE_ENABLE=	sdl
 X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf2
 X11_USES=	sdl
 
-PORTDOCS=	docs index.html interop/.buildinfo interop/* \
-	       	specs/.buildinfo specs/* system/.buildinfo system/* \
-		tools/.buildinfo tools/* user/.buildinfo user/*
+PORTDOCS=	.buildinfo _static/* about/* devel/* docs genindex.html \
+		index.html interop/* objects.inv search.html searchindex.js \
+	       	specs/* system/* tools/* user/*
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}

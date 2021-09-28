@@ -1,39 +1,15 @@
---- configure.orig	2020-10-19 09:52:57 UTC
+--- configure.orig	2021-09-27 14:03:42 UTC
 +++ configure
-@@ -1534,7 +1534,7 @@ if test "$mingw32" = "yes" ; then
-     sysconfdir="$prefix"
-     local_statedir=
+@@ -1635,7 +1635,7 @@ if test "$mingw32" = "yes" ; then
  else
--    mandir="${mandir:-$prefix/share/man}"
-+    mandir="${mandir:-$prefix/man}"
-     datadir="${datadir:-$prefix/share}"
-     docdir="${docdir:-$prefix/share/doc}"
      bindir="${bindir:-$prefix/bin}"
-@@ -3112,6 +3112,14 @@ if check_include "sys/signal.h" ; then
  fi
- 
- ##########################################
-+# getifaddrs (for tests/test-io-channel-socket )
-+
-+have_ifaddrs_h=yes
-+if ! check_include "ifaddrs.h" ; then
-+  have_ifaddrs_h=no
-+fi
-+
-+##########################################
- # VTE probe
- 
- if test "$vte" != "no"; then
-@@ -4522,7 +4530,7 @@ fi
- 
- # check for libusb
- if test "$libusb" != "no" ; then
--    if $pkg_config --atleast-version=1.0.13 libusb-1.0; then
-+    if $pkg_config libusb-1.0; then
-         libusb="yes"
-         libusb_cflags=$($pkg_config --cflags libusb-1.0)
-         libusb_libs=$($pkg_config --libs libusb-1.0)
-@@ -6226,6 +6234,9 @@ fi
+-mandir="${mandir:-$prefix/share/man}"
++mandir="${mandir:-$prefix/man}"
+ datadir="${datadir:-$prefix/share}"
+ docdir="${docdir:-$prefix/share/doc}"
+ sysconfdir="${sysconfdir:-$prefix/etc}"
+@@ -4607,6 +4607,9 @@ echo "CONFIG_TLS_PRIORITY=\"$tls_priority\"" >> $confi
  # if this macro is set.
  if test "$have_fsxattr" = "yes" ; then
      echo "HAVE_FSXATTR=y" >> $config_host_mak
@@ -41,5 +17,5 @@
 +if test "$have_ifaddrs_h" = "yes" ; then
 +    echo "HAVE_IFADDRS_H=y" >> $config_host_mak
  fi
- if test "$have_copy_file_range" = "yes" ; then
-     echo "HAVE_COPY_FILE_RANGE=y" >> $config_host_mak
+ if test "$xen" = "enabled" ; then
+   echo "CONFIG_XEN_BACKEND=y" >> $config_host_mak
