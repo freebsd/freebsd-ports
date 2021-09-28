@@ -1,7 +1,7 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 
 PORTNAME=	gnome-todo
-PORTVERSION=	40.1
+PORTVERSION=	41.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
@@ -12,7 +12,8 @@ COMMENT=	Small application to manage your personal tasks
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	appstream-util:devel/appstream-glib
+BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
+		itstool>0:textproc/itstool
 LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \
 		libgraphene-1.0.so:graphics/graphene \
 		libical.so:devel/libical \
