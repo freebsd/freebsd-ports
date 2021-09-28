@@ -1397,7 +1397,6 @@
     SUBDIR += u-boot-cubieboard
     SUBDIR += u-boot-cubieboard2
     SUBDIR += u-boot-cubox-hummingboard
-    SUBDIR += u-boot-duovero
     SUBDIR += u-boot-firefly-rk3399
     SUBDIR += u-boot-imx-serial-loader
     SUBDIR += u-boot-master
