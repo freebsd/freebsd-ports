@@ -4,7 +4,7 @@ PORTNAME?=	postgresql
 DISTVERSION?=	14rc1
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
@@ -93,6 +93,14 @@ XML_DESC=	Build with XML data type
 DTRACE_CONFIGURE_ENABLE=dtrace
 DTRACE_LDFLAGS=		-lelf
 DTRACE_INSTALL_TARGET=	install
+
+.if ${DISTVERSION:C/([0-9]*).*/\1/} >= 14
+OPTIONS_DEFINE+=	LZ4
+OPTIONS_DEFAULT+=	LZ4
+LZ4_DESC=		Build with LZ4 compression support
+LZ4_CONFIGURE_WITH=	lz4
+LZ4_LIB_DEPENDS+=	liblz4.so:archivers/liblz4
+.endif
 
 .if ${DISTVERSION:C/([0-9]*).*/\1/} >= 11
 OPTIONS_DEFINE+=	LLVM
