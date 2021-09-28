@@ -6,7 +6,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	SPF engine for Postfix policy server and milter implemented in Python
 
 LICENSE=	APACHE20 GPLv2+

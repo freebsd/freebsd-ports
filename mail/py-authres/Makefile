@@ -6,7 +6,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Python module for RFC 5451 Authentication-Results headers
 
 LICENSE=	APACHE20

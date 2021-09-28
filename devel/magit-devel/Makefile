@@ -5,7 +5,7 @@ DISTVERSIONSUFFIX=	-gde1dc8e7
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Interface to Git for Emacs (Development Version)
 
 LICENSE=	GPLv3+

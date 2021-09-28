@@ -6,7 +6,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Programs for locking and unlocking files and mailboxes
 
 LICENSE=	GPLv2

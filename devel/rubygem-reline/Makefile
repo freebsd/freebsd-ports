@@ -3,7 +3,7 @@ PORTVERSION=	0.2.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Alternative GNU Readline or Editline implementation by pure Ruby
 
 LICENSE=	BSD2CLAUSE RUBY

@@ -3,7 +3,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Wrapper for the UNIX-style Database Manager Library
 
 LICENSE=	BSD2CLAUSE

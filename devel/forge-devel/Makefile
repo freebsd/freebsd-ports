@@ -5,7 +5,7 @@ DISTVERSIONSUFFIX=	-g93c8005
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Work with Git forges from the comfort of Magit (Development Version)
 
 LICENSE=	GPLv3+

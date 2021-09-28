@@ -3,7 +3,7 @@ DISTVERSION=	2.19.1
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Modern list library for Emacs
 
 LICENSE=	GPLv3

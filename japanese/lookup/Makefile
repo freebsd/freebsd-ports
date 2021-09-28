@@ -6,7 +6,7 @@ PORTREVISION=	7
 CATEGORIES=	japanese elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Emacs search interface for CD-ROM books, etc
 
 LICENSE=	GPLv2+

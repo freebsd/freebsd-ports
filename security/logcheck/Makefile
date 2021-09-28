@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Auditing tool for system logs on Unix boxes
 
 LICENSE=	GPLv2+

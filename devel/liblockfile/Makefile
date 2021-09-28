@@ -5,7 +5,7 @@ PORTVERSION=	1.17
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Standard lockfile library
 
 LICENSE=	GPLv2+ LGPL21+

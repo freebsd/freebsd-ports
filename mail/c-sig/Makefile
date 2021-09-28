@@ -6,7 +6,7 @@ PORTREVISION=	5
 CATEGORIES=	mail elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Signature insertion tool for Emacs
 
 LICENSE=	GPLv2+

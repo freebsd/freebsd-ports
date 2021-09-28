@@ -3,7 +3,7 @@ PORTVERSION=	14.9.22
 CATEGORIES=	mail
 MASTER_SITES=	https://www.sdaoden.eu/downloads/
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Send and receive Internet mail
 
 LICENSE=	BSD3CLAUSE BSD4CLAUSE ISCL MIT RFC2104 RSA

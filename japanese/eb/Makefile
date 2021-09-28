@@ -11,7 +11,7 @@ DISTFILES=	${EBFILES} \
 DIST_SUBDIR=	eb
 EXTRACT_ONLY=	${EBFILES}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	C library for accessing EB, EBG, EBXA, and EPWING CD-ROM dictionaries
 
 LICENSE=	BSD3CLAUSE

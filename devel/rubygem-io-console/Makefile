@@ -3,7 +3,7 @@ PORTVERSION=	0.5.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Add console capabilities to IO instances
 
 LICENSE=	BSD2CLAUSE RUBY

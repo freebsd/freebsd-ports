@@ -4,7 +4,7 @@ DISTVERSION=	3.5.3
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Minuscule client library for the Github API
 
 LICENSE=	GPLv3+

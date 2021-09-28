@@ -5,7 +5,7 @@ DISTVERSIONSUFFIX=	-gfc4bca6
 CATEGORIES=	mail elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Messaging in the Emacs World for emacs (Development Version)
 
 LICENSE=	BSD3CLAUSE

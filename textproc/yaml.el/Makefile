@@ -4,7 +4,7 @@ DISTVERSION=	0.3.4
 CATEGORIES=	textproc elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	YAML parser in Elisp
 
 LICENSE=	GPLv3+

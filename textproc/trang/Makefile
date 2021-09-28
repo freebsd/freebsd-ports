@@ -5,7 +5,7 @@ PORTVERSION=	20181222
 CATEGORIES=	textproc java
 MASTER_SITES=	https://github.com/relaxng/jing-trang/releases/download/V${PORTVERSION}/
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Multi-format schema converter based on RELAX NG
 
 LICENSE=	BSD3CLAUSE

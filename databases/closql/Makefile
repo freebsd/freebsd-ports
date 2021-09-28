@@ -4,7 +4,7 @@ DISTVERSION=	1.0.6
 CATEGORIES=	databases elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Store EIEIO objects using EmacSQL
 
 LICENSE=	GPLv3+

@@ -3,7 +3,7 @@ DISTVERSION=	0.13
 CATEGORIES=	databases elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	PostgreSQL Elisp interface
 
 LICENSE=	GPLv2+

@@ -4,7 +4,7 @@ CATEGORIES=	mail www
 MASTER_SITES=	https://github.com/RainLoop/rainloop-webmail/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX?=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT?=	Modern and interactive webmail
 
 .if "${PKGNAMESUFFIX}" == "${PHP_PKGNAMESUFFIX}"

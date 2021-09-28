@@ -9,7 +9,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/csrd/
 PATCH_SITES=	http://green.ribbon.to/~ikazuhiro/dic/files/
 PATCHFILES=	csrd.c.diff.gz
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Utility for Shogakukan Random House English-Japanese Dictionary
 
 LICENSE=	PD

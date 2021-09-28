@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Simple major mode to edit YAML file for Emacsen
 
 LICENSE=	GPLv2+
