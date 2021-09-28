@@ -37,7 +37,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-selinux --without-semanage \
 		--without-libnl --without-nfsv4-idmapd-plugin \
 		--without-autofs --without-secrets --without-kcm \
-		--without-python2-bindings \
+		--without-python2-bindings --with-python-prefix=${PREFIX} \
 		--with-init-dir=no \
 		--disable-cifs-idmap-plugin \
 		--with-unicode-lib=libunistring \
