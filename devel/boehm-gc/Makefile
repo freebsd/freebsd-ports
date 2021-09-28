@@ -1,8 +1,7 @@
 # Created by: Mike McGaughey <mmcg@cs.monash.edu.au>
 
 PORTNAME=	gc
-PORTVERSION=	8.0.4
-PORTREVISION=	1
+PORTVERSION=	8.0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hboehm.info/gc/gc_source/ \
 		https://github.com/ivmai/bdwgc/releases/download/v${PORTVERSION}/
@@ -50,11 +49,11 @@ PLIST_FILES=	${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
-		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.4.3,} \
+		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.4.4,} \
 		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
-		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.4.0,} \
+		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.4.1,} \
 		libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
 RUN_DEPENDS+=	${LOCALBASE}/include/gc/gc.h:devel/boehm-gc
 . if ${GC_VARIANT} == "redirect"
