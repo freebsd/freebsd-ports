@@ -1,8 +1,7 @@
-# Created by: Muhammad Moinur Rahman <bbofh@FreeBSD.org>
+# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 
 PORTNAME=	zeep
-PORTVERSION=	4.0.0
-PORTREVISION=	1
+PORTVERSION=	4.1.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
