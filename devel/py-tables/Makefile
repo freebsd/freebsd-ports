@@ -2,6 +2,7 @@
 
 PORTNAME=	tables
 PORTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +29,15 @@ USE_PYTHON=	autoplist concurrent distutils cython
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=		EXAMPLES
+OPTIONS_DEFINE_amd64=		AVX2
+
+AVX2_DESC=	Enable Haswell New Instructions (AVX2) support
+
+# Explicitly disable AVX2 otherwise it will be automatically enabled if the CPU
+# supports it.  If compiled in and run on hosts that have no AVX2 support, it
+# will trigger a SIGILL (Illegal instruction)
+# See also: https://github.com/PyTables/PyTables/issues/841
+AVX2_VARS_OFF=	MAKE_ENV+=DISABLE_AVX2=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/setup.py
