@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	gnome-shell-extensions
-PORTVERSION=	3.36.3
+PORTVERSION=	41.0
 CATEGORIES=	x11 gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	sassc:textproc/sassc
 LIB_DEPENDS=	libgjs.so:lang/gjs
-RUN_DEPENDS=	gnome-shell>=3.36.0:x11/gnome-shell
+RUN_DEPENDS=	gnome-shell>=41.0:x11/gnome-shell
 
 PORTSCOUT=	limitw:1,even
 
