@@ -333,7 +333,6 @@ include/evolution-data-server/libedataserverui/e-webdav-discover-widget.h
 include/evolution-data-server/libedataserverui/libedataserverui.h
 lib/evolution-data-server/addressbook-backends/libebookbackendcarddav.so
 lib/evolution-data-server/addressbook-backends/libebookbackendfile.so
-lib/evolution-data-server/addressbook-backends/libebookbackendgoogle.so
 %%LDAP%%lib/evolution-data-server/addressbook-backends/libebookbackendldap.so
 lib/evolution-data-server/calendar-backends/libecalbackendcaldav.so
 lib/evolution-data-server/calendar-backends/libecalbackendcontacts.so
@@ -375,8 +374,8 @@ lib/girepository-1.0/EDataCal-2.0.typelib
 lib/girepository-1.0/EDataServer-%%EVO_VERSION%%.typelib
 lib/girepository-1.0/EDataServerUI-%%EVO_VERSION%%.typelib
 lib/libcamel-%%EVO_VERSION%%.so
-lib/libcamel-%%EVO_VERSION%%.so.62
-lib/libcamel-%%EVO_VERSION%%.so.62.0.0
+lib/libcamel-%%EVO_VERSION%%.so.63
+lib/libcamel-%%EVO_VERSION%%.so.63.0.0
 lib/libebackend-%%EVO_VERSION%%.so
 lib/libebackend-%%EVO_VERSION%%.so.10
 lib/libebackend-%%EVO_VERSION%%.so.10.0.0
