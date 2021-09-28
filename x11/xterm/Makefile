@@ -1,7 +1,7 @@
 # Created by: krion
 
 PORTNAME=	xterm
-PORTVERSION=	368
+PORTVERSION=	369
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.invisible-island.net/xterm/:src1 \
 		https://invisible-mirror.net/archives/xterm/:src1 \
@@ -31,9 +31,9 @@ CONFLICTS=	x11iraf-[0-9]*
 
 OPTIONS_DEFINE=		256COLOR DABBREV DECTERM GNOME LOGGING LUIT PCRE2 REGIS \
 			SCRNDUMP SIXEL TOOLBAR WCHAR XINERAMA
-OPTIONS_DEFAULT=	256COLOR LUIT SIXEL WCHAR
-OPTIONS_RADIO=		3D
-OPTIONS_RADIO_3D=	NEXTAW XAW3D XAW3DXFT
+OPTIONS_DEFAULT=	256COLOR LUIT SIXEL WCHAR XAW
+OPTIONS_SINGLE=		ATHENA
+OPTIONS_SINGLE_ATHENA=	XAW NEXTAW XAW3D XAW3DXFT
 
 256COLOR_DESC=	Enable 256-color support
 DABBREV_DESC=	Enable support for dabbrev-expand
@@ -49,6 +49,7 @@ TOOLBAR_DESC=	Enable pulldown menus with a toolbar
 WCHAR_DESC=	Enable wide-character support
 XAW3DXFT_DESC=	Link with Xaw 3d xft (extended fonts) library
 XAW3D_DESC=	Link with Xaw 3d library
+XAW_DESC=	Link with Xaw library
 
 256COLOR_CONFIGURE_ENABLE=	256-color
 DABBREV_CONFIGURE_ENABLE=	dabbrev
@@ -75,12 +76,7 @@ XAW3D_LIB_DEPENDS=		libXaw3d.so:x11-toolkits/Xaw3d
 XAW3D_CONFIGURE_WITH=		Xaw3d
 XINERAMA_USE=			XORG=xinerama,xorgproto
 XINERAMA_CONFIGURE_OFF=		--without-xinerama
-
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MXAW3D} && ! ${PORT_OPTIONS:MXAW3DXFT} && ! ${PORT_OPTIONS:MNEXTAW}
-USE_XORG+=	xaw
-.endif
+XAW_USE=			XORG=xaw
 
 ICONVERSION=	1
 
