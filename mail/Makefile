@@ -262,7 +262,6 @@
     SUBDIR += opendkim
     SUBDIR += opendmarc
     SUBDIR += opensmtpd
-    SUBDIR += opensmtpd-devel
     SUBDIR += opensmtpd-extras
     SUBDIR += opensmtpd-extras-queue-ram
     SUBDIR += opensmtpd-extras-scheduler-ram
