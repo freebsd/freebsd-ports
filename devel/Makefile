@@ -5084,7 +5084,6 @@
     SUBDIR += py-pyvisa
     SUBDIR += py-pyvisa-py
     SUBDIR += py-pyxb
-    SUBDIR += py-pyyaml-env-tag
     SUBDIR += py-pyyaml-include
     SUBDIR += py-pyyaml_env_tag
     SUBDIR += py-pyzipper
