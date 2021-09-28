@@ -927,6 +927,7 @@
     SUBDIR += pciutils
     SUBDIR += pcpustat
     SUBDIR += pdixtract
+    SUBDIR += pdsh
     SUBDIR += pdumpfs
     SUBDIR += pear-Cache
     SUBDIR += pear-Cache_Lite
