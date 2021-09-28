@@ -7,7 +7,7 @@ MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Plugins for pluama
+COMMENT=	Plugins for Pluma
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
