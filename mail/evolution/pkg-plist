@@ -176,6 +176,7 @@ include/evolution/e-util/e-filter-element.h
 include/evolution/e-util/e-filter-file.h
 include/evolution/e-util/e-filter-input.h
 include/evolution/e-util/e-filter-int.h
+include/evolution/e-util/e-filter-label.h
 include/evolution/e-util/e-filter-option.h
 include/evolution/e-util/e-filter-part.h
 include/evolution/e-util/e-filter-rule.h
@@ -481,6 +482,7 @@ include/evolution/mail/em-event.h
 include/evolution/mail/em-filter-context.h
 include/evolution/mail/em-filter-editor-folder-element.h
 include/evolution/mail/em-filter-editor.h
+include/evolution/mail/em-filter-mail-identity-element.h
 include/evolution/mail/em-filter-rule.h
 include/evolution/mail/em-filter-source-element.h
 include/evolution/mail/em-folder-properties.h
@@ -704,6 +706,7 @@ share/applications/org.gnome.Evolution.desktop
 %%DATADIR%%/icons/hicolor/16x16/apps/im-aim.png
 %%DATADIR%%/icons/hicolor/16x16/apps/im-icq.png
 %%DATADIR%%/icons/hicolor/16x16/apps/im-jabber.png
+%%DATADIR%%/icons/hicolor/16x16/apps/im-matrix.png
 %%DATADIR%%/icons/hicolor/16x16/apps/im-msn.png
 %%DATADIR%%/icons/hicolor/16x16/apps/im-nov.png
 %%DATADIR%%/icons/hicolor/16x16/apps/im-yahoo.png
@@ -732,6 +735,7 @@ share/applications/org.gnome.Evolution.desktop
 %%DATADIR%%/icons/hicolor/22x22/apps/im-aim.png
 %%DATADIR%%/icons/hicolor/22x22/apps/im-icq.png
 %%DATADIR%%/icons/hicolor/22x22/apps/im-jabber.png
+%%DATADIR%%/icons/hicolor/22x22/apps/im-matrix.png
 %%DATADIR%%/icons/hicolor/22x22/apps/im-msn.png
 %%DATADIR%%/icons/hicolor/22x22/apps/im-nov.png
 %%DATADIR%%/icons/hicolor/22x22/apps/im-yahoo.png
@@ -773,9 +777,17 @@ share/applications/org.gnome.Evolution.desktop
 %%DATADIR%%/icons/hicolor/24x24/apps/im-aim.png
 %%DATADIR%%/icons/hicolor/24x24/apps/im-icq.png
 %%DATADIR%%/icons/hicolor/24x24/apps/im-jabber.png
+%%DATADIR%%/icons/hicolor/24x24/apps/im-matrix.png
 %%DATADIR%%/icons/hicolor/24x24/apps/im-msn.png
 %%DATADIR%%/icons/hicolor/24x24/apps/im-nov.png
 %%DATADIR%%/icons/hicolor/24x24/apps/im-yahoo.png
+%%DATADIR%%/icons/hicolor/24x24/categories/preferences-calendar-and-tasks.svg
+%%DATADIR%%/icons/hicolor/24x24/categories/preferences-certificates.svg
+%%DATADIR%%/icons/hicolor/24x24/categories/preferences-composer.svg
+%%DATADIR%%/icons/hicolor/24x24/categories/preferences-contact.svg
+%%DATADIR%%/icons/hicolor/24x24/categories/preferences-mail-accounts.svg
+%%DATADIR%%/icons/hicolor/24x24/categories/preferences-mail.svg
+%%DATADIR%%/icons/hicolor/24x24/categories/preferences-system-network-proxy.svg
 %%DATADIR%%/icons/hicolor/24x24/places/mail-inbox.png
 %%DATADIR%%/icons/hicolor/24x24/places/mail-outbox.png
 %%DATADIR%%/icons/hicolor/24x24/places/mail-sent.png
@@ -807,6 +819,7 @@ share/applications/org.gnome.Evolution.desktop
 %%DATADIR%%/icons/hicolor/48x48/categories/preferences-composer.png
 %%DATADIR%%/icons/hicolor/48x48/categories/preferences-mail-accounts.png
 %%DATADIR%%/icons/hicolor/48x48/categories/preferences-mail.png
+%%DATADIR%%/icons/hicolor/48x48/categories/preferences-plugins.svg
 %%DATADIR%%/icons/hicolor/48x48/categories/preferences-system-network-proxy.png
 %%DATADIR%%/icons/hicolor/48x48/status/stock_signature-bad.png
 %%DATADIR%%/icons/hicolor/48x48/status/stock_signature-ok.png
@@ -819,6 +832,7 @@ share/applications/org.gnome.Evolution.desktop
 %%DATADIR%%/icons/hicolor/scalable/apps/im-aim.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/im-icq.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/im-jabber.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/im-matrix.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/im-msn.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/im-nov.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/im-yahoo.svg
