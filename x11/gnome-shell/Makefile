@@ -1,10 +1,9 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
 
 PORTNAME=	gnome-shell
-PORTVERSION=	3.36.6
-PORTREVISION=	7
+PORTVERSION=	41.0
 CATEGORIES=	x11 gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -13,62 +12,61 @@ COMMENT=	Next generation GNOME desktop shell
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
-		sassc:textproc/sassc \
-		gnome-control-center:sysutils/gnome-control-center \
+BUILD_DEPENDS=	${LOCALBASE}/share/bash-completion/bash_completion.sh:shells/bash-completion \
 		a2x:textproc/asciidoc \
-		${LOCALBASE}/share/bash-completion/bash_completion.sh:shells/bash-completion
-LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
-		libdrm.so:graphics/libdrm \
-		libmutter-6.so:x11-wm/mutter \
-		libatk-bridge-2.0.so:accessibility/at-spi2-atk \
-		libsoup-2.4.so:devel/libsoup \
-		libjson-glib-1.0.so:devel/json-glib \
-		libsecret-1.so:security/libsecret \
-		libpolkit-agent-1.so:sysutils/polkit \
-		libp11-kit.so:security/p11-kit \
-		libical.so:devel/libical \
-		libgcr-base-3.so:security/gcr \
-		libicuuc.so:devel/icu \
-		libpulse.so:audio/pulseaudio \
-		libcroco-0.6.so:textproc/libcroco \
-		libcanberra.so:audio/libcanberra \
+		docbook-xsl>=0:textproc/docbook-xsl \
+		gnome-control-center:sysutils/gnome-control-center \
+		sassc:textproc/sassc
+LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
-		libp11-kit.so:security/p11-kit \
+		libcanberra.so:audio/libcanberra \
+		libcroco-0.6.so:textproc/libcroco \
+		libdrm.so:graphics/libdrm \
+		libgcr-base-3.so:security/gcr \
 		libgjs.so:lang/gjs \
+		libgnome-autoar-0.so:archivers/gnome-autoar \
 		libgraphene-1.0.so:graphics/graphene \
-		libgnome-autoar-0.so:archivers/gnome-autoar
-RUN_DEPENDS=	gnome-control-center:sysutils/gnome-control-center \
+		libical.so:devel/libical \
+		libicuuc.so:devel/icu \
+		libjson-glib-1.0.so:devel/json-glib \
+		libmutter-9.so:x11-wm/mutter \
+		libp11-kit.so:security/p11-kit \
+		libpolkit-agent-1.so:sysutils/polkit \
+		libpulse.so:audio/pulseaudio \
+		libsecret-1.so:security/libsecret \
+		libsoup-2.4.so:devel/libsoup \
+		libstartup-notification-1.so:x11/startup-notification
+RUN_DEPENDS=	gdm:x11/gdm \
 		gkbd-keyboard-display:x11/libgnomekbd \
-		gdm:x11/gdm
+		gnome-control-center:sysutils/gnome-control-center
 
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 cpe gettext gl gnome libtool localbase meson \
 		pathfix perl5 pkgconfig python:3.4+ shebangfix tar:xz \
 		webplugin:native xorg
-USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf2 introspection \
-		libxslt:build libxml2 gnomedesktop3
+USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf2 gnomedesktop3 gtk40 \
+		introspection libxml2 libxslt:build
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr xtst
 USE_GL=		egl gbm
 USE_GSTREAMER1=	yes
 USE_PERL5=	build
 USE_LDCONFIG=	yes
-SHEBANG_FILES=	src/gnome-shell-perf-tool.in \
-		src/gnome-shell-extension-tool.in
+SHEBANG_FILES=	src/gnome-shell-extension-tool.in src/gnome-shell-perf-tool.in
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 WEBPLUGIN_NAME=	libgnome-shell-browser-plugin.so
 WEBPLUGIN_DIR=	${PREFIX}/lib/mozilla/plugins/
-WEBPLUGIN_FILES=libgnome-shell-browser-plugin.so
+WEBPLUGIN_FILES=	libgnome-shell-browser-plugin.so
 
-MESON_ARGS=	-Dsystemd=false \
-		-Dnetworkmanager=false \
-		-Dpython=${PYTHON_CMD}
+MESON_ARGS=	-Dnetworkmanager=false \
+		-Dpython=${PYTHON_CMD} \
+		-Dsystemd=false \
+		-Dtests=false
 CPE_VENDOR=	gnome
 
-GLIB_SCHEMAS=	org.gnome.shell.gschema.xml \
-		00_org.gnome.shell.gschema.override
+GLIB_SCHEMAS=	00_org.gnome.shell.gschema.override \
+		org.gnome.shell.gschema.xml
 
 .if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
 # Work around "New rpath must not be longer than the old one."

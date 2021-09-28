@@ -20,7 +20,6 @@ libexec/gnome-shell-overrides-migration.sh
 libexec/gnome-shell-perf-helper
 man/man1/gnome-extensions.1.gz
 man/man1/gnome-shell.1.gz
-share/GConf/gsettings/gnome-shell-overrides.convert
 share/applications/evolution-calendar.desktop
 share/applications/org.gnome.Extensions.desktop
 share/applications/org.gnome.Shell.Extensions.desktop
@@ -34,10 +33,13 @@ share/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
 share/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 share/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
 share/dbus-1/services/org.gnome.Extensions.service
+share/dbus-1/services/org.gnome.ScreenSaver.service
 share/dbus-1/services/org.gnome.Shell.CalendarServer.service
 share/dbus-1/services/org.gnome.Shell.Extensions.service
 share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 share/dbus-1/services/org.gnome.Shell.Notifications.service
+share/dbus-1/services/org.gnome.Shell.Screencast.service
+share/gnome-control-center/keybindings/50-gnome-shell-launchers.xml
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 %%DATADIR%%/Gvc-1.0.gir
 %%DATADIR%%/Shell-0.1.gir
@@ -49,10 +51,14 @@ share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 %%DATADIR%%/org.gnome.Extensions
 %%DATADIR%%/org.gnome.Extensions.data.gresource
 %%DATADIR%%/org.gnome.Extensions.src.gresource
+%%DATADIR%%/org.gnome.ScreenSaver
+%%DATADIR%%/org.gnome.ScreenSaver.src.gresource
 %%DATADIR%%/org.gnome.Shell.Extensions
 %%DATADIR%%/org.gnome.Shell.Extensions.src.gresource
 %%DATADIR%%/org.gnome.Shell.Notifications
 %%DATADIR%%/org.gnome.Shell.Notifications.src.gresource
+%%DATADIR%%/org.gnome.Shell.Screencast
+%%DATADIR%%/org.gnome.Shell.Screencast.src.gresource
 %%DATADIR%%/perf-background.xml
 share/icons/hicolor/scalable/apps/org.gnome.Extensions.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Extensions.svg
@@ -85,6 +91,7 @@ share/locale/fa/LC_MESSAGES/gnome-shell.mo
 share/locale/fi/LC_MESSAGES/gnome-shell.mo
 share/locale/fr/LC_MESSAGES/gnome-shell.mo
 share/locale/fur/LC_MESSAGES/gnome-shell.mo
+share/locale/fy/LC_MESSAGES/gnome-shell.mo
 share/locale/ga/LC_MESSAGES/gnome-shell.mo
 share/locale/gd/LC_MESSAGES/gnome-shell.mo
 share/locale/gl/LC_MESSAGES/gnome-shell.mo
@@ -98,6 +105,7 @@ share/locale/id/LC_MESSAGES/gnome-shell.mo
 share/locale/is/LC_MESSAGES/gnome-shell.mo
 share/locale/it/LC_MESSAGES/gnome-shell.mo
 share/locale/ja/LC_MESSAGES/gnome-shell.mo
+share/locale/kab/LC_MESSAGES/gnome-shell.mo
 share/locale/kk/LC_MESSAGES/gnome-shell.mo
 share/locale/km/LC_MESSAGES/gnome-shell.mo
 share/locale/kn/LC_MESSAGES/gnome-shell.mo
@@ -117,6 +125,7 @@ share/locale/nl/LC_MESSAGES/gnome-shell.mo
 share/locale/nn/LC_MESSAGES/gnome-shell.mo
 share/locale/oc/LC_MESSAGES/gnome-shell.mo
 share/locale/or/LC_MESSAGES/gnome-shell.mo
+share/locale/os/LC_MESSAGES/gnome-shell.mo
 share/locale/pa/LC_MESSAGES/gnome-shell.mo
 share/locale/pl/LC_MESSAGES/gnome-shell.mo
 share/locale/pt/LC_MESSAGES/gnome-shell.mo
