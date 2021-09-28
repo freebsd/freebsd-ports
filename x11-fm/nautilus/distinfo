@@ -1,5 +1,3 @@
-TIMESTAMP = 1629037876
-SHA256 (gnome/nautilus-40.2.tar.xz) = b71ef2fe07e5eea89a2bb1e5bd30947bd18873bfb30f79cbf17edfbd4d20f60d
-SIZE (gnome/nautilus-40.2.tar.xz) = 3250384
-SHA256 (gnome/9b733dd9df9d6d9805c56749d05ada15a7560ef4.diff) = e4dc2c91940618ef54bd6b4971fc57b44d1ba97ddaf161ae3b27a1e77cb6f675
-SIZE (gnome/9b733dd9df9d6d9805c56749d05ada15a7560ef4.diff) = 445
+TIMESTAMP = 1632763158
+SHA256 (gnome/nautilus-41.0.tar.xz) = f9b941adc104700c67ea4076622315f1f6b77dcec154c37f3d4c0b283950a1e5
+SIZE (gnome/nautilus-41.0.tar.xz) = 3252376
