@@ -1,10 +1,9 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
 
 PORTNAME=	mutter
-PORTVERSION=	3.36.6
-PORTREVISION=	1
+PORTVERSION=	41.0
 CATEGORIES=	x11-wm
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -13,52 +12,52 @@ COMMENT=	Window and compositing manager based on Clutter
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	zenity>=3.0.0:x11/zenity \
-		xkeyboard-config>=0:x11/xkeyboard-config \
-		gsettings-desktop-schemas>=3.4.0:devel/gsettings-desktop-schemas \
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
-		evdev-proto>0:devel/evdev-proto
-LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
-		libfribidi.so:converters/fribidi \
-		libxkbcommon.so:x11/libxkbcommon \
+		gsettings-desktop-schemas>=3.4.0:devel/gsettings-desktop-schemas \
+		xkeyboard-config>=0:x11/xkeyboard-config \
+		zenity>=3.0.0:x11/zenity
+LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libcanberra.so:audio/libcanberra \
-		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
-		libupower-glib.so:sysutils/upower \
-		libjson-glib-1.0.so:devel/json-glib \
-		libxkbfile.so:x11/libxkbfile \
+		libdrm.so:graphics/libdrm \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libdrm.so:graphics/libdrm \
+		libfribidi.so:converters/fribidi \
+		libgraphene-1.0.so:graphics/graphene \
+		libjson-glib-1.0.so:devel/json-glib \
 		libpipewire-0.3.so:multimedia/pipewire \
-		libgraphene-1.0.so:graphics/graphene
-RUN_DEPENDS=	zenity>=3.0.0:x11/zenity \
-		xkeyboard-config>=0:x11/xkeyboard-config \
+		libstartup-notification-1.so:x11/startup-notification \
+		libupower-glib.so:sysutils/upower \
+		libxkbcommon.so:x11/libxkbcommon \
+		libxkbfile.so:x11/libxkbfile
+RUN_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>=3.4.0:devel/gsettings-desktop-schemas \
-		gnome-settings-daemon>0:sysutils/gnome-settings-daemon
+		xkeyboard-config>=0:x11/xkeyboard-config \
+		zenity>=3.0.0:x11/zenity
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c++0x gettext gl gnome localbase meson \
-		pkgconfig tar:xz xorg
+USES=		compiler:c++0x gettext gl gnome localbase meson pkgconfig \
+		tar:xz xorg
 USE_GL=		egl gbm
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 introspection
-USE_XORG=	ice sm x11 xcb xcomposite xcursor xdamage xext xfixes \
-		xi xinerama xrandr xrender xtst
+USE_XORG=	ice sm x11 xcb xcomposite xcursor xdamage xext xfixes xi \
+		xinerama xrandr xrender xtst
 USE_LDCONFIG=	yes
-CFLAGS+=	-Wno-unknown-warning-option \
-		-Wno-format-nonliteral
+CFLAGS+=	-Wno-unknown-warning-option -Wno-format-nonliteral
 CPPFLAGS+=	-fno-omit-frame-pointer
 MESON_ARGS=	-Dlibwacom=false \
-		-Dwayland=false \
-		-Dudev=false \
 		-Dnative_backend=false \
 		-Dprofiler=false \
+		-Dsm=true \
+		-Dsystemd=false \
 		-Dtests=false \
-		-Dsm=true
+		-Dudev=false \
+		-Dwayland=false
 
 # Required by embedded cogl/clutter forks.
-MESON_ARGS+=	-Dopengl_libname=libGL.so \
-		-Dgles2_libname=libGLESv2
+MESON_ARGS+=	-Dgles2_libname=libGLESv2 \
+		-Dopengl_libname=libGL.so
 
 # Disable remote_desktop for now because it requires memfd which only appears current
 MESON_ARGS+=	-Dremote_desktop=false
