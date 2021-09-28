@@ -411,16 +411,17 @@
       </body>
     </description>
     <references>
-      <cvename>CVE-CVE-2021-33193</cvename>
-      <cvename>CVE-CVE-2021-34798</cvename>
-      <cvename>CVE-CVE-2021-36160</cvename>
-      <cvename>CVE-CVE-2021-39275</cvename>
-      <cvename>CVE-CVE-2021-40438</cvename>
+      <cvename>CVE-2021-33193</cvename>
+      <cvename>CVE-2021-34798</cvename>
+      <cvename>CVE-2021-36160</cvename>
+      <cvename>CVE-2021-39275</cvename>
+      <cvename>CVE-2021-40438</cvename>
       <url>http://httpd.apache.org/security/vulnerabilities_24.html</url>
     </references>
     <dates>
       <discovery>2021-09-16</discovery>
       <entry>2021-09-17</entry>
+      <modified>2021-09-28</modified>
     </dates>
   </vuln>
 
