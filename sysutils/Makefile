@@ -145,6 +145,7 @@
     SUBDIR += busybox
     SUBDIR += bvm
     SUBDIR += byobu
+    SUBDIR += calamares
     SUBDIR += catfish
     SUBDIR += cbsd
     SUBDIR += cbsd-mq-api

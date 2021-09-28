@@ -1,0 +1,10 @@
+Calamares is a distro- and desktop-agnostic installer. Developed as an
+installer for Linux distributions -- dozens of them -- it is modular
+and highly configurable. It can be used as an installer for FreeBSD-
+based distributions as well, though it needs extensive configuration
+(which is not included in the port yet).
+
+Upstream tracking of what still needs tweaking can be found at
+    https://github.com/calamares/calamares/issues/1795
+
+WWW: https://calamares.io/
