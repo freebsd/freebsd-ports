@@ -1,6 +1,10 @@
 PORTNAME=	knewstuff
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
+
+PATCH_SITES=	https://invent.kde.org/frameworks/knewstuff/-/commit/
+PATCHFILES=	d09ba1917cb7e035a9aac6c27c86fc4df5da3194.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library for downloading application assets from the network
