@@ -430,8 +430,7 @@
     <affects>
       <package>
        <name>curl</name>
-       <range><lt>7.79.0</lt></range>
-       <range><ge>7.20.0</ge></range>
+       <range><ge>7.20.0</ge><lt>7.79.0</lt></range>
      </package>
     </affects>
     <description>
@@ -455,6 +454,7 @@
     <dates>
       <discovery>2021-09-15</discovery>
       <entry>2021-09-17</entry>
+      <modified>2021-09-28</modified>
     </dates>
   </vuln>
 
