@@ -5,7 +5,7 @@ PORTVERSION=	1.5.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	meta@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	LALR(1) parser generator for Ruby
 
 LICENSE=	BSD2CLAUSE

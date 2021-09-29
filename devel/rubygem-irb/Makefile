@@ -3,7 +3,7 @@ PORTVERSION=	1.3.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	meta@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Interactive Ruby
 
 LICENSE=	BSD2CLAUSE
