@@ -18,9 +18,11 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libunistring.so:devel/libunistring \
 		libffi.so:devel/libffi
 
-USES=		charsetfix compiler:c11 gmake iconv libtool makeinfo ncurses pathfix \
+USES=		charsetfix compiler:c11 cpe gmake iconv libtool makeinfo ncurses pathfix \
 		pkgconfig readline tar:lz
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	gnu
 
 CONFLICTS_INSTALL=	guile-[0-9]*
 
