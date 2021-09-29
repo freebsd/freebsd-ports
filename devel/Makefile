@@ -5297,6 +5297,7 @@
     SUBDIR += py-unicodedata2
     SUBDIR += py-unipath
     SUBDIR += py-unittest2
+    SUBDIR += py-unittest2pytest
     SUBDIR += py-unpaddedbase64
     SUBDIR += py-update_checker
     SUBDIR += py-urlimport
