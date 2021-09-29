@@ -4,7 +4,7 @@ PORTNAME?=	postgresql
 DISTVERSION?=	14rc1
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
@@ -313,6 +313,10 @@ post-patch:
 		-e '/m4_PACKAGE_VERSION/s/\[2\.6[0-9]\]/m4_defn([m4_PACKAGE_VERSION])/' \
 		-e '/icu/s/_57//' \
 		${WRKSRC}/configure.in
+.  elif defined(CLIENT_ONLY) && !defined(OPENSSL_PORT)
+	@${REINPLACE_CMD} \
+		-e '/^PKG_CONFIG_REQUIRES_PRIVATE = libssl libcrypto/d' \
+		${WRKSRC}/src/interfaces/libpq/Makefile
 .  endif
 
 do-install:
