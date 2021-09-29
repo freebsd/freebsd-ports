@@ -1,3 +1,55 @@
+  <vuln vid="730e922f-20e7-11ec-a574-080027eedc6a">
+    <topic>nexus2-oss -- Apache ActiveMQ JMX vulnerability</topic>
+    <affects>
+      <package>
+	<name>nexus2-oss</name>
+	<range><lt>2.14.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sonatype reports:</p>
+	<blockquote cite="https://help.sonatype.com/repomanager2/release-notes/2020-release-notes#id-2020ReleaseNotes-RepositoryManage">
+		<ul><li>CVE-2020-13920: Apache ActiveMQ JMX is vulnerable to a MITM attack</li></ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-13920</cvename>
+      <url>https://help.sonatype.com/repomanager2/release-notes/2020-release-notes#id-2020ReleaseNotes-RepositoryManage</url>
+    </references>
+    <dates>
+      <discovery>2020-12-28</discovery>
+      <entry>2021-09-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b2f1f86f-20e6-11ec-a574-080027eedc6a">
+    <topic>nexus2-oss -- NXRM2 Directory Traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>nexus2-oss</name>
+	<range><lt>2.14.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sonatype reports:</p>
+	<blockquote cite="https://help.sonatype.com/repomanager2/release-notes/2020-release-notes#id-2020ReleaseNotes-RepositoryManager2.14.20">
+		<ul><li>CVE-2020-15012: NXRM2 Directory Traversal vulnerability</li></ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-15012</cvename>
+      <url>https://help.sonatype.com/repomanager2/release-notes/2020-release-notes#id-2020ReleaseNotes-RepositoryManage</url>
+    </references>
+    <dates>
+      <discovery>2020-06-23</discovery>
+      <entry>2021-09-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="576aa394-1d85-11ec-8b7d-4f5b624574e2">
     <topic>webkit2-gtk3 -- multiple vulnerabilities</topic>
     <affects>
