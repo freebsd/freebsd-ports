@@ -9,7 +9,7 @@ COMMENT=	Java Development Kit ${JDK_MAJOR_VERSION}
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 aarch64
+ONLY_FOR_ARCHS=	amd64 aarch64 powerpc64le
 
 BUILD_DEPENDS=	zip:archivers/zip \
 		autoconf>0:devel/autoconf \
@@ -140,10 +140,10 @@ CONFIGURE_ARGS+=	--disable-warnings-as-errors
 .if ${ARCH} == aarch64 || (defined(PPC_ABI) && ${PPC_ABI} == ELFv1)
 CONFIGURE_ARGS+=	--disable-dtrace
 .endif
-.if (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc64le
+.if (defined(PPC_ABI) && ${PPC_ABI} == ELFv2)
 CONFIGURE_ARGS+=	--disable-precompiled-headers
 .endif
-.if ${ARCH} != amd64
+.if ${ARCH} != amd64 && ${ARCH} != powerpc64le
 CONFIGURE_ARGS+=	--enable-aot=no
 .endif
 .if ${ARCH} == powerpc64 && ${OSREL:C/\.[0-9]//} == 12
@@ -168,6 +168,8 @@ post-patch:
 		-e 's|%%ICONV_LDFLAGS%%|${ICONV_LDFLAGS}|' \
 		-e 's|%%ICONV_LIBS%%|${ICONV_LIBS}|' \
 		${WRKSRC}/make/autoconf/libraries.m4
+	${MV} ${WRKSRC}/src/hotspot/os_cpu/bsd_ppc/bytes_bsd_ppc.inline.hpp \
+		${WRKSRC}/src/hotspot/os_cpu/bsd_ppc/bytes_bsd_ppc.hpp
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${INSTALLDIR}
