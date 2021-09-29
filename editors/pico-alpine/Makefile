@@ -13,6 +13,7 @@ PLIST=		${.CURDIR}/pkg-plist
 PATCHDIR=			# To void equivalent in master port
 PKGMESSAGE=	/nonexistent	# To void equivalent in master port
 PKGINSTALL=	/nonexistent	# To void equivalent in master port
+CPE_PRODUCT=	alpine
 
 PICO_ALPINE_SLAVE=	yes
 
