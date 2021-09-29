@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	robustbase
-DISTVERSION=	0.93-8
+DISTVERSION=	0.93-9
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
