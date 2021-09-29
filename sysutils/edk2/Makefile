@@ -83,6 +83,8 @@ PLAT_FILENAME=	RPI_EFI.fd
 .endif
 
 .if ${FLAVOR} == xen_x64
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	Do not compile on hardware other than amd64
 PLAT=		xen
 PLAT_ARCH=	X64
 PLAT_TARGET=	RELEASE
