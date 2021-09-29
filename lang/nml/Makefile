@@ -10,6 +10,10 @@ MASTER_SITES=	http://ropas.snu.ac.kr/n/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dialect/harmony of Standard ML of New Jersey and Objective Caml
 
+BROKEN=		Doesn't compile - PR 234720
+DEPRECATED=	Abandoned upstream, last release 2004-04-19
+EXPIRATION_DATE=2021-12-31
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.92
 
 ONLY_FOR_ARCHS=	i386
