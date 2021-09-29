@@ -1,0 +1,8 @@
+Arybo is a software for manipulating canonicalization and identification of
+mixed boolean-arithmetic symbolic expressions using bit vectors and gives a
+bit-per-bit symbolic representation.
+
+The ANF (Algebric Normal Form) form is used, which basically represents boolean
+expressions using the XOR and AND operators.
+
+WWW: https://github.com/quarkslab/arybo
