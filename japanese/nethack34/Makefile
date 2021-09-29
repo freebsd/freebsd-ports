@@ -16,7 +16,7 @@ COMMENT=	Japanized NetHack
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gmake tar:tgz
+USES=		cpe gmake tar:tgz
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
 PLIST_SUB=	HACKNAME="${HACKNAME}"
 
