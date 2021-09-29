@@ -9,8 +9,10 @@ COMMENT=	Automation system written in Go
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		go:modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
+
+CPE_VENDOR=	pivotal_software
 
 GH_TUPLE=	\
 		Azure:go-autorest:5bd9621f41a0:azure_go_autorest_date/vendor/github.com/Azure/go-autorest \
