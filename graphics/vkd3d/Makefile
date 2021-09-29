@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 USES=		gmake libtool localbase pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-spirv-tools
+CONFIGURE_ARGS=	--disable-doxygen-doc --with-spirv-tools
 TEST_TARGET=	check
 
 # XXX Move to a separate port (a la graphics/vulkan-headers) and maybe make
