@@ -630,6 +630,7 @@
     SUBDIR += erlang-lager_syslog
     SUBDIR += erlang-meck
     SUBDIR += erlang-metrics
+    SUBDIR += erlang-native-compiler
     SUBDIR += erlang-neotoma
     SUBDIR += erlang-parse_trans
     SUBDIR += erlang-poolboy
