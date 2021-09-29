@@ -497,6 +497,8 @@ include/wine/windows/icftypes.h
 include/wine/windows/icftypes.idl
 include/wine/windows/icm.h
 include/wine/windows/icmpapi.h
+include/wine/windows/icodecapi.h
+include/wine/windows/icodecapi.idl
 include/wine/windows/idispids.h
 include/wine/windows/ieautomation.h
 include/wine/windows/ieautomation.idl
@@ -1730,6 +1732,10 @@ lib/wine/%%WINEARCH%%-unix/libd3dcompiler_43.def
 lib/wine/%%WINEARCH%%-unix/libd3dcompiler_46.def
 lib/wine/%%WINEARCH%%-unix/libd3drm.def
 lib/wine/%%WINEARCH%%-unix/libd3dx10.def
+lib/wine/%%WINEARCH%%-unix/libd3dx10_34.def
+lib/wine/%%WINEARCH%%-unix/libd3dx10_35.def
+lib/wine/%%WINEARCH%%-unix/libd3dx10_36.def
+lib/wine/%%WINEARCH%%-unix/libd3dx10_37.def
 lib/wine/%%WINEARCH%%-unix/libd3dx10_38.def
 lib/wine/%%WINEARCH%%-unix/libd3dx10_39.def
 lib/wine/%%WINEARCH%%-unix/libd3dx10_40.def
@@ -1760,6 +1766,7 @@ lib/wine/%%WINEARCH%%-unix/libdxguid.a
 lib/wine/%%WINEARCH%%-unix/libdxva2.def
 lib/wine/%%WINEARCH%%-unix/libevr.def
 lib/wine/%%WINEARCH%%-unix/libfaultrep.def
+%%STAGING%%lib/wine/%%WINEARCH%%-unix/libfltmgr.def
 lib/wine/%%WINEARCH%%-unix/libgdi32.def
 lib/wine/%%WINEARCH%%-unix/libgdiplus.def
 lib/wine/%%WINEARCH%%-unix/libglu32.def
@@ -2284,6 +2291,7 @@ lib/wine/%%WINEARCH%%-unix/windowscodecs.so
 lib/wine/%%WINEARCH%%-unix/windowscodecsext.dll.so
 lib/wine/%%WINEARCH%%-unix/wineboot.exe.so
 lib/wine/%%WINEARCH%%-unix/winebrowser.exe.so
+lib/wine/%%WINEARCH%%-unix/winebus.so
 lib/wine/%%WINEARCH%%-unix/winebus.sys.so
 lib/wine/%%WINEARCH%%-unix/winecfg.exe.so
 lib/wine/%%WINEARCH%%-unix/wineconsole.exe.so
