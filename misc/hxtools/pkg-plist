@@ -113,6 +113,7 @@ man/man8/vcsaview.8.gz
 man/man8/xfs_irecover.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/changelog.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colortable
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cp437
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/git-deconstruct
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/neon
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/prime.S
