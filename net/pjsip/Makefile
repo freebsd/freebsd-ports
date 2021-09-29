@@ -11,10 +11,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libportaudio.so:audio/portaudio \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		gmake localbase pathfix ssl tar:bz2
+USES=		cpe gmake localbase pathfix ssl tar:bz2
 USE_GITHUB=	yes
 GH_PROJECT=	pjproject
 USE_LDCONFIG=	yes
+CPE_VENDOR=	teluu
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-external-pa \
