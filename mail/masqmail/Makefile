@@ -11,12 +11,13 @@ COMMENT=	Mail server for hosts, not permanently connected to the internet
 LICENSE=	GPLv2
 
 USE_GNOME=	glib20
-USES=		gnome pkgconfig
+USES=		cpe gnome pkgconfig
 USE_RC_SUBR=	masqmail
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-trigraphs
 CONFIGURE_ARGS=	--with-user=mailnull --with-group=mail \
 		--with-confdir=${ETCDIR} --with-logdir=/var/log/masqmail
+CPE_VENDOR=	marmaro
 
 OPTIONS_DEFINE=	RESOLVER AUTH DEBUG DOCS
 OPTIONS_DEFAULT=	RESOLVER AUTH
