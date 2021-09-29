@@ -1,7 +1,7 @@
 # Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
 
 PORTNAME=	fast_tls
-PORTVERSION=	1.0.22
+PORTVERSION=	1.1.13
 CATEGORIES=	security
 PKGNAMEPREFIX=	erlang-
 
