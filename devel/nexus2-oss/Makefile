@@ -1,5 +1,5 @@
 PORTNAME=	nexus2
-PORTVERSION=	2.14.02
+PORTVERSION=	2.14.20
 DISTVERSIONSUFFIX=	02
 CATEGORIES=	devel www java
 MASTER_SITES=	https://download.sonatype.com/nexus/oss/
