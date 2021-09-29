@@ -22,6 +22,6 @@ RUN_DEPENDS+=	ja-p5-MeCab>=0:japanese/p5-MeCab
 
 .include "${.CURDIR}/../../databases/namazu2/Makefile.common"
 
-USES=		metaport perl5
+USES=		cpe metaport perl5
 
 .include <bsd.port.mk>
