@@ -14,7 +14,7 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 		libvanessa_socket.so:devel/libvanessa_socket \
 		libvanessa_adt.so:devel/libvanessa_adt
 
-USES=		gettext libtool pkgconfig shebangfix
+USES=		cpe gettext libtool pkgconfig shebangfix
 SHEBANG_FILES=	${WRKSRC}/perdition/db/ldap/perditiondb_ldap_makedb \
 		${WRKSRC}/perdition/db/mysql/perditiondb_mysql_makedb \
 		${WRKSRC}/perdition/db/odbc/perditiondb_odbc_makedb \
@@ -25,6 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	DOCSDIR=${DOCSDIR}
 CONFIGURE_ARGS+=--localstatedir=/var
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	horms
 
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	perdition perdition.pop3 perdition.pop3s \
