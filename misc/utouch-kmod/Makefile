@@ -1,7 +1,7 @@
 # Created by: Vladimir Kondratyev <wulf@FreeBSD.org>
 
 PORTNAME=	utouch-kmod
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	misc
 
 MAINTAINER=	wulf@FreeBSD.org
