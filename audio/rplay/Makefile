@@ -12,6 +12,9 @@ COMMENT=	Network audio player
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandoned upstream, no new releases since 1999
+EXPIRATION_DATE=2021-12-31
+
 LIB_DEPENDS=	libgsm.so:audio/gsm
 
 USES=		makeinfo
