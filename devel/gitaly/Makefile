@@ -36,6 +36,8 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2
 USES=		cpe gmake go:modules,no_targets pkgconfig
 USE_RUBY=	yes
 
+CPE_VENDOR=	gitlab
+
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 # make sure to pass go build options into make process
 MAKE_ENV+=	${GO_ENV}
