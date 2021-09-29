@@ -1,0 +1,6 @@
+KPMcore, the KDE Partition Manager core, is a library for examining
+and modifying partitions, disk devices, and filesystems on a
+Linux system. It provides a unified programming interface over
+top of (external) system-manipulation tools.
+
+WWW: https://invent.kde.org/system/kpmcore

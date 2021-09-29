@@ -593,6 +593,7 @@
     SUBDIR += kldfind
     SUBDIR += kldpatch
     SUBDIR += kops
+    SUBDIR += kpmcore
     SUBDIR += krename
     SUBDIR += kshutdown
     SUBDIR += ksystemlog
