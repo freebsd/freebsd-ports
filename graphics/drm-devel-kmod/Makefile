@@ -1,7 +1,7 @@
 # Created by: Johannes Dieterich <jmd@FreeBSD.org>
 
 PORTNAME=	drm-devel-kmod
-PORTVERSION=	5.5.19.g20210909
+PORTVERSION=	5.5.19.g20210929
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
@@ -24,7 +24,7 @@ USES=		kmod uidfix compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	drm-kmod
-GH_TAGNAME=	drm_v5.5.19_3
+GH_TAGNAME=	drm_v5.5.19_4
 
 .include <bsd.port.options.mk>
 
