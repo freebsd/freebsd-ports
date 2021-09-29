@@ -1,0 +1,4 @@
+Python binding for petanque, a library that helps manipulate symbolic boolean
+expressions.
+
+WWW: https://github.com/quarkslab/arybo/tree/master/petanque
