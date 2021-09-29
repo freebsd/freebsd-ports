@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	sasaki@fcc.ad.jp
+MAINTAINER=	sasaki12@gmail.com
 COMMENT=	Collection of normalized lua functions
 
 LICENSE=	MIT

@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	sasaki@fcc.ad.jp
+MAINTAINER=	sasaki12@gmail.com
 COMMENT=	Debug hints management library for lua
 
 LICENSE=	MIT
