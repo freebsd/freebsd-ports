@@ -1,7 +1,7 @@
 # Created by: Alan Eldridge <alane@FreeBSD.org>
 
 PORTNAME=	firefox
-DISTVERSION=	78.14.0
+DISTVERSION=	78.15.0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	nspr>=4.26:devel/nspr \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=2.6.6:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
-		png>=1.6.35:graphics/png \
+		png>=1.6.37:graphics/png \
 		libvpx>=1.8.2:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
