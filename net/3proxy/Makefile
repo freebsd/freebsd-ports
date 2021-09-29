@@ -12,9 +12,8 @@ LICENSE_COMB=	dual
 
 USES=		cpe
 
-USE_RC_SUBR=	3proxy
 USE_GITHUB=	yes
-GH_ACCOUNT=	z3APA3A
+USE_RC_SUBR=	3proxy
 
 MAKEFILE=	Makefile.FreeBSD
 
@@ -28,7 +27,6 @@ OPTIONS_DEFINE=	DOCS
 3PROXY_LOGDIR=	/var/log/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%CFLAGS%%|${CFLAGS}|' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|%%3PROXY_LOGDIR%%|${3PROXY_LOGDIR}|' ${WRKSRC}/cfg/3proxy.cfg.sample
 	@${REINPLACE_CMD} -E -e 's| proxy( ?\(8\))| httppr\1|' ${WRKSRC}/man/*
 	@${REINPLACE_CMD} -E -e 's|([^P] "?)proxy|\1httppr|' ${WRKSRC}/man/proxy.8
