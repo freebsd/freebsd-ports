@@ -1,11 +1,9 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
 
-PORTNAME=	stellarium
-PORTVERSION=	0.21.1
+PORTNAME=	${GH_ACCOUNT:tl}
+PORTVERSION=	0.21.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro
-MASTER_SITES=	http://www.etwright.org/astro/:alm
-DISTFILES=	almstars-1.1.tar.gz:alm
 EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat:N*.pdf}
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -31,16 +29,16 @@ OPTIONS_DEFINE=		DOCS GPS MORE_STARS MULTIMEDIA NLS SCRIPTS \
 OPTIONS_DEFAULT=	GPS MULTIMEDIA SCRIPTS TELESCOPE
 OPTIONS_SUB=		yes
 
+GPS_DESC=		GPS (NMEA handling) support
 MORE_STARS_DESC=	Install extra star catalogs (1.0GB)
-TEXTURES_DESC=		Install better quality textures
 MULTIMEDIA_DESC=	Sound and video support
 SCRIPTS_DESC=		Remote control and scripting support
 TELESCOPE_DESC=		Telescope control plugin
+TEXTURES_DESC=		Install better quality textures
 
 DOCS_MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${GUIDE_VERSION}/:ug
 DOCS_DISTFILES=		stellarium_user_guide-${GUIDE_VERSION}-1.pdf:ug
 
-GPS_DESC=		GPS (NMEA handling) support
 GPS_LIB_DEPENDS=	libgps.so:astro/gpsd
 GPS_USE=		QT=location,serialport
 GPS_CMAKE_OFF=		-DENABLE_GPS:BOOL=OFF
@@ -69,9 +67,6 @@ MASTER_SITES+=	SF/${PORTNAME}/Extra-data-files/stars${i}:stars${i}
 DISTFILES+=	stars_4_1v0_2.cat:stars4 stars_5_2v0_1.cat:stars5 \
 		stars_6_2v0_1.cat:stars6 stars_7_2v0_1.cat:stars7 \
 		stars_8_2v0_1.cat:stars8
-PLIST_SUB+=	MORE_STARS=""
-.else
-PLIST_SUB+=	MORE_STARS="@comment "
 .endif
 
 post-extract-DOCS-on:
@@ -79,8 +74,7 @@ post-extract-DOCS-on:
 		${WRKSRC}
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/almstars-1.1/*.dat \
-		${STAGEDIR}${DATADIR}/skycultures/almagest/almstars
+	@${RMDIR} ${STAGEDIR}${DATADIR}/skycultures/greek_almagest/almstars
 
 post-install-MORE_STARS-on:
 	${INSTALL_DATA} ${DISTDIR}/stars_4_1v0_2.cat \
