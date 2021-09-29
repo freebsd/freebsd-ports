@@ -1,10 +1,9 @@
 PORTNAME=	libnpupnp
-DISTVERSION=	4.1.4
-PORTREVISION=	1
+DISTVERSION=	4.1.5
 CATEGORIES=	net
 MASTER_SITES=	https://www.lesbonscomptes.com/upmpdcli/downloads/
 
-MAINTAINER=	daniel.engberg.lists@pyret.net
+MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	C++ base UPnP library, derived from Portable UPnP, a.k.a libupnp
 
 LICENSE=	BSD3CLAUSE
