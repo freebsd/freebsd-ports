@@ -15,10 +15,11 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}decorator>=4.3.0:devel/py-decorator@${PY_FLAVOR}
 #		${PYTHON_PKGNAMEPREFIX}docutils>=0.12:textproc/py-docutils@${PY_FLAVOR}
 
-USES=		python:3.7+ shebangfix
+USES=		cpe python:3.7+ shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_GLOB=	*.py
 NO_ARCH=	yes
+CPE_VENDOR=	python
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}networkx1
 
