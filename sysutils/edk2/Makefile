@@ -104,7 +104,9 @@ MAKE_ENV+=	WORKSPACE=${WRKDIR} \
 		PYTHON_COMMAND=python3 \
 		PYTHONHASHSEED=1
 
-.if ${PLAT_ARCH} == AARCH64
+.include <bsd.port.pre.mk>
+
+.if ${PLAT_ARCH} == AARCH64 && ${ARCH} != aarch64
 BUILD_DEPENDS+=	aarch64-none-elf-gcc:devel/aarch64-none-elf-gcc
 MAKE_ENV+=	GCC5_AARCH64_PREFIX=aarch64-none-elf-
 .endif
@@ -131,4 +133,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/
 	${INSTALL_DATA} ${WRKDIR}/Build/${PLAT_RESULT} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/${PLAT_FILENAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
