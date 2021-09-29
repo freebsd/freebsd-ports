@@ -24,8 +24,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=19.2.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.5:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}service_identity>0:security/py-service_identity@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		cpe python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
+
+CPE_VENDOR=	twistedmatrix
 
 NO_ARCH=	yes
 
