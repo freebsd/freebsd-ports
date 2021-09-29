@@ -10,6 +10,10 @@ COMMENT=	Collect unifi controller data
 
 LICENSE=	MIT
 
+BROKEN=		Unfetchable due to upstream name change
+DEPRECATED=	Now called unpoller by upstream
+EXPIRATION_DATE=2021-12-31
+
 USES=		go:modules
 
 USERS=	unifi-poller
