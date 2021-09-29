@@ -7,6 +7,7 @@ lib/erlang/lib/fast_xml-%%VERSION%%/ebin/fxml_stream.beam
 lib/erlang/lib/fast_xml-%%VERSION%%/ebin/fxml_sup.beam
 lib/erlang/lib/fast_xml-%%VERSION%%/ebin/fxmlrpc.beam
 lib/erlang/lib/fast_xml-%%VERSION%%/ebin/fxmlrpc_codec.beam
+lib/erlang/lib/fast_xml-%%VERSION%%/ebin/fxmlrpc_codec_external.beam
 lib/erlang/lib/fast_xml-%%VERSION%%/include/fxml.hrl
 lib/erlang/lib/fast_xml-%%VERSION%%/include/fxml_gen.hrl
 lib/erlang/lib/fast_xml-%%VERSION%%/priv/lib/.keepme
@@ -21,4 +22,5 @@ lib/erlang/lib/fast_xml-%%VERSION%%/src/fxml_stream.erl
 lib/erlang/lib/fast_xml-%%VERSION%%/src/fxml_sup.erl
 lib/erlang/lib/fast_xml-%%VERSION%%/src/fxmlrpc.erl
 lib/erlang/lib/fast_xml-%%VERSION%%/src/fxmlrpc_codec.erl
+lib/erlang/lib/fast_xml-%%VERSION%%/src/fxmlrpc_codec_external.erl
 %%PORTDOCS%%%%DOCSDIR%%/README.md
