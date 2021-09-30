@@ -2,6 +2,7 @@ PORTNAME=	kanshi
 DISTVERSIONPREFIX=	v
 PORTVERSION=	1.2.0
 CATEGORIES=	x11
+MASTER_SITES=	https://git.sr.ht/~emersion/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic display configuration for Wayland
@@ -12,8 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 USES=		compiler:c11 meson pkgconfig
-USE_GITHUB=	yes
-GH_ACCOUNT=	emersion
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES
