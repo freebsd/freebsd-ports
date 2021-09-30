@@ -7,9 +7,10 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Tree API
 
-USES=	horde
+USES=		cpe horde
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Url \
 		Horde_Util
+CPE_VENDOR=	horde
 
 .include <bsd.port.mk>
