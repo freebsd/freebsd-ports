@@ -1,6 +1,6 @@
---- Makefile.orig	2021-03-04 14:43:07 UTC
+--- Makefile.orig	2021-05-01 17:45:31 UTC
 +++ Makefile
-@@ -751,7 +751,7 @@ mencoder$(EXESUF) mplayer$(EXESUF):
+@@ -753,7 +753,7 @@ mencoder$(EXESUF) mplayer$(EXESUF):
  codec-cfg-test$(EXESUF): HOSTCFLAGS := $(HOSTCFLAGS) -DTESTING
  codec-cfg$(EXESUF) codecs2html$(EXESUF):  HOSTCFLAGS := $(HOSTCFLAGS) -DCODECS2HTML
  codec-cfg$(EXESUF) codec-cfg-test$(EXESUF) codecs2html$(EXESUF): codec-cfg.c codec-cfg.h help_mp.h
@@ -9,13 +9,13 @@
  
  codecs.conf.h: codec-cfg$(EXESUF) etc/codecs.conf
  	./$^ > $@
-@@ -865,19 +865,17 @@ install: $(INSTALL_TARGETS-yes)
+@@ -867,19 +867,16 @@ install: $(INSTALL_TARGETS-yes)
  install-dirs:
  	$(INSTALL) -d $(BINDIR) $(CONFDIR) $(LIBDIR)
  
 -install-%: %$(EXESUF) install-dirs
 -	$(INSTALL) -m 755 $(INSTALLSTRIP) $< $(BINDIR)
-+install-mplayer: mplayer$(EXESUF) install-dirs
++install-mplayer: mplayer$(EXESUF)
 +	@${BSD_INSTALL_PROGRAM} mplayer$(EXESUF) $(BINDIR)
  
 -install-gui: install-mplayer install-gui-icons install-gui-msg
@@ -29,8 +29,17 @@
  install-gui-msg:      $(foreach lang,$(filter-out $(firstword $(MSG_LANGS)),$(MSG_LANGS)),install-gui-msg-$(lang))
  install-mencoder-man: $(foreach lang,$(MAN_LANGS),install-mencoder-man-$(lang))
 -install-mplayer-man:  $(foreach lang,$(MAN_LANGS),install-mplayer-man-$(lang))
-+install-mplayer-man:
-+	@${BSD_INSTALL_MAN} DOCS/man/en/mplayer.1 $(MANDIR)/man1/mplayer.1
++install-mplayer-man: install-mplayer-man-en
  
  install-gui-man-en: install-mplayer-man-en
  	cd $(MANDIR)/man1/ && ln -sf mplayer.1 gmplayer.1
+@@ -888,8 +885,7 @@ install-mencoder-man-en: install-mplayer-man-en
+ 	cd $(MANDIR)/man1 && ln -sf mplayer.1 mencoder.1
+ 
+ install-mplayer-man-en:
+-	$(INSTALL) -d $(MANDIR)/man1
+-	$(INSTALL) -m 644 DOCS/man/en/mplayer.1 $(MANDIR)/man1/
++	@${BSD_INSTALL_MAN} DOCS/man/en/mplayer.1 $(MANDIR)/man1/mplayer.1
+ 
+ define GUI_ICON_RULE
+ install-gui-icon-$(size):
