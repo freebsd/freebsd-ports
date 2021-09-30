@@ -1,0 +1,4 @@
+Small, portable C library for high-quality conversion of RGBA images
+to 8-bit indexed-color (palette) images. It's powering pngquant2.
+
+WWW: https://github.com/ImageOptim/libimagequant
