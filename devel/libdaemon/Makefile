@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFIGURE_ARGS=	--disable-lynx
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla pathfix
+USES=		cpe libtool:keepla pathfix
 USE_LDCONFIG=	yes
+CPE_VENDOR=	libdaemon_project
 
 .include <bsd.port.mk>
