@@ -8,9 +8,10 @@ PKGNAMESUFFIX=	-gobject
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Vector graphics library Cairo (Linux CentOS ${LINUX_DIST_VER})
 
-USES=		linux:c7
+USES=		cpe linux:c7
 USE_LINUX=	cairo dri fontconfig freetype pixman png xorglibs
 USE_LINUX_RPM=	yes
+CPE_VENDOR=	cairographics
 
 LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}
 
