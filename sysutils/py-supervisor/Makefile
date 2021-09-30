@@ -20,11 +20,13 @@ LICENSE_PERMS_REPOZE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0.5.0:devel/py-mock@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
+USES=		cpe python:3.6+ shebangfix
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	supervisord
 SHEBANG_FILES=	supervisor/scripts/*.py supervisor/tests/fixtures/*.py
 python_OLD_CMD=	"<<PYTHON>>"
+
+CPE_VENDOR=	supervisord
 
 NO_ARCH=	yes
 SUB_LIST=	PIDDIR=${PIDDIR} \
