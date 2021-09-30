@@ -1,5 +1,6 @@
 PORTNAME=	optuna
 DISTVERSION=	2.9.1
+PORTREVISION=	1
 CATEGORIES=	math # machine-learning
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +11,7 @@ COMMENT=	Hyperparameter optimization framework
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}alembic>0:databases/py-alembic@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}alembic14>0:databases/py-alembic14@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cliff>0:devel/py-cliff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cmaes>0:math/py-cmaes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorlog>0:devel/py-colorlog@${PY_FLAVOR} \
