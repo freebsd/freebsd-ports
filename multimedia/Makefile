@@ -132,6 +132,7 @@
     SUBDIR += handbrake
     SUBDIR += haruna
     SUBDIR += harvid
+    SUBDIR += helvum
     SUBDIR += hypnotix
     SUBDIR += imagination
     SUBDIR += intel-media-sdk
