@@ -22,9 +22,10 @@ CONFLICTS_INSTALL= \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
 
-USES=		autoreconf ghostscript:8 gmake tar:xz xorg
+USES=		autoreconf cpe ghostscript:8 gmake tar:xz xorg
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xext xt
+CPE_VENDOR=	artifex
 GNU_CONFIGURE=	yes
 EXTRACT_AFTER_ARGS=	${EXCLUDE_DIRS:S/^/--exclude /}
 MAKE_ENV=	CFLAGS_STANDARD="${CFLAGS}" \
