@@ -20,9 +20,10 @@ CONFLICTS_INSTALL= \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
 
-USES=		autoreconf ghostscript:7 gmake tar:bzip2 xorg
+USES=		autoreconf cpe ghostscript:7 gmake tar:bzip2 xorg
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xext xt
+CPE_VENDOR=	artifex
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	${MAKE_ENV}
 CONFIGURE_ARGS=	--disable-compile-inits \
