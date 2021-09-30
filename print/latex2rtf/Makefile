@@ -9,8 +9,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix/${PORTVERSION} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translator from LaTeX to RTF
 
-USES=		shebangfix makeinfo
+USES=		cpe shebangfix makeinfo
 SHEBANG_FILES=	${WRKSRC}/scripts/latex2png
+
+CPE_VENDOR=	latex2rtf_project
 
 OPTIONS_DEFINE=	LATEX2PNG
 LATEX2PNG_DESC=	Install latex2png utility
