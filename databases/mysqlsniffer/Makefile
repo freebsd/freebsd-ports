@@ -7,6 +7,8 @@ CATEGORIES=	databases
 MAINTAINER=	frederic.hardy@mageekbox.net
 COMMENT=	Tcpdump clone specifically for MySQL
 
+DEPRECATED=	Development discontinued upstream, doesn't build on recent FreeBSD
+EXPIRATION_DATE=2021-10-30
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: decoded_len
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: decoded_len
 
