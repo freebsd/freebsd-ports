@@ -9,7 +9,7 @@ COMMENT=	Java Development Kit ${JDK_MAJOR_VERSION}
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 aarch64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	zip:archivers/zip \
 		autoconf>0:devel/autoconf \
@@ -140,10 +140,7 @@ CONFIGURE_ARGS+=	--disable-warnings-as-errors
 .if ${ARCH} == aarch64 || (defined(PPC_ABI) && ${PPC_ABI} == ELFv1)
 CONFIGURE_ARGS+=	--disable-dtrace
 .endif
-.if (defined(PPC_ABI) && ${PPC_ABI} == ELFv2)
-CONFIGURE_ARGS+=	--disable-precompiled-headers
-.endif
-.if ${ARCH} != amd64 && ${ARCH} != powerpc64le
+.if ${ARCH} != amd64 && !${ARCH:Mpowerpc64*}
 CONFIGURE_ARGS+=	--enable-aot=no
 .endif
 .if ${ARCH} == powerpc64 && ${OSREL:C/\.[0-9]//} == 12
