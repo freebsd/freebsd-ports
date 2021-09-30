@@ -31,6 +31,7 @@ etc/mtab
 @sample etc/nsswitch.conf.sample
 etc/os-release
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7-aarch64
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Debug-7
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Testing-7
 etc/pki/tls/openssl.cnf
@@ -69,6 +70,7 @@ etc/yum.repos.d/CentOS-Debuginfo.repo
 etc/yum.repos.d/CentOS-Media.repo
 etc/yum.repos.d/CentOS-Sources.repo
 etc/yum.repos.d/CentOS-Vault.repo
+etc/yum.repos.d/CentOS-aarch64-kernel.repo
 etc/yum.repos.d/CentOS-fasttrack.repo
 etc/yum/vars/contentdir
 etc/yum/vars/infra
@@ -254,6 +256,7 @@ usr/bin/reset
 usr/bin/rev
 usr/bin/rm
 usr/bin/rmdir
+usr/bin/rootfs-expand
 usr/bin/rpcgen
 usr/bin/runcon
 usr/bin/scriptreplay
@@ -607,6 +610,8 @@ usr/lib64/gconv/libKSC.so
 @rmtry usr/lib64/gio/modules/giomodule.cache
 usr/lib64/krb5/plugins/tls/k5tls.so
 usr/lib64/ld-2.17.so
+usr/lib64/ld-linux-aarch64.so.1
+usr/lib64/ld-lsb-aarch64.so.3
 usr/lib64/libBrokenLocale-2.17.so
 usr/lib64/libBrokenLocale.so.1
 usr/lib64/libSegFault.so
@@ -792,6 +797,8 @@ usr/libexec/awk/grcat
 usr/libexec/awk/pwcat
 usr/libexec/coreutils/libstdbuf.so
 usr/libexec/gam_server
+usr/libexec/getconf/POSIX_V6_LP64_OFF64
+usr/libexec/getconf/POSIX_V7_LP64_OFF64
 usr/libexec/getconf/XBS5_LP64_OFF64
 usr/libexec/grepconf.sh
 usr/sbin/addpart
@@ -2808,5 +2815,6 @@ var/mail
 @postexec mkdir -p %D/sys
 @postunexec rmdir %D/sys 2>/dev/null || true
 @postexec %D/usr/sbin/ldconfig
+@postexec %D/usr/bin/gio-querymodules-32 /usr/lib/gio/modules
 @postexec %D/usr/bin/gio-querymodules-64 /usr/lib64/gio/modules
 
