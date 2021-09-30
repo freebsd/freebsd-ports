@@ -1,6 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.1
+DISTVERSION=	1.14.2
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
 USE_GNOME=	glib20
 
-RUSTY_VERS=	0.28.0
+RUSTY_VERS=	0.30.0
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -301,7 +301,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rustc_version-0.3.3 \
 		rustls-0.19.1 \
 		rustls-native-certs-0.5.0 \
-		rusty_v8-0.28.0 \
+		rusty_v8-0.30.0 \
 		rustyline-9.0.0 \
 		rustyline-derive-0.5.0 \
 		ryu-1.0.5 \
@@ -321,7 +321,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_json-1.0.67 \
 		serde_repr-0.1.7 \
 		serde_urlencoded-0.7.0 \
-		serde_v8-0.11.0 \
+		serde_v8-0.13.0 \
 		sha-1-0.9.7 \
 		sha2-0.9.5 \
 		shell-escape-0.1.5 \
