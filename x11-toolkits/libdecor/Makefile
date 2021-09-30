@@ -1,10 +1,12 @@
 PORTNAME=	libdecor
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	ca1dd07bbdbd.patch:-p1 # https://gitlab.gnome.org/jadahl/libdecor/-/merge_requests/74
-PATCHFILES+=	0c5daad652ae.patch:-p1 # https://gitlab.gnome.org/jadahl/libdecor/-/merge_requests/75
+PATCHFILES+=	4b8b2865e1e5.patch:-p1 # https://gitlab.gnome.org/jadahl/libdecor/-/merge_requests/75
+PATCHFILES+=	51e9db022fe2.patch:-p1 # https://gitlab.gnome.org/jadahl/libdecor/-/merge_requests/75
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Client-side decorations library for Wayland client
