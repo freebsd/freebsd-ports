@@ -33,8 +33,9 @@ CONFLICTS_INSTALL= \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
 
-USES=		autoreconf gmake pkgconfig shebangfix tar:xz
+USES=		autoreconf cpe gmake pkgconfig shebangfix tar:xz
 USE_LDCONFIG=	yes
+CPE_VENDOR=	artifex
 SHEBANG_FILES=	${WRKSRC}/lib/fixmswrd.pl
 EXTRACT_AFTER_ARGS=	${EXCLUDE_DIRS:S/^/--exclude /}
 GNU_CONFIGURE=	yes
