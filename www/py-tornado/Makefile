@@ -11,8 +11,10 @@ COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	APACHE20
 
-USES=		python:3.5+
+USES=		cpe python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
+
+CPE_VENDOR=	tornadoweb
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}tornado4 \
 			${PYTHON_PKGNAMEPREFIX}tornado5 \
