@@ -24,10 +24,11 @@ LIB_DEPENDS+=	libpeas-1.0.so:devel/libpeas
 PORTSCOUT=	ignore:1
 .endif
 
-USES=		gettext gnome meson pkgconfig tar:xz
+USES=		cpe gettext gnome meson pkgconfig tar:xz
 USE_GNOME=	cairo gtk30 intlhack introspection
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
+CPE_VENDOR=	gnome
 MESON_ARGS+=	-Dglade_catalog=false
 PLIST=		${.CURDIR}/pkg-plist
 
