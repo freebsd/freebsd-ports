@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	knitr
-PORTVERSION=	1.34
+PORTVERSION=	1.36
 CATEGORIES=	print
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
