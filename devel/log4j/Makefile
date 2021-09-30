@@ -11,9 +11,12 @@ COMMENT=	Fast and flexible logging library for Java
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		cpe
+
 USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
+CPE_VENDOR=	apache
 
 WRKSRC=		${WRKDIR}/apache-${PORTNAME}-${PORTVERSION}
 
