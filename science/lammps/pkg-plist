@@ -190,6 +190,7 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/SiC.tersoff.zbl
 %%DATADIR%%/potentials/SiC.vashishta
 %%DATADIR%%/potentials/SiCGe.tersoff
+%%DATADIR%%/potentials/SiGeH.sw.quip
 %%DATADIR%%/potentials/SiC_1989.tersoff
 %%DATADIR%%/potentials/SiC_1990.tersoff
 %%DATADIR%%/potentials/SiC_1994.tersoff
