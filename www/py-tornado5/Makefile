@@ -12,8 +12,10 @@ COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	APACHE20
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
+
+CPE_VENDOR=	tornadoweb
 
 PORTSCOUT=	limit:^5\.
 
