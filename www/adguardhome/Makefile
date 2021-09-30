@@ -9,7 +9,7 @@ COMMENT=	Network-wide ads & trackers blocking DNS server
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		go:modules
+USES=		cpe go:modules
 
 GO_MODULE=	github.com/AdguardTeam/AdGuardHome
 
@@ -25,6 +25,8 @@ DEV_UPDATE_MODE=	no
 USER=		root # it has to run as root because it listens on the privileged DNS port
 SUB_LIST=	USER=${USER}
 USE_RC_SUBR=	${PORTNAME}
+
+CPE_VENDOR=	adguard
 
 .if (${DEV_UPDATE_MODE} == "yes")
 BUILD_DEPENDS=	npm:www/npm \
