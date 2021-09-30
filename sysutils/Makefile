@@ -917,6 +917,7 @@
     SUBDIR += parallel
     SUBDIR += parkverbot
     SUBDIR += pass-otp
+    SUBDIR += pass-secrets
     SUBDIR += pass-update
     SUBDIR += password-store
     SUBDIR += passwordsafe
