@@ -7,6 +7,8 @@
 %%ELISPDIR%%/magit-autoloads.el
 %%ELISPDIR%%/magit-autorevert.el
 %%ELISPDIR%%/magit-autorevert.elc
+%%ELISPDIR%%/magit-bundle.el
+%%ELISPDIR%%/magit-bundle.elc
 %%ELISPDIR%%/magit-bisect.el
 %%ELISPDIR%%/magit-bisect.elc
 %%ELISPDIR%%/magit-blame.el
