@@ -2132,6 +2132,7 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/flow_stats.lua
 %%DATADIR%%/scripts/lua/flows_stats.lua
 %%DATADIR%%/scripts/lua/geoip_config.lua
+%%DATADIR%%/scripts/lua/get_arp_data.lua
 %%DATADIR%%/scripts/lua/get_as_data.lua
 %%DATADIR%%/scripts/lua/get_ases_data.lua
 %%DATADIR%%/scripts/lua/get_check_config.lua
