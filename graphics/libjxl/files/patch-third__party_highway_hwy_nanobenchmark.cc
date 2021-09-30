@@ -1,3 +1,5 @@
+https://github.com/google/highway/commit/3769cb2c464c
+
 --- third_party/highway/hwy/nanobenchmark.cc.orig	2021-06-09 08:56:32 UTC
 +++ third_party/highway/hwy/nanobenchmark.cc
 @@ -46,7 +46,7 @@
