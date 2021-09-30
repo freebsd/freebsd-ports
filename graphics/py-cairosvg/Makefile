@@ -23,8 +23,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}pytest-flake8>=0:devel/py-pytest-flake8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
+
+CPE_VENDOR=	courtbouillon
 
 NO_ARCH=	yes
 
