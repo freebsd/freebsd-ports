@@ -25,11 +25,12 @@ LIB_DEPENDS=	libsrtp2.so:net/libsrtp2 \
 		libwebsockets.so:net/libwebsockets \
 		libconfig.so:devel/libconfig
 
-USES=		libtool pkgconfig autoreconf gmake localbase gnome ssl
+USES=		libtool pkgconfig autoreconf cpe gmake localbase gnome ssl
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 GH_ACCOUNT=	meetecho
 GH_PROJECT=	janus-gateway
+CPE_VENDOR=	meetecho
 USE_RC_SUBR=	janus
 CONFIGURE_ARGS+=	--disable-mqtt \
 		--disable-rabbitmq \
