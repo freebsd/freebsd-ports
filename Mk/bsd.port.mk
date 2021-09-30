@@ -1799,6 +1799,10 @@ INSTALL_TARGET:=	${INSTALL_TARGET:S/^install-strip$/install/g}
 .endif
 .endif
 
+.if defined(USE_LTO)
+.include "${PORTSDIR}/Mk/bsd.lto.mk"
+.endif
+
 .if !defined(WITHOUT_SSP)
 .include "${PORTSDIR}/Mk/bsd.ssp.mk"
 .endif
