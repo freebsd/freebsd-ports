@@ -15,8 +15,6 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC}/third_party/lodepng/LICENSE
 
-BROKEN_powerpc64=	https://github.com/google/highway/issues/345
-
 LIB_DEPENDS=	libbrotlienc.so:archivers/brotli
 TEST_DEPENDS=	googletest>0:devel/googletest
 

@@ -1,30 +1,38 @@
---- third_party/highway/hwy/nanobenchmark.cc.orig	2021-09-30 15:38:30 UTC
+--- third_party/highway/hwy/nanobenchmark.cc.orig	2021-06-09 08:56:32 UTC
 +++ third_party/highway/hwy/nanobenchmark.cc
-@@ -47,7 +47,12 @@
+@@ -46,7 +46,7 @@
+ #endif
  
  #include "hwy/base.h"
- #if HWY_ARCH_PPC
-+#if linux
+-#if HWY_ARCH_PPC
++#if HWY_ARCH_PPC && defined(__GLIBC__)
  #include <sys/platform/ppc.h>  // NOLINT __ppc_get_timebase_freq
-+#elif __FreeBSD__
-+#include <sys/types.h>
-+#include <sys/sysctl.h>                 /* must come after sys/types.h */
-+#endif
  #elif HWY_ARCH_X86
  
- #if HWY_COMPILER_MSVC
-@@ -400,7 +405,14 @@ double NominalClockRate() {
+@@ -119,7 +119,7 @@ using Ticks = uint64_t;
+ // divide by InvariantTicksPerSecond.
+ inline Ticks Start() {
+   Ticks t;
+-#if HWY_ARCH_PPC
++#if HWY_ARCH_PPC && defined(__GLIBC__)
+   asm volatile("mfspr %0, %1" : "=r"(t) : "i"(268));
+ #elif HWY_ARCH_X86 && HWY_COMPILER_MSVC
+   _ReadWriteBarrier();
+@@ -161,7 +161,7 @@ inline Ticks Start() {
+ 
+ inline Ticks Stop() {
+   uint64_t t;
+-#if HWY_ARCH_PPC
++#if HWY_ARCH_PPC && defined(__GLIBC__)
+   asm volatile("mfspr %0, %1" : "=r"(t) : "i"(268));
+ #elif HWY_ARCH_X86 && HWY_COMPILER_MSVC
+   _ReadWriteBarrier();
+@@ -399,7 +399,7 @@ double NominalClockRate() {
+ }  // namespace
  
  double InvariantTicksPerSecond() {
- #if HWY_ARCH_PPC
-+#if linux
+-#if HWY_ARCH_PPC
++#if HWY_ARCH_PPC && defined(__GLIBC__)
    return __ppc_get_timebase_freq();
-+#elif __FreeBSD__
-+  static double cycles_per_second = 0;
-+  size_t length = sizeof(cycles_per_second);
-+  sysctlbyname("kern.timecounter.tc.timebase.frequency", &cycles_per_second,
-+               &length, NULL, 0);
-+#endif
  #elif HWY_ARCH_X86
    // We assume the TSC is invariant; it is on all recent Intel/AMD CPUs.
-   return NominalClockRate();
