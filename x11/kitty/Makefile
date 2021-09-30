@@ -25,12 +25,13 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libwayland-cursor.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c11 gettext-runtime gl gmake ncurses:port pkgconfig \
+USES=		compiler:c11 cpe gettext-runtime gl gmake ncurses:port pkgconfig \
 		python:3.5+ shebangfix terminfo xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	kovidgoyal
 USE_GL=		gl
 USE_XORG=	x11 xcb xcursor xi xinerama xrandr
+CPE_VENDOR=	kitty_project
 
 SHEBANG_FILES=	build-terminfo count-lines-of-code mypy-editor-integration \
 		update-on-ox update-on-ubuntu
