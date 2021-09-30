@@ -32,8 +32,9 @@ CONFLICTS_INSTALL= \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
 
-USES=		autoreconf gmake jpeg pkgconfig:build tar:bzip2
+USES=		autoreconf cpe gmake jpeg pkgconfig:build tar:bzip2
 USE_LDCONFIG=	yes
+CPE_VENDOR=	artifex
 EXTRACT_AFTER_ARGS=	${EXCLUDE_DIRS:S/^/--exclude /}
 DATADIR=	${PREFIX}/share/${PORTNAME}/${PORTVERSION}
 GNU_CONFIGURE=	yes
