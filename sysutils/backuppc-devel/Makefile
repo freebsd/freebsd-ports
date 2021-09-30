@@ -16,13 +16,15 @@ RUN_DEPENDS=	p5-CGI>0:www/p5-CGI \
 		p5-File-Listing>=0:sysutils/p5-File-Listing \
 		p5-BackupPC-XS>=0.57:sysutils/p5-BackupPC-XS
 
-USES=		perl5
+USES=		cpe perl5
 
 .if defined(QEMU_EMULATING) && "${QEMU_EMULATING}" == "1"
 BROKEN=		fails to build under qemu: uncaught target signal 11 (Segmetation fault) - core dumped
 .endif
 
 CONFLICTS_INSTALL=	backuppc backuppc4
+
+CPE_VENDOR=	craig_barratt
 
 USE_GITHUB=	yes
 GH_TAGNAME=	cae051c
