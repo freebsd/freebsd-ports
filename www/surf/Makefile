@@ -19,9 +19,11 @@ RUN_DEPENDS=	dmenu:x11/dmenu \
 		curl:ftp/curl \
 		xterm:x11/xterm
 
-USES=		compiler:c11 gnome pkgconfig xorg
+USES=		compiler:c11 cpe gnome pkgconfig xorg
 USE_GNOME=	gtk30 pango cairo gdkpixbuf2
 USE_XORG=	x11
+
+CPE_VENDOR=	suckless
 
 CONFLICTS=	surf-1* # math/surf
 
