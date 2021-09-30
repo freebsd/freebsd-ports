@@ -12,7 +12,9 @@ COMMENT=	Yet another download tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lib libtool pathfix pkgconfig ssl tar:xz
+USES=		compiler:c++11-lib cpe libtool pathfix pkgconfig ssl tar:xz
+
+CPE_VENDOR=	aria2_project
 
 CONFIGURE_ARGS=	--disable-epoll \
 		--enable-bittorrent --enable-libaria2 --enable-metalink --enable-shared --enable-ssl --enable-threads=posix --enable-websocket \
