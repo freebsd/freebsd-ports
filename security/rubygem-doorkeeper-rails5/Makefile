@@ -12,9 +12,11 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-railties5>=5:www/rubygem-railties5
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	doorkeeper_project
 
 .include <bsd.port.mk>
