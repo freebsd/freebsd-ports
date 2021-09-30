@@ -1,5 +1,6 @@
 PORTNAME=	grape-entity
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
@@ -10,7 +11,7 @@ COMMENT=	Simple facade to use with your models and APIs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport60>=3.0.0:devel/rubygem-activesupport60 \
+RUN_DEPENDS=	rubygem-activesupport61>=3.0.0:devel/rubygem-activesupport61 \
 		rubygem-multi_json>=1.3.2:devel/rubygem-multi_json
 
 USES=		gem

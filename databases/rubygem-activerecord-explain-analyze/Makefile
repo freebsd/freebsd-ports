@@ -2,7 +2,7 @@
 
 PORTNAME=	activerecord-explain-analyze
 PORTVERSION=	0.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Extends ActiveRecord#explain with additional features
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activerecord60>=4:databases/rubygem-activerecord60 \
+RUN_DEPENDS=	rubygem-activerecord61>=4:databases/rubygem-activerecord61 \
 		rubygem-pg>=0:databases/rubygem-pg
 
 USES=		gem
