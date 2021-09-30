@@ -1,4 +1,6 @@
-TIMESTAMP = 1614798799
+TIMESTAMP = 1627157655
+SHA256 (centos/nspr-4.25.0-2.el7_9.aarch64.rpm) = 78504f47b44a7313da95b96259cd54ab60100caf82113c9eda7fad6f13820c19
+SIZE (centos/nspr-4.25.0-2.el7_9.aarch64.rpm) = 120812
 SHA256 (centos/nspr-4.25.0-2.el7_9.i686.rpm) = b970000edfe83918a60d36a58443e70febbc8053c3ced7c67732f55f07d0a976
 SIZE (centos/nspr-4.25.0-2.el7_9.i686.rpm) = 131612
 SHA256 (centos/nspr-4.25.0-2.el7_9.x86_64.rpm) = 7474f32c17d8003c3366608f1620d6945efdcff859c4f6900ae7da9ce3f9585b

@@ -14,6 +14,8 @@ COMMENT=	Fdisk, a partition tables manipulator, from util-linux
 
 LICENSE=	GPLv2+
 
+BROKEN_aarch64=	fails to build: error unknown architecture
+
 WRKSRC=		${WRKDIR}/util-linux-${PORTVERSION}/fdisk
 USES=		tar:bzip2
 

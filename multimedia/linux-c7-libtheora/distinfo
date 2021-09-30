@@ -1,4 +1,6 @@
-TIMESTAMP = 1482094188
+TIMESTAMP = 1627157200
+SHA256 (centos/libtheora-1.1.1-8.el7.aarch64.rpm) = bb70a3e94aeb0bfc2647299897c1720bfee2c08cbb34407574c00b8c90f5f711
+SIZE (centos/libtheora-1.1.1-8.el7.aarch64.rpm) = 127884
 SHA256 (centos/libtheora-1.1.1-8.el7.i686.rpm) = b9660698a70f50bdefa94f688e2ce419e68d1a86bfb5bf0d5d5fdffb34b81b80
 SIZE (centos/libtheora-1.1.1-8.el7.i686.rpm) = 142280
 SHA256 (centos/libtheora-1.1.1-8.el7.x86_64.rpm) = aabbc64c3131165b96a92cbbf17709200c2f877ba529c2a1a3e1916ce30c817d

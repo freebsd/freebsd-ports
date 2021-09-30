@@ -1,4 +1,6 @@
-TIMESTAMP = 1473674939
+TIMESTAMP = 1627157149
+SHA256 (centos/libogg-1.3.0-7.el7.aarch64.rpm) = 6cbcc538bede665aa482000b151f6a48475d32ae5815828af812641068f49207
+SIZE (centos/libogg-1.3.0-7.el7.aarch64.rpm) = 23776
 SHA256 (centos/libogg-1.3.0-7.el7.i686.rpm) = 10be74f7196e416422f01294080cb02655ae734e1ebb2765247dd441e3af6959
 SIZE (centos/libogg-1.3.0-7.el7.i686.rpm) = 25500
 SHA256 (centos/libogg-1.3.0-7.el7.x86_64.rpm) = 16a5f4baeabf78f77399395e3c22b22e2968bfa37e17221c042469c30ea4b9a2

@@ -1,4 +1,6 @@
-TIMESTAMP = 1556484532
+TIMESTAMP = 1627157309
+SHA256 (centos/jasper-libs-1.900.1-33.el7.aarch64.rpm) = 9111629b9429e526bdda75e026eb0e84557fff11de5afac9adb0bb5ed2e9495a
+SIZE (centos/jasper-libs-1.900.1-33.el7.aarch64.rpm) = 141764
 SHA256 (centos/jasper-libs-1.900.1-33.el7.i686.rpm) = 87e132f26c11e1f134f248b60acf7e16b314329273c3850604b955aad30103fd
 SIZE (centos/jasper-libs-1.900.1-33.el7.i686.rpm) = 151348
 SHA256 (centos/jasper-libs-1.900.1-33.el7.x86_64.rpm) = cb14c75e9af3449a77d14f2f30aede2f4e90eae66d4c73b88c61a255f8d64d36

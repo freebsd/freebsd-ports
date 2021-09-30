@@ -31,7 +31,6 @@ BIN_DISTNAMES=	bash-4.2.46-34.el7 \
 		which-2.20-7.el7
 LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		compat-db47-4.7.25-28.el7 \
-		compat-libstdc++-33-3.2.3-72.el7 \
 		e2fsprogs-libs-1.42.9-19.el7 \
 		gamin-0.1.10-16.el7 \
 		gdbm-1.10-8.el7 \
@@ -60,11 +59,19 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		pcre-8.32-17.el7 \
 		popt-1.13-16.el7 \
 		readline-6.2-11.el7 \
-		redhat-lsb-core-4.1-27.el7.centos.1 \
 		slang-2.2.4-11.el7 \
 		util-linux-2.23.2-65.el7_9.1 \
 		xz-libs-5.2.2-1.el7 \
 		zlib-1.2.7-19.el7_9
+
+LIB_DISTNAMES_aarch64=	redhat-lsb-core-4.1-27.el7.1
+
+LIB_DISTNAMES_amd64=	compat-libstdc++-33-3.2.3-72.el7 \
+		redhat-lsb-core-4.1-27.el7.centos.1
+
+LIB_DISTNAMES_i386=	compat-libstdc++-33-3.2.3-72.el7 \
+		redhat-lsb-core-4.1-27.el7.centos.1
+
 SHARE_DISTNAMES=basesystem-10.0-7.el7.centos \
 		ncurses-base-5.9-14.20130511.el7_4 \
 		setup-2.8.71-11.el7
@@ -133,7 +140,9 @@ REMOVE_FILES=	bin/chfn bin/chsh bin/findmnt bin/login bin/lsblk bin/lscpu \
 
 .if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1300000 && ${OSVERSION} < 1300077)
 GLIBC_VER=	2.17-292.el7
-MASTER_SITE_SUBDIR+=	centos/7.7.1908/os/x86_64/Packages/:DEFAULT,amd64 \
+MASTER_SITE_SUBDIR+=	altarch/7.7.1908/os/aarch64/Packages/:DEFAULT,aarch64 \
+			altarch/7.7.1908/updates/aarch64/Packages/:DEFAULT,aarch64 \
+			centos/7.7.1908/os/x86_64/Packages/:DEFAULT,amd64 \
 			centos/7.7.1908/updates/x86_64/Packages/:DEFAULT,amd64 \
 			altarch/7.7.1908/os/i386/Packages/:DEFAULT,i386 \
 			altarch/7.7.1908/updates/i386/Packages/:DEFAULT,i386 \
@@ -145,7 +154,7 @@ GLIBC_VER=	2.17-323.el7_9
 PLIST_SUB+=	NEWGLIBC=""
 .endif
 
-.if ${ARCH} == amd64
+.if ${ARCH} == aarch64 || ${ARCH} == amd64
 SYSCTLMIB=	kern.features.linux64
 .else
 SYSCTLMIB=	compat.linux.osrelease
@@ -164,7 +173,7 @@ post-extract:
 		${EXTRACT_AFTER_ARGS})
 .if ${ARCH} == i386
 	@${CHMOD} u+w ${WRKSRC}/usr/lib/pm-utils
-.elif ${ARCH} == amd64
+.elif ${ARCH} == aarch64 || ${ARCH} == amd64
 	@${CHMOD} u+w ${WRKSRC}/usr/lib64/pm-utils
 .endif
 
@@ -172,8 +181,10 @@ post-patch:
 	@${RM} -r ${REMOVE_DIRS:S|^|${WRKSRC}/|}
 	@${RM} ${REMOVE_FILES:S|^|${WRKSRC}/|}
 	@${FIND} ${WRKSRC}/usr -type d -empty -not -path '*/lib*/gio/*' -delete
+.if ${ARCH} == amd64  ||  ${ARCH} == i386
 	@${BRANDELF} -t Linux ${WRKSRC}/usr/lib/ld-2.17.so
-.if ${ARCH} == amd64
+.endif
+.if ${ARCH} == aarch64 || ${ARCH} == amd64
 	@${BRANDELF} -t Linux ${WRKSRC}/usr/lib64/ld-2.17.so
 .endif
 

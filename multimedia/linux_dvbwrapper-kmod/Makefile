@@ -9,7 +9,7 @@ DISTFILES=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux compatibility layer - DVB ioctl handler
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 USES=		kmod uidfix
 

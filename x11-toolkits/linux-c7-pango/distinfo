@@ -1,4 +1,6 @@
-TIMESTAMP = 1568992965
+TIMESTAMP = 1627157353
+SHA256 (centos/pango-1.42.4-4.el7_7.aarch64.rpm) = f8d10523f03b29ec1dcb31c1b88c32fb8d183d0ee673074f5a47ed4ca9b3ee2e
+SIZE (centos/pango-1.42.4-4.el7_7.aarch64.rpm) = 277368
 SHA256 (centos/pango-1.42.4-4.el7_7.i686.rpm) = b61eb6385f406b7210f8c9095540a28e97eaf9e94c68fb00cd72ac4ea4b5c5a6
 SIZE (centos/pango-1.42.4-4.el7_7.i686.rpm) = 288076
 SHA256 (centos/pango-1.42.4-4.el7_7.x86_64.rpm) = b45e82bace13bf493ae1ba13a73d110af4b4205b34c3af666e295b2154fa7621

@@ -1,4 +1,6 @@
-TIMESTAMP = 1568992062
+TIMESTAMP = 1627157264
+SHA256 (centos/libjpeg-turbo-1.2.90-8.el7.aarch64.rpm) = 180b1ded365097616e810bf12a905394e0d275c49d348430ffaf3c014037080b
+SIZE (centos/libjpeg-turbo-1.2.90-8.el7.aarch64.rpm) = 120308
 SHA256 (centos/libjpeg-turbo-1.2.90-8.el7.i686.rpm) = 0adddfecc461305aacc70159dd34c51edf3c5f90ed5eb03cebb8db87638106b2
 SIZE (centos/libjpeg-turbo-1.2.90-8.el7.i686.rpm) = 141356
 SHA256 (centos/libjpeg-turbo-1.2.90-8.el7.x86_64.rpm) = f64aadb4c40d68afb2c453de820b4d263f630930fc63e09792fb7ab81bee2bbb

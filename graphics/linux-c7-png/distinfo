@@ -1,4 +1,6 @@
-TIMESTAMP = 1614793973
+TIMESTAMP = 1627156954
+SHA256 (centos/libpng-1.5.13-8.el7.aarch64.rpm) = a132cbe0d407be884e14691031a9a613160577446b8297b378391f943f0ceff0
+SIZE (centos/libpng-1.5.13-8.el7.aarch64.rpm) = 211360
 SHA256 (centos/libpng-1.5.13-8.el7.i686.rpm) = b169314c0b0d0eb80f86676aa747fcfe249f245aff88f64c22d759d61922c4f0
 SIZE (centos/libpng-1.5.13-8.el7.i686.rpm) = 220416
 SHA256 (centos/libpng-1.5.13-8.el7.x86_64.rpm) = e38e68875557c79dab8eea9aedaeea75787a2d1a88de118ecb0315c1833a1def

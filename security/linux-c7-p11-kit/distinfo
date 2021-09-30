@@ -1,4 +1,6 @@
-TIMESTAMP = 1507317689
+TIMESTAMP = 1627157749
+SHA256 (centos/p11-kit-0.23.5-3.el7.aarch64.rpm) = eb5bd186fe148b1d86a6cabe462fa0abe70d2856dcb21e25b74ff8597420a585
+SIZE (centos/p11-kit-0.23.5-3.el7.aarch64.rpm) = 227732
 SHA256 (centos/p11-kit-0.23.5-3.el7.i686.rpm) = 2effb681d341ace4f1221e567a3ff0b28f26f345175bb4c4fb6dda7ed54f7798
 SIZE (centos/p11-kit-0.23.5-3.el7.i686.rpm) = 247076
 SHA256 (centos/p11-kit-0.23.5-3.el7.x86_64.rpm) = 8a15990e66c12cfe913f738c87ce772e2e86e67ca27f36ccb43e07eb171c201f

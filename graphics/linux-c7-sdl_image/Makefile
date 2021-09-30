@@ -11,7 +11,7 @@ DISTNAME=	SDL_image-${DISTVERSIONFULL}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Simple library to load images as SDL interfaces (Linux CentOS ${LINUX_DIST_VER})
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 USES=		cpe linux:c7
 CPE_VENDOR=	libsdl

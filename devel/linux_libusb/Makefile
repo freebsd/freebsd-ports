@@ -12,13 +12,14 @@ COMMENT=	Linux-compatibility libusb
 
 LICENSE=	BSD2CLAUSE
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 USES=		linux tar:bzip2
 USE_LDCONFIG=	yes
 USE_LINUX=	base:build,run devtools:build
 USE_LINUX_PREFIX=	yes
 
+LIBDIR_aarch64=	lib64
 LIBDIR_amd64=	lib64
 LIBDIR_i386=	lib
 PLIST_FILES=	usr/${LIBDIR_${ARCH}}/libusb.so.3 \

@@ -1,4 +1,6 @@
-TIMESTAMP = 1585671072
+TIMESTAMP = 1627363189
+SHA256 (centos/libicu-50.2-4.el7_7.aarch64.rpm) = 83ddc8e05e3b9ed13d9c2d0d768470f771099adfb519e67e5e870ae768763248
+SIZE (centos/libicu-50.2-4.el7_7.aarch64.rpm) = 7098992
 SHA256 (centos/libicu-50.2-4.el7_7.i686.rpm) = d3ce75bf83e66f44c24a6d9088a80764cb8b0fdc7b85f0f8b46bfef3eabf56e9
 SIZE (centos/libicu-50.2-4.el7_7.i686.rpm) = 7250656
 SHA256 (centos/libicu-50.2-4.el7_7.x86_64.rpm) = 385bbe52268984f42689f2c26b6a6901a940c33b8ca68f7e0d1ca03524f209ae

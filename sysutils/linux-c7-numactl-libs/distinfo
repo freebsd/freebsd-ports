@@ -1,4 +1,6 @@
-TIMESTAMP = 1588508532
+TIMESTAMP = 1627157207
+SHA256 (centos/numactl-libs-2.0.12-5.el7.aarch64.rpm) = c4ba0c78449b077223c0a8a22ab28ac7d9f29328dea459f92ff7b33b1abd62db
+SIZE (centos/numactl-libs-2.0.12-5.el7.aarch64.rpm) = 29504
 SHA256 (centos/numactl-libs-2.0.12-5.el7.i686.rpm) = b9523805128618886738e5dbc0f5fb44589cdf74fd0064ec4044cf0bf7e77724
 SIZE (centos/numactl-libs-2.0.12-5.el7.i686.rpm) = 30920
 SHA256 (centos/numactl-libs-2.0.12-5.el7.x86_64.rpm) = cadd7d4125ce7b69bb020dc419c87600d4bd6d3ada1eed65c1472fb535b6b770

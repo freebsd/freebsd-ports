@@ -1,4 +1,6 @@
-TIMESTAMP = 1556530645
+TIMESTAMP = 1627156898
+SHA256 (centos/fontconfig-2.13.0-4.3.el7.aarch64.rpm) = 2551609942fed6a170bca99d0bd8383c9fce03b4cdabec9c964bde509ef55ea9
+SIZE (centos/fontconfig-2.13.0-4.3.el7.aarch64.rpm) = 255396
 SHA256 (centos/fontconfig-2.13.0-4.3.el7.i686.rpm) = 3a9ad39e24733b7d4053ed51800ff55d5a71dae19889c1c9624d9c1fa0e3270d
 SIZE (centos/fontconfig-2.13.0-4.3.el7.i686.rpm) = 261088
 SHA256 (centos/fontconfig-2.13.0-4.3.el7.x86_64.rpm) = adf21042079dd4754a2d77f5ddf83b8537407081e95edeb553b1b0e8130aa558

@@ -1,4 +1,6 @@
-TIMESTAMP = 1614792119
+TIMESTAMP = 1627157169
+SHA256 (centos/audiofile-0.3.6-9.el7.aarch64.rpm) = 67826c10dcb2d31ae5f57036823ed4573c49a667987ba66569062ae318d7d4f7
+SIZE (centos/audiofile-0.3.6-9.el7.aarch64.rpm) = 151292
 SHA256 (centos/audiofile-0.3.6-9.el7.i686.rpm) = 17935cadafe9464a5bece2b8812fc4438c528a73acb1dc0b06c3fceab90b4263
 SIZE (centos/audiofile-0.3.6-9.el7.i686.rpm) = 161448
 SHA256 (centos/audiofile-0.3.6-9.el7.x86_64.rpm) = 6f9d2234fe904cb40cd23aa3f55f8fb48149d23514f0ac05626945e9df368da7

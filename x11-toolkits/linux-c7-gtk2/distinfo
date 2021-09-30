@@ -1,8 +1,12 @@
-TIMESTAMP = 1507318067
+TIMESTAMP = 1627157526
+SHA256 (centos/gtk2-2.24.31-1.el7.aarch64.rpm) = b33e1376c0936a3c8a1c98cb44a363912db162ba89ebce1767ac4095cb42a7e6
+SIZE (centos/gtk2-2.24.31-1.el7.aarch64.rpm) = 3343276
 SHA256 (centos/gtk2-2.24.31-1.el7.i686.rpm) = b81831f5a0b9b411997dc7e9aea7df9643e7aacb2d8b0e3adf1c56bbae901f05
 SIZE (centos/gtk2-2.24.31-1.el7.i686.rpm) = 3527236
 SHA256 (centos/gtk2-2.24.31-1.el7.x86_64.rpm) = 68fb1261c69e217a9fa3901ebd0c76ebeaf0fce64ef9eeb571bfd75cfadcf7fd
 SIZE (centos/gtk2-2.24.31-1.el7.x86_64.rpm) = 3552756
+SHA256 (centos/gtk2-immodules-2.24.31-1.el7.aarch64.rpm) = ca765352051cd6e5c892b604c2efb2847e0cc6c7cf721e0ee8b77a2f26207733
+SIZE (centos/gtk2-immodules-2.24.31-1.el7.aarch64.rpm) = 30964
 SHA256 (centos/gtk2-immodules-2.24.31-1.el7.i686.rpm) = a7b831cdc0726e87bfc451da1581d64f93eb3f839fa18c91f4e5d14e67407e7c
 SIZE (centos/gtk2-immodules-2.24.31-1.el7.i686.rpm) = 31164
 SHA256 (centos/gtk2-immodules-2.24.31-1.el7.x86_64.rpm) = 173fbc01e1f55425190a6388338cf4967a1ef20fc56729e8640d83fd370808f1

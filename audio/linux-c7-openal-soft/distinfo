@@ -1,4 +1,6 @@
-TIMESTAMP = 1567501651
+TIMESTAMP = 1627157173
+SHA256 (centos/openal-soft-1.16.0-3.el7.aarch64.rpm) = e28d17bd29d014419a4eee4fc42b5685ee6982d763c4d1651e7c0253af5b6acd
+SIZE (centos/openal-soft-1.16.0-3.el7.aarch64.rpm) = 271208
 SHA256 (centos/openal-soft-1.16.0-3.el7.i686.rpm) = 114e20b9feeb46dcdee2f52f7a4ba746085502dab51624506abc428bc2153408
 SIZE (centos/openal-soft-1.16.0-3.el7.i686.rpm) = 286432
 SHA256 (centos/openal-soft-1.16.0-3.el7.x86_64.rpm) = 775242cb1d603b85a53eb325c9d85a6aed9639968430c5d45893c90252b07429

@@ -11,7 +11,7 @@ DISTNAME=	SDL_ttf-${DISTVERSIONFULL}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Simple library to load True Type Fonts as SDL interfaces (Linux CentOS ${LINUX_DIST_VER})
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

@@ -11,7 +11,7 @@ COMMENT=	Userspace read-copy-update (RCU) data synchronization library (CentOS $
 
 LICENSE=	LGPL21+
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 USES=		linux:c7
 USE_LDCONFIG=	yes

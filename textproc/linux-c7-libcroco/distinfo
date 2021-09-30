@@ -1,4 +1,6 @@
-TIMESTAMP = 1614798536
+TIMESTAMP = 1627157321
+SHA256 (centos/libcroco-0.6.12-6.el7_9.aarch64.rpm) = 64e27741101d323ec7f51252c76b34c5f15345b3922e00e7a883952e226620ff
+SIZE (centos/libcroco-0.6.12-6.el7_9.aarch64.rpm) = 99312
 SHA256 (centos/libcroco-0.6.12-6.el7_9.i686.rpm) = b9bc38488c309455bbf6f753ef1aaaa244614ec08a027b5ff58a7b234006eac1
 SIZE (centos/libcroco-0.6.12-6.el7_9.i686.rpm) = 107184
 SHA256 (centos/libcroco-0.6.12-6.el7_9.x86_64.rpm) = eeec2b53758cdbb0b3f3402b7117dddcf34c40e99612fc0ec69bb799b2a7b6be

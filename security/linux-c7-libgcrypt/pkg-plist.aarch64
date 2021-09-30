@@ -1,0 +1,8 @@
+usr/lib64/.libgcrypt.so.11.hmac
+usr/lib64/libgcrypt.so.11
+usr/lib64/libgcrypt.so.11.8.2
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.LIB
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+@dir etc/gcrypt

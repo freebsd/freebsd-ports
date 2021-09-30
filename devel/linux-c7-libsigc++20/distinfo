@@ -1,4 +1,6 @@
-TIMESTAMP = 1507234928
+TIMESTAMP = 1627157535
+SHA256 (centos/libsigc++20-2.10.0-1.el7.aarch64.rpm) = 531de611f2ba4dabdda37a8af66684fe555be5ecaac84d69c74001ad14dfc6d6
+SIZE (centos/libsigc++20-2.10.0-1.el7.aarch64.rpm) = 37096
 SHA256 (centos/libsigc++20-2.10.0-1.el7.i686.rpm) = 6d52c9a6e20e87b26bc0e2807e271d1c314fdf96833e5386a68a7e8cf0ba719e
 SIZE (centos/libsigc++20-2.10.0-1.el7.i686.rpm) = 38148
 SHA256 (centos/libsigc++20-2.10.0-1.el7.x86_64.rpm) = b6fb7135cf611188e9436aba06ab8f96b03e5fd4f839ef67ae2a630da7eda8a8

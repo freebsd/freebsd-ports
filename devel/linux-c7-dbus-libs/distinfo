@@ -1,4 +1,6 @@
-TIMESTAMP = 1614792620
+TIMESTAMP = 1626543060
+SHA256 (centos/dbus-libs-1.10.24-15.el7.aarch64.rpm) = 8c6fbb57adad9a5ebdfd48dbf271114a9904e38927e79ed5047edf23b39170c2
+SIZE (centos/dbus-libs-1.10.24-15.el7.aarch64.rpm) = 162892
 SHA256 (centos/dbus-libs-1.10.24-15.el7.i686.rpm) = 07d13d0034a045d198fd58e94c83721dffa12a543023310e7d8a5cc1a5f97cb2
 SIZE (centos/dbus-libs-1.10.24-15.el7.i686.rpm) = 173972
 SHA256 (centos/dbus-libs-1.10.24-15.el7.x86_64.rpm) = 1dd6ceb75ebf29acc52c889d4df58909419ce5b62ebabdc18d6869f3e3ba5e11

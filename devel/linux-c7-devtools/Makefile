@@ -28,6 +28,9 @@ LIB_DISTNAMES=	binutils-devel-${BUVERSION} \
 		glibc-static-2.17-323.el7_9 \
 		libgomp-4.8.5-44.el7 \
 		libmpc-1.0.1-3.el7
+DISTFILES_aarch64=${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_aarch64}:aarch64/} \
+		${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_aarch64}:aarch64/} \
+		kernel-headers-4.18.0-193.28.1.el7${EXTRACT_SUFX_aarch64}:aarch64
 DISTFILES_amd64=${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 		${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
 		${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
@@ -53,7 +56,10 @@ PLIST_SUB=	BUVERSION=${BUVERSION}
 
 post-install:
 	${LN} -sf ld.bfd ${STAGEDIR}${PREFIX}/usr/bin/ld
-.if ${ARCH} == amd64
+.if ${ARCH} == aarch64
+	${LN} -sfh ../../../../lib64/libgcc_s.so.1 \
+	${STAGEDIR}${PREFIX}/usr/lib/gcc/aarch64-redhat-linux/4.8.2/libgcc_s.so
+.elif ${ARCH} == amd64
 	${LN} -sfh ../../../../lib64/libgcc_s.so.1 \
 	${STAGEDIR}${PREFIX}/usr/lib/gcc/x86_64-redhat-linux/4.8.2/libgcc_s.so
 

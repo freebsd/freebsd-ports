@@ -1,4 +1,6 @@
-TIMESTAMP = 1482093222
+TIMESTAMP = 1627157320
+SHA256 (centos/aspell-0.60.6.1-9.el7.aarch64.rpm) = facc981629f29ef42ca9f7acced6c4cfc73db99677aeecc83c5db22b9976b553
+SIZE (centos/aspell-0.60.6.1-9.el7.aarch64.rpm) = 662180
 SHA256 (centos/aspell-0.60.6.1-9.el7.i686.rpm) = a14ec40910e3b300b32ca92c425ef82ba52ae6deec5462c9a453592e4aa55a77
 SIZE (centos/aspell-0.60.6.1-9.el7.i686.rpm) = 684648
 SHA256 (centos/aspell-0.60.6.1-9.el7.x86_64.rpm) = 881b41c9c1509b03b2dc1ad97c71ba0f830d75751297320728c5e05307f32fd3

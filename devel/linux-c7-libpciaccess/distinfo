@@ -1,4 +1,6 @@
-TIMESTAMP = 1530376904
+TIMESTAMP = 1627157539
+SHA256 (centos/libpciaccess-0.14-1.el7.aarch64.rpm) = c6aa796cdc6998b0b24af493287b6f471e2625d1ba203e609ef3e253d435798c
+SIZE (centos/libpciaccess-0.14-1.el7.aarch64.rpm) = 25552
 SHA256 (centos/libpciaccess-0.14-1.el7.i686.rpm) = 8b9fdeffce6bd83320dd87feff00f6141c9c791e6b9f77bc49303ddaa7fdb46e
 SIZE (centos/libpciaccess-0.14-1.el7.i686.rpm) = 28312
 SHA256 (centos/libpciaccess-0.14-1.el7.x86_64.rpm) = d3b75fd9509c2e905ee5f29a47216274ce59fa8d0826415441dcdb79e0073d01

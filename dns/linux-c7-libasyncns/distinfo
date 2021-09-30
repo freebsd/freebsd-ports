@@ -1,4 +1,6 @@
-TIMESTAMP = 1482091588
+TIMESTAMP = 1627157311
+SHA256 (centos/libasyncns-0.8-7.el7.aarch64.rpm) = 3b5adf6a127b173e173d4315debf67f318bd998b25ae32724e3ebde2fe740243
+SIZE (centos/libasyncns-0.8-7.el7.aarch64.rpm) = 25856
 SHA256 (centos/libasyncns-0.8-7.el7.i686.rpm) = 86006ec7b6b5bc63c4225d98fe3d309d75d5b5f43f75bb81274e379e3f4573f1
 SIZE (centos/libasyncns-0.8-7.el7.i686.rpm) = 26592
 SHA256 (centos/libasyncns-0.8-7.el7.x86_64.rpm) = 1acf01399f6d5ea5f9bbbac18e67e77dc277551a24ad53de06f404205cb51206

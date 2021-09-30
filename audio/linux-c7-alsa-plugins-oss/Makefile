@@ -32,6 +32,7 @@ CONFIG_ARGS=	--disable-static --disable-mix --disable-usbstream \
 CPPFLAGS+=	-DFREEBSD_OSS -DFREEBSD_OSS_USE_IO_PTR
 CFLAGS+=	--sysroot=${LINUXBASE}
 COMPAT32_CFLAGS_amd64=	-m32
+LIBDIR_aarch64=	/usr/lib64
 LIBDIR_amd64=	/usr/lib64
 LIBDIR_i386=	/usr/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

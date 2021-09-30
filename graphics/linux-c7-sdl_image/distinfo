@@ -1,4 +1,6 @@
-TIMESTAMP = 1482094657
+TIMESTAMP = 1627366335
+SHA256 (centos/SDL_image-1.2.12-11.el7.aarch64.rpm) = e1cf33895eb824af429fa1da4c7fdab1d94235762c9f1bfd0b23d40e35dd81dc
+SIZE (centos/SDL_image-1.2.12-11.el7.aarch64.rpm) = 41920
 SHA256 (centos/SDL_image-1.2.12-11.el7.x86_64.rpm) = 293dc52ed3321c40886a4bf522285fcb164b76f41cf81aa9277ec0f884d773bd
 SIZE (centos/SDL_image-1.2.12-11.el7.x86_64.rpm) = 42624
 SHA256 (centos/SDL_image-1.2.12-11.el7.src.rpm) = f11c9a986584b74f1b42c36a940bd8e7dd6a5b73fcf0006ed60f9bead856d711
