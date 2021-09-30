@@ -1,3 +1,5 @@
+https://github.com/EmbarkStudios/cfg-expr/commit/f8c59a8dccd0
+
 --- vendor/cfg-expr/src/targets/builtins.rs.orig	2021-09-30 14:33:28 UTC
 +++ vendor/cfg-expr/src/targets/builtins.rs
 @@ -1004,6 +1004,16 @@ pub const ALL_BUILTINS: &[TargetInfo<'static>] = &[
