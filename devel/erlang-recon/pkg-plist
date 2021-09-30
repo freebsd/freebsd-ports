@@ -2,6 +2,7 @@ lib/erlang/lib/recon-%%VERSION%%/ebin/recon.app
 lib/erlang/lib/recon-%%VERSION%%/ebin/recon.beam
 lib/erlang/lib/recon-%%VERSION%%/ebin/recon_alloc.beam
 lib/erlang/lib/recon-%%VERSION%%/ebin/recon_lib.beam
+lib/erlang/lib/recon-%%VERSION%%/ebin/recon_map.beam
 lib/erlang/lib/recon-%%VERSION%%/ebin/recon_rec.beam
 lib/erlang/lib/recon-%%VERSION%%/ebin/recon_trace.beam
 lib/erlang/lib/recon-%%VERSION%%/script/app_deps.erl
@@ -11,6 +12,7 @@ lib/erlang/lib/recon-%%VERSION%%/src/recon.app.src
 lib/erlang/lib/recon-%%VERSION%%/src/recon.erl
 lib/erlang/lib/recon-%%VERSION%%/src/recon_alloc.erl
 lib/erlang/lib/recon-%%VERSION%%/src/recon_lib.erl
+lib/erlang/lib/recon-%%VERSION%%/src/recon_map.erl
 lib/erlang/lib/recon-%%VERSION%%/src/recon_rec.erl
 lib/erlang/lib/recon-%%VERSION%%/src/recon_trace.erl
 %%PORTDOCS%%%%DOCSDIR%%/README.md
@@ -23,6 +25,7 @@ lib/erlang/lib/recon-%%VERSION%%/src/recon_trace.erl
 %%PORTDOCS%%%%DOCSDIR%%/recon.html
 %%PORTDOCS%%%%DOCSDIR%%/recon_alloc.html
 %%PORTDOCS%%%%DOCSDIR%%/recon_lib.html
+%%PORTDOCS%%%%DOCSDIR%%/recon_map.html
 %%PORTDOCS%%%%DOCSDIR%%/recon_rec.html
 %%PORTDOCS%%%%DOCSDIR%%/recon_trace.html
 %%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
