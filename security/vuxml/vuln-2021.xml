@@ -1,3 +1,44 @@
+  <vuln vid="777edbbe-2230-11ec-8869-704d7b472482">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>94.0.4606.71</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases/Stable updates reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/09/stable-channel-update-for-desktop_30.html">
+	  <p>This release contains 4 security fixes, including:</p>
+	  <ul>
+	    <li>[1245578] High CVE-2021-37974: Use after free in Safe Browsing.
+	      Reported by Weipeng Jiang (@Krace) from Codesafe Team of
+	      Legendsec at Qi'anxin Group on 2021-09-01</li>
+	    <li>[1252918] High CVE-2021-37975: Use after free in V8. Reported by
+	      Anonymous on 2021-09-24</li>
+	    <li>[1251787] Medium CVE-2021-37976: Information leak in core.
+	       Reported by Clement Lecigne from Google TAG, with technical
+	       assistance from Sergei Glazunov and Mark Brand from Google
+	       Project Zero on 2021-09-21</li>
+	  </ul>
+	  <p>Google is aware the exploits for CVE-2021-37975 and CVE-2021-37976
+	    exist in the wild.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-37974</cvename>
+      <cvename>CVE-2021-37975</cvename>
+      <cvename>CVE-2021-37976</cvename>
+      <url>https://chromereleases.googleblog.com/2021/09/stable-channel-update-for-desktop_30.html</url>
+    </references>
+    <dates>
+      <discovery>2021-09-30</discovery>
+      <entry>2021-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1bdd4db6-2223-11ec-91be-001b217b3468">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
