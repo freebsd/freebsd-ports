@@ -1,23 +1,16 @@
 # Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 
 PORTNAME=	pdmenu
-PORTVERSION=	1.3.4
-PORTREVISION=	1
+DISTVERSION=	1.3.6
 CATEGORIES=	misc
-MASTER_SITES=	DEBIAN
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	https://git.kitenet.net/index.cgi/pdmenu.git/snapshot/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@fuz.su
 COMMENT=	Simple console menu program
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: BG
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: BG
-
 LIB_DEPENDS=	libslang.so:devel/libslang2
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		gettext gmake ncurses shebangfix
 SHEBANG_FILES=	examples/showdir.pl
@@ -29,6 +22,9 @@ MAKE_ENV=	INSTALL_PREFIX="${STAGEDIR}"
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lncurses -lintl
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \
