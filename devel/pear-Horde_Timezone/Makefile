@@ -7,9 +7,10 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde timezone library
 
-USES=	horde
+USES=		cpe horde
 USE_HORDE_RUN=	Horde_Date \
 		Horde_Icalendar \
 		Horde_Vfs
+CPE_VENDOR=	horde
 
 .include <bsd.port.mk>
