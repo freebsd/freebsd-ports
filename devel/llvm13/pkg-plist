@@ -74,6 +74,7 @@ bin/analyze-build%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-offload-bundler%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-offload-wrapper%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-rename%%LLVM_SUFFIX%%
+%%CLANG%%bin/clang-repl%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-scan-deps%%LLVM_SUFFIX%%
 %%CLANG%%bin/diagtool%%LLVM_SUFFIX%%
 %%CLANG%%bin/hmaptool%%LLVM_SUFFIX%%
@@ -171,6 +172,7 @@ llvm%%LLVM_SUFFIX%%/bin/bugpoint
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-refactor
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-rename
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/clang-reorder-fields
+%%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-repl
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-scan-deps
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-tblgen
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/clang-tidy

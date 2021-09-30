@@ -75,6 +75,7 @@ CLANG_COMMANDS=	\
 		clang-offload-bundler \
 		clang-offload-wrapper \
 		clang-rename \
+		clang-repl \
 		clang-scan-deps \
 		diagtool \
 		hmaptool \
