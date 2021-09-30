@@ -18,9 +18,11 @@ RUN_DEPENDS=	p5-CGI>0:www/p5-CGI \
 		p5-File-Listing>=0:sysutils/p5-File-Listing \
 		p5-BackupPC-XS>=0.62:sysutils/p5-BackupPC-XS
 
-USES=		perl5
+USES=		cpe perl5
 
 CONFLICTS_INSTALL=	backuppc backuppc-devel
+
+CPE_VENDOR=	craig_barratt
 
 NO_BUILD=	yes
 NO_ARCH=	yes
