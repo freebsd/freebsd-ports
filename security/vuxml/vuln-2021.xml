@@ -1,3 +1,80 @@
+  <vuln vid="1bdd4db6-2223-11ec-91be-001b217b3468">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>14.3.0</ge><lt>14.3.1</lt></range>
+	<range><ge>14.2.0</ge><lt>14.2.5</lt></range>
+	<range><ge>0</ge><lt>14.1.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2021/09/30/security-release-gitlab-14-3-1-released/">
+	  <p>Stored XSS in merge request creation page</p>
+	  <p>Denial-of-service attack in Markdown parser</p>
+	  <p>Stored Cross-Site Scripting vulnerability in the GitLab Flavored Markdown</p>
+	  <p>DNS Rebinding vulnerability in Gitea importer</p>
+	  <p>Exposure of trigger tokens on project exports</p>
+	  <p>Improper access control for users with expired password</p>
+	  <p>Access tokens are not cleared after impersonation</p>
+	  <p>Reflected Cross-Site Scripting in Jira Integration</p>
+	  <p>DNS Rebinding vulnerability in Fogbugz importer</p>
+	  <p>Access tokens persist after project deletion</p>
+	  <p>User enumeration vulnerability</p>
+	  <p>Potential DOS via API requests</p>
+	  <p>Pending invitations of public groups and public projects are visible to any user</p>
+	  <p>Bypass Disabled Repo by URL Project Creation</p>
+	  <p>Low privileged users can see names of the private groups shared in projects</p>
+	  <p>API discloses sensitive info to low privileged users</p>
+	  <p>Epic listing do not honour group memberships</p>
+	  <p>Insecure Direct Object Reference vulnerability may lead to protected branch names getting disclosed</p>
+	  <p>Low privileged users can import users from projects that they they are not a maintainer on</p>
+	  <p>Potential DOS via dependencies API</p>
+	  <p>Create a project with unlimited repository size through malicious Project Import</p>
+	  <p>Bypass disabled Bitbucket Server import source project creation</p>
+	  <p>Requirement to enforce 2FA is not honored when using git commands</p>
+	  <p>Content spoofing vulnerability</p>
+	  <p>Improper session management in impersonation feature</p>
+	  <p>Create OAuth application with arbitrary scopes through content spoofing</p>
+	  <p>Lack of account lockout on change password functionality</p>
+	  <p>Epic reference was not updated while moved between groups</p>
+	  <p>Missing authentication allows disabling of two-factor authentication</p>
+	  <p>Information disclosure in SendEntry</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-39885</cvename>
+      <cvename>CVE-2021-39877</cvename>
+      <cvename>CVE-2021-39887</cvename>
+      <cvename>CVE-2021-39867</cvename>
+      <cvename>CVE-2021-39869</cvename>
+      <cvename>CVE-2021-39872</cvename>
+      <cvename>CVE-2021-39878</cvename>
+      <cvename>CVE-2021-39866</cvename>
+      <cvename>CVE-2021-39882</cvename>
+      <cvename>CVE-2021-39875</cvename>
+      <cvename>CVE-2021-39870</cvename>
+      <cvename>CVE-2021-39884</cvename>
+      <cvename>CVE-2021-39883</cvename>
+      <cvename>CVE-2021-22259</cvename>
+      <cvename>CVE-2021-39868</cvename>
+      <cvename>CVE-2021-39871</cvename>
+      <cvename>CVE-2021-39874</cvename>
+      <cvename>CVE-2021-39873</cvename>
+      <cvename>CVE-2021-39881</cvename>
+      <cvename>CVE-2021-39886</cvename>
+      <cvename>CVE-2021-39879</cvename>
+      <url>https://about.gitlab.com/releases/2021/09/30/security-release-gitlab-14-3-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2021-09-30</discovery>
+      <entry>2021-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5436f9a2-2190-11ec-a90b-0cc47a49470e">
     <topic>ha -- Directory traversals</topic>
     <affects>
