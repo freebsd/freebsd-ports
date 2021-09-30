@@ -1,3 +1,30 @@
+  <vuln vid="5436f9a2-2190-11ec-a90b-0cc47a49470e">
+    <topic>ha -- Directory traversals</topic>
+    <affects>
+      <package>
+	<name>ha</name>
+	<range><lt>0.999b_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alexander Cherepanov reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/01/18/8">
+	  <p>Version 0.999b and older of ha archiver is susceptible to directory
+	  traversal vulnerabilities via absolute and relative paths.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1198</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/01/18/8</url>
+    </references>
+    <dates>
+      <discovery>2015-01-18</discovery>
+      <entry>2021-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="730e922f-20e7-11ec-a574-080027eedc6a">
     <topic>nexus2-oss -- Apache ActiveMQ JMX vulnerability</topic>
     <affects>
