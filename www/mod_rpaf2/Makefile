@@ -12,7 +12,9 @@ COMMENT=	Make proxied requests appear with client IP
 
 LICENSE=	APACHE20
 
-USES=		apache:2.4+
+USES=		apache:2.4+ cpe
+
+CPE_VENDOR=	thomas_eibner
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnif
