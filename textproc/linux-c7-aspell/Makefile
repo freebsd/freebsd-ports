@@ -11,9 +11,11 @@ COMMENT=	Spelling checker with better logic than ispell (Linux CentOS ${LINUX_DI
 
 LICENSE=	LGPL21+
 
-USES=		linux:c7
+USES=		cpe linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+
+CPE_VENDOR=	gnu
 
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
