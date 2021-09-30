@@ -7,7 +7,9 @@ CATEGORIES=	net www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Scribe client
 
-USES=	horde
+USES=		cpe horde
 USE_HORDE_RUN=	Horde_Thrift
+
+CPE_VENDOR=	horde
 
 .include <bsd.port.mk>
