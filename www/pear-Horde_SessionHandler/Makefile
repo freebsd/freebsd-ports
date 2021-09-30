@@ -5,8 +5,10 @@ CATEGORIES=	www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Session Handler API
 
-USES=	horde
+USES=		cpe horde
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Util
+
+CPE_VENDOR=	horde
 
 .include <bsd.port.mk>
