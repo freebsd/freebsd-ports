@@ -18,9 +18,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=22:www/nextcloud@${PHP_FLAVOR}
 
-USES=		php:flavors
+USES=		cpe php:flavors
 NO_BUILD=	yes
 NO_ARCH=	yes
+CPE_VENDOR=	nextcloud
 
 WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
 
