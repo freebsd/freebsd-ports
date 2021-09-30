@@ -1,6 +1,0 @@
-Tools to deal with SCEP and PKCS7 messages.
-
-This is a forked version of openca-tools changed to work with
-security/p5-openxpki.
-
-WWW: http://www.openxpki.org

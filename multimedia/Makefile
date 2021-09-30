@@ -370,7 +370,6 @@
     SUBDIR += smplayer
     SUBDIR += smplayer-skins
     SUBDIR += smplayer-themes
-    SUBDIR += sms1xxx-kmod
     SUBDIR += smtube
     SUBDIR += snapcast
     SUBDIR += snappy

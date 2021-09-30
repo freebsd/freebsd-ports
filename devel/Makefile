@@ -614,7 +614,6 @@
     SUBDIR += erlang-cuttlefish
     SUBDIR += erlang-erlware_commons
     SUBDIR += erlang-esdl
-    SUBDIR += erlang-exmpp
     SUBDIR += erlang-folsom
     SUBDIR += erlang-gen_leader
     SUBDIR += erlang-gen_smtp
