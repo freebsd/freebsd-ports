@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	24.0.6
+DISTVERSION=	24.1.1
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	lang parallel
@@ -31,7 +31,30 @@ CONFIGURE_ARGS+=	--enable-threads \
 			--without-odbc
 MAKE_JOBS_UNSAFE=	yes
 
-WX_APPS=	wx debugger et observer
+PLIST_SUB=	DEBUGGER_VERSION=${DEBUGGER_VERSION} \
+		ET_VERSION=${ET_VERSION} \
+		OBSERVER_VERSION=${OBSERVER_VERSION} \
+		WX_VERSION=${WX_VERSION}
+
+DEBUGGER_VERSION=	5.2
+ET_VERSION=		1.6.5
+OBSERVER_VERSION=	2.10
+WX_VERSION=		2.1
+WX_APPS=		wx debugger et observer
+
+pre-configure:
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/debugger/vsn.mk | ${GREP} -E "DEBUGGER_VSN *=" | ${CUT} -w -f3) = ${DEBUGGER_VERSION} ]; then \
+		${ECHO_MSG} "===>  DEBUGGER_VERSION (${DEBUGGER_VERSION}) in Makefile does not match value in lib/debugger/vsn.mk"; exit 1; \
+	fi
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/et/vsn.mk | ${GREP} -E "ET_VSN *=" | ${CUT} -w -f3) = ${ET_VERSION} ]; then \
+		${ECHO_MSG} "===>  ET_VERSION (${ET_VERSION}) in Makefile does not match value in lib/et/vsn.mk"; exit 1; \
+	fi
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/observer/vsn.mk | ${GREP} -E "OBSERVER_VSN *=" | ${CUT} -w -f3) = ${OBSERVER_VERSION} ]; then \
+		${ECHO_MSG} "===>  OBSERVER_VERSION (${OBSERVER_VERSION}) in Makefile does not match value in lib/observer/vsn.mk"; exit 1; \
+	fi
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/wx/vsn.mk | ${GREP} -E "WX_VSN *=" | ${CUT} -w -f3) = ${WX_VERSION} ]; then \
+		${ECHO_MSG} "===>  WX_VERSION (${WX_VERSION}) in Makefile does not match value in lib/wx/vsn.mk"; exit 1; \
+	fi
 
 do-build:
 .for app in wx debugger et observer
