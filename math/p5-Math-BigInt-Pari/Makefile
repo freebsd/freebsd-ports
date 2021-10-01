@@ -1,7 +1,7 @@
 # Created by: Andrey <gugu@zoo.rambler.ru>
 
 PORTNAME=	Math-BigInt-Pari
-PORTVERSION=	1.3007
+PORTVERSION=	1.3008
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
