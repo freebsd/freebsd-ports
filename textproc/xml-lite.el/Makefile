@@ -2,7 +2,7 @@
 
 PORTNAME=	xml-lite.el
 PORTVERSION=	1.1
-PORTREVISION=	14
+PORTREVISION=	15
 PORTEPOCH=	1
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://dogbiscuit.org/mdub/software/
