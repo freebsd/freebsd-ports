@@ -11,6 +11,9 @@ COMMENT=	Lightweight image viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream has archived the project; please switch to the maintained fork (graphics/nsxiv)
+EXPIRATION_DATE=2022-04-01
+
 LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libgif.so:graphics/giflib \
