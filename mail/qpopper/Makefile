@@ -18,7 +18,9 @@ LICENSE_NAME=	Qualcomm BSD-style license
 LICENSE_FILE=	${WRKSRC}/License.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		compiler:features
+USES=		compiler:features cpe
+
+CPE_VENDOR=	qualcomm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OS_DEFS="-DSETPROCTITLE ${OS_DEFS}"
