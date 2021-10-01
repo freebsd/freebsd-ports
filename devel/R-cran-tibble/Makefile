@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	tibble
-PORTVERSION=	3.1.4
+PORTVERSION=	3.1.5
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 CRAN_DEPENDS=	R-cran-ellipsis>=0.3.2:devel/R-cran-ellipsis \
 		R-cran-fansi>=0.4.0:devel/R-cran-fansi \
-		R-cran-lifecycle>=0.2.0:devel/R-cran-lifecycle \
+		R-cran-lifecycle>=1.0.0:devel/R-cran-lifecycle \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
 		R-cran-pillar>=1.6.2:devel/R-cran-pillar \
 		R-cran-pkgconfig>0:devel/R-cran-pkgconfig \
