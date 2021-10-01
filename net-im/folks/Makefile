@@ -1,8 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	folks
-PORTVERSION=	0.14.0
-PORTREVISION=	1
+PORTVERSION=	0.15.3
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 
