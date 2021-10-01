@@ -11,6 +11,9 @@ EXTRACT_SUFX=	# empty
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Convert MP3 files to Ogg Vorbis files
 
+DEPRECATED=	Abandoned upstream and unfetchable from upstream
+EXPIRATION_DATE=2021-12-31
+
 RUN_DEPENDS=	mpg123:audio/mpg123 \
 		oggenc:audio/vorbis-tools \
 		p5-MP3-Info>=0:audio/p5-MP3-Info \
