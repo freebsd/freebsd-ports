@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
 
-# llvm10 is unstable, see https://github.com/intel/intel-graphics-compiler/issues/202
 BUILD_DEPENDS=	vc-intrinsics-llvm11>=s20210730:devel/vc-intrinsics@llvm11
 LIB_DEPENDS=	libopencl-clang.so.11:devel/opencl-clang@llvm11
 
