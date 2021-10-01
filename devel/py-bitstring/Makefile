@@ -1,7 +1,7 @@
 # Created by: Sofian Brabez <sbrabez@gmail.com>
 
 PORTNAME=	bitstring
-PORTVERSION=	3.1.7
+PORTVERSION=	3.1.9
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
