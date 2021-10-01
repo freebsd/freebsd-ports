@@ -569,6 +569,7 @@
     SUBDIR += nomacs
     SUBDIR += nplot
     SUBDIR += npretty
+    SUBDIR += nsxiv
     SUBDIR += nurbs++
     SUBDIR += nvidia-texture-tools
     SUBDIR += ocaml-images

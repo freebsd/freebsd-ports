@@ -1,0 +1,16 @@
+Neo (or New or Not) Simple (or Small or Suckless) X Image Viewer is a fork of
+now unmaintained sxiv, the Simple X Image Viewer, with the purpose of
+maintaining it and adding simple, sensible features. nsxiv is free software
+licensed under GPLv2 and aims to be easy to modify and customize.
+
+Some of its features are:
+
+- Basic image operations, e.g. zooming, panning, rotating
+- Customizable key and mouse button mappings (in config.h)
+- Thumbnail mode: grid of selectable previews of all images
+- Ability to cache thumbnails for fast re-loading
+- Basic support for multi-frame images
+- Load all frames from GIF files and play GIF animations
+- Display image information in status bar
+
+WWW: https://github.com/nsxiv/nsxiv
