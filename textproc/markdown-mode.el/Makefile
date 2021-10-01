@@ -1,29 +1,37 @@
 PORTNAME=	markdown-mode.el
-PORTVERSION=	2.3
-PORTREVISION=	8
-CATEGORIES=	textproc
-MASTER_SITES=	http://jblevins.org/projects/markdown-mode/
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.4
+CATEGORIES=	textproc elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
-DISTNAME=	markdown-mode.el
-EXTRACT_SUFX=	# empty
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Emacs major mode for editing Markdown-formatted text
 
 LICENSE=	GPLv3+
 
-USES=		emacs
+USES=		emacs gmake
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jrblevin
+GH_PROJECT=	markdown-mode
 
 NO_ARCH=	yes
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	${EMACS_SITE_LISPDIR}/markdown-mode.el
+PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/markdown-mode.el \
+		${EMACS_VERSION_SITE_LISPDIR}/markdown-mode.elc
+PORTDOCS=	CHANGES.md CONTRIBUTING.md README.md
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} \
-		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/markdown-mode.el
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.el ${WRKSRC}/*.elc \
+		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
