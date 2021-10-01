@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.msi
 EXTRACT_ONLY=
 
-MAINTAINER=	emulation@FreeBSD.org
+MAINTAINER=	damjan.jov@gmail.com
 COMMENT=	Mono .NET implementation for Wine development branch
 
 LICENSE=	MIT GPLv2 LGPL20

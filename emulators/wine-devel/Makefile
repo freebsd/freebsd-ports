@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/Source \
 PKGNAMESUFFIX?=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	emulation@FreeBSD.org
+MAINTAINER?=	damjan.jov@gmail.com
 COMMENT?=	Microsoft Windows compatibility environment
 
 LICENSE=	LGPL21 LGPL3
