@@ -11,3 +11,5 @@ SHA256 (webmproject-sjpeg-868ab55_GH0.tar.gz) = ffe757b376fed2fd94473f8625c25f82
 SIZE (webmproject-sjpeg-868ab55_GH0.tar.gz) = 2472084
 SHA256 (adb32f3f8f37.patch) = 52e4fd7e1bce238731a9a1a0b1c9124624c6f85766d3debaf2d2e0f017471692
 SIZE (adb32f3f8f37.patch) = 5664
+SHA256 (c31dca74e68f.patch) = c6a1412d73f1ee156d4cc978fde7e5ec91e62bae9946ebb38a5e78be7f93a253
+SIZE (c31dca74e68f.patch) = 767
