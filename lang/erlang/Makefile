@@ -2,7 +2,7 @@
 
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	24.0.6
+DISTVERSION=	24.1.1
 PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	lang parallel java
@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 
 BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 
-USES=		autoreconf:build cpe gmake ncurses perl5
+USES=		cpe gmake ncurses perl5
 CPE_VENDOR=	erlang
 CPE_PRODUCT=	erlang/otp
 USE_GITHUB=	nodefault
@@ -39,9 +39,9 @@ SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
 WRKSRC=		${WRKSRC_otp}
 
 ERLANG_LIB=	${PORTNAME}
-EI_VSN=		5.0.1
-SNMP_VSN=	5.9.1
-TOOLS_VSN=	3.5
+EI_VSN=		5.1
+SNMP_VSN=	5.10.1
+TOOLS_VSN=	3.5.1
 
 OPTIONS_DEFINE=		CHUNKS CORBA DIRTY DTRACE FOP JAVA KQUEUE MANPAGES ODBC \
 			OPENSSL PDF SCTP SHARING WX
