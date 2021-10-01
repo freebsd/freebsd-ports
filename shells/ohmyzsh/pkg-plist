@@ -87,7 +87,7 @@
 %%DATADIR%%/plugins/capistrano/_capistrano
 %%DATADIR%%/plugins/capistrano/capistrano.plugin.zsh
 %%DATADIR%%/plugins/cargo/README.md
-%%DATADIR%%/plugins/cargo/_cargo
+%%DATADIR%%/plugins/cargo/cargo.plugin.zsh
 %%DATADIR%%/plugins/cask/README.md
 %%DATADIR%%/plugins/cask/cask.plugin.zsh
 %%DATADIR%%/plugins/catimg/README.md
@@ -140,7 +140,6 @@
 %%DATADIR%%/plugins/dash/dash.plugin.zsh
 %%DATADIR%%/plugins/debian/README.md
 %%DATADIR%%/plugins/debian/debian.plugin.zsh
-%%DATADIR%%/plugins/deno/.gitignore
 %%DATADIR%%/plugins/deno/README.md
 %%DATADIR%%/plugins/deno/deno.plugin.zsh
 %%DATADIR%%/plugins/dircycle/README.md
@@ -221,7 +220,6 @@
 %%DATADIR%%/plugins/flutter/README.md
 %%DATADIR%%/plugins/flutter/_flutter
 %%DATADIR%%/plugins/flutter/flutter.plugin.zsh
-%%DATADIR%%/plugins/fnm/.gitignore
 %%DATADIR%%/plugins/fnm/README.md
 %%DATADIR%%/plugins/fnm/fnm.plugin.zsh
 %%DATADIR%%/plugins/forklift/README.md
@@ -252,7 +250,6 @@
 %%DATADIR%%/plugins/genpass/genpass-monkey
 %%DATADIR%%/plugins/genpass/genpass-xkcd
 %%DATADIR%%/plugins/genpass/genpass.plugin.zsh
-%%DATADIR%%/plugins/gh/.gitignore
 %%DATADIR%%/plugins/gh/README.md
 %%DATADIR%%/plugins/gh/gh.plugin.zsh
 %%DATADIR%%/plugins/git-auto-fetch/README.md
@@ -359,6 +356,8 @@
 %%DATADIR%%/plugins/jruby/jruby.plugin.zsh
 %%DATADIR%%/plugins/jsontools/README.md
 %%DATADIR%%/plugins/jsontools/jsontools.plugin.zsh
+%%DATADIR%%/plugins/juju/README.md
+%%DATADIR%%/plugins/juju/juju.plugin.zsh
 %%DATADIR%%/plugins/jump/README.md
 %%DATADIR%%/plugins/jump/jump.plugin.zsh
 %%DATADIR%%/plugins/kate/README.md
@@ -544,7 +543,7 @@
 %%DATADIR%%/plugins/rust/README.md
 %%DATADIR%%/plugins/rust/_rust
 %%DATADIR%%/plugins/rustup/README.md
-%%DATADIR%%/plugins/rustup/_rustup
+%%DATADIR%%/plugins/rustup/rustup.plugin.zsh
 %%DATADIR%%/plugins/rvm/README.md
 %%DATADIR%%/plugins/rvm/rvm.plugin.zsh
 %%DATADIR%%/plugins/safe-paste/README.md
