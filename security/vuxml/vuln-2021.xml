@@ -1,3 +1,47 @@
+  <vuln vid="f84ab297-2285-11ec-9e79-08002789875b">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki131</name>
+	<range><lt>1.31.16</lt></range>
+      </package>
+      <package>
+	<name>mediawiki135</name>
+	<range><lt>1.35.4</lt></range>
+      </package>
+      <package>
+	<name>mediawiki136</name>
+	<range><lt>1.36.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mediawiki reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/2IFS5CM2YV4VMSODPX3J2LFHKSEWVFV5/">
+	  <p>(T285515, CVE-2021-41798) SECURITY: XSS vulnerability in Special:Search.</p>
+	  <p>(T290379, CVE-2021-41799) SECURITY: ApiQueryBacklinks can cause a full
+	    table scan.</p>
+	  <p>(T284419, CVE-2021-41800) SECURITY: fix PoolCounter protection of
+	    Special:Contributions.</p>
+	  <p>(T279090, CVE-2021-41801) SECURITY: ReplaceText continues performing
+	    actions if the user no longer has the correct permission (such as by being
+	    blocked).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41798</cvename>
+      <cvename>CVE-2021-41799</cvename>
+      <cvename>CVE-2021-41800</cvename>
+      <cvename>CVE-2021-41801</cvename>
+      <url>https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/2IFS5CM2YV4VMSODPX3J2LFHKSEWVFV5/</url>
+    </references>
+    <dates>
+      <discovery>2021-06-24</discovery>
+      <entry>2021-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="777edbbe-2230-11ec-8869-704d7b472482">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
