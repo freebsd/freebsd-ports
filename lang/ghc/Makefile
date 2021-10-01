@@ -76,7 +76,7 @@ CABAL_VERSION=		3.2.1.0
 HSCOLOUR_VERSION=	1.24.4
 LLVM_VERSION=		10
 # LLVM version that bootstrap compiler uses
-BOOT_LLVM_VERSION=	90
+BOOT_LLVM_VERSION=	10
 
 PLIST_SUB=		GHC_VERSION=${GHC_VERSION} CABAL_VERSION=${CABAL_VERSION}
 
@@ -98,7 +98,7 @@ CONFIGURE_ARGS+=	--enable-dtrace=0
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
 BOOT_GHC_VERSION=      8.6.3
 .elif ${ARCH} == aarch64 || ${ARCH:Marmv*}
-BOOT_GHC_VERSION=	8.10.4
+BOOT_GHC_VERSION=	8.10.7
 .else
 BOOT_GHC_VERSION=	8.6.5
 .endif
@@ -139,22 +139,14 @@ DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${BOOTSTRAPS_SUFFIX}${E
 # ghc-8.10.x on arm requires devel/llvm10
 # CONFIGURE_TARGET must to be the same as the llvm triple
 CONFIGURE_TARGET=	${ARCH}-unknown-freebsd${"${ARCH:Maarch64}" != "":?:-gnueabihf}
-EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-aclocal.m4
+CONFIGURE_ARGS+=	--host=${CONFIGURE_TARGET}
 BUILD_DEPENDS+=		llc${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS+=		llc${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-CONFIGURE_ENV+=		LLC=llc${LLVM_VERSION} \
-			OPT=opt${LLVM_VERSION} \
-			CLANG=clang${LLVM_VERSION} \
-			CC=clang${LLVM_VERSION}
 
 # When GHC being compiled and GHC used for bootstrapping support different
 # LLVM versions, we have to pull in both. Luckily, this is relatively rare.
 .  if ${BOOT_LLVM_VERSION} != ${LLVM_VERSION}
 BUILD_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
-CONFIGURE_ENV_BOOTSTRAP=LLC=llc${BOOT_LLVM_VERSION} \
-			OPT=opt${BOOT_LLVM_VERSION} \
-			CLANG=clang${BOOT_LLVM_VERSION} \
-			CC=clang${BOOT_LLVM_VERSION}
 .  endif
 .endif
 
