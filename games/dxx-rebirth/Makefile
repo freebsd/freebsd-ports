@@ -1,14 +1,11 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
-PORTNAME=	dxx-rebirth
-PORTVERSION=	20210821
+PORTVERSION=	20210922
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	https://www.dxx-rebirth.com/download/dxx/rebirth/
 DISTNAME=	${PORTNAME}_${PORTVERSION}${DISTVERSIONSUFFIX}
 
 PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	2c3a258d17407ea4a94b791c3d6a07a930a8d283.patch:-p1
+PATCHFILES=	b42ab2aa2ff1ae1ddf43b872a1d1b1a171590d5d.patch:-p1
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open source port of Descent and Descent 2
