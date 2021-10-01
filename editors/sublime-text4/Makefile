@@ -1,10 +1,9 @@
 # Created by: Eric TUrgeon <ericbsd@FreeBSD.org>
 
-PORTNAME=	sublime
-PORTVERSION=	4115
+PORTNAME=	sublime-text4
+PORTVERSION=	4116
 CATEGORIES=	editors linux
 MASTER_SITES=	http://download.sublimetext.com/
-PKGNAMESUFFIX=	-text4
 
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Sophisticated text editor for code, markup and prose
