@@ -1,7 +1,7 @@
 # Created by: Edwin Groothuis <edwin@mavetju.org>
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2021a
+DISTVERSION=	2021b
 CATEGORIES=	misc
 MASTER_SITES=	https://data.iana.org/time-zones/releases/ \
 		ftp://ftp.iana.org/tz/releases/
