@@ -1,8 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	visNetwork
-PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
