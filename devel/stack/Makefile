@@ -189,6 +189,12 @@ USE_CABAL=	Glob-0.10.1_1 \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == aarch64
+# Keep it in sync with LLVM_VERSION in lang/ghc
+LLVM_VERSION=	10
+RUN_DEPENDS+=	llc${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+.endif
+
 .if ${OSVERSION} >= 1300078 && ${ARCH} != powerpc64
 LIB_DEPENDS+=	libncursesw.so.8:misc/compat12x
 .endif
