@@ -14,13 +14,16 @@ COMMENT?=	QEMU CPU Emulator - 3.1.X version
 LICENSE=	GPLv2
 
 BROKEN_aarch64=	fails to build: accel/tcg/user-exec.c:486:36: error: no member named 'pc' in 'struct __mcontext'
+DEPRECATED=	Use emulators/qemu or emulators/qemu-devel
+EXPIRATION_DATE=2021-11-01
 
-LIB_DEPENDS?=	libnettle.so:security/nettle \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+LIB_DEPENDS?=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libnettle.so:security/nettle
 
 USES?=		compiler:c11 cpe gmake gnome pkgconfig bison perl5 \
 		python:build tar:xz
+USE_GNOME+=	libxml2
 USE_PERL5=	build
 
 PORTSCOUT=	limit:^3\.1\.
@@ -42,7 +45,7 @@ STATIC_LINK_DESC=	Statically link the executables
 USBREDIR_DESC=		usb device network redirection (experimental!)
 VDE_DESC=		vde dependency (for vde networking)
 X86_TARGETS_DESC=	Build only x86 system targets
-OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP NCURSES VDE
+OPTIONS_DEFAULT=X11 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP NCURSES VDE
 OPTIONS_SUB=	yes
 CURL_CONFIGURE_OFF=	--disable-curl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
@@ -52,11 +55,11 @@ DOCS_USES=		makeinfo
 GNUTLS_CONFIGURE_OFF=	--disable-gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GTK3_CONFIGURE_OFF=	--disable-gtk --disable-vte
-GTK3_LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
-			libepoxy.so:graphics/libepoxy \
-			libpcre2-8.so:devel/pcre2
+GTK3_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
+			libpcre2-8.so:devel/pcre2 \
+			libxkbcommon.so:x11/libxkbcommon
 GTK3_USE=	GNOME=gtk30,vte3,gdkpixbuf2 XORG=x11,xext GL=gbm
-GTK3_USES=	gettext gl gnome xorg
+GTK3_USES=	gettext gl xorg
 JPEG_CONFIGURE_OFF=	--disable-vnc-jpeg
 JPEG_USES=		jpeg
 NCURSES_USES=		ncurses:base
@@ -84,8 +87,8 @@ X11_CONFIGURE_ENABLE=	sdl
 X11_USE=	SDL=sdl2 XORG=x11,xext
 X11_USES=	sdl xorg
 .if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} != "-utils"
-X86_TARGETS_USE_OFF=	GNOME=cairo,gdkpixbuf2
-X86_TARGETS_USES_OFF=	gnome
+X86_TARGETS_USE_OFF=	GNOME=cairo,gdkpixbuf2 XORG=pixman
+X86_TARGETS_USES_OFF=	gnome xorg
 .endif
 
 PORTDOCS?=	docs qemu-doc.html qemu-doc.txt qemu-ga-ref.html qemu-ga-ref.txt \
@@ -121,6 +124,12 @@ MAKE_ARGS+=	ARCH=ppc64
 
 .if ${ARCH} == "sparc64"
 CONFIGURE_ARGS+=	--sparc_cpu=v9
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300000
+PLIST_SUB+=	IVSHMEM=""
+.else
+PLIST_SUB+=	IVSHMEM="@comment "
 .endif
 
 PLIST_SUB+=	LINUXBOOT_DMA=""
