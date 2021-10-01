@@ -217,6 +217,7 @@
     SUBDIR += cpdup
     SUBDIR += cpu-x
     SUBDIR += cpuburn
+    SUBDIR += cpufetch
     SUBDIR += cpuid
     SUBDIR += cpuid2cpuflags
     SUBDIR += cpulimit
