@@ -7,6 +7,9 @@ MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2-rust
 DIST_SUBDIR=	gnome2
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/librsvg/-/commit/
+PATCHFILES=	92df18a3faf80c1d6d35899d9a5d22c74adfb8f8.patch:-p1
+
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library for parsing and rendering SVG vector-graphic files
 
