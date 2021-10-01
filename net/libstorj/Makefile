@@ -9,6 +9,9 @@ COMMENT=	C library and CLI for encrypted file transfer on the Storj network
 
 LICENSE=	LGPL21+
 
+DEPRECATED=	Deprecated in favour of net/storj due to v3 rearchitecture
+EXPIRATION_DATE=2021-12-31
+
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libuv.so:devel/libuv \
 		libcurl.so:ftp/curl \
