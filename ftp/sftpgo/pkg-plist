@@ -1,6 +1,11 @@
 bin/sftpgo
 %%BASH%%etc/bash_completion.d/sftpgo
 @sample etc/sftpgo.json.sample
+%%MANPAGES%%man/man1/sftpgo-completion-bash.1.gz
+%%MANPAGES%%man/man1/sftpgo-completion-fish.1.gz
+%%MANPAGES%%man/man1/sftpgo-completion-powershell.1.gz
+%%MANPAGES%%man/man1/sftpgo-completion-zsh.1.gz
+%%MANPAGES%%man/man1/sftpgo-completion.1.gz
 %%MANPAGES%%man/man1/sftpgo-gen-completion.1.gz
 %%MANPAGES%%man/man1/sftpgo-gen-man.1.gz
 %%MANPAGES%%man/man1/sftpgo-gen.1.gz
