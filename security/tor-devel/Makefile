@@ -1,7 +1,7 @@
 # Created by: peter.thoenen@yahoo.com
 
 PORTNAME=	tor
-DISTVERSION=	0.4.6.4-rc
+DISTVERSION=	0.4.7.1-alpha
 CATEGORIES=	security net
 MASTER_SITES=	TOR
 PKGNAMESUFFIX=	-devel
