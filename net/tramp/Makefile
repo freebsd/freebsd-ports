@@ -30,7 +30,9 @@ post-patch:
 	@${REINPLACE_CMD} 's/^make/${MAKE_CMD}/' ${WRKSRC}/configure
 
 .if ${FLAVOR:U} != nox && ${FLAVOR:U} != devel_nox
+.if ! ( ${OSVERSION} >= 1300000 && ${FLAVOR:U} == devel_full )
 PLIST_FILES+=	${TRAMP_LISPDIR}/tramp-gvfs.el ${TRAMP_LISPDIR}/tramp-gvfs.elc
+.endif
 .endif
 
 .include <bsd.port.mk>
