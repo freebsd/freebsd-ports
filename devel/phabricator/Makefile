@@ -1,6 +1,6 @@
 PORTNAME=	phabricator
 PORTVERSION=	20201119
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -13,7 +13,7 @@ COMMENT=	Open source, software engineering platform
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	arcanist-lib${PHP_PKGNAMESUFFIX}>=20200514:devel/arcanist-lib@${PHP_FLAVOR} \
+RUN_DEPENDS=	arcanist-lib${PHP_PKGNAMESUFFIX}>=20210113_1:devel/arcanist-lib@${PHP_FLAVOR} \
 		git:devel/git
 
 USES=		php:cli,flavors shebangfix
@@ -57,6 +57,7 @@ OPCACHE_USE=		PHP=opcache
 
 USE_GITHUB=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_RC_SUBR=	phd
 SUB_FILES=	pkg-message
 PORTSCOUT=	ignore:1
