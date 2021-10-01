@@ -1,22 +1,29 @@
 PORTNAME=	honeytrap
-DISTVERSION=	g20200625
+DISTVERSION=	g20210510
 CATEGORIES=	security
 
 MAINTAINER=	ezri.mudde@dutchsec.com
 COMMENT=	Framework for running, monitoring and managing honeypots
 
-LICENSE=	ART20
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-GO_BUILDFLAGS=	-ldflags '-X github.com/honeytrap/honeytrap/cmd.Version=2020-07-22T08:34:55 -X github.com/honeytrap/honeytrap/cmd.ReleaseTag=DEVELOPMENT.2020-07-22T08-34-55Z -X github.com/honeytrap/honeytrap/cmd.CommitID=33bbb2db3a3140b0ce4fbda14747bc954e0bcadd -X github.com/honeytrap/honeytrap/cmd.ShortCommitID=33bbb2db3a31 -extldflags "static"'
+GO_BUILDFLAGS=	-ldflags \
+		'-X github.com/honeytrap/honeytrap/cmd.Version=2021-05-10T00:00:00 \
+		-X github.com/honeytrap/honeytrap/cmd.ReleaseTag=DEVELOPMENT.2021-05-10T00-00-00Z \
+		-X github.com/honeytrap/honeytrap/cmd.CommitID=110030494f54421d01edfb57343aee3a102dc37d \
+		-X github.com/honeytrap/honeytrap/cmd.ShortCommitID=110030494f54 \
+		-extldflags "static"'
 USE_GITHUB=	yes
-GH_TAGNAME=	33bbb2d
-GH_TUPLE=	AndreasBriese:bbloom:28f7e881ca57:andreasbriese_bbloom/vendor/github.com/AndreasBriese/bbloom \
+GH_TAGNAME=	1100304
+GH_TUPLE=	\
+		AndreasBriese:bbloom:28f7e881ca57:andreasbriese_bbloom/vendor/github.com/AndreasBriese/bbloom \
 		BurntSushi:toml:v0.3.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		Logicalis:asn1:c9c836c1a3cd:logicalis_asn1/vendor/github.com/Logicalis/asn1 \
 		Shopify:sarama:v1.16.0:shopify_sarama/vendor/github.com/Shopify/sarama \
 		boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
-		cenkalti:backoff:v4.0.0:cenkalti_backoff/vendor/github.com/cenkalti/backoff/v4 \
+		cenkalti:backoff:v4.0.0:cenkalti_backoff_v4/vendor/github.com/cenkalti/backoff/v4 \
 		davecgh:go-spew:v1.1.0:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgraph-io:badger:94594b20babf:dgraph_io_badger/vendor/github.com/dgraph-io/badger \
 		dgryski:go-farm:2de33835d102:dgryski_go_farm/vendor/github.com/dgryski/go-farm \
@@ -36,7 +43,6 @@ GH_TUPLE=	AndreasBriese:bbloom:28f7e881ca57:andreasbriese_bbloom/vendor/github.c
 		golang:snappy:553a64147049:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sys:d101bd2416d5:golang_sys/vendor/golang.org/x/sys \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
-		google:btree:v1.0.0:google_btree/vendor/github.com/google/btree \
 		google:gopacket:v1.1.14:google_gopacket/vendor/github.com/google/gopacket \
 		gorilla:websocket:v1.2.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		honeytrap:honeytrap-web:02944754979e:honeytrap_honeytrap_web/vendor/github.com/honeytrap/honeytrap-web \
@@ -63,27 +69,30 @@ GH_TUPLE=	AndreasBriese:bbloom:28f7e881ca57:andreasbriese_bbloom/vendor/github.c
 		songgao:water:75f112d19d5a:songgao_water/vendor/github.com/songgao/water \
 		streadway:amqp:8e4aba63da9f:streadway_amqp/vendor/github.com/streadway/amqp \
 		urfave:cli:v1.20.0:urfave_cli/vendor/gopkg.in/urfave/cli.v1 \
-		vishvananda:netlink:v1.1.0:vishvananda_netlink/vendor/github.com/vishvananda/netlink \
-		vishvananda:netns:0a2b9b5464df:vishvananda_netns/vendor/github.com/vishvananda/netns \
-		yuin:gopher-lua:8bfc7677f583:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua \
-		google:gvisor:3eb302470365:google_gvisor/vendor/gvisor.dev/gvisor
+		yuin:gopher-lua:8bfc7677f583:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua
 
 HONEYTRAP_USER?=	honeytrap
 HONEYTRAP_GROUP?=	honeytrap
 HONEYTRAP_DBDIR?=	/var/db/${PORTNAME}
+HONEYTRAP_LOGDIR?=	/var/log/${PORTNAME}
 
 USERS=		${HONEYTRAP_USER}
 GROUPS=		${HONEYTRAP_GROUP}
 USE_RC_SUBR=	honeytrap
 PLIST_FILES=	"@sample(honeytrap,honeytrap,0600) ${ETCDIR}/honeytrap.toml.sample" \
+		"@dir(honeytrap,honeytrap,0700) ${HONEYTRAP_LOGDIR}" \
 		bin/honeytrap
 
 SUB_LIST=	GROUP=${HONEYTRAP_GROUP} \
 		HONEYTRAP_DBDIR=${HONEYTRAP_DBDIR} \
 		USER=${HONEYTRAP_USER}
 
+post-patch:
+	${REINPLACE_CMD} 's#/etc#${ETCDIR}#' \
+		${WRKSRC}/cmd/honeytrap/main.go
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin \
+		${STAGEDIR}${HONEYTRAP_LOGDIR}
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/honeytrap ${STAGEDIR}${PREFIX}/bin/honeytrap
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${FILESDIR}/honeytrap.toml ${STAGEDIR}${ETCDIR}/honeytrap.toml.sample
