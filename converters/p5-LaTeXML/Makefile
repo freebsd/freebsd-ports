@@ -1,8 +1,7 @@
 # Created by: Carlos J. Puga Medina <cpm@fbsd.es>
 
 PORTNAME=	LaTeXML
-PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTVERSION=	0.8.6
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN \
 		http://dlmf.nist.gov/LaTeXML/releases/

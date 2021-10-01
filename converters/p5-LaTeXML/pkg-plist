@@ -78,6 +78,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/LaTeX.pool.ltxml
 %%SITE_PERL%%/LaTeXML/Package/OmniBus.cls.ltxml
 %%SITE_PERL%%/LaTeXML/Package/PoS.cls.ltxml
+%%SITE_PERL%%/LaTeXML/Package/SIunits.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/TeX.pool.ltxml
 %%SITE_PERL%%/LaTeXML/Package/a0poster.cls.ltxml
 %%SITE_PERL%%/LaTeXML/Package/a0size.sty.ltxml
@@ -94,6 +95,8 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/accents.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/acmart.cls.ltxml
 %%SITE_PERL%%/LaTeXML/Package/acronym.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/actuarialangle.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/adjustbox.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/ae.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/aecompl.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/afterpage.sty.ltxml
@@ -181,6 +184,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/csquotes.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/dcolumn.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/deluxetable.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/diagbox.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/doublespace.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/dsfont.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/eTeX.pool.ltxml
@@ -188,6 +192,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/elsart.cls.ltxml
 %%SITE_PERL%%/LaTeXML/Package/elsart.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/elsart_support.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/elsart_support_core.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/elsarticle.cls.ltxml
 %%SITE_PERL%%/LaTeXML/Package/empheq.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/emulateapj.cls.ltxml
@@ -203,6 +208,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/epsfig.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/epstopdf.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/esint.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/espcrc.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/etex.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/etoolbox.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/eucal.sty.ltxml
@@ -213,8 +219,10 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/euscript.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/expl3.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/exscale.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/fancybox.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/fancyhdr.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/fancyheadings.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/filehook.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/fix-cm.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/fixltx2e.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/flafter.sty.ltxml
@@ -245,9 +253,11 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/graphicx.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/grffile.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/helvet.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/hepunits.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/here.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/hhline.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/html.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/hypcap.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/hyperref.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/hyperxmp.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/icml.sty.ltxml
@@ -255,6 +265,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/ieeeconf.cls.ltxml
 %%SITE_PERL%%/LaTeXML/Package/ifluatex.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/ifpdf.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/ifplatform.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/ifthen.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/ifvtex.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/ifxetex.sty.ltxml
@@ -286,6 +297,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/makecell.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/makeidx.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/marvosym.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/mathabx.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/mathbbol.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/mathdots.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/mathpazo.sty.ltxml
@@ -295,6 +307,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/mathrsfs.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/mathtools.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/microtype.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/minimal.cls.ltxml
 %%SITE_PERL%%/LaTeXML/Package/mleftright.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/mn.cls.ltxml
 %%SITE_PERL%%/LaTeXML/Package/mn2e.cls.ltxml
@@ -331,14 +344,19 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/pgfmath.code.tex.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pgfmathcalc.code.tex.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pgfplots.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/pgfplotstable.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pgfsys-latexml.def.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pgfutil-common.tex.ltxml
 %%SITE_PERL%%/LaTeXML/Package/physics.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pifont.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/placeins.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/prettyref.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/preview.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/proof.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/proofwiki.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/psfig.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/psfig.tex.ltxml
+%%SITE_PERL%%/LaTeXML/Package/psfrag.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pslatex.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pspicture.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pst-grad.sty.ltxml
@@ -369,10 +387,13 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/showkeys.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/sidecap.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/siunitx.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/slashbox.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/slashed.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/slides.cls.ltxml
 %%SITE_PERL%%/LaTeXML/Package/soul.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/srcltx.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/standalone.cls.ltxml
+%%SITE_PERL%%/LaTeXML/Package/standalone.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/stfloats.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/stmaryrd.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/subcaption.sty.ltxml
@@ -437,6 +458,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/wrapfig.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/xargs.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/xcolor.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/xfrac.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/xkeyval.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/xkvview.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/xparse.sty.ltxml
@@ -626,6 +648,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/resources/XSLT/LaTeXML-tei.xsl
 %%SITE_PERL%%/LaTeXML/resources/XSLT/LaTeXML-webpage-xhtml.xsl
 %%SITE_PERL%%/LaTeXML/resources/XSLT/LaTeXML-xhtml.xsl
+%%SITE_PERL%%/LaTeXML/resources/XSLT/LaTeXML-xhtml5.xsl
 %%SITE_PERL%%/LaTeXML/resources/javascript/LaTeXML-maybeMathjax.js
 %%SITE_PERL%%/LaTeXML/texmf/latexml.sty
 %%SITE_PERL%%/LaTeXML/texmf/lxRDFa.sty
@@ -654,6 +677,7 @@ bin/latexmlpost
 %%PERL5_MAN3%%/LaTeXML::Common::Model::RelaxNG.3.gz
 %%PERL5_MAN3%%/LaTeXML::Common::Number.3.gz
 %%PERL5_MAN3%%/LaTeXML::Common::Object.3.gz
+%%PERL5_MAN3%%/LaTeXML::Common::XML.3.gz
 %%PERL5_MAN3%%/LaTeXML::Core.3.gz
 %%PERL5_MAN3%%/LaTeXML::Core::Alignment.3.gz
 %%PERL5_MAN3%%/LaTeXML::Core::Array.3.gz
@@ -696,6 +720,7 @@ bin/latexmlpost
 %%PERL5_MAN3%%/LaTeXML::Pre::BibTeX.3.gz
 %%PERL5_MAN3%%/LaTeXML::Util::Pack.3.gz
 %%PERL5_MAN3%%/LaTeXML::Util::Pathname.3.gz
+%%PERL5_MAN3%%/LaTeXML::Util::Radix.3.gz
 %%PERL5_MAN3%%/LaTeXML::Util::WWW.3.gz
 %%TEXMFLOCALDIR%%/tex/latex/latexml/.packlist
 %%TEXMFLOCALDIR%%/tex/latex/latexml/latexml.sty
