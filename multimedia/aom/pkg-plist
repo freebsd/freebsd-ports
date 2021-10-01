@@ -12,5 +12,5 @@ include/aom/aomdx.h
 lib/libaom.a
 lib/libaom.so
 lib/libaom.so.3
-lib/libaom.so.3.1.2
+lib/libaom.so.3.1.3
 libdata/pkgconfig/aom.pc
