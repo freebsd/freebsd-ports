@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	24.0.6
+DISTVERSION=	24.1.1
 PORTREVISION=	0
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime24
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 
-USES=		autoreconf:build cpe gmake ncurses perl5
+USES=		cpe gmake ncurses perl5
 CPE_VENDOR=	erlang
 CPE_PRODUCT=	erlang/otp
 USE_GITHUB=	nodefault
