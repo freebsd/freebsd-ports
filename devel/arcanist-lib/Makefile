@@ -1,5 +1,6 @@
 PORTNAME?=	arcanist
 PORTVERSION?=	20210113
+PORTREVISION?=  1
 CATEGORIES?=	devel
 PKGNAMESUFFIX=	${SLAVE_PKGNAMESUFFIX}${PHP_PKGNAMESUFFIX}
 
@@ -35,6 +36,8 @@ PLIST=		${.CURDIR}/pkg-plist
 
 .if ${SLAVEPORT} == lib
 SLAVE_PKGNAMESUFFIX=	-${SLAVEPORT}
+
+RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
 OPTIONS_DEFINE=	ENCODINGS
 OPTIONS_DEFAULT=ENCODINGS
@@ -78,6 +81,8 @@ do-install:
 	@${REINPLACE_CMD} \
 		's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
 		${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/src/workflow/ArcanistAnoidWorkflow.php
+	${LN} -sf ${LOCALBASE}/share/certs/ca-root-nss.crt \
+		${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/resources/ssl/default.pem
 	${RLN} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/support/shell/hooks/bash-completion.sh \
 		 ${STAGEDIR}${PREFIX}/share/bash-completion/completions/arc
 	${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/bin/arc shell-complete --generate
