@@ -1,7 +1,7 @@
 # Created by: Matt Lancereau <matt@rimasec.net>
 
 PORTNAME=	xfce4-cpugraph-plugin
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
