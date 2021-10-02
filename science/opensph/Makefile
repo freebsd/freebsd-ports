@@ -1,5 +1,5 @@
 PORTNAME=	OpenSPH
-DISTVERSION=	0.3.7
+DISTVERSION=	0.3.8
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ USE_WX=		3.1
 GL_SITE=	https://gitlab.com
 GL_ACCOUNT=	sevecekp
 GL_PROJECT=	sph
-GL_COMMIT=	bd306b644ab617f3b44613fa98b78b40f8ef6805
+GL_COMMIT=	fb6ec33d8fc20324161207aa2951e2e90698c272
 
 QMAKE_SOURCE_PATH=	${WRKSRC}/sph.pro
 QMAKE_ARGS=		CONFIG+=release
@@ -31,7 +31,7 @@ BINARY_ALIAS=	wx-config=${LOCALBASE}/bin/wxgtk3u-3.1-config
 PLIST_FILES=	bin/opensph bin/opensph-cli bin/opensph-info
 
 OPTIONS_DEFINE=			CHAISCRIPT EIGEN HDF5 OPENMP TBB VDB
-OPTIONS_DEFAULT=		CHAISCRIPT EIGEN HDF5 OPENMP # TBB VDB - disabled pending OneTBB support, see https://gitlab.com/sevecekp/sph/-/issues/36
+OPTIONS_DEFAULT=		CHAISCRIPT EIGEN HDF5 OPENMP TBB # VDB - broken
 
 CHAISCRIPT_DESC=		Be able to read and modify particle data from a script
 CHAISCRIPT_QMAKE_ON=		CONFIG+=use_chaiscript
@@ -50,14 +50,13 @@ OPENMP_QMAKE_ON=		CONFIG+=use_openmp
 TBB_DESC=			Parallelize with Intel Threading Building Blocks
 TBB_QMAKE_ON=			CONFIG+=use_tbb
 TBB_LIB_DEPENDS=		libtbb.so:devel/onetbb
-TBB_BROKEN=			OneTBB support is missing, but the dependency misc/openvdb already switched to OneTBB
 
 VDB_DESC=			Use OpenVDB for converting particles to volumetric data
 VDB_QMAKE_ON=			CONFIG+=use_vdb
 VDB_LIB_DEPENDS=		libImath.so:math/Imath \
 				libopenvdb.so:misc/openvdb \
 				libtbb.so:devel/onetbb
-VDB_BROKEN=			OneTBB support is missing, but the dependency misc/openvdb already switched to OneTBB
+VDB_BROKEN=			Fails to build, see https://gitlab.com/sevecekp/sph/-/issues/39
 
 do-test:
 	@${REINPLACE_CMD} -e 's|Path(.*|Path("${TEST_WRKSRC}");|' ${WRKSRC}/test/utils/Config.h
