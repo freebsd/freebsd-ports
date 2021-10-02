@@ -1,0 +1,41 @@
+Sources:
+https://salsa.debian.org/debian/root-tail/-/blob/master/debian/patches/do-not-chown-manually.patch
+https://salsa.debian.org/debian/root-tail/-/blob/master/debian/patches/fix-linker-and-compiler-options.patch
+
+--- Makefile.orig	2019-06-16 00:57:40 UTC
++++ Makefile
+@@ -1,9 +1,5 @@
+-COPTS = -g
++LDFLAGS += -lX11 -lXfixes
+ 
+-CFLAGS = -Wall $(COPTS)
+-
+-LDFLAGS = -L/usr/X11R6/lib -lX11 -lXfixes
+-
+ PREFIX = $(DESTDIR)/usr
+ BINDIR = $(PREFIX)/bin
+ MANDIR = $(PREFIX)/share/man/man1
+@@ -14,7 +10,7 @@ SOURCES = root-tail.c
+ all: root-tail man
+ 
+ root-tail: $(SOURCES) config.h
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(SOURCES)
++	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $(SOURCES) $(LDFLAGS)
+ 
+ man: root-tail.1.gz
+ 
+@@ -26,10 +22,10 @@ clean:
+ 	rm -f root-tail root-tail.o root-tail.1.gz
+ 
+ install: all
+-	install -D -o root -g root root-tail $(BINDIR)
+-	install -D -m 0644 -o root -g root root-tail.1.gz $(MANDIR)
+-	install -D -m 0644 -o root -g root README $(DOCDIR)
+-	install -m 0644 -o root -g root Changes $(DOCDIR)
++	install -D root-tail $(BINDIR)
++	install -D -m 0644 root-tail.1.gz $(MANDIR)
++	install -D -m 0644 README $(DOCDIR)
++	install -m 0644 Changes $(DOCDIR)
+ 
+ uninstall:
+ 	rm -f $(BINDIR)/root-tail $(MANDIR)/root-tail.1.gz
