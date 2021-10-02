@@ -3,6 +3,7 @@ PORTVERSION=	2.3.8
 DISTVERSIONPREFIX=	v
 PORTREVISION=	5
 CATEGORIES=	devel
+PKGNAMEPREFIX=	coreos-
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Highly-available key value store and service discovery
