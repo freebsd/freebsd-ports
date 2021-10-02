@@ -19,7 +19,7 @@ include/ezc3d/math/Vector3d.h
 include/ezc3d/math/Vector6d.h
 include/ezc3d/math/ezc3dMath.h
 include/ezc3d/modules/ForcePlatforms.h
-lib/ezc3d/cmake/ezc3dConfig.cmake
-lib/ezc3d/cmake/ezc3dTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/ezc3d/cmake/ezc3dTargets.cmake
+lib/cmake/ezc3d/ezc3dConfig.cmake
+lib/cmake/ezc3d/ezc3dTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ezc3d/ezc3dTargets.cmake
 lib/ezc3d/libezc3d.so
