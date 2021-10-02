@@ -2,7 +2,7 @@
 # Vadim Zhukov <zhuk@openbsd.org>
 
 PORTNAME=	intellij
-PORTVERSION=	2020.2.3
+PORTVERSION=	2021.2.2
 CATEGORIES=	java devel
 MASTER_SITES=	https://download-cf.jetbrains.com/idea/
 DISTNAME=	ideaIC-${PORTVERSION}-no-jbr
@@ -26,7 +26,7 @@ NO_ARCH=	yes
 NO_ARCH_IGNORE=	libjansi.so
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/idea-IC-202.7660.26
+WRKSRC=		${WRKDIR}/idea-IC-212.5284.40
 
 SUB_FILES=	idea idea.desktop pkg-message
 CONFLICTS=	intellij-ultimate-*
