@@ -15726,7 +15726,6 @@ www/py-pylons||2020-12-12|Has expired: Uses deprecated version of python
 www/py-qpy||2020-12-12|Has expired: Uses deprecated version of python
 news/py-sabyenc|news/py-sabyenc3|2020-12-12|Has expired: Uses deprecated version of python
 devel/py-gobject||2020-12-12|Has expired: Uses deprecated version of python
-games/gemrb||2020-12-18|Has expired: Uses deprecated version of python
 net/iplog||2020-12-18|Has expired: Unmaintained and dead upstream. Does not build with modern compilers
 www/rubygem-rack21|www/rubygem-rack|2020-12-18|Obsolete, please use www/rubygem-rack
 chinese/rime-data||2020-12-23|Unneeded metaport
@@ -16377,7 +16376,7 @@ databases/postgresql95-plpython||2021-06-13|Has expired: PostgreSQL-9.5 has reac
 databases/postgresql95-pltcl||2021-06-13|Has expired: PostgreSQL-9.5 has reached end-of-life
 databases/postgresql95-server||2021-06-13|Has expired: PostgreSQL-9.5 has reached end-of-life
 databases/pg_reorg||2021-06-13|Removed, abandonware only for PostgreSQL 9.5
-databases/pgespresso||2021-06-13|Removed, functionality part of PostgreSQL 9.6 and later.
+databases/pgespresso||2021-06-13|Removed, functionality part of PostgreSQL 9.6 and later
 x11-fonts/urw-core35-fonts|x11-fonts/urw-base35-fonts|2021-06-15|Project was renamed upstream
 graphics/jpeg-xl|graphics/libjxl|2021-06-16|Project was renamed upstream
 chinese/docproj|textproc/docproj|2021-06-17|Deprecated after the doc transition
@@ -16398,7 +16397,7 @@ devel/sparc64-xtoolchain-gcc|devel/freebsd-gcc6@sparc64|2021-06-18|Replaced by a
 devel/riscv64-xtoolchain-gcc|devel/freebsd-gcc9@riscv64|2021-06-19|Replaced by a flavor
 www/py-beautifulsoup448|www/py-beautifulsoup|2021-06-20|Remove obsoleted port. Use www/py-beautifulsoup instead
 comms/rtl-443|comms/rtl-433|2021-06-21|Fix typo in port directory name
-devel/elixir-tirexs||2021-06-24|Remove obsoleted port. No releases on hex.pm.
+devel/elixir-tirexs||2021-06-24|Remove obsoleted port. No releases on hex.pm
 lang/perl5.28||2021-06-26|Has expired: Support ends three years after .0 release. Please upgrade to a more recent version of Perl
 sysutils/cfengine314||2021-06-26|Has expired: Expire one year after cfengine 3.16.0 released
 sysutils/cfengine-masterfiles314||2021-06-26|Has expired: Expire one year after cfengine 3.16.0 released
@@ -16464,17 +16463,17 @@ multimedia/py-mlt|multimedia/py-mlt6|2021-07-30|Moved to a versioned directory t
 net/openldap24-sasl-client|net/openldap24-client|2021-08-01|SASL is always enabled for OpenLDAP
 textproc/py-python-language-server|textproc/py-python-lsp-server|2021-08-01|Has expired: Upstream forked and replaced by py-python-lsp-server
 games/ponscripter-sekai|games/ponscripter-07th-mod|2021-08-13|Switch to active fork
-sysutils/graid5||2021-08-21|Has expired: Module contains subtile errors and is obsolete by ZFS raidz. Consider migrating to ZFS.
+sysutils/graid5||2021-08-21|Has expired: Module contains subtile errors and is obsolete by ZFS raidz. Consider migrating to ZFS
 x11-wm/gcompmgr||2021-08-21|Has expired: Abandonware since 2005, using discontinued libraries
 irc/lostirc||2021-08-21|Has expired: Abandonware since 2005, dependens on discontinued libraries
 math/normaliz|math/libnormaliz|2021-08-21|Remove duplicate
 devel/rubygem-paperclip||2021-08-28|Has expired: Use ActiveStorage or a fork kt-paperclip
 textproc/rubygem-rich||2021-08-28|Has expired: Depends on expired devel/rubygem-paperclip
-devel/magit-popup||2021-09-01|Has expired: No consumer in the ports tree any more.
-databases/mongodb49|databases/mongodb50|2021-09-01|Has expired: This was a developer version which became MongoDB 5.0.
+devel/magit-popup||2021-09-01|Has expired: No consumer in the ports tree any more
+databases/mongodb49|databases/mongodb50|2021-09-01|Has expired: This was a developer version which became MongoDB 5.0
 editors/vim-console|editors/vim|2021-09-02|The "vim" package is now console-only
 editors/vim-tiny|editors/vim@tiny|2021-09-02|The vim-tiny package is now a vim flavor
-lang/gcc7|lang/gcc10|2021-09-05|Has expired: Unsupported by upstream. Use GCC 10 or newer instead.
+lang/gcc7|lang/gcc10|2021-09-05|Has expired: Unsupported by upstream. Use GCC 10 or newer instead
 www/py-django-rest-swagger|www/py-drf-yasg|2021-09-17|Has expired: Has expired: Upstream no longer maintained, please use www/py-drf-yasg instead
 www/py-django-taggit-serializer|www/py-django-taggit|2021-09-17|Has expired: Obsolete, please use www/py-django-taggit instead
 www/efront||2021-09-17|Has expired: Unsupported by upstream
@@ -16490,12 +16489,12 @@ mail/opensmtpd-devel|mail/opensmtpd|2021-09-28|Has expired: move to offical rele
 devel/erlang-exmpp||2021-09-30|Removed, last upstream patches over 10 years ago
 sysutils/showbeastie||2021-09-30|Broken on FreeBSD 12 and above since 2018
 www/squid3|www/squid|2021-09-30|Has expired: Unsupported by upstream
-sysutils/cfengine310|sysutils/cfengine317|2021-09-30|Has expired: OpenSSL 1.1.X is not supported.
+sysutils/cfengine310|sysutils/cfengine317|2021-09-30|Has expired: OpenSSL 1.1.X is not supported
 security/py-paramiko1|security/py-paramiko|2021-09-30|Has expired: Out of date version.  No consumer now.  Use security/py-paramiko
 sysutils/cfengine-masterfiles310|sysutils/cfengine-masterfiles317|2021-09-30|Has expired: cfengine310 will retire at FreeBSD 11 EOL
 security/openca-tools-forked|security/libscep|2021-09-30|Has expired: Use modern port security/libscep instead
 multimedia/sms1xxx-kmod|multimedia/webcamd|2021-09-30|Has expired: Supports DVB API v3 only. Use multimedia/webcamd instead
-sysutils/cfengine311|sysutils/cfengine317|2021-09-30|Has expired: OpenSSL 1.1.X is not supported.
+sysutils/cfengine311|sysutils/cfengine317|2021-09-30|Has expired: OpenSSL 1.1.X is not supported
 sysutils/cfengine-masterfiles311|sysutils/cfengine-masterfiles317|2021-09-30|Has expired: cfengine311 will retire at FreeBSD 11 EOL
 mail/postfix35|mail/postfix|2021-09-30|Has expired: It is only here until FreeBSD 11 is EoL (Postfix >= 3.6 requires OpenSSL >= 1.1.x)
 graphics/drm-fbsd11.2-kmod||2021-09-30|Removed, only useful on EOL FreeBSD 11.4
