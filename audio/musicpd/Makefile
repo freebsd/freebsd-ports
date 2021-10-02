@@ -208,23 +208,7 @@ GROUPS=	${MPDGROUP}
 
 .include <bsd.port.pre.mk>
 
-# Note that since the build system switch to meson, mpd fails to link with
-# GNU ld 2.17 in base. Also, meson does not allow to set the linker via
-# environment variables yet.
-# For gcc-based platforms, gcc and ld from ports are used due to the c++14
-# requirement. For clang, we set the linker explicitly in meson.build.
-.if ${ARCH} == armv6
-#lld may use movt/movw, doesn't work on armv6
-BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:devel/binutils
-MPD_CLANG_LD=	${LOCALBASE}/bin/ld
-.else
-MPD_CLANG_LD=	lld
-.endif
-
 post-patch:
-# Insert selected linker for clang
-	@${REINPLACE_CMD} -e 's|%%MPD_CLANG_LD%%|${MPD_CLANG_LD}|' \
-		${WRKSRC}/meson.build
 # Make musicpd run as ${MPDUSER} by default
 	@${REINPLACE_CMD} -e 's|%%MPDUSER%%|${MPDUSER}|' \
 		${WRKSRC}/doc/mpdconf.example
