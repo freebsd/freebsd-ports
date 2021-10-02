@@ -1,4 +1,4 @@
---- make/Makefile.orig	2020-11-09 22:09:06 UTC
+--- make/Makefile.orig	2021-09-29 02:42:24 UTC
 +++ make/Makefile
 @@ -87,9 +87,9 @@ APBS_LIBS = -lapbsmainroutines -lapbs -lmaloc -lapbsbl
  F77 = gfortran
@@ -12,7 +12,7 @@
  LIBS = 
  LIBFLAGS = -crusv
  RANLIB = ranlib -c
-@@ -817,134 +817,134 @@ listing:
+@@ -803,136 +803,136 @@ listing:
  	cat *.f *.c > tinker.txt
  
  rename_bin:
@@ -28,6 +28,7 @@
 -	mv  distgeom.x   $(BINDIR)/distgeom
 -	mv  document.x   $(BINDIR)/document
 -	mv  dynamic.x    $(BINDIR)/dynamic
+-	mv  freefix.x    $(BINDIR)/freefix
 -	mv  gda.x        $(BINDIR)/gda
 -	mv  intedit.x    $(BINDIR)/intedit
 -	mv  intxyz.x     $(BINDIR)/intxyz
@@ -91,6 +92,7 @@
 +	${BSD_INSTALL_PROGRAM}  distgeom.x   $(BINDIR)/distgeom
 +	${BSD_INSTALL_PROGRAM}  document.x   $(BINDIR)/document
 +	${BSD_INSTALL_PROGRAM}  dynamic.x    $(BINDIR)/dynamic
++	${BSD_INSTALL_PROGRAM}  freefix.x    $(BINDIR)/freefix
 +	${BSD_INSTALL_PROGRAM}  gda.x        $(BINDIR)/gda
 +	${BSD_INSTALL_PROGRAM}  intedit.x    $(BINDIR)/intedit
 +	${BSD_INSTALL_PROGRAM}  intxyz.x     $(BINDIR)/intxyz
@@ -156,6 +158,7 @@
 -	mv  distgeom.x   $(BINDIR)/distgeom.exe
 -	mv  document.x   $(BINDIR)/document.exe
 -	mv  dynamic.x    $(BINDIR)/dynamic.exe
+-	mv  freefix.x    $(BINDIR)/freefix.exe
 -	mv  gda.x        $(BINDIR)/gda.exe
 -	mv  intedit.x    $(BINDIR)/intedit.exe
 -	mv  intxyz.x     $(BINDIR)/intxyz.exe
@@ -219,6 +222,7 @@
 +	${BSD_INSTALL_PROGRAM}  distgeom.x   $(BINDIR)/distgeom.exe
 +	${BSD_INSTALL_PROGRAM}  document.x   $(BINDIR)/document.exe
 +	${BSD_INSTALL_PROGRAM}  dynamic.x    $(BINDIR)/dynamic.exe
++	${BSD_INSTALL_PROGRAM}  freefix.x    $(BINDIR)/freefix.exe
 +	${BSD_INSTALL_PROGRAM}  gda.x        $(BINDIR)/gda.exe
 +	${BSD_INSTALL_PROGRAM}  intedit.x    $(BINDIR)/intedit.exe
 +	${BSD_INSTALL_PROGRAM}  intxyz.x     $(BINDIR)/intxyz.exe

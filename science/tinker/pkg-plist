@@ -10,6 +10,7 @@ bin/diffuse
 bin/distgeom
 bin/document
 bin/dynamic
+bin/freefix
 bin/gda
 bin/intedit
 bin/intxyz
@@ -62,6 +63,7 @@ bin/xyzint
 bin/xyzmol2
 bin/xyzpdb
 %%DATADIR%%/params/0README
+%%DATADIR%%/params/amber14sb.prm
 %%DATADIR%%/params/amber94.prm
 %%DATADIR%%/params/amber96.prm
 %%DATADIR%%/params/amber98.prm
@@ -80,7 +82,6 @@ bin/xyzpdb
 %%DATADIR%%/params/charmm22.prm
 %%DATADIR%%/params/charmm22cmap.prm
 %%DATADIR%%/params/dang.prm
-%%DATADIR%%/params/hippo19.prm
 %%DATADIR%%/params/hoch.prm
 %%DATADIR%%/params/iwater.prm
 %%DATADIR%%/params/mm2.prm
@@ -89,6 +90,7 @@ bin/xyzpdb
 %%DATADIR%%/params/mmff.prm
 %%DATADIR%%/params/oplsaa.prm
 %%DATADIR%%/params/oplsaal.prm
+%%DATADIR%%/params/oplsaam.prm
 %%DATADIR%%/params/oplsua.prm
 %%DATADIR%%/params/smoothaa.prm
 %%DATADIR%%/params/smoothua.prm
