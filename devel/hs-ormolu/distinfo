@@ -1,6 +1,6 @@
-TIMESTAMP = 1631622774
-SHA256 (cabal/ormolu-0.3.0.0.tar.gz) = 5bee1f0ede983593b27f5da9dcf0f260d811180035da1d366b0a477627476d1c
-SIZE (cabal/ormolu-0.3.0.0.tar.gz) = 137516
+TIMESTAMP = 1633181589
+SHA256 (cabal/ormolu-0.3.0.1.tar.gz) = 037cd3eaf2dcc6c31a2502f5ead773d88f33339d2e1441cb36cf3ee0dc20e5b2
+SIZE (cabal/ormolu-0.3.0.1.tar.gz) = 138234
 SHA256 (cabal/Cabal-3.4.0.0/Cabal-3.4.0.0.tar.gz) = b879998a96763b30fd8a1a5f4e94923dcefa73c4da700813f2884f47026541fd
 SIZE (cabal/Cabal-3.4.0.0/Cabal-3.4.0.0.tar.gz) = 836699
 SHA256 (cabal/Diff-0.4.0/Diff-0.4.0.tar.gz) = 7290ac098ad8b4748b9c10e494cc85ba54af688226ae69a465aa7b4c73f149c7
