@@ -302,7 +302,7 @@ jackett:*:354:354::0:0:Jackett Torznab Proxy Daemon:/nonexistent:/usr/sbin/nolog
 nzbhydra2:*:355:355::0:0:NZBHydra 2 Daemon:/nonexistent:/usr/sbin/nologin
 lidarr:*:356:356::0:0:Lidarr Daemon:/nonexistent:/usr/sbin/nologin
 bazarr:*:357:357::0:0:Bazarr Daemon:/nonexistent:/usr/sbin/nologin
-# free: 358
+autoscan:*:358:358::0:0:Autoscan Daemon:/nonexistent:/usr/sbin/nologin
 # free: 359
 v2ray:*:360:360::0:0:V2Ray Daemon:/nonexistent:/usr/sbin/nologin
 httptunnel:*:361:361::0:0:httptunnel Daemon:/nonexistent:/usr/sbin/nologin

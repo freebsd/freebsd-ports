@@ -297,7 +297,7 @@ jackett:*:354:
 nzbhydra2:*:355:
 lidarr:*:356:
 bazarr:*:357:
-# free: 358
+autoscan:*:358:
 # free: 359
 v2ray:*:360:
 httptunnel:*:361:

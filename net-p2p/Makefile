@@ -2,6 +2,7 @@
 
     SUBDIR += amule
     SUBDIR += amule-devel
+    SUBDIR += autoscan
     SUBDIR += awgg
     SUBDIR += bazarr
     SUBDIR += bazarr-devel

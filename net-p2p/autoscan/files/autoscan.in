@@ -1,0 +1,60 @@
+#!/bin/sh
+#
+# Author: Michiel van Baak <michiel@vanbaak.eu>
+#
+# PROVIDE: autoscan
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable autoscan:
+# autoscan_enable:   Set to NO by default. Set it to YES to enable it.
+# autoscan_user:     The user account autoscan daemon runs as what
+#                    you want it to be. Default: autoscan
+# autoscan_group:    The user group autoscan daemon runs as what
+#                    you want it to be. Default: autoscan
+# autoscan_config:   Configuration file for autoscan.
+#                    Default: /usr/local/etc/autoscan.yml
+# autoscan_datadir:  Directory where autoscan user data lives.
+#                    Default: /var/db/autoscan
+# autoscan_log:      File to write logrecords to
+#                    Default: /var/log/autoscan.log
+
+. /etc/rc.subr
+
+name=autoscan
+rcvar=autoscan_enable
+
+load_rc_config ${name}
+
+: ${autoscan_enable:=NO}
+: ${autoscan_user:=%%USERS%%}
+: ${autoscan_group:=%%GROUPS%%}
+: ${autoscan_config:="%%PREFIX%%/etc/autoscan.yml"}
+: ${autoscan_log:="/var/log/autoscan.log"}
+: ${autoscan_datadir:="/var/db/autoscan"}
+
+pidfile="/var/run/${name}/${name}.pid"
+
+autoscan_command="%%PREFIX%%/bin/autoscan"
+autoscan_args="--config=${autoscan_config} --database=${autoscan_datadir}/autoscan.db --log=${autoscan_log}"
+
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -f ${autoscan_command} ${autoscan_args}"
+start_precmd=autoscan_precmd
+
+autoscan_precmd()
+{
+    if [ ! -d "/var/run/${name}" ]; then
+        install -d -m 0750 -o ${autoscan_user} -g ${autoscan_group} "/var/run/${name}"
+    fi
+
+    if [ ! -d "${autoscan_datadir}" ]; then
+        install -d -m 0750 -o ${autoscan_user} -g ${autoscan_group} "${autoscan_datadir}"
+    fi
+
+    if [ ! -f "${autoscan_log}" ]; then
+        install -m 644 -o ${autoscan_user} -g ${autoscan_group} /dev/null "${autoscan_log}"
+    fi
+}
+
+run_rc_command "$1"
