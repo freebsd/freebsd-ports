@@ -2,7 +2,7 @@
 
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.16
+DISTVERSION=	0.9.17
 PORTEPOCH=	1
 CATEGORIES=	net
 DIST_SUBDIR?=	${PORTNAME}
@@ -50,7 +50,7 @@ FUSE_DESC=	Enable drive redirection via FUSE (experimental)
 MP3LAME_DESC=	Enable MP3 Lame for audio redirection
 OPUS_DESC=	Enable Opus for audio redirection
 
-DEBUG_CONFIGURE_ENABLE=	xrdpdebug
+DEBUG_CONFIGURE_ENABLE=	debug-all
 FDKAAC_CONFIGURE_ENABLE=	fdkaac
 FDKAAC_LIB_DEPENDS=	libfdk-aac.so:audio/fdk-aac
 FUSE_CONFIGURE_ENABLE=	fuse
