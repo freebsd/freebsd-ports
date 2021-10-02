@@ -1,6 +1,6 @@
---- config/gitlab.yml.example.orig	2021-09-21 10:06:28 UTC
+--- config/gitlab.yml.example.orig	2021-10-01 16:06:26 UTC
 +++ config/gitlab.yml.example
-@@ -1128,8 +1128,8 @@ production: &base
+@@ -1128,14 +1128,14 @@ production: &base
      # real path not the symlink.
      storages: # You must have at least a `default` storage path.
        default:
@@ -11,6 +11,13 @@
          # gitaly_token: 'special token' # Optional: override global gitaly.token for this storage.
  
    ## Backup settings
+   backup:
+     path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
+-    # gitaly_backup_path: # Path of the gitaly-backup binary (default: searches $PATH)
++    gitaly_backup_path: %%PREFIX%%/share/gitaly/bin/gitaly-backup # Path of the gitaly-backup binary (default: searches $PATH)
+     # archive_permissions: 0640 # Permissions for the resulting backup.tar file (default: 0600)
+     # keep_time: 604800   # default: 0 (forever) (in seconds)
+     # pg_schema: public     # default: nil, it means that all schemas will be backed up
 @@ -1184,12 +1184,12 @@ production: &base
  
    ## GitLab Shell settings
@@ -59,7 +66,7 @@
  
    ## Webpack settings
    # If enabled, this will tell rails to serve frontend assets from the webpack-dev-server running
-@@ -1453,7 +1453,7 @@ test:
+@@ -1453,13 +1453,13 @@ test:
          gitaly_address: unix:tmp/tests/gitaly/praefect.socket
  
    gitaly:
@@ -68,3 +75,10 @@
      token: secret
    workhorse:
      secret_file: tmp/gitlab_workhorse_test_secret
+   backup:
+     path: tmp/tests/backups
+-    gitaly_backup_path: tmp/tests/gitaly/_build/bin/gitaly-backup
++    gitaly_backup_path: %%PREFIX%%/share/gitaly/bin/gitaly-backup
+   pseudonymizer:
+     manifest: config/pseudonymizer.yml
+     upload:
