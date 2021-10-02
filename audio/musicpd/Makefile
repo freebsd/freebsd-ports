@@ -206,8 +206,6 @@ MPDGROUP?=	mpd
 USERS=	${MPDUSER}
 GROUPS=	${MPDGROUP}
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 # Make musicpd run as ${MPDUSER} by default
 	@${REINPLACE_CMD} -e 's|%%MPDUSER%%|${MPDUSER}|' \
@@ -230,15 +228,15 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/_build/mpd \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.if ${PORT_OPTIONS:MMANPAGES}
-	${INSTALL_MAN} ${WRKSRC}/_build/doc/${PORTNAME}.1 \
-		${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/_build/doc/${PORTNAME}.conf.5 \
-		${STAGEDIR}${PREFIX}/man/man5
-.endif
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
-.include <bsd.port.post.mk>
+do-install-MANPAGES-on:
+	${INSTALL_MAN} ${WRKSRC}/_build/doc/${PORTNAME}.1 \
+		${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/_build/doc/${PORTNAME}.conf.5 \
+		${STAGEDIR}${PREFIX}/man/man5
+
+.include <bsd.port.mk>
