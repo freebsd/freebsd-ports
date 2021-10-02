@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	gretl
-PORTVERSION=	2021b
+PORTVERSION=	2021d
 CATEGORIES=	math finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \
 		libgmp.so:math/gmp \
+		libharfbuzz.so:print/harfbuzz \
 		libjson-glib-1.0.so:devel/json-glib \
 		libmpfr.so:math/mpfr
 
@@ -27,6 +28,8 @@ ALL_TARGET=	# empty
 SSP_CFLAGS?=	-fstack-protector # XXX -strong crashes mklang on 12.0+ i386
 CONFIGURE_ENV=	ac_cv_lib_dl_dlopen="" \
 		LAPACK_LIBS="${LAPACK} ${BLAS}"
+
+PLIST_SUB=	GTK_VER=${GTK_VER}
 
 OPTIONS_DEFINE=		ADDONS ATLAS GUI MPI NLS ODBC OPENMP R UNZIP
 OPTIONS_DEFAULT=	ADDONS GUI OPENMP UNZIP
@@ -47,8 +50,10 @@ GUI_DESC=		Graphical user interface and plugins
 GUI_CONFIGURE_ON=	--enable-gui=yes
 GUI_CONFIGURE_OFF=	--enable-gui=no --enable-xdg=no
 GUI_VARS=		INSTALLS_ICONS=yes
-GUI_USE=		GNOME=cairo,gtksourceview3
-GUI_USE_OFF=		GNOME=glib30,libxml2
+GUI_USE=		GNOME=cairo,gtksourceview3,gdkpixbuf2
+GUI_USE_OFF=		GNOME=glib20,libxml2
+GUI_VARS=		GTK_VER=3
+GUI_VARS_OFF=		GTK_VER=2
 GUI_USES=		desktop-file-utils shared-mime-info
 GUI_BUILD_DEPENDS=	gnuplot:math/gnuplot
 GUI_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
@@ -95,7 +100,7 @@ regression-test test check: build
 		${MAKE_ARGS} check
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gretl-gtk3/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gretl-*/*.so
 	@${RMDIR} ${STAGEDIR}${DATADIR}/doc
 
 .include <bsd.port.mk>
