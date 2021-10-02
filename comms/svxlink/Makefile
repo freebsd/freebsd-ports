@@ -24,6 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 USES+=		cmake:noninja compiler:c++11-lang groff pkgconfig tcl
 USE_GITHUB=	yes
 GH_ACCOUNT=	sm0svx
+GH_PROJECT=	svxlink
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 CMAKE_ARGS+=	-DMAN_INSTALL_DIR:FILEPATH=${PREFIX}/share/man \
@@ -68,8 +69,7 @@ post-patch:
 		${WRKSRC}/src/doc/man/svxlink.conf.5 \
 		${WRKSRC}/src/svxlink/svxlink/svxlink.conf.in
 	@${REINPLACE_CMD} -e 's|/usr/lib|${PREFIX}/lib|' \
-		${WRKSRC}/src/doc/man/svxlink.conf.5 \
-		${WRKSRC}/src/svxlink/svxlink/svxlink.conf.in
+		${WRKSRC}/src/doc/man/svxlink.conf.5
 post-patch-OSS-on:
 	@${GREP} -lr alsa:default ${WRKSRC} | ${GREP} -v .bak | ${GREP} -v .orig | ${XARGS} \
 		${REINPLACE_CMD} -e 's|alsa:default|oss:/dev/dsp|'
