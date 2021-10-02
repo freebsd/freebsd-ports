@@ -152,10 +152,8 @@ HTTP_NOTICE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c \
 				${PATCHDIR}/extra-patch-nginx-notice-config
 HTTP_NOTICE_VARS=		DSO_EXTMODS+=notice
 
-HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.2.7:push
+HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.2.12:push
 HTTP_PUSH_VARS=			DSO_EXTMODS+=push
-HTTP_PUSH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nchan-store-private.h \
-				${PATCHDIR}/extra-patch-nchan-store-redis-redis_lua_commands.h
 
 HTTP_PUSH_STREAM_GH_TUPLE=	wandenberg:nginx-push-stream-module:0.5.4:pushstream
 HTTP_PUSH_STREAM_VARS=		DSO_EXTMODS+=pushstream
@@ -283,7 +281,7 @@ RDS_JSON_VARS=		DSO_EXTMODS+=rdsjson
 REDIS2_GH_TUPLE=	openresty:redis2-nginx-module:v0.15:redis2
 REDIS2_VARS=		DSO_EXTMODS+=redis2
 
-RTMP_GH_TUPLE=		arut:nginx-rtmp-module:v1.2.1:rtmp
+RTMP_GH_TUPLE=		arut:nginx-rtmp-module:v1.2.2:rtmp
 RTMP_VARS=		DSO_EXTMODS+=rtmp
 
 SET_MISC_IMPLIES=	DEVEL_KIT
