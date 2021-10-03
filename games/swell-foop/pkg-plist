@@ -101,6 +101,16 @@ share/help/fr/swell-foop/preferences.page
 share/help/fr/swell-foop/score.page
 share/help/fr/swell-foop/start.page
 share/help/fr/swell-foop/strategy.page
+share/help/ko/swell-foop/figures/logo.png
+share/help/ko/swell-foop/figures/start-game.png
+share/help/ko/swell-foop/index.page
+share/help/ko/swell-foop/introduction.page
+share/help/ko/swell-foop/legal.xml
+share/help/ko/swell-foop/playing-game.page
+share/help/ko/swell-foop/preferences.page
+share/help/ko/swell-foop/score.page
+share/help/ko/swell-foop/start.page
+share/help/ko/swell-foop/strategy.page
 share/help/hu/swell-foop/figures/logo.png
 share/help/hu/swell-foop/figures/start-game.png
 share/help/hu/swell-foop/index.page
