@@ -13,6 +13,7 @@ man/man1/testssl.1.gz
 %%DATADIR%%/etc/client-simulation.wiresharked.txt
 %%DATADIR%%/etc/common-primes.txt
 %%DATADIR%%/etc/curves.txt
+%%DATADIR%%/etc/openssl.cnf
 %%DATADIR%%/etc/tls_data.txt
 %%DATADIR%%/utils/00_unittest_baseline.sh
 %%DATADIR%%/utils/ccs-injection.bash
