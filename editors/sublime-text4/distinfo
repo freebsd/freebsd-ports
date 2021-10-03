@@ -1,3 +1,6 @@
 TIMESTAMP = 1633124175
 SHA256 (sublime_text_build_4116_x64.tar.xz) = 2dfdd8fc3434ab482fb2b203fab3e5d39fd87d67538daa105e79f0e649372842
 SIZE (sublime_text_build_4116_x64.tar.xz) = 17174748
+TIMESTAMP = 1633231579
+SHA256 (sublime_text_build_4116_arm64.tar.xz) = 2b772881ee8edfb67195ee57130bea2bfefb4751c9f725a51c23c0e12fea862d
+SIZE (sublime_text_build_4116_arm64.tar.xz) = 16479920
