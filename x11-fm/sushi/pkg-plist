@@ -14,6 +14,7 @@ share/locale/bn_IN/LC_MESSAGES/sushi.mo
 share/locale/bs/LC_MESSAGES/sushi.mo
 share/locale/ca/LC_MESSAGES/sushi.mo
 share/locale/ca@valencia/LC_MESSAGES/sushi.mo
+share/locale/ckb/LC_MESSAGES/sushi.mo
 share/locale/cs/LC_MESSAGES/sushi.mo
 share/locale/da/LC_MESSAGES/sushi.mo
 share/locale/de/LC_MESSAGES/sushi.mo
@@ -46,6 +47,7 @@ share/locale/lv/LC_MESSAGES/sushi.mo
 share/locale/mjw/LC_MESSAGES/sushi.mo
 share/locale/ml/LC_MESSAGES/sushi.mo
 share/locale/mr/LC_MESSAGES/sushi.mo
+share/locale/ms/LC_MESSAGES/sushi.mo
 share/locale/nb/LC_MESSAGES/sushi.mo
 share/locale/ne/LC_MESSAGES/sushi.mo
 share/locale/nl/LC_MESSAGES/sushi.mo
