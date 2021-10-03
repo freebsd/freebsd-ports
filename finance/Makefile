@@ -21,6 +21,7 @@
     SUBDIR += aqbanking
     SUBDIR += beancount
     SUBDIR += beanie
+    SUBDIR += chiapos
     SUBDIR += cointop
     SUBDIR += electrum
     SUBDIR += expense
