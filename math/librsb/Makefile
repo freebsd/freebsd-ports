@@ -2,7 +2,7 @@
 
 PORTNAME=	librsb
 PORTVERSION=	1.2.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF/librsb
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-rc/}
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	gsed:textproc/gsed \
 		bash:shells/bash
 
 USES=		fortran gmake shebangfix libtool
+USE_GCC=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	qtests
 GNU_CONFIGURE=	yes
