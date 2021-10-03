@@ -1,0 +1,98 @@
+From 7a341a5d3cb9380e77b0241b5198373ab6fc355e Mon Sep 17 00:00:00 2001
+From: Charlie Li <vishwin@users.noreply.github.com>
+Date: Sun, 3 Oct 2021 00:20:31 -0400
+Subject: [PATCH] Support LibreSSL 3.4.0 (#6360)
+
+* Add LibreSSL 3.4.0 to CI
+
+* Add a LibreSSL 3.4.0 guard
+
+Since LibreSSL 3.4.0 makes most of the TLSv1.3 API available, redefine CRYPTOGRAPHY_OPENSSL_LESS_THAN_111 to LibreSSL versions below 3.4.0.
+
+* DTLS_get_data_mtu does not exist in LibreSSL
+
+* Only EVP_Digest{Sign,Verify} exist in LibreSSL 3.4.0+
+
+* SSL_CTX_{set,get}_keylog_callback does not exist in LibreSSL
+
+* Do not pollute CRYPTOGRAPHY_OPENSSL_LESS_THAN_111 with LibreSSL
+
+While LibreSSL 3.4.0 supports more of TLSv1.3 API, the guard redefinition caused the X448 tests to run when not intended.
+---
+ .github/workflows/ci.yml              |  6 ++++--
+ src/_cffi_src/openssl/cryptography.py |  3 +++
+ src/_cffi_src/openssl/evp.py          | 15 ++++++++++-----
+ src/_cffi_src/openssl/ssl.py          |  3 ++-
+ 4 files changed, 19 insertions(+), 8 deletions(-)
+
+diff --git src/_cffi_src/openssl/cryptography.py src/_cffi_src/openssl/cryptography.py
+index 878d22d8..821ddc9f 100644
+--- src/_cffi_src/openssl/cryptography.py
++++ src/_cffi_src/openssl/cryptography.py
+@@ -36,8 +36,11 @@ INCLUDES = """
+ #if CRYPTOGRAPHY_IS_LIBRESSL
+ #define CRYPTOGRAPHY_LIBRESSL_LESS_THAN_332 \
+     (LIBRESSL_VERSION_NUMBER < 0x3030200f)
++#define CRYPTOGRAPHY_LIBRESSL_LESS_THAN_340 \
++    (LIBRESSL_VERSION_NUMBER < 0x3040000f)
+ #else
+ #define CRYPTOGRAPHY_LIBRESSL_LESS_THAN_332 (0)
++#define CRYPTOGRAPHY_LIBRESSL_LESS_THAN_340 (0)
+ #endif
+ 
+ #define CRYPTOGRAPHY_OPENSSL_110F_OR_GREATER \
+diff --git src/_cffi_src/openssl/evp.py src/_cffi_src/openssl/evp.py
+index ab7cfeb3..cad3339a 100644
+--- src/_cffi_src/openssl/evp.py
++++ src/_cffi_src/openssl/evp.py
+@@ -203,15 +203,21 @@ int (*EVP_PKEY_set1_tls_encodedpoint)(EVP_PKEY *, const unsigned char *,
+                                       size_t) = NULL;
+ #endif
+ 
+-#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_111
++#if CRYPTOGRAPHY_LIBRESSL_LESS_THAN_340 || \
++    (CRYPTOGRAPHY_OPENSSL_LESS_THAN_111 && !CRYPTOGRAPHY_IS_LIBRESSL)
+ static const long Cryptography_HAS_ONESHOT_EVP_DIGEST_SIGN_VERIFY = 0;
+-static const long Cryptography_HAS_RAW_KEY = 0;
+-static const long Cryptography_HAS_EVP_DIGESTFINAL_XOF = 0;
+-int (*EVP_DigestFinalXOF)(EVP_MD_CTX *, unsigned char *, size_t) = NULL;
+ int (*EVP_DigestSign)(EVP_MD_CTX *, unsigned char *, size_t *,
+                       const unsigned char *tbs, size_t) = NULL;
+ int (*EVP_DigestVerify)(EVP_MD_CTX *, const unsigned char *, size_t,
+                         const unsigned char *, size_t) = NULL;
++#else
++static const long Cryptography_HAS_ONESHOT_EVP_DIGEST_SIGN_VERIFY = 1;
++#endif
++
++#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_111
++static const long Cryptography_HAS_RAW_KEY = 0;
++static const long Cryptography_HAS_EVP_DIGESTFINAL_XOF = 0;
++int (*EVP_DigestFinalXOF)(EVP_MD_CTX *, unsigned char *, size_t) = NULL;
+ EVP_PKEY *(*EVP_PKEY_new_raw_private_key)(int, ENGINE *, const unsigned char *,
+                                        size_t) = NULL;
+ EVP_PKEY *(*EVP_PKEY_new_raw_public_key)(int, ENGINE *, const unsigned char *,
+@@ -221,7 +227,6 @@ int (*EVP_PKEY_get_raw_private_key)(const EVP_PKEY *, unsigned char *,
+ int (*EVP_PKEY_get_raw_public_key)(const EVP_PKEY *, unsigned char *,
+                                    size_t *) = NULL;
+ #else
+-static const long Cryptography_HAS_ONESHOT_EVP_DIGEST_SIGN_VERIFY = 1;
+ static const long Cryptography_HAS_RAW_KEY = 1;
+ static const long Cryptography_HAS_EVP_DIGESTFINAL_XOF = 1;
+ #endif
+diff --git src/_cffi_src/openssl/ssl.py src/_cffi_src/openssl/ssl.py
+index ca275e91..0830a463 100644
+--- src/_cffi_src/openssl/ssl.py
++++ src/_cffi_src/openssl/ssl.py
+@@ -678,7 +678,8 @@ int (*SSL_set_tlsext_use_srtp)(SSL *, const char *) = NULL;
+ SRTP_PROTECTION_PROFILE * (*SSL_get_selected_srtp_profile)(SSL *) = NULL;
+ #endif
+ 
+-#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_111
++#if CRYPTOGRAPHY_LIBRESSL_LESS_THAN_340 || \
++    (CRYPTOGRAPHY_OPENSSL_LESS_THAN_111 && !CRYPTOGRAPHY_IS_LIBRESSL)
+ static const long Cryptography_HAS_TLSv1_3 = 0;
+ static const long SSL_OP_NO_TLSv1_3 = 0;
+ static const long SSL_VERIFY_POST_HANDSHAKE = 0;
+-- 
+2.32.0
+

@@ -35,20 +35,6 @@ TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.pre.mk>
 
-# OpenSSL 1.0.2t got some curve matching parameter code backported before it
-# has reached its End-of-Life and security/py-cryptography already had some
-# code to handle this case, but it assumed OpenSSL 1.1.0+ .
-#
-# This has been fixed in 3.0-23-g241f8450 of security/py-cryptography and to be
-# clear: It isn't a security fix but rather a workaround to handle unnamed but
-# really named curves with OpenSSL 1.0.2t/u .
-
-# We need to keep old py-cryptography and py-openssl for 11.x release
-# due to outdated OpenSSL version in base
-
-# Apply LibreSSL upstream patch that conflicts with above patch for 2.9.2
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Fix-build-with-LibreSSL-3.3.2-5988
-
 .if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
 post-patch:
 	@${REINPLACE_CMD} -e 's|"-Wno-error=sign-conversion"||' \
