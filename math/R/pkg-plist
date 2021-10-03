@@ -786,8 +786,6 @@ lib/R/library/mgcv/libs/mgcv.so
 %%NLS%%lib/R/library/mgcv/po/en@quot/LC_MESSAGES/mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/fr/LC_MESSAGES/R-mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/fr/LC_MESSAGES/mgcv.mo
-%%NLS%%lib/R/library/mgcv/po/it/LC_MESSAGES/R-mgcv.mo
-%%NLS%%lib/R/library/mgcv/po/it/LC_MESSAGES/mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/ko/LC_MESSAGES/R-mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/ko/LC_MESSAGES/mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/pl/LC_MESSAGES/R-mgcv.mo
