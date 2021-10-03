@@ -148,6 +148,7 @@ share/metainfo/texstudio.appdata.xml
 %%DATADIR%%/texstudio_sk.qm
 %%DATADIR%%/texstudio_sv.qm
 %%DATADIR%%/texstudio_tr_TR.qm
+%%DATADIR%%/texstudio_ug.qm
 %%DATADIR%%/texstudio_uk.qm
 %%DATADIR%%/texstudio_vi.qm
 %%DATADIR%%/texstudio_zh_CN.qm

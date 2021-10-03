@@ -1,6 +1,5 @@
 PORTNAME=	texstudio
-DISTVERSION=	3.1.2
-PORTREVISION=	5
+DISTVERSION=	4.0.0
 CATEGORIES=	editors
 
 MAINTAINER=	rigoletto@FreeBSD.org
@@ -17,8 +16,9 @@ LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell \
 
 USES=		compiler:c++11-lang desktop-file-utils dos2unix \
 		ghostscript:run gl pkgconfig qmake qt:5 xorg
-USE_QT	=	core gui network script svg widgets xml \
-		printsupport concurrent uitools buildtools_build
+USE_QT	=	core declarative gui network script svg widgets \
+		xml printsupport concurrent uitools \
+		buildtools_build
 QTVER_SUFFIX=	5
 
 USE_XORG=	x11
