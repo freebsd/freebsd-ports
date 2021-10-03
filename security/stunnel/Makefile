@@ -26,6 +26,9 @@ COMMENT=	SSL encryption wrapper for standard network daemons
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+BROKEN_SSL=	libressl libressl-devel
+BROKEN_SSL_REASON=	Missing upstream support
+
 USES=		cpe libtool perl5 shebangfix ssl
 USE_PERL5=	build
 USE_LDCONFIG=	yes
