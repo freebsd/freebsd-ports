@@ -1,8 +1,7 @@
 # Created by: Dave McKay <dave@mu.org>
 
 PORTNAME=	seahorse
-PORTVERSION=	40.0
-PORTREVISION=	1
+PORTVERSION=	41.0
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
