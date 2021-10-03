@@ -1,7 +1,7 @@
-# Created by: Eric TUrgeon <ericbsd@FreeBSD.org>
 
 PORTNAME=	sublime-text4
 PORTVERSION=	4116
+PORTREVISION=	1
 CATEGORIES=	editors linux
 MASTER_SITES=	http://download.sublimetext.com/
 
@@ -15,6 +15,8 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS= aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and aarch64
+
+RUN_DEPENDS= linux-c7-curl>0:ftp/linux-c7-curl
 
 USES=		desktop-file-utils gnome linux tar:xz
 INSTALLS_ICONS=	yes
@@ -44,6 +46,6 @@ do-install:
 	${CHMOD} +x ${STAGEDIR}${DATADIR}/plugin_host-3.3
 	${CHMOD} +x ${STAGEDIR}${DATADIR}/plugin_host-3.8
 	${CHMOD} +x ${STAGEDIR}${DATADIR}/sublime_text
-	${INSTALL_SCRIPT} ${WRKDIR}/sublime-text ${STAGEDIR}${PREFIX}/bin/sublime-text
+	${INSTALL_SCRIPT} ${WRKDIR}/sublime-text ${STAGEDIR}${PREFIX}/bin/sublime_text
 
 .include <bsd.port.mk>

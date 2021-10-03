@@ -5,7 +5,7 @@
  GenericName=Text Editor
  Comment=Sophisticated text editor for code, markup and prose
 -Exec=/opt/sublime_text/sublime_text %F
-+Exec=sublime-text %F
++Exec=sublime_text %F
  Terminal=false
  MimeType=text/plain;
  Icon=sublime-text
