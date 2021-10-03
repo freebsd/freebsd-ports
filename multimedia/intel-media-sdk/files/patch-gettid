@@ -41,7 +41,7 @@ tools/tracer/dumps/../loggers/thread_info.h:38:34: error: use of undeclared iden
 +        #elif defined(__OpenBSD__)
 +            return (long)getthrid();
 +        #elif defined(__sun)
-+            return (long)thr_self()();
++            return (long)thr_self();
 +        #else
 +            return (long)(uintptr_t)pthread_self();
          #endif
