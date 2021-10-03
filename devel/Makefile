@@ -6990,6 +6990,7 @@
     SUBDIR += stuffbin
     SUBDIR += stxxl
     SUBDIR += stylua
+    SUBDIR += sublime-merge
     SUBDIR += subversion
     SUBDIR += subversion-book
     SUBDIR += subversion-lts
