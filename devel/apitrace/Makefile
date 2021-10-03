@@ -1,12 +1,14 @@
 PORTNAME=	apitrace
 DISTVERSION=	9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/a17r/${GH_PROJECT}/commit/
 # use system brotli: https://github.com/apitrace/apitrace/pull/610
 PATCHFILES=	cd3486343001d6a47.patch:-p1 \
 		b0f5a220c41af013d.patch:-p1
+# detect RTLD_DEEPBIND: https://github.com/apitrace/apitrace/pull/571
+PATCHFILES+=	2d31d49eac9bcc010.patch:-p1
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Tools for tracing OpenGL and other graphics APIs
