@@ -1,60 +1,75 @@
---- CMakeLists.txt.orig	2019-12-08 04:12:07 UTC
+--- CMakeLists.txt.orig	2021-09-29 21:29:01 UTC
 +++ CMakeLists.txt
-@@ -10,18 +10,14 @@ execute_process(COMMAND sh -c "${CMAKE_SOURCE_DIR}/cma
+@@ -10,23 +10,23 @@ execute_process(COMMAND sh -c "${CMAKE_SOURCE_DIR}/cma
  
  list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
  
 -set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 +#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
  
- # Global include directories, visible in subdirectories.
+ # Configure global include directories, visible in subdirectories.
  include_directories(.
-     extern/googletest/googletest/include
 -    extern/double-conversion
++    #extern/double-conversion
      extern/ordered-map/include
--    extern/openvdb
      extern/blosc
      extern/stb
 -    extern/glfw/include
 -    extern/glm
++    #extern/glfw/include
++    #extern/glm
      extern/glad)
+ if (MSYS)
+     # On MSYS we use MinGW packages for OpenVDB and GoogleTest
+ else ()
+     include_directories(
+ 	extern/googletest/googletest/include
+-	extern/openvdb/openvdb)
++	)
+ endif ()
  
  if (APPLE)
-@@ -30,6 +26,7 @@ if (APPLE)
-     link_directories(/usr/local/lib)
- endif (APPLE)
+@@ -45,6 +45,7 @@ endif (APPLE)
+ # Libraries
+ # ===============================================
  
 +# REPLxx used to be unbundled, but due to the incompatibilities (see Bug#241205) it was bundled again
  # REPLxx library
  file(GLOB ReplxxSrc "extern/replxx/src/*.cxx" "extern/replxx/src/*.cpp")
  add_library(replxx ${ReplxxSrc})
-@@ -38,10 +35,10 @@ target_include_directories(replxx
-    PRIVATE extern/replxx/src)
- set_property(TARGET replxx PROPERTY CXX_STANDARD 14)
+@@ -55,9 +56,9 @@ set_property(TARGET replxx PROPERTY CXX_STANDARD 17)
+ target_compile_definitions(replxx PRIVATE REPLXX_STATIC=1)
  
--# double-conversion library
+ # double-conversion library
 -file(GLOB DoubleConversionSrc "extern/double-conversion/double-conversion/*.cc")
 -add_library(double-conversion ${DoubleConversionSrc})
--set_property(TARGET double-conversion PROPERTY CXX_STANDARD 14)
-+## double-conversion library
+-set_property(TARGET double-conversion PROPERTY CXX_STANDARD 17)
 +#file(GLOB DoubleConversionSrc "extern/double-conversion/double-conversion/*.cc")
 +#add_library(double-conversion ${DoubleConversionSrc})
-+#set_property(TARGET double-conversion PROPERTY CXX_STANDARD 14)
++#set_property(TARGET double-conversion PROPERTY CXX_STANDARD 17)
  
  # glad library, an OpenGL loader
  add_library(glad
-@@ -93,7 +90,7 @@ target_link_libraries(libcurv_geom PUBLIC imgui)
+@@ -100,7 +101,7 @@ if (MSYS)
+     set( LibOpenVDB "openvdb" )
+     set( LibHalf "Half" )
+ else ()
+-    set( LibOpenVDB "openvdb_static" )
++    #set( LibOpenVDB "openvdb_static" )
+     set( LibHalf "" )
+ endif ()
  
- file(GLOB Src "curv/*.c" "curv/*.cc")
- add_executable(curv ${Src})
--target_link_libraries(curv PUBLIC libcurv_geom libcurv imgui glfw glad ${LibOpenGL} replxx double-conversion boost_iostreams boost_filesystem boost_system openvdb_static Half tbb dl pthread)
-+target_link_libraries(curv PUBLIC libcurv_geom libcurv imgui glfw glad ${LibOpenGL} replxx double-conversion boost_iostreams boost_filesystem boost_system openvdb Imath tbb dl pthread)
+@@ -194,9 +195,9 @@ if (NOT DEFINED MSYS)
+     add_library(dummy cmake/dummy.cc)
+     add_library(Blosc::blosc ALIAS dummy)
+     add_library(TBB::tbb ALIAS dummy)
+-    add_subdirectory(extern/openvdb/openvdb/openvdb EXCLUDE_FROM_ALL)
+-    set_property(TARGET openvdb_static PROPERTY CXX_STANDARD 14)
+-    add_subdirectory(extern/googletest/googletest EXCLUDE_FROM_ALL)
++    #add_subdirectory(extern/openvdb/openvdb/openvdb EXCLUDE_FROM_ALL)
++    #set_property(TARGET openvdb_static PROPERTY CXX_STANDARD 14)
++    #add_subdirectory(extern/googletest/googletest EXCLUDE_FROM_ALL)
+ endif ()
  
- file(GLOB CurvcSrc "curvc/*.cc")
- add_executable(curvc EXCLUDE_FROM_ALL ${CurvcSrc})
-@@ -128,5 +125,3 @@ if (NOT TARGET uninstall)
- endif()
- 
- add_subdirectory(extern/googletest/googletest EXCLUDE_FROM_ALL)
--add_subdirectory(extern/openvdb/openvdb EXCLUDE_FROM_ALL)
 -add_subdirectory(extern/glfw EXCLUDE_FROM_ALL)
++#add_subdirectory(extern/glfw EXCLUDE_FROM_ALL)

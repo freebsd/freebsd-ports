@@ -1,7 +1,5 @@
 PORTNAME=	curv
-DISTVERSION=	0.4-417
-DISTVERSIONSUFFIX=	-gf6f8d011
-PORTREVISION=	19
+DISTVERSION=	0.5
 CATEGORIES=	math lang graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,20 +13,24 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libdouble-conversion.so:devel/double-conversion \
 		libglfw.so:graphics/glfw \
 		libImath.so:math/Imath \
-		libopenvdb.so:misc/openvdb \
-		libtbb.so:devel/tbb
+		libtbb.so:devel/onetbb \
+		libopenvdb.so:misc/openvdb
 
 USES=		cmake compiler:c++14-lang gl localbase:ldflags xorg
-USE_GITHUB=	yes
-GH_ACCOUNT=	curv3d
-GH_TUPLE=	ocornut:imgui:e0cab56:imgui/extern/imgui \
-		Tessil:ordered-map:3c14151:om/extern/ordered-map \
-		AmokHuginnsson:replxx:9da16bb:replxx/extern/replxx
 USE_GL=		gl
 USE_XORG=	x11
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	curv3d
+GH_TUPLE=	ocornut:imgui:e0cab56:imgui/extern/imgui \
+		Tessil:ordered-map:4051af7:om/extern/ordered-map \
+		AmokHuginnsson:replxx:b901d5f:replxx/extern/replxx
+
+LDFLAGS+=	-lopenvdb
+
 PLIST_FILES=	bin/curv \
 		lib/curv/lib/blend.curv \
+		lib/curv/lib/builder.curv \
 		lib/curv/lib/noise.curv \
 		lib/curv/lib/web_colour.curv \
 		lib/curv/std.curv \
