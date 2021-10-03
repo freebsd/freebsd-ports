@@ -76,11 +76,11 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/Packages/XML.sublime-package
 %%DATADIR%%/Packages/YAML.sublime-package
 %%DATADIR%%/changelog.txt
-%%DATADIR%%/crash_reporter
+@(,,555) %%DATADIR%%/crash_reporter
 %%DATADIR%%/libcrypto.so.1.1
 %%DATADIR%%/libssl.so.1.1
-%%DATADIR%%/plugin_host-3.3
-%%DATADIR%%/plugin_host-3.8
-%%DATADIR%%/sublime_text
+@(,,555) %%DATADIR%%/plugin_host-3.3
+@(,,555) %%DATADIR%%/plugin_host-3.8
+@(,,555) %%DATADIR%%/sublime_text
 %%DATADIR%%/sublime_text.desktop
 %%DATADIR%%/sublime_text.desktop.orig

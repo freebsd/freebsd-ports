@@ -1,4 +1,3 @@
-
 PORTNAME=	sublime-text4
 PORTVERSION=	4116
 PORTREVISION=	1
@@ -42,10 +41,6 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/sublime_text.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-	${CHMOD} +x ${STAGEDIR}${DATADIR}/crash_reporter
-	${CHMOD} +x ${STAGEDIR}${DATADIR}/plugin_host-3.3
-	${CHMOD} +x ${STAGEDIR}${DATADIR}/plugin_host-3.8
-	${CHMOD} +x ${STAGEDIR}${DATADIR}/sublime_text
 	${INSTALL_SCRIPT} ${WRKDIR}/sublime-text ${STAGEDIR}${PREFIX}/bin/sublime_text
 
 .include <bsd.port.mk>
