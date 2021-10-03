@@ -1,0 +1,116 @@
+$OpenBSD: patch-src_quadrapassel_vala,v 1.2 2020/05/14 15:29:34 jasper Exp $
+
+Drop libmanette dependency which requires libevdev/libinput
+
+Index: src/quadrapassel.vala
+--- src/quadrapassel.vala.orig
++++ src/quadrapassel.vala
+@@ -58,8 +58,6 @@ public class Quadrapassel : Gtk.Application
+     private Gtk.CheckButton sound_toggle;
+     private Gtk.ListStore controls_model;
+ 
+-    private Manette.Monitor manette_monitor;
+-
+     private const GLib.ActionEntry[] action_entries =
+     {
+         { "new-game",      new_game_cb    },
+@@ -200,13 +198,6 @@ public class Quadrapassel : Gtk.Application
+ 
+         game_grid.attach (pause_play_button, 2, 16, 1, 2);
+ 
+-        manette_monitor = new Manette.Monitor ();
+-        manette_monitor.device_connected.connect (manette_device_connected_cb);
+-        var manette_iterator = manette_monitor.iterate ();
+-        Manette.Device manette_device = null;
+-        while (manette_iterator.next (out manette_device))
+-            manette_device_connected_cb (manette_device);
+-
+         history = new History (Path.build_filename (Environment.get_user_data_dir (), "quadrapassel", "history"));
+         history.load ();
+ 
+@@ -576,85 +567,6 @@ public class Quadrapassel : Gtk.Application
+     private void quit_cb ()
+     {
+         window.destroy ();
+-    }
+-
+-    private void manette_device_connected_cb (Manette.Device manette_device)
+-    {
+-        manette_device.button_press_event.connect (manette_button_press_event_cb);
+-        manette_device.button_release_event.connect (manette_button_release_event_cb);
+-    }
+-
+-    private void manette_button_press_event_cb (Manette.Event event)
+-    {
+-        if (game == null)
+-            return;
+-
+-        uint16 button;
+-        if (!event.get_button (out button))
+-            return;
+-
+-        if (button == InputEventCode.BTN_START || button == InputEventCode.BTN_SELECT)
+-        {
+-            if (!game.game_over)
+-                game.paused = !game.paused;
+-            return;
+-        }
+-
+-        if (game.paused)
+-            return;
+-
+-        if (button == InputEventCode.BTN_DPAD_LEFT)
+-        {
+-            game.move_left ();
+-            return;
+-        }
+-        else if (button == InputEventCode.BTN_DPAD_RIGHT)
+-        {
+-            game.move_right ();
+-            return;
+-        }
+-        else if (button == InputEventCode.BTN_A)
+-        {
+-            game.rotate_left ();
+-            return;
+-        }
+-        else if (button == InputEventCode.BTN_B)
+-        {
+-            game.rotate_right ();
+-            return;
+-        }
+-        else if (button == InputEventCode.BTN_DPAD_DOWN)
+-        {
+-            game.set_fast_forward (true);
+-            return;
+-        }
+-        else if (button == InputEventCode.BTN_DPAD_UP)
+-        {
+-            game.drop ();
+-            return;
+-        }
+-    }
+-
+-    private void manette_button_release_event_cb (Manette.Event event)
+-    {
+-        if (game == null)
+-            return;
+-
+-        uint16 button;
+-        if (!event.get_button (out button))
+-            return;
+-
+-        if (button == InputEventCode.BTN_DPAD_LEFT ||
+-            button == InputEventCode.BTN_DPAD_RIGHT)
+-        {
+-            game.stop_moving ();
+-            return;
+-        }
+-        else if (button == InputEventCode.BTN_DPAD_DOWN)
+-        {
+-            game.set_fast_forward (false);
+-            return;
+-        }
+     }
+ 
+     private bool key_press_event_cb (Gtk.Widget widget, Gdk.EventKey event)
