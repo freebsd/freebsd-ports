@@ -1,5 +1,7 @@
-TIMESTAMP = 1632811562
+TIMESTAMP = 1633117095
 SHA256 (KDE/frameworks/5.86.0/knewstuff-5.86.0.tar.xz) = 26f8b88add9050201e7871349adb3996d75d1ab047aa1a24279743e1425b75b0
 SIZE (KDE/frameworks/5.86.0/knewstuff-5.86.0.tar.xz) = 1142536
 SHA256 (KDE/frameworks/5.86.0/d09ba1917cb7e035a9aac6c27c86fc4df5da3194.diff) = 7f5234d76a4dae5ea6df483b4c20b98b10292770111bdb189dab9cb8f9270de9
 SIZE (KDE/frameworks/5.86.0/d09ba1917cb7e035a9aac6c27c86fc4df5da3194.diff) = 486
+SHA256 (KDE/frameworks/5.86.0/f687c5abd0c5e9bd5a6688b6d9d50f2536b7d33d.diff) = d8a899a1c5b4f5a3f0fa042861511996edc1ea0d157e134be0708adc3cb2696c
+SIZE (KDE/frameworks/5.86.0/f687c5abd0c5e9bd5a6688b6d9d50f2536b7d33d.diff) = 1915

@@ -1,6 +1,11 @@
 PORTNAME=	attica
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits kde kde-frameworks
+
+PATCH_SITES=	https://invent.kde.org/frameworks/attica/-/commit/
+PATCHFILES=	24fc57ece156aaad1bbb86adba2e16c8e89dc6ff.diff:-p1 \
+		04bd6dcd39895ce3637145e719c3c427bc7f1ca1.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Open Collaboration Services API library KDE5 version
