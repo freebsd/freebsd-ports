@@ -1,5 +1,6 @@
 PORTNAME=	libmypaint
 DISTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/mypaint/libmypaint/releases/download/v${PORTVERSION}/
 
@@ -28,6 +29,5 @@ NLS_USE=	GNOME=intltool
 NLS_CONFIGURE_ENABLE=	nls i18n
 
 OPENMP_CONFIGURE_ENABLE=	openmp
-OPENMP_USES=			compiler:openmp
 
 .include <bsd.port.mk>

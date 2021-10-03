@@ -2,7 +2,7 @@
 
 PORTNAME=	inkscape
 DISTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://inkscape.org/gallery/item/26932/
 
@@ -77,7 +77,6 @@ DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 
 GVFS_USE=		GNOME=gvfs
 
-OPENMP_USES=		compiler:openmp
 OPENMP_CMAKE_BOOL=	WITH_OPENMP
 
 POPPLER_DESC=		PDF preview rendering

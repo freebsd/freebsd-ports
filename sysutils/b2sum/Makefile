@@ -1,5 +1,6 @@
 PORTNAME=	b2sum
 PORTVERSION=	20190724
+PORTREVISION=	1
 CATEGORIES=	sysutils security
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -23,7 +24,6 @@ OPTIONS_DEFINE=	OPENMP OPTIMIZED_CFLAGS SSE
 OPTIONS_DEFAULT_amd64=	SSE
 SSE_DESC=	Use SSE2, SSSE3, SSE4.1, AVX or XOP instructions
 
-OPENMP_USES+=	compiler:openmp
 OPENMP_CFLAGS+=	-fopenmp
 
 .include <bsd.port.options.mk>

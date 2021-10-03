@@ -2,7 +2,7 @@
 
 PORTNAME=	metis
 PORTVERSION=	5.1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
 
@@ -29,7 +29,6 @@ SHARED_DESC=	shared library and dynamically-linked executables
 STATIC_DESC=	libmetis archive
 
 OPENMP_CMAKE_BOOL=	OPENMP
-OPENMP_USES=		compiler:openmp
 
 SHARED_USE=	LDCONFIG=yes
 
