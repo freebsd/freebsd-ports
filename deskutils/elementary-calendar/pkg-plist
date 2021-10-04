@@ -7,7 +7,6 @@ lib/libelementary-calendar.so
 lib/libelementary-calendar.so.0
 lib/libelementary-calendar.so.0.1
 libdata/pkgconfig/elementary-calendar.pc
-libexec/io.elementary.calendar-daemon
 share/applications/io.elementary.calendar.desktop
 share/icons/hicolor/128x128/apps/io.elementary.calendar.svg
 share/icons/hicolor/128x128@2/apps/io.elementary.calendar.svg
