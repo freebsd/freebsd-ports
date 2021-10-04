@@ -1,6 +1,6 @@
 PORTNAME=	terraform
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.5
+DISTVERSION=	1.0.8
 CATEGORIES=	sysutils
 MASTER_SITES=	https://people.freebsd.org/~0mp/distfiles/:tencentcloud_tencentcloud_sdk_go
 
@@ -44,7 +44,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v52.5.0:azure_azure_sdk_for_go/vendor/github.co
 		armon:circbuf:5111143e8da2:armon_circbuf/vendor/github.com/armon/circbuf \
 		armon:go-metrics:f0300d1749da:armon_go_metrics/vendor/github.com/armon/go-metrics \
 		armon:go-radix:v1.0.0:armon_go_radix/vendor/github.com/armon/go-radix \
-		aws:aws-sdk-go:v1.37.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.40.25:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		baiyubin:aliyun-sts-go-sdk:cfa1a18b161f:baiyubin_aliyun_sts_go_sdk/vendor/github.com/baiyubin/aliyun-sts-go-sdk \
 		bgentry:go-netrc:9fd32a8b3d3d:bgentry_go_netrc/vendor/github.com/bgentry/go-netrc \
 		bgentry:speakeasy:v0.1.0:bgentry_speakeasy/vendor/github.com/bgentry/speakeasy \
@@ -73,12 +73,12 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v52.5.0:azure_azure_sdk_for_go/vendor/github.co
 		golang:lint:83fdc39ff7b5:golang_lint/vendor/golang.org/x/lint \
 		golang:mock:v1.4.4:golang_mock/vendor/github.com/golang/mock \
 		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
-		golang:net:e18ecbb05110:golang_net/vendor/golang.org/x/net \
+		golang:net:04defd469f4e:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:cd4f82c27b84:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:5e06dd20ab57:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:04245dca01da:golang_sys/vendor/golang.org/x/sys \
 		golang:term:2321bbc49cbf:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
@@ -177,8 +177,9 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v52.5.0:azure_azure_sdk_for_go/vendor/github.co
 		smartystreets:goconvey:ef6db91d284a:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey \
 		spf13:afero:v1.2.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
-		tencentcloud:tencentcloud-sdk-go:v3.0.82:tencentcloud_tencentcloud_sdk_go/vendor/github.com/tencentcloud/tencentcloud-sdk-go \
-		tencentyun:cos-go-sdk-v5:f07404cefc8c:tencentyun_cos_go_sdk_v5/vendor/github.com/tencentyun/cos-go-sdk-v5 \
+		tencentcloud:tencentcloud-sdk-go:v1.0.232:tencentcloud_tencentcloud_sdk_go_common/vendor/github.com/tencentcloud/tencentcloud-sdk-go \
+		tencentcloud:tencentcloud-sdk-go:v1.0.233:tencentcloud_tencentcloud_sdk_go_tag \
+		tencentyun:cos-go-sdk-v5:v0.7.29:tencentyun_cos_go_sdk_v5/vendor/github.com/tencentyun/cos-go-sdk-v5 \
 		tombuildsstuff:giovanni:v0.15.1:tombuildsstuff_giovanni/vendor/github.com/tombuildsstuff/giovanni \
 		uber-go:atomic:v1.3.2:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.1.0:uber_go_multierr/vendor/go.uber.org/multierr \
