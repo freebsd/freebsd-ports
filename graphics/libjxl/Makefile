@@ -1,7 +1,6 @@
 PORTNAME=	libjxl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5
-PORTREVISION=	1
+DISTVERSION=	0.6
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -43,6 +42,8 @@ GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_GIF
 
 GIMP_DESC=		GIMP plugin support
+GIMP_USES=		gnome
+GIMP_USE=		GNOME=gtk20
 GIMP_LIB_DEPENDS=	libgegl-0.4.so:graphics/gegl \
 			libgimp-2.0.so:graphics/gimp-app \
 			libbabl-0.1.so:x11/babl
