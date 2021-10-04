@@ -7,6 +7,10 @@ MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME:S/db//}/commit/
+PATCHFILES+=	a0a70c53cc7a.patch:-p1 # https://jira.mongodb.org/browse/SERVER-41827
+PATCHFILES+=	edf4ab0f8174.patch:-p1 # https://jira.mongodb.org/browse/SERVER-43979
+
 MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Distributed document-oriented "NoSQL" database (4.2.x Branch)
 
