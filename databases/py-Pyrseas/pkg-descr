@@ -1,5 +1,5 @@
-Pyrseas provides a framework and utilities to upgrade and maintain a relational
-database. Its purpose is to enhance and follow through on the concepts of the
-Andromeda Project (http://www.andromeda-project.org/)
+Pyrseas provides utilities to describe a PostgreSQL database schema as YAML, to
+verify the schema against the same or a different database and to generate SQL
+that will modify the schema to match the YAML description.
 
-WWW: http://pgfoundry.org/projects/pyrseas
+WWW: https://github.com/perseas/Pyrseas
