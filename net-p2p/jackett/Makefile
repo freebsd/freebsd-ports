@@ -11,12 +11,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
-
-.if ${OSVERSION} < 1200000
-USES=	mono
-.else
 RUN_DEPENDS=	mono6.8>0:lang/mono6.8
-.endif
 
 USE_RC_SUBR=	jackett
 
