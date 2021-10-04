@@ -1,7 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.0
-PORTREVISION=	1
+DISTVERSION=	0.18.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -96,6 +95,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		fallible-iterator-0.2.0 \
 		fastrand-1.5.0 \
 		fnv-1.0.7 \
+		form_urlencoded-1.0.1 \
 		fuchsia-cprng-0.1.1 \
 		futures-0.3.16 \
 		futures-channel-0.3.16 \
@@ -119,6 +119,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		hermit-abi-0.1.19 \
 		humantime-2.1.0 \
 		ident_case-1.0.1 \
+		idna-0.2.3 \
 		indexmap-1.7.0 \
 		insta-1.7.1 \
 		instant-0.1.10 \
@@ -142,6 +143,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		log-mdc-0.1.0 \
 		log4rs-1.0.0 \
 		mach-0.3.2 \
+		matches-0.1.9 \
 		memchr-2.3.4 \
 		memmap2-0.2.3 \
 		memoffset-0.6.4 \
@@ -166,6 +168,7 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.7.2 \
 		parking_lot_core-0.8.3 \
+		percent-encoding-2.1.0 \
 		pin-project-lite-0.2.7 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.19 \
@@ -236,6 +239,8 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		thiserror-impl-1.0.26 \
 		thread-id-3.3.0 \
 		time-0.1.44 \
+		tinyvec-1.3.1 \
+		tinyvec_macros-0.1.0 \
 		tracing-0.1.26 \
 		tracing-attributes-0.1.15 \
 		tracing-core-0.1.18 \
@@ -243,10 +248,13 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		typemap-0.3.3 \
 		typetag-0.1.7 \
 		typetag-impl-0.1.7 \
+		unicode-bidi-0.3.6 \
+		unicode-normalization-0.1.19 \
 		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
 		unsafe-any-0.4.2 \
+		url-2.2.2 \
 		utf8parse-0.1.1 \
 		utf8parse-0.2.0 \
 		uuid-0.8.2 \
