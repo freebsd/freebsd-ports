@@ -1,5 +1,5 @@
 PORTNAME=	gamescope
-DISTVERSION=	3.9.2
+DISTVERSION=	3.9.3
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -31,7 +31,7 @@ USE_GITHUB=	yes
 USE_SDL=	sdl2
 USE_XORG=	x11 xcomposite xdamage xext xfixes xrender xres xtst xxf86vm
 GH_ACCOUNT=	Plagman
-GH_TUPLE=	emersion:libliftoff:v0.1.0-3-g516cf94:libliftoff/subprojects/libliftoff \
+GH_TUPLE=	emersion:libliftoff:v0.1.0-22-gaa30b8f:libliftoff/subprojects/libliftoff \
 		nothings:stb:af1a5bc:stb/subprojects/stb
 PLIST_FILES=	bin/${PORTNAME}
 
