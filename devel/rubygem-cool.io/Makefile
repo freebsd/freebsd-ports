@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gems for cool.io
 
 LICENSE=	MIT

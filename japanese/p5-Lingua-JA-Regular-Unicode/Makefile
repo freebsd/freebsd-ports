@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to convert Japanese chars
 
 TEST_DEPENDS=	\

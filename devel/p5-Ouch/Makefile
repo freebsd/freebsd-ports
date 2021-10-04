@@ -5,7 +5,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RIZEN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for exceptions that don't hurt
 
 LICENSE=	ART10 GPLv1+

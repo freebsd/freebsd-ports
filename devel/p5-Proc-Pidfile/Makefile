@@ -5,7 +5,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to manage .pid file for current process
 
 LICENSE=	ART10 GPLv1+

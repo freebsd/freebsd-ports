@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for asynchronous remote procedure stack
 
 LICENSE=	ART10 GPLv1+

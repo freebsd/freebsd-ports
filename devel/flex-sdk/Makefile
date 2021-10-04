@@ -4,7 +4,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	http://fpdownload.adobe.com/pub/flex/sdk/builds/flex4.6/
 DISTNAME=	flex_sdk_${PORTVERSION}_mpl
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adobe Flex SDK
 
 CONFLICTS=	ja-flex-sdk-2.* flex-sdk2-2.* flex-sdk3-3.*

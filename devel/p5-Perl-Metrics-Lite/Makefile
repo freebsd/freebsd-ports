@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for pluggable Perl Code Metrics System
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

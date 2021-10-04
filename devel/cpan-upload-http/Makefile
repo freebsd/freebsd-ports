@@ -5,7 +5,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BRADFITZ
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl script to upload one or more files to CPAN, using PAUSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

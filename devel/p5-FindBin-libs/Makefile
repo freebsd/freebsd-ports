@@ -7,7 +7,7 @@ MASTER_SITE_SUBDIR=	CPAN:LEMBARK
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to locate and use lib directories
 
 USES=		perl5

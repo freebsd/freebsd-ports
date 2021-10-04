@@ -5,7 +5,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of lightning-fast URL fetcher
 
 LICENSE=	ART10 GPLv1+

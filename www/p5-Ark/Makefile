@@ -6,7 +6,7 @@ MASTER_SITES=	GHC LOCAL/kuriyama
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Ark-0.001000_001
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl web application framework
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

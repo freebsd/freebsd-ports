@@ -5,7 +5,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to convert to JSON (JavaScript Object Notation)
 
 LICENSE=	ART10 GPLv1+

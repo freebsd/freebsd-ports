@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AWRIGLEY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to filter entries out of an httpd log
 
 LICENSE=	ART10 GPLv1+

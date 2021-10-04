@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://jodies.de/ipcalc-archive/
 DIST_SUBDIR=	ipcalc
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP Calculator
 
 LICENSE=	GPLv2

@@ -5,7 +5,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MGRIMES
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for AnyEvent compat to monitor file/dir changes
 
 LICENSE=	ART10 GPLv1+

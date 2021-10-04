@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to parse OPML document with LibXML parser
 
 RUN_DEPENDS=	p5-XML-LibXML>1.60:textproc/p5-XML-LibXML

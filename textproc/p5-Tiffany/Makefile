@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for generic interface for Perl5 template engines
 
 TEST_DEPENDS=	\

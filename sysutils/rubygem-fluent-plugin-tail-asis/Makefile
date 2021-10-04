@@ -3,7 +3,7 @@ PORTVERSION=	0.0.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gems for fluent plugin to read whole line into single key
 
 RUN_DEPENDS=	\

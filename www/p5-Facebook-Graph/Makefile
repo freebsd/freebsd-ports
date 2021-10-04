@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RIZEN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to integrate your apps with Facebook
 
 LICENSE=	ART10 GPLv1+

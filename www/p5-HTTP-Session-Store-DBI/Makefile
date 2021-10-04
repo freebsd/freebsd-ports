@@ -5,7 +5,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to store session data in DBI for HTTP::Session
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

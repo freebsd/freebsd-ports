@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GFUJI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to organize your Mouse types in libraries
 
 LICENSE=	ART10 GPLv1+

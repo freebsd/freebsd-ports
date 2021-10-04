@@ -7,7 +7,7 @@ CATEGORIES=	net elisp
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparent remote file access tool for Emacs
 
 LICENSE=	GPLv3+

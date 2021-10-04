@@ -5,7 +5,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of rate-limiting incoming HTTP requests for Plack
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

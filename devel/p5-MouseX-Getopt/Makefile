@@ -5,7 +5,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for a Mouse role to process command line options
 
 LICENSE=	ART10 GPLv1+

@@ -5,7 +5,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KAZUHO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension of superdaemon for hot-deploying server programs
 
 LICENSE=	ART10 GPLv1+

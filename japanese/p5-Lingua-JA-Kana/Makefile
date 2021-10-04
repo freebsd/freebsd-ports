@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Converts between Kanas and Romaji
 
 USES=		perl5

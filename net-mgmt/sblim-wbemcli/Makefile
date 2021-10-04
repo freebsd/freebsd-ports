@@ -4,7 +4,7 @@ PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/sblim/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLI for Web Based Enterprise Management by SBLIM
 
 BUILD_DEPENDS=	libwww-config:www/libwww

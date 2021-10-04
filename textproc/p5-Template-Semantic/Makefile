@@ -5,7 +5,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to use pure XHTML/XML as a template
 
 LICENSE=	ART10 GPLv1+

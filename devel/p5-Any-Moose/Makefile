@@ -5,7 +5,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for/to use Moose or Mouse modules
 
 LICENSE=	ART10 GPLv1+

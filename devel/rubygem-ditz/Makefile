@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple lightweight distributed issue tracker
 
 LICENSE=	GPLv3+

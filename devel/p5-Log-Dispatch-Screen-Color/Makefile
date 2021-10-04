@@ -5,7 +5,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to support color for Log::Dispatch::Screen
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

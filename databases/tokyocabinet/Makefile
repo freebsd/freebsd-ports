@@ -6,7 +6,7 @@ CATEGORIES=	databases
 MASTER_SITES=	LOCAL/kuriyama \
 		https://dbmx.net/${PORTNAME}/
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern implementation of DBM
 
 LICENSE=	LGPL21

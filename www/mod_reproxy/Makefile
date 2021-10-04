@@ -3,7 +3,7 @@ PORTVERSION=	0.02.20110826
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/kuriyama
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module to support x-reproxy-url header
 
 LICENSE=	APACHE20

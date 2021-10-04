@@ -3,7 +3,7 @@ PORTVERSION=	0.04
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for ISO/IEC 2022 character encoding scheme
 
 LICENSE=	ART10 GPLv1+

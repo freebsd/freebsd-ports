@@ -4,7 +4,7 @@ PORTREVISION=	0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tag a single model on several contexts
 
 LICENSE=	MIT

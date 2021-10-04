@@ -5,7 +5,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for building DOM Level 1 compliant document structures
 
 LICENSE=	ART10 GPLv1+

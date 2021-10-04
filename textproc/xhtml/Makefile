@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/kuriyama
 DISTNAME=	xhtml1-20020801
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	W3C's XHTML DTD
 
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr

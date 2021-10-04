@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gems for character encoding detection
 
 LICENSE=	MIT
