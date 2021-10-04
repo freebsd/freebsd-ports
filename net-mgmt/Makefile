@@ -307,6 +307,7 @@
     SUBDIR += py-napalm
     SUBDIR += py-napalm-logs
     SUBDIR += py-ncclient
+    SUBDIR += py-netbox-plugin-extensions
     SUBDIR += py-nxapi-plumbing
     SUBDIR += py-opn-cli
     SUBDIR += py-pdagent
