@@ -6,6 +6,36 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20211004:
+  AFFECTS: users of net-mgmt/netbox
+  AUTHOR: kai@FreeBSD.org
+
+  /!\ WARNING /!\
+
+  The NetBox 3.0 release contains major changes, so at least items 1.), 2.)
+  and 3.) must be checked before proceeding with the upgrade!
+
+  /!\ WARNING /!\
+
+  1. Please ensure that your local installation of net-mgmt/netbox is at
+     the 2.11 release before attemping to upgrade to NetBox 3.0 or later.
+
+  2. Please also note that the previously deprecated secrets functionality
+     has been removed with NetBox 3.0.  This means, all of the secrets still
+     remain in the database once upgraded, only the secrets functionality on
+     the part of NetBox is no longer given.
+
+     In order to continue to be able to access the stored secrets as usual
+     (and then possibly migrate them to another solution, e.g.
+     security/vault), please install the security/py-netbox-secretstore port
+     once NetBox has been upgraded to 3.x and follow its installation
+     instructions how to enable the plugin.
+
+  3. If plugins are used, they should be temporarily deactivated to avoid
+     disruptions during the upgrade process.
+
+  4. Please also check the pkg-message and the changelogs for further info.
+
+20211004:
   AFFECTS: users of www/py-pyjwt
   AUTHOR: rhurlin@FreeBSD.org
 
