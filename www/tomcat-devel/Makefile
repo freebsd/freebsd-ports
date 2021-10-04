@@ -1,7 +1,7 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
 
 PORTNAME=	tomcat
-DISTVERSION=	10.1.0-M4
+DISTVERSION=	10.1.0-M5
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION:C/([0-9]+)(.*)/\1/}/v${DISTVERSION}/bin
 PKGNAMESUFFIX=	-devel
