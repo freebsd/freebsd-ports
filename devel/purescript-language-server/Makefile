@@ -1,5 +1,5 @@
 PORTNAME=	purescript-language-server
-PORTVERSION=	0.15.6
+PORTVERSION=	0.15.7
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://github.com/nwolverson/${PORTNAME}/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}.js
@@ -16,9 +16,9 @@ RUN_DEPENDS=	node:www/node
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/${DISTNAME}
+PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
