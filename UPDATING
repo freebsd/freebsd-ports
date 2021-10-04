@@ -5,7 +5,7 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20210801:
+20211004:
   AFFECTS: users of www/py-pyjwt
   AUTHOR: rhurlin@FreeBSD.org
 
