@@ -1,5 +1,5 @@
 PORTNAME=	jshon
-DISTVERSION=	20170302.1
+DISTVERSION=	20180209
 CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -10,18 +10,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjansson.so:devel/jansson
 
-USES=		gmake
+USES=		gmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	keenerd
 GH_TAGNAME=	d919aea
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+PLIST_FILES=	bin/jshon \
+		man/man1/jshon.1.gz
 
-PLIST_FILES=	bin/jshon man/man1/jshon.1.gz
-
-OPTIONS_DEFINE=	ZSH
-OPTIONS_DEFAULT=ZSH
+OPTIONS_DEFINE=		ZSH
+OPTIONS_DEFAULT=	ZSH
 
 ZSH_PLIST_FILES=	share/zsh/site-functions/jshon_zsh_completion
 
