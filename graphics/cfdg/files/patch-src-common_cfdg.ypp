@@ -1,0 +1,11 @@
+--- src-common/cfdg.ypp.orig	2021-10-04 13:54:54 UTC
++++ src-common/cfdg.ypp
+@@ -31,7 +31,7 @@
+ %skeleton "lalr1.cc"                          /*  -*- C++ -*- */
+ %require "3.0"
+ %defines
+-%define parser_class_name {CfdgParser}
++%define api.parser.class {CfdgParser}
+ %locations
+ %expect 3
+ //%debug

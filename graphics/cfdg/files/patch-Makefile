@@ -1,20 +1,76 @@
---- ./Makefile.orig	2010-09-13 06:15:25.000000000 +0200
-+++ ./Makefile	2011-06-18 21:42:16.000000000 +0200
-@@ -54,7 +54,7 @@
+--- Makefile.orig	2020-04-10 19:38:18 UTC
++++ Makefile
+@@ -34,7 +34,7 @@ MAN_DIR = $(DESTDIR)$(prefix)/share/man
+ # Library directories for FFmpeg and libpng
+ #
+ 
+-LIB_DIRS = /usr/local/lib
++LIB_DIRS = /usr/local/lib $(shell libpng-config --libdir)
+ 
+ #
+ # Sources and Objects
+@@ -69,30 +69,20 @@ INPUT_SRCS = ciliasun_v2.cfdg demo1_v2.cfdg demo2_v2.c
+     welcome.cfdg ziggy.cfdg
+ 
+ 
+-LIBS = png m
++LIBS = m
+ 
+-# Use the first one for clang and the second one for gcc
+-ifeq ($(shell uname -s), Darwin)
+-  LIBS += c++ icucore
+-else
+-  LIBS += stdc++ atomic icui18n icuuc icudata
+-endif
++LIBS += stdc++ icui18n icuuc icudata
+ 
+ #
+ # FFmpeg support
+ #
+-# Uncomment these lines to enable FFmpeg support
+-#
++ifeq ($(WANT_FFMPEG), yes)
++ COMMON_SRCS += ffCanvas.cpp
++ LIBS += avformat avcodec swscale swresample avutil z m x264 pthread dl
++else
++ COMMON_SRCS += ffCanvasDummy.cpp
++endif
+ 
+-# COMMON_SRCS += ffCanvas.cpp
+-# LIBS += avformat avcodec swscale swresample avutil z m x264 pthread dl
+-
+-#
+-# Comment out this line to enable FFmpeg support
+-#
+-
+-COMMON_SRCS += ffCanvasDummy.cpp
+-
+ SRCS = $(DERIVED_SRCS) $(COMMON_SRCS) $(UNIX_SRCS)
+ 
+ #
+@@ -113,6 +103,7 @@ DEPS = $(patsubst %.o,%.d,$(OBJS))
+ 
+ LINKFLAGS += $(patsubst %,-L%,$(LIB_DIRS))
+ LINKFLAGS += $(patsubst %,-l%,$(LIBS))
++LINKFLAGS += $(shell libpng-config --libs)
+ LINKFLAGS += -fexceptions
+ 
+ deps: $(OBJ_DIR) $(DEPS)
+@@ -133,7 +124,7 @@ $(OBJS): $(OBJ_DIR)/Sentry
  # Under Cygwin replace strip $@ with strip $@.exe
  
  cfdg: $(OBJS)
--	$(LINK.o) $^ -L/usr/local/lib -lstdc++ -lpng -lz -fexceptions -o $@
-+	$(CXX) $^ $(shell libpng-config --ldflags) -lm -fexceptions -o $@
+-	$(LINK.o) $^ $(LINKFLAGS) -o $@
++	$(CXX) $^ $(LINKFLAGS) -o $@
  	strip $@
  
  
-@@ -105,7 +105,7 @@
+@@ -196,7 +187,7 @@ check: cfdg
  #
  
- CPPFLAGS += $(patsubst %,-I%,$(INC_DIRS))
--CPPFLAGS += -O3 -Wall
-+CPPFLAGS += -O3 -Wall $(shell libpng-config --cflags)
- #CPPFLAGS += -ggdb
+ CXXFLAGS += $(patsubst %,-I%,$(INC_DIRS))
+-CXXFLAGS += -O2 -Wall -Wextra -march=native -Wno-parentheses -std=c++14
++CXXFLAGS += -Wall -Wextra -Wno-parentheses -std=c++14
+ CXXFLAGS += -g -D_GLIBCXX_USE_C99_MATH=1
+ CPPFLAGS += -DNDEBUG
  
- $(OBJ_DIR)/%.o : %.cpp
