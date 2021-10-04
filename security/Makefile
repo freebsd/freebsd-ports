@@ -931,6 +931,7 @@
     SUBDIR += py-mnemonic
     SUBDIR += py-msoffcrypto-tool
     SUBDIR += py-muacrypt
+    SUBDIR += py-netbox-secretstore
     SUBDIR += py-netmiko
     SUBDIR += py-ntlm-auth
     SUBDIR += py-oauth2client
