@@ -1,0 +1,33 @@
+--- Makefile.orig	2021-05-03 10:27:15 UTC
++++ Makefile
+@@ -1,19 +1,19 @@
+ # Flags
+ CC=g++
+-CFLAGS=-c -w -O1 -I ../math/ -I ../gdsoglviewer/ -I ../libgdsto3d/
+-LDFLAGS=-L/usr/X11R6/lib64/ -lX11 -lGL -static-libgcc -static-libstdc++ -fopenmp
++CFLAGS+=-c -w -O1 -I ../math/ -I ../gdsoglviewer/ -I ../libgdsto3d/
++LDFLAGS+=-L/usr/X11R6/lib64/ -lX11 -lGL -static-libgcc -static-libstdc++ -fopenmp
+ # Static linking of stdc++ available starting at GCC 4.5
+ 
+ # Complicated system to fix .hash section, shame on you binutils guys!
+-LDD_MAJOR_VERSION_GTE3 := $(shell expr 2 \< `ldd --version | grep ldd | cut -d' ' -f4 | cut -d. -f1`)
+-LDD_MINOR_VERSION_GTE5 := $(shell expr 4 \< `ldd --version | grep ldd | cut -d' ' -f4 | cut -d. -f2`)
+-ifeq "$(LDD_MINOR_VERSION_GTE5)" "1"
+-	LDFLAGS += -Wl,--hash-style=both
+-else
+-	ifeq "$(LDD_MAJOR_VERSION_GTE3)" "1"
+-		LDFLAGS += -Wl,--hash-style=both
+-	endif
+-endif
++#LDD_MAJOR_VERSION_GTE3 := $(shell expr 2 \< `ldd --version | grep ldd | cut -d' ' -f4 | cut -d. -f1`)
++#LDD_MINOR_VERSION_GTE5 := $(shell expr 4 \< `ldd --version | grep ldd | cut -d' ' -f4 | cut -d. -f2`)
++#ifeq "$(LDD_MINOR_VERSION_GTE5)" "1"
++#	LDFLAGS += -Wl,--hash-style=both
++#else
++#	ifeq "$(LDD_MAJOR_VERSION_GTE3)" "1"
++#		LDFLAGS += -Wl,--hash-style=both
++#	endif
++#endif
+ 
+ # Include all sources in the folders
+ SOURCES=$(wildcard *.cpp) $(wildcard ../math/*.cpp) $(wildcard ../gdsoglviewer/*.cpp) $(wildcard ../libgdsto3d/*.cpp)  $(wildcard ../libgdsto3d/clipper/*.cpp) $(wildcard ../libgdsto3d/voro++/src/voro++.cc) 
