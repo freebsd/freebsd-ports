@@ -1,5 +1,5 @@
 PORTNAME=	jackett
-PORTVERSION=	0.17.946
+PORTVERSION=	0.18.303
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Jackett/Jackett/releases/download/
 DISTNAME=	v${PORTVERSION}/Jackett.Binaries.Mono
@@ -12,7 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		mono
+.if ${OSVERSION} < 1200000
+USES=	mono
+.else
+RUN_DEPENDS=	mono6.8>0:lang/mono6.8
+.endif
 
 USE_RC_SUBR=	jackett
 
