@@ -1122,7 +1122,6 @@
     SUBDIR += retail
     SUBDIR += rex
     SUBDIR += rhc
-    SUBDIR += riak-cs
     SUBDIR += rinse
     SUBDIR += rmlint
     SUBDIR += rocr
