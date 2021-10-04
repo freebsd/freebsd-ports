@@ -1,5 +1,5 @@
 PORTNAME=	got
-PORTVERSION=	0.60
+PORTVERSION=	0.61
 CATEGORIES=	devel
 MASTER_SITES=	https://gameoftrees.org/releases/
 
@@ -25,7 +25,7 @@ post-extract:
 #  installed got
 #  installed git
 #  ssh to 127.0.0.1
-run-test:
+regress:
 	@(cd ${WRKSRC}/regress && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} regress)
 
 .include <bsd.port.mk>

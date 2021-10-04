@@ -12,15 +12,6 @@
 #define __dead __dead2
 
 /*
- * <fcntl.h>
- */
-#define open(...)	open_posix(__VA_ARGS__)
-#define openat(...)	openat_posix(__VA_ARGS__)
-
-int	open_posix(const char *path, int flags, ...);
-int	openat_posix(int fd, const char *path, int flags, ...);
-
-/*
  * <stdlib.h>
  */
 void	freezero(void *, size_t);

@@ -1,6 +1,6 @@
---- regress/cmdline/Makefile.orig	2021-08-26 12:59:24 UTC
+--- regress/cmdline/Makefile.orig	2021-10-04 10:11:31 UTC
 +++ regress/cmdline/Makefile
-@@ -90,4 +90,6 @@ cleanup:
+@@ -93,4 +93,6 @@ cleanup:
  	./cleanup.sh -q -r "$(GOT_TEST_ROOT)"
  
  
