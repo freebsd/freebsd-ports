@@ -1,7 +1,7 @@
 # Created by: Oliver Eikemeier
 
 PORTNAME=	swaks
-PORTVERSION=	20201010.0
+PORTVERSION=	20201014.0
 CATEGORIES=	mail
 MASTER_SITES=	http://jetmore.org/john/code/swaks/
 
