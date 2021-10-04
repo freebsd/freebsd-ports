@@ -1,5 +1,5 @@
 PORTNAME=	libinput
-PORTVERSION=	1.16.4
+PORTVERSION=	1.19.1
 CATEGORIES=	x11
 MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/
 
@@ -23,12 +23,14 @@ MESON_ARGS+=	-Ddocumentation=false -Dtests=false
 
 python_OLD_CMD=	"/usr/bin/env python3"
 SHEBANG_FILES=	tools/libinput-analyze-per-slot-delta.py \
+		tools/libinput-analyze-recording.py \
+		tools/libinput-analyze-touch-down-state.py \
 		tools/libinput-measure-fuzz.py \
 		tools/libinput-measure-touch-size.py \
 		tools/libinput-measure-touchpad-pressure.py \
 		tools/libinput-measure-touchpad-size.py \
 		tools/libinput-measure-touchpad-tap.py \
-		tools/libinput-replay
+		tools/libinput-replay.py
 
 OPTIONS_DEFINE=	DEBUG_GUI LIBWACOM
 OPTIONS_DEFAULT=LIBWACOM
