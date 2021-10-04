@@ -1,4 +1,5 @@
 include/heyoka/callable.hpp
+include/heyoka/celmec/vsop2013.hpp
 include/heyoka/config.hpp
 include/heyoka/detail/binomial.hpp
 include/heyoka/detail/dfloat.hpp
@@ -15,6 +16,15 @@ include/heyoka/detail/string_conv.hpp
 include/heyoka/detail/taylor_common.hpp
 include/heyoka/detail/type_traits.hpp
 include/heyoka/detail/visibility.hpp
+include/heyoka/detail/vsop2013/vsop2013_1.hpp
+include/heyoka/detail/vsop2013/vsop2013_2.hpp
+include/heyoka/detail/vsop2013/vsop2013_3.hpp
+include/heyoka/detail/vsop2013/vsop2013_4.hpp
+include/heyoka/detail/vsop2013/vsop2013_5.hpp
+include/heyoka/detail/vsop2013/vsop2013_6.hpp
+include/heyoka/detail/vsop2013/vsop2013_7.hpp
+include/heyoka/detail/vsop2013/vsop2013_8.hpp
+include/heyoka/detail/vsop2013/vsop2013_9.hpp
 include/heyoka/exceptions.hpp
 include/heyoka/expression.hpp
 include/heyoka/func.hpp
@@ -30,8 +40,10 @@ include/heyoka/math/acosh.hpp
 include/heyoka/math/asin.hpp
 include/heyoka/math/asinh.hpp
 include/heyoka/math/atan.hpp
+include/heyoka/math/atan2.hpp
 include/heyoka/math/atanh.hpp
 include/heyoka/math/binary_op.hpp
+include/heyoka/math/constants.hpp
 include/heyoka/math/cos.hpp
 include/heyoka/math/cosh.hpp
 include/heyoka/math/erf.hpp
@@ -61,5 +73,5 @@ lib/cmake/heyoka/heyoka-config.cmake
 lib/cmake/heyoka/heyoka_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/heyoka/heyoka_export.cmake
 lib/libheyoka.so
-lib/libheyoka.so.14
-lib/libheyoka.so.14.0
+lib/libheyoka.so.15
+lib/libheyoka.so.15.0
