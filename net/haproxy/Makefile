@@ -1,8 +1,7 @@
 # Created by: Hugo Saro <hugo@barafranca.com>
 
 PORTNAME=	haproxy
-DISTVERSION=	2.4.5
-PORTREVISION=	1
+DISTVERSION=	2.4.7
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/2.4/src/
 
