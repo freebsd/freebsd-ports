@@ -8,7 +8,7 @@ COMMENT=	XInput event monitor daemon
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo gmake pkgconfig xorg
+USES=		cargo xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	andrewshadura
 USE_XORG=	x11 xcb xi
