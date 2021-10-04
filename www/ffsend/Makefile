@@ -1,7 +1,6 @@
 PORTNAME=	ffsend
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.72
-PORTREVISION=	3
+DISTVERSION=	0.2.73
 CATEGORIES=	www
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -27,9 +26,9 @@ GL_ACCOUNT=	timvisee
 GL_COMMIT=	e440f4b68a87c935f149d42b527ccc5a596262ac
 USE_XORG=	xcb
 
-CARGO_CRATES=	addr2line-0.14.1 \
+CARGO_CRATES=	addr2line-0.15.1 \
 		adler-1.0.2 \
-		aho-corasick-0.7.15 \
+		aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
 		anyhow-1.0.40 \
 		arrayref-0.3.6 \
@@ -37,7 +36,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		atty-0.2.14 \
 		autocfg-0.1.7 \
 		autocfg-1.0.1 \
-		backtrace-0.3.56 \
+		backtrace-0.3.59 \
 		base-x-0.2.8 \
 		base64-0.9.3 \
 		base64-0.10.1 \
@@ -48,7 +47,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		block-buffer-0.7.3 \
 		block-buffer-0.9.0 \
 		block-padding-0.1.5 \
-		bstr-0.2.15 \
+		bstr-0.2.16 \
 		bumpalo-3.6.1 \
 		byte-tools-0.3.1 \
 		byteorder-1.4.3 \
@@ -66,35 +65,35 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		clipboard-win-2.2.0 \
 		cloudabi-0.0.3 \
 		colored-2.0.0 \
-		const_fn-0.4.6 \
+		const_fn-0.4.7 \
 		constant_time_eq-0.1.5 \
 		core-foundation-0.9.1 \
 		core-foundation-sys-0.8.2 \
-		cpuid-bool-0.1.2 \
-		crossbeam-channel-0.5.0 \
+		cpufeatures-0.1.1 \
+		crossbeam-channel-0.5.1 \
 		crossbeam-utils-0.7.2 \
-		crossbeam-utils-0.8.3 \
+		crossbeam-utils-0.8.4 \
 		crossterm-0.19.0 \
 		crossterm_winapi-0.7.0 \
 		crypto-mac-0.10.0 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
 		darling-0.10.2 \
-		darling-0.12.3 \
+		darling-0.12.4 \
 		darling_core-0.10.2 \
-		darling_core-0.12.3 \
+		darling_core-0.12.4 \
 		darling_macro-0.10.2 \
-		darling_macro-0.12.3 \
+		darling_macro-0.12.4 \
 		derive_builder-0.9.0 \
-		derive_builder-0.10.0 \
+		derive_builder-0.10.2 \
 		derive_builder_core-0.9.0 \
-		derive_builder_core-0.10.0 \
-		derive_builder_macro-0.10.0 \
+		derive_builder_core-0.10.2 \
+		derive_builder_macro-0.10.2 \
 		digest-0.8.1 \
 		digest-0.9.0 \
-		directories-3.0.1 \
+		directories-3.0.2 \
 		dirs-1.0.5 \
-		dirs-sys-0.3.5 \
+		dirs-sys-0.3.6 \
 		discard-1.0.4 \
 		either-1.6.1 \
 		encode_unicode-0.3.6 \
@@ -113,20 +112,20 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		futures-0.1.31 \
-		futures-channel-0.3.13 \
-		futures-core-0.3.13 \
-		futures-io-0.3.13 \
-		futures-macro-0.3.13 \
-		futures-sink-0.3.13 \
-		futures-task-0.3.13 \
-		futures-util-0.3.13 \
+		futures-channel-0.3.14 \
+		futures-core-0.3.14 \
+		futures-io-0.3.14 \
+		futures-macro-0.3.14 \
+		futures-sink-0.3.14 \
+		futures-task-0.3.14 \
+		futures-util-0.3.14 \
 		generic-array-0.12.4 \
 		generic-array-0.14.4 \
 		getrandom-0.1.16 \
 		getrandom-0.2.2 \
-		gimli-0.23.0 \
+		gimli-0.24.0 \
 		h2-0.2.7 \
-		h2-0.3.2 \
+		h2-0.3.3 \
 		hashbrown-0.9.1 \
 		hermit-abi-0.1.18 \
 		hkdf-0.10.0 \
@@ -134,17 +133,18 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		http-0.2.4 \
 		http-body-0.3.1 \
 		http-body-0.4.1 \
-		httparse-1.3.6 \
+		httparse-1.4.0 \
 		httpdate-0.3.2 \
+		httpdate-1.0.0 \
 		hyper-0.10.16 \
 		hyper-0.13.10 \
-		hyper-0.14.5 \
+		hyper-0.14.7 \
 		hyper-rustls-0.22.1 \
 		hyper-tls-0.4.3 \
 		hyper-tls-0.5.0 \
 		ident_case-1.0.1 \
 		idna-0.1.5 \
-		idna-0.2.2 \
+		idna-0.2.3 \
 		indexmap-1.6.2 \
 		instant-0.1.9 \
 		iovec-0.1.4 \
@@ -154,15 +154,15 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		kernel32-sys-0.2.2 \
 		language-tags-0.2.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.93 \
+		libc-0.2.94 \
 		lock_api-0.3.4 \
-		lock_api-0.4.3 \
+		lock_api-0.4.4 \
 		log-0.3.9 \
 		log-0.4.14 \
 		malloc_buf-0.0.6 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
-		memchr-2.3.4 \
+		memchr-2.4.0 \
 		mime-0.2.6 \
 		mime-0.3.16 \
 		mime_guess-2.0.3 \
@@ -180,14 +180,14 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
-		object-0.23.0 \
+		object-0.24.0 \
 		once_cell-1.7.2 \
 		opaque-debug-0.2.3 \
 		opaque-debug-0.3.0 \
-		open-1.6.0 \
-		openssl-0.10.33 \
+		open-1.7.0 \
+		openssl-0.10.34 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.61 \
+		openssl-sys-0.9.63 \
 		parking_lot-0.9.0 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.6.2 \
@@ -196,8 +196,8 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		pbr-1.0.4 \
 		percent-encoding-1.0.1 \
 		percent-encoding-2.1.0 \
-		pin-project-1.0.6 \
-		pin-project-internal-1.0.6 \
+		pin-project-1.0.7 \
+		pin-project-internal-1.0.7 \
 		pin-project-lite-0.1.12 \
 		pin-project-lite-0.2.6 \
 		pin-utils-0.1.0 \
@@ -226,25 +226,26 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		rand_xorshift-0.1.1 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.57 \
-		redox_syscall-0.2.5 \
+		redox_syscall-0.2.8 \
 		redox_users-0.3.5 \
-		regex-1.4.5 \
+		redox_users-0.4.0 \
+		regex-1.5.4 \
 		regex-automata-0.1.9 \
-		regex-syntax-0.6.23 \
+		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
 		reqwest-0.10.10 \
-		reqwest-0.11.2 \
+		reqwest-0.11.3 \
 		ring-0.16.20 \
 		rpassword-5.0.1 \
 		rust-argon2-0.8.3 \
-		rustc-demangle-0.1.18 \
+		rustc-demangle-0.1.19 \
 		rustc_version-0.2.3 \
-		rustls-0.19.0 \
+		rustls-0.19.1 \
 		ryu-1.0.5 \
 		safemem-0.3.3 \
 		schannel-0.1.19 \
 		scopeguard-1.1.0 \
-		sct-0.6.0 \
+		sct-0.6.1 \
 		security-framework-2.2.0 \
 		security-framework-sys-2.2.0 \
 		semver-0.9.0 \
@@ -255,10 +256,10 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		serde_urlencoded-0.7.0 \
 		sha-1-0.8.2 \
 		sha1-0.6.0 \
-		sha2-0.9.3 \
+		sha2-0.9.4 \
 		signal-hook-0.1.17 \
 		signal-hook-registry-1.3.0 \
-		slab-0.4.2 \
+		slab-0.4.3 \
 		smallvec-0.6.14 \
 		smallvec-1.6.1 \
 		socket2-0.3.19 \
@@ -273,7 +274,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		strsim-0.9.3 \
 		strsim-0.10.0 \
 		subtle-2.4.0 \
-		syn-1.0.69 \
+		syn-1.0.72 \
 		synstructure-0.12.4 \
 		tar-0.4.33 \
 		tempfile-3.2.0 \
@@ -288,7 +289,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		tinyvec-1.2.0 \
 		tinyvec_macros-0.1.0 \
 		tokio-0.2.25 \
-		tokio-1.4.0 \
+		tokio-1.5.0 \
 		tokio-codec-0.1.2 \
 		tokio-executor-0.1.10 \
 		tokio-io-0.1.13 \
@@ -300,11 +301,11 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		tokio-tls-0.2.1 \
 		tokio-tls-0.3.1 \
 		tokio-util-0.3.1 \
-		tokio-util-0.6.5 \
+		tokio-util-0.6.6 \
 		toml-0.5.8 \
 		tower-service-0.3.1 \
-		tracing-0.1.25 \
-		tracing-core-0.1.17 \
+		tracing-0.1.26 \
+		tracing-core-0.1.18 \
 		tracing-futures-0.2.5 \
 		traitobject-0.1.0 \
 		try-lock-0.2.3 \
@@ -315,12 +316,12 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		unicode-bidi-0.3.5 \
 		unicode-normalization-0.1.17 \
 		unicode-width-0.1.8 \
-		unicode-xid-0.2.1 \
+		unicode-xid-0.2.2 \
 		untrusted-0.7.1 \
 		url-1.7.2 \
-		url-2.2.1 \
+		url-2.2.2 \
 		urlshortener-3.0.0 \
-		vcpkg-0.2.11 \
+		vcpkg-0.2.12 \
 		vec_map-0.8.2 \
 		version-compare-0.0.11 \
 		version_check-0.1.5 \
