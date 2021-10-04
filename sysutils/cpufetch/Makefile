@@ -16,7 +16,6 @@ USES=		gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Dr-Noob
-GH_PROJECT=	cpufetch
 
 PLIST_FILES=	bin/cpufetch \
 		man/man1/cpufetch.1.gz
