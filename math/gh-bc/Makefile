@@ -1,5 +1,5 @@
 PORTNAME=	bc
-PORTVERSION=	5.0.2
+PORTVERSION=	5.1.0
 CATEGORIES=	math lang
 PKGNAMEPREFIX=	gh-
 
@@ -20,10 +20,6 @@ CONFIGURE_ARGS=		-G
 CFLAGS+=		-Dstatic_assert=_Static_assert
 
 .include <bsd.port.pre.mk>
-
-#.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-#CFLAGS+=	--std=c99
-#.endif
 
 CONFLICTS_INSTALL=	gnubc
 
