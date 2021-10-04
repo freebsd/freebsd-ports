@@ -16524,3 +16524,4 @@ www/rubygem-lograge-rails613|www/rubygem-lograge-rails61|2021-10-22|Removed: Use
 www/rubygem-rails613|www/rubygem-rails61|2021-10-22|Removed: Use www/rubygem-rails61 instead
 www/rubygem-railties613|www/rubygem-railties61|2021-10-22|Removed: Use www/rubygem-railties61 instead
 www/rubygem-responders-rails613|www/rubygem-responders-rails61|2021-10-22|Removed: Use www/rubygem-responders-rails61 instead
+www/py-pyjwt|www/py-pyjwt1|2021-10-02|Renamed to prepare for the addition of v2.x to the tree

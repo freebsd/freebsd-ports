@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210801:
+  AFFECTS: users of www/py-pyjwt
+  AUTHOR: rhurlin@FreeBSD.org
+
+  To make it possible to easily import py-pyjwt v2.x the current port was
+  moved to a versioned directory.
+
+  If you use portmaster:
+        portmaster -o www/py-pyjwt1 www/py-pyjwt
+  If you use portupgrade:
+        portupgrade -fo www/py-pyjwt1 www/py-pyjwt
+  If you use pkg with binary packages:
+        pkg set -o www/py-pyjwt:www/py-pyjwt1
+
 20210912:
   AFFECTS: x11-wm/cage, x11-wm/hikari, x11-wm/labwc, x11-wm/sway, x11-wm/wayfire
   AUTHOR: jbeich@FreeBSD.org
