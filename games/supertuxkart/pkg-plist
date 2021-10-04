@@ -9,5 +9,4 @@ share/icons/hicolor/48x48/apps/supertuxkart.png
 share/icons/hicolor/512x512/apps/supertuxkart.png
 share/icons/hicolor/64x64/apps/supertuxkart.png
 share/metainfo/supertuxkart.appdata.xml
-share/pixmaps/supertuxkart.png
 @dir %%DATADIR%%/data/editor/maps
