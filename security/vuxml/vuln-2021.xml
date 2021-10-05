@@ -57,6 +57,88 @@
     </dates>
   </vuln>
 
+  <vuln vid="9b4806c1-257f-11ec-9db5-0800270512f4">
+    <topic>redis -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><lt>6.2.6</lt></range>
+      </package>
+      <package>
+	<name>redis6</name>
+	<range><lt>6.0.16</lt></range>
+      </package>
+      <package>
+	<name>redis5</name>
+	<range><lt>5.0.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Redis Team reports:</p>
+	<blockquote cite="https://groups.google.com/g/redis-db/c/GS_9L2KCk9g/m/Q7ZN1R1cDAAJ">
+	  <dl>
+	    <dt>CVE-2021-41099</dt>
+	    <dd>
+	      Integer to heap buffer overflow handling certain string commands
+	      and network payloads, when proto-max-bulk-len is manually configured.
+	    </dd>
+	    <dt>CVE-2021-32762</dt>
+	    <dd>
+	      Integer to heap buffer overflow issue in redis-cli and redis-sentinel
+	      parsing large multi-bulk replies on some older and less common platforms.
+	    </dd>
+	    <dt>CVE-2021-32687</dt>
+	    <dd>
+	      Integer to heap buffer overflow with intsets, when set-max-intset-entries
+	      is manually configured to a non-default, very large value.
+	    </dd>
+	    <dt>CVE-2021-32675</dt>
+	    <dd>
+	      Denial Of Service when processing RESP request payloads with a large
+	      number of elements on many connections.
+	    </dd>
+	    <dt>CVE-2021-32672</dt>
+	    <dd>
+	      Random heap reading issue with Lua Debugger.
+	    </dd>
+	    <dt>CVE-2021-32628</dt>
+	    <dd>
+	      Integer to heap buffer overflow handling ziplist-encoded data types,
+	      when configuring a large, non-default value for hash-max-ziplist-entries,
+	      hash-max-ziplist-value, zset-max-ziplist-entries or zset-max-ziplist-value.
+	    </dd>
+	    <dt>CVE-2021-32627</dt>
+	    <dd>
+	      Integer to heap buffer overflow issue with streams, when configuring
+	      a non-default, large value for proto-max-bulk-len and
+	      client-query-buffer-limit.
+	    </dd>
+	    <dt>CVE-2021-32626</dt>
+	    <dd>
+	      Specially crafted Lua scripts may result with Heap buffer overflow.
+	    </dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41099</cvename>
+      <cvename>CVE-2021-32762</cvename>
+      <cvename>CVE-2021-32687</cvename>
+      <cvename>CVE-2021-32675</cvename>
+      <cvename>CVE-2021-32672</cvename>
+      <cvename>CVE-2021-32628</cvename>
+      <cvename>CVE-2021-32627</cvename>
+      <cvename>CVE-2021-32626</cvename>
+      <url>https://groups.google.com/g/redis-db/c/GS_9L2KCk9g</url>
+    </references>
+    <dates>
+      <discovery>2021-10-04</discovery>
+      <entry>2021-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f84ab297-2285-11ec-9e79-08002789875b">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
