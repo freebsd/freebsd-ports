@@ -1,3 +1,30 @@
+  <vuln vid="f05dbd1f-2599-11ec-91be-001b217b3468">
+    <topic>Bacula-Web -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bacula-web</name>
+	<range><lt>8.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bacula-Web reports:</p>
+	<blockquote cite="https://www.bacula-web.org/releases/2021-07-11-bacula-web-8.4.2/">
+	  <p>Address Smarty CVE</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-26119</cvename>
+      <cvename>CVE-2021-26120</cvename>
+      <url>https://www.bacula-web.org/releases/2021-07-11-bacula-web-8.4.2/</url>
+    </references>
+    <dates>
+      <discovery>2021-07-11</discovery>
+      <entry>2021-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f84ab297-2285-11ec-9e79-08002789875b">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
