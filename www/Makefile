@@ -2281,6 +2281,7 @@
     SUBDIR += twiki-WysiwygPlugin
     SUBDIR += twms
     SUBDIR += typo3-10
+    SUBDIR += typo3-11
     SUBDIR += typo3-9
     SUBDIR += uchiwa
     SUBDIR += ufdbguard
