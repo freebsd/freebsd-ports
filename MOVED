@@ -16504,3 +16504,4 @@ lang/erlang-runtime20|lang/erlang-runtime22|2021-10-04|Has expired: no longer su
 lang/erlang-riak|lang/erlang-runtime22|2021-10-04|Has expired: no longer supported upstream, use lang/erlang >=22
 sysutils/stanchion||2021-10-04|Has expired: dependencies no longer supported upstream
 sysutils/riak-cs||2021-10-04|Has expired: dependencies no longer supported upstream
+devel/py-thriftpy|devel/py-thriftpy2|2021-10-04|Remove deprecated port. Use devel/py-thriftpy2 instead
