@@ -16,7 +16,9 @@ COMMENT?=	ISC Dynamic Host Configuration Protocol server
 
 LICENSE=	MPL20
 
-USES=		gmake
+USES=		cpe gmake
+
+CPE_VENDOR=	isc
 
 PORTREVISION_SERVER=	1
 PORTREVISION_CLIENT=	0
