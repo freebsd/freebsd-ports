@@ -226,13 +226,9 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		zeroize_derive-1.0.1
 CARGO_USE_GITHUB=	yes
 CARGO_BUILD_ARGS=	--package libsignal-jni
-CARGO_INSTALL=		no
-# requires nightly features to build:
-# https://github.com/signalapp/libsignal-client/issues/141
 MAKE_ENV=		CARGO_PROFILE_RELEASE_LTO=thin \
 			OPENSSL_INCLUDE_DIR=${OPENSSLINC} \
-			OPENSSL_LIB_DIR=${OPENSSLLIB} \
-			RUSTC_BOOTSTRAP=1
+			OPENSSL_LIB_DIR=${OPENSSLLIB}
 PLIST_FILES=		lib/libsignal_jni.so
 
 do-install:
