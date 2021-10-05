@@ -11,7 +11,9 @@ COMMENT=	Persistent key-value database with built-in net interface
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES+=		compiler:c11 gmake
+USES+=		compiler:c11 cpe gmake
+
+CPE_VENDOR=	redislabs
 
 OPTIONS_DEFINE=	JEMALLOC TESTS TLS TRIB
 OPTIONS_RADIO=	EXTLUA
