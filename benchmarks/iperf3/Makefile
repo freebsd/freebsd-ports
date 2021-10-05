@@ -13,9 +13,11 @@ COMMENT=	Improved tool to measure TCP and UDP bandwidth
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-USES=		libtool ssl
+USES=		cpe libtool ssl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	iperf_project
 
 PORTDOCS=	README.md RELNOTES.md
 
