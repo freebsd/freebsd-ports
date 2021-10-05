@@ -774,6 +774,7 @@
     SUBDIR += puckman
     SUBDIR += pushover
     SUBDIR += pvpgn
+    SUBDIR += py-2048-py
     SUBDIR += py-cbeams
     SUBDIR += py-discord.py
     SUBDIR += py-fife
