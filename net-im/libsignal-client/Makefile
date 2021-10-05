@@ -1,7 +1,6 @@
 PORTNAME=	libsignal-client
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.3
-PORTREVISION=	2
+DISTVERSION=	0.9.0
 CATEGORIES=	net-im java
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -15,8 +14,7 @@ BUILD_DEPENDS=	protoc:devel/protobuf
 USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
-GH_TUPLE=	signalapp:curve25519-dalek:2694ad3b789635f90f941648ae952f58d59ffc73:curvedalek \
-		signalapp:neon:signal-2021-06-02:neon
+GH_TUPLE=	signalapp:curve25519-dalek:2694ad3b789635f90f941648ae952f58d59ffc73:curvedalek
 USE_LDCONFIG=	yes
 
 CARGO_CRATES=	addr2line-0.14.1 \
@@ -106,6 +104,10 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		memoffset-0.6.1 \
 		miniz_oxide-0.4.4 \
 		multimap-0.8.2 \
+		neon-0.9.0 \
+		neon-build-0.9.0 \
+		neon-macros-0.9.0 \
+		neon-runtime-0.9.0 \
 		num-bigint-0.2.6 \
 		num-bigint-dig-0.6.1 \
 		num-integer-0.1.44 \
@@ -141,10 +143,10 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
 		proc-macro2-1.0.24 \
-		prost-0.7.0 \
-		prost-build-0.7.0 \
-		prost-derive-0.7.0 \
-		prost-types-0.7.0 \
+		prost-0.8.0 \
+		prost-build-0.8.0 \
+		prost-derive-0.8.0 \
+		prost-types-0.8.0 \
 		quote-1.0.9 \
 		rand-0.7.3 \
 		rand-0.8.3 \
