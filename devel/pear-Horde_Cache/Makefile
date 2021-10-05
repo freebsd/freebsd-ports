@@ -5,11 +5,13 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Caching API
 
-USES=		horde php
+USES=		cpe horde php
 USE_HORDE_RUN=	Horde_Compress_Fast \
 		Horde_Exception \
 		Horde_HashTable \
 		Horde_Util
 USE_PHP=	hash
+
+CPE_VENDOR=	horde
 
 .include <bsd.port.mk>
