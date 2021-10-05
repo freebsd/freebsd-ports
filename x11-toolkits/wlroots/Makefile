@@ -83,7 +83,6 @@ VULKAN_BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
-VULKAN_USES=		localbase # Silence -Werror=undef in <vulkan/vulkan_core.h>
 VULKAN_VARS=		RENDERERS+=vulkan
 VULKAN_PLIST_FILES=	include/wlr/types/wlr_drm.h \
 			%%VULKAN%%include/wlr/render/vulkan.h
