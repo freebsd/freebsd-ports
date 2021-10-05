@@ -33,6 +33,8 @@ CMAKE_ON=	HEYOKA_PY_ENABLE_IPO
 CMAKE_ARGS=	-DFREEBSD_PYTHON_DISTVERSION=${PYTHON_DISTVERSION}
 
 do-test: install
+	# testsuite based on instructions in https://bluescarni.github.io/heyoka.py/install.html#verifying-the-installation
+	@${PYTHON_CMD} -c "import heyoka; heyoka.test.run_test_suite();"
 	# integrate and plot an example
 	@${PYTHON_CMD} ${FILESDIR}/example-restricted-three-body-problem.py
 
