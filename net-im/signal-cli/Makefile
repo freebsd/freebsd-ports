@@ -1,6 +1,6 @@
 PORTNAME=	signal-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.5
+DISTVERSION=	0.9.0
 CATEGORIES=	net-im java
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${DISTVERSIONFULL}/:jars
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:jars
@@ -15,7 +15,7 @@ EXTRACT_DEPENDS=	zip:archivers/zip
 BUILD_DEPENDS=		asciidoc>0:textproc/asciidoc
 LIB_DEPENDS=		libsignal_jni.so:net-im/libsignal-client \
 			libzkgroup.so:net-im/zkgroup
-RUN_DEPENDS=		libsignal-client>=0.8.1:net-im/libsignal-client
+RUN_DEPENDS=		libsignal-client>=0.9.0:net-im/libsignal-client
 
 USES=		gmake shebangfix
 USE_GITHUB=	yes
