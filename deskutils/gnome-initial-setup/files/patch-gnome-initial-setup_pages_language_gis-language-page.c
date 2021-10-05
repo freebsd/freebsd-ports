@@ -1,9 +1,11 @@
-$OpenBSD: patch-gnome-initial-setup_pages_region_gis-region-page_c,v 1.1 2014/04/07 10:30:32 ajacoutot Exp $
---- gnome-initial-setup/pages/region/gis-region-page.c.orig	Mon Apr  7 11:02:42 2014
-+++ gnome-initial-setup/pages/region/gis-region-page.c	Mon Apr  7 11:04:03 2014
-@@ -123,15 +123,17 @@ region_changed (CcRegionChooser  *chooser,
-   setlocale (LC_MESSAGES, priv->new_locale_id);
-   gis_driver_locale_changed (driver);
+$OpenBSD: patch-gnome-initial-setup_pages_language_gis-language-page_c,v 1.5 2019/11/02 10:35:35 ajacoutot Exp $
+
+Index: gnome-initial-setup/pages/language/gis-language-page.c
+--- gnome-initial-setup/pages/language/gis-language-page.c.orig
++++ gnome-initial-setup/pages/language/gis-language-page.c
+@@ -126,15 +126,17 @@ language_changed (CcLanguageChooser  *chooser,
+   gis_driver_set_user_language (driver, priv->new_locale_id, TRUE);
+   gtk_widget_set_default_direction (gtk_get_locale_direction ());
  
 -  if (gis_driver_get_mode (driver) == GIS_DRIVER_MODE_NEW_USER) {
 -      if (g_permission_get_allowed (priv->permission)) {
@@ -27,4 +29,4 @@ $OpenBSD: patch-gnome-initial-setup_pages_region_gis-region-page_c,v 1.1 2014/04
 +          }
        }
    }
-   user = act_user_manager_get_user (act_user_manager_get_default (),
+ 

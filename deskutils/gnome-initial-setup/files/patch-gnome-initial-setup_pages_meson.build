@@ -1,0 +1,15 @@
+$OpenBSD: patch-gnome-initial-setup_pages_meson_build,v 1.2 2020/05/14 15:34:52 ajacoutot Exp $
+
+Disable NetworkManager.
+
+Index: gnome-initial-setup/pages/meson.build
+--- gnome-initial-setup/pages/meson.build.orig
++++ gnome-initial-setup/pages/meson.build
+@@ -2,7 +2,6 @@ pages = [
+    'account',
+    'language',
+    'keyboard',
+-   'network',
+    'timezone',
+    'privacy',
+    'goa',
