@@ -1,7 +1,6 @@
 PORTNAME=	zkgroup
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.3
-PORTREVISION=	3
+DISTVERSION=	0.7.4
 CATEGORIES=	net-im
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -14,7 +13,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
 GH_TUPLE=	signalapp:curve25519-dalek:477356e017c7cc2aa168f956786b34690870768f:curvedalek \
-		signalapp:poksho:v0.7.0:poksho
+		signalapp:poksho:8bb8c61c18e7bbe93c094ed91be52b9f96c1c5cd:poksho
 USE_JAVA=	yes
 JAVA_VERSION=	11+
 USE_LDCONFIG=	yes
