@@ -3,7 +3,7 @@
 PORTNAME=	isl
 PORTVERSION=	0.24
 CATEGORIES=	devel math
-MASTER_SITES=	http://isl.gforge.inria.fr/
+MASTER_SITES=	http://isl.gforge.inria.fr/ GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integer Set Library
