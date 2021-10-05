@@ -71,8 +71,10 @@ CLANG_COMMANDS=	\
 		clang-cpp \
 		clang-extdef-mapping \
 		clang-format \
+		clang-nvlink-wrapper \
 		clang-offload-bundler \
 		clang-offload-wrapper \
+		clang-repl \
 		clang-scan-deps \
 		diagtool \
 		hmaptool \
@@ -126,7 +128,6 @@ LLDB_COMMANDS=	\
 
 MLIR_COMMANDS=	\
 		mlir-cpu-runner \
-		mlir-linalg-ods-gen \
 		mlir-lsp-server \
 		mlir-opt \
 		mlir-reduce \
