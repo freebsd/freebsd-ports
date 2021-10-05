@@ -29,8 +29,10 @@ RUN_DEPENDS+=	enscript:print/enscript-${PAPERSIZE}
 
 CONFLICTS=	cvsweb-2.*
 
-USES=		perl5 shebangfix
+USES=		cpe perl5 shebangfix
 SHEBANG_FILES=	cvsweb.cgi
+
+CPE_VENDOR=	freebsd
 
 NO_BUILD=	yes
 NO_ARCH=	yes
