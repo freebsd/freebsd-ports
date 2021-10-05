@@ -9,7 +9,9 @@ COMMENT=	Open-source distributed time series database
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+
+CPE_VENDOR=	influxdata
 
 USE_RC_SUBR=	influxd
 
