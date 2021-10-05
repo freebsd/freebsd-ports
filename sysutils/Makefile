@@ -1052,6 +1052,7 @@
     SUBDIR += py-ploy_ezjail
     SUBDIR += py-plumbum
     SUBDIR += py-power
+    SUBDIR += py-prometheus-zfs
     SUBDIR += py-psutil
     SUBDIR += py-psutil121
     SUBDIR += py-ptyprocess

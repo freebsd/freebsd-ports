@@ -1,0 +1,29 @@
+#! /bin/sh -
+#
+# SPDX-License-Identifier: (BSD-2-Clause or Unlicense)
+#
+# Copyright (c) 2021 Mateusz Piotrowski <0mp@FreeBSD.org>
+#
+
+# Add the following lines to rc.conf(5) to configure the zfsprom service:
+#
+# zfsprom_enable (bool):	Set to "YES" to enable the service.
+#				Default: "NO".
+
+# PROVIDE: zfsprom
+# REQUIRE: DAEMON
+
+. /etc/rc.subr
+
+name="zfsprom"
+rcvar="zfsprom_enable"
+
+load_rc_config "${name}"
+
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/sbin/zfsprom.py"
+command_interpreter="%%PYTHON_CMD%%"
+command="/usr/sbin/daemon"
+command_args="-o /var/log/${name}.log -p ${pidfile} -- ${procname}"
+
+run_rc_command "$1"
