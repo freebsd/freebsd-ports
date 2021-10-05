@@ -10,10 +10,12 @@ COMMENT=	Open-source audio processing library
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.TXT
 
-USES=		cmake
+USES=		cmake cpe
 USE_GITLAB=	yes
 GL_COMMIT=	e1f315f5358d9db5cee35a7a2886425489fcefe8
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	surina
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
