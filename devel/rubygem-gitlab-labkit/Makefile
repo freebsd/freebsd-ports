@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-labkit
 PORTVERSION=	0.21.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,8 @@ COMMENT=	Instrumentation for GitLab
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-actionpack61>=5<7:www/rubygem-actionpack61 \
-		rubygem-activesupport61>=5<7:devel/rubygem-activesupport61 \
+RUN_DEPENDS=	rubygem-actionpack613>=5<7:www/rubygem-actionpack613 \
+		rubygem-activesupport613>=5<7:devel/rubygem-activesupport613 \
 		rubygem-grpc>=1.30.2<2:net/rubygem-grpc \
 		rubygem-jaeger-client>=1.1<2:devel/rubygem-jaeger-client \
 		rubygem-opentracing>=0.4<1.0:devel/rubygem-opentracing \
