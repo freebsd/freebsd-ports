@@ -4682,10 +4682,6 @@ llvm%%LLVM_SUFFIX%%/lib/libLLVMDemangle.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMDlltoolDriver.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMExecutionEngine.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMExegesis.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMExegesisAArch64.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMExegesisMips.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMExegesisPowerPC.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMExegesisX86.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMExtensions.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMFileCheck.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMFrontendOpenACC.a
