@@ -4,6 +4,7 @@ lib/openvpn/plugins/openvpn-plugin-auth-pam.so
 lib/openvpn/plugins/openvpn-plugin-down-root.so
 libexec/openvpn-client.down
 libexec/openvpn-client.up
+man/man5/openvpn-examples.5.gz
 man/man8/openvpn.8.gz
 sbin/openvpn
 sbin/openvpn-client
