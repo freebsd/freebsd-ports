@@ -29,7 +29,9 @@ include/rtc/track.hpp
 include/rtc/utils.hpp
 include/rtc/websocket.hpp
 include/rtc/websocketserver.hpp
+lib/cmake/LibDataChannel/LibDataChannelConfig.cmake
+lib/cmake/LibDataChannel/LibDataChannelConfigVersion.cmake
+lib/cmake/LibDataChannel/LibDataChannelTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/LibDataChannel/LibDataChannelTargets.cmake
 lib/libdatachannel.so
-lib/libdatachannel.so.0.14.4
-share/cmake/libdatachannel/libdatachannel-config-%%CMAKE_BUILD_TYPE%%.cmake
-share/cmake/libdatachannel/libdatachannel-config.cmake
+lib/libdatachannel.so.0.15.2
