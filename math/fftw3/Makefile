@@ -48,6 +48,7 @@ OPTIONS_SUB=		yes
 G77_WRAPPERS_DESC=		Alter Fortran wrappers for use with g77
 
 OPENMP_DESC=			Build OpenMP multithreaded libraries
+OPENMP_USES=			compiler:env
 OPENMP_USES_OFF=		compiler:env
 OPENMP_CONFIGURE_ENABLE=	openmp
 OPENMP_EXTRA_PATCHES=		${FILESDIR}/extrapatch-tests_fftw-bench.c
