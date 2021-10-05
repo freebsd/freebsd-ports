@@ -1,3 +1,35 @@
+  <vuln vid="25b78bdd-25b8-11ec-a341-d4c9ef517024">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.50</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache http server project reports:</p>
+	<blockquote cite="https://httpd.apache.org/security/vulnerabilities_24.html">
+	  <ul>
+	    <li>moderate: null pointer dereference in h2 fuzzing
+	      (CVE-2021-41524)</li>
+	    <li>important: Path traversal and file disclosure vulnerability in
+	      Apache HTTP Server 2.4.49 (CVE-2021-41773)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41524</cvename>
+      <cvename>CVE-2021-41773</cvename>
+      <url>https://httpd.apache.org/security/vulnerabilities_24.html</url>
+    </references>
+    <dates>
+      <discovery>2021-10-05</discovery>
+      <entry>2021-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f05dbd1f-2599-11ec-91be-001b217b3468">
     <topic>Bacula-Web -- Multiple Vulnerabilities</topic>
     <affects>
