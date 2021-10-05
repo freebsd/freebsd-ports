@@ -1,6 +1,6 @@
-TIMESTAMP = 1632228712
-SHA256 (smallstep-cli-v0.17.2_GH0.tar.gz) = d14bf74fe283a30a5a679ff79bff943c6ad149105b4960201f04b884a1bd4d27
-SIZE (smallstep-cli-v0.17.2_GH0.tar.gz) = 1800784
+TIMESTAMP = 1633075204
+SHA256 (smallstep-cli-v0.17.5_GH0.tar.gz) = 0adb0272421ae29ad10df858192487cc73d4b68edda8373480b73a2810120843
+SIZE (smallstep-cli-v0.17.5_GH0.tar.gz) = 1800595
 SHA256 (AndreasBriese-bbloom-46b345b51c96_GH0.tar.gz) = 49b41b2b20e73f31091222e4a6abf12762231cbad9de642d2227c16dae29b4ff
 SIZE (AndreasBriese-bbloom-46b345b51c96_GH0.tar.gz) = 8005
 SHA256 (Masterminds-goutils-v1.1.0_GH0.tar.gz) = 053a61c4b0d78e6978600c99562f04d053993c428d549a20b627151cf1aabbae
