@@ -380,6 +380,7 @@ STANDARD_BACKENDS=	${_FREEBSD_BACKENDS} AMDGPU AVR BPF Hexagon Lanai \
 			MSP430 NVPTX SystemZ WebAssembly XCore
 _BE_LIBS_COMMON=	CodeGen Desc Info
 _BE_LIBS_AArch64=	AsmParser Disassembler Utils
+_BE_LIBS_BACKWARDS_AArch64=Exegesis
 _BE_LIBS_AMDGPU=	AsmParser Disassembler Utils
 _BE_LIBS_ARM=		AsmParser Disassembler Utils
 _BE_LIBS_AVR=		AsmParser Disassembler
@@ -388,17 +389,21 @@ _BE_LIBS_Hexagon=	AsmParser Disassembler
 _BE_LIBS_Lanai=		AsmParser Disassembler
 _BE_LIBS_MSP430=	AsmParser Disassembler
 _BE_LIBS_Mips=		AsmParser Disassembler
+_BE_LIBS_BACKWARDS_Mips=Exegesis
 _BE_LIBS_PowerPC=	AsmParser Disassembler
+_BE_LIBS_BACKWARDS_PowerPC=Exegesis
 _BE_LIBS_RISCV=		AsmParser Disassembler
 _BE_LIBS_Sparc=		AsmParser Disassembler
 _BE_LIBS_SystemZ=	AsmParser Disassembler
 _BE_LIBS_WebAssembly=	AsmParser Disassembler Utils
 _BE_LIBS_X86=		AsmParser Disassembler
+_BE_LIBS_BACKWARDS_X86=Exegesis
 _BE_LIBS_XCore=		Disassembler
 .for BE in FREEBSD NATIVE STANDARD
 .for BE_ARCH in ${${BE}_BACKENDS}
 _BE_LIBS_${BE}+=	${_BE_LIBS_COMMON:S/^/${BE_ARCH}/} \
-			${_BE_LIBS_${BE_ARCH}:S/^/${BE_ARCH}/}
+			${_BE_LIBS_${BE_ARCH}:S/^/${BE_ARCH}/} \
+			${_BE_LIBS_BACKWARDS_${BE_ARCH}:S/$/${BE_ARCH}/}
 .endfor
 .endfor
 BE_PATTERN=${_BE_LIBS_STANDARD:O:S/$/.a/:ts|}
