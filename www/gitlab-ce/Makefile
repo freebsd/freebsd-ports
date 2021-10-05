@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	14.3.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -24,9 +24,9 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	yarn>=1.10.0:www/yarn \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
-	rubygem-rails61>=6.1.3.2<6.1.4:www/rubygem-rails61 \
+	rubygem-rails613>=6.1.3.2<6.1.4:www/rubygem-rails613 \
 	rubygem-bootsnap14>=1.4.6<2.0:devel/rubygem-bootsnap14 \
-	rubygem-responders-rails61>=3.0<4.0:www/rubygem-responders-rails61 \
+	rubygem-responders-rails613>=3.0<4.0:www/rubygem-responders-rails613 \
 	rubygem-sprockets3>=3.7<3.8:devel/rubygem-sprockets3 \
 	rubygem-default_value_for>=3.4.0<3.5.0:devel/rubygem-default_value_for \
 	rubygem-pg>=1.2.3<2:databases/rubygem-pg \
@@ -35,7 +35,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-faraday>=1.0<2:www/rubygem-faraday \
 	rubygem-marginalia>=1.10.0<1.11:databases/rubygem-marginalia \
 	rubygem-declarative_policy>=1.0.0<1.1:security/rubygem-declarative_policy \
-	rubygem-devise47-rails61>=4.7.2<4.8:devel/rubygem-devise47-rails61 \
+	rubygem-devise47-rails613>=4.7.2<4.8:devel/rubygem-devise47-rails613 \
 	rubygem-bcrypt>=3.1.14<3.2:security/rubygem-bcrypt \
 	rubygem-doorkeeper>=5.5.0.rc2<5.6:security/rubygem-doorkeeper \
 	rubygem-doorkeeper-openid_connect>=1.7.5<1.8:security/rubygem-doorkeeper-openid_connect \
@@ -67,7 +67,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-recaptcha>=4.11<5.0:devel/rubygem-recaptcha \
 	rubygem-akismet>=3.0<4.0:devel/rubygem-akismet \
 	rubygem-invisible_captcha>=1.1.0<1.2.0:graphics/rubygem-invisible_captcha \
-	rubygem-devise-two-factor-rails61>=4.0.0<4.1:security/rubygem-devise-two-factor-rails61 \
+	rubygem-devise-two-factor-rails613>=4.0.0<4.1:security/rubygem-devise-two-factor-rails613 \
 	rubygem-rqrcode-rails3>=0.1.7<0.2.0:www/rubygem-rqrcode-rails3 \
 	rubygem-attr_encrypted>=3.1.0<3.2.0:security/rubygem-attr_encrypted \
 	rubygem-u2f0>=0.2.1<0.3.0:net/rubygem-u2f0 \
@@ -175,7 +175,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-gitlab-chronic>=0.10.5<0.11.0:devel/rubygem-gitlab-chronic \
 	rubygem-gitlab_chronic_duration>=0.10.6.2<0.10.7:devel/rubygem-gitlab_chronic_duration \
 	rubygem-rack-proxy06>=0.6.0<0.7.0:www/rubygem-rack-proxy06 \
-	rubygem-sassc-rails-rails61>=2.1.0<2.2.0:textproc/rubygem-sassc-rails-rails61 \
+	rubygem-sassc-rails-rails613>=2.1.0<2.2.0:textproc/rubygem-sassc-rails-rails613 \
 	rubygem-autoprefixer-rails>=10.2.5.1<10.2.6:textproc/rubygem-autoprefixer-rails \
 	rubygem-terser>=1.0.2:textproc/rubygem-terser \
 	rubygem-addressable>=2.8<3:www/rubygem-addressable \
@@ -191,12 +191,12 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-gitlab-labkit>=0.21.1<0.22:devel/rubygem-gitlab-labkit \
 	rubygem-thrift>=0.14.0:devel/rubygem-thrift \
 	rubygem-ruby_parser>=3.15<4.0:devel/rubygem-ruby_parser \
-	rubygem-rails-i18n-rails61>=6.0<7.0:devel/rubygem-rails-i18n-rails61 \
+	rubygem-rails-i18n-rails613>=6.0<7.0:devel/rubygem-rails-i18n-rails613 \
 	rubygem-gettext_i18n_rails>=1.8.0<1.9.0:devel/rubygem-gettext_i18n_rails \
-	rubygem-gettext_i18n_rails_js-rails61>=1.3<2.0:devel/rubygem-gettext_i18n_rails_js-rails61 \
+	rubygem-gettext_i18n_rails_js-rails613>=1.3<2.0:devel/rubygem-gettext_i18n_rails_js-rails613 \
 	rubygem-gettext>=3.3<4:devel/rubygem-gettext \
 	rubygem-batch-loader>=2.0.1<2.1:devel/rubygem-batch-loader \
-	rubygem-peek-rails61>=1.1.0<2.0:devel/rubygem-peek-rails61 \
+	rubygem-peek-rails613>=1.1.0<2.0:devel/rubygem-peek-rails613 \
 	rubygem-snowplow-tracker>=0.6.1<0.7.0:devel/rubygem-snowplow-tracker \
 	rubygem-method_source>=1.0<2:devel/rubygem-method_source \
 	rubygem-webrick>=1.6.1:www/rubygem-webrick \
@@ -232,7 +232,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-flipper-active_support_cache_store-rails61>=0.21.0<0.22:devel/rubygem-flipper-active_support_cache_store-rails61 \
 	rubygem-unleash>=3.2.2<3.3:devel/rubygem-unleash \
 	rubygem-gitlab-experiment>=0.6.4<0.7:devel/rubygem-gitlab-experiment \
-	rubygem-lograge-rails61>=0.11.2<1.0:www/rubygem-lograge-rails61 \
+	rubygem-lograge-rails613>=0.11.2<1.0:www/rubygem-lograge-rails613 \
 	rubygem-grape_logging>=1.7<2.0:devel/rubygem-grape_logging \
 	rubygem-gitlab-net-dns>=0.9.1<0.10:dns/rubygem-gitlab-net-dns \
 	rubygem-countries>=3.0.0<4.0.0:devel/rubygem-countries \
