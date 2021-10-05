@@ -7,8 +7,10 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Autoloader Cache
 
-USES=		horde php
+USES=		cpe horde php
 USE_HORDE_RUN=	Horde_Autoloader
 USE_PHP=	json
+
+CPE_VENDOR=	horde
 
 .include <bsd.port.mk>
