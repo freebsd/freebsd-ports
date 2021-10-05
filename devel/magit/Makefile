@@ -1,9 +1,8 @@
 # Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 
 PORTNAME=	magit
-PORTVERSION=	3.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+DISTVERSION=	3.3.0
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -29,6 +28,8 @@ MAKE_ENV+=	docdir=${DOCSDIR} \
 		lispdir=${PREFIX}/${_ELISPDIR} \
 		LOAD_PATH="-L ${WRKSRC}/lisp -L ${PREFIX}/${EMACS_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/ghub" \
 		VERSION=${PORTVERSION}
+# Parallel build fails if Emacs is built with native compilation enabled
+MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	magit-devel-emacs*
 
