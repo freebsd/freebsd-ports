@@ -15,7 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS= aarch64 amd64 armv7 i386 powerpc64 powerpc64le
 
-USES=		compiler:c11 libtool pathfix pkgconfig
+USES=		compiler:c11 cpe libtool pathfix pkgconfig
+
+CPE_VENDOR=	libunwind_project
 
 CFLAGS_powerpc64=	-maltivec
 CFLAGS_powerpc64le=	-maltivec
