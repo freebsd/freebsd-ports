@@ -12,7 +12,7 @@ COMMENT=	Simple, easy-to-use web based bug tracking system
 RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:databases/adodb5
 
 USE_PHP=	pcre session zlib xml gd
-USES=		dos2unix php:web zip
+USES=		cpe dos2unix php:web zip
 
 NO_BUILD=	yes
 NO_ARCH=	yes
