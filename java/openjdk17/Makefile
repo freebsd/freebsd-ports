@@ -140,9 +140,6 @@ CONFIGURE_ARGS+=	--disable-warnings-as-errors
 .if ${ARCH} == aarch64 || (defined(PPC_ABI) && ${PPC_ABI} == ELFv1)
 CONFIGURE_ARGS+=	--disable-dtrace
 .endif
-.if ${ARCH} != amd64 && !${ARCH:Mpowerpc64*}
-CONFIGURE_ARGS+=	--enable-aot=no
-.endif
 .if ${ARCH} == powerpc64 && ${OSREL:C/\.[0-9]//} == 12
 EXTRA_PATCHES=		${PATCHDIR}/extra-patch-src_hotspot_cpu_ppc_vm__version__ppc.hpp
 .endif
