@@ -61,6 +61,10 @@
     <topic>redis -- multiple vulnerabilities</topic>
     <affects>
       <package>
+	<name>redis-devel</name>
+	<range><lt>7.0.0.20211005</lt></range>
+      </package>
+      <package>
 	<name>redis</name>
 	<range><lt>6.2.6</lt></range>
       </package>
