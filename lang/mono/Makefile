@@ -46,7 +46,7 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/mono-heapviz mono/mini/genmdesc.py mono/tests/test_lldb.py
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
-CONFIGURE_ARGS=	--disable-dtrace --enable-btls
+CONFIGURE_ARGS=	--disable-dtrace
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no
 
 MAKE_ENV=	MONO_SHARED_DIR="${WRKDIR}" \
@@ -61,6 +61,14 @@ PORTSCOUT=	limit:^\d+\.\d+\.[1-9]\d*
 LOCALBASE?=	/usr/local
 .if !exists(${LOCALBASE}/bin/mcs)
 OPTIONS_SLAVE=	MONOLITE
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+PLIST+=	${.CURDIR}/pkg-plist.powerpc
+.else
+CONFIGURE_ARGS+=	--enable-btls
 .endif
 
 post-extract-MONOLITE-on:
