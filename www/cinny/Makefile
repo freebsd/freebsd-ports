@@ -1,8 +1,8 @@
 PORTNAME=	cinny
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/ajbura/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
+MASTER_SITES=	https://github.com/ajbura/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Yet another Matrix client for the web
