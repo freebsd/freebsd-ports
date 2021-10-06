@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20211006:
-AFFECTS: user of misc/freebsd-doc-*
+AFFECTS: users of misc/freebsd-doc-*
 AUTHOR: blackend@FreeBSD.org
 
 The misc/freebsd-doc-* ports have been updated to the new doc toolchain,
