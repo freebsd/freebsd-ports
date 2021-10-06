@@ -21,5 +21,10 @@ CFLAGS+=	-fopenmp
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/pooler man/man1/pooler.1.gz share/applications/pooler.desktop
 
-.include <bsd.port.mk>
+.include <bsd.port.options.mk>
 
+.if ${ARCH} == powerpc
+USES+=		compiler:gcc-c++11-lib
+.endif
+
+.include <bsd.port.mk>
