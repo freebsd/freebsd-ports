@@ -4,6 +4,10 @@ PORTREVISION=	14
 CATEGORIES=	converters
 MASTER_SITES=	https://github.com/jwilk/${PORTNAME}/releases/download/${PORTVERSION}/
 
+# Poppler 21.10 support
+PATCH_SITES=	https://github.com/jwilk/pdf2djvu/commit/
+PATCHFILES=	e528d3ab88c582e8481c9014982263d9c9e992fe.patch:-p1
+
 MAINTAINER=	samy.mahmoudi@gmail.com
 COMMENT=	Creates DjVu files from PDF files
 
