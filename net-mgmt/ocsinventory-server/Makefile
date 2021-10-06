@@ -1,5 +1,5 @@
 PORTNAME=	ocsinventory-server
-PORTVERSION=	2.8
+PORTVERSION=	2.8.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dgeo@centrale-marseille.fr

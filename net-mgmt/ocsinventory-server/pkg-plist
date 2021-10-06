@@ -79,6 +79,7 @@
 %%DATADIR%%/binutils/ocsinventory-injector.pl
 %%DATADIR%%/binutils/ocsinventory-log.README
 %%DATADIR%%/binutils/ocsinventory-log.pl
+%%DATADIR%%/binutils/ocsinventory-powershell-injector.ps1
 %%DATADIR%%/binutils/soap-client.README
 %%DATADIR%%/binutils/soap-client.pl
 %%DATADIR%%/dtd/Interface/get_computers_V1-request.dtd
