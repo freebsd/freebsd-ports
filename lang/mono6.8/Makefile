@@ -98,14 +98,16 @@ X11_CONFIGURE_WITH=	x
 X11_RUN_DEPENDS=	pango>0:x11-toolkits/pango \
 	libgdiplus>0:x11-toolkits/libgdiplus
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc*}
+PLIST+= ${.CURDIR}/pkg-plist.powerpc
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(QEMU_EMULATING) && "${QEMU_EMULATING}" == "1"
 BROKEN=		fails to build under qemu: Roslyn requires more functional POSIX implementation
-.endif
-
-.if ${ARCH:Mpowerpc*}
-PLIST+= ${.CURDIR}/pkg-plist.powerpc
 .endif
 
 post-patch:
