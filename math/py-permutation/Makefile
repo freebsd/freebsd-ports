@@ -1,5 +1,5 @@
 PORTNAME=	permutation
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,6 +9,9 @@ COMMENT=	Permutations of finitely many positive integers
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
@@ -20,5 +23,13 @@ pre-configure: # permutation is officially built with "build" (https://github.co
 		${ECHO} "from setuptools import setup" && \
 		${ECHO} "setup()" \
 	) > ${WRKSRC}/setup.py
+
+do-test: install # instructions from tox.ini
+	@cd ${WRKSRC} && \
+		coverage erase && \
+		coverage run -m pytest --doctest-modules --pyargs permutation && \
+		coverage run -m pytest test README.rst docs/index.rst && \
+		coverage combine && \
+		coverage report
 
 .include <bsd.port.mk>
