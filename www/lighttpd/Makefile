@@ -1,8 +1,7 @@
 # Created by: k@123.org
 
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.59
-PORTREVISION=	1
+PORTVERSION=	1.4.60
 CATEGORIES?=	www
 MASTER_SITES?=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
