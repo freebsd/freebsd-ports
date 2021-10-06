@@ -1,7 +1,7 @@
 # Created by: dikshie
 
 PORTNAME=	networkx
-DISTVERSION=	2.5
+DISTVERSION=	2.6.3
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
