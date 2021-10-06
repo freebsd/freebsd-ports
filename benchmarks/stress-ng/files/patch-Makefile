@@ -1,7 +1,7 @@
---- Makefile.orig	2021-06-07 12:26:04 UTC
+--- Makefile.orig	2021-09-28 10:04:14 UTC
 +++ Makefile
-@@ -21,7 +21,7 @@ VERSION=0.12.10
- # Codename "keen kernel killer"
+@@ -21,7 +21,7 @@ VERSION=0.13.04
+ # Codename "wakeboarding interstellar wombat"
  #
  
 -CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2 -std=gnu99
