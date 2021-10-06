@@ -1,6 +1,6 @@
---- frmts/pdf/pdfdataset.cpp.orig	2021-04-27 09:12:27 UTC
+--- frmts/pdf/pdfdataset.cpp.orig	2021-09-01 09:50:03 UTC
 +++ frmts/pdf/pdfdataset.cpp
-@@ -3584,7 +3584,7 @@ void PDFDataset::FindLayersPoppler()
+@@ -3593,7 +3593,7 @@ void PDFDataset::FindLayersPoppler()
  #if (POPPLER_MAJOR_VERSION >= 1 || POPPLER_MINOR_VERSION >= 72)
                  const char* pszLayerName = (const char*)ocg->getName()->c_str();
  #else
@@ -9,7 +9,14 @@
  #endif
                  AddLayer(pszLayerName);
                  oLayerOCGListPoppler.push_back(std::make_pair(CPLString(pszLayerName), ocg));
-@@ -4969,7 +4969,7 @@ PDFDataset *PDFDataset::Open( GDALOpenInfo * poOpenInf
+@@ -4982,13 +4982,13 @@ PDFDataset *PDFDataset::Open( GDALOpenInfo * poOpenInf
+ #ifdef HAVE_POPPLER
+   if (bUseLib.test(PDFLIB_POPPLER))
+   {
+-    GooString* poMetadata = poCatalogPoppler->readMetadata();
++    auto poMetadata = poCatalogPoppler->readMetadata();
+     if (poMetadata)
+     {
  #if (POPPLER_MAJOR_VERSION >= 1 || POPPLER_MINOR_VERSION >= 72)
          const char* pszContent = poMetadata->c_str();
  #else
@@ -18,3 +25,13 @@
  #endif
          if (pszContent != nullptr &&
              STARTS_WITH(pszContent, "<?xpacket begin="))
+@@ -4996,7 +4996,9 @@ PDFDataset *PDFDataset::Open( GDALOpenInfo * poOpenInf
+             const char * const apszMDList[2] = { pszContent, nullptr };
+             poDS->SetMetadata(const_cast<char**>(apszMDList), "xml:XMP");
+         }
++#if (POPPLER_MAJOR_VERSION < 21 || (POPPLER_MAJOR_VERSION == 21 && POPPLER_MINOR_VERSION <= 9))
+         delete poMetadata;
++#endif
+     }
+ 
+     /* Read Info object */
