@@ -1,0 +1,12 @@
+[
+{
+  type: install
+  message: <<EOM
+kafkacat has been renamed to kcat
+If you're upgrading from earlier release to 1.7.0 please consider:
+- renaming any kafkacat.conf files to kcat.conf
+- renaming any KAFKACAT_CONF environment variables to KCAT_CONF
+https://github.com/edenhill/kcat/releases/tag/1.7.0
+EOM
+}
+]

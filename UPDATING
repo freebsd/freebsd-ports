@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20211006:
+  AFFECTS: users of net/kafkacat
+  AUTHOR: sergey@akhmatov.ru
+
+  kafkacat has been renamed to kcat upstream.
+  So switch to net/kcat instead.
+
 20211004:
   AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org
