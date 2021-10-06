@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=	--without-bash-malloc \
 			--enable-disabled-builtins \
 			--with-libiconv-prefix=${ICONV_PREFIX}
 
-MAKE_ARGS+=	TERMCAP_LIB=-lncursesw
+MAKE_ARGS+=	TERMCAP_LIB=-ltinfow
 
 .if empty(PKGNAMESUFFIX)
 CONFLICTS+=	bash-static-[0-9]*
