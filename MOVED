@@ -16505,3 +16505,4 @@ lang/erlang-riak|lang/erlang-runtime22|2021-10-04|Has expired: no longer support
 sysutils/stanchion||2021-10-04|Has expired: dependencies no longer supported upstream
 sysutils/riak-cs||2021-10-04|Has expired: dependencies no longer supported upstream
 devel/py-thriftpy|devel/py-thriftpy2|2021-10-04|Remove deprecated port. Use devel/py-thriftpy2 instead
+net/kafkacat|net/kcat|2021-10-06|Renamed
