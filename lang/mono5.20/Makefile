@@ -13,7 +13,7 @@ COMMENT=	Open source implementation of .NET Development Framework
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc powerpc64
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		bash:shells/bash \
@@ -63,6 +63,12 @@ PORTSCOUT=	limit:^\d+\.\d+\.[1-9]\d*
 #LOCALBASE?=	/usr/local
 .if !exists(${LOCALBASE}/bin/mcs)
 OPTIONS_SLAVE=	MONOLITE
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc*}
+PLIST+=	${.CURDIR}/pkg-plist.powerpc
 .endif
 
 .include <bsd.port.pre.mk>
