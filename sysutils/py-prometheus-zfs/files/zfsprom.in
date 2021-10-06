@@ -12,6 +12,7 @@
 
 # PROVIDE: zfsprom
 # REQUIRE: DAEMON
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 
