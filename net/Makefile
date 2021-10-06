@@ -300,10 +300,10 @@
     SUBDIR += jwhois
     SUBDIR += k6
     SUBDIR += kafka
-    SUBDIR += kafkacat
     SUBDIR += kalarmcal
     SUBDIR += kamailio
     SUBDIR += kcalutils
+    SUBDIR += kcat
     SUBDIR += kdenetwork
     SUBDIR += kdenetwork-filesharing
     SUBDIR += kea
