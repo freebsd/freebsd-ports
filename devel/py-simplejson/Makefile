@@ -13,7 +13,8 @@ COMMENT=	Simple, fast, extensible JSON encoder/decoder
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	simplejson_project
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
