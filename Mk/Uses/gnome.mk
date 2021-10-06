@@ -215,7 +215,7 @@ introspection_BUILD_DEPENDS=	g-ir-scanner:devel/gobject-introspection
 introspection_LIB_DEPENDS=	libgirepository-1.0.so:devel/gobject-introspection
 introspection_RUN_DEPENDS=	g-ir-scanner:devel/gobject-introspection
 introspection_USE_GNOME_IMPL=	glib20
-introspection_MAKE_ENV=		GI_SCANNER_DISABLE_CACHE=1 XDG_CACHE_HOME=${WRKDIR}
+introspection_MAKE_ENV=		GI_SCANNER_DISABLE_CACHE=1
 
 gconf2_LIB_DEPENDS=	libgconf-2.so:devel/gconf2
 gconf2_USE_GNOME_IMPL=	orbit2 libxml2 gtk20

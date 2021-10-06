@@ -1623,9 +1623,11 @@ TEST_ENV?=		${MAKE_ENV}
 PKG_ENV+=		PORTSDIR=${PORTSDIR}
 CONFIGURE_ENV+=	XDG_DATA_HOME=${WRKDIR} \
 				XDG_CONFIG_HOME=${WRKDIR} \
+				XDG_CACHE_HOME=${WRKDIR}/.cache \
 				HOME=${WRKDIR}
 MAKE_ENV+=		XDG_DATA_HOME=${WRKDIR} \
 				XDG_CONFIG_HOME=${WRKDIR} \
+				XDG_CACHE_HOME=${WRKDIR}/.cache \
 				HOME=${WRKDIR}
 # Respect TMPDIR passed via make.conf or similar and pass it down
 # to configure and make.
