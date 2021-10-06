@@ -2,6 +2,7 @@
 
 PORTNAME=	eduke32
 PORTVERSION=	20210703
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://dukeworld.com/eduke32/synthesis/${PORTVERSION}-${GITREVISION}/:eduke32 \
 		http://www.duke4.org/files/nightfright/hrp/:hrp \
