@@ -201,8 +201,4 @@
 %%DATADIR%%/0f-06-04.34
 %%DATADIR%%/0f-06-05.01
 %%DATADIR%%/0f-06-08.22
-%%DATADIR%%/microcode_amd.bin
-%%DATADIR%%/microcode_amd_fam15h.bin
-%%DATADIR%%/microcode_amd_fam16h.bin
-%%DATADIR%%/microcode_amd_fam17h.bin
 /boot/firmware/intel-ucode.bin

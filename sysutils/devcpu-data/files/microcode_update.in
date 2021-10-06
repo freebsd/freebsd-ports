@@ -12,7 +12,7 @@
 # microcode_update_datadir (str):	Directory, microcode updates stored in.
 #					Default is "%%DATADIR%%"
 # microcode_update_cpus (str):		A list of cpus to update on startup, or "ALL" for all.
-#					Example: microcode_update_cpus_cpus="0 CPU0"
+#					Example: microcode_update_cpus="0 1"
 #					Set to "ALL" by default. 
 # microcode_update_flags (str):		Flags for cpucontrol(8).
 
@@ -40,11 +40,11 @@ microcode_update_prepare()
 microcode_update_start()
 {
 	echo "Updating CPU Microcode..."
-	if [ "${microcode_cpus}" = "ALL" ]; then
+	if [ "${microcode_update_cpus}" = "ALL" ]; then
 		ncpu=`/sbin/sysctl -n hw.ncpu`
 		cpus=`jot ${ncpu} 0`;
 	else
-		cpus=${microcode_cpus}
+		cpus=${microcode_update_cpus}
 	fi
 	for i in ${cpus}; do
 		${CMT} -u ${microcode_update_flags} \
@@ -52,7 +52,7 @@ microcode_update_start()
                     logger -p daemon.notice -t microcode_update || \
 		    (echo "Microcode Update Failed." && exit 1)
 	done
-	if [ "${microcode_cpus}" = "ALL" ]; then
+	if [ "${microcode_update_cpus}" = "ALL" ]; then
                 CPUCONTROL_UPDATED=$(cpucontrol -h 2>&1 | grep -q -- -e; echo $?)
                 if [ ${CPUCONTROL_UPDATED} -ne 0 ]; then
                         echo "Please update your system in order to update CPU microcode."
@@ -70,9 +70,19 @@ microcode_update_start()
 load_rc_config $name
 
 # Set default values
+if [ -n "${microcode_cpus}" ]; then
+	if [ -n "${microcode_update_cpus}" ]; then
+		echo "Warning: Ignoring deprecated rc variable, microcode_cpus."
+	else
+		echo "Warning: rc variable microcode_cpus is deprecated.
+Warning: Set microcode_udpate_cpus instead."
+		microcode_update_cpus="${microcode_cpus}"
+        fi
+fi
+
 : ${microcode_update_enable="NO"}
 : ${microcode_update_datadir="%%DATADIR%%"}
-: ${microcode_cpus="ALL"}
+: ${microcode_update_cpus="ALL"}
 : ${microcode_update_flags=""}
 
 run_rc_command "$1"

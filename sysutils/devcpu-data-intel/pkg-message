@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+Refer to the devcpu-data installation notes to enable Intel microcode updates.
+EOM
+}
+]

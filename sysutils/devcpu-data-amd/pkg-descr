@@ -1,0 +1,2 @@
+This port uses the cpuctl(4) microcode update facility to keep your AMD
+processor's firmware up-to-date.

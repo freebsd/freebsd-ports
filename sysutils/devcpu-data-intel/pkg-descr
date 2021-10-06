@@ -1,0 +1,9 @@
+This port uses the cpuctl(4) microcode update facility to keep your Intel
+processor's firmware up-to-date.
+
+Updating your microcode can help to mitigate certain potential security
+vulnerabilities in CPUs as well as address certain functional issues that could,
+for example, result in unpredictable system behavior such as hangs, crashes,
+unexpected reboots, data errors, etc.
+
+WWW: https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files

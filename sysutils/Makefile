@@ -255,6 +255,8 @@
     SUBDIR += desktop-installer
     SUBDIR += detox
     SUBDIR += devcpu-data
+    SUBDIR += devcpu-data-amd
+    SUBDIR += devcpu-data-intel
     SUBDIR += devstat
     SUBDIR += dfc
     SUBDIR += di
