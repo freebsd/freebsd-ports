@@ -122,7 +122,7 @@ DISTFILES:=	${DISTFILES:M*\:src} \
 post-patch:
 	@${REINPLACE_CMD} 's,gdb,${LOCALBASE}/bin/gdb,' ${WRKSRC}/src/etc/rust-gdb
 .if defined(NIGHTLY_DATE)
-	@${REINPLACE_CMD} '/^rustfmt:/d' ${WRKSRC}/src/stage0.txt
+	@${REINPLACE_CMD} 's/"rustfmt"/"nothx"/' ${WRKSRC}/src/stage0.json
 .endif
 # Disable vendor checksums
 	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
