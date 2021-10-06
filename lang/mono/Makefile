@@ -13,7 +13,7 @@ COMMENT=	Open source implementation of .NET Development Framework
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc powerpc64
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		bash:shells/bash \
@@ -65,7 +65,7 @@ OPTIONS_SLAVE=	MONOLITE
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc
+.if ${ARCH:Mpowerpc*}
 PLIST+=	${.CURDIR}/pkg-plist.powerpc
 .else
 CONFIGURE_ARGS+=	--enable-btls

@@ -1,6 +1,6 @@
---- configure.ac.orig	2018-04-18 10:51:42.000000000 +0300
-+++ configure.ac	2018-06-24 02:38:19.860780000 +0300
-@@ -3271,6 +3271,8 @@
+--- configure.ac.orig	2018-08-24 15:19:14 UTC
++++ configure.ac
+@@ -3298,6 +3298,8 @@ case "$host" in
  			BTLS_PLATFORM=i386
  			;;
  		  openbsd*|freebsd*|kfreebsd-gnu*)
@@ -9,7 +9,7 @@
  		        ;;
  		esac
  		;;
-@@ -3295,6 +3297,8 @@
+@@ -3322,6 +3324,8 @@ case "$host" in
  			boehm_supported=false
  			;;
  		  openbsd*|freebsd*|kfreebsd-gnu*)
@@ -18,3 +18,16 @@
  			;;
  		  mingw*)
  			;;
+@@ -3355,11 +3359,10 @@ case "$host" in
+ 		INTL="intl"
+ 		;;
+ 	macppc-*-openbsd* | powerpc*-*-linux* | powerpc-*-openbsd* | \
+-        powerpc-*-sysv* | powerpc-*-darwin* | powerpc-*-netbsd* | powerpc-*-freebsd* )
++        powerpc-*-sysv* | powerpc-*-darwin* | powerpc-*-netbsd* | powerpc*-*-freebsd* )
+ 		if test "x$ac_cv_sizeof_void_p" = "x8"; then
+ 			TARGET=POWERPC64;
+ 			CPPFLAGS="$CPPFLAGS -D__mono_ppc__ -D__mono_ppc64__"
+-			CFLAGS="$CFLAGS -mminimal-toc"
+ 		else
+ 			TARGET=POWERPC;
+ 			CPPFLAGS="$CPPFLAGS -D__mono_ppc__"
