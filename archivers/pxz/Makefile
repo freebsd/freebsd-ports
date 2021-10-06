@@ -25,6 +25,12 @@ MAKE_ENV+=	BINDIR=${PREFIX}/bin \
 
 MAKE_ARGS+=	CC="${CC}"
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USES+=		compiler:gcc-c++11-lib
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pxz
 
