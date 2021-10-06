@@ -63,6 +63,7 @@ man/man1/epic5.1.gz
 %%DATADIR%%/script/epic-crypt-gpg
 %%DATADIR%%/script/epic-crypt-gpg-aa
 %%DATADIR%%/script/epic.py
+%%DATADIR%%/script/epicrc.example
 %%DATADIR%%/script/files
 %%DATADIR%%/script/find_ssl_root_certs
 %%DATADIR%%/script/floodprot
@@ -102,6 +103,7 @@ man/man1/epic5.1.gz
 %%DATADIR%%/script/pipe
 %%DATADIR%%/script/python
 %%DATADIR%%/script/reconnect
+%%DATADIR%%/script/reconnect.orig
 %%DATADIR%%/script/rejoin
 %%DATADIR%%/script/renumber
 %%DATADIR%%/script/revdcc
