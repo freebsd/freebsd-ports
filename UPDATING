@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20211006:
+AFFECTS: user of misc/freebsd-doc-*
+AUTHOR: blackend@FreeBSD.org
+
+The misc/freebsd-doc-* ports have been updated to the new doc toolchain,
+and use a somewhat different arrangement of directories and symlinks,
+which pkg 1.17 does not handle well.
+
+Users are encouraged to delete the misc/freebsd-doc-* ports, then
+reinstall the new ones without using the pkg upgrade facility.
+
+20211006:
   AFFECTS: users of net/kafkacat
   AUTHOR: sergey@akhmatov.ru
 
