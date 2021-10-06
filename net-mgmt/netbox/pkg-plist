@@ -697,7 +697,7 @@
 %%DATADIR%%/templates/inc/comments_panel.html
 %%DATADIR%%/templates/inc/custom_fields_panel.html
 %%DATADIR%%/templates/inc/filter_list.html
-%%DATADIR%%/templates/inc/image_attachments.html
+%%DATADIR%%/templates/inc/image_attachments_panel.html
 %%DATADIR%%/templates/inc/messages.html
 %%DATADIR%%/templates/inc/paginator.html
 %%DATADIR%%/templates/inc/panel_table.html

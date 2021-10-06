@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.4
+DISTVERSION=	3.0.5
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -39,6 +39,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2.7<3.3:www/py-django32@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj32-graphene-django>=2.15.0<3:devel/py-dj32-graphene-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.1<4:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>=3.2.0<4:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.4<3.5:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.8.0<1:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=8.2.0<9:graphics/py-pillow@${PY_FLAVOR} \
