@@ -1,5 +1,5 @@
 PORTNAME=	plemoljp-nf
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.1
 PORTREVISION=	0
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	https://github.com/yuru7/PlemolJP/releases/download/v${PORTVERSION}/
