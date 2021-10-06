@@ -1,0 +1,66 @@
+#!/bin/sh
+
+# PROVIDE: php_fpm_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# php_fpm_exporter_enable (bool):
+#   Set to NO by default.
+#   Set it to YES to enable php_fpm_exporter.
+# php_fpm_exporter_user (string):
+#   Set user that php_fpm_exporter will run under.
+#   Default is "www".
+# php_fpm_exporter_group (string):
+#   Set group that php_fpm_exporter will run under.
+#   Default is "www".
+# php_fpm_exporter_args (string):
+#   Set extra arguments to pass to php_fpm_exporter.
+#   See https://github.com/hipages/php-fpm_exporter#usage for details.
+#   Default is "".
+# php_fpm_exporter_scrape_uri (string):
+#   Set FastCGI address, e.g. "unix:///var/run/php-fpm.sock;/status".
+#   Default is "tcp://127.0.0.1:9000/status".
+
+. /etc/rc.subr
+
+name=php_fpm_exporter
+rcvar=php_fpm_exporter_enable
+start_cmd="${name}_start"
+start_precmd=php_fpm_exporter_startprecmd
+pidfile="/var/run/${name}.pid"
+
+load_rc_config $name
+
+: ${php_fpm_exporter_enable:="NO"}
+: ${php_fpm_exporter_user:="www"}
+: ${php_fpm_exporter_group:="www"}
+: ${php_fpm_exporter_args:=""}
+: ${php_fpm_exporter_scrape_uri:="tcp://127.0.0.1:9000/status"}
+
+command="/usr/sbin/daemon"
+procname="/usr/local/bin/php-fpm_exporter"
+command_args="-f -T ${name} -p ${pidfile} \
+    /usr/bin/env ${procname} server \
+    --phpfpm.scrape-uri \"${php_fpm_exporter_scrape_uri}\" \
+    ${php_fpm_exporter_args}"
+
+php_fpm_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install \
+            -o ${php_fpm_exporter_user} \
+            -g ${php_fpm_exporter_group} \
+            -m 0644 \
+            /dev/null ${pidfile};
+    fi
+}
+
+php_fpm_exporter_start()
+{
+    limits -C daemon su -m www -c "${command} ${command_args}"
+}
+
+run_rc_command "$1"
