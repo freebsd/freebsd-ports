@@ -1,8 +1,10 @@
 Don't pass --target when CC/CXX contains clang
 
---- third_party/rust/cc/src/lib.rs.orig	2020-04-10 00:57:23 UTC
+diff --git third_party/rust/cc/src/lib.rs third_party/rust/cc/src/lib.rs
+index 9d133a0..273e520 100644
+--- third_party/rust/cc/src/lib.rs
 +++ third_party/rust/cc/src/lib.rs
-@@ -2344,28 +2344,7 @@ impl Tool {
+@@ -2667,24 +2667,7 @@ impl Tool {
      }
  
      fn with_features(path: PathBuf, clang_driver: Option<&str>, cuda: bool) -> Self {
@@ -10,11 +12,7 @@ Don't pass --target when CC/CXX contains clang
 -        let family = if let Some(fname) = path.file_name().and_then(|p| p.to_str()) {
 -            if fname.contains("clang-cl") {
 -                ToolFamily::Msvc { clang_cl: true }
--            } else if fname.contains("cl")
--                && !fname.contains("cloudabi")
--                && !fname.contains("uclibc")
--                && !fname.contains("clang")
--            {
+-            } else if fname.ends_with("cl") || fname == "cl.exe" {
 -                ToolFamily::Msvc { clang_cl: false }
 -            } else if fname.contains("clang") {
 -                match clang_driver {

@@ -1,8 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	thunderbird
-DISTVERSION=	78.14.0
-PORTREVISION=	1
+DISTVERSION=	91.2.0
 CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
@@ -11,13 +10,13 @@ DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
-BUILD_DEPENDS=	nspr>=4.26:devel/nspr \
-		nss>=3.56:security/nss \
+BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
+		nss>=3.68:security/nss \
 		icu>=67.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=2.6.6:print/harfbuzz \
+		harfbuzz>=2.8.1:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
-		png>=1.6.35:graphics/png \
+		png>=1.6.37:graphics/png \
 		libvpx>=1.8.2:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
@@ -45,17 +44,10 @@ PORTNAME_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
 
 SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}/defaults/pref/${PORTNAME}.js
 
-OPTIONS_DEFINE=	LIGHTNING
-OPTIONS_DEFAULT=CANBERRA LIGHTNING
+OPTIONS_DEFAULT=CANBERRA
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MLIGHTNING}
-MOZ_OPTIONS+=	--enable-calendar
-.else
-MOZ_OPTIONS+=	--disable-calendar
-.endif
 
 post-extract:
 	@${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON:R}|;s|@MOZILLA@|${MOZILLA}|' \

@@ -4,7 +4,7 @@ diff --git config/system-headers.mozbuild config/system-headers.mozbuild
 index 7620b4d00623..09d3db5ca8c0 100644
 --- config/system-headers.mozbuild
 +++ config/system-headers.mozbuild
-@@ -1299,6 +1299,19 @@ if CONFIG['MOZ_ENABLE_LIBPROXY']:
+@@ -1292,6 +1292,19 @@ if CONFIG['MOZ_ENABLE_LIBPROXY']:
          'proxy.h',
      ]
  
@@ -28,16 +28,16 @@ diff --git dom/base/moz.build dom/base/moz.build
 index 8e19020315ae..2fcdbb6f7b42 100644
 --- dom/base/moz.build
 +++ dom/base/moz.build
-@@ -543,6 +543,9 @@ if CONFIG['MOZ_BUILD_APP'] in ['browser', 'mobile/android', 'xulrunner']:
- if CONFIG['MOZ_X11']:
-     CXXFLAGS += CONFIG['TK_CFLAGS']
+@@ -546,6 +546,9 @@ if CONFIG["MOZ_BUILD_APP"] in ["browser", "mobile/android", "xulrunner"]:
+ if CONFIG["MOZ_X11"]:
+     CXXFLAGS += CONFIG["TK_CFLAGS"]
  
-+if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
-+    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
++if CONFIG["MOZ_SYSTEM_HARFBUZZ"]:
++    CXXFLAGS += CONFIG["MOZ_HARFBUZZ_CFLAGS"]
 +
- GeneratedFile('UseCounterList.h', script='gen-usecounters.py',
-               entry_point='use_counter_list', inputs=['UseCounters.conf'])
- 
+ GeneratedFile(
+     "UseCounterList.h",
+     script="gen-usecounters.py",
 diff --git gfx/graphite2/geckoextra/moz.build gfx/graphite2/geckoextra/moz.build
 new file mode 100644
 index 0000000000000..24e8d7a03274a
@@ -112,35 +112,35 @@ diff --git gfx/moz.build gfx/moz.build
 index 771f652e837a..3b358d84e384 100644
 --- gfx/moz.build
 +++ gfx/moz.build
-@@ -13,6 +13,14 @@ with Files('wr/**'):
- if CONFIG['MOZ_TREE_CAIRO']:
-     DIRS += ['cairo']
+@@ -13,6 +13,14 @@ with Files("wr/**"):
+ if CONFIG["MOZ_TREE_CAIRO"]:
+     DIRS += ["cairo"]
  
-+if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
-+    DIRS += ['graphite2/geckoextra']
++if CONFIG["MOZ_SYSTEM_GRAPHITE2"]:
++    DIRS += ["graphite2/geckoextra"]
 +else:
-+    DIRS += ['graphite2/src' ]
++    DIRS += ["graphite2/src" ]
 +
-+if not CONFIG['MOZ_SYSTEM_HARFBUZZ']:
-+    DIRS += ['harfbuzz/src']
++if not CONFIG["MOZ_SYSTEM_HARFBUZZ"]:
++    DIRS += ["harfbuzz/src"]
 +
  DIRS += [
-     '2d',
-     'ycbcr',
+     "2d",
+     "ycbcr",
 @@ -21,8 +29,6 @@ DIRS += [
-     'qcms',
-     'gl',
-     'layers',
--    'graphite2/src',
--    'harfbuzz/src',
-     'ots/src',
-     'thebes',
-     'ipc',
+     "qcms",
+     "gl",
+     "layers",
+-    "graphite2/src",
+-    "harfbuzz/src",
+     "ots/src",
+     "thebes",
+     "ipc",
 diff --git gfx/skia/generate_mozbuild.py gfx/skia/generate_mozbuild.py
 index e06ae3457a47..93faa61594a3 100755
 --- gfx/skia/generate_mozbuild.py
 +++ gfx/skia/generate_mozbuild.py
-@@ -117,6 +117,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
+@@ -98,6 +98,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
          '-Wno-unused-private-field',
      ]
  
@@ -154,7 +154,7 @@ diff --git gfx/skia/moz.build gfx/skia/moz.build
 index 2118677ca3a8..e4978b413784 100644
 --- gfx/skia/moz.build
 +++ gfx/skia/moz.build
-@@ -493,6 +493,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
+@@ -490,6 +490,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
          '-Wno-unused-private-field',
      ]
  
@@ -168,49 +168,49 @@ diff --git gfx/thebes/moz.build gfx/thebes/moz.build
 index 56f1b9fe3f4b..0ac1100b0df3 100644
 --- gfx/thebes/moz.build
 +++ gfx/thebes/moz.build
-@@ -284,7 +284,13 @@ if CONFIG['MOZ_WAYLAND']:
+@@ -287,7 +287,13 @@ if CONFIG["MOZ_WAYLAND"]:
  
- LOCAL_INCLUDES += CONFIG['SKIA_INCLUDES']
+ LOCAL_INCLUDES += CONFIG["SKIA_INCLUDES"]
  
--DEFINES['GRAPHITE2_STATIC'] = True
-+if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
-+    CXXFLAGS += CONFIG['MOZ_GRAPHITE2_CFLAGS']
+-DEFINES["GRAPHITE2_STATIC"] = True
++if CONFIG["MOZ_SYSTEM_GRAPHITE2"]:
++    CXXFLAGS += CONFIG["MOZ_GRAPHITE2_CFLAGS"]
 +else:
-+    DEFINES['GRAPHITE2_STATIC'] = True
++    DEFINES["GRAPHITE2_STATIC"] = True
 +
-+if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
-+    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
++if CONFIG["MOZ_SYSTEM_HARFBUZZ"]:
++    CXXFLAGS += CONFIG["MOZ_HARFBUZZ_CFLAGS"]
  
- if CONFIG['CC_TYPE'] == 'clang':
+ if CONFIG["CC_TYPE"] == "clang":
      # Suppress warnings from Skia header files.
 diff --git intl/unicharutil/util/moz.build intl/unicharutil/util/moz.build
 index cb1233c56d7e..06fb1f9f174b 100644
 --- intl/unicharutil/util/moz.build
 +++ intl/unicharutil/util/moz.build
 @@ -25,4 +25,7 @@ UNIFIED_SOURCES += [
-     'nsUnicodeProperties.cpp',
+     "nsUnicodeProperties.cpp",
  ]
  
-+if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
-+    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
++if CONFIG["MOZ_SYSTEM_HARFBUZZ"]:
++    CXXFLAGS += CONFIG["MOZ_HARFBUZZ_CFLAGS"]
 +
- FINAL_LIBRARY = 'xul'
+ FINAL_LIBRARY = "xul"
 diff --git netwerk/dns/moz.build netwerk/dns/moz.build
 index 79c26e3e7001..c4d93bc5f7dc 100644
 --- netwerk/dns/moz.build
 +++ netwerk/dns/moz.build
-@@ -86,3 +86,6 @@ USE_LIBS += ['icu']
+@@ -105,3 +105,6 @@ USE_LIBS += ["icu"]
  
- if CONFIG['CC_TYPE'] in ('clang', 'gcc'):
-     CXXFLAGS += ['-Wno-error=shadow']
+ if CONFIG["CC_TYPE"] in ("clang", "gcc"):
+     CXXFLAGS += ["-Wno-error=shadow"]
 +
-+if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
-+    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
++if CONFIG["MOZ_SYSTEM_HARFBUZZ"]:
++    CXXFLAGS += CONFIG["MOZ_HARFBUZZ_CFLAGS"]
 diff --git old-configure.in old-configure.in
 index 95a58b634593..b614eef85c89 100644
 --- old-configure.in
 +++ old-configure.in
-@@ -2639,6 +2639,27 @@ dnl ========================================================
+@@ -2303,6 +2303,27 @@ dnl ========================================================
  
  AC_SUBST(MOZ_LINUX_32_SSE2_STARTUP_ERROR)
  
@@ -242,46 +242,46 @@ diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 24f940e1ed7e..079a575adec3 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -248,6 +248,12 @@ if CONFIG['MOZ_SYSTEM_PNG']:
- if CONFIG['MOZ_SYSTEM_WEBP']:
-     OS_LIBS += CONFIG['MOZ_WEBP_LIBS']
+@@ -247,6 +247,12 @@ if CONFIG["MOZ_SYSTEM_PNG"]:
+ if CONFIG["MOZ_SYSTEM_WEBP"]:
+     OS_LIBS += CONFIG["MOZ_WEBP_LIBS"]
  
-+if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
-+    OS_LIBS += CONFIG['MOZ_GRAPHITE2_LIBS']
++if CONFIG["MOZ_SYSTEM_GRAPHITE2"]:
++    OS_LIBS += CONFIG["MOZ_GRAPHITE2_LIBS"]
 +
-+if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
-+    OS_LIBS += CONFIG['MOZ_HARFBUZZ_LIBS']
++if CONFIG["MOZ_SYSTEM_HARFBUZZ"]:
++    OS_LIBS += CONFIG["MOZ_HARFBUZZ_LIBS"]
 +
- if CONFIG['MOZ_SYSTEM_LIBEVENT']:
-     OS_LIBS += CONFIG['MOZ_LIBEVENT_LIBS']
+ if CONFIG["MOZ_SYSTEM_LIBEVENT"]:
+     OS_LIBS += CONFIG["MOZ_LIBEVENT_LIBS"]
  
 diff --git toolkit/moz.configure toolkit/moz.configure
 index 9297e4d6f501..d8e273887e4b 100644
 --- toolkit/moz.configure
 +++ toolkit/moz.configure
-@@ -937,6 +937,25 @@ add_old_configure_assignment('FT2_LIBS',
- add_old_configure_assignment('FT2_CFLAGS',
-                              ft2_info.cflags)
+@@ -1055,6 +1055,25 @@ set_config("FT2_LIBS", ft2_info.libs)
+ add_old_configure_assignment("FT2_LIBS", ft2_info.libs)
+ add_old_configure_assignment("FT2_CFLAGS", ft2_info.cflags)
  
 +# Graphite2
 +# ==============================================================
-+option('--with-system-graphite2',
++option("--with-system-graphite2",
 +       help="Use system graphite2 (located with pkgconfig)")
 +
-+system_graphite2 = pkg_check_modules('MOZ_GRAPHITE2', 'graphite2',
-+                                     when='--with-system-graphite2')
++system_graphite2 = pkg_check_modules("MOZ_GRAPHITE2", "graphite2",
++                                     when="--with-system-graphite2")
 +
-+set_config('MOZ_SYSTEM_GRAPHITE2', depends_if(system_graphite2)(lambda _: True))
++set_config("MOZ_SYSTEM_GRAPHITE2", depends_if(system_graphite2)(lambda _: True))
 +
 +# HarfBuzz
 +# ==============================================================
-+option('--with-system-harfbuzz',
++option("--with-system-harfbuzz",
 +       help="Use system harfbuzz (located with pkgconfig)")
 +
-+system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 2.6.6',
-+                                    when='--with-system-harfbuzz')
++system_harfbuzz = pkg_check_modules("MOZ_HARFBUZZ", "harfbuzz >= 2.7.4",
++                                    when="--with-system-harfbuzz")
 +
-+set_config('MOZ_SYSTEM_HARFBUZZ', depends_if(system_harfbuzz)(lambda _: True))
++set_config("MOZ_SYSTEM_HARFBUZZ", depends_if(system_harfbuzz)(lambda _: True))
  
- # Remote agent (part of CDP based remote protocol)
- # ==============================================================
+ # Remote agent
+ # (partial implementation of Chromium Remote Debugging Protocol)
