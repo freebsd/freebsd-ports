@@ -29,7 +29,6 @@ CONFIGURE_ARGS=	--disable-inotify --enable-search=no --enable-playlist=no \
 		--enable-introspection=yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_CAM_LIB_H=1 -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.brasero.gschema.xml

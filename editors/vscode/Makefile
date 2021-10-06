@@ -98,8 +98,7 @@ PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
 DATADIR=	${PREFIX}/share/code-oss
 TMPDIR=		${WRKDIR}
 
-MAKE_ENV+=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH} \
-		XDG_CACHE_HOME=${WRKDIR}/.cache
+MAKE_ENV+=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH}
 # Don't download electron binary distribution on electron node_modules installation
 MAKE_ENV+=	ELECTRON_SKIP_BINARY_DOWNLOAD=1
 # Don't download browser binaries on playwright node_modules installation

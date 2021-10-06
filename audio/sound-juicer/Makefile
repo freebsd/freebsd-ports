@@ -26,7 +26,6 @@ USES=		compiler:c11 desktop-file-utils gettext gnome meson \
 USE_GSTREAMER1=	cdparanoia flac good vorbis
 USE_GNOME=	gtk30
 INSTALLS_ICONS=	yes
-MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.sound-juicer.gschema.xml
