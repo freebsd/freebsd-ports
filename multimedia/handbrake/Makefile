@@ -1,8 +1,12 @@
 # Created by: Andrew Thompson <andy@fud.org.nz>
 
 PORTNAME=	handbrake
-DISTVERSION=	1.4.1
+DISTVERSION=	1.4.2
 CATEGORIES=	multimedia
+MASTER_SITES=	https://github.com/HandBrake/HandBrake/releases/download/${DISTVERSION}/
+MASTER_SITES+=	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/:contrib
+DISTNAME=	HandBrake-${DISTVERSION}
+DISTFILES=	${DISTNAME}-source.tar.bz2 ${CONTRIB_FILES:S/$/:contrib/}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	naito.yuichiro@gmail.com
@@ -50,10 +54,6 @@ CONTRIB_FILES=	fdk-aac-2.0.1.tar.gz \
 		x265_3.5.tar.gz \
 		zimg-3.0.1.tar.gz
 
-MASTER_SITES+=	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/:contrib
-
-DISTFILES+=	${CONTRIB_FILES:S/$/:contrib/}
-
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in contrib/libdvdread/libdvdread-5.0.0-6-gcb1ae87/src/dvd_input.c (dlopen'ed)
 LIB_DEPENDS+=	libdvdcss.so:multimedia/libdvdcss
@@ -63,10 +63,6 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	V=1 ACLOCAL=${LOCALBASE}/bin/aclocal
 
 BINARY_ALIAS=   python3=${PYTHON_VERSION}
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	HandBrake
-GH_PROJECT=	HandBrake
 
 CONFIGURE_ARGS=	--force --enable-x265
 CONFIGURE_TARGET=	build
@@ -123,8 +119,6 @@ pre-configure:
 	cd ${DISTDIR}/${DIST_SUBDIR} && \
 	    ${INSTALL_DATA} ${CONTRIB_FILES} \
 	    ${WRKSRC}/download
-# Install version information.
-	${CP} ${FILESDIR}/version.txt ${WRKSRC}
 # Following patches reduces warnings with clang.
 	${CP} ${FILESDIR}/P00-freebsd-libavutil-x86-asm-h.patch ${WRKSRC}/contrib/ffmpeg
 	${CP} ${FILESDIR}/P01-freebsd-ifo_types.h.patch ${WRKSRC}/contrib/libdvdread
