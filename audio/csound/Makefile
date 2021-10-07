@@ -21,6 +21,8 @@ USES=		alias bison cmake compiler:c++11-lib cpe eigen:3 localbase ncurses python
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
+CPE_VENDOR=	csounds
+
 CFLAGS_powerpc=	-maltivec
 CFLAGS_powerpcspe=	-DPFFFT_SIMD_DISABLE
 CFLAGS_powerpc64=	-maltivec
