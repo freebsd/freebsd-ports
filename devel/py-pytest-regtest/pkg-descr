@@ -1,0 +1,10 @@
+pytest-regtest is a pytest-plugin for implementing regression tests.
+Compared to functional testing a regression test does not test if
+software produces correct results, instead a regression test checks
+if software behaves the same way as it did before introduced changes.
+
+pytest-regtest allows capturing selected output which then can be
+compared to the captured output from former runs.
+
+WWW: https://pypi.org/project/pytest-regtest/
+WWW: https://gitlab.com/uweschmitt/pytest-regtest
