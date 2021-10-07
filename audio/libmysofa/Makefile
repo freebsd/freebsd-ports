@@ -11,8 +11,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	node:www/node
 
-USES=		cmake
+USES=		cmake cpe
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	symonics
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hoene
