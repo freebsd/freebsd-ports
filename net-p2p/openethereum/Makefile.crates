@@ -1,9 +1,3 @@
-GH_TUPLE=	openethereum:app-dirs-rs:0b37f9481ce29e9d5174ad185bca695b206368eb:app_dirs \
-		paritytech:bn:6079255e65793038b9a6e5292203eab482737cc2:bn \
-		paritytech:rust-ctrlc:b523017108bb2d571a7a69bd97bc406e63bc7a9d:ctrlc \
-		paritytech:rust-secp256k1:9791e79f21a5309dcb6e0bd254b1ef88fca2f1f4:ethsecpk \
-		matter-labs:eip1962:ece6cbabc41948db4200e41f0bfdab7ab94c7af8:eth_pairings \
-		gnosis:reth:573e128487d5651f301e21faa97fc8e80f91dee8:rethutil
 CARGO_CRATES=	addr2line-0.14.1 \
 		adler-1.0.2 \
 		adler32-1.2.0 \
@@ -435,5 +429,10 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		xdg-2.2.0 \
 		xml-rs-0.7.0 \
 		xmltree-0.7.0 \
-		zeroize-1.2.0
-CARGO_USE_GITHUB=	yes
+		zeroize-1.2.0 \
+		eth_pairings,eth_pairings_repr_derive,fixed_width_field,fixed_width_group_and_loop,simple_uint@git+https://github.com/matter-labs/eip1962.git?rev=ece6cbabc41948db4200e41f0bfdab7ab94c7af8\#ece6cbabc41948db4200e41f0bfdab7ab94c7af8 \
+		eth-secp256k1@git+https://github.com/paritytech/rust-secp256k1?rev=9791e79f21a5309dcb6e0bd254b1ef88fca2f1f4\#9791e79f21a5309dcb6e0bd254b1ef88fca2f1f4 \
+		reth-util@git+https://github.com/gnosis/reth.git?rev=573e128\#573e128487d5651f301e21faa97fc8e80f91dee8 \
+		app_dirs@git+https://github.com/openethereum/app-dirs-rs\#0b37f9481ce29e9d5174ad185bca695b206368eb \
+		bn@git+https://github.com/paritytech/bn\#6079255e65793038b9a6e5292203eab482737cc2 \
+		ctrlc@git+https://github.com/paritytech/rust-ctrlc.git\#b523017108bb2d571a7a69bd97bc406e63bc7a9d
