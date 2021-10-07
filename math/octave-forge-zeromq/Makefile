@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 LIB_DEPENDS+=	libzmq.so:net/libzmq4
 
+USES=		pkgconfig
+
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${DISTNAME}
