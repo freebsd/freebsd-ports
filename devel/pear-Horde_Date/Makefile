@@ -7,7 +7,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Date package
 
-USES=	horde
+USES=		horde cpe
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Nls \
 		Horde_Translation
