@@ -15,7 +15,6 @@ BUILD_DEPENDS=	protoc:devel/protobuf
 USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
-GH_TUPLE=	signalapp:curve25519-dalek:2694ad3b789635f90f941648ae952f58d59ffc73:curvedalek
 USE_LDCONFIG=	yes
 
 CARGO_CRATES=	addr2line-0.14.1 \
@@ -234,8 +233,8 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		x25519-dalek-1.1.0 \
 		zeroize-1.3.0 \
-		zeroize_derive-1.0.1
-CARGO_USE_GITHUB=	yes
+		zeroize_derive-1.0.1 \
+		curve25519-dalek@git+https://github.com/signalapp/curve25519-dalek?branch=3.0.0-lizard2\#2694ad3b789635f90f941648ae952f58d59ffc73
 CARGO_BUILD_ARGS=	--package libsignal-jni
 MAKE_ENV=		CARGO_PROFILE_RELEASE_LTO=thin \
 			OPENSSL_INCLUDE_DIR=${OPENSSLINC} \
