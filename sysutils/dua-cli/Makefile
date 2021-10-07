@@ -1,7 +1,6 @@
 PORTNAME=	dua-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.14.4
-PORTREVISION=	2
+DISTVERSION=	2.14.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -23,8 +22,8 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		cassowary-0.3.0 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		clap-3.0.0-beta.2 \
-		clap_derive-3.0.0-beta.2 \
+		clap-3.0.0-beta.4 \
+		clap_derive-3.0.0-beta.4 \
 		colored-2.0.0 \
 		const-sha1-0.2.0 \
 		core-foundation-sys-0.8.2 \
@@ -39,7 +38,6 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		crosstermion-0.8.1 \
 		ctor-0.1.20 \
 		diff-0.1.12 \
-		doc-comment-0.3.3 \
 		either-1.6.1 \
 		filesize-0.2.0 \
 		fixedbitset-0.4.0 \
@@ -70,7 +68,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		objc-0.2.7 \
 		once_cell-1.8.0 \
 		open-2.0.0 \
-		os_str_bytes-2.4.0 \
+		os_str_bytes-3.1.0 \
 		output_vt100-0.1.2 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.3 \
@@ -84,7 +82,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		quote-1.0.9 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
-		redox_syscall-0.2.9 \
+		redox_syscall-0.2.10 \
 		redox_termios-0.1.2 \
 		scopeguard-1.1.0 \
 		signal-hook-0.3.9 \
@@ -93,10 +91,10 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		smallvec-1.6.1 \
 		strsim-0.10.0 \
 		syn-1.0.74 \
-		sysinfo-0.19.2 \
+		sysinfo-0.20.0 \
 		termcolor-1.1.2 \
 		termion-1.5.6 \
-		textwrap-0.12.1 \
+		textwrap-0.14.2 \
 		time-0.1.44 \
 		tinyvec-1.3.1 \
 		tinyvec_macros-0.1.0 \
