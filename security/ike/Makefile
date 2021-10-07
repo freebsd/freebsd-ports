@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-release
 MAINTAINER=	mgrooms@shrew.net
 COMMENT=	Shrew Soft IKE daemon and client tools
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
 
 USE_RC_SUBR=	iked
 USES=		bison cmake:insource libedit localbase:ldflags tar:tbz2 ssl
