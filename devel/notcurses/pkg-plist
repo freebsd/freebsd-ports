@@ -9,6 +9,7 @@ include/ncpp/Cell.hh
 include/ncpp/CellStyle.hh
 include/ncpp/Direct.hh
 include/ncpp/FDPlane.hh
+include/ncpp/Input.hh
 include/ncpp/Menu.hh
 include/ncpp/MultiSelector.hh
 include/ncpp/NCAlign.hh

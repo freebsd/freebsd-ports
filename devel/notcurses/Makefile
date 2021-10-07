@@ -1,6 +1,6 @@
 PORTNAME=	notcurses
 DISTVERSIONPREFIX=	v
-DISTVERSION=	${ABIVERSION}.4.3
+DISTVERSION=	${ABIVERSION}.4.5
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/:docs
 DISTFILES=	${PORTNAME}-doc-${DISTVERSION}.tar.gz:docs
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libunistring.so:devel/libunistring
 
 USES=		cmake:noninja compiler:c++17-lang localbase \
-		ncurses:port pkgconfig readline
+		ncurses:port pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	dankamongmen
 USE_LDCONFIG=	yes
