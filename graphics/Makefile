@@ -940,6 +940,7 @@
     SUBDIR += quat-gui
     SUBDIR += quesa
     SUBDIR += quesoglc
+    SUBDIR += quickqanava
     SUBDIR += qvge
     SUBDIR += radiance
     SUBDIR += radius-engine
