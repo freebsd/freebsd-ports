@@ -12,18 +12,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 USES=		cargo gettext gnome meson pkgconfig python:build shebangfix sqlite ssl
-USE_GITHUB=	nodefault
 USE_GITLAB=	yes
 USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
 USE_GSTREAMER1=	good libav soup vorbis
-GH_TUPLE=	gtk-rs:gtk3-rs:1ca4fbcc30ec882f6079f26018c30ef1ceb8a2e2:gtk3 \
-		gtk-rs:gtk4-rs:534f63e66a2a3883770fe110a8a556a4b40f84b3:gtk4
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
 GL_PROJECT=	Shortwave
 GL_COMMIT=	9bfc5ee2d857035cf0d3c72e211b3d76b85d7414
-GL_TUPLE=	https://gitlab.freedesktop.org:gstreamer:gstreamer-rs:f00c57cd6f2a0912e04c10887cedbe95be7d5dea:gstreamer \
-		bilelmoussaoui:libadwaita-rs:2d09b6b566bc0fa2497612768cf0c41f582acdd7:libadwaita
 SHEBANG_FILES=	build-aux/meson/postinstall.py
 MAKE_ENV=	${CARGO_ENV}
 GLIB_SCHEMAS=	de.haeckerfelix.Shortwave.gschema.xml
@@ -275,31 +270,11 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		winreg-0.6.2 \
-		ws2_32-sys-0.2.1
-CARGO_USE_GITHUB=	yes
-CARGO_USE_GITLAB=	yes
-CARGO_GIT_SUBDIR=	gstreamer:gstreamer-audio:gstreamer-audio \
-			gstreamer:gstreamer:gstreamer \
-			gtk3:cairo-rs:cairo \
-			gtk3:cairo-sys-rs:cairo/sys \
-			gtk3:gdk-pixbuf-sys:gdk-pixbuf/sys \
-			gtk3:gdk-pixbuf:gdk-pixbuf \
-			gtk3:gdk:gdk \
-			gtk3:gio-sys:gio/sys \
-			gtk3:gio:gio \
-			gtk3:glib-sys:glib/sys \
-			gtk3:glib:glib \
-			gtk3:gobject-sys:glib/gobject-sys \
-			gtk3:graphene-sys:graphene/sys \
-			gtk3:graphene:graphene \
-			gtk3:gtk:gtk \
-			gtk3:pango-sys:pango/sys \
-			gtk3:pango:pango \
-			gtk4:gdk-sys:gdk4/sys \
-			gtk4:gdk:gdk4 \
-			gtk4:gtk-sys:gtk4/sys \
-			gtk4:gtk:gtk4 \
-			libadwaita:adw:libadwaita
+		ws2_32-sys-0.2.1 \
+		gstreamer,gstreamer-audio,gstreamer-audio-sys,gstreamer-base,gstreamer-base-sys,gstreamer-sys@git+https://gitlab.freedesktop.org/gstreamer/gstreamer-rs\#f00c57cd6f2a0912e04c10887cedbe95be7d5dea \
+		cairo-rs,cairo-sys-rs,gdk-pixbuf,gdk-pixbuf-sys,gio,gio-sys,glib,glib-macros,glib-sys,gobject-sys,graphene-rs,graphene-sys,pango,pango-sys@git+https://github.com/gtk-rs/gtk3-rs\#1ca4fbcc30ec882f6079f26018c30ef1ceb8a2e2 \
+		gdk4,gdk4-sys,gsk4,gsk4-sys,gtk4,gtk4-macros,gtk4-sys@git+https://github.com/gtk-rs/gtk4-rs\#534f63e66a2a3883770fe110a8a556a4b40f84b3 \
+		libadwaita,libadwaita-sys@git+https://gitlab.gnome.org/bilelmoussaoui/libadwaita-rs\#2d09b6b566bc0fa2497612768cf0c41f582acdd7
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
