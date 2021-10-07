@@ -816,7 +816,7 @@ bitmark:*:872:
 bitmark-recorder:*:873:
 librespeed:*:874:
 # free: 875
-# free: 876
+_lms:*:876:
 gemserv:*:877:
 gerbera:*:878:
 _encrypted-dns:*:879:

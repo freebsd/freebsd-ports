@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# PROVIDE: lms
+# REQUIRE: LOGIN 
+# KEYWORD: shutdown
+
+# Add these lines to /etc/rc.conf
+# to enable this service:
+#
+# lms_enable (bool):	Set to NO by default.
+#			Set it to YES to enable lms.
+# lms_config (path):	Set to %%PREFIX%%/etc/lms.conf
+#			by default.
+
+. /etc/rc.subr
+
+load_rc_config $name
+: ${lms_config:="%%PREFIX/etc/lms.conf"}
+
+name=lms
+rcvar=lms_enable
+lms_command="%%PREFIX%%/bin/lms"
+lms_args="${lms_config}"
+lms_user=lms
+lms_group=lms
+required_dirs="/var/run/lms"
+pidfile="/var/run/lms/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -f ${lms_command} ${lms_args}"
+
+run_rc_command "$1"

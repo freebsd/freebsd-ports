@@ -821,7 +821,7 @@ bitmark:*:872:872::0:0:Bitmark Property System:/var/lib/bitmarkd:/usr/sbin/nolog
 bitmark-recorder:*:873:873::0:0:Bitmark Property Recorder:/var/lib/recorderd:/usr/sbin/nologin
 librespeed:*:874:874::0:0:LibreSpeed user:/nonexistent:/usr/sbin/nologin
 # free: 875
-# free: 876
+_lms:*:876:876::0:0:Lightweight Music Server user:/nonexistent:/usr/sbin/nologin
 gemserv:*:877:877::0:0:gemserv user:/nonexistent:/usr/sbin/nologin
 gerbera:*:878:878::0:0:Gerbera DLNA Media Server:/nonexistent:/usr/sbin/nologin
 _encrypted-dns:*:879:879::0:0:encrypted-dns user:/var/empty:/usr/sbin/nologin
