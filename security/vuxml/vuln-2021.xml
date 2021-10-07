@@ -7,7 +7,7 @@
       </package>
       <package>
 	<name>jenkins-lts</name>
-	<range><lt>2.303.1</lt></range>
+	<range><lt>2.303.2</lt></range>
       </package>
     </affects>
     <description>
