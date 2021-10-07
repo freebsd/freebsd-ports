@@ -1,3 +1,43 @@
+  <vuln vid="d001c189-2793-11ec-8fb1-206a8a720317">
+    <topic>Apache httpd -- Path Traversal and Remote Code Execution</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><ge>2.4.49</ge><lt>2.4.51</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache http server project reports:</p>
+	<blockquote cite="https://httpd.apache.org/security/vulnerabilities_24.html">
+	  <p>critical: Path Traversal and Remote Code Execution in Apache HTTP
+	  Server 2.4.49 and 2.4.50 (incomplete fix of CVE-2021-41773)
+	  (CVE-2021-42013).</p>
+	  <p>It was found that the fix for CVE-2021-41773 in Apache HTTP
+	  Server 2.4.50 was insufficient. An attacker could use a path
+	  traversal attack to map URLs to files outside the directories
+	  configured by Alias-like directives.</p>
+	  <p>If files outside of these directories are not protected by the
+	  usual default configuration "require all denied", these requests
+	  can succeed. If CGI scripts are also enabled for these aliased
+	  pathes, this could allow for remote code execution.</p>
+	  <p>This issue only affects Apache 2.4.49 and Apache 2.4.50 and not
+	  earlier versions.</p>
+	  <p>Acknowledgements: Reported by Juan Escobar from Dreamlab
+	  Technologies, Fernando Munoz from NULL Life CTF Team, and
+	  Shungo Kumasaka</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-42013</cvename>
+    </references>
+    <dates>
+      <discovery>2021-10-07</discovery>
+      <entry>2021-10-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9bad457e-b396-4452-8773-15bec67e1ceb">
     <topic>jenkins -- Jenkins core bundles vulnerable version of the commons-httpclient library</topic>
     <affects>
