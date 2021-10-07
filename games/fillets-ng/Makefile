@@ -27,7 +27,7 @@ PORTDATA=	*
 
 DATAVERSION=	1.0.1
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64le
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
 
 DESKTOP_ENTRIES="Fish Fillets - Next Generation" \
 		"" \
