@@ -1,7 +1,6 @@
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.3
-PORTREVISION=	2
+DISTVERSION=	1.6.4
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -55,7 +54,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		crossbeam-queue-0.3.2 \
 		crossbeam-utils-0.8.5 \
 		crossterm-0.19.0 \
-		crossterm-0.20.0 \
+		crossterm-0.21.0 \
 		crossterm_winapi-0.7.0 \
 		crossterm_winapi-0.8.0 \
 		csv-1.1.6 \
@@ -76,7 +75,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		flate2-1.0.20 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
-		getrandom-0.1.16 \
 		getrandom-0.2.3 \
 		gif-0.11.2 \
 		git2-0.13.20 \
@@ -92,7 +90,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		image-0.23.14 \
 		indexmap-1.7.0 \
 		instant-0.1.10 \
-		is_executable-0.1.2 \
+		is_executable-1.0.1 \
 		itoa-0.4.7 \
 		jobserver-0.1.22 \
 		jpeg-decoder-0.1.22 \
@@ -129,14 +127,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		onig-6.2.0 \
 		onig_sys-69.7.0 \
 		open-1.7.1 \
+		open-2.0.0 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.3 \
 		pathdiff-0.2.0 \
 		percent-encoding-2.1.0 \
-		phf-0.8.0 \
-		phf_generator-0.8.0 \
-		phf_macros-0.8.0 \
-		phf_shared-0.8.0 \
+		phf-0.9.0 \
+		phf_generator-0.9.0 \
+		phf_macros-0.9.0 \
+		phf_shared-0.9.0 \
 		pkg-config-0.3.19 \
 		plist-1.2.0 \
 		png-0.16.8 \
@@ -145,15 +144,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		proc-macro2-1.0.28 \
 		proc-status-0.1.1 \
 		quote-1.0.9 \
-		rand-0.7.3 \
 		rand-0.8.4 \
-		rand_chacha-0.2.2 \
 		rand_chacha-0.3.1 \
-		rand_core-0.5.1 \
 		rand_core-0.6.3 \
-		rand_hc-0.2.0 \
 		rand_hc-0.3.1 \
-		rand_pcg-0.2.1 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
 		redox_syscall-0.2.9 \
@@ -187,7 +181,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		syntect-4.6.0 \
 		tempfile-3.2.0 \
 		termimad-0.10.3 \
-		termimad-0.14.0 \
+		termimad-0.16.1 \
 		terminal-clipboard-0.2.1 \
 		termux-clipboard-0.1.0 \
 		textwrap-0.11.0 \
@@ -210,7 +204,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		vec_map-0.8.2 \
 		version_check-0.9.3 \
 		walkdir-2.3.2 \
-		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
 		weezl-0.1.5 \
 		winapi-0.3.9 \
