@@ -1,4 +1,6 @@
 # LTO Support
+# This file enforces Link Time Optimization for ports.
+# In order to use it, add USE_LTO=yes to your /etc/make.conf.
 
 LTO_Include_MAINTAINER=	pkubaj@FreeBSD.org
 
