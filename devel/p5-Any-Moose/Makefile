@@ -1,5 +1,5 @@
 PORTNAME=	Any-Moose
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -11,7 +11,7 @@ COMMENT=	Perl extension for/to use Moose or Mouse modules
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-#TEST_DEPENDS=	p5-Moose>0:devel/p5-Moose
+DEPRECATED=	Use devel/p5-Moo instead
 
 USES=		perl5
 USE_PERL5=	configure
