@@ -7,7 +7,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde API for tracking the history of an object
 
-USES=	horde
+USES=		horde cpe
 USE_HORDE_RUN=	Horde_Db \
 		Horde_Exception
 
