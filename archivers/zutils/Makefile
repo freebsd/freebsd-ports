@@ -10,9 +10,10 @@ COMMENT=	Utilities for searching in bzip2, gzip, lzip, and xz archives
 
 LICENSE=	GPLv2
 
-USES=		tar:lz
+USES=		cpe tar:lz
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	nongnu
 
 INFO=		zutils
 
