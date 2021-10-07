@@ -1,0 +1,30 @@
+- workaround for hexl's failure to find cpu_features
+
+--- CMakeLists.txt.orig	2021-10-07 07:53:10 UTC
++++ CMakeLists.txt
+@@ -137,17 +137,17 @@ message(STATUS "CMAKE_INSTALL_PREFIX:     ${CMAKE_INST
+ #------------------------------------------------------------------------------
+ # Third-party code...
+ #------------------------------------------------------------------------------
+-find_package(CpuFeatures CONFIG)
+-if (NOT CpuFeatures_FOUND)
++#find_package(CpuFeatures CONFIG)
++if (FALSE AND NOT CpuFeatures_FOUND)
+   message(STATUS "CpuFeatures: pre-installed CpuFeatures not found")
+   add_subdirectory(cmake/third-party/cpu-features)
+ else()
+-  message(STATUS "CpuFeatures: found")
+-  add_library(cpu_features ALIAS CpuFeatures::cpu_features)
+-  get_target_property(
+-    CpuFeatures_INCLUDE_DIR
+-    CpuFeatures::cpu_features
+-    INTERFACE_INCLUDE_DIRECTORIES)
++#  message(STATUS "CpuFeatures: found")
++#  add_library(cpu_features ALIAS CpuFeatures::cpu_features)
++#  get_target_property(
++#    CpuFeatures_INCLUDE_DIR
++#    CpuFeatures::cpu_features
++#    INTERFACE_INCLUDE_DIRECTORIES)
+ endif()
+ 
+ if (HEXL_TESTING OR HEXL_BENCHMARK OR HEXL_DEBUG)

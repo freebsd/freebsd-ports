@@ -221,6 +221,7 @@
     SUBDIR += heaan
     SUBDIR += heimdal
     SUBDIR += helib
+    SUBDIR += hexl
     SUBDIR += highwayhash
     SUBDIR += hitch
     SUBDIR += hlfl
