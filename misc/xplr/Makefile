@@ -1,7 +1,6 @@
 PORTNAME=	xplr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.7
-PORTREVISION=	1
+DISTVERSION=	0.15.0
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -14,9 +13,9 @@ USES=		cargo desktop-file-utils gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	sayanarijit
 
-CARGO_CRATES=	ansi-to-tui-0.4.0 \
-		anyhow-1.0.43 \
-		assert_cmd-2.0.0 \
+CARGO_CRATES=	ansi-to-tui-0.4.1 \
+		anyhow-1.0.44 \
+		assert_cmd-2.0.1 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.3.2 \
@@ -35,11 +34,12 @@ CARGO_CRATES=	ansi-to-tui-0.4.0 \
 		crossbeam-epoch-0.9.5 \
 		crossbeam-utils-0.8.5 \
 		crossterm-0.20.0 \
+		crossterm-0.21.0 \
 		crossterm_winapi-0.8.0 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
 		difflib-0.4.0 \
-		dirs-3.0.2 \
+		dirs-4.0.0 \
 		dirs-sys-0.3.6 \
 		doc-comment-0.3.3 \
 		dtoa-0.4.8 \
@@ -56,7 +56,7 @@ CARGO_CRATES=	ansi-to-tui-0.4.0 \
 		itoa-0.4.8 \
 		js-sys-0.3.53 \
 		lazy_static-1.4.0 \
-		libc-0.2.101 \
+		libc-0.2.103 \
 		linked-hash-map-0.5.4 \
 		lock_api-0.4.5 \
 		log-0.4.14 \
@@ -68,7 +68,7 @@ CARGO_CRATES=	ansi-to-tui-0.4.0 \
 		mime_guess-2.0.3 \
 		mio-0.7.13 \
 		miow-0.3.7 \
-		mlua-0.6.2 \
+		mlua-0.6.4 \
 		natord-1.0.9 \
 		ntapi-0.3.6 \
 		num-integer-0.1.44 \
@@ -103,7 +103,7 @@ CARGO_CRATES=	ansi-to-tui-0.4.0 \
 		serde_cbor-0.11.2 \
 		serde_derive-1.0.130 \
 		serde_json-1.0.67 \
-		serde_yaml-0.8.20 \
+		serde_yaml-0.8.21 \
 		signal-hook-0.3.10 \
 		signal-hook-mio-0.2.1 \
 		signal-hook-registry-1.4.0 \
