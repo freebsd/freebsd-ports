@@ -15,11 +15,10 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
 
 USES=		cargo
-
-USE_GITHUB=	nodefault
-GH_COMMIT=	f6d450f
-GH_TUPLE=	RedisJSON:redisjson:${GH_COMMIT}:redisjson \
-		RedisJSON:jsonpath:14af7aa5435f3e676ceb3441ad78b9c8cb3ffa3a:jsonpath_lib
+USE_GITHUB=	yes
+GH_ACCOUNT=	RedisJSON
+GH_PROJECT=	RedisJSON
+GH_TAGNAME=	f6d450f
 
 CARGO_CRATES=	aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
@@ -102,11 +101,8 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		wyz-0.2.0
-
-CARGO_USE_GITHUB=	yes
-
-WRKSRC=		${WRKDIR}/RedisJSON-${GH_COMMIT}
+		wyz-0.2.0 \
+		jsonpath_lib@git+https://github.com/RedisJSON/jsonpath.git?branch=generic_json_path\#14af7aa5435f3e676ceb3441ad78b9c8cb3ffa3a
 
 PLIST_FILES=	lib/librejson.so
 
