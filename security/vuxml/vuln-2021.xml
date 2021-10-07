@@ -1,3 +1,35 @@
+  <vuln vid="9bad457e-b396-4452-8773-15bec67e1ceb">
+    <topic>jenkins -- Jenkins core bundles vulnerable version of the commons-httpclient library</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.315</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.303.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2021-10-06/">
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-2475 / CVE-2014-3577</h5>
+	  <p>Jenkins core bundles vulnerable version of the commons-httpclient library</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3577</cvename>
+      <url>https://www.jenkins.io/security/advisory/2021-10-06/</url>
+    </references>
+    <dates>
+      <discovery>2021-10-06</discovery>
+      <entry>2021-10-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="25b78bdd-25b8-11ec-a341-d4c9ef517024">
     <topic>Apache httpd -- Multiple vulnerabilities</topic>
     <affects>
