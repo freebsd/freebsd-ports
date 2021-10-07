@@ -21,7 +21,7 @@ USES=		cmake compiler:c11 cpe sdl
 USE_GITHUB=	yes
 USE_SDL=	sdl2
 
-CPE_PROJECT=	milkytracker_project
+CPE_VENDOR=	milkytracker_project
 
 GH_PROJECT=	MilkyTracker
 
