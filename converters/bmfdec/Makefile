@@ -1,5 +1,5 @@
 PORTNAME=	bmfdec
-DISTVERSION=	g20200512
+DISTVERSION=	g20211007
 CATEGORIES=	converters devel sysutils
 
 MAINTAINER=	takawata@FreeBSD.org
@@ -9,7 +9,7 @@ LICENSE=	GPLv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pali
-GH_TAGNAME=	7f47b07
+GH_TAGNAME=	3c19ef7
 
 PLIST_FILES=	${BINARIES:S,^,bin/&,}
 
