@@ -1,6 +1,6 @@
 PORTNAME=	libsignal-client
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.9.6
 CATEGORIES=	net-im java
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -21,6 +21,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		adler-1.0.2 \
 		aead-0.4.1 \
 		aes-0.7.4 \
+		aes-gcm-0.9.2 \
 		aes-gcm-siv-0.10.1 \
 		aho-corasick-0.7.15 \
 		anyhow-1.0.38 \
@@ -32,6 +33,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		backtrace-0.3.56 \
 		base64-0.12.3 \
 		bitflags-1.2.1 \
+		blake2-0.9.2 \
 		block-buffer-0.9.0 \
 		block-modes-0.8.1 \
 		block-padding-0.2.1 \
@@ -42,8 +44,9 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		cast-0.2.3 \
 		cc-1.0.67 \
 		cesu8-1.1.0 \
-		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
+		chacha20-0.7.2 \
+		chacha20poly1305-0.8.2 \
 		chrono-0.4.19 \
 		cipher-0.3.0 \
 		clap-2.33.3 \
@@ -56,6 +59,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		crossbeam-deque-0.8.0 \
 		crossbeam-epoch-0.9.2 \
 		crossbeam-utils-0.8.2 \
+		crypto-mac-0.8.0 \
 		crypto-mac-0.9.1 \
 		cslice-0.2.0 \
 		csv-1.1.5 \
@@ -85,7 +89,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		hmac-0.9.0 \
 		indexmap-1.6.1 \
 		itertools-0.9.0 \
-		itertools-0.10.0 \
+		itertools-0.10.1 \
 		itoa-0.4.7 \
 		jni-0.19.0 \
 		jni-sys-0.3.0 \
@@ -104,10 +108,10 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		memoffset-0.6.1 \
 		miniz_oxide-0.4.4 \
 		multimap-0.8.2 \
-		neon-0.9.0 \
-		neon-build-0.9.0 \
-		neon-macros-0.9.0 \
-		neon-runtime-0.9.0 \
+		neon-0.9.1 \
+		neon-build-0.9.1 \
+		neon-macros-0.9.1 \
+		neon-runtime-0.9.1 \
 		num-bigint-0.2.6 \
 		num-bigint-dig-0.6.1 \
 		num-integer-0.1.44 \
@@ -123,9 +127,9 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		opaque-debug-0.3.0 \
 		openssl-0.10.32 \
 		openssl-sys-0.9.60 \
-		packed_simd-0.3.3 \
 		paste-1.0.4 \
 		pem-0.8.1 \
+		pest-2.1.3 \
 		petgraph-0.5.1 \
 		picky-6.2.0 \
 		picky-asn1-0.3.1 \
@@ -137,6 +141,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		plotters-0.3.0 \
 		plotters-backend-0.3.0 \
 		plotters-svg-0.3.0 \
+		poly1305-0.7.1 \
 		polyval-0.5.1 \
 		ppv-lite86-0.2.10 \
 		proc-macro-crate-0.1.5 \
@@ -166,13 +171,16 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		rsa-0.3.0 \
 		rustc-demangle-0.1.18 \
 		rustc_version-0.2.3 \
+		rustc_version-0.3.3 \
 		rustversion-1.0.4 \
 		ryu-1.0.5 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
 		semver-0.9.0 \
+		semver-0.11.0 \
 		semver-parser-0.7.0 \
+		semver-parser-0.10.2 \
 		serde-1.0.123 \
 		serde_bytes-0.11.5 \
 		serde_cbor-0.11.1 \
@@ -184,6 +192,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		simple_asn1-0.4.1 \
 		slab-0.4.2 \
 		smallvec-1.6.1 \
+		snow-0.8.0 \
 		spin-0.5.2 \
 		static_assertions-1.1.0 \
 		subtle-2.4.0 \
@@ -199,6 +208,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		tinytemplate-1.2.0 \
 		toml-0.5.8 \
 		typenum-1.12.0 \
+		ucd-trie-0.1.3 \
 		unicode-segmentation-1.7.1 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
@@ -222,7 +232,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		x25519-dalek-1.1.0 \
-		zeroize-1.2.0 \
+		zeroize-1.3.0 \
 		zeroize_derive-1.0.1
 CARGO_USE_GITHUB=	yes
 CARGO_BUILD_ARGS=	--package libsignal-jni
