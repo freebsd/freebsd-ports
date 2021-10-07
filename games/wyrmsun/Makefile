@@ -1,5 +1,5 @@
 PORTNAME=	wyrmsun
-PORTVERSION=	5.2.0
+PORTVERSION=	5.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -14,7 +14,6 @@ RUN_DEPENDS=	wyrmgus:games/wyrmgus
 USE_GITHUB=	yes
 GH_ACCOUNT=	Andrettin
 GH_PROJECT=	Wyrmsun
-GH_TAGNAME=	1c37d7  # contains critical fixes
 
 USES=		cmake gnome
 INSTALL_TARGET=	install
