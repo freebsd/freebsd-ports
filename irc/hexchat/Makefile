@@ -1,8 +1,7 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 
 PORTNAME=	hexchat
-PORTVERSION=	2.14.3
-PORTREVISION=	1
+PORTVERSION=	2.16.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	irc gnome
 
@@ -12,7 +11,8 @@ COMMENT=	IRC chat program with GTK and Text Frontend
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+		${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
 LIB_DEPENDS=	libproxy.so:net/libproxy \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libdbus-1.so:devel/dbus \
@@ -26,7 +26,7 @@ USE_GNOME=	cairo gtk20 intltool libxml2
 USE_XORG=	x11
 USE_GITHUB=	yes
 
-MESON_ARGS=	-Dwith-ssl=true -Dwith-gtk=true -Dwith-python=python-${PYTHON_VER}
+MESON_ARGS=	-Dtls=enabled -Dgtk-frontend=true -Dwith-python=python-${PYTHON_VER}
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
@@ -36,8 +36,8 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		CA_BUNDLE CANBERRA DBUS DOCS FISHLIM LUA NOTIFY \
-			PERL TEXTFE SYSINFO
+OPTIONS_DEFINE=		CA_BUNDLE CANBERRA DBUS DOCS FISHLIM LUA PERL TEXTFE \
+			SYSINFO
 
 OPTIONS_DEFAULT=	CA_BUNDLE CANBERRA DBUS NOTIFY PERL
 
@@ -53,9 +53,11 @@ CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root
 CA_BUNDLE_VARS=	CA_BUNDLE="${LOCALBASE}/share/certs/ca-root-nss.crt"
 CA_BUNDLE_VARS_OFF=	CA_BUNDLE=NULL
 CANBERRA_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
-CANBERRA_MESON_TRUE=	with-libcanberra
+CANBERRA_MESON_ON=	-Dlibcanberra=enabled
+CANBERRA_MESON_OFF=	-Dlibcanberra=disabled
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
-DBUS_MESON_TRUE=	with-dbus
+DBUS_MESON_ON=		-Ddbus=enabled
+DBUS_MESON_OFF=		-Ddbus=disabled
 FISHLIM_MESON_TRUE=	with-fishlim
 LUA_MESON_ON=		-Dwith-lua=lua-${LUA_VER}
 LUA_MESON_OFF=		-Dwith-lua=false
@@ -65,16 +67,16 @@ NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_MESON_TRUE=	with-libnotify
 PERL_MESON_TRUE=	with-perl
 PERL_USES=		perl5
-TEXTFE_MESON_TRUE=	with-text
+TEXTFE_MESON_TRUE=	text-frontend
 SYSINFO_MESON_TRUE=	with-sysinfo
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 SHEBANG_FILES=	meson_post_install.py \
 		plugins/perl/generate_header.py \
 		src/common/make-te.py
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%CA_BUNDLE%%|${CA_BUNDLE}|' \
-		${WRKSRC}/src/common/server.c
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%PERL_VER%%|${PERL_VER}|g' \
 		${WRKSRC}/plugins/perl/meson.build
