@@ -15,11 +15,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 
 USES=		cargo
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	PaddiM8
-USE_GITLAB=	nodefault
-GMP_REV=	21966f4bfb56c87d407eb14c72e92ef4e55856aa
-GL_TUPLE=	https://gitlab.com:tspiteri:gmp-mpfr-sys:${GMP_REV}:gmpmpfrsys
 CARGO_CRATES=	aho-corasick-0.7.15 \
 		ansi_term-0.12.1 \
 		atty-0.2.14 \
@@ -81,13 +77,13 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winres-0.1.11
-CARGO_USE_GITLAB=	yes
+		winres-0.1.11 \
+		gmp-mpfr-sys@git+https://gitlab.com/tspiteri/gmp-mpfr-sys.git\#21966f4bfb56c87d407eb14c72e92ef4e55856aa
 CARGO_CARGOTOML=	${WRKSRC}/cli/Cargo.toml
 CARGO_INSTALL_PATH=	./cli
 PLIST_FILES=	bin/kalker
 
 post-patch:
-	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKDIR}/gmp-mpfr-sys-${GMP_REV}/build.rs
+	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC_crate_gmp-mpfr-sys}/build.rs
 
 .include <bsd.port.mk>
