@@ -9,7 +9,7 @@ COMMENT=	Horde bug tracking/ticketing system
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe horde php
+USES=		horde php cpe
 USE_PHP=	gettext json
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
@@ -36,7 +36,5 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Util \
 		Horde_Vfs \
 		Horde_View
-
-CPE_VENDOR=	horde
 
 .include <bsd.port.mk>

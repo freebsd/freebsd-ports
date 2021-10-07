@@ -9,7 +9,7 @@ COMMENT=	Horde email filter rules manager
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe horde php
+USES=		horde php cpe
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
@@ -29,7 +29,5 @@ USE_HORDE_RUN=	Horde_Role \
 # Optional but we want it
 RUN_DEPENDS+=	${PEARDIR}/Net/Sieve.php:net/pear-Net_Sieve@${PHP_FLAVOR} \
 		${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR}
-
-CPE_VENDOR=	horde
 
 .include <bsd.port.mk>

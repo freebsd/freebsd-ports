@@ -5,7 +5,7 @@ CATEGORIES=	net www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde RPC API
 
-USES=		cpe horde
+USES=		horde cpe
 USE_HORDE_RUN=	Horde_Core \
 		Horde_Dav \
 		Horde_Exception \
@@ -21,7 +21,5 @@ USE_HORDE_RUN+=	Horde_ActiveSync \
 		Horde_Lock \
 		Horde_SyncMl \
 		Horde_Http
-
-CPE_VENDOR=	horde
 
 .include <bsd.port.mk>

@@ -7,8 +7,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Autoloader
 
-USES=		cpe horde
-
-CPE_VENDOR=	horde
+USES=		horde cpe
 
 .include <bsd.port.mk>

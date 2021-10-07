@@ -7,10 +7,8 @@ CATEGORIES=	textproc www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Xml Element object
 
-USES=		cpe horde php
+USES=		horde php cpe
 USE_PHP=	dom
 USE_HORDE_RUN=	Horde_Exception
-
-CPE_VENDOR=	horde
 
 .include <bsd.port.mk>

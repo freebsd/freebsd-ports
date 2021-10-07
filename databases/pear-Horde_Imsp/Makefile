@@ -7,9 +7,7 @@ CATEGORIES=	databases www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde IMSP API
 
-USES=		cpe horde
+USES=		horde cpe
 USE_HORDE_RUN=	Horde_Translation
-
-CPE_VENDOR=	horde
 
 .include <bsd.port.mk>

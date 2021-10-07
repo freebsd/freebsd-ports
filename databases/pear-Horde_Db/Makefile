@@ -11,12 +11,10 @@ OPTIONS_DEFINE=		MYSQLI PDO
 MYSQLI_DESC=		Depend on mysqli PHP extension
 PDO_DESC=		Depend on PDO PHP extension
 
-USES=		cpe horde
+USES=		horde cpe
 USE_HORDE_RUN=	Horde_Date \
 		Horde_Exception \
 		Horde_Support
-
-CPE_VENDOR=	horde
 
 MYSQLI_USES=	php
 MYSQLI_USE=	PHP=mysqli
