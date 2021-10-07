@@ -1,5 +1,5 @@
 PORTNAME=	radarr
-PORTVERSION=	3.0.2.4552
+PORTVERSION=	3.2.2.5080
 DISTVERSIONPREFIX=v
 PORTREVISION=	0
 CATEGORIES=	net-p2p
@@ -13,9 +13,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	mediainfo>0:multimedia/mediainfo \
-		sqlite3>0:databases/sqlite3
-
-USES=		mono
+		sqlite3>0:databases/sqlite3 \
+		mono6.8>0:lang/mono6.8
 
 USE_RC_SUBR=	radarr
 
