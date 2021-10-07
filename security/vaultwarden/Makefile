@@ -33,16 +33,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dani-garcia
 CARGO_FEATURES=	postgresql sqlite mysql #vendored_openssl
 CARGO_ENV+=	RUSTC_BOOTSTRAP=1
-CARGO_GIT_SUBDIR+=	dataurl:data-url:data-url
-CARGO_GIT_SUBDIR+=	devise:devise:lib
-CARGO_GIT_SUBDIR+=	rocket:rocket:core/lib
-CARGO_GIT_SUBDIR+=	rocket:rocket_contrib:contrib/lib
 
 # make cargo-crates
-GH_TUPLE=	servo:rust-url:eb7330b5296c0d43816d1346211b74182bb4ae37:dataurl \
-		SergioBenitez:Devise:e58b3ac9afc3b6ff10a8aaf02a3e768a8f530089:devise \
-		jjlin:job_scheduler:ee023418dbba2bfe1e30a5fd7d937f9e33739806:job_scheduler \
-		SergioBenitez:Rocket:263e39b5b429de1913ce7e3036575a7b4d88b6d7:rocket
 CARGO_CRATES=	addr2line-0.15.2 \
 		adler-1.0.2 \
 		aho-corasick-0.7.18 \
@@ -387,8 +379,11 @@ CARGO_CRATES=	addr2line-0.15.2 \
 		wyz-0.2.0 \
 		xml5ever-0.16.1 \
 		yansi-0.5.0 \
-		yubico-0.10.0
-CARGO_USE_GITHUB=	yes
+		yubico-0.10.0 \
+		devise,devise_codegen,devise_core@git+https://github.com/SergioBenitez/Devise.git?rev=e58b3ac9a\#e58b3ac9afc3b6ff10a8aaf02a3e768a8f530089 \
+		rocket,rocket_codegen,rocket_contrib,rocket_http@git+https://github.com/SergioBenitez/Rocket?rev=263e39b5b429de1913ce7e3036575a7b4d88b6d7\#263e39b5b429de1913ce7e3036575a7b4d88b6d7 \
+		data-url@git+https://github.com/servo/rust-url?rev=eb7330b5296c0d43816d1346211b74182bb4ae37\#eb7330b5296c0d43816d1346211b74182bb4ae37 \
+		job_scheduler@git+https://github.com/jjlin/job_scheduler?rev=ee023418dbba2bfe1e30a5fd7d937f9e33739806\#ee023418dbba2bfe1e30a5fd7d937f9e33739806
 
 post-install:
 	${MKDIR} ${STAGEDIR}/${ETCDIR}/rc.conf.d
