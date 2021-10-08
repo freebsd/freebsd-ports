@@ -31,13 +31,3 @@
          if not has_option("disable-warnings-as-errors"):
              env.Append( CCFLAGS=["-Werror"] )
  
-@@ -3926,7 +3926,8 @@ def doConfigure(myenv):
-     myenv = conf.Finish()
- 
-     if env['TARGET_ARCH'] == "aarch64":
--        AddToCCFLAGSIfSupported(myenv, "-moutline-atomics")
-+        # https://lists.freebsd.org/archives/freebsd-ports/2021-July/000431.html
-+        AddToCCFLAGSIfSupported(myenv, "-mno-outline-atomics")
- 
-     conf = Configure(myenv)
-     usdt_enabled = get_option('enable-usdt-probes')
