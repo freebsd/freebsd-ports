@@ -76,6 +76,7 @@
     SUBDIR += lamarc
     SUBDIR += libbigwig
     SUBDIR += libgtextutils
+    SUBDIR += libneurosim
     SUBDIR += libnuml
     SUBDIR += libsbml
     SUBDIR += libsedml

@@ -1,0 +1,13 @@
+include/neurosim/config.h
+include/neurosim/connection_generator.h
+include/neurosim/connection_generator_V2_0.h
+%%PYTHON%%include/neurosim/pyneurosim.h
+include/neurosim/version.h
+lib/libneurosim.a
+lib/libneurosim.so
+lib/libneurosim.so.0
+lib/libneurosim.so.0.0.0
+%%PYTHON%%lib/libpy3neurosim.a
+%%PYTHON%%lib/libpy3neurosim.so
+%%PYTHON%%lib/libpy3neurosim.so.0
+%%PYTHON%%lib/libpy3neurosim.so.0.0.0
