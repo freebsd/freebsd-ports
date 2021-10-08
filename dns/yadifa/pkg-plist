@@ -43,11 +43,13 @@ include/dnscore/dnskey-signature.h
 include/dnscore/dnskey.h
 include/dnscore/dnskey_dsa.h
 include/dnscore/dnskey_ecdsa.h
+include/dnscore/dnskey_eddsa.h
 include/dnscore/dnskey_rsa.h
 include/dnscore/dnsname.h
 include/dnscore/dnsname_set.h
 include/dnscore/dnssec_errors.h
 include/dnscore/empty-input-stream.h
+include/dnscore/error_state.h
 include/dnscore/fdtools.h
 include/dnscore/file-pool.h
 include/dnscore/file.h
