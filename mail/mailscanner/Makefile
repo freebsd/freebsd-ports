@@ -56,7 +56,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 CONFLICTS=	MailScanner-devel-[0-9]*
 
-USES=		perl5 shebangfix
+USES=		cpe perl5 shebangfix
 SHEBANG_GLOB=	* usr/lib/MailScanner/init/* usr/lib/MailScanner/wrapper/* \
 		usr/sbin/* usr/share/MailScanner/perl/MailScanner/*
 
