@@ -17,9 +17,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${PREFIX}/protobuf25
 USE_LDCONFIG=	${PREFIX}/protobuf25/lib
-USES=		gmake pathfix pkgconfig tar:bzip2 libtool
+USES=		cpe gmake pathfix pkgconfig tar:bzip2 libtool
 ONLY_FOR_ARCHS=	i386 amd64
 INSTALL_TARGET=	install-strip
+
+CPE_VENDOR=	google
 
 # clang will generate code that just doesn't work with clementine-player
 # if this isn't compiled as though it were C99.
