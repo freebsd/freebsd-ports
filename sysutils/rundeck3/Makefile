@@ -1,9 +1,8 @@
 PORTNAME=	rundeck
-DISTVERSION=	3.3.10
-DISTVERSIONSUFFIX=	20210301
+DISTVERSION=	3.4.4
+DISTVERSIONSUFFIX=	20210920
 CATEGORIES=	sysutils java
-MASTER_SITES=	https://dl.bintray.com/rundeck/rundeck-maven/org/rundeck/rundeck/ \
-		https://download.rundeck.org/war/
+MASTER_SITES=	https://packagecloud.io/pagerduty/rundeck/packages/java/org.rundeck/${DISTNAME}.war/artifacts/${DISTNAME}.war/download?/
 PKGNAMESUFFIX=	3
 DISTNAME=	${PORTNAME}-${DISTVERSION}-${DISTVERSIONSUFFIX}
 EXTRACT_SUFX=	.war
