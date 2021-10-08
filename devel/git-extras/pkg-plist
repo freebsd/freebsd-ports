@@ -1,3 +1,4 @@
+bin/git-abort
 bin/git-alias
 bin/git-archive-file
 bin/git-authors
@@ -15,6 +16,7 @@ bin/git-cp
 bin/git-create-branch
 bin/git-delete-branch
 bin/git-delete-merged-branches
+bin/git-delete-squashed-branches
 bin/git-delete-submodule
 bin/git-delete-tag
 bin/git-delta
@@ -68,6 +70,7 @@ bin/git-undo
 bin/git-unlock
 bin/git-utimes
 etc/bash_completion.d/git-extras
+man/man1/git-abort.1.gz
 man/man1/git-alias.1.gz
 man/man1/git-archive-file.1.gz
 man/man1/git-authors.1.gz
@@ -85,6 +88,7 @@ man/man1/git-cp.1.gz
 man/man1/git-create-branch.1.gz
 man/man1/git-delete-branch.1.gz
 man/man1/git-delete-merged-branches.1.gz
+man/man1/git-delete-squashed-branches.1.gz
 man/man1/git-delete-submodule.1.gz
 man/man1/git-delete-tag.1.gz
 man/man1/git-delta.1.gz
@@ -100,7 +104,6 @@ man/man1/git-guilt.1.gz
 man/man1/git-ignore-io.1.gz
 man/man1/git-ignore.1.gz
 man/man1/git-info.1.gz
-man/man1/git-line-summary.1.gz
 man/man1/git-local-commits.1.gz
 man/man1/git-lock.1.gz
 man/man1/git-locked.1.gz
