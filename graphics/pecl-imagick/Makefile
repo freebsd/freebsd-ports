@@ -9,7 +9,9 @@ COMMENT?=	PHP wrapper to the ImageMagick/GraphicsMagick library version 6
 
 LICENSE=	PHP301
 
-USES=		php:pecl localbase
+USES=		cpe php:pecl localbase
+
+CPE_VENDOR=	php
 
 CONFLICTS_INSTALL?=	${PKGNAMEPREFIX}${PORTNAME}-im7
 
