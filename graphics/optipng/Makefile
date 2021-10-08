@@ -23,8 +23,10 @@ BUNDLED_ZLIB_DESC=		Use bundled zlib
 BUNDLED_ZLIB_CONFIGURE_OFF=	--with-system-zlib
 BUNDLED_ZLIB_CONFIGURE_ON=	--without-system-zlib
 
-USES=	gmake
+USES=		cpe gmake
 HAS_CONFIGURE=	yes
+
+CPE_VENDOR=	optipng_project
 
 PLIST_FILES=	bin/optipng man/man1/optipng.1.gz
 PORTDOCS=	history.txt optipng.man.html optipng.man.pdf optipng.man.txt \
