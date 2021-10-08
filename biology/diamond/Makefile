@@ -10,7 +10,7 @@ COMMENT=	BLAST-compatible local sequence aligner
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64
 
 USES=		cmake
 USE_GITHUB=	yes
