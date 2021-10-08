@@ -7,6 +7,6 @@ CATEGORIES=	www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Template System
 
-USES=	horde
+USES=	horde cpe
 
 .include <bsd.port.mk>

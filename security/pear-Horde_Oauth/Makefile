@@ -7,7 +7,7 @@ CATEGORIES=	security www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde OAuth client/server
 
-USES=		horde php
+USES=		horde php cpe
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Http \
 		Horde_Util

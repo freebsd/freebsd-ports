@@ -11,7 +11,7 @@ COMMENT=	Horde Cryptography API
 OPTIONS_DEFINE=	BCMATH
 BCMATH_DESC=	Depend on bcmath PHP extension
 
-USES=		horde php
+USES=		horde php cpe
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Mime \
 		Horde_Stream_Filter \

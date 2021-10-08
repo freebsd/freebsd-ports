@@ -7,7 +7,7 @@ CATEGORIES=	net www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Socket Client
 
-USES=	horde
+USES=	horde cpe
 USE_HORDE_RUN=	Horde_Exception
 
 .include <bsd.port.mk>

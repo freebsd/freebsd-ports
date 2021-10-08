@@ -7,7 +7,7 @@ CATEGORIES=	www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Feed libraries
 
-USES=	horde php
+USES=	horde php cpe
 USE_PHP=	dom
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Http \

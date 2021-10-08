@@ -9,7 +9,7 @@ COMMENT=	PEAR installer role for Horde components
 
 PATCH_WRKSRC=	${WRKDIR}
 
-USES=	horde
+USES=	horde cpe
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${HORDE_DIR}

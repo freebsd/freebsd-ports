@@ -5,6 +5,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Queue
 
-USES=	horde
+USES=	horde cpe
 
 .include <bsd.port.mk>

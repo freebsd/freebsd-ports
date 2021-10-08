@@ -7,7 +7,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Scheduler System
 
-USES=	horde
+USES=	horde cpe
 USE_HORDE_RUN=	Horde_Core \
 		Horde_Util \
 		Horde_Vfs

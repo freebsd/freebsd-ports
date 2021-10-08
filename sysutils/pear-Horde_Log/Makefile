@@ -12,7 +12,7 @@ COMMENT=	Horde Logging library
 OPTIONS_DEFINE=	SCRIBE
 SCRIBE_DESC=	Enable scribe support
 
-USES=	horde
+USES=	horde cpe
 USE_HORDE_RUN=	Horde_Constraint \
 		Horde_Exception
 

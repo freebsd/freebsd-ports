@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Image API
 
-USES=	horde
+USES=	horde cpe
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Support \
 		Horde_Translation \
