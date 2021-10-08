@@ -10,7 +10,9 @@ COMMENT=	Library and tools to read, create, and modify mp4 files
 
 LICENSE=	MPL11
 
-USES=		compiler:features gmake libtool tar:bzip2
+USES=		compiler:features cpe gmake libtool tar:bzip2
+
+CPE_VENDOR=	mp4v2_project
 
 MAKEFILE=	GNUmakefile
 GNU_CONFIGURE=	yes
