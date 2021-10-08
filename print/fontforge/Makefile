@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		compiler:c++11-lang cmake desktop-file-utils gettext gnome \
+USES=		compiler:c++11-lang cmake cpe desktop-file-utils gettext gnome \
 		iconv:wchar_t pkgconfig shared-mime-info
 USE_GITHUB=	yes
 USE_GNOME=	cairo glib20 libxml2
