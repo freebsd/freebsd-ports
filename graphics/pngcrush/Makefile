@@ -17,9 +17,11 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		localbase:ldflags tar:xz
+USES=		cpe localbase:ldflags tar:xz
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LD="${CC}" \
 		LDFLAGS="${LDFLAGS}"
+
+CPE_VENDOR=	pngcrush_project
 
 PLIST_FILES=	bin/pngcrush
 
