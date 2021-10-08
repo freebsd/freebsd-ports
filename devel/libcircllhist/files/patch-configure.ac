@@ -1,4 +1,4 @@
---- configure.ac.orig	2019-10-16 20:36:24 UTC
+--- configure.ac.orig	2020-04-17 12:58:31 UTC
 +++ configure.ac
 @@ -31,19 +31,19 @@ AC_PATH_PROG(CTFMERGE, ctfmerge)
  
