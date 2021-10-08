@@ -1,6 +1,7 @@
 PORTNAME=	coredns
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.6
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,8 +16,11 @@ GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
 
 USE_RC_SUBR=	${PORTNAME}
 
-PLIST_FILES=	bin/${PORTNAME}
-
 PORTSCOUT=	limit:^[0-9]*\.[0-9]*\.[0-9]*$$ # otherwise it picks up the deleted tag v011
+
+post-install:
+.for n in 1 5 7
+	${INSTALL_MAN} ${WRKSRC}/man/*.${n} ${STAGEDIR}${MANPREFIX}/man/man${n}
+.endfor
 
 .include <bsd.port.mk>
