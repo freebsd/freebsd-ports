@@ -43,6 +43,7 @@
     SUBDIR += acidwarp
     SUBDIR += acidwarp-sdl
     SUBDIR += agg
+    SUBDIR += airsaned
     SUBDIR += akira
     SUBDIR += alembic
     SUBDIR += aloadimage

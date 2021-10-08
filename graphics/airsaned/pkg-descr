@@ -1,0 +1,21 @@
+A SANE WebScan frontend that supports Apple's AirScan protocol.
+Scanners are detected automatically, and published through mDNS.
+Though images may be acquired and transferred in JPEG, PNG, and
+PDF/raster format through a simple web interface, AirSane's intended
+purpose is to be used with AirScan/eSCL clients such as Apple's
+Image Capture.
+
+Images are encoded on-the-fly during acquisition, keeping memory/storage
+demands low. Thus, AirSane will run fine on a Raspberry Pi or similar
+device.
+
+AirSane has been developed by reverse-engineering the communication
+protocol implemented in Apple's AirScanScanner client (macos 10.12.6,
+/System/Library/Image Capture/Devices/AirScanScanner.app).
+
+Authentication and secure communication are not supported.
+
+If you are looking for a powerful SANE web frontend, AirSane may
+not be for you. You may be interested in phpSANE instead.
+
+WWW: https://github.com/SimulPiscator/AirSane

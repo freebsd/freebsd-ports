@@ -1,0 +1,4 @@
+bin/airsaned
+etc/airsane/Gnome-scanner.png
+@sample etc/airsane/ignore.conf.sample
+@sample etc/airsane/options.conf.sample
