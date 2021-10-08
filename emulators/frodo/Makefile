@@ -32,7 +32,7 @@ USES+=		sdl
 USE_SDL=	sdl
 .endif
 
-.if ${ARCH} == powerpc64le
+.if ${ARCH:Mpowerpc*}
 USE_GCC=	yes
 .endif
 
