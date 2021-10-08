@@ -14,6 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_mips=		fails to build: undefined reference to '__sync_add_and_fetch_4'
 BROKEN_mips64=		fails to build: undefined reference to '__sync_add_and_fetch_4'
 
+USES=		cpe
+
+CPE_VENDOR=	gifsicle_project
+
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	NEWS.md README.md
