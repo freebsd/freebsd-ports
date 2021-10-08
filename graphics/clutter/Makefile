@@ -19,7 +19,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 
 PORTSCOUT=	limit:1,even
 
-USES=		gettext gl gmake gnome libtool localbase pathfix pkgconfig \
+USES=		cpe gettext gl gmake gnome libtool localbase pathfix pkgconfig \
 		tar:xz xorg
 USE_GNOME=	atk cairo gdkpixbuf2 pango introspection:build
 USE_GL=		egl
@@ -33,5 +33,6 @@ CONFIGURE_ARGS=	--with-x --enable-conformance=no \
 		--enable-gdk-backend=no \
 		--enable-wayland-compositor=no
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	clutter_project
 
 .include <bsd.port.mk>
