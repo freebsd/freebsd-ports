@@ -25,7 +25,7 @@ lib/opensips31/modules/b2b_sca.so
 lib/opensips31/modules/benchmark.so
 lib/opensips31/modules/cachedb_local.so
 %%MEMCACHED%%lib/opensips31/modules/cachedb_memcached.so
-lib/opensips31/modules/cachedb_redis.so
+%%REDIS%%lib/opensips31/modules/cachedb_redis.so
 lib/opensips31/modules/cachedb_sql.so
 lib/opensips31/modules/call_center.so
 lib/opensips31/modules/call_control.so
@@ -57,7 +57,7 @@ lib/opensips31/modules/drouting.so
 lib/opensips31/modules/enum.so
 lib/opensips31/modules/event_datagram.so
 lib/opensips31/modules/event_flatstore.so
-lib/opensips31/modules/event_rabbitmq.so
+%%RABBITMQ%%lib/opensips31/modules/event_rabbitmq.so
 lib/opensips31/modules/event_route.so
 lib/opensips31/modules/event_routing.so
 lib/opensips31/modules/event_stream.so
@@ -117,11 +117,11 @@ lib/opensips31/modules/pua_dialoginfo.so
 lib/opensips31/modules/pua_mi.so
 lib/opensips31/modules/pua_usrloc.so
 lib/opensips31/modules/pua_xmpp.so
-lib/opensips31/modules/python.so
+%%PYTHON%%lib/opensips31/modules/python.so
 lib/opensips31/modules/qos.so
 lib/opensips31/modules/qrouting.so
-lib/opensips31/modules/rabbitmq.so
-lib/opensips31/modules/rabbitmq_consumer.so
+%%RABBITMQ%%lib/opensips31/modules/rabbitmq.so
+%%RABBITMQ%%lib/opensips31/modules/rabbitmq_consumer.so
 lib/opensips31/modules/rate_cacher.so
 lib/opensips31/modules/ratelimit.so
 lib/opensips31/modules/regex.so
@@ -203,7 +203,7 @@ sbin/osipsconfig31
 %%PORTDOCS%%%%DOCSDIR%%/README.benchmark
 %%PORTDOCS%%%%DOCSDIR%%/README.cachedb_local
 %%MEMCACHED%%%%PORTDOCS%%%%DOCSDIR%%/README.cachedb_memcached
-%%PORTDOCS%%%%DOCSDIR%%/README.cachedb_redis
+%%REDIS%%%%PORTDOCS%%%%DOCSDIR%%/README.cachedb_redis
 %%PORTDOCS%%%%DOCSDIR%%/README.cachedb_sql
 %%PORTDOCS%%%%DOCSDIR%%/README.call_center
 %%PORTDOCS%%%%DOCSDIR%%/README.call_control
@@ -235,7 +235,7 @@ sbin/osipsconfig31
 %%PORTDOCS%%%%DOCSDIR%%/README.enum
 %%PORTDOCS%%%%DOCSDIR%%/README.event_datagram
 %%PORTDOCS%%%%DOCSDIR%%/README.event_flatstore
-%%PORTDOCS%%%%DOCSDIR%%/README.event_rabbitmq
+%%RABBITMQ%%%%PORTDOCS%%%%DOCSDIR%%/README.event_rabbitmq
 %%PORTDOCS%%%%DOCSDIR%%/README.event_route
 %%PORTDOCS%%%%DOCSDIR%%/README.event_routing
 %%PORTDOCS%%%%DOCSDIR%%/README.event_stream
@@ -295,11 +295,11 @@ sbin/osipsconfig31
 %%PORTDOCS%%%%DOCSDIR%%/README.pua_mi
 %%PORTDOCS%%%%DOCSDIR%%/README.pua_usrloc
 %%PORTDOCS%%%%DOCSDIR%%/README.pua_xmpp
-%%PORTDOCS%%%%DOCSDIR%%/README.python
+%%PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/README.python
 %%PORTDOCS%%%%DOCSDIR%%/README.qos
 %%PORTDOCS%%%%DOCSDIR%%/README.qrouting
-%%PORTDOCS%%%%DOCSDIR%%/README.rabbitmq
-%%PORTDOCS%%%%DOCSDIR%%/README.rabbitmq_consumer
+%%RABBITMQ%%%%PORTDOCS%%%%DOCSDIR%%/README.rabbitmq
+%%RABBITMQ%%%%PORTDOCS%%%%DOCSDIR%%/README.rabbitmq_consumer
 %%PORTDOCS%%%%DOCSDIR%%/README.rate_cacher
 %%PORTDOCS%%%%DOCSDIR%%/README.ratelimit
 %%PORTDOCS%%%%DOCSDIR%%/README.regex
