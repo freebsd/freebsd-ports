@@ -14,8 +14,9 @@ LICENSE_COMB=	multi
 CONFLICTS=	scsh-[0-9]*
 
 ALL_TARGET=	enough
-USES=		gmake tar:tgz
+USES=		cpe gmake tar:tgz
 GNU_CONFIGURE=	yes
+CPE_VENDOR=	s48
 
 OPTIONS_DEFINE=	DOCS
 
