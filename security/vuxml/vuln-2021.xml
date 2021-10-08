@@ -1,3 +1,42 @@
+  <vuln vid="7d3d94d3-2810-11ec-9c51-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>94.0.4606.81</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/10/stable-channel-update-for-desktop.html">
+	  <p>This release contains 4 security fixes, including:</p>
+	  <ul>
+	    <li>[1252878] High CVE-2021-37977: Use after free in Garbage
+	      Collection. Reported by Anonymous on 2021-09-24</li>
+	    <li>[1236318] High CVE-2021-37978: Heap buffer overflow in Blink.
+	      Reported by Yangkang (@dnpushme) of 360 ATA on 2021-08-04</li>
+	    <li>[1247260] High CVE-2021-37979: Heap buffer overflow in WebRTC.
+	      Reported by Marcin Towalski of Cisco Talos on 2021-09-07</li>
+	    <li>[1254631] High CVE-2021-37980: Inappropriate implementation in
+	      Sandbox. Reported by Yonghwi Jin (@jinmo123) on 2021-09-30</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-37977</cvename>
+      <cvename>CVE-2021-37978</cvename>
+      <cvename>CVE-2021-37979</cvename>
+      <cvename>CVE-2021-37980</cvename>
+      <url>https://chromereleases.googleblog.com/2021/10/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2021-10-07</discovery>
+      <entry>2021-10-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d001c189-2793-11ec-8fb1-206a8a720317">
     <topic>Apache httpd -- Path Traversal and Remote Code Execution</topic>
     <affects>
