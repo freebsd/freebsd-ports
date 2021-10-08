@@ -15,7 +15,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libxml++-2.6.so:textproc/libxml++26 \
 		libosp.so:textproc/opensp
 
-USES=		gettext-runtime gmake gnome iconv libtool localbase pathfix pkgconfig \
+USES=		cpe gettext-runtime gmake gnome iconv libtool localbase pathfix pkgconfig \
 		compiler:c++11-lang
 USE_CXXSTD=	c++11
 USE_GNOME=	glib20 glibmm libsigc++20 libxml2
@@ -27,6 +27,7 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 PORTDOCS=	*
+CPE_VENDOR=	libofx_project
 
 OPTIONS_DEFINE=	DOCS
 
