@@ -672,6 +672,7 @@
     SUBDIR += postgresql-relay
     SUBDIR += postgresql-repmgr
     SUBDIR += postgresql-rum
+    SUBDIR += postgresql-semver
     SUBDIR += postgresql-tds_fdw
     SUBDIR += postgresql-zhparser
     SUBDIR += postgresql10-client

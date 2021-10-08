@@ -1,0 +1,5 @@
+This library contains a single PostgreSQL extension, a semantic version data
+type called `semver`. It's an implementation of the version number format
+specified by the Semantic Versioning 2.0.0 Specification.
+
+WWW: https://github.com/theory/pg-semver/
