@@ -13,7 +13,9 @@ COMMENT=	Multi-link PPP daemon based on netgraph(4)
 
 LICENSE=	BSD3CLAUSE
 
-USES=		ssl
+USES=		cpe ssl
+
+CPE_VENDOR=	mpd_project
 
 OPTIONS_DEFINE=	DOCS NG_IPACCT RADIUS
 OPTIONS_DEFAULT=	RADIUS
