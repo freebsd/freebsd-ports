@@ -9,7 +9,9 @@ COMMENT=	EXIF JPEG header manipulation tool
 
 LICENSE=	PD
 
-USES=		gmake jpeg:run
+USES=		cpe gmake jpeg:run
+
+CPE_VENDOR=	jhead_project
 
 MAKEFILE=	makefile
 
