@@ -8,7 +8,7 @@ COMMENT=	Hypothesis testing using Phylogenies
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
