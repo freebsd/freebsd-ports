@@ -1,5 +1,5 @@
---- src/output.c.orig	2011-05-30 16:52:55.000000000 -0400
-+++ src/output.c	2011-05-30 16:53:21.000000000 -0400
+--- src/output.c.orig	2010-07-27 07:31:03 UTC
++++ src/output.c
 @@ -22,11 +22,6 @@
  #ifdef SDIG_USE_SEMS
  
