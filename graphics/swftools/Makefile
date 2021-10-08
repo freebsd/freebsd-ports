@@ -18,7 +18,7 @@ LIB_DEPENDS=	libt1.so:devel/t1lib \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		gmake pkgconfig jpeg
+USES=		cpe gmake pkgconfig jpeg
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_zzip_zzip_file_open=no
 
