@@ -15420,7 +15420,6 @@ devel/cx_Freeze||2020-09-19|Has expired: Uses deprecated version of python
 devel/euca2ools||2020-09-19|Has expired: Uses deprecated version of python
 devel/evolution-gconf-tools||2020-09-19|Has expired: Uses deprecated version of python
 devel/git-bzr-ng||2020-09-19|Has expired: Uses deprecated version of python
-devel/git-cvs||2020-09-19|Has expired: Uses deprecated version of python
 devel/git-remote-hg||2020-09-19|Has expired: Uses deprecated version of python
 devel/grumpy||2020-09-19|Has expired: Uses deprecated version of python
 devel/hg-git||2020-09-19|Has expired: Uses deprecated version of python
@@ -15558,7 +15557,6 @@ lang/spidermonkey68|lang/spidermonkey78|2020-10-01|Replaced by a more recent ver
 audio/zinf||2020-10-02|Has expired: Does not build, no upstream
 emulators/qemu-sbruno|emulators/qemu|2020-10-02|Has expired: Port will be removed in favor of emulators/qemu
 dns/knot2-lib|dns/knot3-lib|2020-10-04|Replaced by a more recent version
-devel/git-gui|devel/git@gui|2020-10-12|Replaced by a flavor
 devel/git-lite|devel/git@lite|2020-10-12|Replaced by a flavor
 graphics/libxatracker|graphics/mesa-gallium-xa|2020-10-12|Rename to have all gallium driver properly named
 sysutils/gnome-mount||2020-10-12|Replaced by gio/gvfs

@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20211012:
+  AFFECTS: users of devel/git
+  AUTHOR: garga@FreeBSD.org
+
+  devel/git port was split into multiple sub-ports that depend on devel/git
+  and install additional files:
+
+  - devel/git-cvs - CVS related scripts and man pages
+  - devel/git-gui - GUI related scripts and man pages
+  - devel/git-p4  - Perforce related scripts and man pages
+  - devel/git-svn - Subversion related scripts and man pages
+
+  Due to these changes, CVS, GUI, PERFORCE, and SUBVERSION options
+  as well as gui and svn flavors were removed from the port.
+
 20211010:
   AFFECTS: users of gtk2 flavored devel/geany*
   AUTHOR: madpilot@FreeBSD.org

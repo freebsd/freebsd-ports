@@ -1,0 +1,5 @@
+Various commands to support CVS in git:
+- git-cvsexportcommit - Export a single commit to a CVS checkout
+- git-cvsimport - Salvage your data out of another SCM people
+  love to hate
+- git-cvsserver - A CVS server emulator for Git

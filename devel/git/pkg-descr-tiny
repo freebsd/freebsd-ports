@@ -4,4 +4,6 @@ handle everything from small to very large projects with speed and efficiency.
 This version provides the tiniest usable git experience, depending only upon
 ftp/curl for http(s) support.
 
+WARNING: This flavor cannot coexist with cvs, gui, p4 or svn subpackages.
+
 WWW: https://git-scm.com/
