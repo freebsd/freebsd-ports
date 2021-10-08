@@ -13,8 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:devel/popt
 
-USES=		cmake compiler:c11 perl5
+USES=		cmake compiler:c11 cpe perl5
 USE_PERL5=	test
+
+CPE_VENDOR=	librsync_project
 
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
