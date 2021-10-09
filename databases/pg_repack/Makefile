@@ -1,7 +1,7 @@
 # Created by: Jov <amutu@amutu.com>
 
 PORTNAME=	pg_repack
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 DISTVERSIONPREFIX=	ver_
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
