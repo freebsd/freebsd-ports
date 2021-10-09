@@ -1,7 +1,7 @@
 # Created by: Pav Lucistnik <pav@oook.cz>
 
 PORTNAME=	meld
-PORTVERSION=	3.20.1
+PORTVERSION=	3.20.4
 PORTEPOCH=	1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
