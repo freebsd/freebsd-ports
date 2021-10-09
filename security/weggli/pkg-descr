@@ -1,0 +1,26 @@
+weggli is a fast and robust semantic search tool for C and C++ codebases. It is
+designed to help security researchers identify interesting functionality in
+large codebases.
+
+weggli performs pattern matching on Abstract Syntax Trees based on user
+provided queries. Its query language resembles C and C++ code, making it easy
+to turn interesting code patterns into queries.
+
+weggli is inspired by great tools like Semgrep, Coccinelle, joern and CodeQL,
+but makes some different design decisions:
+- C++ support: weggli has first class support for modern C++ constructs, such
+  as lambda expressions, range-based for loops and constexprs.
+- Minimal setup: weggli should work out-of-the box against most software you
+  will encounter. weggli does not require the ability to build the software and
+  can work with incomplete sources or missing dependencies.
+- Interactive: weggli is designed for interactive usage and fast query
+  performance. Most of the time, a weggli query will be faster than a grep
+  search. The goal is to enable an interactive workflow where quick switching
+  between code review and query creation/improvement is possible.
+- Greedy: weggli's pattern matching is designed to find as many (useful)
+  matches as possible for a specific query. While this increases the risk of
+  false positives it simplifies query creation. For example, the query $x = 10;
+  will match both assignment expressions (foo = 10;) and declarations
+  (int bar = 10;).
+
+WWW: https://github.com/googleprojectzero/weggli
