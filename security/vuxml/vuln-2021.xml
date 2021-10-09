@@ -1,3 +1,33 @@
+  <vuln vid="4fce9635-28c0-11ec-9ba8-002324b2fba8">
+    <topic>go -- misc/wasm, cmd/link: do not let command line arguments overwrite global data</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><lt>1.17.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://github.com/golang/go/issues/48797">
+	  <p>When invoking functions from WASM modules, built using GOARCH=wasm
+	  GOOS=js, passing very large arguments can cause portions of the module
+	  to be overwritten with data from the arguments.</p>
+	  <p>If using wasm_exec.js to execute WASM modules, users will need to
+	  replace their copy after rebuilding any modules.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-38297</cvename>
+      <url>https://github.com/golang/go/issues/48797</url>
+    </references>
+    <dates>
+      <discovery>2021-10-06</discovery>
+      <entry>2021-10-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7d3d94d3-2810-11ec-9c51-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
