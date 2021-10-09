@@ -2,6 +2,7 @@
 
 PORTNAME=	pychess
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	https://github.com/pychess/pychess/releases/download/${PORTVERSION}/
 
@@ -18,7 +19,7 @@ COMMON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 RUN_DEPENDS=	${COMMON_DEPENDS}
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 
-USES=		desktop-file-utils display:configure gettext gnome python:3.3+
+USES=		desktop-file-utils display:configure gettext gnome python:3.7+
 # DISPLAY must be set at all steps:
 .for t in build install stage
 _USES_$t+=	${_USES_configure}

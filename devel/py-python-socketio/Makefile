@@ -1,6 +1,6 @@
 PORTNAME=	python-socketio
 PORTVERSION=	4.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-engineio>=3.13.0<4:devel/py-python-engineio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
