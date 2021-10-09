@@ -1,5 +1,5 @@
---- src/mate-calc-cmd.c.orig	2013-03-24 20:56:44.000000000 -0500
-+++ src/mate-calc-cmd.c	2013-03-24 20:58:28.000000000 -0500
+--- src/mate-calc-cmd.c.orig	2021-08-04 12:19:50 UTC
++++ src/mate-calc-cmd.c
 @@ -8,10 +8,12 @@
   * license.
   */
@@ -13,10 +13,11 @@
  #include <time.h>
  #include <locale.h>
  
-@@ -22,6 +24,77 @@
+@@ -21,6 +23,77 @@
+ #define MAXLINE 1024
  
  static MpSerializer *result_serializer;
- 
++
 +#if __FreeBSD_version < 800067
 +static ssize_t
 +getline (char **lineptr, size_t *n, FILE *stream)
@@ -87,7 +88,6 @@
 +	return p - *lineptr;
 +}
 +#endif
-+
+ 
  static void
  solve(const char *equation)
- {

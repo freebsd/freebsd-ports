@@ -1,7 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	mate-calc
-PORTVERSION=	1.24.2
+PORTVERSION=	1.26.0
 CATEGORIES=	math mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libmpc.so:math/mpc \
+		libmpfr.so:math/mpfr
 
 PORTSCOUT=	limitw:1,even
 
