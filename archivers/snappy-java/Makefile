@@ -66,6 +66,8 @@ PLATFORM_DIR_SUFFIX=	FreeBSD-x86_64
 PLATFORM_DIR_SUFFIX=	FreeBSD-x86
 .	elif ${ARCH} == aarch64
 PLATFORM_DIR_SUFFIX=	FreeBSD-aarch64
+.	elif ${ARCH} == powerpc64
+PLATFORM_DIR_SUFFIX=	FreeBSD-ppc64
 .	else
 PLATFORM_DIR_SUFFIX=	Default
 .	endif
