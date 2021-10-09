@@ -1,8 +1,7 @@
 # Created by: Ganael LAPLANCHE <ganael.laplanche@martymac.org>
 
 PORTNAME=	amule
-PORTVERSION=	2.3.2
-PORTREVISION=	12
+PORTVERSION=	2.3.3
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/aMule/${PORTVERSION}
 DISTNAME=	aMule-${PORTVERSION}
@@ -33,9 +32,8 @@ LDFLAGS+=	-lpthread
 
 SHEBANG_FILES=	src/utils/scripts/*.pl src/utils/xas/*.pl src/libs/ec/*.pl
 
-OPTIONS_DEFINE=	ALC ALCC AMULECMD AMULEDAEMON AMULEGUI CAS DEBUG DOCS ED2K \
-	FILEVIEW MMAP MONOLITHIC NLS UPNP \
-	WEBSERVER WXCAS XAS
+OPTIONS_DEFINE=	ALC ALCC AMULECMD AMULEDAEMON AMULEGUI BOOST CAS DEBUG \
+	DOCS ED2K FILEVIEW MMAP MONOLITHIC NLS UPNP WEBSERVER WXCAS XAS
 ALC_DESC=		Compile aMule Link Creator for GUI
 ALCC_DESC=		Compile aMule Link Creator for console
 AMULECMD_DESC=		Compile aMule command line client
@@ -69,6 +67,9 @@ AMULEDAEMON_CONFIGURE_ON=	--enable-amule-daemon
 AMULEDAEMON_USE=	RC_SUBR=amuled
 
 AMULEGUI_CONFIGURE_ON=	--enable-amule-gui
+
+BOOST_CONFIGURE_ON=	--with-boost
+BOOST_LIB_DEPENDS+=	libboost_system.so:devel/boost-libs
 
 CAS_CONFIGURE_ON=	--enable-cas
 CAS_LIB_DEPENDS=	libgd.so:graphics/gd
