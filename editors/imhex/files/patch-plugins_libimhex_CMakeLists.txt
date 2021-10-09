@@ -1,11 +1,8 @@
---- plugins/libimhex/CMakeLists.txt.orig	2021-09-11 13:07:05 UTC
+--- plugins/libimhex/CMakeLists.txt.orig	2021-09-30 10:52:12 UTC
 +++ plugins/libimhex/CMakeLists.txt
-@@ -98,7 +98,7 @@ if (APPLE)
-     find_library(FOUNDATION NAMES Foundation)
-     target_link_libraries(libimhex PUBLIC imgui nlohmann_json mbedcrypto ${FOUNDATION} nfd fmt-header-only libcurl magic)
- else ()
--    target_link_libraries(libimhex PUBLIC imgui nlohmann_json mbedcrypto nfd magic)
-+    target_link_libraries(libimhex PUBLIC imgui nlohmann_json mbedcrypto mbedtls mbedx509 nfd magic)
+@@ -111,4 +111,4 @@ if (APPLE)
+     target_link_libraries(libimhex PUBLIC ${FOUNDATION})
+ endif ()
  
-     if (NOT USE_SYSTEM_FMT)
-         target_link_libraries(libimhex PUBLIC fmt-header-only)
+-target_link_libraries(libimhex PUBLIC imgui nfd magic capstone LLVMDemangle microtar ${NLOHMANN_JSON_LIBRARIES} ${YARA_LIBRARIES} ${LIBCURL_LIBRARIES} ${MBEDTLS_LIBRARIES} ${FMT_LIBRARIES} ${Python_LIBRARIES})
++target_link_libraries(libimhex PUBLIC imgui nfd magic capstone LLVMDemangle microtar ${NLOHMANN_JSON_LIBRARIES} ${YARA_LIBRARIES} ${LIBCURL_LIBRARIES} mbedtls mbedcrypto mbedx509 ${FMT_LIBRARIES} ${Python_LIBRARIES})

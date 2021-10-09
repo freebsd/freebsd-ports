@@ -1,4 +1,3 @@
 bin/imhex
 lib/libimhex.so
-%%DATADIR%%/magic/imhex.mgc
 %%DATADIR%%/plugins/builtin.hexplug
