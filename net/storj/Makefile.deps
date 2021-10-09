@@ -53,14 +53,14 @@ GH_TUPLE=	\
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jackc:chunkreader:v2.0.1:jackc_chunkreader/vendor/github.com/jackc/chunkreader/v2 \
-		jackc:pgconn:v1.8.0:jackc_pgconn/vendor/github.com/jackc/pgconn \
+		jackc:pgconn:v1.10.0:jackc_pgconn/vendor/github.com/jackc/pgconn \
 		jackc:pgerrcode:a0d42d470451:jackc_pgerrcode/vendor/github.com/jackc/pgerrcode \
 		jackc:pgio:v1.0.0:jackc_pgio/vendor/github.com/jackc/pgio \
 		jackc:pgpassfile:v1.0.0:jackc_pgpassfile/vendor/github.com/jackc/pgpassfile \
-		jackc:pgproto3:v2.0.6:jackc_pgproto3/vendor/github.com/jackc/pgproto3/v2 \
+		jackc:pgproto3:v2.1.1:jackc_pgproto3/vendor/github.com/jackc/pgproto3/v2 \
 		jackc:pgservicefile:2b9c44734f2b:jackc_pgservicefile/vendor/github.com/jackc/pgservicefile \
-		jackc:pgtype:v1.6.2:jackc_pgtype/vendor/github.com/jackc/pgtype \
-		jackc:pgx:v4.10.1:jackc_pgx/vendor/github.com/jackc/pgx/v4 \
+		jackc:pgtype:v1.8.1:jackc_pgtype/vendor/github.com/jackc/pgtype \
+		jackc:pgx:v4.13.0:jackc_pgx/vendor/github.com/jackc/pgx/v4 \
 		jtolds:monkit-hw:141a0da276b3:jtolds_monkit_hw/vendor/github.com/jtolds/monkit-hw/v2 \
 		jtolds:tracetagger:v2.0.0-rc5:jtolds_tracetagger/vendor/github.com/jtolds/tracetagger/v2 \
 		loov:hrtime:v1.0.3:loov_hrtime/vendor/github.com/loov/hrtime \
@@ -94,11 +94,11 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:56ad343b6a7e:storj_common/vendor/storj.io/common \
+		storj:common:ecbc7f49b8a4:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.26:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:debb1cbcbbd7:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:private:af46b647eda5:storj_private/vendor/storj.io/private \
-		storj:uplink:4aeb0a767a86:storj_uplink/vendor/storj.io/uplink \
+		storj:private:434aeab3f17d:storj_private/vendor/storj.io/private \
+		storj:uplink:4da201e4aebb:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v72.51.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v72 \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
