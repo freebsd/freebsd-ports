@@ -1,9 +1,9 @@
---- configure.orig	2020-09-13 21:05:37 UTC
+--- configure.orig	2021-08-28 18:59:28 UTC
 +++ configure
-@@ -2947,9 +2947,9 @@ EOF
- 		append_var LIBS "-specs=ds_arm9.specs"
- 		append_var LIBS "-lnds9"
- 		;;
+@@ -2937,9 +2937,9 @@ EOF
+ 			_optimization_level=-O2
+ 		fi
+ 	;;
 -	freebsd* | openbsd*)
 -		append_var LDFLAGS "-L/usr/local/lib"
 -		append_var CXXFLAGS "-I/usr/local/include"
@@ -13,13 +13,13 @@
  		;;
  	gamecube)
  		_optimization_level=-Os
-@@ -3920,6 +3920,9 @@ case $_host_os in
- 	3ds | android | androidsdl | beos* | bsd* | darwin* | freebsd* | gnu* | gph-linux | haiku* | hpux* | iphone | ios7 | irix*| k*bsd*-gnu* | linux* | maemo | mint* | netbsd* | openbsd* | solaris* | sunos* | switch | uclinux*)
- 		_posix=yes
+@@ -3975,6 +3975,9 @@ case $_host_os in
+ 		_posix=no
  		;;
-+	dragonfly*)
+ 	3ds | android | androidsdl | beos* | bsd* | darwin* | freebsd* | gnu* | gph-linux | haiku* | hpux* | iphone | ios7 | irix*| k*bsd*-gnu* | linux* | maemo | mint* | netbsd* | openbsd* | solaris* | sunos* | switch | uclinux*)
 +		_posix=yes
 +		;;
- 	os2-emx*)
- 		_posix=yes	# FIXME: Really???
++	dragonfly*)
+ 		_posix=yes
  		;;
+ 	os2-emx*)
