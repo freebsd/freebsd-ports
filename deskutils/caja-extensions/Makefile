@@ -1,8 +1,7 @@
 # Created by: Eric Turgeon <ericturgeon@ghostbsd.org>
 
 PORTNAME=	caja-extensions
-PORTVERSION=	1.24.1
-PORTREVISION=	1
+PORTVERSION=	1.26.0
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
