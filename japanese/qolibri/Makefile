@@ -1,7 +1,7 @@
 # created by: Osamu Matsuda <omatsuda000@gmail.com>
 
 PORTNAME=	qolibri
-DISTVERSION=	2.1.3
+DISTVERSION=	2.1.4
 CATEGORIES=	japanese
 
 MAINTAINER=	omatsuda000@gmail.com
