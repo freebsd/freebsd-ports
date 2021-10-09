@@ -1,5 +1,6 @@
 PORTNAME=	fuzzel
 DISTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -39,7 +40,9 @@ PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_MESON_ENABLED=	enable-png
 
 post-patch:
-	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},g' \
+# Respect PREFIX for icons
+	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
+		${WRKSRC}/completions/zsh/_${PORTNAME} \
 		${WRKSRC}/xdg.c
 
 .include <bsd.port.mk>
