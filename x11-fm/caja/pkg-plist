@@ -52,7 +52,7 @@ share/applications/mate-network-scheme.desktop
 %%DATADIR%%/patterns/chalk.jpg
 %%DATADIR%%/patterns/cork.png
 %%DATADIR%%/patterns/countertop.png
-%%DATADIR%%/patterns/dark-mate.jpg
+%%DATADIR%%/patterns/dark-gnome.jpg
 %%DATADIR%%/patterns/dots.png
 %%DATADIR%%/patterns/fibers.png
 %%DATADIR%%/patterns/fleur_de_lis.png
@@ -61,7 +61,7 @@ share/applications/mate-network-scheme.desktop
 %%DATADIR%%/patterns/green_weave.png
 %%DATADIR%%/patterns/ice.png
 %%DATADIR%%/patterns/manila_paper.png
-%%DATADIR%%/patterns/mate.jpg
+%%DATADIR%%/patterns/gnome.jpg
 %%DATADIR%%/patterns/moss_ridge.png
 %%DATADIR%%/patterns/numbers.png
 %%DATADIR%%/patterns/ocean_stripes.png
