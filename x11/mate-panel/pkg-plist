@@ -813,6 +813,9 @@ share/help/zh_CN/mate-clock/legal.xml
 share/help/zh_CN/mate-fish/figures/fish_applet.png
 share/help/zh_CN/mate-fish/index.docbook
 share/help/zh_CN/mate-fish/legal.xml
+share/help/zh-Hans/mate-clock/figures/clock_applet.png
+share/help/zh-Hans/mate-clock/index.docbook
+share/help/zh-Hans/mate-clock/legal.xml
 share/help/zh_HK/mate-clock/figures/clock_applet.png
 share/help/zh_HK/mate-clock/index.docbook
 share/help/zh_HK/mate-clock/legal.xml
@@ -955,6 +958,7 @@ share/locale/el/LC_MESSAGES/mate-panel.mo
 share/locale/en_AU/LC_MESSAGES/mate-panel.mo
 share/locale/en_CA/LC_MESSAGES/mate-panel.mo
 share/locale/en_GB/LC_MESSAGES/mate-panel.mo
+share/locale/en_US/LC_MESSAGES/mate-panel.mo
 share/locale/eo/LC_MESSAGES/mate-panel.mo
 share/locale/es/LC_MESSAGES/mate-panel.mo
 share/locale/es_AR/LC_MESSAGES/mate-panel.mo
