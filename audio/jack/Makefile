@@ -3,6 +3,7 @@
 PORTNAME=	jackit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.16
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -13,8 +14,7 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libsamplerate.so:audio/libsamplerate \
-		libsysinfo.so:devel/libsysinfo \
-		libcelt0.so:audio/celt
+		libsysinfo.so:devel/libsysinfo
 
 USES=		compiler:c11 pkgconfig python:3.4+ shebangfix waf
 USE_LDCONFIG=	yes
@@ -31,7 +31,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 SHEBANG_FILES=	tools/jack_control
 SHEBANG_LANG=	python3
 
-CONFIGURE_ARGS=	--celt=yes --sndfile=yes --samplerate=yes
+CONFIGURE_ARGS=	--celt=no --sndfile=yes --samplerate=yes
 
 OPTIONS_DEFINE=		ALSA DBUS READLINE OPUS PROFILING
 OPTIONS_DEFAULT=	DBUS READLINE OPUS
