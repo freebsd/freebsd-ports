@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	yaru-icon-theme
-DISTVERSION=	21.10.1
+DISTVERSION=	21.10.2
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
