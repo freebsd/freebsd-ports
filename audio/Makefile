@@ -445,7 +445,6 @@
     SUBDIR += liquidsfz
     SUBDIR += listener
     SUBDIR += littlefly-lv2
-    SUBDIR += lms
     SUBDIR += lmms
     SUBDIR += logitechmediaserver
     SUBDIR += logitechmediaserver-dynamicplaylist
