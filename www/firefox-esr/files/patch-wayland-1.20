@@ -1,0 +1,25 @@
+ld: warning: undefined symbol: wl_proxy_marshal_flags
+>>> referenced by Unified_cpp_gfx_gl0.cpp
+>>>               objdir/gfx/gl/Unified_cpp_gfx_gl0.o:(mozilla::gl::DeleteWaylandGLSurface(void*))
+>>> referenced by Unified_cpp_gfx_gl0.cpp
+>>>               objdir/gfx/gl/Unified_cpp_gfx_gl0.o:(mozilla::gl::GLContextEGL::CreateWaylandBufferSurface(mozilla::gl::EglDisplay&, void*, mozilla::gfx::IntSizeTyped<mozilla::gfx::UnknownUnits>&))
+>>> referenced by Unified_cpp_gfx_layers1.cpp
+>>>               objdir/gfx/layers/Unified_cpp_gfx_layers1.o:(mozilla::layers::NativeLayerRootWayland::CommitToScreen(mozilla::detail::BaseAutoLock<mozilla::Mutex&> const&))
+>>> referenced 84 more times
+
+--- widget/gtk/mozwayland/mozwayland.c.orig	2021-09-27 22:47:59 UTC
++++ widget/gtk/mozwayland/mozwayland.c
+@@ -40,6 +40,13 @@ MOZ_EXPORT void wl_event_queue_destroy(struct wl_event
+ 
+ MOZ_EXPORT void wl_proxy_marshal(struct wl_proxy* p, uint32_t opcode, ...) {}
+ 
++MOZ_EXPORT struct wl_proxy* wl_proxy_marshal_flags(
++    struct wl_proxy* proxy, uint32_t opcode,
++    const struct wl_interface* interface, uint32_t version, uint32_t flags,
++    ...) {
++  return NULL;
++}
++
+ MOZ_EXPORT void wl_proxy_marshal_array(struct wl_proxy* p, uint32_t opcode,
+                                        union wl_argument* args) {}
+ 

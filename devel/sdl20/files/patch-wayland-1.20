@@ -1,0 +1,29 @@
+ld: error: undefined symbol: wl_proxy_marshal_flags
+>>> referenced by SDL_waylanddatamanager.c
+>>>               build/.libs/SDL_waylanddatamanager.o:(Wayland_data_source_destroy)
+>>> referenced by SDL_waylanddatamanager.c
+>>>               build/.libs/SDL_waylanddatamanager.o:(Wayland_data_offer_receive)
+>>> referenced by SDL_waylanddatamanager.c
+>>>               build/.libs/SDL_waylanddatamanager.o:(Wayland_data_offer_destroy)
+>>> referenced 109 more times
+
+--- src/video/wayland/SDL_waylanddyn.h.orig	2020-03-11 01:36:18 UTC
++++ src/video/wayland/SDL_waylanddyn.h
+@@ -75,6 +75,7 @@ void SDL_WAYLAND_UnloadSymbols(void);
+ #define wl_proxy_create (*WAYLAND_wl_proxy_create)
+ #define wl_proxy_destroy (*WAYLAND_wl_proxy_destroy)
+ #define wl_proxy_marshal (*WAYLAND_wl_proxy_marshal)
++#define wl_proxy_marshal_flags (*WAYLAND_wl_proxy_marshal_flags)
+ #define wl_proxy_set_user_data (*WAYLAND_wl_proxy_set_user_data)
+ #define wl_proxy_get_user_data (*WAYLAND_wl_proxy_get_user_data)
+ #define wl_proxy_get_version (*WAYLAND_wl_proxy_get_version)
+--- src/video/wayland/SDL_waylandsym.h.orig	2020-03-11 01:36:18 UTC
++++ src/video/wayland/SDL_waylandsym.h
+@@ -35,6 +35,7 @@
+ 
+ SDL_WAYLAND_MODULE(WAYLAND_CLIENT)
+ SDL_WAYLAND_SYM(void, wl_proxy_marshal, (struct wl_proxy *, uint32_t, ...))
++SDL_WAYLAND_SYM(struct wl_proxy *, wl_proxy_marshal_flags, (struct wl_proxy *, uint32_t, const struct wl_interface *, uint32_t, uint32_t, ...))
+ SDL_WAYLAND_SYM(struct wl_proxy *, wl_proxy_create, (struct wl_proxy *, const struct wl_interface *))
+ SDL_WAYLAND_SYM(void, wl_proxy_destroy, (struct wl_proxy *))
+ SDL_WAYLAND_SYM(int, wl_proxy_add_listener, (struct wl_proxy *, void (**)(void), void *))
