@@ -19,12 +19,9 @@ share/gnome-shell/theme/Yaru-light/keyboard-enter-symbolic.svg
 share/gnome-shell/theme/Yaru-light/keyboard-hide-symbolic.svg
 share/gnome-shell/theme/Yaru-light/keyboard-layout-filled-symbolic.svg
 share/gnome-shell/theme/Yaru-light/keyboard-shift-filled-symbolic.svg
-share/gnome-shell/theme/Yaru-light/lockscreen-gradient.svg
-share/gnome-shell/theme/Yaru-light/logged-in-indicator.svg
 share/gnome-shell/theme/Yaru-light/message-indicator-symbolic.svg
 share/gnome-shell/theme/Yaru-light/no-events.svg
 share/gnome-shell/theme/Yaru-light/no-notifications.svg
-share/gnome-shell/theme/Yaru-light/noise-texture.png
 share/gnome-shell/theme/Yaru-light/pad-osd.css
 share/gnome-shell/theme/Yaru-light/pointer-double-click-symbolic.svg
 share/gnome-shell/theme/Yaru-light/pointer-drag-symbolic.svg
@@ -33,8 +30,6 @@ share/gnome-shell/theme/Yaru-light/pointer-secondary-click-symbolic.svg
 share/gnome-shell/theme/Yaru-light/preview-close-symbolic.svg
 share/gnome-shell/theme/Yaru-light/process-working.svg
 share/gnome-shell/theme/Yaru-light/running-indicator.svg
-share/gnome-shell/theme/Yaru-light/source-button-border.svg
-share/gnome-shell/theme/Yaru-light/summary-counter.svg
 share/gnome-shell/theme/Yaru-light/toggle-off-dark.svg
 share/gnome-shell/theme/Yaru-light/toggle-off-hc.svg
 share/gnome-shell/theme/Yaru-light/toggle-off-intl.svg
@@ -44,8 +39,6 @@ share/gnome-shell/theme/Yaru-light/toggle-on-hc.svg
 share/gnome-shell/theme/Yaru-light/toggle-on-intl.svg
 share/gnome-shell/theme/Yaru-light/toggle-on.svg
 share/gnome-shell/theme/Yaru-light/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-light/ws-switch-arrow-down.svg
-share/gnome-shell/theme/Yaru-light/ws-switch-arrow-up.svg
 share/gnome-shell/theme/Yaru/calendar-today.svg
 share/gnome-shell/theme/Yaru/carousel-arrow-back-24-symbolic.svg
 share/gnome-shell/theme/Yaru/carousel-arrow-next-24-symbolic.svg
@@ -67,12 +60,9 @@ share/gnome-shell/theme/Yaru/keyboard-enter-symbolic.svg
 share/gnome-shell/theme/Yaru/keyboard-hide-symbolic.svg
 share/gnome-shell/theme/Yaru/keyboard-layout-filled-symbolic.svg
 share/gnome-shell/theme/Yaru/keyboard-shift-filled-symbolic.svg
-share/gnome-shell/theme/Yaru/lockscreen-gradient.svg
-share/gnome-shell/theme/Yaru/logged-in-indicator.svg
 share/gnome-shell/theme/Yaru/message-indicator-symbolic.svg
 share/gnome-shell/theme/Yaru/no-events.svg
 share/gnome-shell/theme/Yaru/no-notifications.svg
-share/gnome-shell/theme/Yaru/noise-texture.png
 share/gnome-shell/theme/Yaru/pad-osd.css
 share/gnome-shell/theme/Yaru/pointer-double-click-symbolic.svg
 share/gnome-shell/theme/Yaru/pointer-drag-symbolic.svg
@@ -81,8 +71,6 @@ share/gnome-shell/theme/Yaru/pointer-secondary-click-symbolic.svg
 share/gnome-shell/theme/Yaru/preview-close-symbolic.svg
 share/gnome-shell/theme/Yaru/process-working.svg
 share/gnome-shell/theme/Yaru/running-indicator.svg
-share/gnome-shell/theme/Yaru/source-button-border.svg
-share/gnome-shell/theme/Yaru/summary-counter.svg
 share/gnome-shell/theme/Yaru/toggle-off-dark.svg
 share/gnome-shell/theme/Yaru/toggle-off-hc.svg
 share/gnome-shell/theme/Yaru/toggle-off-intl.svg
@@ -92,8 +80,6 @@ share/gnome-shell/theme/Yaru/toggle-on-hc.svg
 share/gnome-shell/theme/Yaru/toggle-on-intl.svg
 share/gnome-shell/theme/Yaru/toggle-on.svg
 share/gnome-shell/theme/Yaru/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru/ws-switch-arrow-down.svg
-share/gnome-shell/theme/Yaru/ws-switch-arrow-up.svg
 share/gtksourceview-2.0/styles/Yaru-dark.xml
 share/gtksourceview-2.0/styles/Yaru.xml
 share/gtksourceview-3.0/styles/Yaru-dark.xml
