@@ -1,6 +1,5 @@
 PORTNAME=	fuzzel
-DISTVERSION=	1.6.3
-PORTREVISION=	1
+DISTVERSION=	1.6.4
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -34,10 +33,13 @@ CAIRO_MESON_ENABLED=	enable-cairo
 
 LIBRSVG2_USES=		gnome
 LIBRSVG2_USE=		GNOME=librsvg2
-LIBRSVG2_MESON_ENABLED=	enable-svg
+LIBRSVG2_MESON_ON=	-Dsvg-backend=librsvg
+LIBRSVG2_MESON_OFF=	-Dsvg-backend=nanosvg
+LIBRSVG2_IMPLIES=	CAIRO
 
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
-PNG_MESON_ENABLED=	enable-png
+PNG_MESON_ON=		-Dpng-backend=libpng
+PNG_MESON_OFF=		-Dpng-backend=none
 
 post-patch:
 # Respect PREFIX for icons
