@@ -3,7 +3,7 @@
 PORTNAME=	apache-ant
 DISTVERSION=	1.10.8
 CATEGORIES=	devel java
-MASTER_SITES=	APACHE/ant/binaries/:bin \
+MASTER_SITES=	https://archive.apache.org/dist/ant/binaries/:bin \
 		LOCAL/hq:man
 DISTFILES=	${ANT_DISTFILE}:bin \
 		${MANPAGE_DISTFILE}:man
@@ -33,7 +33,7 @@ READMES=	LICENSE README WHATSNEW
 
 .if ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	${PORTNAME}-${DISTVERSION}-manual.tar.bz2:doc
-MASTER_SITES+=	APACHE/ant/manual/:doc
+MASTER_SITES+=	https://archive.apache.org/dist/ant/manual/:doc
 PORTDOCS=	*
 .endif
 
