@@ -1076,6 +1076,7 @@
     SUBDIR += py-pynamecheap
     SUBDIR += py-pynmsg
     SUBDIR += py-pynsq
+    SUBDIR += py-pypacker
     SUBDIR += py-pypcap
     SUBDIR += py-pyroute2
     SUBDIR += py-pyroute2.core
