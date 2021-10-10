@@ -4,13 +4,16 @@ PORTNAME=	myfaces
 PORTVERSION=	1.1.1
 PORTREVISION=	2
 CATEGORIES=	www devel java
-MASTER_SITES=	APACHE/${PORTNAME}/binaries
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/binaries/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free open source JavaServer(tm) Faces implementation
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	Unsupported by upstream, released in 2005
+EXPIRATION_DATE=2022-03-31
 
 USE_JAVA=	yes
 NO_BUILD=	yes
