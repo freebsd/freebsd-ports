@@ -3,7 +3,7 @@
 PORTNAME=	log4cxx
 PORTVERSION=	0.11.0
 CATEGORIES=	devel
-MASTER_SITES=	APACHE/logging/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	https://archive.apache.org/dist/logging/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
