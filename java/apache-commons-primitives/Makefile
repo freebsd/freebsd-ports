@@ -3,7 +3,7 @@
 PORTNAME=	commons-primitives
 PORTVERSION=	1.0
 CATEGORIES=	java
-MASTER_SITES=	APACHE_COMMONS_SOURCE
+MASTER_SITES=	https://archive.apache.org/dist/commons/primitives/source/
 PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
@@ -11,6 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library supporting Java primitive types
 
 LICENSE=	APACHE20
+
+DEPRECATED=	Abandoned upstream, last release in 2003
+EXPIRATION_DATE=2022-03-31
 
 USE_JAVA=	yes
 USE_ANT=	yes
