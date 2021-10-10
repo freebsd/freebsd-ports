@@ -24,6 +24,7 @@ AUTHOR: bapt@FreeBSD.org
 
 20210801:
 AUTHOR: delphij@FreeBSD.org
+
   WANT_OPENLDAP_SASL is removed now that OpenLDAP is always built with
   SASL support.
 
