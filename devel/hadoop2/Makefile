@@ -8,7 +8,7 @@ PORTNAME=	hadoop
 PORTVERSION=	2.7.2
 PORTREVISION=	4
 CATEGORIES=	devel java
-MASTER_SITES=	APACHE/${PORTNAME}/common/hadoop-${PORTVERSION} \
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/common/${PORTNAME}-${PORTVERSION}/ \
 		LOCAL/demon/:maven \
 		http://archive.apache.org/dist/tomcat/tomcat-6/v${TOMCAT_VERSION}/bin/:tomcat \
 		LOCAL/demon/:jetty
