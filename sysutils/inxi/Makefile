@@ -9,7 +9,6 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	bind-tools>=0:dns/bind-tools \
-		dmidecode:sysutils/dmidecode \
 		mesa-demos>=0:graphics/mesa-demos \
 		p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS \
 		p5-HTTP-Tiny>=0:www/p5-HTTP-Tiny \
@@ -36,6 +35,12 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDOCS=	${PORTNAME}.changelog README.txt
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == riscv64 || ${ARCH} == riscv64sf
+RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
