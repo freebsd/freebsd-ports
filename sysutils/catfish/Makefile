@@ -27,7 +27,6 @@ USE_GNOME=	gtk30 intltool pygobject3
 CPE_VENDOR=	catfish_project
 
 NO_ARCH=	yes
-INSTALLS_ICONS=	yes
 
 PORTSCOUT=	limitw:1,even
 

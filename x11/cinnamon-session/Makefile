@@ -27,7 +27,6 @@ SHEBANG_FILES=	data/meson_install_schemas.py
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	ice sm x11 xau xcomposite xext xrender xtrans xtst
 USE_GL=		gl
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.cinnamon.SessionManager.gschema.xml
 

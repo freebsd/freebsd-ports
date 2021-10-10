@@ -29,12 +29,11 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 introspection:build pango \
-		librsvg2:run
+		librsvg2:run gtk-update-icon-cache
 USES=		compiler:c11 gettext gmake gnome libtool localbase \
 		pathfix perl5 pkgconfig tar:xz
 CONFIGURE_ARGS=	--enable-introspection
 CPPFLAGS+=	-fno-omit-frame-pointer
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 LIBVERSION=	0.2404.26

@@ -23,7 +23,6 @@ USE_GNOME=	cairo gtk30 intltool introspection
 USE_GSTREAMER1=	core
 USE_XORG=	xext
 GLIB_SCHEMAS=	org.entangle-photo.manager.gschema.xml
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	NLS

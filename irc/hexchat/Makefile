@@ -27,7 +27,6 @@ USE_XORG=	x11
 USE_GITHUB=	yes
 
 MESON_ARGS=	-Dtls=enabled -Dgtk-frontend=true -Dwith-python=python-${PYTHON_VER}
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 LIBS+=		-lX11

@@ -20,7 +20,6 @@ USE_XORG=	x11 xext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gtk3=no
-INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS
 

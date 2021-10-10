@@ -22,7 +22,6 @@ USES=		compiler:c++11-lang gettext gmake gnome pkgconfig python \
 		shebangfix sqlite:3
 USE_GNOME=	cairo gconf2 gtk20 intltool libglade2 libxml2
 GLIB_SCHEMAS=	org.foxtrotgps.gschema.xml
-INSTALLS_ICONS=	yes
 
 SHEBANG_FILES=	contrib/convert2gpx \
 		contrib/convert2osm \

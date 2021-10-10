@@ -20,7 +20,6 @@ PORTSCOUT=	limit:^${PORTVERSION:R:S|.|\.|}\.*$$
 USES=		gettext gmake gnome localbase pathfix pkgconfig tar:xz
 USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 LOCALES=	as ast bn_IN ca@valencia cmn crh dz es_CO fur fy \
 		hy kk ky mai mg mr nds oc si sr@latin te ug xh zh_HK

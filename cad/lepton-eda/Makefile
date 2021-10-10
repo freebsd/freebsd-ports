@@ -21,7 +21,6 @@ USES=		desktop-file-utils gettext-tools gnome \
 		groff:build libtool localbase makeinfo pathfix perl5 \
 		pkgconfig shared-mime-info shebangfix
 USE_GNOME=	cairo gtk20
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	utils/pcb_backannotate/lepton-pcb_backannotate \

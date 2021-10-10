@@ -24,7 +24,6 @@ USE_GNOME=	cairo glib20
 GLIB_SCHEMAS=	apps.gecko-mediaplayer.preferences.gschema.xml \
 		apps.gnome-mplayer.preferences.enums.xml \
 		apps.gnome-mplayer.preferences.gschema.xml
-INSTALLS_ICONS=	yes
 USE_XORG=	x11 xscrnsaver
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nautilus \

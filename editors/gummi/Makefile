@@ -22,7 +22,6 @@ USES=		desktop-file-utils gmake gnome iconv pkgconfig xorg
 GNU_CONFIGURE=	yes
 USE_XORG=	xcomposite xcursor xdamage xft
 USE_GNOME=	cairo glib20 gtksourceview3 intlhack
-INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 
 OPTIONS_DEFINE=	NLS

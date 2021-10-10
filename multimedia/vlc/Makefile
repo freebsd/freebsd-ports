@@ -380,7 +380,6 @@ WITH_DVD_DEVICE?=/dev/cd0
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-INSTALLS_ICONS=	yes
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}

@@ -21,7 +21,6 @@ GH_PROJECT=	Kooha
 SHEBANG_FILES=	build-aux/meson_post_install.py
 MAKE_ENV=	${CARGO_ENV}
 GLIB_SCHEMAS=	io.github.seadve.Kooha.gschema.xml
-INSTALLS_ICONS=	yes
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
 		anyhow-1.0.43 \

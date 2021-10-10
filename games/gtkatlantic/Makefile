@@ -18,7 +18,6 @@ USES=		gnome localbase:ldflags pkgconfig
 USE_GNOME=	cairo gtk30 libxml2
 GNU_CONFIGURE=	yes
 
-INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README

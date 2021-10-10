@@ -27,7 +27,6 @@ GH_ACCOUNT=	ubuntu-mate
 USE_GNOME=	gtk30 libwnck3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk3
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	src/*.in
 

@@ -57,7 +57,6 @@ CONFIGURE_ENV=	ac_cv_lib_X11_main=yes \
 		ac_cv_lib_jpeg_main=yes
 SHEBANG_FILES=	src/pgiac
 INSTALL_TARGET=	install-strip
-INSTALLS_ICONS=	yes
 
 COCOA_LIB_VERSION=	0.99700
 

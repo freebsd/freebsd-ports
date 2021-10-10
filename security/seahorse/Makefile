@@ -30,7 +30,6 @@ USE_GNOME=	gtk30
 GLIB_SCHEMAS=	org.gnome.seahorse.gschema.xml \
 		org.gnome.seahorse.manager.gschema.xml \
 		org.gnome.seahorse.window.gschema.xml
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	sm
 CPE_VENDOR=	gnome

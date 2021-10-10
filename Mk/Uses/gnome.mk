@@ -171,7 +171,6 @@ pangox-compat_USE_GNOME_IMPL=	glib20 pango
 gdkpixbuf2_LIB_DEPENDS=	libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2
 gdkpixbuf2_USE_GNOME_IMPL=glib20
 
-gtk-update-icon-cache_BUILD_DEPENDS=	gtk-update-icon-cache:graphics/gtk-update-icon-cache
 gtk-update-icon-cache_RUN_DEPENDS=	gtk-update-icon-cache:graphics/gtk-update-icon-cache
 gtk-update-icon-cache_USE_GNOME_IMPL=	atk pango gdkpixbuf2
 
@@ -311,10 +310,6 @@ libgnomekbd_USE_GNOME_IMPL=	gtk30 libxml2
 gvfs_BUILD_DEPENDS=	gvfs>=0:devel/gvfs
 gvfs_RUN_DEPENDS=	gvfs>=0:devel/gvfs
 gvfs_USE_GNOME_IMPL=	glib20
-
-.if defined(INSTALLS_ICONS)
-USE_GNOME+=	gtk-update-icon-cache
-.endif
 
 # End component definition section
 

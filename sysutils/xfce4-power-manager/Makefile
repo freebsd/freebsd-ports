@@ -21,7 +21,6 @@ USE_XFCE=	panel
 USE_XORG=	ice sm xrandr x11 xext xtst xscrnsaver
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-network-manager \
 		--enable-polkit \
 		--enable-xfce4panel

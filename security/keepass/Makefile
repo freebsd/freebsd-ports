@@ -19,7 +19,6 @@ USES=		cpe dos2unix gnome mono zip
 
 DOS2UNIX_GLOB=		*.csproj *.sln
 EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
-INSTALLS_ICONS=		yes
 NO_ARCH=		yes
 SUB_FILES=		${PORTNAME}.sh
 DESKTOP_ENTRIES=	"KeePass" \

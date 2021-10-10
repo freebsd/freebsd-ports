@@ -38,7 +38,6 @@ USE_XORG=	x11
 
 GLIB_SCHEMAS=	org.nemo.gschema.xml
 
-INSTALLS_ICONS=	yes
 
 USE_LDCONFIG=	yes
 

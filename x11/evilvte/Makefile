@@ -15,7 +15,6 @@ USES=		gmake gnome pkgconfig tar:xz
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 HAS_CONFIGURE=	yes
 ALL_TARGET=	evilvte
-INSTALLS_ICONS=	yes
 USE_GNOME=	vte
 
 pre-everything::

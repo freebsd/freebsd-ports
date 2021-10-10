@@ -29,7 +29,6 @@ USE_GNOME=	cairo gnomeprefix gtk30 intltool introspection \
 		librsvg2 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-cms
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.eom.gschema.xml \

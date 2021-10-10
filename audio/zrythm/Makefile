@@ -56,7 +56,6 @@ SHEBANG_FILES=	scripts/collect_translatables.sh
 
 GLIB_SCHEMAS=	org.zrythm.Zrythm.gschema.xml
 
-INSTALLS_ICONS=	yes
 
 LDFLAGS+=	${LOCALBASE}/lib/libfftw3_threads.so ${LOCALBASE}/lib/libfftw3f_threads.so # these libs are required but aren't returned by pkg-config for fftw3
 

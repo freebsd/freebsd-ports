@@ -13,7 +13,6 @@ USES=		gnome
 USE_GITHUB=	yes
 GH_ACCOUNT=	numixproject
 
-INSTALLS_ICONS=	yes
 
 NO_ARCH=	yes
 NO_BUILD=	yes

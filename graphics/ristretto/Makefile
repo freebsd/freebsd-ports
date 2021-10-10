@@ -22,7 +22,6 @@ USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes

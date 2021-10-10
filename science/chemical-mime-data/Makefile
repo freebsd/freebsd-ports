@@ -16,7 +16,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-update-database
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALLS_ICONS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|*-*-solaris*|*| ; s|rsvg|rsvg-convert|g' ${WRKSRC}/configure

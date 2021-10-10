@@ -32,7 +32,6 @@ CFLAGS+=	-Wno-return-type
 PORTDOCS=	model_notes.txt models.gnuplot
 OPTIONS_DEFINE=	DOCS
 
-INSTALLS_ICONS=	yes
 ICON_SIZES=	22x22 32x32 48x48 64x64 72x72 96x96 128x128 192x192
 
 SUB_FILES=	${PORTNAME} pkg-message

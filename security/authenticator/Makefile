@@ -34,7 +34,6 @@ SHEBANG_FILES=	build-aux/meson_post_install.py
 CARGO_ENV=	ZBAR_INCLUDE_DIRS="${LOCALBASE}/include" ZBAR_LIB_DIRS="${LOCALBASE}/lib"
 MAKE_ENV=	${CARGO_ENV}
 GLIB_SCHEMAS=	com.belmoussaoui.Authenticator.gschema.xml
-INSTALLS_ICONS=	yes
 
 CARGO_CRATES=	adler-1.0.2 \
 		adler32-1.2.0 \

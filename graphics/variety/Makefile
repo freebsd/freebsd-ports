@@ -33,7 +33,6 @@ USES=		desktop-file-utils gettext-tools gnome python:3.5+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	varietywalls
 USE_GNOME=	gdkpixbuf2 gtk30 intltool pygobject3:run
-INSTALLS_ICONS=	yes
 USE_PYTHON=	autoplist distutils noflavors
 
 SHEBANG_FILES=	bin/variety data/scripts/*

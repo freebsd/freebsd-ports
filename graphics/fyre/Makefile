@@ -16,7 +16,6 @@ USES=		compiler:c++11-lang desktop-file-utils gmake gnome pkgconfig \
 		shared-mime-info tar:bzip2
 USE_GNOME=	libglade2
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		OPTIMIZED_CFLAGS OPENEXR GNET DOCS
 OPTIONS_DEFAULT=	OPENEXR GNET

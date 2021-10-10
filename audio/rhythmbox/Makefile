@@ -40,7 +40,6 @@ CONFIGURE_ARGS=	--enable-vala \
 		--enable-visualizer=no \
 		--with-python=yes \
 		--with-libsecret=yes
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

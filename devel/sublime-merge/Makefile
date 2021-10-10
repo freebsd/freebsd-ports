@@ -15,7 +15,6 @@ ONLY_FOR_ARCHS= aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and arm64
 
 USES=		desktop-file-utils gnome linux tar:xz
-INSTALLS_ICONS=	yes
 USE_LINUX=	gtk3
 
 NO_BUILD=	yes

@@ -20,7 +20,6 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gnome localbase meson pkgconfig \
 		python:3.6+,build tar:xz
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
-INSTALLS_ICONS=	yes
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 GLIB_SCHEMAS=	org.gnome.Tali.gschema.xml

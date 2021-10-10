@@ -21,7 +21,6 @@ USES=		compiler:c++11-lang gettext gmake gnome localbase:ldflags \
 		pathfix pkgconfig tar:bzip2
 USE_GNOME=	intlhack libglade2
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 LDFLAGS+=	-lpthread -logg -lm
 

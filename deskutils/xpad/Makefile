@@ -20,7 +20,6 @@ OPTIONS_SUB=	yes
 CONFLICTS_INSTALL=	xpad3-[0-9]*
 USE_XORG=	x11 sm ice
 USE_GNOME=	gtk30 intltool gtksourceview3 cairo
-INSTALLS_ICONS=	yes
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes

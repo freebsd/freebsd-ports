@@ -27,6 +27,5 @@ GH_ACCOUNT=	iurie-sw
 USE_GNOME=	cairo
 USE_XORG=	x11
 
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

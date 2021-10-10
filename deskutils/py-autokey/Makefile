@@ -23,7 +23,6 @@ USES=		python:3.6+ shebangfix
 USE_PYTHON=	distutils concurrent
 USE_GITHUB=	yes
 
-INSTALLS_ICONS=	yes
 
 NO_ARCH=	yes
 

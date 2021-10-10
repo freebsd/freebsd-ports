@@ -24,7 +24,6 @@ USE_XFCE=	libexo xfconf
 USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-legacy-sm \
 		--with-xsession-prefix=${PREFIX}
 SUB_FILES=	pkg-message

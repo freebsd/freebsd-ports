@@ -30,7 +30,6 @@ USES=		desktop-file-utils gettext gnome localbase meson pkgconfig \
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo gtk30 introspection pygobject3
 USE_GSTREAMER1=	mpg123 ogg
-INSTALLS_ICONS=	yes
 SHEBANG_FILES=	gnome-music.in
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 

@@ -36,7 +36,6 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gnome jpeg localbase:ldflags meson \
 		pathfix pkgconfig python:3.4+,build sqlite tar:xz
 USE_GNOME=	cairo intltool libgsf libxml2
-INSTALLS_ICONS=	yes
 
 MESON_ARGS=	-Dsystemd_user_services=no \
 		-Dcharset_detenction=icu \

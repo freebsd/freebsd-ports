@@ -21,7 +21,6 @@ RUN_DEPENDS=	gdm>=3.0.0:x11/gdm \
 
 USES=		compiler:c++11-lib gnome meson pathfix pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 gtk30 intlhack
-INSTALLS_ICONS=	yes
 
 MESON_ARGS=	-Dcheese=disabled \
 		-Dparental_controls=disabled \

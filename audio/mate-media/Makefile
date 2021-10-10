@@ -29,7 +29,6 @@ USE_GNOME=	cairo glib20 gtk30 intlhack libxml2
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

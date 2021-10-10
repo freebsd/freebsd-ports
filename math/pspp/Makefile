@@ -41,7 +41,6 @@ GUI_LIB_DEPENDS=	libgladeui-2.so:devel/glade \
 			libspread-sheet-widget.so:devel/spread-sheet-widget
 GUI_USES=		desktop-file-utils shared-mime-info
 GUI_USE=		gnome=cairo,gtk30,gtksourceview3,pango pkgconfig
-GUI_VARS=		INSTALLS_ICONS=yes
 GUI_CONFIGURE_WITH=	cairo gui
 GUI_INSTALL_TARGET=	install-icons install-ext-icons
 

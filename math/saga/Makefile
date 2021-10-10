@@ -33,7 +33,6 @@ RUN_DEPENDS:=	swig:devel/swig
 USES=		cmake compiler:c++11-lib dos2unix gnome \
 		iconv:wchar_t libtool localbase pkgconfig python
 DOS2UNIX_GLOB=	*.cpp *.h
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_WX=		3.1+
 

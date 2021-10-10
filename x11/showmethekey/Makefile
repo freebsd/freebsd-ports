@@ -26,6 +26,5 @@ PLIST_FILES=	bin/${PORTNAME}-cli \
 		share/locale/zh_CN/LC_MESSAGES/${PORTNAME}.mo \
 		share/pixmaps/${PORTNAME}.png
 GLIB_SCHEMAS=	one.alynx.showmethekey.gschema.xml
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

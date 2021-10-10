@@ -14,7 +14,6 @@ LIB_DEPENDS=	libfprint.so:security/libfprint
 
 USES=		autoreconf desktop-file-utils gnome pkgconfig
 USE_GNOME=	atk glib20 gtk20 pango
-INSTALLS_ICONS=	yes
 
 NO_WRKSUBDIR=	yes
 

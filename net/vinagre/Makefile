@@ -34,7 +34,6 @@ USES=		autoreconf desktop-file-utils gettext gmake gnome localbase \
 USE_GNOME=	cairo gtk30 intlhack libxml2 vte3
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-ssh
 CPPFLAGS+=	-Wno-format-nonliteral
 

@@ -25,7 +25,6 @@ USE_XFCE=	panel
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=--with-mixer-command=${LOCALBASE}/bin/pavucontrol \

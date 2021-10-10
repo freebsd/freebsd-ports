@@ -28,7 +28,6 @@ USES=		desktop-file-utils gnome pkgconfig xorg
 USE_GNOME=	gtk20 cairo
 USE_XORG=	x11
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
 

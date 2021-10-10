@@ -37,7 +37,6 @@ USE_GNOME=	atk gconf2 gtk20 libxml2 pango
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
 USE_GL=		egl
 USE_SDL=	sdl
-INSTALLS_ICONS=	yes
 SYSCONFIGDIR=	${PREFIX}/etc
 
 # jemalloc leads to infinite recursion on FreeBSD

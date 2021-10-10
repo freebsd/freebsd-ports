@@ -20,7 +20,6 @@ USES=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz
 USE_GNOME=	cairo gnomeprefix gtk30 intltool libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.weather.gschema.xml

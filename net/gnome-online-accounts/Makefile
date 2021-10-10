@@ -28,7 +28,6 @@ USES=		compiler:c++11-lib gettext gmake gnome libtool \
 USE_GNOME=	cairo gtk30 introspection:build libxml2 libxslt:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-lastfm
 

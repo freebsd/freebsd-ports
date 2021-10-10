@@ -26,7 +26,6 @@ BUILD_DEPENDS=	locker:x11/deforaos-locker \
 
 USES=		desktop-file-utils gnome pkgconfig
 USE_GNOME=	gtk20 cairo
-INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
 

@@ -27,7 +27,6 @@ GL_TUPLE=	https://gitlab.freedesktop.org:gstreamer:gstreamer-rs:f00c57cd6f2a0912
 SHEBANG_FILES=	build-aux/meson/postinstall.py
 MAKE_ENV=	${CARGO_ENV}
 GLIB_SCHEMAS=	de.haeckerfelix.Shortwave.gschema.xml
-INSTALLS_ICONS=	yes
 
 CARGO_CRATES=	addr2line-0.14.1 \
 		adler-1.0.2 \

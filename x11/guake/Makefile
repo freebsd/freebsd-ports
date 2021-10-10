@@ -29,7 +29,6 @@ USE_GNOME=	glib20 gtk30 intltool vte3
 USE_PYTHON=	distutils noflavors
 GLIB_SCHEMAS=	org.guake.gschema.xml
 NO_ARCH=	yes
-INSTALLS_ICONS=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 

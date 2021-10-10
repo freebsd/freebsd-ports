@@ -20,7 +20,6 @@ USE_GNOME=	cairo gtk30 intltool
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	scripts/gen-api-gtkdoc.py
 

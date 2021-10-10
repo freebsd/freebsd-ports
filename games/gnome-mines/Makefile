@@ -21,7 +21,6 @@ PORTSCOUT=	limitw:1,even
 
 USES=		gettext gnome localbase meson pkgconfig python:3.6+,build tar:xz
 USE_GNOME=	gtk30 librsvg2
-INSTALLS_ICONS=	yes
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 GLIB_SCHEMAS=	org.gnome.Mines.gschema.xml

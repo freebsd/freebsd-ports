@@ -24,7 +24,6 @@ GH_ACCOUNT=	phase1geo
 GH_PROJECT=	Minder
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 gtksourceview4 libxml2 pango
 GLIB_SCHEMAS=	com.github.phase1geo.minder.gschema.xml
-INSTALLS_ICONS=	yes
 SHEBANG_FILES=	meson/post_install.py
 
 PORTDOCS=	README.md

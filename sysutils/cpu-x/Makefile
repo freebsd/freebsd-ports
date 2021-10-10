@@ -32,7 +32,7 @@ X11_DESC=	Build GTK+3 frontend in addition to ncurses one
 X11_USES=	gnome
 X11_USE=	GNOME=gtk30
 X11_CMAKE_OFF=	-DWITH_GTK:BOOL=OFF
-X11_VARS=	GLIB_SCHEMAS=org.cpu-x.gschema.xml INSTALLS_ICONS=yes
+X11_VARS=	GLIB_SCHEMAS=org.cpu-x.gschema.xml
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, -Wno-unused-result,,' ${WRKSRC}/CMakeLists.txt

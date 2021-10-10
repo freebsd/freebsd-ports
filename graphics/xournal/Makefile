@@ -20,7 +20,6 @@ USE_GNOME=	cairo libgnomecanvas
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install desktop-install
 
 OPTIONS_DEFINE=		GHOSTSCRIPT DOCS

@@ -46,7 +46,6 @@ USE_LDCONFIG=	yes
 USES=		compiler:c++11-lang gnome tar:xz cmake:noninja desktop-file-utils \
 		gettext-tools:build,run gettext-runtime iconv:wchar_t \
 		kde:5 pkgconfig shared-mime-info compiler:c++14-lang xorg
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GTK2 GTK3 OPENCC TPUNC DOCS
 OPTIONS_DEFAULT=GTK2 GTK3

@@ -24,7 +24,6 @@ USE_GSTREAMER1=	bad editing-services
 GL_HASH=	d4168ac40fd681240964705e000dd353
 BINARY_ALIAS=		python3=${PYTHON_CMD}
 GLIB_SCHEMAS=		org.gnome.Fractal.gschema.xml
-INSTALLS_ICONS=		yes
 
 # for the gettext-sys crate
 MAKE_ENV+=	GETTEXT_BIN_DIR=${LOCALBASE}/bin \

@@ -17,7 +17,6 @@ LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 
 USES=		gettext gmake gnome localbase pathfix pkgconfig tar:xz xorg
 USE_GNOME=	cairo gnomeprefix gtk30
-INSTALLS_ICONS=	yes
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 

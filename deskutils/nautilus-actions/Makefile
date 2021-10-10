@@ -16,7 +16,6 @@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 
 USES=		gettext gmake gnome libtool pkgconfig tar:xz
 USE_GNOME=	gtk30 intltool nautilus3
-INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

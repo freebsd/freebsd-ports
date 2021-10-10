@@ -28,7 +28,6 @@ CONFIGURE_ARGS=	--enable-xsync \
 		--enable-xpresent \
 		--disable-kde-systray
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 DATADIR=	${PREFIX}/share/xfwm4
 
 PORTSCOUT=	limitw:1,even

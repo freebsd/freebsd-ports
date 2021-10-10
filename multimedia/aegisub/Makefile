@@ -43,7 +43,6 @@ CONFIGURE_ARGS=	--disable-compiler-flags \
 		--disable-update-checker \
 		--without-libc++ \
 		${ICONV_CONFIGURE_ARG}
-INSTALLS_ICONS=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 

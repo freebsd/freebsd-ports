@@ -19,7 +19,6 @@ USE_XORG=	xext x11 xscrnsaver xinerama xrandr
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SUB=	yes
 
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes

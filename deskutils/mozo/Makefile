@@ -19,7 +19,6 @@ USES=		gettext-tools gmake gnome localbase mate pathfix pkgconfig \
 USE_MATE=	menus
 USE_GNOME=	gtk30 intltool pygobject3
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 NO_ARCH=	yes
 
 PORTSCOUT=	limitw:1,even

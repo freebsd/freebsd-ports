@@ -21,7 +21,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lainsce
 USE_GNOME=	glib20 gtk30 gtksourceview3
 
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	com.github.lainsce.quilter.gschema.xml
 

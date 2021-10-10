@@ -62,7 +62,6 @@ PORTDOCS=	AUTHORS ChangeLog README THANKS README.copyright
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICONS}
-INSTALLS_ICONS=	yes
 .endif
 
 post-extract:

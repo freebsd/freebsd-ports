@@ -26,7 +26,6 @@ GH_ACCOUNT=	${GH_PROJECT}
 GH_PROJECT=	OpenCPN
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk30 pango
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	${PREFIX}/lib/opencpn
 USE_WX=		3.0+
 WX_CONF_ARGS=	absolute

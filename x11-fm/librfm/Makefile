@@ -22,7 +22,6 @@ LIB_DEPENDS=	libtubo.so:x11-fm/libtubo \
 OPTIONS_DEFINE=	NLS
 
 CONFIGURE_ARGS+=--with-pkglibdata
-INSTALLS_ICONS=	yes
 USES=		autoreconf gettext gnome gmake libtool:keepla pkgconfig \
 		tar:bzip2 xorg
 GNU_CONFIGURE=	yes

@@ -23,7 +23,6 @@ USES=		desktop-file-utils gettext gnome python:3.3+ shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	gramps-project
 USE_GNOME=	cairo gtk30 intltool librsvg2 pango pygobject3
-INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 USE_PYTHON=	autoplist distutils noflavors
 

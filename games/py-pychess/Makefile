@@ -27,7 +27,6 @@ _USES_$t+=	${_USES_configure}
 USE_GSTREAMER1=	yes
 USE_PYTHON=	distutils autoplist
 USE_GNOME=	gtksourceview3:run glib20 gtk30 librsvg2 introspection
-INSTALLS_ICONS=	yes
 PYDISTUTILS_INSTALLNOSINGLE=	nope
 
 .include <bsd.port.mk>

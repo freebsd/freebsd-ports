@@ -38,7 +38,6 @@ SUB_FILES=	${PORTNAME}
 
 DESKTOP_ENTRIES="Open Surge" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
-INSTALLS_ICONS=	yes
 
 LDFLAGS_i386=	-Wl,-znotext
 

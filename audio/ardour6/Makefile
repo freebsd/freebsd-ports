@@ -51,7 +51,6 @@ USE_CXXSTD=	c++11
 USE_XORG=	x11
 USE_GNOME=	atk cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 pango
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 BINARY_ALIAS+=	gas=${CC}
 
 PLIST_SUB=	ARDOURVERSION=${PORTVERSION}

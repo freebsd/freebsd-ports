@@ -19,7 +19,6 @@ USES=		desktop-file-utils gettext-runtime gmake gnome pathfix \
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-INSTALLS_ICONS=	yes
 
 PLIST_FILES=	bin/sigrok-cli man/man1/sigrok-cli.1.gz \
 		share/applications/org.sigrok.sigrok-cli.desktop \

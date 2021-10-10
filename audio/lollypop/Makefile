@@ -33,7 +33,6 @@ GL_TUPLE=	gnumdk:lollypop-po:94a7300004ec15adfd596c7d2b8670bbf5c2e33a:po/subproj
 USE_GNOME=	glib20 gtk30 pygobject3 introspection:build intltool intlhack
 USE_GSTREAMER1=	yes mpg123 ogg flac opus libav faad good speex
 USE_PYTHON=	py3kplist
-INSTALLS_ICONS=	yes
 
 SHEBANG_FILES=	lollypop.in search-provider/lollypop-sp.in meson_post_install.py
 

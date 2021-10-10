@@ -24,7 +24,6 @@ INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	glibmm
-INSTALLS_ICONS=	yes
 
 post-patch:
 # libusb can be disabled via src.conf(5), so detect via pkg-config

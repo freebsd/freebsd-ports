@@ -15,7 +15,6 @@ LIB_DEPENDS=	libcapstone.so:devel/capstone4 \
 USES=		compiler:c++11-lang gmake gnome lua:53 pkgconfig
 USE_WX=		3.0+
 MAKE_ENV=	LUA_PKG="lua-${LUA_VER}" LUA="${LUA_CMD}"
-INSTALLS_ICONS=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	solemnwarning
 

@@ -18,7 +18,6 @@ GH_ACCOUNT=	maoschanz
 USE_GNOME=	gtk30 pygobject3
 
 GLIB_SCHEMAS=	com.github.maoschanz.drawing.gschema.xml
-INSTALLS_ICONS=	yes
 SHEBANG_FILES=	build-aux/meson/postinstall.py
 
 .include <bsd.port.mk>

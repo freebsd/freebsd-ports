@@ -32,7 +32,6 @@ USE_GNOME=	cairo librsvg2 gnomedesktop3 libxml2:build introspection:build
 USE_GL=		egl
 USE_XORG=	xi xext xdamage xfixes xcomposite xrandr xxf86vm x11
 USE_GSTREAMER1=	bad good jpeg ogg theora v4l2 vorbis vpx
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-Wno-format-nonliteral
 

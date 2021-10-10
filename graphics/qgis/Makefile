@@ -110,7 +110,6 @@ USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
 USE_GL=		gl
 USE_GNOME=	libxml2
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_PYQT=	core gui location network positioning qml quick quickwidgets \
 		qscintilla2 pysip sip sql svg webkit_run webkitwidgets_run xml

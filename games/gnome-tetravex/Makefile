@@ -20,7 +20,6 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gmake gnome localbase meson pathfix pkgconfig \
 		python:3.7+ tar:xz
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
-INSTALLS_ICONS=	yes
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 

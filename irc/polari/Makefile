@@ -28,7 +28,6 @@ USES=		desktop-file-utils gettext gnome localbase \
 		meson pkgconfig tar:xz
 USE_GNOME=	cairo gtk30 introspection
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.gnome.Polari.gschema.xml
 

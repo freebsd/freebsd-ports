@@ -33,7 +33,6 @@ USES=		cmake:noninja desktop-file-utils gl gnome jpeg openal \
 USE_GL=		gl glew glu
 USE_SDL=	sdl2
 USE_XORG=	x11 xpm
-INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DAudio_TK:STRING="OpenAL"
 LDFLAGS_i386=	-Wl,-znotext
 

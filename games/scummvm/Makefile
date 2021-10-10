@@ -26,7 +26,6 @@ USES=		cpe gl gmake gnome iconv jpeg pkgconfig sdl tar:xz
 USE_GL=		gl glew
 HAS_CONFIGURE=	yes
 USE_SDL=	sdl2
-INSTALLS_ICONS=	yes
 
 CONFIGURE_ARGS=	--disable-alsa \
 		--disable-debug \

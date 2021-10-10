@@ -30,6 +30,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 USE_GNOME=	glib20 gtk30 evolutiondataserver3
 GLIB_SCHEMAS=	io.elementary.calendar.gschema.xml
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

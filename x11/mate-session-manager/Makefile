@@ -30,7 +30,6 @@ CONFIGURE_ARGS=	--disable-docbook-docs \
 		--with-default-wm=mate-wm \
 		--enable-upower \
 		--with-systemd=no
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.mate.session.gschema.xml
 

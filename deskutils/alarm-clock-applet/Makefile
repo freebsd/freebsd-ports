@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 USES=		gettext-tools gmake gnome pkgconfig
 USE_GNOME=	cairo gconf2 gtk20 intltool
 USE_GSTREAMER1=	yes
-INSTALLS_ICONS=	yes
 
 GCONF_SCHEMAS=	alarm-clock.schemas
 

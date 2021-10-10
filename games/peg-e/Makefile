@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		compiler:c++17-lang gl gnome qmake qt:5 tar:bzip2
 USE_QT=		core gui widgets qmake_build buildtools_build linguisttools_build
 USE_GL=		gl
-INSTALLS_ICONS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

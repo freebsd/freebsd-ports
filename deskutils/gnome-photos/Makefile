@@ -43,7 +43,6 @@ USES=		compiler:c11 gettext gnome jpeg localbase meson pkgconfig \
 		tar:xz
 USE_GNOME=	cairo gnomedesktop3 gtk30 libxml2
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.gnome.photos.gschema.xml
 MESON_ARGS=	--buildtype \

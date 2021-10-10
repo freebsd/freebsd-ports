@@ -25,7 +25,6 @@ USE_GNOME=	intltool libglade2
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE} --disable-update-mimedb
-INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-return-type
 LIBS+=		-L${LOCALBASE}/lib -lcrypto

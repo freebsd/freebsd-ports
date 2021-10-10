@@ -22,6 +22,5 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext-tools gmake gnome pkgconfig tar:xz
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

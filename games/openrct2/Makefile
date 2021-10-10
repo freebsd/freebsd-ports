@@ -44,7 +44,6 @@ PORTDATA=	*
 PORTDOCS=	changelog.txt contributors.md licence.txt openrct2.d.ts \
 		readme.txt scripting.md
 
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DOCS
 

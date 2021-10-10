@@ -15,7 +15,6 @@ BUILD_DEPENDS=	bash>0:shells/bash \
 
 USES=		shebangfix
 SHEBANG_FILES=	install.sh
-INSTALLS_ICONS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vinceliuice

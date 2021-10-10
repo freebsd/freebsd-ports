@@ -18,7 +18,6 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 
 USES=		desktop-file-utils gmake gnome iconv:wchar_t pkgconfig sdl \
 		tar:tgz
-INSTALLS_ICONS=	yes
 USE_SDL=	image2 sdl2
 
 MAKE_ENV+=	API=${GRAFX2_API} \

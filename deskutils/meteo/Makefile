@@ -28,7 +28,6 @@ USE_GNOME=	gtk30
 SHEBANG_FILES=	meson/post_install.py
 
 GLIB_SCHEMAS=	com.gitlab.bitseater.meteo.gschema.xml
-INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS CONTRIBUTING.md CREDITS.md README.md changelog
 

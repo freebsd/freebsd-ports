@@ -22,7 +22,6 @@ USES=		cpe desktop-file-utils gettext gmake gnome libtool \
 		localbase pathfix pkgconfig python shebangfix tar:xz
 USE_GNOME=	cairo intlhack gtk30 libgsf pygobject3
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	\
 		--without-paradox \

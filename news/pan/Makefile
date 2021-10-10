@@ -25,7 +25,6 @@ USES=		compiler:c++11-lang desktop-file-utils gettext-tools:build \
 USE_GNOME=	cairo gdkpixbuf2 intlhack
 GNU_CONFIGURE=	yes
 LDFLAGS+=	${ICONV_LIB}
-INSTALLS_ICONS=	yes
 OPTIONS_DEFINE=		GTKSPELL GNUTLS NLS
 OPTIONS_DEFAULT=	GTKSPELL GNUTLS GTK2
 OPTIONS_RADIO=		GTK

@@ -38,7 +38,6 @@ DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_OFF=	-Ud_dbus
 DEBUG_CONFIGURE_ON=	-Ud_official
 GUI_USE=		gnome=gtk20,cairo
-GUI_VARS=		INSTALLS_ICONS=yes
 GUI_CONFIGURE_OFF=	-Dd_headless
 GUI_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2

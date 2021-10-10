@@ -30,7 +30,6 @@ USE_GNOME=	cairo gtk30 intlhack libxslt:build
 USES=		compiler:c11 cpe gettext gmake gnome libtool localbase \
 		pathfix pkgconfig tar:xz
 CPE_VENDOR=	gnome
-INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pam-dir="${PREFIX}/lib"

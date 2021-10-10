@@ -18,7 +18,6 @@ USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libwnck3
 USE_XORG=	ice sm x11 xmu xt
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 PORTSCOUT=	limitw:1,even
 

@@ -33,7 +33,6 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c11 gettext gl gnome localbase meson \
 		pkgconfig tar:xz xorg
 USE_CSTD=	c11
-INSTALLS_ICONS=	yes
 USE_GNOME=	cairo gtksourceview4 intlhack introspection
 USE_GL=		egl
 USE_GSTREAMER1=	yes

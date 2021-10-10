@@ -61,7 +61,6 @@ CHMLIB_CONFIGURE_ON=	--enable-chmlib=yes
 CHMLIB_CONFIGURE_OFF=	--disable-chmlib
 CHMLIB_LIB_DEPENDS=	libchm.so:misc/chmlib
 
-INSTALLS_ICONS=	yes
 
 DOCS=		AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 

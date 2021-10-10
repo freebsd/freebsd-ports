@@ -50,7 +50,6 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 CONFIGURE_ARGS+=--with-ui
 USE_GNOME+=	cairo gtk30
-INSTALLS_ICONS=	yes
 .else
 CONFIGURE_ARGS+=--without-ui
 .endif

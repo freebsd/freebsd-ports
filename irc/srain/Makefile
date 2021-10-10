@@ -21,7 +21,6 @@ GNU_CONFIGURE=		yes
 MAKE_FLAGS+=		MAKE_PROGRAM=${MAKE_CMD}
 CONFIGURE_ARGS+=	--disable-debug
 ALL_TARGET=		default
-INSTALLS_ICONS=		yes
 
 post-patch:
 	${REINPLACE_CMD} -e '/^MAKE =/s/make/${MAKE_CMD}/' \

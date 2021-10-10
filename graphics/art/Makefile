@@ -32,7 +32,6 @@ USE_XORG=	x11
 
 EXTRACT_CMD=	gtar
 
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.pre.mk>
 

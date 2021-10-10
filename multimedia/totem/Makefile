@@ -39,7 +39,6 @@ USES=		compiler desktop-file-utils gettext gl gnome localbase meson \
 USE_GNOME=	cairo gtk30 intlhack introspection libxml2 pygobject3 gnomedesktop3
 USE_XORG=	x11 xorgproto xtst ice sm
 USE_GSTREAMER1=	core good bad soup ugly
-INSTALLS_ICONS=	yes
 USE_GL=		egl
 USE_LDCONFIG=	yes
 

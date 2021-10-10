@@ -39,7 +39,6 @@ USES=		compiler:c11 desktop-file-utils gettext gnome meson pkgconfig \
 		python:3.5+,build shebangfix sqlite tar:xz
 USE_GNOME=	cairo gsound gtk30 libxml2
 GLIB_SCHEMAS=	org.gnome.Geary.gschema.xml
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	desktop/geary-attach

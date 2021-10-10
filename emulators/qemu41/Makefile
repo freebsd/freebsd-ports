@@ -98,7 +98,6 @@ X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf2
 X11_USES=	sdl
 X86_TARGETS_USE_OFF=	XORG=pixman,x11
 X86_TARGETS_USES_OFF=	xorg
-INSTALLS_ICONS=		yes
 
 PORTDOCS?=	docs interop/.buildinfo interop/* qemu-doc.html qemu-doc.txt qemu-ga-ref.html qemu-ga-ref.txt \
 	       	qemu-qmp-ref.html qemu-qmp-ref.txt specs/.buildinfo specs/*

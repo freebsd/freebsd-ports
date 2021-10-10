@@ -43,7 +43,6 @@ USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome \
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo gnomedesktop3 intlhack libwnck3 libxml2 libxslt
 USE_XORG=	x11
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Db_lundef=false \
 		-Ddistributor_name="GNOME Web by the FreeBSD GNOME Project" \

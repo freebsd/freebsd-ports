@@ -26,7 +26,6 @@ USE_GL=		gl glu glew
 USE_GNOME=	atkmm gtk20 pangomm
 USE_XORG=	x11
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e '/-stdlib=libc++/d' ${WRKSRC}/CMakeLists.txt

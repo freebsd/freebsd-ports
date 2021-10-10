@@ -17,7 +17,6 @@ RUN_DEPENDS=	pcscd:devel/pcsc-lite
 USES=		gnome iconv localbase lua:52 pkgconfig
 USE_GNOME=	gtk30
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 PLIST_FILES=	bin/cardpeek man/man1/cardpeek.1.gz \
 		share/appdata/cardpeek.appdata.xml \

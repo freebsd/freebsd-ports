@@ -18,7 +18,6 @@ LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
 
 USES=		desktop-file-utils gnome pkgconfig ssl
 USE_GNOME=	gtk20
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 MAKE_ARGS+=	PREFIX=${PREFIX}

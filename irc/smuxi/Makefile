@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext-tools:build gmake gnome mono \
 		pkgconfig
 USE_GNOME=	gtksharp20
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		DBUS NLS SPELLCHECK
 OPTIONS_DEFAULT=	DBUS NLS SPELLCHECK

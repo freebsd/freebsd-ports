@@ -23,7 +23,6 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gnome localbase meson pkgconfig python:3.6+,build \
 		shebangfix tar:xz
 USE_GNOME=	gtk30 libxml2 pygobject3 introspection:build
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dglade_catalog=false
 SHEBANG_FILES=	data/gen_locations_variant.py

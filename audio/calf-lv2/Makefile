@@ -26,7 +26,6 @@ CONFIGURE_ARGS=	--with-lv2 --disable-static
 USE_GNOME=	cairo gtk20
 USE_CXXSTD=	c++11
 INSTALL_TARGET=	install-strip
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_GCC=	yes # workaround for https://github.com/calf-studio-gear/calf/issues/227, supposedly fixed in clang-8.0.1-+rc4-1
 

@@ -39,7 +39,6 @@ USE_GNOME=	cairo gtksourceview4 introspection libxml2 vte3
 SHEBANG_FILES=	${WRKSRC}/src/plugins/maven/maven_plugin.py \
 		${WRKSRC}/src/plugins/gradle/gradle_plugin.py
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 MESON_ARGS=	-Dplugin_color_picker=false \

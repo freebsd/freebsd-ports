@@ -26,7 +26,6 @@ GL_TUPLE=	https://gitlab.freedesktop.org:gstreamer:gstreamer-rs:0e8b95f1d029530a
 SHEBANG_FILES=	build-aux/meson/postinstall.py
 MAKE_ENV=	${CARGO_ENV}
 GLIB_SCHEMAS=	org.gnome.Solanum.gschema.xml
-INSTALLS_ICONS=	yes
 
 CARGO_CRATES=	aho-corasick-0.7.15 \
 		anyhow-1.0.35 \

@@ -11,7 +11,6 @@ COMMENT=	GTK3 substitute for xmessage
 USE_GNOME=	gtk30 gnomeprefix intltool
 USES=		gmake gnome pkgconfig
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 MAKE_ARGS+=	INSTALL="${INSTALL_PROGRAM}"
 

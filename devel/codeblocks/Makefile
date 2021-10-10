@@ -29,7 +29,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG} --disable-pch \
 		--with-boost-system=boost_system
 PKG_CONFIG_LIBDIR=	${LOCALBASE}/libdata/pkgconfig
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

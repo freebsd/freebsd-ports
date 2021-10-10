@@ -19,7 +19,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gnome sdl
 USE_SDL=	sdl image
-INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${DATADIR}
 

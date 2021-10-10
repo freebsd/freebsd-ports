@@ -25,7 +25,6 @@ USES=		cpe desktop-file-utils gettext gmake gnome iconv pathfix perl5 \
 		pkgconfig ssl tar:bzip2
 USE_GNOME=	gnomeprefix gtkhtml4 intlhack libxslt
 CPE_VENDOR=	gnome
-INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-threads \
 		--disable-more-warnings \

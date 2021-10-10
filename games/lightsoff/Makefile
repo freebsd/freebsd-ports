@@ -24,7 +24,6 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gl gmake gnome localbase meson \
 		pathfix pkgconfig sqlite tar:xz xorg
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
-INSTALLS_ICONS=	yes
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
 USE_GL=		egl gl
 

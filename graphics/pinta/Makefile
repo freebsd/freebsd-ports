@@ -24,6 +24,5 @@ OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
 
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

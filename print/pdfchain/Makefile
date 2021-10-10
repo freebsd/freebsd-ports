@@ -12,7 +12,6 @@ USES=		compiler:c++11-lang desktop-file-utils gettext-runtime gnome \
 		pkgconfig
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk30 gtkmm30 \
 		libsigc++20 pango pangomm
-INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes
 

@@ -22,7 +22,6 @@ USES=		compiler:c++11-lang gettext gmake gnome pkgconfig xorg
 USE_GNOME=	gtkmm30
 USE_XORG=	x11 xext xfixes xi xtst
 USE_CXXSTD=	c++11
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

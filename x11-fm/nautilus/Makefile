@@ -25,7 +25,6 @@ USES=		compiler:c11 cpe desktop-file-utils gettext gnome localbase meson \
 		pkgconfig python:3.6+,build tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3
 USE_GSTREAMER1=	yes
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 MESON_ARGS=	-Denable-packagekit=false \

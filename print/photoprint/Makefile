@@ -25,7 +25,6 @@ USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_XORG=	x11
 USE_CXXSTD=	gnu++98
 LIBS+=		-lX11
-INSTALLS_ICONS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|cups/cups.h|cups/ppd.h|g' \

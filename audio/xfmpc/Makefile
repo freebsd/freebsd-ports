@@ -21,7 +21,6 @@ USE_GNOME=	cairo gtk30 intltool
 USE_XFCE=	libmenu
 USE_XORG=	ice sm x11
 
-INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 

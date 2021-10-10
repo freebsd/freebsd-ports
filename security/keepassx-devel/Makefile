@@ -25,7 +25,6 @@ CONFLICTS_INSTALL=	keepassx-0.* keepassx2-* keepassxc-*
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils gnome qt:5 \
 		shared-mime-info xorg
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 USE_QT=		buildtools_build concurrent core gui linguisttools qmake_build \
 		testlib widgets x11extras
 USE_XORG=	ice xorgproto sm x11 xcursor xext xfixes xi xrandr xrender \

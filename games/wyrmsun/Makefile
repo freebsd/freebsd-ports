@@ -17,7 +17,6 @@ GH_PROJECT=	Wyrmsun
 
 USES=		cmake gnome
 INSTALL_TARGET=	install
-INSTALLS_ICONS=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
 CMAKE_ARGS=	-DBIN_DIR=bin

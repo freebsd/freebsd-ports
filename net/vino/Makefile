@@ -31,7 +31,6 @@ CPE_VENDOR=	david_king
 USE_GNOME=	cairo gtk30 intlhack
 USE_XORG=	ice x11 xdamage xext xfixes sm xtst
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 CPPFLAGS+=	-Wno-format-nonliteral
 GLIB_SCHEMAS=	org.gnome.Vino.enums.xml org.gnome.Vino.gschema.xml
 

@@ -33,7 +33,6 @@ USES=		compiler:c11 desktop-file-utils gettext gnome localbase \
 		meson pathfix pkgconfig python:3.4+,build tar:xz
 USE_GNOME=	cairo gtk30 gtksourceview3 intltool introspection
 
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GLIB_SCHEMAS=	org.gnome.gitg.gschema.xml
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

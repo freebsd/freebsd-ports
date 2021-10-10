@@ -23,7 +23,6 @@ USES=		gettext gnome iconv:wchar_t localbase:ldflags meson pkgconfig \
 		python:3.6+,build tar:xz
 USE_GNOME=	gtk30 introspection
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 GLIB_SCHEMAS=	org.gnome.Characters.gschema.xml

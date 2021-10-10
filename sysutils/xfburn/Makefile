@@ -22,7 +22,6 @@ USE_GNOME=	cairo glib20 gtk30 intltool
 USE_XFCE=	libexo
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-gudev
 
 OPTIONS_DEFINE=			GSTREAMER NLS

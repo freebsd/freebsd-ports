@@ -24,7 +24,6 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c++11-lang gettext gmake gnome meson \
 		python:3.7+ pkgconfig tar:xz
 USE_GNOME=	cairo gtk30
-INSTALLS_ICONS=	yes
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

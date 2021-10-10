@@ -24,7 +24,6 @@ USES=		autoreconf compiler cpe gmake gnome libtool localbase \
 CPE_VENDOR=	ibus_project
 USE_GITHUB=	yes
 USE_GNOME=	glib20 intltool librsvg2 pygobject3
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
 SHEBANG_GLOB=	*.sh

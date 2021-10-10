@@ -19,7 +19,6 @@ USES=		alias cmake desktop-file-utils gettext-runtime gnome pkgconfig \
 USE_GNOME=	cairo glib20 gtk20 librsvg2 pango
 USE_XORG=	x11 xcomposite xdamage xext xfixes xinerama xrandr xrender
 
-INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DMANDIR:PATH=man \
 		-DSYSCONFDIR:PATH=etc
 

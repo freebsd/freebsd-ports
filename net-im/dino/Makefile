@@ -30,7 +30,6 @@ HAS_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 LDFLAGS+=	-Wl,--export-dynamic
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 USE_GNOME=	cairo gdkpixbuf2 glib20 gnomeprefix gtk30 intlhack
 

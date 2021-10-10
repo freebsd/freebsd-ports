@@ -22,7 +22,6 @@ USES=		desktop-file-utils gettext gnome python:3.3+ shared-mime-info
 USE_GNOME=	gtk30 pygobject3
 USE_PYTHON=	autoplist distutils noflavors
 
-INSTALLS_ICONS=	yes
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=		DITAA GIT GNUPLOT GNUR GRAPHVIZ LATEX \

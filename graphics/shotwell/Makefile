@@ -44,7 +44,6 @@ python_CMD=	${SETENV} ${PYTHON_VERSION}
 
 MESON_ARGS=	-Dudev=false -Dextra-plugins=true -Dinstall-apport-hook=false \
 		-Dpublishers=facebook,flickr,gallery3,picasa,piwigo,rajce,tumblr,yandex,youtube
-INSTALLS_ICONS=	yes
 PORTSCOUT=	limitw:1,even
 MAKE_JOBS_UNSAFE=	yes
 

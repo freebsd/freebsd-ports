@@ -16,7 +16,6 @@ USES=		gettext-tools gnome meson pkgconfig python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	phw
 USE_GNOME=	cairo glib20 gtk30 pango
-INSTALLS_ICONS=	yes
 
 BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}
 

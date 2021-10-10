@@ -14,7 +14,6 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain
 
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	trojita_project

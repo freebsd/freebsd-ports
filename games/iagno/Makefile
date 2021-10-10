@@ -26,7 +26,6 @@ USES=		gettext gmake gnome localbase meson \
 		pathfix pkgconfig tar:xz xorg
 USE_GNOME=	cairo gsound gtk30 intlhack librsvg2 libxml2:build
 USE_XORG=	x11
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.gnome.Reversi.gschema.xml
 

@@ -18,7 +18,6 @@ USES=		desktop-file-utils gmake gnome localbase pkgconfig tar:xz xorg
 USE_GNOME=	gtk20 intltool cairo
 USE_XORG=	xrandr
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

@@ -39,7 +39,6 @@ OPTIONS_DEFAULT=	GUI
 GUI_USES=	desktop-file-utils
 GUI_USE=	GNOME=gtkmm30,gdkpixbuf2
 GUI_CMAKE_BOOL=	ENABLE_FRONTEND
-GUI_VARS=	INSTALLS_ICONS=yes
 
 .include <bsd.port.pre.mk>
 

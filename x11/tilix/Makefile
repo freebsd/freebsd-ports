@@ -22,6 +22,5 @@ GH_ACCOUNT=	gnunn1
 GNU_CONFIGURE=	yes
 USE_GNOME=	vte3
 GLIB_SCHEMAS=	com.gexperts.Tilix.gschema.xml
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

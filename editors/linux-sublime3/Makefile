@@ -20,7 +20,6 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and i386
 
 USES=		desktop-file-utils gnome linux tar:bzip2
-INSTALLS_ICONS=	yes
 USE_LINUX=	gtk3
 
 CONFLICTS_INSTALL=	linux-sublime[0-9]*

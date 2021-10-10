@@ -17,6 +17,5 @@ LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
 		libchewing.so:chinese/libchewing
 
 USES=		cmake gettext gnome pkgconfig tar:xz
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

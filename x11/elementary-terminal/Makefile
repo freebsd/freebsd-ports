@@ -21,6 +21,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 USE_GNOME=	glib20 gtk30
 GLIB_SCHEMAS=	io.elementary.terminal.gschema.xml
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

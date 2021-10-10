@@ -76,7 +76,6 @@ DOS2UNIX_FILES=	third_party/skia/third_party/vulkanmemoryallocator/include/vk_me
 		third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
 USE_GL=		gbm gl
 USE_GNOME=	atk dconf glib20 gtk30 libxml2 libxslt
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	${DATADIR}
 USE_PERL5=	build
 USE_XORG=	x11 xcb xcomposite xcursor xext xdamage xfixes xi \

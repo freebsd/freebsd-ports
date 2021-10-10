@@ -25,7 +25,6 @@ USES=		compiler:c11 desktop-file-utils gettext gmake gnome libtool \
 		localbase:ldflags pathfix pkgconfig tar:xz
 USE_GNOME=	cairo gtk30 intlhack \
 		introspection:build
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

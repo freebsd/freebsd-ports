@@ -18,7 +18,6 @@ ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and aarch64
 RUN_DEPENDS= linux-c7-curl>0:ftp/linux-c7-curl
 
 USES=		desktop-file-utils gnome linux tar:xz
-INSTALLS_ICONS=	yes
 USE_LINUX=	gtk3
 
 CONFLICTS_INSTALL=	linux-sublime[0-9]*

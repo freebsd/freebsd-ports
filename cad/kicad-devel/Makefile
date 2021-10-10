@@ -70,7 +70,6 @@ CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DKICAD_USE_OCC=ON \
 		-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 .include "Makefile.git_rev"
 

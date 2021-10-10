@@ -36,7 +36,6 @@ USE_CXXSTD=	c++11
 USE_GNOME=	cairo gtk30 intltool libxml2 libxslt
 USE_LDCONFIG=	yes
 
-INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DCOMPILE_GSCHEMAS=OFF \
 		-DENABLE_BINRELOC=OFF \
 		-DGNC_SHELL=/bin/sh

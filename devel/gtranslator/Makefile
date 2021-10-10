@@ -27,7 +27,6 @@ USES=		desktop-file-utils gettext gnome localbase:ldflags meson \
 		pkgconfig python tar:xz
 USE_PYTHON=	py3kplist
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 MESON_ARGS=	-Dgtk_doc=false
 INSTALL_TARGET=	install-strip
 

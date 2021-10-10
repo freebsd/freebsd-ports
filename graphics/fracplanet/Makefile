@@ -28,7 +28,6 @@ DESKTOP_ENTRIES=	"Fracplanet" \
 			"${PORTNAME}" \
 			"Graphics;" \
 			""
-INSTALLS_ICONS=	yes
 PORTDOCS=	*
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

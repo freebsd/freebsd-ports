@@ -17,7 +17,6 @@ LIB_DEPENDS=	librest-0.7.so:devel/librest \
 USES=		autoreconf gettext gmake gnome libtool localbase:ldflags pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	glib20 intlhack introspection:build libxml2
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gtk-doc

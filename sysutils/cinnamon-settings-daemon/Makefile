@@ -48,7 +48,6 @@ MESON_ARGS=	-Duse_logind=disabled
 SHEBANG_GLOB=	*.py
 BINARY_ALIAS=	ln=gln
 
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 GLIB_SCHEMAS=	org.cinnamon.settings-daemon.enums.xml \

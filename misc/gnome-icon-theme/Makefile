@@ -19,7 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-them
 GNU_CONFIGURE=	yes
 USES=		gettext-tools gmake gnome pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack
-INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-icon-mapping
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

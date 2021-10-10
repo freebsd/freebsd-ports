@@ -34,6 +34,5 @@ CONFIGURE_ARGS=	--enable-introspection
 MAKE_ENV+= WEBKIT_DISABLE_COMPOSITING_MODE=1
 
 GLIB_SCHEMAS=	net.sf.liferea.gschema.xml
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

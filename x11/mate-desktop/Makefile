@@ -28,7 +28,6 @@ USE_GNOME=	cairo dconf gdkpixbuf2 gnomeprefix gtk30 \
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.mate.accessibility-keyboard.gschema.xml \
 		org.mate.accessibility-startup.gschema.xml \

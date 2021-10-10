@@ -49,7 +49,6 @@ ATLAS_VARS_OFF=		BLAS=-lblas LAPACK=-llapack
 GUI_DESC=		Graphical user interface and plugins
 GUI_CONFIGURE_ON=	--enable-gui=yes
 GUI_CONFIGURE_OFF=	--enable-gui=no --enable-xdg=no
-GUI_VARS=		INSTALLS_ICONS=yes
 GUI_USE=		GNOME=cairo,gtksourceview3,gdkpixbuf2
 GUI_USE_OFF=		GNOME=glib20,libxml2
 GUI_VARS=		GTK_VER=3

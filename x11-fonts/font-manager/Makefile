@@ -27,7 +27,6 @@ GH_ACCOUNT=	FontManager
 USE_GNOME=	cairo glib20 gtk30 libxml2 pango
 GLIB_SCHEMAS=	org.gnome.FontManager.gschema.xml \
 		org.gnome.FontViewer.gschema.xml
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 SHEBANG_GLOB=	*.py

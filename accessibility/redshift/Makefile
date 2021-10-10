@@ -25,7 +25,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jonls
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 SHEBANG_FILES=	src/redshift-gtk/redshift-gtk.in
 
 CONFIGURE_ARGS+=	--disable-wingdi

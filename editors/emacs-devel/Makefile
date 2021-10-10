@@ -29,7 +29,6 @@ GH_TAGNAME=	30bbb57
 
 .if ${FLAVOR:U} != nox
 USES+=		desktop-file-utils gnome xorg
-INSTALLS_ICONS=	yes
 USE_XORG=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xrender xt
 .endif
 

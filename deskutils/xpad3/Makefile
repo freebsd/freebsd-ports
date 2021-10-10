@@ -24,7 +24,6 @@ CONFLICTS_INSTALL=	xpad-[0-9]*
 
 USE_XORG=	x11 sm ice
 USE_GNOME=	gtk20 intltool cairo
-INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 
 NLS_USES=		gettext

@@ -17,7 +17,6 @@ USES=		gnome python:3.7+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	GhostBSD
 USE_GNOME=	gtk-update-icon-cache pygobject3
-INSTALLS_ICONS=	yes
 USE_PYTHON=	distutils noflavors
 SHEBANG_GLOB=	*.py
 

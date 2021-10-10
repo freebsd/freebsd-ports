@@ -40,7 +40,6 @@ USES=		compiler:c++11-lang eigen:3 gnome libarchive localbase:ldflags \
 USE_GNOME=	atkmm cairo gtk30 gtkmm30 pangomm
 USE_XORG=	x11
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-lfs --ldflags="${LDFLAGS}"
 USE_BINUTILS=	yes # linking needs some GNU features, fails on 12 without this, see https://github.com/brummer10/GxPlugins.lv2/issues/9
 

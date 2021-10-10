@@ -23,7 +23,6 @@ USE_GNOME=	gtkmm30 intltool libxml2 libxslt
 USE_XORG=	x11
 USES=		compiler:c++11-lib desktop-file-utils gettext gnome localbase \
 		meson pathfix pkgconfig python:3.6+,build tar:xz xorg
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 

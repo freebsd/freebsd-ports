@@ -29,7 +29,6 @@ GL_PROJECT=	Remmina
 GL_COMMIT=	0ef1621b3e16b3168213147a2bfca39da2c2668f
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
-INSTALLS_ICONS=	yes
 
 USE_XORG=	ice sm x11 xext xkbfile
 

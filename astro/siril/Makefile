@@ -37,8 +37,6 @@ USE_GNOME=	atk cairo gdkpixbuf2 gtk30 intltool pango
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-INSTALLS_ICONS=	yes
-
 BINARY_ALIAS=	git=false
 
 OPTIONS_DEFINE=		CURL OPENMP

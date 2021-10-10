@@ -200,7 +200,6 @@ PLIST_FILES+=	share/icons/hicolor/${size}x${size}/apps/${PORTNAME}.png
 .endfor
 
 PORTDOCS=	CHANGELOG.md DEVELOPER-NOTES.md README.md
-INSTALLS_ICONS=	yes
 DESKTOP_ENTRIES=	"Dose Response" \
 			"${COMMENT}" \
 			"${PORTNAME}" \

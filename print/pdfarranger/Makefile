@@ -23,6 +23,5 @@ USE_GNOME=	intltool:build gtk30
 USE_GITHUB=	yes
 
 NO_ARCH=	yes
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

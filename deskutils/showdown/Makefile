@@ -22,7 +22,6 @@ GH_ACCOUNT=	craigbarnes
 
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	V=1 prefix=${PREFIX}
-INSTALLS_ICONS=	yes
 
 PORTDOCS=	README.md
 

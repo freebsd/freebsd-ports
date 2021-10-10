@@ -16,7 +16,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		cmake gnome perl5 pkgconfig sdl
 USE_GNOME=	gtk20
-INSTALLS_ICONS=	YES
 USE_PERL5=	build
 USE_SDL=	sdl image mixer
 

@@ -21,7 +21,6 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 USES=		compiler:c++11-lib gettext gnome localbase:ldflags meson \
 		pkgconfig python:3.6+,build sqlite tar:xz
 USE_GNOME=	glib20 libxml2 introspection:build
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dbash_completion=true \

@@ -18,7 +18,6 @@ USE_PERL5=	build
 USE_GNOME=	librsvg2:build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
-INSTALLS_ICONS=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 

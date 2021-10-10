@@ -20,7 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Novum
 GH_PROJECT=	vkQuake
 
-INSTALLS_ICONS=	yes
 
 MAKE_ENV=	prefix=${PREFIX} bindir=${PREFIX}/bin VULKAN_SDK=${LOCALBASE}
 ALL_TARGET=	# empty

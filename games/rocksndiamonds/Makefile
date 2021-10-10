@@ -57,7 +57,6 @@ DOCSRCDIR2=	${WRKSRC}/docs/elements
 DOCSDIR2=	${DOCSDIR}/docs/elements
 DOC_FILES2=	*.txt
 
-INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 
 DESKTOP_ENTRIES="Rocks'n'Diamonds" "" "${PORTNAME}" \

@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--with-python="${PYTHON_CMD}"
 
 GLIB_SCHEMAS=	org.freedesktop.ibus.engine.hangul.gschema.xml
 
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

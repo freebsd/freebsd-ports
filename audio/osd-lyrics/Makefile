@@ -19,7 +19,6 @@ USES=		compiler:c++11-lang desktop-file-utils gettext gmake gnome \
 		iconv localbase pkgconfig sqlite
 USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 

@@ -21,7 +21,6 @@ PORTSCOUT=	limitw:1,even
 
 USES=		gettext gnome localbase meson pkgconfig tar:xz
 USE_GNOME=	cairo gtk30 introspection:build libxslt:build
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 GLIB_SCHEMAS=	org.gnome.dictionary.gschema.xml

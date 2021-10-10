@@ -25,7 +25,6 @@ CFLAGS+=	-Wno-narrowing
 LDFLAGS_i386=	-Wl,-z,notext
 LIBS+=		-L${LOCALBASE}/lib -lexecinfo -lintl
 USE_GNOME=	intltool
-INSTALLS_ICONS=	yes
 SHEBANG_FILES=	yasmwrapper.sh
 INSTALL_TARGET=	install-strip
 

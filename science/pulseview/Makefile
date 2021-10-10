@@ -26,7 +26,6 @@ USE_QT=		buildtools_build core gui linguisttools_build qmake_build svg widgets
 
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man \
 		-DDISABLE_WERROR:BOOL=TRUE
-INSTALLS_ICONS=	yes
 
 PLIST_FILES=	bin/pulseview man/man1/pulseview.1.gz \
 		share/applications/org.sigrok.PulseView.desktop \

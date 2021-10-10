@@ -37,7 +37,6 @@ ANY2DJVU_RUN_DEPENDS=	curl:ftp/curl
 DESKTOPFILES_DESC=	Install icons and mime types
 DESKTOPFILES_CONFIGURE_ENABLE=	desktopfiles
 DESKTOPFILES_USES=	gnome shared-mime-info
-DESKTOPFILES_VARS=	INSTALLS_ICONS=yes
 
 post-patch:
 # Remove custom optimization compiler flags

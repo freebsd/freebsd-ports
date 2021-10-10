@@ -20,7 +20,6 @@ USES=		desktop-file-utils gettext gnome meson pkgconfig python \
 		shebangfix tar:xz
 USE_GNOME=	gtk30 introspection:build pygobject3
 GLIB_SCHEMAS=	org.gnome.Eolie.gschema.xml
-INSTALLS_ICONS=	yes
 SHEBANG_FILES=	eolie.in search-provider/eolie-sp.in
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

@@ -23,7 +23,6 @@ GH_ACCOUNT=	elementary
 GH_PROJECT=	videos
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GLIB_SCHEMAS=	io.elementary.videos.gschema.xml
-INSTALLS_ICONS=	yes
 USE_GSTREAMER1=	yes
 USE_XORG=	x11
 

@@ -14,7 +14,6 @@ USES=		compiler:c++11-lang gettext gmake gnome localbase pathfix \
 USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix intltool intlhack gtkmm30 gtksourceviewmm3
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.regexxer.gschema.xml
 

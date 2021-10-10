@@ -29,7 +29,6 @@ GL_COMMIT=	e93a7ddabfe8289138280c3f613038b809b5033d
 SHEBANG_FILES=	scripts/cargo.sh scripts/compile-gschema.py
 MAKE_ENV=	${CARGO_ENV}
 GLIB_SCHEMAS=	org.gnome.Podcasts.gschema.xml
-INSTALLS_ICONS=	yes
 
 CARGO_CRATES=	aho-corasick-0.7.13 \
 		ammonia-3.1.0 \

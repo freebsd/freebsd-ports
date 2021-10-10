@@ -22,7 +22,6 @@ GH_PROJECT=	Gradio
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_GSTREAMER1=	mpg123 soup
 
-INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	de.haeckerfelix.gradio.gschema.xml
 
 post-patch:

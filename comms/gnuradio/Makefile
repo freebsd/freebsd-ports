@@ -86,7 +86,6 @@ OPTIONS_EXCLUDE=	DOXYGEN
 OPTIONS_SUB=		yes
 UHD_DESC=	Include UHD support from Ettus
 TESTING_DESC=	Include testing support
-INSTALLS_ICONS=		yes
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 

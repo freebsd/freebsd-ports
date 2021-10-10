@@ -34,7 +34,6 @@ USES=		cpe gmake localbase:ldflags makeinfo ncurses pkgconfig tar:xz
 CPE_VENDOR=	gnu
 .if ${FLAVOR:U} != nox
 USES+=		desktop-file-utils gnome xorg
-INSTALLS_ICONS=	yes
 USE_XORG=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xt
 .endif
 

@@ -28,7 +28,6 @@ USE_QT=		qmake_build buildtools_build core declarative sql xml multimedia \
 		widgets dbus webkit quickcontrols graphicaleffects sql-sqlite3
 QMAKE_ARGS=	LIBQTELEGRAM_INCLUDE_PATH="${LOCALBASE}/include/libqtelegram-ae" \
 		TELEGRAMQML_INCLUDE_PATH="${LOCALBASE}/include/telegramqml"
-INSTALLS_ICONS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "/isEmpty(OPENSSL_INCLUDE_PATH)/d" \

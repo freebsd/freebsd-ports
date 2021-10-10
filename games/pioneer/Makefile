@@ -48,7 +48,6 @@ USE_SDL=	image2 sdl2
 CMAKE_ARGS=	-DPIONEER_DATA_DIR:PATH="${DATADIR}/data"
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions --exclude \
 			.gitignore
-INSTALLS_ICONS=	yes
 
 PORTDATA=	data
 PORTDOCS=	AUTHORS.txt Changelog.txt Modelviewer.txt Quickstart.txt \

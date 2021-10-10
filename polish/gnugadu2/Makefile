@@ -19,7 +19,6 @@ LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 USES=		gettext gmake gnome libtool localbase pathfix perl5 pkgconfig \
 		tar:bzip2 xorg
 USE_GNOME=	cairo gtk20

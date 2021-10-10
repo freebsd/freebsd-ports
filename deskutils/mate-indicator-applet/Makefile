@@ -27,7 +27,6 @@ USE_CSTD=	c11
 USE_MATE= 	panel
 USE_GNOME=	gtk30
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

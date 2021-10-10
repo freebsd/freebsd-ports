@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		dos2unix gnome python zip
 DOS2UNIX_REGEX=	.*.[^pt][^nt][^gf]
-INSTALLS_ICONS=	yes
 
 PORTDOCS=	README.txt changelog.txt
 OPTIONS_DEFINE=	DOCS

@@ -44,7 +44,6 @@ USE_QT=		buildtools_build core declarative gui linguisttools_build \
 		network opengl printsupport qmake_build widgets xml
 DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 USE_GNOME=	libxml2
-INSTALLS_ICONS=	yes
 
 CMAKE_ARGS+=	-DWANT_HUNSPELL=YES -DCMAKE_COLOR_MAKEFILE:BOOL=ON
 

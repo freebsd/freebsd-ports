@@ -22,7 +22,6 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 SUB_FILES=	pkg-deinstall pkg-install
 
 CONFIGURE_ARGS+=--disable-indicator-services-command \

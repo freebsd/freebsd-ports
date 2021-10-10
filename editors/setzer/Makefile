@@ -25,7 +25,6 @@ GH_ACCOUNT=	cvfosammmm
 GH_PROJECT=	Setzer
 USE_GNOME=	glib20 gtk30 gtksourceview4 introspection pango pygobject3
 USE_PYTHON=	py3kplist
-INSTALLS_ICONS=	yes
 
 SHEBANG_FILES=	scripts/* setzer.in
 

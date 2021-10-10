@@ -20,7 +20,6 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS+=--with-layout=default
 USES=		gettext gmake gnome libtool pkgconfig python:3.6+
 USE_GNOME=	pygobject3
-INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	org.freedesktop.ibus.engine.anthy.gschema.xml
 
 .include <bsd.port.mk>

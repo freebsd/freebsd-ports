@@ -22,7 +22,6 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gnome localbase meson pkgconfig tar:xz
 USE_GNOME=	gtk30
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.gnome.Weather.gschema.xml
 

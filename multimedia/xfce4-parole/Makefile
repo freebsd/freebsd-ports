@@ -26,7 +26,6 @@ USE_XFCE=	panel
 USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-notify-plugin \
 		--enable-tray-plugin \
 		--enable-taglib \

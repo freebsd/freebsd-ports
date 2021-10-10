@@ -39,7 +39,6 @@ CONFIGURE_ARGS=	--with-dbus-services=${PREFIX}/share/dbus-1/services \
 		--disable-static \
 		--disable-rfkill
 
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml \

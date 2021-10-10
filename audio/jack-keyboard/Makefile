@@ -16,7 +16,6 @@ LIB_DEPENDS=	libjack.so:audio/jack
 
 USE_GNOME=	gtk20
 USES=		cmake gnome
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=        LASH
 OPTIONS_DEFAULT=       LASH

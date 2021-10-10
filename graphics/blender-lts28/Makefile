@@ -28,7 +28,6 @@ USES=		cmake compiler:c++14-lang gl gnome jpeg python:3.7 shebangfix \
 USE_XORG=	x11 xext xfixes xmu xrender
 USE_GL=		gl glu glew
 
-INSTALLS_ICONS=	yes
 CMAKE_OFF=	WITH_IMAGE_OPENJPEG WITH_PYTHON_INSTALL \
 		WITH_PYTHON_INSTALL_NUMPY WITH_INSTALL_PORTABLE \
 		WITH_CYCLES_LOGGING

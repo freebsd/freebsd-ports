@@ -17,7 +17,6 @@ BUILD_DEPENDS=	itstool:textproc/itstool
 USES=		gettext gnome libtool localbase meson pathfix pkgconfig \
 		tar:xz
 USE_GNOME=	cairo gtk30 intlhack libxml2:build
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

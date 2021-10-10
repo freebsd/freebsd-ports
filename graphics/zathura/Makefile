@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.2.2,1:textproc/py-sphinx@${PY_FL
 USES=		compiler:c11 gettext-tools:build gnome meson ninja pkgconfig \
 		python:3.6+
 USE_GNOME=	glib20 gtk30 gdkpixbuf2
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		SQLITE
 OPTIONS_DEFAULT=	SQLITE

@@ -19,7 +19,6 @@ USES=		gettext gmake gnome libtool localbase pathfix pkgconfig \
 USE_GNOME=	cairo gtk30 introspection:build
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

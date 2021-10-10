@@ -20,7 +20,6 @@ RUN_DEPENDS=	yelp:x11/yelp
 
 USES=		gettext gmake gnome pkgconfig
 USE_GNOME=	cairo gnomeprefix gtk30 intltool librsvg2
-INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

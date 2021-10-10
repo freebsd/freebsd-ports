@@ -12,7 +12,6 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 MASTERDIR=	${.CURDIR}/../libpurple
 BUILD_WRKSRC=	${WRKSRC}/pidgin
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-INSTALLS_ICONS=	yes
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 

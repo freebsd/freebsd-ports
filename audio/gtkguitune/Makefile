@@ -19,7 +19,6 @@ USES=		compiler:c++11-lang gnome pkgconfig
 USE_CXXSTD=	c++11
 USE_GNOME=	gtkmm24
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/scalable/apps/guitune_logo.svg

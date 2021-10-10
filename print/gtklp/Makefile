@@ -18,7 +18,6 @@ LIB_DEPENDS=	libcups.so:print/cups \
 
 USES=		autoreconf gettext gnome libtool pkgconfig xorg
 USE_GNOME=	cairo gtk20
-INSTALLS_ICONS=	yes
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes

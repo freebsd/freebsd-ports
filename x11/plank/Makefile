@@ -40,7 +40,6 @@ NLS_CONFIGURE_ENABLE=	nls
 DBUSMENU_LIB_DEPENDS=			libdbusmenu-gtk3.so:devel/libdbusmenu
 DBUSMENU_CONFIGURE_ENABLE=		dbusmenu
 
-INSTALLS_ICONS= yes
 INSTALL_TARGET= install-strip
 
 post-patch:

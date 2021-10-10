@@ -26,7 +26,6 @@ USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils gettext \
 USE_XORG=	ice sm
 USE_GNOME=	cairo gtk20 librsvg2
 SHEBANG_FILES=	tools/*.pl tools/*.py tools/tb2claws-mail
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	COMPFACE DEBUG DOCS ENCHANT IPV6 LDAP \
 		NLS STARTUP THEMES

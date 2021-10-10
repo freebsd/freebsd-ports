@@ -27,7 +27,6 @@ USES=		gettext gmake gnome libtool localbase pathfix pkgconfig sqlite \
 		xorg
 USE_XORG=	ice sm x11
 USE_GNOME=	cairo glib20 gtk20 intltool libglade2
-INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-system-libsexy
 LIBS+=		-lm
 

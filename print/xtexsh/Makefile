@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		desktop-file-utils gnome shebangfix tk
 USE_TEX=	latex
 SHEBANG_FILES=	xtexsh
-INSTALLS_ICONS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 NO_BUILD=	yes

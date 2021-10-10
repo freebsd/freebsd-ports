@@ -28,7 +28,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 SHEBANG_FILES=	files/usr/bin/slick-greeter-check-hidpi \
 		files/usr/bin/slick-greeter-set-keyboard-layout \
 		makepot

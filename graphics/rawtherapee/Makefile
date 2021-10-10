@@ -42,7 +42,6 @@ USE_BINUTILS=	yes
 USE_GCC=	yes
 
 USE_GNOME=	gtkmm30 librsvg2
-INSTALLS_ICONS=	yes
 
 _LTO_FLAGS=	-flto=${MAKE_JOBS_NUMBER}
 # gcc needs -flto=${MAKE_JOBS_NUMBER} for parallel link (fixed in GCC 10?)
