@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20211107:
+  AFFECTS: users of sysutils/devcpu-data
+  AUTHOR: jrm@FreeBSD.org
+
+  The RC variable name microcode_cpus is now deprecated.  Users should
+  instead use the variable microcode_update_cpus.
+
+  Two new ports were branched from sysutils/devcpu-data,
+  sysustils/devcpu-data-amd and sysustils/devcpu-data-intel.  The two
+  new ports contain only the CPU microcode updates for each vendor and
+  sysutils/devcpu-data now only contains an RC script.  Both new ports
+  are on-by-default, optional dependencies of sysutils/devcpu-data.
+
 20211101:
   AFFECTS: users of textproc/redisearch
   AUTHOR: osa@FreeBSD.org
