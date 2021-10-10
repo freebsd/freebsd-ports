@@ -4,7 +4,7 @@ PORTNAME=	log4net
 PORTVERSION=	1.2.10
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	APACHE/incubator/log4net/${PORTVERSION}
+MASTER_SITES=	https://archive.apache.org/dist/incubator/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	incubating-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
