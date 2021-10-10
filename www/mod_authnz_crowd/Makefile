@@ -16,6 +16,9 @@ BROKEN_mips=		fails to build: error: curl/curl.h: No such file or directory
 BROKEN_mips64=		fails to build: error: curl/curl.h: No such file or directory
 BROKEN_FreeBSD_12_powerpc64=	fails to build on powerpc64 elfv1: curl/curl.h: No such file or directory
 
+DEPRECATED=	Abandoned upstream in 2014, doesn't work with Apache 2.4+
+EXPIRATION_DATE=2022-03-31
+
 LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_dav_svn.so:www/mod_dav_svn
