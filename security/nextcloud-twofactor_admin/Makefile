@@ -5,7 +5,6 @@ PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/ChristophWurst/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
-#https://github.com/ChristophWurst/twofactor_admin/releases/download/v3.1.0/twofactor_admin.tar.gz
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}
