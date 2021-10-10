@@ -4,11 +4,14 @@ PORTNAME=	geronimo
 DISTVERSION=	3.0-beta-1
 PORTREVISION=	1
 CATEGORIES=	www devel java
-MASTER_SITES=	APACHE/geronimo/${DISTVERSION}
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${WEBSERVER}-javaee6-${DISTVERSION}-bin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java EE 5 application server
+
+DEPRECATED=	Port outdated, unsupported upstream and depends on deprecated software
+EXPIRATION_DATE=2022-03-31
 
 USES=		cpe
 USE_JAVA=	yes
