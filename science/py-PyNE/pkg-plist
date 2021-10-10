@@ -206,6 +206,7 @@ lib/libpyne.so
 %%PYTHON_SITELIBDIR%%/pyne/mcnp.py
 %%PYTHON_SITELIBDIR%%/pyne/mesh.py
 %%PYTHON_SITELIBDIR%%/pyne/njoy.py
+%%PYTHON_SITELIBDIR%%/pyne/nuc_data.h5
 %%PYTHON_SITELIBDIR%%/pyne/nucname.pxd
 %%PYTHON_SITELIBDIR%%/pyne/nucname.so
 %%PYTHON_SITELIBDIR%%/pyne/openmc_utils.py
@@ -224,6 +225,7 @@ lib/libpyne.so
 %%PYTHON_SITELIBDIR%%/pyne/source.pxd
 %%PYTHON_SITELIBDIR%%/pyne/source.so
 %%PYTHON_SITELIBDIR%%/pyne/source_sampling.pxd
+%%PYTHON_SITELIBDIR%%/pyne/source_sampling.so
 %%PYTHON_SITELIBDIR%%/pyne/spatialsolver.py
 %%PYTHON_SITELIBDIR%%/pyne/spectanalysis.py
 %%PYTHON_SITELIBDIR%%/pyne/stlcontainers.pxd
