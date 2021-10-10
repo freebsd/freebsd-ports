@@ -1,7 +1,8 @@
 PORTNAME=	libinput
-PORTVERSION=	1.19.1
+DISTVERSION=	1.19.1
+PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/
+MASTER_SITES=	https://freedesktop.org/software/${PORTNAME}/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Generic input library
@@ -16,12 +17,11 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libudev.so:devel/libudev-devd \
 		libmtdev.so:devel/libmtdev
 
-USES=		localbase meson pkgconfig python:3.4+,run shebangfix tar:xz
+USES=		localbase meson pkgconfig python:run shebangfix tar:xz
 USE_LDCONFIG=	yes
 
-MESON_ARGS+=	-Ddocumentation=false -Dtests=false
+MESON_ARGS=	-Ddocumentation=false -Dtests=false
 
-python_OLD_CMD=	"/usr/bin/env python3"
 SHEBANG_FILES=	tools/libinput-analyze-per-slot-delta.py \
 		tools/libinput-analyze-recording.py \
 		tools/libinput-analyze-touch-down-state.py \
@@ -31,6 +31,10 @@ SHEBANG_FILES=	tools/libinput-analyze-per-slot-delta.py \
 		tools/libinput-measure-touchpad-size.py \
 		tools/libinput-measure-touchpad-tap.py \
 		tools/libinput-replay.py
+# The following files are not installed, but might be
+# run as part of the test suite.
+SHEBANG_FILES+=	tools/test_tool_option_parsing.py \
+		tools/libinput-record-verify-yaml.py
 
 OPTIONS_DEFINE=	DEBUG_GUI LIBWACOM
 OPTIONS_DEFAULT=LIBWACOM
