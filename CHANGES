@@ -10,6 +10,18 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20211010:
+AUTHOR: bapt@FreeBSD.org
+
+  INSTALLS_ICONS has been replace by a trigger on gtk-update-icon-cache.
+  the macro does nothing anymore.
+
+20211010:
+AUTHOR: bapt@FreeBSD.org
+
+  A new USES has been added, to simplify the integration of triggers in
+  the ports tree.
+
 20210801:
 AUTHOR: delphij@FreeBSD.org
   WANT_OPENLDAP_SASL is removed now that OpenLDAP is always built with
