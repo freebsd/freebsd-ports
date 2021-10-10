@@ -253,6 +253,13 @@ CARGO_INSTALL=	no
 CARGO_TARGET_DIR=	${WRKSRC}/target
 MAKE_ENV=	${CARGO_ENV}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc*}
+CARGO_BUILD_ARGS=	--no-default-features \
+			--features=upload,log,human-panic
+.endif
+
 # The binary is usually built via setup.py which uses different compiler flags.
 # That line is patched out there to use the compiler flags from the Ports
 # framework instead.  The setup.py is processed in the "do-build" target to
