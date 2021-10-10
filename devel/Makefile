@@ -775,7 +775,6 @@
     SUBDIR += geany-plugin-macro
     SUBDIR += geany-plugin-markdown
     SUBDIR += geany-plugin-miniscript
-    SUBDIR += geany-plugin-multiterm
     SUBDIR += geany-plugin-numberedbookmarks
     SUBDIR += geany-plugin-overview
     SUBDIR += geany-plugin-pairtaghighlighter

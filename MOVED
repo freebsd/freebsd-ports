@@ -16505,3 +16505,44 @@ sysutils/stanchion||2021-10-04|Has expired: dependencies no longer supported ups
 sysutils/riak-cs||2021-10-04|Has expired: dependencies no longer supported upstream
 devel/py-thriftpy|devel/py-thriftpy2|2021-10-04|Remove deprecated port. Use devel/py-thriftpy2 instead
 net/kafkacat|net/kcat|2021-10-06|Renamed
+devel/geany@gtk2|devel/geany|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-addons@gtk2|devel/geany-plugin-addons|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-autoclose@gtk2|devel/geany-plugin-autoclose|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-automark@gtk2|devel/geany-plugin-automark|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-codenav@gtk2|devel/geany-plugin-codenav|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-commander@gtk2|devel/geany-plugin-commander|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-ctags@gtk2|devel/geany-plugin-ctags|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-debugger@gtk2|devel/geany-plugin-debugger|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-defineformat@gtk2|devel/geany-plugin-defineformat|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-doc@gtk2|devel/geany-plugin-doc|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-extrasel@gtk2|devel/geany-plugin-extrasel|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-gendoc@gtk2|devel/geany-plugin-gendoc|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-geniuspaste@gtk2|devel/geany-plugin-geniuspaste|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-git-changebar@gtk2|devel/geany-plugin-git-changebar|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-insertnum@gtk2|devel/geany-plugin-insertnum|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-latex@gtk2|devel/geany-plugin-latex|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-lineoperations@gtk2|devel/geany-plugin-lineoperations|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-lipsum@gtk2|devel/geany-plugin-lipsum|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-lua@gtk2|devel/geany-plugin-lua|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-macro@gtk2|devel/geany-plugin-macro|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-miniscript@gtk2|devel/geany-plugin-miniscript|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-multiterm||2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-numberedbookmarks@gtk2|devel/geany-plugin-numberedbookmarks|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-overview@gtk2|devel/geany-plugin-overview|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-pairtaghighlighter@gtk2|devel/geany-plugin-pairtaghighlighter|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-pg@gtk2|devel/geany-plugin-pg|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-pohelper@gtk2|devel/geany-plugin-pohelper|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-pretty-printer@gtk2|devel/geany-plugin-pretty-printer|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-projectorganizer@gtk2|devel/geany-plugin-projectorganizer|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-prj@gtk2|devel/geany-plugin-prj|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-scope@gtk2|devel/geany-plugin-scope|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-sendmail@gtk2|devel/geany-plugin-sendmail|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-shiftcolumn@gtk2|devel/geany-plugin-shiftcolumn|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-spellcheck@gtk2|devel/geany-plugin-spellcheck|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-tableconvert@gtk2|devel/geany-plugin-tableconvert|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-treebrowser@gtk2|devel/geany-plugin-treebrowser|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-updatechecker@gtk2|devel/geany-plugin-updatechecker|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-vc@gtk2|devel/geany-plugin-vc|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-vimode@gtk2|devel/geany-plugin-vimode|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-workbench@gtk2|devel/geany-plugin-workbench|2021-10-10|Project dropped GTK2 support
+devel/geany-plugin-xmlsnippets@gtk2|devel/geany-plugin-xmlsnippets|2021-10-10|Project dropped GTK2 support

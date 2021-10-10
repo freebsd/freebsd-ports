@@ -94,6 +94,7 @@ share/applications/geany.desktop
 %%DATADIR%%/filedefs/filetypes.Groovy.conf
 %%DATADIR%%/filedefs/filetypes.JSON.conf
 %%DATADIR%%/filedefs/filetypes.Kotlin.conf
+%%DATADIR%%/filedefs/filetypes.Meson.conf
 %%DATADIR%%/filedefs/filetypes.Nim.conf
 %%DATADIR%%/filedefs/filetypes.Scala.conf
 %%DATADIR%%/filedefs/filetypes.Swift.conf
@@ -132,6 +133,7 @@ share/applications/geany.desktop
 %%DATADIR%%/filedefs/filetypes.html
 %%DATADIR%%/filedefs/filetypes.java
 %%DATADIR%%/filedefs/filetypes.javascript
+%%DATADIR%%/filedefs/filetypes.julia
 %%DATADIR%%/filedefs/filetypes.latex
 %%DATADIR%%/filedefs/filetypes.lisp
 %%DATADIR%%/filedefs/filetypes.lua
@@ -161,11 +163,10 @@ share/applications/geany.desktop
 %%DATADIR%%/filedefs/filetypes.xml
 %%DATADIR%%/filedefs/filetypes.yaml
 %%DATADIR%%/filedefs/filetypes.zephir
-%%GTK3%%%%DATADIR%%/geany-3.0.css
-%%GTK3%%%%DATADIR%%/geany-3.20.css
-%%GTK3%%%%DATADIR%%/geany.css
+%%DATADIR%%/geany-3.0.css
+%%DATADIR%%/geany-3.20.css
+%%DATADIR%%/geany.css
 %%DATADIR%%/geany.glade
-%%GTK2%%%%DATADIR%%/geany.gtkrc
 %%DATADIR%%/snippets.conf
 %%DATADIR%%/tags/entities.html.tags
 %%DATADIR%%/tags/std.pas.tags
