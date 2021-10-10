@@ -858,6 +858,7 @@
     SUBDIR += rubygem-fortune_gem
     SUBDIR += rubygem-lolcat
     SUBDIR += rubygem-vimgolf
+    SUBDIR += runelite
     SUBDIR += sampsvr
     SUBDIR += sarien
     SUBDIR += sauerbraten
