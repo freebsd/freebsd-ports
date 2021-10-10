@@ -15096,7 +15096,6 @@ databases/postgresql94-plpython|databases/postgresql95-plpython|2020-07-24|Has e
 databases/postgresql94-server|databases/postgresql95-server|2020-07-24|Has expired: PostgreSQL-9.4 has reached end-of-life
 databases/postgresql94-pltcl|databases/postgresql95-pltcl|2020-07-24|Has expired: PostgreSQL-9.4 has reached end-of-life
 databases/postgresql94-plperl|databases/postgresql95-plperl|2020-07-24|Has expired: PostgreSQL-9.4 has reached end-of-life
-net/dshell||2020-07-24|Uses deprecated version of python
 databases/sqliteodbc-sqlite2|databases/sqliteodbc|2020-07-27|Has expired: SQLite2 has stopped development in 2005, please move to SQLite3
 graphics/wayland-info|graphics/wayland-utils|2020-08-02|Project renamed
 devel/rubygem-grape11|devel/rubygem-grape|2020-08-03|Has expired: use devel/rubygem-grape instead

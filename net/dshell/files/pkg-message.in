@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+To use the GeoIP Databases from DShell, please download
+GeoLite2-ASN_[date].tar.gz, GeoLite2-City_[date].tar.gz, and
+GeoLite2-Country_[date].tar.gz from the following URL and place
+GeoLite2-ASN.mmdb, GeoLite2-City.mmdb, and GeoLite2-Country.mmdb
+into %%PYTHON_SITELIBDIR%%/dshell/data/GeoIP .
+
+https://dev.maxmind.com/geoip/geoip2/geolite2/
+EOM
+}
+]
