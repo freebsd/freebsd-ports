@@ -1,7 +1,7 @@
 PORTNAME=	bcel
 PORTVERSION=	6.4.1
 CATEGORIES=	java devel
-MASTER_SITES=	APACHE_COMMONS_BINARIES
+MASTER_SITES=	https://archive.apache.org/dist/commons/${PORTNAME}/binaries/
 PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
