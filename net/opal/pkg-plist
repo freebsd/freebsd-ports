@@ -141,7 +141,6 @@ lib/libopal.so.%%VERSION%%
 %%DEBUG%%lib/libopal_d.so.%%PVERSION_MAJOR%%
 %%DEBUG%%lib/libopal_d.so.%%PVERSION_MINOR%%
 %%DEBUG%%lib/libopal_d.so.%%VERSION%%
-%%CELT%%lib/opal-%%VERSION%%/codecs/audio/celt_ptplugin.so
 lib/opal-%%VERSION%%/codecs/audio/g7221_ptplugin.so
 lib/opal-%%VERSION%%/codecs/audio/g7222_ptplugin.so
 lib/opal-%%VERSION%%/codecs/audio/g722_ptplugin.so
