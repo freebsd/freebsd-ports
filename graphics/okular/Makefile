@@ -1,5 +1,6 @@
 PORTNAME=	okular
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -31,7 +32,7 @@ USE_KDE=	activities archive auth bookmarks codecs completion config \
 		ecm_build
 USE_QT=		concurrent core dbus declarative gui network phonon4 printsupport speech \
 		svg widgets xml \
-		buildtools_build qmake_build
+		buildtools_build qmake_build testlib_build
 CPE_VENDOR=	kde
 
 OPTIONS_DEFINE=	DOCS PURPOSE
