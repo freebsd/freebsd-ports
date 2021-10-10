@@ -16,6 +16,8 @@ LICENSE=	APACHE20
 
 BROKEN_SSL=	openssl
 BROKEN_SSL_REASON_openssl=	variable has incomplete type 'HMAC_CTX' (aka 'hmac_ctx_st')
+DEPRECATED=	Outdated, unsupported upstream
+EXPIRATION_DATE=2022-03-31
 
 BUILD_DEPENDS=	gmake:devel/gmake \
 		gsed:textproc/gsed
