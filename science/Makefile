@@ -233,6 +233,7 @@
     SUBDIR += py-OpenFermion
     SUBDIR += py-PubChemPy
     SUBDIR += py-PyFR
+    SUBDIR += py-PyNE
     SUBDIR += py-SimpleSpectral
     SUBDIR += py-abipy
     SUBDIR += py-access

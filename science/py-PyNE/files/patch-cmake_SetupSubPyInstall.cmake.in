@@ -1,0 +1,12 @@
+- make 'install' DESTDIR-aware
+
+--- cmake/SetupSubPyInstall.cmake.in.orig	2021-10-09 05:02:12 UTC
++++ cmake/SetupSubPyInstall.cmake.in
+@@ -9,6 +9,7 @@ message("  CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFI
+ message("  CMAKE_CURRENT_BINARY_DIR: ${CMAKE_CURRENT_BINARY_DIR}")
+ execute_process(COMMAND ${PYTHON_EXECUTABLE} setup_sub.py install
+                         "--prefix=${CMAKE_INSTALL_PREFIX}"
++                        "--root=$ENV{DESTDIR}"
+                 WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+                 RESULT_VARIABLE res_var)
+ if(NOT "${res_var}" STREQUAL "0")

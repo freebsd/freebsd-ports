@@ -1,0 +1,6 @@
+PyNE is a suite of tools to aid in computational nuclear science & engineering.
+PyNE seeks to provide native implementations of common nuclear algorithms, as
+well as Python bindings and I/O support for other industry standard nuclear
+codes.
+
+WWW: https://pyne.io/
