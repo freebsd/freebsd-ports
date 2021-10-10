@@ -1,10 +1,10 @@
 # Created by: rfarmer@predatorlabs.net
 
 PORTNAME=	xml-commons
-PORTVERSION=	1.4.01
+DISTVERSION=	1.4.01
 CATEGORIES=	textproc java
-MASTER_SITES=	APACHE/xml/commons
-DISTNAME=	${PORTNAME}-external-${PORTVERSION}
+MASTER_SITES=	APACHE/xerces/${PORTNAME}/binaries
+DISTNAME=	${PORTNAME}-external-${DISTVERSION}
 EXTRACT_SUFX=	-bin.tar.gz
 
 MAINTAINER=	makc@FreeBSD.org
