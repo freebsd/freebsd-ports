@@ -13,6 +13,9 @@ COMMENT=	Apache module for XML namespaces
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandoned upstream, last release in 2004
+EXPIRATION_DATE=2022-03-31
+
 USE_GNOME=	libxml2
 USES=		apache:2.2+ gnome
 
