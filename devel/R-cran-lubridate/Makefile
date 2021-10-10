@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	lubridate
-PORTVERSION=	1.7.10
+PORTVERSION=	1.8.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,7 +11,7 @@ COMMENT=	Make Dealing with Dates a Little Easier
 LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-generics>0:devel/R-cran-generics \
-		R-cran-Rcpp>=0.12.13:devel/R-cran-Rcpp
+		R-cran-cpp11>=0.2.7:devel/R-cran-cpp11
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
