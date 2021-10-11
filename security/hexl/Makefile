@@ -9,6 +9,8 @@ COMMENT=	Intel homomorphic encryption acceleration library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	error: __int128 is not supported on this target
+
 LIB_DEPENDS=	libcpu_features.so:devel/cpu_features
 
 USES=		cmake:testing compiler:c++11-lang localbase:ldflags
