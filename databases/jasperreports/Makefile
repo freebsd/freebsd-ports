@@ -10,6 +10,9 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.jar ${PORTNAME}-applet-${PORTVERSION}.jar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful open source Java reporting tool
 
+DEPRECATED=	Unsupported by upstream, released in 2013
+EXPIRATION_DATE=2022-03-31
+
 RUN_DEPENDS=	${JAVALIBDIR}/itext.jar:devel/itext			\
 		${JAVALIBDIR}/xalan.jar:textproc/xalan-j		\
 		${JAVALIBDIR}/crimson.jar:textproc/crimson		\
