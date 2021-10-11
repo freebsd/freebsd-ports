@@ -1,6 +1,6 @@
 PORTNAME=	libdatachannel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.2
+DISTVERSION=	0.15.3
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,14 +17,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	paullouisageneau
 GH_TUPLE=	\
 		SergiusTheBest:plog:d8461e9:plog/deps/plog \
-		sctplab:usrsctp:5e95fea:usrsctp/deps/usrsctp \
-		paullouisageneau:libjuice:026b3dd:libjuice/deps/libjuice \
+		sctplab:usrsctp:7c31bd3:usrsctp/deps/usrsctp \
+		paullouisageneau:libjuice:328206b:libjuice/deps/libjuice \
 		nlohmann:json:973c52d:json/deps/json \
 		cisco:libsrtp:90d05bf:libsrtp/deps/libsrtp
 
 CMAKE_ON=	USE_SYSTEM_SRTP NO_EXAMPLES NO_TESTS
 
-do-test:
+do-test: # tests require dual stack to be enabled with 'sysctl net.inet6.ip6.v6only=0', at least one test is known to fail
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DNO_TESTS:BOOL=OFF ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
