@@ -3,7 +3,7 @@
 PORTNAME=	lucene
 PORTVERSION=	5.5.5
 CATEGORIES=	textproc java devel
-MASTER_SITES=	APACHE/${PORTNAME}/java/${PORTVERSION}
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/java/${PORTVERSION}
 PKGNAMESUFFIX=	5
 
 MAINTAINER=	ports@FreeBSD.org
