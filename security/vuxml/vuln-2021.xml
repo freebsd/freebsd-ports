@@ -61,7 +61,7 @@
   </vuln>
 
   <vuln vid="04d2cf7f-2942-11ec-b48c-1c1b0d9ea7e6">
-    <topic>Apache OpenOffice opens dBase/DBF documents and shows the contents as spreadsheets. DBF are database files with data organized in fields. When reading DBF data the size of certain fields is not checked: the data is just copied into local variables. A carefully crafted document could overflow the allocated space, leading to the execution of arbitrary code by altering the contents of the program stack. This issue affects Apache OpenOffice up to and including version 4.1.10</topic>
+    <topic>Apache OpenOffice multiple vulnerabilities. These issues affect Apache OpenOffice up to and including version 4.1.10</topic>
     <affects>
       <package>
 	<name>apache-openoffice</name>
@@ -74,15 +74,27 @@
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The Apache Openofffice project reports:</p>
+	<p>The Apache Openoffice project reports:</p>
 	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-33035">
 	  <p>Apache OpenOffice opens dBase/DBF documents and shows the contents as spreadsheets. DBF are database files with data organized in fields. When reading DBF data the size of certain fields is not checked: the data is just copied into local variables. A carefully crafted document could overflow the allocated space, leading to the execution of arbitrary code by altering the contents of the program stack. This issue affects Apache OpenOffice up to and including version 4.1.10</p>
+	</blockquote>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-41830">
+	  <p>It is possible for an attacker to manipulate signed documents and macros to appear to come from a trusted source. All versions of Apache OpenOffice up to 4.1.10 are affected. Users are advised to update to version 4.1.11. See CVE-2021-25633 for the LibreOffice advisory </p>
+	</blockquote>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-41831">
+	  <p>It is possible for an attacker to manipulate the timestamp of signed documents. All versions of Apache OpenOffice up to 4.1.10 are affected. Users are advised to update to version 4.1.11. See CVE-2021-25634 for the LibreOffice advisory.</p>
+	</blockquote>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-41832">
+	  <p>It is possible for an attacker to manipulate documents to appear to be signed by a trusted source. All versions of Apache OpenOffice up to 4.1.10 are affected. Users are advised to update to version 4.1.11. See CVE-2021-25635 for the LibreOffice advisory.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <cvename>CVE-2021-33035</cvename>
-      <url>Ihttps://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-33035</url>
+      <cvename>CVE-2021-41830</cvename>
+      <cvename>CVE-2021-41831</cvename>
+      <cvename>CVE-2021-41832</cvename>
+      <url>https://cwiki.apache.org/confluence/display/OOOUSERS/AOO+4.1.11+Release+Notes/#AOO4.1.11ReleaseNotes-Security</url>
     </references>
     <dates>
       <discovery>2021-05-04</discovery>
