@@ -13,20 +13,12 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake gnome pkgconfig
-USE_GNOME=	gtk20
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
-USE_OCAMLFIND_PLIST=	yes
 USE_OCAML_CAMLP4=	yes
 USE_OCAML_LDCONFIG=	yes
 USE_OCAML_WASH=		yes
-
-OPTIONS_DEFINE=		DOCS EXAMPLES GTKGLAREA GTKSOURCEVIEW2 GTKSPELL LIBRSVG2
-OPTIONS_DEFAULT=	GTKGLAREA GTKSOURCEVIEW2 GTKSPELL LIBRSVG2
-
-GTKGLAREA_DESC=		GtkGLArea support
-GTKSOURCEVIEW2_DESC=	GtkSourceView 2 support
-GTKSPELL_DESC=		GtkSpell support
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	all opt
@@ -36,17 +28,25 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	garrigue
 GH_PROJECT=	lablgtk
 
+PORTSCOUT=	limit:^${PORTVERSION:R:R}
+
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-libdir=${PREFIX}/${OCAML_LIBDIR} \
 		--without-gtksourceview --without-gnomeui \
 		--without-panel --without-glade --without-gnomecanvas
 CONFIGURE_ENV=	CAMLP4O="camlp4 pa_o.cmo pa_op.cmo pr_dump.cmo"
 
-PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
-
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	COPYING README
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES GTKGLAREA GTKSOURCEVIEW2 GTKSPELL LIBRSVG2
+OPTIONS_DEFAULT=	GTKGLAREA GTKSOURCEVIEW2 GTKSPELL LIBRSVG2
+OPTIONS_SUB=	yes
+
+GTKGLAREA_DESC=	GtkGLArea support
+GTKSOURCEVIEW2_DESC=	GtkSourceView 2 support
+GTKSPELL_DESC=	GtkSpell support
 
 GTKGLAREA_BUILD_DEPENDS=lablgl:graphics/ocaml-lablgl
 GTKGLAREA_LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2
@@ -64,6 +64,8 @@ GTKSPELL_CONFIGURE_WITH=gtkspell
 LIBRSVG2_CONFIGURE_WITH=rsvg
 LIBRSVG2_USE=		GNOME=librsvg2
 LIBRSVG2_VARS=		EXAMPLES_SUBDIRS+=rsvg
+
+PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
 
 post-patch:
 	@${REINPLACE_CMD} -E \

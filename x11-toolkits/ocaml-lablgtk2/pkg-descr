@@ -1,11 +1,9 @@
-LablGTK2 uses the rich type system of Objective Caml 3 to provide
-a strongly typed, yet very comfortable, object-oriented interface
-to GTK+ 2.x.
+LablGtk2 is an OCaml interface to GTK+ 2.x.  It provides a strongly-typed,
+yet comfortable, object-oriented interface compatible with GTK+'s dynamic
+typing through OCaml's rich type system.  Most widgets and methods are
+available, along with many examples.
 
-Objective Caml threads are supported, including for the toplevel,
-which allows for interactive use of the library.
+Objective Caml threads are supported, including for the toplevel, which
+allows for interactive use of the library.
 
-Please see ${PREFIX}/share/doc/ocaml/${PORTNAME}/README for further
-information.
-
-WWW: http://lablgtk.forge.ocamlcore.org/
+WWW: https://garrigue.github.io/lablgtk/
