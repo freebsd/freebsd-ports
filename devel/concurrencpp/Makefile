@@ -9,6 +9,8 @@ COMMENT=	C++ concurrency library: tasks, executors, timers, C++20 coroutines
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_FreeBSD_12=	fatal error: 'semaphore' file not found (missing C++ include <semaphore>)
+
 USES=		cmake compiler:c++17-lang # should be compiler:c++20-lang
 
 USE_GITHUB=	yes
