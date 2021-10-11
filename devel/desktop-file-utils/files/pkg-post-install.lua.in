@@ -1,0 +1,2 @@
+print("Building cache database of MIME types")
+pkg.exec({"%%PREFIX%%/bin/update-desktop-database", "-q"})

@@ -2,6 +2,7 @@
 
 PORTNAME=	desktop-file-utils
 PORTVERSION=	0.26
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 
@@ -11,18 +12,13 @@ COMMENT=	Couple of command line utilities for working with desktop entries
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 gettext meson gnome pkgconfig tar:xz
+USES=		compiler:c11 gettext meson gnome pkgconfig trigger tar:xz
 USE_GNOME=	glib20
 
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-
-PORT_MIMEDIRS=	${LOCALBASE}/share/applications
-
-MIMEDIRS=	${PORT_MIMEDIRS}
-
-SUB_FILES=	pkg-deinstall pkg-install
+MIMEDIRS=	share/applications
 SUB_LIST=	MIMEDIRS="${MIMEDIRS}"
+PKGPOSTINSTALL=	${WRKDIR}/pkg-post-install
+SUB_FILES=	pkg-post-install.lua
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/desktop-entry-mode.el \
