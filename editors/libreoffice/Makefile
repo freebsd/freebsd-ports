@@ -149,12 +149,10 @@ GNOME_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 GNOME_USE=	GNOME=dconf
 
 GTK3_CONFIGURE_ENABLE=	gtk3
-GTK3_USE=	GNOME=gtk30,gtk-update-icon-cache
-GTK3_VARS=	POST_PLIST=add-plist-gnome
+GTK3_USE=	GNOME=gtk30
 
 GTK4_CONFIGURE_ENABLE=	gtk4
-GTK4_USE=	GNOME=gtk40,gtk-update-icon-cache
-GTK4_VARS=	POST_PLIST=add-plist-gnome
+GTK4_USE=	GNOME=gtk40
 
 JAVA_BUILD_DEPENDS=	ant:devel/apache-ant \
 			${JAVAJARDIR}/commons-codec.jar:java/apache-commons-codec \
@@ -344,13 +342,6 @@ post-install-SDK-on:
 .for subdir in include share share/doc share/idl
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s ${subdir}/libreoffice -not -type d >> ${TMPPLIST}
-.endfor
-
-add-plist-gnome:
-.for subdir in gnome hicolor locolor
-	@${ECHO_CMD} "@rmtry share/icons/${subdir}/icon-theme.cache" >> ${TMPPLIST}
-	@${ECHO_CMD} "@postexec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/share/icons/${subdir} 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@postunexec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/share/icons/${subdir} 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
 .endfor
 
 .include <bsd.port.post.mk>
