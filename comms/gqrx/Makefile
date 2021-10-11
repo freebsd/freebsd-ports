@@ -1,7 +1,7 @@
 # Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 
 PORTNAME=	gqrx
-PORTVERSION=	2.14.5
+PORTVERSION=	2.14.6
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
