@@ -61,7 +61,7 @@
   </vuln>
 
   <vuln vid="04d2cf7f-2942-11ec-b48c-1c1b0d9ea7e6">
-    <topic>Apache OpenOffice multiple vulnerabilities. These issues affect Apache OpenOffice up to and including version 4.1.10</topic>
+    <topic>Apache OpenOffice -- multiple vulnerabilities.</topic>
     <affects>
       <package>
 	<name>apache-openoffice</name>
