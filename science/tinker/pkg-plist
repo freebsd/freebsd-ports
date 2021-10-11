@@ -82,6 +82,7 @@ bin/xyzpdb
 %%DATADIR%%/params/charmm22.prm
 %%DATADIR%%/params/charmm22cmap.prm
 %%DATADIR%%/params/dang.prm
+%%DATADIR%%/params/hippo19.prm
 %%DATADIR%%/params/hoch.prm
 %%DATADIR%%/params/iwater.prm
 %%DATADIR%%/params/mm2.prm
