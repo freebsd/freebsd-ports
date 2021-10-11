@@ -2,7 +2,7 @@
 
 PORTNAME=	check_smartmon
 PORTVERSION=	20100318
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://ftp.bsdserwis.com/pub/FreeBSD/ports/distfiles/
 PKGNAMEPREFIX=	nagios-
@@ -18,10 +18,10 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/smartctl:sysutils/smartmontools
 USES=		python shebangfix
 USE_PYTHON=	concurrent
 
-NO_BUILD=	yes
-NO_ARCH=	yes
-
 SHEBANG_FILES=	check_smartmon
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 PLIST_FILES=	libexec/nagios/check_smartmon
 
