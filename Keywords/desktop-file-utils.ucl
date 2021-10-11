@@ -1,9 +1,0 @@
-# MAINTAINER: gnome@FreeBSD.org
-
-actions: []
-post-install: <<EOD
-  update-desktop-database -q > /dev/null || true
-EOD
-post-deinstall: <<EOD
-  update-desktop-database -q > /dev/null || true
-EOD
