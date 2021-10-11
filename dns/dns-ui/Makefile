@@ -1,7 +1,7 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 
 PORTNAME=	dns-ui
-DISTVERSION=	v0.2.6
+DISTVERSION=	v0.2.7
 CATEGORIES=	dns
 
 MAINTAINER=	zi@FreeBSD.org
