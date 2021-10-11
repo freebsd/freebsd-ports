@@ -4,7 +4,7 @@ PORTNAME=	xml-security
 DISTVERSION=	1_5_5
 PORTREVISION=	1
 CATEGORIES=	security java
-MASTER_SITES=	APACHE/santuario/java-library/${DISTVERSION}
+MASTER_SITES=	https://archive.apache.org/dist/santuario/java-library/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
