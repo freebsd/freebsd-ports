@@ -2,6 +2,7 @@
 
 PORTNAME=	shared-mime-info
 DISTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -14,7 +15,8 @@ BUILD_DEPENDS=	gmake:devel/gmake \
 		itstool:textproc/itstool \
 		minixmlto:textproc/minixmlto
 
-USES=		gettext gnome localbase meson pathfix pkgconfig shebangfix tar:xz
+USES=		gettext gnome localbase meson pathfix pkgconfig shebangfix \
+		tar:xz trigger
 CONFIGURE_ARGS=	-Dupdate-mimedb=false \
 		-Dxdgmime-path=${WRKSRC}/src/xdgmime
 USE_GNOME=	glib20 libxml2
@@ -27,13 +29,8 @@ GL_TUPLE=	xdg:xdgmime:6663a2288d11b37bc07f5a01b4b85dcd377787e1:xdgmime/src/xdgmi
 bash_CMD=	/bin/sh
 SHEBANG_FILES=	${WRKSRC}/data/freedesktop_generate.sh
 
-SUB_FILES=	pkg-install
-SUB_LIST=	MIMEDIRS="${MIMEDIRS:O:u}"
-
-MIMEDIRS=	${LOCALBASE}/share/mime \
-		${PREFIX}/share/mime
 MIMESUBDIRS=	application audio image inode message model multipart \
-		packages text video x-epoc x-content
+		packages text video x-epoc x-content font
 
 BINARY_ALIAS=	xmlto=minixmlto
 
@@ -44,5 +41,10 @@ post-patch:
 
 pre-configure:
 	cd ${WRKSRC}/src/xdgmime/src && ${SETENV} ${MAKE_ENV} ${GMAKE}
+
+post-install:
+	for dir in ${MIMESUBDIRS} ; do \
+		${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/$${dir} ; \
+	done
 
 .include <bsd.port.mk>

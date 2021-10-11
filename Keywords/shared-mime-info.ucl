@@ -1,9 +1,0 @@
-# MAINTAINER: gnome@FreeBSD.org
-
-actions: []
-post-install: <<EOD
-  update-mime-database %D/%@ || true
-EOD
-post-deinstall: <<EOD
-  update-mime-database %D/%@ || true
-EOD

@@ -79,27 +79,15 @@ share/locale/zh_CN/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_HK/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_TW/LC_MESSAGES/shared-mime-info.mo
 share/mime/packages/freedesktop.org.xml
-@rmtry share/mime/XMLnamespaces
-@rmtry share/mime/aliases
-@rmtry share/mime/generic-icons
-@rmtry share/mime/globs
-@rmtry share/mime/globs2
-@rmtry share/mime/icons
-@rmtry share/mime/magic
-@rmtry share/mime/mime.cache
-@rmtry share/mime/subclasses
-@rmtry share/mime/treemagic
-@rmtry share/mime/types
-@rmtry share/mime/version
-@postunexec rm -fr %D/share/mime/x-epoc 2>/dev/null || true
-@postunexec rm -fr %D/share/mime/x-content 2>/dev/null || true
-@postunexec rm -fr %D/share/mime/video 2>/dev/null || true
-@postunexec rm -fr %D/share/mime/text 2>/dev/null || true
-@postunexec rm -fr %D/share/mime/multipart 2>/dev/null || true
-@postunexec rm -fr %D/share/mime/model 2>/dev/null || true
-@postunexec rm -fr %D/share/mime/message 2>/dev/null || true
-@postunexec rm -fr %D/share/mime/inode 2>/dev/null || true
-@postunexec rm -fr %D/share/mime/image 2>/dev/null || true
-@postunexec rm -fr %D/share/mime/font 2>/dev/null || true
-@postunexec rm -fr %D/share/mime/audio 2>/dev/null || true
-@postunexec rm -fr %D/share/mime/application 2>/dev/null || true
+@dir share/mime/x-epoc
+@dir share/mime/x-content
+@dir share/mime/video
+@dir share/mime/text
+@dir share/mime/multipart
+@dir share/mime/model
+@dir share/mime/message
+@dir share/mime/inode
+@dir share/mime/image
+@dir share/mime/font
+@dir share/mime/audio
+@dir share/mime/application
