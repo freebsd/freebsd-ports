@@ -4700,7 +4700,6 @@ llvm%%LLVM_SUFFIX%%/lib/libLLVMLineEditor.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMLinker.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMMC.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMMCA.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMMCACustomBehaviourAMDGPU.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMMCDisassembler.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMMCJIT.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMMCParser.a
