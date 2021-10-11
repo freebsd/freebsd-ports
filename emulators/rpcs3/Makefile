@@ -16,6 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libavcodec.so:multimedia/ffmpeg
 
+BROKEN_FreeBSD_12=	ld: error: undefined symbol: std::__1::__cxx_atomic_notify_one
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 
