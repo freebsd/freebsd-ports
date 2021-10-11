@@ -8,8 +8,8 @@ COMMENT=	Archiving tool for KDE
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext libarchive kde:5 \
-		qt:5 shared-mime-info tar:xz
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext libarchive kde:5 \
+		cpe qt:5 shared-mime-info tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons doctools i18n iconthemes \
 		itemmodels itemviews jobwidgets khtml kio parts pty service \
@@ -19,7 +19,6 @@ USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
 
 USE_LDCONFIG=	yes
-CPE_VENDOR=	kde
 
 OPTIONS_DEFINE=	7ZIP RAR ZIP DOCS
 OPTIONS_DEFAULT=	7ZIP ZIP DOCS
