@@ -178,6 +178,7 @@
     SUBDIR += openems
     SUBDIR += openkim
     SUBDIR += openkim-models
+    SUBDIR += openmc
     SUBDIR += openmx
     SUBDIR += opensim-core
     SUBDIR += opensph

@@ -1,0 +1,28 @@
+- workaround for https://github.com/openmc-dev/openmc/issues/1891
+- fix xtl,xtensor dependencies
+
+--- CMakeLists.txt.orig	2021-06-14 14:22:01 UTC
++++ CMakeLists.txt
+@@ -174,7 +174,7 @@ if(GIT_FOUND AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/.
+ endif()
+ 
+ # Check to see if submodules exist (by checking one)
+-if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/vendor/pugixml/CMakeLists.txt")
++if(FALSE AND NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/vendor/pugixml/CMakeLists.txt")
+   message(FATAL_ERROR "The git submodules were not downloaded! GIT_SUBMODULE was \
+     turned off or failed. Please update submodules and try again.")
+ endif()
+@@ -206,9 +206,10 @@ if (NOT (CMAKE_VERSION VERSION_LESS 3.13))
+   cmake_policy(SET CMP0079 NEW)
+ endif()
+ 
+-add_subdirectory(vendor/xtl)
+-set(xtl_DIR ${CMAKE_CURRENT_BINARY_DIR}/vendor/xtl)
+-add_subdirectory(vendor/xtensor)
++#add_subdirectory(vendor/xtl)
++#set(xtl_DIR ${CMAKE_CURRENT_BINARY_DIR}/vendor/xtl)
++#add_subdirectory(vendor/xtensor)
++find_package(xtensor REQUIRED)
+ 
+ #===============================================================================
+ # GSL header-only library

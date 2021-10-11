@@ -1,0 +1,10 @@
+OpenMC is a community-developed Monte Carlo neutron and photon transport
+simulation code. It is capable of performing fixed source, k-eigenvalue, and
+subcritical multiplication calculations on models built using either a
+constructive solid geometry or CAD representation. OpenMC supports both
+continuous-energy and multigroup transport. The continuous-energy particle
+interaction data is based on a native HDF5 format that can be generated from
+ACE files produced by NJOY. Parallelism is enabled via a hybrid MPI and OpenMP
+programming model.
+
+WWW: https://openmc.org/
