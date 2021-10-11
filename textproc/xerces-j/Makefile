@@ -3,7 +3,7 @@
 PORTNAME=	xerces-j
 PORTVERSION=	2.12.0
 CATEGORIES=	textproc java
-MASTER_SITES=	APACHE/xerces/j
+MASTER_SITES=	https://archive.apache.org/dist/xerces/j/binaries/
 DISTNAME=	Xerces-J-bin.${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
