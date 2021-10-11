@@ -1,3 +1,65 @@
+  <vuln vid="9a8514f3-2ab8-11ec-b3a1-8c164582fbac">
+    <topic>Ansible -- Ansible user credentials disclosure in ansible-connection module</topic>
+    <affects>
+      <package>
+	<name>py36-ansible-core</name>
+	<name>py37-ansible-core</name>
+	<name>py38-ansible-core</name>
+	<name>py39-ansible-core</name>
+	<name>py310-ansible-core</name>
+	<range><lt>2.11.6</lt></range>
+      </package>
+      <package>
+	<name>py36-ansible-base</name>
+	<name>py37-ansible-base</name>
+	<name>py38-ansible-base</name>
+	<name>py39-ansible-base</name>
+	<name>py310-ansible-base</name>
+	<range><lt>2.10.15</lt></range>
+      </package>
+      <package>
+	<name>py36-ansible2</name>
+	<name>py37-ansible2</name>
+	<name>py38-ansible2</name>
+	<name>py39-ansible2</name>
+	<name>py310-ansible2</name>
+	<range><lt>2.9.27</lt></range>
+      </package>
+      <package>
+	<name>py36-ansible</name>
+	<name>py37-ansible</name>
+	<name>py38-ansible</name>
+	<name>py39-ansible</name>
+	<name>py310-ansible</name>
+	<range><lt>2.9.27</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Red Hat reports:</p>
+	<blockquote cite="">
+          <p>A flaw was found in Ansible Engine's ansible-connection
+            module, where sensitive information such as the Ansible
+            user credentials is disclosed by default in the traceback
+            error message. The highest threat from this vulnerability
+            is to confidentiality.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-3620</cvename>
+      <url>https://access.redhat.com/security/cve/CVE-2021-3620</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2021-3620</url>
+      <url>https://github.com/ansible/ansible/blob/stable-2.9/changelogs/CHANGELOG-v2.9.rst#v2-9-27</url>
+      <url>https://github.com/ansible/ansible/blob/stable-2.10/changelogs/CHANGELOG-v2.10.rst#v2-10-15</url>
+      <url>https://github.com/ansible/ansible/blob/stable-2.11/changelogs/CHANGELOG-v2.11.rst#v2-11-6</url>
+    </references>
+    <dates>
+      <discovery>2021-06-25</discovery>
+      <entry>2021-10-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="04d2cf7f-2942-11ec-b48c-1c1b0d9ea7e6">
     <topic>Apache OpenOffice opens dBase/DBF documents and shows the contents as spreadsheets. DBF are database files with data organized in fields. When reading DBF data the size of certain fields is not checked: the data is just copied into local variables. A carefully crafted document could overflow the allocated space, leading to the execution of arbitrary code by altering the contents of the program stack. This issue affects Apache OpenOffice up to and including version 4.1.10</topic>
     <affects>
