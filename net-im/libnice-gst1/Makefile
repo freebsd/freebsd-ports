@@ -1,9 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-gst1
 
-MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GStreamer 1 plugin from libnice
 
 LIB_DEPENDS=	libnice.so:net-im/libnice

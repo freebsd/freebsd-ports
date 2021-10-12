@@ -1,1 +1,25 @@
+@comment bin/stunbdc
+@comment bin/stund
+@comment include/nice/address.h
+@comment include/nice/agent.h
+@comment include/nice/candidate.h
+@comment include/nice/debug.h
+@comment include/nice/interfaces.h
+@comment include/nice/nice.h
+@comment include/nice/pseudotcp.h
+@comment include/stun/constants.h
+@comment include/stun/debug.h
+@comment include/stun/stunagent.h
+@comment include/stun/stunmessage.h
+@comment include/stun/usages/bind.h
+@comment include/stun/usages/ice.h
+@comment include/stun/usages/timer.h
+@comment include/stun/usages/turn.h
+@comment include/stun/win32_common.h
+@comment lib/girepository-1.0/Nice-0.1.typelib
 lib/gstreamer-1.0/libgstnice.so
+@comment lib/libnice.so
+@comment lib/libnice.so.10
+@comment lib/libnice.so.10.11.0
+@comment libdata/pkgconfig/nice.pc
+@comment share/gir-1.0/Nice-0.1.gir
