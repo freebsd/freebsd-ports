@@ -1,7 +1,7 @@
 # Created by: Davíð Steinn Geirsson <david@isnic.is>
 
 PORTNAME=	proxmoxer
-PORTVERSION=	1.0.4
+PORTVERSION=	1.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
