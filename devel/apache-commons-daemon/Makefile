@@ -3,8 +3,8 @@
 PORTNAME=	commons-daemon
 PORTVERSION=	1.2.3
 CATEGORIES=	devel java
-MASTER_SITES=	https://archive.apache.org/dist/commons/daemon/source:src \
-		https://archive.apache.org/dist/commons/daemon/binaries:bin
+MASTER_SITES=	https://archive.apache.org/dist/commons/daemon/source/:src \
+		https://archive.apache.org/dist/commons/daemon/binaries/:bin
 
 PKGNAMEPREFIX=	apache-
 DISTFILES=	${PORTNAME}-${PORTVERSION}-native-src${EXTRACT_SUFX}:src \
