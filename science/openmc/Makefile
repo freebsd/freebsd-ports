@@ -1,6 +1,7 @@
 PORTNAME=	openmc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.2
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,11 +30,10 @@ OPTIONS_DEFAULT=	MPI OPENMP
 LIBMESH_DESC=		Support for libMesh unstructured mesh tallies
 LIBMESH_CMAKE_BOOL=	libmesh
 LIBMESH_LIB_DEPENDS=	libmesh_opt.so:math/libmesh
-LIBMESH_BROKEN=		https://github.com/openmc-dev/openmc/issues/1893
 
-MPI_VARS=		CXX=${LOCALBASE}/mpi/openmpi/bin/mpic++
-MPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
-MPI_RUN_DEPENDS=	openmpi>0:net/openmpi
+MPI_VARS=		CXX=${LOCALBASE}/bin/mpic++ # compilation breaks with OpenMPI-{3,4} and LIBMESH=ON
+MPI_BUILD_DEPENDS=	mpich>0:net/mpich
+MPI_RUN_DEPENDS=	mpich>0:net/mpich
 
 OPENMP_CMAKE_BOOL=	openmp
 
