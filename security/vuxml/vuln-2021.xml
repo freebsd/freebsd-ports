@@ -5,7 +5,7 @@
 	<name>openssh-portable</name>
 	<name>openssh-portable-hpn</name>
 	<name>openssh-portable-gssapi</name>
-	<range><ge>6.2.p1,1</ge><lt>8.8.p1,1</lt></range>
+	<range><ge>6.2.p1,1</ge><lt>8.7.p1_2,1</lt></range>
       </package>
     </affects>
     <description>
