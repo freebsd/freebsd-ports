@@ -1,23 +1,22 @@
 PORTNAME=	pldebugger
-PORTVERSION=	1.0.20181016
+PORTVERSION=	1.4
+DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	https://git.postgresql.org/gitweb/?p=pldebugger.git;a=snapshot;h=c3ac72942c6ba2e3b701a5291b1f6cf8f596b57c;sf=tgz;dummy=/
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL pl/pgsql Debugger API
 
 LICENSE=	ART20
 
 USES=		gmake pgsql
-LLD_UNSAFE=	yes
 WANT_PGSQL=	server
+USE_GITHUB=	yes
+GH_ACCOUNT=	EnterpriseDB
+LLD_UNSAFE=	yes
+MAKE_ENV=	USE_PGXS=1
 
 DOCSDIR=	${PREFIX}/share/doc/postgresql/extension
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-c3ac729
-
-MAKE_ENV=	USE_PGXS=1
 
 OPTIONS_DEFINE=	DOCS
 
