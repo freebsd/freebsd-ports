@@ -1,8 +1,7 @@
 # Created by: Eric Anholt
 
 PORTNAME=	git
-DISTVERSION=	2.32.0
-PORTREVISION=	1
+DISTVERSION=	2.33.0
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -62,9 +61,6 @@ SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 		git-p4.py \
 		contrib/hg-to-git/hg-to-git.py \
 		contrib/hooks/update-paranoid \
-		contrib/hooks/multimail/post-receive.example \
-		contrib/hooks/multimail/git_multimail.py \
-		contrib/hooks/multimail/migrate-mailhook-config \
 		contrib/fast-import/import-zips.py \
 		contrib/remote-helpers/git-remote-bzr \
 		contrib/remote-helpers/git-remote-hg \

@@ -698,6 +698,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.31.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.31.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.32.0.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.33.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -1257,18 +1258,7 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/git-shell-commands/list
 %%CONTRIB%%share/git-core/contrib/hg-to-git/hg-to-git.py
 %%CONTRIB%%share/git-core/contrib/hg-to-git/hg-to-git.txt
-%%CONTRIB%%share/git-core/contrib/hooks/multimail/CHANGES
-%%CONTRIB%%share/git-core/contrib/hooks/multimail/CONTRIBUTING.rst
 %%CONTRIB%%share/git-core/contrib/hooks/multimail/README.Git
-%%CONTRIB%%share/git-core/contrib/hooks/multimail/README.migrate-from-post-receive-email
-%%CONTRIB%%share/git-core/contrib/hooks/multimail/README.rst
-%%CONTRIB%%share/git-core/contrib/hooks/multimail/doc/customizing-emails.rst
-%%CONTRIB%%share/git-core/contrib/hooks/multimail/doc/gerrit.rst
-%%CONTRIB%%share/git-core/contrib/hooks/multimail/doc/gitolite.rst
-%%CONTRIB%%share/git-core/contrib/hooks/multimail/doc/troubleshooting.rst
-%%CONTRIB%%share/git-core/contrib/hooks/multimail/git_multimail.py
-%%CONTRIB%%share/git-core/contrib/hooks/multimail/migrate-mailhook-config
-%%CONTRIB%%share/git-core/contrib/hooks/multimail/post-receive.example
 %%CONTRIB%%share/git-core/contrib/hooks/post-receive-email
 %%CONTRIB%%share/git-core/contrib/hooks/pre-auto-gc-battery
 %%CONTRIB%%share/git-core/contrib/hooks/setgitperms.perl
