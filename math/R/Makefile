@@ -5,9 +5,9 @@ DISTVERSION=	4.1.1
 PORTREVISION=	2
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||} \
-		CRAN/src/contrib/:packages
+		CRAN/src/contrib/Archive/mgcv:mgcv
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		mgcv_1.8-37${EXTRACT_SUFX}:packages
+		mgcv_1.8-37${EXTRACT_SUFX}:mgcv
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jrm@FreeBSD.org
