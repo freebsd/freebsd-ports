@@ -1363,6 +1363,8 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Optimizer/Transforms/Passes.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Transforms/Passes.h.inc
 %%FLANG%%llvm-devel/include/flang/Optimizer/Transforms/Passes.td
+%%FLANG%%llvm-devel/include/flang/Optimizer/Transforms/RewritePatterns.inc
+%%FLANG%%llvm-devel/include/flang/Optimizer/Transforms/RewritePatterns.td
 %%FLANG%%llvm-devel/include/flang/Parser/char-block.h
 %%FLANG%%llvm-devel/include/flang/Parser/char-buffer.h
 %%FLANG%%llvm-devel/include/flang/Parser/char-set.h
@@ -2746,6 +2748,7 @@ llvm-devel/include/llvm/ExecutionEngine/JITLink/JITLinkMemoryManager.h
 llvm-devel/include/llvm/ExecutionEngine/JITLink/MachO.h
 llvm-devel/include/llvm/ExecutionEngine/JITLink/MachO_arm64.h
 llvm-devel/include/llvm/ExecutionEngine/JITLink/MachO_x86_64.h
+llvm-devel/include/llvm/ExecutionEngine/JITLink/MemoryFlags.h
 llvm-devel/include/llvm/ExecutionEngine/JITLink/aarch64.h
 llvm-devel/include/llvm/ExecutionEngine/JITLink/riscv.h
 llvm-devel/include/llvm/ExecutionEngine/JITLink/x86_64.h
@@ -2801,6 +2804,7 @@ llvm-devel/include/llvm/ExecutionEngine/Orc/TargetProcess/SimpleExecutorDylibMan
 llvm-devel/include/llvm/ExecutionEngine/Orc/TargetProcess/SimpleExecutorMemoryManager.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/TargetProcess/SimpleRemoteEPCServer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/TargetProcess/TargetExecutionUtils.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/TaskDispatch.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/ThreadSafeModule.h
 llvm-devel/include/llvm/ExecutionEngine/RTDyldMemoryManager.h
 llvm-devel/include/llvm/ExecutionEngine/RuntimeDyld.h
@@ -3065,6 +3069,7 @@ llvm-devel/include/llvm/MC/MachineLocation.h
 llvm-devel/include/llvm/MC/SectionKind.h
 llvm-devel/include/llvm/MC/StringTableBuilder.h
 llvm-devel/include/llvm/MC/SubtargetFeature.h
+llvm-devel/include/llvm/MC/TargetRegistry.h
 llvm-devel/include/llvm/MCA/CodeEmitter.h
 llvm-devel/include/llvm/MCA/Context.h
 llvm-devel/include/llvm/MCA/CustomBehaviour.h
@@ -3331,7 +3336,6 @@ llvm-devel/include/llvm/Support/SystemUtils.h
 llvm-devel/include/llvm/Support/TarWriter.h
 llvm-devel/include/llvm/Support/TargetOpcodes.def
 llvm-devel/include/llvm/Support/TargetParser.h
-llvm-devel/include/llvm/Support/TargetRegistry.h
 llvm-devel/include/llvm/Support/TargetSelect.h
 llvm-devel/include/llvm/Support/TaskQueue.h
 llvm-devel/include/llvm/Support/ThreadLocal.h
@@ -4016,6 +4020,9 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOpsDialect.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOpsEnums.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOpsEnums.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOpsInterfaces.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOpsInterfaces.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOpsInterfaces.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPTypeInterfaces.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPTypeInterfaces.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/PDL/IR/PDL.h
@@ -5205,6 +5212,7 @@ llvm-devel/lib/libRemarks.so.%%LLVM_MAJOR%%git
 %%CLANG%%llvm-devel/lib/libscanbuild/resources/selectable.js
 %%CLANG%%llvm-devel/lib/libscanbuild/resources/sorttable.js
 %%CLANG%%llvm-devel/lib/libscanbuild/shell.py
+%%LLDB%%llvm-devel/lib/lua/5.3/lldb.so
 %%CLANG%%llvm-devel/libexec/analyze-c++
 %%CLANG%%llvm-devel/libexec/analyze-cc
 %%CLANG%%llvm-devel/libexec/c++-analyzer
