@@ -4,7 +4,7 @@ PORTNAME=	hadoop
 PORTVERSION=	1.2.1
 PORTREVISION=	3
 CATEGORIES=	devel java
-MASTER_SITES=	APACHE/${PORTNAME}/core/${PORTNAME}-${PORTVERSION} \
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/core/${PORTNAME}-${PORTVERSION}/ \
 		http://dist.codehaus.org/jetty/jetty-6.1.14/:jetty
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} jetty-6.1.14.zip:jetty
 DIST_SUBDIR=	hadoop
