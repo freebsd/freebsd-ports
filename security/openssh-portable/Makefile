@@ -1,8 +1,8 @@
 # Created by: dwcjr@inethouston.net
 
 PORTNAME=	openssh
-DISTVERSION=	8.7p1
-PORTREVISION=	1
+DISTVERSION=	8.8p1
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	OPENBSD/OpenSSH/portable
