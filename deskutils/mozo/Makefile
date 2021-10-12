@@ -1,7 +1,7 @@
 # Created by: FreeBSD GNOME Team
 
 PORTNAME=	mozo
-PORTVERSION=	1.24.1
+PORTVERSION=	1.26.0
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
