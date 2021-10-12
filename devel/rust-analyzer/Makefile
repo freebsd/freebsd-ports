@@ -1,5 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2021-10-04
+DISTVERSION=	2021-10-11
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -48,7 +48,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		drop_bomb-0.1.5 \
 		either-1.6.1 \
 		ena-0.14.0 \
-		expect-test-1.1.0 \
+		expect-test-1.2.0-pre.1 \
 		filetime-0.2.15 \
 		fixedbitset-0.2.0 \
 		flate2-1.0.22 \
@@ -117,8 +117,8 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
 		ryu-1.0.5 \
-		salsa-0.17.0-pre.1 \
-		salsa-macros-0.17.0-pre.1 \
+		salsa-0.17.0-pre.2 \
+		salsa-macros-0.17.0-pre.2 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
@@ -148,7 +148,7 @@ CARGO_CRATES=	addr2line-0.16.0 \
 		tracing-log-0.1.2 \
 		tracing-subscriber-0.2.24 \
 		tracing-tree-0.1.10 \
-		ungrammar-1.14.5 \
+		ungrammar-1.14.8 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.6 \
 		unicode-normalization-0.1.19 \
