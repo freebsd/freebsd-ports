@@ -2,7 +2,7 @@ PORTNAME=	htdigest
 PORTVERSION=	2.4.6
 PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	APACHE_HTTPD
+MASTER_SITES=	https://archive.apache.org/dist/httpd/
 DISTNAME=	httpd-${PORTVERSION}
 DIST_SUBDIR=	apache24
 
