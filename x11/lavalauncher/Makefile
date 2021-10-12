@@ -1,6 +1,6 @@
 PORTNAME=	lavalauncher
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~leon_plickat/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -18,7 +18,6 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 USES=		compiler:c11 gnome meson pkgconfig
 USE_GNOME=	cairo
 PLIST_FILES=	bin/${PORTNAME}
-MESON_ARGS=	-Dwerror=false # https://lists.sr.ht/~leon_plickat/lavalauncher/%3Cilyo-li28-wny%40FreeBSD.org%3E
 
 OPTIONS_DEFINE=	EPOLL INOTIFY LIBRSVG2 MANPAGES
 OPTIONS_DEFAULT=EPOLL INOTIFY LIBRSVG2 MANPAGES
