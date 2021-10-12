@@ -2,7 +2,7 @@
 
 PORTNAME=	geeqie
 PORTVERSION=	1.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.geeqie.org/
 
