@@ -1,0 +1,27 @@
+https://github.com/glandium/git-cinnabar/commit/ea33ee10ac39
+
+--- helper/GIT-VERSION.mk.orig	2021-03-31 21:58:42 UTC
++++ helper/GIT-VERSION.mk
+@@ -1,2 +1,2 @@
+-GIT_VERSION ?= v2.32.0
++GIT_VERSION ?= v2.33.0
+ WINDOWS_GIT_VERSION ?= $(GIT_VERSION).windows.1
+--- helper/csum-file.c.patch.orig	2021-03-31 21:58:42 UTC
++++ helper/csum-file.c.patch
+@@ -1,8 +1,8 @@
+ diff --git a/csum-file.c b/csum-file.c
+-index 7510950fa3..19d02e3a63 100644
++index c951cf8277..1215459b01 100644
+ --- a/csum-file.c
+ +++ b/csum-file.c
+-@@ -86,7 +86,7 @@ int finalize_hashfile(struct hashfile *f, unsigned char *result, unsigned int fl
++@@ -91,7 +91,7 @@ int finalize_hashfile(struct hashfile *f, unsigned char *result, unsigned int fl
+  	return fd;
+  }
+  
+@@ -10,4 +10,4 @@ index 7510950fa3..19d02e3a63 100644
+ +void real_hashwrite(struct hashfile *f, const void *buf, unsigned int count)
+  {
+  	while (count) {
+- 		unsigned left = sizeof(f->buffer) - f->offset;
++ 		unsigned left = f->buffer_len - f->offset;
