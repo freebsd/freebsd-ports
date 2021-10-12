@@ -1,3 +1,47 @@
+  <vuln vid="2a1b931f-2b86-11ec-8acd-c80aa9043978">
+    <topic>OpenSSH -- OpenSSH 6.2 through 8.7 failed to correctly initialise supplemental groups when executing an AuthorizedKeysCommand or AuthorizedPrincipalsCommand</topic>
+    <affects>
+      <package>
+	<name>openssh-portable</name>
+	<name>openssh-portable-hpn</name>
+	<name>openssh-portable-gssapi</name>
+	<range><ge>6.2.p1,1</ge><lt>8.8.p1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenBSD Project reports:</p>
+	<blockquote cite="https://www.openssh.com/txt/release-8.8">
+	    <p>
+		sshd(8) from OpenSSH 6.2 through 8.7 failed to correctly initialise
+		supplemental groups when executing an AuthorizedKeysCommand or
+		AuthorizedPrincipalsCommand, where a AuthorizedKeysCommandUser or
+		AuthorizedPrincipalsCommandUser directive has been set to run the
+		command as a different user. Instead these commands would inherit
+		the groups that sshd(8) was started with.
+	    </p>
+	    <p>
+		Depending on system configuration, inherited groups may allow
+		AuthorizedKeysCommand/AuthorizedPrincipalsCommand helper programs to
+		gain unintended privilege.
+	    </p>
+	    <p>
+		Neither AuthorizedKeysCommand nor AuthorizedPrincipalsCommand are
+		enabled by default in sshd_config(5).
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41617</cvename>
+      <url>https://www.openssh.com/txt/release-8.8</url>
+    </references>
+    <dates>
+      <discovery>2021-09-26</discovery>
+      <entry>2021-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a7dd4c2d-77e4-46de-81a2-c453c317f9de">
     <topic>couchdb -- user privilege escalation</topic>
     <affects>
