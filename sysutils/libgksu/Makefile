@@ -13,14 +13,13 @@ LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
-		libglade-2.0.so:devel/libglade2 \
 		libgnome-keyring.so:security/libgnome-keyring \
 		libstartup-notification-1.so:x11/startup-notification
 RUN_DEPENDS=	xauth:x11/xauth \
 		sudo:security/sudo
 
 USES=		gettext gmake gnome libtool pathfix pkgconfig xorg
-USE_GNOME=	glib20 gconf2 intltool
+USE_GNOME=	cairo gconf2 gdkpixbuf2 glib20 intltool
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 CONFIGURE_ARGS=	--enable-gtk-doc=no
