@@ -2,8 +2,6 @@
 
 PKGNAMESUFFIX=	-lite
 
-COMMENT=	MATE multi-format document viewer
-
 OPTIONS_EXCLUDE=	CAJA DBUS
 
 MASTERDIR=	${.CURDIR}/../../graphics/atril

@@ -1,9 +1,6 @@
 PKGNAMESUFFIX=	-doc
 
-MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Documentation of Jinja2 template engine
-
-LICENSE=	BSD3CLAUSE
 
 DESCR=		${.CURDIR}/pkg-descr
 

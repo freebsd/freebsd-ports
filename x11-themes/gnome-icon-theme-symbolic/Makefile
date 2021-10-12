@@ -11,7 +11,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Symbolic Icons
 
 LICENSE=	CC-BY-SA-3.0
-LICENSE_FILES=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	icon-naming-utils>=0.8.7:x11-themes/icon-naming-utils
 

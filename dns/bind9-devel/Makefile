@@ -109,7 +109,6 @@ OPTIONS_EXCLUDE=	DNSTAP DOCS GEOIP LMDB \
 
 OPTIONS_SUB=	yes
 
-CRYPTO_DESC=		Choose which crypto engine to use
 DNSTAP_DESC=		Provides fast passive logging of DNS messages
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
 GSSAPI_BASE_DESC=	Using Heimdal in base

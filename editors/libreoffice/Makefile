@@ -121,7 +121,6 @@ OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA KF5 LTO MMEDIA PGSQL MARIA
 OPTIONS_DEFAULT=	CUPS JAVA MMEDIA QT5
 
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
-GTK3_DESC=	GTK+ 3 GUI toolkit support
 GTK4_DESC=	GTK+ 4 GUI toolkit support
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
 KF5_DESC=	KF5/Qt5 GUI toolkit support (implies QT5)

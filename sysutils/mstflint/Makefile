@@ -4,7 +4,7 @@ DISTVERSION=	4.16.0-1
 CATEGORIES=	sysutils
 
 MAINTAINER=	hselasky@FreeBSD.org
-COMMENT=	Firmware Burning and Diagnostics Tools for Mellanox devices
+COMMENT?=	Firmware Burning and Diagnostics Tools for Mellanox devices
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	dual

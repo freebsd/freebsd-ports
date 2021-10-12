@@ -4,8 +4,6 @@ PKGNAMESUFFIX=	-cgiserv
 
 COMMENT=	MooseFS CGI webserver
 
-LICENSE=	GPLv2
-
 MFS_COMPONENT=	cgiserv
 
 MASTERDIR=	${.CURDIR}/../moosefs3-master

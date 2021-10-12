@@ -15,7 +15,6 @@ RUN_DEPENDS=	perl-amanda:misc/amanda-perl-wrapper
 BUILD_DEPENDS=	perl-amanda:misc/amanda-perl-wrapper
 
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
-SLAVEDIRS=	misc/amanda-client
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -33,7 +32,6 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-ssh-security \
 		--disable-installperms --with-security-file=${ETCDIR}/amanda-security.conf
 CONFIGURE_ENV=	PERL=${LOCALBASE}/bin/perl-amanda
-PKG_MESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
 

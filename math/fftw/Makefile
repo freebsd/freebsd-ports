@@ -35,7 +35,7 @@ FFTW_SUFX=		s
 PKGNAMESUFFIX=		-float
 .else
 USES+=			makeinfo
-FFTW_SUFIX=
+FFTW_SUFX=
 INFO=			fftw
 .endif
 

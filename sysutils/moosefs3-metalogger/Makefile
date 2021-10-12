@@ -4,8 +4,6 @@ PKGNAMESUFFIX=	-metalogger
 
 COMMENT=	MooseFS metadata backup server
 
-LICENSE=	GPLv2
-
 MFS_COMPONENT=	metalogger
 
 MASTERDIR=	${.CURDIR}/../moosefs3-master

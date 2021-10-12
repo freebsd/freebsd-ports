@@ -2,8 +2,6 @@
 
 PKGNAMESUFFIX=	-perl
 
-MAINTAINER=	ale@FreeBSD.org
-
 MASTERDIR=	${.CURDIR}/../pdflib
 
 OPTIONS_DEFAULT=PERL

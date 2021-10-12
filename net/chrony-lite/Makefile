@@ -1,4 +1,3 @@
-PORTNAME=	chrony
 PKGNAMESUFFIX=	-lite
 
 MAINTAINER=	decke@FreeBSD.org

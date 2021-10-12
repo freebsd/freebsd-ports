@@ -12,10 +12,9 @@ LICENSE=	PD
 
 TEST_DEPENDS=	bash:shells/bash
 
-USES=	cmake cpe python:3.6+,test tar:xz
+USES=		cmake cpe python:3.6+,test shebangfix tar:xz
 
 TEST_TARGET=	check
-TEST_USES=	shebangfix
 SHEBANG_FILES=	test/posix_captures/.run/__run.sh \
 		test/posix_captures/.gen/__gen.sh \
 		test/__run_unicode_tests.sh

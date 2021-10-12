@@ -4,8 +4,6 @@ PKGNAMESUFFIX=	-client
 
 COMMENT=	MooseFS client tools
 
-LICENSE=	GPLv2
-
 MFS_COMPONENT=	client
 
 MASTERDIR=	${.CURDIR}/../moosefs2-master

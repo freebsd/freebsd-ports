@@ -23,8 +23,6 @@ CFLAGS+=	-fcommon
 
 CONFLICTS?=	cdrtools-[0-9]* cjk-cdrtools-[0-9]* cdrtools-devel-[0-9]*
 
-SLAVEDIRS=	sysutils/genisoimage
-
 PLIST_SUB?=	CDRKIT="" GENISOIMAGE="@comment "
 
 post-patch:

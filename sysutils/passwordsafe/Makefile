@@ -37,7 +37,7 @@ MAKE_ENV=	NO_QR=yes
 GH_ACCOUNT=	pwsafe
 GH_PROJECT=	${GH_ACCOUNT}
 
-WX_COMP=	wx
+WX_COMPS=	wx
 WANT_WX_VER=	3.0
 
 LDFLAGS=	-L${PREFIX}/lib -lqrencode

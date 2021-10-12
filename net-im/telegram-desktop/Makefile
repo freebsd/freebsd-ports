@@ -53,7 +53,6 @@ GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
 USE_GL=		gl
 USE_GNOME=	glib20 glibmm gtk30
-INSTALLS_ICONS=	yes
 USE_QT=		core dbus gui imageformats network widgets buildtools_build \
 		qmake_build wayland svg
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrender xrandr xtst

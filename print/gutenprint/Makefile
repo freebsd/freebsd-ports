@@ -7,7 +7,7 @@ CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.3/${PORTVERSION}
 
 MAINTAINER=	cmt@FreeBSD.org
-COMMENT=	Gutenprint Printer Drivers
+COMMENT?=	Gutenprint Printer Drivers
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -3,8 +3,6 @@ PKGNAMESUFFIX=	-openmpi
 
 MPIPREFIX=	mpi/openmpi/
 
-MAINTAINER=	jwb@FreeBSD.org
-
 LIB_DEPENDS+=	libmpi.so:net/openmpi
 
 MASTERDIR=	${.CURDIR}/../fvcom

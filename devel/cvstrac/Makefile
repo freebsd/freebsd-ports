@@ -2,7 +2,7 @@
 
 PORTNAME?=	cvstrac
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cvstrac.org/
 DISTNAME=	cvstrac-${PORTVERSION}

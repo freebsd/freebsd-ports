@@ -8,7 +8,7 @@ CATEGORIES=	comms hamradio
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT?=	General purpose ham radio voice services
 
-LICENSE=	GPLv2
+LICENSE?=	GPLv2
 
 LIB_DEPENDS?=	libgsm.so:audio/gsm \
 		libspeex.so:audio/speex \

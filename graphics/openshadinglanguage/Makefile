@@ -3,10 +3,10 @@
 PORTNAME=	openshadinglanguage
 DISTVERSIONPREFIX=	Release-
 DISTVERSION=	1.11.15.0
-CATEGORIES=	graphics devel
+CATEGORIES?=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
-COMMENT=	Advanced shading language for production GI renderers
+COMMENT?=	Advanced shading language for production GI renderers
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

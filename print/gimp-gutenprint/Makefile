@@ -3,7 +3,6 @@
 PORTREVISION=	1
 PKGNAMEPREFIX=	gimp-
 
-MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Gimp print plug-in
 
 MASTERDIR=	${.CURDIR}/../../print/gutenprint

@@ -457,8 +457,8 @@
     SUBDIR += libgphoto2
     SUBDIR += libgxps
     SUBDIR += libheif
-    SUBDIR += libimg
     SUBDIR += libimagequant
+    SUBDIR += libimg
     SUBDIR += libiptcdata
     SUBDIR += libjpeg-turbo
     SUBDIR += libjxl

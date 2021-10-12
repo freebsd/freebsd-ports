@@ -4,7 +4,7 @@ PORTNAME=	litehtml_viewer
 
 COMMENT=	Viewer plugin for HTML emails, using the litehtml library
 
-USES+=		compiler:c++11-lang
+USES+=		compiler:c++11-lang gnome
 USE_GNOME=	cairo glib20 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libgumbo.so:devel/gumbo \
