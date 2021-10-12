@@ -12,7 +12,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libImlib2.so:graphics/imlib2 \
 		libpng.so:graphics/png \
-		libslopy.so.7.5:x11/slop
+		libslopy.so:x11/slop
 
 USES=		cmake compiler:c++11-lang gl jpeg xorg
 USE_GITHUB=	yes
