@@ -1,5 +1,6 @@
 PORTNAME=	ejabberd
 PORTVERSION=	21.07
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -194,5 +195,6 @@ post-install:
 		${STAGEDIR}${DATADIR}
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/eimp-${EIMP_VER}/priv/bin/eimp
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/eimp-${EIMP_VER}/priv/bin/eimp
+	@cd ${WRKSRC}/sql && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/priv/sql
 
 .include <bsd.port.post.mk>
