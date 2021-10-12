@@ -4,7 +4,7 @@ PORTNAME=	spark
 PORTVERSION=	2.1.1
 PORTREVISION=	2
 CATEGORIES=	devel java
-MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${PORTNAME}-${PORTVERSION}/ \
 		LOCAL/demon/:maven \
 		http://people.freebsd.org/~demon/:maven
 PKGNAMEPREFIX=	apache-
