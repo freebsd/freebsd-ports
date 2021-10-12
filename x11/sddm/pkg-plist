@@ -18,6 +18,8 @@ etc/dbus-1/system.d/org.freedesktop.DisplayManager.conf
 %%QT_QMLDIR%%/SddmComponents/qmldir
 %%QT_QMLDIR%%/SddmComponents/warning.png
 libexec/sddm-helper
+libexec/sddm-helper-start-wayland
+libexec/sddm-helper-start-x11user
 share/man/man1/sddm-greeter.1.gz
 share/man/man1/sddm.1.gz
 share/man/man5/sddm-state.conf.5.gz
@@ -29,6 +31,7 @@ share/man/man5/sddm.conf.5.gz
 %%DATADIR%%/flags/ar.png
 %%DATADIR%%/flags/at.png
 %%DATADIR%%/flags/az.png
+%%DATADIR%%/flags/bd.png
 %%DATADIR%%/flags/be.png
 %%DATADIR%%/flags/bg.png
 %%DATADIR%%/flags/bh.png
@@ -159,6 +162,7 @@ share/man/man5/sddm.conf.5.gz
 %%DATADIR%%/translations/eu.qm
 %%DATADIR%%/translations/fi.qm
 %%DATADIR%%/translations/fr.qm
+%%DATADIR%%/translations/gl.qm
 %%DATADIR%%/translations/he.qm
 %%DATADIR%%/translations/hi_IN.qm
 %%DATADIR%%/translations/hu.qm
@@ -166,6 +170,7 @@ share/man/man5/sddm.conf.5.gz
 %%DATADIR%%/translations/is.qm
 %%DATADIR%%/translations/it.qm
 %%DATADIR%%/translations/ja.qm
+%%DATADIR%%/translations/ka.qm
 %%DATADIR%%/translations/kk.qm
 %%DATADIR%%/translations/ko.qm
 %%DATADIR%%/translations/lt.qm
