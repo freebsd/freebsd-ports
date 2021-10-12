@@ -1,6 +1,6 @@
 PORTNAME=	love
 PORTVERSION=	0.10.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel games
 MASTER_SITES=	https://bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -32,6 +32,7 @@ CONFIGURE_ARGS=	--program-suffix=${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/love-${PORTVERSION}
 INSTALL_TARGET=	install-strip
 
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS LUAJIT
