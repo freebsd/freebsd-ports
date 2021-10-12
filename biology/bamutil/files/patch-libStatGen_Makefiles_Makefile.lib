@@ -1,0 +1,17 @@
+--- libStatGen/Makefiles/Makefile.lib.orig	2021-10-12 15:28:34 UTC
++++ libStatGen/Makefiles/Makefile.lib
+@@ -34,11 +34,11 @@ profile: $(STAT_GEN_LIB_PROFILE)
+ # To build the library, build the objects
+ # Then add them to the library
+ $(STAT_GEN_LIB_OPT): $(OBJECTS_OPT)
+-	ar -cru $@ $(OBJECTS_OPT)
++	ar -cr $@ $(OBJECTS_OPT)
+ $(STAT_GEN_LIB_DEBUG): $(OBJECTS_DEBUG)
+-	ar -cru $@ $(OBJECTS_DEBUG)
++	ar -cr $@ $(OBJECTS_DEBUG)
+ $(STAT_GEN_LIB_PROFILE): $(OBJECTS_PROFILE)
+-	ar -cru $@ $(OBJECTS_PROFILE)
++	ar -cr $@ $(OBJECTS_PROFILE)
+ 
+ UNAME=$(shell uname)
+ 
