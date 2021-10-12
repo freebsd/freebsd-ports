@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	deldir
-DISTVERSION=	1.0-2
+DISTVERSION=	1.0-5
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
