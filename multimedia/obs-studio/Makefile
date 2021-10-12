@@ -90,7 +90,7 @@ VST_CMAKE_BOOL=		BUILD_VST
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != amd64 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != powerpc && ${ARCH} != powerpc64
+.if ${ARCH} != amd64 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != powerpc && ${ARCH} != powerpc64 && ${ARCH} != powerpc64le
 PLIST_SUB+=	LUAJIT="@comment "
 .else
 PLIST_SUB+=	LUAJIT=""
