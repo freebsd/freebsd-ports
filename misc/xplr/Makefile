@@ -145,6 +145,13 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 _ASSETS=	${WRKSRC}/assets
 _ICONS=		${STAGEDIR}${PREFIX}/share/icons/hicolor
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc64*}
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Cargo.toml
+LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
