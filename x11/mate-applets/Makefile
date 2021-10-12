@@ -1,5 +1,5 @@
 PORTNAME=	mate-applets
-PORTVERSION=	1.24.1
+PORTVERSION=	1.26.0
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -32,6 +32,8 @@ USE_GNOME=	cairo gtk30 gtksourceview3 intltool libwnck3 libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OS_SYS="/usr/include"
+CONFIGURE_ARGS=	--without-nl
+
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.drivemount.gschema.xml \
@@ -56,13 +58,13 @@ PLIST_SUB+=	BATTERY=""
 .endif
 
 # requires linux libcpufreq library
-#.if ${ARCH} != "i386" && ${ARCH} != "amd64"
+# .if ${ARCH} != "i386" && ${ARCH} != "amd64"
 CONFIGURE_ARGS+=--disable-cpufreq
 PLIST_SUB+=	CPUFREQ="@comment "
-#.else
-#CONFIGURE_ARGS+=--enable-cpufreq
-#PLIST_SUB+=	CPUFREQ=""
-#GLIB_SCHEMAS+=	org.mate.panel.applet.cpufreq.gschema.xml
-#.endif
+# .else
+# CONFIGURE_ARGS+=--enable-cpufreq
+# PLIST_SUB+=	CPUFREQ=""
+# GLIB_SCHEMAS+=	org.mate.panel.applet.cpufreq.gschema.xml
+# .endif
 
 .include <bsd.port.post.mk>

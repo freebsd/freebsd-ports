@@ -1,6 +1,6 @@
---- battstat/power-management.c.orig	2015-01-22 10:16:53.000000000 +0100
-+++ battstat/power-management.c	2015-01-22 17:29:57.507849366 +0100
-@@ -67,6 +67,10 @@
+--- battstat/power-management.c.orig	2021-08-07 11:25:17 UTC
++++ battstat/power-management.c
+@@ -63,6 +63,10 @@
  
  static const char *apm_readinfo (BatteryStatus *status);
  static int pm_initialised;
@@ -11,7 +11,7 @@
  #ifdef HAVE_UPOWER
  static int using_upower;
  #endif
-@@ -178,16 +182,40 @@
+@@ -174,38 +178,69 @@ apm_readinfo (BatteryStatus *status)
  
  #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
  
@@ -52,19 +52,22 @@
  static const char *
  apm_readinfo (BatteryStatus *status)
  {
-@@ -195,21 +223,27 @@
- 
-   if (DEBUG) g_print("apm_readinfo() (FreeBSD)\n");
+   int fd;
+-
++  gboolean read_error;
+   if (DEBUG) g_print ("apm_readinfo () (FreeBSD)\n");
  
 -  if (using_acpi) {
 +  if (using_acpi && (!acpiinfo.event_inited || acpiinfo.event_fd >= 0)) {
      if (acpi_count <= 0) {
        acpi_count = 30;
--      acpi_process_event(&acpiinfo);
+-      acpi_process_event (&acpiinfo);
+-      if (acpi_freebsd_read (&apminfo, &acpiinfo) == FALSE)
++      acpi_process_event(&acpiinfo, &read_error);
 +      if (!acpiinfo.event_inited) {
 +        acpi_freebsd_update(&acpiinfo);
 +      }
-       if (acpi_freebsd_read(&apminfo, &acpiinfo) == FALSE)
++      if (acpi_freebsd_read(&apminfo, &acpiinfo) == FALSE)
          return ERR_FREEBSD_ACPI;
      }
      acpi_count--;
@@ -79,18 +82,18 @@
 +    if (acpi_freebsd_init(&acpiinfo)) {
 +      acpiwatch = g_io_add_watch (acpiinfo.channel,
 +          G_IO_IN | G_IO_ERR | G_IO_HUP,
-+	  acpi_callback, NULL);
++          acpi_callback, NULL);
 +      acpi_freebsd_read(&apminfo, &acpiinfo);
 +    }
 +  }
 +  else {
 +#if defined(__i386__)
-     fd = open(APMDEVICE, O_RDONLY);
+     fd = open (APMDEVICE, O_RDONLY);
      if (fd == -1) {
        return ERR_OPEN_APMDEV;
-@@ -222,6 +256,9 @@
+@@ -218,6 +253,9 @@ apm_readinfo (BatteryStatus *status)
  
-     if(apminfo.ai_status == 0)
+     if (apminfo.ai_status == 0)
        return ERR_APM_E;
 +#else
 +    return ERR_OPEN_APMDEV;
@@ -98,7 +101,7 @@
    }
  
    status->present = TRUE;
-@@ -483,6 +520,12 @@
+@@ -484,6 +522,12 @@ power_management_initialise (void (*callback) (void))
    }
    else
      using_acpi = FALSE;
@@ -111,13 +114,13 @@
  #endif
    pm_initialised = 1;
  
-@@ -516,6 +559,9 @@
+@@ -517,6 +561,9 @@ power_management_cleanup (void)
    }
  #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
    if (using_acpi) {
 +    if (acpiwatch != 0)
 +      g_source_remove(acpiwatch);
 +    acpiwatch = 0;
-     acpi_freebsd_cleanup(&acpiinfo);
+     acpi_freebsd_cleanup (&acpiinfo);
    }
  #endif
