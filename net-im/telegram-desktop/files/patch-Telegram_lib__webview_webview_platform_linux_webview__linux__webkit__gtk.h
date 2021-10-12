@@ -5,6 +5,6 @@
  #pragma once
  
 +#include <type_traits>  // Required for glib/gatomic.h
- extern "C" {
  #include <JavaScriptCore/JavaScript.h>
  #include <gtk/gtk.h>
+ #include <webkit2/webkit2.h>
