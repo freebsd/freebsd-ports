@@ -70,10 +70,6 @@ PLIST_SUB+=	LITE=""
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CXXFLAGS+=	-Wno-inconsistent-missing-override -Wno-unused-parameter -Wno-unused-variable
-# Clang 8 detects shadow enums and stops the build. This workaround adds -Wno-error=shadow to bypass it.
-.if ${COMPILER_VERSION} >= 80
-CXXFLAGS+=	-Wno-error=shadow
-.endif
 .endif
 
 post-patch:
