@@ -9,7 +9,8 @@ COMMENT=	Service discovery and configuration made easy
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+CPE_VENDOR=	hashicorp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
