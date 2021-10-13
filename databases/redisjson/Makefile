@@ -1,8 +1,7 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME=	redisjson
-PORTVERSION=	0.0.0.0.2021.08.30.01
-PORTREVISION=	1
+PORTVERSION=	0.0.0.0.2021.10.05.01
 CATEGORIES=	databases
 
 MAINTAINER=	osa@FreeBSD.org
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM
 USES=		cargo
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	RedisJSON:redisjson:90bc4a0:redisjson \
+GH_TUPLE=	RedisJSON:redisjson:2d9ac84:redisjson \
 		RedisJSON:jsonpath:14af7aa5435f3e676ceb3441ad78b9c8cb3ffa3a:jsonpath_lib
 
 CARGO_CRATES=	aho-corasick-0.7.15 \
@@ -106,7 +105,7 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 
 CARGO_USE_GITHUB=	yes
 
-WRKSRC=		${WRKDIR}/RedisJSON-90bc4a0
+WRKSRC=		${WRKDIR}/RedisJSON-2d9ac84
 
 PLIST_FILES=	lib/librejson.so
 
