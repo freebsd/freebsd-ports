@@ -677,6 +677,12 @@ share/osinfo/os/redhat.com/rhl-7.3.xml
 share/osinfo/os/redhat.com/rhl-7.xml
 share/osinfo/os/redhat.com/rhl-8.0.xml
 share/osinfo/os/redhat.com/rhl-9.xml
+share/osinfo/os/rockylinux.org/rocky-8-unknown.xml
+share/osinfo/os/rockylinux.org/rocky-8.4.xml
+share/osinfo/os/rockylinux.org/rocky-8.5.xml
+share/osinfo/os/rockylinux.org/rocky-9-unknown.xml
+share/osinfo/os/rockylinux.org/rocky-9.0.xml
+share/osinfo/os/rockylinux.org/rocky-unknown.xml
 share/osinfo/os/scientificlinux.org/scientificlinux-5.0.xml
 share/osinfo/os/scientificlinux.org/scientificlinux-5.1.xml
 share/osinfo/os/scientificlinux.org/scientificlinux-5.10.xml
