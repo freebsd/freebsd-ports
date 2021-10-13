@@ -18,9 +18,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=16.0:security/py-openssl@${PY_FLAVO
 USES=		cpe python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
-CPE_VENDOR=	palletsprojects
-
 NO_ARCH=	yes
+
+CPE_VENDOR=	palletsprojects
 
 OPTIONS_DEFINE=	EXAMPLES WATCHDOG
 WATCHDOG_DESC=	Monitor filesystem events
