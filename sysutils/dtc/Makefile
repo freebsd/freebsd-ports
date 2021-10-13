@@ -13,7 +13,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
-USES=		bison compiler:c11 gmake pkgconfig shebangfix
+USES=		bison compiler:c11 cpe gmake pkgconfig shebangfix
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	dgibson
 USE_LDCONFIG=	yes
