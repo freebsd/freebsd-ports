@@ -24,6 +24,9 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" --mandir="${PREFIX}/man" \
 		--enable-lib-static --enable-openssl-runtime \
 		--extra-cflags="${CFLAGS}" --extra-ldflags="${LDFLAGS}"
 INSTALL_TARGET=	install install-lib-so-link install-pkg-config
+
+USES=		cpe
+CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/RHash-${PORTVERSION}
