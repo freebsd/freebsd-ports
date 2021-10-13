@@ -1,19 +1,20 @@
 PORTNAME=	local-lib
-PORTVERSION=	2.000018
+PORTVERSION=	2.000024
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HAARG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl extension to create and use a local lib/ with PERL5LIB
+COMMENT=	Create and use a local lib/ for perl modules with PERL5LIB
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	perl5
+USES=		perl5
 USE_PERL5=	configure
-NO_ARCH=	YES
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
