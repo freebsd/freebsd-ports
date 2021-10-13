@@ -13,14 +13,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe libtool ncurses perl5 shebangfix
 
-CPE_VENDOR=	gnu
-
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_CSTD=	c99
 
 INFO=		global
+
+CPE_VENDOR=	gnu
 
 SHEBANG_GLOB=	*.pl
 
