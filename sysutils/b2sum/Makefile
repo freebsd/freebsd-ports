@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	OPENMP OPTIMIZED_CFLAGS SSE
 OPTIONS_DEFAULT_amd64=	SSE
 SSE_DESC=	Use SSE2, SSSE3, SSE4.1, AVX or XOP instructions
 
-OPENMP_CFLAGS+=	-fopenmp
+OPENMP_CFLAGS=	-fopenmp
 
 .include <bsd.port.options.mk>
 
