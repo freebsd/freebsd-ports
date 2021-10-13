@@ -18,7 +18,7 @@ GH_ACCOUNT=	deadpixi
 MAKE_ENV=	DESTDIR="${DESTDIR}${PREFIX}"
 
 CFLAGS+=	-I${NCURSESINC} ${CPPFLAGS}
-LIBS+=		-L${NCURSESLIB} -ltinfow -lutil
+LIBS+=		-L${NCURSESLIB} -lncurses -lutil
 
 BINARY_ALIAS=	strip=true
 
