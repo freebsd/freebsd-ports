@@ -1,8 +1,8 @@
 # We follow the stable channel on https://omahaproxy.appspot.com/
-# https://chromium.googlesource.com/v8/v8/+/refs/heads/9.3-lkgr
+# https://chromium.googlesource.com/v8/v8/+/refs/heads/9.4-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	9.3.345.19
+PORTVERSION=	9.4.146.21
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}
 DISTFILES=	build-${BUILD_REV}.tar.gz \
@@ -39,13 +39,13 @@ USE_GITHUB=	yes
 
 CPE_VENDOR=	google
 
-BUILD_REV=	2d999384c270a340f592cce0a0fb3f8f94c15290
-BUILDTOOLS_REV=	2500c1d8f3a20a66a7cbafe3f69079a2edb742dd
-CLANG_REV=	9d0a403e85d25b5b0d3016a342d4b83b12941fd5
-COMMON_REV=	d5bb24e5d9802c8c917fcaa4375d5239a586c168
-GOOGLETEST_REV=	4ec4cd23f486bf70efcc5d2caa40f24368f752e3
-ICU_REV=	b9dfc58bf9b02ea0365509244aca13841322feb0
-ZLIB_REV=	dfbc590f5855bc2765256a743cad0abc56330a30
+BUILD_REV=	bbf7f0ed65548c4df862d2a2748e3a9b908a3217
+BUILDTOOLS_REV=	37dc929ecb351687006a61744b116cda601753d7
+CLANG_REV=	6a8e571efd68de48d226950d1e10cb8982e71496
+COMMON_REV=	3da1e2fcf66acd5c7194497b4285ac163f32e239
+GOOGLETEST_REV=	47f819c3ca54fb602f432904443e00a0a1fe2f42
+ICU_REV=	75e34bcccea0be165c31fdb278b3712c516c5876
+ZLIB_REV=	563140dd9c24f84bf40919196e9e7666d351cc0d
 
 # Run "gn args --list out/Release" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using
