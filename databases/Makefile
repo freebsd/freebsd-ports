@@ -573,6 +573,7 @@
     SUBDIR += pg_citus
     SUBDIR += pg_dirtyread
     SUBDIR += pg_ed25519
+    SUBDIR += pg_filedump
     SUBDIR += pg_hashids
     SUBDIR += pg_partman
     SUBDIR += pg_qualstats
