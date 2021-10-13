@@ -1,5 +1,5 @@
 PORTNAME=	sublime-merge
-PORTVERSION=	2059
+PORTVERSION=	2060
 CATEGORIES=	devel linux
 MASTER_SITES=	https://download.sublimetext.com/
 
