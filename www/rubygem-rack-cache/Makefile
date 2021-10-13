@@ -1,7 +1,7 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
 
 PORTNAME=	rack-cache
-PORTVERSION=	1.12.1
+PORTVERSION=	1.13.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
