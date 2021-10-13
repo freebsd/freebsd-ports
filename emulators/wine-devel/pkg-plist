@@ -1245,6 +1245,7 @@ lib/wine/%%WINEARCH%%-unix/api-ms-win-core-psapi-obsolete-l1-1-0.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-core-psm-appnotify-l1-1-0.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-core-quirks-l1-1-0.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-core-realtime-l1-1-0.dll.so
+%%STAGING%%lib/wine/%%WINEARCH%%-unix/api-ms-win-core-realtime-l1-1-1.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-core-registry-l1-1-0.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-core-registry-l2-1-0.dll.so
 lib/wine/%%WINEARCH%%-unix/api-ms-win-core-registry-l2-2-0.dll.so
@@ -1637,7 +1638,6 @@ lib/wine/%%WINEARCH%%-unix/gameux.dll.so
 lib/wine/%%WINEARCH%%-unix/gamingtcui.dll.so
 %%WINE32%%lib/wine/%%WINEARCH%%-unix/gdi.exe16.so
 lib/wine/%%WINEARCH%%-unix/gdi32.dll.so
-lib/wine/%%WINEARCH%%-unix/gdi32.so
 lib/wine/%%WINEARCH%%-unix/gdiplus.dll.so
 %%X11%%lib/wine/%%WINEARCH%%-unix/glu32.dll.so
 lib/wine/%%WINEARCH%%-unix/gphoto2.ds.so
@@ -2056,6 +2056,7 @@ lib/wine/%%WINEARCH%%-unix/notepad.exe.so
 lib/wine/%%WINEARCH%%-unix/npmshtml.dll.so
 lib/wine/%%WINEARCH%%-unix/npptools.dll.so
 lib/wine/%%WINEARCH%%-unix/nsi.dll.so
+%%STAGING%%lib/wine/%%WINEARCH%%-unix/nsiproxy.so
 lib/wine/%%WINEARCH%%-unix/nsiproxy.sys.so
 lib/wine/%%WINEARCH%%-unix/ntdll.dll.so
 lib/wine/%%WINEARCH%%-unix/ntdll.so
@@ -2525,6 +2526,7 @@ lib/wine/%%WINEARCH%%-windows/api-ms-win-core-psapi-obsolete-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-core-quirks-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-core-realtime-l1-1-0.dll
+%%STAGING%%lib/wine/%%WINEARCH%%-windows/api-ms-win-core-realtime-l1-1-1.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-core-registry-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-core-registry-l2-1-0.dll
 lib/wine/%%WINEARCH%%-windows/api-ms-win-core-registry-l2-2-0.dll
