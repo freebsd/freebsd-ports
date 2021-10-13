@@ -10,7 +10,8 @@ COMMENT=	Web and CGI vulnerability scanner with SSL support
 
 LICENSE=	GPLv2
 
-USES=		perl5 shebangfix
+USES=		cpe perl5 shebangfix
+CPE_VENDOR=	cirt.net
 USE_PERL5=	run
 
 GH_ACCOUNT=	sullo
