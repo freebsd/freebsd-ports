@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 BUILD_DEPENDS=	fontforge:print/fontforge \
 		ttfautohint:print/ttfautohint
 
-USES=		fonts
+USES=		cpe fonts
+CPE_VENDOR=	anomali
 USE_GITHUB=	yes
 GH_ACCOUNT=	blobject
 NO_ARCH=	yes
