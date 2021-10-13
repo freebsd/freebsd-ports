@@ -14,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lib cpe libtool pathfix pkgconfig ssl tar:xz
 
-CPE_VENDOR=	aria2_project
-
 CONFIGURE_ARGS=	--disable-epoll \
 		--enable-bittorrent --enable-libaria2 --enable-metalink --enable-shared --enable-ssl --enable-threads=posix --enable-websocket \
 		--with-disk-cache=${ARIA2_DISK_CACHE} \
@@ -33,6 +31,8 @@ USE_RC_SUBR=	aria2
 PORTDOCS=	*
 
 ARIA2_DISK_CACHE?=	16M
+
+CPE_VENDOR=	aria2_project
 
 OPTIONS_DEFINE=	CA_BUNDLE CARES DOCS LIBUV NLS SQLITE SSH2 STATIC
 OPTIONS_SINGLE=	XML
