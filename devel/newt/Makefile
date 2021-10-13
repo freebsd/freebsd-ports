@@ -44,7 +44,6 @@ TCL_CPPFLAGS=		-I${TCL_INCLUDEDIR:Q}
 SOVERSION=	${PORTVERSION:R:E}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-DUSE_INTERP_RESULT||' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e \
 		's|@CPP@|@CC@ -E| ; \
 		 s|-D_GNU_SOURCE|| ; \
