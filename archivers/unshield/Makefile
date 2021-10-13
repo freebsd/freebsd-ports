@@ -12,10 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake cpe pathfix ssl
 
-CPE_VENDOR=	unshield_project
-
 CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	unshield_project
 
 GH_ACCOUNT=	twogood
 USE_GITHUB=	yes
