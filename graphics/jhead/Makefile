@@ -11,13 +11,13 @@ LICENSE=	PD
 
 USES=		cpe gmake jpeg:run
 
-CPE_VENDOR=	jhead_project
-
 MAKEFILE=	makefile
 
 PLIST_FILES=	bin/jhead \
 		share/man/man1/jhead.1.gz
 PORTDOCS=	usage.html
+
+CPE_VENDOR=	jhead_project
 
 GH_ACCOUNT=	Matthias-Wandel
 USE_GITHUB=	yes
