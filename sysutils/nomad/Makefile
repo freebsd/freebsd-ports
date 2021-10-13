@@ -1,6 +1,6 @@
 PORTNAME=	nomad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.4
+DISTVERSION=	1.1.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org
@@ -149,7 +149,7 @@ GH_TUPLE=	\
 		hashicorp:go-getter:v1.5.4:hashicorp_go_getter/vendor/github.com/hashicorp/go-getter \
 		hashicorp:go-hclog:v0.14.1:hashicorp_go_hclog/vendor/github.com/hashicorp/go-hclog \
 		hashicorp:go-immutable-radix:v1.3.0:hashicorp_go_immutable_radix/vendor/github.com/hashicorp/go-immutable-radix \
-		hashicorp:go-memdb:v1.3.0:hashicorp_go_memdb/vendor/github.com/hashicorp/go-memdb \
+		hashicorp:go-memdb:v1.3.2:hashicorp_go_memdb/vendor/github.com/hashicorp/go-memdb \
 		hashicorp:go-msgpack:v1.1.5:hashicorp_go_msgpack/vendor/github.com/hashicorp/go-msgpack \
 		hashicorp:go-multierror:v1.1.1:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
 		hashicorp:go-plugin:v1.4.0:hashicorp_go_plugin/vendor/github.com/hashicorp/go-plugin \
