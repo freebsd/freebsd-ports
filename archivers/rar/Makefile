@@ -19,12 +19,13 @@ LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		cpe
-CPE_VENDOR=	rarlab
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
 
 PLIST_FILES=	bin/rar etc/rarfiles.lst lib/default.sfx man/cat1/rar.1.gz
+
+CPE_VENDOR=	rarlab
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rar ${STAGEDIR}${PREFIX}/bin
