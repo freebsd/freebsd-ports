@@ -22,7 +22,8 @@ GLIB2_USES=	gnome
 GLIB2_USE=	gnome=glib20
 GLIB2_CONFIGURE_ENABLE=	libglib
 
-USES=		pkgconfig
+USES=		cpe pkgconfig
+CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
 
 do-install:
