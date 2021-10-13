@@ -27,7 +27,6 @@ MESON_ARGS=	-Dbash_completion=true \
 		-Dbash_completion_dir=${PREFIX}/etc/bash_completion.d \
 		-Ddocs=false \
 		-Dman=true \
-		-Dnetwork_manager=disabled \
 		-Dstemmer=disabled \
 		-Dsystemd_user_services=false
 
