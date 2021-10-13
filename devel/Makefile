@@ -292,6 +292,7 @@
     SUBDIR += caf
     SUBDIR += calibrator
     SUBDIR += capnproto
+    SUBDIR += capnproto080
     SUBDIR += capstone3
     SUBDIR += capstone4
     SUBDIR += cargo-c
