@@ -1,7 +1,7 @@
 # Created by: alepulver@FreeBSD.org
 
 PORTNAME=	menumaker
-PORTVERSION=	0.99.12
+PORTVERSION=	0.99.13
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}
 
