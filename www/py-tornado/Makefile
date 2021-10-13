@@ -14,14 +14,14 @@ LICENSE=	APACHE20
 USES=		cpe python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
-CPE_VENDOR=	tornadoweb
-
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}tornado4 \
 			${PYTHON_PKGNAMEPREFIX}tornado5 \
 			${PYTHON_PKGNAMEPREFIX}tornado6
 
+CPE_VENDOR=	tornadoweb
+
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/tornado/speedups*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m tornado.test.runtests
