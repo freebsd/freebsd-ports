@@ -1486,6 +1486,7 @@
     SUBDIR += py-tinycss2
     SUBDIR += py-toml
     SUBDIR += py-tomli
+    SUBDIR += py-tomli_w
     SUBDIR += py-tomlkit
     SUBDIR += py-toronado
     SUBDIR += py-towncrier
