@@ -355,6 +355,7 @@ man/man1/git-var.1.gz
 man/man1/git-verify-commit.1.gz
 man/man1/git-verify-pack.1.gz
 man/man1/git-verify-tag.1.gz
+man/man1/git-version.1.gz
 man/man1/git-web--browse.1.gz
 man/man1/git-whatchanged.1.gz
 man/man1/git-worktree.1.gz
@@ -1207,6 +1208,7 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/coccinelle/swap.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/the_repository.pending.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/xcalloc.cocci
+%%CONTRIB%%share/git-core/contrib/coccinelle/xopen.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/xstrdup_or_null.cocci
 %%CONTRIB%%share/git-core/contrib/completion/git-completion.bash
 %%CONTRIB%%share/git-core/contrib/completion/git-completion.tcsh
