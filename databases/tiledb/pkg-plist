@@ -1,5 +1,6 @@
 include/tiledb/array.h
 include/tiledb/array_schema.h
+include/tiledb/array_schema_evolution.h
 include/tiledb/arrow_io_impl.h
 include/tiledb/arrowio
 include/tiledb/attribute.h
@@ -17,12 +18,16 @@ include/tiledb/group.h
 include/tiledb/object.h
 include/tiledb/object_iter.h
 include/tiledb/query.h
+include/tiledb/query_condition.h
 include/tiledb/schema_base.h
 include/tiledb/stats.h
 include/tiledb/tiledb
 include/tiledb/tiledb.h
 include/tiledb/tiledb_enum.h
+include/tiledb/tiledb_experimental
+include/tiledb/tiledb_experimental.h
 include/tiledb/tiledb_export.h
+include/tiledb/tiledb_serialization.h
 include/tiledb/tiledb_version.h
 include/tiledb/type.h
 include/tiledb/utils.h
