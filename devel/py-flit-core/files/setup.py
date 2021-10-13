@@ -10,8 +10,8 @@ setup(
     long_description='Distribution-building parts of Flit. See flit package for more information',
     url='https://github.com/takluyver/flit',
     packages=find_packages(),
-    install_requires=['pytoml'],
-    python_requires='>=3.4',
+    install_requires=['tomli'],
+    python_requires='>=3.6',
     classifiers=[
         "License :: OSI Approved :: BSD License",
         "Topic :: Software Development :: Libraries :: Python Modules",
