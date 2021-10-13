@@ -1,6 +1,7 @@
 PORTNAME=	mesa
 DISTVERSION=	21.2-branchpoint-3457
 DISTVERSIONSUFFIX=	-gad0bd2a7d27
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -13,15 +14,13 @@ PATCHFILES+=	e141af3ac859.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-
 PATCHFILES+=	167fa293d7b7.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/5464
 PATCHFILES+=	50433886a3e3.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/6881
 PATCHFILES+=	891152495cf7.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/9168
-PATCHFILES+=	af6462c2b844.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/13236
+PATCHFILES+=	99e058e4051b.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/13331
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Bleeding edge Mesa drivers (OpenGL, Vulkan)
 
 LICENSE=	MIT
 
-BROKEN_DragonFly=	https://gitlab.freedesktop.org/mesa/mesa/-/issues/5459
-BROKEN_FreeBSD_12=	https://gitlab.freedesktop.org/mesa/mesa/-/issues/5459
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Limited scope: no old drivers and no software rendering. \
 			See also https://mesamatrix.net/
