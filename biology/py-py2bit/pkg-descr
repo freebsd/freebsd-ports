@@ -1,0 +1,5 @@
+py2bit is a python extension, written in C, for quick access to 2bit
+files for randomly accessible, packed nucleotide sequences. The
+extension uses lib2bit for file access.
+
+WWW: https://github.com/deeptools/py2bit
