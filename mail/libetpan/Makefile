@@ -16,13 +16,13 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		autoreconf compiler:c++11-lang cpe gmake iconv libtool localbase pkgconfig
 
-CPE_VENDOR=	libetpan_project
-
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS
+
+CPE_VENDOR=	libetpan_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dinhviethoa
