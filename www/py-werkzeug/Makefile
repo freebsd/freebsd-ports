@@ -1,7 +1,7 @@
 # Created by: Moggie <moggie@elasticmind.net>
 
 PORTNAME=	werkzeug
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
