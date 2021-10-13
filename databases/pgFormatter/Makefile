@@ -1,7 +1,7 @@
 # Created by: Jov amutu@amutu.com
 
 PORTNAME=	pgFormatter
-PORTVERSION=	5.0
+PORTVERSION=	5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
