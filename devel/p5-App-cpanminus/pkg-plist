@@ -1,6 +1,6 @@
 bin/cpanm
+%%SITE_PERL%%/App/cpanminus.pm
+%%SITE_PERL%%/App/cpanminus/fatscript.pm
 %%PERL5_MAN1%%/cpanm.1.gz
 %%PERL5_MAN3%%/App::cpanminus.3.gz
 %%PERL5_MAN3%%/App::cpanminus::fatscript.3.gz
-%%SITE_PERL%%/App/cpanminus.pm
-%%SITE_PERL%%/App/cpanminus/fatscript.pm

@@ -6,13 +6,15 @@ MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl extension to get, unpack, build, and install modules from CPAN
+COMMENT=	Get, unpack, build and install modules from CPAN
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	perl5
+USES=		perl5
 USE_PERL5=	configure
-NO_ARCH=	YES
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
