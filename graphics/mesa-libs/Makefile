@@ -37,7 +37,6 @@ MESON_ARGS+=	-Dgallium-drivers="" \
 		-Dgallium-va=disabled \
 		-Dgallium-xa=disabled \
 		-Dgallium-nine=false \
-		-Dgallium-clover=disabled \
 		-Dosmesa=false \
 		-Dtools="" \
 		-Degl=enabled \
