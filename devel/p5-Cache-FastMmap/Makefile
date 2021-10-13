@@ -1,7 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	Cache-FastMmap
-PORTVERSION=	1.56
+PORTVERSION=	1.57
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN CPAN/Cache
 MASTER_SITE_SUBDIR=	CPAN:ROBM
