@@ -1,0 +1,6 @@
+wordsearch is a classic word search game that you can play in your terminal. It
+features curses full screen gameplay with an easy to customize puzzle directory
+so you can share your creations with friends. It has simple to pick up gameplay
+with word-based scoring so you can play anytime.
+
+WWW: https://github.com/jensenpat/wordsearch

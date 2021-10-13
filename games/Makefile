@@ -1033,6 +1033,7 @@
     SUBDIR += wolfpack
     SUBDIR += wop
     SUBDIR += wordplay
+    SUBDIR += wordsearch
     SUBDIR += wordwarvi
     SUBDIR += worldofpadman
     SUBDIR += wtf
