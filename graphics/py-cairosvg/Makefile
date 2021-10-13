@@ -26,8 +26,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAV
 USES=		cpe python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
-CPE_VENDOR=	courtbouillon
-
 NO_ARCH=	yes
+
+CPE_VENDOR=	courtbouillon
 
 .include <bsd.port.mk>
