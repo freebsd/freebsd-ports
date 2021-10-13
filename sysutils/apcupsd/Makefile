@@ -12,7 +12,7 @@ COMMENT=	Set of programs for controlling APC UPS
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+USES=		cpe gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/sbin \
 		--with-nologin=/var/run \
