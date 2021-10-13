@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	aws-sdk-glue
-PORTVERSION=	1.95.0
+PORTVERSION=	1.96.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
