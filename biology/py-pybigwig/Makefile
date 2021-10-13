@@ -1,5 +1,6 @@
 PORTNAME=	pyBigWig
 DISTVERSION=	0.3.18
+PORTREVISION=	1
 CATEGORIES=	biology python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +17,6 @@ USES=		localbase python
 USE_PYTHON=	autoplist distutils
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyBigWig.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyBigWig.cpython-38.so
 
 .include <bsd.port.mk>
