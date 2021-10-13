@@ -15,7 +15,8 @@ LIB_DEPENDS=	libcapnp.so:devel/capnproto080 \
 		libfmt.so:devel/libfmt \
 		liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	catch>=0:devel/catch \
+RUN_DEPENDS=	capnproto080>=0.8.0:devel/capnproto080 \
+		catch>=0:devel/catch \
 		clipp>=0:devel/clipp \
 		spdlog>=1.4:devel/spdlog
 
