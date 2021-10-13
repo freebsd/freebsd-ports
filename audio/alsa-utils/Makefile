@@ -2,9 +2,14 @@
 
 PORTNAME=	alsa-utils
 PORTVERSION=	1.2.2
+PORTREVISION=	1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.alsa-project.org/pub/utils/ \
-		GENTOO
+MASTER_SITES=	GH
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	alsa-project
+GH_PROJECT=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ALSA compatibility utilities
