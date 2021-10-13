@@ -20,7 +20,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		isoinfo:sysutils/cdrkit \
 		rpm2cpio:archivers/rpm2cpio
 
-USES=		python:3.7+
+USES=		cpe python:3.7+
+CPE_VENDOR=	reproducible_builds
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
