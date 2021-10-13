@@ -17,12 +17,17 @@ bin/write_stress
 include/rocksdb/advanced_options.h
 include/rocksdb/c.h
 include/rocksdb/cache.h
+include/rocksdb/cache_bench_tool.h
 include/rocksdb/cleanable.h
 include/rocksdb/compaction_filter.h
 include/rocksdb/compaction_job_stats.h
 include/rocksdb/comparator.h
+include/rocksdb/compression_type.h
 include/rocksdb/concurrent_task_limiter.h
+include/rocksdb/configurable.h
 include/rocksdb/convenience.h
+include/rocksdb/customizable.h
+include/rocksdb/data_structure.h
 include/rocksdb/db.h
 include/rocksdb/db_bench_tool.h
 include/rocksdb/db_dump_tool.h
@@ -34,6 +39,7 @@ include/rocksdb/file_checksum.h
 include/rocksdb/file_system.h
 include/rocksdb/filter_policy.h
 include/rocksdb/flush_block_policy.h
+include/rocksdb/functor_wrapper.h
 include/rocksdb/io_status.h
 include/rocksdb/iostats_context.h
 include/rocksdb/iterator.h
@@ -49,6 +55,7 @@ include/rocksdb/perf_level.h
 include/rocksdb/persistent_cache.h
 include/rocksdb/rate_limiter.h
 include/rocksdb/rocksdb_namespace.h
+include/rocksdb/secondary_cache.h
 include/rocksdb/slice.h
 include/rocksdb/slice_transform.h
 include/rocksdb/snapshot.h
@@ -56,9 +63,11 @@ include/rocksdb/sst_dump_tool.h
 include/rocksdb/sst_file_manager.h
 include/rocksdb/sst_file_reader.h
 include/rocksdb/sst_file_writer.h
+include/rocksdb/sst_partitioner.h
 include/rocksdb/statistics.h
 include/rocksdb/stats_history.h
 include/rocksdb/status.h
+include/rocksdb/system_clock.h
 include/rocksdb/table.h
 include/rocksdb/table_properties.h
 include/rocksdb/thread_status.h
@@ -67,6 +76,7 @@ include/rocksdb/trace_reader_writer.h
 include/rocksdb/transaction_log.h
 include/rocksdb/types.h
 include/rocksdb/universal_compaction.h
+include/rocksdb/utilities/backup_engine.h
 include/rocksdb/utilities/backupable_db.h
 include/rocksdb/utilities/checkpoint.h
 include/rocksdb/utilities/convenience.h
@@ -84,6 +94,7 @@ include/rocksdb/utilities/memory_util.h
 include/rocksdb/utilities/object_registry.h
 include/rocksdb/utilities/optimistic_transaction_db.h
 include/rocksdb/utilities/option_change_migration.h
+include/rocksdb/utilities/options_type.h
 include/rocksdb/utilities/options_util.h
 include/rocksdb/utilities/sim_cache.h
 include/rocksdb/utilities/stackable_db.h
@@ -103,10 +114,11 @@ include/rocksdb/write_buffer_manager.h
 %%LITE%%lib/librocksdb-lite.so.6
 %%LITE%%lib/librocksdb-lite.so.%%SHLIB_VER%%
 %%LITE%%lib/librocksdb-lite.so.%%PORTVERSION%%
-%%LITE%%lib/librocksdb-lite_tools.a
+%%LITE%%lib/librocksdb-lite_tools.so
 lib/librocksdb.a
 lib/librocksdb.so
 lib/librocksdb.so.6
 lib/librocksdb.so.%%SHLIB_VER%%
 lib/librocksdb.so.%%PORTVERSION%%
-lib/librocksdb_tools.a
+lib/librocksdb_tools.so
+libdata/pkgconfig/rocksdb.pc

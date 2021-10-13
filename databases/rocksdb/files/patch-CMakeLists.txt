@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-10-10 13:48:40 UTC
+--- CMakeLists.txt.orig	2021-06-25 21:15:04 UTC
 +++ CMakeLists.txt
-@@ -521,6 +521,11 @@ if(HAVE_AUXV_GETAUXVAL)
+@@ -612,6 +612,11 @@ if(HAVE_AUXV_GETAUXVAL)
    add_definitions(-DROCKSDB_AUXV_GETAUXVAL_PRESENT)
  endif()
  
