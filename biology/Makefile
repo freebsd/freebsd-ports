@@ -138,7 +138,7 @@
     SUBDIR += psi88
     SUBDIR += py-Genesis-PyAPI
     SUBDIR += py-PySCeS
-    SUBDIR += py-bigwig
+    SUBDIR += py-pybigwig
     SUBDIR += py-biom-format
     SUBDIR += py-biopython
     SUBDIR += py-bx-python
