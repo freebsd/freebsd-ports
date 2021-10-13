@@ -1,9 +1,8 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	totp-cli
-PORTVERSION=	1.1.13
+PORTVERSION=	1.1.17
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
