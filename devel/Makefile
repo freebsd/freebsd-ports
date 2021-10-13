@@ -6342,6 +6342,7 @@
     SUBDIR += rubygem-google-apis-generator
     SUBDIR += rubygem-google-apis-iamcredentials_v1
     SUBDIR += rubygem-google-apis-monitoring_v3
+    SUBDIR += rubygem-google-apis-pubsub_v1
     SUBDIR += rubygem-google-apis-storage_v1
     SUBDIR += rubygem-google-gax
     SUBDIR += rubygem-google-protobuf
