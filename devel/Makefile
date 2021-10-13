@@ -5635,6 +5635,7 @@
     SUBDIR += rubygem-aws-partitions
     SUBDIR += rubygem-aws-sdk
     SUBDIR += rubygem-aws-sdk-accessanalyzer
+    SUBDIR += rubygem-aws-sdk-account
     SUBDIR += rubygem-aws-sdk-acm
     SUBDIR += rubygem-aws-sdk-acmpca
     SUBDIR += rubygem-aws-sdk-alexaforbusiness
