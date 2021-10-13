@@ -18,7 +18,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	dbus-daemon:devel/dbus
 
-USES=		cmake compiler:c++11-lang jpeg pkgconfig xorg
+USES=		cmake compiler:c++11-lang cpe jpeg pkgconfig xorg
+CPE_VENDOR=	berlios
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xmu xorg-server xrandr \
 		xrender xt
 USE_RC_SUBR=	slim
