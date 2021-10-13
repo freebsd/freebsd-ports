@@ -30,8 +30,9 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 introspection:build pango \
 		librsvg2:run gtk-update-icon-cache
-USES=		compiler:c11 gettext gmake gnome libtool localbase \
+USES=		compiler:c11 cpe gettext gmake gnome libtool localbase \
 		pathfix perl5 pkgconfig tar:xz
+CPE_VENDOR=	gnome
 CONFIGURE_ARGS=	--enable-introspection
 CPPFLAGS+=	-fno-omit-frame-pointer
 INSTALL_TARGET=	install-strip
