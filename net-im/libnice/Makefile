@@ -29,7 +29,7 @@ MESON_ARGS+=-Dtests=disabled
 
 .if defined(LIBNICE_SLAVE)
 USE_GSTREAMER1=	yes
-MESON_ARGS+=-Dgstreamer=enabled -Dgst_version=1.0
+MESON_ARGS+=-Dgstreamer=enabled
 .else
 MESON_ARGS+=-Dgstreamer=disabled -Dgtk_doc=enabled
 .endif
