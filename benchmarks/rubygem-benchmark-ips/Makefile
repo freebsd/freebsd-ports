@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	benchmark-ips
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.2
 CATEGORIES=	benchmarks rubygems
 MASTER_SITES=	RG
 
