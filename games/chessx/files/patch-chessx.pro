@@ -1,7 +1,7 @@
---- chessx.pro.orig	2020-05-08 08:12:26 UTC
+--- chessx.pro.orig	2021-09-17 10:33:08 UTC
 +++ chessx.pro
-@@ -480,24 +480,31 @@ lc0 {
-  QMAKE_BUNDLE_DATA += LC0_ENGINE_LIB
+@@ -534,24 +534,30 @@ lc0 {
+   QMAKE_BUNDLE_DATA += LC0_ENGINE_LIB
  }
  
 +unix:!macx {
@@ -13,9 +13,8 @@
 + INSTALLS += target desktop pixmaps
 +}
 +
-+
  RESOURCES = \
-     resources.qrc
+   resources.qrc translations.qrc
  
 -TRANSLATIONS = i18n/chessx_de.ts
 -
@@ -33,17 +32,17 @@
 -#   i18n/chessx_ro.ts \
 -#   i18n/chessx_zh.ts
 +TRANSLATIONS = i18n/chessx_de.ts \
-+               i18n/chessx_da.ts \
-+               i18n/chessx_fr.ts \
-+               i18n/chessx_it.ts \
-+               i18n/chessx_cz.ts \
-+               i18n/chessx_ru.ts \
-+               i18n/chessx_es.ts \
-+               i18n/chessx_nl.ts \
-+               i18n/chessx_pl.ts \
-+               i18n/chessx_pt_BR.ts \
-+               i18n/chessx_ro.ts \
-+                i18n/chessx_zh.ts
++        i18n/chessx_da.ts \
++        i18n/chessx_fr.ts \
++        i18n/chessx_it.ts \
++        i18n/chessx_cz.ts \
++        i18n/chessx_ru.ts \
++        i18n/chessx_es.ts \
++        i18n/chessx_nl.ts \
++        i18n/chessx_pl.ts \
++        i18n/chessx_pt_BR.ts \
++        i18n/chessx_ro.ts \
++        i18n/chessx_zh.ts
  
  isEmpty(QMAKE_LRELEASE) {
-      win32:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]\\lrelease.exe
+   win32:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]\\lrelease.exe
