@@ -15,8 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]* krb5-maint-[0-9]* srp-[0-9]* \
 		wu-ftpd-[0-9]* wu-ftpd+ipv6-[0-9]*
 
-USES=		gettext-runtime gssapi:bootstrap,heimdal libtool pathfix \
+USES=		cpe gettext-runtime gssapi:bootstrap,heimdal libtool pathfix \
 		pkgconfig readline makeinfo ssl
+CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	${GSSAPILIBDIR}
 
 GNU_CONFIGURE=	yes
