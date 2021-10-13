@@ -1,6 +1,5 @@
 PORTNAME=	leftwm
-DISTVERSION=	0.2.8-43
-DISTVERSIONSUFFIX=	-g56862b0
+DISTVERSION=	0.2.9
 CATEGORIES=	x11-wm
 
 MAINTAINER=	rigoletto@FreeBSD.org
@@ -13,7 +12,6 @@ USES=		cargo xorg
 USE_XORG=	xinerama xrandr
 
 USE_GITHUB=	yes
-GH_TAGNAME=	56862b05c65538110c6f163beda60991cb9d18aa
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
@@ -150,6 +148,8 @@ OPTIONS_DEFAULT=	THEMES
 OPTIONS_SUB=	yes
 
 THEMES_DESC=	LeftWM Basic Themes
+
+CARGO_INSTALL_PATH=	./leftwm
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
