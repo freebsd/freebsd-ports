@@ -9,7 +9,7 @@ COMMENT=	C++ header-only general purpose quantum computing library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++11-lang eigen:3,build,run
+USES=		cmake:testing compiler:c++17-lang eigen:3,build,run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	softwareQinc
