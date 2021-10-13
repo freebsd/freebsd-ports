@@ -1,0 +1,6 @@
+Python 3.8 adds great descriptor to functools: cached_property. Technically all
+required APIs was available since python 3.6, but it is what it is.
+
+This package is a backport of this functionality for python 3.6 and 3.7.
+
+WWW: https://github.com/penguinolog/backports.cached_property

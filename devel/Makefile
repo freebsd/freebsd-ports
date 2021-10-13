@@ -4248,6 +4248,7 @@
     SUBDIR += py-babi_grammars
     SUBDIR += py-backcall
     SUBDIR += py-backports
+    SUBDIR += py-backports.cached-property
     SUBDIR += py-backports.csv
     SUBDIR += py-backports.entry-points-selectable
     SUBDIR += py-backports.zoneinfo
