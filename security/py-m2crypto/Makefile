@@ -16,12 +16,13 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 BUILD_DEPENDS=	swig>=2.0.4:devel/swig
 
 USES=		cpe python:3.6+ ssl
-CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist concurrent distutils
 
 PYDISTUTILS_BUILDARGS=	build_ext --openssl=${OPENSSLBASE} --swig=${LOCALBASE}/bin/swig
 
+CPE_VENDOR=	m2crypto_project
+
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/M2Crypto/_m2crypto*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
