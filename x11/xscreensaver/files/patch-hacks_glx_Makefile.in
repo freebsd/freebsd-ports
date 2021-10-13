@@ -1,0 +1,11 @@
+--- hacks/glx/Makefile.in.orig	2021-10-12 01:04:30 UTC
++++ hacks/glx/Makefile.in
+@@ -40,7 +40,7 @@ DEPEND_DEFINES	= @DEPEND_DEFINES@
+ 
+ SHELL		= /bin/sh
+ INSTALL		= @INSTALL@
+-SUID_FLAGS      = -o root -m 4755
++SUID_FLAGS      = -m 4555
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SETUID	= $(INSTALL_PROGRAM) $(SUID_FLAGS)
+ INSTALL_DATA	= @INSTALL_DATA@

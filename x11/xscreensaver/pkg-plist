@@ -1,10 +1,6 @@
-@(,,4755) bin/xscreensaver
+bin/xscreensaver
 bin/xscreensaver-command
 bin/xscreensaver-demo
-bin/xscreensaver-getimage
-bin/xscreensaver-getimage-file
-bin/xscreensaver-getimage-video
-bin/xscreensaver-gl-helper
 bin/xscreensaver-hacks/abstractile
 bin/xscreensaver-hacks/anemone
 bin/xscreensaver-hacks/anemotaxis
@@ -17,6 +13,8 @@ bin/xscreensaver-hacks/atlantis
 bin/xscreensaver-hacks/attraction
 bin/xscreensaver-hacks/atunnel
 bin/xscreensaver-hacks/barcode
+bin/xscreensaver-hacks/beats
+bin/xscreensaver-hacks/binaryhorizon
 bin/xscreensaver-hacks/binaryring
 bin/xscreensaver-hacks/blaster
 bin/xscreensaver-hacks/blinkbox
@@ -41,6 +39,7 @@ bin/xscreensaver-hacks/cloudlife
 bin/xscreensaver-hacks/companioncube
 bin/xscreensaver-hacks/compass
 bin/xscreensaver-hacks/coral
+bin/xscreensaver-hacks/covid19
 bin/xscreensaver-hacks/crackberg
 bin/xscreensaver-hacks/crumbler
 bin/xscreensaver-hacks/crystal
@@ -90,8 +89,8 @@ bin/xscreensaver-hacks/galaxy
 bin/xscreensaver-hacks/gears
 bin/xscreensaver-hacks/geodesic
 bin/xscreensaver-hacks/geodesicgears
-bin/xscreensaver-hacks/gibson
 bin/xscreensaver-hacks/gflux
+bin/xscreensaver-hacks/gibson
 bin/xscreensaver-hacks/glblur
 bin/xscreensaver-hacks/glcells
 bin/xscreensaver-hacks/gleidescope
@@ -111,6 +110,7 @@ bin/xscreensaver-hacks/greynetic
 bin/xscreensaver-hacks/halftone
 bin/xscreensaver-hacks/halo
 bin/xscreensaver-hacks/handsy
+bin/xscreensaver-hacks/headroom
 bin/xscreensaver-hacks/helix
 bin/xscreensaver-hacks/hexadrop
 bin/xscreensaver-hacks/hexstrut
@@ -135,10 +135,10 @@ bin/xscreensaver-hacks/kumppa
 bin/xscreensaver-hacks/lament
 bin/xscreensaver-hacks/lavalite
 bin/xscreensaver-hacks/lcdscrub
-bin/xscreensaver-hacks/ljlatest
 bin/xscreensaver-hacks/lockward
 bin/xscreensaver-hacks/loop
 bin/xscreensaver-hacks/m6502
+bin/xscreensaver-hacks/marbling
 bin/xscreensaver-hacks/maze
 bin/xscreensaver-hacks/maze3d
 bin/xscreensaver-hacks/memscroller
@@ -197,10 +197,16 @@ bin/xscreensaver-hacks/sierpinski3d
 bin/xscreensaver-hacks/skytentacles
 bin/xscreensaver-hacks/slidescreen
 bin/xscreensaver-hacks/slip
-%%SETUID_HACKS%%@mode 4755
+bin/xscreensaver-hacks/xscreensaver-auth
+bin/xscreensaver-hacks/xscreensaver-getimage
+bin/xscreensaver-hacks/xscreensaver-getimage-file
+bin/xscreensaver-hacks/xscreensaver-getimage-video
+bin/xscreensaver-hacks/xscreensaver-gfx
+bin/xscreensaver-hacks/xscreensaver-gl-visual
+bin/xscreensaver-hacks/xscreensaver-text
 bin/xscreensaver-hacks/sonar
-%%SETUID_HACKS%%@mode
 bin/xscreensaver-hacks/speedmine
+bin/xscreensaver-hacks/sphereeversion
 bin/xscreensaver-hacks/spheremonics
 bin/xscreensaver-hacks/splitflap
 bin/xscreensaver-hacks/splodesic
@@ -246,16 +252,11 @@ bin/xscreensaver-hacks/xmatrix
 bin/xscreensaver-hacks/xrayswarm
 bin/xscreensaver-hacks/xspirograph
 bin/xscreensaver-hacks/zoom
-bin/xscreensaver-text
+bin/xscreensaver-settings
 %%PAM%%etc/pam.d/xscreensaver
 lib/X11/app-defaults/XScreenSaver
 man/man1/xscreensaver-command.1.gz
 man/man1/xscreensaver-demo.1.gz
-man/man1/xscreensaver-getimage-file.1.gz
-man/man1/xscreensaver-getimage-video.1.gz
-man/man1/xscreensaver-getimage.1.gz
-man/man1/xscreensaver-systemd.1.gz
-man/man1/xscreensaver-text.1.gz
 man/man1/xscreensaver.1.gz
 man/man6/abstractile.6.gz
 man/man6/anemone.6.gz
@@ -265,10 +266,21 @@ man/man6/antmaze.6.gz
 man/man6/antspotlight.6.gz
 man/man6/apollonian.6.gz
 man/man6/apple2.6.gz
+man/man1/xscreensaver-settings.1.gz
+man/man6/xscreensaver-auth.6.gz
+man/man6/xscreensaver-getimage-file.6.gz
+man/man6/xscreensaver-getimage-video.6.gz
+man/man6/xscreensaver-getimage.6.gz
+man/man6/xscreensaver-gfx.6.gz
+man/man6/xscreensaver-gl-visual.6.gz
+man/man6/xscreensaver-systemd.6.gz
+man/man6/xscreensaver-text.6.gz
 man/man6/atlantis.6.gz
 man/man6/attraction.6.gz
 man/man6/atunnel.6.gz
 man/man6/barcode.6.gz
+man/man6/beats.6.gz
+man/man6/binaryhorizon.6.gz
 man/man6/binaryring.6.gz
 man/man6/blaster.6.gz
 man/man6/blinkbox.6.gz
@@ -293,6 +305,7 @@ man/man6/cloudlife.6.gz
 man/man6/companioncube.6.gz
 man/man6/compass.6.gz
 man/man6/coral.6.gz
+man/man6/covid19.6.gz
 man/man6/crackberg.6.gz
 man/man6/crumbler.6.gz
 man/man6/crystal.6.gz
@@ -363,6 +376,7 @@ man/man6/greynetic.6.gz
 man/man6/halftone.6.gz
 man/man6/halo.6.gz
 man/man6/handsy.6.gz
+man/man6/headroom.6.gz
 man/man6/helix.6.gz
 man/man6/hexadrop.6.gz
 man/man6/hexstrut.6.gz
@@ -387,9 +401,9 @@ man/man6/kumppa.6.gz
 man/man6/lament.6.gz
 man/man6/lavalite.6.gz
 man/man6/lcdscrub.6.gz
-man/man6/ljlatest.6.gz
 man/man6/lockward.6.gz
 man/man6/loop.6.gz
+man/man6/marbling.6.gz
 man/man6/maze.6.gz
 man/man6/maze3d.6.gz
 man/man6/memscroller.6.gz
@@ -449,6 +463,7 @@ man/man6/slidescreen.6.gz
 man/man6/slip.6.gz
 man/man6/sonar.6.gz
 man/man6/speedmine.6.gz
+man/man6/sphereeversion.6.gz
 man/man6/spheremonics.6.gz
 man/man6/splitflap.6.gz
 man/man6/splodesic.6.gz
@@ -491,7 +506,6 @@ man/man6/xjack.6.gz
 man/man6/xlyap.6.gz
 man/man6/xmatrix.6.gz
 man/man6/xrayswarm.6.gz
-man/man6/xscreensaver-gl-helper.6.gz
 man/man6/xspirograph.6.gz
 man/man6/zoom.6.gz
 share/applications/xscreensaver-blank.desktop
@@ -499,6 +513,11 @@ share/applications/xscreensaver-lock.desktop
 share/applications/xscreensaver-properties.desktop
 share/applications/xscreensaver-start.desktop
 share/applications/xscreensaver-stop.desktop
+share/fonts/xscreensaver/OCRAStd.otf
+share/fonts/xscreensaver/SpecialElite.ttf
+share/fonts/xscreensaver/clacon.ttf
+share/fonts/xscreensaver/gallant12x22.ttf
+share/fonts/xscreensaver/luximr.ttf
 %%NLS%%share/locale/da/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xscreensaver.mo
@@ -523,6 +542,7 @@ share/applications/xscreensaver-stop.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xscreensaver.mo
 share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/README
+%%DATADIR%%/ui/xscreensaver.ui
 %%DATADIR%%/config/abstractile.xml
 %%DATADIR%%/config/anemone.xml
 %%DATADIR%%/config/anemotaxis.xml
@@ -535,6 +555,8 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/attraction.xml
 %%DATADIR%%/config/atunnel.xml
 %%DATADIR%%/config/barcode.xml
+%%DATADIR%%/config/beats.xml
+%%DATADIR%%/config/binaryhorizon.xml
 %%DATADIR%%/config/binaryring.xml
 %%DATADIR%%/config/blaster.xml
 %%DATADIR%%/config/blinkbox.xml
@@ -559,6 +581,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/companioncube.xml
 %%DATADIR%%/config/compass.xml
 %%DATADIR%%/config/coral.xml
+%%DATADIR%%/config/covid19.xml
 %%DATADIR%%/config/crackberg.xml
 %%DATADIR%%/config/crumbler.xml
 %%DATADIR%%/config/crystal.xml
@@ -608,8 +631,8 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/gears.xml
 %%DATADIR%%/config/geodesic.xml
 %%DATADIR%%/config/geodesicgears.xml
-%%DATADIR%%/config/gibson.xml
 %%DATADIR%%/config/gflux.xml
+%%DATADIR%%/config/gibson.xml
 %%DATADIR%%/config/glblur.xml
 %%DATADIR%%/config/glcells.xml
 %%DATADIR%%/config/gleidescope.xml
@@ -629,6 +652,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/halftone.xml
 %%DATADIR%%/config/halo.xml
 %%DATADIR%%/config/handsy.xml
+%%DATADIR%%/config/headroom.xml
 %%DATADIR%%/config/helix.xml
 %%DATADIR%%/config/hexadrop.xml
 %%DATADIR%%/config/hexstrut.xml
@@ -656,6 +680,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/lockward.xml
 %%DATADIR%%/config/loop.xml
 %%DATADIR%%/config/m6502.xml
+%%DATADIR%%/config/marbling.xml
 %%DATADIR%%/config/maze.xml
 %%DATADIR%%/config/maze3d.xml
 %%DATADIR%%/config/memscroller.xml
@@ -716,6 +741,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/slip.xml
 %%DATADIR%%/config/sonar.xml
 %%DATADIR%%/config/speedmine.xml
+%%DATADIR%%/config/sphereeversion.xml
 %%DATADIR%%/config/spheremonics.xml
 %%DATADIR%%/config/splitflap.xml
 %%DATADIR%%/config/splodesic.xml
@@ -766,10 +792,9 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/xsnow.xml
 %%DATADIR%%/config/xspirograph.xml
 %%DATADIR%%/config/zoom.xml
-%%DATADIR%%/glade/screensaver-cmndln.png
-%%DATADIR%%/glade/screensaver-colorselector.png
-%%DATADIR%%/glade/screensaver-diagnostic.png
-%%DATADIR%%/glade/screensaver-locking.png
-%%DATADIR%%/glade/screensaver-power.png
-%%DATADIR%%/glade/screensaver-snap.png
-%%DATADIR%%/glade/xscreensaver-demo.glade2
+%%DATADIR%%/ui/screensaver-cmndln.png
+%%DATADIR%%/ui/screensaver-colorselector.png
+%%DATADIR%%/ui/screensaver-diagnostic.png
+%%DATADIR%%/ui/screensaver-locking.png
+%%DATADIR%%/ui/screensaver-power.png
+%%DATADIR%%/ui/screensaver-snap.png

@@ -1,8 +1,7 @@
 # Created by: dom@myrddin.demon.co.uk
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.44
-PORTREVISION=	3
+PORTVERSION=	6.02
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -11,73 +10,82 @@ COMMENT=	Save your screen while you entertain your cat
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	p5-libwww>0:www/p5-libwww \
-		giftopnm:graphics/netpbm
-LIB_DEPENDS=	libgle.so:graphics/gle \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
-
-CONFLICTS=	xscreensaver-gnome xscreensaver-gnome-hacks
+RUN_DEPENDS=	giftopnm:graphics/netpbm \
+		p5-libwww>0:www/p5-libwww
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libgle.so:graphics/gle \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		autoreconf cpe gettext gl gmake gnome jpeg localbase:ldflags perl5 \
 		pkgconfig xorg
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool libglade2 libxml2
 USE_PERL5=	run
-USE_XORG=	ice sm x11 xext xi xinerama xmu xrandr xrender xpm xt xxf86vm
-USE_CSTD=	gnu99
+USE_XORG=	ice sm x11 xext xi xinerama xmu xrandr xrender xt xxf86vm
 CPE_VENDOR=	xscreensaver_project
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PERL="${PERL}"
-CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
-		--with-jpeg=${LOCALBASE} --with-xshm-ext --with-xdbe-ext \
-		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
+CONFIGURE_ARGS=	--enable-locking \
+		--with-app-defaults=${PREFIX}/lib/X11/app-defaults/ \
 		--with-configdir=${PREFIX}/share/xscreensaver/config/ \
-		--with-x-app-defaults=${PREFIX}/lib/X11/app-defaults/ \
-		--with-dpms-ext --with-xinerama-ext --with-xf86vmode-ext \
-		--with-xf86gamma-ext --with-randr-ext --without-kerberos \
-		--without-setuid-hacks --enable-locking
+		--with-dpms-ext \
+		--with-gl \
+		--with-gle \
+		--with-gtk \
+		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
+		--with-jpeg=${LOCALBASE} \
+		--with-pixbuf \
+		--with-randr-ext \
+		--with-xdbe-ext \
+		--with-xf86gamma-ext \
+		--with-xf86vmode-ext \
+		--with-xinerama-ext \
+		--with-xshm-ext \
+		--without-kerberos
 MAKE_ARGS+=	install_prefix=${STAGEDIR}
-MAKE_JOBS_UNSAFE=yes
+MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	PAM SETUID_HACKS FIREF NLS NSFW XAOS1 XDALI XEARTH \
-		XFT XMOUN XPLANET XSNOW
-OPTIONS_DEFAULT=PAM XFT
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		FIREF NLS NSFW PAM SETUID_HACKS XAOS1 XDALI XEARTH XFT \
+			XMOUN XPLANET XSNOW
+OPTIONS_DEFAULT=	PAM XFT
+OPTIONS_SUB=		yes
 
-PAM_CONFIGURE_WITH=		pam
+PAM_CONFIGURE_WITH=	passwd-helper=${PREFIX}/bin/pam_helper
+PAM_RUN_DEPENDS=	pam_helper:security/pam_helper
 
-SETUID_HACKS_DESC=		Install sonar hack suid so it can ping
+SETUID_HACKS_DESC=	Install sonar hack suid so it can ping
+SETUID_HACKS_CONFIGURE_WITH=	setuid-hacks
 
-FIREF_DESC=			Add extra port x11/fireflies
-FIREF_RUN_DEPENDS=		${LOCALBASE}/bin/xscreensaver-hacks/fireflies:x11/fireflies
+FIREF_DESC=		Add extra port x11/fireflies
+FIREF_RUN_DEPENDS=	${LOCALBASE}/bin/xscreensaver-hacks/fireflies:x11/fireflies
 
-NLS_USES=			gettext-runtime
-NLS_CONFIGURE_ENABLE=		nls
+NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
-NSFW_DESC=			Include material that is Not Safe For Work
+NSFW_DESC=		Include material that is Not Safe For Work
 
-XAOS1_DESC=			Add extra port graphics/xaos
-XAOS1_RUN_DEPENDS=		xaos:graphics/xaos
+XAOS1_DESC=		Add extra port graphics/xaos
+XAOS1_RUN_DEPENDS=	xaos:graphics/xaos
 
-XDALI_DESC=			Add extra port x11-clocks/xdaliclock
-XDALI_RUN_DEPENDS=		xdaliclock:x11-clocks/xdaliclock
+XDALI_DESC=		Add extra port x11-clocks/xdaliclock
+XDALI_RUN_DEPENDS=	xdaliclock:x11-clocks/xdaliclock
 
-XFT_CONFIGURE_WITH=		xft
-XFT_USE=			XORG=xft
+XFT_CONFIGURE_WITH=	xft
+XFT_USE=		XORG=xft
 
-XEARTH_DESC=			Add extra port astro/xearth
-XEARTH_RUN_DEPENDS=		xearth:astro/xearth
+XEARTH_DESC=		Add extra port astro/xearth
+XEARTH_RUN_DEPENDS=	xearth:astro/xearth
 
-XMOUN_DESC=			Add extra port graphics/xmountains
-XMOUN_RUN_DEPENDS=		xmountains:graphics/xmountains
+XMOUN_DESC=		Add extra port graphics/xmountains
+XMOUN_RUN_DEPENDS=	xmountains:graphics/xmountains
 
-XPLANET_DESC=			Add extra port astro/xplanet
-XPLANET_RUN_DEPENDS=		xplanet:astro/xplanet
+XPLANET_DESC=		Add extra port astro/xplanet
+XPLANET_RUN_DEPENDS=	xplanet:astro/xplanet
 
-XSNOW_DESC=			Add extra port x11/xsnow
-XSNOW_RUN_DEPENDS=		xsnow:x11/xsnow
+XSNOW_DESC=		Add extra port x11/xsnow
+XSNOW_RUN_DEPENDS=	xsnow:x11/xsnow
 
 SUB_FILES=	xscreensaver-blank.desktop xscreensaver-lock.desktop \
 		xscreensaver-start.desktop xscreensaver-stop.desktop
@@ -85,12 +93,10 @@ SUB_FILES=	xscreensaver-blank.desktop xscreensaver-lock.desktop \
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 			-e 's|pkg_config --list-all|pkg_config --help|' \
-			${WRKSRC}/configure.in
+			${WRKSRC}/configure.ac
 	${REINPLACE_CMD} -e "s|/etc/pam.d|${PREFIX}/etc/pam.d|g" \
 		${WRKSRC}/driver/passwd-pam.c \
 		${WRKSRC}/driver/xscreensaver.man
-	${CP} ${FILESDIR}/xscreensaver.pam \
-		${WRKSRC}/driver/xscreensaver.pam.in
 
 post-patch-NSFW-off:
 	${REINPLACE_CMD} -e 's|Dick Pix|Stuff|' ${WRKSRC}/hacks/bsod.c
@@ -100,5 +106,8 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/x*.xml ${STAGEDIR}${DATADIR}/config/
 	${INSTALL_DATA} ${WRKDIR}/*.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	${RM} ${STAGEDIR}${PREFIX}/etc/pam.d/xscreensaver.pam
+
+post-install-PAM-on:
+	${INSTALL_DATA} ${FILESDIR}/xscreensaver.pam ${STAGEDIR}${PREFIX}/etc/pam.d/xscreensaver
 
 .include <bsd.port.mk>

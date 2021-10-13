@@ -1,6 +1,6 @@
---- driver/XScreenSaver.ad.in.orig	2019-07-10 03:31:26 UTC
+--- driver/XScreenSaver.ad.in.orig	2021-06-09 15:47:14 UTC
 +++ driver/XScreenSaver.ad.in
-@@ -56,7 +56,7 @@
+@@ -55,7 +55,7 @@
  *splashDuration:	0:00:05
  *visualID:		default
  *installColormap:	True
@@ -9,16 +9,16 @@
  *authWarningSlack:	20
  
  *textMode:		file
-@@ -124,7 +124,7 @@
+@@ -103,7 +103,7 @@
  
- ! The format used for printing the date and time in the password dialog box
- ! (see the strftime(3) manual page for details.)
--*dateFormat:		%d-%b-%y (%a); %I:%M %p
+ 
+ ! The strftime(3) format string for printing the time on the password dialog.
+-*dateFormat:		%I:%M %p, %a %b %e
 +*dateFormat:		%Y-%m-%d %H:%M:%S
- ! For day month date:
- ! *dateFormat:		%a %b %d, %I:%M %p
- ! To show the time only:
-@@ -343,6 +343,18 @@ XScreenSaver.bourneShell:		/bin/sh
+ ! DD MMM:
+ ! *dateFormat:		%I:%M %p, %e %b (%a)
+ ! 12 hour time only:
+@@ -324,6 +324,18 @@ XScreenSaver.bourneShell:		/bin/sh
  !=============================================================================
  
  *programs:								      \
@@ -37,11 +37,11 @@
  				maze -root				    \n\
  @GL_KLUDGE@ GL: 				superquadrics -root			    \n\
  				attraction -root			    \n\
-@@ -610,7 +622,6 @@ XScreenSaver.bourneShell:		/bin/sh
- *hacks.dangerball.name:     DangerBall
- *hacks.decayscreen.name:    DecayScreen
- *hacks.deepstars.name:      DeepStars
+@@ -602,7 +614,6 @@ XScreenSaver.bourneShell:		/bin/sh
+ *hacks.dangerball.name:     Danger Ball
+ *hacks.decayscreen.name:    Decay Screen
+ *hacks.deepstars.name:      Deep Stars
 -*hacks.dnalogo.name:        DNA Logo
- *hacks.dymaxionmap.name:    DymaxionMap
- *hacks.energystream.name:   EnergyStream
- *hacks.euler2d.name:        Euler2D
+ *hacks.dymaxionmap.name:    Dymaxion Map
+ *hacks.energystream.name:   Energy Stream
+ *hacks.etruscanvenus.name:  Etruscan Venus

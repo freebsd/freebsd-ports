@@ -1,12 +1,12 @@
---- config.h.in.orig	2016-04-03 20:07:59 UTC
+--- config.h.in.orig	2021-05-08 15:22:06 UTC
 +++ config.h.in
-@@ -307,6 +307,9 @@
+@@ -315,6 +315,9 @@
  /* Define to 1 if you have the <util.h> header file. */
  #undef HAVE_UTIL_H
  
 +/* Define to 1 if you have the <libutil.h> header file. */
 +#undef HAVE_LIBUTIL_H
 +
- /* Define this if you have the XF86MiscSetGrabKeysState function (which allows
-    the Ctrl-Alt-KP_star and Ctrl-Alt-KP_slash key sequences to be temporarily
-    disabled. Sadly, it doesn't affect Ctrl-Alt-BS or Ctrl-Alt-F1.) */
+ /* Define this if you have XF86VidModeGetViewPort, for virtual desktops. */
+ #undef HAVE_XF86VMODE
+ 
