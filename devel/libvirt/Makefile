@@ -77,9 +77,7 @@ VARDIR=		/var
 
 MESON_ARGS+=	\
 		-Ddriver_remote=enabled \
-		-Ddbus=disabled \
 		-Dpolkit=disabled \
-		-Dhal=disabled \
 		-Dudev=disabled \
 		-Dnetcf=disabled \
 		-Dsysctl_config=disabled \
