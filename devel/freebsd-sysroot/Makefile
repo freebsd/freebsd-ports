@@ -89,7 +89,7 @@ _SYSROOT_LLVM_TRIPLE_armv7=		armv7-unknown-freebsd12.2-gnueabihf
 _SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd13.0 # secure-plt
 
 .if make(distclean) || make(makesum)
-.MAKEFLAGS:	MASTER_SITES="${FLAVORS:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -VMASTER_SITES!}@:O:u:q}" # PR 249537
+MASTER_SITES:=	${FLAVORS:O:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -VMASTER_SITES!}@}
 DISTFILES:=	${FLAVORS:O:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -V'DISTFILES'!}@}
 .endif
 
