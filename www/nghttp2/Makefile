@@ -14,11 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	libnghttp2>=${PORTVERSION}:www/libnghttp2
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
-OPTIONS_DEFINE=	APP ASIO DOCS EXAMPLES HPACK
-OPTIONS_DEFAULT=APP HPACK
-OPTIONS_SUB=	yes
-APP_DESC=	Build h2load, nghttp, nghttpd and nghttpx
-
 USES=		compiler:c++14-lang cpe gmake libtool localbase pathfix pkgconfig ssl tar:xz
 
 CONFIGURE_ARGS=	--disable-python-bindings --with-jemalloc
@@ -28,6 +23,11 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++14
 USE_RC_SUBR=	nghttpx
+
+OPTIONS_DEFINE=	APP ASIO DOCS EXAMPLES HPACK
+OPTIONS_DEFAULT=APP HPACK
+OPTIONS_SUB=	yes
+APP_DESC=	Build h2load, nghttp, nghttpd and nghttpx
 
 APP_BUILD_DEPENDS=	c-ares>=1.7.5:dns/c-ares \
 			libev>=4.11:devel/libev
