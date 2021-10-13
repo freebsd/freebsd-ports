@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 BUILD_DEPENDS=	swig>=2.0.4:devel/swig
 
-USES=		python:3.6+ ssl
+USES=		cpe python:3.6+ ssl
+CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist concurrent distutils
 
 PYDISTUTILS_BUILDARGS=	build_ext --openssl=${OPENSSLBASE} --swig=${LOCALBASE}/bin/swig
