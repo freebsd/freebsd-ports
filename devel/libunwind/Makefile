@@ -17,8 +17,6 @@ ONLY_FOR_ARCHS= aarch64 amd64 armv7 i386 powerpc64 powerpc64le
 
 USES=		compiler:c11 cpe libtool pathfix pkgconfig
 
-CPE_VENDOR=	libunwind_project
-
 CFLAGS_powerpc64=	-maltivec
 CFLAGS_powerpc64le=	-maltivec
 CONFIGURE_ARGS=	ac_cv_path_LATEX2MAN=${TRUE}
@@ -27,6 +25,8 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	ARCH=${ARCH:S|amd64|x86_64|:S|armv7|arm|:S|i386|x86|:C|powerpc64.*|ppc64|}
+
+CPE_VENDOR=	libunwind_project
 
 .include <bsd.port.pre.mk>
 
