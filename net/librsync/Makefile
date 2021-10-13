@@ -16,11 +16,11 @@ LIB_DEPENDS=	libpopt.so:devel/popt
 USES=		cmake compiler:c11 cpe perl5
 USE_PERL5=	test
 
-CPE_VENDOR=	librsync_project
-
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+CPE_VENDOR=	librsync_project
 
 .include <bsd.port.mk>
