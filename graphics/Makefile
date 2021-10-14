@@ -1116,6 +1116,7 @@
     SUBDIR += webp-pixbuf-loader
     SUBDIR += wings
     SUBDIR += wmicons
+    SUBDIR += wrapland
     SUBDIR += wxsvg
     SUBDIR += xaos
     SUBDIR += xbmbrowser

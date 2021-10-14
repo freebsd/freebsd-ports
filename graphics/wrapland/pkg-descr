@@ -1,0 +1,6 @@
+Wrapland is a Qt/C++ library that wraps and mediates the libwayland
+client and server API for its consumers. Wrapland is an independent
+part of the KWinFT project with the KWinFT window manager being
+Wrapland's first and most prominent user.
+
+WWW: https://gitlab.com/kwinft/wrapland
