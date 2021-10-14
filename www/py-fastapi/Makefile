@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydantic>0:devel/py-pydantic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}starlette>0:www/py-starlette@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
