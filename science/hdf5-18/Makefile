@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DEBUG EXAMPLES FORTRAN SZIP
 
-USES=		libtool:keepla localbase tar:bzip2
+USES=		cpe libtool:keepla localbase tar:bzip2
+CPE_VENDOR=	hdfgroup
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 PORTSUFF=	${PORTNAME}${PKGNAMESUFFIX}
