@@ -48,6 +48,7 @@
     SUBDIR += deforaos-locker
     SUBDIR += deforaos-panel
     SUBDIR += deskmenu
+    SUBDIR += disman
     SUBDIR += dmenu
     SUBDIR += dmenu-wayland
     SUBDIR += docker-tray

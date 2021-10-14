@@ -1,0 +1,25 @@
+CMake Error at /usr/local/lib/cmake/Qt5/Qt5Config.cmake:28 (find_package):
+  find_package for module Qt5Test called with REQUIRED, but
+  CMAKE_DISABLE_FIND_PACKAGE_Qt5Test is enabled.  A REQUIRED package cannot
+  be disabled.
+Call Stack (most recent call first):
+  CMakeLists.txt:27 (find_package)
+
+--- CMakeLists.txt.orig	2021-10-14 15:23:56 UTC
++++ CMakeLists.txt
+@@ -28,7 +28,6 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED
+   Core
+   DBus
+   Gui
+-  Test
+ )
+ 
+ # Wayland backend plugin KWayland
+@@ -66,6 +65,7 @@ add_subdirectory(service)
+ add_subdirectory(ctl)
+ add_subdirectory(backends)
+ if(BUILD_TESTING)
++  find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Test)
+   add_subdirectory(autotests)
+   add_subdirectory(tests)
+ endif()

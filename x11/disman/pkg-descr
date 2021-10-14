@@ -1,0 +1,11 @@
+Disman is a display management service and library.
+
+The service can communicate with the X11 windowing system and a
+multitude of Wayland compositors. The library provides convenient
+objects and methods for writing frontend GUI applications that
+interact with the service.
+
+Additionally the command line utility "dismanctl" is provided to query
+and modify display settings directly from the command line.
+
+WWW: https://gitlab.com/kwinft/disman
