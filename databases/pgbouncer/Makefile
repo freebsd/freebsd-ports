@@ -15,7 +15,7 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libevent.so:devel/libevent
 BUILD_DEPENDS+=	${LOCALBASE}/bin/gsed:textproc/gsed
 
-USES=		gmake ssl pkgconfig
+USES=		cpe gmake ssl pkgconfig
 
 PORTSCOUT=	site:https://pgbouncer.github.io/downloads/
 
