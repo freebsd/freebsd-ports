@@ -22,7 +22,8 @@ OPENSSL_CONFIGURE_ENABLE=	tls-openssl
 OPENSSL_CONFIGURE_ENV=		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
 				OPENSSL_CFLAGS="-I ${OPENSSLINC}"
 
-USES=		libtool pathfix pkgconfig
+USES=		cpe libtool pathfix pkgconfig
+CPE_VENDOR=	rsyslog
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
