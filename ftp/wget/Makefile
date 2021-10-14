@@ -1,7 +1,7 @@
 # Created by: Thomas Gellekum <tg@FreeBSD.org>
 
 PORTNAME=	wget
-DISTVERSION=	1.21
+DISTVERSION=	1.21.2
 CATEGORIES=	ftp www
 MASTER_SITES=	GNU
 

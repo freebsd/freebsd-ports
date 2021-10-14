@@ -41,6 +41,7 @@
 %%NLS%%share/locale/ja/LC_MESSAGES/wget-gnulib.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wget-gnulib.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/wget-gnulib.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/wget-gnulib.mo
