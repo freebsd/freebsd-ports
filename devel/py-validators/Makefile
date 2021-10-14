@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.4.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}decorator>=3.4.0:devel/py-decorator@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		cpe python:3.5+
+CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
