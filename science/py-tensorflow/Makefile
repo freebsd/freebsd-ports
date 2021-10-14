@@ -52,7 +52,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}absl>=0.7.0:devel/py-absl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>=1.11.2:devel/py-wrapt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.30.0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		python:3.7+ shebangfix jpeg ssl compiler:c++17-lang
+USES=		cpe python:3.7+ shebangfix jpeg ssl compiler:c++17-lang
+CPE_VENDOR=	google
 SHEBANG_GLOB=	*.py
 USE_GITHUB=	yes
 USE_PYTHON=	distutils
