@@ -16,7 +16,8 @@ BUILD_DEPENDS+=	${NEWLIB_TARGET}-ar:devel/binutils@${NEWLIB_TARGET:C/-/_/g} \
 
 NEWLIB_TARGET?=	arm-none-eabi
 
-USES=		gmake makeinfo
+USES=		cpe gmake makeinfo
+CPE_VENDOR=	${PORTNAME}_project
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --target="${NEWLIB_TARGET}" --disable-newlib-supplied-syscalls
 
