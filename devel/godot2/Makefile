@@ -23,7 +23,8 @@ RUN_DEPENDS=	xdg-user-dir:devel/xdg-user-dirs \
 		xdg-open:devel/xdg-utils \
 		xmessage:x11/xmessage
 
-USES=		compiler:c++11-lib gl pkgconfig scons ssl xorg
+USES=		compiler:c++11-lib cpe gl pkgconfig scons ssl xorg
+CPE_VENDOR=	godotengine
 USE_XORG=	x11 xcursor xi xinerama xrandr
 USE_GL=		gl glu
 
