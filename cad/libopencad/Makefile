@@ -17,7 +17,8 @@ BROKEN_armv7=		fails to compile: cadheader.cpp: ambiguous conversion for functio
 USE_GITHUB=	yes
 GH_ACCOUNT=	sandyre
 
-USES=		cmake compiler:c++11-lib
+USES=		cmake cpe compiler:c++11-lib
+CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
