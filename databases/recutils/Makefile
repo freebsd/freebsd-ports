@@ -13,7 +13,8 @@ LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		charsetfix libtool makeinfo pkgconfig readline
+USES=		charsetfix cpe libtool makeinfo pkgconfig readline
+CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
