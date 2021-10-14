@@ -30,7 +30,8 @@ BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook
 			gradle5>=5.0:devel/gradle5
 RUN_DEPENDS=		bash:shells/bash
 
-USES=		bison shebangfix
+USES=		bison cpe shebangfix
+CPE_VENDOR=	nsa
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NationalSecurityAgency
