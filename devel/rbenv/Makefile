@@ -11,6 +11,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash
 
+USES=		cpe
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 
 NO_BUILD=	yes
