@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 DEPRECATED=	Legacy version, use devel/py-decorator instead
 EXPIRATION_DATE=2021-12-31
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
