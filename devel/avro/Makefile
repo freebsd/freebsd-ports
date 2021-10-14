@@ -9,7 +9,8 @@ COMMENT=	Data serialization system
 
 LICENSE=	APACHE20
 
-USES=		metaport
+USES=		cpe metaport
+CPE_VENDOR=	apache
 
 OPTIONS_DEFINE=	C CPP PYTHON RUBY
 OPTIONS_DEFAULT=C CPP PYTHON RUBY
