@@ -9,7 +9,8 @@ LIB_DEPENDS=	libplist-2.0.so:${MASTER_PORT}
 
 PORTSCOUT=	ignore:1
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	libimobiledevice
 USE_PYTHON=	flavors cython
 BINARY_ALIAS=	cython=cython-${PYTHON_VER}
 CONFIGURE_ENV=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"
