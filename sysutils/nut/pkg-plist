@@ -20,6 +20,7 @@
 @sample %%EXAMPLESDIR%%/newsyslog.sample etc/newsyslog.conf.d/nut.conf
 @sample %%EXAMPLESDIR%%/syslog.sample etc/syslog.d/nut
 %%NUT_USB%%etc/devd/nut-usb.conf
+bin/nut-scanner
 bin/upsc
 bin/upscmd
 bin/upslog
@@ -37,6 +38,10 @@ lib/libnutclient.a
 lib/libnutclient.so
 lib/libnutclient.so.0
 lib/libnutclient.so.0.0.0
+lib/libnutscan.a
+lib/libnutscan.so
+lib/libnutscan.so.1
+lib/libnutscan.so.1.0.0
 lib/libupsclient.a
 lib/libupsclient.so
 lib/libupsclient.so.4
