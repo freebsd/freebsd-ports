@@ -2,7 +2,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	${NUT_COMMIT_DATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 # MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
@@ -68,6 +68,9 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-user=${NUT_USER} \
 		--with-group=${NUT_GROUP} \
 		--with-dev
+
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+LIB_DEPENDS+=	libltdl.so:devel/libltdl
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 
