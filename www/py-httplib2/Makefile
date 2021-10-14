@@ -11,7 +11,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=2.4.2:devel/py-pyparsing@${PY_FLAVOR}
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	${PORTNAME}_project
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
