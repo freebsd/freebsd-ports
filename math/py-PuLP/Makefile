@@ -14,7 +14,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amply>=0.1.2:math/py-amply@${PY_FLAVOR} \
 		cbc:math/cbc \
 		glpsol:math/glpk
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	${PORTNAME:tl}project
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes
@@ -25,6 +26,5 @@ post-patch:
 
 do-test: install # one test is known to fail: https://github.com/coin-or/pulp/issues/494
 	@cd ${TEST_WRKSRC} && py.test
-		
 
 .include <bsd.port.mk>
