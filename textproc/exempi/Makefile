@@ -13,7 +13,8 @@ COMMENT=	Port of Adobe XMP SDK to work on UNIX
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		gmake iconv libtool localbase pathfix tar:bzip2
+USES=		cpe gmake iconv libtool localbase pathfix tar:bzip2
+CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
