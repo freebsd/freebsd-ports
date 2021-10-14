@@ -1,5 +1,5 @@
 PORTNAME=	go-for-it
-DISTVERSION=	1.9.3
+DISTVERSION=	1.9.5
 CATEGORIES=	deskutils
 
 MAINTAINER=	nc@FreeBSD.org
