@@ -49,6 +49,7 @@
     SUBDIR += jewel
     SUBDIR += jwm
     SUBDIR += kickshaw
+    SUBDIR += kwinft
     SUBDIR += labwc
     SUBDIR += larswm
     SUBDIR += leftwm

@@ -1,0 +1,44 @@
+[
+{ type: install
+  message: <<EOM
+WARNING: X11 support is currently unstable on FreeBSD. Replacing KWin
+         in Plasma Desktop may not work. Test standalone first.
+
+Native Wayland on top of KMS console:
+
+  $ export XDG_RUNTIME_DIR=$(mktemp -dt run)
+  $ dbus-daemon --session --fork --address=unix:runtime=yes
+  $ seatd-launch kwin_wayland
+
+Native X11 on top of Xorg:
+
+  $ echo "exec dbus-run-session kwin_x11" >~/.xinitrc
+  $ startx
+
+Nested under Wayland as Wayland window manager:
+
+  $ kwin_wayland
+
+Nested under Wayland as X11 window manager:
+
+  $ Xwayland :8 &
+  $ DISPLAY=:8 kwin_x11
+
+Nested under X11 as Wayland window manager:
+
+  $ cage kwin_wayland
+
+Nested under X11 as X11 window manager:
+
+  $ Xephyr :8 &
+  $ DISPLAY=:8 kwin_x11
+
+Replace KWin in Plasma Desktop:
+
+  $ pkg set -n plasma5-kwin:kwinft
+  $ pkg set -o x11-wm/plasma5-kwin:x11-wm/kwinft
+  $ pkg upgrade -f kwinft
+  $ pkg lock kwinft
+EOM
+}
+]

@@ -1,0 +1,8 @@
+KWinFT (KWin Fast Track) is a robust, fast and versatile yet easy to
+use composited window manager for the Wayland and X11 windowing
+systems on Linux.
+
+The KWinFT project is a reboot of KDE's KWin and intended to be used
+as part of a KDE Plasma Desktop.
+
+WWW: https://gitlab.com/kwinft/kwinft
