@@ -19,6 +19,7 @@
     SUBDIR += OpenLara
     SUBDIR += OpenTomb
     SUBDIR += SRB2
+    SUBDIR += SpaceCadetPinball
     SUBDIR += abbayedesmorts
     SUBDIR += abe
     SUBDIR += abstreet

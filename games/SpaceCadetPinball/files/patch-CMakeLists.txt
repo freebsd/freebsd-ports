@@ -1,0 +1,30 @@
+--- CMakeLists.txt.orig	2021-10-10 14:13:43 UTC
++++ CMakeLists.txt
+@@ -24,8 +24,10 @@ set(SDL2_BUILDING_LIBRARY ON)
+ 
+ find_package(SDL2 REQUIRED)
+ FIND_PACKAGE(SDL2_mixer REQUIRED)
++find_package(X11 REQUIRED)
++link_libraries(${X11_LIBRARIES})
+ 
+-include_directories(${SDL2_INCLUDE_DIR} ${SDL2_MIXER_INCLUDE_DIR})
++include_directories(${SDL2_INCLUDE_DIR} ${SDL2_MIXER_INCLUDE_DIR} ${X11_INCLUDE_DIR})
+ get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
+ foreach(dir ${dirs})
+   message(STATUS "Include dir='${dir}'")
+@@ -197,6 +199,8 @@ target_precompile_headers(SpaceCadetPinball
+ )
+ 
+ target_link_libraries(SpaceCadetPinball ${SDL2_LIBRARY} ${SDL2_MIXER_LIBRARY})
++
++install(TARGETS SpaceCadetPinball DESTINATION bin)
+ 
+ # On Windows, copy DLL to output
+ if(WIN32)
+@@ -213,4 +217,4 @@ if(WIN32)
+         COMMAND ${CMAKE_COMMAND} -E copy_if_different "${SDL2_DLL_PATH}/SDL2.dll" $<TARGET_FILE_DIR:SpaceCadetPinball>
+         COMMAND ${CMAKE_COMMAND} -E copy_if_different "${SDL2_MIXER_DLL_PATH}/SDL2_mixer.dll" $<TARGET_FILE_DIR:SpaceCadetPinball>
+         )
+-endif()
+\ No newline at end of file
++endif()
