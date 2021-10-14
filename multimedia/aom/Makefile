@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	VMAF
 
 VMAF_DESC=		Encoding tuning for VMAF
 VMAF_LIB_DEPENDS=	libvmaf.so:multimedia/vmaf
-VMAF_USES=		localbase:ldflags pkgconfig
+VMAF_USES=		pkgconfig
 VMAF_CMAKE_ON=		-DCONFIG_TUNE_VMAF:STRING=1
 
 post-patch:
