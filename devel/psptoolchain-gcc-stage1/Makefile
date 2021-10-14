@@ -36,7 +36,8 @@ BUILD_DEPENDS+=		psp-addr2line:devel/psptoolchain-binutils \
 			psp-strip:devel/psptoolchain-binutils \
 			objdump:devel/binutils
 
-USES+=			compiler:c11 gmake libtool tar:bzip2
+USES+=			compiler:c11 cpe gmake libtool tar:bzip2
+CPE_VENDOR=		gnu
 
 MAKE_ENV+=		PATH=${LOCALBASE}/${PSP_GCC_STAGE_PREFIX}/bin:${PREFIX}/bin:${PATH}
 HAS_CONFIGURE=		yes
