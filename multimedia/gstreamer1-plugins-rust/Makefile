@@ -11,6 +11,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE-LGPLv2
 
+BROKEN_aarch64=	fails to build: device_name: [0i8; 64usize], expected `u8`, found `i8`
+
 BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c
 
 USES=		cargo gnome meson pkgconfig ssl
