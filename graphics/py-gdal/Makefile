@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/../../LICENSE.TXT
 
 LIB_DEPENDS=	libgdal.so:graphics/gdal
 
-USES=		compiler:c++14-lang python:3.6+ tar:xz
+USES=		compiler:c++14-lang cpe python:3.6+ tar:xz
+CPE_VENDOR=	osgeo
 USE_PYTHON=	autoplist concurrent distutils
 
 USE_CXXSTD=	c++14
