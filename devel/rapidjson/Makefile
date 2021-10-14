@@ -17,7 +17,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USE_GITHUB=	yes
 GH_ACCOUNT=	Tencent
 
-USES=		cmake compiler:c++11-lang pathfix
+USES=		cmake compiler:c++11-lang cpe pathfix
+CPE_VENDOR=	tencent
 
 NO_ARCH=	yes
 
