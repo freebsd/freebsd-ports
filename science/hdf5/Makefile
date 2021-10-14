@@ -22,8 +22,8 @@ OPTIONS_DEFAULT=CXX SZIP
 OPTIONS_SUB=	yes
 PARALLEL_DESC=	Parallel support
 
-USES=		compiler:c11 libtool localbase tar:bzip2
-
+USES=		compiler:c11 cpe libtool localbase tar:bzip2
+CPE_VENDOR=	hdfgroup
 CONFIGURE_ARGS=	--enable-hl \
 		--enable-instrument \
 		--enable-strict-format-checks
