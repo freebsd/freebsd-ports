@@ -18,7 +18,8 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.2<2:devel/rubygem-concurrent-ruby \
 		rubygem-tzinfo1>=1.1<2:devel/rubygem-tzinfo1 \
 		rubygem-zeitwerk>=2.2.2<3:devel/rubygem-zeitwerk
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	${PORTNAME}_project
 USE_RUBY=	yes
 
 NO_ARCH=	yes
