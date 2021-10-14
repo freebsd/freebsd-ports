@@ -1,9 +1,9 @@
 # Created by: ijliao
 
 PORTNAME=	fribidi
-PORTVERSION=	1.0.10
+DISTVERSION=	1.0.11
 CATEGORIES=	converters
-MASTER_SITES=	https://github.com/fribidi/fribidi/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/fribidi/fribidi/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Free Implementation of the Unicode Bidirectional Algorithm
@@ -11,11 +11,19 @@ COMMENT=	Free Implementation of the Unicode Bidirectional Algorithm
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe meson tar:xz
-USE_LDCONFIG=	yes
-MESON_ARGS=	-Dtests=false
-
+USES=		cpe meson python:3.6+,test shebangfix tar:xz
 CPE_VENDOR=	gnu
+SHEBANG_FILES=	test/test-runner.py
+USE_LDCONFIG=	yes
+
+TEST_TARGET=	test
+
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS TEST
+OPTIONS_DEFAULT=OPTIMIZED_CFLAGS
+
+OPTIMIZED_CFLAGS_CFLAGS=	-O3
+
+TEST_MESON_TRUE=tests
 
 post-patch:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' < \
