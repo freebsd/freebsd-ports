@@ -23,7 +23,8 @@ CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \
 		--with-image-dir=${PREFIX}/www/icons/htdig \
 		--with-image-url-prefix=/icons/htdig \
 		--with-ssl
-USES=		alias libtool ssl
+USES=		alias cpe libtool ssl
+CPE_VENDOR=	${PORTNAME}_project
 USE_CXXSTD=	c++98
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
