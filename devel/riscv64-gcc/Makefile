@@ -18,7 +18,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc
 
-USES=	iconv gmake libtool makeinfo tar:xz
+USES=		cpe iconv gmake libtool makeinfo tar:xz
+CPE_VENDOR=	gnu
 
 USE_LDCONFIG=	yes
 
