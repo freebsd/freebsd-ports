@@ -11,7 +11,7 @@ COMMENT=	Formatting library for C++
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=		cmake compiler:c++11-lang zip
+USES=		cmake compiler:c++11-lang cpe zip
 
 CMAKE_OFF=	FMT_DOC FMT_TEST
 CMAKE_ON=	BUILD_SHARED_LIBS
