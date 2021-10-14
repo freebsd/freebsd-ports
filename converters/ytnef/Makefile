@@ -14,13 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-MIME-Tools>=0:mail/p5-MIME-Tools
 
-USES=		autoreconf libtool pathfix perl5 shebangfix
+USES=		autoreconf cpe libtool pathfix perl5 shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yeraze
 
-USES=		cpe
-CPE_VENDOR=	${PORTNAME}_project
+CPE_VENDOR=	ytnef_project
 USE_PERL5=	run
 
 SHEBANG_FILES=	ytnef/ytnefprocess
