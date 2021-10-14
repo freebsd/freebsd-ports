@@ -1,9 +1,6 @@
-# Created by: Piotr Kubaj <pkubaj@FreeBSD.org>
-
 PORTNAME=	UEFITool
 DISTVERSIONPREFIX=	A
-DISTVERSION=	58
-PORTREVISION=	1
+DISTVERSION=	59
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
