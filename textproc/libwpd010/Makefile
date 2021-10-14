@@ -18,7 +18,8 @@ LICENSE_FILE_MPL20=	${WRKSRC}/COPYING.MPL
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/include/qi.hpp:devel/boost-libs
 LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge
 
-USES=		compiler:c++11-lang gnome libtool pathfix pkgconfig tar:bzip2
+USES=		compiler:c++11-lang cpe gnome libtool pathfix pkgconfig tar:bzip2
+CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
 USE_GNOME=	libgsf
 USE_LDCONFIG=	yes
