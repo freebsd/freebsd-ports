@@ -15,6 +15,7 @@ RUN_DEPENDS=	rubygem-terrapin>=${PORTVERSION}:devel/rubygem-terrapin
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	thoughtbot
 
 .include <bsd.port.mk>
