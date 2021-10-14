@@ -2,7 +2,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.7.4
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -61,6 +61,9 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-user=${NUT_USER} \
 		--with-group=${NUT_GROUP} \
 		--with-dev
+
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+LIB_DEPENDS+=	libltdl.so:devel/libltdl
 
 .if ${PORT_OPTIONS:MCGI}
 LIB_DEPENDS+=	libgd.so:graphics/gd
