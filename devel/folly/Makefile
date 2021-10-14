@@ -24,7 +24,8 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libzstd.so:archivers/zstd
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake compiler:c++17-lang ssl
+USES=		cmake compiler:c++17-lang cpe ssl
+CPE_VENDOR=	facebook
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
 USE_LDCONFIG=	yes
