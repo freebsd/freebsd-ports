@@ -17,7 +17,7 @@ BUILD_DEPENDS=	makedepend:devel/makedepend \
 		${LOCALBASE}/mingw32/include/stdlib.h:devel/${PKGNAMEPREFIX}bin-msvcrt \
 		${LOCALBASE}/mingw32/lib/libz.a:devel/mingw32-zlib
 
-USES=		perl5 shebangfix
+USES=		cpe perl5 shebangfix
 SHEBANG_FILES=	apps/tsget
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=	yes
