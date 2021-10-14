@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
 
 PORTNAME=	Matching
-DISTVERSION=	4.9-9
+DISTVERSION=	4.9-10
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
