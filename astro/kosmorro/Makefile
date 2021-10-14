@@ -1,7 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	kosmorro
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro python
 
