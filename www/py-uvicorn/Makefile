@@ -21,7 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.4.0:www/py-asgiref@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvloop>=0.14.0:devel/py-uvloop@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=9.1:devel/py-websockets@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		cpe python:3.7+
+CPE_VENDOR=	encode
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
