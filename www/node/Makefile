@@ -1,6 +1,6 @@
 PORTNAME=	node
 DISTVERSIONPREFIX=	v
-DISTVERSION=	16.10.0
+DISTVERSION=	16.11.0
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${DISTVERSION}/
 
@@ -70,7 +70,7 @@ MAKE_ENV+=	CC.host=${CC} CFLAGS.host="${CFLAGS}" \
 BUILD_DEPENDS+=	brotli>=1.0.9,1:archivers/brotli \
 		c-ares>=1.17.2:dns/c-ares \
 		libuv>=1.42.0:devel/libuv \
-		libnghttp2>=1.42.0:www/libnghttp2 \
+		libnghttp2>=1.45.1:www/libnghttp2 \
 		objdump:devel/binutils
 LIB_DEPENDS+=	libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
