@@ -16,7 +16,8 @@ BROKEN_mips=	Complains of expecting ) before png_ptr
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		compiler:c11
+USES=		compiler:c11 cpe
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	michaelrsweet
 
