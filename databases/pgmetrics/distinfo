@@ -1,6 +1,6 @@
-TIMESTAMP = 1618559219
-SHA256 (rapidloop-pgmetrics-v1.11.0_GH0.tar.gz) = e93ec6b03a20faa07a3796db1f65116353274453ae51df26feac315a2fb1cdea
-SIZE (rapidloop-pgmetrics-v1.11.0_GH0.tar.gz) = 58047
+TIMESTAMP = 1634198114
+SHA256 (rapidloop-pgmetrics-v1.12.0_GH0.tar.gz) = 82f2527b4754f3b96282d14de7ddbd98fa7030ede193361062b6a83f51c68acf
+SIZE (rapidloop-pgmetrics-v1.12.0_GH0.tar.gz) = 59899
 SHA256 (aws-aws-sdk-go-v1.29.29_GH0.tar.gz) = f0818823a2402900216295cc95e64ff8042d698e031cc2a660528866d0fc15ec
 SIZE (aws-aws-sdk-go-v1.29.29_GH0.tar.gz) = 14308891
 SHA256 (dustin-go-humanize-bb3d318650d4_GH0.tar.gz) = 2528a929daba61ff84ee81b397321b022b2f1cc134068f0afac5edaeb4894894
