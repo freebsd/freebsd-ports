@@ -3,7 +3,7 @@
 PORTNAME=	commons-discovery
 PORTVERSION=	0.5
 CATEGORIES=	java devel
-MASTER_SITES=	APACHE_COMMONS_BINARIES
+MASTER_SITES=	https://archive.apache.org/dist/commons/discovery/binaries/
 PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
@@ -11,6 +11,9 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Java library for locating resources (including classes)
 
 LICENSE=	APACHE20
+
+DEPRECATED=	Abandoned upstream, last release in 2006
+EXPIRATION_DATE=2022-03-31
 
 USE_JAVA=	YES
 NO_BUILD=	YES
