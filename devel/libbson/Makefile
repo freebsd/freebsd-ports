@@ -9,10 +9,10 @@ COMMENT=	BSON utility library
 
 LICENSE=	APACHE20
 
+USES=		cmake cpe pkgconfig
+CPE_VENDOR=	mongodb
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
-
-USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
