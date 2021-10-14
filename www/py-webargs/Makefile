@@ -20,7 +20,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django*>=1.11.16:www/py-django22@${PY_FLAVOR} \
 	 	${PYTHON_PKGNAMEPREFIX}pyramid>0:www/py-pyramid@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes # tests not packaged with PyPI sdist
 GH_ACCOUNT=	marshmallow-code
 USE_PYTHON=	autoplist concurrent distutils
