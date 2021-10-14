@@ -16,7 +16,8 @@ COMMENT=	TeX Live Typesetting System, texmf Tree
 CONFLICTS_INSTALL=	texlive-base-201[234]* \
 			texlive-texmf-201[234]*
 
-USES=		python:run shebangfix tar:xz
+USES=		cpe python:run shebangfix tar:xz
+CPE_VENDOR=	tug
 USE_TEX=	basic:extract base tlmgr:run texhash
 TEXHASHDIRS=	${TEXMFDIR} ${TEXMFDISTDIR}
 NO_BUILD=	yes
