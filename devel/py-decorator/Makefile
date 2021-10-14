@@ -12,7 +12,8 @@ COMMENT=	Decorators for Humans
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python
+USES=		cpe python
+CPE_VENDOR=	python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
