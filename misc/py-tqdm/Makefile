@@ -13,7 +13,8 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENCE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.4:devel/py-setuptools_scm@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
