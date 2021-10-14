@@ -9,7 +9,8 @@ COMMENT=	Simple software midi player and core softsynth library
 # player: GPLv3, library: LGPL3
 LICENSE=	LGPL3
 
-USES=		cmake
+USES=		cmake cpe
+CPE_VENDOR=	mindwerks
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
