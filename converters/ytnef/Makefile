@@ -19,6 +19,8 @@ USES=		autoreconf libtool pathfix perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yeraze
 
+USES=		cpe
+CPE_VENDOR=	${PORTNAME}_project
 USE_PERL5=	run
 
 SHEBANG_FILES=	ytnef/ytnefprocess
