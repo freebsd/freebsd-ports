@@ -17,7 +17,8 @@ LICENSE_COMB=	dual
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USES=		php
+USES=		cpe php
+CPE_VENDOR=	${PORTNAME}_project
 USE_PHP=	mysqli pcre session
 NO_ARCH=	yes
 
