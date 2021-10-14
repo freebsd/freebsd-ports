@@ -14,7 +14,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		gmake ncurses tar:bzip2 iconv
+USES=		cpe gmake ncurses tar:bzip2 iconv
+CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=avr --program-prefix=avr --disable-nls \
