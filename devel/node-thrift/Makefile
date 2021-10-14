@@ -11,6 +11,9 @@ COMMENT=	Node.js bindings for the Apache Thrift RPC system
 
 RUN_DEPENDS=	node:www/node
 
+USES=		cpe
+CPE_VENDOR=	apache
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 DISTINFO_FILE=	${.CURDIR}/../thrift/distinfo
