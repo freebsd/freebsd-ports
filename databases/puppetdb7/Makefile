@@ -14,7 +14,8 @@ RUN_DEPENDS=	bash:shells/bash
 USE_RC_SUBR=	puppetdb
 
 CONFLICTS_INSTALL=	puppetdb5-* puppetdb6-*
-USES=		shebangfix
+USES=		cpe shebangfix
+CPE_VENDOR=	puppet
 SHEBANG_FILES=	ext/bin/puppetdb \
 		ext/cli/anonymize \
 		ext/cli/config-migration \
