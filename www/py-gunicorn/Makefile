@@ -29,7 +29,7 @@ GAIOHTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVO
 PROCTITLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR}
 TORNADO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>=2.2:www/py-tornado@${PY_FLAVOR}
 
-USES=			python:3.6+
+USES=			cpe python:3.6+
 USE_GITHUB=		yes
 USE_PYTHON=		autoplist concurrent distutils
 
