@@ -1,0 +1,5 @@
+Firmware modules for the drm-kmod drivers.
+
+Firmware files for AMD GPUs supported by the amdgpu driver.
+
+WWW: https://github.com/freebsd/drm-kmod-firmware
