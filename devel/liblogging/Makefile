@@ -11,7 +11,8 @@ COMMENT=	Easy to use system logging library
 LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix pkgconfig
+USES=		cpe libtool pathfix pkgconfig
+CPE_VENDOR=	adiscon
 
 CONFIGURE_ARGS+=	--disable-journal --enable-rfc3195
 
