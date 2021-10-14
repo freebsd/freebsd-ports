@@ -21,7 +21,8 @@ BUILD_DEPENDS=	${GCC_TARGET}-as:devel/binutils@${PKGNAMEPREFIX:C/-$//:C/-/_/g} \
 		objdump:devel/binutils@native
 RUN_DEPENDS=	${GCC_TARGET}-as:devel/binutils@${PKGNAMEPREFIX:C/-$//:C/-/_/g}
 
-USES=	gmake iconv libtool tar:xz makeinfo compiler:c++11-lang
+USES=		cpe gmake iconv libtool tar:xz makeinfo compiler:c++11-lang
+CPE_VENDOR=	gnu
 
 PLIST_SUB=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
 		OPSYS=${OPSYS:tl} \
