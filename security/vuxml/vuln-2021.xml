@@ -1,3 +1,37 @@
+  <vuln vid="a9c5e89d-2d15-11ec-8363-0022489ad614">
+    <topic>Node.js -- October 2021 Security Releases</topic>
+    <affects>
+      <package>
+	<name>node</name>
+	<range><lt>16.11.1</lt></range>
+      </package>
+      <package>
+	<name>node14</name>
+	<range><lt>14.18.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Node.js reports:</p>
+	<blockquote cite="https://nodejs.org/en/blog/vulnerability/oct-2021-security-releases/">
+	  <h1>HTTP Request Smuggling due to spaced in headers (Medium)(CVE-2021-22959)</h1>
+	  <p>The http parser accepts requests with a space (SP) right after the header name before the colon. This can lead to HTTP Request Smuggling (HRS).</p>
+	  <h1>HTTP Request Smuggling when parsing the body (Medium)(CVE-2021-22960)</h1>
+	  <p>The parse ignores chunk extensions when parsing the body of chunked requests. This leads to HTTP Request Smuggling (HRS) under certain conditions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-22959</cvename>
+      <cvename>CVE-2021-22960</cvename>
+      <url>https://nodejs.org/en/blog/vulnerability/oct-2021-security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2021-10-12</discovery>
+      <entry>2021-10-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2a1b931f-2b86-11ec-8acd-c80aa9043978">
     <topic>OpenSSH -- OpenSSH 6.2 through 8.7 failed to correctly initialise supplemental groups when executing an AuthorizedKeysCommand or AuthorizedPrincipalsCommand</topic>
     <affects>
