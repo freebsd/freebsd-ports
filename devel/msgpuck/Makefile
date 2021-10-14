@@ -9,7 +9,8 @@ COMMENT=	Lightweight MessagePack library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c11
+USES=		cmake compiler:c11 cpe
+CPE_VENDOR=	tarantool
 
 USE_LDCONFIG=	yes
 
