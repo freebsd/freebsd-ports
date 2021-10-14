@@ -12,7 +12,8 @@ COMMENT=	Python WSGI server
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	agendaless
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
