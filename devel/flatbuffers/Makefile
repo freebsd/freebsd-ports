@@ -11,7 +11,8 @@ COMMENT=	Memory efficient serialization library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake compiler:c++11-lib
+USES=		cmake compiler:c++11-lib cpe
+CPE_VENDOR=	google
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
