@@ -11,7 +11,8 @@ COMMENT=	Lightweight and flexible command-line JSON processor
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake libtool
+USES=		autoreconf cpe gmake libtool
+CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	stedolan
 GNU_CONFIGURE=	yes
