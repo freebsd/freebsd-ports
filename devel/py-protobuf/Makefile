@@ -15,7 +15,8 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	protoc:devel/protobuf
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.9:devel/py-six@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	google
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
