@@ -12,7 +12,8 @@ COMMENT=	Library for some string essentials
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool pathfix
+USES=		cpe libtool pathfix
+CPE_VENDOR=	adiscon
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
