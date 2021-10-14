@@ -1,0 +1,39 @@
+CMake Error at /usr/local/lib/cmake/Qt5/Qt5Config.cmake:28 (find_package):
+  find_package for module Qt5Test called with REQUIRED, but
+  CMAKE_DISABLE_FIND_PACKAGE_Qt5Test is enabled.  A REQUIRED package cannot
+  be disabled.
+Call Stack (most recent call first):
+  CMakeLists.txt:26 (find_package)
+
+--- CMakeLists.txt.orig	2021-10-14 15:47:28 UTC
++++ CMakeLists.txt
+@@ -23,19 +23,27 @@ include(FeatureSummary)
+ set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Sensors)
++find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Sensors)
+ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+     DBusAddons
+     Declarative
+     I18n
+ )
+ 
++find_package(Qt5Test ${QT_MIN_VERSION})
++set_package_properties(Qt5Test PROPERTIES
++    PURPOSE "Required for tests"
++    TYPE OPTIONAL
++)
++
+ set(MIN_DISMAN_VERSION "0.519.80")
+ find_package(Disman ${MIN_DISMAN_VERSION} REQUIRED)
+ 
+ add_subdirectory(kcm)
+ add_subdirectory(plasma-integration)
+-add_subdirectory(tests)
++if (BUILD_TESTING)
++    add_subdirectory(tests)
++endif()
+ 
+ install(FILES kdisplay.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
+ 

@@ -1,0 +1,15 @@
+KDisplay is a small display management app. It provides a simple and
+straightforward UI for managing an arbitrary number of displays.
+
+Features:
+* Displays can be repositioned with drag-and-drop.
+* An optimal resolution and refresh rate are automatically selected.
+  Manual override is possible.
+* Displays can be seemlessly "replicated".
+* The settings of a display is by default remembered globally
+  but can be overridden for specific combinations of displays.
+* Provides additional integration for the KDE Plasma Workspace through
+  a plasmoid and an OSD activated by hardware key for quick
+  configuration changes.
+
+WWW: https://gitlab.com/kwinft/kdisplay

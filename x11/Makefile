@@ -123,6 +123,7 @@
     SUBDIR += kb2mb2
     SUBDIR += kde-baseapps
     SUBDIR += kde5
+    SUBDIR += kdisplay
     SUBDIR += keybinder
     SUBDIR += keybinder-gtk3
     SUBDIR += keyboardcast
