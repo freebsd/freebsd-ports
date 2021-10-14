@@ -21,7 +21,8 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I. -I${LOCALBASE}/include
 
-USES=		dos2unix
+USES=		cpe dos2unix
+CPE_VENDOR=	${PORTNAME}_project
 DOS2UNIX_GLOB=	*.h
 
 PS_FILES=	libdwarf2.1.pdf libdwarf2p.1.pdf mips_extensions.pdf
