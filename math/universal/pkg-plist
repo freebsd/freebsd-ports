@@ -301,12 +301,12 @@ include/universal/traits/metaprogramming.hpp
 include/universal/traits/number_traits.hpp
 include/universal/traits/posit_traits.hpp
 include/universal/utility/bit_cast.hpp
-include/universal/utility/bitcast.hpp
 include/universal/utility/color_print.hpp
 include/universal/utility/compiler_specialization.hpp
 include/universal/utility/convert_to.hpp
 include/universal/utility/directives.hpp
 include/universal/utility/error.hpp
+include/universal/utility/long_double.hpp
 include/universal/utility/number_system_properties.hpp
 include/universal/utility/occurrence.hpp
 include/universal/utility/reverse_view.hpp
