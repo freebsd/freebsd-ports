@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-multi_json>=1<2:devel/rubygem-multi_json
 
-USES=		gem
+USES=		cpe gem
+CPE_VENDOR=	apache
 USE_RUBY=	yes
 
 NO_ARCH=	yes
