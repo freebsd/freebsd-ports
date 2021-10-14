@@ -12,6 +12,9 @@ COMMENT?=	Library (written in C) for parsing and creating messages using MIME
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Use mail/gmime26 or mail/gmime30
+EXPIRATION_DATE=2021-11-30
+
 CONFLICTS=	gmime-1.0.*
 
 SLAVEDIRS=	mail/gmime2-sharp
