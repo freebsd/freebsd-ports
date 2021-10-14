@@ -8,7 +8,8 @@ COMMENT=	Generic syntax highlighter written in PHP
 
 LICENSE=	GPLv2
 
-USES=		pear
+USES=		cpe pear
+CPE_VENDOR=	qbnz
 
 PEAR_CHANNEL=	geshi
 
