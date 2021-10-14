@@ -144,6 +144,7 @@
     SUBDIR += py-bx-python
     SUBDIR += py-crossmap
     SUBDIR += py-cutadapt
+    SUBDIR += py-deeptools
     SUBDIR += py-deeptoolsintervals
     SUBDIR += py-dnaio
     SUBDIR += py-ete3
