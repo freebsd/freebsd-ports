@@ -11,7 +11,8 @@ COMMENT=	Fast and Flexible Static Site Generator built with love in GoLang
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		cpe go:modules
+CPE_VENDOR=	gohugo
 USE_GITHUB=	yes
 GH_ACCOUNT=	gohugoio
 GH_TUPLE=	\
