@@ -1,10 +1,9 @@
 # Created by: Glenn Trewitt <glenn@trewitt.org>
 
-PORTNAME=		htmldoc
-PORTVERSION=		1.9.3
-PORTREVISION=	1
+PORTNAME=	htmldoc
+PORTVERSION=	1.9.12
 DISTVERSIONPREFIX=	v
-CATEGORIES=		textproc
+CATEGORIES=	textproc
 
 MAINTAINER=	jose@diasfernandes.pt
 COMMENT=	Converts HTML to PDF and/or PostScript
@@ -12,40 +11,32 @@ COMMENT=	Converts HTML to PDF and/or PostScript
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_mips=	Complains of expecting ) before png_ptr
+BROKEN_mips=	complains about expecting ) before png_ptr
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		compiler:c11 cpe
+USES=		compiler:c11 cpe jpeg pkgconfig
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	michaelrsweet
 
 HAS_CONFIGURE=	yes
 
-OPTIONS_DEFINE=		HTMLDOCGUI GNUTLS
+OPTIONS_DEFINE=		GNUTLS HTMLDOCGUI
 OPTIONS_DEFAULT=	GNUTLS
 
 HTMLDOCGUI_DESC=	Build GUI front-end
-HTMLDOCGUI_CONFIGURE_WITH=	gui=yes
+
+GNUTLS_LIB_DEPENDS=		libgnutls.so:security/gnutls
+GNUTLS_CONFIGURE_ENABLE=	gnutls
+
 HTMLDOCGUI_LIB_DEPENDS=		libfltk.so:x11-toolkits/fltk \
 				libfontconfig.so:x11-fonts/fontconfig
 HTMLDOCGUI_USES=		xorg
-HTMLDOCGUI_USE=			XORG=x11,xrender,xcursor,xfixes \
-				xext,xft,xinerama jpeg
-GNUTLS_CONFIGURE_ENABLE=	gnutls
-GNUTLS_USES=			pkgconfig
-GNUTLS_LIB_DEPENDS=		libgnutls.so:security/gnutls
-
-.include <bsd.port.pre.mk>
-
-# Fix arm64 build
-.if ${ARCH} == "aarch64"
-pre-build:
-	${REINPLACE_CMD} -e '/PNG_FILTER_OPTIMIZATIONS(pp, bpp);/d' ${WRKSRC}/png/pngrutil.c
-.endif
+HTMLDOCGUI_USE=			XORG=x11,xcursor,xext,xfixes,xft,xinerama,xrender
+HTMLDOCGUI_CONFIGURE_WITH=	gui=yes
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/htmldoc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
