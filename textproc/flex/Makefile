@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	help2man:misc/help2man
 
-USES=		bison:alias gmake libtool makeinfo
+USES=		bison:alias cpe gmake libtool makeinfo
+CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
 # install flex header to its own dir to avoid conflict with system flex.
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/flex --disable-shared
