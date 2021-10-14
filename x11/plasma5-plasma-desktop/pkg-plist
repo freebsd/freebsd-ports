@@ -18,6 +18,7 @@ lib/libexec/kauth/kcmdatetimehelper
 %%QT_PLUGINDIR%%/kcm_mouse.so
 %%QT_PLUGINDIR%%/kcm_plasmasearch.so
 %%QT_PLUGINDIR%%/kcm_solid_actions.so
+%%QT_PLUGINDIR%%/kcm_touchpad.so
 %%QT_PLUGINDIR%%/kcms/kcm_access.so
 %%QT_PLUGINDIR%%/kcms/kcm_baloofile.so
 %%QT_PLUGINDIR%%/kcms/kcm_componentchooser.so
@@ -30,8 +31,8 @@ lib/libexec/kauth/kcmdatetimehelper
 %%QT_PLUGINDIR%%/kcms/kcm_users.so
 %%QT_PLUGINDIR%%/kcms/kcm_workspace.so
 %%QT_PLUGINDIR%%/kcmspellchecking.so
-%%QT_PLUGINDIR%%/kded_touchpad.so
 %%QT_PLUGINDIR%%/kf5/kded/device_automounter.so
+%%QT_PLUGINDIR%%/kf5/kded/kded_touchpad.so
 %%QT_PLUGINDIR%%/kf5/kded/keyboard.so
 %%QT_PLUGINDIR%%/kf5/krunner/krunner_kwin.so
 %%QT_PLUGINDIR%%/kf5/krunner/krunner_plasma-desktop.so
@@ -67,8 +68,6 @@ share/config.kcfg/kcmaccessibilityscreenreader.kcfg
 share/config.kcfg/landingpage_kdeglobalssettings.kcfg
 share/config.kcfg/launchfeedbacksettingsbase.kcfg
 share/config.kcfg/splashscreensettings.kcfg
-share/config.kcfg/touchpad.kcfg
-share/config.kcfg/touchpaddaemon.kcfg
 share/config.kcfg/workspaceoptions_kdeglobalssettings.kcfg
 share/config.kcfg/workspaceoptions_plasmasettings.kcfg
 share/dbus-1/interfaces/org.kde.touchpad.xml
@@ -533,6 +532,8 @@ share/doc/HTML/ru/kcontrol/joystick/joystick-calibration.png
 share/doc/HTML/ru/kcontrol/joystick/joystick-main.png
 share/doc/HTML/ru/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/ru/kcontrol/kcmaccess/index.docbook
+share/doc/HTML/ru/kcontrol/kcmactivities/index.cache.bz2
+share/doc/HTML/ru/kcontrol/kcmactivities/index.docbook
 share/doc/HTML/ru/kcontrol/kcmlaunchfeedback/index.cache.bz2
 share/doc/HTML/ru/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/ru/kcontrol/kcmsmserver/index.cache.bz2
@@ -678,6 +679,7 @@ share/doc/HTML/uk/kfontview/index.docbook
 share/doc/HTML/uk/kfontview/kfontview.png
 share/doc/HTML/uk/knetattach/index.cache.bz2
 share/doc/HTML/uk/knetattach/index.docbook
+share/doc/HTML/uk/plasma-desktop/application-launcher-settings.png
 share/doc/HTML/uk/plasma-desktop/index.cache.bz2
 share/doc/HTML/uk/plasma-desktop/index.docbook
 share/icons/hicolor/128x128/devices/input-touchpad.png
@@ -786,7 +788,6 @@ share/kservices5/kcm_touchpad.desktop
 share/kservices5/kcm_users.desktop
 share/kservices5/kcm_workspace.desktop
 share/kservices5/kcmkded.desktop
-share/kservices5/kded/touchpad.desktop
 share/kservices5/mouse.desktop
 share/kservices5/plasma-dataengine-touchpad.desktop
 share/kservices5/qtquicksettings.desktop
@@ -814,19 +815,26 @@ share/locale/ar/LC_MESSAGES/kcm_activities5.mo
 share/locale/ar/LC_MESSAGES/kcm_baloofile.mo
 share/locale/ar/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/ar/LC_MESSAGES/kcm_desktoppaths.mo
+share/locale/ar/LC_MESSAGES/kcm_keys.mo
+share/locale/ar/LC_MESSAGES/kcm_landingpage.mo
 share/locale/ar/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/ar/LC_MESSAGES/kcm_search.mo
 share/locale/ar/LC_MESSAGES/kcm_smserver.mo
 share/locale/ar/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ar/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/ar/LC_MESSAGES/kcm_touchpad.mo
+share/locale/ar/LC_MESSAGES/kcm_users.mo
 share/locale/ar/LC_MESSAGES/kcm_workspace.mo
 share/locale/ar/LC_MESSAGES/kcmaccess.mo
 share/locale/ar/LC_MESSAGES/kcmkclock.mo
 share/locale/ar/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ar/LC_MESSAGES/kcmmouse.mo
+share/locale/ar/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ar/LC_MESSAGES/knetattach5.mo
+share/locale/ar/LC_MESSAGES/org.kde.plasma.emojier.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
+share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.panel.mo
+share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.kimpanel.mo
@@ -837,11 +845,11 @@ share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/ar/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ar/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
 share/locale/ar/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
+share/locale/ar/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/ar/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/as/LC_MESSAGES/kcmaccess.mo
 share/locale/ast/LC_MESSAGES/kcm5_device_automounter.mo
@@ -861,7 +869,6 @@ share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.minimizeall.mo
 share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
 share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/ast/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
 share/locale/az/LC_MESSAGES/kaccess.mo
 share/locale/az/LC_MESSAGES/kcm5_device_automounter.mo
@@ -901,7 +908,6 @@ share/locale/az/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/az/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/az/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/az/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/az/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/az/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/az/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/az/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1016,7 +1022,6 @@ share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/bs/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/bs/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/bs/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
 share/locale/bs/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
@@ -1058,7 +1063,6 @@ share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/ca/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ca/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1102,7 +1106,6 @@ share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/ca@valencia/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1147,7 +1150,6 @@ share/locale/cs/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/cs/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/cs/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/cs/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/cs/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/cs/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1218,7 +1220,6 @@ share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/da/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/da/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/da/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/da/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1263,7 +1264,6 @@ share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/de/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/de/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/de/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/de/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1301,7 +1301,6 @@ share/locale/el/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/el/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/el/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/el/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/el/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/el/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/el/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/el/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1345,7 +1344,6 @@ share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/en_GB/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/en_GB/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1412,7 +1410,6 @@ share/locale/es/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/es/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/es/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/es/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/es/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1455,7 +1452,6 @@ share/locale/et/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/et/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/et/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/et/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/et/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/et/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/et/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/et/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1500,7 +1496,6 @@ share/locale/eu/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/eu/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/eu/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1563,7 +1558,6 @@ share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/fi/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/fi/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1608,7 +1602,6 @@ share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/fr/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/fr/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1689,7 +1682,6 @@ share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/gl/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/gl/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1747,7 +1739,6 @@ share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/he/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/he/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/he/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
 share/locale/he/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
@@ -1765,12 +1756,19 @@ share/locale/hi/LC_MESSAGES/kcmaccess.mo
 share/locale/hi/LC_MESSAGES/kcmkclock.mo
 share/locale/hi/LC_MESSAGES/kcmkeyboard.mo
 share/locale/hi/LC_MESSAGES/kcmmouse.mo
+share/locale/hi/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/hi/LC_MESSAGES/knetattach5.mo
+share/locale/hi/LC_MESSAGES/org.kde.plasma.emojier.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
+share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
+share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
+share/locale/hi/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/hi/LC_MESSAGES/plasma_runner_plasma-desktop.mo
+share/locale/hi/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
+share/locale/hi/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/hne/LC_MESSAGES/kaccess.mo
 share/locale/hne/LC_MESSAGES/kcm5_joystick.mo
 share/locale/hne/LC_MESSAGES/kcm5_kded.mo
@@ -1834,6 +1832,7 @@ share/locale/hu/LC_MESSAGES/kcm_baloofile.mo
 share/locale/hu/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/hu/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/hu/LC_MESSAGES/kcm_keys.mo
+share/locale/hu/LC_MESSAGES/kcm_landingpage.mo
 share/locale/hu/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/hu/LC_MESSAGES/kcm_search.mo
 share/locale/hu/LC_MESSAGES/kcm_smserver.mo
@@ -1862,7 +1861,6 @@ share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/hu/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/hu/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1907,7 +1905,6 @@ share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/ia/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ia/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -1950,7 +1947,6 @@ share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/id/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/id/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/id/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/id/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2016,7 +2012,6 @@ share/locale/it/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/it/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/it/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/it/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/it/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/it/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/it/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/it/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2061,7 +2056,6 @@ share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/ja/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ja/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2173,7 +2167,6 @@ share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/ko/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ko/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2233,7 +2226,6 @@ share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/lt/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/lt/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/lt/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/lt/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2335,7 +2327,6 @@ share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/ml/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/ml/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ml/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ml/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2504,7 +2495,6 @@ share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/nl/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/nl/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2549,7 +2539,6 @@ share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/nn/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/nn/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2622,7 +2611,6 @@ share/locale/pa/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/pa/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/pa/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/pa/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/pa/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/pa/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/pa/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/pa/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2667,7 +2655,6 @@ share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/pl/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/pl/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2712,7 +2699,6 @@ share/locale/pt/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/pt/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/pt/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/pt/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/pt/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/pt/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/pt/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/pt/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2757,7 +2743,6 @@ share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/pt_BR/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2802,7 +2787,6 @@ share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/ro/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ro/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2847,7 +2831,6 @@ share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/ru/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ru/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2925,7 +2908,6 @@ share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/sk/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/sk/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/sk/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/sk/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2970,7 +2952,6 @@ share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/sl/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/sl/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -3027,7 +3008,6 @@ share/locale/sr/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/sr/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/sr/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/sr/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/sr/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -3065,7 +3045,6 @@ share/locale/sr@ijekavian/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.m
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/sr@ijekavian/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -3103,7 +3082,6 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesk
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -3141,7 +3119,6 @@ share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/sr@latin/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -3186,7 +3163,6 @@ share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/sv/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/sv/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -3194,23 +3170,47 @@ share/locale/sv/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/sv/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/sv/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/ta/LC_MESSAGES/kaccess.mo
+share/locale/ta/LC_MESSAGES/kcm5_device_automounter.mo
 share/locale/ta/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ta/LC_MESSAGES/kcm5_kded.mo
+share/locale/ta/LC_MESSAGES/kcm_activities5.mo
+share/locale/ta/LC_MESSAGES/kcm_baloofile.mo
 share/locale/ta/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/ta/LC_MESSAGES/kcm_desktoppaths.mo
+share/locale/ta/LC_MESSAGES/kcm_keys.mo
 share/locale/ta/LC_MESSAGES/kcm_landingpage.mo
 share/locale/ta/LC_MESSAGES/kcm_launchfeedback.mo
+share/locale/ta/LC_MESSAGES/kcm_search.mo
 share/locale/ta/LC_MESSAGES/kcm_smserver.mo
+share/locale/ta/LC_MESSAGES/kcm_solid_actions.mo
+share/locale/ta/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/ta/LC_MESSAGES/kcm_touchpad.mo
+share/locale/ta/LC_MESSAGES/kcm_users.mo
+share/locale/ta/LC_MESSAGES/kcm_workspace.mo
 share/locale/ta/LC_MESSAGES/kcmaccess.mo
 share/locale/ta/LC_MESSAGES/kcmkclock.mo
 share/locale/ta/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ta/LC_MESSAGES/kcmmouse.mo
+share/locale/ta/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ta/LC_MESSAGES/knetattach5.mo
+share/locale/ta/LC_MESSAGES/org.kde.plasma.emojier.mo
 share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
+share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.panel.mo
+share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
+share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
+share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
+share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.kimpanel.mo
+share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.minimizeall.mo
 share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
+share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.showActivityManager.mo
+share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
+share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
+share/locale/ta/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
+share/locale/ta/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
+share/locale/ta/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
+share/locale/ta/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/te/LC_MESSAGES/kaccess.mo
 share/locale/te/LC_MESSAGES/kcm5_joystick.mo
 share/locale/te/LC_MESSAGES/kcm5_kded.mo
@@ -3311,7 +3311,6 @@ share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/tr/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/tr/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -3380,7 +3379,6 @@ share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/uk/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/uk/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -3451,7 +3449,6 @@ share/locale/vi/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/vi/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/vi/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/vi/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/vi/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -3528,7 +3525,6 @@ share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/zh_CN/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -3569,13 +3565,26 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/zh_TW/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/zh_TW/LC_MESSAGES/plasmaactivitymanager.mo
+share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/ApplicationsPage.qml
+share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/BasePage.qml
+share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/DropAreaGridView.qml
+share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/DropAreaListView.qml
+share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/EmptyPage.qml
+share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Footer.qml
+share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/HorizontalStackView.qml
+share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/KickoffDropArea.qml
+share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/KickoffItemDelegate.qml
+share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/KickoffSingleton.qml
+share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/NormalPage.qml
+share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/PlacesPage.qml
+share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/VerticalStackView.qml
+share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/qmldir
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_rename_timezonedisplay_key.js
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/klipper_clear_config.js
 share/qlogging-categories5/kcm_kded.categories
@@ -3660,7 +3669,6 @@ share/plasma/avatars/photos/Sunflower.png
 share/plasma/avatars/photos/Sunflower.png.license
 share/plasma/avatars/photos/Sushi.png
 share/plasma/avatars/photos/Sushi.png.license
-share/plasma/desktoptheme/default/icons/touchpad.svg
 share/plasma/layout-templates/org.kde.plasma.desktop.appmenubar/contents/layout.js
 share/plasma/layout-templates/org.kde.plasma.desktop.appmenubar/metadata.desktop
 share/plasma/layout-templates/org.kde.plasma.desktop.appmenubar/metadata.json
@@ -3741,27 +3749,13 @@ share/plasma/plasmoids/org.kde.plasma.kicker/metadata.json
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/config/config.qml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/config/main.xml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/ActionMenu.qml
-share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/ApplicationsGroupView.qml
-share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/ApplicationsView.qml
-share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/BaseView.qml
-share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Breadcrumb.qml
-share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/ComputerView.qml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/ConfigGeneral.qml
-share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/FavoritesGridView.qml
-share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/FavoritesView.qml
-share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/FrequentlyUsedView.qml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/FullRepresentation.qml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Header.qml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Kickoff.qml
-share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/KickoffGridItem.qml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/KickoffGridView.qml
-share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/KickoffItem.qml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/KickoffListView.qml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/LeaveButtons.qml
-share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/PlacesView.qml
-share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/RecentlyUsedView.qml
-share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/SearchView.qml
-share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/SectionDelegate.qml
 share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/code/tools.js
 share/plasma/plasmoids/org.kde.plasma.kickoff/metadata.desktop
 share/plasma/plasmoids/org.kde.plasma.kickoff/metadata.json
@@ -3776,7 +3770,6 @@ share/plasma/plasmoids/org.kde.plasma.kimpanel/contents/ui/StatusIcon.qml
 share/plasma/plasmoids/org.kde.plasma.kimpanel/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.kimpanel/metadata.desktop
 share/plasma/plasmoids/org.kde.plasma.kimpanel/metadata.json
-share/plasma/plasmoids/org.kde.plasma.marginsseparator/LICENSE
 share/plasma/plasmoids/org.kde.plasma.marginsseparator/contents/config/main.xml
 share/plasma/plasmoids/org.kde.plasma.marginsseparator/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.marginsseparator/metadata.desktop
@@ -3832,9 +3825,6 @@ share/plasma/plasmoids/org.kde.plasma.trash/metadata.json
 share/plasma/plasmoids/org.kde.plasma.windowlist/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.windowlist/metadata.desktop
 share/plasma/plasmoids/org.kde.plasma.windowlist/metadata.json
-share/plasma/plasmoids/touchpad/contents/ui/touchpad.qml
-share/plasma/plasmoids/touchpad/metadata.desktop
-share/plasma/plasmoids/touchpad/metadata.json
 share/plasma/services/touchpad.operations
 share/plasma/shells/org.kde.plasma.desktop/contents/InteractiveConsole.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/activitymanager/ActivityItem.qml

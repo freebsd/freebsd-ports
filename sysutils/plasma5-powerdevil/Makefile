@@ -8,8 +8,8 @@ COMMENT=	Plasma5 tool to manage the power consumption settings
 LIB_DEPENDS=	libudev.so:devel/libudev-devd
 RUN_DEPENDS=	${LOCALBASE}/libexec/upowerd:sysutils/upower
 
-USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 \
-		tar:xz xorg
+USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 tar:xz \
+		xorg
 USE_KDE=	activities auth bookmarks codecs completion config \
 		configwidgets coreaddons crash dbusaddons emoticons \
 		globalaccel guiaddons i18n iconthemes idletime init itemmodels \

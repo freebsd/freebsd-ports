@@ -344,18 +344,6 @@ share/locale/zh_CN/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/zh_CN/LC_MESSAGES/breeze_style_config.mo
 share/locale/zh_TW/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/zh_TW/LC_MESSAGES/breeze_style_config.mo
-share/metainfo/org.kde.breezedark.desktop.appdata.xml
-share/metainfo/org.kde.breezetwilight.desktop.appdata.xml
-share/plasma/look-and-feel/org.kde.breezedark.desktop/contents/defaults
-share/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/fullscreenpreview.jpg
-share/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/preview.png
-share/plasma/look-and-feel/org.kde.breezedark.desktop/metadata.desktop
-share/plasma/look-and-feel/org.kde.breezedark.desktop/metadata.json
-share/plasma/look-and-feel/org.kde.breezetwilight.desktop/contents/defaults
-share/plasma/look-and-feel/org.kde.breezetwilight.desktop/contents/previews/fullscreenpreview.jpg
-share/plasma/look-and-feel/org.kde.breezetwilight.desktop/contents/previews/preview.png
-share/plasma/look-and-feel/org.kde.breezetwilight.desktop/metadata.desktop
-share/plasma/look-and-feel/org.kde.breezetwilight.desktop/metadata.json
 share/wallpapers/Next/contents/images/1024x768.png
 share/wallpapers/Next/contents/images/1080x1920.png
 share/wallpapers/Next/contents/images/1280x1024.png
@@ -372,6 +360,7 @@ share/wallpapers/Next/contents/images/3200x1800.png
 share/wallpapers/Next/contents/images/3200x2000.png
 share/wallpapers/Next/contents/images/360x720.png
 share/wallpapers/Next/contents/images/3840x2160.png
+share/wallpapers/Next/contents/images/440x247.png
 share/wallpapers/Next/contents/images/5120x2880.png
 share/wallpapers/Next/contents/images/720x1440.png
 share/wallpapers/Next/contents/images/base_size.png

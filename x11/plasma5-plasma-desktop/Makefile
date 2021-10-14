@@ -23,8 +23,8 @@ BUILD_DEPENDS=	xf86-input-evdev>0:x11-drivers/xf86-input-evdev \
 		xf86-input-synaptics>0:x11-drivers/xf86-input-synaptics \
 		xf86-input-libinput>0:x11-drivers/xf86-input-libinput
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gettext gnome \
-		kde:5 cpe pkgconfig python:3.5+,run qt:5 shebangfix tar:xz xorg
+USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext gnome \
+		kde:5 pkgconfig python:3.5+,run qt:5 shebangfix tar:xz xorg
 USE_GNOME=	glib20
 USE_KDE=	activities activities-stats archive attica auth baloo \
 		bookmarks codecs completion config configwidgets coreaddons \
@@ -42,6 +42,8 @@ USE_QT=		concurrent core dbus declarative gui network phonon4 \
 		printsupport sql svg widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xcb xcursor xext xfixes xft xi xrender
+
+CPE_VENDOR=	kde
 
 CMAKE_ON=	WANT_SYNAPTICS
 

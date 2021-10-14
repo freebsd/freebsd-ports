@@ -7,6 +7,9 @@ lib/mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json
 share/applications/org.kde.plasma.browser_integration.host.desktop
 share/krunner/dbusplugins/plasma-runner-browserhistory.desktop
 share/krunner/dbusplugins/plasma-runner-browsertabs.desktop
+share/locale/ar/LC_MESSAGES/plasma-browser-extension.mo
+share/locale/ar/LC_MESSAGES/plasma-browser-integration-host.mo
+share/locale/ar/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/ast/LC_MESSAGES/plasma-browser-extension.mo
 share/locale/ast/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/ast/LC_MESSAGES/plasma-browser-integration-reminder.mo
@@ -103,6 +106,9 @@ share/locale/sl/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/sv/LC_MESSAGES/plasma-browser-extension.mo
 share/locale/sv/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/sv/LC_MESSAGES/plasma-browser-integration-reminder.mo
+share/locale/ta/LC_MESSAGES/plasma-browser-extension.mo
+share/locale/ta/LC_MESSAGES/plasma-browser-integration-host.mo
+share/locale/ta/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/tg/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/tr/LC_MESSAGES/plasma-browser-extension.mo
 share/locale/uk/LC_MESSAGES/plasma-browser-extension.mo

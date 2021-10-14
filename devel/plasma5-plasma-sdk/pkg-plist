@@ -503,8 +503,10 @@ share/plasma/packages/org.kde.plasma.cuttlefish/metadata.json
 share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/applet/AppletError.qml
 share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/applet/CompactApplet.qml
 share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/applet/DefaultCompactRepresentation.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/AboutPlugin.qml
 share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/AppletConfiguration.qml
 share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/ConfigCategoryDelegate.qml
+share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/ConfigurationAppletPage.qml
 share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/ConfigurationContainmentActions.qml
 share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/ConfigurationContainmentAppearance.qml
 share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/configuration/ConfigurationKcmPage.qml
