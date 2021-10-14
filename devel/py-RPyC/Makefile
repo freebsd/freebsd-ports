@@ -10,7 +10,8 @@ COMMENT=	Remote Python Call
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		cpe python:3.6+
+CPE_VENDOR=	${PORTNAME:tl}_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tomerfiliba-org
