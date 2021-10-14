@@ -1,5 +1,5 @@
 PORTNAME=	tortoisehg
-DISTVERSION=	5.9.1
+DISTVERSION=	5.9.2
 CATEGORIES=	devel
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -21,7 +21,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://foss.heptapod.net
 GL_ACCOUNT=	mercurial/tortoisehg
 GL_PROJECT=	thg
-GL_COMMIT=	a79b3966df14445c75186e56ece5e1964e1f8376
+GL_COMMIT=	dc82f5af7ec5183a52b9eec1e8ba3826c8ced859
 
 OPTIONS_DEFINE=	NAUTILUS NLS
 NAUTILUS_DESC=	Install TortoiseHG Nautilus extension
