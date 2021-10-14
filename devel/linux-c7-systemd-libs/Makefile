@@ -10,7 +10,8 @@ COMMENT=	Libraries for accessing systemd (Linux CentOS ${LINUX_DIST_VER})
 
 LICENSE=	LGPL21+
 
-USES=		linux:c7
+USES=		cpe linux:c7
+CPE_VENDOR=	freedesktop
 USE_LDCONFIG=	yes
 USE_LINUX=	elfutils-libs libgcrypt libgpg-error lz4
 USE_LINUX_RPM=	yes
