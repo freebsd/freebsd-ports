@@ -1,6 +1,6 @@
 Simple X Image Viewer
 
-sxiv is a light image viewer which as a few features :
+sxiv is a light image viewer which as a few features:
 
 - Basic image operations, e.g. zooming, panning, rotating
 - Customizable key and mouse button mappings (in config.h)
