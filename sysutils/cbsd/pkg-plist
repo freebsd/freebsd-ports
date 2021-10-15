@@ -35,11 +35,17 @@ cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-13.1
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-13.2
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-14
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-14.0
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-12.2
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-12.3
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-13
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-13.0
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-13.1
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-14
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-14.0
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-12.2
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-12.3
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-13.0
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-13.1
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-14
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-14.0
 cbsd/etc/defaults/FreeBSD-kernels.conf
@@ -132,6 +138,8 @@ cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-12.2.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-13.0.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-12.2.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-13.0.conf
+cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-14.conf
+cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-14.conf
 cbsd/etc/defaults/vm-freebsd-cloud-OPNSense-21-RELEASE-amd64-21.conf
 cbsd/etc/defaults/vm-freebsd-pfSense-2-RELEASE-amd64.conf
 cbsd/etc/defaults/vm-linux-Android-x86.conf
@@ -164,13 +172,15 @@ cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-20.04.conf
 cbsd/etc/defaults/vm-linux-fedora-server-33-x86_64.conf
 cbsd/etc/defaults/vm-linux-fedora-server-34-x86_64.conf
 cbsd/etc/defaults/vm-linux-opensuse-leap-15-x86.conf
-cbsd/etc/defaults/vm-linux-ubuntu-desktop-amd64-21.04.conf
+cbsd/etc/defaults/vm-linux-ubuntu-desktop-amd64-21.conf
 cbsd/etc/defaults/vm-linux-ubuntuserver-amd64-20.04.conf
 cbsd/etc/defaults/vm-linux-vyos-1.4.conf
 cbsd/etc/defaults/vm-netbsd-cloud-netbsd-x86-9.conf
 cbsd/etc/defaults/vm-netbsd-x86-9.conf
 cbsd/etc/defaults/vm-openbsd-cloud-openbsd-x86-6.conf
+cbsd/etc/defaults/vm-openbsd-cloud-openbsd-x86-7.conf
 cbsd/etc/defaults/vm-openbsd-x86-6.conf
+cbsd/etc/defaults/vm-openbsd-x86-7.conf
 cbsd/etc/defaults/vm-other-FreeDOS.conf
 cbsd/etc/defaults/vm-other-Haiku-r1.conf
 cbsd/etc/defaults/vm-other-Minoca.conf
@@ -179,7 +189,7 @@ cbsd/etc/defaults/vm-other-ReactOS.conf
 cbsd/etc/defaults/vm-other-SmartOS.conf
 cbsd/etc/defaults/vm-other-omnios-2021.conf
 cbsd/etc/defaults/vm-windows-10_86x_64x.conf
-cbsd/etc/defaults/vm-windows-8_86x_64x.conf
+cbsd/etc/defaults/vm-windows-11_86x_64x.conf
 cbsd/etc/defaults/vnc.conf
 cbsd/etc/defaults/xen-default-default.conf
 cbsd/etc/defaults/xlogin.conf
@@ -1100,3 +1110,4 @@ cbsd/upgrade/pre-patch-13.0.5.0
 cbsd/upgrade/pre-patch-13.0.11.0
 cbsd/upgrade/pre-patch-13.0.11.1
 cbsd/upgrade/pre-patch-13.0.11.2
+cbsd/upgrade/pre-patch-13.0.16.0
