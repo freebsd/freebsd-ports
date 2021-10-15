@@ -1,7 +1,7 @@
 # Created by: Daniel O'Connor <darius@dons.net.au>
 
 PORTNAME=	qstat
-PORTVERSION=	2.14
+PORTVERSION=	2.17
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games net
 
@@ -12,11 +12,10 @@ LICENSE=	ART20
 
 CONFLICTS_INSTALL=	torque-[0-9]*
 
+USES=		autoreconf gmake
+GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	multiplay
-
-USES=		autoreconf
-GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/qstat \
 		@sample\ etc/qstat.cfg.sample
@@ -30,8 +29,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|qstat\.cfg|&.sample|' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|__hpux|${OPSYS}|' ${WRKSRC}/qstat.c
-	@${ECHO_CMD} 'int do_dump = 0;' >> ${WRKSRC}/qstat.c
-	@${REINPLACE_CMD} -e 's|^int do_dump|extern &|' ${WRKSRC}/debug.h
+	@${PRINTF} '#!/bin/sh\n\necho -n ${PORTVERSION}' > \
+		${WRKSRC}/scripts/version.sh
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/info ${STAGEDIR}${DOCSDIR}/template
