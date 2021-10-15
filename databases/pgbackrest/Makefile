@@ -1,5 +1,5 @@
 PORTNAME=	pgbackrest
-DISTVERSION=	2.33
+DISTVERSION=	2.35
 CATEGORIES=	databases
 
 MAINTAINER=	schoutm@gmail.com
@@ -8,7 +8,8 @@ COMMENT=	Reliable PostgreSQL Backup & Restore
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-LIB_DEPENDS=	liblz4.so:archivers/liblz4
+LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
+		libyaml.so:textproc/libyaml
 
 USES=		gmake gnome pkgconfig pgsql ssl
 USE_GNOME=	libxml2

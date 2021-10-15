@@ -1,3 +1,3 @@
-TIMESTAMP = 1618942356
-SHA256 (pgbackrest-pgbackrest-2.33-release-2.33_GH0.tar.gz) = 772afaf5cae17fa1fa102c84576b8d6a5074ba3ff510bb86d321c98feebff837
-SIZE (pgbackrest-pgbackrest-2.33-release-2.33_GH0.tar.gz) = 5642397
+TIMESTAMP = 1634325390
+SHA256 (pgbackrest-pgbackrest-2.35-release-2.35_GH0.tar.gz) = ecaf8fc8ec68ac59143a7b4c0c53fded28d1e1396771a9456bb3fdca327e5718
+SIZE (pgbackrest-pgbackrest-2.35-release-2.35_GH0.tar.gz) = 5720761
