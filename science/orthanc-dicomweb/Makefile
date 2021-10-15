@@ -1,7 +1,7 @@
 # Created by: maintainer.freebsd@xpoundit.com
 
 PORTNAME=	orthanc-dicomweb
-DISTVERSION=	1.6
+DISTVERSION=	1.7
 CATEGORIES=	science
 MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/plugin-dicom-web/:main \
 		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/:framework \
@@ -41,9 +41,10 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/OrthancDicomWeb-${PORTVERSION}
 
-CMAKE_OFF=	USE_SYSTEM_UUID
 CMAKE_ARGS=	-DORTHANC_FRAMEWORK_ROOT=${WRKSRC}/ThirdPartyDownloads/Orthanc-1.9.3/OrthancFramework/Sources \
 		-DORTHANC_FRAMEWORK_SOURCE=path
+CMAKE_OFF=	USE_SYSTEM_UUID
+
 CFLAGS+=	-DORTHANC_ENABLE_LOGGING_PLUGIN -DNDEBUG
 CXXFLAGS+=	-DNDEBUG
 
