@@ -89,8 +89,6 @@ BSM_CONFIGURE_ON=	--with-audit=bsm
 FIDO_U2F_LIB_DEPENDS=	libfido2.so:security/libfido2
 FIDO_U2F_CONFIGURE_ON=	--with-security-key-builtin
 FIDO_U2F_CONFIGURE_OFF=	--disable-security-key
-# Until https://reviews.freebsd.org/D27289 is committed
-FIDO_U2F_EXTRA_PATCHES=	${FILESDIR}/extra-patch-libfido2-configure.ac
 
 BLACKLISTD_EXTRA_PATCHES=	${FILESDIR}/extra-patch-blacklistd
 
