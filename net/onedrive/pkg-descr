@@ -7,7 +7,7 @@ This client is a 'fork' of skilion client which was abandoned in 2018.
 Features:
     * State caching
     * Real-Time file monitoring with Inotify
-    * File uploat / download validation to ensure data integrity
+    * File upload / download validation to ensure data integrity
     * Resumable uploads
     * Support OneDrive for Business (part of Office 365)
     * Sharepoint / Office365 Shared libraries (refer to docs/Office365.md
