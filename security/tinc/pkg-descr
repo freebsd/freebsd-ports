@@ -1,8 +1,8 @@
-tinc is a Virtual Private Network (VPN) daemon that uses tunnelling and
+tinc is a Virtual Private Network (VPN) daemon that uses tunneling and
 encryption to create a secure private network between hosts on the Internet.
 
 Because the tunnel appears to the IP level network code as a normal network
-device, there is no need to adapt any existing software.  This tunnelling
+device, there is no need to adapt any existing software.  This tunneling
 allows VPN sites to share information with each other over the Internet
 without exposing any information to others.
 
@@ -15,6 +15,6 @@ packet in its own UDP packet, instead of encapsulating all into one TCP or
 even PPP over TCP stream. This results in lower latencies, less overhead,
 and in general better responsiveness and throughput.
 
-LICENSE: GPL3 or later with execption to link with OpenSSL
+LICENSE: GPL3 or later with exception to link with OpenSSL
 
 WWW: http://www.tinc-vpn.org/
