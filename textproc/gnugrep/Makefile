@@ -1,7 +1,7 @@
 # Created by: Gabor Kovesdan <gabor@FreeBSD.org>
 
 PORTNAME=	grep
-PORTVERSION=	3.6
+PORTVERSION=	3.7
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu
