@@ -4,7 +4,6 @@ PORTNAME=	gajim
 DISTVERSION=	1.3.3
 CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/${DISTVERSION:R}/
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GTK+ Jabber client
@@ -28,6 +27,7 @@ USE_PYTHON=	autoplist distutils noflavors
 USE_GNOME=	pygobject3
 USE_XORG=	x11 xext xscrnsaver
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${DISTVERSION}
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DBUS DOCS SPELL OMEMO OPENGPG
