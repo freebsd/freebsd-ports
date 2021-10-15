@@ -1,4 +1,4 @@
-fontpreview is a command-line tool that let's the user to quickly search for
+fontpreview is a command-line tool that lets the user to quickly search for
 fonts that are installed on their machine and preview them. The fuzzy search
 feature is provided by fzf and the preview is generated with ImageMagick and
 then displayed using sxiv. This tool is highly customizable, almost all of the
