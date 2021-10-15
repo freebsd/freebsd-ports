@@ -1,7 +1,8 @@
 FTN Messages tracker
 
 What is this program for?
-It is so called netmail "tracker". It's puprose is to process netmail
+
+It is so called netmail "tracker". Its purpose is to process netmail
 on netmail hubs, though it can be useful for an ordinary node.
 
 How does it work?
@@ -11,7 +12,7 @@ it executes corresponding operation with this letter.
 Guarantees.
 This product is Freeware. It is distributed in accordance to principle
 As Is, and I can't provide any guarantee. The only thing I promise is
-to correct founded mistakes more or less regulary and to produce new
+to correct founded mistakes more or less regularly and to produce new
 versions.
 
 -- Alex Soukhotine
