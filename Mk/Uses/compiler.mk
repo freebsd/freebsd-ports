@@ -109,7 +109,7 @@ CHOSEN_COMPILER_TYPE=	${COMPILER_TYPE}
 
 .if ${_COMPILER_ARGS:Mnestedfct}
 .if ${COMPILER_TYPE} == clang
-USE_GCC=	any
+USE_GCC=	yes
 CHOSEN_COMPILER_TYPE=	gcc
 .endif
 .endif
