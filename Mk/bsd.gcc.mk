@@ -21,9 +21,6 @@
 # If no arguments are specified, GCC is added as both a build dependency
 # and a run time dependency.
 #
-# (USE_GCC=any is deprecated - and now an odd way to write USE_GCC=yes.
-# Do *not* use! It will be removed shortly.)
-#
 #
 # Examples:
 #   USE_GCC=	yes			# port requires a current version of GCC
@@ -68,8 +65,8 @@ IGNORE=	bad target specification in USE_GCC; only "build" is supported
 
 .if defined(USE_GCC) && !defined(FORCE_BASE_CC_FOR_TESTING)
 
-# Handle USE_GCC=yes and USE_GCC=any.
-.if ${USE_GCC} == yes || ${USE_GCC} == any
+# Handle USE_GCC=yes.
+.if ${USE_GCC} == yes
 USE_GCC=	${GCC_DEFAULT}+
 .endif
 
