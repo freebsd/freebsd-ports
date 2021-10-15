@@ -1,7 +1,9 @@
 bin/gdk_pixbuf_mlsource
+%%GLADE%%bin/lablgladecc2
 bin/lablgtk2
 %%OCAML_SITELIBDIR%%/lablgtk2/META
 %%OCAML_SITELIBDIR%%/lablgtk2/build.ml
+%%GLADE%%%%OCAML_SITELIBDIR%%/lablgtk2/dlllablglade2.so
 %%OCAML_SITELIBDIR%%/lablgtk2/dlllablgtk2.so
 %%GTKGLAREA%%%%OCAML_SITELIBDIR%%/lablgtk2/dlllablgtkgl2.so
 %%GTKSOURCEVIEW2%%%%OCAML_SITELIBDIR%%/lablgtk2/dlllablgtksourceview2.so
@@ -130,6 +132,9 @@ bin/lablgtk2
 %%GTKGLAREA%%%%OCAML_SITELIBDIR%%/lablgtk2/glGtk.cmx
 %%GTKGLAREA%%%%OCAML_SITELIBDIR%%/lablgtk2/glGtk.ml
 %%OCAML_SITELIBDIR%%/lablgtk2/glGtk.mli
+%%GLADE%%%%OCAML_SITELIBDIR%%/lablgtk2/glade.cmi
+%%GLADE%%%%OCAML_SITELIBDIR%%/lablgtk2/glade.cmx
+%%GLADE%%%%OCAML_SITELIBDIR%%/lablgtk2/glade.ml
 %%OCAML_SITELIBDIR%%/lablgtk2/glade.mli
 %%OCAML_SITELIBDIR%%/lablgtk2/glib.cmi
 %%OCAML_SITELIBDIR%%/lablgtk2/glib.cmx
@@ -288,6 +293,10 @@ bin/lablgtk2
 %%OCAML_SITELIBDIR%%/lablgtk2/gutf8.cmx
 %%OCAML_SITELIBDIR%%/lablgtk2/gutf8.ml
 %%OCAML_SITELIBDIR%%/lablgtk2/gutf8.mli
+%%GLADE%%%%OCAML_SITELIBDIR%%/lablgtk2/lablglade.a
+%%GLADE%%%%OCAML_SITELIBDIR%%/lablgtk2/lablglade.cma
+%%GLADE%%%%OCAML_SITELIBDIR%%/lablgtk2/lablglade.cmxa
+%%GLADE%%%%OCAML_SITELIBDIR%%/lablgtk2/lablglade.cmxs
 %%OCAML_SITELIBDIR%%/lablgtk2/lablgtk.a
 %%OCAML_SITELIBDIR%%/lablgtk2/lablgtk.cma
 %%OCAML_SITELIBDIR%%/lablgtk2/lablgtk.cmxa
@@ -308,6 +317,7 @@ bin/lablgtk2
 %%LIBRSVG2%%%%OCAML_SITELIBDIR%%/lablgtk2/lablrsvg.cma
 %%LIBRSVG2%%%%OCAML_SITELIBDIR%%/lablgtk2/lablrsvg.cmxa
 %%LIBRSVG2%%%%OCAML_SITELIBDIR%%/lablgtk2/lablrsvg.cmxs
+%%GLADE%%%%OCAML_SITELIBDIR%%/lablgtk2/liblablglade2.a
 %%OCAML_SITELIBDIR%%/lablgtk2/liblablgtk2.a
 %%GTKGLAREA%%%%OCAML_SITELIBDIR%%/lablgtk2/liblablgtkgl2.a
 %%GTKSOURCEVIEW2%%%%OCAML_SITELIBDIR%%/lablgtk2/liblablgtksourceview2.a
