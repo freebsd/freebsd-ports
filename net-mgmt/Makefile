@@ -293,6 +293,7 @@
     SUBDIR += prometheus-collectd-exporter
     SUBDIR += prometheus1
     SUBDIR += prometheus2
+    SUBDIR += promscale
     SUBDIR += pushgateway
     SUBDIR += py-adal
     SUBDIR += py-aggregate6

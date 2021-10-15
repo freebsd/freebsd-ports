@@ -1,0 +1,5 @@
+Open source storage system and query language for metrics and traces. Native
+support for Prometheus and OpenTelemetry. 100% PromQL compliant. Backed by
+PostgreSQL and TimescaleDB.
+
+WWW: https://www.timescale.com/promscale
