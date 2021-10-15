@@ -1,8 +1,7 @@
 PORTNAME=	hwloc
-PORTVERSION=	2.4.1
+DISTVERSION=	2.5.0
 CATEGORIES=	devel
-MASTER_SITES=	https://download.open-mpi.org/release/hwloc/v${PORTVERSION:R}/ \
-		http://icl.cs.utk.edu/open-mpi/software/hwloc/v${PORTVERSION:R}/downloads/
+MASTER_SITES=	https://download.open-mpi.org/release/hwloc/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
@@ -11,7 +10,8 @@ COMMENT=	Portable Hardware Locality software package
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess
+LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
+		libze_loader.so:devel/level-zero
 
 USES=		iconv libtool gnome pathfix pkgconfig tar:bzip2
 USE_GNOME=	libxml2
