@@ -69,6 +69,7 @@
     SUBDIR += p5-Net-DirectConnect
     SUBDIR += p5-WWW-BitTorrent
     SUBDIR += phex
+    SUBDIR += prowlarr
     SUBDIR += py-libtorrent-rasterbar
     SUBDIR += py-nicotine-plus
     SUBDIR += py-transmission-rpc

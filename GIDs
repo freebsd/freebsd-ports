@@ -298,7 +298,7 @@ nzbhydra2:*:355:
 lidarr:*:356:
 bazarr:*:357:
 autoscan:*:358:
-# free: 359
+prowlarr:*:359:
 v2ray:*:360:
 httptunnel:*:361:
 # free: 362
