@@ -1,7 +1,7 @@
 # Created by: Kenneth Vestergaard Schmidt <kvs@pil.dk>
 
 PORTNAME=	emacs
-DISTVERSION=	29.0.50.20211001
+DISTVERSION=	29.0.50.20211015
 PORTEPOCH=	2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -25,7 +25,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	30bbb57
+GH_TAGNAME=	ca3d723
 
 .if ${FLAVOR:U} != nox
 USES+=		desktop-file-utils gnome xorg
@@ -238,6 +238,7 @@ pre-configure:
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
+	@(cd ${STAGEDIR}${PREFIX} && ${FIND} libexec/emacs/${DISTVERSION:R}/${CONFIGURE_TARGET}/ -name emacs-*.pdmp >> ${TMPPLIST})
 
 post-install-MAILUTILS-on:
 	${LN} -sf ${PREFIX}/bin/movemail \

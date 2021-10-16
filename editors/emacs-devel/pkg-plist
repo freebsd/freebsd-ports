@@ -4,7 +4,6 @@ bin/emacs
 bin/emacs-%%EMACS_VER%%
 bin/emacsclient
 bin/etags
-libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/emacs.pdmp
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/hexl
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/movemail
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/rcs2log
@@ -189,6 +188,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/e/README
 %%DATADIR%%/%%EMACS_VER%%/etc/e/eterm-color
 %%DATADIR%%/%%EMACS_VER%%/etc/e/eterm-color.ti
+%%DATADIR%%/%%EMACS_VER%%/etc/e/eterm-direct
 %%DATADIR%%/%%EMACS_VER%%/etc/edt-user.el
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs-buffer.gdb
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs-mail.desktop
@@ -780,6 +780,9 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/org/OrgOdtContentTemplate.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/org/OrgOdtStyles.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/org/README
+%%DATADIR%%/%%EMACS_VER%%/etc/org/csl/README
+%%DATADIR%%/%%EMACS_VER%%/etc/org/csl/chicago-author-date.csl
+%%DATADIR%%/%%EMACS_VER%%/etc/org/csl/locales-en-US.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/package-keyring.gpg
 %%DATADIR%%/%%EMACS_VER%%/etc/ps-prin0.ps
 %%DATADIR%%/%%EMACS_VER%%/etc/ps-prin1.ps
@@ -3159,6 +3162,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ol-info.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ol-irc.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ol-irc.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/ol-man.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/ol-man.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ol-mhe.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ol-mhe.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ol-rmail.el.gz
@@ -3581,6 +3586,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/shadowfile.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/shell.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/shell.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/shorthands.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/shorthands.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/simple.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/simple.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/skeleton.el.gz
