@@ -1,10 +1,10 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	liberation-fonts-ttf
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 PORTEPOCH=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/liberationfonts/liberation-fonts/files/6418984/
+MASTER_SITES=	https://github.com/liberationfonts/liberation-fonts/files/7261482/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Liberation fonts from Red Hat to replace MS TTF fonts
