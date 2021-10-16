@@ -36,7 +36,7 @@ OPTIONS_DEFAULT=	FREETYPE
 OPTIONS_DEFAULT_i386=	ASM
 
 ASM_BUILD_DEPENDS=	nasm:devel/nasm
-ASM_USE=		gcc=any
+ASM_USE=		GCC=yes
 ASM_CONFIGURE_ENABLE=	asm
 FREETYPE_USES=		pkgconfig
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
