@@ -1,0 +1,12 @@
+PyBerny is an optimizer of molecular geometries with respect to the total
+energy, using nuclear gradient information.
+
+In each step, it takes energy and Cartesian gradients as an input, and returns
+a new equilibrium structure estimate.
+
+The package implements a single optimization algorithm, which is an amalgam of
+several techniques, comprising the quasi-Newton method, redundant internal
+coordinates, an iterative Hessian approximation, a trust region scheme, and
+linear search. The algorithm is described in more detailed in the documentation.
+
+WWW: https://github.com/jhrmnn/pyberny
