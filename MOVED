@@ -16542,3 +16542,4 @@ devel/geany-plugin-vc@gtk2|devel/geany-plugin-vc|2021-10-10|Project dropped GTK2
 devel/geany-plugin-vimode@gtk2|devel/geany-plugin-vimode|2021-10-10|Project dropped GTK2 support
 devel/geany-plugin-workbench@gtk2|devel/geany-plugin-workbench|2021-10-10|Project dropped GTK2 support
 devel/geany-plugin-xmlsnippets@gtk2|devel/geany-plugin-xmlsnippets|2021-10-10|Project dropped GTK2 support
+net-mgmt/unifi5|net-mgmt/unifi6|2021-10-16|Has expired: Use net-mgmt/unifi6 instead
